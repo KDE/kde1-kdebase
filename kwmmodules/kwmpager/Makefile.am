@@ -26,3 +26,5 @@ install-data-local:
 uninstall-local:
 	-rm -f $(appdir)/kwmpager.kdelnk
 
+messages:
+	$(XGETTEXT) -C -ktranslate $(kwmpager_SOURCES)

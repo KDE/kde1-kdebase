@@ -44,11 +44,9 @@ Pager::Pager(KWMModuleApplication *a) : QWidget(NULL,  "kwmpager")
     desktops.setAutoDelete(true);
     desktop_font = new QFont();
     Desktop *desk;
-    style = Undecorated;
 
     for (int i = 0; i < count; i++) {
         desk = new Desktop(a, i + 1, this);
-	connect(desk, SIGNAL(doubleClick()), SLOT(decorate()));
         desktops.append(desk);
     }
     
@@ -76,6 +74,7 @@ Pager::Pager(KWMModuleApplication *a) : QWidget(NULL,  "kwmpager")
     connect(kwmmapp, SIGNAL( commandReceived(QString)),
 	    SLOT(receiveCommand(QString)));
 
+    moved = false;
     readSettings();
     initDesktops();
     show();
@@ -180,6 +179,12 @@ void Pager::resizeEvent ( QResizeEvent * )
         desk->move(desktop_size.width() * (i / 2), 
 		   (i % 2) ? height() / 2 : 0);
     }
+    QString size;
+    size.sprintf("%d %d",width(), height());
+    KConfig *config = kapp->getConfig();
+    config->setGroup("GUI Settings");
+    config->writeEntry("Size",size);
+    config->sync();
 }
  
 void Pager::initDesktops()
@@ -219,26 +224,16 @@ void Pager::changeNumber(int)
     repaint(true);
 }
 
-void Pager::decorate()
-{
-
-//     hide();
-//     if ( style == Undecorated ) {
-// 	recreate(NULL, 0, pos());
-// 	KWM::setDecoration(winId(), 2);
-// 	KWM::setSticky(winId(), true);
-// 	style = Decorated;
-//     } else {
-// 	QPoint p = KWM::geometry(winId(), false).topLeft();
-// 	recreate(NULL, WStyle_Customize | 
-// 		 WStyle_NoBorder | 
-// 		 WStyle_Tool, pos());
-// 	move(p);
-// 	KWM::setDecoration(winId(), false);
-// 	KWM::setSticky(winId(), true);
-// 	style = Undecorated;
-//     }
-//     show();	
+void Pager::moveEvent ( QMoveEvent *e) {
+    if (moved) {
+	QString pos;
+	pos.sprintf("%d %d",e->pos().x(), e->pos().y());
+	KConfig *config = kapp->getConfig();
+	config->setGroup("GUI Settings");
+	config->writeEntry("Geometry",pos);
+	config->sync();
+    }
+    moved = true;
 }
 
 void Pager::closeEvent( QCloseEvent *e)
@@ -331,18 +326,18 @@ int main( int argc, char *argv[] )
 {
     KWMModuleApplication a (argc, argv);
     if (!KWM::isKWMInitialized()){
-	printf("kwmpager: waiting for windowmanager\n");
+	printf(klocale->translate("kwmpager: waiting for windowmanager\n"));
 	while (!KWM::isKWMInitialized()) sleep(1);
     }   
     if (argc > 1){
 	if (QString("-version") == argv[1]){
 	    printf(KWMPAGER_VERSION);
 	    printf("\n");
-	    printf("Copyright (C) 1997 Stephan Kulow (coolo@kde.org)\n");
+	    printf(klocale->translate("Copyright (C) 1997 Stephan Kulow (coolo@kde.org)\n"));
 	    ::exit(0);
 	}
 	else {
-	    printf("Usage:");
+	    printf(klocale->translate("Usage:"));
 	    printf("%s [-version]\n", argv[0]);
 	}
 	::exit(1); 

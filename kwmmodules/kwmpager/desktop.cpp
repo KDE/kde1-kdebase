@@ -26,6 +26,8 @@
 #include <qtooltip.h>
 #include <qcursor.h>
 
+const int TIME_TO_ELAPSE = 30;
+
 Desktop::Desktop(KWMModuleApplication *a, int id, Pager *parent) :
   QFrame(parent)
 {
@@ -230,9 +232,12 @@ void Desktop::mousePressEvent( QMouseEvent *e )
 
 void Desktop::mouseReleaseEvent( QMouseEvent * )
 {
+    if (!cursor_set)
+	dragWindow = 0;
+    
     if (!dragWindow)
 	return;
-    
+
     int x = dragWindow->prect.x() * root_size.width()  / pixmap_size.width();
     int y = dragWindow->prect.y() * root_size.height() / pixmap_size.height();
     
@@ -254,7 +259,7 @@ void Desktop::mouseMoveEvent( QMouseEvent *e)
     if (e->state() != LeftButton || !dragWindow)
 	return;
 
-    if (startTime.elapsed() < 30)
+    if (startTime.elapsed() < TIME_TO_ELAPSE)
 	return;
 
     if (!cursor_set) {

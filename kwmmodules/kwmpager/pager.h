@@ -25,6 +25,7 @@
 #include <kwmmapp.h>
 #include <desktop.h>
 #include <qframe.h>
+#include <config.h>
 
 class QFont;
 class PagerGUI;
@@ -43,10 +44,10 @@ private:
     QList<PagerWindow> stickys;
     Desktop *activeDesktop;
     enum Position { TopRight, TopLeft, BottomRight, BottomLeft, Costumized } position;
-    enum Style { Decorated, Undecorated } style;
     static const char *PosStrings[5];
     int posx, posy;
     QFont *desktop_font;
+    bool moved;
 
 public slots:
     void initDesktops();
@@ -62,11 +63,11 @@ private slots:
     void lowerWindow(Window);
     void placeIt();
     void receiveCommand(QString command);
-    void decorate();
 
 protected:
     virtual void resizeEvent ( QResizeEvent * );  
     virtual void closeEvent ( QCloseEvent * );
+    virtual void moveEvent ( QMoveEvent * );
     void readSettings();
 };
 
