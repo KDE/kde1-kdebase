@@ -26,6 +26,8 @@
 #include <sys/types.h>
 #include <sys/sysctl.h>
 
+#include <qfile.h>
+
 /* stdio.h has NULL, but also a lot of extra cruft */
 #ifndef NULL
 #define NULL 0L
@@ -95,9 +97,32 @@ bool GetInfo_IO_Ports (KTabListBox *)
 	return FALSE;
 }
 
-bool GetInfo_Sound (KTabListBox *)
+bool GetInfo_Sound (KTabListBox *lbox)
 {
-	return FALSE;
+	QFile *sndstat = new QFile("/dev/sndstat");
+
+	if (!sndstat->exists()) {
+		delete sndstat;
+		return false;
+	}
+
+	if (!sndstat->open(IO_ReadOnly)) {
+		delete sndstat;
+		return false;
+	}
+
+	lbox->clear();
+
+	QTextStream *t = new QTextStream(sndstat);
+	QString s;
+
+	while ((s=t->readLine())!="")
+		lbox->insertItem(s);
+
+	delete t;
+	sndstat->close();
+	delete sndstat;
+	return true;
 }
 
 bool GetInfo_Devices (KTabListBox *)
