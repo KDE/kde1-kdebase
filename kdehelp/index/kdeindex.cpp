@@ -9,6 +9,7 @@
 #include <qlist.h>
 #include <qdir.h>
 #include "Kconfig.h"
+#include <kapp.h>
 
 //-----------------------------------------------------------------------------
 
@@ -39,12 +40,7 @@ int Entry::readEntry( const char *filename )
 	QString path = config.readEntry( "DocPath" );
 	if ( path.isNull() )
 		return FALSE;
-	char *kdedir = getenv( "KDEDIR" );
-	if ( kdedir )
-		docPath = kdedir;
-	else
-		docPath = "/usr/local/kde";
-	docPath += "/doc/HTML/";
+	docPath = kapp->kdedir() + "/share/doc/HTML/";
 	docPath += path;
 	info = config.readEntry( "Info" );
 	if ( info.isNull() )
@@ -157,16 +153,8 @@ int main()
 	stream << "<body>" << endl;
 	stream << "<h1>KDE Applications Index</h1>" << endl;
 
-	const char *d = getenv( "KDEDIR" );
-	if ( d == NULL )
-	{
-		stream << "ERROR: $KDEDIR not set</body></html>" << endl;
-		return 1;
-	}
-
 	// System applications
-	QString appPath = d;
-	appPath += "/share/applnk";
+	QString appPath = kapp->kdedir() + "/share/applnk";
 
 	QList<Entry> list;
 	list.setAutoDelete( TRUE );
