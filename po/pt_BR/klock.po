@@ -260,9 +260,8 @@ msgstr ""
 "Portado para kscreensave por Cedric Tefft"
 
 #: bsod.cpp:1192
-#, fuzzy
 msgid "Black Screen of Death"
-msgstr "Tela Vazia"
+msgstr "Tela Negra da Morte"
 
 #: flame.cpp:310
 msgid "Flame"

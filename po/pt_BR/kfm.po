@@ -23,9 +23,8 @@ msgid "&New"
 msgstr "&Novo"
 
 #: kfmgui.cpp:252
-#, fuzzy
 msgid "New &Window"
-msgstr "Nova Vista"
+msgstr "Nova &Janela"
 
 #: kfmgui.cpp:255
 msgid "&Run..."
@@ -64,14 +63,12 @@ msgid "Find &next"
 msgstr "Procurar P&róximo"
 
 #: kfmgui.cpp:295
-#, fuzzy
 msgid "Mime &Types"
-msgstr "Tipos Mime"
+msgstr "Tipos &Mime"
 
 #: kfmgui.cpp:297
-#, fuzzy
 msgid "App&lications"
-msgstr "Aplicações"
+msgstr "Ap&licações"
 
 #: kfmgui.cpp:303
 msgid "Global Mime Types"
@@ -82,7 +79,6 @@ msgid "Global Applications"
 msgstr "Aplicações Globais"
 
 #: kfmgui.cpp:312
-#, fuzzy
 msgid "Show Hi&dden Files"
 msgstr "Mostrar Arquivos &Ocultos"
 
@@ -92,7 +88,7 @@ msgstr "Mostrar Árvor&e"
 
 #: kfmgui.cpp:316
 msgid "Sho&w Thumbnails"
-msgstr ""
+msgstr "Mostrar &Marcadores"
 
 #: kfmgui.cpp:318
 msgid "&HTML View"
@@ -123,7 +119,6 @@ msgid "&Reload Document"
 msgstr "&Reler Documento"
 
 #: kfmgui.cpp:337
-#, fuzzy
 msgid "Rescan &Bindings"
 msgstr "Rever &Dependências"
 
@@ -140,7 +135,6 @@ msgid "Auto"
 msgstr "Auto"
 
 #: kfmgui.cpp:358
-#, fuzzy
 msgid "Document Encodin&g"
 msgstr "&Codificação do Documento"
 
@@ -193,13 +187,12 @@ msgid "Sa&ve Settings"
 msgstr "Sal&var Configuração"
 
 #: kfmgui.cpp:408
-#, fuzzy
 msgid "Save Settings for this &URL"
-msgstr "Salvar configurações para esta URL"
+msgstr "Salvar configurações para esta &URL"
 
 #: kfmgui.cpp:415
 msgid "Set Preferen&ces..."
-msgstr ""
+msgstr "Configurar Preferên&cias..."
 
 #: kfmgui.cpp:455
 msgid ""
@@ -229,7 +222,7 @@ msgstr ""
 
 #: kfmgui.cpp:468
 msgid "&Go"
-msgstr ""
+msgstr "&Ir para"
 
 #: kfmgui.cpp:469
 msgid "&Bookmarks"
@@ -307,23 +300,20 @@ msgid "New "
 msgstr "Novo"
 
 #: kfmgui.cpp:1085
-#, fuzzy
 msgid "&Up"
-msgstr "Acima"
+msgstr "&Acima"
 
 #: kfmgui.cpp:1087
 msgid "&Back"
-msgstr ""
+msgstr "&Voltar"
 
 #: kfmgui.cpp:1089
-#, fuzzy
 msgid "&Forward"
-msgstr "Adiante"
+msgstr "Ad&iante"
 
 #: kfmgui.cpp:1091
-#, fuzzy
 msgid "&Home"
-msgstr "Diretório do usuário"
+msgstr "Diretório do &usuário"
 
 #: kfmgui.cpp:1148 kfmgui.cpp:1317 kfmjob.cpp:37 kfmman.cpp:226
 #: kfmtree.cpp:392 kfmview.cpp:426 kfmview.cpp:495 kfmview.cpp:703
@@ -1446,9 +1436,8 @@ msgid "&Other"
 msgstr "&Outros"
 
 #: kkfmoptdlg.cpp:117
-#, fuzzy
 msgid "KFM Preferences Settings"
-msgstr "Configuração do Browser KFM"
+msgstr "Configuração de preferências do KFM"
 
 #: khttpoptdlg.cpp:39
 msgid "Accept languages:"
@@ -1539,27 +1528,3 @@ msgid ""
 msgstr ""
 "Erro de Sintaxe:\n"
 "kfmexec comando [URLs ....]\n"
-
-#~ msgid "ERROR: You dropped some URL over itself"
-#~ msgstr "ERRO: URL de destino igual a origem!"
-
-#~ msgid "&Visual Schnauzer"
-#~ msgstr "&Visual Schnauzer"
-
-#~ msgid "Configure Browser..."
-#~ msgstr "Configurar Browser..."
-
-#~ msgid "Name"
-#~ msgstr "Nome"
-
-#~ msgid "Browse"
-#~ msgstr "Mostrar"
-
-#~ msgid "&Quit..."
-#~ msgstr "&Sair..."
-
-#~ msgid "&About..."
-#~ msgstr "&Sobre..."
-
-#~ msgid "About KFM"
-#~ msgstr "Sobre o KFM"

@@ -52,7 +52,7 @@ msgstr "&Escolher..."
 
 #: backgnd.cpp:359
 msgid "Mode:"
-msgstr ""
+msgstr "Modo:"
 
 #: backgnd.cpp:366
 msgid "Tiled"
@@ -107,9 +107,8 @@ msgid "&Dock into the panel"
 msgstr "&Embutir no Painel"
 
 #: backgnd.cpp:431
-#, fuzzy
 msgid "Cache size:"
-msgstr "Tamanho do cache"
+msgstr "Tamanho do cache:"
 
 #: backgnd.cpp:447
 msgid "kb"

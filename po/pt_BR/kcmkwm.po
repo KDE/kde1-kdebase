@@ -114,7 +114,7 @@ msgstr "Imagem"
 
 #: titlebar.cpp:1003
 msgid "Active title has shaded frame"
-msgstr ""
+msgstr "Título ativo tem quadro sombreado"
 
 #: titlebar.cpp:1044
 msgid "Active pixmap:"
@@ -126,7 +126,7 @@ msgstr "Imagem inativa:"
 
 #: titlebar.cpp:1055
 msgid "No pixmap under text"
-msgstr ""
+msgstr "Nenhuma figura sob o texto"
 
 #: titlebar.cpp:1066
 msgid "Mouse action"
