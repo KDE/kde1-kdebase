@@ -32,6 +32,7 @@
 #include "kfmexec.h"
 #include "utils.h"
 #include "config-kfm.h"
+#include "kfm.h"
 
 #include <string.h>
 
@@ -54,16 +55,6 @@ KRootWidget::KRootWidget( QWidget *parent, const char *name ) : QWidget( parent,
     {
          config->setGroup("KFM Root Icons");
 	 iconstyle = config->readNumEntry( "Style", 1 );
-	 /*CT ??? QString for colors? What for?
-	 QString bg = config->readEntry( "Background" );
-	 if ( bg.isNull() )
-	   bg = "black";
-         iconBgColor.setNamedColor( bg.data() );
-	 QString fg = config->readEntry( "Foreground" );
-	 if ( fg.isNull() )
-	   fg = "white";
-         labelColor.setNamedColor( fg.data() );
-	 */
 	 //CT 12Nov1998
 	 labelColor = config->readColorEntry( "Foreground", &DEFAULT_ICON_FG );
 	 iconBgColor = config->readColorEntry( "Background", &DEFAULT_ICON_BG );
@@ -74,8 +65,6 @@ KRootWidget::KRootWidget( QWidget *parent, const char *name ) : QWidget( parent,
 	 config->setGroup( "KFM Misc Defaults" );	
 	 gridwidth = config->readNumEntry( "GridWidth", DEFAULT_GRID_WIDTH );
          gridheight = config->readNumEntry( "GridHeight", DEFAULT_GRID_HEIGHT );
-         // sven
-         allowURLProps = config->readBoolEntry( "EnablePerURLProps", false );
     }
 
     rootDropZone = new KDNDDropZone( this , DndURL );

@@ -25,7 +25,13 @@ public:
    */
   static bool saveHTMLHistory( const char *_filename );
   static bool isGoingDown() { return s_bGoingDown; }
-  
+
+    /**
+     * Sets and returns is per URL setting enabled - sven
+     */
+  static bool isURLPropesEnabled () {return allowURLProps;}
+  static void setURLProps (bool flag) {allowURLProps = flag;}
+
 public slots:
   void slotSave();
   void slotShutDown();
@@ -39,6 +45,7 @@ protected:
   static Kfm *pKfm;
   static QStrList *pHistory;
   static bool s_bGoingDown;
+  static bool allowURLProps; // global option
 };
 
 #endif

@@ -552,21 +552,22 @@ void KfmView::slotSaveLocalProperties()
   }
 
   //Dir not writable or not a file: url. See if it is on desktop
-
-  for (KRootIcon *i = IconList.first(); i; i = IconList.next())
-    if (strstr (i->getURL(), ".kdelnk"))
-    {
-      debug ("Got a kdelnk: %s", &(i->getURL())[5]);
-      KSimpleConfig cfg(&(i->getURL())[5]); // #inline, so it's fast
-      cfg.setGroup("KDE Desktop Entry");
-      if (!strcmp (cfg.readEntry("URL").data(), _url))
-      {
-        debug ("Writing");
-        gui->writeProperties((KConfig *) &cfg); // will sync on end
-        return;
-      }
-    }
-
+  if (KRootWidget::pKRootWidget) // if there is one. DF.
+  {
+      for (KRootIcon *i = IconList.first(); i; i = IconList.next())
+          if (strstr (i->getURL(), ".kdelnk"))
+          {
+              debug ("Got a kdelnk: %s", &(i->getURL())[5]);
+              KSimpleConfig cfg(&(i->getURL())[5]); // #inline, so it's fast
+              cfg.setGroup("KDE Desktop Entry");
+              if (!strcmp (cfg.readEntry("URL").data(), _url))
+              {
+                  debug ("Writing");
+                  gui->writeProperties((KConfig *) &cfg); // will sync on end
+                  return;
+              }
+          }
+  }
   // Not found or not writable:
   if (!isADir )
     QMessageBox::warning(0, klocale->translate( "KFM Error" ),
@@ -755,12 +756,12 @@ void KfmView::checkLocalProperties (const char *_url)
   // Here we read properties. We check if this is a dir with .directory
   // then if this is the bookmarked url, last if this is on the desktop
 
-  // If KRootWidget doesn't exist, no local properties. This should only happen if a
-  // window is restored by session management, anyway.
-  if (!KRootWidget::pKRootWidget) return;
+  if (!KRootWidget::pKRootWidget) // No desktop : the window is being restored
+      // by session management. Then use SM values, not local properties.
+      return;
 
   // check if this options are enabled:
-  if (!KRootWidget::pKRootWidget->isURLPropesEnabled ())
+  if (!pkfm->isURLPropesEnabled ())
     return;
   
   int isADir;
@@ -794,19 +795,19 @@ void KfmView::checkLocalProperties (const char *_url)
 
   // .directory not readable or not found and not bookmarked.
   // See if it is on desktop
-
+  
   for (KRootIcon *i = IconList.first(); i; i = IconList.next())
-    if (strstr (i->getURL(), ".kdelnk"))
-    {
-      KSimpleConfig cfg(&(i->getURL())[5]); // #inline, so it's fast
-      cfg.setGroup("KDE Desktop Entry");
-      if (!strcmp (cfg.readEntry("URL").data(), _url))
+      if (strstr (i->getURL(), ".kdelnk"))
       {
-        gui->loadProperties((KConfig *) &cfg); // will sync on end
-        return;
+          KSimpleConfig cfg(&(i->getURL())[5]); // #inline, so it's fast
+          cfg.setGroup("KDE Desktop Entry");
+          if (!strcmp (cfg.readEntry("URL").data(), _url))
+          {
+              gui->loadProperties((KConfig *) &cfg); // will sync on end
+              return;
+          }
       }
-    }
-
+  
   // Not found or not readable:
   // Tell gui that there is no URL properties!!!!
   gui->setHasLocal(false);

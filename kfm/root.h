@@ -257,11 +257,6 @@ public:
      */
     int iconStyle( void ) const { return iconstyle; }
 
-    /**
-     * Sets and returns is per URL setting enabled - sven
-     */
-    bool isURLPropesEnabled () {return allowURLProps;}
-    void setURLProps (bool flag) {allowURLProps = flag;}
 
 public slots:
     void slotPopupActivated( int _id );
@@ -433,11 +428,6 @@ protected:
       */
     int gridwidth, gridheight;
     int oldgridwidth, oldgridheight;
-
-    /**
-     * didn't know where to put this. It is global setting (sven)
-     */
-    bool allowURLProps;
 };
 
 #endif

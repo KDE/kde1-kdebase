@@ -26,6 +26,7 @@
 Kfm* Kfm::pKfm = 0L;
 QStrList* Kfm::pHistory = 0L;
 bool Kfm::s_bGoingDown = false;
+bool Kfm::allowURLProps = false;
 
 void sig_segv_handler( int signum );
 
@@ -38,6 +39,17 @@ Kfm::Kfm()
 
     HTMLCache::load();
     
+    pIconLoader = new KIconLoader();
+
+    // We need this in KfmGui::KfmGui(), so moved it here. DF.
+    QStrList* list = pIconLoader->getDirList();
+    list->clear();
+    QString tmp = kapp->kde_icondir().copy();
+    list->append( tmp.data() );
+    tmp = KApplication::localkdedir();
+    tmp += "/share/icons";
+    list->append( tmp.data() );
+
     if ( KfmGui::rooticons )
     {
 	kapp->enableSessionManagement( TRUE );
@@ -47,6 +59,9 @@ Kfm::Kfm()
 	connect( kapp, SIGNAL( shutDown() ), this, SLOT( slotShutDown() ) );
 
 	KConfig *config = kapp->getConfig();
+	config->setGroup("KFM Misc Defaults");
+        // sven - moved here by david
+        allowURLProps = config->readBoolEntry( "EnablePerURLProps", false );
 	config->setGroup( "SM" );
 	bool flag = config->hasKey( "URLs" );
 	
@@ -73,16 +88,6 @@ Kfm::Kfm()
 	    }
 	}
     }
-
-    pIconLoader = new KIconLoader();
-
-    QStrList* list = pIconLoader->getDirList();
-    list->clear();
-    QString tmp = kapp->kde_icondir().copy();
-    list->append( tmp.data() );
-    tmp = KApplication::localkdedir();
-    tmp += "/share/icons";
-    list->append( tmp.data() );
 
     connect( &timer, SIGNAL( timeout() ), this, SLOT( slotTouch() ) );
     // Call every hour

@@ -1216,7 +1216,7 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
         //--------------------------------------------------------------------
         // Sven's changes: if this is shown view add entry Save settings..
 
-        if (_current_dir && KRootWidget::getKRootWidget()->isURLPropesEnabled ())
+        if (_current_dir && pkfm->isURLPropesEnabled ())
         {
           popupMenu->insertSeparator();
           popupMenu->insertItem(klocale->getAlias(ID_STRING_SAVE_URL_PROPS),

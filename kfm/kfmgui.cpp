@@ -391,8 +391,7 @@ void KfmGui::initMenu()
 
     moptions->insertItem( klocale->translate("Configure Browser..."),
                           this, SLOT(slotConfigureBrowser()));
-    if (KRootWidget::getKRootWidget() &&
-        KRootWidget::getKRootWidget()->isURLPropesEnabled())
+    if (pkfm->isURLPropesEnabled())
       moptions->setItemEnabled(moptions->idAt( 6 ), true);
     else
       moptions->setItemEnabled(moptions->idAt( 6 ), false);
@@ -1562,13 +1561,12 @@ void KfmGui::slotConfigureBrowser()
 								   );
               
 	      KRootWidget::getKRootWidget()->setRootIconStyle( rootopts.iconstyle );
-              KRootWidget::getKRootWidget()->setURLProps(  rootopts.urlprops ); //sven
               KRootWidget::getKRootWidget()->setRootIconColors( rootopts.icon_fg, rootopts.icon_bg);
-              if (rootopts.urlprops)
-                moptions->setItemEnabled(moptions->idAt( 6 ), true);
-              else
-                moptions->setItemEnabled(moptions->idAt( 6 ), false);
-
+              pkfm->setURLProps( rootopts.urlprops ); //sven
+              KfmGui *w;
+              for ( w = windowList->first(); w != 0L; w = windowList->next() ) {
+                  w->moptions->setItemEnabled(w->moptions->idAt( 6 ), rootopts.urlprops);
+              }
 	    }
 
 	  }
