@@ -4,9 +4,9 @@
 
 #include "kfmserver_ipc.h"
 
-void KfmIpc::parse_refreshDesktop( char *, int )
+void KfmIpc::parse_refreshDesktop( char *_data, int _len )
 {
-	// int pos = 0;
+	int pos = 0;
 
 	// Calling function
 	emit refreshDesktop(  );
@@ -121,9 +121,9 @@ void KfmIpc::parse_ask( char *_data, int _len )
 	emit ask( _x, _y, _src, _dest );
 }
 
-void KfmIpc::parse_sortDesktop( char * , int  )
+void KfmIpc::parse_sortDesktop( char *_data, int _len )
 {
-	// int pos = 0;
+	int pos = 0;
 
 	// Calling function
 	emit sortDesktop(  );
@@ -138,6 +138,29 @@ void KfmIpc::parse_auth( char *_data, int _len )
 	_password = read_string( _data, pos, _len );
 	// Calling function
 	emit auth( _password );
+}
+
+void KfmIpc::parse_selectRootIcons( char *_data, int _len )
+{
+	int pos = 0;
+
+	// Parsing int
+	int _x;
+	_x = read_int( _data, pos, _len );
+	// Parsing int
+	int _y;
+	_y = read_int( _data, pos, _len );
+	// Parsing int
+	int _w;
+	_w = read_int( _data, pos, _len );
+	// Parsing int
+	int _h;
+	_h = read_int( _data, pos, _len );
+	// Parsing bool
+	bool _add;
+	_add = read_bool( _data, pos, _len );
+	// Calling function
+	emit selectRootIcons( _x, _y, _w, _h, _add );
 }
 
 void KfmIpc::finished()

@@ -9,10 +9,10 @@ KfmIpcServer::KfmIpcServer()
     serv_sock = new KServerSocket( 0 ); /* 0: choose free port */
     if ( serv_sock->socket() < 0 )
     {
-	debugT("ERROR: Could not establish server\n");
+	printf("ERROR: Could not establish server\n");
 	exit(1);
     }
-    debugT( "SOCK=%i\n",serv_sock->getPort());
+    printf( "SOCK=%i\n",serv_sock->getPort());
     connect( serv_sock, SIGNAL( accepted(KSocket*) ), 
 	    this, SLOT( slotAccept(KSocket*) ) );
 }
@@ -35,19 +35,19 @@ int KfmIpcServer::getPort()
 
 KfmIpc::KfmIpc( KSocket *_sock )
 {
-    bHeader = true;
+    bHeader = TRUE;
     cHeader = 0;
     pBody = 0L;
 
     connect( _sock, SIGNAL( readEvent(KSocket*) ), this, SLOT( readEvent(KSocket*) ) );
     connect( _sock, SIGNAL( closeEvent(KSocket*) ), this, SLOT( closeEvent(KSocket*) ) );
-    _sock->enableRead( true );
+    _sock->enableRead( TRUE );
     data_sock = _sock;
 }
 
 KfmIpc::~KfmIpc()
 {
-    data_sock->enableRead( false );
+    data_sock->enableRead( FALSE );
     delete data_sock;
     if ( pBody != 0L )
 	free( pBody );
@@ -67,13 +67,13 @@ void KfmIpc::readEvent( KSocket *_sock )
 	n = read( data_sock->socket(), headerBuffer + cHeader, 1 );
 	if ( headerBuffer[ cHeader ] == ' ' )
 	{
-	    bHeader = false;
+	    bHeader = FALSE;
 	    cHeader = 0;
 	    bodyLen = atoi( headerBuffer );
 	    cBody = 0;
 	    if ( bodyLen <= 0 )
 	    {
-		debugT("ERROR: Invalid header\n");
+		printf("ERROR: Invalid header\n");
 		delete this;
 		return;
 	    }
@@ -83,7 +83,7 @@ void KfmIpc::readEvent( KSocket *_sock )
 	}
 	else if ( cHeader + n == 10 )
 	{
-	    debugT("ERROR: Too long header\n");
+	    printf("ERROR: Too long header\n");
 	    delete this;
 	    return;
 	}
@@ -91,7 +91,7 @@ void KfmIpc::readEvent( KSocket *_sock )
 	{
 	    if ( !isdigit( headerBuffer[ cHeader ] ) )
 	    {
-		debugT("ERROR: Header must be an int\n");
+		printf("ERROR: Header must be an int\n");
 		delete this;
 		return;
 	    }
@@ -106,8 +106,8 @@ void KfmIpc::readEvent( KSocket *_sock )
     if ( n + cBody == bodyLen )
     {
 	pBody[bodyLen] = 0;
-	debugT(">>'%s'\n",pBody);
-	bHeader = true;
+	printf(">>'%s'\n",pBody);
+	bHeader = TRUE;
 	parse( pBody, bodyLen );
 	return;
     }
@@ -133,6 +133,7 @@ void KfmIpc::parse( char *_data, int _len )
 	if ( strcmp( name, "ask" ) == 0 ) { parse_ask( _data, _len ); } else
 	if ( strcmp( name, "sortDesktop" ) == 0 ) { parse_sortDesktop( _data, _len ); } else
 	if ( strcmp( name, "auth" ) == 0 ) { parse_auth( _data, _len ); } else
+	if ( strcmp( name, "selectRootIcons" ) == 0 ) { parse_selectRootIcons( _data, _len ); } else
 		return;
 	free_string( name );
 }

@@ -257,6 +257,24 @@ int doIt( int argc, char **argv )
 	  kfm.openURL( argv[2] );
 	}
     }
+    else if ( strcmp( argv[1], "selectRootIcons" ) == 0 )
+    {
+	if ( argc == 7 )
+	{
+	  int x = atoi( argv[2] );
+	  int y = atoi( argv[3] );	  
+	  int w = atoi( argv[4] );
+	  int h = atoi( argv[5] );
+	  int add = atoi( argv[6] );
+	  bool bAdd = (bool)add;
+	  kfm.selectRootIcons( x, y, w, h, bAdd );
+	}
+	else
+	{
+	    debugT( "Syntax Error: Too many arguments\n" );
+	    exit(1);
+	}
+    }
     else
     {
 	debugT("Synatx Error: Unknown command '%s'\n",argv[1] );

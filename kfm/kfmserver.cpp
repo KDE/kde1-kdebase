@@ -59,6 +59,19 @@ void KFMServer::slotAuthorized( KFMClient * _client )
     connect( _client, SIGNAL( ask( int, int, const char*, const char* ) ), this,
 	     SLOT( slotAsk( int, int, const char *, const char* ) ) );    
     connect( _client, SIGNAL( sortDesktop() ), this, SLOT( slotSortDesktop() ) );
+    connect( _client, SIGNAL( selectRootIcons( int, int, int, int, bool ) ),
+	     this, SLOT( slotSelectRootIcons( int, int, int, int, bool ) ) );
+}
+
+#define root KRootWidget::getKRootWidget()
+
+void KFMServer::slotSelectRootIcons( int _x, int _y, int _w, int _h, bool _add )
+{
+  printf("SELECTING Icons\n");
+  if ( !_add )
+    root->unselectAllIcons();
+  QRect r( _x, _y, _w, _h );
+  root->selectIcons( r );
 }
 
 void KFMServer::slotAccept( KSocket * _sock )

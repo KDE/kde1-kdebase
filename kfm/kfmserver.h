@@ -28,6 +28,7 @@ public slots:
     void slotCopyClients( const char *_src_urls, const char *_dest_url );
     void slotAsk( int _x, int _y, const char *_src_urls, const char *_dest_url );
     void slotSortDesktop();
+    void slotSelectRootIcons( int _x, int _y, int _w, int _h, bool _add );
 };
 
 class KFMClient : public KfmIpc

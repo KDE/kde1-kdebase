@@ -62,6 +62,10 @@ signals:
 	void auth(const char* _password);
 private:
 	void parse_auth( char *_data, int _len );
+signals:
+	void selectRootIcons(int _x, int _y, int _w, int _h, bool _add);
+private:
+	void parse_selectRootIcons( char *_data, int _len );
 public slots:
 	void finished();
 

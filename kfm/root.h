@@ -104,6 +104,15 @@ public:
     const char* getURL() { return url.data(); }
     int getType() { return dndType; }
 
+    /**
+     * Selects/Unselects the icon.
+     */
+    void select( bool _select );
+    /**
+     * @return TRUE if the icon is selected ( highlighted )
+     */
+    bool isSelected() { return bSelected; }
+  
     /// Returns the X-Position for saving in the file ~./desktop
     virtual int saveX() { return x() + pixmapXOffset; }
     /// Returns the Y-Position for saving in the file ~./desktop
@@ -157,6 +166,13 @@ protected:
 
     /// The DropZone bound to this icon
     KDNDDropZone *dropZone;
+
+    /**
+     * Tells us wether this icon is currently selected.
+     *
+     * @see #select
+     */
+    bool bSelected;
 };
 
 class KRootWidget : public QWidget
@@ -172,6 +188,19 @@ public:
       pixels the icons have to move.
      */
     void moveIcons( QStrList & _urls, QPoint &p );
+
+    /**
+     * Unselects all icons.
+     */
+    void unselectAllIcons();
+    /**
+     * Selects all root icons in the given rectangle.
+     */
+    void selectIcons( QRect &rect );
+    /**
+     * Fills '_list' with the URLs of all selected icons.
+     */
+    void getSelectedURLs( QStrList &_list );
       
     /**
      * Returns a list of selected icons or a null string if
@@ -387,7 +416,7 @@ protected:
      * If this value is 0, then the label is not shaped. A value of 1 means
      * that the value is shaped.
      */
-    int iconstyle;                    
+    int iconstyle;
 };
 
 #endif

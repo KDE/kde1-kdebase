@@ -4,11 +4,10 @@
 
 #include "ipc.h"
 #include "kfmclient_ipc.h"
-#include <config-kfm.h>
 
 KfmIpc::KfmIpc( int _port )
 {
-    bHeader = true;
+    bHeader = TRUE;
     cHeader = 0;
     pBody = 0L;
 
@@ -16,8 +15,8 @@ KfmIpc::KfmIpc( int _port )
     sock = new KSocket( "localhost", port );
     connect( sock, SIGNAL( readEvent(KSocket*) ), this, SLOT( readEvent(KSocket*) ) );
     connect( sock, SIGNAL( closeEvent(KSocket*) ), this, SLOT( closeEvent(KSocket*) ) );
-    sock->enableRead( true );
-    connected = true;
+    sock->enableRead( TRUE );
+    connected = TRUE;
 }
 
 KfmIpc::~KfmIpc()
@@ -30,12 +29,12 @@ bool KfmIpc::isConnected()
     return connected;
 }
 
-void KfmIpc::closeEvent( KSocket * )
+void KfmIpc::closeEvent( KSocket * _sock )
 {
-    connected = false;
+    connected = FALSE;
 }
 
-void KfmIpc::readEvent( KSocket * )
+void KfmIpc::readEvent( KSocket *_sock )
 {
     if ( bHeader )
     {
@@ -43,13 +42,13 @@ void KfmIpc::readEvent( KSocket * )
 	n = read( sock->socket(), headerBuffer + cHeader, 1 );
 	if ( headerBuffer[ cHeader ] == ' ' )
 	{
-	    bHeader = false;
+	    bHeader = FALSE;
 	    cHeader = 0;
 	    bodyLen = atoi( headerBuffer );
 	    cBody = 0;
 	    if ( bodyLen <= 0 )
 	    {
-		debugT("ERROR: Invalid header\n");
+		printf("ERROR: Invalid header\n");
 		delete this;
 		return;
 	    }
@@ -59,7 +58,7 @@ void KfmIpc::readEvent( KSocket * )
 	}
 	else if ( cHeader + n == 10 )
 	{
-	    debugT("ERROR: Too long header\n");
+	    printf("ERROR: Too long header\n");
 	    delete this;
 	    return;
 	}
@@ -67,7 +66,7 @@ void KfmIpc::readEvent( KSocket * )
 	{
 	    if ( !isdigit( headerBuffer[ cHeader ] ) )
 	    {
-		debugT("ERROR: Header must be an int\n");
+		printf("ERROR: Header must be an int\n");
 		delete this;
 		return;
 	    }
@@ -82,8 +81,8 @@ void KfmIpc::readEvent( KSocket * )
     if ( n + cBody == bodyLen )
     {
 	pBody[bodyLen] = 0;
-	debugT(">>'%s'\n",pBody);
-	bHeader = true;
+	printf(">>'%s'\n",pBody);
+	bHeader = TRUE;
 	parse( pBody, bodyLen );
 	return;
     }
@@ -100,7 +99,7 @@ void KfmIpc::parse( char *_data, int _len )
     _len -= pos;
 
 	if ( strcmp( name, "finished" ) == 0 ) { parse_finished( _data, _len ); } else
-    { debugT("Unknown command '%s'\n",name); }
+    { printf("Unknown command '%s'\n",name); }
 }
 
 

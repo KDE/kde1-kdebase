@@ -410,7 +410,7 @@ void KfmView::slotPopupNewView()
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
     {
-	KfmView *m = new KfmView( 0L, 0L, s );
+	KfmGui *m = new KfmGui( 0L, 0L, s );
 	m->show();
     }
 }

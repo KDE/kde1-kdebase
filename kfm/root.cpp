@@ -225,6 +225,29 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
     debugT("6\n");
 }
 
+void KRootWidget::selectIcons( QRect &_rect )
+{
+  KRootIcon *icon;
+  for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
+    if ( icon->geometry().intersects( _rect ) )
+      icon->select( TRUE );
+}
+
+void KRootWidget::unselectAllIcons( )
+{
+  KRootIcon *icon;
+  for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
+    icon->select( FALSE );
+}
+
+void KRootWidget::getSelectedURLs( QStrList &_list )
+{
+  KRootIcon *icon;
+  for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
+    if ( icon->isSelected() )
+      _list.append( icon->getURL() );
+}
+
 QString KRootWidget::getSelectedURLs()
 {
     QString erg;
@@ -840,6 +863,8 @@ void KRootWidget::slotPopupEmptyTrash()
 KRootIcon::KRootIcon( const char *_pixmap_file, QString &_url, int _x, int _y ) :
     KDNDWidget( 0L, 0L, WStyle_Customize | WStyle_Tool | WStyle_NoBorder )
 {
+    bSelected = FALSE;
+  
     url = _url;
     url.detach();
     pixmap.load( _pixmap_file );
@@ -910,7 +935,7 @@ void KRootIcon::init()
     p2.begin( &mask );
     p2.setFont( font() );
     
-    if ( root->iconStyle() == 1 )
+    if ( root->iconStyle() == 1 && !bSelected )
        p2.drawText( textXOffset, textYOffset, file );
     else
        p2.fillRect( textXOffset-1, textYOffset-ascent-1, width+2, ascent+descent+2, color1 );     
@@ -921,8 +946,11 @@ void KRootIcon::init()
 	bitBlt( &mask, pixmapXOffset, pixmapYOffset, pixmap.mask() );
     
     p2.end();
-    
-    setBackgroundColor( root->iconBackground() );     
+
+    if ( bSelected )
+      setBackgroundColor( black );
+    else
+      setBackgroundColor( root->iconBackground() );     
 
     this->width = w;
     this->height = pixmap.height() + 5 + ascent + descent + 4;
@@ -977,20 +1005,34 @@ void KRootIcon::resizeEvent( QResizeEvent * )
 void KRootIcon::paintEvent( QPaintEvent * ) 
 {
     bitBlt( this, pixmapXOffset, pixmapYOffset, &pixmap );
-
+  
     QPainter p;
     p.begin( this );
-
+  
     p.setPen( root->labelForeground() );   
     p.drawText( textXOffset, textYOffset, file );
-
+    
+    if ( bSelected )
+    {
+      p.setRasterOp( NotEraseROP );
+      p.fillRect( pixmapXOffset, pixmapYOffset, pixmap.width(), pixmap.height(), blue );
+    }
+    
     p.end();
 }
 
 void KRootIcon::mousePressEvent( QMouseEvent *_mouse )
 {
-    if ( _mouse->button() == LeftButton )
+    // Does the user want to select the icon ?
+    if ( _mouse->button() == LeftButton && ( _mouse->state() & ControlButton ) == ControlButton )
     {
+      printf("Selecting\n");
+      select( !bSelected );
+    }
+    else if ( _mouse->button() == LeftButton )
+    {
+        root->unselectAllIcons();
+
 	// This might be the start of a drag. So we save
 	// the position and set a flag.
 	pressed = true;
@@ -1000,9 +1042,19 @@ void KRootIcon::mousePressEvent( QMouseEvent *_mouse )
     }
     else if ( _mouse->button() == RightButton )
     {
-	QPoint p = mapToGlobal( _mouse->pos() );
 	QStrList list;
-	list.append( url.data() );
+
+        if ( !bSelected )
+        {    
+	  root->unselectAllIcons();
+	  list.append( url.data() );
+	}
+	else
+        {
+	  root->getSelectedURLs( list );
+	}
+	
+	QPoint p = mapToGlobal( _mouse->pos() );
 	root->getManager()->openPopupMenu( list, p );
     }
 }
@@ -1011,7 +1063,6 @@ void KRootIcon::mouseDoubleClickEvent( QMouseEvent * )
 {
     // root->getManager()->openURL( url.data() );
     pressed = false;
-    debugT ("Doubleclick!\n");     
 }
 
 /*
@@ -1024,10 +1075,14 @@ void KRootIcon::dragEndEvent()
     pressed = false;
 }
 
-void KRootIcon::dndMouseReleaseEvent( QMouseEvent * )
+void KRootIcon::dndMouseReleaseEvent( QMouseEvent *_mouse )
 {
     if (pressed == false)
       return;
+
+    if ( _mouse->button() != LeftButton || ( _mouse->state() & ControlButton ) == ControlButton )
+      return;
+    
     root->getManager()->openURL( url.data() );                          
 
     pressed = false;
@@ -1101,6 +1156,20 @@ void KRootIcon::rename( const char *_new_name )
     init();
     setGeometry( x(), y(), width, height );
     repaint();    
+}
+
+void KRootIcon::select( bool _select )
+{
+  if ( bSelected == _select )
+    return;
+
+  bSelected = _select;
+  
+  init();
+  // We changed the mask in init(), so update it here
+  resizeEvent( 0L );
+
+  repaint();
 }
 
 KRootIcon::~KRootIcon()
