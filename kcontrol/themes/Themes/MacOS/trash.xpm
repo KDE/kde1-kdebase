@@ -5,7 +5,7 @@ static char*kfm_trash[]={
 "l c #424242",
 "k c #9cce63",
 "f c #808080",
-"m c #a0a0a0",
+"m c #a0a0a4",
 "j c #004200",
 "J c #0000ad",
 "M c #00319c",

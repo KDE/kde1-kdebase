@@ -5,7 +5,7 @@ static char*kfm_fulltrash[]={
 "m c #424242",
 "l c #9cce63",
 "b c #808080",
-"n c #a0a0a0",
+"n c #a0a0a4",
 "k c #004200",
 "J c #0000ad",
 "M c #00319c",
