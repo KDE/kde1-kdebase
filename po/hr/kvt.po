@@ -21,7 +21,7 @@ msgstr "Backspace tipka poslati æe"
 
 #: main.C:365
 msgid "Cursor key set"
-msgstr ""
+msgstr "Pode¹ena tipka pokazivaèa"
 
 #: main.C:532
 msgid "&New Terminal"
@@ -121,7 +121,7 @@ msgstr "Terminal..."
 
 #: main.C:593
 msgid "Font..."
-msgstr ""
+msgstr "Pismo..."
 
 #: main.C:595
 msgid "Save &Options"

@@ -1,3 +1,5 @@
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Radoslav Dejanovic <rdejanov@public.srce.hr>, 1998.
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1998-06-16 15:37+0200\n"
@@ -22,7 +24,6 @@ msgid "&Start search"
 msgstr "&Pokreni pretragu"
 
 #: kfindtop.cpp:120
-#, fuzzy
 msgid "S&top search"
 msgstr "&Zaustavi pretragu"
 

@@ -595,19 +595,19 @@ msgstr "Kugla"
 
 #: science.cpp:71
 msgid "Exponential"
-msgstr ""
+msgstr "Eksponencijalno"
 
 #: science.cpp:74
 msgid "Contraction"
-msgstr ""
+msgstr "Skupljanje"
 
 #: science.cpp:77
 msgid "Wave"
-msgstr ""
+msgstr "Val"
 
 #: science.cpp:80
 msgid "Curvature"
-msgstr ""
+msgstr "Zakrivljenje"
 
 #: science.cpp:112
 msgid "Science"
@@ -615,7 +615,7 @@ msgstr "Znanost"
 
 #: science.cpp:447
 msgid "rendering lens..."
-msgstr ""
+msgstr "izraðujem leæu..."
 
 #: science.cpp:769
 msgid "grabbing screen..."
@@ -639,7 +639,7 @@ msgstr "Gravitacija"
 
 #: science.cpp:983
 msgid "Hide Background"
-msgstr ""
+msgstr "Sakrij pozadinu"
 
 #: science.cpp:1009
 msgid "Intensity:"
@@ -650,13 +650,12 @@ msgid "Motion:"
 msgstr "Pokret:"
 
 #: science.cpp:1260
-#, fuzzy
 msgid "Science Version"
-msgstr "Znanost"
+msgstr "Znanost Inaèica"
 
 #: science.cpp:1261
 msgid "written by"
-msgstr ""
+msgstr "napisao"
 
 #: science.cpp:1262
 msgid "About Science"
@@ -747,17 +746,3 @@ msgstr ""
 "Copyright (c) 1991 Patrick J. Naughton\n"
 "\n"
 "Prilagodio za kscreensave Emanuel Pirker."
-
-#~ msgid "Move"
-#~ msgstr "Pomakni"
-
-#~ msgid ""
-#~ "Science Version 0.24.2 beta\n"
-#~ "\n"
-#~ "written by Rene Beutler 1998\n"
-#~ "rbeutler@g26.ethz.ch"
-#~ msgstr ""
-#~ "Znanost 0.24.2 beta\n"
-#~ "\n"
-#~ "napisao Rene Beutler 1998\n"
-#~ "rbeutler@g26.ethz.ch"
