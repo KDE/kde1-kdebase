@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:48:52 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Thu Nov 20 13:00:00 1997
-// Update Count     : 103
+// Last Modified On : Sun Nov 23 06:22:53 1997
+// Update Count     : 104
 // Status           : Unknown, Use with caution!
 // 
 
@@ -350,7 +350,8 @@ DoIt()
      kgreeter->show();
      QApplication::restoreOverrideCursor();
      qApp->exec();
-
+     // Give focus to root window:
+     QApplication::desktop()->setActiveWindow();
      delete kgreeter;
 }
 
