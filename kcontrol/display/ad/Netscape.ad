@@ -5,7 +5,7 @@ netscape*XmText*background: WINDOW_BACKGROUND
 netscape*XmTextField*foreground: WINDOW_FOREGROUND
 netscape*XmTextField*background: WINDOW_BACKGROUND
 netscape*XmList*foreground: WINDOW_FOREGROUND
-netsacpe*XmList*background: WINDOW_BACKGROUND
+netscape*XmList*background: WINDOW_BACKGROUND
 netscape*topShadowColor: HIGHLIGHT
 netscape*bottomShadowColor: LOWLIGHT
 netscape*urlText*foreground: WINDOW_FOREGROUND
