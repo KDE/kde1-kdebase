@@ -17,8 +17,7 @@ msgstr ""
 
 #: kikbd.cpp:116
 msgid "KDE International Keyboard already started on this display."
-msgstr ""
-"Die KDE-Internationale-Tastatur wurde bereits auf diesem Display gestartet."
+msgstr "Die KDE-Internationale-Tastatur wurde bereits auf diesem Display gestartet."
 
 #: kikbd.cpp:288
 #, c-format
@@ -27,7 +26,7 @@ msgid ""
 "Using X default codes."
 msgstr ""
 "X Codes \"%s\" Datei existiert nicht.\n"
-"Benutze X Standard codes."
+"Benutze X Standard Codes."
 
 #: kikbd.cpp:313
 #, c-format
@@ -62,7 +61,6 @@ msgstr ""
 "Alt-Symbole deaktiviert"
 
 #: kikbd.cpp:392
-#, fuzzy
 msgid ""
 "Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -166,7 +164,6 @@ msgid "Both Shift's (Shift+Shift)"
 msgstr "Beide Shifts (Shift+Shift)"
 
 #: kikbdconf.cpp:115
-#, fuzzy
 msgid "Right Meta"
 msgstr "Alt Gr"
 
@@ -179,7 +176,6 @@ msgid "Left  Control"
 msgstr "Links Strg"
 
 #: kikbdconf.cpp:118
-#, fuzzy
 msgid "Left  Meta"
 msgstr "Links Alt"
 
@@ -204,19 +200,21 @@ msgid "X default codes"
 msgstr "X Standard codes"
 
 #: kikbdconf.cpp:209
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "Do you want to configure now?"
 msgstr ""
-"\n"
-"Möchten Sie die fortfahren?"
+"%s\n"
+"Möchten Sie die Konfiguration jetzt vornehmen ?"
 
 #: kikbdconf.cpp:217
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
 msgstr ""
+"Sie benutzen \"Internationale Tastatur\" zum ersten Mal.\n"
+"Es wurden einige Standardwerte voreingestellt."
 
 #: kikbdconf.cpp:359
 msgid "unknown"
@@ -271,12 +269,10 @@ msgid "alternative symbols"
 msgstr "Alternative Symbole"
 
 #: kikbdconf.cpp:429
-#, fuzzy
 msgid "Language"
 msgstr "Sprache"
 
 #: kikbdconf.cpp:433
-#, fuzzy
 msgid "Charset"
 msgstr "Zeichensatz"
 
@@ -302,7 +298,7 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 "\n"
-"Möchten Sie die fortfahren?"
+"Möchten Sie fortfahren?"
 
 #: widgets.cpp:107
 msgid "List of active keyboard maps"
@@ -513,12 +509,11 @@ msgstr "Starte automatisch"
 
 #: widgets.cpp:648
 msgid "&Docked"
-msgstr "Einge&bunden in KPanel"
+msgstr "Einge&bunden in Panel"
 
 #: widgets.cpp:649
-#, fuzzy
 msgid "Dock into special area in the panel"
-msgstr "Docke in KPanel in einem besonderen Bereich"
+msgstr "Docke in Panel in einem besonderen Bereich"
 
 #: widgets.cpp:658
 msgid "Place"
