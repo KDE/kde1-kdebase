@@ -819,7 +819,7 @@ void Manager::activateClient(Client* c, bool set_revert){
   
   // for FocusFollowMouse: discard all enter/leave events
   XEvent ev;
-  while (XCheckMaskEvent(dpy, EnterWindowMask | LeaveWindowMask, &ev));
+  while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
 
   if (c->Ptakefocus)
     sendClientMessage(c->window, wm_protocols, wm_take_focus);

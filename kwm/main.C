@@ -353,7 +353,7 @@ MyApp::MyApp(int &argc = 0, char **argv = 0, const QString& rAppName = 0):KAppli
       ::exit(0);
     }
     else {
-      printf("Usage:");
+      printf("Usage: ");
       printf("%s [-version]\n", argv[0]);
     }
     ::exit(1); 

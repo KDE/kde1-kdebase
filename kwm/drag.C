@@ -257,7 +257,7 @@ int sweepdrag(Client* c, XButtonEvent * /* e0 */,
       else {
 	manager->sendConfig(c);
 	XSync(qt_xdisplay(), False);
-	while (XCheckMaskEvent(dpy, EnterWindowMask | LeaveWindowMask, &ev));
+	while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
 	myapp->processEvents(); 
       }
       XFlush(dpy);
@@ -283,7 +283,7 @@ int sweepdrag(Client* c, XButtonEvent * /* e0 */,
     if (options.WindowMoveType == TRANSPARENT || recalc != dragcalc)
       XUngrabServer(dpy);
 
-    while (XCheckMaskEvent(dpy, EnterWindowMask | LeaveWindowMask, &ev));
+    while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
 
     if (c->isMaximized()){
       c->geometry_restore = c->geometry;

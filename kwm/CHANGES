@@ -12,6 +12,10 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 4
+       - small bug with buttons remaining raised fixed. Was introduced
+         in the previous patchlevel with the avoid-flickering patch:(
+
   patchlevel 3:
        - session management can handle even crappy missbehaving clients
          like xfig, which destroy their window instead of saving theirselfs.
