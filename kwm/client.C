@@ -1588,8 +1588,10 @@ void Client::paintState(bool only_label, bool colors_have_changed, bool animate)
 
   if (only_label && animate){
     double_buffering = (look == H_SHADED || look == V_SHADED || look == PIXMAP);
-    if(titlestring_delay)
+    if(titlestring_delay) {
       titlestring_delay--;
+      return;
+    }
     else
       titlestring_offset += titlestring_offset_delta;
     if (!double_buffering){
