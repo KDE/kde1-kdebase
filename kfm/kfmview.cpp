@@ -506,10 +506,7 @@ void KfmView::slotPopupDelete()
 	char *s;
 	for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
 	{
-	    // Decode the URL -- NOT here (kioslave does this) (Hen)
-	    QString str( s );
-//	    KURL::decodeURL( str );
-	    list.append( str );
+	    list.append( s );
 	}
 
 	KIOJob * job = new KIOJob;	
@@ -681,9 +678,7 @@ void KfmView::slotOnURL( const char *_url )
 	}
 
 	QString decodedPath( url.path() );
-	KURL::decodeURL( decodedPath );
 	QString decodedName( url.filename() );
-	KURL::decodeURL( decodedName );
 	
         struct stat buff;
         stat( decodedPath, &buff );
@@ -743,8 +738,8 @@ void KfmView::slotOnURL( const char *_url )
         else
 	{
 	    QString decodedURL( _url );
-	    KURL::decodeURL( decodedURL );
-	    gui->slotSetStatusBar( decodedURL );
+            KURL::decodeURL(decodedURL);	    
+            gui->slotSetStatusBar( decodedURL );
 	}
     }
 }

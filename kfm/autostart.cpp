@@ -21,8 +21,8 @@ void autostart()
     
     DIR *dp;
     struct dirent *ep;
-    KURL u1( url );
-    dp = opendir( u1.path() );
+
+    dp = opendir( KFMPaths::AutostartPath() );
     if ( dp == NULL )
     {
 	QMessageBox::message( klocale->translate("KFM Installation Error"), 

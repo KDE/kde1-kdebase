@@ -646,10 +646,8 @@ int KIOServer::isDir( const char *_url )
     // Local filesystem without subprotocol
     else if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
     {
-	QString myfn = u.path();
-	KURL::decodeURL(myfn);
 	struct stat buff;
-	stat( myfn.data(), &buff );
+	stat( u.path(), &buff );
 
 	if ( S_ISDIR( buff.st_mode ) )
 	    return 1;

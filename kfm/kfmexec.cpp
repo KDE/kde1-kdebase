@@ -66,8 +66,6 @@ void KFMExec::openURL( const char *_url  )
     QString path = u.path();
     if ( !u.hasSubProtocol() && strcmp( u.protocol(), "file" ) == 0 && path.right(7) == ".kdelnk" )
     {
-	KURL::decodeURL( path );
-    
 	// Try tp open the *.kdelnk file
 	QFile file( path );
 	if ( file.open( IO_ReadOnly ) )

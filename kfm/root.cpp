@@ -381,7 +381,7 @@ void KRootWidget::saveLayout()
 {
     KRootIcon *icon;
 
-    QString file = QDir::homeDirPath().data();
+    QString file = QDir::homeDirPath().copy();
     file += "/.kde/share/apps/kfm/desktop";
     
     FILE *f = fopen( file.data(), "w" );
@@ -605,9 +605,9 @@ void KRootWidget::update()
 	{   
 	    KRootIcon *icon;
 
-	    QString file = desktopDir;
-	    file.detach();
-	    file += ep->d_name;
+	    QString file = ep->d_name;
+	    KURL::encodeURL(file);
+	    file.insert(0, desktopDir);
 
 	    icon = findIcon( file.data() );
 	    	    
@@ -1141,7 +1141,6 @@ void KRootIcon::initFilename()
     // I didn't want to introduce new member functions, so it exists
     // twice
     QString decoded = url;
-    KURL::decodeURL( decoded );
     
     QString n = decoded.data() + 5;
 

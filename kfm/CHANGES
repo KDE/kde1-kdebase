@@ -180,3 +180,10 @@
 
 14.02.98 Stephan
   - applied patch by Martin Jones, that fixes the text selection in HTML view
+
+18.02.98 Stephan
+  - I moved the decoding of path() into KURL and fixed some things concerning
+    decoding/encoding.
+    Note: I think, kfm still doesn't handle the whole URL issue good enough,
+    but to change this, would mean to replace the const char* arguments with
+    KURL arguments, I guess

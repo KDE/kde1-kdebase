@@ -46,11 +46,7 @@ void openWithOldApplication( const char *_cmd, QStrList& _urlList )
 	{
 	    tmp += "\"";
 	    KURL file( s );
-	    
-	    QString decoded( file.path() );
-	    KURL::decodeURL( decoded );
-	    decoded = KIOServer::shellQuote( decoded ).data();
-	    tmp += decoded.data();
+	    tmp += KIOServer::shellQuote( file.path() );
 	    tmp += "\" ";
 	}
 	

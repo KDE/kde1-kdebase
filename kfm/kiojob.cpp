@@ -208,11 +208,9 @@ void KIOJob::link()
 
 	QString supath( su.path() );  // source path
 	supath.detach();
-	KURL::decodeURL( supath );
 
 	QString dupath( du.path() );  // destination path
 	dupath.detach();
-	KURL::decodeURL( dupath );
 	
 	// Which directories do we have to notify ?
 	if ( notifyList.find( du.directoryURL( false ) ) == -1 )
@@ -521,11 +519,9 @@ void KIOJob::copy()
 
 	    QString supath( su.path() );  // source path
 	    supath.detach();
-	    KURL::decodeURL( supath );
 
 	    QString dupath( du.path() );  // destination path
 	    dupath.detach();
-	    KURL::decodeURL( dupath );
 
 	    stat( supath.data(), &buff );
 	    if ( S_ISDIR( buff.st_mode ) )
@@ -713,11 +709,9 @@ void KIOJob::move()
 
 	QString supath( su.path() );  // source path
 	supath.detach();
-	KURL::decodeURL( supath );
 
 	QString dupath( du.path() );  // destination path
 	dupath.detach();
-	KURL::decodeURL( dupath );
 	
 	int i = 1;
 	// Moving on the local hard disk ?
@@ -977,7 +971,6 @@ void KIOJob::del()
 	{
 	    QString supath( su.path() );  // file to delete
 	    supath.detach();
-	    KURL::decodeURL( supath );
 
 	    struct stat buff;
 	    stat( supath, &buff );

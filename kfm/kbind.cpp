@@ -220,7 +220,6 @@ KMimeType* KMimeType::getMagicMimeType( const char *_url )
 	return type;
     
     QString path( u.path() );
-    KURL::decodeURL( path );
     KMimeMagicResult* result = KMimeType::findFileType( path );
 
     // Is it a directory or dont we know anything about it ?
@@ -507,7 +506,6 @@ KMimeType* KMimeType::findType( const char *_url )
 	if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
 	{   
 	    QString path = u.path();
-	    KURL::decodeURL( path );   
 	    if ( access( path, R_OK|X_OK ) < 0 )
 		return lockedfolderType;
 	}
@@ -615,7 +613,6 @@ KMimeType* KMimeType::findType( const char *_url )
     if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
     {
 	QString path( u.path() );
-	KURL::decodeURL( path );
 	
 	struct stat buff;
 	// Can we make a stat ?
@@ -1192,13 +1189,8 @@ bool KMimeBind::runBinding( const char *_url, const char *_binding )
     if ( u.isMalformed() )
 	return FALSE;
 
-    QString decodedPath( u.path() );
-    KURL::decodeURL( decodedPath );
-    QString decodedURL( _url );
-    KURL::decodeURL( decodedURL );
-    
-    KMimeType *typ = KMimeType::getMagicMimeType( decodedURL );    
-    return typ->runBinding( decodedURL, _binding );
+    KMimeType *typ = KMimeType::getMagicMimeType( _url );    
+    return typ->runBinding( _url, _binding );
 }
 
 bool KMimeBind::runBinding( const char *_url )
@@ -1207,14 +1199,8 @@ bool KMimeBind::runBinding( const char *_url )
     if ( u.isMalformed() )
 	return FALSE;
 
-    QString decodedPath( u.path() );
-    KURL::decodeURL( decodedPath );
-    QString decodedURL( _url );
-    // An application which accepts an URL does decoding itself ! (Hen)
-    // KURL::decodeURL( decodedURL );
-
-    QString quote1 = KIOServer::shellQuote( decodedPath ).copy();
-    QString quote2 = KIOServer::shellQuote( decodedURL ).copy();
+    QString quote1 = KIOServer::shellQuote( u.path() ).copy();
+    QString quote2 = KIOServer::shellQuote( _url ).copy();
     
     QString f;
     QString ur;
@@ -1420,7 +1406,6 @@ KConfig* KMimeBind::openKConfig( const char *_url ) // kalle
 	return 0L;
     
     QString decoded( u.path() );
-    KURL::decodeURL( decoded );
     
     FILE *f;
     // _url must be of type 'file:/'
@@ -1555,12 +1540,10 @@ bool ExecutableMimeType::runAsApplication( const char *_url, QStrList *_argument
 	return TRUE;
     }
     
-    QString decodedPath( u.path() );
-    KURL::decodeURL( decodedPath );
     QString decodedURL( _url );
     KURL::decodeURL( decodedURL );
 
-    QString exec = KIOServer::shellQuote( decodedPath );
+    QString exec = KIOServer::shellQuote( u.path() );
     QString cmd = "\"";
     cmd += exec;
     cmd += "\" ";
@@ -1575,7 +1558,6 @@ bool ExecutableMimeType::runAsApplication( const char *_url, QStrList *_argument
 	    if ( strcmp( u.protocol(), "file" ) == 0 )
 	    {
 		QString dec( su.path() );
-		KURL::decodeURL( dec );
 		dec = KIOServer::shellQuote( dec );
 		cmd += dec;
 	    }
@@ -1732,7 +1714,6 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
 	{
 	    KURL su( s );
 	    QString decoded( su.path() );
-	    KURL::decodeURL( decoded );
 	    decoded = KIOServer::shellQuote( decoded ).data();
 	    f += "\"";
 	    f += decoded;

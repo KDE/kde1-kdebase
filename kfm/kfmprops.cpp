@@ -175,7 +175,6 @@ PropsPage::PropsPage( Properties *_props ) : QWidget( _props->getTab(), 0L )
 FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 {
     QString path = properties->getKURL()->path();
-    KURL::decodeURL( path );
 
     // Extract the directories name without path
     QString filename;
@@ -188,8 +187,6 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 	filename = tmp2.mid( i + 1, tmp2.length() );
     else
 	filename = "/";
-    
-    KURL::decodeURL( filename );
     
     QString tmp = path.data();
     if ( tmp.right(1) != "/" )
@@ -341,9 +338,7 @@ bool FilePropsPage::supports( KURL *_kurl )
 void FilePropsPage::applyChanges()
 {
     QString path = properties->getKURL()->path();
-    KURL::decodeURL( path );
     QString fname = properties->getKURL()->filename();
-    KURL::decodeURL( fname );
     // QString n = name->text();
     // KURL::encodeURL( n );
     
@@ -377,9 +372,7 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
 : PropsPage( _props )
 {
     QString path = properties->getKURL()->path();
-    KURL::decodeURL( path );
     QString fname = properties->getKURL()->filename();
-    KURL::decodeURL( fname );
 
     /* remove appended '/' .. see comment in FilePropsPage */
     if ( path.length() > 1 && path.right( 1 ) == "/" )
@@ -605,9 +598,7 @@ bool FilePermissionsPropsPage::supports( KURL *_kurl )
 void FilePermissionsPropsPage::applyChanges()
 {
     QString path = properties->getKURL()->path();
-    KURL::decodeURL( path );
     QString fname = properties->getKURL()->filename();
-    KURL::decodeURL( fname );
 
     mode_t p = 0L;
     for (int row = 0;row < 3; ++row)
@@ -825,7 +816,6 @@ bool ExecPropsPage::supports( KURL *_kurl )
 	return false;
 
     QString t( _kurl->path() );
-    KURL::decodeURL( t );
 
     struct stat buff;
     stat( t, &buff );
@@ -863,7 +853,6 @@ bool ExecPropsPage::supports( KURL *_kurl )
 void ExecPropsPage::applyChanges()
 {
     QString path = properties->getKURL()->path();
-    KURL::decodeURL( path );
 
     QFile f( path );
     if ( !f.open( IO_ReadWrite ) )
@@ -929,7 +918,6 @@ URLPropsPage::URLPropsPage( Properties *_props ) : PropsPage( _props )
     iconBox->setGeometry( 10, 90, 50, 50 );
 
     QString path = _props->getKURL()->path();
-    KURL::decodeURL( path );
 
     QFile f( path );
     if ( !f.open( IO_ReadOnly ) )
@@ -958,7 +946,6 @@ bool URLPropsPage::supports( KURL *_kurl )
 	return false;
 
     QString path = _kurl->path();
-    KURL::decodeURL( path );
 
     struct stat buff;
     stat( path, &buff );
@@ -994,7 +981,6 @@ bool URLPropsPage::supports( KURL *_kurl )
 void URLPropsPage::applyChanges()
 {
     QString path = properties->getKURL()->path();
-    KURL::decodeURL( path );
 
     QFile f( path );
     if ( !f.open( IO_ReadWrite ) )
@@ -1032,7 +1018,6 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
     connect( globalButton, SIGNAL( clicked() ), this, SLOT( slotApplyGlobal() ) );
 
     QString tmp = _props->getKURL()->path();
-    KURL::decodeURL( tmp );
     if ( tmp.right(1) != "/" )
 	tmp += "/.directory";
     else
@@ -1094,7 +1079,6 @@ bool DirPropsPage::supports( KURL *_kurl )
 {
     // Is it the trash bin ?
     QString path = _kurl->path();
-    KURL::decodeURL( path );
 
     QString tmp = path.data();
     if ( tmp.right(1) != "/" )
@@ -1118,7 +1102,6 @@ bool DirPropsPage::supports( KURL *_kurl )
 void DirPropsPage::applyChanges()
 {
     QString tmp = properties->getKURL()->path();
-    KURL::decodeURL( tmp );
     if ( tmp.right(1) != "/" )
 	tmp += "/.directory";
     else
@@ -1402,7 +1385,6 @@ bool ApplicationPropsPage::supports( KURL *_kurl )
 	return false;
 
     QString path = _kurl->path();
-    KURL::decodeURL( path );
 
     struct stat buff;
     stat( path, &buff );
@@ -1440,7 +1422,6 @@ bool ApplicationPropsPage::supports( KURL *_kurl )
 void ApplicationPropsPage::applyChanges()
 {
     QString path = properties->getKURL()->path();
-    KURL::decodeURL( path );
 
     QFile f( path );
     if ( !f.open( IO_ReadWrite ) )
@@ -1616,7 +1597,6 @@ bool BindingPropsPage::supports( KURL *_kurl )
 	return false;
 
     QString path = _kurl->path();
-    KURL::decodeURL( path );
 
     struct stat buff;
     stat( path, &buff );
@@ -1654,7 +1634,7 @@ bool BindingPropsPage::supports( KURL *_kurl )
 void BindingPropsPage::applyChanges()
 {
     QString path = properties->getKURL()->path();
-    KURL::decodeURL( path );
+
     QFile f( path );
     if ( !f.open( IO_ReadWrite ) )
     {
@@ -1751,7 +1731,6 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
     unmounted->setGeometry( 170, 250, 50, 50 );
 
     QString path( _props->getKURL()->path() );
-    KURL::decodeURL( path );
     
     QFile f( path );
     if ( !f.open( IO_ReadOnly ) )
@@ -1795,7 +1774,6 @@ bool DevicePropsPage::supports( KURL *_kurl )
 	return false;
 
     QString path = _kurl->path();
-    KURL::decodeURL( path );
 
     struct stat buff;
     stat( path, &buff );
@@ -1833,7 +1811,6 @@ bool DevicePropsPage::supports( KURL *_kurl )
 void DevicePropsPage::applyChanges()
 {
     QString path = properties->getKURL()->path();
-    KURL::decodeURL( path );
     QFile f( path );
     if ( !f.open( IO_ReadWrite ) )
     {
