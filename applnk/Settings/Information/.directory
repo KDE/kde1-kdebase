@@ -6,6 +6,7 @@ Name[cs]=Informace
 Name[fi]=Tietoja
 Name[sv]=Information
 Name[it]=Informazioni
+Name[hu]=Információ
 MiniIcon=readme.xpm
 SortOrder=memory.kdelnk,processor.kdelnk
 Icon=information.xpm

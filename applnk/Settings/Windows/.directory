@@ -7,6 +7,7 @@ Name[cs]=Okna
 Name[fi]=Ikkunat
 Name[sv]=Fönster
 Name[it]=Finestre
+Name[hu]=Ablakok
 MiniIcon=windows.xpm
 SortOrder=buttons.kdelnk,titlebar.kdelnk,properties.kdelnk
 Icon=kcmkwm.xpm

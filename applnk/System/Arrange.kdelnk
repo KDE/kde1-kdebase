@@ -9,6 +9,7 @@ Name[fi]=Järjestä ikonit
 Name[it]=Disponi Icone
 Name[fr]=Rangement des icônes
 Name[pr]=Ordenar ícones
+Name[hu]=Ikonok elrendezése
 BinaryPattern=
 Protocols=
 Comment=Arrange Desktop Icons
@@ -21,6 +22,7 @@ Comment[fi]=Järjestä työpöydän ikonit
 Comment[it]=Dispone le icone sul Desktop
 Comment[fr]=Rangement des icônes du bureau
 Comment[pt]=Ordenar ícones do ambiente de trabalho
+Comment[hu]=Ikonok elrendezése az asztalon
 Exec=kfmclient sortDesktop
 Icon=kfm_refresh.xpm
 TerminalOptions=
@@ -29,3 +31,4 @@ Extensions=
 
 Type=Application
 Terminal=0
+

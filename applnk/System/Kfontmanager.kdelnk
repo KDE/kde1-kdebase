@@ -11,6 +11,7 @@ Name[fi]=Kirjasinhallinta
 Name[it]=Caratteri
 Name[fr]=Gestionnaire de polices
 Name[pt]=Gestor de fontes
+Name[hu]=Fontkezelo
 Exec=kfontmanager
 DocPath=kfontmanager/index.html
 Comment=KDE's Fontmanager.
@@ -23,5 +24,7 @@ Comment[sv]=Program för att ställa in typsnitt för KDE
 Comment[fi]=KDE:n kirjasinten hallintaohjelma
 Comment[it]=Centro Controllo Caratteri del KDE
 Comment[fr]=Gestionnaire des polices utilisées dans KDE
+Comment[hu]=KDE Font beállító
 Comment[pt]=Gestor de fontes utilizadas no KDE
+
 Type=Application
