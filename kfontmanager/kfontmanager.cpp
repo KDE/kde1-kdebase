@@ -82,7 +82,7 @@ KFontManager::KFontManager (QWidget * parent, const char *name)
 
   example_label = new QLabel(this,"examples");
   example_label->setAlignment(AlignCenter);
-  example_label->setBackgroundColor(white);
+//  example_label->setBackgroundColor(white);
   example_label->setFrameStyle( QFrame::WinPanel | QFrame::Sunken );
   example_label->setText(i18n("The KDE Font Manager Example String"));
 
@@ -93,6 +93,10 @@ KFontManager::KFontManager (QWidget * parent, const char *name)
 
   readSettings();
   queryFonts();
+
+  setColors();
+  connect(KApplication::getKApplication(),SIGNAL(kdisplayPaletteChanged()),
+	  this,SLOT(setColors()));
 
   setMinimumSize (100, 100);
 
@@ -441,5 +445,28 @@ void KFontManager::writeSettings(){
 	*/
 }
 
+
+void KFontManager::setColors(){
+ 
+  /* this is to the the backgound of a widget to white and the
+     text color to black -- some lables such as the one of the
+     font manager really shouldn't follow colorschemes The
+     primary task of those label is to display the text clearly
+     an visibly and not to look pretty ...*/
+
+  QPalette mypalette = (example_label->palette()).copy();
+
+  QColorGroup cgrp = mypalette.normal();
+  QColorGroup ncgrp(black,cgrp.background(),
+		    cgrp.light(),cgrp.dark(),cgrp.mid(),black,white);
+
+  mypalette.setNormal(ncgrp);
+  mypalette.setDisabled(ncgrp);
+  mypalette.setActive(ncgrp);
+
+  example_label->setPalette(mypalette);
+  example_label->setBackgroundColor(white);
+ 
+}
 #include "kfontmanager.moc"
 

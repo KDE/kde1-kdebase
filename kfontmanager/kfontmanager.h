@@ -59,6 +59,7 @@ protected slots:
 	void remove_slot();
 	void helpselected();
 	void queryFonts();
+	void setColors();
 
 protected:
 

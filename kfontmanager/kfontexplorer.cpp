@@ -314,7 +314,7 @@ KFontExplorer::KFontExplorer( QWidget *parent, const char *name,
 
   example_label->setGeometry(200,190,190, 80);
   example_label->setAlignment(AlignCenter);
-  example_label->setBackgroundColor(white);
+//  example_label->setBackgroundColor(white);
   example_label->setFrameStyle( QFrame::WinPanel | QFrame::Sunken );
   example_label->setLineWidth( 1 );
   example_label->setText(klocale->translate("Dolor Ipse"));
@@ -330,7 +330,11 @@ KFontExplorer::KFontExplorer( QWidget *parent, const char *name,
   if(family_combo->count() != 0){
     this->setFont(QFont(family_combo->text(0),12,QFont::Normal));
   }
-
+  
+  
+  setColors();
+  connect(KApplication::getKApplication(),SIGNAL(kdisplayPaletteChanged()),
+	  this,SLOT(setColors()));
 }
 
 
@@ -622,6 +626,31 @@ void KFontExplorer::fill_family_combo(){
 
 
 }
+
+
+void KFontExplorer::setColors(){
+ 
+  /* this is to the the backgound of a widget to white and the
+     text color to black -- some lables such as the one of the
+     font manager really shouldn't follow colorschemes The
+     primary task of those label is to display the text clearly
+     an visibly and not to look pretty ...*/
+
+  QPalette mypalette = (example_label->palette()).copy();
+
+  QColorGroup cgrp = mypalette.normal();
+  QColorGroup ncgrp(black,cgrp.background(),
+		    cgrp.light(),cgrp.dark(),cgrp.mid(),black,white);
+
+  mypalette.setNormal(ncgrp);
+  mypalette.setDisabled(ncgrp);
+  mypalette.setActive(ncgrp);
+
+  example_label->setPalette(mypalette);
+  example_label->setBackgroundColor(white);
+ 
+}
+
 
 
 

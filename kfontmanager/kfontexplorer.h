@@ -135,6 +135,7 @@ private slots:
       void      style_chosen_slot(const char*);
       void      display_example(const QFont &font);
       void      charset_chosen_slot(int index);
+      void 	setColors();
 
 private:
 

@@ -49,7 +49,7 @@ int main( int argc, char *argv[] ){
 
 
 	KApplication a( argc, argv, "kfontmanager" );
-//	a.setFont(QFont("Helvetica",12,QFont::Normal),TRUE);
+	a.setFont(QFont("Helvetica",12,QFont::Normal),TRUE);
 
 	char *kdedir = a.kdedir().data();
 
