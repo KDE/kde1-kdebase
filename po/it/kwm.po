@@ -1,8 +1,3 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -41,7 +36,7 @@ msgstr ""
 
 #: main.C:492
 msgid "Preparing session ... "
-msgstr ""
+msgstr "Preparazione sessione ..."
 
 #: main.C:511
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -125,16 +120,15 @@ msgstr "Otto"
 
 #: main.C:628
 msgid "Unnamed Desktop"
-msgstr ""
+msgstr "Desktop SenzaNome"
 
 #: main.C:950
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Alcune pixmap non sono valide: Il modo Shape viene disabilitato\n"
 
 #: main.C:1062
-#, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Alcune pixmap non sono valide: Il modo Shape viene disabilitato\n"
+msgstr "Alcune pixmap non sono valide: Il modo Gimmick viene disabilitato\n"
 
 #: main.C:1295
 msgid "*** No Tasks ***"
@@ -146,7 +140,7 @@ msgstr "Comando:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr ""
+msgstr "Oopps!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"

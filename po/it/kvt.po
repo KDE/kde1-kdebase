@@ -117,7 +117,7 @@ msgstr "Terminale..."
 
 #: main.C:520
 msgid "Font..."
-msgstr ""
+msgstr "Caratteri..."
 
 #: main.C:522
 msgid "Save &Options"

@@ -1,8 +1,3 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -86,13 +81,12 @@ msgid "Titlebar appearance"
 msgstr "Aspetto Barra Titolo"
 
 #: titlebar.cpp:928
-#, fuzzy
 msgid "Shaded Vertically"
-msgstr "Ingrandimento verticale"
+msgstr "Sfumato in Verticale"
 
 #: titlebar.cpp:930
 msgid "Shaded Horizontally"
-msgstr ""
+msgstr "Sfumato in Orizontale"
 
 #: titlebar.cpp:934
 msgid "Plain"
@@ -175,14 +169,12 @@ msgid "Opaque"
 msgstr "Opaco"
 
 #: windows.cpp:79
-#, fuzzy
 msgid "Window resize"
-msgstr "&Finestre"
+msgstr "Ridimensionamento &finestre"
 
 #: windows.cpp:80
-#, fuzzy
 msgid "With animation"
-msgstr "Animazione Titolo"
+msgstr "Con Animazione"
 
 #: windows.cpp:85
 msgid "Placement policy"
@@ -237,9 +229,8 @@ msgid "Focus follows mouse"
 msgstr "Attiva al passaggio del mouse"
 
 #: windows.cpp:120
-#, fuzzy
 msgid "Classic focus follows mouse"
-msgstr "Attiva al passaggio del mouse"
+msgstr "Attivazione classica: segue il mouse"
 
 #: windows.cpp:122
 #, fuzzy
@@ -293,9 +284,3 @@ msgid ""
 msgstr ""
 "Zona Attiva della Finestra\n"
 "\t(Pixel)"
-
-#~ msgid "Shaded"
-#~ msgstr "Sfumata"
-
-#~ msgid "Resize Animation"
-#~ msgstr "Animazione Ridimensionamento"

@@ -143,22 +143,19 @@ msgstr "Goccie"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
-msgstr ""
+msgstr "Bolle"
 
 #: bouboule.cpp:1005
-#, fuzzy
 msgid "Setup KBouboule"
-msgstr "Configurazione salvaschermo \"Fiamme\""
+msgstr "Impostazioni KBouboule"
 
 #: bouboule.cpp:1032
-#, fuzzy
 msgid "Number of points:"
-msgstr "Numero di pipistrelli:"
+msgstr "Numero di punti:"
 
 #: bouboule.cpp:1046
-#, fuzzy
 msgid "Point size:"
-msgstr "Punti:"
+msgstr "Dimensione punti:"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
@@ -166,12 +163,11 @@ msgstr ""
 
 #: bouboule.cpp:1077
 msgid "3D mode"
-msgstr ""
+msgstr "Modo 3D"
 
 #: bouboule.cpp:1223
-#, fuzzy
 msgid "About Bouboule"
-msgstr "Info su Blob(goccie)"
+msgstr "Info su Bouboule"
 
 #: bouboule.cpp:1224
 msgid ""
@@ -669,18 +665,3 @@ msgstr ""
 "\n"
 "Porting su KDE di Emanuel Pirker."
 
-#, fuzzy
-#~ msgid "Setup Science"
-#~ msgstr "Configurazione salvaschermo \"Linee\""
-
-#, fuzzy
-#~ msgid "Mode:"
-#~ msgstr "Medio:"
-
-#, fuzzy
-#~ msgid "Sphere"
-#~ msgstr "Velocita`:"
-
-#, fuzzy
-#~ msgid "About Science"
-#~ msgstr "Info su Klines"
