@@ -191,8 +191,9 @@ bool Theme::load(const QString aPath, QString aName)
   QFileInfo finfo(aPath);
   int rc, num, i;
 
-  assert(!aPath.isEmpty());
   debug("Theme::load()");
+
+  if (!finfo.exists()) return false;
 
   clear();
   cleanupWorkDir();
@@ -1001,6 +1002,15 @@ void Theme::uninstallFiles(const char* aGroupName)
 void Theme::install(void)
 {
   debug("Theme::install() started");
+
+// Reread the .themerc file
+  if (mConfig) {
+      delete mConfig; mConfig = 0;
+  }
+  // read theme config file
+  mConfig = new KSimpleConfig( mThemePath + mThemercFile, true);
+
+  readConfig();
 
   loadMappings();
   mCmdList.clear();

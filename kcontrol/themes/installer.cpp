@@ -162,7 +162,7 @@ static void addToList(QListBox *list, QString name)
 //-----------------------------------------------------------------------------
 void Installer::readThemesList(void)
 {
-  QDir d(Theme::themesDir(), 0, QDir::Name, QDir::Files|QDir::Dirs);
+  QDir d(Theme::globalThemesDir(), 0, QDir::Name, QDir::Files|QDir::Dirs);
   QStrList* entryList;
   QString name;
 
@@ -174,23 +174,8 @@ void Installer::readThemesList(void)
 //  d.setNameFilter("*.tar.gz");
   mThemesList->clear();
 
-  // Read local themes
-  entryList = (QStrList*)d.entryList();
-  if (entryList) for(name=entryList->first(); name; name=entryList->next())
-  {
-    if (name[0]=='.') continue;
-    if (name=="CVS" || 
-        name.right(8)==".themerc" || 
-        name.left(8) == "Default.") 
-      continue;
-    if (!pathToThemeName(name))
-      continue;
-    removeFromList(mThemesList, name);
-    mThemesList->inSort(name);
-  }
-
   // Read global themes
-  d.setPath(Theme::globalThemesDir());
+//  d.setPath(Theme::globalThemesDir());
   entryList = (QStrList*)d.entryList();
   if (entryList) for(name=entryList->first(); name; name=entryList->next())
   {
@@ -200,11 +185,36 @@ void Installer::readThemesList(void)
         name.left(8) == "Default.") 
       continue;
     if (!pathToThemeName(name))
-      continue;
+    {
+      QString path = Theme::globalThemesDir()+"/"+name+"/"+name+".themerc";
+      if (!d.exists(path))
+         continue;
+    }
     // Dirty hack: the trailing space marks global themes ;-)
     removeFromList(mThemesList, name);
     mThemesList->inSort(name + " ");
   }
+
+  // Read local themes
+  d.setPath(Theme::themesDir());
+  entryList = (QStrList*)d.entryList();
+  if (entryList) for(name=entryList->first(); name; name=entryList->next())
+  {
+    if (name[0]=='.') continue;
+    if (name=="CVS" || 
+        name.right(8)==".themerc" || 
+        name.left(8) == "Default.") 
+      continue;
+    if (!pathToThemeName(name))
+    {
+      QString path = Theme::themesDir()+"/"+name+"/"+name+".themerc";
+      if (!d.exists(path))
+         continue;
+    }
+    removeFromList(mThemesList, name);
+    mThemesList->inSort(name);
+  }
+
   mThemesList->insertItem("Default ", 0);
   mThemesList->setCurrentItem(0);
   slotSetTheme(0);
@@ -332,16 +342,20 @@ void Installer::slotSetTheme(int id)
     else path = Theme::themesDir() + name;
 
     mTheme = new Theme();
-    enabled = mTheme->load(path+".tar.gz", name);
+    enabled = mTheme->load(path, name);
     if (!enabled)
     {
-      enabled = mTheme->load(path+".tgz", name);
+      enabled = mTheme->load(path+".tar.gz", name);
       if (!enabled)
       {
-        mPreview->setText(i18n("(no theme chosen)"));
-        mText->setText("");
-	delete mTheme;
-        mTheme = 0;
+        enabled = mTheme->load(path+".tgz", name);
+        if (!enabled)
+        {
+          mPreview->setText(i18n("(no theme chosen)"));
+          mText->setText("");
+          delete mTheme;
+          mTheme = 0;
+        }
       }
     }
   }

@@ -18,6 +18,8 @@
 #include <assert.h>
 
 
+#define NO_OVERWRITE
+
 //-----------------------------------------------------------------------------
 Options::Options (QWidget * aParent, const char *aName, bool aInit)
   : OptionsInherited(aParent, aName)
@@ -35,12 +37,15 @@ Options::Options (QWidget * aParent, const char *aName, bool aInit)
   mGrid = new QGridLayout(this, 16, 6, 10, 6);
   mGridRow = 0;
 
+#ifdef NO_OVERWRITE
+#else
   mCbxOverwrite = new QCheckBox(i18n("Uninstall parts of previous theme"),
 				this);
   mCbxOverwrite->setMinimumSize(mCbxOverwrite->sizeHint());
   mCbxOverwrite->setMaximumSize(32767, mCbxOverwrite->sizeHint().height()+5);
   mGrid->addMultiCellWidget(mCbxOverwrite, mGridRow, mGridRow, 0, 5);
   mGridRow++;
+#endif
 
   lbl = new QLabel(i18n("Work on the following parts:"), this);
   lbl->setMinimumSize(lbl->sizeHint());
@@ -149,7 +154,11 @@ void Options::applySettings()
   mTheme->instIcons = mCbxIcons->isChecked();
   mTheme->instWindowGimmick = mCbxGimmick->isChecked();
   mTheme->instKfm = mCbxKfm->isChecked();
+#ifdef NO_OVERWRITE
+  mTheme->instOverwrite = false;
+#else
   mTheme->instOverwrite = !mCbxOverwrite->isChecked();
+#endif
 }
 
 void Options::slotThemeChanged(Theme *theme)
@@ -264,7 +273,11 @@ void Options::writeConfig()
   KConfig* cfg = kapp->getConfig();
 
   cfg->setGroup("Options");
+#ifdef NO_OVERWRITE
+  cfg->writeEntry("overwrite", false);
+#else
   cfg->writeEntry("overwrite", !mCbxOverwrite->isChecked());
+#endif
   cfg->writeEntry("panel", mCbxPanel->isChecked());
   cfg->writeEntry("icons", mCbxIcons->isChecked());
   cfg->writeEntry("colors", mCbxColors->isChecked());
@@ -284,7 +297,10 @@ void Options::readConfig()
   KConfig* cfg = kapp->getConfig();
 
   cfg->setGroup("Options");
+#ifdef NO_OVERWRITE
+#else
   mCbxOverwrite->setChecked(!cfg->readBoolEntry("overwrite", false));
+#endif
   mCbxPanel->setChecked(cfg->readBoolEntry("panel", true));
   mCbxIcons->setChecked(cfg->readBoolEntry("icons", true));
   mCbxColors->setChecked(cfg->readBoolEntry("colors", true));
