@@ -187,7 +187,9 @@ int AudioDev::emitSilence()
   if (ABI.fragments >= 8)
     {
       // Emit silence, if there may be sound underrun
+#ifdef DEBUG
       cerr  << "FreeFrags=" << ABI.fragments << '\n';
+#endif
       if (bit_p_spl == 8)
 	return write(audiodev, silence8, BUFFSIZE );
       else
