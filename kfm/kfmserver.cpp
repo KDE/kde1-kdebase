@@ -91,11 +91,11 @@ KFMServer::KFMServer() : KfmIpcServer()
 	    closedir( dp );
 	}
 
-	srandom( (unsigned int) seed );
+	srand48( (unsigned int) seed );
 	for ( i = 0 ; i < num ; i ++ )
-	    (void) random( );
+	    (void) drand48( );
 
-	pass.sprintf( "%ld", random() );
+	pass.sprintf( "%ld", drand48() );
 	fwrite( pass.data(), 1, pass.length(), f );
 	fclose( f );
 	chmod(fn.data(), S_IRUSR | S_IWUSR); // make it 0600
