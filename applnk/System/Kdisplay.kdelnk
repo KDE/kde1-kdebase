@@ -1,0 +1,8 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kdisplay -setup
+DocPath=kdisplay/kdisplay.html
+Comment=Display setup utility to configure KDE applications' colors, display background and screen saver.
+Comment[de]=Programm zur Konfiguration der Bildschirmdarstellung in KDE
+Name=Display Properties
+Name[de]=Bildschirmeinstellungen

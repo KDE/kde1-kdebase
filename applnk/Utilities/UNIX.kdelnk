@@ -1,0 +1,7 @@
+[KDE Desktop Entry]
+Type=Application
+Exec=kvt -T "%c"
+Icon=UNIX.xpm
+DocPath=kvt.html
+Info=Terminal Emulation (kvt)
+Terminal=0
