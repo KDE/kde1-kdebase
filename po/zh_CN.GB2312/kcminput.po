@@ -2,17 +2,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"PO-Revision-Date: 1999-03-28 18:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Translator: Wang Jian <larkw@263.net>\n"
 
 #: main.cpp:54
 msgid "&Mouse"
-msgstr "鼠标[&M]"
+msgstr "鼠标(&M)"
 
 #: main.cpp:57
 msgid "&Keyboard"
-msgstr "键盘[&K]"
+msgstr "键盘(&K)"
 
 #: main.cpp:63
 msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
@@ -32,7 +33,7 @@ msgstr "加速阈值"
 
 #: mouse.cpp:72
 msgid "pixels"
-msgstr ""
+msgstr "像素"
 
 #: mouse.cpp:81
 msgid "Button mapping"

@@ -2,170 +2,173 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-12-12 15:11+0100\n"
-"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"PO-Revision-Date: 1999-03-16 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Translator: Wang Jian <larkw@263.net>\n"
 
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr ""
+msgstr "屏幕 #%d"
 
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr ""
+msgstr "  尺寸                : %dx%d 像素 (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr ""
+msgstr "  分辨率              : 每英寸 %dx%d 点\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr ""
+msgstr "  颜色深度(%d)         : "
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr ""
+msgstr "显示器名称            : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr ""
+msgstr "版本号                : %i.%i"
 
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr ""
+msgstr "制造商代码            : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr ""
+msgstr "制造商发行号          : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr ""
+msgstr "默认屏幕号            : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr ""
+msgstr "屏幕个数              : %i"
 
 #: info.cpp:179
-#, fuzzy
 msgid ""
 "No Information available\n"
 " or\n"
 "this system is not yet supported :-("
-msgstr "这个系统还不被支持 :-("
+msgstr ""
+"没有可查询的信息\n"
+"或者\n"
+"不支持这个系统 :-("
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr ""
+msgstr "%s, 速度未知"
 
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr ""
+msgstr "%s 在 %s MHz上运行"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr ""
+msgstr "不能打开fstab文件!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
-msgstr ""
+msgstr "设备"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
-msgstr ""
+msgstr "安装点"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr ""
+msgstr "文件系统类型"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr ""
+msgstr "安装选项"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
-msgstr ""
+msgstr "未知的CPU类型"
 
 #: info_hpux.cpp:62
-#, fuzzy
+#
 msgid "unavailable"
-msgstr "N/A"
+msgstr "未知"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr ""
+msgstr "活动的CPU数目= "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr ""
+msgstr "值"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
-msgstr ""
+msgstr "DMA通道"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr ""
+msgstr "被使用"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr ""
+msgstr "I/O范围"
 
 #: main.cpp:79
 msgid "&Memory"
-msgstr "内存[&M]"
+msgstr "内存(&M)"
 
 #: main.cpp:82
 msgid "&Processor"
-msgstr "处理器[&P]"
+msgstr "处理器(&P)"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr ""
+msgstr "中断(&I)"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr ""
+msgstr "DMA通道(&H)"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr ""
+msgstr "&IO端口"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr ""
+msgstr "PCI总线(&B)"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr ""
+msgstr "声音(&O)"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr ""
+msgstr "设备(&D)"
 
 #: main.cpp:103
 msgid "S&CSI"
-msgstr ""
+msgstr "S&CSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr ""
+msgstr "分区(&A)"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr ""
+msgstr "&X服务器"
 
 #: main.cpp:120
 msgid ""
@@ -173,6 +176,9 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
+"用法: kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"
@@ -205,19 +211,17 @@ msgstr "空闲交换区"
 #: memory.cpp:78
 #, c-format
 msgid "%10ld bytes  = %8.2f MB"
-msgstr "%10ld Bytes  = %8.2f MB"
+msgstr "%10ld 字节  = %8.2f MB"
 
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
-#, fuzzy
 msgid "Not available"
-msgstr "N/A"
+msgstr "未知"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
-#, fuzzy
 msgid "Not Available"
-msgstr "N/A"
+msgstr "未知"
 
 #~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
 #~ msgstr "用法: kcminfo [-init | {processor, memory}]\n"

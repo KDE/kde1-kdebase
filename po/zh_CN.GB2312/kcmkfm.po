@@ -1,0 +1,237 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"PO-Revision-Date: 1999-03-28 18:00+0800\n"
+"Language-Team: zh_CN.GB2312\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=gb2312-80\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Translator: Wang Jian <larkw@263.net>\n"
+
+#: main.cpp:61
+msgid "&Font"
+msgstr "字体(&F)"
+
+#: main.cpp:63
+msgid "&Color"
+msgstr "颜色(&C)"
+
+#: main.cpp:65
+msgid "&Other"
+msgstr "其他(&O)"
+
+#: main.cpp:68
+msgid "&Proxy"
+msgstr "代理(&P)"
+
+#: main.cpp:70
+msgid "&HTTP"
+msgstr "&HTTP"
+
+#: main.cpp:73
+msgid "User &Agent"
+msgstr "用户代理(&A)"
+
+#: main.cpp:76
+msgid "Coo&kies"
+msgstr "Coo&kies"
+
+#: main.cpp:80
+msgid "&Desktop Icons"
+msgstr "桌面图标(&D)"
+
+#: main.cpp:89
+#, c-format
+msgid ""
+"usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+msgstr ""
+"用法: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+
+#: main.cpp:178
+msgid "KFM Configuration"
+msgstr "KFM配置"
+
+#: htmlopts.cpp:64
+msgid "Small"
+msgstr "小"
+
+#: htmlopts.cpp:69
+msgid "Medium"
+msgstr "中"
+
+#: htmlopts.cpp:74
+msgid "Large"
+msgstr "大"
+
+#: htmlopts.cpp:83
+msgid "Standard Font"
+msgstr "标准字体"
+
+#: htmlopts.cpp:97
+msgid "Fixed Font"
+msgstr "等宽字体"
+
+#: htmlopts.cpp:114
+msgid "Default Charset"
+msgstr "默认字符集"
+
+#: htmlopts.cpp:122 htmlopts.cpp:276
+msgid "Use language charset"
+msgstr "使用语言字符集"
+
+#: htmlopts.cpp:330
+msgid "Background Color:"
+msgstr "背景颜色:"
+
+#: htmlopts.cpp:342
+msgid "Normal Text Color:"
+msgstr "普通字符颜色:"
+
+#: htmlopts.cpp:354
+msgid "URL Link Color:"
+msgstr "URL链接颜色:"
+
+#: htmlopts.cpp:366
+msgid "Followed Link Color:"
+msgstr "访问过的链接颜色:"
+
+#: htmlopts.cpp:378
+msgid "Change cursor over link."
+msgstr "在链接上改变光标."
+
+#: htmlopts.cpp:384
+msgid "Underline links"
+msgstr "链接使用下划线"
+
+#: htmlopts.cpp:391
+msgid "Always use my colors"
+msgstr "使用自定义颜色"
+
+#: miscopts.cpp:25
+msgid "&Allow per-URL settings"
+msgstr "允许每个URL单独设置(&A)"
+
+#: miscopts.cpp:33
+msgid "Tree &view follows navigation"
+msgstr "树状显示(&V)"
+
+#: miscopts.cpp:43
+msgid "Terminal"
+msgstr "终端"
+
+#: miscopts.cpp:57
+msgid "Editor"
+msgstr "编辑器"
+
+#: kproxydlg.cpp:50
+msgid "Don't forget to save your settings!"
+msgstr "不要忘记保存设置!"
+
+#: kproxydlg.cpp:58
+msgid "Use proxy"
+msgstr "使用代理"
+
+#: kproxydlg.cpp:67
+msgid "HTTP Proxy:"
+msgstr "HTTP代理:"
+
+#: kproxydlg.cpp:82 kproxydlg.cpp:113
+msgid "Port:"
+msgstr "端口:"
+
+#: kproxydlg.cpp:98
+msgid "FTP Proxy:"
+msgstr "FTP代理:"
+
+#: kproxydlg.cpp:128
+msgid "No Proxy for:"
+msgstr "不使用代理:"
+
+#: khttpoptdlg.cpp:38
+msgid "Accept languages:"
+msgstr "接受语言:"
+
+#: khttpoptdlg.cpp:52
+msgid "Accept character sets:"
+msgstr "接受字符集:"
+
+#: khttpoptdlg.cpp:65
+msgid "Assume HTML"
+msgstr "认为是HTML"
+
+#: useragentdlg.cpp:45
+msgid "On server:"
+msgstr "在服务器:"
+
+#: useragentdlg.cpp:67
+msgid "login as:"
+msgstr "登录为:"
+
+#: useragentdlg.cpp:87
+msgid "&Add"
+msgstr "添加(&A)"
+
+#: useragentdlg.cpp:107
+msgid "Known bindings:"
+msgstr "已知关联:"
+
+#: kcookiesdlg.cpp:49
+msgid "&Enable Cookies"
+msgstr "使用Cookies(&E)"
+
+#: kcookiesdlg.cpp:56
+msgid "Default accept policy"
+msgstr "默认的接受策略"
+
+#: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
+msgid "Accept"
+msgstr "接受"
+
+#: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
+msgid "Ask"
+msgstr "询问"
+
+#: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
+msgid "Reject"
+msgstr "拒绝"
+
+#: kcookiesdlg.cpp:90
+msgid "Domain specific settings:"
+msgstr "域有关的设置:"
+
+#: kcookiesdlg.cpp:97
+msgid "Change domain accept policy"
+msgstr "改变域接受的策略"
+
+#: kcookiesdlg.cpp:239
+msgid "You must enter a domain first !"
+msgstr "你必须先输入一个域 !"
+
+#: rootopts.cpp:73
+msgid "Horizontal Root Grid Spacing:"
+msgstr "根窗口水平栅格间距:"
+
+#: rootopts.cpp:84
+msgid "Vertical Root Grid Spacing:"
+msgstr "根窗口垂直栅格间距:"
+
+#: rootopts.cpp:95
+msgid "&Transparent Text for Desktop Icons."
+msgstr "桌面图标使用透明文字(&T)."
+
+#: rootopts.cpp:106
+msgid "Icon foreground color:"
+msgstr "图标前景颜色:"
+
+#: rootopts.cpp:118
+msgid "Icon background color:"
+msgstr "图标背景颜色:"
+
+#: rootopts.cpp:131
+msgid "Show &Hidden Files on Desktop"
+msgstr "显示隐藏文件(&H)"
