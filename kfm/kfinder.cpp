@@ -14,6 +14,7 @@ KFinder::KFinder( QWidget *_parent, QStrList *_headers, QArray<int> *_sizes ) : 
     getOpenPixmap();
     getClosePixmap();
 
+
     buttonList.setAutoDelete( TRUE );
     
     sizeList = 0L;
@@ -57,6 +58,37 @@ KFinder::KFinder( QWidget *_parent, QStrList *_headers, QArray<int> *_sizes ) : 
     // Dirty Hack, sorry
     QScrollBar *s = (QScrollBar*)finderWin->horizontalScrollBar();
     s->setTracking( TRUE );
+
+    initColors();
+
+}
+
+void KFinder::initColors(){
+
+    KConfig *config = KApplication::getKApplication()->getConfig();
+    config->setGroup( "KFM HTML Defaults" );	
+
+    bgColor = config->readColorEntry( "BgColor", &white );
+    textColor = config->readColorEntry( "LinkColor", &black );
+
+    if(finderWin)
+      finderWin->setBackgroundColor( bgColor );
+
+}
+
+void KFinder::setColors(QColor bgcolor,QColor textcolor){
+
+  bgColor = bgcolor;
+  if(finderWin)
+    finderWin->setBackgroundColor(bgColor);
+  textColor = textcolor;
+
+}
+
+QColor KFinder::getTextColor(){
+  
+  return textColor;
+
 }
 
 void KFinder::slotButtonPressed( KFinderButton *_but )
@@ -210,8 +242,7 @@ KFinderWin::KFinderWin( KFinder *_finder ) : QTableView( _finder )
     node = 0L;
     
     itemList.setAutoDelete( FALSE );
-    
-    setBackgroundColor( white );
+
     
     finder = _finder;
 
@@ -224,6 +255,7 @@ KFinderWin::KFinderWin( KFinder *_finder ) : QTableView( _finder )
     connect( dropZone, SIGNAL( dropAction( KDNDDropZone *) ),
 	     this, SLOT( slotDropEvent( KDNDDropZone *) ) );
 }
+
 
 void KFinderWin::slotDropEvent( KDNDDropZone *_zone )
 {

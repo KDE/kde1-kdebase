@@ -87,6 +87,9 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     KConfig *config = kapp->getConfig();
     config->setGroup( "Settings" );
     
+    kfmgui_width = config->readNumEntry("kfmgui_width",  KFMGUI_WIDTH);
+    kfmgui_height = config->readNumEntry("kfmgui_height",KFMGUI_HEIGHT);
+
     QString entry;
 
     entry = "Off"; // default
@@ -177,6 +180,7 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
 
     if ( _url )
 	view->openURL( _url );
+    this->resize(kfmgui_width,kfmgui_height);
 }
 
 KfmGui* KfmGui::findWindow( const char *_url )
@@ -1309,6 +1313,9 @@ void KfmGui::slotSaveSettings()
   KConfig *config = kapp->getConfig();
   config->setGroup( "Settings" );
     
+  config->writeEntry("kfmgui_width",this->width());
+  config->writeEntry("kfmgui_height",this->height());
+
   QString entry;
 
   if ( bTreeView == false)
@@ -1529,6 +1536,13 @@ void KfmGui::slotConfigureBrowser()
 		htmlview->setURLCursor( arrowCursor );
 
 	      w->updateView();
+
+	      if(w->treeView){
+		w->treeView->setColors(coloropts.bg,coloropts.link);
+		//		w->treeView->updateTree(true);
+		w->treeView->repaint();
+	      }
+	      
 
 	    }
 

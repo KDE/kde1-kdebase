@@ -22,7 +22,8 @@ public:
     void update();
 
     KfmGui* getGui() { return gui; }
-    
+
+
 signals:
     void urlSelected( const char *_url, int _button );
 
@@ -48,7 +49,9 @@ protected:
 
     void openPopupMenu( const char *_url, const QPoint &_point );
     void openDropMenu( const char *_dest, QStrList &_urls, const QPoint &_p );
-    
+
+
+
     QString popupDir;
     QString dropDestination;
     KStrList dropSource;

@@ -349,6 +349,7 @@ void KFMDirTree::slotPopupTrash()
     job->move( list, dest );
 }
 
+
 void KFMDirTree::slotPopupDelete()
 {   
     // Is the user really sure ?
@@ -420,21 +421,28 @@ void KFMDirTreeItem::paintCell( QPainter *_painter, int _col )
     x += ( PIXMAP_WIDTH + 6 ) * level;
 
     if ( _col == 0 )
-    {
+      {
 	if ( !bIsFile )
-	{
+	  {
 	    if ( bOpened )
-		_painter->drawPixmap( QPoint( x + 4, ( CELL_HEIGHT - PIXMAP_HEIGHT ) / 2 ), KFinder::getOpenPixmap() );
+	      _painter->drawPixmap( QPoint( x + 4, 
+	      ( CELL_HEIGHT - PIXMAP_HEIGHT ) / 2 ), KFinder::getOpenPixmap() );
 	    else
-		_painter->drawPixmap( QPoint( x + 4, ( CELL_HEIGHT - PIXMAP_HEIGHT ) / 2 ), KFinder::getClosePixmap() );
+	      _painter->drawPixmap( QPoint( x + 4, 
+	      ( CELL_HEIGHT - PIXMAP_HEIGHT ) / 2 ), KFinder::getClosePixmap() );
 	}
 	
 	x += PIXMAP_WIDTH + 4;
 	
 	QFontMetrics fm = _painter->fontMetrics();
-	_painter->drawPixmap( QPoint( x + 6, ( CELL_HEIGHT - PIXMAP_HEIGHT ) / 2 ), *pixmap );
-	_painter->setPen( black );
-	_painter->drawText( x + 6 + PIXMAP_WIDTH + 6, ( CELL_HEIGHT - fm.ascent() - fm.descent() ) / 2 + fm.ascent(), name );
+
+	_painter->drawPixmap( QPoint( x + 6, ( CELL_HEIGHT - PIXMAP_HEIGHT ) / 2 ), 
+			      *pixmap );
+
+	_painter->setPen( dirTree->getTextColor() );
+
+	_painter->drawText( x + 6 + PIXMAP_WIDTH + 6,
+	    ( CELL_HEIGHT - fm.ascent() - fm.descent() ) / 2 + fm.ascent(), name );
     }
 }
 

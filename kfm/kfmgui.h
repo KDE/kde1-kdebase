@@ -13,6 +13,10 @@
 
 #define TOOLBAR_URL_ID 1000
 
+// optimized values
+#define KFMGUI_HEIGHT 360
+#define KFMGUI_WIDTH 540
+
 class KfmGui;
 
 #include <qwidget.h>
@@ -588,6 +592,9 @@ protected:
     KMenuBar::menuPosition menubarPos;
     bool showLocationBar;
     KToolBar::BarPosition locationBarPos;
+
+    int kfmgui_height;
+    int kfmgui_width;
 };
 
 #endif

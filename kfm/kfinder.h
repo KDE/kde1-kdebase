@@ -116,6 +116,8 @@ protected:
 
     void mousePressEvent( QMouseEvent *_ev );
     
+    QColor  textColor;
+    QColor  bgColor;
     KFinder *finder;
     KFinderNode *node;
     QList<KFinderItem> itemList;
@@ -143,6 +145,10 @@ public:
 
     virtual void itemList( QList<KFinderItem> &_list );
 
+    QColor getTextColor();
+    void setColors(QColor bgcolor,QColor textcolor);
+    void initColors();
+
 signals:
     void buttonPressed( int );
     void drop( QStrList &_urls, const QPoint &_point );
@@ -162,6 +168,8 @@ protected:
     KFinderWin *finderWin;
     int sort;
     int xOffset;
+    QColor textColor;    
+    QColor bgColor;
 
     static QPixmap* openPixmap;
     static QPixmap* closePixmap;

@@ -205,10 +205,17 @@
   - Stephan please have a look at around line 70 in kkfmoptdlg.cpp
     I had to comment out two delete statements and can't say I understand
     precicely why.
+  - several configuration dialogs
 
 03/05/98 Bernd
-  - variable root grid sizes
+  - configurable root grid sizes
   - fixed up the config/dekstop file. This file was not updated to 
     deal with the new grid root scheme -- no wonder that we got
     complains about the icons not being visible on first start up.
+    
+03/05/98 Bernd
+  - saves the kfmgui sizes on 'save settings'
+  - colors of the treeview are now in sync with the colors 
+    of the html widget
+    
     
