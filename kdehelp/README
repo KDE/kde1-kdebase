@@ -1,7 +1,5 @@
 KDE Help System README
 ~~~~~~~~~~~~~~~~~~~~~~
-This is an alpha release of the KDE Help system.
-
 The viewer is really just an HTML viewer (based on the KDE HTML widget)
 with built-in filters for info and man (including links to other man pages :-).
  
@@ -86,4 +84,3 @@ do a descent info parser
 
 Martin Jones
 mjones@kde.org
-
