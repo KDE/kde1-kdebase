@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Kim Enkovaara <kim.enkovaara@iki.fi>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: KCMKEYS\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:64
+msgid "&Standard shortcuts"
+msgstr "&Peruslyhytvalinnat"
+
+#: main.cpp:69
+msgid "&Global shortcuts"
+msgstr "&Yleiset lyhytvalinnat"
+
+#: main.cpp:76
+msgid "usage: kcmdisplay [-init | {standard,global}]\n"
+msgstr "k‰yttˆ: kcmdisplay [-init | {standard,global}]\n"
+
+#: main.cpp:118
+msgid "Key binding settings"
+msgstr "N‰pp‰insidosten asetukset"
+
+#: standard.cpp:66
+msgid "Home"
+msgstr "Home"
+
+#: standard.cpp:67
+msgid "End"
+msgstr "End"
+
+#: global.cpp:81 standard.cpp:83
+msgid "Current scheme"
+msgstr "Nykyinen teema"
+
+#: global.cpp:83 standard.cpp:84
+msgid "KDE default"
+msgstr "KDE oletus"
+
+#: standard.cpp:85
+msgid "KDE lite"
+msgstr "KDE pieni"
+
+#: global.cpp:90 standard.cpp:90
+msgid "&Key scheme"
+msgstr "&N‰pp‰inteema"
+
+#: global.cpp:101
+msgid "&Add ..."
+msgstr "&Lis‰‰ ..."
+
+#: global.cpp:123
+msgid "&Save changes"
+msgstr "&Tallenna muutokset"
+
+#: global.cpp:182
+msgid "Error removing scheme"
+msgstr "Virhe teemaa poistettaessa"
+
+#: global.cpp:183
+msgid ""
+"This key scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the key scheme is stored."
+msgstr ""
+"N‰pp‰inteemaa ei saatu poistettua.\n"
+"Sinulle ei ole mahdollisesti oikeuksia muuttaa tiedostoa\n"
+"johon teema on tallennettu."
+
+#: global.cpp:314
+msgid "Naming conflict"
+msgstr "Nimikonflikti"
+
+#: global.cpp:315
+msgid ""
+"Please choose a unique name for the new key\n"
+"scheme. The one you entered already appears\n"
+"in the key scheme list."
+msgstr ""
+"Valitse uniikki nimi uudelle n‰pp‰inteemalle.\n"
+"Antamasi nimi n‰ytt‰‰ jo olevan teemalistalla."
+
+#: savescm.cpp:18
+msgid "Add a key scheme"
+msgstr "Lis‰‰ n‰pp‰inteema"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new key scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The keys currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"&Anna nimi uudelle n‰pp‰inteemalle, joka\n"
+"tullaan lis‰‰m‰‰n henkilˆkohtaiseen listaasi.\n"
+"\n"
+"Esikatselussa k‰ytetyt n‰pp‰imet kopioidaan\n"
+"aluksi t‰h‰n teemaan."
