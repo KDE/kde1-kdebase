@@ -6,6 +6,7 @@
 #include <iostream.h>
 #include <stdio.h>
 #include <string.h>
+#include <sys/types.h>
 #include <unistd.h>
 #include <sys/wait.h>
 #include <dirent.h>
