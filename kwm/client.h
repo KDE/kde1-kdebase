@@ -73,13 +73,16 @@ class Client : public QWidget {
   Q_OBJECT
 
 public:
-  Client( Window w, QWidget *parent=0, const char *name=0 );
+  Client( Window w, Window _sizegrip = None, QWidget *parent=0, const char *name=0 );
   ~Client();
 
   // the X11 handle of the managed window
   Window      window;
 
-  // show the client. This means the decoration frame and the inner window
+    // the Qt resize grip
+    Window       sizegrip;
+
+    // show the client. This means the decoration frame and the inner window
   void showClient();
   // hide the client. This means the decoration frame and the inner window
   void hideClient();
@@ -212,7 +215,7 @@ public:
   bool isShaded(){
     return shaded;
   }
-    
+
   // windows can have a fixed size, that means the window manager must
   // not resize them in any way.
   bool fixedSize();

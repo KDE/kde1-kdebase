@@ -112,6 +112,9 @@ public:
   // be found.
   Client* getClient(Window w);
 
+  // get a pointer to the Client object from the sizegrip
+  Client* Manager::getClientFromSizegrip(Window w);
+    
   // returns the current client (the client which has the focus) or 0
   // if no client has the focus.
   Client* current();
@@ -410,6 +413,8 @@ private:
   Atom kde_sound_event;
   Atom kde_register_sound_event;
   Atom kde_unregister_sound_event;
+    
+   Atom qt_sizegrip;
 
   // used to store the current desktop internally
   int current_desktop;

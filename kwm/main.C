@@ -1691,7 +1691,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
 	    case Button2: 	
 		no_replay = executeMouseBinding(c, options.CommandAll2);
 		break;
-	    case Button3: 
+	    case Button3:
 		no_replay = executeMouseBinding(c, options.CommandAll3);
 		break;
 	    }
@@ -1718,6 +1718,13 @@ bool MyApp::x11EventFilter( XEvent * ev){
 	else
 	  XAllowEvents(qt_xdisplay(), ReplayPointer, ev->xbutton.time);
 	XUngrabKeyboard(qt_xdisplay(), CurrentTime);
+      }
+      else {
+	  c = manager->getClientFromSizegrip(ev->xbutton.window);
+	  if (c) {
+	      QCursor::setPos(c->mapToGlobal(QPoint(c->width()-1, c->height()-1)));
+	      c->simple_resize();  
+	  }
       }
     }
   break;

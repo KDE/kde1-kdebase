@@ -343,13 +343,14 @@ static void grabButton(int button, Window window, unsigned int mod){
 }
 
 
-Client::Client(Window w, QWidget *parent, const char *name_for_qt)
+Client::Client(Window w, Window _sizegrip, QWidget *parent, const char *name_for_qt )
   : QWidget( parent, name_for_qt, WResizeNoErase){
     //, WStyle_Customize | WStyle_NoBorder | WStyle_Tool ){
 
     DEBUG_EVENTS2("Create new Client. Client/Window", this,w)
 
     window = w;
+    sizegrip = _sizegrip;
 
     backing_store = false;
     state = WithdrawnState;
@@ -413,6 +414,12 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     hidden_for_modules = false;
     autoraised_stopped = false;
 
+    if (sizegrip != None)
+	XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, sizegrip, True,
+		    ButtonPressMask, GrabModeSync, GrabModeAsync,
+		    None, bottom_right_cursor );
+
+    
     doButtonGrab();
     unmap_events = 0;
 }

@@ -128,6 +128,8 @@ Manager::Manager(): QObject(){
   kde_register_sound_event = XInternAtom(qt_xdisplay(), "KDE_REGISTER_SOUND_EVENT", False);
   kde_unregister_sound_event = XInternAtom(qt_xdisplay(), "KDE_UNREGISTER_SOUND_EVENT", False);
 
+  qt_sizegrip = XInternAtom(qt_xdisplay(), "QT_SIZEGRIP", False);
+  
   gv.function = GXxor;
   gv.line_width = 0;
   gv.foreground = WhitePixel(qt_xdisplay(), qt_xscreen())^BlackPixel(qt_xdisplay(), qt_xscreen());
@@ -1665,8 +1667,10 @@ void Manager::manage(Window w, bool mapped){
 
   Client* c = getClient(w);
   if (!c){
-    // create a very new client
-    c = new Client(w);
+      // create a very new client
+      long d;
+      getSimpleProperty(w, qt_sizegrip, d);
+      c = new Client(w, d);
 
     // overwrite Qt-defaults because we need SubstructureNotifyMask
     XSelectInput(qt_xdisplay(), c->winId(),
@@ -2004,6 +2008,16 @@ Client* Manager::getClient(Window w){
        result = clients.next());
   return result;
 }
+
+// get a pointer to the Client object from the sizegrip
+Client* Manager::getClientFromSizegrip(Window w){
+  Client* result;
+  for (result = clients.first();
+       result && result->sizegrip != w;
+       result = clients.next());
+  return result;
+}
+
 
 // returns the current client (the client which has the focus) or 0
 // if no client has the focus.
