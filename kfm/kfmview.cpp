@@ -258,7 +258,7 @@ void KfmView::slotRun()
 	if ( exec.data()[0] == 0 )
 	    return;
 
-	QString dir = getenv( "HOME" );
+	QString dir (QDir::homeDirPath());
 
 	if ( !url2.isEmpty() )
 	{
@@ -280,7 +280,7 @@ void KfmView::slotTerminal()
     QString term = "kvt";
     term = config->readEntry( "Terminal", term );
 
-    QString dir = getenv( "HOME" );
+    QString dir ( QDir::homeDirPath() );
     
     KURL u( manager->getURL() );
     if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )

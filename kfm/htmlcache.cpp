@@ -13,6 +13,8 @@
 
 #include <qfileinf.h>
 #include <qdatetm.h>
+#include <qdir.h>
+#include <qmsgbox.h>
 #include <kstring.h>
 
 QList<HTMLCacheJob> *HTMLCache::staticJobList;
@@ -56,13 +58,6 @@ HTMLCache::HTMLCache()
 {
     instanceList->append( this );
     
-    char *p = getenv( "HOME" );
-    if ( !p )
-    {
-	warning("ERROR: $HOME is not defined\n");
-	exit(1);
-    }    
-
     staticJobList->setAutoDelete( false );
     urlDict->setAutoDelete( true );
     todoURLList.setAutoDelete( TRUE );
@@ -360,12 +355,19 @@ void HTMLCache::load()
 
 void HTMLCache::clear()
 {
+    QFileInfo finfo(KFMPaths::CachePath().data());
+    if (finfo.isSymLink() || !finfo.isDir()) {
+      QMessageBox::warning( 0L, i18n("KFM Error"), KFMPaths::CachePath()+i18n(
+         " is not a directory ! Security Alert !\nCheck it before clearing the cache.\n"));
+      return;
+    }
     QStrList todie;
     
     QDictIterator<QString> it( *urlDict );
-    for ( ; it.current(); ++it )
+    for ( ; it.current(); ++it ) {
 	if ( unlink( it.current()->data() ) == 0 )
 	    todie.append( it.currentKey() );
+    }
 
     const char *s;
     for ( s = todie.first(); s != 0L; s = todie.next() )

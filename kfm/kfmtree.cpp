@@ -5,6 +5,7 @@
 #include <dirent.h>
 #include <kapp.h>
 #include <qmsgbox.h>
+#include <qdir.h>
 
 #include "kfmtree.h"
 #include "kioserver.h"
@@ -28,7 +29,7 @@ KFMDirTree::KFMDirTree( QWidget *_parent, KfmGui *_gui ) : KFinder( _parent )
 
 void KFMDirTree::fill()
 {
-    QString home( getenv( "HOME" ) );
+    QString home (QDir::homeDirPath());
     if ( home.right(1) != "/" )
 	home += "/";
     
@@ -385,7 +386,7 @@ KFMDirTreeItem::KFMDirTreeItem( KFMDirTree *_finder, const char *_url, bool _isf
 	tmp.truncate( tmp.length() - 1 );
     KURL u( tmp );
     
-    QString home( getenv( "HOME" ) );
+    QString home( QDir::homeDirPath() );
     if ( home.right(1) == "/" )
 	home.truncate( home.length() -1 );
     QString desk( KFMPaths::DesktopPath().data() );

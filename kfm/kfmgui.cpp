@@ -1174,7 +1174,7 @@ void KfmGui::slotNewWindow( )
     else
     {
 	QString url;
-	url.sprintf( "file:%s", getenv( "HOME" ) );
+	url.sprintf( "file:%s", QDir::homeDirPath().data());
 	f = new KfmGui( 0L, 0L, url );
     }
     
