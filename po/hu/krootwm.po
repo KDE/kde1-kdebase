@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm VERSION\n"
-"POT-Creation-Date: 1998-11-25 01:11+0100\n"
+"POT-Creation-Date: 1998-12-04 01:12+0100\n"
 "PO-Revision-Date: 1998-02-26 20:45+MET\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: krootwm.C:135 krootwm.C:706
+#: krootwm.C:135 krootwm.C:702
 msgid "Folder"
 msgstr "Mappa"
 
@@ -60,7 +60,7 @@ msgstr "Segítség"
 msgid "About KDE..."
 msgstr ""
 
-#: krootwm.C:264 krootwm.C:291 krootwm.C:696 krootwm.C:704
+#: krootwm.C:264 krootwm.C:291 krootwm.C:692 krootwm.C:700
 msgid "New"
 msgstr ""
 
@@ -80,14 +80,14 @@ msgstr ""
 msgid "Edit Bookmarks"
 msgstr ""
 
-#: krootwm.C:726
+#: krootwm.C:722
 msgid "Could not create folder"
 msgstr "Nem lehet mappát létrehozni"
 
-#: krootwm.C:791
+#: krootwm.C:787
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: krootwm.C:795
+#: krootwm.C:791
 msgid "Usage:"
 msgstr "Használat:"

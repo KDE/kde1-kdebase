@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-25 01:11+0100\n"
+"POT-Creation-Date: 1998-12-04 01:12+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: krootwm.C:135 krootwm.C:706
+#: krootwm.C:135 krootwm.C:702
 msgid "Folder"
 msgstr "Direktorij"
 
@@ -61,7 +61,7 @@ msgstr "Pomoæ na radnoj povr¹ini"
 msgid "About KDE..."
 msgstr ""
 
-#: krootwm.C:264 krootwm.C:291 krootwm.C:696 krootwm.C:704
+#: krootwm.C:264 krootwm.C:291 krootwm.C:692 krootwm.C:700
 msgid "New"
 msgstr "Novi"
 
@@ -81,14 +81,14 @@ msgstr ""
 msgid "Edit Bookmarks"
 msgstr "Uredi oznake"
 
-#: krootwm.C:726
+#: krootwm.C:722
 msgid "Could not create folder"
 msgstr "Nisam mogao naèiniti direktorij"
 
-#: krootwm.C:791
+#: krootwm.C:787
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:795
+#: krootwm.C:791
 msgid "Usage:"
 msgstr "Uporaba:"

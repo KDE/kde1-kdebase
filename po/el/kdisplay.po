@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-30 01:10+0100\n"
+"POT-Creation-Date: 1998-12-04 01:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,195 +55,199 @@ msgstr "Ρύσμισε..."
 msgid "Wallpaper"
 msgstr "Ταπετσαρία"
 
-#: backgnd.cpp:295 backgnd.cpp:530 backgnd.cpp:544 backgnd.cpp:1149
-#: backgnd.cpp:1306 backgnd.cpp:1844
+#: backgnd.cpp:319 backgnd.cpp:580 backgnd.cpp:594 backgnd.cpp:1205
+#: backgnd.cpp:1365 backgnd.cpp:1903
 #, fuzzy
 msgid "No wallpaper"
 msgstr "Ταπετσαρία"
 
-#: backgnd.cpp:324
+#: backgnd.cpp:351
 #, fuzzy
 msgid "&Browse..."
 msgstr "Κοίταξε"
 
-#: backgnd.cpp:332
+#: backgnd.cpp:359
+msgid "Mode:"
+msgstr ""
+
+#: backgnd.cpp:366
 #, fuzzy
 msgid "Tiled"
 msgstr "Πλακάκια"
 
-#: backgnd.cpp:333
+#: backgnd.cpp:367
 msgid "Mirrored"
 msgstr ""
 
-#: backgnd.cpp:334
+#: backgnd.cpp:368
 #, fuzzy
 msgid "Center Tiled"
 msgstr "Κεντραρισμένο"
 
-#: backgnd.cpp:335
+#: backgnd.cpp:369
 #, fuzzy
 msgid "Centred"
 msgstr "Κεντραρισμένο"
 
-#: backgnd.cpp:336
+#: backgnd.cpp:370
 #, fuzzy
 msgid "Centred Brick"
 msgstr "Κεντραρισμένο"
 
-#: backgnd.cpp:337
+#: backgnd.cpp:371
 #, fuzzy
 msgid "Centred Warp"
 msgstr "Κεντραρισμένο"
 
-#: backgnd.cpp:338
+#: backgnd.cpp:372
 #, fuzzy
 msgid "Centred Maxpect"
 msgstr "Κεντραρισμένο"
 
-#: backgnd.cpp:339
+#: backgnd.cpp:373
 msgid "Symmetrical Tiled"
 msgstr ""
 
-#: backgnd.cpp:340
+#: backgnd.cpp:374
 msgid "Symmetrical Mirrored"
 msgstr ""
 
-#: backgnd.cpp:341
+#: backgnd.cpp:375
 #, fuzzy
 msgid "Scaled"
 msgstr "Υπό κλίμακα"
 
-#: backgnd.cpp:353
+#: backgnd.cpp:390
 msgid "Ra&ndom"
 msgstr ""
 
-#: backgnd.cpp:362
+#: backgnd.cpp:399
 #, fuzzy
 msgid "Setu&p..."
 msgstr "Ρύσμισε..."
 
-#: backgnd.cpp:370
+#: backgnd.cpp:407
 msgid "&Dock into the panel"
 msgstr ""
 
-#: backgnd.cpp:379
-msgid "Cache size"
+#: backgnd.cpp:431
+msgid "Cache size:"
 msgstr ""
 
-#: backgnd.cpp:397
+#: backgnd.cpp:447
 msgid "kb"
 msgstr ""
 
-#: backgnd.cpp:1273
+#: backgnd.cpp:1332
 msgid "Desktop names"
 msgstr ""
 
-#: backgnd.cpp:1318
+#: backgnd.cpp:1377
 msgid "File error"
 msgstr ""
 
-#: backgnd.cpp:1319
+#: backgnd.cpp:1378
 msgid "Can't load image file"
 msgstr ""
 
-#: backgnd.cpp:1342 backgnd.cpp:1814
+#: backgnd.cpp:1401 backgnd.cpp:1873
 msgid "Unsupported URL"
 msgstr ""
 
-#: backgnd.cpp:1343 backgnd.cpp:1815
+#: backgnd.cpp:1402 backgnd.cpp:1874
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 
-#: backgnd.cpp:1374
+#: backgnd.cpp:1433
 #, fuzzy
 msgid "Two color backgrounds"
 msgstr "Επιλογή φόντου"
 
-#: backgnd.cpp:1411
+#: backgnd.cpp:1470
 msgid "Blend colors from &top to bottom"
 msgstr ""
 
-#: backgnd.cpp:1417
+#: backgnd.cpp:1476
 msgid "Blend colors from &right to left"
 msgstr ""
 
-#: backgnd.cpp:1423
+#: backgnd.cpp:1482
 msgid "Use &pattern"
 msgstr ""
 
-#: backgnd.cpp:1450
+#: backgnd.cpp:1509
 msgid "Preview"
 msgstr ""
 
-#: backgnd.cpp:1461
+#: backgnd.cpp:1520
 msgid "Pattern &name"
 msgstr ""
 
-#: backgnd.cpp:1500
+#: backgnd.cpp:1559
 msgid "Current"
 msgstr ""
 
-#: backgnd.cpp:1560
+#: backgnd.cpp:1619
 #, fuzzy
 msgid "Filled"
 msgstr "Πλακάκια"
 
-#: backgnd.cpp:1563
+#: backgnd.cpp:1622
 msgid "Fish net"
 msgstr ""
 
-#: backgnd.cpp:1566
+#: backgnd.cpp:1625
 msgid "Triangles"
 msgstr ""
 
-#: backgnd.cpp:1569
+#: backgnd.cpp:1628
 msgid "Flowers"
 msgstr ""
 
-#: backgnd.cpp:1572
+#: backgnd.cpp:1631
 msgid "Rattan"
 msgstr ""
 
-#: backgnd.cpp:1575
+#: backgnd.cpp:1634
 msgid "Cobbled Pavement"
 msgstr ""
 
-#: backgnd.cpp:1641
+#: backgnd.cpp:1700
 msgid "Random mode setup"
 msgstr ""
 
-#: backgnd.cpp:1647
+#: backgnd.cpp:1706
 msgid "Pick files from &directory"
 msgstr ""
 
-#: backgnd.cpp:1661
+#: backgnd.cpp:1720
 #, fuzzy
 msgid "&Browse ..."
 msgstr "Κοίταξε"
 
-#: backgnd.cpp:1682
+#: backgnd.cpp:1741
 msgid "Timer Delay in seconds :"
 msgstr ""
 
-#: backgnd.cpp:1694
+#: backgnd.cpp:1753
 #, fuzzy
 msgid "In &order"
 msgstr "Αγνόησε"
 
-#: backgnd.cpp:1711
+#: backgnd.cpp:1770
 msgid "Desktops :"
 msgstr ""
 
-#: backgnd.cpp:1750
+#: backgnd.cpp:1809
 msgid "&Add"
 msgstr ""
 
-#: backgnd.cpp:1921
+#: backgnd.cpp:1980
 msgid "Directory error"
 msgstr ""
 
-#: backgnd.cpp:1922
+#: backgnd.cpp:1981
 msgid "Selected directory doesn't exists"
 msgstr ""
 

@@ -1,12 +1,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-25 01:11+0100\n"
+"POT-Creation-Date: 1998-12-04 01:12+0100\n"
 "PO-Revision-Date: 1998-11-27 19:55+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
-#: krootwm.C:135 krootwm.C:706
+#: krootwm.C:135 krootwm.C:702
 msgid "Folder"
 msgstr "Carpeta"
 
@@ -55,7 +55,7 @@ msgstr "Ayuda del escritorio"
 msgid "About KDE..."
 msgstr "Acerca del KDE..."
 
-#: krootwm.C:264 krootwm.C:291 krootwm.C:696 krootwm.C:704
+#: krootwm.C:264 krootwm.C:291 krootwm.C:692 krootwm.C:700
 msgid "New"
 msgstr "Nuevo"
 
@@ -75,14 +75,14 @@ msgstr "Ventanas"
 msgid "Edit Bookmarks"
 msgstr "Editar marcadores"
 
-#: krootwm.C:726
+#: krootwm.C:722
 msgid "Could not create folder"
 msgstr "Imposible crear carpeta"
 
-#: krootwm.C:791
+#: krootwm.C:787
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:795
+#: krootwm.C:791
 msgid "Usage:"
 msgstr "Modo de uso:"
