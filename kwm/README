@@ -3,7 +3,7 @@
  Developed and maintained by Matthias Ettrich (ettrich@kde.org)
 
 
-Version 0.10 patchlevel 15
+Version 0.10 patchlevel 18
 
 Please see the CHANGES file for detailed informations about the actual
 development and the history of kwm.
@@ -162,7 +162,9 @@ Answer: Yes it is. You simple have to go through kwm.h/kwm.C from
     FocusPolicy=ClickToFocus, FocusFollowMouse
     AutoRaise=0 (milliseconds)
     MaximizeOnlyVertically=off, on
-    TitlebarLook=shaded, plain
+    TitlebarLook=shaded, plain, pixmap
+    TitlebarPixmapActive=<pixmap>
+    TitlebarPixmapInactive=<pixmap>
     TitleAnimation=50 (milliseconds)
     ResizeAnimation=on, off
     ControlTab=on, off

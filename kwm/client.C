@@ -27,6 +27,7 @@
 #include "client.moc"
 #include "manager.h"
 #include "main.h"
+#include <kiconloader.h>
 #include <kwm.h>
 
 #include <X11/Xutil.h>
@@ -350,11 +351,7 @@ static QPixmap* pm_menu = NULL;
 
 QPixmap* loadIcon(const char* name){
   QPixmap *result = new QPixmap;
-  QString fn = "/share/apps/kwm/pics/";
-  fn.append(name);
-  QString s = KApplication::findFile(fn);
-  if (!s.isEmpty())
-    result->load(s.data());
+  *result = kapp->getIconLoader()->loadIcon(name);
   return result;
 }
 
@@ -1022,10 +1019,14 @@ void Client::paintState(bool only_label){
   QPixmap *pm;
   p.setClipRect(r);
   p.setClipping(True);
-  if (options.TitlebarLook == SHADED){
-    pm = is_active ? shaded_pm_active : shaded_pm_inactive;
+  if (options.TitlebarLook == SHADED || options.TitlebarLook == PIXMAP){
+    
+    if (options.TitlebarLook == SHADED)
+      pm = is_active ? shaded_pm_active : shaded_pm_inactive;
+    else
+      pm = is_active ? options.titlebarPixmapActive: options.titlebarPixmapInactive;    
     if (only_label){
-      x = r.x()-40;
+      x = r.x()-(pm->width()-10);
       p.drawPixmap(x, r.y(), *pm);
       x = r.x() + r.width() - 10;
       p.drawPixmap(x, r.y(), *pm);

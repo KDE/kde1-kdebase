@@ -5,6 +5,8 @@
  *
  */
 
+#include <qpixmap.h>
+
 #ifndef OPTIONS_H
 #define OPTIONS_H
 
@@ -26,7 +28,8 @@ enum FOCUS_POLICY {
 
 enum TITLEBAR_LOOK{
   PLAIN,
-  SHADED
+  SHADED,
+  PIXMAP
 };
 
 enum BUTTON_FUNCTIONS {
@@ -52,16 +55,14 @@ struct kwmOptions {
   int ControlTab;
 
   BUTTON_FUNCTIONS buttons[6];
+
+  QPixmap* titlebarPixmapActive;
+  QPixmap* titlebarPixmapInactive;
+
 };
 
 extern kwmOptions options;
 
+
 #endif // OPTIONS_H
-
-
-
-
-
-
-
 

@@ -24,6 +24,7 @@
 #include "version.h"
 
 #include <kapp.h>
+#include <kiconloader.h>
 
 #include "main.moc"
 #include "manager.h"
@@ -89,8 +90,6 @@ static myPushButton* infoIcon = NULL;
 static QFrame* infoFrame = NULL;
 static QFrame* infoFrameInner = NULL;
 extern bool do_not_draw;
-
-
 
 static int infoBoxVirtualDesktop = 0;
 static Client* infoBoxClient = NULL;
@@ -432,6 +431,8 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
   grabKey(XK_F7, ControlMask);
   grabKey(XK_F8, ControlMask);
 
+  options.titlebarPixmapActive = new QPixmap;
+  options.titlebarPixmapInactive = new QPixmap;
   
   readConfiguration();
 
@@ -577,9 +578,28 @@ void MyApp::readConfiguration(){
     options.TitlebarLook = SHADED;
   else if( key == "plain")
     options.TitlebarLook = PLAIN;
+  else if( key == "pixmap")
+    options.TitlebarLook = PIXMAP;
   else{
     config->writeEntry("TitlebarLook", "shaded");
     options.TitlebarLook = SHADED;
+  }
+
+  if (config->hasKey("TitlebarPixmapActive")){
+    *(options.titlebarPixmapActive) = getIconLoader()
+      ->loadIcon(config->readEntry("TitlebarPixmapActive"));
+  }
+  if (config->hasKey("TitlebarPixmapInactive")){
+    *(options.titlebarPixmapInactive) = getIconLoader()
+      ->loadIcon(config->readEntry("TitlebarPixmapInactive"));
+  }
+
+  if (options.titlebarPixmapInactive->size() == QSize(0,0))
+    options.titlebarPixmapInactive = options.titlebarPixmapActive;
+
+  if (options.TitlebarLook == PIXMAP){
+    if (options.titlebarPixmapActive->size() == QSize(0,0))
+      options.TitlebarLook = PLAIN;
   }
 
   key = config->readEntry("ResizeAnimation");
