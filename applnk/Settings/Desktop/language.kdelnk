@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Exec=kcmlocale language
+Icon=locale.xpm
 Type=Application
 DocPath=kdisplay/locale/language.html
 Comment=Language settings
