@@ -240,11 +240,11 @@
 >2      beshort         0xeedb          application/x-rpm
 
 0	lelong&0x8080ffff	0x0000081a	application/x-arc	lzw
-0	lelong&0x8080ffff	0x0000091a	appilcation/x-arc	squashed
-0	lelong&0x8080ffff	0x0000021a	appilcation/x-arc	uncompressed
-0	lelong&0x8080ffff	0x0000031a	appilcation/x-arc	packed
-0	lelong&0x8080ffff	0x0000041a	appilcation/x-arc	squeezed
-0	lelong&0x8080ffff	0x0000061a	appilcation/x-arc	crunched
+0	lelong&0x8080ffff	0x0000091a	application/x-arc	squashed
+0	lelong&0x8080ffff	0x0000021a	application/x-arc	uncompressed
+0	lelong&0x8080ffff	0x0000031a	application/x-arc	packed
+0	lelong&0x8080ffff	0x0000041a	application/x-arc	squeezed
+0	lelong&0x8080ffff	0x0000061a	application/x-arc	crunched
 
 0	leshort	0xea60	application/octet-stream	x-arj
 
@@ -456,7 +456,7 @@
 0	leshort		0x02f7		application/x-dvi
 
 # RTF - Rich Text Format
-0	string		{\\rtf		application/rtf
+0	string		{\\rtf		text/rtf
 
 #------------------------------------------------------------------------------
 # animation:  file(1) magic for animation/movie formats
