@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-11-25 01:11+0100\n"
-"PO-Revision-Date: 1998-10-23 18:01+0200\n"
+"PO-Revision-Date: 1998-11-27 19:55+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
@@ -53,7 +53,7 @@ msgstr "Ayuda del escritorio"
 
 #: krootwm.C:249
 msgid "About KDE..."
-msgstr ""
+msgstr "Acerca del KDE..."
 
 #: krootwm.C:264 krootwm.C:291 krootwm.C:696 krootwm.C:704
 msgid "New"
@@ -65,11 +65,11 @@ msgstr "Marcadores"
 
 #: krootwm.C:293
 msgid "Desk"
-msgstr ""
+msgstr "Escritorio"
 
 #: krootwm.C:294
 msgid "Windows"
-msgstr ""
+msgstr "Ventanas"
 
 #: krootwm.C:323
 msgid "Edit Bookmarks"

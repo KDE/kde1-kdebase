@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-11-25 01:11+0100\n"
-"PO-Revision-Date: 1998-11-24 21:06+0100\n"
+"PO-Revision-Date: 1998-11-27 19:54+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
@@ -96,7 +96,7 @@ msgstr "Navegador de disco"
 
 #: props.C:164
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Navegar rápidamente a través del sistema de archivos"
 
 #: props.C:170
 msgid "Panel"
@@ -148,11 +148,11 @@ msgstr "(Ilegíble)"
 
 #: pfilemenu.C:742
 msgid "Shared:"
-msgstr ""
+msgstr "Compartido:"
 
 #: pfilemenu.C:763
 msgid "Personal:"
-msgstr ""
+msgstr "Personal:"
 
 #: pfilemenu.C:783
 msgid "Recent:"
@@ -161,9 +161,3 @@ msgstr "Reciente:"
 #: pfilemenu.C:831
 msgid "Options..."
 msgstr "Opciones..."
-
-#~ msgid "Global:"
-#~ msgstr "Global:"
-
-#~ msgid "Local:"
-#~ msgstr "Local:"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-11-27 01:12+0100\n"
-"PO-Revision-Date: 1998-11-24 20:39+0100\n"
+"PO-Revision-Date: 1998-11-27 19:43+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
@@ -129,12 +129,11 @@ msgstr "Ver fuente del d&ocumento"
 
 #: kfmgui.cpp:347
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 #: kfmgui.cpp:355
-#, fuzzy
 msgid "&Document Encoding"
-msgstr "Documento: Listo"
+msgstr "Codificado del &documento"
 
 #: kfmgui.cpp:366
 msgid "Show History"
@@ -574,9 +573,8 @@ msgid "Save settings for this URL"
 msgstr "Guardar propiedades de esta URL"
 
 #: main.cpp:238
-#, fuzzy
 msgid "Show Menubar"
-msgstr "Mostrar barra de &menú"
+msgstr "Mostrar barra de menú"
 
 #: htmlopts.cpp:70
 msgid "Small"
@@ -600,11 +598,11 @@ msgstr "Fuente fija"
 
 #: htmlopts.cpp:161
 msgid "Default Charset"
-msgstr ""
+msgstr "Código de caracteres por defecto"
 
 #: htmlopts.cpp:169
 msgid "Use language charset"
-msgstr ""
+msgstr "Usar código de caracteres del idioma"
 
 #: htmlopts.cpp:361
 msgid "Background Color:"
@@ -663,9 +661,8 @@ msgid "Could not write bookmark"
 msgstr "Imposible escribir marcador"
 
 #: kfmprops.cpp:238
-#, fuzzy
 msgid "File Name"
-msgstr "Nombre completo"
+msgstr "Nombre del archivo"
 
 #: kfmprops.cpp:253
 msgid "Full Name"
@@ -1503,6 +1500,3 @@ msgid ""
 msgstr ""
 "Error sintáctico:\n"
 "kfmexec comando [URLs ....]\n"
-
-#~ msgid "Name"
-#~ msgstr "Nombre"

@@ -2,19 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-11-23 01:14+0100\n"
-"PO-Revision-Date: 1998-10-23 18:00+0200\n"
+"PO-Revision-Date: 1998-11-27 19:47+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
 #: attraction.cpp:716
-#, fuzzy
 msgid "Attraction"
-msgstr "Contracción"
+msgstr "Atracción"
 
 #: attraction.cpp:803
-#, fuzzy
 msgid "Setup KAttraction"
-msgstr "Configurar Murciélago"
+msgstr "Configurar KAtracción"
 
 #: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
@@ -26,7 +24,7 @@ msgstr "Modo:"
 
 #: attraction.cpp:834 slidescreen.cpp:498
 msgid "Balls"
-msgstr ""
+msgstr "Bolas"
 
 #: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
@@ -38,24 +36,22 @@ msgstr "Polígonos"
 
 #: attraction.cpp:837 slidescreen.cpp:501
 msgid "Tails"
-msgstr ""
+msgstr "Colas"
 
 #: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
-msgstr ""
+msgstr "Brillo"
 
 #: attraction.cpp:869 attraction.cpp:956 slidescreen.cpp:534
 #: slidescreen.cpp:563
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
 #: attraction.cpp:951
-#, fuzzy
 msgid "About Attraction"
-msgstr "Contracción"
+msgstr "Acerca de Atracción"
 
 #: attraction.cpp:952
-#, fuzzy
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -65,11 +61,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Rock Versión 3.3\n"
+"Atracción versión 1.0\n"
 "\n"
-"Copyright (c) 1992 por Jamie Zawinski\n"
+"Copyright (c) 1992-1997 por Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Adaptado a kscreensave por Martin Jones."
+"Ajustado a kscreensaver por:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
 #: banner.cpp:62
 msgid "Banner"
@@ -762,22 +760,18 @@ msgid "About Science"
 msgstr "Acerca de ciencia"
 
 #: slidescreen.cpp:419
-#, fuzzy
 msgid "SlideScreen"
-msgstr "Pantalla negra"
+msgstr "DeslizaPantalla"
 
 #: slidescreen.cpp:465
-#, fuzzy
 msgid "Setup KSlideScreen"
-msgstr "Configurar ciencia"
+msgstr "Configurar DeslizaPantalla"
 
 #: slidescreen.cpp:558
-#, fuzzy
 msgid "About SlideScreen"
-msgstr "Acerca de ciencia"
+msgstr "Acerca de DeslizaPantalla"
 
 #: slidescreen.cpp:559
-#, fuzzy
 msgid ""
 "SlideScreen Version 1.1\n"
 "\n"
@@ -787,11 +781,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Rock Versión 3.3\n"
+"DeslizaPantalla versión 1.1\n"
 "\n"
-"Copyright (c) 1992 por Jamie Zawinski\n"
+"Copyright (c) 1992-1997 por Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Adaptado a kscreensave por Martin Jones."
+"Adaptado a kscreensaver por:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
 #: slip.cpp:293
 msgid "Slip"
