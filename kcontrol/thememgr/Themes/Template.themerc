@@ -89,6 +89,9 @@ StickyButton=
 TitlebarPixmapActive=
 TitlebarPixmapInactive=
 PixmapUnderTitleText=
+TitleFrameShaded=
+TitleAlignment=
+TitleFont=
 #
 #-----------------------------------------------------------------------------
 [Sounds]

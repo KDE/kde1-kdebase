@@ -153,7 +153,7 @@ WindowUnSticky=
 ConfigFile=kwmrc
 ConfigGroup=General
 ConfigAppDir=apps/kwm/pics
-ConfigActivateCmd=kwmcom restart
+ConfigNextGroup=Window Titlebar-2
 CloseButton=:close.xpm
 MaximizeButton=:maximize.xpm
 MaximizeDownButton=:maximizedown.xpm
@@ -163,6 +163,14 @@ StickyButton=:sticky.xpm
 TitlebarPixmapActive=:activetitlebar.xpm
 TitlebarPixmapInactive=:inactivetitlebar.xpm
 PixmapUnderTitleText=!
+TitleFrameShaded=!
+TitleAlignment=!
+#
+[Window Titlebar-2]
+ConfigFile=KDERC
+ConfigActivateCmd=kwmcom restart
+ConfigGroup=WM
+TitleFont=!
 #
 #-----------------------------------------------------------------------------
 [Window Border]

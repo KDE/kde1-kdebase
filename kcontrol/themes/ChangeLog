@@ -1,3 +1,8 @@
+1998-12-17  Stefan Taferner  <taferner@kde.org>
+
+	* Added TitleFont, TitleFrameShaded, TitleAlignment to
+	window-title group of theme mappings.
+
 1998-12-16  Stefan Taferner  <taferner@kde.org> (V0.4)
 
 	* Added support for themes that are stored in a directory.
