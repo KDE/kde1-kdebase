@@ -59,16 +59,16 @@ msgstr ""
 
 #: kgreeter.cpp:467 kgreeter.cpp:475 kgreeter.cpp:501 kgreeter.cpp:509
 msgid "Expired"
-msgstr ""
+msgstr "Expirované"
 
 #: kgreeter.cpp:468 kgreeter.cpp:502
 msgid "Sorry -- your account has expired."
-msgstr ""
+msgstr "Je mi µúto, vá¹ úèet expiroval."
 
 #: kgreeter.cpp:473 kgreeter.cpp:507
 #, c-format
 msgid "Warning: your account expires on %s"
-msgstr ""
+msgstr "Varovanie: vá¹ úèet expiruje %s"
 
 #: kgreeter.cpp:541
 msgid "No home"
@@ -76,4 +76,4 @@ msgstr ""
 
 #: kgreeter.cpp:542
 msgid "Home directory not available"
-msgstr ""
+msgstr "Domovský prieèinok nie je prístupný"
