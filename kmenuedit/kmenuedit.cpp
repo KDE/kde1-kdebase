@@ -4,7 +4,7 @@
 //  kmenuedit
 //
 //  Copyright (C) 1997 Christoph Neerfeld
-//  email:  Christoph.Neerfeld@bonn.netsurf.de
+//  email:  Christoph.Neerfeld@home.ivm.de or chris@kde.org
 //
 //  This program is free software; you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -59,20 +59,24 @@ KMenuEdit::KMenuEdit( const char *name )
 
   menubar = new KMenuBar( this, "menubar" );
   QPopupMenu *file = new QPopupMenu;
-  file->insertItem(klocale->translate("Reload"), this, SLOT(reload()) );
-  file->insertItem(klocale->translate("Save"), this, SLOT(save()) );
+  file->insertItem(klocale->translate("&Reload"), this, SLOT(reload()) );
+  file->insertItem(klocale->translate("&Save"), this, SLOT(save()) );
   file->insertSeparator();
-  file->insertItem(klocale->translate("Quit"), qApp, SLOT(quit()), CTRL+Key_Q);
+  file->insertItem(klocale->translate("&Quit"), qApp, SLOT(quit()), CTRL+Key_Q );
   //QPopupMenu *edit_menu = new QPopupMenu;
   QPopupMenu *options = new QPopupMenu;
-  options->insertItem(klocale->translate("Change Menuname"), this, SLOT(changeMenuName()) );
-  options->insertItem(klocale->translate("Reload Filetypes"), this, SLOT(reloadFileTypes()) );
+  options->insertItem(klocale->translate("Change &Menuname"), this, SLOT(changeMenuName()) );
+  options->insertItem(klocale->translate("Reload &Filetypes"), this, SLOT(reloadFileTypes()) );
 
-  menubar->insertItem( klocale->translate("File"), file );
+  menubar->insertItem( klocale->translate("&File"), file );
   //menubar->insertItem( klocale->translate("Edit"), edit_menu);
-  menubar->insertItem( klocale->translate("Options"), options);
+  menubar->insertItem( klocale->translate("&Options"), options);
   menubar->insertSeparator();
-  menubar->insertItem( klocale->translate("Help"), KApplication::getKApplication()->getHelpMenu(TRUE, klocale->translate("KMenuedit 0.2.3\n(C) by Christoph Neerfeld\nChristoph.Neerfeld@bonn.netsurf.de")) );
+  QString about = "KMenuedit 0.3.0\n(C) ";
+  about += (QString) klocale->translate("by") +
+    " Christoph Neerfeld\nChristoph.Neerfeld@home.ivm.de";
+  menubar->insertItem( klocale->translate("&Help"), 
+		       KApplication::getKApplication()->getHelpMenu(TRUE, about ) );
 
   // create toolbar
   toolbar = new KToolBar(this);
@@ -155,6 +159,13 @@ KMenuEdit::KMenuEdit( const char *name )
   resize(width, height);
   changes_to_save = FALSE;
   setUnsavedData(FALSE);
+
+  // popup help if started for the first time
+  if( config->readNumEntry("FirstTime", 1) )
+    {
+      KApplication::getKApplication()->invokeHTMLHelp( "", "");
+      config->writeEntry("FirstTime", 0);
+    }
 }
 
 KMenuEdit::~KMenuEdit()
@@ -203,13 +214,6 @@ void KMenuEdit::move_v( int y )
 void KMenuEdit::startHelp()
 {
   KApplication::getKApplication()->invokeHTMLHelp( "", "");
-}
-
-void KMenuEdit::about()
-{
-  QMessageBox::message( klocale->translate("About"), \
-                        klocale->translate("KMenuedit 0.2.3\n(C) by Christoph Neerfeld\nChristoph.Neerfeld@bonn.netsurf.de"), 
-			klocale->translate("Ok") );
 }
 
 void KMenuEdit::loadMenus()

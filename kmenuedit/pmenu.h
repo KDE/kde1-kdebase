@@ -4,7 +4,7 @@
 //  kmenuedit
 //
 //  Copyright (C) 1997 Christoph Neerfeld
-//  email:  Christoph.Neerfeld@bonn.netsurf.de
+//  email:  Christoph.Neerfeld@home.ivm.de or chris@kde.org
 //
 //  This program is free software; you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ class QDir;
 class PMenu;
 class ConfigureMenu;
 
-enum EntryType { empty, separator, submenu, unix_com, fvwm_com, url, device, prog_com, net_com, label };
+enum EntryType { empty, separator, submenu, unix_com, swallow_com, url, device, prog_com, net_com, label };
 
 class PMenuItem : public QObject
 {
@@ -82,6 +82,10 @@ public:
   QString   getMountP()                { return mount_point; }
   void      setFSType( QString t )     { fs_type = t; }
   QString   getFSType()                { return fs_type; }
+  void      setSCommand( QString t )   { swallow_exec = t; }
+  QString   getSCommand()              { return swallow_exec; }
+  void      setSTitle( QString t )     { swallow_title = t; }
+  QString   getSTitle()                { return swallow_title; }
   void      setMenu( PMenu *menu );
   PMenu    *getMenu()                  { return sub_menu; }
   void      removeMenu();
@@ -127,12 +131,14 @@ protected:
   QString     pattern;
   QString     protocols;
   QString     extensions;
+  QString     swallow_exec;
   QString    &url_name;      // reference to command_name
   QString    &dev_name;      // reference to command_name
   QString    &mount_point;   // reference to term_opt
   QString    &fs_type;       // reference to exec_path
   bool       &dev_read_only; // reference to use_term;
   QString    &umount_pixmap_name; // reference to pattern
+  QString    &swallow_title; // reference to term_opt;
 };
 
 class PMenu : public QObject

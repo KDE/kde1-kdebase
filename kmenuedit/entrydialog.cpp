@@ -2,7 +2,7 @@
 //  kmenuedit
 //
 //  Copyright (C) 1997 Christoph Neerfeld
-//  email:  Christoph.Neerfeld@bonn.netsurf.de
+//  email:  Christoph.Neerfeld@home.imv.de or chris@kde.org
 //
 //  This program is free software; you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -47,12 +47,12 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   initMetaObject();
   // create main dialog from 'entry.dlg'
   c_type = new QComboBox( this, "ComboBox_1" );
-  c_type->setGeometry( 72, 8, 100, 24 );
+  c_type->setGeometry( 72, 8, 108, 24 );
   c_type->setAutoResize( TRUE );
   c_type->insertItem( klocale->translate("Separator") );
   c_type->insertItem( klocale->translate("Submenu") );
   c_type->insertItem( klocale->translate("Application") );
-  c_type->insertItem( klocale->translate("Fvwm Command") );
+  c_type->insertItem( klocale->translate("Swallow") );
   c_type->insertItem( klocale->translate("Link") );
   c_type->insertItem( klocale->translate("Device") );
   //c_type->insertItem( "Filetype" );
@@ -166,7 +166,7 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   f_app_2 = new QFrame(f_sub_diag);
   tb_app->addTab(f_app_2, klocale->translate("Application"));
   f_app_3 = new QFrame(f_sub_diag);
-  tb_app->addTab(f_app_3, klocale->translate("Fvwm"));
+  tb_app->addTab(f_app_3, klocale->translate("Swallow"));
   f_app_4 = new QFrame(f_sub_diag);
   tb_app->addTab(f_app_4, klocale->translate("Link"));
   f_app_5 = new QFrame(f_sub_diag);
@@ -294,19 +294,46 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   tmpQLabel->setMargin( -1 );
   // end 'entry3.dlg'
   // ---
-  // create application 3rd dialog from 'entry6.dlg'
+  // create application 3rd dialog from 'entry6.dlg'; modified for swallow entry
   tmpQLabel = new QLabel( f_app_3, "Label_8" );
-  tmpQLabel->setGeometry( 16, 16, 104, 24 );
-  tmpQLabel->setText( klocale->translate("Fvwm Command:") );
+  tmpQLabel->setGeometry( 16, 12, 200, 24 );
+  tmpQLabel->setText( klocale->translate("Application to swallow:") );
+  tmpQLabel->setAlignment( 289 );
+  tmpQLabel->setMargin( -1 );
+
+  tmpQLabel = new QLabel( f_app_3, "" );
+  tmpQLabel->setGeometry( 16, 68, 200, 24 );
+  tmpQLabel->setText( klocale->translate("Title of application:") );
+  tmpQLabel->setAlignment( 289 );
+  tmpQLabel->setMargin( -1 );
+
+  tmpQLabel = new QLabel( f_app_3, "" );
+  tmpQLabel->setGeometry( 16, 124, 300, 24 );
+  tmpQLabel->setText( klocale->translate("Application to execute on button press:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
-  i_fvwm = new QLineEdit( f_app_3, "LineEdit_8" );
-  i_fvwm->setGeometry( 24, 40, 296, 24 );
-  i_fvwm->setText( "" );
-  i_fvwm->setMaxLength( 32767 );
-  i_fvwm->setEchoMode( QLineEdit::Normal );
-  i_fvwm->setFrame( TRUE );
+  i_swallow_exec = new QLineEdit( f_app_3, "LineEdit_8" );
+  i_swallow_exec->setGeometry( 24, 36, 296, 24 );
+  i_swallow_exec->setText( "" );
+  i_swallow_exec->setMaxLength( 32767 );
+  i_swallow_exec->setEchoMode( QLineEdit::Normal );
+  i_swallow_exec->setFrame( TRUE );
+
+  i_swallow_title = new QLineEdit( f_app_3, "" );
+  i_swallow_title->setGeometry( 24, 92, 296, 24 );
+  i_swallow_title->setText( "" );
+  i_swallow_title->setMaxLength( 32767 );
+  i_swallow_title->setEchoMode( QLineEdit::Normal );
+  i_swallow_title->setFrame( TRUE );
+
+  i_sexec = new QLineEdit( f_app_3, "" );
+  i_sexec->setGeometry( 24, 148, 296, 24 );
+  i_sexec->setText( "" );
+  i_sexec->setMaxLength( 32767 );
+  i_sexec->setEchoMode( QLineEdit::Normal );
+  i_sexec->setFrame( TRUE );
+
   // end 'entry6.dlg'
   // ---
   // create application 4th dialog from 'entry7.dlg'
@@ -507,9 +534,12 @@ void EntryDialog::typeActivated( int t )
   case 2:  // unix_com
     tb_app->addTab(f_app_1, klocale->translate("Execute"));
     tb_app->addTab(f_app_2, klocale->translate("Application"));
+    i_command->setText(i_sexec->text());
     break;
-  case 3:  // fvwm_com
-    tb_app->addTab(f_app_3, klocale->translate("Fvwm"));
+  case 3:  // swallow_com
+    tb_app->addTab(f_app_3, klocale->translate("Swallow"));
+    tb_app->addTab(f_app_2, klocale->translate("Application"));
+    i_sexec->setText(i_command->text());
     break;
   case 4:  // url
     tb_app->addTab(f_app_4, klocale->translate("Link"));

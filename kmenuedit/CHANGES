@@ -1,3 +1,10 @@
+version 0.3.0
+- removed fvwm support
+- added swallow kdelnk-files
+- accepts drops from kfm if the file is a kdelnk-file or an executable
+- drags entries onto the desktop or kpanel
+- changes kdelnk-files instead of overwriting them
+
 - smaller fixes in pmenu.cpp:
     - introduced real_name and uses this for the sort_order
       to work together with kpanel needs  

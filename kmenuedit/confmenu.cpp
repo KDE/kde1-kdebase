@@ -1,8 +1,8 @@
 //
-//  ktaskbar
+//  kmenuedit
 //
 //  Copyright (C) 1997 Christoph Neerfeld
-//  email:  Christoph.Neerfeld@bonn.netsurf.de
+//  email:  Christoph.Neerfeld@home.ivm.de or chris@kde.org
 //
 //  This program is free software; you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -197,11 +197,20 @@ void MenuButton::change_item()
   dialog->b_big_pixmap->setPixmap( pmenu_item->getBigPixmap());
   dialog->i_big_pixmap->setText(temp_name);
 
-  if( type == unix_com )
+  if( type == unix_com || type == swallow_com )
     {
+      if( type == unix_com )
+	{
+	  dialog->i_term_opt->setText(pmenu_item->getTermOpt());
+	}
+      else
+	{
+	  dialog->i_swallow_exec->setText(pmenu_item->getSCommand());
+	  dialog->i_swallow_title->setText(pmenu_item->getSTitle());
+	  dialog->i_sexec->setText(pmenu_item->getCommand());
+	}
       dialog->i_command->setText(pmenu_item->getCommand());
       dialog->i_dir->setText(pmenu_item->getExecDir());
-      dialog->i_term_opt->setText(pmenu_item->getTermOpt());
       dialog->i_pattern->setText(pmenu_item->getPattern());
       QString prot = pmenu_item->getProtocols();
       dialog->cb_file->setChecked(prot.contains("file"));
@@ -229,8 +238,6 @@ void MenuButton::change_item()
 	    }
 	}
     }
-  else if( type == fvwm_com )
-    dialog->i_fvwm->setText(pmenu_item->getCommand());
   else if( type == url )
     dialog->i_url->setText(pmenu_item->getUrl());
   else if( type == device )
@@ -359,8 +366,32 @@ void MenuButton::change_accept()
 	  }
 	pmenu_item->setExtensions(str_list);
 	break;
-      case (int) fvwm_com:
-	pmenu_item->setCommand(dialog->i_fvwm->text());
+      case (int) swallow_com:
+	pmenu_item->setSCommand(dialog->i_swallow_exec->text());
+	pmenu_item->setSTitle(dialog->i_swallow_title->text());
+	pmenu_item->setCommand(dialog->i_sexec->text());
+	pmenu_item->setPattern(dialog->i_pattern->text());
+	if( dialog->cb_file->isChecked() )
+	  prot += "file;";
+	if( dialog->cb_ftp->isChecked() )
+	  prot += "ftp;";
+	if( dialog->cb_http->isChecked() )
+	  prot += "http;";
+	if( dialog->cb_tar->isChecked() )
+	  prot += "tar;";
+	if( dialog->cb_info->isChecked() )
+	  prot += "info;";
+	if( dialog->cb_man->isChecked() )
+	  prot += "man;";
+	pmenu_item->setProtocols(prot);
+	pmenu_item->setUseTerm(dialog->ch_use_term->isChecked());
+	nr = dialog->l_inside->count();
+	for( i = 0; i < nr; i++ )
+	  {
+	    str_list += dialog->l_inside->text(i);
+	    str_list += ';';
+	  }
+	pmenu_item->setExtensions(str_list);
 	break;
       case (int) url:
 	pmenu_item->setUrl(dialog->i_url->text());

@@ -4,7 +4,7 @@
 //  kmenuedit
 //
 //  Copyright (C) 1997 Christoph Neerfeld
-//  email:  Christoph.Neerfeld@bonn.netsurf.de
+//  email:  Christoph.Neerfeld@home.ivm.de or chris@kde.org
 //
 //  This program is free software; you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -63,7 +63,7 @@ static bool isKdelnkFile(const char* name){
 
 PMenuItem::PMenuItem() 
   : url_name(command_name), dev_name(command_name), mount_point(term_opt), fs_type(exec_path),
-    dev_read_only(use_term), umount_pixmap_name(pattern)
+    dev_read_only(use_term), umount_pixmap_name(pattern), swallow_title(term_opt)
 {
   initMetaObject();
   entry_type = empty; 
@@ -77,7 +77,7 @@ PMenuItem::PMenuItem()
 PMenuItem::PMenuItem( EntryType e, QString t, QString c, QString n, PMenu *menu,
 		      QObject *receiver, char *member, CPopupMenu *cm, bool ro )
   : url_name(command_name), dev_name(command_name), mount_point(term_opt), fs_type(exec_path),
-    dev_read_only(use_term), umount_pixmap_name(pattern)
+    dev_read_only(use_term), umount_pixmap_name(pattern), swallow_title(term_opt)
 {
   initMetaObject();
   entry_type = e;
@@ -102,7 +102,7 @@ PMenuItem::PMenuItem( EntryType e, QString t, QString c, QString n, PMenu *menu,
 
 PMenuItem::PMenuItem( PMenuItem &item )
   : url_name(command_name), dev_name(command_name), mount_point(term_opt), fs_type(exec_path),
-    dev_read_only(use_term), umount_pixmap_name(pattern)
+    dev_read_only(use_term), umount_pixmap_name(pattern), swallow_title(term_opt)
 {
   initMetaObject();
   text_name       = item.text_name;
@@ -180,8 +180,8 @@ QString &operator<<( QString &s, PMenuItem &item )
   case unix_com:
     s = "Unix_Com ";
     break;
-  case fvwm_com:
-    s = "Fvwm_Com ";
+  case swallow_com:
+    s = "Swallow_Com ";
     break;
   case net_com:
     s = "Net_Com ";
@@ -220,8 +220,8 @@ short PMenuItem::parse( QString &s, PMenu *menu)
     { entry_type = label; }
   else if ( command == "Unix_Com" )
     { entry_type = unix_com; }
-  else if ( command == "Fvwm_Com" )
-    { entry_type = fvwm_com; }
+  else if ( command == "Swallow_Com" )
+    { entry_type = swallow_com; }
   else if ( command == "Net_Com" )
     { entry_type = net_com; }
   else
@@ -287,50 +287,48 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu )
 	return -1;
       KConfig kconfig(fi->absFilePath());
       kconfig.setGroup("KDE Desktop Entry");
-      command_name    = kconfig.readEntry("WmCommand");
+      command_name    = kconfig.readEntry("Exec");
+      swallow_exec    = kconfig.readEntry("SwallowExec");
       comment         = kconfig.readEntry("Comment");
       text_name       = kconfig.readEntry("Name", text_name);
       pixmap_name     = kconfig.readEntry("MiniIcon");
       big_pixmap_name = kconfig.readEntry("Icon");
-      if( !command_name.isEmpty() )
+      type_string     = kconfig.readEntry("Type");
+      if( type_string == "Application" ) 
 	{
-	  entry_type = fvwm_com;
-	}
-      else
-	{
-	  type_string = kconfig.readEntry("Type");
-	  if( type_string == "Application" ) 
+	  if( !swallow_exec.isEmpty() )
+	    {
+	      entry_type = swallow_com;
+	      swallow_title = kconfig.readEntry("SwallowTitle");
+	    }
+	  else
 	    {
 	      entry_type = unix_com;
-	      command_name = kconfig.readEntry("Exec");
-	      term_opt        = kconfig.readEntry("TerminalOptions");
-	      exec_path       = kconfig.readEntry("Path");
-	      dir_path        = fi->dirPath(TRUE);
-	      use_term        = kconfig.readNumEntry("Terminal");
-	      pattern         = kconfig.readEntry("BinaryPattern");
-	      protocols       = kconfig.readEntry("Protocols");
-	      extensions      = kconfig.readEntry("MimeType");
+	      term_opt   = kconfig.readEntry("TerminalOptions");
 	    }
-	  else if( type_string == "Link" )
-	    {
-	      entry_type = url;
-	      url_name   = kconfig.readEntry("URL");
-	    }
-	  else if( type_string == "FSDevice" )
-	    {
-	      entry_type  = device;
-	      dev_name    = kconfig.readEntry("Dev");
-	      mount_point = kconfig.readEntry("MountPoint");
-	      fs_type     = kconfig.readEntry("FSType");
-	      umount_pixmap_name = kconfig.readEntry("UnmountIcon");
-	      dev_read_only = kconfig.readNumEntry("ReadOnly");
-	    }
+	  exec_path       = kconfig.readEntry("Path");
+	  dir_path        = fi->dirPath(TRUE);
+	  use_term        = kconfig.readNumEntry("Terminal");
+	  pattern         = kconfig.readEntry("BinaryPattern");
+	  protocols       = kconfig.readEntry("Protocols");
+	  extensions      = kconfig.readEntry("MimeType");
 	}
-      //config.close();
+      else if( type_string == "Link" )
+	{
+	  entry_type = url;
+	  url_name   = kconfig.readEntry("URL");
+	}
+      else if( type_string == "FSDevice" )
+	{
+	  entry_type  = device;
+	  dev_name    = kconfig.readEntry("Dev");
+	  mount_point = kconfig.readEntry("MountPoint");
+	  fs_type     = kconfig.readEntry("FSType");
+	  umount_pixmap_name = kconfig.readEntry("UnmountIcon");
+	  dev_read_only = kconfig.readNumEntry("ReadOnly");
+	}
     }
-
-
-
+  
   // some code from kpanel
   QPixmap tmppix;
   pixmap = tmppix;
@@ -402,14 +400,17 @@ void PMenuItem::writeConfig( QDir dir )
   kconfig.writeEntry("MiniIcon", pixmap_name );
   kconfig.writeEntry("Name", text_name );
   switch( (int) entry_type ) {
-  case (int) fvwm_com:
-    kconfig.writeEntry("WmCommand", command_name );
-    kconfig.writeEntry("Exec", "" );
-    break;
+  case (int) swallow_com:
+    kconfig.writeEntry("SwallowExec", swallow_exec );
+    kconfig.writeEntry("SwallowTitle", swallow_title );
+    //break;
   case (int) unix_com:
-    kconfig.writeEntry("WmCommand", "" );
+    if( entry_type == unix_com )
+      {
+	kconfig.writeEntry("SwallowExec", "" );
+	kconfig.writeEntry("TerminalOptions", term_opt );
+      }
     kconfig.writeEntry("Exec", command_name );
-    kconfig.writeEntry("TerminalOptions", term_opt );
     kconfig.writeEntry("Path", exec_path );
     kconfig.writeEntry("Terminal", use_term );
     kconfig.writeEntry("BinaryPattern", pattern);
@@ -522,11 +523,11 @@ short PMenu::create_cmenu( CPopupMenu *menu )
 	if( !item->command_name.isEmpty() )
 	  menu->connectItem( id, item, SLOT(exec_system()) );
 	continue;
-      case fvwm_com:
+      case swallow_com:
 	create_pixmap(buffer, item, menu);
 	id = menu->insertItem( buffer, -2);
 	if( !item->command_name.isEmpty() )
-	  menu->connectItem( id, item, SLOT(exec_fvwm()) );
+	  menu->connectItem( id, item, SLOT(exec_system()) );
 	continue;
       case prog_com:
 	create_pixmap(buffer, item, menu);

@@ -1,12 +1,12 @@
 Begin3
 Title: kmenuedit
-Version: 0.2.1
-Entered-date: 12 Aug 1997
-Description: edits the ktaskbar and kpanel menu
+Version: 0.3.0
+Entered-date: 13 Feb 1998
+Description: edits the kpanel menu
 Keywords: KDE, Qt, X11
-Author: <Christoph.Neerfeld@bonn.netsurf.de> (Christoph Neerfeld)
-Maintained-by: <Christoph.Neerfeld@bonn.netsurf.de> (Christoph Neerfeld)
-Primary-site: ftp://ftp.kde.org/pub/kde/unstable/apps/utils
+Author: <Christoph.Neerfeld@home.ivm.de> (Christoph Neerfeld)
+Maintained-by: <Christoph.Neerfeld@home.ivm.de> (Christoph Neerfeld)
+Primary-site: ftp://ftp.kde.org/pub/kde/
 Alternate-site:
 Original-site:
 Platform: Linux, needs Qt by Troll Tech Inc.

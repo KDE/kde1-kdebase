@@ -3,19 +3,10 @@ KMenuEdit - manages a hierarchy of kdelnk-files
 -----------------------------------------------
 
 You need:
-- qt 1.2
-- libkde-970806
+- qt 1.31
+- kde-beta-3
 
 do:
 
 See the installation instructions for kdeapps.
-
-this will install:
-
-$(KDEDIR)/bin/kmenuedit
-$(KDEDIR)/doc/HTML/kmenuedit/
-$(KDEDIR)/doc/HTML/kmenuedit/kmenuedit.html
-$(KDEDIR)/apps/Utilities/
-$(KDEDIR)/apps/Utilities/KMenuEdit.kdelnk
-$(KDEDIR)/lib/pics/mini*.xpm
 
