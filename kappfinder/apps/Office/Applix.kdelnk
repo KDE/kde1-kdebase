@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=Applix
+Name[hr]=nt=Applix
 Name[ru]=ApplixWare
 MiniIcon=
 Protocols=
@@ -22,6 +23,7 @@ Comment[de]=ApplixWare Office
 Comment[es]=Suite de Oficina ApplixWare
 Comment[fi]=Applixware toimisto-ohjelmisto
 Comment[fr]=Suite bureautique ApplixWare
+Comment[hr]=ApplixWare Office
 Comment[is]=ApplixWare vöndullinn
 Comment[it]=Ambiente Ufficio ApplixWare
 Comment[no]=ApplixWare-kontorpakken

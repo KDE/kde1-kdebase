@@ -3,6 +3,7 @@
 Name=Acrobat Reader
 Name[da]=Acrobat læser
 Name[fi]=Acrobat -lukija
+Name[hr]=Acrobat èitaè
 Name[is]=Acrobat lesarinn
 Name[it]=Lettore Acrobat
 Name[no]=Acrobat-leser
@@ -21,6 +22,7 @@ Comment[da]=PDF dokumentfremviser
 Comment[es]=Visor de documentos PDF
 Comment[fi]=PDF-dokumenttien näyttäjä
 Comment[fr]=Un visualiseur de documents PDF
+Comment[hr]=Preglednik PDF dokumenata
 Comment[is]=xpdf:  Tól til að skoða PDF skrár
 Comment[it]=Lettore documenti PDF
 Comment[no]=PDF-dokumentfremviser

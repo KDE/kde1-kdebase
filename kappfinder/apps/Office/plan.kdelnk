@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=Plan
+Name[hr]=Plan
 Name[is]=Áætlanir
 Name[sl]=Planer
 MiniIcon=mini-plan.xpm
@@ -23,6 +24,7 @@ Comment[de]=Kalendar
 Comment[es]=Calendario
 Comment[fi]=Kalenteriohjelma
 Comment[fr]=Gestionnaire d'agenda
+Comment[hr]=Rokovnik
 Comment[is]=Dagatalsstjóri
 Comment[it]=Calendario Agenda
 Comment[no]=Kalender

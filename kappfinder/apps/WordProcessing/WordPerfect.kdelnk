@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=WordPerfect
+Name[hr]=Wordperfect
 MiniIcon=
 Protocols=
 MimeType=
@@ -18,6 +19,7 @@ Comment[ca]=Processador de textos WordPerfect
 Comment[cs]=Textový procesor WordPerfect
 Comment[da]=WordPerfect teksbehandler
 Comment[fr]=Traitement de texte WordPerfect
+Comment[hr]=Program za obradu teksta
 Comment[is]=WordPerfect ritvinnsluforritið
 Comment[no]=Tekstbehandleren Word Perfect
 Comment[pt]=Processador de texto WordPerfect
