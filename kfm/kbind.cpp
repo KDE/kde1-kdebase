@@ -2097,7 +2097,6 @@ KFMAutoMount::KFMAutoMount( bool _readonly, const char *_format, const char *_de
     device = _device;
     
     job = new KIOJob();
-    //    job->display(false); // we want the errors here
     connect( job, SIGNAL( finished( int ) ), this, SLOT( slotFinished( int ) ) );
     connect( job, SIGNAL( errorFilter( int, const char*, int ) ), this, SLOT( slotError( int, const char*, int ) ) );
     
