@@ -14,8 +14,6 @@ kdehelp_SOURCES	=	main.cpp helpwin.cpp info.cpp error.cpp misc.cpp \
 
 kdehelp_METASOURCES = 	USE_AUTOMOC
 
-#DISTCLEANFILES =	$(kdehelp_METASOURCES)
-
 noinst_HEADERS =	helpwin.h info.h error.h misc.h man.h options.h\
 		bookmark.h dbnew.cpp cgi.h mainwidget.h history.h\
 		booktoken.h fmthtml.h fmtbase.h dbnew.h khelp.h finddlg.h
@@ -33,3 +31,4 @@ uninstall-local:
 
 messages:
 	$(XGETTEXT) -C -ktranslate -kaliasLocale -ki18n -x $(includedir)/kde.pot $(kdehelp_SOURCES) && mv messages.po ../po/kdehelp.pot
+
