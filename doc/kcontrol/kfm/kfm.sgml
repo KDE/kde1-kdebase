@@ -5,8 +5,10 @@
 <!-- Title information -->
 
 <title>KDE Control Center - KFM 
-<author> none so far.
-<date>v0.0. 18 December 1998
+<author>David Faure 
+<htmlurl url="mailto:faure@kde.org"
+name="faure@kde.org">
+<date>v0.1. 18 December 1998
 
 <!-- Table of contents -->
 <toc>
@@ -15,30 +17,130 @@
 
 <sect> KFM Configuration: Fonts
 <p>
-FIXME: doumentation needed
+In this screen, you can customize the Fonts
+used by the File Manager and other KDE applications.
+
+<itemize>
+<item>The "<bf>Font Size</bf> button selects between
+Small/Medium/Large Font sizes.
+
+<item>The pull-down "<bf>Standard Font</bf>" list allows the
+standard (proportional spacing) font to be chosen.
+
+<item>The pull-down "<bf>Fixed Font</bf>" list allows the
+font for displaying text with fixed spacing  to be chosen.
+
+<item>The pull-down "<bf>Default Charset</bf>" list allows the
+default character set  for displaying text to be chosen.
+If "<bf>Use Language Charset</bf>" is chosen, no default character
+set will be selected, and the character set appropriate
+for your Language setting will be used.
+</itemize>
+
+
 
 <sect> KFM Configuration: Color
 <p>
+In this screen you can customize the File Manager
+color settings.  When you click on a color box, the "Select
+Color"screen allows you to select a color for the corresponding
+item.
+
+<itemize>
+<item> "<bf>Background Color</bf>" 
+is the color of the background
+in a File Manager window.
+
+<item> "<bf>Normal Text Color</bf>
+is the color used for displaying normal clickable hypertext
+links for moving around within a hypertext document.
+
+<item> "<bf>URL Link Color</bf>" is the color
+in which clickable URL links (to local files, or
+Internet addresses) are shown, <it>before</it> the
+link is followed.
+
+<item> "<bf>Followed  Link Color</bf>" is the color
+in which clickable  links (both URL links, and
+Normal Text links) are shown, <it>after</it> the
+link has been followed.
+</itemize>
+
+Two further buttons control how links are displayed:
+
+<itemize>
+<item>If "<bf>Change cursor over link</bf>" is selected, the cursor
+changes from an arrow to a pointing hand when it is
+over a clickable link.
+
+<item>If "<bf>Underline links</bf>" is selected, clickable
+links are underlined.
+
+</itemize>
+
+<sect> KFM File Manager Configuration: Other
+<p>
+<itemize>
+<item> "<bf>Allow per-URL settings</bf>
 FIXME: documentation needed
 
-<sect> KFM Configuration: Other
+<item> "<bf>Tree view follows navigation</bf>"
+FIXME: documentation needed
+
+</itemize>  
+In the "<bf>terminal</bf>" box, you can type the command that
+will be  executed to provide a terminal whenever you select
+"Open Terminal" in the File Manager "File" menu.
+The default terminal application is <tt>konsole</tt>.
+
+
+<sect> KFM Web Browser Configuration: Proxy
 <p>
 FIXME: documentation needed
 
-<sect> KFM Configuration: Proxy
+<sect> KFM Web Browser Configuration: HTTP
 <p>
 FIXME: documentation needed
 
-<sect> KFM Configuration: HTTP
-<p>
-FIXME: documentation needed
-
-<sect> KFM Configuration: User Agent
+<sect> KFM Web Browser Configuration: User Agent
 <p>
 FIXME: documentation needed
 
 <sect> KFM Configuration: Desktop Icons
 <p>
-FIXME: documentation needed
+In this screen, you can control the default spacing of the icons
+on your KDE desktop, and how their names are displayed.
+
+<itemize>
+<item> Specify the "<bf>Horizontal Root Grid Spacing</bf>" and
+the  "<bf>Vertical Root Grid Spacing</bf>" to chose the hidden
+grid on which the desktop icons will, by default,  be placed.
+
+<item> The icon names appear as text below the icon. 
+By default, the text appears on a small opaque rectangular
+background that hides the Desktop wallpaper below. 
+To remove this background, press the 
+"<bf>Transparent Text for Desktop Icons</bf>"
+button.
+
+<item> Click on the "<bf>Icon foreground color</bf>" box to 
+chose the color of the text giving the icon name.
+
+<item> Click on the box "<bf>Icon background color</bf>" to 
+chose the color of the background on  which the icon name is written.
+(Inactive if "Transparent Text for Desktop Icons" is selected.)
+
+</itemize>
+
+Click on "<bf>Apply</bf>" to apply configuration changes to
+your current desktop.   "<bf>OK</bf>" applies the changes and  exits,
+while "<bf>Cancel</bf>" exits without applying the changes.
 
 </article>
+
+
+
+
+
+
+
