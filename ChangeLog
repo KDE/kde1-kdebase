@@ -1,5 +1,8 @@
 1998-04-16  Stephan Kulow  <coolo@kde.org>
 
+	* acinclude.m4.in: extended the getsockname test inspired 
+	by a patch by Martin Baulig
+
 	* configure.in: added test for utmp file 
 
 	* acinclude.m4.in: made --without-pam default
