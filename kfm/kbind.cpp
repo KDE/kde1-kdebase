@@ -301,7 +301,7 @@ void KMimeType::initMimeTypes( const char* _path )
 
 		    QString tmp;
 		    tmp.sprintf( "%s\n%s\n%s", i18n( "The mime type config file " ),
-				 file.data(), i18n("does not conatain a MimeType=... entry" ) );
+				 file.data(), i18n("does not contain a MimeType=... entry" ) );
 		    QMessageBox::message( i18n( "KFM Error" ), tmp );
 		    continue;
 		}
