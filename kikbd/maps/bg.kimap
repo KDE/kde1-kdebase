@@ -1,0 +1,48 @@
+# KDE Config File
+# Based on  distribution of Cyrillic cp1251 from Stanislav Tzolovski http://lix.polytechnique.fr/~stivy/misc/cyr.html
+# modifications Jordan Ostreff (JsP, Ltd.) - http://www.biscom.net/~jostreff/  
+# Това е клавиатурна подредба за български - фонетична кирилица. За да бъде създадена са  използвани елементи от кирилизацията на Станислав Цоловски
+
+[International Keyboard]
+Comment=Bulgarian Keyboard (Phonetic)
+Comment[bg]=Кирилица ФОНЕТИЧНА (cp1251)
+Comment[pl]=Klawiatura bulgarska
+Comment[ru]=Кирилизация булгарская
+Long Comment=Keyboard for Bulgarian language (cp1251). Has English characters as alternate symbols.  
+Long Comment[bg]=Кодова таблица за използване на фонетика сас wincp-1251 
+Label=Bg 
+Locale=bg
+
+[KeyboardMap]
+CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m,bracketleft,bracketright,semicolon,apostrophe,grave,comma,period,less
+keysym10=q,0xff,0xdf,q,Q,
+keysym11=w,0xe2,0xc2,w,W,
+keysym12=e,0xe5,0xc5,e,E,
+keysym13=r,0xf0,0xd0,r,R,
+keysym14=t,0xf2,0xd2,t,T,
+keysym15=y,0xfa,0xda,y,Y,
+keysym16=u,0xf3,0xd3,u,U,
+keysym17=i,0xe8,0xc8,i,I,
+keysym18=o,0xee,0xce,o,O,
+keysym19=p,0xef,0xcf,p,P,
+keysym20=bracketleft,0xf8,0xd8,bracketleft,braceleft,
+keysym21=bracketright,0xf9,0xd9,bracketright,braceright,
+keysym22=a,0xe0,0xc0,a,A,
+keysym23=s,0xf1,0xd1,s,S,
+keysym24=d,0xe4,0xc4,d,D,
+keysym25=f,0xf4,0xd4,f,F,
+keysym26=g,0xe3,0xc3,g,G,
+keysym27=h,0xf5,0xd5,h,H,
+keysym28=j,0xe9,0xc9,j,J,
+keysym29=k,0xea,0xca,k,K,
+keysym30=l,0xeb,0xcb,l,L,
+keysym31=semicolon,0xfb,0xdb,semicolon,colon,
+keysym32=apostrophe,0xfd,0xdd,apostrophe,quotedbl,
+keysym33=grave,0xf7,0xd7,grave,asciitilde,
+keysym34=z,0xe7,0xc7,z,Z,
+keysym35=x,0xfc,0xdc,x,X,
+keysym36=c,0xf6,0xd6,c,C,
+keysym37=v,0xe6,0xc6,v,V,
+keysym38=b,0xe1,0xc1,b,B,
+keysym39=n,0xed,0xcd,n,N,
+keysym40=m,0xec,0xcc,m,M,
