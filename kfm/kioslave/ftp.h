@@ -49,6 +49,7 @@ private:
 	int ftpSendCmd(const char *cmd, char expresp);
 	int ftpLogin( const char *user, const char *pass, QString *redirect = 0L);
 	int ftpPort();
+        long ftpSize( const char *path, char mode);
 	int ftpMkdir(const char *path);
 	int ftpChdir( const char *path);
  	int ftpRmdir( const char *path);

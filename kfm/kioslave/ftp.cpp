@@ -311,6 +311,22 @@ int KProtocolFTP::ftpPort(void)
     return 1;
 }
 
+/** Use the SIZE command to get the file size. David.
+    Warning : the size depends on the transfer mode, hence the second arg. */
+long KProtocolFTP::ftpSize( const char *path, char mode)
+{
+    char buf[256];
+    ftplib_lastresp[0] = '\0';
+    sprintf(buf,"type %c",mode);
+    if ( !ftpSendCmd( buf, '2' ) ) return Error(KIO_ERROR_CouldNotConnect,
+				"Could not set ftp to correct mode for transmission");
+
+    sprintf(buf,"SIZE %s",path);
+    if (!ftpSendCmd(buf,'2'))
+	return FAIL;
+    return atol(rspbuf+4); // skip leading "213 " (response code)
+}
+
 /*
  * ftpMkdir - create a directory at server
  *
@@ -666,12 +682,15 @@ int KProtocolFTP::Open(KURL *url, int mode)
     if(Connect(url) == FAIL) return(FAIL);
     if(mode & READ)
     {
+        size = ftpSize(url->path(),'I'); // try to find the size of the file
+        if (ftplib_debug > 1)
+            fprintf(stderr,"size set to %ld",size);
 	int rc = OpenConnection("retr",url->path(),'I');
 	if(rc == FAIL)
 	    return Error(KIO_ERROR_FileDoesNotExist,"Could not retrieve file");
     
-    	// Read the size from the response string
-    	if ( strlen( rspbuf ) > 4 )
+    	// Read the size from the response string, if the "size" command failed
+    	if ( strlen( rspbuf ) > 4 && size == FAIL )
     	{
 	    // char *p = strchr( rspbuf, '(' );
 	    // Patch from Alessandro Mirone <alex@greco2.polytechnique.fr>
