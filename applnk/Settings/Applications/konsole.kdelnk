@@ -1,0 +1,12 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcmkonsole
+Icon=konsole.xpm
+Type=Application
+DocPath=kcontrol/kdmconfig/index.html
+Comment=All Konsole Settings
+Comment[de]=Alle Konsoleneinstellungen
+Name=Console
+Name[de]=Konsole
+SwallowTitle=Console all
+SwallowTitle[de]=Konsole alles
