@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdm\n"
 "POT-Creation-Date: 1999-04-08 01:20+0200\n"
-"PO-Revision-Date: 1998-12-22 22:37+0100\n"
+"PO-Revision-Date: 1999-08-19 22:43+02:00\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr "(Introduïu la contrasenya de root)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
-msgstr "Aturada"
+msgstr "Atura"
 
 #: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
@@ -55,7 +55,7 @@ msgstr "Vinga!"
 
 #: kgreeter.cpp:340
 msgid "Shutdown..."
-msgstr "S'està aturant..."
+msgstr "Atura..."
 
 #: kgreeter.cpp:585
 msgid "Logins not available right now."
