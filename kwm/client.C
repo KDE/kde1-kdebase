@@ -1952,6 +1952,7 @@ void Client::ontoDesktop(int new_desktop){
 void Client::maximize(int mode, bool animate){
   if (isMaximized())
     return;
+  
   if (isShaded())
       toggleShade();
   maximized = true;
@@ -2033,7 +2034,7 @@ void Client::unMaximize(){
 void Client::maximizeToggled(bool depressed){
 
   bool do_not_activate = depressed == isMaximized();
-
+  
   if (!do_not_activate){
     if ( depressed){
       switch (buttonMaximize->last_button){
@@ -2198,7 +2199,7 @@ void Client::handleOperation(int i){
     break;
   case OP_MAXIMIZE:
     if (!isMaximized())
-      maximize( options.MaximizeOnlyVertically?1:0);
+      maximize( options.MaximizeOnlyVertically?vertical:fullscreen);
     else
       unMaximize();
     break;
