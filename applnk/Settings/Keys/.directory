@@ -3,4 +3,5 @@
 Name=Keys
 Name[no]=Taster
 Name[ru]=Клавиши
+Name[pt_BR]=Teclas
 SortOrder=standard.kdelnk,global.kdelnk
