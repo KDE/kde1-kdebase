@@ -359,8 +359,7 @@ void KMenuEdit::save()
 void KMenuEdit::reloadFileTypes()
 {
   // kfm II method of mimetypes
-  QString dir_name = KApplication::kdedir().copy();
-  dir_name += "/share/mimelnk";
+  QString dir_name = KApplication::kde_mimedir().copy();
   QDir dir(dir_name);
   if( !dir.exists() )
     return;

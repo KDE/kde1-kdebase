@@ -54,9 +54,9 @@
 
 #define NO_WALLPAPER	klocale->translate("(none)")
 
-#define CONFIGFILE kapp->kdedir()+"/share/config/kdmrc"
+#define CONFIGFILE kapp->kde_configdir() + "/kdmrc"
 
-#define PIXDIR kapp->kdedir()+"/share/apps/kdm/pics/"
+#define PIXDIR kapp->kde_datadir()+"/kdm/pics/"
 #define USERPIXDIR PIXDIR + "users/"
 
 

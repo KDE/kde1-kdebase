@@ -48,8 +48,7 @@ KProxyDlg::KProxyDlg(QWidget *parent, const char *name, WFlags f)
 
   QString path;
   QPixmap pixmap;
-  path = kapp->kdedir() + "/share/toolbar/";
-  pixmap.load( path + "down.xpm" ); 
+  pixmap.load( KApplication::kde_toolbardir() + "/down.xpm" ); 
   cp_down = new QPushButton( this );
   cp_down->setPixmap( pixmap );
   cp_down->setGeometry(342, 115, 20, 20);

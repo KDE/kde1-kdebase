@@ -51,12 +51,9 @@ int main( int argc, char **argv )
   if( !config->hasKey("Path") || !config->hasKey("PersonalPath") )
     {
       if( config->hasKey("Path") )
-	temp1 = config->readEntry("Path");
+	  temp1 = config->readEntry("Path");
       else
-	{
-	  temp1 = KApplication::kdedir().copy();
-	  temp1 += "/share/applnk";
-	}
+	  temp1 = KApplication::kde_appsdirdir().copy();
       if( config->hasKey("PersonalPath") )
 	temp2 = config->readEntry("PersonalPath");
       else
@@ -100,9 +97,9 @@ int main( int argc, char **argv )
   global_pix_sel2 = new KIconLoaderDialog;
   QStrList icon_sel_list;
   QStrList icon_sel_list2;
-  icon_sel_list.append(KApplication::kdedir()+"/share/icons");
+  icon_sel_list.append(KApplication::kde_icondir());
   icon_sel_list.append(QDir::homeDirPath()+"/.kde/share/icons");
-  icon_sel_list2.append(KApplication::kdedir()+"/share/icons/mini");
+  icon_sel_list2.append(KApplication::kde_minidir());
   icon_sel_list2.append(QDir::homeDirPath()+"/.kde/share/icons/mini");
   global_pix_sel->setDir(&icon_sel_list);
   global_pix_sel2->setDir(&icon_sel_list2);

@@ -183,16 +183,13 @@ bool searchHTML( const char *search, ostream &stream )
 		query[i] = strtok( NULL, " " );
 	}
 
-	QString kdedir = kapp->kdedir().copy();
-
-	if ( i && !kdedir.isEmpty() )
+	if ( i )
 	{
 		MatchList list;
 
 		list.setAutoDelete( TRUE );
 
-		QString dir = kdedir;
-		dir += "/share/doc/HTML";
+		QString dir = KApplication::kde_htmldir();
 		processDir( list, dir, query );
 
 		stream << "<H2>KDE Applications</h2>" << endl;

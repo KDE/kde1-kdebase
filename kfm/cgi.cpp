@@ -78,7 +78,13 @@ QString KCGI::get( const char *_url, const char *_method )
 
 bool KCGI::runScript()
 {
-    QString command = kapp->kdedir() + script;
+    QString command;	
+    
+    if (!strncmp(script.data(), "/cgi-bin", 8))
+	command = KApplication::kde_cgidir() + script.right(script.length() - 8);
+    else
+	command = KApplication::kde_cgidir() + script;
+
     command += " > " + destFile;
     
     if ( ( scriptPID = fork() ) == 0 )

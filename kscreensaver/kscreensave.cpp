@@ -31,26 +31,20 @@ void kForceLocker()
 	}
 	else
 	{
-		// no screen saver - start a temporary saver
-		p = kapp->kdedir().data();
-
-		if ( p )
+	    strcpy( buffer, KApplication::kde_bindir() );
+	    strcat( buffer, "/kblankscrn.kss" );
+	    
+	    if ( fork() == 0 )
 		{
-			strcpy( buffer, p );
-			strcat( buffer, "/bin/kblankscrn.kss" );
-
-			if ( fork() == 0 )
-			{
-				execlp( buffer, buffer, "-test", "-lock", 0 );
-				
+		    execlp( buffer, buffer, "-test", "-lock", 0 );
+		    
 				// if we make it here then try again using default path
-				execlp("kblankscrn.kss","kblankscrn.kss","-test","-lock",0);
-
+		    execlp("kblankscrn.kss","kblankscrn.kss","-test","-lock",0);
+		    
 				// uh oh - failed
-				fprintf( stderr, "Could not invoke kblankscrn.kss in $PATH or"
-					" %s/bin\n" , p);
-				exit( 1 );
-			}
+		    fprintf( stderr, "Could not invoke kblankscrn.kss in $PATH or"
+			     " %s/bin\n" , p);
+		    exit( 1 );
 		}
 	}
 }

@@ -290,8 +290,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
     group = new QGroupBox( klocale->translate("Wallpaper"), this );
     group->setGeometry( 240, 190, 215, 130 );
 
-    QString path = kapp->kdedir().copy();
-    path += "/share/wallpapers";
+    QString path = kapp->kde_wallpaperdir().copy();
     QDir d( path, "*", QDir::Name, QDir::Readable | QDir::Files );
     const QStrList *list = d.entryList();
 
@@ -652,8 +651,8 @@ int KBackground::loadWallpaper( const char *name, bool useContext )
 
 	if ( name[0] != '/' )
 	{
-		filename = kapp->kdedir().copy();
-		filename += "/share/wallpapers/";
+		filename = kapp->kde_wallpaperdir().copy();
+		filename += "/";
 		filename += name;
 	}
 	else
@@ -731,8 +730,7 @@ void KBackground::slotBrowse()
 {
 	QString path;
 
-	path = kapp->kdedir().copy();
-	path += "/share/wallpapers";
+	path = kapp->kde_wallpaperdir().copy();
 
 	QDir dir( path );
 	if ( !dir.exists() )

@@ -1409,8 +1409,8 @@ void KRootIcon::dndMouseMoveEvent( QMouseEvent *_mouse )
 	    // Multiple URLs ?
 	    if ( data.find( '\n' ) != -1 )
 	    {
-		QString tmp = kapp->kdedir().copy();
-		tmp += "/share/apps/kfm/pics/kmultiple.xpm";
+		QString tmp = kapp->kde_datadir().copy();
+		tmp += "/kfm/pics/kmultiple.xpm";
 		pixmap2.load( tmp );
 		if ( pixmap2.isNull() )
 		    warning("KFM: Could not find '%s'\n",tmp.data());

@@ -64,11 +64,10 @@ KFM::KFM()
 
     QStrList* list = pIconLoader->getDirList();
     list->clear();
-    QString tmp( kapp->kdedir().data() );
-    tmp += "/share/icons";
+    QString tmp = kapp->kde_icondir().copy();
     list->append( tmp.data() );
-    tmp = getenv( "HOME" );
-    tmp += "/.kde/share/icons";
+    tmp = KApplication::localkdedir();
+    tmp += "/share/icons";
     list->append( tmp.data() );
 
     connect( &timer, SIGNAL( timeout() ), this, SLOT( slotTouch() ) );

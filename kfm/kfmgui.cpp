@@ -487,7 +487,7 @@ void KfmGui::initToolBar()
     QString file, path;
     QPixmap pixmap;
     toolbarButtons = new KToolBar(this, "kfmwin-toolbar");
-    path = kapp->kdedir() + "/share/toolbar/";
+    path = kapp->kde_toolbardir() + "/";
     
     pixmap.load(path + "back.xpm");
     toolbarButtons->insertButton(pixmap, 0, SIGNAL( clicked() ), view, 
@@ -537,7 +537,7 @@ void KfmGui::initToolBar()
 			  SLOT( slotStop() ), false, 
 			  klocale->translate("Stop"));
 
-    path = kapp->kdedir() + "/share/apps/kfm/pics/";
+    path = kapp->kde_datadir() + "/kfm/pics/";
 
     pixmap.load( path + "/kde1.xpm" );
     
@@ -747,29 +747,27 @@ void KfmGui::slotOpenURL( const char *_url )
 
 void KfmGui::slotEditSUMimeTypes()
 {
-    QString tmp( kapp->kdedir().data() );
-    tmp += "/share/mimelnk";
+    QString tmp = KApplication::kde_mimedir().copy();
     view->openURL( tmp );
 }
 
 void KfmGui::slotEditSUApplications()
 {
-    QString tmp( kapp->kdedir().data() );
-    tmp += "/share/applnk";
+    QString tmp = KApplication::kde_appsdir().copy();
     view->openURL( tmp );
 }
 
 void KfmGui::slotEditMimeTypes()
 {
-    QString tmp( getenv( "HOME" ) );
-    tmp += "/.kde/share/mimelnk";
+    QString tmp = KApplication::localkdedir();
+    tmp += "/share/mimelnk";
     view->openURL( tmp );
 }
 
 void KfmGui::slotEditApplications()
 {
-    QString tmp( getenv( "HOME" ) );
-    tmp += "/.kde/share/applnk";
+    QString tmp = KApplication::localkdedir();
+    tmp += "/share/applnk";
     view->openURL( tmp );
 }
 

@@ -39,7 +39,6 @@
 
 #include <klocale.h>
 
-extern char DOCS_PATH[256];
 extern char PICS_PATH[256];
 
 KFontList::KFontList (QWidget * parent, const char *name)
@@ -76,19 +75,6 @@ void KFontList::resizeEvent(QResizeEvent *e){
 }
 
 
-/*void KFontList::helpselected(){
-  
-  if ( fork() == 0 )
-    {
-      QString path = DOCS_PATH;
-      path += "/kedit+.html";
-      execlp( "kdehelp", "kdehelp", path.data(), 0 );
-      ::exit( 1 );      
-      
-    }	 
-
-}
-*/
 /*
 void KFontList::apply(bool){
 

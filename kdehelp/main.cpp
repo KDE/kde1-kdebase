@@ -130,8 +130,8 @@ int main(int argc, char *argv[])
 	if ( initDoc.isEmpty() )
 	{
 		initDoc = "file:";
-		initDoc += kapp->kdedir();
-		initDoc += "/share/doc/HTML/default/kdehelp/main.html";
+		initDoc += kapp->kde_htmldir().copy();
+		initDoc += "/default/kdehelp/main.html";
 	}
 
 	url = initDoc;

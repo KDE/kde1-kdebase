@@ -221,8 +221,7 @@ QPixmap *KBackground::loadWallpaper()
 
     if ( wallpaper[0] != '/' )
     {
-	filename = kapp->kdedir().copy();
-	filename += "/share/wallpapers/";
+	filename = kapp->kde_wallpaperdir().copy();
 	filename += wallpaper;
     }
     else

@@ -138,8 +138,8 @@ void KFinder::slotScrolled( int _value )
 
 QPixmap& KFinder::getOpenPixmap()
 {
-    QString f( kapp->kdedir().data() );
-    f += "/share/apps/kfm/pics/open.xpm";
+    QString f = kapp->kde_datadir().copy();
+    f += "/kfm/pics/open.xpm";
     
     if ( openPixmap == 0L )
     {
@@ -152,8 +152,8 @@ QPixmap& KFinder::getOpenPixmap()
 
 QPixmap& KFinder::getClosePixmap()
 {
-    QString f( kapp->kdedir().data() );
-    f += "/share/apps/kfm/pics/close.xpm";
+    QString f = kapp->kde_datadir().copy();
+    f += "/kfm/pics/close.xpm";
 
     if ( closePixmap == 0L )
     {

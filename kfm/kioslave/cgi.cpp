@@ -81,8 +81,13 @@ int KProtocolCGI::Open( KURL *url, int mode )
 	script.truncate( pathPos );
     }
     
-    QString command =  kapp->kdedir() + script;
+    QString command;	
     
+    if (!strncmp(script.data(), "/cgi-bin", 8))
+	command = KApplication::kde_cgidir() + script.right(script.length() - 8);
+    else
+	command = KApplication::kde_cgidir() + script;
+
     setenv( "QUERY_STRING", query.data(), true );
     // setenv( "PATH_INFO", pathInfo.data(), true );
 	

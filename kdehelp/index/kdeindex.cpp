@@ -41,7 +41,7 @@ int Entry::readEntry( const char *filename )
 	QString path = config.readEntry( "DocPath" );
 	if ( path.isNull() )
 		return FALSE;
-	docPath = kapp->kdedir() + "/share/doc/HTML/default/";
+	docPath = kapp->kde_htmldir() + "/default/";
 	docPath += path;
 	info = config.readEntry( "Info" );
 	if ( info.isNull() )
@@ -159,7 +159,7 @@ int main( int argc, char **argv )
 	stream << "<h1>KDE Applications Index</h1>" << endl;
 
 	// System applications
-	QString appPath = kapp->kdedir() + "/share/applnk";
+	QString appPath = kapp->kde_appsdir();
 
 	QList<Entry> list;
 	list.setAutoDelete( TRUE );

@@ -75,8 +75,7 @@ void KDMBackgroundWidget::setupPage(QWidget *)
       group = new QGroupBox( klocale->translate("Wallpaper"), this );
       group->setGeometry( 240, 190, 215, 130 );
 
-      QString path = kapp->kdedir().copy();
-      path += "/share/wallpapers";
+      QString path = kapp->kde_wallpaperdir().copy();
       QDir d( path, "*", QDir::Name, QDir::Readable | QDir::Files );
       QStrList list = *d.entryList();
       if(!wallpaper.isEmpty())
@@ -140,8 +139,7 @@ void KDMBackgroundWidget::slotBrowse()
 {
 	QString path;
 
-	path = kapp->kdedir().copy();
-	path += "/share/wallpapers";
+	path = kapp->kde_wallpaperdir().copy();
 
 	QDir dir( path );
 	if ( !dir.exists() )
@@ -228,8 +226,7 @@ int KDMBackgroundWidget::loadWallpaper( const char *name, bool useContext )
 
   if ( name[0] != '/' )
   {
-	filename = kapp->kdedir().copy();
-	filename += "/share/wallpapers/";
+	filename = kapp->kde_wallpaperdir().copy();
 	filename += name;
   }
   else

@@ -45,7 +45,6 @@
 #include <X11/Xutil.h>
 
 
-extern char DOCS_PATH[256];
 extern char PICS_PATH[256];
 
 #define HEIGHT 290

@@ -129,7 +129,7 @@ int main( int argc, char ** argv )
     if ( f2 == 0L )
     {
 	QString cmd;
-	cmd.sprintf( "cp %s/share/config/desktop %s/.kde/share/apps/kfm/desktop", kapp->kdedir().data(), getenv( "HOME" ) );
+	cmd.sprintf( "cp %s/desktop %s/.kde/share/apps/kfm/desktop", kapp->kde_configdir().data(), getenv( "HOME" ) );
 	system( cmd.data() );
     }
     else
@@ -164,22 +164,16 @@ int main( int argc, char ** argv )
     testDir( KFMPaths::AutostartPath() );
     copyDirectoryFile("directory.autostart", KFMPaths::AutostartPath());
 
-    QString kd = kapp->kdedir();
-    d = kd.copy();
-    d += "/share/applnk";
-    testDir( d );
-    d = kd.copy();
-    d += "/share/mimelnk";
-    testDir( d );
-    d = kd.copy();
+    testDir( kapp->kde_appsdir() );
+    testDir( kapp->kde_mimedir() );
 
     if ( !bTemplates )
     {
 	QMessageBox::information( 0, klocale->translate("KFM Information"),
 			      klocale->translate("Installing Templates") );
 	QString cmd;
-	cmd.sprintf("cp %s/share/apps/kfm/Desktop/Templates/* %s", 
-		    kapp->kdedir().data(), KFMPaths::TemplatesPath().data() );
+	cmd.sprintf("cp %s/kfm/Desktop/Templates/* %s", 
+		    kapp->kde_datadir().data(), KFMPaths::TemplatesPath().data() );
 	system( cmd.data() );
     }
 

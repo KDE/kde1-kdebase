@@ -704,9 +704,7 @@ void KIOServer::getSlave( KIOJob *_job )
 
 void KIOServer::runNewSlave()
 {
-    QString ipath = kapp->kdedir().copy();
-    ipath.detach();
-    ipath += "/bin/kioslave";
+    QString ipath = kapp->kde_bindir() + "/kioslave";
 
     // Keep in sync with the same in kioserver_ipc.cpp!
     QString idir;

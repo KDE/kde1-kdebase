@@ -206,8 +206,8 @@ void KDMUsersWidget::slotPixDropped(KDNDDropZone *zone)
   KURL url(zone->getData());
   QString filename = url.filename();
   QString msg, userpixname;
-  QString pixurl("file:"+kapp->kdedir().copy()+"/share/apps/kdm/pics/"); 
-  QString user(userlabel->text());
+  QString pixurl("file:"+kapp->kde_datadir() + "/kdm/pics/"); 
+  QString user(userlabel->text()); 
   QString userpixurl = pixurl + "users/";
   int last_dot_idx = filename.findRev('.');
   bool istmp = false;
@@ -338,7 +338,7 @@ void KDMUsersWidget::slotUserShowMode( int m )
 
 void KDMUsersWidget::slotUserSelected(int)
 {
-  QString user_pix_dir(kapp->kdedir().copy()+"/share/apps/kdm/pics/users/"); 
+  QString user_pix_dir(kapp->kde_datadir() +"/kdm/pics/users/"); 
   QString name;
   QPixmap default_pix( user_pix_dir + "default.xpm");
   QListBox *lb;

@@ -177,7 +177,7 @@ void KDMAppearanceWidget::slotPixDropped(KDNDDropZone *zone)
   KURL url(zone->getData());
   QString filename = url.filename();
   QString msg;
-  QString pixurl("file:"+kapp->kdedir().copy()+"/share/apps/kdm/pics/"); 
+  QString pixurl("file:"+kapp->kde_datadir() + "/kdm/pics/"); 
   int last_dot_idx = filename.findRev('.');
   bool istmp = false;
 

@@ -72,8 +72,7 @@ void KMimeType::InitStatic()
 	pixmapCache = new QPixmapCache;
     if ( globalIconPath == 0L )
     {
-	globalIconPath = new QString( kapp->kdedir().data() );
-	*globalIconPath += "/share/icons";
+	globalIconPath = new QString( kapp->kde_icondir().copy() );
     }
     if ( localIconPath == 0L )
     {
@@ -242,8 +241,8 @@ const char* KMimeType::getPixmapFileStatic( const char *_url, bool _mini )
 void KMimeType::initKMimeMagic()
 {
     // Magic file detection init
-    QString mimefile = kapp->kdedir().copy();
-    mimefile += "/share/mimelnk/magic";
+    QString mimefile = kapp->kde_mimedir().copy();
+    mimefile += "/magic";
     magic = new KMimeMagic( mimefile );
     magic->setFollowLinks( TRUE );
 }
@@ -357,8 +356,7 @@ void KMimeType::init()
     initMimeTypes( path.data() );
     
     // Read the application bindings in the global directories
-    path = kapp->kdedir().copy();
-    path += "/share/mimelnk";
+    path = kapp->kde_mimedir().copy();
     initMimeTypes( path.data() );
 
     // Otherwise we are not allowed to call 'errorMissingMimeType'
@@ -418,8 +416,7 @@ void KMimeType::init()
     KMimeBind::initApplications( path.data() );
 
     // Read the application bindings in the global directories
-    path = kapp->kdedir().copy();
-    path += "/share/applnk";
+    path = kapp->kde_appsdir().copy();
     KMimeBind::initApplications( path.data() );
 }
 

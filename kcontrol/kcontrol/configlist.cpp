@@ -303,7 +303,7 @@ void KModuleListEntry::insertInit(QStrList *list)
 
 ConfigList::ConfigList()
 {
-  modules = new KModuleListEntry(kapp->kdedir()+"/share/applnk/Settings");
+  modules = new KModuleListEntry(kapp->kde_appsdir()+"/Settings");
 }
 
 ConfigList::~ConfigList()

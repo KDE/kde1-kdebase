@@ -126,7 +126,7 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	scrollTo = 0;
 	rmbPopup = NULL;
 
-	DOCS_PATH = kapp->kdedir() + "/share/doc/HTML/default/kdehelp/";
+	DOCS_PATH = kapp->kde_htmldir() + "/default/kdehelp/";
 
 	readOptions();
 	man = new cMan;

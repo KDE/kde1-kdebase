@@ -25,11 +25,10 @@ static QString DOCS_PATH;
 KHelpMain::KHelpMain(const char *name)
   :KTopLevelWidget(name)
 {
-	QString kdedir;
 	helpwin = new KHelpWindow(this, name);     
 	CHECK_PTR(helpwin);
 
-	DOCS_PATH = kapp->kdedir() + "/share/doc/HTML/default/kdehelp/";
+	DOCS_PATH = kapp->kde_htmldir() + "/default/kdehelp/";
 
 	createMenu();
 	createLocationbar();
@@ -555,8 +554,8 @@ void KHelpMain::slotCloneWindow()
 	{
 		// in that case, select the title page...
 		url = "file:";
-		url += kapp->kdedir();
-		url += "/share/doc/HTML/default/kdehelp/main.html";
+		url += kapp->kde_htmldir();
+		url += "/default/kdehelp/main.html";
 	}
 
 	win->openURL( url );

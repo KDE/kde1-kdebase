@@ -39,7 +39,6 @@
 #include "version.h"
 #include <klocale.h>
 
-char DOCS_PATH[256];
 char PICS_PATH[256];
 
 
@@ -51,10 +50,7 @@ int main( int argc, char *argv[] ){
 // KApplication's general font should be used or charset properly set	
 //	a.setFont(QFont("Helvetica",12,QFont::Normal),TRUE);
 
-	char *kdedir = a.kdedir().data();
-
-	sprintf( PICS_PATH, "%s/share/apps/kfontmanager/pics", kdedir );
-	sprintf( DOCS_PATH, "%s/share/doc/HTML/kfontmanager", kdedir );
+	sprintf( PICS_PATH, "%s/kfontmanager/pics", KApplication::kde_datadir().data() );
 
 	QTabDialog* mainWindow = new QTabDialog( 0, 0, TRUE );
 
