@@ -450,7 +450,7 @@ QString KIOServer::findDeviceMountPoint( const char *_device, const char *_file 
 #endif /* __FreeBSD__ */             
 
 #ifdef HAVE_VOLMGT
-    char *volpath;
+    const char *volpath;
     char *devname;
     FILE *mnttab;
     struct mnttab mnt;
@@ -466,7 +466,7 @@ QString KIOServer::findDeviceMountPoint( const char *_device, const char *_file 
     if( (mnttab = fopen( MNTTAB, "r" )) == NULL )
 	return QString();
 
-    if( (devname = malloc( strlen( volpath ) + strlen( _device ) + 2)) == NULL )
+    if( (devname = (char *)malloc( strlen( volpath ) + strlen( _device ) + 2)) == NULL )
 	return QString();
 
     sprintf( devname, "%s%s/", volpath, _device );
