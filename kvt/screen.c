@@ -395,7 +395,7 @@ void scr_backspace(void)
   else if (cScreen->wrap_next ){
     /* Matthias */ 
     int x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1);
-    cScreen->text[x + cScreen->col] = '\0';
+    cScreen->text[x + MyWinInfo.cwidth] = '\0';
     cScreen->wrap_next = 0;
   }
   else

@@ -1,3 +1,4 @@
+  - fixed the multiline selection again
   - kdisplays changes gets recognized during runtime now
   - small bugfix for backspace
   - greater bugfix for eventhandling (fix of the deep-bug fix)
