@@ -203,14 +203,26 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
       dir_path        = fi->dirPath(TRUE);
       config.close();
     }
-  if( pixmap_name.isEmpty() )
-    {
-      pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon("mini-default.xpm", 14, 14);
-    }
-  else
-    {
-      pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon(pixmap_name, 14, 14);
-    }
+  QPixmap tmppix;
+  pixmap = tmppix;
+  if( !pixmap_name.isEmpty() ){
+    pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon(pixmap_name, 14, 14);
+  }
+  if (pixmap.isNull() && !big_pixmap_name.isEmpty()){
+    pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon(big_pixmap_name, 14, 14);
+  }
+  if (pixmap.isNull() && getType() == unix_com){
+    QString tmp = real_name.copy();
+    int pos = tmp.find(".kdelnk");
+    if( pos >= 0 )
+      tmp = tmp.left(pos);
+    tmp.append(".xpm");
+    pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon(tmp, 14, 14);
+  }
+  
+  if (pixmap.isNull())
+    pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon("mini-default.xpm", 14, 14);
+  
   if (comment.isEmpty())
     comment = text_name;
 

@@ -1,5 +1,8 @@
 In kpanel-0.17:
  
+    Patchlevel 4:
+       - paints scaled minicions everywhere, even in the system menu.
+         I thought this looks ugly, but Torben requested this feature :-)
     Patchlevel 3:
        - fixed the dragging of data onto panel buttons
        - no more need for the kdelnk suffix (but mimetype)
