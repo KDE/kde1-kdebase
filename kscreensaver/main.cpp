@@ -339,7 +339,7 @@ int main( int argc, char *argv[] )
 #ifdef HAVE_SETEUID
 	seteuid(getuid());
 #else
-    setreuid(-1, getuid())
+        setreuid(-1, getuid());
 #endif // HAVE_SETEUID
 
 	Window saveWin = 0;
