@@ -158,6 +158,7 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     rmb->setMouseTracking(TRUE);
     rmb->installEventFilter(this);
     rmb->insertItem(klocale->translate("New"), menuNew );
+    rmb->insertSeparator();
     rmb->insertItem(klocale->translate("Help on desktop"), RMB_HELP);
     rmb->insertItem(klocale->translate("Execute command"), RMB_EXECUTE);
     rmb->insertItem(klocale->translate("Display properties"), RMB_DISPLAY_PROPERTIES);

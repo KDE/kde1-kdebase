@@ -7,6 +7,9 @@
 In 0.1:
 -------
 
+patchlevel 5:
+       - Added a separator between 'New' and the rest of the menu (D.McC)
+
 patchlevel 4:
        - RMB somewhat adapted to the KDE progress (KFM still not
          works)
