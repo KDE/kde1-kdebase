@@ -8,6 +8,10 @@
  * I didn't touch the Sun part of the code so it should still work.
  *
  * $Log$
+ * Revision 1.6  1998/10/23 16:49:34  bieker
+ * Enables utmp on FreeBSD.. I home sys/param.h is a common file on most
+ * systems. :)
+ *
  * Revision 1.5  1997/08/10 13:43:56  berberic
  * [bmg] removed `#define BSD' because it prevents compilation on
  *       non-BSD-systems
@@ -57,9 +61,13 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/time.h>
-#include <sys/param.h>
+
 #include <utmp.h>
 #include <unistd.h>
+
+#ifdef HAVE_SYS_PARAM_H
+#include <sys/param.h>
+#endif
 
 #ifdef HAVE_LASTLOG_H
 #include <lastlog.h>
