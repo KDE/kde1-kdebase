@@ -538,30 +538,28 @@ void Client::layoutButtons(){
     if (button_y < 2)
       button_y = 2;
 
-
     if( buttons[0] && (!trans || buttons[0] == buttonMenu)){
-      trX += BUTTON_SIZE;
-      trW -= BUTTON_SIZE;
-      buttons[0]->setGeometry(BORDER,
+      buttons[0]->setGeometry(trX,
 			      button_y,
 			      BUTTON_SIZE, BUTTON_SIZE);
+      trX += BUTTON_SIZE;
+      trW -= BUTTON_SIZE;
     }
     if (!trans){
-      if( buttons[1] ){
-	trX += BUTTON_SIZE;
-	trW -= BUTTON_SIZE;
-	buttons[1]->setGeometry(BORDER + BUTTON_SIZE,
+      if( buttons[1] && !fixedSize()){
+	buttons[1]->setGeometry(trX,
 				button_y,
 				BUTTON_SIZE, BUTTON_SIZE);
+	trX += BUTTON_SIZE;
+	trW -= BUTTON_SIZE;
       }
       if( buttons[2] ){
-	trX += BUTTON_SIZE;
-	trW -= BUTTON_SIZE;
-	buttons[2]->setGeometry(BORDER + 2*BUTTON_SIZE,
+	buttons[2]->setGeometry(trX,
 				button_y,
 				BUTTON_SIZE, BUTTON_SIZE);
+	trX += BUTTON_SIZE;
+	trW -= BUTTON_SIZE;
       }
-
       if( buttons[3] ){
 	trW -= BUTTON_SIZE;
 	buttons[3]->setGeometry(trX + trW,
