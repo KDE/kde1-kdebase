@@ -1347,7 +1347,7 @@ void KBackground::slotRenameDesk()
 
 void KBackground::slotHelp()
 {
-  kapp->invokeHTMLHelp( "kdisplay/kdisplay-3.html", "" );
+  kapp->invokeHTMLHelp( "kcmdisplay/kdisplay-3.html", "" );
 }
 
 void KBackground::loadSettings()
