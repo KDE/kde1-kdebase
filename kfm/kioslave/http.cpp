@@ -140,8 +140,7 @@ KProtocolHTTP::KProtocolHTTP()
     PrepareCharsetList(tmp); // prepare list for use in HTTP header
     kfmcnf.setGroup("Browser Settings/UserAgent");
     count = kfmcnf.readNumEntry("EntriesCount",-1);
-    agent_strings = new QList<char>();
-    agent_strings->clear();
+    agent_strings = new QStrList();
     if (count==-1 || count==0) {
       agent_strings->append(DEFAULT_USERAGENT_STRING);
     } else {
@@ -505,22 +504,22 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 	command += " HTTP/1.0\r\n"; /* start header, we're HTTP/1.1 compliant, not! */
 	command += "Connection: close\r\n"; /* Make sure we don't use persistant connections */
 
-	QString _host = _url->host(); QString agent_host=""; QString agent_string="";
+	QString _host = _url->host(); QString agent_string="";
 	bool found=false;
 
 	
 	for (agent_strings->first(); agent_strings->current(); agent_strings->next()) {
+          
+          agent_string = QString(agent_strings->current());
 
-	  if (strcmp(agent_strings->current(),":") == 0) // If it's a NULL marker.
+	  if (!strcmp(agent_string.data(), ":")) // If it's a NULL marker.
 	    continue;
 
-	  if (QString(agent_strings->current()).find(":") < 1)  // If it's got no :
+	  if (agent_string.find(":") < 1)  // If it's got no :
 	    continue;
 
-	  agent_string = QString(agent_strings->current());
-	  agent_host = agent_string.mid(0, agent_string.find(":"));
-
-	  if (agent_host == _host) {
+          QRegExp agent_host(agent_string.mid(0, agent_string.find(":")), true, true);
+	  if (agent_host.isValid() && !agent_host.match(_host)) {
 	    agent_string = agent_string.mid(agent_string.find(":")+1,agent_string.length());
 	    found=true;
 	    break;
