@@ -1,5 +1,7 @@
 
 since kvt-0.16:
+  - enabled "-caption" (Matthias)
+
   - session management (Matthias)
 
   - re-arranged help menu (Matthias)

@@ -995,7 +995,6 @@ int main(int argc, char **argv)
 
   KConfig* sessionconfig = a.getConfig();
   if (a.isRestored()){
-    printf("is restored\n");
     sessionconfig = a.getSessionConfig();
   }
 
@@ -1012,13 +1011,9 @@ int main(int argc, char **argv)
   }
   
   // set the names
-  char* s;
-  if ((s=strrchr(argv[0],'/'))!=NULL) 
-    s++; 
-  else 
-    s=argv[0]; 
-  xvt_name = window_name = icon_name = s; 
+  xvt_name = window_name = icon_name = (char*) a.getCaption(); 
   
+  char* s;
   if (com_argv){
     if ((s=strrchr(com_argv[0],'/'))!=NULL) 
       s++; 
@@ -1047,7 +1042,8 @@ int main(int argc, char **argv)
 	    "-linux			set up kvt to mimic linux-console\n"
 	    "-no_menubar		hide the menubar\n"
 	    "-no_scrollbar		hide the scrollbar\n"
-	    "-T <text>		text in window titlebar\n"
+	    "-T <text>		text in window titlebar \n"
+	    "                   (Obsolete. Use -caption instead)\n"
 	    "-tn <TERM>		Terminal type. Default is xterm.\n"
 	    "-C			Capture system console message\n"
 	    "-n <text>		name in icon or icon window\n"
