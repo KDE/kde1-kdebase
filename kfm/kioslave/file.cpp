@@ -325,7 +325,7 @@ int KProtocolFILE::OpenDir( KURL *url )
         }
 
 	QString d;
-	d.sprintf("%02i:%02i %02i.%02i.%02i", t->tm_hour,t->tm_min,t->tm_mday,t->tm_mon + 1,t->tm_year );
+	d.sprintf("%02i:%02i %02i.%02i.%4i", t->tm_hour,t->tm_min,t->tm_mday,t->tm_mon + 1, 1900 + t->tm_year );
 	_de->date = d.data();
 	if ( _de->isdir )
 	    _de->name += "/";
