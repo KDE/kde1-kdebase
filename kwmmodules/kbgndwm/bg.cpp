@@ -21,6 +21,7 @@
 #include <dither.h>
 
 #include "bg.h"
+#include "bg.moc"
 
 //----------------------------------------------------------------------------
 
@@ -132,6 +133,9 @@ KBackground::KBackground()
     gfMode = Flat;
     orMode = Portrait;
 
+    bgPixmap = 0;
+    applied = false;
+
     hasPm = false;
 }
 
@@ -237,12 +241,16 @@ QPixmap *KBackground::loadWallpaper()
 
 void KBackground::apply()
 {
+    applied = false;
+
     // the background pixmap is cached?
-    QPixmap *bgPixmap = QPixmapCache::find( name );
+    bgPixmap = QPixmapCache::find( name );
     if ( bgPixmap )
     {
 	debug( "Desktop background found in cache" );
 	qApp->desktop()->setBackgroundPixmap( *bgPixmap );
+	bgPixmap = 0;
+	applied = true;
 	return;
     }
 
@@ -284,8 +292,9 @@ void KBackground::apply()
 	delete wpPixmap;
 	wpPixmap = 0;
 
-	qApp->desktop()->setBackgroundPixmap( *bgPixmap );
-	delete bgPixmap;
+	// background switch is deferred in case the user switches
+	// again while the background is loading
+	startTimer( 0 );
     }
     else
     {
@@ -308,13 +317,37 @@ void KBackground::apply()
 		pmDesktop.gradientFill( color2, color1, false, numColors );
 	    }
 
-	    qApp->desktop()->setBackgroundPixmap( pmDesktop );
+	    bgPixmap = new QPixmap();
+	    *bgPixmap = pmDesktop;
+
+	    // background switch is deferred in case the user switches
+	    // again while the background is loading
+	    startTimer( 0 );
 	}
 	else
 	{
 	    qApp->desktop()->setBackgroundColor( color1 );
+	    applied = true;
 	}
     }
+}
+
+void KBackground::cancel()
+{
+    killTimers();
+}
+
+void KBackground::timerEvent( QTimerEvent * )
+{
+    killTimers();
+
+    if ( !bgPixmap )
+	return;
+
+    qApp->desktop()->setBackgroundPixmap( *bgPixmap );
+    delete bgPixmap;
+    bgPixmap = 0;
+    applied = true;
 }
 
 //----------------------------------------------------------------------------

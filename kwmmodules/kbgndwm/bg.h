@@ -13,23 +13,29 @@
 
 //----------------------------------------------------------------------------
 
-class KBackground
+class KBackground : public QObject
 {
+    Q_OBJECT
 public:
     KBackground();
     ~KBackground();
 
     void apply();
+    // cancel an apply which has not yet been completed
+    void cancel();
     void readSettings( const char *group );
 
     const QString &getName() const
 	{ return name; }
 
-    bool hasPixmap()
+    bool hasPixmap() const
 	{ return hasPm; }
+    bool isApplied() const
+	{ return applied; }
 
 protected:
     QPixmap *loadWallpaper();
+    virtual void timerEvent( QTimerEvent * );
 
 protected:
     enum { Tiled = 1, Centred, Scaled };
@@ -44,6 +50,9 @@ protected:
     int     wpMode;
     int     gfMode;
     int     orMode;
+
+    QPixmap *bgPixmap;
+    bool    applied;
 
     bool    hasPm;
 };

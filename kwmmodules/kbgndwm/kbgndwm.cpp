@@ -89,13 +89,18 @@ void KBGndManager::cacheDesktop()
     // cache current desktop
     if ( desktops[current].hasPixmap() )
     {
+	desktops[current].cancel();
+
 	if ( qApp->desktop()->backgroundPixmap() == 0L )
 	    return;
-	
-	QPixmap *pm = new QPixmap;
-	*pm = *qApp->desktop()->backgroundPixmap();
+
+	if ( !desktops[current].isApplied() )
+	    return;
+
 	if ( !QPixmapCache::find( desktops[current].getName() ) )
 	{
+	    QPixmap *pm = new QPixmap;
+	    *pm = *qApp->desktop()->backgroundPixmap();
 	    if ( !QPixmapCache::insert( desktops[current].getName(), pm ) )
 		delete pm;
 	}
