@@ -90,7 +90,7 @@ void read_xv_file( QImageIO *_imageio )
     _imageio->setStatus( 0 );
 
     // debugT("Loaded image\n");
-    delete block;
+    delete [] block;
     return;
 }
 
