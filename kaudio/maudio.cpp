@@ -1,4 +1,3 @@
-// Version info: 0.70
 
 #include <unistd.h>
 #include <stdlib.h>
@@ -15,16 +14,17 @@ extern "C" {
 #include "maudio.h"
 #include "io_oss.h"
 #include "sample.h"
+#include "version.h"
 
 
 #define USLEEP_DELAY	1000
 
 
-uint32          *StatStatPtr=NULL;
-MdCh_STAT       *StatChunk;
-MdCh_FNAM       *FnamChunk;
-MdCh_KEYS       *KeysChunk;
-MediaCon        mcon;
+uint32		*StatStatPtr=NULL;
+MdCh_STAT	*StatChunk;
+MdCh_FNAM	*FnamChunk;
+MdCh_KEYS	*KeysChunk;
+MediaCon		mcon;
 char		IsSlave=0,SoftStop=0;
 
 AudioSample	*ASample;
@@ -55,8 +55,10 @@ int main(char argc, char **argv)
   int	bytes_read, ret;
   int   preWriting=0,preReading=0;
 
+  static char* WBold=NULL;
 
-  char  *PtrFname;
+
+  char	*PtrFname;
   int	ReleaseDelay=1;
   bool	retgrab;
 
@@ -112,6 +114,11 @@ int main(char argc, char **argv)
       PlayerStatus=START_MEDIA;
     }
 
+    if ( (PlayerStatus!=PLAYING) &&  (PlayerStatus!=PLAY_IT) )
+      // Send some zero data, to (e.g.) fill up the kernel buffer
+      ADev->emitSilence();
+
+
     // ----------------------------------------------------------------------
     switch(PlayerStatus) {
     case STOPPED:
@@ -126,12 +133,8 @@ int main(char argc, char **argv)
 #endif
 	    ADev->release();
 	  }
-	  else {
-	    // Send some zero data, to (e.g.) fill up the kernel buffer
-	    ADev->emitSilence();
-	  }
 	}
-	usleep(10*USLEEP_DELAY);
+	usleep(USLEEP_DELAY/10);
       }
       else
 	PlayerStatus=START_MEDIA;
@@ -154,7 +157,7 @@ int main(char argc, char **argv)
 
       *StatStatPtr = MD_STAT_READY;
       PlayerStatus = STOPPED;
-      // Give KAudio feedback on "finished". This crappy synchroization
+      // Give KAudio feedback on "finished". This crappy synchronization
       // thing REALLY must be replaced by some real protocol.
       StatChunk->sync_id = KeysChunk->sync_id;
       break;
@@ -204,7 +207,7 @@ int main(char argc, char **argv)
 	else {
 	  PlayerStatus = PLAYING;
 	  // remember pre-reading and pre-writing some data
-	  preWriting = preReading = 3;
+	  preWriting = preReading = NUM_BUF-2;
 	}
       }
       break;
@@ -233,21 +236,30 @@ int main(char argc, char **argv)
        * this is called one time. But if the audio device is busy (EAGAIN),
        * I have to retry.
        */
-      if (KeysChunk->pause) {
-	PlayerStatus = PAUSE;
-	goto break_pos;
-      }
+      if (WBold == ASample->WBuffer)
+	cerr << "!!!!!!!! ALARM CALL !!!!!!!!!!\n";
+
       ret = ADev->Write(ASample->WBuffer,BUFFSIZE);
+      WBold = ASample->WBuffer;
 
       if (ret == -1 ) {
 	if (errno== EAGAIN) {
 	  /* Retry after delay */
 	  usleep(USLEEP_DELAY);
+	  cerr << "Again!!!\n";
+	}
+	else {
+	  cerr << "Error: " << errno << "\n";
 	}
       }
       else {
-	PlayerStatus = PLAYING;
 	ASample->nextWBuf();
+
+	if (KeysChunk->pause) {
+	  PlayerStatus = PAUSE;
+	  goto break_pos;
+	}
+
 	if ( preWriting!=0) {
 	  // pre-write data into device, so that it is always a little ahead and
 	  // slow computers dont experience sound hickups
@@ -309,19 +321,26 @@ void ma_init(char argc, char **argv)
   char          *identification=NULL;
   int           i;
 
-  for (i=0; i<argc; i++)
-    {
-      /* Parse parameters */
-      if ( (strcmp (argv[i],"-media") == 0) && (i<argc-1) ) {
-	/* argv[i]="-media" and there exists at least one more
-	 * parameter (i<argc-1).
-	 */
-	IsSlave=1;
-	identification = argv[i+1];
-      }
-      else if ( (strcmp (argv[i],"-devnum") == 0) && (i+1<argc) )
-        MaudioDevnum = atoi(argv[i+1]);
+  for (i=0; i<argc; i++) {
+    /* Parse parameters */
+    if ( (strcmp (argv[i],"-media") == 0) && (i<argc-1) ) {
+      /* argv[i]="-media" and there exists at least one more
+       * parameter (i<argc-1).
+       */
+      IsSlave=1;
+      identification = argv[i+1];
     }
+    else if ( (strcmp (argv[i],"-devnum") == 0) && (i+1<argc) ) {
+      MaudioDevnum = atoi(argv[i+1]);
+    }
+    else  if (strcmp (argv[i],"-version") == 0) {
+      char vers[50];
+      sprintf (vers,"%.2f", APP_VERSION);
+      cout << argv[0] << " V" << vers << ".\n(C)1997-1998 by Christian Esken (esken@kde.org).\n";
+      cout << "This program can be distributed under the terms of GPL\n";
+      exit(0);
+    }
+  }
 
   if (!IsSlave) {
     cerr << "maudio: -media option missing.\n";
@@ -387,9 +406,7 @@ void ma_init(char argc, char **argv)
   /* Do now various stuff, as adding new chunks. */
 
  
-  /*
-   * Set status to "Player ready". After this line, I may not add new chunks.
-   */
+  // Set status to "Player ready". After this line, I may not add new chunks.
   *StatStatPtr = MD_STAT_READY;
   return;
 }
@@ -398,11 +415,10 @@ void ma_init(char argc, char **argv)
 void ma_atexit(void)
 {
   /* Notify mediatool of exiting slave */
-  if (IsSlave)
-    {
-      if(StatStatPtr)
-	*StatStatPtr =  MD_STAT_EXITED;
-    }
+  if (IsSlave) {
+    if(StatStatPtr)
+      *StatStatPtr =  MD_STAT_EXITED;
+  }
   delete ASample;
 }
 

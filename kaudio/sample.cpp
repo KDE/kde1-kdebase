@@ -50,7 +50,11 @@ extern int          BUFFSIZE;   // Crap! Must be out into AudioSample class
 AudioSample::AudioSample()
 {
   opened = false;
-  BuferValidLength = 0;
+  clearBuffers();
+}
+
+void AudioSample::clearBuffers()
+{
   setRBuf(0);
   setWBuf(0);
   buffersValid=0;
@@ -76,10 +80,12 @@ void AudioSample::setWBuf(int id)
 
 void AudioSample::nextWBuf()
 {
-  if(buffersValid) {
+  if(buffersValid>0) {
     setWBuf(WBufId+1);
     buffersValid--;
   }
+  else
+    cerr << "nextWBuf():  buffersValid==0\n";
 }
 
 
@@ -93,19 +99,19 @@ int AudioSample::setFilename(char* fname)
   char		head[BUFFERSIZE];
   //  WAVE_HEADER	*WavHead;
 
+  clearBuffers(); // Be sure to clear buffers before next media is played
 
-  if(opened)
-    {
-      fclose(audiofile);
-      opened = false;
-    }
+
+  if(opened) {
+    fclose(audiofile);
+    opened = false;
+  }
 
   audiofile = fopen(fname, "r");
-  if (!audiofile)
-    {
-      cerr << "maudio: Cannot open file.\n";
-      return 1;
-    }
+  if (!audiofile) {
+    cerr << "maudio: Cannot open file.\n";
+    return 1;
+  }
 
   ret = stat(fname, &statBuf);
   if (ret==-1)
@@ -114,6 +120,7 @@ int AudioSample::setFilename(char* fname)
       fclose(audiofile);
       return 1;
     }
+
 
   // Set an "approximation" of the header Length#
   // (headerLen is calculated precisely later
@@ -233,8 +240,6 @@ int AudioSample::setFilename(char* fname)
 
   Duration    = MediaLength/bytes_per_s;
 
-  BuferValidLength = 0;
-
   opened = true;
   return 0;
 }
@@ -277,16 +282,15 @@ void AudioSample::seek(uint32 secs, uint32 msecs)
       bytepos = (bytepos * 1000) / msecs; // !!! falsch, TODO
     fseek( audiofile, bytepos+headerLen, SEEK_SET);
   }
-  BuferValidLength = 0;
 }
 
 // This is a wrapper around readDataI() , made for implementing a simple buffering mechanism
 int AudioSample::readData()
 {
-  if ( buffersValid == NUM_BUF) {
+  if ( buffersValid >= NUM_BUF) {
     // We definitely read enough. Return a key to indicate this
-    cerr << "Ouch: Read too many buffers\n";
-    return -1;
+    cerr << "maudio: Read too many buffers (OUCH!) \n";
+    return 0;
   }
   int num = readDataI();
   if (num != 0) {
@@ -315,19 +319,18 @@ int AudioSample::readDataI()
     len_toRead = BUFFSIZE;			// A full buffer can be read without harm
 
 #ifdef DEBUG
-  cerr << "Trying to read " << len_toRead << " bytes from " << cur_read_pos << ". Read: ";
+  //  cerr << "Trying to read " << len_toRead << " bytes from " << cur_read_pos << ". Read: ";
 #endif
   len = fread(RBuffer, 1, len_toRead, audiofile);
 
   if (len==0) {
-    BuferValidLength = 0;
     return 0;
   }
 
   // Always pad with ZeroData!!!
   if (bit_p_spl == 8)
     for (int i=len; i<BUFFSIZE; i++) {
-      RBuffer[i]=0x80;
+      RBuffer[i]=0x80; // !!! Wrong padding !!!
     }
   else
     for (int i=len; i<BUFFSIZE; i++) {
@@ -336,10 +339,9 @@ int AudioSample::readDataI()
         
 
 #ifdef DEBUG
-  cerr << len << '\n';
+  //  cerr << len << '\n';
 #endif
 
-  BuferValidLength = BUFFSIZE; //len;
   return(BUFFSIZE);
 }
 
@@ -348,7 +350,6 @@ AudioSample::~AudioSample()
   if (opened)
     fclose(audiofile);
 }
-
 
 
 char* findchunk  (char* pstart, char* fourcc, size_t n)

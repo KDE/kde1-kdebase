@@ -17,7 +17,7 @@ datadir = $(kde_htmldir)/en/kmedia/
 data_DATA = maudio.html
 
 version.h: VERSION
-	sed "s/0/#define VERSION 0/" <VERSION >version.h
+	sed "s/0/#define APP_VERSION 0/" <VERSION >version.h
 
 democlient.cpp: democlient.moc
 

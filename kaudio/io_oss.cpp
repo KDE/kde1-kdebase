@@ -105,7 +105,7 @@ bool AudioDev::grab()
 	 release();
 	 return false;
        }
-       
+
        int Param;  /* For calling ioctl() */
        Param= bit_p_spl ; ioctl(audiodev, SNDCTL_DSP_SAMPLESIZE , &Param);
        Param= stereo    ; ioctl(audiodev, SNDCTL_DSP_STEREO     , &Param);

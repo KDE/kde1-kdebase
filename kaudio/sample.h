@@ -12,7 +12,7 @@
 #define MAUDIO_MAX_FRAGS 32
 #define BUFFER_MAX       4096
 
-const         int NUM_BUF=16;
+const         int NUM_BUF=160;
  
 class AudioSample
 {
@@ -42,7 +42,7 @@ public:
   uint32	bytes;
 
   uint32	BuferValidLength;
-  /// [RW]Buffer is a pointer to Buffers[n] , where n is in 0...BUFFER_MAX-1
+  /// [RW]Buffer is a pointer to Buffers[n] , where n is in 0...NUM_BUF-1
   char		*RBuffer,*WBuffer;
   /// Buffers for the multi buffering technique
   char		Buffers[NUM_BUF][BUFFER_MAX]; // !!! Will never user bigger buffers
@@ -56,6 +56,8 @@ private:
   int  readDataI();
   void setRBuf(int id);
   void setWBuf(int id);
+  /// logically clears the multi buffers
+  void clearBuffers();
   
   FILE		*audiofile;
   int8		num_frags;
