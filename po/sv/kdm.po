@@ -7,24 +7,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: 1998-01-20 14:45+0100\n"
-"Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
-"Language-Team: Sewdish <LL@li.org>\n"
+"PO-Revision-Date: 1998-07-09 21:55+0200\n"
+"Last-Translator: Anders Bengtsson <d96-abe@nada.kth.se>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kdmshutdown.cpp:159
 msgid "Shutdown or restart?"
-msgstr "Sänga av eller starta om?"
+msgstr "Stänga av eller starta om?"
 
 #: kdmshutdown.cpp:175
 msgid "Shutdown"
-msgstr "Stänga av"
+msgstr "Stäng av"
 
 #: kdmshutdown.cpp:189
 msgid "Shutdown and restart"
-msgstr "Stänga av och starta om"
+msgstr "Stäng av och starta om"
 
 #: kdmshutdown.cpp:198
 msgid "Exit kdm"
@@ -40,7 +39,7 @@ msgstr "Lösenord:"
 
 #: kgreeter.cpp:191
 msgid "Login failed!"
-msgstr "Inloggning misslyckades"
+msgstr "Inloggning misslyckades!"
 
 #: kgreeter.cpp:197
 msgid "Session Type:"
@@ -52,4 +51,4 @@ msgstr "Starta!"
 
 #: kgreeter.cpp:229
 msgid "Shutdown..."
-msgstr "Stänger av..."
+msgstr "Stäng av..."

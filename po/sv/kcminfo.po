@@ -7,9 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
-"PO-Revision-Date: 1998-01-20 15:15+0100\n"
-"Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
-"Language-Team: Swedish <LL@li.org>\n"
+"PO-Revision-Date: 1998-07-09 21:45+0200\n"
+"Last-Translator: Anders Bengtsson <d96-abe@nada.kth.se>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
@@ -52,7 +51,7 @@ msgstr "Swaputrymme"
 
 #: memory.cpp:53
 msgid "Free swap memory"
-msgstr "Fritt swapputrymme"
+msgstr "Fritt swaputrymme"
 
 #: memory.cpp:74
 #, c-format
@@ -61,10 +60,9 @@ msgstr "%10ld byte = %8.2f MB"
 
 #: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
 #: memory.cpp:101
-#, fuzzy
 msgid "Not available"
-msgstr "inte tillgängligt"
+msgstr "Inte tillgängligt"
 
 #: processor.cpp:29
 msgid "This system is not yet supported :-("
-msgstr "Ditt system är inte stött än :-("
+msgstr "Ditt system stöds inte än :-("
