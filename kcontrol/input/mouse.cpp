@@ -112,8 +112,9 @@ void MouseConfig::resizeEvent(QResizeEvent *)
   w = max( alabel->width(), tlabel->width() );
 
   alabel->move(SPACE_XO, h);
-  accel->setGeometry(w + 2*SPACE_XO, h, 200, alabel->height());
-  h += alabel->height() + SPACE_YI;
+  QSize qsha = accel->sizeHint();
+  accel->setGeometry(w + 2*SPACE_XO, h, 200, qsha.height());
+  h += (QMAX( qsha.height(),alabel->height()) + SPACE_YI);
 
   center = accel->x() + ( accel->width() - a->width() )/2;
 
@@ -121,8 +122,9 @@ void MouseConfig::resizeEvent(QResizeEvent *)
   h += a->height() + SPACE_YO;
 
   tlabel->move(SPACE_XO, h);
-  thresh->setGeometry(w + 2*SPACE_XO, h, 200, tlabel->height());
-  h += tlabel->height() + SPACE_YI;
+  QSize qsht = thresh->sizeHint();
+  thresh->setGeometry(w + 2*SPACE_XO, h, 200, qsht.height());
+  h += (QMAX( qsht.height(),tlabel->height()) + SPACE_YI);
 
   t->move(center, h);
   h += t->height() + SPACE_YO;

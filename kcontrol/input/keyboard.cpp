@@ -115,8 +115,9 @@ void KeyboardConfig::resizeEvent(QResizeEvent *)
   w = max(w, clabel->width());
 
   clabel->move(SPACE_XO, h);
-  click->setGeometry(w + 2*SPACE_XO, h, 200, clabel->height());
-  h += clabel->height() + SPACE_YI;
+  QSize qsh = click->sizeHint();
+  click->setGeometry(w + 2*SPACE_XO, h, 200, qsh.height());
+  h += (QMAX( qsh.height(),clabel->height()) + SPACE_YI);
 
   int center = click->x() + ( click->width() - c->width() )/2;
 
