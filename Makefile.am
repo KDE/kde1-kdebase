@@ -2,9 +2,9 @@
 ## (C) 1997 Stephan Kulow
 
 SUBDIRS = kfm kdehelp kdisplay kfontmanager kfind kvt \
-	@KWM@ kdm kscreensaver \
+	kwm kpanel kwmcom kwmmodules krootwm kdm kscreensaver \
 	kmenuedit kaudio kcontrolcenter \
-	pics po mimetypes doc applnk kpanel2
+	pics po mimetypes doc applnk 
 
 install-data-local:
 	@echo ""
