@@ -162,7 +162,7 @@ msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Následujúce aplikácie sú prispôsobené X11, a preto nemô¾u\n"
+"Následujúce aplikácie nie sú prispôsobené X11, a preto nemô¾u\n"
 "by» obnovené vo va¹om nasledujúcom sedení. Uistite sa, ¾e neobsahujú\n"
 "dôle¾ité neulo¾ené dáta."
 
