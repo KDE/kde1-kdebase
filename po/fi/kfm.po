@@ -5,10 +5,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: KFM\n"
 "POT-Creation-Date: 1998-01-10 12:48+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
@@ -25,7 +25,7 @@ msgstr "Kansio"
 #: kfmgui.cpp:279
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
-msgstr "VIRHE: Aihiota ei löydy: '%s'"
+msgstr "VIRHE: Pohjaa ei löydy: '%s'"
 
 #: kfmgui.cpp:305
 msgid "&New Window"
@@ -76,7 +76,7 @@ msgstr "Globaalit sovellukset"
 
 #: kfmgui.cpp:356
 msgid "Show &Dot Files"
-msgstr "Näytä &piste alkuiset tiedostot"
+msgstr "Näytä &pistealkuiset tiedostot"
 
 #: kfmgui.cpp:358
 msgid "Show Tr&ee"
@@ -134,11 +134,11 @@ msgstr "Tyhjennä"
 
 #: kfmgui.cpp:400
 msgid "Always look in cache"
-msgstr ""
+msgstr "Aina etsi välimuistista"
 
 #: kfmgui.cpp:402
 msgid "Never look in cache"
-msgstr ""
+msgstr "Älä etsi välimuistista"
 
 #: kfmgui.cpp:410
 msgid "Show &Menubar"
@@ -162,7 +162,7 @@ msgstr "Tallenna &asetukset"
 
 #: kfmgui.cpp:421
 msgid "Configure Browser..."
-msgstr ""
+msgstr "Aseta selainta ..."
 
 #: kfmgui.cpp:447
 msgid "&Find"
@@ -187,7 +187,7 @@ msgstr "&Työkalu"
 
 #: kfmgui.cpp:478
 msgid "&Cache"
-msgstr ""
+msgstr "&Välimuisti"
 
 #: kfmgui.cpp:515
 msgid "Home"
@@ -265,6 +265,8 @@ msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
 msgstr ""
+"Haluatko todella lopettaa?\n"
+"Tärkeitä työpöydän toimintoja poistuu!"
 
 #: kfmgui.cpp:1210
 #, fuzzy
@@ -279,6 +281,12 @@ msgid ""
 "HTML widget by Martin Jones\n"
 "mjones@kde.org"
 msgstr ""
+"Tekijä: Torben Weis\n"
+"weis@kde.org\n"
+"\n"
+"HTML työkalu Martin Jones\n"
+"mjones@kde.org"
+
 
 #: kfmgui.cpp:1303
 msgid "Document: Done"
@@ -316,7 +324,7 @@ msgstr "Pudotit tiedoston itsensä päälle"
 
 #: kfmtree.cpp:326 kfmview.cpp:351 kfmview.cpp:474 root.cpp:996
 msgid "ERROR: You dropped a directory over one of its children"
-msgstr ""
+msgstr "VIRHE: Pudotit hakemiston sen alihakemiston päälle"
 
 #: kfmexec.cpp:235 kfmman.cpp:733 kfmview.cpp:367
 msgid "Open With:"
@@ -341,13 +349,15 @@ msgstr "VIRHE: Useaan hakemistoon siirtyminen on mahdotonta."
 
 #: kfmview.cpp:617
 msgid "KFM Security Alert"
-msgstr ""
+msgstr "KFM turvallisuusvaroitus"
 
 #: kfmview.cpp:618
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
 msgstr ""
+"Tämä sivu ei ole luotettava sivu\n"
+"mutta se sisältää linkin paikalliseen tiedostosysteemiin."
 
 #: kfmview.cpp:704
 msgid "Symbolic Link"
@@ -381,11 +391,11 @@ msgstr "MIME-tyyppiä ei löydy:\n"
 #: kbind.cpp:703 kbind.cpp:713 kbind.cpp:1868 kbind.cpp:1869 kbind.cpp:1881
 #: kbind.cpp:1883
 msgid "Mount"
-msgstr ""
+msgstr "Liitä"
 
 #: kbind.cpp:719 kbind.cpp:1859
 msgid "Unmount"
-msgstr ""
+msgstr "Irrota"
 
 #: kbind.cpp:1163
 msgid "ERROR"
@@ -393,7 +403,7 @@ msgstr "VIRHE"
 
 #: kbind.cpp:1164
 msgid "in "
-msgstr ""
+msgstr " "
 
 #: kbind.cpp:1306 kbind.cpp:1392
 msgid "Could not execute program\n"
@@ -461,7 +471,7 @@ msgstr "VIRHE: Ei pääteasetusta"
 
 #: kbind.cpp:1891
 msgid "No mount point in *.kdelnk file"
-msgstr ""
+msgstr "Ei liitospaikkaa *.kdelnk tiedostossa"
 
 #: kbind.cpp:1931
 msgid "Unknown binding"
@@ -477,7 +487,7 @@ msgstr "Luodaan hakemistoa:\n"
 
 #: main.cpp:179
 msgid "Installing Templates"
-msgstr ""
+msgstr "Asennan pohjat"
 
 #: main.cpp:211
 msgid "Cd"
@@ -558,6 +568,8 @@ msgid ""
 "Could not rename the file or directory\n"
 "The destination seems to already exist\n"
 msgstr ""
+"En voi uudelleennimetä tiedostoa tai hakemistoa\n"
+"Kohde on jo olemassa\n"
 
 #: kfmprops.cpp:418
 msgid "Access permissions"
@@ -568,6 +580,8 @@ msgid ""
 "Show\n"
 "Entries"
 msgstr ""
+"Näytä\n"
+"Tietueet"
 
 #: kfmprops.cpp:426
 msgid "Read"
@@ -588,6 +602,8 @@ msgid ""
 "Change\n"
 "Into"
 msgstr ""
+"Muuta\n"
+" "
 
 #: kfmprops.cpp:440
 msgid "Exec"
@@ -595,7 +611,7 @@ msgstr "Suoritus"
 
 #: kfmprops.cpp:444
 msgid "Special"
-msgstr ""
+msgstr "Erikoinen"
 
 #: kfmprops.cpp:448
 msgid "User"
@@ -611,11 +627,11 @@ msgstr "Muut"
 
 #: kfmprops.cpp:471
 msgid "Set UID"
-msgstr ""
+msgstr "Aseta UID"
 
 #: kfmprops.cpp:472
 msgid "Set GID"
-msgstr ""
+msgstr "Aseta GID"
 
 #: kfmprops.cpp:473
 msgid "Sticky"
@@ -675,7 +691,7 @@ msgstr "Suorita päätteessä"
 
 #: kfmprops.cpp:714
 msgid "Run in Panel (drag onto Panel to execute)"
-msgstr ""
+msgstr "Käynnistä Paneelissa (vedä paneeliin päälle)"
 
 #: kfmprops.cpp:718
 #, fuzzy
@@ -684,7 +700,7 @@ msgstr "Globaalit sovellukset"
 
 #: kfmprops.cpp:723
 msgid "enter the exact title, as normally shown in the window titlebar"
-msgstr ""
+msgstr "kirjoita tarkkaan otsikko, kuten se lukee ikkunan otsikossa"
 
 #: kfmprops.cpp:727
 msgid "Run in terminal"
@@ -700,6 +716,10 @@ msgid ""
 "in the Panel or in a Terminal, \n"
 "but not both!"
 msgstr ""
+"Voit ajaa tämän ohjelman joko\n"
+"Paneelissa tai Terminaalissa\n"
+"mutta et molemmissa"
+
 
 #: kfmprops.cpp:862 kfmprops.cpp:985 kfmprops.cpp:1423 kfmprops.cpp:1641
 #: kfmprops.cpp:1812
@@ -761,7 +781,7 @@ msgstr "Laite ( /dev/fd0 )"
 
 #: kfmprops.cpp:1694
 msgid "Mount Point ( /floppy )"
-msgstr ""
+msgstr "Liitospiste (/floppy)"
 
 #: kfmprops.cpp:1704
 msgid "Readonly"
@@ -773,26 +793,28 @@ msgstr "Tiedostojärjestelmät ( iso9660,msdos,minix,default )"
 
 #: kfmprops.cpp:1720
 msgid "Mounted Icon"
-msgstr ""
+msgstr "Liitetyn ikoni"
 
 #: kfmprops.cpp:1724
 msgid "Unmounted Icon"
-msgstr ""
+msgstr "Irroitetun ikoni"
 
 #: kfmserver.cpp:40
 msgid "Could not create ~/.kde/share/apps/kfm/magic"
-msgstr ""
+msgstr "En voi luoda ~/.kde/share/apps/kfm/magic tiedostoa"
 
 #: kfmserver.cpp:50
 msgid ""
 "Please change the password in\n"
 "~/.kde/share/apps/kfm/magic"
 msgstr ""
+"Ole hyvä ja muuta salasanaa\n"
+"~/.kde/share/apps/kfm/magic tiedostossa"
 
 #: kfmserver.cpp:78
 #, fuzzy
 msgid "Do you really want to rearrange your icons ?"
-msgstr "Haluatko todella lopettaa?"
+msgstr "Haluatko todella uudelleenjärjestää ikonit?"
 
 #: kfmserver.cpp:234
 #, fuzzy, c-format
@@ -800,25 +822,34 @@ msgid ""
 "The URL\n"
 "%s\n"
 "is malformed"
-msgstr "on virheellinen\n"
+msgstr ""
+"URL\n"
+"%s\n"
+"on virheellinen"
 
 #: kfmserver.cpp:285
 msgid ""
 "You dont have the file ~/.kde/share/apps/kfm/magic\n"
 "Authorization failed"
 msgstr ""
+"Sinulla ei ole tiedostoa ~/.kde/share/apps/kfm/magic\n"
+"Tunnistus epäonnistui"
 
 #: kfmserver.cpp:294
 msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
 msgstr ""
+"Tiedosto ~/.kde/share/apps/kfm/magic on rikkinäinen\n"
+"Tunnistus epäonnistui"
 
 #: kfmserver.cpp:302
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
 msgstr ""
+"Joku yritti tunistaa itsensä\n"
+"käyttäen väärää salasanaa"
 
 #: root.cpp:578
 msgid "Internal Error: desktopDir is malformed"
@@ -861,7 +892,7 @@ msgstr "Lisää osoitekirjaan"
 
 #: kiojob.cpp:119
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
-msgstr "SISÄINEN VIRHE: Sinun täytyy ainakin määrittää laite jota mountataan."
+msgstr "SISÄINEN VIRHE: Sinun täytyy ainakin määrittää laite jota liitetään."
 
 #: kiojob.cpp:216 kiojob.cpp:224 kiojob.cpp:999 kiojob.cpp:1139
 #, fuzzy, c-format
@@ -1151,11 +1182,11 @@ msgstr "Koti"
 
 #: kfmtree.cpp:393
 msgid "Desktop"
-msgstr ""
+msgstr "Työpöytä"
 
 #: kfmtree.cpp:395
 msgid "Root"
-msgstr ""
+msgstr "Juuri"
 
 #: krenamewin.cpp:24
 msgid "Rename"
@@ -1183,7 +1214,7 @@ msgstr "Tai nimeä uudelleen "
 
 #: krenamewin.cpp:105
 msgid "You did not change the name!\n"
-msgstr ""
+msgstr "Et vaihtanut nimeä!\n"
 
 #: passworddialog.cpp:41 passworddialog.cpp:80
 msgid "Password"
@@ -1195,11 +1226,11 @@ msgstr "Yritetään avata"
 
 #: useragentdlg.cpp:20
 msgid "On server:"
-msgstr ""
+msgstr "Palvelimella:"
 
 #: useragentdlg.cpp:31
 msgid "login as:"
-msgstr ""
+msgstr "käytä nimeä:"
 
 #: useragentdlg.cpp:52
 #, fuzzy
@@ -1216,15 +1247,15 @@ msgstr ""
 
 #: kproxydlg.cpp:35
 msgid "No Proxy for:"
-msgstr ""
+msgstr "Ei Proxyä:"
 
 #: kkfmoptdlg.cpp:39
 msgid "KFM Browser Settings"
-msgstr ""
+msgstr "KFM Selaimen asetukset"
 
 #: kfmprops.h:73
 msgid "&General"
-msgstr ""
+msgstr "&Yleistä"
 
 #: kfmprops.h:108
 #, fuzzy
@@ -1243,12 +1274,12 @@ msgstr "URL"
 
 #: kfmprops.h:273
 msgid "&Dir"
-msgstr ""
+msgstr "&Hakemisto"
 
 #: kfmprops.h:316
 #, fuzzy
 msgid "&Application"
-msgstr "Sovellukset"
+msgstr "&Sovellukset"
 
 #: kfmprops.h:358
 #, fuzzy
@@ -1257,7 +1288,7 @@ msgstr "&Etsi"
 
 #: kfmprops.h:388
 msgid "De&vice"
-msgstr ""
+msgstr "&Laite"
 
 #: kfmexec/main.cpp:46
 #, fuzzy, c-format
@@ -1288,6 +1319,9 @@ msgid ""
 "Syntax Error:\n"
 "kfmexec command [URLs ....]\n"
 msgstr ""
+"Syntaksivirhe\n"
+"kfmexec command [URLs ....]\n"
+
 
 #~ msgid "The URL"
 #~ msgstr "URL"

@@ -1,14 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: KWM\n"
 "POT-Creation-Date: 1998-01-07 23:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
@@ -32,7 +27,7 @@ msgstr ""
 
 #: main.C:376
 msgid "Usage: "
-msgstr ""
+msgstr "Käyttö: "
 
 #: main.C:387
 #, fuzzy
@@ -80,7 +75,7 @@ msgstr "Työpöydälle"
 
 #: main.C:398
 msgid "&Onto current desktop"
-msgstr ""
+msgstr "&Nykyiselle työpöydälle"
 
 #: main.C:448
 msgid "One"
@@ -116,11 +111,11 @@ msgstr "Kahdeksan"
 
 #: main.C:742
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr ""
+msgstr "Jotkut kuvat eivät ole kunnossa: ShapeMode poistettu\n"
 
 #: main.C:973
 msgid "*** No Tasks ***"
-msgstr ""
+msgstr "*** Ei töitä ***"
 
 #: minicli.C:115
 msgid "Command:"
@@ -133,33 +128,39 @@ msgstr "Lopeta"
 
 #: logout.C:45
 msgid "Session prepared for logout"
-msgstr ""
+msgstr "Istunto valmisteltu poistumiseen"
 
 #: logout.C:51
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
+"Seuraavat ohjelmat sisältävät tallentamatonta tietoa\n"
+"joka häviää ennen seuraavaa istuntoa."
 
 #: logout.C:62
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
+"Seuraavia ohjelmia ei voida palauttaa seuraavalla istunnolla,\n"
+"ne voidaan vain käynnistää uudellen. Varmista ettei niissä ole tallentamatonta tietoa."
 
 #: logout.C:73
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
+"Seuraavat sovellukset eivät ole X11-tietoisia eikä niitä voida palauttaa\n"
+"seuraavalla istunnolla. Varmista ettei niissä ole tallentamatonta tietoa."
 
 #: taskmgr.C:105
 msgid "Switch to"
-msgstr ""
+msgstr "Siirry"
 
 #: taskmgr.C:119
 msgid "Current session"
-msgstr ""
+msgstr "Nykyinen istunto"
 
 #~ msgid "&Close"
 #~ msgstr "Sulje"

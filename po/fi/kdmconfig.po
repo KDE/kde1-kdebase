@@ -1,0 +1,272 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: KDMCONFIG\n"
+"POT-Creation-Date: 1997-12-31 15:27+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:99
+msgid "&Appearance"
+msgstr "&Ulkon‰kˆ"
+
+#: main.cpp:103
+msgid "&Fonts"
+msgstr "&Fontit"
+
+#: main.cpp:107
+msgid "&Background"
+msgstr "&Tausta"
+
+#: main.cpp:110
+msgid "&Users"
+msgstr "&K‰ytt‰j‰t"
+
+#: main.cpp:113
+msgid "&Sessions"
+msgstr "&istunnot"
+
+#: main.cpp:119
+msgid ""
+"Sorry, but you don't have read/write\n"
+"permission to the KDM setup file."
+msgstr ""
+"Sinulla ei ole luku/kirjoitus\n"
+"oikeutta KDM asetustiedostoon."
+
+#: main.cpp:121
+msgid "Missing privileges"
+msgstr "Puuttuvat oikeudet"
+
+#: main.cpp:158
+msgid "KDM Configuration"
+msgstr "KDM asetukset"
+
+#: kdm-appear.cpp:66
+msgid "Appearance"
+msgstr "Ulkon‰kˆ"
+
+#: kdm-appear.cpp:69
+msgid "Greeting string:"
+msgstr "Tervehdyslause:"
+
+#: kdm-appear.cpp:77
+msgid "KDM logo:"
+msgstr "KDM logo:"
+
+#: kdm-appear.cpp:104 kdm-users.cpp:139
+msgid "Click or drop an image here"
+msgstr "Paina tai tiputa kuva t‰h‰n"
+
+#: kdm-appear.cpp:109
+msgid "GUI Style:"
+msgstr "K‰yttˆliittym‰n tyyli:"
+
+#: kdm-appear.cpp:115
+msgid "Motif"
+msgstr ""
+
+#: kdm-appear.cpp:116
+msgid "Windows"
+msgstr ""
+
+#: kdm-appear.cpp:135 kdm-appear.cpp:219 kdm-users.cpp:244
+msgid ""
+"There was an error loading the image:\n"
+">"
+msgstr ""
+"Kuvaa ladattaessa sattui virhe:\n"
+">"
+
+#: kdm-appear.cpp:137 kdm-appear.cpp:156 kdm-users.cpp:164
+msgid "<"
+msgstr ""
+
+#: kdm-appear.cpp:138 kdm-appear.cpp:157 kdm-appear.cpp:222 kdm-users.cpp:165
+#: kdm-users.cpp:247
+msgid "ERROR"
+msgstr "VIRHE"
+
+#: kdm-appear.cpp:154 kdm-users.cpp:162
+msgid ""
+"There was an error saving the image:\n"
+">"
+msgstr ""
+"Kuvaa tallennettaessa tapahtui virhe:\n"
+">"
+
+#: kdm-appear.cpp:187 kdm-users.cpp:195
+msgid "Sorry, but \n"
+msgstr "Anteeksi, mutta\n"
+
+#: kdm-appear.cpp:189 kdm-users.cpp:197
+msgid ""
+"\n"
+"does not seem to be an image file"
+msgstr ""
+"\n"
+"ei n‰yt‰ olevan kuvatiedosto"
+
+#: kdm-appear.cpp:190 kdm-users.cpp:198
+msgid ""
+"\n"
+"Please use files with these extensions\n"
+msgstr ""
+"\n"
+"K‰yt‰ tiedostoja n‰ill‰ p‰‰tteill‰\n"
+
+#: kdm-appear.cpp:192 kdm-users.cpp:200
+msgid "Improper File Extension"
+msgstr "Ep‰t‰ydellinen tiedostop‰‰te"
+
+#: kdm-appear.cpp:221 kdm-users.cpp:246
+msgid ""
+"<\n"
+"It will not be saved..."
+msgstr ""
+"<\n"
+"Sit‰ ei tallenneta..."
+
+#: kdm-font.cpp:48
+msgid "Select fonts"
+msgstr "Valitse fontit"
+
+#: kdm-font.cpp:51
+msgid "Change font"
+msgstr "vaihda fonttia"
+
+#: kdm-font.cpp:59
+msgid "Greeting"
+msgstr "Tervehdys"
+
+#: kdm-font.cpp:60
+msgid "Fail"
+msgstr "Virhe"
+
+#: kdm-font.cpp:61
+msgid "Standard"
+msgstr "Vakio"
+
+#: kdm-font.cpp:62
+msgid "Example:"
+msgstr "Esimerkki:"
+
+#: kdm-bgnd.cpp:67
+msgid "Color"
+msgstr "V‰ri"
+
+#: kdm-bgnd.cpp:75
+msgid "Wallpaper"
+msgstr "Taustakuva"
+
+#: kdm-bgnd.cpp:110
+msgid "Tiled"
+msgstr "Lomitettu"
+
+#: kdm-bgnd.cpp:114
+msgid "Centred"
+msgstr "Keskitetty"
+
+#: kdm-bgnd.cpp:118
+msgid "Scaled"
+msgstr "Skaalattu"
+
+#: kdm-bgnd.cpp:124
+msgid "Browse..."
+msgstr "Selaa..."
+
+#: kdm-users.cpp:49
+msgid "All users"
+msgstr "Kaikki k‰ytt‰j‰t"
+
+#: kdm-users.cpp:51
+msgid "Selected users"
+msgstr "Valitut k‰ytt‰j‰t"
+
+#: kdm-users.cpp:53
+msgid "No-show users"
+msgstr "ƒl‰ n‰yt‰ k‰ytt‰ji‰"
+
+#: kdm-users.cpp:80
+msgid ""
+"Show only\n"
+"selected users"
+msgstr ""
+"N‰yt‰ vain\n"
+"valitut k‰ytt‰j‰t"
+
+#: kdm-users.cpp:87
+msgid ""
+"Show all users\n"
+" but no-show users"
+msgstr ""
+"N‰yt‰ kaikki muut paitsi\n"
+" ei n‰ytett‰v‰t k‰ytt‰j‰t"
+
+#: kdm-users.cpp:97
+msgid "Show users"
+msgstr "N‰yt‰ k‰ytt‰j‰t"
+
+#: kdm-users.cpp:103
+msgid "Sort users"
+msgstr "Lajittele k‰ytt‰j‰t"
+
+#: kdm-users.cpp:150 kdm-users.cpp:219
+msgid "No user selected"
+msgstr "Ei k‰ytt‰ji‰ valittu"
+
+#: kdm-users.cpp:151 kdm-users.cpp:220
+msgid "Save image as default image?"
+msgstr "Tallenna kuva vakiokuvaksi?"
+
+#: kdm-sess.cpp:51
+msgid "Allow to shutdown:"
+msgstr "Salli sammuttaminen:"
+
+#: kdm-sess.cpp:58
+msgid "None"
+msgstr "Ei mik‰‰n"
+
+#: kdm-sess.cpp:59
+msgid "All"
+msgstr "Kaikki"
+
+#: kdm-sess.cpp:60
+msgid "Root Only"
+msgstr "Vain Root"
+
+#: kdm-sess.cpp:61
+msgid "Console Only"
+msgstr "Vain Konsoli"
+
+#: kdm-sess.cpp:65
+msgid "Commands"
+msgstr "Komennot"
+
+#: kdm-sess.cpp:67
+msgid "Shutdown"
+msgstr "Sammuta"
+
+#: kdm-sess.cpp:75
+msgid "Restart"
+msgstr "Uudelleenk‰ynnist‰"
+
+#: kdm-sess.cpp:86
+msgid "Session types"
+msgstr "Istuntotyypit"
+
+#: kdm-sess.cpp:89
+msgid "New type"
+msgstr "Uusi tyyppi"
+
+#: kdm-sess.cpp:99
+msgid "Available types"
+msgstr "Olemassaolevat tyypit"

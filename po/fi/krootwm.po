@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: KROOTWM\n"
+"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: krootwm.C:109 krootwm.C:406
+msgid "Folder"
+msgstr "Kansio"
+
+#: krootwm.C:136
+#, c-format
+msgid "ERROR: Template does not exist '%s'"
+msgstr "VIRHE: Pohjaa ei ole olemassa '%s'"
+
+#: krootwm.C:162
+msgid "Help on desktop"
+msgstr "Apua työpöydällä"
+
+#: krootwm.C:163
+msgid "Execute command"
+msgstr "Käynnistä komento"
+
+#: krootwm.C:164
+msgid "Display properties"
+msgstr "Näytön ominaisuudet"
+
+#: krootwm.C:165
+msgid "Refresh desktop"
+msgstr "Päivitä työpöytä"
+
+#: krootwm.C:166
+msgid "Arrange icons"
+msgstr "Järjestä ikonit"
+
+#: krootwm.C:168
+msgid "Lock screen"
+msgstr "Lukitse ruutu"
+
+#: krootwm.C:169
+msgid "Logout"
+msgstr "Lopeta"
+
+#: krootwm.C:426
+msgid "Could not create folder"
+msgstr "En voi luoda kansiota"
+
+#: krootwm.C:459
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""
+
+#: krootwm.C:463
+msgid "Usage:"
+msgstr "Käyttö:"

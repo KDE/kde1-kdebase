@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: KCONTROL\n"
+"POT-Creation-Date: 1997-12-31 15:27+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: configlist.cpp:119
+msgid "Unknown module: "
+msgstr "Tuntematon moduli: "
+
+#: main.cpp:46 mainwidget.cpp:18
+msgid "KDE Control Center"
+msgstr "KDE Kontrollikeskus"
+
+#: toplevel.cpp:78
+msgid "&Swallow modules"
+msgstr "&Imase moduli"
+
+#: toplevel.cpp:81
+msgid "&About KControl..."
+msgstr "&Tietoja KControllista..."
+
+#: toplevel.cpp:84
+msgid "&Using KControl"
+msgstr "&Kcontrolin käytöstä"
+
+#: toplevel.cpp:101
+msgid "About KControl"
+msgstr "Tietoja Kcontrolista"
+
+#: toplevel.cpp:102
+msgid ""
+"KDE Control Center - Version 0.3\n"
+"\n"
+"Written by Matthias Hölzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Thanks to:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+msgstr ""
+"KDE Control Center - Versio 0.3\n"
+"\n"
+"Kirjoittanut Matthias Hölzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Kiitokset:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."

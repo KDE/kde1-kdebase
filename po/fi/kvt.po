@@ -11,7 +11,7 @@ msgstr "POT-Creation-Date: 1997-12-31 15:26+0100\n"
 #
 #: main.C:236
 msgid "Add characters to word class"
-msgstr ""
+msgstr "Lisää sanoja sanaluokkaan"
 
 #: main.C:239
 msgid "choose type of color-mode"
@@ -19,7 +19,7 @@ msgstr "Valitse väritilan tyyppi"
 
 #: main.C:242
 msgid "The backspace key will send a"
-msgstr ""
+msgstr "Backspace näppäin lähettää"
 
 #: main.C:383
 msgid "&New Terminal"
@@ -43,11 +43,11 @@ msgstr "&Normaali"
 
 #: main.C:398
 msgid "&Tiny"
-msgstr ""
+msgstr "Pieni"
 
 #: main.C:399
 msgid "&Small"
-msgstr "&Pieni"
+msgstr "&Suuri"
 
 #: main.C:400
 msgid "&Medium"
@@ -84,7 +84,7 @@ msgstr "&Linux konsoli"
 #: main.C:427
 #, fuzzy
 msgid "&Custom Colors"
-msgstr "&Väri"
+msgstr "Omat &Värit"
 
 #: main.C:434 main.C:735
 msgid "Hide &Menubar"
@@ -132,6 +132,13 @@ msgid ""
 "Terminal emulation for the KDE Desktop Environment\n"
 "based on Robert Nation's rxvt-2.08"
 msgstr ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Terminaaliemulaatio KDE Desktop Ympäristöön\n"
+"perustuu Robert Nationin rxvt-2.08:n"
 
 #: main.C:608 main.C:782
 msgid "&Show"

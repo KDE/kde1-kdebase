@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: KCMKWM\n"
+"POT-Creation-Date: 1998-01-02 19:41+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:57
+msgid "&Windows"
+msgstr "&Ikkunat"
+
+#: main.cpp:60
+msgid "&Buttons"
+msgstr "&Napit"
+
+#: main.cpp:63
+msgid "&Titlebar"
+msgstr "&Otsikko"
+
+#: main.cpp:91
+msgid "Window manager style"
+msgstr "Ikkunamanagerin tyyli"
+
+#: titlebar.cpp:113
+msgid "Minimize"
+msgstr "Pienennä"
+
+#: titlebar.cpp:117
+msgid "Maximize"
+msgstr "Suurenna"
+
+#: titlebar.cpp:121
+msgid "Sticky"
+msgstr "Pysyvä"
+
+#: titlebar.cpp:129
+msgid "Menu"
+msgstr "Valikko"
+
+#: titlebar.cpp:459
+msgid ""
+"The left side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr ""
+"Otsikon vasen puoli on täynnä... poistan 'suurenna' napin\n"
+
+#: titlebar.cpp:492
+msgid ""
+"The right side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr ""
+"Otsikon oikea puoli on täynnä... poistan 'suurenna' napin\n"
+
+#: titlebar.cpp:532
+msgid ""
+"The left side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr ""
+"Otsikon vasen puoli on täynnä... poistan 'pienennä' napin\n"
+
+#: titlebar.cpp:565
+msgid ""
+"The right side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr ""
+"Otsikon oikea puoli on täynnä... poistan 'pienennä' napin\n"
+
+#: titlebar.cpp:916
+msgid "Titlebar appearance"
+msgstr "Otsikot ulkonäkö"
+
+#: titlebar.cpp:918
+msgid "Shaded"
+msgstr "Varjostettu"
+
+#: titlebar.cpp:921
+msgid "Plain"
+msgstr "Koristelematon"
+
+#: titlebar.cpp:924 titlebar.cpp:944
+msgid "Pixmap"
+msgstr "Kuva"
+
+#: titlebar.cpp:931
+msgid "Title Animation"
+msgstr "Otsikon animaatio"
+
+#: titlebar.cpp:934
+msgid "ms"
+msgstr "ms"
+
+#: titlebar.cpp:955
+msgid "&Active pixmap"
+msgstr "&Aktiivinen kuva"
+
+#: titlebar.cpp:957
+msgid "&Inactive pixmap"
+msgstr "&Poissaoleva kuva"
+
+#: windows.cpp:66
+msgid "Window movement"
+msgstr "Ikkunan liikutus"
+
+#: windows.cpp:67
+msgid "Transparent"
+msgstr "Läpinäkyvä"
+
+#: windows.cpp:68
+msgid "Opaque"
+msgstr "Kuultava"
+
+#: windows.cpp:71
+msgid "Resize Animation"
+msgstr "Aseta animaation koko"
+
+#: windows.cpp:76
+msgid "Focus Policy"
+msgstr "Kohdistustapa"
+
+#: windows.cpp:77
+msgid "Click to focus"
+msgstr "Kohdista napilla"
+
+#: windows.cpp:78
+msgid "Focus follows mouse"
+msgstr "Kohdistus seuraa hiirtä"
+
+#: windows.cpp:81
+msgid "Maximize Style"
+msgstr "Suurenna tyyli"
+
+#: windows.cpp:82
+msgid "Maximize fully"
+msgstr "Suurenna täysin"
+
+#: windows.cpp:83
+msgid "Maximize vertically"
+msgstr "Suurenna pystysuunnassa"
+
+#: windows.cpp:88
+msgid ""
+"Auto raise delay\n"
+"(<100 disables)"
+msgstr ""
+"automaattinoston viive\n"
+"(<100 poistaa)"
+
+#: windows.cpp:91
+msgid "miliseconds"
+msgstr "millisekuntia"

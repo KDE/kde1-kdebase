@@ -10,15 +10,15 @@ msgstr ""
 
 #: kdmshutdown.cpp:153
 msgid "Shutdown or restart?"
-msgstr "Aja alas vai käynnistä uudelleen"
+msgstr "Sammuta vai käynnistä uudelleen"
 
 #: kdmshutdown.cpp:169
 msgid "Shutdown"
-msgstr "Aja alas"
+msgstr "Sammuta"
 
 #: kdmshutdown.cpp:183
 msgid "Shutdown and restart"
-msgstr "Aja alas ja käynnistä uudelleen"
+msgstr "Sammuta ja käynnistä uudelleen"
 
 #: kdmshutdown.cpp:192
 msgid "Exit kdm"

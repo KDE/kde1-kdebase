@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: KDISPLAY\n"
 "POT-Creation-Date: 1997-12-31 15:26+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
@@ -15,11 +15,11 @@ msgstr ""
 
 #: backgnd.cpp:204 backgnd.cpp:239
 msgid "Desktop"
-msgstr ""
+msgstr "Työpöytä"
 
 #: backgnd.cpp:249
 msgid "Rename..."
-msgstr ""
+msgstr "Uudelleen nimeä..."
 
 #: backgnd.cpp:255
 msgid "Color"
@@ -84,7 +84,7 @@ msgstr "Ikkunan teksti"
 
 #: colorscm.cpp:209
 msgid "Disabled"
-msgstr ""
+msgstr "Valitsematon"
 
 #: colorscm.cpp:216 colorscm.cpp:217
 msgid "Selected"
@@ -96,7 +96,7 @@ msgstr "Väriteema"
 
 #: colorscm.cpp:286
 msgid "Widget color"
-msgstr ""
+msgstr "Työkalun väri"
 
 #: colorscm.cpp:291
 msgid "Inactive title bar"
@@ -152,7 +152,7 @@ msgstr "Tallenna teema"
 
 #: colorscm.cpp:374 colorscm.cpp:382
 msgid "You have chosen a name used by a supplied color scheme"
-msgstr "Olet valinnut nimen joka on jo olemassa valmiina"
+msgstr "Olet valinnut nimen joka on jo valmiiksi olemassa"
 
 #: colorscm.cpp:467
 msgid "KDE Default"
@@ -208,7 +208,7 @@ msgstr "Viive:"
 
 #: scrnsave.cpp:210
 msgid "min"
-msgstr ""
+msgstr "min"
 
 #: scrnsave.cpp:213
 msgid "Requires Password"
@@ -224,23 +224,23 @@ msgstr "Yleinen"
 
 #: general.cpp:65
 msgid "Widget style"
-msgstr ""
+msgstr "Työkalun tyyli"
 
 #: general.cpp:70
 msgid "Motif"
-msgstr ""
+msgstr "Motif"
 
 #: general.cpp:71
 msgid "Windows 95"
-msgstr ""
+msgstr "Windows 95"
 
 #: general.cpp:80
 msgid "Fonts"
-msgstr ""
+msgstr "Fontit"
 
 #: general.cpp:85
 msgid "General font"
-msgstr ""
+msgstr "Yleinen fontti"
 
 #: general.cpp:110
 msgid "Sample"
@@ -275,7 +275,7 @@ msgstr "Näytönsäästäjä"
 
 #: main.cpp:70
 msgid "&Style"
-msgstr ""
+msgstr "Tyyli"
 
 #: main.cpp:105
 #, fuzzy

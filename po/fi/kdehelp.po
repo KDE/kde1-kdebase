@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1997-12-31 15:26+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
@@ -212,7 +212,7 @@ msgstr "Avaa UR&L..."
 
 #: mainwidget.cpp:138
 msgid "&Reload"
-msgstr ""
+msgstr "&Päivitä"
 
 #: mainwidget.cpp:140
 msgid "&Search"
@@ -275,7 +275,7 @@ msgstr ""
 
 #: mainwidget.cpp:184
 msgid "Version "
-msgstr ""
+msgstr "Versio "
 
 #: mainwidget.cpp:186
 msgid ""
@@ -326,7 +326,7 @@ msgstr "Hakemisto"
 
 #: mainwidget.cpp:260
 msgid "Reload current document"
-msgstr ""
+msgstr "Päivitä dokumentti"
 
 #: mainwidget.cpp:265
 msgid "Stop"

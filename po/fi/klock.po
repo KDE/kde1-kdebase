@@ -1,0 +1,581 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: KLOCK\n"
+"POT-Creation-Date: 1998-01-09 20:19+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: banner.cpp:56
+msgid "Banner"
+msgstr "Viesti"
+
+#: banner.cpp:78
+msgid "Setup kbanner"
+msgstr "Aseta viesti‰"
+
+#: banner.cpp:116 blankscrn.cpp:65
+msgid "Color:"
+msgstr "V‰ri:"
+
+#: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
+#: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1020 polygon.cpp:101
+#: rock.cpp:550 slip.cpp:366 swarm.cpp:330
+msgid "Speed:"
+msgstr "Nopeus:"
+
+#: banner.cpp:146
+msgid "Message:"
+msgstr "Viesti:"
+
+#: banner.cpp:315
+msgid "About Banner"
+msgstr "Tietoja Bannerista"
+
+#: banner.cpp:316
+msgid ""
+"Banner Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Banner Versio 0.1\n"
+"\n"
+"Kirjoittanut Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: banner.cpp:419
+msgid "KDE is great"
+msgstr "KDE on mahtava"
+
+#: bat.cpp:457
+msgid "Bat"
+msgstr "Mailat"
+
+#: bat.cpp:532
+msgid "Setup KBat"
+msgstr "Aseta mailoja"
+
+#: bat.cpp:548
+msgid "Number of bats:"
+msgstr "Mailojen lukum‰‰r‰:"
+
+#: bat.cpp:636
+msgid "About Bat"
+msgstr "Tietoja Batista"
+
+#: bat.cpp:637
+msgid ""
+"Bat\n"
+"\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Bat\n"
+"\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
+"\n"
+"Siirt‰nyt kscreensaveen Emanuel Pirker."
+
+#: blankscrn.cpp:49
+msgid "Blank Screen"
+msgstr "Tyhj‰ ruutu"
+
+#: blankscrn.cpp:63
+msgid "Setup kblankscrn"
+msgstr "Aseta tyhj‰‰ ruutua"
+
+#: blob.cpp:53
+msgid "Random Linear"
+msgstr "Satunnainen suora"
+
+#: blob.cpp:54
+msgid "Horizonal Sine"
+msgstr "Vaakasuuntainen sini"
+
+#: blob.cpp:55
+msgid "Circular Bounce"
+msgstr "Ympyr‰muotoinen tˆrm‰ily"
+
+#: blob.cpp:56
+msgid "Polar Coordinates"
+msgstr "Polaarikoordinaatit"
+
+#: blob.cpp:57
+msgid "Random"
+msgstr "Satunnainen"
+
+#: blob.cpp:73
+msgid "Sorry. This screensaver needs a color display"
+msgstr "Valitettavasti t‰m‰ ruuduns‰‰st‰j‰ vaatii v‰rin‰ytˆn"
+
+#: blob.cpp:452
+msgid "Setup Blob Saver"
+msgstr "Aseta Kupla ruuduns‰‰st‰j‰‰"
+
+#: blob.cpp:455
+msgid "Frame Show sec."
+msgstr "N‰yt‰ ruutuja sekunnissa."
+
+#: blob.cpp:463
+msgid "Algorithm"
+msgstr "Algoritmi"
+
+#: blob.cpp:543
+msgid "About Blob"
+msgstr "Tietoja Kuplista"
+
+#: blob.cpp:544
+msgid ""
+"Blobsaver Version 0.1\n"
+"\n"
+"written by Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+msgstr ""
+"Blobsaver Versio 0.1\n"
+"\n"
+"kirjoittanut Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+
+#: blob.cpp:579
+msgid "Blobs"
+msgstr "Kuplat"
+
+#: flame.cpp:303
+msgid "Flame"
+msgstr "Liekki"
+
+#: flame.cpp:390
+msgid "Setup KFlame"
+msgstr "Aseta liekki‰"
+
+#: flame.cpp:406
+msgid "Max Levels:"
+msgstr "Maksimi tasoja:"
+
+#: flame.cpp:416
+msgid "Num Points:"
+msgstr "Pisteiden m‰‰r‰:"
+
+#: flame.cpp:521
+msgid "About Flame"
+msgstr "Tietoja liekist‰"
+
+#: flame.cpp:522
+msgid ""
+"Flame Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Liekki versio 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Siirt‰nyt kscreensaveen Martin Jones."
+
+#: forest.cpp:200
+msgid "Forest"
+msgstr "Mets‰"
+
+#: forest.cpp:272
+msgid "Setup KForest"
+msgstr "Aseta mets‰‰"
+
+#: forest.cpp:288
+msgid "Num of Trees:"
+msgstr "Puiden lukum‰‰r‰:"
+
+#: forest.cpp:375
+msgid "About Forest"
+msgstr "Tietoja mets‰st‰"
+
+#: forest.cpp:376
+msgid ""
+"Forest\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+
+#: hop.cpp:221
+msgid "Hop"
+msgstr "Hyppy"
+
+#: hop.cpp:306
+msgid "Setup KHop"
+msgstr "Aseta hyppy‰"
+
+#: hop.cpp:322
+msgid "Samecolor Pixels:"
+msgstr "Samanv‰risi‰ pisteit‰:"
+
+#: hop.cpp:332 lissie.cpp:346
+msgid "Cycles:"
+msgstr "Kierroksia:"
+
+#: hop.cpp:437
+msgid "About Hop"
+msgstr "Tietoja hypyst‰"
+
+#: hop.cpp:438
+msgid ""
+"Hop Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Hop Versio 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Siirt‰nyt kscreensaveen Emanuel Pirker."
+
+#: laser.cpp:327
+msgid "Laser"
+msgstr "Laseri"
+
+#: laser.cpp:387
+msgid "Setup KLaser"
+msgstr "Aseta laseria"
+
+#: laser.cpp:462
+msgid "About Laser"
+msgstr "Tietoja laserista"
+
+#: laser.cpp:463
+msgid ""
+"Laser Version 3.3\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Laser Versio 3.3\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Siirt‰nyt kscreensaveen Martin Jones."
+
+#: lines.cpp:110
+msgid "Lines"
+msgstr "Viivat"
+
+#: lines.cpp:128
+msgid "Setup klines"
+msgstr "Aseta viivoja"
+
+#: lines.cpp:130 polygon.cpp:81
+msgid "Length:"
+msgstr "Pituus:"
+
+#: lines.cpp:150
+msgid "Beginning:"
+msgstr "Alku:"
+
+#: lines.cpp:159
+msgid "Middle:"
+msgstr "Keskell‰:"
+
+#: lines.cpp:168
+msgid "End:"
+msgstr "Loppu:"
+
+#: lines.cpp:259
+msgid "About Lines"
+msgstr "Tietoa viivoista"
+
+#: lines.cpp:260
+msgid ""
+"Lines Version 0.1.1\n"
+"\n"
+"written by Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+msgstr ""
+"Lines Versio 0.1.1\n"
+"\n"
+"kirjoittanut Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+
+#: lissie.cpp:234
+msgid "Lissie"
+msgstr "Putki"
+
+#: lissie.cpp:320
+msgid "Setup KLissie"
+msgstr "Aseta putkea"
+
+#: lissie.cpp:336
+msgid "Num of Lissies:"
+msgstr "Putkien lukum‰‰r‰"
+
+#: lissie.cpp:451
+msgid "About Lissie"
+msgstr "Tietoja putkista"
+
+#: lissie.cpp:452
+msgid ""
+"Lissie\n"
+"\n"
+"Copyright (c) 1996 by Alexander Jolk\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Lissie\n"
+"\n"
+"Copyright (c) 1996 by Alexander Jolk\n"
+"\n"
+"Siirt‰nyt kscreensaveen Emanuel Pirker."
+
+#: main.cpp:296
+msgid ""
+"Your system uses shadow passwords!\n"
+"Please contact your system administrator.\n"
+"\n"
+"Tell him, that you need suid for the screensavers!"
+msgstr ""
+"Systeemisi k‰ytt‰‰ shadow-salasanoja!\n"
+"Ota yhteytt‰ systeemisi yll‰pit‰j‰‰n.\n"
+"\n"
+"Ja kerro tarvitsevasi suid:n ruuduns‰‰st‰jiin!"
+
+#: main.cpp:301
+msgid "Shadow Passwords"
+msgstr "Shadow salasanat"
+
+#: main.cpp:457
+#, c-format
+msgid ""
+"Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+msgstr ""
+
+#: main.cpp:460
+msgid ""
+"  -corners xxxx     Placing cursor in corner performs action:\n"
+"                     x = i  no action (ignore)\n"
+"                     x = s  save screen\n"
+"                     x = l  lock screen\n"
+"                    order: top-left, top-right, bottom-left, bottom-right\n"
+"  -delay num        Amount of idle time before screen saver\n"
+"                     starts  (default 10min)\n"
+"  -desc             Print the screen saver's description to stdout\n"
+"  -install          Install screen saver\n"
+"  -lock             Require password to stop screen saver\n"
+"  -nice num         Run with specified nice value\n"
+"\n"
+"  -preview wid      Run in the specified XWindow\n"
+"  -inroot           Run in the root window\n"
+"  -setup            Setup screen saver\n"
+"  -test             Invoke the screen saver immediately\n"
+msgstr ""
+
+#: morph3d.cpp:839
+msgid "GL can not render with root visual\n"
+msgstr "GL ei pysty varjostamaan root ruudulla\n"
+
+#: morph3d.cpp:940
+msgid "Morph3D (GL)"
+msgstr ""
+
+#: morph3d.cpp:1014
+msgid "Setup KMorph3d"
+msgstr "Aseta Kmorph3d"
+
+#: morph3d.cpp:1030
+msgid "Object Type:"
+msgstr "Objektin tyyppi:"
+
+#: morph3d.cpp:1118
+msgid "About Morph3D"
+msgstr "Tietoja Morph3D:ta"
+
+#: morph3d.cpp:1119
+msgid ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 by Marcelo F. Vianna\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 by Marcelo F. Vianna\n"
+"\n"
+"Siirt‰nyt kscreensaveen Emanuel Pirker."
+
+#: polygon.cpp:58
+msgid "Polygons"
+msgstr "Polygonit"
+
+#: polygon.cpp:79
+msgid "Setup kpolygon"
+msgstr "Aseta polygoneja"
+
+#: polygon.cpp:91
+msgid "Vertices:"
+msgstr "Sivuja:"
+
+#: polygon.cpp:209
+msgid "About Polygon"
+msgstr "Tietoja polygonista"
+
+#: polygon.cpp:210
+msgid ""
+"Polygon Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Polygon Versio 0.1\n"
+"\n"
+"kirjoittanut Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: pyro.cpp:433
+msgid "Pyro"
+msgstr "Ilotulitus"
+
+#: pyro.cpp:511
+msgid "Setup KPyro"
+msgstr "Aseta ilotulitusta"
+
+#: pyro.cpp:517 rock.cpp:560
+msgid "Number:"
+msgstr "M‰‰r‰:"
+
+#: pyro.cpp:527
+msgid "Cloud"
+msgstr "Pilvi"
+
+#: pyro.cpp:608
+msgid "About Pyro"
+msgstr "Tietoja ilotulituksesta"
+
+#: pyro.cpp:609
+msgid ""
+"Pyro Version 3.4\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Pyro Versio 3.4\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Siirt‰nyt kscreensaveen Martin Jones."
+
+#: rock.cpp:436
+msgid "Rock"
+msgstr "T‰hdet"
+
+#: rock.cpp:544
+msgid "Setup krock"
+msgstr "Aseta t‰hti‰"
+
+#: rock.cpp:570
+msgid "Move"
+msgstr "Siirry"
+
+#: rock.cpp:575
+msgid "Rotate"
+msgstr "Kierr‰"
+
+#: rock.cpp:693
+msgid "About Rock"
+msgstr "Tietoja t‰hdist‰"
+
+#: rock.cpp:694
+msgid ""
+"Rock Version 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Rock Versio 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"Siirt‰nyt kscreensaveen Martin Jones."
+
+#: saver.cpp:50 saver.cpp:110
+msgid "Enter Password"
+msgstr "Anna Salasana"
+
+#: saver.cpp:80
+msgid "Failed"
+msgstr "V‰‰r‰"
+
+#: slip.cpp:287
+msgid "Slip"
+msgstr "Liutus"
+
+#: slip.cpp:360
+msgid "Setup KSlip"
+msgstr "Aseta liutusta"
+
+#: slip.cpp:376
+msgid "Batchcount:"
+msgstr "Palojen m‰‰r‰:"
+
+#: slip.cpp:464
+msgid "About Slip"
+msgstr "Tietoja liutuksesta"
+
+#: slip.cpp:465
+msgid ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 by Scott Draves\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 by Scott Draves\n"
+"\n"
+"Siirtˆnyt kscreensaveen Emanuel Pirker."
+
+#: swarm.cpp:252
+msgid "Swarm"
+msgstr "Hyˆnteinen"
+
+#: swarm.cpp:324
+msgid "Setup KSwarm"
+msgstr "Aseta hyˆnteisi‰"
+
+#: swarm.cpp:340
+msgid "Number of Bees:"
+msgstr "Mehil‰isten m‰‰r‰:"
+
+#: swarm.cpp:427
+msgid "About Swarm"
+msgstr "Tietoja hyˆnteisist‰"
+
+#: swarm.cpp:428
+msgid ""
+"Swarm\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Swarm\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Siirt‰nyt kscreensaveen Emanuel Pirker."

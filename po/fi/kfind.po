@@ -35,7 +35,7 @@ msgstr ""
 "KFind %s\n"
 "Graafinen käyttöliittymä find työkalulle.\n"
 "Miroslav Flídr <flidr@kky.zcu.cz>\n"
-"Erikoiset kiitokset Stephan Kulow:lle\n"
+"Erityiset kiitokset Stephan Kulow:lle\n"
 "<coolo@kde.org>"
 
 #: kfindtop.cpp:136
@@ -88,7 +88,7 @@ msgstr "KFind &ohje"
 
 #: kfindtop.cpp:186
 msgid "About &Qt"
-msgstr ""
+msgstr "Tietoja &Qt:ta"
 
 #: kfindtop.cpp:188
 msgid "&About"
@@ -289,7 +289,7 @@ msgstr "KFind etsinnän tulokset:"
 
 #: kfwin.cpp:179
 msgid "Information"
-msgstr ""
+msgstr "Tietoja"
 
 #: kfwin.cpp:180
 msgid "Results were saved to file\n"
