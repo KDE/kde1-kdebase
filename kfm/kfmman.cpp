@@ -25,7 +25,6 @@
 #include "kfmman.h"
 #include "kbind.h"
 #include "config-kfm.h"
-#include "kmsgwin.h"
 #include "kfmdlg.h"
 #include "kfmexec.h"
 #include "utils.h"
