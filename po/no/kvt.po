@@ -127,7 +127,7 @@ msgstr "Skrifttype..."
 
 #: main.C:522
 msgid "Save &Options"
-msgstr "Lagre &valgmuligheter"
+msgstr "Lagre &valg"
 
 #: main.C:531
 msgid ""
