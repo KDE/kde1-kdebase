@@ -13,6 +13,8 @@
 
 #include <qlayout.h> //CT
 
+#include "../../kfm/config-kfm.h"
+
 UserAgentOptions::UserAgentOptions( QWidget * parent, const char * name ) :
   KConfigWidget( parent, name )
 {
@@ -148,7 +150,7 @@ void UserAgentOptions::loadSettings()
         }
   // if there was no entry at all, we set at least a default
   if( entries == 0 )
-        strlist.append( "*:Konqueror/1.0" );
+        strlist.append( DEFAULT_USERAGENT_STRING );
   bindingsLB->clear();
   bindingsLB->insertStrList( &strlist );
 }
@@ -156,7 +158,7 @@ void UserAgentOptions::loadSettings()
 void UserAgentOptions::defaultSettings()
 {
   bindingsLB->clear();
-  bindingsLB->insertItem( "*:Konqueror/1.0" );
+  bindingsLB->insertItem( DEFAULT_USERAGENT_STRING );
 }
 
 void UserAgentOptions::applySettings()
@@ -182,7 +184,7 @@ void UserAgentOptions::saveSettings()
     {
         // everything deleted -> write at least the Konqueror entry
         g_pConfig->writeEntry( "EntriesCount", 1 );
-        g_pConfig->writeEntry( "Entry1", "*:Konqueror/1.0" );
+        g_pConfig->writeEntry( "Entry1", DEFAULT_USERAGENT_STRING );
     }
     g_pConfig->sync();
 }
