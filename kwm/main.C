@@ -296,6 +296,7 @@ static void setStringProperty(const char* atomname, const char* value){
 }
 
 
+// show the modal logout dialog
 static void showLogout(){
   manager->raiseSoundEvent("Logout Message");
   if (!klogout){
@@ -1032,6 +1033,8 @@ void MyApp::cleanup(){
   manager->cleanup();
 }
 
+// put the focus on the window with the specified label.  Will switch
+// to the appropriate desktop and eventually deiconiy the window
 void MyApp::changeToClient(QString label){
   Client* c = manager->findClientByLabel(label);
   if (c){
@@ -1048,6 +1051,10 @@ void MyApp::changeToClient(QString label){
 }
 
 
+ // Same as changeToClient above, but you can also specify names of
+ // virtual desktops as label argument. Window names therefore have to
+ // start with three blanks. changeToTaskClient is used in the current
+ // session manager.
 void MyApp::changeToTaskClient(QString label){
   if (label.left(3) == "   "){
     // client
@@ -1066,6 +1073,7 @@ void MyApp::changeToTaskClient(QString label){
   }
 }
 
+// process the logout: save session and exit.
 void MyApp::doLogout(){
   manager->raiseSoundEvent("Logout");
   saveSession();
@@ -1074,11 +1082,13 @@ void MyApp::doLogout(){
   exit();
 }
 
+// reread the kwm configuration files
 void MyApp::reConfigure(){
   getKApplication()->getConfig()->reparseConfiguration();
   readConfiguration();
 }
 
+// show the modal logout dialog
 void MyApp::showLogout(){
   ::showLogout();
 }

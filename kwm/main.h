@@ -15,42 +15,69 @@
 
 class MyApp:public KApplication {
   Q_OBJECT
-  public:
-    MyApp( int &argc, char **argv, const QString& rAppName );
-    virtual bool x11EventFilter( XEvent * );
-    void saveSession();
-    void restoreSession();
+public:
+  MyApp( int &argc, char **argv, const QString& rAppName );
+  virtual bool x11EventFilter( XEvent * );
 
-    void cleanup();
+  // store the session in the kwm configuration file
+  void saveSession();
+  // restore the session from the kwm configuration file
+  void restoreSession();
+  
+  // clean up everything and exit
+  void cleanup();
+  
+  // a popup menu which contains all possible window operations. For
+  // performance and memory saving issues all clients use this object.
+  QPopupMenu* operations;
+  // a popup menu which contains all virtual desktops. For performance
+  // and memory saving issues all clients use this object.
+  QPopupMenu* desktopMenu;
+  
+ public slots:
+ 
+ // put the focus on the window with the specified label.  Will switch
+ // to the appropriate desktop and eventually deiconiy the window
+ void changeToClient(QString label);
 
-    QPopupMenu* operations;
-    QPopupMenu* desktopMenu;
+ // Same as changeToClient above, but you can also specify names of
+ // virtual desktops as label argument. Window names therefore have to
+ // start with three blanks. changeToTaskClient is used in the current
+ // session manager.
+  void changeToTaskClient(QString label);
 
-  public slots:
-    void changeToClient(QString label);
-    void changeToTaskClient(QString label);
-    void doLogout();
-    void reConfigure();
-    void showLogout();
+  
+  // process the logout: save session and exit.
+  void doLogout();
 
-  protected:
-    bool eventFilter( QObject *, QEvent * );
-    void  timerEvent( QTimerEvent * );
-    
-  private slots:
-    void handleOperation(int itemId);
-    void handleDesktopPopup(int itemId);
+  // reread the kwm configuration files
+  void reConfigure();
 
-  private:   
-    void readConfiguration();
-    void writeConfiguration();
-
-    bool handleKeyPress(XKeyEvent);
-    void handleKeyRelease(XKeyEvent);
-
+  // show the modal logout dialog
+  void showLogout();
+  
+protected:
+  bool eventFilter( QObject *, QEvent * );
+  void  timerEvent( QTimerEvent * );
+  
+ private slots:
+  // react on the operations QPopupMenu
+  void handleOperation(int itemId);
+  // react on the desktops QPopupMenu
+  void handleDesktopPopup(int itemId);
+  
+private:   
+  void readConfiguration();
+  void writeConfiguration();
+  
+  // handle key press events of kwm´s global key grabs
+  bool handleKeyPress(XKeyEvent);
+  // handle key release events of kwm´s global key grabs
+  void handleKeyRelease(XKeyEvent);
+  
 };
 
-	
+
 void logout();
 
 #endif /* MAIN_H */

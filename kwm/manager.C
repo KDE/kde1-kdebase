@@ -68,6 +68,7 @@ Manager::Manager(): QObject(){
   
   int dummy;
   XGCValues gv;
+  GC gc;
   unsigned long mask;
   
   root = qt_xrootwin();
@@ -252,6 +253,7 @@ void Manager::destroyBorderWindows(){
 
 }
 
+// a window wants to move/change size or change otherwise
 void Manager::configureRequest(XConfigureRequestEvent *e){
 
   XWindowChanges wc;
@@ -365,7 +367,7 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
   }
 }
 
-
+// a window wants to be mapped
 void Manager::mapRequest(XMapRequestEvent *e){
     Client *c;
 
@@ -393,6 +395,7 @@ void Manager::mapRequest(XMapRequestEvent *e){
 }
 
 
+// a window wants to be unmapped
 void Manager::unmapNotify(XUnmapEvent *e){
     Client *c;
     c = getClient(e->window);
@@ -421,6 +424,8 @@ void Manager::unmapNotify(XUnmapEvent *e){
     }
 }
 
+// a window has been destroyed, so we have to remove it from our
+// data structures.
 void Manager::destroyNotify(XDestroyWindowEvent *e){
     Client *c;
     removeModule(e->window);
@@ -433,6 +438,7 @@ void Manager::destroyNotify(XDestroyWindowEvent *e){
 }
 
 
+// client messages
 void Manager::clientMessage(XEvent*  ev){
   Client *c;
   XClientMessageEvent* e = &ev->xclient;
@@ -632,6 +638,7 @@ void Manager::clientMessage(XEvent*  ev){
   }
 }
 
+// color map issues
 void Manager::colormapNotify(XColormapEvent *e){
   Client *c;
   int i;
@@ -655,6 +662,7 @@ void Manager::colormapNotify(XColormapEvent *e){
   }
 }
 
+// a property of one of the windows changed
 void Manager::propertyNotify(XPropertyEvent *e){
   static Atom da[8] = {0,0,0,0,0,0,0,0};
   Atom a;
@@ -798,6 +806,7 @@ void Manager::propertyNotify(XPropertyEvent *e){
   }
 }
 
+// a window may be a shaped window
 void Manager::shapeNotify(XShapeEvent *e){
   Client *c;
     c = getClient(e->window);
@@ -806,8 +815,12 @@ void Manager::shapeNotify(XShapeEvent *e){
 }
 
 
+// notification of pointer movements
 void Manager::motionNotify(XMotionEvent* e){
   Client *c;
+  // store the information (user moved the mouse around). This will be
+  // questioned in the enterNotify handler to determine, wether the
+  // focus should be set (if in FocusFollowMouse policy)
   enable_focus_follow_mouse_activation = true;
   if (options.FocusPolicy == FOCUS_FOLLOW_MOUSE){ 
     c = getClient(e->window);
@@ -820,9 +833,17 @@ void Manager::motionNotify(XMotionEvent* e){
   }
 }
 
+// the pointer entered one of our windows. We may have to activate a
+// window (when focus follows mouse) or start an electric border timer.
 void Manager::enterNotify(XCrossingEvent *e){
   Client *c;
   if (options.FocusPolicy == FOCUS_FOLLOW_MOUSE){ 
+    // focus follow mouse is somewhat tricky. kwm does not do it so
+    // simple that the focus is always under the mouse. Instead the
+    // focus is only moved around if the user explitely moves the mouse
+    // pointer.  This allows users to use the advanced alt-tab feature
+    // in all focus policies. Also the desktop switching is able to
+    // restore the focus correctly.
     delayed_focus_follow_mouse_client = 0;
     c = getClient(e->window);
     if (c != 0 && c != current() && c->state != WithdrawnState){
@@ -830,30 +851,40 @@ void Manager::enterNotify(XCrossingEvent *e){
       timeStamp(); 
       XSync(qt_xdisplay(), False);
       if (enable_focus_follow_mouse_activation){
+	// the user really moved the mouse around => activate
 	activateClient(c);
 	raiseSoundEvent("Window Activate");
       }
       else {
 	if (e->x_root != QCursor::pos().x()
 	    || e->y_root != QCursor::pos().y()){
+	  // the mouse pointer definitely moved around => activate
 	  activateClient(c);
 	  raiseSoundEvent("Window Activate");
 	}
 	else{
+	  // no mouse movement so far. Just wait a second.....
 	  usleep(100);
+	  // ... and check again.
 	  if (e->x_root != QCursor::pos().x()
 	      || e->y_root != QCursor::pos().y()){
+	    // the mouse pointer definitely moved around => activate
 	    activateClient(c);
 	    raiseSoundEvent("Window Activate");
 	  }
-	  else
+	  else {
+	    // maybe some mouse movement will follow later. Store the client
+	    // in delayed_focus_follow_mouse_client until then.
 	    delayed_focus_follow_mouse_client = c;
+	  }
 	}
       }
     }
   }
 
   if(have_border_windows){
+    // the user moved the pointer onto an electric border => start the
+    // single shot timer and store the border in current_border
     if (e->window == top_border ||
 	e->window == left_border ||
 	e->window == bottom_border ||
@@ -866,6 +897,9 @@ void Manager::enterNotify(XCrossingEvent *e){
     }
   }
 }
+
+// the pointer left one of our windows. Maybe an electric border
+// will have to be deactivated.
 void Manager::leaveNotify(XCrossingEvent *e){
 
 
@@ -879,6 +913,8 @@ void Manager::leaveNotify(XCrossingEvent *e){
   }
 }
 
+// switch to another virtual desktop according to the specified direction.
+// Useful for keyboard shortcuts or electric borders.
 void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
 
   int nd;
@@ -972,6 +1008,10 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
   }
 }
 
+// this slot is connected to a single shot timer after the user
+// entered an electric border with the mouse
+// pointer. electricBorder() will then check the current_border
+// attribute and switch the virtual desktop according to its value.
 void Manager::electricBorder(){
   if (current_border == top_border){
     moveDesktopInDirection(Up);
@@ -987,6 +1027,9 @@ void Manager::electricBorder(){
   }
 }
 
+// electric borders (input only windows) have to be always on the
+// top. For that reason kwm calls this function always after some
+// windows have been raised.
 void Manager::raiseElectricBorders(){
 
   if(have_border_windows){
@@ -1446,6 +1489,9 @@ void Manager::snapToWindow(Client *c) {
   c->geometry.moveTopLeft(QPoint(nx, ny));
 }
 
+// one of the central functions within kwm: manage a new window. If
+// mapped is true, then the window is already mapped. This happens
+// if kwm is started after some windows already appeard.
 void Manager::manage(Window w, bool mapped){
 
   bool dohide;
@@ -1773,6 +1819,8 @@ void Manager::manage(Window w, bool mapped){
   
 }
 
+// put the client in withdraw state (which means it is not managed an
+// longer)
 void Manager::withdraw(Client* c){
   KWM::moveToDesktop(c->window, 0);
   c->hideClient();
@@ -1787,6 +1835,10 @@ void Manager::withdraw(Client* c){
 }
 
 
+// get a pointer to the Client object from an X11 window. The window
+// can be either the parent window (which is the kwm frame around a
+// window) or the client window itself. Returns 0 if no client can
+// be found.
 Client* Manager::getClient(Window w){
   Client* result;
   for (result = clients.first();
@@ -1795,12 +1847,15 @@ Client* Manager::getClient(Window w){
   return result;
 }
 
+// returns the current client (the client which has the focus) or 0
+// if no client has the focus.
 Client* Manager::current(){
   Client* result = clients_traversing.last();
 
   return (result && result->isActive()) ? result : (Client*)0;
 }
 
+// add a client into the manager큦 client lists
 void Manager::addClient(Client* c){
   clients.append(c);
   clients_sorted.append(c);
@@ -1809,6 +1864,8 @@ void Manager::addClient(Client* c){
 }
 
 
+// activate a client: Take care about visibility, floating submenus
+// and focus.
 void Manager::activateClient(Client* c, bool set_revert){
   if (!c->wantsFocus())
     return;
@@ -1842,6 +1899,7 @@ void Manager::activateClient(Client* c, bool set_revert){
   sendToModules(module_win_activate, c);
 }
 
+// remove a client from the manager큦 client list
 void Manager::removeClient(Client* c){
   if (c->trans)
     raiseSoundEvent("Window Trans Delete");
@@ -1861,6 +1919,7 @@ void Manager::removeClient(Client* c){
 
 
 
+// raise a client. Take care about modal dialogs
 void Manager::raiseClient(Client* c){
   QList <Client> tmp;
   QList <Client> sorted_tmp = clients_sorted;
@@ -1909,6 +1968,7 @@ void Manager::raiseClient(Client* c){
   raiseElectricBorders();
 }
 
+// lower a client. Take care about modal dialogs and kfm큦 root icons
 void Manager::lowerClient(Client* c){
   QList <Client> tmp;
   clients_sorted.removeRef(c);
@@ -1949,11 +2009,10 @@ void Manager::lowerClient(Client* c){
   XFree((void *) wins);   
 }
 
+// close a client. clients with WM_DELETE_WINDOW protocol set
+// (=Pdeletewindow) are closed via wm_delete_window ClientMessage.
+// Others are destroyed.
 void Manager::closeClient(Client* c){
-  // clients with WM_DELETE_WINDOW protocol set (=Pdeletewindow) are
-  // closed via wm_delete_window ClientMessage.
-  // Others are destroyed.
-
   if (c->Pdeletewindow){
     sendClientMessage(c->window, wm_protocols, wm_delete_window);
   }
@@ -1965,10 +2024,15 @@ void Manager::closeClient(Client* c){
   }
 }
 
+// emits a signal to the kwm modules that a client has changed.
 void Manager::changedClient(Client* c){
   sendToModules(module_win_change, c);
 }
 
+// this is called if the current client loses focus. noFocus may
+// give the focus to a window which had the focus before, or put the
+// focus to a dummy window if there큦 no window left on this
+// desktop.
 void Manager::noFocus(){
   Client* c;
   for (c = clients_traversing.last();
@@ -1989,6 +2053,7 @@ void Manager::noFocus(){
   
 }
 
+// used by noFocus to put the X11 focus to a dummy window
 void Manager::focusToNull(){
   static Window w = 0;
   int mask;
@@ -2009,6 +2074,7 @@ void Manager::focusToNull(){
 }
 
 
+// auxiliary function to put the focus to a client window
 void Manager::focusToClient(Client* c){
   if (c->isShaded())
     focusToNull();
@@ -2020,6 +2086,7 @@ void Manager::focusToClient(Client* c){
 }
 
 
+// sets the state of a window (IconicState, NormalState, WithdrawnState)
 void Manager::setWindowState(Client *c, int state){
   unsigned long data[2];
   
@@ -2033,6 +2100,8 @@ void Manager::setWindowState(Client *c, int state){
 }
 
 
+// gets the transientfor hint of a client from the XServer and
+// stores it in Client->trans
 void Manager::getWindowTrans(Client* c){
   Window trans = None;
   if (XGetTransientForHint(qt_xdisplay(), c->window, &trans))
@@ -2040,6 +2109,7 @@ void Manager::getWindowTrans(Client* c){
 }
 
 
+// switch to the specified virtual desktop
 void Manager::switchDesktop(int new_desktop){
   if (new_desktop == current_desktop 
       || new_desktop < 1 || new_desktop > number_of_desktops)
@@ -2085,13 +2155,9 @@ void Manager::switchDesktop(int new_desktop){
     noFocus();
 }
 
-
-
-
-
-
-
-
+// Tells the XServer and the client itself to sync the X window with
+// the datas stored in kwm큦 client object. If emit_changed is true,
+// then all kwm modules are informed about that change.
 void Manager::sendConfig(Client* c, bool emit_changed){
   XConfigureEvent ce;
 
@@ -2143,6 +2209,8 @@ void Manager::sendConfig(Client* c, bool emit_changed){
 
 
 
+// give all managed windows free and remove the kwm_running
+// property.
 void Manager::cleanup(){
   Client *c;
   XWindowChanges wc;
@@ -2160,6 +2228,8 @@ void Manager::cleanup(){
   XDeleteProperty(qt_xdisplay(), qt_xrootwin(), kwm_running);
 }
 
+// repaint all windows. This is useful when we recieved a
+// KDEChangeGeneral or KDEChangePalette event.
 void Manager::repaintAll(){
   Client* c;
   for (c=clients_sorted.last(); c; c = clients_sorted.prev())
@@ -2167,6 +2237,8 @@ void Manager::repaintAll(){
 }
 
 
+// syncs the window manager with the X server and returns a current
+// timestamp.
 Time Manager::timeStamp(){
   static Window w = 0;
   int mask;
@@ -2188,6 +2260,9 @@ Time Manager::timeStamp(){
 }
 
 
+// help functions in the init process of the manager: scans the
+// desktop to detect already mapped windows. Necessary if kwm
+// appears after some windows.
 void Manager::scanWins(){
   unsigned int i, nwins;
   Window dw1, dw2, *wins;
@@ -2233,6 +2308,8 @@ void Manager::colormapFocus(Client *c){
     installColormap(c->cmap);
 }
 
+// access functions to standard X11 window properties. The results
+// will be stored in attributes of the passed client object.
 void Manager::getWMNormalHints(Client *c){
   long msize;
   bool fixedSize = c->fixedSize();
@@ -2276,6 +2353,7 @@ void Manager::getColormaps(Client *c){
 }
 
 
+// put an appropriate  shape combine mask around the client
 void Manager::setShape(Client* c){
   int n, order;
   XRectangle *rect;
@@ -2304,6 +2382,8 @@ void Manager::setShape(Client* c){
   XFree((void*)rect);
 }
 
+// auxiliary functions to travers all clients according the focus
+// order. Usefull for kwm큦 Alt-tab feature.
 Client* Manager::nextClient(Client* c){
   Client* result;
   if (!c)
@@ -2317,6 +2397,8 @@ Client* Manager::nextClient(Client* c){
   return result;
 }
 
+// auxiliary functions to travers all clients according the focus
+// order. Usefull for kwm큦 Alt-tab feature.
 Client* Manager::previousClient(Client* c){
   Client* result;
   if (!c)
@@ -2330,6 +2412,9 @@ Client* Manager::previousClient(Client* c){
   return result;
 }
 
+// returns wether a client with such a label is existing. Useful to
+// determine wether a label has to be unified with <2>, <3>, <4>,
+// ...
 bool Manager::hasLabel(QString label_arg){
   bool Result = False;
   Client *c;
@@ -2340,6 +2425,8 @@ bool Manager::hasLabel(QString label_arg){
 }
 
 
+// access functions to standard X11 window properties. The results
+// will be stored in attributes of the passed client object.
 void Manager::getWindowProtocols(Client *c){
   Atom *p;
   int i,n;
@@ -2375,6 +2462,7 @@ struct PropMotifWmHints
 #define MWM_DECOR_MINIMIZE            (1L << 5)
 #define MWM_DECOR_MAXIMIZE            (1L << 6)
 
+// this is for MWM hints (Motif).
 void Manager::getMwmHints(Client  *c){
   int actual_format;
   Atom actual_type;
@@ -2401,6 +2489,7 @@ void Manager::getMwmHints(Client  *c){
 }
 
 
+// handles gravitation according to the gravity of the window.
 void Manager::gravitate(Client* c, bool invert){
   int gravity, dx, dy, delta;
   if (c->getDecoration() == KWM::noDecoration)
@@ -2472,6 +2561,7 @@ void Manager::gravitate(Client* c, bool invert){
   }
 }
 
+// low level function to access an X11 property
 int Manager::_getprop(Window w, Atom a, Atom type, long len, unsigned char **p){
   Atom real_type;
   int format;
@@ -2487,6 +2577,7 @@ int Manager::_getprop(Window w, Atom a, Atom type, long len, unsigned char **p){
   return n;
 }
 
+// easier access to an X11 property
 QString Manager::getprop(Window w, Atom a){
   QString result;
   unsigned char *p;
@@ -2497,6 +2588,9 @@ QString Manager::getprop(Window w, Atom a){
   return result;
 }
 
+// xgetprop is like getprop but can handle 0-separated string
+// lists. Will replace \0 with a blank then. Necessary for the WM_COMMAND
+// property.
 QString Manager::xgetprop(Window w, Atom a){
   QString result;
   char *p;
@@ -2510,6 +2604,7 @@ QString Manager::xgetprop(Window w, Atom a){
   return result;
 }
 
+// kwm internally sometimes uses simple property (long values) 
 bool Manager::getSimpleProperty(Window w, Atom a, long &result){
   long *p = 0;
   
@@ -2522,6 +2617,7 @@ bool Manager::getSimpleProperty(Window w, Atom a, long &result){
   return TRUE;
 }
 
+// kwm internally sometimes uses rectangle properties 
 void Manager::setQRectProperty(Window w, Atom a, const QRect &rect){
   long data[4];
   data[0] = rect.x();
@@ -2534,6 +2630,7 @@ void Manager::setQRectProperty(Window w, Atom a, const QRect &rect){
 
 
 
+// sends a client message a x to the window w
 void Manager::sendClientMessage(Window w, Atom a, long x){
   XEvent ev;
   long mask;
@@ -2552,6 +2649,7 @@ void Manager::sendClientMessage(Window w, Atom a, long x){
 }
 
 
+// repaint everything and even force the clients to repaint thereselfs.
 void Manager::refreshScreen(){
   XSetWindowAttributes attributes;
   unsigned long valuemask;
@@ -2608,12 +2706,20 @@ void Manager::refreshScreen(){
   }
 }
 
+// put a grey veil over the screen. Useful to show a nice logout
+// dialog.
 void Manager::darkenScreen(){
   if (0 != greyer_widget)
     delete greyer_widget;
   greyer_widget = new KGreyerWidget();
 }
 
+// do the X11R4 session management: send a SAVE_YOURSELF message to
+// everybody who wants to know it and wait for the answers. Also
+// handles KDE큦 session management additions as well as pseudo
+// session management with the help of a build in proxy.  After
+// finishing this functions the manager will emit a showLogout()
+// signal.
 void Manager::logout(){
   Client* c;
   XEvent ev;
@@ -2738,6 +2844,7 @@ void Manager::logout(){
   emit showLogout();
 }
 
+// commands from clients which can do session management
 QStrList* Manager::getSessionCommands(){
   QString thismachine;
   QString domain;
@@ -2790,6 +2897,7 @@ QStrList* Manager::getSessionCommands(){
   return result;
 }
 
+// clients which  can only be restarted
 QStrList* Manager::getPseudoSessionClients(){
   QStrList *result = new QStrList();
   Client* c;
@@ -2802,6 +2910,7 @@ QStrList* Manager::getPseudoSessionClients(){
   return result;
 }
 
+// clients which cannot do session management at all
 QStrList* Manager::getNoSessionClients(){
   QStrList *result = new QStrList();
   Client* c;
@@ -2814,6 +2923,7 @@ QStrList* Manager::getNoSessionClients(){
   return result;
 }
 
+// kwm supports an unsaved data hint: these clients set this hint.
 QStrList* Manager::getUnsavedDataClients(){
   QStrList *result = new QStrList();
   Client* c;
@@ -2824,6 +2934,8 @@ QStrList* Manager::getUnsavedDataClients(){
   return result;
 }
 
+// returns all clients which are on the specified desktop. Used to
+// build a list of clients in a listbox.
 QStrList* Manager::getClientsOfDesktop(int desk){
   QStrList *result = new QStrList();
   Client* c;
@@ -2840,6 +2952,7 @@ QStrList* Manager::getClientsOfDesktop(int desk){
   return result;
 }
 
+// returns all hints of the session management proxy
 QStrList* Manager::getProxyHints(){
   QStrList *result = new QStrList();
   Client* c;
@@ -2855,6 +2968,7 @@ QStrList* Manager::getProxyHints(){
   return result;
 }
 
+// returns all properties  of the session management proxy
 QStrList* Manager::getProxyProps(){
   QStrList *result = new QStrList();
   Client* c;
@@ -2871,6 +2985,9 @@ QStrList* Manager::getProxyProps(){
 }
 
 
+// sets all necessary properties for the session management
+// proxy. This function is called from main after reading the data
+// from the configuration file.
 void Manager::setProxyData(QStrList* proxy_hints_arg, 
 			   QStrList* proxy_props_arg,
 			   QStrList* proxy_ignore_arg){
@@ -2880,6 +2997,7 @@ void Manager::setProxyData(QStrList* proxy_hints_arg,
 }
 
 
+// kwm's nifty kill feature (accessible with Ctrl-Alt-Escape)
 void Manager::killWindowAtPosition(int x, int y){
   Client* c;
   for (c = clients_sorted.last(); c; c = clients_sorted.prev()){
@@ -2890,7 +3008,9 @@ void Manager::killWindowAtPosition(int x, int y){
   }
 }
 
-Client* Manager::findClientByLabel(QString label){
+// returns the client with the specified label or 0 if there is no
+// such client.
+ Client* Manager::findClientByLabel(QString label){
   Client *c;
   if (label.left(1)=="("){
     label.remove(0,1);
@@ -2904,7 +3024,11 @@ Client* Manager::findClientByLabel(QString label){
 }
 
 
-void Manager::iconifyTransientOf(Client* c){
+// kwm usually iconifies all transient windows of a client if the
+// client itself is iconified. Same applies for desktop switching:
+// transient windows are supposed to be always on the desktop as the
+// main window.
+ void Manager::iconifyTransientOf(Client* c){
   QListIterator<Client> it(clients);
   for (it.toFirst(); it.current(); ++it){
     if (it.current() != c && it.current()->trans == c->window){
@@ -2917,6 +3041,10 @@ void Manager::iconifyTransientOf(Client* c){
 }
 
 
+// kwm usually iconifies all transient windows of a client if the
+// client itself is iconified. Same applies for desktop switching:
+// transient windows are supposed to be always on the desktop as the
+// main window.
 void Manager::unIconifyTransientOf(Client* c){
   QListIterator<Client> it(clients);
   for (it.toFirst(); it.current(); ++it){
@@ -2931,6 +3059,10 @@ void Manager::unIconifyTransientOf(Client* c){
   }
 }
 
+// kwm usually iconifies all transient windows of a client if the
+// client itself is iconified. Same applies for desktop switching:
+// transient windows are supposed to be always on the desktop as the
+// main window.
 void Manager::ontoDesktopTransientOf(Client* c){
   QListIterator<Client> it(clients);
   for (it.toFirst(); it.current(); ++it){
@@ -2941,6 +3073,10 @@ void Manager::ontoDesktopTransientOf(Client* c){
 }
 
 
+// kwm usually iconifies all transient windows of a client if the
+// client itself is iconified. Same applies for desktop switching:
+// transient windows are supposed to be always on the desktop as the
+// main window.
 void Manager::stickyTransientOf(Client* c, bool sticky){
   QListIterator<Client> it(clients);
   for (it.toFirst(); it.current(); ++it){
@@ -2951,7 +3087,12 @@ void Manager::stickyTransientOf(Client* c, bool sticky){
   }
 }
 
-void Manager::iconifyFloatingOf(Client* c){
+// if a window loses focus, then all floating windows are
+// automatically iconified. These are floating toolbars or
+// menubars. We do not need a special deIconifyFloatingOf function,
+// since floating windows are also transient windows. That means
+// that unIconifyTransientOf already does this job.
+ void Manager::iconifyFloatingOf(Client* c){
   // DON'T automatically iconify floating menues if the focus policy is
   // focus follows mouse, since otherwise it will be exceptionally hard
   // to get control over them back! (Marcin Dalecki)
@@ -2973,7 +3114,9 @@ void Manager::iconifyFloatingOf(Client* c){
 }
 
 
-void Manager::raiseSoundEvent(const QString &event){
+// send a sound event to the kwm sound module. Same function as in
+// KWM from libkdecore.
+ void Manager::raiseSoundEvent(const QString &event){
   XEvent ev;
   long mask = 0L;
   memset(&ev, 0, sizeof(ev));
@@ -3068,6 +3211,12 @@ void Manager::removeModule(Window w){
     dock_module = None;
 }
 
+// send a messages to all modules. Usually these messages (stored in
+// the atom a) are about a certain client. This client is passed as
+// c. You may sometimes also want to pass a window directly. Then
+// pass 0 as client and the window as w.  Clients can have
+// hidden_for_modules set. In this case sendToModules will ignore
+// your request.
 void Manager::sendToModules(Atom a, Client* c, Window w){
   if (c){
     if (c->hidden_for_modules)
@@ -3080,6 +3229,8 @@ void Manager::sendToModules(Atom a, Client* c, Window w){
   
 }
 
+// adds a new dock window to the docking area. Informs the
+// dock_module about the change.
 void Manager::addDockWindow(Window w){
   bool already_there = False;
   Window* w2;
@@ -3103,6 +3254,8 @@ void Manager::addDockWindow(Window w){
   }
 }
 
+// removes a new dock window to the docking area. Informs the
+// dock_module about the change.
 void Manager::removeDockWindow(Window w){
   Window *dw;
   for (dw=dock_windows.first(); dw; dw=dock_windows.next()){
@@ -3118,6 +3271,8 @@ void Manager::removeDockWindow(Window w){
 
 //// CC: Implementation of the KDE Greyer Widget
 
+// The greyer widget is used to put a grey veil over the screen in the
+// darkenScreen method.
 KGreyerWidget::KGreyerWidget():
   QWidget(0,0,WStyle_Customize|WStyle_NoBorder)
 {
