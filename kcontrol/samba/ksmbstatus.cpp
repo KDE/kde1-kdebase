@@ -1,4 +1,4 @@
-#include <string.h>
+#include <strings.h>
 #include <qmsgbox.h>       
 #include <signal.h>
 #include <stdlib.h>
