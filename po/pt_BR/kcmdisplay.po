@@ -257,7 +257,7 @@ msgstr "Mistura do título inativo"
 
 #: colorscm.cpp:171
 msgid "Active title bar"
-msgstr "Barra de título inativa"
+msgstr "Barra de título ativa"
 
 #: colorscm.cpp:172
 msgid "Active title text"
@@ -277,11 +277,11 @@ msgstr "Texto"
 
 #: colorscm.cpp:176
 msgid "Select background"
-msgstr "Fundo selecionado"
+msgstr "Selecionar fundo"
 
 #: colorscm.cpp:177
 msgid "Select text"
-msgstr "Texto selecionado"
+msgstr "Selecionar texto"
 
 #: colorscm.cpp:178
 msgid "Window background"
@@ -415,7 +415,7 @@ msgstr "Baixa"
 
 #: general.cpp:222
 msgid "Style"
-msgstr ""
+msgstr "Estilo"
 
 #: general.cpp:230
 msgid "&Draw widgets in the style of Windows 95"
@@ -426,9 +426,8 @@ msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr "&Barra de menu no topo da tela, ao estilo do MacOS"
 
 #: general.cpp:260
-#, fuzzy
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "&Aplicar estilo a aplicativos não-KDE`"
+msgstr "&Aplicar fontes e cores a aplicativos não-KDE`"
 
 #: general.cpp:531
 msgid "General font"
@@ -478,14 +477,13 @@ msgstr "&Cor"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr ""
+msgstr "&Estilo"
 
 #: main.cpp:83
-#, fuzzy
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr ""
-"utilização: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+"utilização: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
