@@ -592,7 +592,7 @@ void kPyroSetup::slotOkPressed()
 	snumber.setNum( number );
 	config->writeEntry( "Number", snumber );
 
-	config->writeEntry( "Cloud", cloud ? "yes" : "no" );
+	config->writeEntry( "Cloud", cloud ? QString( "yes" ) : QString( "no" ) );
 
 	config->sync();
 

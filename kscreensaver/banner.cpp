@@ -298,8 +298,8 @@ void KBannerSetup::slotOkPressed()
 		fontColor.blue() );
 	config->writeEntry( "FontColor", colName );
 
-	config->writeEntry( "FontBold", bold ? "yes" : "no" );
-	config->writeEntry( "FontItalic", italic ? "yes" : "no" );
+	config->writeEntry( "FontBold", bold ? QString( "yes" ) : QString( "no" ) );
+	config->writeEntry( "FontItalic", italic ? QString( "yes" ) : QString( "no" ) );
 
 	config->sync();
 
