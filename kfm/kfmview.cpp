@@ -514,12 +514,12 @@ void KfmView::slotCopy()
     clipboard->clear();
     // Are there URLs selected (-> directly into the clipboard) ?
     view->getSelected( (*clipboard) );
-    // Is there selected text ?
-    QString txt;
-    view->getSelectedText ( txt );
 
     if (clipboard->isEmpty()) // first test, since selecting URLs selects text
     { // no URLs, get selected text
+        // Is there selected text ?
+        QString txt;
+        view->getSelectedText ( txt );
         if (!txt.isEmpty())
             clipboard->append(txt);
     }
