@@ -1,7 +1,7 @@
 
 INCDIR  =       @all_includes@ -I../..
-CXXFLAGS=      @CXXFLAGS@ $(INCDIR) 
-LDFLGAS	= 	@LDFLAGS@ @all_libraries@ -lqt -lXext -lX11 -lkdecore @LIBSOCKET@
+CXXFLAGS=	@CXXFLAGS@ $(INCDIR) 
+LDFLAGS	= 	@LDFLAGS@ @all_libraries@ -lqt -lXext -lX11 -lkdecore @LIBSOCKET@
 CXX     =       @CXX@
 MOC     =       @MOC@
 
@@ -18,7 +18,7 @@ TARGET	=	kioslave
 .SUFFIXES: .cpp
 
 .cpp.o:
-	$(CXX) -c $(CXXFLAGS) -DHAVE_CONFIG_H $(INCDIR) $<
+	$(CXX) -c $(CXXFLAGS) -DHAVE_CONFIG_H $<
 
 ####### Build rules
 

@@ -124,7 +124,7 @@ AC_PATH_QT_DIRECT
 
 qt_incdirs="/usr/lib/qt/include /usr/local/qt/include /usr/include/qt /usr/include /usr/X11R6/include/X11/qt $x_includes"
 test -n "$QTDIR" && qt_incdirs="$QTDIR/include $QTDIR $qt_incdirs"
-AC_FIND_FILE(qtstream.h, $qt_incdirs, qt_incdir)
+AC_FIND_FILE(qslider.h, $qt_incdirs, qt_incdir)
 ac_qt_includes=$qt_incdir
 
 qt_libdirs="/usr/lib/qt/lib /usr/local/qt/lib /usr/lib/qt /usr/lib $x_libraries"
@@ -145,7 +145,7 @@ if test "$ac_qt_includes" = NO || test "$ac_qt_libraries" = NO; then
     ac_qt_notfound="(libraries)";
   fi
 
-  AC_MSG_ERROR([QT $ac_qt_notfound not found. Please check your installation! ]);
+  AC_MSG_ERROR([QT1.2 $ac_qt_notfound not found. Please check your installation! ]);
 else
   ac_cv_have_qt="have_qt=yes \
   ac_qt_includes=$ac_qt_includes ac_qt_libraries=$ac_qt_libraries"
@@ -270,6 +270,40 @@ AC_SUBST(all_libraries)
 
 ])
 
+dnl slightly changed version of AC_CHECK_FUNC(setenv)
+AC_DEFUN(AC_CHECK_SETENV,
+[AC_MSG_CHECKING([for setenv])
+AC_CACHE_VAL(ac_cv_func_setenv,
+[AC_TRY_LINK(
+dnl Don't include <ctype.h> because on OSF/1 3.0 it includes <sys/types.h>
+dnl which includes <sys/select.h> which contains a prototype for
+dnl select.  Similarly for bzero.
+[#include <assert.h>
+]ifelse(AC_LANG, CPLUSPLUS, [#ifdef __cplusplus
+extern "C"
+#endif
+])dnl
+[/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+#include <stdlib.h>
+], [
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_$1) || defined (__stub___$1)
+choke me
+#else
+setenv("TEST", "alle", 1);
+#endif
+], eval "ac_cv_func_setenv=yes", eval "ac_cv_func_setenv=no")])
+if eval "test \"`echo '$ac_cv_func_setenv\" = yes"; then
+  AC_MSG_RESULT(yes)
+else
+  AC_MSG_RESULT(no)
+  MISCOBJS="$MISCOBJS setenv.lo"
+fi
+])
+
 AC_DEFUN(AC_FIND_GIF,
    [AC_MSG_CHECKING(for giflib)
 AC_CACHE_VAL(ac_cv_lib_gif,
@@ -366,6 +400,23 @@ AC_REQUIRE([AC_CHECK_DEBUG])
 AC_SUBST(CXXFLAGS)
 AC_SUBST(CFLAGS)
 AC_SUBST(LDFLAGS)
+])
+
+dnl Check for the type of the third argument of getsockname
+AC_DEFUN(AC_CHECK_KSIZE_T,
+[AC_MSG_CHECKING(for the third argument of getsockname)  
+AC_CACHE_VAL(ac_ksize_t_int,
+[AC_TRY_COMPILE([#include <sys/types.h>
+#include <sys/socket.h>],[int a=0; getsockname(0,(struct sockaddr*)NULL, &a);],
+eval "ac_ksize_t_int=yes",
+eval "ac_ksize_t_int=no")])
+if eval "test \"`echo `$ac_ksize_t_int\" = yes"; then
+  AC_MSG_RESULT(int)
+  AC_DEFINE(ksize_t, int)
+else
+  AC_MSG_RESULT(size_t)
+  AC_DEFINE(ksize_t, size_t)
+fi
 ])
 
 dnl this should be included by aclocal, but it wont't

@@ -10,3 +10,6 @@
 
 /* defines if having libjpeg (always 1) */
 #undef HAVE_LIBJPEG
+
+/* defines which to take for ksize_t */
+#undef ksize_t

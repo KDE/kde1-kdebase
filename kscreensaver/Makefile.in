@@ -101,7 +101,7 @@ $(PYRO): $(SRCMETA) $(BASE_OBJS) $(PYRO_OBJ)
 $(KLOCK): $(SRCMETA) $(KLOCK_OBJ)
 	$(CXX) -o $(KLOCK) $(KLOCK_OBJ) $(LDFLAGS)
 
-install:
+install: all
 	[ -d $(BINDIR) ] || $(INSTALL_DIR) $(BINDIR)
 	$(INSTALL) $(TARGETS) $(BINDIR)
 

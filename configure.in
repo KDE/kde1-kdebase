@@ -3,9 +3,12 @@
 # I used much code from Janos Farkas
 
 dnl Process this file with autoconf to produce a configure script.
+
 AC_INIT(acinclude.m4) dnl a source file from your sub dir
+AC_MSG_WARN("This Code is alpha. It may not even compile.  Use at your own risk.")
 AC_CANONICAL_SYSTEM 
 AC_ARG_PROGRAM
+AC_ISC_POSIX
 
 dnl Automake doc recommends to do this only here. (Janos)
 AM_INIT_AUTOMAKE(kdeapps, 0.8) dnl searches for some needed programs
@@ -73,8 +76,8 @@ AC_C_LONG_DOUBLE
 
 dnl Checks for library functions. MISCOBJS is for kdecore
 AC_CHECK_FUNCS(socket)
-AC_CHECK_FUNC(setenv, [], MISCOBJS="$MISCOBJS setenv.lo")
 AC_CHECK_FUNCS(powl)
+AC_CHECK_KSIZE_T
 
 dnl Perform program name transformation
 AC_ARG_PROGRAM

@@ -1,19 +1,8 @@
-DESKTOPLNKS = "./ftp.kde.org.kdelnk" \
-	"./KEdit.kdelnk"\
-	"./KView.kdelnk" \
-	"./cdrom.kdelnk" \
-	"./Laserjet IIP+.kdelnk" \
-	"./floppy.kdelnk" \
-	"./Templates/FTP URL.kdelnk" \
+DESKTOPLNKS = "./Templates/FTP URL.kdelnk" \
 	"./Templates/Program.kdelnk" \
 	"./Templates/WWW URL.kdelnk" \
 	"./Templates/File Type.kdelnk" \
 	"./Templates/URL.kdelnk" \
-	"./KDE Browser.kdelnk" \
-	"./KDE Help.kdelnk" \
-	"./Emacs.kdelnk" \
-	"./XV.kdelnk" \
-	"./Netscape.kdelnk"
 
 TEMPLATEDIR = @prefix@/lib/kfm/Desktop/
 INSTALL_DIR = @INSTALL@ -d -m 0755

@@ -1,14 +1,14 @@
 ####### KFM Makefile
 
-INCDIR	=	@all_includes@  -I..
-CXXFLAGS+=	$(INCDIR) 
-LDFLAGS	=	@all_libraries@ -lqt -lXext -lX11 -lkdeui -lkdecore -lkhtmlw @LIBSOCKET@ -ljpeg -lgif
+INCDIR	=	@all_includes@ -I.. 
+CXXFLAGS=	@CXXFLAGS@ $(INCDIR) 
+LDFLAGS	=	@LDFLAGS@ @all_libraries@ -lkhtmlw -lkdecore -lkdeui -lqt -lXext -lX11 @LIBSOCKET@ -ljpeg -lgif
 CXX 	=	@CXX@
 MOC	=	@MOC@
 
 ############# Install ##############
 
-INSTALL = @INSTALL@ -m 0755 -s
+INSTALL = @INSTALL@ -m 0755
 INSTALL_SHELL = @INSTALL@ -m 0755
 INSTALL_DATA = @INSTALL@ -m 0644
 INSTALL_DIR = @INSTALL@ -d -m 0755
@@ -25,8 +25,8 @@ TEMPLATEDIR = $(DESKTOPDIR)/Templates
 
 ####### Files
 
-SOURCES =	kfmwin.cpp kfmview.cpp kbind.cpp main.cpp kfmdlg.cpp bookmark.cpp kfmprops.cpp kfmserver_ipc.cpp kfmserver_ipc2.cpp kfmserver.cpp kioserver.cpp kioserver_ipc.cpp kioserver_ipc2.cpp ipc.cpp root.cpp kfmman.cpp kiojob.cpp kmsgwin.cpp htmlcache.cpp kbutton.cpp autostart.cpp kfmtree.cpp xview.cpp krenamewin.cpp passworddialog.cpp
-HEADERS =	kfmwin.h kfmview.h kbind.h root.h kfmdlg.h bookmark.h kfmprops.h kfmserver_ipc.h kioserver.h kioserver_ic.h ipc.h kfmserver.h kfmman.h kiojob.h kmsgwin.h htmlcache.h kbutton.h kfmtree.h xview.h krenamewin.h passworddialog.h
+SOURCES =	kfmwin.cpp kfmview.cpp kbind.cpp main.cpp kfmdlg.cpp bookmark.cpp kfmprops.cpp kfmserver_ipc.cpp kfmserver_ipc2.cpp kfmserver.cpp kioserver.cpp kioserver_ipc.cpp kioserver_ipc2.cpp ipc.cpp root.cpp kfmman.cpp kiojob.cpp kmsgwin.cpp htmlcache.cpp autostart.cpp kfmtree.cpp xview.cpp krenamewin.cpp passworddialog.cpp
+HEADERS =	kfmwin.h kfmview.h kbind.h root.h kfmdlg.h bookmark.h kfmprops.h kfmserver_ipc.h kioserver.h kioserver_ic.h ipc.h kfmserver.h kfmman.h kiojob.h kmsgwin.h htmlcache.h kfmtree.h xview.h krenamewin.h passworddialog.h
 OBJECTS =	kfmwin.o kfmview.o kbind.o root.o main.o kfmdlg.o bookmark.o kfmprops.o kfmserver_ipc.o kfmserver_ipc2.o kfmserver.o kioserver.o kioserver_ipc.o kioserver_ipc2.o ipc.o kfmman.o kiojob.o kmsgwin.o htmlcache.o kbutton.o autostart.o kfmtree.o xview.o krenamewin.o passworddialog.o
 SRCMETA =	kfmwin.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc kfmprops.moc kfmserver_ipc.moc kfmserver.moc kioserver.moc kioserver_ipc.moc kfmman.moc kiojob.moc kmsgwin.moc htmlcache.moc kbutton.moc kfmtree.moc krenamewin.moc passworddialog.moc
 TARGET	=	kfm
