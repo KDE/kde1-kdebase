@@ -10,7 +10,7 @@ LANG = he
 
 localedir = $(kde_locale)
 
-DISTFILES = Makefile.am Makefile.in $(POFILES) $(GMOFILES)
+EXTRA_DIST = $(POFILES) 
 
 all: all-$(USE_NLS)
 install-data-local: install-$(USE_NLS)
@@ -48,3 +48,5 @@ uninstall-local:
 	echo "removing $$dir/$$name" ; \
 	done
 
+dist-hook: $(GMOFILES)
+	cp $(GMOFILES) $(distdir)
