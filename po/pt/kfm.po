@@ -562,11 +562,11 @@ msgstr "Espaçamento Vertical da Grelha de Raiz:"
 
 #: htmlopts.cpp:349
 msgid "Transparent Text for Root Icons."
-msgstr ""
+msgstr "Texto Transparente para Ícones Raiz."
 
 #: bookmark.cpp:259
 msgid "Could not write bookmark"
-msgstr "Não foi possível favorito"
+msgstr "Não foi possível escrever favorito"
 
 #: kfmprops.cpp:241
 msgid "Full Name"
