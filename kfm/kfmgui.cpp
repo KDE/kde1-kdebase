@@ -437,7 +437,7 @@ void KfmGui::initToolBar()
 			  klocale->translate("Stop"));
 
     path = KMimeType::getIconPath();
-    pixmap.load( path + "/kde1.gif" );
+    pixmap.load( path + "/kde1.xpm" );
     
     toolbar->insertButton(pixmap, 8, SIGNAL( clicked() ), this, 
 			  SLOT( slotNewWindow() ), false );
@@ -447,10 +447,10 @@ void KfmGui::initToolBar()
     if ( animatedLogo.count() == 0 )
     {
 	animatedLogo.setAutoDelete( true );
-	for ( int i = 1; i <= 30; i++ )
+	for ( int i = 1; i <= 9; i++ )
 	{
 	    QString n;
-	    n.sprintf( "/kde%i.gif", i );
+	    n.sprintf( "/kde%i.xpm", i );
 	    QPixmap *p = new QPixmap();
 	    p->load( path + n );
 	    if ( p->isNull() )
