@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KTHEMEMGR\n"
 "POT-Creation-Date: 1999-08-14 12:52+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 1999-09-04 14:30+0200\n"
 "Last-Translator: Francois-Xavier Duranceau <duranceau@kde.org>\n"
 "Language-Team: LANGUAGE <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -14,7 +14,7 @@ msgstr ""
 
 #: theme.cpp:164
 msgid "Mappings file theme.mappings not found."
-msgstr "Fichier de correspondances theme.mappings introuvable.."
+msgstr "Fichier de correspondances theme.mappings introuvable."
 
 #: theme.cpp:182
 #, c-format
@@ -100,6 +100,8 @@ msgid ""
 "Unknown pre-install command `%s' in\n"
 "theme.mappings file in group %s."
 msgstr ""
+"Commande `%s' inconnue dans le groupe %s\n"
+"du fichier theme.mappings."
 
 #: theme.cpp:673
 #, c-format
@@ -107,6 +109,8 @@ msgid ""
 "Unknown command `%s' in theme.mappings\n"
 "file in group %s."
 msgstr ""
+"Commande `%s' inconnue dans le groupe %s\n"
+"du fichier theme.mappings."
 
 #: theme.cpp:711
 #, c-format
@@ -125,7 +129,7 @@ msgstr "Impossible de créer une copie de secours de %s : mv a retourné %d"
 #: theme.cpp:797
 #, c-format
 msgid "Icon key name %s can not be used"
-msgstr ""
+msgstr "Le nom de clé d'icône %s ne peut pas être utilisé."
 
 #: theme.cpp:859
 #, c-format
@@ -133,6 +137,8 @@ msgid ""
 "No proper kdelnk file found for %s.\n"
 "Installing icon(s) as %s"
 msgstr ""
+"Aucun fichier kdelnk correct trouvé pour %s.\n"
+"Installation de(s) l'icône(s) dans"
 
 #: theme.cpp:981
 #, c-format
@@ -255,11 +261,11 @@ msgstr "kwmcom : la communication avec kwm a échoué\n"
 
 #: options.cpp:38
 msgid "Uninstall parts of previous theme"
-msgstr ""
+msgstr "Désinstallation du thème précédent"
 
 #: options.cpp:45
 msgid "Work on the following parts:"
-msgstr ""
+msgstr "Contient les données suivantes :"
 
 #: options.cpp:55
 msgid "Colors"
