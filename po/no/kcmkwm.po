@@ -1,0 +1,202 @@
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-03-02 00:16+0100\n"
+"PO-Revision-Date: 1998-03-22 17:21:32+0100\n"
+"Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
+"Language-Team: no <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:57
+msgid "&Windows"
+msgstr "&Vinduer"
+
+#: main.cpp:60
+msgid "&Buttons"
+msgstr "&Knapper"
+
+#: main.cpp:63
+msgid "&Titlebar"
+msgstr "&Tittellinje"
+
+#: main.cpp:69
+msgid "usage: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+msgstr "bruk: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+
+#: main.cpp:98
+msgid "Window manager style"
+msgstr "Vindus manager stil"
+
+#: titlebar.cpp:117
+msgid "Minimize"
+msgstr "Minimer"
+
+#: titlebar.cpp:121
+msgid "Maximize"
+msgstr "Maksimer"
+
+#: titlebar.cpp:125
+msgid "Sticky"
+msgstr "Sitter fast"
+
+#: titlebar.cpp:133
+msgid "Menu"
+msgstr "Meny"
+
+#: titlebar.cpp:463
+msgid ""
+"The left side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr "Venstre side av tittellinja er full... kopler ut 'maksimerings' knappen\n"
+
+#: titlebar.cpp:496
+msgid ""
+"The right side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr "Høyre side av tittellinja er full... kopler ut 'maksimerings' knappen\n"
+
+#: titlebar.cpp:536
+msgid ""
+"The left side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr "Venstre side av tittellinja er full... kopler ut 'minimerings' knappen\n"
+
+#: titlebar.cpp:569
+msgid ""
+"The right side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr "Høyre side av tittellinja er full... kopler ut 'minimerings' knappen\n"
+
+#: titlebar.cpp:925
+msgid "Titlebar appearance"
+msgstr "Tittellinje utseende"
+
+#: titlebar.cpp:927
+msgid "Shaded"
+msgstr "Skygge"
+
+#: titlebar.cpp:930
+msgid "Plain"
+msgstr "Vanlig"
+
+#: titlebar.cpp:933 titlebar.cpp:953
+msgid "Pixmap"
+msgstr "Pixmap"
+
+#: titlebar.cpp:940
+msgid "Title Animation"
+msgstr "Tittel animasjon"
+
+#: titlebar.cpp:943
+msgid "ms"
+msgstr "ms"
+
+#: titlebar.cpp:964
+msgid "&Active pixmap"
+msgstr "&Aktivt pixmap"
+
+#: titlebar.cpp:966
+msgid "&Inactive pixmap"
+msgstr "&Inaktivt pixmap"
+
+#: titlebar.cpp:981
+msgid "Mouse action"
+msgstr "Mus funksjon"
+
+#: titlebar.cpp:983
+msgid ""
+"LeftMouseButton double click\n"
+"    on titlebar does:"
+msgstr "VenstreMusKnapp dobbelklikk\n"
+"    på tittellinje gjør følgende:"
+
+#: titlebar.cpp:987
+msgid "(Un)Maximize"
+msgstr "(Ikke)maksimer"
+
+#: titlebar.cpp:988
+msgid "Move"
+msgstr "Flytt"
+
+#: titlebar.cpp:989
+msgid "(Un)Shade"
+msgstr "(Ikke)skygge"
+
+#: titlebar.cpp:990
+msgid "Iconify"
+msgstr "Lag til ikon"
+
+#: titlebar.cpp:991
+msgid "(Un)Sticky"
+msgstr "(Un)Sticky"
+
+#: titlebar.cpp:992
+msgid "Resize"
+msgstr "Ny størrelse"
+
+#: titlebar.cpp:993
+msgid "Restore"
+msgstr "Gjenopprett"
+
+#: titlebar.cpp:994
+msgid "Operations Menu"
+msgstr "Operasjons meny"
+
+#: windows.cpp:77
+msgid "Window movement"
+msgstr "Vindubevegelse"
+
+#: windows.cpp:78
+msgid "Transparent"
+msgstr "Gjennomsiktig"
+
+#: windows.cpp:79
+msgid "Opaque"
+msgstr "Opaque"
+
+#: windows.cpp:82
+msgid "Resize Animation"
+msgstr "Ny størrelse for animasjon"
+
+#: windows.cpp:87
+msgid "Placement policy"
+msgstr "Plasserings politikk"
+
+#: windows.cpp:98
+msgid "Maximize Style"
+msgstr "Maksimer stil"
+
+#: windows.cpp:99
+msgid "Maximize fully"
+msgstr "Maksimer fullt"
+
+#: windows.cpp:100
+msgid "Maximize vertically"
+msgstr "Maksimer vertikalt"
+
+#: windows.cpp:103
+msgid "Focus Policy"
+msgstr "Fokus politikk"
+
+#: windows.cpp:104
+msgid "Click to focus"
+msgstr "Klikk for fokus"
+
+#: windows.cpp:105
+msgid "Focus follows mouse"
+msgstr "Fokus følger mus"
+
+#: windows.cpp:110
+msgid ""
+"Auto raise delay\n"
+"(<100 disables)"
+msgstr "Auto reis forsinkelse\n"
+"(<100 kopler fra)"
+
+#: windows.cpp:113
+msgid "miliseconds"
+msgstr "millisekunder"

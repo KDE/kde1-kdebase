@@ -1,0 +1,132 @@
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: 1998-03-22 17:12+0100\n"
+"Last-Translator: Svein Olav Aasen <soasen@online.no / svein.aasen@caa.no>\n"
+"Language-Team: no <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:62
+msgid "&Panel"
+msgstr "&Panel"
+
+#: main.cpp:68
+msgid "&Desktops"
+msgstr "&Skrivebord"
+
+#: main.cpp:97
+msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
+msgstr "bruk: kcmkpanel [-init | {panel,options,desktops}]\n"
+
+#: main.cpp:127
+msgid "KPanel Configuration"
+msgstr "KPanel konfigurasjon"
+
+#: panel.cpp:59
+msgid "Location"
+msgstr "Plassering"
+
+#: panel.cpp:60
+msgid "&Top"
+msgstr "&Topp"
+
+#: panel.cpp:61
+msgid "&Left"
+msgstr "&Venstre"
+
+#: panel.cpp:62
+msgid "&Bottom"
+msgstr "&Bunn"
+
+#: panel.cpp:74
+msgid "Taskbar"
+msgstr "Oppgavelinje"
+
+#: panel.cpp:75
+msgid "&Hidden"
+msgstr "&Skjult"
+
+#: panel.cpp:77
+msgid "T&op"
+msgstr "T&opp"
+
+#: panel.cpp:79
+msgid "Botto&m"
+msgstr "Bun&n"
+
+#: panel.cpp:81
+msgid "Top/Le&ft"
+msgstr "Topp/&Venstre"
+
+#: panel.cpp:96
+msgid "T&iny"
+msgstr "&Meget liten"
+
+#: panel.cpp:98
+msgid "&Normal"
+msgstr "&Normal"
+
+#: panel.cpp:100
+msgid "L&arge"
+msgstr "Sto&r"
+
+#: desktops.cpp:73
+msgid "&Visible"
+msgstr "S&ynlig"
+
+#: desktops.cpp:82
+msgid "&Width"
+msgstr "&Bredde"
+
+#: options.cpp:38
+msgid "Menu Tooltips"
+msgstr "Meny verktøytips"
+
+#: options.cpp:39
+msgid "Show &Menu Tooltips"
+msgstr "Vis &meny verktøytips"
+
+#: options.cpp:44
+msgid "De&lay:"
+msgstr "&Forsinkelse:"
+
+#: options.cpp:56
+msgid "ms"
+msgstr "ms"
+
+#: options.cpp:68
+msgid "Others"
+msgstr "Andre"
+
+#: options.cpp:69
+msgid "Personal &First"
+msgstr "Personlig f&ørst"
+
+#: options.cpp:71
+msgid "Auto &Hide Panel"
+msgstr "Auto sk&jul panel"
+
+#: options.cpp:73
+msgid "Auto Hide &Taskbar"
+msgstr "Auto skjul ver&ktøylinje"
+
+#: options.cpp:81
+msgid "Clock"
+msgstr "Ur"
+
+#: options.cpp:83
+msgid "&24h"
+msgstr "&24 timer"
+
+#: options.cpp:85
+msgid "&12h AM/PM"
+msgstr "&12 AM/PM"
