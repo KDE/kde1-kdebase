@@ -1,0 +1,25 @@
+/* XPM */
+/* Drawn  by Mark Donohoe for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*socket[]={
+"16 14 5 1",
+"# c #000000",
+"a c #808080",
+"b c #ff0000",
+"c c #ffff00",
+". c None",
+"................",
+"..........#.....",
+".......a.#a.....",
+"......abba..#...",
+".....abbbb.#a...",
+"....abbbbbba....",
+"....abbbbbba....",
+"....abbbbba#....",
+"....abbbba#.....",
+"...acaaaa#......",
+"..acaa###.......",
+".acaa...........",
+"..aa............",
+"..a............."};
+

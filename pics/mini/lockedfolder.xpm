@@ -1,0 +1,29 @@
+/* XPM */
+/* Drawn  by Mark Donohoe & Jonathan Buzzard for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*lockedfolder[]={
+"16 16 7 1",
+"# c #000000",
+"b c #ffffff",
+"d c #a0a0a4",
+"e c #ff8000",
+"c c #be5800",
+"a c #ffa85a",
+". c None",
+"...#.##.........",
+"..#a#bc##.......",
+"..#aaadbc##.....",
+"..#aaaaadbc##...",
+"..#aaaaaaadbc#..",
+"..#aaaaaaaacd#..",
+"..#aaaeaaeacd#..",
+"..#aeaaeeaecd#..",
+"..#eaeeaeeecd#..",
+"..#eeeceececd#..",
+"..#eeeecceccd#..",
+"..##ccceccccd#..",
+"....##ccccccd#..",
+"......##ccccd#..",
+"........##ccd#..",
+"..........###..."};
+

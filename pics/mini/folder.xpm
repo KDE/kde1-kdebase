@@ -1,31 +1,29 @@
 /* XPM */
-static char *folder[] = {
-"16 16 8 1",
+/* Drawn  by Mark Donohoe for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*folder[]={
+"16 16 7 1",
+"# c #000000",
+"e c #ff8000",
+"d c #c0c0c0",
+"a c #be5800",
+"b c #ffa85a",
+"c c #ffffff",
 ". c None",
-"# c #d7a679",
-"a c #404040",
-"b c #ffffff",
-"c c #bf7949",
-"d c #808080",
-"e c #000000",
-"f c #8e5930",
-"...#.aa.........",
-"...bb#caa.......",
-"aa.bbbb#caa.dd..",
-"a#aebbbbb#caadd.",
-"a###aebbbbb#caa.",
-".c####aebbbb#fa.",
-".c######aebb#fa.",
-".f########a##a..",
-".fc#####ccca#a..",
-"..cccccccccada..",
-"..fcccccccfada..",
-"..fffccfffffa...",
-"...cafffffffa...",
-".....cafffffa...",
-".......cafffa...",
-".........cafa..."};
-
-
-
+"......##........",
+"##..##aa##......",
+"#b##ccddaa##....",
+"#bbb##ccddaa##..",
+"#bbbbb##ccddaa##",
+".#bbbbbb##ccdda#",
+".#bbbbbbbb##cda#",
+".#bbbbbbbbea##a#",
+"..#bebeeeeeea##.",
+"..#eeeeeeeeea##.",
+"..#aeaeeaeeea##.",
+"...##aaaaaaea#..",
+".....##aaaaaa#..",
+".......##aaaa#..",
+".........##aa#..",
+"...........##..."};
 

@@ -1,0 +1,32 @@
+/* XPM */
+/* Drawn  by Mark Donohoe & Jonathan Buzzard for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*zip_mount[]={
+"16 16 10 1",
+"# c #000000",
+"c c #ffffff",
+"b c #c0c0c0",
+"a c #585858",
+"d c #ff0000",
+"g c #008000",
+"h c #00c000",
+"f c #008080",
+"e c #ffbebe",
+". c None",
+"................",
+".......###......",
+"......#aaa##....",
+".....#aaaabb##..",
+"....#a##aaaaaa##",
+"...#a#cd##aaaaa#",
+"..#a#cedff##aa#.",
+".#a#cccffff#a#..",
+"#a#ccccccf#a#...",
+"##aacccec#a#....",
+"..##aaec#a#.....",
+"....##a#a#......",
+"......###..#####",
+"...........#ggh#",
+"...........#hhh#",
+"...........#####"};
+

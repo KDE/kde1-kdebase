@@ -1,0 +1,32 @@
+/* XPM */
+/* Drawn  by Mark Donohoe & Jonathan Buzzard for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*document[]={
+"16 16 10 1",
+"# c #000000",
+"b c #ffffff",
+"c c #ff0000",
+"e c #008000",
+"f c #c0c000",
+"a c #ffff00",
+"d c #ffffbe",
+"g c #ff8000",
+"h c #ffa85a",
+". c None",
+"................",
+"................",
+"......##.##.....",
+".....#aa#bb##...",
+"....#aa#bccaa##.",
+"...#aa#de##aabb#",
+"..#aa#de#dd##b#.",
+".#ff#dd#bbbdd##.",
+"#ff#aa#bbggbbbb#",
+".#fff#ddhghbbbb#",
+"..###dddgddbbb#.",
+"...#aafdddfdd#..",
+"..#aaaaffddd#...",
+"...##aaaaaa#....",
+".....##aaa#.....",
+".......###......"};
+

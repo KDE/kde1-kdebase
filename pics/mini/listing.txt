@@ -1,0 +1,6 @@
+CVS/
+Makefile.am
+folder.xpm
+kfm_fulltrash.xpm
+kfm_trash.xpm
+listing.txt

@@ -1,0 +1,30 @@
+/* XPM */
+/* Drawn  by Mark Donohoe & Jonathan Buzzard for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*floppy_unmount[]={
+"16 16 8 1",
+"# c #000000",
+"b c #c0c0c0",
+"e c #800000",
+"c c #ffffff",
+"a c #585858",
+"f c #c00000",
+"d c #ffffff",
+". c None",
+".......##.......",
+"......#aa##.....",
+".....#aaaa###...",
+"....#aaaa##aa##.",
+"...#aaaa##aaaaa#",
+"..#aaaa##aaaaaa#",
+".#aaaaaaaaaaaa#.",
+"#aaaaaaaaaaaa#..",
+"#aaabbaaaaaa#...",
+".##abcdbaaa#....",
+"...##abdca#.....",
+".....##aa#......",
+".......##..#####",
+"...........#eef#",
+"...........#fff#",
+"...........#####"};
+

@@ -1,0 +1,30 @@
+/* XPM */
+/* Drawn  by Mark Donohoe & Jonathan Buzzard for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*java_src[]={
+"16 16 8 1",
+"b c #ffffff",
+"e c #808080",
+"c c #000080",
+"f c #0000ff",
+"a c #ff0000",
+"d c #bebeff",
+"# c #ffa85a",
+". c None",
+".....#.a..#.....",
+"....#..#.#a.....",
+"...##.a..a......",
+"...##.a..a......",
+"....#aba.a......",
+"..cc#ccacdcccc..",
+".cbdebbbbcbbbc..",
+".cbbcccccdbbdc..",
+".cdbbbbbbbbdc...",
+"..cdfdfddfdc....",
+"...cbbbbbbc.....",
+"..ccddddddcc....",
+".cbbccccccbbc...",
+".cdbbbbbbbbdc...",
+"..cccddddccc....",
+".....cccc......."};
+

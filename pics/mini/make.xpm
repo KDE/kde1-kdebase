@@ -1,0 +1,30 @@
+/* XPM */
+/* Drawn  by Mark Donohoe & Jonathan Buzzard for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*make[]={
+"16 14 10 1",
+"# c #000000",
+"a c #ffffff",
+"b c #808080",
+"e c #c0c0c0",
+"h c #585858",
+"f c #004000",
+"d c #000040",
+"g c #400040",
+"c c #404000",
+". c None",
+"................",
+".....#####......",
+"..####aaa####...",
+".#baabaaabaab#..",
+".#aaaaaaaaaaa#..",
+".cdbaaefeaab#c..",
+"daaaaabgbaaaaa#.",
+"#hbbaaebeaabbh#.",
+"#bbeaaaaaaaebb#.",
+".#eeb#aaa#bee#..",
+".#bbb#bbb#bbb#..",
+".#bb##eee##bb#..",
+"..##.#eee#.##...",
+".....#####......"};
+

@@ -1,0 +1,26 @@
+/* XPM */
+/* Drawn  by Mark Donohoe for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*font[]={
+"16 16 4 1",
+". c #000000",
+"b c #ffffff",
+"a c #ff0000",
+"# c None",
+"...........#####",
+".###...###.#####",
+".###...###.#####",
+"####...#########",
+"####...#########",
+"####.aaaaaaaaaaa",
+"####.abbbaaa###a",
+"####.a.bbaaa###a",
+"####...bbaaa####",
+"####...bbaaa####",
+"####...bbaaa####",
+"##.......aaa####",
+"#########aaa####",
+"#########aaa####",
+"#########aaa####",
+"#######aaaaaaa##"};
+

@@ -1,0 +1,25 @@
+/* XPM */
+/* Drawn  by Mark Donohoe & Jonathan Buzzard for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*gf[]={
+"16 16 3 1",
+"a c #ffffff",
+"# c #0000c0",
+". c None",
+".##..###.###.##.",
+"#a#.#aaa#a#a#aa#",
+"####a#aaaaaa##a#",
+".#aaaa##a###a##.",
+"#aaaaaaaaaaaa#..",
+"#aa###aa##aaaa#.",
+".###a#a#####a#..",
+"#aaaaaaaaaaaaa#.",
+"#aaa###aaaaaaa##",
+"##aaa#aaaaaa##..",
+"#aaaaaaaaaa#aa##",
+"#aa###a##aaaa#..",
+"#aaaa##aaaaa#.##",
+".#aaaaaaaaaa#...",
+"..#aaaaaaaa#....",
+"...########....."};
+
