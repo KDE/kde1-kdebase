@@ -88,7 +88,7 @@ void Desktop::addWindow(Window w)
 	activeWindow = win;
     
     win->id = w;
-    win->rect = KWM::geometry(w);
+    win->rect = KWM::geometry(w, TRUE);
     win->icony = KWM::isIconified(w);
     win->name = KWM::title(w);
     calculate(win);
@@ -156,7 +156,7 @@ void Desktop::changeWindow(Window w)
     if (!win)
 	return;
     
-    win->rect = KWM::geometry(w);
+    win->rect = KWM::geometry(w, TRUE);
     win->icony = KWM::isIconified(w);
     win->name = KWM::title(w);
     
