@@ -9,7 +9,7 @@ bin_PROGRAMS = kcontrol
 kcontrol_SOURCES = configlist.cpp main.cpp toplevel.cpp kdelnk.cpp mainwidget.cpp \
 		   kswallow.cpp
 BUILT_SOURCES =	toplevel.moc kdelnk.moc mainwidget.moc configlist.moc \
-		kswallow.cpp
+		kswallow.moc
 
 messages:
 	$(XGETTEXT) -C -ktranslate -x ../../../kdelibs/po/kde.pot $(kcontrol_SOURCES) && mv messages.po ../../po/kcontrol.pot
