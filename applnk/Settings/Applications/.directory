@@ -4,6 +4,7 @@ Name=Applications
 Name[fr]=Applications
 Name[de]=Anwendungen
 Name[cs]=Aplikace
+Name[sk]=Aplikácie
 Name[fi]=Sovellukset
 Name[pt]=Aplicações
 SortOrder=panel.kdelnk,kdm.kdelnk
