@@ -23,6 +23,7 @@
 #include <kslider.h>
 #include <drag.h>
 
+
 #include "display.h"
 
 class KBackground;
@@ -318,7 +319,7 @@ protected:
   QComboBox *wpModeCombo;
   QComboBox *wpCombo;
 
-  KSlider *cacheSlider;
+  QSlider *cacheSlider;
   QLCDNumber *cacheLCD;
 
   QLabel *monitorLabel;
