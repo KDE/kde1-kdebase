@@ -135,7 +135,7 @@ msgstr "Ooops!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
-msgstr "Odhlásenie"
+msgstr "Odhlási»"
 
 #: logout.C:46
 msgid "Session prepared for logout"

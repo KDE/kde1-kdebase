@@ -31,7 +31,7 @@ msgstr "Ukonèi» a re¹tartova»"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr "Re¹tar X Servera"
+msgstr "Re¹tart X Servera"
 
 #: kgreeter.cpp:234
 msgid "Login:"
