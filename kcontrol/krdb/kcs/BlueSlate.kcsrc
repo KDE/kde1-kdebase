@@ -1,6 +1,7 @@
 # KDE Config File
 [Color Scheme]
 name=Blue slate
+name[pl]=Ciemny b³ˆkit
 background=#9db9c8
 selectBackground=#558097
 foreground=#000000

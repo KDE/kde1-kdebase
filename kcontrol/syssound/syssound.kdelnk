@@ -12,6 +12,7 @@ Comment[fi]=Systeemin äänien asetukset
 Comment[sk]=Nastavenie systémových zvukov
 Comment[fr]=Configuration des sons du système
 Comment[sv]=Systemljuds Inställningar
+Comment[pl]=Konfiguracja d¦wi~Hk~[w systemowych 
 Name=System Sounds
 Name[de]=Systemklänge
 Name[no]=Systemlyd
@@ -20,6 +21,7 @@ Name[fi]=Systeemin äänet
 Name[fr]=Sons du système
 Name[sk]=Systémové zvuky
 Name[sv]=Systemljud
+Name[pl]=D¦wi~Hki systemowe
 Init=
 SwallowTitle=System Sounds
 SwallowTitle[de]=Systemklänge
@@ -29,5 +31,5 @@ SwallowTitle[fi]=Systeemin äänet
 SwallowTitle[fr]=Sons du système
 SwallowTitle[sk]=Systémové zvuky
 SwallowTitle[sv]=Systemljud
-
+SwallowTitle[pl]=D¦wi~Hki systemowe
 

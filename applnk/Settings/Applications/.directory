@@ -8,5 +8,6 @@ Name[cs]=Aplikace
 Name[sk]=Aplikácie
 Name[fi]=Sovellukset
 Name[pt]=Aplicações
+Name[pl]=Aplikacje
 SortOrder=panel.kdelnk,kdm.kdelnk
 Icon=application_settings.xpm

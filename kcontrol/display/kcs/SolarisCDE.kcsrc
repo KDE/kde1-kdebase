@@ -1,6 +1,7 @@
 # KDE Config File
 [Color Scheme]
 name=Solaris CDE
+name[pl]=Solaris CDE
 background=#aeb2c3
 selectBackground=#718ba5
 foreground=#000000

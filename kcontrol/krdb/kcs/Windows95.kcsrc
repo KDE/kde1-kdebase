@@ -1,6 +1,7 @@
 #KDE Config File
 [Color Scheme]
 name=Windows 95
+name[pl]=Windows 95
 background=#c3c3c3
 selectBackground=#000080
 foreground=#000000

@@ -1,6 +1,7 @@
 # KDE Config File
 [Color Scheme]
 name=Desert red
+name[pl]=Czerwie± pustyni
 background=214,205,187
 selectBackground=128,0,0
 foreground=0,0,0

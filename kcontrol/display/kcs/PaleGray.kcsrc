@@ -1,6 +1,7 @@
 # KDE Config File
 [Color Scheme]
 name=Pale gray
+name[pl]=Szaroblady
 background=#d6d6d6
 selectBackground=#000000
 foreground=#000000

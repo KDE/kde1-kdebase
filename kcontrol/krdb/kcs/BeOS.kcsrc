@@ -6,6 +6,7 @@ activeBlend=255,215,0
 selectBackground=168,168,168
 inactiveBackground=237,237,237
 name=BeOS
+name[pl]=BeOS
 contrast=7
 background=217,217,217
 activeBackground=255,215,0

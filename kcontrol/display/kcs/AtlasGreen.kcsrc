@@ -1,6 +1,7 @@
 # KDE Config File
 [Color Scheme]
 name=Atlas green
+name[pl]=Atlasowa ziele±
 background=#afb49f
 selectBackground=#6f7a63
 foreground=#000000

@@ -7,6 +7,7 @@ Name[ca]=Català
 Name[es]=Catalán
 Name[en]=Catalan
 Name[fr]=Catalan
+Name[pl]=Katalo±ski
 
 [ro]
 Name=Romanian
@@ -210,17 +211,20 @@ Name[zh]=§JÃ¹®J¦è¨È¤å
 Name=Slovak
 Name[de]=Slovakisch
 Name[no]=Slovakisk
+Name[pl]=S³owacki
 
 [zh_TW.Big5]
 Name=Chinese
 Name[de]=Chinesisch
 Name[no]=Kinetisk
 Name[zh]=BIG5 ¤¤¤å
+Name[pl]=Chi±ski tradycyjny
 
 [zh_CN.GB2312]
 Name=Simplified Chinese
 Name[de]=Vereinfachtes Chinesisch
 Name[no]=Forenklet kinesisk
+Name[pl]=Chi±ski uproszczony
 
 [pt_BR]
 Name=Brazil portuguese

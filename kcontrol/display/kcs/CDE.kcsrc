@@ -1,6 +1,7 @@
 # KDE Config File
 [Color Scheme]
 name=CDE
+name[pl]=CDE
 background=#999999
 selectBackground=#326284
 foreground=#ffffff
