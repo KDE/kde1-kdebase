@@ -568,7 +568,7 @@ void KRootWidget::slotDropEvent( KDNDDropZone *_zone )
     // Ask wether we can read from the dropped URL.
     if ( KIOServer::supports( _zone->getURLList(), KIO_Read ) &&
 	 KIOServer::supports( desktopDir.data(), KIO_Write ) )
-	id = popupMenu->insertItem( klocale->getAlias( ID_STRING_CD ), this, SLOT( slotDropCopy() ) );
+	id = popupMenu->insertItem( klocale->getAlias( ID_STRING_COPY ), this, SLOT( slotDropCopy() ) );
     // Ask wether we can read from the URL and delete it afterwards
     if ( KIOServer::supports( _zone->getURLList(), KIO_Read ) &&
 	 KIOServer::supports( _zone->getURLList(), KIO_Delete ) &&
