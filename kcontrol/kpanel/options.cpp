@@ -525,9 +525,10 @@ void KOptionsConfig::loadSettings() {
   hide_taskbar_clicked(hide_taskbar->isChecked());
 
   val = config->readNumEntry("HideShowAnimation", 50);
-  show_hide->setChecked( val >= 0 );
-  if (val >= 0 ) show_hide_slider->setValue(val);
-  show_hide_clicked(val >= 0);
+  if ( val < 0 )   val = 0;
+  show_hide->setChecked( val > 0 );
+  show_hide_slider->setValue(val);
+  show_hide_clicked(val > 0);
   //CT
 
   clock->setChecked (config->readEntry("ClockAmPm", "off") == "on");
