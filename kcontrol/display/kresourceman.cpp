@@ -88,8 +88,8 @@ void KResourceMan::sync()
 	
 	if ( !propDict->isEmpty() ) {
 		
-		long timestamp;
-		::time( (long *) &timestamp ); 
+		time_t timestamp;
+		::time( &timestamp ); 
 		
 		QDictIterator <QString> it( *propDict );
 		QString keyvalue;
@@ -104,7 +104,7 @@ void KResourceMan::sync()
 		}
 		
 		QString fileName;
-		fileName.sprintf("/tmp/krdb.%ld", timestamp);
+		fileName.sprintf("/tmp/krdb.%d", timestamp);
 		
 		QFile f( fileName );
 		if ( f.open( IO_WriteOnly ) ) {
