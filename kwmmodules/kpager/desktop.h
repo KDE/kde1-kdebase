@@ -61,7 +61,7 @@ private:
     bool mousepressed;
     bool resizing;
 //    WindowProperties *resizingWP;
-    int resizingWPidx;
+    Window resizingWin;
 
     int screen_width, screen_height;
     int ratio;
@@ -150,15 +150,20 @@ public:
     virtual void mousePressEvent (QMouseEvent *e);
     virtual void mouseReleaseEvent (QMouseEvent *e);
     void startDrag( QMouseEvent *e );
+
 #if QT_VERSION >= 141
     virtual void dragEnterEvent(QDragEnterEvent *e);
     virtual void dragMoveEvent   (QDragMoveEvent *e);
     virtual void dropEvent       (QDropEvent *e);
 #endif
+
     virtual void mouseDoubleClickEvent( QMouseEvent *);
     virtual void resizeEvent (QResizeEvent *);
 
     static KWMModuleApplication *kwmmapp;
+    static bool use1ClickMode;   // true if one click should change desktop
+				// or false if it's needed a double click 
+                                // (a doubleclick will work always)
 signals:
     void moveWindow(Window w, int desktop, int x, int y, int origdesk);
     void switchToDesktop(int id);

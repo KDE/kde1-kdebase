@@ -1,3 +1,13 @@
+* Mon Nov 30 7:20:00 CEST 1998 
+
+Some fixes.
+Implemented the option to disable the behaviour of
+one click => desktop change (as suggested by Alexxx)
+Finished implementing the resize of windows
+(If the already reported bug about resized windows
+of other desktop is not solved, I'll have to disable
+this before 1.1)
+
 * Sun Nov 29 11:27:00 CEST 1998 
 
 Some more work in the resizing of windows

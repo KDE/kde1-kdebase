@@ -181,6 +181,16 @@ void Desktop::changeWindow(Window w)
 #endif
     WindowProperties *wpback=getWindowProperties(w);
     if (wpback==NULL) return;
+/*    QRect tempgeom;
+    QRect tempframegeom;
+    bool isresizing=false;
+    if ((resizing)&&(w==resizingWin))
+    {
+        tempgeom=wpback->geometry;
+        tempframegeom=wpback->framegeometry;
+	isresizing=true;
+    };
+*/
     QPixmap *tmpbigPixmap=0L;
     if (wpback->bigPixmap!=0L) tmpbigPixmap=new QPixmap(*wpback->bigPixmap);
     uint wid=getIndexOfWindow(w);
@@ -201,7 +211,11 @@ void Desktop::changeWindow(Window w)
     wp->bigPixmap=tmpbigPixmap;
 //    if (drawWinMode==pixmap) grabWindowContents(wp);
     window_list->insert(wid,wp);
-    update();
+
+// These two conditions are required to fix a wrong display of the window geometry
+// if kpager receives the last geometry change event after user has started to resize
+// the window again.
+    if ((!resizing)||(w!=resizingWin)) update();
 }
 
 void Desktop::raiseWindow(Window w)
@@ -347,7 +361,9 @@ int Desktop::headerHeight=25;
 
 void Desktop::paintWindow(QPainter *painter,WindowProperties *wp, QRect &tmp)
 {
+#ifdef DESKTOPDEBUG
     printf("PaintWindow\n");
+#endif
     QWMatrix matrix;
     QRect tmp2;
     double rx,ry;
@@ -398,7 +414,9 @@ void Desktop::paintWindow(QPainter *painter,WindowProperties *wp, QRect &tmp)
 
 void Desktop::paintEvent(QPaintEvent *)
 {
+#ifdef DESKTOPDEBUG
     printf("PaintEvent\n");
+#endif
     QPainter *painter=new QPainter(tmpScreen);
     QRect tmp;
     int x=0;
@@ -428,12 +446,14 @@ void Desktop::paintEvent(QPaintEvent *)
     while (wp!=NULL)
     {
         tmp.setRect((int)(wp->framegeometry.x()*ratiox),(int)(y+wp->framegeometry.y()*ratioy),(int)(wp->framegeometry.width()*ratiox),(int)(wp->framegeometry.height()*ratioy));
+
+#ifdef DESKTOPDEBUG
 	printf("wpframegeometry : %dx%d %dx%d\n",wp->framegeometry.x()
                ,wp->framegeometry.y()
                ,wp->framegeometry.width()
                ,wp->framegeometry.height()
               );           
-
+#endif
 
 //        tmp.setRect((int)(wp->geometry.x()*ratiox),(int)(y+wp->geometry.y()*ratioy),(int)(wp->framegeometry.width()*ratiox),(int)(wp->framegeometry.height()*ratioy));
 
@@ -444,17 +464,18 @@ void Desktop::paintEvent(QPaintEvent *)
     painter->setClipping(FALSE);
 //    painter->setPen(QColor(0,0,0));
     painter->drawRect(0,0,width(),height());
+#ifdef DESKTOPDEBUG
     printf("PaintEvent2\n");
-static int fallillo=1;
+    static int fallillo=1;
     painter->drawRect(0,0,fallillo,fallillo);
     fallillo++;
     if (fallillo==width()) fallillo=1;
+#endif
 
     delete painter;
     painter=new QPainter(this);
     painter->drawPixmap(0,0,*tmpScreen);
     delete painter;
-    printf("PaintEvent3\n");
 
 }
 
@@ -523,33 +544,30 @@ void Desktop::mouseMoveEvent (QMouseEvent *e)
 {
     if (resizing)
     {
-        printf("m\n");
-/*******************************************/
-	WindowProperties *resizingWP=window_list->at(resizingWPidx);
-/*******************************************/
+//        printf("m\n");
+	WindowProperties *resizingWP=getWindowProperties(resizingWin);
         if (resizingWP==0L) {printf("Oops\n");resizing=false;releaseMouse();return;};
         //        resizingWP->minigeometry.setWidth(MAX(0,e->x()-resizingWP->minigeometry.x()));	
         //        resizingWP->minigeometry.setHeight(MAX(0,e->y()/*-getHeaderHeight()*/-resizingWP->minigeometry.y()));
         double ratiox=(double)width()/(double)screen_width;
         double ratioy=(double)(height()-getHeaderHeight())/(double)screen_height;
+        resizingWP->framegeometry.setWidth(
+			MAX(10,e->x()/ratiox-resizingWP->framegeometry.x()));
+        resizingWP->geometry.setWidth(
+			MAX(10,e->x()/ratiox-resizingWP->geometry.x()));
+        resizingWP->framegeometry.setHeight(
+			MAX(10,(e->y()-getHeaderHeight())/ratioy-resizingWP->framegeometry.y()));
+        resizingWP->geometry.setHeight(
+			MAX(10,(e->y()-getHeaderHeight())/ratioy-resizingWP->geometry.y()));
+#ifdef DESKTOPDEBUG
         printf("ratio %gx%g\n",ratiox,ratioy);
-        /*	resizingWP->framegeometry.setRect(
-         resizingWP->minigeometry.x()/ratiox,
-         (resizingWP->minigeometry.y()-getHeaderHeight())/ratioy,
-         resizingWP->minigeometry.width()/ratiox,
-         resizingWP->minigeometry.height()/ratioy);
-         */
-        resizingWP->framegeometry.setWidth(MAX(10,e->x()/ratiox-resizingWP->framegeometry.x()));
-        resizingWP->geometry.setWidth(MAX(10,e->x()/ratiox-resizingWP->geometry.x()));
-        resizingWP->framegeometry.setHeight(MAX(10,(e->y()-getHeaderHeight())/ratioy-resizingWP->framegeometry.y()));
-        resizingWP->geometry.setHeight(MAX(10,(e->y()-getHeaderHeight())/ratioy-resizingWP->geometry.y()));
         printf("pos %dx%d\n",e->x(),e->y());
         printf("framegeometry %dx%d+%dx%d\n",resizingWP->framegeometry.x()
                ,resizingWP->framegeometry.y()
                ,resizingWP->framegeometry.width()
                ,resizingWP->framegeometry.height()
               );
-        
+#endif        
         update();
         return;
     };
@@ -608,30 +626,26 @@ void Desktop::mouseMoveEvent (QMouseEvent *e)
 
 void Desktop::mouseReleaseEvent ( QMouseEvent *e )
 {
-//#ifdef DESKTOPDEBUG
+#ifdef DESKTOPDEBUG
     printf("[%d]releaseMouse\n",id);
-//#endif
+#endif
     if (resizing)
     {
-	WindowProperties *resizingWP=window_list->at(resizingWPidx);
+	WindowProperties *resizingWP=getWindowProperties(resizingWin);
 	if (resizingWP==0L) {resizing=false;releaseMouse();return;};
-	printf("res\n");
 	KWM::setGeometry(resizingWP->id,resizingWP->geometry);
-	printf("res\n");
         resizing=false;
         resizingWP=0L;
         releaseMouse();
 	return;
     };
 
-printf("nores\n");
-
     if (mousepressed) 
     {
 #ifdef DESKTOPDEBUG
 	printf("switch to %d\n",id);
 #endif
-	emit switchToDesktop(id);
+	if (use1ClickMode) emit switchToDesktop(id);
 	mousepressed=false;
 
 // Next code may be a little reiterative, but sometimes KPager don't
@@ -661,15 +675,12 @@ void Desktop::mousePressEvent ( QMouseEvent *e )
     };
     if (e->button()==MidButton) 
     {
-        resizing=false;
         bool ok;
 	WindowProperties *resizingWP=windowAtPosition(&e->pos(),&ok);
-	if (resizingWP==0L) return;
-	resizingWPidx=window_list->at();
+	if (resizingWP==0L) { resizing=false; return; };
+	resizingWin=resizingWP->id;
 	resizing=true;
-	printf("a\n");
 	grabMouse();
-	printf("b\n");
         return;
     };
     if (e->button()==RightButton)
@@ -1134,3 +1145,4 @@ void Desktop::setDrawMode(int mode)
 
 KWMModuleApplication *Desktop::kwmmapp=NULL;
 Window Desktop::hilitwin=0;
+bool Desktop::use1ClickMode=true;

@@ -56,6 +56,7 @@ private:
     QWidget *desktopContainer;
     bool visibleGlobalDesktop;
     bool use2Rows;
+    bool use1ClickMode;
     int drawMode;
     
     KTriangleButton *left;
@@ -89,7 +90,8 @@ public:
 
     bool areArrowsVisible(void) { return right->isVisible(); }
     bool is2Rows(void) { return use2Rows; }
-   
+    bool is1ClickMode(void) { return Desktop::use1ClickMode; }  
+ 
     int getNumberOfDesktops(void) { return numberofDesktops; }; 
     char *getDesktopName(int i); 
 
@@ -116,6 +118,7 @@ public slots:
     void switchToDesktop(int i);
     void updateDesk(int i);
     void toggle2Rows();
+    void toggle1ClickMode();
 
 };
 

@@ -95,6 +95,9 @@ KPager::KPager(KWMModuleApplication *kwmmapp,const char *name)
     m_options->insertItem(i18n("&2 Rows"), this, SLOT(options_2Rows()));
     m_options->setId(2,2);
     m_options->setItemChecked(2,FALSE);
+    m_options->insertItem(i18n("One Click change Desktop"), this, SLOT(options_oneClickMode()));
+    m_options->setId(3,3);
+    m_options->setItemChecked(3,TRUE);
     m_options->insertSeparator();
     m_drawmode = new QPopupMenu;
     m_drawmode->setCheckable( TRUE );
@@ -224,6 +227,14 @@ void KPager::options_2Rows()
     kapp->getConfig()->sync();
 };
 
+void KPager::options_oneClickMode()
+{
+    kpagerclient->toggle1ClickMode();
+    if (kpagerclient->is1ClickMode()) m_options->setItemChecked(3,TRUE);
+        else m_options->setItemChecked(3,FALSE);
+    kapp->getConfig()->writeEntry("use1ClickToChangeDesktop",kpagerclient->is1ClickMode());
+    kapp->getConfig()->sync();
+};
 
 void KPager::options_drawPlain()
 {
@@ -313,7 +324,18 @@ void KPager::readProperties(KConfig *kcfg)
         if (kpagerclient->is2Rows())
             options_2Rows();
     }
-        
+       
+    if (kcfg->readBoolEntry("use1ClickToChangeDesktop"))
+    {
+        if (!kpagerclient->is1ClickMode())
+            options_oneClickMode();
+    }
+    else
+    {
+        if (kpagerclient->is1ClickMode())
+            options_oneClickMode();
+    }
+ 
 }
 
 QPopupMenu *KPager::getOptionlikeMenu(void)

@@ -678,8 +678,13 @@ void KPagerClient::toggle2Rows()
 {
     use2Rows=(use2Rows)?false:true;
     updateRects();
-    
 }
+
+void KPagerClient::toggle1ClickMode()
+{
+    Desktop::use1ClickMode=(Desktop::use1ClickMode)?false:true;
+}
+
 
 void KPagerClient::updateDesk(int i)
 {
