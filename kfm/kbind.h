@@ -11,7 +11,6 @@
 #include <Kconfig.h>
 
 #include "kioserver.h"
-#include "kpixmap.h"
 
 // A Hack, since KConfig has no constructor taking only a filename
 class KFMConfig : public KConfig
@@ -192,7 +191,7 @@ public:
      * Returns the pixmap that is associated with this kind of
      * FileType.
      */
-    virtual KPixmap& getPixmap( const char *_url );
+    virtual QPixmap& getPixmap( const char *_url );
     /// Return a pointer to the default binding.
     /**
       The return may be 0. In this case the user did not specify
@@ -328,7 +327,7 @@ protected:
     /*********************************************************
      * The pixmap used for the icon.
      */
-    KPixmap pixmap;
+    QPixmap pixmap;
 
     /// Holds the default binding
     /**
@@ -391,7 +390,7 @@ public:
       WARNING: This function is NOT reentrant. Copy the returned
       pixmap before calling the function again.
       */
-    virtual KPixmap& getPixmap( const char *_url );
+    virtual QPixmap& getPixmap( const char *_url );
 
     virtual QString getComment( const char *_url );
     
@@ -432,7 +431,7 @@ public:
      * WARNING: This function is NOT reentrant. Copy the returned
      * pixmap before calling the function again.
      */
-    virtual KPixmap& getPixmap( const char *_url );
+    virtual QPixmap& getPixmap( const char *_url );
 
     /// Returns this file types comment.
     /**

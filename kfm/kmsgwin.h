@@ -6,8 +6,6 @@
 #include <qlabel.h>
 #include <qframe.h>
 
-#include <kpixmap.h>
-
 
 /// KMsgWin
 /** A message box API for the KDE project. KMsgWin provides a Windows - lookalike message- or
@@ -54,7 +52,7 @@ protected:
 
     void        initMe(const char *caption, const char *message, const char *b1text,
                        const char *b2text, const char *b3text, const char *b4text,
-                       const KPixmap & icon = 0);
+                       const QPixmap & icon = 0);
 
 public slots:
     void b1Pressed();

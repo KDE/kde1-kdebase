@@ -8,9 +8,6 @@
 #include <qlined.h>
 #include <qstring.h>
 
-#include <kpixmap.h>
-
-
 class KRenameWin : public QDialog
 {
     Q_OBJECT;

@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <qpixmap.h>
 #include "kmsgwin.moc"
 
 KMsgWin::KMsgWin(QWidget *parent, const char *caption, const char *message, int type,
@@ -8,7 +11,7 @@ KMsgWin::KMsgWin(QWidget *parent, const char *caption, const char *message, int 
     int icon;
     
     static int icons_initialized = 0;
-    static KPixmap icons[4];
+    static QPixmap icons[4];
 
     if( !icons_initialized )
     {
@@ -57,7 +60,7 @@ KMsgWin::KMsgWin(QWidget *parent, const char *caption, const char *message, int 
 
 void KMsgWin::initMe(const char *caption, const char *message,
                      const char *b1text, const char *b2text, const char *b3text, const char *b4text,
-                    const KPixmap & icon)
+                    const QPixmap & icon)
 {
     setCaption(caption);
     

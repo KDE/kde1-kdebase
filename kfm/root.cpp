@@ -415,7 +415,7 @@ void KRootWidget::dropUpdateIcons( int _x, int _y )
 	    if ( icon == 0L )
 	    {
 		KFileType *typ = KFileType::findType( file.data() );
-		KPixmap pix = typ->getPixmap( file.data() );
+		QPixmap pix = typ->getPixmap( file.data() );
 		KRootIcon *icon = new KRootIcon( typ->getPixmapFile( file.data() ), file, _x - pix.width() / 2,
 						 _y - pix.height() / 2 );
 		icon_list.append( icon );

@@ -225,7 +225,7 @@ private:
 	bool   showStatusBar;
 	bool   showLocationBar;
 
-	KPixmap toolbarPixmaps[16];
+	QPixmap toolbarPixmaps[16];
 	QString fullURL;
 	QString currentURL;
 	QString currentInfo;

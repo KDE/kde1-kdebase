@@ -38,6 +38,9 @@ TARGET	=	kfontmanager
 
 all: $(TARGET)
 
+Makefile: Makefile.in
+	cd .. && CONFIG_FILES=kfontmanager/$@ CONFIG_HEADERS= $(SHELL) ./config.status
+
 $(TARGET): $(SOURCES) $(SRCMETA) $(OBJECTS) $(HEADER)
 	$(CXX) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
 
@@ -47,7 +50,7 @@ clean:
 	-rm -f *.o *.bak *~ *% #*
 	-rm -f $(SRCMETA) $(TARGET)
 
-install:
+install: all
 	[ -d $(BINDIR) ] || $(INSTALL_DIR) $(BINDIR)
 	$(INSTALL) $(TARGET) $(BINDIR)
 	[ -d $(DOCSDIR) ] || $(INSTALL_DIR) $(DOCSDIR)

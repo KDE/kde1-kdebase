@@ -35,7 +35,8 @@ public:
       '_x' and '_y' are the coordinates of the drop.
       */
     KIORootJob( KRootWidget * _root, int _x, int _y );
-    
+    ~KIORootJob() {};
+ 
 public slots:
     /// Gets notify events
     /**
@@ -133,7 +134,7 @@ protected:
     QString url;
     /// This is only the filename with no path in front of it.
     QString file;
-    KPixmap pixmap;
+    QPixmap pixmap;
     /// The filename of the currently displayed pixmap.
     QString pixmapFile;
     QBitmap mask;

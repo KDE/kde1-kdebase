@@ -21,7 +21,6 @@
 #include <qlistbox.h>
 
 #include <kurl.h>
-#include <kpixmap.h>
 
 class Properties;
 
@@ -214,7 +213,7 @@ protected:
     QString termStr;
     QString termOptionsStr;
 
-    KPixmap pixmap;
+    QPixmap pixmap;
     QString pixmapFile;
 };
 
@@ -251,7 +250,7 @@ protected:
     QString URLStr;
     QString iconStr;
 
-    KPixmap pixmap;
+    QPixmap pixmap;
     QString pixmapFile;
 };
 
@@ -287,10 +286,10 @@ protected:
     QString wallStr;
     QString iconStr;
 
-    KPixmap pixmap;
+    QPixmap pixmap;
     QString pixmapFile;
 
-    KPixmap wallPixmap;
+    QPixmap wallPixmap;
     QString wallFile;
 
 };
@@ -377,7 +376,7 @@ protected:
     QString iconStr;
     QString appStr;
 
-    KPixmap pixmap;
+    QPixmap pixmap;
     QString pixmapFile;
 };
 

@@ -102,7 +102,7 @@ const char* KFolderType::getPixmapFile( const char *_url )
     return pixmapFile2.data();
 }
 
-KPixmap& KFolderType::getPixmap( const char *_url )
+QPixmap& KFolderType::getPixmap( const char *_url )
 {
     getPixmapFile( _url );
     if ( pixmapFile2.isNull() )
@@ -510,7 +510,7 @@ QString KDELnkFileType::getComment( const char *_url )
     return QString( erg.data() );
 }
 
-KPixmap& KDELnkFileType::getPixmap( const char *_url )
+QPixmap& KDELnkFileType::getPixmap( const char *_url )
 {
     getPixmapFile( _url );
     pixmap.load( pixmap_file );
@@ -1166,7 +1166,7 @@ void KFileType::append( KFileBind *_bind )
     bindings.append( _bind );
 }
 
-KPixmap& KFileType::getPixmap( const char *_url )
+QPixmap& KFileType::getPixmap( const char *_url )
 {
     if ( pixmap.isNull() )
 	pixmap.load( pixmap_file );

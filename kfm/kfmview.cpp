@@ -40,7 +40,7 @@ void KFileView::dndMouseMoveEvent( QMouseEvent * _mouse )
 	QStrList l;
 	getSelected( l );
 
-	KPixmap pixmap;
+	QPixmap pixmap;
 
 	// Do we drag multiple files ?
 	if ( l.count() == 0 )

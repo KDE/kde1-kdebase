@@ -301,7 +301,7 @@ void KFileWindow::enableToolbarButton( int id, bool enable )
 void KFileWindow::initToolBar()
 {
     QString file, path;
-    KPixmap pixmap;
+    QPixmap pixmap;
     toolbar = new KToolBar(this, "kfmwin-toolbar");
     path = KFileType::getIconPath() + QString("/toolbar/");
 

@@ -46,6 +46,9 @@ TARGET = kdehelp
 
 all: $(TARGET) helpsearch helpindex
 
+Makefile: Makefile.in
+	cd .. && CONFIG_FILES=kdehelp/$@ CONFIG_HEADERS= $(SHELL) ./config.status
+
 $(TARGET): $(SRCMETA) $(OBJS)
 	$(CXX) -o $(TARGET) $(OBJS) $(LDFLAGS)
 
@@ -54,7 +57,7 @@ helpsearch:
 helpindex:
 	( cd index && $(MAKE)  all)  
 
-install:
+install: all
 	$(INSTALL_DIR) $(BINDIR)
 	$(INSTALL) $(TARGET) $(BINDIR)
 	(cd doc && $(MAKE) install)

@@ -9,6 +9,7 @@
 #define __BOOKMARK_H__
 
 #include "html.h"
+#include <qtstream.h>
 
 class KBookmark
 {
