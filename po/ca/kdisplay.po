@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay\n"
-"POT-Creation-Date: 1998-12-05 01:14+0100\n"
+"POT-Creation-Date: 1998-12-08 01:17+0100\n"
 "PO-Revision-Date: 1998-12-05 13:16+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -17,218 +17,214 @@ msgstr ""
 msgid "Enter new desktop name"
 msgstr "Entreu el nom del nou escriptori"
 
-#: backgnd.cpp:110 backgnd.cpp:151
+#: backgnd.cpp:110 backgnd.cpp:162
 msgid "Desktop"
 msgstr "Escriptori"
 
-#: backgnd.cpp:173
+#: backgnd.cpp:184
 msgid "&Rename ..."
 msgstr "&Renombra ..."
 
-#: backgnd.cpp:184
+#: backgnd.cpp:195
 msgid "&Common Background"
 msgstr "Fons &comú"
 
-#: backgnd.cpp:212 colorscm.cpp:82
+#: backgnd.cpp:223 colorscm.cpp:82
 msgid "Colors"
 msgstr "Colors"
 
-#: backgnd.cpp:239
+#: backgnd.cpp:250
 msgid "&One Color"
 msgstr "&Un Color"
 
-#: backgnd.cpp:256
+#: backgnd.cpp:267
 msgid "&Two Color"
 msgstr "&Dos Colors"
 
-#: backgnd.cpp:275
+#: backgnd.cpp:286
 msgid "Set&up ..."
 msgstr "&Valors ..."
 
-#: backgnd.cpp:284
+#: backgnd.cpp:295
 msgid "Wallpaper"
 msgstr "Paper pintat"
 
-#: backgnd.cpp:319 backgnd.cpp:580 backgnd.cpp:594 backgnd.cpp:1204
-#: backgnd.cpp:1358 backgnd.cpp:1896
+#: backgnd.cpp:325 backgnd.cpp:593 backgnd.cpp:607 backgnd.cpp:1217
+#: backgnd.cpp:1371 backgnd.cpp:1909
 msgid "No wallpaper"
 msgstr "Sense paper pintat"
 
-#: backgnd.cpp:351
+#: backgnd.cpp:358
 msgid "&Browse..."
 msgstr "&Fulleja..."
 
-#: backgnd.cpp:359
-msgid "Mode:"
-msgstr "Mode:"
-
 #: backgnd.cpp:366
+msgid "Arrangement:"
+msgstr ""
+
+#: backgnd.cpp:373
 msgid "Tiled"
 msgstr "Mosaic"
 
-#: backgnd.cpp:367
+#: backgnd.cpp:374
 msgid "Mirrored"
 msgstr "Emmirallat"
 
-#: backgnd.cpp:368
+#: backgnd.cpp:375
 msgid "Center Tiled"
 msgstr "Mosaic centrat"
 
-#: backgnd.cpp:369
+#: backgnd.cpp:376
 msgid "Centred"
 msgstr "Centrat"
 
-#: backgnd.cpp:370
+#: backgnd.cpp:377
 msgid "Centred Brick"
 msgstr "Maó centrat"
 
-#: backgnd.cpp:371
+#: backgnd.cpp:378
 msgid "Centred Warp"
 msgstr "Ordit centrat"
 
-#: backgnd.cpp:372
+#: backgnd.cpp:379
 msgid "Centred Maxpect"
 msgstr "Maxpect centrat"
 
-#: backgnd.cpp:373
+#: backgnd.cpp:380
 msgid "Symmetrical Tiled"
 msgstr "Mosaic simètric"
 
-#: backgnd.cpp:374
+#: backgnd.cpp:381
 msgid "Symmetrical Mirrored"
 msgstr "Emmirallat simètric"
 
-#: backgnd.cpp:375
+#: backgnd.cpp:382
 msgid "Scaled"
 msgstr "Escalat"
 
-#: backgnd.cpp:390
+#: backgnd.cpp:397
 msgid "Ra&ndom"
 msgstr "A&leatori"
 
-#: backgnd.cpp:399
+#: backgnd.cpp:406
 msgid "Setu&p..."
 msgstr "&Valors ..."
 
-#: backgnd.cpp:407
+#: backgnd.cpp:416
 msgid "&Dock into the panel"
 msgstr "&Encastat al panell"
 
-#: backgnd.cpp:431
-msgid "Cache size:"
+#: backgnd.cpp:441
+#, fuzzy
+msgid "Cache size (kB):"
 msgstr "Mida de cau:"
 
-#: backgnd.cpp:447
-msgid "kb"
-msgstr "kb"
-
-#: backgnd.cpp:1325
+#: backgnd.cpp:1338
 msgid "Desktop names"
 msgstr "Noms d'escriptoris"
 
-#: backgnd.cpp:1370
+#: backgnd.cpp:1383
 msgid "File error"
 msgstr "Error de fitxer"
 
-#: backgnd.cpp:1371
+#: backgnd.cpp:1384
 msgid "Can't load image file"
 msgstr "No es pot carregar el fitxer imatge"
 
-#: backgnd.cpp:1394 backgnd.cpp:1866
+#: backgnd.cpp:1407 backgnd.cpp:1879
 msgid "Unsupported URL"
 msgstr "URL no suportada"
 
-#: backgnd.cpp:1395 backgnd.cpp:1867
+#: backgnd.cpp:1408 backgnd.cpp:1880
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
-msgstr ""
-"Ho sento, aquest tipus d'URL no està suportada pel mòdul KDE Display"
+msgstr "Ho sento, aquest tipus d'URL no està suportada pel mòdul KDE Display"
 
-#: backgnd.cpp:1426
+#: backgnd.cpp:1439
 msgid "Two color backgrounds"
 msgstr "Fons de dos colors"
 
-#: backgnd.cpp:1463
+#: backgnd.cpp:1476
 msgid "Blend colors from &top to bottom"
 msgstr "Barreja colors de &dalt a baix"
 
-#: backgnd.cpp:1469
+#: backgnd.cpp:1482
 msgid "Blend colors from &right to left"
 msgstr "Barreja colors de d&reta a esquerra"
 
-#: backgnd.cpp:1475
+#: backgnd.cpp:1488
 msgid "Use &pattern"
 msgstr "Usa &patró"
 
-#: backgnd.cpp:1502
+#: backgnd.cpp:1515
 msgid "Preview"
 msgstr "Vista prèvia"
 
-#: backgnd.cpp:1513
+#: backgnd.cpp:1526
 msgid "Pattern &name"
 msgstr "&Nom de patró"
 
-#: backgnd.cpp:1552
+#: backgnd.cpp:1565
 msgid "Current"
 msgstr "Actual"
 
-#: backgnd.cpp:1612
+#: backgnd.cpp:1625
 msgid "Filled"
 msgstr "Farcit"
 
-#: backgnd.cpp:1615
+#: backgnd.cpp:1628
 msgid "Fish net"
 msgstr "Xarxa de pesca"
 
-#: backgnd.cpp:1618
+#: backgnd.cpp:1631
 msgid "Triangles"
 msgstr "Triangles"
 
-#: backgnd.cpp:1621
+#: backgnd.cpp:1634
 msgid "Flowers"
 msgstr "Flors"
 
-#: backgnd.cpp:1624
+#: backgnd.cpp:1637
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1627
+#: backgnd.cpp:1640
 msgid "Cobbled Pavement"
 msgstr "Llambordes"
 
-#: backgnd.cpp:1693
+#: backgnd.cpp:1706
 msgid "Random mode setup"
 msgstr "Valors mode aleatori"
 
-#: backgnd.cpp:1699
+#: backgnd.cpp:1712
 msgid "Pick files from &directory"
 msgstr "Agafa els fitxers del &directori"
 
-#: backgnd.cpp:1713
+#: backgnd.cpp:1726
 msgid "&Browse ..."
 msgstr "&Fulleja..."
 
-#: backgnd.cpp:1734
+#: backgnd.cpp:1747
 msgid "Timer Delay in seconds :"
 msgstr "Retard de l'alarma en segons :"
 
-#: backgnd.cpp:1746
+#: backgnd.cpp:1759
 msgid "In &order"
 msgstr "En &ordre"
 
-#: backgnd.cpp:1763
+#: backgnd.cpp:1776
 msgid "Desktops :"
 msgstr "Escriptoris :"
 
-#: backgnd.cpp:1802
+#: backgnd.cpp:1815
 msgid "&Add"
 msgstr "&Afegeix"
 
-#: backgnd.cpp:1973
+#: backgnd.cpp:1986
 msgid "Directory error"
 msgstr "Error de directori"
 
-#: backgnd.cpp:1974
+#: backgnd.cpp:1987
 msgid "Selected directory doesn't exists"
 msgstr "El directori seleccionat no existeix"
 
@@ -426,47 +422,51 @@ msgstr "&Alta"
 msgid "Low"
 msgstr "Baixa"
 
-#: general.cpp:220
+#: general.cpp:222
 msgid "Fonts etc."
 msgstr "Fonts etc."
 
-#: general.cpp:228
+#: general.cpp:230
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "&Dibuixa estris a l'estil Windows 95"
 
-#: general.cpp:242
+#: general.cpp:244
 msgid "&Apply style to non-KDE apps"
 msgstr "&Aplica estil a les aplicacions no KDE"
 
-#: general.cpp:255
+#: general.cpp:258
+msgid "&Menubar on top of the screen in the style of MacOS"
+msgstr ""
+
+#: general.cpp:273
 msgid "Desktop fonts"
 msgstr "Fonts d'escriptori"
 
-#: general.cpp:267
+#: general.cpp:285
 msgid "General font"
 msgstr "Font general"
 
-#: general.cpp:272
+#: general.cpp:290
 msgid "Fixed font"
 msgstr "Font fixa"
 
-#: general.cpp:278
+#: general.cpp:296
 msgid "Window title font"
 msgstr "Font del títol de la finestra"
 
-#: general.cpp:283
+#: general.cpp:301
 msgid "Panel button font"
 msgstr "Font botons panell"
 
-#: general.cpp:288
+#: general.cpp:306
 msgid "Panel clock font"
 msgstr "Font rellotge panell"
 
-#: general.cpp:318
+#: general.cpp:336
 msgid "Sample text"
 msgstr "Text de mostra"
 
-#: general.cpp:326
+#: general.cpp:344
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
@@ -543,3 +543,9 @@ msgstr "omissió"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "qualsevol"
+
+#~ msgid "Mode:"
+#~ msgstr "Mode:"
+
+#~ msgid "kb"
+#~ msgstr "kb"

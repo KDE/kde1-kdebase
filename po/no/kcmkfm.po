@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmfm\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-12-08 01:17+0100\n"
 "PO-Revision-Date: 1998-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -13,18 +13,18 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:34
+#: main.cpp:36
 msgid "&Font"
 msgstr "&Skrifttype"
 
-#: main.cpp:36
+#: main.cpp:38
 msgid "&Color"
 msgstr "&Farge"
 
-#: main.cpp:63
+#: main.cpp:65
 msgid "usage: kcmkfm [-init | {font,color}]\n"
 msgstr "bruk: kcmkfm [-init | {font,color}]\n"
 
-#: main.cpp:104
+#: main.cpp:110
 msgid "KFM Configuration"
 msgstr "KFM-konfigurasjon"

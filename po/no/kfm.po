@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfm\n"
-"POT-Creation-Date: 1998-12-07 01:11+0100\n"
+"POT-Creation-Date: 1998-12-08 01:17+0100\n"
 "PO-Revision-Date: 1998-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:948 kbind.cpp:960 kbind.cpp:970 kfmgui.cpp:214 kfmgui.cpp:1038
+#: kbind.cpp:949 kbind.cpp:961 kbind.cpp:971 kfmgui.cpp:214 kfmgui.cpp:1034
 msgid "Folder"
 msgstr "Mappe"
 
@@ -211,10 +211,12 @@ msgid "Save Settings for this &URL"
 msgstr "Lagre innstillinger for denne &URL"
 
 #: kfmgui.cpp:416
-msgid "Set Preferen&ces..."
-msgstr "Sett &preferanser..."
+#, fuzzy
+msgid "&Configure Browser..."
+msgstr "&Bla gjennom..."
 
-#: kfmgui.cpp:456
+#: kfmgui.cpp:452
+#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -225,7 +227,7 @@ msgid ""
 "Proxy Manager by Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de\n"
 "\n"
-"Bug reports and patches to David Faure\n"
+"Current maintainer: David Faure\n"
 "faure@kde.org"
 msgstr ""
 "Forfatter: Torben Weis\n"
@@ -239,47 +241,47 @@ msgstr ""
 "Feilrapporter og programfikser sendes til David Faure\n"
 "faure@kde.org"
 
-#: kfmgui.cpp:469
+#: kfmgui.cpp:465
 msgid "&Go"
 msgstr "&Gå"
 
-#: kfmgui.cpp:470
+#: kfmgui.cpp:466
 msgid "&Bookmarks"
 msgstr "&Bokmerker"
 
-#: kfmgui.cpp:471
+#: kfmgui.cpp:467
 msgid "&Cache"
 msgstr "&Mellomlager"
 
-#: kfmgui.cpp:498 main.cpp:239
+#: kfmgui.cpp:494 main.cpp:239
 msgid "Up"
 msgstr "Opp"
 
-#: kfmgui.cpp:508 main.cpp:241
+#: kfmgui.cpp:504 main.cpp:241
 msgid "Forward"
 msgstr "Forover"
 
 # kfmtree.cpp:396
-#: kfmgui.cpp:513
+#: kfmgui.cpp:509
 msgid "Home"
 msgstr "Hjem"
 
 # kfmgui.cpp:569
-#: kfmgui.cpp:570
+#: kfmgui.cpp:566
 msgid "Could not load icon\n"
 msgstr "Kunne ikke laste ikon\n"
 
 #: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:305
-#: kbind.cpp:391 kbind.cpp:443 kbind.cpp:1598 kbind.cpp:1606 kbind.cpp:1624
-#: kbind.cpp:1643 kbind.cpp:1702 kbind.cpp:1714 kbind.cpp:1741 kbind.cpp:1756
-#: kbind.cpp:1776 kbind.cpp:1788 kbind.cpp:1804 kbind.cpp:1940 kbind.cpp:1952
-#: kbind.cpp:1997 kbind.cpp:2039 kfmexec.cpp:60 kfmexec.cpp:92
-#: kfmexec/main.cpp:47 kfmgui.cpp:571 kfmgui.cpp:730 kfmman.cpp:343
+#: kbind.cpp:391 kbind.cpp:443 kbind.cpp:1599 kbind.cpp:1607 kbind.cpp:1625
+#: kbind.cpp:1644 kbind.cpp:1703 kbind.cpp:1715 kbind.cpp:1742 kbind.cpp:1757
+#: kbind.cpp:1777 kbind.cpp:1789 kbind.cpp:1805 kbind.cpp:1941 kbind.cpp:1953
+#: kbind.cpp:1998 kbind.cpp:2040 kfmexec.cpp:60 kfmexec.cpp:92
+#: kfmexec/main.cpp:47 kfmgui.cpp:567 kfmgui.cpp:726 kfmman.cpp:343
 #: kfmman.cpp:1095 kfmman.cpp:1311 kfmman.cpp:1337 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
-#: kfmprops.cpp:1141 kfmprops.cpp:1473 kfmprops.cpp:1705 kfmprops.cpp:1890
-#: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
-#: kfmserver.cpp:303 kfmserver.cpp:311 kfmtree.cpp:237 kfmtree.cpp:360
+#: kfmprops.cpp:1141 kfmprops.cpp:1484 kfmprops.cpp:1716 kfmprops.cpp:1901
+#: kfmserver.cpp:40 kfmserver.cpp:163 kfmserver.cpp:243 kfmserver.cpp:290
+#: kfmserver.cpp:299 kfmserver.cpp:307 kfmtree.cpp:237 kfmtree.cpp:360
 #: kfmtree.cpp:391 kfmtree.cpp:397 kfmtree.cpp:403 kfmview.cpp:390
 #: kfmview.cpp:406 kfmview.cpp:425 kfmview.cpp:494 kfmview.cpp:500
 #: kfmview.cpp:506 kfmview.cpp:612 kfmview.cpp:616 kfmview.cpp:655
@@ -287,76 +289,76 @@ msgstr "Kunne ikke laste ikon\n"
 #: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278 kiojob.cpp:297
 #: kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:557 kiojob.cpp:797
 #: kiojob.cpp:828 kiojob.cpp:869 kiojob.cpp:1679 krenamewin.cpp:120
-#: root.cpp:886 root.cpp:1147 root.cpp:1165 root.cpp:1171 root.cpp:1177
-#: root.cpp:1258 root.cpp:1771 root.cpp:1796
+#: root.cpp:902 root.cpp:1163 root.cpp:1181 root.cpp:1187 root.cpp:1193
+#: root.cpp:1274 root.cpp:1787 root.cpp:1812
 msgid "KFM Error"
 msgstr "KFM Feil"
 
 # kfmexec.cpp:59 kfmgui.cpp:709 kfmman.cpp:1043
-#: kfmexec.cpp:59 kfmgui.cpp:729 kfmman.cpp:1094
+#: kfmexec.cpp:59 kfmgui.cpp:725 kfmman.cpp:1094
 msgid "Malformed URL\n"
 msgstr "URL på feil form\n"
 
 # kfmgui.cpp:869
-#: kfmgui.cpp:916
+#: kfmgui.cpp:912
 msgid "Select files:"
 msgstr "Velg filer:"
 
-#: kfmgui.cpp:971
+#: kfmgui.cpp:967
 msgid "Find Complete"
 msgstr "Finn fullført"
 
-#: kfmgui.cpp:972
+#: kfmgui.cpp:968
 msgid "Continue search from the top of the page?"
 msgstr "Fortsett søk fra toppen av siden?"
 
 # kfmgui.cpp:886
-#: kfmgui.cpp:990
+#: kfmgui.cpp:986
 msgid "&Edit Bookmarks..."
 msgstr "&Endre bokmerker..."
 
-#: kfmgui.cpp:1000
+#: kfmgui.cpp:996
 msgid "&Add Bookmark"
 msgstr "&Legg til bokmerke"
 
-#: kfmgui.cpp:1030 kfmgui.cpp:1037
+#: kfmgui.cpp:1026 kfmgui.cpp:1033
 msgid "New "
 msgstr "Ny "
 
-#: kfmgui.cpp:1086
+#: kfmgui.cpp:1082
 msgid "&Up"
 msgstr "&Opp"
 
-#: kfmgui.cpp:1088
+#: kfmgui.cpp:1084
 msgid "&Back"
 msgstr "&Tilbake"
 
-#: kfmgui.cpp:1090
+#: kfmgui.cpp:1086
 msgid "&Forward"
 msgstr "&Forover"
 
-#: kfmgui.cpp:1092
+#: kfmgui.cpp:1088
 msgid "&Home"
 msgstr "&Hjem"
 
-#: kfmgui.cpp:1149 kfmgui.cpp:1321 kfmjob.cpp:37 kfmman.cpp:226
+#: kfmgui.cpp:1145 kfmgui.cpp:1317 kfmjob.cpp:37 kfmman.cpp:226
 #: kfmtree.cpp:392 kfmview.cpp:426 kfmview.cpp:495 kfmview.cpp:703
-#: kiojob.cpp:87 root.cpp:1166
+#: kiojob.cpp:87 root.cpp:1182
 msgid "ERROR: Malformed URL"
 msgstr "FEIL: Misdannet URL"
 
 # kfmgui.cpp:1139 kfmserver.cpp:178
-#: kfmgui.cpp:1275 kfmserver.cpp:188
+#: kfmgui.cpp:1271 kfmserver.cpp:184
 msgid "Open Location:"
 msgstr "Åpne ...:"
 
 # kfmgui.cpp:1195
-#: kfmgui.cpp:1332
+#: kfmgui.cpp:1328
 msgid "KFM Confirm"
 msgstr "KFM Bekreftelse"
 
 # kfmgui.cpp:1196
-#: kfmgui.cpp:1333
+#: kfmgui.cpp:1329
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -365,12 +367,12 @@ msgstr ""
 "Du vil miste viktige funksjoner"
 
 # kfmgui.cpp:1320
-#: kfmgui.cpp:1443
+#: kfmgui.cpp:1439
 msgid "Document: Done"
 msgstr "Dokument: Ferdig"
 
 # kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1112
-#: kfmview.cpp:391 root.cpp:887
+#: kfmview.cpp:391 root.cpp:903
 msgid "ERROR: You may only drop URLs"
 msgstr "FEIL: Du kan bare droppe URLer"
 
@@ -382,12 +384,12 @@ msgstr "FEIL: Dropp over en misdannet URL"
 # kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:412
 # kfmview.cpp:606 krenamewin.cpp:20 root.cpp:1147
 #: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:430 kfmview.cpp:466
-#: kfmview.cpp:746 krenamewin.cpp:20 root.cpp:1209
+#: kfmview.cpp:746 krenamewin.cpp:20 root.cpp:1225
 msgid "KFM Warning"
 msgstr "KFM Advarsel"
 
 # kfmtree.cpp:357 kfmview.cpp:413 kfmview.cpp:607 root.cpp:1148
-#: kfmtree.cpp:431 kfmview.cpp:467 kfmview.cpp:747 root.cpp:1210
+#: kfmtree.cpp:431 kfmview.cpp:467 kfmview.cpp:747 root.cpp:1226
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -397,12 +399,12 @@ msgstr ""
 "Det er ikke mulig å få dem tilbake."
 
 # kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1112
-#: kfmtree.cpp:398 kfmview.cpp:501 kfmview.cpp:711 root.cpp:1172
+#: kfmtree.cpp:398 kfmview.cpp:501 kfmview.cpp:711 root.cpp:1188
 msgid "ERROR: You dropped a URL over itself"
 msgstr "FEIL: Du droppet en URL over seg selv"
 
 # kfmtree.cpp:330 kfmview.cpp:452 kfmview.cpp:583 root.cpp:1118
-#: kfmtree.cpp:404 kfmview.cpp:507 kfmview.cpp:719 root.cpp:1178
+#: kfmtree.cpp:404 kfmview.cpp:507 kfmview.cpp:719 root.cpp:1194
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "FEIL: Du droppet en katalog over et av sine barn"
 
@@ -412,7 +414,7 @@ msgid "Open With:"
 msgstr "Åpne Med:"
 
 # kfmview.cpp:485 root.cpp:1057
-#: kfmview.cpp:554 root.cpp:1109
+#: kfmview.cpp:554 root.cpp:1125
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "FEIL: Kan ikke åpne egenskaper for flere filer samtidig"
 
@@ -443,12 +445,12 @@ msgstr ""
 "skrivebordet."
 
 # kfmtree.cpp:287 kfmview.cpp:527 root.cpp:1193
-#: kfmtree.cpp:361 kfmview.cpp:656 root.cpp:1259
+#: kfmtree.cpp:361 kfmview.cpp:656 root.cpp:1275
 msgid "Could not access Trash Bin"
 msgstr "Kunne ikke få adgang til Papirkurv"
 
 # kfmview.cpp:553 root.cpp:1088
-#: kfmview.cpp:682 root.cpp:1148
+#: kfmview.cpp:682 root.cpp:1164
 msgid "Can not paste into multiple directories"
 msgstr "Kan ikke lime inn i flere kataloger"
 
@@ -503,44 +505,44 @@ msgid "No mime types installed!"
 msgstr "ingen mimetyper installert!"
 
 # kbind.cpp:425 kbind.cpp:1188
-#: kbind.cpp:440 kbind.cpp:1215
+#: kbind.cpp:440 kbind.cpp:1216
 msgid "Could not find mime type\n"
 msgstr "Kunne ikke finne mimetype\n"
 
 # kbind.cpp:697 kbind.cpp:707 kbind.cpp:1890 kbind.cpp:1891 kbind.cpp:1903
 # kbind.cpp:1905
-#: kbind.cpp:710 kbind.cpp:720 kbind.cpp:1975 kbind.cpp:1976 kbind.cpp:1988
-#: kbind.cpp:1990
+#: kbind.cpp:710 kbind.cpp:720 kbind.cpp:1976 kbind.cpp:1977 kbind.cpp:1989
+#: kbind.cpp:1991
 msgid "Mount"
 msgstr "Monter"
 
 # kbind.cpp:713 kbind.cpp:1881
-#: kbind.cpp:726 kbind.cpp:1966
+#: kbind.cpp:726 kbind.cpp:1967
 msgid "Unmount"
 msgstr "Demonter"
 
 # kbind.cpp:1187
-#: kbind.cpp:1214
+#: kbind.cpp:1215
 msgid "ERROR"
 msgstr "FEIL"
 
 # kbind.cpp:1188
-#: kbind.cpp:1215
+#: kbind.cpp:1216
 msgid "in "
 msgstr "i "
 
 # kbind.cpp:1332 kbind.cpp:1418
-#: kbind.cpp:1388 kbind.cpp:1481
+#: kbind.cpp:1389 kbind.cpp:1482
 msgid "Could not execute program\n"
 msgstr "Kunne ikke utføre program\n"
 
 # kbind.cpp:1528
-#: kbind.cpp:1597
+#: kbind.cpp:1598
 msgid "Could not find binding"
 msgstr "Kunne ikke finne tilordning"
 
 # kbind.cpp:1538
-#: kbind.cpp:1607
+#: kbind.cpp:1608
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -549,12 +551,12 @@ msgstr ""
 "Ikke et program"
 
 # kbind.cpp:1556 kbind.cpp:1573
-#: kbind.cpp:1625 kbind.cpp:1644
+#: kbind.cpp:1626 kbind.cpp:1645
 msgid "Can only start executables on local disks\n"
 msgstr "Kan bare starte programmer på lokale disker\n"
 
 # kbind.cpp:1631 kbind.cpp:1705 kbind.cpp:1856
-#: kbind.cpp:1703 kbind.cpp:1777 kbind.cpp:1941
+#: kbind.cpp:1704 kbind.cpp:1778 kbind.cpp:1942
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -563,7 +565,7 @@ msgstr ""
 "den lokale harddisken"
 
 # kbind.cpp:1641
-#: kbind.cpp:1713
+#: kbind.cpp:1714
 #, c-format
 msgid ""
 "Could not access\n"
@@ -573,22 +575,22 @@ msgstr ""
 "%s"
 
 # kbind.cpp:1670
-#: kbind.cpp:1742
+#: kbind.cpp:1743
 msgid "The \"Link=....\" entry is empty"
 msgstr "\"Link=....\"-innslaget er tomt"
 
 # kbind.cpp:1685
-#: kbind.cpp:1757
+#: kbind.cpp:1758
 msgid "The config file has no \"Type=...\" line"
 msgstr "Konfigurasjonsfilen har ikke noen \"Type=...\"-linje"
 
 # kbind.cpp:1715 kbind.cpp:1866
-#: kbind.cpp:1787 kbind.cpp:1951
+#: kbind.cpp:1788 kbind.cpp:1952
 msgid "Could not access"
 msgstr "Kunne ikke få adgang til"
 
 # kbind.cpp:1734
-#: kbind.cpp:1805
+#: kbind.cpp:1806
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -601,17 +603,17 @@ msgstr ""
 "for å løse problemet"
 
 # kbind.cpp:1822
-#: kbind.cpp:1903
+#: kbind.cpp:1904
 msgid "ERROR: No Terminal Setting"
 msgstr "FEIL: Ingen terminalinstillinger"
 
 # kbind.cpp:1913
-#: kbind.cpp:1998
+#: kbind.cpp:1999
 msgid "No mount point in *.kdelnk file"
 msgstr "Ingen monteringssted i *.kdelnk-fil"
 
 # kbind.cpp:1953
-#: kbind.cpp:2038
+#: kbind.cpp:2039
 msgid "Unknown binding"
 msgstr "Ukjent tilordning"
 
@@ -982,8 +984,8 @@ msgstr "Terminalopsjoner"
 
 # kfmprops.cpp:816 kfmprops.cpp:938 kfmprops.cpp:1381 kfmprops.cpp:1593
 # kfmprops.cpp:1769
-#: kfmprops.cpp:882 kfmprops.cpp:1011 kfmprops.cpp:1474 kfmprops.cpp:1706
-#: kfmprops.cpp:1891
+#: kfmprops.cpp:882 kfmprops.cpp:1011 kfmprops.cpp:1485 kfmprops.cpp:1717
+#: kfmprops.cpp:1902
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -1024,7 +1026,7 @@ msgid "Binary Pattern (netscape;Netscape;)"
 msgstr "Binærmønster (netscape;Netscape;)"
 
 # kfmprops.cpp:1231 kfmprops.cpp:1483
-#: kfmprops.cpp:1324 kfmprops.cpp:1575
+#: kfmprops.cpp:1324 kfmprops.cpp:1586
 msgid "Comment"
 msgstr "Kommentar"
 
@@ -1034,51 +1036,51 @@ msgid "Name ( in your language )"
 msgstr "Navn ( i ditt språk )"
 
 # kfmprops.cpp:1471
-#: kfmprops.cpp:1552
+#: kfmprops.cpp:1563
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "Mønster ( eksempel: *.html;*.HTML; )"
 
 # kfmprops.cpp:1479
-#: kfmprops.cpp:1564
+#: kfmprops.cpp:1575
 msgid "Mime Type"
 msgstr "Mimetype"
 
 # kfmprops.cpp:1490
-#: kfmprops.cpp:1593
+#: kfmprops.cpp:1604
 msgid "Default Application"
 msgstr "Standard applikasjon"
 
-#: kfmprops.cpp:1633
+#: kfmprops.cpp:1644
 msgid "<none>"
 msgstr "<ingen>"
 
 # kfmprops.cpp:1638
-#: kfmprops.cpp:1755
+#: kfmprops.cpp:1766
 msgid "Device ( /dev/fd0 )"
 msgstr "Enhet ( /dev/fd0 )"
 
 # kfmprops.cpp:1646
-#: kfmprops.cpp:1764
+#: kfmprops.cpp:1775
 msgid "Mount Point ( /floppy )"
 msgstr "Monteringssted ( /floppy )"
 
 # kfmprops.cpp:1656
-#: kfmprops.cpp:1775
+#: kfmprops.cpp:1786
 msgid "Readonly"
 msgstr "Bare lese"
 
 # kfmprops.cpp:1662
-#: kfmprops.cpp:1781
+#: kfmprops.cpp:1792
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Filsystem ( iso9660,msdos,minix,default )"
 
 # kfmprops.cpp:1672
-#: kfmprops.cpp:1792
+#: kfmprops.cpp:1803
 msgid "Mounted Icon"
 msgstr "Montertikon"
 
 # kfmprops.cpp:1676
-#: kfmprops.cpp:1797
+#: kfmprops.cpp:1808
 msgid "Unmounted Icon"
 msgstr "Umontertikon"
 
@@ -1102,7 +1104,7 @@ msgid "Do you really want to rearrange your icons ?"
 msgstr "Ønsker du virkelig å omorganisere ikonene dine?"
 
 # kfmserver.cpp:234
-#: kfmserver.cpp:244
+#: kfmserver.cpp:240
 #, c-format
 msgid ""
 "The URL\n"
@@ -1114,7 +1116,7 @@ msgstr ""
 "er misdannet"
 
 # kfmserver.cpp:285
-#: kfmserver.cpp:295
+#: kfmserver.cpp:291
 msgid ""
 "You dont have the file ~/.kde/share/apps/kfm/magic\n"
 "Authorization failed"
@@ -1123,7 +1125,7 @@ msgstr ""
 "Godkjenning mislyktes"
 
 # kfmserver.cpp:294
-#: kfmserver.cpp:304
+#: kfmserver.cpp:300
 msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
@@ -1132,7 +1134,7 @@ msgstr ""
 "Godkjenning mislyktes"
 
 # kfmserver.cpp:302
-#: kfmserver.cpp:312
+#: kfmserver.cpp:308
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
@@ -1141,7 +1143,7 @@ msgstr ""
 "ved å bruke feil passord"
 
 # root.cpp:661
-#: root.cpp:690
+#: root.cpp:706
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -1152,28 +1154,28 @@ msgstr ""
 "fra skrivebordet."
 
 # root.cpp:696
-#: root.cpp:725
+#: root.cpp:741
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Intern feil: desktopDir er misdannet"
 
 # root.cpp:707
-#: root.cpp:736
+#: root.cpp:752
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "FEIL: Kunne ikke lese skrivebordskatalog '%s'"
 
 # root.cpp:898
-#: root.cpp:935
+#: root.cpp:951
 msgid "ERROR: Can not accept drop"
 msgstr "FEIL: Kunne ikke akseptere slipp"
 
 # kfmman.cpp:1212 root.cpp:1695
-#: kfmman.cpp:1312 root.cpp:1772
+#: kfmman.cpp:1312 root.cpp:1788
 msgid "Dont know what to do."
 msgstr "Jeg vet ikke hva jeg skal gjøre."
 
 # kfmman.cpp:1238 kfmtree.cpp:164 root.cpp:1720
-#: kfmman.cpp:1338 kfmtree.cpp:238 root.cpp:1797
+#: kfmman.cpp:1338 kfmtree.cpp:238 root.cpp:1813
 msgid "Dont know what to do"
 msgstr "Jeg vet ikke hva jeg skal gjøre"
 
@@ -1708,12 +1710,12 @@ msgid "&Application"
 msgstr "&Applikasjon"
 
 # kfmprops.h:355
-#: kfmprops.h:357
+#: kfmprops.h:359
 msgid "&Binding"
 msgstr "&Tilordninger"
 
 # kfmprops.h:385
-#: kfmprops.h:387
+#: kfmprops.h:389
 msgid "De&vice"
 msgstr "&Enhet"
 
@@ -1754,3 +1756,6 @@ msgid ""
 msgstr ""
 "Syntaksfeil:\n"
 "kfmexec kommando [URLer ....]\n"
+
+#~ msgid "Set Preferen&ces..."
+#~ msgstr "Sett &preferanser..."

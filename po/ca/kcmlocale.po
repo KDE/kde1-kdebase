@@ -57,8 +57,3 @@ msgstr ""
 "Els canvis als valors d'idioma només s'apliquen a les aplicacions engegades "
 "de nou.\n"
 "Per canviar l'idioma de tots els programes, primer haureu de sortir."
-
-
-
-
-

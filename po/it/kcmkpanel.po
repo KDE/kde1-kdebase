@@ -1,5 +1,4 @@
 # KTranslator Generated File
-
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-03 22:39+0100\n"
@@ -10,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
-"X-Generator: KTranslator v 0.4.0"
+"X-Generator: KTranslator v 0.4.0\n"
 
 #: main.cpp:64
 msgid "&Panel"
@@ -24,8 +23,8 @@ msgstr "&Desktop"
 msgid "Disk &Navigator"
 msgstr "Disk &Navigator"
 
-#: main.cpp:79
 #
+#: main.cpp:79
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "utilizzo: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
@@ -113,8 +112,8 @@ msgstr "&Attesa:"
 msgid "Small"
 msgstr ""
 
-#: options.cpp:51 options.cpp:69 options.cpp:87
 #
+#: options.cpp:51 options.cpp:69 options.cpp:87
 msgid "Large"
 msgstr "Grande"
 
@@ -126,8 +125,8 @@ msgstr ""
 msgid "Auto &Hide Panel"
 msgstr "Scomparsa automatica &Pannello "
 
-#: options.cpp:67 options.cpp:85
 #
+#: options.cpp:67 options.cpp:85
 msgid "Delay:"
 msgstr "Attesa:"
 
@@ -163,8 +162,8 @@ msgstr "Altri"
 msgid "Personal &First"
 msgstr "P&rima Personale"
 
-#: options.cpp:120
 #
+#: options.cpp:120
 msgid "F&olders First"
 msgstr "Prima le &cartelle"
 
@@ -208,13 +207,13 @@ msgstr "Mostra file nascosti"
 msgid "Ignore case when sorting"
 msgstr "Ignora maiuscole nel riordinamento"
 
-#: disknav.cpp:173
 #
+#: disknav.cpp:173
 msgid "Show Shared section"
 msgstr ""
 
-#: disknav.cpp:180
 #
+#: disknav.cpp:180
 msgid "Show Personal section"
 msgstr ""
 

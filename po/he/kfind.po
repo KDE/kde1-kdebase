@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-24 00:14+0200\n"
+"POT-Creation-Date: 1998-12-01 01:14+0100\n"
 "PO-Revision-Date: 1998-12-01 HO:MI+ZONE\n"
 "Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -22,55 +22,51 @@ msgstr "תוירפס"
 msgid "Cannot open or read directory."
 msgstr "היירפסה תא חותפל וא אורל ןתינ אל"
 
-#: kfindtop.cpp:115
+#: kfindtop.cpp:118
 msgid "&Start search"
 msgstr "שופי&ח לחתה"
 
-#: kfindtop.cpp:117
+#: kfindtop.cpp:120
 msgid "S&top search"
 msgstr "שופיח &קספה"
 
-#: kfindtop.cpp:122
+#: kfindtop.cpp:125
 msgid "&Open"
 msgstr "חת&פ"
 
-#: kfindtop.cpp:124
+#: kfindtop.cpp:127
 msgid "&Add to archive"
 msgstr "ןויכראל ף&סוה"
 
-#: kfindtop.cpp:129
+#: kfindtop.cpp:132
 msgid "&Properties"
 msgstr "םינייפאמ"
 
-#: kfindtop.cpp:132
+#: kfindtop.cpp:135
 msgid "Open Containing &Folder"
 msgstr "םוקימה תיירפס תא חתפ"
 
-#: kfindtop.cpp:135
+#: kfindtop.cpp:138
 msgid "&Save Search"
 msgstr "שופיחה תואצות רומ&ש"
 
-#: kfindtop.cpp:147
-msgid "&Cut"
-msgstr "רו&זג"
-
-#: kfindtop.cpp:152
+#: kfindtop.cpp:155
 msgid "&Select All"
 msgstr "לכה רחב"
 
-#: kfindtop.cpp:154
+#: kfindtop.cpp:157
 msgid "Unse&lect All"
 msgstr "הריחב לט&ב"
 
-#: kfindtop.cpp:156
+#: kfindtop.cpp:159
 msgid "&Invert Selection"
 msgstr "הריחב ךו&פה"
 
-#: kfindtop.cpp:168
+#: kfindtop.cpp:171
 msgid "&Preferences ..."
 msgstr "...תופ&דעה"
 
-#: kfindtop.cpp:173
+#: kfindtop.cpp:176
 #, c-format
 msgid ""
 "KFind %s\n"
@@ -86,31 +82,28 @@ msgstr ""
 "<flidr@kky.zcu.cz>\n"
 "ולוק ןפיטסל תודחוימ תודות\n"
 "<coolo@kde.org>"
-#: kfindtop.cpp:193
+
+#: kfindtop.cpp:196
 msgid "Start Search"
 msgstr "שופיח לחתה"
 
-#: kfindtop.cpp:198
+#: kfindtop.cpp:201
 msgid "New Search"
 msgstr "שדח שופיח"
 
-#: kfindtop.cpp:203
+#: kfindtop.cpp:206
 msgid "Stop Search"
 msgstr "שופיח קספה"
 
-#: kfindtop.cpp:216
+#: kfindtop.cpp:219
 msgid "Add to archive"
 msgstr "ןויכראל ףסוה"
 
-#: kfindtop.cpp:226
-msgid "Properties"
-msgstr "םינייפאמ"
-
-#: kfindtop.cpp:231
+#: kfindtop.cpp:234
 msgid "Open Containing Folder"
 msgstr "ץבוקה לש הירפסה תא חתפ"
 
-#: kfindtop.cpp:236
+#: kfindtop.cpp:239
 msgid "Save Search Results"
 msgstr "שופיחה תואצות רומש"
 
@@ -130,180 +123,180 @@ msgstr "...ןויע"
 msgid "Include &subfolders"
 msgstr ""
 
-#: kftabdlg.cpp:114
+#: kftabdlg.cpp:117
 msgid " Name& Location "
 msgstr "םוקימו םש"
 
-#: kftabdlg.cpp:126
+#: kftabdlg.cpp:129
 msgid "and"
 msgstr "-"
 
-#: kftabdlg.cpp:127
+#: kftabdlg.cpp:130
 msgid "month(s)"
 msgstr "םדוקה"
 
-#: kftabdlg.cpp:128
+#: kftabdlg.cpp:131
 msgid "day(s)"
 msgstr "םדוקה"
 
-#: kftabdlg.cpp:143
+#: kftabdlg.cpp:146
 msgid "&All files"
 msgstr "םיצבקה לכ"
 
-#: kftabdlg.cpp:144
+#: kftabdlg.cpp:147
 msgid "Find all files created or &modified:"
 msgstr "ונוש וא ורצונש םיצבקה לכ תא אצמ"
 
-#: kftabdlg.cpp:145
+#: kftabdlg.cpp:148
 msgid "&between"
 msgstr "ןיב"
 
-#: kftabdlg.cpp:146
+#: kftabdlg.cpp:149
 msgid "during the previou&s "
 msgstr "םישדוחה רפסמ ךלהמב"
 
-#: kftabdlg.cpp:147
+#: kftabdlg.cpp:150
 msgid "&during the previous "
 msgstr "םימיה רפסמ ךלהמב"
 
-#: kftabdlg.cpp:195
+#: kftabdlg.cpp:198
 msgid " Date Modified "
 msgstr "יונישה ךיראת"
 
-#: kftabdlg.cpp:202
+#: kftabdlg.cpp:205
 msgid "Of &type:"
 msgstr "ץבוקה גוס"
 
-#: kftabdlg.cpp:204
+#: kftabdlg.cpp:207
 msgid "&Containing Text:"
 msgstr "טסקטה תא ליכמ"
 
-#: kftabdlg.cpp:209
+#: kftabdlg.cpp:212
 msgid "&Size is:"
 msgstr "אוה ולדוגש"
 
-#: kftabdlg.cpp:232
+#: kftabdlg.cpp:235
 msgid "All Files and Folders"
 msgstr "תויקיתהו םיצבקה לכ"
 
-#: kftabdlg.cpp:233
-msgid "Files"
-msgstr ""
-
-#: kftabdlg.cpp:234
+#: kftabdlg.cpp:237
 msgid "Folders"
 msgstr "תויקית"
 
-#: kftabdlg.cpp:235
+#: kftabdlg.cpp:238
 msgid "Symbolic links"
 msgstr "ךרד ירוציק"
 
-#: kftabdlg.cpp:236
+#: kftabdlg.cpp:239
 msgid "Special files (sockets, device files...)"
 msgstr "(sockets, device files...) םידחוימ םיצבק"
 
-#: kftabdlg.cpp:237
+#: kftabdlg.cpp:240
 msgid "Executable files"
 msgstr "הצרה יצבק"
 
-#: kftabdlg.cpp:238
+#: kftabdlg.cpp:241
 msgid "SUID executable files"
 msgstr "SUID-שמתשמ יונישב הצרה יצבק"
 
-#: kftabdlg.cpp:247
+#: kftabdlg.cpp:249
+msgid "(none)"
+msgstr ""
+
+#: kftabdlg.cpp:250
 msgid "At Least"
 msgstr "תוחפל"
 
-#: kftabdlg.cpp:248
+#: kftabdlg.cpp:251
 msgid "At Most"
 msgstr "רתויה לכל"
 
-#: kftabdlg.cpp:259
+#: kftabdlg.cpp:262
 msgid " Advanced "
 msgstr "םדקתמ"
 
-#: kftabdlg.cpp:492
+#: kftabdlg.cpp:500
 msgid "The date is not valid!!"
 msgstr "!!  יקוח וניא ךיראתה"
 
-#: kftabdlg.cpp:504
+#: kftabdlg.cpp:512
 msgid "The month(s) value isn't valid!!"
 msgstr "יקוח וניא שדוחה רפסמ"
 
-#: kftabdlg.cpp:515
+#: kftabdlg.cpp:523
 msgid "The day(s) value isn't valid!!"
 msgstr "יקוח וניא םויה רפסמ"
 
-#: kftabdlg.cpp:532
+#: kftabdlg.cpp:540
 msgid "The value in size isn't valid number!!"
 msgstr "!!יקוח ךרע וניא לדוגל תתנש ךרעה"
 
-#: kfoptions.cpp:51
+#: kfoptions.cpp:52
 msgid "Preferences"
 msgstr "תופדעה"
 
-#: kfoptions.cpp:73
+#: kfoptions.cpp:74
 msgid "File format:"
 msgstr "ץבוק גוס"
 
-#: kfoptions.cpp:75
+#: kfoptions.cpp:76
 msgid "Save results to file:"
 msgstr "רחא ץבוקב תואצותה תא רומש"
 
-#: kfoptions.cpp:78
+#: kfoptions.cpp:79
 msgid "Save results to file ~/.kfind-results.html"
 msgstr "~/.kfind-results.html ץבוקב תואצותה תא רומש"
 
-#: kfoptions.cpp:80
+#: kfoptions.cpp:81
 msgid "Browse"
 msgstr "...ןויע"
 
-#: kfoptions.cpp:93
+#: kfoptions.cpp:94
 msgid "Plain Text"
 msgstr "טסקט ץבוק"
 
-#: kfoptions.cpp:122
+#: kfoptions.cpp:123
 msgid "Saving"
 msgstr "רמוש"
 
-#: kfoptions.cpp:129
+#: kfoptions.cpp:130
 msgid "Create Archive:"
 msgstr "ביכרא תריציי"
 
-#: kfoptions.cpp:131
+#: kfoptions.cpp:132
 msgid "Add to Archive:"
 msgstr "ביכראל הפסוה"
 
-#: kfoptions.cpp:135
+#: kfoptions.cpp:136
 msgid "Patterns:"
 msgstr "תומויס"
 
-#: kfoptions.cpp:138
+#: kfoptions.cpp:139
 msgid "Add New"
 msgstr "שדח ףסוה"
 
-#: kfoptions.cpp:179
+#: kfoptions.cpp:180
 msgid "Archivers"
 msgstr "ביכרא תונכות"
 
-#: kfwin.cpp:110 kfwin.cpp:117 kfwin.cpp:133 kfwin.cpp:160
+#: kfwin.cpp:111 kfwin.cpp:118 kfwin.cpp:134 kfwin.cpp:161
 #, c-format
 msgid "%d file(s) found"
 msgstr "ואצמנ םיצבק %d"
 
-#: kfwin.cpp:244
+#: kfwin.cpp:245
 msgid "It wasn't possible to save results!"
 msgstr "שופיחה תואצות תא רומשל ןתינ אל"
 
-#: kfwin.cpp:252 kfwin.cpp:254 kfwin.cpp:256
+#: kfwin.cpp:253 kfwin.cpp:255 kfwin.cpp:257
 msgid "KFind Results File"
 msgstr "שופיח תואצות ץבוק"
 
-#: kfwin.cpp:281
+#: kfwin.cpp:282
 msgid "Results were saved to file\n"
 msgstr "ץבוקל ורמשנ שופיחה תואצות\n"
 
-#: kfwin.cpp:296
+#: kfwin.cpp:297
 #, c-format
 msgid ""
 "Do you really want to delete file:\n"
@@ -311,48 +304,57 @@ msgid ""
 msgstr ""
 ":ץבוקה תא קוחמל ךנוצרבש חוטב התא םאה\n"
 "? %s"
-#: kfwin.cpp:298
+
+#: kfwin.cpp:299
 msgid "Delete File"
 msgstr "ץבוק תקיחמ"
 
-#: kfwin.cpp:310
+#: kfwin.cpp:311
 msgid ""
 "You have no permission\n"
 " to delete this file"
 msgstr ""
 "ץבוקה תא קוחמל תואשרה ךל ןיא\n"
 "רחבנש"
-#: kfwin.cpp:316
+
+#: kfwin.cpp:317
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
-msgstr ""
-"רחבנש ץבוקה תא קוחמל ןתינ אל"
-#: kfwin.cpp:334
+msgstr "רחבנש ץבוקה תא קוחמל ןתינ אל"
+
+#: kfwin.cpp:335
 msgid ""
 "You have no permission\n"
 " to delete this directory"
-msgstr ""
-"קוחמל תואשרה ךל ןיא"
-"הרחבנש היירפסה תא"
-#: kfwin.cpp:339
+msgstr "קוחמל תואשרה ךל ןיאהרחבנש היירפסה תא"
+
+#: kfwin.cpp:340
 msgid ""
 "Specified directory\n"
 "is not empty!"
 msgstr ""
 "הרחבנש היירפסה\n"
 "הקיר הנניא"
-#: kfwin.cpp:344
+
+#: kfwin.cpp:345
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
 msgstr ""
 "קוחמל ןתינ אל\n"
 "הרחבנש היירפסה תא"
-#: kfwin.cpp:436
+
+#: kfwin.cpp:437
 msgid "Couldn't recognize archive type!"
 msgstr "ביכראה גוס תא תוהזל ןתינ אל"
 
-#: kfwin.cpp:495
+#: kfwin.cpp:496
 msgid "Error while creating child process!"
 msgstr "ןב ךילהת תריציב האיגש הערא - האיגש"
+
+#~ msgid "&Cut"
+#~ msgstr "רו&זג"
+
+#~ msgid "Properties"
+#~ msgstr "םינייפאמ"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-12-03 01:16+0100\n"
 "PO-Revision-Date: 1998-12-01 HO:MI+ZONE\n"
 "Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -28,99 +28,99 @@ msgstr "תוליעפ םייסמ - לוחתיא תאיגש :תונולחה להנמ\n"
 msgid "Preparing session ... "
 msgstr "...הלועפל ןנוכתמ"
 
-#: main.C:504
+#: main.C:507
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "(ettrich@kde.org) ךירטא סאיתאמ 1997 (C) תורומש תויוכזה לכ\n"
 
-#: main.C:511
+#: main.C:514
 msgid "Usage: "
 msgstr " :שומיש"
 
-#: main.C:522
+#: main.C:525
 msgid "&Maximize"
 msgstr "יברימ לדוג"
 
-#: main.C:523
+#: main.C:526
 msgid "&Restore"
 msgstr "לדוג רזחש"
 
-#: main.C:524
+#: main.C:527
 msgid "&Iconify"
 msgstr "רעזמ"
 
-#: main.C:525
+#: main.C:528
 msgid "&DeIconify"
 msgstr "לדגה"
 
-#: main.C:526
+#: main.C:529
 msgid "&Sticky"
 msgstr "ךסמ לכב"
 
-#: main.C:527
+#: main.C:530
 msgid "&UnSticky"
 msgstr "הזה ךסמב קר"
 
-#: main.C:528
+#: main.C:531
 msgid "Mo&ve"
 msgstr "זזה"
 
-#: main.C:529
+#: main.C:532
 msgid "Resi&ze"
 msgstr "לדוג הנש"
 
-#: main.C:531
+#: main.C:534
 msgid "&To desktop"
 msgstr "הדובע ןחלושל"
 
-#: main.C:533
+#: main.C:536
 msgid "&Onto current desktop"
 msgstr "הזה ךסמל רבעה"
 
-#: main.C:573
+#: main.C:576
 msgid "One"
 msgstr "דחא"
 
-#: main.C:576
+#: main.C:579
 msgid "Two"
 msgstr "םיינש"
 
-#: main.C:579
+#: main.C:582
 msgid "Three"
 msgstr "שולש"
 
-#: main.C:582
+#: main.C:585
 msgid "Four"
 msgstr "עברא"
 
-#: main.C:585
+#: main.C:588
 msgid "Five"
 msgstr "שמח"
 
-#: main.C:588
+#: main.C:591
 msgid "Six"
 msgstr "שש"
 
-#: main.C:591
+#: main.C:594
 msgid "Seven"
 msgstr "עבש"
 
-#: main.C:594
+#: main.C:597
 msgid "Eight"
 msgstr "הנומש"
 
-#: main.C:608
+#: main.C:611
 msgid "Unnamed Desktop"
 msgstr "םש אלל ןחלוש"
 
-#: main.C:918
+#: main.C:1016
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "תלטובמ םילמס תרוצת :םייקוח םניא םילמס המכ\n"
 
-#: main.C:1030
+#: main.C:1128
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "תלטובמ קימיג תרוצת :םייקוח םניא םילמס המכ\n"
 
-#: main.C:1353
+#: main.C:1453
 msgid "*** No Tasks ***"
 msgstr "***תומישמ ןיא***"
 
@@ -147,6 +147,7 @@ msgid ""
 msgstr ""
 "רומש וניאש עדימ םיליכמ םיאבה םימושייה\n"
 "ךלש אבה רוביחב דבאי הז עדימ"
+
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
@@ -154,6 +155,7 @@ msgid ""
 msgstr ""
 "שדחמ ולעפוי קר אלא אבה רוביחב ורזחושי אל םיאבה םימושייה\n"
 "רומש וניאש בושח עדימ םהב ךל ןיאש אדו ךתבוטל"
+
 #: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
@@ -161,6 +163,7 @@ msgid ""
 msgstr ""
 "אבה רוביחב רוזחשל םינתינ םניא םיאבה םימושייה\n"
 "רומש וניאש בושח עדימ םהב ךל ןיאש אדוו ךתבוטל"
+
 #: taskmgr.C:107
 msgid "Switch to"
 msgstr "ל רובע"
@@ -168,12 +171,3 @@ msgstr "ל רובע"
 #: taskmgr.C:121
 msgid "Current session"
 msgstr "יחכונ רוביח"
-
-
-
-
-
-
-
-
-

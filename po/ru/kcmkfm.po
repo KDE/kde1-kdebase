@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-12-08 01:17+0100\n"
 "PO-Revision-Date: 1998-11-07 00:00+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -13,18 +13,18 @@ msgstr ""
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:34
+#: main.cpp:36
 msgid "&Font"
 msgstr "Шрифт"
 
-#: main.cpp:36
+#: main.cpp:38
 msgid "&Color"
 msgstr "Цвет"
 
-#: main.cpp:63
+#: main.cpp:65
 msgid "usage: kcmkfm [-init | {font,color}]\n"
 msgstr "использование: kcmkfm [-init | {font,color}]\n"
 
-#: main.cpp:104
+#: main.cpp:110
 msgid "KFM Configuration"
 msgstr "Настройка KFM"

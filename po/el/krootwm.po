@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-04 01:12+0100\n"
+"POT-Creation-Date: 1998-12-08 01:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: krootwm.C:135 krootwm.C:702
+#: krootwm.C:135 krootwm.C:716
 msgid "Folder"
 msgstr "Φάκελος"
 
@@ -22,74 +22,74 @@ msgstr "Φάκελος"
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ΣΦΑΛΜΑ: Το υπόδειγμα δεν υπάρχει '%s'"
 
-#: krootwm.C:225 krootwm.C:269
+#: krootwm.C:232 krootwm.C:276
 msgid "Execute command"
 msgstr "Εκτέλεση εντολής"
 
-#: krootwm.C:227 krootwm.C:277
+#: krootwm.C:234 krootwm.C:284
 msgid "Lock screen"
 msgstr "Κλείδωμα οθόνης"
 
-#: krootwm.C:228 krootwm.C:278
+#: krootwm.C:235 krootwm.C:285
 msgid "Logout"
 msgstr "Αποσύνδεση"
 
-#: krootwm.C:236 krootwm.C:271
+#: krootwm.C:243 krootwm.C:278
 msgid "Refresh desktop"
 msgstr "Ανανέωση γραφείου"
 
-#: krootwm.C:237 krootwm.C:273
+#: krootwm.C:244 krootwm.C:280
 msgid "Unclutter windows"
 msgstr ""
 
-#: krootwm.C:238 krootwm.C:274
+#: krootwm.C:245 krootwm.C:281
 msgid "Cascade windows"
 msgstr ""
 
-#: krootwm.C:239 krootwm.C:275
+#: krootwm.C:246 krootwm.C:282
 msgid "Arrange icons"
 msgstr "Τακτοποίηση εικονιδίων"
 
-#: krootwm.C:240 krootwm.C:270
+#: krootwm.C:247 krootwm.C:277
 msgid "Display properties"
 msgstr "Ιδιότητες οθόνης"
 
-#: krootwm.C:248 krootwm.C:268
+#: krootwm.C:255 krootwm.C:275
 msgid "Help on desktop"
 msgstr "Βοήθεια για το Γραφείο"
 
-#: krootwm.C:249
+#: krootwm.C:256
 msgid "About KDE..."
 msgstr ""
 
-#: krootwm.C:264 krootwm.C:291 krootwm.C:692 krootwm.C:700
+#: krootwm.C:271 krootwm.C:298 krootwm.C:706 krootwm.C:714
 msgid "New"
 msgstr ""
 
-#: krootwm.C:265 krootwm.C:292
+#: krootwm.C:272 krootwm.C:299
 msgid "Bookmarks"
 msgstr ""
 
-#: krootwm.C:293
+#: krootwm.C:300
 msgid "Desk"
 msgstr ""
 
-#: krootwm.C:294
+#: krootwm.C:301
 msgid "Windows"
 msgstr ""
 
-#: krootwm.C:323
+#: krootwm.C:337
 msgid "Edit Bookmarks"
 msgstr ""
 
-#: krootwm.C:722
+#: krootwm.C:736
 msgid "Could not create folder"
 msgstr "Αδύνατη η δημιουργία φακέλου"
 
-#: krootwm.C:787
+#: krootwm.C:801
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Πνευματικά δικαιώματα (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:791
+#: krootwm.C:805
 msgid "Usage:"
 msgstr "Σύνταξη:"

@@ -196,7 +196,3 @@ msgstr ""
 #: syssound.cpp:486
 msgid "File Already in List"
 msgstr "El fitxer ja hi és a la llista"
-
-
-
-

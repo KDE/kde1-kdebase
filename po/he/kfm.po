@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-11 00:07+0200\n"
+"POT-Creation-Date: 1998-12-08 01:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,263 +14,207 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kfmgui.cpp:257
+#: kfmgui.cpp:202
 msgid "KFM"
 msgstr "סקוניל רייס"
 
-#: kbind.cpp:933 kbind.cpp:945 kbind.cpp:955 kfmgui.cpp:269 kfmgui.cpp:969
+#: kbind.cpp:949 kbind.cpp:961 kbind.cpp:971 kfmgui.cpp:214 kfmgui.cpp:1034
 msgid "Folder"
 msgstr "הייקית"
 
-#: kfmgui.cpp:280
+#: kfmgui.cpp:225
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr " תמייק הניא '%s' תינבתה :האיגש"
 
-#: kfmgui.cpp:306
-msgid "&New Window"
+#: kfmgui.cpp:249
+#, fuzzy
+msgid "&New"
+msgstr "שדח"
+
+#: kfmgui.cpp:251
+#, fuzzy
+msgid "New &Window"
 msgstr "שד&ח ןולח"
 
-#: kfmgui.cpp:309
+#: kfmgui.cpp:254
 msgid "&Run..."
 msgstr "...הלע&פה"
 
-#: kfmgui.cpp:311
+#: kfmgui.cpp:256
 msgid "Open &Terminal"
 msgstr "לנימר&ט חתפ"
 
-#: kfmgui.cpp:314
+#: kfmgui.cpp:259
 msgid "&Open Location..."
 msgstr "...תבות&כ חתפ"
 
-#: kfmgui.cpp:316
+#: finddlg.cpp:66 kfmgui.cpp:261
 msgid "&Find"
 msgstr "ש&ופיח"
 
-#: kfmgui.cpp:324
-msgid "&Quit..."
-msgstr "...האי&צי"
-
-#: kfmgui.cpp:333
+#: kfmgui.cpp:279
 msgid "&Move to Trash"
 msgstr "רוזחמה ל&סל"
 
-#: kfmgui.cpp:338
+#: kfmgui.cpp:286
 msgid "&Select"
 msgstr "רח&ב"
 
-#: kfmgui.cpp:342
-msgid "Mime Types"
+#: kfmgui.cpp:288
+#, fuzzy
+msgid "Select &all"
+msgstr "רח&ב"
+
+#: kfmgui.cpp:291
+msgid "&Find in page..."
+msgstr ""
+
+#: kfmgui.cpp:293
+msgid "Find &next"
+msgstr ""
+
+#: kfmgui.cpp:296
+#, fuzzy
+msgid "Mime &Types"
 msgstr "םירכומ ץבוק יגוס"
 
-#: kfmgui.cpp:344
-msgid "Applications"
+#: kfmgui.cpp:298
+#, fuzzy
+msgid "App&lications"
 msgstr "תוינכות"
 
-#: kfmgui.cpp:350
+#: kfmgui.cpp:304
 msgid "Global Mime Types"
 msgstr "םילבולג ץבוק יגוס"
 
-#: kfmgui.cpp:352
+#: kfmgui.cpp:306
 msgid "Global Applications"
 msgstr "תוילבולג תוינכת"
 
-#: kfmgui.cpp:359
-msgid "Show &Dot Files"
+#: kfmgui.cpp:313
+#, fuzzy
+msgid "Show Hi&dden Files"
 msgstr "םירתסנ םיצב&ק הארה"
 
-#: kfmgui.cpp:361
+#: kfmgui.cpp:315
 msgid "Show Tr&ee"
 msgstr "ץ&ע תגוצת"
 
-#: kfmgui.cpp:363
-msgid "&Visual Schnauzer"
-msgstr "תונומ&ת תגוצת"
+#: kfmgui.cpp:317
+msgid "Sho&w Thumbnails"
+msgstr ""
 
-#: kfmgui.cpp:365
+#: kfmgui.cpp:319
 msgid "&HTML View"
 msgstr "&HTML  תגוצת"
 
-#: kfmgui.cpp:368
+#: kfmgui.cpp:322
 msgid "&Icon View"
 msgstr "למ&ס תגוצת"
 
-#: kfmgui.cpp:370
+#: kfmgui.cpp:324
 msgid "&Text View"
 msgstr "טסק&ט תגוצת"
 
-#: kfmgui.cpp:372
+#: kfmgui.cpp:326
 msgid "&Long View"
 msgstr "טרו&פמ טבמ"
 
-#: kfmgui.cpp:374
+#: kfmgui.cpp:328
 msgid "&Short View"
 msgstr "ר&צק טבמ"
 
-#: kfmgui.cpp:380
+#: kfmgui.cpp:334
 msgid "Rel&oad Tree"
 msgstr "ץע ןנ&ער"
 
-#: kfmgui.cpp:382
+#: kfmgui.cpp:336
 msgid "&Reload Document"
 msgstr "ןנע&ר"
 
-#: kfmgui.cpp:384
-msgid "Rescan &bindings"
-msgstr ""
+#: kfmgui.cpp:338
+#, fuzzy
+msgid "Rescan &Bindings"
+msgstr "רו&ביח"
 
-#: kfmgui.cpp:387
+#: kfmgui.cpp:341
 msgid "&View Frame Source"
 msgstr "תרגסמה דוקב הפ&צ"
 
-#: kfmgui.cpp:389
+#: kfmgui.cpp:343
 msgid "View Docu&ment Source"
 msgstr "ךמסמה דוקב ה&פצ"
 
-#: kfmgui.cpp:400
+#: kfmgui.cpp:351
+msgid "Auto"
+msgstr ""
+
+#: kfmgui.cpp:359
+#, fuzzy
+msgid "Document Encodin&g"
+msgstr "םייתסה :ךמסמ"
+
+#: kfmgui.cpp:374
 msgid "Show History"
 msgstr "הירוטסי&ה"
 
-#: kfmgui.cpp:402
+#: kfmgui.cpp:376
 msgid "Show Cache"
 msgstr "ןומטמ הארה"
 
-#: kfmgui.cpp:404
+#: kfmgui.cpp:378
 msgid "Clear Cache"
 msgstr "ןומטמ הקנ"
 
-#: kfmgui.cpp:407
+#: kfmgui.cpp:381
 msgid "Always look in cache"
 msgstr "ןומטמב דימת שפח"
 
-#: kfmgui.cpp:409
+#: kfmgui.cpp:383
 msgid "Never look in cache"
 msgstr "ןומטמב שמתשת לא"
 
-#: kfmgui.cpp:411
+#: kfmgui.cpp:385
 msgid "Always save cache"
 msgstr "ןומטמב דימת רומש"
 
-#: kfmgui.cpp:413
+#: kfmgui.cpp:387
 msgid "Never save cache"
 msgstr "ןומטמב רומשת לא"
 
-#: kfmgui.cpp:424
+#: kfmgui.cpp:398
 msgid "Show &Menubar"
 msgstr "טירפ&ת גצה"
 
-#: kfmgui.cpp:426
+#: kfmgui.cpp:400
 msgid "Show &Statusbar"
 msgstr "בצמ תרו&ש גצה"
 
-#: kfmgui.cpp:428
+#: kfmgui.cpp:402
 msgid "Show &Toolbar"
 msgstr "םילכ ל&גרס גצה"
 
-#: kfmgui.cpp:430
+#: kfmgui.cpp:404
 msgid "Show &Location bar"
 msgstr "תבות&כ גצה"
 
-#: kfmgui.cpp:433
+#: kfmgui.cpp:407
 msgid "Sa&ve Settings"
 msgstr "תורדגה רו&מש"
 
-#: kfmgui.cpp:435
-msgid "Configure Browser..."
+#: kfmgui.cpp:409
+#, fuzzy
+msgid "Save Settings for this &URL"
+msgstr "תורדגה רו&מש"
+
+#: kfmgui.cpp:416
+#, fuzzy
+msgid "&Configure Browser..."
 msgstr "...ןפדפדה תמאתה"
 
-#: kfmgui.cpp:478
-msgid "&About..."
-msgstr "...תודו&א"
-
-#: kfmgui.cpp:488
-msgid "&Bookmarks"
-msgstr "םיפ&דעומ"
-
-#: kfmgui.cpp:489
-msgid "&Cache"
-msgstr "ןומט&מ"
-
-#: kfmgui.cpp:516
-msgid "Up"
-msgstr "הירפס הלע"
-
-#: kfmgui.cpp:564
-msgid "Stop"
-msgstr "רוצע"
-
-#: kfmgui.cpp:588
-msgid "Could not load icon\n"
-msgstr "למס גיצהל ןתינ אל\n"
-
-#: bookmark.cpp:259 kbind.cpp:304 kbind.cpp:376 kbind.cpp:428 kbind.cpp:1529
-#: kbind.cpp:1537 kbind.cpp:1555 kbind.cpp:1572 kbind.cpp:1630 kbind.cpp:1642
-#: kbind.cpp:1669 kbind.cpp:1684 kbind.cpp:1704 kbind.cpp:1716 kbind.cpp:1733
-#: kbind.cpp:1855 kbind.cpp:1867 kbind.cpp:1912 kbind.cpp:1954 kfmexec.cpp:60
-#: kfmexec.cpp:92 kfmexec/main.cpp:47 kfmgui.cpp:589 kfmgui.cpp:745
-#: kfmman.cpp:295 kfmman.cpp:1021 kfmman.cpp:1188 kfmman.cpp:1214
-#: kfmprops.cpp:366 kfmprops.cpp:617 kfmprops.cpp:643 kfmprops.cpp:823
-#: kfmprops.cpp:945 kfmprops.cpp:1072 kfmprops.cpp:1388 kfmprops.cpp:1600
-#: kfmprops.cpp:1776 kfmserver.cpp:39 kfmserver.cpp:157 kfmserver.cpp:237
-#: kfmserver.cpp:284 kfmserver.cpp:293 kfmserver.cpp:301 kfmtree.cpp:163
-#: kfmtree.cpp:286 kfmtree.cpp:317 kfmtree.cpp:323 kfmtree.cpp:329
-#: kfmview.cpp:351 kfmview.cpp:370 kfmview.cpp:376 kfmview.cpp:439
-#: kfmview.cpp:445 kfmview.cpp:451 kfmview.cpp:526 kfmview.cpp:552
-#: kfmview.cpp:570 kfmview.cpp:576 kfmview.cpp:582 kiojob.cpp:234
-#: kiojob.cpp:242 kiojob.cpp:249 kiojob.cpp:274 kiojob.cpp:293 kiojob.cpp:304
-#: kiojob.cpp:326 kiojob.cpp:345 kiojob.cpp:551 kiojob.cpp:791 kiojob.cpp:822
-#: kiojob.cpp:863 kiojob.cpp:1677 krenamewin.cpp:120 root.cpp:1098
-#: root.cpp:1116 root.cpp:1122 root.cpp:1128 root.cpp:1203 root.cpp:1710
-#: root.cpp:1735
-msgid "KFM Error"
-msgstr "KDE רייסב האיגש"
-
-#: kfmexec.cpp:59 kfmgui.cpp:744 kfmman.cpp:1020
-msgid "Malformed URL\n"
-msgstr "הייוגש תבותכ\n"
-
-#: kfmgui.cpp:904
-msgid "Select files:"
-msgstr "םיצבק רחב:"
-
-#: kfmgui.cpp:921
-msgid "&Edit Bookmarks..."
-msgstr "...םיפדעומ ךור&ע"
-
-#: kfmgui.cpp:931
-msgid "&Add Bookmark"
-msgstr "םיפדעומל ףסו&ה"
-
-#: kfmgui.cpp:961 kfmgui.cpp:968
-msgid "New "
-msgstr "שדח"
-
-#: kfmgui.cpp:1058 kfmgui.cpp:1220 kfmjob.cpp:33 kfmman.cpp:218
-#: kfmtree.cpp:318 kfmview.cpp:371 kfmview.cpp:440 kfmview.cpp:571
-#: kiojob.cpp:83 root.cpp:1117
-msgid "ERROR: Malformed URL"
-msgstr "הייוגש תבותכ:האיגש"
-
-#: kfmgui.cpp:1174 kfmserver.cpp:178
-msgid "Open Location:"
-msgstr "תבותכ חתפ:"
-
-#: kfmgui.cpp:1230
-msgid "KFM Confirm"
-msgstr "רייסה תשיטנ רושא"
-
-#: kfmgui.cpp:1231
-msgid ""
-"Do you really want to quit?\n"
-"Important desktop functionality will be lost"
-msgstr ""
-" ? שוטנל הצור תמאב התא\n"
-"הדובעה ןחלושב הרומח העיגפל םורגי רבדה"
-#: kfmgui.cpp:1261
-msgid "About KFM"
-msgstr "KDE רייס תודוא"
-
-#: kfmgui.cpp:1262
+#: kfmgui.cpp:452
+#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -279,7 +223,10 @@ msgid ""
 "mjones@kde.org\n"
 "\n"
 "Proxy Manager by Lars Hoss\n"
-"Lars.Hoss@munich.netsurf.de"
+"Lars.Hoss@munich.netsurf.de\n"
+"\n"
+"Current maintainer: David Faure\n"
+"faure@kde.org"
 msgstr ""
 "סייו ןברוט :תנכתמ\n"
 "weis@kde.org\n"
@@ -289,24 +236,146 @@ msgstr ""
 "\n"
 "סוה סראל:יסקורפ להנמ תונכת\n"
 "Lars.Hoss@munich.netsurf.de"
-#: kfmgui.cpp:1355
+
+#: kfmgui.cpp:465
+msgid "&Go"
+msgstr ""
+
+#: kfmgui.cpp:466
+msgid "&Bookmarks"
+msgstr "םיפ&דעומ"
+
+#: kfmgui.cpp:467
+msgid "&Cache"
+msgstr "ןומט&מ"
+
+#: kfmgui.cpp:494 main.cpp:239
+msgid "Up"
+msgstr "הירפס הלע"
+
+#: kfmgui.cpp:504 main.cpp:241
+msgid "Forward"
+msgstr ""
+
+#: kfmgui.cpp:509
+#, fuzzy
+msgid "Home"
+msgstr "תיבה תיירפס"
+
+#: kfmgui.cpp:566
+msgid "Could not load icon\n"
+msgstr "למס גיצהל ןתינ אל\n"
+
+#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:305
+#: kbind.cpp:391 kbind.cpp:443 kbind.cpp:1599 kbind.cpp:1607 kbind.cpp:1625
+#: kbind.cpp:1644 kbind.cpp:1703 kbind.cpp:1715 kbind.cpp:1742 kbind.cpp:1757
+#: kbind.cpp:1777 kbind.cpp:1789 kbind.cpp:1805 kbind.cpp:1941 kbind.cpp:1953
+#: kbind.cpp:1998 kbind.cpp:2040 kfmexec.cpp:60 kfmexec.cpp:92
+#: kfmexec/main.cpp:47 kfmgui.cpp:567 kfmgui.cpp:726 kfmman.cpp:343
+#: kfmman.cpp:1095 kfmman.cpp:1311 kfmman.cpp:1337 kfmprops.cpp:377
+#: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
+#: kfmprops.cpp:1141 kfmprops.cpp:1484 kfmprops.cpp:1716 kfmprops.cpp:1901
+#: kfmserver.cpp:40 kfmserver.cpp:163 kfmserver.cpp:243 kfmserver.cpp:290
+#: kfmserver.cpp:299 kfmserver.cpp:307 kfmtree.cpp:237 kfmtree.cpp:360
+#: kfmtree.cpp:391 kfmtree.cpp:397 kfmtree.cpp:403 kfmview.cpp:390
+#: kfmview.cpp:406 kfmview.cpp:425 kfmview.cpp:494 kfmview.cpp:500
+#: kfmview.cpp:506 kfmview.cpp:612 kfmview.cpp:616 kfmview.cpp:655
+#: kfmview.cpp:681 kfmview.cpp:702 kfmview.cpp:710 kfmview.cpp:718
+#: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278 kiojob.cpp:297
+#: kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:557 kiojob.cpp:797
+#: kiojob.cpp:828 kiojob.cpp:869 kiojob.cpp:1679 krenamewin.cpp:120
+#: root.cpp:902 root.cpp:1163 root.cpp:1181 root.cpp:1187 root.cpp:1193
+#: root.cpp:1274 root.cpp:1787 root.cpp:1812
+msgid "KFM Error"
+msgstr "KDE רייסב האיגש"
+
+#: kfmexec.cpp:59 kfmgui.cpp:725 kfmman.cpp:1094
+msgid "Malformed URL\n"
+msgstr "הייוגש תבותכ\n"
+
+#: kfmgui.cpp:912
+msgid "Select files:"
+msgstr "םיצבק רחב:"
+
+#: kfmgui.cpp:967
+msgid "Find Complete"
+msgstr ""
+
+#: kfmgui.cpp:968
+msgid "Continue search from the top of the page?"
+msgstr ""
+
+#: kfmgui.cpp:986
+msgid "&Edit Bookmarks..."
+msgstr "...םיפדעומ ךור&ע"
+
+#: kfmgui.cpp:996
+msgid "&Add Bookmark"
+msgstr "םיפדעומל ףסו&ה"
+
+#: kfmgui.cpp:1026 kfmgui.cpp:1033
+msgid "New "
+msgstr "שדח"
+
+#: kfmgui.cpp:1082
+#, fuzzy
+msgid "&Up"
+msgstr "הירפס הלע"
+
+#: kfmgui.cpp:1084
+msgid "&Back"
+msgstr ""
+
+#: kfmgui.cpp:1086
+msgid "&Forward"
+msgstr ""
+
+#: kfmgui.cpp:1088
+#, fuzzy
+msgid "&Home"
+msgstr "תיבה תיירפס"
+
+#: kfmgui.cpp:1145 kfmgui.cpp:1317 kfmjob.cpp:37 kfmman.cpp:226
+#: kfmtree.cpp:392 kfmview.cpp:426 kfmview.cpp:495 kfmview.cpp:703
+#: kiojob.cpp:87 root.cpp:1182
+msgid "ERROR: Malformed URL"
+msgstr "הייוגש תבותכ:האיגש"
+
+#: kfmgui.cpp:1271 kfmserver.cpp:184
+msgid "Open Location:"
+msgstr "תבותכ חתפ:"
+
+#: kfmgui.cpp:1328
+msgid "KFM Confirm"
+msgstr "רייסה תשיטנ רושא"
+
+#: kfmgui.cpp:1329
+msgid ""
+"Do you really want to quit?\n"
+"Important desktop functionality will be lost"
+msgstr ""
+" ? שוטנל הצור תמאב התא\n"
+"הדובעה ןחלושב הרומח העיגפל םורגי רבדה"
+
+#: kfmgui.cpp:1439
 msgid "Document: Done"
 msgstr "םייתסה :ךמסמ"
 
-#: kfmview.cpp:352
+#: kfmview.cpp:391 root.cpp:903
+#, fuzzy
+msgid "ERROR: You may only drop URLs"
+msgstr " המצע לע תבותכ תררג :האיגש"
+
+#: kfmview.cpp:407
 msgid "ERROR: Drop over malformed URL"
 msgstr "הייוגש תבותכ ךותל הרירג :האיגש"
 
-#: kfmview.cpp:377
-msgid "ERROR: You dropped some URL over itself"
-msgstr "המצע לע תבותכ תררג :האיגש"
-
-#: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:412
-#: kfmview.cpp:606 krenamewin.cpp:20 root.cpp:1158
+#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:430 kfmview.cpp:466
+#: kfmview.cpp:746 krenamewin.cpp:20 root.cpp:1225
 msgid "KFM Warning"
 msgstr "KFM  רייסמ הרהזא"
 
-#: kfmtree.cpp:357 kfmview.cpp:413 kfmview.cpp:607 root.cpp:1159
+#: kfmtree.cpp:431 kfmview.cpp:467 kfmview.cpp:747 root.cpp:1226
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -315,118 +384,138 @@ msgstr ""
 "? ורחבנש םיצבקה תא קוחמל ךנוצרב תמאב םאה\n"
 "\n"
 "!!  םתוא רזחשל תורשפא ןיא"
-#: kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1123
+
+#: kfmtree.cpp:398 kfmview.cpp:501 kfmview.cpp:711 root.cpp:1188
 msgid "ERROR: You dropped a URL over itself"
 msgstr " המצע לע תבותכ תררג :האיגש"
 
-#: kfmtree.cpp:330 kfmview.cpp:452 kfmview.cpp:583 root.cpp:1129
+#: kfmtree.cpp:404 kfmview.cpp:507 kfmview.cpp:719 root.cpp:1194
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "הלש תבה תוירפסמ תחא לע הירפס תררג :האיגש"
 
-#: kfmexec.cpp:254 kfmman.cpp:867 kfmview.cpp:468
+#: kfmexec.cpp:265 kfmman.cpp:948 kfmview.cpp:523
 msgid "Open With:"
 msgstr "תועצמאב החיתפ:"
 
-#: kfmview.cpp:485 root.cpp:1068
+#: kfmview.cpp:554 root.cpp:1125
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "םיצבק רפסמל םינייפאמ תוארל ןתינ אל :האיגש"
 
-#: kfmtree.cpp:287 kfmview.cpp:527 root.cpp:1204
+#: kfmview.cpp:613
+msgid ""
+"Can not save properties because\n"
+"this directory is neither writable nor bookmarked.\n"
+"\n"
+" Bookmark this location first, or make kdelnk to it on desktop."
+msgstr ""
+
+#: kfmview.cpp:617
+msgid ""
+"Can not save properties because\n"
+"this URL is neither bookmarked nor on desktop.\n"
+"\n"
+" Bookmark this location first, or make kdelnk to it on desktop."
+msgstr ""
+
+#: kfmtree.cpp:361 kfmview.cpp:656 root.cpp:1275
 msgid "Could not access Trash Bin"
 msgstr "רוזחמה לסל השיג ןיא"
 
-#: kfmview.cpp:553 root.cpp:1099
+#: kfmview.cpp:682 root.cpp:1164
 msgid "Can not paste into multiple directories"
 msgstr "תוירפס רפסמ ךותל קיבדהל ןתינ אל"
 
-#: kfmview.cpp:639
+#: kfmview.cpp:779
 msgid "ERROR: Can not change to multiple directories"
 msgstr "תינמז וב תוירפס רפסמל רובעל ןתינ אל"
 
-#: kfmview.cpp:755
+#: kfmview.cpp:1043
 msgid "KFM Security Alert"
 msgstr "! עדימ תחטבא תרהזא"
 
-#: kfmview.cpp:756
+#: kfmview.cpp:1044
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
 msgstr ""
 "חוטבכ גווסמ וניא ףדה\n"
 "ךלש םיצבקה תכרעמל םירושיק ליכמ אוה םלוא"
-#: kfmview.cpp:842
+
+#: kfmview.cpp:1148
 msgid "Symbolic Link"
 msgstr "ךרד רוציק"
 
-#: kfmview.cpp:844
+#: kfmview.cpp:1150
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (ךרד רוציק)"
 
-#: kfmview.cpp:864
+#: kfmview.cpp:1170
 msgid "bytes"
 msgstr "םיתב"
 
-#: kbind.cpp:302
+#: kbind.cpp:303
 msgid "The mime type config file "
 msgstr "םירכומה םיצבקה תמישר"
 
-#: kbind.cpp:303
+#: kbind.cpp:304
 msgid "does not conatain a MimeType=... entry"
 msgstr "ןייוצמה ץבוקה גוס תא תללוכ הניא"
 
-#: kbind.cpp:377
+#: kbind.cpp:392
 msgid "No mime types installed!"
 msgstr "! םירכומ םיצבק תורדגה ונקתוה אל"
 
-#: kbind.cpp:425 kbind.cpp:1188
+#: kbind.cpp:440 kbind.cpp:1216
 msgid "Could not find mime type\n"
 msgstr "םירכומה םיצבקב אצמנ וניא ץבוקה גוס\n"
 
-#: kbind.cpp:697 kbind.cpp:707 kbind.cpp:1890 kbind.cpp:1891 kbind.cpp:1903
-#: kbind.cpp:1905
+#: kbind.cpp:710 kbind.cpp:720 kbind.cpp:1976 kbind.cpp:1977 kbind.cpp:1989
+#: kbind.cpp:1991
 msgid "Mount"
 msgstr "רבחתה"
 
-#: kbind.cpp:713 kbind.cpp:1881
+#: kbind.cpp:726 kbind.cpp:1967
 msgid "Unmount"
 msgstr "קתנתה"
 
-#: kbind.cpp:1187
+#: kbind.cpp:1215
 msgid "ERROR"
 msgstr "האיגש"
 
-#: kbind.cpp:1188
+#: kbind.cpp:1216
 msgid "in "
 msgstr " ב "
 
-#: kbind.cpp:1332 kbind.cpp:1418
+#: kbind.cpp:1389 kbind.cpp:1482
 msgid "Could not execute program\n"
 msgstr "םושיי ץירהל ןתינ אל\n"
 
-#: kbind.cpp:1528
+#: kbind.cpp:1598
 msgid "Could not find binding"
 msgstr "רשקה אוצמל היה ןתינ אל"
 
-#: kbind.cpp:1538
+#: kbind.cpp:1608
 msgid ""
 "This is a document!\n"
 "Not an application"
 msgstr ""
 "!ךמסמ הז\n"
 "הצרהל םושיי אל הז"
-#: kbind.cpp:1556 kbind.cpp:1573
+
+#: kbind.cpp:1626 kbind.cpp:1645
 msgid "Can only start executables on local disks\n"
 msgstr "םיממוקמ םיננוכ לע קר םימושי ץירהל ןתינ\n"
 
-#: kbind.cpp:1631 kbind.cpp:1705 kbind.cpp:1856
+#: kbind.cpp:1704 kbind.cpp:1778 kbind.cpp:1942
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
 msgstr ""
 "קר .kdelink יצבק םע דובעל ןתינ\n"
 "םיימוקמ םיננוכב"
-#: kbind.cpp:1641
+
+#: kbind.cpp:1714
 #, c-format
 msgid ""
 "Could not access\n"
@@ -434,19 +523,20 @@ msgid ""
 msgstr ""
 "ץבוקל השיג ןיא\n"
 "%s"
-#: kbind.cpp:1670
+
+#: kbind.cpp:1743
 msgid "The \"Link=....\" entry is empty"
 msgstr "קיר רושיק אוה \"Link....\" רושיקה"
 
-#: kbind.cpp:1685
+#: kbind.cpp:1758
 msgid "The config file has no \"Type=...\" line"
 msgstr "\"Type=...\" תרוש ןיא היצרוגיפנוקה ץבוקל"
 
-#: kbind.cpp:1715 kbind.cpp:1866
+#: kbind.cpp:1788 kbind.cpp:1952
 msgid "Could not access"
 msgstr "השיג ןיא"
 
-#: kbind.cpp:1734
+#: kbind.cpp:1806
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -458,167 +548,211 @@ msgstr ""
 "Exec=....\n"
 "ץבוקה יניפאמ תא ךורע\n"
 "הייעבה ןורתפל"
-#: kbind.cpp:1822
+
+#: kbind.cpp:1904
 msgid "ERROR: No Terminal Setting"
 msgstr "לנימרט תורדגה ןיא :האיגש"
 
-#: kbind.cpp:1913
+#: kbind.cpp:1999
 msgid "No mount point in *.kdelnk file"
 msgstr "*.kdelink ה ץבוקב רוביח תדוקנל הרדגה ןיא"
 
-#: kbind.cpp:1953
+#: kbind.cpp:2039
 msgid "Unknown binding"
 msgstr "עודי אל רוביח"
 
-#: main.cpp:65 main.cpp:199
+#: main.cpp:87 main.cpp:191
 msgid "KFM Information"
 msgstr "סקונילה רייס לש היצמרופניא"
 
-#: main.cpp:66
+#: main.cpp:88
 msgid "Creating directory:\n"
 msgstr "היירפסה תא רצוי\n"
 
-#: main.cpp:200
+#: main.cpp:192
 msgid "Installing Templates"
 msgstr "םיכמסמה תוינבת תא ןיקתמ"
 
-#: main.cpp:235
+#: main.cpp:224
 msgid "Cd"
 msgstr "היירפס הנש"
 
-#: main.cpp:236
+#: main.cpp:225
 msgid "New View"
 msgstr "השדח הגוצת"
 
-#: kfmtree.cpp:223 main.cpp:239
+#: kfmtree.cpp:297 main.cpp:228
 msgid "Move to Trash"
 msgstr "רוזחימה לסל רבעה"
 
-#: main.cpp:241
+#: main.cpp:230
 msgid "Open with"
 msgstr "תועצמאב החיתפ"
 
-#: kfmman.cpp:1206 kfmtree.cpp:155 main.cpp:243
+#: kfmman.cpp:1329 kfmtree.cpp:229 main.cpp:232
 msgid "Move"
 msgstr "רבעה"
 
-#: kfmman.cpp:1149 kfmtree.cpp:233 main.cpp:244
-msgid "Properties"
-msgstr "םינייפאמ"
-
-#: kfmman.cpp:1210 kfmtree.cpp:159 main.cpp:245
+#: kfmman.cpp:1333 kfmtree.cpp:233 main.cpp:234
 msgid "Link"
 msgstr "רושיק"
 
-#: main.cpp:246
+#: main.cpp:235
 msgid "Empty Trash Bin"
 msgstr "רוזחימה לס ןקור"
 
-#: main.cpp:247
+#: main.cpp:236
 msgid "Add to Bookmarks"
 msgstr "םיפדעומל ףסוה"
 
-#: htmlopts.cpp:35
-msgid "Font Size"
-msgstr "ןפוג לדוג"
+#: main.cpp:237
+msgid "Save settings for this URL"
+msgstr ""
 
-#: htmlopts.cpp:39
+#: main.cpp:238
+#, fuzzy
+msgid "Show Menubar"
+msgstr "טירפ&ת גצה"
+
+#: htmlopts.cpp:69
 msgid "Small"
 msgstr "ןטק"
 
-#: htmlopts.cpp:43
+#: htmlopts.cpp:77
 msgid "Medium"
 msgstr "ינוניב"
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:85
 msgid "Large"
 msgstr "לודג"
 
-#: htmlopts.cpp:51
+#: htmlopts.cpp:99
 msgid "Standard Font"
 msgstr "יטרדנטס לדוג"
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:126
 msgid "Fixed Font"
 msgstr "עובק ןפוג"
 
-#: htmlopts.cpp:214
+#: htmlopts.cpp:153
+msgid "Default Charset"
+msgstr ""
+
+#: htmlopts.cpp:161
+msgid "Use language charset"
+msgstr ""
+
+#: htmlopts.cpp:353
 msgid "Background Color:"
 msgstr "עקר עבצ"
 
-#: htmlopts.cpp:222
+#: htmlopts.cpp:370
 msgid "Normal Text Color:"
 msgstr "ליגר טסקט עבצ"
 
-#: htmlopts.cpp:230
+#: htmlopts.cpp:387
 msgid "URL Link Color:"
 msgstr "רושיק עבצ"
 
-#: htmlopts.cpp:238
+#: htmlopts.cpp:404
 msgid "Followed Link Color:"
 msgstr "רוקיב ירחא רושיק עבצ"
 
-#: htmlopts.cpp:246
+#: htmlopts.cpp:421
 msgid "Change cursor over link."
 msgstr "רושיק לעמ עיבצמה תא הנש"
 
-#: htmlopts.cpp:321
+#: htmlopts.cpp:431
+msgid "Underline links"
+msgstr ""
+
+#: htmlopts.cpp:549
 msgid "Horizontal Root Grid Spacing:"
 msgstr "םילמס ןיב יקפוא חוורמ"
 
-#: htmlopts.cpp:335
+#: htmlopts.cpp:571
 msgid "Vertical Root Grid Spacing:"
 msgstr "םילמס ןיב יכנא חוורמ"
 
-#: htmlopts.cpp:349
-msgid "Transparent Text for Root Icons."
+#: htmlopts.cpp:593
+msgid "&Allow per-URL settings"
+msgstr ""
+
+#: htmlopts.cpp:602
+msgid "Tree &view follows navigation"
+msgstr ""
+
+#: htmlopts.cpp:610
+#, fuzzy
+msgid "&Transparent Text for Root Icons."
 msgstr "םילמסב ףוקש טסקט"
 
-#: bookmark.cpp:259
+#: htmlopts.cpp:623
+#, fuzzy
+msgid "Icon foreground color:"
+msgstr "עקר עבצ"
+
+#: htmlopts.cpp:635
+#, fuzzy
+msgid "Icon background color:"
+msgstr "עקר עבצ"
+
+#: kfmdlg.cpp:113
+#, fuzzy
+msgid "&Browser"
+msgstr "ןויע"
+
+#: bookmark.cpp:296
 msgid "Could not write bookmark"
 msgstr "םיפדעומל ףיסוהל ןתינ אל"
 
-#: kfmprops.cpp:241
+#: kfmprops.cpp:238
+#, fuzzy
+msgid "File Name"
+msgstr "אלמ םש"
+
+#: kfmprops.cpp:253
 msgid "Full Name"
 msgstr "אלמ םש"
 
-#: kfmprops.cpp:259
+#: kfmprops.cpp:270
 msgid "Is the Trash Bin"
 msgstr "רוזחימה לס והז"
 
-#: kfmprops.cpp:266
+#: kfmprops.cpp:277
 msgid "Is a Directory"
 msgstr "היירפס איה"
 
-#: kfmprops.cpp:273
+#: kfmprops.cpp:284
 msgid "Points to"
 msgstr "לא עיבצמ"
 
-#: kfmprops.cpp:298
+#: kfmprops.cpp:309
 #, c-format
 msgid "Size: %i"
 msgstr "%i :לדוג"
 
-#: kfmprops.cpp:308
+#: kfmprops.cpp:319
 msgid "Last Access"
 msgstr "הנורחא השיג"
 
-#: kfmprops.cpp:318
+#: kfmprops.cpp:329
 msgid "Last Modified"
 msgstr "ןורחא יוניש"
 
-#: kfmprops.cpp:367
+#: kfmprops.cpp:378
 msgid ""
 "Could not rename the file or directory\n"
 "The destination seems to already exist\n"
 msgstr ""
 "היירפסה וא ץבוקה םש תא תונשל ןתינ אל\n"
 "םייק דעיה םש\n"
-#: kfmprops.cpp:415
+
+#: kfmprops.cpp:426
 msgid "Access permissions"
 msgstr "השיג תואשרה"
 
-#: kfmprops.cpp:421
+#: kfmprops.cpp:432
 msgid ""
 "Show\n"
 "Entries"
@@ -626,22 +760,23 @@ msgstr ""
 "תואשרה\n"
 "הגוצת"
 
-#: kfmprops.cpp:423
+#: kfmprops.cpp:434
 msgid "Read"
 msgstr "האירק"
 
-#: kfmprops.cpp:428
+#: kfmprops.cpp:439
 msgid ""
 "Write\n"
 "Entries"
 msgstr ""
 "תואשרה\n"
 "הביתכ"
-#: kfmprops.cpp:430
+
+#: kfmprops.cpp:441
 msgid "Write"
 msgstr "הביתכ"
 
-#: kfmprops.cpp:435
+#: kfmprops.cpp:446
 msgid ""
 "Change\n"
 "Into"
@@ -649,171 +784,193 @@ msgstr ""
 "הסינכ\n"
 "ךותל"
 
-#: kfmprops.cpp:437
+#: kfmprops.cpp:448
 msgid "Exec"
 msgstr "הצרה"
 
-#: kfmprops.cpp:441
+#: kfmprops.cpp:452
 msgid "Special"
 msgstr "דחוימ"
 
-#: kfmprops.cpp:445
+#: kfmprops.cpp:456
 msgid "User"
 msgstr "שמתשמ"
 
-#: kfmprops.cpp:455
+#: kfmprops.cpp:461 kfmprops.cpp:560
+msgid "Group"
+msgstr ""
+
+#: kfmprops.cpp:466
 msgid "Others"
 msgstr "םירחא"
 
-#: kfmprops.cpp:468
+#: kfmprops.cpp:479
 msgid "Set UID"
 msgstr "שמתשמכ לעפ"
 
-#: kfmprops.cpp:469
+#: kfmprops.cpp:480
 msgid "Set GID"
 msgstr "הצובק עבק"
 
-#: kfmprops.cpp:470
+#: kfmprops.cpp:481
 msgid "Sticky"
 msgstr "קיבד"
 
-#: kfmprops.cpp:488
+#: kfmprops.cpp:499
 msgid "Ownership"
 msgstr "תולעב"
 
-#: kfmprops.cpp:618
+#: kfmprops.cpp:505
+#, fuzzy
+msgid "Owner"
+msgstr "תולעב"
+
+#: kfmprops.cpp:629
 msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
 msgstr ""
 "תואשרה תונשל ןתינ אל\n"
 "תאז תושעל האשרה ךל ןיא יכ ןכתי"
-#: kfmprops.cpp:633
+
+#: kfmprops.cpp:644
 #, c-format
 msgid " ERROR: No user %s"
 msgstr "%s םשב שמתשמ ןיא :האיגש"
 
-#: kfmprops.cpp:638
+#: kfmprops.cpp:649
 #, c-format
 msgid " ERROR: No group %s"
 msgstr "%s םשב הצובק ןיא :האיגש"
 
-#: kfmprops.cpp:644
+#: kfmprops.cpp:655
 msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
 msgstr ""
 "שמתשמ וא הצובק תונשל ןתינ אל\n"
 "תאז תושעל האשרה ךל ןיא יכ ןכתי"
-#: kfmprops.cpp:662
-msgid "Swallowing on panel"
-msgstr "תומישמה תרושב הלועפ"
 
-#: kfmprops.cpp:680 kfmprops.cpp:703
+#: kfmprops.cpp:667 kfmprops.cpp:726
 msgid "Execute"
 msgstr "הלעפה"
 
-#: kfmprops.cpp:684
-msgid "Browse"
+#: kfmprops.cpp:683
+#, fuzzy
+msgid "&Browse..."
 msgstr "ןויע"
 
-#: kfmprops.cpp:688
+#: kfmprops.cpp:695
 msgid "Working Directory"
 msgstr "הדובעה תיירפס"
 
-#: kfmprops.cpp:711
+#: kfmprops.cpp:713
+msgid "Swallowing on panel"
+msgstr "תומישמה תרושב הלועפ"
+
+#: kfmprops.cpp:740
 msgid "Window Title"
 msgstr "ןולח םש"
 
-#: kfmprops.cpp:715
+#: kfmprops.cpp:760
 msgid "Run in terminal"
 msgstr "דרפנ לנימרט ךותב ץרה"
 
-#: kfmprops.cpp:723
+#: kfmprops.cpp:768
 msgid "Terminal Options"
 msgstr "לנימרט תויורשפא"
 
-#: kfmprops.cpp:824 kfmprops.cpp:946 kfmprops.cpp:1389 kfmprops.cpp:1601
-#: kfmprops.cpp:1777
+#: kfmprops.cpp:882 kfmprops.cpp:1011 kfmprops.cpp:1485 kfmprops.cpp:1717
+#: kfmprops.cpp:1902
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
 msgstr ""
 "םינייפאמ רומשל ןתינ אל\n"
 "תאז תושעל האשרה ךל ןיא יכ ןכתי"
-#: kfmprops.cpp:872
+
+#: kfmprops.cpp:936
 msgid "URL"
 msgstr "רושיק"
 
-#: kfmprops.cpp:973
+#: kfmprops.cpp:1033
+#, fuzzy
+msgid "Background"
+msgstr "עקר עבצ"
+
+#: kfmprops.cpp:1043
 msgid "Apply global"
 msgstr "תילבולג לחה"
 
-#: kfmprops.cpp:1012 kfmprops.cpp:1084 kfmprops.cpp:1141
+#: kfmprops.cpp:1081 kfmprops.cpp:1153 kfmprops.cpp:1210
 msgid "(Default)"
 msgstr "לדחמה תרירב"
 
-#: kfmprops.cpp:1073
+#: kfmprops.cpp:1142
 msgid "Could not write to\n"
 msgstr "רומשל ןתינ אל\n"
 
-#: kfmprops.cpp:1186
+#: kfmprops.cpp:1271
 msgid "(None)"
 msgstr "אלל"
 
-#: kfmprops.cpp:1232
+#: kfmprops.cpp:1317
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr "(netscape;Netscape;) תיראניב תינבת"
 
-#: kfmprops.cpp:1239 kfmprops.cpp:1491
+#: kfmprops.cpp:1324 kfmprops.cpp:1586
 msgid "Comment"
 msgstr "הרעה"
 
-#: kfmprops.cpp:1250
+#: kfmprops.cpp:1335
 msgid "Name ( in your language )"
 msgstr "(תירבעב) םש"
 
-#: kfmprops.cpp:1479
+#: kfmprops.cpp:1563
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "(*.html;*.HTM) תינבת"
 
-#: kfmprops.cpp:1487
+#: kfmprops.cpp:1575
 msgid "Mime Type"
 msgstr "ךמסמ גוס"
 
-#: kfmprops.cpp:1498
+#: kfmprops.cpp:1604
 msgid "Default Application"
 msgstr "לדחמה תרירב םושיי"
 
-#: kfmprops.cpp:1646
+#: kfmprops.cpp:1644
+msgid "<none>"
+msgstr ""
+
+#: kfmprops.cpp:1766
 msgid "Device ( /dev/fd0 )"
 msgstr "(/dev/fd0) ןקתה"
 
-#: kfmprops.cpp:1654
+#: kfmprops.cpp:1775
 msgid "Mount Point ( /floppy )"
 msgstr "(/mnt/floppy) רוביח תדוקנ"
 
-#: kfmprops.cpp:1664
+#: kfmprops.cpp:1786
 msgid "Readonly"
 msgstr "דבלב האירק"
 
-#: kfmprops.cpp:1670
+#: kfmprops.cpp:1792
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "(msdos,iso9660,minix) םיצבקה תכרעמ גוס"
 
-#: kfmprops.cpp:1680
+#: kfmprops.cpp:1803
 msgid "Mounted Icon"
 msgstr "רבוחמ רשאכ לומס"
 
-#: kfmprops.cpp:1684
+#: kfmprops.cpp:1808
 msgid "Unmounted Icon"
 msgstr "קתונמ רשאכ לומס"
 
-#: kfmserver.cpp:40
+#: kfmserver.cpp:41
 msgid "Could not create ~/.kde/share/apps/kfm/magic"
 msgstr "~/.kde/share/apps/kfm/magic ץבוקה רוציל ןתינ אל"
 
-#: kfmserver.cpp:50
+#: kfmserver.cpp:51
 msgid ""
 "Please change the password in\n"
 "~/.kde/share/apps/kfm/magic"
@@ -821,11 +978,11 @@ msgstr ""
 "ץבוקב המסיסה תא הנש אנא\n"
 "~/.kde/share/apps/kfm/magic"
 
-#: kfmserver.cpp:78
+#: kfmserver.cpp:79
 msgid "Do you really want to rearrange your icons ?"
 msgstr "? חוטב התא ? םילמסה תא שדחמ רדסל"
 
-#: kfmserver.cpp:234
+#: kfmserver.cpp:240
 #, c-format
 msgid ""
 "The URL\n"
@@ -835,7 +992,8 @@ msgstr ""
 "רושיקה\n"
 "%s\n"
 "יוגש אוה"
-#: kfmserver.cpp:285
+
+#: kfmserver.cpp:291
 msgid ""
 "You dont have the file ~/.kde/share/apps/kfm/magic\n"
 "Authorization failed"
@@ -843,21 +1001,24 @@ msgstr ""
 "ץבוקה תא ךל ןיא\n"
 "~/.kde/share/apps/kfm/magic\n"
 "לשכנ עוציבה"
-#: kfmserver.cpp:294
+
+#: kfmserver.cpp:300
 msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
 msgstr ""
 "ןיקת אל ~/.kde/share/apps/kfm/magic ץבוקה\n"
 "לשכנ עוציבה"
-#: kfmserver.cpp:302
+
+#: kfmserver.cpp:308
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
 msgstr ""
 "יוניש עצבל הסינ והשימ\n"
 "היוגש המסיס תועצמאב"
-#: root.cpp:672
+
+#: root.cpp:706
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -866,48 +1027,45 @@ msgstr ""
 "יונישה תא עצבל ןתינ אל\n"
 "םילמסה ןיב םישדחה םיחוורמה\n"
 "הדובעה ןחלושל ץוחמ םילמס וריתוי"
-#: root.cpp:707
+
+#: root.cpp:741
 msgid "Internal Error: desktopDir is malformed"
 msgstr "ןיקת אל desktopDir :תימינפ האיגש"
 
-#: root.cpp:718
+#: root.cpp:752
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "%s הדובעה ןחלוש ץבוק תא אורקל ןתינ אל"
 
-#: root.cpp:909
+#: root.cpp:951
 msgid "ERROR: Can not accept drop"
 msgstr "הזה דעיל הרירגה תלועפ תא עצבל ןתינ אל"
 
-#: kfmman.cpp:1189 root.cpp:1711
+#: kfmman.cpp:1312 root.cpp:1788
 msgid "Dont know what to do."
 msgstr "? הרק המ המל"
 
-#: kfmman.cpp:1215 kfmtree.cpp:164 root.cpp:1736
+#: kfmman.cpp:1338 kfmtree.cpp:238 root.cpp:1813
 msgid "Dont know what to do"
 msgstr "?  תושעל המ"
 
-#: kfmexec.cpp:93 kfmman.cpp:296
+#: kfmexec.cpp:93 kfmman.cpp:344
 msgid "The file does not contain a URL"
 msgstr "רושיק ליחמ וניא ץבוקה"
 
-#: kfmman.cpp:347
+#: kfmman.cpp:394
 msgid "Contacting host "
 msgstr "תרשה םע רשק רצוי"
 
-#: kfmman.cpp:351
+#: kfmman.cpp:398
 msgid "Working ..."
 msgstr "....ןתמה"
 
-#: kfmman.cpp:1084 kfmtree.cpp:230
-msgid "Add To Bookmarks"
-msgstr "םיפדעומל ףסוה"
-
-#: kiojob.cpp:130
+#: kiojob.cpp:134
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr "ןקתהה םש ןייצל תוחפל שי ןקתה רבחל ידכ :האיגש"
 
-#: kiojob.cpp:233 kiojob.cpp:241 kiojob.cpp:1204 kiojob.cpp:1344
+#: kiojob.cpp:237 kiojob.cpp:245 kiojob.cpp:1210 kiojob.cpp:1350
 #, c-format
 msgid ""
 "Malformed URL\n"
@@ -915,11 +1073,12 @@ msgid ""
 msgstr ""
 "רושיקה םשב האיגש\n"
 "%s"
-#: kiojob.cpp:250
+
+#: kiojob.cpp:254
 msgid "Can only make links on local file system"
 msgstr "תימוקמה םיצבקה תכרעמב קר ךרד ירוציק רוציל ןתינ"
 
-#: kiojob.cpp:273 kiojob.cpp:292
+#: kiojob.cpp:277 kiojob.cpp:296
 #, c-format
 msgid ""
 "Could not overwrite\n"
@@ -927,20 +1086,20 @@ msgid ""
 msgstr ""
 "ץבוקה לע בותכל ןתינ אל\n"
 "%s"
-#: kiojob.cpp:302 kiojob.cpp:325 kiojob.cpp:344
+
+#: kiojob.cpp:306 kiojob.cpp:329 kiojob.cpp:348
 #, c-format
 msgid ""
 "Could not make symlink to\n"
 "%s"
-msgstr ""
-"ךרד רוציק רוציל ןתינ אל"
-"%s ל"
-#: kiojob.cpp:378
+msgstr "ךרד רוציק רוציל ןתינ אל%s ל"
+
+#: kiojob.cpp:382
 #, c-format
 msgid " ERROR: Could not write to %s"
 msgstr "%s ל בותכל ןתינ אל :האיגש"
 
-#: kiojob.cpp:550 kiojob.cpp:790 kiojob.cpp:1261
+#: kiojob.cpp:556 kiojob.cpp:796 kiojob.cpp:1267
 #, c-format
 msgid ""
 "Could not make directory\n"
@@ -948,12 +1107,13 @@ msgid ""
 msgstr ""
 "היירפס רוציל ןתינ אל\n"
 "%s"
-#: kiojob.cpp:563 kiojob.cpp:1009
+
+#: kiojob.cpp:569 kiojob.cpp:1015
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
 msgstr ""
 
-#: kiojob.cpp:821
+#: kiojob.cpp:827
 #, c-format
 msgid ""
 "Could not access directory\n"
@@ -961,7 +1121,8 @@ msgid ""
 msgstr ""
 "היירפסל השיג ןיא :האיגש\n"
 "%s"
-#: kiojob.cpp:862
+
+#: kiojob.cpp:868
 #, c-format
 msgid ""
 "Could not move directory\n"
@@ -973,16 +1134,8 @@ msgstr ""
 "%s\n"
 "%s ל\n"
 "תאז תושעל האשרה ךל ןיא יכ ןכתי"
-#: kiojob.cpp:1208 kiojob.cpp:1216 kiojob.cpp:1225 kiojob.cpp:1233
-#: kiojob.cpp:1241 kiojob.cpp:1249 kiojob.cpp:1257 kiojob.cpp:1265
-#: kiojob.cpp:1281 kiojob.cpp:1299 kiojob.cpp:1307 kiojob.cpp:1314
-#: kiojob.cpp:1325 kiojob.cpp:1340 kiojob.cpp:1348 kiojob.cpp:1356
-#: kiojob.cpp:1364 kiojob.cpp:1372 kiojob.cpp:1380 kiojob.cpp:1388
-#: kiojob.cpp:1406 kiojob.cpp:1414 kiojob.cpp:1422
-msgid "Continue"
-msgstr "ךשמה"
 
-#: kiojob.cpp:1212 kiojob.cpp:1352
+#: kiojob.cpp:1218 kiojob.cpp:1358
 #, c-format
 msgid ""
 "Could not read\n"
@@ -992,7 +1145,8 @@ msgstr ""
 "ץבוקה תא אורקל ןתינ אל\n"
 "%s\n"
 "האשרה ךל ןיאש וא םייק וניא ץבוקה"
-#: kiojob.cpp:1220
+
+#: kiojob.cpp:1226
 #, c-format
 msgid ""
 "Could not write\n"
@@ -1002,7 +1156,8 @@ msgstr ""
 "ץבוקה תא בותכל ןתינ אל\n"
 "%s\n"
 "הביתכ תואשרה ךל ןיא יכ ןכתיי"
-#: kiojob.cpp:1229 kiojob.cpp:1360
+
+#: kiojob.cpp:1235 kiojob.cpp:1366
 #, c-format
 msgid ""
 "Could not create Socket for\n"
@@ -1010,7 +1165,8 @@ msgid ""
 msgstr ""
 "ל רוביח רוציל ןתינ אל\n"
 "%s"
-#: kiojob.cpp:1237 kiojob.cpp:1368
+
+#: kiojob.cpp:1243 kiojob.cpp:1374
 #, c-format
 msgid ""
 "Unknown host in\n"
@@ -1018,7 +1174,8 @@ msgid ""
 msgstr ""
 "עודי אל תרש םש\n"
 "%s"
-#: kiojob.cpp:1245 kiojob.cpp:1376
+
+#: kiojob.cpp:1251 kiojob.cpp:1382
 #, c-format
 msgid ""
 "Could not connect to\n"
@@ -1026,7 +1183,8 @@ msgid ""
 msgstr ""
 "תרשל רבחתהל ןתינ אל\n"
 "%s"
-#: kiojob.cpp:1253 kiojob.cpp:1384
+
+#: kiojob.cpp:1259 kiojob.cpp:1390
 #, c-format
 msgid ""
 "The requested action\n"
@@ -1034,9 +1192,9 @@ msgid ""
 "is not implemented yet."
 msgstr ""
 "תשקובמה הלועפה\n"
-"%s"
-"ןיידע תשמוממ הנניא"
-#: kiojob.cpp:1269
+"%sןיידע תשמוממ הנניא"
+
+#: kiojob.cpp:1275
 #, c-format
 msgid ""
 "Could not list directory contents\n"
@@ -1044,7 +1202,8 @@ msgid ""
 msgstr ""
 "היירפסה תלוכת תא גיצהל ןתינ אל\n"
 "%s"
-#: kiojob.cpp:1277
+
+#: kiojob.cpp:1283
 #, c-format
 msgid ""
 "Could not delete\n"
@@ -1054,7 +1213,8 @@ msgstr ""
 "קוחמל ןתינ אל\n"
 "%s רושיקה תא\n"
 "תואשרה ךל ןיאש וא םייק וניא רושיקה"
-#: kiojob.cpp:1287 kiojob.cpp:1394
+
+#: kiojob.cpp:1293 kiojob.cpp:1400
 #, c-format
 msgid ""
 "Could not login for\n"
@@ -1064,7 +1224,8 @@ msgstr ""
 "תרשל רבחתהל ןתינ אל\n"
 "%s\n"
 "הייוגש המסיסהו ןכתי"
-#: kiojob.cpp:1303 kiojob.cpp:1410
+
+#: kiojob.cpp:1309 kiojob.cpp:1416
 #, c-format
 msgid ""
 "Tar reproted an error\n"
@@ -1072,7 +1233,8 @@ msgid ""
 msgstr ""
 "האיגש לע החוויד tar ביכראה תנכות\n"
 "%s ץבוקב"
-#: kiojob.cpp:1311
+
+#: kiojob.cpp:1317
 #, c-format
 msgid ""
 "Gzip reproted an error for\n"
@@ -1081,7 +1243,7 @@ msgstr ""
 "האיגש לע החוויד gzip הסיחדה תנכות\n"
 "%s ץבוקב"
 
-#: kiojob.cpp:1321 kiojob.cpp:1336
+#: kiojob.cpp:1327 kiojob.cpp:1342
 #, c-format
 msgid ""
 "File %s\n"
@@ -1090,7 +1252,8 @@ msgstr ""
 "ץבוקה\n"
 "%s\n"
 "םייק וניא"
-#: kiojob.cpp:1418
+
+#: kiojob.cpp:1424
 #, c-format
 msgid ""
 "Gzip reproted an error\n"
@@ -1098,7 +1261,8 @@ msgid ""
 msgstr ""
 "האיגש לע החוויד gzip הסיחדה תנכות\n"
 "%s ץבוקב"
-#: kiojob.cpp:1426
+
+#: kiojob.cpp:1432
 #, c-format
 msgid ""
 "Could not mount\n"
@@ -1110,7 +1274,8 @@ msgstr ""
 ":האיגשה תעדוה\n"
 "\n"
 "%s"
-#: kiojob.cpp:1432
+
+#: kiojob.cpp:1438
 #, c-format
 msgid ""
 "Could not unmount\n"
@@ -1122,21 +1287,22 @@ msgstr ""
 ":האיגשה תאדוה\n"
 "\n"
 "%s"
-#: kiojob.cpp:1523
+
+#: kiojob.cpp:1529
 msgid "Making directory"
 msgstr "היירפס רצוי"
 
-#: kiojob.cpp:1642 kiojob.cpp:1696 kiojob.cpp:1738
+#: kiojob.cpp:1644 kiojob.cpp:1698 kiojob.cpp:1740
 #, c-format
 msgid "File %i/%i"
 msgstr "%i %i ץבוק"
 
-#: kiojob.cpp:1645 kiojob.cpp:1700
+#: kiojob.cpp:1647 kiojob.cpp:1702
 #, c-format
 msgid "to %s"
 msgstr "%s ל"
 
-#: kiojob.cpp:1676
+#: kiojob.cpp:1678
 #, c-format
 msgid ""
 "Could not delete directory\n"
@@ -1145,24 +1311,36 @@ msgstr ""
 "היירפיס קוחמל ןתינ אל\n"
 "%s"
 
-#: kiojob.cpp:1766
+#: kiojob.cpp:1768
 #, c-format
 msgid "Mounting %s ..."
 msgstr "...%s ןקתה רבחמ"
 
-#: kiojob.cpp:1768
+#: kiojob.cpp:1770
 #, c-format
 msgid "Unmounting %s ..."
 msgstr "... %s ןקתהמ קתנתמ"
 
-#: kiojob.cpp:1796
+#: kiojob.cpp:1798
 #, c-format
 msgid "Retrieving listing of %s"
 msgstr "%s לש הלוכתה תמישר אביימ"
 
-#: kiojob.cpp:2029
+#: kiojob.cpp:2036
 msgid "Segmentation fault in io subprocess"
 msgstr "טלפ-טלק לש הרגיש תתב ןורכזל השיג :הרומח האיגש"
+
+#: htmlcache.cpp:339
+msgid ""
+" is not a directory ! Security Alert !\n"
+"Please check it.\n"
+msgstr ""
+
+#: htmlcache.cpp:368
+msgid ""
+" is not a directory ! Security Alert !\n"
+"Check it before clearing the cache.\n"
+msgstr ""
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"
@@ -1176,15 +1354,19 @@ msgstr " היירפסה "
 msgid " does not exist\n"
 msgstr " תמייק הניא \n"
 
-#: kfmtree.cpp:396
+#: kfmtree.cpp:304
+msgid "Add To Bookmarks"
+msgstr "םיפדעומל ףסוה"
+
+#: kfmtree.cpp:470
 msgid "My Home"
 msgstr "תיבה תיירפס"
 
-#: kfmtree.cpp:398
+#: kfmtree.cpp:472
 msgid "Desktop"
 msgstr "הדובעה ןחלוש"
 
-#: kfmtree.cpp:400
+#: kfmtree.cpp:474
 msgid "Root"
 msgstr "שרושה תיירפס"
 
@@ -1224,87 +1406,113 @@ msgstr "! םשה תא תיניש אל\n"
 msgid "Password"
 msgstr "המסיס"
 
-#: kfmexec.cpp:136
+#: kfmexec.cpp:141
 msgid "Trying to open"
 msgstr "חותפל הסנמ"
 
-#: useragentdlg.cpp:20
+#: useragentdlg.cpp:44
 msgid "On server:"
 msgstr "תרשה םש"
 
-#: useragentdlg.cpp:31
+#: useragentdlg.cpp:66
 msgid "login as:"
 msgstr "שמתשמכ רבחתה"
 
-#: useragentdlg.cpp:52
+#: useragentdlg.cpp:110
 msgid "Known bindings:"
 msgstr "Known bindings:"
 
-#: kproxydlg.cpp:13
+#: kproxydlg.cpp:46
 msgid "Don't forget to save your settings!"
 msgstr "! םינייפאמה תא רומשל חכשת לע"
 
-#: kproxydlg.cpp:16
+#: kproxydlg.cpp:54
 msgid "Use proxy"
 msgstr "יסקורפב שומיש"
 
-#: kproxydlg.cpp:42
+#: kproxydlg.cpp:132
 msgid "No Proxy for:"
 msgstr ":רובע יסקורפב שמתשת לע"
 
-#: kkfmoptdlg.cpp:19
+#: kkfmoptdlg.cpp:35
 msgid "&Proxy"
 msgstr "יסקור&פ"
 
-#: kkfmoptdlg.cpp:21
+#: kkfmoptdlg.cpp:38
+msgid "&HTTP"
+msgstr ""
+
+#: kkfmoptdlg.cpp:41
 msgid "User &Agent"
 msgstr "תרשל רובי&ח"
 
-#: kkfmoptdlg.cpp:24
-msgid "&Fonts"
-msgstr "ןפ&וג"
-
-#: kkfmoptdlg.cpp:27
+#: kkfmoptdlg.cpp:47
 msgid "&Colors"
 msgstr "םיע&בצ"
 
-#: kkfmoptdlg.cpp:30
+#: kkfmoptdlg.cpp:50
 msgid "&Other"
 msgstr "תונוש"
 
-#: kkfmoptdlg.cpp:50
-msgid "KFM Browser Settings"
+#: kkfmoptdlg.cpp:100
+#, fuzzy
+msgid "KFM Preferences Settings"
 msgstr "תונולחה רייס תורדגה"
+
+#: khttpoptdlg.cpp:39
+msgid "Accept languages:"
+msgstr ""
+
+#: khttpoptdlg.cpp:55
+msgid "Accept character sets:"
+msgstr ""
+
+#: khttpoptdlg.cpp:70
+msgid "Assume HTML"
+msgstr ""
+
+#: open-with.cpp:132
+msgid "This group is empty!"
+msgstr ""
+
+#: finddlg.cpp:41
+#, fuzzy
+msgid "Find:"
+msgstr "ש&ופיח"
+
+#: finddlg.cpp:56
+msgid "Case &sensitive"
+msgstr ""
 
 #: kfmprops.h:73
 msgid "&General"
 msgstr "ילל&כ"
 
-#: kfmprops.h:108
+#: kfmprops.h:107
 msgid "&Permissions"
 msgstr "תואש&רה"
 
-#: kfmprops.h:198
+#: kfmprops.h:201
 msgid "E&xecute"
 msgstr "ה&צרה"
 
-#: kfmprops.h:246
+#: kfmprops.h:247
 msgid "U&RL"
 msgstr "רוש&יק"
 
-#: kfmprops.h:270
+#: kfmprops.h:271
 msgid "&Dir"
 msgstr "היירפ&ס"
 
-#: kfmprops.h:313
+#: kfmprops.h:315
 msgid "&Application"
 msgstr "םימוש&יי"
 
-#: kfmprops.h:355
+#: kfmprops.h:359
 msgid "&Binding"
 msgstr "רו&ביח"
 
-#: kfmprops.h:385
+#: kfmprops.h:389
 msgid "De&vice"
 msgstr "ןק&תה"
 
@@ -1316,6 +1524,7 @@ msgid ""
 msgstr ""
 "%s רושיקה\n"
 "יוגש אוה"
+
 #: kfmexec/main.cpp:132
 #, c-format
 msgid ""
@@ -1328,6 +1537,7 @@ msgstr ""
 " %s\n"
 "הנוש\n"
 "? םייונישה תא רומשל םאה"
+
 #: kfmexec/main.cpp:133
 msgid "KFM Question"
 msgstr "הלאש תבית"
@@ -1339,3 +1549,33 @@ msgid ""
 msgstr ""
 ":הייוגש הדוקפ\n"
 "kfmexec command [URLs ....]\n"
+
+#~ msgid "&Quit..."
+#~ msgstr "...האי&צי"
+
+#~ msgid "&Visual Schnauzer"
+#~ msgstr "תונומ&ת תגוצת"
+
+#~ msgid "&About..."
+#~ msgstr "...תודו&א"
+
+#~ msgid "Stop"
+#~ msgstr "רוצע"
+
+#~ msgid "About KFM"
+#~ msgstr "KDE רייס תודוא"
+
+#~ msgid "ERROR: You dropped some URL over itself"
+#~ msgstr "המצע לע תבותכ תררג :האיגש"
+
+#~ msgid "Properties"
+#~ msgstr "םינייפאמ"
+
+#~ msgid "Font Size"
+#~ msgstr "ןפוג לדוג"
+
+#~ msgid "Continue"
+#~ msgstr "ךשמה"
+
+#~ msgid "&Fonts"
+#~ msgstr "ןפ&וג"

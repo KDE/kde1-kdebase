@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
-"POT-Creation-Date: 1998-12-06 01:14+0100\n"
+"POT-Creation-Date: 1998-12-08 01:17+0100\n"
 "PO-Revision-Date: 1998-11-17 10:29+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -424,47 +424,51 @@ msgstr "&Velká"
 msgid "Low"
 msgstr "Malá"
 
-#: general.cpp:220
+#: general.cpp:222
 msgid "Fonts etc."
 msgstr "&Znakové sady atd."
 
-#: general.cpp:228
+#: general.cpp:230
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "Vyk&reslovat widgety ve stylu Windows 95"
 
-#: general.cpp:242
+#: general.cpp:244
 msgid "&Apply style to non-KDE apps"
 msgstr "&Aplikovat styl na aplikace mimo KDE"
 
-#: general.cpp:255
+#: general.cpp:258
+msgid "&Menubar on top of the screen in the style of MacOS"
+msgstr ""
+
+#: general.cpp:273
 msgid "Desktop fonts"
 msgstr "Znakové sady pracovní plochy"
 
-#: general.cpp:267
+#: general.cpp:285
 msgid "General font"
 msgstr "Obecná znaková sada"
 
-#: general.cpp:272
+#: general.cpp:290
 msgid "Fixed font"
 msgstr "Fixovaná znaková sada"
 
-#: general.cpp:278
+#: general.cpp:296
 msgid "Window title font"
 msgstr "Font titulku okna"
 
-#: general.cpp:283
+#: general.cpp:301
 msgid "Panel button font"
 msgstr "Znaková sada tlaèítek Panelu"
 
-#: general.cpp:288
+#: general.cpp:306
 msgid "Panel clock font"
 msgstr "Znaková sada hodin Panelu"
 
-#: general.cpp:318
+#: general.cpp:336
 msgid "Sample text"
 msgstr "Vzorový text"
 
-#: general.cpp:326
+#: general.cpp:344
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
