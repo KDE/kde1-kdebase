@@ -277,7 +277,7 @@ msgstr "Ingen skjermsparer"
 
 #: scrnsave.cpp:207
 msgid "&Setup ..."
-msgstr "6Oppsett ..."
+msgstr "&Oppsett ..."
 
 #: scrnsave.cpp:215
 msgid "&Test"
