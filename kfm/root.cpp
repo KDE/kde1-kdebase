@@ -247,7 +247,7 @@ void KRootWidget::openPopupMenu( QStrList &_urls, const QPoint &_point )
     // store the mouse position. (Matthias)
     popupMenuPosition = QCursor::pos();
 
-    bool isdir = KIOServer::isDir( _urls );
+    bool isdir = (KIOServer::isDir( _urls ) == 1);
     bool istrash = KIOServer::isTrash( _urls );
 
     if ( istrash )

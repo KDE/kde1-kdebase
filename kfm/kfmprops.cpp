@@ -1203,7 +1203,7 @@ bool DirPropsPage::supports( KURL *_kurl )
     if ( strcmp( u2.protocol(), "file" ) != 0 )
 	return false;
 
-    if ( !KIOServer::isDir( path ) )
+    if ( KIOServer::isDir( path ) != 1 )
       return false;
     
     return true;    

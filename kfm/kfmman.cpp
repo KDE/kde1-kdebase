@@ -1416,7 +1416,7 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
       popupMenu->insertSeparator();
     }
     //------------------------------
-    bool isdir = KIOServer::isDir( _urls );
+    bool isdir = (KIOServer::isDir( _urls ) == 1);
     
     if ( KIOServer::isTrash( _urls ) )
     {
