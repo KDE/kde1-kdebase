@@ -1286,7 +1286,7 @@ bool KMimeBind::runBinding( const char *_url )
 	d += "\"";
         // set working directory to path of file
         // only for local files
-	if (!strcmp(u.protocol(),"file"))
+	if (u.isLocalFile())
             workdir = tmp.left( i + 1 );
     }
     
