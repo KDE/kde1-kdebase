@@ -336,7 +336,7 @@ static int  krb_check_password(struct passwd *, char *);
 static struct passwd *
 my_passwd_entry(void)
 {
-	int         uid;
+	uid_t         uid;
 	struct passwd *pw;
 
 #ifdef USE_SHADOW
