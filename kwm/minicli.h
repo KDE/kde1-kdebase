@@ -29,6 +29,7 @@ private:
   QLabel* label;
   Client* reactive;
   void commandCompletion();
+  unsigned int max_hist; //CT 15Jan1999 limit the in-memory history too
 
   KURLCompletion kurlcompletion;
 };

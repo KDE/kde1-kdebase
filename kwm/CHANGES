@@ -16,6 +16,7 @@ In 0.13:
 patchlevel 8:
         - delayed internal event handling fix (kwm sometimes lost the 
            mouse on opaque resize)
+	- minicli in-memory history has now a maximum limit (CT)
 
 patchlevel 7:
         - small bugfixes

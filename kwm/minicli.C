@@ -100,7 +100,9 @@ Minicli::Minicli( QWidget *parent, const char *name, WFlags f)
       QStrList hist;
       config->setGroup("MiniCli");
       config->readListEntry("History", hist);
-      for (unsigned int i=0; i<hist.count(); i++)
+      //CT 15Jan1999 - limit in-memory history too
+      max_hist = config->readNumEntry("HistoryLength", 50);
+      for (unsigned int i=0; i< QMIN(hist.count(), max_hist); i++)
         if (strcmp(hist.at(i),"") != 0)
           history->append(qstrdup(hist.at(i)));	
 
@@ -199,6 +201,12 @@ void Minicli::return_pressed(){
   if (s != history->last() && !s.simplifyWhiteSpace().isEmpty()) {
     history->append(qstrdup(s.data()));
   }
+
+  //CT 15Jan1999 - limit in-memory history too
+  while (history->count() > max_hist)
+    history->removeFirst();
+  //CT
+
   history->append("");
   cleanup();
   if (s == "logout")
@@ -226,13 +234,13 @@ void Minicli::cleanup(){
   KConfig *config = kapp->getConfig();
   config->setGroup("MiniCli");
 
-  unsigned int max = config->readNumEntry("HistoryLength", 50);
+  //CT  unsigned int max = config->readNumEntry("HistoryLength", 50);
   QStrList hist;
   if (history)
     for (char *entry = history->first(); entry != 0; entry = history->next())
       if (strcmp(entry,"") != 0)
         hist.append(entry);
-  while (hist.count() > max)
+  while (hist.count() > max_hist)
     hist.removeFirst();
 
   config->writeEntry("History", hist);
