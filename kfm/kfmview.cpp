@@ -342,7 +342,9 @@ void KfmView::slotStop()
 
 void KfmView::slotReload()
 {
-    manager->openURL( manager->getURL(), true );
+  stackLock=true;
+  manager->openURL( manager->getURL(), true );
+  stackLock=false;
 }
 
 void KfmView::slotUpdateView( bool _reload )
