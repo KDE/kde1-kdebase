@@ -772,7 +772,7 @@ msgstr ""
 
 #: kfmserver.cpp:78
 msgid "Do you really want to rearrange your icons ?"
-msgstr "Deseja realmente reordernar os seus ícones ?"
+msgstr "Deseja realmente reordenar os seus ícones ?"
 
 #: kfmserver.cpp:234
 #, c-format

@@ -127,7 +127,7 @@ msgstr "Fim da Mudança de Tamanho da Janela"
 
 #: syssound.cpp:198
 msgid "e&nable system sounds"
-msgstr "activa so&ns do sistema"
+msgstr "activar so&ns do sistema"
 
 #: syssound.cpp:203
 msgid "&Test"
@@ -143,7 +143,7 @@ msgstr "&Sons:"
 
 #: syssound.cpp:216
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Ficheiro WAV podem ser largados na lista de sons."
+msgstr "Pode largar ficheiros WAV na lista de sons."
 
 #: syssound.cpp:456
 msgid "Unsupported URL"

@@ -51,7 +51,7 @@ msgstr "&Escalonado"
 
 #: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
 msgid "No wallpaper"
-msgstr "Nenhumm papel de parede"
+msgstr "Nenhum papel de parede"
 
 #: backgnd.cpp:335
 msgid "&Browse..."
@@ -151,7 +151,7 @@ msgstr "Mistura do título inactivo"
 
 #: colorscm.cpp:186
 msgid "Active title bar"
-msgstr "Barra de título inactiva"
+msgstr "Barra de título activa"
 
 #: colorscm.cpp:187
 msgid "Active title text"
@@ -261,7 +261,7 @@ msgstr "Protecção do Écran"
 
 #: scrnsave.cpp:189 scrnsave.cpp:360 scrnsave.cpp:571 scrnsave.cpp:686
 msgid "No screensaver"
-msgstr "Nenhuma protecção do écran"
+msgstr "Nenhuma"
 
 #: scrnsave.cpp:210
 msgid "&Setup ..."
@@ -309,7 +309,7 @@ msgstr "Fontes etc."
 
 #: general.cpp:222
 msgid "&Draw widgets in the style of Windows 95"
-msgstr "&Desenhar widgets ao estilo do Windows 95"
+msgstr "&Desenhar interface ao estilo do Windows 95"
 
 #: general.cpp:236
 msgid "Desktop fonts"
@@ -325,7 +325,7 @@ msgstr "Fonte fixa"
 
 #: general.cpp:263
 msgid "Panel button font"
-msgstr "Fonte dos butões do painel"
+msgstr "Fonte dos botões do painel"
 
 #: general.cpp:268
 msgid "Panel clock font"
@@ -341,8 +341,8 @@ msgid ""
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
-"A RAPOSA CASTANHA SALTOU POR CIMA DO CÃO\n"
-"a raposa castanha saltou por cima do cão\n"
+"A ÁGIL RAPOSA CASTANHA SALTOU POR CIMA DO CÃO\n"
+"a ágil raposa castanha saltou por cima do cão\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 
 #: main.cpp:62
