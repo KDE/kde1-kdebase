@@ -14,7 +14,6 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 
 #: kstart.C:116
-#, fuzzy, c-format
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
@@ -61,7 +60,7 @@ msgstr ""
 " Pou¾itie:\n"
 " %s <príkaz>  [-window <regulérny výraz>] [-desktop <èíslo>]\n"
 "              [-sticky] [-iconify] [-maximize] \n"
-"              [-decoration tiny|none] [-activate] [-nofocus]\n"
+"              [-decoration tiny|none] [-activate] [-nofocus] [-staysontop]\n"
 " \n"
 " Ak ne¹pecifikujete regulérny výraz pre titulok okna, tak sa vezme,\n"
 " do úvahy prvé okno, ktoré sa objaví. To nie je odporúèané !\n"

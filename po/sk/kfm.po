@@ -1054,12 +1054,11 @@ msgid "Recurse copying from/to distant locations"
 msgstr "Rekurzívne kopírovanie z/do vzdialených miest"
 
 #: kiojob.cpp:904
-#, fuzzy, c-format
 msgid ""
 "Could not remove symbolic link\n"
 "%s"
 msgstr ""
-"Nie je mo¾né vytvori» symbolický odkaz\n"
+"Nie je mo¾né zru¹i» symbolický odkaz\n"
 "%s"
 
 #: kiojob.cpp:952
@@ -1221,7 +1220,6 @@ msgstr ""
 "neexistuje "
 
 #: kiojob.cpp:1398
-#, fuzzy, c-format
 msgid ""
 "Could not write\n"
 "%s\n"
@@ -1229,7 +1227,7 @@ msgid ""
 msgstr ""
 "Nie je mo¾né zapisova»\n"
 "%s\n"
-"Pravdepodobne bol odmietnutý prístup."
+"Pravdepodobne je plný disk"
 
 #: kiojob.cpp:1449
 #, c-format

@@ -44,9 +44,8 @@ msgstr ""
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 
 #: mainwidget.cpp:44
-#, fuzzy
 msgid "KDE Version: "
-msgstr "Verzia: "
+msgstr "Verzia KDE: "
 
 #: mainwidget.cpp:52
 msgid "User: "
