@@ -282,7 +282,8 @@ msgstr ""
 
 #: main.C:1165
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr "-sl <èíslo>               ulo¾i» 'èíslo' riadkov do buffra scrollbaru\n"
+msgstr ""
+"-sl <èíslo>               ulo¾i» 'èíslo' riadkov do buffra scrollbaru\n"
 
 #: main.C:1166
 msgid ""

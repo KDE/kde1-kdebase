@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-02-19 22:49+0100\n"
-"POT-Creation-Date: 1998-05-13 12:13+0200\n"
+"POT-Creation-Date: 1998-05-18 18:03+0200\n"
 "PO-Revision-Date: 1998-02-03 16:00+0100\n"
 "Last-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -211,9 +211,9 @@ msgstr "Impossibile caricare l'icona\n"
 #: kfmview.cpp:570 kfmview.cpp:576 kfmview.cpp:582 kiojob.cpp:233
 #: kiojob.cpp:241 kiojob.cpp:248 kiojob.cpp:273 kiojob.cpp:292 kiojob.cpp:303
 #: kiojob.cpp:325 kiojob.cpp:344 kiojob.cpp:548 kiojob.cpp:788 kiojob.cpp:819
-#: kiojob.cpp:860 kiojob.cpp:1669 krenamewin.cpp:120 root.cpp:1087
-#: root.cpp:1105 root.cpp:1111 root.cpp:1117 root.cpp:1192 root.cpp:1694
-#: root.cpp:1719
+#: kiojob.cpp:860 kiojob.cpp:1669 krenamewin.cpp:120 root.cpp:1098
+#: root.cpp:1116 root.cpp:1122 root.cpp:1128 root.cpp:1203 root.cpp:1710
+#: root.cpp:1735
 msgid "KFM Error"
 msgstr "Errore KFM"
 
@@ -239,7 +239,7 @@ msgstr "Nuovo"
 
 #: kfmgui.cpp:1028 kfmgui.cpp:1190 kfmjob.cpp:33 kfmman.cpp:218
 #: kfmtree.cpp:318 kfmview.cpp:371 kfmview.cpp:440 kfmview.cpp:571
-#: kiojob.cpp:82 root.cpp:1106
+#: kiojob.cpp:82 root.cpp:1117
 msgid "ERROR: Malformed URL"
 msgstr "ERRORE: URL Maldefinita"
 
@@ -293,11 +293,11 @@ msgid "ERROR: You dropped some URL over itself"
 msgstr "ERRORE: Hai eseguito un Drop di alcune URL su se stesse"
 
 #: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:412
-#: kfmview.cpp:606 krenamewin.cpp:20 root.cpp:1147
+#: kfmview.cpp:606 krenamewin.cpp:20 root.cpp:1158
 msgid "KFM Warning"
 msgstr "Avviso KFM"
 
-#: kfmtree.cpp:357 kfmview.cpp:413 kfmview.cpp:607 root.cpp:1148
+#: kfmtree.cpp:357 kfmview.cpp:413 kfmview.cpp:607 root.cpp:1159
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -307,11 +307,11 @@ msgstr ""
 "\n"
 "Non ci sono possibiltà di recuperarli"
 
-#: kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1112
+#: kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1123
 msgid "ERROR: You dropped a URL over itself"
 msgstr "ERRORE: Hai eseguito un Drop di una URL su se stessa"
 
-#: kfmtree.cpp:330 kfmview.cpp:452 kfmview.cpp:583 root.cpp:1118
+#: kfmtree.cpp:330 kfmview.cpp:452 kfmview.cpp:583 root.cpp:1129
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "ERRORE: Hai eseguito un Drop di una directory su una delle sue figlie"
 
@@ -319,16 +319,16 @@ msgstr "ERRORE: Hai eseguito un Drop di una directory su una delle sue figlie"
 msgid "Open With:"
 msgstr "Apri con...:"
 
-#: kfmview.cpp:485 root.cpp:1057
+#: kfmview.cpp:485 root.cpp:1068
 msgid "ERROR: Can not open properties for multiple files"
 msgstr ""
 "ERRORE: Non si possono cambiare le proprietà di più file contemporaneamente"
 
-#: kfmtree.cpp:287 kfmview.cpp:527 root.cpp:1193
+#: kfmtree.cpp:287 kfmview.cpp:527 root.cpp:1204
 msgid "Could not access Trash Bin"
 msgstr "Impossibile accedere al Cestino"
 
-#: kfmview.cpp:553 root.cpp:1088
+#: kfmview.cpp:553 root.cpp:1099
 msgid "Can not paste into multiple directories"
 msgstr "Non si può incollare su più directory"
 
@@ -566,6 +566,10 @@ msgstr "Spaziatura Orizontale griglia:"
 #: htmlopts.cpp:335
 msgid "Vertical Root Grid Spacing:"
 msgstr "Spaziatura Verticale griglia:"
+
+#: htmlopts.cpp:349
+msgid "Transparent Text for Root Icons."
+msgstr ""
 
 #: bookmark.cpp:259
 msgid "Could not write bookmark"
@@ -858,7 +862,7 @@ msgstr ""
 "Qualcuno ha provato ad autorizzarsi\n"
 "utilizzando una password errata"
 
-#: root.cpp:661
+#: root.cpp:672
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -868,24 +872,24 @@ msgstr ""
 "Le nuove dimensioni della griglia potrebbero\n"
 "far spostare alcune icone fuori dal Desktop."
 
-#: root.cpp:696
+#: root.cpp:707
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Errore Interno: la desktopDir è maldefinita"
 
-#: root.cpp:707
+#: root.cpp:718
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "ERRORE: Impossibile leggere la directory del desktop '%s'"
 
-#: root.cpp:898
+#: root.cpp:909
 msgid "ERROR: Can not accept drop"
 msgstr "ERRORE: Non può accettare Drop"
 
-#: kfmman.cpp:1189 root.cpp:1695
+#: kfmman.cpp:1189 root.cpp:1711
 msgid "Dont know what to do."
 msgstr "Non so cosa fare."
 
-#: kfmman.cpp:1215 kfmtree.cpp:164 root.cpp:1720
+#: kfmman.cpp:1215 kfmtree.cpp:164 root.cpp:1736
 msgid "Dont know what to do"
 msgstr "Non so che fare"
 

@@ -1,7 +1,7 @@
 
 # This has to be set. The rest should be reusable
 GMFILES = kcmkwm.gmo kcmsyssound.gmo kdehelp.gmo kdisplay.gmo kdmconfig.gmo \
-	kfind.gmo kfm.gmo klock.gmo kvt.gmo kwm.gmo
+	kfm.gmo klock.gmo kvt.gmo kwm.gmo
 
 POFILES = $(GMFILES:.gmo=.po)
 

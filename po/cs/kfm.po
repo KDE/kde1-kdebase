@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-05-13 12:13+0200\n"
+"POT-Creation-Date: 1998-05-18 18:03+0200\n"
 "PO-Revision-Date: 1998-04-17 15:16 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -218,9 +218,9 @@ msgstr "Není mo¾né nahrát ikonu\n"
 #: kfmview.cpp:570 kfmview.cpp:576 kfmview.cpp:582 kiojob.cpp:233
 #: kiojob.cpp:241 kiojob.cpp:248 kiojob.cpp:273 kiojob.cpp:292 kiojob.cpp:303
 #: kiojob.cpp:325 kiojob.cpp:344 kiojob.cpp:548 kiojob.cpp:788 kiojob.cpp:819
-#: kiojob.cpp:860 kiojob.cpp:1669 krenamewin.cpp:120 root.cpp:1087
-#: root.cpp:1105 root.cpp:1111 root.cpp:1117 root.cpp:1192 root.cpp:1694
-#: root.cpp:1719
+#: kiojob.cpp:860 kiojob.cpp:1669 krenamewin.cpp:120 root.cpp:1098
+#: root.cpp:1116 root.cpp:1122 root.cpp:1128 root.cpp:1203 root.cpp:1710
+#: root.cpp:1735
 msgid "KFM Error"
 msgstr "Chyba KFM"
 
@@ -246,7 +246,7 @@ msgstr "Nový "
 
 #: kfmgui.cpp:1028 kfmgui.cpp:1190 kfmjob.cpp:33 kfmman.cpp:218
 #: kfmtree.cpp:318 kfmview.cpp:371 kfmview.cpp:440 kfmview.cpp:571
-#: kiojob.cpp:82 root.cpp:1106
+#: kiojob.cpp:82 root.cpp:1117
 msgid "ERROR: Malformed URL"
 msgstr "Chyba: Chybný formát URL"
 
@@ -304,11 +304,11 @@ msgid "ERROR: You dropped some URL over itself"
 msgstr "CHYBA: Upustil jste nìkteré URL nad sebou samým"
 
 #: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:412
-#: kfmview.cpp:606 krenamewin.cpp:20 root.cpp:1147
+#: kfmview.cpp:606 krenamewin.cpp:20 root.cpp:1158
 msgid "KFM Warning"
 msgstr "Varování KFM"
 
-#: kfmtree.cpp:357 kfmview.cpp:413 kfmview.cpp:607 root.cpp:1148
+#: kfmtree.cpp:357 kfmview.cpp:413 kfmview.cpp:607 root.cpp:1159
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -318,11 +318,11 @@ msgstr ""
 "\n"
 "Neexistuje zpùsob jak je obnovit!"
 
-#: kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1112
+#: kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1123
 msgid "ERROR: You dropped a URL over itself"
 msgstr "CHYBA: Upustil jste URL nad sebou samým"
 
-#: kfmtree.cpp:330 kfmview.cpp:452 kfmview.cpp:583 root.cpp:1118
+#: kfmtree.cpp:330 kfmview.cpp:452 kfmview.cpp:583 root.cpp:1129
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "CHYBA: Upustil jste adresáø nad nìkterým z jeho podadresáøù"
 
@@ -330,15 +330,15 @@ msgstr "CHYBA: Upustil jste adresáø nad nìkterým z jeho podadresáøù"
 msgid "Open With:"
 msgstr "Otevøi pomocí:"
 
-#: kfmview.cpp:485 root.cpp:1057
+#: kfmview.cpp:485 root.cpp:1068
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "Chyba: Nemohu otevøít vlastnosti pro nìkolik souborù"
 
-#: kfmtree.cpp:287 kfmview.cpp:527 root.cpp:1193
+#: kfmtree.cpp:287 kfmview.cpp:527 root.cpp:1204
 msgid "Could not access Trash Bin"
 msgstr "Nemohu pøistoupit ke ko¹i"
 
-#: kfmview.cpp:553 root.cpp:1088
+#: kfmview.cpp:553 root.cpp:1099
 msgid "Can not paste into multiple directories"
 msgstr "Nemohu vkládat do nìkolika adresáøù"
 
@@ -576,6 +576,10 @@ msgstr "Horizontální rozteè sítì na plo¹e:"
 #: htmlopts.cpp:335
 msgid "Vertical Root Grid Spacing:"
 msgstr "Vertikální rozteè sítì na plo¹e:"
+
+#: htmlopts.cpp:349
+msgid "Transparent Text for Root Icons."
+msgstr ""
 
 #: bookmark.cpp:259
 msgid "Could not write bookmark"
@@ -868,7 +872,7 @@ msgstr ""
 "Nìkdo se pokusil se autorizovat\n"
 "pomocí ¹patného hesla"
 
-#: root.cpp:661
+#: root.cpp:672
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -878,24 +882,24 @@ msgstr ""
 "Nová rozteè sítì na pracovní plo¹e by posunula\n"
 "nekteré ikony mimo pracovní plochu."
 
-#: root.cpp:696
+#: root.cpp:707
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Interní chyba: desctopDir má ¹patný formát"
 
-#: root.cpp:707
+#: root.cpp:718
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "Chyba: Nemohu èíst adresáø pracovní plochy '%s'"
 
-#: root.cpp:898
+#: root.cpp:909
 msgid "ERROR: Can not accept drop"
 msgstr "Chyba: Nemohu akceptovat upu¹»ení"
 
-#: kfmman.cpp:1189 root.cpp:1695
+#: kfmman.cpp:1189 root.cpp:1711
 msgid "Dont know what to do."
 msgstr "Nevím co dìlat."
 
-#: kfmman.cpp:1215 kfmtree.cpp:164 root.cpp:1720
+#: kfmman.cpp:1215 kfmtree.cpp:164 root.cpp:1736
 msgid "Dont know what to do"
 msgstr "Nevím co dìlat"
 
