@@ -11,7 +11,7 @@
 #include <qpoint.h>
 #include <drag.h>
 
-#define CELL_HEIGHT 24
+#define CELL_HEIGHT 20
 #define PIXMAP_HEIGHT 16
 #define PIXMAP_WIDTH 16
 

@@ -660,9 +660,9 @@ void KFMManager::writeBeginning()
     if ( view->getGUI()->getViewMode() == KfmGui::ICON_VIEW )
     { }
     else if ( view->getGUI()->getViewMode() == KfmGui::LONG_VIEW )
-	view->write( "<table width=100% padding=1>" );
+        view->write( "<table cellspacing=0 cellpadding=0 width=100% padding=1>" );
     else if ( view->getGUI()->getViewMode() == KfmGui::TEXT_VIEW )
-	view->write( "<table width=100% padding=1>" );
+	view->write( "<table cellspacing=0 cellpadding=0 width=100% padding=1>" );
     else if ( view->getGUI()->getViewMode() == KfmGui::SHORT_VIEW )
 	;
     
@@ -876,7 +876,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
     }
     else if ( view->getGUI()->getViewMode() == KfmGui::LONG_VIEW )
     {
-	view->write( "<tr><td width=16><a href=\"" );
+	view->write( "<tr><td width=22><a href=\"" );
 
 	view->write( encodedURL.data() );
 	view->write( "\"><img border=0 width=16 height=16 src=\"file:" );
@@ -940,7 +940,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	// Begin Link
 	// We have to duplicate this here, since KHTMLW addes a </a>
 	// at this place automatically.
-	view->write( "<table><tr><td valign=top><a href=\"" );
+	view->write( "<table cellspacing=0 cellpadding=0><tr><td width=22 valign=top><a href=\"" );
 	view->write( encodedURL.data() );
 	view->write( "\">" );
 
