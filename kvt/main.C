@@ -246,19 +246,19 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
 {
   setCaption(name);
   QLabel *label_color, *label_class, *label_backspace;
-  label_color = new QLabel(klocale->translate("choose type of color-mode"), this);
+  label_color = new QLabel(i18n("choose type of color-mode"), this);
   colormode = new QComboBox(this);
 
-  label_class = new QLabel(klocale->translate("Add characters to word class"), this);
+  label_class = new QLabel(i18n("Add characters to word class"), this);
   chars = new QLineEdit(this);
 
-  label_backspace = new QLabel(klocale->translate("The backspace key will send a"), this);
+  label_backspace = new QLabel(i18n("The backspace key will send a"), this);
   backspace = new QComboBox(this);
   
   QPushButton *ok, *cancel;
-  ok = new QPushButton( klocale->translate("Ok"), this );
+  ok = new QPushButton( i18n("Ok"), this );
   connect( ok, SIGNAL(clicked()), SLOT(accept()) );
-  cancel = new QPushButton( klocale->translate("Cancel"), this );
+  cancel = new QPushButton( i18n("Cancel"), this );
   connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
 
   QBoxLayout *geom1, *geom3;
@@ -396,26 +396,26 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
 
     m_file = new QPopupMenu;
     CHECK_PTR( m_file );
-    m_file->insertItem( klocale->translate("&New Terminal"));
+    m_file->insertItem( i18n("&New Terminal"));
     m_file->insertSeparator();
-    m_file->insertItem( klocale->translate("E&xit") ,  this, SLOT(quit()) );
+    m_file->insertItem( i18n("E&xit") ,  this, SLOT(quit()) );
     connect(m_file, SIGNAL(activated(int)), SLOT(file_menu_activated(int)));
 
     m_scrollbar = new QPopupMenu;
     CHECK_PTR( m_scrollbar );
-    m_scrollbar->insertItem( klocale->translate("&Hide"));
-    m_scrollbar->insertItem( klocale->translate("&Left"));
-    m_scrollbar->insertItem( klocale->translate("&Right"));
+    m_scrollbar->insertItem( i18n("&Hide"));
+    m_scrollbar->insertItem( i18n("&Left"));
+    m_scrollbar->insertItem( i18n("&Right"));
     connect(m_scrollbar, SIGNAL(activated(int)), SLOT(scrollbar_menu_activated(int)));
 
     m_size = new QPopupMenu;
     CHECK_PTR( m_size );
-    m_size->insertItem( klocale->translate("&Normal"));
-    m_size->insertItem( klocale->translate("&Tiny"));
-    m_size->insertItem( klocale->translate("&Small"));
-    m_size->insertItem( klocale->translate("&Medium"));
-    m_size->insertItem( klocale->translate("&Large"));
-    m_size->insertItem( klocale->translate("&Huge"));
+    m_size->insertItem( i18n("&Normal"));
+    m_size->insertItem( i18n("&Tiny"));
+    m_size->insertItem( i18n("&Small"));
+    m_size->insertItem( i18n("&Medium"));
+    m_size->insertItem( i18n("&Large"));
+    m_size->insertItem( i18n("&Huge"));
     connect(m_size, SIGNAL(activated(int)), SLOT(size_menu_activated(int)));
 
     m_dimen = new QPopupMenu;
@@ -427,38 +427,38 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
     
     m_color = new QPopupMenu;
     CHECK_PTR( m_color );
-    m_color->insertItem( klocale->translate("&black/white"));
-    m_color->insertItem( klocale->translate("&white/black"));
-    m_color->insertItem( klocale->translate("&green/black"));
-    m_color->insertItem( klocale->translate("black/light&yellow"));
-    m_color->insertItem( klocale->translate("Linu&x Console"));
+    m_color->insertItem( i18n("&black/white"));
+    m_color->insertItem( i18n("&white/black"));
+    m_color->insertItem( i18n("&green/black"));
+    m_color->insertItem( i18n("black/light&yellow"));
+    m_color->insertItem( i18n("Linu&x Console"));
 
     colors =  	new QPopupMenu ();
     CHECK_PTR( colors );
-    colors->insertItem(klocale->translate("&Foreground Color"),
+    colors->insertItem(i18n("&Foreground Color"),
 		       this, SLOT(select_foreground_color()));
-    colors->insertItem(klocale->translate("&Background Color"),
+    colors->insertItem(i18n("&Background Color"),
 		       this, SLOT(select_background_color()));
     m_color->insertSeparator();
-    m_color->insertItem(klocale->translate("&Custom Colors"),colors);
+    m_color->insertItem(i18n("&Custom Colors"),colors);
     connect(m_color, SIGNAL(activated(int)), SLOT(color_menu_activated(int)));
     
     
     m_options = new QPopupMenu;
     CHECK_PTR( m_options );
     if (menubar_visible)
-      m_options->insertItem( klocale->translate("Hide &Menubar") );
+      m_options->insertItem( i18n("Hide &Menubar") );
     else
-      m_options->insertItem( klocale->translate("Show &Menubar") );
-    m_options->insertItem( klocale->translate("Secure &keyboard"));
+      m_options->insertItem( i18n("Show &Menubar") );
+    m_options->insertItem( i18n("Secure &keyboard"));
     m_options->insertSeparator();
-    m_options->insertItem( klocale->translate("Scroll&bar"), m_scrollbar);
-    m_options->insertItem( klocale->translate("&Font size"), m_size);
-    m_options->insertItem( klocale->translate("&Color"), m_color);
-    m_options->insertItem( klocale->translate("&Size"), m_dimen);
-    m_options->insertItem( klocale->translate("Terminal...") );
+    m_options->insertItem( i18n("Scroll&bar"), m_scrollbar);
+    m_options->insertItem( i18n("&Font size"), m_size);
+    m_options->insertItem( i18n("&Color"), m_color);
+    m_options->insertItem( i18n("&Size"), m_dimen);
+    m_options->insertItem( i18n("Terminal...") );
     m_options->insertSeparator();
-    m_options->insertItem( klocale->translate("Save &Options"));
+    m_options->insertItem( i18n("Save &Options"));
 
     m_options->installEventFilter( this );
 
@@ -467,7 +467,10 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
 
 
     QString at = KVT_VERSION;
-    at += klocale->translate("\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n\nTerminal emulation for the KDE Desktop Environment\nbased on Robert Nation's rxvt-2.08");
+    at += i18n("\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+	       "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n\n"
+	       "Terminal emulation for the KDE Desktop Environment\n"
+	       "based on Robert Nation's rxvt-2.08");
 		       
     m_help = kapp->getHelpMenu(true, at.data());
 
@@ -493,10 +496,10 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
 
     connect(menubar, SIGNAL (moved(menuPosition)),
 	    SLOT (menubarMoved()));
-    menubar->insertItem( klocale->translate("&File"), m_file );
-    menubar->insertItem( klocale->translate("&Options"), m_options);
+    menubar->insertItem( i18n("&File"), m_file );
+    menubar->insertItem( i18n("&Options"), m_options);
     menubar->insertSeparator();
-    menubar->insertItem( klocale->translate("&Help"), m_help);
+    menubar->insertItem( i18n("&Help"), m_help);
 
     if (!menubar_visible)
       menubar->hide();
@@ -616,7 +619,7 @@ void kVt::do_some_stuff(KConfig* kvtconfig) { //temporary (Matthias)
 void kVt::setMenubar(bool b){
   if (!b){
     menubar->hide();
-    m_options->changeItem(klocale->translate("Show &Menubar"), 0);
+    m_options->changeItem(i18n("Show &Menubar"), 0);
   }
   menubar_visible = b;
 }
@@ -625,7 +628,7 @@ void kVt::setMenubar(bool b){
 void kVt::setScrollbar(bool b){
   if (!b){
     scrollbar->hide();
-    m_scrollbar->changeItem(klocale->translate("&Show"), 0);
+    m_scrollbar->changeItem(i18n("&Show"), 0);
     scrollbar_visible = b;
   }
 }
@@ -744,7 +747,7 @@ void kVt::options_menu_activated( int item){
       menubar->hide();
       if (menubar->menuBarPos() != KMenuBar::Floating)
 	resize(width(), height()-menubar->height());
-      m_options->changeItem(klocale->translate("Show &Menubar"), item);
+      m_options->changeItem(i18n("Show &Menubar"), item);
     }
     else {
       // show 
@@ -752,24 +755,24 @@ void kVt::options_menu_activated( int item){
       menubar->show();
       if (menubar->menuBarPos() != KMenuBar::Floating)
 	resize(width(), height()+menubar->height());
-      m_options->changeItem(klocale->translate("Hide &Menubar"), item);
+      m_options->changeItem(i18n("Hide &Menubar"), item);
     }
     break;
   case 1:
     keyboard_secured = !keyboard_secured;
     if (keyboard_secured){
-      m_options->changeItem(klocale->translate("Unsecure &keyboard"), item);
+      m_options->changeItem(i18n("Unsecure &keyboard"), item);
       extract_colors(fg_string.data(), "red");
     }
     else {
-      m_options->changeItem(klocale->translate("Secure &keyboard"), item);
+      m_options->changeItem(i18n("Secure &keyboard"), item);
       extract_colors(fg_string.data(), bg_string.data());
     }
     scr_secure(); // also calls XClearwindow and scr_refresh
     break;
 
   case 7:
-    m_optiondialog = new OptionDialog(this, klocale->translate("Terminal Options"));
+    m_optiondialog = new OptionDialog(this, i18n("Terminal Options"));
     m_optiondialog->colormode->setCurrentItem(get_color_mode());
     m_optiondialog->chars->setText(kvt_charclass);
     m_optiondialog->backspace->setCurrentItem(BackspaceSendsControlH);
@@ -799,14 +802,14 @@ void kVt::scrollbar_menu_activated( int item){
       scrollbar_visible = FALSE;
       scrollbar->hide();
       resize(width()-16, height());
-      m_scrollbar->changeItem(klocale->translate("&Show"), item);
+      m_scrollbar->changeItem(i18n("&Show"), item);
     }
     else {
       // show 
       scrollbar_visible = TRUE;
       scrollbar->show();
       resize(width()+16, height());
-      m_scrollbar->changeItem(klocale->translate("&Hide"), item);
+      m_scrollbar->changeItem(i18n("&Hide"), item);
     }
     break;
     
@@ -911,8 +914,8 @@ void kVt::color_menu_activated( int item){
     XClearWindow(display,vt_win);
     scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
   }else{
-    QMessageBox::message( klocale->translate("Hint"), 
-			  klocale->translate("New color settings will be displayed\nwhen the keyboard is unsecured.") );
+    QMessageBox::message( i18n("Hint"), 
+			  i18n("New color settings will be displayed\nwhen the keyboard is unsecured.") );
   }
 }
 
@@ -1144,38 +1147,38 @@ int main(int argc, char **argv)
   if (!init_display(argc, argv)) {
     fprintf(stderr, KVT_VERSION);
     fprintf(stderr, "\n\n");
-    fprintf(stderr, klocale->translate(
-	    "Copyright(C) 1996, 1997 Matthias Ettrich\n"
-	    "Copyright(C) 1997 M G Berberich\n"
-	    "Terminal emulation for the KDE Desktop Environment\n"
-	    "based on Robert Nation's rxvt-2.08\n\n"
-	    "Permitted arguments are:\n"
-	    "-e <command> <arg> ...	execute command with ars - must be last argument\n"
-	    "-display <name>	specify the display (server)\n"
-	    "-vt_geometry <spec>	the initial vt window geometry\n"
-	    "-print-pipe <name>	specify pipe for vt100 printer\n"
-	    "-vt_bg <colour>		background color\n"
-	    "-vt_fg <colour>		foreground color\n"
-	    "-vt_font <fontname>	normal font\n"
-	    "-vt_size <size>     	tiny, small, normal, large, huge\n"
-	    "-linux			set up kvt to mimic linux-console\n"
-	    "-no_menubar		hide the menubar\n"
-	    "-no_scrollbar		hide the scrollbar\n"
-	    "-T <text>		text in window titlebar \n"
-	    "                   (Obsolete. Use -caption instead)\n"
-	    "-tn <TERM>		Terminal type. Default is xterm.\n"
-	    "-C			Capture system console message\n"
-	    "-n <text>		name in icon or icon window\n"
-	    "-7		        run in 7 bit mode\n"
-	    "-8			run in 8 bit mode\n"
-	    "-ls			initiate kvt's shell as a login shell\n"
-	    "-ls-			initiate kvt's shell as a non-login shell (default)\n"
-	    "-meta <arg>		handle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
-	    "-sl <number>		save number lines in scroll-back buffer\n"
-	    "-pageup <keysym>	use hot key alt-keysym to scroll up through the buffer\n"
-	    "-pagedown <keysym>	use hot key alt-keysym to scroll down through buffer\n"));
+    fprintf(stderr, 
+	    i18n("Copyright(C) 1996, 1997 Matthias Ettrich\n"
+		 "Copyright(C) 1997 M G Berberich\n"
+		 "Terminal emulation for the KDE Desktop Environment\n"
+		 "based on Robert Nation's rxvt-2.08\n\n"));
+    fprintf(stderr, i18n("Permitted arguments are:\n"));
+    fprintf(stderr, i18n("-e <command> <arg> ...    execute command with ars - must be last argument\n"));
+    fprintf(stderr, i18n("-display <name>           specify the display (server)\n"));
+    fprintf(stderr, i18n("-vt_geometry <spec>       the initial vt window geometry\n"));
+    fprintf(stderr, i18n("-print-pipe <name>        specify pipe for vt100 printer\n"));
+    fprintf(stderr, i18n("-vt_bg <colour>           background color\n"));
+    fprintf(stderr, i18n("-vt_fg <colour>           foreground color\n"));
+    fprintf(stderr, i18n("-vt_font <fontname>       normal font\n"));
+    fprintf(stderr, i18n("-vt_size <size>           tiny, small, normal, large, huge\n"));
+    fprintf(stderr, i18n("-linux                    set up kvt to mimic linux-console\n"));
+    fprintf(stderr, i18n("-no_menubar               hide the menubar\n"));
+    fprintf(stderr, i18n("-no_scrollbar             hide the scrollbar\n"));
+    fprintf(stderr, i18n("-T <text>                 text in window titlebar \n"
+			 "                          (Obsolete. Use -caption instead)\n"));
+    fprintf(stderr, i18n("-tn <TERM>                Terminal type. Default is xterm.\n"));
+    fprintf(stderr, i18n("-C                        Capture system console message\n"));
+    fprintf(stderr, i18n("-n <text>                 name in icon or icon window\n"));
+    fprintf(stderr, i18n("-7                        run in 7 bit mode\n"
+			 "-8                        run in 8 bit mode\n"));
+    fprintf(stderr, i18n("-ls                       initiate kvt's shell as a login shell\n"
+			 "-ls-                      initiate kvt's shell as a non-login shell (default)\n"));
+    fprintf(stderr, i18n("-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"));
+    fprintf(stderr, i18n("-sl <number>              save number lines in scroll-back buffer\n"));
+    fprintf(stderr, i18n("-pageup <keysym>          use hot key alt-keysym to scroll up through the buffer\n"
+			 "-pagedown <keysym>        use hot key alt-keysym to scroll down through buffer\n"));
 #ifdef GREEK_KBD
-    fprintf(stderr, klocale->translate(
+    fprintf(stderr, i18n(
 	    "-grk9		greek kbd = ELOT 928 (default)\n"
 	    "-grk4		greek kbd = IBM 437\n"));
 #endif
