@@ -7,7 +7,7 @@
 <title>KDE Display Manager (KDM)
 <author>Steffen Hansen, 
 <tt><htmlurl url="mailto:stefh@dit.ou.dk" name="stefh@dit.ou.dk"></tt>
-<date>Thu Oct 16 04:52:20 1997 -- Steffen Hansen
+<date>Version 0.5-1, 9 July 1998 
 <abstract>
 This document describes the KDE Display Manager
 </abstract>
@@ -21,7 +21,7 @@ This document describes the KDE Display Manager
 
 <p>
 The KDE Display Manager is a ``drop-in'' replacement for xdm, the X
-Display Manager and a little utility, kdmdesktop to draw nice
+Display Manager and a little utility. kdmdesktop is to draw nice
 backgrounds. Kdm is superior to xdm in several ways:
 <itemize>
 <item>Kdm supports session arguments in a userfriendly way (xdm doesn't
@@ -30,82 +30,170 @@ tell the user, which args it might generate).
 box).
 <item>Kdm has an optional graphical view of users on the system (idea
 stolen from IRIX' login box).
-<item>Kdm looks way better than xdm ;-)
+<item>Kdm looks ways better than xdm ;-)
+<item>Kdm can be configured with a graphical user interface (a part of
+the KDE control center)
 </itemize>
 
 <sect>Installing kdm
-
 <p>
-See the file README! It will tell you how to compile kdm.
+<sect1>Setting up kdm
+<p>
+See the file README! It will tell you how to compile kdm. But normally
+you don't need to compile kdm yourself, as it is part of the kdebase
+package and compiled with all other stuff. It is then installed in
+your $KDEDIR/bin directory.
+<p>
 <bf/NOTE:/ <tt/make install/ will overwrite your previous <tt/kdmrc/.
 <p>
-Then you should insert the line
+During the installation a new version of the file <TT/Xsetup_0/ is 
+installed. It espacially contains a line
 <tscreen><verb>kdmdesktop</verb></tscreen>
-in the file called <tt/XSetup_0/ or similar in the xdm config directory
-(often <tt>/etc/X11/xdm/XSetup_0</tt>). Make sure the path is set,
-so that <tt/kdmdesktop/ can be executed.
+to display some nice backgrounds (pictures and background colors).
+Normally you find this file in the xdm config directory
+<tt>/etc/X11/xdm/XSetup_0</tt> for Redhat and
+<tt>/usr/X11R6/lib/X11/xdm/XSetup_0</tt> for S.u.S.E.
+If your KDEDIR is not /opt/kde you may have to change the path to kdmdesktop.
 <p>
-PAM (Pluggable Authentication Modules) is a powerful and flexible
-"plug-in" authentication system that comes with Solaris and RedHat Linux,
-and has been ported to other systems.  PAM will handle shadow
-passwords transparently.  If your system has PAM
-installed, you can enable PAM support in KDE 
-by compiling kdebase using ./configure --with-pam. 
-See the file kdebase/README.pam for more information.
-If you chose the PAM option,  you should check that the PAM service "xdm" 
-has been configured. This will either be through a file /etc/pam.d/xdm, or 
-by lines begining  with "xdm" in a file /etc/pam.conf.  A minimal 
-configuration in /etc/pam.conf is provided by lines
+If you chose the PAM (which is normal with Red Hat 5 and 5.1) option, 
+then you should check /etc/pam.conf for the lines
 <tscreen><verb>
 # xdm authorization
 xdm    auth       required     pam_unix_auth.so
-xdm    account    required     pam_unix_acct.so
+xdm    auth       required     pam_unix_acct.so
 </verb></tscreen>
-Besides "auth" and "account" entries, there may also be 
-"password" and "session" entries;  see your PAM documentation.
-While kdm uses the PAM service "xdm" by default, the name of
-the PAM service can be changed when kdebase is compiled: for example
-./configure --with-pam=kde will make kdm use a PAM service "kde".
-In this example, /etc/pam.d/kde must exist (it can be a symlink to 
-/etc/pam.d/xdm) or there must be valid "kde" entries in /etc/pam.conf.
-kdm logins and logouts will generate entries in the system log,
-identified by the name of the PAM service.
-Note that kscreensaver will use the same PAM service for the "auth"
-(password authentication) function, when unlocking the display;
-authentication failures are logged in the system log.
+and insert them, if they aren't there.
 <p>
 Now it's time to test kdm. You should bring your system to a runlevel
-that doesn't run xdm and try (as root) to say:
+that doesn't run xdm. To do so edit the file <tt>/etc/inittab</tt> 
+and look for the  lines saying
+<tscreen><verb>
+# default runlevel
+id:3:initdefault:
+</verb></tscreen>
+The value after id: is the code of the default runlevel and very distribution
+dependent, but always well  explained. The runlevel with graphical login (xdm)
+for the most  common distributions are
+<itemize>
+<item>5 for Red Hat 3.x, 4.x and 5.x, LST
+<item>4 for Slackware
+<item>3 for S.u.S.E. 4.x and 5.x
+</itemize>
+
+After this you can try to start kdm by typing the following command on 
+your favourite shell:
 <tscreen><verb>
 > kdm -nodaemon
 </verb></tscreen>
 If you get a kdm login box and you are able to log in, things are great.
 The main thing that can go wrong here, is that the runtime linker might
-not find the shared Qt or KDE libraries. When everything works, then edit
-/etc/inittab to execute kdm instead of xdm. If you have a binary
-distribution of the KDE libraries, make sure kdm is installed where
-the libraries believe kde is installed.
-If you dont like changing inittab,
-you might instead rename xdm to xdm.bak and make xdm a symlink to kdm.
-Kdm will read the general display manager settings from the xdm configuartion
+not find the shared Qt or KDE libraries. When everything works, you can
+start to replace xdm by kdm. This is again distribution dependent.
+<itemize>
+<item>for Redhat you edit <tt>/etc/inittab</tt>, look for the string xdm
+and replace it with kdm (including all paths). 
+<item>for S.u.S.E. you have to edit the file <tt>/sbin/init.d/xdm</tt> and to
+add a first line
+<tscreen><verb>
+. /etc/rc.config
+DISPLAYMANAGER=kdm
+export DISPLAYMANAGER
+</verb></tscreen>
+<item>for other distributions it's rather the Redhat way, but I'm not too sure
+about this.
+</itemize>
+For every distribution I know, you have to change the runlevel in the
+/etc/inittab file (to 5 for Redhat, 3 for S.u.S.E. as mentioned above or in the
+inittab file itself).
+If you have a binary distribution of the KDE libraries, make sure kdm is 
+installed where the libraries believe kde is installed. This is again
+normally /opt/kde/bin.
+If you dont like changing inittab, you might instead rename xdm to xdm.bak 
+and make xdm a symlink to kdm.
+Kdm will read the general display manager settings from the xdm configuration
 files and the kdm specific ones from the file
 &dollar;KDEDIR/share/config/kdmrc. Kdmdesktop will also read kdmrc.
+
+<sect1>Different window managers with kdm (chooser)
+<p>
+If you have to use different window managers or you just want to try others
+from time to time you can take advantage of the chooser built into kdm.
+The chooser lets you choose a window manager of a predefined list.
+This again needs some changes in configuration files.
+First you have to change your <tt/Xsession/-file (path is
+<tt>/etc/X11/xdm/</tt> for  Redhat and <tt>/usr/X11R6/lib/X11/xdm/</tt> for
+S.u.S.E.) to pass parameters. To do so look at the lines <tt>'exec
+$startup'</tt> and change it to <tt>'exec &dollar;startup " &dollar;@"'</tt>
+(without ') After this you have to create/edit your /etc/xinitrc or ~/.xinitrc
+file to react on the different window managers. The following script has three
+different windowmanagers to start. You can add more stuff if you like. Don't 
+forget to save a copy of your <tt/.xinitrc/ file to <tt>/etc/skel</tt>, so it
+will be  automatically generated for every user you create from now on.
+<tscreen><verb>
+#!/bin/bash
+#
+# .xsession/.xinitrc
+#
+# choose a window manager
+#
+
+defaultwm=kde
+#set the window manager to $1 if it was supplied
+windowmgr=${1:-$defaultwm}
+
+#start the respective window managers
+case ${windowmgr} in
+  kde|kwm|kdestart)
+	WINDOWMANAGER=startkde
+	;;
+  fvwm|fvwm2)
+	WINDOWMANAGER=fvwm2
+	;;
+
+  fvwm95)
+	WINDOWMANAGER=fvwm95
+	;;
+
+  *)    WINDOWMANAGER=windowmgr   # default for unknown wm's
+
+esac
+
+#
+# load resources
+#
+
+if [ -f /usr/X11R6/lib/X11/Xmodmap ]; then
+    xmodmap /usr/X11R6/lib/X11/Xmodmap
+fi
+
+if [ -f ~/.Xmodmap ]; then
+    xmodmap ~/.Xmodmap
+fi
+
+if [ -f ~/.Xdefaults ]; then
+    xrdb -merge ~/.Xdefaults
+fi
+
+if [ -f ~/.Xresources ]; then
+    xrdb -merge ~/.Xresources
+fi
+# 
+# finally start the window manager
+#
+exec $WINDOWMANAGER
+
+</verb></tscreen>
 
 <sect>Configuring kdm
 
 <p>
 There is a graphical tool for configuring kdm. You will find it under
 the menu K/Settings/Applications/. With this tool you can configure the
-kdm specific options (stored in kdmrc), but kdm still has to be set up properly just like
-xdm,
-so please read on.
-<p>
-If you have xdm installed, you probably dont need to modify your
-Xsession script, but take a look at the files in the "samples" directory
-anyway -- they show how to use kdm's session argument feature.
+kdm specific options (stored in kdmrc), but kdm still has to be set up 
+properly just like xdm, so please read on.
 <p>
 The kdm-specific option are configured by editing the file
-"&dollar;KDEDIR/share/config/kdmrc". There are two sections in kdmrc:
+"&dollar;KDEDIR/share/config/kdmrc". There are three sections in kdmrc:
 
 <sect1>KDM
 
@@ -130,20 +218,26 @@ GUIStyle
 
 A short description of the keys:
 <descrip>
-<tag/*Font/ is a fontsstring formatted like the ouput from xfontsel.
+<tag/*Font/ is a fontsstring formatted like this: Courier,12,5,iso-8859-1,50,0.
+
 <tag/GreetString/ is the title of the kdm login window.
+
 <tag/SessionTypes/ is a ``;'' separated list of session arguments. It
-defaults to <tt/SessionTypes=kde;failsafe/. For more info on session
-arguments, see the xdm file <tt/Xsession/.
-<verb>[Insert example here!]</verb>
+defaults to <tt/SessionTypes=kde;failsafe/. Above example uses additionally
+the fvwm2 and fvwm95 windowmanagers.
+
 <tag/LogoPixmap/ Change this, if you dont like the logo.
+
 <tag/ShutdownButton, Shutdown and Restart/ ShutdownButton controls when
 the shutdown button is displayed and can be one of <tt/All/, <tt/None/,
 <tt/RootOnly/ and <tt/ConsoleOnly/. Shutdown and Restart are the
 commands to run on shutdown/restart. They default to <tt>/sbin/halt</tt>
-and <tt>/sbin/reboot</tt>.
+and <tt>/sbin/reboot</tt>. The meaning of All and None is very clear, if you
+choose ConsoleOnly you can't do a remote shutdown.
+
 <tag/UserView/ If this is set to ``1'', a graphical view of users will
 be displayed in the kdm window.
+
 <tag/Users/ is a ``;'' separated list of usernames that will be
 displayed in the graphical user view. If <tt>UserView</tt> is 1 and the
 <tt>Users </tt>entry is missing, kdm will look for users in the password
@@ -157,11 +251,14 @@ them in &dollar;KDEDIR/share/apps/kdm/pics/users/ and have great fun
 logging in with kdm ;-) 
 <bf>NOTE:</bf> Kdm is able to handle icons with different sizes, but it might
 not be too pretty to use both very small and very large icons.
-<tag/NoUsers/ is a ``;'' separated list of usernames that wont be
+
+<tag/NoUsers/ is a ``;'' separated list of usernames that won't be
 displayed. Use it to filter ``pseudo-users'' like <tt>sync</tt> and
 <tt>shutdown</tt> from the user view.
+
 <tag/SortUsers/ If set to ``0'', the list of users are displayed in the
 order it was read. The default is to display users in sorted order.
+
 <tag/GUIStyle/ can be either <tt/Motif/ or <tt/Windows/.
 </descrip>
 
@@ -180,7 +277,17 @@ FancyBackground
 The first is the path to an image, the second a named color and the
 rest are booleans (<tt>0</tt> or <tt>1</tt>). Note that
 <tt>FancyBackground=1</tt> looks nice, but is <bf>very</bf> slow.
+<p>
+<sect1>Locale
 
+<p>
+This section should only contain one single entry.
+<p>
+<descrip>
+<tag/Language/ is indicating the language to use for kdm. It can be changed
+independently from KDE. The values are the same as usual en/de/fr/da etc.
+</descrip>
+<p>
 <sect>Legal stuff
 
 <p>
@@ -199,4 +306,8 @@ redistribute the result as long as my name is mentioned.
 And by the way: Kdm is provided as is with no warranty of any kind,
 including the warranty of design, merchantability and fitness for a particular
 purpose.
+
+The documentation extended by Gregor Zumstein<tt><htmlurl
+url="mailto:zumstein@ssd.ethz.ch" name="zumstein@ssd.ethz.ch"></tt>. Last
+update is July, 9 1998
 </article>

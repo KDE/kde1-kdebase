@@ -3,8 +3,8 @@
 <HEAD>
 <TITLE>KDE Display Manager (KDM): Installing kdm</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
-<META NAME="keywords" CONTENT="kdm xdm display manager">
-<META NAME="description" CONTENT="documentation for the K Display Manager">
+<META NAME="keywords" CONTENT="KDM installation introduction">
+<META NAME="description" CONTENT="Installing KDM">
 </HEAD>
 <BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
 <FONT FACE="Helvetica">
@@ -20,50 +20,59 @@
 </P>
 <H3><A NAME="s2">2. Installing kdm</A></H3>
 
-<P>See the file README! It will tell you how to compile kdm.
-<B>NOTE:</B> <CODE>make install</CODE> will overwrite your previous <CODE>kdmrc</CODE>.
-<P>Then you should insert the line
+<P>
+<H3><A NAME="ss2.1">2.1 Setting up kdm</A>
+</H3>
+
+<P>See the file README! It will tell you how to compile kdm. But normally
+you don't need to compile kdm yourself, as it is part of the kdebase
+package and compiled with all other stuff. It is then installed in
+your $KDEDIR/bin directory.
+<P><B>NOTE:</B> <CODE>make install</CODE> will overwrite your previous <CODE>kdmrc</CODE>.
+<P>During the installation a new version of the file <CODE>Xsetup_0</CODE> is 
+installed. It espacially contains a line
 <BLOCKQUOTE><CODE>
 <PRE>
 kdmdesktop
 </PRE>
 </CODE></BLOCKQUOTE>
 
-in the file called <CODE>XSetup_0</CODE> or similar in the xdm config directory
-(often <CODE>/etc/X11/xdm/XSetup_0</CODE>). Make sure the path is set,
-so that <CODE>kdmdesktop</CODE> can be executed.
-<P>PAM (Pluggable Authentication Modules) is a powerful and flexible
-"plug-in" authentication system that comes with Solaris and RedHat Linux,
-and has been ported to other systems.  PAM will handle shadow
-passwords transparently.  If your system has PAM
-installed, you can enable PAM support in KDE 
-by compiling kdebase using ./configure --with-pam. 
-See the file kdebase/README.pam for more information.
-If you chose the PAM option,  you should check that the PAM service "xdm" 
-has been configured. This will either be through a file /etc/pam.d/xdm, or 
-by lines begining  with "xdm" in a file /etc/pam.conf.  A minimal 
-configuration in /etc/pam.conf is provided by lines
+to display some nice backgrounds (pictures and background colors).
+Normally you find this file in the xdm config directory
+<CODE>/etc/X11/xdm/XSetup_0</CODE> for Redhat and
+<CODE>/usr/X11R6/lib/X11/xdm/XSetup_0</CODE> for S.u.S.E.
+If your KDEDIR is not /opt/kde you may have to change the path to kdmdesktop.
+<P>If you chose the PAM (which is normal with Red Hat 5 and 5.1) option, 
+then you should check /etc/pam.conf for the lines
 <BLOCKQUOTE><CODE>
 <PRE>
 # xdm authorization
 xdm    auth       required     pam_unix_auth.so
-xdm    account    required     pam_unix_acct.so
+xdm    auth       required     pam_unix_acct.so
 </PRE>
 </CODE></BLOCKQUOTE>
-Besides "auth" and "account" entries, there may also be 
-"password" and "session" entries;  see your PAM documentation.
-While kdm uses the PAM service "xdm" by default, the name of
-the PAM service can be changed when kdebase is compiled: for example
-./configure --with-pam=kde will make kdm use a PAM service "kde".
-In this example, /etc/pam.d/kde must exist (it can be a symlink to 
-/etc/pam.d/xdm) or there must be valid "kde" entries in /etc/pam.conf.
-kdm logins and logouts will generate entries in the system log,
-identified by the name of the PAM service.
-Note that kscreensaver will use the same PAM service for the "auth"
-(password authentication) function, when unlocking the display;
-authentication failures are logged in the system log.
+
+and insert them, if they aren't there.
 <P>Now it's time to test kdm. You should bring your system to a runlevel
-that doesn't run xdm and try (as root) to say:
+that doesn't run xdm. To do so edit the file <CODE>/etc/inittab</CODE> 
+and look for the  lines saying
+<BLOCKQUOTE><CODE>
+<PRE>
+# default runlevel
+id:3:initdefault:
+</PRE>
+</CODE></BLOCKQUOTE>
+
+The value after id: is the code of the default runlevel and very distribution
+dependent, but always well  explained. The runlevel with graphical login (xdm)
+for the most  common distributions are
+<UL>
+<LI>5 for Red Hat 3.x, 4.x and 5.x, LST</LI>
+<LI>4 for Slackware</LI>
+<LI>3 for S.u.S.E. 4.x and 5.x</LI>
+</UL>
+<P>After this you can try to start kdm by typing the following command on 
+your favourite shell:
 <BLOCKQUOTE><CODE>
 <PRE>
 > kdm -nodaemon
@@ -72,17 +81,108 @@ that doesn't run xdm and try (as root) to say:
 
 If you get a kdm login box and you are able to log in, things are great.
 The main thing that can go wrong here, is that the runtime linker might
-not find the shared Qt or KDE libraries. When everything works, then edit
-/etc/inittab to execute kdm instead of xdm. If you have a binary
-distribution of the KDE libraries, it might be nescesary to tell kdm
-where kde is installed (if the location of kde isn't found, icons will
-miss). This is done with the "kdm -kdedir /path/to/kde"
-option (note that KDEDIR cant be set if kdm is started from inittab).
-If you dont like changing inittab,
-you might instead rename xdm to xdm.bak and make xdm a symlink to kdm.
-Kdm will read the general display manager settings from the xdm configuartion
+not find the shared Qt or KDE libraries. When everything works, you can
+start to replace xdm by kdm. This is again distribution dependent.
+<UL>
+<LI>for Redhat you edit <CODE>/etc/inittab</CODE>, look for the string xdm
+and replace it with kdm (including all paths). </LI>
+<LI>for S.u.S.E. you have to edit the file <CODE>/sbin/init.d/xdm</CODE> and to
+add a first line
+<BLOCKQUOTE><CODE>
+<PRE>
+. /etc/rc.config
+DISPLAYMANAGER=kdm
+export DISPLAYMANAGER
+</PRE>
+</CODE></BLOCKQUOTE>
+</LI>
+<LI>for other distributions it's rather the Redhat way, but I'm not too sure
+about this.</LI>
+</UL>
+
+For every distribution I know, you have to change the runlevel in the
+/etc/inittab file (to 5 for Redhat, 3 for S.u.S.E. as mentioned above or in the
+inittab file itself).
+If you have a binary distribution of the KDE libraries, make sure kdm is 
+installed where the libraries believe kde is installed. This is again
+normally /opt/kde/bin.
+If you dont like changing inittab, you might instead rename xdm to xdm.bak 
+and make xdm a symlink to kdm.
+Kdm will read the general display manager settings from the xdm configuration
 files and the kdm specific ones from the file
 $KDEDIR/share/config/kdmrc. Kdmdesktop will also read kdmrc.
+<P>
+<H3><A NAME="ss2.2">2.2 Different window managers with kdm (chooser)</A>
+</H3>
+
+<P>If you have to use different window managers or you just want to try others
+from time to time you can take advantage of the chooser built into kdm.
+The chooser lets you choose a window manager of a predefined list.
+This again needs some changes in configuration files.
+First you have to change your <CODE>Xsession</CODE>-file (path is
+<CODE>/etc/X11/xdm/</CODE> for  Redhat and <CODE>/usr/X11R6/lib/X11/xdm/</CODE> for
+S.u.S.E.) to pass parameters. To do so look at the lines <CODE>'exec
+$startup'</CODE> and change it to <CODE>'exec $startup " $@"'</CODE>
+(without ') After this you have to create/edit your /etc/xinitrc or &nbsp;/.xinitrc
+file to react on the different window managers. The following script has three
+different windowmanagers to start. You can add more stuff if you like. Don't 
+forget to save a copy of your <CODE>.xinitrc</CODE> file to <CODE>/etc/skel</CODE>, so it
+will be  automatically generated for every user you create from now on.
+<BLOCKQUOTE><CODE>
+<PRE>
+#!/bin/bash
+#
+# .xsession/.xinitrc
+#
+# choose a window manager
+#
+
+defaultwm=kde
+#set the window manager to $1 if it was supplied
+windowmgr=${1:-$defaultwm}
+
+#start the respective window managers
+case ${windowmgr} in
+  kde|kwm|kdestart)
+        WINDOWMANAGER=startkde
+        ;;
+  fvwm|fvwm2)
+        WINDOWMANAGER=fvwm2
+        ;;
+
+  fvwm95)
+        WINDOWMANAGER=fvwm95
+        ;;
+
+  *)    WINDOWMANAGER=windowmgr   # default for unknown wm's
+
+esac
+
+#
+# load resources
+#
+
+if [ -f /usr/X11R6/lib/X11/Xmodmap ]; then
+    xmodmap /usr/X11R6/lib/X11/Xmodmap
+fi
+
+if [ -f ~/.Xmodmap ]; then
+    xmodmap ~/.Xmodmap
+fi
+
+if [ -f ~/.Xdefaults ]; then
+    xrdb -merge ~/.Xdefaults
+fi
+
+if [ -f ~/.Xresources ]; then
+    xrdb -merge ~/.Xresources
+fi
+# 
+# finally start the window manager
+#
+exec $WINDOWMANAGER
+</PRE>
+</CODE></BLOCKQUOTE>
 <P>
 <P ALIGN="RIGHT">
 

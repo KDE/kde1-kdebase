@@ -3,8 +3,8 @@
 <HEAD>
 <TITLE>KDE Display Manager (KDM): Configuring kdm</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
-<META NAME="keywords" CONTENT="kdm xdm display manager">
-<META NAME="description" CONTENT="documentation for the K Display Manager">
+<META NAME="keywords" CONTENT="KDM installation introduction">
+<META NAME="description" CONTENT="Installing KDM">
 </HEAD>
 <BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
 <FONT FACE="Helvetica">
@@ -20,17 +20,12 @@
 </P>
 <H3><A NAME="s3">3. Configuring kdm</A></H3>
 
-<P>
-There is a graphical tool for configuring kdm. You will find it under
+<P>There is a graphical tool for configuring kdm. You will find it under
 the menu K/Settings/Applications/. With this tool you can configure the
-kdm specific options (stored in kdmrc), but kdm still has to be set up properly just like
-xdm,
-so please read on.
-<P>If you have xdm installed, you probably dont need to modify your
-Xsession script, but take a look at the files in the "samples" directory
-anyway -- they show how to use kdm's session argument feature.
+kdm specific options (stored in kdmrc), but kdm still has to be set up 
+properly just like xdm, so please read on.
 <P>The kdm-specific option are configured by editing the file
-"$KDEDIR/share/config/kdmrc". There are two sections in kdmrc:
+"$KDEDIR/share/config/kdmrc". There are three sections in kdmrc:
 <P>
 <H3><A NAME="ss3.1">3.1 KDM</A>
 </H3>
@@ -56,22 +51,26 @@ GUIStyle
 </CODE></BLOCKQUOTE>
 <P>A short description of the keys:
 <DL>
-<DT><B>*Font</B><DD><P>is a fontsstring formatted like the ouput from xfontsel.
+<DT><B>*Font</B><DD><P>is a fontsstring formatted like this: Courier,12,5,iso-8859-1,50,0.
+<P>
 <DT><B>GreetString</B><DD><P>is the title of the kdm login window.
+<P>
 <DT><B>SessionTypes</B><DD><P>is a ``;'' separated list of session arguments. It
-defaults to <CODE>SessionTypes=kde;failsafe</CODE>. For more info on session
-arguments, see the xdm file <CODE>Xsession</CODE>.
-<PRE>
-[Insert example here!]
-</PRE>
+defaults to <CODE>SessionTypes=kde;failsafe</CODE>. Above example uses additionally
+the fvwm2 and fvwm95 windowmanagers.
+<P>
 <DT><B>LogoPixmap</B><DD><P>Change this, if you dont like the logo.
+<P>
 <DT><B>ShutdownButton, Shutdown and Restart</B><DD><P>ShutdownButton controls when
 the shutdown button is displayed and can be one of <CODE>All</CODE>, <CODE>None</CODE>,
 <CODE>RootOnly</CODE> and <CODE>ConsoleOnly</CODE>. Shutdown and Restart are the
 commands to run on shutdown/restart. They default to <CODE>/sbin/halt</CODE>
-and <CODE>/sbin/reboot</CODE>.
+and <CODE>/sbin/reboot</CODE>. The meaning of All and None is very clear, if you
+choose ConsoleOnly you can't do a remote shutdown.
+<P>
 <DT><B>UserView</B><DD><P>If this is set to ``1'', a graphical view of users will
 be displayed in the kdm window.
+<P>
 <DT><B>Users</B><DD><P>is a ``;'' separated list of usernames that will be
 displayed in the graphical user view. If <CODE>UserView</CODE> is 1 and the
 <CODE>Users </CODE>entry is missing, kdm will look for users in the password
@@ -85,11 +84,14 @@ them in $KDEDIR/share/apps/kdm/pics/users/ and have great fun
 logging in with kdm ;-) 
 <B>NOTE:</B> Kdm is able to handle icons with different sizes, but it might
 not be too pretty to use both very small and very large icons.
-<DT><B>NoUsers</B><DD><P>is a ``;'' separated list of usernames that wont be
+<P>
+<DT><B>NoUsers</B><DD><P>is a ``;'' separated list of usernames that won't be
 displayed. Use it to filter ``pseudo-users'' like <CODE>sync</CODE> and
 <CODE>shutdown</CODE> from the user view.
+<P>
 <DT><B>SortUsers</B><DD><P>If set to ``0'', the list of users are displayed in the
 order it was read. The default is to display users in sorted order.
+<P>
 <DT><B>GUIStyle</B><DD><P>can be either <CODE>Motif</CODE> or <CODE>Windows</CODE>.
 </DL>
 <P>
@@ -109,6 +111,16 @@ FancyBackground
 <P>The first is the path to an image, the second a named color and the
 rest are booleans (<CODE>0</CODE> or <CODE>1</CODE>). Note that
 <CODE>FancyBackground=1</CODE> looks nice, but is <B>very</B> slow.
+<P>
+<H3><A NAME="ss3.3">3.3 Locale</A>
+</H3>
+
+<P>This section should only contain one single entry.
+<P>
+<DL>
+<DT><B>Language</B><DD><P>is indicating the language to use for kdm. It can be changed
+independently from KDE. The values are the same as usual en/de/fr/da etc.
+</DL>
 <P>
 <P ALIGN="RIGHT">
 
