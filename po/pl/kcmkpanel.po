@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmpanel \n"
 "POT-Creation-Date: 1998-01-25 13:23+0100\n"
-"PO-Revision-Date: 1998-01-18 12:20+0100\n"
+"PO-Revision-Date: 1998-01-29 18:26+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -57,15 +57,3 @@ msgstr "Widoczne"
 #: desktops.cpp:75
 msgid "Width"
 msgstr "Szeroko¶æ"
-
-#~ msgid "&Panel"
-#~ msgstr "&Panel"
-
-#~ msgid "&Desktops"
-#~ msgstr "&Desktopy"
-
-#~ msgid "usage: kcmkpanel [-init | {panel,desktops}]\n"
-#~ msgstr "u¿ycie: kcmkpanel [-init | {panel,desktops}]\n"
-
-#~ msgid "KPanel Configuration"
-#~ msgstr "Konfiguracja KPanel"
