@@ -74,6 +74,7 @@ KCookie::KCookie(const char *_host, const char *_domain, const char *_path,
 }
 
 //
+
 // Checks if a cookie has been expired
 //
 bool    KCookie::isExpired(time_t currentDate)
@@ -712,7 +713,7 @@ KCookieAdvice KCookieJar::cookieAdvice(KCookiePtr cookiePtr)
         (cookiePtr->domain != domain) && 
         (cookiePtr->domain != cookiePtr->host))
     {
-        printf("WARNING: Host %s tries to set cookie for domain %s\n",
+        warning("WARNING: Host %s tries to set cookie for domain %s",
               cookiePtr->host.data(), cookiePtr->domain.data());
         return KCookieReject;
     }
