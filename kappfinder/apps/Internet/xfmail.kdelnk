@@ -3,5 +3,5 @@
 Exec=xfmail
 Icon=xfmail.xpm
 Type=Application
-Name=Arena
+Name=XFMail
 Comment=Mailer
