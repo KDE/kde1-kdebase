@@ -23,6 +23,11 @@
 
 #include <stdlib.h>
 #include <time.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <dirent.h>
+#include <unistd.h>
+#include <fcntl.h>
 
 QString* KFMClient::password = 0L;
 
@@ -43,12 +48,62 @@ KFMServer::KFMServer() : KfmIpcServer()
 	}
 	
 	QString pass;
-	pass.sprintf("%i",time(0L));
+	time_t seed = time( ( time_t ) 0 );
+	DIR *dp = opendir("/tmp");
+	struct dirent *ep;
+	int num = 1, i; 
+
+	if (dp)
+	{
+	   // read through the directory
+	    while ( (ep = readdir( dp ) ) != 0L )
+	    {
+		QString file = "/tmp/";
+		int fd;
+		long int temp;
+		struct stat fileinfo;
+
+		file += ep->d_name;
+		stat( file.data(), &fileinfo );
+		if ( ! S_ISREG( fileinfo.st_mode ) )
+		    continue;
+		if ( ++ num > 48 )
+		    break;
+		// make sure file does not block
+		fd = open( file.data(), O_RDONLY | O_NONBLOCK );
+		if ( fd >= 0 )
+		{
+		    int offset = fileinfo.st_size - sizeof( long int );
+		    if (offset > 0 )
+		    {
+		    	lseek( fd, (off_t) offset & 0x7F, SEEK_SET );
+		        read( fd, ( void * ) &temp, sizeof( long int ) );
+		    }
+		    else if ( file.length( ) > sizeof( long int ) )
+		    {
+			long int *ptr = ( long int * ) ( file.data( ) + file.length( ) - sizeof( long int ) );
+			temp = *ptr;
+		    }
+		    else
+			temp = fileinfo.st_mtime;
+			
+		    close( fd );
+		}
+		else
+		    temp = fileinfo.st_mtime;
+		seed = seed ^ ( temp << ( (int) seed & 0x7 ) );
+	    }
+	    closedir( dp );
+	}
+
+	srandom( (unsigned int) seed );
+	for ( i = 0 ; i < num ; i ++ )
+	    (void) random( );
+
+	pass.sprintf( "%ld", random() );
 	fwrite( pass.data(), 1, pass.length(), f );
 	fclose( f );
 
-	QMessageBox::warning( (QWidget*)0L, i18n( "KFM Warning" ),
-			      i18n( "Please change the password in\n~/.kde/share/apps/kfm/magic" ) );
     }
     else
 	fclose( f );
