@@ -218,8 +218,9 @@ void KPixmap::gradientFill( QColor ca, QColor cb, bool upDown, int ncols )
 	    }
 	}
 	
-	if ( QColor::numBitPlanes() == 8 ) {
+	if ( QColor::numBitPlanes() <= 16 ) {
 	
+		if ( QColor::numBitPlanes() == 16 ) ncols = 16;
 		if ( ncols < 2 || ncols > 256 ) ncols = 3;
 
 		QColor *dPal = new QColor[ncols];
