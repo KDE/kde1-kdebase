@@ -41,6 +41,11 @@ QString *KFMManager::ro_overlay = 0;
 
 KFMManager::KFMManager( KfmView *_v )
 {
+    //-------- Sven's overlayed mime/app dirs start ---
+    bindingDir = false;
+    pass2 = false;
+    dupList = 0;
+    //-------- Sven's overlayed mime/app dirs end ---
     url  = "";
     view = _v;
     maxLabelWidth = 80;
@@ -384,13 +389,97 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     
     // Stop a running job. Calling this if no job is running does no harm.
     job->stop();
+
+    //-------- Sven's overlayed mime/app dirs start ---
+    // Here we check if tryURL is (part of) local/global mimedir or local
+    // applnkdir. In that case we set flage bindingDir == true.
+    // In that case:
+    //   - when this job finishes (in slotFinished()) we will start
+    //     new job to read global mime/applnk dir too an display them
+    //     here
+    //   - writeEntry() will check for and discard duplicates
+    // We must take care about dirs; suppose user has only image/ dir.
+    // Then all other dirs (audio/, text/...) would be from global dir.
+    // In each case "share/mimelnk" or "share/applnk" are part of the
+    // path. in each case when we find kde_appsdir, kde_mimedir,
+    // kde_localkdedir + "share/mimelnk", local_kdedir + "share/applnk"
+    // to be a part of tryURL we first read local variant, and then
+    // global. We must also test does local thing exist; if not we go
+    // to pass2,
+
+#define GLOBALMIME kapp->kde_mimedir().data()
+#define LOCALMIME (kapp->localkdedir() + "/share/mimelnk").data()
+
+#define GLOBALAPPS kapp->kde_appsdir().data()
+#define LOCALAPPS (kapp->localkdedir() + "/share/applnk").data()
+
+    // First it is possible that use clicks on DIR that doesn't exist
+    // in user's directory. In that case, pretend nothing happened
+
+    QString tryPath = tryURL;
+    //debug ("DIROVERLAY: OK, url to test is %s", tryPath.data());
+    
+    if (tryPath.contains(GLOBALMIME))
+    {
+      tryPath.remove(5, strlen(GLOBALMIME));
+      tryPath.insert(5, LOCALMIME);
+      
+      bindingDir = true;
+      pass2 = false;
+    }
+
+    else if (tryPath.contains(LOCALMIME))
+    {
+      bindingDir = true;
+      pass2 = false;
+    }
+    
+    else  if (tryPath.contains(GLOBALAPPS))
+    {
+      tryPath.remove(5, strlen(GLOBALAPPS));
+      tryPath.insert(5, LOCALAPPS);
+      bindingDir = true;
+      pass2 = false;
+    }
+
+    else if (tryPath.contains(LOCALAPPS))
+    {
+      bindingDir = true;
+      pass2 = false;
+    }
+
+    if (bindingDir)
+    {
+      // Now check does tryPath exist at all
+      const char *f = tryPath.data();
+      if (access(&f[5], F_OK) == 0)
+      {
+	//debug ("DIROVERLAY: OK, %s exists!", tryPath.data());
+	tryURL = tryPath;
+	if (dupList == 0) // create dupList
+	{
+	  dupList = new QStrList(true); // deep copies
+	  dupList->setAutoDelete(true); // delete on end
+	}
+	else // Sometimes when reloading, mimedir list still exists
+	  dupList->clear(); //deleted in stop, slotFinished, slotError.
+      }
+      else
+      {
+	//debug ("DIROVERLAY: OK, %s doesn't exist!", tryPath.data());
+	bindingDir = false;
+        pass2 = false;
+      }
+    }
+    //-------- Sven's overlayed mime/app dirs end ---
+
     // We pass our current KIODirectoryEntries. Sometimes this information
     // can speed up the process of finding out whether tryURL is
     // a directory or some file. Mention that files is cleared
     // at once by a call to this function. 'browse' may emit the signal
     // 'newDirEntry' which uses 'files'. So 'files' has to be cleared
     // before! such signal is emitted.
-    
+
     job->browse( tryURL, _reload, view->getGUI()->isViewHTML(), url, &files, _data );
     
     // Something cached ? In this case a call to browse was all we need
@@ -414,6 +503,15 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 
 void KFMManager::slotError( int, const char * )
 {
+    //-------- Sven's overlayed mime/app dirs start ---
+    pass2 = false;
+    bindingDir = false;
+    if (dupList)
+    {
+      delete dupList;
+      dupList = 0;
+    }
+    //-------- Sven's overlayed mime/app dirs end ---
     bFinished = TRUE;
 
     // Stop the spinning gear
@@ -599,6 +697,56 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 
     if ( s->getName()[0] == '.' && !view->getGUI()->isShowDot() )
 	return;
+
+    //-------- Sven's overlayed mime/app dirs start ---
+    // We load first user's dir and then global dir
+    // kdelnks/mimelnks from both dirs will be shown in one window
+    // so we must discard those *lnks from global dir that are already
+    // read from local.
+    // Since I cannot read them from the files list, I must have my own
+    // special list for that :-(
+    if (bindingDir) // flag if we read those "system" dirs
+    {
+      if (!pass2) // pass 1 or 2?
+      {
+	if (dupList)
+	  dupList->append(s->getName()); // we're in first pass; add to list;
+	else // debug fallback
+	{
+	  debug ("DIROVERLAY: BAD, no dupList! (pass 1)");
+	  return;
+	}
+      }
+      else // pass 2
+      {
+	// this is pass 2; discard duplicates
+	if (dupList)
+	{
+	  if (dupList->contains(s->getName())) // if we have it...
+	  {
+	    debug ("DIROVERLAY: OK, discarded duplicate %s", s->getName());
+	    // we might remove it from the list making future search
+	    // faster. But since removing would imply search (we
+	    // cannot search by reference, copies are deep, they
+	    // have to be deep since I don't trust if old
+	    // KIODirectoryEntries live long enough) we wouldn gain
+	    // much if anything at all.
+	    return;                                    // yeah, discard.
+	  }
+	}
+	else // debug fallback
+	{
+	  debug ("DIROVERLAY: BAD, no dupList! (pass 2)");
+	  return;
+	}
+
+      }
+    }
+
+    // Maybe when we rmb click to local lnk displayed here, we get
+    // nonexisting file; kfmprops will in thate case from local dir.
+    
+    //-------- Sven's overlayed mime/app dirs end ---
     
     /* QString decoded = s->getName();
     decoded.detach();
@@ -622,6 +770,38 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
     
     // Hack
     QString filename = encodedURL;
+
+    //-------- Sven's overlayed mime/app dirs start ---
+    // we have foreign items in our directory. To be able to access
+    // them they must have their own correct paths. This counts only
+    // for pass2: items for global dir shown in lcoal
+
+    if (bindingDir && pass2)
+    {
+      // We must fix encodedURL to point where real mime/kdelnk is: to
+      // global place.
+      if (encodedURL.contains(LOCALMIME))
+      {
+	encodedURL.remove(5, strlen(LOCALMIME)); // 5 is for "file:"
+	encodedURL.insert(5, GLOBALMIME);
+        filename = encodedURL;
+	//debug ("encodedURL = %s", encodedURL.data());
+      }
+
+      else if (encodedURL.contains(LOCALAPPS))
+      {
+	encodedURL.remove(5, strlen(LOCALAPPS));
+	encodedURL.insert(5, GLOBALAPPS);
+	filename = encodedURL;
+      }
+      else  // Debug fallback
+      {
+	debug ("DIROVERLAY:BAD, encodedURL doesn't contain LOCAL part: %s (pass2)",
+	       encodedURL.data());
+	return;
+      }
+    }
+    //-------- Sven's overlayed mime/app dirs end ---
     
     bool readonly = false;
 
@@ -824,6 +1004,15 @@ void KFMManager::slotData( const char *_text, int _len)
 
 void KFMManager::stop()
 {
+    //-------- Sven's overlayed mime/app dirs start ---
+    bindingDir = false;
+    pass2 = false;
+    if (dupList)
+    {
+      delete dupList;
+      dupList = 0;
+    }
+    //-------- Sven's overlayed mime/app dirs end ---
     view->getGUI()->slotRemoveWaitingWidget( view );
     job->stop();
 
@@ -1048,6 +1237,64 @@ void KFMManager::setDefaultBGColor( const QColor& bgcolor )
 
 void KFMManager::slotFinished()
 {
+    //-------- Sven's overlayed mime/app dirs start ---
+    if (bindingDir && !pass2) // did we read first part (local dir)?
+    {
+      // We just read local part of our two dirs; now read the global
+      // part. We must stop job to clear our list, since we need it
+      // for checking duplicates in writeEntry().
+
+      pass2 = true; // we will be called again
+
+      //set up dir to read. We just read local dir: prepare for global:
+      QString tryURL(job->getURL()); //deep copy, is that right?
+
+      // debug ("DIROVERLAY:pass 2, old url = %s", tryURL.data());
+      
+      if (tryURL.contains(LOCALMIME))
+      {
+	tryURL.remove(5, strlen(LOCALMIME)); // 5 is for "file:"
+	tryURL.insert(5, GLOBALMIME);
+        // debug ("DIROVERLAY:pass 2, new url = %s", tryURL.data());
+      }
+
+      else if (tryURL.contains(LOCALAPPS))
+      {
+	tryURL.remove(5, strlen(LOCALAPPS));
+	tryURL.insert(5, GLOBALAPPS);
+      }
+      else  // Debug fallback
+      {
+	debug ("DIROVERLAY:BAD, job->url doesn't contain LOCAL part: %s (pass2)",
+	       tryURL.data());
+	// cleanup:
+	pass2 = false;
+	bindingDir = false;
+
+	if ( files.count() == 0 )
+	  writeBeginning();
+
+	writeEnd();
+	return;
+      }
+      
+      job->browse( tryURL, false, view->getGUI()->isViewHTML(), tryURL, 0, 0 );
+      return; // don't finish yet;
+    }
+    // when we get here it means one of:
+    //  - we are not reading binding dirs at all
+    //  - we read local and globals
+    // in any case clear both flags and delete dupList if not 0:
+    pass2 = false;
+    bindingDir = false;
+    if (dupList)
+    {
+      delete dupList;
+      dupList = 0;
+    }
+
+    // and proceed with normal stuff.
+    //-------- Sven's overlayed mime/app dirs end ---
     bFinished = TRUE;
 
     // We retrieved a ready to go HTML page ?

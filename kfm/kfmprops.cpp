@@ -873,14 +873,78 @@ bool ExecPropsPage::supports( KURL *_kurl )
 
 void ExecPropsPage::applyChanges()
 {
+// --- Sven's editable global settings changes start ---
+    int i = 0;
+    bool err = false;
+// --- Sven's editable global settings changes end ---
     QString path = properties->getKURL()->path();
 
     QFile f( path );
+
+// --- Sven's editable global settings changes start ---
+    QDir lDir (kapp->localkdedir() + "/share/applnk/"); // I know it exists
+
+    //debug (path.data());
+    //debug (kapp->kde_appsdir().data());
+// --- Sven's editable global settings changes end ---
     if ( !f.open( IO_ReadWrite ) )
     {
+// --- Sven's editable global settinfs changes start ---
+      // path = /usr/local/kde/share/applnk/network/netscape.kdelnk
+
+      //Does path contain kde_appsdir?
+      if (path.find(kapp->kde_appsdir()) == 0) // kde_appsdir on start of path
+      {
+	path.remove(0, strlen(kapp->kde_appsdir())); //remove kde_appsdir
+
+	if (path[0] == '/')
+	  path.remove(0, 1); // remove /
+
+	while (path.contains('/'))
+	{
+	  i = path.find('/'); // find separator
+	  if (!lDir.cd(path.left(i)))  // exists?
+	  {
+	    lDir.mkdir((path.left(i)));  // no, create
+	    if (!lDir.cd((path.left(i)))) // can cd to?
+	    {
+	      err = true;                 // no flag it...
+	      // debug ("Can't cd to  %s in %s", path.left(i).data(),
+	      //	 lDir.absPath().data());
+	      break;                      // and exit while
+	    }
+	  }
+	  path.remove (0, i);           // cded to;
+	  if (path[0] == '/')
+	    path.remove(0, 1); // remove / from path
+	}
+      }
+      else // path didn't contain kde_appsdir - this is an error
+	err = true;
+
+      // we created all subdirs or failed
+      if (!err) // if we didn't fail try to make file just for check
+      {
+	path.prepend("/"); // be sure to have /netscape.kdelnk
+	path.prepend(lDir.absPath());
+	f.setName(path);
+	//debug("path = %s", path.data());
+
+	// we must not copy whole kdelnk to local dir
+	//  because it was done in ApplicationPropsPage
+	if (!f.open( IO_ReadWrite ) )
+	  err = true;
+      }
+      if (err)
+      {
+// --- Sven's editable global settings changes end ---
+      
 	QMessageBox::warning( 0, klocale->translate("KFM Error"),
 			      klocale->translate("Could not save properties\nPerhaps permissions denied") );
 	return;
+// --- Sven's editable global settings changes start ---
+      }
+// --- Sven's editable global settings changes end ---
     }
 
     f.close();
@@ -1476,14 +1540,103 @@ bool ApplicationPropsPage::supports( KURL *_kurl )
 
 void ApplicationPropsPage::applyChanges()
 {
+// --- Sven's editable global settings changes start ---
+    int i = 0;
+    bool err = false;
+// --- Sven's editable global settings changes end ---
+
     QString path = properties->getKURL()->path();
 
     QFile f( path );
+
+// --- Sven's editable global settings changes start ---
+    QDir lDir (kapp->localkdedir() + "/share/applnk/"); // I know it exists
+
+    //debug (path.data());
+    //debug (kapp->kde_appsdir().data());
+// --- Sven's editable global settings changes end ---
+
     if ( !f.open( IO_ReadWrite ) )
     {
-	QMessageBox::warning( 0, klocale->translate("KFM Error"), 
+// --- Sven's editable global settinfs changes start ---
+      // path = /usr/local/kde/share/applnk/network/netscape.kdelnk
+
+      //Does path contain kde_appsdir?
+      if (path.find(kapp->kde_appsdir()) == 0) // kde_appsdir on start of path
+      {
+	path.remove(0, strlen(kapp->kde_appsdir())); //remove kde_appsdir
+
+	if (path[0] == '/')
+	  path.remove(0, 1); // remove /
+
+	while (path.contains('/'))
+	{
+	  i = path.find('/'); // find separator
+	  if (!lDir.cd(path.left(i)))  // exists?
+	  {
+	    lDir.mkdir((path.left(i)));  // no, create
+	    if (!lDir.cd((path.left(i)))) // can cd to?
+	    {
+	      err = true;                 // no flag it...
+	      // debug ("Can't cd to  %s in %s", path.left(i).data(),
+	      //	 lDir.absPath().data());
+	      break;                      // and exit while
+	    }
+	  }
+	  path.remove (0, i);           // cded to;
+	  if (path[0] == '/')
+	    path.remove(0, 1); // remove / from path
+	}
+      }
+      else // path didn't contain kde_appsdir - this is an error
+	err = true;
+
+      // we created all subdirs or failed
+      if (!err) // if we didn't fail try to make file just for check
+      {
+	path.prepend("/"); // be sure to have /netscape.kdelnk
+	path.prepend(lDir.absPath());
+	f.setName(path);
+	//debug("path = %s", path.data());
+	if ( f.open( IO_ReadWrite ) )
+	{
+	  // we must first copy whole kdelnk to local dir
+	  // and then change it. Trust me.
+	  QFile s(properties->getKURL()->path());
+	  s.open(IO_ReadOnly);
+	  //char *buff = (char *) malloc (s.size()+10);   CHANGE TO NEW!
+	  char *buff = new char[s.size()+10];           // Done.
+	  if (buff != 0)
+	  {
+	    //debug ("********About to copy");
+	    if (s.readBlock(buff, s.size()) != -1 &&
+		f.writeBlock(buff, s.size()) != -1)
+	      ; // ok
+	    else
+	    {
+	      err = true;
+	      f.remove();
+	    }
+	    //free ((void *) buff);                      CHANGE TO DELETE!
+	    delete[] buff;                            // Done.
+	  }
+	  else
+	    err = true;
+	}
+	else
+	  err = true;
+      }
+      if (err)
+      {
+	//debug ("************Cannot save");
+// --- Sven's editable global settings changes end ---
+
+	QMessageBox::warning( 0, klocale->translate("KFM Error"),
 			        klocale->translate("Could not save properties\nPerhaps permissions denied") );
 	return;
+// --- Sven's editable global settings changes start ---
+      }
+// --- Sven's editable global settings changes end ---
     }
     
 	f.close(); // kalle
@@ -1708,14 +1861,100 @@ bool BindingPropsPage::supports( KURL *_kurl )
 
 void BindingPropsPage::applyChanges()
 {
+// --- Sven's editable global settings changes start ---
+    int i = 0;
+    bool err = false;
+    // --- Sven's editable global settings changes end ---
+    
     QString path = properties->getKURL()->path();
 
     QFile f( path );
+
+// --- Sven's editable global settings changes start ---
+    QDir lDir (kapp->localkdedir() + "/share/mimelnk/"); // I know it exists
+
+    debug (path.data());
+    debug (kapp->kde_mimedir().data());
+// --- Sven's editable global settings changes end ---
+    
     if ( !f.open( IO_ReadWrite ) )
     {
+// --- Sven's editable global settings changes start ---
+      // path = /usr/local/kde/share/mimelnk/image/jpeg.kdelnk
+      
+      //Does path contain kde_mimedir?
+      if (path.find(kapp->kde_mimedir()) == 0) // kde_mimedir on start of path
+      {
+	path.remove(0, strlen(kapp->kde_mimedir())); //remove kde_mimedir
+
+	if (path[0] == '/')
+	  path.remove(0, 1); // remove /
+	
+	while (path.contains('/'))
+	{
+	  i = path.find('/'); // find separator
+	  if (!lDir.cd(path.left(i)))  // exists?
+	  {
+	    lDir.mkdir((path.left(i)));  // no, create
+	    if (!lDir.cd((path.left(i)))) // can cd to?
+	    {
+	      err = true;                 // no flag it...
+	      // debug ("Can't cd to  %s in %s", path.left(i).data(),
+	      //	 lDir.absPath().data());
+	      break;                      // and exit while
+	    }
+	  }
+	  path.remove (0, i);           // cded to;
+	  if (path[0] == '/')
+	    path.remove(0, 1); // remove / from path
+	}
+      }
+      else // path didn't contain kde_mimdir this is an error
+	err = true;
+      
+      // we created all subdirs or failed
+      if (!err) // if we didn't fail try to make file just for check
+      {
+	path.prepend("/"); // be sure to have /jpeg.kdelnk
+	path.prepend(lDir.absPath());
+	f.setName(path);
+	//debug("path = %s", path.data());
+	if ( f.open( IO_ReadWrite ) )
+	{
+	  // we must first copy whole kdelnk to local dir
+	  // and then change it. Trust me.
+	  QFile s(properties->getKURL()->path());
+	  s.open(IO_ReadOnly);
+	  //char *buff = (char *) malloc (s.size()+10);     CHANGE TO NEW!
+          char *buff = new char[s.size()+10];            // Done.
+	  if (buff != 0)
+	  {
+	    if (s.readBlock(buff, s.size()) != -1 &&
+		f.writeBlock(buff, s.size()) != -1)
+	      ; // ok
+	    else
+	    {
+	      err = true;
+	      f.remove();
+	    }
+	    //free ((void *) buff);                      CHANGE TODELETE!
+	    delete[] buff;                            // Done.
+	  }
+	  else
+	    err = true;
+	}
+	else
+	  err = true;
+      }
+      if (err)
+      {
+// --- Sven's editable global settings changes end ---
 	QMessageBox::warning( 0, klocale->translate("KFM Error"),
 			        klocale->translate("Could not save properties\nPerhaps permissions denied") );
 	return;
+// --- Sven's editable global settings changes start ---	
+      }
+// --- Sven's editable global settings changes end ---
     }
     f.close();
 

@@ -273,7 +273,29 @@ protected:
      * selected menu item.
      */
     KNewMenu *menuNew;
+    //-------- Sven's overlayed mime/app dirs end ---
+    /**
+     * Flag set by @ref #openURL if we read mime/applnk dir or
+     * one of it's subdirs. Cleared in @ref #slotFinished or @ref #stop .
+     */
+    bool bindingDir;
+    
+    /**
+     * Flag set by @ref #slotFinished Cleared in @ref #slotFinished or
+     * @ref #stop . True if we do 2nd pass, false if 1st pass.
+     */
+    bool pass2;
 
+    /**
+     * List of duplicated list entries for overlay stuff. We must have
+     * our own list. This is a pointer so we don't waste any memory -
+     * changing mime/applnks is rare operation. List is autoDelete,
+     * and has deep copies. Filled and tested for dups in @ref
+     * #writeEntry , created in @ref #openURL , zeroed & deleted in
+     * in @ref #slotFinished or @ref #stop .
+     */
+    QStrList *dupList;
+    //-------- Sven's overlayed mime/app dirs start ---
 };
 
 #endif
