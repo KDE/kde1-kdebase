@@ -563,7 +563,6 @@ void kPanel::set_label_date(){
 
   curtime=time(NULL);
   loctime=localtime(&curtime);
-  loctime->tm_hour=0;
   
   int rows = 1;
   if (!clockAmPm)
