@@ -197,7 +197,7 @@ msgstr "-display <navn>          oppgi skjerm(tjener)\n"
 
 #: main.C:1163
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr ""
+msgstr "-vt_geometry <spes>       vt-vinduets geometry ved start\n"
 
 #: main.C:1164
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"

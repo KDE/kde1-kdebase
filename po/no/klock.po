@@ -605,7 +605,7 @@ msgstr "Modus:"
 
 #: science.cpp:585
 msgid "Whirl"
-msgstr ""
+msgstr "Virvel"
 
 #: science.cpp:586
 msgid "Sphere"
