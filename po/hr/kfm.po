@@ -18,9 +18,8 @@ msgid "KFM"
 msgstr "KFM"
 
 #: kfmgui.cpp:222
-#, fuzzy
 msgid "New &Window"
-msgstr "Novi pogled"
+msgstr "Novi &prozor"
 
 #: kfmgui.cpp:225
 msgid "&Run..."
@@ -52,21 +51,19 @@ msgstr "Oznaèi &sve"
 
 #: kfmgui.cpp:265
 msgid "&Find in page..."
-msgstr ""
+msgstr "Pro&naði na stranici..."
 
 #: kfmgui.cpp:267
 msgid "Find &next"
-msgstr ""
+msgstr "Pronaði &slijedeæi"
 
 #: kfmgui.cpp:270
-#, fuzzy
 msgid "Mime &Types"
-msgstr "Mime Tipovi"
+msgstr "Mime &Tipovi"
 
 #: kfmgui.cpp:272
-#, fuzzy
 msgid "App&lications"
-msgstr "Aplikacije"
+msgstr "Ap&likacije"
 
 #: kfmgui.cpp:278
 msgid "Global Mime Types"
@@ -77,9 +74,8 @@ msgid "Global Applications"
 msgstr "Uobièajene aplikacije"
 
 #: kfmgui.cpp:287
-#, fuzzy
 msgid "Show Hi&dden Files"
-msgstr "Poka¾i &datoteke s toèkom na poèetku"
+msgstr "Poka¾i s&krivene datoteke"
 
 #: kfmgui.cpp:289
 msgid "Show Tr&ee"
@@ -118,9 +114,8 @@ msgid "&Reload Document"
 msgstr "Obnovi &dokument"
 
 #: kfmgui.cpp:312
-#, fuzzy
 msgid "Rescan &Bindings"
-msgstr "Provjeri veze"
+msgstr ""
 
 #: kfmgui.cpp:315
 msgid "&View Frame Source"
@@ -135,9 +130,8 @@ msgid "Auto"
 msgstr "Auto"
 
 #: kfmgui.cpp:333
-#, fuzzy
 msgid "Document Encodin&g"
-msgstr "Kodiranje &dokument"
+msgstr "Kodiranje &dokumenta"
 
 #: kfmgui.cpp:349
 msgid "Show History"
@@ -188,22 +182,18 @@ msgid "Sa&ve Settings"
 msgstr "Sn&imi odrednice"
 
 #: kfmgui.cpp:384
-#, fuzzy
 msgid "Save Settings for this &URL"
-msgstr "Spremi postavke za ovaj URL"
+msgstr "Spremi postavke za ovaj &URL"
 
 #: kfmgui.cpp:391
-#, fuzzy
 msgid "&Configure File Manager..."
-msgstr "Podesi Preglednik..."
+msgstr "&Podesi preglednik datoteka..."
 
 #: kfmgui.cpp:393
-#, fuzzy
 msgid "Configure &Browser..."
-msgstr "Podesi Preglednik..."
+msgstr "Podesi Pre&glednik..."
 
 #: kfmgui.cpp:429
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -224,10 +214,14 @@ msgstr ""
 "mjones@kde.org\n"
 "Proxy Upravitelj naèinio Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de"
+"\n"
+"Trenutno odr¾ava: David Faure\n"
+"faure@kde.org"
+
 
 #: kfmgui.cpp:442
 msgid "&Go"
-msgstr ""
+msgstr "&Idi"
 
 #: kfmgui.cpp:443
 msgid "&Bookmarks"
@@ -278,9 +272,8 @@ msgid "KFM Error"
 msgstr "KFM Gre¹ka"
 
 #: kfmgui.cpp:560
-#, fuzzy
 msgid "Location:"
-msgstr "Otvori lokaciju"
+msgstr "Lokacija:"
 
 #: kfmexec.cpp:62 kfmgui.cpp:756 kfmman.cpp:1410
 msgid "Malformed URL\n"
@@ -311,23 +304,20 @@ msgid "&New"
 msgstr "&Novi"
 
 #: kfmgui.cpp:1098
-#, fuzzy
 msgid "&Up"
-msgstr "Gore"
+msgstr "&Gore"
 
 #: kfmgui.cpp:1100
 msgid "&Back"
-msgstr ""
+msgstr "&Natrag"
 
 #: kfmgui.cpp:1102
-#, fuzzy
 msgid "&Forward"
-msgstr "Naprijed"
+msgstr "Na&prijed"
 
 #: kfmgui.cpp:1104
-#, fuzzy
 msgid "&Home"
-msgstr "Poèetak"
+msgstr "&Poèetak"
 
 #: kfmgui.cpp:1171 kfmgui.cpp:1339 kfmjob.cpp:36 kfmman.cpp:250
 #: kfmtree.cpp:500 kfmview.cpp:490 kfmview.cpp:559 kfmview.cpp:786
@@ -337,7 +327,7 @@ msgstr "GRE©KA: Neispravan URL"
 
 #: kfmgui.cpp:1293 kfmserver.cpp:245
 msgid "Open Location:"
-msgstr "Otvori lokaciju"
+msgstr "Otvori lokaciju:"
 
 #: kfmgui.cpp:1350
 msgid "KFM Confirm"
@@ -452,9 +442,8 @@ msgid "The mime type config file "
 msgstr "Mime postavna datoteka"
 
 #: kbind.cpp:305
-#, fuzzy
 msgid "does not contain a MimeType=... entry"
-msgstr "ne sadr¾i polje  MimeType=..."
+msgstr "ne sadr¾i polje MimeType=..."
 
 #: kbind.cpp:393
 msgid "No mime types installed!"
@@ -656,13 +645,13 @@ msgid "Last Modified"
 msgstr "Zadnje promjene"
 
 #: kfmprops.cpp:379
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
 msgstr ""
-"Ne mogu obrisati direktorij\n"
-"%s"
+"Ne mogu preimenovati datoteku ili direktorij\n"
+"%s\n"
 
 #: kfmprops.cpp:429
 msgid "Access permissions"
@@ -714,7 +703,7 @@ msgstr "Korisnik"
 
 #: kfmprops.cpp:464 kfmprops.cpp:563
 msgid "Group"
-msgstr ""
+msgstr "Grupa"
 
 #: kfmprops.cpp:469
 msgid "Others"
@@ -771,9 +760,8 @@ msgid "Execute"
 msgstr "Izvr¹i"
 
 #: kfmprops.cpp:689
-#, fuzzy
 msgid "&Browse..."
-msgstr "&Preglednik"
+msgstr "&Potra¾i..."
 
 #: kfmprops.cpp:723
 msgid "Swallowing on panel"
@@ -850,7 +838,7 @@ msgstr "Uobièajena aplikacija"
 
 #: kfmprops.cpp:1860
 msgid "<none>"
-msgstr ""
+msgstr "<nijedan>"
 
 #: kfmprops.cpp:2105
 msgid "Device ( /dev/fd0 )"
@@ -999,12 +987,12 @@ msgid " ERROR: Could not write to %s"
 msgstr " GRE©KA: Ne mogu pisati u %s"
 
 #: kiojob.cpp:567 kiojob.cpp:872
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not make symbolic link\n"
 "%s"
 msgstr ""
-"Ne mogu naèiniti dvojnika od\n"
+"Ne mogu naèiniti dvojnika\n"
 "%s"
 
 #: kiojob.cpp:585 kiojob.cpp:893 kiojob.cpp:1330
@@ -1169,7 +1157,7 @@ msgstr ""
 "Vjerojatno je lozinka kriva"
 
 #: kiojob.cpp:1352
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Tar reported an error\n"
 "%s"
@@ -1178,7 +1166,7 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1355
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Gzip reported an error for\n"
 "%s"
@@ -1188,7 +1176,7 @@ msgstr ""
 
 #: kiojob.cpp:1361
 msgid "Operation technically impossible"
-msgstr ""
+msgstr "Operacija je tehnièki nemoguæa"
 
 #: kiojob.cpp:1364 kiojob.cpp:1373
 #, c-format
@@ -1200,21 +1188,21 @@ msgstr ""
 "ne postoji"
 
 #: kiojob.cpp:1414
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Tar reported a fatal error\n"
 "%s"
 msgstr ""
-"Tar je prijavio gre¹ku\n"
+"Tar je prijavio nepopravljivu gre¹ku\n"
 "%s"
 
 #: kiojob.cpp:1418
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Gzip reported a fatal error\n"
 "%s"
 msgstr ""
-"Gzip je prijavio gre¹ku\n"
+"Gzip je prijavio nepopravljivu gre¹ku\n"
 "%s"
 
 #: kiojob.cpp:1422
@@ -1390,30 +1378,28 @@ msgid "Do you want to accept or reject this cookie?"
 msgstr ""
 
 #: kcookiewin.cpp:120
-#, fuzzy
 msgid "Apply to "
-msgstr "Pridru¾i svemu"
+msgstr "Primjeni na"
 
 #: kcookiewin.cpp:125
 msgid "&This cookie only"
-msgstr ""
+msgstr "&Samo ovaj kolaèiæ"
 
 #: kcookiewin.cpp:133
 msgid "All cookies from this &domain"
-msgstr ""
+msgstr "Sve kolaèiæe iz ove &domene"
 
 #: kcookiewin.cpp:140
 msgid "All &cookies"
-msgstr ""
+msgstr "Sve &kolaèiæe"
 
 #: kcookiewin.cpp:161
 msgid "&Accept"
-msgstr ""
+msgstr "&Prihvati"
 
 #: kcookiewin.cpp:166
-#, fuzzy
 msgid "&Reject"
-msgstr "&Oznaèi"
+msgstr "&Odbij"
 
 #: popup.cpp:72
 #, c-format
@@ -1495,126 +1481,3 @@ msgid ""
 msgstr ""
 "Sintaktièka pogre¹ka:\n"
 "kfmexec naredba [URLovi ....]\n"
-
-#~ msgid "Dont know what to do"
-#~ msgstr "Ne znam ¹to da radim"
-
-#, fuzzy
-#~ msgid "Move here"
-#~ msgstr "Premjesti"
-
-#, fuzzy
-#~ msgid "Link here"
-#~ msgstr "Veza"
-
-#~ msgid "Working Directory"
-#~ msgstr "Radni direktorij"
-
-#~ msgid ""
-#~ "Please change the password in\n"
-#~ "~/.kde/share/apps/kfm/magic"
-#~ msgstr ""
-#~ "Molim promijeniti lozinku u\n"
-#~ "~/.kde/share/apps/kfm/magic"
-
-#~ msgid ""
-#~ "Could not rename the file or directory\n"
-#~ "The destination seems to already exist\n"
-#~ msgstr ""
-#~ "Nisam mogao preimenovati datoteku ili direktorij\n"
-#~ "Odredi¹te veæ postoji\n"
-
-#~ msgid "Installing Templates"
-#~ msgstr "Instaliram predlo¹ke"
-
-#~ msgid "Small"
-#~ msgstr "Mali"
-
-#~ msgid "Medium"
-#~ msgstr "Srednji"
-
-#~ msgid "Large"
-#~ msgstr "Veliki"
-
-#~ msgid "Standard Font"
-#~ msgstr "Standardno Pismo"
-
-#~ msgid "Fixed Font"
-#~ msgstr "Jednoliko Pismo"
-
-#~ msgid "Background Color:"
-#~ msgstr "Boja Pozadine:"
-
-#~ msgid "Normal Text Color:"
-#~ msgstr "Normalna Boja Teksta:"
-
-#~ msgid "URL Link Color:"
-#~ msgstr "Boja URL Veze:"
-
-#~ msgid "Followed Link Color:"
-#~ msgstr "Boja Praæene Veze:"
-
-#~ msgid "Change cursor over link."
-#~ msgstr "Promijeni pokazivaè kada je iznad veze."
-
-#~ msgid "Horizontal Root Grid Spacing:"
-#~ msgstr "Vodoravni razmak izmeðu toèaka mre¾e:"
-
-#~ msgid "Vertical Root Grid Spacing:"
-#~ msgstr "Okomiti razmak izmeðu toèaka mre¾e:"
-
-#, fuzzy
-#~ msgid "&Transparent Text for Root Icons."
-#~ msgstr "Prozirni tekst za korijenske ikone."
-
-#~ msgid "On server:"
-#~ msgstr "Poslu¾itelj"
-
-#~ msgid "login as:"
-#~ msgstr "prijavi kao"
-
-#~ msgid "Known bindings:"
-#~ msgstr "Poznate veze:"
-
-#~ msgid "Don't forget to save your settings!"
-#~ msgstr "Ne zaboravite spremiti postavu!"
-
-#~ msgid "Use proxy"
-#~ msgstr "Koristi proxy"
-
-#~ msgid "No Proxy for:"
-#~ msgstr "Direktno za:"
-
-#~ msgid "&Proxy"
-#~ msgstr "P&roxy"
-
-#~ msgid "&HTTP"
-#~ msgstr "&HTTP"
-
-#~ msgid "User &Agent"
-#~ msgstr "User &Agent"
-
-#~ msgid "&Colors"
-#~ msgstr "&Boje"
-
-#~ msgid "&Other"
-#~ msgstr "&Ostali"
-
-#, fuzzy
-#~ msgid "KFM Preferences Settings"
-#~ msgstr "KFM Postava Preglednika"
-
-#~ msgid "Accept languages:"
-#~ msgstr "Prihvati jezike:"
-
-#~ msgid "Accept character sets:"
-#~ msgstr "Prihvati skupove znakova:"
-
-#~ msgid "Assume HTML"
-#~ msgstr "Pretpostavi da je HTML"
-
-#~ msgid "ERROR: You dropped some URL over itself"
-#~ msgstr "GRE©KA: Ispustili ste URL na njega samog"
-
-#~ msgid "&Visual Schnauzer"
-#~ msgstr "&Vjeran prikaz"
