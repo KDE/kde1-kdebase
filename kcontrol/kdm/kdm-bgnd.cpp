@@ -17,6 +17,8 @@
     Boston, MA 02111-1307, USA.
 */  
 
+#include <qframe.h>
+#include <qlayout.h>
 #include "utils.h"
 #include "kdm-bgnd.moc"
 #include <kfiledialog.h>
@@ -49,30 +51,44 @@ void KDMBackgroundWidget::setupPage(QWidget *)
 
       QLabel *label;
       QPushButton *button;
-      QGroupBox *group;
+      QGroupBox *tGroup, *lGroup, *rGroup;
       QRadioButton *rb;
-      kapp->processEvents();
-      QPixmap p = iconloader->loadIcon("monitor.xpm");
 
-      label = new QLabel( this );
+      QString s = kapp->kde_datadir();
+      s += "/kdmconfig/pics/monitor.xpm";
+      QPixmap p(s.data()); // = iconloader->loadIcon("monitor.xpm");
+
+      tGroup = new QGroupBox( klocale->translate("Preview"), this );
+      QBoxLayout *tLayout = new QVBoxLayout(tGroup, 10, 10, "tLayout");
+      tLayout->addSpacing(tGroup->fontMetrics().height());
+
+      label = new QLabel( tGroup );
+      label->setAlignment( AlignCenter );
       label->setPixmap( p );
-      label->setMinimumSize( label->sizeHint() );
-      label->move( 200, 15 );
+      label->setFixedSize(label->sizeHint());
 
       monitor = new KBGMonitor( label );
       monitor->setGeometry( 20, 10, 157, 111 );
       monitor->setBackgroundColor( color );
+      tLayout->addWidget(label, 1, AlignCenter);
+      tLayout->activate();
 
-      group = new QGroupBox( klocale->translate("Color"), this );
-      group->setGeometry( 15, 190, 210, 130 );
+      lGroup = new QGroupBox( klocale->translate("Color"), this );
+      QBoxLayout *lLayout = new QVBoxLayout(lGroup, 10);
+      lLayout->addSpacing(lGroup->fontMetrics().height());
 
-      colButton = new KColorButton( color, group );
-      colButton->setGeometry( 15, 25, 75, 30 );
+      colButton = new KColorButton( color, lGroup );
+      colButton->setFixedHeight( colButton->sizeHint().height() );
+      colButton->setMinimumWidth( colButton->sizeHint().width() );
+      lLayout->addWidget(colButton);
       connect( colButton, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotSelectColor( const QColor & ) ) );
+      lLayout->addStretch(1);
+      lLayout->activate();
 
-      group = new QGroupBox( klocale->translate("Wallpaper"), this );
-      group->setGeometry( 240, 190, 215, 130 );
+      rGroup = new QGroupBox( klocale->translate("Wallpaper"), this );
+      QBoxLayout *rLayout = new QVBoxLayout(rGroup, 10);
+      rLayout->addSpacing(rGroup->fontMetrics().height());
 
       QString path = kapp->kde_wallpaperdir().copy();
       QDir d( path, "*", QDir::Name, QDir::Readable | QDir::Files );
@@ -80,12 +96,10 @@ void KDMBackgroundWidget::setupPage(QWidget *)
       if(!wallpaper.isEmpty())
         list.append( wallpaper.data() );
 
-      wpCombo = new QComboBox( group );
-      wpCombo->setGeometry( 15, 20, 190, 25 );
+      wpCombo = new QComboBox( rGroup );
       wpCombo->insertItem( NO_WALLPAPER, 0 );
       wpCombo->setCurrentItem( 0 );
 
-      //QStrListIterator it( *list );
       for ( uint i = 0; i < list.count(); i++ )
       {
 	wpCombo->insertItem( list.at(i) );
@@ -100,28 +114,54 @@ void KDMBackgroundWidget::setupPage(QWidget *)
       }
       connect( wpCombo, SIGNAL( activated( const char * ) ),
 		SLOT( slotWallpaper( const char * )  )  );
+      wpCombo->setFixedHeight(wpCombo->sizeHint().height());
+      rLayout->addWidget(wpCombo);
 
-      wpGroup = new QButtonGroup( this );
-      wpGroup->hide();
+      wpGroup = new QButtonGroup( rGroup );
+      QBoxLayout *wpl = new QVBoxLayout(wpGroup, 10);
+      wpGroup->setFrameStyle(QFrame::NoFrame);
       wpGroup->setExclusive( TRUE );
 
-      rb = new QRadioButton( klocale->translate("Tiled"), group );
-      rb->setGeometry( 20, 50, 85, 25 );
+      rb = new QRadioButton( klocale->translate("Tiled"), wpGroup );
+      rb->setFixedSize( rb->sizeHint());
       wpGroup->insert( rb, Tiled );
+      wpl->addWidget(rb, 0, AlignLeft);
 
-      rb = new QRadioButton( klocale->translate("Centred"), group );
-      rb->setGeometry( 20, 75, 85, 25 );
+      rb = new QRadioButton( klocale->translate("Centred"), wpGroup );
+      rb->setFixedSize( rb->sizeHint() );
       wpGroup->insert( rb, Centred );
+      wpl->addWidget(rb, 0, AlignLeft);
 
-      rb = new QRadioButton( klocale->translate("Scaled"), group );
-      rb->setGeometry( 20, 100, 85, 25 );
+      rb = new QRadioButton( klocale->translate("Scaled"), wpGroup );
+      rb->setFixedSize( rb->sizeHint() );
       wpGroup->insert( rb, Scaled );
+      wpl->addWidget(rb, 0, AlignLeft);
+      wpl->activate();
 
       connect( wpGroup, SIGNAL( clicked( int ) ), SLOT( slotWallpaperMode( int ) ) );
 
-      button = new QPushButton( klocale->translate("Browse..."), group );
-      button->setGeometry( 125, 55, 80, 25 );
+      button = new QPushButton( klocale->translate("Browse..."), rGroup );
+      button->setFixedSize( button->sizeHint() );
       connect( button, SIGNAL( clicked() ), SLOT( slotBrowse() ) );
+
+      QBoxLayout *r2Layout = new QHBoxLayout();
+      rLayout->addLayout(r2Layout);
+      r2Layout->addWidget(wpGroup);
+      r2Layout->addWidget(button);
+      rLayout->activate();
+
+      QBoxLayout *ml = new QVBoxLayout(this, 10, 10, "il");
+      QBoxLayout *tl = new QVBoxLayout(-1, "tl");
+      QBoxLayout *bl = new QHBoxLayout(-1, "bl");
+
+      ml->addLayout(tl);
+      tl->addWidget(tGroup);
+
+      ml->addLayout(bl);
+      bl->addWidget(lGroup);
+      bl->addWidget(rGroup);
+
+      ml->activate();
 
       showSettings();
 }
@@ -130,8 +170,8 @@ void KDMBackgroundWidget::setupPage(QWidget *)
 void KDMBackgroundWidget::slotSelectColor(const QColor &col)
 {
   color = col;
-  if ( wpMode == Centred || wallpaper == NO_WALLPAPER )
-    setMonitor();
+  //if ( wpMode == Centred || wallpaper == NO_WALLPAPER )
+  setMonitor();
 }
 
 void KDMBackgroundWidget::slotBrowse()
