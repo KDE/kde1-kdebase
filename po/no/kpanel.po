@@ -14,13 +14,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kpanel.C:273
-#, fuzzy
 msgid "&Move"
-msgstr "Flytt"
+msgstr "&Flytt"
 
 #: kpanel.C:276
 msgid "&Properties"
-msgstr ""
+msgstr "&Egenskaper"
 
 #: kpanel.C:313
 msgid "Go!"

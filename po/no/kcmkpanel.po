@@ -179,7 +179,7 @@ msgstr "Rediger oppføringer: (dra en mappe og lag en lenke)"
 
 #: disknav.cpp:64
 msgid "Edit &Local..."
-msgstr "Rediger &local..."
+msgstr "Rediger &lokal..."
 
 #: disknav.cpp:74
 msgid "Edit &Global..."

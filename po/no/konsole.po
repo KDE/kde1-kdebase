@@ -38,9 +38,8 @@ msgid "&Linux"
 msgstr "&Linux"
 
 #: main.C:210
-#, fuzzy
 msgid "Linux (small)"
-msgstr "40x15 (&liten)"
+msgstr "Linux (liten)"
 
 #: main.C:213
 msgid "&More ..."
