@@ -111,27 +111,28 @@ int main( int argc, char *argv[] )
 {
   if (argc <= 2) {
       printf(KSTART_VERSION);
-      printf("\n Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n");
-      printf("\n Utility to launch legay applications with special KDE window properties");
-      printf("\n such as iconified, maximized, a certain virtual desktop, a special decoration");
-      printf("\n or sticky");
-      printf("\n ");
-      printf("\n In addition, the -activate switch will jump to the window even if it is");
-      printf("\n started on a different virtual desktop");
-      printf("\n ");
-      printf("\n Usage:");
-      printf("\n %s <command> [-window <regular expression>] [-desktop <number>]", argv[0]);
-      printf("\n              [-sticky] [-iconify] [-maximize] ");
-      printf("\n              [-decoration tiny|none] [-activate]");
-      printf("\n ");
-      printf("\n If you do not specify a regular expression for the windows title," );
-      printf("\n then the very first window to appear will be taken. Not recommended!");
-      printf("\n ");
-      printf("\n Example usage:");
-      printf("\n %s \"xclock -geometry 80x80-0+0\" -window xclock -decoration tiny -sticky", argv[0]);
-      printf("\n puts a tiny decorated, sticky xclock on the top right corner of the screen.");
-      printf("\n ");
-      printf("\n ");
+      printf(i18n(
+       "\n Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
+       "\n Utility to launch legay applications with special KDE window properties"
+       "\n such as iconified, maximized, a certain virtual desktop, a special decoration"
+       "\n or sticky"
+       "\n "
+       "\n In addition, the -activate switch will jump to the window even if it is"
+       "\n started on a different virtual desktop"
+       "\n "
+       "\n Usage:"
+       "\n %s <command> [-window <regular expression>] [-desktop <number>]"
+       "\n              [-sticky] [-iconify] [-maximize] "
+       "\n              [-decoration tiny|none] [-activate]"
+       "\n "
+       "\n If you do not specify a regular expression for the windows title," 
+       "\n then the very first window to appear will be taken. Not recommended!"
+       "\n "
+       "\n Example usage:"
+       "\n %s \"xclock -geometry 80x80-0+0\" -window xclock -decoration tiny -sticky"
+       "\n puts a tiny decorated, sticky xclock on the top right corner of the screen."
+       "\n "
+       "\n "), argv[0], argv[0]);
 
       ::exit(0);
   }
@@ -147,7 +148,7 @@ int main( int argc, char *argv[] )
   {
       if (!strcmp(argv[i],"-version")) {
 	  printf(KSTART_VERSION);
-	  printf("\n Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n");
+	  printf(i18n("\n Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"));
 	  ::exit(0);
       }
     if (!strcmp(argv[i],"-window") && i+1 < argc) {
