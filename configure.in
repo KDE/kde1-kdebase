@@ -50,6 +50,9 @@ case $host in
         shadow_support=no
      )
      ;;
+*-sun-solaris2.6)
+    shadow_support=yes
+    ;;
 *-*-freebsd* )
    SETUIDFLAGS="4755 -o root"
      ;;
