@@ -1945,7 +1945,7 @@ AC_DEFUN(KDE_CHECK_STL_HP,
       AC_TRY_COMPILE([
 #include <list.h>
 ],[
-#ifndef __HP_STL_LIST_H
+#ifndef LIST_H
 #error HP
 #endif
 ], kde_cv_stl_type_hp=yes,
