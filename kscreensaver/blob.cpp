@@ -43,7 +43,7 @@
 // create an extra KLocale instance here.
 extern KLocale *glocale;
 
-#define SMALLRAND(a)	(int)((float)(random()/(float)RAND_MAX)*(float)(a)+1)
+#define SMALLRAND(a)	(int)(random()%(int)(a)+1)
 
 static KBlobSaver *saver = NULL;
 
@@ -202,7 +202,10 @@ void KBlobSaver::cbSetup()
 	cb_sradians = 0.0;
 	cb_deviate = SMALLRAND(height/20)+(height/15);
 	cb_radius = height/2-cb_deviate*2-2*dim;
-	cb_devradinc = (((float)random()/(float)RAND_MAX)*10.0*2.0*M_PI)/360.0;
+	//cb_devradinc = (((float)random()/(float)RAND_MAX)*10.0*2.0*M_PI)/360.0;
+        // Commented out by David. RAND_MAX might not be accurate...
+        cb_devradinc = (((float)(random()%30000)/30000.0)*10.0*2.0*M_PI)/360.0;
+
 }
 
 void KBlobSaver::pcSetup()

@@ -136,7 +136,9 @@ static GC draw_gc, erase_gc;
 
 static inline double frand(double m)
 {
-  return ((double)random()) / RAND_MAX * m;
+  // return ((double)random()) / RAND_MAX * m;
+  // Commented out by David. RAND_MAX might not be accurate...
+  return ((double)(random()%30000)/30000.0) * m;
 }
 
 static void
