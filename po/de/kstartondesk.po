@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kstartondesk\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"PO-Revision-Date: 1998-05-02 10:25+0100\n"
+"Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
+"Language-Team: German <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: ISO-8859-1\n"
+
+#: kstartondesk.C:70
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: kstartondesk.C:74
+msgid "Usage:"
+msgstr "Anwendung: "
+
+#: kstartondesk.C:76
+msgid "command "
+msgstr "Befehl "
+
+#: kstartondesk.C:77
+msgid "title "
+msgstr "Titel "
+
+#: kstartondesk.C:78
+msgid "desktop"
+msgstr "Desktop"
+
+#: kstartondesk.C:80
+msgid "Example"
+msgstr "Beispiel"
