@@ -583,12 +583,12 @@ KMimeType* KMimeType::findType( const char *_url )
 /**
  * TODO: Some of this code belonks in KDELnkMimeType and others.
  */
-void KMimeType::getBindings( QStrList &_list, const char *_url, bool _isdir )
+void KMimeType::getBindings( QStrList &_list, const char *_url, int _isdir )
 {
     KURL u( _url );
     if ( u.isMalformed() )
 	return;
-    
+
     // Used to store a new value for _url
     QString tmp;
     
@@ -673,31 +673,34 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, bool _isdir )
 	    }
 	}
     } */
-    
+
     // A directory named dir.html for example does not have a binding to
-    // netscape or arena.
-    if ( _isdir )
+    // netscape or arena => we check for directories first.
+    // Are we really shure that it is a directory? In cases like
+    // ftp://ftp.kde.org/pub/kde/qt we can not be shure.
+    if ( _isdir == 1 )
     {
 	KMimeBind *bind;
 	for ( bind = folderType->firstBinding(); bind != 0L; bind = folderType->nextBinding() )
 	{
 	    // Does the application support the protocol ?
-	    if ( bind->supportsProtocol( u.protocol() ) )
-		_list.append( bind->getProgram() );
+	    // if ( bind->supportsProtocol( u.protocol() ) )
+	    _list.append( bind->getProgram() );
 	}
     }
     // usual files
     else
     {
 	KMimeType *typ = KMimeType::getMagicMimeType( _url );
+
 	if ( !typ->hasBindings() )
 	    return;
 
 	KMimeBind *bind;
 	for ( bind = typ->firstBinding(); bind != 0L; bind = typ->nextBinding() )
 	{
-	    if ( bind->supportsProtocol( u.protocol() ) )
-		_list.append( bind->getProgram() );
+	    // if ( bind->supportsProtocol( u.protocol() ) )
+	    _list.append( bind->getProgram() );
 	}
 
 	// Add all default bindings if we did not already do it
@@ -975,9 +978,7 @@ QString KDELnkMimeType::getComment( const char *_url )
  *
  ***************************************************************/
 
-KMimeBind::KMimeBind( const char *_prg, const char *_cmd, bool _allowdefault, const char *_prot1, 
-		      const char *_prot2, const char *_prot3,
-		      const char *_prot4, const char *_prot5 )
+KMimeBind::KMimeBind( const char *_prg, const char *_cmd, bool _allowdefault )
 {
     allowDefault = _allowdefault;
     
@@ -985,42 +986,7 @@ KMimeBind::KMimeBind( const char *_prg, const char *_cmd, bool _allowdefault, co
     program.detach();
   
     cmd = _cmd;
-    cmd.detach();
-    
-    protocol1 = _prot1;
-    protocol1.detach();
-    
-    if ( _prot2 != 0 )
-    {
-	protocol2 = _prot2;
-	protocol2.detach();
-    }
-    else
-	protocol2 = "";
-    
-    if ( _prot3 != 0 )
-    {
-	protocol3 = _prot3;
-	protocol3.detach();
-    }
-    else
-	protocol3 = "";
-
-    if ( _prot4 != 0 )
-    {
-        protocol4 = _prot4;
-	protocol4.detach();
-    }
-    else
-	protocol4 = "";
-
-    if ( _prot5 != 0 )
-    {
-	protocol5 = _prot5;
-	protocol5.detach();
-    }
-    else
-	protocol5 = "";
+    cmd.detach();    
 }
 
 void KMimeBind::initApplications( const char * _path )
@@ -1071,8 +1037,6 @@ void KMimeBind::initApplications( const char * _path )
 		QString comment = config.readEntry( "Comment" );
 		// A ';' separated list of mime types
 		QString mime = config.readEntry( "MimeType" );
-		// A ';' separated list of protocols
-		QString protocols = config.readEntry( "Protocols" );
 		// Allow this program to be a default application for a mime type?
 		// For example gzip should never be a default for any mime type.
 		QString str_allowdefault = config.readEntry( "AllowDefault" );
@@ -1098,34 +1062,9 @@ void KMimeBind::initApplications( const char * _path )
 		    }
 		} 
 		    
-		// Which protocols, e.g. file, http, tar, ftp, does the
-		// application support ?
+		// To which mime types is the application bound ?
 		int pos2 = 0;
 		int old_pos2 = 0;
-		QString prots[5];
-		int cp = 0;
-		while ( ( pos2 = protocols.find( ";", pos2 ) ) != - 1 )
-		{
-		    QString prot = protocols.mid( old_pos2, pos2 - old_pos2 );
-		    if ( cp <= 4 )
-		    {
-			prots[ cp ] = prot.data();
-			prots[ cp++ ].detach();
-		    }
-		    else
-		    {
-			QMessageBox::message( klocale->translate("Error"),
-					      klocale->translate("Too many protocols in file\n") + file );
-			pos2 = protocols.length();
-		    }
-		    
-		    pos2++;
-		    old_pos2 = pos2;
-		}
-		
-		// To which mime types is the application bound ?
-		pos2 = 0;
-		old_pos2 = 0;
 		while ( ( pos2 = mime.find( ";", pos2 ) ) != - 1 )
 		{
 		    // 'bind' is the name of a mime type
@@ -1133,28 +1072,16 @@ void KMimeBind::initApplications( const char * _path )
 		    // Bind this application to all files/directories
 		    if ( strcasecmp( bind.data(), "all" ) == 0 )
 		    {
-			defaultType->append( new KMimeBind( app.data(), exec.data(), allowdefault,
-							    prots[0].data(),
-							    prots[1].data(), prots[2].data(),
-							    prots[3].data(), prots[4].data()) );
-			folderType->append( new KMimeBind( app.data(), exec.data(), allowdefault,
-							   prots[0].data(),
-							   prots[1].data(), prots[2].data(),
-							   prots[3].data(), prots[4].data() ) );
+			defaultType->append( new KMimeBind( app.data(), exec.data(), allowdefault ) );
+			folderType->append( new KMimeBind( app.data(), exec.data(), allowdefault ) );
 		    }
 		    else if ( strcasecmp( bind.data(), "alldirs" ) == 0 )
 		    {
-			folderType->append( new KMimeBind( app.data(), exec.data(), allowdefault,
-							   prots[0].data(),
-							   prots[1].data(), prots[2].data(),
-							   prots[3].data(), prots[4].data() ) );
+			folderType->append( new KMimeBind( app.data(), exec.data(), allowdefault ) );
 		    }
 		    else if ( strcasecmp( bind.data(), "allfiles" ) == 0 )
 		    {
-			defaultType->append( new KMimeBind( app.data(), exec.data(), allowdefault,
-							    prots[0].data(),
-							    prots[1].data(), prots[2].data(),
-							    prots[3].data(), prots[4].data() ) );
+			defaultType->append( new KMimeBind( app.data(), exec.data(), allowdefault ) );
 		    }
 		    // Bind this application to a mime type
 		    else
@@ -1167,10 +1094,7 @@ void KMimeBind::initApplications( const char * _path )
 			{
 			    // debugT( "Added Binding '%s' to '%s'\n",app.data(),t->getMimeType() );
 			    
-			    t->append( new KMimeBind( app.data(), exec.data(), allowdefault,
-						      prots[0].data(),
-						      prots[1].data(), prots[2].data(),
-						      prots[3].data(), prots[4].data() ) );
+			    t->append( new KMimeBind( app.data(), exec.data(), allowdefault ) );
 			}
 		    }
 		    
@@ -1446,22 +1370,6 @@ KConfig* KMimeBind::openKConfig( const char *_url ) // kalle
     KConfig *config = new KConfig( decoded ); // kalle
     config->setGroup( "KDE Desktop Entry" );
     return config;
-}
-
-bool KMimeBind::supportsProtocol( const char *_protocol )
-{
-    if ( strcmp( protocol1, _protocol ) == 0 )
-	return true;
-    if ( strcmp( protocol2, _protocol ) == 0 )
-	return true;
-    if ( strcmp( protocol3, _protocol ) == 0 )
-	return true;
-    if ( strcmp( protocol4, _protocol ) == 0 )
-	return true;
-    if ( strcmp( protocol5, _protocol ) == 0 )
-	return true;
-
-    return false;
 }
 
 /*****************************************************************************

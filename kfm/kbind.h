@@ -62,9 +62,7 @@ public:
      * only support 'file'. While the WWW Browser will use '%u', the graphics program
      * will use '%f'.
      */
-    KMimeBind( const char *_name, const char *_cmd, bool _allowdefault, const char *_prot1,
-	       const char *_prot2 = 0, const char * _prot3 = 0,
-	       const char* _prot4 = 0, const char * _prot5 = 0 );
+    KMimeBind( const char *_name, const char *_cmd, bool _allowdefault );
     virtual ~KMimeBind() {}
     
     /**
@@ -86,11 +84,6 @@ public:
      */
     bool isAllowedAsDefault() {	return allowDefault; }
     
-    /**
-     * Tests wether this file binding supports the specified protocol.
-     */
-    bool supportsProtocol( const char *_protocol );
-
     /**
      * Uses this binding ( read: application ) to open the document '_url'.
      */
@@ -180,26 +173,6 @@ protected:
      * The command string.
      */
     QString cmd;
-    /**
-     * First supported protocol. May not be null.
-     */
-    QString protocol1;
-    /**
-     * Second supported protocol. May be null.
-     */
-    QString protocol2;
-    /**
-     * Third supported protocol. May be null.
-     */
-    QString protocol3;
-    /**
-     * Fourth supported protocol. May be null.
-     */
-    QString protocol4;
-    /**
-     * Fives supported protocol. May be null.
-     */
-    QString protocol5;
 
     /**
      * List of all registered applications.
@@ -438,7 +411,7 @@ public:
      * with the name.
      *
      */
-    static void getBindings( QStrList &_list, const char *_url, bool _isdir );
+    static void getBindings( QStrList &_list, const char *_url, int _isdir );
     /**
      * This function runs the given binding with the URL.
      */

@@ -551,7 +551,7 @@ int KIOServer::isDir( const char *_url )
 
     // This is always a directory
     if ( i >= 1 && _url[ i - 1 ] == '/' )
-	return true;
+	return 1;
     // With HTTP we can be shure that everything that does not end with '/'
     // is NOT a directory
     else if ( strcmp( u.protocol(), "http" ) == 0 )
