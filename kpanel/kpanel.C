@@ -847,7 +847,6 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 		      KWM::getDesktopName(i+1));
     }
 
-    raise();
     initing = false;
 }
 

@@ -185,9 +185,9 @@ int main( int argc, char ** argv ){
 
   the_panel->connect(&myapp, SIGNAL(kdisplayPaletteChanged()),
 		     SLOT(kdisplayPaletteChanged()));
-  
+
   the_panel->connect( &myapp, SIGNAL( kdisplayStyleChanged() ), SLOT( restart() ) );
-  
+
 
   myapp.setMainWidget(the_panel);
 
@@ -195,6 +195,7 @@ int main( int argc, char ** argv ){
   myapp.connectToKWM(true);
   the_panel->launchSwallowedApplications();
   the_panel->show();
+  the_panel->raise();
   myapp.syncX();
   myapp.processEvents();
   the_panel->parseMenus();
