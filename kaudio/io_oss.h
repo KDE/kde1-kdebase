@@ -11,7 +11,7 @@ public:
   AudioDev(int devnum);
   /* channels not supported by now */
   void setParams(int8 Bit_p_spl, bool Stereo, uint32 Freq, int8 Channels);
-  bool grab();
+  bool grab(bool probeOnly=false);
   bool release();
   bool reset();
   bool sync();

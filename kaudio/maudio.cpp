@@ -72,6 +72,13 @@ int main(char argc, char **argv)
   ASample = new AudioSample();
 
 
+  // Probe, if device can be grabbed (test)
+  bool openSuccess = ADev->grab(true);
+  ADev->release();
+  if (!openSuccess)
+    goto exit_pos;
+
+
   // Following is the communication via mediatool.
   // I will write an encapsulation class for this soon,
   // so that it won't look so ugly anymore
