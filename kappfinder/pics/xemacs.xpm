@@ -3,15 +3,15 @@
 /* See http://www.kde.org */
 static char*xemacs[]={
 "32 32 9 1",
-"# c #000000",
-"a c #ffffff",
-"d c #808080",
-"c c #c0c0c0",
-"f c #a0a0a4",
-"b c #585858",
-"e c #ff0000",
-"g c #ffff00",
 ". c None",
+"c c #c0c0c0",
+"b c #585858",
+"f c #a0a0a4",
+"# c #000000",
+"d c #808080",
+"g c #ffff00",
+"a c #ffffff",
+"e c #ff0000",
 ".....##########################.",
 ".....#aaaaaaaaaaaaaaaaaaaaaaaa#.",
 ".....#aaaaaaaaaaaaaaaaaaaaaaaa#b",
@@ -44,4 +44,3 @@ static char*xemacs[]={
 "......#aaaaaaaaaaaaaaaaaaaaaaa#b",
 "......#########################b",
 "........bbbbbbbbbbbbbbbbbbbbbbbb"};
-

@@ -1,0 +1,24 @@
+/* XPM */
+/* Drawn for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*xcalc[]={
+"16 14 5 1",
+". c None",
+"c c #dcdcdc",
+"b c #000000",
+"# c #808080",
+"a c #ffffff",
+".##############.",
+"#aaaaaaaaaaaaab.",
+"#accbbbbbbbbbcb.",
+"#accbaaaaaaa#cb.",
+"#acc#########cb.",
+"#accccccccccccb.",
+"#a#bc#bc#bc#bcb.",
+"#abbcbbcbbcbbcb.",
+"#a#bc#bc#bc#bcb.",
+"#abbcbbcbbcbbcb.",
+"#a#bc#bc#bc#bcb.",
+"#abbcbbcbbcbbcb.",
+"#cccccccccccccb.",
+".bbbbbbbbbbbbb.."};

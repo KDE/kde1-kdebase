@@ -1,0 +1,30 @@
+/* XPM */
+/* Drawn for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*xclock[]={
+"16 16 9 1",
+"# c #000000",
+". c None",
+"c c #800000",
+"b c #c00000",
+"g c #ffffff",
+"a c #ff0000",
+"d c #000000",
+"e c #808080",
+"f c #c0c0c0",
+".##############.",
+"#aaaaaaaaaaaaaa#",
+"#abbbc####cbbbb#",
+"#abcddeffeddcbb#",
+"#abdefggggfedbb#",
+"#acdfgfeeagfdcb#",
+"#a#egfgeagfge#b#",
+"#a#fgggeagggf#b#",
+"#a#fgggeggggf#b#",
+"#a#egfggggfge#b#",
+"#acdfgfggfgfdcb#",
+"#abdefggggfedbb#",
+"#abcddeffeddcbb#",
+"#abbbc####cbbbb#",
+"#bbbbbbbbbbbbbb#",
+".########ddd###."};

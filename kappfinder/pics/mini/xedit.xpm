@@ -1,0 +1,27 @@
+/* XPM */
+/* Drawn for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*edit[]={
+"16 16 6 1",
+"# c #000000",
+". c None",
+"b c #585858",
+"a c #a0a0a4",
+"c c #dcdcdc",
+"d c #c0c0c0",
+"..############..",
+".#aaaaaaaaaaab#.",
+".#bbbbbbbbbbbb#.",
+".#cccccccccccb#.",
+".#ccdadadadacb#.",
+".#caaaaccccccb#.",
+".#cccdccdccdcb#.",
+".#caaaaacccccb#.",
+".#ccacadadddcb#.",
+".#ccddcddcaccb#.",
+".#caaacccccccb#.",
+".#ccddcddcdccb#.",
+".#caaacccccccb#.",
+".#ccddddddddcb#.",
+".#bbbbbbbbbbbb#.",
+"..############.."};

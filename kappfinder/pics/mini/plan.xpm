@@ -3,15 +3,15 @@
 /* See http://www.kde.org */
 static char*plan[]={
 "16 16 9 1",
-"# c #000000",
-"b c #ffffff",
-"e c #808080",
-"a c #c0c0c0",
 "f c #008000",
-"d c #c0c000",
-"c c #ffffc0",
-"g c #c05800",
 ". c None",
+"c c #ffffc0",
+"a c #c0c0c0",
+"# c #000000",
+"e c #808080",
+"d c #c0c000",
+"b c #ffffff",
+"g c #c05800",
 ".#############..",
 ".#aaa##aaaaaa#..",
 ".#ba#bb#bbbbb#..",
@@ -28,4 +28,3 @@ static char*plan[]={
 ".#bbb#gg#bbbb#..",
 ".#####g#######..",
 "......#........."};
-

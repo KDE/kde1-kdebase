@@ -3,14 +3,14 @@
 /* See http://www.kde.org */
 static char*nedit[]={
 "32 32 8 1",
-"a c #000000",
-"c c #ffffff",
-"d c #c0c0c0",
-"b c #000080",
-"e c #a0a0a4",
-"f c #585858",
-"# c #0000ff",
 ". c None",
+"b c #000080",
+"d c #c0c0c0",
+"f c #585858",
+"e c #a0a0a4",
+"a c #000000",
+"# c #0000ff",
+"c c #ffffff",
 "................................",
 "####.....####a..................",
 "a#bba....a#baa..................",
@@ -43,4 +43,3 @@ static char*nedit[]={
 ".....aaaaaaaaaaaaaaaaaaaaaaaaaae",
 "......eeeeeeeeeeeeeeeeeeeeeeeeee",
 "................................"};
-

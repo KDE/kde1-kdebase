@@ -1,7 +1,7 @@
 
 INCLUDES = $(all_includes) 
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
-LDADD = -lkfile -lkfm -lkdeui -lkdecore $(LIB_KIMGIO) -lqt -lXext -lX11  $(LIBSOCKET) 
+LDADD =  $(LIB_KFILE) $(LIB_KIMGIO) 
 
 DISTCLEANFILES = $(BUILT_SOURCES)
 
@@ -56,18 +56,18 @@ kresourceman.cpp:kresourceman.moc
 kresourceman.moc: kresourceman.h
 	$(MOC) kresourceman.h -o kresourceman.moc
 
+icon_DATA = background.xpm colors.xpm
+icondir = $(kde_icondir)
+
+pics_DATA = monitor.xpm logo.xpm
+picsdir = $(kde_datadir)/kdisplay/pics
+
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) mini-background.xpm $(kde_minidir)/background.xpm
 	$(INSTALL_DATA) mini-colors.xpm $(kde_minidir)/colors.xpm
 	$(INSTALL_DATA) mini-screensaver.xpm $(kde_minidir)/screensaver.xpm
 	$(INSTALL_DATA) mini-style.xpm $(kde_minidir)/style.xpm
-	$(mkinstalldirs) $(kde_datadir)/kdisplay/pics
-	$(INSTALL_DATA) monitor.xpm $(kde_datadir)/kdisplay/pics
-	$(INSTALL_DATA) logo.xpm $(kde_datadir)/kdisplay/pics
-	$(mkinstalldirs) $(kde_icondir)
-	$(INSTALL_DATA) background.xpm $(kde_icondir)/background.xpm
-	$(INSTALL_DATA) palette.xpm $(kde_icondir)/palette.xpm
 
 EXTRA_DIST = mini-background.xpm mini-colors.xpm mini-screensaver.xpm mini-style.xpm monitor.xpm background.xpm palette.xpm logo.xpm NEWS
 
@@ -76,10 +76,6 @@ uninstall-local:
 	rm -f $(kde_minidir)/colors.xpm
 	rm -f $(kde_minidir)/screensaver.xpm
 	rm -f $(kde_minidir)/style.xpm
-	rm -f $(kde_datadir)/kdisplay/pics/monitor.xpm
-	rm -f $(kde_datadir)/kdisplay/pics/logo.xpm
-	rm -f $(kde_icondir)/background.xpm
-	rm -f $(kde_icondir)/palette.xpm
 	
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x ../../../kdelibs/po/kde.pot $(kcmdisplay_SOURCES) && mv messages.po ../../po/kdisplay.pot

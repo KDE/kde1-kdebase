@@ -1,0 +1,28 @@
+/* XPM */
+/* Drawn for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*penguin[]={
+"16 16 7 1",
+". c None",
+"e c #808000",
+"# c #000000",
+"b c #808080",
+"c c #ffff00",
+"d c #c0c000",
+"a c #ffffff",
+"......####......",
+"......####......",
+".....#a#a#b.....",
+".....##c###.....",
+".....#dcd##.....",
+".....#bbbb#.....",
+".....#aaaa##....",
+"....#baaaab#b...",
+"....#aaaaaa##...",
+"...#baaaaaa##...",
+"...#baaaaaa##...",
+"..#cdbaaaab###..",
+".#cdd#baaabdcd#.",
+".#ddddbaabeddd#.",
+"..#dde####ed##..",
+"...###....##...."};

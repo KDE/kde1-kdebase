@@ -1,0 +1,28 @@
+/* XPM */
+/* Drawn for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*dlgedit[]={
+"16 16 7 1",
+". c None",
+"e c #000080",
+"a c #c0c0c0",
+"b c #585858",
+"c c #a0a0a4",
+"# c #000000",
+"d c #ffffff",
+".##############.",
+"#aaaaaaaaaaaaaa#",
+"#aababababababa#",
+"#aaaaaaaaaaaaaa#",
+"#aaabbbabaccccd#",
+"#aaaaaaabacdacd#",
+"#abbbbbbbacbbbd#",
+"#aaaaaaaaacdddd#",
+"#abbbbbbdacbbbd#",
+"#abdeddddaccccd#",
+"#abdeddddacaabd#",
+"#abdeddddaccbcd#",
+"#aaaaaaaaaddddd#",
+"#aababababababa#",
+"#aaaaaaaaaaaaaa#",
+".##############."};

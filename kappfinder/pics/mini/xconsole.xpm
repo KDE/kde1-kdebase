@@ -1,0 +1,26 @@
+/* XPM */
+/* Drawn for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*console[]={
+"16 16 5 1",
+"b c #808080",
+". c None",
+"c c #c0c0c0",
+"# c #000000",
+"a c #ffffff",
+"................",
+".##############.",
+"#aaaaaaaaaaaaaa#",
+"#abbbbbbbbbbbbb#",
+"#abaaaaaaaaaacb#",
+"#aba#aaaaaaaacb#",
+"#aba#a#aaaaaacb#",
+"#abaaaaaaaaaacb#",
+"#abaaaaaaaaaacb#",
+"#abaaaaaaaaaacb#",
+"#abaaaaaaaaaacb#",
+"#abaaaaaaaaaacb#",
+"#accccccccccccb#",
+"#bbbbbbbbbbbbbb#",
+".##############.",
+"................"};

@@ -1,0 +1,29 @@
+/* XPM */
+/* Drawn for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*xclip[]={
+"16 16 8 1",
+"f c #808080",
+". c None",
+"d c #ffdca8",
+"c c #ffffc0",
+"b c #c0c0c0",
+"# c #000000",
+"a c #ffffff",
+"e c #c05800",
+".......##.......",
+"..#####aa#####..",
+"..#aa#bbbb#aa#..",
+".##aa######aa#..",
+".#c#aaaaaaaaa#..",
+".#d#abbbbbbaa#..",
+"..ec#aaaaaaaa#..",
+"..#d#abbbbbaa#..",
+"..#ec#aaaaaaa#..",
+"..##d#abbbbaa#..",
+"..#fec#aaaaaa#..",
+"..#a#d#aaaaaa#..",
+"..#afe#aaaaaa#..",
+"..#aaf#aaaaaa#..",
+"..#ffffffffff#..",
+"..############.."};

@@ -1,0 +1,24 @@
+/* XPM */
+/* Drawn for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*xeyes[]={
+"16 14 5 1",
+". c None",
+"a c #dcdcdc",
+"# c #000000",
+"c c #808080",
+"b c #ffffff",
+"................",
+"................",
+"..####...####...",
+".#abba#.#abba#..",
+"#abbbba#abbbba#.",
+"#bbbbbb#bbbbbb#c",
+"#bbbbbb#bbbbbb#c",
+"#b##bbb#b##bbb#c",
+"#a##bba#a##bba#c",
+".#abba#c#abba#cc",
+"..####cc.####cc.",
+"...cccc...cccc..",
+"................",
+"................"};

@@ -3,15 +3,15 @@
 /* See http://www.kde.org */
 static char*wabi[]={
 "16 16 9 1",
-"# c #000000",
-"a c #ffffff",
-"b c #808080",
-"g c #585858",
-"d c #0000ff",
 "e c #0000c0",
-"f c #ffff00",
-"c c #ffffc0",
 ". c None",
+"c c #ffffc0",
+"g c #585858",
+"# c #000000",
+"b c #808080",
+"f c #ffff00",
+"d c #0000ff",
+"a c #ffffff",
 "..........####..",
 "......####aaa#..",
 "..####abaaaaa#..",
@@ -28,4 +28,3 @@ static char*wabi[]={
 ".#cffffgcf###...",
 ".#cfff####......",
 "..####.........."};
-

@@ -1,7 +1,7 @@
 
 INCLUDES = $(all_includes) 
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
-LDADD = -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) 
+LDADD = $(LIB_KDEUI) 
 
 bin_PROGRAMS = kcmkwm
 
@@ -34,19 +34,22 @@ advanced.cpp: advanced.moc
 advanced.moc: advanced.h
 	$(MOC) advanced.h -o advanced.moc
 
+icon_DATA = titlebar.xpm properties.xpm buttons.xpm kcmkwm.xpm
+icondir = $(kde_icondir)
+
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) mini-windows.xpm $(kde_minidir)/windows.xpm
 	$(INSTALL_DATA) mini-titlebar.xpm $(kde_minidir)/titlebar.xpm
 	$(INSTALL_DATA) mini-buttons.xpm $(kde_minidir)/buttons.xpm
 	$(INSTALL_DATA) mini-winprops.xpm $(kde_minidir)/winprops.xpm
-	$(INSTALL_DATA) kcmkwm.xpm $(kde_icondir)/kcmkwm.xpm
+	$(INSTALL_DATA) mini-kcmkwm.xpm $(kde_minidir)/kcmkwm.xpm
 
 uninstall-local:
 	rm -f $(kde_minidir)/windows.xpm
 	rm -f $(kde_minidir)/titlebar.xpm
 	rm -f $(kde_minidir)/buttons.xpm
-	rm -f $(kde_icondir)/kcmkwm.xpm
+	rm -f $(kde_minidir)/kcmkwm.xpm
 
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kcmkwm_SOURCES) && mv messages.po ../../po/kcmkwm.pot

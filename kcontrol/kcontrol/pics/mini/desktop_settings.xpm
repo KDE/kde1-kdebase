@@ -1,33 +1,34 @@
 /* XPM */
-/* Drawn  by Nico Schirwing for the K Desktop Environment */
-/* See http://www.kde.org */
-static char*desktop_settings[]={
-"16 16 11 1",
-"# c #000000",
-"e c #c0c0c0",
-"f c #ffffff",
-"d c #585858",
-"c c #0000c0",
-"i c #0000ff",
-"b c #c0c0ff",
-"h c #c05800",
-"a c #ffa858",
-"g c #ffdca8",
-". c None",
-"...###......###.",
-"..#aaa##...#bc..",
-".#aaaded##..##..",
-"#aaadfffaa##....",
-"#gadef#aaaaa##..",
-"#hggadahaaa##a##",
-"#ahhgga#aaaiiah#",
-"#hgahhggaaaaah#.",
-"#ghhhhhhggaahh#.",
-"#haghh##hhghhh#.",
-"##ahh#.#gahhhh#.",
-"..###..#haghhh#.",
-".......#hghhhh#.",
-".......#ahhhh#..",
-"........##ah#...",
-"..........##...."};
-
+static char *desktop2[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16       11            1",
+/* colors */
+". c #000000",
+"# c #c0c0c0",
+"a c #ffffff",
+"b c #808080",
+"c c #a0a0a0",
+"d c #000080",
+"e c #008080",
+"f c #0000be",
+"g c #00bebe",
+"h c #00ffff",
+"i c #ffffbe",
+/* pixels */
+"................",
+".hhhhhhhhhhhhhh.",
+".h............e.",
+".h.a.#ffff.#a.e.",
+".h....dddd....e.",
+".h.##########.e.",
+".h.biiiiiiicb.e.",
+".h.biiiiiii.b.e.",
+".h.biiiiiiicb.e.",
+".h.biiiiiiicb.e.",
+".h.biiiiiiicb.e.",
+".h.##########.e.",
+".h............e.",
+".hgggggggggggge.",
+".heeeeeeeeeeeee.",
+"................"
+};

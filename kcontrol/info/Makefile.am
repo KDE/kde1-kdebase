@@ -22,6 +22,9 @@ info.moc: info.h
 
 main.cpp: info.moc
 
+icon_DATA = memory.xpm processor.xpm
+icondir = $(kde_icondir)
+
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) mini-kcmmemory.xpm     $(kde_minidir)/kcmmemory.xpm

@@ -3,11 +3,11 @@
 /* See http://www.kde.org */
 static char*xfmail[]={
 "16 16 5 1",
+". c None",
 "# c #000000",
+"a c #ffa858",
 "c c #ffffff",
 "b c #c05800",
-"a c #ffa858",
-". c None",
 ".###########....",
 "#aaaaaaaa#b#....",
 "#a##c#c##bb#..#.",
@@ -24,4 +24,3 @@ static char*xfmail[]={
 "#############...",
 "##......###.....",
 "##......##......"};
-

@@ -1,0 +1,32 @@
+/* XPM */
+/* Drawn for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*xosview[]={
+"16 16 11 1",
+"d c #ff8000",
+". c None",
+"f c #ffff00",
+"i c #0000ff",
+"b c #c0c0c0",
+"h c #ff0000",
+"# c #000000",
+"c c #000080",
+"e c #00ff00",
+"a c #ffffff",
+"g c #00ffff",
+".##############.",
+"#aaaaaaaaaaaaab#",
+"#accccccccccccb#",
+"#adceeeeeeeeecb#",
+"#acccfccccccccb#",
+"#accccccccccccb#",
+"#acccgffhcccccb#",
+"#accccccccccccb#",
+"#adciiieeeeeecb#",
+"#accccccccccccb#",
+"#adciiiiieeeecb#",
+"#accccccccccccb#",
+"#acceeeeeeeeecb#",
+"#accccccccccccb#",
+"#bbbbbbbbbbbbbb#",
+".##############."};

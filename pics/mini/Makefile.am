@@ -13,7 +13,8 @@ network_package.xpm o_src.xpm p_src.xpm package.xpm pdf.xpm pipe.xpm pk.xpm \
 postscript.xpm printer.xpm readme.xpm resource.xpm s_src.xpm script.xpm \
 settings_package.xpm socket.xpm sound.xpm system_package.xpm terminal.xpm \
 tex.xpm tgz.xpm trash.xpm txt.xpm unknown.xpm utilities_package.xpm \
-video.xpm www.xpm x.xpm y_src.xpm zip_mount.xpm zip_unmount.xpm
+video.xpm www.xpm x.xpm y_src.xpm zip_mount.xpm zip_unmount.xpm \
+editors_package.xpm
 
 datadir = $(kde_minidir)
 

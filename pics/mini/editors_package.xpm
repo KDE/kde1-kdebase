@@ -1,0 +1,31 @@
+/* XPM */
+/* Drawn for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*editors[]={
+"16 16 10 1",
+". c None",
+"h c #ffdca8",
+"a c #ffffc0",
+"e c #c0c0c0",
+"b c #808000",
+"# c #000000",
+"g c #ffa858",
+"c c #c0c000",
+"d c #ffffff",
+"f c #c0c0ff",
+".....##..##.....",
+"...##aa##aa##...",
+".##aa##bc##aa##.",
+"#aa##bbbccc##aa#",
+"###bbbbbccccc###",
+".#d##bbbccc###..",
+".#daa##bc##cc#..",
+".#daaaa##cccc#..",
+".#daaaaaccccc#..",
+".#daaa####ccc#..",
+".#da##edde##c##.",
+".###eddffdde##g#",
+"#edddffdde##hg##",
+"##edddde##hg##..",
+"..##ee##dg##....",
+"....##.###......"};
