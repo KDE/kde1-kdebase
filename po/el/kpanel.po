@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-12-24 01:14+0100\n"
+"POT-Creation-Date: 1998-12-25 01:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
 
@@ -144,57 +144,57 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
 
-#: pfilemenu.C:416
+#: pfilemenu.C:425
 msgid "(empty folder)"
 msgstr ""
 
-#: pfilemenu.C:471
+#: pfilemenu.C:480
 msgid "Open Folder"
 msgstr ""
 
-#: pfilemenu.C:482
+#: pfilemenu.C:491
 msgid "(Too Many Files)"
 msgstr ""
 
-#: pfilemenu.C:491
+#: pfilemenu.C:500
 msgid "(Access Denied)"
 msgstr ""
 
-#: pfilemenu.C:494
+#: pfilemenu.C:503
 msgid "(Unreadable)"
 msgstr ""
 
-#: pfilemenu.C:743
+#: pfilemenu.C:752
 msgid "Shared:"
 msgstr ""
 
-#: pfilemenu.C:745
+#: pfilemenu.C:754
 msgid "Entries shared among all users"
 msgstr ""
 
-#: pfilemenu.C:764
+#: pfilemenu.C:773
 #, fuzzy
 msgid "Personal:"
 msgstr "Προσωπικά πρώτα"
 
-#: pfilemenu.C:766
+#: pfilemenu.C:775
 #, fuzzy
 msgid "Personal entries"
 msgstr "Προσωπικά πρώτα"
 
-#: pfilemenu.C:784
+#: pfilemenu.C:793
 msgid "Recent:"
 msgstr ""
 
-#: pfilemenu.C:786
+#: pfilemenu.C:795
 msgid "Recent entries"
 msgstr ""
 
-#: pfilemenu.C:832
+#: pfilemenu.C:841
 msgid "Options..."
 msgstr ""
 
-#: pfilemenu.C:834
+#: pfilemenu.C:843
 msgid "Customize Disk Navigator"
 msgstr ""
 

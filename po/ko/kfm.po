@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-23 01:14+0100\n"
+"POT-Creation-Date: 1998-12-25 01:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -276,8 +276,8 @@ msgstr "Icon을 불러 올 수 없음\n"
 #: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:559
 #: kiojob.cpp:799 kiojob.cpp:830 kiojob.cpp:871 kiojob.cpp:1318
 #: kiojob.cpp:1326 kiojob.cpp:1554 krenamewin.cpp:120 popup.cpp:102
-#: root.cpp:933 root.cpp:1194 root.cpp:1212 root.cpp:1218 root.cpp:1224
-#: root.cpp:1305 root.cpp:1830 root.cpp:1855
+#: root.cpp:943 root.cpp:1204 root.cpp:1222 root.cpp:1228 root.cpp:1234
+#: root.cpp:1315 root.cpp:1840 root.cpp:1865
 msgid "KFM Error"
 msgstr ""
 
@@ -310,7 +310,7 @@ msgstr "즐겨찾기 편집(&E)..."
 msgid "&Add Bookmark"
 msgstr "즐겨찾기 추가(&A)"
 
-#: kfmgui.cpp:1060 kfmman.cpp:1427 kfmtree.cpp:389 root.cpp:275
+#: kfmgui.cpp:1060 kfmman.cpp:1427 kfmtree.cpp:389 root.cpp:285
 #, fuzzy
 msgid "&New"
 msgstr "새로 만들기"
@@ -335,7 +335,7 @@ msgstr "홈 디렉토리"
 
 #: kfmgui.cpp:1144 kfmgui.cpp:1316 kfmjob.cpp:36 kfmman.cpp:244
 #: kfmtree.cpp:500 kfmview.cpp:608 kfmview.cpp:677 kfmview.cpp:885
-#: kiojob.cpp:87 root.cpp:1213
+#: kiojob.cpp:87 root.cpp:1223
 msgid "ERROR: Malformed URL"
 msgstr "오류: 형식에 맞지 않는 URL"
 
@@ -359,7 +359,7 @@ msgstr ""
 msgid "Document: Done"
 msgstr "문서: 완료"
 
-#: kfmview.cpp:439 root.cpp:934
+#: kfmview.cpp:439 root.cpp:944
 #, fuzzy
 msgid "ERROR: You may only drop URLs"
 msgstr "오류: 대상 URL과 원본 URL이 같습니다"
@@ -369,11 +369,11 @@ msgid "ERROR: Drop over malformed URL"
 msgstr "오류: 잘못된 URL에 마우스를 놓을 수 없습니다"
 
 #: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:538 kfmview.cpp:648
-#: kfmview.cpp:928 krenamewin.cpp:20 root.cpp:1256
+#: kfmview.cpp:928 krenamewin.cpp:20 root.cpp:1266
 msgid "KFM Warning"
 msgstr "KFM 경고"
 
-#: kfmtree.cpp:539 kfmview.cpp:649 kfmview.cpp:929 root.cpp:1257
+#: kfmtree.cpp:539 kfmview.cpp:649 kfmview.cpp:929 root.cpp:1267
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -383,11 +383,11 @@ msgstr ""
 "\n"
 "복구할 방법이 없습니다."
 
-#: kfmtree.cpp:506 kfmview.cpp:683 kfmview.cpp:893 root.cpp:1219
+#: kfmtree.cpp:506 kfmview.cpp:683 kfmview.cpp:893 root.cpp:1229
 msgid "ERROR: You dropped a URL over itself"
 msgstr "오류: 대상 URL과 원본 URL이 같습니다"
 
-#: kfmtree.cpp:512 kfmview.cpp:689 kfmview.cpp:901 root.cpp:1225
+#: kfmtree.cpp:512 kfmview.cpp:689 kfmview.cpp:901 root.cpp:1235
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "오류: 하나 이상의 하부 디렉토리 아래에 떨어뜨릴 수 없습니다"
 
@@ -395,7 +395,7 @@ msgstr "오류: 하나 이상의 하부 디렉토리 아래에 떨어뜨릴 수 없습니다"
 msgid "Open With:"
 msgstr "열기:"
 
-#: kfmview.cpp:736 root.cpp:1156
+#: kfmview.cpp:736 root.cpp:1166
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "오류: 여러 파일의 등록정보를 한꺼번에 열 수 없습니다"
 
@@ -415,11 +415,11 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmtree.cpp:469 kfmview.cpp:838 root.cpp:1306
+#: kfmtree.cpp:469 kfmview.cpp:838 root.cpp:1316
 msgid "Could not access Trash Bin"
 msgstr "휴지통에 접근할 수 없습니다"
 
-#: kfmview.cpp:864 root.cpp:1195
+#: kfmview.cpp:864 root.cpp:1205
 msgid "Can not paste into multiple directories"
 msgstr "여러 디렉토리로 붙여넣기를 할 수 없습니다"
 
@@ -940,7 +940,7 @@ msgstr ""
 "누군가 틀린 암호로 로그인을\n"
 "시도하고 있습니다"
 
-#: root.cpp:724
+#: root.cpp:734
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -950,24 +950,24 @@ msgstr ""
 "New root grid dimensions would move some icons\n"
 "off the desktop."
 
-#: root.cpp:759
+#: root.cpp:769
 msgid "Internal Error: desktopDir is malformed"
 msgstr "내부 오류: 데스크탑 디렉토리가 형식에 어긋남"
 
-#: root.cpp:770
+#: root.cpp:780
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "오류: '%s' 데스크탑 디렉토리를 읽을 수 없습니다"
 
-#: root.cpp:982
+#: root.cpp:992
 msgid "ERROR: Can not accept drop"
 msgstr ""
 
-#: kfmman.cpp:1617 root.cpp:1831
+#: kfmman.cpp:1617 root.cpp:1841
 msgid "Dont know what to do."
 msgstr "무엇을 해야할 지 모르겠음"
 
-#: kfmman.cpp:1643 kfmtree.cpp:342 root.cpp:1856
+#: kfmman.cpp:1643 kfmtree.cpp:342 root.cpp:1866
 msgid "Dont know what to do"
 msgstr "무엇을 해야할 지 모르겠음"
 

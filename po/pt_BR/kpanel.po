@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-12-24 01:14+0100\n"
+"POT-Creation-Date: 1998-12-25 01:11+0100\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
@@ -141,54 +141,54 @@ msgstr "Navegador de Disco"
 msgid "Cannot put this as button onto the panel!"
 msgstr "Não é possivel adicionar isto ao painel como botão!"
 
-#: pfilemenu.C:416
+#: pfilemenu.C:425
 msgid "(empty folder)"
 msgstr "(pasta vazia)"
 
-#: pfilemenu.C:471
+#: pfilemenu.C:480
 msgid "Open Folder"
 msgstr "Abrir Pasta"
 
-#: pfilemenu.C:482
+#: pfilemenu.C:491
 msgid "(Too Many Files)"
 msgstr "(Arquivos demais)"
 
-#: pfilemenu.C:491
+#: pfilemenu.C:500
 msgid "(Access Denied)"
 msgstr "(Acesso negado)"
 
-#: pfilemenu.C:494
+#: pfilemenu.C:503
 msgid "(Unreadable)"
 msgstr "(Ilegível)"
 
-#: pfilemenu.C:743
+#: pfilemenu.C:752
 msgid "Shared:"
 msgstr "Compartilhado:"
 
-#: pfilemenu.C:745
+#: pfilemenu.C:754
 msgid "Entries shared among all users"
 msgstr "Registros compartilhados por todos os usuários"
 
-#: pfilemenu.C:764
+#: pfilemenu.C:773
 msgid "Personal:"
 msgstr "Pessoal:"
 
-#: pfilemenu.C:766
+#: pfilemenu.C:775
 msgid "Personal entries"
 msgstr "Registros pessoais"
 
-#: pfilemenu.C:784
+#: pfilemenu.C:793
 msgid "Recent:"
 msgstr "Recente:"
 
-#: pfilemenu.C:786
+#: pfilemenu.C:795
 msgid "Recent entries"
 msgstr "Registros recentes"
 
-#: pfilemenu.C:832
+#: pfilemenu.C:841
 msgid "Options..."
 msgstr "Options..."
 
-#: pfilemenu.C:834
+#: pfilemenu.C:843
 msgid "Customize Disk Navigator"
 msgstr "Customizar Navegador de Disco"

@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1ç0\n"
-"POT-Creation-Date: 1998-12-23 01:14+0100\n"
+"POT-Creation-Date: 1998-12-25 01:11+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -280,8 +280,8 @@ msgstr "Simge yüklenemedi\n"
 #: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:559
 #: kiojob.cpp:799 kiojob.cpp:830 kiojob.cpp:871 kiojob.cpp:1318
 #: kiojob.cpp:1326 kiojob.cpp:1554 krenamewin.cpp:120 popup.cpp:102
-#: root.cpp:933 root.cpp:1194 root.cpp:1212 root.cpp:1218 root.cpp:1224
-#: root.cpp:1305 root.cpp:1830 root.cpp:1855
+#: root.cpp:943 root.cpp:1204 root.cpp:1222 root.cpp:1228 root.cpp:1234
+#: root.cpp:1315 root.cpp:1840 root.cpp:1865
 msgid "KFM Error"
 msgstr ""
 
@@ -314,7 +314,7 @@ msgstr "Adreslerle &Oyna..."
 msgid "&Add Bookmark"
 msgstr "Adreslere &Ekle"
 
-#: kfmgui.cpp:1060 kfmman.cpp:1427 kfmtree.cpp:389 root.cpp:275
+#: kfmgui.cpp:1060 kfmman.cpp:1427 kfmtree.cpp:389 root.cpp:285
 #, fuzzy
 msgid "&New"
 msgstr "Yeni"
@@ -339,7 +339,7 @@ msgstr "Baþlangýç"
 
 #: kfmgui.cpp:1144 kfmgui.cpp:1316 kfmjob.cpp:36 kfmman.cpp:244
 #: kfmtree.cpp:500 kfmview.cpp:608 kfmview.cpp:677 kfmview.cpp:885
-#: kiojob.cpp:87 root.cpp:1213
+#: kiojob.cpp:87 root.cpp:1223
 msgid "ERROR: Malformed URL"
 msgstr "HATA: Yetersiz URL"
 
@@ -363,7 +363,7 @@ msgstr ""
 msgid "Document: Done"
 msgstr "Belge: Tamam"
 
-#: kfmview.cpp:439 root.cpp:934
+#: kfmview.cpp:439 root.cpp:944
 #, fuzzy
 msgid "ERROR: You may only drop URLs"
 msgstr "HATA: Bir URL'yi kendi üzerine býraktýnýz"
@@ -373,11 +373,11 @@ msgid "ERROR: Drop over malformed URL"
 msgstr "HATA: Yetersiz URL üzerine býrakýldý"
 
 #: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:538 kfmview.cpp:648
-#: kfmview.cpp:928 krenamewin.cpp:20 root.cpp:1256
+#: kfmview.cpp:928 krenamewin.cpp:20 root.cpp:1266
 msgid "KFM Warning"
 msgstr "KFM Uyarýsý"
 
-#: kfmtree.cpp:539 kfmview.cpp:649 kfmview.cpp:929 root.cpp:1257
+#: kfmtree.cpp:539 kfmview.cpp:649 kfmview.cpp:929 root.cpp:1267
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -386,11 +386,11 @@ msgstr ""
 "Seçili dosyalarý gerçekten silmek istiyor musunuz?\n"
 "Geri kurtarmak mümkün olmayacak."
 
-#: kfmtree.cpp:506 kfmview.cpp:683 kfmview.cpp:893 root.cpp:1219
+#: kfmtree.cpp:506 kfmview.cpp:683 kfmview.cpp:893 root.cpp:1229
 msgid "ERROR: You dropped a URL over itself"
 msgstr "HATA: Bir URL'yi kendi üzerine býraktýnýz"
 
-#: kfmtree.cpp:512 kfmview.cpp:689 kfmview.cpp:901 root.cpp:1225
+#: kfmtree.cpp:512 kfmview.cpp:689 kfmview.cpp:901 root.cpp:1235
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "HATA: Bir dizini çocuklarýndan birine býraktýnýz"
 
@@ -398,7 +398,7 @@ msgstr "HATA: Bir dizini çocuklarýndan birine býraktýnýz"
 msgid "Open With:"
 msgstr "Birlikte Aç:"
 
-#: kfmview.cpp:736 root.cpp:1156
+#: kfmview.cpp:736 root.cpp:1166
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "HATA: Birden çok dosya için özellikler açýlamýyor"
 
@@ -418,11 +418,11 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmtree.cpp:469 kfmview.cpp:838 root.cpp:1306
+#: kfmtree.cpp:469 kfmview.cpp:838 root.cpp:1316
 msgid "Could not access Trash Bin"
 msgstr "Çöp Kutusuna ulaþýlamýyor"
 
-#: kfmview.cpp:864 root.cpp:1195
+#: kfmview.cpp:864 root.cpp:1205
 msgid "Can not paste into multiple directories"
 msgstr "Birden çok dizine yapýþtýrýlamaz"
 
@@ -940,7 +940,7 @@ msgstr ""
 "Birileri yanlýþ parola kullanarak\n"
 "kendini yetkilendirmeye çalýþmýþ"
 
-#: root.cpp:724
+#: root.cpp:734
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -950,24 +950,24 @@ msgstr ""
 "Yeni kök ýzgarasý masaüstündeki bazý simgeleri\n"
 "oynatabilir."
 
-#: root.cpp:759
+#: root.cpp:769
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Ýç Hata: masaüstü dizini yetersiz"
 
-#: root.cpp:770
+#: root.cpp:780
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "HATA: '%s' masaüstü dizini okunamýyor"
 
-#: root.cpp:982
+#: root.cpp:992
 msgid "ERROR: Can not accept drop"
 msgstr "HATA: Býrakma kabul edilemez"
 
-#: kfmman.cpp:1617 root.cpp:1831
+#: kfmman.cpp:1617 root.cpp:1841
 msgid "Dont know what to do."
 msgstr "Ne yapýlacaðý bilinmiyor"
 
-#: kfmman.cpp:1643 kfmtree.cpp:342 root.cpp:1856
+#: kfmman.cpp:1643 kfmtree.cpp:342 root.cpp:1866
 msgid "Dont know what to do"
 msgstr "Ne yapýlacaðý bilinmiyor"
 

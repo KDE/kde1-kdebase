@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-12-23 01:14+0100\n"
+"POT-Creation-Date: 1998-12-25 01:11+0100\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -267,8 +267,8 @@ msgstr "Não foi possível carregar o ícone\n"
 #: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:559
 #: kiojob.cpp:799 kiojob.cpp:830 kiojob.cpp:871 kiojob.cpp:1318
 #: kiojob.cpp:1326 kiojob.cpp:1554 krenamewin.cpp:120 popup.cpp:102
-#: root.cpp:933 root.cpp:1194 root.cpp:1212 root.cpp:1218 root.cpp:1224
-#: root.cpp:1305 root.cpp:1830 root.cpp:1855
+#: root.cpp:943 root.cpp:1204 root.cpp:1222 root.cpp:1228 root.cpp:1234
+#: root.cpp:1315 root.cpp:1840 root.cpp:1865
 msgid "KFM Error"
 msgstr ""
 
@@ -301,7 +301,7 @@ msgstr "&Editar Favoritos..."
 msgid "&Add Bookmark"
 msgstr "&Adicionar Favorito"
 
-#: kfmgui.cpp:1060 kfmman.cpp:1427 kfmtree.cpp:389 root.cpp:275
+#: kfmgui.cpp:1060 kfmman.cpp:1427 kfmtree.cpp:389 root.cpp:285
 #, fuzzy
 msgid "&New"
 msgstr "Novo"
@@ -326,7 +326,7 @@ msgstr "Casa"
 
 #: kfmgui.cpp:1144 kfmgui.cpp:1316 kfmjob.cpp:36 kfmman.cpp:244
 #: kfmtree.cpp:500 kfmview.cpp:608 kfmview.cpp:677 kfmview.cpp:885
-#: kiojob.cpp:87 root.cpp:1213
+#: kiojob.cpp:87 root.cpp:1223
 msgid "ERROR: Malformed URL"
 msgstr "ERRO: URL Mal Formado"
 
@@ -350,7 +350,7 @@ msgstr ""
 msgid "Document: Done"
 msgstr "Documento: Feito"
 
-#: kfmview.cpp:439 root.cpp:934
+#: kfmview.cpp:439 root.cpp:944
 #, fuzzy
 msgid "ERROR: You may only drop URLs"
 msgstr "ERRO: Deixou cair um URL sobre ele mesmo"
@@ -360,11 +360,11 @@ msgid "ERROR: Drop over malformed URL"
 msgstr "ERRO: Largou em cima de um URL incorrecto"
 
 #: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:538 kfmview.cpp:648
-#: kfmview.cpp:928 krenamewin.cpp:20 root.cpp:1256
+#: kfmview.cpp:928 krenamewin.cpp:20 root.cpp:1266
 msgid "KFM Warning"
 msgstr "Aviso do KFM"
 
-#: kfmtree.cpp:539 kfmview.cpp:649 kfmview.cpp:929 root.cpp:1257
+#: kfmtree.cpp:539 kfmview.cpp:649 kfmview.cpp:929 root.cpp:1267
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -374,11 +374,11 @@ msgstr ""
 "\n"
 "Não existe nenhuma maneira de os recuperar."
 
-#: kfmtree.cpp:506 kfmview.cpp:683 kfmview.cpp:893 root.cpp:1219
+#: kfmtree.cpp:506 kfmview.cpp:683 kfmview.cpp:893 root.cpp:1229
 msgid "ERROR: You dropped a URL over itself"
 msgstr "ERRO: Deixou cair um URL sobre ele mesmo"
 
-#: kfmtree.cpp:512 kfmview.cpp:689 kfmview.cpp:901 root.cpp:1225
+#: kfmtree.cpp:512 kfmview.cpp:689 kfmview.cpp:901 root.cpp:1235
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "ERRO: Deixou cair uma directoria sobre um dos seus filhos"
 
@@ -386,7 +386,7 @@ msgstr "ERRO: Deixou cair uma directoria sobre um dos seus filhos"
 msgid "Open With:"
 msgstr "Abrir Com:"
 
-#: kfmview.cpp:736 root.cpp:1156
+#: kfmview.cpp:736 root.cpp:1166
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "Erro: Não pode abrir as propriedades para múltiplos ficheiros"
 
@@ -406,11 +406,11 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmtree.cpp:469 kfmview.cpp:838 root.cpp:1306
+#: kfmtree.cpp:469 kfmview.cpp:838 root.cpp:1316
 msgid "Could not access Trash Bin"
 msgstr "Não foi possível aceder ao Caixote do Lixo"
 
-#: kfmview.cpp:864 root.cpp:1195
+#: kfmview.cpp:864 root.cpp:1205
 msgid "Can not paste into multiple directories"
 msgstr "Não pode colar em múltiplas directorias"
 
@@ -931,7 +931,7 @@ msgstr ""
 "Alguém tentou autorizar-se\n"
 "usando uma password errada"
 
-#: root.cpp:724
+#: root.cpp:734
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -941,25 +941,25 @@ msgstr ""
 "As novas dimensões da grelha de raiz iriam mover\n"
 "alguns icons para fora do ambiente de trabalho."
 
-#: root.cpp:759
+#: root.cpp:769
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Erro Interno: desktopDir é incorrecto"
 
-#: root.cpp:770
+#: root.cpp:780
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr ""
 "ERRO: Não foi possível ler a directoria com o ambiente de trabalho '%s'"
 
-#: root.cpp:982
+#: root.cpp:992
 msgid "ERROR: Can not accept drop"
 msgstr "ERRO: Não é possível aceitar o drop"
 
-#: kfmman.cpp:1617 root.cpp:1831
+#: kfmman.cpp:1617 root.cpp:1841
 msgid "Dont know what to do."
 msgstr "Não sei o que fazer."
 
-#: kfmman.cpp:1643 kfmtree.cpp:342 root.cpp:1856
+#: kfmman.cpp:1643 kfmtree.cpp:342 root.cpp:1866
 msgid "Dont know what to do"
 msgstr "Não sei o que fazer"
 
