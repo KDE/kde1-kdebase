@@ -41,3 +41,4 @@
 	updated kvt for 0.14 (again and again :-)
 	updated kview to 0.10
 	updated kfm to 0.6.3
+ 	patched kscreensaver for FreeBSD (thanks Marc)

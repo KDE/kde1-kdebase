@@ -101,6 +101,15 @@ int KPasswordDlg::tryPassword()
 	passwd *pass;
 	char salt[3];
 
+#ifdef __FreeBSD__
+      pass = getpwuid(getuid());
+ 
+       if ( !strcmp( crypt( password, pass->pw_passwd), pass->pw_passwd )) {
+         return(TRUE);
+       } else {
+         return(FALSE);
+       }
+#else
 	if ( ( fp = fopen( "/etc/passwd", "r" ) ) != NULL )
 	{
 		do
@@ -148,6 +157,7 @@ int KPasswordDlg::tryPassword()
 	}
 
 	return FALSE;
+#endif
 }
 
 void KPasswordDlg::timeout()
