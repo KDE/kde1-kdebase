@@ -65,6 +65,32 @@ const char* KFolderType::getPixmapFile( const char *_url )
 
     QString decoded( _url );
     KURL::decodeURL( decoded );
+
+    // Is this a file located in a tar archive ?
+    if ( strstr( _url, "tar:" ) != 0L )
+    {
+	KURL u( _url );
+	if ( !u.isMalformed() )
+	{
+	    // Get the last subprotocol
+	    QString child = u.childURL();
+	    // Do we really have some subprotocol ?
+	    if ( !child.isEmpty() )
+	    {
+		KURL u2( child );
+		// is "tar" the last subprotocol ?
+		if ( strcmp( u2.protocol(), "tar" ) == 0 )
+		{
+		    // We return an folder icon. Otherwise
+		    // we would get a folder icon with access denied!!!
+		    pixmapFile2 = getIconPath();
+		    pixmapFile2.detach();
+		    pixmapFile2 += "/folder.xpm";
+		    return pixmapFile2.data();
+		}
+	    }
+	}
+    }
     
     if ( strncmp( _url, "file:", 5 ) != 0 )
 	return KMimeType::getPixmapFile( _url );

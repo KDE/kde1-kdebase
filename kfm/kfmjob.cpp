@@ -153,10 +153,13 @@ void KFMJob::slotDirHTMLData( const char *_data )
 
 void KFMJob::slotError( const char *_text )
 {
+    QMessageBox::message( klocale->translate("KFM Error"),
+			  _text );
+    /*
     KMsgWin *m = new KMsgWin( 0L, klocale->translate("Error"), 
 			      _text, KMsgWin::EXCLAMATION, 
 			      klocale->translate("Close") );
-    m->exec();
+    m->exec(); */
 }
 
 void KFMJob::slotNewDirEntry( int , KIODirectoryEntry * _entry )

@@ -322,7 +322,7 @@ void KFMManager::writeBeginning()
 	{
 	    view->write( "<cell><a href=\"");
 	    view->write( s.data() );
-	    view->write( "\"><center><img src=\"file:" );
+	    view->write( "\"><center><img border=0 src=\"file:" );
 	    view->write( KMimeType::findType( s.data() )->getPixmapFile( s.data() ) );
 	    view->write( "\"><br>..</center><br></a></cell>" );
 	}
@@ -330,7 +330,7 @@ void KFMManager::writeBeginning()
 	{
 	    view->write( "<tr><td><a href=\"" );
 	    view->write( s.data() );
-	    view->write( "\"><img width=16 height=16 src=\"file:" );
+	    view->write( "\"><img border=0 width=16 height=16 src=\"file:" );
 	    view->write( KMimeType::findType( s.data() )->getPixmapFile( s.data() ) );
 	    view->write( "\"></td><td>..</a></td>" );
 	    view->write( "<td></td><td></td><td></td><td></td><td></td></tr>" );
@@ -368,13 +368,17 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	filename += s->getName();
 	
 	view->write( filename.data() );
-	view->write( "\"><center><img src=\"file:" );
+	view->write( "\"><center><img border=0 src=\"file:" );
 	
 	view->write( KMimeType::findType( filename.data() )->getPixmapFile( filename.data() ) );
 	
 	view->write( "\"><br>" );
+	if ( s->getAccess() && s->getAccess()[0] == 'l' )
+	    view->write("<i>");
 	strcpy( buffer, decoded );
 	writeWrapped( buffer );
+	if ( s->getAccess() && s->getAccess()[0] == 'l' )
+	    view->write("</i>");
 	view->write( "</center><br></a></cell>" );
     }
     else if ( view->getGUI()->getViewMode() == KfmGui::LONG_VIEW )
@@ -385,10 +389,14 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	filename += s->getName();
 	
 	view->write( filename.data() );
-	view->write( "\"><img width=16 height=16 src=\"file:" );
+	view->write( "\"><img border=0 width=16 height=16 src=\"file:" );
 	view->write( KMimeType::findType( filename.data() )->getPixmapFile( filename.data() ) );
 	view->write( "\"></td><td>" );
+	if ( s->getAccess() && s->getAccess()[0] == 'l' )
+	    view->write("<i>");
 	view->write( decoded );
+	if ( s->getAccess() && s->getAccess()[0] == 'l' )
+	    view->write("</i>");
 	view->write( "</td><td><tt>" ); 
 	view->write( s->getAccess() );
 	view->write( "</tt></td><td>" );
@@ -412,7 +420,11 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	
 	view->write( filename.data() );
 	view->write( "\">" );
+	if ( s->getAccess() && s->getAccess()[0] == 'l' )
+	    view->write("<i>");
 	view->write( decoded );
+	if ( s->getAccess() && s->getAccess()[0] == 'l' )
+	    view->write("</i>");
 	view->write( "</td><td><tt>" );
 	view->write( s->getAccess() );
 	view->write( "</tt></td><td>" ); 

@@ -28,15 +28,15 @@ DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *pare
     QPushButton *clear;
     QPushButton *cancel;
     ok = new QPushButton( klocale->translate("Ok"), this );
-    ok->setGeometry( 10,70, 60,30 );
+    ok->setGeometry( 10,70, 80,30 );
     connect( ok, SIGNAL(clicked()), SLOT(accept()) );
 
     clear = new QPushButton( klocale->translate("Clear"), this );
-    clear->setGeometry( 145, 70, 60, 30 );
+    clear->setGeometry( 135, 70, 80, 30 );
     connect( clear, SIGNAL(clicked()), SLOT(slotClear()) );
 
     cancel = new QPushButton( klocale->translate("Cancel"), this );
-    cancel->setGeometry( 280, 70, 60, 30 );
+    cancel->setGeometry( 260, 70, 80, 30 );
     connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
 
     edit->setText( _value );
