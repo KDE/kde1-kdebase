@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: 1998-09-25 11:42+0100\n"
 "Last-Translator: Bla¾ Zupanèiè <blazzupancic@hotmail.com>\n"
 "Language-Team: Slovenian\n"
@@ -125,7 +125,7 @@ msgstr "Nekatere slike niso veljavne: GimmickMode je izklopljen\n"
 msgid "*** No Tasks ***"
 msgstr " Zzzzz... Zzzzz... "
 
-#: minicli.C:124
+#: minicli.C:201
 msgid "Command:"
 msgstr "Ukaz:"
 

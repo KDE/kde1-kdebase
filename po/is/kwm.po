@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: 1999-02-13 10:41+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -120,7 +120,7 @@ msgstr "Sumar bitamyndir eru ekki í lagi. Því er slökkt á glingurham\n"
 msgid "*** No Tasks ***"
 msgstr "*** Engin verkefni ***"
 
-#: minicli.C:124
+#: minicli.C:201
 msgid "Command:"
 msgstr "Skipun:"
 

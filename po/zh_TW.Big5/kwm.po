@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: 1998-04-20 23:08+0800\n"
 "Last-Translator:  Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -124,7 +124,7 @@ msgstr "一些圖形是無效的: ShapeMode 取消\n"
 msgid "*** No Tasks ***"
 msgstr "*** 沒有任何工作 ***"
 
-#: minicli.C:124
+#: minicli.C:201
 msgid "Command:"
 msgstr "命令:"
 

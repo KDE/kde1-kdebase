@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-03-21 01:19+0100\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -268,12 +268,12 @@ msgstr "Icon을 불러 올 수 없음\n"
 #: kbind.cpp:1619 kbind.cpp:1678 kbind.cpp:1690 kbind.cpp:1717 kbind.cpp:1738
 #: kbind.cpp:1758 kbind.cpp:1770 kbind.cpp:1786 kbind.cpp:1921 kbind.cpp:1933
 #: kbind.cpp:1978 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
-#: kfmgui.cpp:550 kfmgui.cpp:760 kfmman.cpp:370 kfmman.cpp:1429
+#: kfmgui.cpp:550 kfmgui.cpp:791 kfmman.cpp:370 kfmman.cpp:1429
 #: kfmman.cpp:1656 kfmman.cpp:1702 kfmprops.cpp:380 kfmprops.cpp:649
 #: kfmprops.cpp:656 kfmprops.cpp:950 kfmprops.cpp:1089 kfmprops.cpp:1218
 #: kfmprops.cpp:1722 kfmprops.cpp:2083 kfmprops.cpp:2265 kfmserver.cpp:46
-#: kfmserver.cpp:214 kfmserver.cpp:294 kfmserver.cpp:309 kfmserver.cpp:356
-#: kfmserver.cpp:365 kfmserver.cpp:373 kfmtree.cpp:339 kfmtree.cpp:466
+#: kfmserver.cpp:214 kfmserver.cpp:294 kfmserver.cpp:313 kfmserver.cpp:360
+#: kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:339 kfmtree.cpp:466
 #: kfmtree.cpp:497 kfmtree.cpp:503 kfmtree.cpp:509 kfmview.cpp:437
 #: kfmview.cpp:471 kfmview.cpp:490 kfmview.cpp:572 kfmview.cpp:578
 #: kfmview.cpp:584 kfmview.cpp:709 kfmview.cpp:713 kfmview.cpp:752
@@ -282,7 +282,7 @@ msgstr "Icon을 불러 올 수 없음\n"
 #: kiojob.cpp:309 kiojob.cpp:333 kiojob.cpp:352 kiojob.cpp:569 kiojob.cpp:587
 #: kiojob.cpp:892 kiojob.cpp:905 kiojob.cpp:922 kiojob.cpp:953 kiojob.cpp:1001
 #: kiojob.cpp:1480 kiojob.cpp:1488 kiojob.cpp:1723 krenamewin.cpp:124
-#: popup.cpp:105 root.cpp:943 root.cpp:1228 root.cpp:1246 root.cpp:1252
+#: popup.cpp:109 root.cpp:943 root.cpp:1228 root.cpp:1246 root.cpp:1252
 #: root.cpp:1258 root.cpp:1339 root.cpp:1864 root.cpp:1889
 msgid "KFM Error"
 msgstr ""
@@ -292,68 +292,68 @@ msgstr ""
 msgid "Location:"
 msgstr "위치 열기:"
 
-#: kfmexec.cpp:62 kfmgui.cpp:759 kfmman.cpp:1428
+#: kfmexec.cpp:62 kfmgui.cpp:790 kfmman.cpp:1428
 msgid "Malformed URL\n"
 msgstr "형식에 맞지 않는 URL\n"
 
-#: kfmgui.cpp:948
+#: kfmgui.cpp:976
 msgid "Select files:"
 msgstr "파일 선택:"
 
-#: kfmgui.cpp:1015
+#: kfmgui.cpp:1043
 msgid "Find Complete"
 msgstr ""
 
-#: kfmgui.cpp:1016
+#: kfmgui.cpp:1044
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: kfmgui.cpp:1034
+#: kfmgui.cpp:1062
 msgid "&Edit Bookmarks..."
 msgstr "즐겨찾기 편집(&E)..."
 
-#: kfmgui.cpp:1046
+#: kfmgui.cpp:1074
 msgid "&Add Bookmark"
 msgstr "즐겨찾기 추가(&A)"
 
-#: kfmgui.cpp:1082 kfmman.cpp:1469 kfmtree.cpp:387 root.cpp:286
+#: kfmgui.cpp:1110 kfmman.cpp:1469 kfmtree.cpp:387 root.cpp:286
 #, fuzzy
 msgid "&New"
 msgstr "새로 만들기"
 
-#: kfmgui.cpp:1155
+#: kfmgui.cpp:1183
 #, fuzzy
 msgid "&Up"
 msgstr "상위 디렉토리"
 
-#: kfmgui.cpp:1157
+#: kfmgui.cpp:1185
 msgid "&Back"
 msgstr ""
 
-#: kfmgui.cpp:1159
+#: kfmgui.cpp:1187
 msgid "&Forward"
 msgstr ""
 
-#: kfmgui.cpp:1161
+#: kfmgui.cpp:1189
 #, fuzzy
 msgid "&Home"
 msgstr "홈 디렉토리"
 
-#: kfmgui.cpp:1230 kfmgui.cpp:1396 kfmjob.cpp:36 kfmman.cpp:252
+#: kfmgui.cpp:1258 kfmgui.cpp:1424 kfmjob.cpp:36 kfmman.cpp:252
 #: kfmtree.cpp:498 kfmview.cpp:491 kfmview.cpp:573 kfmview.cpp:801
 #: kiojob.cpp:88 root.cpp:1247
 msgid "ERROR: Malformed URL"
 msgstr "오류: 형식에 맞지 않는 URL"
 
-#: kfmgui.cpp:1350 kfmserver.cpp:241
+#: kfmgui.cpp:1378 kfmserver.cpp:241
 msgid "Open Location:"
 msgstr "위치 열기:"
 
-#: kfmgui.cpp:1407
+#: kfmgui.cpp:1435
 msgid "KFM Confirm"
 msgstr "KFM 확인"
 
-#: kfmgui.cpp:1408
+#: kfmgui.cpp:1436
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -361,7 +361,7 @@ msgstr ""
 "정말 끝내시겠습니까?\n"
 "중요한 데스크탑 기능을 사용할 수 없게 될 수도 있습니다"
 
-#: kfmgui.cpp:1541
+#: kfmgui.cpp:1569
 msgid "Document: Done"
 msgstr "문서: 완료"
 
@@ -484,7 +484,7 @@ msgstr "파일시스템 연결"
 msgid "Unmount"
 msgstr "파일시스템 연결 끊기"
 
-#: kbind.cpp:875 kbind.cpp:887 kbind.cpp:897 popup.cpp:48 popup.cpp:125
+#: kbind.cpp:875 kbind.cpp:887 kbind.cpp:897 popup.cpp:49 popup.cpp:129
 msgid "Folder"
 msgstr "폴더"
 
@@ -622,10 +622,14 @@ msgstr ""
 msgid "Show Menubar"
 msgstr "메뉴 표시줄(&M)"
 
-#: kfmdlg.cpp:117
+#: kfmdlg.cpp:118
 #, fuzzy
 msgid "&Browser"
 msgstr "찾아보기"
+
+#: kfmdlg.cpp:130 kfmprops.cpp:767
+msgid "Run in terminal"
+msgstr "터미널에서 실행"
 
 #: bookmark.cpp:296
 msgid "Could not write bookmark"
@@ -794,10 +798,6 @@ msgstr "Swallowing on panel"
 msgid "Window Title"
 msgstr "창 제목"
 
-#: kfmprops.cpp:767
-msgid "Run in terminal"
-msgstr "터미널에서 실행"
-
 #: kfmprops.cpp:775
 msgid "Terminal Options"
 msgstr "터미널 선택사항"
@@ -896,7 +896,7 @@ msgstr "~/.kde/share/apps/kfm/magic 파일을 만들 수 없습니다"
 msgid "Do you really want to rearrange your icons ?"
 msgstr "아이콘을 재정렬하시겠습니까 ?"
 
-#: kfmserver.cpp:306
+#: kfmserver.cpp:310
 #, c-format
 msgid ""
 "The URL\n"
@@ -907,7 +907,7 @@ msgstr ""
 "형식에\n"
 "어긋났읍니다"
 
-#: kfmserver.cpp:357
+#: kfmserver.cpp:361
 #, fuzzy
 msgid ""
 "You dont have the file ~/.kde/share/apps/kfm/magic\n"
@@ -916,7 +916,7 @@ msgstr ""
 "~/.kde/share/apps/kfm/magic 파일이 없읍니다\n"
 "인증 실패"
 
-#: kfmserver.cpp:366
+#: kfmserver.cpp:370
 #, fuzzy
 msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
@@ -925,7 +925,7 @@ msgstr ""
 "~/.kde/share/apps/kfm/magic 파일이 손상되었읍니다\n"
 "인증 실패"
 
-#: kfmserver.cpp:374
+#: kfmserver.cpp:378
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
@@ -1452,18 +1452,18 @@ msgstr ""
 msgid "&Reject"
 msgstr "선택(&S)"
 
-#: popup.cpp:72
+#: popup.cpp:73
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "오류: '%s' 템플릿이 존재하지 않습니다"
 
-#: popup.cpp:106
+#: popup.cpp:110
 msgid ""
 "Source file doesn't exist anymore ! \n"
 "Use \"Rescan Bindings\" in View menu to update the menu"
 msgstr ""
 
-#: popup.cpp:117 popup.cpp:124
+#: popup.cpp:121 popup.cpp:128
 msgid "New "
 msgstr "새로 만들기"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -138,7 +138,7 @@ msgstr "Sommige pixmaps zijn niet geldig: VormModus uitgezet\n"
 msgid "*** No Tasks ***"
 msgstr "*** Geen Taken ***"
 
-#: minicli.C:124
+#: minicli.C:201
 msgid "Command:"
 msgstr "Uitvoeren:"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -126,7 +126,7 @@ msgstr "Niºte pixmap-uri sunt defecte: GimmickMode nu este activat\n"
 msgid "*** No Tasks ***"
 msgstr "*** Nici un Program ***"
 
-#: minicli.C:124
+#: minicli.C:201
 msgid "Command:"
 msgstr "Comandã : "
 

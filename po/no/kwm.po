@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kwm\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: 1998-09-30 17:28+0200\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -125,7 +125,7 @@ msgstr "Noen pixmaps er ubrukelige: ShapeMode ikke iverksatt\n"
 msgid "*** No Tasks ***"
 msgstr "*** Ingen oppgaver ***"
 
-#: minicli.C:124
+#: minicli.C:201
 msgid "Command:"
 msgstr "Kommando"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm 0.10.23\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -125,7 +125,7 @@ msgstr "Niektoré bodové mapy nie sú korektné: GimmickMode vypnutý\n"
 msgid "*** No Tasks ***"
 msgstr "*** ®iadne úlohy ***"
 
-#: minicli.C:124
+#: minicli.C:201
 msgid "Command:"
 msgstr "Príkaz:"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kwm\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: 1999-02-16 17:28+0200\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
@@ -125,7 +125,7 @@ msgstr "Nogle pixmaps er ubrugelige: GimmickMode ikke iværksat\n"
 msgid "*** No Tasks ***"
 msgstr "*** Ingen opgaver ***"
 
-#: minicli.C:124
+#: minicli.C:201
 msgid "Command:"
 msgstr "Kommando:"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.10\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: 1998-01-18 05:15+06:00\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: ru <ru@li.org>\n"
@@ -132,7 +132,7 @@ msgstr "Некоторые пиктограммы некорректны: GimmickMode отключено\n"
 msgid "*** No Tasks ***"
 msgstr "*** Задач нет ***"
 
-#: minicli.C:124
+#: minicli.C:201
 msgid "Command:"
 msgstr "Команда:"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Andrea Rizzi <Bilibao@Ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -121,7 +121,7 @@ msgstr "Alcune pixmap non sono valide: Il modo Gimmick viene disabilitato\n"
 msgid "*** No Tasks ***"
 msgstr "*** Nessun Task ***"
 
-#: minicli.C:124
+#: minicli.C:201
 msgid "Command:"
 msgstr "Comando:"
 

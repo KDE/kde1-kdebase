@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1999-03-21 01:19+0100\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: 1999-01-30 00:38+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -259,12 +259,12 @@ msgstr "Kunde inte ladda ikonen\n"
 #: kbind.cpp:1619 kbind.cpp:1678 kbind.cpp:1690 kbind.cpp:1717 kbind.cpp:1738
 #: kbind.cpp:1758 kbind.cpp:1770 kbind.cpp:1786 kbind.cpp:1921 kbind.cpp:1933
 #: kbind.cpp:1978 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
-#: kfmgui.cpp:550 kfmgui.cpp:760 kfmman.cpp:370 kfmman.cpp:1429
+#: kfmgui.cpp:550 kfmgui.cpp:791 kfmman.cpp:370 kfmman.cpp:1429
 #: kfmman.cpp:1656 kfmman.cpp:1702 kfmprops.cpp:380 kfmprops.cpp:649
 #: kfmprops.cpp:656 kfmprops.cpp:950 kfmprops.cpp:1089 kfmprops.cpp:1218
 #: kfmprops.cpp:1722 kfmprops.cpp:2083 kfmprops.cpp:2265 kfmserver.cpp:46
-#: kfmserver.cpp:214 kfmserver.cpp:294 kfmserver.cpp:309 kfmserver.cpp:356
-#: kfmserver.cpp:365 kfmserver.cpp:373 kfmtree.cpp:339 kfmtree.cpp:466
+#: kfmserver.cpp:214 kfmserver.cpp:294 kfmserver.cpp:313 kfmserver.cpp:360
+#: kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:339 kfmtree.cpp:466
 #: kfmtree.cpp:497 kfmtree.cpp:503 kfmtree.cpp:509 kfmview.cpp:437
 #: kfmview.cpp:471 kfmview.cpp:490 kfmview.cpp:572 kfmview.cpp:578
 #: kfmview.cpp:584 kfmview.cpp:709 kfmview.cpp:713 kfmview.cpp:752
@@ -273,7 +273,7 @@ msgstr "Kunde inte ladda ikonen\n"
 #: kiojob.cpp:309 kiojob.cpp:333 kiojob.cpp:352 kiojob.cpp:569 kiojob.cpp:587
 #: kiojob.cpp:892 kiojob.cpp:905 kiojob.cpp:922 kiojob.cpp:953 kiojob.cpp:1001
 #: kiojob.cpp:1480 kiojob.cpp:1488 kiojob.cpp:1723 krenamewin.cpp:124
-#: popup.cpp:105 root.cpp:943 root.cpp:1228 root.cpp:1246 root.cpp:1252
+#: popup.cpp:109 root.cpp:943 root.cpp:1228 root.cpp:1246 root.cpp:1252
 #: root.cpp:1258 root.cpp:1339 root.cpp:1864 root.cpp:1889
 msgid "KFM Error"
 msgstr "KFM-fel"
@@ -282,65 +282,65 @@ msgstr "KFM-fel"
 msgid "Location:"
 msgstr "Plats:"
 
-#: kfmexec.cpp:62 kfmgui.cpp:759 kfmman.cpp:1428
+#: kfmexec.cpp:62 kfmgui.cpp:790 kfmman.cpp:1428
 msgid "Malformed URL\n"
 msgstr "Felaktig URL\n"
 
-#: kfmgui.cpp:948
+#: kfmgui.cpp:976
 msgid "Select files:"
 msgstr "Markera filer:"
 
-#: kfmgui.cpp:1015
+#: kfmgui.cpp:1043
 msgid "Find Complete"
 msgstr "Sökningen klar"
 
-#: kfmgui.cpp:1016
+#: kfmgui.cpp:1044
 msgid "Continue search from the top of the page?"
 msgstr "Fortsätta söka från början av sidan?"
 
-#: kfmgui.cpp:1034
+#: kfmgui.cpp:1062
 msgid "&Edit Bookmarks..."
 msgstr "&Redigera bokmärken..."
 
-#: kfmgui.cpp:1046
+#: kfmgui.cpp:1074
 msgid "&Add Bookmark"
 msgstr "&Lägg till som bokmärke"
 
-#: kfmgui.cpp:1082 kfmman.cpp:1469 kfmtree.cpp:387 root.cpp:286
+#: kfmgui.cpp:1110 kfmman.cpp:1469 kfmtree.cpp:387 root.cpp:286
 msgid "&New"
 msgstr "&Ny"
 
-#: kfmgui.cpp:1155
+#: kfmgui.cpp:1183
 msgid "&Up"
 msgstr "&Upp"
 
-#: kfmgui.cpp:1157
+#: kfmgui.cpp:1185
 msgid "&Back"
 msgstr "&Bakåt"
 
-#: kfmgui.cpp:1159
+#: kfmgui.cpp:1187
 msgid "&Forward"
 msgstr "&Framåt"
 
-#: kfmgui.cpp:1161
+#: kfmgui.cpp:1189
 msgid "&Home"
 msgstr "&Hem"
 
-#: kfmgui.cpp:1230 kfmgui.cpp:1396 kfmjob.cpp:36 kfmman.cpp:252
+#: kfmgui.cpp:1258 kfmgui.cpp:1424 kfmjob.cpp:36 kfmman.cpp:252
 #: kfmtree.cpp:498 kfmview.cpp:491 kfmview.cpp:573 kfmview.cpp:801
 #: kiojob.cpp:88 root.cpp:1247
 msgid "ERROR: Malformed URL"
 msgstr "FEL: Felaktig URL"
 
-#: kfmgui.cpp:1350 kfmserver.cpp:241
+#: kfmgui.cpp:1378 kfmserver.cpp:241
 msgid "Open Location:"
 msgstr "Öppna plats:"
 
-#: kfmgui.cpp:1407
+#: kfmgui.cpp:1435
 msgid "KFM Confirm"
 msgstr "KFM Bekräfta"
 
-#: kfmgui.cpp:1408
+#: kfmgui.cpp:1436
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -348,7 +348,7 @@ msgstr ""
 "Vill du verkligen avsluta?\n"
 "Viktiga skrivbordsfunktioner kommer att förloras"
 
-#: kfmgui.cpp:1541
+#: kfmgui.cpp:1569
 msgid "Document: Done"
 msgstr "Dokument: klart"
 
@@ -479,7 +479,7 @@ msgstr "Montera"
 msgid "Unmount"
 msgstr "Avmontera"
 
-#: kbind.cpp:875 kbind.cpp:887 kbind.cpp:897 popup.cpp:48 popup.cpp:125
+#: kbind.cpp:875 kbind.cpp:887 kbind.cpp:897 popup.cpp:49 popup.cpp:129
 msgid "Folder"
 msgstr "Katalog"
 
@@ -620,9 +620,13 @@ msgstr "Spara inställningar för denna URL"
 msgid "Show Menubar"
 msgstr "Visa menyrad"
 
-#: kfmdlg.cpp:117
+#: kfmdlg.cpp:118
 msgid "&Browser"
 msgstr "&Bläddrare"
+
+#: kfmdlg.cpp:130 kfmprops.cpp:767
+msgid "Run in terminal"
+msgstr "Kör i terminal"
 
 #: bookmark.cpp:296
 msgid "Could not write bookmark"
@@ -788,10 +792,6 @@ msgstr "Körning i panelen"
 msgid "Window Title"
 msgstr "Fönstertitel"
 
-#: kfmprops.cpp:767
-msgid "Run in terminal"
-msgstr "Kör i terminal"
-
 #: kfmprops.cpp:775
 msgid "Terminal Options"
 msgstr "Terminalinställning"
@@ -889,7 +889,7 @@ msgstr "Kunde inte skapa ~/.kde/share/apps/kfm/magic"
 msgid "Do you really want to rearrange your icons ?"
 msgstr "Vill du verkligen ändra om dina ikoner ?"
 
-#: kfmserver.cpp:306
+#: kfmserver.cpp:310
 #, c-format
 msgid ""
 "The URL\n"
@@ -900,7 +900,7 @@ msgstr ""
 "%s\n"
 "är felaktig"
 
-#: kfmserver.cpp:357
+#: kfmserver.cpp:361
 msgid ""
 "You dont have the file ~/.kde/share/apps/kfm/magic\n"
 "Authorization failed"
@@ -908,7 +908,7 @@ msgstr ""
 "Du har inte filen ~/.kde/share/apps/kfm/magic\n"
 "Därför misslyckades identifieringen"
 
-#: kfmserver.cpp:366
+#: kfmserver.cpp:370
 msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
@@ -916,7 +916,7 @@ msgstr ""
 "Filen ~/.kde/share/apps/kfm/magic är trasig\n"
 "Därför misslyckades identifieringen"
 
-#: kfmserver.cpp:374
+#: kfmserver.cpp:378
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
@@ -1449,12 +1449,12 @@ msgstr "&Ta emot"
 msgid "&Reject"
 msgstr "&Vägra ta emot"
 
-#: popup.cpp:72
+#: popup.cpp:73
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "FEL: Mallen '%s' finns inte"
 
-#: popup.cpp:106
+#: popup.cpp:110
 msgid ""
 "Source file doesn't exist anymore ! \n"
 "Use \"Rescan Bindings\" in View menu to update the menu"
@@ -1462,7 +1462,7 @@ msgstr ""
 "Källfilen existerar inte längre ! \n"
 "Använd \"Uppdatera bindningar\" i Visa-menyn för att uppdatera menyn"
 
-#: popup.cpp:117 popup.cpp:124
+#: popup.cpp:121 popup.cpp:128
 msgid "New "
 msgstr "Ny "
 

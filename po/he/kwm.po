@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: 1998-12-01 HO:MI+ZONE\n"
 "Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -124,7 +124,7 @@ msgstr "תלטובמ קימיג תרוצת :םייקוח םניא םילמס המכ\n"
 msgid "*** No Tasks ***"
 msgstr "***תומישמ ןיא***"
 
-#: minicli.C:124
+#: minicli.C:201
 msgid "Command:"
 msgstr "הדוקפ"
 

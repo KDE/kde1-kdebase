@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1999-03-21 01:19+0100\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: 1998-04-20 22:30+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -261,12 +261,12 @@ msgstr "無法載入圖示\n"
 #: kbind.cpp:1619 kbind.cpp:1678 kbind.cpp:1690 kbind.cpp:1717 kbind.cpp:1738
 #: kbind.cpp:1758 kbind.cpp:1770 kbind.cpp:1786 kbind.cpp:1921 kbind.cpp:1933
 #: kbind.cpp:1978 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
-#: kfmgui.cpp:550 kfmgui.cpp:760 kfmman.cpp:370 kfmman.cpp:1429
+#: kfmgui.cpp:550 kfmgui.cpp:791 kfmman.cpp:370 kfmman.cpp:1429
 #: kfmman.cpp:1656 kfmman.cpp:1702 kfmprops.cpp:380 kfmprops.cpp:649
 #: kfmprops.cpp:656 kfmprops.cpp:950 kfmprops.cpp:1089 kfmprops.cpp:1218
 #: kfmprops.cpp:1722 kfmprops.cpp:2083 kfmprops.cpp:2265 kfmserver.cpp:46
-#: kfmserver.cpp:214 kfmserver.cpp:294 kfmserver.cpp:309 kfmserver.cpp:356
-#: kfmserver.cpp:365 kfmserver.cpp:373 kfmtree.cpp:339 kfmtree.cpp:466
+#: kfmserver.cpp:214 kfmserver.cpp:294 kfmserver.cpp:313 kfmserver.cpp:360
+#: kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:339 kfmtree.cpp:466
 #: kfmtree.cpp:497 kfmtree.cpp:503 kfmtree.cpp:509 kfmview.cpp:437
 #: kfmview.cpp:471 kfmview.cpp:490 kfmview.cpp:572 kfmview.cpp:578
 #: kfmview.cpp:584 kfmview.cpp:709 kfmview.cpp:713 kfmview.cpp:752
@@ -275,7 +275,7 @@ msgstr "無法載入圖示\n"
 #: kiojob.cpp:309 kiojob.cpp:333 kiojob.cpp:352 kiojob.cpp:569 kiojob.cpp:587
 #: kiojob.cpp:892 kiojob.cpp:905 kiojob.cpp:922 kiojob.cpp:953 kiojob.cpp:1001
 #: kiojob.cpp:1480 kiojob.cpp:1488 kiojob.cpp:1723 krenamewin.cpp:124
-#: popup.cpp:105 root.cpp:943 root.cpp:1228 root.cpp:1246 root.cpp:1252
+#: popup.cpp:109 root.cpp:943 root.cpp:1228 root.cpp:1246 root.cpp:1252
 #: root.cpp:1258 root.cpp:1339 root.cpp:1864 root.cpp:1889
 msgid "KFM Error"
 msgstr "KFM 發生錯誤"
@@ -285,67 +285,67 @@ msgstr "KFM 發生錯誤"
 msgid "Location:"
 msgstr "開啟位置:"
 
-#: kfmexec.cpp:62 kfmgui.cpp:759 kfmman.cpp:1428
+#: kfmexec.cpp:62 kfmgui.cpp:790 kfmman.cpp:1428
 msgid "Malformed URL\n"
 msgstr "不正確的 URL\n"
 
-#: kfmgui.cpp:948
+#: kfmgui.cpp:976
 msgid "Select files:"
 msgstr "選擇檔案:"
 
-#: kfmgui.cpp:1015
+#: kfmgui.cpp:1043
 msgid "Find Complete"
 msgstr ""
 
-#: kfmgui.cpp:1016
+#: kfmgui.cpp:1044
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: kfmgui.cpp:1034
+#: kfmgui.cpp:1062
 msgid "&Edit Bookmarks..."
 msgstr "編輯書籤[&E]..."
 
-#: kfmgui.cpp:1046
+#: kfmgui.cpp:1074
 msgid "&Add Bookmark"
 msgstr "加入書籤[&A]"
 
-#: kfmgui.cpp:1082 kfmman.cpp:1469 kfmtree.cpp:387 root.cpp:286
+#: kfmgui.cpp:1110 kfmman.cpp:1469 kfmtree.cpp:387 root.cpp:286
 #, fuzzy
 msgid "&New"
 msgstr "新 "
 
-#: kfmgui.cpp:1155
+#: kfmgui.cpp:1183
 msgid "&Up"
 msgstr ""
 
-#: kfmgui.cpp:1157
+#: kfmgui.cpp:1185
 msgid "&Back"
 msgstr ""
 
-#: kfmgui.cpp:1159
+#: kfmgui.cpp:1187
 msgid "&Forward"
 msgstr ""
 
-#: kfmgui.cpp:1161
+#: kfmgui.cpp:1189
 #, fuzzy
 msgid "&Home"
 msgstr "我的家"
 
-#: kfmgui.cpp:1230 kfmgui.cpp:1396 kfmjob.cpp:36 kfmman.cpp:252
+#: kfmgui.cpp:1258 kfmgui.cpp:1424 kfmjob.cpp:36 kfmman.cpp:252
 #: kfmtree.cpp:498 kfmview.cpp:491 kfmview.cpp:573 kfmview.cpp:801
 #: kiojob.cpp:88 root.cpp:1247
 msgid "ERROR: Malformed URL"
 msgstr "錯誤: 不正確的 URL"
 
-#: kfmgui.cpp:1350 kfmserver.cpp:241
+#: kfmgui.cpp:1378 kfmserver.cpp:241
 msgid "Open Location:"
 msgstr "開啟位置:"
 
-#: kfmgui.cpp:1407
+#: kfmgui.cpp:1435
 msgid "KFM Confirm"
 msgstr "KFM 確認"
 
-#: kfmgui.cpp:1408
+#: kfmgui.cpp:1436
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -353,7 +353,7 @@ msgstr ""
 "真的要離開嗎?\n"
 "將會失去重要的桌面功\能."
 
-#: kfmgui.cpp:1541
+#: kfmgui.cpp:1569
 msgid "Document: Done"
 msgstr "文件: 完成"
 
@@ -476,7 +476,7 @@ msgstr "Mount"
 msgid "Unmount"
 msgstr "Unmount"
 
-#: kbind.cpp:875 kbind.cpp:887 kbind.cpp:897 popup.cpp:48 popup.cpp:125
+#: kbind.cpp:875 kbind.cpp:887 kbind.cpp:897 popup.cpp:49 popup.cpp:129
 msgid "Folder"
 msgstr "資料夾"
 
@@ -614,10 +614,14 @@ msgstr ""
 msgid "Show Menubar"
 msgstr "顯示選單列[&M]"
 
-#: kfmdlg.cpp:117
+#: kfmdlg.cpp:118
 #, fuzzy
 msgid "&Browser"
 msgstr "瀏覽"
+
+#: kfmdlg.cpp:130 kfmprops.cpp:767
+msgid "Run in terminal"
+msgstr "在終端機中執行"
 
 #: bookmark.cpp:296
 #, fuzzy
@@ -787,10 +791,6 @@ msgstr "含入至 panel 中"
 msgid "Window Title"
 msgstr "視窗標題"
 
-#: kfmprops.cpp:767
-msgid "Run in terminal"
-msgstr "在終端機中執行"
-
 #: kfmprops.cpp:775
 msgid "Terminal Options"
 msgstr "終端機選項"
@@ -889,7 +889,7 @@ msgstr "無法建立 ~/.kde/share/apps/kfm/magic"
 msgid "Do you really want to rearrange your icons ?"
 msgstr "真的要重新排列圖示 ?"
 
-#: kfmserver.cpp:306
+#: kfmserver.cpp:310
 #, c-format
 msgid ""
 "The URL\n"
@@ -900,7 +900,7 @@ msgstr ""
 "%s\n"
 "是不正確的"
 
-#: kfmserver.cpp:357
+#: kfmserver.cpp:361
 msgid ""
 "You dont have the file ~/.kde/share/apps/kfm/magic\n"
 "Authorization failed"
@@ -908,7 +908,7 @@ msgstr ""
 "沒有 ~/.kde/share/apps/kfm/magic\n"
 "確認失敗"
 
-#: kfmserver.cpp:366
+#: kfmserver.cpp:370
 msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
@@ -916,7 +916,7 @@ msgstr ""
 "~/.kde/share/apps/kfm/magic 有問題\n"
 "確認失敗"
 
-#: kfmserver.cpp:374
+#: kfmserver.cpp:378
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
@@ -1438,18 +1438,18 @@ msgstr ""
 msgid "&Reject"
 msgstr "選擇[&S]"
 
-#: popup.cpp:72
+#: popup.cpp:73
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "錯誤: 樣板不存在 '%s'"
 
-#: popup.cpp:106
+#: popup.cpp:110
 msgid ""
 "Source file doesn't exist anymore ! \n"
 "Use \"Rescan Bindings\" in View menu to update the menu"
 msgstr ""
 
-#: popup.cpp:117 popup.cpp:124
+#: popup.cpp:121 popup.cpp:128
 msgid "New "
 msgstr "新 "
 

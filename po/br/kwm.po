@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm-1.1\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: 1999-02-05 11:16+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "MIME-Version: 1.0\n"
@@ -127,7 +127,7 @@ msgstr "Piksmapoù zo n'eo ket reizh : GimmickMode dizoberiet\n"
 msgid "*** No Tasks ***"
 msgstr "*** Dlead ebet ***"
 
-#: minicli.C:124
+#: minicli.C:201
 msgid "Command:"
 msgstr "Urzhiad :"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -117,7 +117,7 @@ msgstr "一些位图是无效的: 取消 ShapMode\n"
 msgid "*** No Tasks ***"
 msgstr "*** 没有任务 ***"
 
-#: minicli.C:124
+#: minicli.C:201
 msgid "Command:"
 msgstr "命令:"
 
