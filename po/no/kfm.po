@@ -181,15 +181,13 @@ msgstr "Se aldri i mellomlager"
 
 # kfmgui.cpp:400
 #: kfmgui.cpp:411
-#, fuzzy
 msgid "Always save cache"
-msgstr "Se alltid i mellomlager"
+msgstr "Alltid lagre mellomlager"
 
 # kfmgui.cpp:402
 #: kfmgui.cpp:413
-#, fuzzy
 msgid "Never save cache"
-msgstr "Se aldri i mellomlager"
+msgstr "Aldri lagre mellomlager"
 
 # kfmgui.cpp:410
 #: kfmgui.cpp:424
