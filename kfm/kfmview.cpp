@@ -818,7 +818,7 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
     selectedURL = "";
     
     // Select by drawing a rectangle
-    if ( _url == 0L && _mouse->button() == LeftButton )
+    if ( _url == 0L && _mouse->button() == LeftButton && !manager->isHTML() )
     {
 	select( 0L, false );
 	rectStart = true;            // Say it is start of drag

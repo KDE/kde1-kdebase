@@ -48,6 +48,12 @@ public:
      * Stop the @ref #KFMJob that downloads the directory information
      */
     virtual void stop();
+
+    /**
+     * Is this a native HTML page ( this means that it was not KFMs job
+     * to create this page from a list of @ref KIODirectoryEntry).
+     */
+    bool isHTML() const { return bHTML; }
     
 public slots:
     /**

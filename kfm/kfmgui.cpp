@@ -16,6 +16,7 @@
 #include <qregexp.h>
 #include <qmsgbox.h>
 #include <qtooltip.h>
+#include <qclipbrd.h>
 
 #include <kconfig.h>
 #include <kapp.h>
@@ -622,7 +623,8 @@ void KfmGui::initView()
 	     this, SLOT( slotAddWaitingWidget( KHTMLView * ) ) );
     connect( view, SIGNAL( documentDone( KHTMLView * ) ), 
 	     this, SLOT( slotRemoveWaitingWidget( KHTMLView * ) ) );
-    
+    connect( view, SIGNAL( textSelected( KHTMLView *, bool ) ), 
+	     this, SLOT( slotTextSelected( KHTMLView *, bool ) ) );
     view->show();
 }
 
@@ -1325,6 +1327,18 @@ void KfmGui::slotRemoveWaitingWidget( KHTMLView *_w )
 
    KURL u( view -> getURL());
    _w->gotoAnchor(u.reference());
+}
+
+void KfmGui::slotTextSelected( KHTMLView *v, bool s )
+{
+    if ( s )
+    {
+       QString sel;
+
+       v->getSelectedText( sel );
+       QClipboard *cb = KApplication::clipboard();
+       cb->setText( sel );
+    }
 }
 
 void KfmGui::slotSaveSettings()

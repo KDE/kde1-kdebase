@@ -433,6 +433,7 @@ protected slots:
     void slotShowStatusbar();
     void slotShowMenubar();
     void slotShowLocationBar();
+    void slotTextSelected( KHTMLView *, bool );
     
 protected:
 

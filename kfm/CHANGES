@@ -169,8 +169,14 @@
  - Fixed bug in recursive copy/move
  - Fixed memory leak in kiojob.cpp
 
-25.1.98 Lars Hoss
+25.01.98 Lars Hoss
 
   - Added support for NoProxyFor and FTP. Patched kioslave to work with the
     new Proxy Manager
    
+12.02.98 Stephan
+  - fixed the decoding of Directories, that caused directories named as "asds#sdasd" to
+    be shown as permsission denied
+
+14.02.98 Stephan
+  - applied patch by Martin Jones, that fixes the text selection in HTML view
