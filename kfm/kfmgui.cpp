@@ -304,6 +304,8 @@ void KfmGui::initMenu()
     file->insertSeparator();
     file->insertItem( klocale->translate("&Open Location..."),
 		      this, SLOT(slotOpenLocation()), CTRL+Key_L );
+    file->insertItem( klocale->translate("&Find"), this, 
+		      SLOT(slotToolFind()), CTRL+Key_F );
     file->insertSeparator();
     file->insertItem( klocale->translate("&Print..."), 
 		      this, SLOT(slotPrint()) );
@@ -436,24 +438,15 @@ void KfmGui::initMenu()
     QPopupMenu *nav = new QPopupMenu;
     CHECK_PTR( nav );
 
-    QPopupMenu *tool = new QPopupMenu;
-    CHECK_PTR( tool );
-    tool->insertItem( klocale->translate("&Find"), this, 
-		      SLOT(slotToolFind()), ALT+Key_S );
-
     bookmarkMenu = new QPopupMenu;
     CHECK_PTR( bookmarkMenu );
     connect( bookmarkManager, SIGNAL( changed() ), 
 	     this, SLOT( slotBookmarksChanged() ) );
-    QString p = getenv( "HOME" );
-    QString bmFile = p + "/.kde/share/apps/kfm/bookmarks.html";
-    bookmarkMenu->insertItem( klocale->translate("&Add Bookmark"), 
-			      this, SLOT(slotAddBookmark()) );
-    // rich
-    bookmarkMenu->insertItem( klocale->translate("&Edit Bookmarks..."), 
-			      this, SLOT(slotEditBookmarks()) );
 
-    bookmarkManager->read( bmFile );
+    // bookmarkMenu->insertItem( klocale->translate("&Edit Bookmarks..."), 
+    // this, SLOT(slotEditBookmarks()) );
+    // fillBookmarkMenu( bookmarkManager->root(), bookmarkMenu );
+    slotBookmarksChanged();
     
     QPopupMenu *help = new QPopupMenu;
     CHECK_PTR( help );
@@ -472,7 +465,6 @@ void KfmGui::initMenu()
     menu->insertItem( klocale->translate("&Edit"), edit );
     menu->insertItem( klocale->translate("&View"), mview );
     menu->insertItem( klocale->translate("&Bookmarks"), bookmarkMenu );
-    menu->insertItem( klocale->translate("&Tool"), tool );
     menu->insertItem( klocale->translate("&Cache"), mcache );
     menu->insertItem( klocale->translate("&Options"), moptions );
     menu->insertSeparator();
@@ -870,37 +862,34 @@ void KfmGui::slotBookmarksChanged()
 {
     bookmarkMenu->clear();
     bookmarkMenu->disconnect( this );
-    bookmarkMenu->insertItem( klocale->translate("Add Bookmark"), 
-			      this, SLOT(slotAddBookmark()) );
-    // rich
     bookmarkMenu->insertItem( klocale->translate("&Edit Bookmarks..."), 
 			      this, SLOT(slotEditBookmarks()) );
 
-    bookmarkMenu->insertSeparator();
-    int idStart = BOOKMARK_ID_BASE;
-    fillBookmarkMenu( bookmarkManager->getRoot(), bookmarkMenu, idStart );
+    fillBookmarkMenu( bookmarkManager->root(), bookmarkMenu );
 }
 
-void KfmGui::fillBookmarkMenu( KBookmark *parent, QPopupMenu *menu, int &id )
+void KfmGui::fillBookmarkMenu( KBookmark *parent, QPopupMenu *menu )
 {
     KBookmark *bm;
     
+    menu->insertItem( i18n("&Add Bookmark"), parent->id() );
+    menu->insertSeparator();
+
     connect( menu, SIGNAL( activated( int ) ),
 	     SLOT( slotBookmarkSelected( int ) ) );
     
-    for ( bm = parent->getChildren().first(); bm != NULL;
-	  bm = parent->getChildren().next() )
+    for ( bm = parent->children()->first(); bm != NULL;
+	  bm = parent->children()->next() )
     {
-	if ( bm->getType() == KBookmark::URL )
+	if ( bm->type() == KBookmark::URL )
 	{
-	    menu->insertItem( bm->getText(), id );
-	    id++;
+	    menu->insertItem( *(bm->miniPixmap()), bm->text(), bm->id() );
 	}
 	else
-	{
+	{	    
 	    QPopupMenu *subMenu = new QPopupMenu;
-	    menu->insertItem( bm->getText(), subMenu );
-	    fillBookmarkMenu( bm, subMenu, id );
+	    menu->insertItem( *(bm->miniPixmap()), bm->text(), subMenu );
+	    fillBookmarkMenu( bm, subMenu );
 	}
     }
 }
@@ -979,45 +968,45 @@ void KfmGui::slotHome()
 void KfmGui::addBookmark( const char *_title, const char *_url )
 {
     QString p = getenv( "HOME" );
-    QString bmFile = p + "/.kde/share/apps/kfm/bookmarks.html";
-    bookmarkManager->add( _title, _url );
-    bookmarkManager->write( bmFile );
+    QString bmFile = p + "/.kde/share/apps/kfm/bookmarks";
+
+    KBookmark *root = bookmarkManager->root();
+   
+    new KBookmark( bookmarkManager, root, _title, _url );
 }
 
-void KfmGui::slotAddBookmark()
-{
-    addBookmark( title.data(), view->getURL() );
-}
-
-// rich
 void KfmGui::slotEditBookmarks()
 {
-  KBookmarkDlg *dlg;
+  QString p = getenv( "HOME" );
+  p += "/.kde/share/apps/kfm/bookmarks";
 
-  dlg= new KBookmarkDlg(bookmarkManager);
-  dlg->exec();
-  delete dlg;
+  KfmGui *m = new KfmGui( 0L, 0L, p );
+  m->show();
 }
 
-void KfmGui::slotBookmarkSelected( int id )
+void KfmGui::slotBookmarkSelected( int _id )
 {
-    id -= BOOKMARK_ID_BASE;
-    
-    // debugT( "Bookmark selected : %i\n",id );
-    
-    KBookmark *bm = bookmarkManager->getBookmark( id );
+    KBookmark *bm = bookmarkManager->findBookmark( _id );
     
     if ( bm )
     {
-	KURL u( bm->getURL() );
-	if ( u.isMalformed() )
-	{
-	      warning(klocale->translate("ERROR: Malformed URL"));
-	      return;
-	}
+      if ( bm->type() == KBookmark::Folder )
+      {
+	new KBookmark( bookmarkManager, bm, title.data(), view->getURL() );
+	return;
+      }
+
+      KURL u( bm->url() );
+      if ( u.isMalformed() )
+      {
+	warning(klocale->translate("ERROR: Malformed URL"));
+	return;
+      }
 	
-	view->openURL( bm->getURL() );
+      view->openURL( bm->url() );
     }
+    else
+      warning("Internal: Could not find bookmark id\n");
 }
 
 void KfmGui::slotToolFind( )

@@ -1,8 +1,6 @@
 #ifndef KFMGUI_H
 #define KFMGUI_H
 
-#define BOOKMARK_ID_BASE	200
-
 // accelerator ids
 #define UP                  1
 #define DOWN                2
@@ -143,7 +141,6 @@ public:
     	animatedLogo = new QList<QPixmap>;
 	windowList = new QList<KfmGui>;
 	bookmarkManager = new KBookmarkManager;
-    
     }
     
     /**
@@ -314,10 +311,6 @@ public slots:
     void slotCacheOff();
     
     /**
-     * Menu "Bookmarks->Add Bookmark"
-     */
-    void slotAddBookmark();
-    /**
      * Menu "Bookmarks->Edit Bookmarks"
      */
     void slotEditBookmarks();
@@ -448,7 +441,7 @@ protected:
     /**
      * Fill the 'menu' with all boomarks in 'parent'.
      */
-    void fillBookmarkMenu( KBookmark *parent, QPopupMenu *menu, int &id );
+    void fillBookmarkMenu( KBookmark *parent, QPopupMenu *menu );
     /**
      * Manager for the bookmarks.
      */

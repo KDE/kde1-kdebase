@@ -1,387 +1,390 @@
-/* This file is part of the KDE libraries
-    Copyright (C) 1996, 1997, 1998 Martin R. Jones <mjones@kde.org>
-      
-    This library is free software; you can redistribute it and/or
-    modify it under the terms of the GNU Library General Public
-    License as published by the Free Software Foundation; either
-    version 2 of the License, or (at your option) any later version.
+#include <qdir.h>
 
-    This library is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    Library General Public License for more details.
+#include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <stddef.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <errno.h>
 
-    You should have received a copy of the GNU Library General Public License
-    along with this library; see the file COPYING.LIB.  If not, write to
-    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-    Boston, MA 02111-1307, USA.
-*/
-//-----------------------------------------------------------------------------
-//
-// KDE HTML Bookmarks
-//
-// (c) Martin R. Jones 1996
-//
-
-#include <qfile.h>
-#include "bookmark.h"
-#include "bookmark.moc"
-
-#include <klocale.h>
+#include <ksimpleconfig.h>
+#include <kurl.h>
 #include <kapp.h>
+#include <qmsgbox.h>
 
-//-----------------------------------------------------------------------------
+#include "bookmark.h"
+#include "kbind.h"
 
-KBookmark::KBookmark()
+/**
+ * Gloabl ID for bookmarks.
+ */
+int g_id = 0;
+
+/********************************************************************
+ *
+ * KBookmarkManager
+ *
+ ********************************************************************/
+
+KBookmarkManager::KBookmarkManager() : m_Root( 0L, 0L, 0L )
 {
-	children.setAutoDelete( true );
-	type = URL;
+  // Little hack
+  m_Root.m_pManager = this;
+  m_bAllowSignalChanged = true;
+  m_bNotify = true;
+  
+  QString p = getenv( "HOME" );
+  p += "/.kde/share/apps/kfm/bookmarks";
+  scan( p );
+
+  connect( KIOServer::getKIOServer(), SIGNAL( notify( const char* ) ),
+	   this, SLOT( slotNotify( const char* ) ) );
 }
 
-KBookmark::KBookmark( const char *_text, const char *_url )
+void KBookmarkManager::slotNotify( const char *_url )
 {
-	children.setAutoDelete( true );
-	text = _text;
-	url = _url;
-	type = URL;
+  if ( !m_bNotify )
+    return;
+  
+  KURL u( _url );
+  if ( strcmp( u.protocol(), "file" ) != 0 )
+    return;
+  
+  QString p = getenv( "HOME" );
+  p += "/.kde/share/apps/kfm/bookmarks";
+  QDir dir2( p );
+  QDir dir1( u.path() );
+
+  QString p1( dir1.canonicalPath() );
+  QString p2( dir2.canonicalPath() );
+  if ( p1.isEmpty() )
+    p1 = u.path();
+  if ( p2.isEmpty() )
+    p2 = p.data();
+  
+  printf("Checking '%s' and '%s'\n",p1.data(),p2.data() );
+  
+  if ( strncmp( p1.data(), p2.data(), p2.length() ) == 0 )
+  {
+    QString d = getenv( "HOME" );
+    d += "/.kde/share/apps/kfm/bookmarks/";
+    scan( d );
+  }
+}
+  
+void KBookmarkManager::emitChanged()
+{
+  // Scanning right now ?
+  if ( m_bAllowSignalChanged )
+    // ... no => emit signal
+    emit changed();
+}
+
+void KBookmarkManager::scan( const char * _path )
+{
+  m_Root.clear();
+  
+  // Do not emit 'changed' signals here.
+  m_bAllowSignalChanged = false;
+  scanIntern( &m_Root, _path );
+  m_bAllowSignalChanged = true;
+   
+  emit changed();
+}
+
+void KBookmarkManager::scanIntern( KBookmark *_bm, const char * _path )
+{
+  DIR *dp;
+  struct dirent *ep;
+  dp = opendir( _path );
+  if ( dp == 0L )
+    return;
+  
+  // Loop thru all directory entries
+  while ( ( ep = readdir( dp ) ) != 0L )
+  {
+    if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
+    {
+      QString name = ep->d_name;	
+
+      QString file = _path;
+      file += "/";
+      file += ep->d_name;
+      struct stat buff;
+      stat( file.data(), &buff );
+      if ( S_ISDIR( buff.st_mode ) )
+      {
+	KBookmark* bm = new KBookmark( this, _bm, KBookmark::decode( name ) );
+	scanIntern( bm, file );
+      }
+      else 
+      {
+	if ( name.length() > 7 && name.right( 7 ) == ".kdelnk" )
+	  name.truncate( name.length() - 7 );
+	
+	KSimpleConfig cfg( file );
+	cfg.setGroup( "KDE Desktop Entry" );
+	QString url = cfg.readEntry( "URL" );
+	QString icon = cfg.readEntry( "Icon" );
+	QString miniicon = cfg.readEntry( "MiniIcon", icon );
+	if ( !url.isEmpty() && !icon.isEmpty() && !miniicon.isEmpty() )
+	{
+	  new KBookmark( this, _bm, KBookmark::decode( name ), cfg );
+	}
+      }
+    }
+  }
+}
+
+/********************************************************************
+ *
+ * KBookmark
+ *
+ ********************************************************************/
+
+KBookmark::KBookmark( KBookmarkManager *_bm, KBookmark *_parent, const char *_text, KSimpleConfig& _cfg )
+{
+  ASSERT( _bm != 0L );
+  ASSERT( _parent != 0L );
+  
+  _cfg.setGroup( "KDE Desktop Entry" );
+  m_url = _cfg.readEntry( "URL" );
+  
+  m_pPixmap = 0L;
+  m_pMiniPixmap = 0L;
+  m_id = g_id++;
+  m_pManager = _bm;
+  m_lstChildren.setAutoDelete( true );
+  m_text = _text;
+  m_type = URL;
+  
+  m_file = _parent->file();;
+  m_file += "/";
+  m_file += encode( _text );
+  m_file += ".kdelnk";
+
+  _parent->append( this );
+  
+  m_pManager->emitChanged();
+}
+
+KBookmark::KBookmark( KBookmarkManager *_bm, KBookmark *_parent, const char *_text )
+{
+  m_pPixmap = 0L;
+  m_pMiniPixmap = 0L;
+  m_id = g_id++;
+  m_pManager = _bm;
+  m_lstChildren.setAutoDelete( true );
+  m_type = Folder;
+  m_text = _text;
+
+  QString p( getenv( "HOME" ) );
+  p += "/.kde/share/apps/kfm/bookmarks";
+  const char *dir = p;
+  if ( _parent )
+    dir = _parent->file();
+  m_file = dir;
+  if ( _text )
+  {
+    m_file += "/";
+    m_file += encode( _text );
+  }
+
+  if ( _parent )
+    _parent->append( this );
+  
+  if ( m_pManager )
+    m_pManager->emitChanged();
+}
+
+KBookmark::KBookmark( KBookmarkManager *_bm, KBookmark *_parent, const char *_text, const char *_url )
+{
+  ASSERT( _bm != 0L );
+  ASSERT( _parent != 0L );
+  ASSERT( _text != 0L && _url != 0L );
+  
+  KURL u( _url );
+
+  QString tmp;
+  const char *icon = 0L;
+  if ( strcmp( u.protocol(), "file" ) == 0 )
+  {
+    // tmp = folderType->getPixmapFile( _url );
+    tmp = KMimeType::getPixmapFileStatic( _url );
+    int i = tmp.findRev( '/' );
+    ASSERT( i != -1 );
+    icon = tmp.data() + i + 1;
+  }
+  else if ( strcmp( u.protocol(), "ftp" ) == 0 )
+    icon = "ftp.xpm";
+  else
+    icon = "www.xpm";
+
+  QString tmp2;
+  const char *mini = 0L;
+  if ( strcmp( u.protocol(), "file" ) == 0 )
+  {
+    // tmp2 = folderType->getPixmapFile( _url );
+    tmp2 = KMimeType::getPixmapFileStatic( _url, true );
+    int i = tmp2.findRev( '/' );
+    ASSERT( i != -1 );
+    mini = tmp2.data() + i + 1;
+  }
+  else if ( strcmp( u.protocol(), "ftp" ) == 0 )
+    mini = "ftp.xpm";
+  else
+    mini = "www.xpm";
+  
+  m_pPixmap = 0L;
+  m_pMiniPixmap = 0L;
+  m_id = g_id++;
+  m_pManager = _bm;
+  m_lstChildren.setAutoDelete( true );
+  m_text = _text;
+  m_url = _url;
+  m_type = URL;
+  
+  m_file = _parent->file();
+  m_file += "/";
+  m_file += encode( _text );
+  m_file += ".kdelnk";
+
+  FILE *f = fopen( m_file, "w" );
+  if ( f == 0L )
+  {
+    QMessageBox::critical( (QWidget*)0L, i18n("KFM Error"), i18n("Could not write bookmark" ) );
+    return;
+  }
+  
+  fprintf( f, "# KDE Config File\n" );
+  fprintf( f, "[KDE Desktop Entry]\n" );
+  fprintf( f, "URL=%s\n", m_url.data() );
+  fprintf( f, "Icon=%s\n", icon );
+  fprintf( f, "MiniIcon=%s\n", mini );
+  fprintf( f, "Type=Link\n" );
+  fclose( f );
+
+  m_pManager->disableNotify();
+  
+  // Update opened KFM windows. Perhaps there is one
+  // that shows the bookmarks directory.
+  tmp = "file:";
+  QString fe( _parent->file() );
+  // To make an URL, we have th encode the path
+  KURL::encodeURL( fe );
+  tmp += fe;
+  KIOServer::sendNotify( tmp );
+  
+  m_pManager->enableNotify();
+
+  _parent->append( this );
+  
+  m_pManager->emitChanged();
 }
 
 void KBookmark::clear()
 {
-	KBookmark *bm;
-
-	for ( bm = getChildren().first(); bm != NULL; bm = getChildren().next() )
-	{
-		bm->clear();
-	}
-
-	children.clear();
+  KBookmark *bm;
+  
+  for ( bm = children()->first(); bm != NULL; bm = children()->next() )
+  {
+    bm->clear();
+  }
+  
+  m_lstChildren.clear();
 }
 
-//-----------------------------------------------------------------------------
-
-KBookmarkManager::KBookmarkManager()
+KBookmark* KBookmark::findBookmark( int _id )
 {
-}
+  if ( _id == id() )
+    return this;
 
-void KBookmarkManager::read( const char *filename )
-{
-	QFile file( filename );
-
-	// rich
-	myFilename= filename;
-
-	if ( !file.open( IO_ReadOnly ) )
-		return;
-
-	root.clear();
-
-	QString text;
-	char buffer[256];
-
-	do
-	{
-		file.readLine( buffer, 256 );
-		text += buffer;
-	}
-	while ( !file.atEnd() );
-
-	BookmarkTokenizer *ht = new BookmarkTokenizer();
-
-	ht->begin();
-	ht->write( text );
-	ht->end();
-
-	const char *str;
-
-	while ( ht->hasMoreTokens() )
-	{
-		str = ht->nextToken();
-
-		// Every tag starts with an escape character
-		if ( str[0] == TAG_ESCAPE )
-		{
-			str++;
-	
-			if ( strncasecmp( str, "<title>", 7 ) == 0 )
-			{
-				QString t = "";
-				bool bend = false;
-
-				do
-				{
-					if ( !ht->hasMoreTokens() )
-						bend = true;
-					else
-					{
-						str = ht->nextToken();
-						if ( str[0] == TAG_ESCAPE &&
-								strncasecmp( str + 1, "</title>", 8 ) == 0 )
-							bend = true;
-						else
-							t += str;
-					}
-				}
-				while ( !bend );
-
-				title = t;
-			}
-			else if ( strncasecmp( str, "<DL>", 4 ) == 0 )
-			{
-				parse( ht, &root, "" );
-			}
-		}
+  KBookmark *bm;
+  
+  for ( bm = children()->first(); bm != NULL; bm = children()->next() )
+  {
+    if ( bm->id() == _id )
+      return bm;
+    
+    if ( bm->type() == Folder )
+    {
+      KBookmark *b = bm->findBookmark( _id );
+      if ( b )
+	return b;
     }
-
-	delete ht;
-
-	emit changed();
-}
-
-// parser based on HTML widget parser
-//
-const char *KBookmarkManager::parse( BookmarkTokenizer *ht, KBookmark *parent,
-	const char *_end )
-{
-	KBookmark *bm = parent;
-	QString text;
-	const char *str;
-
-	parent->setType( KBookmark::Folder );
-
-	while ( ht->hasMoreTokens() )
-	{
-		str = ht->nextToken();
-
-		if (str[0] == TAG_ESCAPE )
-		{
-			str++;
-
-			if ( _end[0] != 0 && strcasecmp( str, _end ) == 0 )
-			{
-				return str;
-			}
-			else if ( strncasecmp( str, "<dl>", 4 ) == 0 )
-			{
-				parse( ht, bm, "</dl>" );
-			}
-			else if ( strncasecmp( str, "<dt>", 4 ) == 0 )
-			{
-				bm = new KBookmark;
-				parent->getChildren().append( bm );
-			}
-			else if ( strncasecmp( str, "<a ", 3 ) == 0 )
-			{
-				const char *p = str + 3;
-
-				while ( *p != '>' )
-				{
-					if ( strncasecmp( p, "href=", 5 ) == 0 )
-					{
-						p += 5;
-
-						text = "";
-						bool quoted = false;
-						while ( ( *p != ' ' && *p != '>' ) || quoted )
-						{
-							if ( *p == '\"' )
-								quoted = !quoted;
-							else
-								text += *p;
-							p++;
-						}
-
-						bm->setURL( text );
-			
-						if ( *p == ' ' )
-							p++;
-					}
-					else
-					{
-						char *p2 = strchr( p, ' ' );
-						if ( p2 == 0L )
-							p2 = strchr( p, '>');
-						else
-							p2++;
-						p = p2;
-					}
-				}
-
-				text = "";
-			}
-			else if ( strncasecmp( str, "<H3", 3 ) == 0 )
-			{
-				text = "";
-			}
-			else if ( strncasecmp( str, "</H3>", 5 ) == 0 ||
-						strncasecmp( str, "</a>", 4 ) == 0 )
-			{
-				bm->setText( text );
-			}
-		}
-		else if ( str[0] )
-		{
-			text += str;
-		}
-	}
-
-	return NULL;
-}
-
-// write bookmarks file
-//
-void KBookmarkManager::write( const char *filename )
-{
-	QFile file( filename );
-
-	if ( !file.open( IO_WriteOnly ) )
-		return;
-
-	// rich
-	myFilename= filename;
-
-	QTextStream stream( &file );
-
-	stream << "<!DOCTYPE KDEHELP-Bookmark-file>" << endl;
-	stream << klocale->translate("<!-- Do not edit this file -->") << endl;
-	stream << "<TITLE>" << title << "</TITLE>" << endl;
-
-	stream << "<H1>" << title << "</H1>" << endl;
-
-	stream << "<DL><p>" << endl;
-
-	writeFolder( stream, &root );
-
-	stream << "</DL><P>" << endl;
-}
-
-// write the contents of a folder (recursive)
-//
-void KBookmarkManager::writeFolder( QTextStream &stream, KBookmark *parent )
-{
-	KBookmark *bm;
-
-	for ( bm = parent->getChildren().first(); bm != NULL;
-			bm = parent->getChildren().next() )
-	{
-		if ( bm->getType() == KBookmark::URL )
-		{
-			stream << "<DT><A HREF=\"" << bm->getURL() << "\">"
-				<< bm->getText() << "</A>" << endl;
-		}
-		else
-		{
-			stream << "<DT><H3>" << bm->getText() << "</H3>" << endl;
-			stream << "<DL><P>" << endl;
-			writeFolder( stream, bm );
-			stream << "</DL><P>" << endl;
-		}
-	}
-}
-
-KBookmark *KBookmarkManager::getBookmark( int id )
-{
-	int currId = 0;
-
-	return findBookmark( &root, id, currId );
-}
-
-KBookmark *KBookmarkManager::findBookmark( KBookmark *parent, int id,
-	int &currId )
-{
-	KBookmark *bm;
-
-	for ( bm = parent->getChildren().first(); bm != NULL;
-			bm = parent->getChildren().next() )
-	{
-		if ( bm->getType() == KBookmark::URL )
-		{
-			if ( currId == id )
-				return bm;
-			currId++;
-		}
-		else
-		{
-			KBookmark *retbm;
-			if ( ( retbm = findBookmark( bm, id, currId ) ) != NULL )
-				return retbm;
-		}
-	}
-
-	return NULL;
-}
-
-void KBookmarkManager::add( const char *_text, const char *_url )
-{
-	root.getChildren().append( new KBookmark( _text, _url ) );
-
-	emit changed();
-}
-
-// rich
-bool KBookmarkManager::remove(int i)
-{
-  bool result= false;
-  if (i >= 0) {
-    root.getChildren().remove(i);
-    emit changed();
-    result= true;
   }
-  return result;
+
+  return 0L;
 }
 
-// rich
-void KBookmarkManager::rename(int i, const char *s)
+QString KBookmark::encode( const char *_str )
 {
-  KBookmark *b;
+  QString str( _str );
 
-  if (i > 0) {
-    b= root.getChildren().at(i);
-    b->setText(s);
-    emit changed();
+  int i = 0;
+  while ( ( i = str.find( "%", i ) ) != -1 )
+  {
+    str.replace( i, 1, "%%");
+    i += 2;
   }
+  while ( ( i = str.find( "/" ) ) != -1 )
+      str.replace( i, 1, "%2f");
+
+  return QString( str.data() );
 }
 
-// rich
-bool KBookmarkManager::moveUp(int i)
+QString KBookmark::decode( const char *_str )
 {
-  KBookmark *b;
-  bool result= false;
-
-  if (i > 0) {
-    b= root.getChildren().take(i);
-    root.getChildren().insert(i-1, b);
-    emit changed();
-    result= true;
+  QString str( _str );
+  
+  int i = 0;
+  while ( ( i = str.find( "%%", i ) ) != -1 )
+  {
+    str.replace( i, 2, "%");
+    i++;
   }
-  return result;
+  
+  while ( ( i = str.find( "%2f" ) ) != -1 )
+      str.replace( i, 3, "/");
+
+  return QString( str.data() );
 }
 
-// rich
-bool KBookmarkManager::moveDown(int i)
+QPixmap* KBookmark::pixmap()
 {
-  KBookmark *b;
-  uint j= i;
-  bool result= false;
-
-  if (j < (root.getChildren().count() -1)) {
-    b= root.getChildren().take(i);
-    root.getChildren().insert(i+1, b);
-    emit changed();
-    result= true;
+  if ( m_pPixmap == 0L )
+  {
+    QString f( m_file.data() );
+    KURL::encodeURL( f );
+    if ( m_type == Folder )
+      m_pPixmap = folderType->getPixmap( f, false );
+    else
+      m_pPixmap = kdelnkType->getPixmap( f, false );
   }
-  return result;
+
+  ASSERT( m_pPixmap );
+  
+  return m_pPixmap;
 }
 
-// rich
-void KBookmarkManager::reread()
+QPixmap* KBookmark::miniPixmap()
 {
-  read(myFilename);
+  if ( m_pMiniPixmap == 0L )
+  {
+    QString f( m_file.data() );
+    KURL::encodeURL( f );
+    if ( m_type == Folder )
+      m_pMiniPixmap = folderType->getPixmap( f, true );
+    else
+      m_pMiniPixmap = kdelnkType->getPixmap( f, true );
+  }
+
+  ASSERT( m_pMiniPixmap );
+  
+  return m_pMiniPixmap;
 }
 
-// rich
-void KBookmarkManager::write()
-{
-  write(myFilename);
-}
 
+#include "bookmark.moc"

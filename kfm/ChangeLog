@@ -1,8 +1,9 @@
-Sat Mar 28 11:11:21 1998  Martin Jones  <mjones@kde.org>
+Sat Mar 28 20:11:50 1998  Torben Weis  <weis@localhost>
 
-	* Added kbooktoken.* so that further changes to the HTML
-	  Tokeniser in khtmlw do not break binary compatability in
-	  kfm.
+	* Complete new and cool bookmark management.
+	
+	* kfmserver.cpp (slotOpenURL): kfmclient openURL trash:/
+	  should work now.
 
 Fri Mar 27 02:50:54 1998  Torben Weis  <weis@localhost>
 

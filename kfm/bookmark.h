@@ -26,77 +26,100 @@
 #ifndef __BOOKMARK_H__
 #define __BOOKMARK_H__
 
-#include <qobject.h>
-#include <qtstream.h>
-#include "booktoken.h"
+#include <qlist.h>
+#include <qstring.h>
+#include <qpixmap.h>
+
+#include <ksimpleconfig.h>
+
+class KBookmarkManager;
 
 class KBookmark
 {
+  friend KBookmarkManager;
+  
 public:
-	enum { URL, Folder };
+  enum { URL, Folder };
 
-	KBookmark();
-	KBookmark( const char *_text, const char *_url );
+  /**
+   * Creates a real bookmark ( type = Folder ) and saves the bookmark on the disk.
+   */
+  KBookmark( KBookmarkManager *, KBookmark *_parent, const char *_text, const char *_url );
+  
+  const char *text() { return m_text; }
+  const char *url() { return m_url; }
+  int type() { return m_type; }
+  int id() { return m_id; }
+  const char* file() { return m_file; }
+  QPixmap* pixmap();
+  QPixmap* miniPixmap();
+  
+  void append( KBookmark *_bm ) { m_lstChildren.append( _bm ); }
+  
+  QList<KBookmark> *children() { return &m_lstChildren; }
+  
+  KBookmark* findBookmark( int _id );
+ 
+  static QString encode( const char* );
+  static QString decode( const char* );
+  
+protected:
+  /**
+   * Creates a folder.
+   */
+  KBookmark( KBookmarkManager *, KBookmark *_parent, const char *_text );
+  /**
+   * Creates a bookmark from a file.
+   */
+  KBookmark( KBookmarkManager *, KBookmark *_parent, const char *_text, KSimpleConfig& _cfg );
 
-	void clear();
+  void clear();
+  
+  QString m_text;
+  QString m_url;
+  QString m_file;
+  
+  QPixmap* m_pPixmap;
+  QPixmap* m_pMiniPixmap;
+  
+  int m_type;
+  int m_id;
+  
+  QList<KBookmark> m_lstChildren;
 
-	void setText( const char *_text )	{	text = _text; }
-	void setURL( const char *_url )	{	url = _url; }
-	void setType( int _type )	{	type = _type; }
-
-	const char *getText()	{	return text; }
-	const char *getURL()	{	return url; }
-	int getType()	{	return type; }
-
-	QList<KBookmark> &getChildren() 	{ return children; }
-
-private:
-	QString text;
-	QString url;
-	int type;
-	QList<KBookmark> children;
+  KBookmarkManager *m_pManager;
 };
 
 class KBookmarkManager : public QObject
 {
-	Q_OBJECT
+  friend KBookmark;
+  
+  Q_OBJECT
 public:
-	KBookmarkManager();
+  KBookmarkManager();
+  
+  void scan( const char *filename );
 
-	void setTitle( const char *t )
-		{	title = t; }
+  KBookmark* root() { return &m_Root; }
+  KBookmark* findBookmark( int _id ) { return m_Root.findBookmark( _id ); }
 
-	void read( const char *filename );
-	void write( const char *filename );
-
-	void add( const char *_text, const char *_url );
-	// rich
-	bool remove(int);
-	bool moveUp(int);
-	bool moveDown(int);
-	void reread();
-	void rename(int, const char *);
-	/**
-	 * Overloaded to reread the last file loaded
-	 */
-	void write();
-
-	KBookmark *getBookmark( int id );
-	KBookmark *getRoot()	{	return &root; }
-
-private:
-	const char *parse( BookmarkTokenizer *ht, KBookmark *parent, const char *_end);
-	void	writeFolder( QTextStream &stream, KBookmark *parent );
-	KBookmark *findBookmark( KBookmark *parent, int id, int &currId );
-
+  void emitChanged();
+  
 signals:
-	void changed();
+  void changed();
 
-private:
-	KBookmark root;
-	QString title;
-	// rich
-        QString myFilename;
+public slots:
+  void slotNotify( const char* _url );
+  
+protected:
+  void scanIntern( KBookmark*, const char *filename );
+
+  void disableNotify() { m_bNotify = false; }
+  void enableNotify() { m_bNotify = true; }
+    
+  KBookmark m_Root;
+  bool m_bAllowSignalChanged;
+  bool m_bNotify;
 };
 
 #endif	// __BOOKMARK_H__

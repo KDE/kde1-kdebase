@@ -169,7 +169,7 @@ void KFMServer::slotOpenURL( const char* _url )
 	}
 
 	KFMExec* exec = new KFMExec;
-	exec->openURL( _url );
+	exec->openURL( url );
 	return;
     }
     

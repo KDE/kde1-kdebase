@@ -90,12 +90,19 @@ void InitStaticMembers()
      * would never get called (Aix, Alpha,...). In the next versions these
      * elements should disappear.
      */
+    debugT("A\n");
     KMimeBind::InitStatic();
+    debugT("B\n");
     KMimeType::InitStatic();
+    debugT("C\n");
     HTMLCache::InitStatic();
+    debugT("D\n");
     KfmGui::InitStatic();
+    debugT("E\n");
     KfmView::InitStatic();
+    debugT("F\n");
     KIOJob::InitStatic();
+    debugT("G\n");
 }
 
 int main( int argc, char ** argv )
@@ -107,11 +114,14 @@ int main( int argc, char ** argv )
     testDir2( "/.kde/share/apps/kfm" );
     testDir2( "/.kde/share/apps/kfm/cache" );
     testDir2( "/.kde/share/apps/kfm/tmp" );
+    testDir2( "/.kde/share/apps/kfm/bookmarks" );
     testDir2( "/.kde/share/icons" );
     testDir2( "/.kde/share/icons/mini" );
     testDir2( "/.kde/share/applnk" );
     testDir2( "/.kde/share/mimelnk" );
 
+    debugT("1\n");
+    
     QString c;
     
     // Clean this directory
@@ -134,17 +144,34 @@ int main( int argc, char ** argv )
     }
     else
 	fclose( f2 );
-
-    KApplication a( argc, argv, "kfm" );
-
-    InitStaticMembers();
     
+    debugT("2\n");
+    
+    KApplication a( argc, argv, "kfm" );
+    
+    debugT("4\n");
+
     // Stephan: I must find a better place for this somewhen
     KFMPaths::initPaths();
-    
+
+    debugT("1. Init KIOManager\n");
+
+    //Stephan: This variable is not deleted here, but in the 
+    // slotQuit methode of KFileWindow. I'm not that sure, if
+    // this is the best way! 
+    (void)new KIOServer();
+
+    debugT("3\n");
+
+    InitStaticMembers();
+
+    debugT("5\n");    
+
     // Test for existing Templates
     bool bTemplates = true;
-    
+
+    debugT("6\n");
+
     DIR* dp = opendir( KFMPaths::TemplatesPath().data() );
     if ( dp == NULL )
 	bTemplates = false;
@@ -229,13 +256,6 @@ int main( int argc, char ** argv )
 	    if ( strchr( argv[arg], 's' ) != 0L )
 		KfmGui::sumode = true;
 	}
-
-    debugT("1. Init KIOManager\n");
-
-    //Stephan: This variable is not deleted here, but in the 
-    // slotQuit methode of KFileWindow. I'm not that sure, if
-    // this is the best way! 
-    (void)new KIOServer();
 
     debugT("2. Init FileTypes\n");
     
