@@ -103,11 +103,11 @@ msgstr "Fenster angeheften - aus"
 
 #: syssound.cpp:169
 msgid "Window Trans New"
-msgstr ""
+msgstr "Neues Dialogfenster"
 
 #: syssound.cpp:170
 msgid "Window Trans Delete"
-msgstr ""
+msgstr "Dialogfenster löschen"
 
 #: syssound.cpp:171
 msgid "Logout"
