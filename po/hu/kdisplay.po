@@ -1,0 +1,269 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-08-27 15:03+0200\n"
+"PO-Revision-Date: 1997-11-13 12:20+0100\n"
+"Last-Translator: John Zero <johnzero@telnet.hu>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:53
+msgid "KDE Display Configuration"
+msgstr "KDE kijelzõ beállítások"
+
+#: main.cpp:130
+#, c-format
+msgid ""
+"Usage: %s -init|-setup\n"
+"\n"
+msgstr ""
+"Használat: %s -init|-setup\n"
+"\n"
+
+#: main.cpp:131
+msgid "  -init               apply current settings to the display\n"
+msgstr "  -init               a jelenlegi beállításokat alkalmazza a kijelzõre\n"
+
+#: main.cpp:132
+msgid "  -setup              setup the display\n"
+msgstr "  -setup              a kijelzõ beállítása\n"
+
+#: backgnd.cpp:140 colorscm.cpp:293
+msgid "Background"
+msgstr "Háttér"
+
+#: backgnd.cpp:165
+msgid "Color"
+msgstr "Szín"
+
+#: backgnd.cpp:185
+msgid "Flat"
+msgstr "Sima"
+
+#: backgnd.cpp:189
+msgid "Gradient"
+msgstr "Átmenet"
+
+#: backgnd.cpp:202
+msgid "Portrait"
+msgstr "Álló"
+
+#: backgnd.cpp:206
+msgid "Landscape"
+msgstr "Fekvõ"
+
+#: backgnd.cpp:224
+msgid "Wallpaper"
+msgstr "Tapéta"
+
+#: backgnd.cpp:257
+msgid "Tiled"
+msgstr "Ismétlõdõ"
+
+#: backgnd.cpp:261
+msgid "Centred"
+msgstr "Középen"
+
+#: backgnd.cpp:265
+msgid "Scaled"
+msgstr "Nyújtott"
+
+#: backgnd.cpp:272
+msgid "Browse..."
+msgstr "Tallózás..."
+
+#: scrnsave.cpp:45
+msgid "Ignore"
+msgstr ""
+
+#: scrnsave.cpp:47
+msgid "Lock"
+msgstr ""
+
+#: scrnsave.cpp:103 scrnsave.cpp:161
+msgid "Screen Saver"
+msgstr "Képernyõvédõ"
+
+#: scrnsave.cpp:182
+msgid "Setup..."
+msgstr "Beállítás..."
+
+#: scrnsave.cpp:186
+msgid "Test"
+msgstr "Tesztelés"
+
+#: scrnsave.cpp:194
+msgid "Settings"
+msgstr "Beállítások"
+
+#: scrnsave.cpp:197
+msgid "Wait:"
+msgstr "Várjon:"
+
+#: scrnsave.cpp:208
+msgid "min"
+msgstr "percet"
+
+#: scrnsave.cpp:211
+msgid "Requires Password"
+msgstr "Jelszó szükséges"
+
+#: scrnsave.cpp:216
+msgid "Priority:"
+msgstr "Prioritás"
+
+#: colorscm.cpp:326 scrnsave.cpp:219
+msgid "High"
+msgstr "Nagy"
+
+#: colorscm.cpp:322 scrnsave.cpp:222
+msgid "Low"
+msgstr "Kicsi"
+
+#: colorscm.cpp:139 colorscm.cpp:140
+msgid "Inactive window"
+msgstr "Inaktív ablak"
+
+#: colorscm.cpp:155 colorscm.cpp:156
+msgid "Active window"
+msgstr "Aktív ablak"
+
+#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:298
+msgid "Window text"
+msgstr "Ablak szövege"
+
+#: colorscm.cpp:209
+msgid "Disabled"
+msgstr "Kikapcsolt"
+
+#: colorscm.cpp:216 colorscm.cpp:217
+msgid "Selected"
+msgstr "Kiválasztott"
+
+#: colorscm.cpp:252 colorscm.cpp:262
+msgid "Color Scheme"
+msgstr "Szín kompozíció"
+
+#: colorscm.cpp:276
+msgid "Remove"
+msgstr "Töröl"
+
+#: colorscm.cpp:284
+msgid "Widget color"
+msgstr "Widget színe"
+
+#: colorscm.cpp:289
+msgid "Inactive title bar"
+msgstr "Inaktív címsor"
+
+#: colorscm.cpp:290
+msgid "Inactive title text"
+msgstr "Inaktív címsor szövege"
+
+#: colorscm.cpp:291
+msgid "Active title bar"
+msgstr "Aktív címsor"
+
+#: colorscm.cpp:292
+msgid "Active title text"
+msgstr "Aktív címsor szövege"
+
+#: colorscm.cpp:294
+msgid "Text"
+msgstr "Szöveg"
+
+#: colorscm.cpp:295
+msgid "Select background"
+msgstr "Háttér kiválasztása"
+
+#: colorscm.cpp:296
+msgid "Select text"
+msgstr "Szöveg kiválasztása"
+
+#: colorscm.cpp:297
+msgid "Window background"
+msgstr "Ablak háttere"
+
+#: colorscm.cpp:309
+msgid "Contrast"
+msgstr "Kontraszt"
+
+#: colorscm.cpp:341
+msgid "Save scheme"
+msgstr "Kompozíció mentése"
+
+#: colorscm.cpp:372 colorscm.cpp:380
+msgid "You have chosen a name used by a supplied color scheme"
+msgstr "Ilyen nevû kompozíció már van"
+
+#: colorscm.cpp:463
+msgid "KDE Default"
+msgstr "KDE alap"
+
+#: colorscm.cpp:687
+msgid "Display Setup"
+msgstr "Kijelzõ beállítása"
+
+#: colorscm.cpp:688
+msgid ""
+"No desktop color schemes were found.\n"
+"Do you want to install the default color schemes now ?"
+msgstr ""
+"Nem találtam színkompozíciókat\n"
+"Fel akarod rakni az alapértelmezetteket most ?"
+
+#: savescm.cpp:26
+msgid "Name"
+msgstr "Név"
+
+#: general.cpp:55
+msgid "General"
+msgstr "Általános"
+
+#: general.cpp:59
+msgid "Widget style"
+msgstr "Megjelenés"
+
+#: general.cpp:64
+msgid "Motif"
+msgstr ""
+
+#: general.cpp:65
+msgid "Windows 95"
+msgstr ""
+
+#: general.cpp:74
+msgid "Fonts"
+msgstr "Betûk"
+
+#: general.cpp:79
+msgid "General font"
+msgstr "Általános betû"
+
+#: general.cpp:104
+msgid "Sample"
+msgstr "Minta"
+
+#: general.cpp:110
+msgid "Small"
+msgstr "Kicsi"
+
+#: general.cpp:114
+msgid "Medium"
+msgstr "Közepes"
+
+#: general.cpp:118
+msgid "Large"
+msgstr "Nagy"
+
+#: general.cpp:135
+msgid "Italic"
+msgstr "Dõlt"
+
+#: kwmcom.cpp:80 kwmcom.cpp:107
+msgid "kwmcom: communication with kwm failed\n"
+msgstr "kwmcom: nem tudok kommunikálni a kwm-el!\n"
+
+
