@@ -2,17 +2,16 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kwm\n"
+"Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1998-01-16 22:09+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"PO-Revision-Date: 1998-01-20 10:09 MET\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
-"Language-Team: czech <LL@li.org>\n"
+"Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
-"Content-Transfer-Encoding: iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:57
 msgid "&Windows"
@@ -28,7 +27,7 @@ msgstr "&Titulek"
 
 #: main.cpp:69
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar}]\n"
-msgstr ""
+msgstr "Pou¾ití: kcmkwm [-init | {windows,buttons,titlebar}]\n"
 
 #: main.cpp:98
 msgid "Window manager style"
