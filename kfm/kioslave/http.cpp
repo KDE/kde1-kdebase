@@ -88,17 +88,21 @@ KProtocolHTTP::KProtocolHTTP()
     char *proxy = 0L;
     int port = 80;
 
+    QString prxport;
+    QString prxurl;
+    
     // All right. Now read the proxy settings
     KSimpleConfig prxcnf(KApplication::localconfigdir() + "/kfmrc");
     prxcnf.setGroup("Browser Settings/Proxy");
 
-    // Do we need mr. proxy?
-    if ( ! (prxcnf.readEntry("HTTP-URL")).isEmpty() ) {
+    prxurl = prxcnf.readEntry("HTTP-URL");
+    if ( ! prxurl.isEmpty() ) {	// Do we need proxy?
         // Ok, now build the url
+        prxport = prxcnf.readEntry("HTTP-Port");
         QString tmp("http://");
-        tmp += prxcnf.readEntry("HTTP-URL");
+        tmp += prxurl;
         tmp += ":";
-        tmp += prxcnf.readEntry("HTTP-Port");
+        tmp += prxport;
         printf("Using proxy: %s\n", tmp.data());
 
 	KURL u( tmp );
@@ -107,14 +111,17 @@ KProtocolHTTP::KProtocolHTTP()
 	    QMessageBox::message( "KFM Error", "HTTP Proxy URL malformed\nProxy disabled." );
 	    return;
 	}
-	proxy = u.host();
-	port = u.port();
+//	proxy = u.host();
+//	port = u.port();
+	proxy = prxurl.data();
+	port = prxport.toInt();
 	if ( port == 0 )
 	    port = 80;
 	
 	if(proxy)
 	{
 		init_sockaddr(&proxy_name, proxy, port);
+		printf("Using proxy\n");
 		use_proxy = 1;
 	}
     }

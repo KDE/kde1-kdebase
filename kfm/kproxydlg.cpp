@@ -31,6 +31,12 @@ KProxyDlg::KProxyDlg(QWidget *parent=0, const char *name=0, WFlags f)
   lb_ftp_port->setGeometry(230, 110, 40, 30);
   le_ftp_port = new QLineEdit(this);
   le_ftp_port->setGeometry(280, 110, 55, 30);
+
+  lb_no_prx = new QLabel(klocale->translate("No Proxy for:"), this);
+  lb_no_prx->setAlignment(AlignRight | AlignVCenter);
+  lb_no_prx->setGeometry(20, 200, 80, 30);
+  le_no_prx = new QLineEdit(this);
+  le_no_prx->setGeometry(110, 200, 225, 30);
 }
 
 KProxyDlg::~KProxyDlg()
@@ -55,6 +61,7 @@ void KProxyDlg::setData(QStrList *strList)
   le_http_port->setText(strList->next());
   le_ftp_url->setText(strList->next());
   le_ftp_port->setText(strList->next());
+  le_no_prx->setText(strList->next());
 }
 
 static QStrList strList(true);
@@ -63,10 +70,10 @@ QStrList KProxyDlg::data() const
 {
   strList.clear();
   strList.append(le_http_url->text());
-  // printf("KProxyDlg: appending %s\n", le_http_url->text());
   strList.append(le_http_port->text());
   strList.append(le_ftp_url->text());
   strList.append(le_ftp_port->text());
+  strList.append(le_no_prx->text());
   return strList;
 }
 

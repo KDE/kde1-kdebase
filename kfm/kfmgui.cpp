@@ -1430,6 +1430,7 @@ void KfmGui::slotConfigureBrowser()
   prxStrList.append(config->readEntry("HTTP-Port", ""));
   prxStrList.append(config->readEntry("FTP-URL", ""));
   prxStrList.append(config->readEntry("FTP-Port", ""));
+  prxStrList.append(config->readEntry("NoProxyFor", ""));
   
   // transmit data to dialog
   dlg.setProxyData(&prxStrList);
@@ -1466,6 +1467,7 @@ void KfmGui::slotConfigureBrowser()
 	  config->writeEntry("HTTP-Port", strlist.next());
 	  config->writeEntry("FTP-URL", strlist.next());
 	  config->writeEntry("FTP-Port", strlist.next());
+	  config->writeEntry("NoProxyFor", strlist.next());
 	}
 
   // restore the group

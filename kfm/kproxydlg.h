@@ -33,6 +33,10 @@ Q_OBJECT
     QLineEdit *le_http_url;
     QLabel *lb_http_port;
     QLineEdit *le_http_port;  
+
+    // "no proxy for" fields
+    QLabel *lb_no_prx;
+    QLineEdit *le_no_prx;
 };
 
 #endif // __KPROXYDLG_H

@@ -115,3 +115,10 @@
  - Patched KFM for "QString kdedir()". If I get the guy who did this .... grrrrr!!!
    Dragging multiple files to the tree view odes not crash KFM on my system now,
    since this dialog box does no longer appear while a drag is initialized.
+
+06.01.97 Lars Hoss
+
+ - Added dialog for proxy settings.
+ - Modified KProtocolHTTP to read its proxy settings from kfmrc.
+   The enviroment variable http_proxy is no longer used!
+ 
