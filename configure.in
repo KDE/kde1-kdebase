@@ -104,9 +104,6 @@ AC_CHECK_KDM dnl in kdminclude.m4
 
 if test "$SETUIDFLAGS" = ""; then 
  if test "$shadow_support" = "no"; then
-  if test "$ac_have_shadow" = "yes"; then
-    AC_WARN("You have shadow password! You should use --enable-setuid!")
-  fi
   SETUIDFLAGS=""
  else
   SETUIDFLAGS="-m 4755"
