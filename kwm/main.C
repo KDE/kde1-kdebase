@@ -201,6 +201,10 @@ void sighandler(int) {
 
 
 
+bool focus_grabbed(){
+  return minicli?minicli->isVisible():False;
+}
+
 void show_minicli(){
   if (!minicli){
     minicli = new Minicli(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);

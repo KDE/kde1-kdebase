@@ -20,6 +20,7 @@ In 0.10:
          of the previous session.
        - new list entry "proxyignore" in the [session]-group of kwmrc
          to specify WM_COMMANDS that should be ignored
+       - fixed the minicli-focus-follow-mouse problem
           
   patchlevel 14:
        - new keybindings Control-F[1..8] for virtual desktop switching

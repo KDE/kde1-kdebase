@@ -30,6 +30,7 @@ static char stipple_bits[] = {
 extern bool ignore_badwindow; // for the X error handler
 extern bool initting;
 
+extern bool focus_grabbed();
 extern void show_minicli();
 
 Manager::Manager(): QObject(){
@@ -890,6 +891,8 @@ void Manager::addClient(Client* c){
 
 void Manager::activateClient(Client* c, bool set_revert){
   Client* cc = current();
+  if (focus_grabbed())
+    return;
   if (c == cc)
     return;
   if (cc)
