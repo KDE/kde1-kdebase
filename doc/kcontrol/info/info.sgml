@@ -13,7 +13,7 @@
 
 <!-- Begin the document -->
 
-<sect>Memory Usage
+<sect>Memory Usage Information
 <p>
 This page displays information about the current memory usage. It is updated regularly. 
 <p>
@@ -26,7 +26,7 @@ which is only available if the <tt>/proc</tt> pseudo-filesystem is  compiled int
 <p>
 The user cannot modify any settings on this page.
 
-<sect>Processor
+<sect>Processor Information
 <p>
 This page displays information about the system 
 Central Processing Unit (CPU).
@@ -41,7 +41,7 @@ which is only available if the <tt>/proc</tt> pseudo-filesystem is compiled into
 <p>
 The user cannot modify any settings on this page.
  
-<sect>Interrupt Request (IRQ) Lines in Use.
+<sect>Interrupt Request (IRQ) Lines in Use 
 <p>
 This page displays information about the Interrupt Request
 Lines in use, and the devices that use them.
@@ -68,7 +68,7 @@ which is only available if the <tt>/proc</tt> pseudo-filesystem is  compiled int
 <p>
 The user cannot modify any settings on this page.
  
-<sect>DMA Channels
+<sect>DMA Channel Information
 <p>
 This page displays information about the DMA (Direct Memory
 Access) Channels.  A DMA channel is a direct connection 
@@ -85,7 +85,7 @@ A list of all currently-registered (ISA bus) DMA channels that are in use is sho
 <p>
 The user cannot modify any settings on this page.
  
-<sect>I/O-ports
+<sect>I/O-port Information
 <p>
 This page displays information about the I/O-ports.
 
@@ -125,7 +125,7 @@ shown.
 <p>
 The user cannot modify any settings on this page.
  
-<sect>Soundcards
+<sect>Soundcard Information
 <p>
 This page displays information about any soundcards installed in the system.
 <p>
@@ -141,7 +141,7 @@ which is only available if the <tt>/proc</tt> pseudo-filesystem is compiled into
 <p>
 The user cannot modify any settings on this page.
  
-<sect>Available Devices
+<sect>Device Information
 <p>
 This page displays information about the available devices,
 
@@ -156,7 +156,7 @@ Devices are listed by group (Character, Block, or Miscellaneous), and by major n
 <p>
 The user cannot modify any settings on this page.
  
-<sect>SCSI Interfaces
+<sect>SCSI Interface Information
 <p>
 This page displays information about Small Computer Systems Interface (SCSI) Interfaces and the attached SCSI devices.
 
@@ -171,7 +171,7 @@ A listing of all SCSI devices known to the kernel is shown.
 <p>
 The user cannot modify any settings on this page.
  
-<sect>Partitions
+<sect>Partition Information
 <p>
 This page displays information about partitions on your hard drives.
 
@@ -185,7 +185,7 @@ which is only available if the <tt>/proc</tt> pseudo-filesystem  is compiled int
 <p>
 The user cannot modify any settings on this page.
  
-<sect>X-Server
+<sect>X-Server Information
 <p>
 This page displays information about the X-Server being used.
 <p>
