@@ -410,7 +410,8 @@ void kPanel::windowlistActivated(int item){
   }
   else {
     Window w = callbacklist[item];
-    //    delete [] callbacklist;
+    delete [] callbacklist;
+    callbacklist = 0L;
     KWM::activate(w);
   }
 }
