@@ -350,7 +350,6 @@ Client::Client(Window w, Window _sizegrip, QWidget *parent, const char *name_for
     window = w;
     sizegrip = _sizegrip;
 
-    recently_resized = true;
     mouse_release_command = MyApp::MouseNothing;
 
     backing_store = false;
@@ -903,17 +902,9 @@ void Client::leaveEvent( QEvent * ){
     set_x_cursor(normal_cursor);
 }
 
-void Client::paintEvent( QPaintEvent* e){
+void Client::paintEvent( QPaintEvent* ){
   QPainter p;
   p.begin(this);
-  if (recently_resized) {
-      recently_resized = FALSE;
-      // do not set the clipping if recently_resized. Seems to be a
-      // bug in the either e->rect() or the things kwm does in resizeEvent.
-  }
-  else
-      p.setClipRect(e->rect());
-
   if (!options.ShapeMode || getDecoration() != KWM::normalDecoration){
       p.eraseRect(2,2,title_rect.x()-2, TITLEBAR_HEIGHT+BORDER-2);
       p.eraseRect(2,2,width()-4, BORDER-2);
@@ -1081,11 +1072,9 @@ void Client::paintEvent( QPaintEvent* e){
 // }
 
 
-void Client::resizeEvent( QResizeEvent * ){
+void Client::resizeEvent( QResizeEvent * e){
   // we have been resized => we have to layout the window decoration
   // again and adapt our swallowed application window
-  recently_resized = true;
-
   layoutButtons();
 
   switch (getDecoration()){
@@ -1263,6 +1252,12 @@ void Client::resizeEvent( QResizeEvent * ){
 		       ShapeBounding, 0, 0, shapemask.handle(),
 		       ShapeSet );
   }
+  
+  
+  // we are not _really_ northwest gravity
+  if (e->size().width() <= e->oldSize().width() 
+      && e->size().height() <= e->oldSize().height())
+      repaint( FALSE );
 }
 
 // create a new pushbutton associated with the specified button

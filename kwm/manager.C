@@ -281,7 +281,7 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
   XEvent ev;
 
   if (c && c->window == e->window) { // client already exists for this window
-
+      
       // compress configure requests
       while (XCheckTypedWindowEvent (qt_xdisplay(), c->window,
 				     ConfigureRequest, &ev) ) {
@@ -336,8 +336,14 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
     wc.width = dx;
     wc.height = dy;
     wc.border_width = 0;
-    wc.sibling = e->above;
-    wc.stack_mode = e->detail;
+    
+    bool stacking = e->value_mask & CWStackMode;
+    int stack_mode = e->detail;
+    
+    e->value_mask |= ~CWStackMode;
+    e->value_mask |= ~CWSibling;
+    
+    
     e->value_mask |= CWBorderWidth;
 
     // e->parent can have a wrong (obsolete) meaning here!
@@ -363,8 +369,8 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
     XConfigureWindow(qt_xdisplay(), e->window, e->value_mask, &wc);
 
     // take care about transient windows
-    if (e->value_mask & CWStackMode){
-      switch (e->detail){
+    if ( stacking ){
+      switch (stack_mode){
       case Above:
       case TopIf:
  	raiseClient(c);
@@ -2652,7 +2658,19 @@ void Manager::sendConfig(Client* c, bool emit_changed){
   ce.border_width = c->border;
   ce.above = None;
   ce.override_redirect = 0;
+  
   XSendEvent(qt_xdisplay(), c->window, False, StructureNotifyMask, (XEvent*)&ce);
+//   {
+//       XWindowChanges wc;
+//       wc.x = ce.x - c->geometry.x();
+//       wc.y = ce.y - c->geometry.y();
+//       wc.width = ce.width;
+//       wc.height = ce.height;
+//       XConfigureWindow(qt_xdisplay(), c->window, CWX|CWY|CWWidth|CWHeight, &wc);
+//       XConfigureWindow(qt_xdisplay(), c->window, CWX|CWY|CWWidth|CWHeight, &wc);
+//       XConfigureWindow(qt_xdisplay(), c->window, CWX|CWY|CWWidth|CWHeight, &wc);
+//       XConfigureWindow(qt_xdisplay(), c->window, CWX|CWY|CWWidth|CWHeight, &wc);
+//   }
 
   if (emit_changed)
     changedClient(c);

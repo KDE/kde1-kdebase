@@ -222,7 +222,7 @@ public:
   bool isShaded(){
     return shaded;
   }
-    
+
     // is the window supposed to stay on top
   bool isStaysOnTop(){
       return stays_on_top;
@@ -378,7 +378,6 @@ private:
     DRAGGING dragging_state;
     int do_resize;
 
-    bool recently_resized; //hack
     int mouse_release_command; //hack
 
     // set the mouse pointer shape to the specified cursor. Also
