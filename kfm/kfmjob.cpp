@@ -63,7 +63,6 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
 	{
 	    QString str = d.data();
 	    str += e->getName();
-	    debugT("COMPARING '%s' '%s'\n",str.data(),_url );
 	    if ( str == _url )
 		isFile = e->isFile();
 	}
@@ -76,7 +75,8 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
 	_list->clear();
     
     // Can we get a directory listing with the protocol or do we know that it is a file ?
-    if ( KIOServer::getKIOServer()->supports( _url, KIO_List ) && !isFile )
+    // Or does KIOServer know that it is a file
+    if ( KIOServer::getKIOServer()->supports( _url, KIO_List ) && !isFile && KIOServer::isDir( _url ) != 0 )
     {
 	if ( url.right( 1 ) != "/" )
 	    url += "/"; 

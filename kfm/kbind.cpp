@@ -75,10 +75,11 @@ const char* KFolderType::getPixmapFile( const char *_url )
 		{
 		    // We return an folder icon. Otherwise
 		    // we would get a folder icon with access denied!!!
-		    pixmapFile2 = getIconPath();
+		    return folderType->getPixmapFile();
+		    /* pixmapFile2 = getIconPath();
 		    pixmapFile2.detach();
-		    pixmapFile2 += "/folder.xpm";
-		    return pixmapFile2.data();
+		    pixmapFile2 += "/folder.xpm"; 
+		    return pixmapFile2.data(); */
 		}
 	    }
 	}
@@ -150,14 +151,14 @@ const char* KFolderType::getPixmapFile( const char *_url )
     config.setGroup( "KDE Desktop Entry" );
 
     QString icon = config.readEntry( "Icon" );
-    if ( icon.isNull() )
+    if ( icon.isEmpty() )
 	return KMimeType::getPixmapFile( _url );
 
-    pixmapFile2 = getIconPath();
+    /* pixmapFile2 = getIconPath();
     pixmapFile2.detach();
     pixmapFile2 += "/";
-    pixmapFile2 += icon.data();
-    
+    pixmapFile2 += icon.data(); */
+    pixmapFile2 = pixmap_file.data();
     return pixmapFile2.data();
 }
 
@@ -215,40 +216,42 @@ const char* KDELnkMimeType::getPixmapFile( const char *_url )
 	    QString icon2 = config->readEntry( "UnmountIcon" );	    
 	    delete config;
 	    
-	    if ( !dev.isNull() && !icon.isNull() && !icon2.isNull() )
+	    if ( !dev.isEmpty() && !icon.isEmpty() && !icon2.isEmpty() )
 	    {
 		QString mp = KIOServer::findDeviceMountPoint( dev.data() );
-		pixmap_file = getIconPath();
-		pixmap_file.detach();
-		pixmap_file += "/";
+		pixmapFile2 = getIconPath();
+		pixmapFile2.detach();
+		pixmapFile2 += "/";
 		if ( mp.isNull() )
-		    pixmap_file += icon2.data();
+		    pixmapFile2 += icon2.data();
 		else
-		    pixmap_file += icon.data();
-		return pixmap_file.data();
+		    pixmapFile2 += icon.data();
+		return pixmapFile2.data();
 	    }
 	}
 	else
 	{
 	    QString icon = config->readEntry( "Icon" );
 	    delete config;
-	    fprintf(stderr,"ICON=#%s'\n",icon.data());
-	    if ( !icon.isNull() )
+	    debugT("ICON=%s '%s'\n",icon.data(),_url);
+	    if ( !icon.isEmpty() )
 	    {
-		pixmap_file = getIconPath();
-		pixmap_file.detach();
-		pixmap_file += "/";
-		pixmap_file += icon.data();
-		return pixmap_file.data();
+		pixmapFile2 = getIconPath();
+		pixmapFile2.detach();
+		pixmapFile2 += "/";
+		pixmapFile2 += icon.data();
+		return pixmapFile2.data();
 	    }
 	}
     }
     
     // The default behavior.
-    pixmap_file = getIconPath();
+    /* pixmap_file = getIconPath();
     pixmap_file.detach();
     pixmap_file += "/kmailion.xpm";
-    return pixmap_file.data();
+    return pixmap_file.data(); */
+    pixmapFile2 = KMimeType::getPixmapFile( _url );
+    return pixmapFile2.data();
 }
 
 QString KDELnkMimeType::getComment( const char *_url )
@@ -265,7 +268,7 @@ QString KDELnkMimeType::getComment( const char *_url )
 QPixmap& KDELnkMimeType::getPixmap( const char *_url )
 {
     getPixmapFile( _url );
-    pixmap.load( pixmap_file );
+    pixmap.load( pixmapFile2 );
     return pixmap;
 }
 
@@ -695,40 +698,71 @@ void KMimeType::init()
     path += "/share/mimelnk";
     initMimeTypes( path.data() );
 
+    // Otherwise we are not allowed to call 'errorMissingMimeType'
+    defaultType = 0L;
+    // Try to find the default type
     if ( ( defaultType = KMimeType::findByName( "application/octet-stream" ) ) == 0L )
-	errorMissingMimeType( "application/octet-stream" );
-    if ( ( folderType = KMimeType::findByName( "inode/directory" ) ) == 0L )
-	errorMissingMimeType( "inode/directory" );
-    if ( ( lockedfolderType = KMimeType::findByName( "inode/directory-locked" ) ) == 0L )
-	errorMissingMimeType( "inode/directory-locked" );
-    if ( ( BDevType = KMimeType::findByName( "inode/blockdevice" ) ) == 0L )
-	errorMissingMimeType( "inode/blockdevice" );
-    if ( ( CDevType = KMimeType::findByName( "inode/chardevice" ) ) == 0L )
-	errorMissingMimeType( "inode/chardevice" );
-    if ( ( SocketType = KMimeType::findByName( "inode/socket" ) ) == 0L )
-	errorMissingMimeType( "inode/socket" );
-    if ( ( PipeType = KMimeType::findByName( "inode/fifo" ) ) == 0L )
-	errorMissingMimeType( "inode/fifo" );
-    if ( ( batchType = KMimeType::findByName( "application/x-shellscript" ) ) == 0L )
-	errorMissingMimeType( "application/x-shellscript" );
-    if ( ( execType = KMimeType::findByName( "application/x-executable" ) ) == 0L )
-	errorMissingMimeType( "application/x-executable" );
-    if ( ( kdelnkType = KMimeType::findByName( "application/x-kdelnk" ) ) == 0L )
-	errorMissingMimeType( "application/x-kdelnk" );
+	errorMissingMimeType( "application/octet-stream", &defaultType );
 
+    // No default type ?
+    if ( defaultType == 0L )
+	defaultType = new KMimeType( "application/octet-stream", getDefaultPixmap() );
+
+    // No Mime-Types installed ?
+    // Lets do some rescue here.
+    if ( types->count() == 0 )
+    {
+	QMessageBox::message( klocale->translate( "KFM Error" ),
+			      klocale->translate( "No mime types installed!" ) );
+	
+	// Lets have at least the default for all
+	// and dont bother the user any longer
+	folderType = defaultType;
+	lockedfolderType = defaultType;	
+	BDevType = defaultType;
+	CDevType = defaultType;
+	SocketType = defaultType;
+	PipeType = defaultType;
+	batchType = defaultType;
+	execType = defaultType;
+	kdelnkType = defaultType;
+    }
+    else
+    {
+	if ( ( folderType = KMimeType::findByName( "inode/directory" ) ) == 0L )
+	    errorMissingMimeType( "inode/directory", &folderType );
+	if ( ( lockedfolderType = KMimeType::findByName( "inode/directory-locked" ) ) == 0L )
+	    errorMissingMimeType( "inode/directory-locked", &lockedfolderType );
+	if ( ( BDevType = KMimeType::findByName( "inode/blockdevice" ) ) == 0L )
+	    errorMissingMimeType( "inode/blockdevice", &BDevType );
+	if ( ( CDevType = KMimeType::findByName( "inode/chardevice" ) ) == 0L )
+	    errorMissingMimeType( "inode/chardevice", &CDevType );
+	if ( ( SocketType = KMimeType::findByName( "inode/socket" ) ) == 0L )
+	    errorMissingMimeType( "inode/socket", &SocketType );
+	if ( ( PipeType = KMimeType::findByName( "inode/fifo" ) ) == 0L )
+	    errorMissingMimeType( "inode/fifo", &PipeType );
+	if ( ( batchType = KMimeType::findByName( "application/x-shellscript" ) ) == 0L )
+	    errorMissingMimeType( "application/x-shellscript", &batchType );
+	if ( ( execType = KMimeType::findByName( "application/x-executable" ) ) == 0L )
+	    errorMissingMimeType( "application/x-executable", &execType );
+	if ( ( kdelnkType = KMimeType::findByName( "application/x-kdelnk" ) ) == 0L )
+	    errorMissingMimeType( "application/x-kdelnk", &kdelnkType );
+    }
+    
     // Read the application bindings
     path = kapp->kdedir();
     path += "/apps";
     KMimeBind::initApplications( path.data() );
 }
 
-void KMimeType::errorMissingMimeType( const char *_type )
+void KMimeType::errorMissingMimeType( const char *_type, KMimeType **_ptr )
 {
     QString tmp = klocale->translate( "Could not find mime type\r\n" );
     tmp += _type;
     
     QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
-    exit(1);
+    
+    *_ptr = defaultType;
 }
     
 void KMimeType::clearAll()
@@ -803,11 +837,8 @@ KMimeType* KMimeType::findType( const char *_url )
 	// File on the local hard disk ?
 	if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
 	{   
-	    if ( access( _url + 5, R_OK|X_OK ) < 0 )
-	    {
-		debugT("Folder %s status: %s\n", _url, strerror(errno));
+	    if ( access( u.path(), R_OK|X_OK ) < 0 )
 		return lockedfolderType;
-	    }
 	}
 	else
 	{
@@ -1750,7 +1781,7 @@ KMimeType* KMimeType::getMagicMimeType( const char *_url )
 	    KMimeMagicResult* result = KMimeType::findFileType( u.path() );
 
 	    // Is it a directory or dont we know anything about it ?
-	    if ( result->getContent() == 0L || strcmp( "application/x-directory", result->getContent() ) == 0 ) 
+	    if ( result->getContent() == 0L || strcmp( "inode/directory", result->getContent() ) == 0 ) 
 		/* strcmp( "application/x-kdelnk", result->getContent() ) == 0 ) */
 		return KMimeType::findType( _url );
 

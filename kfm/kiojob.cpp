@@ -313,21 +313,18 @@ void KIOJob::copy( QStrList & _src_url_list, const char *_dest_dir_url )
     char *p;
     for ( p = cmSrcURLList.first(); p != 0L; p = cmSrcURLList.next() )
     {
-	KURL su( p );
+	QString tmp = p;
+	// Is there a trailing '/' ? Delete is, so that KURL::filename works
+	if ( tmp.right(1) == "/" && tmp.right(2) != ":/" )
+	    tmp.truncate( tmp.length() - 1 );
+	KURL su( tmp.data() );
 	
 	QString d = _dest_dir_url;
 	d.detach();
-	if ( d.length() > 0 && d.data()[ d.length() - 1 ] != '/' )
+	if ( d.right(1) != "/" )
 	    d += "/";
-	if ( strcmp( su.protocol(), "tar" ) == 0 )
-	    d += su.filename( true );
-	else
-	    d += su.filename();
-
-	// HTTP names may end with '/', so append 'index.html' in this case.
-	if ( d.length() > 0 && d.data()[ d.length() - 1 ] == '/' )
-	    d += "index.html";
-
+	d += su.filename();
+	
 	cmDestURLList.append( d.data() );
     }
 
@@ -348,8 +345,6 @@ void KIOJob::copy( const char *_src_url, const char *_dest_url )
 
 void KIOJob::copy()
 {
-    debugT("Recursion...\n");
-
     QStrList tmpList1;
     QStrList tmpList2;
     
@@ -379,7 +374,9 @@ void KIOJob::copy()
 		if ( ::mkdir( du.path(), buff.st_mode ) == -1 )
 		    if ( errno != EEXIST )
 		    {
-			warning(klocale->translate("ERROR: Could not make directory %s"),du.path());
+			QString tmp;
+			tmp.sprintf( klocale->translate( "Could not make directory\n\r%s" ), du.path() );
+			QMessageBox::message( klocale->translate( "KFM Error" ), tmp.data() );
 			return;
 		    }
 		
@@ -417,8 +414,6 @@ void KIOJob::copy()
 		closedir( dp );
 		
 		// Remove directories from the copy list
-		// cmSrcURLList.removeRef( p );
-		// cmDestURLList.removeRef( p2 );
 		tmpList1.append( p );
 		tmpList2.append( p2 );
 	    }
@@ -426,21 +421,21 @@ void KIOJob::copy()
 
 	++it2;
     }
-    
+
     char *s;
+    for ( s = cmDestURLList.first(); s != 0L; s = cmDestURLList.next() )
+    {
+	KURL u( s );
+	if ( notifyList.find( u.directoryURL( false ) ) == -1 )
+	    notifyList.append( u.directoryURL( false ) );
+    }
+    
     for ( s = tmpList1.first(); s != 0L; s = tmpList1.next() )
 	cmSrcURLList.remove( s );
     for ( s = tmpList2.first(); s != 0L; s = tmpList2.next() )
 	cmDestURLList.remove( s );
     
     cmCount = cmSrcURLList.count();
-
-    for (s = cmDestURLList.first(); s != 0L; s = cmDestURLList.next() )
-    {
-	KURL u( s );
-	if ( notifyList.find( u.directoryURL() ) == -1 )
-	    notifyList.append( u.directoryURL() );
-    }
 
     server->getSlave( this );
 }
@@ -449,10 +444,10 @@ void KIOJob::move( const char *_src_url, const char *_dest_url )
 {
     action = KIOJob::JOB_MOVE;
 
-    cmSrcURLList.clear();
-    cmDestURLList.clear();    
-    cmSrcURLList.append( _src_url );
-    cmDestURLList.append( _dest_url );
+    tmpSrcURLList.clear();
+    tmpDestURLList.clear();    
+    tmpSrcURLList.append( _src_url );
+    tmpDestURLList.append( _dest_url );
 
     move();
 }
@@ -461,12 +456,11 @@ void KIOJob::move( QStrList & _src_url_list, const char *_dest_dir_url )
 {
     action = KIOJob::JOB_MOVE;
     
-    cmSrcURLList.copy( _src_url_list );
-    cmDestURLList.clear();
+    tmpSrcURLList.copy( _src_url_list );
+    tmpDestURLList.clear();
 
-    // Fill cmDestURLList
     char *p;
-    for ( p = cmSrcURLList.first(); p != 0L; p = cmSrcURLList.next() )
+    for ( p = tmpSrcURLList.first(); p != 0L; p = tmpSrcURLList.next() )
     {
 	QString tmp = p;
 	// Is there a trailing '/' ? Delete is, so that KURL::filename works
@@ -480,7 +474,7 @@ void KIOJob::move( QStrList & _src_url_list, const char *_dest_dir_url )
 	    d += "/";
 	d += su.filename();
 	
-	cmDestURLList.append( d.data() );
+	tmpDestURLList.append( d.data() );
     }
 
     move();
@@ -492,10 +486,10 @@ void KIOJob::move()
     skipURLList.clear();
     
     // Recursive directory
-    QListIterator<char> itSrc( cmSrcURLList );
-    QListIterator<char> itDest( cmDestURLList );    
+    QListIterator<char> itSrc( tmpSrcURLList );
+    QListIterator<char> itDest( tmpDestURLList );    
     char *p;
-    char *p2 = cmDestURLList.first();
+    char *p2 = tmpDestURLList.first();
     for ( ; itSrc.current(); ++itSrc )
     {
 	p = itSrc.current();
@@ -525,8 +519,8 @@ void KIOJob::move()
 		    overwriteExistingFiles = true;
 		else if ( button == 2 ) // Skip
 		{
-		    cmSrcURLList.removeRef( p );
-		    cmDestURLList.removeRef( p2 );
+		    skipURLList.append( p );
+		    skipURLList.append( p2 );
 		    continue;
 		}
 		else if ( button == 3 ) // Rename
@@ -575,7 +569,7 @@ void KIOJob::move()
 		    tmpDelURLList.append( su.path() );
 		    // ... and dont try to copy it
 		    skipURLList.append( p );
-
+		    
 		    DIR *dp;
 		    struct dirent *ep;
 		    dp = opendir( su.path() );
@@ -603,8 +597,8 @@ void KIOJob::move()
 				d += "/";
 			    d += ep->d_name;
 			    
-			    cmSrcURLList.append( s.data() );
-			    cmDestURLList.append( d.data() );
+			    tmpSrcURLList.append( s.data() );
+			    tmpDestURLList.append( d.data() );
 			}
 		    }
 		}
@@ -620,13 +614,8 @@ void KIOJob::move()
 	// We moved the files already, so take them from the list
 	else if ( i == 0 )
 	{
-	    cmSrcURLList.removeRef( p );
-	    cmDestURLList.removeRef( p2 );
-	    // ... but send some notifies afterwards
-	    if ( notifyList.find( su.directoryURL( false ) ) == -1 )
-		notifyList.append( su.directoryURL( false ) );
-	    if ( notifyList.find( du.directoryURL( false ) ) == -1 )
-		notifyList.append( du.directoryURL( false ) );
+	    skipURLList.append( p );
+	    skipURLList.append( p2 );
 	}
 	
 	// Dont forget to get the next dest. We get the corresponding src
@@ -634,6 +623,9 @@ void KIOJob::move()
 	++itDest;
     }
 
+    cmDestURLList.clear();
+    cmSrcURLList.clear();
+    
     // Delete the last name from the URL to get the directory we have to notify.
     // If one copies "file:/home/weis/test.txt" to "file:/tmp/trash/test.txt" we have
     // to notify "file:/home/weis/" and "file:/tmp/trash/" about changes.
@@ -643,31 +635,39 @@ void KIOJob::move()
     // "/contrib/kfm.tgz" and "/contrib/kwm.tgz" and so on. In this case we might get
     // directories in here.
     char *s;
-    for (s = cmDestURLList.first(); s != 0L; s = cmDestURLList.next() )
+    for ( s = tmpDestURLList.first(); s != 0L; s = tmpDestURLList.next() )
     {
-	KURL u( s );
+	QString tmp = s;
+	if ( tmp.right(1) == "/" )
+	    tmp.truncate( tmp.length() - 1 );
+	KURL u( tmp );
 	if ( notifyList.find( u.directoryURL( false ) ) == -1 )
 	    notifyList.append( u.directoryURL( false ) );
+	if ( skipURLList.find( s ) == -1 )
+	    cmDestURLList.append( s );
     }
-    for (s = cmSrcURLList.first(); s != 0L; s = cmSrcURLList.next() )
+    for ( s = tmpSrcURLList.first(); s != 0L; s = tmpSrcURLList.next() )
     {
-	KURL u( s );		
+	QString tmp = s;
+	if ( tmp.right(1) == "/" )
+	    tmp.truncate( tmp.length() - 1 );
+	KURL u( tmp );
 	if ( notifyList.find( u.directoryURL( false ) ) == -1 )
 	    notifyList.append( u.directoryURL( false ) );
+	if ( skipURLList.find( s ) == -1 )
+	    cmSrcURLList.append( s );
     }
     
     cmCount = cmSrcURLList.count();
-
-    // Perhaps we already moved the whole stuff in this function ?
-    if ( cmCount == 0 )
-	// Ok, we are already done
-	return;
     
     // Delete subdirectories first => inverse the order of the list
     mvDelURLList.clear();
     for ( p = tmpDelURLList.last(); p != 0L; p = tmpDelURLList.prev() )
+    {
+	debugT(">> REMOVING '%s'\n",p);
 	mvDelURLList.append( p );
-
+    }
+    
     server->getSlave( this );
 }
 
@@ -1359,17 +1359,6 @@ void KIOJob::slaveIsReady()
 		moveDelMode = false;
 	    }
 
-	    /**
-	     * Skip directories.
-	     * 
-	     * @see move
-	     */
-	    while ( skipURLList.find( cmSrcURLList.first() ) != -1 )
-	    {
-		cmSrcURLList.removeRef( cmSrcURLList.first() );
-		cmDestURLList.removeRef( cmDestURLList.first() );
-	    }
-	    
 	    if ( cmSrcURLList.count() == 0 )
 	    {
 		char *p;
@@ -1617,7 +1606,7 @@ void KIOJob::done()
 	debugT("NOTIFY '%s'\n",s);
 	if ( globalNotify )
 	    KIOServer::sendNotify( s );
-	emit notify( id, s );
+	emit notify( id, s ); 
     }
 
     if ( action == KIOJob::JOB_MOUNT || action == KIOJob::JOB_UNMOUNT )

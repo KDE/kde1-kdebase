@@ -160,11 +160,13 @@ void KfmView::slotStop()
 
 void KfmView::slotReload()
 {
+    debugT("################## RELOAD ########################\n");
     manager->openURL( manager->getURL(), true );
 }
 
 void KfmView::slotUpdateView()
 {
+    debugT("################## UPDATE ########################\n");
     if ( isFrame() )
     {
 	KfmView *v;
@@ -177,6 +179,7 @@ void KfmView::slotUpdateView()
 
 void KfmView::slotMountNotify()
 {
+    debugT("################## MOUNT ########################\n");
     KURL u( manager->getURL().data() );
     
     if ( strcmp( u.protocol(), "file:" ) == 0 && !u.hasSubProtocol() )
@@ -185,6 +188,7 @@ void KfmView::slotMountNotify()
 
 void KfmView::slotFilesChanged( const char *_url )
 {
+    debugT("################## FILES CHANGED ########################\n");
     QString u1 = _url;
     if ( u1.right( 1 ) != "/" )
 	u1 += "/";
@@ -511,6 +515,7 @@ const char * KfmView::getURL()
 
 void KfmView::openURL( const char *_url )
 {
+    debugT("############### openURL ######################\n");
     manager->openURL( _url );
 }
 
@@ -518,8 +523,6 @@ void KfmView::slotURLToStack( const char *_url )
 {
     if ( stackLock )
 	return;
-    
-    debugT("Moving '%s' on STACK\n",_url);
     
     QString *s = new QString( _url );
     s->detach();

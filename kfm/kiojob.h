@@ -237,6 +237,9 @@ protected:
      * @see #del
      */
     KStrList tmpDelURLList;
+    KStrList tmpSrcURLList;
+    KStrList tmpDestURLList;
+    
     /**
      * Tells which source files should not be worked on.
      *

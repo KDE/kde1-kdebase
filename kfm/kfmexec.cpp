@@ -106,7 +106,7 @@ void KFMExec::openURL( const char *_url  )
     // This gives us some speedup on local hard disks.
     if ( KIOServer::isDir( _url ) == 0 && !u.hasSubProtocol() && strcmp( u.protocol(), "file" ) == 0 )
     {    
-	tryURL = openLocalURL( u.path() );
+	tryURL = openLocalURL( _url );
 	if ( tryURL.isEmpty() )
 	    return;
     }
@@ -261,22 +261,24 @@ void KFMExec::slotSetDone()
     bDone = TRUE;
 }
 
-QString KFMExec::openLocalURL( const char *_filename )
+QString KFMExec::openLocalURL( const char *_url )
 {
+    KURL u( _url );
+    
     QString tryURL;
     
-    KMimeType *typ = KMimeType::getMagicMimeType( _filename );
-    debugT("URL='%s' Type: '%s'\n",_filename,typ->getMimeType());
+    KMimeType *typ = KMimeType::getMagicMimeType( _url );
+    debugT("URL='%s' Type: '%s'\n",_url,typ->getMimeType());
     // A HACK
     // We must support plugin protocols here!
     // Do we try to open a tar file?
     // tar files ( zipped ones ) can be recognized by extension very fast
-    QString tmp = _filename;
+    QString tmp = _url;
     if ( tmp.right(4) == ".tgz" || tmp.right(7) == ".tar.gz" )
     {
 	// We change the destination on the fly
 	tryURL = "file:";
-	tryURL += _filename;
+	tryURL += u.path();
 	tryURL += "#tar:/";
     }	
     // Zipped file
@@ -284,8 +286,14 @@ QString KFMExec::openLocalURL( const char *_filename )
     {
 	// We change the destination on the fly
 	tryURL = "file:";
-	tryURL += _filename;
+	tryURL += u.path();
 	tryURL += "#gzip:/";
+	// Dont forget the reference if there was one.
+	if ( u.reference() != 0L && u.reference()[0] != 0 )
+	{
+	    tryURL += "#";
+	    tryURL += u.reference();
+	}
     }
     // Uncompressed tar file
     else if ( /* tmp.right(4) == ".tgz" || tmp.right(4) == ".tar" || tmp.right(7) == ".tar.gz" 
@@ -293,20 +301,19 @@ QString KFMExec::openLocalURL( const char *_filename )
     {
 	// We change the destination on the fly
 	tryURL = "file:";
-	tryURL = _filename;
+	tryURL += u.path();
 	tryURL += "#tar:/";
     }	
     // HTML stuff is handled by us
     else if ( strcmp( typ->getMimeType(), "text/html" ) == 0L )
     {
-	tryURL = "file:";
-	tryURL += _filename;
+	tryURL = _url;
     }
     // Executables
     else if ( strcmp( typ->getMimeType(), "application/x-executable" ) == 0L ||
 	      strcmp( typ->getMimeType(), "application/x-shellscript" ) == 0L )
     {
-	KMimeBind::runCmd( _filename );
+	KMimeBind::runCmd( _url );
 	// No URL left since we have done the job
 	// => return an empty string
 	return QString();
@@ -315,16 +322,13 @@ QString KFMExec::openLocalURL( const char *_filename )
     {
 	debugT("EXEC MIMETYPE\n");
 	// Execute the best matching binding for this URL.
-	QString u = "file:";
-	u += _filename;
-	if ( typ->run( u ) )
+	if ( typ->run( _url ) )
 	    // No URL left since we have done the job
 	    // => return an empty string
 	    return QString();
 
 	// We could not execute the mimetype
-	tryURL = "file:";
-	tryURL += _filename;
+	tryURL += _url;
     }
     
     return tryURL;

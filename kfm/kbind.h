@@ -303,9 +303,15 @@ public:
     
     /**
      * @return the full qualified filename ( not an URL ) for the icons
-     *         pixmap.
+     *         pixmap. For example *.kdelnk files icon depends on
+     *         the content of the *.kdelnk file => You must tell
+     *         about the URL if you want this feature.
      */
     virtual const char* getPixmapFile( const char *_url );
+    /**
+     * This function returns the default icon.
+     */
+    const char* getPixmapFile() { return pixmap_file.data(); }
     /**
      * @returns the pixmap that is associated with this kind of
      *          mime type.
@@ -449,8 +455,11 @@ public:
     /**
      * Prints out an error and exits if the mime type '_type'
      * is missing but required.
+     *
+     * @param _ptr is filled with some default mime type to prevent
+     *             KFM from segfaulting.
      */
-    static void errorMissingMimeType( const char *_type );
+    static void errorMissingMimeType( const char *_type, KMimeType **_ptr );
 
     /**
      * @return the path for the icons
@@ -459,12 +468,29 @@ public:
 
     static const char* getDefaultPixmap() { return "unknown.xpm"; }
     
+    /**
+     * Initializes the mime type detection module.
+     */
     static void initKMimeMagic();
+    /**
+     * @return a pointer to the mime type detection module.
+     */
     static KMimeMagic* getKMimeMagic() { return magic; }
+    /**
+     * Query the mime type detection module.
+     *
+     * @param _filename must be a valid file/directory on the
+     *                  local hard disk. It may NOT contain a
+     *                  protocol, since it is NOT an URL.
+     */
     static KMimeMagicResult* findFileType( const char *_filename ) 
     {
 	return magic->findFileType( _filename );
     }
+    /**
+     * Tries to detect the mime type by looking at some sample string
+     * of given length.
+     */
     static KMimeMagicResult* findBufferType( const char *_sample, int _len ) 
     {
 	return magic->findBufferType( _sample, _len );
@@ -608,6 +634,16 @@ public:
      * @returns this file types comment.
      */
     virtual QString getComment( const char *_url );
+
+protected:
+
+    /**
+     * The pixmaps full filename.
+     * When a directory contains a '.directory' file, then the corresponding
+     * icon filename is stored here. Since another call to @ref #getPixmap may overwrite
+     * this variable, this causes the whole stuff to be NOT reentrant.
+     */
+    QString pixmapFile2;
 };
 
 #endif

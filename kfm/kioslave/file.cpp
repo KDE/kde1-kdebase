@@ -170,8 +170,11 @@ int KProtocolFILE::OpenDir( KURL *url )
     de = 0L;
     dp = opendir( tmp );
     if ( dp == 0L )
+    {
+	Error(KIO_ERROR_CouldNotRead,"Could not enter directory",errno);
 	return FAIL;
-
+    }
+    
     if ( path.right(1) != "/" )
 	path += "/";
 

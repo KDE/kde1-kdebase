@@ -260,7 +260,7 @@ bool KFMManager::openURL( const char *_url, bool _reload )
     // the best matching binding
     if ( KIOServer::isDir( _url ) == 0 && strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
     {    
-	tryURL = KFMExec::openLocalURL( u.path() );
+	tryURL = KFMExec::openLocalURL( _url );
 	if ( tryURL.isEmpty() )
 	    return false;
 	/*
@@ -619,6 +619,8 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 void KFMManager::slotData( const char *_text, int )
 {
     pageBuffer += _text;
+    if ( bBufferPage )
+	return;
     
     HTMLBuffer += _text;
     do
@@ -756,25 +758,27 @@ void KFMManager::slotMimeType( const char *_type )
 	// passed to 'openURL' in a trailing "/" for example.
 	// Or we got a HTTP redirection or stuff like that.
 	url = job->getURL();
-	// Lets get the directory
 	KURL u( url );
-	QString u2 = u.directoryURL();
+	// Lets get the directory
+	// QString u2 = u.directoryURL();
+
 	// Initialize the HTML widget,
-	// but only if it is NOT a local file
-	if ( u.hasSubProtocol() || strcmp( u.protocol(), "file" ) == 0 )
+	// but only if it is NOT a local file.
+	// For local files we dont provide progressive updates.
+	if ( u.hasSubProtocol() || strcmp( u.protocol(), "file" ) != 0 )
 	{
-	    bBufferPage = TRUE;
-	    view->begin( u2 );
+	    bBufferPage = FALSE;
+	    // view->begin( u2 );
+	    view->begin( url );
 	    view->parse();
 	}
-
+	else
+	    bBufferPage = TRUE;
     }
 }
 
 void KFMManager::slotFinished()
 {
-    debugT("FINISHED\n");
-
     bFinished = TRUE;
 
     // We retrieved a ready to go HTML page ?
@@ -785,8 +789,8 @@ void KFMManager::slotFinished()
 	if ( bBufferPage )
 	{
 	    // Display it now
-	    QString u2 = u.directoryURL();
-	    view->begin( u2 );
+	    // QString u2 = u.directoryURL();
+	    view->begin( url );
 	    view->write( pageBuffer );
 	    view->parse();
 	}

@@ -528,7 +528,7 @@ int KIOServer::isDir( const char *_url )
     else if ( strcmp( u.protocol(), "http" ) == 0 )
 	return 0;
     // Local filesystem without subprotocol
-    else if ( strcmp( u.protocol(), "file" ) == 0 && ( u.reference() == 0L || *(u.reference()) == 0 ) )
+    else if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
     {
 	QString myfn = u.path();
 	KURL::decodeURL(myfn);

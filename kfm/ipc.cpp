@@ -100,8 +100,12 @@ IPCMemory read_mem( char *_data, int &_pos, int _len )
     if ( tmp == -1 )
 	return IPCMemory( 0L, 0 );
     
-    char *str = (char*)malloc(tmp);
+    // Add one byte for the trailing 0.
+    // Perhaps someone transfers ASCII and
+    // does not want to be bothered with the 0.
+    char *str = (char*)malloc(tmp + 1);
     memcpy( str, _data + _pos, tmp );
+    str[ tmp ] = 0;
     _pos += tmp;
     return IPCMemory( str, tmp );
 }
