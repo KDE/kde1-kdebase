@@ -18,6 +18,7 @@ Comment[pt_BR]=Visualizador de arquivos PDF
 Comment[it]=Visualizzatore di file PDF
 Comment[cs]=Prohlí¾eè PDF souborù
 Comment[sk]=Prehliadaè PDF súborov
+Comment[ro]=Vizualizor de documente PDF
 Exec=xpdf
 Icon=gv.xpm
 TerminalOptions=

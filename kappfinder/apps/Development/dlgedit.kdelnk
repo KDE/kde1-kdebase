@@ -18,6 +18,7 @@ Comment[pt_BR]=Editor de diálogos do Qt
 Comment[it]=Editor finestre di Dialogo Qt
 Comment[cs]=Editor dialogù pro Qt
 Comment[sk]=Editor dialógov pre Qt
+Comment[ro]=Editor de dialoguri Qt
 Exec=dlgedit
 Icon=kcmkwm.xpm
 TerminalOptions=

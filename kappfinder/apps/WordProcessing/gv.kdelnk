@@ -18,6 +18,7 @@ Comment[pt_BR]=Visualizador de arquivos Postscript
 Comment[it]=Visualizzatore File Postscript
 Comment[cs]=Prohlí¾eè Postscriptových souborù
 Comment[sk]=Prehliadaè postskriptových súborov
+Comment[ro]=Vizualizor de fiºiere PostScript
 Exec=gv
 Icon=gv.xpm
 TerminalOptions=

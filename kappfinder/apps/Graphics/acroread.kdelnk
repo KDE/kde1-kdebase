@@ -9,6 +9,7 @@ Type=Application
 DocPath=
 Comment=PDF document viewer
 Comment[no]=PDF-dokumentfremviser
+Comment[ro]=Vizualizor de documente PDF
 Terminal=0
 MiniIcon=kghostview.xpm
 Caption=PDF Viewer

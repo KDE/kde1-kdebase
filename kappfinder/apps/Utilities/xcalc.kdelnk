@@ -18,6 +18,7 @@ Comment[pt_BR]=Calculadora X
 Comment[it]=Calcolatrice
 Comment[cs]=Calkulátor pro XWindow
 Comment[sk]=Kalkulaèka pre XWindow
+Comment[ro]=Calculator
 Exec=xcalc
 Icon=xcalc.xpm
 TerminalOptions=

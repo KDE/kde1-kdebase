@@ -18,6 +18,7 @@ Comment[pt_BR]=Visualizador da área de transferência do X
 Comment[it]=Visualizzazione Appunti
 Comment[cs]=Prohlí¾eè clipboardu
 Comment[sk]=Prehliadaè clipboardu
+Comment[ro]=Vizualizare Clipboard
 Exec=xclipboard
 Icon=kfind.xpm
 TerminalOptions=

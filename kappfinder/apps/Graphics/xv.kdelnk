@@ -18,6 +18,7 @@ Comment[pt_BR]=Visualizador de Imagens
 Comment[it]=Visualizzatore Immagini XV
 Comment[cs]=Prohlí¾eè obrázkù
 Comment[sk]=Prehliadaè obrázkov
+Comment[ro]=Vizualizor de imagini în diverse formate
 Exec=xv
 Icon=xv.xpm
 TerminalOptions=

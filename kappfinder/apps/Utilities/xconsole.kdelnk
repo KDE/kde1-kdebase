@@ -18,6 +18,7 @@ Comment[cs]=Konsole pro Xwindow
 Comment[sk]=Konzola pre Xwindow
 Comment[pt]=Console X
 Comment[pt_BR]=Console X
+Comment[ro]=Consolã de X
 Exec=xconsole
 Icon=UNIX.xpm
 TerminalOptions=

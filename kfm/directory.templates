@@ -12,6 +12,7 @@ Name[sk]=©ablóny
 Name[pt]=Modelos
 Name[pt_BR]=Modelos
 Name[sv]=Mallar
+Name[ro]=Fiºiere Model
 Comment[pl]=Gotowe wzorce dokumentów i innych plików
 Comment[sk]=Hotové vzory dokumentov a iných súborov
 Comment[es]=Esta carpeta contiene los modelos para crear documentos nuevos en KDE
@@ -21,4 +22,5 @@ Comment[it]=Questa cartella contiene i Modelli di Documento del KDE
 Comment[pt]=Esta pasta contém modelos para criar novos documentos
 Comment[pt_BR]=Esta pasta contém modelos para criar novos documentos
 Comment[sv]=Mallar för att skapa nya filer
+Comment[ro]=Modele de fiºiere folosite la crearea de noi documente KDE.
 

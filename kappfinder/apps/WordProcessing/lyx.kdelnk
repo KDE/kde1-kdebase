@@ -17,6 +17,7 @@ Comment[pt_BR]=Processador de textos LyX
 Comment[it]=Il manipolatore di testi Lyx
 Comment[cs]=Textový procesor LyX
 Comment[sk]=Textový procesor LyX
+Comment[ro]=Procesorul de texte LyX
 Name=Lyx
 Exec=lyx
 Icon=lyx.xpm

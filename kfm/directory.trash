@@ -12,6 +12,7 @@ Name[sk]=Kô¹
 Name[pt]=Lixo
 Name[pt_BR]=Lixo
 Name[sv]=Papperskorg
+Name[ro]=Gunoi
 Comment=Contains removed files 
 Comment[es]=Contiene los archivos suprimidos
 Comment[fr]=La poubelle contient les fichiers détruits
@@ -25,4 +26,5 @@ Comment[sk]=Obsahuje zmazané súbory
 Comment[pt]=Contém ficheiros apagados
 Comment[pt_BR]=Contém ficheiros apagados
 Comment[sv]=Innehåller slängda filer
+Comment[ro]=Conþine fiºierele ºterse
 
