@@ -13,6 +13,7 @@
 #include <kapp.h>
 #include <qcolor.h>
 #include <kglobalaccel.h>
+#include <kmenubar.h>
 #include "client.h"
 
 class MyApp:public KApplication {
@@ -42,6 +43,14 @@ public:
   // a popup menu which contains all virtual desktops. For performance
   // and memory saving issues all clients use this object.
   QPopupMenu* desktopMenu;
+    
+    
+    KMenuBar* systemMenuBar;
+    QWidget* systemMenuBarParent;
+    
+    void setupSystemMenuBar();
+    void resetSystemMenuBar();
+    void raiseSystemMenuBar();
 
  public slots:
 
@@ -138,6 +147,8 @@ private:
   bool process_events_mode;
   XEvent events[50];
   int events_count ;
+    
+  int fileSystemMenuId;
 
 };
 

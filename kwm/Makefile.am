@@ -5,7 +5,7 @@
 bin_PROGRAMS 	= kwm
 INCLUDES	=  $(all_includes)
 LDFLAGS 	= $(all_libraries) $(KDE_RPATH)
-kwm_LDADD 	= $(LIB_KFM) 
+kwm_LDADD 	= $(LIB_KFM) -lkdeui
 DISTCLEANFILES	= $(BUILT_SOURCES)
 SUBDIRS 	= pics
 

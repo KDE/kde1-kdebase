@@ -105,6 +105,8 @@ Manager::Manager(): QObject(){
   kwm_activate_window = XInternAtom(qt_xdisplay(), "KWM_ACTIVATE_WINDOW", False);
   kwm_maximize_window = XInternAtom(qt_xdisplay(), "KWM_MAXIMIZE_WINDOW", False);
 
+  kwm_window_region_changed = XInternAtom(qt_xdisplay(), "KWM_WINDOW_REGION_CHANGED", False);
+
   kwm_running = XInternAtom(qt_xdisplay(), "KWM_RUNNING", False);
 
   // for the modules
@@ -605,6 +607,25 @@ void Manager::clientMessage(XEvent*  ev){
       removeModule(w);
   }
 
+  if ( e->message_type == kwm_window_region_changed) {
+      // someone informed us about a changed window region, just
+      // update the system menubar
+      myapp->resetSystemMenuBar();
+      
+      // update all other menubars as well
+      if (!has_standalone_menubars)
+	  return; // optimization
+      QListIterator<Client> it(clients);
+      for (it.toFirst(); it.current(); ++it){
+	  if (it.current()->isMenuBar()){
+	      QRect r =  KWM::getWindowRegion(it.current()->desktop);
+	      it.current()->geometry.setRect(r.x(),(r.y()-1)<=0?-2:r.y()-1, r.width(), // check panel top
+					 it.current()->geometry.height());
+	      sendConfig(it.current() );
+	  }
+      }
+  }
+  
   if (e->message_type == kde_sound_event){
       long mask = 0L;
       Window* mw;
@@ -1769,6 +1790,7 @@ void Manager::manage(Window w, bool mapped){
     long dec = KWM::getDecoration(c->window);
     c->decoration = dec & 255;
     c->is_menubar = (dec & KWM::standaloneMenuBar) != 0;
+    has_standalone_menubars |= c->is_menubar;
     c->wants_focus = !c->is_menubar && (dec & KWM::noFocus) == 0;
   }
 
@@ -2397,6 +2419,8 @@ void Manager::switchDesktop(int new_desktop){
 
   if (!current())
     noFocus();
+  
+  myapp->resetSystemMenuBar();
 }
 
 // Tells the XServer and the client itself to sync the X window with
@@ -3442,16 +3466,22 @@ void Manager::stickyTransientOf(Client* c, bool sticky){
 // the parent window gets the focus.
 void Manager::raiseMenubarsOf(Client* c)
 {
-    if (!has_standalone_menubars)
+    if (!has_standalone_menubars) {
+	myapp->raiseSystemMenuBar();
 	return; // optimization
+    }
+    bool raisedSomething = False;
     QListIterator<Client> it(clients);
     for (it.toFirst(); it.current(); ++it){
 	if (it.current() != c && it.current()->trans == c->window){
 	    if (it.current()->isMenuBar()){
 		it.current()->raise();
+		raisedSomething |= True;
 	    }
 	}
     }
+    if (!raisedSomething)
+	myapp->raiseSystemMenuBar();
 }
 
 

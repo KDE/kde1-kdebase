@@ -420,6 +420,8 @@ private:
   Atom kwm_activate_window;
   Atom kwm_maximize_window;
 
+  Atom kwm_window_region_changed;
+
   Atom kwm_running;
 
   Atom kde_sound_event;

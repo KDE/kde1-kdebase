@@ -495,7 +495,9 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
 
   manager = 0;
   process_events_mode = false;
-
+  systemMenuBarParent = 0;
+  systemMenuBar = 0;
+  
   int i;
   bool restore_session = true;
   for (i=1; i<argc; i++){
@@ -645,8 +647,48 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
   connect(manager, SIGNAL(reConfigure()), this, SLOT(reConfigure()));
   XUngrabServer(qt_xdisplay());
   initting = false;
+
+  setupSystemMenuBar();
+  
   if (restore_session)
     restoreSession();
+}
+
+
+void MyApp::setupSystemMenuBar()
+{
+  systemMenuBarParent = new QWidget;
+  systemMenuBar = new KMenuBar(systemMenuBarParent);
+  
+  QPopupMenu* file = new QPopupMenu;
+  file->insertItem(KWM::getCloseString(), this, SLOT( slotWindowClose() ) );
+  fileSystemMenuId = systemMenuBar->insertItem( klocale->translate("File"), file);
+  
+  systemMenuBarParent->setGeometry(-10,-10,100,40);
+  systemMenuBarParent->show();
+  systemMenuBarParent->hide();
+  if (systemMenuBar->menuBarPos() != KMenuBar::Floating) {
+      delete systemMenuBarParent;
+      systemMenuBarParent = 0;
+      systemMenuBar = 0;
+  }
+}  
+
+void MyApp::resetSystemMenuBar()
+{
+    if (!systemMenuBar)
+	return;
+    systemMenuBar->setItemEnabled( fileSystemMenuId, manager->current() != 0 );
+    QRect r =  KWM::getWindowRegion(manager->currentDesktop());
+    systemMenuBar->setGeometry(r.x(),(r.y()-1)<=0?-2:r.y()-1, r.width(), // check panel top
+			       systemMenuBar->heightForWidth(r.width()));
+}
+
+void MyApp::raiseSystemMenuBar()
+{
+    if (!systemMenuBar)
+	return;
+    systemMenuBar->raise();
 }
 
 
