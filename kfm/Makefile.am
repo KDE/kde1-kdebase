@@ -9,7 +9,7 @@ MIMELNKDIR = $(kde_mimedir)
 
 ####### Files
 
-bin_PROGRAMS = kfm 
+bin_PROGRAMS = kfm
 
 kfm_SOURCES =	\
 	kfmgui.cpp kfmview.cpp kbind.cpp main.cpp \
@@ -140,6 +140,7 @@ install-local-exec:
 	$(INSTALL_DATA) ./unpack $(bindir)
 	$(INSTALL_SCRIPT) ./kfmsu $(bindir)
 	$(INSTALL_SCRIPT) ./kfmsu2 $(bindir)
+	$(INSTALL_SCRIPT) ./startkde $(bindir)
 
 install-data-local:
 	$(mkinstalldirs) $(CONFIGDIR)
@@ -149,11 +150,13 @@ install-data-local:
 	$(INSTALL_DATA) magic $(MIMELNKDIR)
 	$(INSTALL_SCRIPT) ./kfmsu $(bindir)
 	$(INSTALL_SCRIPT) ./kfmsu2 $(bindir)
+	$(INSTALL_SCRIPT) ./startkde $(bindir)
 
 uninstall-local:
 	-rm -f $(bindir)/unpack
 	-rm -f $(bindir)/kfmsu
 	-rm -f $(bindir)/kfmsu2
+	-rm -f $(bindir)/startkde
 	-rm -f $(CONFIGDIR)/kfmrc
 	-rm -f $(CONFIGDIR)/desktop
 	-rm -f $(MIMELNKDIR)/magic

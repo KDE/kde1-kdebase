@@ -1,0 +1,13 @@
+#!/bin/sh
+
+$(KDEDIR:?"KDEDIR is not set!"}
+
+kaudioserver &
+kfm -d &
+kcc -init &
+
+kbgndwm &
+krootwm &
+kpanel &
+
+kwm
