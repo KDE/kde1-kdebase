@@ -480,7 +480,8 @@ void KfmGui::initMenu()
     
 
     QString about_text;
-    about_text.sprintf("KFM Ver. %s\n\n%s", kfm_getrev(), klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin Jones\nmjones@kde.org\n\nProxy Manager by Lars Hoss\nLars.Hoss@munich.netsurf.de") );
+    about_text.sprintf("KFM Ver. %s\n\n%s", kfm_getrev(),
+klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin Jones\nmjones@kde.org\n\nProxy Manager by Lars Hoss\nLars.Hoss@munich.netsurf.de\n\nBug reports and patches to David Faure\nfaure@kde.org") );
     QPopupMenu *help = kapp->getHelpMenu(false, about_text);
 
 
