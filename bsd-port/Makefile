@@ -34,6 +34,7 @@ CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
 		"--x-lib=$(X11BASE)/lib" \
 		"--with-install-root=$(INSTALL_ROOT)" \
 		"--with-extra-includes=$(PREFIX)/include/giflib"
+INSTALL_TARGET=	RUN_KAPPFINDER=no install
 
 .include "kde-snapshot.mk"
 .include <bsd.port.mk>
