@@ -208,7 +208,7 @@ msgstr "Godta"
 
 #: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
 msgid "Ask"
-msgstr "Spørr"
+msgstr "Spør"
 
 #: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
 msgid "Reject"

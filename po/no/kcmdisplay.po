@@ -538,12 +538,3 @@ msgstr "standard"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "hvilken som helst"
-
-#~ msgid "Fonts etc."
-#~ msgstr "Skrifttyper etc."
-
-#~ msgid "Desktop fonts"
-#~ msgstr "Skrifttype på skrivebord"
-
-#~ msgid "&Fonts etc."
-#~ msgstr "Skrifttyper etc."

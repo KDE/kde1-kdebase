@@ -1694,13 +1694,3 @@ msgid ""
 msgstr ""
 "Syntaksfeil:\n"
 "kfmexec kommando [URLer ....]\n"
-
-#~ msgid "Copy here"
-#~ msgstr "Kopier hit"
-
-#~ msgid "Move here"
-#~ msgstr "Flytt hit"
-
-# kfmman.cpp:1233 kfmtree.cpp:159 main.cpp:245
-#~ msgid "Link here"
-#~ msgstr "Lenk hit"

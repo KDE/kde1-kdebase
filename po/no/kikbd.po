@@ -340,7 +340,7 @@ msgstr "Vis informasjon for valgt tastaturkart"
 
 #: widgets.cpp:145
 msgid "Use &hot list"
-msgstr "Bruk &hotlist"
+msgstr "Bruk &hurtigliste"
 
 #: widgets.cpp:146
 msgid ""
