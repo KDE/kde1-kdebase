@@ -7,7 +7,7 @@
 
 
 char *cKeywords[] = {
-  "break","case","continue","default","do","else","for","if","return",
+  "break","case","continue","default","do","else","for","goto","if","return",
   "static","struct","switch","while","void","volatile",0L};
 char *cppKeywords[] = {
   "class","const","delete","inline","new","private","protected","public",
@@ -422,7 +422,7 @@ bool Highlight::isInWord(char ch) {
 }
 
 void Highlight::doHighlight(KWriteDoc &doc, int startLine, int endLine) {
-  int line, lines;
+  int line, lastLine;
   TextLine *textLine;
   int ctxNum;
   HlContext *context;
@@ -432,7 +432,7 @@ void Highlight::doHighlight(KWriteDoc &doc, int startLine, int endLine) {
   HlItem *item;
 
   line = startLine;
-  lines = doc.numLines();
+  lastLine = doc.lastLine();
   ctxNum = 0;
   if (line > 0) ctxNum = doc.textLine(line - 1)->getContext();
 
@@ -472,7 +472,7 @@ void Highlight::doHighlight(KWriteDoc &doc, int startLine, int endLine) {
     endCtx = textLine->getContext();
     textLine->setContext(ctxNum);
     line++;
-  } while (line < lines && (line <= endLine || endCtx != ctxNum));
+  } while (line <= lastLine && (line <= endLine || endCtx != ctxNum));
   doc.tagLines(startLine,line - 1);
 }
 
@@ -809,6 +809,8 @@ void HighlightDialog::newSelCol(const QColor &c) {
 }
 
 void HighlightDialog::newFont() {
-  QFont font = a->font;
-  if (KFontDialog::getFont(font)) a->setFont(font);
+  if (a) {
+    QFont font = a->font;
+    if (KFontDialog::getFont(font)) a->setFont(font);
+  }
 }
