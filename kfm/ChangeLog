@@ -1,3 +1,9 @@
+1999-04-01  David Faure  <faure@kde.org>
+
+	* kioserver.cpp, kioslave/main.cpp : added "Volume Management" support for
+	Solaris 2.x, patch from Torsten Kasch <tk@Genetik.Uni-Bielefeld.DE>.
+	It's all ifdef'ed with #ifdef HAVE_VOLMGT.
+
 1999-03-27  David Faure  <faure@kde.org>
 
 	* bookmark.cpp : Added support for IE favourites. Very straightforward.

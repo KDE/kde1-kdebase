@@ -16,6 +16,11 @@
 #include <sys/stat.h>
 #include <errno.h>
 
+#ifdef HAVE_VOLMGT
+#include <volmgt.h>
+#include <qmsgbox.h>		/* for eject popup */
+#endif
+
 #ifdef HAVE_PATHS_H
 #include <paths.h>
 #endif
@@ -266,8 +271,24 @@ void KIOSlave::list( const char *_url, bool _bHTML )
 
 void KIOSlave::mount( bool _ro, const char *_fstype, const char* _dev, const char *_point )
 {
-    char buffer[ 1024 ];
+    int  retvalue;
+    QString err;
 
+#ifdef HAVE_VOLMGT
+
+    retvalue = 1;
+
+    if( volmgt_running() ) {
+	    if( volmgt_check( (char *) _dev ) == 0 ) {
+		err = QString( "No Media inserted or Media not recognized." );
+	    } else {
+		retvalue = 0;
+	    }
+    } else {
+	err = QString( "Volume Management is not running." );
+    }
+#else
+    char buffer[ 1024 ];
     int t = (int)time( 0L );
     
     // Look in /etc/fstab ?
@@ -278,11 +299,12 @@ void KIOSlave::mount( bool _ro, const char *_fstype, const char* _dev, const cha
     else
 	sprintf( buffer, "mount -t %s %s %s 2>"_PATH_TMP"/mnt%i",_fstype, _dev, _point, t );
 		
-    int retvalue = system( buffer );
+    retvalue = system( buffer );
     // test logfile here to remove it if it exists
-    // (if there is a warning, it can exist even if revalue==0)
+    // (if there is a warning, it can exist even if retvalue==0)
     sprintf( buffer, _PATH_TMP"/mnt%i", t );
-    QString err = testLogFile( buffer );
+    err = testLogFile( buffer );
+#endif /* HAVE_VOLMGT */
 
     if (retvalue == 0)
     {
@@ -297,16 +319,48 @@ void KIOSlave::mount( bool _ro, const char *_fstype, const char* _dev, const cha
 void KIOSlave::unmount( const char *_point )
 {
     char buffer[ 1024 ];
-
     int t = (int)time( 0L );
-    
-    sprintf( buffer, "umount %s 2>"_PATH_TMP"/mnt%i",_point, t );
 
-    int retvalue = system( buffer );
+    int retvalue;
+    QString err;
+ 
+#ifdef HAVE_VOLMGT
+    char *res;
+ 
+    if( volmgt_running() ) {
+        if( (res = volmgt_symname( (char *) _point )) == NULL ) {
+            retvalue = 1;
+            err = QString( strerror( errno ));
+        } else {
+            sprintf( buffer, "/usr/bin/eject %s 2>"_PATH_TMP"mnt%i",
+                     res, t );
+            /*
+             * from eject(1): exit status == 4 => manually eject media
+             *                exit status == 0 => media was ejected
+             */
+            if( (retvalue = WEXITSTATUS( system( buffer ))) == 4 ) {
+                retvalue = 0;
+                sprintf( buffer, "%s \"%s\" %s",
+                         i18n( "The media" ),
+                         res,
+                         i18n( "can now be manually ejected." ));
+                QMessageBox::information( 0,
+                                          i18n( "Volume Management" ), buffer );
+            }
+            err = testLogFile( buffer );
+        }
+    } else {
+ 	err = QString( "Volume Management is not running." );
+    }
+#else
+    sprintf( buffer, "umount %s 2>"_PATH_TMP"mnt%i", _point, t );
+    retvalue = system( buffer );
+    
     // test logfile here to remove it if it exists
     // (if there is a warning, it can exist even if revalue==0)
     sprintf( buffer, _PATH_TMP"/mnt%i", t );
-    QString err = testLogFile( buffer );
+    err = testLogFile( buffer );
+#endif /* HAVE_VOLMGT */
 
     if (retvalue == 0)
     {

@@ -12,6 +12,11 @@
 #include <time.h>
 #include <sys/wait.h>
 
+#ifdef HAVE_VOLMGT
+#include <volmgt.h>
+#include <sys/mnttab.h>
+#endif
+
 #ifdef __FreeBSD__
 #include <sys/param.h>
 #include <sys/ucred.h>
@@ -444,6 +449,65 @@ QString KIOServer::findDeviceMountPoint( const char *_device, const char *_file 
     
 #endif /* __FreeBSD__ */             
 
+#ifdef HAVE_VOLMGT
+    char *volpath;
+    char *devname;
+    FILE *mnttab;
+    struct mnttab mnt;
+    int res;
+    int len;
+
+    /*
+     * get volume manager root path (usually /vol)
+     */
+    if( (volpath = volmgt_root()) == NULL )
+	return QString();
+
+    if( (mnttab = fopen( MNTTAB, "r" )) == NULL )
+	return QString();
+
+    if( (devname = malloc( strlen( volpath ) + strlen( _device ) + 2)) == NULL )
+	return QString();
+
+    sprintf( devname, "%s%s/", volpath, _device );
+    len = strlen( devname );
+
+    /*
+     * maybe there's a getmntent() available on other platforms?
+     */
+    rewind( mnttab );
+    while( (res = getmntent( mnttab, &mnt )) != EOF ) {
+	if( res < 0 )
+		return QString();
+        /*
+	 * either match the exact device name (floppies),
+	 * or a substring (e.g. CD-ROM: /dev/dsk/c0t6d0s2 is mounted
+	 * as <volpath>/dev/dsk/c0t6d0/<volume name>
+	 */
+	if( strncmp( devname, mnt.mnt_special, len ) == 0 
+		|| (strncmp( devname, mnt.mnt_special, len - 3 ) == 0
+			&& mnt.mnt_special[len - 3] == '/' )) {
+		res = 0;
+		break;
+	}
+    }
+
+    fclose( mnttab );
+    free( devname );
+
+/*
+ * if( res == 0 )
+ * 	warning( "Found \"%s\"", mnt.mnt_mountp );
+ * else
+ * 	warning( "Nothing found" );
+ */
+
+    if( res == 0 )
+	    return QString( mnt.mnt_mountp );
+    else
+	    return QString();
+
+#else
     // Get the real device name, not some link.
     char buffer[1024];
     QString tmp;
@@ -523,6 +587,7 @@ QString KIOServer::findDeviceMountPoint( const char *_device, const char *_file 
     }
 
     return QString();
+#endif // HAVE_VOLMGT
 }
 
 QString KIOServer::shellQuote( const char *_data )
