@@ -7,6 +7,7 @@
 #include <unistd.h>
 
 #include "htmlopts.h"
+#include "miscopts.h"
 
 KConfigBase *g_pConfig = 0L;
 
@@ -22,6 +23,7 @@ public:
 private:
   KFontOptions *m_pFontOptions;
   KColorOptions *m_pColorOptions;
+  KMiscOptions *m_pMiscOptions;
 };
 
 KfmApplication::KfmApplication(int &argc, char **argv, const char *name)
@@ -29,6 +31,7 @@ KfmApplication::KfmApplication(int &argc, char **argv, const char *name)
 {
   m_pFontOptions = 0L;
   m_pColorOptions = 0L;
+  m_pMiscOptions = 0L;
 
   if ( runGUI() )
   {
@@ -36,6 +39,8 @@ KfmApplication::KfmApplication(int &argc, char **argv, const char *name)
       addPage( m_pFontOptions = new KFontOptions( dialog, "font" ), i18n("&Font"), "" );
     if (!pages || pages->contains("color"))
       addPage( m_pColorOptions = new KColorOptions( dialog, "color"), i18n("&Color"), "" );
+    if (!pages || pages->contains("misc"))
+      addPage( m_pMiscOptions = new KMiscOptions( dialog, "misc"), i18n("&Other"), "" );
 	    
     if ( m_pFontOptions || m_pColorOptions )
     {
@@ -51,6 +56,14 @@ KfmApplication::KfmApplication(int &argc, char **argv, const char *name)
       if ( m_pColorOptions )
       {
 	t = m_pColorOptions->minimumSize();
+	if ( w < t.width() )
+	  w = t.width();
+	if ( h < t.height() )
+	  h = t.height();
+      }
+      if ( m_pMiscOptions )
+      {
+	t = m_pMiscOptions->minimumSize();
 	if ( w < t.width() )
 	  w = t.width();
 	if ( h < t.height() )
@@ -75,6 +88,8 @@ void KfmApplication::init()
     m_pFontOptions->loadSettings();
   if ( m_pColorOptions )
     m_pColorOptions->loadSettings();
+  if ( m_pMiscOptions )
+    m_pMiscOptions->loadSettings();
 }
 
 void KfmApplication::defaultValues()
@@ -83,6 +98,8 @@ void KfmApplication::defaultValues()
     m_pFontOptions->defaultSettings();
   if ( m_pColorOptions )
     m_pColorOptions->defaultSettings();
+  if ( m_pMiscOptions )
+    m_pMiscOptions->defaultSettings();
 }
 
 void KfmApplication::apply()
@@ -91,6 +108,8 @@ void KfmApplication::apply()
     m_pFontOptions->applySettings();
   if ( m_pColorOptions )
     m_pColorOptions->applySettings();
+  if ( m_pMiscOptions )
+    m_pMiscOptions->applySettings();
   if ( fork() == 0 )
   { 
       // execute 'kfmclient configure'

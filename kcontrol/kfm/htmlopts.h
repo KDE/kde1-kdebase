@@ -14,7 +14,6 @@
 #include <qcombo.h>
 #include <qstrlist.h>
 #include <qchkbox.h>
-#include <kspinbox.h>
 #include <kconfig.h>
 #include <kcolorbtn.h>
 #include <qradiobt.h>
@@ -23,7 +22,7 @@
 #include <kcontrol.h>
 #include <kwm.h>
 
-extern KConfigBase *g_pConfig;;
+extern KConfigBase *g_pConfig;
 
 //-----------------------------------------------------------------------------
 
