@@ -257,7 +257,7 @@ msgstr "Proteger Écran"
 
 #: scrnsave.cpp:50
 msgid "Lock Screen"
-msgstr "Trancar Écran"
+msgstr "Bloquear Écran"
 
 #: scrnsave.cpp:110 scrnsave.cpp:179
 msgid "Screen Saver"

@@ -31,7 +31,7 @@ msgstr "Sair"
 
 #: kpanel.C:377 props.C:155
 msgid "Lock screen"
-msgstr "Trancar écran"
+msgstr "Bloquear écran"
 
 #: kpanel.C:386
 msgid "Hide the panel"
@@ -95,7 +95,7 @@ msgstr "Painel"
 
 #: props.C:153
 msgid "Lock Screen"
-msgstr "Trancar Écran"
+msgstr "Bloquear Écran"
 
 #: props.C:310
 msgid "The menu editor is not installed."

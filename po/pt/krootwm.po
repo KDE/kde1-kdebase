@@ -44,7 +44,7 @@ msgstr "Ordenar ícones"
 
 #: krootwm.C:193
 msgid "Lock screen"
-msgstr "Trancar écran"
+msgstr "Bloquear écran"
 
 #: krootwm.C:194
 msgid "Logout"

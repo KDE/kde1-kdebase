@@ -94,7 +94,7 @@ msgstr "Mostrar &Barra de Menu"
 
 #: main.C:470 main.C:727
 msgid "Secure &keyboard"
-msgstr "Trancar &teclado"
+msgstr "Bloquear &teclado"
 
 #: main.C:472
 msgid "Scroll&bar"
@@ -144,7 +144,7 @@ msgstr "&Mostrar"
 
 #: main.C:723
 msgid "Unsecure &keyboard"
-msgstr "Destrancar &Teclado"
+msgstr "Desbloquear &Teclado"
 
 #: main.C:734
 msgid "Terminal Options"
