@@ -545,6 +545,8 @@ KMimeType* KMimeType::findType( const char *_url )
 	for ( s = pattern.first(); s != 0L; s = pattern.next() )
 	{
 	    int pattern_len = strlen( s );
+            if (!pattern_len)
+               continue;
 	    int len = filename.length();	
 
 	    if ( s[ pattern_len - 1 ] == '*' && len + 1 >= pattern_len )
