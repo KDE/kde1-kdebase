@@ -3,6 +3,7 @@
 Authors=Lars Knoll <knoll@mpi-hd.mpg.de>,
 
 Language=Hebrew
+Language[es]=Hebreo
 
 Label=He
 Locale=he

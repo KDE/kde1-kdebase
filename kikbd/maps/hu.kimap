@@ -4,6 +4,7 @@
 Authors=Sebestyen Zoltan <szoli@digo.inf.elte.hu>,
 
 Language=Hungarian
+Language[es]=Húngaro
 
 Label=Hu
 Locale=hu

@@ -4,6 +4,7 @@
 Authors=Spiros Trivizas <vtonic@hol.gr>,
 
 Language=Greek
+Language[es]=Griego
 
 Label=El
 Locale=el
