@@ -96,7 +96,7 @@ void KDMBackgroundWidget::setupPage(QWidget *)
       if(!wallpaper.isEmpty())
         list.append( wallpaper.data() );
 
-      wpCombo = new QComboBox( rGroup );
+      wpCombo = new QComboBox( false, rGroup );
       wpCombo->insertItem( NO_WALLPAPER, 0 );
       wpCombo->setCurrentItem( 0 );
 
