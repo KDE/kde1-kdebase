@@ -23,6 +23,9 @@ In 0.10:
        - works together with newest kfm to keep the root icons 
          lowered
        - small fix for setting the kwm_running property
+       - fixed a very old bug: now you can press Control-F1
+         Control-F2 Control-F1 Control-F2 Control-F1 Control-F2
+         like a maniac without any windows loosing their frames :-)
 
   patchlevel 16:
        - fix for "move" via keyboard (pointer warp)

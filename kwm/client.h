@@ -228,6 +228,7 @@ private:
   
   bool autoraised_stopped;
 
+
 private slots:
   void autoRaise();
     

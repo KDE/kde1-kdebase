@@ -327,7 +327,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     
     XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, window, True, ButtonPressMask, 
 		GrabModeSync, GrabModeAsync, None, normal_cursor );
-    
+ 
 }  
 
 Client::~Client(){
@@ -1105,7 +1105,6 @@ void Client::iconify(bool animation){
 
   if (state == NormalState){
     hide();           // hide the frame
-    XUnmapWindow(qt_xdisplay(), window);
     if (animation)
       animate_size_change(geometry, 
 			  QRect(geometry.x()+geometry.width()/2,
@@ -1178,10 +1177,10 @@ void Client::ontoDesktop(int new_desktop){
   
   if (state == NormalState){
     hide();
-    XUnmapWindow(qt_xdisplay(), window);
+    manager->setWindowState(this, IconicState); 
+
     if (isActive())
       manager->noFocus();
-    manager->setWindowState(this, IconicState); 
   }
 
   
@@ -1489,6 +1488,7 @@ void Client::stopAutoraise(){
   }
   autoraised_stopped = TRUE;
 }
+
 
 
 void Client::adjustSize(){

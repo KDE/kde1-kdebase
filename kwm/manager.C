@@ -289,7 +289,7 @@ void Manager::mapRequest(XMapRequestEvent *e){
 void Manager::unmapNotify(XUnmapEvent *e){
     Client *c;
     c = getClient(e->window);
-    if (c) {
+    if (c && c->window == e->window) {
       if(c->reparenting){
 	c->reparenting = FALSE;
 	return;
@@ -844,9 +844,8 @@ void Manager::manage(Window w, bool mapped){
   sendToModules(module_win_add, c->window);
 
   if (dohide){
-    XUnmapWindow(qt_xdisplay(), c->window);
     c->hide();
-    setWindowState(c, IconicState);
+    setWindowState(c, IconicState); 
   }
   else {
     c->show();
@@ -904,7 +903,7 @@ void Manager::manage(Window w, bool mapped){
 
 void Manager::withdraw(Client* c){
   KWM::moveToDesktop(c->window, 0);
-  XUnmapWindow(qt_xdisplay(), c->winId());
+  c->hide();
   gravitate(c, TRUE);
   XReparentWindow(qt_xdisplay(), c->window, qt_xrootwin(), 
 		  c->geometry.x() , c->geometry.y());
@@ -1155,7 +1154,6 @@ void Manager::switchDesktop(int new_desktop){
   for (c=clients_sorted.first(); c ; c=clients_sorted.next()){
     if (c->isOnDesktop(current_desktop) && !c->isIconified() && !c->isSticky()){
       c->hide();
-      XUnmapWindow(qt_xdisplay(), c->window);
       setWindowState(c, IconicState); 
     }
   }
