@@ -1521,7 +1521,9 @@ KfmGui::~KfmGui()
 	delete toolbarButtons;
     if ( toolbarURL )
 	delete toolbarURL;
-    
+    if (menu)
+       delete menu;
+ 
     delete view;
     delete completion;
     windowList->remove( this );
