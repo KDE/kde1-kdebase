@@ -20,9 +20,9 @@ ml*highlightColor: BACKGROUND
 ml*textSW*fontList: FIXED_FONT
 ml*helpwin*textSW*fontList: FONTLIST
 ml*log*textSW*fontList: FONTLIST
-ml.form.listSW*fontList: FIXED_FONT
-ml*read*listSW*fontList: FIXED_FONT
-ml*read*headerSW*fontList: FIXED_FONT
+!ml.form.listSW*fontList: FIXED_FONT
+!ml*read*listSW*fontList: FIXED_FONT
+!ml*read*headerSW*fontList: FIXED_FONT
 ml.form.height: 550
 ml.form.width: 650
 ml*focusPolicy:			pointer
