@@ -257,7 +257,6 @@ void myTaskButton::drawButtonLabel( QPainter *painter ){
     QString s2 = s;
     if (fontMetrics().width(s2) > width()-32){
       s2.detach();
-      printf("teste %s\n", s2.data());
       while (s2.length()>0 && 
 	     fontMetrics().width(s2) > width()-32-fontMetrics().width("...")){
 	s2.resize(s2.length()-1);
