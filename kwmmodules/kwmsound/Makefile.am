@@ -10,7 +10,7 @@ kwmsound_SOURCES = kwmsound.C
 BUILTSOURCES = kwmsound.moc
 DISTCLEANFILES = $(BUILTSOURCES)
 
-kwmsound.cpp:kwmsound.moc
+kwmsound.C:kwmsound.moc
 kwmsound.moc: kwmsound.h
 	$(MOC) kwmsound.h -o kwmsound.moc
 
