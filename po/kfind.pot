@@ -15,7 +15,7 @@ msgid " Date Modified "
 msgstr ""
 
 #: kftabdlg.cpp:94
-msgid " Name& Location "
+msgid " Name&Location "
 msgstr ""
 
 #: kfwin.cpp:104
@@ -25,6 +25,10 @@ msgstr ""
 #: kfindtop.cpp:185
 msgid "&About"
 msgstr ""
+
+#: kfindtop.cpp:186
+msgid "About &Qt"
+msgstr ""         
 
 #: kfindtop.cpp:137
 msgid "&Add to archive"

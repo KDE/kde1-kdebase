@@ -5,21 +5,13 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: 0.3.5\n"
+"PO-Revision-Date: 1997-10-09 14:30 MET DST\n"
+"Last-Translator: Miroslav Flidr <flidr@kky.zcu.cz>\n"
+"Language-Team: czech <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
-
-#~ msgid ""
-#~ msgstr ""
-#~ "Date: 1997-10-01 16:14:05+0200\n"
-#~ "From: root <flidr@CyberGate.zcu.cz>\n"
-#~ "Content-Type: text/plain; charset=\n"
-#~ "Xgettext-Options: -s -C -ktranslate\n"
-#~ "Files: kfarch.cpp kfdird.cpp kfind.cpp kfindtop.cpp kfoptions.cpp kfsave.cpp kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp mkfindtop.cpp mkfoptions.cpp mkftabdlg.cpp mkfwin.cpp\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: iso-8859-2\n"
 
 #: kftabdlg.cpp:214
 msgid " Advanced "
@@ -40,6 +32,10 @@ msgstr "Nalezeno %d souborù"
 #: kfindtop.cpp:185
 msgid "&About"
 msgstr "&Informace"
+
+#: kfindtop.cpp:186
+msgid "About &Qt"
+msgstr "Informace o &Qt"         
 
 #: kfindtop.cpp:137
 msgid "&Add to archive"
