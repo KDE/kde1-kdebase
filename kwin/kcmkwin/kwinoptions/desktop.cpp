@@ -37,7 +37,7 @@
 
 // kwm config keywords
 #define KWM_ELECTRIC_BORDER                  "ElectricBorder"
-#define KWM_ELECTRIC_BORDER_DELAY                  "ElectricBorderNumberOfPushes"
+#define KWM_ELECTRIC_BORDER_DELAY            "ElectricBorderNumberOfPushes"
 #define KWM_ELECTRIC_BORDER_MOVE_POINTER     "ElectricBorderPointerWarp"
 
 //CT 15mar 98 - magics
@@ -84,7 +84,7 @@ KDesktopConfig::KDesktopConfig (QWidget * parent, const char *name)
   movepointer->setMinimumSize(movepointer->size());
   eLay->addMultiCellWidget(movepointer,2,2,0,1);
 
-  delaylabel = new QLabel(klocale->translate("Dekstop switch delay:"), 
+  delaylabel = new QLabel(klocale->translate("Desktop switch delay:"), 
 			  ElectricBox);
   delaylabel->adjustSize();
   delaylabel->setMinimumSize(delaylabel->size());
