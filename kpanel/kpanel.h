@@ -354,7 +354,8 @@ private:
   int autoHideTaskbarSpeed;
 
   bool clockAmPm;
-
+  bool clockBeats;
+   
   int hide_show_animation;
 
   // tools

@@ -234,6 +234,12 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     else
       config->writeEntry("ClockAmPm", "off");
 
+    clockBeats = false;
+    if( config->hasKey("ClockBeats"))
+      clockBeats = (config->readEntry("ClockBeats") == "on");
+    else
+      config->writeEntry("ClockBeats", "off" );
+
     QString panelHiddenString = "00000000";
     panelHiddenString = config->readEntry("PanelHidden",
 					  panelHiddenString);
@@ -1935,6 +1941,11 @@ void kPanel::slotUpdateClock() {
     QTimer *t = new QTimer(this);
     connect(t, SIGNAL(timeout()),
 	    this, SLOT(slotUpdateClock()));
-    clock_timer_id = t->start(60000);
+
+    if( clockBeats == true )
+      clock_timer_id = t->start(86000);
+    else
+      clock_timer_id = t->start(60000);
   }
+
 }

@@ -617,14 +617,28 @@ void kPanel::set_label_date(){
   time_t curtime;
 
   curtime=time(0);
-  loctime=localtime(&curtime);
+  
+  if( clockBeats )
+    loctime=gmtime(&curtime);
+  else
+    loctime=localtime(&curtime);
 
   strftime(dayline,256,"%a\n",loctime);
 
-  if (!clockAmPm)
-    strftime(timeline,256,"%H:%M",loctime);
-  else
+  if (clockBeats) {
+    long iTime = (((loctime->tm_hour*3600 + loctime->tm_min*60 + loctime->tm_sec)+3600)*1000)/86400;
+    
+    if( iTime >= 1000 )
+      iTime -= 1000;
+    else if( iTime < 0 )
+      iTime += 1000;
+  
+    sprintf(timeline,"@%.3d", (int)iTime );
+  }
+  else if( clockAmPm ) 
     strftime(timeline,256,"%I:%M%p",loctime);
+  else
+    strftime(timeline,256,"%H:%M",loctime);
 
   strftime(dateline,256,i18n("\n%b %d"),loctime);
 
