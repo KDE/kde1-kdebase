@@ -65,22 +65,22 @@ KRootWidget::KRootWidget( QWidget *parent, const char *name ) : QWidget( parent,
     KApplication::getKApplication()->setRootDropZone( rootDropZone );
 
     popupMenu = new QPopupMenu();
-    connect( popupMenu, SIGNAL( activated( int )), 
+    connect( popupMenu, SIGNAL( activated( int )),
 	     this, SLOT( slotPopupActivated( int )) );
-    
+
     menuNew = new KNewMenu();
 
     noUpdate = false;
-    
+
     pKRootWidget = this;
-    
+
     desktopDir = "file:" + KFMPaths::DesktopPath();
     if ( desktopDir.right(1) != "/" )
 	desktopDir += "/";
-    
+
     connect( KIOServer::getKIOServer(), SIGNAL( notify( const char *) ),
     	     this, SLOT( slotFilesChanged( const char *) ) );
-    connect( KIOServer::getKIOServer(), SIGNAL( mountNotify() ), 
+    connect( KIOServer::getKIOServer(), SIGNAL( mountNotify() ),
 	     this, SLOT( update() ) );
 
     icon_list.setAutoDelete( true );
@@ -142,7 +142,7 @@ void KRootWidget::configure(KConfig * config) {
     int gridwidth = config->readNumEntry( "GridWidth", DEFAULT_GRID_WIDTH );
     int gridheight = config->readNumEntry( "GridHeight", DEFAULT_GRID_HEIGHT );
 
-    setRootGridParameters(gridwidth, gridheight);              
+    setRootGridParameters(gridwidth, gridheight);
 }
 
 bool KRootWidget::isBindingHardcoded( const char *_txt )
@@ -183,10 +183,10 @@ void KRootWidget::slotPopupActivated( int _id )
 {
     if ( popupMenu->text( _id ) == 0 )
 	return;
-    
+
     // Text of the menu entry
     QString txt = popupMenu->text( _id );
-    
+
     // Is this some KFM internal stuff ?
     if ( isBindingHardcoded( txt ) )
 	return;
@@ -196,21 +196,21 @@ void KRootWidget::slotPopupActivated( int _id )
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
     {
 	// Run the action 'txt' on every single file
-	KMimeBind::runBinding( s, txt );    
+	KMimeBind::runBinding( s, txt );
     }
     unselectAllIcons();
 }
 
 void KRootWidget::openPopupMenu( QStrList &_urls, const QPoint &_point )
 {
-	// please note that this code is strongly related to 
+	// please note that this code is strongly related to
 	// kfmman.cpp: void KFMManager::openPopupMenu( ... )
 
   if ( _urls.count() == 0 ){
     unselectAllIcons();
     return;
   }
-    
+
     char *s;
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
     {
@@ -220,14 +220,14 @@ void KRootWidget::openPopupMenu( QStrList &_urls, const QPoint &_point )
 	  return;
 	}
     }
-    
+
     popupMenu->clear();
     // store the mouse position. (Matthias)
-    popupMenuPosition = QCursor::pos();   
-        
+    popupMenuPosition = QCursor::pos();
+
     bool isdir = KIOServer::isDir( _urls );
     bool istrash = KIOServer::isTrash( _urls );
-    
+
     if ( istrash )
     {
 	bool isempty = true;
@@ -244,9 +244,9 @@ void KRootWidget::openPopupMenu( QStrList &_urls, const QPoint &_point )
 	}
 
 	int id;
-	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN), this, 
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN), this,
 				    SLOT( slotPopupNewView() ) );
-	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_TRASH), this, 
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_TRASH), this,
 				    SLOT( slotPopupEmptyTrash() ) );
 	if ( !isempty )
 	    popupMenu->setItemEnabled( id, false );
@@ -263,17 +263,17 @@ void KRootWidget::openPopupMenu( QStrList &_urls, const QPoint &_point )
         id = popupMenu->insertItem( klocale->translate("&New"), menuNew );
         popupMenu->insertSeparator();
 
-	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN), this, 
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN), this,
 				    SLOT( slotPopupNewView() ) );
-	popupMenu->insertSeparator();    
-	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_COPY), this, 
+	popupMenu->insertSeparator();
+	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_COPY), this,
 				    SLOT( slotPopupCopy() ) );
 	if ( KIOServer::supports( _urls, KIO_Write ) && KfmView::clipboard->count() != 0 )
-	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_PASTE ), 
+	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_PASTE ),
 					this, SLOT( slotPopupPaste() ) );
-	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_MOVE_TO_TRASH),  this, 
+	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_MOVE_TO_TRASH),  this,
 				    SLOT( slotPopupTrash() ) );
-	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_DELETE), 
+	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_DELETE),
 				     this, SLOT( slotPopupDelete() ) );
     }
     else
@@ -281,15 +281,15 @@ void KRootWidget::openPopupMenu( QStrList &_urls, const QPoint &_point )
 	int id;
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN_WITH),
 				    this, SLOT( slotPopupOpenWith() ) );
-	popupMenu->insertSeparator();    
-	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_COPY), this, 
+	popupMenu->insertSeparator();
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_COPY), this,
 				    SLOT( slotPopupCopy() ) );
-	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_MOVE_TO_TRASH),  this, 
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_MOVE_TO_TRASH),  this,
 				    SLOT( slotPopupTrash() ) );
-	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_DELETE), this, 
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_DELETE), this,
 				    SLOT( slotPopupDelete() ) );
     }
-    
+
     popupFiles.copy( _urls );
     menuNew->setPopupFiles( _urls );
 
@@ -336,7 +336,7 @@ void KRootWidget::openPopupMenu( QStrList &_urls, const QPoint &_point )
 	if( bindings.isEmpty() )
 	    break;
     }
-    
+
     // Add all bindings to the menu
     if ( !bindings.isEmpty() )
     {
@@ -352,15 +352,15 @@ void KRootWidget::openPopupMenu( QStrList &_urls, const QPoint &_point )
 		popupMenu->insertItem( str );
 	    p = pixlist.next();
 	}
-    }    
+    }
 
     if ( _urls.count() == 1 )
     {
 	popupMenu->insertSeparator();
-	popupMenu->insertItem( klocale->getAlias(ID_STRING_PROP), 
+	popupMenu->insertItem( klocale->getAlias(ID_STRING_PROP),
 			       this, SLOT( slotPopupProperties() ) );
     }
-    
+
     popupMenu->popup( _point );
 }
 
@@ -374,15 +374,15 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
 {
     if ( _urls.first() == 0L )
 	return;
-    
+
     QRect area = KWM::getWindowRegion(KWM::currentDesktop());
-    
+
     int gx = area.width() / gridwidth;
     int gy = area.height() / gridheight;
-    
+
     int dx = (p.x() - dndStartPos.x());
     int dy = (p.y() - dndStartPos.y());
-    
+
     // This bit of direction magnification makes the whole
     // procedure work more desirable. (Marcin Dalecki)
     // Without this change the previous calculations made the
@@ -391,17 +391,17 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
         dx -= gridwidth / 2;
     else
         dx += gridwidth / 2;
-    
+
     if (dy < 0)
         dy -= gridheight / 2;
     else
         dy += gridheight / 2;
-           
+
     dx /= gridwidth;
     dy /= gridheight;
-    
-  
-      /* 
+
+
+      /*
        * The following code
        *
        * - forces the formation of the icons to be kept, that means if you move
@@ -413,12 +413,12 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
        *
        * I hope this makes it more intuitive to use       -- Stefan Westerfeld
        */
-  
+
     // first, mark the icons as being moved, so that they do not occupy
     // the space for our move operation, where icons can only be moved
     // to free space (before this, you could never move an icon to the
     // position it was before
- 
+
     char *s;
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
     {
@@ -426,7 +426,7 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
       if( icon != 0L )
 	icon->startmove();
     }
-  
+
     // find a free space where the icons can be put
     int deltax, deltay, minscore = 10000000, score, mdx=0, mdy=0;
 
@@ -435,17 +435,17 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
         for ( deltay = -3; deltay <= 3; deltay++ )
 	{
 	    score = deltax*deltax+deltay*deltay;
- 
+
      	    for ( s = _urls.first(); s != 0L; s = _urls.next() )
 	    {
   		KRootIcon* icon = findIcon( s );
           	if (icon)
   		{
   		    // do not let them drop off the screen
-  
+
              	    int ix = icon->gridX() + dx + deltax;
              	    if ((ix < 0) || (ix >= gx)) score += 1000;
-	   
+	
            	    int iy = icon->gridY() + dy + deltay;
            	    if ((iy < 0) || (iy >= gy)) score += 1000;
 
@@ -485,7 +485,7 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
 	    icon->endmove();
 	}
     }
-    
+
     saveLayout();
     unselectAllIcons();
 }
@@ -517,7 +517,7 @@ QString KRootWidget::getSelectedURLs()
 {
     QStrList list;
     getSelectedURLs( list );
-    
+
     QString erg( "" );
 
     bool first = TRUE;
@@ -529,7 +529,7 @@ QString KRootWidget::getSelectedURLs()
 	erg += s;
 	first = FALSE;
     }
-    
+
     return erg;
 }
 
@@ -539,7 +539,7 @@ void KRootWidget::saveLayout()
 
     QString file = kapp->localkdedir().data();
     file += "/share/apps/kfm/desktop";
-    
+
     FILE *f = fopen( file.data(), "w" );
     if ( f != 0 )
     {
@@ -553,7 +553,7 @@ void KRootWidget::saveLayout()
 KRootIcon* KRootWidget::findIcon( const char *_url )
 {
     KRootIcon *icon;
-    
+
     for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
     {
 	if ( strcmp( icon->getURL(), _url ) == 0 )
@@ -566,13 +566,13 @@ KRootIcon* KRootWidget::findIcon( const char *_url )
 KRootLayout* KRootWidget::findLayout( const char *_url )
 {
     KRootLayout *lay;
-    
+
     for ( lay = layoutList.first(); lay != 0L; lay = layoutList.next() )
     {
 	if ( strcmp( lay->getURL(), _url ) == 0 )
 	    return lay;
     }
-    
+
     return 0L;
 }
 
@@ -584,7 +584,7 @@ QPoint KRootWidget::findFreePlace()
 
     int gx = area.width() / gridwidth;
     int gy = area.height() / gridheight;
-    
+
     bool ok = false;
     int x = 0, y = 0;
     while ( !ok && x < gx )
@@ -604,7 +604,7 @@ QPoint KRootWidget::findFreePlace()
 	}
 	x++;
     }
-    
+
     return QPoint( 0, 0 );
 }
 
@@ -616,7 +616,7 @@ QPoint KRootWidget::findFreePlace( int x, int y )
 
     int gx = area.width() / gridwidth;
     int gy = area.height() / gridheight;
-    
+
     int offset;
     for ( offset = 1; offset < gx; offset++ )
     {
@@ -638,7 +638,7 @@ QPoint KRootWidget::findFreePlace( int x, int y )
 		if ( !isPlaceUsed( j, y + offset ) && j > 0 && j < gx )
 		    return QPoint( j, y + offset );
     }
-    
+
     return QPoint( 0, 0 );
 }
 
@@ -658,11 +658,19 @@ void KRootWidget::rearrangeIcons()
   // Call this method after a gridwidth gridheight change
   // The algorithm is O(n^3) rather then the optimal O(n*log(n))
   // but I don't think anyone has a 1000 desktop icons and
-  // it's better to be simple so that anyone can easily make 
+  // it's better to be simple so that anyone can easily make
   // modifications.
   // -- Bernd
 
     QRect area = KWM::getWindowRegion(KWM::currentDesktop());
+    
+    {
+	// check for mac menubar;
+	KConfig config;
+	config.setGroup("KDE");
+	if (config.readEntry("macStyle") == "on") 
+	    area.setTop(area.top() + 30);
+    }
 
     int my = area.height() / oldgridheight;
     int mx = area.width() / oldgridwidth;
@@ -723,9 +731,9 @@ void KRootWidget::rearrangeIcons()
 	
 	icon->setGridX( x );
 	icon->setGridY( y );
-	icon->move( area.x() + gridwidth * x + 
+	icon->move( area.x() + gridwidth * x +
 		    ( gridwidth - icon->QWidget::width() ) / 2,
-		    area.y() + gridheight * y + 
+		    area.y() + gridheight * y +
 		    ( gridheight - icon->QWidget::height() ) );
     }
 
@@ -739,7 +747,7 @@ void KRootWidget::update()
 
     // Area where we can place icons
     QRect area = KWM::getWindowRegion(KWM::currentDesktop());
-    
+
     KURL u ( KFMPaths::DesktopPath() ); // KURL::KURL adds a file:
 
     if ( u.isMalformed() )
@@ -747,12 +755,12 @@ void KRootWidget::update()
 	warning(klocale->translate("Internal Error: desktopDir is malformed"));
 	return;
     }
-    
+
     DIR *dp;
     struct dirent *ep;
-    
+
     dp = opendir( u.path() );
-    
+
     if ( dp == NULL )
     {
 	warning(klocale->translate("ERROR: Could not read desktop directory '%s'"), desktopDir.data());
@@ -771,7 +779,7 @@ void KRootWidget::update()
     {
 	// We are not interested in '.' and '..'
 	if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
-	{   
+	{
 	    KRootIcon *icon;
 
 	    QString file = ep->d_name;
@@ -779,7 +787,7 @@ void KRootWidget::update()
 	    file.insert(0, desktopDir);
 
 	    icon = findIcon( file.data() );
-	    	    
+	    	
 	    // This icon is missing on the screen, so we have to create it.
 	    if ( icon == 0L )
 	    {
@@ -800,7 +808,7 @@ void KRootWidget::update()
 			x = p.x();
 			y = p.y();
 		    }
-		    
+		
 		    icon->setGridX( x );
 		    icon->setGridY( y );
 		    icon->move( area.x() + gridwidth * x + ( gridwidth - icon->QWidget::width() ) / 2,
@@ -811,10 +819,10 @@ void KRootWidget::update()
 		
 		icon_list.append( icon );
 		found_icons.append( icon );
-	    }	    
+	    }	
 	    else  // Icon is already there
 	    {
-		icon->updatePixmap(); 
+		icon->updatePixmap();
 		found_icons.append( icon );
 	    }
 	}
@@ -828,7 +836,7 @@ void KRootWidget::update()
     // Find correct places for the icons
     QString file = kapp->localkdedir().data();
     file += "/share/apps/kfm/desktop";
- 
+
     FILE *f = fopen( file.data(), "r" );
     if ( f != 0 )
     {
@@ -881,7 +889,7 @@ void KRootWidget::update()
     /**
      * Correct the position of all icons which are not on the visible part of the screen.
      */
-    
+
     // Find every icon that is not on the screen.
     for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
     {
@@ -913,7 +921,7 @@ void KRootWidget::slotDropEvent( KDNDDropZone *_zone )
     dropZone = _zone;
     dropFileX = _zone->getMouseX();
     dropFileY = _zone->getMouseY();
-    
+
     popupMenu->clear();
 
     QStrList & list = _zone->getURLList();
@@ -938,7 +946,7 @@ void KRootWidget::slotDropEvent( KDNDDropZone *_zone )
 	if ( !KIOServer::testDirInclusion( s, url ) )
 	    nested = true;
     }
-	    
+	
     int id = 1;
     // Ask wether we can read from the dropped URL.
     if ( KIOServer::supports( _zone->getURLList(), KIO_Read ) &&
@@ -980,8 +988,8 @@ void KRootWidget::slotDropCopy()
 	tmp += KIOServer::getDestNameForCopy( s );
 	layoutList.append( new KRootLayout( tmp, x, y ) );
     }
-    
-    job->copy( dropZone->getURLList(), desktopDir.data() );    
+
+    job->copy( dropZone->getURLList(), desktopDir.data() );
 }
 
 void KRootWidget::slotDropMove()
@@ -1003,7 +1011,7 @@ void KRootWidget::slotDropMove()
 	tmp += KIOServer::getDestNameForCopy( s );
 	layoutList.append( new KRootLayout( tmp, x, y ) );
     }
-    
+
     job->move( dropZone->getURLList(), desktopDir.data() );
 }
 
@@ -1026,7 +1034,7 @@ void KRootWidget::slotDropLink()
 	tmp += KIOServer::getDestNameForLink( s );
 	layoutList.append( new KRootLayout( tmp, x, y ) );
     }
-    
+
     job->link( dropZone->getURLList(), desktopDir.data() );
     unselectAllIcons();
 }
@@ -1036,25 +1044,25 @@ void KRootWidget::slotFilesChanged( const char *_url )
     QString tmp = _url;
     if ( tmp.right(1) != "/" )
 	tmp += "/";
-    
+
     if ( tmp == desktopDir )
     {
 	update();
 	return;
     }
-    
+
     // Calculate the path of the trash bin
     QString d = KFMPaths::TrashPath();
 
     KURL u( _url );
     if ( u.isMalformed() )
 	return;
-   
+
      QString path = u.path();
      if ( path.right(1) != "/" )
      	 path += "/";
     // Update the icon for the trash bin ?
-    if ( strcmp( u.protocol(), "file" ) == 0L && 
+    if ( strcmp( u.protocol(), "file" ) == 0L &&
 	 KFMPaths::TrashPath() == path )
     {
 	KRootIcon *icon;
@@ -1095,18 +1103,18 @@ void KRootWidget::slotPopupOpenWith()
 	unselectAllIcons();
 	return;
     }
-    
+
     QString cmd;
     cmd = l.getText();
     cmd += " ";
 
     QString tmp;
-    
+
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
     {
 	cmd += "\"";
-	KURL file = popupFiles.first();    
+	KURL file = popupFiles.first();
 	if ( strcmp( file.protocol(), "file" ) == 0L )
 	{
 	    tmp = KIOServer::shellQuote( file.path() ).copy();
@@ -1119,10 +1127,10 @@ void KRootWidget::slotPopupOpenWith()
 	}
 	cmd += "\" ";
     }
-    
+
     KMimeBind::runCmd( cmd.data() );
     unselectAllIcons();
-}              
+}
 
 void KRootWidget::slotPopupProperties()
 {
@@ -1131,7 +1139,7 @@ void KRootWidget::slotPopupProperties()
 	warning(klocale->translate("ERROR: Can not open properties for multiple files") );
 	return;
     }
-    
+
     Properties *p = new Properties( popupFiles.first() );
     connect( p, SIGNAL( propertiesChanged( const char *, const char * ) ), this,
 	     SLOT( slotPropertiesChanged( const char *, const char* ) ) );
@@ -1148,7 +1156,7 @@ void KRootWidget::slotPropertiesCancel(){
 }
 
 void KRootWidget::slotPropertiesChanged( const char *_url, const char *_new_name )
-{ 
+{
     unselectAllIcons();
     // Check for renamings.
     if ( _new_name != 0L )
@@ -1166,11 +1174,11 @@ void KRootWidget::slotPopupPaste()
 {
     if ( popupFiles.count() != 1 )
     {
-	QMessageBox::warning( (QWidget*)0, klocale->translate("KFM Error"), 
+	QMessageBox::warning( (QWidget*)0, klocale->translate("KFM Error"),
 			      klocale->translate("Can not paste into multiple directories") );
 	return;
     }
-    
+
     // Check wether we drop a directory on itself or one of its children
     int nested = 0;
     char *s;
@@ -1181,7 +1189,7 @@ void KRootWidget::slotPopupPaste()
 	    if ( j == -1 || ( j > nested && nested != -1 ) )
 		nested = j;
 	}
-    
+
     if ( nested == -1 )
     {
 	QMessageBox::warning( (QWidget*)0, klocale->translate( "KFM Error" ),
@@ -1209,7 +1217,7 @@ void KRootWidget::slotPopupCopy()
 {
     KfmView::clipboard->clear();
     char *s;
-    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
+    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
 	KfmView::clipboard->append( s );
 
 }
@@ -1217,7 +1225,7 @@ void KRootWidget::slotPopupCopy()
 void KRootWidget::slotPopupTrash()
 {
     KIOJob * job = new KIOJob;
-    
+
     QString dest = "file:" + KFMPaths::TrashPath();
     job->setOverWriteExistingFiles( true );
     job->move( popupFiles, dest );
@@ -1227,12 +1235,12 @@ void KRootWidget::slotPopupTrash()
 void KRootWidget::slotPopupDelete()
 {
     KIOJob * job = new KIOJob;
- 
-    bool ok = !QMessageBox::warning( 0, klocale->translate("KFM Warning"), 
-				  klocale->translate("Do you really want to delete the selected file(s)?\n\nThere is no way to restore them."), 
-				  klocale->translate("Yes"), 
+
+    bool ok = !QMessageBox::warning( 0, klocale->translate("KFM Warning"),
+				  klocale->translate("Do you really want to delete the selected file(s)?\n\nThere is no way to restore them."),
+				  klocale->translate("Yes"),
 				  klocale->translate("No") );
-    
+
     if ( ok )
 	job->del( popupFiles );
 
@@ -1253,7 +1261,7 @@ void KRootWidget::slotPopupEmptyTrash()
 {
     QString d = KFMPaths::TrashPath();
     QStrList trash;
-    
+
     DIR *dp;
     struct dirent *ep;
     unselectAllIcons();
@@ -1281,7 +1289,7 @@ void KRootWidget::slotPopupEmptyTrash()
 			      klocale->translate( "Could not access Trash Bin") );
 	return;
     }
-    
+
     KIOJob * job = new KIOJob;
     job->del( trash );
 }
@@ -1300,12 +1308,12 @@ KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
 {
     grid_x = -1;
     grid_y = -1;
-   
-    beingmoved = false; 
+
+    beingmoved = false;
     bSelected = FALSE;
-  
+
     popupMenu = new QPopupMenu();
-    
+
     url = _url;
     url.detach();
 
@@ -1319,7 +1327,7 @@ KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
     // connect( drop_zone, SIGNAL( dropEnter( KDNDDropZone *) ), this, SLOT( slotDropEnterEvent( KDNDDropZone *) ) );
     // connect( drop_zone, SIGNAL( dropLeave( KDNDDropZone *) ), this, SLOT( slotDropLeaveEvent( KDNDDropZone *) ) );
 
-    
+
     setGeometry( _x - pixmapXOffset, _y, width, height );
     show();
     lower();
@@ -1327,7 +1335,7 @@ KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
     // Matthias
     // keep root icons lowered
     KWM::setDecoration(winId(), KWM::desktopIcon);
-    
+
     connect( kapp, SIGNAL( kdisplayFontChanged() ), this, SLOT( slotFontChanged() ) );
 
     if ( !link_pixmap || !ro_pixmap )
@@ -1351,7 +1359,7 @@ void KRootIcon::initToolTip()
 	QToolTip::add( this, com.data() );
 }
 
-void KRootIcon::initFilename() 
+void KRootIcon::initFilename()
 {
     // first calculate the default
     file = url.mid( url.findRev( "/" ) + 1, url.length() );
@@ -1363,24 +1371,24 @@ void KRootIcon::initFilename()
     // Just for a nicer display
     decodeFileName( file );
 
-    // the following code is taken out of kbind.cpp, where nearly 
+    // the following code is taken out of kbind.cpp, where nearly
     // the same is run before this.
     // I didn't want to introduce new member functions, so it exists
     // twice
     QString decoded = url;
-    
+
     QString n = decoded.data() + 5;
 
     QDir dir(n); // no static method available
     if (dir.exists()) // a directoy
     {	
       n += "/.directory";
-    
+
       QFile f( n );
       if ( !f.open( IO_ReadOnly ) )
 	return;
       f.close();
-      
+
       KConfig sc(n);
       sc.setGroup("KDE Desktop Entry");
       file = sc.readEntry("Name", file);
@@ -1439,11 +1447,11 @@ void KRootIcon::init()
 
     if ( bIsLink )
       p2.setFont( myfont );
-    
+
     if ( root->iconStyle() == 1 && !bSelected )
 	p2.drawText( textXOffset, textYOffset, file );
     else
-      p2.fillRect( textXOffset-1, textYOffset-ascent-1, width+2, ascent+descent+2, color1 );     
+      p2.fillRect( textXOffset-1, textYOffset-ascent-1, width+2, ascent+descent+2, color1 );
 
     if ( pixmap->mask() == 0L )
 	p2.fillRect( pixmapXOffset, pixmapYOffset, pixmap->width(), pixmap->height(), color1 );
@@ -1455,13 +1463,13 @@ void KRootIcon::init()
 	p2.setRasterOp( OrROP );
 	p2.drawPixmap( pixmapXOffset, pixmapYOffset, *link_pixmap->mask() );
     }
-    
+
     p2.end();
 
     if ( bSelected )
       setBackgroundColor( black );
     else
-      setBackgroundColor( root->iconBackground() );     
+      setBackgroundColor( root->iconBackground() );
 
     this->width = w;
     this->height = pixmap->height() + 5 + ascent + descent + 4;
@@ -1480,7 +1488,7 @@ void KRootIcon::slotDropEvent( KDNDDropZone *_zone )
 	for ( s = list.first(); s != 0L; s = list.next() )
 	{
 	    if ( strcmp( s, url.data() ) == 0 )
-	    {   
+	    {
 		root->moveIcons( list, p );
 		return;
 	    }
@@ -1495,7 +1503,7 @@ void KRootIcon::slotDropEvent( KDNDDropZone *_zone )
 	job->move( list, dest );
 	return;
     }
-    
+
     dropPopupMenu( _zone, url.data(), &p );
 }
 
@@ -1504,16 +1512,16 @@ void KRootIcon::resizeEvent( QResizeEvent * )
     XShapeCombineMask( x11Display(), winId(), ShapeBounding, 0, 0, mask.handle(), ShapeSet );
 }
 
-void KRootIcon::paintEvent( QPaintEvent * ) 
+void KRootIcon::paintEvent( QPaintEvent * )
 {
     bitBlt( this, pixmapXOffset, pixmapYOffset, pixmap );
 
     if ( bIsLink && link_pixmap )
 	bitBlt( this, pixmapXOffset, pixmapYOffset, link_pixmap );
-  
+
     QPainter p;
     p.begin( this );
-  
+
     int ascent = p.fontMetrics().ascent();
     int descent = p.fontMetrics().descent();
     int width = p.fontMetrics().width( file.data() );
@@ -1526,13 +1534,13 @@ void KRootIcon::paintEvent( QPaintEvent * )
 	fillColor = root->iconBackground();
 
     p.fillRect( textXOffset-1, textYOffset-ascent-1, width+2,
-	ascent+descent+2, fillColor );     
-    
+	ascent+descent+2, fillColor );
+
     if ( bSelected )
 	p.setPen( kapp->selectTextColor );
     else
-	p.setPen( root->labelForeground() );   
-    
+	p.setPen( root->labelForeground() );
+
     QFont myfont( font() );
     if ( bIsLink )
     {
@@ -1540,7 +1548,7 @@ void KRootIcon::paintEvent( QPaintEvent * )
       p.setFont( myfont );
     }
     p.drawText( textXOffset, textYOffset, file );
-    
+
     if ( bSelected )
     {
 //      p.setRasterOp( NotEraseROP );
@@ -1548,7 +1556,7 @@ void KRootIcon::paintEvent( QPaintEvent * )
 	QBrush b( kapp->selectColor, Dense4Pattern );
         p.fillRect( pixmapXOffset, pixmapYOffset, pixmap->width(), pixmap->height(), b );
     }
-    
+
     p.end();
 }
 
@@ -1567,7 +1575,7 @@ void KRootIcon::mousePressEvent( QMouseEvent *_mouse )
 	// the position and set a flag.
 	pressed = true;
 	press_x = _mouse->pos().x();
-	press_y = _mouse->pos().y();    
+	press_y = _mouse->pos().y();
 	root->dndStartPos = mapToGlobal( QPoint( press_x, press_y ) );
 
 	select(true);
@@ -1578,7 +1586,7 @@ void KRootIcon::mousePressEvent( QMouseEvent *_mouse )
 	QStrList list;
 
         if ( !bSelected )
-        {    
+        {
 	  // The selected URL is not marked, so unmark the marked ones.
           root->unselectAllIcons();
 	  list.append( url.data() );
@@ -1643,8 +1651,8 @@ void KRootIcon::dndMouseReleaseEvent( QMouseEvent *_mouse )
 	return;
       }
     }
-    
-    root->openURL( url );                          
+
+    root->openURL( url );
     pressed = false;
     repaint();
 
@@ -1656,7 +1664,7 @@ void KRootIcon::dndMouseMoveEvent( QMouseEvent *_mouse )
 {
     if ( !pressed )
 	return;
-    
+
     int x = _mouse->pos().x();
     int y = _mouse->pos().y();
 
@@ -1668,7 +1676,7 @@ void KRootIcon::dndMouseMoveEvent( QMouseEvent *_mouse )
 	// No URL selected ?
 	if ( data.isEmpty() )
 	    data = url;
-	else 
+	else
 	{
 	    // Multiple URLs ?
 	    if ( data.find( '\n' ) != -1 )
@@ -1700,9 +1708,9 @@ void KRootIcon::dndMouseMoveEvent( QMouseEvent *_mouse )
 	int dx = QWidget::x() - p2.x() + pixmapXOffset;
 	int dy = QWidget::y() - p2.y() + pixmapYOffset;
 
-       
+
 	if ( !pixmap2.isNull() ) {
-	    // Multiple URLs slected. 
+	    // Multiple URLs slected.
 	    startDrag( new KDNDIcon( pixmap2, p.x() + dx, p.y() + dy ), data.data(), data.length(), DndURL, dx, dy );
 	} else
 	    startDrag( new KDNDIcon( *pixmap, p.x() + dx, p.y() + dy ), data.data(), data.length(), DndURL, dx, dy );
@@ -1712,16 +1720,16 @@ void KRootIcon::dndMouseMoveEvent( QMouseEvent *_mouse )
 void KRootIcon::updatePixmap()
 {
     QPixmap *tmp = pixmap;
-    
+
     KMimeType *typ = KMimeType::getMagicMimeType( url.data() );
     pixmap = typ->getPixmap( url );
-    
+
     if ( pixmap == tmp )
 	return;
 
     QToolTip::remove( this );
     initToolTip();
-    
+
     init();
     setGeometry( x(), y(), width, height );
     resizeEvent( 0L );	// <-- Added by Lars ( 04/06/98 ): fixes bug when changing icon
@@ -1741,7 +1749,7 @@ void KRootIcon::rename( const char *_new_name )
 
     init();
     setGeometry( x(), y(), width, height );
-    repaint();    
+    repaint();
 }
 
 void KRootIcon::select( bool _select )
@@ -1751,7 +1759,7 @@ void KRootIcon::select( bool _select )
 
   bSelected = _select;
 
-  update();  
+  update();
 }
 
 void KRootIcon::update()
@@ -1766,14 +1774,14 @@ void KRootIcon::update()
 void KRootIcon::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QPoint *_p )
 {
 printf("dropPopupMenu\n");
- 
+
     dropDestination = _dest;
     dropDestination.detach();
-    
+
     dropZone = _zone;
-    
+
     KURL u( _dest );
-    
+
     // Perhaps an executable ?
     // So lets ask wether we can be shure that it is no directory
     // We can rely on this, since executables are on the local hard disk
@@ -1795,27 +1803,27 @@ printf("dropPopupMenu\n");
 	    return;
 	}
     }
-    
+
     popupMenu->clear();
-    
+
     int id = -1;
     // Ask wether we can read from the dropped URL.
     if ( KIOServer::supports( _zone->getURLList(), KIO_Read ) &&
 	 KIOServer::supports( _dest, KIO_Write ) )
-	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_COPY), 
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_COPY),
 				    this, SLOT( slotDropCopy() ) );
     // Ask wether we can read from the URL and delete it afterwards
     if ( KIOServer::supports( _zone->getURLList(), KIO_Move ) &&
 	 KIOServer::supports( _dest, KIO_Write ) )
-	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_MOVE), 
+	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_MOVE),
 				     this, SLOT( slotDropMove() ) );
-    // Ask wether we can link the URL 
+    // Ask wether we can link the URL
     if ( KIOServer::supports( _dest, KIO_Link ) )
-	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_LINK), 
+	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_LINK),
 				     this, SLOT( slotDropLink() ) );
     if ( id == -1 )
     {
-	QMessageBox::warning( 0, klocale->translate("KFM Error"), 
+	QMessageBox::warning( 0, klocale->translate("KFM Error"),
 			      klocale->translate("Dont know what to do") );
 	return;
     }
@@ -1854,7 +1862,7 @@ KRootIcon::~KRootIcon()
 {
     if ( popupMenu )
 	delete popupMenu;
-    
+
     delete dropZone;
 }
 
