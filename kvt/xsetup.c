@@ -107,6 +107,7 @@ Window		vt_win=0;		/* vt100 window */
 Window		main_win;	/* parent window */
 Colormap	colormap;
 XFontStruct	*mainfont;	/* main font structure */
+int		mainfontfid;	/* main font FID */
 GC 		gc;		/* GC for drawing text */
 GC 		rvgc;		/* GC for drawing text */
 unsigned long	foreground;	/* foreground pixel value */
@@ -174,6 +175,7 @@ char *print_pipe = "lpr";
 
 char *reg_fonts[NUM_FONTS]=
 {"6x13", "5x7", "6x10", "7x13", "9x15", "10x20"};
+int reg_font_handles[NUM_FONTS];
 
 int font_num = DEFAULT_FONT;
 
@@ -192,7 +194,7 @@ int map_alert = 0 ;
 #endif
 
 static void create_xwindow(int,char **);
-static void extract_fonts_and_geometry(char *,char *);
+static void extract_fonts_and_geometry(char *,int,char *);
 void extract_colors(char *, char *);
 void extract_resources(void);
 
@@ -236,6 +238,7 @@ int init_display(int argc,char **argv)
       bg_string_tmp = argv[++i];
     } else if((strcmp(argv[i],"-vt_font")==0)&&(i+1<argc)) {
       reg_fonts[DEFAULT_FONT] = argv[++i];
+      reg_font_handles[DEFAULT_FONT] = 0;
     } else if((strcmp(argv[i],"-vt_size")==0)&&(i+1<argc)) {
       kvt_set_fontnum (argv[++i]);
     } else if(strcmp(argv[i],"-no_menubar")==0) {
@@ -319,7 +322,8 @@ int init_display(int argc,char **argv)
   rvgc = 0;
 
   /* changed DEFAULT_FONT to font_num. (Matthias) */ 
-  extract_fonts_and_geometry(reg_fonts[font_num], geom_string);
+  extract_fonts_and_geometry(reg_fonts[font_num], reg_font_handles[font_num],
+	geom_string);
   extract_colors(fg_string_tmp, bg_string_tmp);
 
   create_xwindow(argc,argv);
@@ -428,18 +432,25 @@ void extract_colors( char *fg_string, char *bg_string){
 
 
 
-static void extract_fonts_and_geometry(char *font_string, char *geom_string)
+static void extract_fonts_and_geometry(char *font_string, int font_id,
+	char *geom_string)
 {
   int x, y, width, height;
   int flags;
 
   /*  First get the font since we need it to set the size.
    */
-  if ((mainfont = XLoadQueryFont(display,font_string)) == NULL) 
-    {
-      error("can't access font %s\n",font_string);
-      clean_exit(1);
-    }
+  if (font_id) {
+	mainfont = XQueryFont(display, font_id);
+	mainfontfid = 1;
+  } else {
+	if ((mainfont = XLoadQueryFont(display,font_string)) == NULL) 
+	    {
+	      error("can't access font %s\n",font_string);
+	      clean_exit(1);
+	    }
+	mainfontfid = 0;
+  }
 
 
 /*   This is an rxvt bug. (Matthias ) */
@@ -663,12 +674,25 @@ XErrorHandler RxvtErrorHandler(Display *dpy, XErrorEvent *event)
 /* new function. Matthias. */ 
 void LoadNewFont(){
   int w,h;
-  XFreeFont(display,mainfont);
-  if ((mainfont = XLoadQueryFont(display,reg_fonts[font_num]))==NULL) 
-    {
-      error("can't access font %s\n",reg_fonts[font_num]);
-      mainfont = XLoadQueryFont(display,reg_fonts[DEFAULT_FONT]);
-    }
+  if (mainfontfid > 0) {
+	// pre-allocated by main.C - queried by XQueryFont
+	XFreeFontInfo(NULL, mainfont, 1);
+  } else {
+	// it was allocated by XLoadQueryFont
+	XFreeFont(display,mainfont);
+  }
+  if (reg_font_handles[font_num] > 0) {
+	// a font was pre-allocated
+	mainfont = XQueryFont(display,reg_font_handles[font_num]);
+	mainfontfid = 1;
+  } else {
+	if ((mainfont = XLoadQueryFont(display,reg_fonts[font_num]))==NULL) 
+	    {
+	      error("can't access font %s\n",reg_fonts[font_num]);
+	      mainfont = XLoadQueryFont(display,reg_fonts[DEFAULT_FONT]);
+	    }
+	mainfontfid = 0;
+  }
   XSetFont(display,gc,mainfont->fid);
   XSetFont(display,rvgc,mainfont->fid);
   MyWinInfo.fheight = mainfont->ascent + mainfont->descent;

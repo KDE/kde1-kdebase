@@ -36,6 +36,8 @@
 #include <kwm.h>
 #include <kurl.h>
 #include <kcolordlg.h>
+#include <kcharsets.h>
+#include <kfontdialog.h>
 
 #include "kvt_version.h"
 
@@ -65,6 +67,8 @@ extern XSizeHints sizehints;
 
 extern int font_num;
 extern void LoadNewFont();
+
+extern int reg_font_handles[6];
 
 extern char *xvt_name; // the name the program is run under
 extern char *window_name;
@@ -97,6 +101,13 @@ extern char *fg_string_tmp, *bg_string_tmp;
 kVt* kvt = 0;
 OptionDialog *m_optiondialog = 0;
 QString kvt_charclass;
+
+QFont kvt_fnt1;
+QFont kvt_fnt2;
+QFont kvt_fnt3;
+QFont kvt_fnt4;
+QFont kvt_fnt5;
+QFont kvt_fnt6;
 
 // the scrollbar hack
 static int length = 0;
@@ -180,6 +191,38 @@ void kvt_set_selection(char* s){
 
 char* kvt_get_selection(){
   return (char*) QApplication::clipboard()->text();
+}
+
+void kvt_reinit_fonts(const QFont &base)
+{
+  int ptsz[6];
+
+  ptsz[1] = kvt_fnt2.pointSize();
+  ptsz[2] = kvt_fnt3.pointSize();
+  ptsz[3] = kvt_fnt4.pointSize();
+  ptsz[4] = kvt_fnt5.pointSize();
+  ptsz[5] = kvt_fnt6.pointSize();
+
+  kvt_fnt1 = base;
+  kvt_fnt2 = base;
+  kvt_fnt3 = base;
+  kvt_fnt4 = base;
+  kvt_fnt5 = base;
+  kvt_fnt6 = base;
+
+  kvt_fnt2.setPointSize(ptsz[1]);
+  kvt_fnt3.setPointSize(ptsz[2]);
+  kvt_fnt4.setPointSize(ptsz[3]);
+  kvt_fnt5.setPointSize(ptsz[4]);
+  kvt_fnt6.setPointSize(ptsz[5]);
+
+  // take font handles (they are actually fids)
+  reg_font_handles[0] = kvt_fnt1.handle();
+  reg_font_handles[1] = kvt_fnt2.handle();
+  reg_font_handles[2] = kvt_fnt3.handle();
+  reg_font_handles[3] = kvt_fnt4.handle();
+  reg_font_handles[4] = kvt_fnt5.handle();
+  reg_font_handles[5] = kvt_fnt6.handle();
 }
 
 class MyApp:public KApplication {
@@ -474,6 +517,7 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
     m_options->insertItem( i18n("&Color"), m_color);
     m_options->insertItem( i18n("&Size"), m_dimen);
     m_options->insertItem( i18n("Terminal...") );
+    m_options->insertItem( i18n("Font...") );
     m_options->insertSeparator();
     m_options->insertItem( i18n("Save &Options"));
 
@@ -574,6 +618,12 @@ void kVt::saveYourself(){
   }
   if (kvtarguments.count() > 0)
     config->writeEntry("kvtarguments", kvtarguments);
+  config->writeEntry("defaultFont", kvt_fnt1);
+  config->writeEntry("fontSize2", kvt_fnt2.pointSize());
+  config->writeEntry("fontSize3", kvt_fnt3.pointSize());
+  config->writeEntry("fontSize4", kvt_fnt4.pointSize());
+  config->writeEntry("fontSize5", kvt_fnt5.pointSize());
+  config->writeEntry("fontSize6", kvt_fnt6.pointSize());
   config->sync();
 }
 
@@ -613,6 +663,13 @@ void kVt::saveOptions(KConfig* kvtconfig){
     kvtconfig->writeEntry("kmenubar", "bottom");
   else
     kvtconfig->writeEntry("kmenubar", "top");
+
+  kvtconfig->writeEntry("defaultFont", kvt_fnt1);
+  kvtconfig->writeEntry("fontSize2", kvt_fnt2.pointSize());
+  kvtconfig->writeEntry("fontSize3", kvt_fnt3.pointSize());
+  kvtconfig->writeEntry("fontSize4", kvt_fnt4.pointSize());
+  kvtconfig->writeEntry("fontSize5", kvt_fnt5.pointSize());
+  kvtconfig->writeEntry("fontSize6", kvt_fnt6.pointSize());
 
   kvtconfig->sync();
 }
@@ -744,8 +801,18 @@ void kVt::options_menu_activated( int item){
     }
     delete m_optiondialog;
     break;
+  case 8:
+    // font options
+    {
+	QFont fnt = kvt_fnt1;
+	KFontDialog::getFont(fnt);
+	kvt_reinit_fonts(fnt);
+	LoadNewFont();
+	ResizeToVtWindow();
+    }
+    break;
     
-  case 9:
+  case 10:
     // save options
     {
       saveOptions(kvtconfig);
@@ -1071,6 +1138,20 @@ int main(int argc, char **argv)
   // create the QT Application
   MyApp a( argc, argv, "kvt" );
   myapp = &a;
+
+  // now create fonts for five resolutions from default fixed font
+  // this ensures that we have correct charset for all fonts
+  // TODO: make default font and font sizes configurable
+  KConfig *cfg = kapp->getConfig();
+  QFont fntDef("fixed", 13);
+  kapp->getCharsets()->setQFont(fntDef);
+  QFont fnt = cfg->readFontEntry("defaultFont", &fntDef);
+  kvt_fnt2.setPointSize(cfg->readNumEntry("fontSize2", 7));
+  kvt_fnt3.setPointSize(cfg->readNumEntry("fontSize3", 10));
+  kvt_fnt4.setPointSize(cfg->readNumEntry("fontSize4", 14));
+  kvt_fnt5.setPointSize(cfg->readNumEntry("fontSize5", 15));
+  kvt_fnt6.setPointSize(cfg->readNumEntry("fontSize6", 20));
+  kvt_reinit_fonts(fnt);
 
   // this is for the original rxvt-code
   display = qt_xdisplay();
