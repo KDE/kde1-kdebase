@@ -11,7 +11,7 @@ function default($var,$com)= \
         "Name=" title() "\n" \
         $var  \
         "Comment=" ifelse($longtitle,$longtitle,$title) "\n" \
-        ifnempty(icon(),"Icon=/usr/share/kde/pixmaps/" icon() "\n")
+        ifnempty(icon(),"Icon=/usr/share/pixmaps/" icon() "\n")
 
 supported
   x11=  ifelsefile($kdelnk,catfile($kdelnk),default("",$command))

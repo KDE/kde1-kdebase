@@ -67,7 +67,7 @@ binary-arch: checkroot build
 	      debian/tmp/usr/share/applnk/debian_menu/.directory
 	chmod +x debian/tmp/etc/init.d/kdm debian/tmp/usr/bin/switchdm \
 	debian/tmp/etc/init.d/xdm
-	dh_undocumented `cat debian/man-pages`
+	dh_undocumented 
 	perl -w debian/kderules
 #	-rm -f debian/tmp/usr/bin/rman
 #	-rm -rf debian/tmp/usr/doc/kdebase/kdehelp/rman
