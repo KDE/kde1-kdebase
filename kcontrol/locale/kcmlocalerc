@@ -1,5 +1,5 @@
 [KCM Locale]
-Languages=C,ca,cs,da,de,el,en_UK,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sk,sv,zh_CN.GB2312,zh_TW.Big5,pt_BR,eo
+Languages=C,ca,cs,da,de,el,en_UK,en,es,fi,fr,hr,hu,is,it,nl,no,pl,pt,ro,ru,sk,sv,zh_CN.GB2312,zh_TW.Big5,pt_BR,eo
 
 [ca]
 Name=Catalan
@@ -108,6 +108,13 @@ Name[pt]=Checo
 Name[sv]=tjeckiska
 Name[ro]=Ceh
 Name[ru]=˛≈€”À… 
+
+[is]
+Name=Icelandic
+Name[de]=Isl‰ndisch
+Name[is]=Islenzk
+Name[sv]=isl‰ndska
+Name[fr]=Islandois
 
 [sv]
 Name=Swedish
