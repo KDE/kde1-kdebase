@@ -34,24 +34,56 @@ background=
 #
 #-----------------------------------------------------------------------------
 [Display]
-# If eactly one wallpaper is given the desktop will be switched
-# to common-wallpaper mode.
+# If CommonDesktop is true, the desktop will be switched
+# to common-desktop mode.
+CommonDesktop=true
+# Name of the wallpaper image
 Wallpaper0=
+# Wallpaper mode: Tiled, Centred, CentredMaxpect, etc.
+# (take it from WallpaperMode from ~/.kde/share/config/display#rc)
 WallpaperMode0=
+# Color mode: Flat or Gradient
+ColorMode0=
+# Color for Flat color mode, or first color of Gradient color mode
+Color0_1=
+# Second color for Gradient color mode
+Color0_2=
+#
 Wallpaper1=
 WallpaperMode1=
+ColorMode1=
+Color1_1=
+Color1_2=
 Wallpaper2=
 WallpaperMode2=
+ColorMode2=
+Color2_1=
+Color2_2=
 Wallpaper3=
 WallpaperMode3=
+ColorMode3=
+Color3_1=
+Color3_2=
 Wallpaper4=
 WallpaperMode4=
+ColorMode4=
+Color4_1=
+Color4_2=
 Wallpaper5=
 WallpaperMode5=
+ColorMode5=
+Color5_1=
+Color5_2=
 Wallpaper6=
 WallpaperMode6=
+ColorMode6=
+Color6_1=
+Color6_2=
 Wallpaper7=
 WallpaperMode7=
+ColorMode7=
+Color7_1=
+Color7_2=
 #
 # Color and style of root icon texts (style: 1=transparent, 0=solid)
 RootIconTextStyle=
@@ -131,7 +163,6 @@ OffsetY=
 #
 #-----------------------------------------------------------------------------
 [Sounds]
-CommonDesktop=true
 Desktop1=
 Desktop2=
 Desktop3=

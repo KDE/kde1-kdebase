@@ -1,3 +1,18 @@
+1999-01-12  Stefan Taferner  <taferner@kde.org> (V0.7.1)
+
+	* Added skeleton of documentation.
+
+	* Added missing config keys in Template.themerc in
+	Display section.
+
+	* Moved CommonDesktop key from Sound to Display
+	(where it belongs).
+
+	* Changed target directory of wallpapers to
+	~/.kde/share/wallpapers
+
+	* Fixed buggy deinstallation of icons.
+
 1999-1-6  Karl Backström  <backstrom@kde.org>
 
         * Extended the Groupdetails dialog.

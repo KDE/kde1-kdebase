@@ -718,6 +718,7 @@ int Theme::installIcons(void)
   const char* path;
   int i, installed = 0;
   const char* groupName = "Icons";
+  const char* groupNameExtra = "Extra Icons";
   bool wantRestart = false;
 
   debug("*** beginning with %s", groupName);
@@ -845,10 +846,9 @@ int Theme::installIcons(void)
   writeInstFileList(groupName);
 
   // Handle extra icons
-  groupName = "Extra Icons";
-  setGroup(groupName);
-  mMappings->setGroup(groupName);
-  it = entryIterator(groupName);
+  setGroup(groupNameExtra);
+  mMappings->setGroup(groupNameExtra);
+  it = entryIterator(groupNameExtra);
   if (it) for (entry=it->toFirst(); entry; entry=it->operator++())
   {
     key = it->currentKey();
@@ -870,10 +870,11 @@ int Theme::installIcons(void)
     value = iconDir + icon;
     if (installFile(icon, value)) installed++;
 
-    value = miniIconDir + miniIcon;
+    value = miniIconDir + icon;
     if (installFile(miniIcon, value)) installed++;
   }
 
+  writeInstFileList(groupName);
   debug("*** done with %s (%d icons installed)", groupName, installed);
 
   mInstIcons += installed;
