@@ -186,7 +186,7 @@ msgstr "Stilla skráastjóra..."
 
 #: kfmgui.cpp:393
 msgid "Configure &Browser..."
-msgstr "Stilla &flakkara..."
+msgstr "Stilla &vafra..."
 
 #: kfmgui.cpp:429
 msgid ""
@@ -606,7 +606,7 @@ msgstr "Sýna valslá"
 
 #: kfmdlg.cpp:117
 msgid "&Browser"
-msgstr "&Flakkari"
+msgstr "&Velja"
 
 #: bookmark.cpp:296
 msgid "Could not write bookmark"
@@ -760,7 +760,7 @@ msgstr "Keyra"
 
 #: kfmprops.cpp:689
 msgid "&Browse..."
-msgstr "&Flakka..."
+msgstr "&Velja..."
 
 #: kfmprops.cpp:723
 msgid "Swallowing on panel"
@@ -1409,19 +1409,19 @@ msgstr "Viltu taka við þessari köku epa hafna henni?"
 
 #: kcookiewin.cpp:120
 msgid "Apply to "
-msgstr "Tekur til "
+msgstr "Gildir um "
 
 #: kcookiewin.cpp:125
 msgid "&This cookie only"
-msgstr "þessarar köku"
+msgstr "þ&essa köku"
 
 #: kcookiewin.cpp:133
 msgid "All cookies from this &domain"
-msgstr "allra kaka frá þessu netléni"
+msgstr "allar kökur frá þessu &léni"
 
 #: kcookiewin.cpp:140
 msgid "All &cookies"
-msgstr "allra kaka"
+msgstr "&allar kökur"
 
 #: kcookiewin.cpp:161
 msgid "&Accept"
@@ -1513,7 +1513,7 @@ msgid ""
 "kfmexec command [URLs ....]\n"
 msgstr ""
 "Notkun:\n"
-"kfmexec skipun [slóðir ....]\n"
+"kfmexec skipun [slóðir....]\n"
 
 # FIXME
 #~ msgid "Unknown binding"

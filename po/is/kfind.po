@@ -111,7 +111,7 @@ msgstr "&Leita í:"
 
 #: kftabdlg.cpp:78
 msgid "&Browse ..."
-msgstr "&Flakka..."
+msgstr "&Velja..."
 
 #: kftabdlg.cpp:84
 msgid "Include &subfolders"
@@ -243,11 +243,11 @@ msgstr "Vista niðurstöður í skrá:"
 
 #: kfoptions.cpp:79
 msgid "Save results to file ~/.kfind-results.html"
-msgstr "Vista niðurstöpur í skránni ~/.kfind-results.html"
+msgstr "Vista niðurstöður í skránni ~/.kfind-results.html"
 
 #: kfoptions.cpp:81
 msgid "Browse"
-msgstr "Flakka"
+msgstr "&Velja..."
 
 #: kfoptions.cpp:94
 msgid "Plain Text"

@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "POT-Creation-Date: 1999-02-06 01:16+0100\n"
 "PO-Revision-Date: 1999-02-11 10:40+0100\n"
-"Language-Team: is\n"
-" (yes, really)Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
+"Language-Team: is <kde-isl@mmedia.is>\n"
+"Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 
 # backgnd.cpp:54
 #: backgnd.cpp:54
@@ -21,7 +21,7 @@ msgstr "Skjáborð"
 # backgnd.cpp:185
 #: backgnd.cpp:185
 msgid "&Rename ..."
-msgstr "Endur&nefna ..."
+msgstr "Endur&nefna..."
 
 # backgnd.cpp:196
 #: backgnd.cpp:196
@@ -46,7 +46,7 @@ msgstr "&Tveir litir"
 # backgnd.cpp:287
 #: backgnd.cpp:287
 msgid "Set&up ..."
-msgstr "St&illingar ..."
+msgstr "St&illingar..."
 
 # backgnd.cpp:296
 #: backgnd.cpp:296
@@ -61,7 +61,7 @@ msgstr "Ekkert veggfóður"
 # backgnd.cpp:360
 #: backgnd.cpp:360
 msgid "&Browse..."
-msgstr "&Flakka..."
+msgstr "&Velja annað..."
 
 # backgnd.cpp:368
 #: backgnd.cpp:368
@@ -126,7 +126,7 @@ msgstr "Slembið"
 # backgnd.cpp:408
 #: backgnd.cpp:408
 msgid "Setu&p..."
-msgstr "St&illingar ..."
+msgstr "St&illingar..."
 
 # backgnd.cpp:418
 #: backgnd.cpp:418
@@ -237,12 +237,12 @@ msgstr "Stillingar slembihams"
 # backgnd.cpp:1713
 #: backgnd.cpp:1714
 msgid "Pick files from &directory"
-msgstr "Veldi skrár úr &möppu"
+msgstr "Velja skrár úr &möppu"
 
 # backgnd.cpp:1727
 #: backgnd.cpp:1728
 msgid "&Browse ..."
-msgstr "&Flakka..."
+msgstr "&Velja..."
 
 # backgnd.cpp:1748
 #: backgnd.cpp:1749
@@ -292,7 +292,7 @@ msgstr "Sjálfgefið í KDE"
 # colorscm.cpp:130
 #: colorscm.cpp:130
 msgid "&Add ..."
-msgstr "&Bæta við ..."
+msgstr "&Bæta við..."
 
 # colorscm.cpp:147
 #: colorscm.cpp:147
@@ -302,7 +302,7 @@ msgstr "&Vista breytingar"
 # colorscm.cpp:161
 #: colorscm.cpp:161
 msgid "Widget color"
-msgstr "Græjulitur"
+msgstr "Litur viðmótshlutar"
 
 # colorscm.cpp:168
 #: colorscm.cpp:168
@@ -372,12 +372,12 @@ msgstr "Birtuskil"
 # colorscm.cpp:223
 #: colorscm.cpp:223
 msgid "&Low"
-msgstr "&Lág"
+msgstr "Lág"
 
 # colorscm.cpp:231
 #: colorscm.cpp:231
 msgid "High"
-msgstr "&Há"
+msgstr "Há"
 
 # colorscm.cpp:304
 #: colorscm.cpp:304
@@ -448,7 +448,7 @@ msgstr "Læsa skjá"
 # scrnsave.cpp:112 scrnsave.cpp:181
 #: scrnsave.cpp:112 scrnsave.cpp:181
 msgid "Screen Saver"
-msgstr "Skjasvæfa"
+msgstr "Skjásvæfa"
 
 # scrnsave.cpp:188 scrnsave.cpp:382 scrnsave.cpp:623 scrnsave.cpp:744
 #: scrnsave.cpp:188 scrnsave.cpp:382 scrnsave.cpp:623 scrnsave.cpp:744
@@ -458,7 +458,7 @@ msgstr "Engin svæfing"
 # scrnsave.cpp:209
 #: scrnsave.cpp:209
 msgid "&Setup ..."
-msgstr "&Stilla ..."
+msgstr "&Stilla..."
 
 # scrnsave.cpp:217
 #: scrnsave.cpp:217
@@ -518,17 +518,17 @@ msgstr "Stíll"
 # general.cpp:229
 #: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
-msgstr "Teikna græjur eins og &Windows 95"
+msgstr "Teikna viðmótshluti eins og &Windows 95"
 
 # general.cpp:245
 #: general.cpp:245
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr "&Valslá efst á skjá svipað og á Makkanum`"
+msgstr "&Valslá efst á skjá svipað og á Makkanum"
 
 # general.cpp:259
 #: general.cpp:259
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "&Virkja letur og liti í forritum óskyldum KDE"
+msgstr "Stilla letur og liti í &forritum óskyldum KDE"
 
 # general.cpp:530
 #: general.cpp:530
@@ -579,7 +579,7 @@ msgstr "&Bakgrunnur"
 # main.cpp:67
 #: main.cpp:67
 msgid "&Screensaver"
-msgstr "&Skjasvæfa"
+msgstr "&Skjásvæfa"
 
 # main.cpp:71
 #: main.cpp:71
@@ -631,7 +631,7 @@ msgstr "&Leturgerð"
 # fontchooser.cpp:89
 #: fontchooser.cpp:89
 msgid "&Bold"
-msgstr "&feitletrað"
+msgstr "&Feitletrað"
 
 # fontchooser.cpp:96
 #: fontchooser.cpp:96
@@ -646,7 +646,7 @@ msgstr "S&tærð"
 # fontchooser.cpp:147
 #: fontchooser.cpp:147
 msgid "&Character set"
-msgstr "St&afasett"
+msgstr "St&afatafla"
 
 # fontchooser.cpp:262
 #: fontchooser.cpp:262
