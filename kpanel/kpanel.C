@@ -453,14 +453,17 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 				  bwidth * dbhs, bheight );
 	}
 	
-	// the desktop buttons geometry
-	desktopbar->setGeometry( 2* (bwidth + 1), 0, 
-				 ( bwidth * dbhs + 1 ) * i, bheight + 1);
+	desktopbar->setGeometry(exit_button->width(),
+				0, 
+				(exit_button->width() * dbhs + 1) * (number_of_desktops/2), 
+				box_height);
 	
-	// desktop buttons but control buttons
-	control_group->setGeometry(0, margin,
-				   2 * (bwidth + 1)  + desktopbar->width(), desktopbar->height());
-	
+	control_group->setGeometry(
+				   5 * box_width,
+// 				   w/2 - (exit_button->width() + desktopbar->width())/2,
+				   margin,
+				   exit_button->width() + desktopbar->width(),
+				   box_height);
       } else {
 	
 	bwidth  = (box_width - 1) / 2;
@@ -490,14 +493,18 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 	    break;
 	}
 	
-	// the desktop buttons geometry
-	desktopbar->setGeometry( bwidth + 1, 0, 
-				 ( bwidth * dbhs + 1 ) * i, (bheight + 1) * dbrows);
+	desktopbar->setGeometry(lock_button->x() + lock_button->width(),
+				0, 
+				(box_width/2 * dbhs +1) * number_of_desktops , 
+				box_height);
 	
-	// desktop buttons but control buttons
-	control_group->setGeometry(0, margin,
-				   bwidth + 1 + desktopbar->width(), desktopbar->height());
-	
+	control_group->setGeometry(
+				   5 * box_width,
+// 				   w/2 - (2 * box_width + 1 + desktopbar->width())/2,
+				   margin,
+				   2*box_width + 1 + desktopbar->width(),
+				   box_height);
+
       }
       
       // panel buttons geometry
@@ -550,11 +557,15 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 				bwidth * 2 + 1, bheight + 1);
       }
       
-      desktopbar->setGeometry(0, bheight + 1,
-			      bwidth * 2 + 1, (bheight + 1) * i);
-      
-      control_group->setGeometry(margin, h/2 - (bheight + 1 + desktopbar->height())/2,
-				 box_width, bheight + 1 + desktopbar->height());
+      desktopbar->setGeometry(0,
+			      exit_button->height(),
+			      box_width,
+			      number_of_desktops*(box_height/2+1));
+
+      control_group->setGeometry(margin,
+				 h/2 - (exit_button->height() + desktopbar->height())/2,
+				 box_width,
+				 exit_button->height() + desktopbar->height());
       
       panel_button->setGeometry(0, 0,
 				box_width + 2*margin, 12);
