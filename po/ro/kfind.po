@@ -1,0 +1,354 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kde-1.0pre\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
+"PO-Revision-Date: 1998-07-04 12:00+0200\n"
+"Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
+"Language-Team: ??? <ro@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kfdird.cpp:46
+msgid "Directories:"
+msgstr "Directoare:"
+
+#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
+msgid "Cannot open or read directory."
+msgstr "Nu pot deschide sau citi directorul."
+
+#: kfindtop.cpp:118
+msgid "&Start search"
+msgstr "Incepe &cãutarea"
+
+#: kfindtop.cpp:120
+msgid "S&top search"
+msgstr "&Opreºte cãutarea"
+
+#: kfindtop.cpp:125
+msgid "&Open"
+msgstr "&Deschide"
+
+#: kfindtop.cpp:127
+msgid "&Add to archive"
+msgstr "&Adaugã la arhivã"
+
+#: kfindtop.cpp:132
+msgid "&Properties"
+msgstr "&Proprietãþi"
+
+#: kfindtop.cpp:135
+msgid "Open Containing &Folder"
+msgstr "Deschide directorul"
+
+#: kfindtop.cpp:138
+msgid "&Save Search"
+msgstr "&Salveazã cãutarea"
+
+#: kfindtop.cpp:155
+msgid "&Select All"
+msgstr "&Selecteazã tot"
+
+#: kfindtop.cpp:157
+msgid "Unse&lect All"
+msgstr "Dese&lecteazã tot"
+
+#: kfindtop.cpp:159
+msgid "&Invert Selection"
+msgstr "&Inverseazã selectarea"
+
+#: kfindtop.cpp:171
+msgid "&Preferences ..."
+msgstr "&Preferinþe ..."
+
+#: kfindtop.cpp:176
+#, c-format
+msgid ""
+"KFind %s\n"
+"Frontend to find utility\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"\n"
+"Special thanks to Stephan Kulow\n"
+"<coolo@kde.org>"
+msgstr ""
+"KFind %s\n"
+"Utilitar de cãutare\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"\n"
+"Mulþumiri speciale lui Stephan Kulow\n"
+"<coolo@kde.org>"
+
+#: kfindtop.cpp:196
+msgid "Start Search"
+msgstr "Începe cãutarea"
+
+#: kfindtop.cpp:201
+msgid "New Search"
+msgstr "Cãutare nouã"
+
+#: kfindtop.cpp:206
+msgid "Stop Search"
+msgstr "Opreºte cãutarea"
+
+#: kfindtop.cpp:219
+msgid "Add to archive"
+msgstr "Adaugã la arhivã"
+
+#: kfindtop.cpp:234
+msgid "Open Containing Folder"
+msgstr "Deschide directorul conþinut"
+
+#: kfindtop.cpp:239
+msgid "Save Search Results"
+msgstr "Salveazã rezultatul cãutãrii"
+
+#: kftabdlg.cpp:71
+msgid "&Named:"
+msgstr "&Nume:"
+
+#: kftabdlg.cpp:74
+msgid "&Look in:"
+msgstr "&Cautã în:"
+
+#: kftabdlg.cpp:77
+msgid "&Browse ..."
+msgstr "&Rãsfoire"
+
+#: kftabdlg.cpp:83
+msgid "Include &subfolders"
+msgstr "Include &subdirectoarele"
+
+#: kftabdlg.cpp:114
+msgid " Name& Location "
+msgstr " Nume ºi locaþie "
+
+#: kftabdlg.cpp:126
+msgid "and"
+msgstr "ºi"
+
+#: kftabdlg.cpp:127
+msgid "month(s)"
+msgstr "luni"
+
+#: kftabdlg.cpp:128
+msgid "day(s)"
+msgstr "zile"
+
+#: kftabdlg.cpp:143
+msgid "&All files"
+msgstr "&Toate fiºierele"
+
+#: kftabdlg.cpp:144
+msgid "Find all files created or &modified:"
+msgstr "Cautã toate fiºierele create sau &modificate:"
+
+#: kftabdlg.cpp:145
+msgid "&between"
+msgstr "între"
+
+#: kftabdlg.cpp:146
+msgid "during the previou&s "
+msgstr "în &timpul precedentelor "
+
+#: kftabdlg.cpp:147
+msgid "&during the previous "
+msgstr "î&n timpul precedentelor "
+
+#: kftabdlg.cpp:195
+msgid " Date Modified "
+msgstr " Data Modificãrii "
+
+#: kftabdlg.cpp:202
+msgid "Of &type:"
+msgstr "De &tipul:"
+
+#: kftabdlg.cpp:204
+msgid "&Containing Text:"
+msgstr "&Conþinând textul:"
+
+#: kftabdlg.cpp:209
+msgid "&Size is:"
+msgstr "De &dimensiunea:"
+
+#: kftabdlg.cpp:232
+msgid "All Files and Folders"
+msgstr "Toate fiºierele ºi directoarele"
+
+#: kftabdlg.cpp:234
+msgid "Folders"
+msgstr "Directoare"
+
+#: kftabdlg.cpp:235
+msgid "Symbolic links"
+msgstr "Legãturi simbolice"
+
+#: kftabdlg.cpp:236
+msgid "Special files (sockets, device files...)"
+msgstr "Fiºiere speciale (soket-uri, fiºiere de dispozitiv ...)"
+
+#: kftabdlg.cpp:237
+msgid "Executable files"
+msgstr "Fiºiere executabile"
+
+#: kftabdlg.cpp:238
+msgid "SUID executable files"
+msgstr "Fiºiere executabile SUID-ate"
+
+#: kftabdlg.cpp:247
+msgid "At Least"
+msgstr "Cel puþin"
+
+#: kftabdlg.cpp:248
+msgid "At Most"
+msgstr "Cel mult"
+
+#: kftabdlg.cpp:259
+msgid " Advanced "
+msgstr " Avansate "
+
+#: kftabdlg.cpp:492
+msgid "The date is not valid!!"
+msgstr "Data nu este validã !!"
+
+#: kftabdlg.cpp:504
+msgid "The month(s) value isn't valid!!"
+msgstr "Luna nu este validã !!"
+
+#: kftabdlg.cpp:515
+msgid "The day(s) value isn't valid!!"
+msgstr "Ziua nu este validã !!"
+
+#: kftabdlg.cpp:532
+msgid "The value in size isn't valid number!!"
+msgstr "Valoarea dimensiunii nu este un numãr valid !!"
+
+#: kfoptions.cpp:52
+msgid "Preferences"
+msgstr "Preferinþe"
+
+#: kfoptions.cpp:74
+msgid "File format:"
+msgstr "Formatul fiºierului:"
+
+#: kfoptions.cpp:76
+msgid "Save results to file:"
+msgstr "Salveazã rezultatele în fiºierul:"
+
+#: kfoptions.cpp:79
+msgid "Save results to file ~/.kfind-results.html"
+msgstr "Salveazã rezultatele în fiºierul ~/.kfind-results.html"
+
+#: kfoptions.cpp:81
+msgid "Browse"
+msgstr "&Rãsfoire"
+
+#: kfoptions.cpp:94
+msgid "Plain Text"
+msgstr "Text"
+
+#: kfoptions.cpp:123
+msgid "Saving"
+msgstr "Salvãri"
+
+#: kfoptions.cpp:130
+msgid "Create Archive:"
+msgstr "Creazã arhivã:"
+
+#: kfoptions.cpp:132
+msgid "Add to Archive:"
+msgstr "Ad. în arhivã:"
+
+#: kfoptions.cpp:136
+msgid "Patterns:"
+msgstr "Filtru:"
+
+#: kfoptions.cpp:139
+msgid "Add New"
+msgstr "Adaugã nou"
+
+#: kfoptions.cpp:180
+msgid "Archivers"
+msgstr "Arhivatoare"
+
+#: kfwin.cpp:111 kfwin.cpp:118 kfwin.cpp:134 kfwin.cpp:161
+#, c-format
+msgid "%d file(s) found"
+msgstr "%d fiºier(e) gãsite"
+
+#: kfwin.cpp:245
+msgid "It wasn't possible to save results!"
+msgstr "Nu a fost posibil sã salvez rezultatele!"
+
+#: kfwin.cpp:253 kfwin.cpp:255 kfwin.cpp:257
+msgid "KFind Results File"
+msgstr "Fiºierul de rezultate a lui KFind"
+
+#: kfwin.cpp:282
+msgid "Results were saved to file\n"
+msgstr "Rezultatele au fost salvate în fiºierul\n"
+
+#: kfwin.cpp:297
+#, c-format
+msgid ""
+"Do you really want to delete file:\n"
+"%s"
+msgstr ""
+"Chiar vreþi sã ºtergeþi fiºierul:\n"
+"%s"
+
+#: kfwin.cpp:299
+msgid "Delete File"
+msgstr "ªterge fiºier"
+
+#: kfwin.cpp:311
+msgid ""
+"You have no permission\n"
+" to delete this file"
+msgstr ""
+"Nu aveþi permisiunea\n"
+" sã ºtergeþi acest fiºier"
+
+#: kfwin.cpp:317
+msgid ""
+"It isn't possible to delete\n"
+"selected file"
+msgstr ""
+"Nu pot ºterge\n"
+"fiºierul selectat"
+
+#: kfwin.cpp:335
+msgid ""
+"You have no permission\n"
+" to delete this directory"
+msgstr ""
+"Nu aveþi permisiunea\n"
+" sã ºtergeþi acest director"
+
+#: kfwin.cpp:340
+msgid ""
+"Specified directory\n"
+"is not empty!"
+msgstr ""
+"Directorul specificat\n"
+"nu este gol !"
+
+#: kfwin.cpp:345
+msgid ""
+"It isn't possible to delete\n"
+"selected directory"
+msgstr ""
+"Nu este posibil sã ºterg\n"
+"directorul selectat"
+
+#: kfwin.cpp:437
+msgid "Couldn't recognize archive type!"
+msgstr "Nu recunosc tipul de arhivã !"
+
+#: kfwin.cpp:496
+msgid "Error while creating child process!"
+msgstr "Eroare la creare proces fiu !"

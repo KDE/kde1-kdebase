@@ -1,0 +1,419 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kde-1.0pre\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
+"PO-Revision-Date: 1998-07-04 12:00+0200\n"
+"Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
+"Language-Team: ??? <ro@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backgnd.cpp:59
+msgid "Enter new desktop name"
+msgstr "Introduceþi noul nume al ecranului"
+
+#: backgnd.cpp:115 backgnd.cpp:150
+msgid "Desktop"
+msgstr "Ecran"
+
+#: backgnd.cpp:167
+msgid "&Rename ..."
+msgstr "&Redenumeºte"
+
+#: backgnd.cpp:193 colorscm.cpp:93
+msgid "Colors"
+msgstr "Culori"
+
+#: backgnd.cpp:220
+msgid "&One Color"
+msgstr "&O culoare"
+
+#: backgnd.cpp:237
+msgid "&Two Color"
+msgstr "&Douã culori"
+
+#: backgnd.cpp:256
+msgid "Set&up ..."
+msgstr "Setã&ri ..."
+
+#: backgnd.cpp:265
+msgid "Wallpaper"
+msgstr "Imagine de fundal"
+
+#: backgnd.cpp:275
+msgid "Ti&led"
+msgstr "&Alãturate"
+
+#: backgnd.cpp:283
+msgid "&Centred"
+msgstr "&Centratã"
+
+#: backgnd.cpp:291
+msgid "&Scaled"
+msgstr "&Scalatã"
+
+#: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
+msgid "No wallpaper"
+msgstr "Fãrã fundal"
+
+#: backgnd.cpp:335
+msgid "&Browse..."
+msgstr "&Cautã..."
+
+#: backgnd.cpp:864
+msgid "Desktop names"
+msgstr "Numele ecranului"
+
+#: backgnd.cpp:910
+msgid "Two color backgrounds"
+msgstr "Fundal în douã culori"
+
+#: backgnd.cpp:947
+msgid "Blend colors from &top to bottom"
+msgstr "Mixeazã culorile de &sus în jos"
+
+#: backgnd.cpp:953
+msgid "Blend colors from &right to left"
+msgstr "Mixeazã culorile de la &dreapta la stânga"
+
+#: backgnd.cpp:959
+msgid "Use &pattern"
+msgstr "Cu &model"
+
+#: backgnd.cpp:986
+msgid "Preview"
+msgstr "Mostrã"
+
+#: backgnd.cpp:997
+msgid "Pattern &name"
+msgstr "&Nume model"
+
+#: backgnd.cpp:1036
+msgid "Current"
+msgstr "Curent"
+
+#: backgnd.cpp:1096
+msgid "Filled"
+msgstr "Plin"
+
+#: backgnd.cpp:1099
+msgid "Fish net"
+msgstr "Plasã de pescuit"
+
+#: backgnd.cpp:1102
+msgid "Triangles"
+msgstr "Triunghiuri"
+
+#: backgnd.cpp:1105
+msgid "Flowers"
+msgstr "Floricele"
+
+#: backgnd.cpp:1108
+msgid "Rattan"
+msgstr "Plasã de iutã"
+
+#: backgnd.cpp:1111
+msgid "Cobbled Pavement"
+msgstr "Pavaj"
+
+#: colorscm.cpp:119
+msgid "Color Scheme"
+msgstr "Schemã de culori"
+
+#: colorscm.cpp:130
+msgid "Current scheme"
+msgstr "Schema curentã"
+
+#: colorscm.cpp:132
+msgid "KDE default"
+msgstr "KDE implicitã"
+
+#: colorscm.cpp:145
+msgid "&Add ..."
+msgstr "&Adaugã ..."
+
+#: colorscm.cpp:162
+msgid "&Save changes"
+msgstr "&Salveazã schimbãrile"
+
+#: colorscm.cpp:176
+msgid "Widget color"
+msgstr "Culori butoane"
+
+#: colorscm.cpp:183
+msgid "Inactive title bar"
+msgstr "Zonã de titlu inactivã"
+
+#: colorscm.cpp:184
+msgid "Inactive title text"
+msgstr "Titlu inactiv"
+
+#: colorscm.cpp:185
+msgid "Inactive title blend"
+msgstr "Mixaj zonã de titlu"
+
+#: colorscm.cpp:186
+msgid "Active title bar"
+msgstr "Zonã de titlu activã"
+
+#: colorscm.cpp:187
+msgid "Active title text"
+msgstr "Titlu activ"
+
+#: colorscm.cpp:188
+msgid "Active title blend"
+msgstr "Mixaj zonã de titlu"
+
+#: colorscm.cpp:189
+msgid "Background"
+msgstr "Fundal"
+
+#: colorscm.cpp:190
+msgid "Text"
+msgstr "Text"
+
+#: colorscm.cpp:191
+msgid "Select background"
+msgstr "Fundal selecþie"
+
+#: colorscm.cpp:192
+msgid "Select text"
+msgstr "Text selectat"
+
+#: colorscm.cpp:193
+msgid "Window background"
+msgstr "Fundal de fereastrã"
+
+#: colorscm.cpp:194 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+msgid "Window text"
+msgstr "Text în fereastrã"
+
+#: colorscm.cpp:222
+msgid "Contrast"
+msgstr "Contrast"
+
+#: colorscm.cpp:238
+msgid "&Low"
+msgstr "&Mic"
+
+#: colorscm.cpp:246
+msgid "High"
+msgstr "Mare"
+
+#: colorscm.cpp:317
+msgid "Error removing"
+msgstr "Eroare la ºtergere"
+
+#: colorscm.cpp:318
+msgid ""
+"This color scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the color scheme is stored."
+msgstr ""
+"Aceastã schemã de culori nu poate fi ºtearsã.\n"
+"Poate cã nu ai permisiunea sã modifici fiºierul\n"
+"unde este stocatã schema de culori."
+
+#: colorscm.cpp:375
+msgid "Naming error"
+msgstr "Eroare de denumire"
+
+#: colorscm.cpp:376
+msgid ""
+"Please choose a unique name for the new color\n"
+"scheme. The one you entered already appears\n"
+"in the color scheme list."
+msgstr ""
+"Alegeþi un nume unic pentru noua schemã de culoare.\n"
+"Cea introdusã este deja în listã."
+
+#: savescm.cpp:18
+msgid "Add a color scheme"
+msgstr "Adaugã o schemã de culori"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new color scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The colors currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"Introduceþi un nume pentru noua schemã de culori\n"
+"care va fi adãugatã în lista dvs. personalã.\n"
+"\n"
+"Culorile curente vor fi copiate\n"
+"pentru început în aceastã schemã."
+
+#: scrnsave.cpp:48
+msgid "Ignore"
+msgstr "Ignorã"
+
+#: scrnsave.cpp:49
+msgid "Save Screen"
+msgstr "Salveazã ecranul"
+
+#: scrnsave.cpp:50
+msgid "Lock Screen"
+msgstr "Blocheazã ecranul"
+
+#: scrnsave.cpp:113 scrnsave.cpp:182
+msgid "Screen Saver"
+msgstr "Scriin Seivãr :)"
+
+#: scrnsave.cpp:189 scrnsave.cpp:360 scrnsave.cpp:571 scrnsave.cpp:686
+msgid "No screensaver"
+msgstr "Fãrã scriinseivãr"
+
+#: scrnsave.cpp:210
+msgid "&Setup ..."
+msgstr "&Setãri ..."
+
+#: scrnsave.cpp:218
+msgid "&Test"
+msgstr "&Testeazã"
+
+#: scrnsave.cpp:231
+msgid "Settings"
+msgstr "Setãri"
+
+#: scrnsave.cpp:251
+msgid "&Wait for"
+msgstr "&Aºteaptã"
+
+#: scrnsave.cpp:261
+msgid "min."
+msgstr ""
+
+#: scrnsave.cpp:267
+msgid "&Require password"
+msgstr "&Cere parolã"
+
+#: scrnsave.cpp:273
+msgid "Show &password as stars"
+msgstr "Tipãreºte &parola cu steluþe"
+
+#: scrnsave.cpp:281
+msgid "Priority"
+msgstr "Prioritate"
+
+#: scrnsave.cpp:294
+msgid "&High"
+msgstr "&Mare"
+
+#: scrnsave.cpp:303
+msgid "Low"
+msgstr "Micã"
+
+#: general.cpp:216
+msgid "Fonts etc."
+msgstr "Fonturi, etc."
+
+#: general.cpp:222
+msgid "&Draw widgets in the style of Windows 95"
+msgstr "&Deseneazã butoanele în stil Windoze 95"
+
+#: general.cpp:236
+msgid "Desktop fonts"
+msgstr "Fonturi"
+
+#: general.cpp:248
+msgid "General font"
+msgstr "Font general"
+
+#: general.cpp:253
+msgid "Fixed font"
+msgstr "Font fix"
+
+#: general.cpp:263
+msgid "Panel button font"
+msgstr "Fontul butoanelor din panou"
+
+#: general.cpp:268
+msgid "Panel clock font"
+msgstr "Fontul ceasului din panou"
+
+#: general.cpp:298
+msgid "Sample text"
+msgstr "Mostrã de text"
+
+#: general.cpp:306
+msgid ""
+"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+"the quick brown fox jumps over the lazy dog\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
+msgstr ""
+"QWERTYUIOPASDFGHJKLZXCVBNMÂÃÎÞª\n"
+"qwertyuiopasdfghjklzxcvbnmâãîþº\n"
+"0123456789,.<>?!\" £ $ % ^ & * ( )[ ]{ }"
+
+
+#: main.cpp:62
+msgid "&Fonts etc."
+msgstr "&Fonturi, etc."
+
+#: main.cpp:65
+msgid "&Background"
+msgstr "&Fundal"
+
+#: main.cpp:68
+msgid "&Screensaver"
+msgstr "&Scriinseivãr"
+
+#: main.cpp:72
+msgid "&Colors"
+msgstr "&Culori"
+
+#: main.cpp:78
+msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr "folosire: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+
+#: main.cpp:130
+msgid "Display settings"
+msgstr "Setãri ecran"
+
+#: widgetcanvas.cpp:104 widgetcanvas.cpp:105
+msgid "Inactive window"
+msgstr "Fereastrã inactivã"
+
+#: widgetcanvas.cpp:132 widgetcanvas.cpp:133
+msgid "Active window"
+msgstr "Fereastrã activã"
+
+#: widgetcanvas.cpp:189 widgetcanvas.cpp:190
+msgid "Selected text"
+msgstr "Text selectat"
+
+#: fontchooser.cpp:82
+msgid "&Typeface"
+msgstr "&Tip font"
+
+#: fontchooser.cpp:89
+msgid "&Bold"
+msgstr "Î&ngroºat"
+
+#: fontchooser.cpp:96
+msgid "&Italic"
+msgstr "În&clinat"
+
+#: fontchooser.cpp:125
+msgid "&Size"
+msgstr "&Dimensiune"
+
+#: fontchooser.cpp:147
+msgid "&Character set"
+msgstr "&Set de caractere"
+
+#: fontchooser.cpp:262
+msgid "default"
+msgstr "implicit"
+
+#: fontchooser.cpp:265
+msgid "any"
+msgstr "oricare"

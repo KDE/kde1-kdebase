@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -58,29 +58,25 @@ msgstr "Meniu"
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Partea stângã a zonei de titlu este plinã... dezactivez butonul de "
-"'maximizare'\n"
+"Partea stângã a zonei de titlu este plinã... dezactivez butonul de 'maximizare'\n"
 
 #: titlebar.cpp:496
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Partea dreaptã a zonei de titlu este plinã... dezactivez butonul de "
-"'maximizare'\n"
+"Partea dreaptã a zonei de titlu este plinã... dezactivez butonul de 'maximizare'\n"
 
 #: titlebar.cpp:536
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Partea stângã a zonei de titlu este plinã... dezactivez butonul de "
-"'minimizare'\n"
+"Partea stângã a zonei de titlu este plinã... dezactivez butonul de 'minimizare'\n"
 
 #: titlebar.cpp:569
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Partea dreaptã a zonei de titlu este plinã... dezactivez butonul de "
-"'minimizare'\n"
+"Partea dreaptã a zonei de titlu este plinã... dezactivez butonul de 'minimizare'\n"
 
 #: titlebar.cpp:926
 msgid "Titlebar appearance"
@@ -129,7 +125,6 @@ msgid ""
 msgstr ""
 "Dublu clic cu butonul din stânga\n"
 "    pe zona de titlu face:"
-
 #: titlebar.cpp:993
 msgid "(Un)Maximize"
 msgstr "(De)Maximizeazã"

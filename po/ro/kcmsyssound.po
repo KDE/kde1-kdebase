@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -163,8 +163,7 @@ msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Acest tip de URL nu este suportat deocamdatã de Modulul de Sunete de Sistem "
-"KDE"
+"Acest tip de URL nu este suportat deocamdatã de Modulul de Sunete de Sistem KDE"
 
 #: syssound.cpp:468
 #, c-format
@@ -172,7 +171,8 @@ msgid ""
 "Sorry, but \n"
 "%s\n"
 "does not seem to be a WAV--file."
-msgstr "%s nu pare sã fie un fiºier WAV."
+msgstr ""
+"%s nu pare sã fie un fiºier WAV."
 
 #: syssound.cpp:471
 msgid "Improper File Extension"

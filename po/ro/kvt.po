@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -197,8 +197,7 @@ msgstr "Argumentele permise sunt:\n"
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <comanda> <arg> ...    executa comanda cu arg - trebuie sa fie ultimul "
-"argument\n"
+"-e <comanda> <arg> ...    executa comanda cu arg - trebuie sa fie ultimul argument\n"
 
 #: main.C:1328
 msgid "-display <name>           specify the display (server)\n"
@@ -210,8 +209,7 @@ msgstr "-vt_geometry <spec>       geometria iniþialã a ferestrei\n"
 
 #: main.C:1330
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr ""
-"-print-pipe <nume>        specificã conexiunea pentru imprimanta vt100\n"
+msgstr "-print-pipe <nume>        specificã conexiunea pentru imprimanta vt100\n"
 
 #: main.C:1331
 msgid "-vt_bg <colour>           background color\n"
@@ -251,7 +249,7 @@ msgid ""
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
 "-T <text>                 titlul ferestrei kvt \n"
-"                          (Demodat. Folosiþi -caption în loc\n"
+"                          (Demodat. Folosiþi -caption în loc)\n"
 
 #: main.C:1341
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
@@ -288,14 +286,12 @@ msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
-"-meta <arg>               trateazã Meta cu prefix ESCAPE, al 8-lea bit "
-"setat, sau ignorã\n"
+"-meta <arg>               trateazã Meta cu prefix ESCAPE, al 8-lea bit setat,\n"
+"                          sau ignorã\n"
 
 #: main.C:1349
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr ""
-"-sl <numãr>               numãrul de linii de defilare înapoi care se "
-"salveazã\n"
+msgstr "-sl <numãr>               numãrul de linii de defilare înapoi care se salveazã\n"
 
 #: main.C:1350
 msgid ""
@@ -304,9 +300,9 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
-"-pageup <keysym>          foloseºte alt-keysym pentru a defila în sus prin "
+"-pageup <keysym>          foloseºte alt-keysym pt. a defila în sus prin "
 "buffer\n"
-"-pagedown <keysym>        foloseºte alt-keysym pentru a defila în jos prin "
+"-pagedown <keysym>        foloseºte alt-keysym pt. a defila în jos prin "
 "buffer\n"
 
 #: main.C:1354
@@ -316,3 +312,4 @@ msgid ""
 msgstr ""
 "-grk9\t\ttastaturã greceascã = ELOT 928 (implicit)\n"
 "-grk4\t\ttastaturã greceascã = IBM 437\n"
+

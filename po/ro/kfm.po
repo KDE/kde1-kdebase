@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-06-16 16:37+0200\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -29,7 +29,7 @@ msgstr "Eroare: nu exista modelul '%s'"
 
 #: kfmgui.cpp:309
 msgid "&Run..."
-msgstr "&Porneºte"
+msgstr "&Executã"
 
 #: kfmgui.cpp:311
 msgid "Open &Terminal"
@@ -45,7 +45,7 @@ msgstr "&Cautã"
 
 #: kfmgui.cpp:324
 msgid "&Quit..."
-msgstr "&Pa..."
+msgstr "&Ieºire..."
 
 #: kfmgui.cpp:333
 msgid "&Move to Trash"
@@ -77,7 +77,7 @@ msgstr "Afiºeazã fiºierele .* "
 
 #: kfmgui.cpp:361
 msgid "Show Tr&ee"
-msgstr "Afiºeazã Arbor&e"
+msgstr "+ vizualizare arborescentã"
 
 #: kfmgui.cpp:363
 msgid "&Visual Schnauzer"
@@ -85,23 +85,23 @@ msgstr "Schnauzer &Vizual"
 
 #: kfmgui.cpp:365
 msgid "&HTML View"
-msgstr "Vedere &HTML"
+msgstr "Vizualizare &HTML"
 
 #: kfmgui.cpp:368
 msgid "&Icon View"
-msgstr "Vedere &Iconicã"
+msgstr "Vizualizare &Iconicã"
 
 #: kfmgui.cpp:370
 msgid "&Text View"
-msgstr "Vedere &Text"
+msgstr "Vizualizare &Text"
 
 #: kfmgui.cpp:372
 msgid "&Long View"
-msgstr "Vedere &Detaliatã"
+msgstr "Vizualizare &Detaliatã"
 
 #: kfmgui.cpp:374
 msgid "&Short View"
-msgstr "Vedere &pe scurt"
+msgstr "Vizualizare &pe scurt"
 
 #: kfmgui.cpp:380
 msgid "Rel&oad Tree"
@@ -234,7 +234,7 @@ msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
 msgstr ""
-"Chiar vrei sa renunþi?\n"
+"Chiar vrei sã renunþi?\n"
 "Funcþionalitãþi importante ale mediului vor fi inactive"
 
 #: kfmgui.cpp:1261
@@ -260,6 +260,7 @@ msgstr ""
 "\n"
 "Rutine Proxy de Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de"
+
 
 #: kfmgui.cpp:1355
 msgid "Document: Done"
@@ -387,8 +388,8 @@ msgid ""
 "This is a document!\n"
 "Not an application"
 msgstr ""
-"Acesta est un document!\n"
-"Ci nu un program"
+"Acesta este un document!\n"
+"ªi nu un program"
 
 #: kbind.cpp:1555 kbind.cpp:1572
 msgid "Can only start executables on local disks\n"
@@ -437,7 +438,7 @@ msgstr ""
 
 #: kbind.cpp:1821
 msgid "ERROR: No Terminal Setting"
-msgstr "EROARE:Nu exista setãrile pt. Terminal"
+msgstr "EROARE:Nu exista setãrile ptr. Terminal"
 
 #: kbind.cpp:1912
 msgid "No mount point in *.kdelnk file"
@@ -465,7 +466,7 @@ msgstr "Cd"
 
 #: main.cpp:240
 msgid "New View"
-msgstr "Afiºare nouã"
+msgstr "Ferea&strã nouã"
 
 #: kfmtree.cpp:223 main.cpp:243
 msgid "Move to Trash"
@@ -509,7 +510,7 @@ msgstr "Culoarea legãturilor URL:"
 
 #: htmlopts.cpp:238
 msgid "Followed Link Color:"
-msgstr "Urmeazã culoarea legãturi:"
+msgstr "Culoarea legãturii urmate:"
 
 #: htmlopts.cpp:246
 msgid "Change cursor over link."
@@ -554,18 +555,18 @@ msgstr "Dimensiune: %i"
 
 #: kfmprops.cpp:309
 msgid "Last Access"
-msgstr "Ultimul acces"
+msgstr "Ultimul Acces"
 
 #: kfmprops.cpp:319
 msgid "Last Modified"
-msgstr "Ultimul Modificat"
+msgstr "Ultima Modificare"
 
 #: kfmprops.cpp:368
 msgid ""
 "Could not rename the file or directory\n"
 "The destination seems to already exist\n"
 msgstr ""
-"Nu e nevoie sa renumesc fiºierul sau directorul\n"
+"Nu pot sã redenumesc fiºierul sau directorul\n"
 "Destinaþia existã deja\n"
 
 #: kfmprops.cpp:416
@@ -577,40 +578,40 @@ msgid ""
 "Show\n"
 "Entries"
 msgstr ""
-"Aratã\n"
-"Parametrii"
+"Citire\n"
+"Intrãri"
 
 #: kfmprops.cpp:424
 msgid "Read"
-msgstr "Citeºte"
+msgstr "Citire"
 
 #: kfmprops.cpp:429
 msgid ""
 "Write\n"
 "Entries"
 msgstr ""
-"Citeºte\n"
-"Parametrii"
+"Scriere\n"
+"Intrãri"
 
 #: kfmprops.cpp:431
 msgid "Write"
-msgstr "Scrie"
+msgstr "Scriere"
 
 #: kfmprops.cpp:436
 msgid ""
 "Change\n"
 "Into"
 msgstr ""
-"Schimbã\n"
-"În"
+"Schimbã"
+
 
 #: kfmprops.cpp:438
 msgid "Exec"
-msgstr "Executã"
+msgstr "Execuþie"
 
 #: kfmprops.cpp:442
 msgid "Special"
-msgstr "Special"
+msgstr "Speciale"
 
 #: kfmprops.cpp:446
 msgid "User"
@@ -634,7 +635,7 @@ msgstr "Lipicios"
 
 #: kfmprops.cpp:489
 msgid "Ownership"
-msgstr "Patronat"
+msgstr "Proprietar"
 
 #: kfmprops.cpp:619
 msgid ""
@@ -725,7 +726,7 @@ msgstr "Binaru Pattern (netscape;Netscape;)"
 
 #: kfmprops.cpp:1240 kfmprops.cpp:1492
 msgid "Comment"
-msgstr "Commentariu"
+msgstr "Comentariu"
 
 #: kfmprops.cpp:1251
 msgid "Name ( in your language )"
@@ -1204,15 +1205,15 @@ msgstr "Pe serverul:"
 
 #: useragentdlg.cpp:31
 msgid "login as:"
-msgstr "login ca ºi:"
+msgstr "login ca:"
 
 #: useragentdlg.cpp:52
 msgid "Known bindings:"
-msgstr "Legãturi ºtiute:"
+msgstr "Legãturi cunoscute:"
 
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
-msgstr "Nu uitaþi sã salvaþi setãrile dvs.!"
+msgstr "Nu uitaþi sã vã salvaþi setãrile!"
 
 #: kproxydlg.cpp:16
 msgid "Use proxy"
@@ -1220,7 +1221,7 @@ msgstr "Foloseºte proxy"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"
-msgstr "Nici un Proxy pentru:"
+msgstr "Fãrã Proxy ptr. :"
 
 #: kkfmoptdlg.cpp:19
 msgid "&Proxy"
@@ -1232,7 +1233,7 @@ msgstr ""
 
 #: kkfmoptdlg.cpp:25
 msgid "User &Agent"
-msgstr "Utilizator &Agent"
+msgstr "&Agent Utilizator"
 
 #: kkfmoptdlg.cpp:31
 msgid "&Colors"
@@ -1240,7 +1241,7 @@ msgstr "&Culori"
 
 #: kkfmoptdlg.cpp:34
 msgid "&Other"
-msgstr "Alþii"
+msgstr "&Diverse"
 
 #: kkfmoptdlg.cpp:54
 msgid "KFM Browser Settings"
@@ -1260,7 +1261,7 @@ msgstr "Subînþelege HTML"
 
 #: kfmprops.h:73
 msgid "&General"
-msgstr "&General"
+msgstr "&Generale"
 
 #: kfmprops.h:108
 msgid "&Permissions"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-06-18 22:21+0200\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -44,7 +44,7 @@ msgstr "Ma&ximizare"
 
 #: main.C:508
 msgid "&Restore"
-msgstr "&Refacere"
+msgstr "&Restaurare"
 
 #: main.C:509
 msgid "&Iconify"
@@ -52,15 +52,15 @@ msgstr "Mi&nimizare"
 
 #: main.C:510
 msgid "&DeIconify"
-msgstr "&DezMinimizare"
+msgstr "&DeMinimizare"
 
 #: main.C:511
 msgid "&Sticky"
-msgstr "&Lipicioasã"
+msgstr "Þ&intuitã"
 
 #: main.C:512
 msgid "&UnSticky"
-msgstr "Nelipicioasã"
+msgstr "&Deþintuitã"
 
 #: main.C:513
 msgid "Mo&ve"
@@ -68,7 +68,7 @@ msgstr "&Mutã"
 
 #: main.C:514
 msgid "Resi&ze"
-msgstr "Schim&bã dimensiunea"
+msgstr "R&edimensioneazã"
 
 #: main.C:516
 msgid "&To desktop"
