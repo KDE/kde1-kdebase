@@ -1,0 +1,28 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kdmconfig
+Icon=kdmconfig.xpm
+Type=Application
+DocPath=kcontrol/kdmconfig/index.html
+Comment=All KDM settings
+Comment[da]=Alle KDM indstillinger
+Comment[pl]=Wszystkie ustawienia KDM
+Comment[cs]=V¹echna nastavení KDM
+Comment[fi]=Kaikki KDM:n asetukset
+Comment[sv]=Alla KDM-inställningar
+Comment[fr]=Configuration de KDM
+Comment[pt]=Todas as configurações do KDM
+Name=All
+Name[da]=Alle
+Name[pl]=Wszystkie
+Name[cs]=V¹e
+Name[fi]=Kaikki
+Name[sv]=Alla
+Name[fr]=Tous
+Name[pt]=Todas
+SwallowTitle=KDM all
+SwallowTitle[pl]=Wszystkie ustawienia KDM
+SwallowTitle[fi]=KDM kaikki
+SwallowTitle[sv]=KDM alla
+SwallowTitle[fr]=Configuration KDM 
+SwallowTitle[pt]=Configuração KDM

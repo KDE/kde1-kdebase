@@ -1,0 +1,13 @@
+# KDE Config File
+[KDE Desktop Entry]
+Name=Panel
+Name[pl]=Panel
+Name[fi]=Paneeli
+Name[sv]=Panel
+Name[it]=Pannello
+Name[hu]=Panel
+Name[pt]=Painel
+Name[sk]=Panel
+Comment=You can configure here, how the panel should look like
+Icon=panel_settings.xpm
+

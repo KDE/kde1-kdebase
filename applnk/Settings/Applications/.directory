@@ -1,0 +1,5 @@
+# KDE Config File
+[KDE Desktop Entry]
+Name=Applications
+Name[de]=Anwendungen
+SortOrder=panel.kdelnk,kdm.kdelnk
