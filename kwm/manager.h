@@ -63,8 +63,7 @@ public:
   Client* current();
 
   void addClient(Client* c);
-  void activateClient(Client* c, bool discard_enter = false, 
-		      bool set_revert = true);
+  void activateClient(Client* c, bool set_revert = true);
   void removeClient(Client* c);
   void raiseClient(Client* c);
   void lowerClient(Client* c);

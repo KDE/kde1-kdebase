@@ -575,10 +575,24 @@ void Manager::enterNotify(XCrossingEvent *e){
     delayed_focus_follow_mouse_client = NULL;
     c = getClient(e->window);
     if (c != 0 && c != current() && c->state != WithdrawnState){
+      XSync(qt_xdisplay(), False);
+      timeStamp(); 
+      XSync(qt_xdisplay(), False);
       if (enable_focus_follow_mouse_activation)
 	activateClient(c);
-      else
-	delayed_focus_follow_mouse_client = c;
+      else {
+	if (e->x_root != QCursor::pos().x()
+	    || e->y_root != QCursor::pos().y())
+	  activateClient(c);
+	else{
+	  usleep(100);
+	  if (e->x_root != QCursor::pos().x()
+	      || e->y_root != QCursor::pos().y())
+	    activateClient(c);
+	  else
+	    delayed_focus_follow_mouse_client = c;
+	}
+      }
     }
   }
 }
@@ -700,7 +714,8 @@ void Manager::manage(Window w, bool mapped){
   if (c->getDecoration() == 1)
     c->decoration = KWM::getDecoration(c->window);
 
-  XSelectInput(qt_xdisplay(), c->window, ColormapChangeMask | EnterWindowMask | PropertyChangeMask);
+  XSelectInput(qt_xdisplay(), c->window, ColormapChangeMask | 
+	       EnterWindowMask | PropertyChangeMask | PointerMotionMask);
   
   if (XGetClassHint(qt_xdisplay(), c->window, &klass) != 0) {   // Success
     c->instance = klass.res_name;
@@ -932,7 +947,7 @@ void Manager::addClient(Client* c){
 }
 
 
-void Manager::activateClient(Client* c, bool discard_enter, bool set_revert){
+void Manager::activateClient(Client* c, bool set_revert){
   Client* cc = current();
   enable_focus_follow_mouse_activation = false;
   if (focus_grabbed())
@@ -945,13 +960,6 @@ void Manager::activateClient(Client* c, bool discard_enter, bool set_revert){
   c->setactive( TRUE );
   
   XSetInputFocus(qt_xdisplay(), c->window, RevertToPointerRoot, timeStamp());
-
-//    // for FocusFollowMouse: discard all enter/leave events
-//   if ( options.FocusPolicy == FOCUS_FOLLOW_MOUSE && discard_enter){
-//     XEvent ev;
-//     while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
-//   }
-
   
   if (c->Ptakefocus)
     sendClientMessage(c->window, wm_protocols, wm_take_focus);
@@ -1075,7 +1083,7 @@ void Manager::noFocus(){
        c && (c->isActive() || c->state != NormalState); 
        c = clients_traversing.prev());
   if (c && c->state == NormalState) {
-    activateClient(c, true, false);
+    activateClient(c, false);
     return;
   }
 
@@ -1755,7 +1763,7 @@ void Manager::logout(){
 	}
       } while (1);
       XSelectInput(qt_xdisplay(), c->window, ColormapChangeMask | 
-		   EnterWindowMask | PropertyChangeMask);
+		   EnterWindowMask | PropertyChangeMask | PointerMotionMask);
     }
   }
   // do this afterwards because some clients may have set XA_WM_COMMAND for

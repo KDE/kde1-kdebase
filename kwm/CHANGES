@@ -17,6 +17,7 @@ In 0.10:
          opaque mode)
        - tiny fix for gravity handling
        - *many* modifications to autoraise
+       - fix for FocusFollowMouse
 
   patchlevel 16:
        - fix for "move" via keyboard (pointer warp)

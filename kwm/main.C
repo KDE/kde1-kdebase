@@ -730,7 +730,7 @@ void MyApp::changeToClient(QString label){
       c->unIconify();
     else {
       manager->raiseClient(c);
-      manager->activateClient(c, true);
+      manager->activateClient(c);
     }
   }
 }
@@ -1015,7 +1015,7 @@ void MyApp::handleKeyRelease(XKeyEvent key){
 	if (infoBoxClient){
 	  if (infoBoxClient->state == NormalState){
 	    manager->raiseClient(infoBoxClient);
-	    manager->activateClient(infoBoxClient, true);
+	    manager->activateClient(infoBoxClient);
 	  }
 	  else{ // IconicState
 	    infoBoxClient->unIconify();
@@ -1179,6 +1179,8 @@ bool MyApp::x11EventFilter( XEvent * ev){
   case EnterNotify:
     if (!operations->isVisible())
       manager->enterNotify(&ev->xcrossing);
+    break;
+  case LeaveNotify:
     break;
   case ReparentNotify:
     return TRUE; //do not confuse Qt with these events...
