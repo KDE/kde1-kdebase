@@ -56,6 +56,8 @@ SecureRPCInitAuth (name_len, name)
 {
 }
 
+#ifdef SECURE_RPC
+
 Xauth *
 SecureRPCGetAuth (namelen, name)
     unsigned short  namelen;
@@ -94,3 +96,6 @@ SecureRPCGetAuth (namelen, name)
     memmove( new->data, key, new->data_length);
     return new;
 }
+
+#endif
+
