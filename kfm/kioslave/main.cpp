@@ -215,7 +215,6 @@ void KIOSlave::list( const char *_url, bool _bHTML )
 	if ( !sRedirection.isEmpty() )
 	    _url = sRedirection.data();
 	
-	ipc->flushDir( _url );
 	// Do we get some HTML as response
 	if ( prot->isHTML() )
 	{
@@ -229,6 +228,9 @@ void KIOSlave::list( const char *_url, bool _bHTML )
 	    KURL u( _url );
 	    u.setPassword( "" );
 	    QString url = u.url().data();
+
+            // Clear the list stored in kioserver. With password removed !
+            ipc->flushDir( url.data() );
 	    
 	    // Emit them all ...
 	    while( ( de = prot->ReadDir() ) )
