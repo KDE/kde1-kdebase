@@ -433,8 +433,7 @@ KProtocolFTP::KProtocolFTP()
     dirfile = NULL;
     sControl = sData = sDatal = -1;
     ftplib_lastresp = rspbuf;
-//    ftplib_debug = 9;
-    ftplib_debug = 0;
+    ftplib_debug = 0; // set to 9 for maximum debugging output
 }
 
 KProtocolFTP::~KProtocolFTP()
@@ -455,27 +454,29 @@ int KProtocolFTP::OpenConnection( const char *command, const char *path, char mo
     if ( !ftpPort() ) return Error(KIO_ERROR_CouldNotConnect,
 				"Could not setup ftp data port", errno);
     
-    QString tmp;
-    
-    // Special hack for the list command. We try to change to this
-    // directory first to see wether it really is a directory.
+    // Special case for the list command. We try to change to this
+    // directory first to see whether it really is a directory.
     if ( strcmp( command, "list" ) == 0 )
     {
-      if ( path != NULL )
-	ksprintf( &tmp, "cwd %s", path );
-      else
-    	tmp = command;
+      QString tmp(command);
+      if ( path != NULL ) {
+        tmp = "cwd ";
+	tmp += path;
+        path = NULL; // Once cwd is done, we don't need <path> in the list
+                     // command (this allows to follow links in the FTP site)
+      } // otherwise use command
       
       if ( !ftpSendCmd( tmp.data(), '2' ) )
 	return Error(KIO_ERROR_NotADirectory, "Error requested URL is not a directory");
     }
 
-    if ( path != NULL )
-      ksprintf( &tmp, "%s %s", command, path );
-    else
-      tmp = command;
+    QString com(command);
+    if ( path != NULL ) {
+      com += " ";
+      com += path;
+    }
     
-    if ( !ftpSendCmd( tmp.data(), '1' ) )
+    if ( !ftpSendCmd( com.data(), '1' ) )
       return Error(KIO_ERROR_CouldNotConnect, "Error requesting file/dir from server");
 
     if ( ( sData = accept_connect() ) < 0 )
