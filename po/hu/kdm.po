@@ -1,7 +1,7 @@
 # John Zero <johnzero@telnet.hu>, 1997
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-08-30 10:36+0200\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -28,26 +28,51 @@ msgstr "Leállítás és újraindítás"
 msgid "Exit kdm"
 msgstr "Kilép"
 
-#: kgreeter.cpp:139
+#: kgreeter.cpp:158
 msgid "Login:"
 msgstr "Név:"
 
-#: kgreeter.cpp:151
+#: kgreeter.cpp:170
 msgid "Password:"
 msgstr "Jelszó:"
 
-#: kgreeter.cpp:191
+#: kgreeter.cpp:195
 msgid "Login failed!"
 msgstr "Érvénytelen bejelentkezés!"
 
-#: kgreeter.cpp:197
+#: kgreeter.cpp:201
 msgid "Session Type:"
 msgstr "Futási stílus"
 
-#: kgreeter.cpp:213
+#: kgreeter.cpp:217
 msgid "Go!"
 msgstr "Mehet!"
 
-#: kgreeter.cpp:229
+#: kgreeter.cpp:233
 msgid "Shutdown..."
 msgstr "Leállítás..."
+
+#: kgreeter.cpp:418
+msgid "No login"
+msgstr ""
+
+#: kgreeter.cpp:467 kgreeter.cpp:475 kgreeter.cpp:501 kgreeter.cpp:509
+msgid "Expired"
+msgstr ""
+
+#: kgreeter.cpp:468 kgreeter.cpp:502
+msgid "Sorry -- your account has expired."
+msgstr ""
+
+#: kgreeter.cpp:473 kgreeter.cpp:507
+#, c-format
+msgid "Warning: your account expires on %s"
+msgstr ""
+
+#: kgreeter.cpp:541
+msgid "No home"
+msgstr ""
+
+#: kgreeter.cpp:542
+msgid "Home directory not available"
+msgstr ""

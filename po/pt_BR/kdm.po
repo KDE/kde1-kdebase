@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-08-30 10:36+0200\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
@@ -21,26 +21,51 @@ msgstr "Desligar e reinicializar"
 msgid "Exit kdm"
 msgstr "Abandonar kdm"
 
-#: kgreeter.cpp:139
+#: kgreeter.cpp:158
 msgid "Login:"
 msgstr "Login:"
 
-#: kgreeter.cpp:151
+#: kgreeter.cpp:170
 msgid "Password:"
 msgstr "Senha:"
 
-#: kgreeter.cpp:191
+#: kgreeter.cpp:195
 msgid "Login failed!"
 msgstr "Login falhou!"
 
-#: kgreeter.cpp:197
+#: kgreeter.cpp:201
 msgid "Session Type:"
 msgstr "Tipo de Sessão:'"
 
-#: kgreeter.cpp:213
+#: kgreeter.cpp:217
 msgid "Go!"
 msgstr "Ir!"
 
-#: kgreeter.cpp:229
+#: kgreeter.cpp:233
 msgid "Shutdown..."
 msgstr "Desligar..."
+
+#: kgreeter.cpp:418
+msgid "No login"
+msgstr ""
+
+#: kgreeter.cpp:467 kgreeter.cpp:475 kgreeter.cpp:501 kgreeter.cpp:509
+msgid "Expired"
+msgstr ""
+
+#: kgreeter.cpp:468 kgreeter.cpp:502
+msgid "Sorry -- your account has expired."
+msgstr ""
+
+#: kgreeter.cpp:473 kgreeter.cpp:507
+#, c-format
+msgid "Warning: your account expires on %s"
+msgstr ""
+
+#: kgreeter.cpp:541
+msgid "No home"
+msgstr ""
+
+#: kgreeter.cpp:542
+msgid "Home directory not available"
+msgstr ""

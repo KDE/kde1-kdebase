@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-08-30 10:36+0200\n"
 "PO-Revision-Date: 1998-06-13 15:21+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "First-Translator: Steffen Hansen\n"
@@ -22,26 +22,51 @@ msgstr "Finalizar y reiniciar"
 msgid "Exit kdm"
 msgstr "Finalizar kdm"
 
-#: kgreeter.cpp:139
+#: kgreeter.cpp:158
 msgid "Login:"
 msgstr "Entrada:"
 
-#: kgreeter.cpp:151
+#: kgreeter.cpp:170
 msgid "Password:"
 msgstr "Contraseña:"
 
-#: kgreeter.cpp:191
+#: kgreeter.cpp:195
 msgid "Login failed!"
 msgstr "¡Entrada errónea!"
 
-#: kgreeter.cpp:197
+#: kgreeter.cpp:201
 msgid "Session Type:"
 msgstr "Tipo de sesión:"
 
-#: kgreeter.cpp:213
+#: kgreeter.cpp:217
 msgid "Go!"
 msgstr "Iniciar"
 
-#: kgreeter.cpp:229
+#: kgreeter.cpp:233
 msgid "Shutdown..."
 msgstr "Finalizando..."
+
+#: kgreeter.cpp:418
+msgid "No login"
+msgstr ""
+
+#: kgreeter.cpp:467 kgreeter.cpp:475 kgreeter.cpp:501 kgreeter.cpp:509
+msgid "Expired"
+msgstr ""
+
+#: kgreeter.cpp:468 kgreeter.cpp:502
+msgid "Sorry -- your account has expired."
+msgstr ""
+
+#: kgreeter.cpp:473 kgreeter.cpp:507
+#, c-format
+msgid "Warning: your account expires on %s"
+msgstr ""
+
+#: kgreeter.cpp:541
+msgid "No home"
+msgstr ""
+
+#: kgreeter.cpp:542
+msgid "Home directory not available"
+msgstr ""

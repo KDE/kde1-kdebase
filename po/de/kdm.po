@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-08-30 10:36+0200\n"
 "PO-Revision-Date: 1997-09-14 13:53 MET DST\n"
 "Last-Translator: Christian Kirsch <ck@held.mind.de>\n"
 "Language-Team: German / KDE\n"
@@ -30,26 +30,51 @@ msgstr "Neu starten"
 msgid "Exit kdm"
 msgstr "kdm beenden"
 
-#: kgreeter.cpp:139
+#: kgreeter.cpp:158
 msgid "Login:"
 msgstr "Benutzer:"
 
-#: kgreeter.cpp:151
+#: kgreeter.cpp:170
 msgid "Password:"
 msgstr "Paßwort:"
 
-#: kgreeter.cpp:191
+#: kgreeter.cpp:195
 msgid "Login failed!"
 msgstr "Anmeldung nicht möglich."
 
-#: kgreeter.cpp:197
+#: kgreeter.cpp:201
 msgid "Session Type:"
 msgstr "Sitzungsart:"
 
-#: kgreeter.cpp:213
+#: kgreeter.cpp:217
 msgid "Go!"
 msgstr "Los!"
 
-#: kgreeter.cpp:229
+#: kgreeter.cpp:233
 msgid "Shutdown..."
 msgstr "Beenden"
+
+#: kgreeter.cpp:418
+msgid "No login"
+msgstr ""
+
+#: kgreeter.cpp:467 kgreeter.cpp:475 kgreeter.cpp:501 kgreeter.cpp:509
+msgid "Expired"
+msgstr ""
+
+#: kgreeter.cpp:468 kgreeter.cpp:502
+msgid "Sorry -- your account has expired."
+msgstr ""
+
+#: kgreeter.cpp:473 kgreeter.cpp:507
+#, c-format
+msgid "Warning: your account expires on %s"
+msgstr ""
+
+#: kgreeter.cpp:541
+msgid "No home"
+msgstr ""
+
+#: kgreeter.cpp:542
+msgid "Home directory not available"
+msgstr ""
