@@ -2,6 +2,7 @@
 #include <klocale.h>
 #include "kkfmoptdlg.h"
 
+
 KKFMOptDlg::KKFMOptDlg(QWidget *parent, const char *name, WFlags f)
   : QDialog(parent, name, true, f)
 {
@@ -18,6 +19,13 @@ KKFMOptDlg::KKFMOptDlg(QWidget *parent, const char *name, WFlags f)
   tabDlg->addTab(prxDlg, "Proxy");
   usrDlg = new UserAgentDialog(tabDlg);
   tabDlg->addTab(usrDlg, "User Agent");
+
+  fontDlg = new KFontOptions(tabDlg);
+  tabDlg->addTab(fontDlg, "Fonts");
+
+  colorDlg = new KColorOptions(tabDlg);
+  tabDlg->addTab(colorDlg, "Colors");
+
 
   // help button
   help = new QPushButton(klocale->translate("Help"), this);
@@ -48,6 +56,10 @@ KKFMOptDlg::~KKFMOptDlg()
   delete usrDlg;
   delete prxDlg;
   delete tabDlg;
+
+  // this segfault kfm -- why? Bernd
+  //delete fontDlg;
+  //delete colorDlg;
 }
 
 void KKFMOptDlg::helpShow()
@@ -75,6 +87,18 @@ void KKFMOptDlg::setProxyData(QStrList *strList)
 QStrList KKFMOptDlg::dataProxy() const
 {
   return(prxDlg->data());
+}
+
+void KKFMOptDlg::fontData(struct fontoptions& fntopts){
+
+  fontDlg->getFontOpts(fntopts);
+
+}
+
+void KKFMOptDlg::colorData(struct coloroptions& coloropts){
+
+  colorDlg->getColorOpts(coloropts);
+
 }
 
 #include "kkfmoptdlg.moc"

@@ -326,6 +326,12 @@ public slots:
      */
     void slotUpdateView( bool _reload = true );
 
+    void setDefaultTextColors( const QColor& textc,const QColor& linkc,
+			       const QColor& vlink);
+
+    void setDefaultBGColor( const QColor& bgcolor );
+    void setHTMLWidgetOptions();
+
 protected slots:
     /**
      * Called when the user clicks on an URL.

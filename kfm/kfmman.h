@@ -92,7 +92,11 @@ public slots:
     void slotMimeType( const char *_type );
     void slotInfo( const char *_text );
     void slotRedirection( const char *_url );
-    
+
+    void setDefaultTextColors( const QColor& textc,const QColor& linkc,
+			       const QColor& vlink);
+
+    void setDefaultBGColor( const QColor& bgcolor );    
 protected:
     /**
      * Writes the <body ...> tag for @ef #writeBeginning .
@@ -232,6 +236,10 @@ protected:
      */
     bool bBufferPage;
 
+    QString text_color;
+    QString link_color;
+    QString bg_color;
+    QString vlink_color;
 	// A HACK
 	QString HTMLBuffer;
 };

@@ -6,6 +6,7 @@
 #include <stddef.h>
 
 #include <qpopmenu.h>
+#include <qcursor.h>
 #include <qpainter.h>
 #include <qapp.h>
 #include <qkeycode.h>
@@ -1461,6 +1462,67 @@ void KfmGui::slotConfigureBrowser()
 	  config->writeEntry( "HTTP-Proxy", strlist.next() );
           config->writeEntry( "FTP-Proxy", strlist.next() );
 	  config->writeEntry( "NoProxyFor", strlist.next() );
+
+
+	  struct coloroptions coloropts;
+	  struct fontoptions  fontopts;
+	  dlg.fontData(fontopts);
+	  dlg.colorData(coloropts);
+
+	  if(fontopts.changed){
+
+	    config->setGroup( "KFM HTML Defaults" );			
+	    config->writeEntry( "BaseFontSize", fontopts.fontsize );
+	    config->writeEntry( "StandardFont", fontopts.standardfont );
+	    config->writeEntry( "FixedFont", fontopts.fixedfont );
+
+	  }
+
+
+	  if(coloropts.changed){
+
+	    config->setGroup( "KFM HTML Defaults" );			
+	    config->writeEntry( "BgColor", coloropts.bg );
+	    config->writeEntry( "TextColor", coloropts.text);
+	    config->writeEntry( "LinkColor", coloropts.link);
+	    config->writeEntry( "VLinkColor", coloropts.vlink);
+	    config->writeEntry( "ChangeCursor", coloropts.changeCursoroverLink);
+
+	  }
+
+	  if(coloropts.changed || fontopts.changed){
+
+	    KfmGui *w;
+	    KHTMLWidget* htmlview;
+	    for ( w = windowList->first(); w != 0L; w = windowList->next() ){
+
+	      htmlview=view->getKHTMLWidget();
+	      //htmlview points not to the underlying low leve html widget.
+	      
+	      htmlview->setFixedFont( fontopts.fixedfont.data() );
+	      htmlview->setStandardFont( fontopts.standardfont.data() );
+	      htmlview->setDefaultFontBase( fontopts.fontsize );
+
+	      // w->view points to the kfmview in w  the kfmgui
+	      w->view->setDefaultTextColors( 
+					     coloropts.text, 
+					     coloropts.link,
+					     coloropts.vlink 
+					     );
+
+	      w->view->setDefaultBGColor( coloropts.bg );
+	      if(coloropts.changeCursoroverLink)
+		htmlview->setURLCursor( upArrowCursor);
+	      else
+		htmlview->setURLCursor( arrowCursor );
+
+	      w->updateView();
+
+	    }
+
+	  }
+
+
 	}
 
   // restore the group

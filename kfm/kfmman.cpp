@@ -344,11 +344,9 @@ void KFMManager::slotNewDirEntry( KIODirectoryEntry * _entry )
 void KFMManager::writeBodyTag()
 {
     // Open ".directory"
-    KConfig *config = KApplication::getKApplication()->getConfig();
-    config->setGroup( "KFM HTML Defaults" );
-    QString text_color = config->readEntry( "TextColor" );
-    QString link_color = config->readEntry( "LinkColor" );
-    QString bg_color = config->readEntry( "BgColor" );
+
+  KConfig *config = KApplication::getKApplication()->getConfig();
+  config->setGroup( "KFM HTML Defaults" );		
     QString tmp2 = config->readEntry( "BgImage" );
     QString bg_image;
     if ( !tmp2.isNull() )
@@ -434,6 +432,7 @@ void KFMManager::writeBodyTag()
     }
 
     view->write( ">" );
+
 }
 
 void KFMManager::writeBeginning()
@@ -783,6 +782,29 @@ void KFMManager::slotMimeType( const char *_type )
 	else
 	    bBufferPage = TRUE;
     }
+}
+
+
+void KFMManager::setDefaultTextColors( const QColor& textc,const QColor& linkc,
+				    const QColor& vlinkc){
+
+  text_color = text_color.sprintf("#%02x%02x%02x",
+				  textc.red(),textc.green(),textc.blue());
+
+  link_color = link_color.sprintf("#%02x%02x%02x",
+				  linkc.red(),linkc.green(),linkc.blue());
+
+  vlink_color = bg_color.sprintf("#%02x%02x%02x",
+				 vlinkc.red(),vlinkc.green(),vlinkc.blue());
+
+}
+
+void KFMManager::setDefaultBGColor( const QColor& bgcolor ){
+
+  bg_color = bg_color.sprintf("#%02x%02x%02x",
+			      bgcolor.red(),bgcolor.green(),bgcolor.blue());
+
+
 }
 
 void KFMManager::slotFinished()

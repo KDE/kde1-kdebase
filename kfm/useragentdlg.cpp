@@ -80,13 +80,13 @@ UserAgentDialog::UserAgentDialog( QWidget * parent,
 
 UserAgentDialog::~UserAgentDialog()
 {
-  delete onserverLA;
+  /*  delete onserverLA;
   delete onserverED;
   delete loginasLA;
   delete loginasED;
   delete addPB;
   delete deletePB;
-  delete bindingsLB;
+  delete bindingsLB;*/
 //->  was: delete okPB; <- It crashes kfm with a nice seg fault !!
 //->  was: delete cancelPB;
 //->  was: delete helpPB;
@@ -183,6 +183,9 @@ void UserAgentDialog::listboxHighlighted( const char* _itemtext )
 
 /*
  * $Log$
+ * Revision 1.4  1998/01/10 01:38:31  torben
+ * Torben: Bug fixes ( see CHANGES )
+ *
  * Revision 1.3  1997/12/20 01:46:09  hoss
  * *** empty log message ***
  *

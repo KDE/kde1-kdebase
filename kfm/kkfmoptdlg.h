@@ -6,6 +6,7 @@
 #include <ktabctl.h>
 #include "kproxydlg.h"
 #include "useragentdlg.h"
+#include "htmlopts.h"
 
 class KKFMOptDlg : public QDialog
 {
@@ -19,6 +20,8 @@ class KKFMOptDlg : public QDialog
     QStrList dataUsrAgent() const;
     void setProxyData(QStrList *strList);
     QStrList dataProxy() const;
+    void fontData(struct fontoptions& fontopts);
+    void colorData(struct coloroptions& coloropts);
     
   private:
     QPushButton *help;
@@ -26,6 +29,8 @@ class KKFMOptDlg : public QDialog
     QPushButton *cancel;
     KTabCtl     *tabDlg;
     KProxyDlg   *prxDlg;
+    KFontOptions   *fontDlg;
+    KColorOptions   *colorDlg;
     UserAgentDialog *usrDlg;
     
   public slots:

@@ -83,6 +83,7 @@ KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_p
     connect( KIOServer::getKIOServer(), SIGNAL( mountNotify() ), this, SLOT( slotMountNotify() ) );
 
     getKHTMLWidget()->setFocusPolicy( QWidget::StrongFocus );
+    setHTMLWidgetOptions();
 }
 
 KHTMLView* KfmView::newView( QWidget *_parent, const char *_name, int )
@@ -108,6 +109,91 @@ KfmView::~KfmView()
     delete htmlCache;
     
     // debugT("Deleted\n");
+}
+
+void KfmView::setHTMLWidgetOptions(){
+
+  int fSize;
+  QString stdName;
+  QString fixedName;
+
+  QColor bgColor;
+  QColor textColor;
+  QColor linkColor ;
+  QColor vLinkColor ;
+
+  KConfig *config = KApplication::getKApplication()->getConfig();
+  config->setGroup( "KFM HTML Defaults" );		
+  
+  QString fs = config->readEntry( "BaseFontSize" );
+  if ( !fs.isEmpty() )
+    {
+      fSize = fs.toInt();
+      if ( fSize < 3 )
+	fSize = 3;
+      else if ( fSize > 5 )
+	fSize = 5;
+    }
+  else
+    fSize = 3;
+
+
+  stdName = config->readEntry( "StandardFont" );
+  if ( stdName.isEmpty() )
+    stdName = "times";
+
+  fixedName = config->readEntry( "FixedFont" );
+  if ( fixedName.isEmpty() )
+    fixedName = "courier";
+
+  bool changeCursor = (bool) config->readNumEntry("ChangeCursor",0);
+
+  KHTMLWidget* htmlview;
+  htmlview=getKHTMLWidget();
+  htmlview->setFixedFont( fixedName);
+  htmlview->setStandardFont( stdName );
+  htmlview->setDefaultFontBase( fSize );
+  if(changeCursor)
+    htmlview->setURLCursor( upArrowCursor);
+  else
+    htmlview->setURLCursor( arrowCursor );
+
+  config->setGroup( "KFM HTML Defaults" );	
+  bgColor = config->readColorEntry( "BgColor", &white );
+  textColor = config->readColorEntry( "TextColor", &black );
+  linkColor = config->readColorEntry( "LinkColor", &blue );
+  vLinkColor = config->readColorEntry( "VLinkColor", &magenta );
+
+
+  setDefaultTextColors(textColor,linkColor,vLinkColor);
+  setDefaultBGColor(bgColor);
+
+}
+
+void KfmView::setDefaultTextColors( const QColor& textc,const QColor& linkc,
+				    const QColor& vlinkc){
+
+
+  view->setDefaultTextColors( 
+			     textc, 
+			     linkc,
+			     vlinkc 
+			     );
+
+  manager->setDefaultTextColors( 
+			     textc, 
+			     linkc,
+			     vlinkc 
+			     );
+
+
+}
+
+void KfmView::setDefaultBGColor( const QColor& bgcolor ){
+
+  view->setDefaultBGColor( bgcolor );
+  manager->setDefaultBGColor( bgcolor );
+
 }
 
 void KfmView::begin( const char *_url, int _x_offset, int _y_offset )
@@ -287,6 +373,9 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
     QPoint p2( _zone->getMouseX(), _zone->getMouseY() );
     manager->dropPopupMenu( _zone, url, &p2, ( nested == 0 ? false : true ) );
 }
+
+
+
 
 void KfmView::slotCopy()
 {
