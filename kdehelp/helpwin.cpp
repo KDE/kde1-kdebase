@@ -27,6 +27,7 @@
 #include "cgi.h"
 #include "kbutton.h"
 #include "helpwin.h"
+#include <kcursor.h>
 
 #include "dbnew.h"
 
@@ -45,18 +46,6 @@
 
 static QString QUOTE( "\"" );
 static QString DOCS_PATH;
-
-#define hand_width 16
-#define hand_height 16
-
-static unsigned char hand_bits[] = {
-	0x00,0x00,0xfe,0x01,0x01,0x02,0x7e,0x04,0x08,0x08,0x70,0x08,0x08,0x08,0x70,
-	0x14,0x08,0x22,0x30,0x41,0xc0,0x20,0x40,0x12,0x80,0x08,0x00,0x05,0x00,0x02,
-	0x00,0x00};
-static unsigned char hand_mask_bits[] = {
-	0xfe,0x01,0xff,0x03,0xff,0x07,0xff,0x0f,0xfe,0x1f,0xf8,0x1f,0xfc,0x1f,0xf8,
-	0x3f,0xfc,0x7f,0xf8,0xff,0xf0,0x7f,0xe0,0x3f,0xc0,0x1f,0x80,0x0f,0x00,0x07,
-	0x00,0x02};
 
 //-----------------------------------------------------------------------------
 
@@ -123,6 +112,7 @@ QColor KHelpWindow::bgColor;
 QColor KHelpWindow::textColor;
 QColor KHelpWindow::linkColor;
 QColor KHelpWindow::vLinkColor;
+bool KHelpWindow::underlineLinks;
 
 KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	: QWidget( parent, name ), history(50), format(&html)
@@ -149,16 +139,13 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 
 	accel->connectItem( COPY, this, SLOT(slotCopy()) );
 
-	QBitmap cb( hand_width, hand_height, hand_bits, TRUE );
-	QBitmap cm( hand_width, hand_height, hand_mask_bits, TRUE );
-	QCursor handCursor( cb, cm, 0, 0 );
-
 	view = new KHelpView( this );
 	CHECK_PTR( view );
 	view->setDefaultFontBase( fontBase );
 	view->setStandardFont( standardFont );
 	view->setFixedFont( fixedFont );
-	view->setURLCursor( handCursor );
+	view->setURLCursor( KCursor::handCursor() );
+	view->setUnderlineLinks( underlineLinks );
 	view->setFocusPolicy( QWidget::StrongFocus );
 	view->setFocus();
 	view->installEventFilter( this );
@@ -249,6 +236,7 @@ void KHelpWindow::readOptions()
 	textColor = config->readColorEntry( "TextColor", &black );
 	linkColor = config->readColorEntry( "LinkColor", &blue );
 	vLinkColor = config->readColorEntry( "VLinkColor", &darkMagenta );
+	underlineLinks = config->readBoolEntry( "UnderlineLinks", TRUE );
 }
 
 
@@ -1435,10 +1423,11 @@ void KHelpWindow::slotFixedFont( const char *n )
 
 
 void KHelpWindow::slotColorsChanged( const QColor &bg, const QColor &text,
-	const QColor &link, const QColor &vlink )
+	const QColor &link, const QColor &vlink, const bool uline )
 {
 	view->setDefaultBGColor( bg );
 	view->setDefaultTextColors( text, link, vlink );
+	view->setUnderlineLinks(uline);
 	view->parse();
 	busy = true;
 	emit enableMenuItems();

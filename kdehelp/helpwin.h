@@ -171,7 +171,7 @@ public slots:
 	void	slotStandardFont( const char * );
 	void	slotFixedFont( const char * );
 	void	slotColorsChanged( const QColor&, const QColor&, const QColor&,
-		    const QColor& );
+		    const QColor&, const bool );
 	void	slotPopupOpenURL();
 	void	slotPopupAddBookmark();
 	void	slotPopupOpenNew();
@@ -229,6 +229,7 @@ private:
 	static QColor textColor;
 	static QColor linkColor;
 	static QColor vLinkColor;
+	static bool   underlineLinks;
 
 	QString fullURL;
 	QString currentURL;

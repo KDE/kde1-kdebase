@@ -234,6 +234,13 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 	colorBtn->setGeometry( 185, 140, 80, 30 );
 	connect( colorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotVLinkColorChanged( const QColor & ) ) );
+
+	QCheckBox *underlineBox = new QCheckBox(klocale->translate("Underline links"),
+	                                        this);
+	underlineBox->setGeometry(35, 180, 250, 30 );
+	underlineBox->setChecked(underlineLinks);
+	connect( underlineBox, SIGNAL( toggled( bool ) ),
+		SLOT( slotUnderlineLinksChanged( bool ) ) );
 }
 
 void KColorOptions::readOptions()
@@ -245,6 +252,7 @@ void KColorOptions::readOptions()
 	textColor = config->readColorEntry( "TextColor", &black );
 	linkColor = config->readColorEntry( "LinkColor", &blue );
 	vLinkColor = config->readColorEntry( "VLinkColor", &magenta );
+	underlineLinks = config->readBoolEntry( "UnderlineLinks", TRUE );
 
 	changed = false;
 }
@@ -258,9 +266,10 @@ void KColorOptions::slotApplyPressed()
 	config->writeEntry( "TextColor", textColor );
 	config->writeEntry( "LinkColor", linkColor );
 	config->writeEntry( "VLinkColor", vLinkColor );
+	config->writeEntry( "UnderlineLinks", underlineLinks );
 
 	if ( changed )
-	    emit colorsChanged( bgColor, textColor, linkColor, vLinkColor );
+	    emit colorsChanged( bgColor, textColor, linkColor, vLinkColor, underlineLinks );
 
 	config->sync();
 }
@@ -291,6 +300,13 @@ void KColorOptions::slotVLinkColorChanged( const QColor &col )
 	if ( vLinkColor != col )
     	    changed = true;
 	vLinkColor = col;
+}
+
+void KColorOptions::slotUnderlineLinksChanged( bool ulinks )
+{
+	if ( underlineLinks != ulinks )
+    	    changed = true;
+	underlineLinks = ulinks;
 }
 
 //-----------------------------------------------------------------------------
