@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>An Invitation to KDE: Managing your files</TITLE>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="KDE Intro">
+<META NAME="description" CONTENT="KDE Quickstart Guide">
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
+<FONT FACE="Helvetica">
+<A HREF="http://www.kde.org/"><IMG SRC="logotp3.gif" BORDER="0" ALT="The K Desktop Environment"></A>
+<HR WIDTH="100%" SIZE=2 ALIGN="CENTER" NOSHADE>
+
+ 
+<P ALIGN="RIGHT">
+
+<A HREF="index-6.html">Next</A>
+<A HREF="index-4.html">Previous</A>
+<A HREF="index.html#toc5">Table of Contents</A>
+</P>
+<H3><A NAME="s5">5. Managing your files</A></H3>
+
+<P>
+<P>A common metaphor of graphical desktops is the use of folders to
+represent directories on your hard disk. Folders contain files and other
+folders. A KDE application called <EM>kfm</EM>, the K File Manager, uses this
+metaphor to help you manage your files.
+<P>
+<H3><A NAME="ss5.1">5.1 Using kfm</A>
+</H3>
+
+<P>The first time you start KDE, a window with lots of icons in it appears. 
+This is a <EM>kfm</EM> window displaying the files in your home
+directory (the area where your personal files are stored). The pathname
+of the folder is displayed under the window's toolbar.
+If you don't see such a window now,
+click the icon on the panel that looks like a folder with a picture of
+a house.
+<P>To open a file or folder, simply click it once with the left mouse button.
+Clicking the folder with two dots (..) takes you back one directory level.
+You can also choose <B>View > Show Tree</B> from the menu to 
+display the folder hierarchy for more direct navigation. Or you can
+edit the path displayed under the toolbar, using the tab key to complete
+directory names, to get to a specific directory quickly.
+<P>
+<H4>Opening Files</H4>
+
+<P>KDE comes with a set of applications to view and edit many common kinds
+of files, and when you click a file containing, say, a document or image, 
+<EM>kfm</EM> will start the appropriate application to display the file. If it doesn't know
+what application to start to open a file you clicked, <EM>kfm</EM> will prompt you
+for the name of the application to run.
+<P>Technical Note: <EM>kfm</EM> uses 
+<A HREF="index-9.html#mime">MIME types</A> to associate
+files with applications. 
+<P>
+<H4>Dragging and Dropping Icons</H4>
+
+<P>To copy or move a file, simply drag its icon to the desktop, to another
+<EM>kfm</EM> window, or to a folder icon.
+When you release the button, <EM>kfm</EM> displays a menu to
+allow you to choose to copy, move, or create a link to the file.
+Note that if you choose to create a link, KDE creates a Unix "symbolic link"
+(not a "hard link"), so if you move or delete the original file, the link will
+be broken.
+<P>Many KDE applications also support drag and drop operations: you can drag an
+icon onto a window of running application, or onto an icon of an application
+that is not started, to have the application open the file. Try it!
+<P>
+<H4>Setting File Properties</H4>
+
+<P>To change file properties, such as its name and permissions, right-click
+the icon and choose Properties from the menu.
+<P>
+<H3><A NAME="ss5.2">5.2 Working with Archives and Networks</A>
+</H3>
+
+<P>
+<P>In the near past, you needed special software to access files 
+on the Internet. Not any more!
+KDE supports a technology called "Network Transparent
+Access" (NTA) which allows you to work with files 
+on the other side of the earth as easily as those on your local hard disk.
+<P>For example, to access files on an FTP server, just choose
+<B>File > Open Location</B> from a <EM>kfm</EM> menu, and enter the URL
+of an FTP server.  You can drag and drop
+files to and from the folders on the server just as if they were on your
+local disk. You'll even be able to open files on the FTP server without having
+to copy them to your local disk (KDE does it for you when necessary).
+<P>Note that <EM>kfm</EM> uses anonymous FTP access, which may restrict your
+access to files on the FTP server.  If you have an account on the
+server, you can supply your user ID as part of the URL,
+like this:<BR><BR>
+<CODE>ftp://<EM>userid</EM>@<EM>server</EM>/<EM>directory</EM></CODE><BR><BR>
+<EM>kfm</EM> will prompt you for your password, and if the login succeeds,
+you will have full access to your files on the server.
+<P>If you are used to the WinZip(tm) utility
+on MS-Windows(tm), then you will be happy to hear that KDE can look
+into tar archives, too. It treats such archives just like a normal
+folder -- you can browse into the archive, open files, etc.
+In general, accessing files on the Internet and in archives should look and
+feel just like accessing files on your local disk, except for delays
+imposed by the network.
+<P>
+<H3><A NAME="ss5.3">5.3 Using Templates to access Applications and Devices</A>
+</H3>
+
+<P>One of the folders KDE places on your desktop when you 
+log in the first time is called <EM>Templates</EM>. It holds a number of
+files with a .kdelnk extension (not shown). These <EM>kdelnk</EM> files
+are used to represent the following in KDE:
+<UL>
+<LI>Applications</LI>
+<LI>Printers</LI>
+<LI>Mountable Devices (e.g. floppy drives)</LI>
+<LI>Internet resources (e.g. WWW documents, FTP directories)</LI>
+</UL>
+<P>Nearly every item in the Application Starter and on the panel
+refers to a <EM>kdelnk</EM> file on disk. The <EM>kdelnk</EM> file
+specifies what icon to display, as well as specific information about what
+the icon represents (an application, device, or URL).
+You can drag any <EM>kdelnk</EM> file to the panel to create a quick-launch button.
+<P>
+<H4>Setting up printers</H4>
+
+<P>You can create icons for your printers so that you can print a file by
+dragging it to a printer icon. Here's how:
+<OL>
+<LI>Open the Templates folder located on the desktop. </LI>
+<LI>Drag the Program icon in the folder to the desktop. Choose <EM>Copy</EM>
+from the menu that appears when you drop the icon.</LI>
+<LI>Right-click the new icon, and choose <EM>Properties</EM> from the context
+menu.</LI>
+<LI>On the <EM>General</EM> tab, change the name to <CODE>Printer.kdelnk</CODE>.</LI>
+<LI>On the <EM>Execute</EM> tab, enter the following in the first
+<EM>Execute</EM> field:<BR>
+<CODE>lpr %u</CODE><BR><BR>
+<B>Note:</B> This example assumes that you print using the <EM>lpr</EM>
+command. If you use a different command, enter the one you use.</LI>
+<LI>Still in the Execute tab, click the icon that looks like a cog,
+and select the Printer icon from the list that appears.</LI>
+</OL>
+<P>Now you should be able to drag a file to the Printer icon and have it
+printed on your default printer.
+<P>
+<H4>Mounting devices</H4>
+
+<P>Unix provides access to storage devices other than the primary hard disk
+through a process called <EM>mounting</EM>. KDE uses <EM>kdelnk</EM> files to 
+allow you to easily mount, unmount, and access
+files on secondary storage devices such as floppy drives and CD-ROM drives.
+<P>As an example, here are the steps needed to create an icon to access
+files on a floppy disk:
+<P><B>Note:</B> Many systems require you to be logged in as <EM>root</EM> to mount and
+unmount devices.
+<P>
+<OL>
+<LI>Open the Templates folder located on the desktop. </LI>
+<LI>Drag the Device icon in the folder to the desktop. Choose <EM>Copy</EM>
+from the menu that appears when you drop the icon.</LI>
+<LI>Right-click the new icon, and choose <EM>Properties</EM> from the context
+menu.</LI>
+<LI>On the <EM>General</EM> tab, change the name to <CODE>Floppy.kdelnk</CODE>.</LI>
+<LI>On the <EM>Device</EM> tab, enter <CODE>/dev/fd0</CODE> as the <EM>Device</EM>.
+Click the <EM>Mounted Icon</EM>, and select the picture of a floppy disk with a
+green light. Then click the <EM>Unmounted Icon</EM> and select the picture of
+a floppy disk without the green light.</LI>
+</OL>
+<P>Now, place a properly formatted floppy in the drive and click the Floppy icon
+to have KDE mount the floppy drive and display the files on the disk. Before
+removing the disk from the drive, right-click the Floppy icon and choose
+<EM>Unmount</EM> from the menu.
+<P>
+<P ALIGN="RIGHT">
+
+<A HREF="index-6.html">Next</A>
+<A HREF="index-4.html">Previous</A>
+<A HREF="index.html#toc5">Table of Contents</A>
+</P>
+<CENTER>
+<HR WIDTH="100%" SIZE=3 ALIGN=CENTER NOSHADE>
+</CENTER>    
+</FONT>
+
+ 
+</BODY>
+</HTML>
