@@ -153,6 +153,7 @@ void kPanel::kwmDesktopChange(int nd){
 	(i+1!=currentDesktop && b->isOn()))
       b->toggle();
   }
+
   if (panelHidden[currentDesktop])
     hidePanel();
   else
@@ -447,6 +448,71 @@ void kPanel::resizeEvent( QResizeEvent * ){
 
 }
 
+void kPanel::enterEvent( QEvent * ){
+  hideTimer->start(4000, TRUE);
+  if (!autoHidden)
+    return;
+  raise();
+  if (taskbar_frame->isVisible()){
+    taskbar_frame->raise();
+  }
+  if (orientation == horizontal){
+    if (position == top_left)
+      move (0,0);
+    else
+      move (0, QApplication::desktop()->height()-height());
+  }
+  else {
+    if (position == top_left)
+      move (0,0);
+    else
+      move (QApplication::desktop()->width()-width(),0);
+    
+  }
+  doGeometry();
+  layoutTaskbar();
+  autoHidden = false;
+}
+void kPanel::leaveEvent( QEvent * ){
+}
+
+void kPanel::hideTimerDone(){
+  int bi;
+  bool do_hide = true;
+  if (!autoHide)
+    return;
+  for (bi=0; bi<nbuttons; bi++){
+    do_hide = do_hide && (entries[bi].button->flat &&
+			  !entries[bi].button->isDown());
+  }
+  do_hide = do_hide && !geometry().contains(QCursor::pos());
+  if (!do_hide){
+    hideTimer->start(4000, TRUE);
+  }
+  else {
+    if (orientation == horizontal){
+      if (position == top_left)
+	move (x(), y()-height()+4);
+      else
+	move (x(), y()+height()-4);
+    }
+    else {
+      if (position == top_left)
+	move (x()-width()+4, y());
+      else
+	move (x()+width()-4, y());
+	
+    }
+    doGeometry();
+    layoutTaskbar();
+    autoHidden = true;
+  }
+}
+
+void kPanel::standalonePanelButtonClicked(){
+  enterEvent(0);
+  showPanel();
+}
 
 void kPanel::mousePressEvent( QMouseEvent */* ev */  ){
   raise();

@@ -1,5 +1,13 @@
 In kpanel-0.18:
 
+    Patchlevel 2:
+       - autohide feature for the panel
+               AutoHide=on/off
+         The provisional panel config dialog also offers a checkbox
+         for this feature.
+       - K-Button does not need to be the very first anymore. I even
+         cannot remember why I implemented this contrain some time ago....
+
     Patchlevel 1:
        - taskbar uses the default font now. Changes during runtime
          handling fixed.

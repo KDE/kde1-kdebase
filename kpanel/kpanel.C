@@ -71,6 +71,9 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     connect( tipSleepTimer, SIGNAL(timeout()),
 	     this, SLOT(tipSleepTimerDone()) );
     
+    hideTimer = new QTimer( this );
+    connect( hideTimer, SIGNAL(timeout()),
+	     this, SLOT(hideTimerDone()) );
     
     // parse the configuration
     KConfig *config = KApplication::getKApplication()->getConfig();
@@ -158,6 +161,16 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       personalFirst = (config->readEntry("PersonalFirst") == "on");
     else
       config->writeEntry("PersonalFirst", "off");
+
+    autoHide = false;
+    if (config->hasKey("AutoHide"))
+      autoHide = (config->readEntry("AutoHide") == "on");
+    else
+      config->writeEntry("AutoHide", "off");
+    autoHidden = False;
+    if (autoHide)
+      hideTimer->start(6000, TRUE);
+
 
     QString panelHiddenString = "00000000";
     panelHiddenString = config->readEntry("PanelHidden", 
@@ -348,7 +361,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     panel_button_standalone->installEventFilter( this );
     
     connect( panel_button_standalone, SIGNAL(clicked()), 
-	     SLOT(showPanel()) );
+	     SLOT(standalonePanelButtonClicked()) );
 
     if (orientation == horizontal){
       
@@ -1132,8 +1145,23 @@ void kPanel::hidePanel(){
   panelHidden[currentDesktop] = True;
   
   if (!panelCurrentlyHidden){
-    panel_button_frame_standalone->setGeometry(x() + panel_button->x(),
-					       y() + panel_button->y(),
+    QPoint p = pos();
+    if (autoHidden){
+      if (orientation == horizontal){
+	if (position == top_left)
+	  p.setY(y()+height()-4);
+	else
+	  p.setY(y()-height()+4);
+      }
+      else {
+	if (position == top_left)
+	  p.setX(x()+width()-4);
+	else
+	  p.setX(x()-width()+4);
+      }
+    }  
+    panel_button_frame_standalone->setGeometry(p.x() + panel_button->x(),
+					       p.y() + panel_button->y(),
 					       panel_button->width(),
 					       panel_button->height());
     panelCurrentlyHidden = True;
@@ -1141,6 +1169,7 @@ void kPanel::hidePanel(){
     showMiniPanel();
     panel_button_frame_standalone->show();
     panel_button_frame_standalone->raise();
+    
     doGeometry();
     layoutTaskbar (); //geometry changed 
    }
@@ -1167,9 +1196,10 @@ void kPanel::showPanel(){
     hideMiniPanel();
     show();
     raise();
-    doGeometry();
-    layoutTaskbar (); 
   }
+  doGeometry();
+  layoutTaskbar(); 
+
   if (old != panelHidden[currentDesktop]){
     KConfig *config = KApplication::getKApplication()->getConfig();
     config->setGroup("kpanel");   
@@ -1195,6 +1225,20 @@ void kPanel::doGeometry () {
    int mh = 0;
    int sw = 0;      // standalone...
    int sh = 0; 
+   if (px<0){
+     pw += px;
+     px = 0;
+   }
+   if (py<0){
+     ph += py;
+     py = 0;
+   }
+   if (px + pw >w){
+     pw = w-px;
+   }
+   if (py + ph >h){
+     ph = h-py+1;
+   }
    
    if (panelCurrentlyHidden) // i.e. standalone shown
     {

@@ -61,6 +61,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
 
 static void grabKey(KeySym keysym, unsigned int mod){
   static int NumLockMask = 0;
+  if (!XKeysymToKeycode(qt_xdisplay(), keysym)) return; 
   if (!NumLockMask){
     XModifierKeymap* xmk = XGetModifierMapping(qt_xdisplay());
     int i;

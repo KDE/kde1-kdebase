@@ -175,6 +175,7 @@ public:
   void showPanel ();
   void miniButtons (int); // sven  
   void desktop_change(int);
+  void standalonePanelButtonClicked();
   
   void configure_panel();
   void slotPropsApply();
@@ -194,6 +195,7 @@ public:
 
   void tipTimerDone();
   void tipSleepTimerDone();
+  void hideTimerDone();
 
   
   QWidget * parentOfSwallowed(Window);
@@ -201,6 +203,9 @@ public:
   
 protected:
     void    resizeEvent( QResizeEvent * );
+    void enterEvent( QEvent * );
+    void leaveEvent( QEvent * );
+    
     bool eventFilter(QObject *, QEvent *);
     void mousePressEvent( QMouseEvent * );
     void  timerEvent( QTimerEvent * );
@@ -234,6 +239,7 @@ private:
   bool info_label_is_sleeping;
   QTimer *tipTimer;
   QTimer *tipSleepTimer;
+  QTimer *hideTimer;
   QWidget* last_tip_widget;
   
   int bound_top_left;
@@ -280,6 +286,8 @@ private:
   
   bool foldersFirst;
   bool personalFirst;
+  bool autoHide;
+  bool autoHidden;
   
   // tools
   QPixmap create_arrow_pixmap(QPixmap pm);
@@ -311,6 +319,7 @@ private:
   QButtonGroup *bgrloc, *bgrta;
   QCheckBox *cbtt;
   QCheckBox *cbpf;
+  QCheckBox *cbah;
   int old_style;
   QSlider *sl_dbhs, *sl_nr_db;
 
@@ -319,7 +328,7 @@ private:
 
   // development
 
-  QPushButton* kde_button;
+  myPushButton* kde_button;
 
   QPopupMenu* windows;
   QPopupMenu* windowlist;

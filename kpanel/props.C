@@ -133,7 +133,7 @@ void kPanel::read_in_configuration(){
 	  !button_entry_value.isNull()){
 
      if (num>=0){
-       if (num == 0){
+       if (button_entry_value == "system"){
  	// the unremovable kde_button!
  	if (orientation == horizontal){
  	  kde_button->move((int)(x + delta * real_space / 10000) , (int)y);
@@ -292,13 +292,16 @@ void kPanel::configure_panel(){
   costy->setCurrentItem(old_style);
 
   cbtt = new QCheckBox(klocale->translate("Menu Tooltips"), mw);
-  cbtt->setGeometry(220, 130, 110, 25);
   cbtt->setGeometry(220, 120, 110, 25);
   cbtt->setChecked(config->readNumEntry("MenuToolTips")>=0);
   
   cbpf = new QCheckBox(klocale->translate("Personal First"), mw);
   cbpf->setGeometry(220, 140, 110, 25);
   cbpf->setChecked(config->readEntry("PersonalFirst") == "on");
+
+  cbah = new QCheckBox(klocale->translate("Auto Hide"), mw);
+  cbah->setGeometry(220, 160, 110, 25);
+  cbah->setChecked(config->readEntry("AutoHide") == "on");
 
   
   tab->addTab(mw, klocale->translate("Panel"));
@@ -394,6 +397,8 @@ void kPanel::slotPropsApply(){
     config->writeEntry("MenuToolTips", -1);
 
   config->writeEntry("PersonalFirst", cbpf->isChecked()?"on":"off");
+
+  config->writeEntry("AutoHide", cbah->isChecked()?"on":"off");
 
   QButton* tmp_button;
   for (i=0; (tmp_button = bgrloc->find(i)); i++){

@@ -64,11 +64,9 @@ void kPanel::reposition(int l){
 
   DesktopEntry tmp;
   bool changed = FALSE;
-  // the KDE-button has a fix position
-  // kde_button->move(0,0);
   do {
     changed = FALSE;
-    for (i=1; i<nbuttons-1; i++){
+    for (i=0; i<nbuttons-1; i++){
       if ((orientation == vertical && entries[i].button->y() > entries[i+1].button->y())
 	  || (orientation == horizontal && entries[i].button->x() > entries[i+1].button->x())){
 	tmp = entries[i];
@@ -80,22 +78,22 @@ void kPanel::reposition(int l){
   } while (changed);
 
   // the first button is always the KDE button
-  if (orientation == vertical){
-    if (nbuttons > 1 && entries[0].button->y() > entries[1].button->y())
-      entries[0].button->move(entries[0].button->x(), 
-			      entries[1].button->y()-entries[0].button->height());
-    if (entries[0].button->y()<panel_button->y() + panel_button->height()) 
-	  entries[0].button->move(entries[0].button->x(),
-				  panel_button->y() + panel_button->height());
-  }
-  else{
-    if (nbuttons > 1 && entries[0].button->x() > entries[1].button->x())
-      entries[0].button->move(entries[1].button->x() - entries[0].button->width(), 
-			      entries[0].button->y()); 
-    if (entries[0].button->x()<panel_button->x() + panel_button->width()) 
-	  entries[0].button->move(panel_button->x() + panel_button->width(),
-				  entries[0].button->y());
-  }
+//   if (orientation == vertical){
+//     if (nbuttons > 1 && entries[0].button->y() > entries[1].button->y())
+//       entries[0].button->move(entries[0].button->x(), 
+// 			      entries[1].button->y()-entries[0].button->height());
+//     if (entries[0].button->y()<panel_button->y() + panel_button->height()) 
+// 	  entries[0].button->move(entries[0].button->x(),
+// 				  panel_button->y() + panel_button->height());
+//   }
+//   else{
+//     if (nbuttons > 1 && entries[0].button->x() > entries[1].button->x())
+//       entries[0].button->move(entries[1].button->x() - entries[0].button->width(), 
+// 			      entries[0].button->y()); 
+//     if (entries[0].button->x()<panel_button->x() + panel_button->width()) 
+// 	  entries[0].button->move(panel_button->x() + panel_button->width(),
+// 				  entries[0].button->y());
+//   }
 
 
   if (orientation == vertical){
@@ -132,7 +130,15 @@ void kPanel::reposition(int l){
 	    entries[i].button->y() < bound_bottom_right)
 	  entries[i].button->move(entries[i].button->x(), bound_top_left - entries[i].button->height());
       }
-      if (l>nbuttons&&nbuttons>1) {delete_button(entries[nbuttons-1].button);l=0;}
+      if (l>nbuttons&&nbuttons>1) {
+	if (entries[nbuttons-1].button == kde_button){
+	  entries[nbuttons-1].button = entries[nbuttons-2].button;
+	  entries[nbuttons-2].button = kde_button;
+	  kde_button->setGeometry(entries[nbuttons-1].button->geometry());
+	}
+	delete_button(entries[nbuttons-1].button);
+	l=0;
+      }
       reposition(l+1);
     }
   }
@@ -171,7 +177,15 @@ void kPanel::reposition(int l){
 	    entries[i].button->x() < bound_bottom_right)
 	  entries[i].button->move(bound_top_left - entries[i].button->width(), entries[i].button->y());
       }
-      if (l>nbuttons&&nbuttons>1) {delete_button(entries[nbuttons-1].button);l=0;}
+      if (l>nbuttons&&nbuttons>1) {
+	if (entries[nbuttons-1].button == kde_button){
+	  entries[nbuttons-1].button = entries[nbuttons-2].button;
+	  entries[nbuttons-2].button = kde_button;
+	  kde_button->setGeometry(entries[nbuttons-1].button->geometry());
+	}
+	delete_button(entries[nbuttons-1].button);
+	l=0;
+      }
       reposition(l+1);
     }
   }
@@ -193,7 +207,7 @@ void kPanel::find_a_free_place(){
 					    box_width, box_height);
 
   // find a free place.
-  for (i=1; i<nbuttons-1; i++){
+  for (i=0; i<nbuttons-1; i++){
     if (orientation == vertical){
       if (entries[i-1].button->y()+box_height <= entries[i].button->y()-box_height){
 	entries[nbuttons-1].button->setGeometry(margin,
