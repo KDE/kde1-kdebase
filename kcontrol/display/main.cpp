@@ -74,7 +74,7 @@ KDisplayApplication::KDisplayApplication(int &argc, char **argv, const char *nam
 		klocale->translate("&Fonts"), "kdisplay-6.html");
       if (!pages || pages->contains("style"))
 	addPage(general = new KGeneral(dialog, KDisplayModule::Setup),
-		klocale->translate("&Style"), "kdisplay-6.html");
+		klocale->translate("&Style"), "kdisplay-7.html");
 
       if (background || screensaver || colors || fonts || general)
         dialog->show();
@@ -159,3 +159,7 @@ int main(int argc, char **argv)
       return 0;
     }
 }
+
+
+
+

@@ -11,8 +11,8 @@
 <!-- Title information -->
 
 <title>Display Setup Handbook
-<author>Mark Donohoe and Martin Jones
-<date>v1.0, 22 May 1997
+<author>Mark Donohoe and Martin Jones, updated by Duncan H.
+<date>v1.1, 30 Jan 1999
 
 <!-- Table of contents -->
 <toc>
@@ -22,7 +22,7 @@
 <sect>Introduction
 <p>
 
-KDisplay is a display setup utility. Running <verb> kdisplay -setup </verb>
+KDisplay is a display setup utility. Running <verb> kcmdisplay  </verb>
 gives a tab dialog with five pages dealing with different aspects of the
 desktop display.
 
@@ -30,11 +30,11 @@ desktop display.
 <item>The desktop <bf>Background</bf>.
 <item>The <bf>Screen Saver</bf>.
 <item>The desktop <bf>Color Scheme</bf>.
-<item><bf>General</bf> desktop preferences.
-<item><bf>Input</bf> device setup.
+<item>The desktop <bf>Fonts</bf>.
+<item>The desktop <bf>Style</bf> choices.
 </enum>
 
-Running <verb>kdisplay -init</verb> simply applies your preferences to the
+Running <verb>kcmdisplay -init</verb> simply applies your preferences to the
 desktop.
 
 <!-- NEW SECTION	NEW SECTION		NEW SECTION		NEW SECTION		 -->
@@ -52,13 +52,41 @@ desktop.
 <sect>Background
 <p>
 
-The Background setup dialog is comprised of three sections:
+The Background setup dialog is comprised of four sections:
 
 <enum>
+<item>Desktop selection and <bf>Name</bf>.
 <item>The background <bf>Preview Monitor</bf>.
 <item>The background <bf>Color</bf>.
 <item>The background <bf>Wallpaper</bf>.
 </enum>
+
+At the bottom of the screen the
+selection <bf>Dock into the panel</bf>
+allows you to select whether an icon for
+the Background  Display Setting dialog is docked into the Panel
+(this provides quick access to the Display Settings menu,
+and also allows stepping through changing background
+sequences  when the "<bf>Random</bf>" background mode
+is selected).
+
+Also at the bottom of the screen is a slider
+allowing the  memory <bf>Cache size</bf> used by the display to
+be adjusted.
+
+
+<sect1>Name
+<p>
+The top left <bf>Desktop</bf> box lists the 
+currently-configured desktops by their assigned names.
+Click on a name to select the corresponding desktop to
+be configured.   Click on <bf>Rename</bf> to change
+the assigned name which appears on the Panel's desktop
+selection buttons.
+
+If you wish to configure a common background for
+all Desktops, make  the <bf>Common Background</bf>
+selection.
 
 <sect1>Preview Monitor
 
@@ -66,13 +94,13 @@ The Background setup dialog is comprised of three sections:
 
 This is a minature representation of your display background, using the
 current settings.  To apply these settings to your display, press the
-<em>Apply</em> button to continue using the KDE display setup utility, or the
-<em>Ok</em> button to apply your changes and quit.
+<bf>Apply</bf> button to continue using the KDE display setup utility, or the
+<bf>Ok</bf> button to apply your changes and quit.
 
 <p>
 
-<bf>Note:</bf> Pressing <em>Ok</em> or <em>Apply</em> applies changes made in
-all of the display setup modules.
+<em>Note:</em> Pressing <bf>Ok</bf> or <bf>Apply</bf> applies changes made in
+<em>all</em> of the display setup modules.
 
 <sect1>Background Color
 
@@ -83,30 +111,35 @@ gradient.
 
 <p>
 
-Click the <em>Flat</em> button to fill the background with a single color.
-The background color can be changed by clicking on the colored box in the
-<bf>Color</bf> group.  This will display a color selection dialog from which
-you may select a background color.
+Click the <bf>One Color</bf> button to fill the background with a single color.
+The background color can be changed by clicking on the colored box which
+shows the currently-selected color.
+This will display a color selection dialog from which
+you may select a new background color.
 
 <p>
 
-When you are happy with your color selection, press <em>Ok</em> in the color
-selection dialog.  The color will be updated in the <bf>Preview
-Monitor</bf>.  If you have a wallpaper selected, you may not see the
-background color, as the wallpaper will cover it.
-
+When you are happy with your color selection, press <bf>Ok</bf> in the color
+selection dialog.  The color will be updated in the colored
+box (and in the Preview
+Monitor,  provided no Wallpaper is selected).
 <p>
 
-To fill the background with a color gradient click the <em>Gradient</em>
-button. A second colored box will appear. The color gradient will run between
-the colors shown in the two boxes. The gradient runs up and down the display
-if  the <em>Portrait</em> option is selected. Alternatively, if the
-<em>Landscape</em> option is selected, the color gradient will run across the
-display.
+To fill the background with a color gradient or pattern,
+click the <bf>Two Color</bf>
+button. A second colored box will appear. 
+Click on this box to select the second color.
+Now click on the <bf>Setup</bf> button to choose how to
+blend the two colors. A dialog and Preview box will appear.
+You may choose to progressively blend the colors from 
+<bf>top to bottom</bf> of the screen, from <bf>right to left</bf>, 
+or in a <bf>pattern</bf> selected
+from the list shown.   You will see a preview of the choice you make
+before you apply it. Click <bf>OK</bf> or <bf>Cancel</bf> to leave
+this dialog.
 
 <p>
-
-A gradient fill uses only 8 colors leaving plenty free for other
+A blend of the two colors uses only 8 colors, leaving plenty free for other
 applications. However, it requires an image the size of your display to be
 maintained in memory.
 
@@ -116,19 +149,68 @@ maintained in memory.
 
 The wallpaper is an image displayed in the background (root window) of your
 display.  To change the wallpaper displayed, select one from the list
-or click the <em>Browse</em> button and select an image.
+or click the <bf>Browse</bf> button and select an image.  If wish to
+use a One Color or Two Color background, choose <tt>No Wallpaper</tt>. 
 
 <p>
-
-The image may be: <em>Tiled</em>, <em>Centred</em>, or <em>Scaled</em> to fit
-the size of the display.
+Choose from the <bf>Arrangement</bf> list to select how the
+wallpaper image is applied to the desktop: various tiling, mirroring, or
+scaling schemes are possible, and their effects may be seen in 
+the Preview box.
 
 <p>
+You may also select <bf>Random</bf> which causes a random sequence
+of backgrounds to be displayed, changing after a specified time
+interval.  Click on the <bf>Setup</bf> button to select 
+the sequence of backgrounds that are chosen from.  The sequence
+will be sampled randomly, unless you make the selection
+that the sequence is sampled <bf>in order</bf>.
+The <bf>Timer Delay</bf> box allows you to set
+the interval in seconds between changes.  If the icon for the
+background display settings is docked in the Panel, and <bf>Random</bf> is
+selected, you can click on the icon to cause the next scheduled background
+change to occur immediately.
 
-Displaying wallpaper requires that the image be kept memory.  If you are low
+
+If the option <bf>Pick files from directory</bf> is
+selected, the backgrounds wil be
+chosen from the set of wallpaper files in the selected directory
+entered in the box that opens.
+If this option is <bf>not</bf> selected, they will
+be chosen from a <bf>user-created sequence</bf>  of backgrounds listed in
+the main box.
+
+<itemize>
+<item>
+To add an entry to this <bf>user-created sequence</bf>, 
+click on <bf>Add</bf>; this will add
+a highlighted  <tt>No Wallpaper</tt> entry for the 
+currently-selected Color background 
+from the main Background <bf>Display settings</bf> screen to the sequence.
+Click on an item in the sequence to highlight it.
+To replace  this
+highlighted entry, go back to the main Background
+<bf>Display settings</bf> screen 
+(without closing the <bf>Random mode setup</bf> screen)
+and deselect <bf>Random</bf>.
+Whatever <bf>Wallpaper</bf> (including
+<tt>No Wallpaper</tt>) you now select will replace the highlighted
+entry in the Random Mode background sequence.
+Click on <bf>Delete</bf> to remove the highlighted
+item from the Random Mode backgrounds sequence.
+In this way, you can construct any sequence of backgrounds
+you wish.  Click on <bf>OK</bf> when you are satisfied with it.
+Don't forget to reselect <bf>Random</bf> in the main Background
+Display Setting screen to activate your Random Mode backgrounds.
+</itemize>
+
+<p>
+Displaying wallpaper requires that the image be kept in memory.  If you are low
 on memory, using a small, tiled image or none at all is recommended. Note
-that scaling or centring a small image still requires an image the size of
+that scaling or centering a small image still requires an image the size of
 your display to be maintained in memory.
+
+
 
 
 <!-- NEW SECTION	NEW SECTION		NEW SECTION		NEW SECTION		 -->
@@ -142,15 +224,18 @@ The Screen Saver setup dialog is comprised of three sections:
 <enum>
 <item>The screen saver <bf>Preview Monitor</bf>.
 <item>The global screen saver <bf>Settings</bf>.
-<item>The <bf>Screen Saver</bf> to display.
+<item>The  choice of <bf>Screen Saver</bf> program to run.
+
+
 </enum>
 
 <sect1>Preview Monitor
 <p>
 
 This is a minature representation of your screen saver, using the current
-settings.  To apply these settings to your display, press the <em>Apply</em>
-button to continue using the KDE display setup utility or <em>Ok</em> button
+settings.  
+To apply these settings to your display, press the <bf>Apply</bf>
+button to continue using the KDE display setup utility or <bf>Ok</bf> button
 to apply your changes and quit.
 
 <p>
@@ -165,10 +250,15 @@ what action to take if the cursor is left in one of the corners for more than
 <item>Lock - lock the screen
 </itemize>
 
-<p>
+To select an option, place the mouse over a grey box, and right-click;
+make your choice in the dialog box that opens. If the Save or Lock
+option is selected, this
+is shown in the corresponding grey box: ("s" = Save, "l" = Lock). 
 
-<bf>Note:</bf> Pressing <em>Ok</em> or <em>Apply</em> applies changes made in
-all of the display setup modules.
+
+<p>
+<em>Note:</em> Pressing <bf>Ok</bf> or <bf>Apply</bf> applies changes made in
+<em>all</em> of the display setup modules.
 
 <sect1>Settings
 <p>
@@ -178,29 +268,36 @@ is invoked.
 
 <p>
 
-Checking <em>Requires Password</em> will make the screen saver prompt you for
-a password before restoring the screen.
-(Either the user's or the root password can unlock the screen.)
+Checking <bf>Requires Password</bf> will make the screen saver prompt you for
+your password before restoring the screen.
+<p>
+Check <bf>Show password as stars</bf> for the screensaver password box
+to show the number of characters typed.
+
 
 <p>
 
-<em>Priority</em> sets the "nice" value of the screen saver.
+<bf>Priority</bf> sets the priority 
+of the screen saver (the "nice" value of its process)
+relative to other running processes.
 
 <sect1>Screen Saver
 <p>
 
-To change your screen saver, select one from the list.  The screen saver will
+Choose the particular screen saver program that runs from the list.  
+The working screen saver will
 be shown in minature in the preview monitor.
-
+(<tt>No screensaver</tt> is the default.)
 <p>
 
 Most screen savers have settings which can be changed by clicking the
-<em>Setup...</em> button.  This will display a dialog specific to the
+<bf>Setup...</bf> button.  This will display a dialog specific to the
 currently selected screen saver.
 
 <p>
 
-The <em>Test</em> button runs the screen saver immediately, full screen.
+The <bf>Test</bf> button runs the screen saver immediately, full screen,
+for a short interval.
 
 
 
@@ -218,8 +315,8 @@ The Color Scheme setup dialog is comprised of three sections:
 <item>The available <bf>Color Schemes</bf>.
 </enum>
 
-<bf>Note:</bf> User interface elements ( e.g. buttons, menus, scroll bars )
-are known as widgets.
+(A "<bf>Widget</bf>" is a commonly-used programmer's term for referring to
+User Interface elements such as buttons, menus, and scroll bars )
 
 <sect1>Preview
 <p>
@@ -251,12 +348,22 @@ ensured at all times.
 
 <p>
 
-When you press <em>Ok</em> or <em>Apply</em> the color scheme you have selected
-will be written to the desktop configuration.  There are some problems in
+When you press <bf>Ok</bf> or <bf>Apply</bf> the color scheme you have selected
+will be written to the desktop configuration.  
+
+<p>
+<em>Note:</em> Pressing <bf>Ok</bf> or <bf>Apply</bf> applies changes made in
+<em>all</em> of the display setup modules.
+
+<p>
+There are some problems in
 the Qt toolkit when changing the colors in a running application, particularly
 with lists and combo boxes.  These elements will not be displayed properly
 until the applications are restarted.  Hopefully these problems will be
 fixed in a future release of Qt.
+
+
+
 
 <sect1>Widget Color
 <p>
@@ -265,63 +372,138 @@ The currently selected member of the color scheme is shown in the combo box
 of the <bf>Widget Color</bf> group. This can be changed by clicking on the
 colored box. A color selection dialog will then appear, from which you may
 select a new color.
-
+You may select any member of the color scheme from the 
+color combination box.
 <p>
 
-When you are happy with your color selection, press <em>Ok</em> in the color
+When you are happy with your color selection, press <bf>Ok</bf> in the color
 selection dialog.  The color will be updated in the <bf>Preview</bf>.
 
 <p>
+<p>
+The <bf>Contrast</bf> slider allows you to change the contrast bewteen
+different shadings of the selected colors.
 
-You may select any member of the color scheme from the combo box.
+
+
+
 
 <sect1>Color schemes
 <p>
 
-Six color schemes are supplied with KDisplay. These are called
-<enum>
-<item>KDE Default
-<item>Atlas Green
-<item>Blue Slate
-<item>Windows 95
-<item>CDE
-<item>Pale Gray
-</enum>
+Various color schemes are supplied with KDisplay. These include:
+KDE default, 
+Atlas green
+BeOS,
+Blue slate,
+CDE,
+Desert red,
+Digital CDE,
+Pale gray,
+Pumpkin,
+Solaris CDE,
+Storm,
+and Windows 95.
+To preview a scheme click on its name in the list box. 
 
-To preview a scheme click on its name in the list box. You can use the
-supplied color schemes as a starting point to devise your own. Click the 
-<em>Save</em> button to store your color scheme under a new name. The
-<em>Remove</em> button is presently disabled.
+<p>
+You can use the
+KDE-supplied Color Schemes as a starting point to devise your own
+Scheme. Click on the 
+<bf>Add</bf> button to store the color scheme from the
+Preview under a new name, then modify it. When such a user-created
+Color Scheme is selected, changes to it (as shown
+in the Preview) can be  saved
+with the <bf>Save Changes</bf> button; it can also be
+deleted with the 
+<bf>Remove</bf> button.
 
+The KDE-supplied Schemes themselves cannot be changed or deleted.
 
 <!-- NEW SECTION	NEW SECTION		NEW SECTION		NEW SECTION		 -->
 
-
-<sect>General
+<sect>Fonts
 <p>
 
-The General setup dialog is comprised of two sections:
+You may change the font and character set  for the desktop.  
+These fonts will be used by KDE applications, and (depending on
+the choice in the <bf>Style</bf> settings) by selected non-KDE
+applications.
 
-<enum>
-<item>The <bf>Widget style</bf> box.
-<item>The <bf>Fonts</bf> selection dialog.
-</enum>
-
-<sect1>Widget Style
-<p>
-
-This allows you to switch between a Motif look or a Windows 95 look for the K
-Desktop Environment.  Currently, Qt does not adjust combo boxes properly when
-the widget style is changed.
-
-<sect1>Fonts
-<p>
-
-You may change the font for the desktop.  This option has only recently been
+(This option has only recently been
 enabled in all KDE applications, therefore some applications may not behave
-correctly when their fonts are changed, or if a large font is used.
+correctly when their fonts are changed, or if a large font is used, and 
+you may have to restart KDE for the changes to take effect.)
+
+Click on a Font category in the main list to select it
+(This lists various categories of KDE functions for which
+a font must be defined: General font, Fixed font, etc.). 
+
+For each category,
+select a <bf>Typeface</bf> from the list,
+optionally choose <bf>Bold</bf> or <bf>Italic</bf>,  
+and select the typeface size by clicking
+on "+" or "-" buttons at the right of the <bf>Size</bf> box.
+You may also choose the <bf>Character Set</bf> for this font (the choices
+available depend on the Typeface chosen). The choices 
+<tt>default</tt> 
+and <tt>any</tt> are always available.
+(The Default Character Set is configured in the File Manager Font menu).
+
+The font you have selected is previewed in the 
+<bf>Sample text</bf> box.
 
 
+To restore the KDE default configuration, click on the <bf>Default</bf>
+button at the bottom of the screen.  Click on <bf>Apply</bf> or
+<bf>OK</bf> to activate your choice.  
+
+<p>
+<em>Note:</em> Pressing <bf>Ok</bf> or <bf>Apply</bf> applies changes made in
+<em>all</em> of the display setup modules.
+
+
+<sect>Style
+<p>
+
+The Style dialog allows three Desktop style choices to be made:
+
+<itemize>
+<item> <bf>Draw widgets in the  style of Windows 95</bf>.  This allows 
+This allows you to switch between a Motif look or a Windows 95 look for the K
+Desktop Environment.  For example, the widget that lets these
+choices be made is a button in Motif style, and a check box in
+Windows 95 style.
+
+<item> <bf>Menubar on top of the screen in the style of MacOS</bf>.
+This selection emulates the MacOS style by placing a menubar for
+the currently-active application at the top of the screen.
+ 
+
+<item> <bf>Apply fonts and colors to non-KDE apps</bf>.
+Selecting this option allows the "look and feel"
+of KDE applications (mainly fonts and colors) to also be applied to 
+certain non-KDE X11 applications such as Emacs and XEmacs.  
+This feature uses <tt>krdb</tt>, KDE's
+interface to <tt>xrdb</tt>, the X-resources database.  If this
+causes you to experience problems with your non-KDE applications, 
+you should make sure that the Desktop
+Font settings (especially the Fixed font for emacs) are correctly set
+(you may need to change these settings at least once so entries in your
+<tt>~/.kderc</tt> file are generated).   Changes you make, including
+de-activating this selection, may not take effect until KDE is
+restarted.
+
+</itemize>
+
+<p>
+To restore the KDE default configuration, click on the <bf>Default</bf>
+button at the bottom of the screen.  Click on <bf>Apply</bf> or
+<bf>OK</bf> to activate your choice.  
+
+<p>
+<em>Note:</em> Pressing <bf>Ok</bf> or <bf>Apply</bf> applies changes made in
+<em>all</em> of the display setup modules.
 
 <!-- NEW SECTION	NEW SECTION		NEW SECTION		NEW SECTION		 -->
 
@@ -331,3 +513,19 @@ correctly when their fonts are changed, or if a large font is used.
 <p>
 
 </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

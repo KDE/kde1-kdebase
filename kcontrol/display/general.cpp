@@ -483,7 +483,7 @@ void KGeneral::apply( bool  )
 
 void KGeneral::slotHelp()
 {
-	kapp->invokeHTMLHelp( "kcmdisplay/kdisplay-6.html", "" );
+	kapp->invokeHTMLHelp( "kcmdisplay/kdisplay-7.html", "" );
 }
 
 void KGeneral::applySettings()

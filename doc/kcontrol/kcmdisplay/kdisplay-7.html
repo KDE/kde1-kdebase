@@ -1,10 +1,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <HTML>
 <HEAD>
-<TITLE>Display Setup Handbook: Questions and answers</TITLE>
+<TITLE>Display Setup Handbook: Style</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
-<META NAME="keywords" CONTENT="kdisplay documentation">
-<META NAME="description" CONTENT="Documentation for kdisplay">
+<META NAME="keywords" CONTENT="kde kcontrol kdisplay">
+<META NAME="description" CONTENT="kcmkdisplay help doc">
 </HEAD>
 <BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
 <FONT FACE="Helvetica">
@@ -14,16 +14,57 @@
  
 <P ALIGN="RIGHT">
 
-Next<A HREF="kdisplay-6.html">Previous</A>
+<A HREF="kdisplay-8.html">Next</A>
+<A HREF="kdisplay-6.html">Previous</A>
 <A HREF="kdisplay.html#toc7">Table of Contents</A>
 </P>
-<H3><A NAME="s7">7. Questions and answers</A></H3>
+<H3><A NAME="s7">7. Style</A></H3>
 
+<P>
+<P>The Style dialog allows three Desktop style choices to be made:
+<P>
+<UL>
+<LI> <B>Draw widgets in the  style of Windows 95</B>.  This allows 
+This allows you to switch between a Motif look or a Windows 95 look for the K
+Desktop Environment.  For example, the widget that lets these
+choices be made is a button in Motif style, and a check box in
+Windows 95 style.
+</LI>
+<LI> <B>Menubar on top of the screen in the style of MacOS</B>.
+This selection emulates the MacOS style by placing a menubar for
+the currently-active application at the top of the screen.
+ 
+</LI>
+<LI> <B>Apply fonts and colors to non-KDE apps</B>.
+Selecting this option allows the "look and feel"
+of KDE applications (mainly fonts and colors) to also be applied to 
+certain non-KDE X11 applications such as Emacs and XEmacs.  
+This feature uses <CODE>krdb</CODE>, KDE's
+interface to <CODE>xrdb</CODE>, the X-resources database.  If this
+causes you to experience problems with your non-KDE applications, 
+you should make sure that the Desktop
+Font settings (especially the Fixed font for emacs) are correctly set
+(you may need to change these settings at least once so entries in your
+<CODE>~/.kderc</CODE> file are generated).   Changes you make, including
+de-activating this selection, may not take effect until KDE is
+restarted.
+</LI>
+</UL>
+<P>
+<P>To restore the KDE default configuration, click on the <B>Default</B>
+button at the bottom of the screen.  Click on <B>Apply</B> or
+<B>OK</B> to activate your choice.  
+<P>
+<P><EM>Note:</EM> Pressing <B>Ok</B> or <B>Apply</B> applies changes made in
+<EM>all</EM> of the display setup modules.
+<P>
+<P>
 <P>
 <P>
 <P ALIGN="RIGHT">
 
-Next<A HREF="kdisplay-6.html">Previous</A>
+<A HREF="kdisplay-8.html">Next</A>
+<A HREF="kdisplay-6.html">Previous</A>
 <A HREF="kdisplay.html#toc7">Table of Contents</A>
 </P>
 <CENTER>

@@ -3,8 +3,8 @@
 <HEAD>
 <TITLE>Display Setup Handbook: Color Scheme</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
-<META NAME="keywords" CONTENT="kdisplay documentation">
-<META NAME="description" CONTENT="Documentation for kdisplay">
+<META NAME="keywords" CONTENT="kde kcontrol kdisplay">
+<META NAME="description" CONTENT="kcmkdisplay help doc">
 </HEAD>
 <BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
 <FONT FACE="Helvetica">
@@ -28,8 +28,8 @@
 <LI>The current <B>Widget Color</B>.</LI>
 <LI>The available <B>Color Schemes</B>.</LI>
 </OL>
-<P><B>Note:</B> User interface elements ( e.g. buttons, menus, scroll bars )
-are known as widgets.
+<P>(A "<B>Widget</B>" is a commonly-used programmer's term for referring to
+User Interface elements such as buttons, menus, and scroll bars )
 <P>
 <H3><A NAME="ss5.1">5.1 Preview</A>
 </H3>
@@ -59,12 +59,20 @@ contrast between the foreground and background colors of widgets can be
 ensured at all times.
 <P>
 <P>
-<P>When you press <EM>Ok</EM> or <EM>Apply</EM> the color scheme you have selected
-will be written to the desktop configuration.  There are some problems in
+<P>When you press <B>Ok</B> or <B>Apply</B> the color scheme you have selected
+will be written to the desktop configuration.  
+<P>
+<P><EM>Note:</EM> Pressing <B>Ok</B> or <B>Apply</B> applies changes made in
+<EM>all</EM> of the display setup modules.
+<P>
+<P>There are some problems in
 the Qt toolkit when changing the colors in a running application, particularly
 with lists and combo boxes.  These elements will not be displayed properly
 until the applications are restarted.  Hopefully these problems will be
 fixed in a future release of Qt.
+<P>
+<P>
+<P>
 <P>
 <H3><A NAME="ss5.2">5.2 Widget Color</A>
 </H3>
@@ -74,33 +82,50 @@ fixed in a future release of Qt.
 of the <B>Widget Color</B> group. This can be changed by clicking on the
 colored box. A color selection dialog will then appear, from which you may
 select a new color.
+You may select any member of the color scheme from the 
+color combination box.
 <P>
-<P>
-<P>When you are happy with your color selection, press <EM>Ok</EM> in the color
+<P>When you are happy with your color selection, press <B>Ok</B> in the color
 selection dialog.  The color will be updated in the <B>Preview</B>.
 <P>
 <P>
-<P>You may select any member of the color scheme from the combo box.
+<P>The <B>Contrast</B> slider allows you to change the contrast bewteen
+different shadings of the selected colors.
+<P>
+<P>
+<P>
+<P>
 <P>
 <H3><A NAME="ss5.3">5.3 Color schemes</A>
 </H3>
 
 <P>
-<P>Six color schemes are supplied with KDisplay. These are called
-<OL>
-<LI>KDE Default</LI>
-<LI>Atlas Green</LI>
-<LI>Blue Slate</LI>
-<LI>Windows 95</LI>
-<LI>CDE</LI>
-<LI>Pale Gray</LI>
-</OL>
-<P>To preview a scheme click on its name in the list box. You can use the
-supplied color schemes as a starting point to devise your own. Click the 
-<EM>Save</EM> button to store your color scheme under a new name. The
-<EM>Remove</EM> button is presently disabled.
+<P>Various color schemes are supplied with KDisplay. These include:
+KDE default, 
+Atlas green
+BeOS,
+Blue slate,
+CDE,
+Desert red,
+Digital CDE,
+Pale gray,
+Pumpkin,
+Solaris CDE,
+Storm,
+and Windows 95.
+To preview a scheme click on its name in the list box. 
 <P>
-<P>
+<P>You can use the
+KDE-supplied Color Schemes as a starting point to devise your own
+Scheme. Click on the 
+<B>Add</B> button to store the color scheme from the
+Preview under a new name, then modify it. When such a user-created
+Color Scheme is selected, changes to it (as shown
+in the Preview) can be  saved
+with the <B>Save Changes</B> button; it can also be
+deleted with the 
+<B>Remove</B> button.
+<P>The KDE-supplied Schemes themselves cannot be changed or deleted.
 <P>
 <P>
 <P ALIGN="RIGHT">
