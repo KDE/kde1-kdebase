@@ -297,7 +297,7 @@ msgstr "&Vaatii salasanan"
 
 #: scrnsave.cpp:273
 msgid "Show &password as stars"
-msgstr ""
+msgstr "Näytä &salasana tähtinä"
 
 #: scrnsave.cpp:281
 msgid "Priority"

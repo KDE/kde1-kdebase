@@ -589,83 +589,79 @@ msgstr "V‰‰r‰"
 
 #: science.cpp:65
 msgid "Whirl"
-msgstr ""
+msgstr "Sekoitus"
 
 #: science.cpp:68
-#, fuzzy
 msgid "Sphere"
-msgstr "Nopeus:"
+msgstr "Pallo"
 
 #: science.cpp:71
 msgid "Exponential"
-msgstr ""
+msgstr "Eksponentti"
 
 #: science.cpp:74
 msgid "Contraction"
-msgstr ""
+msgstr "Tiivistys"
 
 #: science.cpp:77
 msgid "Wave"
-msgstr ""
+msgstr "Aalto"
 
 #: science.cpp:80
 msgid "Curvature"
-msgstr ""
+msgstr "Kaarevuus"
 
 #: science.cpp:112
 msgid "Science"
-msgstr ""
+msgstr "Linssi"
 
 #: science.cpp:447
 msgid "rendering lens..."
-msgstr ""
+msgstr "renderoin linssi‰..."
 
 #: science.cpp:769
 msgid "grabbing screen..."
-msgstr ""
+msgstr "talletan kuvaa..."
 
 #: science.cpp:931
-#, fuzzy
 msgid "Setup Science"
-msgstr "Aseta viivoja"
+msgstr "Aseta linssi‰"
 
 #: science.cpp:949
-#, fuzzy
 msgid "Mode:"
-msgstr "Keskell‰:"
+msgstr "Tyyli:"
 
 #: science.cpp:964
 msgid "Inverse"
-msgstr ""
+msgstr "K‰‰nteinen"
 
 #: science.cpp:974
 msgid "Gravity"
-msgstr ""
+msgstr "Gravitaatio"
 
 #: science.cpp:983
 msgid "Hide Background"
-msgstr ""
+msgstr "Piiloita tausta"
 
 #: science.cpp:1009
 msgid "Intensity:"
-msgstr ""
+msgstr "Voimakkuus:"
 
 #: science.cpp:1039
 msgid "Motion:"
-msgstr ""
+msgstr "Liike:"
 
 #: science.cpp:1260
 msgid "Science Version"
-msgstr ""
+msgstr "Linssi Versio"
 
 #: science.cpp:1261
 msgid "written by"
-msgstr ""
+msgstr "kirjoittanut"
 
 #: science.cpp:1262
-#, fuzzy
 msgid "About Science"
-msgstr "Tietoa viivoista"
+msgstr "Tietoa linssist‰"
 
 #: slip.cpp:293
 msgid "Slip"

@@ -1233,7 +1233,7 @@ msgstr "&Proxy"
 
 #: kkfmoptdlg.cpp:22
 msgid "&HTTP"
-msgstr ""
+msgstr "&HTTP"
 
 #: kkfmoptdlg.cpp:25
 msgid "User &Agent"
@@ -1253,15 +1253,15 @@ msgstr "KFM:n Selaimen asetukset"
 
 #: khttpoptdlg.cpp:13
 msgid "Accept languages:"
-msgstr ""
+msgstr "Hyväksy kielet:"
 
 #: khttpoptdlg.cpp:18
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Hyväksy merkistöt:"
 
 #: khttpoptdlg.cpp:23
 msgid "Assume HTML"
-msgstr ""
+msgstr "Oleta HTML"
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1329,35 +1329,3 @@ msgstr ""
 "Syntaksivirhe\n"
 "kfmexec command [URL ....]\n"
 
-#~ msgid "&New Window"
-#~ msgstr "&Uusi ikkuna"
-
-#~ msgid "Stop"
-#~ msgstr "Pysäytä"
-
-#~ msgid "KFM Error"
-#~ msgstr "KFM Virhe"
-
-#~ msgid "Move"
-#~ msgstr "Siirrä"
-
-#~ msgid "Properties"
-#~ msgstr "Ominaisuudet"
-
-#~ msgid "Font Size"
-#~ msgstr "Kirjasimen koko"
-
-#~ msgid "Small"
-#~ msgstr "Pieni"
-
-#~ msgid "Medium"
-#~ msgstr "Keskisuuri"
-
-#~ msgid "Large"
-#~ msgstr "Suuri"
-
-#~ msgid "Continue"
-#~ msgstr "Jatka"
-
-#~ msgid "&Fonts"
-#~ msgstr "&Kirjasimet"

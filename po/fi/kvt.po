@@ -27,7 +27,7 @@ msgstr "Backspace n‰pp‰in l‰hett‰‰"
 
 #: main.C:365
 msgid "Cursor key set"
-msgstr ""
+msgstr "Kursorien asetus"
 
 #: main.C:532
 msgid "&New Terminal"
@@ -127,7 +127,7 @@ msgstr "P‰‰te..."
 
 #: main.C:593
 msgid "Font..."
-msgstr ""
+msgstr "Kirjasin..."
 
 #: main.C:595
 msgid "Save &Options"
@@ -225,7 +225,7 @@ msgstr "-vt_font <kirjasinnimi>   normaalikirjasin\n"
 
 #: main.C:1334
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr ""
+msgstr "-no_font_hack             poista Qt fonttivirheen kierto\n"
 
 #: main.C:1335
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
