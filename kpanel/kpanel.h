@@ -92,6 +92,30 @@ protected:
 };
 
 
+class myFrame: public QFrame
+{
+  Q_OBJECT
+public:
+  myFrame( bool _autoHide, QWidget *parent=0, const char* name=0, WFlags f=0);
+  ~myFrame(){};
+  bool autoHidden;
+  bool autoHide;
+
+signals:
+  void showMe();
+  void hideMe();   
+
+protected:
+  void enterEvent( QEvent * );
+
+ private slots:
+ void hideTimerDone();
+
+private:
+  QTimer *hideTimer;
+};
+
+
 
 class myTaskButton: public myPushButton
 {
@@ -197,6 +221,10 @@ public:
   void tipSleepTimerDone();
   void hideTimerDone();
 
+  // the autoHideTaskbar feature
+  void showTaskbar();
+  void hideTaskbar();
+
   
   QWidget * parentOfSwallowed(Window);
 
@@ -232,7 +260,7 @@ private:
   QButtonGroup *taskbar;
   QList <myTaskButton> taskbar_buttons;
   myTaskButton* taskButtonFromWindow(Window);
-  QFrame* taskbar_frame;
+  myFrame* taskbar_frame;
   int taskbar_height;
 
   QLabel *info_label;
@@ -288,6 +316,7 @@ private:
   bool personalFirst;
   bool autoHide;
   bool autoHidden;
+  bool autoHideTaskbar;
   
   // tools
   QPixmap create_arrow_pixmap(QPixmap pm);
@@ -320,6 +349,7 @@ private:
   QCheckBox *cbtt;
   QCheckBox *cbpf;
   QCheckBox *cbah;
+  QCheckBox *cbaht;
   int old_style;
   QSlider *sl_dbhs, *sl_nr_db;
 

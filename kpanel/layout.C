@@ -30,7 +30,7 @@ void kPanel::layoutTaskbar(){
 	 }
        }
      }
-     taskbar_frame->resize(taskbar_frame->width(), y);
+     taskbar_frame->resize(tbhs*taskbar_height, y);
      taskbar->resize(taskbar_frame->width(), taskbar_frame->height());
    }
    else {

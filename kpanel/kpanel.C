@@ -171,6 +171,12 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     if (autoHide)
       hideTimer->start(6000, TRUE);
 
+    autoHideTaskbar = false;
+    if (config->hasKey("AutoHideTaskbar"))
+      autoHideTaskbar = (config->readEntry("AutoHideTaskbar") == "on");
+    else
+      config->writeEntry("AutoHideTaskbar", "off");
+
 
     QString panelHiddenString = "00000000";
     panelHiddenString = config->readEntry("PanelHidden", 
@@ -275,7 +281,11 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     tmp_push_button->toggle();
     connect(desktopbar, SIGNAL(clicked(int)), SLOT(desktop_change(int)));
 
-    taskbar_frame = new QFrame(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
+    taskbar_frame = new myFrame(autoHideTaskbar, 0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
+
+    connect(taskbar_frame, SIGNAL(showMe()), SLOT(showTaskbar()));
+    connect(taskbar_frame, SIGNAL(hideMe()), SLOT(hideTaskbar()));
+
     info_label = new QLabel(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
     info_label->setMouseTracking(TRUE);
     info_label_is_sleeping = False;
@@ -1225,6 +1235,10 @@ void kPanel::doGeometry () {
    int mh = 0;
    int sw = 0;      // standalone...
    int sh = 0; 
+
+   int tfx = 0; //correction values for the taskbar autoHide feature
+   int tfy = 0;
+
    if (px<0){
      pw += px;
      px = 0;
@@ -1239,7 +1253,20 @@ void kPanel::doGeometry () {
    if (py + ph >h){
      ph = h-py+1;
    }
-   
+
+
+   if (taskbar_frame->autoHidden){
+     if (taskbar_position == top){
+       tfy = -taskbar_frame->height()+4;
+     }
+     else if (taskbar_position == bottom){
+       tfy = taskbar_frame->height()-4;
+     }
+     else { //taskbar_top_left
+	 tfx = -tbhs*taskbar_height+4;
+     }
+   }
+
    if (panelCurrentlyHidden) // i.e. standalone shown
     {
      pw = 0;
@@ -1262,26 +1289,27 @@ void kPanel::doGeometry () {
       {
        if (taskbar_position == top) 
 	{
-	 taskbar_frame->setGeometry(px+sw+mw, py+ph, w-mw-sw, taskbar_height);
+	 taskbar_frame->setGeometry(tfx+px+sw+mw, tfy+py+ph, w-mw-sw, taskbar_height);
 	 KWM::setWindowRegion(currentDesktop, 
-			      QRect(0, py+ph+taskbar_height+1,
-				    w, h-ph-taskbar_height-1));
+			      QRect(0, tfy+py+ph+taskbar_height+1,
+				    w, -tfy+h-ph-taskbar_height-1));
 	}
        else if (taskbar_position == bottom)
 	{
-	 taskbar_frame->setGeometry(px+mw, h-taskbar_height, 
+	 taskbar_frame->setGeometry(tfx+px+mw, tfy+h-taskbar_height, 
 				    w-mw, taskbar_height);
 	 KWM::setWindowRegion(currentDesktop, 
-			      QRect(0, ph, w, h-ph-taskbar_height-1));
+			      QRect(0, ph, w, tfy+h-ph-taskbar_height-1));
 	}
        else
 	{
-	 taskbar_frame->setGeometry(px+sw, py+ph+mh,
-				    tbhs*taskbar_height, taskbar_height);
+// 	 taskbar_frame->setGeometry(tfx+px+sw, tfy+py+ph+mh,
+// 				    tbhs*taskbar_height, taskbar_height);
+	 taskbar_frame->move(tfx+px+sw, tfy+py+ph+mh);
 	 if (taskbar_position == taskbar_top_left)
 	   KWM::setWindowRegion(currentDesktop, 
-				QRect(taskbar_frame->width()+1+sw, ph,
-				      w-taskbar_frame->width()-sw-1, h-ph));
+				QRect(tfx+tbhs*taskbar_height+1+sw, ph,
+				      -tfx+w-tbhs*taskbar_height-sw-1, h-ph));
 	 else // if (taskbar_position=hidden)
 	   KWM::setWindowRegion(currentDesktop, 
 				QRect(0, ph, w, h-ph));
@@ -1291,25 +1319,26 @@ void kPanel::doGeometry () {
       {
        if (taskbar_position == bottom)
 	{
-	 taskbar_frame->setGeometry(px+mw+sw, h-ph-taskbar_height, 
+	 taskbar_frame->setGeometry(tfx+px+mw+sw, tfy+h-ph-taskbar_height, 
 				    w-mw-sw, taskbar_height);
 	   KWM::setWindowRegion(currentDesktop, 
-				QRect(0, 0, w, h-ph-taskbar_height-1));
+				QRect(0, 0, w, tfy+h-ph-taskbar_height-1));
 	}
        else if (taskbar_position == top)
 	{
-	 taskbar_frame->setGeometry(px+mw, 0, w-mw, taskbar_height);
+	 taskbar_frame->setGeometry(tfx+px+mw, tfy+0, w-mw, taskbar_height);
 	 KWM::setWindowRegion(currentDesktop, 
-			      QRect(0, taskbar_height+1, w, h-ph-taskbar_height-1));
+			      QRect(0, tfy+taskbar_height+1, w, -tfy+h-ph-taskbar_height-1));
 	}
        else
 	{
-	 taskbar_frame->setGeometry(0, mh,tbhs*taskbar_height, 
-				    taskbar_height);
+// 	 taskbar_frame->setGeometry(tfx+0, tfy+mh,tbhs*taskbar_height, 
+// 				    taskbar_height);
+	 taskbar_frame->move(tfx+0, tfy+mh);
 	 if (taskbar_position == taskbar_top_left)
 	   KWM::setWindowRegion(currentDesktop, 
-				QRect(taskbar_frame->width()+1, 0,
-				      w-taskbar_frame->width()-1, h-ph));
+				QRect(tfx+tbhs*taskbar_height+1, 0,
+				      -tfx+w-tbhs*taskbar_height-1, h-ph));
 	 else
 	   KWM::setWindowRegion(currentDesktop, 
 				QRect(0, 0, w, h-ph));
@@ -1322,26 +1351,27 @@ void kPanel::doGeometry () {
       {
        if (taskbar_position == top)
 	{
-	 taskbar_frame->setGeometry(px+pw+mw+sw, py, w-pw-mw-sw, taskbar_height);
+	 taskbar_frame->setGeometry(tfx+px+pw+mw+sw, tfy+py, w-pw-mw-sw, taskbar_height);
 	 KWM::setWindowRegion(currentDesktop, 
-			      QRect(pw, taskbar_frame->height()+1,
-				    w-pw, h-taskbar_frame->height()-1));
+			      QRect(pw, tfy+taskbar_frame->height()+1,
+				    w-pw, -tfy+h-taskbar_frame->height()-1));
 	}
        else if (taskbar_position == bottom)
 	{
-	 taskbar_frame->setGeometry(px+pw+mw, h-taskbar_height, 
+	 taskbar_frame->setGeometry(tfx+px+pw+mw, tfy+h-taskbar_height, 
 				    w-pw-mw, taskbar_height);
 	 KWM::setWindowRegion(currentDesktop, 
-			      QRect(pw, 0, w-pw, h - taskbar_frame->height()-1));
+			      QRect(pw, 0, w-pw, tfy+h - taskbar_frame->height()-1));
 	}
        else
 	{
-	 taskbar_frame->setGeometry(px+pw, py+mh,
-				    tbhs*taskbar_height, taskbar_height);
+// 	 taskbar_frame->setGeometry(tfx+px+pw, tfy+py+mh,
+// 				    tbhs*taskbar_height, taskbar_height);
+	 taskbar_frame->move(tfx+px+pw, tfy+py+mh);
 	 if (taskbar_position == taskbar_top_left)
 	 KWM::setWindowRegion(currentDesktop, 
-			      QRect(pw+taskbar_frame->width()+1, 0,
- 			      w-pw-taskbar_frame->width()-1, h));
+			      QRect(tfx+pw+tbhs*taskbar_height+1, 0,
+ 			      -tfx+w-pw-tbhs*taskbar_height-1, h));
 	 else
 	 KWM::setWindowRegion(currentDesktop, 
  			      QRect(pw, 0,
@@ -1352,27 +1382,28 @@ void kPanel::doGeometry () {
       {
        if (taskbar_position == top)
 	{
-	 taskbar_frame->setGeometry(mw, 0, w-pw-mw-sw, taskbar_height);
+	 taskbar_frame->setGeometry(tfx+mw, tfy+0, w-pw-mw-sw, taskbar_height);
 	 KWM::setWindowRegion(currentDesktop, 
-			      QRect(0, taskbar_frame->height()+1,
-				    w-pw, h-taskbar_frame->height()-1));
+			      QRect(0, tfy+taskbar_frame->height()+1,
+				    w-pw, -tfy+h-taskbar_frame->height()-1));
 	}
        else if (taskbar_position == bottom)
 	{
-	 taskbar_frame->setGeometry(mw, h-taskbar_height, 
+	 taskbar_frame->setGeometry(tfx+mw, tfy+h-taskbar_height, 
 				    w-pw-mw, taskbar_height);
 	 KWM::setWindowRegion(currentDesktop, 
 			      QRect(0, 0,
-				    w-pw, h-taskbar_frame->height()-1));
+				    w-pw, tfy+h-taskbar_frame->height()-1));
 	}
        else
 	{
-	 taskbar_frame->setGeometry(0, mh,
-				    tbhs*taskbar_height, taskbar_height);
+// 	 taskbar_frame->setGeometry(tfx+0, tfy+mh,
+// 				    tbhs*taskbar_height, taskbar_height);
+	 taskbar_frame->move(tfx+0, tfy+mh);
 	 if (taskbar_position == taskbar_top_left)
 	 KWM::setWindowRegion(currentDesktop, 
- 			      QRect(taskbar_frame->width()+1, 0,
-				    w-taskbar_frame->width()-1-pw, h));
+ 			      QRect(tfx+tbhs*taskbar_height+1, 0,
+				    -tfx+w-tbhs*taskbar_height-1-pw, h));
 	 else
 	 KWM::setWindowRegion(currentDesktop, 
  			      QRect(0, 0,

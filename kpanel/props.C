@@ -275,12 +275,12 @@ void kPanel::configure_panel(){
 
   label = new QLabel(klocale->translate("Style:"), mw);
   label->setAlignment(AlignRight | AlignVCenter);
-  label->setGeometry(10, 130, 50, 25);
+  label->setGeometry(5, 130, 35, 25);
   costy = new QComboBox(mw);
   costy->insertItem(klocale->translate("Tiny Style"));
   costy->insertItem(klocale->translate("Normal Style"));
   costy->insertItem(klocale->translate("Large Style"));
-  costy->setGeometry(70,130, 120, 25);
+  costy->setGeometry(50,130, 100, 25);
 
   if (config->readEntry("Style") == "tiny")
     old_style = 0;
@@ -292,16 +292,20 @@ void kPanel::configure_panel(){
   costy->setCurrentItem(old_style);
 
   cbtt = new QCheckBox(klocale->translate("Menu Tooltips"), mw);
-  cbtt->setGeometry(220, 120, 110, 25);
+  cbtt->setGeometry(180, 120, 150, 25);
   cbtt->setChecked(config->readNumEntry("MenuToolTips")>=0);
   
   cbpf = new QCheckBox(klocale->translate("Personal First"), mw);
-  cbpf->setGeometry(220, 140, 110, 25);
+  cbpf->setGeometry(180, 140, 150, 25);
   cbpf->setChecked(config->readEntry("PersonalFirst") == "on");
 
-  cbah = new QCheckBox(klocale->translate("Auto Hide"), mw);
-  cbah->setGeometry(220, 160, 110, 25);
+  cbah = new QCheckBox(klocale->translate("Auto Hide Panel"), mw);
+  cbah->setGeometry(180, 160, 150, 25);
   cbah->setChecked(config->readEntry("AutoHide") == "on");
+
+  cbaht = new QCheckBox(klocale->translate("Auto Hide Taskbar"), mw);
+  cbaht->setGeometry(180, 180, 150, 25);
+  cbaht->setChecked(config->readEntry("AutoHideTaskbar") == "on");
 
   
   tab->addTab(mw, klocale->translate("Panel"));
@@ -372,7 +376,7 @@ void kPanel::configure_panel(){
   connect( tab, SIGNAL( applyButtonPressed() ), this, SLOT( slotPropsApply() ) );
   connect( tab, SIGNAL( cancelButtonPressed() ), this, SLOT( slotPropsCancel() ) );
 
-  tab->resize(360, 260);
+  tab->resize(360, 280);
   tab->setCaption(klocale->translate("KPanel Configuration"));
   tab->show();
 
@@ -399,6 +403,8 @@ void kPanel::slotPropsApply(){
   config->writeEntry("PersonalFirst", cbpf->isChecked()?"on":"off");
 
   config->writeEntry("AutoHide", cbah->isChecked()?"on":"off");
+
+  config->writeEntry("AutoHideTaskbar", cbaht->isChecked()?"on":"off");
 
   QButton* tmp_button;
   for (i=0; (tmp_button = bgrloc->find(i)); i++){

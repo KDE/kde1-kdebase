@@ -13,6 +13,47 @@
 #include <kfm.h>
 
 
+myFrame::myFrame(bool _autoHide, QWidget *parent, const char* name, WFlags f=0):QFrame(parent, name, f){
+  hideTimer = new QTimer(this);
+  connect( hideTimer, SIGNAL(timeout()),
+	   this, SLOT(hideTimerDone()) );
+  autoHide = _autoHide;
+  autoHidden = false;
+  if (autoHide)
+    hideTimer->start(6000, TRUE);
+}
+
+void myFrame::enterEvent(QEvent *){
+  hideTimer->start(4000, TRUE);
+  if (!autoHidden)
+    return;
+  raise();
+  autoHidden = false;
+  emit showMe();
+}
+
+void myFrame::hideTimerDone(){
+  if (!autoHide)
+    return;
+  if (geometry().contains(QCursor::pos()))
+    hideTimer->start(4000, TRUE);
+  else {
+    autoHidden = true;
+    emit hideMe();
+  }
+}
+
+
+void kPanel::showTaskbar(){
+  doGeometry();
+}
+
+void kPanel::hideTaskbar(){
+  raise();
+  doGeometry();
+}
+
+
 void kPanel::kwmInit(){
   if (taskbar_buttons.count()>0)
     restart();
@@ -450,6 +491,17 @@ void kPanel::resizeEvent( QResizeEvent * ){
 
 void kPanel::enterEvent( QEvent * ){
   hideTimer->start(4000, TRUE);
+
+  if (
+      (orientation == horizontal && position == top_left &&
+      taskbar_frame->autoHidden && taskbar_position == top)
+      ||
+      (orientation == horizontal && position == bottom_right &&
+      taskbar_frame->autoHidden && taskbar_position == bottom)
+      ){
+    QEvent ev(Event_Enter);
+    QApplication::sendEvent(taskbar_frame, &ev);
+  }
   if (!autoHidden)
     return;
   raise();
