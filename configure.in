@@ -252,6 +252,7 @@ AC_OUTPUT(Makefile \
 	kdm/config/Makefile \
 	kdm/pics/Makefile \
 	kdm/xdmconfig/Makefile \
+	kmedia/Makefile \
 	doc/Makefile \
 	doc/kfm/Makefile \
 	doc/kfind/Makefile \
