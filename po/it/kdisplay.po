@@ -200,7 +200,7 @@ msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"
 msgstr ""
-"Non sono stati trovati schemi dei colori.\"
+"Non sono stati trovati schemi dei colori.\n"
 "Vuoi installare quello di default ora ?"
 #: savescm.cpp:26
 msgid "Name"
