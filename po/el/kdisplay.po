@@ -1,0 +1,258 @@
+
+#: main.cpp:53
+msgid "KDE Display Configuration"
+msgstr "Ρυθμίσεις οθόνης για το KDE"
+
+#: main.cpp:130
+#, c-format
+msgid ""
+"Usage: %s -init|-setup\n"
+"\n"
+msgstr ""
+"Χρήση: %s -init|-setup\n"
+"\n"
+
+#: main.cpp:131
+msgid "  -init               apply current settings to the display\n"
+msgstr "  -init              χρήσημοποίσε τις τρέχουσες ρυθμίσεις στην οθόνη\n"
+
+#: main.cpp:132
+msgid "  -setup              setup the display\n"
+msgstr "  -setup             ρύθμισε την οθόνη\n"
+
+#: backgnd.cpp:140 colorscm.cpp:293
+msgid "Background"
+msgstr "Φόντο"
+
+#: backgnd.cpp:165
+msgid "Color"
+msgstr "Χρώμα"
+
+#: backgnd.cpp:185
+msgid "Flat"
+msgstr "Επίπεδο"
+
+#: backgnd.cpp:189
+msgid "Gradient"
+msgstr "Βαθμοτό"
+
+#: backgnd.cpp:202
+msgid "Portrait"
+msgstr "Όρθιο"
+
+#: backgnd.cpp:206
+msgid "Landscape"
+msgstr "Πλαγιαστό"
+
+#: backgnd.cpp:224
+msgid "Wallpaper"
+msgstr "Ταπετσαρία"
+
+#: backgnd.cpp:257
+msgid "Tiled"
+msgstr "Πλακάκια"
+
+#: backgnd.cpp:261
+msgid "Centred"
+msgstr "Κεντραρισμένο"
+
+#: backgnd.cpp:265
+msgid "Scaled"
+msgstr "Υπό κλίμακα"
+
+#: backgnd.cpp:272
+msgid "Browse..."
+msgstr "Κοίταξε"
+
+#: scrnsave.cpp:45
+msgid "Ignore"
+msgstr "Αγνόησε"
+
+#: scrnsave.cpp:47
+msgid "Lock"
+msgstr "Κλείδωσε"
+
+#: scrnsave.cpp:103 scrnsave.cpp:161
+msgid "Screen Saver"
+msgstr "Προφύλαξη Οθόνης"
+
+#: scrnsave.cpp:182
+msgid "Setup..."
+msgstr "Ρύσμισε..."
+
+#: scrnsave.cpp:186
+msgid "Test"
+msgstr "Δοκιμή"
+
+#: scrnsave.cpp:194
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+#: scrnsave.cpp:197
+msgid "Wait:"
+msgstr "Αναμονή:"
+
+#: scrnsave.cpp:208
+msgid "min"
+msgstr "λεπτά"
+
+#: scrnsave.cpp:211
+msgid "Requires Password"
+msgstr "Απαίτηση Κωδικού"
+
+#: scrnsave.cpp:216
+msgid "Priority:"
+msgstr "Προτερεότητα:"
+
+#: colorscm.cpp:326 scrnsave.cpp:219
+msgid "High"
+msgstr "Υψηλή"
+
+#: colorscm.cpp:322 scrnsave.cpp:222
+msgid "Low"
+msgstr "Χαμηλή"
+
+#: colorscm.cpp:139 colorscm.cpp:140
+msgid "Inactive window"
+msgstr "Ανενεργό παράθυρο"
+
+#: colorscm.cpp:155 colorscm.cpp:156
+msgid "Active window"
+msgstr "Ενεργό παράθυρο"
+
+#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:298
+msgid "Window text"
+msgstr "Κείμενο παραθύρου"
+
+#: colorscm.cpp:209
+msgid "Disabled"
+msgstr "Απενενργοποιημένο"
+
+#: colorscm.cpp:216 colorscm.cpp:217
+msgid "Selected"
+msgstr "Επιλεγμένο"
+
+#: colorscm.cpp:252 colorscm.cpp:262
+msgid "Color Scheme"
+msgstr "Ομάδα χρωμάτων"
+
+#: colorscm.cpp:276
+msgid "Remove"
+msgstr "Αφαίρεσε"
+
+#: colorscm.cpp:284
+msgid "Widget color"
+msgstr "Χρώμα παραθυριδίου"
+
+#: colorscm.cpp:289
+msgid "Inactive title bar"
+msgstr "Ανενεργό πεδίο τίτλου"
+
+#: colorscm.cpp:290
+msgid "Inactive title text"
+msgstr "Ανενεργό πεδίο τίτλου"
+
+#: colorscm.cpp:291
+msgid "Active title bar"
+msgstr "Ενεργό πεδίο τίτλου"
+
+#: colorscm.cpp:292
+msgid "Active title text"
+msgstr "Κείμενο ενεργού τίτλου"
+
+#: colorscm.cpp:294
+msgid "Text"
+msgstr "Κείμενο"
+
+#: colorscm.cpp:295
+msgid "Select background"
+msgstr "Επιλογή φόντου"
+
+#: colorscm.cpp:296
+msgid "Select text"
+msgstr "Επιλογή κειμένου"
+
+#: colorscm.cpp:297
+msgid "Window background"
+msgstr "Φόντο παράθυρου"
+
+#: colorscm.cpp:309
+msgid "Contrast"
+msgstr "Αντίθεση"
+
+#: colorscm.cpp:341
+msgid "Save scheme"
+msgstr "Σώσιμο ομάδας"
+
+#: colorscm.cpp:372 colorscm.cpp:380
+msgid "You have chosen a name used by a supplied color scheme"
+msgstr "Επιλέξατε όνομα που χρησιμοποιήται από άλλη ομάδα χρωμάτων"
+
+#: colorscm.cpp:463
+msgid "KDE Default"
+msgstr "Συνιθισμένο KDE"
+
+#: colorscm.cpp:687
+msgid "Display Setup"
+msgstr "Ρύθμιση οθόνης"
+
+#: colorscm.cpp:688
+msgid ""
+"No desktop color schemes were found.\n"
+"Do you want to install the default color schemes now ?"
+msgstr 
+"Δεν βρέθηκαν ομάδες χρωμάτων.\n"
+"Θέλετε να εγκαταστήσω τις προκαθορισμένες ομάδες χρωμάτων τώρα;"
+
+#: savescm.cpp:26
+msgid "Name"
+msgstr "Όνομα"
+
+#: general.cpp:55
+msgid "General"
+msgstr "Γενικά"
+
+#: general.cpp:59
+msgid "Widget style"
+msgstr "Στύλ παραθυριδίου"
+
+#: general.cpp:64
+msgid "Motif"
+msgstr "Motif"
+
+#: general.cpp:65
+msgid "Windows 95"
+msgstr "Windows 95"
+
+#: general.cpp:74
+msgid "Fonts"
+msgstr "Γραμματοσειρές"
+
+#: general.cpp:79
+msgid "General font"
+msgstr "Γενική γραμματοσειρά"
+
+#: general.cpp:104
+msgid "Sample"
+msgstr "Δείγμα"
+
+#: general.cpp:110
+msgid "Small"
+msgstr "Μικρά"
+
+#: general.cpp:114
+msgid "Medium"
+msgstr "Μεσαία"
+
+#: general.cpp:118
+msgid "Large"
+msgstr "Μεγάλα"
+
+#: general.cpp:135
+msgid "Italic"
+msgstr "Πλαγιαστά"
+
+#: kwmcom.cpp:80 kwmcom.cpp:107
+msgid "kwmcom: communication with kwm failed\n"
+msgstr "kwmcom: η επικοινωνία με το kwm στάθηκε αδύνατη\n"
+
