@@ -1,3 +1,8 @@
+Version 0.0.6
+
+Bernd: Implemented support for all sound events and polished the whole
+thing up.
+
 Version 0.0.5 (Jan. 9th, 1997)
 
 - Fixed a bug that caused "KApplication::kdedir" to be
