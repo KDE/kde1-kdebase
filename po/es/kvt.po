@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: 1998-04-18 00:40+0200\n"
+"PO-Revision-Date: 1998-04-18 10:08+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: main.C:249
@@ -23,15 +23,15 @@ msgstr "&Nueva Terminal"
 
 #: main.C:406 main.C:812
 msgid "&Hide"
-msgstr "Ocultar"
+msgstr "&Ocultar"
 
 #: main.C:407
 msgid "&Left"
-msgstr "Izquierda"
+msgstr "&Izquierda"
 
 #: main.C:408
 msgid "&Right"
-msgstr "Derecha"
+msgstr "&Derecha"
 
 #: main.C:413
 msgid "&Normal"
@@ -39,51 +39,51 @@ msgstr "&Normal"
 
 #: main.C:414
 msgid "&Tiny"
-msgstr "Muy pequeña"
+msgstr "M&uy pequeña"
 
 #: main.C:415
 msgid "&Small"
-msgstr "Pequeña"
+msgstr "&Pequeña"
 
 #: main.C:416
 msgid "&Medium"
-msgstr "Mediana"
+msgstr "&Mediana"
 
 #: main.C:417
 msgid "&Large"
-msgstr "Grande"
+msgstr "&Grande"
 
 #: main.C:418
 msgid "&Huge"
-msgstr "Enorme"
+msgstr "&Enorme"
 
 #: main.C:430
 msgid "&black/white"
-msgstr "negro/blanco"
+msgstr "&Negro sobre blanco"
 
 #: main.C:431
 msgid "&white/black"
-msgstr "blanco/negro"
+msgstr "&Blanco sobre negro"
 
 #: main.C:432
 msgid "&green/black"
-msgstr "verde/negro"
+msgstr "&Verde sobre negro"
 
 #: main.C:433
 msgid "black/light&yellow"
-msgstr "negro/amarillo"
+msgstr "Negro sobre &amarillo claro"
 
 #: main.C:434
 msgid "Linu&x Console"
-msgstr "Consola Linu&x"
+msgstr "&Consola Linux"
 
 #: main.C:443
 msgid "&Custom Colors"
-msgstr "&Colores propios"
+msgstr "Colores &propios"
 
 #: main.C:450 main.C:758
 msgid "Hide &Menubar"
-msgstr "Ocultar barra de &menú"
+msgstr "&Ocultar barra de menú"
 
 #: main.C:452 main.C:622 main.C:750
 msgid "Show &Menubar"
@@ -91,7 +91,7 @@ msgstr "&Mostrar barra de menú"
 
 #: main.C:453 main.C:768
 msgid "Secure &keyboard"
-msgstr "Asegurar teclado"
+msgstr "&Asegurar teclado"
 
 #: main.C:455
 msgid "Scroll&bar"
@@ -107,15 +107,15 @@ msgstr "&Color"
 
 #: main.C:458
 msgid "&Size"
-msgstr "Tamaño"
+msgstr "&Tamaño"
 
 #: main.C:459
 msgid "Terminal..."
-msgstr "Terminal..."
+msgstr "T&erminal..."
 
 #: main.C:461
 msgid "Save &Options"
-msgstr "Guardar &opciones"
+msgstr "&Guardar opciones"
 
 #: main.C:470
 msgid ""
@@ -137,11 +137,11 @@ msgstr ""
 
 #: main.C:631 main.C:805
 msgid "&Show"
-msgstr "Mostrar"
+msgstr "&Mostrar"
 
 #: main.C:764
 msgid "Unsecure &keyboard"
-msgstr "Remover seguridad del teclado"
+msgstr "&Remover seguridad del teclado"
 
 #: main.C:775
 msgid "Terminal Options"
@@ -270,7 +270,7 @@ msgstr ""
 
 #: main.C:1177
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr "-sl <número>              guardar número de lineas\n"
+msgstr "-sl <número>              guardar número de líneas\n"
 
 #: main.C:1178
 msgid ""
@@ -280,7 +280,7 @@ msgid ""
 "buffer\n"
 msgstr ""
 "-pageup <keysym>          usar tecla alt-keysym para moverse hacia atrás\n"
-"-pagedown <keysym>        usar tecla alt-keysym para moverse haca adelnate\n"
+"-pagedown <keysym>        usar tecla alt-keysym para moverse haca adelante\n"
 
 #: main.C:1182
 msgid ""

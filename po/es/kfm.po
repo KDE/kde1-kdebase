@@ -52,7 +52,7 @@ msgstr "&Buscar"
 #: kfmgui.cpp:317
 #, fuzzy
 msgid "&Quit..."
-msgstr "&Salir"
+msgstr "&Salir..."
 
 #: kfmgui.cpp:326
 msgid "&Move to Trash"
@@ -296,7 +296,7 @@ msgstr ""
 "Autor: Torben Weis\n"
 "weis@kde.org\n"
 "\n"
-"widget de HTML por Martin Jones\n"
+"Widget de HTML por Martin Jones\n"
 "mjones@kde.org\n"
 "\n"
 "Soporte de proxy por Lars Hoss\n"
@@ -304,11 +304,11 @@ msgstr ""
 
 #: kfmgui.cpp:1320
 msgid "Document: Done"
-msgstr "Documento: listo"
+msgstr "Documento: Listo"
 
 #: kfmview.cpp:352
 msgid "ERROR: Drop over malformed URL"
-msgstr "ERROR: soltó sobre una URL incorrecta"
+msgstr "ERROR: Soltó sobre una URL incorrecta"
 
 #: kfmview.cpp:377
 msgid "ERROR: You dropped some URL over itself"
@@ -377,7 +377,7 @@ msgstr "Enlace simbólico"
 #: kfmview.cpp:826
 #, c-format
 msgid "%s (Link)"
-msgstr "%s (Enlace)"
+msgstr "%s (Liga)"
 
 #: kfmview.cpp:846
 msgid "bytes"
@@ -389,7 +389,7 @@ msgstr "El archivo de configuración del tipo mime"
 
 #: kbind.cpp:303
 msgid "does not conatain a MimeType=... entry"
-msgstr "no contiene un marcador MimeType=..."
+msgstr "no contiene una linea MimeType=..."
 
 #: kbind.cpp:377
 msgid "No mime types installed!"
@@ -506,11 +506,11 @@ msgstr "Instalando plantillas"
 
 #: main.cpp:235
 msgid "Cd"
-msgstr "Cd"
+msgstr "Cambiar a"
 
 #: main.cpp:236
 msgid "New View"
-msgstr "Ver &Texto"
+msgstr "Ver Texto"
 
 #: kfmtree.cpp:223 main.cpp:239
 msgid "Move to Trash"
@@ -646,7 +646,7 @@ msgid ""
 "Entries"
 msgstr ""
 "Mostrar\n"
-"Entradas"
+"contenido"
 
 #: kfmprops.cpp:415
 msgid "Read"
@@ -658,7 +658,7 @@ msgid ""
 "Entries"
 msgstr ""
 "Escribir\n"
-"Entradas"
+"contenido"
 
 #: kfmprops.cpp:422
 msgid "Write"
@@ -669,8 +669,7 @@ msgid ""
 "Change\n"
 "Into"
 msgstr ""
-"Cambiar\n"
-"a"
+"Entrar"
 
 #: kfmprops.cpp:429
 msgid "Exec"
@@ -780,7 +779,7 @@ msgstr "Aplicar globalmente"
 
 #: kfmprops.cpp:1004 kfmprops.cpp:1076 kfmprops.cpp:1133
 msgid "(Default)"
-msgstr "(Por defecto)"
+msgstr "(Estándar)"
 
 #: kfmprops.cpp:1065
 msgid "Could not write to\n"
