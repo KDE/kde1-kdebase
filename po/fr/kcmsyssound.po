@@ -87,7 +87,8 @@ msgstr "&Sons :"
 
 #: syssound.cpp:119
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Des fichiers WAV supplémentaires peuvent être déposés dans la liste de sons."
+msgstr ""
+"Des fichiers WAV supplémentaires peuvent être déposés dans la liste de sons."
 
 #: syssound.cpp:321
 msgid "Unsupported URL"
@@ -97,7 +98,9 @@ msgstr "URL non supportée"
 msgid ""
 "Sorry, this type of URL is currently unsupported by the KDE System Sound "
 "Module"
-msgstr "Désolé, ce type d'URL n'est pas supportée actuellement par le composant son de KDE"
+msgstr ""
+"Désolé, ce type d'URL n'est pas supportée actuellement par le composant son "
+"de KDE"
 
 #: syssound.cpp:326
 #, c-format

@@ -281,8 +281,9 @@ msgstr "Resultatet gemt til fil\n"
 msgid ""
 "Do you really want to delete file:\n"
 "%s"
-msgstr "Vil du virkelig slette filen:\n"
-"%s" 
+msgstr ""
+"Vil du virkelig slette filen:\n"
+"%s"
 
 #: kfwin.cpp:197
 msgid "Delete File"
@@ -292,31 +293,41 @@ msgstr "Slet fil"
 msgid ""
 "You have no permission\n"
 " to delete this file"
-msgstr "Du har ikke adgang\ntil at slette denne fil"
+msgstr ""
+"Du har ikke adgang\n"
+"til at slette denne fil"
 
 #: kfwin.cpp:216
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
-msgstr "Det er ikke muligt\nat slette den valgte fil"
+msgstr ""
+"Det er ikke muligt\n"
+"at slette den valgte fil"
 
 #: kfwin.cpp:234
 msgid ""
 "You have no permission\n"
 " to delete this directory"
-msgstr "Du har ikke adgang\ntil at slette denne folder"
+msgstr ""
+"Du har ikke adgang\n"
+"til at slette denne folder"
 
 #: kfwin.cpp:239
 msgid ""
 "Specified directory\n"
 "is not empty!"
-msgstr "Den valgte folder\ner ikke tom!"
+msgstr ""
+"Den valgte folder\n"
+"er ikke tom!"
 
 #: kfwin.cpp:244
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
-msgstr "Det er ikke muligt at\nslette den valgte folder"
+msgstr ""
+"Det er ikke muligt at\n"
+"slette den valgte folder"
 
 #: kfwin.cpp:336
 msgid "Couldn't recognize archive type!"

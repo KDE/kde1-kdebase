@@ -98,7 +98,8 @@ msgstr "Uunderstøttet URL"
 msgid ""
 "Sorry, this type of URL is currently unsupported by the KDE System Sound "
 "Module"
-msgstr "Desværre - denne type URL er endnu ikke understøttet af KDE System Lyde"
+msgstr ""
+"Desværre - denne type URL er endnu ikke understøttet af KDE System Lyde"
 
 #: syssound.cpp:326
 #, c-format
@@ -106,7 +107,10 @@ msgid ""
 "Sorry, but \n"
 "%s\n"
 "does not seem to be a WAV--file!"
-msgstr "Desværre ser\n%s\nikke ud til at være en WAV-fil!"
+msgstr ""
+"Desværre ser\n"
+"%s\n"
+"ikke ud til at være en WAV-fil!"
 
 #: syssound.cpp:327
 msgid "Improper File Extension"
@@ -118,7 +122,10 @@ msgid ""
 "The file\n"
 "%s\n"
 "is already in the list"
-msgstr "Filen\n%s\ner allerede i listen"
+msgstr ""
+"Filen\n"
+"%s\n"
+"er allerede i listen"
 
 #: syssound.cpp:334
 msgid "File Already in List"

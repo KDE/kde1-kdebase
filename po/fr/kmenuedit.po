@@ -37,7 +37,9 @@ msgstr "Changements non enregistrés !"
 msgid ""
 "\n"
 "Do you want to save your changes ?"
-msgstr "\nVoulez-vous enregistrer vos changements ?"
+msgstr ""
+"\n"
+"Voulez-vous enregistrer vos changements ?"
 
 #: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"
