@@ -30,7 +30,7 @@ KFMExec::KFMExec( int argc, char **argv )
 	  if ( u.isMalformed() )
 	    {
 	      QString err;
-	      err.sprintf( "%s\n\r%s", argv[ i - 1 ], klocale->translate( "is malformed" ) );
+	      err.sprintf( "%s\n%s", argv[ i - 1 ], klocale->translate( "is malformed" ) );
 	      QMessageBox::message( klocale->translate( "KFM Error" ), err );
 	    }
 	  // Must KFM fetch the file ?
@@ -106,7 +106,7 @@ void KFMExec::slotFinished()
 	if ( times[i++] != buff.st_mtime )
 	{
 	    QString tmp;
-	    tmp.sprintf( klocale->translate( "The file\n\r%s\n\rhas been modified.\n\rDo you want to save it?" ), s );
+	    tmp.sprintf( klocale->translate( "The file\n%s\nhas been modified.\nDo you want to save it?" ), s );
 	    if ( QMessageBox::query( klocale->translate( "KFM Question" ), tmp ) )
 	    {
 		KFM *kfm = new KFM;

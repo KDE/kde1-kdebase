@@ -207,7 +207,7 @@ void KIOJob::link()
 	if ( su.isMalformed() )
 	{
 	    QString tmp;
-	    tmp.sprintf( "%s\n\r%s", klocale->translate( "Malformed URL" ), p );
+	    tmp.sprintf( "%s\n%s", klocale->translate( "Malformed URL" ), p );
 	    QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
 	    done();
 	    return;
@@ -215,7 +215,7 @@ void KIOJob::link()
 	else if ( du.isMalformed() )
 	{
 	    QString tmp;
-	    tmp.sprintf( "%s\n\r%s", klocale->translate( "Malformed URL" ), p );
+	    tmp.sprintf( "%s\n%s", klocale->translate( "Malformed URL" ), p );
 	    QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
 	    done();
 	    return;
@@ -247,7 +247,7 @@ void KIOJob::link()
 			    if ( unlink( du.path() ) != 0 )
 			    {
 				QString tmp;
-				tmp.sprintf( "%s\n\r%s", klocale->translate( "Could not overwrite" ), du.path() );
+				tmp.sprintf( "%s\n%s", klocale->translate( "Could not overwrite" ), du.path() );
 				QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
 				done();
 				return;
@@ -265,7 +265,7 @@ void KIOJob::link()
 				{
 				    delete r;
 				    QString tmp;
-				    tmp.sprintf( "%s\n\r%s", klocale->translate( "Could not overwrite" ), du.path() );
+				    tmp.sprintf( "%s\n%s", klocale->translate( "Could not overwrite" ), du.path() );
 				    QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
 				    done();
 				    return;
@@ -274,7 +274,7 @@ void KIOJob::link()
 				if ( symlink( su.path(), du.path() ) == -1 )
 				{
 				    QString tmp;
-				    tmp.sprintf( "%s\n\r%s", klocale->translate( "Could not make symlink to" ), du.path() );
+				    tmp.sprintf( "%s\n%s", klocale->translate( "Could not make symlink to" ), du.path() );
 				    QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
 				    done();
 				    return;
@@ -296,7 +296,7 @@ void KIOJob::link()
 				if ( symlink( su.path(), du.path() ) == -1 )
 				{
 				    QString tmp;
-				    tmp.sprintf( "%s\n\r%s", klocale->translate( "Could not make symlink to" ), du.path() );
+				    tmp.sprintf( "%s\n%s", klocale->translate( "Could not make symlink to" ), du.path() );
 				    QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
 				    done();
 				    return;
@@ -315,7 +315,7 @@ void KIOJob::link()
 		    {
 			// Some error occured while we tried to symlink
 			QString tmp;
-			tmp.sprintf( "%s\n\r%s", klocale->translate( "Could not make symlink to" ), du.path() );
+			tmp.sprintf( "%s\n%s", klocale->translate( "Could not make symlink to" ), du.path() );
 			QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
 			done();
 			return;
@@ -442,7 +442,7 @@ void KIOJob::copy()
 		    if ( errno != EEXIST )
 		    {
 			QString tmp;
-			tmp.sprintf( klocale->translate( "Could not make directory\n\r%s" ), du.path() );
+			tmp.sprintf( klocale->translate( "Could not make directory\n%s" ), du.path() );
 			QMessageBox::message( klocale->translate( "KFM Error" ), tmp.data() );
 			return;
 		    }
@@ -630,7 +630,7 @@ void KIOJob::move()
 			if ( errno != EEXIST )
 			{
 			    QString tmp;
-			    tmp.sprintf( klocale->translate( "Could not make directory\n\r%s" ), dupath.data() );
+			    tmp.sprintf( klocale->translate( "Could not make directory\n%s" ), dupath.data() );
 			    QMessageBox::message( klocale->translate( "KFM Error" ), tmp.data() );
 			    return;
 			}
@@ -646,7 +646,7 @@ void KIOJob::move()
 		    if ( dp == NULL )
 		    {
 			QString tmp;
-			tmp.sprintf( klocale->translate( "Could not access directory\n\r%s" ), dupath.data() );
+			tmp.sprintf( klocale->translate( "Could not access directory\n%s" ), dupath.data() );
 			QMessageBox::message( klocale->translate( "KFM Error" ), tmp.data() );
 			return;
 		    }
@@ -676,7 +676,7 @@ void KIOJob::move()
 	    else
 	    {
 		QString tmp;
-		tmp.sprintf( klocale->translate( "Could not move directory\n\r%s\n\rto '%s'\n\rPerhaps access denied" ), supath.data(), dupath.data() );
+		tmp.sprintf( klocale->translate( "Could not move directory\n%s\nto '%s'\nPerhaps access denied" ), supath.data(), dupath.data() );
 		QMessageBox::message( klocale->translate( "KFM Error" ), tmp.data() );
 		return;
 	    }
@@ -1439,7 +1439,7 @@ void KIOJob::slaveIsReady()
 		    if ( rmdir( p ) == -1 )
 		    {
 			QString tmp;
-			tmp.sprintf( klocale->translate( "Could not delete directory\n\r%s" ), p );
+			tmp.sprintf( klocale->translate( "Could not delete directory\n%s" ), p );
 			QMessageBox::message( klocale->translate( "KFM Error" ), tmp.data() );
 			slave->cleanUp();
 			cleanedUp = true;

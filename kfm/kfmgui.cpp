@@ -547,7 +547,7 @@ void KfmGui::initToolBar()
 	    if ( p->isNull() )
 	    {
 		QString e;
-		e.sprintf( klocale->translate( "Could not load icon\n\r%s" ), n.data() );
+		e.sprintf( klocale->translate( "Could not load icon\n%s" ), n.data() );
 		QMessageBox::message( klocale->translate( "KFM Error" ), e.data() );
 	    }
 	    animatedLogo.append( p );

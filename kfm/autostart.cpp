@@ -27,7 +27,7 @@ void autostart()
     {
 	QMessageBox::message( klocale->translate("KFM Installation Error"), 
 			      klocale->translate("The directory ") + url +
-			      klocale->translate(" does not exist\n\r") );
+			      klocale->translate(" does not exist\n") );
 	exit(1);
     }
     

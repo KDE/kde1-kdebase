@@ -163,7 +163,7 @@ kioIPC: ./ipcc/kio.ipc
 	cd ipcc ; ./ipcc.pl kio.ipc kioserver_ipc kioslave_ipc ; cp kioserver_ipc* ../ ; cp kioslave_ipc* ../kioslave ; cd ..
 
 messages:
-	@XGETTEXT@ -C --keyword=translate --keyword=aliasLocale -x ../../kdelibs/po/de_kde.po $(kfm_SOURCES) && mv messages.po ../po/kfm.po
+	@XGETTEXT@ -C -ktranslate -kaliasLocale -x ../../kdelibs/po/kde.pot $(kfm_SOURCES) kfmexec/main.cpp && mv messages.po ../po/kfm.po
 
 
 

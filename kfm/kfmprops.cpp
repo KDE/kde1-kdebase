@@ -471,7 +471,7 @@ void FilePermissionsPropsPage::applyChanges()
 	// mask |= p;
 	if ( chmod( path, p ) != 0 )
 	    QMessageBox::message( klocale->translate( "KFM Error" ),
-				  klocale->translate( "Could not change permissions\n\rPerhaps access denied." ) );	    
+				  klocale->translate( "Could not change permissions\nPerhaps access denied." ) );	    
     }
 
     if ( strcmp( owner->text(), strOwner.data() ) != 0 || strcmp( grp->text(), strGroup.data() ) != 0 )
@@ -490,7 +490,7 @@ void FilePermissionsPropsPage::applyChanges()
 	}
 	if ( chown( path, pw->pw_uid, g->gr_gid ) != 0 )
 	    QMessageBox::message( klocale->translate( "KFM Error" ),
-				  klocale->translate( "Could not change owner/group\n\rPerhaps access denied." ) );
+				  klocale->translate( "Could not change owner/group\nPerhaps access denied." ) );
     }    
 }
 

@@ -226,7 +226,7 @@ void KMimeType::initMimeTypes( const char* _path )
 		if ( mime.isEmpty() )
 		{
 		    QString tmp;
-		    tmp.sprintf( "%s\n\r%s", klocale->translate( "The mime type config file " ),
+		    tmp.sprintf( "%s\n%s", klocale->translate( "The mime type config file " ),
 				 file.data(), klocale->translate("does not conatain a MimeType=... entry" ) );
 		    QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
 		    bSkip = true;
@@ -355,7 +355,7 @@ void KMimeType::init()
 
 void KMimeType::errorMissingMimeType( const char *_type, KMimeType **_ptr )
 {
-    QString tmp = klocale->translate( "Could not find mime type\r\n" );
+    QString tmp = klocale->translate( "Could not find mime type\n" );
     tmp += _type;
     
     QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
@@ -1419,7 +1419,7 @@ bool KMimeType::runBinding( const char *_url, const char *_binding )
     }
 
     QString tmp;
-    tmp.sprintf( "%s\n\r%s", klocale->translate( "Could not find binding" ), _binding );
+    tmp.sprintf( "%s\n%s", klocale->translate( "Could not find binding" ), _binding );
     QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
     // Tell, that we have done the job since there is not more to do except showing
     // the above error message.
@@ -1429,7 +1429,7 @@ bool KMimeType::runBinding( const char *_url, const char *_binding )
 bool KMimeType::runAsApplication( const char *, QStrList * )
 {
     QMessageBox::message( klocale->translate( "KFM Error" ),
-			  klocale->translate( "This is a document!\n\rNot an application" ) );
+			  klocale->translate( "This is a document!\nNot an application" ) );
     // Tell, that we have done the job since there is not more to do except showing
     // the above error message.
     return TRUE;
@@ -1527,7 +1527,7 @@ bool KDELnkMimeType::run( const char *_url )
     else
     {
 	QMessageBox::message( klocale->translate( "KFM Error" ),
-		     klocale->translate( "Can work with *.kdelnk files only\n\ron local hard disk" ) );
+		     klocale->translate( "Can work with *.kdelnk files only\non local hard disk" ) );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
 	return TRUE;
@@ -1537,7 +1537,7 @@ bool KDELnkMimeType::run( const char *_url )
     if ( config == 0L )
     {
 	QString tmp;
-	tmp.sprintf( "%s\n\r%s", klocale->translate( "Could not access" ), _url );
+	tmp.sprintf( "%s\n%s", klocale->translate( "Could not access" ), _url );
 	QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
@@ -1601,7 +1601,7 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
     else
     {
 	QMessageBox::message( klocale->translate( "KFM Error" ),
-		     klocale->translate( "Can work with *.kdelnk files only\n\ron local hard disk" ) );
+		     klocale->translate( "Can work with *.kdelnk files only\non local hard disk" ) );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
 	return TRUE;
@@ -1611,7 +1611,7 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
     if ( config == 0L )
     {
 	QString tmp;
-	sprintf( "%s\n\r%s", klocale->translate( "Could not access" ), _url );
+	sprintf( "%s\n%s", klocale->translate( "Could not access" ), _url );
 	QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
@@ -1626,7 +1626,7 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
     if ( exec.isEmpty() )
     {
 	QMessageBox::message( klocale->translate( "KFM Error" ),
-		     klocale->translate( "This file does not contain an\n\rExec=....\n\rentry. Edit the Properties\n\rto solve the probelm" ) );
+		     klocale->translate( "This file does not contain an\nExec=....\nentry. Edit the Properties\nto solve the probelm" ) );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
 	return TRUE;
@@ -1739,7 +1739,7 @@ bool KDELnkMimeType::runBinding( const char *_url, const char *_binding )
     else
     {
 	QMessageBox::message( klocale->translate( "KFM Error" ),
-		     klocale->translate( "Can work with *.kdelnk files only\n\ron local hard disk" ) );
+		     klocale->translate( "Can work with *.kdelnk files only\non local hard disk" ) );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
 	return TRUE;
@@ -1749,7 +1749,7 @@ bool KDELnkMimeType::runBinding( const char *_url, const char *_binding )
     if ( config == 0L )
     {
 	QString tmp;
-	sprintf( "%s\n\r%s", klocale->translate( "Could not access" ), _url );
+	sprintf( "%s\n%s", klocale->translate( "Could not access" ), _url );
 	QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
