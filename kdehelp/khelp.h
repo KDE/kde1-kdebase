@@ -8,6 +8,15 @@
 #ifndef __KHELP_H__
 #define __KHELP_H__
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+#ifdef HAVE_SYS_PARAM_H
+#include <sys/param.h>
+#endif
+
+
 #include <sys/types.h>
 #include <sys/ipc.h>
 #include <sys/msg.h>
