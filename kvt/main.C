@@ -915,7 +915,45 @@ int main(int argc, char **argv)
     window_name = icon_name = s; 
   }
 
-  init_display(argc, argv);
+  if (!init_display(argc, argv)) {
+    fprintf(stderr, KVT_VERSION);
+    fprintf(stderr, "\n\n");
+    fprintf(stderr, trans.translate(
+	    "Copyright(C) 1996, 1997 Matthias Ettrich\n"
+	    "Copyright(C) 1997 M G Berberich\n"
+	    "Terminal emulation for the KDE Desktop Environment\n"
+	    "based on Robert Nation's rxvt-2.08\n\n"
+	    "Permitted arguments are:\n"
+	    "-e <command> <arg> ...	execute command with ars - must be last argument\n"
+	    "-display <name>	specify the display (server)\n"
+	    "-vt_geometry <spec>	the initial vt window geometry\n"
+	    "-print-pipe <name>	specify pipe for vt100 printer\n"
+	    "-vt_bg <colour>		background color\n"
+	    "-vt_fg <colour>		foreground color\n"
+	    "-vt_font <fontname>	normal font\n"
+	    "-vt_size <size>     	tiny, small, normal, large, huge\n"
+	    "-linux			set up kvt to mimic linux-console\n"
+	    "-no_menubar		hide the menubar\n"
+	    "-no_scrollbar		hide the scrollbar\n"
+	    "-T <text>		text in window titlebar\n"
+	    "-tn <TERM>		Terminal type. Default is xterm.\n"
+	    "-C			Capture system console message\n"
+	    "-n <text>		name in icon or icon window\n"
+	    "-7		        run in 7 bit mode\n"
+	    "-8			run in 8 bit mode\n"
+	    "-ls			initiate kvt's shell as a login shell\n"
+	    "-ls-			initiate kvt's shell as a non-login shell (default)\n"
+	    "-meta			handle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+	    "-sl <number>		save number lines in scroll-back buffer\n"
+	    "-pageup <keysym>	use hot key alt-keysym to scroll up through the buffer\n"
+	    "-pagedown <keysym>	use hot key alt-keysym to scroll down through buffer\n"));
+#ifdef GREEK_KBD
+    fprintf(stderr, trans.translate(
+	    "-grk9		greek kbd = ELOT 928 (default)\n"
+	    "-grk4		greek kbd = IBM 437\n"));
+#endif
+    clean_exit(1);
+  }
 
   init_command(NULL ,(unsigned char **)com_argv);
 

@@ -176,7 +176,7 @@ void set_geom_string(char *string)
  *  iargc and iargv are the original argc, argv so the can be written to a
  *  COMMAND resource.
  */
-void init_display(int argc,char **argv)
+int init_display(int argc,char **argv)
 {
   XGCValues gcv;
   int i, len;
@@ -191,132 +191,77 @@ void init_display(int argc,char **argv)
   extract_resources();
 
   /* now get all the options */
-  for(i=1;i<argc;i++)
-    {
-      if((strcmp(argv[i],"-vt_geometry")==0)&&(i+1<argc))
-	geom_string = argv[++i];
+  for(i=1;i<argc;i++) {
+    if((strcmp(argv[i],"-vt_geometry")==0)&&(i+1<argc)) {
+      geom_string = argv[++i];
 #ifdef PRINT_PIPE
-      else if((strcmp(argv[i],"-print-pipe")==0)&&(i+1<argc))
-	print_pipe = argv[++i];
+    } else if((strcmp(argv[i],"-print-pipe")==0)&&(i+1<argc)) {
+      print_pipe = argv[++i];
 #endif
-      else if((strcmp(argv[i],"-vt_fg")==0)&&(i+1<argc))
-	fg_string = argv[++i];
-      else if((strcmp(argv[i],"-vt_bg")==0)&&(i+1<argc))
-	bg_string = argv[++i];
-      else if((strcmp(argv[i],"-vt_font")==0)&&(i+1<argc))
-	reg_fonts[DEFAULT_FONT] = argv[++i];
-      else if((strcmp(argv[i],"-vt_size")==0)&&(i+1<argc))
-	kvt_set_fontnum (argv[++i]);
-      else if(strcmp(argv[i],"-no_menubar")==0)
-	kvt_set_menubar(0);
-      else if(strcmp(argv[i],"-no_scrollbar")==0)
-	kvt_set_scrollbar(0);
-      else if(strcmp(argv[i], "-linux")==0) {
-	fg_string = "#b2b2b2";
-	bg_string = "#000000";
-	init_color_mode(COLOR_TYPE_Linux);
+    } else if((strcmp(argv[i],"-vt_fg")==0)&&(i+1<argc)) {
+      fg_string = argv[++i];
+    } else if((strcmp(argv[i],"-vt_bg")==0)&&(i+1<argc)) {
+      bg_string = argv[++i];
+    } else if((strcmp(argv[i],"-vt_font")==0)&&(i+1<argc)) {
+      reg_fonts[DEFAULT_FONT] = argv[++i];
+    } else if((strcmp(argv[i],"-vt_size")==0)&&(i+1<argc)) {
+      kvt_set_fontnum (argv[++i]);
+    } else if(strcmp(argv[i],"-no_menubar")==0) {
+      kvt_set_menubar(0);
+    } else if(strcmp(argv[i],"-no_scrollbar")==0) {
+      kvt_set_scrollbar(0);
+    } else if(strcmp(argv[i], "-linux")==0) {
+      fg_string = "#b2b2b2";
+      bg_string = "#000000";
+      init_color_mode(COLOR_TYPE_Linux);
+    } else if(strcmp(argv[i],"-C")==0) {
+      console = 1;
+    } else if((strcmp(argv[i],"-T")==0)&&(i+1<argc)) {
+      window_name = argv[++i]; 
+    } else if((strcmp(argv[i],"-tn")==0)&&(i+1<argc)) {
+      ++i; 
+      terminal = safemalloc(strlen(argv[i])+6, "terminal");
+      sprintf(terminal, "TERM=%s", argv[i]);
+      putenv(terminal);
+    } else if((strcmp(argv[i],"-n")==0)&&(i+1<argc)) {
+      icon_name = argv[++i]; 
+    } else if(strcmp(argv[i],"-7")==0) {
+      mask = 0x7f;
+    } else if(strcmp(argv[i],"-8")==0) {
+      mask = 0xff;
+    } else if(strcmp(argv[i],"-ls")==0) {
+      login_shell = 1;
+    } else if(strcmp(argv[i],"-ls-")==0) {
+      login_shell = 0;
+    } else if(strncmp(argv[i],"-meta",5)==0) {
+      if(strcasecmp(argv[i+1],"escape")==0) {
+	MetaHandling = ESCAPE;
+      } else if(strcasecmp(argv[i+1],"8thbit")==0) {
+	MetaHandling = BIT;
+      } else {
+	MetaHandling = 0;
       }
-      else if(strcmp(argv[i],"-C")==0)
-	console = 1;
-      else if((strcmp(argv[i],"-T")==0)&&(i+1<argc)) 
- 	window_name = argv[++i]; 
-      else if((strcmp(argv[i],"-tn")==0)&&(i+1<argc)) {
-	++i; 
-	terminal = safemalloc(strlen(argv[i])+6, "terminal");
-	sprintf(terminal, "TERM=%s", argv[i]);
-	putenv(terminal);
-      }
-      else if((strcmp(argv[i],"-n")==0)&&(i+1<argc)) 
- 	icon_name = argv[++i]; 
-      else if(strcmp(argv[i],"-7")==0)
-	mask = 0x7f;
-      else if(strcmp(argv[i],"-8")==0)
-	mask = 0xff;
-      else if(strcmp(argv[i],"-ls")==0)
-	login_shell = 1;
-      else if(strcmp(argv[i],"-ls-")==0)
-	login_shell = 0;
-#ifdef MAPALERT
-/*       else if(strcmp(argv[i],"-ma")==0) */
-/* 	map_alert = 1; */
-/*       else if(strcmp(argv[i],"-ma-")==0) */
-/* 	map_alert = 0; */
-#endif
-/*       else if(strncmp(argv[i],"-ic",3)==0) */
-/* 	iconic = 1; */
-      else if(strncmp(argv[i],"-meta",5)==0)
-	{
-	  if(strcasecmp(argv[i+1],"escape")==0)
-	    MetaHandling = ESCAPE;
-	  else if(strcasecmp(argv[i+1],"8thbit")==0)
-	    MetaHandling = BIT;
-	  else
-	    MetaHandling = 0;
-	  i++;
-	}
+      i++;
 #ifdef GREEK_KBD
-      else if (strcmp(argv[i],"-grk9")==0)
-        {
-          GreekMode = GREEK_ELOT928;
-        }
-      else if (strcmp(argv[i],"-grk4")==0)
-        {
-          GreekMode = GREEK_IBM437;
-        }
+    } else if (strcmp(argv[i],"-grk9")==0) {
+      GreekMode = GREEK_ELOT928;
+    } else if (strcmp(argv[i],"-grk4")==0) {
+      GreekMode = GREEK_IBM437;
 #endif       
-      else if((strcmp(argv[i],"-pageup")==0)&&(i+1<argc))
-	PageUpKeysym = XStringToKeysym(argv[++i]);	
-      else if((strcmp(argv[i],"-pagedown")==0)&&(i+1<argc))
-	PageDownKeysym = XStringToKeysym(argv[++i]);
-      else if((strcmp(argv[i],"-sl")==0)&&(i+1<argc))
-	{
-	  sscanf(argv[++i],"%d\n",&MyWinInfo.saved_lines);
-	  if(MyWinInfo.saved_lines < 0 )
-	    MyWinInfo.saved_lines = 0;
-	}
-      else 
-	{
-	  fprintf(stderr, KVT_VERSION);
-	  fprintf(stderr, "\n\n");
-	  fprintf(stderr, "Copyright(C) 1996, 1997 Matthias Ettrich\n"
-		  "Copyright(C) 1997 M G Berberich\n"
-		  "Terminal emulation for the KDE Desktop Environment\n"
-		  "based on Robert Nation's rxvt-2.08\n\n"
-		  "Permitted arguments are:\n"
-		  "-e <command> <arg> ...	execute command with ars - must be last argument\n"
-		  "-display <name>	specify the display (server)\n"
-		  "-vt_geometry <spec>	the initial vt window geometry\n"
-#ifdef PRINT_PIPE
-		  "-print-pipe <name>	specify pipe for vt100 printer\n"
-#endif
-		  "-vt_bg <colour>		background color\n"
-		  "-vt_fg <colour>		foreground color\n"
-		  "-vt_font <fontname>	normal font\n"
-		  "-vt_size <size>     	tiny, small, normal, large, huge\n"
-		  "-linux			set up kvt to mimic linux-console\n"
-		  "-no_menubar		hide the menubar\n"
-		  "-no_scrollbar		hide the scrollbar\n"
-		  "-T <text>		text in window titlebar\n"
-		  "-tn <TERM>		Terminal type. Default is xterm.\n"
-		  "-C			Capture system console message\n"
-		  "-n <text>		name in icon or icon window\n"
-		  "-7		        run in 7 bit mode\n"
-		  "-8			run in 8 bit mode\n"
-		  "-ls			initiate kvt's shell as a login shell\n"
-		  "-ls-			initiate kvt's shell as a non-login shell (default)\n"
-		  "-meta			handle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
-		  "-sl <number>		save number lines in scroll-back buffer\n"
-		  "-pageup <keysym>	use hot key alt-keysym to scroll up through the buffer\n"
-		  "-pagedown <keysym>	use hot key alt-keysym to scroll down through buffer\n"
-#ifdef GREEK_KBD
-		  "-grk9		greek kbd = ELOT 928 (default)\n"
-		  "-grk4		greek kbd = IBM 437\n"
-#endif
-		  );
-	  clean_exit(1);
-	}
+    } else if((strcmp(argv[i],"-pageup")==0)&&(i+1<argc)) {
+      PageUpKeysym = XStringToKeysym(argv[++i]);	
+    } else if((strcmp(argv[i],"-pagedown")==0)&&(i+1<argc)) {
+      PageDownKeysym = XStringToKeysym(argv[++i]);
+    } else if((strcmp(argv[i],"-sl")==0)&&(i+1<argc)) {
+      sscanf(argv[++i],"%d\n",&MyWinInfo.saved_lines);
+      if(MyWinInfo.saved_lines < 0 ) {
+	MyWinInfo.saved_lines = 0;
+      }
+    } else {
+      return(0);
     }
-
+  }
+  
   /* if no terminal has been set by -tn option, set one */ 
   terminal = safemalloc(strlen("xterm-color")+6, "terminal");
   sprintf(terminal, "TERM=%s", "xterm-color");
@@ -357,6 +302,7 @@ void init_display(int argc,char **argv)
   sbar_init();
 
   XSetErrorHandler((XErrorHandler)RxvtErrorHandler);
+  return(1);
 }
 
 /*  Extract the resource fields that are needed to open the window.

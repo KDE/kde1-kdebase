@@ -22,7 +22,7 @@
 #define NUM_FONTS 6
 #define DEFAULT_FONT 0
 
-void init_display(int, char **);
+int init_display(int, char **);
 void resize_window(int, int);
 void change_window_name(char *);
 void change_icon_name(char *);
