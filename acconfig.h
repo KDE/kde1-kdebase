@@ -1,9 +1,12 @@
 /* Define if the C++ compiler supports BOOL */
 #undef HAVE_BOOL
 
-#define VERSION 0.10
+#undef VERSION 
 
-#define PACKAGE kdebase
+#undef PACKAGE
+
+/* defines if you have dlopen and co */
+#undef HAVE_DYNAMIC_LOADING
 
 /* defines if having libgif (always 1) */
 #undef HAVE_LIBGIF

@@ -28,7 +28,13 @@ AC_PROG_CPP
 test "$CCC" = "" && CCC="xlc DCC"
 AC_PROG_CXX
 AC_PROG_LN_S
-AC_PROG_RANLIB dnl for libkfm
+AC_CHECK_LIB(dl, main, [LIBDL="-ldl"])
+dnl libtool is only for C, so I must force him
+dnl to find the correct flags for C++
+ac_save_cc=$CC
+CC=$CXX
+AM_PROG_LIBTOOL dnl for libraries
+CC=$ac_save_cc
 
 case $host in 
 *-*-linux* )
@@ -38,6 +44,50 @@ case $host in
 	ac_have_shadow="yes"
      ])
 esac
+
+KCC_MODULES=""
+AC_MSG_CHECKING([dynamic loading])
+AC_MSG_RESULT($dynamic_loading)
+if test $dynamic_loading = "no"; then
+  files=`find kcontrolcenter -name "module.h"`
+  rm -f all_modules.new
+  file2=""
+  for i in $files; do 
+    dirname=`echo $i | sed -e "s#kcontrolcenter/##; s#/module.h##"`    
+   	if grep $dirname kcontrolcenter/Makefile.am > /dev/null 2> /dev/null; then
+      file2="$file2 $i"
+    fi
+  done
+
+  for i in $files; do
+    echo $ac_n "#include \".." $ac_c >> all_modules.new
+    filename=`echo $i | sed -e "s#kcontrolcenter##"`
+    echo "$filename\"" >> all_modules.new
+  done
+ 
+  echo "" >> all_modules.new
+  echo "#define ADD_MODULES \\" >> all_modules.new
+
+  for i in $files; do
+    
+    echo "#include \"$i\"" > conftest.c
+    echo "ModuleName" >> conftest.c
+    classname=`$CPP conftest.c 2> /dev/null | tail -1`
+    echo "moduleList.append(new ConfigEntry(0L, new $classname(), \"\")); \\" >> all_modules.new
+    
+    filename=`echo $i | sed -e "s#module.h#Makefile.am#"`
+    libname=`grep lib_LTLIBRARIES $filename|sed -e "s#lib_LTLIBRARIES##"|sed -e "s#.*= *##"`
+    filename=`echo "$i$libname" | sed -e "s#kcontrolcenter#\.\.#; s#module.h##"`
+    KCC_MODULES="$KCC_MODULES $filename"
+  done
+  echo "// last line" >> all_modules.new
+  if diff all_modules.new kcontrolcenter/kcc/all_modules.h 2> /dev/null > /dev/null; then
+	   rm all_modules.new
+  else
+    mv all_modules.new kcontrolcenter/kcc/all_modules.h	
+  fi 
+fi
+AC_SUBST(KCC_MODULES)
 
 dnl for NLS support. Call them in this order!
 dnl WITH_NLS is for the po files
@@ -169,6 +219,7 @@ AC_OUTPUT(Makefile \
 	doc/kwm/Makefile \
 	doc/kvt/Makefile \
 	doc/kmenuedit/Makefile \
+	doc/kcc/Makefile \
 	applnk/Applications/Makefile \
 	applnk/Games/Makefile \
 	applnk/Graphics/Makefile \
@@ -178,6 +229,40 @@ AC_OUTPUT(Makefile \
 	applnk/System/Makefile \
 	applnk/Utilities/Makefile \
 	applnk/Makefile \
+	kcontrolcenter/Makefile \
+	kcontrolcenter/kcc/Makefile \
+	kcontrolcenter/kcc/pics/Makefile \
+	kcontrolcenter/sample/Makefile \
+	kcontrolcenter/sample/pics/Makefile \
+	kcontrolcenter/screensaver/Makefile \
+	kcontrolcenter/screensaver/pics/Makefile \
+	kcontrolcenter/colors/Makefile \
+	kcontrolcenter/colors/pics/Makefile \
+	kcontrolcenter/style/Makefile \
+	kcontrolcenter/style/pics/Makefile \
+	kcontrolcenter/memory/Makefile \
+	kcontrolcenter/memory/pics/Makefile \
+	kcontrolcenter/processor/Makefile \
+	kcontrolcenter/processor/pics/Makefile \
+	kcontrolcenter/keyboard/Makefile \
+	kcontrolcenter/keyboard/doc/Makefile \
+	kcontrolcenter/keyboard/pics/Makefile \
+	kcontrolcenter/bell/Makefile \
+	kcontrolcenter/bell/doc/Makefile \
+	kcontrolcenter/bell/pics/Makefile \
+	kcontrolcenter/mouse/Makefile \
+	kcontrolcenter/mouse/doc/Makefile \
+	kcontrolcenter/mouse/pics/Makefile \
+	kcontrolcenter/titlebar/Makefile \
+	kcontrolcenter/titlebar/doc/Makefile \
+	kcontrolcenter/titlebar/pics/Makefile \
+	kcontrolcenter/smbstatus/Makefile \
+	kcontrolcenter/smbstatus/pics/Makefile \
+	kcontrolcenter/windows/Makefile \
+	kcontrolcenter/windows/doc/Makefile \
+	kcontrolcenter/windows/pics/Makefile \
+	kcontrolcenter/background/Makefile \
+	kcontrolcenter/background/pics/Makefile \
 	po/Makefile \
 	po/cs/Makefile \
 	po/da/Makefile \
