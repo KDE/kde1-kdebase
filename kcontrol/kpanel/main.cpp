@@ -100,6 +100,7 @@ void KKPanelApplication::apply()
 	disknav->saveSettings();
     if (!restarted)
 	KWM::sendKWMCommand("kpanel:restart");
+    QApplication::syncX();
 }
 
 
