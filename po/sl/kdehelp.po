@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-11-15 01:18+0100\n"
 "PO-Revision-Date: 1998-09-24 18:27+0100\n"
 "Last-Translator: luka steger <luka.steger@siol.net>\n"
 "Language-Team: Slovenian\n"
@@ -39,32 +39,32 @@ msgstr "Ups!"
 msgid "Unknown format: "
 msgstr "Neznana oblika: "
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1093
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1092
+#: helpwin.cpp:1094
 msgid "Continue search from the top of the page?"
 msgstr ""
 
 # mainwidget.cpp:153
-#: helpwin.cpp:1309
+#: helpwin.cpp:1311
 #, fuzzy
 msgid "Forward"
 msgstr "Nap&rej"
 
 # helpwin.cpp:1322
-#: helpwin.cpp:1330
+#: helpwin.cpp:1332
 msgid "Open this Link"
 msgstr "Odpri to povezavo"
 
 # helpwin.cpp:1323
-#: helpwin.cpp:1331
+#: helpwin.cpp:1333
 msgid "Add Bookmark"
 msgstr "Dodaj v kazalo"
 
 # helpwin.cpp:1324
-#: helpwin.cpp:1332
+#: helpwin.cpp:1334
 msgid "Open in new Window"
 msgstr "Odpri v novem oknu"
 

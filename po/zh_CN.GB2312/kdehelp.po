@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-11-15 01:18+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -26,28 +26,28 @@ msgstr "错误!"
 msgid "Unknown format: "
 msgstr "未知的格式: "
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1093
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1092
+#: helpwin.cpp:1094
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1309
+#: helpwin.cpp:1311
 #, fuzzy
 msgid "Forward"
 msgstr "向前[&F]"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1332
 msgid "Open this Link"
 msgstr "打开这个链接"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1333
 msgid "Add Bookmark"
 msgstr "加入书签"
 
-#: helpwin.cpp:1332
+#: helpwin.cpp:1334
 msgid "Open in new Window"
 msgstr "在新窗口中打开"
 

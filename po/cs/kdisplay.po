@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
-"POT-Creation-Date: 1998-11-12 01:17+0100\n"
+"POT-Creation-Date: 1998-11-15 01:18+0100\n"
 "PO-Revision-Date: 1998-11-11 08:59+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -13,214 +13,223 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backgnd.cpp:53
+#: backgnd.cpp:54
 msgid "Enter new desktop name"
 msgstr "Vlo¾ nové jméno pracovní plochy"
 
-#: backgnd.cpp:109 backgnd.cpp:150
+#: backgnd.cpp:110 backgnd.cpp:151
 msgid "Desktop"
 msgstr "Pracovní plocha"
 
-#: backgnd.cpp:172
+#: backgnd.cpp:173
 msgid "&Rename ..."
 msgstr "Pø&ejmenovat ..."
 
-#: backgnd.cpp:183
+#: backgnd.cpp:184
 #, fuzzy
 msgid "&Common Background"
 msgstr "&Pozadí"
 
-#: backgnd.cpp:212 colorscm.cpp:94
+#: backgnd.cpp:213 colorscm.cpp:94
 msgid "Colors"
 msgstr "Barvy"
 
-#: backgnd.cpp:239
+#: backgnd.cpp:240
 msgid "&One Color"
 msgstr "&Jednobarevné"
 
-#: backgnd.cpp:256
+#: backgnd.cpp:257
 msgid "&Two Color"
 msgstr "D&voubarevné"
 
-#: backgnd.cpp:275
+#: backgnd.cpp:276
 msgid "Set&up ..."
 msgstr "Na&stavit.."
 
-#: backgnd.cpp:284
+#: backgnd.cpp:285
 msgid "Wallpaper"
 msgstr "Tapeta"
 
-#: backgnd.cpp:294 backgnd.cpp:484 backgnd.cpp:498 backgnd.cpp:1102
-#: backgnd.cpp:1259 backgnd.cpp:1795
+#: backgnd.cpp:296 backgnd.cpp:521 backgnd.cpp:535 backgnd.cpp:1140
+#: backgnd.cpp:1297 backgnd.cpp:1833
 msgid "No wallpaper"
 msgstr "®ádná tapeta"
 
-#: backgnd.cpp:320
+#: backgnd.cpp:325
 msgid "&Browse..."
 msgstr "&Listovat..."
 
-#: backgnd.cpp:329
+#: backgnd.cpp:333
 msgid "Tiled"
 msgstr "Vydlá¾dìná"
 
-#: backgnd.cpp:330
+#: backgnd.cpp:334
 msgid "Mirrored"
 msgstr "Zrcadlená"
 
-#: backgnd.cpp:331
+#: backgnd.cpp:335
 msgid "Center Tiled"
 msgstr "Vydlá¾dìná centrovanì"
 
-#: backgnd.cpp:332
+#: backgnd.cpp:336
 msgid "Centred"
 msgstr "Centrovaná"
 
-#: backgnd.cpp:333
+#: backgnd.cpp:337
 msgid "Centred Brick"
 msgstr "Centrovaná s cihlami"
 
-#: backgnd.cpp:334
+#: backgnd.cpp:338
 msgid "Centred Warp"
 msgstr "Centrovaná se zborcením"
 
-#: backgnd.cpp:335
+#: backgnd.cpp:339
 msgid "Centred Maxpect"
 msgstr "Centrovaná Maxpect"
 
-#: backgnd.cpp:336
+#: backgnd.cpp:340
 msgid "Symmetrical Tiled"
 msgstr "Symetricky vydlá¾dìná"
 
-#: backgnd.cpp:337
+#: backgnd.cpp:341
 msgid "Symmetrical Mirrored"
 msgstr "Symetricky zrcadlená"
 
-#: backgnd.cpp:338
+#: backgnd.cpp:342
 msgid "Scaled"
 msgstr "Zvìt¹ená"
 
-#: backgnd.cpp:349
+#: backgnd.cpp:354
 msgid "Ra&ndom"
 msgstr "&Náhodná"
 
-#: backgnd.cpp:358
+#: backgnd.cpp:363
 msgid "Setu&p..."
 msgstr "Nas&tavit..."
 
-#: backgnd.cpp:366
-msgid "&Dock into kpanel"
+#: backgnd.cpp:371
+#, fuzzy
+msgid "&Dock into the panel"
 msgstr "&Dokovat v panelu"
 
-#: backgnd.cpp:1226
+#: backgnd.cpp:381
+msgid "Cache size"
+msgstr ""
+
+#: backgnd.cpp:399
+msgid "kb"
+msgstr ""
+
+#: backgnd.cpp:1264
 msgid "Desktop names"
 msgstr "Jméno pracovní plochy"
 
-#: backgnd.cpp:1271
+#: backgnd.cpp:1309
 msgid "File error"
 msgstr "Souborová chyba"
 
-#: backgnd.cpp:1272
+#: backgnd.cpp:1310
 msgid "Can't load image file"
 msgstr "Není mo¾né nahrát soubor s obrázkem"
 
-#: backgnd.cpp:1295 backgnd.cpp:1765
+#: backgnd.cpp:1333 backgnd.cpp:1803
 msgid "Unsupported URL"
 msgstr "Nepodporované URL"
 
-#: backgnd.cpp:1296 backgnd.cpp:1766
+#: backgnd.cpp:1334 backgnd.cpp:1804
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 "Lituji, tento typ URL není v souèasné dobì podporovám obrazovkovým modulem "
 "KDE."
 
-#: backgnd.cpp:1327
+#: backgnd.cpp:1365
 msgid "Two color backgrounds"
 msgstr "Dvoubarevná pozadí"
 
-#: backgnd.cpp:1364
+#: backgnd.cpp:1402
 msgid "Blend colors from &top to bottom"
 msgstr "Smíchat barvy z&hora dolù"
 
-#: backgnd.cpp:1370
+#: backgnd.cpp:1408
 msgid "Blend colors from &right to left"
 msgstr "Smíchat barvy z&prava doleva"
 
-#: backgnd.cpp:1376
+#: backgnd.cpp:1414
 msgid "Use &pattern"
 msgstr "Pou¾ít vzo&r"
 
-#: backgnd.cpp:1403
+#: backgnd.cpp:1441
 msgid "Preview"
 msgstr "Náhled"
 
-#: backgnd.cpp:1414
+#: backgnd.cpp:1452
 msgid "Pattern &name"
 msgstr "J&méno vzoru"
 
-#: backgnd.cpp:1453
+#: backgnd.cpp:1491
 msgid "Current"
 msgstr "Souèasný"
 
-#: backgnd.cpp:1513
+#: backgnd.cpp:1551
 msgid "Filled"
 msgstr "Plný"
 
-#: backgnd.cpp:1516
+#: backgnd.cpp:1554
 msgid "Fish net"
 msgstr "Rybáøská sí»"
 
-#: backgnd.cpp:1519
+#: backgnd.cpp:1557
 msgid "Triangles"
 msgstr "Trojúhelníky"
 
-#: backgnd.cpp:1522
+#: backgnd.cpp:1560
 msgid "Flowers"
 msgstr "Kvìtiny"
 
-#: backgnd.cpp:1525
+#: backgnd.cpp:1563
 msgid "Rattan"
 msgstr "Ratan"
 
-#: backgnd.cpp:1528
+#: backgnd.cpp:1566
 msgid "Cobbled Pavement"
 msgstr "Dla¾ba"
 
-#: backgnd.cpp:1594
+#: backgnd.cpp:1632
 msgid "Random mode setup"
 msgstr "Nastavení náhodného módu"
 
-#: backgnd.cpp:1600
+#: backgnd.cpp:1638
 msgid "Pick files from &directory"
 msgstr ""
 
-#: backgnd.cpp:1614
+#: backgnd.cpp:1652
 #, fuzzy
 msgid "&Browse ..."
 msgstr "&Listovat..."
 
-#: backgnd.cpp:1635
+#: backgnd.cpp:1673
 msgid "Timer Delay in seconds :"
 msgstr "Èasové zpo¾dìní v sekundách :"
 
-#: backgnd.cpp:1647
+#: backgnd.cpp:1685
 msgid "In &order"
 msgstr "V &poøadí"
 
-#: backgnd.cpp:1664
+#: backgnd.cpp:1702
 msgid "Desktops :"
 msgstr "Pracovní plochy :"
 
-#: backgnd.cpp:1702
+#: backgnd.cpp:1740
 msgid "&Add"
 msgstr "Pøid&at"
 
-#: backgnd.cpp:1872
+#: backgnd.cpp:1910
 #, fuzzy
 msgid "Directory error"
 msgstr "Souborová chyba"
 
-#: backgnd.cpp:1873
+#: backgnd.cpp:1911
 msgid "Selected directory doesn't exists"
 msgstr ""
 
@@ -370,7 +379,7 @@ msgstr "Zablokovat obrazovku"
 msgid "Screen Saver"
 msgstr "©etøiè obrazovky"
 
-#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:604 scrnsave.cpp:725
+#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:605 scrnsave.cpp:726
 msgid "No screensaver"
 msgstr "®ádný ¹etøiè obrazovky"
 

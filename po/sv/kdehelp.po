@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-11-15 01:18+0100\n"
 "PO-Revision-Date: 1998-10-30 13:11+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -33,27 +33,27 @@ msgstr "Hoppsan!"
 msgid "Unknown format: "
 msgstr "Okänt format: "
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1093
 msgid "Find Complete"
 msgstr "Sökningen är klar"
 
-#: helpwin.cpp:1092
+#: helpwin.cpp:1094
 msgid "Continue search from the top of the page?"
 msgstr "Fortsätta söka från början av sidan?"
 
-#: helpwin.cpp:1309
+#: helpwin.cpp:1311
 msgid "Forward"
 msgstr "Framåt"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1332
 msgid "Open this Link"
 msgstr "Öppna den här länken"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1333
 msgid "Add Bookmark"
 msgstr "Lägg till som bokmärke"
 
-#: helpwin.cpp:1332
+#: helpwin.cpp:1334
 msgid "Open in new Window"
 msgstr "Öppna i nytt fönster"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-11-15 01:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,27 +34,27 @@ msgstr "Oops!"
 msgid "Unknown format: "
 msgstr "Tuntematon formaatti: "
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1093
 msgid "Find Complete"
 msgstr "Etsint‰ valmis"
 
-#: helpwin.cpp:1092
+#: helpwin.cpp:1094
 msgid "Continue search from the top of the page?"
 msgstr "Jatka etsimist‰ sivun alusta?"
 
-#: helpwin.cpp:1309
+#: helpwin.cpp:1311
 msgid "Forward"
 msgstr "Eteenp‰in"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1332
 msgid "Open this Link"
 msgstr "Avaa t‰m‰ linkki"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1333
 msgid "Add Bookmark"
 msgstr "Lis‰‰ osoitekirjaan"
 
-#: helpwin.cpp:1332
+#: helpwin.cpp:1334
 msgid "Open in new Window"
 msgstr "Avaa uudessa ikkunassa"
 

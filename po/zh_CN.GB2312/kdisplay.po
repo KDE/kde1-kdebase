@@ -1,233 +1,241 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-11-12 01:17+0100\n"
+"POT-Creation-Date: 1998-11-15 01:18+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
-#: backgnd.cpp:53
+#: backgnd.cpp:54
 msgid "Enter new desktop name"
 msgstr "键入新的桌面的名称"
 
-#: backgnd.cpp:109 backgnd.cpp:150
+#: backgnd.cpp:110 backgnd.cpp:151
 msgid "Desktop"
 msgstr "桌面"
 
-#: backgnd.cpp:172
+#: backgnd.cpp:173
 msgid "&Rename ..."
 msgstr "重命名[&R] ..."
 
-#: backgnd.cpp:183
+#: backgnd.cpp:184
 #, fuzzy
 msgid "&Common Background"
 msgstr "背景[&B]"
 
-#: backgnd.cpp:212 colorscm.cpp:94
+#: backgnd.cpp:213 colorscm.cpp:94
 msgid "Colors"
 msgstr "颜色"
 
-#: backgnd.cpp:239
+#: backgnd.cpp:240
 msgid "&One Color"
 msgstr "单色[&C]"
 
 #
-#: backgnd.cpp:256
+#: backgnd.cpp:257
 msgid "&Two Color"
 msgstr "双色[&C]"
 
-#: backgnd.cpp:275
+#: backgnd.cpp:276
 msgid "Set&up ..."
 msgstr "设置[&U] ..."
 
-#: backgnd.cpp:284
+#: backgnd.cpp:285
 msgid "Wallpaper"
 msgstr "墙纸"
 
 #
-#: backgnd.cpp:294 backgnd.cpp:484 backgnd.cpp:498 backgnd.cpp:1102
-#: backgnd.cpp:1259 backgnd.cpp:1795
+#: backgnd.cpp:296 backgnd.cpp:521 backgnd.cpp:535 backgnd.cpp:1140
+#: backgnd.cpp:1297 backgnd.cpp:1833
 msgid "No wallpaper"
 msgstr "没有墙纸"
 
-#: backgnd.cpp:320
+#: backgnd.cpp:325
 msgid "&Browse..."
 msgstr "浏览[&B]..."
 
-#: backgnd.cpp:329
+#: backgnd.cpp:333
 #, fuzzy
 msgid "Tiled"
 msgstr "并列[&L]"
 
-#: backgnd.cpp:330
+#: backgnd.cpp:334
 msgid "Mirrored"
 msgstr ""
 
-#: backgnd.cpp:331
+#: backgnd.cpp:335
 #, fuzzy
 msgid "Center Tiled"
 msgstr "放置在中间[&C]"
 
-#: backgnd.cpp:332
+#: backgnd.cpp:336
 #, fuzzy
 msgid "Centred"
 msgstr "放置在中间[&C]"
 
-#: backgnd.cpp:333
+#: backgnd.cpp:337
 #, fuzzy
 msgid "Centred Brick"
 msgstr "放置在中间[&C]"
 
-#: backgnd.cpp:334
+#: backgnd.cpp:338
 #, fuzzy
 msgid "Centred Warp"
 msgstr "放置在中间[&C]"
 
-#: backgnd.cpp:335
+#: backgnd.cpp:339
 #, fuzzy
 msgid "Centred Maxpect"
 msgstr "放置在中间[&C]"
 
-#: backgnd.cpp:336
+#: backgnd.cpp:340
 msgid "Symmetrical Tiled"
 msgstr ""
 
-#: backgnd.cpp:337
+#: backgnd.cpp:341
 msgid "Symmetrical Mirrored"
 msgstr ""
 
-#: backgnd.cpp:338
+#: backgnd.cpp:342
 #, fuzzy
 msgid "Scaled"
 msgstr "比例缩放[&S]"
 
-#: backgnd.cpp:349
+#: backgnd.cpp:354
 msgid "Ra&ndom"
 msgstr ""
 
-#: backgnd.cpp:358
+#: backgnd.cpp:363
 #, fuzzy
 msgid "Setu&p..."
 msgstr "设置[&U] ..."
 
-#: backgnd.cpp:366
-msgid "&Dock into kpanel"
+#: backgnd.cpp:371
+msgid "&Dock into the panel"
+msgstr ""
+
+#: backgnd.cpp:381
+msgid "Cache size"
+msgstr ""
+
+#: backgnd.cpp:399
+msgid "kb"
 msgstr ""
 
 #
-#: backgnd.cpp:1226
+#: backgnd.cpp:1264
 msgid "Desktop names"
 msgstr "桌面名称"
 
-#: backgnd.cpp:1271
+#: backgnd.cpp:1309
 #, fuzzy
 msgid "File error"
 msgstr "命名错误"
 
-#: backgnd.cpp:1272
+#: backgnd.cpp:1310
 msgid "Can't load image file"
 msgstr ""
 
-#: backgnd.cpp:1295 backgnd.cpp:1765
+#: backgnd.cpp:1333 backgnd.cpp:1803
 msgid "Unsupported URL"
 msgstr ""
 
-#: backgnd.cpp:1296 backgnd.cpp:1766
+#: backgnd.cpp:1334 backgnd.cpp:1804
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 
-#: backgnd.cpp:1327
+#: backgnd.cpp:1365
 msgid "Two color backgrounds"
 msgstr "两个彩色背景"
 
-#: backgnd.cpp:1364
+#: backgnd.cpp:1402
 msgid "Blend colors from &top to bottom"
 msgstr "从上到下使用混和色"
 
-#: backgnd.cpp:1370
+#: backgnd.cpp:1408
 msgid "Blend colors from &right to left"
 msgstr "从右到左使用混和色"
 
-#: backgnd.cpp:1376
+#: backgnd.cpp:1414
 msgid "Use &pattern"
 msgstr "使用花样[&P]"
 
-#: backgnd.cpp:1403
+#: backgnd.cpp:1441
 msgid "Preview"
 msgstr "预览"
 
-#: backgnd.cpp:1414
+#: backgnd.cpp:1452
 msgid "Pattern &name"
 msgstr "花样名[&N]"
 
-#: backgnd.cpp:1453
+#: backgnd.cpp:1491
 msgid "Current"
 msgstr "当前的"
 
-#: backgnd.cpp:1513
+#: backgnd.cpp:1551
 msgid "Filled"
 msgstr "填充的"
 
-#: backgnd.cpp:1516
+#: backgnd.cpp:1554
 msgid "Fish net"
 msgstr "鱼网"
 
-#: backgnd.cpp:1519
+#: backgnd.cpp:1557
 msgid "Triangles"
 msgstr "三角形"
 
 #
-#: backgnd.cpp:1522
+#: backgnd.cpp:1560
 msgid "Flowers"
 msgstr "花朵"
 
-#: backgnd.cpp:1525
+#: backgnd.cpp:1563
 msgid "Rattan"
 msgstr "藤茎"
 
-#: backgnd.cpp:1528
+#: backgnd.cpp:1566
 msgid "Cobbled Pavement"
 msgstr "卵石路"
 
-#: backgnd.cpp:1594
+#: backgnd.cpp:1632
 msgid "Random mode setup"
 msgstr ""
 
-#: backgnd.cpp:1600
+#: backgnd.cpp:1638
 msgid "Pick files from &directory"
 msgstr ""
 
-#: backgnd.cpp:1614
+#: backgnd.cpp:1652
 #, fuzzy
 msgid "&Browse ..."
 msgstr "浏览[&B]..."
 
-#: backgnd.cpp:1635
+#: backgnd.cpp:1673
 msgid "Timer Delay in seconds :"
 msgstr ""
 
-#: backgnd.cpp:1647
+#: backgnd.cpp:1685
 #, fuzzy
 msgid "In &order"
 msgstr "忽略"
 
-#: backgnd.cpp:1664
+#: backgnd.cpp:1702
 #, fuzzy
 msgid "Desktops :"
 msgstr "桌面"
 
-#: backgnd.cpp:1702
+#: backgnd.cpp:1740
 #, fuzzy
 msgid "&Add"
 msgstr "添加[&A] ..."
 
-#: backgnd.cpp:1872
+#: backgnd.cpp:1910
 #, fuzzy
 msgid "Directory error"
 msgstr "命名错误"
 
-#: backgnd.cpp:1873
+#: backgnd.cpp:1911
 msgid "Selected directory doesn't exists"
 msgstr ""
 
@@ -383,7 +391,7 @@ msgid "Screen Saver"
 msgstr "屏幕保护程序"
 
 #
-#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:604 scrnsave.cpp:725
+#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:605 scrnsave.cpp:726
 msgid "No screensaver"
 msgstr "没有屏幕保护程序"
 

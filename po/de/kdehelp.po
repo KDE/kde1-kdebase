@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-11-15 01:18+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -25,28 +25,28 @@ msgstr "Oops!"
 msgid "Unknown format: "
 msgstr "Unbekanntes Format: "
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1093
 msgid "Find Complete"
 msgstr "Suche komplett"
 
-#: helpwin.cpp:1092
+#: helpwin.cpp:1094
 msgid "Continue search from the top of the page?"
 msgstr "Soll die Suche am Anfang der Seite fortgesetzt werden?"
 
-#: helpwin.cpp:1309
+#: helpwin.cpp:1311
 #, fuzzy
 msgid "Forward"
 msgstr "&Weiter"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1332
 msgid "Open this Link"
 msgstr "Diesen Link öffnen"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1333
 msgid "Add Bookmark"
 msgstr "Notiz hinzufügen"
 
-#: helpwin.cpp:1332
+#: helpwin.cpp:1334
 msgid "Open in new Window"
 msgstr "In einem neuen Fenster öffnen"
 

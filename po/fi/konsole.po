@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KONSOLE\n"
-"POT-Creation-Date: 1998-11-13 01:16+0100\n"
+"POT-Creation-Date: 1998-11-15 01:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,129 +14,129 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.C:201
+#: main.C:203
 msgid "&Normal"
 msgstr "&Normaali"
 
-#: main.C:204
+#: main.C:206
 msgid "&Small"
 msgstr "&Pieni"
 
-#: main.C:205
+#: main.C:207
 msgid "&Medium"
 msgstr "&Keskikokoinen"
 
-#: main.C:206
+#: main.C:208
 msgid "&Large"
 msgstr "&Suuri"
 
-#: main.C:207
+#: main.C:209
 msgid "&Huge"
 msgstr "&Valtava"
 
-#: main.C:209
+#: main.C:211
 msgid "&Linux"
 msgstr "&Linux"
 
-#: main.C:210
+#: main.C:212
 #, fuzzy
 msgid "Linux (small)"
 msgstr "40x15 (&pieni)"
 
-#: main.C:213
+#: main.C:215
 msgid "&More ..."
 msgstr "&Lisää..."
 
-#: main.C:219
+#: main.C:221
 msgid "&Hide"
 msgstr "&Piilota"
 
-#: main.C:220
+#: main.C:222
 msgid "&Left"
 msgstr "&Vasen"
 
-#: main.C:221
+#: main.C:223
 msgid "&Right"
 msgstr "&Oikea"
 
-#: main.C:227
+#: main.C:229
 msgid "40x15 (&small)"
 msgstr "40x15 (&pieni)"
 
-#: main.C:228
+#: main.C:230
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:229
+#: main.C:231
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:230
+#: main.C:232
 msgid "80x40 (&xterm)"
 msgstr "80x40 (&xterm)"
 
-#: main.C:231
+#: main.C:233
 msgid "80x52 (ibmv&ga)"
 msgstr "80x52 (ibmv&ga)"
 
-#: main.C:240
+#: main.C:242
 msgid "&Menubar"
 msgstr "&Valikkorivi"
 
-#: main.C:242
+#: main.C:244
 msgid "&Frame"
 msgstr "&Kehys"
 
-#: main.C:244
+#: main.C:246
 msgid "Scroll&bar"
 msgstr "&Vierityspalkki"
 
-#: main.C:246
+#: main.C:248
 msgid "BS sends &DEL"
 msgstr "BS lähettää &DEL"
 
-#: main.C:249
+#: main.C:251
 msgid "&Font"
 msgstr "&Kirjasin"
 
-#: main.C:250
+#: main.C:252
 msgid "&Size"
 msgstr "K&oko"
 
-#: main.C:251
+#: main.C:253
 msgid "&Schema"
 msgstr "&Värimalli"
 
-#: main.C:253
+#: main.C:255
 msgid "&Save options"
 msgstr "&Tallenna asetukset"
 
-#: main.C:257
+#: main.C:259
 msgid "&About ..."
 msgstr "&Tietoja ..."
 
-#: main.C:258
+#: main.C:260
 msgid "&User's Manual ..."
 msgstr "&Käyttöohje ..."
 
-#: main.C:259
+#: main.C:261
 msgid "&Technical Reference ..."
 msgstr "Tekninen &referenssi ..."
 
-#: main.C:270
+#: main.C:272
 msgid "New"
 msgstr "Uusi"
 
-#: main.C:271
+#: main.C:273
 msgid "Sessions"
 msgstr "Sessiot"
 
-#: main.C:497
+#: main.C:499
 #, fuzzy, c-format
 msgid "About %s"
 msgstr "&Tietoja ..."
 
-#: main.C:499
+#: main.C:501
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -149,6 +149,6 @@ msgid ""
 "See `LICENSE.readme´ for details."
 msgstr ""
 
-#: main.C:797
+#: main.C:817
 msgid "Welcome to the console"
 msgstr "Tervetuloa konsoliin"

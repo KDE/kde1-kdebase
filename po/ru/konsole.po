@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpager\n"
-"POT-Creation-Date: 1998-11-13 01:16+0100\n"
+"POT-Creation-Date: 1998-11-15 01:19+0100\n"
 "PO-Revision-Date: 1998-11-07 00:00+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -13,128 +13,128 @@ msgstr ""
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.C:201
+#: main.C:203
 msgid "&Normal"
 msgstr "Нормальный"
 
-#: main.C:204
+#: main.C:206
 msgid "&Small"
 msgstr "Маленький"
 
-#: main.C:205
+#: main.C:207
 msgid "&Medium"
 msgstr "Средний"
 
-#: main.C:206
+#: main.C:208
 msgid "&Large"
 msgstr "Большой"
 
-#: main.C:207
+#: main.C:209
 msgid "&Huge"
 msgstr "Огромный"
 
-#: main.C:209
+#: main.C:211
 msgid "&Linux"
 msgstr "Linux"
 
-#: main.C:210
+#: main.C:212
 msgid "Linux (small)"
 msgstr "Linux (маленький)"
 
-#: main.C:213
+#: main.C:215
 msgid "&More ..."
 msgstr "Еще..."
 
-#: main.C:219
+#: main.C:221
 msgid "&Hide"
 msgstr "Скрыть"
 
-#: main.C:220
+#: main.C:222
 msgid "&Left"
 msgstr "Слева"
 
-#: main.C:221
+#: main.C:223
 msgid "&Right"
 msgstr "Справа"
 
-#: main.C:227
+#: main.C:229
 msgid "40x15 (&small)"
 msgstr "40x15 (маленький)"
 
-#: main.C:228
+#: main.C:230
 msgid "80x24 (&vt100)"
 msgstr "80x24 (vt100)"
 
-#: main.C:229
+#: main.C:231
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (ibmpc)"
 
-#: main.C:230
+#: main.C:232
 msgid "80x40 (&xterm)"
 msgstr "80x40 (xterm)"
 
-#: main.C:231
+#: main.C:233
 msgid "80x52 (ibmv&ga)"
 msgstr "80x52 (ibmvga)"
 
-#: main.C:240
+#: main.C:242
 msgid "&Menubar"
 msgstr "Меню"
 
-#: main.C:242
+#: main.C:244
 msgid "&Frame"
 msgstr "Рамка"
 
-#: main.C:244
+#: main.C:246
 msgid "Scroll&bar"
 msgstr "Полоса скроллирования"
 
-#: main.C:246
+#: main.C:248
 msgid "BS sends &DEL"
 msgstr "Забой посылает DEL"
 
-#: main.C:249
+#: main.C:251
 msgid "&Font"
 msgstr "Шрифт"
 
-#: main.C:250
+#: main.C:252
 msgid "&Size"
 msgstr "Размер"
 
-#: main.C:251
+#: main.C:253
 msgid "&Schema"
 msgstr "Схема"
 
-#: main.C:253
+#: main.C:255
 msgid "&Save options"
 msgstr "Записать настройки"
 
-#: main.C:257
+#: main.C:259
 msgid "&About ..."
 msgstr "О программе..."
 
-#: main.C:258
+#: main.C:260
 msgid "&User's Manual ..."
 msgstr "Руководство пользователя..."
 
-#: main.C:259
+#: main.C:261
 msgid "&Technical Reference ..."
 msgstr "Техническое руководство..."
 
-#: main.C:270
+#: main.C:272
 msgid "New"
 msgstr "Новый"
 
-#: main.C:271
+#: main.C:273
 msgid "Sessions"
 msgstr "Сессии"
 
-#: main.C:497
+#: main.C:499
 #, fuzzy, c-format
 msgid "About %s"
 msgstr "О программе..."
 
-#: main.C:499
+#: main.C:501
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -147,6 +147,6 @@ msgid ""
 "See `LICENSE.readme╢ for details."
 msgstr ""
 
-#: main.C:797
+#: main.C:817
 msgid "Welcome to the console"
 msgstr "Добро пожаловать в консоль"

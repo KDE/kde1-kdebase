@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-13 01:16+0100\n"
+"POT-Creation-Date: 1998-11-15 01:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Serge 'sergio' Tellène <tells@mygale.org>\n"
 "Language-Team: Français <fr@li.org>\n"
@@ -13,132 +13,132 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.C:201
+#: main.C:203
 msgid "&Normal"
 msgstr "&Normal"
 
-#: main.C:204
+#: main.C:206
 msgid "&Small"
 msgstr "&Petit"
 
-#: main.C:205
+#: main.C:207
 msgid "&Medium"
 msgstr "&Moyen"
 
-#: main.C:206
+#: main.C:208
 msgid "&Large"
 msgstr "&Grand"
 
-#: main.C:207
+#: main.C:209
 msgid "&Huge"
 msgstr "&Enorme"
 
-#: main.C:209
+#: main.C:211
 msgid "&Linux"
 msgstr ""
 
-#: main.C:210
+#: main.C:212
 #, fuzzy
 msgid "Linux (small)"
 msgstr "40x15 (&petit)"
 
-#: main.C:213
+#: main.C:215
 msgid "&More ..."
 msgstr "&Plus..."
 
-#: main.C:219
+#: main.C:221
 msgid "&Hide"
 msgstr "&Cacher"
 
-#: main.C:220
+#: main.C:222
 msgid "&Left"
 msgstr "&Gauche"
 
-#: main.C:221
+#: main.C:223
 msgid "&Right"
 msgstr "&Droite"
 
-#: main.C:227
+#: main.C:229
 msgid "40x15 (&small)"
 msgstr "40x15 (&petit)"
 
-#: main.C:228
+#: main.C:230
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:229
+#: main.C:231
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:230
+#: main.C:232
 #, fuzzy
 msgid "80x40 (&xterm)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:231
+#: main.C:233
 #, fuzzy
 msgid "80x52 (ibmv&ga)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:240
+#: main.C:242
 msgid "&Menubar"
 msgstr "Barre de &menu"
 
-#: main.C:242
+#: main.C:244
 msgid "&Frame"
 msgstr "&Cadre"
 
-#: main.C:244
+#: main.C:246
 msgid "Scroll&bar"
 msgstr "&Ascenseur"
 
-#: main.C:246
+#: main.C:248
 msgid "BS sends &DEL"
 msgstr "BS envoie &DEL"
 
-#: main.C:249
+#: main.C:251
 msgid "&Font"
 msgstr "&Police"
 
-#: main.C:250
+#: main.C:252
 msgid "&Size"
 msgstr "&Taille"
 
-#: main.C:251
+#: main.C:253
 #, fuzzy
 msgid "&Schema"
 msgstr "&Petit"
 
-#: main.C:253
+#: main.C:255
 msgid "&Save options"
 msgstr "&Enregistrer les options"
 
-#: main.C:257
+#: main.C:259
 msgid "&About ..."
 msgstr "&A propos..."
 
-#: main.C:258
+#: main.C:260
 msgid "&User's Manual ..."
 msgstr "Manuel &utilisateur..."
 
-#: main.C:259
+#: main.C:261
 msgid "&Technical Reference ..."
 msgstr "Référence &technique..."
 
-#: main.C:270
+#: main.C:272
 msgid "New"
 msgstr ""
 
-#: main.C:271
+#: main.C:273
 msgid "Sessions"
 msgstr ""
 
-#: main.C:497
+#: main.C:499
 #, fuzzy, c-format
 msgid "About %s"
 msgstr "&A propos..."
 
-#: main.C:499
+#: main.C:501
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -151,7 +151,7 @@ msgid ""
 "See `LICENSE.readme´ for details."
 msgstr ""
 
-#: main.C:797
+#: main.C:817
 msgid "Welcome to the console"
 msgstr "Bienvenue à la console"
 

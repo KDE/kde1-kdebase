@@ -204,7 +204,8 @@ msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 "-e <kommando> <arg> ...   kör kommando med argumenten arg\n"
-"                          OBS: detta måste vara det sista argumentet till kvt\n"
+"                          OBS: detta måste vara det sista argumentet till "
+"kvt\n"
 
 #: main.C:1441
 msgid "-display <name>           specify the display (server)\n"
@@ -285,7 +286,8 @@ msgid ""
 "(default)\n"
 msgstr ""
 "-ls                       starta kvt:s skal som ett inloggningsskal\n"
-"-ls-                      starta ej kvt:s skal som inloggningsskal (standard)\n"
+"-ls-                      starta ej kvt:s skal som inloggningsskal "
+"(standard)\n"
 
 #: main.C:1461
 msgid ""
@@ -308,8 +310,10 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
-"-pageup <keysym>          använd snabbtangent alt-keysym för att scrolla upp\n"
-"-pagedown <keysym>        använd snabbtangent alt-keysym för att scrolla ner\n"
+"-pageup <keysym>          använd snabbtangent alt-keysym för att scrolla "
+"upp\n"
+"-pagedown <keysym>        använd snabbtangent alt-keysym för att scrolla "
+"ner\n"
 
 #: main.C:1467
 msgid ""
