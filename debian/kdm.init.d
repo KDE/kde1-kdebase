@@ -5,46 +5,33 @@ test -x /usr/bin/X11/xdm || exit 0
 
 test -f /etc/X11/config || exit 0
 
-if grep -q ^xbase-not-configured /etc/X11/config
-then
-  exit 0
-fi
-
-run_kdm=0
-if grep -q ^start-kdm /etc/X11/config
-then
-  run_kdm=1
-fi
+grep -q ^xbase-not-configured /etc/X11/config && exit 0
 
 case "$1" in
   start)
-    if [ $run_kdm = 1 ]
-    then
-      if grep -q ^start-xdm /etc/X11/config
+    grep -q ^start-kdm /etc/X11/config || exit 0
+    if grep -q ^start-xdm /etc/X11/config
       then
         echo "WARNING : can only start kdm or xdm, but not both !"
-      else
-	if test /etc/X11/window-managers -nt /etc/kde/kdmrc 
-	then
-		echo "Updating kdmrc ..."
-		(echo -n "s/WINDOWMANAGER/" ; \
-		cat /etc/X11/window-managers  |grep -v ^#|while read A ; \
-		do echo -n "`basename $A`;" ;  \
-		done ; \
-		echo "/") > /etc/kde/kdmrc.tmp
-		sed `cat /etc/kde/kdmrc.tmp` \
-			< /etc/kde/kdmrc.in > /etc/kde/kdmrc
-		rm /etc/kde/kdmrc.tmp
-	fi
-        echo -n "Starting kde display manager: kdm"    
-        start-stop-daemon --start --quiet --exec /usr/X11R6/bin/kdm
-        echo "."
-      fi
     fi
+    echo -n "s/WINDOWMANAGERS/" > /etc/kde/kdmrc.tmp
+    cat /etc/X11/window-managers |while read A; 
+    do
+        if test -x "$A"
+        then
+    	    echo -n "`basename $A`;" >> /etc/kde/kdmrc.tmp
+        fi
+    done
+    echo "/" >> /etc/kde/kdmrc.tmp
+    sed "`cat /etc/kde/kdmrc.tmp`" < /etc/kde/kdmrc.in > /etc/kde/kdmrc
+    rm /etc/kde/kdmrc.tmp
+    echo -n "Starting kde display manager: kdm"    
+    start-stop-daemon --start --quiet --exec /opt/kde/bin/kdm
+    echo "."
     ;;
   stop)
       echo -n "Stopping kde display manager: kdm"    
-      start-stop-daemon --stop --quiet --exec /usr/X11R6/bin/kdm \
+      start-stop-daemon --stop --quiet --exec /opt/kde/bin/kdm \
 		--pidfile /var/run/xdm-pid
       echo "."
     ;;

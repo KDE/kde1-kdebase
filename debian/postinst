@@ -25,8 +25,8 @@ sed `cat /etc/kde/kdmrc.tmp` \
 < /etc/kde/kdmrc.in > /etc/kde/kdmrc
 rm /etc/kde/kdmrc.tmp
 
-if test ! -L /var/lib/applnk; then
-	ln -s /usr/share/applnk/debian_menu /var/lib/applnk
+if test ! -L /var/spool/kdeapplnk; then
+	ln -s /usr/share/applnk/debian_menu /var/spool/kdeapplnk
 fi
 
 if test -L /usr/bin/kioslave
