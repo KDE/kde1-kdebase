@@ -33,7 +33,7 @@ msgstr "Fontes disponíveis no KDE"
 msgid ""
 "The Quick Brown Fox Jumps Over The Lazy Dog\n"
 "AaBbCc123"
-msgstr ""
+msgstr "The Quick Brown Fox Jumps Over The Lazy Dog\nAaBbCc123"
 
 #: kfontlist.cpp:62 kfontmanager.cpp:112
 msgid "About kfontmanager"
