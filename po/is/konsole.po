@@ -130,6 +130,8 @@ msgid ""
 "Font `%s' not found.\n"
 "Check README.linux.console for help."
 msgstr ""
+"Leturgerðin `%s' fannst ekki.\n"
+"nánari upplýsingar í README.linux.console skránni."
 
 #: main.C:607
 #, c-format
@@ -159,13 +161,15 @@ msgstr ""
 #: main.C:732
 #, c-format
 msgid "`%s' terminated abnormally."
-msgstr ""
+msgstr "`%s' hætti óeðlilega."
 
 #: main.C:735
 msgid ""
 "\n"
 "Return code = "
 msgstr ""
+"\n"
+"Skilagildi = "
 
 #: main.C:928
 msgid "Welcome to the console"

@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-28 01:13+0100\n"
+"POT-Creation-Date: 1998-12-08 01:17+0100\n"
 "PO-Revision-Date: 1998-11-11 11:11+0100\n"
 "Language-Team: is\n"
 " (yes, really)Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
@@ -21,9 +21,8 @@ msgid "&Rename ..."
 msgstr "Endur&nefna ..."
 
 #: backgnd.cpp:195
-#, fuzzy
 msgid "&Common Background"
-msgstr "&Bakgrunnur"
+msgstr "&Eins bakgrunnur"
 
 #: backgnd.cpp:223 colorscm.cpp:82
 msgid "Colors"
@@ -45,196 +44,184 @@ msgstr "St&illingar ..."
 msgid "Wallpaper"
 msgstr "Veggfóður"
 
-#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1218
-#: backgnd.cpp:1372 backgnd.cpp:1910
+#: backgnd.cpp:325 backgnd.cpp:593 backgnd.cpp:607 backgnd.cpp:1217
+#: backgnd.cpp:1371 backgnd.cpp:1909
 msgid "No wallpaper"
 msgstr "Ekkert veggfóður"
 
-#: backgnd.cpp:359
+#: backgnd.cpp:358
 msgid "&Browse..."
 msgstr "&Flakka..."
 
-#: backgnd.cpp:367
+#: backgnd.cpp:366
 msgid "Arrangement:"
-msgstr ""
+msgstr "Röðun"
+
+#: backgnd.cpp:373
+msgid "Tiled"
+msgstr "Flísalagt"
 
 #: backgnd.cpp:374
-#, fuzzy
-msgid "Tiled"
-msgstr "&Flísalagt"
+msgid "Mirrored"
+msgstr "Speiglað"
 
 #: backgnd.cpp:375
-msgid "Mirrored"
-msgstr ""
+msgid "Center Tiled"
+msgstr "Miðjað flísalagt"
 
 #: backgnd.cpp:376
-#, fuzzy
-msgid "Center Tiled"
-msgstr "&Miðjað"
+msgid "Centred"
+msgstr "Miðjað"
 
 #: backgnd.cpp:377
-#, fuzzy
-msgid "Centred"
-msgstr "&Miðjað"
+msgid "Centred Brick"
+msgstr "Miðjaðir múrsteinar"
 
 #: backgnd.cpp:378
-#, fuzzy
-msgid "Centred Brick"
-msgstr "&Miðjað"
+msgid "Centred Warp"
+msgstr "Miðjað í geimferð"
 
 #: backgnd.cpp:379
-#, fuzzy
-msgid "Centred Warp"
-msgstr "&Miðjað"
+msgid "Centred Maxpect"
+msgstr "Stækkað miðjað"
 
 #: backgnd.cpp:380
-#, fuzzy
-msgid "Centred Maxpect"
-msgstr "&Miðjað"
+msgid "Symmetrical Tiled"
+msgstr "Flísalagt samhverft"
 
 #: backgnd.cpp:381
-msgid "Symmetrical Tiled"
-msgstr ""
+msgid "Symmetrical Mirrored"
+msgstr "Speiglað samhverft"
 
 #: backgnd.cpp:382
-msgid "Symmetrical Mirrored"
-msgstr ""
-
-#: backgnd.cpp:383
-#, fuzzy
 msgid "Scaled"
-msgstr "Te&ygt"
+msgstr "Teygt"
 
-#: backgnd.cpp:398
+#: backgnd.cpp:397
 msgid "Ra&ndom"
-msgstr ""
+msgstr "Slembið"
 
-#: backgnd.cpp:407
-#, fuzzy
+#: backgnd.cpp:406
 msgid "Setu&p..."
 msgstr "St&illingar ..."
 
-#: backgnd.cpp:417
+#: backgnd.cpp:416
 msgid "&Dock into the panel"
-msgstr ""
+msgstr "&Hleypa á spjaldið"
 
-#: backgnd.cpp:442
+#: backgnd.cpp:441
 msgid "Cache size (kB):"
-msgstr ""
+msgstr "Biðminni (KB):"
 
-#: backgnd.cpp:1339
+#: backgnd.cpp:1338
 msgid "Desktop names"
-msgstr "Nafn skjáborðs"
+msgstr "Nöfn skjáborða"
+
+#: backgnd.cpp:1383
+msgid "File error"
+msgstr "Skráarvilla"
 
 #: backgnd.cpp:1384
-#, fuzzy
-msgid "File error"
-msgstr "Villa í nafngjöf"
-
-#: backgnd.cpp:1385
 msgid "Can't load image file"
-msgstr ""
+msgstr "Ekki tókst að lesa myndskrá"
+
+#: backgnd.cpp:1407 backgnd.cpp:1879
+msgid "Unsupported URL"
+msgstr "Slóð ekki studd"
 
 #: backgnd.cpp:1408 backgnd.cpp:1880
-msgid "Unsupported URL"
-msgstr ""
-
-#: backgnd.cpp:1409 backgnd.cpp:1881
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
+"Í augnablikinu styður KDE Sýnipakkinn ekki þessa tegund slóða"
 
-#: backgnd.cpp:1440
+#: backgnd.cpp:1439
 msgid "Two color backgrounds"
 msgstr "Tvílitur bakgrunnur"
 
-#: backgnd.cpp:1477
+#: backgnd.cpp:1476
 msgid "Blend colors from &top to bottom"
 msgstr "Blanda litum að &ofan"
 
-#: backgnd.cpp:1483
+#: backgnd.cpp:1482
 msgid "Blend colors from &right to left"
 msgstr "Blanda litum frá &hægri"
 
-#: backgnd.cpp:1489
+#: backgnd.cpp:1488
 msgid "Use &pattern"
 msgstr "Nota &mynstur"
 
-#: backgnd.cpp:1516
+#: backgnd.cpp:1515
 msgid "Preview"
 msgstr "Forsýn"
 
-#: backgnd.cpp:1527
+#: backgnd.cpp:1526
 msgid "Pattern &name"
 msgstr "&Nafn mynsturs"
 
-#: backgnd.cpp:1566
+#: backgnd.cpp:1565
 msgid "Current"
 msgstr "Núverandi"
 
-#: backgnd.cpp:1626
+#: backgnd.cpp:1625
 msgid "Filled"
 msgstr "Fyllt"
 
-#: backgnd.cpp:1629
+#: backgnd.cpp:1628
 msgid "Fish net"
 msgstr "Net"
 
-#: backgnd.cpp:1632
+#: backgnd.cpp:1631
 msgid "Triangles"
 msgstr "Þríhyrningar"
 
-#: backgnd.cpp:1635
+#: backgnd.cpp:1634
 msgid "Flowers"
 msgstr "Blóm"
 
-#: backgnd.cpp:1638
+#: backgnd.cpp:1637
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1641
+#: backgnd.cpp:1640
 msgid "Cobbled Pavement"
 msgstr "Flísalögð gangstétt"
 
-#: backgnd.cpp:1707
+#: backgnd.cpp:1706
 msgid "Random mode setup"
-msgstr ""
+msgstr "Stillingar slembihams"
 
-#: backgnd.cpp:1713
+#: backgnd.cpp:1712
 msgid "Pick files from &directory"
-msgstr ""
+msgstr "Veldi skrár úr &möppu"
 
-#: backgnd.cpp:1727
-#, fuzzy
+#: backgnd.cpp:1726
 msgid "&Browse ..."
 msgstr "&Flakka..."
 
-#: backgnd.cpp:1748
+#: backgnd.cpp:1747
 msgid "Timer Delay in seconds :"
-msgstr ""
+msgstr "Töf í sekundum :"
 
-#: backgnd.cpp:1760
-#, fuzzy
+#: backgnd.cpp:1759
 msgid "In &order"
-msgstr "Hundsa"
+msgstr "Í réttri röð"
 
-#: backgnd.cpp:1777
-#, fuzzy
+#: backgnd.cpp:1776
 msgid "Desktops :"
-msgstr "Skjáborð"
+msgstr "Skjáborð :"
 
-#: backgnd.cpp:1816
-#, fuzzy
+#: backgnd.cpp:1815
 msgid "&Add"
-msgstr "&Bæta við ..."
+msgstr "&Bæta við"
+
+#: backgnd.cpp:1986
+msgid "Directory error"
+msgstr "Möppuvilla"
 
 #: backgnd.cpp:1987
-msgid "Directory error"
-msgstr ""
-
-#: backgnd.cpp:1988
 msgid "Selected directory doesn't exists"
-msgstr ""
+msgstr "Tiltekin mappa er ekki til"
 
 #: colorscm.cpp:104
 msgid "Color Scheme"
@@ -381,7 +368,7 @@ msgstr "Læsa skjá"
 msgid "Screen Saver"
 msgstr "Skjasvæfa"
 
-#: scrnsave.cpp:188 scrnsave.cpp:368 scrnsave.cpp:607 scrnsave.cpp:728
+#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:605 scrnsave.cpp:726
 msgid "No screensaver"
 msgstr "Engin svæfing"
 
@@ -413,26 +400,25 @@ msgstr "Krefjast &lykilorðs"
 msgid "&Accept root password to unlock"
 msgstr "Samþykkja &rótarlykilorð til að opna"
 
-#: scrnsave.cpp:280
+#: scrnsave.cpp:278
 msgid "Show &password as stars"
 msgstr "Sýna lykilorð sem &stjörnur"
 
-#: scrnsave.cpp:288
+#: scrnsave.cpp:286
 msgid "Priority"
 msgstr "Forgangur"
 
-#: scrnsave.cpp:301
+#: scrnsave.cpp:299
 msgid "&High"
 msgstr "&Hár"
 
-#: scrnsave.cpp:310
+#: scrnsave.cpp:308
 msgid "Low"
 msgstr "Lágur"
 
 #: general.cpp:222
-#, fuzzy
 msgid "Fonts etc."
-msgstr "&Letur oþh."
+msgstr "Letur oþh."
 
 #: general.cpp:230
 msgid "&Draw widgets in the style of Windows 95"
@@ -440,11 +426,11 @@ msgstr "Teikna græjur eins og &indows 95"
 
 #: general.cpp:244
 msgid "&Apply style to non-KDE apps"
-msgstr ""
+msgstr "&Virkja í forritum óskyldum KDE"
 
 #: general.cpp:258
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr ""
+msgstr "&Valslá efst á skjá svipað og á Makkanum`"
 
 #: general.cpp:273
 msgid "Desktop fonts"
@@ -459,9 +445,8 @@ msgid "Fixed font"
 msgstr "Jafnbreitt letur"
 
 #: general.cpp:296
-#, fuzzy
 msgid "Window title font"
-msgstr "Gluggatexti"
+msgstr "Letur gluggatitils"
 
 #: general.cpp:301
 msgid "Panel button font"
@@ -523,7 +508,7 @@ msgstr "Valinn texti"
 
 #: widgetcanvas.cpp:212
 msgid "New"
-msgstr ""
+msgstr "Nýtt"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"

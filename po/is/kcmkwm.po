@@ -251,9 +251,8 @@ msgid "Auto Raise"
 msgstr "Fleyta sjálfkrafa"
 
 #: windows.cpp:209
-#, fuzzy
 msgid "Click Raise"
-msgstr "Fleyta"
+msgstr "Smell fleytir"
 
 #: windows.cpp:216
 msgid "Delay (ms)"
@@ -272,7 +271,6 @@ msgid "Move pointer towards center after switch"
 msgstr "Færa bendil að miðju eftir skipti"
 
 #: desktop.cpp:87
-#, fuzzy
 msgid "Desktop switch delay:"
 msgstr "Skiptitöf"
 

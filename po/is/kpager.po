@@ -18,19 +18,19 @@ msgstr "Valslá af/á"
 
 #: kpager.cpp:77
 msgid "Move Right"
-msgstr ""
+msgstr "Færast til hægr"
 
 #: kpager.cpp:79
 msgid "Move Left"
-msgstr ""
+msgstr "Færast til vinstri"
 
 #: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
-msgstr "Fela &víðvært skjábort"
+msgstr "Fela &víðvært skjáborð"
 
 #: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
 msgid "Show &Global Desktop"
-msgstr "Sýna víðvært skjáborp"
+msgstr "Sýna víðvært skjáborð"
 
 #: kpager.cpp:97 kpager.cpp:380
 msgid "Hide &Menubar"
@@ -42,17 +42,15 @@ msgstr "&2 raðir"
 
 #: kpager.cpp:104
 msgid "&One Click change Desktop"
-msgstr ""
+msgstr "&Einn smellur flettir"
 
 #: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
-#, fuzzy
 msgid "Hide Desktop &Names"
-msgstr "Fela &víðvært skjábort"
+msgstr "Fela &nöfn skjáborða"
 
 #: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
-#, fuzzy
 msgid "Show Desktop &Names"
-msgstr "Sýna víðvært skjáborp"
+msgstr "Sýna nöfn skjáborða"
 
 #: kpager.cpp:115 kpager.cpp:402
 msgid "Plain"
@@ -103,7 +101,7 @@ msgstr "Sýna &Valslá"
 
 #: kpager.cpp:389
 msgid "One Click change Desktop"
-msgstr ""
+msgstr "Einn smellur flettir"
 
 #: kpager.cpp:446
 msgid "&Maximize"

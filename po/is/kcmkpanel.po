@@ -149,23 +149,20 @@ msgid "Others"
 msgstr "Annað"
 
 #: options.cpp:408
-#, fuzzy
 msgid "Personal Menu Entries &First"
 msgstr "&Eigin valmynd fyrst"
 
 #: options.cpp:416
-#, fuzzy
 msgid "Menu F&olders First"
-msgstr "&Möppur fyrst"
+msgstr "Valmynda&möppur fyrst"
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
 msgstr "Klukkan &sýnd á FH/EH formi"
 
 #: options.cpp:432
-#, fuzzy
 msgid "Clock shows time in &Internet beats"
-msgstr "Klukkan &sýnd á FH/EH formi"
+msgstr "Klukkan sýnir &Internettíma"
 
 #: disknav.cpp:38
 msgid "History"
@@ -177,7 +174,7 @@ msgstr "Breyta færslum: (slepptu möppu til að tengja)"
 
 #: disknav.cpp:64
 msgid "Edit &Personal..."
-msgstr "Breyta &einka..."
+msgstr "Breyta &eigin..."
 
 #: disknav.cpp:74
 msgid "Edit &Shared..."
@@ -209,7 +206,7 @@ msgstr "Sýna sameign"
 
 #: disknav.cpp:180
 msgid "Show Personal section"
-msgstr "Sýna einka fyrst"
+msgstr "Sýna eigin fyrst"
 
 #: disknav.cpp:187
 msgid "Show Recent section"

@@ -15,7 +15,7 @@ msgstr "Slökkva eða endurræsa?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr ""
+msgstr "(Sláðu inn rótarlykilorðið)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
@@ -27,7 +27,7 @@ msgstr "Slökkva og endurræsa"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr ""
+msgstr "Endurræsa X-þjón"
 
 #: kgreeter.cpp:222
 msgid "Login:"

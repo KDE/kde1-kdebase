@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-10-19 22:00+0200\n"
+"PO-Revision-Date: 1998-01-01 22:00+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
 
@@ -38,11 +38,8 @@ msgstr "Lengd"
 
 #: bell.cpp:72
 msgid "milliseconds"
-msgstr ""
+msgstr "millisekúndur"
 
 #: bell.cpp:87
 msgid "Test"
 msgstr "Prófa"
-
-#~ msgid "ms"
-#~ msgstr "ms"

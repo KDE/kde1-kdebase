@@ -195,7 +195,7 @@ msgstr "SUID keyranlegar skrár"
 
 #: kftabdlg.cpp:250
 msgid "(none)"
-msgstr ""
+msgstr "(ekkert)"
 
 #: kftabdlg.cpp:251
 msgid "At Least"
@@ -227,7 +227,7 @@ msgstr "Stærðargildið er ekki tala!!"
 
 #: kfoptions.cpp:52
 msgid "Preferences"
-msgstr ""
+msgstr "Stillingar"
 
 #: kfoptions.cpp:74
 msgid "File format:"

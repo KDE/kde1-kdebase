@@ -458,7 +458,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Þetta kerfi styður ekki valmöguleika %s !"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -466,10 +465,10 @@ msgid ""
 "Please contact your system administrator,\n"
 "tell him, that you need suid for the kcheckpass!"
 msgstr ""
-"Aðvörun: :Þú getur ekki lst skjánum!\n"
+"Aðvörun: Þú getur ekki læst skjánum!\n"
 "\n"
 "Kerfið notar skuggalykilorð. Hafðu samband við\n"
-"kerfisstjórann of segðust þurfa suid fyrir\n"
+"kerfisstjórann of segðust þurfa \"suid\" fyrir\n"
 "skjaskreytingarnar!"
 
 #: main.cpp:427
@@ -539,19 +538,19 @@ msgstr ""
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
-msgstr ""
+msgstr "Þrívíð myndbreyting (GL)"
 
 #: morph3d.cpp:1015
 msgid "Setup KMorph3d"
-msgstr ""
+msgstr "Stilla KMorph3D"
 
 #: morph3d.cpp:1031
 msgid "Object Type:"
-msgstr ""
+msgstr "Tegund hluta:"
 
 #: morph3d.cpp:1120
 msgid "About Morph3D"
-msgstr ""
+msgstr "Um Morph3D"
 
 #: morph3d.cpp:1121
 msgid ""
@@ -561,22 +560,27 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Morph3D\n"
+"\n"
+"Höfundarréttur(c) 1997, Marcelo F. Vianna\n"
+"\n"
+"Emanuel Pirker flutti í kscreensave."
 
 #: pipes.cpp:299
 msgid "Pipes (GL)"
-msgstr ""
+msgstr "Pípur (GL)"
 
 #: pipes.cpp:672
 msgid "Setup KPipes"
-msgstr ""
+msgstr "Stilla KPípur"
 
 #: pipes.cpp:678
 msgid "Number of Pipes"
-msgstr ""
+msgstr "Fjöldi pípa"
 
 #: pipes.cpp:743
 msgid "About KPipes"
-msgstr ""
+msgstr "Um KPípur"
 
 #: pipes.cpp:745
 msgid ""
@@ -584,6 +588,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
+"KPípur\n"
+"Höfundarréttur (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
 
 #: polygon.cpp:85
 msgid "Setup kpolygon"

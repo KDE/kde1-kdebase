@@ -50,7 +50,7 @@ msgstr "Úr táknmynd"
 
 #: main.C:531
 msgid "&Sticky"
-msgstr "&Líma við gler"
+msgstr "&Festa við gler"
 
 #: main.C:532
 msgid "&UnSticky"
