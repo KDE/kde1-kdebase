@@ -212,7 +212,6 @@ int KProtocolHTTP::Open(KURL *url, int mode)
 
 	if(use_proxy)
 	{
-		printf("connecting to proxy...\n");
 		if(::connect(sock,(struct sockaddr*)(&proxy_name),sizeof(proxy_name)))
 		{
 	    	Error(KIO_ERROR_CouldNotConnect,"Could not connect to proxy",errno);
@@ -228,7 +227,7 @@ int KProtocolHTTP::Open(KURL *url, int mode)
     		Error(KIO_ERROR_UnknownHost, "Unknown host", errno );
 			return(FAIL);
 		}
-		printf("connecting to host %s\n",url->host());
+
 		if(::connect(sock,(struct sockaddr*)(&server_name),sizeof(server_name)))
 		{
 	    	Error(KIO_ERROR_CouldNotConnect, "Could not connect host", errno);
@@ -264,8 +263,7 @@ int KProtocolHTTP::Open(KURL *url, int mode)
 	}
 	command += "\n";  /* end header */
 
-	printf("opening ");
-	write(0, command.data(), command.length());
+	// write(0, command.data(), command.length());
 	write(sock, command.data(), command.length());
 
 	return(ProcessHeader());
@@ -278,28 +276,24 @@ int KProtocolHTTP::ProcessHeader()
 
 	size = 0xFFFFFFF;
 
-	printf("Processing header:\n");
 	while( len && fgets( buffer, 1024, fsocket ) )
 	{
 	    len = strlen(buffer);
 	    while( len && (buffer[len-1] == '\n' || buffer[len-1] == '\r'))
 		buffer[--len] = 0;
 
-	    printf("%s\n",buffer);
 	    if ( strncmp( buffer, "Content-length: ", 16 ) == 0 
 	    ||   strncmp( buffer, "Content-Length: ", 16 ) == 0 )
 		size = atol( buffer + 16 );
 	    else if ( strncmp( buffer, "Content-Type: ", 14 ) == 0 
 		 ||   strncmp( buffer, "Content-type: ", 14 ) == 0 )
 	    {
-		printf("CONTENT '%s'\n",buffer + 14 );
 		emit mimeType( buffer + 14 );
 	    }
 	    else if ( strncmp( buffer, "HTTP/1.0 ", 9 ) == 0 )
 	    {
 		if ( buffer[9] == '4')
 		{
-		    printf("ERROR\n");
 		    Close();
 		    Error(KIO_ERROR_CouldNotRead,buffer+9,errno);
 		    return FAIL;
@@ -308,7 +302,6 @@ int KProtocolHTTP::ProcessHeader()
 	    
 	    else if ( strncmp( buffer, "Location: ", 10 ) == 0 )
 	    {
-		printf("REDIRECTION '%s'\n",buffer + 10);
 		Close();
 		emit redirection( buffer + 10 );
 		KURL u( buffer + 10 );
@@ -317,29 +310,7 @@ int KProtocolHTTP::ProcessHeader()
 	    
 	}
 	bytesleft = size;
-	printf("---< end header >---\n");
 	return(SUCCESS);
 }
-
-/* bool KProtocolHTTP::fgets( char *buffer, int _len )
-{
-    char b[ 2 ];
-    int i = 0;
-    while ( i < _len - 1 )
-    {
-	int n = fread( b, 1, 1, fsocket );
-	if ( n != 1 )
-	    return FALSE;
-	buffer[i++] = b[0];
-	
-	if ( b[0] == 10 || b[0] == 13 )
-	{
-	    buffer[i] = 0;
-	    return TRUE;
-	}
-    }
-    buffer[i] = 0;
-    return TRUE;
-} */
 
 #include "http.moc"

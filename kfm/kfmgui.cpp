@@ -662,7 +662,7 @@ void KfmGui::slotSplitWindow()
 void KfmGui::slotViewHTML( )
 {
     bViewHTML = !mview->isItemChecked( mview->idAt(3) );
-    debugT("VIEW is '%i' %d\n",(int)bViewHTML, mview->idAt(3));
+    // debugT("VIEW is '%i' %d\n",(int)bViewHTML, mview->idAt(3));
     // viewMode = ICON_VIEW;
     mview->setItemChecked( mview->idAt( 3 ), bViewHTML);
     view->slotUpdateView();
@@ -814,7 +814,7 @@ void KfmGui::slotNewFile( int _id )
 	    if ( dest.right( 1 ) != "/" )
 	        dest += "/";
 	    dest += name.data();
-	    debugT("Command copy '%s' '%s'\n",src.data(),dest.data());
+	    // debugT("Command copy '%s' '%s'\n",src.data(),dest.data());
 	    job->copy( src.data(), dest.data() );
 	}
     }
@@ -856,7 +856,7 @@ void KfmGui::slotBookmarkSelected( int id )
 {
     id -= BOOKMARK_ID_BASE;
     
-    debugT( "Bookmark selected : %i\n",id );
+    // debugT( "Bookmark selected : %i\n",id );
     
     KBookmark *bm = bookmarkManager.getBookmark( id );
     
@@ -1065,11 +1065,6 @@ void KfmGui::slotHelp()
   kapp->invokeHTMLHelp( "kfm/index.html", "" );
 }
 
-void KfmGui::slotTreePopupMenu( const char *_url, const QPoint & )
-{
-    debugT("slotPopupMenu single '%s'\n",_url);
-}
-
 void KfmGui::slotTreeUrlSelected( const char *_url , int _button )
 {
     if ( _button == LeftButton )
@@ -1080,10 +1075,6 @@ void KfmGui::slotTreeUrlSelected( const char *_url , int _button )
     
     KfmGui *f = new KfmGui( 0L, 0L, _url );
     f->show();
-}
-
-void KfmGui::slotTreeDrop( const char *, QStrList & )
-{
 }
 
 void KfmGui::slotTitle( const char *_title )
@@ -1255,7 +1246,7 @@ void KfmGui::slotViewFrameSource()
     
     QString cmd;
     cmd.sprintf("kedit \"%s\"", view->getActiveView()->getURL() );
-    debugT("RUNNING '%s'\n",cmd.data());
+    // debugT("RUNNING '%s'\n",cmd.data());
     KMimeBind::runCmd( cmd );
 }
 
@@ -1263,7 +1254,7 @@ void KfmGui::slotViewDocumentSource()
 {
     QString cmd;
     cmd.sprintf("kedit \"%s\"", view->getURL() );
-    debugT("RUNNING '%s'\n",cmd.data());
+    // debugT("RUNNING '%s'\n",cmd.data());
     KMimeBind::runCmd( cmd );
 }
     
@@ -1276,8 +1267,6 @@ KfmGui::~KfmGui()
     
     delete view;
     windowList.remove( this );
-    // if ( windowList.isEmpty() )   the last window closed?
-    // saveSettings();
 }
 
 #include "kfmgui.moc"

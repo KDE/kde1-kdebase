@@ -290,9 +290,7 @@ public slots:
     /**
      * Called if the user presses the right mouse button over the tree view.
      */
-    void slotTreePopupMenu( const char *_url, const QPoint &_point );
     void slotTreeUrlSelected( const char *, int );
-    void slotTreeDrop( const char *, QStrList & );
 
     /**
      * Sets a new text for the status bar.

@@ -87,7 +87,7 @@ KHTMLView* KfmView::newView( QWidget *_parent, const char *_name, int )
 
 KfmView::~KfmView()
 {
-    debugT("Deleting KfmView\n");
+    // debugT("Deleting KfmView\n");
     
     if ( dropZone != 0L )
 	delete dropZone;
@@ -97,7 +97,7 @@ KfmView::~KfmView()
  
     delete htmlCache;
     
-    debugT("Deleted\n");
+    // debugT("Deleted\n");
 }
 
 void KfmView::begin( const char *_url = 0L, int _x_offset = 0, int _y_offset = 0 )
@@ -162,13 +162,13 @@ void KfmView::slotStop()
 
 void KfmView::slotReload()
 {
-    debugT("################## RELOAD ########################\n");
+    // debugT("################## RELOAD ########################\n");
     manager->openURL( manager->getURL(), true );
 }
 
 void KfmView::slotUpdateView()
 {
-    debugT("################## UPDATE ########################\n");
+    // debugT("################## UPDATE ########################\n");
     if ( isFrame() )
     {
 	KfmView *v;
@@ -181,7 +181,7 @@ void KfmView::slotUpdateView()
 
 void KfmView::slotMountNotify()
 {
-    debugT("################## MOUNT ########################\n");
+    // debugT("################## MOUNT ########################\n");
     KURL u( manager->getURL().data() );
     
     if ( strcmp( u.protocol(), "file:" ) == 0 && !u.hasSubProtocol() )
@@ -190,7 +190,7 @@ void KfmView::slotMountNotify()
 
 void KfmView::slotFilesChanged( const char *_url )
 {
-    debugT("################## FILES CHANGED ########################\n");
+    // debugT("################## FILES CHANGED ########################\n");
     QString u1 = _url;
     if ( u1.right( 1 ) != "/" )
 	u1 += "/";
@@ -200,10 +200,10 @@ void KfmView::slotFilesChanged( const char *_url )
     if ( u2.right( 1 ) != "/" )
 	u2 += "/";
 
-    debugT("Comparing '%s' to '%s'\n",u1.data(), u2.data() );
+    // debugT("Comparing '%s' to '%s'\n",u1.data(), u2.data() );
     if ( u1 == u2 )
 	manager->openURL( manager->getURL().data(), true );
-    debugT("Changed\n");
+    // debugT("Changed\n");
 }
 
 void KfmView::slotDropEnterEvent( KDNDDropZone * )
@@ -274,14 +274,14 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
 	    }
 	}
 	
-	debugT(" Dropped over object\n");
+	// debugT(" Dropped over object\n");
 		
 	QPoint p( _zone->getMouseX(), _zone->getMouseY() );
 	manager->dropPopupMenu( _zone, url, &p );
     }
     else // dropped over white ground
     {
-	debugT("Dropped over white\n");
+	// debugT("Dropped over white\n");
 	
 	QPoint p( _zone->getMouseX(), _zone->getMouseY() );
 	manager->dropPopupMenu( _zone, manager->getURL(), &p );
@@ -396,7 +396,7 @@ void KfmView::slotPopupOpenWith()
 	cmd += decoded.data();
 	cmd += "\" ";
       }
-      debugT("Executing '%s'\n", cmd.data());
+      // debugT("Executing '%s'\n", cmd.data());
       
       KMimeBind::runCmd( cmd.data() );
     } */
@@ -540,7 +540,7 @@ const char * KfmView::getURL()
 void KfmView::openURL( const char *_url )
 {
     emit newURL( _url );
-    debugT("############### openURL ######################\n");
+    // debugT("############### openURL ######################\n");
     manager->openURL( _url );
 }
 
@@ -605,7 +605,7 @@ void KfmView::slotBack()
 
 void KfmView::slotURLSelected( const char *_url, int _button, const char *_target )
 {
-    // debugT("######### Click '%s' target='%s'\n",_url,_target);
+    // // debugT("######### Click '%s' target='%s'\n",_url,_target);
  
     if ( !_url )
 	return;
@@ -615,17 +615,17 @@ void KfmView::slotURLSelected( const char *_url, int _button, const char *_targe
 	KHTMLView *v = KHTMLView::findView( _target );
 	if ( v )
 	{
-	    debugT("Found Frame\n");
+	    // debugT("Found Frame\n");
 	    v->openURL( _url );
 	    return;
 	}
 	else
 	{
-	    debugT("New GUI\n");
+	    // debugT("New GUI\n");
 	    KfmGui *m = new KfmGui( 0L, 0L, _url );
-	    debugT("New GUI2\n");
+	    // debugT("New GUI2\n");
 	    m->show();
-	    debugT("New GUI3\n");
+	    // debugT("New GUI3\n");
 	    return;
 	}
     }
@@ -742,12 +742,12 @@ void KfmView::slotOnURL( const char *_url )
 
 void KfmView::slotFormSubmitted( const char *, const char *_url )
 {   
-    debugT("Form Submitted '%s'\n", _url );
+    // debugT("Form Submitted '%s'\n", _url );
     
     KURL u1( manager->getURL() );
     KURL u2( u1, _url );
     
-    debugT("Complete is '%s'\n", u2.url().data() );
+    // debugT("Complete is '%s'\n", u2.url().data() );
     
     openURL( u2.url().data() );    
 }
@@ -775,7 +775,7 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
 	rectY2 = rectY1;
 	if ( !dPainter )
 	    dPainter = new QPainter;
-	debugT ("KFileView::mousePressEvent: starting a rectangle (w/Painter)\n");   
+	// debugT ("KFileView::mousePressEvent: starting a rectangle (w/Painter)\n");   
 	return true;
     }
     // Select a URL with Ctrl Button
@@ -815,7 +815,7 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
 	getSelected( list );
 	char* s;
 	for ( s = list.first(); s != 0L; s = list.next() )
-	    debugT(" Entry '%s'\n",s);
+	    // debugT(" Entry '%s'\n",s);
     
 	if ( list.find( _url ) != -1 )
 	    slotPopupMenu( list, p );
@@ -854,7 +854,7 @@ bool KfmView::mouseMoveHook( QMouseEvent *_mouse )
 	
 	if ( !dPainter )
 	{
-	    debugT ("KFileView::mouseMoveEvent: no painter\n");
+	    // debugT ("KFileView::mouseMoveEvent: no painter\n");
 	    return true;
 	}
 	dPainter->begin( view );
@@ -877,8 +877,6 @@ bool KfmView::mouseMoveHook( QMouseEvent *_mouse )
 	    y = tmp;
 	}    
 	
-	debugT ("KFileView::dndMouseMoveEvent: end of draging; x1,y1,x2,y2 = %d,%d,%d,%d\n",
-		x1, y1, x, y);
 	QRect rect( x1, y1, x - x1 + 1, y - y1 + 1 );
 	select( 0L, rect );
 	
@@ -911,7 +909,7 @@ bool KfmView::mouseReleaseHook( QMouseEvent *_mouse )
 	if ( ( rectX2 == rectX1 ) && ( rectY2 == rectY1 ) )
 	{
 	    select( 0L, false );
-	    debugT ("KFileView::mouseReleaseEvent: it was just a dream... just a dream.\n");
+	    // debugT ("KFileView::mouseReleaseEvent: it was just a dream... just a dream.\n");
 	}
 	else
 	{
@@ -934,8 +932,6 @@ bool KfmView::mouseReleaseHook( QMouseEvent *_mouse )
 		rectY2 = tmp;
 	    }
 	    
-	    debugT ("KFileView::dndMouseReleaseEvent: end of draging; x1,y1,x2,y2 = %d,%d,%d,%d\n",
-		    rectX1, rectY1, rectX2, rectY2);
 	    QRect rect( rectX1, rectY1, rectX2 - rectX1 + 1, rectY2 - rectY1 + 1 );
 	    select( 0L, rect );
 	}

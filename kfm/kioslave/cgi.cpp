@@ -81,17 +81,10 @@ int KProtocolCGI::Open( KURL *url, int mode )
 	script.truncate( pathPos );
     }
     
-    printf( "Script: %s\n", script.data() );
-    printf( "Query: %s\n", query.data() );
-
     QString command =  kapp->kdedir() + script;
-    
-    printf("EXEC '%s'\n",command.data());
     
     setenv( "QUERY_STRING", query.data(), true );
     // setenv( "PATH_INFO", pathInfo.data(), true );
-	
-    printf( "Running: %s\n", command.data() );
 	
     fsocket = popen( command, "r" );
 	
@@ -103,8 +96,6 @@ int KProtocolCGI::Open( KURL *url, int mode )
 
     connected = TRUE;
     
-    printf("Opened\n");
-
     return ProcessHeader();    
 }
 

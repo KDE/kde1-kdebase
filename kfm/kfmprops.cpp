@@ -1097,7 +1097,7 @@ void DirPropsPage::applyChanges()
 	return;
     tmp = tmp.left( i + 1 );
 
-    debugT("$$$$$$$$$$$$$ Sending notify to '%s'\n", tmp.data());
+    // debugT("$$$$$$$$$$$$$ Sending notify to '%s'\n", tmp.data());
     KIOServer::sendNotify( tmp.data() );
 }
 
@@ -1176,7 +1176,7 @@ void DirPropsPage::drawWallPaper()
     
     if ( file != wallFile )
     {
-	debugT("Loading WallPaper '%s'\n",file.data());
+	// debugT("Loading WallPaper '%s'\n",file.data());
 	wallFile = file.data();
 	wallFile.detach();	
 	wallPixmap.load( file.data() );

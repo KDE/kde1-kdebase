@@ -33,7 +33,7 @@ int KProtocolTAR::AttachTAR( const char *_command )
 	cmd.sprintf( _command, "z" );
     else
 	cmd.sprintf( _command, "" );
-    printf("Starting tar: -> '%s' <-\n",cmd.data());
+
     if( Slave.Start( cmd ) == FAIL )
 	return FAIL;
     write( Slave.in, buffer, 2 );

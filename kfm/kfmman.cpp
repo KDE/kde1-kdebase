@@ -171,7 +171,7 @@ bool KFMManager::openURL( const char *_url, bool _reload )
     // Store the parameter for recursive function calls
     bReload = _reload;
     
-    debugT("Changing to URL %s\n", _url );
+    // debugT("Changing to URL %s\n", _url );
     
     KURL u( _url );
     if ( u.isMalformed() )
@@ -403,12 +403,12 @@ void KFMManager::writeBodyTag()
 	else
 	    d += ".directory";
     
-	debugT("Trying .directory\n");
+	// debugT("Trying .directory\n");
     
 	QFile f( d.data() );
 	if ( f.open( IO_ReadOnly ) )
 	{
-	    debugT("Opened .directory\n");
+	    // debugT("Opened .directory\n");
 	    
 	    QTextStream pstream( &f );
 	    KConfig config( &pstream );
@@ -751,7 +751,7 @@ void KFMManager::slotMimeType( const char *_type )
 	
 	// Ask the user what we should do
 	DlgLineEntry l( klocale->translate("Open With:"), "", 0L, true );
-	debugT("OPENING DLG\n");
+	// debugT("OPENING DLG\n");
 	if ( l.exec() )
 	{
 	    QString pattern = l.getText();
@@ -772,7 +772,7 @@ void KFMManager::slotMimeType( const char *_type )
 	    cmd += "\"";
 	    cmd += decoded;
 	    cmd += "\"";
-	    debugT("Executing stuff '%s'\n", cmd.data());
+	    // debugT("Executing stuff '%s'\n", cmd.data());
 	    
 	    KMimeBind::runCmd( cmd.data() ); */
 	}
@@ -869,7 +869,7 @@ void KFMManager::slotPopupActivated( int _id )
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
     {
-	debugT("Exec '%s'\n", s );
+	// debugT("Exec '%s'\n", s );
 	// Run the action 'txt' on every single file
 	KMimeBind::runBinding( s, txt );    
     }
@@ -881,7 +881,7 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
     char *s;
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
     {
-	debugT("Opening for '%s'\n",s);
+	// debugT("Opening for '%s'\n",s);
 	
 	KURL u( s );
 	if ( u.isMalformed() )
@@ -1016,7 +1016,7 @@ void KFMManager::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QP
     
     dropZone = _zone;
     
-    debugT(" Drop with destination %s\n", _dest );
+    // debugT(" Drop with destination %s\n", _dest );
     
     KURL u( _dest );
     
@@ -1115,7 +1115,7 @@ QString KFMManager::getVisualSchnauzerIconTag( const char *_url )
 		xv += "/.xvpics";
 	    else
 		xv += ".xvpics";
-	    debugT("XV='%s'\n",xv.data());
+	    // debugT("XV='%s'\n",xv.data());
 	    
 	    // Does the .xvpics directory exist ?
 	    DIR *dp = opendir( xv.data() );
@@ -1124,7 +1124,7 @@ QString KFMManager::getVisualSchnauzerIconTag( const char *_url )
 		closedir( dp );
 		
 		xv += "/";
-		debugT("XV2='%s'\n",xv.data());
+		// debugT("XV2='%s'\n",xv.data());
 		
 		// Assume XV pic is not available
 		bool is_avail = FALSE;
@@ -1140,7 +1140,7 @@ QString KFMManager::getVisualSchnauzerIconTag( const char *_url )
 		xvfile += u2.filename();
 		if ( !xv.isEmpty() )
 		{
-		    debugT("Local XVFile '%s'\n",xvfile.data());
+		    // debugT("Local XVFile '%s'\n",xvfile.data());
 		    // Is the XV pic available ?
 		    if ( lstat( xvfile, &buff ) == 0 )
 		    {

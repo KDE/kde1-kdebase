@@ -44,23 +44,23 @@ void read_xv_file( QImageIO *_imageio )
 
     // now follows a binary block of x*y bytes. 
 
-    debugT("Loading XView file %d %d %d\n",x,y,maxval);
+    // debugT("Loading XView file %d %d %d\n",x,y,maxval);
     
     char block[x*y];
 
     if (_imageio->ioDevice()->readBlock(block, x*y) != x*y) 
     {
-	debugT("kpixmap::readXVPICS could not read datablock of %d bytes\n", x*y);
+	// debugT("kpixmap::readXVPICS could not read datablock of %d bytes\n", x*y);
 	return;
     }
 
-    debugT("Loaded data\n");
+    // debugT("Loaded data\n");
     
     // Create the image
 
     QImage image( x, y, 8, maxval + 1, QImage::BigEndian );
     
-    debugT("Created image\n");
+    // debugT("Created image\n");
     
     // how do the color handling? they are absolute 24bpp
     // or at least can be calculated as such.
@@ -78,7 +78,7 @@ void read_xv_file( QImageIO *_imageio )
       image.setColor( j, qRgb( r, g, b ) );
     }
 
-    debugT("Created colors\n");
+    // debugT("Created colors\n");
     
     for ( int py = 0; py < y; py++ )
     {
@@ -89,13 +89,13 @@ void read_xv_file( QImageIO *_imageio )
     _imageio->setImage( image );
     _imageio->setStatus( 0 );
 
-    debugT("Loaded image\n");
+    // debugT("Loaded image\n");
     return;
 }
 
 void write_xv_file( const char *_filename, QPixmap &_pixmap )
 {
-    debugT("Saving to '%s'\n",_filename);
+    // debugT("Saving to '%s'\n",_filename);
     
     QFile f( _filename );
     if ( !f.open( IO_WriteOnly ) )
@@ -154,13 +154,13 @@ void write_xv_file( const char *_filename, QPixmap &_pixmap )
     QImage image = tp.convertToImage();
     if ( image.depth() == 1 )
     {
-	debugT("Converted image\n");
+	// debugT("Converted image\n");
 	image = image.convertDepth( 8 );
     }
     
     uchar buffer[ 128 ];
 
-    debugT("Image of depth %i\n",image.depth());
+    // debugT("Image of depth %i\n",image.depth());
     
     for ( int py = 0; py < h; py++ )
     {

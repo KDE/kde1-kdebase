@@ -54,7 +54,7 @@ KFMExec::KFMExec()
 
 void KFMExec::openURL( const char *_url  )
 {
-    debugT("Interested in %s\n", _url );
+    // debugT("Interested in %s\n", _url );
     
     KURL u( _url );
     if ( u.isMalformed() )
@@ -230,7 +230,7 @@ void KFMExec::slotMimeType( const char *_type )
 		
 	// Ask the user what we should do
 	DlgLineEntry l( klocale->translate("Open With:"), "", 0L, true );
-	debugT("OPENING DLG\n");
+	// debugT("OPENING DLG\n");
 	if ( l.exec() )
 	{
 	    QString pattern = l.getText();
@@ -254,7 +254,7 @@ void KFMExec::slotMimeType( const char *_type )
 	    cmd += "\"";
 	    cmd += decoded;
 	    cmd += "\"";
-	    debugT("Executing stuff '%s'\n", cmd.data()); 
+	    // debugT("Executing stuff '%s'\n", cmd.data()); 
 	    
 	    KMimeBind::runCmd( cmd.data() ); */
 
@@ -280,7 +280,7 @@ QString KFMExec::openLocalURL( const char *_url )
     QString tryURL;
     
     KMimeType *typ = KMimeType::getMagicMimeType( _url );
-    debugT("URL='%s' Type: '%s'\n",_url,typ->getMimeType());
+    // debugT("URL='%s' Type: '%s'\n",_url,typ->getMimeType());
     // A HACK
     // We must support plugin protocols here!
     // Do we try to open a tar file?
@@ -332,14 +332,14 @@ QString KFMExec::openLocalURL( const char *_url )
     } */
     else
     {
-	debugT("EXEC MIMETYPE\n");
+	// debugT("EXEC MIMETYPE\n");
 	// Execute the best matching binding for this URL.
 	if ( typ->run( _url ) )
 	    // No URL left since we have done the job
 	    // => return an empty string
 	    return QString();
 
-	debugT("Could not run\n");
+	// debugT("Could not run\n");
 	// We could not execute the mimetype
 	tryURL = _url;
     }

@@ -62,13 +62,9 @@ void KFMDirTree::fill()
 
 void KFMDirTree::slotDirectoryChanged( const char *_url )
 {
-    printf("NOTIFY DIRTREE '%s'\n",_url);
-    
     KURL u( _url );
     if ( u.isMalformed() )
 	return;
-    
-    printf("Processing\n");
     
     // Prepare the path in a way that allows quick comparison
     // with the return value of KFMDirTreeItem::getURL
@@ -76,15 +72,13 @@ void KFMDirTree::slotDirectoryChanged( const char *_url )
     if ( tmp.right(1) == "/" )
 	tmp.truncate( tmp.length() - 1 );
 
-    printf("Checking '%s'\n",tmp.data() );
-    
     // Do we display this URL ?
     KFinderItem *item;
     KFMDirTreeItem *kfmitem;
     for ( item = first(); item != 0L; item = next() )
     {
 	kfmitem = (KFMDirTreeItem*)item;
-	debugT("COMAPRING '%s' '%s'\n",tmp.data(),kfmitem->getURL());
+
 	if ( tmp == kfmitem->getURL() )
 	{
 	    update();
@@ -98,8 +92,6 @@ void KFMDirTree::update()
     int ypos, xpos;
     finderWin->offsets( xpos, ypos );
         
-    printf("UPDATE\n");
-    
     // Get a list of all visisble items
     QList<KFinderItem> openList;
     openList.setAutoDelete( FALSE);

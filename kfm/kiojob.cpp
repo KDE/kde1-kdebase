@@ -49,7 +49,6 @@ KIOJob::KIOJob( int _id )
 
 KIOJob::~KIOJob()
 {
-    debugT("===================== ~KIOJOB=%x\n",this);
     jobList.removeRef( this );
 }
 
@@ -60,7 +59,7 @@ void KIOJob::setOverWriteExistingFiles( bool _o )
 
 void KIOJob::mkdir( const char *_url )
 {
-    debugT("Making '%s'\n",_url);
+    // debugT("Making '%s'\n",_url);
     
     action = KIOJob::JOB_MKDIR;
     
@@ -89,7 +88,7 @@ void KIOJob::list( const char *_url, bool _reload, bool _bHTML )
    
     lstURL = _url;
     lstURL.detach();
-    debugT("LIST: Got '%s'\n",lstURL.data());
+    // debugT("LIST: Got '%s'\n",lstURL.data());
  
     KIODirectory *dir = 0L;
     if ( !_reload )
@@ -97,7 +96,7 @@ void KIOJob::list( const char *_url, bool _reload, bool _bHTML )
     
     if ( dir != 0L )
     {
-	debugT("GOT Cached information\n");
+	// debugT("GOT Cached information\n");
 	KIODirectoryEntry *e;
 	for ( e = dir->first(); e != 0L; e = dir->next() )
 	    emit newDirEntry( id, e );
@@ -428,7 +427,7 @@ void KIOJob::copy()
 	KURL su( p );
 	KURL du( p2 );
 
-	debugT("Have: '%s' '%s'\n",p,p2);
+	// debugT("Have: '%s' '%s'\n",p,p2);
 	
 	if ( strcmp( su.protocol(), "file" ) == 0 && strcmp( du.protocol(), "file" ) == 0 )
 	{
@@ -436,7 +435,7 @@ void KIOJob::copy()
 	    stat( su.path(), &buff );
 	    if ( S_ISDIR( buff.st_mode ) )
 	    {
-		debugT("Making diretory '%s'\n",du.path());
+		// debugT("Making diretory '%s'\n",du.path());
 		
 		if ( ::mkdir( du.path(), buff.st_mode ) == -1 )
 		    if ( errno != EEXIST )
@@ -460,7 +459,7 @@ void KIOJob::copy()
 		{
 		    if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 		    {
-			debugT("Adding '%s'\n",ep->d_name);
+			// debugT("Adding '%s'\n",ep->d_name);
 			QString s = p;
 			s.detach();
 			if ( s.length() > 0 && s.data()[ s.length() - 1 ] != '/' )
@@ -565,7 +564,7 @@ void KIOJob::move()
 	KURL su( p );
 	KURL du( p2 );
 
-	debugT("Moving from '%s' to '%s\n",p,p2);
+	// debugT("Moving from '%s' to '%s\n",p,p2);
 	
 	int i = 1;
 	// Moving on the local hard disk ?
@@ -614,14 +613,14 @@ void KIOJob::move()
 	    // Ok, that is not a real error.
 	    if ( errno == EXDEV )
 	    {
-		debugT("Testing for dir '%s'\n",su.path());
+		// debugT("Testing for dir '%s'\n",su.path());
 		struct stat buff;
 		stat( su.path(), &buff );
 		// We want to move a directory ?
 		// Then we must know each file in the tree ....
 		if ( S_ISDIR( buff.st_mode ) )
 		{
-		    debugT("Making diretory '%s'\n",du.path());
+		    // debugT("Making diretory '%s'\n",du.path());
 	    
 		    if ( ::mkdir( du.path(), S_IRWXU ) == -1 )
 			if ( errno != EEXIST )
@@ -731,7 +730,7 @@ void KIOJob::move()
     mvDelURLList.clear();
     for ( p = tmpDelURLList.last(); p != 0L; p = tmpDelURLList.prev() )
     {
-	debugT(">> REMOVING '%s'\n",p);
+	// debugT(">> REMOVING '%s'\n",p);
 	mvDelURLList.append( p );
     }
     
@@ -790,7 +789,7 @@ void KIOJob::del()
     {
 	p = it.current();
 	
-	debugT("Looking at '%s'\n",p);
+	// debugT("Looking at '%s'\n",p);
 	KURL su( p );
 
 	// int i = 1;
@@ -826,7 +825,7 @@ void KIOJob::del()
 			    s += "/";
 			s += ep->d_name;
 			    
-			debugT("Appending '%s'\n",s.data());
+			// debugT("Appending '%s'\n",s.data());
 			tmpDelURLList.append( s.data() );
 		    }
 		}
@@ -848,7 +847,7 @@ void KIOJob::doIt( KIOSlaveIPC * _slave )
     connect( slave, SIGNAL( fatalError( int, const char*, int ) ),
 	     this, SLOT( fatalError( int, const char*, int ) ) );
     connect( slave, SIGNAL( setPID( int ) ), this, SLOT( start( int ) ) );
-    connect( slave, SIGNAL( closed() ), this, SIGNAL( slotSlaveClosed() ) );
+    connect( slave, SIGNAL( closed() ), this, SLOT( slotSlaveClosed() ) );
 
     slave->getPID();
 }
@@ -956,7 +955,7 @@ void KIOJob::fatalError( int _kioerror, const char* _url, int )
 {
     kioError = _kioerror;
     
-    debugT("################################# fatalError called '%s'\n",_url);
+    // debugT("################################# fatalError called '%s'\n",_url);
     
     KMsgWin *m = 0L;
     KRenameWin *r = 0L;
@@ -1060,7 +1059,7 @@ void KIOJob::fatalError( int _kioerror, const char* _url, int )
 		{
 		    QString tmp;
 		    tmp.sprintf( "%s@%s", u.user(), u.host() );
-		    debugT("Removing '%s' from dict !!!!!!!!!!!!!!!! ########### !!!!!!\n",tmp.data() );
+		    // debugT("Removing '%s' from dict !!!!!!!!!!!!!!!! ########### !!!!!!\n",tmp.data() );
 		    passwordDict.remove( tmp.data() );
 		}
 	    }
@@ -1151,7 +1150,7 @@ void KIOJob::fatalError( int _kioerror, const char* _url, int )
 		{
 		    QString tmp;
 		    tmp.sprintf( "%s@%s", u.user(), u.host() );
-		    debugT("Removing '%s' from dict !!!!!!!!!!!!!!!! ########### !!!!!!\n",tmp.data() );
+		    // debugT("Removing '%s' from dict !!!!!!!!!!!!!!!! ########### !!!!!!\n",tmp.data() );
 		    passwordDict.remove( tmp.data() );
 		}
 	    }
@@ -1198,7 +1197,7 @@ void KIOJob::fatalError( int _kioerror, const char* _url, int )
     }
     if ( r != 0L )
     {
-	debugT("++++++++++++++++++++++++++++++ Connect ++++++++++++++++++++++++++\n");
+	// debugT("++++++++++++++++++++++++++++++ Connect ++++++++++++++++++++++++++\n");
 	connect( r, SIGNAL( result( QWidget*, int, const char*, const char* ) ),
 		 this, SLOT( msgResult2( QWidget*, int, const char*, const char* ) ) );
 	r->show();
@@ -1349,7 +1348,7 @@ void KIOJob::start( int _pid )
 
 void KIOJob::slaveIsReady()
 {
-    debugT("SlaveIsReady\n");
+    // debugT("SlaveIsReady\n");
 
     if ( cleanedUp )
     {
@@ -1638,7 +1637,7 @@ void KIOJob::slotInfo( const char *_text )
 
 void KIOJob::cancel()
 {
-    debugT("**********A\n");
+    // debugT("**********A\n");
     if ( slave )
     {
 	KIOSlaveIPC *s = slave;
@@ -1655,7 +1654,7 @@ void KIOJob::cancel()
 
 void KIOJob::done()
 {
-    debugT("Done\n");
+    // debugT("Done\n");
     
     if ( slave != 0L )
     {
@@ -1678,10 +1677,10 @@ void KIOJob::done()
     char *s;
     for ( s = notifyList.first(); s != 0L; s = notifyList.next() )
     {
-	debugT("NOTIFY '%s'\n",s);
+	// debugT("NOTIFY '%s'\n",s);
 	if ( globalNotify )
 	{
-	    debugT("NOTIFY IS GLOBAL '%s'\n", s);
+	    // debugT("NOTIFY IS GLOBAL '%s'\n", s);
 	    KIOServer::sendNotify( s );
 	}
 	emit notify( id, s ); 
@@ -1708,17 +1707,17 @@ void KIOJob::deleteAllJobs()
 
 QString KIOJob::completeURL( const char *_url )
 {
-    debugT("Is '%s' complete ? \n",_url );
+    // debugT("Is '%s' complete ? \n",_url );
     
     KURL u( _url );
     if ( u.isMalformed() )
 	return QString( _url );
     
-    debugT("Is not malformed '%s' '%s'\n",u.user(), u.passwd() );
+    // debugT("Is not malformed '%s' '%s'\n",u.user(), u.passwd() );
     
     if ( u.user() != 0L && u.user()[0] != 0 && ( u.passwd() == 0L || u.passwd()[0] == 0 ) )
     {
-	debugT("Looking for password\n");
+	// debugT("Looking for password\n");
 	   
 	QString head;
 	head.sprintf( "Password for %s@%s", u.user(), u.passwd() );
@@ -1729,15 +1728,15 @@ QString KIOJob::completeURL( const char *_url )
 	
 	if ( passwordDict[ tmp2.data() ] == 0L )
 	{
-	    debugT("A\n");
+	    // debugT("A\n");
 	    
 	    PasswordDialog *dlg = new PasswordDialog( head.data(), 0L, "", true );
 	    if ( !dlg->exec() )
 	    {
-		debugT("Cancled\n");
+		// debugT("Cancled\n");
 		return QString( _url );
 	    }
-	    debugT("B\n");
+	    // debugT("B\n");
 	    passwd = dlg->password();
 	    delete dlg;
 	}
@@ -1755,7 +1754,6 @@ QString KIOJob::completeURL( const char *_url )
 	int j = url.find( "://" );
 	url.replace( j + 3, i - ( j + 3 ), tmp.data() );
 
-	debugT("<<<<<<<<<<<<< Converted to '%s'\n",url.data() );
 	return QString( url );
     }
     

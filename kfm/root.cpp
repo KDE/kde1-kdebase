@@ -122,7 +122,7 @@ void KRootWidget::slotPopupActivated( int _id )
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
     {
-	debugT("Exec '%s'\n", s );
+	// debugT("Exec '%s'\n", s );
 	// Run the action 'txt' on every single file
 	KMimeBind::runBinding( s, txt );    
     }
@@ -480,7 +480,7 @@ void KRootWidget::update()
     
     if ( dp == NULL )
     {
-	debugT("'%s'\n",u.path());
+	// debugT("'%s'\n",u.path());
 	warning(klocale->translate("ERROR: Could not read desktop directory '%s'"), desktopDir.data());
 	exit(1);
     }
@@ -595,7 +595,7 @@ void KRootWidget::dropUpdateIcons( int _x, int _y )
     
     DIR *dp;
     struct dirent *ep;
-    debugT("Opening '%s'\n",u.path());
+    // debugT("Opening '%s'\n",u.path());
     
     dp = opendir( u.path() );
     if ( dp == NULL )
@@ -789,7 +789,7 @@ void KRootWidget::slotPopupOpenWith()
 	}
 	cmd += "\" ";
     }
-    debugT("Executing '%s'\n", cmd.data());
+    // debugT("Executing '%s'\n", cmd.data());
     
     KMimeBind::runCmd( cmd.data() );
 }              
@@ -1212,7 +1212,7 @@ void KRootIcon::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QPo
     
     dropZone = _zone;
     
-    debugT(" Drop with destination %s\n", _dest );
+    // debugT(" Drop with destination %s\n", _dest );
     
     KURL u( _dest );
     

@@ -25,7 +25,7 @@ KFMJob::KFMJob( )
 
 bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_currentURL, QList<KIODirectoryEntry> *_list )
 {
-    debugT("Changing to ftp %s\n", _url );
+    // debugT("Changing to ftp %s\n", _url );
     
     KURL u( _url );
     if ( u.isMalformed() )
@@ -82,7 +82,7 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
 	    url += "/"; 
 
 	// Lets try to load it as directory
-	debugT("Loading DIRECTORY\n");    
+	// debugT("Loading DIRECTORY\n");    
 	bFileLoad = FALSE;
 	job = new KIOJob;
 	job->setAutoDelete( FALSE );
@@ -106,7 +106,7 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
 
 void KFMJob::openFile()
 {
-    debugT("OPEN FILE\n");
+    // debugT("OPEN FILE\n");
     isDir = FALSE;
     
     // OK, we try to load the file
@@ -218,11 +218,11 @@ void KFMJob::testMimeType( const char *_text, int _len )
     bCheckedMimeType = TRUE;
     
     KMimeMagicResult *result = KMimeType::findBufferType( _text, _len );
-    debugT("RETURN '%s' '%i'\n",result->getContent().data(),result->getAccuracy() );
+    // debugT("RETURN '%s' '%i'\n",result->getContent().data(),result->getAccuracy() );
     
     if ( strcmp( "text/html", result->getContent() ) == 0 ) 
     {
-	debugT("IS HTML\n");
+	// debugT("IS HTML\n");
 	isHTML = TRUE;
 	emit mimeType( "text/html" );
 	emit data( _text, _len );
@@ -233,7 +233,7 @@ void KFMJob::testMimeType( const char *_text, int _len )
     }
     else
     {
-	debugT("UNKNOWN TYPE\n");
+	// debugT("UNKNOWN TYPE\n");
 	// Dont know the mime type
 	emit mimeType( 0L );
     }
@@ -246,7 +246,7 @@ void KFMJob::slotFinished( int )
     // Did we only try to load the URL as directory and did we get 0 entries ?
     if ( !bFileLoad && !isDir )
     {
-	debugT("======================= TELLING JOB to destroy itself\n");
+	// debugT("======================= TELLING JOB to destroy itself\n");
 	disconnect( job, 0, this, 0 );
 	job->setAutoDelete( TRUE );
 	job = 0L;
@@ -283,7 +283,7 @@ void KFMJob::stop()
     
     bRunning = FALSE;
    
-    debugT("Stopping\n");
+    // debugT("Stopping\n");
     
     if ( job )
     {

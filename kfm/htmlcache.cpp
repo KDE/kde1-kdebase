@@ -16,17 +16,9 @@ HTMLCacheJob::HTMLCacheJob( const char *_url, const char *_dest ) : KIOJob()
     url.detach();
     dest = _dest;
     dest.detach();
-    /* bytesTransfered = 0;
-    percent = 0;
-    timer1.start();
-    timer2.start(); */
     
     connect( this, SIGNAL( finished( int ) ), this, SLOT( slotJobFinished( int ) ) );
-    connect( this, SIGNAL( progress( int, int ) ), this, SLOT( slotProgress( int, int ) ) );
-
-    /*    timer = new QTimer( this );
-    connect( timer, SIGNAL( timeout() ), this, SLOT( slotProgressTimeout() ) );
-    timer->start( 5000 ); */
+    connect( this, SIGNAL( error( int, const char* ) ), this, SLOT( slotError( int, const char* ) ) );
 }
 
 void HTMLCacheJob::copy()
@@ -43,26 +35,9 @@ void HTMLCacheJob::slotJobFinished( int )
     emit finished( this );
 }
 
-void HTMLCacheJob::slotProgressTimeout()
+void HTMLCacheJob::slotError( int _kioerror, const char* _text )
 {
-    slotProgress( percent, bytesTransfered );
-}
-
-void HTMLCacheJob::slotProgress( int _percent, int _bytesTransfered )
-{
-    /*    int oldBytesTransfered = bytesTransfered;
-    bool stalled = false;
-    
-    percent = _percent;
-    bytesTransfered = _bytesTransfered;
-    
-    if ( bytesTransfered != oldBytesTransfered )
-	timer2.restart();
-    else if ( timer2.elapsed() > 5000 )
-	stalled = true;
-    
-    emit progress( this, percent, bytesTransfered,
-		   (float)bytesTransfered / 1024. / ( (float)timer1.elapsed() / 1000.0 ), stalled ); */
+    emit error( this, _kioerror, _text );
 }
 
 HTMLCache::HTMLCache()
@@ -72,7 +47,7 @@ HTMLCache::HTMLCache()
     char *p = getenv( "HOME" );
     if ( !p )
     {
-	debugT("ERROR: $HOME is not defined\n");
+	warning("ERROR: $HOME is not defined\n");
 	exit(1);
     }    
     cachePath.sprintf( "file:%s/.kde/kfm/cache/", p );
@@ -81,13 +56,6 @@ HTMLCache::HTMLCache()
     urlDict.setAutoDelete( true );
     todoURLList.setAutoDelete( TRUE );
     instanceJobList.setAutoDelete( false );
-}
-
-void HTMLCache::slotProgress( HTMLCacheJob *_job, int _percent, int _bytesTransfered,
-			      float _rate, bool _stalled )
-{
-    /*    emit progress( _job->getSrcURL(), _job->getDestURL() + 5,
-		   _percent, _bytesTransfered, _rate, _stalled ); */
 }
 
 void HTMLCache::slotURLRequest( const char *_url )
@@ -122,8 +90,8 @@ void HTMLCache::slotURLRequest( const char *_url )
     job = new HTMLCacheJob( _url, tmp.data() );
     job->display( false );
     connect( job, SIGNAL( finished( HTMLCacheJob * ) ), this, SLOT( slotJobFinished( HTMLCacheJob * ) ) );
-    connect( job, SIGNAL( progress( HTMLCacheJob *, int, int, float, bool ) ),
-	     this, SLOT( slotProgress( HTMLCacheJob *, int, int, float, bool ) ) );
+    connect( job, SIGNAL( error( HTMLCacheJob*, int, const char* ) ),
+	     this, SLOT( slotError( HTMLCacheJob*, int, const char* ) ) );
     staticJobList.append( job );
     instanceJobList.append( job );
     job->copy();
@@ -148,6 +116,12 @@ void HTMLCache::slotCancelURLRequest( const char *_url )
 	    staticJobList.removeRef( j );
 	    return;
 	}
+}
+
+void HTMLCache::slotError( HTMLCacheJob *_job, int, const char * )
+{
+    disconnect( _job, 0, this, 0 );
+    slotJobFinished( _job );
 }
 
 void HTMLCache::slotJobFinished( HTMLCacheJob* _job )

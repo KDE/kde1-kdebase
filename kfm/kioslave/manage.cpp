@@ -31,7 +31,6 @@ int ProtocolSupported(const char *url)
 
 int HaveProto(const char *url)
 {
-	printf("Checking for support: %s\n",url);
 	// Something on the local file system ?
 	if( url[0] == '/' ) return 1;
 	if( strncmp( url, "ftp:", 4 ) == 0) return 1;

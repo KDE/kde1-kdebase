@@ -635,7 +635,7 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, bool _isdir )
 		tmp = url.data();
 		tmp.detach();
 		_url = tmp.data();
-		debugT("Changed to '%s'\n",_url);
+		// debugT("Changed to '%s'\n",_url);
 		KURL u2( _url );
 		u = u2;
 	    }
@@ -657,7 +657,7 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, bool _isdir )
 		tmp = x.data();
 		tmp.detach();
 		_url = tmp.data();
-		debugT("$$$$$$$$$ Changed to '%s'\n",_url);
+		// debugT("$$$$$$$$$ Changed to '%s'\n",_url);
 		KURL u2( _url );
 		u = u2;
 	    }
@@ -680,12 +680,12 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, bool _isdir )
     else
     {
 	KMimeType *typ = KMimeType::getMagicMimeType( _url );
-	debugT("================== Found type '%s'\n", typ->getMimeType());
+	// debugT("================== Found type '%s'\n", typ->getMimeType());
 	
 	if ( !typ->hasBindings() )
 	    return;
 
-	debugT("================ Has Bindings\n");
+	// debugT("================ Has Bindings\n");
 	
 	KMimeBind *bind;
 	for ( bind = typ->firstBinding(); bind != 0L; bind = typ->nextBinding() )
@@ -1156,7 +1156,7 @@ void KMimeBind::initApplications( const char * _path )
 						  klocale->translate("Could not find mime type\n") + bind + "\n" + klocale->translate("in ") + file );
 			else
 			{
-			    debugT( "Added Binding '%s' to '%s'\n",app.data(),t->getMimeType() );
+			    // debugT( "Added Binding '%s' to '%s'\n",app.data(),t->getMimeType() );
 			    
 			    t->append( new KMimeBind( app.data(), exec.data(), allowdefault,
 						      prots[0].data(),
@@ -1277,9 +1277,9 @@ bool KMimeBind::runBinding( const char *_url )
 	cmd.replace(pos,2,s.data());
     }        
 
-    debugT("::CMD = %s\n",cmd.data());
+    // debugT("::CMD = %s\n",cmd.data());
     runCmd( cmd.data() );
-    debugT("Executed the binding\n");
+    // debugT("Executed the binding\n");
     return TRUE;
 }
 
@@ -1316,7 +1316,7 @@ void KMimeBind::runCmd( const char *_exec, QStrList &_args )
 
 void KMimeBind::runCmd( const char *_cmd )
 {
-    debugT("CMD='%s'\n",_cmd );
+    // debugT("CMD='%s'\n",_cmd );
     
     char *cmd = new char[ strlen( _cmd ) + 1 ];
     strcpy( cmd, _cmd );
@@ -1377,7 +1377,7 @@ void KMimeBind::runCmd( const char *_cmd )
 	return;
     }
     
-    debugT("Running '%s'\n",argv[0] );
+    // debugT("Running '%s'\n",argv[0] );
 
     int pid;
     if ( ( pid = fork() ) == 0 )
@@ -1397,7 +1397,7 @@ void KMimeBind::runCmd( const char *_cmd )
     }
     delete [] argv;
     delete [] cmd;
-    debugT("PID of started process is '%i'\n",pid);
+    // debugT("PID of started process is '%i'\n",pid);
 }
 
 KFMConfig* KMimeBind::openKFMConfig( const char *_url )
@@ -1504,7 +1504,7 @@ bool KMimeType::runBinding( const char *_url, const char *_binding )
     // Iterate over all applications bound to the mime type
     for ( bind = firstBinding(); bind != 0L; bind = nextBinding() )
     {
-	debugT("!!! '%s' vs '%s'\n",bind->getProgram(), _binding );
+	// debugT("!!! '%s' vs '%s'\n",bind->getProgram(), _binding );
 	// Is it the one we want ?
 	if ( strcmp( bind->getProgram(), _binding ) == 0 )
 	    return bind->runBinding( _url );
@@ -1608,7 +1608,7 @@ bool ExecutableMimeType::runAsApplication( const char *_url, QStrList *_argument
 
 bool KDELnkMimeType::run( const char *_url )
 {
-    debugT("A\n");
+    // debugT("A\n");
   
     KURL u( _url );
     KFMConfig *config = 0L;
@@ -1805,14 +1805,14 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
 	}
 	cmd += "-e ";
 	cmd += exec.data();
-	debugT("Running '%s'\n",cmd.data());
+	// debugT("Running '%s'\n",cmd.data());
 	// system( cmd.data() );
 	KMimeBind::runCmd( cmd );
     }
     else
     {
 	QString cmd = exec.data();
-	debugT("Running '%s'\n",cmd.data());
+	// debugT("Running '%s'\n",cmd.data());
 	// system( cmd.data() );
 	KMimeBind::runCmd( cmd );
     }

@@ -33,7 +33,7 @@ int KProtocol::CloseDir()					{ return(NotImplemented()); }
 int KProtocol::MkDir(KURL *)				{ return(NotImplemented()); }
 KProtocolDirEntry *KProtocol::ReadDir()		{ return(NULL); }
 
-int KProtocol::GetPermissions( KURL & ) { printf("Permissions not impl.\n"); return -1; }
-void KProtocol::SetPermissions( KURL &, int ) { printf("Permissions not impl.\n"); }
+int KProtocol::GetPermissions( KURL & ) { return -1; }
+void KProtocol::SetPermissions( KURL &, int ) { }
 
 #include "protocol.moc"

@@ -122,7 +122,6 @@ int KProtocolFTP::ftpOpen(const char *host)
     struct servent *pse;
     int on=1;
 
-	printf("A\n");
     ftplib_lastresp[0] = '\0';
     memset(&sin,0,sizeof(sin));
     sin.sin_family = AF_INET;
@@ -139,7 +138,7 @@ int KProtocolFTP::ftpOpen(const char *host)
 		perror("gethostbyname");
 		return 0;
     }
-	printf("B\n");
+
     memcpy((char *)&sin.sin_addr, phe->h_addr, phe->h_length);
     sControl = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
     if (sControl == -1)
@@ -154,7 +153,7 @@ int KProtocolFTP::ftpOpen(const char *host)
 		close(sControl);
 		return 0;
     }
-	printf("C\n");
+
     if ( ::connect(sControl, (struct sockaddr *)&sin, sizeof(sin)) == -1)
     {
 		perror("connect");
@@ -169,14 +168,14 @@ int KProtocolFTP::ftpOpen(const char *host)
 		return 0;
     }
     nControl->handle = sControl;
-	printf("D\n");
+
     if (readresp('2') == 0)
     {
 		close(sControl);
 		free(nControl);
 		return 0;
     }
-	printf("E\n");
+
     return 1;
 }
 
@@ -208,22 +207,19 @@ int KProtocolFTP::ftpLogin( const char *user, const char *pass)
 {
     char tempbuf[64];
 
-	printf("LOGIN!\n");
-    printf("ftplib_lastresp[0] = '\\0';\n");
     ftplib_lastresp[0] = '\0';
-	printf("sprintf(tempbuf,...)\n");
+
     sprintf(tempbuf,"user %s",user);
-	printf("init rspbuf\n");
+
     rspbuf[0]='\0';
-	printf("Sending login %s\n",user);
+
     if (!ftpSendCmd(tempbuf,'3'))
     {
-		printf("accepted w/o pass\n");
-		if (rspbuf[0]=='2') return 1; /* no password required */
-		return 0;
+	if (rspbuf[0]=='2') return 1; /* no password required */
+	return 0;
     }      
     sprintf(tempbuf,"pass %s",pass);
-	printf("Sending pass\n");
+
     return ftpSendCmd(tempbuf,'2');
 }
 
@@ -419,11 +415,9 @@ KProtocolFTP::KProtocolFTP()
 
 KProtocolFTP::~KProtocolFTP()
 {
-	printf("entering destructor...\n");
 	if(dirfile) CloseDir();
-	printf("dirfile done.\n");
+
 	Close();
-	printf("leaving destructor\n");
 }
 
 int KProtocolFTP::OpenConnection(const char *command, const char *path, char mode)
@@ -442,38 +436,35 @@ int KProtocolFTP::OpenConnection(const char *command, const char *path, char mod
 	else
     	strcpy(buf,command);
 
-	printf("sending command '%s'\n",buf);
     if (!ftpSendCmd(buf,'1')) return Error(KIO_ERROR_CouldNotConnect,
 				"Error requesting file/dir from server");
     if ((sData = accept_connect()) < 0)
     {
 		if (sData == -2) perror("accept");
-		else printf("ERROR!: %s",rspbuf);
+		else fprintf( stderr, "ERROR!: %s",rspbuf);
 		return Error(KIO_ERROR_CouldNotConnect,
 				"Could not establish data connection",errno);
     }
-	printf("very good, socket is %d\n",sData);
-	return SUCCESS;
+
+    return SUCCESS;
 }
 
 int KProtocolFTP::CloseConnection()
 {
-	/** readresp('2') ?? gibt an ob Transmission erfolgreich war! **/
-	if(sData != -1)
-	{
-		printf("sData:A\n");
-    	shutdown(sData,2);
-		printf("sData:B\n");
-    	close(sData);
-		sData = -1;
-	}
+    /** readresp('2') ?? gibt an ob Transmission erfolgreich war! **/
+    if(sData != -1)
+    {
+	shutdown(sData,2);
+	close(sData);
+	sData = -1;
+    }
+
     if(sDatal != -1)
-	{
-		printf("sDatal:A\n");
-		close(sDatal);
-		sDatal = -1;
-	}
-	return 1;
+    {
+	close(sDatal);
+	sDatal = -1;
+    }
+    return 1;
 }
 
 int KProtocolFTP::OpenDir(KURL *url)
@@ -494,24 +485,24 @@ KProtocolDirEntry *KProtocolFTP::ReadDir()
 	{
 		if(char *p_access = strtok(buffer," "))
 		if(char *p_junk = strtok(NULL," "))
-        if(char *p_owner = strtok(NULL," "))
-        if(char *p_group = strtok(NULL," "))
-        if(char *p_size = strtok(NULL," "))
-        if(char *p_date_1 = strtok(NULL," "))
-        if(char *p_date_2 = strtok(NULL," "))
-        if(char *p_date_3 = strtok(NULL," "))
-        if(char *p_name = strtok(NULL," \r\n"))
-		{
-			de.access	= p_access;
-			de.owner	= p_owner;
-			de.group	= p_group;
-			de.size		= atoi(p_size);
-			de.isdir	= p_access[0]=='d';
-			de.name		= p_name;
-			if(de.isdir) de.name += "/";
-			de.date.sprintf("%s %s %s",p_date_1, p_date_2, p_date_3);
-			return(&de);
-		}
+		    if(char *p_owner = strtok(NULL," "))
+			if(char *p_group = strtok(NULL," "))
+			    if(char *p_size = strtok(NULL," "))
+				if(char *p_date_1 = strtok(NULL," "))
+				    if(char *p_date_2 = strtok(NULL," "))
+					if(char *p_date_3 = strtok(NULL," "))
+					    if(char *p_name = strtok(NULL," \r\n"))
+					    {
+						de.access	= p_access;
+						de.owner	= p_owner;
+						de.group	= p_group;
+						de.size		= atoi(p_size);
+						de.isdir	= p_access[0]=='d';
+						de.name		= p_name;
+						if(de.isdir) de.name += "/";
+						de.date.sprintf("%s %s %s",p_date_1, p_date_2, p_date_3);
+						return(&de);
+					    }
 	}
 	return(NULL);
 }
@@ -530,96 +521,91 @@ int KProtocolFTP::CloseDir()
 
 int KProtocolFTP::Connect(KURL *url)
 {
-	QString user, passwd;
-	printf("connecting %s\n",url->host());
+    QString user, passwd;
+
     if (!ftpOpen(url->host()))
-		return(Error(KIO_ERROR_CouldNotConnect, "Could not connect", 0));
+	return(Error(KIO_ERROR_CouldNotConnect, "Could not connect", 0));
+    
+    if(strlen(url->user()))
+    {
+	user = url->user();
+	passwd = url->passwd();
+    }
+    else
+    {
+	user = FTP_LOGIN;
+	passwd = FTP_PASSWD;
+    }
 
-	if(strlen(url->user()))
-	{
-		user = url->user();
-		passwd = url->passwd();
-	}
-	else
-	{
-		user = FTP_LOGIN;
-		passwd = FTP_PASSWD;
-	}
-	printf("Login: \n");
-	if(!ftpLogin(user,passwd))
-		return(Error(KIO_ERROR_CouldNotLogin, "invalid passwd or username"));
-
-	printf("... connection established!\n");
-	return(SUCCESS);
+    if(!ftpLogin(user,passwd))
+	return(Error(KIO_ERROR_CouldNotLogin, "invalid passwd or username"));
+    
+    return(SUCCESS);
 }
 
 int KProtocolFTP::Open(KURL *url, int mode)
 {
-	if(Connect(url) == FAIL) return(FAIL);
-	if(mode & READ)
-	{
-		int rc = OpenConnection("retr",url->path(),'I');
-		if(rc == FAIL)
-			return Error(KIO_ERROR_CouldNotConnect,"Error building connection");
-    	printf("Calculating size\n");
+    if(Connect(url) == FAIL) return(FAIL);
+    if(mode & READ)
+    {
+	int rc = OpenConnection("retr",url->path(),'I');
+	if(rc == FAIL)
+	    return Error(KIO_ERROR_CouldNotConnect,"Error building connection");
     
     	// Read the size from the response string
     	if ( strlen( rspbuf ) > 4 )
     	{
-			char *p = strchr( rspbuf, '(' );
-			if ( p != 0L ) size = atol( p + 1 );
+	    char *p = strchr( rspbuf, '(' );
+	    if ( p != 0L ) size = atol( p + 1 );
     	}
-
-    	printf("Size is %ld (rc is %d)\n",size ,rc);
-		bytesleft = size;
-		return(SUCCESS);
-	}
-	if(mode & WRITE)
-	{
-		if(OpenConnection("stor",url->path(),'I') == SUCCESS)
-			return(SUCCESS);
-	}
-	return(FAIL);
+	
+	
+	bytesleft = size;
+	return(SUCCESS);
+    }
+    if(mode & WRITE)
+    {
+	if(OpenConnection("stor",url->path(),'I') == SUCCESS)
+	    return(SUCCESS);
+    }
+    return(FAIL);
 }
 
 int KProtocolFTP::Close()
 {
-	if(CloseConnection()) return(SUCCESS);
-	return(FAIL);
+    if(CloseConnection()) return(SUCCESS);
+    return(FAIL);
 }
 
 long KProtocolFTP::Size()
 {
-	return(size);
+    return(size);
 }
 
 int KProtocolFTP::atEOF()
 {
-	printf("atEOF? ... %s! bytesleft =  %ld\n",(bytesleft<=0)?"yes":"no",bytesleft);
-	return(bytesleft <= 0);
+    return(bytesleft <= 0);
 }
 
 long KProtocolFTP::Read(void *buffer, long len)
 {
-	printf("Trying to read...\n");
-	int n = read(sData,buffer,len);
-	bytesleft -= n;
-	return(n);
+    int n = read(sData,buffer,len);
+    bytesleft -= n;
+    return(n);
 }
 
 long KProtocolFTP::Write(void *buffer, long len)
 {
-	printf("Trying to write...\n");
-	return(write(sData,buffer,len));
+    return(write(sData,buffer,len));
 }
 
 int KProtocolFTP::MkDir(KURL *url)
 {
-	if(Connect(url) == FAIL) return(FAIL);
-	if(!ftpMkdir(url->path()))
-		return(Error(KIO_ERROR_CouldNotMkdir,"Can't create dir on ftp server"));
-	ftpQuit();
-	return(SUCCESS);
+    if(Connect(url) == FAIL) return(FAIL);
+    if(!ftpMkdir(url->path()))
+	return(Error(KIO_ERROR_CouldNotMkdir,"Can't create dir on ftp server"));
+    ftpQuit();
+    return(SUCCESS);
 }
 
 #include "ftp.moc"

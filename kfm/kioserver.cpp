@@ -358,6 +358,21 @@ void KIOServer::sendMountNotify2()
 
 QString KIOServer::findDeviceMountPoint( const char *_device, const char *_file )
 {
+    // Get the real device name, not some link.
+    char buffer[1024];
+    struct stat lbuff;
+    lstat( _device, &lbuff );
+
+    if ( S_ISLNK( lbuff.st_mode ) )
+    {
+	int n = readlink( _device, buffer, 1022 );
+	if ( n > 0 )
+	{
+	    buffer[ n ] = 0;
+	    _device = buffer;
+	}
+    }
+    
     int len = strlen( _device );
     
     FILE *f;
@@ -562,16 +577,16 @@ void KIOServer::newSlave( KIOSlaveIPC * _slave )
 
 void KIOServer::newSlave2( KIOSlaveIPC * _slave )
 {
-    debugT("New Slave arrived\n");
+    // debugT("New Slave arrived\n");
     
     if ( waitingJobs.count() == 0 )
     {
-	debugT("No Job waiting\n");
+	// debugT("No Job waiting\n");
 	freeSlaves.append( _slave );
 	return;
     }
     
-    debugT("Job served with new slave\n");
+    // debugT("Job served with new slave\n");
     KIOJob* job = waitingJobs.first();
     waitingJobs.removeRef( job );
     job->doIt( _slave );
@@ -579,16 +594,16 @@ void KIOServer::newSlave2( KIOSlaveIPC * _slave )
 
 void KIOServer::getSlave( KIOJob *_job )
 {
-    debugT("Request for slave\n");
+    // debugT("Request for slave\n");
     if ( freeSlaves.count() == 0 )
     {
-	debugT("No slave avaulable\n");
+	// debugT("No slave avaulable\n");
 	waitingJobs.append( _job );
 	runNewSlave();
 	return;
     }
     
-    debugT("Job served with waiting slave\n");
+    // debugT("Job served with waiting slave\n");
     KIOSlaveIPC *slave = freeSlaves.first();
     freeSlaves.removeRef( slave );
     _job->doIt( slave );
@@ -611,7 +626,7 @@ void KIOServer::runNewSlave()
 
 void KIOServer::freeSlave( KIOSlaveIPC *_slave )
 {
-    debugT("++++++++ Got Slace back\n");
+    // debugT("++++++++ Got Slace back\n");
     newSlave2( _slave );
 }
 
