@@ -1013,7 +1013,7 @@ msgid ""
 msgstr ""
 "Die gewünschte Aktion\n"
 "'%s'\n"
-"ist nocht nicht implementiert."
+"ist noch nicht implementiert."
 
 #: kiojob.cpp:1202
 #, c-format
