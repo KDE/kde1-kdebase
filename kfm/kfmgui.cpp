@@ -1015,7 +1015,7 @@ void KfmGui::slotUpdateHistory( bool _back, bool _forward )
     enableToolbarButton( 2, _forward );
     mgo->clear();
     mgo->disconnect( this );
-    // The go menu, with items in the same order as the toolbar. Is this a good idea ? DF.
+    // The go menu, with items in the same order as the toolbar.
     mgo->insertItem( klocale->translate( "&Up" ),
 			this, SLOT( slotUp() ), ALT+Key_Up );
     mgo->insertItem( klocale->translate( "&Back" ),
@@ -1023,7 +1023,7 @@ void KfmGui::slotUpdateHistory( bool _back, bool _forward )
     mgo->insertItem( klocale->translate( "&Forward" ),
 			this, SLOT( slotForward() ), ALT+Key_Right );
     mgo->insertItem( klocale->translate( "&Home" ),
-			this, SLOT( slotHome() ) );
+			this, SLOT( slotHome() ), ALT+Key_Home );
     mgo->insertSeparator();
 
     connect( mgo, SIGNAL( activated( int ) ),
