@@ -6,6 +6,10 @@ Name=Breton
 Name[en]=Breton
 Name[en_US]=Breton
 Name[de]=Bretonisch
+Name[br]=Brezhoneg
+Name[es]=Bretón
+Name[pt]=Bretõens
+
 
 [ca]
 Name=Catalan
@@ -132,6 +136,7 @@ Name[no]=Islandsk
 Name[is]=Íslenska
 Name[sv]=isländska
 Name[fr]=Islandois
+Name[br]=Islandeg
 
 [sv]
 Name=Swedish
@@ -376,15 +381,19 @@ Name=Esperanto
 Name[no]=Esperanto
 Name[de]=Esperanto
 Name[ro]=Esperanto
+Name[br]=Esperanteg
 
 [mk]
 Name=Macedonian
 Name[de]=Mazedonisch
+Name[br]=Makedonieg
 
 [ko]
 Name=Korean
 Name[de]=Koreanisch
+Name[br]=Koreeg
 
 [tr]
 Name=Turkish
 Name[de]=Türkisch
+Name[br]=Turkeg
