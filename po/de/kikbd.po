@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
 "POT-Creation-Date: 1998-10-30 11:57+0100\n"
-"PO-Revision-Date: 1998-05-03 21:20+0100\n"
-"Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
+"PO-Revision-Date: 1998-11-01 14:35+0100\n"
+"Last-Translator: Harri Porten <porten@kde.org>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
@@ -18,7 +18,7 @@ msgstr ""
 #: kikbd.cpp:116
 msgid "KDE International Keyboard already started on this display."
 msgstr ""
-"Die KDE-Internationale-Tastatur wurde bereits auf diesem Display gestartert."
+"Die KDE-Internationale-Tastatur wurde bereits auf diesem Display gestartet."
 
 #: kikbd.cpp:289
 #, c-format
@@ -54,7 +54,7 @@ msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
 "Alt symbols disabled"
 msgstr ""
-"Kann den Modusschalter nicht auf %s setzten bei Tastertur %s.\n"
+"Kann den Modusschalter nicht auf %s setzten bei Tastatur %s.\n"
 "Alt-Symbole deaktiviert"
 
 #: kikbd.cpp:386
@@ -209,14 +209,12 @@ msgid "Author:  Not specified"
 msgstr ""
 
 #: kikbdconf.cpp:385
-#, fuzzy
 msgid "Author"
-msgstr "Autostart"
+msgstr "Autor"
 
 #: kikbdconf.cpp:391
-#, fuzzy
 msgid "Description:  "
-msgstr "Beschreibung"
+msgstr "Beschreibung:  "
 
 #: kikbdconf.cpp:394
 msgid "Source:  "
@@ -261,17 +259,17 @@ msgstr ""
 #: kikbdconf.cpp:457
 #, fuzzy
 msgid "International keyboard ERROR"
-msgstr "Internationale Tastertur"
+msgstr "Internationale Tastatur"
 
 #: kikbdconf.cpp:473
 #, fuzzy
 msgid "International keyboard warning"
-msgstr "Internationale Tastertur"
+msgstr "Internationale Tastatur"
 
 #: kikbdconf.cpp:480 kikbdconf.cpp:485 kikbdconf.cpp:498
 #, fuzzy
 msgid "International keyboard question"
-msgstr "Internationale Tastertur"
+msgstr "Internationale Tastatur"
 
 #: kikbdconf.cpp:487
 msgid "Configure"
@@ -308,7 +306,7 @@ msgstr "Oben"
 
 #: widgets.cpp:127
 msgid "Up selected keyboard map"
-msgstr "Ausgwählte Tastaturtabelle nach oben"
+msgstr "Ausgewählte Tastaturtabelle nach oben"
 
 #: widgets.cpp:131
 #, fuzzy
@@ -337,7 +335,7 @@ msgstr "Verwende ,,Hotlist\""
 msgid ""
 "Use only default and last active keyboard maps to switching from keyboard"
 msgstr ""
-"Verwende nur voreingestellte und letztaktive Tastaturtabellen zum "
+"Verwende nur voreingestellte und zuletzt aktive Tastaturtabellen zum "
 "Tastaturwechsel"
 
 #: widgets.cpp:215
@@ -385,7 +383,7 @@ msgstr "Ton"
 
 #: widgets.cpp:430
 msgid "Beep when ever keyboard mapping changed"
-msgstr "Ton beim Wechsel der Tasterturtabelle"
+msgstr "Ton beim Wechsel der Tastaturtabelle"
 
 #: widgets.cpp:433
 #, fuzzy
@@ -448,7 +446,7 @@ msgstr "Erweitertes Verhalten: Jedes Fenster merkt sich seine Tastaturtabelle"
 
 #: widgets.cpp:503
 msgid "Special behavior. Each windows class remember it's own keyboard map"
-msgstr "Sonderverhalten: Jede Fensterklasse merkt sich ihre Tasterturtabelle"
+msgstr "Sonderverhalten: Jede Fensterklasse merkt sich ihre Tastaturtabelle"
 
 #: widgets.cpp:551
 msgid "Button Colors"
@@ -472,7 +470,7 @@ msgstr "Hindergrund, wenn emuliertes CapsLock aktiv ist"
 
 #: widgets.cpp:573
 msgid "With Alternate"
-msgstr "Mit Alterniern"
+msgstr "Mit Alternieren"
 
 #: widgets.cpp:574
 msgid "Background when Alternate switch is pressed"
@@ -536,7 +534,7 @@ msgstr "Programms&tart"
 
 #: kcmikbd.cpp:121
 msgid "International Keyboard"
-msgstr "Internationale Tastertur"
+msgstr "Internationale Tastatur"
 
 #~ msgid "Exit"
 #~ msgstr "Beenden"
