@@ -20,7 +20,7 @@ settings_package.xpm
 
 
 # FIXME - there is no $(kde_largedir) yet
-datadir = $(kde_minidir)/../large
+datadir = $(kde_icondir)/large
 
 EXTRA_DIST = $(data_DATA)
 
