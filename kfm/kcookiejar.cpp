@@ -36,6 +36,8 @@
 
 #include <kurl.h>
 
+#include <stdio.h>
+
 #include "kcookiejar.h"
 
 // KCookie
