@@ -25,6 +25,7 @@
 #include <string.h>
 
 #include <klocale.h>
+#include <ksimpleconfig.h>
 
 #define root KRootWidget::getKRootWidget()
 
@@ -1119,21 +1120,45 @@ void KRootIcon::initToolTip()
     KMimeType *typ = KMimeType::findType( url.data() );
     QString com = typ->getComment( url.data() );
     com.detach();
+
     if ( !com.isNull() )
 	QToolTip::add( this, com.data() );
 }
 
-void KRootIcon::init()
+void KRootIcon::initFilename() 
 {
-    QPainter p;
-    p.begin( this );
-    
     int pos = url.findRev( "/" );
     file = url.mid( pos + 1, url.length() );
     if ( file.find( ".kdelnk" ) == ((int)file.length()) - 7 )
 	file = file.left( file.length() - 7 );
     file.detach();
+
+    // the following code is taken out of kbind.cpp, where nearly 
+    // the same is run before this.
+    // I didn't wanted to introduce new member functions, so it exists
+    // twice
+    QString decoded = url;
+    KURL::decodeURL( decoded );
     
+    QString n = decoded.data() + 5;
+    n += "/.directory";
+
+    QFile f( n.data() );
+    if ( !f.open( IO_ReadOnly ) )
+	return;
+    f.close();
+    
+    KSimpleConfig sc(n);
+    sc.setGroup("KDE Desktop Entry");
+    file = sc.readEntry("Name", file);
+}
+
+void KRootIcon::init()
+{
+    initFilename();
+    QPainter p;
+    p.begin( this );
+
     int ascent = p.fontMetrics().ascent();
     int descent = p.fontMetrics().descent();
     int width = p.fontMetrics().width( file.data() );
@@ -1163,9 +1188,9 @@ void KRootIcon::init()
     p2.begin( &mask );
     p2.setFont( font() );
     
-    if ( root->iconStyle() == 1 && !bSelected )
-       p2.drawText( textXOffset, textYOffset, file );
-    else
+    if ( root->iconStyle() == 1 && !bSelected ) {
+	p2.drawText( textXOffset, textYOffset, file );
+}     else
        p2.fillRect( textXOffset-1, textYOffset-ascent-1, width+2, ascent+descent+2, color1 );     
 
     if ( pixmap->mask() == 0L )
@@ -1229,6 +1254,7 @@ void KRootIcon::paintEvent( QPaintEvent * )
     p.begin( this );
   
     p.setPen( root->labelForeground() );   
+    
     p.drawText( textXOffset, textYOffset, file );
     
     if ( bSelected )

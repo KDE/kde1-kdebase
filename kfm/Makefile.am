@@ -5,8 +5,11 @@ LDADD	=	$(all_libraries) -lkhtmlw -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKE
 CONFIGDIR = $(kde_confdir)
 MIMELNKDIR = $(kde_mimedir)
 
-data_DATA = kfm.xpm
-datadir = $(kde_icondir)
+icon_DATA = kfm.xpm
+icondir = $(kde_icondir)
+
+data_DATA = directory.trash directory.autostart directory.templates
+datadir = $(kde_datadir)/kfm
 
 ####### Files
 

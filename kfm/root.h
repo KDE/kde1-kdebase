@@ -114,6 +114,10 @@ protected:
      */
     QString file;
     /**
+      * help function to find out filename for a directory
+      */
+    void initFilename();
+    /**
      * Dont delete this pixmap. It is cached in @ref KMimeType::pixmapCache
      */
     QPixmap *pixmap;

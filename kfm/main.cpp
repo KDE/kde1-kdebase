@@ -71,6 +71,17 @@ void testDir( const char *_name )
 }
 
 
+void copyDirectoryFile(const char *filename, const QString& dir)
+{
+    if (!QFile::exists(dir + "/.directory")) {
+	QString cmd;
+	cmd.sprintf( "cp %s/kfm/%s %s/.directory", kapp->kde_datadir().data(), 
+		     filename, dir.data() );
+	system( cmd.data() );
+    }
+}
+
+
 void InitStaticMembers()
 {
     /*
@@ -147,9 +158,12 @@ int main( int argc, char ** argv )
 
     testDir( KFMPaths::DesktopPath() );
     testDir( KFMPaths::TrashPath() );
+    copyDirectoryFile("directory.trash", KFMPaths::TrashPath());
     testDir( KFMPaths::TemplatesPath() );
+    copyDirectoryFile("directory.templates", KFMPaths::TemplatesPath());
     testDir( KFMPaths::AutostartPath() );
-    
+    copyDirectoryFile("directory.autostart", KFMPaths::AutostartPath());
+
     QString kd = kapp->kdedir();
     d = kd.copy();
     d += "/share/applnk";
