@@ -144,7 +144,7 @@ int main(char argc, char **argv)
 	  ASample->seek(0,0);
 
 	  SoftStop=0;
-	  ReleaseDelay=8; // Delay until releasing audio (about 0,8 sec)
+	  ReleaseDelay=18; // Delay until releasing audio (about 2 sec)
 #ifdef DEBUG
 	  cerr << " 2";
 #endif
