@@ -263,29 +263,30 @@ void KColorOptions::readOptions()
 void KColorOptions::slotBgColorChanged( const QColor &col )
 {
 	if ( bgColor != col )
-    	    changed = true;
-	bgColor = col;
+	  bgColor = col;
+	changed = true;
+
 }
 
 void KColorOptions::slotTextColorChanged( const QColor &col )
 {
 	if ( textColor != col )
-	    changed = true;
-	textColor = col;
+	  textColor = col;
+	changed = true;
 }
 
 void KColorOptions::slotLinkColorChanged( const QColor &col )
 {
 	if ( linkColor != col )
-    	    changed = true;
-	linkColor = col;
+	  linkColor = col;
+	changed = true;
 }
 
 void KColorOptions::slotVLinkColorChanged( const QColor &col )
 {
 	if ( vLinkColor != col )
-    	    changed = true;
-	vLinkColor = col;
+	  vLinkColor = col;
+	changed = true;
 }
 
 void KColorOptions::getColorOpts(struct coloroptions& coloropts){

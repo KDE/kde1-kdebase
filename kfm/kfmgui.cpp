@@ -1496,8 +1496,8 @@ void KfmGui::slotConfigureBrowser()
 	    KHTMLWidget* htmlview;
 	    for ( w = windowList->first(); w != 0L; w = windowList->next() ){
 
-	      htmlview=view->getKHTMLWidget();
-	      //htmlview points not to the underlying low leve html widget.
+	      htmlview = view->getKHTMLWidget();
+	      //htmlview now points to the underlying lowl leve html widget.
 	      
 	      htmlview->setFixedFont( fontopts.fixedfont.data() );
 	      htmlview->setStandardFont( fontopts.standardfont.data() );
