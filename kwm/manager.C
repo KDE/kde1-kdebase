@@ -530,6 +530,7 @@ void Manager::clientMessage(XEvent*  ev){
 	t->reconfigure();
     }
     else if (com == "restart"){
+	cleanup();
 	XSync(qt_xdisplay(), false);
 	execlp("kwm", NULL);
 	exit(1);
@@ -1288,6 +1289,9 @@ void Manager::cascadePlacement (Client* c, bool re_init) {
 
   // get the maximum allowed windows space and desk's origin
   QRect maxRect = KWM::getWindowRegion(currentDesktop());
+  if (myapp->systemMenuBar) {
+      maxRect.setTop(myapp->systemMenuBar->geometry().bottom());
+  }
 
   // initialize often used vars: width and height of c; we gain speed
   int ch = c->geometry.height();
@@ -1829,6 +1833,29 @@ void Manager::manage(Window w, bool mapped){
     XFree(hints);
 
   getWMNormalHints(c);
+  
+  if (c->size.flags & PPosition) {
+      // some obsolete hints, some old apps may still use them
+      if (c->size.x != 0 && c->geometry.x() == 0 )
+	  c->geometry.moveTopLeft(QPoint(c->size.x, c->geometry.y()));
+      if (c->size.y != 0 && c->geometry.y() == 0 )
+	  c->geometry.moveTopLeft(QPoint(c->geometry.x(), c->size.y));
+  }
+  
+      // be a bit clever
+  {
+	  QRect maxRect = KWM::getWindowRegion(currentDesktop());
+	  if (myapp->systemMenuBar) {
+	      maxRect.setTop(myapp->systemMenuBar->geometry().bottom());
+	  }
+	  if (c->geometry.x() < maxRect.x() )
+	      c->geometry.moveTopLeft(QPoint(maxRect.x(), c->geometry.y()));
+	  if (c->geometry.y() < maxRect.y() )
+	      c->geometry.moveTopLeft(QPoint(c->geometry.x(), maxRect.y()));
+	      
+  }
+  
+  
   getColormaps(c);
   getWindowTrans(c);
   getMwmHints(c);
@@ -1863,6 +1890,13 @@ void Manager::manage(Window w, bool mapped){
     }
   }
 
+
+  if (c->size.flags & PPosition) {
+  }
+  if (c->size.flags & PSize) {
+  }
+
+  
   if (mapped || c->trans != None
       ||c->size.flags & PPosition
       ||c->size.flags & USPosition
