@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# FIRST AUTHOR <erez-n@actcom.co.il>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"PO-Revision-Date: 1998-12-01 HO:MI+ZONE\n"
+"Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
+"Language-Team: Hebrew <he@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:64
+msgid "&Panel"
+msgstr "תומישמ תרוש"
+
+#: main.cpp:70
+msgid "&Desktops"
+msgstr "הדובע תונחלוש"
+
+#: main.cpp:73
+msgid "Disk &Navigator"
+msgstr "םיקסיד רייס"
+
+#: main.cpp:109
+msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
+msgstr "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
+
+#: main.cpp:142
+msgid "KPanel Configuration"
+msgstr "תומישמה תרוש תורדגה"
+
+#: panel.cpp:59
+msgid "Location"
+msgstr "לנאפ םוקימ"
+
+#: panel.cpp:60
+msgid "&Top"
+msgstr "ןוילע"
+
+#: panel.cpp:61
+msgid "&Left"
+msgstr "לאמש"
+
+#: panel.cpp:62
+msgid "&Bottom"
+msgstr "ןותחת"
+
+#: panel.cpp:63
+msgid "&Right"
+msgstr "ןימי"
+
+#: panel.cpp:75
+msgid "Taskbar"
+msgstr "תומישמ תרוש"
+
+#: panel.cpp:76
+msgid "&Hidden"
+msgstr "רתסה"
+
+#: panel.cpp:78
+msgid "T&op"
+msgstr "ןוילע"
+
+#: panel.cpp:80
+msgid "Botto&m"
+msgstr "ןותחת"
+
+#: panel.cpp:82
+msgid "Top/Le&ft"
+msgstr "הנוילע תילאמש"
+
+#: panel.cpp:95
+msgid "Style"
+msgstr "ןונגס"
+
+#: panel.cpp:97
+msgid "T&iny"
+msgstr "ןטק"
+
+#: panel.cpp:99
+msgid "&Normal"
+msgstr "ליגר"
+
+#: panel.cpp:101
+msgid "L&arge"
+msgstr "לודג"
+
+#: desktops.cpp:73
+msgid "&Visible"
+msgstr "םייולג"
+
+#: desktops.cpp:82
+msgid "&Width"
+msgstr "בחור"
+
+#: options.cpp:38
+msgid "Menu Tooltips"
+msgstr "tooltips - טוריפ תגצה"
+
+#: options.cpp:39
+msgid "Show &Menu Tooltips"
+msgstr "טוריפ גצה"
+
+#: options.cpp:44
+msgid "De&lay:"
+msgstr "טוריפל הנתמה ןמז"
+
+#: options.cpp:56
+msgid "ms"
+msgstr "תוינש ילימ"
+
+#: options.cpp:68
+msgid "Others"
+msgstr "הגוצת"
+
+#: options.cpp:69
+msgid "Personal &First"
+msgstr "םיישיא םילומס לכ םדוק"
+
+#: options.cpp:71
+msgid "Auto &Hide Panel"
+msgstr "לנאפה תא תיטמוטוא רתסה"
+
+#: options.cpp:73
+msgid "Auto Hide &Taskbar"
+msgstr "תומישמה תרוש תא תיטמוטוא רתסה"
+
+#: options.cpp:81
+msgid "Clock"
+msgstr "ןועש"
+
+#: options.cpp:83
+msgid "&24h"
+msgstr "תועש 24 לש טמרופב ןמז גצה"
+
+#: options.cpp:85
+msgid "&12h AM/PM"
+msgstr "תועש 12 לש טמרופב ןמז גצה"
+
+#: disknav.cpp:43
+msgid "Edit &Global..."
+msgstr "...ילבולג ךורע"
+
+#: disknav.cpp:46
+msgid "Edit &Local..."
+msgstr "...ימוקמ ךורע"
+
+

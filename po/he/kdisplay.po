@@ -1,0 +1,426 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Erez Nir <erez-n@actcom.co.il>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"PO-Revision-Date: 1998-12-01 HO:MI+ZONE\n"
+"Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
+"Language-Team: Hebrew <he@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: backgnd.cpp:59
+msgid "Enter new desktop name"
+msgstr "שדח הדובע ןחלוש םש ןזה"
+
+#: backgnd.cpp:115 backgnd.cpp:150
+msgid "Desktop"
+msgstr "הדובע ןחלוש"
+
+#: backgnd.cpp:167
+msgid "&Rename ..."
+msgstr "...םש הנ&ש"
+
+#: backgnd.cpp:193 colorscm.cpp:94
+msgid "Colors"
+msgstr "םיעבצ"
+
+#: backgnd.cpp:220
+msgid "&One Color"
+msgstr "דח&א עבצ"
+
+#: backgnd.cpp:237
+msgid "&Two Color"
+msgstr "םיעבצ ינ&ש"
+
+#: backgnd.cpp:256
+msgid "Set&up ..."
+msgstr "...רד&גה"
+
+#: backgnd.cpp:265
+msgid "Wallpaper"
+msgstr "הדובע ןחלוש טפט"
+
+#: backgnd.cpp:275
+msgid "Ti&led"
+msgstr "שור&פ"
+
+#: backgnd.cpp:283
+msgid "&Centred"
+msgstr "זכר&מב"
+
+#: backgnd.cpp:291
+msgid "&Scaled"
+msgstr "לדוגב ם&אתה"
+
+#: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
+msgid "No wallpaper"
+msgstr "טפט אלל"
+
+#: backgnd.cpp:335
+msgid "&Browse..."
+msgstr "ןוי&ע"
+
+#: backgnd.cpp:864
+msgid "Desktop names"
+msgstr "הדובעה תונחלוש תומש"
+
+#: backgnd.cpp:910
+msgid "Two color backgrounds"
+msgstr "עקר יעבצ ינש"
+
+#: backgnd.cpp:947
+msgid "Blend colors from &top to bottom"
+msgstr "הטמל הלעמלמ םיעבצ בברע"
+
+#: backgnd.cpp:953
+msgid "Blend colors from &right to left"
+msgstr "לאמשל ןימימ םיעבצ בברע"
+
+#: backgnd.cpp:959
+msgid "Use &pattern"
+msgstr "תינב&תב שמתשה"
+
+#: backgnd.cpp:986
+msgid "Preview"
+msgstr "המידקמ הגוצת"
+
+#: backgnd.cpp:997
+msgid "Pattern &name"
+msgstr "תינבתה ם&ש"
+
+#: backgnd.cpp:1036
+msgid "Current"
+msgstr "תיחכונ"
+
+#: backgnd.cpp:1096
+msgid "Filled"
+msgstr "האלמ"
+
+#: backgnd.cpp:1099
+msgid "Fish net"
+msgstr "םיגייד תשר"
+
+#: backgnd.cpp:1102
+msgid "Triangles"
+msgstr "םישלושמ"
+
+#: backgnd.cpp:1105
+msgid "Flowers"
+msgstr "םיחרפ"
+
+#: backgnd.cpp:1108
+msgid "Rattan"
+msgstr "לפוו"
+
+#: backgnd.cpp:1111
+msgid "Cobbled Pavement"
+msgstr "תופצרמ"
+
+#: colorscm.cpp:120
+msgid "Color Scheme"
+msgstr "םיעבצ תינבת"
+
+#: colorscm.cpp:131
+msgid "Current scheme"
+msgstr "תיחכונ"
+
+#: colorscm.cpp:133
+msgid "KDE default"
+msgstr "KDE לש לדחמה תרירב"
+
+#: colorscm.cpp:146
+msgid "&Add ..."
+msgstr "...ףסו&ה"
+
+#: colorscm.cpp:163
+msgid "&Save changes"
+msgstr "םייוניש רומ&ש"
+
+#: colorscm.cpp:177
+msgid "Widget color"
+msgstr "טירפה עבצ"
+
+#: colorscm.cpp:184
+msgid "Inactive title bar"
+msgstr "הליעפ אל תרתוכ עקר"
+
+#: colorscm.cpp:185
+msgid "Inactive title text"
+msgstr "הליעפ אל תרתוכ טסקט"
+
+#: colorscm.cpp:186
+msgid "Inactive title blend"
+msgstr "הליעפ אל תרתוכל ינשמ עקר"
+
+#: colorscm.cpp:187
+msgid "Active title bar"
+msgstr "הליעפ תרתוכ עקר"
+
+#: colorscm.cpp:188
+msgid "Active title text"
+msgstr "הליעפ תרתוכ טסקט"
+
+#: colorscm.cpp:189
+msgid "Active title blend"
+msgstr "הליעפ תרתוכל ינשמ עקר"
+
+#: colorscm.cpp:190
+msgid "Background"
+msgstr "עקר"
+
+#: colorscm.cpp:191
+msgid "Text"
+msgstr "טסקט"
+
+#: colorscm.cpp:192
+msgid "Select background"
+msgstr "הריחב עקר"
+
+#: colorscm.cpp:193
+msgid "Select text"
+msgstr "הריחב טסקט"
+
+#: colorscm.cpp:194
+msgid "Window background"
+msgstr "ןולחה עקר"
+
+#: colorscm.cpp:195 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+msgid "Window text"
+msgstr "ןולח ךותב טסקט"
+
+#: colorscm.cpp:223
+msgid "Contrast"
+msgstr "טסרטנוק"
+
+#: colorscm.cpp:239
+msgid "&Low"
+msgstr "ךומנ"
+
+#: colorscm.cpp:247
+msgid "High"
+msgstr "לודג"
+
+#: colorscm.cpp:320
+msgid "Error removing"
+msgstr "הקיחמב האיגש"
+
+#: colorscm.cpp:321
+msgid ""
+"This color scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the color scheme is stored."
+msgstr ""
+"וזה םיעבצה תינבת תא קוחמל ןתינ אל\n"
+"תונשל תואשרה ךל ןיא יכ ןכתיי\n"
+"הלש ץבוקה תא וא םיצבקה תכרעמ תא"
+
+#: colorscm.cpp:378
+msgid "Naming error"
+msgstr "םש תאיגש"
+
+#: colorscm.cpp:379
+msgid ""
+"Please choose a unique name for the new color\n"
+"scheme. The one you entered already appears\n"
+"in the color scheme list."
+msgstr ""
+"םיעבצה תינבתל ידוחיי םש רחב אנא\n"
+"תמישרב רבכ עיפומ תתנש םשה\n"
+" םיעבצה תוינבת"
+#: savescm.cpp:18
+msgid "Add a color scheme"
+msgstr "םיעבצ תינבת ףסוה"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new color scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The colors currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"השדחה םיעבצה תינבתל םש סנכה\n"
+"םיעבצה תוינבת תמישרב רמשית וז תינבת\n"
+"ךלש תישיאה\n"
+"\n"
+"המגודב תעכ םיעיפומ רשא םיעבצה\n"
+"םיעבצה תינבת לא וקתעוי"
+#: scrnsave.cpp:48
+msgid "Ignore"
+msgstr "םלעתה"
+
+#: scrnsave.cpp:49
+msgid "Save Screen"
+msgstr "ךסמ רומש"
+
+#: scrnsave.cpp:50
+msgid "Lock Screen"
+msgstr "ךסמ לענ"
+
+#: scrnsave.cpp:113 scrnsave.cpp:182
+msgid "Screen Saver"
+msgstr "ךסמ רמוש"
+
+#: scrnsave.cpp:189 scrnsave.cpp:367 scrnsave.cpp:605 scrnsave.cpp:726
+msgid "No screensaver"
+msgstr "ךסמ רמוש אלל"
+
+#: scrnsave.cpp:210
+msgid "&Setup ..."
+msgstr "...םינייפא&מ"
+
+#: scrnsave.cpp:218
+msgid "&Test"
+msgstr "הקיד&ב"
+
+#: scrnsave.cpp:231
+msgid "Settings"
+msgstr "תורדגה"
+
+#: scrnsave.cpp:251
+msgid "&Wait for"
+msgstr "ירחא לע&פה"
+
+#: scrnsave.cpp:261
+msgid "min."
+msgstr "תוקד"
+
+#: scrnsave.cpp:267
+msgid "&Require password"
+msgstr "המסיסב ביי&ח"
+
+#: scrnsave.cpp:273
+msgid "&Accept root password to unlock"
+msgstr "הליענ לוטיבל תכרעמה להנמ תמסיס לב&ק"
+
+#: scrnsave.cpp:279
+msgid "Show &password as stars"
+msgstr "המסיסה הדשב םיבכו&כ גצה"
+
+#: scrnsave.cpp:287
+msgid "Priority"
+msgstr "ךסמה רמושל תופידע"
+
+#: scrnsave.cpp:300
+msgid "&High"
+msgstr "ההוב&ג"
+
+#: scrnsave.cpp:309
+msgid "Low"
+msgstr "הכומנ"
+
+#: general.cpp:220
+msgid "Fonts etc."
+msgstr ".וכו םינפוג"
+
+#: general.cpp:226
+msgid "&Draw widgets in the style of Windows 95"
+msgstr "95 תונולח ןונגיסב םיטירפ ריי&צ"
+
+#: general.cpp:240
+msgid "Desktop fonts"
+msgstr "הדובעה ןחלוש ינפוג"
+
+#: general.cpp:252
+msgid "General font"
+msgstr "יללכ ןפוג"
+
+#: general.cpp:257
+msgid "Fixed font"
+msgstr "עובק ןפוג"
+
+#: general.cpp:267
+msgid "Panel button font"
+msgstr "תומישמה תרוש ירותפכ ןפוג"
+
+#: general.cpp:272
+msgid "Panel clock font"
+msgstr "תומישמה תרושב ןועשה ןפוג"
+
+#: general.cpp:302
+msgid "Sample text"
+msgstr ""
+
+#: general.cpp:310
+msgid ""
+"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+"the quick brown fox jumps over the lazy dog\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
+msgstr ""
+"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+"the quick brown fox jumps over the lazy dog\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )\n"
+"תלזנ לביקו ןכסמה ןנטצה תלדה רוגסל חכש ןטקה ןפשה"
+#: main.cpp:62
+msgid "&Fonts etc."
+msgstr ".וכו םינפו&ג"
+
+#: main.cpp:65
+msgid "&Background"
+msgstr "עק&ר"
+
+#: main.cpp:68
+msgid "&Screensaver"
+msgstr "ךסמ רמו&ש"
+
+#: main.cpp:72
+msgid "&Colors"
+msgstr "םיעב&צ"
+
+#: main.cpp:78
+msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+
+#: main.cpp:139
+msgid "Display settings"
+msgstr "הגוצת ינייפאמ"
+
+#: widgetcanvas.cpp:104 widgetcanvas.cpp:105
+msgid "Inactive window"
+msgstr "ליעפ אל ןולח"
+
+#: widgetcanvas.cpp:132 widgetcanvas.cpp:133
+msgid "Active window"
+msgstr "ליעפ ןולח"
+
+#: widgetcanvas.cpp:189 widgetcanvas.cpp:190
+msgid "Selected text"
+msgstr "הריחב טסקט"
+
+#: fontchooser.cpp:82
+msgid "&Typeface"
+msgstr "ןפוגה ם&ש"
+
+#: fontchooser.cpp:89
+msgid "&Bold"
+msgstr "שגדו&מ"
+
+#: fontchooser.cpp:96
+msgid "&Italic"
+msgstr "יוט&נ"
+
+#: fontchooser.cpp:125
+msgid "&Size"
+msgstr "לדו&ג"
+
+#: fontchooser.cpp:147
+msgid "&Character set"
+msgstr "םיוותה ט&ס"
+
+#: fontchooser.cpp:262
+msgid "default"
+msgstr "לדחמה תרירב יוות"
+
+#: fontchooser.cpp:265
+msgid "any"
+msgstr "םיוותה לכ"
+
+
+
+

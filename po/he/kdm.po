@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Erez Nir <erez-n@actcom.co.il>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"PO-Revision-Date: 1998-12-01 HO:MI+ZONE\n"
+"Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
+"Language-Team: Hebrew <he@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kdmshutdown.cpp:159
+msgid "Shutdown or restart?"
+msgstr "? שדחמ הלעפה וא יוביכ"
+
+#: kdmshutdown.cpp:175
+msgid "Shutdown"
+msgstr "בשחמה יוביכ"
+
+#: kdmshutdown.cpp:189
+msgid "Shutdown and restart"
+msgstr "בשחמה לש שדחמ הלעפה"
+
+#: kdmshutdown.cpp:198
+msgid "Exit kdm"
+msgstr "KDM מ האיצי"
+
+#: kgreeter.cpp:139
+msgid "Login:"
+msgstr "שמתשמ םש"
+
+#: kgreeter.cpp:151
+msgid "Password:"
+msgstr "המסיס"
+
+#: kgreeter.cpp:191
+msgid "Login failed!"
+msgstr "! היוגש הסינכ"
+
+#: kgreeter.cpp:197
+msgid "Session Type:"
+msgstr "תונולחה להנמ"
+
+#: kgreeter.cpp:213
+msgid "Go!"
+msgstr "! רבחתה"
+
+#: kgreeter.cpp:229
+msgid "Shutdown..."
+msgstr " ...יוביכ"

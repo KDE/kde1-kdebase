@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Erez Nir <erez-n@actcom.co.il>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
+"PO-Revision-Date: 1998-12-01 HO:MI+ZONE\n"
+"Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
+"Language-Team: Hebrew <he@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:52
+msgid "&Locale"
+msgstr "רוזא"
+
+#: main.cpp:58
+msgid "usage: kcmlocale [-init | language]\n"
+msgstr "usage: kcmlocale [-init | language]\n"
+
+#: main.cpp:86
+msgid "Locale settings"
+msgstr "תוירוזא תורדגה"
+
+#: locale.cpp:45
+msgid "Language"
+msgstr "הפש"
+
+#: locale.cpp:55
+msgid "First"
+msgstr "תירקיע"
+
+#: locale.cpp:65
+msgid "Second"
+msgstr "תינשמ"
+
+#: locale.cpp:75
+msgid "Third"
+msgstr "תישילש"
+
+#: locale.cpp:115
+msgid "without name!"
+msgstr "! םש אלל"
+
+#: locale.cpp:181
+msgid "Applying language settings"
+msgstr "הפשה תריחב תא םשיימ"
+
+#: locale.cpp:182
+msgid ""
+"Changed language settings apply only to newly started applications.\n"
+"To change the language of all programs, you will have to logout first."
+msgstr ""
+"עוציב עגרמ וליחתי רשא תוינכות לא קר םיסחייתמ הפשב םייונישה\n"
+"ךיילע תוינכותה לכ רובע הפשה תא תונשל תנמ לע .יונישה\n"
+".שדחמ רבחתהלו תכרעמהמ תאצל"
+

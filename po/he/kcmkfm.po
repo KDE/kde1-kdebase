@@ -1,0 +1,31 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Erez Nir <erez-n@actcom.co.il>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"PO-Revision-Date: 1998-12-01 HO:MI+ZONE\n"
+"Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
+"Language-Team: Hebrew <he@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:34
+msgid "&Font"
+msgstr "ןפו&ג"
+
+#: main.cpp:36
+msgid "&Color"
+msgstr "עב&צ"
+
+#: main.cpp:63
+msgid "usage: kcmkfm [-init | {font,color}]\n"
+msgstr ""
+
+#: main.cpp:104
+msgid "KFM Configuration"
+msgstr "סקונילה רייס תורדגה"

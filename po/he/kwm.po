@@ -1,0 +1,179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Erez Nir <erea-n@actcom.co.il>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"PO-Revision-Date: 1998-12-01 HO:MI+ZONE\n"
+"Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
+"Language-Team: Hebrew <he@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.C:68
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr "לעפוי אל KDE לש תונולחה להנמ ץהלועפב אצמנ רחא תונולח להנמ וליאכ הארנ\n"
+
+#: main.C:82
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr "תוליעפ םייסמ - לוחתיא תאיגש :תונולחה להנמ"
+
+#: main.C:483
+msgid "Preparing session ... "
+msgstr "...הלועפל ןנוכתמ"
+
+#: main.C:504
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "(ettrich@kde.org) ךירטא סאיתאמ 1997 (C) תורומש תויוכזה לכ\n"
+
+#: main.C:511
+msgid "Usage: "
+msgstr " :שומיש"
+
+#: main.C:522
+msgid "&Maximize"
+msgstr "יברימ לדוג"
+
+#: main.C:523
+msgid "&Restore"
+msgstr "לדוג רזחש"
+
+#: main.C:524
+msgid "&Iconify"
+msgstr "רעזמ"
+
+#: main.C:525
+msgid "&DeIconify"
+msgstr "לדגה"
+
+#: main.C:526
+msgid "&Sticky"
+msgstr "ךסמ לכב"
+
+#: main.C:527
+msgid "&UnSticky"
+msgstr "הזה ךסמב קר"
+
+#: main.C:528
+msgid "Mo&ve"
+msgstr "זזה"
+
+#: main.C:529
+msgid "Resi&ze"
+msgstr "לדוג הנש"
+
+#: main.C:531
+msgid "&To desktop"
+msgstr "הדובע ןחלושל"
+
+#: main.C:533
+msgid "&Onto current desktop"
+msgstr "הזה ךסמל רבעה"
+
+#: main.C:573
+msgid "One"
+msgstr "דחא"
+
+#: main.C:576
+msgid "Two"
+msgstr "םיינש"
+
+#: main.C:579
+msgid "Three"
+msgstr "שולש"
+
+#: main.C:582
+msgid "Four"
+msgstr "עברא"
+
+#: main.C:585
+msgid "Five"
+msgstr "שמח"
+
+#: main.C:588
+msgid "Six"
+msgstr "שש"
+
+#: main.C:591
+msgid "Seven"
+msgstr "עבש"
+
+#: main.C:594
+msgid "Eight"
+msgstr "הנומש"
+
+#: main.C:608
+msgid "Unnamed Desktop"
+msgstr "םש אלל ןחלוש"
+
+#: main.C:918
+msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
+msgstr "תלטובמ םילמס תרוצת :םייקוח םניא םילמס המכ"
+
+#: main.C:1030
+msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
+msgstr "תלטובמ קימיג תרוצת :םייקוח םניא םילמס המכ"
+
+#: main.C:1353
+msgid "*** No Tasks ***"
+msgstr "***תומישמ ןיא***"
+
+#: minicli.C:119
+msgid "Command:"
+msgstr "הדוקפ"
+
+#: warning.C:36
+msgid "Ooops!"
+msgstr "!האיגש"
+
+#: logout.C:36 taskmgr.C:108
+msgid "Logout"
+msgstr "תכרעמהמ האיצי"
+
+#: logout.C:46
+msgid "Session prepared for logout"
+msgstr "תכרעמהמ האיציל ןכומ בשחמה"
+
+#: logout.C:52
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+"רומש וניאש עדימ םיליכמ םיאבה םימושייה\n"
+"ךלש אבה רוביחב דבאי הז עדימ"
+#: logout.C:63
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+"שדחמ ולעפוי קר אלא אבה רוביחב ורזחושי אל םיאבה םימושייה\n"
+"רומש וניאש בושח עדימ םהב ךל ןיאש אדו ךתבוטל"
+#: logout.C:74
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+"אבה רוביחב רוזחשל םינתינ םניא םיאבה םימושייה\n"
+"רומש וניאש בושח עדימ םהב ךל ןיאש אדוו ךתבוטל"
+#: taskmgr.C:107
+msgid "Switch to"
+msgstr "ל רובע"
+
+#: taskmgr.C:121
+msgid "Current session"
+msgstr "יחכונ רוביח"
+
+
+
+
+
+
+
+
+

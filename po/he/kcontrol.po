@@ -1,0 +1,73 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Erez Nir <erez-n@actcom.co.il>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-09-10 14:40+0200\n"
+"PO-Revision-Date: 1998-12-01 HO:MI+ZONE\n"
+"Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
+"Language-Team: Hebrew <he@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: configlist.cpp:119
+msgid "Unknown module: "
+msgstr "רכומ אל לודומ "
+
+#: main.cpp:46 mainwidget.cpp:19
+msgid "KDE Control Center"
+msgstr "KDE לש הרקבה חול"
+
+#: toplevel.cpp:78
+msgid "&Swallow modules"
+msgstr "םילודומ לכה"
+
+#: toplevel.cpp:81
+msgid ""
+"KDE Control Center - Version 1.0\n"
+"\n"
+"Written by Matthias Hצlzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Thanks to:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+msgstr ""
+"רצלוה סאיתאמ ידי לע בתכנ\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+":ל תודות\n"
+"סנוג .מ ו ןבוו .מ ,ראלוד .פ ,ולוק .ס\n"
+#: mainwidget.cpp:44
+msgid "System:"
+msgstr "תכרעמ עדימ"
+
+#: mainwidget.cpp:47
+msgid "User: "
+msgstr "שמתשמ םש"
+
+#: mainwidget.cpp:53
+msgid "Hostname: "
+msgstr "הנחת/תרשה םש"
+
+#: mainwidget.cpp:61
+msgid "System: "
+msgstr "תכרעמ"
+
+#: mainwidget.cpp:68
+msgid "Release: "
+msgstr "הסריג"
+
+#: mainwidget.cpp:76
+msgid "Version: "
+msgstr "ךיראתמ"
+
+#: mainwidget.cpp:83
+msgid "Machine: "
+msgstr "דבעמ"
+
+
+
+

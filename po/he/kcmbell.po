@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Erez Nir <erez-n@actcom.co.il>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
+"PO-Revision-Date: YEAR-12-01 HO:MI+ZONE\n"
+"Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
+"Language-Team: Hebrew <he@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:52
+msgid "&Bell"
+msgstr ""
+
+#: main.cpp:58
+msgid "usage: kcmbell [-init | bell]\n"
+msgstr "ףוצפצ"
+
+#: main.cpp:89
+msgid "Bell settings"
+msgstr "ףוצפצ ייניפאמ"
+
+#: bell.cpp:85
+msgid "Volume"
+msgstr "המצע"
+
+#: bell.cpp:86
+msgid "Pitch"
+msgstr "תורידת"
+
+#: bell.cpp:87
+msgid "Duration"
+msgstr "ךרוא"
+
+#: bell.cpp:89
+msgid "Hz"
+msgstr "ץרה"
+
+#: bell.cpp:90
+msgid "ms"
+msgstr "היינש תויפלא"
+
+#: bell.cpp:92
+msgid "Test"
+msgstr "ףוצפצ קודב"
