@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1998-02-25 21:43 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -73,7 +73,7 @@ msgstr ""
 "Impossible de créer le répertoire de votre menu personnel.\n"
 "Cliquez sur OK pour sortir de KMenuEdit."
 
-#: confmenu.cpp:91 entrydialog.cpp:52
+#: confmenu.cpp:91 entrydialog.cpp:60
 msgid "Separator"
 msgstr "Séparateur"
 
@@ -145,108 +145,108 @@ msgstr "Chemin :"
 msgid "PersonalPath:"
 msgstr "Chemin du le menu personnel :"
 
-#: entrydialog.cpp:53
+#: entrydialog.cpp:61
 msgid "Submenu"
 msgstr "Sous-menu"
 
-#: entrydialog.cpp:54 entrydialog.cpp:167 entrydialog.cpp:536
-#: entrydialog.cpp:541
+#: entrydialog.cpp:62 entrydialog.cpp:198 entrydialog.cpp:539
+#: entrydialog.cpp:544
 msgid "Application"
 msgstr "Application"
 
-#: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
+#: entrydialog.cpp:63 entrydialog.cpp:200 entrydialog.cpp:543
 msgid "Swallow"
 msgstr "Avaler"
 
-#: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
+#: entrydialog.cpp:64 entrydialog.cpp:202 entrydialog.cpp:548
 msgid "Link"
 msgstr "Lien"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
+#: entrydialog.cpp:65 entrydialog.cpp:204 entrydialog.cpp:552
 msgid "Device"
 msgstr "Périphérique"
 
-#: entrydialog.cpp:63
+#: entrydialog.cpp:72
 msgid "Type:"
 msgstr "Type :"
 
-#: entrydialog.cpp:69
+#: entrydialog.cpp:79
 msgid "File Name:"
 msgstr "Nom de fichier :"
 
-#: entrydialog.cpp:82
+#: entrydialog.cpp:94
 msgid "Name:"
 msgstr "Nom :"
 
-#: entrydialog.cpp:95
-msgid "Mini Icon:"
-msgstr "Mini-icône :"
-
-#: entrydialog.cpp:127
+#: entrydialog.cpp:109
 msgid "Icon:"
 msgstr "Icône :"
 
-#: entrydialog.cpp:133
+#: entrydialog.cpp:141
+msgid "Mini Icon:"
+msgstr "Mini-icône :"
+
+#: entrydialog.cpp:149
 msgid "Comment:"
 msgstr "Commentaire :"
 
-#: entrydialog.cpp:165 entrydialog.cpp:535
+#: entrydialog.cpp:196 entrydialog.cpp:538
 msgid "Execute"
 msgstr "Exécuter"
 
-#: entrydialog.cpp:186
+#: entrydialog.cpp:222
 msgid "Execute:"
 msgstr "Exécuter :"
 
-#: entrydialog.cpp:192
+#: entrydialog.cpp:228
 msgid "Working Directory:"
 msgstr "Répertoire de travail :"
 
-#: entrydialog.cpp:205
+#: entrydialog.cpp:241
 msgid "Run in terminal"
 msgstr "Exécuter dans un terminal"
 
-#: entrydialog.cpp:211
+#: entrydialog.cpp:245
 msgid "Terminal Options:"
 msgstr "Options du terminal :"
 
-#: entrydialog.cpp:292
+#: entrydialog.cpp:310
 msgid "Binary Pattern:"
 msgstr "Données binaires :"
 
-#: entrydialog.cpp:300
+#: entrydialog.cpp:325
 msgid "Application to swallow:"
 msgstr "Application à intégrer :"
 
-#: entrydialog.cpp:306
+#: entrydialog.cpp:331
 msgid "Title of application:"
 msgstr "Titre de l'application :"
 
-#: entrydialog.cpp:312
+#: entrydialog.cpp:337
 msgid "Application to execute on button press:"
 msgstr "Application à exécuter sur clic :"
 
-#: entrydialog.cpp:342
+#: entrydialog.cpp:367
 msgid "URL:"
 msgstr "URL :"
 
-#: entrydialog.cpp:391
+#: entrydialog.cpp:415
 msgid "Read Only"
 msgstr "Lecture seule"
 
-#: entrydialog.cpp:397
+#: entrydialog.cpp:420
 msgid "Device:"
 msgstr "Périphérique :"
 
-#: entrydialog.cpp:403
+#: entrydialog.cpp:425
 msgid "Mount Point:"
 msgstr "Point de montage :"
 
-#: entrydialog.cpp:409
+#: entrydialog.cpp:430
 msgid "FS Type:"
 msgstr "Type de système de fichiers :"
 
-#: entrydialog.cpp:415
+#: entrydialog.cpp:435
 msgid "Unmount Icon:"
 msgstr "Icône d'état démonté"
 

@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-28 01:13+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1998-10-19 21:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir>\n"
 
@@ -15,11 +15,11 @@ msgstr "Óþekkt eining: "
 msgid "KDE Control Center"
 msgstr "KDE Stjórnborð"
 
-#: toplevel.cpp:87
+#: toplevel.cpp:86
 msgid "&Swallow modules"
 msgstr "&Gleypa einingar"
 
-#: toplevel.cpp:90
+#: toplevel.cpp:89
 msgid ""
 "KDE Control Center - Version 1.0\n"
 "\n"

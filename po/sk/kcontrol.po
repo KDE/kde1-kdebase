@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol 1.0\n"
-"POT-Creation-Date: 1998-12-28 01:13+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -21,11 +21,11 @@ msgstr "Neznámy modul: "
 msgid "KDE Control Center"
 msgstr "Ovládacie centrum KDE"
 
-#: toplevel.cpp:87
+#: toplevel.cpp:86
 msgid "&Swallow modules"
 msgstr "&Pohlti» moduly"
 
-#: toplevel.cpp:90
+#: toplevel.cpp:89
 msgid ""
 "KDE Control Center - Version 1.0\n"
 "\n"

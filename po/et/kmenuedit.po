@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,7 +73,7 @@ msgstr ""
 "Kataloogi su personaalse menüü jaoks pole võimalik luua.\n"
 "Programmist väljumiseks vali OK."
 
-#: confmenu.cpp:91 entrydialog.cpp:52
+#: confmenu.cpp:91 entrydialog.cpp:60
 msgid "Separator"
 msgstr "Eraldaja"
 
@@ -145,108 +145,108 @@ msgstr "Tee:"
 msgid "PersonalPath:"
 msgstr "Personaalne tee:"
 
-#: entrydialog.cpp:53
+#: entrydialog.cpp:61
 msgid "Submenu"
 msgstr "Alammenüü"
 
-#: entrydialog.cpp:54 entrydialog.cpp:167 entrydialog.cpp:536
-#: entrydialog.cpp:541
+#: entrydialog.cpp:62 entrydialog.cpp:198 entrydialog.cpp:539
+#: entrydialog.cpp:544
 msgid "Application"
 msgstr "Rakendus"
 
-#: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
+#: entrydialog.cpp:63 entrydialog.cpp:200 entrydialog.cpp:543
 msgid "Swallow"
 msgstr "Neel"
 
-#: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
+#: entrydialog.cpp:64 entrydialog.cpp:202 entrydialog.cpp:548
 msgid "Link"
 msgstr "Link"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
+#: entrydialog.cpp:65 entrydialog.cpp:204 entrydialog.cpp:552
 msgid "Device"
 msgstr "Seade"
 
-#: entrydialog.cpp:63
+#: entrydialog.cpp:72
 msgid "Type:"
 msgstr "Tüüp:"
 
-#: entrydialog.cpp:69
+#: entrydialog.cpp:79
 msgid "File Name:"
 msgstr "Faili nimi:"
 
-#: entrydialog.cpp:82
+#: entrydialog.cpp:94
 msgid "Name:"
 msgstr "Nimi:"
 
-#: entrydialog.cpp:95
-msgid "Mini Icon:"
-msgstr "Miniikoon:"
-
-#: entrydialog.cpp:127
+#: entrydialog.cpp:109
 msgid "Icon:"
 msgstr "Ikoon:"
 
-#: entrydialog.cpp:133
+#: entrydialog.cpp:141
+msgid "Mini Icon:"
+msgstr "Miniikoon:"
+
+#: entrydialog.cpp:149
 msgid "Comment:"
 msgstr "Kommentaar:"
 
-#: entrydialog.cpp:165 entrydialog.cpp:535
+#: entrydialog.cpp:196 entrydialog.cpp:538
 msgid "Execute"
 msgstr "Käivita"
 
-#: entrydialog.cpp:186
+#: entrydialog.cpp:222
 msgid "Execute:"
 msgstr "Käivita:"
 
-#: entrydialog.cpp:192
+#: entrydialog.cpp:228
 msgid "Working Directory:"
 msgstr "Töökataloog:"
 
-#: entrydialog.cpp:205
+#: entrydialog.cpp:241
 msgid "Run in terminal"
 msgstr "Käivita terminalil"
 
-#: entrydialog.cpp:211
+#: entrydialog.cpp:245
 msgid "Terminal Options:"
 msgstr "Terminali valikud:"
 
-#: entrydialog.cpp:292
+#: entrydialog.cpp:310
 msgid "Binary Pattern:"
 msgstr "Binaarne muster:"
 
-#: entrydialog.cpp:300
+#: entrydialog.cpp:325
 msgid "Application to swallow:"
 msgstr "Neelatav rakendus:"
 
-#: entrydialog.cpp:306
+#: entrydialog.cpp:331
 msgid "Title of application:"
 msgstr "Rakenduse tiitel:"
 
-#: entrydialog.cpp:312
+#: entrydialog.cpp:337
 msgid "Application to execute on button press:"
 msgstr "Nupule vajutamisel käivitada rakendus:"
 
-#: entrydialog.cpp:342
+#: entrydialog.cpp:367
 msgid "URL:"
 msgstr "URL:"
 
-#: entrydialog.cpp:391
+#: entrydialog.cpp:415
 msgid "Read Only"
 msgstr "Ainult lugemiseks"
 
-#: entrydialog.cpp:397
+#: entrydialog.cpp:420
 msgid "Device:"
 msgstr "Seade:"
 
-#: entrydialog.cpp:403
+#: entrydialog.cpp:425
 msgid "Mount Point:"
 msgstr "Ühenduspunkt:"
 
-#: entrydialog.cpp:409
+#: entrydialog.cpp:430
 msgid "FS Type:"
 msgstr "FS tüüp:"
 
-#: entrydialog.cpp:415
+#: entrydialog.cpp:435
 msgid "Unmount Icon:"
 msgstr "Lahti ühendatud ikoon:"
 

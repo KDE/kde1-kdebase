@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel VERSION\n"
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1997-10-25 18:28 MET DST\n"
 "Last-Translator: Christian Kirsch <ck@held.mind.de>\n"
 "Language-Team: German/KDE\n"
@@ -93,7 +93,7 @@ msgstr "Fensterliste hinzufügen"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Menü für Fensterliste zum Panel hinzufügen"
 
-#: events.C:810 props.C:183
+#: events.C:827 props.C:183
 msgid "Configure"
 msgstr "Konfigurieren"
 
@@ -109,7 +109,7 @@ msgstr "Menu bearbeiten"
 msgid "Add or remove applications in the menu structure "
 msgstr "Anwendungen in der Menu-Struktur hinzufügen oder löschen "
 
-#: events.C:812 props.C:189
+#: events.C:829 props.C:189
 msgid "Restart"
 msgstr "Neu starten"
 
@@ -133,7 +133,7 @@ msgstr "Bildschirm sperren"
 msgid "The menu editor is not installed."
 msgstr "Der Menu-Editor ist nicht installiert."
 
-#: events.C:866 props.C:452
+#: events.C:883 props.C:452
 msgid "Oops!"
 msgstr "Oops!"
 
@@ -150,7 +150,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "Platten-Navigator"
 
-#: events.C:865
+#: events.C:882
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kann dies nicht als Button in das Panel legen!"
 

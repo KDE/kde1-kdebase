@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1999-01-06 17:59+0100\n"
 "Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -86,7 +86,7 @@ msgstr "Añadir Lista de Ventanas"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Añadir una lista de ventanas al panel"
 
-#: events.C:810 props.C:183
+#: events.C:827 props.C:183
 msgid "Configure"
 msgstr "Configurar"
 
@@ -102,7 +102,7 @@ msgstr "Editar Menús"
 msgid "Add or remove applications in the menu structure "
 msgstr "Añadir o suprimir aplicaciones en la estructura del menú "
 
-#: events.C:812 props.C:189
+#: events.C:829 props.C:189
 msgid "Restart"
 msgstr "Reiniciar"
 
@@ -126,7 +126,7 @@ msgstr "Bloquear pantalla"
 msgid "The menu editor is not installed."
 msgstr "El editor de menús no está instalado."
 
-#: events.C:866 props.C:452
+#: events.C:883 props.C:452
 msgid "Oops!"
 msgstr "¡Ups!"
 
@@ -142,7 +142,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "Navegador de disco"
 
-#: events.C:865
+#: events.C:882
 msgid "Cannot put this as button onto the panel!"
 msgstr "Imposible poner este botón en el panel."
 

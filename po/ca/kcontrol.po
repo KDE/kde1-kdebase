@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol\n"
-"POT-Creation-Date: 1998-12-28 01:13+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1998-12-05 12:57+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -21,11 +21,11 @@ msgstr "Mòdul desconegut: "
 msgid "KDE Control Center"
 msgstr "Centre de control KDE"
 
-#: toplevel.cpp:87
+#: toplevel.cpp:86
 msgid "&Swallow modules"
 msgstr "&Encasta mòduls"
 
-#: toplevel.cpp:90
+#: toplevel.cpp:89
 msgid ""
 "KDE Control Center - Version 1.0\n"
 "\n"

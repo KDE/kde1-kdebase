@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit 1.0pre2\n"
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1998-07-17 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -74,7 +74,7 @@ msgstr ""
 "Ne eblis krei dosierujon por via persona menuo.\n"
 " Premu \"Konfirmu\" por forlasi KMenuedit."
 
-#: confmenu.cpp:91 entrydialog.cpp:52
+#: confmenu.cpp:91 entrydialog.cpp:60
 msgid "Separator"
 msgstr "Dividilo"
 
@@ -146,110 +146,110 @@ msgstr "Pado:"
 msgid "PersonalPath:"
 msgstr "Persona Pado:"
 
-#: entrydialog.cpp:53
+#: entrydialog.cpp:61
 msgid "Submenu"
 msgstr "Submenuo"
 
-#: entrydialog.cpp:54 entrydialog.cpp:167 entrydialog.cpp:536
-#: entrydialog.cpp:541
+#: entrydialog.cpp:62 entrydialog.cpp:198 entrydialog.cpp:539
+#: entrydialog.cpp:544
 msgid "Application"
 msgstr "Aplika¼o"
 
-#: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
+#: entrydialog.cpp:63 entrydialog.cpp:200 entrydialog.cpp:543
 msgid "Swallow"
 msgstr "Gastigite"
 
-#: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
+#: entrydialog.cpp:64 entrydialog.cpp:202 entrydialog.cpp:548
 msgid "Link"
 msgstr "Ligo"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
+#: entrydialog.cpp:65 entrydialog.cpp:204 entrydialog.cpp:552
 msgid "Device"
 msgstr "Aparato"
 
-#: entrydialog.cpp:63
+#: entrydialog.cpp:72
 #, fuzzy
 msgid "Type:"
 msgstr "Dosierara tipo:"
 
-#: entrydialog.cpp:69
+#: entrydialog.cpp:79
 msgid "File Name:"
 msgstr "Dosiernomo:"
 
-#: entrydialog.cpp:82
+#: entrydialog.cpp:94
 #, fuzzy
 msgid "Name:"
 msgstr "Dosiernomo:"
 
-#: entrydialog.cpp:95
-msgid "Mini Icon:"
-msgstr "Piktogrameto:"
-
-#: entrydialog.cpp:127
+#: entrydialog.cpp:109
 msgid "Icon:"
 msgstr "Piktogramo:"
 
-#: entrydialog.cpp:133
+#: entrydialog.cpp:141
+msgid "Mini Icon:"
+msgstr "Piktogrameto:"
+
+#: entrydialog.cpp:149
 msgid "Comment:"
 msgstr "Komento:"
 
-#: entrydialog.cpp:165 entrydialog.cpp:535
+#: entrydialog.cpp:196 entrydialog.cpp:538
 msgid "Execute"
 msgstr "Lanæu"
 
-#: entrydialog.cpp:186
+#: entrydialog.cpp:222
 msgid "Execute:"
 msgstr "Lanæu"
 
-#: entrydialog.cpp:192
+#: entrydialog.cpp:228
 msgid "Working Directory:"
 msgstr "Labordosierujo:"
 
-#: entrydialog.cpp:205
+#: entrydialog.cpp:241
 msgid "Run in terminal"
 msgstr "Rulu en terminalo"
 
-#: entrydialog.cpp:211
+#: entrydialog.cpp:245
 msgid "Terminal Options:"
 msgstr "Terminalopcioj:"
 
-#: entrydialog.cpp:292
+#: entrydialog.cpp:310
 msgid "Binary Pattern:"
 msgstr "Duuma þablono:"
 
-#: entrydialog.cpp:300
+#: entrydialog.cpp:325
 msgid "Application to swallow:"
 msgstr "Gastigenda aplika¼o:"
 
-#: entrydialog.cpp:306
+#: entrydialog.cpp:331
 msgid "Title of application:"
 msgstr "Titolo de la aplika¼o:"
 
-#: entrydialog.cpp:312
+#: entrydialog.cpp:337
 msgid "Application to execute on button press:"
 msgstr "Aplika¼o lanæenda æe butonpremo:"
 
-#: entrydialog.cpp:342
+#: entrydialog.cpp:367
 msgid "URL:"
 msgstr "URL:"
 
-#: entrydialog.cpp:391
+#: entrydialog.cpp:415
 msgid "Read Only"
 msgstr "Nur legi"
 
-#: entrydialog.cpp:397
+#: entrydialog.cpp:420
 msgid "Device:"
 msgstr "Aparato:"
 
-#: entrydialog.cpp:403
+#: entrydialog.cpp:425
 msgid "Mount Point:"
 msgstr "Muntejo:"
 
-#: entrydialog.cpp:409
+#: entrydialog.cpp:430
 msgid "FS Type:"
 msgstr "Dosierara tipo:"
 
-#: entrydialog.cpp:415
+#: entrydialog.cpp:435
 msgid "Unmount Icon:"
 msgstr "Piktogramo por Malmunto"
 

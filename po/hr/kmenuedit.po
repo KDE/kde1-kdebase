@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -72,7 +72,7 @@ msgstr ""
 "Nije moguæe stvaranje direktorija za Va¹ osobni izbornik.\n"
 "Odaberite U redu za izlazak iz KMenuedit-a."
 
-#: confmenu.cpp:91 entrydialog.cpp:52
+#: confmenu.cpp:91 entrydialog.cpp:60
 msgid "Separator"
 msgstr "Razdjeljnik"
 
@@ -144,108 +144,108 @@ msgstr "Put:"
 msgid "PersonalPath:"
 msgstr "OsobniPut"
 
-#: entrydialog.cpp:53
+#: entrydialog.cpp:61
 msgid "Submenu"
 msgstr "Podizbornik"
 
-#: entrydialog.cpp:54 entrydialog.cpp:167 entrydialog.cpp:536
-#: entrydialog.cpp:541
+#: entrydialog.cpp:62 entrydialog.cpp:198 entrydialog.cpp:539
+#: entrydialog.cpp:544
 msgid "Application"
 msgstr "Aplikacije"
 
-#: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
+#: entrydialog.cpp:63 entrydialog.cpp:200 entrydialog.cpp:543
 msgid "Swallow"
 msgstr "Progutaj"
 
-#: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
+#: entrydialog.cpp:64 entrydialog.cpp:202 entrydialog.cpp:548
 msgid "Link"
 msgstr "Veza"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
+#: entrydialog.cpp:65 entrydialog.cpp:204 entrydialog.cpp:552
 msgid "Device"
 msgstr "Ureðaj"
 
-#: entrydialog.cpp:63
+#: entrydialog.cpp:72
 msgid "Type:"
 msgstr "Vrsta:"
 
-#: entrydialog.cpp:69
+#: entrydialog.cpp:79
 msgid "File Name:"
 msgstr "Ime Datoteke:"
 
-#: entrydialog.cpp:82
+#: entrydialog.cpp:94
 msgid "Name:"
 msgstr "Ime:"
 
-#: entrydialog.cpp:95
-msgid "Mini Icon:"
-msgstr "Mini Ikona:"
-
-#: entrydialog.cpp:127
+#: entrydialog.cpp:109
 msgid "Icon:"
 msgstr "Ikona:"
 
-#: entrydialog.cpp:133
+#: entrydialog.cpp:141
+msgid "Mini Icon:"
+msgstr "Mini Ikona:"
+
+#: entrydialog.cpp:149
 msgid "Comment:"
 msgstr "Komentar:"
 
-#: entrydialog.cpp:165 entrydialog.cpp:535
+#: entrydialog.cpp:196 entrydialog.cpp:538
 msgid "Execute"
 msgstr "Izvr¹avanje"
 
-#: entrydialog.cpp:186
+#: entrydialog.cpp:222
 msgid "Execute:"
 msgstr "Izvr¹i:"
 
-#: entrydialog.cpp:192
+#: entrydialog.cpp:228
 msgid "Working Directory:"
 msgstr "Radni Direktorij:"
 
-#: entrydialog.cpp:205
+#: entrydialog.cpp:241
 msgid "Run in terminal"
 msgstr "Pokreni u terminalu"
 
-#: entrydialog.cpp:211
+#: entrydialog.cpp:245
 msgid "Terminal Options:"
 msgstr "Postavke Terminala:"
 
-#: entrydialog.cpp:292
+#: entrydialog.cpp:310
 msgid "Binary Pattern:"
 msgstr "Binarni Uzorak:"
 
-#: entrydialog.cpp:300
+#: entrydialog.cpp:325
 msgid "Application to swallow:"
 msgstr "Aplikacije koje treba progutati:"
 
-#: entrydialog.cpp:306
+#: entrydialog.cpp:331
 msgid "Title of application:"
 msgstr "Naziv aplikacijeK"
 
-#: entrydialog.cpp:312
+#: entrydialog.cpp:337
 msgid "Application to execute on button press:"
 msgstr "Aplikaciju koju treba izvesti kod pritiska gumba:"
 
-#: entrydialog.cpp:342
+#: entrydialog.cpp:367
 msgid "URL:"
 msgstr "URL:"
 
-#: entrydialog.cpp:391
+#: entrydialog.cpp:415
 msgid "Read Only"
 msgstr "Samo Èitanje"
 
-#: entrydialog.cpp:397
+#: entrydialog.cpp:420
 msgid "Device:"
 msgstr "Ureðaj:"
 
-#: entrydialog.cpp:403
+#: entrydialog.cpp:425
 msgid "Mount Point:"
 msgstr "Mjesto Postavljanja:"
 
-#: entrydialog.cpp:409
+#: entrydialog.cpp:430
 msgid "FS Type:"
 msgstr "Vrsta DS:"
 
-#: entrydialog.cpp:415
+#: entrydialog.cpp:435
 msgid "Unmount Icon:"
 msgstr "Makni Ikonu:"
 

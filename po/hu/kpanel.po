@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.2\n"
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1997-09-21 19:39+MET\n"
 "Last-Translator: Nagy Balazs <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -95,7 +95,7 @@ msgstr "Ablaklista hozzáadása"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Ablaklista hozzáadása a panelhez"
 
-#: events.C:810 props.C:183
+#: events.C:827 props.C:183
 msgid "Configure"
 msgstr "Konfigurálás"
 
@@ -111,7 +111,7 @@ msgstr ""
 msgid "Add or remove applications in the menu structure "
 msgstr ""
 
-#: events.C:812 props.C:189
+#: events.C:829 props.C:189
 msgid "Restart"
 msgstr "Újraindítás"
 
@@ -135,7 +135,7 @@ msgstr "Képernyõzár"
 msgid "The menu editor is not installed."
 msgstr ""
 
-#: events.C:866 props.C:452
+#: events.C:883 props.C:452
 msgid "Oops!"
 msgstr ""
 
@@ -149,7 +149,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr ""
 
-#: events.C:865
+#: events.C:882
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
 

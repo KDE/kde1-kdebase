@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1998-01-27 HO:MI+ZONE\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -95,7 +95,7 @@ msgstr "Tilføj vindues oversigt"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Tilføj vindues oversigt på panelet"
 
-#: events.C:810 props.C:183
+#: events.C:827 props.C:183
 msgid "Configure"
 msgstr "Konfigurer"
 
@@ -111,7 +111,7 @@ msgstr "Redigér menuer"
 msgid "Add or remove applications in the menu structure "
 msgstr "Tilføj eller fjern applikationer fra menustrukturen"
 
-#: events.C:812 props.C:189
+#: events.C:829 props.C:189
 msgid "Restart"
 msgstr "Genstart"
 
@@ -135,7 +135,7 @@ msgstr "Lås skærm"
 msgid "The menu editor is not installed."
 msgstr "Menu redigéringsprogrammet er ikke installéret"
 
-#: events.C:866 props.C:452
+#: events.C:883 props.C:452
 msgid "Oops!"
 msgstr "Ups!"
 
@@ -150,7 +150,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "Disk Navigator"
 
-#: events.C:865
+#: events.C:882
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kan ikke placere dette som en trykknap på panelet!"
 

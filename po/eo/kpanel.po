@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1998-12-02 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -94,7 +94,7 @@ msgstr "Aldonu fenestroliston"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Aldonu fenestrolistomenuon sur la panelo"
 
-#: events.C:810 props.C:183
+#: events.C:827 props.C:183
 msgid "Configure"
 msgstr "Konfiguru"
 
@@ -110,7 +110,7 @@ msgstr "Redaktu menuojn"
 msgid "Add or remove applications in the menu structure "
 msgstr "Aldonu aý forigu aplika¼ojn en la menustrukturo"
 
-#: events.C:812 props.C:189
+#: events.C:829 props.C:189
 msgid "Restart"
 msgstr "Relanæu"
 
@@ -134,7 +134,7 @@ msgstr "Þlosu l' ekranon"
 msgid "The menu editor is not installed."
 msgstr "La menuredaktilo ne estas instalita."
 
-#: events.C:866 props.C:452
+#: events.C:883 props.C:452
 msgid "Oops!"
 msgstr "Ho ve!"
 
@@ -151,7 +151,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "Disknavigilo"
 
-#: events.C:865
+#: events.C:882
 msgid "Cannot put this as button onto the panel!"
 msgstr "Ne eblas meti tiun butonon sur la panelon!"
 

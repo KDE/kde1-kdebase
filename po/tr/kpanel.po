@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -92,7 +92,7 @@ msgstr "Pencere dökümü ekle"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Panel'e pencere dökümü menüsü ekle"
 
-#: events.C:810 props.C:183
+#: events.C:827 props.C:183
 msgid "Configure"
 msgstr "Ayarla"
 
@@ -108,7 +108,7 @@ msgstr "Menüleri Düzenle"
 msgid "Add or remove applications in the menu structure "
 msgstr "Menü yapýsýna uygulama ekle yada sil"
 
-#: events.C:812 props.C:189
+#: events.C:829 props.C:189
 msgid "Restart"
 msgstr "Yeniden baþlat"
 
@@ -132,7 +132,7 @@ msgstr "Ekraný kilitle"
 msgid "The menu editor is not installed."
 msgstr "Menü düzenleyicisi yüklenmemiþ."
 
-#: events.C:866 props.C:452
+#: events.C:883 props.C:452
 msgid "Oops!"
 msgstr "Hay Allah!"
 
@@ -146,7 +146,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr ""
 
-#: events.C:865
+#: events.C:882
 msgid "Cannot put this as button onto the panel!"
 msgstr "Bu tuþ panele konulamýyor!"
 

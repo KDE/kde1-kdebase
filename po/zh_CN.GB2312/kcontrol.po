@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-12-28 01:13+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -14,11 +14,11 @@ msgstr "未知的模块: "
 msgid "KDE Control Center"
 msgstr "KDE 控制中心"
 
-#: toplevel.cpp:87
+#: toplevel.cpp:86
 msgid "&Swallow modules"
 msgstr "模块集成显示[&S]"
 
-#: toplevel.cpp:90
+#: toplevel.cpp:89
 #, fuzzy
 msgid ""
 "KDE Control Center - Version 1.0\n"

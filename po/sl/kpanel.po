@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1998-07-18 15:00+0100\n"
 "Last-Translator: luka steger <luka_steger@hotmail.com>\n"
 "Language-Team: slovene <LL@li.org>\n"
@@ -95,7 +95,7 @@ msgstr "Dodaj seznam oken"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Dodaj seznam oken na pult"
 
-#: events.C:810 props.C:183
+#: events.C:827 props.C:183
 msgid "Configure"
 msgstr "Nastavi"
 
@@ -111,7 +111,7 @@ msgstr "Uredi menije"
 msgid "Add or remove applications in the menu structure "
 msgstr "Dodaj ali odstrani programe z menija"
 
-#: events.C:812 props.C:189
+#: events.C:829 props.C:189
 msgid "Restart"
 msgstr "Ponovni zagon"
 
@@ -135,7 +135,7 @@ msgstr "Zakleni zaslon"
 msgid "The menu editor is not installed."
 msgstr "Urejevalnik menijev ni name¹èen."
 
-#: events.C:866 props.C:452
+#: events.C:883 props.C:452
 msgid "Oops!"
 msgstr "Ups!"
 
@@ -149,7 +149,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr ""
 
-#: events.C:865
+#: events.C:882
 msgid "Cannot put this as button onto the panel!"
 msgstr "Ne morem narediti gumba na pultu!"
 

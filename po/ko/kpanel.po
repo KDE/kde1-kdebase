@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,7 +93,7 @@ msgstr "윈도우목록 추가"
 msgid "Add a windowlist menu onto the panel"
 msgstr "윈도우목록 메뉴 패널에 추가"
 
-#: events.C:810 props.C:183
+#: events.C:827 props.C:183
 msgid "Configure"
 msgstr "설정"
 
@@ -109,7 +109,7 @@ msgstr "메뉴 편집"
 msgid "Add or remove applications in the menu structure "
 msgstr "메뉴 구조의 응용프로그램 추가 또는 삭제 "
 
-#: events.C:812 props.C:189
+#: events.C:829 props.C:189
 msgid "Restart"
 msgstr "다시 시작"
 
@@ -133,7 +133,7 @@ msgstr "화면 잠금"
 msgid "The menu editor is not installed."
 msgstr "메뉴 편집기가 설치되지 않았습니다."
 
-#: events.C:866 props.C:452
+#: events.C:883 props.C:452
 msgid "Oops!"
 msgstr "아!"
 
@@ -147,7 +147,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr ""
 
-#: events.C:865
+#: events.C:882
 msgid "Cannot put this as button onto the panel!"
 msgstr "패널에 단추로 넣을 수 없습니다!"
 

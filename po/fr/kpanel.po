@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1998-01-11 01:00 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
@@ -92,7 +92,7 @@ msgid "Add a windowlist menu onto the panel"
 msgstr ""
 "Ajouter le menu d'affichage et de sélection des fenêtres dans le panneau"
 
-#: events.C:810 props.C:183
+#: events.C:827 props.C:183
 msgid "Configure"
 msgstr "Configurer"
 
@@ -108,7 +108,7 @@ msgstr "Modifier les menus"
 msgid "Add or remove applications in the menu structure "
 msgstr "Ajouter ou supprimer des applications dans le menu"
 
-#: events.C:812 props.C:189
+#: events.C:829 props.C:189
 msgid "Restart"
 msgstr "Redémarrer"
 
@@ -132,7 +132,7 @@ msgstr "Verrouiller l'écran"
 msgid "The menu editor is not installed."
 msgstr "L'éditeur de menus n'est pas installé."
 
-#: events.C:866 props.C:452
+#: events.C:883 props.C:452
 msgid "Oops!"
 msgstr "Houlà !"
 
@@ -148,7 +148,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "KDiskNavigator"
 
-#: events.C:865
+#: events.C:882
 msgid "Cannot put this as button onto the panel!"
 msgstr "Impossible d'ajouter cette application comme bouton sur le panneau !"
 

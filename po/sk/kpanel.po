@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -89,7 +89,7 @@ msgstr "Prida» zoznam okien"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Prida» zoznam okien na panel"
 
-#: events.C:810 props.C:183
+#: events.C:827 props.C:183
 msgid "Configure"
 msgstr "Nastavenie"
 
@@ -105,7 +105,7 @@ msgstr "Editova» menu"
 msgid "Add or remove applications in the menu structure "
 msgstr "Prida» alebo ubra» aplikácie v ¹truktúre menu "
 
-#: events.C:812 props.C:189
+#: events.C:829 props.C:189
 msgid "Restart"
 msgstr "Spusti» znova"
 
@@ -129,7 +129,7 @@ msgstr "Blokova» obrazovku"
 msgid "The menu editor is not installed."
 msgstr "Editor menu nie je nain¹talovaný."
 
-#: events.C:866 props.C:452
+#: events.C:883 props.C:452
 msgid "Oops!"
 msgstr "Oops!"
 
@@ -145,7 +145,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "Navigátor disku"
 
-#: events.C:865
+#: events.C:882
 msgid "Cannot put this as button onto the panel!"
 msgstr "Nemô¾em da» toto ako tlaèítko na panel!"
 

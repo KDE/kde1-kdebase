@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1998-12-23 14:08 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -89,7 +89,7 @@ msgstr "Pøidat seznam oken"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Pøidat seznam oken na panel"
 
-#: events.C:810 props.C:183
+#: events.C:827 props.C:183
 msgid "Configure"
 msgstr "Konfigurovat"
 
@@ -105,7 +105,7 @@ msgstr "Upravit menu"
 msgid "Add or remove applications in the menu structure "
 msgstr "Pøidání nebo ubrání aplikací ve struktuøe menu"
 
-#: events.C:812 props.C:189
+#: events.C:829 props.C:189
 msgid "Restart"
 msgstr "Spustit znova"
 
@@ -129,7 +129,7 @@ msgstr "Blokovat obrazovku"
 msgid "The menu editor is not installed."
 msgstr "Editor menu není nainstalován."
 
-#: events.C:866 props.C:452
+#: events.C:883 props.C:452
 msgid "Oops!"
 msgstr "Ouha!"
 
@@ -145,7 +145,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "Diskový navigátor"
 
-#: events.C:865
+#: events.C:882
 msgid "Cannot put this as button onto the panel!"
 msgstr "Toto není mo¾né dát na panel jako tlaèítko!"
 

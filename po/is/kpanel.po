@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1998-10-05 01:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -84,7 +84,7 @@ msgstr "Bæta gluggalista við"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Bæta gluggalistavalmynd á spjaldið"
 
-#: events.C:810 props.C:183
+#: events.C:827 props.C:183
 msgid "Configure"
 msgstr "Stilla"
 
@@ -100,7 +100,7 @@ msgstr "Sýsla með valmyndir"
 msgid "Add or remove applications in the menu structure "
 msgstr "Bæta forritum við valmyndakerfið, eða fjarlægja þau"
 
-#: events.C:812 props.C:189
+#: events.C:829 props.C:189
 msgid "Restart"
 msgstr "Endurræsa"
 
@@ -124,7 +124,7 @@ msgstr "Læsa skjá"
 msgid "The menu editor is not installed."
 msgstr "Valmyndaritillinn er ekki settur upp."
 
-#: events.C:866 props.C:452
+#: events.C:883 props.C:452
 msgid "Oops!"
 msgstr "Úps!"
 
@@ -140,7 +140,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "Diskaflakkari"
 
-#: events.C:865
+#: events.C:882
 msgid "Cannot put this as button onto the panel!"
 msgstr "Ekki er hægt að setja þennan hnapp á spjaldið!"
 
