@@ -8,10 +8,13 @@ Authors=Serge Vakulenko <vak@kiae.su>,Alexander V. Lukyanov,Trak <trak@cyberdude
 
 Comment=Has latin characters as alternate symbols.
 Comment[cs]=Obsahuje znaky latinky jako alternativní symboly.
+Comment[no]=Har latinske tegn som alternative symboler.
 Comment[pt_BR]=Tem caracteres latinos bem como símbolos alternativos.
 
 Language=Russian
 Language[cs]=Ruský
+Language[no]=Russisk
+Language[pt_BR]=sso
 
 Charset=iso8859-5
 Label=Ri

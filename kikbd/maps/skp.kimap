@@ -4,10 +4,13 @@
 Authors=Jan ONDREJ (SAL) <ondrejj@intrak.tuke.sk>
 
 Comment=Programmers Keyboard
+Comment[no]=Programmeringstastatur
 Comment[pt_BR]=Teclado de programador
 
 Language=Slovak
 Language[cs]=Slovenskı
+Language[no]=Slovakisk
+Language[pt_BR]=lovaco
 #Language[ru]=şÅÛÓËÉÊ
 
 Label=Skp

@@ -5,3 +5,5 @@ Icon=ftp.xpm
 Type=Link
 Name=FTP URL
 Name[de]=FTP URL2
+Name[no]=FTP-URL
+Name[pt_BR]=URL de FTP

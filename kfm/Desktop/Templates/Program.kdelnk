@@ -7,3 +7,5 @@ TerminalOptions=
 Path=
 Terminal=0
 Name=Application
+Name[no]=Applikasjon
+Name[pt_BR]=Aplicativo

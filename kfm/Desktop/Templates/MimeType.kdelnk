@@ -6,3 +6,5 @@ Icon=unknown.xpm
 Type=MimeType
 Patterns=
 Name=Mime Type
+Name[no]=Mimetype
+Name[pt_BR]=Tipo MIME

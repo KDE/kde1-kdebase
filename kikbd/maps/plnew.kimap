@@ -5,10 +5,13 @@ Authors=Jacek Konieczny <jajcus@zeus.polsl.gliwice.pl>,
 
 Comment=New "programmer's" keyboard
 Comment[cs]=Nová "programátorská" klávesnice
+Comment[no]=Nytt programmeringstastatur
 Comment[pt_BR]=Novo teclado de programador
 
 Language=Polish
 Language[cs]=polský
+Language[no]=Polsk
+Language[pt_BR]=lonês
 
 Label=nPl
 Locale=pl

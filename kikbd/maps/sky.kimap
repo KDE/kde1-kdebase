@@ -5,11 +5,14 @@ Authors=Jan ONDREJ (SAL) <ondrejj@intrak.tuke.sk>
 
 Comment=Typewriter Keyboard (QWERTY)
 Comment[cs]=Klávesnice psacího stroje (QWERTY)
+Comment[no]=Skrivemaskintastatur (QWERTY)
 Comment[pt_BR]=Teclado de datilógrafo (QWERTY)
 #Comment[ru]=ëÌÁ×ÉÁÔÕÒÁ (QWERTY)
 
 Language=Slovak
 Language[cs]=Slovenskı
+Language[no]=Slovakisk
+Language[pt_BR]=lovaco
 #Language[ru]=şÅÛÓËÉÊ
 
 Label=Sky

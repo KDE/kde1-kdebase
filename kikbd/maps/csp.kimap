@@ -2,10 +2,13 @@
 
 [International Keyboard]
 Comment=Programmers Keyboard
+Comment[no]=Programmeringstastatur
 Comment[pt_BR]=Teclado de programador
 
 Language=Czech
 Language[cs]=Èeský
+Language[no]=Tjekkisk
+Language[pt_BR]=heco
 
 Label=Csp
 Locale=cs

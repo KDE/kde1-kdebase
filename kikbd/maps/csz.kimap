@@ -3,10 +3,13 @@
 [International Keyboard]
 Comment=Typewriter Keyboard (QWERTZ)
 Comment[cs]=Klávesnice psacího stroje (QWERTZ)
+Comment[no]=Skrivemaskintastatur (QWERTZ)
 Comment[pt_BR]=Teclado de datilógrafo (QWERTZ)
 
 Language=Czech
 Language[cs]=Èeský
+Language[no]=Tjekkisk
+Language[pt_BR]=heco
 
 Label=Csz
 Locale=cs

@@ -2,9 +2,12 @@
 
 [International Keyboard]
 Comment=German Keyboard (Germany)
+Comment[pt_BR]=Teclado Alemão (Alemanha)
 
 Language=German
 Language[cs]=Nìmecký
+Language[no]=Tysk
+Language[pt_BR]=emão
 
 Label=De
 Locale=de

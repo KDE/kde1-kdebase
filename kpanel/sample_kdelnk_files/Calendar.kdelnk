@@ -9,4 +9,5 @@ SwallowTitle[no]=xclock
 SwallowTitle[pl]=xclock
 Exec=xcalendar
 Comment=Your personal secretary
+Comment[no]=Din personlige sekretær
 Comment[pt_BR]=Seu secretário pessoal

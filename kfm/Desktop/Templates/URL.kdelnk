@@ -4,3 +4,5 @@ URL=
 Icon=unknown.xpm
 Type=Link
 Name=Internet Address (URL)
+Name[no]=Internettadresse (URL)
+Name[pt_BR]=Endereço Internet (URL)

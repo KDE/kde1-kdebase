@@ -4,3 +4,5 @@ URL=http://www.kde.org
 Icon=www.xpm
 Type=Link
 Name=World Wide Web URL
+Name[no]=Verdensvev-URL
+Name[pt_BR]=URL da Web

@@ -10,4 +10,5 @@ SwallowTitle[pl]=xload
 Exec=xosview
 Comment=Informations about your system status
 Comment[cs]=Informace o stavu va¹eho systému
+Comment[no]=Informasjon om din systemstatus
 Comment[pt_BR]=Informações sobre o status de seu sistema
