@@ -1064,7 +1064,7 @@ void KFMManager::stop()
 
 void KFMManager::slotRedirection( const char *_url )
 {
-    kdebug(KDEBUG_INFO,1201,"Setting job URL to %s",_url);
+    // kdebug(KDEBUG_INFO,1201,"Setting job URL to %s",_url);
     jobURL = _url; // store it to a special QString.
     if (KURL(_url).isLocalFile())
     {
