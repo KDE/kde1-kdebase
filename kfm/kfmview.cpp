@@ -157,8 +157,8 @@ void KfmView::setHTMLWidgetOptions(){
 
   QColor bgColor;
   QColor textColor;
-  QColor linkColor ;
-  QColor vLinkColor ;
+  QColor linkColor;
+  QColor vLinkColor;
 
   KConfig *config = KApplication::getKApplication()->getConfig();
   config->setGroup( "KFM HTML Defaults" );		
@@ -189,8 +189,8 @@ void KfmView::setHTMLWidgetOptions(){
       kapp->getCharsets()->setDefault(aStr);
 
 
-  bool changeCursor = (bool) config->readNumEntry("ChangeCursor",0);
-  bool underlineLinks = (bool) config->readNumEntry("UnderlineLinks",1);
+  bool changeCursor = config->readNumEntry("ChangeCursor",false);
+  bool underlineLinks = config->readNumEntry("UnderlineLinks",true);
 
   KHTMLWidget* htmlview;
   htmlview=getKHTMLWidget();
