@@ -152,7 +152,7 @@ KfmView::~KfmView()
     // Save HTTP Cookies
     if (cookiejar)
     {
-      QString cookieFile = kapp->localkdedir().data();
+      QString cookieFile = kapp->localkdedir().copy();
       cookieFile += "/share/apps/kfm/cookies";
       cookiejar->saveCookies( cookieFile.data() );
     }
@@ -1738,7 +1738,7 @@ bool KfmView::dndHook( const char *_url, QPoint &_p )
     else
     {
 	// pixmap.load( KMimeType::getPixmapFileStatic( l.first() ) );
-	QString dir = kapp->kde_datadir();
+	QString dir = kapp->kde_datadir().copy();
 	dir += "/kfm/pics/kmultiple.xpm";
 	pixmap.load( dir );
 	// TODO  Nice icon for multiple files
