@@ -31,6 +31,28 @@
 #include <klocale.h>
 #define klocale KLocale::klocale()
 
+char* kfm_getrev();
+
+char* kfm_getrev()
+{
+    static char *revision = "$Revision$";
+    static char *rev;
+    static char *p;
+
+    static bool flag = false;
+    if ( flag )
+	return rev;
+    flag = true;
+    
+    if ((p = strchr(revision, ':'))) {
+	rev = p + 2;
+	p = strchr(rev, '$');
+	*--p = 0;
+    } else
+	rev = "???";
+    return rev;
+}
+
 KBookmarkManager KfmGui::bookmarkManager;
 
 QList<KfmGui> KfmGui::windowList;
@@ -216,7 +238,12 @@ void KfmGui::initMenu()
 	{
 	    if ( strcmp( fi->fileName().data(), "." ) != 0 && 
 		 strcmp( fi->fileName().data(), ".." ) != 0 )
-		menuNew->insertItem( fi->fileName().data() );
+	    {
+		QString tmp = fi->fileName().data();
+		if ( tmp.right(7) == ".kdelnk" )
+		    tmp.truncate( tmp.length() - 7 );
+		menuNew->insertItem( tmp );
+	    }
 	    ++it;                               // goto next list element
 	}
     }
@@ -269,15 +296,18 @@ void KfmGui::initMenu()
 		       this, SLOT(slotShowTreeView()) );
     mview->insertItem( klocale->translate("Visual Schnauzer"),
 		       this, SLOT(slotShowSchnauzer()) );
-    mview->insertSeparator();
     mview->insertItem( klocale->translate("HTML View"),
 		       this, SLOT(slotViewHTML()), ALT+Key_H );
+    mview->insertSeparator();
     mview->insertItem( klocale->translate("Icon View"),
 		       this, SLOT(slotIconView()), ALT+Key_I );
     mview->insertItem( klocale->translate("Text View"),
 		       this, SLOT(slotTextView()) );
     mview->insertItem( klocale->translate("Long View"),
 		       this, SLOT(slotLongView()), ALT+Key_O );
+    mview->insertSeparator();
+    mview->insertItem( klocale->translate("Save Settings"),
+		       this, SLOT(slotSaveSettings()) );
     mview->insertSeparator();
     mview->insertItem( klocale->translate("Split window"),
 		       this, SLOT(slotSplitWindow()) );
@@ -286,11 +316,11 @@ void KfmGui::initMenu()
 		       view, SLOT(slotReload()), ALT+Key_R );
     mview->insertItem( klocale->translate("Rescan bindings"),
 		       this, SLOT(slotRescanBindings()) );
-
+    
     mview->setItemChecked( mview->idAt( 0 ), showDot );
     mview->setItemChecked( mview->idAt( 1 ), bTreeView );
     mview->setItemChecked( mview->idAt( 2 ), visualSchnauzer );
-    mview->setItemChecked( mview->idAt( 4 ), bViewHTML );
+    mview->setItemChecked( mview->idAt( 3 ), bViewHTML );
 
     switch (viewMode) 
       {
@@ -518,16 +548,16 @@ void KfmGui::slotSplitWindow()
 
 void KfmGui::slotViewHTML( )
 {
-    bViewHTML = true;
-    viewMode = ICON_VIEW;
-    mview->setItemChecked( mview->idAt( 4 ), !mview->isItemChecked( 4 ) );
+    bViewHTML = !mview->isItemChecked( 3 );
+    // viewMode = ICON_VIEW;
+    mview->setItemChecked( mview->idAt( 3 ), !mview->isItemChecked( 3 ) );
     view->slotUpdateView();
 }
 
 void KfmGui::slotIconView()
 {
     viewMode = ICON_VIEW;
-    bViewHTML = false;
+    // bViewHTML = false;
     mview->setItemChecked( mview->idAt( 5 ), true );
     mview->setItemChecked( mview->idAt( 6 ), false );
     mview->setItemChecked( mview->idAt( 7 ), false );
@@ -537,7 +567,7 @@ void KfmGui::slotIconView()
 void KfmGui::slotLongView()
 {
     viewMode = LONG_VIEW;
-    bViewHTML = false;
+    // bViewHTML = false;
     mview->setItemChecked( mview->idAt( 5 ), false );
     mview->setItemChecked( mview->idAt( 6 ), false);
     mview->setItemChecked( mview->idAt( 7 ), true );
@@ -547,7 +577,7 @@ void KfmGui::slotLongView()
 void KfmGui::slotTextView()
 {
     viewMode = TEXT_VIEW;
-    bViewHTML = false;
+    // bViewHTML = false;
     mview->setItemChecked( mview->idAt( 5 ), false );
     mview->setItemChecked( mview->idAt( 6 ), true );
     mview->setItemChecked( mview->idAt( 7 ), false );
@@ -785,7 +815,10 @@ void KfmGui::slotOpenLocation( )
     
     DlgLineEntry l( klocale->translate("Open Location:"), url.data(), 
 		    this, true );
-    if ( l.exec() )
+    //if ( l.exec() )
+    int x = l.exec();
+    printf("DEBUG=%i\n",x);
+    if ( x )
     {
 	QString url = l.getText();
 	// Exit if the user did not enter an URL
@@ -830,7 +863,7 @@ void KfmGui::slotQuit()
     KIOJob::deleteAllJobs();
     delete ( KIOServer::getKIOServer() );
 
-    saveSettings();
+    // saveSettings();
 
     exit(0);
 }
@@ -842,8 +875,10 @@ void KfmGui::slotClose()
 
 void KfmGui::slotAbout()
 {
+    QString tmp;
+    tmp.sprintf("KFM %s\n\n%s", kfm_getrev(), klocale->translate("(c) by Torben Weis\nweis@kde.org\n\nand the KFM team") );
     QMessageBox::message( klocale->translate("About"), 
-			  klocale->translate("KFM 0.9.0\n\n(c) by Torben Weis\nweis@kde.org\n\nand the KFM team"), klocale->translate("Ok") );
+			  tmp, klocale->translate("Ok") );
 }
 
 void KfmGui::slotHelp()
@@ -931,7 +966,7 @@ void KfmGui::slotRemoveWaitingWidget( KHTMLView *_w )
    _w->gotoAnchor(u.reference());
 }
 
-void KfmGui::saveSettings()
+void KfmGui::slotSaveSettings()
 {
   KConfig *config = kapp->getConfig();
   config->setGroup( "Settings" );
@@ -994,8 +1029,8 @@ KfmGui::~KfmGui()
     windowList.remove( this );
     debugT("Deleted\n");
     
-    if ( windowList.isEmpty() )  // the last window closed?
-      saveSettings();
+    // if ( windowList.isEmpty() )   the last window closed?
+    // saveSettings();
 }
 
 #include "kfmgui.moc"

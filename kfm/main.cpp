@@ -4,6 +4,8 @@
 #include "kfmserver.h"
 #include "xview.h"
 #include "kfmpaths.h"
+#include "kfmjob.h"
+
 #include <config-kfm.h>
 
 #include <kapp.h>
@@ -181,6 +183,9 @@ int main( int argc, char ** argv )
 		    kapp->kdedir().data(), KFMPaths::TemplatesPath().data() );
 	system( cmd.data() );
     }
+
+    // Initialize the KMimeMagic stuff
+    KFMJob::initKMimeMagic();
     
     KHTMLWidget::registerFormats();
     QImageIO::defineIOHandler( "XV", "^P7 332", 0, read_xv_file, 0L );

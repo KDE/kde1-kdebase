@@ -614,8 +614,8 @@ void KMimeType::init()
     icon = config->readEntry( "Chardevice" );
     if ( icon.isNull() )
     {
-       strcpy( CDevPixmap, "chardevice.xpm" );
-       CDevType->setPixmap( "chardevice.xpm" );
+       strcpy( CDevPixmap, "char_dev.xpm" );
+       CDevType->setPixmap( "char_dev.xpm" );
     }
     else
     {
@@ -629,8 +629,8 @@ void KMimeType::init()
     icon = config->readEntry( "Blockdevice" );
     if ( icon.isNull() )
     {
-       strcpy( BDevPixmap, "blockdevice.xpm" );
-       BDevType->setPixmap( "blockdevice.xpm" );
+       strcpy( BDevPixmap, "block_dev.xpm" );
+       BDevType->setPixmap( "block_dev.xpm" );
     }
     else
     {

@@ -4,6 +4,7 @@
 #include <qstring.h>
 #include <unistd.h>
 #include "kio_errors.h"
+#include <qmsgbox.h>
 
 /************************** Authorization stuff: copied from wget-source *****/
 
@@ -77,26 +78,32 @@ char *create_www_auth(const char *user, const char *passwd)
 
 KProtocolHTTP::KProtocolHTTP()
 {
-	char *proxy, *port;
+    connected = 0;
+    use_proxy = 0;
 
-	proxy = getenv("HTTP_PROXY_NAME");
+    char *proxy = 0L;
+    int port = 80;
+    
+    QString tmp = getenv("HTTP_PROXY");
+    if ( !tmp.isEmpty() )
+    {
+	KURL u( tmp );
+	if ( u.isMalformed() )
+	{
+	    QMessageBox::message( "KFM Error", "HTTP Proxy URL malformed\nProxy disabled." );
+	    return;
+	}
+	proxy = u.host();
+	port = u.port();
+	if ( port == 0 )
+	    port = 80;
+	
 	if(proxy)
 	{
-		port = getenv("HTTP_PROXY_PORT");
-		if(port == NULL) port="80";
-		init_sockaddr(&proxy_name, proxy, atoi(port));
+		init_sockaddr(&proxy_name, proxy, port);
 		use_proxy = 1;
 	}
-	else
-	{
-#ifdef HTTP_PROXY_NAME
-		init_sockaddr(&proxy_name, HTTP_PROXY_NAME, HTTP_PROXY_PORT);
-		use_proxy = 1;
-#else
-		use_proxy = 0;
-#endif
-	}
-	connected = 0;
+    }
 }
 
 KProtocolHTTP::~KProtocolHTTP()
@@ -140,7 +147,6 @@ long KProtocolHTTP::Read(void *buffer, long len)
 	int secs = startTime.secsTo( t );
 	if ( secs == 0 )
 	    secs = 1;
-	fprintf(stderr,"Read=%i Left=%i Secs=%i size=%i\n",bytesRead,bytesleft,secs,size);
 	long bytesPerSec = bytesRead / secs;
 	QString infoStr;
 	if ( bytesPerSec < 1000 )

@@ -17,6 +17,8 @@
 
 int tmpFileCounter = 0;
 
+KMimeMagic* KFMJob::magic = 0L;
+
 KFMJob::KFMJob( )
 {
     job = 0L;    
@@ -193,14 +195,19 @@ void KFMJob::testMimeType( const char *_text)
     
     printf("SAMPLE:\n%s\n",_text);
     
-    if ( strstr( _text, "<html>" ) != 0 || strstr( _text, "<HTML>" ) != 0 ||
-	 strstr( _text, "<HEAD>" ) != 0 || strstr( _text, "<head>" ) != 0 ||
-	 strstr( _text, "<BODY>" ) != 0 || strstr( _text, "<body>" ) != 0 )
+    KMimeMagicResult *result = magic->findBufferType( _text, strlen( _text ) );
+    printf("RETURN '%s'\n",result->getContent().data() );
+    
+    if ( strcmp( "text/html", result->getContent() ) == 0 ) 
     {
 	printf("IS HTML\n");
 	isHTML = TRUE;
 	emit mimeType( "text/html" );
 	emit data( _text );
+    }
+    else if ( result->getAccuracy() > 40 )
+    {
+	emit mimeType( result->getContent() );
     }
     else
     {
@@ -268,6 +275,14 @@ void KFMJob::stop()
 const char* KFMJob::getURL()
 {
     return url;
+}
+
+void KFMJob::initKMimeMagic()
+{
+    // Magic file detection init
+    QString mimefile = kapp->kdedir();
+    mimefile += "/share/magic";
+    magic = new KMimeMagic( mimefile );
 }
 
 KFMJob::~KFMJob()

@@ -21,14 +21,14 @@ kfm_SOURCES =	\
 	kioserver_ipc2.cpp ipc.cpp root.cpp kfmman.cpp kiojob.cpp \
 	kmsgwin.cpp htmlcache.cpp autostart.cpp kfmtree.cpp xview.cpp \
 	krenamewin.cpp passworddialog.cpp fileentry.cpp debug.cpp \
-	kfmpaths.cpp kfmjob.cpp kfmexec.cpp
+	kfmpaths.cpp kfmjob.cpp kfmexec.cpp kmimemagic.cpp
 
 noinst_HEADERS =  \
 	kfmgui.h kfmview.h kbind.h root.h kfmdlg.h bookmark.h \
 	kfmprops.h kfmserver_ipc.h kioserver.h kioserver_ipc.h ipc.h \
 	kfmserver.h kfmman.h kiojob.h kmsgwin.h htmlcache.h kfmtree.h \
 	xview.h krenamewin.h passworddialog.h fileentry.h \
-	config-kfm.h kfmpaths.h kfmjob.h kfmexec.h
+	config-kfm.h kfmpaths.h kfmjob.h kfmexec.h kmimemagic.h
 
 BUILTSOURCES =	\
 	kfmgui.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc \
@@ -74,6 +74,7 @@ install-data-local:
 	$(mkinstalldirs) $(LIBDIR)/kfm/config
 	$(INSTALL_DATA) config/kfmrc $(LIBDIR)/kfm/config
 	$(INSTALL_DATA) config/desktop $(LIBDIR)/kfm/config
+	$(INSTALL_DATA) magic $(KDEDIR)/share
 	(cd Desktop && $(MAKE) install)
 	(cd mimetypes && $(MAKE) install)
 
@@ -84,5 +85,6 @@ clientIPC: ./ipcc/kfm.ipc
 
 kioIPC: ./ipcc/kio.ipc
 	cd ipcc ; ./ipcc.pl kio.ipc kioserver_ipc kioslave_ipc ; cp kioserver_ipc* ../ ; cp kioslave_ipc* ../kioslave ; cd ..
+
 
 

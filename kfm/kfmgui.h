@@ -305,6 +305,11 @@ public slots:
      */
     void slotRemoveWaitingWidget( KHTMLView * _waiting );
 
+    /** 
+     * Saves the current GUI settings
+     */
+    void slotSaveSettings();
+
 protected slots:    
     void slotAnimatedLogoTimeout();
 
@@ -334,10 +339,6 @@ protected:
      * Fill the 'menu' with all boomarks in 'parent'.
      */
     void fillBookmarkMenu( KBookmark *parent, QPopupMenu *menu, int &id );
-    /** 
-     * Saves the current GUI settings
-     */
-    void saveSettings();
     /**
      * Manager for the bookmarks.
      */

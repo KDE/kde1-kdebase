@@ -173,9 +173,9 @@ KProtocolDirEntry *KProtocolFILE::ReadDir()
 	fname += ep->d_name;
 
 	struct stat buff;
-	stat( fname, &buff );
+	int stat_ret = stat( fname, &buff );
 	struct stat lbuff;
-	lstat( fname, &lbuff );
+	/* int lstat_ret = */ lstat( fname, &lbuff );
 	struct tm *t = localtime( &lbuff.st_mtime );
 	struct passwd * user = getpwuid( buff.st_uid );
 	struct group * grp = getgrgid( buff.st_gid );
@@ -233,6 +233,11 @@ KProtocolDirEntry *KProtocolFILE::ReadDir()
 	buffer[8] = ((( buff.st_mode & S_IWOTH ) == S_IWOTH ) ? 'w' : '-' );
 	buffer[9] = oxbit;
 	buffer[10] = 0;
+
+	// A link pointing to nowhere ?
+	if ( stat_ret == -1 && S_ISLNK( lbuff.st_mode ) )
+	    strcpy( buffer, "lrwxrwxrwx" );
+	
 	de.access = buffer;
 	de.name = name.data();
 	de.owner = (( user != 0L ) ? user->pw_name : "???" );
