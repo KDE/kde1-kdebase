@@ -267,20 +267,19 @@ void KBackground::doRandomize(bool fromTimer)
   if ( randomMode ) {
     readSettings( desk, oneDesktopMode, oneDesk );
 
+    QString command;
+    if ( oneDesktopMode )
+      command = "kbgwm_change";
+    else
+      command << "kbgwm_change_" << desk;
+    
+    KWM::sendKWMCommand( command.data() );
+
     if ( ( oneDesktopMode && desk == oneDesk ) ||
 	 ( !oneDesktopMode && desk == ( KWM::currentDesktop() - 1 ) ) )
-      {
-	apply();
+      apply();
 
-	QString command;
-	if ( oneDesktopMode )
-	  command = "kbgwm_change";
-	else
-	  command << "kbgwm_change_" << desk;
-
-	KWM::sendKWMCommand( command.data() );
-	return;
-      }
+    return;
   }
   if (!fromTimer) {
       KShellProcess proc;

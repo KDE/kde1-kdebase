@@ -277,12 +277,7 @@ void KBGndManager::toggleOneDesktop()
 
   applyDesktop( current );
 
-  QString command;
-  if ( oneDesktopMode )
-    command = "kbgwm_change";
-  else
-    command << "kbgwm_change_all";
-  KWM::sendKWMCommand( command.data() );
+  KWM::sendKWMCommand( "kbgwm_change" );
 }
 
 
