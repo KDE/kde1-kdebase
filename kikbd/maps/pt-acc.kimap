@@ -1,0 +1,37 @@
+# KDE Config File
+ 
+[International Keyboard]
+Authors=Raul Costa <jrpcosta@esoterica.pt>,
+#este teclado tem os acentos para o (a) (e) (o) grave, agudo, til
+ 
+Language=Portugues Acentos Minusculas
+Language[de]=Portugiesisch "Acentos Minusculas"
+Language[pt_BR]=Português Acentos Minúsculos
+ 
+Label=Pt1
+Locale=pt
+
+[KeyboardMap] 
+CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m,
+keysym1=comma,comma,semicolon,
+keysym2=period,period,0x3A,
+keysym3=minus,apostrophe,question,
+keysym4=backslash,asciitilde,asciicircum,
+keysym5=slash,minus,underscore,
+keysym6=bracketleft,plus,asterisk,
+keysym7=apostrophe,0xA7,0xA6,
+keysym8=grave,backslash,bar,
+keysym9=equal,less,greater,
+keysym10=0,0,equal,braceright,
+keysym11=2,2,quotedbl,at,
+keysym12=6,6,0x26,
+keysym13=7,7,slash,braceleft,
+keysym14=8,8,parenleft,0x5B,
+keysym15=9,9,parenright,0x5D,
+keysym16=c,c,C,copyright,
+keysym17=a,aacute,agrave,
+keysym18=s,atilde,Atilde,
+keysym19=e,eacute,egrave,
+keysym20=o,oacute,ograve,
+keysym21=p,otilde,Otilde,
+
