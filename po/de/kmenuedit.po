@@ -69,7 +69,7 @@ msgstr ""
 
 #: confmenu.cpp:90 entrydialog.cpp:52
 msgid "Separator"
-msgstr "Abschneider"
+msgstr "Trennlinie"
 
 #: confmenu.cpp:102 confmenu.cpp:309
 msgid "Open/ Close"
