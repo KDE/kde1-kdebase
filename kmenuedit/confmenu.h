@@ -3,7 +3,7 @@
 //  ktaskbar
 //
 //  Copyright (C) 1997 Christoph Neerfeld
-//  email:  Christoph.Neerfeld@mail.bonn.netsurf.de
+//  email:  Christoph.Neerfeld@bonn.netsurf.de
 //
 //  This program is free software; you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -94,7 +94,6 @@ protected:
   int             id;
   EntryType       type;
   QPopupMenu      popmenu;
-  //ConfMenuDialog *dialog;
   EntryDialog    *dialog;
   bool            dialog_open;
   PMenuItem      *pmenu_item;

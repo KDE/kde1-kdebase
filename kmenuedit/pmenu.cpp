@@ -814,17 +814,7 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item)
 	      if( !item->read_only )
 		{
 		  if( item->real_name.isEmpty() )
-		    {
-		      QString file_name = item->text_name.copy();
-		      QString suffix;
-		      int i = 2;
-		      while( checkFilenames(file_name) )
-			{
-			  file_name = item->text_name.copy() + suffix.setNum(i);
-			  i++;
-			}
-		      item->real_name = file_name;
-		    }
+		    item->real_name = uniqueFileName(item->text_name);
 		  item->writeConfig(base_dir);
 		}
 	      file_list.remove(item->real_name); // + ".kdelnk");
@@ -1128,4 +1118,21 @@ bool PMenu::checkFilenames(QString name)
 	return TRUE;
     }
   return FALSE;
+}
+
+QString PMenu::uniqueFileName(QString name)
+{
+  QString file_name = name.simplifyWhiteSpace();
+  while( file_name.contains('/') )
+    {
+      file_name.replace(file_name.find('/'), 1, "_");
+    }
+  QString suffix;
+  int i = 2;
+  while( checkFilenames(file_name) )
+    {
+      file_name = name + suffix.setNum(i);
+      i++;
+    }
+  return file_name;
 }

@@ -272,8 +272,10 @@ void MenuButton::change_accept()
 	  }
       if( ((QString) dialog->i_fname->text()).isEmpty() )
 	{
-	  QMessageBox::information(dialog, "Empty filename", "The name for this kdelnk-file is missing. \nPlease choose a filename.", "Ok" );
-	  return;
+	  if( ((QString) dialog->i_name->text()).isEmpty() )
+	    dialog->i_fname->setText(pmenu_parent->uniqueFileName("menuentry"));
+	  else
+	    dialog->i_fname->setText(pmenu_parent->uniqueFileName(dialog->i_name->text()));
 	}
       EntryType old_type = pmenu_item->getType();
       EntryType new_type = (EntryType) (dialog->c_type->currentItem()+1);
@@ -963,15 +965,7 @@ void ConfigureMenu::urlDroped(KDNDDropZone *zone)
 	      pmenu->add( new_item );
 	      changes_to_save = TRUE;
 	      ((KMenuEdit *) KApplication::getKApplication()->mainWidget())->setUnsavedData(TRUE);
-	      QString file_name = fi.fileName();
-	      QString suffix;
-	      int i = 2;
-	      while( pmenu->checkFilenames(file_name) )
-		{
-		  file_name = fi.fileName() + suffix.setNum(i);
-		  i++;
-		}
-	      new_item->setName(file_name);
+	      new_item->setName( pmenu->uniqueFileName(fi.fileName()) );
 	    }
 	  continue;
 	}
