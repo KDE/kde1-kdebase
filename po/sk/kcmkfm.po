@@ -1,0 +1,29 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkwm\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"Last-Translator: Juraj Bednar <bednar@isternet.sk>\n"
+"Language-Team: Slovak <sk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:34
+msgid "&Font"
+msgstr "&Písmo"
+
+#: main.cpp:36
+msgid "&Color"
+msgstr "&Farba"
+
+#: main.cpp:63
+msgid "usage: kcmkfm [-init | {font,color}]\n"
+msgstr "pou¾itie: kcmkfm [-init | {font,color}]\n"
+
+#: main.cpp:104
+msgid "KFM Configuration"
+msgstr "Nastavenie KFM"
