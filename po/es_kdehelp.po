@@ -102,7 +102,7 @@ msgstr "Error en el archivo info"
 #: info.cpp:1228
 #, c-format
 msgid "Node not found: %s"
-msgstr "No se encontró el nodo"
+msgstr "No se encontró el nodo: %s"
 
 #: info.cpp:1373
 #, c-format

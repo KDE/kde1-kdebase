@@ -252,4 +252,4 @@ msgstr ""
 
 #: main.C:970
 msgid "Terminal Options"
-msgstr "Terminaleinstellungen"
+msgstr "Opciones de la Terminal"
