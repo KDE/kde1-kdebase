@@ -5,18 +5,18 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kde-1.0pre\n"
 "POT-Creation-Date: 1998-04-16 00:51+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 1998-07-04 12:00+0200\n"
+"Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
+"Language-Team: ??? <ro@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:58
 msgid "KDE Font Manager"
-msgstr ""
+msgstr "Directorul de fonturi KDE"
 
 #: main.cpp:71
 msgid "KDE Fonts"
@@ -24,7 +24,7 @@ msgstr "Fonturi KDE"
 
 #: main.cpp:72
 msgid "Font Explorer"
-msgstr ""
+msgstr "Explorator de fonturi"
 
 #: main.cpp:73
 msgid "Raw X11 Font List"
@@ -40,7 +40,7 @@ msgstr "Fonturi fãcute disponibile pentru KDE"
 
 #: kfontmanager.cpp:87
 msgid "The KDE Font Manager Example String"
-msgstr "ªir de probã KDE  'ãÃâÂºªþÞîÎ' "
+msgstr "ªir de probã KDE  ãÃâÂºªþÞîÎ "
 
 #: kfontlist.cpp:62 kfontmanager.cpp:109
 msgid "About kfontmanager"

@@ -5,10 +5,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kde-1.0pre\n"
 "POT-Creation-Date: 1998-06-16 13:54+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Ionescu Paul <omy@main.romsoft.ro>\n"
+"PO-Revision-Date: 1998-07-04 12:00+0200\n"
+"Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -33,7 +33,7 @@ msgstr "Executã comandã"
 
 #: krootwm.C:185
 msgid "Display properties"
-msgstr "Afiºeazã proprietaþile"
+msgstr "Proprietãþile ecranului"
 
 #: krootwm.C:186
 msgid "Refresh desktop"
@@ -41,11 +41,11 @@ msgstr "Reafiºeazã ecranul"
 
 #: krootwm.C:188
 msgid "Unclutter windows"
-msgstr ""
+msgstr "Desþeleneºte ferestrele"
 
 #: krootwm.C:189
 msgid "Cascade windows"
-msgstr ""
+msgstr "Cascadeazã ferestrele"
 
 #: krootwm.C:190
 msgid "Arrange icons"

@@ -5,10 +5,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kde-1.0pre\n"
 "POT-Creation-Date: 1998-06-16 13:54+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Ionescu Paul <omy@main.romsoft.ro>\n"
+"PO-Revision-Date: 1998-07-04 12:00+0200\n"
+"Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -76,11 +76,11 @@ msgstr "Configurare panou"
 
 #: props.C:145
 msgid "Edit Menus"
-msgstr ""
+msgstr "Editare Meniuri"
 
 #: props.C:147
 msgid "Add or remove applications in the menu structure "
-msgstr ""
+msgstr "Adaugã sau ºterge o aplicaþie din structura meniului "
 
 #: events.C:724 props.C:148
 msgid "Restart"
@@ -100,63 +100,12 @@ msgstr "Blocheazã ecranul"
 
 #: props.C:310
 msgid "The menu editor is not installed."
-msgstr ""
+msgstr "Editorul de meniuri nu este instalat. "
 
 #: events.C:760 props.C:311
 msgid "Oops!"
-msgstr ""
+msgstr "Hopa !"
 
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"
-msgstr ""
-
-#~ msgid "Move"
-#~ msgstr "Mutã"
-
-#~ msgid "Properties"
-#~ msgstr "Proprietãþi"
-
-#~ msgid "Location"
-#~ msgstr "Locaþie"
-
-#~ msgid "Taskbar"
-#~ msgstr "Taskbar"
-
-#~ msgid "Hidden"
-#~ msgstr "Ascuns"
-
-#~ msgid "Top/Left"
-#~ msgstr "Stg./Sus"
-
-#~ msgid "Tiny Style"
-#~ msgstr "Mic"
-
-#~ msgid "Normal Style"
-#~ msgstr "Normal"
-
-#~ msgid "Large Style"
-#~ msgstr "Mare"
-
-#~ msgid "Menu Tooltips"
-#~ msgstr "Bule de informatie"
-
-#~ msgid "Personal First"
-#~ msgstr "Întâi cele personale"
-
-#~ msgid "Auto Hide Panel"
-#~ msgstr "Auto-Ascunde panoul"
-
-#~ msgid "Auto Hide Taskbar"
-#~ msgstr "Auto-Ascunde Taskbarul"
-
-#~ msgid "Visible"
-#~ msgstr "Vizibil"
-
-#~ msgid "Width"
-#~ msgstr "Lãþime"
-
-#~ msgid "Desktops"
-#~ msgstr "Ecrane"
-
-#~ msgid "KPanel Configuration"
-#~ msgstr "Configurare KPanel"
+msgstr "Nu pot aºeza asta ca un buton în panou !"
