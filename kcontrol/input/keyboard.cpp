@@ -220,4 +220,11 @@ void KeyboardConfig::applySettings()
   saveParams();
 }
 
+void KeyboardConfig::defaultSettings()
+{
+  setClick(50);
+  setRepeat(TRUE);
+}
+
+
 #include "keyboard.moc"

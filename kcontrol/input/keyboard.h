@@ -46,7 +46,8 @@ public:
 
   void loadSettings();
   void applySettings();
-    
+  void defaultSettings();
+      
 private:
   void GetSettings( void );
 

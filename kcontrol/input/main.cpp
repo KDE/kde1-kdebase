@@ -33,6 +33,7 @@ public:
 
   void init();
   void apply();
+  void defaultValues();
 
 private:
 
@@ -85,6 +86,15 @@ void KInputApplication::apply()
     mouse->applySettings();
   if (keyboard)
     keyboard->applySettings();
+}
+
+
+void KInputApplication::defaultValues()
+{
+  if (mouse)
+    mouse->defaultSettings();
+  if (keyboard)
+    keyboard->defaultSettings();
 }
 
 

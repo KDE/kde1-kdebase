@@ -390,4 +390,12 @@ void MouseConfig::applySettings()
   saveParams();
 }
 
+void MouseConfig::defaultSettings()
+{
+  setThreshold(2);
+  setAccel(2);
+  setHandedness(RIGHT_HANDED);
+}
+
+
 #include "mouse.moc"
