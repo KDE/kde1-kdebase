@@ -50,7 +50,7 @@ dnl Checks for libraries.
 AC_CHECK_LIB(socket, socket, [LIBSOCKET="-lsocket -lnsl"]) dnl for Solaris
 AC_CHECK_LIB(compat, main, [LIBCOMPAT="-lcompat"]) dnl for FreeBSD
 AC_CHECK_LIB(crypt, main, [LIBCRYPT="-lcrypt"]) dnl for BSD
-AC_CHECK_LIB(jscript, main, [LIBKHTMLW="-lkhtmlw -ljscript"],[LIBKHTMLW="-lkhtmlw"],[$KDE_LDFLAGS -lqt $QT_LDFLAGS] )
+LIBKHTMLW="-lkhtmlw -ljscript" dnl this is somewhat historical, since jscript is ways needed
 AC_SUBST(LIBKHTMLW)
 AC_FIND_GIF
 AC_FIND_JPEG
