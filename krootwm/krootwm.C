@@ -287,13 +287,14 @@ void KRootWm::buildMenubars() {
 
     if (myMenuBar && macMode)
     {
-      KWM::setSticky(myMenuBar->winId(), true); 
+      KWM::setSticky(myMenuBar->winId(), true);
       connect(kwmmapp, SIGNAL(windowActivate (Window)), this,
               SLOT(slotFocusChanged(Window)));
+      
+      if (KWM::activeWindow() != None)
+	  myMenuBar->lower();
     }
-    
-    if (KWM::activeWindow() != None)
-	myMenuBar->lower();
+
 
     // --------- Sven's changes for macmode end
   }
@@ -832,7 +833,7 @@ void KRootWm::slotFocusChanged(Window w)
     static Window oldFocus = None;
   if (myMenuBar && w == None && w != oldFocus)
       myMenuBar->raise();
-  
+
   oldFocus = w;
 }
 
