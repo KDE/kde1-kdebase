@@ -1,23 +1,23 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminput\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
-#: main.cpp:53
+#: main.cpp:54
 msgid "&Mouse"
 msgstr "&Rato"
 
-#: main.cpp:56
+#: main.cpp:57
 msgid "&Keyboard"
 msgstr "&Teclado"
 
-#: main.cpp:62
+#: main.cpp:63
 msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
 msgstr "utilização: kcminput [-init | {mouse,keyboard}]\n"
 
-#: main.cpp:94
+#: main.cpp:104
 msgid "Input Devices Properties"
 msgstr "Propriedades do Dispositivos de Entrada"
 

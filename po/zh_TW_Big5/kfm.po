@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-05-07 18:15+0200\n"
+"POT-Creation-Date: 1998-05-13 12:13+0200\n"
 "PO-Revision-Date: 1998-04-20 22:30+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -1256,6 +1256,11 @@ msgstr "已知的關聯"
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
 msgstr "別忘了儲存設定!"
+
+#: kproxydlg.cpp:16
+#, fuzzy
+msgid "Use proxy"
+msgstr "所有者"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-05-07 18:15+0200\n"
+"POT-Creation-Date: 1998-05-13 12:13+0200\n"
 "PO-Revision-Date: 1998-03-03 10:30+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -1264,6 +1264,11 @@ msgstr "Enllaçs coneguts:"
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
 msgstr "No oblideu desar els arranjaments!"
+
+#: kproxydlg.cpp:16
+#, fuzzy
+msgid "Use proxy"
+msgstr "Usuari"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"

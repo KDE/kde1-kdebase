@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm \n"
-"POT-Creation-Date: 1998-05-07 18:15+0200\n"
+"POT-Creation-Date: 1998-05-13 12:13+0200\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -1264,6 +1264,11 @@ msgstr "Bekannte Zuordnungen:"
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
 msgstr "Vergessen Sie nicht, die Einstellungen zu speichern!"
+
+#: kproxydlg.cpp:16
+#, fuzzy
+msgid "Use proxy"
+msgstr "Benutzer"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"

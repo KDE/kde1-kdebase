@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-05-07 18:15+0200\n"
+"POT-Creation-Date: 1998-05-13 12:13+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -1265,6 +1265,11 @@ msgstr "已知的关联"
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
 msgstr "别忘了保存设置!"
+
+#: kproxydlg.cpp:16
+#, fuzzy
+msgid "Use proxy"
+msgstr "使用者"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"

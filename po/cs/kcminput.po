@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminput\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
 "PO-Revision-Date: 1998-01-20 10:10 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -13,19 +13,19 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:53
+#: main.cpp:54
 msgid "&Mouse"
 msgstr "&My¹"
 
-#: main.cpp:56
+#: main.cpp:57
 msgid "&Keyboard"
 msgstr "&Klávesnice"
 
-#: main.cpp:62
+#: main.cpp:63
 msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
 msgstr "Pou¾ití: kcminput [-init | {mouse,keyboard}]\n"
 
-#: main.cpp:94
+#: main.cpp:104
 msgid "Input Devices Properties"
 msgstr "Vlastnosti vstupních zaøízení"
 

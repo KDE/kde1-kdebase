@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -13,15 +13,15 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: iso-8859-2\n"
 
-#: main.cpp:51
+#: main.cpp:52
 msgid "&Locale"
 msgstr "&Lokal"
 
-#: main.cpp:57
+#: main.cpp:58
 msgid "usage: kcmlocale [-init | language]\n"
 msgstr "uporaba: kcmlocale [-init | jezik]\n"
 
-#: main.cpp:79
+#: main.cpp:86
 msgid "Locale settings"
 msgstr "Postavi odrednice lokala"
 

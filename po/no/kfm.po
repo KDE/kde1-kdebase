@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-07 18:15+0200\n"
+"POT-Creation-Date: 1998-05-13 12:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1530,6 +1530,12 @@ msgstr ""
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
 msgstr "Ikke glem å lagre innstillingene!"
+
+# kfmprops.cpp:437
+#: kproxydlg.cpp:16
+#, fuzzy
+msgid "Use proxy"
+msgstr "Bruker"
 
 # kproxydlg.cpp:43
 #: kproxydlg.cpp:42

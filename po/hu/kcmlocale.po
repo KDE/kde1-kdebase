@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmlocale VERSION\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
 "PO-Revision-Date: 1998-02-26 19:06+MET\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: LANGUAGE <hu@li.org>\n"
@@ -13,15 +13,15 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: main.cpp:51
+#: main.cpp:52
 msgid "&Locale"
 msgstr ""
 
-#: main.cpp:57
+#: main.cpp:58
 msgid "usage: kcmlocale [-init | language]\n"
 msgstr "használat: kcmlocale [-init | nyelv]\n"
 
-#: main.cpp:79
+#: main.cpp:86
 msgid "Locale settings"
 msgstr "Helyi beállítások"
 

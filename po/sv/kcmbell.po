@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
 "PO-Revision-Date: 1998-01-20 15:20+0100\n"
 "Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se\n"
 "Language-Team: Swedish <LL@li.org>\n"
@@ -14,15 +14,15 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.cpp:51
+#: main.cpp:52
 msgid "&Bell"
 msgstr "&Klocka"
 
-#: main.cpp:57
+#: main.cpp:58
 msgid "usage: kcmbell [-init | bell]\n"
 msgstr "användning: kcmbell [-init | bell]\n"
 
-#: main.cpp:81
+#: main.cpp:89
 msgid "Bell settings"
 msgstr "Klockinställningar"
 

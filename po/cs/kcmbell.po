@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmbell\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
 "PO-Revision-Date: 1998-01-20 10:10 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -13,15 +13,15 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:51
+#: main.cpp:52
 msgid "&Bell"
 msgstr "&Zvonek"
 
-#: main.cpp:57
+#: main.cpp:58
 msgid "usage: kcmbell [-init | bell]\n"
 msgstr "Poui¾ití: kcmbell [-init | bell]\n"
 
-#: main.cpp:81
+#: main.cpp:89
 msgid "Bell settings"
 msgstr "Nastavení zvonku"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-05-07 18:15+0200\n"
+"POT-Creation-Date: 1998-05-13 12:13+0200\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -1258,6 +1258,11 @@ msgstr "dependências conhecidas:"
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
 msgstr "Não se esqueça de gravar a sua configuração"
+
+#: kproxydlg.cpp:16
+#, fuzzy
+msgid "Use proxy"
+msgstr "Utilizador"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"

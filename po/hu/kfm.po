@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm 1.27\n"
-"POT-Creation-Date: 1998-05-07 18:15+0200\n"
+"POT-Creation-Date: 1998-05-13 12:13+0200\n"
 "PO-Revision-Date: 1998-02-26 20:20+MET\n"
 "Last-Translator: Balázs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -1222,6 +1222,11 @@ msgstr "Ismert kötések:"
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
 msgstr "Ne felejtse el kimenteni a beállításokat!"
+
+#: kproxydlg.cpp:16
+#, fuzzy
+msgid "Use proxy"
+msgstr "Felhasználó"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"

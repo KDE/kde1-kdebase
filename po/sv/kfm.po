@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-05-07 18:15+0200\n"
+"POT-Creation-Date: 1998-05-13 12:13+0200\n"
 "PO-Revision-Date: 1998-01-06 22:15+1\n"
 "Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
 
@@ -1251,6 +1251,11 @@ msgstr "Kända bindningar:"
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
 msgstr ""
+
+#: kproxydlg.cpp:16
+#, fuzzy
+msgid "Use proxy"
+msgstr "Användare"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"

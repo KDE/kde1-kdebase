@@ -454,7 +454,7 @@ msgstr ""
 
 #: morph3d.cpp:839 space.cpp:419
 msgid "GL can not render with root visual\n"
-msgstr "GL ne renderirati sa root visualom"
+msgstr "GL ne renderirati sa root visualom\n"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmlocale\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
 "PO-Revision-Date: 1998-01-19 22:53 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -13,15 +13,15 @@ msgstr ""
 "Content-Type: text/plain; \n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:51
+#: main.cpp:52
 msgid "&Locale"
 msgstr "&Langue"
 
-#: main.cpp:57
+#: main.cpp:58
 msgid "usage: kcmlocale [-init | language]\n"
 msgstr "utilisation : kcmlocale [-init | language]\n"
 
-#: main.cpp:79
+#: main.cpp:86
 msgid "Locale settings"
 msgstr "Configuration de la langue"
 

@@ -1,23 +1,23 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminput\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
 "PO-Revision-Date: 1997-12-29 15:28+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
-#: main.cpp:53
+#: main.cpp:54
 msgid "&Mouse"
 msgstr "&Maus"
 
-#: main.cpp:56
+#: main.cpp:57
 msgid "&Keyboard"
 msgstr "&Tastatur"
 
-#: main.cpp:62
+#: main.cpp:63
 msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
 msgstr "Benutzung: kcminput [-init | {mouse,keyboard}]\n"
 
-#: main.cpp:94
+#: main.cpp:104
 msgid "Input Devices Properties"
 msgstr "Einstellungen der Eingabe-Geräte"
 

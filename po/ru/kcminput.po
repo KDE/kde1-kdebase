@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminput\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
 "PO-Revision-Date: 1998-01-18 04:44+0600\n"
 "Last-Translator: Denis Pershin>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -14,19 +14,19 @@ msgstr ""
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: main.cpp:53
+#: main.cpp:54
 msgid "&Mouse"
 msgstr "&Мышь"
 
-#: main.cpp:56
+#: main.cpp:57
 msgid "&Keyboard"
 msgstr "&Клавиатура"
 
-#: main.cpp:62
+#: main.cpp:63
 msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
 msgstr "использование: kcminput [-init | {mouse,keyboard}]\n"
 
-#: main.cpp:94
+#: main.cpp:104
 msgid "Input Devices Properties"
 msgstr "Свойства Устройств Ввода"
 

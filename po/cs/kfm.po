@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-05-07 18:15+0200\n"
+"POT-Creation-Date: 1998-05-13 12:13+0200\n"
 "PO-Revision-Date: 1998-04-17 15:16 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -1274,6 +1274,11 @@ msgstr "Známé vazby:"
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
 msgstr "Nezapomeòte ulo¾it va¹e nastavení!"
+
+#: kproxydlg.cpp:16
+#, fuzzy
+msgid "Use proxy"
+msgstr "U¾ivatel"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmbell\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
 "PO-Revision-Date: 1998-01-29 17:00+CET-1\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,15 +14,15 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.cpp:51
+#: main.cpp:52
 msgid "&Bell"
 msgstr "&Klokke"
 
-#: main.cpp:57
+#: main.cpp:58
 msgid "usage: kcmbell [-init | bell]\n"
 msgstr "brug: kcmbell [-init | bell]\n"
 
-#: main.cpp:81
+#: main.cpp:89
 msgid "Bell settings"
 msgstr "Klokke indstillinger"
 

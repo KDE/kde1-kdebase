@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KFM\n"
-"POT-Creation-Date: 1998-05-07 18:15+0200\n"
+"POT-Creation-Date: 1998-05-13 12:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1269,6 +1269,11 @@ msgstr "Tunnettuja sidoksia:"
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
 msgstr "Älä unohda tallentaa asetuksiasi!"
+
+#: kproxydlg.cpp:16
+#, fuzzy
+msgid "Use proxy"
+msgstr "Käyttäjä"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"

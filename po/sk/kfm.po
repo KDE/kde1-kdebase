@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-05-07 18:15+0200\n"
+"POT-Creation-Date: 1998-05-13 12:13+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -1275,6 +1275,10 @@ msgstr "Známe väzby:"
 msgid "Don't forget to save your settings!"
 msgstr "Nezabudnite ulo¾i» va¹e nastavenie!"
 
+#: kproxydlg.cpp:16
+msgid "Use proxy"
+msgstr "Pou¾íva» proxy"
+
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"
 msgstr "®iadne pre:"
@@ -1368,6 +1372,3 @@ msgid ""
 msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
-
-#~ msgid "Use proxy"
-#~ msgstr "Pou¾íva» proxy"

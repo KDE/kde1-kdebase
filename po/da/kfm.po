@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-07 18:15+0200\n"
+"POT-Creation-Date: 1998-05-13 12:13+0200\n"
 "PO-Revision-Date: 1998-02-25 13:40+CET-1\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: da <LL@li.org>\n"
@@ -1260,6 +1260,11 @@ msgstr "Ukendt binding:"
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
 msgstr "Glem ikke at gemme dine indstillinger!"
+
+#: kproxydlg.cpp:16
+#, fuzzy
+msgid "Use proxy"
+msgstr "Bruger"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"
