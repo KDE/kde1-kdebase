@@ -566,7 +566,7 @@ msgstr ""
 
 #: kfmprops.cpp:429
 msgid "Read"
-msgstr "Gelesen"
+msgstr "Lesen"
 
 #: kfmprops.cpp:434
 msgid ""
