@@ -57,6 +57,10 @@ Properties::Properties( const char *_url ) : QObject()
 	delete this;
     
     tab = new QTabDialog( 0L, 0L );
+
+    // Matthias: let the dialog look like a modal dialog
+    XSetTransientForHint(qt_xdisplay(), tab->winId(), tab->winId());
+
     tab->setGeometry( tab->x(), tab->y(), 400, 400 );
 
     insertPages();
