@@ -1207,7 +1207,7 @@ void KFMManager::slotMimeType( const char *_type )
 	    KMimeType *typ = KMimeType::findByName( aType );
 	    // Have we registered this mime type in KDE ?
 	    if ( typ && typ->run( tryURL ) ){
-	        delete typestr;
+	        if (typestr) delete [] typestr;
 		return;
              }		
 	}
@@ -1221,14 +1221,14 @@ void KFMManager::slotMimeType( const char *_type )
 	  if ( bind )
 	  {
 	    bind->runBinding( tryURL );
-	    if (typestr) delete typestr;
+	    if (typestr) delete [] typestr;
 	    return;
 	  }
 
 	  QString pattern = l.getText();
 	  if ( pattern.isEmpty() )
 	  {
-	    if (typestr) delete typestr;
+	    if (typestr) delete [] typestr;
 	    return;
 	  }	
 	  
@@ -1271,7 +1271,7 @@ void KFMManager::slotMimeType( const char *_type )
 	else
 	    bBufferPage = TRUE;
     }
-    if (typestr) delete typestr;
+    if (typestr) delete [] typestr;
 }
 
 
