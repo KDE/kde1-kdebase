@@ -5,6 +5,7 @@
 #include "xview.h"
 #include "kfmpaths.h"
 #include "kmimemagic.h"
+#include "kfm.h"
 
 #include <config-kfm.h>
 
@@ -179,15 +180,11 @@ int main( int argc, char ** argv )
     klocale->aliasLocale("Link", ID_STRING_LINK);
     klocale->aliasLocale("Empty Trash Bin", ID_STRING_TRASH);
 
-    bool openwin = true;
-    
     int arg = 1;
     
     if ( argc > arg )
 	if ( argv[arg][0] == '-' )
 	{
-	    if ( strchr( argv[arg], 'd' ) != 0L )
-		openwin = false;
 	    if ( strchr( argv[arg], 'w' ) != 0L )
 		KfmGui::rooticons = false;
 	    if ( strchr( argv[arg], 's' ) != 0L )
@@ -212,8 +209,11 @@ int main( int argc, char ** argv )
 	new KRootWidget();
     
     debugT("4. Init window\n");
-        
-    if ( openwin )
+    
+    KFM kfm;
+    a.setMainWidget( &kfm );
+    
+    if ( KfmGui::rooticons == false )
     {
 	QString home = "file:";
 	home.detach();
@@ -224,11 +224,8 @@ int main( int argc, char ** argv )
 	debugT("Opended\n");
     }
     
-    QWidget w( 0L, "Main" );
-    a.setMainWidget( &w );
-
     Window root = DefaultRootWindow( a.getDisplay() );
-    Window win = w.winId();
+    Window win = kfm.winId();
     Atom atom = XInternAtom( a.getDisplay(), "DndRootWindow", False );    
     XChangeProperty( a.getDisplay(), root, atom, XA_STRING, 32,
 		     PropModeReplace, (const unsigned char*)(&win), 1);

@@ -22,6 +22,7 @@ class KfmGui;
 #include <kstatusbar.h>
 #include <ktoolbar.h>
 #include <kmenubar.h>
+#include <kapp.h>
 
 #include "kfmview.h"
 #include "bookmark.h"
@@ -105,6 +106,19 @@ public:
      * Adds '_url' to the bookmarks with '_title' as description.
      */    
     void addBookmark( const char *_title, const char *_url );
+
+
+    // session management
+    void readProperties(int number)
+    {
+	KTopLevelWidget::readPropertiesInternal(kapp->getConfig(), number);
+    }
+
+    void saveProperties(int number)
+    {
+	KTopLevelWidget::savePropertiesInternal(kapp->getConfig(), number);
+    }
+    
 
     static bool sumode;
     static bool rooticons;
