@@ -1,4 +1,4 @@
-SUBDIRS = Input_Devices Desktop Sound Windows Network Information Applications
+SUBDIRS = Input_Devices Desktop Sound Windows Network Information Applications Keys
 
 data_DATA = .directory
 
