@@ -188,6 +188,7 @@ AC_OUTPUT(Makefile \
 	doc/kcontrol/locale/Makefile \
 	doc/kcontrol/syssound/Makefile \
 	doc/kcontrol/syssound/de/Makefile \
+	doc/kcontrol/syssound/no/Makefile \
 	doc/kcontrol/syssound/en/Makefile \
 	doc/kdehelp/Makefile \
 	doc/kdehelp/kwm/Makefile \
