@@ -534,45 +534,56 @@ int KProtocolFTP::OpenDir( KURL *url )
 
 KProtocolDirEntry *KProtocolFTP::ReadDir()
 {
-    char buffer[1024];
-    static KProtocolDirEntry de;
-    
-    while(fgets(buffer,1024,dirfile) != 0) {
-      // printf(">%s",buffer);
-      
-	char *p_access, *p_junk, *p_owner, *p_group;
-	char *p_size, *p_date_1, *p_date_2, *p_date_3, *p_name;
-	if ((p_access = strtok(buffer," ")) != 0)
-	    if ((p_junk = strtok(NULL," ")) != 0)
-		if ((p_owner = strtok(NULL," ")) != 0)
-		    if ((p_group = strtok(NULL," ")) != 0)
-			if ((p_size = strtok(NULL," ")) != 0)
-			    if ((p_date_1 = strtok(NULL," ")) != 0)
-				if ((p_date_2 = strtok(NULL," ")) != 0)
-				    if ((p_date_3 = strtok(NULL," ")) != 0)
-					if ((p_name = strtok(NULL,"\r\n")) != 0) {
-					    if ( p_access[0] == 'l' )
-					    {
-						QString tmp( p_name );
-						int i = tmp.findRev( " -> " );
-						if ( i != -1 )
-						    tmp.truncate( i );
-						strcpy( p_name, tmp.data() );
-					    }
+	char buffer[1024];
+	static KProtocolDirEntry de;
 
-					    de.access	= p_access;
-					    de.owner	= p_owner;
-					    de.group	= p_group;
-					    de.size	= atoi(p_size);
-					    de.isdir	= p_access[0]=='d';
-					    QString tmp(p_name);
-					    de.name	= tmp.stripWhiteSpace();
-					    if(de.isdir) de.name += "/";
-					    de.date.sprintf("%s %s %s",p_date_1, p_date_2, p_date_3);
-					    return(&de);
-					}
-    }
-    return(NULL);
+	while( fgets( buffer, 1024, dirfile ) != 0 ) {
+
+		char *p_access, *p_junk, *p_owner, *p_group;
+		char *p_size, *p_date_1, *p_date_2, *p_date_3, *p_name;
+
+		if ( (p_access = strtok(buffer," ")) != 0
+				&& (p_junk   = strtok(NULL," ")) != 0 
+				&& (p_owner  = strtok(NULL," ")) != 0
+				&& (p_group  = strtok(NULL," ")) != 0
+				&& (p_size   = strtok(NULL," ")) != 0
+				&& (p_date_1 = strtok(NULL," ")) != 0
+				&& (p_date_2 = strtok(NULL," ")) != 0
+				&& (p_date_3 = strtok(NULL," ")) != 0
+				&& (p_name   = strtok(NULL,"\r\n")) != 0 )  {
+
+			if ( p_access[0] == 'l' ) {
+
+				QString tmp( p_name );
+				int i = tmp.findRev( " -> " );
+
+				if ( i != -1 ) {
+					tmp.truncate( i );
+				}
+
+				strcpy( p_name, tmp.data() );
+			}
+
+			de.access	= p_access;
+			de.owner	= p_owner;
+			de.group	= p_group;
+			de.size		= atoi( p_size );
+			de.isdir	= p_access[0]=='d';
+
+			QString tmp(p_name);
+			de.name	= tmp.stripWhiteSpace();
+
+			if(de.isdir) {
+				de.name += "/";
+			}
+
+			de.date.sprintf("%s %s %s",p_date_1, p_date_2, p_date_3);
+
+			return(&de);
+		}
+	} // while
+
+	return(NULL);
 }
 
 int KProtocolFTP::CloseDir()
