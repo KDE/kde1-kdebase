@@ -293,7 +293,8 @@ AC_OUTPUT(Makefile \
 	po/sl/Makefile \
 	po/sv/Makefile \
 	po/zh_TW_Big5/Makefile \
-	po/zh_GB2312/Makefile )
+	po/zh_GB2312/Makefile \
+	po/en_UK/Makefile )
 
 AC_OUTPUT_COMMANDS(
 if test -r kappfinder/kappfinder; then
