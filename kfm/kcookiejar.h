@@ -31,16 +31,67 @@
 #include <qdict.h>
 #include <time.h>
 
+class KCookieJar;
+class KCookieList;
 class KCookie;
 typedef KCookie *KCookiePtr;
-
-class KCookieList;
 
 enum KCookieAdvice { 
     KCookieDunno=0, 
     KCookieAccept, 
     KCookieReject, 
     KCookieAsk 
+};
+
+class KCookie 
+{
+    friend KCookieJar;
+    friend KCookieList;
+
+protected:
+    QString host;
+    QString domain;
+    QString path;
+    QString name;
+    QString value;
+    time_t  expireDate;
+    int     protocolVersion;
+
+    KCookiePtr nextCookie;
+
+    QString getCookieStr(void);
+public:
+    KCookie(const char *_host="", const char *_domain="", const char *_path="",
+            const char *_name="", const char *_value="", time_t _expireDate=0,
+            int _protocolVersion=0);
+            
+    const char * getDomain(void) { return domain.data(); } 
+    const char * getHost(void) { return host.data(); }
+    const char * getPath(void) { return path.data(); }
+    const char * getName(void) { return name.data(); }
+    const char * getValue(void) { return value.data(); }
+    time_t  getExpireDate(void) { return expireDate; }
+    int     getProtocolVersion(void) { return protocolVersion; }
+    
+    bool    isExpired(time_t currentDate);
+
+    KCookiePtr next() { return nextCookie; }
+};
+
+class KCookieList : public QList<KCookie>
+{
+public:
+    KCookieList() : QList<KCookie>(), advice( KCookieDunno ) 
+    { setAutoDelete(true); }
+    virtual ~KCookieList() { }
+
+    virtual int compareItems( KCookie * item1, KCookie * item2);
+
+    KCookieAdvice getAdvice(void) { return advice; }
+    void setAdvice(KCookieAdvice _advice) { advice = _advice; }
+
+private:
+    KCookieAdvice advice;
 };
 
 class KCookieJar
@@ -155,57 +206,6 @@ protected:
     QStrList domainList;
 
     KCookieAdvice globalAdvice;
-};
-
-class KCookieList : public QList<KCookie>
-{
-public:
-    KCookieList() : QList(), advice( KCookieDunno ) 
-    { setAutoDelete(true); }
-
-    virtual int compareItems( KCookie * item1, KCookie * item2);
-
-    KCookieAdvice getAdvice(void) { return advice; }
-    void setAdvice(KCookieAdvice _advice) { advice = _advice; }
-
-private:
-    KCookieAdvice advice;
-};
-
-
-class KCookie 
-{
-    friend KCookieJar;
-    friend KCookieList;
-
-protected:
-    QString host;
-    QString domain;
-    QString path;
-    QString name;
-    QString value;
-    time_t  expireDate;
-    int     protocolVersion;
-
-    KCookiePtr nextCookie;
-
-    QString getCookieStr(void);
-public:
-    KCookie(const char *_host="", const char *_domain="", const char *_path="",
-            const char *_name="", const char *_value="", time_t _expireDate=0,
-            int _protocolVersion=0);
-            
-    const char * getDomain(void) { return domain.data(); } 
-    const char * getHost(void) { return host.data(); }
-    const char * getPath(void) { return path.data(); }
-    const char * getName(void) { return name.data(); }
-    const char * getValue(void) { return value.data(); }
-    time_t  getExpireDate(void) { return expireDate; }
-    int     getProtocolVersion(void) { return protocolVersion; }
-    
-    bool    isExpired(time_t currentDate);
-
-    KCookiePtr next() { return nextCookie; }
 };
 
 #endif
