@@ -190,6 +190,8 @@ AC_OUTPUT(Makefile \
 	po/ru/Makefile \
 	po/sv/Makefile \
 	po/hu/Makefile \
+	po/pl/Makefile \
+	po/pt/Makefile \
 	kwm2/Makefile \
 	kwm2/pics/Makefile \
 	kwmcom/Makefile \
