@@ -1367,7 +1367,7 @@ QPixmap *KRootIcon::link_pixmap = 0;
 QPixmap *KRootIcon::ro_pixmap = 0;
 
 KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
-    KDNDWidget( 0L, 0L, WStyle_Customize | WStyle_Tool | WStyle_NoBorder )
+    KDNDWidget( 0L, 0L, WStyle_Customize | WStyle_NoBorder )
 {
     grid_x = -1;
     grid_y = -1;
