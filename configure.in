@@ -212,6 +212,7 @@ AC_OUTPUT(Makefile \
 	doc/kmenuedit/Makefile \
 	doc/kvt/Makefile \
 	doc/kwm/Makefile \
+	doc/kdisknav/Makefile \
 	kappfinder/Makefile \
 	kappfinder/apps/Development/Makefile \
 	kappfinder/apps/Editors/Makefile \
