@@ -14,6 +14,7 @@
 #include <qchkbox.h>
 #include <kspinbox.h>
 #include <kconfig.h>
+#include <kcolorbtn.h> //CT
 
 
 struct fontoptions{
@@ -31,6 +32,10 @@ struct rootoptions{
   int     gridheight;
   int     iconstyle;
   bool    changed;
+
+  //CT
+  QColor icon_fg;
+  QColor icon_bg;
 
 };
 
@@ -119,6 +124,11 @@ public:
 	KMiscOptions( QWidget *parent = NULL, const char *name = NULL );
 	void getMiscOpts(struct rootoptions& rootopts);
 
+ private slots:
+	void slotIconFgColorChanged(const QColor &);
+	void slotIconBgColorChanged(const QColor &);
+	void makeBgActive( bool );
+
 private:
 	void	readOptions();
 
@@ -132,6 +142,11 @@ private:
 	bool   changeCursor;
 	bool   changed;
 	struct rootoptions rootopts;
+
+	//CT 12Nov1998
+	QColor icon_fg, icon_bg;
+	KColorButton *fgColorBtn, *bgColorBtn;
+	QLabel *bgLabel;//a little cheesy, but ... I'll wait for KFMIII :-)
 };
 
 

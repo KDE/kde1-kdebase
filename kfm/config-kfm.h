@@ -38,6 +38,11 @@ void debugC( const char *msg , ...);
 // root window icon text transparency default -- stefan@space.twc.de
 #define DEFAULT_ROOT_ICONS_STYLE 0
 
+//CT root icons foreground/background defaults
+#define DEFAULT_ICON_FG white
+#define DEFAULT_ICON_BG black
+//CT
+
 // lets be modern .. -- Bernd
 #define DEFAULT_VIEW_FONT "helvetica"
 #define DEFAULT_VIEW_FIXED_FONT "courier"

@@ -54,6 +54,7 @@ KRootWidget::KRootWidget( QWidget *parent, const char *name ) : QWidget( parent,
     {
          config->setGroup("KFM Root Icons");
 	 iconstyle = config->readNumEntry( "Style", 1 );
+	 /*CT ??? QString for colors? What for?
 	 QString bg = config->readEntry( "Background" );
 	 if ( bg.isNull() )
 	   bg = "black";
@@ -62,11 +63,17 @@ KRootWidget::KRootWidget( QWidget *parent, const char *name ) : QWidget( parent,
 	 if ( fg.isNull() )
 	   fg = "white";
          labelColor.setNamedColor( fg.data() );
+	 */
+	 //CT 12Nov1998
+	 labelColor = config->readColorEntry( "Foreground", &DEFAULT_ICON_FG );
+	 iconBgColor = config->readColorEntry( "Background", &DEFAULT_ICON_BG );
 
-	config->setGroup( "KFM Misc Defaults" );	
-	gridwidth = config->readNumEntry( "GridWidth", DEFAULT_GRID_WIDTH );
-	gridheight = config->readNumEntry( "GridHeight", DEFAULT_GRID_HEIGHT );
+	 if ( labelColor == iconBgColor ) debug("Icon colors identical");
+	 //CT
 
+	 config->setGroup( "KFM Misc Defaults" );	
+	 gridwidth = config->readNumEntry( "GridWidth", DEFAULT_GRID_WIDTH );
+	 gridheight = config->readNumEntry( "GridHeight", DEFAULT_GRID_HEIGHT );
     }
 
     rootDropZone = new KDNDDropZone( this , DndURL );
@@ -126,6 +133,16 @@ void KRootWidget::setRootIconStyle(int newiconstyle)
       icon->update();
   }
 }
+
+//CT 12Nov 1998
+void KRootWidget::setRootIconColors(QColor &fg, QColor &bg) {
+  if (fg != labelColor) labelColor = fg;
+  if (bg != iconBgColor) iconBgColor = bg;
+  KRootIcon *icon;
+  for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
+    icon->update();
+}
+//CT
 
 bool KRootWidget::isBindingHardcoded( const char *_txt )
 {

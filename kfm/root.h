@@ -194,7 +194,8 @@ public:
 
     void setRootGridParameters(int gridwidth ,int gridheight);
 	void setRootIconStyle(int newiconstyle);
-    
+	void setRootIconColors(QColor &, QColor &);//CT 12Nov1998
+
     /**
      * Takes all icons corresponding to the given URLs and moves them.
      * This function uses 'icon->dndStartX/Y()' and 'p' to determine the amount of

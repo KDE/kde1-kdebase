@@ -10,6 +10,7 @@
 #include <qcombo.h>
 #include <qlabel.h>
 #include <qchkbox.h>
+#include <qlayout.h>//CT - 12Nov1998
 #include <kapp.h>
 #include <kconfig.h>
 #include <X11/Xlib.h>
@@ -323,16 +324,48 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 {
   	readOptions();
 
+	//CT 12Nov1998
+	QGridLayout *lay = new QGridLayout(this,7,5,10,5);
+	lay->addRowSpacing(0,15);
+	lay->addRowSpacing(6,10);
+	lay->addColSpacing(0,10);
+	lay->addColSpacing(2,10);
+	lay->addColSpacing(4,10);
+
+	lay->setRowStretch(0,0);
+	lay->setRowStretch(1,1);
+	lay->setRowStretch(2,1);
+	lay->setRowStretch(3,1);
+	lay->setRowStretch(4,1);
+	lay->setRowStretch(5,1);
+	lay->setRowStretch(6,0);
+
+	lay->setColStretch(0,0);
+	lay->setColStretch(1,1);
+	lay->setColStretch(2,0);
+	lay->setColStretch(3,1);
+	lay->setColStretch(4,0);
+	//CT
 
 	QLabel *label;
 
 	label = new QLabel( klocale->translate(
 			    "Horizontal Root Grid Spacing:"), this );
 
-	label->setGeometry( 35, 20, 180, 25 );
+	//CT	label->setGeometry( 35, 20, 180, 25 );
+	//CT 12Nov1998
+	label->adjustSize();
+	label->setMinimumSize(label->size());
+	lay->addWidget(label,1,1);
+	//CT
 
 	hspin  = new KNumericSpinBox(this);
-	hspin ->setGeometry(225, 20, 40, 25 );
+	//CT	hspin ->setGeometry(225, 20, 40, 25 );
+	//CT 12Nov1998
+	hspin->setFixedSize(40,25);
+	hspin->setMinimumSize(hspin->size());
+	lay->addWidget(hspin,1,3);
+	//CT
 	hspin->setRange(0,DEFAULT_GRID_MAX - DEFAULT_GRID_MIN);
 
 	
@@ -343,11 +376,20 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 	label = new QLabel( klocale->translate(
 			    "Vertical Root Grid Spacing:"), this );
 
-	label->setGeometry( 35, 60, 180, 25 );
+	//CT	label->setGeometry( 35, 60, 180, 25 );
+	//CT 12Nov1998
+	label->adjustSize();
+	label->setMinimumSize(label->size());
+	lay->addWidget(label,2,1);
+	//CT
 
 	vspin  = new KNumericSpinBox(this);
-	vspin ->setGeometry(225, 60, 40, 25 );
-
+	//CT	vspin ->setGeometry(225, 60, 40, 25 );
+	//CT 12Nov1998
+	vspin->setFixedSize(40,25);
+	vspin->setMinimumSize(vspin->size());
+	lay->addWidget(vspin,2,3);
+	//CT
 	vspin->setRange(0,DEFAULT_GRID_MAX - DEFAULT_GRID_MIN);
 
 	if(gridheight - DEFAULT_GRID_MIN < 0 )
@@ -357,8 +399,45 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 
 	iconstylebox = new QCheckBox(klocale->translate("Transparent Text for Root Icons."),
 				  this);
-	iconstylebox->setGeometry(35, 100, 280, 25);
+	//CT	iconstylebox->setGeometry(35, 100, 280, 25);
+	//CT 12Nov1998
+	iconstylebox->adjustSize();
+	iconstylebox->setMinimumSize(iconstylebox->size());
+	lay->addMultiCellWidget(iconstylebox,3,3,1,3);
+	//CT
 	iconstylebox->setChecked(transparent);
+
+	connect(iconstylebox,SIGNAL(toggled(bool)),this,SLOT(makeBgActive(bool)));
+
+	//CT 12Nov1998 color buttons
+	label = new QLabel(klocale->translate("Icon foreground color:"),this);
+	label->adjustSize();
+	label->setMinimumSize(label->size());
+	lay->addWidget(label,4,1);
+
+	fgColorBtn = new KColorButton(icon_fg,this);
+	fgColorBtn->setFixedSize(80,30);
+	fgColorBtn->setMinimumSize(fgColorBtn->size());
+	lay->addWidget(fgColorBtn,4,3);
+	connect( fgColorBtn, SIGNAL( changed( const QColor & ) ),
+		SLOT( slotIconFgColorChanged( const QColor & ) ) );
+
+	bgLabel = new QLabel(klocale->translate("Icon background color:"),this);
+	bgLabel->adjustSize();
+	bgLabel->setMinimumSize(bgLabel->size());
+	lay->addWidget(bgLabel,5,1);
+
+	bgColorBtn = new KColorButton(icon_bg,this);
+	bgColorBtn->setFixedSize(80,30);
+	bgColorBtn->setMinimumSize(bgColorBtn->size());
+	lay->addWidget(bgColorBtn,5,3);
+	connect( bgColorBtn, SIGNAL( changed( const QColor & ) ),
+		SLOT( slotIconBgColorChanged( const QColor & ) ) );
+
+	makeBgActive(transparent);
+
+	lay->activate();
+	//CT
 }
 
 void KMiscOptions::readOptions()
@@ -369,6 +448,10 @@ void KMiscOptions::readOptions()
 	gridheight = config->readNumEntry( "GridHeight", DEFAULT_GRID_HEIGHT );
 	config->setGroup( "KFM Root Icons" );	
 	transparent = (bool)config->readNumEntry("Style", DEFAULT_ROOT_ICONS_STYLE);
+	//CT 12Nov1998
+	icon_fg = config->readColorEntry("Foreground",&DEFAULT_ICON_FG);
+	icon_bg = config->readColorEntry("Background",&DEFAULT_ICON_BG);
+	//CT
 
 	changed = false;
 }
@@ -396,4 +479,29 @@ void KMiscOptions::getMiscOpts(struct rootoptions& rootopts)
     rootopts.iconstyle = 0;
 
   rootopts.changed = changed;
+
+  //CT 12Nov1998
+  rootopts.icon_fg = icon_fg;
+  rootopts.icon_bg = icon_bg;
+  //CT
 }
+
+//CT 12Nov1998
+void KMiscOptions::slotIconFgColorChanged(const QColor &col) {
+	if ( icon_fg != col )
+	  icon_fg = col;
+	changed = true;
+}
+
+void KMiscOptions::slotIconBgColorChanged(const QColor &col) {
+	if ( icon_bg != col )
+	  icon_bg = col;
+	changed = true;
+}
+
+void KMiscOptions::makeBgActive(bool a) {
+  bgColorBtn->setEnabled(!a);
+  bgLabel->setEnabled(!a);
+}
+  
+//CT

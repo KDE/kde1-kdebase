@@ -1644,6 +1644,10 @@ void KfmGui::slotConfigureBrowser()
 	    config->writeEntry( "GridHeight", rootopts.gridheight);
 	    config->setGroup( "KFM Root Icons" );			
 	    config->writeEntry( "Style", rootopts.iconstyle);
+	    //CT 12Nov1998
+	    config->writeEntry( "Foreground", rootopts.icon_fg);
+	    config->writeEntry( "Background", rootopts.icon_bg);
+	    //CT
 	  }
 
 	  
@@ -1695,6 +1699,7 @@ void KfmGui::slotConfigureBrowser()
 								   rootopts.gridheight
 								   );
 	      KRootWidget::getKRootWidget()->setRootIconStyle( rootopts.iconstyle );
+	      KRootWidget::getKRootWidget()->setRootIconColors( rootopts.icon_fg, rootopts.icon_bg);
 	    }
 
 	  }
