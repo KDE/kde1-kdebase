@@ -277,7 +277,7 @@ struct verify_info	*verify;
           have to worry about closing the pam handle?  It will
           be closed when the session is closed.
        */
-       //pam_end(pamh, PAM_SUCCESS);           
+       /*pam_end(pamh, PAM_SUCCESS); */          
 #endif /* USE_PAM */
 
 	Debug ("verify succeeded\n");

@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:52:11 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Sun Oct 12 16:27:00 1997
-// Update Count     : 15
+// Last Modified On : Thu Nov 20 12:58:30 1997
+// Update Count     : 19
 // Status           : Unknown, Use with caution!
 // 
 
@@ -203,8 +203,8 @@ KDMShutdown::KDMShutdown( int mode, QWidget* _parent, const char* _name,
 	  pswdEdit = new QLineEdit( winFrame);
 	  //set_min( pswdEdit);
 	  pswdEdit->setMinimumHeight( pswdEdit->sizeHint().height());
-	  //pswdEdit->setEchoMode( QLineEdit::Password);
-	  QColorGroup   passwdColGroup(
+	  pswdEdit->setEchoMode( QLineEdit::NoEcho);
+	  /*QColorGroup   passwdColGroup(
 	       QApplication::palette()->normal().foreground(),
 	       QApplication::palette()->normal().background(),
 	       QApplication::palette()->normal().light(),
@@ -215,6 +215,7 @@ KDMShutdown::KDMShutdown( int mode, QWidget* _parent, const char* _name,
 	  QPalette passwdPalette( passwdColGroup, passwdColGroup, 
 				  passwdColGroup);
 	  pswdEdit->setPalette( passwdPalette);
+	  */
 	  pswdEdit->setFocusPolicy( StrongFocus);
 	  pswdEdit->setFocus();
 	  h+= pswdEdit->height() + 10;

@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:48:08 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Sun Jun 15 02:51:37 1997
-// Update Count     : 10
+// Last Modified On : Thu Nov 20 12:03:07 1997
+// Update Count     : 12
 // Status           : Unknown, Use with caution!
 // 
 
@@ -44,7 +44,7 @@ typedef unsigned int    UINT32;                 // 32 bit unsigned
 #include "kdmshutdown.h"
 #include "kdmconfig.h"
 
-class KGreeter : public FDialog {
+class KGreeter : public QDialog {
      Q_OBJECT
 public:
      KGreeter(QWidget *parent, const char *t);

@@ -5,12 +5,13 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:48:52 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Sun Oct 12 16:30:08 1997
-// Update Count     : 67
+// Last Modified On : Thu Nov 20 13:00:00 1997
+// Update Count     : 103
 // Status           : Unknown, Use with caution!
 // 
 
 #include "kgreeter.h"
+#include <qmsgbox.h>
 
 extern "C" {
 #include "dm.h"
@@ -71,11 +72,11 @@ MyApp::x11EventFilter( XEvent * ev){
 	  if (XLookupKeysym(&(ev->xkey),0) == XK_Return)
 	       kgreeter->ReturnPressed();
      }
-     // Hack to tell FDialogs to take focus
+     // Hack to tell dialogs to take focus
      if( ev->type == ConfigureNotify) {
 	  QEvent e( Event_Show);	  
 	  QWidget* target = QWidget::find( (( XConfigureEvent *) ev)->window);
-	  MyApp::sendEvent( target, &e);
+	  target->setActiveWindow();
      }
      return FALSE;
 }
@@ -95,7 +96,7 @@ set_fixed( QWidget* w)
 }
 
 KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0) 
-  : FDialog( parent, t, false, 
+  : QDialog( parent, t, false, 
 	     WStyle_Customize | WStyle_NoBorder | WStyle_Tool)
 {
      QFrame* winFrame = new QFrame( this);
@@ -139,8 +140,12 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      passwdLabel = new QLabel( klocale->translate("Password:"), this);
      set_min( passwdLabel);
      passwdEdit = new QLineEdit( this);
-     //passwdEdit->setEchoMode( QLineEdit::Password);
-     QColorGroup   passwdColGroup( 
+     passwdEdit->setEchoMode( QLineEdit::NoEcho);
+     /* This is a way to get a passwd edit
+      * with a moving cursor, but it's
+      * not so great in windows style
+      */
+     /*QColorGroup   passwdColGroup( 
 	  QApplication::palette()->normal().foreground(), 
 	  QApplication::palette()->normal().background(),
 	  QApplication::palette()->normal().light(), 
@@ -150,6 +155,7 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
 	  QApplication::palette()->normal().base());
      QPalette passwdPalette( passwdColGroup, passwdColGroup, passwdColGroup);
      passwdEdit->setPalette( passwdPalette);
+     */
      vbox->addLayout( hbox1);
      vbox->addLayout( hbox2);
      hbox1->addWidget( pixLabel, 0, AlignTop);
@@ -428,8 +434,11 @@ GreetUser(
       */
      if (source (verify->systemEnviron, d->startup) != 0)
      {
-	  printf("Startup program %s exited with non-zero status\n",
+          char buf[256];
+	  sprintf(buf, "Startup program %s exited with non-zero status.\n"
+		  "Please contact your system administrator.\n",
 		 d->startup);
+	  QMessageBox::critical( 0, "Login aborted", buf, "Retry");
 	  SessionExit (d, OBEYSESS_DISPLAY, FALSE);
      }              
      // Clean up and log user in:

@@ -137,7 +137,7 @@ int	len;
 #else
 */
     {
-	long    time ();
+      /*	long    time ();*/
 
 	ldata[0] = time ((long *) 0);
 	ldata[1] = getpid ();
