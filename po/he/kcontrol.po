@@ -39,7 +39,7 @@ msgstr ""
 "רצלוה סאיתאמ ידי לע בתכנ\n"
 "(hoelzer@physik.uni-wuerzburg.de)\n"
 ":ל תודות\n"
-"סנוג .מ ו ןבוו .מ ,ראלוד .פ ,ולוק .ס\n"
+"סנוג .מ ו ןבוו .מ ,ראלוד .פ ,ולוק .ס"
 #: mainwidget.cpp:44
 msgid "System:"
 msgstr "תכרעמ עדימ"

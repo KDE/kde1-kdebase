@@ -189,7 +189,7 @@ msgstr "הלשכנ ינמז ץבוק תחיתפ"
 #: cgi.cpp:80
 #, c-format
 msgid "CGI: Destination URL malformed: %s\n"
-msgstr "%s :ןיקת וניא דעיה רושיק :CGI תינכת"
+msgstr "%s :ןיקת וניא דעיה רושיק :CGI תינכת\n"
 
 #: mainwidget.cpp:132
 msgid "&New Help Window"
@@ -276,7 +276,7 @@ msgstr ""
 "\n"
 "סנוג ןיטרמ (C) 1997 תורומש תויוכזה לכ\n"
 "GNU לש חותפה ןוישרה אוה וז הנכותל ןוישרה\n"
-"קוח יפ לע רתומה תדימב - תוירחא לכ אלל העיגמ KDE תרזע\n"
+"קוח יפ לע רתומה תדימב - תוירחא לכ אלל העיגמ KDE תרזע"
 ""
 #: mainwidget.cpp:201
 msgid "&Goto"

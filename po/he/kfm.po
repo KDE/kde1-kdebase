@@ -227,7 +227,7 @@ msgstr "KDE רייסב האיגש"
 
 #: kfmexec.cpp:59 kfmgui.cpp:744 kfmman.cpp:1020
 msgid "Malformed URL\n"
-msgstr "הייוגש תבותכ"
+msgstr "הייוגש תבותכ\n"
 
 #: kfmgui.cpp:904
 msgid "Select files:"
@@ -417,7 +417,7 @@ msgstr ""
 "הצרהל םושיי אל הז"
 #: kbind.cpp:1556 kbind.cpp:1573
 msgid "Can only start executables on local disks\n"
-msgstr "םיממוקמ םיננוכ לע קר םימושי ץירהל ןתינ"
+msgstr "םיממוקמ םיננוכ לע קר םימושי ץירהל ןתינ\n"
 
 #: kbind.cpp:1631 kbind.cpp:1705 kbind.cpp:1856
 msgid ""
@@ -755,7 +755,7 @@ msgstr "לדחמה תרירב"
 
 #: kfmprops.cpp:1073
 msgid "Could not write to\n"
-msgstr "רומשל ןתינ אל"
+msgstr "רומשל ןתינ אל\n"
 
 #: kfmprops.cpp:1186
 msgid "(None)"
@@ -1174,7 +1174,7 @@ msgstr " היירפסה "
 
 #: autostart.cpp:30
 msgid " does not exist\n"
-msgstr " תמייק הניא "
+msgstr " תמייק הניא \n"
 
 #: kfmtree.cpp:396
 msgid "My Home"

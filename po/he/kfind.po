@@ -327,7 +327,7 @@ msgid ""
 "It isn't possible to delete\n"
 "selected file"
 msgstr ""
-"רחבנש ץבוקה תא קוחמל ןתינ אל\n"
+"רחבנש ץבוקה תא קוחמל ןתינ אל"
 #: kfwin.cpp:334
 msgid ""
 "You have no permission\n"

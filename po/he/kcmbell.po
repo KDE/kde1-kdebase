@@ -20,7 +20,7 @@ msgstr ""
 
 #: main.cpp:58
 msgid "usage: kcmbell [-init | bell]\n"
-msgstr "ףוצפצ"
+msgstr "ףוצפצ\n"
 
 #: main.cpp:89
 msgid "Bell settings"
