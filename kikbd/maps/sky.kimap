@@ -7,7 +7,8 @@ Comment=Typewriter Keyboard (QWERTY)
 Comment[cs]=Klávesnice psacího stroje (QWERTY)
 Comment[de]=Internationale Tastatur
 Comment[es]=Teclado internacional
-Comment[fi]=Kansainvälinen näppäimistö
+Comment[fi]=Kirjoituskonenäppäimistö (QWERTY)
+Comment[is]=Ritvélaruppsetning (QUERTY)
 Comment[no]=Skrivemaskintastatur (QWERTY)
 Comment[pl]=Klawiatura Miêdzynarodowa
 Comment[pt]=Teclado Internacional
@@ -18,6 +19,7 @@ Comment[sk]=Medzinárodná klávesnica
 
 Language=Slovak
 Language[cs]=Slovenský
+Language[fi]=Slovakki
 Language[no]=Slovakisk
 Language[pt_BR]=lovaco
 Language[ru]=ÁÃËÉÊ

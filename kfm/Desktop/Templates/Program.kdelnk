@@ -7,6 +7,7 @@ TerminalOptions=
 Path=
 Terminal=0
 Name=Application
+Name[fi]=Sovellus
 Name[no]=Applikasjon
 Name[pt_BR]=Aplicativo
 Name[ru]=Приложение

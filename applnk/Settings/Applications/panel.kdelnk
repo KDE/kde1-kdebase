@@ -8,14 +8,13 @@ Name[eo]=Panelo
 Name[fi]=Paneeli
 Name[fr]=Panneau
 Name[hr]=Ploèa
-Name[is]=Spjaldið name[is_IS]=Spjaldið
+Name[is]=Spjaldið
 Name[it]=Pannello
 Name[pt]=Painel
 Name[pt_BR]=Painel
 Name[ro]=Panou
 Name[ru]=ðÁÎÅÌØ
 Name[zh_CN.GB2312]=Ãæ°å
-Name[sv]=Panelen
 Comment=You can configure here, how the panel should look like
 Comment[ca]=Aquí podeu configurar quin aspecte ha de tenir el panell
 Comment[cs]=Zde mù¾ete nastavit vzhled a chování panelu KDE

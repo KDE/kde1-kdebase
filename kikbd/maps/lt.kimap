@@ -5,6 +5,7 @@
 Authors=Tomas Furmonavièius <f1926@kaunas.aiva.lt>
 
 Language=Lithuanian
+Language[no]=Lituaisk
 
 Label=Lt
 Locale=lt

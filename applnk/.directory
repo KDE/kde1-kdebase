@@ -2,8 +2,10 @@
 [KDE Desktop Entry]
 Name=Default
 Name[cs]=Implicitní
+Name[de]=Standard
+Name[fi]=Oletus
+Name[is]=Sjálfgefiğ
 Name[no]=Standard
 Name[pt_BR]=Padrão
 Name[ru]=ğÏ ÕÍÏÌŞÁÎÉÀ
-Name[sv]=Standard
 SortOrder=Applications,apps,Games,Graphics,Internet,Multimedia,Network,Settings,System,Utilities
