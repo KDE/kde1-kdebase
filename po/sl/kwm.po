@@ -1,33 +1,32 @@
-# KWM translation to Slovene language.
-# Copyright (C) 1998 Free Software Foundation, Inc.
-# Bla¾ Zupanèiè <blazzupancic@hotmail.com>, 1998.
+# KDEBASE translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kwm\n"
+"Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1999-04-05 01:20+0200\n"
-"PO-Revision-Date: 1998-09-25 11:42+0100\n"
-"Last-Translator: Bla¾ Zupanèiè <blazzupancic@hotmail.com>\n"
-"Language-Team: Slovenian\n"
+"PO-Revision-Date: 1999-04-21 13:49+0100\n"
+"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: iso-8859-2\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: main.C:68
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
-msgstr ""
-"kwm: zgleda da je neki okenski vmesnik ¾e nalo¾en. kwm se ne more zagnati\n"
+msgstr "kwm: videti je, da upravljalnik oken ¾e teèe. kwm ni bil pognan\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: napaka med inicializacijo; konèujem\n"
+msgstr "kwm: napaka med inicializacijo; prekinjam\n"
 
 #: main.C:527
 msgid "Preparing session ... "
-msgstr "Pripravljam seanso..."
+msgstr "Pripravljam sejo ... "
 
 #: main.C:551
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -35,23 +34,23 @@ msgstr "Avtorske pravice (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:558
 msgid "Usage: "
-msgstr "Uporaba:"
+msgstr "Uporaba: "
 
 #: main.C:569
 msgid "&Maximize"
-msgstr "Po&veèaj"
+msgstr "&Razpni"
 
 #: main.C:570
 msgid "&Restore"
-msgstr "Po&vrni"
+msgstr "&Obnovi"
 
 #: main.C:571
 msgid "&Iconify"
-msgstr "S&krij"
+msgstr "&Ikoniziraj"
 
 #: main.C:572
 msgid "&DeIconify"
-msgstr "Pri&ka¾i"
+msgstr "O&dikoniziraj"
 
 #: main.C:573
 msgid "&Sticky"
@@ -59,23 +58,23 @@ msgstr "Pri&lepi"
 
 #: main.C:574
 msgid "&UnSticky"
-msgstr "Od&lepi"
+msgstr "Odl&epi"
 
 #: main.C:575
 msgid "Mo&ve"
-msgstr "&Premakni"
+msgstr "Pre&makni"
 
 #: main.C:576
 msgid "Resi&ze"
-msgstr "Pre&oblikuj"
+msgstr "&Spremeni velikost"
 
 #: main.C:578
 msgid "&To desktop"
-msgstr "Na mi&zo"
+msgstr "&Na namizje"
 
 #: main.C:580
 msgid "&Onto current desktop"
-msgstr "Na to mi&zo"
+msgstr "Na &trenutno namizje"
 
 #: main.C:620
 msgid "One"
@@ -111,19 +110,19 @@ msgstr "Osem"
 
 #: main.C:655
 msgid "Unnamed Desktop"
-msgstr "Namizje brez imena"
+msgstr "Neimenovano namizje"
 
 #: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Nekatere slike niso veljavne: ShapeMode je izklopljen\n"
+msgstr "Nekatere slike so neveljavne: izklopljen ShapeMode\n"
 
 #: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Nekatere slike niso veljavne: GimmickMode je izklopljen\n"
+msgstr "Nekatere slike so neveljavne: izklopljen GimmickMode\n"
 
 #: main.C:1531
 msgid "*** No Tasks ***"
-msgstr " Zzzzz... Zzzzz... "
+msgstr "*** brez nalog ***"
 
 #: minicli.C:201
 msgid "Command:"
@@ -135,42 +134,43 @@ msgstr "Ups!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
-msgstr "Izhod"
+msgstr "Odjava"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Vse je pripravljeno za izhod"
+msgstr "Seja je pripravljena na odjavo"
 
 #: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"Naslednji programi vsebujejo neshranjene podatke,\n"
-"ki bodo do naslednje seanse unièeni."
+"Naslednje aplikacije vsebujejo neshranjene podatke, ki\n"
+"bodo izgubljeni ob va¹i naslednji prijavi."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"Naslednji programi ne morejo biti obnovljeni v naslednji seansi,\n"
-"lahko jih le ponovno za¾enem.\n"
-"Poskrbite, da ne bodo vsebovali pomembnih, neshranjenih podatkov."
+"Naslednje aplikacije se ne morejo obnoviti ob va¹i naslednji prijavi,\n"
+"lahko so le ponovno zagnane. Preverite, da ne vsebujejo pomembnih\n"
+"neshranjenih podatkov."
 
 #: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Naslednji programi niso predvideni za okolje X11 in jih zato ne morem\n"
-"obnoviti v naslednji seansi. Poskrbite, da ne bodo vsebovali pomembnih,\n"
-"neshranjenih podatkov."
+"Naslednje aplikacije niso X11-ozave¹èene in zato ne morejo biti obnovljene\n"
+"ob va¹i naslednji prijavi. Preverite, da ne vsebujejo pomembnih "
+"neshranjenih\n"
+"podatkov."
 
 #: taskmgr.C:107
 msgid "Switch to"
-msgstr "Preklopi v"
+msgstr "Preklopi na"
 
 #: taskmgr.C:121
 msgid "Current session"
-msgstr "Sedanja seansa"
+msgstr "Trenutna seja"

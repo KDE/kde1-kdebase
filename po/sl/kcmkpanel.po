@@ -1,237 +1,283 @@
 # KCMKPANEL translation to Slovene language
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # luka steger, <luka_steger@hotmail.com>, 1998
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmpanel\n"
 "POT-Creation-Date: 1999-01-28 01:15+0100\n"
 "PO-Revision-Date: 1998-09-24  18:04+0100\n"
-"Last-Translator: luka steger, <luka_steger@hotmail.com>\n"
-"Language-Team: slovene\n"
+"Last-Translator: Borut Mrak <borutm@bigfoot.com>\n"
+"Language-Team: Slovenian <sl@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: iso8859-2\n"
+"Content-Type: text/plain; charset=iso8859-2\n"
+"Content-Transfer-Encoding: text/plain\n"
 
+# main.cpp:64
 #: main.cpp:64
 msgid "&Panel"
 msgstr "&Pult"
 
+# main.cpp:70
 #: main.cpp:70
 msgid "&Desktops"
-msgstr "&Namizja"
+msgstr "Na&mizja"
 
+# main.cpp:73
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr ""
+msgstr "Disk &Navigator"
 
+# main.cpp:79
 #: main.cpp:79
-#, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
-msgstr "Uporaba: kcmkpanel [-init | {panel,options,desktops}]\n"
+msgstr "Uporaba: kcmkpanel [-init | {pult,opcije,namizja,disknav}]\n"
 
+# main.cpp:112
 #: main.cpp:113
 msgid "KPanel Configuration"
 msgstr "Nastavitve KPulta"
 
+# panel.cpp:59
 #: panel.cpp:59
 msgid "Location"
 msgstr "Lega"
 
+# panel.cpp:60
 #: panel.cpp:60
 msgid "&Top"
 msgstr "&Zgoraj"
 
+# panel.cpp:61
 #: panel.cpp:61
 msgid "&Left"
 msgstr "&Levo"
 
+# panel.cpp:62
 #: panel.cpp:62
 msgid "&Bottom"
 msgstr "&Spodaj"
 
+# panel.cpp:63
 #: panel.cpp:63
 msgid "&Right"
-msgstr ""
+msgstr "&Desno"
 
+# panel.cpp:75
 #: panel.cpp:75
 msgid "Taskbar"
 msgstr "Opravilna vrstica"
 
+# panel.cpp:76
 #: panel.cpp:76
 msgid "&Hidden"
 msgstr "S&krita"
 
+# panel.cpp:78
 #: panel.cpp:78
 msgid "T&op"
 msgstr "Z&goraj"
 
+# panel.cpp:80
 #: panel.cpp:80
 msgid "Botto&m"
 msgstr "S&podaj"
 
+# panel.cpp:82
 #: panel.cpp:82
 msgid "Top/Le&ft"
 msgstr "L&evo-zgoraj"
 
+# panel.cpp:95
 #: panel.cpp:95
 msgid "Style"
-msgstr ""
+msgstr "Stil"
 
+# panel.cpp:97
 #: panel.cpp:97
 msgid "T&iny"
-msgstr "&Majhen"
+msgstr "D&robcen"
 
+# panel.cpp:99
 #: panel.cpp:99
 msgid "&Normal"
 msgstr "&Normalen"
 
+# panel.cpp:101
 #: panel.cpp:101
 msgid "L&arge"
 msgstr "&Velik"
 
+# desktops.cpp:73
 #: desktops.cpp:73
 msgid "&Visible"
 msgstr "&Vidna"
 
+# desktops.cpp:82
 #: desktops.cpp:82
 msgid "&Width"
 msgstr "©i&rina"
 
+# options.cpp:38
 #: options.cpp:38
 msgid "Menu Tooltips"
 msgstr "Namigi"
 
+# options.cpp:62
 #: options.cpp:62
 msgid "Show &Menu Tooltips"
 msgstr "Po&ka¾i namige"
 
+# options.cpp:84
 #: options.cpp:84
 msgid "De&lay:"
 msgstr "&Zakasnitev"
 
+# options.cpp:91 options.cpp:160 options.cpp:262
 #: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
-msgstr ""
+msgstr "Majhen"
 
+# options.cpp:98 options.cpp:167 options.cpp:269
 #: options.cpp:98 options.cpp:167 options.cpp:269
-#, fuzzy
 msgid "Large"
 msgstr "&Velik"
 
+# options.cpp:110
 #: options.cpp:110
 msgid "Visuals"
-msgstr ""
+msgstr "Vidni"
 
+# options.cpp:144
 #: options.cpp:144
 msgid "Auto &Hide Panel"
 msgstr "Samodejno skrij &pult"
 
+# options.cpp:153 options.cpp:255
 #: options.cpp:153 options.cpp:255
-#, fuzzy
 msgid "Delay:"
-msgstr "&Zakasnitev"
+msgstr "Zakasnitev:"
 
+# options.cpp:184 options.cpp:286 options.cpp:349
 #: options.cpp:184 options.cpp:286 options.cpp:349
 msgid "Speed:"
-msgstr ""
+msgstr "Hitrost:"
 
+# options.cpp:191 options.cpp:293 options.cpp:356
 #: options.cpp:191 options.cpp:293 options.cpp:356
 msgid "Slow"
-msgstr ""
+msgstr "Poèasi"
 
+# options.cpp:198 options.cpp:300 options.cpp:363
 #: options.cpp:198 options.cpp:300 options.cpp:363
 msgid "Fast"
-msgstr ""
+msgstr "Hitro"
 
+# options.cpp:246
 #: options.cpp:246
 msgid "Auto Hide &Taskbar"
 msgstr "Samodejno skrij &opravilno vrstico"
 
+# options.cpp:341
 #: options.cpp:341
 msgid "Animate Show/Hide"
-msgstr ""
+msgstr "Animiraj prika¾i/skrij"
 
+# options.cpp:395
 #: options.cpp:395
 msgid "Others"
 msgstr "Ostalo"
 
+# options.cpp:408
 #: options.cpp:408
-#, fuzzy
 msgid "Personal Menu Entries &First"
-msgstr "&Najprej uporabni¹ki meni"
+msgstr "&Najprej osebni menujski vnosi"
 
+# options.cpp:416
 #: options.cpp:416
-#, fuzzy
 msgid "Menu F&olders First"
-msgstr "&Najprej uporabni¹ki meni"
+msgstr "Najprej &mape"
 
+# options.cpp:424
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
-msgstr ""
+msgstr "&Ura ka¾e èas v AM/PM formatu"
 
+# options.cpp:432
 #: options.cpp:432
 msgid "Clock shows time in &Internet beats"
-msgstr ""
+msgstr "Ura ka¾e èas v &Internetnih udarcih"
 
+# disknav.cpp:38
 #: disknav.cpp:38
 msgid "History"
-msgstr ""
+msgstr "Zgodovina"
 
+# disknav.cpp:62
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr ""
+msgstr "Uredi vnose: (potegni mapo in ustvari povezavo)"
 
+# disknav.cpp:64
 #: disknav.cpp:64
 msgid "Edit &Personal..."
-msgstr ""
+msgstr "Uresi &osebne..."
 
+# disknav.cpp:74
 #: disknav.cpp:74
 msgid "Edit &Shared..."
-msgstr ""
+msgstr "Uredi &deljene..."
 
+# disknav.cpp:112
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr ""
+msgstr "Najveè sve¾ih vnosov map:"
 
+# disknav.cpp:121
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr ""
+msgstr "Najveè sve¾ih vnosov datotek:"
 
+# disknav.cpp:130
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr ""
+msgstr "Najveè datotek v eni mapi:"
 
+# disknav.cpp:159
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr ""
+msgstr "Prika¾i pikèaste datoteke"
 
+# disknav.cpp:166
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr ""
+msgstr "Ignoriraj velikost èrk pri razvr¹èanju"
 
+# disknav.cpp:173
 #: disknav.cpp:173
-#, fuzzy
 msgid "Show Shared section"
-msgstr "Lega"
+msgstr "Prika¾i deljen del"
 
+# disknav.cpp:180
 #: disknav.cpp:180
-#, fuzzy
 msgid "Show Personal section"
-msgstr "Lega"
+msgstr "Prika¾i osebni del"
 
+# disknav.cpp:187
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr ""
+msgstr "Prika¾i del z novimi"
 
+# disknav.cpp:194
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr ""
+msgstr "Prika¾i vnos z opcijami"
 
+# disknav.cpp:210
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr ""
+msgstr "Terminalski program:"
 
 #~ msgid "ms"
 #~ msgstr "ms"

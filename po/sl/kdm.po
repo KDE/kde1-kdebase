@@ -1,38 +1,38 @@
-# KDM translation to Slovene language
-# Copyright (C) 1998 Free Software Foundation, Inc.
-# luka steger <luka_steger@hotmail.com>, 1998.
+# KDEBASE translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: KDM\n"
+"Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1999-04-08 01:20+0200\n"
-"PO-Revision-Date: 1998-09-25 11:37+0100\n"
-"Last-Translator: blazzupancic@hotmail.com\n"
-"Language-Team:  Slovene\n"
+"PO-Revision-Date: 1999-03-26 23:25+0100\n"
+"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ISO8859-2\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
-msgstr "Odklop ali ponovni zagon?"
+msgstr "Zaustavitev sistema ali ponoven zagon?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr ""
+msgstr "(Vpi¹ite geslo uporabnika root)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
-msgstr "Odklop"
+msgstr "Zaustavitev sistema"
 
 #: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
-msgstr "Odklop in ponovni zagon"
+msgstr "Zaustavitev sistema ali ponoven zagon"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr ""
+msgstr "Ponoven zagon stre¾nika X"
 
 #: kgreeter.cpp:234
 msgid "Login:"
@@ -44,11 +44,11 @@ msgstr "Geslo:"
 
 #: kgreeter.cpp:271
 msgid "Login failed!"
-msgstr "Prijava ni uspela!"
+msgstr "Prijava je bila neuspe¹na!"
 
 #: kgreeter.cpp:277
 msgid "Session Type:"
-msgstr "Tip seanse:"
+msgstr "Tip seje:"
 
 #: kgreeter.cpp:324
 msgid "Go!"
@@ -56,19 +56,19 @@ msgstr "Pojdi!"
 
 #: kgreeter.cpp:340
 msgid "Shutdown..."
-msgstr "Odklop..."
+msgstr "Zaustavitev sistema..."
 
 #: kgreeter.cpp:585
 msgid "Logins not available right now."
-msgstr ""
+msgstr "Prijave trenutno niso mogoèe."
 
 #: kgreeter.cpp:626
 msgid "login_getcapstr() failed."
-msgstr ""
+msgstr "login_getcapstr() neusp¹na."
 
 #: kgreeter.cpp:680 kgreeter.cpp:707
 msgid "Sorry -- your account has expired."
-msgstr "®al je va¹ raèun potekel."
+msgstr "Oprostite -- va¹ raèun je potekel."
 
 #: kgreeter.cpp:685 kgreeter.cpp:712
 #, c-format
@@ -77,16 +77,4 @@ msgstr "Opozorilo: va¹ raèun poteèe %s"
 
 #: kgreeter.cpp:739
 msgid "Home directory not available"
-msgstr "Domaèi imenik ni na voljo"
-
-#~ msgid "Exit kdm"
-#~ msgstr "Izhod iz kdm"
-
-#~ msgid "No login"
-#~ msgstr "Ni prijave"
-
-#~ msgid "Expired"
-#~ msgstr "Potekel"
-
-#~ msgid "No home"
-#~ msgstr "Ni domaèega imenika"
+msgstr "Domaè imenik ni dostopen"

@@ -1,22 +1,22 @@
-# KFONTMANAGER translation to Slovene language
-# Copyright (C) 1998 Free Software Foundation, Inc.
-# Bla¾ Zupanèiè <blazzupancic@hotmail.com>, 1998.
+# KDEBASE translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kfontmanager\n"
+"Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-12-14 01:17+0100\n"
-"PO-Revision-Date: 1998-09-25 11:39+0100\n"
-"Last-Translator: Bla¾ Zupanèiè <blazzupancic@hotmail.com>\n"
-"Language-Team: Slovenian \n"
+"PO-Revision-Date: 1999-04-21 14:05+0100\n"
+"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: iso-8859-2\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:58
 msgid "KDE Font Manager"
-msgstr "Upravljalnik KDE pisav"
+msgstr "KDE Upravitelj pisav"
 
 #: main.cpp:71
 msgid "KDE Fonts"
@@ -28,25 +28,27 @@ msgstr "Raziskovalec pisav"
 
 #: main.cpp:73
 msgid "Raw X11 Font List"
-msgstr "Neobdelan seznam X11 pisav"
+msgstr "Surovi seznam X11 pisav"
 
 #: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
-msgstr "Razpolo¾ljive X11 pisave"
+msgstr "Dostopne X11 pisave"
 
 #: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"
-msgstr "Pisave, ki so na voljo v KDE"
+msgstr "Pisave dostopne KDE"
 
 #: kfontmanager.cpp:89
 msgid ""
 "The Quick Brown Fox Jumps Over The Lazy Dog\n"
 "AaBbCc123"
 msgstr ""
+"Pi¹kur molèe grabi fi¾ol iz dna cezijeve hoste\n"
+"AaBbCc123"
 
 #: kfontlist.cpp:62 kfontmanager.cpp:112
 msgid "About kfontmanager"
-msgstr "O upravljalniku KDE pisav"
+msgstr "O kfontmanager"
 
 #: kfontmanager.cpp:112
 msgid ""
@@ -55,7 +57,7 @@ msgid ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 msgstr ""
-"Upravljalnik KDE pisav, razlièica 0.2\n"
+"kfontmanager verzija 0.2\n"
 "Avtorske pravice 1997\n"
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
@@ -64,16 +66,14 @@ msgstr ""
 msgid ""
 "The environment variable HOME\n"
 "is not set\n"
-msgstr ""
-"Spremenljivka okolja HOME\n"
-"ni doloèena\n"
+msgstr "Okoljstvena spremenljivka HOME ni nastavljena\n"
 
 #: kfontmanager.cpp:292
 msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
 msgstr ""
-"Ne morem narediti imenika:\n"
+"Ne morem ustvariti:\n"
 " ~/.kde/share/config/kdefonts\n"
 
 #: kfontmanager.cpp:297
@@ -82,9 +82,9 @@ msgid ""
 "is not writeable\n"
 "Can't save KDE Fontlist."
 msgstr ""
-"~/.kde/share/config/kdefonts obstaja,\n"
-"vendar nanj ne morem pisati\n"
-"Ne morem shraniti seznama KDE pisav."
+"~/.kde/share/config/kdefonts obstaja vendar\n"
+"ni zapisljiv\n"
+"Ne morem shraniti seznama pisav KDE."
 
 #: kfontlist.cpp:62
 msgid ""
@@ -93,82 +93,79 @@ msgid ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 msgstr ""
-"Upravljalnik KDE pisav, razlièica 0.1\n"
+"kfontmanager verzija 0.1\n"
 "Avtorske pravice 1997\n"
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 
 #: kfontexplorer.cpp:126
 msgid "Select Font"
-msgstr ""
+msgstr "Izberi pisavo"
 
 #: kfontexplorer.cpp:130
 msgid "Requested Font"
-msgstr ""
+msgstr "Zahtevana pisava"
 
 #: kfontexplorer.cpp:135
 msgid "Actual Font"
-msgstr ""
+msgstr "Dejanska pisava"
 
 #: kfontexplorer.cpp:139 kfontexplorer.cpp:143
 msgid "Family:"
-msgstr ""
+msgstr "Dru¾ina:"
 
 #: kfontexplorer.cpp:163 kfontexplorer.cpp:168
 msgid "Size:"
-msgstr ""
+msgstr "Velikost:"
 
 #: kfontexplorer.cpp:177 kfontexplorer.cpp:182
 msgid "Weight:"
-msgstr ""
+msgstr "Te¾a:"
 
 #: kfontexplorer.cpp:191 kfontexplorer.cpp:199
 msgid "Style:"
-msgstr ""
+msgstr "Slog:"
 
 #: kfontexplorer.cpp:234
 msgid "Charset"
-msgstr ""
+msgstr "Nabor znakov"
 
 #: kfontexplorer.cpp:246
 msgid "Size"
-msgstr ""
+msgstr "Velikost"
 
 #: kfontexplorer.cpp:285
 msgid "Weight"
-msgstr ""
+msgstr "Te¾a"
 
 #: kfontexplorer.cpp:286 kfontexplorer.cpp:394
 msgid "normal"
-msgstr ""
+msgstr "normalno"
 
 #: kfontexplorer.cpp:287 kfontexplorer.cpp:396
 msgid "bold"
-msgstr ""
+msgstr "krepko"
 
 #: kfontexplorer.cpp:296
 msgid "Style"
-msgstr ""
+msgstr "Slog"
 
 #: kfontexplorer.cpp:297 kfontexplorer.cpp:407 kfontexplorer.cpp:437
 msgid "roman"
-msgstr ""
+msgstr "roman"
 
 #: kfontexplorer.cpp:298 kfontexplorer.cpp:409 kfontexplorer.cpp:435
 msgid "italic"
-msgstr ""
+msgstr "le¾eèe"
 
 #: kfontexplorer.cpp:326
 msgid "Dolor Ipse"
-msgstr ""
+msgstr "Dolor Ipse"
 
 #: kfontexplorer.cpp:430
 msgid "Bold"
-msgstr ""
+msgstr "Krepko"
 
 #: kfontexplorer.cpp:432
 msgid "Normal"
-msgstr ""
-
-#~ msgid "The KDE Font Manager Example String"
-#~ msgstr "Sreèa je opoteèa."
+msgstr "Normalno"

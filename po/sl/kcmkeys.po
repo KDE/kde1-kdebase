@@ -1,0 +1,221 @@
+# KDEBASE translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999.
+#
+# KDEBASE translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
+"PO-Revision-Date: 1999-01-23 14:02+0100\n"
+"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:72
+msgid "&Standard shortcuts"
+msgstr "&Standardne bli¾njice"
+
+#: main.cpp:80
+msgid "&Global shortcuts"
+msgstr "&Univerzalne bli¾njice"
+
+#: main.cpp:88
+msgid "usage: kcmkeys [-init | {standard,global}]\n"
+msgstr "Uporaba: kcmkeys [-init | {standard,global}]\n"
+
+#: main.cpp:132
+msgid "Key binding settings"
+msgstr "Nastavitve vezav s tipkami"
+
+#: keyconfig.cpp:106
+msgid "Current scheme"
+msgstr "Trenutna shema"
+
+#: keyconfig.cpp:108
+msgid "KDE default"
+msgstr "KDE privzeta"
+
+#: keyconfig.cpp:115
+msgid "&Key scheme"
+msgstr "&Vezavna shema"
+
+#: keyconfig.cpp:126
+msgid "&Add ..."
+msgstr "Dod&aj ..."
+
+#: keyconfig.cpp:148
+msgid "&Save changes"
+msgstr "&Shrani spremembe"
+
+#: keyconfig.cpp:211
+msgid "Error removing scheme"
+msgstr "Napaka pri odstranitvi sheme"
+
+#: keyconfig.cpp:212
+msgid ""
+"This key scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the key scheme is stored."
+msgstr ""
+"Te vezavne sheme nisem mogel odstraniti.\n"
+"Mogoèe nimate potrebnih dovoljenj za spreminjanje datoteke,\n"
+"kjer je shranjena vezavna shema."
+
+#: keyconfig.cpp:343
+msgid "Naming conflict"
+msgstr "Konflikt pri poimenovanju"
+
+#: keyconfig.cpp:344
+msgid ""
+"Please choose a unique name for the new key\n"
+"scheme. The one you entered already appears\n"
+"in the key scheme list."
+msgstr ""
+"Prosim izberite neobstojeèe ime za novo vezavno\n"
+"shemo. To, ki ste ga vpisali, je ¾e na seznamu\n"
+"obstojeèih imen vezavnih shem."
+
+#: savescm.cpp:18
+msgid "Add a key scheme"
+msgstr "Dodaj vezavno shemo"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new key scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The keys currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"&Vpi¹i ime nove vezavne sheme, ki bo\n"
+"dodana va¹emu osebnemu seznamu.\n"
+"\n"
+"Vezave, trenutno uporabljene v predogledu, bodo\n"
+"prekopirane v to shemo."
+
+#: ../../kwm/kwmbindings.cpp:1
+msgid "Task manager"
+msgstr "Upravljalec opravil"
+
+#: ../../kwm/kwmbindings.cpp:2
+msgid "Kill window mode"
+msgstr "Naèin unièi okno"
+
+#: ../../kwm/kwmbindings.cpp:3
+msgid "Execute command"
+msgstr "Izvr¹i ukaz"
+
+#: ../../kwm/kwmbindings.cpp:4
+msgid "Window operations menu"
+msgstr "Meni z okenskimi operacijami"
+
+#: ../../kwm/kwmbindings.cpp:5
+msgid "Pop-up system menu"
+msgstr "Meni za sistemske dvi¾ne menije"
+
+#: ../../kwm/kwmbindings.cpp:7
+msgid "Window raise"
+msgstr "Poveèaj okno"
+
+#: ../../kwm/kwmbindings.cpp:8
+msgid "Window lower"
+msgstr "Zmanj¹aj okno"
+
+#: ../../kwm/kwmbindings.cpp:9
+msgid "Window close"
+msgstr "Zapri okno"
+
+#: ../../kwm/kwmbindings.cpp:10
+msgid "Window iconify"
+msgstr "Zmanj¹aj okno v ikono"
+
+#: ../../kwm/kwmbindings.cpp:11
+msgid "Window resize"
+msgstr "Spremeni velikost okna"
+
+#: ../../kwm/kwmbindings.cpp:12
+msgid "Window move"
+msgstr "Premakni okno"
+
+#: ../../kwm/kwmbindings.cpp:13
+msgid "Window toggle sticky"
+msgstr "Prilepi okno"
+
+#: ../../kwm/kwmbindings.cpp:15
+msgid "Switch to desktop 1"
+msgstr "Preklopi na namizje 1"
+
+#: ../../kwm/kwmbindings.cpp:16
+msgid "Switch to desktop 2"
+msgstr "Preklopi na namizje 2"
+
+#: ../../kwm/kwmbindings.cpp:17
+msgid "Switch to desktop 3"
+msgstr "Preklopi na namizje 3"
+
+#: ../../kwm/kwmbindings.cpp:18
+msgid "Switch to desktop 4"
+msgstr "Preklopi na namizje 4"
+
+#: ../../kwm/kwmbindings.cpp:19
+msgid "Switch to desktop 5"
+msgstr "Preklopi na namizje 5"
+
+#: ../../kwm/kwmbindings.cpp:20
+msgid "Switch to desktop 6"
+msgstr "Preklopi na namizje 6"
+
+#: ../../kwm/kwmbindings.cpp:21
+msgid "Switch to desktop 7"
+msgstr "Preklopi na namizje 7"
+
+#: ../../kwm/kwmbindings.cpp:22
+msgid "Switch to desktop 8"
+msgstr "Preklopi na namizje 8"
+
+#: ../../kwm/kwmbindings.cpp:24
+msgid "Switch one desktop to the right"
+msgstr "Preklopi na desno namizje"
+
+#: ../../kwm/kwmbindings.cpp:25
+msgid "Switch one desktop to the left"
+msgstr "Preklopi na levo namizje"
+
+#: ../../kwm/kwmbindings.cpp:26
+msgid "Switch one desktop up"
+msgstr "Preklopi na zgornje namizje"
+
+#: ../../kwm/kwmbindings.cpp:27
+msgid "Switch one desktop down"
+msgstr "Preklopi na spodnje namizje"
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Novo"
+
+#: stdbindings.cpp:8
+msgid "Next"
+msgstr "Naslednje"
+
+#: stdbindings.cpp:9
+msgid "Prior"
+msgstr "Predhodnje"
+
+#: stdbindings.cpp:14
+msgid "Find"
+msgstr "Najdi"
+
+#: stdbindings.cpp:17
+msgid "Home"
+msgstr "Domov"
+
+#: stdbindings.cpp:18
+msgid "End"
+msgstr "Konèaj"

@@ -1,0 +1,268 @@
+# KDEBASE translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"PO-Revision-Date: 1999-03-27 11:25+0100\n"
+"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kmenuedit.cpp:69
+msgid "Change &Menuname"
+msgstr "Spremeni ime &menija"
+
+#: kmenuedit.cpp:70
+msgid "Reload &Filetypes"
+msgstr "Ponovno nalo¾i &datoteène tipe"
+
+#: kmenuedit.cpp:77
+msgid "by"
+msgstr "od"
+
+#: kmenuedit.cpp:179 kmenuedit.cpp:204
+msgid "Changes not saved !"
+msgstr "Spremembe niso shranjene !"
+
+#: kmenuedit.cpp:180 kmenuedit.cpp:205
+msgid ""
+"\n"
+"Do you want to save your changes ?"
+msgstr ""
+"\n"
+"Ali hoèete shraniti spremembe ?"
+
+#: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
+msgid "EMPTY"
+msgstr "PRAZNO"
+
+#: kmenuedit.cpp:343
+msgid "Reload Menus"
+msgstr "Ponovno nalo¾i menije"
+
+#: kmenuedit.cpp:344
+msgid ""
+"Reloading the menus will discard all changes.\n"
+"Are you sure you want to reload ?"
+msgstr ""
+"Ponovno nalaganje menijev bo zavrglo vse spremembe.\n"
+"Ali ste preprièani, da jih hoèete ponovno nalo¾iti?"
+
+#: button.cpp:209 main.cpp:79 main.cpp:92
+msgid "KMenuedit"
+msgstr "KMeniedit"
+
+#: main.cpp:80
+msgid ""
+"The directory for your personal menu does not exist.\n"
+" Do you want to create it now ?"
+msgstr ""
+"Imenik za va¹e osebne menije ne obstaja.\n"
+" Ali ga hoèete sedaj ustvariti ?"
+
+#: main.cpp:93
+msgid ""
+"Unable to create directory for personal menu.\n"
+" Select Ok to exit KMenuedit."
+msgstr ""
+"Kreiranje imenika za osebne menije je bilo neuspe¹no.\n"
+" Izberite V redu za izhod iz KMeniedit"
+
+#: confmenu.cpp:91 entrydialog.cpp:60
+msgid "Separator"
+msgstr "Loèilo"
+
+#: confmenu.cpp:103 confmenu.cpp:335
+msgid "Open/ Close"
+msgstr "Odpri/ Zapri"
+
+#: confmenu.cpp:117
+msgid "Select item for moving"
+msgstr "Izberite predmet za premikanje"
+
+#: confmenu.cpp:118
+msgid "Select menu for moving"
+msgstr "Izberite meni za premikanje"
+
+#: confmenu.cpp:120
+msgid "New"
+msgstr "Nov"
+
+#: confmenu.cpp:177 confmenu.cpp:318
+msgid "Warning !"
+msgstr "Opozorilo !"
+
+#: confmenu.cpp:178
+msgid "If you delete this button you will lose all of its submenus"
+msgstr "Èe pobri¹ete ta gumb, boste izgubili vse njegove podmenije"
+
+#: confmenu.cpp:297
+msgid "Wrong filename"
+msgstr "Napaèno ime datoteke"
+
+#: confmenu.cpp:298
+msgid ""
+"A kdelnk-file with this name does already exist. \n"
+"Please choose another filename."
+msgstr ""
+"A kdelnk-datoteka s tem imenom ¾e obstaja. \n"
+"Prosim izberite novo ime datoteke."
+
+#: confmenu.cpp:319
+msgid "Changing the type of this button will delete all of its submenus"
+msgstr "Sprememba tipa tega gumba bo zbrisala vse njegove podmenije"
+
+#: confmenu.cpp:340 confmenu.cpp:940
+msgid "no command"
+msgstr "brez ukaza"
+
+#: button.cpp:210
+msgid ""
+"Sorry ! You have to save your changes\n"
+"before you can drop this item on another window."
+msgstr ""
+"Oprostite ! Morate shraniti spremembe\n"
+"preden lahko odvr¾ete ta predmet na drugo okno."
+
+#: DesktopPathDialogData.cpp:37
+msgid "Path for KDE Desktop Entries is not set."
+msgstr "Pot do KDE namiznih vnos ni nastavljena."
+
+#: DesktopPathDialogData.cpp:49
+msgid "I suggest the following entries:"
+msgstr "Predlagam naslednje vnose:"
+
+#: DesktopPathDialogData.cpp:55
+msgid "Path:"
+msgstr "Pot:"
+
+#: DesktopPathDialogData.cpp:68
+msgid "PersonalPath:"
+msgstr "Osebna pot:"
+
+#: entrydialog.cpp:61
+msgid "Submenu"
+msgstr "Podmeni"
+
+#: entrydialog.cpp:62 entrydialog.cpp:198 entrydialog.cpp:539
+#: entrydialog.cpp:544
+msgid "Application"
+msgstr "Program"
+
+#: entrydialog.cpp:63 entrydialog.cpp:200 entrydialog.cpp:543
+msgid "Swallow"
+msgstr "Pogoltni"
+
+#: entrydialog.cpp:64 entrydialog.cpp:202 entrydialog.cpp:548
+msgid "Link"
+msgstr "Povezava"
+
+#: entrydialog.cpp:65 entrydialog.cpp:204 entrydialog.cpp:552
+msgid "Device"
+msgstr "Naprava"
+
+#: entrydialog.cpp:72
+msgid "Type:"
+msgstr "Tip:"
+
+#: entrydialog.cpp:79
+msgid "File Name:"
+msgstr "Ime datoteke:"
+
+#: entrydialog.cpp:94
+msgid "Name:"
+msgstr "Ime:"
+
+#: entrydialog.cpp:109
+msgid "Icon:"
+msgstr "Ikona:"
+
+#: entrydialog.cpp:141
+msgid "Mini Icon:"
+msgstr "Mini ikona:"
+
+#: entrydialog.cpp:149
+msgid "Comment:"
+msgstr "Komentar:"
+
+#: entrydialog.cpp:196 entrydialog.cpp:538
+msgid "Execute"
+msgstr "Izvr¹i"
+
+#: entrydialog.cpp:222
+msgid "Execute:"
+msgstr "Izvr¹i:"
+
+#: entrydialog.cpp:228
+msgid "Working Directory:"
+msgstr "Delovni imenik:"
+
+#: entrydialog.cpp:241
+msgid "Run in terminal"
+msgstr "Teèi v terminalskem oknu"
+
+#: entrydialog.cpp:245
+msgid "Terminal Options:"
+msgstr "Terminalove opcije:"
+
+#: entrydialog.cpp:310
+msgid "Binary Pattern:"
+msgstr "Binaren vzorec:"
+
+#: entrydialog.cpp:325
+msgid "Application to swallow:"
+msgstr "Program za pogoltnit:"
+
+#: entrydialog.cpp:331
+msgid "Title of application:"
+msgstr "Naslov programa:"
+
+#: entrydialog.cpp:337
+msgid "Application to execute on button press:"
+msgstr "Program, ki se naj izvr¹i ob pritisnjenem gumbu"
+
+#: entrydialog.cpp:367
+msgid "URL:"
+msgstr "URL:"
+
+#: entrydialog.cpp:415
+msgid "Read Only"
+msgstr "Dovoljeno branje"
+
+#: entrydialog.cpp:420
+msgid "Device:"
+msgstr "Naprava:"
+
+#: entrydialog.cpp:425
+msgid "Mount Point:"
+msgstr "Priklopna toèka:"
+
+#: entrydialog.cpp:430
+msgid "FS Type:"
+msgstr "Tip datoteènega sistema:"
+
+#: entrydialog.cpp:435
+msgid "Unmount Icon:"
+msgstr "Odklop ikona:"
+
+#: MenuNameDialog.cpp:21
+msgid "Change Menunames"
+msgstr "Spremeni imena menijev"
+
+#: MenuNameDialogData.cpp:31
+msgid "Change the name of the menus as displayed in kpanel"
+msgstr "Spremeni imena menijev, kot so prikazani v kplo¹èi"
+
+#: MenuNameDialogData.cpp:36
+msgid "Personal:"
+msgstr "Osebno:"
+
+#: MenuNameDialogData.cpp:41
+msgid "Default:"
+msgstr "Privzeto:"

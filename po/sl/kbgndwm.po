@@ -1,0 +1,75 @@
+# KDEBASE translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1998-11-28 01:10+0100\n"
+"PO-Revision-Date: 1999-01-23 12:40+0100\n"
+"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kbgndwm.cpp:45
+msgid "Display Settings"
+msgstr "Zaslonske nastavitve"
+
+#: kbgndwm.cpp:46
+msgid "Background Settings"
+msgstr "Nastavitve ozadja"
+
+#: kbgndwm.cpp:48
+msgid "Common Background"
+msgstr "Skupno ozadje"
+
+#: kbgndwm.cpp:50
+msgid "Undock"
+msgstr "Odsidraj"
+
+#: kbgndwm.cpp:58
+msgid "Tiled"
+msgstr "Tlakovano"
+
+#: kbgndwm.cpp:59
+msgid "Mirrored"
+msgstr "Prezrcaljeno"
+
+#: kbgndwm.cpp:60
+msgid "CenterTiled"
+msgstr "Centrirano tlakovano"
+
+#: kbgndwm.cpp:61
+msgid "Centred"
+msgstr "Centrirano"
+
+#: kbgndwm.cpp:62
+msgid "CentredBrick"
+msgstr "Centrirana opeka"
+
+#: kbgndwm.cpp:63
+msgid "CentredWarp"
+msgstr "Centrirano zvit"
+
+#: kbgndwm.cpp:64
+msgid "CentredMaxpect"
+msgstr "Centriran maks. razteg v merilu"
+
+#: kbgndwm.cpp:65
+msgid "SymmetricalTiled"
+msgstr "Simetrièno tlakovano"
+
+#: kbgndwm.cpp:66
+msgid "SymmetricalMirrored"
+msgstr "Simetrièno prezrcaljeno"
+
+#: kbgndwm.cpp:67
+msgid "Scaled"
+msgstr "V merilu"
+
+#: bg.cpp:235 bg.cpp:238
+msgid "No wallpaper"
+msgstr "Brez tapet"

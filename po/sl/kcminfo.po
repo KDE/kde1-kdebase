@@ -7,65 +7,64 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
 "POT-Creation-Date: 1999-03-30 01:17+0200\n"
-"PO-Revision-Date: 1998-09-24 18:00+0100\n"
-"Last-Translator: luka steger <luka_steger@hotmail.com>\n"
-"Language-Team: slovenian\n"
+"PO-Revision-Date: 1998-01-23 13:46+0100\n"
+"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: iso-8859-2\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr ""
+msgstr "zaslon #%d"
 
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr ""
+msgstr " dimenzije          : %dx%d toèk (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr ""
+msgstr " loèljivost           : %dx%d toèk na palec\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr ""
+msgstr " globine (%d)           : "
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr ""
+msgstr "ime zaslona        : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr ""
+msgstr "¹t. verzije            : %i.%i"
 
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr ""
+msgstr "proizvajalèev niz     : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr ""
+msgstr "proizvajalèev ¹tevilka izdaje : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr ""
+msgstr "privzeta ¹tevilka zaslona : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr ""
+msgstr "¹tevilo zaslonov      : %i"
 
 #: info.cpp:181
-#, fuzzy
 msgid ""
 "No Information available\n"
 " or\n"
@@ -75,61 +74,60 @@ msgstr "Ta sistem je neznan :("
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr ""
+msgstr "%s, neznana hitrost"
 
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr ""
+msgstr "%s teèe pri %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr ""
+msgstr "Ahh, nisem mogel odpreti fstab!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
-msgstr ""
+msgstr "Naprava"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
-msgstr ""
+msgstr "Priklopna toèka"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr ""
+msgstr "tip datoteènega sistema"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr ""
+msgstr "Priklopne opcije"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
-msgstr ""
+msgstr "neznan CPU tip"
 
 #: info_hpux.cpp:62
-#, fuzzy
 msgid "unavailable"
-msgstr "Ni na voljo"
+msgstr "nedostopen"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr ""
+msgstr "©tevilo aktivnih procesorjev="
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr ""
+msgstr "Vrednost"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
-msgstr ""
+msgstr "DMA-kanal"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr ""
+msgstr "v uporabi od"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr ""
+msgstr "V/I-Doseg"
 
 #: main.cpp:79
 msgid "&Memory"
@@ -141,39 +139,39 @@ msgstr "&Procesor"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr ""
+msgstr "&Prekinitve"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr ""
+msgstr "DMA-&kanali"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr ""
+msgstr "V&I-Vrata"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr ""
+msgstr "PCI-&Vodilo"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr ""
+msgstr "Zv&ok"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr ""
+msgstr "&Naprave"
 
 #: main.cpp:103
 msgid "S&CSI"
-msgstr ""
+msgstr "S&CSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr ""
+msgstr "P&articije"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr ""
+msgstr "&X-Stre¾nik"
 
 #: main.cpp:120
 msgid ""
@@ -181,6 +179,8 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
+"Uporaba: kcminfo [-init | {spomin, "
+"procesor,prekinitve,dma,vivrata,pci,zvok,naprave,scsi,particije,xstre¾nik}]\n"
 
 #: main.cpp:148
 msgid "System Information"
@@ -213,7 +213,7 @@ msgstr "Prosti navidezni spomin"
 #: memory.cpp:78
 #, c-format
 msgid "%10ld bytes  = %8.2f MB"
-msgstr "%10ld bajtov = %8.2f MB"
+msgstr "%10ld zlogov = %8.2f MB"
 
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
@@ -222,9 +222,5 @@ msgstr "Ni na voljo"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
-#, fuzzy
 msgid "Not Available"
 msgstr "Ni na voljo"
-
-#~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
-#~ msgstr "Uporaba: kcminfo [-init | {processor,memory}]\n"

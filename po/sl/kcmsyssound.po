@@ -1,22 +1,22 @@
-# KCMSYSSOUND translation to Slovene language.
-# Copyright (C) 1998 Free Software Foundation, Inc.
-# Bla¾ Zupanèiè <Blaz.Zupancic@guest.arnes.si>, 1998.
+# KDEBASE translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kcmsyssound\n"
+"Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-07-28 13:10+0100\n"
-"Last-Translator: Bla¾ Zupanèiè <Blaz.Zupancic@guest.arnes.si>\n"
-"Language-Team: Slovenian\n"
+"PO-Revision-Date: 1999-03-26 21:14+0100\n"
+"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: iso-8859-2\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:53
 msgid "&Sound"
-msgstr "Z&vok"
+msgstr "&Zvok"
 
 #: main.cpp:80
 msgid "System Sounds"
@@ -24,39 +24,39 @@ msgstr "Sistemski zvoki"
 
 #: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
 msgid "(none)"
-msgstr ""
+msgstr "(brez)"
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"
-msgstr "Na mizo 1"
+msgstr "Preklopi na namizje 1"
 
 #: syssound.cpp:148
 msgid "Change to Desktop 2"
-msgstr "Na mizo 2"
+msgstr "Preklopi na namizje 2"
 
 #: syssound.cpp:149
 msgid "Change to Desktop 3"
-msgstr "Na mizo 3"
+msgstr "Preklopi na namizje 3"
 
 #: syssound.cpp:150
 msgid "Change to Desktop 4"
-msgstr "Na mizo 4"
+msgstr "Preklopi na namizje 4"
 
 #: syssound.cpp:151
 msgid "Change to Desktop 5"
-msgstr "Na mizo 5"
+msgstr "Preklopi na namizje 5"
 
 #: syssound.cpp:152
 msgid "Change to Desktop 6"
-msgstr "Na mizo 6"
+msgstr "Preklopi na namizje 6"
 
 #: syssound.cpp:153
 msgid "Change to Desktop 7"
-msgstr "Na mizo 7"
+msgstr "Preklopi na namizje 7"
 
 #: syssound.cpp:154
 msgid "Change to Desktop 8"
-msgstr "Na mizo 8"
+msgstr "Preklopi na namizje 8"
 
 #: syssound.cpp:156
 msgid "Activate Window"
@@ -76,27 +76,27 @@ msgstr "Zagon"
 
 #: syssound.cpp:161
 msgid "Window Shade Up"
-msgstr "Osvetli okno"
+msgstr "Senca okna zgoraj"
 
 #: syssound.cpp:162
 msgid "Window Shade Down"
-msgstr "Zasenèi okno"
+msgstr "Senca okna spodaj"
 
 #: syssound.cpp:163
 msgid "Window Iconify"
-msgstr "Skrij okno"
+msgstr "Skrèi okno v ikono"
 
 #: syssound.cpp:164
 msgid "Window DeIconify"
-msgstr "Prika¾i okno"
+msgstr "Odpri okno"
 
 #: syssound.cpp:165
 msgid "Window Maximize"
-msgstr "Poveèaj okno"
+msgstr "Razpri okno"
 
 #: syssound.cpp:166
 msgid "Window UnMaximize"
-msgstr "Povrni okno"
+msgstr "Zmanj¹aj okno"
 
 #: syssound.cpp:167
 msgid "Window Sticky"
@@ -108,35 +108,35 @@ msgstr "Odlepi okno"
 
 #: syssound.cpp:169
 msgid "Window Trans New"
-msgstr "Novo okno"
+msgstr "Novo okno Trans"
 
 #: syssound.cpp:170
 msgid "Window Trans Delete"
-msgstr "Izbri¹i okno"
+msgstr "Zbri¹i okno Trans"
 
 #: syssound.cpp:171
 msgid "Logout"
-msgstr "Izhod"
+msgstr "Odjava"
 
 #: syssound.cpp:172
 msgid "Logout Message"
-msgstr "Izhodno sporoèilo"
+msgstr "Odjavno sporoèilo"
 
 #: syssound.cpp:173
 msgid "Window Move Start"
-msgstr "Zaèetek premikanja okna"
+msgstr "Prièni premik okna"
 
 #: syssound.cpp:174
 msgid "Window Move End"
-msgstr "Konec premikanja okna"
+msgstr "Konèaj premik okna"
 
 #: syssound.cpp:175
 msgid "Window Resize Start"
-msgstr "Zaèetek preoblikovanja okna"
+msgstr "Prièni spreminjanje velikosti okna"
 
 #: syssound.cpp:176
 msgid "Window Resize End"
-msgstr "Konec preoblikovanja okna"
+msgstr "Konèaj spreminjanje velikosti okna"
 
 #: syssound.cpp:198
 msgid "e&nable system sounds"
@@ -144,29 +144,30 @@ msgstr "&vklopi sistemske zvoke"
 
 #: syssound.cpp:203
 msgid "&Test"
-msgstr "&Preizkusi"
+msgstr "&Test"
 
 #: syssound.cpp:207
 msgid "&Events:"
-msgstr "&Ukazi:"
+msgstr "&Dogodki"
 
 #: syssound.cpp:211
 msgid "&Sounds:"
-msgstr "&Zvoki:"
+msgstr "&Zvoki"
 
 #: syssound.cpp:216
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Na seznam lahko dodate nove WAV datoteke."
+msgstr "Dodatne datoteke WAV so lahko spu¹èene na seznam zvokov"
 
 #: syssound.cpp:456
 msgid "Unsupported URL"
-msgstr "Neznan URL"
+msgstr "Nepodprt URL"
 
 #: syssound.cpp:458
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
-msgstr "®al KDE zvoèni sistem ne pozna tega tipa URL"
+msgstr ""
+"Oprostite, ta tip URL trenutno ni podprt v sistemskem zvoènem modulu KDE"
 
 #: syssound.cpp:468
 #, c-format
@@ -175,12 +176,13 @@ msgid ""
 "%s\n"
 "does not seem to be a WAV--file."
 msgstr ""
-"®al %s ni \n"
-"WAV datoteka."
+"Oprostite, toda \n"
+"%s\n"
+"ni videti kot datoteka WAV."
 
 #: syssound.cpp:471
 msgid "Improper File Extension"
-msgstr "Nepravilna konènica"
+msgstr "Neprimerna datoteèna ekstenzija"
 
 #: syssound.cpp:482
 #, c-format
@@ -189,9 +191,10 @@ msgid ""
 "%s\n"
 "is already in the list"
 msgstr ""
-"Datoteka %s\n"
-"je ¾e na seznamu"
+"Datoteka\n"
+"%s\n"
+"se ¾e nahaja na seznamu"
 
 #: syssound.cpp:486
 msgid "File Already in List"
-msgstr "Datoteka je ¾e na seznamu"
+msgstr "Datoteka ¾e obstaja v seznamu"

@@ -1,0 +1,323 @@
+# KDEBASE translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"PO-Revision-Date: 1999-04-21 14:55+0100\n"
+"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.C:426
+msgid "choose type of color-mode"
+msgstr "izberi tip barvnega naèina"
+
+#: main.C:432
+msgid "Add characters to word class"
+msgstr "Dodaj znake razredu beseda"
+
+#: main.C:438
+msgid "The backspace key will send a"
+msgstr "Vraèalka bo poslala"
+
+#: main.C:444
+msgid "Cursor key set"
+msgstr "Smerna tipka nastavljena"
+
+#: main.C:613
+msgid "&New Terminal"
+msgstr "&Nov terminal"
+
+#: main.C:620 main.C:1043
+msgid "&Hide"
+msgstr "&Skrij"
+
+#: main.C:621
+msgid "&Left"
+msgstr "&Levo"
+
+#: main.C:622
+msgid "&Right"
+msgstr "&Desno"
+
+#: main.C:627
+msgid "&Normal"
+msgstr "&Normalno"
+
+#: main.C:628
+msgid "&Tiny"
+msgstr "&Majceno"
+
+#: main.C:629
+msgid "&Small"
+msgstr "M&ajhno"
+
+#: main.C:630
+msgid "&Medium"
+msgstr "&Srednje"
+
+#: main.C:631
+msgid "&Large"
+msgstr "&Veliko"
+
+#: main.C:632
+msgid "&Huge"
+msgstr "&Ogromno"
+
+#: main.C:644
+msgid "&black/white"
+msgstr "&èrno/belo"
+
+#: main.C:645
+msgid "&white/black"
+msgstr "&belo/èrno"
+
+#: main.C:646
+msgid "&green/black"
+msgstr "&zeleno/èrno"
+
+#: main.C:647
+msgid "black/light&yellow"
+msgstr "èrno/svetlo&rumeno"
+
+#: main.C:648
+msgid "Linu&x Console"
+msgstr "Linu&x konzola"
+
+#: main.C:657
+msgid "&Custom Colors"
+msgstr "&Barve po meri"
+
+#: main.C:665 main.C:969
+msgid "Hide &Menubar"
+msgstr "Skrij i&zbirno letev"
+
+#: main.C:667 main.C:888 main.C:960
+msgid "Show &Menubar"
+msgstr "Prika¾i i&zbirno letev"
+
+#: main.C:668 main.C:979
+msgid "Secure &keyboard"
+msgstr "Za¹èiti tip&kovnico"
+
+#: main.C:670
+msgid "Scroll&bar"
+msgstr "&Drsnik"
+
+#: main.C:671
+msgid "&Font size"
+msgstr "Velikost &pisave"
+
+#: main.C:672
+msgid "&Color"
+msgstr "&Barva"
+
+#: main.C:673
+msgid "&Size"
+msgstr "&Velikost"
+
+#: main.C:674
+msgid "Terminal..."
+msgstr "Terminal..."
+
+#: main.C:675
+msgid "Font..."
+msgstr "Pisava..."
+
+#: main.C:676
+msgid "Enable &hotkeys"
+msgstr "Vklopi &tipke z bli¾njicami"
+
+#: main.C:679
+msgid "Save &Options"
+msgstr "Shrani &opcije"
+
+#: main.C:688
+msgid ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
+"(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
+"\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08"
+msgstr ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
+"(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
+"\n"
+"Posnemanje terminala za namizje KDE\n"
+"temeljeèe na Robert Nationovemu rxvt-2.08"
+
+#: main.C:897 main.C:1036
+msgid "&Show"
+msgstr "&Prika¾i"
+
+#: main.C:975
+msgid "Unsecure &keyboard"
+msgstr "Od¹èiti &tipkovnico"
+
+#: main.C:986
+msgid "Terminal Options"
+msgstr "Terminalske opcije"
+
+#: main.C:1152
+msgid "Hint"
+msgstr "Namig"
+
+#: main.C:1153
+msgid ""
+"New color settings will be displayed\n"
+"when the keyboard is unsecured."
+msgstr ""
+"Nove barvne nastavitve bodo prikazane,\n"
+"ko bo tipkovnica od¹èitena."
+
+#: main.C:1474
+msgid ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08\n"
+"\n"
+msgstr ""
+"Avtorske pravice (C) 1996, 1997 Matthias Ettrich\n"
+"Avtorske pravice (C) 1997 M G Berberich\n"
+"Posnemanje terminala za namizje KDE\n"
+"temeljeèe na Robert Nationovemu rxvt-2.08\n"
+"\n"
+
+#: main.C:1478
+msgid "Permitted arguments are:\n"
+msgstr "Dovoljeni argumenti so:\n"
+
+#: main.C:1479
+msgid ""
+"-e <command> <arg> ...    execute command with ars - must be last argument\n"
+msgstr ""
+"-e <ukaz> <arg> ...    izvedi ukaz z argumenti - mora biti zadnji argument\n"
+
+#: main.C:1480
+msgid "-display <name>           specify the display (server)\n"
+msgstr "-display <ime>            doloèi zaslon (stre¾nik)\n"
+
+#: main.C:1481
+msgid "-vt_geometry <spec>       the initial vt window geometry\n"
+msgstr "-vt_geometry <spec>       zaèetna velikost okna vt\n"
+
+#: main.C:1482
+msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
+msgstr "-print-pipe <ime>         doloèi cevovod za vt100 tiskalnik\n"
+
+#: main.C:1483
+msgid "-vt_bg <colour>           background color\n"
+msgstr "-vt_bg <barva>            barva ozadja\n"
+
+#: main.C:1484
+msgid "-vt_fg <colour>           foreground color\n"
+msgstr "-vt_fg <barva>            barva ospredja\n"
+
+#: main.C:1485
+msgid "-vt_font <fontname>       normal font\n"
+msgstr "-vt_font <ime pisave>     normalna pisava\n"
+
+#: main.C:1486
+msgid "-no_font_hack             turn off Qt font bug workaround\n"
+msgstr "-no_font_hack             izklopi popravek za hro¹è Qt pisav\n"
+
+#: main.C:1487
+msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
+msgstr "-vt_size <velikost>       majcena, majhna, normalna, velika, ogromna\n"
+
+#: main.C:1488
+msgid "-linux                    set up kvt to mimic linux-console\n"
+msgstr "-linux                    nastavi kvt da opona¹a linux konzolo\n"
+
+#: main.C:1489
+msgid "-no_menubar               hide the menubar\n"
+msgstr "-no_menubar               skrij izbirno letev\n"
+
+#: main.C:1490
+msgid "-no_scrollbar             hide the scrollbar\n"
+msgstr "-no_scrollbar             brez drsnika\n"
+
+#: main.C:1491
+msgid ""
+"-T <text>                 text in window titlebar \n"
+"                          (Obsolete. Use -caption instead)\n"
+msgstr ""
+"-T <besedilo>             besedilo v naslovni letvi okna\n"
+"                          (Zastarelo. Uporabi raje -caption)\n"
+
+#: main.C:1493
+msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
+msgstr "-tn <TERM>                Tip terminala. Privzet je xterm.\n"
+
+#: main.C:1494
+msgid "-C                        Capture system console message\n"
+msgstr "-C                        Ujemi sporoèila sistemske konzole\n"
+
+#: main.C:1495
+msgid "-n <text>                 name in icon or icon window\n"
+msgstr "-n <besedilo>             ime v ikoni ali okno ikone\n"
+
+#: main.C:1496
+msgid ""
+"-7                        run in 7 bit mode\n"
+"-8                        run in 8 bit mode\n"
+msgstr ""
+"-7                        teèi v 7 bitnem naèinu\n"
+"-8                        teèi v 8 bitnem naèinu\n"
+
+#: main.C:1498
+msgid ""
+"-ls                       initiate kvt's shell as a login shell\n"
+"-ls-                      initiate kvt's shell as a non-login shell "
+"(default)\n"
+msgstr ""
+"-ls                       za¾eni lupino kvt kot prijavno lupino\n"
+"-ls-                      za¾eni lupino kvt kot neprijavno lupino "
+"(privzeto)\n"
+
+#: main.C:1500
+msgid ""
+"-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
+"ignore\n"
+msgstr ""
+"-meta <arg>               zamenjaj Meta s predpono ESCAPE , 8. bit "
+"nastavljen, ali zanemari\n"
+
+#: main.C:1501
+msgid "-sl <number>              save number lines in scroll-back buffer\n"
+msgstr "-sl <¹tevilo>             shrani ¹tevilo vrstic v vmesni pomnilnik\n"
+
+#: main.C:1502
+msgid ""
+"-pageup <keysym>          use hot key alt-keysym to scroll up through the "
+"buffer\n"
+"-pagedown <keysym>        use hot key alt-keysym to scroll down through "
+"buffer\n"
+msgstr ""
+"-pageup <simbtip>         uporabi tipko z bli¾njico alt-simbtip za pomikanje "
+"navzgor po vmesnem pomnilniku\n"
+"-pagedown <simbtip>       uporabi tipko z bli¾njico alt-simbtip za pomikanje "
+"navzdol po vmesnem pomnilniku\n"
+
+#: main.C:1506
+msgid ""
+"-grk9\t\tgreek kbd = ELOT 928 (default)\n"
+"-grk4\t\tgreek kbd = IBM 437\n"
+msgstr ""
+"-grk9\t\tgreek kbd = ELOT 928 (privzeto)\n"
+"-grk4\t\tgreek kbd = IBM 437\n"

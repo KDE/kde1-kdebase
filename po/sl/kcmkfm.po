@@ -1,0 +1,292 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Borut Mrak <borutm@bigfoot.com>, 1999
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkfm\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"PO-Revision-Date: 1999-01-07 12:41+0100\n"
+"Last-Translator: Borut Mrak <borutm@bigfoot.com>\n"
+"Language-Team: Slovenian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# main.cpp:61
+#: main.cpp:61
+msgid "&Font"
+msgstr "&Pisava"
+
+# main.cpp:63
+#: main.cpp:63
+msgid "&Color"
+msgstr "&Barva"
+
+# main.cpp:65
+#: main.cpp:65
+msgid "&Other"
+msgstr "&Ostalo"
+
+# main.cpp:68
+#: main.cpp:68
+msgid "&Proxy"
+msgstr "Pro&xy"
+
+# main.cpp:70
+#: main.cpp:70
+msgid "&HTTP"
+msgstr "&HTTP"
+
+# main.cpp:73
+#: main.cpp:73
+msgid "User &Agent"
+msgstr "&Uporabni¹ki vmesnik"
+
+# main.cpp:76
+#: main.cpp:76
+msgid "Coo&kies"
+msgstr "Pi¹&kotki"
+
+# main.cpp:80
+#: main.cpp:80
+msgid "&Desktop Icons"
+msgstr "&Ikone na namizju"
+
+# main.cpp:89
+#: main.cpp:89
+#, c-format
+msgid ""
+"usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+msgstr ""
+"uporaba: %s [-init | "
+"{pisava,barva,razno,proxy,http,uporabni¹ki_posrednik,pi¹kotki,ikone\n"
+
+# main.cpp:178
+#: main.cpp:178
+msgid "KFM Configuration"
+msgstr "Konfiguracija KFM"
+
+# htmlopts.cpp:64
+#: htmlopts.cpp:64
+msgid "Small"
+msgstr "Majhen"
+
+# htmlopts.cpp:69
+#: htmlopts.cpp:69
+msgid "Medium"
+msgstr "Srednji"
+
+# htmlopts.cpp:74
+#: htmlopts.cpp:74
+msgid "Large"
+msgstr "Velik"
+
+# htmlopts.cpp:83
+#: htmlopts.cpp:83
+msgid "Standard Font"
+msgstr "Standardna pisava"
+
+# htmlopts.cpp:97
+#: htmlopts.cpp:97
+msgid "Fixed Font"
+msgstr "Pisava stalne ¹irine"
+
+# htmlopts.cpp:114
+#: htmlopts.cpp:114
+msgid "Default Charset"
+msgstr "Privzet nabor znakov"
+
+# htmlopts.cpp:122 htmlopts.cpp:276
+#: htmlopts.cpp:122 htmlopts.cpp:276
+msgid "Use language charset"
+msgstr "Uporabi nabor znakov jezika"
+
+# htmlopts.cpp:329
+#: htmlopts.cpp:330
+msgid "Background Color:"
+msgstr "Barva ozadja:"
+
+# htmlopts.cpp:341
+#: htmlopts.cpp:342
+msgid "Normal Text Color:"
+msgstr "Barva navadnega teksta:"
+
+# htmlopts.cpp:353
+#: htmlopts.cpp:354
+msgid "URL Link Color:"
+msgstr "Barva URL povezave:"
+
+# htmlopts.cpp:365
+#: htmlopts.cpp:366
+msgid "Followed Link Color:"
+msgstr "Barva sledene povezave:"
+
+# htmlopts.cpp:377
+#: htmlopts.cpp:378
+msgid "Change cursor over link."
+msgstr "Nad povezavo spremeni kazalec."
+
+# htmlopts.cpp:383
+#: htmlopts.cpp:384
+msgid "Underline links"
+msgstr "Podèrtaj povezave"
+
+#: htmlopts.cpp:391
+msgid "Always use my colors"
+msgstr ""
+
+# miscopts.cpp:25
+#: miscopts.cpp:25
+msgid "&Allow per-URL settings"
+msgstr "Dovoli n&astavitve za posamezen URL"
+
+# miscopts.cpp:33
+#: miscopts.cpp:33
+msgid "Tree &view follows navigation"
+msgstr "Dre&vesni pregled sledi navigaciji"
+
+# miscopts.cpp:43
+#: miscopts.cpp:43
+msgid "Terminal"
+msgstr "Terminal"
+
+#: miscopts.cpp:57
+msgid "Editor"
+msgstr ""
+
+# kproxydlg.cpp:50
+#: kproxydlg.cpp:50
+msgid "Don't forget to save your settings!"
+msgstr "Ne pozabite shraniti va¹ih nastavitev!"
+
+# kproxydlg.cpp:58
+#: kproxydlg.cpp:58
+msgid "Use proxy"
+msgstr "Uporabi proxy"
+
+# kproxydlg.cpp:67
+#: kproxydlg.cpp:67
+msgid "HTTP Proxy:"
+msgstr "HTTP proxy:"
+
+# kproxydlg.cpp:82 kproxydlg.cpp:113
+#: kproxydlg.cpp:82 kproxydlg.cpp:113
+msgid "Port:"
+msgstr "Vrata:"
+
+# kproxydlg.cpp:98
+#: kproxydlg.cpp:98
+msgid "FTP Proxy:"
+msgstr "Ftp proxy:"
+
+# kproxydlg.cpp:128
+#: kproxydlg.cpp:128
+msgid "No Proxy for:"
+msgstr "Brez proxy-ja za:"
+
+# khttpoptdlg.cpp:38
+#: khttpoptdlg.cpp:38
+msgid "Accept languages:"
+msgstr "Sprejmi jezike:"
+
+# khttpoptdlg.cpp:52
+#: khttpoptdlg.cpp:52
+msgid "Accept character sets:"
+msgstr "Sprejmi nabore znakov:"
+
+# khttpoptdlg.cpp:65
+#: khttpoptdlg.cpp:65
+msgid "Assume HTML"
+msgstr "Predpostavi HTML"
+
+# useragentdlg.cpp:45
+#: useragentdlg.cpp:45
+msgid "On server:"
+msgstr "Na stre¾niku:"
+
+# useragentdlg.cpp:67
+#: useragentdlg.cpp:67
+msgid "login as:"
+msgstr "se prijavi kot:"
+
+# useragentdlg.cpp:87
+#: useragentdlg.cpp:87
+msgid "&Add"
+msgstr "&Dodaj"
+
+# useragentdlg.cpp:107
+#: useragentdlg.cpp:107
+msgid "Known bindings:"
+msgstr "Znan"
+
+# kcookiesdlg.cpp:49
+#: kcookiesdlg.cpp:49
+msgid "&Enable Cookies"
+msgstr "O&mogoèi pi¹kotke"
+
+# kcookiesdlg.cpp:56
+#: kcookiesdlg.cpp:56
+msgid "Default accept policy"
+msgstr "Privzeta sprejemna pravila"
+
+# kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
+#: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
+msgid "Accept"
+msgstr "Sprejmi"
+
+# kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
+#: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
+msgid "Ask"
+msgstr "Vpra¹aj"
+
+# kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
+#: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
+msgid "Reject"
+msgstr "Zavrni"
+
+# kcookiesdlg.cpp:90
+#: kcookiesdlg.cpp:90
+msgid "Domain specific settings:"
+msgstr "Specifiène nastavitve za domeno:"
+
+# kcookiesdlg.cpp:97
+#: kcookiesdlg.cpp:97
+msgid "Change domain accept policy"
+msgstr "Spremeni pravila za sprejem domene"
+
+# kcookiesdlg.cpp:239
+#: kcookiesdlg.cpp:239
+msgid "You must enter a domain first !"
+msgstr "Najprej morate vnesti domeno !"
+
+# rootopts.cpp:73
+#: rootopts.cpp:73
+msgid "Horizontal Root Grid Spacing:"
+msgstr "Vodoravni razmak mre¾e v osnovnem oknu:"
+
+# rootopts.cpp:84
+#: rootopts.cpp:84
+msgid "Vertical Root Grid Spacing:"
+msgstr "Navpièni razmak mre¾e v osnovnem oknu:"
+
+# rootopts.cpp:95
+#: rootopts.cpp:95
+msgid "&Transparent Text for Desktop Icons."
+msgstr "P&rozoren tekst za ikone na omizju."
+
+# rootopts.cpp:106
+#: rootopts.cpp:106
+msgid "Icon foreground color:"
+msgstr "Barva ozadja ikone:"
+
+# rootopts.cpp:118
+#: rootopts.cpp:118
+msgid "Icon background color:"
+msgstr "Barva ospredja ikone:"
+
+# rootopts.cpp:131
+#: rootopts.cpp:131
+msgid "Show &Hidden Files on Desktop"
+msgstr "Prika¾i &skrite datoteke na omizju"

@@ -1,28 +1,26 @@
-# kpanel translation to Slovene language
-# Copyright (C) 1998 Free Software Foundation, Inc.
-# luka steger <luka_steger@hotmail.com>, 1998.
+# KDEBASE translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kpanel\n"
+"Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1999-04-24 01:28+0200\n"
-"PO-Revision-Date: 1998-07-18 15:00+0100\n"
-"Last-Translator: luka steger <luka_steger@hotmail.com>\n"
-"Language-Team: slovene <LL@li.org>\n"
+"PO-Revision-Date: 1999-03-27 12:00+0100\n"
+"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: iso8859-2\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: kpanel.C:296
-#, fuzzy
 msgid "&Move"
-msgstr "Premakni"
+msgstr "Pre&makni"
 
 #: kpanel.C:299
-#, fuzzy
 msgid "&Properties"
-msgstr "Lastnosti"
+msgstr "&Nastavitve"
 
 #: kpanel.C:342
 msgid "Go!"
@@ -30,11 +28,11 @@ msgstr "Pojdi!"
 
 #: kpanel.C:419
 msgid "No info available"
-msgstr "Podatki niso na voljo"
+msgstr "Ni dostopnih informacij"
 
 #: kpanel.C:458 props.C:207 props.C:208
 msgid "Logout"
-msgstr "Izhod"
+msgstr "Odjava"
 
 #: kpanel.C:466 props.C:206
 msgid "Lock screen"
@@ -42,15 +40,15 @@ msgstr "Zakleni zaslon"
 
 #: kpanel.C:475 kpanel.C:484
 msgid "Hide the panel"
-msgstr "Skrij pult"
+msgstr "Skrij plo¹èo"
 
 #: kpanel.C:494 kpanel.C:506
 msgid "Show the panel"
-msgstr "Prika¾i pult"
+msgstr "Prika¾i plo¹èo"
 
 #: kpanel.C:1070
 msgid "Iconify other &windows"
-msgstr ""
+msgstr "Skrèi v okno ostala o&kna"
 
 #: kpanel.C:1218 tools.C:910
 msgid "Windowlist"
@@ -58,42 +56,39 @@ msgstr "Seznam oken"
 
 #: kpanel.C:1226 props.C:197
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Hitra navigacija skozi datoteèni sistem"
 
 #: props.C:167
-#, fuzzy
 msgid "Add Application"
 msgstr "Dodaj program"
 
 #: props.C:169
 msgid "Add an application or a submenu onto the panel"
-msgstr "Dodaj program ali podmeni na pult"
+msgstr "Dodaj program ali podmeni na plo¹èo"
 
 #: props.C:175
 msgid "Add Disk Navigator"
-msgstr ""
+msgstr "Dodaj Disk Navigator"
 
 #: props.C:177
-#, fuzzy
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Dodaj seznam oken na pult"
+msgstr "Dodaj Disk Navigator meni na plo¹èo"
 
 #: props.C:180
-#, fuzzy
 msgid "Add Windowlist"
 msgstr "Dodaj seznam oken"
 
 #: props.C:182
 msgid "Add a windowlist menu onto the panel"
-msgstr "Dodaj seznam oken na pult"
+msgstr "Dodaj meni seznama oken na plo¹èo"
 
 #: events.C:860 props.C:183
 msgid "Configure"
-msgstr "Nastavi"
+msgstr "Prikroji"
 
 #: props.C:185
 msgid "Configure panel"
-msgstr "Nastavi pult"
+msgstr "Prikroji plo¹èo"
 
 #: props.C:186
 msgid "Edit Menus"
@@ -101,23 +96,23 @@ msgstr "Uredi menije"
 
 #: props.C:188
 msgid "Add or remove applications in the menu structure "
-msgstr "Dodaj ali odstrani programe z menija"
+msgstr "Dodaj ali odstrani program iz strukture menijev "
 
 #: events.C:862 props.C:189
 msgid "Restart"
-msgstr "Ponovni zagon"
+msgstr "Ponovno za¾eni"
 
 #: props.C:191
 msgid "Restart panel"
-msgstr "Ponovni zagon pulta"
+msgstr "Ponovno za¾eni plo¹èo"
 
 #: props.C:194
 msgid "Disk Navigator"
-msgstr ""
+msgstr "Disk Navigator"
 
 #: props.C:202
 msgid "Panel"
-msgstr "Pult"
+msgstr "Plo¹èa"
 
 #: props.C:204
 msgid "Lock Screen"
@@ -136,73 +131,75 @@ msgid ""
 "\n"
 "%b %d"
 msgstr ""
+"\n"
+"%b %d"
 
 #: tools.C:919
 msgid "KDiskNavigator"
-msgstr ""
+msgstr "KDiskNavigator"
 
 #: events.C:916
 msgid "Cannot put this as button onto the panel!"
-msgstr "Ne morem narediti gumba na pultu!"
+msgstr "Tega ne morem postaviti kot gumb na plo¹èo!"
 
 #: pfilemenu.C:425
 msgid "(empty folder)"
-msgstr ""
+msgstr "(prazna mapa)"
 
 #: pfilemenu.C:480
 msgid "Open Folder"
-msgstr ""
+msgstr "Odpri mapo"
 
 #: pfilemenu.C:483
 msgid "Open this folder (+Shift: Launch a terminal here)"
-msgstr ""
+msgstr "Odpri to mapo  (+Shift: za¾eni terminal)"
 
 #: pfilemenu.C:491
 msgid "(Too Many Files)"
-msgstr ""
+msgstr "(Preveè datotek)"
 
 #: pfilemenu.C:500
 msgid "(Access Denied)"
-msgstr ""
+msgstr "(Zavrnjen dostop)"
 
 #: pfilemenu.C:503
 msgid "(Unreadable)"
-msgstr ""
+msgstr "(Neèitljiv)"
 
 #: pfilemenu.C:752
 msgid "Shared:"
-msgstr ""
+msgstr "Skupen"
 
 #: pfilemenu.C:754
 msgid "Entries shared among all users"
-msgstr ""
+msgstr "Vnosi skupni vsem uporabnikom"
 
 #: pfilemenu.C:773
 msgid "Personal:"
-msgstr ""
+msgstr "Osebni:"
 
 #: pfilemenu.C:775
 msgid "Personal entries"
-msgstr ""
+msgstr "Osebni vnosi"
 
 #: pfilemenu.C:793
 msgid "Recent:"
-msgstr ""
+msgstr "Nedavni:"
 
 #: pfilemenu.C:795
 msgid "Recent entries"
-msgstr ""
+msgstr "Nedavni vnosi"
 
 #: pfilemenu.C:841
 msgid "Options..."
-msgstr ""
+msgstr "Opcije..."
 
 #: pfilemenu.C:843
 msgid "Customize Disk Navigator"
-msgstr ""
+msgstr "Prikroji Disk Navigator"
 
 #~ msgid "Where do you want to go tomorrow?"
-#~ msgstr "Kam ¾elite iti jutri?"
+#~ msgstr "Kam bi radi ¹li jutri?"
 
 #~ msgid "No comment available"
-#~ msgstr "Komentar ni na voljo"
+#~ msgstr "Brez komentarja"

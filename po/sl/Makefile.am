@@ -1,9 +1,12 @@
 
 # This has to be set. The rest should be reusable
-GMOFILES = kwm.gmo kfontmanager.gmo kcmbell.gmo kcminfo.gmo kcminput.gmo \
-	kcmkpanel.gmo kcmlocale.gmo kcmsamba.gmo kcmsyssound.gmo \
-	kcontrol.gmo kcmsyssound.gmo kdehelp.gmo kdm.gmo kpanel.gmo \
-	krootwm.gmo kfm.gmo kcmsample.gmo
+GMOFILES = kbgndwm.gmo kcmbell.gmo kcmdisplay.gmo kcminfo.gmo kcminput.gmo \
+	kcmkeys.gmo kcmkfm.gmo kcmkpanel.gmo kcmkwm.gmo kcmlocale.gmo \
+	kcmsamba.gmo kcmsample.gmo kcmsyssound.gmo kcontrol.gmo \
+	kdehelp.gmo kdisplay.gmo kdm.gmo kdmconfig.gmo kfind.gmo \
+	kfm.gmo kfontmanager.gmo kikbd.gmo klock.gmo kmenuedit.gmo \
+	konsole.gmo kpager.gmo kpanel.gmo krootwm.gmo kstart.gmo \
+	kstartondesk.gmo kvt.gmo kwm.gmo
 
 POFILES = $(GMOFILES:.gmo=.po)
 

@@ -1,30 +1,30 @@
-# KCONTROL translation to Slovene language.
-# Copyright (C) 1998 Free Software Foundation, Inc.
-# luka steger, <luka_steger@hotmail.com>, 1998
+# KDEBASE translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kcontrol\n"
+"Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1999-01-27 01:14+0100\n"
-"PO-Revision-Date: 1998-09-24  18:22+0100\n"
-"Last-Translator: luka steger, <luka_steger@hotmail.com>\n"
-"Language-Team: slovene\n"
+"PO-Revision-Date: 1999-04-21 13:45+0100\n"
+"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: iso8859-2\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: configlist.cpp:121
 msgid "Unknown module: "
-msgstr "Neznan modul:"
+msgstr "Neznan modul: "
 
 #: main.cpp:46 mainwidget.cpp:19
 msgid "KDE Control Center"
-msgstr "KDE nadzorni center"
+msgstr "KDE krmilni center"
 
 #: toplevel.cpp:86
 msgid "&Swallow modules"
-msgstr "&Zajemi module"
+msgstr "&Pogoltni module"
 
 #: toplevel.cpp:89
 msgid ""
@@ -36,38 +36,38 @@ msgid ""
 "Thanks to:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 msgstr ""
-"KDE nadzorni center - Verzija 1.0\n"
+"KDE krmilni center - verzija 1.0\n"
 "\n"
 "Napisal Matthias Hölzer\n"
 "(hoelzer@physik.uni-wuerzburg.de)\n"
 "\n"
-"Zahvaljujem se:\n"
-"S. Kulowu, P. Dowlerju, M. Wuebbenu & M. Jonesu."
+"Zahvala gre:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 
 #: mainwidget.cpp:44
 msgid "KDE Version: "
-msgstr ""
+msgstr "KDE verzija: "
 
 #: mainwidget.cpp:52
 msgid "User: "
-msgstr ""
+msgstr "Uporabnik: "
 
 #: mainwidget.cpp:58
 msgid "Hostname: "
-msgstr ""
+msgstr "Ime raèunalnika: "
 
 #: mainwidget.cpp:66
 msgid "System: "
-msgstr ""
+msgstr "Sistem: "
 
 #: mainwidget.cpp:73
 msgid "Release: "
-msgstr ""
+msgstr "Izdaja: "
 
 #: mainwidget.cpp:81
 msgid "Version: "
-msgstr ""
+msgstr "Verzija: "
 
 #: mainwidget.cpp:88
 msgid "Machine: "
-msgstr ""
+msgstr "Raèunalnik: "
