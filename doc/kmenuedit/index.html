@@ -1,21 +1,24 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
 <HTML>
 <HEAD>
-   <TITLE>kmenuedit User Manual</TITLE>
+   <TITLE>KMenuedit User Manual</TITLE>
    <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; I; Linux 2.0.30 i586) [Netscape]">
 </HEAD>
 <BODY>
 
-<H1>kmenuedit - Menu editor for kpanel and ktaskbar</H1>
+<H1>KMenuedit - Menu editor for KPanel</H1>
 
-<P>Kmenuedit manages a directory hierarchy of kdelnk-files.</P>
+<P>KMenuedit enables the user to change the menu that is presented by KPanel
+whenever the user presses the button with the great 'K'. This menu consists
+indeed of two menus:&nbsp;the system default menu, create by KDE itself,
+and a personal menu that any user can change to his/ her needs.</P>
 
-<P>This is an alpha release of kmenuedit </P>
+<P>KMenuedit tries to make the modification of these menus as easy as possible.</P>
 
 <H2>Contents</H2>
 
 <UL>
-<LI><A HREF="#start">Getting Started</A></LI>
+<LI><A HREF="#start">Concept</A></LI>
 
 <LI><A HREF="#usage">Usage</A></LI>
 
@@ -28,7 +31,7 @@
 <LI><A HREF="#todo">To do</A></LI>
 </UL>
 
-<H2><A NAME="start"></A>Getting Started</H2>
+<H2><A NAME="start"></A>Concept</H2>
 
 <P>Most systems use binary or ascii encoded configuration files to define
 a menu structure. KDE takes a different approach. KDE uses a directory
@@ -36,26 +39,29 @@ hierarchy of kdelnk-files. Each submenu corresponds to a directory and
 each menuentry corresponds to a kdelnk-file. (kdelnk-files are special
 ascii files which names' end in '.kdelnk'.)</P>
 
-<P>One way to edit the menu is to move or copy the kdelnk-files and to
-change the files with the properties dialog of kfm.</P>
+<P>One way to edit the menu is to move or copy the kdelnk-files to change
+the menu hierarchy and to change each menuentry with the properties dialog
+of KFM.</P>
 
 <P>The other way is to use KMenuedit.</P>
 
 <H2><A NAME="usage"></A>Usage</H2>
 
-<P>KMenuedit tries to hide the details of kdelnk-files from the user.</P>
+<P>KMenuedit tries to hide the details of kdelnk-files from the user, so
+you don't need to worry if you don't understand the concept behind the
+kdelnk-files.</P>
 
 <P>When you start KMenuedit for the first time it will probably ask you
-for your IconPath and the basedirectories of your menus. If you don't know
-what this means it should be save to say ok to both dialogs.</P>
+for the basedirectories of your menus. If you don't know what this means
+it should be save to say ok to the dialog.</P>
 
 <P>After KMenuedit has started it will show you two menus.</P>
 
-<P><IMG SRC="kmenuedit1.gif" HEIGHT=464 WIDTH=537></P>
+<P><IMG SRC="kmenuedit1.gif" HEIGHT=452 WIDTH=526></P>
 
 <P>The left menu is your personal menu and the right menu is the system
-default menu. If you don't have a personal menu yet you will see a menu
-on the left with just one entry called 'EMPTY'.</P>
+default menu. Normaly you won't have a personal menu yet, so you will see
+a menu with just one entry called 'EMPTY'.</P>
 
 <P>The entries in the right menu are displayed with a gray color because
 you don't have write permission to the system default menu. If you start
@@ -69,7 +75,7 @@ position of the base menus will be saved for the next time you start KMenuedit.<
 <P>There are several ways to <I>add</I> an entry to a menu:</P>
 
 <UL>
-<LI>Drag a kdelnk-file with kfm and drop it on a menu.</LI>
+<LI>Drag a kdelnk-file or any executable with kfm and drop it on a menu.</LI>
 
 <LI>Press the right mouse button on a menuentry and select 'New' from the
 popupmenu.</LI>
@@ -102,10 +108,10 @@ press the reload button.</P>
 
 <H4><A NAME="change"></A>Changing menu entries</H4>
 
-<P>To change a menuentry select 'Change' from it's popupmenu. You will
-be presented the following dialog.</P>
+<P>To change a menuentry select 'Change' from its popupmenu. You will be
+presented the following dialog.</P>
 
-<P><IMG SRC="kmenuedit2.gif" HEIGHT=499 WIDTH=376></P>
+<P><IMG SRC="kmenuedit2.gif" HEIGHT=500 WIDTH=376></P>
 
 <P>The combobox in the first line selects the type of the menu entry. To
 see a description of the various types see <A HREF="#file-types">Entry
@@ -114,14 +120,20 @@ Types</A>.</P>
 <P>The next lines specify various attributes that are common to most menuentries.</P>
 
 <UL>
+<LI><B>FileName: </B>The filename of the kdelnk-file.</LI>
+
 <LI><B>Name:</B> The name of the menuentry.</LI>
 
 <LI><B>Icon:</B> The big icon shown by kfm.</LI>
 
-<LI><B>MiniIcon: </B>The small icon shown by ktaskbar.</LI>
+<LI><B>MiniIcon: </B>The small icon shown by kpanel.</LI>
 
 <LI><B>Comment:</B> The descriptive text displayed by kpanel and kfm.</LI>
 </UL>
+
+<P>Due to the fact that any menuentry is saved into a seperate kdelnk-file
+each file needs a unique name inside its submenu. If you don't specify
+a filename, KMenuedit will create its own filename.</P>
 
 <P>If you want to change the icons, just click on the icon and select the
 new icon from a dialog.</P>
@@ -141,8 +153,7 @@ that make sense for a submenu are Name, Icon, MiniIcon and Comment.</P>
 <P><B>Separator:<BR>
 </B>Like the submenu the separator is not a real kdelnk-file but this fact
 makes no difference for the user. Since a separator is just a bar there
-are no attributes you may set. Please note that the Separator is only used
-by ktaskbar at the moment.</P>
+are no attributes you may set.</P>
 
 <P><B>Application:<BR>
 </B>The application type is a real kdelnk-file. Please see the <A HREF="../kfm/kfm_apps.html">kfm</A>
@@ -156,9 +167,15 @@ url in the corresponding field.</P>
 </B>The device is a kdelnk-file, too. Please see the <A HREF="../kfm/kfm_config.html">kfm</A>
 manual for details.</P>
 
-<P><B>Fvwm Command:<BR>
-</B>The fvwm command is not an official kdelnk-file type and is only used
-by the fvwm version of ktaskbar. It is used to send a command to fvwm.</P>
+<P><B>Swallow:<BR>
+</B>The swallow type is like an application entry but it is executed in
+a different way. You execute it by dropping it onto KPanel to make it a
+panel button. KPanel will start the application and swallow its window
+into the panel. To find the right window to swallow KPanel needs the title
+of the application window. So you have to specify the application you want
+to swallow and its title.<BR>
+As an option you may specify an application to start when you press with
+the left mousebutton onto the panel button.</P>
 
 <H2><A NAME="todo"></A>To do</H2>
 
@@ -167,7 +184,7 @@ by the fvwm version of ktaskbar. It is used to send a command to fvwm.</P>
 <P>Christoph Neerfeld</P>
 
 <P>
-<HR WIDTH="100%"><FONT SIZE=-1>Last changed on 23.7.1997 by <A HREF="mailto:Christoph.Neerfeld@bonn.netsurf.de">Christoph.Neerfeld@bonn.netsurf.de</A></FONT><A HREF="mailto:Christoph.Neerfeld@bonn.netsurf.de">
+<HR WIDTH="100%"><FONT SIZE=-1>Last changed on 13.2.1998 by <A HREF="mailto:Christoph.Neerfeld@home.ivm.de">Christoph.Neerfeld@home.ivm.de</A></FONT><A HREF="mailto:Christoph.Neerfeld@home.ivm.de">
 </A></P>
 
 </BODY>
