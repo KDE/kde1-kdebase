@@ -41,31 +41,23 @@ AC_REQUIRE([KDE_CHECK_DL])
 LIBTOOL='$(top_builddir)/libtool'
 AC_SUBST(LIBTOOL)
 
-dnl Allow the --disable-shared flag to stop us from building shared libs.
-AC_ARG_ENABLE(shared,
-[  --enable-shared         build shared libraries [default=yes]],
-[if test "$enableval" = no; then
-  enable_shared=no
-else
-  enable_shared=yes
-fi])
-
+enable_shared=yes
 libtool_shared=
 test "$enable_shared" = no && libtool_shared=" --disable-shared"
 
-dnl Allow the --disable-static flag to stop us from building static libs.
-AC_ARG_ENABLE(static,
-[  --enable-static         build static libraries [default=no]],
-[if test "$enableval" = no; then
-  enable_static=no
-else
-  enable_static=yes
-fi],
-enable_static=no)
+enable_static=no
 libtool_static=
 test "$enable_static" = no && libtool_static=" --disable-static"
 
-if test $ac_cv_header_dlfcn_h = "no" || test $ac_cv_lib_dl_main = "no" || test "$enable_shared" = no ; then
+AC_ARG_ENABLE(dlopen,
+[  --disable-dlopen        link kcontrol staticly [default=no]] ,   
+[if test "$enableval" = yes; then
+  enable_dlopen=no
+else
+  enable_dlopen=yes
+fi])     
+
+if test $ac_cv_header_dlfcn_h = "no" || test $ac_cv_lib_dl_main = "no" || test "$enable_dlopen" = no ; then
 # no matter, what the user says:
   libtool_flags="--disable-shared"
   dynamic_loading="no"
