@@ -32,6 +32,9 @@
 #include <time.h>
 
 class KCookieJar;
+
+extern KCookieJar *cookiejar;
+
 class KCookieList;
 class KCookie;
 typedef KCookie *KCookiePtr;

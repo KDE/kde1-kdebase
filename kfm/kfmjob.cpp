@@ -12,6 +12,7 @@
 #include "kmsgwin.h"
 #include "kfmdlg.h"
 #include "kmimemagic.h"
+#include "kcookiejar.h"
 #include "kioslave/kio_errors.h"
 
 #include <klocale.h>
@@ -26,7 +27,7 @@ KFMJob::KFMJob( )
 }
 
 bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_currentURL, QList<KIODirectoryEntry> *_list, 
-                     const char *_data, const char *_cookies )
+                     const char *_data)
 {
     bError = false;
 
@@ -39,7 +40,6 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
 
     url = _url;
     post_data = _data;
-    cookie_data = _cookies;
     
     if ( job )
 	delete job;	
@@ -126,10 +126,18 @@ void KFMJob::openFile(bool _reload)
     // Delete the trailing / since we assume that the URL is a file.
     // But dont delete the root '/', since for example "file:" is considered
     // malformed.
-    if ( url.right(1) == "/" && url.right(2) != ":/" )
+    if ( url.left(4) == "file" && url.right(1) == "/" && url.right(2) != ":/" )
 	url = url.left( url.length() - 1 );
     
     bFileLoad = TRUE;
+
+    if (!cookiejar)
+    {
+        printf("Making cookiejar....\n");
+        cookiejar = new KCookieJar;
+    }
+
+    cookie_data = cookiejar->findCookies(url);
 
 //@@WABA Look out for cookies!
     printf("KFMJob::openFile: URL=%s : \n---%s---\n", url.data(), cookie_data.data());
@@ -140,6 +148,7 @@ void KFMJob::slotRedirection( const char *_url )
 {
     url = _url;
     emit redirection( _url );
+    openFile( false);
 }
 
 void KFMJob::slotCookie( const char *_url, const char *_cookie_str )

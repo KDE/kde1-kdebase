@@ -23,7 +23,7 @@ public:
      */
     virtual bool browse( const char *_url, bool _reload = FALSE, bool _bHTML = FALSE,
 			 const char *_currentURL = 0L, QList<KIODirectoryEntry> *list = 0L, 
-			 const char *_data = 0L, const char *_cookies = 0L );
+			 const char *_data = 0L );
 
     /**
      * Stop the KIOJob that downloads the directory information.

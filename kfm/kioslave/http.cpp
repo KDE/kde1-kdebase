@@ -13,6 +13,8 @@
 #include <klocale.h>
 #include <qregexp.h>
 
+#define MAX_HTTP_HEADER_SIZE  4096
+
 /************************** Authorization stuff: copied from wget-source *****/
 
 /* Encode a zero-terminated string in base64.  Returns the malloc-ed
@@ -293,13 +295,11 @@ long KProtocolHTTP::Read(void *buffer, long len)
     bytesRead += nbytes;
     bytesleft -= nbytes;
 
-    QTime t;
-    t.start();
     // Print only every second new status information
-    if ( t.secsTo( currentTime ) >= 1 )
+    if ( currentTime.elapsed() >= 1000 )
     {
 	currentTime.start();
-	int secs = startTime.secsTo( t );
+	int secs = startTime.secsTo( currentTime );
 	if ( secs == 0 )
 	    secs = 1;
 	long bytesPerSec = bytesRead / secs;
@@ -618,7 +618,7 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 
 int KProtocolHTTP::ProcessHeader()
 {
-	char buffer[1024];
+	char buffer[MAX_HTTP_HEADER_SIZE];
 	QString mType;
 	QString Cookie;
 	int len = 1;
@@ -630,12 +630,13 @@ int KProtocolHTTP::ProcessHeader()
 	// however at least extensions should be checked
 	if (assumeHTML) mType="text/html";
 	
-	while( len && fgets( buffer, 1024, fsocket ) )
+	while( len && fgets( buffer, MAX_HTTP_HEADER_SIZE, fsocket ) )
 	{
 	    len = strlen(buffer);
 	    while( len && (buffer[len-1] == '\n' || buffer[len-1] == '\r'))
 		buffer[--len] = 0;
 
+//printf("Header: %s\n", buffer);
 	    if ( strncasecmp( buffer, "Set-Cookie", 10 ) == 0 )
 	    {
 	        Cookie += buffer;
@@ -673,7 +674,8 @@ int KProtocolHTTP::ProcessHeader()
 		KURL u( url );
 		KURL u2( u, buffer + 10 );
 		emit redirection( u2.url() );
-		return Open( &u2, currentMode );
+//		return Open( &u2, currentMode );
+		return (SUCCESS);
 	    }
 	    
 	}

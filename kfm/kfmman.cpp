@@ -37,8 +37,6 @@
 QString *KFMManager::link_overlay = 0;
 QString *KFMManager::ro_overlay = 0;
 
-KCookieJar *cookiejar=0;
-
 KFMManager::KFMManager( KfmView *_v )
 {
     url  = "";
@@ -384,15 +382,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     // 'newDirEntry' which uses 'files'. So 'files' has to be cleared
     // before! such signal is emitted.
     
-    if (!cookiejar)
-    {
-        printf("Making cookiejar....\n");
-        cookiejar = new KCookieJar;
-    }
-
-    QString Cookies( cookiejar->findCookies(tryURL));
-
-    job->browse( tryURL, _reload, view->getGUI()->isViewHTML(), url, &files, _data, Cookies.data() );
+    job->browse( tryURL, _reload, view->getGUI()->isViewHTML(), url, &files, _data );
     
     // Something cached ? In this case a call to browse was all we need
     if ( bFinished )
