@@ -10,14 +10,12 @@ msgstr ""
 "kpagerclient.cpp kpager.cpp main.cpp\n"
 
 #: kpager.cpp:72
-#, fuzzy
 msgid "Toggle Global Desktop"
-msgstr "Esconder Ambiente &Global"
+msgstr "Comutar ambiente global"
 
 #: kpager.cpp:74
-#, fuzzy
 msgid "Toggle Menubar"
-msgstr "Esconder &Barra de menu"
+msgstr "Comutar Barra de menu"
 
 #: kpager.cpp:84 kpager.cpp:188 kpager.cpp:323
 msgid "Hide &Global Desktop"
@@ -33,7 +31,7 @@ msgstr "Esconder &Barra de menu"
 
 #: kpager.cpp:95 kpager.cpp:337
 msgid "&2 Rows"
-msgstr ""
+msgstr "&2 Linhas"
 
 #: kpager.cpp:101 kpager.cpp:344
 msgid "Plain"
@@ -79,28 +77,25 @@ msgstr ""
 "sob certas condições.\n"
 
 #: kpager.cpp:333
-#, fuzzy
 msgid "Show &Menubar"
-msgstr "Esconder &Barra de menu"
+msgstr "Mostrar &Barra de menu"
 
 #: kpager.cpp:388
 msgid "&Maximize"
-msgstr ""
+msgstr "&Maximizar"
 
 #: kpager.cpp:389
-#, fuzzy
 msgid "&Iconify"
-msgstr "Ícone"
+msgstr "&Minimizar"
 
 #: kpager.cpp:391
 msgid "&UnSticky"
-msgstr ""
+msgstr "&Despregado"
 
 #: kpager.cpp:393
 msgid "&Sticky"
-msgstr ""
+msgstr "&Pregado"
 
 #: kpager.cpp:395
-#, fuzzy
 msgid "&To Desktop"
-msgstr "Esconder Ambiente &Global"
+msgstr "&Para o ambiente"

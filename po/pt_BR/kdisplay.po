@@ -52,7 +52,7 @@ msgstr "&Escolher..."
 
 #: backgnd.cpp:366
 msgid "Arrangement:"
-msgstr ""
+msgstr "Disposição:"
 
 #: backgnd.cpp:373
 msgid "Tiled"
@@ -107,9 +107,8 @@ msgid "&Dock into the panel"
 msgstr "&Embutir no Painel"
 
 #: backgnd.cpp:441
-#, fuzzy
 msgid "Cache size (kB):"
-msgstr "Tamanho do cache:"
+msgstr "Tamanho do cache (KB):"
 
 #: backgnd.cpp:1338
 msgid "Desktop names"
@@ -428,7 +427,7 @@ msgstr "&Aplicar estilo a aplicativos não-KDE`"
 
 #: general.cpp:258
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr ""
+msgstr "&Barra de menu no topo da tela, ao estilo do MacOS"
 
 #: general.cpp:273
 msgid "Desktop fonts"

@@ -23,28 +23,27 @@ msgstr "&Cor"
 
 #: main.cpp:62
 msgid "&Other"
-msgstr ""
+msgstr "&Outro"
 
 #: main.cpp:65
 msgid "&Proxy"
-msgstr ""
+msgstr "&Proxy"
 
 #: main.cpp:67
 msgid "&HTTP"
-msgstr ""
+msgstr "&HTTP"
 
 #: main.cpp:70
 msgid "User &Agent"
-msgstr ""
+msgstr "&Agente de usuário"
 
 #: main.cpp:74
 msgid "&Desktop Icons"
-msgstr ""
+msgstr "Ícones do &Ambiente"
 
 #: main.cpp:144
-#, fuzzy, c-format
 msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,root}]\n"
-msgstr "uso: kcmkfm [-init | {font,color}]\n"
+msgstr "uso: %s [-init | {font,color,misc,proxy,http,useragent,root}]\n"
 
 #: main.cpp:227
 msgid "KFM Configuration"
@@ -52,120 +51,120 @@ msgstr "Configuração do KFM"
 
 #: htmlopts.cpp:64
 msgid "Small"
-msgstr ""
+msgstr "Pequeno"
 
 #: htmlopts.cpp:69
 msgid "Medium"
-msgstr ""
+msgstr "Médio"
 
 #: htmlopts.cpp:74
 msgid "Large"
-msgstr ""
+msgstr "Grande"
 
 #: htmlopts.cpp:83
 msgid "Standard Font"
-msgstr ""
+msgstr "Tipo de letra padrão"
 
 #: htmlopts.cpp:97
 msgid "Fixed Font"
-msgstr ""
+msgstr "Tipo de letra fixo"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr ""
+msgstr "Conjunto de caracteres padrão"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr ""
+msgstr "Usar conjunto de caracteres do idioma"
 
 #: htmlopts.cpp:329
 msgid "Background Color:"
-msgstr ""
+msgstr "Cor de fundo:"
 
 #: htmlopts.cpp:341
 msgid "Normal Text Color:"
-msgstr ""
+msgstr "Cor de texto normal:"
 
 #: htmlopts.cpp:353
 msgid "URL Link Color:"
-msgstr ""
+msgstr "Cor de URL:"
 
 #: htmlopts.cpp:365
 msgid "Followed Link Color:"
-msgstr ""
+msgstr "Cor de URL já usada:"
 
 #: htmlopts.cpp:377
 msgid "Change cursor over link."
-msgstr ""
+msgstr "Mudar cursor sobre URL."
 
 #: htmlopts.cpp:383
 msgid "Underline links"
-msgstr ""
+msgstr "Sublinhar URLs"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr ""
+msgstr "&Permitir configurações por URL"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr ""
+msgstr "Visão em á&rvore segue navegação"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr ""
+msgstr "Não esqueça de salvar suas configurações!"
 
 #: kproxydlg.cpp:58
 msgid "Use proxy"
-msgstr ""
+msgstr "Usar proxy"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
-msgstr ""
+msgstr "Sem proxy para:"
 
 #: khttpoptdlg.cpp:38
 msgid "Accept languages:"
-msgstr ""
+msgstr "Aceitar idiomas:"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Aceitar conjuntos de caracteres:"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
-msgstr ""
+msgstr "Assumir HTML"
 
 #: useragentdlg.cpp:43
 msgid "On server:"
-msgstr ""
+msgstr "No servidor:"
 
 #: useragentdlg.cpp:65
 msgid "login as:"
-msgstr ""
+msgstr "login como:"
 
 #: useragentdlg.cpp:85
 msgid "&Add"
-msgstr ""
+msgstr "&Adicionar"
 
 #: useragentdlg.cpp:105
 msgid "Known bindings:"
-msgstr ""
+msgstr "Dependências conhecidas:"
 
 #: rootopts.cpp:70
 msgid "Horizontal Root Grid Spacing:"
-msgstr ""
+msgstr "Espaçamento da grade-raiz horizontal:"
 
 #: rootopts.cpp:81
 msgid "Vertical Root Grid Spacing:"
-msgstr ""
+msgstr "Espaçamento da grade-raiz vertical:"
 
 #: rootopts.cpp:92
 msgid "&Transparent Text for Root Icons."
-msgstr ""
+msgstr "&Texto transparente para ícones-raiz:"
 
 #: rootopts.cpp:103
 msgid "Icon foreground color:"
-msgstr ""
+msgstr "Cor de frente do ícone:"
 
 #: rootopts.cpp:115
 msgid "Icon background color:"
-msgstr ""
+msgstr "Cor de fundo do ícone:"
