@@ -1223,7 +1223,7 @@ msgstr "Sovrascrivi tutti"
 
 #: krenamewin.cpp:52
 msgid "You try to overwrite"
-msgstr "Impossibile sovrascrivere%s"
+msgstr "Hai provato a sovrascrivere"
 
 #: krenamewin.cpp:63
 msgid "already exists. Overwrite with"
