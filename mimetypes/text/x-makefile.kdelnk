@@ -2,9 +2,6 @@
 [KDE Desktop Entry]
 MimeType=text/x-makefile
 Comment=Makefile
-Comment[br]=Restr oberiañ (Makefile)
-Comment[da]=Makefil
-Comment[ro]=Fiºier Makefile
 DefaultApp=kwrite
 Icon=unknown.xpm
 Type=MimeType
