@@ -1,0 +1,20 @@
+  blank   -  Copyright (c) 1997 Martin Jones <mjones@kde.org>
+  banner  -  Copyright (c) 1997 Martin Jones <mjones@kde.org>
+  polygon -  Copyright (c) 1997 Martin Jones <mjones@kde.org>
+  lines   -  Copyright (c) 1997 Dirk Staneker
+  blob    -  Copyright (c) 1997 Tiaan Wessels <tiaan@netsys.co.za>  
+  
+Ported from xlockmore: (but blame Martin if they don't work)
+  rock    -  Copyright (c) 1992 Jamie Zawinski
+  flame   -  Copyright (c) 1991 Patrick J. Naughton
+  pyro    -  Copyright (c) 1991 Patrick J. Naughton
+  laser   -  Copyright (c) 1995 Pascal Pensa <pensa@aurora.unice.fr>
+
+Ported from xlockmore by Emanuel Pirker <epirker@edu.uni-klu.ac.at>:
+  bat     -  Copyright (c) 1988 Sun Microsystems
+  forest  -  Copyright (c) 1995 Pascal Pensa <pensa@aurora.unice.fr>
+  hop     -  Copyright (c) 1991 Patrick J. Naughton
+  lissie  -  Copyright (c) Alexander Jolk <ub9x@rz.uni-karlsruhe.de>
+  slip    -  Copyright (c) 1992 Scott Draves <spot@cs.cmu.edu>
+  swarm   -  Copyright (c) 1991 Patrick J. Naughton
+  morph3d -  Copyright (c) 1997 by Marcelo F. Vianna

@@ -1,0 +1,50 @@
+Version 0.3.7
+
+added geometry management to all screensaver setups except kmorph3d (Mario
+Weilguni <mweilguni@kde.org>)
+
+Version 0.3.6
+
+added "blob" saver from Tiaan Wessels <tiaan@netsys.co.za>
+
+Version 0.3.5
+
+fixes from Emanuel Pirker for ported xlock savers.
+
+Version 0.3.4
+
+More xlock ports from Emanuel Pirker <epirker@edu.uni-klu.ac.at>
+
+Version 0.3.3
+
+Fix small window problem under kwm (hopefully)
+Fixes for Qt-1.2
+
+
+Version 0.3.2
+
+Updated lines
+added About dialogs for all savers
+Shadow password support added by Martin Hartig
+Use libkdeui for colour dialog
+
+
+Version 0.3.1
+
+Ported some xlock savers.  Basic interface code done, but will need more work
+ for some savers yet to be ported.
+Included "lines" (contributed by Dirk Staneker
+ <dirk.staneker@student.uni-tuebingen.de>)
+locking bug fix
+
+Version 0.3
+
+fixes to password stuff
+
+Version 0.2
+
+kscreensaver.h/cpp external control files
+SIGUSR1 causes the screen saver to lock immediately
+hopefully StaysOnTop and windows opening after ss invoked will not display
+ over saver window anymore
+minor bug fixes
