@@ -211,19 +211,15 @@ void KfmGui::initStatusBar()
 
 void KfmGui::initMenu()
 {
-    debugT("Menu 1\n");
-    
     menuNew = new QPopupMenu;
     CHECK_PTR( menuNew );
     menuNew->insertItem( klocale->translate("Folder") );
 
-    debugT("Menu 2\n");
-
     connect( menuNew, SIGNAL( activated( int ) ), 
 	     this, SLOT( slotNewFile( int ) ) );
 
-    debugT("Menu 3\n");
-
+    templatesList.clear();
+    
     QDir d( KFMPaths::TemplatesPath() );
     const QFileInfoList *list = d.entryInfoList();
     if ( list == 0L )
@@ -240,6 +236,7 @@ void KfmGui::initMenu()
 		 strcmp( fi->fileName().data(), ".." ) != 0 )
 	    {
 		QString tmp = fi->fileName().data();
+		templatesList.append( tmp );
 		if ( tmp.right(7) == ".kdelnk" )
 		    tmp.truncate( tmp.length() - 7 );
 		menuNew->insertItem( tmp );
@@ -247,8 +244,6 @@ void KfmGui::initMenu()
 	    ++it;                               // goto next list element
 	}
     }
-
-    debugT("Menu 4\n");    
 
     QPopupMenu *file = new QPopupMenu;
     CHECK_PTR( file );

@@ -80,7 +80,7 @@ public slots:
 protected:
     void writeBeginning();
     void writeEntry( KIODirectoryEntry *_e );
-
+    
     /**
      * This fucntion is used to distinguish hard coded bindings and bindings belonging
      * to applications. The only thing we know is the bindings name '_txt'.

@@ -26,10 +26,7 @@ public:
     virtual void stop();
 
     const char *getURL();
-    
-    static void initKMimeMagic();
-    static KMimeMagic* getKMimeMagic() { return magic; }
-    
+        
 public slots:
     /// Notify about new directory entries
     /**
@@ -69,8 +66,6 @@ protected:
     QString url;
     int bytesRead;
     QString dataBuffer;
-
-    static KMimeMagic *magic;
 };
 
 #endif

@@ -77,7 +77,7 @@ KProtocol *CreateProtocol(const char *url)
 	return(NULL);
 }
 
-char *ReformatURL(const char *url)
+/* char *ReformatURL(const char *url)
 {
 	QString reformattedurl;
 	if(strncmp(url,"tar:",4) == 0)
@@ -93,4 +93,4 @@ char *ReformatURL(const char *url)
 		free(urlcp);
 	}
 	return(strdup(url));
-}
+} */

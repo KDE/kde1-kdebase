@@ -87,7 +87,7 @@ void KIOSlave::getPID()
 
 void KIOSlave::mkdir( const char *_url )
 {
-	_url = ReformatURL(_url);
+    // _url = ReformatURL(_url);
 
     KURL su( TopLevelURL(_url) );
 
@@ -123,7 +123,7 @@ void KIOSlave::mkdir( const char *_url )
 void KIOSlave::list( const char *_url, bool _bHTML )
 {
     const char *old_url = _url;
-    _url = ReformatURL(_url);
+    // _url = ReformatURL(_url);
 
     KURL su( TopLevelURL(_url) );
     if ( su.isMalformed() )
@@ -240,7 +240,7 @@ void KIOSlave::unmount( const char *_point )
 
 void KIOSlave::del( const char *_url )
 {
-	_url = ReformatURL(_url);
+    // _url = ReformatURL(_url);
 
     KURL su( TopLevelURL(_url) );
     if ( su.isMalformed() )
@@ -346,7 +346,7 @@ void KIOSlave::del( const char *_url )
 void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwriteExistingFiles )
 {
     printf("******** COPY '%s' to '%s\n",_src_url,_dest_url);
-    _src_url = ReformatURL(_src_url);
+    // _src_url = ReformatURL(_src_url);
  
     KURL su(TopLevelURL(_src_url));
     if ( su.isMalformed() )
@@ -356,7 +356,7 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
 		return;
     }
     
-    _dest_url = ReformatURL(_dest_url);
+    // _dest_url = ReformatURL(_dest_url);
 
     KURL du(TopLevelURL(_dest_url));
     if ( du.isMalformed() )
@@ -459,7 +459,7 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
 void KIOSlave::get( const char *_url )
 {
     printf("******** GET '%s'\n",_url);
-    _url = ReformatURL(_url);
+    // _url = ReformatURL(_url);
  
     KURL su(TopLevelURL(_url));
     if ( su.isMalformed() )

@@ -224,6 +224,42 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
 	    return;
 	}
 	
+	// Clear out symlinks if we are on the local hard disk
+	QString canonical = url;
+	if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
+	{
+	    // Get the canonical path.
+	    QDir dir( u.path() );
+	    canonical = dir.canonicalPath();
+	}
+	
+	// Check wether we drop a file on itself
+	QStrList list( _zone->getURLList() );
+	char *s;
+	for ( s = list.first(); s != 0L; s = list.next() )
+	{
+	    QString url2( s );
+	    // replace all symlinks if we are on the local hard disk
+	    KURL u2( s );
+	    if ( !u2.isMalformed() )
+	    {
+		if ( strcmp( u2.protocol(), "file" ) == 0 && !u2.hasSubProtocol() )
+		{
+		    // Get the canonical path.
+		    QDir dir2( u2.path() );
+		    url2 = dir2.canonicalPath();
+		}
+	    }
+	    
+	    // Are both symlinks equal ?
+	    if ( strcmp( url2, canonical ) == 0 )
+	    {
+		QMessageBox::message( klocale->translate( "KFM Error" ),
+				      klocale->translate( "You dropped some file over itself" ) );
+		return;
+	    }
+	}
+	
 	debugT(" Dropped over object\n");
 		
 	QPoint p( _zone->getMouseX(), _zone->getMouseY() );
@@ -898,14 +934,16 @@ bool KfmView::dndHook( const char *_url, QPoint &_p )
     // Do we drag multiple files ?
     if ( l.count() == 1 )
     {
-	KMimeType *typ = KMimeType::findType( l.first() );
-	pixmap = typ->getPixmap( l.first() );
+	pixmap.load( KMimeType::getPixmapFileStatic( l.first() ) );
+	/* KMimeType *typ = KMimeType::findType( l.first() );
+	pixmap = typ->getPixmap( l.first() ); */
     }
     else
     {
+	pixmap.load( KMimeType::getPixmapFileStatic( l.first() ) );
 	// TODO  Nice icon for multiple files
-	KMimeType *typ = KMimeType::findType( l.first() );
-	pixmap = typ->getPixmap( l.first() );
+	/* KMimeType *typ = KMimeType::findType( l.first() );
+	pixmap = typ->getPixmap( l.first() ); */
     }
     
     // Put all selected files in one line separated with newlines

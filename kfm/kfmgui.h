@@ -465,6 +465,12 @@ protected:
      * @see #animatedLogo
      */
     QTimer *animatedLogoTimer;
+
+    /**
+     * List of all template files. It is important that they are in
+     * the same order as the 'New' menu.
+     */
+    QStrList templatesList;
 };
 
 #endif

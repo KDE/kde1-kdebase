@@ -17,6 +17,8 @@
 #include <klocale.h>
 #define klocale KLocale::klocale()
 
+KMimeMagic* KMimeType::magic = 0L;
+
 QList<KMimeType> *types;
 // This types bindings apply to every file or directory which protocol matches
 // the protocol of the binding.
@@ -290,6 +292,11 @@ KMimeType::KMimeType( const char *_mime_type, const char *_pixmap )
     pixmap_file += _pixmap;
 
     HTMLImage::cacheImage( pixmap_file.data() );
+}
+
+bool KMimeType::isDefault()
+{
+    return ( this == defaultType );
 }
 
 void KMimeBind::initApplications( const char * _path )
@@ -1695,6 +1702,58 @@ KMimeBind::KMimeBind( const char *_prg, const char *_cmd, bool _allowdefault, co
     }
     else
 	protocol5 = "";
+}
+
+const char* KMimeType::getPixmapFileStatic( const char *_filename )
+{
+    // Just for speedup, because KURL is slow
+    if ( strncmp( _filename, "file:/", 6 ) == 0 )
+    {
+	KURL u( _filename );
+	// Not a tar file ?
+	if ( !u.hasSubProtocol() )
+	{
+	    KMimeMagicResult* result = KMimeType::findFileType( u.path() );
+
+	    printf("Content=%s Accuracy=%d\n", (const char *)result->getContent(), result->getAccuracy());
+	    
+	    // Is it a directory or dont we know anything about it, or ist it a *.kdelnk file ?
+	    if ( result->getContent() == 0L || strcmp( "application/x-directory", result->getContent() ) == 0 ||
+		 strcmp( "application/x-kdelnk", result->getContent() ) == 0 )
+		return KMimeType::findType( _filename )->getPixmapFile( _filename );
+	    
+	    // Can we trust the result ?
+	    if ( result->getAccuracy() >= 50 )
+	    {
+		KMimeType *type = KMimeType::findByName( result->getContent() );
+		// Do we know this mime type ?
+		if ( type )
+		    return type->getPixmapFile( _filename );
+	    }
+	    KMimeType *type = KMimeType::findType( _filename );
+	    // Perhaps we should better listen to the magic :-)
+	    if (( type == 0L || type->isDefault() ) && result->getContent() != 0L && result->getAccuracy() >= 30 )
+	    {
+		KMimeType *type = KMimeType::findByName( result->getContent() );
+		// Do we know this mime type ?
+		if ( type )
+		    return type->getPixmapFile( _filename );
+		
+	    }
+	    
+	}
+    }
+    
+    return KMimeType::findType( _filename )->getPixmapFile( _filename );
+}
+
+void KMimeType::initKMimeMagic()
+{
+    // Magic file detection init
+    QString mimefile = kapp->kdedir();
+    mimefile += "/share/magic";
+    magic = new KMimeMagic( mimefile );
+    magic->setFollowLinks( TRUE );
 }
 
 bool KMimeBind::supportsProtocol( const char *_protocol )

@@ -15,6 +15,7 @@ class KFMConfig;
 #include <Kconfig.h>
 
 #include "kioserver.h"
+#include "kmimemagic.h"
 
 // A Hack, since KConfig has no constructor taking only a filename
 class KFMConfig : public KConfig
@@ -367,7 +368,13 @@ public:
      * Find a binding by its name.
      */
     virtual KMimeBind* findBinding( const char *_filename );
-	
+
+    /**
+     * @return TRUE if we dont know anything about the file and have
+     *         to assume the default mime type.
+     */
+    virtual bool isDefault();
+    
     /**
      * Tries to find a MimeType for the file _url. If no special
      * MimeType is found, the default MimeType is returned.
@@ -389,6 +396,12 @@ public:
      * example is called 'text/html'.
      */
     static KMimeType *findByName( const char *_name );
+
+    /**
+     * Used to determine the pixmap for a certain file.
+     * Uses @ref KMimeMagic for this.
+     */
+    static const char* getPixmapFileStatic( const char *_filename );
     
     /**
      * Fills _list with all bindings for _url. Each binding is 
@@ -447,6 +460,17 @@ public:
     static const char* getSocketPixmap() { return SocketPixmap; }
     static const char* getCDevPixmap() { return CDevPixmap; }
     static const char* getBDevPixmap() { return BDevPixmap; }         
+
+    static void initKMimeMagic();
+    static KMimeMagic* getKMimeMagic() { return magic; }
+    static KMimeMagicResult* findFileType( const char *_filename ) 
+    {
+	return magic->findFileType( _filename );
+    }
+    static KMimeMagicResult* findBufferType( const char *_sample, int _len ) 
+    {
+	return magic->findBufferType( _sample, _len );
+    }
 
 protected:    
     /**
@@ -535,6 +559,8 @@ protected:
      * @see #setApplicationPattern for details.
      */
     bool bApplicationPattern;
+
+    static KMimeMagic *magic;
 };
 
 /**

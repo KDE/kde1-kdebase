@@ -28,6 +28,9 @@ KIODirectoryEntry::KIODirectoryEntry( const char *_name, bool _isDir, int _size,
     size = _size;
     creationDate = _creationDate;
     creationDate.detach();
+    int i;
+    if ( ( i = creationDate.find( ' ' ) ) != -1 )
+	creationDate.replace( i, 1, "&nbsp;" );
     access = _access;
     access.detach();
     owner = _owner;
@@ -44,6 +47,9 @@ KIODirectoryEntry::KIODirectoryEntry( KIODirectoryEntry & _entry )
     size = _entry.getSize();
     creationDate = _entry.getCreationDate();
     creationDate.detach();
+    int i;
+    if ( ( i = creationDate.find( ' ' ) ) != -1 )
+	creationDate.replace( i, 1, "&nbsp;" );
     access = _entry.getAccess();
     access.detach();
     owner = _entry.getOwner();

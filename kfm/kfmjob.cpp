@@ -11,13 +11,13 @@
 #include <config-kfm.h>
 #include "kmsgwin.h"
 #include "kfmdlg.h"
+#include "kmimemagic.h"
 
 #include <klocale.h>
+
 #define klocale KLocale::klocale()
 
 int tmpFileCounter = 0;
-
-KMimeMagic* KFMJob::magic = 0L;
 
 KFMJob::KFMJob( )
 {
@@ -195,7 +195,7 @@ void KFMJob::testMimeType( const char *_text)
     
     printf("SAMPLE:\n%s\n",_text);
     
-    KMimeMagicResult *result = magic->findBufferType( _text, strlen( _text ) );
+    KMimeMagicResult *result = KMimeType::findBufferType( _text, strlen( _text ) );
     printf("RETURN '%s'\n",result->getContent().data() );
     
     if ( strcmp( "text/html", result->getContent() ) == 0 ) 
@@ -275,14 +275,6 @@ void KFMJob::stop()
 const char* KFMJob::getURL()
 {
     return url;
-}
-
-void KFMJob::initKMimeMagic()
-{
-    // Magic file detection init
-    QString mimefile = kapp->kdedir();
-    mimefile += "/share/magic";
-    magic = new KMimeMagic( mimefile );
 }
 
 KFMJob::~KFMJob()

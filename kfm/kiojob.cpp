@@ -1586,11 +1586,7 @@ void KIOJob::done()
     if ( action == KIOJob::JOB_MOUNT || action == KIOJob::JOB_UNMOUNT )
 	KIOServer::sendMountNotify();
 
-    printf("DONE JOB %x\n",this);
-    
     emit finished( id );
-    
-    printf("Emitted finish signal\n");
     
     dlg = 0L;
     slave = 0L;
