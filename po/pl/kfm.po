@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm \n"
 "POT-Creation-Date: 1998-01-19 22:47+0100\n"
-"PO-Revision-Date: 1998-01-17 13:54+0100\n"
+"PO-Revision-Date: 1998-01-20 20:31+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -160,9 +160,8 @@ msgid "&Add Bookmark"
 msgstr "&Dodaj zak³adkê"
 
 #: kfmgui.cpp:459 kfmgui.cpp:891
-#, fuzzy
 msgid "&Edit Bookmarks..."
-msgstr "&Zak³adki"
+msgstr "&Edytuj zak³adki..."
 
 #: kfmgui.cpp:470
 msgid "&About..."
@@ -1230,29 +1229,24 @@ msgid "KFM Browser Settings"
 msgstr "Ustawienia przegl±darki"
 
 #: kbookmarkdlg.cpp:19 kbookmarkdlg.cpp:24
-#, fuzzy
 msgid "Edit Bookmarks"
-msgstr "Dodaj do zak³adek"
+msgstr "Edytuj zak³adki"
 
 #: kbookmarkdlg.cpp:36
-#, fuzzy
 msgid "Move up"
-msgstr "Przenie¶"
+msgstr "W górê"
 
 #: kbookmarkdlg.cpp:37
-#, fuzzy
 msgid "Move down"
-msgstr "Przenie¶"
+msgstr "W dó³"
 
 #: kbookmarkdlg.cpp:176
-#, fuzzy
 msgid "Rename Bookmark"
-msgstr "Dodaj zak³adkê"
+msgstr "Zmieñ nazwê"
 
 #: kbookmarkdlg.cpp:178
-#, fuzzy
 msgid "Rename Bookmark:"
-msgstr "Dodaj zak³adkê"
+msgstr "Zmieñ nazwê:"
 
 #: kfmprops.h:73
 msgid "&General"

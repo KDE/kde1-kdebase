@@ -111,7 +111,7 @@ msgstr ""
 
 #: kdm-appear.cpp:187 kdm-users.cpp:195
 msgid "Sorry, but \n"
-msgstr "Tyvärr, men"
+msgstr "Tyvärr, men\n"
 
 #: kdm-appear.cpp:189 kdm-users.cpp:197
 msgid ""
