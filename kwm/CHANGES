@@ -11,6 +11,8 @@ influences from my experiences with the former kwm.
 
 In 0.11:
 --------
+patchlevel 14: internal cleanups with unmapNotify handling.
+
 patchlevel 13: Mario Weilguni <mweilguni@kde.org>
         - added a replacement for gradientFill (for color depths
         higher than 8). It´s only used for horizontal gradients 

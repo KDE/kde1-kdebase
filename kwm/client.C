@@ -348,7 +348,6 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     //, WStyle_Customize | WStyle_NoBorder | WStyle_Tool ){
     window = w;
 
-    reparenting = false;
     backing_store = false;
     state = WithdrawnState;
     maximized = False;

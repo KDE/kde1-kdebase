@@ -413,21 +413,30 @@ void Manager::unmapNotify(XUnmapEvent *e){
     Client *c;
     c = getClient(e->window);
     if (c && c->window == e->window) {
-      if(c->reparenting){
-	// if we are reparenting then X will send us a synethic unmap
-	// notify. Just unset reparenting and return in this case.
-	c->reparenting = false;
+      XGrabServer(qt_xdisplay());
+      XEvent ev;
+      Bool reparented;
+      XSync(qt_xdisplay(), False);
+      reparented = XCheckTypedWindowEvent (qt_xdisplay(), c->winId(),
+                                           ReparentNotify, &ev);        
+      if(reparented){
+	// if we are reparenting then X will send us a synthetic unmap
+	// notify.
+	reparentNotify(&(ev.xreparent)); 
+	XUngrabServer(qt_xdisplay());
 	return;
       }
+     
       if (c->unmap_events > 0){
 	// kwm is so clever that windows on other than the current
-	// virutal desktop are truely unmapped, not just hideen. This
+	// virutal desktop are truely unmapped, not just hidden. This
 	// saves a lot of CPU time if the window is for example an
 	// animation application (video et. al.). Drawback: we can
 	// recieve a lot of unmap notifies after a desktop switch
 	// which have to be ignored. For that reason each client
 	// counts self generated unmap events.
 	c->unmap_events--;
+	XUngrabServer(qt_xdisplay());
 	return;
       }
       switch (c->state) {
@@ -445,6 +454,7 @@ void Manager::unmapNotify(XUnmapEvent *e){
 	withdraw(c);
 	break;
       }
+      XUngrabServer(qt_xdisplay());
     }
 }
 
@@ -1780,22 +1790,9 @@ void Manager::manage(Window w, bool mapped){
     doPlacement(c);
   }
 
-  if (mapped)
-    c->reparenting = true;
   XSetWindowBorderWidth(qt_xdisplay(), c->window, 0);
-  switch (c->getDecoration()){
-  case KWM::noDecoration:
-    XReparentWindow(qt_xdisplay(), c->window, c->winId(), 0, 0);
-    break;
-  case KWM::tinyDecoration:
-    XReparentWindow(qt_xdisplay(), c->window, c->winId(), (BORDER_THIN), (BORDER_THIN));
-    break;
-  default:
-    XReparentWindow(qt_xdisplay(), c->window, c->winId(), (BORDER), (BORDER) + 
-		    TITLEBAR_HEIGHT);
-  break;
-  }
-  
+  XReparentWindow(qt_xdisplay(), c->window, c->winId(), 0, 0);
+
   if (shape) {
     XShapeSelectInput(qt_xdisplay(), c->window, ShapeNotifyMask);
     ignore_badwindow = true;       /* magic */
