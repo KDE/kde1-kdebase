@@ -33,16 +33,16 @@ DOCSDIR = $(prefix)/doc/HTML
 
 SRCS = main.cpp xautolock.cpp\
 		saver.cpp polygon.cpp banner.cpp blankscrn.cpp klock.cpp\
-		kscreensave.cpp kslider.cpp xlock.cpp rock.cpp flame.cpp lines.cpp\
+		kscreensave.cpp xlock.cpp rock.cpp flame.cpp lines.cpp\
 		laser.cpp pyro.cpp
 SRCMETA = main.moc saver.moc polygon.moc banner.moc\
-		blankscrn.moc kslider.moc rock.moc flame.moc lines.moc laser.moc\
+		blankscrn.moc rock.moc flame.moc lines.moc laser.moc\
 		pyro.moc
 HDRS = saver.h polygon.h banner.h\
-		blankscrn.h kscreensave.h kslider.h xlock.h rock.h flame.h lines.h\
+		blankscrn.h kscreensave.h xlock.h rock.h flame.h lines.h\
 		laser.h pyro.h
 
-BASE_OBJS = main.o xautolock.o saver.o kslider.o
+BASE_OBJS = main.o xautolock.o saver.o
 POLYGON_OBJ = polygon.o
 LINES_OBJ = lines.o
 BANNER_OBJ = banner.o

@@ -1014,49 +1014,49 @@ void KHelpWindow::createToolbar()
 	toolbar->setGeometry( 0, menu->frameGeometry().height(),
 						width(), buttonHeight + 8 );
 
-	pb = new KButton( toolbar );
+	pb = new KButton( toolbar, "Previous Document" );
 	pb->setGeometry( pos, 4, buttonWidth, buttonHeight );
 	connect( pb, SIGNAL( clicked() ), SLOT( slotBack() ) );
 	pos += buttonWidth;
 	QToolTip::add( pb, "Previous Document" );
 
-	pb = new KButton( toolbar );
+	pb = new KButton( toolbar, "Next Document" );
 	pb->setGeometry( pos, 4, buttonWidth, buttonHeight );
 	connect( pb, SIGNAL( clicked() ), SLOT( slotForward() ) );
 	pos += buttonWidth + BUTTON_SEPARATION;
 	QToolTip::add( pb, "Next Document" );
 
-	pb = new KButton( toolbar );
+	pb = new KButton( toolbar, "Previous Node" );
 	pb->setGeometry( pos, 4, buttonWidth, buttonHeight );
 	connect( pb, SIGNAL( clicked() ), SLOT( slotPrev() ) );
 	pos += buttonWidth;
 	QToolTip::add( pb, "Previous Node" );
 
-	pb = new KButton( toolbar );
+	pb = new KButton( toolbar, "Next Mode" );
 	pb->setGeometry( pos, 4, buttonWidth, buttonHeight );
 	connect( pb, SIGNAL( clicked() ), SLOT( slotNext() ) );
 	pos += buttonWidth;
 	QToolTip::add( pb, "Next Node" );
 
-	pb = new KButton( toolbar );
+	pb = new KButton( toolbar, "Up one Node" );
 	pb->setGeometry( pos, 4, buttonWidth, buttonHeight );
 	connect( pb, SIGNAL( clicked() ), SLOT( slotUp() ) );
 	pos += buttonWidth;
 	QToolTip::add( pb, "Up one Node" );
 
-	pb = new KButton( toolbar );
+	pb = new KButton( toolbar, "Top Node" );
 	pb->setGeometry( pos, 4, buttonWidth, buttonHeight );
 	connect( pb, SIGNAL( clicked() ), SLOT( slotTop() ) );
 	pos += buttonWidth + BUTTON_SEPARATION;
 	QToolTip::add( pb, "Top Node" );
 
-	pb = new KButton( toolbar );
+	pb = new KButton( toolbar, "Help Contents" );
 	pb->setGeometry( pos, 4, buttonWidth, buttonHeight );
 	connect( pb, SIGNAL( clicked() ), SLOT( slotDir() ) );
 	pos += buttonWidth + BUTTON_SEPARATION;
 	QToolTip::add( pb, "Help Contents" );
 
-	pb = new KButton( toolbar );
+	pb = new KButton( toolbar, "Stop" );
 	pb->setGeometry( pos, 4, buttonWidth, buttonHeight );
 	connect( pb, SIGNAL( clicked() ), SLOT( slotStopProcessing() ) );
 	pos += buttonWidth + BUTTON_SEPARATION;
