@@ -10,7 +10,7 @@
 
 #define BORDER     4
 #define TITLEWINDOW_SEPARATION  2
-#define BUTTON_SIZE    18
+#define BUTTON_SIZE    20
 #define TITLEBAR_HEIGHT 20
 
 

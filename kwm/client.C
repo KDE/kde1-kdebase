@@ -767,7 +767,7 @@ myPushButton * Client::getNewButton(BUTTON_FUNCTIONS buttonFunction){
     if (!pm_menu)
       pm_menu = loadIcon("menu.xpm");
     {
-      QPixmap pm = KWM::miniIcon(window, 14, 14);
+      QPixmap pm = KWM::miniIcon(window, 16, 16);
       if (!pm.isNull())
 	button->setPixmap(pm);  
       else
