@@ -641,7 +641,7 @@ int KProtocolHTTP::ProcessHeader()
 	    {
 	        Cookie += buffer;
 	        Cookie += "\n";
-	        printf("!!!START COOKIE!!!\n%s\n!!!END COOKIE!!!\n", buffer);
+//	        printf("!!!START COOKIE!!!\n%s\n!!!END COOKIE!!!\n", buffer);
 	    } 
 	    else if ( strncasecmp( buffer, "Content-Length: ", 16 ) == 0 )
 	    {
