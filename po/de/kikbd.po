@@ -2,13 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
 "POT-Creation-Date: 1999-04-02 01:15+0200\n"
-"PO-Revision-Date: 1999-03-13 17:05+MET\n"
-"Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
+"PO-Revision-Date: 1999-04-08 21:55+MET\n"
+"Translator: Harri Porten <porten@kde.org>\n"
+"Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Harri Porten <porten@kde.org>\n"
+
 "Date: 1998-04-15 09:13:42+0400\n"
 "From: Alexander Budnik,LCTA 323,64880,, <budnik@linserv.jinr.ru>\n"
 "Xgettext-Options: -C -ktranslate\n"
@@ -63,7 +64,6 @@ msgstr ""
 "Alt-Symbole deaktiviert"
 
 #: kikbd.cpp:406
-#, fuzzy
 msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -84,12 +84,11 @@ msgstr ""
 "Möchten Sie es automatisch starten, wenn Sie das nächste Mal einloggen?"
 
 #: keymap.cpp:186
-#, fuzzy
 msgid "KeyMap: can't allocate memory"
 msgstr "KeyMap: Kann Speicher nicht zuordnen"
 
 #: keymap.cpp:233
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Can't find symbol \"%s\".\n"
 "Maybe your default X codes do not match.\n"
@@ -102,19 +101,19 @@ msgstr ""
 "im Konfigurationsprogramm voreinstellen."
 
 #: keymap.cpp:238
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
-msgstr "KeyMap: Kann Symbol %s nicht finden"
+msgstr "KeyMap: Kann Symbol \"%s\" nicht finden"
 
 #: keymap.cpp:246
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
-msgstr "KeyMap: Verstehe Zeichencode %s nicht"
+msgstr "KeyMap: Kann Zeichencode \"%s\" nicht lesen."
 
 #: keymap.cpp:252
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
-msgstr "KeyMap: Zeichenkode %s ist außerhalb des Bereiches"
+msgstr "KeyMap: Zeichenkode \"%s\" ist außerhalb des Bereiches"
 
 #: kikbdconf.cpp:102
 msgid "Global"
@@ -314,29 +313,26 @@ msgid "&Add"
 msgstr "&Hinzufügen"
 
 #: widgets.cpp:127
-#, fuzzy
 msgid "Add new keyboard map"
-msgstr "Füge neue Tastaturtabelle hinzu"
+msgstr "Neue Tastaturtabelle hinzufügen"
 
 #: widgets.cpp:131
 msgid "Remove selected keyboard map"
-msgstr "Entferne ausgewählte Tastaturtabelle"
+msgstr "Ausgewählte Tastaturtabelle entfernen"
 
 #: widgets.cpp:136
 msgid "U&p"
 msgstr "Nach &oben"
 
 #: widgets.cpp:136
-#, fuzzy
 msgid "Move up selected keyboard map"
-msgstr "Entferne ausgewählte Tastaturtabelle"
+msgstr "Ausgewählte Tastaturtabelle nach oben"
 
 #: widgets.cpp:140
 msgid "D&own"
 msgstr "Nach &unten"
 
 #: widgets.cpp:140
-#, fuzzy
 msgid "Move down selected keyboard map"
 msgstr "Ausgewählte Tastaturtabelle nach unten"
 
@@ -353,7 +349,6 @@ msgid "Use &hot list"
 msgstr "Verwende Hot&list"
 
 #: widgets.cpp:155
-#, fuzzy
 msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
@@ -366,7 +361,6 @@ msgid "Adding Keyboard"
 msgstr "Füge Tastatur hinzu"
 
 #: widgets.cpp:225
-#, fuzzy
 msgid "There are no keyboard maps left to add"
 msgstr "Es gibt keine weiteren Tastaturtabellen"
 
@@ -391,22 +385,18 @@ msgid "Switch and Alt Switch"
 msgstr "Wechseln und Alt-Wechseln"
 
 #: widgets.cpp:419
-#, fuzzy
 msgid "Key(s) for switching between keyboard maps"
 msgstr "Taste(n) zum Wechseln der Tastaturtabellen"
 
 #: widgets.cpp:425
-#, fuzzy
 msgid "Key for activating Alternate symbols in current keyboard map"
-msgstr ""
-"Taste zum Aktivieren alternierender Symbole in der aktuellen Tastaturtabelle"
+msgstr "Taste zum Aktivieren alternativer Symbole in der aktuellen Tastaturtabelle"
 
 #: widgets.cpp:438
 msgid "&Beep"
 msgstr "&Ton"
 
 #: widgets.cpp:439
-#, fuzzy
 msgid "Beep when keyboard map is changed"
 msgstr "Ton beim Wechsel der Tastaturtabelle"
 
@@ -427,7 +417,6 @@ msgid "&Emulate Caps Lock"
 msgstr "&Emuliere CapsLock"
 
 #: widgets.cpp:476
-#, fuzzy
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
@@ -438,7 +427,6 @@ msgid "&World Menu"
 msgstr "Weltmenü"
 
 #: widgets.cpp:483
-#, fuzzy
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
 msgstr "Zeige Menü in jedem Fenster durch Drücken der Wechseltasten"
 
@@ -461,21 +449,18 @@ msgid "Input"
 msgstr "Eingabe"
 
 #: widgets.cpp:505
-#, fuzzy
 msgid "Standard behavior. Keyboard map effective for all windows"
 msgstr "Standardverhalten: Tastaturtabelle in allen Fenstern aktiv"
 
 #: widgets.cpp:509
-#, fuzzy
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Standardverhalten: Tastaturtabelle in allen Fenstern aktiv"
+msgstr "Zusatzoption: Status der Tastaturtabelle für jedes Fenster einzeln sichern"
 
 #: widgets.cpp:513
-#, fuzzy
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "Standardverhalten: Tastaturtabelle in allen Fenstern aktiv"
+msgstr "Extraoption: Status der Tastaturtabelle für jede Klasse von Fenstern einzeln sichern"
 
 #: widgets.cpp:561
 msgid "Button Colors"
@@ -487,15 +472,15 @@ msgstr "Vordergrund"
 
 #: widgets.cpp:572
 msgid "Text label foreground color"
-msgstr ""
+msgstr "Vordergrundfarbe für Textfeld"
 
 #: widgets.cpp:576
 msgid "Background"
-msgstr ""
+msgstr "Hintergrund"
 
 #: widgets.cpp:577
 msgid "Text label background color"
-msgstr ""
+msgstr "Hintergrundfarbe für Textfeld"
 
 #: widgets.cpp:581
 msgid "With Caps Lock"
@@ -510,7 +495,6 @@ msgid "With Alternate"
 msgstr "Mit Alternieren"
 
 #: widgets.cpp:589
-#, fuzzy
 msgid "Background when Alternate switch key is pressed"
 msgstr "Hintergrund, wenn Alternieren-Schalter gedrückt ist"
 
@@ -569,16 +553,3 @@ msgstr "Programms&tart"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Internationale Tastatur"
-
-#~ msgid "Up selected keyboard map"
-#~ msgstr "Ausgewählte Tastaturtabelle nach oben"
-
-#~ msgid "Extended behavior. Each windows remember it's own keyboard map"
-#~ msgstr ""
-#~ "Erweitertes Verhalten: Jedes Fenster merkt sich seine Tastaturtabelle"
-
-#~ msgid "Special behavior. Each windows class remember it's own keyboard map"
-#~ msgstr "Sonderverhalten: Jede Fensterklasse merkt sich ihre Tastaturtabelle"
-
-#~ msgid "Color of the text label"
-#~ msgstr "Farbe des Textlabels"
