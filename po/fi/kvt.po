@@ -178,8 +178,7 @@ msgstr ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
 "Terminaaliemulaatio KDE Desktop Ympäristöön\n"
-"perustuu Robert Nationin rxvt-2.08 ohjelmaan."
-"\n"
+"perustuu Robert Nationin rxvt-2.08 ohjelmaan.\n"
 
 #: main.C:1155
 msgid "Permitted arguments are:\n"

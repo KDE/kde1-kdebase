@@ -342,4 +342,3 @@ msgstr "Informacje o KDE Pomoc"
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Dodaj zak³adkê"
-

@@ -385,4 +385,3 @@ msgstr "Aktywne okno"
 #: widgetcanvas.cpp:177 widgetcanvas.cpp:178
 msgid "Selected text"
 msgstr "Wybrany tekst"
-

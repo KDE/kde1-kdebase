@@ -139,7 +139,7 @@ msgstr "Esquema de color"
 #: colorscm.cpp:131
 #, fuzzy
 msgid "Current scheme"
-msgstr "Esquema de color"
+msgstr "Desar esquema"
 
 #: colorscm.cpp:133
 #, fuzzy
@@ -151,13 +151,13 @@ msgid "&Add ..."
 msgstr ""
 
 #: colorscm.cpp:152
-#, fuzzy
 msgid "&Remove"
-msgstr "Desar esquema"
+msgstr ""
 
 #: colorscm.cpp:159
+#, fuzzy
 msgid "&Save changes"
-msgstr ""
+msgstr "Desar esquema"
 
 #: colorscm.cpp:170
 msgid "Widget color"
@@ -363,9 +363,8 @@ msgid "Window title font"
 msgstr "Text de la finestra"
 
 #: general.cpp:377
-#, fuzzy
 msgid "Panel button font"
-msgstr "Font general"
+msgstr ""
 
 #: general.cpp:378
 msgid "Panel clock font"
@@ -409,9 +408,29 @@ msgstr "Finestra activa"
 msgid "Selected text"
 msgstr "Text de selecció"
 
-#, fuzzy
-#~ msgid "&New scheme ..."
-#~ msgstr "Desar esquema"
+#~ msgid "Color"
+#~ msgstr "Color"
+
+#~ msgid "Flat"
+#~ msgstr "Llis"
+
+#~ msgid "Gradient"
+#~ msgstr "Gradient"
+
+#~ msgid "Portrait"
+#~ msgstr "Vertical"
+
+#~ msgid "Landscape"
+#~ msgstr "Apaïsat"
+
+#~ msgid "Desktop Title"
+#~ msgstr "Nom d'escriptori"
+
+#~ msgid "Disabled"
+#~ msgstr "Desactivat"
+
+#~ msgid "Selected"
+#~ msgstr "Seleccionat"
 
 #~ msgid "You have chosen a name used by a supplied color scheme"
 #~ msgstr "Heu triat un nom en ús per un esquema de color"
@@ -425,12 +444,6 @@ msgstr "Text de selecció"
 #~ msgstr ""
 #~ "No s'han trobat esquemes de color.\n"
 #~ "Voleu instal·lar els esquemes de color per omissió ?"
-
-#~ msgid "Disabled"
-#~ msgstr "Desactivat"
-
-#~ msgid "Selected"
-#~ msgstr "Seleccionat"
 
 #~ msgid "Name"
 #~ msgstr "Nom"
@@ -461,21 +474,3 @@ msgstr "Text de selecció"
 
 #~ msgid "&Style"
 #~ msgstr "&Estil"
-
-#~ msgid "Color"
-#~ msgstr "Color"
-
-#~ msgid "Flat"
-#~ msgstr "Llis"
-
-#~ msgid "Gradient"
-#~ msgstr "Gradient"
-
-#~ msgid "Portrait"
-#~ msgstr "Vertical"
-
-#~ msgid "Landscape"
-#~ msgstr "Apaïsat"
-
-#~ msgid "Desktop Title"
-#~ msgstr "Nom d'escriptori"

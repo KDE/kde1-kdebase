@@ -390,4 +390,3 @@ msgstr "Aktiivinen ikkuna"
 #: widgetcanvas.cpp:177 widgetcanvas.cpp:178
 msgid "Selected text"
 msgstr "Valittu teksti"
-

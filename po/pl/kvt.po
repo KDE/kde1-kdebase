@@ -178,8 +178,7 @@ msgstr ""
 "Piotr Roszatycki (dexter@fnet.pl)\n"
 "\n"
 "Emulacja terminala dla ¦rodowiska Graficznego KDE\n"
-"oparta o rxvt-2.08 Roberta Nation'a"
-"\n"
+"oparta o rxvt-2.08 Roberta Nation'a\n"
 
 #: main.C:1155
 msgid "Permitted arguments are:\n"
@@ -189,7 +188,8 @@ msgstr "Dozwolone argumenty to:\n"
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <polecenie> <arg> ...  wywo³anie polecenia z arg. - musi byæ ostatnim arg\n"
+"-e <polecenie> <arg> ...  wywo³anie polecenia z arg. - musi byæ ostatnim "
+"arg\n"
 
 #: main.C:1157
 msgid "-display <name>           specify the display (server)\n"
@@ -297,4 +297,3 @@ msgid ""
 msgstr ""
 "-grk9\t\tgreek kbd = ELOT 928 (domy¶lnie)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
-

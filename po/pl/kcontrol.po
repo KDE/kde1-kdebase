@@ -38,4 +38,3 @@ msgstr ""
 "\n"
 "Polskie t³umaczenie:\n"
 "Piotr Roszatycki <dexter@fnet.pl>"
-

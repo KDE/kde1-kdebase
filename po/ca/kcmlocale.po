@@ -1,0 +1,60 @@
+# KCMLOCALE CATALAN TRANSLATION
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Sebastià Pla <sastia@redestb.es>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmlocale\n"
+"POT-Creation-Date: 1998-03-19 22:19+0100\n"
+"PO-Revision-Date: 1998-03-24 23:10+0100\n"
+"Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
+"Language-Team: CATALAN <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:51
+msgid "&Locale"
+msgstr "&Escenari"
+
+#: main.cpp:57
+msgid "usage: kcmlocale [-init | language]\n"
+msgstr "us: kcmlocale [-init | language]\n"
+
+#: main.cpp:79
+msgid "Locale settings"
+msgstr "Valors de l'escenari"
+
+#: locale.cpp:40
+msgid "Language"
+msgstr "Idioma"
+
+#: locale.cpp:45
+msgid "First"
+msgstr "Primer"
+
+#: locale.cpp:52
+msgid "Second"
+msgstr "Segon"
+
+#: locale.cpp:59
+msgid "Third"
+msgstr "Tercer"
+
+#: locale.cpp:94
+msgid "without name!"
+msgstr "sense nom!"
+
+#: locale.cpp:160
+msgid "Applying language settings"
+msgstr "Aplicant valors d'idioma"
+
+#: locale.cpp:161
+msgid ""
+"Changed language settings apply only to newly started applications.\n"
+"To change the language of all programs, you will have to logout first."
+msgstr ""
+"Els canvis als valors d'idioma només s'apliquen a les aplicacions engegades "
+"de nou.\n"
+"Per canviar l'idioma de tots els programes, primer haureu de sortir."

@@ -270,9 +270,8 @@ msgstr ""
 "Strefa prze³±czenia okna:\n"
 "       (w pikselach)"
 
-msgid "Random placement"
-msgstr "Przypadkowe umiejscawianie"
+#~ msgid "Random placement"
+#~ msgstr "Przypadkowe umiejscawianie"
 
-msgid "Smart placement"
-msgstr "Inteligentne umiejscawianie"
-
+#~ msgid "Smart placement"
+#~ msgstr "Inteligentne umiejscawianie"

@@ -1,35 +1,44 @@
+# KLOCK CATALAN TRANSLATION
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Sebastià Pla <sastia@redestb.es>, 1998.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: klock\n"
 "POT-Creation-Date: 1998-03-19 22:17+0100\n"
-"PO-Revision-Date: 1998-01-26 20:00+0000\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+"PO-Revision-Date: 1998-03-26 23:10+0100\n"
+"Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
+"Language-Team: CATALAN <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
 #: banner.cpp:56
 msgid "Banner"
-msgstr "Mensagem"
+msgstr "Pancarta"
 
 #: banner.cpp:78
 msgid "Setup kbanner"
-msgstr "Configurar Mensagem"
+msgstr "Valors kbanner"
 
 #: banner.cpp:116 blankscrn.cpp:65
 msgid "Color:"
-msgstr "Cor:"
+msgstr "Color:"
 
 #: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
 #: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1021 polygon.cpp:101
 #: rock.cpp:550 slip.cpp:366 space.cpp:587 swarm.cpp:330
 msgid "Speed:"
-msgstr "Velocidade:"
+msgstr "Velocitat:"
 
 #: banner.cpp:146
 msgid "Message:"
-msgstr "Mensagem:"
+msgstr "Missatge:"
 
 #: banner.cpp:315
 msgid "About Banner"
-msgstr "Acerca do Mensagem"
+msgstr "Quant a Pancarta"
 
 #: banner.cpp:316
 msgid ""
@@ -38,30 +47,30 @@ msgid ""
 "written by Martin R. Jones 1996\n"
 "mjones@kde.org"
 msgstr ""
-"Mensagem Versão 0.1\n"
+"Pancarta Versió 0.1\n"
 "\n"
-"escrito por Martin R. Jones 1996\n"
+"Escrit per Martin R. Jones 1996\n"
 "mjones@kde.org"
 
 #: banner.cpp:419
 msgid "KDE is great"
-msgstr "KDE é espectacular"
+msgstr "KDE és colossal"
 
 #: bat.cpp:457
 msgid "Bat"
-msgstr "Morcego"
+msgstr "Rat Penat"
 
 #: bat.cpp:532
 msgid "Setup KBat"
-msgstr "Configurar Morcego"
+msgstr "Valors KBat"
 
 #: bat.cpp:548
 msgid "Number of bats:"
-msgstr "Numero de morcegos:"
+msgstr "Número de rats penats:"
 
 #: bat.cpp:636
 msgid "About Bat"
-msgstr "Acerca de Morcego"
+msgstr "Quant a Rat Penat"
 
 #: bat.cpp:637
 msgid ""
@@ -71,59 +80,59 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
-"Morcego\n"
+"Rat Penat\n"
 "\n"
 "Copyright (c) 1986 by Sun Microsystems\n"
 "\n"
-"Transposto para o kscreensave por Emanuel Pirker."
+"Portat a kscreensave per Emanuel Pirker."
 
 #: blankscrn.cpp:49
 msgid "Blank Screen"
-msgstr "Écran Vazio"
+msgstr "Pantalla en blanc"
 
 #: blankscrn.cpp:63
 msgid "Setup kblankscrn"
-msgstr "Configurar Écran Vazio"
+msgstr "Valors kblankscrn"
 
 #: blob.cpp:53
 msgid "Random Linear"
-msgstr "Linhas Aleatórias"
+msgstr "Lineal Aleatòri"
 
 #: blob.cpp:54
 msgid "Horizonal Sine"
-msgstr "Seno Horizontal"
+msgstr "Sinus Horitzontal"
 
 #: blob.cpp:55
 msgid "Circular Bounce"
-msgstr "Saltos Circulares"
+msgstr "Rebot Circular"
 
 #: blob.cpp:56
 msgid "Polar Coordinates"
-msgstr "Coordenadas Polares"
+msgstr "Coordinades Polars"
 
 #: blob.cpp:57
 msgid "Random"
-msgstr "Aleatório"
+msgstr "Aleatòri"
 
 #: blob.cpp:73
 msgid "Sorry. This screensaver needs a color display"
-msgstr "Lamento. Este protector de écran necessita de um monitor a cores"
+msgstr "Ho sento. Al salvapantalles li cal una pantalla de color"
 
 #: blob.cpp:452
 msgid "Setup Blob Saver"
-msgstr "Configurar Blob"
+msgstr "Valors Taca"
 
 #: blob.cpp:455
 msgid "Frame Show sec."
-msgstr "Mostrar Frames sec."
+msgstr "Segons Trama"
 
 #: blob.cpp:463
 msgid "Algorithm"
-msgstr "Algoritmo"
+msgstr "Algorisme"
 
 #: blob.cpp:543
 msgid "About Blob"
-msgstr "Acerca do Blob"
+msgstr "Quant a Taca"
 
 #: blob.cpp:544
 msgid ""
@@ -132,34 +141,34 @@ msgid ""
 "written by Tiaan Wessels 1997\n"
 "tiaan@netsys.co.za"
 msgstr ""
-"Blobsaver Versão 0.1\n"
+"SalvaTaca Versió 0.1\n"
 "\n"
-"escrito por Tiaan Wessels 1997\n"
+"Escrit per Tiaan Wessels 1997\n"
 "tiaan@netsys.co.za"
 
 #: blob.cpp:579
 msgid "Blobs"
-msgstr "Blobs"
+msgstr "Taca"
 
 #: flame.cpp:303
 msgid "Flame"
-msgstr "Chama"
+msgstr "Flama"
 
 #: flame.cpp:390
 msgid "Setup KFlame"
-msgstr "Configurar Chama"
+msgstr "Valors KFlame"
 
 #: flame.cpp:406
 msgid "Max Levels:"
-msgstr "Níveis Max:"
+msgstr "Màxim Nivells:"
 
 #: flame.cpp:416
 msgid "Num Points:"
-msgstr "Num de Pontos:"
+msgstr "Número Punts:"
 
 #: flame.cpp:521
 msgid "About Flame"
-msgstr "Acerca do Chama"
+msgstr "Quant a Flama"
 
 #: flame.cpp:522
 msgid ""
@@ -169,27 +178,27 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-"Chama Versão 3.3\n"
+"Flama Versió 3.3\n"
 "\n"
-"Copyright (c) 1991 por Patrick J. Naughton\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Transposto para o kscreensave por Martin Jones."
+"Portat a kscreensave per Martin Jones."
 
 #: forest.cpp:200
 msgid "Forest"
-msgstr "Floresta"
+msgstr "Bosc"
 
 #: forest.cpp:272
 msgid "Setup KForest"
-msgstr "Configurar Floresta"
+msgstr "Valors KForest"
 
 #: forest.cpp:288
 msgid "Num of Trees:"
-msgstr "Num de Arvores:"
+msgstr "Número d'arbres:"
 
 #: forest.cpp:375
 msgid "About Forest"
-msgstr "Acerca do Floresta"
+msgstr "Quant a Bosc"
 
 #: forest.cpp:376
 msgid ""
@@ -199,31 +208,31 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
-"Floresta\n"
+"Bosc\n"
 "\n"
-"Copyright (c) 1995 por Pascal Pensa\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
 "\n"
-"Transposto para o kscreensave por Emanuel Pirker."
+"Portat a kscreensave per Emanuel Pirker."
 
 #: hop.cpp:221
 msgid "Hop"
-msgstr "Hop"
+msgstr "Bot"
 
 #: hop.cpp:306
 msgid "Setup KHop"
-msgstr "Configurar Hop"
+msgstr "Valors KHop"
 
 #: hop.cpp:322
 msgid "Samecolor Pixels:"
-msgstr "Pixels iguais:"
+msgstr "Píxels mateix color:"
 
 #: hop.cpp:332 lissie.cpp:346
 msgid "Cycles:"
-msgstr "Ciclos:"
+msgstr "Cicles:"
 
 #: hop.cpp:437
 msgid "About Hop"
-msgstr "Acerca do Hop"
+msgstr "Quant a Bot"
 
 #: hop.cpp:438
 msgid ""
@@ -233,11 +242,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
-"Hop Versão 3.3\n"
+"Bot Versió 3.3\n"
 "\n"
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Transpost para o kscreensave por Emanuel Pirker."
+"Portat a kscreensave per Emanuel Pirker."
 
 #: laser.cpp:327
 msgid "Laser"
@@ -245,11 +254,11 @@ msgstr "Laser"
 
 #: laser.cpp:387
 msgid "Setup KLaser"
-msgstr "Configurar Laser"
+msgstr "Valors KLaser"
 
 #: laser.cpp:462
 msgid "About Laser"
-msgstr "Acerca do Laser"
+msgstr "Quant a Laser"
 
 #: laser.cpp:463
 msgid ""
@@ -259,39 +268,39 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-"Laser Versão 3.3\n"
+"Laser Versió 3.3\n"
 "\n"
-"Copyright (c) 1995 por Pascal Pensa\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
 "\n"
-"Transposto para o kscreensave by Martin Jones."
+"Portat a kscreensave per Martin Jones."
 
 #: lines.cpp:110
 msgid "Lines"
-msgstr "Linhas"
+msgstr "Línies"
 
 #: lines.cpp:128
 msgid "Setup klines"
-msgstr "Configurar Linhas"
+msgstr "Valors klines"
 
 #: lines.cpp:130 polygon.cpp:81
 msgid "Length:"
-msgstr "Tamanho:"
+msgstr "Llarg:"
 
 #: lines.cpp:150
 msgid "Beginning:"
-msgstr "Inicio:"
+msgstr "Inici:"
 
 #: lines.cpp:159
 msgid "Middle:"
-msgstr "Meio:"
+msgstr "Meitat:"
 
 #: lines.cpp:168
 msgid "End:"
-msgstr "Fim:"
+msgstr "Final:"
 
 #: lines.cpp:259
 msgid "About Lines"
-msgstr "Acerca do Lines"
+msgstr "Quant a Línies"
 
 #: lines.cpp:260
 msgid ""
@@ -300,9 +309,9 @@ msgid ""
 "written by Dirk Staneker 1997\n"
 "dirk.stanerker@student.uni-tuebingen.de"
 msgstr ""
-"Lines Versão 0.1.1\n"
+"Línies Versió 0.1.1\n"
 "\n"
-"escrito por Dirk Staneker 1997\n"
+"Escrit per Dirk Staneker 1997\n"
 "dirk.stanerker@student.uni-tuebingen.de"
 
 #: lissie.cpp:234
@@ -311,15 +320,15 @@ msgstr "Lissie"
 
 #: lissie.cpp:320
 msgid "Setup KLissie"
-msgstr "Configurar Lissie"
+msgstr "Valors KLissie"
 
 #: lissie.cpp:336
 msgid "Num of Lissies:"
-msgstr "Numero de Lissies:"
+msgstr "Número de Lissies:"
 
 #: lissie.cpp:451
 msgid "About Lissie"
-msgstr "Acerca do Lissie"
+msgstr "Quant a Lissie"
 
 #: lissie.cpp:452
 msgid ""
@@ -331,14 +340,14 @@ msgid ""
 msgstr ""
 "Lissie\n"
 "\n"
-"Copyright (c) 1996 por Alexander Jolk\n"
+"Copyright (c) 1996 by Alexander Jolk\n"
 "\n"
-"Transposto para o kscreensave por Emanuel Pirker."
+"Portat a kscreensave per Emanuel Pirker."
 
 #: main.cpp:279
 #, c-format
 msgid "Option %s is not support on this plattform!"
-msgstr "Opção %s não é suportada neste plataforma!"
+msgstr ""
 
 #: main.cpp:306
 msgid ""
@@ -347,13 +356,14 @@ msgid ""
 "\n"
 "Tell him, that you need suid for the screensavers!"
 msgstr ""
-"Este sistema utiliza shadow passwords!\n"
-"Por favor contacte o seu administrador de sistema.\n"
-"Diga-lhe que precisa de suid para os screensavers!"
+"El seu sistema utilitza paraules de pas ombra!\n"
+"Si us plau, contacteu amb l'administrador del sistema.\n"
+"\n"
+"Digueu-li que us cal suid pels salvapantalles!"
 
 #: main.cpp:311
 msgid "Shadow Passwords"
-msgstr "Passwords Shadow"
+msgstr "Paraules de pas ombra"
 
 #: main.cpp:469
 #, c-format
@@ -361,8 +371,8 @@ msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 msgstr ""
-"Utilização: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+"Us: %s -install|-setup|-test|-desc|-preview mid|-inroot\n"
+"    [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
 #: main.cpp:472
 msgid ""
@@ -383,27 +393,26 @@ msgid ""
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
-"  -corners xxxx     Colocar o cursor no écran produz a seguinte acção:\n"
-"                     x = i  nenhuma acção (ignorar)\n"
-"                     x = s  proteger écran\n"
-"                     x = l  trancar écran\n"
-"                    ordem: topo-esquerdo, topo-direito, fundo-esquerdo, "
-"fundo-direito\n"
-"  -delay num        Quantidade de tempo parado antes de começar a\n"
-"                     protecção do écran  (por defeito 10min)\n"
-"  -desc             Imprime a descrição para o stdout\n"
-"  -install          Instalar a protecção de écran\n"
-"  -lock             Requerer a password para parar a protecção de écran\n"
-"  -nice num         Executar com o valor especificado de nice\n"
+"  -corners xxxx     En situar el cursor al racó s'efectua l'acció:\n"
+"                     x = i  cap acció (ignorar)\n"
+"                     x = s  salvar pantalla\n"
+"                     x = l  bloquejar pantalla\n"
+"                    ordre: dalt-esq, dalt-dreta, baix-esq, baix-dreta\n"
+"  -delay num        Temps d'inactivitat abans d'engegar el salvapantalles\n"
+"                      (10 minuts per omissió)\n"
+"  -desc             Imprimir la descripció del salvapantalles a la sortida\n"
+"  -install          Instal·lar el salvapantalles\n"
+"  -lock             Demanar la paraula de pas per aturar el salvapantalles\n"
+"  -nice num         Executar amb el valor nice especificat\n"
 "\n"
-"  -preview wid      Executar na X Window especificada\n"
-"  -inroot           Executar na janela de root\n"
-"  -setup            Configurar protecção de écran\n"
-"  -test             Inicializar a protecção de écran imediatamente\n"
+"  -preview wid      Executar a la finestra X especificada\n"
+"  -inroot           Executar a la finestra X\n"
+"  -setup            Valors del salvapantalles\n"
+"  -test             Invocar el salvapantalles immediatament\n"
 
 #: morph3d.cpp:839 space.cpp:419
 msgid "GL can not render with root visual\n"
-msgstr "GL não consegue criar com visual de raiz\n"
+msgstr "GL no pot representar amb visual root\n"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
@@ -411,15 +420,15 @@ msgstr "Morph3D (GL)"
 
 #: morph3d.cpp:1015
 msgid "Setup KMorph3d"
-msgstr "Configurar Morph3d"
+msgstr "Valors KMorph3d"
 
 #: morph3d.cpp:1031
 msgid "Object Type:"
-msgstr "Tipo de Objecto:"
+msgstr "Tipus Objecte:"
 
 #: morph3d.cpp:1120
 msgid "About Morph3D"
-msgstr "Acerca do Morph3D"
+msgstr "Quant a Morph3D"
 
 #: morph3d.cpp:1121
 msgid ""
@@ -431,25 +440,25 @@ msgid ""
 msgstr ""
 "Morph3D\n"
 "\n"
-"Copyright (c) 1997 por Marcelo F. Vianna\n"
+"Copyright (c) 1997 by Marcelo F. Vianna\n"
 "\n"
-"Transposto para kscreensave por Emanuel Pirker."
+"Portat a kscreensave per Emanuel Pirker."
 
 #: polygon.cpp:58
 msgid "Polygons"
-msgstr "Poligonos"
+msgstr "Polígons"
 
 #: polygon.cpp:79
 msgid "Setup kpolygon"
-msgstr "Configurar Poligonos"
+msgstr "Valors kpolygon"
 
 #: polygon.cpp:91
 msgid "Vertices:"
-msgstr "Vertices:"
+msgstr "Vèrtex"
 
 #: polygon.cpp:209
 msgid "About Polygon"
-msgstr "Acerca do Poligonos"
+msgstr "Quant a Polígon"
 
 #: polygon.cpp:210
 msgid ""
@@ -458,9 +467,9 @@ msgid ""
 "written by Martin R. Jones 1996\n"
 "mjones@kde.org"
 msgstr ""
-"Poligonos Versão 0.1\n"
+"Polígon Versió 0.1\n"
 "\n"
-"escrito por Martin R. Jones 1996\n"
+"Escrit per Martin R. Jones 1996\n"
 "mjones@kde.org"
 
 #: pyro.cpp:433
@@ -469,19 +478,19 @@ msgstr "Pyro"
 
 #: pyro.cpp:511
 msgid "Setup KPyro"
-msgstr "Configurar Pyro"
+msgstr "Valors KPyro"
 
 #: pyro.cpp:517 rock.cpp:560
 msgid "Number:"
-msgstr "Numero:"
+msgstr "Número:"
 
 #: pyro.cpp:527
 msgid "Cloud"
-msgstr "Nuvem"
+msgstr "Núvol"
 
 #: pyro.cpp:608
 msgid "About Pyro"
-msgstr "Acerca do Pyro"
+msgstr "Quant a Pyro"
 
 #: pyro.cpp:609
 msgid ""
@@ -491,31 +500,31 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-"Pyro Versão 3.4\n"
+"Pyro Versió 3.4\n"
 "\n"
-"Copyright (c) 1991 por Patrick J. Naughton\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Transposto para kscreensave by Martin Jones."
+"Portat a  kscreensave per Martin Jones."
 
 #: rock.cpp:436
 msgid "Rock"
-msgstr "Rocha"
+msgstr "Roca"
 
 #: rock.cpp:544
 msgid "Setup krock"
-msgstr "Configurar Rocha"
+msgstr "Valors krock"
 
 #: rock.cpp:570
 msgid "Move"
-msgstr "Mover"
+msgstr "Moviment"
 
 #: rock.cpp:575
 msgid "Rotate"
-msgstr "Rodar"
+msgstr "Rotació"
 
 #: rock.cpp:693
 msgid "About Rock"
-msgstr "Acerca de Rocha"
+msgstr "Quant a Roca"
 
 #: rock.cpp:694
 msgid ""
@@ -525,19 +534,19 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-"Rocha Versão 3.3\n"
+"Roca Versió 3.3\n"
 "\n"
-"Copyright (c) 1992 por Jamie Zawinski\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
 "\n"
-"Transposto para kscreensave by Martin Jones."
+"Portat a kscreensave per Martin Jones."
 
 #: saver.cpp:52 saver.cpp:112
 msgid "Enter Password"
-msgstr "Password"
+msgstr "Paraula de pas"
 
 #: saver.cpp:82
 msgid "Failed"
-msgstr "Falhou"
+msgstr "Fallat"
 
 #: slip.cpp:287
 msgid "Slip"
@@ -545,15 +554,15 @@ msgstr "Slip"
 
 #: slip.cpp:360
 msgid "Setup KSlip"
-msgstr "Configurar Slip"
+msgstr "Valors KSlip"
 
 #: slip.cpp:376
 msgid "Batchcount:"
-msgstr "Quantidade:"
+msgstr "Pilons:"
 
 #: slip.cpp:464
 msgid "About Slip"
-msgstr "Acerca do Slip"
+msgstr "Quant a Slip"
 
 #: slip.cpp:465
 msgid ""
@@ -565,25 +574,27 @@ msgid ""
 msgstr ""
 "Slip\n"
 "\n"
-"Copyright (c) 1991 por Scott Draves\n"
+"Copyright (c) 1991 by Scott Draves\n"
 "\n"
-"Transposto para kscreensave por Emanuel Pirker."
+"Portat a kscreensave per Emanuel Pirker."
 
 #: space.cpp:491
 msgid "Space (GL)"
-msgstr "Espaço (GL)"
+msgstr ""
 
 #: space.cpp:581
+#, fuzzy
 msgid "Setup KSpace"
-msgstr "Configurar Espaço"
+msgstr "Valors KSlip"
 
 #: space.cpp:597
 msgid "Warp Interval:"
-msgstr "Intervalo de Wrap:"
+msgstr ""
 
 #: space.cpp:685
+#, fuzzy
 msgid "About KSpace"
-msgstr "Acerca do Espaço"
+msgstr "Quant a Slip"
 
 #: space.cpp:687
 msgid ""
@@ -591,25 +602,22 @@ msgid ""
 "Copyright (c) 1998\n"
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 msgstr ""
-"Espaço\n"
-"Copyright (c) 1998\n"
-"Bernd Johannes Wuebben <wuebben@kde.org>"
 
 #: swarm.cpp:252
 msgid "Swarm"
-msgstr "Enxame"
+msgstr "Eixam"
 
 #: swarm.cpp:324
 msgid "Setup KSwarm"
-msgstr "Configurar Enxame"
+msgstr "Valors KSwarm"
 
 #: swarm.cpp:340
 msgid "Number of Bees:"
-msgstr "Abelhas:"
+msgstr "Número d'abelles"
 
 #: swarm.cpp:427
 msgid "About Swarm"
-msgstr "Acerca do Enxame"
+msgstr "Quant a Eixam"
 
 #: swarm.cpp:428
 msgid ""
@@ -619,8 +627,8 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
-"Enxame\n"
+"Eixam\n"
 "\n"
-"Copyright (c) 1991 por Patrick J. Naughton\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Transposto para kscreensave por Emanuel Pirker."
+"Portat a kscreensave per Emanuel Pirker."

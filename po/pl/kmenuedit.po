@@ -254,4 +254,3 @@ msgstr "Prywatne:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Domy¶lne:"
-

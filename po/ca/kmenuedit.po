@@ -1,53 +1,64 @@
+# KMENUEDIT CATALAN TRANSLATION
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Sebastià Pla <sastia@redestb.es>, 1998.
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
 "POT-Creation-Date: 1998-03-19 22:17+0100\n"
-"PO-Revision-Date: 1998-01-22 00:00+0100\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+"PO-Revision-Date: 1998-03-19 23:20+0100\n"
+"Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
+"Language-Team: CATALAN <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
 #: kmenuedit.cpp:62
+#, fuzzy
 msgid "&Reload"
-msgstr "&Recarregar Menus"
+msgstr "Refrescar Menús"
 
 #: kmenuedit.cpp:68
+#, fuzzy
 msgid "Change &Menuname"
-msgstr "Mudar Nome do &Menu"
+msgstr "Canviar Noms de Menú"
 
 #: kmenuedit.cpp:69
+#, fuzzy
 msgid "Reload &Filetypes"
-msgstr "Recarregar Tipos de &Ficheiro"
+msgstr "Refrescar tipus fitxers"
 
 #: kmenuedit.cpp:76
 msgid "by"
-msgstr "por"
+msgstr ""
 
 #: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
-msgstr "Modificações não gravadas!"
+msgstr "Els canvis no s'han desat!"
 
 #: kmenuedit.cpp:176 kmenuedit.cpp:201
+#, fuzzy
 msgid ""
 "\n"
 "Do you want to save your changes ?"
-msgstr ""
-"\n"
-"Quer gravar as suas modificações ?"
+msgstr "Voleu desar els canvis ?"
 
 #: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"
-msgstr "VAZIO"
+msgstr "BUIT"
 
 #: kmenuedit.cpp:335
 msgid "Reload Menus"
-msgstr "Recarregar Menus"
+msgstr "Refrescar Menús"
 
 #: kmenuedit.cpp:336
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
 msgstr ""
-"Recarregando os menus vai perder todas as modificações.\n"
-"Tem a certeza que quer recarregar ?"
+"Al refrescar els menús llençareu tots els canvis.\n"
+"De veres voleu refrescar ?"
 
 #: button.cpp:209 main.cpp:77 main.cpp:90
 msgid "KMenuedit"
@@ -58,16 +69,16 @@ msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
 msgstr ""
-"A directoria para o seu menu personalizado não existe.\n"
-" Quer cria-la agora?"
+"El directori pel vostre menú personal no hi és.\n"
+" El voleu crear ara ?"
 
 #: main.cpp:91
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
 msgstr ""
-"Não é possível criar directory para menu personalizado.\n"
-" Seleccione Ok para sair do KMenuedit."
+"No es pot crear el directori pel menú personal.\n"
+" Trieu Bé per sortir de KMenuedit."
 
 #: confmenu.cpp:90 entrydialog.cpp:52
 msgid "Separator"
@@ -75,144 +86,146 @@ msgstr "Separador"
 
 #: confmenu.cpp:102 confmenu.cpp:317
 msgid "Open/ Close"
-msgstr "Abrir/ Fechar"
+msgstr "Obrir/ Tancar"
 
 #: confmenu.cpp:110
 msgid "! PROTECTED Button !"
-msgstr "! Botão PROTEGIDO !"
+msgstr "! Botó PROTEGIT !"
 
 #: confmenu.cpp:171 confmenu.cpp:300
 msgid "Warning !"
-msgstr "Aviso !"
+msgstr "Avís !"
 
 #: confmenu.cpp:172
 msgid "If you delete this button you will lose all of its submenus"
-msgstr "Se apagar este botão vai perder todos os seus submenus"
+msgstr "Si esborreu aquest botó, perdreu tots els seus submenús"
 
 #: confmenu.cpp:281
 msgid "Wrong filename"
-msgstr "Nome de ficheiro errado"
+msgstr "Nom de fitxer erròni"
 
 #: confmenu.cpp:282
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
 msgstr ""
-"Um ficheiro kdelnk com este nome já existe. \n"
-"Por favor escolha outro nome."
+"Ja existeix un fitxer kdelnk amb aquest nom. \n"
+"Si us plau, trieu un altre nom de fitxer."
 
 #: confmenu.cpp:301
 msgid "Changing the type of this button will delete all of its submenus"
-msgstr "Mudar o tipo deste botão vai apagar todos os seus submenus"
+msgstr "Al canviar el tipus d'aquest botó esborrareu tots els seus submenús"
 
 #: confmenu.cpp:322 confmenu.cpp:911
 msgid "no command"
-msgstr "sem comando"
+msgstr "sense comanda"
 
 #: button.cpp:210
 msgid ""
 "Sorry ! You have to save your changes\n"
 "before you can drop this item on another window."
 msgstr ""
-"Desculpe! Tem de gravar as suas alterações\n"
-"antes de poder largar este item noutra janela."
+"Ho sento ! Heu de desar els canvis abans de\n"
+"poder amollar aquest ítem damunt una altra finestra."
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
-msgstr "Caminho para Entradas de Ambiente de Trabalho KDE não está definido."
+msgstr "No s'ha fixat el camí per les entrades de l'escriptori KDE."
 
 #: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"
-msgstr "Sugiro esta configuração:"
+msgstr "Suggereixo les següents entrades:"
 
 #: DesktopPathDialogData.cpp:55
 msgid "Path:"
-msgstr "Caminho:"
+msgstr "Camí:"
 
 #: DesktopPathDialogData.cpp:68
 msgid "PersonalPath:"
-msgstr "Caminho Pessoal:"
+msgstr "Camí personal:"
 
 #: entrydialog.cpp:53
 msgid "Submenu"
-msgstr "Submenu"
+msgstr "Submenú"
 
 #: entrydialog.cpp:54 entrydialog.cpp:167 entrydialog.cpp:536
 #: entrydialog.cpp:541
 msgid "Application"
-msgstr "Aplicação"
+msgstr "Aplicació"
 
 #: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
 msgid "Swallow"
-msgstr "Engolir"
+msgstr ""
 
 #: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
 msgid "Link"
-msgstr "Ligação"
+msgstr "Enllaç"
 
 #: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
 msgid "Device"
-msgstr "Dispositivo"
+msgstr "Dispositiu"
 
 #: entrydialog.cpp:63
 msgid "Type:"
-msgstr "Tipo:"
+msgstr "Tipus:"
 
 #: entrydialog.cpp:69
 msgid "File Name:"
-msgstr "Nome do Ficheiro:"
+msgstr "Nom de fitxer:"
 
 #: entrydialog.cpp:82
 msgid "Name:"
-msgstr "Nome:"
+msgstr "Nom:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"
-msgstr "Mini Ícone:"
+msgstr "Mini icona:"
 
 #: entrydialog.cpp:127
 msgid "Icon:"
-msgstr "Ícone:"
+msgstr "Icona:"
 
 #: entrydialog.cpp:133
 msgid "Comment:"
-msgstr "Comentário:"
+msgstr "Comentari:"
 
 #: entrydialog.cpp:165 entrydialog.cpp:535
 msgid "Execute"
-msgstr "Executar"
+msgstr "Execució"
 
 #: entrydialog.cpp:186
 msgid "Execute:"
-msgstr "Executar:"
+msgstr "Execució:"
 
 #: entrydialog.cpp:192
 msgid "Working Directory:"
-msgstr "Directoria de Trabalho:"
+msgstr "Directori de treball:"
 
 #: entrydialog.cpp:205
 msgid "Run in terminal"
-msgstr "Correr em terminal"
+msgstr "Execució a terminal"
 
 #: entrydialog.cpp:211
 msgid "Terminal Options:"
-msgstr "Opções do Terminal:"
+msgstr "Opcions de terminal:"
 
 #: entrydialog.cpp:292
 msgid "Binary Pattern:"
-msgstr "Padrão Binário:"
+msgstr "Patró binari"
 
 #: entrydialog.cpp:300
+#, fuzzy
 msgid "Application to swallow:"
-msgstr "Aplicação para engolir:"
+msgstr "Aplicació"
 
 #: entrydialog.cpp:306
+#, fuzzy
 msgid "Title of application:"
-msgstr "Título da aplicação:"
+msgstr "Aplicació"
 
 #: entrydialog.cpp:312
 msgid "Application to execute on button press:"
-msgstr "Aplicação a executar quando clicado:"
+msgstr ""
 
 #: entrydialog.cpp:342
 msgid "URL:"
@@ -220,36 +233,54 @@ msgstr "URL:"
 
 #: entrydialog.cpp:391
 msgid "Read Only"
-msgstr "Leitura Apenas"
+msgstr "Només lectura"
 
 #: entrydialog.cpp:397
 msgid "Device:"
-msgstr "Dispositivo:"
+msgstr "Dispositiu:"
 
 #: entrydialog.cpp:403
 msgid "Mount Point:"
-msgstr "Ponto de Montagem:"
+msgstr "Punt de muntatge:"
 
 #: entrydialog.cpp:409
 msgid "FS Type:"
-msgstr "Tipo de FS:"
+msgstr "Tipus FS:"
 
 #: entrydialog.cpp:415
 msgid "Unmount Icon:"
-msgstr "Icon para Desmontar:"
+msgstr "Icona desmuntat:"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"
-msgstr "Mudar Nome de Menus"
+msgstr "Canviar noms de menú"
 
 #: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "Mudar o nome dos menus"
+msgstr "Canviar el nom dels menús tal com es mostren a kpanel"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"
-msgstr "Pessoal:"
+msgstr "Personal:"
 
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
-msgstr "Por defeito:"
+msgstr "Omissió:"
+
+#~ msgid ""
+#~ "KMenuedit 0.2.3\n"
+#~ "(C) by Christoph Neerfeld\n"
+#~ "Christoph.Neerfeld@bonn.netsurf.de"
+#~ msgstr ""
+#~ "KMenuedit 0.2.3\n"
+#~ "(C) by Christoph Neefeld\n"
+#~ "Christoph.Neerfeld@bonn.netsurf.de"
+
+#~ msgid "Fvwm Command"
+#~ msgstr "Comanda Fvwm"
+
+#~ msgid "Fvwm"
+#~ msgstr "Fvwm"
+
+#~ msgid "Fvwm Command:"
+#~ msgstr "Comanda Fvwm"

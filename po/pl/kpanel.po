@@ -89,4 +89,3 @@ msgstr "Panel"
 #: props.C:148
 msgid "Lock Screen"
 msgstr "Zablokuj ekran"
-

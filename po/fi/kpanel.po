@@ -96,4 +96,3 @@ msgstr "Paneeli"
 #: props.C:148
 msgid "Lock Screen"
 msgstr "Lukitse näyttö"
-

@@ -122,9 +122,8 @@ msgstr "&24h"
 msgid "&12h AM/PM"
 msgstr "&12h AM/PM"
 
-msgid "Tiny Style"
-msgstr "Ma³y"
+#~ msgid "Tiny Style"
+#~ msgstr "Ma³y"
 
-msgid "Large Style"
-msgstr "Du¿y"
-
+#~ msgid "Large Style"
+#~ msgstr "Du¿y"
