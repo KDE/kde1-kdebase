@@ -21,7 +21,7 @@
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#include <iostream.h> 
+#include <iostream.h>
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -45,6 +45,7 @@
 #define KWM_MAXIMIZE  "MaximizeOnlyVertically"
 #define KWM_RESIZE_ANIM    "ResizeAnimation"
 #define KWM_RESIZE_OPAQUE    "WindowResizeType"
+#define KWM_AUTORAISE_INTERVAL "AutoRaiseInterval"
 #define KWM_AUTORAISE "AutoRaise"
 
 // CT 19jan98
@@ -75,7 +76,7 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   wLay->addLayout(rLay);
   rLay->setColStretch(0,0);
   rLay->setColStretch(1,1);
-  
+
   //CT checkboxes: maximize, move, resize behaviour
   vertOnly = new QCheckBox(klocale->translate("Vertical maximization only by default"), windowsBox);
   vertOnly->adjustSize();
@@ -91,7 +92,7 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   resizeOpaqueOn->adjustSize();
   resizeOpaqueOn->setMinimumSize(resizeOpaqueOn->size());
   bLay->addWidget(resizeOpaqueOn);
- 
+
   // resize animation - CT 27May98; 19Oct1998
   resizeAnimTitleLabel = new QLabel(klocale->translate("Resize animation:"),
 				    windowsBox);
@@ -124,7 +125,7 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
 
   // placement policy --- CT 19jan98, 13mar98 ---
   plcBox = new QButtonGroup(klocale->translate("Placement policy"),this);
-  
+
   QGridLayout *pLay = new QGridLayout(plcBox,2,3,10,5);
   pLay->addRowSpacing(0,10);
 
@@ -149,13 +150,13 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
 	  SLOT(ifPlacementIsInteractive()) );
 
   iTLabel = new QLabel(klocale->translate(i18n("  Allowed overlap:\n"
-					       "(% of desktop space)")), 
+					       "(% of desktop space)")),
 		       plcBox);
   iTLabel->adjustSize();
   iTLabel->setMinimumSize(iTLabel->size());
   iTLabel->setAlignment(AlignTop|AlignHCenter);
   pLay->addWidget(iTLabel,1,1);
-  
+
   interactiveTrigger = new KNumericSpinBox(plcBox);
   interactiveTrigger->setRange(0,500);
   interactiveTrigger->adjustSize();
@@ -165,25 +166,25 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   pLay->activate();
 
   lay->addWidget(plcBox);
-  
+
   // focus policy
   fcsBox = new QButtonGroup(klocale->translate("Focus policy"),this);
-  
+
   QGridLayout *fLay = new QGridLayout(fcsBox,5,3,10,5);
   fLay->addRowSpacing(0,10);
   fLay->setColStretch(0,0);
   fLay->setColStretch(1,1);
   fLay->setColStretch(2,1);
-  
+
 
   focusCombo =  new QComboBox(FALSE, fcsBox);
-  focusCombo->insertItem(klocale->translate("Click to focus"), 
+  focusCombo->insertItem(klocale->translate("Click to focus"),
 			 CLICK_TO_FOCUS);
-  focusCombo->insertItem(klocale->translate("Focus follows mouse"), 
+  focusCombo->insertItem(klocale->translate("Focus follows mouse"),
 			 FOCUS_FOLLOWS_MOUSE);
   focusCombo->insertItem(klocale->translate("Classic focus follows mouse"),
 			 CLASSIC_FOCUS_FOLLOWS_MOUSE);
-  focusCombo->insertItem(klocale->translate("Classic sloppy focus"), 
+  focusCombo->insertItem(klocale->translate("Classic sloppy focus"),
 			 CLASSIC_SLOPPY_FOCUS);
   focusCombo->adjustSize();
   focusCombo->setMinimumSize(focusCombo->size());
@@ -206,7 +207,7 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   alabel->setMinimumSize(alabel->size());
   alabel->setAlignment(AlignVCenter|AlignHCenter);
   fLay->addWidget(alabel,2,1);
-  
+
   s = new QLCDNumber (4, fcsBox);
   s->setFrameStyle( QFrame::NoFrame );
   s->setFixedHeight(30);
@@ -214,13 +215,13 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   s->setMinimumSize(s->size());
   fLay->addWidget(s,2,2);
 
-  autoRaise = new KSlider(100,3000,100,500, KSlider::Horizontal, fcsBox);
+  autoRaise = new KSlider(0,3000,100,500, KSlider::Horizontal, fcsBox);
   autoRaise->setSteps(100,100);
   autoRaise->setFixedHeight(20);
   autoRaise->adjustSize();
   autoRaise->setMinimumSize(alabel->width()+s->width(), autoRaise->height());
   fLay->addMultiCellWidget(autoRaise,3,3,1,2);
- 
+
   connect( autoRaise, SIGNAL(valueChanged(int)), s, SLOT(display(int)) );
 
   fLay->activate();
@@ -255,7 +256,7 @@ int KWindowConfig::getPlacement()
 }
 
 void KWindowConfig::setPlacement(int plac)
-{ 
+{
   placementCombo->setCurrentItem(plac);
 }
 
@@ -313,47 +314,35 @@ int KWindowConfig::getMaximize()
     return MAXIMIZE_FULL;
 }
 
-void KWindowConfig::setAutoRaise(int tb)
+void KWindowConfig::setAutoRaiseInterval(int tb)
 {
-  if (tb <100) {
-    autoRaiseOn->setChecked(FALSE);
-    autoRaiseOnTog(FALSE);
-  }
-  else {
-    autoRaiseOnTog(TRUE);
-    autoRaiseOn->setChecked(TRUE);
     autoRaise->setValue(tb);
     s->display(tb);
-  }
 }
 
-int KWindowConfig::getAutoRaise()
+int KWindowConfig::getAutoRaiseInterval()
 {
-  if (autoRaiseOn->isChecked())
     return s->intValue();
-  else return 0;
 }
 
-void KWindowConfig::setAutoRaiseEnabled( )
+
+void KWindowConfig::setAutoRaise(bool on)
+{
+    autoRaiseOn->setChecked(on);
+}
+
+void KWindowConfig::setAutoRaiseEnabled()
 {
   // the auto raise related widgets are: autoRaise, alabel, s, sec
   if ( focusCombo->currentItem() != CLICK_TO_FOCUS )
     {
       autoRaiseOn->setEnabled(TRUE);
       autoRaiseOnTog(autoRaiseOn->isChecked());
-      /*CT  autoRaise->setEnabled(TRUE);
-      alabel->setEnabled(TRUE);
-      s->setEnabled(TRUE);*/
-      //CT      sec->setEnabled(TRUE);
     }
   else
     {
       autoRaiseOn->setEnabled(FALSE);
       autoRaiseOnTog(FALSE);
-      /*CT  autoRaise->setEnabled(FALSE);
-      alabel->setEnabled(FALSE);
-      s->setEnabled(FALSE);*/
-      //CT      sec->setEnabled(FALSE);
     }
 }
 
@@ -435,11 +424,11 @@ void KWindowConfig::GetSettings( void )
     //CT 31mar98 manual placement
     else if( key == "manual")
       setPlacement(MANUAL_PLACEMENT);
-    
+
     else
       setPlacement(SMART_PLACEMENT);
   }
-  
+
   key = config->readEntry(KWM_FOCUS);
   if( key == "ClickToFocus")
     setFocus(CLICK_TO_FOCUS);
@@ -456,11 +445,12 @@ void KWindowConfig::GetSettings( void )
   else if( key == "off")
     setMaximize(MAXIMIZE_FULL);
 
-  int k = config->readNumEntry(KWM_AUTORAISE,0);
-  setAutoRaise(k);
+  int k = config->readNumEntry(KWM_AUTORAISE_INTERVAL,0);
+  setAutoRaiseInterval(k);
 
-  // this will disable/hide the auto raise delay widget if focus==click
-  setAutoRaiseEnabled();
+  key = config->readEntry(KWM_AUTORAISE);
+  setAutoRaise(key == "on");
+  setAutoRaiseEnabled();      // this will disable/hide the auto raise delay widget if focus==click
 }
 
 void KWindowConfig::SaveSettings( void )
@@ -500,12 +490,12 @@ void KWindowConfig::SaveSettings( void )
     config->writeEntry(KWM_FOCUS,"ClassicSloppyFocus");
   else if (v == CLASSIC_FOCUS_FOLLOWS_MOUSE)
     config->writeEntry(KWM_FOCUS,"ClassicFocusFollowMouse");
-  else 
+  else
     config->writeEntry(KWM_FOCUS,"FocusFollowMouse");
-  
+
   //CT - 17Jun1998
   config->writeEntry(KWM_RESIZE_ANIM, getResizeAnim());
-  
+
 
   v = getResizeOpaque();
   if (v == RESIZE_OPAQUE)
@@ -519,9 +509,15 @@ void KWindowConfig::SaveSettings( void )
   else
     config->writeEntry(KWM_MAXIMIZE, "off");
 
-  v = getAutoRaise();
-  if (v <100) v = 0; //interval set less than 100 disables AutoRaise
-  config->writeEntry(KWM_AUTORAISE,v);
+  v = getAutoRaiseInterval();
+  if (v <0) v = 0; 
+  config->writeEntry(KWM_AUTORAISE_INTERVAL,v);
+
+  if (autoRaiseOn->isChecked())
+    config->writeEntry(KWM_AUTORAISE, "on");
+  else
+    config->writeEntry(KWM_AUTORAISE, "off");
+
 
   config->sync();
 

@@ -24,12 +24,12 @@
 #ifndef __KWINDOWCONFIG_H__
 #define __KWINDOWCONFIG_H__
 
-#include <qlcdnum.h> 
+#include <qlcdnum.h>
 #include <qlabel.h>
 #include <qdialog.h>
 #include <qmsgbox.h>
 #include <qradiobt.h>
-#include <qchkbox.h> 
+#include <qchkbox.h>
 #include <qbttngrp.h>
 #include <qpushbt.h>
 
@@ -79,7 +79,7 @@ public:
 
   void loadSettings();
   void applySettings();
-  
+
 private slots:
   void setAutoRaiseEnabled();
   void ifPlacementIsInteractive();
@@ -95,7 +95,7 @@ private:
   int getPlacement( void ); //CT
   int getFocus( void );
   int getMaximize( void );
-  int getAutoRaise( void );
+  int getAutoRaiseInterval( void );
 
   void setMove(int);
   void setResizeAnim(int);
@@ -103,10 +103,11 @@ private:
   void setPlacement(int); //CT
   void setFocus(int);
   void setMaximize(int);
-  void setAutoRaise(int);
+  void setAutoRaiseInterval(int);
+  void setAutoRaise(bool);
 
   QButtonGroup *windowsBox;
-  QCheckBox *opaque, *vertOnly; 
+  QCheckBox *opaque, *vertOnly;
 
   QCheckBox *resizeOpaqueOn;
   KSlider *resizeAnimSlider;
