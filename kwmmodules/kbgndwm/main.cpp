@@ -45,7 +45,7 @@ int main( int argc, char *argv[] )
 
     // Initialize random generator
     time_t now = time(NULL);
-    srand((unsigned int)now);
+    srandom((unsigned int)now);
 
     KBGndManager kbgnd( &a );
 

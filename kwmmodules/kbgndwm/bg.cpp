@@ -132,7 +132,7 @@ void KBackground::readSettings( int num, bool one, int onedesk )
 	  randomDesk++;
 	  if ( randomDesk >= count ) randomDesk = DEFAULT_DESKTOP;
 	} else if ( count > 0 )
-	  randomDesk = rand() % count;
+	  randomDesk = random() % count;
 
 	config.writeEntry( "Item", randomDesk );
 	config.sync();
@@ -163,7 +163,7 @@ void KBackground::readSettings( int num, bool one, int onedesk )
 	if ( randomDesk >= count ) randomDesk = DEFAULT_DESKTOP;
       }
       else if ( count > 0 )
-	randomDesk = rand() % count;
+	randomDesk = random() % count;
 
     }
     else
