@@ -49,15 +49,25 @@ extern char		*icon_name;	/* name to display in the icon */
  */
 
 /* renamed and changed similar to rxvt-2.18. Matthias */ 
+/* added dynamic term entry (Matthias) */
 void rxvt_main(int argc,char **argv)
 {
   int i;
   char **com_argv = NULL;
   char* s;
+  int len;
+  char* t = "xterm-color";
+  char* put;
   
-  for (i = 0; i < argc; i++)
-    if (strcmp(argv[i],"-e") == 0)
-      break;
+  for (i = 0; i < argc; i++){
+      if (strcmp(argv[i],"-tn") == 0){
+	  i++;
+	  if (i<argc)
+	      t = argv[i];
+      }
+      else if (strcmp(argv[i],"-e") == 0)
+	  break;
+  }
   if (i < argc - 1) 
     {
       argv[i] = NULL;
@@ -65,10 +75,13 @@ void rxvt_main(int argc,char **argv)
       argc = i;
     } 
   
-  /*  Add a TERM entry to the environment.
-   */
-  putenv("TERM=xterm-color");
-  
+
+  len = strlen(t);
+  put= safemalloc(len+10,"display_string");
+  sprintf(put,"TERM=%s",t);
+  putenv(put);
+
+
   if ((s=strrchr(argv[0],'/'))!=NULL) 
     s++; 
   else 

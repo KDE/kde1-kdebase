@@ -227,6 +227,8 @@ void init_display(int argc,char **argv)
 	console = 1;
       else if((strcmp(argv[i],"-T")==0)&&(i+1<argc)) 
  	window_name = argv[++i]; 
+      else if((strcmp(argv[i],"-tn")==0)&&(i+1<argc)) 
+	  ++i; 
       else if((strcmp(argv[i],"-n")==0)&&(i+1<argc)) 
  	icon_name = argv[++i]; 
       else if(strcmp(argv[i],"-7")==0)
@@ -315,6 +317,8 @@ void init_display(int argc,char **argv)
 "-no_scrollbar		hide the scrollbar\n");
  	  fprintf(stderr,
 "-T <text>		text in window titlebar\n");
+ 	  fprintf(stderr,
+"-tn <TERM>		Terminal type. Default is xterm-color.\n");
 	  fprintf(stderr,
 "-C                     Capture system console message\n");
 	  fprintf(stderr,
