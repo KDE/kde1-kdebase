@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcminput\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: 1998-03-20 12:20 MET\n"
+"Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
+"Language-Team: Slovak <bednar@isternet.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:53
+msgid "&Mouse"
+msgstr "&My¹"
+
+#: main.cpp:56
+msgid "&Keyboard"
+msgstr "&Klávesnica"
+
+#: main.cpp:62
+msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
+msgstr "Pou¾itie: kcminput [-init | {mouse,keyboard}]\n"
+
+#: main.cpp:94
+msgid "Input Devices Properties"
+msgstr "Vlastnosti vstupných zariadení"
+
+#: mouse.cpp:75
+msgid "Acceleration"
+msgstr "Akcelerácia"
+
+#: mouse.cpp:81
+msgid "Threshold"
+msgstr "Prah"
+
+#: mouse.cpp:84
+msgid "Button mapping"
+msgstr "Mapovanie tlaèítok"
+
+#: mouse.cpp:86
+msgid "Right handed"
+msgstr "Pravoruké"
+
+#: mouse.cpp:88
+msgid "Left handed"
+msgstr "¥avoruké"
+
+#: keyboard.cpp:67
+msgid "Keyboard repeat"
+msgstr "Opakovanie klávesy"
+
+#: keyboard.cpp:75
+msgid "Key click volume"
+msgstr "Hlasitos» stlaèenia klávesy"

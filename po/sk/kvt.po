@@ -1,0 +1,245 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kvt 0.18.1\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: 1998-03-20 12:20 MET\n"
+"Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
+"Language-Team: Slovak <bednar@isternet.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.C:236
+msgid "Add characters to word class"
+msgstr "Pridaj znaky do triedy slov"
+
+#: main.C:239
+msgid "choose type of color-mode"
+msgstr "Vyber typ farebného módu"
+
+# ???
+#: main.C:242
+msgid "The backspace key will send a"
+msgstr "Backspace bude posielaný ako"
+
+#: main.C:383
+msgid "&New Terminal"
+msgstr "&Nový terminál"
+
+#: main.C:390 main.C:789
+msgid "&Hide"
+msgstr "&Schova»"
+
+#: main.C:391
+msgid "&Left"
+msgstr "N&aµavo"
+
+#: main.C:392
+msgid "&Right"
+msgstr "Nap&ravo"
+
+#: main.C:397
+msgid "&Normal"
+msgstr "&Normálny"
+
+#: main.C:398
+msgid "&Tiny"
+msgstr "&Drobný"
+
+#: main.C:399
+msgid "&Small"
+msgstr "&Malý"
+
+#: main.C:400
+msgid "&Medium"
+msgstr "&Stredný"
+
+#: main.C:401
+msgid "&Large"
+msgstr "V&eµký"
+
+#: main.C:402
+msgid "&Huge"
+msgstr "&Obrovský"
+
+#: main.C:414
+msgid "&black/white"
+msgstr "èierna/&biela"
+
+#: main.C:415
+msgid "&white/black"
+msgstr "b&iela/èierna"
+
+#: main.C:416
+msgid "&green/black"
+msgstr "zelená/èie&rna"
+
+#: main.C:417
+msgid "black/light&yellow"
+msgstr "èierna/svetlo ¾l&tá"
+
+#: main.C:418
+msgid "Linu&x Console"
+msgstr "Linu&x konzola"
+
+#: main.C:427
+msgid "&Custom Colors"
+msgstr "&Vlastné farby"
+
+#: main.C:434 main.C:735
+msgid "Hide &Menubar"
+msgstr "Skry &menu"
+
+#: main.C:436 main.C:599 main.C:727
+msgid "Show &Menubar"
+msgstr "Zobraz &menu"
+
+#: main.C:437 main.C:745
+msgid "Secure &keyboard"
+msgstr "Zabezpeèi» &klávesnicu"
+
+#: main.C:439
+msgid "Scroll&bar"
+msgstr "Scroll&bar"
+
+#: main.C:440
+msgid "&Font size"
+msgstr "Veµkos» &fontu"
+
+#: main.C:441
+msgid "&Color"
+msgstr "F&arba"
+
+#: main.C:442
+msgid "&Size"
+msgstr "Veµko&s»"
+
+#: main.C:443
+msgid "Terminal..."
+msgstr "&Terminál..."
+
+#: main.C:445
+msgid "Save &Options"
+msgstr "Ulo¾ nastavenie"
+
+#: main.C:454
+msgid ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08"
+msgstr ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Emulácia terminálu pre KDE Desktop Environment\n"
+"zalo¾ené na  rxvt-2.08 Roberta Nationa"
+
+#: main.C:608 main.C:782
+msgid "&Show"
+msgstr "Uká¾"
+
+#: main.C:741
+msgid "Unsecure &keyboard"
+msgstr "Vypnú» zabezpeèenie &klávesnice"
+
+#: main.C:752
+msgid "Terminal Options"
+msgstr "Nastavenie terminálu"
+
+#: main.C:894
+msgid "Hint"
+msgstr "Upozornenie"
+
+#: main.C:895
+msgid ""
+"New color settings will be displayed\n"
+"when the keyboard is unsecured."
+msgstr ""
+"Nové nastavenie farieb bude zobrazené\n"
+"po vypnutí zabezpeèenia klávesnice."
+
+#: main.C:1087
+msgid ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08\n"
+"\n"
+"Permitted arguments are:\n"
+"-e <command> <arg> ...\texecute command with ars - must be last argument\n"
+"-display <name>\tspecify the display (server)\n"
+"-vt_geometry <spec>\tthe initial vt window geometry\n"
+"-print-pipe <name>\tspecify pipe for vt100 printer\n"
+"-vt_bg <colour>\t\tbackground color\n"
+"-vt_fg <colour>\t\tforeground color\n"
+"-vt_font <fontname>\tnormal font\n"
+"-vt_size <size>     \ttiny, small, normal, large, huge\n"
+"-linux\t\t\tset up kvt to mimic linux-console\n"
+"-no_menubar\t\thide the menubar\n"
+"-no_scrollbar\t\thide the scrollbar\n"
+"-T <text>\t\ttext in window titlebar \n"
+"                   (Obsolete. Use -caption instead)\n"
+"-tn <TERM>\t\tTerminal type. Default is xterm.\n"
+"-C\t\t\tCapture system console message\n"
+"-n <text>\t\tname in icon or icon window\n"
+"-7\t\t        run in 7 bit mode\n"
+"-8\t\t\trun in 8 bit mode\n"
+"-ls\t\t\tinitiate kvt's shell as a login shell\n"
+"-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
+"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+"-sl <number>\t\tsave number lines in scroll-back buffer\n"
+"-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
+"-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
+msgstr ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Terminálová emulácia pre KDE \n"
+"zalo¾ené na rxvt-2.08 Roberta Nationa \n"
+"\n"
+"Povolené argumenty sú:\n"
+"-e <command> <arg> ...\tvykonaj príkaz s parametrami <arg> \n"
+"\t\t\t- musí by» posledný parameter\n"
+"-display <name>\t\t¹pecifikuje obrazovku (server)\n"
+"-vt_geometry <spec>\tpoèiatoèná geometria okna terminálu\n"
+"-print-pipe <name>\t¹pecifikuje pipe pro vt100 tlaèiareò\n"
+"-vt_bg <colour>\t\tfarba pozadia\n"
+"-vt_fg <colour>\t\tfarba textu\n"
+"-vt_font <fontname>\tnormálny font\n"
+"-vt_size <size>     \ttiny, small, normal, large, huge\n"
+"-linux\t\t\tnastaví kvt, aby imitoval linux konzolu\n"
+"-no_menubar\t\tskryje menu\n"
+"-no_scrollbar\t\tskryje posunovaciu li¹tu\n"
+"-T <text>\t\ttext v titulku okna \n"
+"                   \t(Zastaralé. Pou¾ívajte namiesto toho -caption)\n"
+"-tn <TERM>\t\tTyp terminálu. ©tandardne jexterm.\n"
+"-C\t\t\tZachytáva» správy systémovej konzoli\n"
+"-n <text>\t\tmeno v ikone alebo okne ikony\n"
+"-7\t\t        pracova» v 7 bitovom móde\n"
+"-8\t\t\tpracova» v 8 bitovém móde\n"
+"-ls\t\t\tinicializova» shell kvt ako login shell\n"
+"-ls-\t\t\tneinicializova» shell kvt jako login shell (¹tandardne)\n"
+"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+"-sl <number>\t\tukladá <number> riadkov do vyrovnávacej pamäte pre\n"
+"\t\t\tspätné posúvanie li¹ty\n"
+"-pageup <keysym>\tpou¾íva» klávesovú skratku ALT-<keysym> k posúvaniu \n"
+"\t\t\tli¹ty hore vyrovnávacou pamä»ou\n"
+"-pagedown <keysym>\tpou¾íva» klávesovú skratku ALT-<keysym> k posúvaniu \n"
+"\t\t\tli¹ty dole vyrovnávacou pamä»ou\n"
+
+#: main.C:1118
+msgid ""
+"-grk9\t\tgreek kbd = ELOT 928 (default)\n"
+"-grk4\t\tgreek kbd = IBM 437\n"
+msgstr ""
+"-grk9\\t\\tgreek kbd = ELOT 928 (¹tandardná)\n"
+"-grk4\\t\\tgreek kbd = IBM 437\n"

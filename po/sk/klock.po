@@ -1,0 +1,609 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: klock \n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: 1998-03-20 12:20 MET\n"
+"Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
+"Language-Team: Slovak <bednar@isternet.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: banner.cpp:56
+msgid "Banner"
+msgstr "Be¾iaci text"
+
+#: banner.cpp:78
+msgid "Setup kbanner"
+msgstr "Nastavenie kbanneru"
+
+#: banner.cpp:116 blankscrn.cpp:65
+msgid "Color:"
+msgstr "Farba:"
+
+#: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
+#: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1021 polygon.cpp:101
+#: rock.cpp:550 slip.cpp:366 swarm.cpp:330
+msgid "Speed:"
+msgstr "Rýchlos»:"
+
+#: banner.cpp:146
+msgid "Message:"
+msgstr "Správa:"
+
+#: banner.cpp:315
+msgid "About Banner"
+msgstr "O Be¾iacom texte"
+
+#: banner.cpp:316
+msgid ""
+"Banner Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Banner verzia 0.1\n"
+"\n"
+"napísal Martin R.Jones 1996\n"
+"mjones@kde.org"
+
+#: banner.cpp:419
+msgid "KDE is great"
+msgstr "KDE je skvelé"
+
+#: bat.cpp:457
+msgid "Bat"
+msgstr "Netopieri"
+
+#: bat.cpp:532
+msgid "Setup KBat"
+msgstr "Nastavenie KBatu"
+
+#: bat.cpp:548
+msgid "Number of bats:"
+msgstr "Netopierov:"
+
+#: bat.cpp:636
+msgid "About Bat"
+msgstr "Informácie o Netopieroch"
+
+#: bat.cpp:637
+msgid ""
+"Bat\n"
+"\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Bat\n"
+"\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
+"\n"
+"Prevedené pre kscreensaver Emanuelom Pirkerom."
+
+#: blankscrn.cpp:49
+msgid "Blank Screen"
+msgstr "Prázdna obrazovka"
+
+#: blankscrn.cpp:63
+msgid "Setup kblankscrn"
+msgstr "Nastavenie prázdnej obrazovky"
+
+#: blob.cpp:53
+msgid "Random Linear"
+msgstr "Náhodné línie"
+
+#: blob.cpp:54
+msgid "Horizonal Sine"
+msgstr "Horizontálny sínus"
+
+#: blob.cpp:55
+msgid "Circular Bounce"
+msgstr "Krihovité odskoky"
+
+#: blob.cpp:56
+msgid "Polar Coordinates"
+msgstr "Polárne súradnice"
+
+#: blob.cpp:57
+msgid "Random"
+msgstr "Náhodné"
+
+#: blob.cpp:73
+msgid "Sorry. This screensaver needs a color display"
+msgstr "Je mi µúto. Tento ¹etriè potrebuje farebnú obrazovku"
+
+#: blob.cpp:452
+msgid "Setup Blob Saver"
+msgstr "Nastavenie ¹etrièa Blob"
+
+#: blob.cpp:455
+msgid "Frame Show sec."
+msgstr "Zobrazuj po dobu [sec]"
+
+#: blob.cpp:463
+msgid "Algorithm"
+msgstr "Algoritmus"
+
+#: blob.cpp:543
+msgid "About Blob"
+msgstr "Informácie o Blobe"
+
+#: blob.cpp:544
+msgid ""
+"Blobsaver Version 0.1\n"
+"\n"
+"written by Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+msgstr ""
+"©etøiè Blob verzia 0.1\n"
+"\n"
+"napísal Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+
+#: blob.cpp:579
+msgid "Blobs"
+msgstr "Blobs"
+
+#: flame.cpp:303
+msgid "Flame"
+msgstr "Plameò"
+
+#: flame.cpp:390
+msgid "Setup KFlame"
+msgstr "Nastavenie plameòov"
+
+#: flame.cpp:406
+msgid "Max Levels:"
+msgstr "Maximum urovní:"
+
+#: flame.cpp:416
+msgid "Num Points:"
+msgstr "Poèet bodov:"
+
+#: flame.cpp:521
+msgid "About Flame"
+msgstr "Informácie o plameòoch"
+
+#: flame.cpp:522
+msgid ""
+"Flame Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Plameò verzia 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Prevedené pre kscreensaver Martinom Jonesom"
+
+#: forest.cpp:200
+msgid "Forest"
+msgstr "Les"
+
+#: forest.cpp:272
+msgid "Setup KForest"
+msgstr "Nastavenie lesu"
+
+#: forest.cpp:288
+msgid "Num of Trees:"
+msgstr "Poèet stromov;"
+
+#: forest.cpp:375
+msgid "About Forest"
+msgstr "Informácie o Lese"
+
+#: forest.cpp:376
+msgid ""
+"Forest\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Les\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Previedol pre kscreensaver Emanuel Pirker"
+
+#: hop.cpp:221
+msgid "Hop"
+msgstr "Hop"
+
+#: hop.cpp:306
+msgid "Setup KHop"
+msgstr "Nastavenie KHopu"
+
+#: hop.cpp:322
+msgid "Samecolor Pixels:"
+msgstr "Rovnaká farba:"
+
+#: hop.cpp:332 lissie.cpp:346
+msgid "Cycles:"
+msgstr "Poèet cyklov:"
+
+#: hop.cpp:437
+msgid "About Hop"
+msgstr "Informácie o Hope"
+
+#: hop.cpp:438
+msgid ""
+"Hop Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Hop verzia 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Previedol pre kscreensaver Emanuel Pirker"
+
+#: laser.cpp:327
+msgid "Laser"
+msgstr "Laser"
+
+#: laser.cpp:387
+msgid "Setup KLaser"
+msgstr "Nastavenie KLaseru"
+
+#: laser.cpp:462
+msgid "About Laser"
+msgstr "Informácie o Laseri"
+
+#: laser.cpp:463
+msgid ""
+"Laser Version 3.3\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Laser verzia 3.3\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Previedol pre kscreensaver Martin Jones"
+
+#: lines.cpp:110
+msgid "Lines"
+msgstr "Línie"
+
+#: lines.cpp:128
+msgid "Setup klines"
+msgstr "Nastavenie línií"
+
+#: lines.cpp:130 polygon.cpp:81
+msgid "Length:"
+msgstr "Då¾ka:"
+
+#: lines.cpp:150
+msgid "Beginning:"
+msgstr "Zaèiatoèná:"
+
+#: lines.cpp:159
+msgid "Middle:"
+msgstr "Stredná:"
+
+#: lines.cpp:168
+msgid "End:"
+msgstr "Koncová:"
+
+#: lines.cpp:259
+msgid "About Lines"
+msgstr "Informácie o líniách"
+
+#: lines.cpp:260
+msgid ""
+"Lines Version 0.1.1\n"
+"\n"
+"written by Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+msgstr ""
+"Línie verzia 0.1.1\n"
+"\n"
+"napísal Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+
+#: lissie.cpp:234
+msgid "Lissie"
+msgstr "Lissie"
+
+#: lissie.cpp:320
+msgid "Setup KLissie"
+msgstr "Nastavenie KLissie"
+
+#: lissie.cpp:336
+msgid "Num of Lissies:"
+msgstr "Poèet lissií:"
+
+#: lissie.cpp:451
+msgid "About Lissie"
+msgstr "Informácie o Lissie"
+
+#: lissie.cpp:452
+msgid ""
+"Lissie\n"
+"\n"
+"Copyright (c) 1996 by Alexander Jolk\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Lissie\n"
+"\n"
+"Copyright (c) 1996 by Alexander Jolk\n"
+"\n"
+"Previedol pre kscreensaver Emanuel Pirker"
+
+#: main.cpp:279
+#, c-format
+msgid "Option %s is not support on this plattform!"
+msgstr ""
+
+#: main.cpp:306
+msgid ""
+"Your system uses shadow passwords!\n"
+"Please contact your system administrator.\n"
+"\n"
+"Tell him, that you need suid for the screensavers!"
+msgstr ""
+"Vá¹ systém pou¾íva tieòové heslá!\n"
+"Prosím, kontaktujte svojho systémového administrátora.\n"
+"\n"
+"Povedzte mu, ¾e potrebujete SUID pre ¹etrièe obrazovky!"
+
+#: main.cpp:311
+msgid "Shadow Passwords"
+msgstr "Tieòové heslá"
+
+#: main.cpp:469
+#, c-format
+msgid ""
+"Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+msgstr ""
+"Pou¾itie: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"         [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+
+#: main.cpp:472
+msgid ""
+"  -corners xxxx     Placing cursor in corner performs action:\n"
+"                     x = i  no action (ignore)\n"
+"                     x = s  save screen\n"
+"                     x = l  lock screen\n"
+"                    order: top-left, top-right, bottom-left, bottom-right\n"
+"  -delay num        Amount of idle time before screen saver\n"
+"                     starts  (default 10min)\n"
+"  -desc             Print the screen saver's description to stdout\n"
+"  -install          Install screen saver\n"
+"  -lock             Require password to stop screen saver\n"
+"  -nice num         Run with specified nice value\n"
+"\n"
+"  -preview wid      Run in the specified XWindow\n"
+"  -inroot           Run in the root window\n"
+"  -setup            Setup screen saver\n"
+"  -test             Invoke the screen saver immediately\n"
+msgstr ""
+"  -corners xxxx     Umiestnenie kurzoru do rohu prevedie akciu:\n"
+"                      x = i  ¾iadna akcia (ignoruj)\n"
+"                      x = s  ¹etri obrazovku\n"
+"                      x = l  uzamkni obrazovku\n"
+"                     poradie: horný-µavý, horný-pravý, dolný-µavý, "
+"dolní-pravý\n"
+"  -delay num        Doba neèinnosti pred spustìním ¹etrièa obrazovky\n"
+"                    (¹tandardne 10min)\n"
+"  -desc             Vypí¹ popis ¹etrièa obrazovky na stdout\n"
+"  -install          Nain¹taluj ¹etriè obrazovky\n"
+"  -lock             Vy¾aduj heslo na ukonèenie ¹etrièa obrazovky\n"
+"  -nice num         Preveï so ¹pecifikovanou hodnotou nice\n"
+"\n"
+"  -preview wid      Preveï vo ¹pecifikovanom X okne\n"
+"  -inroot           Preveï v koreòovom okne\n"
+"  -setup            Nastav ¹etriè obrazovky\n"
+"  -test             Vyvola» okam¾ite ¹etøiè obrazovky\n"
+
+#: morph3d.cpp:839
+msgid "GL can not render with root visual\n"
+msgstr "GL nemô¾e pracova» so základným \"visualem\"\n"
+
+#: morph3d.cpp:940
+msgid "Morph3D (GL)"
+msgstr "Morph3D (GL)"
+
+#: morph3d.cpp:1015
+msgid "Setup KMorph3d"
+msgstr "Nastavenie KMorph3D"
+
+#: morph3d.cpp:1031
+msgid "Object Type:"
+msgstr "Typ objektu:"
+
+#: morph3d.cpp:1120
+msgid "About Morph3D"
+msgstr "Informácie o Morph3D"
+
+#: morph3d.cpp:1121
+msgid ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 by Marcelo F. Vianna\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 by Marcelo F. Vianna\n"
+"\n"
+"Prevedené pre kscreensaver Emanuelom Pirkerom"
+
+#: polygon.cpp:58
+msgid "Polygons"
+msgstr "Polygony"
+
+#: polygon.cpp:79
+msgid "Setup kpolygon"
+msgstr "Nastavenie Polygonov"
+
+#: polygon.cpp:91
+msgid "Vertices:"
+msgstr "Vrcholy:"
+
+#: polygon.cpp:209
+msgid "About Polygon"
+msgstr "Informácie o Polygoneoh"
+
+#: polygon.cpp:210
+msgid ""
+"Polygon Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Polygon verzia 0.1\n"
+"\n"
+"napísal Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: pyro.cpp:433
+msgid "Pyro"
+msgstr "Pyro"
+
+#: pyro.cpp:511
+msgid "Setup KPyro"
+msgstr "Nastavenie KPyra"
+
+#: pyro.cpp:517 rock.cpp:560
+msgid "Number:"
+msgstr "Poèet:"
+
+#: pyro.cpp:527
+msgid "Cloud"
+msgstr "Zatrie»"
+
+#: pyro.cpp:608
+msgid "About Pyro"
+msgstr "Informácie o Pyre"
+
+#: pyro.cpp:609
+msgid ""
+"Pyro Version 3.4\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Pyro verzia 3.4\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Previedol pre kscreensaver Martin Jones"
+
+#: rock.cpp:436
+msgid "Rock"
+msgstr "Skala"
+
+#: rock.cpp:544
+msgid "Setup krock"
+msgstr "Nastavenie Skaly"
+
+#: rock.cpp:570
+msgid "Move"
+msgstr "Hýbova»"
+
+#: rock.cpp:575
+msgid "Rotate"
+msgstr "Rotova»"
+
+#: rock.cpp:693
+msgid "About Rock"
+msgstr "Informácie o Skale"
+
+#: rock.cpp:694
+msgid ""
+"Rock Version 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Skala verzia 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"Previedol pre kscreensaver Martin Jones"
+
+#: saver.cpp:50 saver.cpp:110
+msgid "Enter Password"
+msgstr "Zadaj heslo"
+
+#: saver.cpp:80
+msgid "Failed"
+msgstr "Neúspe¹né"
+
+#: slip.cpp:287
+msgid "Slip"
+msgstr "Slip"
+
+#: slip.cpp:360
+msgid "Setup KSlip"
+msgstr "Nastavenie KSlipu"
+
+#: slip.cpp:376
+msgid "Batchcount:"
+msgstr "Poèet:"
+
+#: slip.cpp:464
+msgid "About Slip"
+msgstr "Informácie o Slipu"
+
+#: slip.cpp:465
+msgid ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 by Scott Draves\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 by Scott Draves\n"
+"\n"
+"Previedol pre kscreensaver Emanuel Pirker"
+
+#: swarm.cpp:252
+msgid "Swarm"
+msgstr "Roj"
+
+#: swarm.cpp:324
+msgid "Setup KSwarm"
+msgstr "Nastavenie Roja"
+
+#: swarm.cpp:340
+msgid "Number of Bees:"
+msgstr "Poèet vèelièiek:"
+
+#: swarm.cpp:427
+msgid "About Swarm"
+msgstr "Informácie o Roji"
+
+#: swarm.cpp:428
+msgid ""
+"Swarm\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Roj\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Previedol pre kscreensaver Emanuel Pirker"

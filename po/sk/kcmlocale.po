@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmlocale\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: 1998-03-20 12:20 MET\n"
+"Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
+"Language-Team: Slovak <bednar@isternet.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:51
+msgid "&Locale"
+msgstr "&Lokalizácia"
+
+#: main.cpp:57
+msgid "usage: kcmlocale [-init | language]\n"
+msgstr "Pou¾itie: kcmlocale [-init | language]\n"
+
+#: main.cpp:79
+msgid "Locale settings"
+msgstr "Nastavenie lokalizácie"
+
+#: locale.cpp:40
+msgid "Language"
+msgstr "Jazyk"
+
+#: locale.cpp:45
+msgid "First"
+msgstr "Prvý"
+
+#: locale.cpp:52
+msgid "Second"
+msgstr "Druhý"
+
+#: locale.cpp:59
+msgid "Third"
+msgstr "Tretí"
+
+#: locale.cpp:94
+msgid "without name!"
+msgstr "bez mena!"
+
+#: locale.cpp:160
+msgid "Applying language settings"
+msgstr "Aplikujem nastavenie jazyka"
+
+#: locale.cpp:161
+msgid ""
+"Changed language settings apply only to newly started applications.\n"
+"To change the language of all programs, you will have to logout first."
+msgstr ""
+"Zmenené nastavenie jazyka sa prejaví len u novo spustených aplikácií.\n"
+"Ku zmene jazyka pri v¹etkých programoch je potrebné sa najprv odhlási»."

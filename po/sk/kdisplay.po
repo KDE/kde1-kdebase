@@ -1,0 +1,286 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmdisplay\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: 1998-03-20 12:20 MET\n"
+"Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
+"Language-Team: Slovak <bednar@isternet.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backgnd.cpp:196 backgnd.cpp:231
+msgid "Desktop"
+msgstr "Pracovná plocha"
+
+#: backgnd.cpp:241
+msgid "Rename..."
+msgstr "Premenova»..."
+
+#: backgnd.cpp:247
+msgid "Color"
+msgstr "Farba"
+
+#: backgnd.cpp:265
+msgid "Flat"
+msgstr "Jednofarebný"
+
+#: backgnd.cpp:269
+msgid "Gradient"
+msgstr "Prechod"
+
+#: backgnd.cpp:279
+msgid "Portrait"
+msgstr "Na vý¹ku"
+
+#: backgnd.cpp:283
+msgid "Landscape"
+msgstr "Na ¹írku"
+
+#: backgnd.cpp:290
+msgid "Wallpaper"
+msgstr "Tapeta"
+
+#: backgnd.cpp:322
+msgid "Tiled"
+msgstr "Vydla¾di»"
+
+#: backgnd.cpp:326
+msgid "Centred"
+msgstr "Centrova»"
+
+#: backgnd.cpp:330
+msgid "Scaled"
+msgstr "©kálované"
+
+#: backgnd.cpp:480
+msgid "Default"
+msgstr "Implicitné"
+
+#: backgnd.cpp:811
+msgid "Desktop Title"
+msgstr "Názov plochy"
+
+#: colorscm.cpp:142 colorscm.cpp:143
+msgid "Inactive window"
+msgstr "Neaktívne okno"
+
+#: colorscm.cpp:158 colorscm.cpp:159
+msgid "Active window"
+msgstr "Aktívne okno"
+
+#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:300
+msgid "Window text"
+msgstr "Text v okne"
+
+#: colorscm.cpp:209
+msgid "Disabled"
+msgstr "Vypnuté"
+
+#: colorscm.cpp:216 colorscm.cpp:217
+msgid "Selected"
+msgstr "Vybrané"
+
+#: colorscm.cpp:252 colorscm.cpp:264
+msgid "Color Scheme"
+msgstr "Farebná schéma"
+
+#: colorscm.cpp:286
+msgid "Widget color"
+msgstr "Farba kontrolky"
+
+#: colorscm.cpp:291
+msgid "Inactive title bar"
+msgstr "Neaktívny titulok"
+
+#: colorscm.cpp:292
+msgid "Inactive title text"
+msgstr "Text neaktívneho titulku"
+
+#: colorscm.cpp:293
+msgid "Active title bar"
+msgstr "Aktívny titulok"
+
+#: colorscm.cpp:294
+msgid "Active title text"
+msgstr "Text aktívneho titulku"
+
+#: colorscm.cpp:295
+msgid "Background"
+msgstr "Pozadie"
+
+#: colorscm.cpp:296
+msgid "Text"
+msgstr "Text"
+
+#: colorscm.cpp:297
+msgid "Select background"
+msgstr "Vyber pozadie"
+
+#: colorscm.cpp:298
+msgid "Select text"
+msgstr "Vyber text"
+
+#: colorscm.cpp:299
+msgid "Window background"
+msgstr "Pozadie okna"
+
+#: colorscm.cpp:311
+msgid "Contrast"
+msgstr "Kontrast"
+
+#: colorscm.cpp:324 scrnsave.cpp:224
+msgid "Low"
+msgstr "Malá"
+
+#: colorscm.cpp:328 scrnsave.cpp:221
+msgid "High"
+msgstr "Veµká"
+
+#: colorscm.cpp:343
+msgid "Save scheme"
+msgstr "Ulo¾ schému"
+
+#: colorscm.cpp:374 colorscm.cpp:382
+msgid "You have chosen a name used by a supplied color scheme"
+msgstr "Vybrali ste meno u¾ pou¾ité u dodanej farebnej schémy"
+
+#: colorscm.cpp:467
+msgid "KDE Default"
+msgstr "KDE implicitné"
+
+#: colorscm.cpp:693
+msgid "Display Setup"
+msgstr "Nastavenie obrazovky"
+
+#: colorscm.cpp:694
+msgid ""
+"No desktop color schemes were found.\n"
+"Do you want to install the default color schemes now ?"
+msgstr ""
+"Nena¹iel som ¾iadne farebné schémy.\n"
+"Chcete nain¹talova» implicitné farebné schemy?"
+
+#: kwmcom.cpp:78 kwmcom.cpp:105
+msgid "kwmcom: communication with kwm failed\n"
+msgstr "kwmcom: komunikace s kwm prebehla neúspe¹ne\n"
+
+#: savescm.cpp:26
+msgid "Name"
+msgstr "Meno"
+
+#: scrnsave.cpp:47
+msgid "Ignore"
+msgstr "Ignoruj"
+
+#: scrnsave.cpp:49
+msgid "Lock"
+msgstr "Zámok"
+
+#: scrnsave.cpp:107 scrnsave.cpp:163
+msgid "Screen Saver"
+msgstr "©etøiè obrazovky"
+
+#: scrnsave.cpp:184
+msgid "Setup..."
+msgstr "Nastav.."
+
+#: scrnsave.cpp:188
+msgid "Test"
+msgstr "Test"
+
+#: scrnsave.cpp:196
+msgid "Settings"
+msgstr "Nastavenie"
+
+#: scrnsave.cpp:199
+msgid "Wait:"
+msgstr "Èakaj:"
+
+#: scrnsave.cpp:210
+msgid "min"
+msgstr "min"
+
+#: scrnsave.cpp:213
+msgid "Requires Password"
+msgstr "Po¾aduje heslo"
+
+#: scrnsave.cpp:218
+msgid "Priority:"
+msgstr "Priorita:"
+
+#: general.cpp:61
+msgid "General"
+msgstr "V¹eobecné"
+
+#: general.cpp:65
+msgid "Widget style"
+msgstr "©týl kontroliek"
+
+#: general.cpp:70
+msgid "Motif"
+msgstr "Motif"
+
+#: general.cpp:71
+msgid "Windows 95"
+msgstr "Windows 95"
+
+#: general.cpp:80
+msgid "Fonts"
+msgstr "Znakové sady"
+
+#: general.cpp:85
+msgid "General font"
+msgstr "V¹eobecná znaková sada"
+
+#: general.cpp:110
+msgid "Sample"
+msgstr "Vzorka"
+
+#: general.cpp:116
+msgid "Small"
+msgstr "Malé"
+
+#: general.cpp:120
+msgid "Medium"
+msgstr "Stredné"
+
+#: general.cpp:124
+msgid "Large"
+msgstr "Veµké"
+
+#: general.cpp:173
+msgid "default"
+msgstr "¹tandardné"
+
+#: general.cpp:176
+msgid "any"
+msgstr "µubovoµné"
+
+#: main.cpp:61
+msgid "&Background"
+msgstr "&Pozadie"
+
+#: main.cpp:64
+msgid "&Colors"
+msgstr "&Farby"
+
+#: main.cpp:67
+msgid "&Screensaver"
+msgstr "©etøiè &obrazovky"
+
+#: main.cpp:70
+msgid "&Style"
+msgstr "&©týl"
+
+#: main.cpp:76
+msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr "Pou¾itie: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+
+#: main.cpp:112
+msgid "Display settings"
+msgstr "Vlastnosti obrazovky"
