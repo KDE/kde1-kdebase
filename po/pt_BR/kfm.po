@@ -786,7 +786,7 @@ msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
 msgstr "Alguém tentou autorizar-se\n"
-       "usando uma password errada"
+       "usando uma senha errada"
 
 #: root.cpp:672
 msgid ""
@@ -1144,7 +1144,7 @@ msgstr "Não mudou o nome!\n"
 
 #: passworddialog.cpp:41 passworddialog.cpp:80
 msgid "Password"
-msgstr "Password"
+msgstr "Senha"
 
 #: kfmexec.cpp:136
 msgid "Trying to open"

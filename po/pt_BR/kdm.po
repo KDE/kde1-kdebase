@@ -27,7 +27,7 @@ msgstr "Login:"
 
 #: kgreeter.cpp:151
 msgid "Password:"
-msgstr "Password:"
+msgstr "Senha:"
 
 #: kgreeter.cpp:191
 msgid "Login failed!"
