@@ -136,6 +136,7 @@ main(int argc, char **argv)
   struct passwd	*pw;
   int		status, c;
   uid_t		uid;
+  int		passlen;
 
   openlog("kcheckpass", LOG_PID, LOG_AUTH);
 
@@ -194,12 +195,10 @@ main(int argc, char **argv)
   if (havetty) {
     passwd = getpass("Password: ");
   } else {
-    int	passlen;
-
     passlen = read(0, passbuffer, sizeof(passbuffer)-1);
     if (passlen >= 0) {
       passbuffer[passlen] = '\0';
-      if (passbuffer[passlen-1] == '\n')
+      if (passlen >= 1 && passbuffer[passlen-1] == '\n')
 	passbuffer[--passlen] = '\0';
       passwd = passbuffer;
     }
@@ -217,14 +216,20 @@ main(int argc, char **argv)
 
   if ( status == 0 ) {
     /* failure */
-    time_t	now = time(NULL);
-    message("authentication failure for user %s [uid %d]\n",
-	    login, uid);
+    if ( passlen > 0 ) {
+      /* Only write to logfile, if a password was entered. Otherwise
+         the logfile will clutter up with irrelevant messages. */
+      time_t	now = time(NULL);
+      message("authentication failure for user %s [uid %d]\n",
+	      login, uid);
 
-    do {
-      sleep (1); /* <<< Security: Don't undermine the shadow system */
-    } while (time(NULL) < now + 1);
-    exit(1);
+      do {
+        sleep (1); /* <<< Security: Don't undermine the shadow system */
+      } while (time(NULL) < now + 1);
+      exit(1);
+    }
+    else
+      exit(1);
   }
   if ( status == 2 ) {
     /* Cannot read password database (e.g. not SUID on shadow systems) */
