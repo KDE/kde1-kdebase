@@ -817,10 +817,12 @@ void kVt::onDrop( KDNDDropZone* _zone )
   char *str;
 
   strlist = _zone->getURLList();
-  url = new KURL( strlist.first() );
-  str = url->path();
-  send_string((unsigned char *)str, strlen(str));
-  delete url;
+  if (strlist.count()){
+    url = new KURL( strlist.first() );
+    str = url->path();
+    send_string((unsigned char *)str, strlen(str));
+    delete url;
+  }
   return;
 }
 
