@@ -322,6 +322,8 @@ void KIOJob::link()
 			    {
 				// Get the new destinations name
 				du = r->getNewName();
+				dupath = du.path();
+                                dupath.detach();
 				// Try again
 				if ( symlink( supath, dupath ) == -1 )
 				{
