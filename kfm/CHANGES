@@ -202,4 +202,6 @@
 03/04/98 Bernd
   - Introduced a bunch of configuration options: Colors, Fonts, Link Cursor
   - I love it! :-)
-  
+  - Stephan please have a look at around line 70 in kkfmoptdlg.cpp
+    I had to comment out two delete statements and can't say I understand
+    precicely why.
