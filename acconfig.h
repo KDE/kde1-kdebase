@@ -61,3 +61,9 @@
 
 /* Define if you have usleep */
 #undef HAVE_USLEEP
+
+/* Define the file for utmp entries */
+#undef UTMP
+
+/* Define, if you want to use utmp entries */
+#undef UTMP_SUPPORT

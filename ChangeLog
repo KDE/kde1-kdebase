@@ -1,3 +1,10 @@
+1998-04-16  Stephan Kulow  <coolo@kde.org>
+
+	* configure.in: added test for utmp file 
+
+	* acinclude.m4.in: made --without-pam default
+	
+
 1998-04-06  Stephan Kulow  <coolo@kde.org>
 
 	* acinclude.m4.in: don't test compiling, linking, running in

@@ -111,8 +111,46 @@ if test -z "$RUN_KAPPFINDER"; then
 RUN_KAPPFINDER="yes"
 fi
 
-
 AC_SUBST(RUN_KAPPFINDER)
+
+AC_MSG_CHECKING([if it's safe to enable UTMP])
+
+case "$host_os" in
+linux* | freebsd*) utmp_support=yes;
+     ;;
+*) utmp_support=no;
+esac
+
+AC_MSG_RESULT($utmp_support)
+
+if test "$utmp_support" = yes; then
+   AC_DEFINE_UNQUOTED(UTMP_SUPPORT)
+fi  
+
+AC_MSG_CHECKING([for utmp file])
+
+AC_CACHE_VAL(kde_cv_utmp_file,
+[
+kde_cv_utmp_file=no
+
+   for ac_file in               \
+                               \
+	/var/run/utmp \
+	/etc/utmp \
+     ; \
+   do
+     if test -r "$ac_file"; then
+       kde_cv_utmp_file=$ac_file
+       break
+     fi
+   done
+])
+
+AC_MSG_RESULT($kde_cv_utmp_file)
+if test "$kde_cv_utmp_file" != "no"; then
+  AC_DEFINE_UNQUOTED(UTMP, $kde_cv_utmp_file)
+fi
+
 
 AC_OUTPUT(Makefile \
 	applnk/Applications/Makefile \
