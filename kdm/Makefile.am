@@ -18,7 +18,7 @@ LDADD  = $(all_libraries) -lkdecore -lqt -lXext\
 
 # For kdmdesktop
 kdmdesktop_LDADD = $(all_libraries) -lkdecore -lqt -lm -lgif $(LIBJPEG) -lXext\
-		   -lX11 
+		   -lX11 $(LIBSOCKET) $(KDE_RPATH)
 
 # Sources for xdm (both C and C++):
 kdmlib_source = access.c \
