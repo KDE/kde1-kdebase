@@ -1076,7 +1076,7 @@ void MyApp::readConfiguration(){
 
   for (i=0; i<6; i++){
     QString s = "Button?";
-    s.data()[6] =  (char) ('A'+i);
+    s[6] =  (char) ('A'+i); 
     options.buttons[i] = getFunctionFromKey(config->readEntry(s));
     if (options.buttons[i] == UNDEFINED){
       config->writeEntry(s,default_buttons[i]);
@@ -1723,7 +1723,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
 	  c = manager->getClientFromSizegrip(ev->xbutton.window);
 	  if (c) {
 	      QCursor::setPos(c->mapToGlobal(QPoint(c->width()-1, c->height()-1)));
-	      c->simple_resize();  
+	      c->simple_resize();
 	  }
       }
     }
