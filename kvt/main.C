@@ -289,26 +289,26 @@ kVt::kVt( QWidget *parent, const char *name )
 
     m_file = new QPopupMenu;
     CHECK_PTR( m_file );
-    m_file->insertItem( "New Terminal");
+    m_file->insertItem( "&New Terminal");
     m_file->insertSeparator();
-    m_file->insertItem( "Exit" ,  qApp, SLOT(quit()) );
+    m_file->insertItem( "E&xit" ,  qApp, SLOT(quit()) );
     connect(m_file, SIGNAL(activated(int)), SLOT(file_menu_activated(int)));
 
     m_scrollbar = new QPopupMenu;
     CHECK_PTR( m_scrollbar );
-    m_scrollbar->insertItem( "Hide");
-    m_scrollbar->insertItem( "Left");
-    m_scrollbar->insertItem( "Right");
+    m_scrollbar->insertItem( "&Hide");
+    m_scrollbar->insertItem( "&Left");
+    m_scrollbar->insertItem( "&Right");
     connect(m_scrollbar, SIGNAL(activated(int)), SLOT(scrollbar_menu_activated(int)));
 
     m_size = new QPopupMenu;
     CHECK_PTR( m_size );
-    m_size->insertItem( "Normal");
-    m_size->insertItem( "Tiny");
-    m_size->insertItem( "Small");
-    m_size->insertItem( "Medium");
-    m_size->insertItem( "Large");
-    m_size->insertItem( "Huge");
+    m_size->insertItem( "&Normal");
+    m_size->insertItem( "&Tiny");
+    m_size->insertItem( "&Small");
+    m_size->insertItem( "&Medium");
+    m_size->insertItem( "&Large");
+    m_size->insertItem( "&Huge");
     connect(m_size, SIGNAL(activated(int)), SLOT(size_menu_activated(int)));
 
     m_dimen = new QPopupMenu;
@@ -320,28 +320,28 @@ kVt::kVt( QWidget *parent, const char *name )
     
     m_color = new QPopupMenu;
     CHECK_PTR( m_color );
-    m_color->insertItem( "black/white");
-    m_color->insertItem( "white/black");
-    m_color->insertItem( "green/black");
-    m_color->insertItem( "black/lightyellow");
+    m_color->insertItem( "&black/white");
+    m_color->insertItem( "&white/black");
+    m_color->insertItem( "&green/black");
+    m_color->insertItem( "black/light&yellow");
     connect(m_color, SIGNAL(activated(int)), SLOT(color_menu_activated(int)));
     
     
     m_options = new QPopupMenu;
     CHECK_PTR( m_options );
     if (menubar_visible)
-      m_options->insertItem( "Hide Menubar" );
+      m_options->insertItem( "Hide &Menubar" );
     else
-      m_options->insertItem( "Show Menubar" );
-    m_options->insertItem( "Secure keyboard");
+      m_options->insertItem( "Show &Menubar" );
+    m_options->insertItem( "Secure &keyboard");
     m_options->insertSeparator();
-    m_options->insertItem( "Scrollbar", m_scrollbar);
-    m_options->insertItem( "FontSize", m_size);
-    m_options->insertItem( "Color", m_color);
-    m_options->insertItem( "Size", m_dimen);
-    m_options->insertItem( "Word class" );
+    m_options->insertItem( "Scroll&bar", m_scrollbar);
+    m_options->insertItem( "&Font size", m_size);
+    m_options->insertItem( "&Color", m_color);
+    m_options->insertItem( "&Size", m_dimen);
+    m_options->insertItem( "&Word class" );
     m_options->insertSeparator();
-    m_options->insertItem( "Save Options");
+    m_options->insertItem( "Save &Options");
 
     m_options->installEventFilter( this );
 
@@ -350,16 +350,16 @@ kVt::kVt( QWidget *parent, const char *name )
 
     m_help = new QPopupMenu;
     CHECK_PTR( m_help );
-    m_help->insertItem("About kvt");
-    m_help->insertItem("Help");
+    m_help->insertItem("&About...");
+    m_help->insertItem("&Help");
     connect(m_help, SIGNAL(activated(int)), SLOT(help_menu_activated(int)));
 
     menubar = new QMenuBar( this );
     CHECK_PTR( menubar );
-    menubar->insertItem( "File", m_file );
-    menubar->insertItem( "Options", m_options);
+    menubar->insertItem( "&File", m_file );
+    menubar->insertItem( "&Options", m_options);
     menubar->insertSeparator();
-    menubar->insertItem( "Help", m_help);
+    menubar->insertItem( "&Help", m_help);
 
     if (!menubar_visible)
       menubar->hide();
@@ -389,7 +389,7 @@ kVt::kVt( QWidget *parent, const char *name )
 void kVt::setMenubar(bool b){
   if (!b){
     menubar->hide();
-    m_options->changeItem("Show Menubar", 0);
+    m_options->changeItem("Show &Menubar", 0);
   }
   menubar_visible = b;
 }
@@ -398,7 +398,7 @@ void kVt::setMenubar(bool b){
 void kVt::setScrollbar(bool b){
   if (!b){
     scrollbar->hide();
-    m_scrollbar->changeItem("Show", 0);
+    m_scrollbar->changeItem("&Show", 0);
     scrollbar_visible = b;
   }
 }
@@ -509,24 +509,24 @@ void kVt::options_menu_activated( int item){
       menubar_visible = FALSE;
       menubar->hide();
       resize(width(), height()-menubar->height());
-      m_options->changeItem("Show Menubar", item);
+      m_options->changeItem("Show &Menubar", item);
     }
     else {
       // show 
       menubar_visible = TRUE;
       menubar->show();
       resize(width(), height()+menubar->height());
-      m_options->changeItem("Hide Menubar", item);
+      m_options->changeItem("Hide &Menubar", item);
     }
     break;
   case 1:
     keyboard_secured = !keyboard_secured;
     if (keyboard_secured){
-      m_options->changeItem("Unsecure keyboard", item);
+      m_options->changeItem("Unsecure &keyboard", item);
       extract_colors(fg_string, "red");
     }
     else {
-      m_options->changeItem("Secure keyboard", item);
+      m_options->changeItem("Secure &keyboard", item);
       extract_colors(fg_string, bg_string);
     }
     scr_secure(); // also calls XClearwindow and scr_refresh
@@ -579,14 +579,14 @@ void kVt::scrollbar_menu_activated( int item){
       scrollbar_visible = FALSE;
       scrollbar->hide();
       resize(width()-16, height());
-      m_scrollbar->changeItem("Show", item);
+      m_scrollbar->changeItem("&Show", item);
     }
     else {
       // show 
       scrollbar_visible = TRUE;
       scrollbar->show();
       resize(width()+16, height());
-      m_scrollbar->changeItem("Hide", item);
+      m_scrollbar->changeItem("&Hide", item);
     }
     break;
     

@@ -1,3 +1,6 @@
+
+ - keyboard accelerators for the menus (Cedric Maion)
+
   - added a minimumSize();
 	
   - fixed the tiny "huge"-bug 
