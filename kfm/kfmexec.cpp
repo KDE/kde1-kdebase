@@ -184,6 +184,9 @@ void KFMExec::slotCancel()
 
 void KFMExec::slotError( int, const char * )
 {
+    // Bad Doggie !! You should clean up after Errors!!!
+    prepareToDie();
+    return;
 }
 
 void KFMExec::slotFinished( )
