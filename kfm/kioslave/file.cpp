@@ -207,7 +207,10 @@ int KProtocolFILE::OpenDir( KURL *url )
 	
 	_de->isdir = FALSE;
 	if ( S_ISLNK( lbuff.st_mode ) )
-	    buffer[0] = 'l';		
+        {
+	    buffer[0] = 'l';
+            if ( S_ISDIR( buff.st_mode ) ) _de->isdir = TRUE;
+        }
 	else if ( S_ISDIR( buff.st_mode ) )
 	{
 	    buffer[0] = 'd';
