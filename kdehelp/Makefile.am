@@ -17,18 +17,17 @@ DOCSDIR = $(prefix)/doc/HTML
 bin_PROGRAMS = kdehelp
 
 kdehelp_SOURCES =  main.cpp helpwin.cpp info.cpp error.cpp misc.cpp options.cpp\
-		man.cpp bookmark.cpp cgi.cpp mainwidget.cpp kcolorbtn.cpp
-BUILTSOURCES = helpwin.moc options.moc bookmark.moc cgi.moc mainwidget.moc\
-		kcolorbtn.moc
+		man.cpp bookmark.cpp cgi.cpp mainwidget.cpp 
+BUILTSOURCES = helpwin.moc options.moc bookmark.moc cgi.moc mainwidget.moc
+		
 noinst_HEADERS = helpwin.h info.h error.h misc.h man.h options.h\
-		bookmark.h dbnew.cpp cgi.h mainwidget.h kcolorbtn.h
+		bookmark.h dbnew.cpp cgi.h mainwidget.h 
 
 helpwin.cpp: helpwin.moc
 options.cpp: options.moc
 bookmark.cpp: bookmark.moc
 cgi.cpp: cgi.moc
 mainwidget.cpp: mainwidget.moc
-kcolorbtn.cpp: kcolorbtn.moc
 
 install-data-local: all
 	(cd doc && $(MAKE) install)
