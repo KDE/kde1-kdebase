@@ -25,7 +25,7 @@ kfm_SOURCES =	\
 	kfmdlg.cpp bookmark.cpp kfmprops.cpp kfmserver_ipc.cpp \
 	kfmserver_ipc2.cpp kfmserver.cpp kioserver.cpp kioserver_ipc.cpp \
 	kioserver_ipc2.cpp kfmipc.cpp root.cpp kfmman.cpp kiojob.cpp \
-	kmsgwin.cpp htmlcache.cpp autostart.cpp kfmtree.cpp \
+	htmlcache.cpp autostart.cpp kfmtree.cpp \
 	krenamewin.cpp passworddialog.cpp kURLcompletion.cpp debug.cpp kfm.cpp \
 	kfmpaths.cpp kfmjob.cpp kfmexec.cpp kmimemagic.cpp kfinder.cpp utils.cpp \
 	open-with.cpp finddlg.cpp kcookiejar.cpp kcookiewin.cpp popup.cpp kintlist.cpp
@@ -33,7 +33,7 @@ kfm_SOURCES =	\
 noinst_HEADERS =  \
 	kfmgui.h kfmview.h kbind.h root.h kfmdlg.h bookmark.h htmlopts.h \
 	kfmprops.h kfmserver_ipc.h kioserver.h kioserver_ipc.h kfmipc.h \
-	kfmserver.h kfmman.h kiojob.h kmsgwin.h htmlcache.h kfmtree.h \
+	kfmserver.h kfmman.h kiojob.h htmlcache.h kfmtree.h \
 	krenamewin.h passworddialog.h kURLcompletion.h utils.h kfm.h \
 	config-kfm.h kfmpaths.h kfmjob.h kfmexec.h kmimemagic.h kfinder.h \
 	open-with.h finddlg.h kcookiejar.h kcookiewin.h popup.h \
@@ -42,7 +42,7 @@ noinst_HEADERS =  \
 BUILT_SOURCES =	\
 	kfmgui.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc htmlopts.moc \
 	kfmprops.moc kfmserver_ipc.moc kfmserver.moc kioserver.moc \
-	kioserver_ipc.moc kfmman.moc kiojob.moc kmsgwin.moc htmlcache.moc \
+	kioserver_ipc.moc kfmman.moc kiojob.moc htmlcache.moc \
 	kfmtree.moc krenamewin.moc passworddialog.moc kURLcompletion.moc \
 	kfmjob.moc kfmexec.moc cgi.moc kbind.moc kfinder.moc kfm.moc	\
 	open-with.moc finddlg.moc kcookiewin.moc popup.moc
@@ -93,10 +93,6 @@ kfmview.moc: kfmview.h
 kfmtree.cpp:kfmtree.moc
 kfmtree.moc: kfmtree.h
 	$(MOC) kfmtree.h -o kfmtree.moc
-
-kmsgwin.cpp:kmsgwin.moc
-kmsgwin.moc: kmsgwin.h
-	$(MOC) kmsgwin.h -o kmsgwin.moc
 
 krenamewin.cpp:krenamewin.moc
 krenamewin.moc: krenamewin.h
