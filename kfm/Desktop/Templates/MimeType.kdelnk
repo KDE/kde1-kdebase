@@ -6,6 +6,7 @@ Icon=unknown.xpm
 Type=MimeType
 Patterns=
 Name=Mime Type
+Name[cs]=Mime typ
 Name[es]=Tipo MIME
 Name[fi]=Mimetyyppi
 Name[fr]=Type MIME

@@ -7,6 +7,7 @@ SwallowTitle[es]=kwmpager
 SwallowTitle[pl]=kwmpager
 BinaryPattern=
 Name=Desktop Pager
+Name[cs]=Mapa pracovní plochy
 Name[es]=Mapa del escritorio
 Name[fi]=Työpöydänvaihtaja
 Name[fr]=Gestionnaire de bureaux virtuels

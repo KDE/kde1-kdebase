@@ -4,6 +4,7 @@ URL=
 Icon=unknown.xpm
 Type=Link
 Name=Internet Address (URL)
+Name[cs]=Internetová adresa (URL)
 Name[de]=Internetadresse (URL)
 Name[es]=Dirección de Internet (URL)
 Name[fi]=Internet -osoite (URL)

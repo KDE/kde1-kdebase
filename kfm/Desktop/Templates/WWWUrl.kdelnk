@@ -4,6 +4,7 @@ URL=http://www.kde.org
 Icon=www.xpm
 Type=Link
 Name=World Wide Web URL
+Name[cs]=Wold Wide Web URL
 Name[de]=World-Wide-Web URL
 Name[es]=Dirección de World Wide Web (URL de HTTP)
 Name[fi]=WWW -osoite
