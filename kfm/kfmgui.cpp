@@ -872,7 +872,7 @@ void KfmGui::slotPannerChanged()
             bTreeViewInitialized = TRUE;
             treeView->fill();
         }
-        if (pkfm->isTreeViewFollowMode())
+        if (!bTreeView && pkfm->isTreeViewFollowMode()) // only if tree view wasn't shown
             treeView->slotshowDirectory(toolbarURL->getLinedText(TOOLBAR_URL_ID));
 
         mview->setItemChecked( mview->idAt( 1 ), true );
@@ -1334,9 +1334,7 @@ void KfmGui::slotShowSchnauzer()
 
 void KfmGui::slotShowTreeView()
 {
-    bTreeView = !bTreeView;
-    
-    panner->setSeparator( bTreeView ? 30 : 0 );
+    panner->setSeparator( !bTreeView ? 30 : 0 );
     // all is done by slotPannerChanged when called by setSeparator
 }
 
