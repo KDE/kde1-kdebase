@@ -25,6 +25,7 @@
 #include <qlayout.h>
 #include <qmsgbox.h>
 #include <qfileinfo.h>
+#include <qlcdnum.h>
 
 #include <kfiledialog.h>
 #include <kapp.h>
@@ -139,8 +140,8 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 	
   topLayout->setRowStretch(0,0);
   topLayout->setRowStretch(1,10);
-  topLayout->setRowStretch(2,100);
-  topLayout->setRowStretch(3,0);
+  topLayout->setRowStretch(2,10);
+  topLayout->setRowStretch(3,10);
     
   topLayout->setColStretch(0,0);
   topLayout->setColStretch(1,100);
@@ -282,6 +283,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   grid->activate();
     
   group = new QGroupBox( i18n("Wallpaper"), this );
+  topLayout->addWidget( group, 2, 2 );
     
   groupLayout = new QVBoxLayout( group, 10, 5 ); 
   groupLayout->addStretch( 5 );
@@ -317,13 +319,15 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   connect( wpCombo, SIGNAL( activated( const char * ) ),
 	   SLOT( slotWallpaper( const char * )  )  );
 		
+  QBoxLayout *pushLayout = new QHBoxLayout( 5 ); 
+  groupLayout->addLayout( pushLayout );
+
   browseButton = new QPushButton( i18n("&Browse..."), group );
   browseButton->adjustSize();
   browseButton->setFixedHeight( browseButton->height() );
   browseButton->setMinimumWidth( browseButton->width() );
   connect( browseButton, SIGNAL( clicked() ), SLOT( slotBrowse() ) );
-  groupLayout->addWidget( browseButton, 10 );
-  groupLayout->addStretch( 3 );
+  pushLayout->addWidget( browseButton );
 
   wpModeCombo = new QComboBox( false, group );
   wpModeCombo->insertItem( i18n("Tiled"), 0 );
@@ -337,13 +341,14 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   wpModeCombo->insertItem( i18n("Symmetrical Mirrored"), 8 );
   wpModeCombo->insertItem( i18n("Scaled"), 9 );
   wpModeCombo->setCurrentItem( 0 );
+  wpModeCombo->setMinimumWidth( wpModeCombo->sizeHint().width() );
   connect( wpModeCombo, SIGNAL( activated( int ) ),
 	   SLOT( slotWallpaperMode( int )  )  );
 
-  groupLayout->addWidget( wpModeCombo, 10 );
+  pushLayout->addWidget( wpModeCombo, 5 );
   groupLayout->addStretch( 3 );
 
-  QBoxLayout *pushLayout = new QHBoxLayout( 5 ); 
+  pushLayout = new QHBoxLayout( 5 ); 
   groupLayout->addLayout( pushLayout );
 
   randomButton = new QRadioButton( i18n("Ra&ndom"), group );
@@ -370,12 +375,44 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   connect( dockButton, SIGNAL( clicked() ), SLOT( slotToggleDock() ) );
 
   groupLayout->addWidget( dockButton, 5 );
+  groupLayout->addStretch( 3 );
   groupLayout->activate();
 
-  topLayout->addWidget( group, 2, 2 );
+  group = new QGroupBox( i18n("Cache size"), this );
+  topLayout->addMultiCellWidget( group, 3, 3, 1, 2 );
+
+  grid = new QGridLayout(group,2,3,10,5);
+  grid->addRowSpacing(0,10);
+  grid->setColStretch(0,0);
+  grid->setColStretch(1,0);
+  grid->setColStretch(2,1);
+
+  int cacheSize = config->readNumEntry("CacheSize", 1024);
+
+  cacheLCD = new QLCDNumber(4, group);
+  cacheLCD->setFrameStyle( QFrame::NoFrame );
+  cacheLCD->adjustSize();
+  cacheLCD->setMinimumSize(cacheLCD->size());
+  cacheLCD->display( cacheSize );
+  grid->addWidget( cacheLCD, 1, 0 );
+
+  QLabel *cacheLabel = new QLabel( i18n("kb"), group );
+  cacheLabel->adjustSize();
+  cacheLabel->setMinimumSize(cacheLabel->size());
+  grid->addWidget( cacheLabel, 1, 1 );
+
+  cacheSlider = new KSlider( 128, 5120, 0, cacheSize, KSlider::Horizontal, group );
+  cacheSlider->setSteps(512, 1024);
+  cacheSlider->adjustSize();
+  grid->addWidget( cacheSlider, 1, 2 );
+
+  connect( cacheSlider, SIGNAL(valueChanged(int)), cacheLCD, SLOT(display(int)) );
+
+  grid->activate();
+
+  pushLayout->addWidget( cacheSlider, 5 );
+
   topLayout->activate();
-    
-  resize(10,10);
     
   showSettings();
 }
@@ -609,6 +646,7 @@ void KBackground::writeSettings( int num )
   config2->writeEntry( "OneDesktopMode", oneDesktopMode );
   config2->writeEntry( "DeskNum", deskNum );
   config2->writeEntry( "Docking", dockButton->isChecked() );
+  config2->writeEntry( "CacheSize", cacheSlider->value() );
   config2->sync();
 }
 

@@ -20,12 +20,14 @@
 #include <kcolordlg.h>
 #include <kcolorbtn.h>
 #include <kcontrol.h>
+#include <kslider.h>
 #include <drag.h>
 
 #include "display.h"
 
 class KBackground;
 class PatternEntry;
+class QLCDNumber;
 
 class KItem : public QObject
 {
@@ -314,6 +316,9 @@ protected:
 
   QComboBox *wpModeCombo;
   QComboBox *wpCombo;
+
+  KSlider *cacheSlider;
+  QLCDNumber *cacheLCD;
 
   QLabel *monitorLabel;
   KBGMonitor* monitor;
