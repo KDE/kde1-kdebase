@@ -71,9 +71,9 @@ bool ssApp::x11EventFilter( XEvent *event )
 			XKeyEvent *xke = (XKeyEvent *) event;
 
 			int key = 0;
-			KeySym keysym;
+			KeySym keysym = 0;
 			XComposeStatus compose;
-			char buffer[2];
+			char buffer[2] = "";
 			XLookupString( xke, buffer, 1, &keysym, &compose );
 
 			switch ( keysym )
@@ -93,8 +93,8 @@ bool ssApp::x11EventFilter( XEvent *event )
 
 			if ( buffer[0] != '\0' || key != 0 )
 			{
-				QKeyEvent qke( Event_KeyPress, key, buffer[0], 0 );
-				passDlg->keyPressed( &qke );
+			    QKeyEvent qke( Event_KeyPress, key, buffer[0], 0 );
+			    passDlg->keyPressed( &qke );
 			}
 			return TRUE;
 		}
