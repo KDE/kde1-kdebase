@@ -15,9 +15,9 @@ krootwm.C:krootwm.moc
 krootwm.moc: krootwm.h
 	$(MOC) krootwm.h -o krootwm.moc
 
-kwmapp.C:kwmapp.moc
-kwmapp.moc: kwmapp.h
-	$(MOC) kwmapp.h -o kwmapp.moc
+kwmmapp.C:kwmmapp.moc
+kwmmapp.moc: kwmmapp.h
+	$(MOC) kwmmapp.h -o kwmmapp.moc
 
 
 
