@@ -42,7 +42,7 @@ private:
     /**
      * @return tmp made relative to dirpath
      */
-    QString makeRelative(QString tmp);
+    int makeRelative(QString & tmp);
 
     KSlave Slave;
     /**
