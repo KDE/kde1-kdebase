@@ -1,2 +1,4 @@
 1998-04-28 Thomas Tanghus <tanghus@earthling.net>
 	* Improved geometry management.
+1998-05-14 Thomas Tanghus <tanghus@earthling.net>
+	* Fixed bug with "ShutDownButton=...".

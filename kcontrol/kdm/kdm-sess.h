@@ -38,7 +38,7 @@ public:
         void applySettings();
 	void setupPage(QWidget*);
 
-	enum { All = 0, Non, RootOnly, ConsoleOnly };
+	enum { Non, All, RootOnly, ConsoleOnly };
 
 private slots:
         void slotSetAllowShutdown(int);
