@@ -202,7 +202,6 @@ int init_display(int argc,char **argv)
 
   /* now get all the options */
   for(i=1;i<argc;i++) {
-/*     printf("check options %s\n", argv[i]); */
     if((strcmp(argv[i],"-vt_geometry")==0)&&(i+1<argc)) {
       geom_string = argv[++i];
 #ifdef PRINT_PIPE

@@ -1190,16 +1190,6 @@ void handle_X_event(XEvent event, unsigned char qt_c)
       resize_window(0,0);
       size_set = 1;
       return;
-    case SelectionClear:
-      scr_delete_selection();
-      return;
-    case SelectionNotify:
-      scr_paste_primary(event.xselection.requestor,
-			 event.xselection.property,True);
-      return;
-    case SelectionRequest:
-      scr_send_selection(&(event.xselectionrequest)); /* Matthias */ 
-      return;
     case ButtonPress:
       if (event.xany.window == vt_win)
 	{
@@ -1244,8 +1234,7 @@ void handle_X_event(XEvent event, unsigned char qt_c)
 		  scr_make_selection(event.xbutton.time);
 		  return;
 		case Button2:
-		  scr_request_selection(event.xbutton.time,event.xbutton.x,
-					event.xbutton.y);
+		  scr_paste_selection();
 		  return;
 		}
 	    }

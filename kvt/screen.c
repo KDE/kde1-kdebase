@@ -39,6 +39,10 @@ static unsigned char stipple_data_bits[] = {
    0x03, 0x03, 0x0c, 0x0c};    
 static Pixmap stipple_data_pixmap;
 
+/* needed for the qclipboard port (Matthias) */
+extern void kvt_set_selection(char* s);
+extern char* kvt_get_selection();
+
 
 /* A few windows and GC's, etc */
 extern Display	       *display;
@@ -81,9 +85,6 @@ RENDITION *displayed_rend = NULL;
 
 char charsets[2]={'B','B'};
 
-/* text version of current selection */
-static unsigned char *selection_text = NULL; 
-static int selection_length;		/* length of selection text */
 int selanchor_row = -1000, selend_row = -1000;
 int selanchor_col=0, selend_col=0;
 int selstartx = 0,selstarty = 0;
@@ -169,8 +170,6 @@ char colors_loaded[18] = {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 unsigned long pixel_colors[18];
 int fore_color = 0;
 int back_color = 1;
-
-static paste_internal_selection = 0; /* Matthias */ 
 
 /* set default rstyle colors */
 #define DEFAULT_RSTYLE (1 << 16)
@@ -783,10 +782,7 @@ void scr_add_lines(unsigned char *c,int nl_count,int n)
        ***********************************************************************/
 
       MyWinInfo.offset = 0;
-      /* a little hack for internal selection pasting. (Matthias) */ 
       c_tmp = c[i];
-      if (paste_internal_selection && c_tmp == '\n')
-	c_tmp = '\r';
       switch (c_tmp)
 	{
 	case 127:
@@ -1632,11 +1628,6 @@ void scr_make_selection(int time)
 
   selected = SELECTION_COMPLETE;
 
-  if (selection_text != NULL)
-    {
-      safefree(selection_text,"selection_text","make_selection");
-      selection_text = NULL;
-    }
   
   selection_screen = current_screen;
   /* Set start_row, col and end_row, col to point to the 
@@ -1659,7 +1650,6 @@ void scr_make_selection(int time)
 
   total = (end_row - start_row +1)*(MyWinInfo.cwidth+1);
   str = (unsigned char *)safemalloc(total + 1,"sel_text");
-  selection_text = str;
 
   ptr = str;
   /* save all points between start and end with selection flag */
@@ -1697,118 +1687,24 @@ void scr_make_selection(int time)
     }  
   *ptr = 0;
 
-  selection_length = strlen(str);
-  if(selection_length <=0)
-    return;
-  XSetSelectionOwner(display,XA_PRIMARY,vt_win,(Time)time);
-  if (XGetSelectionOwner(display,XA_PRIMARY) != vt_win)
-    error("Could not get primary selection");
-  
-  /*  Place in CUT_BUFFER0 for backup.
-   */
-  XChangeProperty(display,DefaultRootWindow(display),XA_CUT_BUFFER0,
-		  XA_STRING,8,PropModeReplace,selection_text,selection_length);
-  
+  kvt_set_selection(str);
+  safefree(str, "schwachsinn", "sel_text" );
   return;
 }
 
 
-/***************************************************************************
- *  respond to a request for our current selection.
- ****************************************************************************/
-void scr_send_selection (XSelectionRequestEvent *rq){
-  /* updated the complete function similar to rxvt-2.18. (Matthias) */ 
-  XEvent ev;
-  
-  ev.xselection.type      = SelectionNotify;
-  ev.xselection.property  = None;
-  ev.xselection.display   = rq->display;
-  ev.xselection.requestor = rq->requestor;
-  ev.xselection.selection = rq->selection;
-  ev.xselection.target	   = rq->target;
-  ev.xselection.time      = rq->time;
-  
-  if (rq->target == XA_STRING)
-    {
-      XChangeProperty (display, rq->requestor, rq->property,
-		       XA_STRING, 8, PropModeReplace,
-		       selection_text, selection_length);
-      ev.xselection.property = rq->property;
-    }
-  XSendEvent (display, rq->requestor, False, 0, &ev);
-}
+
 
 /***************************************************************************
  *  Request the current primary selection
  ***************************************************************************/
-void scr_request_selection(int time,int x,int y)
+void scr_paste_selection()
 {
-  Atom sel_property;
-  
-  /*  First check that the release is within the window.
-   */
-  if (x < 0 || x >= MyWinInfo.pwidth || y < 0 || y >= MyWinInfo.pheight)
-    return; 
-  if (selection_text != NULL) 
-    {
-      /* The selection is internal
-       */
-
-      paste_internal_selection = 1;      /* Matthias */
-      send_string(selection_text,selection_length);
-      paste_internal_selection = 0; /* Matthias */ 
-      return;
-    }
-  
-  if (XGetSelectionOwner(display,XA_PRIMARY) == None) 
-    {
-      /*  No primary selection so use the cut buffer.
-       */
-      scr_paste_primary(DefaultRootWindow(display),XA_CUT_BUFFER0,False);
-      return;
-    }
-  sel_property = XInternAtom(display,"VT_SELECTION",False);
-  XConvertSelection(display,XA_PRIMARY,XA_STRING,sel_property,vt_win,time);
-}
-
-
-/***************************************************************************
- *  Respond to a notification that a primary selection has been sent
- ****************************************************************************/
-void scr_paste_primary(int window,int property,int Delete)
-{
-  Atom actual_type;
-  int actual_format,i;
-  long nitems, bytes_after, nread;
-  unsigned char *data, *data2;
-
-  if (property == None)
+  char* s = kvt_get_selection();
+  if (!s)
     return;
+  send_string(s,strlen(s));
 
-  nread = 0;
-  do 
-    {
-      if (XGetWindowProperty(display,window,property,nread/4,PROP_SIZE,Delete,
-			     AnyPropertyType,&actual_type,&actual_format,
-			     &nitems,&bytes_after,(unsigned char **)&data)
-	  != Success)
-	return;
-      if (actual_type != XA_STRING)
-	return;
-      
-      data2 = data;
-      /* want to make a \n to \r mapping for cut and paste only */
-      for(i=0;i<nitems;i++)
-	{
-	  if(*data == '\n')
-	    *data = '\r';
-	  data++;
-	}
-      
-      send_string(data2,nitems);
-      nread += nitems;
-      XFree(data2);
-    } while (bytes_after > 0);
 }
 
 
@@ -1820,36 +1716,6 @@ void scr_clear_selection(void)
   int j,x,i;
 
   selected = SELECTION_CLEAR;
-
-  for(j = 0 ; j < MyWinInfo.saved_lines + MyWinInfo.cheight ;j++)
-    {
-      x=j*(MyWinInfo.cwidth+1);
-      for(i = 0 ; i < (MyWinInfo.cwidth +1) ; i++)
-	cScreen->rendition[x+i] &= ~RS_SELECTED;
-    }  
-
-  for(j = 0 ; j < MyWinInfo.cheight ;j++)
-    {
-      x=j*(MyWinInfo.cwidth+1);
-      for(i = 0 ; i < (MyWinInfo.cwidth +1) ; i++)
-	cScreen->rendition[x+i] &= ~RS_SELECTED;
-    }  
-
-  selanchor_row = selanchor_col = selend_row = selend_col = 0;
-}
-
-void scr_delete_selection(void)
-{
-  int j,x,i;
-
-  selected = SELECTION_CLEAR;
-
-  if (selection_text != NULL) 
-    {
-      safefree(selection_text,"sel_text","clear_sel");
-      selection_text = NULL;
-      selection_length = 0;
-    }
 
   for(j = 0 ; j < MyWinInfo.saved_lines + MyWinInfo.cheight ;j++)
     {

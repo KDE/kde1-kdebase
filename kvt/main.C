@@ -20,6 +20,7 @@
 #include <qlined.h> 
 #include <qbttngrp.h>
 #include <qradiobt.h>
+#include <qclipbrd.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -80,6 +81,10 @@ extern void kvt_set_fontnum(char *);
 extern void kvt_set_menubar(int);
 extern void kvt_set_scrollbar(int);
 extern void kvt_set_size_increment(int, int);
+
+extern void kvt_set_selection(char* s);
+extern char* kvt_get_selection();
+
 }
 
 extern Display* display;
@@ -168,6 +173,14 @@ void kvt_set_scrollbar(int b){
 void kvt_set_size_increment(int dx, int dy){
     kvt->setSizeIncrement(QSize(dx, dy));
     kvt->setMinimumSize(160,100);
+}
+
+void kvt_set_selection(char* s){
+  QApplication::clipboard()->setText(s);
+}
+
+char* kvt_get_selection(){
+  return (char*) QApplication::clipboard()->text();
 }
 
 class MyApp:public KApplication {
