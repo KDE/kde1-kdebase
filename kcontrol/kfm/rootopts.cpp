@@ -171,7 +171,9 @@ void KRootOptions::defaultSettings()
     iconstylebox->setChecked((bool)DEFAULT_ROOT_ICONS_STYLE);
     makeBgActive((bool)DEFAULT_ROOT_ICONS_STYLE);
     fgColorBtn->setColor(DEFAULT_ICON_FG);
+    icon_fg=DEFAULT_ICON_FG;//CT
     bgColorBtn->setColor(DEFAULT_ICON_BG);
+    icon_bg=DEFAULT_ICON_BG;//CT
     hspin->setValue(DEFAULT_GRID_WIDTH - DEFAULT_GRID_MIN);
     vspin->setValue(DEFAULT_GRID_HEIGHT - DEFAULT_GRID_MIN);
 }
