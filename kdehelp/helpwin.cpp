@@ -1278,10 +1278,7 @@ void KHelpWindow::slotURLSelected( const char *URL, int button )
 	}
 	else if ( button == MidButton )
 	{
-		KHelpWindow *helpWin = new KHelpWindow;
-		helpWin->openURL( URL );
-		helpWin->show();
-		emit enableMenuItems();
+        emit openNewWindow( URL );
 	}
 }
 
