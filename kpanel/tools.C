@@ -5,6 +5,7 @@
 
 #include <stdio.h>
 #include <unistd.h>
+#include <time.h>
 
 #include "kpanel.h"
 #include "kfm.h"
@@ -562,40 +563,29 @@ QPixmap kPanel::load_pixmap(const char* name, bool is_folder){
 
 
 void kPanel::set_label_date(){
-  QDateTime d = QDateTime::currentDateTime();
-  QString s;
-  QString s2;
-  int rows = 1;
-  if (!clockAmPm){
-    s.sprintf(" %.2d:%.2d ",
-	      d.time().hour(),
-	      d.time().minute());
-  }
-  else {
-    s.sprintf(" %.2d:%.2d",
-	      d.time().hour()%12,
-	      d.time().minute());
-       QString s3 = d.time().hour()<13?"am":"pm";
-       if (label_date->fontMetrics().width(s+s3) > label_date->width()){
-           s3.prepend("\n");
-           rows++;
-      }
-     s.append(s3);
-  }
-  
-  s2.sprintf("\n %s %d ",
-	     // 	    d.date().dayName(d.date().dayOfWeek()),
-	     d.date().monthName(d.date().month()),
-	     d.date().day());
-  
-  //   s = d.time().toString() + "\n" +d.date().toString();
-  
-  QToolTip::add(label_date, s+s2);
 
-  if (label_date->fontMetrics().height() * (rows+1) > label_date->height())
-    label_date->setText(s);
+  struct tm *loctime;
+  char buf[256];
+  char buf2[256];
+  time_t curtime;
+
+  curtime=time(NULL);
+  loctime=localtime(&curtime);
+  
+  int rows = 1;
+  if (!clockAmPm)
+    strftime(buf,256,"%H:%M\n",loctime);
+  else 
+    strftime(buf,256,"%H:%M%p\n",loctime);
+  
+  strftime(buf2,256,"%b %d",loctime);
+  
+  QToolTip::add(label_date, QString(buf)+QString(buf2));
+
+  if (label_date->fontMetrics().height() * 2 > label_date->height())
+    label_date->setText(buf);
   else
-    label_date->setText(s+s2);
+    label_date->setText(QString(buf)+QString(buf2));
 
   if ( !mBackTexture.isNull() )
     label_date->setBackgroundPixmap( mBackTexture );
