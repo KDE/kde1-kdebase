@@ -133,6 +133,7 @@ int KProtocolFILE::OpenDir( KURL *url )
     file = 0L;
     DIR *dp = 0L;
     struct dirent *ep;
+    struct stat buff;
     
     // Open the directory
     path = url->path();
@@ -145,24 +146,26 @@ int KProtocolFILE::OpenDir( KURL *url )
     // Are we allows to respond with HTML ?
     if ( allowHTML )
     {
+	
 	// Try to open index.html
+	FILE *f;
 	QString t( path.data() );
 	t += "index.html";
-	FILE *f = fopen( t.data(), "rb" );
-	if ( f )
-	{
-	    file = f;
-	    return SUCCESS;
-	}
+	if (( stat( t.data(), &buff ) == 0 ) && S_ISREG( buff.st_mode ))
+	    if (( f = fopen( t.data(), "rb" )))
+	    {
+		file = f;
+		return SUCCESS;
+	    }
 	// Try to open .kde.html
 	t = path.data();
 	t += ".kde.html";
-	f = fopen( t.data(), "rb" );
-	if ( f )
-	{
-	    file = f;
-	    return SUCCESS;
-	}
+	if (( stat( t.data(), &buff ) == 0 ) && S_ISREG( buff.st_mode ))
+	    if ((f = fopen( t.data(), "rb" )))
+	    {
+		file = f;
+		return SUCCESS;
+	    }
     }
     
     de = 0L;
@@ -183,7 +186,6 @@ int KProtocolFILE::OpenDir( KURL *url )
 	QString fname = path.data();
 	fname += ep->d_name;
 
-	struct stat buff;
 	int stat_ret = stat( fname, &buff );
 	struct stat lbuff;
 	/* int lstat_ret = */ lstat( fname, &lbuff );
