@@ -5,6 +5,8 @@
  * (c) Torben Weiss <weis@kde.org>
  * some FilePermissionsPropsPage-changes by 
  *  Henner Zeller <zeller@think.de>
+ * some layout management by 
+ *  Bertrand Leconte <B.Leconte@mail.dotcom.fr>
  */
 
 #include <pwd.h>
@@ -33,6 +35,8 @@
 #include "root.h"
 #include "config-kfm.h"
 #include "kfm.h"
+
+#define SEPARATION 10
 
 mode_t FilePermissionsPropsPage::fperm[3][4] = {
         {S_IRUSR, S_IWUSR, S_IXUSR, S_ISUID},
@@ -162,14 +166,13 @@ void Properties::insertPages()
 PropsPage::PropsPage( Properties *_props ) : QWidget( _props->getTab(), 0L )
 {
     properties = _props;
+    fontHeight = 2*fontMetrics().height();
 }
 
 FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 {
     QString path = properties->getKURL()->path();
     KURL::decodeURL( path );
-
-    debug("Je suis ici");
 
     // Extract the directories name without path
     QString filename;
@@ -203,7 +206,7 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     QLabel *l;
  
     // BL: layout mngt
-    layout = new QBoxLayout(this, QBoxLayout::TopToBottom, 10); 
+    layout = new QBoxLayout(this, QBoxLayout::TopToBottom, SEPARATION); 
 
     l = new QLabel( klocale->translate("Name"), this );
     // BL: layout mngt
@@ -212,8 +215,8 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     
     name = new QLineEdit( this );
     // BL: layout mngt
-    name->setMinimumSize(200, 30); // Should make this dependent of fontsize
-    name->setMaximumSize(QLayout::unlimited, 30);
+    name->setMinimumSize(200, fontHeight);
+    name->setMaximumSize(QLayout::unlimited, fontHeight);
     layout->addWidget(name, 0, AlignLeft);
     name->setText( filename );
     // Dont rename trash or root directory
@@ -229,14 +232,14 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     
     fname = new QLineEdit( this );
     // BL: layout mngt
-    fname->setMinimumSize(200, 30); // Should make this dependent of fontsize
-    fname->setMaximumSize(QLayout::unlimited, 30);
+    fname->setMinimumSize(200, fontHeight);
+    fname->setMaximumSize(QLayout::unlimited, fontHeight);
     layout->addWidget(fname, 0, AlignLeft);
     fname->setText( path );
     fname->setEnabled( false );
     
     // BL: layout mngt
-    layout->addSpacing(10);
+    layout->addSpacing(SEPARATION);
 
     if ( isTrash )
     {
@@ -261,8 +264,8 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     
 	lname = new QLineEdit( this );
 	// BL: layout mngt
-	lname->setMinimumSize(200, 30); // Should make this dependent of fontsize
-	lname->setMaximumSize(QLayout::unlimited, 30);
+	lname->setMinimumSize(200, fontHeight);
+	lname->setMaximumSize(QLayout::unlimited, fontHeight);
 	layout->addWidget(lname, 0, AlignLeft);
 	lname->setText( path );
 	lname->setEnabled( false );
@@ -392,7 +395,7 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
     } else 
 	strGroup.sprintf("%d",buff.st_gid);
 
-    QBoxLayout *box = new QVBoxLayout( this, 3 );
+    QBoxLayout *box = new QVBoxLayout( this, SEPARATION );
 
     QLabel *l;
     QGroupBox *gb;
@@ -401,6 +404,7 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
     /* Group: Access Permissions */
     gb = new QGroupBox ( klocale->translate("Access permissions"), this );
     box->addWidget (gb);
+
     gl = new QGridLayout (gb, 4, 6, 15);
 
     if (IsDir)
@@ -486,7 +490,7 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
      * anyone developing a combo-box with incremental search .. ?
      */
     owner = new QLineEdit( gb );
-    owner->setMinimumSize( owner->sizeHint() );
+    owner->setMinimumSize( owner->sizeHint().width(), fontHeight );
     gl->addWidget (owner, 0, 1);
     owner->setText( strOwner );
     owner->setEnabled ( IamRoot || IsMyFile );
@@ -547,14 +551,14 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
       
       grp->insertStrList ( groupList );
       grp->setCurrentItem (groupList->find ( strGroup ));
-      grp->setMinimumSize( grp->sizeHint() );
+      grp->setMinimumSize( grp->sizeHint().width(), fontHeight );
       gl->addWidget (grp, 1, 1);
       grp->setEnabled (IamRoot || IsMyFile);
     }
     else {
       // no choice; just present the group in a disabled edit-field
       QLineEdit *e = new QLineEdit ( gb );
-      e->setMinimumSize (e->sizeHint());
+      e->setMinimumSize (e->sizeHint().width(), fontHeight);
       e->setText ( strGroup );
       e->setEnabled (false);
       gl->addWidget (e, 1, 1);
@@ -638,52 +642,85 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     execEdit = new QLineEdit( this, "LineEdit_1" );
     pathEdit = new QLineEdit( this, "LineEdit_2" );
     iconBox = new KIconLoaderButton( pkfm->iconLoader(), this );
-    terminalCheck = new QCheckBox( this, "CheckBox_1" );
-    terminalEdit = new QLineEdit( this, "LineEdit_4" );
     execBrowse = new QPushButton( this, "Button_1" );
     
     QGroupBox* tmpQGroupBox;
+    QLabel* tmpQLabel;
+
+    layout = new QBoxLayout(this, QBoxLayout::TopToBottom, SEPARATION);
+
+    tmpQLabel = new QLabel( this, "Label_1" );
+    tmpQLabel->setText( klocale->translate("Execute") );
+    tmpQLabel->setFixedSize(tmpQLabel->sizeHint());
+    layout->addWidget(tmpQLabel, 0, AlignLeft);
+
+    layoutH1 = new QBoxLayout(QBoxLayout::LeftToRight);
+    layout->addLayout(layoutH1);
+
+    execEdit->raise();
+    execEdit->setMinimumSize(150, fontHeight);
+    execEdit->setMaximumSize(QLayout::unlimited, fontHeight);
+    execEdit->setText( "" );
+    execEdit->setMaxLength( 256 );
+    layoutH1->addWidget(execEdit, 10);
+
+    execBrowse->raise();
+    execBrowse->setText( klocale->translate("Browse") );
+    execBrowse->setFixedSize(2*fontMetrics().width(klocale->translate("Browse")), fontHeight);
+    layoutH1->addWidget(execBrowse, 0);
+
+    tmpQLabel = new QLabel( this, "Label_3" );
+    tmpQLabel->setText( klocale->translate("Working Directory") );
+    tmpQLabel->setFixedSize(tmpQLabel->sizeHint());
+    layout->addWidget(tmpQLabel, 0, AlignLeft);
+
+    pathEdit->raise();
+    pathEdit->setMinimumSize(200, fontHeight);
+    pathEdit->setMaximumSize(QLayout::unlimited, fontHeight);
+    pathEdit->setMaxLength( 256 );
+    layout->addWidget(pathEdit, 10, AlignLeft);
+
+    tmpQLabel = new QLabel( this, "Label_4" );
+    tmpQLabel->setText( klocale->translate("Icon") );
+    tmpQLabel->setFixedSize(tmpQLabel->sizeHint());
+    layout->addWidget(tmpQLabel, 0, AlignLeft);
+
+    iconBox->raise();
+    iconBox->setFixedSize(50, 50);
+    layout->addWidget(iconBox, 0, AlignLeft);
+
     tmpQGroupBox = new QGroupBox( this, "GroupBox_1" );
-    tmpQGroupBox->setGeometry( 10, 200, 320, 120 );
     tmpQGroupBox->setFrameStyle( 49 );
     tmpQGroupBox->setAlignment( 1 );
 
-    execEdit->raise();
-    execEdit->setGeometry( 10, 40, 210, 30 );
-    execEdit->setText( "" );
-    execEdit->setMaxLength( 256 );
+    terminalCheck = new QCheckBox(tmpQGroupBox, "CheckBox_1" );
+    terminalEdit = new QLineEdit(tmpQGroupBox, "LineEdit_4" );
 
-    QLabel* tmpQLabel;
-    tmpQLabel = new QLabel( this, "Label_1" );
-    tmpQLabel->setGeometry( 10, 10, 100, 30 );
-    tmpQLabel->setText( klocale->translate("Execute") );
+    layout->addWidget(tmpQGroupBox, 0);
 
-    tmpQLabel = new QLabel( this, "Label_3" );
-    tmpQLabel->setGeometry( 10, 70, 120, 30 );
-    tmpQLabel->setText( klocale->translate("Working Directory") );
-
-    pathEdit->raise();
-    pathEdit->setGeometry( 10, 100, 210, 30 );
-    pathEdit->setMaxLength( 256 );
-    
-    iconBox->raise();
-    iconBox->setGeometry( 10, 140, 50, 50 );
+    layoutV1 = new QBoxLayout(tmpQGroupBox, 
+			      QBoxLayout::TopToBottom, SEPARATION);
 
     terminalCheck->raise();
-    terminalCheck->setGeometry( 20, 210, 150, 30 );
     terminalCheck->setText( klocale->translate("Run in terminal") );
+    terminalCheck->setFixedSize(terminalCheck->sizeHint());
+    layoutV1->addWidget(terminalCheck, 0, AlignLeft);
+
+    tmpQLabel = new QLabel(tmpQGroupBox, "Label_5" );
+    tmpQLabel->setText( klocale->translate("Terminal Options") );
+    tmpQLabel->setFixedSize(tmpQLabel->sizeHint());
+    layoutV1->addWidget(tmpQLabel, 0, AlignLeft);
 
     terminalEdit->raise();
-    terminalEdit->setGeometry( 20, 280, 300, 30 );
+    terminalEdit->setMinimumSize(180, fontHeight);
+    terminalEdit->setMaximumSize(QLayout::unlimited, fontHeight);
     terminalEdit->setText( "" );
+    layoutV1->addWidget(terminalEdit, 0, AlignLeft);
+    layoutV1->activate();
 
-    tmpQLabel = new QLabel( this, "Label_5" );
-    tmpQLabel->setGeometry( 20, 250, 100, 30 );
-    tmpQLabel->setText( klocale->translate("Terminal Options") );
 
-    execBrowse->raise();
-    execBrowse->setGeometry( 230, 40, 100, 30 );
-    execBrowse->setText( klocale->translate("Browse") );
+    layout->addStretch(10);
+    layout->activate();
 
     QFile f( _props->getKURL()->path() );
     if ( !f.open( IO_ReadOnly ) )
@@ -1142,7 +1179,7 @@ void DirPropsPage::slotApplyGlobal()
 
 ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _props )
 {
-    layout = new QBoxLayout(this, QBoxLayout::TopToBottom, 10);
+    layout = new QBoxLayout(this, QBoxLayout::TopToBottom, SEPARATION);
     binaryPatternEdit = new QLineEdit( this, "LineEdit_1" );
     commentEdit = new QLineEdit( this, "LineEdit_2" );
     nameEdit = new QLineEdit( this, "LineEdit_3" );
@@ -1153,15 +1190,13 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
     delExtensionButton = new QPushButton( "->", this );
 
     binaryPatternEdit->raise();
-    binaryPatternEdit->setMinimumSize(210, 30); // Should make this dependent of fontsize
-    binaryPatternEdit->setMaximumSize(QLayout::unlimited, 30);
-    //BL binaryPatternEdit->setGeometry( 10, 40, 210, 30 );
+    binaryPatternEdit->setMinimumSize(210, fontHeight);
+    binaryPatternEdit->setMaximumSize(QLayout::unlimited, fontHeight);
     binaryPatternEdit->setText( "" );
     binaryPatternEdit->setMaxLength( 512 );
 
     QLabel* tmpQLabel;
     tmpQLabel = new QLabel( this, "Label_1" );
-    //BL tmpQLabel->setGeometry( 10, 10, 300, 30 );
     tmpQLabel->setText(  klocale->translate("Binary Pattern (netscape;Netscape;)") );
     tmpQLabel->setFixedSize(tmpQLabel->sizeHint());
     layout->addWidget(tmpQLabel, 0, AlignLeft);
@@ -1169,35 +1204,30 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
     layout->addWidget(binaryPatternEdit, 0, AlignLeft);
 
     tmpQLabel = new QLabel( this, "Label_3" );
-    //BL tmpQLabel->setGeometry( 10, 70, 120, 30 );
     tmpQLabel->setText(  klocale->translate("Comment") );
     tmpQLabel->setFixedSize(tmpQLabel->sizeHint());
     layout->addWidget(tmpQLabel, 0, AlignLeft);
 
     commentEdit->raise();
-    commentEdit->setMinimumSize(210, 30); // Should make this dependent of fontsize
-    commentEdit->setMaximumSize(QLayout::unlimited, 30);
-    //BL commentEdit->setGeometry( 10, 100, 210, 30 );
+    commentEdit->setMinimumSize(210, fontHeight);
+    commentEdit->setMaximumSize(QLayout::unlimited, fontHeight);
     commentEdit->setMaxLength( 256 );
     layout->addWidget(commentEdit, 0, AlignLeft);
 
     tmpQLabel = new QLabel( this, "Label_4" );
-    //BL tmpQLabel->setGeometry( 10, 130, 300, 30 );
     tmpQLabel->setText(  klocale->translate("Name ( in your language )") );
     tmpQLabel->setFixedSize(tmpQLabel->sizeHint());
     layout->addWidget(tmpQLabel, 0, AlignLeft);
 
     nameEdit->raise();
-    //BL nameEdit->setGeometry( 10, 160, 210, 30 );
     nameEdit->setMaxLength( 256 );
-    nameEdit->setMinimumSize(210, 30); // Should make this dependent of fontsize
-    nameEdit->setMaximumSize(QLayout::unlimited, 30);
+    nameEdit->setMinimumSize(210, fontHeight);
+    nameEdit->setMaximumSize(QLayout::unlimited, fontHeight);
     layout->addWidget(nameEdit, 0, AlignLeft);
 
     layoutH = new QBoxLayout(QBoxLayout::LeftToRight);
     layout->addLayout(layoutH, 10);
     
-    //BL extensionsList->setGeometry( 10, 200, 130, 120 );
     layoutH->addWidget(extensionsList, 10);
 
     layoutV = new QBoxLayout(QBoxLayout::TopToBottom);
@@ -1215,7 +1245,6 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
     layoutV->addStretch(3);
     connect( delExtensionButton, SIGNAL( pressed() ), 
 	     this, SLOT( slotDelExtension() ) );
-    //BL availableExtensionsList->setGeometry( 230, 200, 130, 120 );
     layoutH->addWidget(availableExtensionsList, 10);
 
     layout->activate();

@@ -53,6 +53,8 @@ public:
 protected:
     /// Pointer to the dialog
     Properties *properties;
+
+    int fontHeight;
 };
 
 /// 'General' page
@@ -213,6 +215,8 @@ protected:
     QString iconStr;
     QString termStr;
     QString termOptionsStr;
+
+    QBoxLayout *layout, *layoutH1, *layoutV1;
 };
 
 /// Edit "KDE Desktop Entry" Files.
