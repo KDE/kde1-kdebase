@@ -238,7 +238,8 @@ int KProtocolHTTP::Open(KURL *_url, int mode)
 	int do_proxy = use_proxy;
 	if (do_proxy)
 	{
-	    if (char *p = getenv("no_proxy")) {
+            char *p;
+	    if (p = getenv("no_proxy")) {
 	         do_proxy = !revmatch(_url->host(), p);
 	    }
 	}
