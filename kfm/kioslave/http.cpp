@@ -568,7 +568,8 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 
         if (!post_data.isEmpty())
         {
-            command += "Content-Length: ";
+            command += "Content-Type: application/x-www-form-urlencoded\r\n"
+                       "Content-Length: ";
             QString tmp;
             tmp.setNum( post_data.length());
             command += tmp;
