@@ -1,0 +1,96 @@
+# KFONTMANAGER translation to Slovene language
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Bla¾ Zupanèiè <Blaz.Zupancic@guest.arnes.si>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kfontmanager\n"
+"POT-Creation-Date: 1998-04-16 00:51+0200\n"
+"PO-Revision-Date: 1998-04-29 20:40+0100\n"
+"Last-Translator: Bla¾ Zupanèiè <Blaz.Zupancic@guest.arnes.si>\n"
+"Language-Team: Slovenian \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: iso-8859-2\n"
+
+#: main.cpp:58
+msgid "KDE Font Manager"
+msgstr "Upravitelj KDE pisav"
+
+#: main.cpp:71
+msgid "KDE Fonts"
+msgstr "KDE pisave"
+
+#: main.cpp:72
+msgid "Font Explorer"
+msgstr "Raziskovalec pisav"
+
+#: main.cpp:73
+msgid "Raw X11 Font List"
+msgstr "Neobdelan seznam X11 pisav"
+
+#: kfontmanager.cpp:60
+msgid "Available X11 Fonts"
+msgstr "Razpolo¾ljive X11 pisave"
+
+#: kfontmanager.cpp:67
+msgid "Fonts made available to KDE"
+msgstr "Pisave, ki so na voljo v KDE"
+
+#: kfontmanager.cpp:87
+msgid "The KDE Font Manager Example String"
+msgstr "Primer pisave s ¹umniki (¹è¾©È®)."
+
+#: kfontlist.cpp:62 kfontmanager.cpp:109
+msgid "About kfontmanager"
+msgstr "O Upravniku KDE pisav"
+
+#: kfontmanager.cpp:109
+msgid ""
+"kfontmanager Version 0.2\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+"Upravnik KDE pisav, razlièica 0.2\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+
+#: kfontmanager.cpp:212
+msgid ""
+"The environment variable HOME\n"
+"is not set\n"
+msgstr ""
+"Spremenljivka HOME programskega okolja\n"
+"ni doloèena\n"
+
+#: kfontmanager.cpp:289
+msgid ""
+"Can not create:\n"
+" ~/.kde/share/config/kdefonts\n"
+msgstr ""
+"Ne morem narediti imenika:\n"
+" ~/.kde/share/config/kdefonts\n"
+
+#: kfontmanager.cpp:294
+msgid ""
+"~/.kde/share/config/kdefonts exists but\n"
+"is not writeable\n"
+"Can't save KDE Fontlist."
+msgstr ""
+"~/.kde/share/config/kdefonts obstaja,\n"
+"vendar nanj ne morem pisati"
+
+#: kfontlist.cpp:62
+msgid ""
+"kfontmanager Version 0.1\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+"Upravnik KDE pisav, razlièica 0.1\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
