@@ -16,6 +16,7 @@
 #include <qpainter.h>
 #include <qstring.h>
 #include <qpmcache.h>
+#include <qdir.h>
 
 #include <kapp.h>
 #include <kpixmap.h>
@@ -43,6 +44,8 @@ KBackground::KBackground()
   timerRandom = 0;
   randomDesk = 0;
   desk = 0;
+
+  useDir = false;
 }
 
 
@@ -80,14 +83,53 @@ void KBackground::readSettings( int num, bool one, int onedesk )
     timerRandom->start( config.readNumEntry( "Timer", 600 ) * 1000 );
     int count = config.readNumEntry( "Count", 1 );
     bool inorder = config.readBoolEntry( "InOrder", false );
+    useDir = config.readBoolEntry( "UseDir", false );
 
-    if ( inorder ) {
+    if ( useDir ) {
+      QString tmpd = config.readEntry( "Directory", KApplication::kde_wallpaperdir());
+      QDir d( tmpd, "*", QDir::Name, QDir::Readable | QDir::Files );
+
+      const QStrList *list = d.entryList();
+
+      count = list->count();
+      if ( inorder ) {
+	randomDesk = config.readNumEntry( "Item", 0 );
+	randomDesk++;
+	if ( randomDesk >= count ) randomDesk = 0;
+      } else if ( count > 0 )
+	randomDesk = rand() % count;
+
+      config.writeEntry( "Item", randomDesk );
+      config.sync();
+
+      color1.setNamedColor( "#4682B4" );
+      gfMode=Flat;
+      orMode=Portrait;
+      wpMode = Tiled;
+      bUseWallpaper = true;
+
+      wallpaper = d.absPath() + "/" + list->at( randomDesk );
+      name.sprintf( "%s_%d_%d_%d#%02x%02x%02x#%02x%02x%02x#", wallpaper.data(), 
+		    wpMode, gfMode, orMode, color1.red(), color1.green(), 
+		    color1.blue(), color1.red(), color2.green(), color2.blue());
+
+      hasPm = true;
+
+      // this is mainly for kpager, so that we can at anytime find out how desktop
+      //          really looks
+      config.writeEntry( "Item", randomDesk );
+      config.sync();
+
+      return;
+    }
+    else if ( inorder ) {
       randomDesk = config.readNumEntry( "Item", 0 );
       randomDesk++;
       if ( randomDesk >= count ) randomDesk = 0;
     }
     else if ( count > 0 )
       randomDesk = rand() % count;
+
   }
   else
     randomDesk = 0;

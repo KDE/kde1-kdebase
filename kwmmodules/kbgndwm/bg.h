@@ -86,6 +86,8 @@ protected:
   bool oneDesktopMode;
   int oneDesk;
 
+  bool useDir;
+
   int desk;
 };
 

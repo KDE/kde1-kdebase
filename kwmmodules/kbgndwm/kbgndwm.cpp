@@ -45,7 +45,7 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
 
   popup_m->insertItem(i18n("Background Settings"), this, SLOT(settings()));
   popup_m->insertSeparator();
-  o_id = popup_m->insertItem(i18n("One Desktop Mode"), this, SLOT(toggleOneDesktop()));
+  o_id = popup_m->insertItem(i18n("Common Background"), this, SLOT(toggleOneDesktop()));
   popup_m->setItemChecked( o_id, oneDesktopMode );
 
   // setup icon
