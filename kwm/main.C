@@ -1686,16 +1686,17 @@ bool MyApp::x11EventFilter( XEvent * ev){
     if (process_events_mode) {
 	switch (ev->type) {
 	case EnterNotify:
+	    return TRUE; //ignore these
 	case LeaveNotify:
-	    //ignore these
-	    return TRUE;
-	    break;
+	    //ignore these if for a client
+	    if (manager->getClient(ev->xcrossing.window))
+		return TRUE;
 	case ButtonPress:
 	case ButtonRelease:
 	case KeyPress:
 	case KeyRelease:
 	    // process these later
-	    if (events_count == 9) {
+	    if (events_count == 49) {
 		events_count--;
 	    }
 	    events[events_count++] = *ev;

@@ -1653,12 +1653,12 @@ void Manager::manage(Window w, bool mapped){
     QString t = getprop(w, XA_WM_NAME);
     if (t.isEmpty()) {
 	// XA_WM_NAME is not sufficient. If not defined try the icon name
-	t = getprop(c->window, XA_WM_ICON_NAME);
+	t = getprop(w, XA_WM_ICON_NAME);
     }
- 
+
     if (t.isEmpty()){
 	// XA_WM_NAME is not sufficient. If not defined try the instance or class
-	if (XGetClassHint(qt_xdisplay(), w, &klass) != 0) { 
+	if (XGetClassHint(qt_xdisplay(), w, &klass) != 0) {
 	    t = klass.res_name;
 	    if (t.isEmpty())
 		t = klass.res_class;
@@ -1897,7 +1897,7 @@ void Manager::manage(Window w, bool mapped){
 
   dohide = (c->isIconified() || !c->isOnDesktop(currentDesktop()));
 
-  
+
   if (KWM::isDoMaximize(c->window)) {
         KWM::doMaximize(c->window, false);
         c->maximize(0, false);
@@ -1913,7 +1913,7 @@ void Manager::manage(Window w, bool mapped){
      * maximized (not session management) must call setMaximize
      * after it has been mapped. Should not be a problem.
      *
-     *  additionally there is now a function doMaximize() in the 
+     *  additionally there is now a function doMaximize() in the
      * libkdecore/KWM that should solve all problems. See above
      */
 
@@ -1928,7 +1928,7 @@ void Manager::manage(Window w, bool mapped){
 
   addClient(c);
   sendToModules(module_win_add, c);
-  
+
   if (dohide){
     c->hide();
     XUnmapWindow(qt_xdisplay(), c->window);

@@ -134,7 +134,7 @@ private:
   void handleKeyRelease(XKeyEvent);
 
   bool process_events_mode;
-  XEvent events[10];
+  XEvent events[50];
   int events_count ;
 
 };
