@@ -281,7 +281,7 @@ void KfmView::slotTerminal()
 	dir = u.path();
     
     QString cmd;
-    cmd << "cd " << dir << " ; " << term << "&";
+    cmd << "cd \"" << dir << "\" ; " << term << "&";
     system( cmd.data() );
 }
 
