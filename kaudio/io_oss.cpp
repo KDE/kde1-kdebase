@@ -13,6 +13,24 @@
 #define OSS_AUDIO
 #endif
 
+// FreeBSD includes
+#ifdef __FreeBSD__
+#include <fcntl.h>
+#include <sys/ioctl.h>
+#include <sys/types.h>
+#include <machine/soundcard.h>  // Here UNIX_SOUND_SYSTEM gets defined
+#define OSS_AUDIO
+#endif
+
+// NetBSD includes
+#ifdef __NetBSD__
+#include <fcntl.h>
+#include "sys/ioctl.h"
+#include <sys/types.h>
+#include <soundcard.h>
+#define OSS_MIXER
+#endif
+
 #include "maudio.h"
 #include "sample.h"
 #include "io_oss.h"
