@@ -446,30 +446,23 @@ KGreeter::restrict_nologin()
 bool
 KGreeter::restrict_expired(){
 #define DEFAULT_WARN  (2L * 7L * 86400L)  /* Two weeks */
-     struct passwd *pwd;
-     time_t warntime;
-     int quietlog;
-
-     pwd = getpwnam(greet->name);
-     if (!pwd) return false;
+     struct passwd *pwd = getpwnam(greet->name);
      endpwent();
+     if (!pwd) return false;
 
      // don't deny root to log in
      if (!pwd->pw_uid) return false;
 
 #ifdef HAVE_SETUSERCONTEXT
-     login_cap_t * lc;
-
-     lc = login_getpwclass(pwd);
-     quietlog = login_getcapbool(lc, "hushlogin", 0);
-     warntime = login_getcaptime(lc, "warnexpire",
+     login_cap_t * lc = login_getpwclass(pwd);
+     bool quietlog = login_getcapbool(lc, "hushlogin", 0);
+     time_t warntime = login_getcaptime(lc, "warnexpire",
 				 DEFAULT_WARN, DEFAULT_WARN);
      login_close(lc);
 #else
-     quietlog = 0;
+     bool quietlog = false;
      warntime = DEFAULT_WARN;
 #endif
-
      if (pwd->pw_expire)
 	  if (pwd->pw_expire <= time(NULL)) {
 	       QMessageBox::critical(NULL, i18n("Expired"), 
@@ -490,22 +483,18 @@ KGreeter::restrict_expired(){
 bool
 KGreeter::restrict_expired(){
 #define DEFAULT_WARN  (2L * 7L * 86400L)  /* Two weeks */
-#define ONEDAY (86400L)
-     struct passwd *pwd;
-     struct spwd *swd;
-     time_t warntime;
-
-     pwd= getpwnam(greet->name);
-     swd= getspnam(greet->name);
-     if (!pwd || !swd) return false;
+     struct passwd *pwd= getpwnam(greet->name);
+     struct spwd *swd= getspnam(greet->name);
      endpwent();
      endspent();
+
+     if (!pwd || !swd) return false;
 
      // don't deny root to log in
      if (!pwd->pw_uid) return false;
 
-     warntime = DEFAULT_WARN;
-     time_t expiresec = swd->sp_expire*ONEDAY; //sven: ctime uses seconds
+     time_t warntime = DEFAULT_WARN;
+     time_t expiresec = swd->sp_expire*86400L; //sven: ctime uses seconds
      
      if (swd->sp_expire != -1)
 	 if (expiresec <= time(NULL)) {
