@@ -35,11 +35,11 @@ for file in `find apps -name "*.kdelnk"`
 do
   # extract name of the executable
   filename=`grep "^Exec=" $file | sed "s/Exec= *//" | sed "s/ .*//"`
-  echo "Looking for $filename: \t\c"
+  echo -e "Looking for $filename: \t\c"
 
   # test if this executable is installed (in path!)
   executable=`which $filename`
-  if [ -x $executable ]; then
+  if [ -x "$executable" ]; then
 
     echo "found in $executable"
 
@@ -52,7 +52,7 @@ do
 
     # copy the icon file
     picname=`grep "^Icon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
-    if [ -f pics/$picname ]; then
+    if [ -f "pics/$picname" ]; then
       cp pics/$picname $1/share/icons
     fi
 
@@ -61,7 +61,7 @@ do
     if [ ! "$minifile" ]; then
       minipic=$picname
     fi
-    if [ -f pics/mini/$minipic ]; then
+    if [ -f "pics/mini/$minipic" ]; then
       cp pics/mini/$minipic $1/share/icons/mini
     fi
 
@@ -85,7 +85,7 @@ do
 
   # copy the icon
   picname=`grep "^Icon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
-  if [ -f pics/$picname ]; then
+  if [ -f "pics/$picname" ]; then
     cp pics/$picname $1/share/icons
   fi
 
@@ -94,7 +94,7 @@ do
   if [ ! "$minifile" ]; then
     minipic=$picname
   fi
-  if [ -f pics/mini/$minipic ]; then
+  if [ -f "pics/mini/$minipic" ]; then
     cp pics/mini/$minipic $1/share/icons/mini
   fi
 
