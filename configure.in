@@ -233,6 +233,7 @@ AC_OUTPUT(Makefile \
 	mimetypes/image/Makefile \
 	mimetypes/text/Makefile \
 	mimetypes/audio/Makefile \
+	mimetypes/inode/Makefile \
 	kdisplay/Makefile \
 	kfind/Makefile \
 	kfind/pics/Makefile \
