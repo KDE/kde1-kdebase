@@ -72,6 +72,10 @@ msgstr "&Einfügen"
 msgid "&Move to Trash"
 msgstr "In den &Papierkorb verschieben"
 
+#: kfmgui.cpp:278
+msgid "Move to Trash"
+msgstr "In den Papierkorb verschieben"
+
 #: kfmgui.cpp:280
 msgid "&Delete"
 msgstr "&Löschen"
@@ -198,7 +202,7 @@ msgstr "Lesezeichen hinzufügen"
 
 #: kfmgui.cpp:661
 msgid "New "
-msgstr "Neu"
+msgstr "Neu "
 
 #: kfmgui.cpp:746 kfmgui.cpp:841 kfmjob.cpp:34 kfmman.cpp:159 kiojob.cpp:65
 msgid "ERROR: Malformed URL"
@@ -261,6 +265,10 @@ msgstr ""
 #: kfmexec.cpp:214 kfmman.cpp:514 kfmview.cpp:325
 msgid "Open With:"
 msgstr "Öffnen mit:"
+
+#: kfmexec.cpp:214 kfmman.cpp:514 kfmview.cpp:325
+msgid "Open with"
+msgstr "Öffnen mit"
 
 #: kfmview.cpp:370 root.cpp:853
 msgid "ERROR: Can not open properties for multiple files"
