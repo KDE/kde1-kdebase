@@ -13,6 +13,7 @@
 
 KFMTree::KFMTree( QWidget *_parent ) : KTreeList( _parent )
 {
+	setFrameStyle(QFrame::NoFrame);
 }
 
 KFMTree::~KFMTree()

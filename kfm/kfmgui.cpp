@@ -503,6 +503,7 @@ void KfmGui::initToolBar()
     toolbarButtons->insertButton(pixmap, 8, SIGNAL( clicked() ), this, 
 			  SLOT( slotNewWindow() ), false );
     toolbarButtons->setItemEnabled( 8, true );
+	toolbarButtons->alignItemRight( 8, true );
     
     // Load animated logo
     if ( animatedLogo.count() == 0 )
