@@ -45,7 +45,6 @@ public:
 
 public slots:
 
-
   void loadSettings();
   void applySettings();
   
@@ -55,7 +54,12 @@ private:
   QGroupBox *gbox;
   
   QStrList tags, languages;
-    
+
+private slots:
+
+  void changed(int);
+
+  bool changedFlag;
 };
 
 

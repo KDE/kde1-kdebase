@@ -40,23 +40,28 @@ KLocaleConfig::KLocaleConfig(QWidget *parent, const char *name)
   gbox = new QGroupBox(klocale->translate("Language"), this);
   gbox->setGeometry(16,16,432,116);
 
+  changedFlag = FALSE;
+ 
   QLabel *label = new QLabel(klocale->translate("First"), gbox);
   label->adjustSize(); label->move(14,22);
   combo1 = new KLanguageCombo(gbox);
   combo1->setGeometry(94,18,300,24);
   label->setBuddy(combo1);
+  connect(combo1,SIGNAL(highlighted(int)),this,SLOT(changed(int)));
 
   label = new QLabel(klocale->translate("Second"), gbox);
   label->adjustSize(); label->move(14,52);
   combo2 = new KLanguageCombo(gbox);
   combo2->setGeometry(94,48,300,24);
   label->setBuddy(combo2);
+  connect(combo2,SIGNAL(highlighted(int)),this,SLOT(changed(int)));
 
   label = new QLabel(klocale->translate("Third"), gbox);
   label->adjustSize(); label->move(14,82);
   combo3 = new KLanguageCombo(gbox);
   combo3->setGeometry(94,78,300,24);
   label->setBuddy(combo3);
+  connect(combo3,SIGNAL(highlighted(int)),this,SLOT(changed(int)));
 
   loadSettings();
 }
@@ -151,8 +156,17 @@ void KLocaleConfig::applySettings()
   config.writeEntry("Language", value);  
   config.sync();
 
-  KMsgBox::message(this,klocale->translate("Applying language settings"),
-    klocale->translate("Changed language settings apply only to newly started "
-                       "applications.\nTo change the language of all "
-                       "programs, you will have to logout first."));
+  if (changedFlag)
+    KMsgBox::message(this,klocale->translate("Applying language settings"),
+      klocale->translate("Changed language settings apply only to newly started "
+                         "applications.\nTo change the language of all "
+                         "programs, you will have to logout first."));
+
+  changedFlag = FALSE;
+}
+
+
+void KLocaleConfig::changed(int)
+{
+  changedFlag = TRUE;
 }
