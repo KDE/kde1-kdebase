@@ -98,6 +98,10 @@ AC_CHECK_FUNCS(strdup)
 AC_CHECK_KSIZE_T
 AC_CHECK_SETENV
 
+dnl output files
+topdir=`pwd`
+AC_SUBST(topdir)
+
 dnl Perform program name transformation
 AC_ARG_PROGRAM
 

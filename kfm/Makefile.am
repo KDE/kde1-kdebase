@@ -1,7 +1,7 @@
 ## Makefile.am of kdebase/kfm
 
 INCLUDES=	@all_includes@  
-LDADD	=	@all_libraries@ -lkhtmlw -lkdeui -lkdecore -lqt -lXext -lX11 @LIBSOCKET@ -ljpeg -lgif -ljscript
+LDADD	=	@all_libraries@ -lkhtmlw -lkdeui -lkdecore -lqt -lXext -lX11 @LIBSOCKET@ @LIBJPEG@ -lgif -ljscript
 MOC	=	@MOC@
 
 prefix = @prefix@
