@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm VERSION\n"
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1997-09-14 13:53 MET DST\n"
 "Last-Translator: Christian Kirsch <ck@held.mind.de>\n"
 "Language-Team: German / KDE\n"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.10\n"
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1998-01-18 05:15+06:00\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: ru <ru@li.org>\n"
@@ -116,7 +116,7 @@ msgstr "Восемь"
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Некоторые пиктограммы некорректны: ShapeMode отключено\n"
 
-#: main.C:975
+#: main.C:986
 msgid "*** No Tasks ***"
 msgstr "*** Задач нет ***"
 

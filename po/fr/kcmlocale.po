@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmlocale\n"
-"POT-Creation-Date: 1998-01-16 21:10+0100\n"
+"POT-Creation-Date: 1998-01-25 13:23+0100\n"
 "PO-Revision-Date: 1998-01-19 22:53 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
@@ -29,27 +29,27 @@ msgstr "Configuration de la langue"
 msgid "Language"
 msgstr "Langue"
 
-#: locale.cpp:43
+#: locale.cpp:45
 msgid "First"
 msgstr "Première"
 
-#: locale.cpp:49
+#: locale.cpp:52
 msgid "Second"
 msgstr "Seconde"
 
-#: locale.cpp:55
+#: locale.cpp:59
 msgid "Third"
 msgstr "Troisième"
 
-#: locale.cpp:89
+#: locale.cpp:94
 msgid "without name!"
 msgstr "sans nom !"
 
-#: locale.cpp:154
+#: locale.cpp:160
 msgid "Applying language settings"
 msgstr "Appliquer la configuration de la langue"
 
-#: locale.cpp:155
+#: locale.cpp:161
 msgid ""
 "Changed language settings apply only to newly started applications.\n"
 "To change the language of all programs, you will have to logout first."

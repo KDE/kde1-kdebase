@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit \n"
-"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1998-01-18 12:44+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -239,14 +239,14 @@ msgstr "Ikona odmontowania:"
 msgid "Change Menunames"
 msgstr "Zmieñ nazwê menu"
 
-#: MenuNameDialogData.cpp:33
+#: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
 msgstr "Zmieñ nazwê menu wy¶wietlanego w kpanel"
 
-#: MenuNameDialogData.cpp:42
+#: MenuNameDialogData.cpp:36
 msgid "Personal:"
 msgstr "Prywatne:"
 
-#: MenuNameDialogData.cpp:51
+#: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Domy¶lne:"

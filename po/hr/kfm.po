@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-23 23:19+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -276,12 +276,16 @@ msgid "About KFM"
 msgstr "&O programu"
 
 #: kfmgui.cpp:1231
+#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
 "\n"
 "HTML widget by Martin Jones\n"
-"mjones@kde.org"
+"mjones@kde.org\n"
+"\n"
+"Proxy Manager by Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de"
 msgstr ""
 "Autor: Torben Weis\n"
 "weis@kde.org\n"
@@ -1220,11 +1224,11 @@ msgstr ""
 msgid "Known bindings:"
 msgstr "Nepoznata veza"
 
-#: kproxydlg.cpp:10
-msgid "Only HTTP-Proxy is implemented yet!"
+#: kproxydlg.cpp:14
+msgid "Don't forget to save your settings!"
 msgstr ""
 
-#: kproxydlg.cpp:35
+#: kproxydlg.cpp:43
 msgid "No Proxy for:"
 msgstr ""
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmlocale\n"
-"POT-Creation-Date: 1998-01-16 21:10+0100\n"
+"POT-Creation-Date: 1998-01-25 13:23+0100\n"
 "PO-Revision-Date: 1998-01-18 05:20+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russain <ru@li.org>\n"
@@ -30,27 +30,27 @@ msgstr "Установки локализации"
 msgid "Language"
 msgstr "Язык"
 
-#: locale.cpp:43
+#: locale.cpp:45
 msgid "First"
 msgstr "Первый"
 
-#: locale.cpp:49
+#: locale.cpp:52
 msgid "Second"
 msgstr "Второй"
 
-#: locale.cpp:55
+#: locale.cpp:59
 msgid "Third"
 msgstr "Третий"
 
-#: locale.cpp:89
+#: locale.cpp:94
 msgid "without name!"
 msgstr "без имени!"
 
-#: locale.cpp:154
+#: locale.cpp:160
 msgid "Applying language settings"
 msgstr "Применение локализации"
 
-#: locale.cpp:155
+#: locale.cpp:161
 msgid ""
 "Changed language settings apply only to newly started applications.\n"
 "To change the language of all programs, you will have to logout first."

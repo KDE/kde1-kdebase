@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -192,10 +192,6 @@ msgstr "Tamaño es:"
 msgid "All Files and Folders"
 msgstr "Todos los Archivos y Directorios"
 
-#: kftabdlg.cpp:209
-msgid "(none)"
-msgstr "(ninguno)"
-
 #: kftabdlg.cpp:210
 msgid "At Least"
 msgstr "Al Menos"
@@ -350,6 +346,9 @@ msgstr "No se pudo reconocer el tipo de archivo!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Error creando proceso hijo!"
+
+#~ msgid "(none)"
+#~ msgstr "(ninguno)"
 
 #, fuzzy
 #~ msgid "&Delete"

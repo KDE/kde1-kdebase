@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-01-23 23:19+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1998-01-06 22:15+1\n"
 "Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
 
@@ -255,12 +255,16 @@ msgid "About KFM"
 msgstr "&Om KFM"
 
 #: kfmgui.cpp:1231
+#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
 "\n"
 "HTML widget by Martin Jones\n"
-"mjones@kde.org"
+"mjones@kde.org\n"
+"\n"
+"Proxy Manager by Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de"
 msgstr ""
 "Skapare: Torben Weis\n"
 "weis@kde.org\n"
@@ -1213,12 +1217,11 @@ msgstr "logga in som:"
 msgid "Known bindings:"
 msgstr "Kända bindningar:"
 
-#
-#: kproxydlg.cpp:10
-msgid "Only HTTP-Proxy is implemented yet!"
-msgstr "Bara HTTP-Proxy är implementerad för närvarande!!"
+#: kproxydlg.cpp:14
+msgid "Don't forget to save your settings!"
+msgstr ""
 
-#: kproxydlg.cpp:35
+#: kproxydlg.cpp:43
 msgid "No Proxy for:"
 msgstr "Ny proxy för:"
 
@@ -1316,3 +1319,7 @@ msgid ""
 msgstr ""
 "Syntaxfel:\n"
 "kfmexec kommando [URLer ...]\n"
+
+#
+#~ msgid "Only HTTP-Proxy is implemented yet!"
+#~ msgstr "Bara HTTP-Proxy är implementerad för närvarande!!"

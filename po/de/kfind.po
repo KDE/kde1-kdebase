@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1997-10-25 17:54 MET DST\n"
 "Last-Translator: Miroslav Flidr <flidr@kky.zcu.cz>\n"
 
@@ -172,10 +172,6 @@ msgstr "&Größe ist:"
 msgid "All Files and Folders"
 msgstr "Alle Dateien und Verzeichnisse"
 
-#: kftabdlg.cpp:209
-msgid "(none)"
-msgstr "(nichts)"
-
 #: kftabdlg.cpp:210
 msgid "At Least"
 msgstr "mindestens"
@@ -329,6 +325,9 @@ msgstr "Typ des Archivs konnte nicht ermittelt werden!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Fehler beim Erzeugen des Unterprozesses!"
+
+#~ msgid "(none)"
+#~ msgstr "(nichts)"
 
 #~ msgid "&Delete"
 #~ msgstr "&Löschen"

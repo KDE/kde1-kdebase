@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-01-24 23:08+0100\n"
+"POT-Creation-Date: 1998-01-25 13:23+0100\n"
 "PO-Revision-Date: 1998-01-17 21:22 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"

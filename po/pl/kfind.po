@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind \n"
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1998-01-18 12:30+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -178,10 +178,6 @@ msgstr "&Rozmiar:"
 msgid "All Files and Folders"
 msgstr "Wszystkie pliki i katalogi"
 
-#: kftabdlg.cpp:209
-msgid "(none)"
-msgstr "(brak)"
-
 #: kftabdlg.cpp:210
 msgid "At Least"
 msgstr "Co najmniej"
@@ -335,3 +331,6 @@ msgstr "Nie mo¿na rozpoznaæ typu arhiwum!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "B³±d podczas tworzenia procesu potomnego!"
+
+#~ msgid "(none)"
+#~ msgstr "(brak)"

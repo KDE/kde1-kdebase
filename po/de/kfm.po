@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-01-23 23:19+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Claudia Sorg <csorg@stud.uni-frankfurt.de>\n"
 
@@ -255,12 +255,16 @@ msgid "About KFM"
 msgstr "Über KFM"
 
 #: kfmgui.cpp:1231
+#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
 "\n"
 "HTML widget by Martin Jones\n"
-"mjones@kde.org"
+"mjones@kde.org\n"
+"\n"
+"Proxy Manager by Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de"
 msgstr ""
 "Autor: Torben Weis\n"
 "weis@kde.org\n"
@@ -1221,11 +1225,11 @@ msgstr "Einloggen als:"
 msgid "Known bindings:"
 msgstr "Bekannte Zuordnungen:"
 
-#: kproxydlg.cpp:10
-msgid "Only HTTP-Proxy is implemented yet!"
-msgstr "Proxy-Support ist nur für HTTP implementiert."
+#: kproxydlg.cpp:14
+msgid "Don't forget to save your settings!"
+msgstr ""
 
-#: kproxydlg.cpp:35
+#: kproxydlg.cpp:43
 msgid "No Proxy for:"
 msgstr "Keinen Proxy für:"
 
@@ -1318,3 +1322,6 @@ msgid ""
 msgstr ""
 "Syntax Fehler:\n"
 "kfmexec Kommando [URLs ...]\n"
+
+#~ msgid "Only HTTP-Proxy is implemented yet!"
+#~ msgstr "Proxy-Support ist nur für HTTP implementiert."

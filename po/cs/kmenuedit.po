@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit 0.2.3\n"
-"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1998-01-20 10:32 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -243,14 +243,14 @@ msgstr "Ikona odpojeného:"
 msgid "Change Menunames"
 msgstr "Zmìnit jnéno menu"
 
-#: MenuNameDialogData.cpp:33
+#: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
 msgstr "Zmìnit jnéno menu jak je zobrazeno v Panelu"
 
-#: MenuNameDialogData.cpp:42
+#: MenuNameDialogData.cpp:36
 msgid "Personal:"
 msgstr "Osobní:"
 
-#: MenuNameDialogData.cpp:51
+#: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Implicitní:"

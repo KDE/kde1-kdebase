@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-10-01 16:40:07+0200\n"
 "From: root <flidr@CyberGate.zcu.cz>\n"
@@ -190,10 +190,6 @@ msgstr "&Grootte is:"
 msgid "All Files and Folders"
 msgstr "Alle bestanden en mappen"
 
-#: kftabdlg.cpp:209
-msgid "(none)"
-msgstr "(geen)"
-
 #: kftabdlg.cpp:210
 msgid "At Least"
 msgstr "minstens"
@@ -352,6 +348,9 @@ msgstr "Het archieftype kon niet herkend worden"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Fout tijdens het creëren van een kindproces!"
+
+#~ msgid "(none)"
+#~ msgstr "(geen)"
 
 #, fuzzy
 #~ msgid "&Delete"

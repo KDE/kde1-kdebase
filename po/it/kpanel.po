@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,155 +14,171 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kpanel.C:210
+#: kpanel.C:248
 msgid "Move"
 msgstr "Muovi"
 
-#: kpanel.C:213
+#: kpanel.C:251
 msgid "Properties"
 msgstr "Proprietá"
 
-#: kpanel.C:245
+#: kpanel.C:273
 msgid "Go!"
 msgstr ""
 
-#: kpanel.C:247 tools.C:804
+#: kpanel.C:276 tools.C:805
 msgid "Where do you want to go tomorrow?"
 msgstr ""
 
-#: kpanel.C:320
+#: kpanel.C:342
 msgid "No info available"
 msgstr "Nessuna info sul soggetto"
 
-#: kpanel.C:359 kpanel.C:779 kpanel.C:780
+#: kpanel.C:394 kpanel.C:734 kpanel.C:737
 msgid "Logout"
 msgstr "Fine Sessione"
 
-#: kpanel.C:367 kpanel.C:778
+#: kpanel.C:402 kpanel.C:732
 #, fuzzy
 msgid "Lock screen"
 msgstr "Blocca schermo"
 
-#: kpanel.C:376
+#: kpanel.C:410
 msgid "Hide the panel"
 msgstr ""
 
-#: kpanel.C:386
+#: kpanel.C:421
 msgid "Show the panel"
 msgstr ""
 
-#: kpanel.C:762
+#: kpanel.C:704
 msgid "Add application"
 msgstr "Aggiungi applicazione"
 
-#: kpanel.C:764
+#: kpanel.C:707
 msgid "Add an application or a submenu onto the panel"
 msgstr ""
 
-#: kpanel.C:765
+#: kpanel.C:709
 msgid "Add windowlist"
 msgstr ""
 
-#: kpanel.C:767
+#: kpanel.C:712
 msgid "Add a windowlist menu onto the panel"
 msgstr ""
 
-#: kpanel.C:768
+#: kpanel.C:714
 msgid "Configure"
 msgstr "Configura"
 
-#: kpanel.C:770
+#: kpanel.C:717
 msgid "Configure panel"
 msgstr "Configura pannello"
 
-#: kpanel.C:771
+#: kpanel.C:719
 msgid "Restart"
 msgstr "Riavvia"
 
-#: kpanel.C:773
+#: kpanel.C:722
 msgid "Restart panel"
 msgstr "Riavvia pannello"
 
-#: kpanel.C:774 props.C:311
+#: kpanel.C:725 props.C:396
 msgid "Panel"
 msgstr "Pannello"
 
-#: kpanel.C:776
+#: kpanel.C:729
 msgid "Lock Screen"
 msgstr "Blocca schermo"
 
-#: kpanel.C:1143 tools.C:621
+#: kpanel.C:1101 tools.C:621
 msgid "No comment available"
 msgstr "Nessun commento disponibile"
 
-#: kpanel.C:1152 tools.C:813
+#: kpanel.C:1110 tools.C:814
 msgid "Windowlist"
 msgstr ""
 
-#: props.C:241
+#: props.C:327
 msgid "Location"
 msgstr "Indirizzo"
 
-#: props.C:256
+#: props.C:340
 msgid "Taskbar"
 msgstr "Barra Task"
 
-#: props.C:257
+#: props.C:341
 msgid "Hidden"
 msgstr "Nascosta"
 
-#: props.C:269
+#: props.C:350
 msgid "Top/Left"
 msgstr "In alto a Sinistra"
 
-#: props.C:280
+#: props.C:380
 msgid "Tiny Style"
 msgstr "Stile Piccolissimo"
 
-#: props.C:281
+#: props.C:381
 #, fuzzy
 msgid "Normal Style"
 msgstr "Stile Piccolo"
 
-#: props.C:282
+#: props.C:382
 msgid "Large Style"
 msgstr "Stile Largo"
 
-#: props.C:294
+#: props.C:401
 msgid "Menu Tooltips"
 msgstr "Menu di aiuto"
+
+#: props.C:447
+msgid "Others"
+msgstr ""
 
 # File : kpanel.po -- kde internationalization, italian translation.
 # Authors : Andrea Rizzi <bilibao@ouverture.it>,
 #           Lucien Nocera <lnocera@limpet.cis.upenn.edu> and
 #           Marco Spolaore <gemini@sctrade.it>.
 # v 0.1 -- 15/10/97
-#: props.C:298
+#: props.C:449
 #, fuzzy
 msgid "Personal First"
 msgstr "Menu Privato"
 
-#: props.C:302
+#: props.C:452
 msgid "Auto Hide Panel"
 msgstr ""
 
-#: props.C:306
+#: props.C:455
 msgid "Auto Hide Taskbar"
 msgstr ""
 
-#: props.C:362
+#: props.C:473
+msgid "Clock"
+msgstr ""
+
+#: props.C:475
+msgid "24h"
+msgstr ""
+
+#: props.C:479
+msgid "12h AM/PM"
+msgstr ""
+
+#: props.C:540
 msgid "Visible"
 msgstr "Visibile"
 
-#: props.C:369
+#: props.C:547
 msgid "Width"
 msgstr "Larghezza"
 
-#: props.C:374
+#: props.C:552
 msgid "Desktops"
 msgstr "Schermi"
 
-#: props.C:380
+#: props.C:558
 msgid "KPanel Configuration"
 msgstr "Configurazione KPanel "
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -231,14 +231,14 @@ msgstr ""
 msgid "Change Menunames"
 msgstr ""
 
-#: MenuNameDialogData.cpp:33
+#: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
 msgstr ""
 
-#: MenuNameDialogData.cpp:42
+#: MenuNameDialogData.cpp:36
 msgid "Personal:"
 msgstr ""
 
-#: MenuNameDialogData.cpp:51
+#: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr ""

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind 0.3.2\n"
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1997-09-05 03:06+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -193,10 +193,6 @@ msgstr "Размер:"
 msgid "All Files and Folders"
 msgstr "Все файлы и папки"
 
-#: kftabdlg.cpp:209
-msgid "(none)"
-msgstr "(нет)"
-
 #: kftabdlg.cpp:210
 msgid "At Least"
 msgstr "Не менее"
@@ -350,6 +346,9 @@ msgstr "Не могу распознать тип архива!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Ошибка создания процесса!"
+
+#~ msgid "(none)"
+#~ msgstr "(нет)"
 
 #
 #~ msgid "&Delete"

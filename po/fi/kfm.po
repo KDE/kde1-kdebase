@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KFM\n"
-"POT-Creation-Date: 1998-01-23 23:19+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -264,12 +264,16 @@ msgid "About KFM"
 msgstr "&Tietoja KFM:tä"
 
 #: kfmgui.cpp:1231
+#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
 "\n"
 "HTML widget by Martin Jones\n"
-"mjones@kde.org"
+"mjones@kde.org\n"
+"\n"
+"Proxy Manager by Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de"
 msgstr ""
 "Tekijä: Torben Weis\n"
 "weis@kde.org\n"
@@ -1227,11 +1231,11 @@ msgstr "käytä nimeä:"
 msgid "Known bindings:"
 msgstr "Tunnettuja sidoksia:"
 
-#: kproxydlg.cpp:10
-msgid "Only HTTP-Proxy is implemented yet!"
-msgstr "Vain HTTP-Proxy on toteutettu!"
+#: kproxydlg.cpp:14
+msgid "Don't forget to save your settings!"
+msgstr ""
 
-#: kproxydlg.cpp:35
+#: kproxydlg.cpp:43
 msgid "No Proxy for:"
 msgstr "Ei Proxyä:"
 
@@ -1324,3 +1328,6 @@ msgid ""
 msgstr ""
 "Syntaksivirhe\n"
 "kfmexec command [URLs ....]\n"
+
+#~ msgid "Only HTTP-Proxy is implemented yet!"
+#~ msgstr "Vain HTTP-Proxy on toteutettu!"

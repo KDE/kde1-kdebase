@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm 0.10.23\n"
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1998-01-20 10:55 MET\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -109,7 +109,7 @@ msgstr "Osmá"
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Nìkteré pixmapy nejsou korektní: ShapeMode vypnut\n"
 
-#: main.C:975
+#: main.C:986
 msgid "*** No Tasks ***"
 msgstr "*** ®ádné úlohy ***"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1998-01-18 00:14 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr\n"
 "Language-Team: Français\n"
@@ -109,7 +109,7 @@ msgstr "Huit"
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Quelques pixmaps ne sont pas valides ; ShapeMode déactivé\n"
 
-#: main.C:975
+#: main.C:986
 msgid "*** No Tasks ***"
 msgstr "*** Aucune tâche ***"
 

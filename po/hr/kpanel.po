@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,180 +15,196 @@ msgstr ""
 "Content-Transfer-Encoding: ENCODING\n"
 
 # kpanel.C:172
-#: kpanel.C:210
+#: kpanel.C:248
 msgid "Move"
 msgstr "Premjesti"
 
 # kpanel.C:175
-#: kpanel.C:213
+#: kpanel.C:251
 msgid "Properties"
 msgstr "Postavke"
 
-#: kpanel.C:245
+#: kpanel.C:273
 msgid "Go!"
 msgstr ""
 
-#: kpanel.C:247 tools.C:804
+#: kpanel.C:276 tools.C:805
 msgid "Where do you want to go tomorrow?"
 msgstr ""
 
 # kpanel.C:270
-#: kpanel.C:320
+#: kpanel.C:342
 msgid "No info available"
 msgstr "Nema raspoloživih informacija"
 
 # kpanel.C:306 kpanel.C:664 kpanel.C:665
-#: kpanel.C:359 kpanel.C:779 kpanel.C:780
+#: kpanel.C:394 kpanel.C:734 kpanel.C:737
 msgid "Logout"
 msgstr "Odjava"
 
 # kpanel.C:315 kpanel.C:663
-#: kpanel.C:367 kpanel.C:778
+#: kpanel.C:402 kpanel.C:732
 msgid "Lock screen"
 msgstr "Zakljuèaj ekran"
 
 # kpanel.C:326
-#: kpanel.C:376
+#: kpanel.C:410
 msgid "Hide the panel"
 msgstr "Sakrij ploèu"
 
 # kpanel.C:342
-#: kpanel.C:386
+#: kpanel.C:421
 msgid "Show the panel"
 msgstr "Prikaži ploèu"
 
 # kpanel.C:647
-#: kpanel.C:762
+#: kpanel.C:704
 msgid "Add application"
 msgstr "Dodaj aplikaciju"
 
 # kpanel.C:649
-#: kpanel.C:764
+#: kpanel.C:707
 msgid "Add an application or a submenu onto the panel"
 msgstr "Dodaj aplikaciju ili podizbornik na ploèu"
 
 # kpanel.C:650
-#: kpanel.C:765
+#: kpanel.C:709
 msgid "Add windowlist"
 msgstr "Dodaj listu prozora"
 
 # kpanel.C:652
-#: kpanel.C:767
+#: kpanel.C:712
 msgid "Add a windowlist menu onto the panel"
 msgstr "Dodaj izbornik liste prozora na ploèu"
 
 # kpanel.C:653
-#: kpanel.C:768
+#: kpanel.C:714
 msgid "Configure"
 msgstr "Promijeni postavu"
 
 # kpanel.C:655
-#: kpanel.C:770
+#: kpanel.C:717
 msgid "Configure panel"
 msgstr "Promijeni postavu ploèe"
 
 # kpanel.C:656
-#: kpanel.C:771
+#: kpanel.C:719
 msgid "Restart"
 msgstr "Pokreni ponovo"
 
 # kpanel.C:658
-#: kpanel.C:773
+#: kpanel.C:722
 msgid "Restart panel"
 msgstr "Pokreni ponovo ploèu"
 
 # kpanel.C:659 props.C:297
-#: kpanel.C:774 props.C:311
+#: kpanel.C:725 props.C:396
 msgid "Panel"
 msgstr "ploèa"
 
 # kpanel.C:661
-#: kpanel.C:776
+#: kpanel.C:729
 msgid "Lock Screen"
 msgstr "Zakljuèaj Ekran"
 
 # kpanel.C:1012 tools.C:503
-#: kpanel.C:1143 tools.C:621
+#: kpanel.C:1101 tools.C:621
 msgid "No comment available"
 msgstr "Nema raspoloživih komentara"
 
 # kpanel.C:1021 tools.C:690
-#: kpanel.C:1152 tools.C:813
+#: kpanel.C:1110 tools.C:814
 msgid "Windowlist"
 msgstr "Lista prozora"
 
 # props.C:239
-#: props.C:241
+#: props.C:327
 msgid "Location"
 msgstr "Mjesto"
 
 # props.C:254
-#: props.C:256
+#: props.C:340
 msgid "Taskbar"
 msgstr "Traka sa zadaæama"
 
 # props.C:255
-#: props.C:257
+#: props.C:341
 msgid "Hidden"
 msgstr "Sakriven"
 
 # props.C:267
-#: props.C:269
+#: props.C:350
 msgid "Top/Left"
 msgstr "Gore/Lijevo"
 
 # props.C:278
-#: props.C:280
+#: props.C:380
 msgid "Tiny Style"
 msgstr "Sièušni Stil"
 
 # props.C:279
-#: props.C:281
+#: props.C:381
 #, fuzzy
 msgid "Normal Style"
 msgstr "Mali Stil"
 
 # props.C:280
-#: props.C:282
+#: props.C:382
 msgid "Large Style"
 msgstr "Veliki Stil"
 
 # props.C:292
-#: props.C:294
+#: props.C:401
 msgid "Menu Tooltips"
 msgstr ""
 
-#: props.C:298
+#: props.C:447
+msgid "Others"
+msgstr ""
+
+#: props.C:449
 msgid "Personal First"
 msgstr ""
 
 # kpanel.C:326
-#: props.C:302
+#: props.C:452
 #, fuzzy
 msgid "Auto Hide Panel"
 msgstr "Sakrij ploèu"
 
-#: props.C:306
+#: props.C:455
 msgid "Auto Hide Taskbar"
 msgstr ""
 
+#: props.C:473
+msgid "Clock"
+msgstr ""
+
+#: props.C:475
+msgid "24h"
+msgstr ""
+
+#: props.C:479
+msgid "12h AM/PM"
+msgstr ""
+
 # props.C:348
-#: props.C:362
+#: props.C:540
 msgid "Visible"
 msgstr "Vidljiv"
 
 # props.C:355
-#: props.C:369
+#: props.C:547
 msgid "Width"
 msgstr "širina"
 
 # props.C:360
-#: props.C:374
+#: props.C:552
 msgid "Desktops"
 msgstr "Radne površine"
 
 # props.C:366
-#: props.C:380
+#: props.C:558
 msgid "KPanel Configuration"
 msgstr "Postava K Ploèe"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -191,10 +191,6 @@ msgstr "&Mérete:"
 msgid "All Files and Folders"
 msgstr "Minden file és könyvtár"
 
-#: kftabdlg.cpp:209
-msgid "(none)"
-msgstr "(semmi)"
-
 #: kftabdlg.cpp:210
 msgid "At Least"
 msgstr "Legalább"
@@ -348,6 +344,9 @@ msgstr "Nem ismerem fel az arhív típusát!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Hiba a gyerek process kreálása közben!"
+
+#~ msgid "(none)"
+#~ msgstr "(semmi)"
 
 #, fuzzy
 #~ msgid "&Delete"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1998-01-17 23:30 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
@@ -182,10 +182,6 @@ msgstr "&La taille est :"
 msgid "All Files and Folders"
 msgstr "Tout les fichiers et dossiers"
 
-#: kftabdlg.cpp:209
-msgid "(none)"
-msgstr "(aucun)"
-
 #: kftabdlg.cpp:210
 msgid "At Least"
 msgstr "Au moins"
@@ -339,3 +335,6 @@ msgstr "Type d'archive inconnu !"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Erreur en créant le processus fils !"
+
+#~ msgid "(none)"
+#~ msgstr "(aucun)"

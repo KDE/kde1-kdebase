@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1998-01-20 22:22 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
@@ -243,14 +243,14 @@ msgstr "Icône démonté"
 msgid "Change Menunames"
 msgstr "Changer le nom des menus"
 
-#: MenuNameDialogData.cpp:33
+#: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
 msgstr "Changer le nom des menus affichés dans le panneau"
 
-#: MenuNameDialogData.cpp:42
+#: MenuNameDialogData.cpp:36
 msgid "Personal:"
 msgstr "Personnel :"
 
-#: MenuNameDialogData.cpp:51
+#: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Défaut :"

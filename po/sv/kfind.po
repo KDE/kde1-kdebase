@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-10-01 16:40:07+0200\n"
 "From: root <flidr@CyberGate.zcu.cz>\n"
@@ -180,10 +180,6 @@ msgstr "Storlek är:"
 msgid "All Files and Folders"
 msgstr "Alla filer och foldrar"
 
-#: kftabdlg.cpp:209
-msgid "(none)"
-msgstr "(ingen)"
-
 #: kftabdlg.cpp:210
 msgid "At Least"
 msgstr "Åtminstone"
@@ -338,3 +334,6 @@ msgstr "Kunde inte känna igen någon arkivtyp!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Ett fel uppstod vid skapandet av barn-process!"
+
+#~ msgid "(none)"
+#~ msgstr "(ingen)"

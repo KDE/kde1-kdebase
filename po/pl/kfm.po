@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm \n"
-"POT-Creation-Date: 1998-01-23 23:19+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1998-01-20 20:31+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -256,12 +256,16 @@ msgid "About KFM"
 msgstr "Informacje o KFM"
 
 #: kfmgui.cpp:1231
+#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
 "\n"
 "HTML widget by Martin Jones\n"
-"mjones@kde.org"
+"mjones@kde.org\n"
+"\n"
+"Proxy Manager by Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de"
 msgstr ""
 "Autor: Torben Weis\n"
 "weis@kde.org\n"
@@ -1220,11 +1224,11 @@ msgstr "Loguj siê:"
 msgid "Known bindings:"
 msgstr "Znane skojarzenia:"
 
-#: kproxydlg.cpp:10
-msgid "Only HTTP-Proxy is implemented yet!"
-msgstr "Obs³ugiwany jest wy³±cznie HTTP-Proxy!"
+#: kproxydlg.cpp:14
+msgid "Don't forget to save your settings!"
+msgstr ""
 
-#: kproxydlg.cpp:35
+#: kproxydlg.cpp:43
 msgid "No Proxy for:"
 msgstr "Brak Proxy dla:"
 
@@ -1317,3 +1321,6 @@ msgid ""
 msgstr ""
 "B³±d sk³adni:\n"
 "kfmexec command [URLs ....]\n"
+
+#~ msgid "Only HTTP-Proxy is implemented yet!"
+#~ msgstr "Obs³ugiwany jest wy³±cznie HTTP-Proxy!"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-23 23:19+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -291,7 +291,10 @@ msgid ""
 "weis@kde.org\n"
 "\n"
 "HTML widget by Martin Jones\n"
-"mjones@kde.org"
+"mjones@kde.org\n"
+"\n"
+"Proxy Manager by Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de"
 msgstr ""
 
 #: kfmgui.cpp:1323
@@ -1245,15 +1248,11 @@ msgstr ""
 msgid "Known bindings:"
 msgstr "ERROR: Unión desconocida"
 
-#: kproxydlg.cpp:10
-#, fuzzy
-msgid "Only HTTP-Proxy is implemented yet!"
+#: kproxydlg.cpp:14
+msgid "Don't forget to save your settings!"
 msgstr ""
-"La acción solicitada\n"
-"'%s'\n"
-"no está aún implementada."
 
-#: kproxydlg.cpp:35
+#: kproxydlg.cpp:43
 msgid "No Proxy for:"
 msgstr ""
 
@@ -1354,6 +1353,13 @@ msgid ""
 "Syntax Error:\n"
 "kfmexec command [URLs ....]\n"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Only HTTP-Proxy is implemented yet!"
+#~ msgstr ""
+#~ "La acción solicitada\n"
+#~ "'%s'\n"
+#~ "no está aún implementada."
 
 #, fuzzy
 #~ msgid "The URL"

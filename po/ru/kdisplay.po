@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
-"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"POT-Creation-Date: 1998-01-25 13:23+0100\n"
 "PO-Revision-Date: 1997-09-05 02:51+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -253,6 +253,16 @@ msgstr "Средний"
 #: general.cpp:124
 msgid "Large"
 msgstr "Большой"
+
+#
+#: general.cpp:173
+#, fuzzy
+msgid "default"
+msgstr "По умолчанию"
+
+#: general.cpp:176
+msgid "any"
+msgstr ""
 
 #
 #: main.cpp:61

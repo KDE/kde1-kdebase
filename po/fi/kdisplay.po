@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDISPLAY\n"
-"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"POT-Creation-Date: 1998-01-25 13:23+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -252,6 +252,15 @@ msgstr "Keskikoko"
 #: general.cpp:124
 msgid "Large"
 msgstr "Suuri"
+
+#: general.cpp:173
+#, fuzzy
+msgid "default"
+msgstr "Oletus"
+
+#: general.cpp:176
+msgid "any"
+msgstr ""
 
 #: main.cpp:61
 msgid "&Background"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-01-23 23:19+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1998-01-20 10:29 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -271,12 +271,16 @@ msgid "About KFM"
 msgstr "Informace o KFM"
 
 #: kfmgui.cpp:1231
+#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
 "\n"
 "HTML widget by Martin Jones\n"
-"mjones@kde.org"
+"mjones@kde.org\n"
+"\n"
+"Proxy Manager by Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de"
 msgstr ""
 "Autor: Torben Weis\n"
 "weis@kde.org\n"
@@ -1235,11 +1239,11 @@ msgstr "pøihlásit jako:"
 msgid "Known bindings:"
 msgstr "Známé vazby:"
 
-#: kproxydlg.cpp:10
-msgid "Only HTTP-Proxy is implemented yet!"
-msgstr "Pouze HTTP-Proxy je implementována!"
+#: kproxydlg.cpp:14
+msgid "Don't forget to save your settings!"
+msgstr ""
 
-#: kproxydlg.cpp:35
+#: kproxydlg.cpp:43
 msgid "No Proxy for:"
 msgstr "®ádná proxy pro:"
 
@@ -1332,3 +1336,6 @@ msgid ""
 msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
+
+#~ msgid "Only HTTP-Proxy is implemented yet!"
+#~ msgstr "Pouze HTTP-Proxy je implementována!"

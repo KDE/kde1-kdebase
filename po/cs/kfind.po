@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind 0.3.5\n"
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1998-01-20 10:27 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -182,10 +182,6 @@ msgstr "Veli&kost:"
 msgid "All Files and Folders"
 msgstr "V¹echny soubory a adresáøe"
 
-#: kftabdlg.cpp:209
-msgid "(none)"
-msgstr "(¾ádná)"
-
 #: kftabdlg.cpp:210
 msgid "At Least"
 msgstr "pøinejmen¹ím"
@@ -339,3 +335,6 @@ msgstr "Nemohu urèit typ archivu!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Chyba pøi vytváøení procesu!"
+
+#~ msgid "(none)"
+#~ msgstr "(¾ádná)"
