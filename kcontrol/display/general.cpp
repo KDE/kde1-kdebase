@@ -368,12 +368,11 @@ void KGeneral::writeSettings()
 	config->writeEntry( "macStyle", macStyle?"on":"off", true, true);
 	//CT
 
-	config->sync();
-	
-	
 	KConfigGroupSaver saver(kapp->getConfig(), "X11");
 	kapp->getConfig()->writeEntry( "useResourceManager", useRM );
 
+	config->sync();
+	
 	if ( useRM ) {
 		QApplication::setOverrideCursor( waitCursor );
 
