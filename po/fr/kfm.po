@@ -188,7 +188,6 @@ msgid "Configure Browser..."
 msgstr "Configurer le navigateur..."
 
 #: kfmgui.cpp:484
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -209,7 +208,10 @@ msgstr ""
 "mjones@kde.org\n"
 "\n"
 "Gestionnaire de proxy par Lars Hoss\n"
-"Lars.Hoss@munich.netsurf.de"
+"Lars.Hoss@munich.netsurf.de\n"
+"\n"
+"Reports d'erreurs et patchs à envoyer à David Faure\n"
+"faure@kde.org"
 
 #: kfmgui.cpp:503
 msgid "&Bookmarks"
@@ -267,11 +269,11 @@ msgstr "Sélectionner les fichiers :"
 
 #: kfmgui.cpp:980
 msgid "Find Complete"
-msgstr ""
+msgstr "Recherche terminée"
 
 #: kfmgui.cpp:981
 msgid "Continue search from the top of the page?"
-msgstr ""
+msgstr "Continuer la recherche depuis le début de la page?"
 
 #: kfmgui.cpp:999
 msgid "&Edit Bookmarks..."
@@ -799,7 +801,7 @@ msgstr "(Aucun)"
 
 #: kfmprops.cpp:1243
 msgid "Binary Pattern (netscape;Netscape;)"
-msgstr "Données binaires (netscape;Netscape;)"
+msgstr "Titres de l'exécutable (exemple : netscape;Netscape;)"
 
 #: kfmprops.cpp:1250 kfmprops.cpp:1502
 msgid "Comment"
@@ -823,7 +825,7 @@ msgstr "Application par défaut"
 
 #: kfmprops.cpp:1541
 msgid "<none>"
-msgstr ""
+msgstr "<aucun>"
 
 #: kfmprops.cpp:1663
 msgid "Device ( /dev/fd0 )"
