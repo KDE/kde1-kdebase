@@ -1,9 +1,10 @@
 /*
  * $Id$
+ *
  * info_fbsd.cpp is part of the KDE program kcminfo.  This displays
- * various information about the system it's running on.
+ * various information about the system (hopefully a FreeBSD system)
+ * it's running on.
  */
-
 
 #define INFO_CPU_AVAILABLE
 #define INFO_IRQ_AVAILABLE
@@ -17,11 +18,11 @@
 #define INFO_XSERVER_AVAILABLE
 
 
-/*  all following functions should return TRUE, when the Information 
-    was filled into the lBox-Widget.
-    returning FALSE indicates, that information was not available.
-*/
-       
+/*
+ * all following functions should return TRUE, when the Information 
+ * was filled into the lBox-Widget. Returning FALSE indicates that
+ * information was not available.
+ */
 
 #include <sys/types.h>
 #include <sys/sysctl.h>
@@ -83,50 +84,54 @@ bool GetInfo_CPU (KTabListBox *lBox)
 
 bool GetInfo_IRQ (KTabListBox *)
 {
-	return FALSE;
+  /* systat lists the interrupts assigned to devices as well as how many were
+     generated.  Parsing its output however is about as fun as a sandpaper
+     enema.  The best idea would probably be to rip out the guts of systat.
+     Too bad it's not very well commented */
+  return FALSE;
 }
 
 bool GetInfo_DMA (KTabListBox *)
 {
-	return FALSE;
+  return FALSE;
 }
 
 bool GetInfo_PCI (KTabListBox *)
 {
-	return FALSE;
+  return FALSE;
 }
 
 bool GetInfo_IO_Ports (KTabListBox *)
 {
-	return FALSE;
+  return FALSE;
 }
 
 bool GetInfo_Sound (KTabListBox *lbox)
 {
-	QFile *sndstat = new QFile("/dev/sndstat");
+  QFile *sndstat = new QFile("/dev/sndstat");
+  QTextStream *t; QString s;
+ 
+  if (!sndstat->exists()) {
+    delete sndstat;
+    return false;
+  }
+  
+  if (!sndstat->open(IO_ReadOnly)) {
+    delete sndstat;
+    return false;
+  }
+  
+  lbox->clear();
+  
+  t = new QTextStream(sndstat);
 
-	if (!sndstat->exists()) {
-		delete sndstat;
-		return false;
-	}
+  while ((s=t->readLine())!="")
+    lbox->insertItem(s);
 
-	if (!sndstat->open(IO_ReadOnly)) {
-		delete sndstat;
-		return false;
-	}
-
-	lbox->clear();
-
-	QTextStream *t = new QTextStream(sndstat);
-	QString s;
-
-	while ((s=t->readLine())!="")
-		lbox->insertItem(s);
-
-	delete t;
-	sndstat->close();
-	delete sndstat;
-	return true;
+  delete t;
+  sndstat->close();
+  delete sndstat;
+  return true;
 }
 
 bool GetInfo_Devices (KTabListBox *lbox)
@@ -159,31 +164,41 @@ bool GetInfo_Devices (KTabListBox *lbox)
 
 bool GetInfo_SCSI (KTabListBox *lbox)
 {
-	FILE *pipe;
-	QFile *camcontrol = new QFile("/sbin/camcontrol");
+  /*
+   * This code relies on the system at large having "the" CAM (see the FreeBSD
+   * 3.0 Release notes for more info) SCSI layer, and not the older one.
+   * If someone who has a system with the older SCSI layer and would like to
+   * tell me (garbanzo@hooked.net) how to extract that info, I'd be much
+   * obliged.
+   */
+  FILE *pipe;
+  QFile *camcontrol = new QFile("/sbin/camcontrol");
+  QTextStream *t;
+  QString s;
+  
+  if (!camcontrol->exists()) {
+    delete camcontrol;
+    return false;
+  }
+  
+  /* This prints out a list of all the scsi devies, perhaps eventually we could
+     parse it as opposed to schlepping it into a listbox */
+  if ((pipe = popen("/sbin/camcontrol devlist", "r")) == NULL) {
+    delete camcontrol;
+    return false;
+  }
 
-	if (!camcontrol->exists()) {
-		delete camcontrol;
-		return false;
-	}
+  t = new QTextStream(pipe, IO_ReadOnly);
 
-	if ((pipe = popen("/sbin/camcontrol devlist", "r")) == NULL) {
-		delete camcontrol;
-	     return false;
-	}
-
-	QTextStream *t = new QTextStream(pipe, IO_ReadOnly);
-	QString s;
-
-	while ((s=t->readLine())!="")
-		lbox->insertItem(s);
-
-	delete t; delete camcontrol; pclose(pipe);
-
-	if (!lbox->count())
-		return false;
-
-	return true;
+  while ((s=t->readLine())!="")
+    lbox->insertItem(s);
+  
+  delete t; delete camcontrol; pclose(pipe);
+  
+  if (!lbox->count())
+    return false;
+  
+  return true;
 }
 
 bool GetInfo_Partitions (KTabListBox *lbox)

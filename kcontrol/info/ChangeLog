@@ -1,5 +1,9 @@
 1998-11-09  Alex Zepeda  <alex@zippy.dyn.ml.org>
 
-	* info_fbsd.cpp: fix the SCSI information, so that it's actually 
+	* info_fbsd.cpp: Fix the SCSI information, so that it's actually 
 	displayed (only if info can be found).  However, either kcminfo or
 	camcontrol needs to be suid root. Your choice.
+
+	* info_fbsd.cpp: Add a few (hopefully) useful comments, and tidy up
+	some of the code.
+
