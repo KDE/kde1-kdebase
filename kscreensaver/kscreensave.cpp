@@ -17,7 +17,10 @@ void kForceLocker()
 {
 	QString buffer(getenv("HOME"));
 
-	buffer.append("/.kss.pid");
+	buffer.append("/.kss.pid.");
+        char ksshostname[200];
+        gethostname(ksshostname, 200);
+        buffer.append(ksshostname);
 
 	FILE *fp;
 

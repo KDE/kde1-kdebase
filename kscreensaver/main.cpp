@@ -319,7 +319,11 @@ int main( int argc, char *argv[] )
 				 tmp);
 	    }
 	    pidFile = getenv( "HOME" );
-	    pidFile += "/.kss.pid";
+	    pidFile += "/.kss.pid.";
+            char ksshostname[200];
+            gethostname(ksshostname, 200);
+            pidFile += ksshostname;
+
 	    FILE *fp;
 	    if ( (fp = fopen( pidFile, "r" ) ) != NULL )
 		{
