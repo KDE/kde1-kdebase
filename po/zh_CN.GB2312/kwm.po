@@ -1,16 +1,17 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: kcmkpanel\n"
+"Project-Id-Version: kwm\n"
 "POT-Creation-Date: 1999-03-22 01:16+0100\n"
-"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"PO-Revision-Date: 1999-04-03 14:10+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Translator: Wang Jian <larkw@263.net>\n"
 
 #: main.C:68
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
-msgstr "kwm: 已经有一个窗口管理器在运行. kwm 没有启动\n"
+msgstr "kwm: 已经有一个窗口管理器在运行.没有启动kwm\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
@@ -30,43 +31,43 @@ msgstr "用法: "
 
 #: main.C:569
 msgid "&Maximize"
-msgstr "最大化[&M]"
+msgstr "最大化(&M)"
 
 #: main.C:570
 msgid "&Restore"
-msgstr "还原[&R]"
+msgstr "还原(&R)"
 
 #: main.C:571
 msgid "&Iconify"
-msgstr "图标化[&I]"
+msgstr "图标化(&I)"
 
 #: main.C:572
 msgid "&DeIconify"
-msgstr "解除图标化[&D]"
+msgstr "还原(&D)"
 
 #: main.C:573
 msgid "&Sticky"
-msgstr "粘附[&S]"
+msgstr "粘附(&S)"
 
 #: main.C:574
 msgid "&UnSticky"
-msgstr "解除粘附[&U]"
+msgstr "解除粘附(&U)"
 
 #: main.C:575
 msgid "Mo&ve"
-msgstr "移动[&V]"
+msgstr "移动(&V)"
 
 #: main.C:576
 msgid "Resi&ze"
-msgstr "改变窗口大小[&Z]"
+msgstr "改变窗口大小(&Z)"
 
 #: main.C:578
 msgid "&To desktop"
-msgstr "移至桌面[&T]"
+msgstr "移至桌面(&T)"
 
 #: main.C:580
 msgid "&Onto current desktop"
-msgstr "移至当前桌面[&O]"
+msgstr "移至当前桌面(&O)"
 
 #: main.C:620
 msgid "One"
@@ -106,12 +107,11 @@ msgstr "无名桌面"
 
 #: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "一些位图是无效的: 取消 ShapMode\n"
+msgstr "一些位图是无效的: 取消ShapeMode\n"
 
-#
 #: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "一些位图是无效的: 取消 ShapMode\n"
+msgstr "一些位图是无效的: 取消 GimmickMode\n"
 
 #: main.C:1524
 msgid "*** No Tasks ***"
@@ -123,11 +123,11 @@ msgstr "命令:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr "哦!"
+msgstr "错误!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
-msgstr "离线"
+msgstr "注销"
 
 #: logout.C:46
 msgid "Session prepared for logout"
@@ -147,14 +147,14 @@ msgid ""
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
 "下面列出的应用程序在下次进入时不能被还原到当前状态,\n"
-"只会被重新启动. 请确定它们没有包含未保存的重要数据."
+"只能被重新启动. 请确定它们没有包含未保存的重要数据."
 
 #: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"下面列出的应用程序不是 X11 所知的, 下次进入时不能还原到当前状态.\n"
+"下面列出的应用程序不是X11所知的, 下次进入时不能还原到当前状态.\n"
 "请确定它们没有包含未保存的重要数据."
 
 #: taskmgr.C:107

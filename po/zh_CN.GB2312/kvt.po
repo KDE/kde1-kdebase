@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: kcmkpanel\n"
+"Project-Id-Version: kvt\n"
 "POT-Creation-Date: 1999-03-04 18:41+0100\n"
-"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"PO-Revision-Date: 1999-04-03 12:20+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Translator: Wang Jian <larkw@263.net>\n"
 
 #: main.C:426
 msgid "choose type of color-mode"
@@ -12,7 +13,7 @@ msgstr "选择彩色模式"
 
 #: main.C:432
 msgid "Add characters to word class"
-msgstr "在词里添加字符"
+msgstr "在词类中添加字符"
 
 #: main.C:438
 msgid "The backspace key will send a"
@@ -24,95 +25,95 @@ msgstr "光标键定义"
 
 #: main.C:613
 msgid "&New Terminal"
-msgstr "新终端[&N]"
+msgstr "新终端(&N)"
 
 #: main.C:620 main.C:1043
 msgid "&Hide"
-msgstr "隐藏[&H]"
+msgstr "隐藏(&H)"
 
 #: main.C:621
 msgid "&Left"
-msgstr "左边[&L]"
+msgstr "左(&L)"
 
 #: main.C:622
 msgid "&Right"
-msgstr "右边[&R]"
+msgstr "右(&R)"
 
 #: main.C:627
 msgid "&Normal"
-msgstr "正常[&N]"
+msgstr "普通(&N)"
 
 #: main.C:628
 msgid "&Tiny"
-msgstr "最小[&T]"
+msgstr "微小(&T)"
 
 #: main.C:629
 msgid "&Small"
-msgstr "小型[&S]"
+msgstr "小(&S)"
 
 #: main.C:630
 msgid "&Medium"
-msgstr "中等[&M]"
+msgstr "中(&M)"
 
 #: main.C:631
 msgid "&Large"
-msgstr "大型[&L]"
+msgstr "大(&L)"
 
 #: main.C:632
 msgid "&Huge"
-msgstr "超大[&H]"
+msgstr "超大(&H)"
 
 #: main.C:644
 msgid "&black/white"
-msgstr "黑/白[&B]"
+msgstr "黑/白(&B)"
 
 #: main.C:645
 msgid "&white/black"
-msgstr "白/黑[&W]"
+msgstr "白/黑(&W)"
 
 #: main.C:646
 msgid "&green/black"
-msgstr "绿/黑[&G]"
+msgstr "绿/黑(&G)"
 
 #: main.C:647
 msgid "black/light&yellow"
-msgstr "黑/亮黄[&Y]"
+msgstr "黑/潜黄(&Y)"
 
 #: main.C:648
 msgid "Linu&x Console"
-msgstr "Linu&x 主控台"
+msgstr "Linu&x主控台"
 
 #: main.C:657
 msgid "&Custom Colors"
-msgstr "自定义颜色[&C]"
+msgstr "自定义颜色(&C)"
 
 #: main.C:665 main.C:969
 msgid "Hide &Menubar"
-msgstr "隐藏菜单条[&M]"
+msgstr "隐藏菜单条(&M)"
 
 #: main.C:667 main.C:888 main.C:960
 msgid "Show &Menubar"
-msgstr "显示菜单条[&M]"
+msgstr "显示菜单条(&M)"
 
 #: main.C:668 main.C:979
 msgid "Secure &keyboard"
-msgstr "安全键盘[&K]"
+msgstr "防窃听键盘(&K)"
 
 #: main.C:670
 msgid "Scroll&bar"
-msgstr "滚动条[&B]"
+msgstr "滚动条(&B)"
 
 #: main.C:671
 msgid "&Font size"
-msgstr "字体大小[&F]"
+msgstr "字体大小(&F)"
 
 #: main.C:672
 msgid "&Color"
-msgstr "颜色[&C]"
+msgstr "颜色(&C)"
 
 #: main.C:673
 msgid "&Size"
-msgstr "大小[&S]"
+msgstr "大小(&S)"
 
 #: main.C:674
 msgid "Terminal..."
@@ -124,14 +125,13 @@ msgstr "字体..."
 
 #: main.C:676
 msgid "Enable &hotkeys"
-msgstr ""
+msgstr "使用热键(&H)"
 
 #: main.C:679
 msgid "Save &Options"
-msgstr "保存选项"
+msgstr "保存选项(&O)"
 
 #: main.C:688
-#, fuzzy
 msgid ""
 "\n"
 "\n"
@@ -147,17 +147,19 @@ msgstr ""
 "\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
+"(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
 "\n"
-"KDE 桌面环境的终端模拟器\n"
-"基于 Robert Nation 编写的 rxvt-2.08"
+"KDE桌面环境的终端模拟器\n"
+"基于Robert Nation编写的rxvt-2.08"
 
 #: main.C:897 main.C:1036
 msgid "&Show"
-msgstr "显示[&S]"
+msgstr "显示(&S)"
 
 #: main.C:975
 msgid "Unsecure &keyboard"
-msgstr "取消安全键盘[&K]"
+msgstr "停止键盘防窃听(&K)"
 
 #: main.C:986
 msgid "Terminal Options"
@@ -172,7 +174,7 @@ msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
-"新的颜色设置在取消安全键盘后会\n"
+"新的颜色设置在停止键盘防窃听后\n"
 "显示."
 
 #: main.C:1474
@@ -186,7 +188,7 @@ msgstr ""
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
 "KDE 桌面环境的终端模拟器\n"
-"基于 Robert Nation 编写的 rxvt-2.08\n"
+"基于Robert Nation 编写的rxvt-2.08\n"
 
 #: main.C:1478
 msgid "Permitted arguments are:\n"
@@ -196,35 +198,35 @@ msgstr "允许的参数是:\n"
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <command> <arg> ...    execute command with ars - must be last argument\n"
+"-e <command> <arg> ...    以arg作为参数执行命令, -e 必须是最后一个参数\n"
 
 #: main.C:1480
 msgid "-display <name>           specify the display (server)\n"
-msgstr "-display <name>           specify the display (server)\n"
+msgstr "-display <name>           指定显示器(服务器)\n"
 
 #: main.C:1481
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr "-vt_geometry <spec>       the initial vt window geometry\n"
+msgstr "-vt_geometry <spec>       初始的VT窗口的尺寸\n"
 
 #: main.C:1482
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr "-print-pipe <name>        specify pipe for vt100 printer\n"
+msgstr "-print-pipe <name>        指定VT100打印机所使用的管道\n"
 
 #: main.C:1483
 msgid "-vt_bg <colour>           background color\n"
-msgstr "-vt_bg <colour>           background color\n"
+msgstr "-vt_bg <colour>           背景颜色\n"
 
 #: main.C:1484
 msgid "-vt_fg <colour>           foreground color\n"
-msgstr "-vt_fg <colour>           foreground color\n"
+msgstr "-vt_fg <colour>           前景颜色\n"
 
 #: main.C:1485
 msgid "-vt_font <fontname>       normal font\n"
-msgstr "-vt_font <fontname>       normal font\n"
+msgstr "-vt_font <fontname>       普通字体\n"
 
 #: main.C:1486
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr ""
+msgstr "-no_font_hack             关闭Qt对字体问题的变通解决方法\n"
 
 #: main.C:1487
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
@@ -232,43 +234,43 @@ msgstr "-vt_size <size>           tiny, small, normal, large, huge\n"
 
 #: main.C:1488
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr "-linux                    set up kvt to mimic linux-console\n"
+msgstr "-linux                    模仿Linux的控制台\n"
 
 #: main.C:1489
 msgid "-no_menubar               hide the menubar\n"
-msgstr "-no_menubar               hide the menubar\n"
+msgstr "-no_menubar               隐藏菜单条\n"
 
 #: main.C:1490
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr "-no_scrollbar             hide the scrollbar\n"
+msgstr "-no_scrollbar             隐藏滚动条\n"
 
 #: main.C:1491
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
-"-T <text>                 text in window titlebar \n"
-"                          (Obsolete. Use -caption instead)\n"
+"-T <text>                 窗口标题行文本\n"
+"                          (过时的,请使用 -caption)\n"
 
 #: main.C:1493
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr "-tn <TERM>                Terminal type. Default is xterm.\n"
+msgstr "-tn <TERM>                终端类型.默认是xterm.\n"
 
 #: main.C:1494
 msgid "-C                        Capture system console message\n"
-msgstr "-C                        Capture system console message\n"
+msgstr "-C                        显示系统控制台信息\n"
 
 #: main.C:1495
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr "-n <text>                 name in icon or icon window\n"
+msgstr "-n <text>                 图标上的名字\n"
 
 #: main.C:1496
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
-"-7                        run in 7 bit mode\n"
-"-8                        run in 8 bit mode\n"
+"-7                        7bit模式\n"
+"-8                        8bit模式\n"
 
 #: main.C:1498
 msgid ""
@@ -276,21 +278,19 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
-"-ls                       initiate kvt's shell as a login shell\n"
-"-ls-                      initiate kvt's shell as a non-login shell "
-"(default)\n"
+"-ls                       KVT的shell是login shell\n"
+"-ls-                      KVT的shell不是login shell (默认)\n"
 
 #: main.C:1500
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
-"-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
-"ignore\n"
+"-meta <arg>              8bit字符是使用ESCAPE前缀,使用8THBIT,还是忽略\n"
 
 #: main.C:1501
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr "-sl <number>              save number lines in scroll-back buffer\n"
+msgstr "-sl <number>              在回滚缓冲区里保存 number 行\n"
 
 #: main.C:1502
 msgid ""
@@ -299,15 +299,13 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
-"-pageup <keysym>          use hot key alt-keysym to scroll up through the "
-"buffer\n"
-"-pagedown <keysym>        use hot key alt-keysym to scroll down through "
-"buffer\n"
+"-pageup <keysym>          使用热键alt-keysym来向上查看回滚缓冲区\n"
+"-pagedown <keysym>        使用热键alt-keysym来向下查看回滚缓冲区\n"
 
 #: main.C:1506
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
 msgstr ""
-"-grk9\t\tgreek kbd = ELOT 928 (default)\n"
+"-grk9\t\tgreek kbd = ELOT 928 (默认)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
