@@ -478,6 +478,7 @@ int main( int argc, char *argv[] )
 			saverWidget->setFixedSize( QApplication::desktop()->width(),
 				 QApplication::desktop()->height() );
 			saverWidget->move( 0, 0 );
+
 //			saverWidget->setGeometry( 0, 0, QApplication::desktop()->width(),
 //				 QApplication::desktop()->height() );
 			saverWidget->show();
@@ -515,6 +516,7 @@ int main( int argc, char *argv[] )
 //				 QApplication::desktop()->height() );
 		saverWidget->show();
 		saverWidget->raise();
+        QApplication::flushX();
 
 		saveWin = saverWidget->winId();
 
