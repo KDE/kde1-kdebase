@@ -22,7 +22,8 @@ public:
      * Open a new URL
      */
     virtual bool browse( const char *_url, bool _reload = FALSE, bool _bHTML = FALSE,
-			 const char *_currentURL = 0L, QList<KIODirectoryEntry> *list = 0L, const char *_data = 0L );
+			 const char *_currentURL = 0L, QList<KIODirectoryEntry> *list = 0L, 
+			 const char *_data = 0L, const char *_cookies = 0L );
 
     /**
      * Stop the KIOJob that downloads the directory information.
@@ -53,6 +54,7 @@ public slots:
     void slotMimeType( const char *_type );
     void slotRedirection( const char *_url );
     void slotInfo( const char *_text );
+    void slotCookie( const char *_url, const char *_cookie_str );
    
 signals:
     void data( const char *_text, int _len );
@@ -62,6 +64,7 @@ signals:
     void error( int _kioerror, const char *_text );
     void info( const char *_text );
     void redirection( const char *_url );
+    void cookie( const char *_url, const char *_cookie_str );
     
 protected:
     void openFile(bool _reload);
@@ -78,6 +81,7 @@ protected:
     QString tmpFile;
     QString url;
     QString post_data;
+    QString cookie_data;
     int bytesRead;
     QString dataBuffer;
     /**

@@ -20,6 +20,7 @@
 #include <klocale.h>
 #include <kstring.h>
 
+#include "kcookiejar.h"
 #include "kfmman.h"
 #include "kbind.h"
 #include "config-kfm.h"
@@ -35,6 +36,8 @@
 
 QString *KFMManager::link_overlay = 0;
 QString *KFMManager::ro_overlay = 0;
+
+KCookieJar *cookiejar=0;
 
 KFMManager::KFMManager( KfmView *_v )
 {
@@ -58,6 +61,7 @@ KFMManager::KFMManager( KfmView *_v )
     connect( job, SIGNAL( mimeType( const char* ) ), this, SLOT( slotMimeType( const char* ) ) );
     connect( job, SIGNAL( info( const char* ) ), this, SLOT( slotInfo( const char* ) ) );
     connect( job, SIGNAL( redirection( const char* ) ), this, SLOT( slotRedirection( const char* ) ) );
+    connect( job, SIGNAL( cookie( const char*, const char* ) ), this, SLOT( slotCookie( const char*, const char* ) ) );
 
     if ( !link_overlay )
     {
@@ -379,7 +383,16 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     // at once by a call to this function. 'browse' may emit the signal
     // 'newDirEntry' which uses 'files'. So 'files' has to be cleared
     // before! such signal is emitted.
-    job->browse( tryURL, _reload, view->getGUI()->isViewHTML(), url, &files, _data );
+    
+    if (!cookiejar)
+    {
+        printf("Making cookiejar....\n");
+        cookiejar = new KCookieJar;
+    }
+
+    QString Cookies( cookiejar->findCookies(tryURL));
+
+    job->browse( tryURL, _reload, view->getGUI()->isViewHTML(), url, &files, _data, Cookies.data() );
     
     // Something cached ? In this case a call to browse was all we need
     if ( bFinished )
@@ -829,6 +842,40 @@ void KFMManager::slotRedirection( const char *_url )
 void KFMManager::slotInfo( const char *_text )
 {
     view->getGUI()->slotSetStatusBar( _text );
+}
+
+
+void KFMManager::slotCookie( const char *_url, const char *_cookie_str )
+{
+    printf("KFMManager: got Cookie from %s!\n\"%s\"\n", _url, _cookie_str);
+
+    if (!cookiejar)
+    {
+        printf("Making cookiejar....\n");
+        cookiejar = new KCookieJar;
+    }
+
+    KCookiePtr cookie = cookiejar->makeCookies(_url, _cookie_str);
+    
+    while (cookie)
+    {
+        KCookiePtr next_cookie = cookie->next();
+        switch( cookiejar->cookieAdvice(cookie))
+        {
+        case KCookieDunno: // Never ask, accept everything
+        case KCookieAccept:
+            printf("Accepting cookie from %s\n", _url);
+            cookiejar->addCookie(cookie);
+	    break;
+	
+	case KCookieReject:
+        default:
+            printf("Rejecting cookie from %s\n", _url);
+            delete cookie; 
+	    break;
+        }
+        cookie = next_cookie;
+    }
 }
 
 void KFMManager::slotMimeType( const char *_type )

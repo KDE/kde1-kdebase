@@ -44,7 +44,7 @@ public:
     
     void copy( QStrList & _src_url_list, const char *_dest_dir_url );    
     void copy( const char *_src_url, const char *_dest_url );
-    void get( const char *_url, bool _reload=false, const char *_data = 0L );
+    void get( const char *_url, bool _reload=false, const char *_data = 0L, const char *_cookies = 0L );
     void move( QStrList & _src_url_list, const char *_dest_dir_url );    
     void move( const char *_src_url, const char *_dest_url );
     void link( QStrList & _src_url_list, const char *_dest_dir_url );    
@@ -169,11 +169,13 @@ public slots:
 		       const char * _owner, const char *_group );
     void slotRedirection( const char *_url );
     void slotMimeType( const char *_type );
+    void slotCookie( const char *_url, const char *_cookie_str );
     void slotInfo( const char *_text );
     
 signals:
     void data( const char *_data, int _len );
     void redirection( const char *_url );
+    void cookie( const char *_url, const char *_cookie_str );
     void mimeType( const char *_type );
     void info( const char *_text );
     
@@ -341,6 +343,11 @@ protected:
      * Data sent by POST
      */
     QString post_data;
+
+    /**
+     * Some cookies in case you get hungry
+     */
+    QString cookies;
     
     KIOServer *server;
 

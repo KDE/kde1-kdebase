@@ -389,12 +389,13 @@ void KIOJob::link()
     done();
 }
 
-void KIOJob::get( const char *_url, bool _reload, const char *_data )
+void KIOJob::get( const char *_url, bool _reload, const char *_data, const char *_cookies )
 {
     action = KIOJob::JOB_GET;
 
     reload = _reload;
     post_data = _data;
+    cookies = _cookies;
 
     cmSrcURLList.clear();
     cmSrcURLList.append( _url );
@@ -1577,6 +1578,7 @@ void KIOJob::start( int _pid )
     connect( slave, SIGNAL( info( const char* ) ), this, SLOT( slotInfo( const char* ) ) );
     connect( slave, SIGNAL( redirection( const char* ) ), this, SLOT( slotRedirection( const char* ) ) );
     connect( slave, SIGNAL( mimeType( const char* ) ), this, SLOT( slotMimeType( const char* ) ) );
+    connect( slave, SIGNAL( cookie( const char*, const char* ) ), this, SLOT( slotCookie( const char*, const char* ) ) );
     
     started = false;
     cleanedUp = false;
@@ -1619,12 +1621,7 @@ void KIOJob::slaveIsReady()
 	    lastSource = cmSrcURLList.first();
 
 	    QString src = completeURL( cmSrcURLList.first() ).data();	   
-	    if (!reload){
-	      slave->get( src.data(), post_data.data() );
-	    }
-	    else{
-	      slave->reload( src.data() );
-	    }  
+	    slave->get( src.data(), post_data.data(), cookies.data(), reload );
 	    cmSrcURLList.removeRef( cmSrcURLList.first() );
 	}
 	break;
@@ -1879,6 +1876,11 @@ void KIOJob::slotRedirection( const char *_url )
 void KIOJob::slotMimeType( const char *_type )
 {
     emit mimeType( _type );
+}
+
+void KIOJob::slotCookie( const char *_url, const char *_cookie_str )
+{
+    emit cookie( _url, _cookie_str );
 }
 
 void KIOJob::slotInfo( const char *_text )

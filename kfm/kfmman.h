@@ -92,6 +92,7 @@ public slots:
     void slotMimeType( const char *_type );
     void slotInfo( const char *_text );
     void slotRedirection( const char *_url );
+    void slotCookie( const char *_url, const char *_cookie_str );
 
     void setDefaultTextColors( const QColor& textc,const QColor& linkc,
 			       const QColor& vlink);

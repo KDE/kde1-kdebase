@@ -166,6 +166,7 @@ void KIOSlaveIPC::parse( char *_data, int _len )
 	if ( strcmp( name, "setPID" ) == 0 ) { parse_setPID( _data, _len ); } else
 	if ( strcmp( name, "redirection" ) == 0 ) { parse_redirection( _data, _len ); } else
 	if ( strcmp( name, "mimeType" ) == 0 ) { parse_mimeType( _data, _len ); } else
+	if ( strcmp( name, "cookie" ) == 0 ) { parse_cookie( _data, _len ); } else
 		return;
 	free_string( name );
 }

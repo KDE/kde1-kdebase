@@ -1,3 +1,8 @@
+1998-12-01  Waldo Bastian <bastian@kde.org>
+    
+        * Added HTTP-cookies. They don't get saved and they are always on 
+        and they scream for some additional configuration.
+
 1998-11-29  Alex Zepeda  <garbanzo@hooked.net>
 
 	* kbind.cpp: Sort include headers, and correctly include a file to

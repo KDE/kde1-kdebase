@@ -182,7 +182,7 @@ void Kfm::slotInstallSegfaultHandler()
 {
   // printf("+++++++++++++++++++++ INSTALLING SIGSEGV handler +++++++++++++++++\n");
   
-  signal( SIGSEGV, sig_segv_handler );
+//  signal( SIGSEGV, sig_segv_handler );
 }
 
 void sig_segv_handler( int )

@@ -25,7 +25,8 @@ KFMJob::KFMJob( )
     bError = false;
 }
 
-bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_currentURL, QList<KIODirectoryEntry> *_list, const char *_data )
+bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_currentURL, QList<KIODirectoryEntry> *_list, 
+                     const char *_data, const char *_cookies )
 {
     bError = false;
 
@@ -38,7 +39,8 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
 
     url = _url;
     post_data = _data;
-
+    cookie_data = _cookies;
+    
     if ( job )
 	delete job;	
     job = 0L;
@@ -93,6 +95,7 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
 	connect( job, SIGNAL( finished( int ) ), this, SLOT( slotFinished( int ) ) );
 	connect( job, SIGNAL( data( const char*, int ) ), this, SLOT( slotDirHTMLData( const char*, int ) ) );
 	connect( job, SIGNAL( redirection( const char* ) ), this, SLOT( slotRedirection( const char* ) ) );
+	connect( job, SIGNAL( cookie( const char*, const char* ) ), this, SLOT( slotCookie( const char*, const char* ) ) );
 	connect( job, SIGNAL( info( const char* ) ), this, SLOT( slotInfo( const char* ) ) );
 
 	// If we get HTML, then slotDirHTMLData will receive the HTML code.
@@ -117,6 +120,7 @@ void KFMJob::openFile(bool _reload)
     connect( job, SIGNAL( data( const char*, int ) ), this, SLOT( slotData( const char*, int ) ) );
     connect( job, SIGNAL( mimeType( const char* ) ), this, SLOT( slotMimeType( const char* ) ) );
     connect( job, SIGNAL( redirection( const char* ) ), this, SLOT( slotRedirection( const char* ) ) );
+    connect( job, SIGNAL( cookie( const char*, const char* ) ), this, SLOT( slotCookie( const char*, const char* ) ) );
     connect( job, SIGNAL( info( const char* ) ), this, SLOT( slotInfo( const char* ) ) );
     
     // Delete the trailing / since we assume that the URL is a file.
@@ -126,13 +130,21 @@ void KFMJob::openFile(bool _reload)
 	url = url.left( url.length() - 1 );
     
     bFileLoad = TRUE;
-    job->get( url, _reload, post_data );
+
+//@@WABA Look out for cookies!
+    printf("KFMJob::openFile: URL=%s : \n---%s---\n", url.data(), cookie_data.data());
+    job->get( url, _reload, post_data.data(), cookie_data.data() );
 }
 
 void KFMJob::slotRedirection( const char *_url )
 {
     url = _url;
     emit redirection( _url );
+}
+
+void KFMJob::slotCookie( const char *_url, const char *_cookie_str )
+{
+    emit cookie( _url, _cookie_str );
 }
 
 void KFMJob::slotInfo( const char *_text )
