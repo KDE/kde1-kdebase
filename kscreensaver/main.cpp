@@ -417,12 +417,12 @@ int main( int argc, char *argv[] )
 	catchSignals();
 	if ( mode == MODE_INSTALL )
 	{
-		if (!canGetPasswd) {
+		if (!canGetPasswd && lock) {
 			QString tmp = glocale->translate(
 			              "Warning: You won't be able to lock the screen!\n\n"
 			              "Your system uses shadow passwords.\n"
 			              "Please contact your system administrator,\n"
-			              "tell him, that you need suid for the screensavers!");
+			              "tell him, that you need suid for the kcheckpass!");
 			KMsgBox::message(NULL, 
 				 glocale->translate("Shadow Passwords"), 
 				 tmp, KMsgBox::EXCLAMATION);
