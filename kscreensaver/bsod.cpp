@@ -58,6 +58,8 @@
 # define _tolower(c)  ((c) - 'A' + 'a')
 #endif
 
+extern KLocale *glocale;
+
 #define progname "bsod"
 #define MAXDELAY 50
 #define MINDELAY 3
@@ -1187,7 +1189,7 @@ int setupScreenSaver ()
 
 const char *getScreenSaverName ()
 {
-	return QString("Black Screen of Death");
+	return glocale->translate("Black Screen of Death");
 }
 
 #include "bsod.moc"
