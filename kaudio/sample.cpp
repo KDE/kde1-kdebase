@@ -329,15 +329,16 @@ int AudioSample::readDataI()
     return 0; // -<- Just paranoia
 
   // Always pad with ZeroData!!!
-  if (bit_p_spl == 8)
+  if (bit_p_spl == 8) {
     for (int i=len; i<BUFFSIZE; i++) {
       RBuffer[i]=0x80; // !!! Wrong padding !!!
     }
-  else
+  }
+  else {
     for (int i=len; i<BUFFSIZE; i++) {
       RBuffer[i]=0x00;
     }
-        
+  }
 
 #ifdef DEBUG
   //  cerr << len << '\n';

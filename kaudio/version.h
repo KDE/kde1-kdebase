@@ -1,1 +1,1 @@
-#define APP_VERSION 0.84
+#define APP_VERSION 0.95

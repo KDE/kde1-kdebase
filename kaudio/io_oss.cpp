@@ -74,9 +74,9 @@ AudioDev::AudioDev(int devnum)
   // Zero-Data when idle. Is OSS perhaps happy then?!?
   silence8 = new char[BUFFER_MAX];
   silence16= new char[BUFFER_MAX];
-  for (int i=0; i<BUFFER_MAX; i++) {
-    silence8[i]=0x80;
-    silence16[i]=0x00;
+  for (int i=0; i<BUFFER_MAX; i+=2) {
+    silence8[i] = 0x80; silence8[i+1] = 0x80;   // 0x80
+    silence16[i]= 0x00; silence16[i+1]= 0x00;   // 0x00
   }
 }
 
@@ -147,7 +147,6 @@ bool AudioDev::grab(bool probeOnly)
 	 count++;
        }
        arg |= count;
-//       cerr << "Count=" << count <<'\n';
 
        if (ioctl(audiodev, SNDCTL_DSP_SETFRAGMENT, &arg)) {
 	 release();
@@ -262,22 +261,30 @@ int AudioDev::Write(char *data, uint32 num)
 
 int AudioDev::emitSilence()
 {
+  if (!opened) {
+    return 0;
+  }
+
 #ifdef OSS_AUDIO
   audio_buf_info ABI;
   ioctl(audiodev,SNDCTL_DSP_GETOSPACE, &ABI);
-  if (ABI.fragments >= 8)
+  int bytesLeft = ABI.bytes;
+  int emittedBytes = 0;
+  while (bytesLeft >= BUFFSIZE)
     {
+      bytesLeft -= BUFFSIZE;
       // Emit silence, if there may be sound underrun
 #ifdef DEBUG
-      cerr  << "FreeFrags=" << ABI.fragments << '\n';
+      cerr  << "FreeFrags =" << ABI.fragments << '\n';
+      cerr  << "Bytes left=" << bytesLeft << '\n';
 #endif
       if (bit_p_spl == 8)
-	return write(audiodev, silence8, BUFFSIZE );
+	emittedBytes += write(audiodev, silence8, BUFFSIZE );
       else
-	return write(audiodev, silence16, BUFFSIZE );
+	emittedBytes += write(audiodev, silence16, BUFFSIZE );
     }
+  return emittedBytes;
 #else
-  return true;
+  return 0;
 #endif
-  return true;
 }

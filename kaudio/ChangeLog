@@ -1,6 +1,22 @@
+1998-11-18  Christian Esken  <esken@kde.org>
+
+	* AudioDev::emitSilence() : Fixed so that it emits
+	silence multiple times if neccesary. This fixes the
+	"play garbage at end of audio file or while pause"
+	problem - This garbage was there due to playback underrun.
+
+1998-11-06  Christian Esken  <esken@kde.org>
+
+	* Added kplayaudio executable - Audio playback without GUI.
+	
 1998-11-01  Alex Zepeda  <garbanzo@hooked.net>
 
 	* Tweak the Makefile template a bit.
+
+1998-10-02  Christian Esken  <esken@kde.org>
+	* io_oss.cpp+maudio.cpp: Adding "probe mode" for the audio device.
+	* kaudioserver: Quitting audio server, when probing says, there
+	is no aduio device available.
 
 1998-06-17  Christian Esken  <esken@kde.org>
 

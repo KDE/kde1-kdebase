@@ -121,9 +121,10 @@ int main(char argc, char **argv)
       PlayerStatus=START_MEDIA;
     }
 
-    if ( (PlayerStatus!=PLAYING) &&  (PlayerStatus!=PLAY_IT) )
+    if ( (PlayerStatus!=PLAYING) &&  (PlayerStatus!=PLAY_IT) ) {
       // Send some zero data, to (e.g.) fill up the kernel buffer
       ADev->emitSilence();
+    }
 
 
     // ----------------------------------------------------------------------
@@ -180,7 +181,7 @@ int main(char argc, char **argv)
       // ---------------------------------------------------------------------
     case PAUSING:
       if ( KeysChunk->pause )
-	usleep(USLEEP_DELAY);
+	usleep(USLEEP_DELAY/10);
       else
 	PlayerStatus = PLAYING;
       break;
@@ -268,25 +269,24 @@ int main(char argc, char **argv)
 	else {
 	  cerr << "maudio OSS Error: " << errno << "\n";
 	}
-      }
+      } // EAGAIN
       else {
 	ASample->nextWBuf();
 
-	if (KeysChunk->pause) {
-	  PlayerStatus = PAUSE;
-	  goto break_pos;
-	}
-
 	if ( preWriting!=0) {
-	  // pre-write data into device, so that it is always a little ahead and
-	  // slow computers dont experience sound hickups
+	  // pre-write data into device, so that it is always a little ahead
+	  // and slow computers dont experience sound hickups
 	  // Pre-writing is done every time after the sound device got opened.
 	  preWriting--;
 	}
-	else
-	  PlayerStatus = PLAYING;
+	else {
+	  // Allow Pause not in pre-writing phase
+	  if (KeysChunk->pause)
+	    PlayerStatus = PAUSE;
+	  else
+	    PlayerStatus = PLAYING;
+	}
       }
-    break_pos:
       break;
 
 
