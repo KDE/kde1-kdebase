@@ -60,7 +60,7 @@ if test $dynamic_loading = "no"; then
   done
 
   for i in $files; do
-    echo $ac_n "#include \".." $ac_c >> all_modules.new
+    echo $ac_n "#include \".."$ac_c >> all_modules.new
     filename=`echo $i | sed -e "s#kcontrolcenter##"`
     echo "$filename\"" >> all_modules.new
   done
