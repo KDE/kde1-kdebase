@@ -41,16 +41,16 @@ void mainWidget::paintEvent(QPaintEvent *)
   
   p.drawPixmap(10,250,pmap);
   p.setFont(boldFont);
-  p.drawText(20,70,"System:");
+  p.drawText(20,70,i18n("System:"));
 
   p.setFont(boldFont);
-  str= "User: ";
+  str= i18n("User: ");
   p.drawText(60,90,str);
   str.sprintf("%s",cuserid(NULL));
   p.setFont(normalFont);
   p.drawText(150,90,str);
 
-  str = "Hostname: ";
+  str = i18n("Hostname: ");
   p.setFont(boldFont);
   p.drawText(60,110,str);
   gethostname(buf,511);
@@ -58,14 +58,14 @@ void mainWidget::paintEvent(QPaintEvent *)
   p.setFont(normalFont);
   p.drawText(150,110,str);
 
-  str = "System: ";
+  str = i18n("System: ");
   p.setFont(boldFont);
   p.drawText(60,130,str);
   str.sprintf("%s",info.sysname);
   p.setFont(normalFont);
   p.drawText(150,130,str);
    
-  str = "Release: ";
+  str = i18n("Release: ");
   p.setFont(boldFont);
   p.drawText(60,150,str);
   str.sprintf("%s",info.release);
@@ -73,14 +73,14 @@ void mainWidget::paintEvent(QPaintEvent *)
   p.drawText(150,150,str);
 
 
-  str = "Version: ";
+  str = i18n("Version: ");
   p.setFont(boldFont);
   p.drawText(60,170,str);
   str.sprintf("%s",info.version);
   p.setFont(normalFont);
   p.drawText(150,170,str);
 
-  str = "Machine: ";
+  str = i18n("Machine: ");
   p.setFont(boldFont);
   p.drawText(60,190,str);
   str.sprintf("%s",info.machine);
