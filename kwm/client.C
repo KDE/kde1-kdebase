@@ -672,13 +672,15 @@ void Client::mouseMoveEvent( QMouseEvent *ev ){
 
   dragging_state = dragging_runs;
   grabKeyboard();
-  if (do_resize > 0)
-    resizedrag(this, do_resize);
-  else
-    movedrag(this);
+
+  // the drags return true if the client crashed. This can only happend
+  // in opaque drag since we have to process all events in the normal
+  // fashion.
+  // Do not change any variables then to avoid a segfault.
+  if (!(do_resize > 0?resizedrag(this, do_resize):movedrag(this)))
+    dragging_state = dragging_nope;
   releaseKeyboard();
   releaseMouse();
-  dragging_state = dragging_nope;
 
 }
 

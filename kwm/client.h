@@ -235,8 +235,8 @@ private slots:
 
 
 QPixmap* loadIcon(const char* name);
-void resizedrag(Client *c, int mode);
-void movedrag(Client *c);
+bool resizedrag(Client *c, int mode);
+bool movedrag(Client *c);
 void draw_animation_rectangle(int x, int y, int dx, int dy, bool decorated, int o1, int o2);
 void killSelect();
 

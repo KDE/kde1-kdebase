@@ -199,7 +199,7 @@ void drawbound(Client* c){
 
 
 
-int sweepdrag(Client* c, XButtonEvent * /* e0 */,
+bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
 	      void (*recalc)( Client *, int, int) ){
 	      
     XEvent ev;
@@ -263,7 +263,11 @@ int sweepdrag(Client* c, XButtonEvent * /* e0 */,
 	manager->sendConfig(c);
 	XSync(qt_xdisplay(), False);
 	while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
+	Window w = c->window;
 	myapp->processEvents(); 
+	c = manager->getClient(w);
+	if (!c)
+	  return true;
 	XSync(qt_xdisplay(), False);
 	getmouse(&rx, &ry);
 	do_again = (rx != cx || ry != cy);
@@ -298,13 +302,11 @@ int sweepdrag(Client* c, XButtonEvent * /* e0 */,
     }
     
     options.FocusPolicy =  oldFocusPolicy;
-    return 0;
+    return false;
 }
 
 
-void resizedrag(Client *c, int mode){
-    if (c == 0)
-        return;
+bool resizedrag(Client *c, int mode){
 
     if (c->size.flags & PResizeInc) {
       if (!c->size.width_inc)
@@ -318,36 +320,28 @@ void resizedrag(Client *c, int mode){
 
     switch (mode){
     case 1:
-      sweepdrag(c,NULL,resizecalc);
-      break;
+      return sweepdrag(c,NULL,resizecalc);
     case 2:
-      sweepdrag(c,NULL,resizecalc_bl);
-      break;
+      return sweepdrag(c,NULL,resizecalc_bl);
     case 3:
-      sweepdrag(c,NULL,resizecalc_tl);
-      break;
+      return sweepdrag(c,NULL,resizecalc_tl);
     case 4:
-      sweepdrag(c,NULL,resizecalc_tr);
-      break;
+      return sweepdrag(c,NULL,resizecalc_tr);
     case 5:
-      sweepdrag(c,NULL,resizecalc_l);
-      break;
+      return sweepdrag(c,NULL,resizecalc_l);
     case 6:
-      sweepdrag(c,NULL,resizecalc_r);
-      break;
+      return sweepdrag(c,NULL,resizecalc_r);
     case 7:
-      sweepdrag(c,NULL,resizecalc_t);
-      break;
+      return sweepdrag(c,NULL,resizecalc_t);
     case 8:
-      sweepdrag(c,NULL,resizecalc_b);
-      break;
+      return sweepdrag(c,NULL,resizecalc_b);
     }
 
 }
 
 
-void movedrag(Client *c){
-  sweepdrag(c,0,dragcalc);
+bool movedrag(Client *c){
+  return sweepdrag(c,0,dragcalc);
 }
 
 
