@@ -9,7 +9,7 @@ GMOFILES = kdehelp.gmo kcmdisplay.gmo kvt.gmo \
 	kmenuedit.gmo kdmconfig.gmo kcmlocale.gmo \
 	kcmsyssound.gmo kstart.gmo kikbd.gmo \
 	kcmkeys.gmo kcmkfm.gmo kbgndwm.gmo \
-	kpager.gmo konsole.gmo
+	kpager.gmo konsole.gmo kthememgr.gmo
 
 POFILES = $(GMOFILES:.gmo=.po)
 

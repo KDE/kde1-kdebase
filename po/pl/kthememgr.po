@@ -1,0 +1,401 @@
+# KDEUTILS translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kthememgr\n"
+"POT-Creation-Date: 1999-07-05 01:32+0200\n"
+"PO-Revision-Date: 1999-09-04 14:07+0200\n"
+"Last-Translator: Jacek Stolarczyk <jacek@mer.chemia.polsl.gliwice.pl>\n"
+"Language-Team: Polish <pl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:84
+msgid "Installer"
+msgstr "Instalator"
+
+#: main.cpp:105
+msgid "Extract"
+msgstr "Rozpakuj"
+
+#: main.cpp:154
+msgid "warning"
+msgstr "ostrze¿nie"
+
+#: main.cpp:155 main.cpp:163
+msgid "&Ok"
+msgstr "&Ok"
+
+#: main.cpp:161 main.cpp:162
+msgid "fatal error"
+msgstr "powa¿ny b³±d"
+
+#: main.cpp:190
+msgid "Kde Theme Manager"
+msgstr "Mened¿er Motywów KDE"
+
+#: theme.cpp:165
+msgid "Mappings file theme.mappings not found."
+msgstr "Nie znaleziono pliku mapowania theme.mappings"
+
+#: theme.cpp:183
+#, c-format
+msgid ""
+"Error during cleanup of work directory: rc=%d\n"
+"%s"
+msgstr ""
+"B³±d podczas oczyszczania katalogu roboczego: rc=%d\n"
+"%s"
+
+#: theme.cpp:216
+#, c-format
+msgid ""
+"Failed to copy theme contents\n"
+"from %s\n"
+"into %s"
+msgstr ""
+"Wyst±pi³ b³±d podczas kopiowania zawarto¶ci motywu\n"
+"z %s\n"
+"do %s"
+
+#: theme.cpp:230
+#, c-format
+msgid ""
+"Failed to unpack %s with\n"
+"%s"
+msgstr ""
+"Nie mo¿na rozpakowaæ %s przy u¿yciu\n"
+"%s"
+
+#: theme.cpp:256
+msgid "Theme contains no .themerc file"
+msgstr "Motyw nie zawiera pliku .themerc"
+
+#: theme.cpp:303
+#, c-format
+msgid ""
+"Failed to save theme to\n"
+"%s\n"
+"with command\n"
+"%s"
+msgstr ""
+"Nie mo¿na zapisaæ motywu do\n"
+"%s\n"
+"poleceniem\n"
+"%s"
+
+#: theme.cpp:369 themecreator.cpp:341
+#, c-format
+msgid "Cannot open file %s for reading"
+msgstr "Nie mo¿na otworzyæ pliku %s do odczytu"
+
+#: theme.cpp:376 themecreator.cpp:348
+#, c-format
+msgid "Cannot open file %s for writing"
+msgstr "Nie mo¿na otworzyæ pliku %s do zapisu"
+
+#: theme.cpp:386 themecreator.cpp:359
+#, c-format
+msgid ""
+"Write error to %s:\n"
+"%s"
+msgstr ""
+"B³±d zapisu do %s:\n"
+"%s"
+
+#: theme.cpp:463 themecreator.cpp:168
+#, c-format
+msgid ""
+"Internal error in theme mappings\n"
+"(file theme.mappings) in group %s:\n"
+"\n"
+"Entry `%s' is missing or has no value."
+msgstr "B³±d wewnetrzny w mapowaniu motywu\n"
+"\n"
+"(plik theme.mappings) w grupie %s:\n"
+"\n"
+"Brakuje wpisu `%s' albo nie ma on warto¶ci."
+
+#: theme.cpp:591
+#, c-format
+msgid ""
+"Unknown pre-install command `%s' in\n"
+"theme.mappings file in group %s."
+msgstr ""
+"Nieznane polecenie `%s' do instalacji wstêpnej w\n"
+"pliku theme.mappings w grupie %s."
+
+#: theme.cpp:657
+#, c-format
+msgid ""
+"Unknown command `%s' in theme.mappings\n"
+"file in group %s."
+msgstr ""
+"Nieznane polecenie `%s' w mapowaniu motywu\n"
+"w grupie %s."
+
+#: theme.cpp:695
+#, c-format
+msgid "Restart %s to activate the new settings?"
+msgstr "Czy uruchomiæ ponownie %s aby uaktywniæ nowe ustawienia?"
+
+#: theme.cpp:697
+msgid "Theme Setup - Restart Application"
+msgstr "Ustawienia motywów - ponowne uruchomienie aplikacji"
+
+#: theme.cpp:698
+msgid "&Yes"
+msgstr "&Tak"
+
+#: theme.cpp:698
+msgid "&No"
+msgstr "&Nie"
+
+#: theme.cpp:725
+#, c-format
+msgid "Cannot make backup copy of %s: mv returned %d"
+msgstr "Nie mo¿na wykonac kopii zapasowej %s: polecenie `mv' zwróci³o %d"
+
+#: theme.cpp:778
+#, c-format
+msgid "Icon key name %s can not be used"
+msgstr "Nazwa klucza ikony %s nie mo¿e zostaæ u¿yta"
+
+#: theme.cpp:840
+#, c-format
+msgid ""
+"No proper kdelnk file found for %s.\n"
+"Installing icon(s) as %s"
+msgstr ""
+"Nie znaleziono w³a¶ciwego pliku *.kdelnk dla %s.\n"
+"Ikony s± instalowane jako %s."
+
+#: theme.cpp:962
+#, c-format
+msgid ""
+"Failed to rename %s to %s~:\n"
+"%s"
+msgstr ""
+"Nie da sie zmieniæ nawy pliku %s na %s~:\n"
+"%s"
+
+#: theme.cpp:1053
+#, c-format
+msgid "Failed to load preview image %s"
+msgstr "Nie mo¿na za³adowaæ pliku podgl±du %s"
+
+#: theme.cpp:1142
+#, c-format
+msgid "Cannot create directory %s"
+msgstr "Nie mo¿na utworzyæ katalogu %s"
+
+#: theme.cpp:1150
+#, c-format
+msgid "Cannot enter directory %s"
+msgstr "Katalog %s jest niedostêpny"
+
+#: installer.cpp:83
+msgid "New..."
+msgstr "Nowy..."
+
+#: installer.cpp:89
+msgid "Import"
+msgstr "Importuj"
+
+#: installer.cpp:92
+msgid "Export"
+msgstr "Eksportuj"
+
+#: installer.cpp:192
+#, c-format
+msgid "Failed to remove theme %1"
+msgstr "Nie mo¿na usun±æ motywu %1"
+
+#: installer.cpp:224
+msgid "(no theme chosen)"
+msgstr "(nie wybrano motywu)"
+
+#: installer.cpp:243
+msgid "Import Theme"
+msgstr "Importuj motyw"
+
+#: installer.cpp:258
+msgid ""
+"Failed to copy theme %1\n"
+"into themes directory %2"
+msgstr ""
+"Nie mo¿na skopiowaæ motywu %1\n"
+"do katalogu motywów %2."
+
+#: installer.cpp:297
+msgid "Export Theme"
+msgstr "Eksportuj temat"
+
+#: installer.cpp:316
+msgid "(no preview pixmap)"
+msgstr "(nie ma pliku podgl±du)"
+
+#: kwmcom.cpp:79 kwmcom.cpp:106
+msgid "kwmcom: communication with kwm failed\n"
+msgstr "kwmcom: próba komunikacji z kwmcom nie powiod³a siê\n"
+
+#: options.cpp:41
+msgid "Uninstall parts of previous theme"
+msgstr "Odinstaluj czê¶ci poprzedniego motywu"
+
+#: options.cpp:48
+msgid "Work on the following parts:"
+msgstr "Wp³ywaj na nastêpuj±ce czê¶ci:"
+
+#: options.cpp:58
+msgid "Colors"
+msgstr "Kolory"
+
+#: options.cpp:59
+msgid "Wallpapers"
+msgstr "Tapety"
+
+#: options.cpp:60
+msgid "Panel"
+msgstr "Panel"
+
+#: options.cpp:61
+msgid "Sounds"
+msgstr "D¼wiêki"
+
+#: options.cpp:62
+msgid "Icons"
+msgstr "Ikony"
+
+#: options.cpp:63
+msgid "Window Border"
+msgstr "Brzegi okien"
+
+#: options.cpp:65
+msgid "Window Titlebar"
+msgstr "Pasek tytu³owy okna"
+
+#: options.cpp:67
+msgid "Window Gimmick"
+msgstr "Dekoracje okna"
+
+#: options.cpp:70
+msgid "Window Button Layout"
+msgstr "Po³o¿enie przycisków okna"
+
+#: options.cpp:71
+msgid "File Manager"
+msgstr "Mened¿er plików"
+
+#: options.cpp:78
+msgid "Invert"
+msgstr "Odwróæ"
+
+#: options.cpp:117
+msgid "unknown"
+msgstr "nieznana"
+
+#: options.cpp:240
+msgid "available"
+msgstr "dostêpna"
+
+#: options.cpp:241
+msgid "empty"
+msgstr "pusta"
+
+#: widgetcanvas.cpp:142 widgetcanvas.cpp:143
+msgid "Inactive window"
+msgstr "Nieaktywne okno"
+
+#: widgetcanvas.cpp:158 widgetcanvas.cpp:159
+msgid "Active window"
+msgstr "Aktywne okno"
+
+#: widgetcanvas.cpp:192 widgetcanvas.cpp:193
+msgid "Window text"
+msgstr "Tekst w oknie"
+
+#: widgetcanvas.cpp:209
+msgid "Disabled"
+msgstr "Zablokowane"
+
+#: widgetcanvas.cpp:216 widgetcanvas.cpp:217
+msgid "Selected"
+msgstr "Wybrane"
+
+#: about.cpp:68
+msgid "KDE Theme Manager"
+msgstr "Mened¿er motywów KDE"
+
+#: about.cpp:73
+msgid ""
+"Version %1\n"
+"\n"
+"Copyright (C) 1998 by\n"
+"%2\n"
+"\n"
+"Gnu Public License (GPL)"
+msgstr ""
+"Wersja %1\n"
+"\n"
+"Copyright (C) 1998. Autor:\n"
+"%2\n"
+"\n"
+"Gnu Public License (GPL)"
+
+#: about.cpp:105 about.cpp:118
+msgid "Unknown"
+msgstr "Nieznany"
+
+#: about.cpp:107
+msgid "%1 Theme"
+msgstr "%1 motyw"
+
+#: about.cpp:113
+#, c-format
+msgid "Version %1"
+msgstr "Wersja %1"
+
+#: about.cpp:119
+#, c-format
+msgid "by %2"
+msgstr "autor: %2"
+
+#: themecreator.cpp:71
+msgid "Failed to create directory %1: %2"
+msgstr "Nie mo¿na utworzyæ katalogu %1: %2"
+
+#: newthemedlg.cpp:38
+msgid "Create New Theme"
+msgstr "Utwórz nowy motyw"
+
+#: newthemedlg.cpp:46
+msgid "File name"
+msgstr "Nazwa pliku"
+
+#: newthemedlg.cpp:47
+msgid "Detailed name"
+msgstr "Szczegó³owa nazwa"
+
+#: newthemedlg.cpp:48
+msgid "Author"
+msgstr "Autor"
+
+#: newthemedlg.cpp:49
+msgid "Email"
+msgstr "E-mail"
+
+#: newthemedlg.cpp:50
+msgid "Webpage"
+msgstr "Strona internetowa"
+
+#: newthemedlg.cpp:88
+msgid "NewTheme"
+msgstr "Nowy motyw"
+
+#: newthemedlg.cpp:89
+msgid "A New Theme"
+msgstr "Nowy motyw"
