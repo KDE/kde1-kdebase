@@ -1,3 +1,11 @@
+Matthias Hoelzer-Kluepfel - 08/06/99
+ 
+  - fixed root privilege handling 
+  - fixed security hole in "New Terminal" menu entry
+  - added Unix98 pty support
+
+  (problem report thanks to Olaf Kirch <okir@caldera.de>)
+
 Carsten Pfeiffer - 10/1/99
   - fixed commandline options not restored properly restored on 
     sessionmanagement

@@ -168,8 +168,8 @@ static int fd_width;	/* width of file descriptors being used */
 static int app_cur_keys = 0;/* flag to set cursor keys in application mode */
 static int app_kp_keys = 0; /* flag to set application keypad keys */
 #ifndef SVR4
-static char ptynam[] = "/dev/ptyxx";
-char ttynam[] = "/dev/ttyxx";
+static char ptynam[25] = "/dev/ptyxx";
+char ttynam[25] = "/dev/ttyxx";
 #else
 char *ttynam, *ptsname();
 #endif
@@ -334,8 +334,9 @@ static void catch_sig(int sig)
  * Command is ignored as parameter. Matthias */ 
  int run_command(unsigned char *command,unsigned char **argv)
 {
-  int ptyfd;
+  int ptyfd=-1;
   int uid, gid;
+  int grantpty=1;
   unsigned char *s3, *s4;
   int i;
   int width, height;
@@ -347,46 +348,77 @@ static void catch_sig(int sig)
   /*  First find a master pty that we can open.  
    */
 
-#ifdef SVR4
-  ptyfd = open("/dev/ptmx",O_RDWR);
-  if (ptyfd < 0) 
-    {
-      error("Can't open a pseudo teletype");
-      return(-1);
-    }
-  grantpt(ptyfd);
-  unlockpt(ptyfd);
-  fcntl(ptyfd,F_SETFL,O_NDELAY);
-  ttynam=ptsname(ptyfd);
-#else
-  ptyfd = -1;
-  for (s3 = ptyc3; *s3 != 0; s3++) 
-    {
-      for (s4 = ptyc4; *s4 != 0; s4++) 
+#ifdef TIOCGPTN
+  strcpy(ptynam,"/dev/ptmx");
+  strcpy(ttynam,"/dev/pts/");
+  ptyfd = open(ptynam,O_RDWR);
+  if (ptyfd >= 0) // got the master pty
+  { int ptyno;
+    if (ioctl(ptyfd, TIOCGPTN, &ptyno) == 0)
+    { struct stat sbuf;
+      sprintf(ttynam,"/dev/pts/%d",ptyno);
+      if (stat(ttynam,&sbuf) == 0 && S_ISCHR(sbuf.st_mode))
+	grantpty = 0;
+      else
 	{
-	  ptynam[8] = ttynam[8] = *s3;
-	  ptynam[9] = ttynam[9] = *s4;
-	  if ((ptyfd = open(ptynam,O_RDWR)) >= 0) 
-	    {
-	      if (geteuid() == 0 || access(ttynam,R_OK|W_OK) == 0)
-		break;
-	      else 
-		{
-		  close(ptyfd);
-		  ptyfd = -1;
-		}
-	    }
+	  close(ptyfd);
+	  ptyfd = -1;
 	}
-      if (ptyfd >= 0)
-	break;
     }
-  if (ptyfd < 0) 
+    else
     {
-      error("Can't open a pseudo teletype");
-      return(-1);
+      close(ptyfd);
+      ptyfd = -1;
     }
-  fcntl(ptyfd,F_SETFL,O_NDELAY);
+  }     
+#endif
+
+if (ptyfd < 0)
+  {
+#ifdef SVR4
+    ptyfd = open("/dev/ptmx",O_RDWR);
+    if (ptyfd < 0) 
+      {
+	error("Can't open a pseudo teletype");
+	return(-1);
+      }
+    grantpt(ptyfd);
+    unlockpt(ptyfd);
+    fcntl(ptyfd,F_SETFL,O_NDELAY);
+    ttynam=ptsname(ptyfd);
+#else
+    strcpy(ptynam, "/dev/ptyxx");
+    strcpy(ttynam, "/dev/ttyxx");
+    ptyfd = -1;
+    for (s3 = ptyc3; *s3 != 0; s3++) 
+      {
+	for (s4 = ptyc4; *s4 != 0; s4++) 
+	  {
+	    ptynam[8] = ttynam[8] = *s3;
+	    ptynam[9] = ttynam[9] = *s4;
+	    if ((ptyfd = open(ptynam,O_RDWR)) >= 0) 
+	      {
+		if (geteuid() == 0 || access(ttynam,R_OK|W_OK) == 0)
+		  break;
+		else 
+		  {
+		    close(ptyfd);
+		    ptyfd = -1;
+		  }
+	      }
+	  }
+	if (ptyfd >= 0)
+	  break;
+      }
+    if (ptyfd < 0) 
+      {
+	error("Can't open a pseudo teletype");
+	return(-1);
+      }
+    fcntl(ptyfd,F_SETFL,O_NDELAY);
 #endif  
+  }
+
   for (i = 1; i <= 15; i++)
     signal(i,catch_sig);
   signal(SIGCHLD,catch_child);
@@ -421,8 +453,19 @@ static void catch_sig(int sig)
 	gid = gr->gr_gid;
       else
 	gid = -1;
-      fchown(ttyfd,uid,gid);
-      fchmod(ttyfd,0600);
+
+      if (grantpty)
+	{
+	  // regain root privileges
+	  seteuid(0);
+	  
+	  fchown(ttyfd,uid,gid);
+	  fchmod(ttyfd,0600);
+	  
+	  // drop root privileges again
+	  seteuid(getuid());
+	}
+
 #endif
 #ifdef TIOCCONS
      if (console) 

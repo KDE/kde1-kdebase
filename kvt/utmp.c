@@ -8,6 +8,9 @@
  * I didn't touch the Sun part of the code so it should still work.
  *
  * $Log$
+ * Revision 1.7.4.2  1999/02/17 18:54:08  leonw
+ * A non-readable password file made kvt segfault. This behaviour now produces an error message and a clean exit. Not that I know why anyone would want to have a non-readable passwd file...
+ *
  * Revision 1.7.4.1  1999/02/11 16:10:42  leonw
  * Some bugfixes include 1) cleaning tty permissions when killed. 2) MacOS style menubar does not resize kvt anymore 3) Testing for the fixed font when no other font can be found.
  *
@@ -106,9 +109,15 @@ void clean_exit(int r)
   extern char ttynam[];
   extern struct stat ttyfd_stat;
 
-  chmod(ttynam,ttyfd_stat.st_mode);
+  // regain root privileges
+  seteuid(0);
 
+  chmod(ttynam,ttyfd_stat.st_mode);
   chown(ttynam,ttyfd_stat.st_uid,ttyfd_stat.st_gid);
+  
+  // drop root privileges again
+  seteuid(getuid());
+
 #endif
   if(madeutent)
     cleanutent();
@@ -289,12 +298,20 @@ void cleanutent(void)
 int write_utmp(struct utmp * u) 
 {
   int pos;
+
+  // regain root privileges
+  seteuid(0);
+
   utmpname(UTMP);
   setutent();
   pututline(u);
   endutent();
   pos = (int)NULL;
   madeutent = 1;
+
+  // drop root privileges again
+  seteuid(getuid());
+
   return(pos);
 }
 
@@ -305,7 +322,7 @@ void makeutent(char *ttyname)
 {
   struct passwd *pwent;
   struct utmp u;
-  
+
   pwent=getpwuid(getuid());
   /* Prevent crashing when password file is readonly :) */
   if (pwent == NULL) {
@@ -328,7 +345,13 @@ void makeutent(char *ttyname)
   u.ut_pid = getpid(); 
   strncpy(u.ut_id,(ttyname+3),2);
 
+  // regain root privileges
+  seteuid(0);
+  
   (void) write_utmp(&u);
+
+  // drop root privileges again
+  seteuid(getuid());
 }
 
 /****************************************************************************
@@ -349,6 +372,9 @@ void cleanutent()
 {
   int pid;
   struct utmp *u;
+
+  // regain root privileges
+  seteuid(0);
   
   utmpname(UTMP);
   setutent();
@@ -377,6 +403,9 @@ void cleanutent()
 	  endutent();
 	}
     }
+
+  // drop root privileges again
+  seteuid(getuid());
 }
 
 #endif /* BSD */

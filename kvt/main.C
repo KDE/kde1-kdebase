@@ -1161,7 +1161,8 @@ void kVt::file_menu_activated(int item){
   switch (item){
   case 0:
      if (fork()==0){
-       execvp(o_argv[0], o_argv);
+       // don't rely on argv[0] containing the real program name & path
+       execvp("kvt", o_argv);
        exit(1);
      }
      //     signal(SIGCHLD,SIG_DFL);
@@ -1340,6 +1341,9 @@ void kVt::clipboard_changed() {
 
 int main(int argc, char **argv)
 {
+  // drop root privileges
+  seteuid(getuid());
+
   setlocale(LC_CTYPE, "");
   int i;
   // replace "-caption" with "-T"
