@@ -11,10 +11,9 @@ msgstr "Directorias:"
 
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
-msgstr "Não foi possivel abrir ou ler a directoria"
+msgstr "Não foi possível abrir ou ler a directoria."
 
 #: kfindtop.cpp:118
-#, c-format
 msgid ""
 "KFind %s\n"
 "Frontend to find utility\n"
@@ -25,8 +24,9 @@ msgid ""
 msgstr ""
 "KFind %s\n"
 "Interface para o programa find\n"
-"Miroslav Flødr <flidr@kky.zcu.cz>\n"
-"Special thanks to Stephan Kulow\n"
+"Miroslav Flødr <flidr@kky.zcu.cz>"
+"\n"
+"Agradecimentos a Stephan Kulow\n"
 "<coolo@kde.org>"
 
 #: kfindtop.cpp:136
@@ -179,7 +179,7 @@ msgstr "Ao Menos"
 
 #: kftabdlg.cpp:211
 msgid "At Most"
-msgstr "No máximo"
+msgstr "No Máximo"
 
 #: kftabdlg.cpp:218
 msgid " Advanced "
@@ -256,7 +256,7 @@ msgstr "%d ficheiro(s) encontrado(s)"
 
 #: kfwin.cpp:143
 msgid "It wasn't possible to save results!"
-msgstr "Não foi possivel guardar os resultados!"
+msgstr "Não foi possível guardar os resultados!"
 
 #: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
 msgid "KFind Results File"
@@ -292,7 +292,7 @@ msgid ""
 "It isn't possible to delete\n"
 "selected file"
 msgstr ""
-"Não foi possivel apagar\n"
+"Não foi possível apagar\n"
 "o ficheiro seleccionado"
 
 #: kfwin.cpp:234
@@ -316,12 +316,12 @@ msgid ""
 "It isn't possible to delete\n"
 "selected directory"
 msgstr ""
-"Não é possivel apagar\n"
+"Não é possível apagar\n"
 "a directoria seleccionada"
 
 #: kfwin.cpp:336
 msgid "Couldn't recognize archive type!"
-msgstr "Não foi possivel reconhecer o tipo de arquivo!"
+msgstr "Não foi possível reconhecer o tipo de arquivo!"
 
 #: kfwin.cpp:395
 msgid "Error while creating child process!"

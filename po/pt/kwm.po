@@ -10,11 +10,12 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: ao que parece já está a correr um window manager. kwm não arrancou\n"
+"kwm: ao que parece já está a correr um window manager. kwm não "
+"arrancou\n"
 
 #: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: ocorreu uma falha durante a initialização; a desistir\n"
+msgstr "kwm: ocorreu uma falha durante a inicialização; a abortar\n"
 
 #: main.C:370
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -22,7 +23,7 @@ msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:377
 msgid "Usage: "
-msgstr "Utilização"
+msgstr "Utilização: "
 
 #: main.C:388
 msgid "&Maximize"
@@ -74,7 +75,7 @@ msgstr "Dois"
 
 #: main.C:455
 msgid "Three"
-msgstr "Tres"
+msgstr "Três"
 
 #: main.C:458
 msgid "Four"
@@ -98,7 +99,7 @@ msgstr "Oito"
 
 #: main.C:743
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Alguns pixmaps não são válidos: ShapeMode desactivado\n"
+msgstr "Algumas imagens não são válidas: ShapeMode desactivado\n"
 
 #: main.C:986
 msgid "*** No Tasks ***"
@@ -121,16 +122,16 @@ msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"As seguintes aplicações conteem dados que não foram gravados e que\n"
-"serão perdidos na sua proxima sessão."
+"As seguintes aplicações contêm dados que não foram gravados e que\n"
+"serão perdidos na sua próxima sessão."
 
 #: logout.C:62
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"As seguintes aplicações não poderão ser restauradas na sua proxima sessão,\n"
-"apenas reinicializadas. Certifique-se de que não conteem dados importantes "
+"As seguintes aplicações não poderão ser restauradas na sua próxima sessão,\n"
+"apenas reinicializadas. Certifique-se de que não contêm dados importantes "
 "por gravar"
 
 #: logout.C:73
@@ -140,8 +141,8 @@ msgid ""
 msgstr ""
 "As seguintes aplicações não reconhecem o X11 e por isso não podem ser "
 "restauradas\n"
-"na sua proxima sessão. Certifique-se de que não contêm dados importantes por "
-"gravar."
+"na sua próxima sessão. Certifique-se de que não contêm dados importantes "
+"por gravar."
 
 #: taskmgr.C:105
 msgid "Switch to"

@@ -64,7 +64,7 @@ msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
 msgstr ""
-"Não é possivel criar directory para menu personalizado.\n"
+"Não é possível criar directory para menu personalizado.\n"
 " Seleccione Ok para sair do KMenuedit."
 
 #: confmenu.cpp:90 entrydialog.cpp:52
@@ -165,11 +165,11 @@ msgstr "Nome:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"
-msgstr "Mini Icon:"
+msgstr "Mini Ícone:"
 
 #: entrydialog.cpp:127
 msgid "Icon:"
-msgstr "Icon:"
+msgstr "Ícone:"
 
 #: entrydialog.cpp:133
 msgid "Comment:"

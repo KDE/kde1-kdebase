@@ -83,7 +83,7 @@ msgstr "Normal"
 
 #: titlebar.cpp:924 titlebar.cpp:944
 msgid "Pixmap"
-msgstr "Mapa de pixels"
+msgstr "Imagem"
 
 #: titlebar.cpp:931
 msgid "Title Animation"
@@ -95,11 +95,11 @@ msgstr "ms"
 
 #: titlebar.cpp:955
 msgid "&Active pixmap"
-msgstr "Mapa de pixels &activo"
+msgstr "Imagem &activa"
 
 #: titlebar.cpp:957
 msgid "&Inactive pixmap"
-msgstr "Mapa de pixels &inactivo"
+msgstr "Imagem &inactiva"
 
 #: windows.cpp:69
 msgid "Window movement"

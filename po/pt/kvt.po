@@ -1,12 +1,12 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1998-01-25 13:22+0100\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-08-26 14:27:08+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
 "Xgettext-Options: --keyword=translate\n"
 "Files: main.C\n"
+"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
 #: main.C:236
 msgid "Add characters to word class"
@@ -94,15 +94,15 @@ msgstr "Mostrar &Barra de Menu"
 
 #: main.C:437 main.C:745
 msgid "Secure &keyboard"
-msgstr "&Teclado seguro"
+msgstr "Trancar &teclado"
 
 #: main.C:439
 msgid "Scroll&bar"
-msgstr "&Barra de Arrasto"
+msgstr "&Barra de arrasto"
 
 #: main.C:440
 msgid "&Font size"
-msgstr "Tamanho de &letra"
+msgstr "Tamanho da &fonte"
 
 #: main.C:441
 msgid "&Color"
@@ -144,11 +144,11 @@ msgstr "&Mostrar"
 
 #: main.C:741
 msgid "Unsecure &keyboard"
-msgstr "&Teclado inseguro"
+msgstr "Destrancar &Teclado"
 
 #: main.C:752
 msgid "Terminal Options"
-msgstr "Opções de Terminal"
+msgstr "Opções do Terminal"
 
 #: main.C:894
 msgid "Hint"
@@ -160,7 +160,7 @@ msgid ""
 "when the keyboard is unsecured."
 msgstr ""
 "As novas definições de cor serão mostradas\n"
-"quando o teclado estiver inseguro."
+"quando o teclado estiver destrancado."
 
 #: main.C:1084
 msgid ""
@@ -209,20 +209,20 @@ msgstr ""
 "-vt_bg <cor>\t\tcor de fundo\n"
 "-vt_fg <cor>\t\tcor de frente\n"
 "-vt_font <fontname>\tletra normal\n"
-"-vt_size <tamaho>     \tminusculo, pequeno, normal, grande, enorme\n"
-"-linux\t\t\tconfirurar o kvt para imitar a linux-console\n"
+"-vt_size <tamanho>     \ttiny, small, normal, large, huge\n"
+"-linux\t\t\tconfigurar o kvt para imitar a consola de linux\n"
 "-no_menubar\t\tesconder a barra de menu\n"
 "-no_scrollbar\t\tesconder a barra de arrasto\n"
 "-T <texto>\t\ttexto na barra de titulo da janela\n"
-"-tn <TERM>\t\tTipo de terminal. Default é xterm.\n"
+"-tn <TERM>\t\tTipo de terminal. Por defeito xterm.\n"
 "-C\t\t\tCapturar messagens da consola de sistema\n"
 "-n <texto>\t\tnome no icon ou janela de icon\n"
 "-7\t\t        executar em modo de 7 bits\n"
 "-8\t\t\texecutar em modo de 8 bits\n"
 "-ls\t\t\tiniciar a shell do kvt como uma shell de login\n"
 "-ls-\t\t\tiniciar a shell do kvt como uma shell normal (default)\n"
-"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
-"-sl <number>\t\tgravar numero de linhas no buffer de scroll-back\n"
+"-meta\t\t\tgerir Meta com prefixo ESCAPE, 8THBIT colocado, ou ignorar\n"
+"-sl <number>\t\tgravar numero de linhas no buffer de história\n"
 "-pageup <keysym>\tutilizar a combinação de teclas alt-keysym para recuar no "
 "buffer\n"
 "-pagedown <keysym>\tutilizar a combinação de teclas alt-keysym para avançar "

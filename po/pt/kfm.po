@@ -16,7 +16,7 @@ msgstr "Pasta"
 #: kfmgui.cpp:281
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
-msgstr "Erro: Não existe a template '%s'"
+msgstr "Erro: Não existe o modelo '%s'"
 
 #: kfmgui.cpp:307
 msgid "&New Window"
@@ -79,8 +79,8 @@ msgid "&HTML View"
 msgstr "Visão &HTML"
 
 #: kfmgui.cpp:367
-msgid "&Icon View"
-msgstr "Visão por &Icons"
+msgid "&Ícone View"
+msgstr "Visão por &Ìcones"
 
 #: kfmgui.cpp:369
 msgid "&Text View"
@@ -92,7 +92,7 @@ msgstr "Visualização &Longa"
 
 #: kfmgui.cpp:377
 msgid "Rel&oad Tree"
-msgstr "Recarregar Arv&ore"
+msgstr "Recarregar Árv&ore"
 
 #: kfmgui.cpp:379
 msgid "&Reload Document"
@@ -100,7 +100,7 @@ msgstr "&Reler Documento"
 
 #: kfmgui.cpp:381
 msgid "Rescan &bindings"
-msgstr "Rever &Dependencias"
+msgstr "Rever &Dependências"
 
 #: kfmgui.cpp:384
 msgid "&View Frame Source"
@@ -176,19 +176,19 @@ msgstr "&Ferramenta"
 
 #: kfmgui.cpp:484
 msgid "&Cache"
-msgstr ""
+msgstr "&Cache"
 
 #: kfmgui.cpp:521
 msgid "Home"
-msgstr "Home"
+msgstr "Casa"
 
 #: kfmgui.cpp:554
 msgid "Stop"
-msgstr "Stop"
+msgstr "Parar"
 
 #: kfmgui.cpp:578
 msgid "Could not load icon\n"
-msgstr "Não foi possivel carregar o icon\n"
+msgstr "Não foi possível carregar o ícone\n"
 
 #: kbind.cpp:306 kbind.cpp:379 kbind.cpp:432 kbind.cpp:1510 kbind.cpp:1518
 #: kbind.cpp:1536 kbind.cpp:1553 kbind.cpp:1614 kbind.cpp:1626 kbind.cpp:1653
@@ -280,7 +280,7 @@ msgstr "Documento: Feito"
 
 #: kfmview.cpp:254
 msgid "ERROR: Drop over malformed URL"
-msgstr "Error: Drop num URL incorrecto"
+msgstr "ERRO: Largou em cima de um URL incorrecto"
 
 #: kfmview.cpp:279
 msgid "ERROR: You dropped some URL over itself"
@@ -319,7 +319,7 @@ msgstr "Erro: Não pode abrir as propriedades para múltiplos ficheiros"
 
 #: kfmtree.cpp:283 kfmview.cpp:422 root.cpp:1068
 msgid "Could not access Trash Bin"
-msgstr "Não foi possivel acesser ao Caixote do Lixo"
+msgstr "Não foi possível aceder ao Caixote do Lixo"
 
 #: kfmview.cpp:444 root.cpp:967
 msgid "Can not paste into multiple directories"
@@ -356,11 +356,11 @@ msgstr "bytes"
 
 #: kbind.cpp:304
 msgid "The mime type config file "
-msgstr ""
+msgstr "O ficheiro de configuração de tipos mime "
 
 #: kbind.cpp:305
 msgid "does not conatain a MimeType=... entry"
-msgstr ""
+msgstr "não contém uma entrada MimeType=..."
 
 #: kbind.cpp:380
 msgid "No mime types installed!"
@@ -368,12 +368,12 @@ msgstr "Não existem tipos mime instalados"
 
 #: kbind.cpp:429 kbind.cpp:1169
 msgid "Could not find mime type\n"
-msgstr "Não foi possivel encontrar o tipo mime\n"
+msgstr "Não foi possível encontrar o tipo mime\n"
 
 #: kbind.cpp:703 kbind.cpp:713 kbind.cpp:1874 kbind.cpp:1875 kbind.cpp:1887
 #: kbind.cpp:1889
 msgid "Mount"
-msgstr ""
+msgstr "Montar"
 
 #: kbind.cpp:719 kbind.cpp:1865
 msgid "Unmount"
@@ -389,11 +389,11 @@ msgstr "em "
 
 #: kbind.cpp:1312 kbind.cpp:1398
 msgid "Could not execute program\n"
-msgstr "Não foi possivel executar o programa\n"
+msgstr "Não foi possível executar o programa\n"
 
 #: kbind.cpp:1509
 msgid "Could not find binding"
-msgstr "Não foi possivel encontrar a dependencia"
+msgstr "Não foi possível encontrar a dependência"
 
 #: kbind.cpp:1519
 msgid ""
@@ -420,8 +420,8 @@ msgstr ""
 msgid ""
 "Could not access\n"
 "%s"
-msgstr ""
-"Não foi possivel aceder\n"
+msgstr "" 
+"Não foi possível aceder\n"
 "%s"
 
 #: kbind.cpp:1654
@@ -434,7 +434,7 @@ msgstr "O ficheiro de configuração não tem nenhuma linha \"Type=...\""
 
 #: kbind.cpp:1699 kbind.cpp:1850
 msgid "Could not access"
-msgstr "Não foi possivel aceder"
+msgstr "Não foi possível aceder"
 
 #: kbind.cpp:1717
 msgid ""
@@ -470,7 +470,7 @@ msgstr "A criar a directoria:\n"
 
 #: main.cpp:179
 msgid "Installing Templates"
-msgstr "A instalar Templates"
+msgstr "A instalar Modelos"
 
 #: main.cpp:215
 msgid "Cd"
@@ -619,7 +619,7 @@ msgstr "Inserir UID"
 
 #: kfmprops.cpp:476
 msgid "Sticky"
-msgstr "Pegajosa"
+msgstr "Pregada"
 
 #: kfmprops.cpp:494
 msgid "Ownership"
@@ -634,7 +634,7 @@ msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
 msgstr ""
-"Não foi possivel mudar as permissões\n"
+"Não foi possível mudar as permissões\n"
 "Talvez acesso negado."
 
 #: kfmprops.cpp:641
@@ -652,8 +652,8 @@ msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
 msgstr ""
-"Não foi possivel modificar o dono/grupo\n"
-"Possivelmente acesso negado."
+"Não foi possível modificar o dono/grupo\n"
+"possívelmente acesso negado."
 
 #: kfmprops.cpp:689
 msgid "Execute"
@@ -681,7 +681,7 @@ msgstr "Título da Aplicação"
 
 #: kfmprops.cpp:726
 msgid "enter the exact title, as normally shown in the window titlebar"
-msgstr "insira o título exacto, como é visivel no título da janela"
+msgstr "insira o título exacto, como é visível no título da janela"
 
 #: kfmprops.cpp:730
 msgid "Run in terminal"
@@ -699,7 +699,7 @@ msgid ""
 msgstr ""
 "Pode correr este programa no\n"
 "Painel ou num Terminal, \n"
-"mas não em ambos"
+"mas não em ambos" 
 
 #: kfmprops.cpp:872 kfmprops.cpp:1003 kfmprops.cpp:1449 kfmprops.cpp:1662
 #: kfmprops.cpp:1841
@@ -707,7 +707,7 @@ msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
 msgstr ""
-"Não foi possivel gravar as propriedades\n"
+"Não foi possível gravar as propriedades\n"
 "Talvez permissões negadas"
 
 #: kfmprops.cpp:926
@@ -724,7 +724,7 @@ msgstr "(Por defeito)"
 
 #: kfmprops.cpp:1131
 msgid "Could not write to\n"
-msgstr "Não foi possivel escrever em\n"
+msgstr "Não foi possível escrever em\n"
 
 #: kfmprops.cpp:1244
 msgid "(None)"
@@ -771,12 +771,12 @@ msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Filesystems ( iso9660,msdos,minix,default )"
 
 #: kfmprops.cpp:1741
-msgid "Mounted Icon"
-msgstr "Icon Montado"
+msgid "Mounted Ícone"
+msgstr "Ícone Montado"
 
 #: kfmprops.cpp:1745
-msgid "Unmounted Icon"
-msgstr "Icon Desmontado"
+msgid "Unmounted Ícone"
+msgstr "Ícone Desmontado"
 
 #: kfmserver.cpp:40
 msgid "Could not create ~/.kde/share/apps/kfm/magic"
@@ -792,7 +792,7 @@ msgstr ""
 
 #: kfmserver.cpp:78
 msgid "Do you really want to rearrange your icons ?"
-msgstr "Deseja realmente reordernar os seus icons ?"
+msgstr "Deseja realmente reordernar os seus ícones ?"
 
 #: kfmserver.cpp:234
 #, c-format
@@ -818,8 +818,8 @@ msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
 msgstr ""
-"O ficheiro ~/.kde/share/apps/kfm/magic\n"
-" está corrumpidoAutorização falhou"
+"O ficheiro ~/.kde/share/apps/kfm/magic\n está corrompido"
+"Autorização falhou"
 
 #: kfmserver.cpp:302
 msgid ""
@@ -836,11 +836,11 @@ msgstr "Erro Interno: desktopDir é incorrecto"
 #: root.cpp:589
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
-msgstr "ERRO: Não foi possivel ler a directoria com o desktop '%s'"
+msgstr "ERRO: Não foi possível ler a directoria com o ambiente de trabalho '%s'"
 
 #: root.cpp:780
 msgid "ERROR: Can not accept drop"
-msgstr "ERRO: Não é possivel aceitar o drop"
+msgstr "ERRO: Não é possível aceitar o drop"
 
 #: kfmman.cpp:1039 root.cpp:1498
 msgid "Dont know what to do."
@@ -881,7 +881,7 @@ msgstr ""
 
 #: kiojob.cpp:233
 msgid "Can only make links on local file system"
-msgstr "Só é possivel criar links em sistemas de ficheiros locais"
+msgstr "Só é possível criar links em sistemas de ficheiros locais"
 
 #: kiojob.cpp:256 kiojob.cpp:275
 #, c-format
@@ -889,7 +889,7 @@ msgid ""
 "Could not overwrite\n"
 "%s"
 msgstr ""
-"Não foi possivel escrever sobre\n"
+"Não foi possível escrever sobre\n"
 "%s"
 
 #: kiojob.cpp:285 kiojob.cpp:308 kiojob.cpp:327
@@ -897,14 +897,14 @@ msgstr ""
 msgid ""
 "Could not make symlink to\n"
 "%s"
-msgstr ""
-"Não foi possivel criar um link simbólico para\n"
+msgstr "" 
+"Não foi possível criar um link simbólico para\n"
 "%s"
 
 #: kiojob.cpp:361
 #, c-format
 msgid " ERROR: Could not write to %s"
-msgstr " ERROR: Não foi possivel escrever para %s"
+msgstr " ERROR: Não foi possível escrever para %s"
 
 #: kiojob.cpp:522 kiojob.cpp:749 kiojob.cpp:1194
 #, c-format
@@ -912,13 +912,13 @@ msgid ""
 "Could not make directory\n"
 "%s"
 msgstr ""
-"Não foi possivel criar a directoria\n"
+"Não foi possível criar a directoria\n"
 "%s"
 
 #: kiojob.cpp:535 kiojob.cpp:965
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
-msgstr "ERRO: Não foi possivel aceder à directoria '%s'"
+msgstr "ERRO: Não foi possível aceder à directoria '%s'"
 
 #: kiojob.cpp:780
 #, c-format
@@ -926,7 +926,7 @@ msgid ""
 "Could not access directory\n"
 "%s"
 msgstr ""
-"Não foi possivel aceder à directoria\n"
+"Não foi possível aceder à directoria\n"
 "%s"
 
 #: kiojob.cpp:817
@@ -937,10 +937,9 @@ msgid ""
 "to %s\n"
 "Perhaps access denied"
 msgstr ""
-"Não foi possivel mover a directoria\n"
+"Não foi possível mover a directoria\n"
 "%s\n"
 "para %s\n"
-"para '%s'\n"
 "Talvez tenha o acesso negado"
 
 #: kiojob.cpp:1141 kiojob.cpp:1149 kiojob.cpp:1158 kiojob.cpp:1166
@@ -959,7 +958,7 @@ msgid ""
 "%s\n"
 "File does not exist or access denied"
 msgstr ""
-"Não foi possivel ler\n"
+"Não foi possível ler\n"
 "%s\n"
 "O ficheiro não existe ou o acesso é negado"
 
@@ -970,7 +969,7 @@ msgid ""
 "%s\n"
 "Perhaps access denied"
 msgstr ""
-"Não foi possivel escrever em\n"
+"Não foi possível escrever em\n"
 "%s\n"
 "Talvez acesso negado."
 
@@ -980,7 +979,7 @@ msgid ""
 "Could not create Socket for\n"
 "%s"
 msgstr ""
-"Não foi possivel criar uma Socket para\n"
+"Não foi possível criar uma Socket para\n"
 "%s"
 
 #: kiojob.cpp:1170 kiojob.cpp:1301
@@ -998,7 +997,7 @@ msgid ""
 "Could not connect to\n"
 "%s"
 msgstr ""
-"Não foi possivel conectar a \n"
+"Não foi possível conectar a \n"
 "%s"
 
 #: kiojob.cpp:1186 kiojob.cpp:1317
@@ -1018,7 +1017,7 @@ msgid ""
 "Could not list directory contents\n"
 "%s"
 msgstr ""
-"Não é possivel mostrar o conteúdo da directoria\n"
+"Não é possível mostrar o conteúdo da directoria\n"
 "%s"
 
 #: kiojob.cpp:1210
@@ -1028,7 +1027,7 @@ msgid ""
 "%s\n"
 "URL does not exist or permission denied"
 msgstr ""
-"Não foi possivel apagar\n"
+"Não foi possível apagar\n"
 "%s\n"
 "URL não existe ou permissão negada"
 
@@ -1039,7 +1038,7 @@ msgid ""
 "%s\n"
 "Perhaps wrong password"
 msgstr ""
-"Não foi possivel fazer o login para\n"
+"Não foi possível fazer o login para\n"
 "%s\n"
 "Talvez a password esteja errada"
 
@@ -1087,7 +1086,7 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"Não foi possivel montar\n"
+"Não foi possível montar\n"
 "Registo de erro:\n"
 "\n"
 "%s"
@@ -1100,7 +1099,7 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"Não foi possivel desmontar\n"
+"Não foi possível desmontar\n"
 "Registo de erro:\n"
 "\n"
 "%s"
@@ -1125,7 +1124,7 @@ msgid ""
 "Could not delete directory\n"
 "%s"
 msgstr ""
-"Não foi possivel apagar a directoria\n"
+"Não foi possível apagar a directoria\n"
 "%s"
 
 #: kiojob.cpp:1708

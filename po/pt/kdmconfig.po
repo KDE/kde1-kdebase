@@ -182,7 +182,7 @@ msgstr "Todos os utilizadores"
 
 #: kdm-users.cpp:51
 msgid "Selected users"
-msgstr "Utilizadores selecionados"
+msgstr "Utilizadores seleccionados"
 
 #: kdm-users.cpp:53
 msgid "No-show users"
@@ -234,11 +234,11 @@ msgstr "Todos"
 
 #: kdm-sess.cpp:60
 msgid "Root Only"
-msgstr "Root apenas"
+msgstr "Root Apenas"
 
 #: kdm-sess.cpp:61
 msgid "Console Only"
-msgstr "Consola apenas"
+msgstr "Consola Apenas"
 
 #: kdm-sess.cpp:65
 msgid "Commands"

@@ -16,7 +16,7 @@ msgstr "ERRO: Modelo não existe '%s'"
 
 #: krootwm.C:162
 msgid "Help on desktop"
-msgstr "Ajuda do desktop"
+msgstr "Ajuda do ambiente de trabalho"
 
 #: krootwm.C:163
 msgid "Execute command"

@@ -21,6 +21,7 @@ Comment[sv]=Sökverktyg för filer
 Comment[fi]=Etsintätyökalu
 Comment[fr]=Utilitaire de recherches de fichiers
 Comment[it]=Applicazione per la ricerca di file e cartelle
+Comment[pt]=Utilitário para procurar ficheiros
 Name=Find Files
 Name[de]=Dateien suchen
 Name[nl]=Bestanden zoeken
@@ -31,4 +32,4 @@ Name[sv]=Filsökning
 Name[fi]=Etsi tiedostoja
 Name[fr]=Recherche de fichiers
 Name[it]=Ricerca File
-
+Name[pt]=Procurar Ficheiros

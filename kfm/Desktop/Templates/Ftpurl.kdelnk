@@ -4,3 +4,4 @@ URL=ftp://ftp.kde.org/pub/kde
 Icon=ftp.xpm
 Type=Link
 Comment[fr]=Transfert FTP
+Comment[pt]=URL de FTP

@@ -6,9 +6,11 @@ Type=Application
 DocPath=kcontrol/syssound/syssound.html
 Comment=System Sound Configuration
 Comment[de]=Einstellungen für Systemklänge
+Comment[pt]=Configuração dos Sons do Sistema
 Name=System Sounds
 Name[de]=Systemklänge
+Name[pt]=Sons do Sistema
 Init=
 SwallowTitle=System Sounds
 SwallowTitle[de]=Systemklänge
-
+SwallowTitle[pt]=Sons do Sistema

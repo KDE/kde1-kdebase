@@ -15,7 +15,7 @@ msgstr "utilização: kcmlocale [-init | language]\n"
 
 #: main.cpp:79
 msgid "Locale settings"
-msgstr "Paramêtros de linguagem"
+msgstr "Parâmetros de linguagem"
 
 #: locale.cpp:40
 msgid "Language"

@@ -7,7 +7,7 @@ msgstr ""
 
 #: banner.cpp:56
 msgid "Banner"
-msgstr ""
+msgstr "Faixa"
 
 #: banner.cpp:78
 msgid "Setup kbanner"
@@ -45,7 +45,7 @@ msgstr ""
 
 #: banner.cpp:419
 msgid "KDE is great"
-msgstr "KDE é espetacular"
+msgstr "KDE é espectacular"
 
 #: bat.cpp:457
 msgid "Bat"
@@ -79,7 +79,7 @@ msgstr ""
 
 #: blankscrn.cpp:49
 msgid "Blank Screen"
-msgstr "Ecran Limpo"
+msgstr "Écran Limpo"
 
 #: blankscrn.cpp:63
 msgid "Setup kblankscrn"
@@ -91,7 +91,7 @@ msgstr "Linhas Aleatórias"
 
 #: blob.cpp:54
 msgid "Horizonal Sine"
-msgstr "Sinus Horizontal"
+msgstr "Seno Horizontal"
 
 #: blob.cpp:55
 msgid "Circular Bounce"
@@ -107,7 +107,7 @@ msgstr "Aleatório"
 
 #: blob.cpp:73
 msgid "Sorry. This screensaver needs a color display"
-msgstr "Lamento. Este protector de ecran nessita de um monitor a cores"
+msgstr "Lamento. Este protector de écran necessita de um monitor a cores"
 
 #: blob.cpp:452
 msgid "Setup Blob Saver"
@@ -115,7 +115,7 @@ msgstr "Configurar Blob Saver"
 
 #: blob.cpp:455
 msgid "Frame Show sec."
-msgstr ""
+msgstr "Mostrar Frames sec."
 
 #: blob.cpp:463
 msgid "Algorithm"
@@ -151,7 +151,7 @@ msgstr "Configurar KFlame"
 
 #: flame.cpp:406
 msgid "Max Levels:"
-msgstr "Niveis Max:"
+msgstr "Níveis Max:"
 
 #: flame.cpp:416
 msgid "Num Points:"
@@ -207,7 +207,7 @@ msgstr ""
 
 #: hop.cpp:221
 msgid "Hop"
-msgstr ""
+msgstr "Hop"
 
 #: hop.cpp:306
 msgid "Setup KHop"
@@ -241,7 +241,7 @@ msgstr ""
 
 #: laser.cpp:327
 msgid "Laser"
-msgstr ""
+msgstr "Laser"
 
 #: laser.cpp:387
 msgid "Setup KLaser"
@@ -307,7 +307,7 @@ msgstr ""
 
 #: lissie.cpp:234
 msgid "Lissie"
-msgstr ""
+msgstr "Lissie"
 
 #: lissie.cpp:320
 msgid "Setup KLissie"
@@ -315,7 +315,7 @@ msgstr "Configurar KLissie"
 
 #: lissie.cpp:336
 msgid "Num of Lissies:"
-msgstr "Num de Lissies:"
+msgstr "Numero de Lissies:"
 
 #: lissie.cpp:451
 msgid "About Lissie"
@@ -343,7 +343,8 @@ msgid ""
 "Tell him, that you need suid for the screensavers!"
 msgstr ""
 "Este sistema utiliza shadow passwords!\n"
-"Por favor contacte o seu administrador de sistema.\n"
+"Por favor contacte o seu administrador de sistema."
+"\n"
 "Diga-lhe que precisa de suid para os screensavers!"
 
 #: main.cpp:301
@@ -378,31 +379,31 @@ msgid ""
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
-"  -corners xxxx     Colocar o cursor no ecran produz a seguinte acção:\n"
+"  -corners xxxx     Colocar o cursor no écran produz a seguinte acção:\n"
 "                     x = i  nenhuma acção (ignorar)\n"
-"                     x = s  proteger ecran\n"
-"                     x = l  trancar ecran\n"
+"                     x = s  proteger écran\n"
+"                     x = l  trancar écran\n"
 "                    ordem: topo-esquerdo, topo-direito, fundo-esquerdo, "
 "fundo-direito\n"
 "  -delay num        Quantidade de tempo parado antes de começar a\n"
-"                     protecção do ecran  (default 10min)\n"
+"                     protecção do écran  (por defeito 10min)\n"
 "  -desc             Imprime a descrição para o stdout\n"
-"  -install          Instalar a protecção de ecran\n"
-"  -lock             Requerer a password para parar a protecção de ecran\n"
+"  -install          Instalar a protecção de écran\n"
+"  -lock             Requerer a password para parar a protecção de écran\n"
 "  -nice num         Executar com o valor especificado de nice\n"
 "\n"
 "  -preview wid      Executar na X Window especificada\n"
 "  -inroot           Executar na janela de root\n"
-"  -setup            Configurar protecção de ecran\n"
-"  -test             Inicializar a rotecção de ecran imediatamente\n"
+"  -setup            Configurar protecção de écran\n"
+"  -test             Inicializar a protecção de écran imediatamente\n"
 
 #: morph3d.cpp:839
 msgid "GL can not render with root visual\n"
-msgstr ""
+msgstr "GL não consegue criar com visual de raiz\n"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
-msgstr ""
+msgstr "Morph3D (GL)"
 
 #: morph3d.cpp:1015
 msgid "Setup KMorph3d"
@@ -460,7 +461,7 @@ msgstr ""
 
 #: pyro.cpp:433
 msgid "Pyro"
-msgstr ""
+msgstr "Pyro"
 
 #: pyro.cpp:511
 msgid "Setup KPyro"
@@ -536,7 +537,7 @@ msgstr "Falhou"
 
 #: slip.cpp:287
 msgid "Slip"
-msgstr ""
+msgstr "Slip"
 
 #: slip.cpp:360
 msgid "Setup KSlip"
@@ -544,7 +545,7 @@ msgstr "Configurar KSlip"
 
 #: slip.cpp:376
 msgid "Batchcount:"
-msgstr ""
+msgstr "Contagem:"
 
 #: slip.cpp:464
 msgid "About Slip"

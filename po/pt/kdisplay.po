@@ -19,7 +19,7 @@ msgstr "Cor"
 
 #: backgnd.cpp:273
 msgid "Flat"
-msgstr "Espalmado"
+msgstr "Uniforme"
 
 #: backgnd.cpp:277
 msgid "Gradient"
@@ -39,7 +39,7 @@ msgstr "Papel de parede"
 
 #: backgnd.cpp:331
 msgid "Tiled"
-msgstr "Mosaíco"
+msgstr "Mosaico"
 
 #: backgnd.cpp:335
 msgid "Centred"
@@ -83,7 +83,7 @@ msgstr "Esquema de cor"
 
 #: colorscm.cpp:286
 msgid "Widget color"
-msgstr "Cor da widget"
+msgstr "Cor dos widgets"
 
 #: colorscm.cpp:291
 msgid "Inactive title bar"
@@ -115,7 +115,7 @@ msgstr "Escolha o fundo"
 
 #: colorscm.cpp:298
 msgid "Select text"
-msgstr "Excolha o texto"
+msgstr "Escolha o texto"
 
 #: colorscm.cpp:299
 msgid "Window background"
@@ -143,18 +143,19 @@ msgstr "Escolheu um nome já  utilizado por um esquema de cor existente"
 
 #: colorscm.cpp:467
 msgid "KDE Default"
-msgstr "KDE Default"
+msgstr "KDE por Defeito"
 
 #: colorscm.cpp:693
 msgid "Display Setup"
-msgstr "Configuração do Ecran"
+msgstr "Configuração do Écran"
 
 #: colorscm.cpp:694
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"
 msgstr ""
-"Não foram encontrados esquemas de cores para o desktop.\n"
+"Não foram encontrados esquemas de cores\n"
+"para o ambiente de trabalho.\n"
 "Quer instalar os esquemas de cor por defeito agora ?"
 
 #: kwmcom.cpp:78 kwmcom.cpp:105
@@ -175,7 +176,7 @@ msgstr "Trancar"
 
 #: scrnsave.cpp:107 scrnsave.cpp:163
 msgid "Screen Saver"
-msgstr "Protecção do Ecran"
+msgstr "Protecção do Écran"
 
 #: scrnsave.cpp:184
 msgid "Setup..."
@@ -211,7 +212,7 @@ msgstr "Geral"
 
 #: general.cpp:65
 msgid "Widget style"
-msgstr "Estilo de widget"
+msgstr "Estilo dos widgets"
 
 #: general.cpp:70
 msgid "Motif"
@@ -223,11 +224,11 @@ msgstr "Windows 95"
 
 #: general.cpp:80
 msgid "Fonts"
-msgstr "Letras"
+msgstr "Fontes"
 
 #: general.cpp:85
 msgid "General font"
-msgstr "Letra geral"
+msgstr "Fonte geral"
 
 #: general.cpp:110
 msgid "Sample"
@@ -239,7 +240,7 @@ msgstr "Pequena"
 
 #: general.cpp:120
 msgid "Medium"
-msgstr "Media"
+msgstr "Média"
 
 #: general.cpp:124
 msgid "Large"
@@ -263,7 +264,7 @@ msgstr "&Cor"
 
 #: main.cpp:67
 msgid "&Screensaver"
-msgstr "&Protecção do Ecran"
+msgstr "&Protecção do Écran"
 
 #: main.cpp:70
 msgid "&Style"
@@ -271,9 +272,8 @@ msgstr "E&stilo"
 
 #: main.cpp:76
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
-msgstr ""
-"utilização: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr "utilização: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
 #: main.cpp:112
 msgid "Display settings"
-msgstr "Configuração do Ecran"
+msgstr "Configuração do Écran"

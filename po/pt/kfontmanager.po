@@ -7,27 +7,27 @@ msgstr ""
 
 #: main.cpp:61
 msgid "KDE Font Manager"
-msgstr "Gestor de Letras do KDE"
+msgstr "Gestor de Fontes do KDE"
 
 #: main.cpp:74
 msgid "KDE Fonts"
-msgstr "Letras do KDE"
+msgstr "Fontes do KDE"
 
 #: main.cpp:75
 msgid "Font Explorer"
-msgstr "Explorador de Letras"
+msgstr "Explorador de Fontes"
 
 #: main.cpp:76
 msgid "Raw X11 Font List"
-msgstr "Lista de Letras do X11"
+msgstr "Lista de Fontes do X11"
 
 #: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
-msgstr "Letras do X11 Disponiveis"
+msgstr "Fontes do X11 Disponíveis"
 
 #: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"
-msgstr "Letras disponibilizadas ao KDE"
+msgstr "Fontes disponibilizadas ao KDE"
 
 #: kfontmanager.cpp:86
 msgid "The KDE Font Manager Example String"
@@ -54,7 +54,7 @@ msgid ""
 "The environment variable HOME\n"
 "is not set\n"
 msgstr ""
-"A variavel de ambiente HOME\n"
+"A variável de ambiente HOME\n"
 "não está definida\n"
 
 #: kfontmanager.cpp:285
@@ -62,7 +62,7 @@ msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
 msgstr ""
-"Não foi possivel criar:\n"
+"Não foi possível criar:\n"
 " ~/.kde/share/config/kdefonts\n"
 
 #: kfontmanager.cpp:290
@@ -73,7 +73,7 @@ msgid ""
 msgstr ""
 "/.kde/share/config/kdefonts existe mas\n"
 "não pode ser escrita\n"
-"Não foi possivel gravar a lista de fontes do KDE."
+"Não foi possível gravar a lista de fontes do KDE."
 
 #: kfontlist.cpp:63
 msgid ""
