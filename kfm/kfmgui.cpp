@@ -307,7 +307,7 @@ void KfmGui::initMenu()
     file->insertItem( klocale->translate("&Run"), 
 		      this, SLOT(slotRun()) );
     file->insertItem( klocale->translate("Open &Terminal"), 
-		      this, SLOT(slotTerminal()) );
+		      this, SLOT(slotTerminal()), CTRL+Key_T );
     file->insertSeparator();
     file->insertItem( klocale->translate("&Open Location"),
 		      this, SLOT(slotOpenLocation()), CTRL+Key_L );

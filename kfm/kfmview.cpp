@@ -23,6 +23,7 @@
 
 #include <kconfig.h>
 #include <kapp.h>
+#include <kwm.h>
 
 #include "kfmview.h"
 #include "kfmdlg.h"
@@ -126,7 +127,11 @@ void KfmView::splitWindow()
 
 void KfmView::slotRun()
 {
-    QString url2 = "";
+    // HACK: The command is not executed in the directory
+    // we are in currently. KWM does not support that yet
+    KWM::sendKWMCommand("execute");  
+
+    /* QString url2 = "";
     if ( manager->getURL() )
 	url2 = manager->getURL();
     
@@ -151,7 +156,7 @@ void KfmView::slotRun()
         QString cmd;    
 	cmd.sprintf( "cd %s; %s &", dir.data(), exec.data() );
 	system( cmd.data() );
-    }
+    } */
 }
 
 void KfmView::slotTerminal()
