@@ -25,6 +25,9 @@
 #include <unistd.h>
 #include <string.h>
 #include <math.h>
+#ifndef __FreeBSD__
+#include <time.h>
+#endif
 
 #include "bsod.h"
 
@@ -1140,6 +1143,11 @@ config->sync();
 BSODSaver::BSODSaver (Drawable d)
  : kScreenSaver(d)
 {
+#ifndef __FreeBSD_
+	srandomdev();
+#else
+	srandom(time(0));
+#endif
 	timer = new QTimer(this);
 	readSettings();
 	timer->start(delay);

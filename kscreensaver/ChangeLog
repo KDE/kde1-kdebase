@@ -1,5 +1,7 @@
 1998-10-23  Alex Zepeda  <garbanzo@hooked.net>
 
+	* bsod.cpp (BSODSaver::BSODSaver): initialize the random seed correctly.
+
 	* amiga.xpm, atari.xbm, bsod.cpp, bsod.h, mac.xbm, AUTHORS, Makefile.am:
 	New screensaver: BSOD.  Yay!  Still needs some final polishing however (such as a
 	configuration dialog box).
