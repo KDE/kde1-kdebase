@@ -301,8 +301,8 @@ private:
 	cIndirectList	indirectList;
 	char 			filename[256];
 	char			infoFile[256];
-	char			decompressCmd[256];
-	char 			compressExtn[10];
+	char			decompressCmd[2][256];
+	char 			compressExtn[2][10];
 	char			*searchPath[INFO_MAXPATHS];
 	char			*currentPath; // will be set to last searchPath entry
 	int				numPaths;

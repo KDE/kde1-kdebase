@@ -1159,8 +1159,13 @@ cInfo::cInfo()
 	compressed = 0;
 	numPaths = 0;
 
-	strcpy(decompressCmd, "gunzip");
-	strcpy(compressExtn, ".gz");
+	// gzip
+	strcpy(decompressCmd[0], "gunzip");
+	strcpy(compressExtn[0], ".gz");
+
+	// bzip2
+	strcpy(decompressCmd[1], "bunzip2");
+	strcpy(compressExtn[1], ".bz2");
 
 	// get the paths to search for info files
 
@@ -1358,38 +1363,55 @@ int cInfo::FindFile(const char *theFilename)
 			sprintf(fullPath, "%s/%s", searchPath[n], workFile);
 			if (!access(fullPath, R_OK))
 			{
-				if (!strcmp(fullPath+strlen(fullPath)-strlen(compressExtn),
-						compressExtn))
+				bool success = false;
+			  
+				for (int i=0; i<2; ++i)
 				{
-					Decompress(fullPath, workFile);
-					goto COMPRESSED;
+					if (!strcmp(fullPath+strlen(fullPath)-strlen(compressExtn[i]),
+						    compressExtn[i]))
+					{
+						Decompress(fullPath, workFile);
+						goto COMPRESSED;
+					}
 				}
-				else
+			  
+				if (!success)
 				{
 					strcpy(workFile, fullPath);
 					goto NOTCOMPRESSED;
 				}
 			}
-			sprintf(fullPath, "%s/%s%s", searchPath[n], workFile,
-				compressExtn);
-			if (!access(fullPath, R_OK))
+			
+			for (int i=0; i<2; ++i)
 			{
-				Decompress(fullPath, workFile);
-				goto COMPRESSED;
+				sprintf(fullPath, "%s/%s%s", searchPath[n], workFile,
+					compressExtn[i]);
+		     
+				if (!access(fullPath, R_OK))
+				{
+					Decompress(fullPath, workFile);
+					goto COMPRESSED;
+				}
 			}
+			
 			sprintf(fullPath, "%s/%s.info", searchPath[n], workFile);
 			if (!access(fullPath, R_OK))
 			{
 				strcpy(workFile, fullPath);
 				goto NOTCOMPRESSED;
 			}
-			sprintf(fullPath, "%s/%s.info%s", searchPath[n], workFile,
-				compressExtn);
-			if (!access(fullPath, R_OK))
+
+			for (int i=0; i<2; ++i)
 			{
-				Decompress(fullPath, workFile);
-				goto COMPRESSED;
+				sprintf(fullPath, "%s/%s.info%s", searchPath[n], workFile,
+					compressExtn[i]);
+				if (!access(fullPath, R_OK))
+				{
+					Decompress(fullPath, workFile);
+					goto COMPRESSED;
+				}
 			}
+
 			n++;
 		}
 	}
@@ -1397,22 +1419,29 @@ int cInfo::FindFile(const char *theFilename)
 	{
 		if (!access(workFile, R_OK))
 		{
-			strcpy( fullPath, workFile );
-			if (!strcmp(workFile+strlen(workFile)-strlen(compressExtn),
-					compressExtn))
+			for (int i=0; i<2; ++i)
 			{
-				Decompress(workFile, workFile);
-				goto COMPRESSED;
+				strcpy( fullPath, workFile );
+				if (!strcmp(workFile+strlen(workFile)-strlen(compressExtn[i]),
+					    compressExtn[i]))
+				{
+					Decompress(workFile, workFile);
+					goto COMPRESSED;
+				}
 			}
+		    
 			goto NOTCOMPRESSED;
 		}
 
-		// SuSE Linux distribution: (dir) uses full paths without .gz extn
-		sprintf( fullPath, "%s%s", workFile, compressExtn);
-		if (!access(fullPath, R_OK))
+		for (int i=0; i<2; ++i)
 		{
-			Decompress(fullPath, workFile);
-			goto COMPRESSED;
+			// SuSE Linux distribution: (dir) uses full paths without .gz extn
+			sprintf( fullPath, "%s%s", workFile, compressExtn[i]);
+			if (!access(fullPath, R_OK))
+			{
+				Decompress(fullPath, workFile);
+				goto COMPRESSED;
+			}
 		}
 
 		sprintf(fullPath, "%s.info", workFile);
@@ -1421,12 +1450,15 @@ int cInfo::FindFile(const char *theFilename)
 			strcpy(workFile, fullPath);
 			goto NOTCOMPRESSED;
 		}
-
-		sprintf(fullPath, "%s.info%s", workFile, compressExtn);
-		if (!access(fullPath, R_OK))
+		
+		for (int i=0; i<2; ++i)
 		{
-			Decompress(fullPath, workFile);
-			goto COMPRESSED;
+			sprintf(fullPath, "%s.info%s", workFile, compressExtn[i]);
+			if (!access(fullPath, R_OK))
+			{
+				Decompress(fullPath, workFile);
+				goto COMPRESSED;
+			}
 		}
 	}
 
@@ -1478,10 +1510,19 @@ void cInfo::Decompress(const char *theFilename, char *workFile)
 
 	sprintf(tmpFile, "%s/khelpXXXXXX", _PATH_TMP );
 	mktemp(tmpFile);
-	sprintf(sysCmd, "%s < %s > %s", decompressCmd, theFilename, tmpFile);
-    if ( safeCommand( theFilename ) )
-        system(sysCmd);
-
+  
+	int i=0;
+	for (; i<2; ++i)
+	{
+		if (!strcmp(theFilename+strlen(theFilename)-strlen(compressExtn[i]),
+			    compressExtn[i]))
+			break;
+	}
+  
+	sprintf(sysCmd, "%s < %s > %s", decompressCmd[i], theFilename, tmpFile);
+	if ( safeCommand( theFilename ) )
+		system(sysCmd);
+  
 	strcpy(workFile, tmpFile);
 }
 
