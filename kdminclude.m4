@@ -117,7 +117,5 @@ if test -n "$LIBXDMCP"; then
   ac_cpp=$ac_cpp_safe
 fi
 
-AC_CHECK_HEADERS(syslog.h)
-
 ])
 
