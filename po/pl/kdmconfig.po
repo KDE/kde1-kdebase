@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs \n"
 "POT-Creation-Date: 1999-01-12 01:14+0100\n"
-"PO-Revision-Date: 1998-12-29 13:50+0200\n"
+"PO-Revision-Date: 1999-01-14 23:35+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -158,19 +158,16 @@ msgid "Standard"
 msgstr "Zwyk³a"
 
 #: kdm-font.cpp:157
-#, fuzzy
 msgid "Greeting font"
-msgstr "Powitanie"
+msgstr "Czcionka powitania"
 
 #: kdm-font.cpp:161
-#, fuzzy
 msgid "Fail font"
-msgstr "B³±d"
+msgstr "Czcionka b³±du"
 
 #: kdm-font.cpp:165
-#, fuzzy
 msgid "Standard font"
-msgstr "Zwyk³a"
+msgstr "Czcionka standardowa"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
