@@ -71,25 +71,7 @@ msgstr ""
 "La variabile d'ambiente HOME\n"
 "non é impostata\n"
 
-#: kfontmanager.cpp:289
-#, fuzzy
-msgid ""
-"Can not create:\n"
-" ~/.kde/share/config/kdefonts\n"
-msgstr ""
-"Impossibile creare:\n"
-" ~/.kde/config/kdefonts\n"
 
-#: kfontmanager.cpp:294
-#, fuzzy
-msgid ""
-"~/.kde/share/config/kdefonts exists but\n"
-"is not writeable\n"
-"Can't save KDE Fontlist."
-msgstr ""
-"la directory ~/.kde/config/kdefonts esiste ma\n"
-"non può essere scritta\n"
-"Impossibile salvare la lista di Caratteri utilizzata da KDE."
 
 #: kfontlist.cpp:62
 msgid ""

@@ -14,35 +14,14 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kmenuedit.cpp:62
-#, fuzzy
-msgid "&Reload"
-msgstr "Ricarica Menu"
-
-#: kmenuedit.cpp:68
-#, fuzzy
-msgid "Change &Menuname"
-msgstr "Cambia nome Menu"
-
-#: kmenuedit.cpp:69
-#, fuzzy
-msgid "Reload &Filetypes"
-msgstr "Ricarica Tipi File"
-
 #: kmenuedit.cpp:76
 msgid "by"
-msgstr ""
+msgstr "da"
 
 #: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
 msgstr "Cambiamenti non salvati"
 
-#: kmenuedit.cpp:176 kmenuedit.cpp:201
-#, fuzzy
-msgid ""
-"\n"
-"Do you want to save your changes ?"
-msgstr "Vuoi salvare i cambiamenti ?"
 
 #: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"
@@ -156,7 +135,7 @@ msgstr "Applicazione"
 
 #: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
 msgid "Swallow"
-msgstr ""
+msgstr "Swallow"
 
 #: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
 msgid "Link"
@@ -206,19 +185,10 @@ msgstr "Opzioni Terminale:"
 msgid "Binary Pattern:"
 msgstr "Schema Binario:"
 
-#: entrydialog.cpp:300
-#, fuzzy
-msgid "Application to swallow:"
-msgstr "Applicazione"
-
-#: entrydialog.cpp:306
-#, fuzzy
-msgid "Title of application:"
-msgstr "Applicazione"
 
 #: entrydialog.cpp:312
 msgid "Application to execute on button press:"
-msgstr ""
+msgstr "Applicazione da eseguire quanto il pulsante viene premuto"
 
 #: entrydialog.cpp:342
 msgid "URL:"
@@ -260,26 +230,3 @@ msgstr "Personale:"
 msgid "Default:"
 msgstr "Default:"
 
-#~ msgid "Type:"
-#~ msgstr "Tipo:"
-
-#~ msgid "Name:"
-#~ msgstr "Nome:"
-
-#~ msgid ""
-#~ "KMenuedit 0.2.3\n"
-#~ "(C) by Christoph Neerfeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-#~ msgstr ""
-#~ "KMenuedit 0.2.3\n"
-#~ "(C) di Christoph Neerfeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-
-#~ msgid "Fvwm Command"
-#~ msgstr "Comando fvwm"
-
-#~ msgid "Fvwm"
-#~ msgstr "Fvwm"
-
-#~ msgid "Fvwm Command:"
-#~ msgstr "Comando Fvwm:"

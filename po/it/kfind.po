@@ -17,51 +17,6 @@ msgstr "Directory:"
 msgid "Cannot open or read directory."
 msgstr "Impossibile aprire o leggere la directory."
 
-#: kfindtop.cpp:115
-#, fuzzy
-msgid "&Open"
-msgstr "&Opzioni"
-
-#: kfindtop.cpp:117
-#, fuzzy
-msgid "&Add to archive"
-msgstr "Aggiungi all' archivio"
-
-#: kfindtop.cpp:122
-#, fuzzy
-msgid "&Properties"
-msgstr "Proprietà"
-
-#: kfindtop.cpp:125
-#, fuzzy
-msgid "Open Containing &Folder"
-msgstr "Apri cartella contenitore"
-
-#: kfindtop.cpp:128
-#, fuzzy
-msgid "&Save Search"
-msgstr "Salva Ricerca"
-
-#: kfindtop.cpp:140
-#, fuzzy
-msgid "&Cut"
-msgstr "Taglia"
-
-#: kfindtop.cpp:145
-#, fuzzy
-msgid "&Select All"
-msgstr "Seleziona tutto"
-
-#: kfindtop.cpp:147
-#, fuzzy
-msgid "&Invert Selection"
-msgstr "Inverti selezione"
-
-#: kfindtop.cpp:158
-#, fuzzy
-msgid "&Preferences ..."
-msgstr "Preferenze ..."
-
 #: kfindtop.cpp:163
 #, c-format
 msgid ""
@@ -72,6 +27,12 @@ msgid ""
 "Special thanks to Stephan Kulow\n"
 "<coolo@kde.org>"
 msgstr ""
+"KFind %s\n"
+"Interfaccia all'utility di ricerca\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"\n"
+"Un ringraziamento particolare a Stephan Kulow\n"
+"<coolo@kde.org>"
 
 #: kfindtop.cpp:183
 msgid "Start Search"
@@ -116,11 +77,6 @@ msgstr "&Sfoglia ..."
 #: kftabdlg.cpp:65
 msgid "Include &subfolders"
 msgstr "Includi sotto&directory"
-
-#: kftabdlg.cpp:95
-#, fuzzy
-msgid " Name& Location "
-msgstr " Nome &Locazione"
 
 #: kftabdlg.cpp:107
 msgid "and"
@@ -328,80 +284,3 @@ msgstr "Impossibile riconoscere il tipo di archivio!"
 msgid "Error while creating child process!"
 msgstr "Errore nella creazione del processo figlio!"
 
-#, fuzzy
-#~ msgid "Kfind &help"
-#~ msgstr "Guida Kfind"
-
-#~ msgid "About &Qt"
-#~ msgstr "Info su &Qt"
-
-#~ msgid "(none)"
-#~ msgstr "(nessuno)"
-
-#~ msgid "&About"
-#~ msgstr "Info su..."
-
-#, fuzzy
-#~ msgid "&Copy"
-#~ msgstr "Copia"
-
-#, fuzzy
-#~ msgid "&Delete"
-#~ msgstr "Cancella"
-
-#~ msgid "&Edit"
-#~ msgstr "&Modifica"
-
-#~ msgid "&File"
-#~ msgstr "&File"
-
-#~ msgid "&Help"
-#~ msgstr "&Aiuto"
-
-#~ msgid "&Options"
-#~ msgstr "&Opzioni"
-
-#, fuzzy
-#~ msgid "&Quit"
-#~ msgstr "&Esci"
-
-#, fuzzy
-#~ msgid "&Undo"
-#~ msgstr "Annulla"
-
-#~ msgid "Cancel"
-#~ msgstr "Annulla"
-
-#~ msgid "Delete"
-#~ msgstr "Cancella"
-
-#~ msgid "Error"
-#~ msgstr "Errore"
-
-#, fuzzy
-#~ msgid "Help"
-#~ msgstr "&Aiuto"
-
-#~ msgid "Open"
-#~ msgstr "Apri"
-
-#~ msgid "Quit"
-#~ msgstr "Esci"
-
-#~ msgid "Remove"
-#~ msgstr "Rimuovi"
-
-#~ msgid "Sorry"
-#~ msgstr "Mi dispiace"
-
-#~ msgid "Type Description:"
-#~ msgstr "Descrizione tipo:"
-
-#~ msgid "Icon:"
-#~ msgstr "Icona:"
-
-#~ msgid "Default Application:"
-#~ msgstr "Applicazione di Default"
-
-#~ msgid "Filetypes"
-#~ msgstr "Tipo File"

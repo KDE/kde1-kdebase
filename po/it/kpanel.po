@@ -84,11 +84,11 @@ msgstr "Configura pannello"
 
 #: props.C:145
 msgid "Edit Menus"
-msgstr ""
+msgstr "Modifica Menu"
 
 #: props.C:147
 msgid "Add or remove applications in the menu structure "
-msgstr ""
+msgstr "Aggiunge o rimuove un'applicazione dal menu"
 
 #: events.C:707 props.C:148
 msgid "Restart"
@@ -108,69 +108,13 @@ msgstr "Blocca schermo"
 
 #: props.C:307
 msgid "The menu editor is not installed."
-msgstr ""
+msgstr "Il menu editor non e' installato"
 
 #: events.C:743 props.C:308
 msgid "Oops!"
-msgstr ""
+msgstr "Ops!"
 
 #: events.C:742
 msgid "Cannot put this as button onto the panel!"
-msgstr ""
+msgstr "Impossibile mettere questo come pulsante sul pannello!"
 
-#~ msgid "Location"
-#~ msgstr "Indirizzo"
-
-#~ msgid "Taskbar"
-#~ msgstr "Barra Task"
-
-#~ msgid "Hidden"
-#~ msgstr "Nascosta"
-
-#~ msgid "Top/Left"
-#~ msgstr "In alto a Sin."
-
-#~ msgid "Tiny Style"
-#~ msgstr "Piccolissimo"
-
-#~ msgid "Normal Style"
-#~ msgstr "Normale"
-
-#~ msgid "Large Style"
-#~ msgstr "Largo"
-
-#~ msgid "Menu Tooltips"
-#~ msgstr "Suggerimenti Menu"
-
-#~ msgid "Others"
-#~ msgstr "Altro"
-
-#~ msgid "Personal First"
-#~ msgstr "Prima Menu Personale"
-
-#~ msgid "Auto Hide Panel"
-#~ msgstr "Sparizione Automatica Pannello"
-
-#~ msgid "Auto Hide Taskbar"
-#~ msgstr "Sparizione Automatica TaskBar"
-
-#~ msgid "Clock"
-#~ msgstr "Orologio"
-
-#~ msgid "24h"
-#~ msgstr "24h"
-
-#~ msgid "12h AM/PM"
-#~ msgstr "12h AM/PM"
-
-#~ msgid "Visible"
-#~ msgstr "Visibili"
-
-#~ msgid "Width"
-#~ msgstr "Larghezza"
-
-#~ msgid "Desktops"
-#~ msgstr "Schermi"
-
-#~ msgid "KPanel Configuration"
-#~ msgstr "Configurazione KPanel "

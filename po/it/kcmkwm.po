@@ -28,12 +28,8 @@ msgstr "&Barra Titolo"
 
 #: main.cpp:68
 msgid "&Desktop"
-msgstr ""
+msgstr "&Desktop"
 
-#: main.cpp:74
-#, fuzzy
-msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
-msgstr "utilizzo: kcmkwm [-init | {windows,buttons,titlebar}]\n"
 
 #: main.cpp:105
 msgid "Window manager style"
@@ -116,48 +112,34 @@ msgstr "Immagine &Inattiva"
 
 #: titlebar.cpp:982
 msgid "Mouse action"
-msgstr ""
+msgstr "Azione del Mouse"
 
 #: titlebar.cpp:984
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
-
-#: titlebar.cpp:988
-#, fuzzy
-msgid "(Un)Maximize"
-msgstr "Ingrandisci"
-
+"Un doppio click con il pulsante sinistro del Mouse\n"
+"  sulla barra titolo provoca:"
 #: titlebar.cpp:989
 msgid "Move"
-msgstr ""
-
-#: titlebar.cpp:990
-#, fuzzy
-msgid "(Un)Shade"
-msgstr "Sfumata"
+msgstr "Muovi"
 
 #: titlebar.cpp:991
 msgid "Iconify"
-msgstr ""
-
-#: titlebar.cpp:992
-#, fuzzy
-msgid "(Un)Sticky"
-msgstr "Appiccicato"
+msgstr "Iconifica"
 
 #: titlebar.cpp:993
 msgid "Resize"
-msgstr ""
+msgstr "Ridimensiona"
 
 #: titlebar.cpp:994
 msgid "Restore"
-msgstr ""
+msgstr "Ripristina"
 
 #: titlebar.cpp:995
 msgid "Operations Menu"
-msgstr ""
+msgstr "Menu Operazioni"
 
 #: windows.cpp:74
 msgid "Window movement"
@@ -181,28 +163,24 @@ msgstr "Comparsa"
 
 #: windows.cpp:86
 msgid "Smart"
-msgstr ""
+msgstr "Elegante"
 
 #: windows.cpp:88
 msgid "Cascade"
-msgstr ""
+msgstr "Cascata"
 
 #: windows.cpp:90
 msgid "Interactive"
-msgstr ""
+msgstr "Interattivo"
 
 #: windows.cpp:92
 msgid "Random"
-msgstr ""
+msgstr "Casuale"
 
-#: windows.cpp:94
-#, fuzzy
-msgid "Manual"
-msgstr "Menu"
 
 #: windows.cpp:101
 msgid "Allowed Overlap:"
-msgstr ""
+msgstr "Sovrapposizioni:"
 
 #: windows.cpp:108
 msgid "Maximize Style"
@@ -242,23 +220,23 @@ msgstr "millisecondi"
 
 #: desktop.cpp:77
 msgid "Active desktop borders"
-msgstr ""
+msgstr "Bordi attivi del Desktop"
 
 #: desktop.cpp:79
 msgid "Enable active desktop borders"
-msgstr ""
+msgstr "Abilita bordi attivi del Desktop"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr ""
+msgstr "Metti il cursore al centro dopo il cambio di desktop"
 
 #: desktop.cpp:87
 msgid "Dekstop switch delay:"
-msgstr ""
+msgstr "Attesa cambio di Desktop:"
 
 #: desktop.cpp:100
 msgid "Magic Borders"
-msgstr ""
+msgstr "Bordi Magici"
 
 #: desktop.cpp:102
 msgid ""
@@ -272,8 +250,3 @@ msgid ""
 "       (pixels)"
 msgstr ""
 
-#~ msgid "Random placement"
-#~ msgstr "Casuale"
-
-#~ msgid "Smart placement"
-#~ msgstr "Elegante"

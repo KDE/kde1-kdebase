@@ -108,7 +108,7 @@ msgstr "Otto"
 
 #: main.C:855
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr ""
+msgstr "Alcune pixmap non sono valide: Il modo Shape viene disabilitato\n"
 
 #: main.C:1164
 msgid "*** No Tasks ***"

@@ -80,27 +80,27 @@ msgstr ""
 
 #: syssound.cpp:160
 msgid "Window Iconify"
-msgstr ""
+msgstr "Finestra Iconificata"
 
 #: syssound.cpp:161
 msgid "Window DeIconify"
-msgstr ""
+msgstr "Finestra Deiconificata"
 
 #: syssound.cpp:162
 msgid "Window Maximize"
-msgstr ""
+msgstr "FInestra Ingrandita"
 
 #: syssound.cpp:163
 msgid "Window UnMaximize"
-msgstr ""
+msgstr "Finestra ripristinata"
 
 #: syssound.cpp:164
 msgid "Window Sticky"
-msgstr ""
+msgstr "Finestra Attaccata"
 
 #: syssound.cpp:165
 msgid "Window UnSticky"
-msgstr ""
+msgstr "Finestra Staccata"
 
 #: syssound.cpp:166
 msgid "Window Trans New"
@@ -112,27 +112,27 @@ msgstr ""
 
 #: syssound.cpp:168
 msgid "Logout"
-msgstr ""
+msgstr "Uscita"
 
 #: syssound.cpp:169
 msgid "Logout Message"
-msgstr ""
+msgstr "Messaggio Uscita"
 
 #: syssound.cpp:170
 msgid "Window Move Start"
-msgstr ""
+msgstr "Inizio spostamento finestra"
 
 #: syssound.cpp:171
 msgid "Window Move End"
-msgstr ""
+msgstr "Fine spostamento finestra"
 
 #: syssound.cpp:172
 msgid "Window Resize Start"
-msgstr ""
+msgstr "Inizio ridimensionamento"
 
 #: syssound.cpp:173
 msgid "Window Resize End"
-msgstr ""
+msgstr "Fine ridimensionamento"
 
 #: syssound.cpp:195
 msgid "e&nable system sounds"
@@ -148,7 +148,7 @@ msgstr "&Eventi:"
 
 #: syssound.cpp:208
 msgid "&Sounds:"
-msgstr "&Suoni"
+msgstr "&Suoni:"
 
 #: syssound.cpp:213
 msgid "Additional WAV files can be dropped onto the sound list."
@@ -159,27 +159,6 @@ msgstr ""
 #: syssound.cpp:453
 msgid "Unsupported URL"
 msgstr "URL non supportata"
-
-#: syssound.cpp:455
-#, fuzzy
-msgid ""
-"Sorry, this type of URL is currently unsupportedby the KDE System Sound "
-"Module"
-msgstr ""
-"Mi dispiace ma questo tipo di URL al momento non è supportata dal sistema "
-"suoni KDE\n"
-"Modulo"
-
-#: syssound.cpp:465
-#, fuzzy, c-format
-msgid ""
-"Sorry, but \n"
-"%s\n"
-"does not seemto be a WAV--file."
-msgstr ""
-"Mi dispiave, ma\n"
-"%s\n"
-"non sembra essere un file Wave"
 
 #: syssound.cpp:468
 msgid "Improper File Extension"
@@ -198,4 +177,4 @@ msgstr ""
 
 #: syssound.cpp:481
 msgid "File Already in List"
-msgstr ""
+msgstr "File gia' presente nella lista"
