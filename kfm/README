@@ -1,6 +1,39 @@
-Alpha Version 0.6.7
+Alpha Version 0.8.2
+
+PREVIEW VERSION
+===============
+
+This version is NOT FOR USERS. It is for developers only.
+You may try to run it, but dont expect the KFM TEAM or me
+to answer bugs reports, suggestions or whatever until this is
+released for the public. We dont want to be offending, but
+500 people running a developers release results in 500 senseless
+bug reports filling the developers mail box.
+
+So please be patient!
+
+Thank you very much
+the KFM Developers
 
 -------------------- ATTENTION ---------------- LATEST NEWS --------------------
+
+Security fix for KFM. Dont forget to change the password in ~/.kfm/magic and
+make shure that nobody else is allowed to read/write this file. Restart
+the KDE environment after changing the password.
+
+You need libjscript ( JavaScript ) to run KFM
+You need the latest experimental libkhtml to compile KFM but
+this will break for example your KDE Help System.
+
+To compile this KFM you need khtmlw-0.8.0 or greater.
+
+You must apply the patches in the patches directory to libkdeui and
+libkdecore ( if not already included in their distributions ).
+
+KFM expects your trash bin to be in ~/Desktop/Trash
+
+KFM is going to be the first freeware FRAME able browser. Or is there
+one already out there?
 
 KFM has a different setup procedure now. Read the installation instructions
 below careful. No setupKFM anymore. On startup KFM will create everything
@@ -31,6 +64,10 @@ Features
   in the tar file. Hust try it. You can even drag files out of the
   archive ( well, this may have some bugs).
 
+Competitors
+-----------
+
+Netscape and MS IE 4.0 :-)
 
 TODO
 ----
@@ -40,16 +77,15 @@ Lots of work...
 - better FTP support ( delete, chown, proxy ).
 - passwords for HTTP
 - Fixing bugs.
-- Implement better DND. 
 
 
 Needed Packages
 ---------------
 
-khtmlw-0.5.4.tgz or greater
+khtmlw-0.7.9.tgz or greater
 ktoolicons.tgz
 kdehelp-0.4 or greater
-libkde-0.8.tgz or greater
+libkde
 kfind-0.3.0.tgz or greater
 Qt-1.2 or greater
 
@@ -72,9 +108,7 @@ You can now browse ftp servers. But it has many bugs. It just works with simple
 servers like your local ftp server. A link to an ftp server is placed in the demo
 file 'ftp.kdelnk'. Edit it to your needs and copy it to ~/Desktop. Whenever you
 link a ftp file/directory to the local file system such a *.kdelnk file is
-generated. Before compiling change user and passwrord in lines 1113 and 1104 in
-file kio.cpp.
-
+generated.
 
 HTTP
 ----
@@ -471,14 +505,247 @@ Version 0.6.6
 
 - Fixed bug with .kfmrc
 
-Version 0.6.7
+Version 0.7.4
 
-- Applied patches from Stephan
+- Needs the frame based HTML Widget version 0.7
 
-- Fixed warning that occured during linking.
+- Knows CGI ( on local hard disk: file:/cgi-bin/helpindex for example )
+  Code derived from KDE Help System
 
+- Applied tons of patches.
+
+- You may select files by drawing a rectangle ( like Win95 )
+
+- No double clicks ( only for root icons, but that is going to change, too ).
+
+- Known bugs:
+   - filetypes dont work any more, mimetypes dont work right now.
+   - Starting of programs may be broken.
+   - No DND.
+   - Cut/Copy/Paste may not work.
+   - Selection files by pattern does not work.
+   - Many others
+  The use of frames was more complicated then I thought. But I think
+  it is worth the effort.
+
+Version 0.7.6
+
+- DND works now ( but not tested too much )
+
+- Applied Matthias "caption" patch
+
+- Applied patch for "pipes, devices etc."
+
+- Fixed tons of bugs
+
+- Still crashes when trying to paste using the toolbar.
+
+- Menu "View" rearranged.
+
+- When moving the panner the menu gets updated ( View->Show Tree ).
+
+- Fixed bug in HTTP. Pages should appear now.
+
+- TreeView does not have a popup menu right now.
+
+Version 0.7.7
+
+- MIME Types work
+  See the directory ./kfm-0.7.7/kfm/mimetypes and ./kfm-0.7.7/kfm/apps for
+  examples. The filetypes directory is no longer needed.
+
+- Changed dialogs for supporting mime types.
+
+- Bug in DND fixed
+
+- Bug in selectin items with the mouse fixed
+
+- Tons of other bugs fixed
+
+- Context menus should work now
+
+- HTTP support fixed. You can browse the web again now.
+
+- Color of the icon text background is configureable now in kfmrc.
+  You may even turn the spaing on/off.
+
+Version 0.7.8
+
+- No black frames any more
+
+- Loading of background pixmaps over the net works now
+
+- Status bar changed. Statusbar displays progress information.
+
+- Status bar has a animated icon that shows its animation until the page is
+  loaded.
+
+- Deleting links on directories works now
+
+- Recursive directory copying works
+
+- The tag "AllowDefault=0" in *.kdelnk files of "Type=Application" is
+  recognized now ( example: GnuZIP, klicking on a file of unknown type
+  does no longor cause GnuZIP to start )
+
+- The patches directory contains patches for kdecore and kdeui.
+
+Version 0.7.9
+
+- New logo. Logo works better now
+
+- Uses progressive updating in FILE/HTTP/FTP
+
+- Bugs fixed
+
+- Disabled all files containing '#' or ':' or '@' since they break URLs
+
+- Applied cool patch that breaks too long file names.
+
+- Fixed HTTP support
+
+- Uses new kioslave-Beta from Stefan
+
+- ".." is now always the first icon/line
+
+- Fixed selecting with rectangle. Works now with scrolled widget, too.
+
+Version 0.8.0
+
+- Works with the JavaScipt enabled HTML widget
+
+- Can delete links to directories
+
+- Copy commands care about the permission bits
+
+- Possible to move files to trash instead of deleting them
+
+- Warning dialog before deleting files
+
+- Bug in "Open With" fixed, available for FTP and HTTP now, too.
+
+- Makefile problem in kioslave fixed. Just moved all files from ./protocols/*
+  to the upper directory.
+
+- Using fork for process creation. Installed signal handler to avoid zombies.
+  ( Please test with BSD, since BSD is somewhat different here )
+
+- If the user forgets to mention for example "%f" after the name of an executable,
+  KFM assumes that '%f' is a good choice ( Properties dialog of TYPE=Application )
+
+- Added little utility "kfmwarn". It is called if one of the "exec" functions
+  did not succeed. Unfortunately it is impossible to call QMessageBox there.
+  kfmwarn takes one command line argument and uses it as text of the message.
+  Now KFM can tell you wether it was possible to start some application or not.
+
+- You need to apply the patches in the patches directory to libkdecore and
+  libkdeui. The patches are created against kdelibs-970619.tgz
+
+- The icon of the trash bin changes if something is in it or if it became empty
+  I added 2 new trash bin icons taken from my suse distribution.
+
+- The trash bin has a special popup menu now allowing you only to empty the
+  trash, open it etc. But you can no longer rename, copy, delete it.
+
+- Dropping files over the trash bin causes them to move in the bin without any
+  further popup dialog.
+
+- Included new properties dialog for devices. Now you can edit your *.kdelnk
+  TYPE=FSDevice with a nice GUI.
+
+- An unbelievable amount of other little bug fixes
+
+- The "Open Location" and "Open With" dialog boxes have a command completion
+  mode. Pressing Ctrl-s completes the filename as long as possible and
+  pressing of Ctrl-d multiples times without releasing the Ctrl-Button cycles
+  thru all possibilities. ( Perhaps this widget will move into libkdeui
+  sometimes ).
+
+- Applied some patches to free memory and close file descriptors
+
+- Applied Martins "Print" patch
+
+Version 0.8.1
+
+- Security! KFM has a password file in ~/.kfm/magic. As long as nobody can
+  guess your password and as long as nobody can read the files in your
+  home directory ( which should never be the case ) you KFM is secure now.
+  It wont say anything if someone tries to invoke actions without
+  authorization. If an attempt to authorize fails, KFM will print a warning
+  on the screen. You should not forget to replace the machine generated
+  password in ~/.kfm/magic by another one.
+  This is not the final solution but I think for a quick fix it is very good.
+
+- Applied patch to fix problems with DEC Alpha ( Uwe )
+
+- Applied several patches ( not all I received, sorry )
+
+- "!|() should work now in filenames ( as names for root icons, too )
+
+- Loading a HTML page in KFM and pressing the reload button works now.
+
+Version 0.8.2
+
+- Stephan did a lot but was not so kind to let us know :-)
+
+- Fixed bug with "New View" in popup menu. Should work now.
+
+- kfmlib has a function that lets KWM select root icons. KFM itself
+  has functions for selecting root icons. Pressing Ctrl and using the
+  left mouse button marks multiple icons.
+
+KNOWN BUGS
+----------
+
+- Files with '#' in their names are ignored at most places since
+  they could cause KFM to crash. Stephan invested some work here, but
+  did not let us know what he did.
+
+- Use "Move to Trash" instead of "delete" until the delete function is very
+  well tested on some systems.
+
+- Dont use JavaScript, it is the best method to crash KFM
+
+- View a document with Frames at your own risk :-) KFM could display fancy
+  things but usually it does not crash.
+
+- The KDE Drag&Drop may be buggy. A new protocol for Qt, GTK, JX and others is
+  being discussed and implemented by the Trolls. So our DnD protocol will be
+  obsolete soon. Whenever KFM segfaults with "Bad Window Error" th bug is
+  propably related to some DnD problem.
+
+- Mounting of CDROMs with no CDROM in the drive does not cause some warning to
+  appear.
+
+- Attention when copying/deleting/moving links ( especially links to directories ).
+  I fixed many bugs here, but it still needs testing
+
+- The tar protocol sometimes display file names that include parts of the
+  files creation date.
+
+- The protocols "tar", "http" and "ftp" are still considered experimental => not stable
+
+- The documentation is somewhat outdated.
+
+- The icon for an empty trash bin has to be called 'kfm_trash.xpm' and the one
+  for a full trash bin has to be named 'kfm_fulltrash.xpm'. This is not
+  configureable right now.
+
+- Some pixmaps in $KDEDIR/lib/pics/share are missing.
+
+- Desktop icons dont use double clicks any more
+
+- Root Icons may not have a ";" in their name
+
+- References like <a href="#ref"> dont work right now
+
+- HTML Widget introduced new bug. Dnd for RootIcons works now, but Dnd from
+  KFM windows lets KFM dump core.
+  
 Authors
 -------
+
+The KFM Team
 
 Torben Weis <weis@stud.uni-frankfurt.de>
 
@@ -495,4 +762,5 @@ And thanks to all the others who contributed.
 
 Torben Weis, weis@stud.uni-frankfurt.de, weis@kde.org
 http://www.kde.org
-Last change: 5.5.97
+Last change: 27.6.97
+

@@ -22,7 +22,7 @@ class KIOJob : public QObject
 {
     Q_OBJECT
 public:
-    enum Jobs { JOB_COPY, JOB_MOVE, JOB_DELETE, JOB_MOUNT, JOB_UNMOUNT, JOB_LIST, JOB_MKDIR, JOB_LINK };
+    enum Jobs { JOB_COPY, JOB_MOVE, JOB_DELETE, JOB_MOUNT, JOB_UNMOUNT, JOB_LIST, JOB_MKDIR, JOB_LINK, JOB_GET };
     
     /// Constructs a new job
     /**
@@ -43,6 +43,7 @@ public:
     
     void copy( QStrList & _src_url_list, const char *_dest_dir_url );    
     void copy( const char *_src_url, const char *_dest_url );
+    void get( const char *_url );
     void move( QStrList & _src_url_list, const char *_dest_dir_url );    
     void move( const char *_src_url, const char *_dest_url );
     void link( QStrList & _src_url_list, const char *_dest_dir_url );    
@@ -57,14 +58,20 @@ public:
       */
     void mount( bool _ro, const char *_fstype, const char* _dev, const char *_point );
     void unmount( const char *_point );
-    /// Gets a directory listing
     /**
-      Connect to 'newDirEntry' to get the directory entries. You must expect that the
-      signal is emitte before this function returns ( if the entries are cached ) or
-      sometimes after the function returned.
-      If '_reload' is TRUE, cached data will be deleted and the directory is scanned again.
-      */
-    void list( const char *_url, bool _reload = FALSE );
+     * Gets a directory listing.
+     * Connect to 'newDirEntry' to get the directory entries. You must expect that the
+     * signal is emitte before this function returns ( if the entries are cached ) or
+     * sometimes after the function returned.
+     *
+     * @param  _reload is TRUE if cached data should be deleted and the directory scanned again.
+     * @param _bHTML tells wether we accept HTML code as a reesult. In this case
+     *               the signal @ref #data will be emitted multiple times until
+     *               the complete HTML code is transfered. For example the 'file'
+     *               protocol sends HTML code if it finds some "index.html" file
+     *               in the directory.
+     */
+    void list( const char *_url, bool _reload = FALSE, bool _bHTML = FALSE );
     void mkdir( const char *_url );    
 
     /// Turns of the global notify signals.
@@ -82,13 +89,17 @@ public:
       Do this only if you want to quit the application.
       */
     static void deleteAllJobs();
+
+    void setAutoDelete( bool _b ) { bAutoDelete = _b; }
+    bool isAutoDelete() { return bAutoDelete; }
     
 public slots:
     void slaveIsReady();
     void slaveProgress( int _percent );
     void cancel();
     void start( int _pid );
-
+    
+    void slotData( const char *_data );
     void fatalError( int _kioerror, const char* _url, int _errno );
     void msgResult( QWidget*, int );
     /// Called if the user closes the rename dialog.
@@ -101,26 +112,38 @@ public slots:
     void slotDirEntry( const char *_url, const char *_name, bool _isDir, int _size,
 		       const char * _creationDate, const char * _access,
 		       const char * _owner, const char *_group );
-
+    void slotRedirection( const char *_url );
+    void slotMimeType( const char *_type );
+    void slotInfo( const char *_text );
+    
 signals:
-    /// Used for the LIST command
+    void data( const char *_data );
+    void redirection( const char *_url );
+    void mimeType( const char *_type );
+    void info( const char *_text );
+    
     /**
-      If a client starte a job with 'job->list( url )' he should first
-      connect to this slot to become informed about the progress of the job.
-      _entry may be 0L. So check this. If you get a 'finished' signal, the job will
-      emit no more 'newDirEntry' signals. The '_entry' will be deleted after control
-      gets back to KIOJob. So it is up to you to make a copy for your own.
-      */
+     * Used for the LIST command.
+     * If a client starte a job with 'job->list( url )' he should first
+     * connect to this slot to become informed about the progress of the job.
+     * _entry may be 0L. So check this. If you get a 'finished' signal, the job will
+     * emit no more 'newDirEntry' signals. The '_entry' will be deleted after control
+     * gets back to KIOJob. So it is up to you to make a copy for your own.
+     */
     void newDirEntry( int _id, KIODirectoryEntry * _entry );
     
-    /// Emitted if the job has finished
+    /**
+     * Emitted if the job has finished.
+     */
     void finished( int _id );
 
-    /// Notify signals indicate that some URLs contents has changed.
+    void error( const char *_txt );
+    
     /**
-      This signal is only emitted for directories. Use this signal only if
-      you turned global notifies off. Usually you get notifies from KIOServer.
-      */
+     * Notify signals indicate that some URLs contents has changed.
+     * This signal is only emitted for directories. Use this signal only if
+     *  you turned global notifies off. Usually you get notifies from KIOServer.
+     */
     void notify( int _id, const char * _url );
     
     /**
@@ -134,8 +157,7 @@ signals:
     /**
       Not implemented yet
      */
-    void bytes( int _bytes );
-    
+    void bytes( int _bytes );    
 protected:
     /**
      * Looks wether the '_url' specifies a user but not a password. If so the
@@ -295,6 +317,15 @@ protected:
      * @see #completeURL
      */
     static QDict<QString> passwordDict;
+
+    /**
+     * @see #setAutoDelete
+     */
+    bool bAutoDelete;
+    /**
+     * If we accept HTML as result of a @ref #list call, then this FLAG is set to TRUE.
+     */
+    bool bHTML;
 };
 
 #include "kioserver.h"

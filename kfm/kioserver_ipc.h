@@ -27,9 +27,17 @@ signals:
 private:
 	void parse_progress( char *_data, int _len );
 signals:
+	void info(const char* _text);
+private:
+	void parse_info( char *_data, int _len );
+signals:
 	void dirEntry(const char* _dir, const char* _name, bool _isDir, int _size, const char* _date, const char* _access, const char* _owner, const char* _group);
 private:
 	void parse_dirEntry( char *_data, int _len );
+signals:
+	void data(const char* _text);
+private:
+	void parse_data( char *_data, int _len );
 signals:
 	void flushDir(const char* _dir);
 private:
@@ -46,6 +54,14 @@ signals:
 	void setPID(int _pid);
 private:
 	void parse_setPID( char *_data, int _len );
+signals:
+	void redirection(const char* _url);
+private:
+	void parse_redirection( char *_data, int _len );
+signals:
+	void mimeType(const char* _type);
+private:
+	void parse_mimeType( char *_data, int _len );
 public slots:
 	void mount(bool _ro, const char* _fstype, const char* _dev, const char* _point);
 public slots:
@@ -53,11 +69,13 @@ public slots:
 public slots:
 	void copy(const char* _from_url, const char* _to_url, bool _overwrite);
 public slots:
+	void get(const char* _url);
+public slots:
 	void del(const char* _url);
 public slots:
 	void mkdir(const char* _url);
 public slots:
-	void list(const char* _url);
+	void list(const char* _url, bool _bHTML);
 public slots:
 	void getPID();
 public slots:

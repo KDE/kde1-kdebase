@@ -4,7 +4,6 @@
 #include <qstring.h>
 #include <unistd.h>
 #include "kio_errors.h"
-#include <config-kfm.h>
 
 /************************** Authorization stuff: copied from wget-source *****/
 
@@ -78,12 +77,25 @@ char *create_www_auth(const char *user, const char *passwd)
 
 KProtocolHTTP::KProtocolHTTP()
 {
+	char *proxy, *port;
+
+	proxy = getenv("HTTP_PROXY_NAME");
+	if(proxy)
+	{
+		port = getenv("HTTP_PROXY_PORT");
+		if(port == NULL) port="80";
+		init_sockaddr(&proxy_name, proxy, atoi(port));
+		use_proxy = 1;
+	}
+	else
+	{
 #ifdef HTTP_PROXY_NAME
-	init_sockaddr(&proxy_name, HTTP_PROXY_NAME, HTTP_PROXY_PORT);
-	use_proxy = 1;
+		init_sockaddr(&proxy_name, HTTP_PROXY_NAME, HTTP_PROXY_PORT);
+		use_proxy = 1;
 #else
-	use_proxy = 0;
+		use_proxy = 0;
 #endif
+	}
 	connected = 0;
 }
 
@@ -99,9 +111,10 @@ long KProtocolHTTP::Size()
 
 int KProtocolHTTP::Close()
 {
-	if(connected) close(sock);
-	connected = 0;
-	return SUCCESS;
+    if ( connected )
+	close( sock );
+    connected = 0;
+    return SUCCESS;
 }
 
 int KProtocolHTTP::atEOF()
@@ -109,17 +122,51 @@ int KProtocolHTTP::atEOF()
 	return(bytesleft == 0 || feof(fsocket));
 }
 
-int KProtocolHTTP::Read(void *buffer, int len)
+long KProtocolHTTP::Read(void *buffer, long len)
 {
-	if(atEOF()) return(0);
+    if( atEOF() )
+	return 0;
 
-	long nbytes = fread(buffer,1,len,fsocket);
+    long nbytes = fread(buffer,1,len,fsocket);
+    bytesRead += nbytes;
+    bytesleft -= nbytes;
 
-	/*printf("got nbytes: %d\n",nbytes);*/
-	bytesleft -= nbytes;
-	if(nbytes >= 0) return(nbytes);
-	Error(KIO_ERROR_CouldNotRead,"Reading from socket failed", errno);
-	return(FAIL);
+    QTime t;
+    t.start();
+    // Print only every second new status information
+    if ( t.secsTo( currentTime ) >= 1 )
+    {
+	currentTime.start();
+	int secs = startTime.secsTo( t );
+	if ( secs == 0 )
+	    secs = 1;
+	fprintf(stderr,"Read=%i Left=%i Secs=%i size=%i\n",bytesRead,bytesleft,secs,size);
+	long bytesPerSec = bytesRead / secs;
+	QString infoStr;
+	if ( bytesPerSec < 1000 )
+	    infoStr.sprintf( "%i bytes/s", bytesPerSec );
+	else
+	    infoStr.sprintf( "%.1f kb/s", (float)bytesPerSec / (float)1000 );
+	
+	// Do we know about the remaing bytes ?
+	if ( size != 0xFFFFFFF && bytesPerSec > 0 )
+	{
+	    QTime leftTime( 0, 0 );
+	    leftTime = leftTime.addSecs( bytesleft / bytesPerSec );
+	    infoStr += "  ";
+	    infoStr += leftTime.toString();
+	}
+	
+	emit info( infoStr );
+    }
+    
+    /*printf("got nbytes: %d\n",nbytes);*/
+
+    if ( nbytes >= 0 )
+	return nbytes;
+
+    Error( KIO_ERROR_CouldNotRead,"Reading from socket failed", errno);
+    return FAIL;
 }
 
 int KProtocolHTTP::init_sockaddr(struct sockaddr_in *server_name, char *hostname, int port)
@@ -135,8 +182,18 @@ int KProtocolHTTP::init_sockaddr(struct sockaddr_in *server_name, char *hostname
 	return(SUCCESS);
 }
 
-int KProtocolHTTP::Open(KURL *url, int )
+int KProtocolHTTP::Open(KURL *url, int mode)
 {
+    bytesRead = 0;
+    startTime.start();
+    currentTime.start();
+
+    // Save the parameter, we could need it if we get HTTP redirection
+    // See ::ProcessHeader
+    currentMode = mode;
+    
+	if(mode != READ) return(Error(KIO_ERROR_NotImplemented,
+					              "HTTP currently only supports reading",0));
 	if (connected) Close();
 
 	sock = ::socket(PF_INET,SOCK_STREAM,0);
@@ -149,7 +206,7 @@ int KProtocolHTTP::Open(KURL *url, int )
 
 	if(use_proxy)
 	{
-		debugT("connecting to proxy...\n");
+		printf("connecting to proxy...\n");
 		if(::connect(sock,(struct sockaddr*)(&proxy_name),sizeof(proxy_name)))
 		{
 	    	Error(KIO_ERROR_CouldNotConnect,"Could not connect to proxy",errno);
@@ -159,16 +216,13 @@ int KProtocolHTTP::Open(KURL *url, int )
 	else
 	{
 		struct sockaddr_in server_name;
-		int port = url->port();
-		if (! port )  // use default one
-			port = 80;
 
-		if(init_sockaddr(&server_name, url->host(), port) == FAIL)
+		if(init_sockaddr(&server_name, url->host(), 80) == FAIL)
 		{
     		Error(KIO_ERROR_UnknownHost, "Unknown host", errno );
 			return(FAIL);
 		}
-		debugT("connecting to host %s\n",url->host());
+		printf("connecting to host %s\n",url->host());
 		if(::connect(sock,(struct sockaddr*)(&server_name),sizeof(server_name)))
 		{
 	    	Error(KIO_ERROR_CouldNotConnect, "Could not connect host", errno);
@@ -196,7 +250,7 @@ int KProtocolHTTP::Open(KURL *url, int )
 	if ( url->path()[0] != '/' ) command += "/";
 	command += url->path();
 	command += " HTTP/1.0\n"; /* start header */
-	if(strlen(url->user()) != 0)
+	if( strlen(url->user()) != 0 )
 	{
 		char *www_auth = create_www_auth(url->user(),url->passwd());
 		command += www_auth;
@@ -204,7 +258,7 @@ int KProtocolHTTP::Open(KURL *url, int )
 	}
 	command += "\n";  /* end header */
 
-	debugT("opening ");
+	printf("opening ");
 	write(0, command.data(), command.length());
 	write(sock, command.data(), command.length());
 
@@ -218,19 +272,68 @@ int KProtocolHTTP::ProcessHeader()
 
 	size = 0xFFFFFFF;
 
-	debugT("Processing header:\n");
-	while(len && fgets(buffer,1024,fsocket))
+	printf("Processing header:\n");
+	while( len && fgets( buffer, 1024, fsocket ) )
 	{
-		len=strlen(buffer);
-		while(len && (buffer[len-1] == '\n' || buffer[len-1] == '\r'))
-			buffer[--len] = 0;
+	    len = strlen(buffer);
+	    while( len && (buffer[len-1] == '\n' || buffer[len-1] == '\r'))
+		buffer[--len] = 0;
 
-		debugT("%s\n",buffer);
+	    printf("%s\n",buffer);
 	    if ( strncmp( buffer, "Content-length: ", 16 ) == 0 
 	    ||   strncmp( buffer, "Content-Length: ", 16 ) == 0 )
 		size = atol( buffer + 16 );
+	    else if ( strncmp( buffer, "Content-Type: ", 14 ) == 0 
+		 ||   strncmp( buffer, "Content-type: ", 14 ) == 0 )
+	    {
+		printf("CONTENT '%s'\n",buffer + 14 );
+		emit mimeType( buffer + 14 );
+	    }
+	    else if ( strncmp( buffer, "HTTP/1.0 ", 9 ) == 0 )
+	    {
+		if ( buffer[9] == '4')
+		{
+		    printf("ERROR\n");
+		    Close();
+		    Error(KIO_ERROR_CouldNotRead,buffer+9,errno);
+		    return FAIL;
+		}
+	    }
+	    
+	    else if ( strncmp( buffer, "Location: ", 10 ) == 0 )
+	    {
+		printf("REDIRECTION '%s'\n",buffer + 10);
+		Close();
+		emit redirection( buffer + 10 );
+		KURL u( buffer + 10 );
+		return Open( &u, currentMode );
+	    }
+	    
 	}
 	bytesleft = size;
-	debugT("---< end header >---\n");
+	printf("---< end header >---\n");
 	return(SUCCESS);
 }
+
+/* bool KProtocolHTTP::fgets( char *buffer, int _len )
+{
+    char b[ 2 ];
+    int i = 0;
+    while ( i < _len - 1 )
+    {
+	int n = fread( b, 1, 1, fsocket );
+	if ( n != 1 )
+	    return FALSE;
+	buffer[i++] = b[0];
+	
+	if ( b[0] == 10 || b[0] == 13 )
+	{
+	    buffer[i] = 0;
+	    return TRUE;
+	}
+    }
+    buffer[i] = 0;
+    return TRUE;
+} */
+
+#include "http.moc"

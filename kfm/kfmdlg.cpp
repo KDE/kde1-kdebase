@@ -3,6 +3,9 @@
 #include <config.h>
 #endif
 
+#include <klocale.h>
+#define klocale KLocale::klocale()
+
 #include "kfmdlg.h"
 #include "fileentry.h"
 
@@ -24,15 +27,15 @@ DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *pare
     QPushButton *ok;
     QPushButton *clear;
     QPushButton *cancel;
-    ok = new QPushButton( "Ok", this );
+    ok = new QPushButton( klocale->translate("Ok"), this );
     ok->setGeometry( 10,70, 60,30 );
     connect( ok, SIGNAL(clicked()), SLOT(accept()) );
 
-    clear = new QPushButton( "Clear", this );
+    clear = new QPushButton( klocale->translate("Clear"), this );
     clear->setGeometry( 145, 70, 60, 30 );
     connect( clear, SIGNAL(clicked()), SLOT(slotClear()) );
 
-    cancel = new QPushButton( "Cancel", this );
+    cancel = new QPushButton( klocale->translate("Cancel"), this );
     cancel->setGeometry( 280, 70, 60, 30 );
     connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
 

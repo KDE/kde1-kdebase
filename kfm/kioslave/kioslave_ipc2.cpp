@@ -21,6 +21,16 @@ void KIOSlaveIPC::progress(int _percent)
 	write_int( sock->socket(), _percent );
 }
 
+void KIOSlaveIPC::info(const char* _text)
+{
+	int len = 0;
+	len += len_string( _text );
+	len += len_string("info");
+	write_int( sock->socket(), len );
+	write_string( sock->socket(), "info" );
+	write_string( sock->socket(), _text );
+}
+
 void KIOSlaveIPC::dirEntry(const char* _dir, const char* _name, bool _isDir, int _size, const char* _date, const char* _access, const char* _owner, const char* _group)
 {
 	int len = 0;
@@ -43,6 +53,16 @@ void KIOSlaveIPC::dirEntry(const char* _dir, const char* _name, bool _isDir, int
 	write_string( sock->socket(), _access );
 	write_string( sock->socket(), _owner );
 	write_string( sock->socket(), _group );
+}
+
+void KIOSlaveIPC::data(const char* _text)
+{
+	int len = 0;
+	len += len_string( _text );
+	len += len_string("data");
+	write_int( sock->socket(), len );
+	write_string( sock->socket(), "data" );
+	write_string( sock->socket(), _text );
 }
 
 void KIOSlaveIPC::flushDir(const char* _dir)
@@ -85,6 +105,26 @@ void KIOSlaveIPC::setPID(int _pid)
 	write_int( sock->socket(), len );
 	write_string( sock->socket(), "setPID" );
 	write_int( sock->socket(), _pid );
+}
+
+void KIOSlaveIPC::redirection(const char* _url)
+{
+	int len = 0;
+	len += len_string( _url );
+	len += len_string("redirection");
+	write_int( sock->socket(), len );
+	write_string( sock->socket(), "redirection" );
+	write_string( sock->socket(), _url );
+}
+
+void KIOSlaveIPC::mimeType(const char* _type)
+{
+	int len = 0;
+	len += len_string( _type );
+	len += len_string("mimeType");
+	write_int( sock->socket(), len );
+	write_string( sock->socket(), "mimeType" );
+	write_string( sock->socket(), _type );
 }
 
 void KIOSlaveIPC::parse_mount( char *_data, int _len )
@@ -135,6 +175,17 @@ void KIOSlaveIPC::parse_copy( char *_data, int _len )
 	emit copy( _from_url, _to_url, _overwrite );
 }
 
+void KIOSlaveIPC::parse_get( char *_data, int _len )
+{
+	int pos = 0;
+
+	// Parsing string
+	const char* _url;
+	_url = read_string( _data, pos, _len );
+	// Calling function
+	emit get( _url );
+}
+
 void KIOSlaveIPC::parse_del( char *_data, int _len )
 {
 	int pos = 0;
@@ -164,21 +215,24 @@ void KIOSlaveIPC::parse_list( char *_data, int _len )
 	// Parsing string
 	const char* _url;
 	_url = read_string( _data, pos, _len );
+	// Parsing bool
+	bool _bHTML;
+	_bHTML = read_bool( _data, pos, _len );
 	// Calling function
-	emit list( _url );
+	emit list( _url, _bHTML );
 }
 
-void KIOSlaveIPC::parse_getPID( char *, int )
+void KIOSlaveIPC::parse_getPID( char *_data, int _len )
 {
-	// int pos = 0;
+	int pos = 0;
 
 	// Calling function
 	emit getPID(  );
 }
 
-void KIOSlaveIPC::parse_cleanUp( char *, int  )
+void KIOSlaveIPC::parse_cleanUp( char *_data, int _len )
 {
-	// int pos = 0;
+	int pos = 0;
 
 	// Calling function
 	emit cleanUp(  );

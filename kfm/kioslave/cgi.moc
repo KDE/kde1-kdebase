@@ -1,0 +1,38 @@
+/****************************************************************************
+** KProtocolCGI meta object code from reading C++ file 'cgi.h'
+**
+** Created: Tue Aug 19 22:43:13 1997
+**      by: The Qt Meta Object Compiler ($Revision$)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#define Q_MOC_OUTPUT_REVISION 2
+#elif Q_MOC_OUTPUT_REVISION != 2
+#error Moc format conflict - please regenerate all moc files
+#endif
+
+#include <qmetaobj.h>
+#include "cgi.h"
+
+
+const char *KProtocolCGI::className() const
+{
+    return "KProtocolCGI";
+}
+
+QMetaObject *KProtocolCGI::metaObj = 0;
+
+void KProtocolCGI::initMetaObject()
+{
+    if ( metaObj )
+	return;
+    if ( strcmp(KProtocolHTTP::className(), "KProtocolHTTP") != 0 )
+	badSuperclassWarning("KProtocolCGI","KProtocolHTTP");
+    if ( !KProtocolHTTP::metaObject() )
+	KProtocolHTTP::initMetaObject();
+    metaObj = new QMetaObject( "KProtocolCGI", "KProtocolHTTP",
+	0, 0,
+	0, 0 );
+}

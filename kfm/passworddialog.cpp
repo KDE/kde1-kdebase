@@ -14,6 +14,9 @@
 #include "passworddialog.moc"
 #include <config-kfm.h>
 
+#include <klocale.h>
+#define klocale KLocale::klocale()
+
 PasswordDialog::PasswordDialog(const char *head, QWidget* parent, const char* name, bool modal, WFlags f)
    : QDialog(parent, name, modal, f)
 {
@@ -35,7 +38,7 @@ PasswordDialog::PasswordDialog(const char *head, QWidget* parent, const char* na
    //
    // Die eine oder zwei Zeile(n) mit der Passwortabfrage
    //
-   QLabel *l_password = new QLabel("Password", this);
+   QLabel *l_password = new QLabel(klocale->translate("Password"), this);
    l_password->setGeometry( 10, 40, 80, 30 );
    
    _w_password = new QLineEdit( this );
@@ -63,10 +66,10 @@ PasswordDialog::PasswordDialog(const char *head, QWidget* parent, const char* na
    // Die Buttons "Ok" & "Cancel" erzeugen
    //
    QPushButton *b1, *b2;
-   b1 = new QPushButton("Ok", this);
+   b1 = new QPushButton(klocale->translate("Ok"), this);
    b1->setGeometry( 10, 90, 80, 30 );
    
-   b2 = new QPushButton("Cancel", this);
+   b2 = new QPushButton(klocale->translate("Cancel"), this);
    b2->setGeometry( 110, 90, 80, 30 );
    
    // Buttons mit Funktionaliataet belegen
@@ -74,7 +77,7 @@ PasswordDialog::PasswordDialog(const char *head, QWidget* parent, const char* na
    connect( b2, SIGNAL(clicked()), SLOT(reject()) );
    
    // Fenstertitel
-   setCaption("Password");
+   setCaption(klocale->translate("Password"));
    
    // Focus
    _w_password->setFocus();

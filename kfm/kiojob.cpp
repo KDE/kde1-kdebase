@@ -21,11 +21,16 @@
 #include "passworddialog.h"
 #include <config-kfm.h>
 
+
+#include <klocale.h>
+#define klocale KLocale::klocale()
+
 QList<KIOJob> KIOJob::jobList;
 QDict<QString> KIOJob::passwordDict;
 
 KIOJob::KIOJob( int _id )
 {
+    bAutoDelete = TRUE;
     server = KIOServer::getKIOServer();
     slave = 0L;
     dlg = 0L;
@@ -56,7 +61,7 @@ void KIOJob::mkdir( const char *_url )
     KURL u( _url );
     if ( u.isMalformed() )
     {
-	debugT("ERROR: Malformed URL\n");
+        warning(klocale->translate("ERROR: Malformed URL"));
 	return;
     }
     
@@ -70,10 +75,12 @@ void KIOJob::mkdir( const char *_url )
     server->getSlave( this );
 }
 
-void KIOJob::list( const char *_url, bool _reload )
+void KIOJob::list( const char *_url, bool _reload, bool _bHTML )
 {
     action = KIOJob::JOB_LIST;
     
+    bHTML = _bHTML;
+   
     lstURL = _url;
     lstURL.detach();
     debugT("LIST: Got '%s'\n",lstURL.data());
@@ -84,6 +91,7 @@ void KIOJob::list( const char *_url, bool _reload )
     
     if ( dir != 0L )
     {
+	printf("GOT Cached information\n");
 	KIODirectoryEntry *e;
 	for ( e = dir->first(); e != 0L; e = dir->next() )
 	    emit newDirEntry( id, e );
@@ -98,7 +106,7 @@ void KIOJob::mount( bool _ro, const char *_fstype, const char* _dev, const char 
 {
     if ( _dev == 0L )
     {
-	debugT("INTERNAL ERROR: You must at least specify the device for mounting\n");
+	warning(klocale->translate("INTERNAL ERROR: You must at least specify the device for mounting") );
 	exit(1);
     }
     
@@ -225,16 +233,16 @@ void KIOJob::link()
 	
 	if ( su.isMalformed() )
 	{
-	    debugT("ERROR: Malformed URL '%s'\n",p);
+	    warning(klocale->translate("ERROR: Malformed URL '%s'"),p);
 	}
 	else if ( du.isMalformed() )
 	{
-	    debugT("ERROR: Malformed URL '%s'\n",p2);
+	  warning(klocale->translate("ERROR: Malformed URL '%s'"),p2);
 	}	
 	// I can only make links on the local file system.
 	else if ( strcmp( du.protocol(), "file" ) != 0L )
 	{
-	    debugT("ERROR: Can only make links on local file system\n");
+	    warning(klocale->translate("ERROR: Can only make links on local file system"));
 	}
 	else
 	{
@@ -242,7 +250,7 @@ void KIOJob::link()
 	    if ( strcmp( su.protocol(), "file" ) == 0 )
 	    {
 		if ( symlink( su.path(), du.path() ) == -1 )
-		    debugT("ERROR: Could not make symlink to %s\n",du.path() );
+		    warning(klocale->translate("ERROR: Could not make symlink to %s"),du.path() );
 	    }
 	    // Make a link to a file in a tar archive, ftp, http or what ever
 	    else
@@ -269,7 +277,7 @@ void KIOJob::link()
 		    emit notify( id, p2 );
 		}
 		else
-		    debugT(" ERROR: Could not write to %s\n",p);
+		    warning(klocale->translate(" ERROR: Could not write to %s"),p);
 	    }
 	}
 	p2 = cmDestURLList.next();
@@ -277,6 +285,16 @@ void KIOJob::link()
 
     // We dont need a slave, so quit
     done();
+}
+
+void KIOJob::get( const char *_url )
+{
+    action = KIOJob::JOB_GET;
+
+    cmSrcURLList.clear();
+    cmSrcURLList.append( _url );
+
+    server->getSlave( this );
 }
 
 void KIOJob::copy( QStrList & _src_url_list, const char *_dest_dir_url )
@@ -356,7 +374,7 @@ void KIOJob::copy()
 		if ( ::mkdir( du.path(), buff.st_mode ) == -1 )
 		    if ( errno != EEXIST )
 		    {
-			debugT("ERROR: Could not make directory\n");
+			warning(klocale->translate("ERROR: Could not make directory %s"),du.path());
 			return;
 		    }
 		
@@ -365,7 +383,7 @@ void KIOJob::copy()
 		dp = opendir( su.path() );
 		if ( dp == NULL )
 		{
-		    debugT("ERROR: Could not access directory '%s'\n", p );
+		    warning(klocale->translate("ERROR: Could not access directory '%s'"), p );
 		    return;
 		}
 		
@@ -529,7 +547,7 @@ void KIOJob::move()
 		    if ( ::mkdir( du.path(), S_IRWXU ) == -1 )
 			if ( errno != EEXIST )
 			{
-			    debugT("ERROR: Could not make directory\n");
+			    warning(klocale->translate("ERROR: Could not make directory"));
 			    return;
 			}
 
@@ -538,7 +556,7 @@ void KIOJob::move()
 		    dp = opendir( su.path() );
 		    if ( dp == NULL )
 		    {
-			debugT("ERROR: Could not access directory '%s'\n", p );
+  		        warning(klocale->translate("ERROR: Could not access directory '%s'"), p );
 			return;
 		    }
 		    
@@ -572,7 +590,7 @@ void KIOJob::move()
 	    }
 	    else
 	    {
-		debugT("ERROR: Could not move '%s'\n",p );
+		warning(klocale->translate("ERROR: Could not move '%s'"),p );
 		return;
 	    }
 	}
@@ -701,7 +719,7 @@ void KIOJob::del()
 		dp = opendir( su.path() );
 		if ( dp == NULL )
 		{
-		    debugT("ERROR: Could not access directory '%s'\n", p );
+		    warning(klocale->translate("ERROR: Could not access directory '%s'"), p );
 		    return;
 		}
 		    
@@ -833,6 +851,7 @@ void KIOJob::msgResult( QWidget * _win, int _button )
 	return;
     case KIOJob::JOB_MOUNT:
     case KIOJob::JOB_UNMOUNT:
+    case KIOJob::JOB_GET:
 	done();
 	break;
     }
@@ -860,49 +879,87 @@ void KIOJob::fatalError( int _kioerror, const char* _url, int )
 	switch( _kioerror )
 	{
 	case KIO_ERROR_MalformedURL:
-	    msg.sprintf("Malformed URL\n%s",_url);
-	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Continue", "Cancel" );
+	    msg.sprintf(klocale->translate("Malformed URL\n%s"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel") );
 	    break;
 	case KIO_ERROR_CouldNotRead:
-	    msg.sprintf("Could not read\n%s\nFile does not exist or access denied",_url);
-	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Continue", "Cancel" );
+	    msg.sprintf(klocale->translate("Could not read\n%s\nFile does not exist or access denied"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel") );
 	    break;
 	case KIO_ERROR_CouldNotWrite:
-	    msg.sprintf("Could not write\n%s\nPerhaps access denied",_url);
-	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Continue", "Cancel" );
+	    msg.sprintf(klocale->translate("Could not write\n%s\nPerhaps access denied"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), msg.data(), KMsgWin::EXCLAMATION, klocale->translate("Continue"), klocale->translate("Cancel") );
 	    break;
 	case KIO_ERROR_CouldNotCreateSocket:
-	    msg.sprintf("Could not create Socket for\n%s",_url);
-	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Continue", "Cancel" );
+	    msg.sprintf(klocale->translate("Could not create Socket for\n%s"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel") );
 	    break;
 	case KIO_ERROR_UnknownHost:
-	    msg.sprintf("Unknwon host in\n%s",_url);
-	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Continue", "Cancel" );
+	    msg.sprintf(klocale->translate("Unknwon host in\n%s"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel") );
 	    break;
 	case KIO_ERROR_CouldNotConnect:
-	    msg.sprintf("Could not connect to\n%s",_url);
-	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Continue", "Cancel" );
+	    msg.sprintf(klocale->translate("Could not connect to\n%s"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel") );
 	    break;
 	case KIO_ERROR_NotImplemented:
-	    msg.sprintf("The requested action\n'%s'\nis not implemented yet.",_url);
-	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Continue", "Cancel" );
+	    msg.sprintf(klocale->translate("The requested action\n'%s'\nis not implemented yet."),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel") );
 	    break;
 	case KIO_ERROR_CouldNotMkdir:
-	    msg.sprintf("Could not make directory\n%s",_url);
-	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Continue", "Cancel" );
+	    msg.sprintf(klocale->translate("Could not make directory\n%s"),
+			_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION,  
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel") );
 	    break;
 	case KIO_ERROR_CouldNotList:
-	    msg.sprintf("Could not list directory contents\n%s",_url);
-	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Continue", "Cancel" );
+	    msg.sprintf(klocale->translate("Could not list directory contents\n%s"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel") );
 	    break;
 	case KIO_ERROR_CouldNotDelete:
-	    msg.sprintf("Could not delete\n%s\nURL does not exist or permission denied",_url);
-	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Continue", "Cancel" );
+	    msg.sprintf(klocale->translate("Could not delete\n%s\nURL does not exist or permission denied"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"),
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel") );
 	    break;
 	case KIO_ERROR_CouldNotLogin:
 	    {
 		KURL u( _url );
-		msg.sprintf("Could not login for\n%s\nPerhaps wrong password",u.host());
+		msg.sprintf(klocale->translate("Could not login for\n%s\nPerhaps wrong password"),u.host());
 		// Remove the password from the dict, since it seems to be wrong.
 		if ( u.user() != 0L && u.user()[0] != 0 && u.passwd() != 0L && u.passwd()[0] != 0 )
 		{
@@ -912,15 +969,24 @@ void KIOJob::fatalError( int _kioerror, const char* _url, int )
 		    passwordDict.remove( tmp.data() );
 		}
 	    }
-	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Continue", "Cancel" );
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"),
+				 klocale->translate("Cancel") );
 	    break;
 	case KIO_ERROR_TarError:
-	    msg.sprintf("Tar reproted an error\n%s",_url);
-	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Continue", "Cancel" );
+	    msg.sprintf(klocale->translate("Tar reproted an error\n%s"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel") );
 	    break;
 	case KIO_ERROR_GzipError:
-	    msg.sprintf("Gzip reproted an error\n%s",_url);
-	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Continue", "Cancel" );
+	    msg.sprintf(klocale->translate("Gzip reproted an error\n%s"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), msg.data(), KMsgWin::EXCLAMATION, klocale->translate("Continue"), klocale->translate("Cancel") );
 	    break;
 	case KIO_ERROR_FileExists:
 	    r = new KRenameWin( 0L, lastSource.data(), lastDest.data() );
@@ -929,19 +995,102 @@ void KIOJob::fatalError( int _kioerror, const char* _url, int )
 	break;
     case KIOJob::JOB_MOUNT:
     case KIOJob::JOB_UNMOUNT:
+    case KIOJob::JOB_GET:
 	switch( _kioerror )
 	{
+	case KIO_ERROR_MalformedURL:
+	    msg.sprintf(klocale->translate("Malformed URL\n%s"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel") );
+	    break;
 	case KIO_ERROR_CouldNotRead:
-	    msg.sprintf("Could not read\n%s\nFile does not exist or access denied",_url);
-	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Close" );
+	    msg.sprintf(klocale->translate("Could not read\n%s\nFile does not exist or access denied"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel") );
+	    break;
+	case KIO_ERROR_CouldNotCreateSocket:
+	    msg.sprintf(klocale->translate("Could not create Socket for\n%s"),
+			_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel") );
+	    break;
+	case KIO_ERROR_UnknownHost:
+	    msg.sprintf(klocale->translate("Unknwon host in\n%s"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"),
+				 klocale->translate("Cancel") );
+	    break;
+	case KIO_ERROR_CouldNotConnect:
+	    msg.sprintf(klocale->translate("Could not connect to\n%s"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"),
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel") );
+	    break;
+	case KIO_ERROR_NotImplemented:
+	    msg.sprintf(klocale->translate("The requested action\n'%s'\nis not implemented yet."),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel" ));
+	    break;
+	case KIO_ERROR_CouldNotLogin:
+	    {
+		KURL u( _url );
+		msg.sprintf(klocale->translate("Could not login for\n%s\nPerhaps wrong password"),u.host());
+		// Remove the password from the dict, since it seems to be wrong.
+		if ( u.user() != 0L && u.user()[0] != 0 && u.passwd() != 0L && u.passwd()[0] != 0 )
+		{
+		    QString tmp;
+		    tmp.sprintf( "%s@%s", u.user(), u.host() );
+		    debugT("Removing '%s' from dict !!!!!!!!!!!!!!!! ########### !!!!!!\n",tmp.data() );
+		    passwordDict.remove( tmp.data() );
+		}
+	    }
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel") );
+	    break;
+	case KIO_ERROR_TarError:
+	    msg.sprintf(klocale->translate("Tar reproted an error\n%s"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel") );
+	    break;
+	case KIO_ERROR_GzipError:
+	    msg.sprintf(klocale->translate("Gzip reproted an error\n%s"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), 
+				 msg.data(), KMsgWin::EXCLAMATION, 
+				 klocale->translate("Continue"), 
+				 klocale->translate("Cancel") );
 	    break;
 	case KIO_ERROR_CouldNotMount:
-	    msg.sprintf("Could not mount\nError log:\n\n%s",_url);
-	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Close" );
+	    msg.sprintf(klocale->translate("Could not mount\nError log:\n\n%s"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), msg.data(), KMsgWin::EXCLAMATION, klocale->translate( "Close") );
 	    break;
 	case KIO_ERROR_CouldNotUnmount:
-	    msg.sprintf("Could not unmount\nError log:\n\n%s",_url);
-	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Close" );
+	    msg.sprintf(klocale->translate("Could not unmount\nError log:\n\n%s"),_url);
+	    if ( bDisplay )
+		m = new KMsgWin( 0L, klocale->translate("Error"), msg.data(), KMsgWin::EXCLAMATION, klocale->translate("Close") );
 	    break;
 	}
 	break;
@@ -959,6 +1108,10 @@ void KIOJob::fatalError( int _kioerror, const char* _url, int )
 		 this, SLOT( msgResult2( QWidget*, int, const char*, const char* ) ) );
 	r->show();
     }
+    if ( !msg.isEmpty() && r == 0L )
+	emit error( msg );
+    else if ( r == 0L )
+	emit error( "" );
 }
 
 void KIOJob::start( int _pid )
@@ -969,6 +1122,20 @@ void KIOJob::start( int _pid )
     {
 	switch( action )
 	{
+	case KIOJob::JOB_GET:
+	    {
+		dlg = new QDialog( 0L );
+		dlg->resize( 300, 180 );
+		progressBar = new KProgress( 0, 100, 0, KProgress::Horizontal, dlg );
+		progressBar->setGeometry( 10, 100, 280, 20 );
+		QPushButton *pb = new QPushButton( klocale->translate("Cancel"), dlg );
+		pb->setGeometry( 110, 140, 80, 30 );
+		connect( pb, SIGNAL( clicked() ), this, SLOT( cancel() ) );
+		line1 = new QLabel( dlg );
+		line1->setGeometry( 10, 10, 280, 20 );
+		dlg->show();
+	    }
+	    break;
 	case KIOJob::JOB_COPY:
 	case KIOJob::JOB_MOVE:
 	    {
@@ -976,7 +1143,8 @@ void KIOJob::start( int _pid )
 		dlg->resize( 300, 180 );
 		progressBar = new KProgress( 0, 100, 0, KProgress::Horizontal, dlg );
 		progressBar->setGeometry( 10, 100, 280, 20 );
-		QPushButton *pb = new QPushButton( "Cancel", dlg );
+		QPushButton *pb = 
+		  new QPushButton( klocale->translate("Cancel"), dlg );
 		pb->setGeometry( 110, 140, 80, 30 );
 		connect( pb, SIGNAL( clicked() ), this, SLOT( cancel() ) );
 		line1 = new QLabel( dlg );
@@ -1000,7 +1168,8 @@ void KIOJob::start( int _pid )
 		    dlg->resize( 300, 180 );
 		    progressBar = new KProgress( 0, 100, 0, KProgress::Horizontal, dlg );
 		    progressBar->setGeometry( 10, 100, 280, 20 );
-		    QPushButton *pb = new QPushButton( "Cancel", dlg );
+		    QPushButton *pb =
+		      new QPushButton( klocale->translate("Cancel"), dlg );
 		    pb->setGeometry( 110, 140, 80, 30 );
 		    connect( pb, SIGNAL( clicked() ), this, SLOT( cancel() ) );
 		    line1 = new QLabel( dlg );
@@ -1016,7 +1185,8 @@ void KIOJob::start( int _pid )
 	    {
 		dlg = new QDialog( 0L );
 		dlg->resize( 300, 100 );
-		QPushButton *pb = new QPushButton( "Cancel", dlg );
+		QPushButton *pb = 
+		  new QPushButton( klocale->translate("Cancel"), dlg );
 		pb->setGeometry( 110, 60, 80, 30 );
 		connect( pb, SIGNAL( clicked() ), this, SLOT( cancel() ) );
 		line1 = new QLabel( dlg );
@@ -1032,7 +1202,8 @@ void KIOJob::start( int _pid )
 		{
 		    dlg = new QDialog( 0L );
 		    dlg->resize( 300, 100 );
-		    QPushButton *pb = new QPushButton( "Cancel", dlg );
+		    QPushButton *pb = 
+		      new QPushButton( klocale->translate("Cancel"), dlg );
 		    pb->setGeometry( 110, 60, 80, 30 );
 		    connect( pb, SIGNAL( clicked() ), this, SLOT( cancel() ) );
 		    line1 = new QLabel( dlg );
@@ -1050,10 +1221,11 @@ void KIOJob::start( int _pid )
 		{
 		    dlg = new QDialog( 0L );
 		    dlg->resize( 300, 100 );
-		    QPushButton *pb = new QPushButton( "Cancel", dlg );
+		    QPushButton *pb = 
+		      new QPushButton( klocale->translate("Cancel"), dlg );
 		    pb->setGeometry( 110, 60, 80, 30 );
 		    connect( pb, SIGNAL( clicked() ), this, SLOT( cancel() ) );
-		    line1 = new QLabel( "Making directory", dlg );
+		    line1 = new QLabel( klocale->translate("Making directory"), dlg );
 		    line1->setGeometry( 10, 10, 200, 20 );
 		    line2 = new QLabel( mkdirURL.data() );
 		    line2->setGeometry( 10, 10, 200, 20 );
@@ -1069,7 +1241,11 @@ void KIOJob::start( int _pid )
     }
     
     connect( slave, SIGNAL( done() ), this, SLOT( slaveIsReady() ) );
-
+    connect( slave, SIGNAL( data( const char* ) ), this, SLOT( slotData( const char* ) ) );
+    connect( slave, SIGNAL( info( const char* ) ), this, SLOT( slotInfo( const char* ) ) );
+    connect( slave, SIGNAL( redirection( const char* ) ), this, SLOT( slotRedirection( const char* ) ) );
+    connect( slave, SIGNAL( mimeType( const char* ) ), this, SLOT( slotMimeType( const char* ) ) );
+    
     started = false;
     cleanedUp = false;
     
@@ -1091,6 +1267,31 @@ void KIOJob::slaveIsReady()
     
     switch( action )
     {
+    case KIOJob::JOB_GET:
+	{
+	    if ( !started )
+		connect( slave, SIGNAL( progress( int ) ), this, SLOT( slaveProgress( int ) ) );
+	    
+	    if ( cmSrcURLList.count() == 0 )
+	    {
+		slave->cleanUp();
+		cleanedUp = true;
+		return;
+	    }
+
+	    if ( dlg )
+	    {
+		line1->setText( cmSrcURLList.first() );
+	    }
+
+	    lastSource = cmSrcURLList.first();
+
+	    QString src = completeURL( cmSrcURLList.first() ).data();	    
+	    slave->get( src.data() );
+	    cmSrcURLList.removeRef( cmSrcURLList.first() );
+	}
+	break;
+
     case KIOJob::JOB_COPY:
 	{
 	    if ( !started )
@@ -1106,10 +1307,10 @@ void KIOJob::slaveIsReady()
 	    if ( dlg )
 	    {
 		char buffer[ 1024 ];
-		sprintf( buffer, "File %i/%i", cmCount - cmSrcURLList.count() + 1, cmCount );	    
+		sprintf( buffer, klocale->translate("File %i/%i"), cmCount - cmSrcURLList.count() + 1, cmCount );	    
 		line1->setText( buffer );
 		line2->setText( cmSrcURLList.first() );
-		sprintf( buffer, "to %s", cmDestURLList.first() );
+		sprintf( buffer, klocale->translate("to %s"), cmDestURLList.first() );
 		line3->setText( buffer );
 	    }
 
@@ -1139,7 +1340,7 @@ void KIOJob::slaveIsReady()
 		{
 		    if ( rmdir( p ) == -1 )
 		    {
-			debugT("ERROR: Could not delete dir '%s'\n",p );
+			warning(klocale->translate("ERROR: Could not delete dir '%s'"),p );
 			slave->cleanUp();
 			cleanedUp = true;
 			delete dlg;
@@ -1160,10 +1361,11 @@ void KIOJob::slaveIsReady()
 	    if ( dlg )
 	    {
 		char buffer[ 1024 ];
-		sprintf( buffer, "File %i/%i", cmCount - cmSrcURLList.count() + 1, cmCount );	    
+		sprintf( buffer, klocale->translate("File %i/%i"), 
+			 cmCount - cmSrcURLList.count() + 1, cmCount );	    
 		line1->setText( buffer );
 		line2->setText( cmSrcURLList.first() );
-		sprintf( buffer, "to %s", cmDestURLList.first() );
+		sprintf( buffer, klocale->translate("to %s"), cmDestURLList.first() );
 		line3->setText( buffer );
 	    }
 	    
@@ -1202,7 +1404,7 @@ void KIOJob::slaveIsReady()
 	    if ( dlg != 0L )
 	    {
 		char buffer[ 1024 ];
-		sprintf( buffer, "File %i/%i", cmCount - mvDelURLList.count() + 1, cmCount );	    
+		sprintf( buffer, klocale->translate("File %i/%i"), cmCount - mvDelURLList.count() + 1, cmCount );	    
 		line1->setText( buffer );
 		line2->setText( mvDelURLList.first() );
 		if ( cmCount != (int)mvDelURLList.count() )
@@ -1230,9 +1432,13 @@ void KIOJob::slaveIsReady()
 	    {
 		char buffer[ 1024 ];
 		if ( action == KIOJob::JOB_MOUNT )
-		    sprintf( buffer, "Mounting %s ...", mntDev.data() );
+		    sprintf( buffer, 
+			     klocale->translate("Mounting %s ..."), 
+			     mntDev.data() );
 		else
-		    sprintf( buffer, "Unmounting %s ...", mntPoint.data() );
+		    sprintf( buffer, 
+			     klocale->translate("Unmounting %s ..."), 
+			     mntPoint.data() );
 		line1->setText( buffer );
 	    }
 	    
@@ -1260,12 +1466,14 @@ void KIOJob::slaveIsReady()
 	    if ( dlg != 0L )
 	    {
 		char buffer[ 1024 ];
-		sprintf( buffer, "Retrieving listing of %s ...", lstURL.data() );
+		sprintf( buffer, 
+			 klocale->translate("Retrieving listing of %s ..."), 
+			 lstURL.data() );
 		line1->setText( buffer );
 	    }
 	    
 	    lstURL = completeURL( lstURL.data() ).data();
-	    slave->list( lstURL.data() );
+	    slave->list( lstURL.data(), bHTML );
 	}
 	break;
     case KIOJob::JOB_MKDIR:
@@ -1314,6 +1522,26 @@ void KIOJob::slaveProgress( int _percent )
     emit progress( _percent, 0 );
 }
 
+void KIOJob::slotData( const char *_data )
+{
+    emit data( _data );
+}
+
+void KIOJob::slotRedirection( const char *_url )
+{
+    emit redirection( _url );
+}
+
+void KIOJob::slotMimeType( const char *_type )
+{
+    emit mimeType( _type );
+}
+
+void KIOJob::slotInfo( const char *_text )
+{
+    emit info( _text );
+}
+
 void KIOJob::cancel()
 {
     pid_t p = (pid_t)slave->pid;
@@ -1357,12 +1585,18 @@ void KIOJob::done()
 
     if ( action == KIOJob::JOB_MOUNT || action == KIOJob::JOB_UNMOUNT )
 	KIOServer::sendMountNotify();
+
+    printf("DONE JOB %x\n",this);
     
     emit finished( id );
     
+    printf("Emitted finish signal\n");
+    
     dlg = 0L;
     slave = 0L;
-    delete this;
+    
+    if ( bAutoDelete )
+	delete this;
 }
 
 void KIOJob::deleteAllJobs()

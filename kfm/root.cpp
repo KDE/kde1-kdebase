@@ -15,6 +15,7 @@
 #include "kfmprops.h"
 #include "kfmdlg.h"
 #include "kfmpaths.h"
+#include "kfmexec.h"
 #include <config-kfm.h>
 
 #include <X11/Xlib.h>
@@ -23,16 +24,56 @@
 
 #include <string.h>
 
+#include <klocale.h>
+#define klocale KLocale::klocale()
+
 #define root KRootWidget::getKRootWidget()
 
 KRootWidget* KRootWidget::pKRootWidget;
 
-KRootManager::KRootManager( KRootWidget *_root ) : KFileManager( 0L )
+KRootWidget::KRootWidget( QWidget *parent=0, const char *name=0 ) : QWidget( parent, name )
 {
-    rootWidget = _root;
+    KConfig *config = KApplication::getKApplication()->getConfig();
+
+    if ( config )
+    {
+         config->setGroup("KFM Root Icons");
+	 iconstyle = config->readNumEntry( "Style", 1 );
+	 QString bg = config->readEntry( "Background" );
+	 if ( bg.isNull() )
+	   bg = "black";
+         iconBgColor.setNamedColor( bg.data() );
+	 QString fg = config->readEntry( "Foreground" );
+	 if ( fg.isNull() )
+	   fg = "white";
+         labelColor.setNamedColor( fg.data() );
+    }
+
+    rootDropZone = new KDNDDropZone( this , DndURL );
+    connect( rootDropZone, SIGNAL( dropAction( KDNDDropZone *) ),
+	     this, SLOT( slotDropEvent( KDNDDropZone *) ) );
+    KApplication::getKApplication()->setRootDropZone( rootDropZone );
+
+    popupMenu = new QPopupMenu();
+    
+    noUpdate = false;
+    
+    pKRootWidget = this;
+    
+    desktopDir = "file:" + KFMPaths::DesktopPath();
+    
+    connect( KIOServer::getKIOServer(), SIGNAL( notify( const char *) ),
+    	     this, SLOT( slotFilesChanged( const char *) ) );
+    connect( KIOServer::getKIOServer(), SIGNAL( mountNotify() ), 
+	     this, SLOT( update() ) );
+
+    icon_list.setAutoDelete( true );
+    layoutList.setAutoDelete( true );
+    
+    update();
 }
 
-void KRootManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
+void KRootWidget::openPopupMenu( QStrList &_urls, const QPoint &_point )
 {
     if ( _urls.count() == 0 )
 	return;
@@ -75,9 +116,9 @@ void KRootManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
 	}
 
 	int id;
-	id = popupMenu->insertItem( "Open", rootWidget, 
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN), this, 
 				    SLOT( slotPopupNewView() ) );
-	id = popupMenu->insertItem( "Empty Trash Bin", rootWidget, 
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_TRASH), this, 
 				    SLOT( slotPopupEmptyTrash() ) );
 	if ( !isempty )
 	    popupMenu->setItemEnabled( id, false );
@@ -85,30 +126,29 @@ void KRootManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
     else if ( isdir )
     {
 	int id;
-	id = popupMenu->insertItem( "New View", rootWidget, 
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_NEW_VIEW), this, 
 				    SLOT( slotPopupNewView() ) );
-	id = popupMenu->insertItem( "Copy", rootWidget, 
+	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_COPY), this, 
 				    SLOT( slotPopupCopy() ) );
-	id = popupMenu->insertItem( "Move to Trash",  rootWidget, 
+	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_MOVE_TO_TRASH),  this, 
 				    SLOT( slotPopupTrash() ) );
-	id = popupMenu->insertItem( "Delete",  rootWidget, 
-				    SLOT( slotPopupDelete() ) );
+	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_DELETE), 
+				     this, SLOT( slotPopupDelete() ) );
     }
     else
     {
 	int id;
-	id = popupMenu->insertItem( "Open With", rootWidget, 
-				    SLOT( slotPopupOpenWith() ) );
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN_WITH),
+				    this, SLOT( slotPopupOpenWith() ) );
 	popupMenu->insertSeparator();    
-	id = popupMenu->insertItem( "Copy", rootWidget, 
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_COPY), this, 
 				    SLOT( slotPopupCopy() ) );
-	id = popupMenu->insertItem( "Move to Trash",  rootWidget, 
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_MOVE_TO_TRASH),  this, 
 				    SLOT( slotPopupTrash() ) );
-	id = popupMenu->insertItem( "Delete", rootWidget, 
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_DELETE), this, 
 				    SLOT( slotPopupDelete() ) );
     }
     
-    rootWidget->setPopupFiles( _urls );
     popupFiles.copy( _urls );
     
     // Get all bindings matching all files.
@@ -147,60 +187,108 @@ void KRootManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
     if ( _urls.count() == 1 )
     {
 	popupMenu->insertSeparator();
-	popupMenu->insertItem( "Properties", rootWidget, SLOT( slotPopupProperties() ) );
+	popupMenu->insertItem( klocale->getAlias(ID_STRING_PROP), 
+			       this, SLOT( slotPopupProperties() ) );
     }
     
     popupMenu->popup( _point );
 }
 
-KRootWidget::KRootWidget( QWidget *parent=0, const char *name=0 ) : QWidget( parent, name )
+void KRootWidget::openURL( const char *_url )
 {
-    debugT("1\n");
-    KConfig *config = KApplication::getKApplication()->getConfig();
-    debugT("2\n");
-    if ( config )
+    KFMExec *e = new KFMExec();
+    e->openURL( _url, FALSE );
+
+    /*
+    // _url has "file" protocol.
+    // It would be possible to handle the whole stuff
+    // with KFMExec. But KFMExec is not optimized for local
+    // files, so we try on our own here first.
+    KURL u( _url );
+    if ( u.isMalformed() )
     {
-         debugT("3\n");
-         config->setGroup("KFM Root Icons");
-         debugT("4\n");
-	 iconstyle = config->readNumEntry( "Style", 1 );
-         debugT("5\n");
-	 QString bg = config->readEntry( "Background" );
-	 if ( bg.isNull() )
-	   bg = "black";
-	 debugT("5b '%s'\n",bg.data());
-         iconBgColor.setNamedColor( bg.data() );
-         debugT("6\n");
-	 QString fg = config->readEntry( "Foreground" );
-	 if ( fg.isNull() )
-	   fg = "white";
-         labelColor.setNamedColor( fg.data() );
-	 debugT("7\n");
+	QString tmp;
+	tmp.sprintf("Malformed URL\n\r%s", _url );
+	QMessageBox::message( "KFM Error", tmp );
+	return;
     }
 
-    rootDropZone = new KDNDDropZone( this , DndURL );
-    connect( rootDropZone, SIGNAL( dropAction( KDNDDropZone *) ),
-	     this, SLOT( slotDropEvent( KDNDDropZone *) ) );
-    KApplication::getKApplication()->setRootDropZone( rootDropZone );
+    // A link to the web in form of a *.kdelnk file ?
+    QString path = u.path();
+    if ( !u.hasSubProtocol() && strcmp( u.protocol(), "file" ) == 0 && path.right(7) == ".kdelnk" )
+    {
+	KURL::decodeURL( path );
+    
+	// Try tp open the *.kdelnk file
+	QFile file( path );
+	if ( file.open( IO_ReadOnly ) )
+	{
+	    QTextStream pstream( &file );
+	    KConfig config( &pstream );
+	    config.setGroup( "KDE Desktop Entry" );
+	    QString typ = config.readEntry( "Type" );
+	    // Is it a link ?
+	    if ( typ == "Link" )
+	    {
+		// Is there a URL ?
+		QString u2 = config.readEntry( "URL" );
+		if ( !u2.isEmpty() )
+		{
+		    // It is a link and we have a URL => Give the job away
+		    KFMExec *e = new KFMExec( u2 );
+		    e->openURL( u2, _reload );
+		    return;
+		}
+		else
+		{
+		    // The *.kdelnk file is broken
+		    QMessageBox::message( "KFM Error", "The file does not contain a URL" );
+		    return;
+		}
+	    }
+	    file.close();
+	}
+    }
 
-    manager = new KRootManager( this );
-    popupMenu = new QPopupMenu();
+    // Is it really a directory ?
+    if ( KIOServer::isDir( _url ) == 1 )
+    {
+	// Open a new window
+	KfmGui *m = new KfmGui( 0L, 0L, _url );
+	m->show();
+	return;
+    }
     
-    noUpdate = false;
-    
-    pKRootWidget = this;
-    
-    desktopDir = "file:" + KFMPaths::DesktopPath();
-    
-    connect( KIOServer::getKIOServer(), SIGNAL( notify( const char *) ),
-    	     this, SLOT( slotFilesChanged( const char *) ) );
-    connect( KIOServer::getKIOServer(), SIGNAL( mountNotify() ), 
-	     this, SLOT( update() ) );
+    // We have a real file here.
+    // So try to run the default binding on it.
+    if ( KMimeType::runBinding( _url ) )
+	return;
 
-    icon_list.setAutoDelete( true );
-    layoutList.setAutoDelete( true );
-    
-    update();
+    // We dont know what to do with the file, so
+    // ask the user what we should do
+    DlgLineEntry l( "Open With:", "", 0L, true );
+    debugT("OPENING DLG\n");
+    if ( l.exec() )
+    {
+	QString pattern = l.getText();
+	if ( pattern.isEmpty() )
+	    return;
+
+	QString decoded( tryURL );
+	KURL::decodeURL( decoded );
+	decoded = KIOServer::shellQuote( decoded ).data();
+	    
+	QString cmd;
+	cmd = l.getText();
+	cmd += " ";
+	cmd += "\"";
+	cmd += decoded;
+	cmd += "\"";
+	debugT("Executing stuff '%s'\n", cmd.data());
+	    
+	KMimeType::runCmd( cmd.data() );
+    }
+    */
 }
 
 void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
@@ -421,7 +509,7 @@ void KRootWidget::update()
 
     if ( u.isMalformed() )
     {
-	debugT("Internal Error: desktopDir is malformed\n");
+	warning(klocale->translate("Internal Error: desktopDir is malformed"));
 	return;
     }
     
@@ -434,7 +522,7 @@ void KRootWidget::update()
     if ( dp == NULL )
     {
 	debugT("'%s'\n",u.path());
-	debugT("ERROR: Could not read desktop directory '%s'\nRun 'setupKFM'\n", desktopDir.data());
+	warning(klocale->translate("ERROR: Could not read desktop directory '%s'"), desktopDir.data());
 	exit(1);
     }
     
@@ -542,7 +630,7 @@ void KRootWidget::slotDropEvent( KDNDDropZone *_zone )
 	id = popupMenu->insertItem( "Link", this, SLOT( slotDropLink() ) );
     if ( id == -1 )
     {
-	debugT("ERROR: Can not accept drop\n");
+        warning(klocale->translate("ERROR: Can not accept drop"));
 	return;
     }
 
@@ -554,7 +642,7 @@ void KRootWidget::dropUpdateIcons( int _x, int _y )
     KURL u ( desktopDir.data() );
     if ( u.isMalformed() )
     {
-	debugT("Internal Error: desktopDir is malformed\n");
+	warning(klocale->translate("Internal Error: desktopDir is malformed"));
 	exit(2);
     }
     
@@ -565,7 +653,7 @@ void KRootWidget::dropUpdateIcons( int _x, int _y )
     dp = opendir( u.path() );
     if ( dp == NULL )
     {
-	debugT("ERROR: Could not read desktop directory\n");
+        warning(klocale->translate("ERROR: Could not read desktop directory"));
 	noUpdate = false;
 	return;
     }
@@ -719,11 +807,6 @@ void KRootWidget::slotFilesChanged( const char *_url )
     }
 }
 
-void KRootWidget::setPopupFiles( QStrList &_files )
-{
-    popupFiles.copy( _files );
-}
-
 void KRootWidget::slotPopupOpenWith()
 {
     DlgLineEntry l( "Open With:", "", this, true );
@@ -759,14 +842,14 @@ void KRootWidget::slotPopupOpenWith()
     }
     debugT("Executing '%s'\n", cmd.data());
     
-    KMimeType::runCmd( cmd.data() );
+    KMimeBind::runCmd( cmd.data() );
 }              
 
 void KRootWidget::slotPopupProperties()
 {
     if ( popupFiles.count() != 1 )
     {
-	debugT("ERROR: Can not open properties for multiple files\n");
+	warning(klocale->translate("ERROR: Can not open properties for multiple files") );
 	return;
     }
     
@@ -814,7 +897,10 @@ void KRootWidget::slotPopupDelete()
 {
     KIOJob * job = new KIOJob;
  
-    bool ok = QMessageBox::query( "KFM Warning", "Dou you really want to delete the files?\n\r\n\rThere is no way to restore them", "Yes", "No" );
+    bool ok = QMessageBox::query( klocale->translate("KFM Warning"), 
+				  klocale->translate("Dou you really want to delete the files?\n\nThere is no way to restore them"), 
+				  klocale->translate("Yes"), 
+				  klocale->translate("No") );
     
     if ( ok )
 	job->del( popupFiles );
@@ -852,7 +938,8 @@ void KRootWidget::slotPopupEmptyTrash()
     }
     else
     {
-	QMessageBox::message( "KFM Error", "Could not access Trash Bin" );
+	QMessageBox::message( klocale->translate( "KFM Error"),
+			      klocale->translate( "Could not access Trash Bin") );
 	return;
     }
     
@@ -958,19 +1045,13 @@ void KRootIcon::init()
 
 void KRootIcon::slotDropEvent( KDNDDropZone *_zone )
 {	
-    debugT("-1 Drop Event\n");
-    
     QPoint p( _zone->getMouseX(), _zone->getMouseY() );
 
-    debugT("-2\n");
-    
     QStrList & list = _zone->getURLList();
 
-    debugT("-3\n");
     // Dont drop icons on themselves.
     if ( list.count() != 0 )
     {
-	debugT("-4\n");
 	char *s;
 	for ( s = list.first(); s != 0L; s = list.next() )
 	{
@@ -991,16 +1072,13 @@ void KRootIcon::slotDropEvent( KDNDDropZone *_zone )
 	return;
     }
     
-    debugT("-5\n");
-    root->getManager()->dropPopupMenu( _zone, url.data(), &p );
-    debugT("-6\n");
+    dropPopupMenu( _zone, url.data(), &p );
 }
 
 void KRootIcon::resizeEvent( QResizeEvent * )
 {
     XShapeCombineMask( x11Display(), winId(), ShapeBounding, 0, 0, mask.handle(), ShapeSet );
 }
-
 
 void KRootIcon::paintEvent( QPaintEvent * ) 
 {
@@ -1055,7 +1133,7 @@ void KRootIcon::mousePressEvent( QMouseEvent *_mouse )
 	}
 	
 	QPoint p = mapToGlobal( _mouse->pos() );
-	root->getManager()->openPopupMenu( list, p );
+	root->openPopupMenu( list, p );
     }
 }
 
@@ -1083,7 +1161,7 @@ void KRootIcon::dndMouseReleaseEvent( QMouseEvent *_mouse )
     if ( _mouse->button() != LeftButton || ( _mouse->state() & ControlButton ) == ControlButton )
       return;
     
-    root->getManager()->openURL( url.data() );                          
+    root->openURL( url.data() );                          
 
     pressed = false;
 }
@@ -1170,6 +1248,89 @@ void KRootIcon::select( bool _select )
   resizeEvent( 0L );
 
   repaint();
+}
+
+void KRootIcon::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QPoint *_p )
+{
+    dropDestination = _dest;
+    dropDestination.detach();
+    
+    dropZone = _zone;
+    
+    debugT(" Drop with destination %s\n", _dest );
+    
+    KURL u( _dest );
+    
+    // Perhaps an executable ?
+    // So lets ask wether we can be shure that it is no directory
+    // We can rely on this, since executables are on the local hard disk
+    // and KIOServer can query the local hard disk very quickly.
+    if ( KIOServer::isDir( _dest ) == 0 )
+    {
+	// Executables or only of interest on the local hard disk
+	if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
+	{
+	    // Run the executable with the dropped 
+	    // files as arguments
+	    if ( KMimeBind::runBinding( _dest, 
+					klocale->getAlias(ID_STRING_OPEN), 
+					&(_zone->getURLList() ) ) )
+		// Everything went fine
+		return;
+	    else
+	    {
+		// We did not find some binding to execute
+	      QMessageBox::message( klocale->translate("KFM Error"),
+				    klocale->translate("Dont know what to do.") );
+		return;
+	    }
+	}
+    }
+    
+    popupMenu->clear();
+    
+    int id = -1;
+    // Ask wether we can read from the dropped URL.
+    if ( KIOServer::supports( _zone->getURLList(), KIO_Read ) &&
+	 KIOServer::supports( _dest, KIO_Write ) )
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_COPY), 
+				    this, SLOT( slotDropCopy() ) );
+    // Ask wether we can read from the URL and delete it afterwards
+    if ( KIOServer::supports( _zone->getURLList(), KIO_Move ) &&
+	 KIOServer::supports( _dest, KIO_Write ) )
+	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_MOVE), 
+				     this, SLOT( slotDropMove() ) );
+    // Ask wether we can link the URL 
+    if ( KIOServer::supports( _dest, KIO_Link ) )
+	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_LINK), 
+				     this, SLOT( slotDropLink() ) );
+    if ( id == -1 )
+    {
+	QMessageBox::message( klocale->translate("KFM Error"), 
+			      klocale->translate("Dont know what to do") );
+	return;
+    }
+
+    // Show the popup menu
+    popupMenu->popup( *_p );
+}
+
+void KRootIcon::slotDropCopy()
+{
+    KIOJob * job = new KIOJob;
+    job->copy( dropZone->getURLList(), dropDestination.data() );
+}
+
+void KRootIcon::slotDropMove()
+{
+    KIOJob * job = new KIOJob;
+    job->move( dropZone->getURLList(), dropDestination.data() );
+}
+
+void KRootIcon::slotDropLink()
+{
+    KIOJob * job = new KIOJob;
+    job->link( dropZone->getURLList(), dropDestination.data() );
 }
 
 KRootIcon::~KRootIcon()

@@ -27,6 +27,11 @@ public slots:
       from HTTP are already supported.
       */
     void copy( const char *_src_url, const char *_dest_url, bool _overwriteExistingFiles );
+    /**
+     * Retrieves '_url' and sends the content of this URL via the 'data' signal.
+     * This is faster then doing a copy the local file system all the time.
+     */
+    void get( const char *_url );
     /// Delete a file
     /**
      If the _url ends with "/", then we assume that it is directory
@@ -39,7 +44,7 @@ public slots:
     /// Unmount a directory
     void unmount( const char *_point );    
     /// Get a directory listing
-    void list( const char* _url );
+    void list( const char* _url, bool _allow );
     /// Make a new directory
     void mkdir( const char *_url );
     /// Called if a job does not need this slave any more
@@ -63,41 +68,6 @@ protected:
     QString testLogFile( const char *_filename );
     
     KIOSlaveIPC* ipc;
-
-    /// Locks a tgz file. This means it is unziped in /tmp
-    /**
-      Returns TRUE on success. If it returns FALSE, ipc->fatalError is already called.
-      In this case just do a return.
-      */
-    bool lockTgz( const char *_tgz_file );
-    /// Unlock a tgz file. This means zip it and write it back to its origin.
-    /**
-      Returns TRUE on success. If it returns FALSE, ipc->fatalError is already called.
-      In this case just do a return.
-      */
-    bool unlockTgz();
-
-    QString lockedTgzSource;
-    QString lockedTgzTemp;
-    bool lockedTgzModified;
-
-    /// Locks a ftp connection. This means that the connection is established.
-    /**
-      Returns TRUE on success. If it returns FALSE, ipc->fatalError is already called.
-      In this case just do a return.
-      */
-    bool lockFTP( const char *_host, int _port, const char* _login, const char *_passwd );
-    /// Unlock the current ftp connection. This means the connection is closed.
-    /**
-      Returns TRUE on success. If it returns FALSE, ipc->fatalError is already called.
-      In this case just do a return.
-      */
-    bool unlockFTP();
-
-    QString lockedFTPHost;
-    QString lockedFTPLogin;
-    QString lockedFTPPasswd;
-    int lockedFTPPort;
 
     /// The destination file we are writing to
     /**

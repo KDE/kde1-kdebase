@@ -249,9 +249,9 @@ void KFMServer::slotExec( const char* _url, const char * _binding )
     sl.append(_binding);   
 
     if ( _binding == 0L )
-	KMimeType::runBinding( _url );
+	KMimeBind::runBinding( _url );
     else
-	KMimeType::runBinding( _url, _binding, &sl );
+	KMimeBind::runBinding( _url, _binding, &sl );
 }
 
 KFMClient::KFMClient( KSocket *_sock ) : KfmIpc( _sock )

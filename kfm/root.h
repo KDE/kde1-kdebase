@@ -53,24 +53,6 @@ protected:
     KRootWidget *rootWidget;
 };
 
-/// A 'KFileManager' for the desktop
-/**
-  This one differs from KFileManager in the way, a popup menu
-  is handled.
-  */
-class KRootManager : public KFileManager
-{
-    Q_OBJECT
-public:
-    KRootManager( KRootWidget * );
-    virtual ~KRootManager() { }
-   
-    virtual void openPopupMenu( QStrList & _urls, const QPoint &_point );
-    
-protected:
-    KRootWidget *rootWidget;
-};
-
 class KRootLayout
 {
 protected:
@@ -128,8 +110,14 @@ public:
     virtual void rename( const char *_new_name );
     
 public slots:
-    /// Called when the user drops something over the icon
+    /**
+     * Called when the user drops something over the icon.
+     */
     void slotDropEvent( KDNDDropZone *_zone );
+    
+    void slotDropCopy();
+    void slotDropMove();
+    void slotDropLink();
     
 protected:
     virtual void resizeEvent( QResizeEvent * );
@@ -138,15 +126,25 @@ protected:
     virtual void mousePressEvent( QMouseEvent *_mouse );
     virtual void dndMouseMoveEvent( QMouseEvent *_mouse );
     virtual void dndMouseReleaseEvent( QMouseEvent *_mouse );
-    // virtual void rootDropEvent( int, int );
     virtual void dragEndEvent();
 
-    /// This is the URL of the file represented by this icon.
+    /**
+     * Called from within @ref #slotDropEvent
+     */
+    void dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QPoint *_p );
+
+    /**
+     * This is the URL of the file represented by this icon.
+     */
     QString url;
-    /// This is only the filename with no path in front of it.
+    /**
+     * This is only the filename with no path in front of it.
+     */
     QString file;
     QPixmap pixmap;
-    /// The filename of the currently displayed pixmap.
+    /**
+     * The filename of the currently displayed pixmap.
+     */
     QString pixmapFile;
     QBitmap mask;
 
@@ -158,13 +156,17 @@ protected:
     bool pressed;
     int press_x, press_y;
 
-    /// The start of a drag in global coordinates
+    /**
+     * The start of a drag in global coordinates
+     */
     QPoint dndStartPos;
     
     int width;
     int height;
 
-    /// The DropZone bound to this icon
+    /**
+     * The DropZone bound to this icon
+     */
     KDNDDropZone *dropZone;
 
     /**
@@ -173,6 +175,9 @@ protected:
      * @see #select
      */
     bool bSelected;
+
+    QString dropDestination;
+    QPopupMenu *popupMenu;
 };
 
 class KRootWidget : public QWidget
@@ -182,6 +187,9 @@ public:
     KRootWidget( QWidget *parent=0, const char *name=0 );
     virtual ~KRootWidget() { }
 
+    void openURL( const char *_url );
+    void openPopupMenu( QStrList &_urls, const QPoint &_point );
+    
     /// Takes all icons corresponding to the given URLs and moves them.
     /** 
       This function used 'icon->dndStartX/Y()' and 'p' to determine the amount of
@@ -214,20 +222,6 @@ public:
      * would not be object oriented.
      */
     static KRootWidget* getKRootWidget() { return pKRootWidget; }
-
-    /// Return pointer to KRootManager.
-    /**
-      Root icons use this manager to perform various actions like double
-      clicks ans popup menus.
-      */
-    KRootManager *getManager() { return manager; }
-
-    /// Set the URLs belonging to the opened popup menu
-    /**
-      This function is used by KRootManager when a popup file is opened since
-      some of the menu items are connected to slots in the root widget.
-      */
-    void setPopupFiles( QStrList & _urls );
 
     /// Updates the icons after a drop
     /**
@@ -397,13 +391,6 @@ protected:
      */
      KDNDDropZone *rootDropZone;
 
-    /// The manager for the ~/Desktop file system
-    /**
-      This object is responsible for popup menus on desktop icons,
-      for double clicks on desktop icons and so on.
-      */
-    KRootManager* manager;
-
     /**
      * The color used for the text on the label.
      */
@@ -417,6 +404,13 @@ protected:
      * that the value is shaped.
      */
     int iconstyle;
+
+    /**
+     * The mouseposition when opening the popup Menu.
+     *
+     * @see #popupMenu
+     */
+    QPoint popupMenuPosition;
 };
 
 #endif

@@ -1,6 +1,9 @@
 #include <qapp.h>
 #include <qmsgbox.h>
 
+#include <klocale.h>
+KLocale locale("kfm");
+
 int main( int argc, char **argv )
 {
     if ( argc != 2 )
@@ -9,6 +12,6 @@ int main( int argc, char **argv )
     int i = 1;
     QApplication a( i, argv );
     
-    QMessageBox::message( "KFM Warning", argv[1] );
+    QMessageBox::message( locale.translate("KFM Warning"), argv[1] );
 }
 

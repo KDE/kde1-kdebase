@@ -31,6 +31,7 @@ class Properties;
   */
 class PropsPage : public QWidget
 {
+    Q_OBJECT
 public:
     /// Constructor
     PropsPage( Properties *_props );
@@ -55,6 +56,7 @@ protected:
   */
 class FilePropsPage : public PropsPage
 {
+    Q_OBJECT
 public:
     /// Constructor
     FilePropsPage( Properties *_props );
@@ -87,6 +89,7 @@ protected:
   */
 class FilePermissionsPropsPage : public PropsPage
 {
+    Q_OBJECT
 public:
     /// Constructor
     FilePermissionsPropsPage( Properties *_props );

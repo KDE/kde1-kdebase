@@ -24,7 +24,11 @@ public slots:
 public slots:
 	void progress(int _percent);
 public slots:
+	void info(const char* _text);
+public slots:
 	void dirEntry(const char* _dir, const char* _name, bool _isDir, int _size, const char* _date, const char* _access, const char* _owner, const char* _group);
+public slots:
+	void data(const char* _text);
 public slots:
 	void flushDir(const char* _dir);
 public slots:
@@ -33,6 +37,10 @@ public slots:
 	void fatalError(int _error, const char* _text, int _errno);
 public slots:
 	void setPID(int _pid);
+public slots:
+	void redirection(const char* _url);
+public slots:
+	void mimeType(const char* _type);
 signals:
 	void mount(bool _ro, const char* _fstype, const char* _dev, const char* _point);
 private:
@@ -46,6 +54,10 @@ signals:
 private:
 	void parse_copy( char *_data, int _len );
 signals:
+	void get(const char* _url);
+private:
+	void parse_get( char *_data, int _len );
+signals:
 	void del(const char* _url);
 private:
 	void parse_del( char *_data, int _len );
@@ -54,7 +66,7 @@ signals:
 private:
 	void parse_mkdir( char *_data, int _len );
 signals:
-	void list(const char* _url);
+	void list(const char* _url, bool _bHTML);
 private:
 	void parse_list( char *_data, int _len );
 signals:
@@ -70,6 +82,7 @@ public slots:
     void closeEvent( KSocket * );
 private:
     void parse( char *_data, int _len );
+
     int port;
     KSocket *sock;
     bool connected;

@@ -29,6 +29,8 @@ public:
      * of KfmView. These instances are used as frames.
      */
     virtual KHTMLView* newView( QWidget *_parent, const char *_name, int _flags );
+
+    void begin( const char *_url = 0L, int _x_offset = 0, int _y_offset = 0 );
     
     /**
      * @return the currently selected view ( the one with the black
@@ -39,15 +41,8 @@ public:
     KfmView* getActiveView();
 	
     /**
-     * After you told a manager to open an URL and display it, you have
-     * to call this function in order of telling the view which manager
-     * is responsible for the current HTML code and URL.
-     */
-    virtual void setActiveManager( KAbstractManager *_manager );
-
-    /**
      * Stores the URLs belonging to the currently opened popup menu.
-     * The @ref #activeManager opens the popup menu and tells the window using
+     * The @ref #manager opens the popup menu and tells the window using
      * this function that he opened a popup menu for this URL.
      */
     void setPopupFiles( QStrList &_files );
@@ -58,10 +53,7 @@ public:
     
     /**
      * Open the URL.
-     * The function tries to find the appropriate manager for the URL
-     * and tells him to open the URL. If there is no manager it tries to
-     * run the default binding. _url may be a directory, but it can be an
-     * executable or data file, too.
+     * The function asks the @ref #manager to open the URL.
      */
     virtual void openURL( const char *_url );
 
@@ -72,13 +64,6 @@ public:
 
     KfmGui* getGUI() { return gui; }
     
-    /**
-     * Used by @ref KFileManager
-     *
-     * @return a pointer to the KTarManager
-     */
-    KTarManager *getTarManager() { return tarManager; }
-
     /**
      * Splits the view into 2 frames of equal size. Every frame loads the
      * current URL. Use this function for example to get a "Norton Commander"
@@ -123,6 +108,8 @@ public:
      */
     const QFont defaultFont( void ) { return QFont("times"); } 
 
+    bool isHistoryStackLocked() { return stackLock; }
+    
 signals:
 
     /**
@@ -145,7 +132,13 @@ public slots:
      * Called for example from the toolbars "Back" button
      */
     void slotBack();
-
+    /**
+     * Pushes '_url' on the stack. This function is called if the
+     * view displays a new URL and wants to store the old
+     * URL on the stack.
+     */
+    void slotURLToStack( const char *_url );
+    
     /**
      * Start an new terminal. Usually called from the menu.
      */
@@ -190,8 +183,8 @@ public slots:
     
     /**
      * The user pressed the right mouse button over an URL.
-     * Since @ref activeManager has to create the popup menu, this function will
-     * just call @ref activeManager to do this.
+     * Since @ref KFMManager has to create the popup menu, this function will
+     * just call @ref #manager to do this.
      *
      * @param _point is already in global coordinates.
      */
@@ -232,6 +225,15 @@ public slots:
      * The URL belonging to the popup menu is stored in @ref popupFiles.
      */
     void slotPopupProperties();
+    /**
+     * The user wants to add the selected URLs to his bookmarks.
+     */
+    void slotPopupBookmarks();
+    /**
+     * The user opened the popup menu for the trashbin and wants to
+     * empty it.
+     */
+    void slotPopupEmptyTrashBin();
     
     /**
      * Called when someone dropped something over the drop zone
@@ -298,27 +300,8 @@ protected slots:
     virtual void slotFormSubmitted( const char *_method, const char *_url );
     
 protected:
-    /**
-     * Creates all managers.
-     *
-     * @see KFileManager
-     * @see KTarManager
-     * @see KFtpManager
-     * @see KHttpManager
-     */
-    virtual void initFileManagers();
+    KFMManager *manager;
     
-    KFileManager *fileManager;
-    KTarManager *tarManager;
-    KFtpManager *ftpManager;
-    KHttpManager *httpManager;
-    KCgiManager *cgiManager;
-    
-    /**
-     * The manager that is currently responsible for the contents
-     * of the file view widget.
-     */
-    KAbstractManager *activeManager;
     /**
      * When the user pressed the right mouse button over an URL a popup menu
      * is displayed. The URL belonging to this popup menu is stored here.

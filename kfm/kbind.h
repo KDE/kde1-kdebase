@@ -32,7 +32,7 @@ protected:
 /**
  * @short The application bindings.
  *
- * For every KMimeType you can create multiple bindings. These binding
+ * For every @ref KMimeType you can create multiple bindings. These binding
  * contain the name of the program, the command to start it and
  * the protocols supported.
  */
@@ -65,7 +65,10 @@ public:
     /**
      * @return TRUE if this application is allowed as default app.
      *         The default app is started if the user clicks on a
-     *         data file.
+     *         data file. For example you may have a binding to compress large
+     *         image file, but you dont want this binding to be executed if
+     *         you click on the corresponding icon. By clearing the allowDefault
+     *         flag you can prevent this.
      */
     bool isAllowedAsDefault() {	return allowDefault; }
     
@@ -77,26 +80,89 @@ public:
     /**
      * Register another application.
      * Every application is registered using this function. This way we have
-     * a list of all registered applications.
+     * a list of all registered applications. This list is needed in the properties
+     * for example. It is not trivial to construct such a list from the KMimeBind
+     * instances, that is the reason for this set of static functions.
+     *
+     * @see #appList
      */
     static void appendApplication( const char *_appname ) { appList.append( _appname ); }
     
     /**
      * @return the name of the first registered application.
+     *
+     * @see #appendApplication
      */
     static const char* getFirstApplication() { return appList.first(); }
     /**
      * Use this function only after a call to @ref #getFirstApplication.
      *
      * @return the name of the next registered application.
+     *
+     * @see #appendApplication
      */
     static const char* getNextApplication() { return appList.next(); }
     /**
      * Clear the list of registered applications.
      * This function is used if the user changes some of the application/MimeType
      * entries and they have to be refreshed.
+     *
+     * @see #appendApplication
      */
     static void clearApplicationList() { appList.clear(); }
+
+    static bool runBinding( const char *_url, KMimeBind *bind );
+    /**
+     * Tries to execute the binding named _binding for the file _url.
+     * The default binding is "Open". For example when the user double clicks
+     * on something and you dont know a specific binding, then select "Open".
+     * If you want to pass some URLs to an executable ( for examples documents to open )
+     * then you can pass a list of all URLs in '_args'. This makes sense only with 
+     * executables or *.kdelnk files of the type "Exec".
+     * '_url' may be an executable, a directory, or just a document.
+     * If it is a directory or a document then the '_args' dont matter. If in the other case
+     * '_url' is an executable then '_binding' is not used.
+     *
+     * @return TRUE if the function knew what to do with the URL
+     */
+    static bool runBinding( const char *_url, const char *_binding, QStrList * _args = 0L );
+    /**
+     * Runs the default binding.
+     * If there is only one binding, this one is executed otherwise the default
+     * binding is executed. If there are multiple bindings and none of them is the default
+     * one, the first one is executed. Usually used when the user clicks
+     * on an URL. Files named *.kdelnk are executed, too.
+     * This function only determines the default binding and calls 'runBinding( .., .. )'
+     * to do the real job. If no binding can be found, the binding "Open" is given a try.
+     * Note that this function does NOT execute bindings which are not allowed as
+     * default bindings ( @ref KMimeBind::isAllowedAsDefault ).
+     *
+     * @return TRUE if the function knew what to do with the URL
+     */
+    static bool runBinding( const char *_url );
+
+    /**
+     * Runs the given command using fork.
+     *
+     * @param _cmd is a command like "kedit ftp://weis@localhost/index.html" or
+     *             something like that.
+     *
+     * @see #runBinding
+     */
+    static void runCmd( const char *_cmd );
+
+    /**
+     * Open a KConfig file
+     * @return a KConfig if the file starts with "[KDE Desktop Entry]" otherwise 0L.
+     *         The group "[KDE Desktop Entry"] will be already selected in the returned
+     *         KConfig object.
+     */
+    static KFMConfig* openKFMConfig( const char *_url );
+
+    /**
+     * Scan the $KDEDIR/apps directory for application bindings
+     */
+    static void initApplications( const char *_path );
     
 protected:
     /**
@@ -145,7 +211,7 @@ protected:
  * For every mime type
  * you can create a KMimeType. This way the program knows which
  * icon to use and which programs can handle the data.
- * Have a look at KMimeBind. Multiple extensions can be organized
+ * Have a look at @ref KMimeBind. Multiple extensions can be organized
  * in KMimeType ( for example *.tgz, *.tar.gz ) since they
  * mean the same document class.
  *
@@ -201,27 +267,29 @@ public:
      * returns
      *
      * @return the name of this mime type. This name may be used by an application
-     *         to define the kind of data it works on.
+     *         to define the kind of data it works on. An example is "text/html".
      */
     const char* getMimeType() { return mimeType.data(); }
+    /**
+     * Set the mimetype of all files matching this MimeTypes pattern.
+     *
+     * @see #getMimeType
+     */
+    void setMimeType( const char *_m ) { mimeType= _m; }
     
     /**
-     * The return vakue may be 0L if there is no comment at all.
-     * This method does not use _url but some overloading methods do so.
+     * The return value may be empty if there is no comment at all.
+     * This method does not use the parameter, but some overloading methods do so.
      *
      * @return this file types comment.
      */
     virtual QString getComment( const char * ) { return QString( comment.data() ); }
-
     /**
      * Sets the comment.
+     *
+     * @see #getComment
      */
     void setComment( const char *_c) { comment = _c; }
-
-    /**
-     * Set the mimetype of all files matching this MimeTypes pattern.
-     */
-    void setMimeType( const char *_m ) { mimeType= _m; }
 
     /**
      * Marks this file type to be only an application pattern.
@@ -252,22 +320,46 @@ public:
      *         The return may be 0. In this case the user did not specify
      *         a special default binding. That does not mean that there is no
      *         binding at all.
+     *
+     * @see #defaultBinding
      */
     virtual const char* getDefaultBinding() { return defaultBinding; }
+
+    /**
+     * Call this function to execute the best fitting binding for '_url'. Since this is
+     * no static function, you already made a guess about the mime type of the URL.
+     * We look out for the default binding, otherwise we try to execute the first
+     * binding that is allowed to be a default. If none of the above succeeds
+     * we return FALSE, otherwise TRUE.
+     * Use @ref #findByName to get the correct @ref KMimeType instance if you already
+     * know the mime type, for example "text/html". Then you may call @ref #run to
+     * execute the URL.
+     *
+     * @see #runBinding
+     * @see #defaultBinding
+     * @see #bindings
+     */
+    virtual bool run( const char *_url );
     
     /**
      * Tells wether bindings are available.
+     *
+     * @see #bindings
      */
     virtual bool hasBindings() { return !bindings.isEmpty(); }
     /**
      * Gets the first binding if available. Dont use 'firstBinding' and
      * @ref #nextBinding in two cascading loops at once.
+     *
+     * @see #bindings
      */
     virtual KMimeBind* firstBinding() { return bindings.first(); }
     /**
      * Gets the next binding if available. Dont use @ref #firstBinding and
      * 'nextBinding' in two cascading loops at once.
      * Call @ref #firstBinding before calling this function.
+     *
+     * @see #bindings
      */
     virtual KMimeBind* nextBinding() { return bindings.next(); }
 
@@ -292,7 +384,7 @@ public:
     static KMimeType *findByPattern( const char *_pattern );
     
     /**
-     * Finds a file type by its name
+     * Finds a mime type by its name
      * The file type in the file '$KDEDIR/MimeTypes/text+html.kdelnk' for
      * example is called 'text/html'.
      */
@@ -308,38 +400,8 @@ public:
      */
     static void getBindings( QStrList &_list, const char *_url, bool _isdir );
     /**
-     * Tries to execute the binding named _binding for the file _url.
-     * The default binding is "Open". For example when the user double clicks
-     * on something and you dont know a specific binding, then select "Open".
-     * If you want to pass some URLs to an executable ( for examples documents to open )
-     * then you can pass a list of all URLs in '_args'. This makes sense only with 
-     * executables or *.kdelnk files of the type "Exec".
-     * '_url' may be an executable, a directory, or just a document.
-     * If it is a directory or a document then the '_args' dont matter. If in the other case
-     * '_url' is an executable then '_binding' is not used.
+     * This function runs the given binding with the URL.
      */
-    static void runBinding( const char *_url, const char *_binding, QStrList * _args = 0L );
-    /**
-     * Runs the default binding.
-     * If there is only one binding, this one is executed otherwise the default
-     * binding is executed. If there are multiple bindings and none of them is the default
-     * one, the first one is executed. Usually used when the user clicks
-     * on an URL. Files named *.kdelnk are executed, too.
-     * This function only determines the default binding and calls 'runBinding( .., .. )'
-     * to do the real job. If no binding can be found, the binding "Open" is given a try.
-     * Note that this function does NOT execute bindings which are not allowed as
-     * default bindings ( @ref KMimeBind::isAllowedAsDefault ).
-     */
-    static void runBinding( const char *_url );
-
-    /**
-     * Open a KConfig file
-     * @return a KConfig if the file starts with "[KDE Desktop Entry]" otherwise 0L.
-     *         The group "[KDE Desktop Entry"] will be already selected in the returned
-     *         KConfig object.
-     */
-    static KFMConfig* openKFMConfig( const char *_url );
-
     /**
      * @eturn the first mime type or 0L if there is no mime type at all.
      */
@@ -364,11 +426,6 @@ public:
     static void init();
     
     /**
-     * Scan the $KDEDIR/apps directory for application bindings
-     */
-    static void initApplications( const char *_path );
-
-    /**
      * Scan the $KDEDIR/MimeTypes directory for the mime types
      */
     static void initMimeTypes( const char *_path );
@@ -377,6 +434,10 @@ public:
      * @return the path for the icons
      */
     static const char* getIconPath() { return icon_path; }
+
+    /**
+     * @return the name of the default icon pixmap.
+     */
     static const char* getDefaultPixmap() { return defaultPixmap; }    
     static const char* getExecutablePixmap() { return executablePixmap; }    
     static const char* getBatchPixmap() { return batchPixmap; }    
@@ -386,16 +447,6 @@ public:
     static const char* getSocketPixmap() { return SocketPixmap; }
     static const char* getCDevPixmap() { return CDevPixmap; }
     static const char* getBDevPixmap() { return BDevPixmap; }         
-
-    /**
-     * Runs the given command using fork.
-     *
-     * @param _cmd is a command like "kedit ftp://weis@localhost/index.html" or
-     *             something like that.
-     *
-     * @see #runBinding
-     */
-    static void runCmd( const char *_cmd );
 
 protected:    
     /**

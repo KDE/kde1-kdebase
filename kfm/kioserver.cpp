@@ -287,19 +287,19 @@ bool KIOServer::supports( const char *_url, int _mode )
     }
     else if ( strcmp( u.protocol(), "ftp" ) == 0 )
     {
-        if ( ( ( KIO_Delete | KIO_Read | KIO_Write | KIO_MakeDir ) & _mode ) == _mode )
+        if ( ( ( KIO_Delete | KIO_Read | KIO_Write | KIO_MakeDir | KIO_List ) & _mode ) == _mode )
 	    return true;
 	return false;
     }
     else if ( strcmp( u.protocol(), "file" ) == 0 )
     {
-        if ( ( ( KIO_Delete | KIO_Read | KIO_Write | KIO_MakeDir | KIO_Link ) & _mode ) == _mode )
+        if ( ( ( KIO_Delete | KIO_Read | KIO_Write | KIO_MakeDir | KIO_Link | KIO_List ) & _mode ) == _mode )
 	    return true;
 	return false;
     }
     else if ( strcmp( u.protocol(), "tar" ) == 0 )
     {
-        if ( ( ( KIO_Delete | KIO_Read ) & _mode ) == _mode )
+        if ( ( ( KIO_Delete | KIO_Read | KIO_List ) & _mode ) == _mode )
 	    return true;
 	return false;
     }
@@ -480,43 +480,36 @@ bool KIOServer::isTrash( const char *_url )
     return false;
 }
 
-bool KIOServer::isDir( QStrList & _urls )
+int KIOServer::isDir( QStrList & _urls )
 {
     char *s;
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
-	if ( !isDir( s ) )
-	    return false;
+    {
+	int i = isDir( s );
+	if ( i <= 0 )
+	    return i;
+    }
     
-    return true;
+    return 1;
 }
 
-bool KIOServer::isDir( const char *_url )
+int KIOServer::isDir( const char *_url )
 {
     KURL u( _url );
     if ( u.isMalformed() )
 	return false;
-    
-    if ( strcmp( u.protocol(), "http" ) == 0 )
-	return false;
-    else if ( strcmp( u.protocol(), "ftp" ) == 0 )
-    {
-	if ( strlen( u.path() ) == 0 || strcmp( u.path(), "/" ) == 0L )
-	    return true;
-	if ( _url[ strlen( _url ) - 1 ] == '/' )
-	    return true;
-	else
-	    return false;
-    }
-    else if ( strcmp( u.protocol(), "tar" ) == 0 )
-    {
-	if ( _url[ strlen( _url ) - 1 ] == '/' )
-	    return true;
-	else if ( _url[ strlen( _url ) - 1 ] == '#' )
-	    return true;
-	else
-	    return false;
-    }
-    else if ( strcmp( u.protocol(), "file" ) == 0 )
+
+    int i = strlen( _url );
+
+    // This is always a directory
+    if ( i >= 1 && _url[ i - 1 ] == '/' )
+	return true;
+    // With HTTP we can be shure that everything that does not end with '/'
+    // is NOT a directory
+    else if ( strcmp( u.protocol(), "http" ) == 0 )
+	return 0;
+    // Local filesystem without subprotocol
+    else if ( strcmp( u.protocol(), "file" ) == 0 && ( u.reference() == 0L || *(u.reference()) == 0 ) )
     {
 	QString myfn = u.path();
 	KURL::decodeURL(myfn);
@@ -524,12 +517,13 @@ bool KIOServer::isDir( const char *_url )
 	stat( myfn.data(), &buff );
 
 	if ( S_ISDIR( buff.st_mode ) )
-	    return true;
+	    return 1;
 	else
-	    return false;
+	    return 0;
     }
     else
-	return false;
+	// We are not shure
+	return -1;
 }
 
 /* -------------------------------------------------------------------

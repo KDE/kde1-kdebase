@@ -1,0 +1,38 @@
+/****************************************************************************
+** KProtocolTAR meta object code from reading C++ file 'tar.h'
+**
+** Created: Wed Aug 13 00:36:47 1997
+**      by: The Qt Meta Object Compiler ($Revision$)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#define Q_MOC_OUTPUT_REVISION 2
+#elif Q_MOC_OUTPUT_REVISION != 2
+#error Moc format conflict - please regenerate all moc files
+#endif
+
+#include <qmetaobj.h>
+#include "tar.h"
+
+
+const char *KProtocolTAR::className() const
+{
+    return "KProtocolTAR";
+}
+
+QMetaObject *KProtocolTAR::metaObj = 0;
+
+void KProtocolTAR::initMetaObject()
+{
+    if ( metaObj )
+	return;
+    if ( strcmp(KSubProtocol::className(), "KSubProtocol") != 0 )
+	badSuperclassWarning("KProtocolTAR","KSubProtocol");
+    if ( !KSubProtocol::metaObject() )
+	KSubProtocol::initMetaObject();
+    metaObj = new QMetaObject( "KProtocolTAR", "KSubProtocol",
+	0, 0,
+	0, 0 );
+}

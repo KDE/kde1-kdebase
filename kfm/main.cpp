@@ -25,6 +25,9 @@ void autostart();
 void testDir();
 void sig_handler( int signum );
 
+#include <klocale.h>
+static KLocale locale("kfm");
+
 void testDir( const char *_name )
 {
   DIR *dp;
@@ -32,7 +35,8 @@ void testDir( const char *_name )
   if ( dp == NULL )
   {
     QString m = _name;
-    QMessageBox::message( "KFM Information", "Creating directory:\n" + m );
+    QMessageBox::message( locale.translate("KFM Information"), 
+			  locale.translate("Creating directory:\n") + m );
     ::mkdir( _name, S_IRWXU );
   }
   else
@@ -40,7 +44,7 @@ void testDir( const char *_name )
 }
 
 int main( int argc, char ** argv )
-{
+{    
     // Test for config file
     QString c = getenv( "HOME" );
     c += "/.kde";
@@ -168,7 +172,8 @@ int main( int argc, char ** argv )
 
     if ( !bTemplates )
     {
-	QMessageBox::message( "KFM Information", "Installing Templates" );
+	QMessageBox::message( locale.translate("KFM Information"),
+			      locale.translate("Installing Templates") );
 	QString cmd;
 	cmd.sprintf("cp %s/lib/kfm/Desktop/Templates/* %s", 
 		    kapp->kdedir().data(), KFMPaths::TemplatesPath().data() );
@@ -193,7 +198,22 @@ int main( int argc, char ** argv )
     }
     fprintf( f, "%i\n%i\n", (int)getpid(),(int)ipc.getPort() );
     fclose( f );
-    
+
+    // Stephan: alias some translated string to find them faster
+    locale.aliasLocale("Open", ID_STRING_OPEN);
+    locale.aliasLocale("Cd", ID_STRING_CD);
+    locale.aliasLocale("New View", ID_STRING_NEW_VIEW);
+    locale.aliasLocale("Copy", ID_STRING_COPY);
+    locale.aliasLocale("Delete", ID_STRING_DELETE);
+    locale.aliasLocale("Move to Trash", ID_STRING_MOVE_TO_TRASH);
+    locale.aliasLocale("Paste", ID_STRING_PASTE);
+    locale.aliasLocale("Open with", ID_STRING_OPEN_WITH);
+    locale.aliasLocale("Cut", ID_STRING_CUT);
+    locale.aliasLocale("Move", ID_STRING_MOVE);
+    locale.aliasLocale("Properties", ID_STRING_PROP);
+    locale.aliasLocale("Link", ID_STRING_LINK);
+    locale.aliasLocale("Empty Trash Bin", ID_STRING_TRASH);
+
     debugT("1. Init KIOManager\n");
 
     //Stephan: This variable is not deleted here, but in the 

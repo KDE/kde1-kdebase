@@ -10,6 +10,9 @@
 #include "kfmpaths.h"
 #include <config-kfm.h>
 
+#include <klocale.h>
+#define klocale KLocale::klocale()
+
 // Executes all apps/documents in the $HOME/Desktop/Autostart directory
 
 void autostart()
@@ -22,8 +25,9 @@ void autostart()
     dp = opendir( u1.path() );
     if ( dp == NULL )
     {
-	QMessageBox::message( "KFM Installation Error", "The directory " + url +
-			      " does not exist\nRun 'setupKFM' to solve the problem" );
+	QMessageBox::message( klocale->translate("KFM Installation Error"), 
+			      klocale->translate("The directory ") + url +
+			      klocale->translate(" does not exist\nRun 'setupKFM' to solve the problem") );
 	exit(1);
     }
     
@@ -43,7 +47,7 @@ void autostart()
 		QString tmp = u2;
 		if ( tmp.length() > 7 && tmp.right(7) == ".kdelnk" )
 		{
-		    KMimeType::runBinding( u2 );
+		    KMimeBind::runBinding( u2 );
 		}
 		// Are we entering a tar file ?
 		else if ( strstr( u2, ".tar" ) != 0 || strstr( u2, ".tgz") != 0 || strstr( u2, ".tar.gz" ) != 0 )
@@ -59,7 +63,7 @@ void autostart()
 		    struct stat buff;
 		    if ( 0 > stat( u.path(), &buff ) )
 		    {
-			debugT("ERROR: Could not access file %s\n",u2.data() );
+		      warning(klocale->translate("ERROR: Could not access file %s\n"),u2.data() );
 		    }
 		    else
 		    {
@@ -74,7 +78,7 @@ void autostart()
 			// Start the appropriate binding.
 			else
 			{
-			    KMimeType::runBinding( u2 );
+			    KMimeBind::runBinding( u2 );
 			}   
 		    }
 		}

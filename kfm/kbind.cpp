@@ -7,10 +7,15 @@
 #include <qmsgbox.h>
 #include <qtstream.h>
 
+#include <kurl.h>
+
 #include "kbind.h"
 #include "kfmpaths.h"
 #include "kfmgui.h"
 #include <config-kfm.h>
+
+#include <klocale.h>
+#define klocale KLocale::klocale()
 
 QList<KMimeType> *types;
 // This types bindings apply to every file or directory which protocol matches
@@ -33,6 +38,7 @@ char KMimeType::defaultPixmap[ 1024 ];
 char KMimeType::folderPixmap[ 1024 ];
 char KMimeType::lockedfolderPixmap[ 1024 ];
 char KMimeType::PipePixmap[ 1024 ];
+
 char KMimeType::SocketPixmap[ 1024 ];
 char KMimeType::CDevPixmap[ 1024 ];
 char KMimeType::BDevPixmap[ 1024 ];       
@@ -48,6 +54,7 @@ KFMConfig::KFMConfig( QFile * _f, QTextStream *_s ) : KConfig( _s )
 
 KFMConfig::~KFMConfig()
 {
+    f->close();
     delete f;
     delete pstream;
 }
@@ -55,6 +62,9 @@ KFMConfig::~KFMConfig()
 const char* KFolderType::getPixmapFile( const char *_url )
 {
     pixmapFile2 = 0L;
+
+    QString decoded( _url );
+    KURL::decodeURL( decoded );
     
     if ( strncmp( _url, "file:", 5 ) != 0 )
 	return KMimeType::getPixmapFile( _url );
@@ -64,7 +74,7 @@ const char* KFolderType::getPixmapFile( const char *_url )
     if ( ( len > 6 && strcmp( _url + len - 6, "/Trash" ) == 0 ) ||
 	 ( len > 7 && strcmp( _url + len - 7, "/Trash/" ) == 0 ) )
       */
-    QString path = _url;
+    QString path = decoded;
     if ( path.right(1) != "/" )
        path += "/";
     QString path2 = QString("file:") + KFMPaths::TrashPath();
@@ -73,8 +83,9 @@ const char* KFolderType::getPixmapFile( const char *_url )
     {
         DIR *dp;
         struct dirent *ep;
-        dp = opendir( _url+5 );
+        dp = opendir( decoded.data() + 5 );
 	// Stephan: Congratulation Torben for this trick :-)
+	// Torben: Thanks!
         ep=readdir( dp );
         ep=readdir( dp );      // ignore '.' and '..' dirent
         if ( readdir( dp ) == 0L ) // third file is NULL entry -> empty directory
@@ -95,12 +106,12 @@ const char* KFolderType::getPixmapFile( const char *_url )
          }
     }
     
-    QString n = _url + 5;
-    if ( _url[ strlen( _url ) - 1 ] != '/' )
+    QString n = decoded.data() + 5;
+    if ( _url[ decoded.length() - 1 ] != '/' )
 	n += "/";
     n += ".directory";
 
-    FILE *fh = fopen( n.data(), "rb" );
+    /* FILE *fh = fopen( n.data(), "rb" );
     if ( fh == 0L )
 	return KMimeType::getPixmapFile( _url );
     
@@ -110,7 +121,7 @@ const char* KFolderType::getPixmapFile( const char *_url )
     fclose( fh );
 
     if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
-	return KMimeType::getPixmapFile( _url );
+	return KMimeType::getPixmapFile( _url ); */
 
     QFile f( n.data() );
     if ( !f.open( IO_ReadOnly ) )
@@ -145,16 +156,19 @@ QPixmap& KFolderType::getPixmap( const char *_url )
 QString KFolderType::getComment( const char *_url )
 {
     if ( strncmp( _url, "file:", 5 ) != 0 )
-	return QString( "Folder" );
+	return QString( klocale->translate("Folder") );
   
-    QString n = _url + 5;
-    if ( _url[ strlen( _url ) - 1 ] != '/' )
+    QString decoded( _url );
+    KURL::decodeURL( decoded );
+    
+    QString n = decoded.data() + 5;
+    if ( _url[ decoded.length() - 1 ] != '/' )
 	n += "/";
     n += ".directory";
 
     QFile f( n.data() );
     if ( !f.open( IO_ReadOnly ) )
-	return QString( "Folder" );
+	return QString( klocale->translate("Folder") );
     
     QTextStream pstream( &f );
     KConfig config( &pstream );
@@ -163,7 +177,7 @@ QString KFolderType::getComment( const char *_url )
     QString com = config.readEntry( "Comment" );
 
     if ( com.isNull() )
-	com = "Folder";
+	com = klocale->translate("Folder");
     
     return QString( com.data() );
 }
@@ -171,7 +185,7 @@ QString KFolderType::getComment( const char *_url )
 const char* KDELnkMimeType::getPixmapFile( const char *_url )
 {
     // Try to read the file as a [KDE Desktop Entry]
-    KFMConfig *config = KMimeType::openKFMConfig( _url );
+    KFMConfig *config = KMimeBind::openKFMConfig( _url );
     
     if ( config != 0L )
     {
@@ -221,7 +235,7 @@ const char* KDELnkMimeType::getPixmapFile( const char *_url )
 
 QString KDELnkMimeType::getComment( const char *_url )
 {
-    KFMConfig *config = KMimeType::openKFMConfig( _url );
+    KFMConfig *config = KMimeBind::openKFMConfig( _url );
     
     if ( config == 0L )
 	return QString();
@@ -252,7 +266,7 @@ KMimeType::KMimeType( const char *_mime_type, const char *_pixmap )
     HTMLImage::cacheImage( pixmap_file.data() );
 }
 
-void KMimeType::initApplications( const char * _path )
+void KMimeBind::initApplications( const char * _path )
 {
     DIR *dp;
     struct dirent *ep;
@@ -343,7 +357,8 @@ void KMimeType::initApplications( const char * _path )
 		    }
 		    else
 		    {
-			QMessageBox::message( "Error", "Too many protocols in file\n" + file );
+			QMessageBox::message( klocale->translate("Error"),
+					      klocale->translate("Too many protocols in file\n") + file );
 			pos2 = protocols.length();
 		    }
 		    
@@ -389,7 +404,8 @@ void KMimeType::initApplications( const char * _path )
 		    {
 			KMimeType *t = KMimeType::findByName( bind.data() );
 			if ( t == 0 )
-			    QMessageBox::message( "ERROR", "Could not find mime type\n" + bind + "\nin " + file );
+			    QMessageBox::message( klocale->translate("ERROR"), 
+						  klocale->translate("Could not find mime type\n") + bind + "\n" + klocale->translate("in ") + file );
 			
 			t->append( new KMimeBind( app.data(), exec.data(), allowdefault,
 						  prots[0].data(),
@@ -518,6 +534,7 @@ void KMimeType::init()
 	execType->setPixmap( icon.data() );
         strcpy( executablePixmap, icon.data() );
     }
+    execType->setMimeType( "kfm/exec" );
     execType->setComment( "Executable" );
     
     batchType = new KMimeType();
@@ -532,6 +549,7 @@ void KMimeType::init()
 	batchType->setPixmap( icon.data() );
 	strcpy( batchPixmap, icon.data() );
     }
+    batchType->setMimeType( "kfm/script" );
     batchType->setComment( "Shell Script" );
     
     PipeType = new KMimeType();
@@ -546,6 +564,7 @@ void KMimeType::init()
        PipeType->setPixmap( icon.data() );
        strcpy( PipePixmap, icon.data() );
     }
+    PipeType->setMimeType( "kfm/pipe" );
     PipeType->setComment( "Pipe" );
 
 
@@ -561,6 +580,7 @@ void KMimeType::init()
        SocketType->setPixmap( icon.data() );
        strcpy( SocketPixmap, icon.data() );
     }
+    SocketType->setMimeType( "kfm/socket" );
     SocketType->setComment( "Socket" );
 
 
@@ -576,6 +596,7 @@ void KMimeType::init()
        CDevType->setPixmap( icon.data() );
        strcpy( CDevPixmap, icon.data() );
     }
+    CDevType->setMimeType( "kfm/exec" );
     CDevType->setComment( "Character device" );  
 
     BDevType = new KMimeType();
@@ -590,6 +611,7 @@ void KMimeType::init()
        BDevType->setPixmap( icon.data() );
        strcpy( BDevPixmap, icon.data() );
     }
+    BDevType->setMimeType( "kfm/exec" );
     BDevType->setComment( "Block device" );
                             
     defaultType = new KMimeType();
@@ -604,7 +626,8 @@ void KMimeType::init()
 	strcpy( defaultPixmap, icon.data() );
 	defaultType->setPixmap( icon.data() );
     }
-    
+    defaultType->setMimeType( "kfm/default" );
+
     folderType = new KFolderType();
     icon = config->readEntry( "Folder" );
     if ( icon.isNull() )
@@ -617,7 +640,9 @@ void KMimeType::init()
 	strcpy( folderPixmap, icon.data() );
     	folderType->setPixmap( icon.data() );
     }
-
+    folderType->setMimeType( "kfm/folder" );
+    folderType->setComment( "Folder" );
+    
     lockedfolderType = new KFolderType();
     icon = config->readEntry( "LockedFolder" );
     if ( icon.isNull() )
@@ -630,6 +655,8 @@ void KMimeType::init()
        strcpy( lockedfolderPixmap, icon.data() );
        lockedfolderType->setPixmap( icon.data() );
     }
+    lockedfolderType->setMimeType( "kfm/folder-locked" );
+    lockedfolderType->setComment( "Locked Folder" );
        
     types = new QList<KMimeType>;
     types->setAutoDelete( true );
@@ -642,7 +669,7 @@ void KMimeType::init()
     // Read the application bindings
     path = kapp->kdedir();
     path += "/apps";
-    initApplications( path.data() );
+    KMimeBind::initApplications( path.data() );
 }
 
 void KMimeType::clearAll()
@@ -711,9 +738,9 @@ KMimeType* KMimeType::findType( const char *_url )
     if ( tmp.length() > 7 && tmp.right(7) == ".kdelnk" )
 	return kdelnkType;
     
-    if ( KIOServer::isDir( _url ) )
+    if ( KIOServer::isDir( _url ) > 0 )
     {
-       if ( strcmp( u.protocol(), "file" ) == 0 )
+       if ( strcmp( u.protocol(), "file" ) == 0 && ( u.reference() == 0L || *(u.reference()) == 0 ) )
        {   
            if ( access( _url + 5, R_OK|X_OK ) < 0 )
            {
@@ -739,9 +766,9 @@ KMimeType* KMimeType::findType( const char *_url )
     KMimeType *typ;
 
     // Links may appear on the local hard disk only. If this is a link
-    // we will use the file/dir the link is pointin to to determine
+    // we will use the file/dir the link is pointing to to determine
     // the file type.
-    if ( strcmp( u.protocol(), "file" ) == 0 )
+    if ( strcmp( u.protocol(), "file" ) == 0 && ( u.reference() == 0L || *(u.reference()) == 0 ) )
     {
 	// Is it a link?
 	struct stat lbuff;
@@ -778,6 +805,16 @@ KMimeType* KMimeType::findType( const char *_url )
 	}
     }
 
+    QString filename;
+    // Do we have a nested URL perhaps ?
+    if ( u.reference() != 0L && *(u.reference()) != 0 )
+    {
+	KURL u3( u.nestedURL() );
+	filename = u3.filename();
+    }
+    else
+	filename = u.filename();
+    
     for ( typ = types->first(); typ != 0L; typ = types->next() )
     {
 	QStrList& pattern = typ->getPattern();
@@ -785,22 +822,17 @@ KMimeType* KMimeType::findType( const char *_url )
 	for ( s = pattern.first(); s != 0L; s = pattern.next() )
 	{
 	    int pattern_len = strlen( s );
-	    const char *filename;
-	    if ( strcmp( u.protocol(), "tar" ) == 0 )
-		filename = u.filename( true );
-	    else
-		filename = u.filename();
-	    int filename_len = strlen( filename );	
+	    int len = filename.length();	
 
-	    if ( s[ pattern_len - 1 ] == '*' && filename_len + 1 >= pattern_len )
+	    if ( s[ pattern_len - 1 ] == '*' && len + 1 >= pattern_len )
 	    {
-		if ( strncmp( filename, s, pattern_len - 1 ) == 0 )
+		if ( strncmp( filename.data(), s, pattern_len - 1 ) == 0 )
 		    return typ;
 	    }
 	    if ( s[ 0 ] == '*' )
-		if ( strncmp( filename + filename_len - pattern_len + 1, s + 1, pattern_len - 1 ) == 0 )
+		if ( strncmp( filename.data() + len - pattern_len + 1, s + 1, pattern_len - 1 ) == 0 )
 		    return typ;
-	    if ( strcmp( filename, s ) == 0 )
+	    if ( strcmp( filename.data(), s ) == 0 )
 		return typ;
 	}
     }
@@ -809,7 +841,7 @@ KMimeType* KMimeType::findType( const char *_url )
     // providing real executables, we first check the extension before looking
     // at the flags.
     // Executable ? Must be on the local drive.
-    if ( strncmp( _url, "file:/", 6 ) == 0 )
+    if ( strcmp( u.protocol(), "file" ) == 0 && ( u.reference() == 0L || *(u.reference()) == 0 ) )
     {
 	struct stat buff;
 	stat( _url + 5, &buff );
@@ -849,10 +881,9 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, bool _isdir )
     
     // Used to store a new value for _url
     QString tmp;
-
     
     // Try to read the file as a [KDE Desktop Entry]
-    KFMConfig *config = KMimeType::openKFMConfig( _url );
+    KFMConfig *config = KMimeBind::openKFMConfig( _url );
     
     if ( config != 0L )
     {
@@ -913,21 +944,26 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, bool _isdir )
     }
 
     // If it is a link, get the name the link is pointing to
-    if ( strcmp( u.protocol(), "file" ) == 0 )
+    /* if ( strcmp( u.protocol(), "file" ) == 0 )
     {
-	QDir d( u.path() );
-	QString x = d.canonicalPath();
-	if ( !x.isEmpty() )
+	struct stat lbuff;
+	lstat( u.path(), &lbuff );
+	if ( S_ISLNK( lbuff.st_mode ) )
 	{
-	    tmp = x.data();
-	    tmp.detach();
-	    _url = tmp.data();
-	    debugT("$$$$$$$$$ Changed to '%s'\n",_url);
-	    KURL u2( _url );
-	    u = u2;
+	    QDir d( u.path() );
+	    QString x = d.canonicalPath();
+	    if ( !x.isNull() )
+	    {
+		tmp = x.data();
+		tmp.detach();
+		_url = tmp.data();
+		debugT("$$$$$$$$$ Changed to '%s'\n",_url);
+		KURL u2( _url );
+		u = u2;
+	    }
 	}
-    }
-
+    } */
+    
     // A directory named dir.html for example does not have a binding to
     // netscape or arena.
     if ( _isdir )
@@ -979,7 +1015,36 @@ KMimeBind* KMimeType::findBinding( const char *_name )
     return 0L;
 }
 
-void KMimeType::runBinding( const char *_url )
+bool KMimeType::run( const char *_url )
+{
+    // Do we have some default binding ?
+    if ( !defaultBinding.isEmpty() )
+    {
+	KMimeBind* bind = findBinding( defaultBinding );
+	if ( bind )
+	    return KMimeBind::runBinding( _url, bind );
+    }
+    
+    // Only one binding ?
+    if ( bindings.count() == 1 )
+    {
+	KMimeBind* bind = bindings.first();
+	if ( bind->isAllowedAsDefault() )
+	    return KMimeBind::runBinding( _url, bind );    
+    }
+
+    // Take first binding which is allowed as default
+    KMimeBind *bind;
+    for ( bind = bindings.first(); bind != 0L; bind = bindings.next() )
+    {
+	if ( bind->isAllowedAsDefault() )
+	    return KMimeBind::runBinding( _url, bindings.first() );
+    }
+
+    return FALSE;
+}
+
+bool KMimeBind::runBinding( const char *_url )
 {    
     KMimeType *typ = KMimeType::findType( _url );
 
@@ -987,10 +1052,10 @@ void KMimeType::runBinding( const char *_url )
     // Perhaps this function is called again from within ::runBinding( .. ,.. ).
     // Have a look at the code for type "URL".
     QString u = _url;
-    if ( u.length() > 7 && u.right( 7 ) == ".kdelnk" )
+    if ( u.length() > 7 && u.left(5) == "file:" && u.right( 7 ) == ".kdelnk" )
     {
-	KMimeType::runBinding( _url, "Open" );
-	return;
+	return KMimeBind::runBinding( _url, 
+				      klocale->getAlias(ID_STRING_OPEN) );
     }
     
     // Is there only one binding ?
@@ -1001,94 +1066,111 @@ void KMimeType::runBinding( const char *_url )
     if ( bindings.isEmpty() )
     {
 	// Try the default binding named "Open"
-	KMimeType::runBinding( _url, "Open" );
-	return;
+	return KMimeBind::runBinding( _url, 
+				      klocale->getAlias(ID_STRING_OPEN) );
     }
     
     // Only one binding ?
     if ( bindings.count() == 1 )
     {
-	KMimeBind* bind;
+	KMimeBind* bind = 0L;
 	if ( typ )
 	    bind = typ->findBinding( bindings.first() );
 	if ( bind && !bind->isAllowedAsDefault() )
 	{
 	    // Try the default binding named "Open"
-	    KMimeType::runBinding( _url, "Open" );
+	    return KMimeBind::runBinding( _url, klocale->getAlias(ID_STRING_OPEN) );
 	}
 	else
-	    KMimeType::runBinding( _url, bindings.first() );    
-	return;
+	    return KMimeBind::runBinding( _url, bindings.first() );    
     }
 
     // Find default binding
     if ( typ->getDefaultBinding() != 0 )
     {
-	KMimeType::runBinding( _url, typ->getDefaultBinding() );    
-	return;
+	return KMimeBind::runBinding( _url, typ->getDefaultBinding() );    
     }
 
     // Take first binding which is allowed as default
     char *s;
     for ( s = bindings.first(); s != 0L; s = bindings.next() )
     {
-	KMimeBind *b;
+	KMimeBind *b = 0L;
 	if ( typ )
 	    b = typ->findBinding( s );
 	if ( b && b->isAllowedAsDefault() )
 	{
-	    KMimeType::runBinding( _url, bindings.first() );
-	    return;
+	    return KMimeBind::runBinding( _url, bindings.first() );
 	}
     }
     
     // Try the default binding named "Open"
-    KMimeType::runBinding( _url, "Open" );    
+    return KMimeBind::runBinding( _url, klocale->getAlias(ID_STRING_OPEN));    
 }
 
 
-void KMimeType::runBinding( const char *_url, const char *_binding, QStrList * _arguments )
+bool KMimeBind::runBinding( const char *_url, const char *_binding, QStrList * _arguments )
 {
     if ( _binding == 0L )
 	_binding = "";
 
-    debugT("Binding is %s\n",_binding);
+    debugT("Binding is '%s', URL is '%s'\n",_binding,_url);
 
     KURL u( _url );
     if ( u.isMalformed() )
-	return;
+	return FALSE;
 
-    // Is it an executable ?
-    if ( strcmp( u.protocol(), "file" ) == 0 && strcasecmp( _binding, "Open" ) == 0 )
+    QString decodedPath( u.path() );
+    KURL::decodeURL( decodedPath );
+    QString decodedURL( _url );
+    KURL::decodeURL( decodedURL );
+    
+    // Is it an executable on the local hard disk ?
+    if ( strcmp( u.protocol(), "file" ) == 0 && 
+	 strcasecmp( _binding,  klocale->getAlias(ID_STRING_OPEN) ) == 0 &&
+	 u.childURL().isEmpty() )
     {
 	struct stat buff;
-	stat( u.path(), &buff );
-	if ( ( buff.st_mode & ( S_IXUSR | S_IXGRP | S_IXOTH ) ) != 0 )
+	if ( stat( decodedPath, &buff ) == 0 )
 	{
-	    debugT("Executing '%s'\n",u.path());
-	    
-	    QString cmd = u.path();
-	    cmd.detach();
-	    cmd += " ";
-
-	    if ( _arguments != 0L )
+	    if ( ( buff.st_mode & ( S_IXUSR | S_IXGRP | S_IXOTH ) ) != 0 )
 	    {
-		char *s;
-		for ( s = _arguments->first(); s != 0L; s = _arguments->next() )
+		debugT("Executing '%s'\n",decodedPath.data());
+		
+		QString exec = KIOServer::shellQuote( decodedPath );
+		QString cmd = "\"";
+		cmd += exec;
+		cmd += "\" ";
+		
+		if ( _arguments != 0L )
 		{
-		    KURL su( s );
-		    cmd += "\"";
-		    if ( strcmp( u.protocol(), "file" ) == 0 )
-			cmd += su.path();
-		    else
-			cmd += s;
-		    cmd += "\" ";
+		    char *s;
+		    for ( s = _arguments->first(); s != 0L; s = _arguments->next() )
+		    {
+			KURL su( s );
+			cmd += "\"";
+			if ( strcmp( u.protocol(), "file" ) == 0 )
+			{
+			    QString dec( su.path() );
+			    KURL::decodeURL( dec );
+			    dec = KIOServer::shellQuote( dec );
+			    cmd += dec;
+			}
+			else
+			{
+			    QString dec( s );
+			    KURL::decodeURL( dec );
+			    dec = KIOServer::shellQuote( dec );
+			    cmd += dec;
+			}
+			cmd += "\" ";
+		    }
 		}
+		
+		cmd += "&";
+		system( cmd.data() );
+		return TRUE;
 	    }
-	    
-	    cmd += "&";
-	    system( cmd.data() );
-	    return;
 	}
     }
     
@@ -1099,9 +1181,11 @@ void KMimeType::runBinding( const char *_url, const char *_binding, QStrList * _
     
     KFMConfig *config = 0L;
     // Is it a "[KDE Desktop Entry]" file and do we want to open it ?
-    // if ( strcasecmp( _binding, "Open" ) == 0 )
-    config = KMimeType::openKFMConfig( _url );
+    // ... but only if it is on the local hard disk!
+    if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
+	config = KMimeBind::openKFMConfig( _url );
     
+    // Could we open the config file ?
     if ( config != 0L )
     {
 	debugT("################### Is a KDE Desktop Entry file\n");
@@ -1123,13 +1207,16 @@ void KMimeType::runBinding( const char *_url, const char *_binding, QStrList * _
 		for ( s = _arguments->first(); s != 0L; s = _arguments->next() )
 		{
 		    KURL su( s );
+		    QString decoded( su.path() );
+		    KURL::decodeURL( decoded );
+		    decoded = KIOServer::shellQuote( decoded ).data();
 		    f += "\"";
-		    f += su.path();
+		    f += decoded;
 		    f += "\" ";
 		    u += "\"";
 		    u += s;
 		    u += "\" ";
-		    QString tmp = su.path();
+		    QString tmp = decoded.data();
 		    // Is it a directory ? Then strip the "/"
 		    if ( tmp.right(1) == "/" )
 			tmp = tmp.left( tmp.length() - 1 );
@@ -1179,9 +1266,9 @@ void KMimeType::runBinding( const char *_url, const char *_binding, QStrList * _
 		cmd.detach();
 		if ( cmd.isNull() )
 		{
-		    debugT("ERROR: No Terminal Setting\n");
+		    warning(klocale->translate("ERROR: No Terminal Setting"));
 		    delete config;
-		    return;
+		    return TRUE;
 		}
 		cmd += " ";
 		if ( !termOptions.isNull() )
@@ -1216,12 +1303,12 @@ void KMimeType::runBinding( const char *_url, const char *_binding, QStrList * _
 		    KIOJob * job = new KIOJob();
 		    job->unmount( point.data() );
 		    delete config;
-		    return;
+		    return TRUE;
 		}
 		else if ( strncmp( _binding, "Mount ", 6 ) == 0 )
 		{
 		    QString readonly = config->readEntry( "ReadOnly" );
-		    bool ro;
+		    bool ro = FALSE;
 		    if ( !readonly.isNull() )
 			if ( readonly == '1' )
 			    ro = true;
@@ -1234,9 +1321,10 @@ void KMimeType::runBinding( const char *_url, const char *_binding, QStrList * _
 		    else
 			job->mount( ro, _binding + 6, dev, point );
 		    delete config;
-		    return;
+		    return TRUE;
 		}
-		else if ( strcmp( _binding, "Open" ) == 0 )
+		else if ( strcmp( _binding, 
+				  klocale->getAlias(ID_STRING_OPEN) ) == 0 )
 		{
 		    QString mp = KIOServer::findDeviceMountPoint( dev.data() );
 		    if ( !mp.isNull() )
@@ -1248,13 +1336,14 @@ void KMimeType::runBinding( const char *_url, const char *_binding, QStrList * _
 			m->show();
 		    }
 		    else
-			debugT("ERROR: You must first mount the device. Use the right mouse button\n");
+			warning(klocale->translate("ERROR: You must first mount the device. Use the right mouse button"));
 		    delete config;
-		    return;
+		    return TRUE;
 		}
 		else
 		{
-		    debugT("ERROR: Unknown Binding '%s'\n",_binding);
+		    warning(klocale->translate("ERROR: Unknown Binding '%s'"),
+			    _binding);
 		    delete config;
 		}
 	    }
@@ -1269,7 +1358,7 @@ void KMimeType::runBinding( const char *_url, const char *_binding, QStrList * _
 		// Can KFM handle such an ULR ? Does the user wish the default binding => _binding == "open" ?
 		if ( ( strncasecmp( url.data(), "tar:", 4 ) == 0 || strncasecmp( url.data(), "http:", 5 ) == 0 ||
 		     strncasecmp( url.data(), "file:", 5 ) == 0 || strncasecmp( url.data(), "ftp:", 4 ) == 0 ) &&
-		     strcasecmp( _binding, "open" ) == 0 && KIOServer::isDir( url ) )
+		     strcasecmp( _binding, "open" ) == 0 && KIOServer::isDir( url ) > 0 )
 		{
 		    KfmGui *m = new KfmGui( 0L, "3", url.data() );
 		    m->show();
@@ -1277,110 +1366,118 @@ void KMimeType::runBinding( const char *_url, const char *_binding, QStrList * _
 		// Call runBinding( .. ) again with the URL as parameter.
 		// Perhaps we have an external program for such URLs
 		else
-		    KMimeType::runBinding( url.data() );
-		return;
+		    return KMimeBind::runBinding( url.data() );
+		return TRUE;
 	    }
 	}
 	else
 	    delete config;
     }
+
+    debugT("Testing for other Binding\n");
     
     KMimeType *typ = KMimeType::findType( _url );
     KMimeBind *bind;
-    for ( bind = typ->firstBinding(); bind != 0L; bind = typ->nextBinding() )
-    {
-	debugT("!!! '%s' vs '%s'\n",bind->getProgram(), _binding );
-	if ( strcmp( bind->getProgram(), _binding ) == 0 )
+    if ( typ )
+	for ( bind = typ->firstBinding(); bind != 0L; bind = typ->nextBinding() )
 	{
-	    debugT("!!! '%s' == '%s'\n",bind->getProgram(), _binding );
-	    debugT("!!! '%s'\n",bind->getCmd());
-	    
-	    QString quote1 = KIOServer::shellQuote( u.path() ).copy();
-	    QString quote2 = KIOServer::shellQuote( _url ).copy();
-
-	    QString f;
-	    QString ur;
-	    QString n = "";
-	    QString d = "";
-	    f.sprintf( "\"%s\"", quote1.data() );
-	    ur.sprintf( "\"%s\"", quote2.data() );
-	    QString tmp = quote1.data();
-	    // Is it a directory ? Then strip the "/"
-	    if ( tmp.right(1) == "/" )
-		tmp = tmp.left( tmp.length() - 1 );
-	    int i = tmp.findRev( "/" );
-	    if ( i != -1 )
-	    {
-		n = "\"";
-		n += tmp.mid( i + 1, tmp.length() );
-		n += "\"";
-		d += "\"";
-		d += tmp.left( i + 1 );
-		d += "\"";
-	    }
-
-	    QString cmd = bind->getCmd();
-	    cmd.detach();
-	    
-	    // Did the user forget to append something like '%f' ?
-	    // If so, then assume that '%f' is the right joice.
-	    if ( cmd.find( "%f" ) == -1 && cmd.find( "%u" ) == -1 && cmd.find( "%n" ) == -1 &&
-		 cmd.find( "%d" ) == -1 )
-	    {
-		cmd += " ";
-		cmd += f.data();
-	    }
-	    else
-	    {
-		int pos;
-		while ( ( pos = cmd.find( "%f" )) != -1 )
-		    cmd.replace( pos, 2, f.data() );
-		while ( ( pos = cmd.find( "%u" )) != -1 )
-		    cmd.replace( pos, 2, ur.data() );
-		while ( ( pos = cmd.find( "%n" )) != -1 )
-		    cmd.replace( pos, 2, n.data() );
-		while ( ( pos = cmd.find( "%d" )) != -1 )
-		    cmd.replace( pos, 2, d.data() );
-	    }
-	    int pos;
-	    while ( ( pos = cmd.find( "%c" ) ) != -1 )
-            {
-              QString s = _url;
-              if ( s.length() > 7 && s.right( 7 ) == ".kdelnk" )
-	      {
-		s = s.left(s.length()-7);
-              }
-              int a = s.findRev("/");
-              if ( a > -1 )
-                s = s.right(s.length()-1-a);
-              cmd.replace(pos,2,s.data());
-            }        
-
-	    // cmd += " &";
-	    debugT("::CMD = %s\n",cmd.data());
-	    runCmd( cmd.data() );
-	    // system( cmd.data() );
-	    /* if ( fork() == 0 )
-	    {
-		execvp( "kedit+", "ftp://weis@localhost/tmp/PyGres95/README", 0 );
-		exit( 1 );
-	    } */
-	    debugT("Executed the binding\n");
-	    return;
+	    debugT("!!! '%s' vs '%s'\n",bind->getProgram(), _binding );
+	    if ( strcmp( bind->getProgram(), _binding ) == 0 )
+		return runBinding( _url, bind );
 	}
-    }
 
     // If we still dont know what to do, perhaps we can open a new window with the URL ?
-    if ( KIOServer::isDir( _url ) && strcasecmp( _binding, "open" ) == 0 )
+    /* if ( KIOServer::isDir( _url ) && strcasecmp( _binding, "open" ) == 0 )
     {
 	KfmGui * m = new KfmGui( 0L, 0L, _url );
 	m->show();
-    }
+    } */
+    return FALSE;
 }
 
-void KMimeType::runCmd( const char *_cmd )
+bool KMimeBind::runBinding( const char *_url, KMimeBind *bind )
 {
-    char *cmd = new char[ strlen( _cmd + 1 ) ];
+    KURL u( _url );
+    if ( u.isMalformed() )
+	return FALSE;
+
+    QString decodedPath( u.path() );
+    KURL::decodeURL( decodedPath );
+    QString decodedURL( _url );
+    KURL::decodeURL( decodedURL );
+
+    debugT("!!! '%s'\n",bind->getCmd());
+
+    QString quote1 = KIOServer::shellQuote( decodedPath ).copy();
+    QString quote2 = KIOServer::shellQuote( decodedURL ).copy();
+    
+    QString f;
+    QString ur;
+    QString n = "";
+    QString d = "";
+    f.sprintf( "\"%s\"", quote1.data() );
+    ur.sprintf( "\"%s\"", quote2.data() );
+    QString tmp = quote1.data();
+    // Is it a directory ? Then strip the "/"
+    if ( tmp.right(1) == "/" )
+	tmp = tmp.left( tmp.length() - 1 );
+    int i = tmp.findRev( "/" );
+    if ( i != -1 )
+    {
+	n = "\"";
+	n += tmp.mid( i + 1, tmp.length() );
+	n += "\"";
+	d += "\"";
+	d += tmp.left( i + 1 );
+	d += "\"";
+    }
+    
+    QString cmd = bind->getCmd();
+    cmd.detach();
+    
+    // Did the user forget to append something like '%f' ?
+    // If so, then assume that '%f' is the right joice.
+    if ( cmd.find( "%f" ) == -1 && cmd.find( "%u" ) == -1 && cmd.find( "%n" ) == -1 &&
+	 cmd.find( "%d" ) == -1 )
+    {
+	cmd += " ";
+	cmd += f.data();
+    }
+    else
+    {
+	int pos;
+	while ( ( pos = cmd.find( "%f" )) != -1 )
+	    cmd.replace( pos, 2, f.data() );
+	while ( ( pos = cmd.find( "%u" )) != -1 )
+	    cmd.replace( pos, 2, ur.data() );
+	while ( ( pos = cmd.find( "%n" )) != -1 )
+	    cmd.replace( pos, 2, n.data() );
+	while ( ( pos = cmd.find( "%d" )) != -1 )
+	    cmd.replace( pos, 2, d.data() );
+    }
+    int pos;
+    while ( ( pos = cmd.find( "%c" ) ) != -1 )
+    {
+	QString s = _url;
+	if ( s.length() > 7 && s.right( 7 ) == ".kdelnk" )
+	{
+	    s = s.left(s.length()-7);
+	}
+	int a = s.findRev("/");
+	if ( a > -1 )
+	    s = s.right(s.length()-1-a);
+	cmd.replace(pos,2,s.data());
+    }        
+
+    debugT("::CMD = %s\n",cmd.data());
+    runCmd( cmd.data() );
+    debugT("Executed the binding\n");
+    return TRUE;
+}
+
+void KMimeBind::runCmd( const char *_cmd )
+{
+    char *cmd = new char[ strlen( _cmd ) + 1 ];
     strcpy( cmd, _cmd );
     
     QString exec;
@@ -1408,7 +1505,7 @@ void KMimeType::runCmd( const char *_cmd )
 		// Find the end of the quotes string
 		p++;
 		p2 = p;
-		while ( *p2 != '\"' )
+		while ( *p2 != '\"' && *p2 != 0 )
 		{
 		    if ( *p2 == '\\' && p2[1] == '\"' )
 			p2 += 2;
@@ -1447,7 +1544,7 @@ void KMimeType::runCmd( const char *_cmd )
     if ( ( pid = fork() ) == 0 )
     {    
 	execvp( exec.data(), argv );
-	QString txt = "Could not execute program\n\r";
+	QString txt = klocale->translate("Could not execute program\n");
 	txt += exec.data();
 
 	char* a[ 3 ];
@@ -1458,12 +1555,13 @@ void KMimeType::runCmd( const char *_cmd )
 
 	exit( 1 );
     }
+    debugT("Deleting\n");
     delete [] argv;
     delete [] cmd;
     debugT("PID of started process is '%i'\n",pid);
 }
 
-KFMConfig* KMimeType::openKFMConfig( const char *_url )
+KFMConfig* KMimeBind::openKFMConfig( const char *_url )
 {
     KURL u( _url );
     if ( u.isMalformed() )
@@ -1471,23 +1569,29 @@ KFMConfig* KMimeType::openKFMConfig( const char *_url )
     if ( strcmp( u.protocol(), "file" ) != 0 )
 	return 0L;
     
+    QString decoded( u.path() );
+    KURL::decodeURL( decoded );
+    
     FILE *f;
     // _url must be of type 'file:/'
-    f = fopen( u.path(), "rb" );
+    f = fopen( decoded, "rb" );
     if ( f == 0L )
 	return 0L;
     
-    char buff[ 1024 ];
+    char buff[ 4096 ];
     buff[ 0 ] = 0;
-    fgets( buff, 1023, f );
+    fgets( buff, 4095, f );
     fclose( f );
 
     if ( strstr( buff, "[KDE Desktop Entry]" ) == 0L )
-	return 0L;
+	return 0L; 
        
-    QFile *file = new QFile( u.path() );
+    QFile *file = new QFile( decoded );
     if ( !file->open( IO_ReadOnly ) )
+    {
+	delete file;
 	return 0L;
+    }
     
     QTextStream *pstream = new QTextStream( file );
     KFMConfig *config = new KFMConfig( file, pstream );

@@ -4,9 +4,9 @@
 
 #include "kioserver_ipc.h"
 
-void KIOSlaveIPC::parse_hello( char *, int )
+void KIOSlaveIPC::parse_hello( char *_data, int _len )
 {
-// 	int pos = 0;
+	int pos = 0;
 
 	// Calling function
 	emit hello(  );
@@ -21,6 +21,17 @@ void KIOSlaveIPC::parse_progress( char *_data, int _len )
 	_percent = read_int( _data, pos, _len );
 	// Calling function
 	emit progress( _percent );
+}
+
+void KIOSlaveIPC::parse_info( char *_data, int _len )
+{
+	int pos = 0;
+
+	// Parsing string
+	const char* _text;
+	_text = read_string( _data, pos, _len );
+	// Calling function
+	emit info( _text );
 }
 
 void KIOSlaveIPC::parse_dirEntry( char *_data, int _len )
@@ -55,6 +66,17 @@ void KIOSlaveIPC::parse_dirEntry( char *_data, int _len )
 	emit dirEntry( _dir, _name, _isDir, _size, _date, _access, _owner, _group );
 }
 
+void KIOSlaveIPC::parse_data( char *_data, int _len )
+{
+	int pos = 0;
+
+	// Parsing string
+	const char* _text;
+	_text = read_string( _data, pos, _len );
+	// Calling function
+	emit data( _text );
+}
+
 void KIOSlaveIPC::parse_flushDir( char *_data, int _len )
 {
 	int pos = 0;
@@ -66,9 +88,9 @@ void KIOSlaveIPC::parse_flushDir( char *_data, int _len )
 	emit flushDir( _dir );
 }
 
-void KIOSlaveIPC::parse_done( char *, int )
+void KIOSlaveIPC::parse_done( char *_data, int _len )
 {
-	// int pos = 0;
+	int pos = 0;
 
 	// Calling function
 	emit done(  );
@@ -100,6 +122,28 @@ void KIOSlaveIPC::parse_setPID( char *_data, int _len )
 	_pid = read_int( _data, pos, _len );
 	// Calling function
 	emit setPID( _pid );
+}
+
+void KIOSlaveIPC::parse_redirection( char *_data, int _len )
+{
+	int pos = 0;
+
+	// Parsing string
+	const char* _url;
+	_url = read_string( _data, pos, _len );
+	// Calling function
+	emit redirection( _url );
+}
+
+void KIOSlaveIPC::parse_mimeType( char *_data, int _len )
+{
+	int pos = 0;
+
+	// Parsing string
+	const char* _type;
+	_type = read_string( _data, pos, _len );
+	// Calling function
+	emit mimeType( _type );
 }
 
 void KIOSlaveIPC::mount(bool _ro, const char* _fstype, const char* _dev, const char* _point)
@@ -142,6 +186,16 @@ void KIOSlaveIPC::copy(const char* _from_url, const char* _to_url, bool _overwri
 	write_bool( data_sock->socket(), _overwrite );
 }
 
+void KIOSlaveIPC::get(const char* _url)
+{
+	int len = 0;
+	len += len_string( _url );
+	len += len_string("get");
+	write_int( data_sock->socket(), len );
+	write_string( data_sock->socket(), "get" );
+	write_string( data_sock->socket(), _url );
+}
+
 void KIOSlaveIPC::del(const char* _url)
 {
 	int len = 0;
@@ -162,14 +216,16 @@ void KIOSlaveIPC::mkdir(const char* _url)
 	write_string( data_sock->socket(), _url );
 }
 
-void KIOSlaveIPC::list(const char* _url)
+void KIOSlaveIPC::list(const char* _url, bool _bHTML)
 {
 	int len = 0;
 	len += len_string( _url );
+	len += len_bool( _bHTML );
 	len += len_string("list");
 	write_int( data_sock->socket(), len );
 	write_string( data_sock->socket(), "list" );
 	write_string( data_sock->socket(), _url );
+	write_bool( data_sock->socket(), _bHTML );
 }
 
 void KIOSlaveIPC::getPID()

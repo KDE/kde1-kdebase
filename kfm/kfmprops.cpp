@@ -13,6 +13,8 @@
 #include <qlist.h>
 #include <qstrlist.h>
 
+#include <kurl.h>
+
 #include "kfmprops.h"
 #include "kbind.h"
 #include "kioserver.h"
@@ -20,6 +22,9 @@
 #include "kfmpaths.h"
 #include "root.h"
 #include <config-kfm.h>
+
+#include <klocale.h>
+#define klocale KLocale::klocale()
 
 Properties::Properties( const char *_url ) : QObject()
 {
@@ -147,44 +152,48 @@ PropsPage::PropsPage( Properties *_props ) : QWidget( _props->getTab(), 0L )
 FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 {
     QString path = properties->getKURL()->path();
-    if ( path.right(1) != "/" )
-      path += "/";
-
+    KURL::decodeURL( path );
+    QString filename = properties->getKURL()->filename();
+    KURL::decodeURL( filename );
+    
+    QString tmp = path.data();
+    if ( tmp.right(1) != "/" )
+      tmp += "/";
     bool isTrash = false;
     // is it the trash bin ?
     if ( strcmp( properties->getKURL()->protocol(), "file" ) == 0L &&
-	 path == KFMPaths::TrashPath())
+	 tmp == KFMPaths::TrashPath())
            isTrash = true;
     
     struct stat buff;
-    stat( properties->getKURL()->path(), &buff );
+    stat( path, &buff );
 
     struct stat lbuff;
-    lstat( properties->getKURL()->path(), &lbuff );
+    lstat( path, &lbuff );
 
     QLabel *l;
     int y = 10;
  
-    l = new QLabel( "Name", this );
+    l = new QLabel( klocale->translate("Name"), this );
     l->setGeometry( 10, y, 200, 20 );
     y += 25;
     
     name = new QLineEdit( this );
     name->setGeometry( 10, y, 200, 30 );
-    name->setText( properties->getKURL()->filename() );
+    name->setText( filename );
     if ( isTrash )
 	name->setEnabled( false );
-    oldName = properties->getKURL()->filename();
+    oldName = filename;
     oldName.detach();
     y += 35;
 
-    l = new QLabel( "Full Name", this );
+    l = new QLabel( klocale->translate("Full Name"), this );
     l->setGeometry( 10, y, 200, 20 );
     y += 25;
     
     fname = new QLineEdit( this );
     fname->setGeometry( 10, y, 200, 30 );
-    fname->setText( properties->getKURL()->path() );
+    fname->setText( path );
     fname->setEnabled( false );
     y += 35;
     
@@ -192,30 +201,30 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 
     if ( isTrash )
     {
-	l = new QLabel( "Is the Trash Bin", this );
+	l = new QLabel( klocale->translate( "Is the Trash Bin"), this );
 	l->setGeometry( 10, y, 200, 20 );
 	y += 25;
     }
     else if ( S_ISDIR( buff.st_mode ) )
     {
-	l = new QLabel( "Is a Directory", this );
+	l = new QLabel( klocale->translate("Is a Directory"), this );
 	l->setGeometry( 10, y, 200, 20 );
 	y += 25;
     }
     if ( S_ISLNK( lbuff.st_mode ) )
     {
-	l = new QLabel( "Points to", this );
+	l = new QLabel( klocale->translate( "Points to" ), this );
 	l->setGeometry( 10, y, 200, 20 );
 	y += 25;
     
 	lname = new QLineEdit( this );
 	lname->setGeometry( 10, y, 200, 30 );
-	lname->setText( properties->getKURL()->path() );
+	lname->setText( path );
 	lname->setEnabled( false );
 	y += 35;
 
 	char buffer[1024];
-	int n = readlink( properties->getKURL()->path(), buffer, 1022 );
+	int n = readlink( path, buffer, 1022 );
 	if ( n > 0 )
 	{
 	    buffer[ n ] = 0;
@@ -226,7 +235,7 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     {
 	char buffer[1024];
 	int size = buff.st_size;
-	sprintf( buffer, "Size: %i", size );
+	sprintf( buffer, klocale->translate("Size: %i"), size );
 	l = new QLabel( buffer, this );
 	l->setGeometry( 10, y, 200, 20 );
 	y += 25;
@@ -234,14 +243,18 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     
     char buffer[1024];
     struct tm *t = localtime( &lbuff.st_atime );
-    sprintf( buffer, "Last Access: %02i:%02i %02i.%02i.%04i", t->tm_hour,t->tm_min,
+    sprintf( buffer, "%s: %02i:%02i %02i.%02i.%04i", 
+	     klocale->translate("Last Access"),
+	     t->tm_hour,t->tm_min,
 	     t->tm_mday,t->tm_mon + 1,t->tm_year + 1900 );             
     l = new QLabel( buffer, this );
     l->setGeometry( 10, y, 200, 20 );
     y += 25;
 
     t = localtime( &lbuff.st_mtime );
-    sprintf( buffer, "Last Modified: %02i:%02i %02i.%02i.%04i", t->tm_hour,t->tm_min,
+    sprintf( buffer, "%s: %02i:%02i %02i.%02i.%04i", 
+	     klocale->translate("Last Modified"),
+	     t->tm_hour,t->tm_min,
 	     t->tm_mday,t->tm_mon + 1,t->tm_year + 1900 );          
     l = new QLabel( buffer, this );
     l->setGeometry( 10, y, 200, 20 );
@@ -250,14 +263,22 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 
 bool FilePropsPage::supports( KURL *_kurl )
 {
-    if ( strcmp( _kurl->protocol(), "file" ) == 0 )
-	return true;
+    KURL u( _kurl->url().data() );
+    KURL u2( u.nestedURL() );
     
-    return false;
+    if ( strcmp( u2.protocol(), "file" ) != 0 )
+	return false;
+
+    return true;
 }
 
 void FilePropsPage::applyChanges()
 {
+    QString path = properties->getKURL()->path();
+    KURL::decodeURL( path );
+    QString fname = properties->getKURL()->filename();
+    KURL::decodeURL( fname );
+
     // Do we need to rename the file ?
     if ( strcmp( oldName.data(), name->text() ) != 0 )
     {
@@ -273,15 +294,22 @@ void FilePropsPage::applyChanges()
 	s += "/";
 	s += name->text();
 	KURL u( s.data() );
-	rename( properties->getKURL()->path(), u.path() );
+	QString t( u.path() );
+	KURL::decodeURL( t );
+	rename( path, t );
 	properties->emitPropertiesChanged( name->text() );
     }
 }
 
 FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : PropsPage( _props )
 {
+    QString path = properties->getKURL()->path();
+    KURL::decodeURL( path );
+    QString fname = properties->getKURL()->filename();
+    KURL::decodeURL( fname );
+
     struct stat buff;
-    stat( properties->getKURL()->path(), &buff );
+    stat( path, &buff );
     struct passwd * user = getpwuid( buff.st_uid );
     struct group * g = getgrgid( buff.st_gid );
     
@@ -303,60 +331,60 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : Props
     // QBoxLayout *bl2;
     int y = 10;
     
-    l = new QLabel( "Access permissions", this );
+    l = new QLabel( klocale->translate("Access permissions"), this );
     l->setGeometry( 10, y, 200, 20 );
     y += 25;
-    permUR = new QCheckBox( "User Read", this );
+    permUR = new QCheckBox( klocale->translate("User Read"), this );
     permUR->setGeometry( 10, y, 100, 30 );
     permUR->setChecked( ( buff.st_mode & S_IRUSR ) == S_IRUSR );
-    permUW = new QCheckBox( "User Write", this );
+    permUW = new QCheckBox( klocale->translate("User Write"), this );
     permUW->setGeometry( 110, y, 100, 30 );
     permUW->setChecked( ( buff.st_mode & S_IWUSR ) == S_IWUSR );
-    permUX = new QCheckBox( "User Exec", this );
+    permUX = new QCheckBox( klocale->translate("User Exec"), this );
     permUX->setGeometry( 210, y, 100, 30 );
     permUX->setChecked( ( buff.st_mode & S_IXUSR ) == S_IXUSR );
-    permUS = new QCheckBox( "Set UID", this );
+    permUS = new QCheckBox( klocale->translate("Set UID"), this );
     permUS->setGeometry( 310, y, 100, 30 );
     permUS->setChecked( ( buff.st_mode & S_ISUID ) == S_ISUID );      
     y += 35;
 
-    permGR = new QCheckBox( "Group Read", this );
+    permGR = new QCheckBox( klocale->translate("Group Read"), this );
     permGR->setGeometry( 10, y, 100, 30 );
     permGR->setChecked( ( buff.st_mode & S_IRGRP ) == S_IRGRP );
-    permGW = new QCheckBox( "Group Write", this );
+    permGW = new QCheckBox( klocale->translate("Group Write"), this );
     permGW->setGeometry( 110, y, 100, 30 );
     permGW->setChecked( ( buff.st_mode & S_IWGRP ) == S_IWGRP );
-    permGX = new QCheckBox( "Group Exec", this );
+    permGX = new QCheckBox( klocale->translate("Group Exec"), this );
     permGX->setGeometry( 210, y, 100, 30 );
     permGX->setChecked( ( buff.st_mode & S_IXGRP ) == S_IXGRP );
-    permGS = new QCheckBox( "Set GID ", this );
+    permGS = new QCheckBox( klocale->translate("Set GID "), this );
     permGS->setGeometry( 310, y, 100, 30 );
     permGS->setChecked( ( buff.st_mode & S_ISGID ) == S_ISGID );   
 
     y += 35;
-    permOR = new QCheckBox( "Others Read", this );
+    permOR = new QCheckBox( klocale->translate("Others Read"), this );
     permOR->setGeometry( 10, y, 100, 30 );
     permOR->setChecked( ( buff.st_mode & S_IROTH ) == S_IROTH );
-    permOW = new QCheckBox( "Others Write", this );
+    permOW = new QCheckBox( klocale->translate("Others Write"), this );
     permOW->setGeometry( 110, y, 100, 30 );
     permOW->setChecked( ( buff.st_mode & S_IWOTH ) == S_IWOTH );
-    permOX = new QCheckBox( "Others Exec", this );
+    permOX = new QCheckBox( klocale->translate("Others Exec"), this );
     permOX->setGeometry( 210, y, 100, 30 );
     permOX->setChecked( ( buff.st_mode & S_IXOTH ) == S_IXOTH );
-    permOS = new QCheckBox( "Sticky", this );
+    permOS = new QCheckBox( klocale->translate("Sticky"), this );
     permOS->setGeometry( 310, y, 100, 30 );
     permOS->setChecked( ( buff.st_mode & S_ISVTX ) == S_ISVTX );    
     y += 35;
 
     y += 10;
     
-    l = new QLabel( "Owner", this );
+    l = new QLabel( klocale->translate("Owner"), this );
     l->setGeometry( 10, y, 100, 30 );
     owner = new QLineEdit( this );
     owner->setGeometry( 60, y, 100, 30 );
     owner->setText( strOwner );
     y += 35;
-    l = new QLabel( "Group", this );
+    l = new QLabel( klocale->translate("Group"), this );
     l->setGeometry( 10, y, 100, 30 );
     grp = new QLineEdit( this );
     grp->setGeometry( 60, y, 100, 30 );
@@ -366,14 +394,22 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : Props
 
 bool FilePermissionsPropsPage::supports( KURL *_kurl )
 {
-    if ( strcmp( _kurl->protocol(), "file" ) == 0 )
-	return true;
+    KURL u( _kurl->url() );
+    KURL u2( u.nestedURL() );
     
-    return false;
+    if ( strcmp( u2.protocol(), "file" ) != 0 )
+	return false;
+
+    return true;
 }
 
 void FilePermissionsPropsPage::applyChanges()
 {
+    QString path = properties->getKURL()->path();
+    KURL::decodeURL( path );
+    QString fname = properties->getKURL()->filename();
+    KURL::decodeURL( fname );
+
     int p = 0L;
     if ( permUR->isChecked() )
 	p |= S_IRUSR;
@@ -403,10 +439,10 @@ void FilePermissionsPropsPage::applyChanges()
     if ( p != permissions )
     {
 	struct stat buff;
-	stat( properties->getKURL()->path(), &buff );
+	stat( path, &buff );
 	// int mask = ~( S_IRWXU | S_IRWXG | S_IRWXO );
 	// mask |= p;
-	chmod( properties->getKURL()->path(), p );
+	chmod( path, p );
     }
     
     if ( strcmp( owner->text(), strOwner.data() ) != 0 || strcmp( grp->text(), strGroup.data() ) != 0 )
@@ -415,15 +451,15 @@ void FilePermissionsPropsPage::applyChanges()
 	struct group* g = getgrnam( grp->text() );
 	if ( pw == 0L )
 	{
-	    debugT(" ERROR: No user %s \n",owner->text() );
+	    warning(klocale->translate(" ERROR: No user %s"),owner->text() );
 	    return;
 	}
 	if ( g == 0L )
 	{
-	    debugT(" ERROR: No group %s \n",grp->text() );
+	    warning(klocale->translate(" ERROR: No group %s"),grp->text() );
 	    return;
 	}
-	chown( properties->getKURL()->path(), pw->pw_uid, g->gr_gid );
+	chown( path, pw->pw_uid, g->gr_gid );
     }
 }
 
@@ -451,15 +487,15 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     QLabel* tmpQLabel;
     tmpQLabel = new QLabel( this, "Label_1" );
     tmpQLabel->setGeometry( 10, 10, 100, 30 );
-    tmpQLabel->setText( "Execute" );
+    tmpQLabel->setText( klocale->translate("Execute") );
 
     tmpQLabel = new QLabel( this, "Label_2" );
     tmpQLabel->setGeometry( 10, 130, 100, 30 );
-    tmpQLabel->setText( "Icon" );
+    tmpQLabel->setText( klocale->translate("Icon") );
 
     tmpQLabel = new QLabel( this, "Label_3" );
     tmpQLabel->setGeometry( 10, 70, 120, 30 );
-    tmpQLabel->setText( "Working Directory" );
+    tmpQLabel->setText( klocale->translate("Working Directory") );
 
     pathEdit->raise();
     pathEdit->setGeometry( 10, 100, 210, 30 );
@@ -473,7 +509,7 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
 
     terminalCheck->raise();
     terminalCheck->setGeometry( 20, 210, 150, 30 );
-    terminalCheck->setText( "Run in terminal" );
+    terminalCheck->setText( klocale->translate("Run in terminal") );
 
     terminalEdit->raise();
     terminalEdit->setGeometry( 20, 280, 300, 30 );
@@ -481,11 +517,11 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
 
     tmpQLabel = new QLabel( this, "Label_5" );
     tmpQLabel->setGeometry( 20, 250, 100, 30 );
-    tmpQLabel->setText( "Terminal Options" );
+    tmpQLabel->setText( klocale->translate("Terminal Options") );
 
     execBrowse->raise();
     execBrowse->setGeometry( 230, 40, 100, 30 );
-    execBrowse->setText( "Browse" );
+    execBrowse->setText( klocale->translate("Browse") );
 
     QFile f( _props->getKURL()->path() );
     if ( !f.open( IO_ReadOnly ) )
@@ -544,10 +580,13 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
 
 bool ExecPropsPage::supports( KURL *_kurl )
 {
-    if ( strcmp( _kurl->protocol(), "file" ) != 0 )
+    KURL u( _kurl->url() );
+    KURL u2( u.nestedURL() );
+    
+    if ( strcmp( u2.protocol(), "file" ) != 0 )
 	return false;
 
-    FILE *fh = fopen( _kurl->path(), "rb" );
+    /* FILE *fh = fopen( _kurl->path(), "rb" );
     if ( fh == 0L )
 	return false;
     
@@ -557,9 +596,11 @@ bool ExecPropsPage::supports( KURL *_kurl )
     fclose( fh );
     
     if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
-	return false;
+	return false; */
 
-    QFile f( _kurl->path() );
+    QString t( _kurl->path() );
+    KURL::decodeURL( t );
+    QFile f( t );
     if ( !f.open( IO_ReadOnly ) )
 	return false;
     
@@ -578,9 +619,16 @@ bool ExecPropsPage::supports( KURL *_kurl )
 
 void ExecPropsPage::applyChanges()
 {
-    QFile f( properties->getKURL()->path() );
+    QString path = properties->getKURL()->path();
+    KURL::decodeURL( path );
+
+    QFile f( path );
     if ( !f.open( IO_ReadWrite ) )
+    {
+	QMessageBox::message( klocale->translate("KFM Error"),
+			      klocale->translate("Could not save properties\nPerhaps permissions denied") );
 	return;
+    }
     
     QTextStream pstream( &f );
     KConfig config( &pstream );
@@ -663,19 +711,22 @@ URLPropsPage::URLPropsPage( Properties *_props ) : PropsPage( _props )
     QLabel* tmpQLabel;
     tmpQLabel = new QLabel( this, "Label_1" );
     tmpQLabel->setGeometry( 10, 10, 100, 30 );
-    tmpQLabel->setText( "URL" );
+    tmpQLabel->setText( klocale->translate("URL") );
     
     iconBox->raise();
     iconBox->setGeometry( 10, 90, 120, 30 );
 
-    QFile f( _props->getKURL()->path() );
+    QString path = _props->getKURL()->path();
+    KURL::decodeURL( path );
+
+    QFile f( path );
     if ( !f.open( IO_ReadOnly ) )
 	return;
     
     QTextStream pstream( &f );
     KConfig config( &pstream );
     config.setGroup( "KDE Desktop Entry" );
-    URLStr = config.readEntry( "URL" );
+    URLStr = config.readEntry(  "URL" );
     iconStr = config.readEntry( "Icon" );
 
     if ( !URLStr.isNull() )
@@ -718,10 +769,13 @@ URLPropsPage::URLPropsPage( Properties *_props ) : PropsPage( _props )
 
 bool URLPropsPage::supports( KURL *_kurl )
 {
-    if ( strcmp( _kurl->protocol(), "file" ) != 0 )
+    KURL u( _kurl->url() );
+    KURL u2( u.nestedURL() );
+    
+    if ( strcmp( u2.protocol(), "file" ) != 0 )
 	return false;
 
-    FILE *fh = fopen( _kurl->path(), "rb" );
+    /* FILE *fh = fopen( _kurl->path(), "rb" );
     if ( fh == 0L )
 	return false;
     
@@ -731,9 +785,11 @@ bool URLPropsPage::supports( KURL *_kurl )
     fclose( fh );
     
     if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
-	return false;
+	return false; */
 
-    QFile f( _kurl->path() );
+    QString path = _kurl->path();
+    KURL::decodeURL( path );
+    QFile f( path );
     if ( !f.open( IO_ReadOnly ) )
 	return false;
     
@@ -750,9 +806,16 @@ bool URLPropsPage::supports( KURL *_kurl )
 
 void URLPropsPage::applyChanges()
 {
-    QFile f( properties->getKURL()->path() );
+    QString path = properties->getKURL()->path();
+    KURL::decodeURL( path );
+
+    QFile f( path );
     if ( !f.open( IO_ReadWrite ) )
+    {
+	QMessageBox::message(  klocale->translate("KFM Error"), 
+			        klocale->translate("Could not save properties\nPerhaps permissions denied") );
 	return;
+    }
     
     QTextStream pstream( &f );
     KConfig config( &pstream );
@@ -815,15 +878,17 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
     wallBox->raise();
     wallBox->setGeometry( 10, 90, 120, 30 );
 
-    applyButton = new QPushButton( "Apply" , this );
+    applyButton = new QPushButton(  klocale->translate("Apply") , this );
     applyButton->setGeometry( 10, 230, 120, 30 );
     connect( applyButton, SIGNAL( clicked() ), this, SLOT( slotApply() ) );
     
-    globalButton = new QPushButton( "Apply global" , this );
+    globalButton = new QPushButton(  klocale->translate("Apply global"),
+				     this );
     globalButton->setGeometry( 140, 230, 120, 30 );
     connect( globalButton, SIGNAL( clicked() ), this, SLOT( slotApplyGlobal() ) );
 
     QString tmp = _props->getKURL()->path();
+    KURL::decodeURL( tmp );
     if ( tmp.right(1) != "/" )
 	tmp += "/.directory";
     else
@@ -881,7 +946,7 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
     list = d2.entryInfoList();
     QFileInfoListIterator it2( *list );      // create list iterator
 
-    wallBox->insertItem( "(None)", 0 );
+    wallBox->insertItem(  klocale->translate("(None)"), 0 );
     
     index = -1;
     i = 1;  
@@ -915,17 +980,22 @@ bool DirPropsPage::supports( KURL *_kurl )
 {
     // Is it the trash bin ?
     QString path = _kurl->path();
-    if ( path.right(1) != "/" )
-      path += "/";
-    
+    KURL::decodeURL( path );
+
+    QString tmp = path.data();
+    if ( tmp.right(1) != "/" )
+	tmp += "/";
     if ( strcmp( _kurl->protocol(), "file" ) == 0L &&
-	 path == KFMPaths::TrashPath()) 
+	 tmp == KFMPaths::TrashPath()) 
         return false;
+
+    KURL u( _kurl->url() );
+    KURL u2( u.nestedURL() );
     
-    if ( strcmp( _kurl->protocol(), "file" ) != 0 )
+    if ( strcmp( u2.protocol(), "file" ) != 0 )
 	return false;
 
-    if ( !KIOServer::isDir( _kurl->path() ) )
+    if ( !KIOServer::isDir( path ) )
 	return false;
     
     return true;    
@@ -934,6 +1004,7 @@ bool DirPropsPage::supports( KURL *_kurl )
 void DirPropsPage::applyChanges()
 {
     QString tmp = properties->getKURL()->path();
+    KURL::decodeURL( tmp );
     if ( tmp.right(1) != "/" )
 	tmp += "/.directory";
     else
@@ -942,7 +1013,8 @@ void DirPropsPage::applyChanges()
     QFile f( tmp.data() );
     if ( !f.open( IO_ReadWrite ) )
     {
-	QMessageBox::message( "Error", "Could not write to\n" + tmp );
+      QMessageBox::message(  klocale->translate("Error"), 
+			     klocale->translate("Could not write to\n") + tmp );
 	return;
     }
     
@@ -953,7 +1025,7 @@ void DirPropsPage::applyChanges()
     int i = wallBox->currentItem();
     if ( i != -1 )
     {
-	if ( strcmp( wallBox->text( i ), "(None)" ) == 0 )
+	if ( strcmp( wallBox->text( i ),  klocale->translate("(None)") ) == 0 )
 	    config.writeEntry( "BgImage", "" );
 	else
 	    config.writeEntry( "BgImage", wallBox->text( i ) );
@@ -1086,7 +1158,7 @@ void DirPropsPage::slotApplyGlobal()
     int i = wallBox->currentItem();
     if ( i != -1 )
     {
-	if ( strcmp( wallBox->text( i ), "(None)" ) == 0 )
+	if ( strcmp( wallBox->text( i ),  klocale->translate("(None)") ) == 0 )
 	    config->writeEntry( "BgImage", "" );
 	else
 	    config->writeEntry( "BgImage", wallBox->text( i ) );
@@ -1129,17 +1201,17 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
     delExtensionButton = new QPushButton( "->", this );
 
     protocolFTP = new QCheckBox( this );
-    protocolFTP->setText( "FTP" );
+    protocolFTP->setText( klocale->translate("FTP") );
     protocolFILE = new QCheckBox( this );
-    protocolFILE->setText( "FILE" );
+    protocolFILE->setText( klocale->translate("FILE") );
     protocolHTTP = new QCheckBox( this );
-    protocolHTTP->setText( "HTTP" );
+    protocolHTTP->setText( klocale->translate("HTTP") );
     protocolTAR = new QCheckBox( this );
-    protocolTAR->setText( "TAR" );
+    protocolTAR->setText( klocale->translate("TAR") );
     protocolMAN = new QCheckBox( this );
-    protocolMAN->setText( "MAN" );
+    protocolMAN->setText( klocale->translate("MAN") );
     protocolINFO = new QCheckBox( this );
-    protocolINFO->setText( "INFO" );
+    protocolINFO->setText( klocale->translate("INFO") );
 
     QGroupBox* tmpQGroupBox;
     tmpQGroupBox = new QGroupBox( this, "GroupBox_1" );
@@ -1168,11 +1240,11 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
     QLabel* tmpQLabel;
     tmpQLabel = new QLabel( this, "Label_1" );
     tmpQLabel->setGeometry( 10, 10, 300, 30 );
-    tmpQLabel->setText( "Binary Pattern ( netscape;Netscape; )" );
+    tmpQLabel->setText(  klocale->translate("Binary Pattern ( netscape;Netscape; )") );
 
     tmpQLabel = new QLabel( this, "Label_3" );
     tmpQLabel->setGeometry( 10, 70, 120, 30 );
-    tmpQLabel->setText( "Comment" );
+    tmpQLabel->setText(  klocale->translate("Comment") );
 
     commentEdit->raise();
     commentEdit->setGeometry( 10, 100, 210, 30 );
@@ -1184,8 +1256,10 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
     connect( addExtensionButton, SIGNAL( pressed() ), this, SLOT( slotAddExtension() ) );
     delExtensionButton->setGeometry( 160, 270, 40, 40 );    
     connect( delExtensionButton, SIGNAL( pressed() ), this, SLOT( slotDelExtension() ) );
-	    
-    QFile f( _props->getKURL()->path() );
+
+    QString path = _props->getKURL()->path() ;
+    KURL::decodeURL( path );	    
+    QFile f( path );
     if ( !f.open( IO_ReadOnly ) )
 	return;
     
@@ -1244,10 +1318,13 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
 
 bool ApplicationPropsPage::supports( KURL *_kurl )
 {
-    if ( strcmp( _kurl->protocol(), "file" ) != 0 )
+    KURL u( _kurl->url() );
+    KURL u2( u.nestedURL() );
+    
+    if ( strcmp( u2.protocol(), "file" ) != 0 )
 	return false;
 
-    FILE *fh = fopen( _kurl->path(), "rb" );
+    /* FILE *fh = fopen( _kurl->path(), "rb" );
     if ( fh == 0L )
 	return false;
     
@@ -1257,9 +1334,11 @@ bool ApplicationPropsPage::supports( KURL *_kurl )
     fclose( fh );
     
     if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
-	return false;
+	return false; */
 
-    QFile f( _kurl->path() );
+    QString path = _kurl->path();
+    KURL::decodeURL( path );
+    QFile f( path );
     if ( !f.open( IO_ReadOnly ) )
 	return false;
     
@@ -1278,9 +1357,16 @@ bool ApplicationPropsPage::supports( KURL *_kurl )
 
 void ApplicationPropsPage::applyChanges()
 {
-    QFile f( properties->getKURL()->path() );
+    QString path = properties->getKURL()->path();
+    KURL::decodeURL( path );
+
+    QFile f( path );
     if ( !f.open( IO_ReadWrite ) )
+    {
+	QMessageBox::message(  klocale->translate("KFM Error"), 
+			        klocale->translate("Could not save properties\nPerhaps permissions denied") );
 	return;
+    }
     
     QTextStream pstream( &f );
     KConfig config( &pstream );
@@ -1380,26 +1466,26 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     QLabel* tmpQLabel;
     tmpQLabel = new QLabel( this, "Label_1" );
     tmpQLabel->setGeometry( 10, 10, 300, 30 );
-    tmpQLabel->setText( "Pattern ( example: *.html;*.HTML; )" );
+    tmpQLabel->setText(  klocale->translate("Pattern ( example: *.html;*.HTML; )") );
 
     tmpQLabel = new QLabel( this, "Label_2" );
     tmpQLabel->setGeometry( 180, 210, 100, 30 );
-    tmpQLabel->setText( "Icon" );
+    tmpQLabel->setText(  klocale->translate("Icon") );
 
     tmpQLabel = new QLabel( this, "Label_2" );
     tmpQLabel->setGeometry( 10, 130, 100, 30 );
-    tmpQLabel->setText( "Mime Type" );
+    tmpQLabel->setText(  klocale->translate("Mime Type") );
 
     tmpQLabel = new QLabel( this, "Label_3" );
     tmpQLabel->setGeometry( 10, 70, 120, 30 );
-    tmpQLabel->setText( "Comment" );
+    tmpQLabel->setText(  klocale->translate("Comment") );
     
     iconBox->raise();
     iconBox->setGeometry( 180, 240, 120, 30 );
 
     tmpQLabel = new QLabel( this, "Label_2" );
     tmpQLabel->setGeometry( 10, 210, 170, 30 );
-    tmpQLabel->setText( "Default Application" );
+    tmpQLabel->setText(  klocale->translate("Default Application") );
 
     appBox->raise();
     appBox->setGeometry( 10, 240, 120, 30 );
@@ -1480,10 +1566,13 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
 
 bool BindingPropsPage::supports( KURL *_kurl )
 {
-    if ( strcmp( _kurl->protocol(), "file" ) != 0 )
+    KURL u( _kurl->url() );
+    KURL u2( u.nestedURL() );
+    
+    if ( strcmp( u2.protocol(), "file" ) != 0 )
 	return false;
 
-    FILE *fh = fopen( _kurl->path(), "rb" );
+    /* FILE *fh = fopen( _kurl->path(), "rb" );
     if ( fh == 0L )
 	return false;
     
@@ -1493,9 +1582,11 @@ bool BindingPropsPage::supports( KURL *_kurl )
     fclose( fh );
     
     if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
-	return false;
+	return false; */
 
-    QFile f( _kurl->path() );
+    QString path = _kurl->path();
+    KURL::decodeURL( path );
+    QFile f( path );
     if ( !f.open( IO_ReadOnly ) )
 	return false;
     
@@ -1514,9 +1605,15 @@ bool BindingPropsPage::supports( KURL *_kurl )
 
 void BindingPropsPage::applyChanges()
 {
-    QFile f( properties->getKURL()->path() );
+    QString path = properties->getKURL()->path();
+    KURL::decodeURL( path );
+    QFile f( path );
     if ( !f.open( IO_ReadWrite ) )
+    {
+	QMessageBox::message(  klocale->translate("KFM Error"),
+			        klocale->translate("Could not save properties\nPerhaps permissions denied") );
 	return;
+    }
     
     QTextStream pstream( &f );
     KConfig config( &pstream );
@@ -1598,7 +1695,7 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
     QLabel* tmpQLabel;
     tmpQLabel = new QLabel( this, "Label_1" );
     tmpQLabel->setGeometry( 10, 10, 140, 30 );
-    tmpQLabel->setText( "Device ( /dev/fd0 )" );
+    tmpQLabel->setText(  klocale->translate("Device ( /dev/fd0 )") );
     
     device = new QLineEdit( this, "LineEdit_1" );
     device->setGeometry( 10, 40, 180, 30 );
@@ -1606,7 +1703,7 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
     
     tmpQLabel = new QLabel( this, "Label_2" );
     tmpQLabel->setGeometry( 10, 80, 170, 30 );
-    tmpQLabel->setText( "Mount Point ( /floppy )" );
+    tmpQLabel->setText(  klocale->translate("Mount Point ( /floppy )") );
     
     mountpoint = new QLineEdit( this, "LineEdit_2" );
     mountpoint->setGeometry( 10, 110, 180, 30 );
@@ -1614,11 +1711,11 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
     
     readonly = new QCheckBox( this, "CheckBox_1" );
     readonly->setGeometry( 220, 40, 100, 30 );
-    readonly->setText( "Readonly" );
+    readonly->setText(  klocale->translate("Readonly") );
     
     tmpQLabel = new QLabel( this, "Label_4" );
     tmpQLabel->setGeometry( 10, 150, 300, 30 );
-    tmpQLabel->setText( "Filesystems ( iso9660,msdos,minix,default )" );
+    tmpQLabel->setText(  klocale->translate("Filesystems ( iso9660,msdos,minix,default )") );
     
     fstype = new QLineEdit( this, "LineEdit_3" );
     fstype->setGeometry( 10, 180, 280, 30 );
@@ -1626,11 +1723,11 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
     
     tmpQLabel = new QLabel( this, "Label_5" );
     tmpQLabel->setGeometry( 10, 220, 100, 30 );
-    tmpQLabel->setText( "Mounted Icon" );
+    tmpQLabel->setText(  klocale->translate("Mounted Icon") );
     
     tmpQLabel = new QLabel( this, "Label_6" );
     tmpQLabel->setGeometry( 170, 220, 100, 30 );
-    tmpQLabel->setText( "Unmounted Icon" );
+    tmpQLabel->setText(  klocale->translate("Unmounted Icon") );
     
     mounted = new QComboBox( false, this, "ComboBox_1" );
     mounted->setGeometry( 10, 250, 150, 30 );
@@ -1711,10 +1808,13 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
 
 bool DevicePropsPage::supports( KURL *_kurl )
 {
-    if ( strcmp( _kurl->protocol(), "file" ) != 0 )
+    KURL u( _kurl->url() );
+    KURL u2( u.nestedURL() );
+    
+    if ( strcmp( u2.protocol(), "file" ) != 0 )
 	return false;
 
-    FILE *fh = fopen( _kurl->path(), "rb" );
+    /* FILE *fh = fopen( _kurl->path(), "rb" );
     if ( fh == 0L )
 	return false;
     
@@ -1724,9 +1824,11 @@ bool DevicePropsPage::supports( KURL *_kurl )
     fclose( fh );
     
     if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
-	return false;
+	return false; */
 
-    QFile f( _kurl->path() );
+    QString path = _kurl->path();
+    KURL::decodeURL( path );
+    QFile f( path );
     if ( !f.open( IO_ReadOnly ) )
 	return false;
     
@@ -1745,9 +1847,15 @@ bool DevicePropsPage::supports( KURL *_kurl )
 
 void DevicePropsPage::applyChanges()
 {
-    QFile f( properties->getKURL()->path() );
+    QString path = properties->getKURL()->path();
+    KURL::decodeURL( path );
+    QFile f( path );
     if ( !f.open( IO_ReadWrite ) )
+    {
+	QMessageBox::message(  klocale->translate("KFM Error"), 
+			        klocale->translate("Could not save properties\nPerhaps permissions denied") );
 	return;
+    }
     
     QTextStream pstream( &f );
     KConfig config( &pstream );

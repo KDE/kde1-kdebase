@@ -28,6 +28,9 @@
 #include "root.h"
 #include <config-kfm.h>
 
+#include <klocale.h>
+#define klocale KLocale::klocale()
+
 KBookmarkManager KfmGui::bookmarkManager;
 
 QList<KfmGui> KfmGui::windowList;
@@ -93,11 +96,6 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     windowList.append( this );
 
     debugT("Hi 6\n");
-	if (bTreeView) {
-      bTreeViewInitialized = true;
-	  treeView->initializeTree();
-	}
-    debugT("Hi 6.5 :-)\n");
     if ( _url )
 	view->openURL( _url );
     debugT("Hi 7\n");
@@ -182,7 +180,7 @@ void KfmGui::initStatusBar()
 {
     statusBar = new KStatusBar( this );
  
-    statusBar->insertItem("KFM", 1 );
+    statusBar->insertItem( (char*)klocale->translate("KFM"), 1 );
     // statusBar->insertItem("Some long comment", 2 );
     
     statusBar->show();
@@ -195,7 +193,7 @@ void KfmGui::initMenu()
     
     menuNew = new QPopupMenu;
     CHECK_PTR( menuNew );
-    menuNew->insertItem( "Folder" );
+    menuNew->insertItem( klocale->translate("Folder") );
 
     debugT("Menu 2\n");
 
@@ -207,7 +205,7 @@ void KfmGui::initMenu()
     QDir d( KFMPaths::TemplatesPath() );
     const QFileInfoList *list = d.entryInfoList();
     if ( list == 0L )
-        warning("ERROR: Template does not exist '%s'",
+        warning(klocale->translate("ERROR: Template does not exist '%s'"),
 		KFMPaths::TemplatesPath().data());
     else
     {
@@ -227,45 +225,67 @@ void KfmGui::initMenu()
 
     QPopupMenu *file = new QPopupMenu;
     CHECK_PTR( file );
-    file->insertItem( "New", menuNew );
+    file->insertItem( klocale->translate("New"), menuNew );
     file->insertSeparator();
-    file->insertItem( "New Window", this, SLOT(slotNewWindow()), ALT+Key_N );
+    file->insertItem( klocale->translate("New Window"), 
+		      this, SLOT(slotNewWindow()), ALT+Key_N );
     file->insertSeparator();
-    file->insertItem( "Run", this, SLOT(slotRun()), ALT+Key_R );
-    file->insertItem( "Open Terminal", this, SLOT(slotTerminal()), ALT+Key_E );
+    file->insertItem( klocale->translate("Run"), 
+		      this, SLOT(slotRun()), ALT+Key_R );
+    file->insertItem( klocale->translate("Open Terminal"), 
+		      this, SLOT(slotTerminal()), ALT+Key_E );
     file->insertSeparator();
-    file->insertItem( "Open Location", this, SLOT(slotOpenLocation()), ALT+Key_L );
+    file->insertItem( klocale->translate("Open Location"),
+		      this, SLOT(slotOpenLocation()), ALT+Key_L );
     file->insertSeparator();
-    file->insertItem( "Print...", this, SLOT(slotPrint()), ALT+Key_P );
+    file->insertItem( klocale->translate("Print..."), 
+		      this, SLOT(slotPrint()), ALT+Key_P );
     file->insertSeparator();        
-    file->insertItem( "Close", this, SLOT(slotClose()), ALT+Key_C );
-    file->insertItem( "Quit",  this, SLOT(slotQuit()), ALT+Key_Q );
+    file->insertItem( klocale->translate("Close"), 
+		      this, SLOT(slotClose()), ALT+Key_C );
+    file->insertItem( klocale->translate("Quit"),  
+		      this, SLOT(slotQuit()), ALT+Key_Q );
 
     QPopupMenu *edit = new QPopupMenu;
     CHECK_PTR( edit );
-    edit->insertItem( "Copy", this, SLOT(slotCopy()), CTRL+Key_C );
-    edit->insertItem( "Paste", this, SLOT(slotPaste()), CTRL+Key_V );
-    edit->insertItem( "Move to Trash", this, SLOT(slotTrash()),  ALT+Key_T );
-    edit->insertItem( "Delete", this, SLOT(slotDelete()) );
+    edit->insertItem( klocale->translate("Copy"), this, 
+		      SLOT(slotCopy()), CTRL+Key_C );
+    edit->insertItem( klocale->translate("Paste"), this, 
+		      SLOT(slotPaste()), CTRL+Key_V );
+    edit->insertItem( klocale->translate("Move to Trash"), 
+		      this, SLOT(slotTrash()),  ALT+Key_T );
+    edit->insertItem( klocale->translate("Delete"), this, 
+		      SLOT(slotDelete()) );
     edit->insertSeparator();
-    edit->insertItem( "Select", this, SLOT(slotSelect()), CTRL+Key_S );
+    edit->insertItem( klocale->translate("Select"), this, 
+		      SLOT(slotSelect()), CTRL+Key_S );
 
     mview = new QPopupMenu;
     CHECK_PTR( mview );
     mview->setCheckable(true);
-    mview->insertItem( "Show Dot Files", this, SLOT(slotShowDot()), ALT+Key_D );
-    mview->insertItem( "Show Tree", this, SLOT(slotShowTreeView()) );
-    mview->insertItem( "Visual Schnauzer", this, SLOT(slotShowSchnauzer()) );
+    mview->insertItem( klocale->translate("Show Dot Files"),
+		       this, SLOT(slotShowDot()), ALT+Key_D );
+    mview->insertItem( klocale->translate("Show Tree"), 
+		       this, SLOT(slotShowTreeView()) );
+    mview->insertItem( klocale->translate("Visual Schnauzer"),
+		       this, SLOT(slotShowSchnauzer()) );
     mview->insertSeparator();
-    mview->insertItem( "HTML View", this, SLOT(slotViewHTML()), ALT+Key_H );
-    mview->insertItem( "Icon View", this, SLOT(slotIconView()), ALT+Key_I );
-    mview->insertItem( "Text View", this, SLOT(slotTextView()) );
-    mview->insertItem( "Long View", this, SLOT(slotLongView()), ALT+Key_O );
+    mview->insertItem( klocale->translate("HTML View"),
+		       this, SLOT(slotViewHTML()), ALT+Key_H );
+    mview->insertItem( klocale->translate("Icon View"),
+		       this, SLOT(slotIconView()), ALT+Key_I );
+    mview->insertItem( klocale->translate("Text View"),
+		       this, SLOT(slotTextView()) );
+    mview->insertItem( klocale->translate("Long View"),
+		       this, SLOT(slotLongView()), ALT+Key_O );
     mview->insertSeparator();
-    mview->insertItem( "Split window", this, SLOT(slotSplitWindow()) );
+    mview->insertItem( klocale->translate("Split window"),
+		       this, SLOT(slotSplitWindow()) );
     mview->insertSeparator();
-    mview->insertItem( "Reload Document", view, SLOT(slotReload()), ALT+Key_R );
-    mview->insertItem( "Rescan bindings", this, SLOT(slotRescanBindings()) );
+    mview->insertItem( klocale->translate("Reload Document"),
+		       view, SLOT(slotReload()), ALT+Key_R );
+    mview->insertItem( klocale->translate("Rescan bindings"),
+		       this, SLOT(slotRescanBindings()) );
 
     mview->setItemChecked( mview->idAt( 0 ), showDot );
     mview->setItemChecked( mview->idAt( 1 ), bTreeView );
@@ -290,30 +310,34 @@ void KfmGui::initMenu()
 
     QPopupMenu *tool = new QPopupMenu;
     CHECK_PTR( tool );
-    tool->insertItem( "Find", this, SLOT(slotToolFind()), ALT+Key_S );
+    tool->insertItem( klocale->translate("Find"), this, 
+		      SLOT(slotToolFind()), ALT+Key_S );
 
     bookmarkMenu = new QPopupMenu;
     CHECK_PTR( bookmarkMenu );
-    connect( &bookmarkManager, SIGNAL( changed() ), this, SLOT( slotBookmarksChanged() ) );
+    connect( &bookmarkManager, SIGNAL( changed() ), 
+	     this, SLOT( slotBookmarksChanged() ) );
     QString p = getenv( "HOME" );
     QString bmFile = p + "/.kfm.bookmarks.html";
-    bookmarkMenu->insertItem( "Add Bookmark", this, SLOT(slotAddBookmark()) );
+    bookmarkMenu->insertItem( klocale->translate("Add Bookmark"), 
+			      this, SLOT(slotAddBookmark()) );
     bookmarkManager.read( bmFile );
     
     QPopupMenu *help = new QPopupMenu;
     CHECK_PTR( help );
-    help->insertItem( "About", this, SLOT(slotAbout()) );
-    help->insertItem( "How can I ...", this, SLOT(slotHelp()) );
+    help->insertItem( klocale->translate("About"), this, SLOT(slotAbout()) );
+    help->insertItem( klocale->translate("How can I ..."), 
+		      this, SLOT(slotHelp()) );
 
     menu = new KMenuBar( this );
     CHECK_PTR( menu );
-    menu->insertItem( "File", file );
-    menu->insertItem( "Edit", edit );
-    menu->insertItem( "View", mview );
-    menu->insertItem( "Bookmarks", bookmarkMenu );
-    menu->insertItem( "Tool", tool );
+    menu->insertItem( klocale->translate("File"), file );
+    menu->insertItem( klocale->translate("Edit"), edit );
+    menu->insertItem( klocale->translate("View"), mview );
+    menu->insertItem( klocale->translate("Bookmarks"), bookmarkMenu );
+    menu->insertItem( klocale->translate("Tool"), tool );
     menu->insertSeparator();
-    menu->insertItem( "Help", help );
+    menu->insertItem( klocale->translate("Help"), help );
     menu->show();
     
     setMenu( menu );
@@ -335,41 +359,58 @@ void KfmGui::initToolBar()
     path = KMimeType::getIconPath() + QString("/toolbar/");
     
     pixmap.load(path + "back.xpm");
-    toolbar->insertButton(pixmap, 0, SIGNAL( clicked() ), view, SLOT( slotBack() ), false, "Back");
+    toolbar->insertButton(pixmap, 0, SIGNAL( clicked() ), view, 
+			  SLOT( slotBack() ), false, 
+			  klocale->translate("Back"));
     
     pixmap.load(path + "forward.xpm");
-    toolbar->insertButton(pixmap, 1, SIGNAL( clicked() ), view, SLOT( slotForward() ), false, "Forward");
+    toolbar->insertButton(pixmap, 1, SIGNAL( clicked() ), view, 
+			  SLOT( slotForward() ), false, 
+			  klocale->translate("Forward"));
     
     pixmap.load(path + "home.xpm");
-    toolbar->insertButton(pixmap, 2, SIGNAL( clicked() ), this, SLOT( slotHome() ), true, "Home");
+    toolbar->insertButton(pixmap, 2, SIGNAL( clicked() ), this, 
+			  SLOT( slotHome() ), true, 
+			  klocale->translate("Home") );
     
     toolbar->insertSeparator();
     
     pixmap.load(path + "reload.xpm");
-    toolbar->insertButton(pixmap, 3, SIGNAL( clicked() ), view, SLOT( slotReload() ), true, "Reload");
+    toolbar->insertButton(pixmap, 3, SIGNAL( clicked() ), view, 
+			  SLOT( slotReload() ), true, 
+			  klocale->translate("Reload") );
 
     toolbar->insertSeparator();
     
     pixmap.load(path + "editcopy.xpm");
-    toolbar->insertButton(pixmap, 4, SIGNAL( clicked() ), this, SLOT( slotCopy() ), true, "Copy");
+    toolbar->insertButton(pixmap, 4, SIGNAL( clicked() ), this, 
+			  SLOT( slotCopy() ), true, 
+			  klocale->translate("Copy") );
     
     pixmap.load(path + "editpaste.xpm");
-    toolbar->insertButton(pixmap, 5, SIGNAL( clicked() ), this, SLOT( slotPaste() ), true, "Paste");
+    toolbar->insertButton(pixmap, 5, SIGNAL( clicked() ), this, 
+			  SLOT( slotPaste() ), true, 
+			  klocale->translate("Paste") );
     
     toolbar->insertSeparator();
     
     pixmap.load(path + "help.xpm");
-    toolbar->insertButton(pixmap, 6, SIGNAL( clicked() ), this, SLOT( slotHelp() ), true, "Help");
+    toolbar->insertButton(pixmap, 6, SIGNAL( clicked() ), this, 
+			  SLOT( slotHelp() ), true, 
+			  klocale->translate("Help"));
     
     toolbar->insertSeparator();
     
     pixmap.load(path + "exit.xpm");
-    toolbar->insertButton(pixmap, 7, SIGNAL( clicked() ), this, SLOT( slotStop() ), false, "Stop");
+    toolbar->insertButton(pixmap, 7, SIGNAL( clicked() ), this, 
+			  SLOT( slotStop() ), false, 
+			  klocale->translate("Stop"));
 
     path = KMimeType::getIconPath();
     pixmap.load( path + "/kde1.gif" );
     
-    toolbar->insertButton(pixmap, 8, SIGNAL( clicked() ), this, SLOT( slotNewWindow() ), false );
+    toolbar->insertButton(pixmap, 8, SIGNAL( clicked() ), this, 
+			  SLOT( slotNewWindow() ), false );
     toolbar->setItemEnabled( 8, true );
     
     // Load animated logo
@@ -459,16 +500,14 @@ void KfmGui::slotPrint()
 
 void KfmGui::slotPannerChanged()
 {
-    if ( !bTreeViewInitialized ) {
-	bTreeViewInitialized = true;
-	treeView->initializeTree();
-	}
+    if ( !bTreeViewInitialized )
+	treeView->initializeTree();  
 
     if ( panner->getSeparator() == 0 )
-      bTreeView = false;
-	else
-      bTreeView = true;
-    mview->setItemChecked( mview->idAt( 1 ), bTreeView );
+      mview->setItemChecked( mview->idAt( 1 ), false );
+    else
+      mview->setItemChecked( mview->idAt( 1 ), true );
+    
     resizeEvent( 0L );
 }
 
@@ -479,14 +518,16 @@ void KfmGui::slotSplitWindow()
 
 void KfmGui::slotViewHTML( )
 {
-    bViewHTML = !bViewHTML;
-    mview->setItemChecked( mview->idAt( 4 ), bViewHTML );
+    bViewHTML = true;
+    viewMode = ICON_VIEW;
+    mview->setItemChecked( mview->idAt( 4 ), !mview->isItemChecked( 4 ) );
     view->slotUpdateView();
 }
 
 void KfmGui::slotIconView()
 {
     viewMode = ICON_VIEW;
+    bViewHTML = false;
     mview->setItemChecked( mview->idAt( 5 ), true );
     mview->setItemChecked( mview->idAt( 6 ), false );
     mview->setItemChecked( mview->idAt( 7 ), false );
@@ -496,6 +537,7 @@ void KfmGui::slotIconView()
 void KfmGui::slotLongView()
 {
     viewMode = LONG_VIEW;
+    bViewHTML = false;
     mview->setItemChecked( mview->idAt( 5 ), false );
     mview->setItemChecked( mview->idAt( 6 ), false);
     mview->setItemChecked( mview->idAt( 7 ), true );
@@ -505,6 +547,7 @@ void KfmGui::slotLongView()
 void KfmGui::slotTextView()
 {
     viewMode = TEXT_VIEW;
+    bViewHTML = false;
     mview->setItemChecked( mview->idAt( 5 ), false );
     mview->setItemChecked( mview->idAt( 6 ), true );
     mview->setItemChecked( mview->idAt( 7 ), false );
@@ -533,7 +576,7 @@ void KfmGui::slotPageDown()
 
 void KfmGui::slotSelect()
 {
-    DlgLineEntry l( "Select files:", "", this );
+    DlgLineEntry l( klocale->translate("Select files:"), "", this );
     if ( l.exec() )
     {
 	QString pattern = l.getText();
@@ -550,7 +593,8 @@ void KfmGui::slotBookmarksChanged()
 {
     bookmarkMenu->clear();
     bookmarkMenu->disconnect( this );
-    bookmarkMenu->insertItem( "Add Bookmark", this, SLOT(slotAddBookmark()) );
+    bookmarkMenu->insertItem( klocale->translate("Add Bookmark"), 
+			      this, SLOT(slotAddBookmark()) );
     bookmarkMenu->insertSeparator();
     int idStart = BOOKMARK_ID_BASE;
     fillBookmarkMenu( bookmarkManager.getRoot(), bookmarkMenu, idStart );
@@ -587,12 +631,12 @@ void KfmGui::slotNewFile( int _id )
     
     QString p =  menuNew->text( _id );    
 
-    QString text = "New ";
+    QString text = klocale->translate("New ");
     text += p.data();
     text += ":";
 
     const char *value = "";
-    if ( strcmp( p.data(), "Folder" ) != 0 )
+    if ( strcmp( p.data(), klocale->translate("Folder") ) != 0 )
 	value = p.data();
 
     DlgLineEntry l( text.data(), value, this );
@@ -602,7 +646,7 @@ void KfmGui::slotNewFile( int _id )
 	if ( name.length() == 0 )
 	    return;
 	
-	if ( strcmp( p.data(), "Folder" ) == 0 )
+	if ( strcmp( p.data(), klocale->translate("Folder") ) == 0 )
 	{
 	    KIOJob * job = new KIOJob;
 	    QString u = view->getURL();
@@ -672,8 +716,8 @@ void KfmGui::slotBookmarkSelected( int id )
 	KURL u( bm->getURL() );
 	if ( u.isMalformed() )
 	{
-		debugT("ERROR: Malformed URL\n");
-		return;
+	      warning(klocale->translate("ERROR: Malformed URL"));
+	      return;
 	}
 	
 	view->openURL( bm->getURL() );
@@ -739,7 +783,8 @@ void KfmGui::slotOpenLocation( )
     if ( view->getActiveView()->getURL() )
 	url = view->getActiveView()->getURL();
     
-    DlgLineEntry l( "Open Location:", url.data(), this, true );
+    DlgLineEntry l( klocale->translate("Open Location:"), url.data(), 
+		    this, true );
     if ( l.exec() )
     {
 	QString url = l.getText();
@@ -763,7 +808,7 @@ void KfmGui::slotOpenLocation( )
 	KURL u( url.data() );
 	if ( u.isMalformed() )
 	{
-	    debugT("ERROR: Malformed URL\n");
+	    warning(klocale->translate("ERROR: Malformed URL"));
 	    return;
 	}
 	
@@ -773,7 +818,8 @@ void KfmGui::slotOpenLocation( )
 
 void KfmGui::slotQuit()
 {
-    if ( !QMessageBox::query( "KFM", "Do you really want to quit" ) )
+    if ( !QMessageBox::query( klocale->translate("KFM"), 
+			      klocale->translate("Do you really want to quit") ) )
 	return;
     
     QString file = QDir::homeDirPath();
@@ -796,7 +842,8 @@ void KfmGui::slotClose()
 
 void KfmGui::slotAbout()
 {
-    QMessageBox::message( "About", "KFM 0.8.1\n\r(c) by Torben Weis\n\rweis@kde.org\n\r\n\rand the KFM team", "Ok" );
+    QMessageBox::message( klocale->translate("About"), 
+			  klocale->translate("KFM 0.9.0\n\n(c) by Torben Weis\nweis@kde.org\n\nand the KFM team"), klocale->translate("Ok") );
 }
 
 void KfmGui::slotHelp()
@@ -877,7 +924,7 @@ void KfmGui::slotRemoveWaitingWidget( KHTMLView *_w )
 	animatedLogoTimer->stop();
 	toolbar->setButtonPixmap( 8, *( animatedLogo.at( 0 ) ) );
 	toolbar->setItemEnabled( 7, false );
-	slotSetStatusBar( "Document: Done" );
+	slotSetStatusBar( klocale->translate("Document: Done") );
     }
 
    KURL u( view -> getURL());
@@ -938,7 +985,7 @@ void KfmGui::saveSettings()
 
 KfmGui::~KfmGui()
 {
-    debug("Deleting KfmGui\n");
+    debugT("Deleting KfmGui\n");
     
     debugT("->View\n");
     delete view;

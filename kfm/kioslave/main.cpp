@@ -4,38 +4,40 @@
 #include "main.h"
 #include "kio_errors.h"
 #include "manage.h"
-#include <config-kfm.h>
 
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <time.h>
-
-/*#include "ftplib.h"*/
+#include <signal.h>
+#include <sys/wait.h>
 
 #define FTP_LOGIN "anonymous"
 #define FTP_PASSWD "joedoe@nowhere.crg"
 
 void sig_handler(int);
+void sig_handler2(int);
 
 KIOSlave *slave = 0L;
 
-int main( int argc, char **argv )
+int main(int argc, char **argv)
 {
     if ( argc != 2 )
     {
-	debugT("Usage: kioslave port\n");
+	printf("Usage: kioslave port\n");
 	exit(1);
     }
 
     signal(SIGTERM,sig_handler);
+    signal(SIGCHLD,sig_handler2);
     
     QApplication a( argc, argv );
 
     slave = new KIOSlave( atoi( argv[1] ) );
     
     a.exec();
+	return(0);
 }
 
 void KIOSlave::ProcessError(KProtocol *prot, const char *srcurl)
@@ -45,7 +47,7 @@ void KIOSlave::ProcessError(KProtocol *prot, const char *srcurl)
 
     prot->GetLastError(KError, message, SysError);
 
-    debugT("KIOSlave-ERROR (%s): %s\n",srcurl,message.data());
+    printf("KIOSlave-ERROR (%s): %s\n",srcurl,message.data());
     ipc->fatalError(KError, srcurl, SysError);
 }
 
@@ -55,7 +57,7 @@ KIOSlave::KIOSlave( int _port )
     
     if ( !ipc->isConnected() )
     {
-	debugT("Could not connect to KIO om port %i\n", _port );
+	printf("Could not connect to KIO om port %i\n", _port );
 	exit(1);
     }
 
@@ -63,12 +65,14 @@ KIOSlave::KIOSlave( int _port )
 
     connect( ipc, SIGNAL( copy( const char*, const char*, bool ) ),
 	     this, SLOT( copy( const char*, const char*, bool ) ) );
+    connect( ipc, SIGNAL( get( const char* ) ),
+	     this, SLOT( get( const char* ) ) );
     connect( ipc, SIGNAL( del( const char* ) ), this, SLOT( del( const char* ) ) );
     connect( ipc, SIGNAL( mkdir( const char* ) ), this, SLOT( mkdir( const char* ) ) );
     connect( ipc, SIGNAL( unmount( const char* ) ), this, SLOT( unmount( const char* ) ) );
     connect( ipc, SIGNAL( mount( bool, const char*, const char*, const char* ) ),
 	     this, SLOT( mount( bool, const char*, const char*, const char* ) ) );
-    connect( ipc, SIGNAL( list( const char* ) ), this, SLOT( list( const char* ) ) );
+    connect( ipc, SIGNAL( list( const char*, bool ) ), this, SLOT( list( const char*, bool ) ) );
     connect( ipc, SIGNAL( cleanUp() ), this, SLOT( cleanUp() ) );
     connect( ipc, SIGNAL( getPID() ), this, SLOT( getPID() ) );
 
@@ -82,18 +86,20 @@ void KIOSlave::getPID()
 
 void KIOSlave::mkdir( const char *_url )
 {
-    KURL su( _url );
+	_url = ReformatURL(_url);
+
+    KURL su( TopLevelURL(_url) );
 
     if ( su.isMalformed() )
     {
-		debugT("ERROR: Malformed URL '%s'\n",_url );
+		printf("ERROR: Malformed URL '%s'\n",_url );
 		ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
 		return;
     }
 
-    if(ProtocolSupported(&su))
+    if(ProtocolSupported(_url))
 	{
-		KProtocol *prot = CreateProtocol(&su);
+		KProtocol *prot = CreateProtocol(_url);
 		if(prot->MkDir(&su) != KProtocol::SUCCESS)
 		{
 			ProcessError(prot, _url);
@@ -103,7 +109,7 @@ void KIOSlave::mkdir( const char *_url )
 	}
     else
     {
-		debugT("ERROR: Not implemented\n");
+		printf("ERROR: Not implemented\n");
 		QString err = "Mkdir ";
 		err += _url;
 		ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
@@ -113,217 +119,68 @@ void KIOSlave::mkdir( const char *_url )
     ipc->done();
 }
 
-void KIOSlave::list( const char *_url )
+void KIOSlave::list( const char *_url, bool _bHTML )
 {
-    KURL su( _url );
+    const char *old_url = _url;
+    _url = ReformatURL(_url);
+
+    KURL su( TopLevelURL(_url) );
     if ( su.isMalformed() )
     {
-	debugT("ERROR: Malformed URL '%s'\n",_url );
+	printf("ERROR: Malformed URL '%s'\n",_url );
 	ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
 	return;
     }
-    
-    if ( strcmp( su.protocol(), "tar" ) == 0 )
+
+    printf("MAIN:List starting...\n");
+
+    if (ProtocolSupported(_url))
     {
-	QString outFile;
-	outFile.sprintf( "/tmp/tar%i", time( 0L ) );
-	QString logFile;
-	logFile.sprintf( "/tmp/tarlog%i", time( 0L ) );
-    
-	QStrList files;
+	KProtocolDirEntry *de;
+	KProtocol *prot = CreateProtocol(_url);
 	
-	QString cmd;
-	if ( su.path()[ strlen( su.path() ) - 1 ] == 'z' )
-	    cmd.sprintf( "tar -tvzf %s 1>%s 2>%s", su.path(), outFile.data(), logFile.data() );
-	else
-	    cmd.sprintf( "tar -tvf %s 1>%s 2>%s", su.path(), outFile.data(), logFile.data() );
-
-	system( cmd.data() );
-
-	QString err = testLogFile( logFile.data() );
-	if ( !err.isNull() )
+	printf("MAIN:Direntries starting...\n");
+	prot->AllowHTML( _bHTML );
+	prot->OpenDir(&su);
+	ipc->flushDir(old_url);
+	// Do we get some HTML as response
+	if ( prot->isHTML() )
 	{
-	    unlink( outFile.data() );
-	    unlink( logFile.data() );
-	    QString err2;
-	    err2.sprintf( "%s\n\nError log:\n%s", _url, err.data() );	    
-	    ipc->fatalError( KIO_ERROR_TarError, err2.data(), 0 );
-	    return;
+	    // Let us emit all the HTML
+	    prot->EmitData( ipc );
 	}
-	
-	// Open the output of the tar command
-	QFile f( outFile.data() );
-
-	if ( f.open( IO_ReadOnly ) )
+	else // We get directory entries
 	{
-	    char line[1024];
-
-	    while ( !f.atEnd() )
+	    // Emit them all ...
+	    while( ( de = prot->ReadDir() ) )
 	    {
-		if ( f.readLine( line, 1023 ) > 0 )
-		{
-		    // delete the '\n' at the lines end
-		    line[ strlen( line ) - 1 ] = 0;
-		    files.append( line );
-		}
+		/*
+		  printf("MAIN:Direntry found... %s\n",de->name.data());
+		  printf("*>       isdir: %d\n",de->isdir);
+		  printf("*>        size: %d\n",de->size);
+		  printf("*>        date: %s\n",de->date.data());
+		  printf("*>      access: %s\n",de->access.data());
+		  printf("*> owner/group: %s/%s\n",de->owner.data(),de->group.data());
+		  */
+		ipc->dirEntry(old_url, de->name.data(), de->isdir, de->size,
+			      de->date.data(), de->access.data(),
+			      de->owner.data(), de->group.data());
 	    }
-	    f.close();
+	    printf("MAIN:Direntries ready...\n");
+	    prot->CloseDir();
+	    delete prot;
 	}
-	else
-	{
-	    debugT("ERROR: Could not read '%s'\n",outFile.data());
-	    ipc->fatalError( KIO_ERROR_CouldNotRead, outFile.data(), errno );
-	    return;
-	}
-	
-	// Delete the output file
-	unlink( outFile.data() );
-
-	// Flush the parent directory
-	QString t;
-	t.sprintf( "tar:%s#", su.path() );
-	ipc->flushDir( t.data() );
-
-	char line[1024];
-
-	// Find all files in all directories
-	char *s;
-	for ( s = files.first(); s != 0L; s = files.next() )
-	{
-	    strcpy( line, s );
-	    // Parse the line
-	    bool err = false;
-	    bool isdir = ( line[0] == 'd' );
-	    QString owner;
-	    QString group;
-	    QString access;
-	    QString creationDate;
-	    QString name;
-	    int size;
-			    
-	    char *p2 = line;
-	    char *p = strchr( line, ' ' );
-			    
-	    if ( p == 0L )
-		err = true;
-	    else
-	    {
-		*p = 0;
-		access = p2;
-		debugT("ACCESS = '%s'\n",access.data());
-		p2 = p + 1;
-		
-		    p = strchr( p2, '/' );
-		    if ( p == 0L )
-			err = true;
-		    else
-		    {
-			*p = 0;
-			owner = p2;
-			debugT("OWNER = '%s'\n",owner.data());
-			p2 = p + 1;
-			p = strchr( p2, ' ' );
-			if ( p == 0L )
-			    err = true;
-			else
-			{
-			    *p = 0;
-			    group = p2;
-			    debugT("GROUP = '%s'\n",group.data());
-			    p2 = p + 1;
-			    while ( *p2 == ' ' ) p2++;
-			    p = strchr( p2, ' ' );
-			    if ( p == 0L )
-				err = true;
-			    else
-			    {
-				*p = 0;
-				size = atoi( p2 );
-				debugT("SIZE = '%i'\n",size);
-				p2 = p + 1;
-				p = strchr( p2, ' ' );
-				if ( p == 0L )
-				    err = true;
-				else
-				{
-				    p = strchr( p + 1, ' ' );
-				    if ( p == 0L )
-					err = true;
-				    else
-				    {
-					p = strchr( p + 1, ' ' );
-					if ( p == 0L )
-					    err = true;
-					else
-					{
-					    p = strchr( p + 1, ' ' );
-					    if ( p == 0L )
-						err = true;
-					    else
-					    {
-						*p = 0;
-						creationDate = p2;
-						debugT("DATE = '%s'\n",creationDate.data());
-						p2 = p + 1;
-						name = p2;
-						debugT("NAME = '%s'\n",name.data() );
-					    }
-					}
-				    }
-				}
-			    }   
-			}
-		    }    
-
-	    }
-	    if ( !err )
-	    {
-		if ( isdir )
-		{
-		    t.sprintf( "tar:%s#%s", su.path(), name.data() );
-		    ipc->flushDir( t.data() );
-		    // Delete the trailing '/'
-		    name = name.left( name.length() - 1 ).data();
-		}
-		QString dir = "";
-		int i = name.findRev( "/" );
-		if ( i != -1 )
-		{
-		    dir = name.left( i + 1 ).data();
-		    name = name.data() + i + 1;
-		}
-		if ( isdir )
-		    name += "/";
-		t.sprintf( "tar:%s#%s", su.path(), dir.data() );
-		ipc->dirEntry( t.data(), name.data(), isdir, size, creationDate.data(),
-			       access.data(), owner.data(), group.data() );
-	    }
-	}
-    }
-    else if (ProtocolSupported(&su))
-    {
-		KProtocolDirEntry *de;
-		KProtocol *prot = CreateProtocol(&su);
-
-		prot->OpenDir(&su);
-		ipc->flushDir(_url);
-		while( (de = prot->ReadDir()) != 0L )
-		{
-			ipc->dirEntry( _url, de->name.data(), de->isdir, de->size,
-							de->date.data(), de->access.data(),
-						   de->owner.data(), de->group.data() );
-		}
-		prot->CloseDir();
     }
     else
     {
-	debugT("ERROR: Not implemented\n");
+	printf("ERROR: Not implemented\n");
 	QString err = "List ";
 	err += _url;
 	ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
 	return;
     }
-    
+
+    printf("MAIN:List ready...\n");
     ipc->done();
 }
 
@@ -341,7 +198,7 @@ void KIOSlave::mount( bool _ro, const char *_fstype, const char* _dev, const cha
     else
 	sprintf( buffer, "mount -rt %s %s %s >/tmp/mnt%i\n",_fstype, _dev, _point, t );
 		
-    debugT("EXEC: '%s'\n",buffer);
+    printf("EXEC: '%s'\n",buffer);
     
     system( buffer );
 
@@ -382,7 +239,9 @@ void KIOSlave::unmount( const char *_point )
 
 void KIOSlave::del( const char *_url )
 {
-    KURL su( _url );
+	_url = ReformatURL(_url);
+
+    KURL su( TopLevelURL(_url) );
     if ( su.isMalformed() )
 	return;
     
@@ -392,23 +251,19 @@ void KIOSlave::del( const char *_url )
 
 	struct stat buff;
 	stat( su.path(), &buff );
-
-	struct stat lbuff;
-	lstat( su.path(), &buff );
-
-	// If it is a directory and not a link
-	if ( S_ISDIR( buff.st_mode ) && !S_ISLNK( lbuff.st_mode ) )
+	if ( S_ISDIR( buff.st_mode ) )
 	    erg = rmdir( su.path() );
 	else
 	    erg = unlink( su.path() );
 	
 	if ( erg != 0 )
 	{
-	    debugT("ERROR: Could not delete '%s'\n",_url );
+	    printf("ERROR: Could not delete '%s'\n",_url );
 	    ipc->fatalError( KIO_ERROR_CouldNotDelete, _url, errno );
 	    return;
 	}
     }
+#ifdef TODO
     else if ( strcmp( su.protocol(), "tar" ) == 0 )
     {
 	QString tar = su.path();
@@ -417,7 +272,7 @@ void KIOSlave::del( const char *_url )
 	{
 	    if ( !lockTgz( su.path() ) )
 		return;
-	    lockedTgzModified = true;
+	    lockedTgzModified = TRUE;
 	    tar = lockedTgzTemp.data();
 	}
 
@@ -445,7 +300,6 @@ void KIOSlave::del( const char *_url )
     }
     else if ( strcmp( su.protocol(), "ftp" ) == 0 )
     {
-#ifdef TODO
 	// TODO: Port not implemented!!!
 	// if ( !lockFTP( su.host(), su.port(), FTP_LOGIN, FTP_PASSWD ) )
         QString user = su.user();
@@ -469,19 +323,19 @@ void KIOSlave::del( const char *_url )
 
 	if ( !erg )
 	{
-	    debugT("ERROR: Could not delete '%s'\n",_url );
+	    printf("ERROR: Could not delete '%s'\n",_url );
 	    ipc->fatalError( KIO_ERROR_CouldNotDelete, _url, errno );
 	    return;
 	}
-#endif
     }
+#endif
     else
     {
-	debugT("ERROR: Not implemented\n");
-	QString err = "Delete ";
-	err += _url;
-	ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
-	return;
+		printf("ERROR: Not implemented\n");
+		QString err = "Delete ";
+		err += _url;
+		ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
+		return;
     }
     
     ipc->done();
@@ -490,44 +344,47 @@ void KIOSlave::del( const char *_url )
 
 void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwriteExistingFiles )
 {
-    debugT("******** COPY '%s' to '%s\n",_src_url,_dest_url);
-    
-    KURL su( _src_url );
+    printf("******** COPY '%s' to '%s\n",_src_url,_dest_url);
+    _src_url = ReformatURL(_src_url);
+ 
+    KURL su(TopLevelURL(_src_url));
     if ( su.isMalformed() )
     {
-	debugT("ERROR: Malformed URL '%s'\n",_src_url );
-	ipc->fatalError( KIO_ERROR_MalformedURL, _src_url, 0 );
-	return;
+		printf("ERROR: Malformed URL '%s'\n",_src_url );
+		ipc->fatalError( KIO_ERROR_MalformedURL, _src_url, 0 );
+		return;
     }
     
-    KURL du( _dest_url );
+    _dest_url = ReformatURL(_dest_url);
+
+    KURL du(TopLevelURL(_dest_url));
     if ( du.isMalformed() )
     {
-	debugT("ERROR: Malformed URL '%s'\n",_dest_url );
-	ipc->fatalError( KIO_ERROR_MalformedURL, _dest_url, 0 );
-	return;
+		printf("ERROR: Malformed URL '%s'\n",_dest_url );
+		ipc->fatalError( KIO_ERROR_MalformedURL, _dest_url, 0 );
+		return;
     }
 
-    if( ProtocolSupported(&su) && ProtocolSupported(&du) )
+    if(ProtocolSupported(_src_url) && ProtocolSupported(_dest_url))
     {
-	KProtocol *src_prot = CreateProtocol(&su);
-	KProtocol *dest_prot = CreateProtocol(&du);
+		KProtocol *src_prot = CreateProtocol(_src_url);
+		KProtocol *dest_prot = CreateProtocol(_dest_url);
+
+		int destmode = KProtocol::WRITE;
+		if( _overwriteExistingFiles ) destmode |= KProtocol::OVERWRITE;
 	
-	int destmode = KProtocol::WRITE;
-	if( _overwriteExistingFiles ) destmode |= KProtocol::OVERWRITE;
-	
-	if( dest_prot->Open(&du, destmode) != KProtocol::SUCCESS )
-	{
-	    ProcessError( dest_prot, _dest_url );
-	    return;
-	}
-	
-	debugT("Open src\n");
-	if( src_prot->Open(&su, KProtocol::READ) != KProtocol::SUCCESS )
-	{
-	    ProcessError(src_prot, _src_url);
-	    return;
-	}
+		if(dest_prot->Open(&du, destmode) != KProtocol::SUCCESS)
+		{
+	    	ProcessError(dest_prot, _dest_url);
+	    	return;
+		}
+
+		printf("Open src\n");
+		if(src_prot->Open(&su, KProtocol::READ) != KProtocol::SUCCESS)
+		{
+	    	ProcessError(src_prot, _src_url);
+	    	return;
+		}
 
 /************************************** has to be adapted to match protocols *
 	copyDestFile = out;
@@ -539,91 +396,54 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
 	copyDestFile = 0L;
 ******************************************************************************/
 
-	int c = 0;
-	int last = 0;
-	int l = 1;
-	long size = src_prot->Size();
-	char buffer[4096];
-	
-	debugT("Copyloop starting\n");
-	while ( !src_prot->atEOF() )
-	{
-	    debugT("read\n");
-	    if ( ( l = src_prot->Read( buffer, 4096 ) ) < 0 )
-	    {
-		debugT("read error (%ld)\n",l);
-		ProcessError(src_prot, _src_url);
-		return;
-	    }
-	    debugT("write\n");
-	    if ( dest_prot->Write(buffer, l) < l )
-	    {
-		ProcessError(dest_prot, _dest_url);
-		return;
-	    }
-	    debugT("progress\n");
-	    c += l;
-	    if ( size == 0 )
-		ipc->progress( 100 );
-	    else if ( ( c * 100 / size ) != last )
-	    {
-		last = ( c * 100 / size );
-		debugT("percent %i\n", last );
-		ipc->progress( last );
-	    }
-	}
-	debugT("ready: Close\n"); 
-	src_prot->Close();
-	dest_prot->Close();
+		long c = 0, last = 0, l = 1;
+		long size = src_prot->Size();
+		char buffer[4096];
 
-	int permissions = src_prot->GetPermissions( su );
-	debugT("Got Permissions '%i'\n",permissions);
-	dest_prot->SetPermissions( du, permissions );
-	
-	debugT("delete\n");
-	delete src_prot;
-	delete dest_prot;
-	
-	debugT("******** COPY: Job completed using ProtocolManagement!\n");
-	ipc->done();
-	return;
-    }
+		printf("Copyloop starting\n");
+		while ( !src_prot->atEOF() )
+		{
+			printf("read\n");
+			if ((l = src_prot->Read( buffer, 4096 ) ) < 0)
+			{
+			    printf("read error (%ld)\n",l);
+			    ProcessError(src_prot, _src_url);
+			    return;
+			}
+			printf("write\n");
+			if (dest_prot->Write(buffer, l) < l )
+			{
+			    ProcessError(dest_prot, _dest_url);
+			    return;
+			}
+			printf("progress\n");
+			c += l;
+			if ( ( c * 100 / size ) != last )
+			{
+			    last = ( c * 100 / size );
+			    printf("percent %i\n", last );
+			    ipc->progress( last );
+			}
+		}
+	   	printf("ready: Close\n"); 
+		src_prot->Close();
+		dest_prot->Close();
 
-    if( strcmp( su.protocol(), "tar" ) == 0 && strcmp( du.protocol(), "file" ) == 0 )
-    {
-	struct stat buff;
-	if ( stat( du.path(), &buff ) == 0 && !_overwriteExistingFiles )
-	{
-	    ipc->fatalError( KIO_ERROR_FileExists, _dest_url, errno );	
-	    return;
-	}
-	
-	QString tar = su.path();
+		int permissions = src_prot->GetPermissions( su );
+		printf("Got Permissions '%i'\n",permissions);
+		dest_prot->SetPermissions( du, permissions );         
 		
-	QString logFile;
-	logFile.sprintf( "/tmp/tarlog%i", time( 0L ) );
-
-	QString cmd;
-	if ( su.path()[ strlen( su.path() ) - 1 ] == 'z' )
-	    cmd.sprintf( "tar -xzOf %s %s 1> %s 2> %s ", su.path(), su.reference(), du.path(), logFile.data() );
-	else
-	    cmd.sprintf( "tar -xOf %s %s 1> %s 2> %s ", su.path(), su.reference(), du.path(), logFile.data() );
-	system( cmd.data() );
+		printf("delete\n");
+		delete src_prot;
+		delete dest_prot;
 	
-	QString err = testLogFile( logFile.data() );
-	if ( !err.isNull() )
-	{
-	    unlink( du.path() );
-	    unlink( logFile.data() );
-	    QString err2;
-	    err2.sprintf( "%s\n\nError log:\n%s", _src_url, err.data() );	    
-	    ipc->fatalError( KIO_ERROR_TarError, err2.data(), 0 );
-	    return;
-	}
+		printf("******** COPY: Job completed using ProtocolManagement!\n");
+		ipc->done();
+		return;
     }
     else
     {
-		debugT("ERROR: Not implemented\n");
+		printf("ERROR: Not implemented\n");
 		QString err = "Copy ";
 		err += _src_url;
 		err += " to ";
@@ -635,147 +455,86 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
     ipc->done();
 }
 
-bool KIOSlave::lockFTP( const char *_host, int _port, const char* , const char *_passwd )
+void KIOSlave::get( const char *_url )
 {
-#ifdef TODO
-    if ( strcmp( _host, lockedFTPHost.data() ) == 0 && _port == lockedFTPPort &&
-	 strcmp( _login, lockedFTPLogin.data() ) == 0 && strcmp( _passwd, lockedFTPPasswd.data() ) == 0 )
-	return true;
-    
-    unlockFTP();
-    
-    lockedFTPHost = _host;
-    lockedFTPHost.detach();
-    lockedFTPPort = _port;
-    lockedFTPLogin = _login;
-    lockedFTPLogin.detach();
-    lockedFTPPasswd = _passwd;
-    lockedFTPPasswd.detach();
-
-    if ( !ftpOpen( _host ) )
+    printf("******** GET '%s'\n",_url);
+    _url = ReformatURL(_url);
+ 
+    KURL su(TopLevelURL(_url));
+    if ( su.isMalformed() )
     {
-	debugT("ERROR: Could not connect\n");
-	ipc->fatalError( KIO_ERROR_CouldNotConnect, _host, 0 );
-	return false;
+	printf("ERROR: Malformed URL '%s'\n",_url );
+	ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
+	return;
     }
     
-    debugT("Login\n");
+    if( ProtocolSupported( _url ) )
+    {
+		KProtocol *src_prot = CreateProtocol(_url);
+
+		connect( src_prot, SIGNAL( mimeType( const char* ) ),
+			 ipc, SLOT( mimeType( const char* ) ) );
+		connect( src_prot, SIGNAL( redirection( const char* ) ),
+			 ipc, SLOT( redirection( const char* ) ) );
+		connect( src_prot, SIGNAL( info( const char* ) ),
+			 ipc, SLOT( info( const char* ) ) );
+
+		printf("Open src\n");
+		if(src_prot->Open(&su, KProtocol::READ) != KProtocol::SUCCESS)
+		{
+		    ProcessError( src_prot, _url );
+		    return;
+		}
+
+		long c = 0, last = 0, l = 1;
+		long size = src_prot->Size();
+		char buffer[1025];
+
+		printf("Copyloop starting\n");
+		while ( !src_prot->atEOF() )
+		{
+			printf("read\n");
+			if ((l = src_prot->Read( buffer, 1024 ) ) < 0)
+			{
+			    printf("read error (%ld)\n",l);
+			    ProcessError(src_prot, _url);
+			    return;
+			}
+			buffer[l] = 0;
+			ipc->data( buffer );
+			printf("progress\n");
+			c += l;
+			if ( ( c * 100 / size ) != last )
+			{
+			    last = ( c * 100 / size );
+			    printf("percent %i\n", last );
+			    ipc->progress( last );
+			}
+		}
+	   	printf("ready: Close\n"); 
+		src_prot->Close();
+		
+		printf("delete\n");
+		delete src_prot;
 	
-    if ( !ftpLogin( lockedFTPLogin.data(), lockedFTPPasswd.data() ) )
+		printf("******** COPY: Job completed using ProtocolManagement!\n");
+		ipc->done();
+		return;
+    }
+    else
     {
-	debugT("ERROR: Could not login\n");
-	QString err;
-	err.sprintf( "ftp://%s:%s@%s", _login, _passwd, _host );
-	ipc->fatalError( KIO_ERROR_CouldNotLogin, err.data(), 0 );
-	return false;
+		printf("ERROR: Not implemented\n");
+		QString err = "GET ";
+		err += _url;
+		ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
+		return;
     }
 
-    return true;
-#else
-//Stephan: Only to avoid warnings
-_host = 0L;
-_port = 0;
-_passwd = 0L;
-return true;
-#endif
-}
-
-bool KIOSlave::unlockFTP()
-{
-#ifdef TODO
-    if ( lockedFTPHost.data() != 0L )
-	if ( lockedFTPHost.data()[0] != 0 )
-	{
-	    ftpQuit();
-	    lockedFTPHost = "";
-	}
-
-    return true;
-#else //Stephan: to avoid warning
-   return true;
-#endif
-}
-
-bool KIOSlave::lockTgz( const char *_name )
-{
-    if ( strcmp( _name, lockedTgzSource.data() ) == 0 )
-	return true;
-    
-    if ( !unlockTgz() )
-	return false;
-
-    QString logFile;
-    logFile.sprintf( "/tmp/gziplog%i", time( 0L ) );
-	    
-    QString cmd;
-    lockedTgzSource = _name;
-    lockedTgzSource.detach();
-    lockedTgzModified = false;
-    lockedTgzTemp.sprintf( "tmp%i.tar", time( 0L ) );
-    cmd.sprintf("gzip -d <%s 1>%s 2>%S", _name, lockedTgzTemp.data(), logFile.data() );
-    system( cmd );
-
-    QString err = testLogFile( logFile.data() );
-    if ( err.isNull() )
-	return true;
-
-    unlink( lockedTgzTemp.data() );
-    unlink( logFile.data() );
-    lockedTgzSource = "";
-    QString err2;
-    err2.sprintf( "%s\n\nError log:\n%s", _name, err.data() );	    
-    ipc->fatalError( KIO_ERROR_GzipError, err2.data(), 0 );
-
-    return false;
-}
-
-bool KIOSlave::unlockTgz()
-{
-    if ( lockedTgzSource.data() == 0L )
-	return true;
-    if ( lockedTgzSource.data()[0] == 0 )
-	return true;
-    
-    if ( lockedTgzModified )
-    {
-	QString logFile;
-	logFile.sprintf( "/tmp/gziplog%i", time( 0L ) );
-
-	QString cmd;
-	cmd.sprintf( "gzip <%s 1>%s 2>%s", lockedTgzTemp.data(), lockedTgzSource.data(), logFile.data() );
-	system( cmd.data() );
-
-	QString err = testLogFile( logFile.data() );
-	if ( !err.isNull() )
-	{
-	    unlink( logFile.data() );
-	    QString err2;
-	    err2.sprintf( "%s\n\nError log:\n%s", lockedTgzTemp.data(), err.data() );	    
-	    ipc->fatalError( KIO_ERROR_TarError, err2.data(), 0 );
-	    lockedTgzSource = "";
-	    return false;
-	    
-	}
-    }
-    
-    unlink( lockedTgzTemp );
-
-    lockedTgzSource = "";
-
-    return true;
+    ipc->done();
 }
 
 void KIOSlave::cleanUp()
 {
-    bool ok1 = true;
-    bool ok2 = true;
-
-    ok1 = unlockTgz();
-    ok2 = unlockFTP();
-    
-    if ( !ok1 || !ok2 )
-	return;
-    
     ipc->done();
 }
 
@@ -823,14 +582,35 @@ QString KIOSlave::testLogFile( const char *_filename )
     return QString( err.data() );
 }
 
+// Prevent us from zombies
+void sig_handler2( int )
+{
+    int pid;
+    int status;
+    
+    while( 1 )
+    {
+	pid = waitpid( -1, &status, WNOHANG );
+	if ( pid <= 0 )
+	{
+	    // Reinstall signal handler, since Linux resets to default after
+	    // the signal occured ( BSD handles it different, but it should do
+	    // no harm ).
+	    signal(SIGCHLD,sig_handler2);
+	    return;
+	}
+    }
+}
+
 void sig_handler(int _sig)
 {
-    debugT("GOT TERM\n");
+    printf("GOT TERM\n");
     if ( _sig == SIGTERM )
 	if ( slave != 0L )
 	    slave->terminate();
     exit(0);
 }
+
 
 #include "main.moc"
 

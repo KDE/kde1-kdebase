@@ -1,3 +1,6 @@
+#ifndef _ftp_h
+#define _ftp_h
+
 #include "protocol.h"
 #include "kio_errors.h"
 
@@ -12,19 +15,15 @@
 #include <sys/time.h>
 #include <ctype.h>
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif    
-
 class KProtocolFTP :public KProtocol
 {
+    Q_OBJECT
 private:
 	FILE *dirfile;
 	int dirfd;
 	int sData,sControl,sDatal;
 
-	// Stephan: Aua
-	// #define SETSOCKOPT_OPTVAL_TYPE (void *)
+	#define SETSOCKOPT_OPTVAL_TYPE (void *)
 
 	#define FTP_BUFSIZ 1024
 	#define ACCEPT_TIMEOUT 30
@@ -75,10 +74,12 @@ public:
 	int Close();
 	long Size();
 
-	int Read(void *buffer, int len);
-	int Write(void *buffer, int len);
+	long Read(void *buffer, long len);
+	long Write(void *buffer, long len);
 
 	int atEOF();
 
 	int MkDir(KURL *url);
 };
+
+#endif

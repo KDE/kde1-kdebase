@@ -2,6 +2,9 @@
 #include <stdio.h>
 #include <config-kfm.h>
 
+#include <klocale.h>
+#define klocale KLocale::klocale()
+
 KRenameWin::KRenameWin(QWidget *parent, const char *_src, const char *_dest, bool _modal ) :
     QDialog ( parent, "" , _modal )
 {
@@ -12,32 +15,37 @@ KRenameWin::KRenameWin(QWidget *parent, const char *_src, const char *_dest, boo
     src = _src;
     dest = _dest;
     
-    setCaption("KFM Warning");
+    setCaption(klocale->translate("KFM Warning"));
     
-    b0 = new QPushButton( "Overwrite", this, "Overwrite");
+    b0 = new QPushButton( klocale->translate("Overwrite"),
+			  this, "Overwrite");
     b0->setGeometry( 10, 170, 90, 30 );
     connect(b0, SIGNAL(clicked()), this, SLOT(b0Pressed()));
 
-    b1 = new QPushButton( "Overwrite All", this, "Overwrite All");
+    b1 = new QPushButton( klocale->translate("Overwrite All"), 
+			  this, "Overwrite All");
     b1->setGeometry( 110, 170, 90, 30 );
     connect(b1, SIGNAL(clicked()), this, SLOT(b1Pressed()));
     
-    b2 = new QPushButton( "Skip", this, "Skip");
+    b2 = new QPushButton( klocale->translate("Skip"), 
+			  this, "Skip");
     b2->setGeometry( 210, 170, 90, 30 );
     connect(b2, SIGNAL(clicked()), this, SLOT(b2Pressed()));
 
-    b3 = new QPushButton( "Rename", this, "Rename");
+    b3 = new QPushButton( klocale->translate("Rename"), 
+			  this, "Rename");
     b3->setGeometry( 310, 170, 90, 30 );
     connect(b3, SIGNAL(clicked()), this, SLOT(b3Pressed()));
 
-    b4 = new QPushButton( "Cancel", this, "Cancel");
+    b4 = new QPushButton( klocale->translate("Cancel"), this, "Cancel");
     b4->setGeometry( 410, 170, 90, 30 );
     connect(b4, SIGNAL(clicked()), this, SLOT(b4Pressed()));
     
     QLabel *lb = new QLabel( src.data(), this );
     lb->setGeometry( 10, 10, 350, 20 );
 
-    lb = new QLabel( "already exists. Overwrite with", this );
+    lb = new QLabel( klocale->translate("already exists. Overwrite with"), 
+		     this );
     lb->setGeometry( 10, 40, 350, 20 );
 
     QString str;
@@ -45,7 +53,7 @@ KRenameWin::KRenameWin(QWidget *parent, const char *_src, const char *_dest, boo
     lb = new QLabel( str.data(), this );
     lb->setGeometry( 10, 70, 350, 20 );
     
-    lb = new QLabel( "Or rename to", this );
+    lb = new QLabel( klocale->translate("Or rename to"), this );
     lb->setGeometry( 10, 110, 350, 20 );
 
     lineEdit = new QLineEdit( this );

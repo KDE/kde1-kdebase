@@ -1,6 +1,5 @@
 #include "ftp.h"
-#include <config-kfm.h>
-#include <errno.h>
+
 #define SUCCESS 0
 #define FAIL -1
 
@@ -122,7 +121,7 @@ int KProtocolFTP::ftpOpen(const char *host)
     struct servent *pse;
     int on=1;
 
-	debugT("A\n");
+	printf("A\n");
     ftplib_lastresp[0] = '\0';
     memset(&sin,0,sizeof(sin));
     sin.sin_family = AF_INET;
@@ -139,7 +138,7 @@ int KProtocolFTP::ftpOpen(const char *host)
 		perror("gethostbyname");
 		return 0;
     }
-	debugT("B\n");
+	printf("B\n");
     memcpy((char *)&sin.sin_addr, phe->h_addr, phe->h_length);
     sControl = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
     if (sControl == -1)
@@ -148,14 +147,14 @@ int KProtocolFTP::ftpOpen(const char *host)
 		return 0;
     }
     if (setsockopt(sControl,SOL_SOCKET,SO_REUSEADDR,
-		   (char*)&on, sizeof(on)) == -1)
+		   SETSOCKOPT_OPTVAL_TYPE &on, sizeof(on)) == -1)
     {
 		perror("setsockopt");
 		close(sControl);
 		return 0;
     }
-	debugT("C\n");
-    if (connect(sControl, (struct sockaddr *)&sin, sizeof(sin)) == -1)
+	printf("C\n");
+    if ( ::connect(sControl, (struct sockaddr *)&sin, sizeof(sin)) == -1)
     {
 		perror("connect");
 		close(sControl);
@@ -169,14 +168,14 @@ int KProtocolFTP::ftpOpen(const char *host)
 		return 0;
     }
     nControl->handle = sControl;
-	debugT("D\n");
+	printf("D\n");
     if (readresp('2') == 0)
     {
 		close(sControl);
 		free(nControl);
 		return 0;
     }
-	debugT("E\n");
+	printf("E\n");
     return 1;
 }
 
@@ -208,22 +207,22 @@ int KProtocolFTP::ftpLogin( const char *user, const char *pass)
 {
     char tempbuf[64];
 
-	debugT("LOGIN!\n");
-    debugT("ftplib_lastresp[0] = '\\0';\n");
+	printf("LOGIN!\n");
+    printf("ftplib_lastresp[0] = '\\0';\n");
     ftplib_lastresp[0] = '\0';
-	debugT("sprintf(tempbuf,...)\n");
+	printf("sprintf(tempbuf,...)\n");
     sprintf(tempbuf,"user %s",user);
-	debugT("init rspbuf\n");
+	printf("init rspbuf\n");
     rspbuf[0]='\0';
-	debugT("Sending login %s\n",user);
+	printf("Sending login %s\n",user);
     if (!ftpSendCmd(tempbuf,'3'))
     {
-		debugT("accepted w/o pass\n");
+		printf("accepted w/o pass\n");
 		if (rspbuf[0]=='2') return 1; /* no password required */
 		return 0;
     }      
     sprintf(tempbuf,"pass %s",pass);
-	debugT("Sending pass\n");
+	printf("Sending pass\n");
     return ftpSendCmd(tempbuf,'2');
 }
 
@@ -239,7 +238,7 @@ int KProtocolFTP::ftpPort(void)
 		struct sockaddr_in in;
     } sin;
     struct linger lng = { 0, 0 };
-    ksize_t l;
+    int l;
     char buf[64];
     int on=1;
 
@@ -253,14 +252,14 @@ int KProtocolFTP::ftpPort(void)
 		return 0;
     }
     if (setsockopt(sDatal,SOL_SOCKET,SO_REUSEADDR,
-		   (char*) &on,sizeof(on)) == -1)
+		   SETSOCKOPT_OPTVAL_TYPE &on,sizeof(on)) == -1)
     {
 		perror("setsockopt");
 		close(sDatal);
 		return 0;
     }
     if (setsockopt(sDatal,SOL_SOCKET,SO_LINGER,
-		   (char*)&lng,sizeof(lng)) == -1)
+		   SETSOCKOPT_OPTVAL_TYPE &lng,sizeof(lng)) == -1)
     {
 		perror("setsockopt");
 		close(sDatal);
@@ -341,7 +340,7 @@ int KProtocolFTP::ftpMkdir( const char *path )
 {
     int sData;
     struct sockaddr addr;
-    ksize_t l;
+    int l;
     fd_set mask;
 
     FD_ZERO(&mask);
@@ -419,11 +418,11 @@ KProtocolFTP::KProtocolFTP()
 
 KProtocolFTP::~KProtocolFTP()
 {
-	debugT("entering destructor...\n");
+	printf("entering destructor...\n");
 	if(dirfile) CloseDir();
-	debugT("dirfile done.\n");
+	printf("dirfile done.\n");
 	Close();
-	debugT("leaving destructor\n");
+	printf("leaving destructor\n");
 }
 
 int KProtocolFTP::OpenConnection(const char *command, const char *path, char mode)
@@ -442,17 +441,17 @@ int KProtocolFTP::OpenConnection(const char *command, const char *path, char mod
 	else
     	strcpy(buf,command);
 
-	debugT("sending command '%s'\n",buf);
+	printf("sending command '%s'\n",buf);
     if (!ftpSendCmd(buf,'1')) return Error(KIO_ERROR_CouldNotConnect,
 				"Error requesting file/dir from server");
     if ((sData = accept_connect()) < 0)
     {
 		if (sData == -2) perror("accept");
-		else  debugT("ERROR!: %s",rspbuf);
+		else printf("ERROR!: %s",rspbuf);
 		return Error(KIO_ERROR_CouldNotConnect,
 				"Could not establish data connection",errno);
     }
-	debugT("very good, socket is %d\n",sData);
+	printf("very good, socket is %d\n",sData);
 	return SUCCESS;
 }
 
@@ -461,15 +460,15 @@ int KProtocolFTP::CloseConnection()
 	/** readresp('2') ?? gibt an ob Transmission erfolgreich war! **/
 	if(sData != -1)
 	{
-		debugT("sData:A\n");
+		printf("sData:A\n");
     	shutdown(sData,2);
-		debugT("sData:B\n");
+		printf("sData:B\n");
     	close(sData);
 		sData = -1;
 	}
     if(sDatal != -1)
 	{
-		debugT("sDatal:A\n");
+		printf("sDatal:A\n");
 		close(sDatal);
 		sDatal = -1;
 	}
@@ -531,7 +530,7 @@ int KProtocolFTP::CloseDir()
 int KProtocolFTP::Connect(KURL *url)
 {
 	QString user, passwd;
-	debugT("connecting %s\n",url->host());
+	printf("connecting %s\n",url->host());
     if (!ftpOpen(url->host()))
 		return(Error(KIO_ERROR_CouldNotConnect, "Could not connect", 0));
 
@@ -545,11 +544,11 @@ int KProtocolFTP::Connect(KURL *url)
 		user = FTP_LOGIN;
 		passwd = FTP_PASSWD;
 	}
-	debugT("Login: \n");
+	printf("Login: \n");
 	if(!ftpLogin(user,passwd))
 		return(Error(KIO_ERROR_CouldNotLogin, "invalid passwd or username"));
 
-	debugT("... connection established!\n");
+	printf("... connection established!\n");
 	return(SUCCESS);
 }
 
@@ -561,7 +560,7 @@ int KProtocolFTP::Open(KURL *url, int mode)
 		int rc = OpenConnection("retr",url->path(),'I');
 		if(rc == FAIL)
 			return Error(KIO_ERROR_CouldNotConnect,"Error building connection");
-    	debugT("Calculating size\n");
+    	printf("Calculating size\n");
     
     	// Read the size from the response string
     	if ( strlen( rspbuf ) > 4 )
@@ -570,7 +569,7 @@ int KProtocolFTP::Open(KURL *url, int mode)
 			if ( p != 0L ) size = atol( p + 1 );
     	}
 
-    	debugT("Size is %ld (rc is %d)\n",size ,rc);
+    	printf("Size is %ld (rc is %d)\n",size ,rc);
 		bytesleft = size;
 		return(SUCCESS);
 	}
@@ -595,21 +594,21 @@ long KProtocolFTP::Size()
 
 int KProtocolFTP::atEOF()
 {
-	debugT("atEOF? ... %s! bytesleft =  %ld\n",(bytesleft<=0)?"yes":"no",bytesleft);
+	printf("atEOF? ... %s! bytesleft =  %ld\n",(bytesleft<=0)?"yes":"no",bytesleft);
 	return(bytesleft <= 0);
 }
 
-int KProtocolFTP::Read(void *buffer, int len)
+long KProtocolFTP::Read(void *buffer, long len)
 {
-	debugT("Trying to read...\n");
+	printf("Trying to read...\n");
 	int n = read(sData,buffer,len);
 	bytesleft -= n;
 	return(n);
 }
 
-int KProtocolFTP::Write(void *buffer, int len)
+long KProtocolFTP::Write(void *buffer, long len)
 {
-	debugT("Trying to write...\n");
+	printf("Trying to write...\n");
 	return(write(sData,buffer,len));
 }
 
@@ -621,3 +620,5 @@ int KProtocolFTP::MkDir(KURL *url)
 	ftpQuit();
 	return(SUCCESS);
 }
+
+#include "ftp.moc"

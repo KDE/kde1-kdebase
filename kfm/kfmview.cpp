@@ -32,6 +32,9 @@
 #include "kfmpaths.h"
 #include <config-kfm.h>
 
+#include <klocale.h>
+#define klocale KLocale::klocale()
+
 QStrList KfmView::clipboard;
 
 KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_parent_view )
@@ -59,8 +62,8 @@ KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_p
     forwardStack.setAutoDelete( false );
 
     childViewList.setAutoDelete( false );
-    
-    initFileManagers();
+
+    manager = new KFMManager( this );
 
     dropZone = new KDNDDropZone( view , DndURL );
     connect( dropZone, SIGNAL( dropAction( KDNDDropZone *) ),
@@ -82,16 +85,6 @@ KHTMLView* KfmView::newView( QWidget *_parent, const char *_name, int )
     return v;
 }
 
-void KfmView::initFileManagers( )
-{
-    activeManager = 0L;
-    fileManager = new KFileManager( this );
-    tarManager = new KTarManager( this );
-    ftpManager = new KFtpManager( this );
-    httpManager = new KHttpManager( this );
-    cgiManager = new KCgiManager( this );
-}
-
 KfmView::~KfmView()
 {
     debugT("Deleting KfmView\n");
@@ -100,30 +93,32 @@ KfmView::~KfmView()
 	delete dropZone;
     dropZone = 0L;
     
-    delete fileManager;
-    delete ftpManager;
-    delete tarManager;
-    delete httpManager;
-    delete cgiManager;
+    delete manager;
  
     delete htmlCache;
     
     debugT("Deleted\n");
 }
 
+void KfmView::begin( const char *_url = 0L, int _x_offset = 0, int _y_offset = 0 )
+{
+    // Delete all frames in this view
+    childViewList.clear();
+    KHTMLView::begin( _url, _x_offset, _y_offset );
+}
+
 void KfmView::splitWindow()
 {
-    if ( !activeManager )
-	return;
-    
-    view->begin( activeManager->getURL() );
+    // A bad Hack.
+    // Use a CGI script instead!
+    view->begin( manager->getURL() );
     view->parse();
     view->write( "<HTML><HEAD><TITLE>" );
-    view->write( activeManager->getURL() );
+    view->write( manager->getURL() );
     view->write( "</TITLE></HEAD><FRAMESET COLS=\"50%,50%\"><FRAME SRC=\"" );
-    view->write( activeManager->getURL() );
+    view->write( manager->getURL() );
     view->write( "\"><FRAME SRC=\"" );
-    view->write( activeManager->getURL() );
+    view->write( manager->getURL() );
     view->write( "\"></FRAMESET></HTML>" );
     view->end();
 }
@@ -132,14 +127,12 @@ void KfmView::slotRun()
 {
     QString dir = getenv( "HOME" );
     
-    if ( activeManager == fileManager )
-    {
-	KURL u( fileManager->getURL() );
+    KURL u( manager->getURL() );
+    if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
 	dir = u.path();
-    }
     
     QString cmd;
-    cmd.sprintf( "cd %s; acli &", dir.data() );
+    cmd.sprintf( "cd %s; kcli &", dir.data() );
     system( cmd.data() );
 }
 
@@ -152,27 +145,23 @@ void KfmView::slotTerminal()
 
     QString dir = getenv( "HOME" );
     
-    if ( activeManager == fileManager )
-    {
-	KURL u( fileManager->getURL() );
+    KURL u( manager->getURL() );
+    if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
 	dir = u.path();
-    }
     
     QString cmd;
     cmd.sprintf( "cd %s; %s &", dir.data(), term.data() );
     system( cmd.data() );
 }
 
-
 void KfmView::slotStop()
 {
-    if ( activeManager )
-	activeManager->stop();
+    manager->stop();
 }
 
 void KfmView::slotReload()
 {
-    activeManager->openURL( activeManager->getURL(), true );
+    manager->openURL( manager->getURL(), true );
 }
 
 void KfmView::slotUpdateView()
@@ -184,36 +173,31 @@ void KfmView::slotUpdateView()
 	    v->slotUpdateView();
     }
     else
-	activeManager->openURL( activeManager->getURL(), true );
+	manager->openURL( manager->getURL(), true );
 }
 
 void KfmView::slotMountNotify()
 {
-    QString u = activeManager->getURL().data();
+    KURL u( manager->getURL().data() );
     
-    if ( strncmp( u, "file:" , 5 ) == 0 )
-	activeManager->openURL( u.data(), true );
+    if ( strcmp( u.protocol(), "file:" ) == 0 && !u.hasSubProtocol() )
+	manager->openURL( manager->getURL().data(), true );
 }
 
 void KfmView::slotFilesChanged( const char *_url )
 {
-    debugT("Slot called with '%s'\n", _url);
-    
-    if ( !activeManager )
-	return;
-    
     QString u1 = _url;
     if ( u1.right( 1 ) != "/" )
 	u1 += "/";
     
-    QString u2 = activeManager->getURL().data();
+    QString u2 = manager->getURL().data();
     u2.detach();
     if ( u2.right( 1 ) != "/" )
 	u2 += "/";
 
     debugT("Comparing '%s' to '%s'\n",u1.data(), u2.data() );
     if ( u1 == u2 )
-	activeManager->openURL( activeManager->getURL().data(), true );
+	manager->openURL( manager->getURL().data(), true );
     debugT("Changed\n");
 }
 
@@ -236,21 +220,21 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
 	KURL u( url );
 	if ( u.isMalformed() )
 	{
-	    debugT("ERROR: Drop over malformed URL\n");
+	    warning( klocale->translate("ERROR: Drop over malformed URL"));
 	    return;
 	}
 	
 	debugT(" Dropped over object\n");
 		
 	QPoint p( _zone->getMouseX(), _zone->getMouseY() );
-	activeManager->dropPopupMenu( _zone, url, &p );
+	manager->dropPopupMenu( _zone, url, &p );
     }
     else // dropped over white ground
     {
 	debugT("Dropped over white\n");
 	
 	QPoint p( _zone->getMouseX(), _zone->getMouseY() );
-	activeManager->dropPopupMenu( _zone, activeManager->getURL(), &p );
+	manager->dropPopupMenu( _zone, manager->getURL(), &p );
     }
 }
 
@@ -279,7 +263,10 @@ void KfmView::slotDelete()
     view->getSelected( marked );
 
     KIOJob * job = new KIOJob;
-    bool ok = QMessageBox::query( "KFM Warning", "Dou you really want to delete the files?\n\r\n\rThere is no way to restore them", "Yes", "No" );
+    bool ok = QMessageBox::query(  klocale->translate("KFM Warning"), 
+				   klocale->translate("Dou you really want to delete the files?\n\nThere is no way to restore them"), 
+				    klocale->translate("Yes"), 
+				    klocale->translate("No") );
     
     if ( ok )
 	job->del( marked );
@@ -288,18 +275,18 @@ void KfmView::slotDelete()
 void KfmView::slotPaste()
 {
     KIOJob * job = new KIOJob;
-    job->copy( clipboard, activeManager->getURL().data() );
+    job->copy( clipboard, manager->getURL().data() );
 }
 
 void KfmView::slotPopupMenu( QStrList &_urls, const QPoint &_point )
 {
-    debugT("slotPopupMenu %i\n",_urls.count());
-    activeManager->openPopupMenu( _urls, _point );
+    // Show the popup Menu for the given URLs
+    manager->openPopupMenu( _urls, _point );
 }
 
 void KfmView::slotPopupOpenWith()
 {
-    DlgLineEntry l( "Open With:", "", this, true );
+    DlgLineEntry l( klocale->translate("Open With:"), "", this, true );
     if ( l.exec() )
     {
 	QString pattern = l.getText();
@@ -317,33 +304,78 @@ void KfmView::slotPopupOpenWith()
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
     {
 	cmd += "\"";
-	KURL file = popupFiles.first();    
+	KURL file = s;    
+	
 	if ( strcmp( file.protocol(), "file" ) == 0L )
 	{
-	    tmp = KIOServer::shellQuote( file.path() ).copy();
-	    cmd += tmp.data();
+	    QString decoded( file.path() );
+	    KURL::decodeURL( decoded );
+	    decoded = KIOServer::shellQuote( decoded ).data();
+	    cmd += decoded.data();
 	}
 	else
 	{
-	    tmp = KIOServer::shellQuote( file.url().data() ).copy();
-	    cmd += tmp.data();
+	    QString decoded( s );
+	    KURL::decodeURL( decoded );
+	    decoded = KIOServer::shellQuote( decoded ).data();
+	    cmd += decoded.data();
 	}
 	cmd += "\" ";
     }
     debugT("Executing '%s'\n", cmd.data());
     
-    KMimeType::runCmd( cmd.data() );
+    KMimeBind::runCmd( cmd.data() );
 }              
 
 void KfmView::slotPopupProperties()
 {
     if ( popupFiles.count() != 1 )
     {
-	debugT("ERROR: Can not open properties for multiple files\n");
+	warning(klocale->translate("ERROR: Can not open properties for multiple files"));
 	return;
     }
 
     new Properties( popupFiles.first() );
+}
+
+void KfmView::slotPopupBookmarks()
+{
+    char *s;
+    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
+	gui->addBookmark( s, s );
+}
+
+void KfmView::slotPopupEmptyTrashBin()
+{
+    QString d = KFMPaths::TrashPath();
+    QStrList trash;
+    
+    DIR *dp;
+    struct dirent *ep;
+    dp = opendir( d );
+    if ( dp )
+    {
+	// Create list of all trash files
+	while ( ( ep = readdir( dp ) ) != 0L )
+	{
+	    if ( strcmp( ep->d_name, "." ) != 0L && strcmp( ep->d_name, ".." ) != 0L )
+	    {
+		QString t = "file:" + d + ep->d_name;
+		trash.append( t.data() );
+	    }
+	}
+	closedir( dp );
+    }
+    else
+    {
+      QMessageBox::message( klocale->translate("KFM Error"), 
+			    klocale->translate("Could not access Trash Bin") );
+	return;
+    }
+    
+    // Delete all trash files
+    KIOJob * job = new KIOJob;
+    job->del( trash );
 }
 
 void KfmView::slotPopupCopy()
@@ -359,7 +391,8 @@ void KfmView::slotPopupPaste()
 {
     if ( popupFiles.count() != 1 )
     {
-	QMessageBox::message( "KFM Error", "Can not paste in multiple directories" );
+	QMessageBox::message( klocale->translate("KFM Error"), 
+			      klocale->translate("Can not paste in multiple directories") );
 	return;
     }
     
@@ -399,7 +432,10 @@ void KfmView::slotPopupDelete()
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
       debugT("&&> '%s'\n",s);
     
-    bool ok = QMessageBox::query( "KFM Warning", "Dou you really want to delete the files?\n\r\n\rThere is no way to restore them", "Yes", "No" );
+    bool ok = QMessageBox::query( klocale->translate("KFM Warning"), 
+				  klocale->translate("Dou you really want to delete the files?\n\nThere is no way to restore them"), 
+				  klocale->translate("Yes"), 
+				  klocale->translate("No") );
     
     if ( ok )
 	job->del( popupFiles );
@@ -419,7 +455,7 @@ void KfmView::slotPopupCd()
 {
     if ( popupFiles.count() != 1 )
     {
-	debugT("ERROR: Can not change to multiple directories\n");
+	warning(klocale->translate("ERROR: Can not change to multiple directories"));
 	return;
     }
     
@@ -428,93 +464,37 @@ void KfmView::slotPopupCd()
 
 const char * KfmView::getURL()
 {
-    return activeManager->getURL();
+    return manager->getURL();
 }
 
 void KfmView::openURL( const char *_url )
 {
-    childViewList.clear();
-    
-    QString u;
-    
-    // Change protocol for local cgi scripts
-    if ( strncmp( _url, "file:/cgi-bin/", 14 ) == 0 )
-    {
-	u = "cgi:";
-	u += _url + 5;
-	_url = u.data();
-    }
-    
-    QString url;
-    url = _url;
-    
-    bool erg = false;
-    
-    QString old_url = "";
-    if ( activeManager != 0L )
-	old_url = activeManager->getURL();
-    old_url.detach();
-    
-    if ( strncmp( _url, "tar:", 4 ) == 0 )
-    {
-	erg = tarManager->openURL( url.data() );
-	if ( erg )
-	    setActiveManager( tarManager );
-    }
-    else if ( strncmp( _url, "cgi:", 4 ) == 0 )
-    {
-	erg = cgiManager->openURL( url.data() );
-	if ( erg )
-	    setActiveManager( cgiManager );
-    }
-    else if ( strncmp( _url, "ftp:", 4 ) == 0 )
-    {
-	erg = ftpManager->openURL( url.data() );
-	if ( erg )
-	    setActiveManager( ftpManager );
-    }
-    else if ( strncmp( _url, "file:", 5 ) == 0 )
-    {
-	erg = fileManager->openURL( url.data() ); 
-	if ( erg )
-	    setActiveManager( fileManager );
-    }
-    else if ( strncmp( _url, "http:", 5 ) == 0 )
-    {
-	erg = httpManager->openURL( url.data() );
-	if ( erg )
-	    setActiveManager( httpManager );
-    }
-    else
-    {
-	// Run the default binding on this if we dont know
-	// the protocol
-	KMimeType::runBinding( url.data() );
+    manager->openURL( _url );
+}
+
+void KfmView::slotURLToStack( const char *_url )
+{
+    if ( stackLock )
 	return;
-    }
     
-    if ( erg && old_url.data()[0] != 0 && !stackLock )
-    {
-	QString *s = new QString( old_url.data() );
-	s->detach();
-	backStack.push( s );
-	forwardStack.setAutoDelete( true );
-	forwardStack.clear();
-	forwardStack.setAutoDelete( false );
+    debugT("Moving '%s' on STACK\n",_url);
+    
+    QString *s = new QString( _url );
+    s->detach();
+    backStack.push( s );
+    forwardStack.setAutoDelete( true );
+    forwardStack.clear();
+    forwardStack.setAutoDelete( false );
 	
-	emit historyUpdate( true, false );
-    }
+    emit historyUpdate( true, false );
 }
 
 void KfmView::slotForward()
 {
-    if ( !activeManager )
-	return;
-    
     if ( forwardStack.isEmpty() )
 	return;
 
-    QString *s2 = new QString( activeManager->getURL() );
+    QString *s2 = new QString( manager->getURL() );
     s2->detach();
     backStack.push( s2 );
 
@@ -533,13 +513,10 @@ void KfmView::slotForward()
 
 void KfmView::slotBack()
 {
-    if ( !activeManager )
-	return;
-
     if ( backStack.isEmpty() )
 	return;
     
-    QString *s2 = new QString( activeManager->getURL() );
+    QString *s2 = new QString( manager->getURL() );
     s2->detach();
     forwardStack.push( s2 );
     
@@ -585,7 +562,7 @@ void KfmView::slotURLSelected( const char *_url, int _button, const char *_targe
     
     if ( _button == MidButton && KIOServer::isDir( _url ) )
     {
-	KURL base( activeManager->getURL() );
+	KURL base( manager->getURL() );
 	KURL u( base, _url );
 	QString url = u.url();
 
@@ -602,18 +579,12 @@ void KfmView::setPopupFiles( QStrList &_files )
     popupFiles.copy( _files );
 }
 
-void KfmView::setActiveManager( KAbstractManager *_man )
-{
-    activeManager = _man;
-}
-
 void KfmView::slotOnURL( const char *_url )
 {
     if ( _url == 0L )
     {
-	if ( activeManager )
-	    // gui->slotSetStatusBarURL( activeManager->getURL() );
-	    gui->slotSetStatusBar( "" );
+	// gui->slotSetStatusBarURL( activeManager->getURL() );
+	gui->slotSetStatusBar( "" );
     }
     else
     {
@@ -629,18 +600,20 @@ void KfmView::slotOnURL( const char *_url )
 	  gui->slotSetStatusBar( _url );
 	  return;
 	}
+
+	QString decodedPath( url.path() );
+	KURL::decodeURL( decodedPath );
+	QString decodedName( url.filename() );
+	KURL::decodeURL( decodedName );
 	
         struct stat buff;
-        stat( url.path(), &buff );
+        stat( decodedPath, &buff );
 
         struct stat lbuff;
-        lstat( url.path(), &lbuff );
+        lstat( decodedPath, &lbuff );
         QString text;
 	QString text2;
-	if ( strcmp( url.protocol(), "tar" ) == 0 )
-	  text = url.filename( true );
-	else
-	  text = url.filename();
+	text = decodedName;
 	text2 = text;
 	text2.detach();
 	
@@ -650,12 +623,12 @@ void KfmView::slotOnURL( const char *_url )
           {
 	    QString tmp;
 	    if ( com.isNull() )
-	      tmp = "Symblic Link";
+	      tmp = klocale->translate( "Symbolic Link");
 	    else
-	      tmp.sprintf("%s (Link)", com.data() );
+	      tmp.sprintf(klocale->translate("%s (Link)"), com.data() );
             char buff_two[1024];
             text += "->";
-            int n = readlink (url.path(), buff_two, 1022);
+            int n = readlink ( decodedPath, buff_two, 1022);
             if (n == -1)
             {
                gui->slotSetStatusBar( text2 + "  " + tmp );
@@ -670,7 +643,9 @@ void KfmView::slotOnURL( const char *_url )
           {
 	     text += " ";
 	     if (buff.st_size < 1024)
-	       text.sprintf( "%s (%ld bytes)", text2.data(), (long) buff.st_size);
+	       text.sprintf( "%s (%ld %s)", 
+			     text2.data(), (long) buff.st_size,
+			     klocale->translate("bytes"));
 	     else
              {
 	       float d = (float) buff.st_size/1024.0;
@@ -687,18 +662,19 @@ void KfmView::slotOnURL( const char *_url )
 	  gui->slotSetStatusBar( text );
 	}
         else
-	  gui->slotSetStatusBar( _url );
+	{
+	    QString decodedURL( _url );
+	    KURL::decodeURL( decodedURL );
+	    gui->slotSetStatusBar( decodedURL );
+	}
     }
 }
 
 void KfmView::slotFormSubmitted( const char *, const char *_url )
 {   
     debugT("Form Submitted '%s'\n", _url );
-
-    if ( !activeManager )
-	return;
     
-    KURL u1( activeManager->getURL() );
+    KURL u1( manager->getURL() );
     KURL u2( u1, _url );
     
     debugT("Complete is '%s'\n", u2.url().data() );
@@ -709,13 +685,10 @@ void KfmView::slotFormSubmitted( const char *, const char *_url )
 KfmView* KfmView::getActiveView()
 {
   KHTMLView *v = getSelectedView();
-  debugT(">>>>>>>>>>>>>>>>>>>>>>>>>>> Get active view 1 <<<<<<<<<<<<<<<<<<<<<<<<\n");
   if ( !v )
     return this; 
-  debugT(">>>>>>>>>>>>>>>>>>>>>>>>>>> Get active view 2 <<<<<<<<<<<<<<<<<<<<<<<<\n");
   if ( v->isA( "KfmView" ) )
     return (KfmView*)v;
-  debugT(">>>>>>>>>>>>>>>>>>>>>>>>>>> Get active view 3 <<<<<<<<<<<<<<<<<<<<<<<<\n");
   return this;
 } 
 
@@ -794,7 +767,7 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
 	
 	select( 0L, false );
 	QStrList list;
-	list.append( activeManager->getURL() );
+	list.append( manager->getURL() );
 	slotPopupMenu( list, p );
 	return true;
     }

@@ -64,12 +64,12 @@ bool $mod\::isConnected()
     return connected;
 }
 
-void $mod\::closeEvent( KSocket * _sock )
+void $mod\::closeEvent( KSocket * )
 {
     connected = FALSE;
 }
 
-void $mod\::readEvent( KSocket *_sock )
+void $mod\::readEvent( KSocket * )
 {
     if ( bHeader )
     {

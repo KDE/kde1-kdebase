@@ -26,6 +26,10 @@
 #define KIO_Delete 8
 /// Link a file
 #define KIO_Link 16
+/// List directory entries
+#define KIO_List 32
+/// Moves files
+#define KIO_Move 64
 //@}
 
 class KIOServer;
@@ -40,10 +44,27 @@ public:
     KIODirectoryEntry( KIODirectoryEntry & _entry );
     
     bool isDir() { return bDir; }
+    /**
+     * @return TRUE if we are shure that the entry is a real file. Mention that it may
+     *         be a link to some file never the less. But in the case of an link
+     *         we can not be shure, so FALSE is returned.
+     */
+    bool isFile() { return ( access.left(1) == "-" ); }
+    /**
+     * @return the name of the entry. Mention that this is not a URL.
+     */
     const char* getName() { return name.data(); }
+    /**
+     * @return an access string like you get it by "ls -l"
+     */
     const char* getAccess() { return access.data(); }    
     const char* getOwner() { return owner.data(); }
     const char* getGroup() { return group.data(); }
+    /**
+     * @return an date string like you get it by "ls -l".
+     *         Dont make too many assumptions about the format of this string.
+     *         Yust display the returned string. Parsing on your own risk :-)
+     */
     const char* getCreationDate() { return creationDate.data(); }
     int getSize() { return size; }
 
@@ -106,15 +127,19 @@ public:
       If the protocol of the URL is not "file", then this function
       depends an the convention, that directories have a trailing '/'
       in their URL.
+      
+      @return 1 if the URL is a directory, 0 if not and <0 if we are unshure.
       */
-    static bool isDir( QStrList & _urls );
+    static int isDir( QStrList & _urls );
     /// Tests wether _url is a directory or not
     /**
       If the protocol of the URL is not "file", then this function
       depends an the convention, that directories have a trailing '/'
       in their URL.
+
+      @return 1 if the URL is a directory, 0 if not and <0 if we are unshure.
       */
-    static bool isDir( const char *_url );
+    static int isDir( const char *_url );
     /**
      * Tests wether the list of URLs are all together the trash bin.
      * This function does not really make sense. It is just provided for

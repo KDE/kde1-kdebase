@@ -3,19 +3,24 @@ module KIOSlaveIPC;
 slots:
    void hello();
    void progress( int _percent );
+   void info( string _text );
    void dirEntry( string _dir, string _name, bool _isDir, int _size, string _date, string _access, string _owner, string _group );
+   void data( string _text );
    void flushDir( string _dir );	
    void done();
    void fatalError( int _error, string _text, int _errno );
    void setPID( int _pid );
+   void redirection( string _url );
+   void mimeType( string _type );
    
 signals:
    void mount( bool _ro, string _fstype, string _dev, string _point );
    void unmount( string _point );
    void copy( string _from_url, string _to_url, bool _overwrite );
+   void get( string _url );
    void del( string _url );
    void mkdir( string _url );
-   void list( string _url );
+   void list( string _url, bool _bHTML );
    void getPID();
    void cleanUp();
 

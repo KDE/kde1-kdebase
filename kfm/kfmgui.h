@@ -96,6 +96,11 @@ public:
      * @see KfmView::slotReload
      */
     void updateView();
+
+    /**
+     * Adds '_url' to the bookmarks with '_title' as description.
+     */    
+    void addBookmark( const char *_title, const char *_url );
     
 public slots:
     /**
@@ -329,10 +334,6 @@ protected:
      * Fill the 'menu' with all boomarks in 'parent'.
      */
     void fillBookmarkMenu( KBookmark *parent, QPopupMenu *menu, int &id );
-    /**
-     * Adds '_url' to the bookmarks with '_title' as description.
-     */    
-    void addBookmark( const char *_title, const char *_url );
     /** 
      * Saves the current GUI settings
      */

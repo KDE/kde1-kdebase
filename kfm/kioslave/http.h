@@ -1,3 +1,6 @@
+#ifndef _http_h
+#define _http_h
+
 #include "protocol.h"
 #include "kio_errors.h"
 
@@ -7,33 +10,48 @@
 #include <arpa/inet.h>
 #include <errno.h>
 #include <netdb.h>
-
 #include <stdio.h>
+
+#include <qdatetm.h>
 
 class KProtocolHTTP :public KProtocol
 {
-private:
+    Q_OBJECT
+protected:
 
-	//#define HTTP_PROXY_NAME "someproxy.somewhere.org"
-	//#define HTTP_PROXY_PORT 80
-	
-	struct sockaddr_in proxy_name;
-	int use_proxy, connected, sock;
-	long size;
-	long bytesleft;
-	FILE *fsocket;
+    //#define HTTP_PROXY_NAME "someproxy.somewhere.org"
+    //#define HTTP_PROXY_PORT 80
+    
+    struct sockaddr_in proxy_name;
+    int use_proxy, connected, sock;
+    long size;
+    long bytesleft;
+    long bytesRead;
+    FILE *fsocket;
+    /**
+     * Used to store the parameter given by a call to @ref #Open. We need this
+     * for HTTP Redirection.
+     *
+     * @see #ProcessHeader
+     * @see #Open
+     */
+    int currentMode;
 
-	int init_sockaddr(struct sockaddr_in *server_name, char *hostname,int port);
-	int ProcessHeader();
+    QTime currentTime;
+    QTime startTime;
+    
+    int init_sockaddr(struct sockaddr_in *server_name, char *hostname,int port);
+    int ProcessHeader();
+    
 public:
-	KProtocolHTTP();
-	~KProtocolHTTP();
-
-	int Open(KURL *url, int mode);
-	int Close();
-	int Read(void *buffer, int len);
-
-	long Size();
-
-	int atEOF();
+    KProtocolHTTP();
+    ~KProtocolHTTP();
+    
+    virtual int Open(KURL *url, int mode);
+    virtual int Close();
+    virtual long Read(void *buffer, long len);
+    virtual long Size();
+    virtual int atEOF();
 };
+
+#endif
