@@ -2,6 +2,12 @@
    Author: Markus Wuebben
 	   <markus.wuebben@kde.org>
    Date:   September '97         */
+   
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+#include <unistd.h>
 
 // _XOPEN_SOURCE is required on glibc 2.1.x based systems for cuserid();
 #define _XOPEN_SOURCE
@@ -11,7 +17,6 @@
 
 #include "mainwidget.moc"
 #include "mainwidget.h"
-
 
 mainWidget::mainWidget(QWidget *parent , const char *name)
   : QWidget(parent, name)
