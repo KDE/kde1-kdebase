@@ -1,12 +1,6 @@
-nedit*background: BACKGROUND
-nedit*foreground: FOREGROUND
-nedit*XmText*foreground: WINDOW_FOREGROUND
-nedit*XmText*background: WINDOW_BACKGROUND
-nedit*XmList*foreground: WINDOW_FOREGROUND
-nedit*XmList*background: WINDOW_BACKGROUND
-nedit*XmLabel*foreground: WINDOW_FOREGROUND
-nedit*XmTextField*background: WINDOW_BACKGROUND
-nedit*XmTextField*foreground: WINDOW_FOREGROUND
+nedit*fontList: FONT
+!nedit*background: BACKGROUND
+!nedit*foreground: FOREGROUND
 nedit*selectColor: BACKGROUND
 nedit*highlightColor: BACKGROUND
 nedit*text.background: WINDOW_BACKGROUND
@@ -14,7 +8,6 @@ nedit*text.foreground: WINDOW_FOREGROUND
 nedit*text.selectBackground: SELECT_BACKGROUND
 nedit*text.selectForeground: SELECT_FOREGROUND
 nedit*text.cursorForeground: WINDOW_FOREGROUND
-nedit*fontList: FONT
 nedit*remapDeleteKey: True
 nedit*text.heavyCursor: True
 nedit*BlinkRate: 0

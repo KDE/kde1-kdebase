@@ -1,0 +1,6 @@
+emacs*font: FIXED_FONT
+emacs*background: WINDOW_BACKGROUND
+emacs*foreground: WINDOW_FOREGROUND
+emacs*menubar*background: BACKGROUND
+emacs*menubar*foreground: FOREGROUND
+emacs*menubar*font: FONT

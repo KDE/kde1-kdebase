@@ -1,15 +1,14 @@
 netscape*background: BACKGROUND
 netscape*foreground: FOREGROUND
-netscape*topShadowColor: HIGHLIGHT
-netscape*bottomShadowColor: LOWLIGHT
 netscape*XmText*foreground: WINDOW_FOREGROUND
 netscape*XmText*background: WINDOW_BACKGROUND
-netscape*XmList*foreground: WINDOW_FOREGROUND
-netscape*XmList*background: WINDOW_BACKGROUND
-netscape*XmLabel*foreground: WINDOW_FOREGROUND
-netscape*XmLabel*background: WINDOW_BACKGROUND
 netscape*XmTextField*foreground: WINDOW_FOREGROUND
 netscape*XmTextField*background: WINDOW_BACKGROUND
+netscape*XmList*foreground: WINDOW_FOREGROUND
+netsacpe*XmList*background: WINDOW_BACKGROUND
+netscape*fontList: FONT
+netscape*topShadowColor: HIGHLIGHT
+netscape*bottomShadowColor: LOWLIGHT
 netscape*urlText*foreground: WINDOW_FOREGROUND
 netscape*urlText*background: WINDOW_BACKGROUND
 netscape*XmLGrid.foreground: WINDOW_FOREGROUND
@@ -23,5 +22,4 @@ netscape*power.LED.background: BACKGROUND
 netscape*defaultBackground:	WINDOW_BACKGROUND
 netscape*selectColor: BACKGROUND
 netscape*highlightColor: BACKGROUND
-netscape*fontList: FONT
 netscape*highlightThickness: 1

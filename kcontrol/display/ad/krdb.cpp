@@ -27,27 +27,35 @@
 QString fontString( QFont rFont )
 {
 	QString aValue;
+	QFontInfo fi( rFont );
 	
 	aValue.sprintf( "-*-" );
-	aValue += rFont.family();
+	aValue += fi.family();
 	
-	if ( rFont.bold() )
+	if ( fi.bold() )
 		aValue += "-bold";
 	else
 		aValue += "-medium";
 	
-	if ( rFont.italic() )
+	if ( fi.italic() )
 		aValue += "-i";
 	else
 		aValue += "-r";
 		
-	aValue += "-normal-*-*-";
+	//aValue += "-normal-*-*-";
+	//	
+	//QString s;
+	//s.sprintf( "%d-*-*-*-*-", fi.pointSize()*10 );
+	//aValue += s;
+	
+	aValue += "-normal-*-";
 		
 	QString s;
-	s.sprintf( "%d-*-*-*-*-", rFont.pointSize()*10 );
+	s.sprintf( "%d-*-*-*-*-*-", fi.pointSize() );
 	aValue += s;
 	
-	switch ( rFont.charSet() ) {
+	
+	switch ( fi.charSet() ) {
 		case QFont::Latin1:
 			aValue += "iso8859-1";
 			break;
@@ -80,7 +88,7 @@ QString fontString( QFont rFont )
 			aValue += "iso8859-9";
 			break;
 	}
-
+	debug( aValue );
   return aValue;
 }
 
