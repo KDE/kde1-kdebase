@@ -21,6 +21,7 @@
 #ifndef _KRESOURCEMAN_H_
 #define _KRESOURCEMAN_H_
 
+#include <config.h>
 #include <kapp.h>
 #include <kprocess.h>
 

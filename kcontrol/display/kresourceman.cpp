@@ -4,6 +4,14 @@
 #include "kresourceman.h"
 #include "kresourceman.moc"
 
+#ifdef HAVE_PATHS_H
+#include <paths.h>
+#endif
+
+#ifndef _PATH_TMP
+#define _PATH_TMP "/tmp/"
+#endif
+
 KResourceMan::KResourceMan()
 {
 	Atom type;
@@ -106,7 +114,7 @@ void KResourceMan::sync()
 	}
 		
 		QString fileName;
-		fileName.sprintf("/tmp/krdb.%d", timestamp);
+		fileName.sprintf(_PATH_TMP"krdb.%d", timestamp);
 		
 		QFile f( fileName );
 		if ( f.open( IO_WriteOnly ) ) {
@@ -119,7 +127,7 @@ void KResourceMan::sync()
 		
 		proc.start( KProcess::Block );
 		
-		QDir d( "/tmp" );
+		QDir d( _PATH_TMP );
 		if ( d.exists() )
 			d.remove( fileName );
 	
