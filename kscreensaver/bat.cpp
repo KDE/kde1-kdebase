@@ -43,12 +43,24 @@
 /* Ported to kscreensave:
    July 1997, Emanuel Pirker <epirker@edu.uni-klu.ac.at>
    Contact me if something doesn't work correctly!
+   Last revised: 11-Jul-97
 */
 
 #include "xlock.h"
 #include <math.h>
 
-#ifdef HAS_XPM
+#ifdef HAVE_CONFIG_H
+#include "../config.h"
+#endif
+
+#define MINSPEED 0
+#define MAXSPEED 100
+#define DEFSPEED 50
+#define MINBATCH 0
+#define MAXBATCH 20
+#define DEFBATCH 5
+
+#if HAVE_XPM
 #if 1
 #include <X11/xpm.h>
 #else
@@ -105,7 +117,7 @@ typedef struct {
 	int         width, height;
 	int         nbats;
 	int         restartnum;
-	batstruct  *bats;
+	batstruct   bats[MAXBATCH];
 } bouncestruct;
 
 static bouncestruct bounces[MAXSCREENS];
@@ -124,7 +136,7 @@ static unsigned char *bits[] =
 	bat0_bits, bat1_bits, bat2_bits, bat3_bits, bat4_bits
 };
 
-#ifdef HAS_XPM
+#if HAVE_XPM
 static char **pixs[] =
 {
 	bat0, bat1, bat2, bat3, bat4
@@ -137,7 +149,7 @@ init_images()
 {
 	int         i;
 
-#if HAS_XPM
+#if HAVE_XPM
 	int         xpm_ret = 0;
 
 	if (!mono && Scr[screen].npixels > 2)
@@ -174,8 +186,8 @@ initbat(Window win)
 	bp->nbats = batchcount;
 	if (bp->nbats < 1)
 		bp->nbats = 1;
-	if (!bp->bats)
-		bp->bats = (batstruct *) malloc(bp->nbats * sizeof (batstruct));
+	//if (!bp->bats)
+	//	bp->bats = (batstruct *) malloc(bp->nbats * sizeof (batstruct));
 	i = 0;
 	while (i < bp->nbats) {
 		if (bat0_width > bp->width / 2 || bat0_height > bp->height / 2) {
@@ -227,13 +239,13 @@ checkCollision(int a_bat)
 			if (d > 0 && d < size) {
 				amount = size - d;
 				if (amount > PENETRATION * size)
-					amount = PENETRATION * size;
-				bp->bats[i].vx += amount * x / d;
-				bp->bats[i].vy += amount * y / d;
+					amount = (int)(PENETRATION * size);
+				bp->bats[i].vx += (int)(amount * x / d);
+				bp->bats[i].vy += (int)(amount * y / d);
 				bp->bats[i].vx -= bp->bats[i].vx / FRICTION;
 				bp->bats[i].vy -= bp->bats[i].vy / FRICTION;
-				bp->bats[a_bat].vx -= amount * x / d;
-				bp->bats[a_bat].vy -= amount * y / d;
+				bp->bats[a_bat].vx -= (int)(amount * x / d);
+				bp->bats[a_bat].vy -= (int)(amount * y / d);
 				bp->bats[a_bat].vx -= bp->bats[a_bat].vx / FRICTION;
 				bp->bats[a_bat].vy -= bp->bats[a_bat].vy / FRICTION;
 				spin = (bp->bats[i].vang - bp->bats[a_bat].vang) /
@@ -246,14 +258,14 @@ checkCollision(int a_bat)
 					bp->bats[i].spindelay = 1;
 					bp->bats[i].spindir = 0;
 				} else
-					bp->bats[i].spindelay = M_PI * bp->bats[i].size /
-						(ABS(bp->bats[i].vang)) + 1;
+					bp->bats[i].spindelay = (int)(M_PI * bp->bats[i].size /
+						(ABS(bp->bats[i].vang)) + 1);
 				if (!bp->bats[a_bat].vang) {
 					bp->bats[a_bat].spindelay = 1;
 					bp->bats[a_bat].spindir = 0;
 				} else
-					bp->bats[a_bat].spindelay = M_PI * bp->bats[a_bat].size /
-						(ABS(bp->bats[a_bat].vang)) + 1;
+					bp->bats[a_bat].spindelay = (int)(M_PI * bp->bats[a_bat].size /
+						(ABS(bp->bats[a_bat].vang)) + 1);
 				return;
 			}
 		}
@@ -347,12 +359,12 @@ movebat(batstruct * bat)
 static void
 flapbat(batstruct * bat, int dir, int *vel)
 {
-	*vel -= (*vel + SIGN(*vel * dir) * bat->spindelay * ORIENTCYCLE /
-		 (M_PI * bat->size)) / SLIPAGE;
+	*vel -= (int)((*vel + SIGN(*vel * dir) * bat->spindelay * ORIENTCYCLE /
+		 (M_PI * bat->size)) / SLIPAGE);
 	if (*vel) {
 		bat->spindir = DIR(*vel * dir);
 		bat->vang = *vel * ORIENTCYCLE;
-		bat->spindelay = M_PI * bat->size / (ABS(bat->vang)) + 1;
+		bat->spindelay = (int)(M_PI * bat->size / (ABS(bat->vang)) + 1);
 	} else
 		bat->spindir = 0;
 }
@@ -425,7 +437,7 @@ void startScreenSaver( Drawable d )
 void stopScreenSaver()
 {
 	if ( saver )
-		return;
+		delete saver;
 	saver = NULL;
 }
 
@@ -468,7 +480,7 @@ kBatSaver::~kBatSaver()
 void kBatSaver::setSpeed( int spd )
 {
 	timer.stop();
-	speed = 100-spd;
+	speed = MAXSPEED - spd;
 	timer.start( speed );
 }
 
@@ -487,15 +499,15 @@ void kBatSaver::readSettings()
 
 	str = config->readEntry( "Speed" );
 	if ( !str.isNull() )
-		speed = 100 - atoi( str );
+		speed = MAXSPEED - atoi( str );
 	else
-		speed = 50;
+		speed = DEFSPEED;
 
 	str = config->readEntry( "MaxLevels" );
 	if ( !str.isNull() )
 		maxLevels = atoi( str );
 	else
-		maxLevels = 50;
+		maxLevels = DEFBATCH;
 
 }
 
@@ -524,18 +536,18 @@ kBatSetup::kBatSetup( QWidget *parent, const char *name )
 
 	slider = new KSlider( KSlider::Horizontal, this );
 	slider->setGeometry( 15, 35, 90, 20 );
-	slider->setRange( 0, 100 );
-	slider->setSteps( 25, 50 );
+	slider->setRange( MINSPEED, MAXSPEED );
+	slider->setSteps( (MAXSPEED-MINSPEED)/4, (MAXSPEED-MINSPEED)/2 );
 	slider->setValue( speed );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
 
-	label = new QLabel( "Max Levels:", this );
+	label = new QLabel( "Number of bats:", this );
 	label->setGeometry( 15, 65, 90, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
 	slider->setGeometry( 15, 85, 90, 20 );
-	slider->setRange( 10, 110 );
-	slider->setSteps( 25, 50 );
+	slider->setRange( MINBATCH, MAXBATCH );
+	slider->setSteps( (MAXBATCH-MINBATCH)/4, (MAXBATCH-MINBATCH)/2 );
 	slider->setValue( maxLevels );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotLevels( int ) ) );
 
@@ -569,16 +581,16 @@ void kBatSetup::readSettings()
 	if ( !str.isNull() )
 		speed = atoi( str );
 
-	if ( speed > 100 )
-		speed = 100;
-	else if ( speed < 20 )
-		speed = 20;
+	if ( speed > MAXSPEED )
+		speed = MAXSPEED;
+	else if ( speed < MINSPEED )
+		speed = MINSPEED;
 
 	str = config->readEntry( "MaxLevels" );
 	if ( !str.isNull() )
 		maxLevels = atoi( str );
 	else
-		maxLevels = 50;
+		maxLevels = DEFBATCH;
 
 }
 

@@ -9,7 +9,16 @@
 
 /* Ported to kscreensave:
    July 1997, Emanuel Pirker <epirker@edu.uni-klu.ac.at>
+   Contact me in case of problems, not the original author!
+   Last revised: 10-Jul-97
 */
+
+#define MAXSPEED 100
+#define MINSPEED 0
+#define DEFSPEED 50
+#define MAXBATCH 200
+#define MINBATCH 0
+#define DEFBATCH 20
 
 #include "xlock.h"
 
@@ -32,12 +41,12 @@ typedef struct {
 	int         height;
 	int         border;	/* wasp won't go closer than this to the edge */
 	int         beecount;	/* number of bees */
-	XSegment   *segs;	/* bee lines */
-	XSegment   *old_segs;	/* old bee lines */
-	short      *x;
-	short      *y;		/* bee positions x[time][bee#] */
-	short      *xv;
-	short      *yv;		/* bee velocities xv[bee#] */
+	XSegment    segs[MAXBATCH];	/* bee lines */
+	XSegment    old_segs[MAXBATCH];	/* old bee lines */
+	short       x[MAXBATCH*TIMES];
+	short       y[MAXBATCH*TIMES];		/* bee positions x[time][bee#] */
+	short       xv[MAXBATCH];
+	short       yv[MAXBATCH];		/* bee velocities xv[bee#] */
 	short       wx[3];
 	short       wy[3];
 	short       wxv;
@@ -64,16 +73,15 @@ initswarm(Window win)
 	XSetForeground(dsp, Scr[screen].gc, BlackPixel(dsp, screen));
 	XFillRectangle(dsp, win, Scr[screen].gc, 0, 0, sp->width, sp->height);
 
-	/* Allocate memory. */
-
+	/*  Now static data structures. epirker */
 	//if (!sp->segs) {
-		sp->segs = (XSegment *) malloc(sizeof (XSegment) * sp->beecount);
-		sp->old_segs = (XSegment *) malloc(sizeof (XSegment) * sp->beecount);
-		sp->x = (short *) malloc(sizeof (short) * sp->beecount * TIMES);
-		sp->y = (short *) malloc(sizeof (short) * sp->beecount * TIMES);
-		sp->xv = (short *) malloc(sizeof (short) * sp->beecount);
-		sp->yv = (short *) malloc(sizeof (short) * sp->beecount);
-		//}
+	//sp->segs = (XSegment *) malloc(sizeof (XSegment) * sp->beecount);
+	//sp->old_segs = (XSegment *) malloc(sizeof (XSegment) * sp->beecount);
+	//sp->x = (short *) malloc(sizeof (short) * sp->beecount * TIMES);
+	//sp->y = (short *) malloc(sizeof (short) * sp->beecount * TIMES);
+	//sp->xv = (short *) malloc(sizeof (short) * sp->beecount);
+	//sp->yv = (short *) malloc(sizeof (short) * sp->beecount);
+	//}
 	/* Initialize point positions, velocities, etc. */
 
 	/* wasp */
@@ -224,7 +232,7 @@ void startScreenSaver( Drawable d )
 void stopScreenSaver()
 {
 	if ( saver )
-		return;
+		delete saver;
 	saver = NULL;
 }
 
@@ -267,7 +275,7 @@ kSwarmSaver::~kSwarmSaver()
 void kSwarmSaver::setSpeed( int spd )
 {
 	timer.stop();
-	speed = 100-spd;
+	speed = MAXSPEED - spd;
 	timer.start( speed );
 }
 
@@ -286,15 +294,15 @@ void kSwarmSaver::readSettings()
 
 	str = config->readEntry( "Speed" );
 	if ( !str.isNull() )
-		speed = 100 - atoi( str );
+		speed = MAXSPEED - atoi( str );
 	else
-		speed = 50;
+		speed = DEFSPEED;
 
 	str = config->readEntry( "MaxLevels" );
 	if ( !str.isNull() )
 		maxLevels = atoi( str );
 	else
-		maxLevels = 50;
+		maxLevels = DEFBATCH;
 }
 
 void kSwarmSaver::slotTimeout()
@@ -307,8 +315,6 @@ void kSwarmSaver::slotTimeout()
 kSwarmSetup::kSwarmSetup( QWidget *parent, const char *name )
 	: QDialog( parent, name, TRUE )
 {
-	speed = 50;
-
 	readSettings();
 
 	setCaption( "Setup KSwarm" );
@@ -322,8 +328,8 @@ kSwarmSetup::kSwarmSetup( QWidget *parent, const char *name )
 
 	slider = new KSlider( KSlider::Horizontal, this );
 	slider->setGeometry( 15, 35, 90, 20 );
-	slider->setRange( 0, 100 );
-	slider->setSteps( 25, 50 );
+	slider->setRange( MINSPEED, MAXSPEED );
+	slider->setSteps( (MAXSPEED-MINSPEED)/4, (MAXSPEED-MINSPEED)/2 );
 	slider->setValue( speed );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
 
@@ -332,8 +338,8 @@ kSwarmSetup::kSwarmSetup( QWidget *parent, const char *name )
 
 	slider = new KSlider( KSlider::Horizontal, this );
 	slider->setGeometry( 15, 85, 90, 20 );
-	slider->setRange( 10, 110 );
-	slider->setSteps( 25, 50 );
+	slider->setRange( MINBATCH, MAXBATCH );
+	slider->setSteps( (MAXBATCH-MINBATCH)/4, (MAXBATCH-MINBATCH)/2 );
 	slider->setValue( maxLevels );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotLevels( int ) ) );
 
@@ -367,16 +373,16 @@ void kSwarmSetup::readSettings()
 	if ( !str.isNull() )
 		speed = atoi( str );
 
-	if ( speed > 100 )
-		speed = 100;
-	else if ( speed < 50 )
-		speed = 50;
+	if ( speed > MAXSPEED )
+		speed = MAXSPEED;
+	else if ( speed < MINSPEED )
+		speed = MINSPEED;
 
 	str = config->readEntry( "MaxLevels" );
 	if ( !str.isNull() )
 		maxLevels = atoi( str );
 	else
-		maxLevels = 50;
+		maxLevels = DEFBATCH;
 }
 
 void kSwarmSetup::slotSpeed( int num )

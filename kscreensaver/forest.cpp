@@ -16,7 +16,15 @@
 
 /* Ported to kscreensave:
    July 1997, Emanuel Pirker <epirker@edu.uni-klu.ac.at>
+   In case of problems contact me, not the original author!
 */
+
+#define MAXSPEED 100
+#define MINSPEED 0
+#define DEFSPEED 50
+#define MINCYCLES 10
+#define MAXCYCLES 790
+#define DEFCYCLES 100
 
 #include "xlock.h"
 #include <math.h>
@@ -172,7 +180,7 @@ void startScreenSaver( Drawable d )
 void stopScreenSaver()
 {
 	if ( saver )
-		return;
+		delete saver;
 	saver = NULL;
 }
 
@@ -215,7 +223,7 @@ kForestSaver::~kForestSaver()
 void kForestSaver::setSpeed( int spd )
 {
 	timer.stop();
-	speed = 200-spd;
+	speed = MAXSPEED - spd;
 	timer.start( speed );
 }
 
@@ -234,15 +242,15 @@ void kForestSaver::readSettings()
 
 	str = config->readEntry( "Speed" );
 	if ( !str.isNull() )
-		speed = 200 - atoi( str );
+		speed = MAXSPEED - atoi( str );
 	else
-		speed = 100;
+		speed = DEFSPEED;
 
 	str = config->readEntry( "NumPoints" );
 	if ( !str.isNull() )
 		numPoints = atoi( str );
 	else
-		numPoints = 100;
+		numPoints = DEFCYCLES;
 }
 
 void kForestSaver::slotTimeout()
@@ -268,18 +276,18 @@ kForestSetup::kForestSetup( QWidget *parent, const char *name )
 
 	slider = new KSlider( KSlider::Horizontal, this );
 	slider->setGeometry( 15, 35, 90, 20 );
-	slider->setRange( 0, 200 );
-	slider->setSteps( 50, 100 );
+	slider->setRange( MINSPEED, MAXSPEED );
+	slider->setSteps( (MAXSPEED-MINSPEED)/4, (MAXSPEED-MINSPEED)/2 );
 	slider->setValue( speed );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
 
 	label = new QLabel( "Num of Trees:", this );
-	label->setGeometry( 15, 115, 90, 20 );
+	label->setGeometry( 15, 65, 90, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
-	slider->setGeometry( 15, 135, 90, 20 );
-	slider->setRange( 0, 800 );
-	slider->setSteps( 100, 400 );
+	slider->setGeometry( 15, 85, 90, 20 );
+	slider->setRange( MINCYCLES, MAXCYCLES );
+	slider->setSteps( (MAXCYCLES-MINCYCLES)/4, (MAXCYCLES-MINCYCLES)/2 );
 	slider->setValue( numPoints );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotPoints( int ) ) );
 
@@ -313,16 +321,16 @@ void kForestSetup::readSettings()
 	if ( !str.isNull() )
 		speed = atoi( str );
 
-	if ( speed > 200 )
-		speed = 200;
-	else if ( speed < 20 )
-		speed = 20;
+	if ( speed > MAXSPEED )
+		speed = MAXSPEED;
+	else if ( speed < MINSPEED )
+		speed = MINSPEED;
 
 	str = config->readEntry( "NumPoints" );
 	if ( !str.isNull() )
 		numPoints = atoi( str );
 	else
-		numPoints = 100;
+		numPoints = DEFCYCLES;
 }
 
 void kForestSetup::slotSpeed( int num )
@@ -349,10 +357,6 @@ void kForestSetup::slotOkPressed()
 	QString sspeed;
 	sspeed.setNum( speed );
 	config->writeEntry( "Speed", sspeed );
-
-	QString slevels;
-	slevels.setNum( maxLevels );
-	config->writeEntry( "MaxLevels", slevels );
 
 	QString spoints;
 	spoints.setNum( numPoints );

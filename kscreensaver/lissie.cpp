@@ -10,10 +10,22 @@
 
 /* Ported to kscreensave:
    July 1997, Emanuel Pirker <epirker@edu.uni-klu.ac.at>
+   Last Revised: 10-Jul-97
+   In case of problems contact me, not the original author!
 */
 
 #include "xlock.h"
 #include <math.h>
+
+#define MAXSPEED 100
+#define MINSPEED 0
+#define DEFSPEED 50
+#define MINBATCH 1
+#define MAXBATCH 101
+#define DEFBATCH 1
+#define MINCYCLES 0
+#define MAXCYCLES 2000
+#define DEFCYCLES 1000
 
 #define Lissie(n)\
   if (lissie->xs[(n)] >= 0 && lissie->ys[(n)] >= 0 \
@@ -50,7 +62,7 @@ typedef struct {
 typedef struct {
 	int         width, height;
 	int         nlissies;
-	lissiestruct *lissie;
+	lissiestruct lissie[MAXBATCH];
 } lissstruct;
 
 static lissstruct lisss[MAXSCREENS];
@@ -80,8 +92,9 @@ init_lissie(Window win)
 
 	loopcount = 0;
 
-	//if (!gp->lissie)
-		gp->lissie = (lissiestruct *) calloc(gp->nlissies, sizeof (lissiestruct));
+	//if (!gp->lissie)    made a static structure, epirker 10-jul-97
+	//	gp->lissie = (lissiestruct *) calloc(gp->nlissies, sizeof (lissiestruct));
+       
 	XSetForeground(dsp, Scr[screen].gc, BlackPixel(dsp, screen));
 	XFillRectangle(dsp, win, Scr[screen].gc, 0, 0, gp->width, gp->height);
 	for (ball = 0; ball < (unsigned char) gp->nlissies; ball++)
@@ -160,8 +173,8 @@ drawlissie(Window win, lissiestruct * lissie)
 	else if (lissie->dty > MAXDT)
 		lissie->dty = MAXDT;
 
-	lissie->xs[p] = lissie->xi + sin(lissie->tx) * lissie->rx;
-	lissie->ys[p] = lissie->yi + sin(lissie->ty) * lissie->ry;
+	lissie->xs[p] = (int)(lissie->xi + sin(lissie->tx) * lissie->rx);//(int) to get rid of
+	lissie->ys[p] = (int)(lissie->yi + sin(lissie->ty) * lissie->ry);// warnings, epirker
 
 	/* Mask */
 	XSetForeground(dsp, Scr[screen].gc, BlackPixel(dsp, screen));
@@ -201,7 +214,7 @@ void startScreenSaver( Drawable d )
 void stopScreenSaver()
 {
 	if ( saver )
-		return;
+	  delete saver;   // FIX
 	saver = NULL;
 }
 
@@ -227,7 +240,7 @@ kLissieSaver::kLissieSaver( Drawable drawable ) : kScreenSaver( drawable )
 
 	batchcount = maxLevels;
 	cycles = numPoints;
-
+	
 	initXLock( gc );
 	init_lissie( d );
 
@@ -245,7 +258,7 @@ kLissieSaver::~kLissieSaver()
 void kLissieSaver::setSpeed( int spd )
 {
 	timer.stop();
-	speed = 100-spd;
+	speed = MAXSPEED - spd;
 	timer.start( speed );
 }
 
@@ -270,21 +283,21 @@ void kLissieSaver::readSettings()
 
 	str = config->readEntry( "Speed" );
 	if ( !str.isNull() )
-		speed = 100 - atoi( str );
+		speed = MAXSPEED - atoi( str );
 	else
-		speed = 50;
+		speed = DEFSPEED;
 
 	str = config->readEntry( "MaxLevels" );
 	if ( !str.isNull() )
 		maxLevels = atoi( str );
 	else
-		maxLevels = 1;
+		maxLevels = DEFBATCH;
 
 	str = config->readEntry( "NumPoints" );
 	if ( !str.isNull() )
 		numPoints = atoi( str );
 	else
-		numPoints = 3000;
+		numPoints = DEFCYCLES;
 }
 
 void kLissieSaver::slotTimeout()
@@ -297,7 +310,6 @@ void kLissieSaver::slotTimeout()
 kLissieSetup::kLissieSetup( QWidget *parent, const char *name )
 	: QDialog( parent, name, TRUE )
 {
-	speed = 50;
 
 	readSettings();
 
@@ -312,18 +324,18 @@ kLissieSetup::kLissieSetup( QWidget *parent, const char *name )
 
 	slider = new KSlider( KSlider::Horizontal, this );
 	slider->setGeometry( 15, 35, 90, 20 );
-	slider->setRange( 0, 100 );
-	slider->setSteps( 25, 50 );
+	slider->setRange( MINSPEED, MAXSPEED );
+	slider->setSteps( (MAXSPEED-MINSPEED)/4, (MAXSPEED-MINSPEED)/2 );
 	slider->setValue( speed );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
 
-	label = new QLabel( "Number of Lissies:", this );
+	label = new QLabel( "Num of Lissies:", this );
 	label->setGeometry( 15, 65, 90, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
 	slider->setGeometry( 15, 85, 90, 20 );
-	slider->setRange( 1, 100 );
-	slider->setSteps( 25, 50 );
+	slider->setRange( MINBATCH, MAXBATCH );
+	slider->setSteps( (MAXBATCH-MINBATCH)/4, (MAXBATCH-MINBATCH)/2 );
 	slider->setValue( maxLevels );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotLevels( int ) ) );
 
@@ -332,8 +344,8 @@ kLissieSetup::kLissieSetup( QWidget *parent, const char *name )
 
 	slider = new KSlider( KSlider::Horizontal, this );
 	slider->setGeometry( 15, 135, 90, 20 );
-	slider->setRange( 1000, 11000 );
-	slider->setSteps( 2500, 5000 );
+	slider->setRange( MINCYCLES, MAXCYCLES );
+	slider->setSteps( (MAXCYCLES-MINCYCLES)/4, (MAXCYCLES-MINCYCLES)/2 );
 	slider->setValue( numPoints );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotPoints( int ) ) );
 
@@ -367,22 +379,22 @@ void kLissieSetup::readSettings()
 	if ( !str.isNull() )
 		speed = atoi( str );
 
-	if ( speed > 100 )
-		speed = 100;
-	else if ( speed < 50 )
-		speed = 50;
+	if ( speed > MAXSPEED )
+		speed = MAXSPEED;
+	else if ( speed < MINSPEED )
+		speed = MINSPEED;
 
 	str = config->readEntry( "MaxLevels" );
 	if ( !str.isNull() )
 		maxLevels = atoi( str );
 	else
-		maxLevels = 1;
+		maxLevels = DEFBATCH;
 
 	str = config->readEntry( "NumPoints" );
 	if ( !str.isNull() )
 		numPoints = atoi( str );
 	else
-		numPoints = 5000;
+		numPoints = DEFCYCLES;
 }
 
 void kLissieSetup::slotSpeed( int num )

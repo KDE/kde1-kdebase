@@ -1,6 +1,4 @@
-#ifndef lint
-static char sccsid[] = "@(#)flame.c	3.3 95/09/14 xlockmore";
-#endif
+
 /*-
  * flame.c - recursive fractal cosmic flames.
  *
@@ -285,7 +283,7 @@ void startScreenSaver( Drawable d )
 void stopScreenSaver()
 {
 	if ( saver )
-		return;
+	  delete saver; // fixed epirker, 12-Jul-97
 	saver = NULL;
 }
 

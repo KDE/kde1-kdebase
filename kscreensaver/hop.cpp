@@ -29,11 +29,22 @@
 
 /* Ported to kscreensave:
    July 1997, Emanuel Pirker <epirker@edu.uni-klu.ac.at>
+   Last Revised: 10-Jul-97
    Contact me if something doesn't work correctly!
 */
 
 #include "xlock.h"
 #include <math.h>
+
+#define MINSPEED 0
+#define MAXSPEED 100
+#define DEFSPEED 50
+#define MINBATCH 0 
+#define MAXBATCH 100
+#define DEFBATCH 50
+#define MINCYCLES 0
+#define MAXCYCLES 1000
+#define DEFCYCLES 500
 
 #define SQRT 0
 #define SIN 1
@@ -59,12 +70,11 @@ typedef struct {
 } hopstruct;
 
 static hopstruct hops[MAXSCREENS];
-static XPoint *pointBuffer = 0;	/* pointer for XDrawPoints */
+static XPoint pointBuffer[MAXBATCH];	/* pointer for XDrawPoints */
 
 void
 inithop(Window win)
 {
-  //Window      win = MI_WINDOW(mi);
   double      range;
   hopstruct  *hp = &hops[screen];
   XWindowAttributes xwa;
@@ -105,8 +115,8 @@ inithop(Window win)
   hp->inc = (int) ((LRAND() / MAXRAND) * 200) - 100;
   hp->bufsize = batchcount;
   
-  //if (!pointBuffer)
-    pointBuffer = (XPoint *) malloc(hp->bufsize * sizeof (XPoint));
+  //if (!pointBuffer)          // made a static structure, epirker, 10-Jul-97
+  //  pointBuffer = (XPoint *) malloc(MAXBATCH * sizeof (XPoint));
   
   XSetForeground(dsp, Scr[screen].gc, BlackPixel(dsp, screen));
   XFillRectangle(dsp, win, Scr[screen].gc, 0, 0,
@@ -153,8 +163,10 @@ drawhop(Window win)
 				oldi = hp->i + 4 * hp->inc / hp->centerx;
 				hp->j = sin(hp->c * hp->i) - cos(hp->d * hp->j);
 				hp->i = sin(hp->a * oldj) - cos(hp->b * oldi);
-				xp->x = hp->centerx + (int) hp->centerx * (hp->i + hp->j) / 4;
-				xp->y = hp->centery - (int) hp->centery * (hp->i - hp->j) / 4;
+				// included parenthesis after (int) to get rid of warnings
+				// epirker, 10-Jul-97
+				xp->x = hp->centerx + (int) (hp->centerx * (hp->i + hp->j)) / 4;
+				xp->y = hp->centery - (int) (hp->centery * (hp->i - hp->j)) / 4;
 				break;
 		}
 		xp++;
@@ -189,7 +201,7 @@ void startScreenSaver( Drawable d )
 void stopScreenSaver()
 {
 	if ( saver )
-		return;
+		delete saver;
 	saver = NULL;
 }
 
@@ -257,21 +269,21 @@ void kHopSaver::readSettings()
 
 	str = config->readEntry( "Speed" );
 	if ( !str.isNull() )
-		speed = 100 - atoi( str );
+		speed = MAXSPEED - atoi( str );
 	else
-		speed = 50;
+		speed = (MAXSPEED-MINSPEED)/2;
 
 	str = config->readEntry( "MaxLevels" );
 	if ( !str.isNull() )
 		maxLevels = atoi( str );
 	else
-		maxLevels = 50;
+		maxLevels = DEFBATCH;
 
 	str = config->readEntry( "NumPoints" );
 	if ( !str.isNull() )
 		numPoints = atoi( str );
 	else
-		numPoints = 500;
+		numPoints = DEFCYCLES;
 }
 
 void kHopSaver::slotTimeout()
@@ -284,7 +296,6 @@ void kHopSaver::slotTimeout()
 kHopSetup::kHopSetup( QWidget *parent, const char *name )
 	: QDialog( parent, name, TRUE )
 {
-	speed = 50;
 
 	readSettings();
 
@@ -299,28 +310,28 @@ kHopSetup::kHopSetup( QWidget *parent, const char *name )
 
 	slider = new KSlider( KSlider::Horizontal, this );
 	slider->setGeometry( 15, 35, 90, 20 );
-	slider->setRange( 0, 100 );
-	slider->setSteps( 25, 50 );
+	slider->setRange( MINSPEED, MAXSPEED );
+	slider->setSteps( (MAXSPEED-MINSPEED)/4, (MAXSPEED-MINSPEED)/2 );
 	slider->setValue( speed );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
 
-	label = new QLabel( "Max Levels:", this );
-	label->setGeometry( 15, 65, 90, 20 );
+	label = new QLabel( "Samecolor Pixels:", this );
+	label->setGeometry( 13, 65, 95, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
 	slider->setGeometry( 15, 85, 90, 20 );
-	slider->setRange( 10, 100 );
-	slider->setSteps( 10, 50 );
+	slider->setRange( MINBATCH, MAXBATCH );
+	slider->setSteps( (MAXBATCH-MINBATCH)/4, (MAXBATCH-MINBATCH)/2 );
 	slider->setValue( maxLevels );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotLevels( int ) ) );
 
-	label = new QLabel( "Num Points:", this );
+	label = new QLabel( "Cycles:", this );
 	label->setGeometry( 15, 115, 90, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
 	slider->setGeometry( 15, 135, 90, 20 );
-	slider->setRange( 100, 1000 );
-	slider->setSteps( 100, 500 );
+	slider->setRange( MINCYCLES, MAXCYCLES );
+	slider->setSteps( (MAXCYCLES-MINCYCLES)/4, (MAXCYCLES-MINCYCLES)/2 );
 	slider->setValue( numPoints );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotPoints( int ) ) );
 
@@ -354,22 +365,22 @@ void kHopSetup::readSettings()
 	if ( !str.isNull() )
 		speed = atoi( str );
 
-	if ( speed > 100 )
-		speed = 100;
-	else if ( speed < 50 )
-		speed = 50;
+	if ( speed > MAXSPEED )
+		speed = MAXSPEED;
+	else if ( speed < MINSPEED )
+		speed = MINSPEED;
 
 	str = config->readEntry( "MaxLevels" );
 	if ( !str.isNull() )
 		maxLevels = atoi( str );
 	else
-		maxLevels = 50;
+		maxLevels = DEFBATCH;
 
 	str = config->readEntry( "NumPoints" );
 	if ( !str.isNull() )
 		numPoints = atoi( str );
 	else
-		numPoints = 500;
+		numPoints = DEFCYCLES;
 }
 
 void kHopSetup::slotSpeed( int num )

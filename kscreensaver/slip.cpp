@@ -8,6 +8,19 @@
  * 01-Dec-95: Patched for VMS <joukj@alpha.chem.uva.nl>.
  */
 
+/* Ported to kscreensave:
+   July 1997, Emanuel Pirker <epirker@edu.uni-klu.ac.at>
+   Last revised: 10-Jul-97
+   Please contact me in case of problems, bugs etc!
+*/
+
+#define MINSPEED 0
+#define MAXSPEED 100
+#define DEFSPEED 100
+#define MINBATCH 0
+#define MAXBATCH 100
+#define DEFBATCH 10
+
 #include "xlock.h"
 #include <math.h>
 
@@ -119,7 +132,7 @@ prepare_screen(Window win, slipstruct * s)
 static int
 quantize(double d)
 {
-	int         i = floor(d);
+  int         i = (int)floor(d);  //(int) included to get rid of warning
 	double      f = d - i;
 
 	if ((LRAND() & 0xff) < f * 0xff)
@@ -254,7 +267,7 @@ void startScreenSaver( Drawable d )
 void stopScreenSaver()
 {
 	if ( saver )
-		return;
+		delete saver;
 	saver = NULL;
 }
 
@@ -297,7 +310,7 @@ kSlipSaver::~kSlipSaver()
 void kSlipSaver::setSpeed( int spd )
 {
 	timer.stop();
-	speed = 100-spd;
+	speed = MAXSPEED - spd;
 	timer.start( speed );
 }
 
@@ -316,15 +329,15 @@ void kSlipSaver::readSettings()
 
 	str = config->readEntry( "Speed" );
 	if ( !str.isNull() )
-		speed = 100 - atoi( str );
+		speed = MAXSPEED - atoi( str );
 	else
-		speed = 10;
+		speed = DEFSPEED;
 
 	str = config->readEntry( "MaxLevels" );
 	if ( !str.isNull() )
 		maxLevels = atoi( str );
 	else
-		maxLevels = 50;
+		maxLevels = DEFBATCH;
 
 }
 
@@ -351,18 +364,18 @@ kSlipSetup::kSlipSetup( QWidget *parent, const char *name )
 
 	slider = new KSlider( KSlider::Horizontal, this );
 	slider->setGeometry( 15, 35, 90, 20 );
-	slider->setRange( 0, 100 );
-	slider->setSteps( 25,50 );
+	slider->setRange( MINSPEED, MAXSPEED );
+	slider->setSteps( (MAXSPEED-MINSPEED)/4, (MAXSPEED-MINSPEED)/2 );
 	slider->setValue( speed );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
 
-	label = new QLabel( "Max Levels:", this );
+	label = new QLabel( "Batchcount:", this );
 	label->setGeometry( 15, 65, 90, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
 	slider->setGeometry( 15, 85, 90, 20 );
-	slider->setRange( 10, 110 );
-	slider->setSteps( 25, 50 );
+	slider->setRange( MINBATCH, MAXBATCH );
+	slider->setSteps( (MAXBATCH-MINBATCH)/4, (MAXBATCH-MINBATCH)/2 );
 	slider->setValue( maxLevels );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotLevels( int ) ) );
 
@@ -396,16 +409,16 @@ void kSlipSetup::readSettings()
 	if ( !str.isNull() )
 		speed = atoi( str );
 
-	if ( speed > 100 )
-		speed = 100;
-	else if ( speed < 1 )
-		speed = 1;
+	if ( speed > MAXSPEED )
+		speed = MAXSPEED;
+	else if ( speed < MINSPEED )
+		speed = MINSPEED;
 
 	str = config->readEntry( "MaxLevels" );
 	if ( !str.isNull() )
 		maxLevels = atoi( str );
 	else
-		maxLevels = 50;
+		maxLevels = DEFBATCH;
 
 }
 
