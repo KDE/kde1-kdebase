@@ -1,0 +1,11 @@
+# KDE Config File
+[KDE Desktop Entry]
+SwallowExec=xbiff
+SwallowTitle=xbiff
+Name=xbiff
+Comment=Mail nofication
+Exec=kmail
+Icon=mail.xpm
+TerminalOptions=
+Type=Application
+Terminal=0
