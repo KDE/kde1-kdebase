@@ -5,6 +5,7 @@
 // Copyright (c) 1997 The KDE project.
 //
 
+#include <config.h>
 #include <qfile.h>
 #include <qdstream.h>
 #include "history.h"
