@@ -32,4 +32,4 @@ install-data-local:
 uninstall-local:
 
 messages:
-	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kcmkeys_SOURCES) && mv messages.po ../../po/kcmkeys.pot
+	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kcmkeys_SOURCES) ../../kwm/kwmbindings.cpp && mv messages.po ../../po/kcmkeys.pot
