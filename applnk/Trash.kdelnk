@@ -2,7 +2,7 @@
 [KDE Desktop Entry]
 Type=Application
 Exec=kfmclient folder %u trash:/
-Icon=recycle.xpm
+Icon=kfm_trash.xpm
 TerminalOptions=
 Path=
 Terminal=0

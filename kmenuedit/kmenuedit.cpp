@@ -71,7 +71,7 @@ KMenuEdit::KMenuEdit( const char *name = NULL )
   //menubar->insertItem( "&Edit", edit_menu);
   menubar->insertItem( "&Options", options);
   menubar->insertSeparator();
-  menubar->insertItem( "&Help", KApplication::getKApplication()->getHelpMenu(TRUE) );
+  menubar->insertItem( "&Help", KApplication::getKApplication()->getHelpMenu(TRUE, "Kmenuedit 0.2.0\n(C) by Christoph Neerfeld\nChristoph.Neerfeld@mail.bonn.netsurf.de") );
   //menubar->insertItem( "&Help", help, ALT+Key_H );
 
   // create toolbar

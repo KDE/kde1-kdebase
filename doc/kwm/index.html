@@ -1,8 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html>
-<title>kwm help</title>
-<center>
-<h1>KDE Window Manager Help</h1>
-<i>Not yet finished!</i><br>
-</center>
-</html>
+  <head>
+    <title>KWM Documentation</title>
+  </head>
 
+  <body>
+    <h1>KWM Documentation</h1>
+	<h2>Preface</h2>
+	<p>This documentation may be incomplete. For further questions how
+	  to customize 
+	  kwm at a low level (only interesting for the kwinconfig
+	  developers....)  please have a look at the generated kwmrc and the
+	  source code.</p>
+	
+	<p>	For all programmers: check out <code>kwm.h</code> in
+	  libkdecore for lots of 
+	  informations about how to use kwm for your purposes. For modules
+	  the class <code>KWMModuleApplication</code> (maybe some day in
+	  libkdecore, at 
+	  present used and defined by krootwm) is also a good example on how
+	  to write modules.</p>
+
+
+	<h2>FAQ</H2>
+	<ol>
+	  <li>
+		<p>Why should I use kwm? I spent several days in learning how to
+		  configure 10 different windowmangers. And now that I have a 678
+		  lines resource file doing exactly what I want, you are coming
+		  along and want to take my windowmanager away!</p>
+		
+		<p>Answer: You <em>should</em> not, it is only a <em>free</em>
+		  offer. But IMHO your are making a mistake if not ;-)</p>
+		
+		<p>Some arguments:</p>
+		
+		<ul>
+		  <li>shameless integration into KDE</li>
+		  <li>2nd generation windowmanager, i.e. it uses a modern GUI
+			toolkit for its widgets (buttons, menus, listboxes, etc) instead
+			of bloating the code with a proprietary unconvenient plain Xlib
+			implementation.</li>
+		  <li>modern and pretty look and <em>feel</em> with unique window
+			titles and icons which do not need to be defined in cryptic
+			resource files.</li>
+		  <li>can be configured at runtime without the need to
+			restart it</li> 
+		  <li>complete keyboard control</li>
+		  <li>excellent focus handling even if you work on different virtual
+			desktops (no longer desktop-switching-and-losing-focus like it is
+			standard with other window managers)</li>
+		  <li>includes session management and a really working session
+			management proxy for older applications. This proxy is able to
+			restore your applications exactly, that means with the correct
+			window properties (maximized, sticky, iconified, etc.) on the
+			correct virtual desktop.</li> 
+		  <li>modern module concept that uses X wherever it is
+			possible. Also, kwm modules are very independent: They can be
+			started before or after kwm. kwm can even be restarted while
+			the modules are still running and will reconnect them
+			automatically.</li> 
+		  <li>offers some extensions to X in <code>kwm.h</code>: Now
+			applications can 
+			even maximize themselves (or sticky, or decorate/undecorate or
+			whatever) and define mini icons. This works also for mapped
+			(visible) windows!</li><br>
+		</ul>
+	  </li>
+
+	  <li>
+		<p>Why can't I define new shortcuts for launching applications or
+		do whatever? This is very important for me!</p>
+		
+		<p>Answer: Because this is not the task of the
+		  windowmanger. Use <code>KGlobalShortcut</code> for this
+		  purpose.</p> 
+	  </li>
+	
+	  <li>
+		<p>Why does kwm look so much like Windows 95?</p>
+		
+		<p>Answer: Ooops, does it? Let me see.... (Matthias trying to
+		find somebody 
+		who has Windows 95 because he does not have any windows on all his
+		computers... Damn... nobody has windows here. Well let's grab an old
+		Linux distribution and install fvwm95-2.....) No, I cannot verify
+		that at all. kwm looks much prettier and offers more core 
+		window management functionality :-)<p>
+	  </li>
+
+	  <li>
+		<p>Is it possible to add the KDE extensions to other
+		windowmanagers?</p> 
+		
+		<p>Answer: Yes it is. You simple have to go through
+		  <code>kwm.h</code>/<code>kwm.C</code> from libkdecore and
+		  extend your favorite 
+		  windowmanager to respond correctly to these requests. BTW it
+		  is also possible to implement an object request broker in
+		  x86 assembler. It's just a question of the investment/result
+		  ratio.</P> 
+	  </li>
+	</ol>
+	 
+	<h2>Shortcuts</h2>
+	<dl>
+	  <dt>Alt-Esc / Control-Esc</dt>
+	  <dd>"Current Session"-manager with logout-button</dd>
+	  <dt>Alt-Tab / Alt-Shift-Tab</dt>
+	  <dd>Traverse the windows of the current desktop</dd>
+	  <dt>Ctrl-Tab / Ctrl-Shift-Tab</dt>
+	  <dd>Traverse the virtual desktops (can be switched of in kwmrc)</dd>
+	  <dt>Alt-F2</dt>
+	  <dd>Execute command</dd>
+	  <dt>Alt-F3</dt>
+	  <dd>window operation popup</dd>
+	  <dt>Alt-F4</dt>
+	  <dd>Close window</dd>
+	  <dt>Ctrl-F[1..8]</dt>
+	  <dd>switch to virtual desktop</dd>
+	  <dt>Ctrl-Alt-Esc</dt>
+	  <dd>Destroy window mode (cursor becomes a pirate)</dd>
+ 	</dl>
+  
+	<h2>Mouse control</h2>
+	<dl>
+	  <dt>click onto the border or the titlebar:</dt>
+	  <dd><em>left mouse button</em>: activate and raise the window<br>
+		<em>middle mouse button</em>: activate and lower the window<br>
+		<em>right mouse button</em>: show windows operation menu if the<br>
+		window is active, otherwise activate it without raising.</dd>
+
+	  <dt>doubleclick on title toggles maximize</dt>
+
+	  <dt>drag of the titlebar</dt>
+	  <dd>move window (left mouse raises, middle mouse keeps the stacking position)</dd>
+
+	  <dt>drag of corners or edges</dt>
+	  <dd>resize the window (left mouse raises, middle 
+		mouse keeps the stacking position)</dd>
+
+	  <dt>the entire window</dt>
+	  <dd><em>Alt-(left mouse button)</em>: move<br>
+		<em>Alt-(middle mouse button)</em>: raise<br>
+		<em>Alt-(right mouse button)</em>: resize</dd>
+
+	  <dt>titlebar buttons (configurable)</dt>
+	  <dd><em>Menu</em>: window operations<br>
+		<em>Sticky</em>: toggle sticky<br>
+		<em>Iconify</em>: iconfiy<br>
+		<em>Maximize</em>: 
+		<dl>
+		  <dt>Left mouse button</dt>
+		  <dd>maximize</dd>
+		  <dt>Middle mouse button</dt>
+		  <dd>maximize vertically</dd>
+		  <dt>Right mouse button</dt>
+		  <dd>maximize horizontally</dd>
+		  <dt>MaximizeOnlyVertically-option will switch the meaning
+			of the left and the middle mouse button.</dt>
+		</dl>
+		<em>Close</em>: close (applications may ask if they have
+		something to save)</dd> 
+	</dl>
+
+	<h2>Low-level configuration (kwmrc)</h2>
+	<p>Please note that users need not change these
+	  options in the <code>kwmrc</code> file; they can use the Control
+	  Center instead 
+	  which provides	access to all these configuration options via a
+	  nice GUI. See the <a href="desktop.html">Quickstart Guide</a> for
+	  information about how to use the Control Center.</p>
+	
+	<pre>
+    [Buttons]
+    Button[A-F]=Menu, Sticky, Iconify, Maximize, Close, Off
+
+    [General]
+    WindowMoveType=Opaque, Transparent
+    FocusPolicy=ClickToFocus, FocusFollowMouse
+    AutoRaise=0 (milliseconds)
+    MaximizeOnlyVertically=off, on
+    TitlebarLook=shaded, plain
+    TitleAnimation=50 (milliseconds)
+    ResizeAnimation=on, off
+    ControlTab=on, off
+
+    [session]
+    proxyignore=xemacs,xterm,..., 
+       List of WM_COMMANDS that should be ignore for session 
+       management. Only for hackers!
+	</pre>
+
+	<h2>Command-line options</h2>
+	<dl>
+	  <dt>-version</dt>
+	  <dd>shows the version number including the patchlevel</dd>
+	  <dt>-nosession</dt>
+	  <dd>disables the restoration of the previous session</dd>
+	</dl>
+
+	<hr>
+	<p>Author:<br>
+	  <a href="mailto:ettrich@kde.org">Matthias Ettrich</a><br>
+	<p>Copy editor:<br> <a href="mailto:kalle@kde.org">Kalle Dalheimer</a><br>
+
+    <hr>
+    <address><a href="mailto:kalle@kde.org">Kalle Dalheimer</a></address>
+<!-- Created: Sat Oct 18 13:48:14 CEST 1997 -->
+<!-- hhmts start -->
+Last modified: Sat Oct 18 14:36:01 CEST 1997
+<!-- hhmts end -->
+  </body>
+</html>
