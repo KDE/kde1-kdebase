@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <HTML>
 <HEAD>
-<TITLE>KDE Control Center - KDE Theme Manager: Installer</TITLE>
+<TITLE>KDE Control Center - KDE Theme Manager: KDE Theme Manager: Installer</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
 <META NAME="keywords" CONTENT="KDE Themes">
 <META NAME="description" CONTENT="KDE Theme Manager">
@@ -17,10 +17,78 @@
 <A HREF="kthememgr-2.html">Next</A>
 Previous<A HREF="kthememgr.html#toc1">Table of Contents</A>
 </P>
-<H3><A NAME="s1">1. Installer</A></H3>
+<H3><A NAME="s1">1. KDE Theme Manager: Installer</A></H3>
 
-<P>This screen allows you to select the desktop <B>Theme</B>
-package you wish to install.
+<P>This KDE Theme Manager screen allows you to select the desktop <B>Theme</B>
+package you wish to install. 
+<P><B>Themes</B> customize some
+or all of:  the 
+appearance of  the various screen elements 
+(window borders, buttons, title bar, panel, etc.), 
+the color scheme and background wall papers,
+sounds associated with various events. and standard icons. 
+<P>
+<P>
+<P>The column on the left lists the available  <B>Theme</B> packages.
+The packages shown are either <EM>global themes</EM>
+in the system Themes directory
+<CODE>$KDEDIR/share/apps/kthememgr/Themes</CODE>  or
+<EM>local themes</EM> in your personal
+Themes directory <CODE>~/.kde/share/apps/kthememgr/Themes</CODE>.
+The packages can either be gzipped tarballs or unpacked directories.
+<P>
+<P>Click on a listed Theme to select it; its name will be
+highlighted and (if available)  a picture  showing its  components
+will be displayed in the top right-hand box.   Information
+about the Theme will be displayed in the lower right-hand box. 
+<P>To activate the highlighted theme package, click on <B>Apply</B>.
+The contents of the package will be extracted to  your Theme manager
+Work directory <CODE>~/.kde/share/apps/kthememgr/Work</CODE>, and the various
+components will be copied to the KDE configuration directories which
+control the desktop.    (Go to the next <B>Contents</B> screen to
+select which  components of the Themes package to activate)
+<P>
+<P>
+<P>
+<UL>
+<LI> Note: the image files for the various window  elements
+(buttons, titlebar, etc.) are placed in the directory
+<CODE>~/.kde/share/apps/kwm/pics/</CODE>
+and panel elements go in
+<CODE>~/.kde/share/apps/kpanel/pics/</CODE>.
+To completely remove a Theme, you may need to delete the contents
+of these directories.
+</LI>
+</UL>
+<P>
+<P>Clicking on <B>OK</B> will also apply the selected  Theme package, and
+then close the Theme Manager.
+<P>If you click on the <B>Extract</B> button,
+the contents of the highlighted Theme package will be extracted into
+the  Work directory <EM>without</EM>  being
+applied to the desktop.   This is useful if you are building a modified
+Theme package.  If the Theme package is global, 
+a local copy will also be added to your  personal
+Themes directory.
+<P>
+<P>The  list of available Themes can be modified as follows:
+<UL>
+<LI> Click on <B>New</B> to create a new entry in the list.
+This cretes an  empty subdirectory for the new Theme in the
+local Work directory.
+
+ </LI>
+<LI> Click on <B>Remove</B> to delete a local Theme.
+(This button is inactive when the highlighted Theme is a global
+Theme.) 
+</LI>
+<LI> Click on <B>Import</B> to import a Theme package into your
+local Themes directory.
+</LI>
+<LI> Click on <B>Export</B> to export the highlighted Theme package.
+</LI>
+</UL>
+<P>
 <P>
 <P ALIGN="RIGHT">
 
