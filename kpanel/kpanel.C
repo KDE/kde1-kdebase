@@ -1598,7 +1598,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 
    int tfx = 0; //correction values for the taskbar autoHide feature
    int tfy = 0;
-   int tfxR = 0; //correction values for the taskbar autoHide feature used 
+   int tfxR = 0; //correction values for the taskbar autoHide feature used
    int tfyR = 0; // to set the window region
 
    int th = (taskbar_position==hidden) ? 0 :
@@ -1608,8 +1608,8 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 
    taskbar_frame_geometry = taskbar_frame->geometry();
 
-   
-   
+
+
    if (autoHideTaskbar){
      if (taskbar_position == top){
        tfyR = -th+4;
@@ -1626,7 +1626,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
        tfy = tfyR;
        tfx = tfxR;
    }
-   
+
    if (panelCurrentlyHidden) // i.e. standalone shown
     {
      pw = 0;
@@ -1704,7 +1704,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 		   pxR = pxR + width() - 4;
 	   }
        }
-       
+
        if (pxR<0){
 	   pwR += pxR;
 	   pxR = 0;
@@ -1719,8 +1719,8 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
        if (pyR + phR >h){
 	   phR = h-pyR+1;
        }
-       
-       
+
+
        if (autoHidden)
 	   pw = pwR;
 	   ph = phR;
@@ -1765,14 +1765,14 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
       {
        if (taskbar_position == bottom)
 	{
-	 taskbar_frame_geometry.setRect(tfxR+pxR+mw+sx, tfyR+h-phR-th,
+	 taskbar_frame_geometry.setRect(tfx+px+mw+sx, tfy+h-ph-th,
 				    w-mw-sw, th);
 	   KWM::setWindowRegion(currentDesktop,
 				QRect(0, 0, w, tfyR+h-phR-th-1));
 	}
        else if (taskbar_position == top)
 	{
-	 taskbar_frame_geometry.setRect(tfxR+pxR+mw, tfyR+0, w-mw, th);
+	 taskbar_frame_geometry.setRect(tfx+px+mw, tfy+0, w-mw, th);
 	 KWM::setWindowRegion(currentDesktop,
 			      QRect(0, tfyR+th+1, w, -tfyR+h-phR-th-1));
 	}
