@@ -42,7 +42,7 @@ kURLcompletion.moc: kURLcompletion.h
 	$(MOC) kURLcompletion.h -o kURLcompletion.moc
 
 messages:
-	$(XGETTEXT) -C -ktranslate -x ../../kdelibs/po/kde.pot $(kwm_SOURCES)
+	$(XGETTEXT) -C -ktranslate -x ../../kdelibs/po/kde.pot $(kwm_SOURCES) && mv messages.po ../po/kwm.pot
 	
 install-data-local: 
 	$(mkinstalldirs) $(kde_icondir)

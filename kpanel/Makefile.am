@@ -21,4 +21,4 @@ pmenu.moc: pmenu.h
 	$(MOC) pmenu.h -o pmenu.moc
 
 messages:
-	$(XGETTEXT) -C --keyword=translate -x ../../kdelibs/po/kde.pot $(kpanel_SOURCES)
+	$(XGETTEXT) -C --keyword=translate -x ../../kdelibs/po/kde.pot $(kpanel_SOURCES) && mv messages.po ../po/kpanel.pot
