@@ -9,6 +9,7 @@
 #include <unistd.h>
 #include <signal.h>
 #include "kscreensave.h"
+#include <kapp.h>
 
 void kForceLocker()
 {
@@ -31,7 +32,7 @@ void kForceLocker()
 	else
 	{
 		// no screen saver - start a temporary saver
-		p = getenv( "KDEDIR" );
+		p = kapp->kdedir().data();
 
 		if ( p )
 		{
@@ -47,7 +48,7 @@ void kForceLocker()
 
 				// uh oh - failed
 				fprintf( stderr, "Could not invoke kblankscrn.kss in $PATH or"
-					" $KDEDIR/bin\n" );
+					" %s/bin\n" , p);
 				exit( 1 );
 			}
 		}
