@@ -1,9 +1,16 @@
+kdebase (4:1.1.1-19990523-1) unstable; urgency=low
+
+  * Fixing kappfinder issue
+  * More postinst script fix's
+
+ -- Ivan E. Moore II <rkrusty@debian.org>  Sun, 23 May 1999 04:00:55 -0400
+
 kdebase (4:1.1.1-19990516-1) unstable; urgency=low
 
   * migrating kdm into it's own package
   * fixing i18n build issues
 
- -- Stephan Kulow <coolo@kde.org>  Sun, 16 May 1999 06:00:55 +0200
+ -- Ivan E. Moore II <rkrusty@debian.org>  Sun, 16 May 1999 06:00:55 -0400
 
 kdebase (4:1.1.1-19990424-1) unstable; urgency=low
 
