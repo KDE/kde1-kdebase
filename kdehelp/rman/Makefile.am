@@ -7,7 +7,7 @@ version = 2.5a6
 
 INCLUDES =  $(all_includes)
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
-LDADD = $(LIB_KDECORE) $(LIBCOMPAT) 
+LDADD = $(LIBCOMPAT) 
 CFLAGS = -DVOLLIST='$(VOLLIST)' -DMANTITLEPRINTF='$(MANTITLEPRINTF)' -DMANREFPRINTF='$(MANREFPRINTF)' -DNDEBUG -DROSETTAMANVERSION=\"$(version)\"
 #bindir = $(kde_cgidir)
 
