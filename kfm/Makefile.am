@@ -28,7 +28,7 @@ kfm_SOURCES =	\
 	kmsgwin.cpp htmlcache.cpp autostart.cpp kfmtree.cpp \
 	krenamewin.cpp passworddialog.cpp kURLcompletion.cpp debug.cpp kfm.cpp \
 	kfmpaths.cpp kfmjob.cpp kfmexec.cpp kmimemagic.cpp kfinder.cpp utils.cpp \
-	open-with.cpp finddlg.cpp kcookiejar.cpp kcookiewin.cpp popup.cpp
+	open-with.cpp finddlg.cpp kcookiejar.cpp kcookiewin.cpp popup.cpp kintlist.cpp
 
 noinst_HEADERS =  \
 	kfmgui.h kfmview.h kbind.h root.h kfmdlg.h bookmark.h htmlopts.h \
@@ -37,7 +37,7 @@ noinst_HEADERS =  \
 	krenamewin.h passworddialog.h kURLcompletion.h utils.h kfm.h \
 	config-kfm.h kfmpaths.h kfmjob.h kfmexec.h kmimemagic.h kfinder.h \
 	open-with.h finddlg.h kcookiejar.h kcookiewin.h popup.h \
-	kstrlist.h cgi.h kbookmarkdlg.h
+	kstrlist.h cgi.h kbookmarkdlg.h kintlist.h
 
 BUILT_SOURCES =	\
 	kfmgui.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc htmlopts.moc \

@@ -14,7 +14,6 @@ KFinder::KFinder( QWidget *_parent, QStrList *_headers, QArray<int> *_sizes ) : 
     getOpenPixmap();
     getClosePixmap();
 
-
     buttonList.setAutoDelete( TRUE );
     
     sizeList = 0L;

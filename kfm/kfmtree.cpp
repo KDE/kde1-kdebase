@@ -21,6 +21,7 @@
 #include "kfmpaths.h"
 #include "utils.h"
 #include "kfmdlg.h"
+#include "kintlist.h"
 
 KFMDirTree::KFMDirTree( QWidget *_parent, KfmGui *_gui ) : KFinder( _parent )
 {
@@ -41,15 +42,15 @@ KFMDirTree::~KFMDirTree()
 
 void KFMDirTree::fill()
 {
-    QString home (QDir::homeDirPath());
-    if ( home.right(1) != "/" )
-	home += "/";
-    
+    QString desktop( KFMPaths::DesktopPath() );
+    if ( desktop.right(1) == "/" )
+      desktop.truncate( desktop.length() - 1 );
+
     KFMDirTreeItem *item = new KFMDirTreeItem( this, "/", FALSE );
     node.append( item );
-    item = new KFMDirTreeItem( this, home, FALSE );
+    item = new KFMDirTreeItem( this, QDir::homeDirPath(), FALSE );
     node.append( item );
-    item = new KFMDirTreeItem( this, KFMPaths::DesktopPath().data(), FALSE );
+    item = new KFMDirTreeItem( this, desktop, FALSE );
     node.append( item );
 
     changeTree( &node );
@@ -154,6 +155,8 @@ void KFMDirTree::slotDirectoryChanged( const char *_url )
 
 void KFMDirTree::update()
 {
+    finderWin->setAutoUpdate( false );
+
     int ypos, xpos;
     finderWin->offsets( xpos, ypos );
 
@@ -166,8 +169,11 @@ void KFMDirTree::update()
 
     // Find all open items
     QStrList openURLList;
+    QDict<KIntList> openURLLevelDict;
+    openURLLevelDict.setAutoDelete( true );
     KFinderItem *item;
     KFMDirTreeItem *kfmitem;
+
     for ( item = openList.first(); item != 0L; item = openList.next() )
     {
 	if ( item->isOpen() )
@@ -175,8 +181,20 @@ void KFMDirTree::update()
 	    kfmitem = (KFMDirTreeItem*)item;
 	    // Ignore opened directories that start with "." if
 	    // the user does not want to see the dot files.
-	    if ( *kfmitem->getURL() != '.' || show_dots )
+	    if ( *kfmitem->getURL() != '.' || show_dots ) {
 		openURLList.append( kfmitem->getURL() );
+
+                KIntList* levelList;
+                int* level = new int;
+                *level = kfmitem->getLevel();
+                if( !(levelList = openURLLevelDict.find( kfmitem->getURL() )) ) {
+                    levelList = new KIntList;
+                    levelList->setAutoDelete( true );
+                    openURLLevelDict.insert( kfmitem->getURL(), levelList );
+                }
+
+                levelList->append( level );
+            }
 	}
     }
 
@@ -201,10 +219,18 @@ void KFMDirTree::update()
 	    // Was this item open ?
 	    if ( openURLList.find( kfmitem->getURL() ) != -1 )
 	    {
-		// Open it again
-		item->setOpen( TRUE );
-		// Traverse its items, too
-		nodeList.append( item->node() );
+                KIntList* levelList;
+                int level = kfmitem->getLevel();
+                if( (levelList = openURLLevelDict.find(kfmitem->getURL())) ) {
+                    if( levelList->find( &level ) != -1 ) {
+                        // Open it again
+       		        item->setOpen( TRUE );
+		        // Traverse its items, too
+		        nodeList.append( item->node() );
+                    }
+                } 
+                else
+                  debug("kfmtree.cpp: should never happen!!!");
 	    }
 	}
     }
@@ -215,6 +241,8 @@ void KFMDirTree::update()
     // Adjust scrollbars to original position if possible
     finderWin->setOffsets( xpos, ypos );
     
+    finderWin->setAutoUpdate( true );
+
     finderWin->repaint();
 }
 
@@ -277,9 +305,6 @@ void KFMDirTree::openPopupMenu( const char *_url, const QPoint &_point )
     // Store for later use
     popupDir = _url;
 
-    popupMenu->insertItem( klocale->translate("&New"), menuNew );
-    popupMenu->insertSeparator();
-
     if ( KIOServer::isTrash( _url ) )
     {
 	int id;
@@ -294,6 +319,9 @@ void KFMDirTree::openPopupMenu( const char *_url, const QPoint &_point )
     else
     {
 	int id;
+        id = popupMenu->insertItem( klocale->translate("&New"), menuNew );
+        popupMenu->insertSeparator();
+
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_CD),
 				    this, SLOT( slotPopupCd() ) );
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_NEW_VIEW), 
@@ -613,7 +641,8 @@ void KFMDirTreeItem::setOpen( bool _open )
 	if ( S_ISDIR( buff.st_mode ) )
 	{
 	    KFMDirTreeItem *item = new KFMDirTreeItem( dirTree, u2.path(), FALSE );
-	    finderNode->append( item );
+            item->setLevel( getLevel() + 1 );
+            finderNode->append( item );
 	}
     }
     

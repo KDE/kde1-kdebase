@@ -48,6 +48,7 @@ public:
     virtual bool isOpen() { return bOpened; }
     virtual void setOpen( bool _open ) = 0;
     
+    int getLevel( void ) { return level; }
 protected:
     KFinderItem( KFinder *_finder );
 
@@ -106,6 +107,9 @@ public:
 
     void changeTree( KFinderNode *_node );
     void updateTree( bool _repaint = TRUE );
+
+    void setAutoUpdate( bool enable ) { QTableView::setAutoUpdate(enable); }
+    bool autoUpdate( void ) { return QTableView::autoUpdate(); }
 
 public slots:
     void slotDropEvent( KDNDDropZone *_zone );
