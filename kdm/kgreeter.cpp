@@ -164,6 +164,16 @@ extern "C" {
 }
 #endif
 
+// Misc. functions
+static inline int my_seteuid( uid_t euid)
+{
+#ifdef HAVE_SETEUID
+     return seteuid(euid);
+#else
+     return setreuid(-1, euid);
+#endif // HAVE_SETEUID    
+}
+
 static void
 set_min( QWidget* w)
 {
@@ -422,9 +432,9 @@ static inline gid_t* switch_to_user( int *gidset_size,
      gid_t *gidset = new gid_t[*gidset_size];
      if( getgroups( *gidset_size, gidset) == -1 ||
 	 initgroups(pwd->pw_name, pwd->pw_gid) != 0 ||
-	 seteuid(pwd->pw_uid) != 0) {
+	 my_seteuid(pwd->pw_uid) != 0) {
 	  // Error, back out
-	  seteuid(0);
+	  my_seteuid(0);
 	  setgroups( *gidset_size, gidset);
 	  delete[] gidset;
 	  return 0;
@@ -435,7 +445,7 @@ static inline gid_t* switch_to_user( int *gidset_size,
 // Switch uid back to root, and gids to gidset
 static inline void switch_to_root( int gidset_size, gid_t *gidset)
 {
-     seteuid(0);
+     my_seteuid(0);
      setgroups( gidset_size, gidset);
      delete[] gidset;
 }
@@ -717,7 +727,7 @@ KGreeter::restrict_nohome(){
      // don't deny root to log in
      if (!pwd->pw_uid) return false;
 
-     seteuid(pwd->pw_uid);
+     my_seteuid(pwd->pw_uid);
      if (!*pwd->pw_dir || chdir(pwd->pw_dir) < 0) {
 	  if (login_getcapbool(lc, "requirehome", 0)) {
 	       QMessageBox::critical(NULL, NULL, 
@@ -726,7 +736,7 @@ KGreeter::restrict_nohome(){
 	       return true;
 	  }
      }
-     seteuid(0);
+     my_seteuid(0);
 
      return false;
 }
