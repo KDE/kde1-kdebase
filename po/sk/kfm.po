@@ -60,11 +60,11 @@ msgstr "Vy&bra» v¹etko"
 
 #: kfmgui.cpp:290
 msgid "&Find in page..."
-msgstr ""
+msgstr "&Hµada» v stránke..."
 
 #: kfmgui.cpp:292
 msgid "Find &next"
-msgstr ""
+msgstr "&Nasledujúce"
 
 #: kfmgui.cpp:295
 msgid "Mime Types"
@@ -194,7 +194,6 @@ msgid "Configure Browser..."
 msgstr "Konfigurova» prehliadaè..."
 
 #: kfmgui.cpp:436
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -215,7 +214,10 @@ msgstr ""
 "mjones@kde.org\n"
 "\n"
 "Správca proxy od Larsa Hossa\n"
-"Lars.Hoss@munich.netsurf.de"
+"Lars.Hoss@munich.netsurf.de\n"
+"\n"
+"Chybové hlásenia a patche posielajte na\n"
+"David Faure faure@kde.org"
 
 #: kfmgui.cpp:449
 msgid "&Bookmarks"
@@ -274,11 +276,11 @@ msgstr "Vyberte súbory:"
 
 #: kfmgui.cpp:931
 msgid "Find Complete"
-msgstr ""
+msgstr "Hµadanie skonèilo"
 
 #: kfmgui.cpp:932
 msgid "Continue search from the top of the page?"
-msgstr ""
+msgstr "Pokraèova» v hµadaní od zaèiatku stránky?"
 
 #: kfmgui.cpp:950
 msgid "&Edit Bookmarks..."
@@ -369,6 +371,10 @@ msgid ""
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Nemô¾em ulo¾i» nastavenie, preto¾e\n"
+"tento prieèinok buï nie je zapisovateµný alebo bookmarkovaný.\n"
+"\n"
+" Bookmarknite si toto miesto alebo spravte naò kdelnk na ploche."
 
 #: kfmview.cpp:578
 msgid ""
@@ -377,6 +383,10 @@ msgid ""
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Nemô¾em ulo¾i» nastavenie, preto¾e\n"
+"toto URL buï nie je bookmarkované alebo na ploche.\n"
+"\n"
+" Bookmarknite toto miesto alebo spravte naò kdelnk na ploche."
 
 #: kfmtree.cpp:288 kfmview.cpp:617 root.cpp:1264
 msgid "Could not access Trash Bin"
@@ -567,13 +577,12 @@ msgstr "Prida» k zálo¾kám"
 
 #: main.cpp:237
 msgid "Save settings for this URL"
-msgstr ""
+msgstr "Ulo¾i» nastavenie pre toto URL"
 
 # kfmgui.cpp:???
 #: main.cpp:238
-#, fuzzy
 msgid "Show Menubar"
-msgstr "Zobrazova» &menu"
+msgstr "Zobrazova» menu"
 
 #: htmlopts.cpp:69
 msgid "Small"
@@ -617,7 +626,7 @@ msgstr "Zmeni» kurzor nad odkazom."
 
 #: htmlopts.cpp:412
 msgid "Underline links"
-msgstr ""
+msgstr "Podèiarkova» odkazy"
 
 #: htmlopts.cpp:529
 msgid "Horizontal Root Grid Spacing:"
@@ -629,21 +638,19 @@ msgstr "Vertikálne vzdialenosti:"
 
 #: htmlopts.cpp:577
 msgid "Allow per-URL settings"
-msgstr ""
+msgstr "Povoli» nastavenie podµa URL"
 
 #: htmlopts.cpp:585
 msgid "Transparent Text for Root Icons."
 msgstr "Priehµadný text ikoniek roota"
 
 #: htmlopts.cpp:599
-#, fuzzy
 msgid "Icon foreground color:"
-msgstr "Farba pozadia:"
+msgstr "Farba popredia ikonky:"
 
 #: htmlopts.cpp:611
-#, fuzzy
 msgid "Icon background color:"
-msgstr "Farba pozadia:"
+msgstr "Farba pozadia ikonky:"
 
 #: kfmdlg.cpp:114
 msgid "&Browser"
@@ -654,9 +661,8 @@ msgid "Could not write bookmark"
 msgstr "Nemô¾em zapísa» zálo¾ku"
 
 #: kfmprops.cpp:238
-#, fuzzy
 msgid "File Name"
-msgstr "Plné meno"
+msgstr "Meno súboru"
 
 #: kfmprops.cpp:253
 msgid "Full Name"
@@ -802,9 +808,8 @@ msgid "Execute"
 msgstr "Vykona»"
 
 #: kfmprops.cpp:683
-#, fuzzy
 msgid "&Browse..."
-msgstr "&Prehliadaè"
+msgstr "&Listova»..."
 
 #: kfmprops.cpp:695
 msgid "Working Directory"
@@ -840,9 +845,8 @@ msgid "URL"
 msgstr "URL"
 
 #: kfmprops.cpp:1033
-#, fuzzy
 msgid "Background"
-msgstr "Farba pozadia:"
+msgstr "Pozadie"
 
 #: kfmprops.cpp:1043
 msgid "Apply global"
@@ -886,7 +890,7 @@ msgstr "©tandardná aplikácia"
 
 #: kfmprops.cpp:1633
 msgid "<none>"
-msgstr ""
+msgstr "<¾iadne>"
 
 #: kfmprops.cpp:1755
 msgid "Device ( /dev/fd0 )"
@@ -1283,12 +1287,16 @@ msgid ""
 " is not a directory ! Security Alert !\n"
 "Please check it.\n"
 msgstr ""
+" nie je prieèinok ! Bezpeènostné upozornenie !\n"
+"Prosím skontrolujte to.\n"
 
 #: htmlcache.cpp:368
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Check it before clearing the cache.\n"
 msgstr ""
+" nie je prieèinok ! Bezpeènostné upozornenie !\n"
+"Prosím skontrolujte to pred vymazaním cache.\n"
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"
@@ -1423,13 +1431,12 @@ msgid "This group is empty!"
 msgstr "Táto skupina je prázdna!"
 
 #: finddlg.cpp:41
-#, fuzzy
 msgid "Find:"
-msgstr "&Hµadaj"
+msgstr "Hµada»:"
 
 #: finddlg.cpp:56
 msgid "Case &sensitive"
-msgstr ""
+msgstr "Rozli¹ova» veµk./malé."
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1496,18 +1503,3 @@ msgid ""
 msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
-
-#~ msgid "Name"
-#~ msgstr "Meno"
-
-#~ msgid "Browse"
-#~ msgstr "Listova»"
-
-#~ msgid "&Quit..."
-#~ msgstr "&Ukonèi»"
-
-#~ msgid "&About..."
-#~ msgstr "&Informácie"
-
-#~ msgid "About KFM"
-#~ msgstr "Informácie o KFM"
