@@ -66,7 +66,7 @@ KKeyApplication::KKeyApplication(int &argc, char **argv, const char *name)
       if (!pages || pages->contains("standard")){
 	printf("create standard\n");
 //	addPage(standard = new KStdConfig(dialog),
-//		klocale->translate("&Standard shortcuts"), "keys-1.html");
+//		klocale->translate("&Standard shortcuts"), "keys-2.html");
  	global_switch = false ;
  	addPage(standard = new KKeyConfig(dialog),
 		klocale->translate("&Standard shortcuts"), "keys-1.html");
@@ -74,10 +74,10 @@ KKeyApplication::KKeyApplication(int &argc, char **argv, const char *name)
       if (!pages || pages->contains("global")){
 	printf("create global\n");
 //	addPage(global = new KGlobalConfig(dialog),
-//		klocale->translate("&Global shortcuts"), "keys-2.html");
+//		klocale->translate("&Global shortcuts"), "keys-1.html");
  	global_switch = true ;
 	addPage(global = new KKeyConfig(dialog),
-		klocale->translate("&Global shortcuts"), "keys-2.html");
+		klocale->translate("&Global shortcuts"), "keys-1.html");
 
       }
 
