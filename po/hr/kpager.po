@@ -1,0 +1,117 @@
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Vladimir Vuksan <vuksan@veus.hr>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1999-01-15 01:15+0100\n"
+"PO-Revision-Date: 1999-01-28 20:00-0500\n"
+"Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
+"Language-Team: Croatian <hr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kpager.cpp:72
+msgid "Toggle Global Desktop"
+msgstr ""
+
+#: kpager.cpp:74
+msgid "Toggle Menubar"
+msgstr "Uklj./isklj. izbornik"
+
+#: kpager.cpp:77
+msgid "Move Right"
+msgstr "Pomakni se udesno"
+
+#: kpager.cpp:79
+msgid "Move Left"
+msgstr "Pomakni se ulijevo"
+
+#: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
+msgid "Hide &Global Desktop"
+msgstr "Sakrij &zajednièki radnu povr¹inu"
+
+#: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
+msgid "Show &Global Desktop"
+msgstr "Prika¾i &zajednièki radnu povr¹inu"
+
+#: kpager.cpp:97 kpager.cpp:380
+msgid "Hide &Menubar"
+msgstr "Sakrij &Izbornik"
+
+#: kpager.cpp:101 kpager.cpp:386
+msgid "&2 Rows"
+msgstr "&2 reda"
+
+#: kpager.cpp:104
+msgid "&One Click change Desktop"
+msgstr "P&romijeni radnu povr¹inu jednik klikom"
+
+#: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
+msgid "Hide Desktop &Names"
+msgstr "&Sakrij imena radnih povr¹ina"
+
+#: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
+msgid "Show Desktop &Names"
+msgstr "&Prika¾i imena radnih povr¹ina"
+
+#: kpager.cpp:115 kpager.cpp:402
+msgid "Plain"
+msgstr "Èisto"
+
+#: kpager.cpp:118 kpager.cpp:404
+msgid "Icon"
+msgstr "Ikona"
+
+#: kpager.cpp:121 kpager.cpp:406
+msgid "Pixmap"
+msgstr "Pixmapa"
+
+#: kpager.cpp:125 kpager.cpp:412
+msgid "Draw Mode"
+msgstr "Vrsta iscrtavanja"
+
+#: kpager.cpp:129
+#, c-format
+msgid ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"KPager's homepage is at : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n"
+"This is free software, and you are welcome to redistribute it\n"
+"under certain conditions\n"
+msgstr ""
+
+#: kpager.cpp:382
+msgid "Show &Menubar"
+msgstr "Prika¾i traku &izbornika"
+
+#: kpager.cpp:389
+msgid "One Click change Desktop"
+msgstr "Promijeni radnu povr¹inu jednim klikom"
+
+#: kpager.cpp:446
+msgid "&Maximize"
+msgstr "&Poveæaj"
+
+#: kpager.cpp:447
+msgid "&Iconify"
+msgstr "Smanji na &ikonu"
+
+#: kpager.cpp:449
+msgid "&UnSticky"
+msgstr "&Odlijepi"
+
+#: kpager.cpp:451
+msgid "&Sticky"
+msgstr "Na&lijepi"
+
+#: kpager.cpp:453
+msgid "&To Desktop"
+msgstr "&Na radnu povr¹inu"

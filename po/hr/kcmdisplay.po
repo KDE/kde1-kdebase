@@ -25,9 +25,8 @@ msgid "&Rename ..."
 msgstr "&Promijeni ime ..."
 
 #: backgnd.cpp:196
-#, fuzzy
 msgid "&Common Background"
-msgstr "&Pozadina"
+msgstr "&Zajednièka pozadina"
 
 #: backgnd.cpp:224 colorscm.cpp:82
 msgid "Colors"
@@ -59,7 +58,7 @@ msgstr "Po&tra¾i..."
 
 #: backgnd.cpp:368
 msgid "Arrangement:"
-msgstr ""
+msgstr "Raspored:"
 
 #: backgnd.cpp:375
 msgid "Tiled"
@@ -82,14 +81,12 @@ msgid "Centred Brick"
 msgstr ""
 
 #: backgnd.cpp:380
-#, fuzzy
 msgid "Centred Warp"
-msgstr "&Centrirano"
+msgstr ""
 
 #: backgnd.cpp:381
-#, fuzzy
 msgid "Centred Maxpect"
-msgstr "&Centrirano"
+msgstr ""
 
 #: backgnd.cpp:382
 msgid "Symmetrical Tiled"
@@ -97,7 +94,7 @@ msgstr ""
 
 #: backgnd.cpp:383
 msgid "Symmetrical Mirrored"
-msgstr ""
+msgstr "Zrcaljeno simetrièki"
 
 #: backgnd.cpp:384
 msgid "Scaled"
@@ -116,9 +113,8 @@ msgid "&Dock into the panel"
 msgstr "P&ristani na ploèu"
 
 #: backgnd.cpp:443
-#, fuzzy
 msgid "Cache size (kB):"
-msgstr "Velièina predmemorija"
+msgstr "Velièina predmemorije (kB):"
 
 #: backgnd.cpp:1339
 msgid "Desktop names"
@@ -437,9 +433,8 @@ msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr ""
 
 #: general.cpp:259
-#, fuzzy
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "&Primjeni stil na sve aplikacije"
+msgstr "&Primjeni pisma i boje na ne-KDE aplikacije"
 
 #: general.cpp:530
 msgid "General font"
@@ -489,13 +484,13 @@ msgstr "&Boje"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr ""
+msgstr "&Stil"
 
 #: main.cpp:83
-#, fuzzy
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
-msgstr "uporaba: kcmdisplay [-init | {pozadina,za¹tita zaslona,boje,stil}]\n"
+msgstr ""
+"uporaba: kcmdisplay [-init | {pozadina,za¹tita zaslona,boje,pisma,stil}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
@@ -544,15 +539,3 @@ msgstr "uobièajeno"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "bilo koji"
-
-#~ msgid "Fonts etc."
-#~ msgstr "Pisma itd."
-
-#~ msgid "Desktop fonts"
-#~ msgstr "Pisma radne povr¹ine"
-
-#~ msgid "&Fonts etc."
-#~ msgstr "P&isma itd."
-
-#~ msgid "kb"
-#~ msgstr "kb"

@@ -153,23 +153,20 @@ msgid "Others"
 msgstr "Druge opcije"
 
 #: options.cpp:408
-#, fuzzy
 msgid "Personal Menu Entries &First"
-msgstr "Osobne &Prvo"
+msgstr "&Prvo osobne izbornike"
 
 #: options.cpp:416
-#, fuzzy
 msgid "Menu F&olders First"
-msgstr "&Prvo direktoriji"
+msgstr ""
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
 msgstr "Sa&t pokazuje vrijeme u AM/PM formatu"
 
 #: options.cpp:432
-#, fuzzy
 msgid "Clock shows time in &Internet beats"
-msgstr "Sa&t pokazuje vrijeme u AM/PM formatu"
+msgstr "Sa&t pokazuje vrijeme u otkucajima &Interneta"
 
 #: disknav.cpp:38
 msgid "History"
@@ -177,7 +174,7 @@ msgstr "Povijest"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr ""
+msgstr "Promijeni zapise: (dovucite direktorij i stvorite vezu)"
 
 #: disknav.cpp:64
 msgid "Edit &Personal..."
@@ -193,11 +190,11 @@ msgstr ""
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr ""
+msgstr "Max. skora¹njih datoteka:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr ""
+msgstr "Max. datoteka u jednom direktoriju:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
@@ -205,19 +202,19 @@ msgstr "Prika¾i datoteke s toèkom"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr ""
+msgstr "Ne razlikuj velika i mala slova kod sortiranja"
 
 #: disknav.cpp:173
 msgid "Show Shared section"
-msgstr ""
+msgstr "Poka¾i dijeljene"
 
 #: disknav.cpp:180
 msgid "Show Personal section"
-msgstr ""
+msgstr "Poka¾i osobne"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr ""
+msgstr "Poka¾i skora¹nje"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
@@ -225,7 +222,4 @@ msgstr ""
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr "Terminalska aplikacija:"
-
-#~ msgid "Speed"
-#~ msgstr "Brzina"
+msgstr "Terminalska program:"

@@ -61,17 +61,16 @@ msgid "Bookmarks"
 msgstr "Knji¹ke oznake"
 
 #: krootwm.C:280
-#, fuzzy
 msgid "Arrange Window Maker icons"
-msgstr "Rasporedi ikone"
+msgstr "Rasporedi Window Maker ikone"
 
 #: krootwm.C:281
 msgid "Show all"
-msgstr ""
+msgstr "Poka¾i sve"
 
 #: krootwm.C:282
 msgid "Hide other"
-msgstr ""
+msgstr "Sakrij ostale"
 
 #: krootwm.C:284
 msgid "Show info panel"
@@ -83,23 +82,23 @@ msgstr ""
 
 #: krootwm.C:286
 msgid "Restart"
-msgstr ""
+msgstr "Pokreni ponovo"
 
 #: krootwm.C:288
 msgid "Exit"
-msgstr ""
+msgstr "Zavr¹i"
 
 #: krootwm.C:289
 msgid "Window Maker"
-msgstr ""
+msgstr "Window Maker"
 
 #: krootwm.C:306
 msgid "Desk"
-msgstr ""
+msgstr "Stol"
 
 #: krootwm.C:307
 msgid "Windows"
-msgstr ""
+msgstr "Prozori"
 
 #: krootwm.C:370
 msgid "Edit Bookmarks"
