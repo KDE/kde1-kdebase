@@ -1,8 +1,9 @@
+
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=\n"
 "Date: 1997-08-23 15:45:33+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
+"Content-Type: text/plain; charset=\n"
 "Xgettext-Options: --keyword=translate\n"
 "Files: main.C\n"
 
@@ -12,151 +13,150 @@ msgstr "Zeichen zur Wortklasse hinzufügen"
 
 #: main.C:224
 msgid "choose type of color-mode"
-msgstr "Modus der Farbdarstellung"
+msgstr "Art der Farbdarstellung"
 
-#: main.C:227
+#: main.C:228
 msgid "Ok"
-msgstr "&Übernehmen"
+msgstr "Übernehmen"
 
-#: main.C:229
+#: main.C:230
 msgid "Cancel"
-msgstr "&Abbrechen"
+msgstr "Abbrechen"
 
-#: main.C:357
+#: main.C:358
 msgid "&New Terminal"
-msgstr "&Neues Terminal"
+msgstr "Neues Terminal"
 
-#: main.C:359
+#: main.C:360
 msgid "E&xit"
-msgstr "&Beenden"
+msgstr "Beenden"
 
-#: main.C:364 main.C:669
+#: main.C:365 main.C:670
 msgid "&Hide"
-msgstr "&Unsichtbar"
-
-#: main.C:365
-msgid "&Left"
-msgstr "&Links"
+msgstr "Unsichtbar"
 
 #: main.C:366
-msgid "&Right"
-msgstr "&Rechts"
+msgid "&Left"
+msgstr "Links"
 
-#: main.C:371
-msgid "&Normal"
-msgstr "&Normal"
+#: main.C:367
+msgid "&Right"
+msgstr "Rechts"
 
 #: main.C:372
-msgid "&Tiny"
-msgstr "&Winzig"
+msgid "&Normal"
+msgstr "Normal"
 
 #: main.C:373
-msgid "&Small"
-msgstr "&Klein"
+msgid "&Tiny"
+msgstr "Winzig"
 
 #: main.C:374
-msgid "&Medium"
-msgstr "&Mittel"
+msgid "&Small"
+msgstr "Klein"
 
 #: main.C:375
-msgid "&Large"
-msgstr "&Groß"
+msgid "&Medium"
+msgstr "Mittel"
 
 #: main.C:376
-msgid "&Huge"
-msgstr "&Riesig"
+msgid "&Large"
+msgstr "Groß"
 
-#: main.C:388
-msgid "&black/white"
-msgstr "&schwarz/weiß"
+#: main.C:377
+msgid "&Huge"
+msgstr "Riesig"
 
 #: main.C:389
-msgid "&white/black"
-msgstr "&weiß/schwarz"
+msgid "&black/white"
+msgstr "schwarz/weiß"
 
 #: main.C:390
-msgid "&green/black"
-msgstr "&grün/schwarz"
+msgid "&white/black"
+msgstr "weiß/schwarz"
 
 #: main.C:391
-msgid "black/light&yellow"
-msgstr "&schwarz/hellgelb"
+msgid "&green/black"
+msgstr "grün/schwarz"
 
 #: main.C:392
+msgid "black/light&yellow"
+msgstr "schwarz/hellgelb"
+
+#: main.C:393
 msgid "Linu&x Console"
-msgstr "Linu&x Konsole"
+msgstr "Linux-Konsole"
 
-#: main.C:399 main.C:594
+#: main.C:400 main.C:595
 msgid "Hide &Menubar"
-msgstr "Menüleiste verbergen"
+msgstr "Menüleiste unsichtbar"
 
-#: main.C:401 main.C:460 main.C:586
+#: main.C:402 main.C:461 main.C:587
 msgid "Show &Menubar"
-msgstr "Menüleiste anzeigen"
+msgstr "Menüleiste sichtbar"
 
-#: main.C:402 main.C:604
+#: main.C:403 main.C:605
 msgid "Secure &keyboard"
-msgstr "&Tastatur sperren"
-
-#: main.C:404
-msgid "Scroll&bar"
-msgstr "Schiebe&balken"
+msgstr "Tastatur sperren"
 
 #: main.C:405
-msgid "&Font size"
-msgstr "&Schriftgröße"
+msgid "Scroll&bar"
+msgstr "Rollbalken"
 
 #: main.C:406
-msgid "&Color"
-msgstr "&Farben"
+msgid "&Font size"
+msgstr "Schriftgröße"
 
 #: main.C:407
-msgid "&Size"
-msgstr "Fenster&größe"
+msgid "&Color"
+msgstr "Farben"
 
 #: main.C:408
-#, fuzzy
+msgid "&Size"
+msgstr "Fenstergröße"
+
+#: main.C:409
 msgid "Terminal..."
-msgstr "&Terminal..."
+msgstr "Terminal..."
 
-#: main.C:410
+#: main.C:411
 msgid "Save &Options"
-msgstr "&Einstellungen sichern"
+msgstr "Einstellungen sichern"
 
-#: main.C:419
+#: main.C:420
 msgid "&About..."
-msgstr "&Über..."
+msgstr "Über..."
 
-#: main.C:420 main.C:430
+#: main.C:421 main.C:431
 msgid "&Help"
-msgstr "&Hilfe"
-
-#: main.C:427
-msgid "&File"
-msgstr "&Datei"
+msgstr "Hilfe"
 
 #: main.C:428
+msgid "&File"
+msgstr "Datei"
+
+#: main.C:429
 msgid "&Options"
-msgstr "&Einstellungen"
+msgstr "Einstellungen"
 
-#: main.C:469 main.C:662
+#: main.C:470 main.C:663
 msgid "&Show"
-msgstr "&Sichtbar"
+msgstr "Sichtbar"
 
-#: main.C:600
+#: main.C:601
 msgid "Unsecure &keyboard"
-msgstr "&Tastatur entsperren"
+msgstr "Tastatur entsperren"
 
-#: main.C:739
+#: main.C:740
 msgid "Hint"
-msgstr "&Hinweis"
+msgstr "Hinweis"
 
 #: main.C:740
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
-"Die neuen Farbeinstellungen werden sichtbar,\n"
+"Die neuen Farbeinstellungen werden sichtbar\n"
 "sobald die Tastatur entsperrt ist."
 
 #: main.C:760
@@ -179,78 +179,9 @@ msgstr ""
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
 "\n"
 "Terminalemulation für das KDE Desktop Environment\n"
-"basiert auf Robert Nations rxvt-2.08"
+"basierend auf Robert Nations rxvt-2.08"
 
-#: main.C:922
-msgid ""
-"Copyright(C) 1996, 1997 Matthias Ettrich\n"
-"Copyright(C) 1997 M G Berberich\n"
-"Terminal emulation for the KDE Desktop Environment\n"
-"based on Robert Nation's rxvt-2.08\n"
-"\n"
-"Permitted arguments are:\n"
-"-e <command> <arg> ...\texecute command with ars - must be last argument\n"
-"-display <name>\tspecify the display (server)\n"
-"-vt_geometry <spec>\tthe initial vt window geometry\n"
-"-print-pipe <name>\tspecify pipe for vt100 printer\n"
-"-vt_bg <colour>\t\tbackground color\n"
-"-vt_fg <colour>\t\tforeground color\n"
-"-vt_font <fontname>\tnormal font\n"
-"-vt_size <size>     \ttiny, small, normal, large, huge\n"
-"-linux\t\t\tset up kvt to mimic linux-console\n"
-"-no_menubar\t\thide the menubar\n"
-"-no_scrollbar\t\thide the scrollbar\n"
-"-T <text>\t\ttext in window titlebar\n"
-"-tn <TERM>\t\tTerminal type. Default is xterm.\n"
-"-C\t\t\tCapture system console message\n"
-"-n <text>\t\tname in icon or icon window\n"
-"-7\t\t        run in 7 bit mode\n"
-"-8\t\t\trun in 8 bit mode\n"
-"-ls\t\t\tinitiate kvt's shell as a login shell\n"
-"-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
-"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
-"-sl <number>\t\tsave number lines in scroll-back buffer\n"
-"-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
-"-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
-msgstr ""
-"Copyright(C) 1996, 1997 Matthias Ettrich\n"
-"Copyright(C) 1997 M G Berberich\n"
-"Terminalemulation für das KDE Desktop Envirnoment\n"
-"basiert auf Robert Nations rxvt-2.08\n"
-"\n"
-"kvt [options] [-e Kommando Argumente ...]\n"
-"\n"
-"-display <name>\t\tX-Display \n"
-"-vt_geometry <spec>\tFenstergröße des kvt in Zeichen x Zeilen\n"
-"-print-pipe <Name>\tDruckerpipe für den vt100 Drucker\n"
-"-vt_bg <Farbe>\t\tHintergundfarbe\n"
-"-vt_fg <Farbe>\t\tVordergrundfarbe\n"
-"-vt_font <Zeichensatz>\tStandardzeichensatz\n"
-"-vt_size <Größe>\tSchriftgröße (tiny, small, normal, large, huge)\n"
-"-linux\t\t\tkvt simuliert eine Linux-Konsole\n"
-"-no_menubar\t\tMenüleiste unsichtbar\n"
-"-no_scrollbar\t\tVerschiebeleiste unsichtbar\n"
-"-T <Text>\t\tText in der Titelleiste\n"
-"-tn <Text>\t\tTerminaltyp (die Umgebungsvariable TERM enthält <Text>)\n"
-"-C\t\t\tÜbernehme Systemkonsolenmeldungen in kvt\n"
-"-n <Text>\t\tName für Icons und Windowmanager\n"
-"-7\t\t\t7-bit Modus\n"
-"-8\t\t\t8-bit Modus\n"
-"-ls\t\t\tkvt startet eine Login-Shell\n"
-"-ls-\t\t\tkvt startet keine Login-Shell\n"
-"-meta [escape|8thbit]\tbehandele Meta als ESC-Prefix, oder setze 8tes Bit. \n"
-"-sl <Zahl>\t\tBehalte <Zahl> Zeilen im scroll-back Speicher\n"
-"-pageup <Taste>\t\tALT-<Taste> scrollt im Speicher hinauf\n"
-"-pagedown <Taste>\tALT-<Taste> scrollt im Speicher herunter\n"
-
-#: main.C:954
-msgid ""
-"-grk9\t\tgreek kbd = ELOT 928 (default)\n"
-"-grk4\t\tgreek kbd = IBM 437\n"
-msgstr ""
-"-grk9\t\tgriechische Tastatur ist ELOT 928 (std)\n"
-"-grk4\t\tgriechische Tastatur ist IBM 437\n"
-
-#: main.C:970
+#: main.C:930
 msgid "Terminal Options"
 msgstr "Terminaleinstellungen"
+

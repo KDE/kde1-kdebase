@@ -33,7 +33,7 @@ msgstr "Warnung: "
 
 #: helpwin.cpp:61
 msgid "KDE Help: Open URL"
-msgstr "KDE Hilfe: URL öffnen"
+msgstr "KDE-Hilfe: URL öffnen"
 
 #: helpwin.cpp:63
 msgid "Open URL"
@@ -49,7 +49,7 @@ msgstr "Adresse:"
 
 #: helpwin.cpp:377
 msgid "KDE Help"
-msgstr "KDE Hilfe"
+msgstr "KDE-Hilfe"
 
 #: helpwin.cpp:378
 msgid "Waiting for kmail to be finished..."
@@ -85,11 +85,11 @@ msgstr "Weiter"
 
 #: helpwin.cpp:1318
 msgid "Open this Link"
-msgstr "Diese Adresse öffnen"
+msgstr "Diesen Link öffnen"
 
 #: helpwin.cpp:1319
 msgid "Add Bookmark"
-msgstr "Bookmark hinzufügen"
+msgstr "Notiz hinzufügen"
 
 #: helpwin.cpp:1320
 msgid "Open in new Window"
@@ -173,6 +173,8 @@ msgstr "&Nächstes"
 msgid "&General Preferences..."
 msgstr "&Einstellungen..."
 
+# "anzeigen" ist schlechter als "zeigen", weil länger.
+# Dann muß man aber auch die &'s ändern.
 #: mainwidget.cpp:167
 msgid "Show &Toolbar"
 msgstr "Werkzeugleiste &anzeigen"
@@ -209,6 +211,9 @@ msgstr "&Editieren"
 msgid "&Goto"
 msgstr "&Seite"
 
+# Hier heißt es "Favoriten", weiter oben hieß es 
+# Bookmark -- was ist gemeint?
+# Entweder Favorit oder Notiz.
 #: mainwidget.cpp:186
 msgid "&Bookmarks"
 msgstr "&Lesezeichen"
@@ -231,11 +236,11 @@ msgstr "Nächstes Dokument"
 
 #: mainwidget.cpp:219
 msgid "Previous Node"
-msgstr "Letzter Knoten"
+msgstr "Letztes Thema"
 
 #: mainwidget.cpp:225
 msgid "Next Node"
-msgstr "Nächster Knoten"
+msgstr "Nächstes Thema"
 
 #: mainwidget.cpp:231
 msgid "Up one Node"
@@ -262,30 +267,32 @@ msgid ""
 "KDE Help System\n"
 "Version "
 msgstr ""
-"KDE Hilfe System\n"
+"KDE-Hilfe-System\n"
 "Version"
 
 #: mainwidget.cpp:530
 msgid "About KDE Help"
 msgstr "Information über KDE Hilfe"
 
+# ??? Hier wieder: Notiz oder Favorit?
 #: mainwidget.cpp:562
 msgid "&Add Bookmark"
 msgstr "&Lesezeichen hinzufügen"
 
 #: man.cpp:86 man.cpp:790
 msgid "Online Manuals"
-msgstr "Online Handbuch"
+msgstr "Online-Handbuch"
 
 #: man.cpp:92
 #, c-format
 msgid "Section %s"
 msgstr "Kapitel %s"
 
+# Ist "Online" wirklich nötig? 
 #: man.cpp:108
 #, c-format
 msgid "Online manual - Section %s"
-msgstr "Online Handbuch - Kapitel %s"
+msgstr "Online-Handbuch - Kapitel %s"
 
 #: man.cpp:457
 msgid "User Commands"
@@ -317,31 +324,34 @@ msgstr "Diverses"
 
 #: man.cpp:471
 msgid "System Administration"
-msgstr "Systemadministration"
+msgstr "Verwaltung"
 
 #: man.cpp:473
 msgid "New"
 msgstr "Neu"
 
+# Man kann nicht mal Passiv, mal Aktiv für
+# die Maschine benutzen. Entweder immer "ich" (Lese Verzeichnis) 
+# oder immer "wird" (Verzeichnis wird gelesen).
 #: man.cpp:582
 msgid "Reading Dir: "
-msgstr "Lese Verzeichnis: "
+msgstr "Verzeichnis wird gelesen: "
 
 #: man.cpp:779
 msgid "Online Manual - Section"
-msgstr "Online Handbuch - Kapitel"
+msgstr "Online-Handbuch - Kapitel"
 
 #: man.cpp:837
 msgid "\"man\" system call failed"
-msgstr "\"man\" Systemaufruf nicht erfolgreich"
+msgstr "\"man\"-Aufruf fehlgeschlagen"
 
 #: man.cpp:855
 msgid "Opening temporary file failed"
-msgstr "Öffnen der temporären Datei gescheitert"
+msgstr "Öffnen der temporären Datei fehlgeschlagen."
 
 #: options.cpp:40
 msgid "Font Size"
-msgstr "Größe des Zeichensatzes"
+msgstr "Schriftgröße"
 
 #: options.cpp:44
 msgid "Small"
@@ -357,8 +367,9 @@ msgstr "Groß"
 
 #: options.cpp:56
 msgid "Standard Font"
-msgstr "Normaler Font"
+msgstr "Standardschrift"
 
+# Im Gegenteil!
 #: options.cpp:73
 msgid "Fixed Font"
 msgstr "Proportionalschrift"
@@ -373,15 +384,16 @@ msgstr "Textfarbe:"
 
 #: options.cpp:227
 msgid "URL Link Color:"
-msgstr "Farbe für Adressen:"
+msgstr "Farbe für Links:"
 
+# Warum "Followed Link Color" statt "Followed link color"?
 #: options.cpp:235
 msgid "Followed Link Color:"
-msgstr "Farbe für besuchte Adr.:"
+msgstr "Farbe besuchter Links:"
 
 #: options.cpp:306
 msgid "KDE Help Options"
-msgstr "Einstellungen für KDE Hilfe"
+msgstr "Einstellungen für KDE-Hilfe"
 
 #: options.cpp:313 options.cpp:314
 msgid "Fonts"

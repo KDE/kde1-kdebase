@@ -1,42 +1,27 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
-msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-08-31 17:43+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:53
 msgid "KDE Font Manager"
-msgstr "KDE Schriftartmanager"
+msgstr "KDE-Schriftmanager"
 
 #: main.cpp:61
 msgid "KDE Fonts"
-msgstr "KDE Schriftarten"
+msgstr "KDE-Schriften"
 
 #: main.cpp:62
 msgid "Font Explorer"
-msgstr "Schriftartentest"
+msgstr "Schriftentest"
 
 #: main.cpp:63
 msgid "Raw X11 Font List"
-msgstr "Unbearbeitete X11 Schriftarten"
+msgstr "Unbearbeitete X11-Schriften"
 
 #: kfontmanager.cpp:61
 msgid "Available X11 Fonts"
-msgstr "Vorhandene X11 Schriftarten"
+msgstr "Vorhandene X11-Schriften"
 
 #: kfontmanager.cpp:68
 msgid "Fonts made available to KDE"
-msgstr "In KDE verfügbare Schriftarten"
+msgstr "In KDE verfügbare Schriften"
 
 #: kfontmanager.cpp:74
 msgid "Add"
@@ -48,7 +33,7 @@ msgstr "Entfernen"
 
 #: kfontmanager.cpp:87
 msgid "The KDE Font Manager Example String"
-msgstr "Der KDE Schriftartenmanager Beispieltext"
+msgstr "Der Beispieltext des KDE-Schriftenmanager"
 
 #: kfontlist.cpp:65 kfontmanager.cpp:105
 msgid "About kfontmanager"
@@ -95,7 +80,7 @@ msgid ""
 msgstr ""
 "~/.kde/config/kdefonts existiert, ist\n"
 "ist aber nicht schreibbar.\n"
-"Die KDE Schriftartenliste kann daher nicht\n"
+"Die KDE-Schriftenliste kann daher nicht\n"
 "gesichert werden."
 
 #: kfontlist.cpp:65
@@ -110,33 +95,3 @@ msgstr ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 
-#~ msgid "Requested Font"
-#~ msgstr "Gewünschte Schriftart"
-
-#~ msgid "Actual Font"
-#~ msgstr "Tatsächliche Schriftart"
-
-#~ msgid "Family:"
-#~ msgstr "Familie:"
-
-#~ msgid "Size:"
-#~ msgstr "Größe:"
-
-#~ msgid "Weight:"
-#~ msgstr "Stärke:"
-
-#~ msgid "Style:"
-#~ msgstr "Schnitt:"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Help"
-#~ msgstr "Hilfe"
-
-# Manually added
-#~ msgid "Cancel"
-#~ msgstr "Abbrechen"
-
-#~ msgid "Apply"
-#~ msgstr "Übernehmen"
