@@ -3,6 +3,7 @@ Languages=C,ca,cs,da,de,el,en_UK,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sk,sv,zh
 
 [ca]
 Name=Catalan
+Name[no]=Katalansk
 Name[ca]=Català
 Name[es]=Catalán
 Name[en]=Catalan
@@ -282,7 +283,7 @@ Name[ro]=Slovac
 [zh_TW.Big5]
 Name=Chinese
 Name[de]=Chinesisch
-Name[no]=Kinetisk
+Name[no]=Kinesisk
 Name[zh]=BIG5 ¤¤¤å
 Name[pl]=Chi±ski tradycyjny
 Name[pt]=Chinês tradicional
@@ -301,11 +302,13 @@ Name[ro]=Chinezesc simplificat
 [pt_BR]
 Name=Brazil portuguese
 Name[de]=Brasilianisches Portugiesisch
+Name[no]=Brasiliansk portogisisk
 Name[pt]=Português do Brasil
 Name[sv]=brasilisk portugisiska
 Name[ro]=Brazilian Protughez
 
 [eo]
 Name=Esperanto
+Name[no]=Esperanto
 Name[de]=Esperanto
 Name[ro]=Esperanto
