@@ -12,11 +12,13 @@ Information about PAM may be found on its homepage
 (Despite the location, this information is NOT Linux-specific.)
 
 ************************Solaris issues**********************************
-*  For compiling PAM support on Solaris, you will need the compiler option
-*  -DPAM_MESSAGE_NONCONST  unless the autoconf script has defined
-* PAM_MESSAGE_NONCONST   (This must remain undefined for compilation
-* on Linux)  
-**********************Red Hat Linux 5.x issues***************************
+*
+* For compiling PAM support on Solaris,  PAM_MESSAGE_NONCONST must
+* be defined.   This should now be handled automatically by the 
+* autoconf script:  just use ./configure --with-pam  . 
+*
+**********************Red Hat Linux issues***************************
+*
 * IMPORTANT: compiling KDE with PAM support on RedHat 5.0 Linux
 * (libc6=glibc2) systems, using the supplied gcc-2.7.2.3 compiler, 
 * is  *NOT RECOMENDED*.
@@ -29,25 +31,34 @@ Information about PAM may be found on its homepage
 * "... Unknown session exit code 2816 ....").   
 * Howvever, this compiler works fine for compiling KDE  without PAM support.
 *
+* This problem in *NOT PRESENT* in Red Hat 4.x systems (libc5): 
+* On these systems you may safely compile KDE with PAM support
+* using the supplied gcc (and gcc-c++) compiler.
+*
+* If compiling KDE with egcs, you *MUST* use QT compiled with egcs.
+
 * The egcs compiler comes standard with RedHat 5.1; you
 * may safely install RedHat 5.1's egcs compiler in RedHat 5.0, if
 * you want to compile KDE with PAM support, but do not wish to upgrade 
 * to Red Hat 5.1.   libstdc++-2.8.0 is also needed.
 *
-* If compiling KDE with egcs, you *MUST* use QT compiled with egcs.
-* 
-* This problem in *NOT PRESENT* in Red Hat 4.x systems (libc5): 
-* On these systems you may safely compile KDE with PAM support
-* using the supplied gcc (and gcc-c++) compiler.
+* When compiling on RedHat 5.1, make sure that egcs is used
+* instead of gcc for compiling C code in KDE (the PAM code
+* is mainly C).  (By default, RH5.1 uses egcs for C++ but
+* gcc for C.) 
 *
-* When compiling on RedHat 5.1, you may first need to move the 
-* /usr/bin/gcc binary (if it is installed) to (say) /usr/bin/gcc-orig.  
-* Then make  gcc a symlink to egcs: 
-* ln -s ./egcs /usr/bin/gcc
-* (Note: egcs is not recommended for Linux 2.0.x kernel recompiles;
-* make sure gcc calls gcc-2.7.2.3, not egcs, when rebuilding the kernel,
-* by e.g., making gcc an symlink to gcc-orig (or whatever you renamed
-* the original gcc binary to),  before rebuilding.
+* To make egcs compile both the C and the C++ code,  either:
+*
+*   export CC=egcs  
+*
+* before compiling, or, for a more permanent change,
+*
+*   mv /usr/bin/gcc  /usr/bin/gcc-2.7.2.3
+*   ln -s ./egcs /usr/bin/gcc
+* 
+*  (Make sure you symlink ggc back to /usr/bin/gcc-2.7.3.2
+*  before recompiling Linux 2.0.x kernels, though; egcs
+*  is not recommended for compiling these kernels).
 ****************************************************************
 
 If both PAM and shadow passwords are used on your system, do *NOT*
@@ -71,16 +82,18 @@ not already been configured.  PAM services are generally configured by
 lines beginning with the entry <pam_service_name> in a file /etc/pam.conf or, 
 on more recent systems, in individual files /etc/pam.d/<pam_service_name>.
 
-If your system uses /etc/pam.d for configuration (and already has xdm
-configured for PAM), you may wish to use
-./configure -with-pam=KDE
-so KDE uses a PAM service called "KDE", and make a symlink
-ln -s ./xdm /etc/pam.d/KDE
-This way, you will initially use the existing PAM configuration of
-xdm, but can later customize by creating your own /etc/pam.d/KDE.
+If your system uses /etc/pam.d for configuration you may wish to use
+./configure -with-pam=kde
+so KDE uses a PAM service called "kde", and make a symlink
+ln -s ./xdm /etc/pam.d/kde,  (assuming xdm is PAM-configured).
+
+You can later customize your system  by creating your 
+own /etc/pam.d/kde.   A sample (for RedHat LInux 5.x) is
+provided as kdebase/kde.pamd
+
 PAM writes entries to the system log identified by the PAM service
 name; this method has the advantage that such entries will identify 
-the PAM service involved as "KDE" rather than "xdm", which is 
+the PAM service involved as "kde" rather than "xdm", which is 
 presumably not running.    
 
 If there is ever any doubt about which PAM service name kdebase
