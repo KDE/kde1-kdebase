@@ -665,7 +665,7 @@ void PFileMenu::buildRootMenu()
     // Global Section /////////////////////////////////////////////////////
 
     if (the_panel->show_global_section) {
-      this->add( new PMenuItem(label, "Global:", 0, "background.xpm") );
+      this->add( new PMenuItem(label, i18n("Global:"), 0, "background.xpm") );
       this->add( new PMenuItem(separator) );
 
       this->path = QString(KDISKNAV_GLOBAL_DIR);
@@ -684,7 +684,7 @@ void PFileMenu::buildRootMenu()
       else
 	this->add( new PMenuItem(separator) );
 
-      this->add( new PMenuItem(label, "Local:", 0, "mini-display.xpm") );
+      this->add( new PMenuItem(label, i18n("Local:"), 0, "mini-display.xpm") );
       this->add( new PMenuItem(separator) );
 
       this->path = QString(QDir::homeDirPath() + KDISKNAV_LOCAL_DIR);
@@ -702,7 +702,7 @@ void PFileMenu::buildRootMenu()
 	this->add( new PMenuItem(separator) );
 
       PMenuItem* recentItem =
-        new PMenuItem(label, "Recent:", 0, "mini-exclam.xpm");
+        new PMenuItem(label, i18n("Recent:"), 0, "mini-exclam.xpm");
       the_panel->head_recent_id = recentItem->getId();
       this->add( recentItem );
       this->add( new PMenuItem(separator) );
@@ -748,7 +748,7 @@ void PFileMenu::buildRootMenu()
       else
 	this->add( new PMenuItem(separator) );
 
-      this->add(new PMenuItem(prog_com, "Options...", 0,
+      this->add(new PMenuItem(prog_com, i18n("Options..."), 0,
                                OPTIONS_ICON, 0, this, SLOT(optionsDlg())));
     }
 
