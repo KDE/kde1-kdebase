@@ -178,31 +178,37 @@ void Pager::changeNumber(int)
 
 void Pager::addWindow(Window w)
 { 
+    // debug("add %lx",w);
     desktops.at(KWM::desktop(w) - 1 ) -> addWindow(w);
 }
 
 void Pager::removeWindow(Window w)
 {
-    desktops.at(KWM::desktop(w) - 1) -> removeWindow(2);
+    // debug("remove %lx",w);
+    desktops.at(KWM::desktop(w) - 1) -> removeWindow(w);
 }
 
 void Pager::windowChange(Window w)
 {
+    // debug("change %lx",w);
     desktops.at(KWM::desktop(w) - 1)->changeWindow(w);
 }
 
 void Pager::raiseWindow(Window w)
 {
+    // debug("raise %lx",w);
     desktops.at(KWM::desktop(w) - 1)->raiseWindow(w);
 }
 
 void Pager::lowerWindow(Window w)
 {
+    // debug("lower %lx",w);
     desktops.at(KWM::desktop(w) - 1)->lowerWindow(w);
 }
 
 void Pager::windowActivate(Window w)
 {
+    // debug("activate %lx",w);
     desktops.at(KWM::desktop(w) - 1) -> activateWindow(w);
 }
 

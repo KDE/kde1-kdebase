@@ -86,6 +86,7 @@ void Desktop::removeWindow(Window w)
     PagerWindow *win;
     for (win = windows.first(); win && win->id != w; win = windows.next())
 	continue;
+
     if (win)
 	windows.remove();
     fillPixmap();
@@ -136,14 +137,12 @@ void Desktop::changeWindow(Window w)
 	continue;
     
     if (!win)
-	addWindow(w);
-    else {
-	win->rect = KWM::geometry(w);
-	calculate(win);
-	fillPixmap();
-	repaint( false );
-    }
-    repaint (false);
+	return;
+    
+    win->rect = KWM::geometry(w);
+    calculate(win);
+    fillPixmap();
+    repaint( false );
 }
 
 void Desktop::activate(bool flag)
