@@ -1,8 +1,10 @@
+# KTranslator Generated File
+
 # John Zero <johnzero@telnet.hu>, 1997
 msgid ""
 msgstr ""
 "Project-Id-Version: klock VERSION\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1998-12-17 12:20+0100\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -10,50 +12,50 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: attraction.cpp:716
+#: attraction.cpp:718
 msgid "Attraction"
 msgstr "Vonzás"
 
-#: attraction.cpp:803
-#, fuzzy
+#: attraction.cpp:805
+#
 msgid "Setup KAttraction"
 msgstr "A KAttraction beállítása"
 
-#: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
+#: attraction.cpp:817 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
 msgstr "Darab:"
 
-#: attraction.cpp:829 science.cpp:993 slidescreen.cpp:493
-#, fuzzy
+#: attraction.cpp:831 science.cpp:993 slidescreen.cpp:493
+#
 msgid "Mode:"
 msgstr "Mód:"
 
-#: attraction.cpp:834 slidescreen.cpp:498
+#: attraction.cpp:836 slidescreen.cpp:498
 msgid "Balls"
 msgstr "Labdák"
 
-#: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
+#: attraction.cpp:837 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
 msgstr "Vonalak"
 
-#: attraction.cpp:836 polygon.cpp:64 slidescreen.cpp:500
+#: attraction.cpp:838 polygon.cpp:64 slidescreen.cpp:500
 msgid "Polygons"
 msgstr "Poligonok"
 
-#: attraction.cpp:837 slidescreen.cpp:501
+#: attraction.cpp:839 slidescreen.cpp:501
 msgid "Tails"
-msgstr ""
+msgstr "Nyomot hagy"
 
-#: attraction.cpp:850 slidescreen.cpp:514
+#: attraction.cpp:852 slidescreen.cpp:514
 msgid "Glow"
 msgstr "Ragyogás"
 
-#: attraction.cpp:951
-#, fuzzy
+#: attraction.cpp:953
+#
 msgid "About Attraction"
 msgstr "A Vonzás-ról"
 
-#: attraction.cpp:952
+#: attraction.cpp:954
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -63,18 +65,25 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
+"Vonzás 1.0 verzió\n"
+"\n"
+"Szerzõi jogok (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"kscreensaver-hez portolta:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
 #: banner.cpp:62
 msgid "Banner"
 msgstr "Felirat"
 
 #: banner.cpp:84
-#, fuzzy
+#
 msgid "Setup kbanner"
-msgstr "A KBanner beállításai"
+msgstr "A Felirat beállításai"
 
 #: banner.cpp:95
-#, fuzzy
+#
 msgid "Family:"
 msgstr "Család:"
 
@@ -112,6 +121,10 @@ msgid ""
 "written by Martin R. Jones 1996\n"
 "mjones@kde.org"
 msgstr ""
+"Felirat 0.1 verzió\n"
+"\n"
+"Írta: Martin R. Jones 1996\n"
+"mjones@kde.org"
 
 #: banner.cpp:461
 msgid "KDE is great"
@@ -123,14 +136,14 @@ msgstr "Denevérek"
 
 #: bat.cpp:537
 msgid "Setup KBat"
-msgstr "A KBat beállítása"
+msgstr "A Denevérek beállítása"
 
 #: bat.cpp:564
 msgid "Number of bats:"
 msgstr "Denevérek száma:"
 
 #: bat.cpp:661
-#, fuzzy
+#
 msgid "About Bat"
 msgstr "A Denevérek-rõl"
 
@@ -142,6 +155,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Denevérek\n"
+"\n"
+"Szerzõi jog: (c) 1986 by Sun Microsystems\n"
+"\n"
+"kscreensave-hez portolta: Emanuel Pirker."
 
 #: blankscrn.cpp:53
 msgid "Blank Screen"
@@ -149,7 +167,7 @@ msgstr "Feketedoboz, belülrõl"
 
 #: blankscrn.cpp:67
 msgid "Setup kblankscrn"
-msgstr "Beállítások"
+msgstr "Feketedoboz beállítása"
 
 #: blob.cpp:57
 msgid "Random Linear"
@@ -175,50 +193,54 @@ msgstr "Véletlen"
 msgid "Sorry. This screensaver needs a color display"
 msgstr "Elnézést.  Ez a képernyõvédõ színes megjelenítést igényel."
 
-#: blob.cpp:458
+#: blob.cpp:461
 msgid "Setup Blob Saver"
 msgstr "Blobok beállítása"
 
-#: blob.cpp:468
+#: blob.cpp:471
 msgid "Frame Show sec."
 msgstr "Képfrissítés"
 
-#: blob.cpp:480
+#: blob.cpp:483
 msgid "Algorithm"
 msgstr "Algoritmus"
 
-#: blob.cpp:570
+#: blob.cpp:573
 msgid "About Blob"
 msgstr "A Blobok-ról"
 
-#: blob.cpp:571
+#: blob.cpp:574
 msgid ""
 "Blobsaver Version 0.1\n"
 "\n"
 "written by Tiaan Wessels 1997\n"
 "tiaan@netsys.co.za"
 msgstr ""
+"Blobsaver 0.1 verzió\n"
+"\n"
+"Írta: Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
 
-#: blob.cpp:606
+#: blob.cpp:609
 msgid "Blobs"
 msgstr "Blob-ok"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
-msgstr ""
+msgstr "Buborékok"
 
 #: bouboule.cpp:1005
-#, fuzzy
+#
 msgid "Setup KBouboule"
-msgstr "A KBouboule beállításai"
+msgstr "A Buborékok beállításai"
 
 #: bouboule.cpp:1032
-#, fuzzy
+#
 msgid "Number of points:"
 msgstr "Pontok száma:"
 
 #: bouboule.cpp:1046
-#, fuzzy
+#
 msgid "Point size:"
 msgstr "Pontok mérete:"
 
@@ -231,9 +253,9 @@ msgid "3D mode"
 msgstr "3D mód"
 
 #: bouboule.cpp:1223
-#, fuzzy
+#
 msgid "About Bouboule"
-msgstr "A Bouboule-rõl"
+msgstr "A Buborékokról"
 
 #: bouboule.cpp:1224
 msgid ""
@@ -243,11 +265,16 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
+"Buborékok v0.1 --  egy csomó gömb, ami forog, és változik a mérete\n"
+"\n"
+"Szerzõi jog: (c) 1996 by Jeremie PETIT\n"
+"\n"
+"kscreensave-hez portolta: Cedric Tefft"
 
 #: bsod.cpp:1192
-#, fuzzy
+#
 msgid "Black Screen of Death"
-msgstr "Feketedoboz, belülrõl"
+msgstr "OpRendszerek Halála"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -255,7 +282,7 @@ msgstr "Lángok"
 
 #: flame.cpp:397
 msgid "Setup KFlame"
-msgstr "A KFlame beállításai"
+msgstr "A Lángok beállításai"
 
 #: flame.cpp:423
 msgid "Max Levels:"
@@ -277,6 +304,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
+"Lángok 3.3 verzió\n"
+"\n"
+"Szerzõi jogok: (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"kscreensave-hez portolta:  Martin Jones."
 
 #: forest.cpp:206
 msgid "Forest"
@@ -284,7 +316,7 @@ msgstr "Erdõ"
 
 #: forest.cpp:278
 msgid "Setup KForest"
-msgstr "A KForest beállítása"
+msgstr "Az Erdõ beállítása"
 
 #: forest.cpp:304
 msgid "Num of Trees:"
@@ -292,7 +324,7 @@ msgstr "Fák száma:"
 
 #: forest.cpp:399
 msgid "About Forest"
-msgstr "A KForest névjegye"
+msgstr "Az Erdõ névjegye"
 
 #: forest.cpp:400
 msgid ""
@@ -302,6 +334,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Erdõ\n"
+"\n"
+"Szerzõi jog: (c) 1995 by Pascal Pensa\n"
+"\n"
+"kscreensave-hez portolta: Emanuel Pirker."
 
 #: hop.cpp:226
 msgid "Hop"
@@ -309,20 +346,20 @@ msgstr "Ugrás"
 
 #: hop.cpp:311
 msgid "Setup KHop"
-msgstr "A KHop beállítása"
+msgstr "Az Ugrás beállítása"
 
 #: hop.cpp:337
 msgid "Samecolor Pixels:"
-msgstr "Egyszínû pixelek"
+msgstr "Egyszínû pixelek:"
 
 #: hop.cpp:351 lissie.cpp:367
 msgid "Cycles:"
 msgstr "Ciklusok:"
 
 #: hop.cpp:464
-#, fuzzy
+#
 msgid "About Hop"
-msgstr "A KHop névjegye"
+msgstr "Az Ugrás névjegye"
 
 #: hop.cpp:465
 msgid ""
@@ -332,18 +369,23 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Ugrás 3.3 verzió\n"
+"\n"
+"Szerzõi jog: (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"kscreensave-hez portolta:  Emanuel Pirker."
 
 #: laser.cpp:333
 msgid "Laser"
 msgstr "Lézer"
 
 #: laser.cpp:393
-#, fuzzy
+#
 msgid "Setup KLaser"
-msgstr "A KLaser beállításai"
+msgstr "A Lézer beállításai"
 
 #: laser.cpp:482
-#, fuzzy
+#
 msgid "About Laser"
 msgstr "A Lézer névjegye"
 
@@ -355,6 +397,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
+"Lézer 3.3 verzió\n"
+"\n"
+"Szerzõi jog: (c) 1995 by Pascal Pensa\n"
+"\n"
+"kscreensave-hez portolta: Martin Jones."
 
 #: lines.cpp:134
 msgid "Setup klines"
@@ -387,10 +434,14 @@ msgid ""
 "written by Dirk Staneker 1997\n"
 "dirk.stanerker@student.uni-tuebingen.de"
 msgstr ""
+"Vonalak 0.1.1 verzió\n"
+"\n"
+"Írta: Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
 
 #: lissie.cpp:241
 msgid "Lissie"
-msgstr ""
+msgstr "Lissie"
 
 #: lissie.cpp:327
 msgid "Setup KLissie"
@@ -412,6 +463,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Lissie\n"
+"\n"
+"Szerzõi jog: (c) 1996 by Alexander Jolk\n"
+"\n"
+"kscreensave-hez portolta: Emanuel Pirker."
 
 #: main.cpp:384
 #, c-format
@@ -419,7 +475,7 @@ msgid "Option %s is not support on this plattform!"
 msgstr "A(z) %s paraméter nem értelmezhetõ ezen a platformon!"
 
 #: main.cpp:422
-#, fuzzy
+#
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -427,9 +483,11 @@ msgid ""
 "Please contact your system administrator.\n"
 "Tell him that you need suid for the kcheckpass program!"
 msgstr ""
-"Az Ön rendszere rejtett jelszavakat használ.\n"
-"Lépjen kapcsolatba a rendszergazdával, hogy adjon\n"
-"SUID-ot a képernyõvédõknek."
+"Figyelmeztetés: Nem lehet zárolni a képernyõt!\n"
+"\n"
+"Az rendszered rejtett jelszavakat használ.\n"
+"Lépj kapcsolatba a rendszergazdával, hogy adjon\n"
+"SUID-ot a kcheckpass programnak."
 
 #: main.cpp:427
 msgid "Shadow Passwords"
@@ -447,17 +505,17 @@ msgstr ""
 "használja inkább a klock-ot.\n"
 "\n"
 
-#: main.cpp:580
-#, fuzzy, c-format
+#: main.cpp:586
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "Használat: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+"       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
-#: main.cpp:583
-#, fuzzy
+#: main.cpp:589
+#
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -488,9 +546,11 @@ msgstr ""
 "  -desc             Kiírja a képernyõkímélõ leírását\n"
 "  -install          Felinstallálja a képernyõvédõt\n"
 "  -lock             Zárolja a billentyûzetet\n"
+"  -allow-root      A root jelszóval is ki lehet nyitni a zárolt képernyõt.\n"
 "  -nice num         A megadott nice (prioritás) értékkel fusson\n"
 "\n"
 "  -preview wid      A megadott wid (ablak ID) ablakban fusson\n"
+"  -inroot           A root (háttér) ablakban fusson\n"
 "  -setup            Képernyõvédõ beállítása\n"
 "  -test             A képernyõvédõ azonnali indítása\n"
 
@@ -500,7 +560,7 @@ msgstr "A GL nem tud a root ablakban renderelni\n"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
-msgstr ""
+msgstr "Morph3D (GL)"
 
 #: morph3d.cpp:1015
 msgid "Setup KMorph3d"
@@ -522,25 +582,30 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Morph3D\n"
+"\n"
+"Szerzõi jog: (c) 1997 by Marcelo F. Vianna\n"
+"\n"
+"kscreensave-hez portolta: Emanuel Pirker."
 
 #: pipes.cpp:299
 msgid "Pipes (GL)"
-msgstr ""
+msgstr "Csövek (GL)"
 
 #: pipes.cpp:672
-#, fuzzy
+#
 msgid "Setup KPipes"
-msgstr "A KPipes beállításai"
+msgstr "A Csövek beállításai"
 
 #: pipes.cpp:678
-#, fuzzy
+#
 msgid "Number of Pipes"
-msgstr "Pipe-ok száma:"
+msgstr "Csövek száma:"
 
 #: pipes.cpp:743
-#, fuzzy
+#
 msgid "About KPipes"
-msgstr "A KPipes névjegye"
+msgstr "A Csövek névjegye"
 
 #: pipes.cpp:745
 msgid ""
@@ -548,10 +613,13 @@ msgid ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
+"Csövek\n"
+"Szerzõi jog: (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
 
 #: polygon.cpp:85
 msgid "Setup kpolygon"
-msgstr "Beállítás"
+msgstr "Poligon beállítása"
 
 #: polygon.cpp:107
 msgid "Vertices:"
@@ -559,7 +627,7 @@ msgstr "Pontok száma:"
 
 #: polygon.cpp:238
 msgid "About Polygon"
-msgstr "A Poligon-ról"
+msgstr "A Poligon névjegye"
 
 #: polygon.cpp:239
 msgid ""
@@ -568,24 +636,28 @@ msgid ""
 "written by Martin R. Jones 1996\n"
 "mjones@kde.org"
 msgstr ""
+"Poligon 0.1 verzió\n"
+"\n"
+"Írta: Martin R. Jones 1996\n"
+"mjones@kde.org"
 
 #: pyro.cpp:439
 msgid "Pyro"
 msgstr "Pirománia"
 
 #: pyro.cpp:517
-#, fuzzy
+#
 msgid "Setup KPyro"
-msgstr "Beállítás"
+msgstr "Pirománia beállítása"
 
 #: pyro.cpp:543
 msgid "Cloud"
 msgstr "Felhõ"
 
 #: pyro.cpp:629
-#, fuzzy
+#
 msgid "About Pyro"
-msgstr "A Piromániáról"
+msgstr "A Pirománia névjegye"
 
 #: pyro.cpp:630
 msgid ""
@@ -595,18 +667,23 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
+"Pirománia 3.4 verzió\n"
+"\n"
+"Szerzõi jog: (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"kscreensave-hez portolta: Martin Jones."
 
 #: rock.cpp:441
 msgid "Rock"
 msgstr "Kõ"
 
 #: rock.cpp:549
-#, fuzzy
+#
 msgid "Setup krock"
-msgstr "Beállítás"
+msgstr "A Kõ beállítása"
 
 #: rock.cpp:589
-#, fuzzy
+#
 msgid "Move"
 msgstr "Mozgás"
 
@@ -615,9 +692,9 @@ msgid "Rotate"
 msgstr "Forgás"
 
 #: rock.cpp:719
-#, fuzzy
+#
 msgid "About Rock"
-msgstr "A programról"
+msgstr "A Kõ névjegye"
 
 #: rock.cpp:720
 msgid ""
@@ -627,14 +704,19 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
+"Kõ 3.3 verzió\n"
+"\n"
+"Szerzõi jog: (c) 1992 by Jamie Zawinski\n"
+"\n"
+"kscreensave-hez portolta: Martin Jones."
 
 #: saver.cpp:60 saver.cpp:191
-#, fuzzy
+#
 msgid "Enter Password"
 msgstr "Jelszó:"
 
 #: saver.cpp:121
-#, fuzzy
+#
 msgid "Failed"
 msgstr "Hibás!"
 
@@ -643,7 +725,7 @@ msgid "Whirl"
 msgstr "Gyûrõdés"
 
 #: science.cpp:68
-#, fuzzy
+#
 msgid "Sphere"
 msgstr "Gömb"
 
@@ -664,7 +746,7 @@ msgid "Curvature"
 msgstr "Görbület"
 
 #: science.cpp:112
-#, fuzzy
+#
 msgid "Science"
 msgstr "Tudományos"
 
@@ -677,9 +759,9 @@ msgid "grabbing screen..."
 msgstr "képernyõ leszedése..."
 
 #: science.cpp:975
-#, fuzzy
+#
 msgid "Setup Science"
-msgstr "Beállítások"
+msgstr "A Tudományos beállítása"
 
 #: science.cpp:1008
 msgid "Inverse"
@@ -710,22 +792,22 @@ msgid "written by"
 msgstr "írta"
 
 #: science.cpp:1306
-#, fuzzy
+#
 msgid "About Science"
-msgstr "A programról"
+msgstr "A Tudományos névjegye"
 
 #: slidescreen.cpp:419
-#, fuzzy
+#
 msgid "SlideScreen"
 msgstr "Mozaik"
 
 #: slidescreen.cpp:465
-#, fuzzy
+#
 msgid "Setup KSlideScreen"
 msgstr "A Mozaik beállításai"
 
 #: slidescreen.cpp:558
-#, fuzzy
+#
 msgid "About SlideScreen"
 msgstr "A Mozaik névjegye"
 
@@ -739,6 +821,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
+"Mozaik 1.1 verzió\n"
+"\n"
+"Szerzõi jog: (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"kscreensaver-hez portolta:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -746,16 +835,16 @@ msgstr "Csúszás"
 
 #: slip.cpp:366
 msgid "Setup KSlip"
-msgstr "Beállítások"
+msgstr "A Csúszás beállítása"
 
 #: slip.cpp:392
 msgid "Batchcount:"
 msgstr "Csoportok:"
 
 #: slip.cpp:488
-#, fuzzy
+#
 msgid "About Slip"
-msgstr "A programról"
+msgstr "A Csúszás névjegye"
 
 #: slip.cpp:489
 msgid ""
@@ -765,24 +854,29 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Csúszás\n"
+"\n"
+"Szerzõi jog: (c) 1991 by Scott Draves\n"
+"\n"
+"kscreensave-hez portolta: Emanuel Pirker."
 
 #: space.cpp:491
 msgid "Space (GL)"
 msgstr "Ûr (GL)"
 
 #: space.cpp:581
-#, fuzzy
+#
 msgid "Setup KSpace"
-msgstr "A KSpace beállításai"
+msgstr "Az Ûr beállításai"
 
 #: space.cpp:597
 msgid "Warp Interval:"
 msgstr "Warp gyakoriság:"
 
 #: space.cpp:685
-#, fuzzy
+#
 msgid "About KSpace"
-msgstr "A programról"
+msgstr "Az Ûr névjegye"
 
 #: space.cpp:687
 msgid ""
@@ -790,6 +884,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 msgstr ""
+"Ûr\n"
+"Szerzõi jog (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
 
 #: swarm.cpp:257
 msgid "Swarm"
@@ -797,16 +894,16 @@ msgstr "Raj"
 
 #: swarm.cpp:329
 msgid "Setup KSwarm"
-msgstr "A KSwarm beállítása"
+msgstr "A Raj beállítása"
 
 #: swarm.cpp:355
 msgid "Number of Bees:"
 msgstr "Méhek száma:"
 
 #: swarm.cpp:450
-#, fuzzy
+#
 msgid "About Swarm"
-msgstr "A Raj-ról"
+msgstr "A Raj névjegye"
 
 #: swarm.cpp:451
 msgid ""
@@ -816,3 +913,8 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Raj\n"
+"\n"
+"Szerzõi jog: (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"kscreensave-hez portolta: Emanuel Pirker."
