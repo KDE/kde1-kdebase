@@ -2,13 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1999-01-12 01:14+0100\n"
-"PO-Revision-Date: 1999-02-03 16:30+MET\n"
+"PO-Revision-Date: 1999-03-13 16:30+MET\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Stephan Kulow <coolo@kde.org>\n"
 
 #: main.cpp:84
 msgid "&Appearance"
@@ -50,7 +50,7 @@ msgstr "Fehlende Berechtigungen"
 
 #: kdm-appear.cpp:70
 msgid "Greeting string:"
-msgstr "Begrüßungs-Text"
+msgstr "Begrüßungstext"
 
 #: kdm-appear.cpp:78
 msgid "KDM logo:"
@@ -58,7 +58,7 @@ msgstr "KDM Logo:"
 
 #: kdm-appear.cpp:105 kdm-users.cpp:135
 msgid "Click or drop an image here"
-msgstr "Klicken oder ein Bild fallen lassen"
+msgstr "Hier klicken oder ein Bild fallen lassen"
 
 #: kdm-appear.cpp:110
 msgid "GUI Style:"
@@ -85,7 +85,7 @@ msgid ""
 "There was an error loading the image:\n"
 ">"
 msgstr ""
-"Es gab ein Problem beim Laden des Bildes:\n"
+"Problem beim Laden des Bildes:\n"
 ">"
 
 #: kdm-appear.cpp:169 kdm-appear.cpp:188 kdm-users.cpp:196
@@ -102,7 +102,7 @@ msgid ""
 "There was an error saving the image:\n"
 ">"
 msgstr ""
-"Es gab ein Problem beim Speichern des Bildes:\n"
+"Problem beim Speichern des Bildes:\n"
 ">"
 
 #: kdm-appear.cpp:219 kdm-users.cpp:227
@@ -115,7 +115,7 @@ msgid ""
 "does not seem to be an image file"
 msgstr ""
 "\n"
-"scheint kein Bild-Dokument zu sein"
+"scheint keine Bilddatei zu sein"
 
 #: kdm-appear.cpp:222 kdm-users.cpp:230
 msgid ""
@@ -127,7 +127,7 @@ msgstr ""
 
 #: kdm-appear.cpp:224 kdm-users.cpp:232
 msgid "Improper File Extension"
-msgstr "Falsche Datei-Erweiterung"
+msgstr "Falsche Dateierweiterung"
 
 #: kdm-appear.cpp:253 kdm-users.cpp:278
 msgid ""
@@ -163,7 +163,7 @@ msgstr "Normal"
 
 #: kdm-font.cpp:157
 msgid "Greeting font"
-msgstr "Begrüßungs-Schrift"
+msgstr "Begrüßungsschrift"
 
 #: kdm-font.cpp:161
 msgid "Fail font"
@@ -258,8 +258,8 @@ msgid ""
 "Show all users\n"
 " but no-show users"
 msgstr ""
-"Alle Benutzer zeigen\n"
-"bis auf nicht zu zeigende ;)"
+"Alle bis auf\n"
+"ausgeschlossene"
 
 #: kdm-users.cpp:97
 msgid "Show users"
@@ -295,7 +295,7 @@ msgstr "Nur Konsole"
 
 #: kdm-sess.cpp:63
 msgid "Commands"
-msgstr "Kommandos"
+msgstr "Befehle"
 
 #: kdm-sess.cpp:64
 msgid "Shutdown"

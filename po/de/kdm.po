@@ -7,13 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdm VERSION\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1999-02-03 16:25+MET\n"
+"Translator: Christian Kirsch <ck@held.mind.de>\n"
+"PO-Revision-Date: 1999-03-13 21:50+MET\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Christian Kirsch <ck@held.mind.de>\n"
 
 #: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
@@ -21,7 +21,7 @@ msgstr "Beenden oder neu starten?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr "(Paßwort für Root eingeben)"
+msgstr "(Paßwort für SysAdmin eingeben)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
@@ -78,4 +78,4 @@ msgstr "Warnung: Ihre Zugangsberechtigung läuft am %s aus"
 
 #: kgreeter.cpp:724
 msgid "Home directory not available"
-msgstr "Heimat-Verzeichnis nicht verfügbar"
+msgstr "Heimatverzeichnis nicht verfügbar"

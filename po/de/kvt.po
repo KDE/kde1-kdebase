@@ -1,143 +1,150 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
-"Content-Type: text/plain; charset=\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"PO-Revision-Date: 1999-03-13 22:40+MET\n"
+"Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
+"Language-Team: de (de@li.org)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
 "Date: 1997-08-23 15:45:33+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
 "Xgettext-Options: --keyword=translate\n"
 "Files: main.C\n"
 
-#: main.C:424
+#: main.C:426
 msgid "choose type of color-mode"
 msgstr "Farbdarstellung wählen"
 
-#: main.C:430
+#: main.C:432
 msgid "Add characters to word class"
 msgstr "Zeichen zur Wortklasse hinzufügen"
 
-#: main.C:436
+#: main.C:438
 msgid "The backspace key will send a"
 msgstr "Die Backspace-Taste wirkt wie ein "
 
-#: main.C:442
+#: main.C:444
 msgid "Cursor key set"
 msgstr "Art der Cursortasten-Steuerung"
 
-#: main.C:611
+#: main.C:613
 msgid "&New Terminal"
 msgstr "&Neues Terminal"
 
-#: main.C:618 main.C:1024
+#: main.C:620 main.C:1043
 msgid "&Hide"
 msgstr "&Unsichtbar"
 
-#: main.C:619
+#: main.C:621
 msgid "&Left"
 msgstr "&Links"
 
-#: main.C:620
+#: main.C:622
 msgid "&Right"
 msgstr "&Rechts"
 
-#: main.C:625
+#: main.C:627
 msgid "&Normal"
 msgstr "&Normal"
 
-#: main.C:626
+#: main.C:628
 msgid "&Tiny"
 msgstr "&Winzig"
 
-#: main.C:627
+#: main.C:629
 msgid "&Small"
 msgstr "&Klein"
 
-#: main.C:628
+#: main.C:630
 msgid "&Medium"
 msgstr "&Mittel"
 
-#: main.C:629
+#: main.C:631
 msgid "&Large"
 msgstr "&Groß"
 
-#: main.C:630
+#: main.C:632
 msgid "&Huge"
 msgstr "&Riesig"
 
-#: main.C:642
+#: main.C:644
 msgid "&black/white"
 msgstr "schwarz/weiß"
 
-#: main.C:643
+#: main.C:645
 msgid "&white/black"
 msgstr "&weiß/schwarz"
 
-#: main.C:644
+#: main.C:646
 msgid "&green/black"
 msgstr "&grün/schwarz"
 
-#: main.C:645
+#: main.C:647
 msgid "black/light&yellow"
 msgstr "schwarz/hell&gelb"
 
-#: main.C:646
+#: main.C:648
 msgid "Linu&x Console"
 msgstr "Linu&x-Konsole"
 
-#: main.C:655
+#: main.C:657
 msgid "&Custom Colors"
 msgstr "&Eigene Farben"
 
-#: main.C:663 main.C:950
+#: main.C:665 main.C:969
 msgid "Hide &Menubar"
 msgstr "&Menüleiste unsichtbar"
 
-#: main.C:665 main.C:872 main.C:942
+#: main.C:667 main.C:888 main.C:960
 msgid "Show &Menubar"
 msgstr "&Menüleiste sichtbar"
 
-#: main.C:666 main.C:960
+#: main.C:668 main.C:979
 msgid "Secure &keyboard"
 msgstr "&Tastatur sperren"
 
-#: main.C:668
+#: main.C:670
 msgid "Scroll&bar"
 msgstr "&Rollbalken"
 
-#: main.C:669
+#: main.C:671
 msgid "&Font size"
 msgstr "&Schriftgröße"
 
-#: main.C:670
+#: main.C:672
 msgid "&Color"
 msgstr "&Farben"
 
-#: main.C:671
+#: main.C:673
 msgid "&Size"
 msgstr "Fenster&größe"
 
-#: main.C:672
+#: main.C:674
 msgid "Terminal..."
 msgstr "Termi&nal..."
 
-#: main.C:673
+#: main.C:675
 msgid "Font..."
 msgstr "Zeichensatz..."
 
-#: main.C:674
+#: main.C:676
 msgid "Enable &hotkeys"
 msgstr "&Hotkeys an"
 
-#: main.C:677
+#: main.C:679
 msgid "Save &Options"
 msgstr "&Einstellungen sichern"
 
-#: main.C:686
+#: main.C:688
 msgid ""
 "\n"
 "\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
 "(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
+"(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
 "\n"
 "Terminal emulation for the KDE Desktop Environment\n"
 "based on Robert Nation's rxvt-2.08"
@@ -147,35 +154,37 @@ msgstr ""
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
 "(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
+"(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
+"\n"
 "\n"
 "Terminalemulation für das KDE Desktop Environment\n"
 "basierend auf Robert Nations rxvt-2.08"
 
-#: main.C:881 main.C:1017
+#: main.C:897 main.C:1036
 msgid "&Show"
-msgstr "Sichtbar"
+msgstr "&Sichtbar"
 
-#: main.C:956
+#: main.C:975
 msgid "Unsecure &keyboard"
 msgstr "&Tastatur entsperren"
 
-#: main.C:967
+#: main.C:986
 msgid "Terminal Options"
 msgstr "Terminaleinstellungen"
 
-#: main.C:1129
+#: main.C:1152
 msgid "Hint"
 msgstr "Hinweis"
 
-#: main.C:1130
+#: main.C:1153
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
-"Die neuen Farbeinstellungen werden sichtbar\n"
+"Die neuen Farbeinstellungen werden sichtbar,\n"
 "sobald die Tastatur entsperrt ist."
 
-#: main.C:1433
+#: main.C:1474
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -189,64 +198,64 @@ msgstr ""
 "basierend auf Robert Nations rxvt-2.08\n"
 "\n"
 
-#: main.C:1437
+#: main.C:1478
 msgid "Permitted arguments are:\n"
 msgstr "Zulässige Parameter:\n"
 
-#: main.C:1438
+#: main.C:1479
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 "-e <Kommando> <Arg> ...   Kommando mit Argumenten ausführen - muß letzter "
 "Parameter sein\n"
 
-#: main.C:1439
+#: main.C:1480
 msgid "-display <name>           specify the display (server)\n"
 msgstr ""
 "-display <name>           Name des Rechners, auf dem das Terminal-Fenster "
 "erscheint\n"
 
-#: main.C:1440
+#: main.C:1481
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr "-vt_geometry <Größe>      Anfängliche Fenstergröße\n"
 
-#: main.C:1441
+#: main.C:1482
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr "-print-pipe <Name>        gibt die Pipe für den vt100 Printer an\n"
 
-#: main.C:1442
+#: main.C:1483
 msgid "-vt_bg <colour>           background color\n"
 msgstr "-vt_bg <Farbe>            Hintergrundfarbe\n"
 
-#: main.C:1443
+#: main.C:1484
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr "-vt_fg <Farbe>            Vordergrundfarbe\n"
 
-#: main.C:1444
+#: main.C:1485
 msgid "-vt_font <fontname>       normal font\n"
 msgstr "-vt_font <Schrift>        Standard-Schrift\n"
 
-#: main.C:1445
+#: main.C:1486
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
 msgstr "-no_font_hack             schaltet Qt's font bug Workaround aus\n"
 
-#: main.C:1446
+#: main.C:1487
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr "-vt_size <size>           tiny, small, normal, large, huge\n"
 
-#: main.C:1447
+#: main.C:1488
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr "-linux                    Kvt wie Linux-Konsole einstellen\n"
 
-#: main.C:1448
+#: main.C:1489
 msgid "-no_menubar               hide the menubar\n"
 msgstr "-no_menubar               Menüleiste verstecken\n"
 
-#: main.C:1449
+#: main.C:1490
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr "-no_scrollbar             Rollbalken verstecken\n"
 
-#: main.C:1450
+#: main.C:1491
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
@@ -254,19 +263,19 @@ msgstr ""
 "-T <text>                 Titeltext\n"
 "                          (Veraltet. Benutze -caption anstatt)\n"
 
-#: main.C:1452
+#: main.C:1493
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr "-tn <TERM>                Terminaltyp, Voreinstellung ist \"xterm\"\n"
 
-#: main.C:1453
+#: main.C:1494
 msgid "-C                        Capture system console message\n"
 msgstr "-C                        Meldungen für die Systemkonsole anzeigen\n"
 
-#: main.C:1454
+#: main.C:1495
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr "-n <text>                 Text für Icon\n"
 
-#: main.C:1455
+#: main.C:1496
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
@@ -274,7 +283,7 @@ msgstr ""
 "-7                         7-Bit-Mode\n"
 "-8                         8-Bit-Mode\n"
 
-#: main.C:1457
+#: main.C:1498
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
@@ -283,17 +292,17 @@ msgstr ""
 "-ls                       Login-Shell starten\n"
 "-ls-                      Keine Login-Shell starten (standard)\n"
 
-#: main.C:1459
+#: main.C:1500
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr "-meta                     ???\n"
 
-#: main.C:1460
+#: main.C:1501
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr "-sl <Zahl>                Anzahl der zu speichernden Zeilen\n"
 
-#: main.C:1461
+#: main.C:1502
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
@@ -303,7 +312,7 @@ msgstr ""
 "-pageup <Taste>           <Alt>-<Taste> zum Rückwärtsrollen benutzen\n"
 "-pagedown <Taste>         <Alt>-<Taste> zum Vorwärtsrollen benutzen\n"
 
-#: main.C:1465
+#: main.C:1506
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmfm \n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
-"PO-Revision-Date: 1999-02-03 14:50+MET\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"PO-Revision-Date: 1999-03-13 22:50+MET\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Stephan Kulow <coolo@kde.org>\n"
 
 #: main.cpp:61
 msgid "&Font"
@@ -122,6 +122,10 @@ msgstr "&Baum-Ansicht folgt Navigation"
 msgid "Terminal"
 msgstr "Terminal"
 
+#: miscopts.cpp:57
+msgid "Editor"
+msgstr "Editor"
+
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
 msgstr "Vergessen Sie nicht, die Einstellungen zu speichern!"
@@ -208,11 +212,11 @@ msgstr "Sie müssen zuerst eine Domain eingeben!"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
-msgstr "Horizontaler Gitter-Abstand:"
+msgstr "Horizontaler Gitterabstand:"
 
 #: rootopts.cpp:84
 msgid "Vertical Root Grid Spacing:"
-msgstr "Vertikaler Gitter-Abstand:"
+msgstr "Vertikaler Gitterabstand:"
 
 #: rootopts.cpp:95
 msgid "&Transparent Text for Desktop Icons."

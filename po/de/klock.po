@@ -1,56 +1,56 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1999-02-03 18:15+MET\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"PO-Revision-Date: 1999-03-13 21:10+MET\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Stephan Kulow <coolo@kde.org>\n"
 
-#: attraction.cpp:716
+#: attraction.cpp:718
 msgid "Attraction"
 msgstr "Attraction"
 
-#: attraction.cpp:803
+#: attraction.cpp:805
 msgid "Setup KAttraction"
 msgstr "Einstellungen Attraction"
 
-#: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
+#: attraction.cpp:817 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
 msgstr "Anzahl:"
 
-#: attraction.cpp:829 science.cpp:993 slidescreen.cpp:493
+#: attraction.cpp:831 science.cpp:993 slidescreen.cpp:493
 msgid "Mode:"
 msgstr "Modus:"
 
-#: attraction.cpp:834 slidescreen.cpp:498
+#: attraction.cpp:836 slidescreen.cpp:498
 msgid "Balls"
 msgstr "Kugeln"
 
-#: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
+#: attraction.cpp:837 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
 msgstr "Linien"
 
-#: attraction.cpp:836 polygon.cpp:64 slidescreen.cpp:500
+#: attraction.cpp:838 polygon.cpp:64 slidescreen.cpp:500
 msgid "Polygons"
 msgstr "Polygone"
 
-#: attraction.cpp:837 slidescreen.cpp:501
+#: attraction.cpp:839 slidescreen.cpp:501
 msgid "Tails"
 msgstr "Spuren"
 
-#: attraction.cpp:850 slidescreen.cpp:514
+#: attraction.cpp:852 slidescreen.cpp:514
 msgid "Glow"
 msgstr "Leuchten"
 
-#: attraction.cpp:951
+#: attraction.cpp:953
 msgid "About Attraction"
 msgstr "Über Attraction"
 
-#: attraction.cpp:952
+#: attraction.cpp:954
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -70,7 +70,7 @@ msgstr ""
 
 #: banner.cpp:62
 msgid "Banner"
-msgstr "Laufschrift"
+msgstr "Banner"
 
 #: banner.cpp:84
 msgid "Setup kbanner"
@@ -185,23 +185,23 @@ msgstr "Zufall"
 msgid "Sorry. This screensaver needs a color display"
 msgstr "Sorry. Dieser Bildschirmschoner läuft nur auf Farbbildschirmen."
 
-#: blob.cpp:458
+#: blob.cpp:461
 msgid "Setup Blob Saver"
-msgstr "Blob Saver einstellen"
+msgstr "Blobschoner einstellen"
 
-#: blob.cpp:468
+#: blob.cpp:471
 msgid "Frame Show sec."
-msgstr "Dia-Show (Sekunden)"
+msgstr "Diashow (sec)"
 
-#: blob.cpp:480
+#: blob.cpp:483
 msgid "Algorithm"
 msgstr "Algorithmus"
 
-#: blob.cpp:570
+#: blob.cpp:573
 msgid "About Blob"
 msgstr "Über Blob"
 
-#: blob.cpp:571
+#: blob.cpp:574
 msgid ""
 "Blobsaver Version 0.1\n"
 "\n"
@@ -213,7 +213,7 @@ msgstr ""
 "Autor: Tiaan Wessel 1997\n"
 "tiaan@netsys.co.za"
 
-#: blob.cpp:606
+#: blob.cpp:609
 msgid "Blobs"
 msgstr "Tropfen"
 
@@ -235,7 +235,7 @@ msgstr "Punktgröße"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr "Farbwechsel-Frequenz:"
+msgstr "Frequenz der Farbwechsel:"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
@@ -262,11 +262,11 @@ msgstr ""
 
 #: bsod.cpp:1192
 msgid "Black Screen of Death"
-msgstr "Schwarzer Schirm der Tode"
+msgstr "Schwarzer Schirm des Todes"
 
 #: flame.cpp:310
 msgid "Flame"
-msgstr "Feuer&Flamme"
+msgstr "Flamme"
 
 #: flame.cpp:397
 msgid "Setup KFlame"
@@ -274,11 +274,11 @@ msgstr "KFlame einstellen"
 
 #: flame.cpp:423
 msgid "Max Levels:"
-msgstr "Max. Ebenen"
+msgstr "Max. Ebenen:"
 
 #: flame.cpp:438
 msgid "Num Points:"
-msgstr "Punkte"
+msgstr "Punkte:"
 
 #: flame.cpp:551
 msgid "About Flame"
@@ -304,7 +304,7 @@ msgstr "Wald"
 
 #: forest.cpp:278
 msgid "Setup KForest"
-msgstr "Wald-Einstellungen"
+msgstr "Einstellung KForest"
 
 #: forest.cpp:304
 msgid "Num of Trees:"
@@ -342,7 +342,7 @@ msgstr "Gleichfarbige Pixel"
 
 #: hop.cpp:351 lissie.cpp:367
 msgid "Cycles:"
-msgstr "Durchläufe"
+msgstr "Durchgänge"
 
 #: hop.cpp:464
 msgid "About Hop"
@@ -490,7 +490,7 @@ msgstr ""
 "zusammen. Benutzen Sie stattdessen klock.\n"
 "\n"
 
-#: main.cpp:580
+#: main.cpp:586
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -499,7 +499,7 @@ msgstr ""
 "Benutzung: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay zahl] [-lock] [-allow-root] [-nice zahl]\n"
 
-#: main.cpp:583
+#: main.cpp:589
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -539,7 +539,7 @@ msgstr ""
 
 #: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
 msgid "GL can not render with root visual\n"
-msgstr "GL kann nicht in Root-Visual zeichnen\n"
+msgstr "GL kann nicht in Root Visual zeichnen\n"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
@@ -627,7 +627,7 @@ msgstr "Feuerwerk"
 
 #: pyro.cpp:517
 msgid "Setup KPyro"
-msgstr "Feuerwerk einstellen"
+msgstr "KPyro einstellen"
 
 #: pyro.cpp:543
 msgid "Cloud"
@@ -635,7 +635,7 @@ msgstr "Wolke"
 
 #: pyro.cpp:629
 msgid "About Pyro"
-msgstr "Über Feuerwerk"
+msgstr "Über KPyro"
 
 #: pyro.cpp:630
 msgid ""
@@ -653,16 +653,15 @@ msgstr ""
 
 #: rock.cpp:441
 msgid "Rock"
-msgstr "Asteroiden"
+msgstr "Gestein"
 
 #: rock.cpp:549
 msgid "Setup krock"
-msgstr "Asteroiden einstellen"
+msgstr "KRock einstellen"
 
 #: rock.cpp:589
-#, fuzzy
 msgid "Move"
-msgstr "Modus:"
+msgstr "Verschieben"
 
 #: rock.cpp:595
 msgid "Rotate"
@@ -670,7 +669,7 @@ msgstr "Drehen"
 
 #: rock.cpp:719
 msgid "About Rock"
-msgstr "Über Asteroiden"
+msgstr "Über Rock"
 
 #: rock.cpp:720
 msgid ""
@@ -696,7 +695,7 @@ msgstr "Gescheitert"
 
 #: science.cpp:65
 msgid "Whirl"
-msgstr "Kreisel"
+msgstr "Wirbel"
 
 #: science.cpp:68
 msgid "Sphere"
@@ -836,11 +835,11 @@ msgstr "KSpace einstellen"
 
 #: space.cpp:597
 msgid "Warp Interval:"
-msgstr "Warp-Zeitraum:"
+msgstr "Warp-Intervall:"
 
 #: space.cpp:685
 msgid "About KSpace"
-msgstr "Über Weltraum"
+msgstr "Über KSpace"
 
 #: space.cpp:687
 msgid ""
@@ -858,7 +857,7 @@ msgstr "Schwarm"
 
 #: swarm.cpp:329
 msgid "Setup KSwarm"
-msgstr "Schwarm einstellen"
+msgstr "KSwarm einstellen"
 
 #: swarm.cpp:355
 msgid "Number of Bees:"
@@ -881,6 +880,3 @@ msgstr ""
 "Copyright (c) 1991 Patrick J. Naughton\n"
 "\n"
 "Portiert für KDE von Emanuel Pirker."
-
-#~ msgid "Verschieben"
-#~ msgstr "Bewegen"

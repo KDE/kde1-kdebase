@@ -2,13 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
 "POT-Creation-Date: 1999-01-22 01:13+0100\n"
-"PO-Revision-Date: 1999-02-03 18:05+MET\n"
+"PO-Revision-Date: 1999-03-13 17:05+MET\n"
+"Translator: Harri Porten <porten@kde.org>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Harri Porten <porten@kde.org>\n"
 "Date: 1998-04-15 09:13:42+0400\n"
 "From: Alexander Budnik,LCTA 323,64880,, <budnik@linserv.jinr.ru>\n"
 "Xgettext-Options: -C -ktranslate\n"
@@ -28,7 +28,7 @@ msgid ""
 "Using X default codes."
 msgstr ""
 "X Codes \"%s\" Datei existiert nicht.\n"
-"Benutze X Standardcodes."
+"Benutze X-Standardcodes."
 
 #: kikbd.cpp:313
 #, c-format
@@ -46,12 +46,12 @@ msgstr "Einstellungen"
 #: kikbd.cpp:345 kikbd.cpp:358
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
-msgstr "Kann %s nicht von den Modifikatoren entfernen.\n"
+msgstr "Kann %s nicht aus Modifikatoren entfernen.\n"
 
 #: kikbd.cpp:348
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
-msgstr "Kann %s nicht zum Modifikator Nummer 3 hinzufügen.\n"
+msgstr "Kann %s nicht zu Modifikator Nr. 3 hinzufügen.\n"
 
 #: kikbd.cpp:370
 #, c-format
@@ -67,7 +67,7 @@ msgid ""
 "Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
-"Kann CapsLock nicht von den Modifikatoren entfernen.\n"
+"Kann CapsLock nicht aus Modifikatoren entfernen.\n"
 "CapsLock-Emulation deaktiviert"
 
 #: kikbd.cpp:1003
@@ -80,12 +80,12 @@ msgid ""
 " Do you want to have it autostarted at your next login?"
 msgstr ""
 "Sie sind dabei, das \"Internationale Tastatur-Tool\" zu verlassen.\n"
-"Möchten Sie es automatisch gestartet haben, wenn Sie das nächste Mal "
+"Möchten Sie es automatisch starten, wenn Sie das nächste Mal "
 "einloggen?"
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
-msgstr "KeyMap: Kann Speicher nicht reservieren"
+msgstr "KeyMap: Kann Speicher nicht zuordnen"
 
 #: keymap.cpp:228
 #, c-format
@@ -201,7 +201,7 @@ msgstr "Unten/Rechts"
 
 #: kikbdconf.cpp:151
 msgid "X default codes"
-msgstr "X Standard-Codes"
+msgstr "X-Standardcodes"
 
 #: kikbdconf.cpp:209
 #, c-format
@@ -210,7 +210,7 @@ msgid ""
 "Do you want to configure now?"
 msgstr ""
 "%s\n"
-"Möchten Sie die Konfiguration jetzt vornehmen ?"
+"Möchten Sie die Konfiguration jetzt vornehmen?"
 
 #: kikbdconf.cpp:217
 msgid ""
@@ -250,11 +250,11 @@ msgstr "Keine Datei"
 
 #: kikbdconf.cpp:402
 msgid "user file"
-msgstr "Benutzer-Datei"
+msgstr "Benutzerdatei"
 
 #: kikbdconf.cpp:403
 msgid "system file"
-msgstr "System-Datei"
+msgstr "Systemdatei"
 
 #: kikbdconf.cpp:408
 msgid "Statistic:  "
@@ -342,7 +342,7 @@ msgstr "&Info"
 
 #: widgets.cpp:136
 msgid "Display information for selected keyboard map"
-msgstr "Zeige Informationen über die ausgewählte Tastaturtabelle"
+msgstr "Zeige Info zu ausgewählter Tastaturtabelle"
 
 #: widgets.cpp:145
 msgid "Use &hot list"
@@ -460,7 +460,7 @@ msgstr "Sonderverhalten: Jede Fensterklasse merkt sich ihre Tastaturtabelle"
 
 #: widgets.cpp:551
 msgid "Button Colors"
-msgstr "Tasten-Farbe"
+msgstr "Tastenfarbe"
 
 #: widgets.cpp:561
 msgid "Foreground"
@@ -468,7 +468,7 @@ msgstr "Vordergrund"
 
 #: widgets.cpp:562
 msgid "Color of the text label"
-msgstr "Farbe des Text-Labels"
+msgstr "Farbe des Textlabels"
 
 #: widgets.cpp:566
 msgid "With Caps Lock"
@@ -497,7 +497,7 @@ msgstr "Schrift an&passen"
 #: widgets.cpp:592
 msgid "Customize Font for text label or use global settings"
 msgstr ""
-"Schrift des Text-Labels anpassen oder allgemeine Einstellungen benutzen"
+"Schrift des Textlabels anpassen oder allgemeine Einstellungen benutzen"
 
 #: widgets.cpp:596
 msgid "C&hange Font"
