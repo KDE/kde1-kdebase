@@ -1,5 +1,8 @@
 Sun Jan 11 17:27:53 1998  Stephan Kulow  <coolo@kde.org>
 
+	* acinclude.m4.in added a new macro KDE_CHECK_QT_DIRECT to unset
+	the Qt library path, if a Qt program compiles without them
+		
 	* acinclude.m4.in added a return value in the CREATE_KFSSTND
 	macro. Perhaps this has caused the problems
 
