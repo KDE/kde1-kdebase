@@ -6,7 +6,7 @@
 
 <title>KDE System Sounds Help
 <author>Christian Czezatke
-<date>v0.0.3 (Nov. 22nd, 1997)
+<date>v0.1 (April 15, 1999)
 
 <!-- Table of Contents -->
 <toc>
@@ -16,15 +16,31 @@
 <sect>Introduction
 
 <p>
-KDE <bf>System Sounds</bf> allows you to assign sounds to various
-system events. When such an event (like "Window open") occurs, the
-sound file that has been associated to that sound will be played.
+Activating ``<bf>enable system sounds</bf>''
+allows sounds to be assigned to
+the various
+system  events listed in the <bf>Events</bf> box.
+When such an event (like ``Window open'') occurs, the
+sound file that has been associated to that event will be played.
 
 <p>
 Currently, only WAV files are supported by the KDE System Sound
-Module. By default, these WAV files must be in the directory
-$(KDEDIR)/share/sounds. To assign other sound files to system events,
-just drag them from a <tt>kfm</tt> window onto the sound list. 
+Module. The default location of such WAV files is the directory
+$(KDEDIR)/share/sounds, and any WAV files available there will be
+listed in the <bf>Sounds</bf> box.
+You can also add other sound files to the Sounds list by,
+just dragging them from a <tt>kfm</tt> window onto the sound list. 
+
+
+To associate a sound to an event, use the pointer to
+highlight its entry in the Sounds list.  (You may now hear it by
+clicking on the <bf>Test</bf> button.)   Then highlight the corresponding
+event you wish to associate with it and click on <bf>Apply</bf> (or
+<bf>OK</bf> if you are finished).
+
+
+
+
 
 
 <sect>Changes
