@@ -80,6 +80,8 @@ KIOSlave::KIOSlave( char * _path )
 
     connect( ipc, SIGNAL( copy( const char*, const char*, bool ) ),
 	     this, SLOT( copy( const char*, const char*, bool ) ) );
+    connect( ipc, SIGNAL( del( const char* ) ),
+	     this, SLOT( del( const char* ) ) );
     connect( ipc, SIGNAL( get( const char*, const char*, const char *, bool ) ),
 	     this, SLOT( get( const char*, const char*, const char *, bool ) ) );
     connect( ipc, SIGNAL( mkdir( const char* ) ), this, SLOT( mkdir( const char* ) ) );
