@@ -1684,7 +1684,7 @@ bool MyApp::buttonPressEventFilter( XEvent * ev)
 bool MyApp::x11EventFilter( XEvent * ev){
 
     if (process_events_mode) {
-	switch (ev->type
+	switch (ev->type) {
 	case EnterNotify:
 	    return TRUE; //ignore these
 	case LeaveNotify:
