@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1999-03-29 01:16+0200\n"
+"POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1998-04-20 22:30+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -262,9 +262,9 @@ msgstr "無法載入圖示\n"
 #: kbind.cpp:1790 kbind.cpp:1802 kbind.cpp:1818 kbind.cpp:1953 kbind.cpp:1965
 #: kbind.cpp:2010 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
 #: kfmgui.cpp:551 kfmgui.cpp:792 kfmman.cpp:370 kfmman.cpp:1429
-#: kfmman.cpp:1656 kfmman.cpp:1702 kfmprops.cpp:380 kfmprops.cpp:649
-#: kfmprops.cpp:656 kfmprops.cpp:950 kfmprops.cpp:1089 kfmprops.cpp:1218
-#: kfmprops.cpp:1722 kfmprops.cpp:2083 kfmprops.cpp:2265 kfmserver.cpp:46
+#: kfmman.cpp:1656 kfmman.cpp:1702 kfmprops.cpp:384 kfmprops.cpp:653
+#: kfmprops.cpp:660 kfmprops.cpp:954 kfmprops.cpp:1093 kfmprops.cpp:1222
+#: kfmprops.cpp:1726 kfmprops.cpp:2087 kfmprops.cpp:2269 kfmserver.cpp:46
 #: kfmserver.cpp:214 kfmserver.cpp:294 kfmserver.cpp:313 kfmserver.cpp:360
 #: kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:339 kfmtree.cpp:466
 #: kfmtree.cpp:497 kfmtree.cpp:503 kfmtree.cpp:509 kfmview.cpp:442
@@ -619,7 +619,7 @@ msgstr "顯示選單列[&M]"
 msgid "&Browser"
 msgstr "瀏覽"
 
-#: kfmdlg.cpp:130 kfmprops.cpp:767
+#: kfmdlg.cpp:130 kfmprops.cpp:771
 msgid "Run in terminal"
 msgstr "在終端機中執行"
 
@@ -662,7 +662,7 @@ msgstr "最後讀取時間"
 msgid "Last Modified"
 msgstr "最後修改時間"
 
-#: kfmprops.cpp:379
+#: kfmprops.cpp:383
 #, fuzzy, c-format
 msgid ""
 "Could not rename the file or directory\n"
@@ -671,11 +671,11 @@ msgstr ""
 "無法刪除目錄\n"
 "%s"
 
-#: kfmprops.cpp:430
+#: kfmprops.cpp:434
 msgid "Access permissions"
 msgstr "存取權限"
 
-#: kfmprops.cpp:436
+#: kfmprops.cpp:440
 msgid ""
 "Show\n"
 "Entries"
@@ -683,11 +683,11 @@ msgstr ""
 "目錄\n"
 "可讀"
 
-#: kfmprops.cpp:438
+#: kfmprops.cpp:442
 msgid "Read"
 msgstr "讀取"
 
-#: kfmprops.cpp:443
+#: kfmprops.cpp:447
 msgid ""
 "Write\n"
 "Entries"
@@ -695,11 +695,11 @@ msgstr ""
 "目樂\n"
 "可寫"
 
-#: kfmprops.cpp:445
+#: kfmprops.cpp:449
 msgid "Write"
 msgstr "寫入"
 
-#: kfmprops.cpp:450
+#: kfmprops.cpp:454
 msgid ""
 "Change\n"
 "Into"
@@ -707,58 +707,58 @@ msgstr ""
 "目錄\n"
 "切換"
 
-#: kfmprops.cpp:452
+#: kfmprops.cpp:456
 msgid "Exec"
 msgstr "執行"
 
-#: kfmprops.cpp:456
+#: kfmprops.cpp:460
 msgid "Special"
 msgstr "特殊權限"
 
-#: kfmprops.cpp:460
+#: kfmprops.cpp:464
 msgid "User"
 msgstr "所有者"
 
-#: kfmprops.cpp:465 kfmprops.cpp:564
+#: kfmprops.cpp:469 kfmprops.cpp:568
 msgid "Group"
 msgstr ""
 
-#: kfmprops.cpp:470
+#: kfmprops.cpp:474
 msgid "Others"
 msgstr "其他"
 
-#: kfmprops.cpp:483
+#: kfmprops.cpp:487
 msgid "Set UID"
 msgstr ""
 
-#: kfmprops.cpp:484
+#: kfmprops.cpp:488
 msgid "Set GID"
 msgstr ""
 
-#: kfmprops.cpp:485
+#: kfmprops.cpp:489
 msgid "Sticky"
 msgstr ""
 
-#: kfmprops.cpp:503
+#: kfmprops.cpp:507
 msgid "Ownership"
 msgstr "所有權"
 
-#: kfmprops.cpp:509
+#: kfmprops.cpp:513
 #, fuzzy
 msgid "Owner"
 msgstr "所有權"
 
-#: kfmprops.cpp:639
+#: kfmprops.cpp:643
 #, c-format
 msgid " ERROR: No user %s"
 msgstr "錯誤: 沒有 %s 使用者"
 
-#: kfmprops.cpp:644
+#: kfmprops.cpp:648
 #, c-format
 msgid " ERROR: No group %s"
 msgstr "錯誤: 沒有 %s 群組"
 
-#: kfmprops.cpp:650
+#: kfmprops.cpp:654
 msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
@@ -766,7 +766,7 @@ msgstr ""
 "無法改變 所有人/群組\n"
 "或許\是拒絕存取."
 
-#: kfmprops.cpp:657
+#: kfmprops.cpp:661
 msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
@@ -774,29 +774,29 @@ msgstr ""
 "無法改變權限\n"
 "或許\是拒絕存取."
 
-#: kfmprops.cpp:670 kfmprops.cpp:733
+#: kfmprops.cpp:674 kfmprops.cpp:737
 msgid "Execute"
 msgstr "執行"
 
-#: kfmprops.cpp:686 kfmprops.cpp:1173
+#: kfmprops.cpp:690 kfmprops.cpp:1177
 #, fuzzy
 msgid "&Browse..."
 msgstr "瀏覽"
 
-#: kfmprops.cpp:720
+#: kfmprops.cpp:724
 msgid "Swallowing on panel"
 msgstr "含入至 panel 中"
 
-#: kfmprops.cpp:747
+#: kfmprops.cpp:751
 msgid "Window Title"
 msgstr "視窗標題"
 
-#: kfmprops.cpp:775
+#: kfmprops.cpp:779
 msgid "Terminal Options"
 msgstr "終端機選項"
 
-#: kfmprops.cpp:951 kfmprops.cpp:1090 kfmprops.cpp:1723 kfmprops.cpp:2084
-#: kfmprops.cpp:2266
+#: kfmprops.cpp:955 kfmprops.cpp:1094 kfmprops.cpp:1727 kfmprops.cpp:2088
+#: kfmprops.cpp:2270
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -804,80 +804,80 @@ msgstr ""
 "無法儲存特質內容\n"
 "或許\是權限被拒絕"
 
-#: kfmprops.cpp:1003
+#: kfmprops.cpp:1007
 msgid "URL"
 msgstr "URL"
 
-#: kfmprops.cpp:1112
+#: kfmprops.cpp:1116
 #, fuzzy
 msgid "Background"
 msgstr "背景顏色:"
 
-#: kfmprops.cpp:1122
+#: kfmprops.cpp:1126
 msgid "Apply global"
 msgstr "套用至整體設定"
 
-#: kfmprops.cpp:1160 kfmprops.cpp:1230 kfmprops.cpp:1314
+#: kfmprops.cpp:1164 kfmprops.cpp:1234 kfmprops.cpp:1318
 msgid "(Default)"
 msgstr "(預設)"
 
-#: kfmprops.cpp:1219
+#: kfmprops.cpp:1223
 msgid "Could not write to\n"
 msgstr "無法寫入\n"
 
-#: kfmprops.cpp:1379
+#: kfmprops.cpp:1383
 msgid "(None)"
 msgstr "(無)"
 
-#: kfmprops.cpp:1425
+#: kfmprops.cpp:1429
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr "二進位樣式 (netscape;Netscape;)"
 
-#: kfmprops.cpp:1432 kfmprops.cpp:1827
+#: kfmprops.cpp:1436 kfmprops.cpp:1831
 msgid "Comment"
 msgstr "說明"
 
-#: kfmprops.cpp:1443
+#: kfmprops.cpp:1447
 msgid "Name ( in your language )"
 msgstr "名稱 ( 用您的語言 )"
 
-#: kfmprops.cpp:1804
+#: kfmprops.cpp:1808
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "樣式 (舉例: *.html;*.HTML; )"
 
-#: kfmprops.cpp:1816
+#: kfmprops.cpp:1820
 msgid "Mime Type"
 msgstr "Mime 類型"
 
-#: kfmprops.cpp:1845
+#: kfmprops.cpp:1849
 msgid "Default Application"
 msgstr "預設的應用程式"
 
-#: kfmprops.cpp:1885
+#: kfmprops.cpp:1889
 msgid "<none>"
 msgstr ""
 
-#: kfmprops.cpp:2130
+#: kfmprops.cpp:2134
 msgid "Device ( /dev/fd0 )"
 msgstr "裝置 ( /dev/fd0 )"
 
-#: kfmprops.cpp:2139
+#: kfmprops.cpp:2143
 msgid "Mount Point ( /floppy )"
 msgstr "Mount Point ( /floppy )"
 
-#: kfmprops.cpp:2150
+#: kfmprops.cpp:2154
 msgid "Readonly"
 msgstr "唯讀"
 
-#: kfmprops.cpp:2156
+#: kfmprops.cpp:2160
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "檔案系統 (iso9660,msdos,minix,default )"
 
-#: kfmprops.cpp:2167
+#: kfmprops.cpp:2171
 msgid "Mounted Icon"
 msgstr "Mounted 圖示"
 
-#: kfmprops.cpp:2172
+#: kfmprops.cpp:2176
 msgid "Unmounted Icon"
 msgstr "Unmounted 圖示"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfind\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1999-02-16 23:10-0500\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
@@ -282,24 +282,24 @@ msgstr "Tilføj ny"
 msgid "Archivers"
 msgstr "Arkivprogrammer"
 
-#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:135 kfwin.cpp:162
+#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:139 kfwin.cpp:166
 #, c-format
 msgid "%d file(s) found"
 msgstr "%d fil(er) fundet"
 
-#: kfwin.cpp:246
+#: kfwin.cpp:250
 msgid "It wasn't possible to save results!"
 msgstr "Det var ikke muligt at gemme resultatet!"
 
-#: kfwin.cpp:254 kfwin.cpp:256 kfwin.cpp:258
+#: kfwin.cpp:258 kfwin.cpp:260 kfwin.cpp:262
 msgid "KFind Results File"
 msgstr "Kfind resultat fil"
 
-#: kfwin.cpp:283
+#: kfwin.cpp:287
 msgid "Results were saved to file\n"
 msgstr "Resultatet gemt til fil\n"
 
-#: kfwin.cpp:298
+#: kfwin.cpp:302
 #, c-format
 msgid ""
 "Do you really want to delete file:\n"
@@ -308,11 +308,11 @@ msgstr ""
 "Vil du virkelig slette filen:\n"
 "%s"
 
-#: kfwin.cpp:300
+#: kfwin.cpp:304
 msgid "Delete File"
 msgstr "Slet fil"
 
-#: kfwin.cpp:312
+#: kfwin.cpp:316
 msgid ""
 "You have no permission\n"
 " to delete this file"
@@ -320,7 +320,7 @@ msgstr ""
 "Du har ikke tilladelse\n"
 "til at slette denne fil"
 
-#: kfwin.cpp:318
+#: kfwin.cpp:322
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
@@ -328,7 +328,7 @@ msgstr ""
 "Det er ikke muligt\n"
 "at slette den valgte fil"
 
-#: kfwin.cpp:336
+#: kfwin.cpp:340
 msgid ""
 "You have no permission\n"
 " to delete this directory"
@@ -336,7 +336,7 @@ msgstr ""
 "Du har ikke tilladelse\n"
 "til at slette denne folder"
 
-#: kfwin.cpp:341
+#: kfwin.cpp:345
 msgid ""
 "Specified directory\n"
 "is not empty!"
@@ -344,7 +344,7 @@ msgstr ""
 "Den valgte folder\n"
 "er ikke tom!"
 
-#: kfwin.cpp:346
+#: kfwin.cpp:350
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
@@ -352,10 +352,10 @@ msgstr ""
 "Det er ikke muligt at\n"
 "slette den valgte folder"
 
-#: kfwin.cpp:438
+#: kfwin.cpp:442
 msgid "Couldn't recognize archive type!"
 msgstr "Kunne ikke genkende arkivtype!"
 
-#: kfwin.cpp:497
+#: kfwin.cpp:501
 msgid "Error while creating child process!"
 msgstr "Fejl ved oprettelse af underproces!"

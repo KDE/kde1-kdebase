@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind 1.0pre2\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1998-12-02 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -283,24 +283,24 @@ msgstr "Nova ar¶ivilo"
 msgid "Archivers"
 msgstr "Ar¶iviloj"
 
-#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:135 kfwin.cpp:162
+#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:139 kfwin.cpp:166
 #, c-format
 msgid "%d file(s) found"
 msgstr "%d dosiero(j) trovita(j)"
 
-#: kfwin.cpp:246
+#: kfwin.cpp:250
 msgid "It wasn't possible to save results!"
 msgstr "Ne eblis sekurigi la rezultojn!"
 
-#: kfwin.cpp:254 kfwin.cpp:256 kfwin.cpp:258
+#: kfwin.cpp:258 kfwin.cpp:260 kfwin.cpp:262
 msgid "KFind Results File"
 msgstr "KFind-rezultodosiero"
 
-#: kfwin.cpp:283
+#: kfwin.cpp:287
 msgid "Results were saved to file\n"
 msgstr "La rezulto estas sekurigita al la dosiero\n"
 
-#: kfwin.cpp:298
+#: kfwin.cpp:302
 #, c-format
 msgid ""
 "Do you really want to delete file:\n"
@@ -309,11 +309,11 @@ msgstr ""
 "Æu vi vere volas forigi la dosieron:\n"
 "%s"
 
-#: kfwin.cpp:300
+#: kfwin.cpp:304
 msgid "Delete File"
 msgstr "Forigu la dosieron"
 
-#: kfwin.cpp:312
+#: kfwin.cpp:316
 msgid ""
 "You have no permission\n"
 " to delete this file"
@@ -321,7 +321,7 @@ msgstr ""
 "Vi ne havas la permeson\n"
 " forigi tiun æi dosieron"
 
-#: kfwin.cpp:318
+#: kfwin.cpp:322
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
@@ -329,7 +329,7 @@ msgstr ""
 "Ne eblis forigi la\n"
 "elektitan dosieron"
 
-#: kfwin.cpp:336
+#: kfwin.cpp:340
 msgid ""
 "You have no permission\n"
 " to delete this directory"
@@ -337,7 +337,7 @@ msgstr ""
 "Vi ne havas la permeson\n"
 " forigi tiun æi dosierujon"
 
-#: kfwin.cpp:341
+#: kfwin.cpp:345
 msgid ""
 "Specified directory\n"
 "is not empty!"
@@ -345,7 +345,7 @@ msgstr ""
 "La indikita dosierujo\n"
 "ne estas malplena!"
 
-#: kfwin.cpp:346
+#: kfwin.cpp:350
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
@@ -353,10 +353,10 @@ msgstr ""
 "Ne eblis forigi la\n"
 "elektitan dosierujon"
 
-#: kfwin.cpp:438
+#: kfwin.cpp:442
 msgid "Couldn't recognize archive type!"
 msgstr "Ne eblis rekoni la tipon de la ar¶ivo!"
 
-#: kfwin.cpp:497
+#: kfwin.cpp:501
 msgid "Error while creating child process!"
 msgstr "Okazis eraro dum kreo de procezido!"

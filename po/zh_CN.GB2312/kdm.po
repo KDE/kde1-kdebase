@@ -3,11 +3,10 @@ msgstr ""
 "Project-Id-Version: kdm\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1999-03-29 19:00+0800\n"
-"Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
+"Last-Translator: Wang Jian <larkw@263.net>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 "Content-Type: text/plain; charset=gb2312-80\n"
 "Date: 1997-09-09 17:23:06+0200\n"
-"Last-Translator: Wang Jian <larkw@263.net>\n"
 
 #: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"

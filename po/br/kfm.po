@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version:kfm-1.1\n"
-"POT-Creation-Date: 1999-03-29 01:16+0200\n"
+"POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1999-01-29 11:24+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -260,9 +260,9 @@ msgstr "Ne m'eus ket gallet kargañ an arlun\n"
 #: kbind.cpp:1790 kbind.cpp:1802 kbind.cpp:1818 kbind.cpp:1953 kbind.cpp:1965
 #: kbind.cpp:2010 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
 #: kfmgui.cpp:551 kfmgui.cpp:792 kfmman.cpp:370 kfmman.cpp:1429
-#: kfmman.cpp:1656 kfmman.cpp:1702 kfmprops.cpp:380 kfmprops.cpp:649
-#: kfmprops.cpp:656 kfmprops.cpp:950 kfmprops.cpp:1089 kfmprops.cpp:1218
-#: kfmprops.cpp:1722 kfmprops.cpp:2083 kfmprops.cpp:2265 kfmserver.cpp:46
+#: kfmman.cpp:1656 kfmman.cpp:1702 kfmprops.cpp:384 kfmprops.cpp:653
+#: kfmprops.cpp:660 kfmprops.cpp:954 kfmprops.cpp:1093 kfmprops.cpp:1222
+#: kfmprops.cpp:1726 kfmprops.cpp:2087 kfmprops.cpp:2269 kfmserver.cpp:46
 #: kfmserver.cpp:214 kfmserver.cpp:294 kfmserver.cpp:313 kfmserver.cpp:360
 #: kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:339 kfmtree.cpp:466
 #: kfmtree.cpp:497 kfmtree.cpp:503 kfmtree.cpp:509 kfmview.cpp:442
@@ -622,7 +622,7 @@ msgstr "Diskouez barrenn al lañser"
 msgid "&Browser"
 msgstr "&Furcher"
 
-#: kfmdlg.cpp:130 kfmprops.cpp:767
+#: kfmdlg.cpp:130 kfmprops.cpp:771
 msgid "Run in terminal"
 msgstr "Seveniñ en un dermenell"
 
@@ -663,7 +663,7 @@ msgstr "Moned diwezhañ"
 msgid "Last Modified"
 msgstr "Kemmaden diwezhañ"
 
-#: kfmprops.cpp:379
+#: kfmprops.cpp:383
 #, c-format
 msgid ""
 "Could not rename the file or directory\n"
@@ -672,11 +672,11 @@ msgstr ""
 "Ne m'eus ket gallet adenvel ar restr pe renkell\n"
 "%s\n"
 
-#: kfmprops.cpp:430
+#: kfmprops.cpp:434
 msgid "Access permissions"
 msgstr "Aotreoù moned"
 
-#: kfmprops.cpp:436
+#: kfmprops.cpp:440
 msgid ""
 "Show\n"
 "Entries"
@@ -684,11 +684,11 @@ msgstr ""
 "Diskouez\n"
 "enmontoù"
 
-#: kfmprops.cpp:438
+#: kfmprops.cpp:442
 msgid "Read"
 msgstr "Lenn"
 
-#: kfmprops.cpp:443
+#: kfmprops.cpp:447
 msgid ""
 "Write\n"
 "Entries"
@@ -696,11 +696,11 @@ msgstr ""
 "Skrivañ\n"
 "enmontoù"
 
-#: kfmprops.cpp:445
+#: kfmprops.cpp:449
 msgid "Write"
 msgstr "Skrivañ"
 
-#: kfmprops.cpp:450
+#: kfmprops.cpp:454
 msgid ""
 "Change\n"
 "Into"
@@ -708,57 +708,57 @@ msgstr ""
 "Kemmañ\n"
 "da"
 
-#: kfmprops.cpp:452
+#: kfmprops.cpp:456
 msgid "Exec"
 msgstr "Seveniñ"
 
-#: kfmprops.cpp:456
+#: kfmprops.cpp:460
 msgid "Special"
 msgstr "Dibar"
 
-#: kfmprops.cpp:460
+#: kfmprops.cpp:464
 msgid "User"
 msgstr "Arveriad"
 
-#: kfmprops.cpp:465 kfmprops.cpp:564
+#: kfmprops.cpp:469 kfmprops.cpp:568
 msgid "Group"
 msgstr "Strollad"
 
-#: kfmprops.cpp:470
+#: kfmprops.cpp:474
 msgid "Others"
 msgstr "Re all"
 
-#: kfmprops.cpp:483
+#: kfmprops.cpp:487
 msgid "Set UID"
 msgstr "Laka UID"
 
-#: kfmprops.cpp:484
+#: kfmprops.cpp:488
 msgid "Set GID"
 msgstr "Laka GID"
 
-#: kfmprops.cpp:485
+#: kfmprops.cpp:489
 msgid "Sticky"
 msgstr "Pegus"
 
-#: kfmprops.cpp:503
+#: kfmprops.cpp:507
 msgid "Ownership"
 msgstr "Perc'henniezh"
 
-#: kfmprops.cpp:509
+#: kfmprops.cpp:513
 msgid "Owner"
 msgstr "Perc'henn"
 
-#: kfmprops.cpp:639
+#: kfmprops.cpp:643
 #, c-format
 msgid " ERROR: No user %s"
 msgstr " FAZI : Arveriad %s ebet"
 
-#: kfmprops.cpp:644
+#: kfmprops.cpp:648
 #, c-format
 msgid " ERROR: No group %s"
 msgstr " FAZI : Strollad %s ebet"
 
-#: kfmprops.cpp:650
+#: kfmprops.cpp:654
 msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
@@ -766,7 +766,7 @@ msgstr ""
 "Ne m'eus ket gallet kemmañ perc'henn/strollad\n"
 "Nac'het eo bet ar moned marteze"
 
-#: kfmprops.cpp:657
+#: kfmprops.cpp:661
 msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
@@ -774,28 +774,28 @@ msgstr ""
 "Ne m'eus ket gallet kemmañ aotreoù\n"
 "Nac'het eo bet ar moned marteze"
 
-#: kfmprops.cpp:670 kfmprops.cpp:733
+#: kfmprops.cpp:674 kfmprops.cpp:737
 msgid "Execute"
 msgstr "Seveniñ"
 
-#: kfmprops.cpp:686 kfmprops.cpp:1173
+#: kfmprops.cpp:690 kfmprops.cpp:1177
 msgid "&Browse..."
 msgstr "&Furchal..."
 
-#: kfmprops.cpp:720
+#: kfmprops.cpp:724
 msgid "Swallowing on panel"
 msgstr "O lonkañ war ar banell"
 
-#: kfmprops.cpp:747
+#: kfmprops.cpp:751
 msgid "Window Title"
 msgstr "Titl ar prenestr"
 
-#: kfmprops.cpp:775
+#: kfmprops.cpp:779
 msgid "Terminal Options"
 msgstr "Dibaboù an dermenell"
 
-#: kfmprops.cpp:951 kfmprops.cpp:1090 kfmprops.cpp:1723 kfmprops.cpp:2084
-#: kfmprops.cpp:2266
+#: kfmprops.cpp:955 kfmprops.cpp:1094 kfmprops.cpp:1727 kfmprops.cpp:2088
+#: kfmprops.cpp:2270
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -803,79 +803,79 @@ msgstr ""
 "Ne m'eus ket gallet enrollañ ar perzhioù\n"
 "Nac'het eo bet ar moned marteze"
 
-#: kfmprops.cpp:1003
+#: kfmprops.cpp:1007
 msgid "URL"
 msgstr "URL"
 
-#: kfmprops.cpp:1112
+#: kfmprops.cpp:1116
 msgid "Background"
 msgstr "Drekleur"
 
-#: kfmprops.cpp:1122
+#: kfmprops.cpp:1126
 msgid "Apply global"
 msgstr "Arloañ e pep lec'h"
 
-#: kfmprops.cpp:1160 kfmprops.cpp:1230 kfmprops.cpp:1314
+#: kfmprops.cpp:1164 kfmprops.cpp:1234 kfmprops.cpp:1318
 msgid "(Default)"
 msgstr "(Dre ziouer)"
 
-#: kfmprops.cpp:1219
+#: kfmprops.cpp:1223
 msgid "Could not write to\n"
 msgstr "Ne m'eus ket gallet skrivañ e\n"
 
-#: kfmprops.cpp:1379
+#: kfmprops.cpp:1383
 msgid "(None)"
 msgstr "(Hini ebet)"
 
-#: kfmprops.cpp:1425
+#: kfmprops.cpp:1429
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr "Patrom binarel (netscape;Netscape;)"
 
-#: kfmprops.cpp:1432 kfmprops.cpp:1827
+#: kfmprops.cpp:1436 kfmprops.cpp:1831
 msgid "Comment"
 msgstr "Askelenn"
 
-#: kfmprops.cpp:1443
+#: kfmprops.cpp:1447
 msgid "Name ( in your language )"
 msgstr "Anv (en ho yezh)"
 
-#: kfmprops.cpp:1804
+#: kfmprops.cpp:1808
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "Patrom (d.s. *.html ; *.HTML)"
 
-#: kfmprops.cpp:1816
+#: kfmprops.cpp:1820
 msgid "Mime Type"
 msgstr "Rizh Mime"
 
-#: kfmprops.cpp:1845
+#: kfmprops.cpp:1849
 msgid "Default Application"
 msgstr "Arload dre ziouer"
 
-#: kfmprops.cpp:1885
+#: kfmprops.cpp:1889
 msgid "<none>"
 msgstr "<hini ebet>"
 
-#: kfmprops.cpp:2130
+#: kfmprops.cpp:2134
 msgid "Device ( /dev/fd0 )"
 msgstr "Trobarzhell ( /dev/fd0 )"
 
-#: kfmprops.cpp:2139
+#: kfmprops.cpp:2143
 msgid "Mount Point ( /floppy )"
 msgstr "Poent mountañ ( /floppy )"
 
-#: kfmprops.cpp:2150
+#: kfmprops.cpp:2154
 msgid "Readonly"
 msgstr "Lenn hepken"
 
-#: kfmprops.cpp:2156
+#: kfmprops.cpp:2160
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Reizhiadoù restr (iso9660, msdos, minix, default)"
 
-#: kfmprops.cpp:2167
+#: kfmprops.cpp:2171
 msgid "Mounted Icon"
 msgstr "Arlun mountet"
 
-#: kfmprops.cpp:2172
+#: kfmprops.cpp:2176
 msgid "Unmounted Icon"
 msgstr "Arlun divountet"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcminfo\n"
-"POT-Creation-Date: 1998-12-12 15:11+0100\n"
+"POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1999-02-16 17:10+CET-1\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
@@ -63,7 +63,7 @@ msgstr "standard skærmnummer"
 msgid "number of screens     : %i"
 msgstr "antal skærme"
 
-#: info.cpp:179
+#: info.cpp:181
 msgid ""
 "No Information available\n"
 " or\n"

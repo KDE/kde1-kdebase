@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMINFO\n"
-"POT-Creation-Date: 1998-12-12 15:11+0100\n"
+"POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,7 +64,7 @@ msgstr "oletusnäytön numero   : %i"
 msgid "number of screens     : %i"
 msgstr "näyttöjen lukumäärä   : %i"
 
-#: info.cpp:179
+#: info.cpp:181
 msgid ""
 "No Information available\n"
 " or\n"

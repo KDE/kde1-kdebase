@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1998-12-01 HO:MI+ZONE\n"
 "Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -283,24 +283,24 @@ msgstr "שדח ףסוה"
 msgid "Archivers"
 msgstr "ביכרא תונכות"
 
-#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:135 kfwin.cpp:162
+#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:139 kfwin.cpp:166
 #, c-format
 msgid "%d file(s) found"
 msgstr "ואצמנ םיצבק %d"
 
-#: kfwin.cpp:246
+#: kfwin.cpp:250
 msgid "It wasn't possible to save results!"
 msgstr "שופיחה תואצות תא רומשל ןתינ אל"
 
-#: kfwin.cpp:254 kfwin.cpp:256 kfwin.cpp:258
+#: kfwin.cpp:258 kfwin.cpp:260 kfwin.cpp:262
 msgid "KFind Results File"
 msgstr "שופיח תואצות ץבוק"
 
-#: kfwin.cpp:283
+#: kfwin.cpp:287
 msgid "Results were saved to file\n"
 msgstr "ץבוקל ורמשנ שופיחה תואצות\n"
 
-#: kfwin.cpp:298
+#: kfwin.cpp:302
 #, c-format
 msgid ""
 "Do you really want to delete file:\n"
@@ -309,11 +309,11 @@ msgstr ""
 ":ץבוקה תא קוחמל ךנוצרבש חוטב התא םאה\n"
 "? %s"
 
-#: kfwin.cpp:300
+#: kfwin.cpp:304
 msgid "Delete File"
 msgstr "ץבוק תקיחמ"
 
-#: kfwin.cpp:312
+#: kfwin.cpp:316
 msgid ""
 "You have no permission\n"
 " to delete this file"
@@ -321,19 +321,19 @@ msgstr ""
 "ץבוקה תא קוחמל תואשרה ךל ןיא\n"
 "רחבנש"
 
-#: kfwin.cpp:318
+#: kfwin.cpp:322
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
 msgstr "רחבנש ץבוקה תא קוחמל ןתינ אל"
 
-#: kfwin.cpp:336
+#: kfwin.cpp:340
 msgid ""
 "You have no permission\n"
 " to delete this directory"
 msgstr "קוחמל תואשרה ךל ןיאהרחבנש היירפסה תא"
 
-#: kfwin.cpp:341
+#: kfwin.cpp:345
 msgid ""
 "Specified directory\n"
 "is not empty!"
@@ -341,7 +341,7 @@ msgstr ""
 "הרחבנש היירפסה\n"
 "הקיר הנניא"
 
-#: kfwin.cpp:346
+#: kfwin.cpp:350
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
@@ -349,11 +349,11 @@ msgstr ""
 "קוחמל ןתינ אל\n"
 "הרחבנש היירפסה תא"
 
-#: kfwin.cpp:438
+#: kfwin.cpp:442
 msgid "Couldn't recognize archive type!"
 msgstr "ביכראה גוס תא תוהזל ןתינ אל"
 
-#: kfwin.cpp:497
+#: kfwin.cpp:501
 msgid "Error while creating child process!"
 msgstr "ןב ךילהת תריציב האיגש הערא - האיגש"
 

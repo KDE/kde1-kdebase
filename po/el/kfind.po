@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-10-01 16:40:07+0200\n"
 "From: root <flidr@CyberGate.zcu.cz>\n"
@@ -275,24 +275,24 @@ msgstr "Προσθήκη νέου"
 msgid "Archivers"
 msgstr "Aρχειοθέτες"
 
-#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:135 kfwin.cpp:162
+#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:139 kfwin.cpp:166
 #, c-format
 msgid "%d file(s) found"
 msgstr "%d αρχεία βρέθηκαν"
 
-#: kfwin.cpp:246
+#: kfwin.cpp:250
 msgid "It wasn't possible to save results!"
 msgstr "Αδύνατη η αποθήκευση των αποτελεσμάτων"
 
-#: kfwin.cpp:254 kfwin.cpp:256 kfwin.cpp:258
+#: kfwin.cpp:258 kfwin.cpp:260 kfwin.cpp:262
 msgid "KFind Results File"
 msgstr "Αρχείο αποτελεσμάτων του KFind "
 
-#: kfwin.cpp:283
+#: kfwin.cpp:287
 msgid "Results were saved to file\n"
 msgstr "Αποτελέσματα που αποθηκεύτηκαν στο αρχείο\n"
 
-#: kfwin.cpp:298
+#: kfwin.cpp:302
 #, c-format
 msgid ""
 "Do you really want to delete file:\n"
@@ -301,17 +301,17 @@ msgstr ""
 "Θέλετε σίγουρα να διαγράψετε το αρχείο:\n"
 "%s"
 
-#: kfwin.cpp:300
+#: kfwin.cpp:304
 msgid "Delete File"
 msgstr "Διαγραφή αρχείου"
 
-#: kfwin.cpp:312
+#: kfwin.cpp:316
 msgid ""
 "You have no permission\n"
 " to delete this file"
 msgstr "Δεν έχετε το δικαίωμανα διαγράψετε αυτό το αρχείο"
 
-#: kfwin.cpp:318
+#: kfwin.cpp:322
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
@@ -319,13 +319,13 @@ msgstr ""
 "Αδύνατη η διαγραφή\n"
 "του επιλεγμένου αρχείου"
 
-#: kfwin.cpp:336
+#: kfwin.cpp:340
 msgid ""
 "You have no permission\n"
 " to delete this directory"
 msgstr "Δεν έχετε το δικαίωμανα διαγράψετε αυτόν τον κατάλογο"
 
-#: kfwin.cpp:341
+#: kfwin.cpp:345
 msgid ""
 "Specified directory\n"
 "is not empty!"
@@ -333,7 +333,7 @@ msgstr ""
 "Ο επιλεγμένος κατάλογος\n"
 "δεν είναι κενός!"
 
-#: kfwin.cpp:346
+#: kfwin.cpp:350
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
@@ -341,11 +341,11 @@ msgstr ""
 "Αδύνατη η διαγραφή\n"
 "του επιλεγμένου καταλόγου"
 
-#: kfwin.cpp:438
+#: kfwin.cpp:442
 msgid "Couldn't recognize archive type!"
 msgstr "Αδύνατη αναγνώριση αρχείου"
 
-#: kfwin.cpp:497
+#: kfwin.cpp:501
 msgid "Error while creating child process!"
 msgstr "Αποτυχία κατα την δημιουργία υποδιεργασίας"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm 1.0pre2\n"
-"POT-Creation-Date: 1999-03-29 01:16+0200\n"
+"POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1998-12-02 20:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -269,9 +269,9 @@ msgstr "Ne eblis enlegi la piktogramon\n"
 #: kbind.cpp:1790 kbind.cpp:1802 kbind.cpp:1818 kbind.cpp:1953 kbind.cpp:1965
 #: kbind.cpp:2010 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
 #: kfmgui.cpp:551 kfmgui.cpp:792 kfmman.cpp:370 kfmman.cpp:1429
-#: kfmman.cpp:1656 kfmman.cpp:1702 kfmprops.cpp:380 kfmprops.cpp:649
-#: kfmprops.cpp:656 kfmprops.cpp:950 kfmprops.cpp:1089 kfmprops.cpp:1218
-#: kfmprops.cpp:1722 kfmprops.cpp:2083 kfmprops.cpp:2265 kfmserver.cpp:46
+#: kfmman.cpp:1656 kfmman.cpp:1702 kfmprops.cpp:384 kfmprops.cpp:653
+#: kfmprops.cpp:660 kfmprops.cpp:954 kfmprops.cpp:1093 kfmprops.cpp:1222
+#: kfmprops.cpp:1726 kfmprops.cpp:2087 kfmprops.cpp:2269 kfmserver.cpp:46
 #: kfmserver.cpp:214 kfmserver.cpp:294 kfmserver.cpp:313 kfmserver.cpp:360
 #: kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:339 kfmtree.cpp:466
 #: kfmtree.cpp:497 kfmtree.cpp:503 kfmtree.cpp:509 kfmview.cpp:442
@@ -631,7 +631,7 @@ msgstr "Montru la menulistelon"
 msgid "&Browser"
 msgstr "&TTT-legilo"
 
-#: kfmdlg.cpp:130 kfmprops.cpp:767
+#: kfmdlg.cpp:130 kfmprops.cpp:771
 msgid "Run in terminal"
 msgstr "Rulu en terminalo"
 
@@ -672,7 +672,7 @@ msgstr "Lasta aliro"
 msgid "Last Modified"
 msgstr "Lasta þanøo"
 
-#: kfmprops.cpp:379
+#: kfmprops.cpp:383
 #, fuzzy, c-format
 msgid ""
 "Could not rename the file or directory\n"
@@ -681,11 +681,11 @@ msgstr ""
 "Ne eblis forigi la dosierujon\n"
 "%s"
 
-#: kfmprops.cpp:430
+#: kfmprops.cpp:434
 msgid "Access permissions"
 msgstr "Aliru permesojn"
 
-#: kfmprops.cpp:436
+#: kfmprops.cpp:440
 msgid ""
 "Show\n"
 "Entries"
@@ -693,11 +693,11 @@ msgstr ""
 "Montru\n"
 "la erojn"
 
-#: kfmprops.cpp:438
+#: kfmprops.cpp:442
 msgid "Read"
 msgstr "Legu"
 
-#: kfmprops.cpp:443
+#: kfmprops.cpp:447
 msgid ""
 "Write\n"
 "Entries"
@@ -705,11 +705,11 @@ msgstr ""
 "Skribu\n"
 "la erojn"
 
-#: kfmprops.cpp:445
+#: kfmprops.cpp:449
 msgid "Write"
 msgstr "Skribu"
 
-#: kfmprops.cpp:450
+#: kfmprops.cpp:454
 msgid ""
 "Change\n"
 "Into"
@@ -717,57 +717,57 @@ msgstr ""
 "Þanøu\n"
 "al"
 
-#: kfmprops.cpp:452
+#: kfmprops.cpp:456
 msgid "Exec"
 msgstr "Lanæo"
 
-#: kfmprops.cpp:456
+#: kfmprops.cpp:460
 msgid "Special"
 msgstr "Speciala"
 
-#: kfmprops.cpp:460
+#: kfmprops.cpp:464
 msgid "User"
 msgstr "Uzanto"
 
-#: kfmprops.cpp:465 kfmprops.cpp:564
+#: kfmprops.cpp:469 kfmprops.cpp:568
 msgid "Group"
 msgstr "Grupo"
 
-#: kfmprops.cpp:470
+#: kfmprops.cpp:474
 msgid "Others"
 msgstr "Aliaj"
 
-#: kfmprops.cpp:483
+#: kfmprops.cpp:487
 msgid "Set UID"
 msgstr "UID-rulo"
 
-#: kfmprops.cpp:484
+#: kfmprops.cpp:488
 msgid "Set GID"
 msgstr "GID-rulo"
 
-#: kfmprops.cpp:485
+#: kfmprops.cpp:489
 msgid "Sticky"
 msgstr "Glua"
 
-#: kfmprops.cpp:503
+#: kfmprops.cpp:507
 msgid "Ownership"
 msgstr "Posedo"
 
-#: kfmprops.cpp:509
+#: kfmprops.cpp:513
 msgid "Owner"
 msgstr "Posedanto"
 
-#: kfmprops.cpp:639
+#: kfmprops.cpp:643
 #, c-format
 msgid " ERROR: No user %s"
 msgstr " ERARO: Ne ekzistas uzanto %s"
 
-#: kfmprops.cpp:644
+#: kfmprops.cpp:648
 #, c-format
 msgid " ERROR: No group %s"
 msgstr " ERARO: Ne ekzistas grupo %s"
 
-#: kfmprops.cpp:650
+#: kfmprops.cpp:654
 msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
@@ -775,7 +775,7 @@ msgstr ""
 "Ne eblis þanøi ls posedanton/grupon\n"
 "Verþajne aliro estas malpermesita."
 
-#: kfmprops.cpp:657
+#: kfmprops.cpp:661
 msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
@@ -783,28 +783,28 @@ msgstr ""
 "Ne ebli þanøi la permesojn\n"
 "Verþajne aliro estas malpermesita."
 
-#: kfmprops.cpp:670 kfmprops.cpp:733
+#: kfmprops.cpp:674 kfmprops.cpp:737
 msgid "Execute"
 msgstr "Lanæu"
 
-#: kfmprops.cpp:686 kfmprops.cpp:1173
+#: kfmprops.cpp:690 kfmprops.cpp:1177
 msgid "&Browse..."
 msgstr "&Rigardu..."
 
-#: kfmprops.cpp:720
+#: kfmprops.cpp:724
 msgid "Swallowing on panel"
 msgstr "Hirunde sur la panelo"
 
-#: kfmprops.cpp:747
+#: kfmprops.cpp:751
 msgid "Window Title"
 msgstr "Fenestrotitolo"
 
-#: kfmprops.cpp:775
+#: kfmprops.cpp:779
 msgid "Terminal Options"
 msgstr "Terminala opcioj"
 
-#: kfmprops.cpp:951 kfmprops.cpp:1090 kfmprops.cpp:1723 kfmprops.cpp:2084
-#: kfmprops.cpp:2266
+#: kfmprops.cpp:955 kfmprops.cpp:1094 kfmprops.cpp:1727 kfmprops.cpp:2088
+#: kfmprops.cpp:2270
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -812,79 +812,79 @@ msgstr ""
 "Ne eblis sekurigi la ecojn\n"
 "Verþajne mankas permeso"
 
-#: kfmprops.cpp:1003
+#: kfmprops.cpp:1007
 msgid "URL"
 msgstr "URL"
 
-#: kfmprops.cpp:1112
+#: kfmprops.cpp:1116
 msgid "Background"
 msgstr "Fona koloro:"
 
-#: kfmprops.cpp:1122
+#: kfmprops.cpp:1126
 msgid "Apply global"
 msgstr "Apliku malloke"
 
-#: kfmprops.cpp:1160 kfmprops.cpp:1230 kfmprops.cpp:1314
+#: kfmprops.cpp:1164 kfmprops.cpp:1234 kfmprops.cpp:1318
 msgid "(Default)"
 msgstr "(implice)"
 
-#: kfmprops.cpp:1219
+#: kfmprops.cpp:1223
 msgid "Could not write to\n"
 msgstr "Ne eblis skribi al\n"
 
-#: kfmprops.cpp:1379
+#: kfmprops.cpp:1383
 msgid "(None)"
 msgstr "(neniu)"
 
-#: kfmprops.cpp:1425
+#: kfmprops.cpp:1429
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr "Duuma þablono (netscape;Netscape;)"
 
-#: kfmprops.cpp:1432 kfmprops.cpp:1827
+#: kfmprops.cpp:1436 kfmprops.cpp:1831
 msgid "Comment"
 msgstr "Komento"
 
-#: kfmprops.cpp:1443
+#: kfmprops.cpp:1447
 msgid "Name ( in your language )"
 msgstr "Nomo (en via lingvo)"
 
-#: kfmprops.cpp:1804
+#: kfmprops.cpp:1808
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "Þablono (ekzemple: *.html;*.HTML;)"
 
-#: kfmprops.cpp:1816
+#: kfmprops.cpp:1820
 msgid "Mime Type"
 msgstr "MIME-tipo"
 
-#: kfmprops.cpp:1845
+#: kfmprops.cpp:1849
 msgid "Default Application"
 msgstr "Implicita aplika¼o"
 
-#: kfmprops.cpp:1885
+#: kfmprops.cpp:1889
 msgid "<none>"
 msgstr "<neniu>"
 
-#: kfmprops.cpp:2130
+#: kfmprops.cpp:2134
 msgid "Device ( /dev/fd0 )"
 msgstr "Aparato (/dev/fd0)"
 
-#: kfmprops.cpp:2139
+#: kfmprops.cpp:2143
 msgid "Mount Point ( /floppy )"
 msgstr "Muntejo (/floppy)"
 
-#: kfmprops.cpp:2150
+#: kfmprops.cpp:2154
 msgid "Readonly"
 msgstr "Nurlege"
 
-#: kfmprops.cpp:2156
+#: kfmprops.cpp:2160
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Dosierartipo (iso9660,msdos,minix,implicita)"
 
-#: kfmprops.cpp:2167
+#: kfmprops.cpp:2171
 msgid "Mounted Icon"
 msgstr "Munt-piktogramo"
 
-#: kfmprops.cpp:2172
+#: kfmprops.cpp:2176
 msgid "Unmounted Icon"
 msgstr "Malmunt-piktogramo"
 

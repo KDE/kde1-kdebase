@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind 0.3.5\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -282,24 +282,24 @@ msgstr "Prida» nový"
 msgid "Archivers"
 msgstr "Archívne programy"
 
-#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:135 kfwin.cpp:162
+#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:139 kfwin.cpp:166
 #, c-format
 msgid "%d file(s) found"
 msgstr "Na¹iel som %d súborov"
 
-#: kfwin.cpp:246
+#: kfwin.cpp:250
 msgid "It wasn't possible to save results!"
 msgstr "Nebolo mo¾né ulo¾i» výsledky!"
 
-#: kfwin.cpp:254 kfwin.cpp:256 kfwin.cpp:258
+#: kfwin.cpp:258 kfwin.cpp:260 kfwin.cpp:262
 msgid "KFind Results File"
 msgstr "Súbor s výstupmi KFindu"
 
-#: kfwin.cpp:283
+#: kfwin.cpp:287
 msgid "Results were saved to file\n"
 msgstr "Výsledky boli ulo¾ené do súboru\n"
 
-#: kfwin.cpp:298
+#: kfwin.cpp:302
 #, c-format
 msgid ""
 "Do you really want to delete file:\n"
@@ -308,11 +308,11 @@ msgstr ""
 "Naozaj si prajete zru¹i» súbor:\n"
 "%s"
 
-#: kfwin.cpp:300
+#: kfwin.cpp:304
 msgid "Delete File"
 msgstr "Zru¹i» súbor"
 
-#: kfwin.cpp:312
+#: kfwin.cpp:316
 msgid ""
 "You have no permission\n"
 " to delete this file"
@@ -320,7 +320,7 @@ msgstr ""
 "Nemáte prístupové práva\n"
 "na zru¹enie tohoto súboru"
 
-#: kfwin.cpp:318
+#: kfwin.cpp:322
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
@@ -328,7 +328,7 @@ msgstr ""
 "Nie je mo¾né zru¹i»\n"
 " vybraný súbor"
 
-#: kfwin.cpp:336
+#: kfwin.cpp:340
 msgid ""
 "You have no permission\n"
 " to delete this directory"
@@ -336,7 +336,7 @@ msgstr ""
 "Nemáte prístupové práva\n"
 "na zru¹enie tohoto prieèinku!"
 
-#: kfwin.cpp:341
+#: kfwin.cpp:345
 msgid ""
 "Specified directory\n"
 "is not empty!"
@@ -344,7 +344,7 @@ msgstr ""
 "©pecifikovaný prieèinok\n"
 " nie je prázdny!"
 
-#: kfwin.cpp:346
+#: kfwin.cpp:350
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
@@ -352,10 +352,10 @@ msgstr ""
 "Nie je mo¾né zru¹i»\n"
 " vybraný prieèinok"
 
-#: kfwin.cpp:438
+#: kfwin.cpp:442
 msgid "Couldn't recognize archive type!"
 msgstr "Nemô¾em urèi» typ archívu!"
 
-#: kfwin.cpp:497
+#: kfwin.cpp:501
 msgid "Error while creating child process!"
 msgstr "Chyba pri vytváraní procesu!"

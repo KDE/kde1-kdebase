@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1999-03-05 23:30 CET\n"
 "Last-Translator: Francois-Xavier Duranceau "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
@@ -283,24 +283,24 @@ msgstr "Nouveau"
 msgid "Archivers"
 msgstr "Archiveurs"
 
-#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:135 kfwin.cpp:162
+#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:139 kfwin.cpp:166
 #, c-format
 msgid "%d file(s) found"
 msgstr "%d fichier(s) trouvé(s)"
 
-#: kfwin.cpp:246
+#: kfwin.cpp:250
 msgid "It wasn't possible to save results!"
 msgstr "Impossible d'enregistrer les résultats !"
 
-#: kfwin.cpp:254 kfwin.cpp:256 kfwin.cpp:258
+#: kfwin.cpp:258 kfwin.cpp:260 kfwin.cpp:262
 msgid "KFind Results File"
 msgstr "Fichier de résultats KFind"
 
-#: kfwin.cpp:283
+#: kfwin.cpp:287
 msgid "Results were saved to file\n"
 msgstr "Résultats enregistrés dans le fichier\n"
 
-#: kfwin.cpp:298
+#: kfwin.cpp:302
 #, c-format
 msgid ""
 "Do you really want to delete file:\n"
@@ -309,11 +309,11 @@ msgstr ""
 "Voulez-vous réellement supprimer le fichier :\n"
 "%s"
 
-#: kfwin.cpp:300
+#: kfwin.cpp:304
 msgid "Delete File"
 msgstr "Suppression du fichier"
 
-#: kfwin.cpp:312
+#: kfwin.cpp:316
 msgid ""
 "You have no permission\n"
 " to delete this file"
@@ -321,7 +321,7 @@ msgstr ""
 "Vous n'avez pas la permission\n"
 " de supprimer ce fichier"
 
-#: kfwin.cpp:318
+#: kfwin.cpp:322
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
@@ -329,7 +329,7 @@ msgstr ""
 "Impossible de supprimer\n"
 "le fichier sélectionné"
 
-#: kfwin.cpp:336
+#: kfwin.cpp:340
 msgid ""
 "You have no permission\n"
 " to delete this directory"
@@ -337,7 +337,7 @@ msgstr ""
 "Vous n'avez pas la permission\n"
 " de supprimer ce répertoire"
 
-#: kfwin.cpp:341
+#: kfwin.cpp:345
 msgid ""
 "Specified directory\n"
 "is not empty!"
@@ -345,7 +345,7 @@ msgstr ""
 "Le répertoire spécifié\n"
 "n'est pas vide !"
 
-#: kfwin.cpp:346
+#: kfwin.cpp:350
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
@@ -353,10 +353,10 @@ msgstr ""
 "Impossible de supprimer\n"
 "le répertoire sélectionné"
 
-#: kfwin.cpp:438
+#: kfwin.cpp:442
 msgid "Couldn't recognize archive type!"
 msgstr "Type d'archive inconnu !"
 
-#: kfwin.cpp:497
+#: kfwin.cpp:501
 msgid "Error while creating child process!"
 msgstr "Erreur lors de la création du processus fils !"

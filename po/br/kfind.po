@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind-1.1\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1999-02-05 11:59+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -292,24 +292,24 @@ msgstr "Ouzhpennañ"
 msgid "Archivers"
 msgstr "Diellerien"
 
-#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:135 kfwin.cpp:162
+#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:139 kfwin.cpp:166
 #, c-format
 msgid "%d file(s) found"
 msgstr "%d restr kavet"
 
-#: kfwin.cpp:246
+#: kfwin.cpp:250
 msgid "It wasn't possible to save results!"
 msgstr "Tu ebet da enrollañ an disoc'hoù !"
 
-#: kfwin.cpp:254 kfwin.cpp:256 kfwin.cpp:258
+#: kfwin.cpp:258 kfwin.cpp:260 kfwin.cpp:262
 msgid "KFind Results File"
 msgstr "Restr disoc'hoù KFind"
 
-#: kfwin.cpp:283
+#: kfwin.cpp:287
 msgid "Results were saved to file\n"
 msgstr "Disoc'hoù enrollet er restr\n"
 
-#: kfwin.cpp:298
+#: kfwin.cpp:302
 #, c-format
 msgid ""
 "Do you really want to delete file:\n"
@@ -318,11 +318,11 @@ msgstr ""
 "Ha fellout ar ra deoc'h da vat lemel ar restr-mañ:\n"
 "%s"
 
-#: kfwin.cpp:300
+#: kfwin.cpp:304
 msgid "Delete File"
 msgstr "Lemel ar restr"
 
-#: kfwin.cpp:312
+#: kfwin.cpp:316
 msgid ""
 "You have no permission\n"
 " to delete this file"
@@ -330,7 +330,7 @@ msgstr ""
 "N'hoc'h ket aotreet\n"
 "da lemel ar restr-mañ"
 
-#: kfwin.cpp:318
+#: kfwin.cpp:322
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
@@ -338,7 +338,7 @@ msgstr ""
 "N'eus ket tu da lemel\n"
 "ar restr diuzet"
 
-#: kfwin.cpp:336
+#: kfwin.cpp:340
 msgid ""
 "You have no permission\n"
 " to delete this directory"
@@ -346,7 +346,7 @@ msgstr ""
 "N'oc'h ket aotreet\n"
 "da lemel ar renkell-mañ"
 
-#: kfwin.cpp:341
+#: kfwin.cpp:345
 msgid ""
 "Specified directory\n"
 "is not empty!"
@@ -354,7 +354,7 @@ msgstr ""
 "N'eo ket goullo\n"
 "ar renkell diuzet !"
 
-#: kfwin.cpp:346
+#: kfwin.cpp:350
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
@@ -362,10 +362,10 @@ msgstr ""
 "N'eus ket tu da lemel\n"
 "ar renkell diuzet"
 
-#: kfwin.cpp:438
+#: kfwin.cpp:442
 msgid "Couldn't recognize archive type!"
 msgstr "Ne m'eus ket gallet anavezet rizh an diell !"
 
-#: kfwin.cpp:497
+#: kfwin.cpp:501
 msgid "Error while creating child process!"
 msgstr "Fazi en ur grouiñ an argerzh bugel"

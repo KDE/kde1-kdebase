@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
-"POT-Creation-Date: 1998-12-12 15:11+0100\n"
+"POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1999-03-29 19:10+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -57,7 +57,7 @@ msgstr "Ä¬ÈÏÆÁÄ»ºÅ            : %i"
 msgid "number of screens     : %i"
 msgstr "ÆÁÄ»¸öÊý              : %i"
 
-#: info.cpp:179
+#: info.cpp:181
 msgid ""
 "No Information available\n"
 " or\n"

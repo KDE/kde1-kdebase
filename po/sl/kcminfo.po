@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
-"POT-Creation-Date: 1998-12-12 15:11+0100\n"
+"POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1998-09-24 18:00+0100\n"
 "Last-Translator: luka steger <luka_steger@hotmail.com>\n"
 "Language-Team: slovenian\n"
@@ -64,7 +64,7 @@ msgstr ""
 msgid "number of screens     : %i"
 msgstr ""
 
-#: info.cpp:179
+#: info.cpp:181
 #, fuzzy
 msgid ""
 "No Information available\n"
