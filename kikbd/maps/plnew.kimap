@@ -8,13 +8,15 @@ Comment[ru]=Новая клавиатура програмиста
 Comment[pl]=Klawiatura programisty
 Comment[fi]=Ohjelmoijan nДppДimistЖ
 Comment[sv]=Nytt 'programmerings' tangentbord
+Comment[sk]=NovА programАtorskА klАvesnica
 
 Language=Polish
 Language[no]=Polsk
 Language[ru]=Польский
 Language[fi]=Puola
 Language[pl]=Polski
-LAnguage[pl]=Polska
+Language[sv]=Polska
+Language[sk]=Po╣skЩ
 
 Label=nPl
 Locale=pl

@@ -4,10 +4,11 @@
 Authors=Jan ONDREJ (SAL) <ondrejj@intrak.tuke.sk>
 
 Comment=Typewriter Keyboard (QWERTZ)
-Comment[cs]=Klávesnica písacieho stroja (QWERTZ)
+Comment[sk]=Klávesnica písacieho stroja (QWERTZ)
 Comment[ru]=ëÌÁ×ÉÁÔÕÒÁ (QWERTZ)
 
 Language=Slovak
+Language[sk]=Slovenskı
 #Language[no]=Tjekkisk
 #Language[ru]=şÅÛÓËÉÊ
 

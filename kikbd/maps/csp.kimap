@@ -6,6 +6,7 @@ Comment[cs]=Programátorská klávesnice
 Comment[ru]=ëÌÁ×ÉÁÔÕÒÁ ĞÒÏÇÒÁÍÉÓÔÁ
 Comment[fi]=Ohjelmoijan näppäimistö
 Comment[sv]=Programmerings tangentbord
+Comment[sk]=Programátorská klávesnica
 
 Language=Czech
 Language[no]=Tjekkisk
@@ -13,6 +14,7 @@ Language[ru]=şÅÛÓËÉÊ
 Language[fi]=Tsekki
 Language[pl]=Czeski
 Language[sv]=Tjeckiska
+Language[sk]=Èeskı
 
 Label=Csp
 Locale=cs

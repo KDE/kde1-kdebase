@@ -10,6 +10,7 @@ Comment=Has latin characters as alternate symbols.
 Comment[ru]=Содержит латинские символы в качестве алтернативных.
 Comment[fi]=Latinalaiset kirjaimet vaihtoehtoisina symboleina.
 Comment[sv]=Har latinska bockstДver som alternativa symboler.
+Comment[sk]=MА latin znaky ako alternatМvne symboly
 
 Language=Russian
 Language[no]=Russisk
@@ -17,6 +18,7 @@ Language[ru]=Русский
 Language[fi]=VenДjД
 Language[pl]=Rosyjski
 Language[sv]=Ryska
+Language[sk]=RuskЩ
 
 Charset=cp866
 Label=Ra

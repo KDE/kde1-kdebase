@@ -6,6 +6,7 @@ Comment[cs]=Klávesnice psacího stroje (QWERTZ)
 Comment[ru]=ëÌÁ×ÉÁÔÕÒÁ (QWERTZ)
 Comment[fi]=Kirjoituskonenäppäimistö (QWERTZ)
 Comment[sv]=Skrivmaskins tangentbord (QWERTY)
+Comment[sk]=Klávesnica písacieho stroja (QWERTY)
 
 Language=Czech
 Language[no]=Tjekkisk
@@ -13,6 +14,7 @@ Language[ru]=şÅÛÓËÉÊ
 Language[fi]=Tsekki
 Language[pl]=Czeski
 Language[sv]=Tjeckiska
+Language[sk]=Èeskı
 
 Label=Csz
 Locale=cs
