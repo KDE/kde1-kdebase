@@ -311,7 +311,7 @@ int doIt( int argc, char **argv )
     }
     else
     {
-	printf("Synatx Error: Unknown command '%s'\n",argv[1] );
+	printf("Syntax Error: Unknown command '%s'\n",argv[1] );
 	exit(1);
     }
     return 0; // Stephan: default return
