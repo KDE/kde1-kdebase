@@ -1930,6 +1930,7 @@ void scr_extend_selection(int x,int y)
   old_selend_col = selend_col;
   
   /* Figure out where new selection is			*/
+
   selend_col = (x - MARGIN)/MyWinInfo.fwidth;
   selend_row = (y - MARGIN)/MyWinInfo.fheight;
 
@@ -1943,12 +1944,27 @@ void scr_extend_selection(int x,int y)
     break;
   }
     
-  if(selend_col >= MyWinInfo.cwidth)
-    selend_col = MyWinInfo.cwidth -1;
+  if(selend_col >= MyWinInfo.cwidth){
+    /* Matthias: correct last column */ 
+    if (selend_row < selanchor_row){
+      selend_col = 0;
+      selend_row++;
+    }
+    else
+      selend_col = MyWinInfo.cwidth -1;
+  }
+
   if(selend_row >= MyWinInfo.cheight)
     selend_row = MyWinInfo.cheight -1;
-  if(selend_col < 0)
-    selend_col = 0;
+  if(selend_col < 0){
+    /* Matthias: correct first column */ 
+    if (selend_row > selanchor_row){
+      selend_col = MyWinInfo.cwidth -1;
+      selend_row--;
+    }
+    else 
+      selend_col = 0;
+  }
   if(selend_row < 0)
     selend_row = 0;
 

@@ -1,5 +1,6 @@
 since kvt-0.18:
 
+  - mouse selection more xterm-like	
   - alpha patches (Uwe Thiem)
   - patchlevel 1 to clearify upload confusions due to demeter.
 
