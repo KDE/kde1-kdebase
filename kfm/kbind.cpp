@@ -8,9 +8,7 @@
 #include <sys/param.h>
 #include <sys/stat.h>
  
-#ifdef __FreeBSD__
-#include <sys/syslimits.h>
-#endif
+#include <limits.h>
 
 #include <dirent.h>
 #include <errno.h>

@@ -1,9 +1,7 @@
 #include <kurl.h>
 #include <sys/stat.h>
 
-#ifdef __FreeBSD__ 
-#include <sys/syslimits.h>
-#endif
+#include <limits.h>
 
 #include <unistd.h>
 #include <sys/types.h>
