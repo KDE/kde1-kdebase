@@ -418,7 +418,11 @@ void KfmView::slotFilesChanged( const char *_url )
 	u2 += "/";
 
     if ( u1 == u2 )
+    {
+	stackLock=true;
 	manager->openURL( manager->getURL().data(), true );
+	stackLock=false;
+    }
 }
 
 void KfmView::slotDropEnterEvent( KDNDDropZone * )
