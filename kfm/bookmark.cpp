@@ -12,6 +12,7 @@
 #include <ksimpleconfig.h>
 #include <kurl.h>
 #include <kapp.h>
+#include <kwm.h>
 #include <qmsgbox.h>
 
 #include "bookmark.h"
@@ -78,8 +79,12 @@ void KBookmarkManager::emitChanged()
 {
   // Scanning right now ?
   if ( m_bAllowSignalChanged )
-    // ... no => emit signal
-    emit changed();
+    {
+      // ... no => emit signal
+      emit changed();
+      //tell krootwm to refresh the bookmarks popup menu
+      KWM::sendKWMCommand ("krootwm:refreshBM");
+    }
 }
 
 void KBookmarkManager::scan( const char * _path )
@@ -91,7 +96,7 @@ void KBookmarkManager::scan( const char * _path )
   scanIntern( &m_Root, _path );
   m_bAllowSignalChanged = true;
    
-  emit changed();
+  emitChanged();
 }
 
 void KBookmarkManager::scanIntern( KBookmark *_bm, const char * _path )
