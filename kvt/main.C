@@ -1144,7 +1144,7 @@ int main(int argc, char **argv)
   // TODO: make default font and font sizes configurable
   KConfig *cfg = kapp->getConfig();
   QFont fntDef("fixed", 13);
-  kapp->getCharsets()->setQFont(fntDef);
+  //QFont fntDef = kapp->fixedFont;
   QFont fnt = cfg->readFontEntry("defaultFont", &fntDef);
   kvt_fnt2.setPointSize(cfg->readNumEntry("fontSize2", 7));
   kvt_fnt3.setPointSize(cfg->readNumEntry("fontSize3", 10));

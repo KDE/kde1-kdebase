@@ -45,7 +45,11 @@
 #include <curses.h>
 #endif
 #ifdef HAVE_SETUPTERM
-#include <term.h>
+#ifndef setupterm
+// this is a hack to avoid complaining about term.h include. Anybody wants
+// to hack configure, so it detects *where* term.h is and include it here?
+extern int setupterm(const char *,int,int *);
+#endif
 #endif
 
 #ifdef GREEK_KBD	
