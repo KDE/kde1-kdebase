@@ -121,14 +121,13 @@ msgstr "Åtte"
 
 #: main.C:608
 msgid "Unnamed Desktop"
-msgstr ""
+msgstr "Skrivebord uten navn"
 
 #: main.C:931
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Noen pixmaps er ubrukelige: ShapeMode ikke iverksatt\n"
 
 #: main.C:1043
-#, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Noen pixmaps er ubrukelige: ShapeMode ikke iverksatt\n"
 
@@ -142,7 +141,7 @@ msgstr "Kommando"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr ""
+msgstr "Ops!"
 
 #: logout.C:36 taskmgr.C:107
 msgid "Logout"

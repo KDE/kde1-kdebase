@@ -227,7 +227,7 @@ msgstr "&Mellomlager"
 
 #: kfmgui.cpp:502
 msgid "Up"
-msgstr ""
+msgstr "Opp"
 
 # kfmgui.cpp:545
 #: kfmgui.cpp:550
@@ -715,9 +715,8 @@ msgstr ""
 
 # bookmark.cpp:259
 #: bookmark.cpp:259
-#, fuzzy
 msgid "Could not write bookmark"
-msgstr "Kunne ikke skrive til\n"
+msgstr "Kunne ikke lagre bokmerke"
 
 # kfmprops.cpp:237
 #: kfmprops.cpp:241
@@ -1255,11 +1254,12 @@ msgstr ""
 
 # kiojob.cpp:1223 kiojob.cpp:1354
 #: kiojob.cpp:1234 kiojob.cpp:1365
-#, fuzzy, c-format
 msgid ""
 "Unknown host in\n"
 "%s"
-msgstr "Ukjent tilordning"
+msgstr ""
+"Ukjent vert på\n"
+"%s"
 
 # kiojob.cpp:1231 kiojob.cpp:1362
 #: kiojob.cpp:1242 kiojob.cpp:1373
@@ -1537,9 +1537,8 @@ msgstr "Ikke glem å lagre innstillingene!"
 
 # kfmprops.cpp:437
 #: kproxydlg.cpp:16
-#, fuzzy
 msgid "Use proxy"
-msgstr "Bruker"
+msgstr "Bruk proxy"
 
 # kproxydlg.cpp:43
 #: kproxydlg.cpp:42
@@ -1568,9 +1567,8 @@ msgstr "Farger"
 
 # kkfmoptdlg.cpp:30
 #: kkfmoptdlg.cpp:30
-#, fuzzy
 msgid "&Other"
-msgstr "Andre"
+msgstr "&Andre"
 
 # kkfmoptdlg.cpp:50
 #: kkfmoptdlg.cpp:50

@@ -159,12 +159,11 @@ msgid "Unsupported URL"
 msgstr "URL som ikke støttes"
 
 #: syssound.cpp:458
-#, fuzzy
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Beklager, denne type URL er for tiden ikke støttet av KDE system lyder "
+"Beklager, denne type URL er for tiden ikke støttet av KDE systemlyder "
 
 #: syssound.cpp:468
 #, fuzzy, c-format
@@ -174,8 +173,8 @@ msgid ""
 "does not seem to be a WAV--file."
 msgstr ""
 "Beklager, men \n"
+"%s\n"
 "ser ikke ut til å være en WAV--fil!\n"
-"%s"
 
 #: syssound.cpp:471
 msgid "Improper File Extension"

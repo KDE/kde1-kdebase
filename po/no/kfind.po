@@ -23,14 +23,12 @@ msgid "Cannot open or read directory."
 msgstr "Kan ikke åpne eller lese mappe."
 
 #: kfindtop.cpp:115
-#, fuzzy
 msgid "&Start search"
-msgstr "Start søk"
+msgstr "&Start søk"
 
 #: kfindtop.cpp:117
-#, fuzzy
 msgid "S&top search"
-msgstr "Stopp søk"
+msgstr "S&topp søk"
 
 #: kfindtop.cpp:122
 msgid "&Open"
@@ -61,9 +59,8 @@ msgid "&Select All"
 msgstr "&Velg alle"
 
 #: kfindtop.cpp:154
-#, fuzzy
 msgid "Unse&lect All"
-msgstr "&Velg alle"
+msgstr "Fjern alle va&lg"
 
 #: kfindtop.cpp:156
 msgid "&Invert Selection"
@@ -74,7 +71,6 @@ msgid "&Preferences ..."
 msgstr "&Preferanser..."
 
 #: kfindtop.cpp:173
-#, fuzzy, c-format
 msgid ""
 "KFind %s\n"
 "Frontend to find utility\n"
@@ -85,7 +81,7 @@ msgid ""
 msgstr ""
 "KFind %s\n"
 "Front til programmet \"find\"\n"
-"Miroslav Fl_dr <flidr@kky.zcu.cz>\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "\n"
 "Spesiell takk til Stephan Kulow\n"
 "<coolo@kde.org>"

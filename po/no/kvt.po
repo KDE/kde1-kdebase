@@ -169,7 +169,6 @@ msgstr ""
 "når tastaturet er usikret."
 
 #: main.C:1156
-#, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -177,26 +176,25 @@ msgid ""
 "based on Robert Nation's rxvt-2.08\n"
 "\n"
 msgstr ""
-"\n"
-"\n"
-"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
-"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
-"\n"
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
 "Terminal emulering for KDE Desktop Environment\n"
-"basert på Robert Nation's rxvt-2.08"
+"basert på Robert Nation's rxvt-2.08\n"
+"\n"
 
 #: main.C:1160
 msgid "Permitted arguments are:\n"
-msgstr ""
+msgstr "Lovlige argumenter er:\n"
 
 #: main.C:1161
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
+"-e <kommando> <arg> ...   kjør kommando med ars - må være siste argument\n"
 
 #: main.C:1162
 msgid "-display <name>           specify the display (server)\n"
-msgstr ""
+msgstr "-display <navn>          oppgi skjerm(tjener)\n"
 
 #: main.C:1163
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
@@ -204,59 +202,63 @@ msgstr ""
 
 #: main.C:1164
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr ""
+msgstr "-print-pipe <navn>        oppgi rør for vt100-skriver\n"
 
 #: main.C:1165
 msgid "-vt_bg <colour>           background color\n"
-msgstr ""
+msgstr "-vt_bg <farge>            bakgrunnsfarge\n"
 
 #: main.C:1166
 msgid "-vt_fg <colour>           foreground color\n"
-msgstr ""
+msgstr "-vt_fg <farge>            forgrunnsfarge\n"
 
 #: main.C:1167
 msgid "-vt_font <fontname>       normal font\n"
-msgstr ""
+msgstr "-vt_font <skrifttype>     vanlig skrifttype\n"
 
 #: main.C:1168
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
-msgstr ""
+msgstr "-vt_size <størrelse>      tiny, small, normal, large, huge\n"
 
 #: main.C:1169
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr ""
+msgstr "-linux                    sett opp kvt til å etterligne linux-konsolet\n"
 
 #: main.C:1170
 msgid "-no_menubar               hide the menubar\n"
-msgstr ""
+msgstr "-no_menubar               skjul menylinje\n"
 
 #: main.C:1171
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr ""
+msgstr "-no_scrollbar             skjul scrollbar\n"
 
 #: main.C:1172
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
+"-T <tekst>                tekst i tittellinjen til vinduet\n"
+"                          (Foreldret. Bruk -caption isteden)\n"
 
 #: main.C:1174
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr ""
+msgstr "-tn <TERM>                Terminaltype. Standard er xterm.\n"
 
 #: main.C:1175
 msgid "-C                        Capture system console message\n"
-msgstr ""
+msgstr "-C                        Vis systemkonsollmeldinger\n"
 
 #: main.C:1176
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr ""
+msgstr "-n <tekst>                navn på ikon eller ikon-vindu\n"
 
 #: main.C:1177
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
+"-7                        kjør i 7-bitsmodus\n"
+"-8                        kjør i 8-bitsmodus\n"
 
 #: main.C:1179
 msgid ""
@@ -264,6 +266,9 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
+"-ls                       initsialiser kvts skall som et logginnskall\n"
+"-ls-                      initsialiser kvts skall som et ikke-logginnskall"
+"(standard)\n"
 
 #: main.C:1181
 msgid ""

@@ -28,16 +28,15 @@ msgstr "&Tittellinje"
 
 #: main.cpp:68
 msgid "&Desktop"
-msgstr ""
+msgstr "&Skrivebord"
 
 #: main.cpp:74
-#, fuzzy
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
-msgstr "bruk: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+msgstr "bruk: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:105
 msgid "Window manager style"
-msgstr "Vindus manager stil"
+msgstr "Vindusbehandlerstil"
 
 #: titlebar.cpp:117
 msgid "Minimize"
@@ -101,7 +100,7 @@ msgstr "Pixmap"
 
 #: titlebar.cpp:944
 msgid "Title Animation"
-msgstr "Tittel animasjon"
+msgstr "Tittelanimasjon"
 
 #: desktop.cpp:91 titlebar.cpp:947
 msgid "ms"
@@ -172,14 +171,12 @@ msgid "Opaque"
 msgstr "Opaque"
 
 #: windows.cpp:79
-#, fuzzy
 msgid "Window resize"
-msgstr "&Vinduer"
+msgstr "Endre vindustørrelse"
 
 #: windows.cpp:80
-#, fuzzy
 msgid "With animation"
-msgstr "Tittel animasjon"
+msgstr "Med animasjon"
 
 #: windows.cpp:85
 msgid "Placement policy"
@@ -187,7 +184,7 @@ msgstr "Plasserings politikk"
 
 #: windows.cpp:87
 msgid "Smart"
-msgstr ""
+msgstr "Smart"
 
 #: windows.cpp:89
 msgid "Cascade"
@@ -195,20 +192,19 @@ msgstr ""
 
 #: windows.cpp:91
 msgid "Interactive"
-msgstr ""
+msgstr "Interaktiv"
 
 #: windows.cpp:93
 msgid "Random"
-msgstr ""
+msgstr "Tilfeldig"
 
 #: windows.cpp:95
-#, fuzzy
 msgid "Manual"
-msgstr "Meny"
+msgstr "Manuell"
 
 #: windows.cpp:102
 msgid "Allowed Overlap:"
-msgstr ""
+msgstr "Godta overlappinger:"
 
 #: windows.cpp:109
 msgid "Maximize Style"
@@ -235,12 +231,10 @@ msgid "Focus follows mouse"
 msgstr "Fokus følger mus"
 
 #: windows.cpp:120
-#, fuzzy
 msgid "Classic focus follows mouse"
 msgstr "Fokus følger mus"
 
 #: windows.cpp:122
-#, fuzzy
 msgid "Classic sloppy focus"
 msgstr "Klikk for fokus"
 
@@ -249,7 +243,7 @@ msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
 msgstr ""
-"Auto reis forsinkelse\n"
+"Autoreisforsinkelse\n"
 "(<100 kopler fra)"
 
 #: windows.cpp:134
@@ -258,23 +252,23 @@ msgstr "millisekunder"
 
 #: desktop.cpp:77
 msgid "Active desktop borders"
-msgstr ""
+msgstr "Aktive skrivebordskanter"
 
 #: desktop.cpp:79
 msgid "Enable active desktop borders"
-msgstr ""
+msgstr "Skru på aktive skrivebordskanter"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr ""
+msgstr "Flytt peker mot senter etter bytte"
 
 #: desktop.cpp:87
 msgid "Dekstop switch delay:"
-msgstr ""
+msgstr "Forsinkelese for skrivebordsbytte:"
 
 #: desktop.cpp:100
 msgid "Magic Borders"
-msgstr ""
+msgstr "Magiske kanter"
 
 #: desktop.cpp:102
 msgid ""
@@ -287,9 +281,3 @@ msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-
-#~ msgid "Shaded"
-#~ msgstr "Skygge"
-
-#~ msgid "Resize Animation"
-#~ msgstr "Ny størrelse for animasjon"

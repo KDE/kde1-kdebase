@@ -28,9 +28,8 @@ msgid "&Rename ..."
 msgstr "Gi nytt navn..."
 
 #: backgnd.cpp:192 colorscm.cpp:93
-#, fuzzy
 msgid "Colors"
-msgstr "&Farge"
+msgstr "Farger"
 
 #: backgnd.cpp:219
 #, fuzzy

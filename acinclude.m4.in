@@ -1840,7 +1840,7 @@ else
   AC_MSG_RESULT([$kde_cv_mico_version (minimum version $1, ok)])
 fi
 
-LIBMICO="-lmico$kde_cv_mico_version -ldl"
+LIBMICO="-lmico$kde_cv_mico_version $LIBDL"
 AC_SUBST(LIBMICO)
 IDL=$kde_micodir/bin/idl
 AC_SUBST(IDL)

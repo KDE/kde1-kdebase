@@ -9,6 +9,7 @@ Name[sk]=Auto¹tart
 Name[fi]=Käynnistä
 Name[fr]=Démarrage
 Name[cs]=Autostart
+Comment[no]=Programmer som vil bli startet ved oppstart
 Comment[pl]=Programy uruchamiane przy starcie KDE
 Comment[fi]=Aloitettaessa käynnistettävät ohjelmat
 Comment[cs]=Programy spou¹tìné pøi startu KDE
