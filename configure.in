@@ -253,6 +253,8 @@ AC_OUTPUT(Makefile \
 	kdm/pics/Makefile \
 	kdm/xdmconfig/Makefile \
 	kmedia/Makefile \
+	kmenuedit/Makefile \
+	kmenuedit/icons/Makefile \
 	doc/Makefile \
 	doc/kfm/Makefile \
 	doc/kfind/Makefile \
@@ -262,6 +264,7 @@ AC_OUTPUT(Makefile \
 	doc/kdisplay/Makefile \
 	doc/kwm/Makefile \
 	doc/kvt/Makefile \
+	doc/kmenuedit/Makefile \
 	applnk/Applications/Makefile \
 	applnk/Games/Makefile \
 	applnk/Graphics/Makefile \

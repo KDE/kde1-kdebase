@@ -1,7 +1,9 @@
 ## kdebase/Makefile.am
 ## (C) 1997 Stephan Kulow
 
-SUBDIRS = kfm kdehelp kdisplay kfontmanager kfind kpanel kvt kwm klogout kwmclient kdm kscreensaver pics po mimetypes doc applnk
+SUBDIRS = kfm kdehelp kdisplay kfontmanager kfind kpanel kvt \
+	kwm klogout kwmclient kdm kscreensaver pics po \
+	mimetypes doc applnk
 
 install-data-local:
 	@echo ""
