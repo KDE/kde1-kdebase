@@ -49,4 +49,5 @@ SwallowTitle[pt_BR]=Cores do ambiente de trabalho
 SwallowTitle[hr]=Boje radne povr¹ine
 SwallowTitle[sk]=Farby pracovnej plochy
 SwallowTitle[zh_CN.GB2312]=×ÀÃæÑÕÉ«
+SwallowTitle[sv]=Skrivbordsfärger
 Init=kcmdisplay -init

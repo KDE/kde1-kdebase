@@ -1,13 +1,18 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Magnus Reftel <d96reftl@dtek.chalmers.se>, 1997,1998.
+# Anders Widell <d95-awi@nada.kth.se>, 1998.
+#
 msgid ""
 msgstr ""
+"Project-Id-Version: kfind\n"
 "POT-Creation-Date: 1998-06-16 15:37+0200\n"
-"Content-Type: text/plain; charset=\n"
-"Date: 1997-10-01 16:40:07+0200\n"
-"From: root <flidr@CyberGate.zcu.cz>\n"
-"Xgettext-Options: -s -C -ktranslate\n"
-"Files: kfarch.cpp kfdird.cpp kfind.cpp kfindtop.cpp kfoptions.cpp kfsave.cpp "
-"kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp "
-"mkfindtop.cpp mkfoptions.cpp mkftabdlg.cpp mkfwin.cpp\n"
+"PO-Revision-Date: 1998-07-09 15:30+02:00\n"
+"Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
+"Language-Team: Swedish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
 
 #: kfdird.cpp:46
 msgid "Directories:"
@@ -19,18 +24,16 @@ msgstr "Kan inte öppna eller läsa katalog"
 
 # *********** Tooltips ************
 #: kfindtop.cpp:118
-#, fuzzy
 msgid "&Start search"
-msgstr "Starta sökning"
+msgstr "&Starta sökning"
 
 #: kfindtop.cpp:120
-#, fuzzy
 msgid "S&top search"
-msgstr "Avbryt sökning"
+msgstr "Av&bryt sökning"
 
 #: kfindtop.cpp:125
 msgid "&Open"
-msgstr "&Öppna"
+msgstr "Ö&ppna"
 
 #: kfindtop.cpp:127
 msgid "&Add to archive"
@@ -42,28 +45,27 @@ msgstr "&Egenskaper"
 
 #: kfindtop.cpp:135
 msgid "Open Containing &Folder"
-msgstr "Öpnna inehållande &folder"
+msgstr "Öppna filens &katalog"
 
 #: kfindtop.cpp:138
 msgid "&Save Search"
-msgstr "&Spara sökning"
+msgstr "Spa&ra sökning"
 
 #: kfindtop.cpp:155
 msgid "&Select All"
 msgstr "&Markera alla"
 
 #: kfindtop.cpp:157
-#, fuzzy
 msgid "Unse&lect All"
-msgstr "&Markera alla"
+msgstr "&Avmarkera alla"
 
 #: kfindtop.cpp:159
 msgid "&Invert Selection"
-msgstr "&Invertera markeringar"
+msgstr "&Invertera markering"
 
 #: kfindtop.cpp:171
 msgid "&Preferences ..."
-msgstr "&Egenskaper ..."
+msgstr "&Inställningar ..."
 
 #: kfindtop.cpp:176
 #, c-format
@@ -76,10 +78,10 @@ msgid ""
 "<coolo@kde.org>"
 msgstr ""
 "KFind %s\n"
-"Frontend till find-verktygetMiroslav Flídr <flidr@kky.zcu.cz>Miroslav Flídr "
-"<flidr@kky.zcu.cz>\n"
+"Grafiskt gränssnitt till find-kommandot\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "\n"
-"Särskillt tack till Stephan Kulow\n"
+"Särskilt tack till Stephan Kulow\n"
 "<coolo@kde.org>"
 
 # *********** Tooltips ************
@@ -97,7 +99,7 @@ msgstr "Avbryt sökning"
 
 #: kfindtop.cpp:219
 msgid "Add to archive"
-msgstr "Lägg till till arkiv"
+msgstr "Lägg till i arkiv"
 
 #: kfindtop.cpp:234
 msgid "Open Containing Folder"
@@ -109,11 +111,11 @@ msgstr "Spara sökresultat"
 
 #: kftabdlg.cpp:71
 msgid "&Named:"
-msgstr "Namn:"
+msgstr "&Namn:"
 
 #: kftabdlg.cpp:74
 msgid "&Look in:"
-msgstr "Sök i:"
+msgstr "&Sök i:"
 
 #: kftabdlg.cpp:77
 msgid "&Browse ..."
@@ -121,12 +123,12 @@ msgstr "&Bläddra..."
 
 #: kftabdlg.cpp:83
 msgid "Include &subfolders"
-msgstr "Inkludera underkataloger"
+msgstr "Inkludera &underkataloger"
 
 # ######## cat ##########
 #: kftabdlg.cpp:114
 msgid " Name& Location "
-msgstr "Namn &plats"
+msgstr " Namn &plats "
 
 #: kftabdlg.cpp:126
 msgid "and"
@@ -134,19 +136,19 @@ msgstr "och"
 
 #: kftabdlg.cpp:127
 msgid "month(s)"
-msgstr "månaden/månaderna"
+msgstr "månaderna"
 
 #: kftabdlg.cpp:128
 msgid "day(s)"
-msgstr "dagen/dagarna"
+msgstr "dagarna"
 
 #: kftabdlg.cpp:143
 msgid "&All files"
-msgstr "Alla filer"
+msgstr "Alla &filer"
 
 #: kftabdlg.cpp:144
 msgid "Find all files created or &modified:"
-msgstr "Hitta alla filer skapade eller &ändrade"
+msgstr "&Hitta alla filer skapade eller ändrade"
 
 #: kftabdlg.cpp:145
 msgid "&between"
@@ -154,11 +156,11 @@ msgstr "&mellan"
 
 #: kftabdlg.cpp:146
 msgid "during the previou&s "
-msgstr "under de(n) &senaste"
+msgstr "&under de senaste"
 
 #: kftabdlg.cpp:147
 msgid "&during the previous "
-msgstr "under &de(n) senaste"
+msgstr "under &de senaste"
 
 #: kftabdlg.cpp:195
 msgid " Date Modified "
@@ -170,35 +172,35 @@ msgstr "Av &typ:"
 
 #: kftabdlg.cpp:204
 msgid "&Containing Text:"
-msgstr "Inehållande text:"
+msgstr "Innehållande te&xt:"
 
 #: kftabdlg.cpp:209
 msgid "&Size is:"
-msgstr "Storlek är:"
+msgstr "&Vars storlek är:"
 
 #: kftabdlg.cpp:232
 msgid "All Files and Folders"
-msgstr "Alla filer och foldrar"
+msgstr "Alla filer och kataloger"
 
 #: kftabdlg.cpp:234
 msgid "Folders"
-msgstr ""
+msgstr "Kataloger"
 
 #: kftabdlg.cpp:235
 msgid "Symbolic links"
-msgstr ""
+msgstr "Symboliska länkar"
 
 #: kftabdlg.cpp:236
 msgid "Special files (sockets, device files...)"
-msgstr ""
+msgstr "Speciella filer (socketar, enheter...)"
 
 #: kftabdlg.cpp:237
 msgid "Executable files"
-msgstr ""
+msgstr "Körbara filer"
 
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
-msgstr ""
+msgstr "SUID körbara filer"
 
 #: kftabdlg.cpp:247
 msgid "At Least"
@@ -214,28 +216,28 @@ msgstr " Avancerat "
 
 #: kftabdlg.cpp:492
 msgid "The date is not valid!!"
-msgstr "Datumet är ogiltligt!!"
+msgstr "Datumet är ogiltigt!!"
 
 #: kftabdlg.cpp:504
 msgid "The month(s) value isn't valid!!"
-msgstr "Månadens/månadernas värden är ogiltliga!!"
+msgstr "Månadernas värden är ogiltiga!!"
 
 #: kftabdlg.cpp:515
 msgid "The day(s) value isn't valid!!"
-msgstr "Dagens/dagarnas värden är olitliga!!"
+msgstr "Dagarnas värden är ogiltiga!!"
 
 #: kftabdlg.cpp:532
 msgid "The value in size isn't valid number!!"
-msgstr "Värdet i storlek är inte ett giltligt tal!!"
+msgstr "Storleken är inte något giltigt tal!!"
 
 # ********* Options *************
 #: kfoptions.cpp:52
 msgid "Preferences"
-msgstr "Egenskaper"
+msgstr "Inställningar"
 
 #: kfoptions.cpp:74
 msgid "File format:"
-msgstr "Filformat"
+msgstr "Filformat:"
 
 #: kfoptions.cpp:76
 msgid "Save results to file:"
@@ -259,7 +261,7 @@ msgstr "Spara"
 
 #: kfoptions.cpp:130
 msgid "Create Archive:"
-msgstr "Skapa arkiv"
+msgstr "Skapa arkiv:"
 
 #: kfoptions.cpp:132
 msgid "Add to Archive:"
@@ -280,7 +282,7 @@ msgstr "Arkivprogram"
 #: kfwin.cpp:111 kfwin.cpp:118 kfwin.cpp:134 kfwin.cpp:161
 #, c-format
 msgid "%d file(s) found"
-msgstr "%d fil(er) funna"
+msgstr "%d filer funna"
 
 #: kfwin.cpp:245
 msgid "It wasn't possible to save results!"
@@ -349,23 +351,8 @@ msgstr ""
 
 #: kfwin.cpp:437
 msgid "Couldn't recognize archive type!"
-msgstr "Kunde inte känna igen någon arkivtyp!"
+msgstr "Kunde inte känna igen arkivtypen!"
 
 #: kfwin.cpp:496
 msgid "Error while creating child process!"
-msgstr "Ett fel uppstod vid skapandet av barn-process!"
-
-#~ msgid "&Cut"
-#~ msgstr "Klipp &ur"
-
-#~ msgid "Properties"
-#~ msgstr "Egenskaper"
-
-#~ msgid "Kfind &help"
-#~ msgstr "&Hjälp om KFind"
-
-#~ msgid "About &Qt"
-#~ msgstr "Om &QT"
-
-#~ msgid "(none)"
-#~ msgstr "(ingen)"
+msgstr "Ett fel uppstod vid skapandet av barnprocessen!"

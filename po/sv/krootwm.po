@@ -1,22 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Magnus Reftel <d96reftl@dtek.chalmers.se>, 1997,1998.
+# Anders Widell <d95-awi@nada.kth.se>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: krootwm\n"
 "POT-Creation-Date: 1998-06-16 13:54+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 1998-07-09 11:05+02:00\n"
+"Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
+"Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
 
 #: krootwm.C:120 krootwm.C:587
 msgid "Folder"
-msgstr "Folder"
+msgstr "Katalog"
 
 #: krootwm.C:150
 #, c-format
@@ -25,7 +25,7 @@ msgstr "FEL: Mallen '%s' finns inte"
 
 #: krootwm.C:183
 msgid "Help on desktop"
-msgstr "Hjäp om skrivbordet"
+msgstr "Hjäp om KDE"
 
 #: krootwm.C:184
 msgid "Execute command"
@@ -33,7 +33,7 @@ msgstr "Kör kommando"
 
 #: krootwm.C:185
 msgid "Display properties"
-msgstr "Omgivningsegenskaper"
+msgstr "Skärminställningar"
 
 #: krootwm.C:186
 msgid "Refresh desktop"
@@ -41,15 +41,15 @@ msgstr "Uppdatera skrivbordet"
 
 #: krootwm.C:188
 msgid "Unclutter windows"
-msgstr ""
+msgstr "Ordna fönstren"
 
 #: krootwm.C:189
 msgid "Cascade windows"
-msgstr ""
+msgstr "Rada upp fönstren"
 
 #: krootwm.C:190
 msgid "Arrange icons"
-msgstr "Ordna ikoner"
+msgstr "Ordna ikonerna"
 
 #: krootwm.C:192
 msgid "Lock screen"
@@ -57,11 +57,11 @@ msgstr "Lås skärmen"
 
 #: krootwm.C:193
 msgid "Logout"
-msgstr "Logga ur"
+msgstr "Logga ut"
 
 #: krootwm.C:607
 msgid "Could not create folder"
-msgstr "Kunde inte skapa folder"
+msgstr "Kunde inte skapa katalog"
 
 #: krootwm.C:666
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"

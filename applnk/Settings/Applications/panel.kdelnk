@@ -28,6 +28,7 @@ Comment[fr]=Ici vous pouvez modifier la faÁon dont le panneau est affichÈ
 Comment[sk]=Nastavenie vzhµadu a spr·vania sa panelu KDE
 Comment[pl]=Konfiguracja panelu
 Comment[zh_CN.GB2312]= π”√¥À≈‰÷√¿¥øÿ÷∆√Ê∞ÂµƒÕ‚π€
+Comment[sv]=H‰r kan du st‰lla in hur panelen ska se ut
 SwallowTitle=Panel Options
 SwallowTitle[de]=Panel-Optionen
 SwallowTitle[pt]=OpÁıes do Painel
@@ -36,6 +37,7 @@ SwallowTitle[es]=Opciones del p·nel
 SwallowTitle[fr]=Options du panneau
 SwallowTitle[pl]=Opcje panelu
 SwallowTitle[zh_CN.GB2312]=√Ê∞Â…Ë÷√
+SwallowTitle[sv]=Panelinst‰llningar
 Icon=panel_settings.xpm
 Exec=kcmkpanel
 

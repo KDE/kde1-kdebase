@@ -1,18 +1,18 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Magnus Reftel <d96reftl@dtek.chalmers.se>, 1997,1998.
+# Anders Widell <d95-awi@nada.kth.se>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-06-16 13:54+0200\n"
-"PO-Revision-Date: 1998-01-20 15:25+0100\n"
-"Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
-"Language-Team: Swedish <LL@li.org>\n"
+"PO-Revision-Date: 1998-07-08 17:03+02:00\n"
+"Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
+"Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
 
 #: main.cpp:62
 msgid "&Panel"
@@ -23,88 +23,80 @@ msgid "&Desktops"
 msgstr "&Skrivbord"
 
 #: main.cpp:97
-#, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
-msgstr "användning: kcmkpanel [-init | {panel,desktops}]\n"
+msgstr "användning: kcmkpanel [-init | {panel,options,desktops}]\n"
 
 #: main.cpp:128
 msgid "KPanel Configuration"
-msgstr "KPanel-konfigurering"
+msgstr "Panelens inställningar"
 
 #: panel.cpp:59
 msgid "Location"
-msgstr "Plats"
+msgstr "Panelens plats"
 
 #: panel.cpp:60
 msgid "&Top"
-msgstr ""
+msgstr "Öv&erst"
 
 #: panel.cpp:61
-#, fuzzy
 msgid "&Left"
-msgstr "Överst till vänster"
+msgstr "&Vänster"
 
 #: panel.cpp:62
 msgid "&Bottom"
-msgstr ""
+msgstr "&Nederst"
 
 #: panel.cpp:74
 msgid "Taskbar"
-msgstr "Aktivitetsfält"
+msgstr "Aktivitetsfältet"
 
 #: panel.cpp:75
-#, fuzzy
 msgid "&Hidden"
-msgstr "Gömd"
+msgstr "&Gömt"
 
 #: panel.cpp:77
 msgid "T&op"
-msgstr ""
+msgstr "Öve&rst"
 
 #: panel.cpp:79
 msgid "Botto&m"
-msgstr ""
+msgstr "Ne&derst"
 
 #: panel.cpp:81
-#, fuzzy
 msgid "Top/Le&ft"
-msgstr "Överst till vänster"
+msgstr "Överst &till vänster"
 
 #: panel.cpp:96
 msgid "T&iny"
-msgstr ""
+msgstr "&Liten"
 
 #: panel.cpp:98
-#, fuzzy
 msgid "&Normal"
-msgstr "Normal stil"
+msgstr "Nor&mal"
 
 #: panel.cpp:100
 msgid "L&arge"
-msgstr ""
+msgstr "St&or"
 
 #: desktops.cpp:73
-#, fuzzy
 msgid "&Visible"
-msgstr "Synliga"
+msgstr "&Antal skrivbord"
 
 #: desktops.cpp:82
-#, fuzzy
 msgid "&Width"
-msgstr "Bredd"
+msgstr "&Knapparnas bredd på panelen"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
-msgstr "Verktygstips på menyer"
+msgstr "Beskrivningsrutor (tips) till panelens menyer"
 
 #: options.cpp:39
-#, fuzzy
 msgid "Show &Menu Tooltips"
-msgstr "Verktygstips på menyer"
+msgstr "&Visa menybeskrivningar"
 
 #: options.cpp:44
 msgid "De&lay:"
-msgstr ""
+msgstr "&Fördröjning:"
 
 #: options.cpp:56
 msgid "ms"
@@ -112,26 +104,23 @@ msgstr ""
 
 #: options.cpp:68
 msgid "Others"
-msgstr ""
+msgstr "Övrigt"
 
 #: options.cpp:69
-#, fuzzy
 msgid "Personal &First"
-msgstr "Personlig först"
+msgstr "&Lägg den personliga menyn först"
 
 #: options.cpp:71
-#, fuzzy
 msgid "Auto &Hide Panel"
-msgstr "Göm panelen automatiskt"
+msgstr "&Göm panelen automatiskt"
 
 #: options.cpp:73
-#, fuzzy
 msgid "Auto Hide &Taskbar"
-msgstr "Göm aktivitetsraden automatiskt"
+msgstr "Göm &aktivitetsfältet automatiskt"
 
 #: options.cpp:81
 msgid "Clock"
-msgstr ""
+msgstr "Klocka"
 
 #: options.cpp:83
 msgid "&24h"
@@ -140,9 +129,3 @@ msgstr ""
 #: options.cpp:85
 msgid "&12h AM/PM"
 msgstr ""
-
-#~ msgid "Tiny Style"
-#~ msgstr "Minimal profil"
-
-#~ msgid "Large Style"
-#~ msgstr "Stor stil"

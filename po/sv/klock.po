@@ -1,18 +1,18 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Magnus Reftel <d96reftl@dtek.chalmers.se>, 1997,1998.
+# Anders Widell <d95-awi@nada.kth.se>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: klock\n"
 "POT-Creation-Date: 1998-06-17 09:43+0200\n"
-"PO-Revision-Date: 1998-01-20 16:00+0100\n"
-"Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
-"Language-Team: Swedish <LL@li.org>\n"
+"PO-Revision-Date: 1998-07-09 15:37+02:00\n"
+"Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
+"Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
 
 #: banner.cpp:62
 msgid "Banner"
@@ -20,7 +20,7 @@ msgstr "Baner"
 
 #: banner.cpp:84
 msgid "Setup kbanner"
-msgstr "Ställ in kbaner"
+msgstr "Ställ in Baner"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -55,7 +55,7 @@ msgstr ""
 
 #: banner.cpp:461
 msgid "KDE is great"
-msgstr "KDE är fantastiskt"
+msgstr "mitt KDE är fantastiskt"
 
 #: bat.cpp:462
 msgid "Bat"
@@ -63,7 +63,7 @@ msgstr "Fladdermus"
 
 #: bat.cpp:537
 msgid "Setup KBat"
-msgstr "Ställ in KFladdermus"
+msgstr "Ställ in Fladdermus"
 
 #: bat.cpp:564
 msgid "Number of bats:"
@@ -93,7 +93,7 @@ msgstr "Tom skärm"
 
 #: blankscrn.cpp:67
 msgid "Setup kblankscrn"
-msgstr "Ställ in kblankskärm"
+msgstr "Ställ in Tom skärm"
 
 #: blob.cpp:57
 msgid "Random Linear"
@@ -113,15 +113,15 @@ msgstr "Polära koordinater"
 
 #: blob.cpp:61
 msgid "Random"
-msgstr "Slumpvis"
+msgstr "Slumpmässig"
 
 #: blob.cpp:77
 msgid "Sorry. This screensaver needs a color display"
-msgstr "Tyvärr. Den här skärmsläckaren kräven en färgdisplay"
+msgstr "Tyvärr. Den här skärmsläckaren kräver färgskärmläge"
 
 #: blob.cpp:458
 msgid "Setup Blob Saver"
-msgstr "Ställ in Blobsläckare"
+msgstr "Ställ in Droppe"
 
 #: blob.cpp:468
 msgid "Frame Show sec."
@@ -133,7 +133,7 @@ msgstr "Algoritm"
 
 #: blob.cpp:570
 msgid "About Blob"
-msgstr "Om Blob"
+msgstr "Om Droppe"
 
 #: blob.cpp:571
 msgid ""
@@ -142,46 +142,42 @@ msgid ""
 "written by Tiaan Wessels 1997\n"
 "tiaan@netsys.co.za"
 msgstr ""
-"Blobsläckare version 0.1\n"
+"Droppe version 0.1\n"
 "\n"
 "skriven av Tiaan Wessels 1997\n"
 "tiaan@netsys.co.za"
 
 #: blob.cpp:606
 msgid "Blobs"
-msgstr "Blob"
+msgstr "Droppe"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
-msgstr ""
+msgstr "Bouboule"
 
 #: bouboule.cpp:1005
-#, fuzzy
 msgid "Setup KBouboule"
-msgstr "Ställ in KLåga"
+msgstr "Ställ in Bouboule"
 
 #: bouboule.cpp:1032
-#, fuzzy
 msgid "Number of points:"
-msgstr "Antal fladdermöss:"
+msgstr "Antal punkter:"
 
 #: bouboule.cpp:1046
-#, fuzzy
 msgid "Point size:"
-msgstr "Antal prickar:"
+msgstr "Punktstorlek:"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr ""
+msgstr "Färgbytesfrekvens:"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
-msgstr ""
+msgstr "3D-läge"
 
 #: bouboule.cpp:1223
-#, fuzzy
 msgid "About Bouboule"
-msgstr "Om Blob"
+msgstr "Om Bouboule"
 
 #: bouboule.cpp:1224
 msgid ""
@@ -191,6 +187,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
+"Bouboule v0.1 -- en klump av prickar som snurrar och ändrar storlek\n"
+"\n"
+"Copyright (c) 1996 av Jeremie PETIT\n"
+"\n"
+"Portad till kscreensave av Cedric Tefft"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -198,11 +199,11 @@ msgstr "Låga"
 
 #: flame.cpp:397
 msgid "Setup KFlame"
-msgstr "Ställ in KLåga"
+msgstr "Ställ in Låga"
 
 #: flame.cpp:423
 msgid "Max Levels:"
-msgstr "Maxdjup:"
+msgstr "Max antal nivåer:"
 
 #: flame.cpp:438
 msgid "Num Points:"
@@ -232,7 +233,7 @@ msgstr "Skog"
 
 #: forest.cpp:278
 msgid "Setup KForest"
-msgstr "Ställ in KSkog"
+msgstr "Ställ in Skog"
 
 #: forest.cpp:304
 msgid "Num of Trees:"
@@ -258,11 +259,11 @@ msgstr ""
 
 #: hop.cpp:226
 msgid "Hop"
-msgstr "Hopp"
+msgstr "Hop"
 
 #: hop.cpp:311
 msgid "Setup KHop"
-msgstr "Ställ in KHopp"
+msgstr "Ställ in Hop"
 
 #: hop.cpp:337
 msgid "Samecolor Pixels:"
@@ -274,7 +275,7 @@ msgstr "Cykler:"
 
 #: hop.cpp:464
 msgid "About Hop"
-msgstr "Om Hopp"
+msgstr "Om Hop"
 
 #: hop.cpp:465
 msgid ""
@@ -284,7 +285,7 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
-"Hopp version 3.3\n"
+"Hop version 3.3\n"
 "\n"
 "Copyright (c) 1991 av Patrick J. Naughton\n"
 "\n"
@@ -296,7 +297,7 @@ msgstr "Laser"
 
 #: laser.cpp:393
 msgid "Setup KLaser"
-msgstr "Ställ in KLaser"
+msgstr "Ställ in Laser"
 
 #: laser.cpp:482
 msgid "About Laser"
@@ -322,7 +323,7 @@ msgstr "Linjer"
 
 #: lines.cpp:134
 msgid "Setup klines"
-msgstr "Ställ in KLinjer"
+msgstr "Ställ in Linjer"
 
 #: lines.cpp:142 polygon.cpp:93
 msgid "Length:"
@@ -342,7 +343,7 @@ msgstr "Slut:"
 
 #: lines.cpp:294
 msgid "About Lines"
-msgstr "Om KLinjer"
+msgstr "Om Linjer"
 
 #: lines.cpp:295
 msgid ""
@@ -362,11 +363,11 @@ msgstr "Lissie"
 
 #: lissie.cpp:327
 msgid "Setup KLissie"
-msgstr "Ställ in KLissie"
+msgstr "Ställ in Lissie"
 
 #: lissie.cpp:353
 msgid "Num of Lissies:"
-msgstr "Antal Lissien"
+msgstr "Antal Lissier"
 
 #: lissie.cpp:480
 msgid "About Lissie"
@@ -389,7 +390,7 @@ msgstr ""
 #: main.cpp:286
 #, c-format
 msgid "Option %s is not support on this plattform!"
-msgstr ""
+msgstr "Flaggan %s stöds inte på den här plattformen!"
 
 #: main.cpp:313
 msgid ""
@@ -399,7 +400,7 @@ msgid ""
 "Tell him, that you need suid for the screensavers!"
 msgstr ""
 "Ditt system använder skuggade lösenord!\n"
-"Vänligen, kontakta din systemadministratör.\n"
+"Var god kontakta din systemadministratör.\n"
 "\n"
 "Säg åt honom att du behöver suid för skärmsläckarna!"
 
@@ -435,7 +436,7 @@ msgid ""
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
-"  -corners xxxx     Om markoören placeras i hörnet görs:\n"
+"  -corners xxxx     Om markören placeras i hörnet görs:\n"
 "                     x = i inget (ignorera)\n"
 "                     x = s släck skärmen\n"
 "                     x = l lås skärmen\n"
@@ -446,15 +447,15 @@ msgstr ""
 "  -desc             Skriv skärmsläckarens beskrivning till stdout\n"
 "  -install          Installera skärmsläckaren\n"
 "  -lock             Kräv lösenord för att stoppa skärmsläckaren\n"
-"  -nice num         Kör med speciellt nice-värde\n"
+"  -nice num         Kör med angivet nice-värde\n"
 "\n"
-"  -preview wid      Kör i specifierat X-fönster\n"
-"  -inroot           Kör i rotfönstret\n"
+"  -preview wid      Kör i angivet X-fönster\n"
+"  -inroot           Kör på skrivbordet\n"
 "  -test             Starta skärmsläckaren med en gång\n"
 
 #: morph3d.cpp:839 space.cpp:419
 msgid "GL can not render with root visual\n"
-msgstr "GL kan inte rendrera med root visual\n"
+msgstr "GL kan inte rendera med root visual\n"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
@@ -488,15 +489,15 @@ msgstr ""
 
 #: polygon.cpp:64
 msgid "Polygons"
-msgstr "Plygoner"
+msgstr "Polygoner"
 
 #: polygon.cpp:85
 msgid "Setup kpolygon"
-msgstr "Ställ in KPolygon"
+msgstr "Ställ in Polygoner"
 
 #: polygon.cpp:107
 msgid "Vertices:"
-msgstr "Vertexer:"
+msgstr "Antal hörn:"
 
 #: polygon.cpp:238
 msgid "About Polygon"
@@ -520,7 +521,7 @@ msgstr "Pyro"
 
 #: pyro.cpp:517
 msgid "Setup KPyro"
-msgstr "Ställ in KPyro"
+msgstr "Ställ in Pyro"
 
 #: pyro.cpp:529 rock.cpp:575
 msgid "Number:"
@@ -528,7 +529,7 @@ msgstr "Antal:"
 
 #: pyro.cpp:543
 msgid "Cloud"
-msgstr "Måln"
+msgstr "Moln"
 
 #: pyro.cpp:629
 msgid "About Pyro"
@@ -554,7 +555,7 @@ msgstr "Bumling"
 
 #: rock.cpp:549
 msgid "Setup krock"
-msgstr "Ställ in KBumling"
+msgstr "Ställ in Bumling"
 
 #: rock.cpp:595
 msgid "Rotate"
@@ -588,84 +589,79 @@ msgstr "Misslyckades"
 
 #: science.cpp:65
 msgid "Whirl"
-msgstr ""
+msgstr "Virvel"
 
 #: science.cpp:68
-#, fuzzy
 msgid "Sphere"
-msgstr "Hastighet:"
+msgstr "Klot"
 
 #: science.cpp:71
 msgid "Exponential"
-msgstr ""
+msgstr "Exponentiell"
 
 #: science.cpp:74
 msgid "Contraction"
-msgstr ""
+msgstr "Sammandragning"
 
 #: science.cpp:77
 msgid "Wave"
-msgstr ""
+msgstr "Våg"
 
 #: science.cpp:80
 msgid "Curvature"
-msgstr ""
+msgstr "Krökning"
 
 #: science.cpp:112
-#, fuzzy
 msgid "Science"
-msgstr "Ställ in KLinjer"
+msgstr "Vetenskap"
 
 #: science.cpp:447
 msgid "rendering lens..."
-msgstr ""
+msgstr "ritar lins..."
 
 #: science.cpp:769
 msgid "grabbing screen..."
-msgstr ""
+msgstr "kopierar skärmen..."
 
 #: science.cpp:931
-#, fuzzy
 msgid "Setup Science"
-msgstr "Ställ in KLinjer"
+msgstr "Ställ in Vetenskap"
 
 #: science.cpp:949
-#, fuzzy
 msgid "Mode:"
-msgstr "Mitt:"
+msgstr "Läge:"
 
 #: science.cpp:964
 msgid "Inverse"
-msgstr ""
+msgstr "Omvänt"
 
 #: science.cpp:974
 msgid "Gravity"
-msgstr ""
+msgstr "Tyngdkraft"
 
 #: science.cpp:983
 msgid "Hide Background"
-msgstr ""
+msgstr "Göm bakgrund"
 
 #: science.cpp:1009
 msgid "Intensity:"
-msgstr ""
+msgstr "Styrka:"
 
 #: science.cpp:1039
 msgid "Motion:"
-msgstr ""
+msgstr "Rörelse:"
 
 #: science.cpp:1260
 msgid "Science Version"
-msgstr ""
+msgstr "Vetenskap version"
 
 #: science.cpp:1261
 msgid "written by"
-msgstr ""
+msgstr "skriven av"
 
 #: science.cpp:1262
-#, fuzzy
 msgid "About Science"
-msgstr "Om KLinjer"
+msgstr "Om Vetenskap"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -673,7 +669,7 @@ msgstr "Lappar"
 
 #: slip.cpp:366
 msgid "Setup KSlip"
-msgstr "Ställ in lappar"
+msgstr "Ställ in Lappar"
 
 #: slip.cpp:392
 msgid "Batchcount:"
@@ -699,21 +695,19 @@ msgstr ""
 
 #: space.cpp:491
 msgid "Space (GL)"
-msgstr ""
+msgstr "Rymden (GL)"
 
 #: space.cpp:581
-#, fuzzy
 msgid "Setup KSpace"
-msgstr "Ställ in lappar"
+msgstr "Ställ in Rymden"
 
 #: space.cpp:597
 msgid "Warp Interval:"
-msgstr ""
+msgstr "Warp-intervall:"
 
 #: space.cpp:685
-#, fuzzy
 msgid "About KSpace"
-msgstr "Om Lappar"
+msgstr "Om Rymden"
 
 #: space.cpp:687
 msgid ""
@@ -721,6 +715,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 msgstr ""
+"Rymden\n"
+"Copyright (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
 
 #: swarm.cpp:257
 msgid "Swarm"
@@ -751,6 +748,3 @@ msgstr ""
 "Copyright (c) 1991 av Patrick J. Naughton\n"
 "\n"
 "Portad till kscreensave av Emanuel Pirker."
-
-#~ msgid "Move"
-#~ msgstr "Flytta"

@@ -1,9 +1,18 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Magnus Reftel <d96reftl@dtek.chalmers.se>, 1997,1998.
+# Anders Widell <d95-awi@nada.kth.se>, 1998.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-06-16 16:37+0200\n"
-"PO-Revision-Date: 1998-01-06 22:15+1\n"
-"Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
+"PO-Revision-Date: 1998-07-09 11:59+02:00\n"
+"Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
+"Language-Team: Swedish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
 
 #: kfmgui.cpp:257
 msgid "KFM"
@@ -11,7 +20,7 @@ msgstr "KFM"
 
 #: kbind.cpp:933 kbind.cpp:945 kbind.cpp:955 kfmgui.cpp:269 kfmgui.cpp:969
 msgid "Folder"
-msgstr "Folder"
+msgstr "Katalog"
 
 #: kfmgui.cpp:280
 #, c-format
@@ -28,55 +37,56 @@ msgstr "Öppna &terminal"
 
 #: kfmgui.cpp:314
 msgid "&Open Location..."
-msgstr "&Öppna plats..."
+msgstr "Öppna &plats..."
 
 #: kfmgui.cpp:316
 msgid "&Find"
 msgstr "&Sök"
 
 #: kfmgui.cpp:324
+#, fuzzy
 msgid "&Quit..."
-msgstr "&Avsluta..."
+msgstr "&Kör..."
 
 #: kfmgui.cpp:333
 msgid "&Move to Trash"
-msgstr "&Flytta till papperskorg"
+msgstr "&Flytta till papperskorgen"
 
 #: kfmgui.cpp:338
 msgid "&Select"
-msgstr "&Välj"
+msgstr "&Markera"
 
 #: kfmgui.cpp:342
 msgid "Mime Types"
-msgstr "Mime-typer"
+msgstr "MIME-typer"
 
 #: kfmgui.cpp:344
 msgid "Applications"
-msgstr "Standardprogram"
+msgstr "Program"
 
 #: kfmgui.cpp:350
 msgid "Global Mime Types"
-msgstr "Globala mime-typer"
+msgstr "Globala MIME-typer"
 
 #: kfmgui.cpp:352
 msgid "Global Applications"
-msgstr "Standardprogram"
+msgstr "Globala program"
 
 #: kfmgui.cpp:359
 msgid "Show &Dot Files"
-msgstr "Visa &punkt-filer"
+msgstr "Visa &alla filer"
 
 #: kfmgui.cpp:361
 msgid "Show Tr&ee"
-msgstr "Visa &träd"
+msgstr "Visa trä&d"
 
 #: kfmgui.cpp:363
 msgid "&Visual Schnauzer"
-msgstr "&Bilder som ikoner"
+msgstr "Visa &bilder"
 
 #: kfmgui.cpp:365
 msgid "&HTML View"
-msgstr "Visa som &HTML"
+msgstr "Visa &HTML"
 
 #: kfmgui.cpp:368
 msgid "&Icon View"
@@ -88,44 +98,43 @@ msgstr "Visa som &text"
 
 #: kfmgui.cpp:372
 msgid "&Long View"
-msgstr "Visa som text &och ikoner"
+msgstr "&Långt format"
 
 #: kfmgui.cpp:374
-#, fuzzy
 msgid "&Short View"
-msgstr "Visa som &ikoner"
+msgstr "&Kort format"
 
 #: kfmgui.cpp:380
 msgid "Rel&oad Tree"
-msgstr "&Uppdatera träd"
+msgstr "&Uppdatera trädet"
 
 #: kfmgui.cpp:382
 msgid "&Reload Document"
-msgstr "Uppdatera &dokument"
+msgstr "Uppdatera &dokumentet"
 
 #: kfmgui.cpp:384
 msgid "Rescan &bindings"
-msgstr "Uppdatera &bindningar"
+msgstr "Uppdatera bi&ndningar"
 
 #: kfmgui.cpp:387
 msgid "&View Frame Source"
-msgstr "&Läs ramens källkod"
+msgstr "Visa &ramens källkod"
 
 #: kfmgui.cpp:389
 msgid "View Docu&ment Source"
-msgstr "Läs doku&mentets källa"
+msgstr "Visa doku&mentets källkod"
 
 #: kfmgui.cpp:400
 msgid "Show History"
-msgstr ""
+msgstr "Visa historik"
 
 #: kfmgui.cpp:402
 msgid "Show Cache"
-msgstr "Visa cache"
+msgstr "Visa cachen"
 
 #: kfmgui.cpp:404
 msgid "Clear Cache"
-msgstr "Töm cache"
+msgstr "Töm cachen"
 
 #: kfmgui.cpp:407
 msgid "Always look in cache"
@@ -136,18 +145,16 @@ msgid "Never look in cache"
 msgstr "Titta aldrig i cachen"
 
 #: kfmgui.cpp:411
-#, fuzzy
 msgid "Always save cache"
-msgstr "Titta alltid i cachen"
+msgstr "Spara alltid cachen"
 
 #: kfmgui.cpp:413
-#, fuzzy
 msgid "Never save cache"
-msgstr "Titta aldrig i cachen"
+msgstr "Spara aldrig cachen"
 
 #: kfmgui.cpp:424
 msgid "Show &Menubar"
-msgstr "Visa &meny"
+msgstr "Visa &menyrad"
 
 #: kfmgui.cpp:426
 msgid "Show &Statusbar"
@@ -163,15 +170,16 @@ msgstr "Visa &platsrad"
 
 #: kfmgui.cpp:433
 msgid "Sa&ve Settings"
-msgstr "&Spara inställningar"
+msgstr "Spara &inställningarna"
 
 #: kfmgui.cpp:435
 msgid "Configure Browser..."
-msgstr "Ställ in &bläddrare"
+msgstr "Ställ in &bläddrare..."
 
 #: kfmgui.cpp:478
+#, fuzzy
 msgid "&About..."
-msgstr "&Om..."
+msgstr "&Kör..."
 
 #: kfmgui.cpp:488
 msgid "&Bookmarks"
@@ -183,15 +191,15 @@ msgstr "&Cache"
 
 #: kfmgui.cpp:516 kfmman.cpp:1050
 msgid "Up"
-msgstr ""
+msgstr "Upp"
 
 #: kfmgui.cpp:588
 msgid "Could not load icon\n"
-msgstr "Kunde inte skapa katalogen\n"
+msgstr "Kunde inte ladda ikonen\n"
 
 #: kfmexec.cpp:59 kfmgui.cpp:744 kfmman.cpp:1020
 msgid "Malformed URL\n"
-msgstr "Ogiltlig URL\n"
+msgstr "Felaktig URL\n"
 
 #: kfmgui.cpp:904
 msgid "Select files:"
@@ -199,11 +207,11 @@ msgstr "Markera filer:"
 
 #: kfmgui.cpp:921
 msgid "&Edit Bookmarks..."
-msgstr "&Regigera Bokmärken"
+msgstr "&Redigera bokmärken..."
 
 #: kfmgui.cpp:931
 msgid "&Add Bookmark"
-msgstr "Lägg till bokmärke"
+msgstr "&Lägg till bokmärke"
 
 #: kfmgui.cpp:961 kfmgui.cpp:968
 msgid "New "
@@ -213,11 +221,11 @@ msgstr "Ny "
 #: kfmtree.cpp:318 kfmview.cpp:375 kfmview.cpp:444 kfmview.cpp:575
 #: kiojob.cpp:83 root.cpp:1117
 msgid "ERROR: Malformed URL"
-msgstr "FEL: Ogiltlig URL"
+msgstr "FEL: Felaktig URL"
 
 #: kfmgui.cpp:1174 kfmserver.cpp:178
 msgid "Open Location:"
-msgstr "Öppna plats"
+msgstr "Öppna plats:"
 
 #: kfmgui.cpp:1230
 msgid "KFM Confirm"
@@ -229,14 +237,13 @@ msgid ""
 "Important desktop functionality will be lost"
 msgstr ""
 "Vill du verkligen avsluta?\n"
-"Viktiga skrivbords-funktioner kommer att förloras"
+"Viktiga skrivbordsfunktioner kommer att förloras"
 
 #: kfmgui.cpp:1261
 msgid "About KFM"
-msgstr "&Om KFM"
+msgstr ""
 
 #: kfmgui.cpp:1262
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -251,7 +258,13 @@ msgstr ""
 "weis@kde.org\n"
 "\n"
 "HTML-widget av Martin Jones\n"
-"mjones@kde.org"
+"mjones@kde.org\n"
+"\n"
+"Proxy-hanterare av Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de\n"
+"\n"
+"KFM har översatts till svenska av\n"
+"Magnus Reftel och Anders Widell"
 
 #: kfmgui.cpp:1355
 msgid "Document: Done"
@@ -259,11 +272,11 @@ msgstr "Dokument: klart"
 
 #: kfmview.cpp:356
 msgid "ERROR: Drop over malformed URL"
-msgstr "FEL: Kan inte släppa en sak över ogiltlig URL"
+msgstr "FEL: Du släppte på en felaktig URL"
 
 #: kfmview.cpp:381
 msgid "ERROR: You dropped some URL over itself"
-msgstr "FEL: Du släppe en URL över sig själv"
+msgstr "FEL: En URL släpptes på sig själv"
 
 #: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:416
 #: kfmview.cpp:610 krenamewin.cpp:20 root.cpp:1158
@@ -278,15 +291,15 @@ msgid ""
 msgstr ""
 "Vill du verkligen radera de markerade filerna?\n"
 "\n"
-"Det går inte att återskapa dem"
+"Det går inte att återskapa dem."
 
 #: kfmtree.cpp:324 kfmview.cpp:450 kfmview.cpp:581 root.cpp:1123
 msgid "ERROR: You dropped a URL over itself"
-msgstr "FEL: Du släppte en URL över sig själv"
+msgstr "FEL: En URL släpptes på sig själv"
 
 #: kfmtree.cpp:330 kfmview.cpp:456 kfmview.cpp:587 root.cpp:1129
 msgid "ERROR: You dropped a directory over one of its children"
-msgstr "FEL: Du släppte en katalog över ett av dess underkataloger"
+msgstr "FEL: Du släppte en katalog på en av dess underkataloger"
 
 #: kfmexec.cpp:254 kfmman.cpp:867 kfmview.cpp:472
 msgid "Open With:"
@@ -306,7 +319,7 @@ msgstr "Kan inte klistra in i flera kataloger på en gång"
 
 #: kfmview.cpp:643
 msgid "ERROR: Can not change to multiple directories"
-msgstr "FEL: Kan inte byta katalog till flera stycken"
+msgstr "FEL: Kan inte byta till flera kataloger på en gång"
 
 #: kfmview.cpp:759
 msgid "KFM Security Alert"
@@ -335,7 +348,7 @@ msgstr "byte"
 
 #: kbind.cpp:302
 msgid "The mime type config file "
-msgstr "konfigfilen för mime-typer "
+msgstr "Konfigfilen för MIME-typer "
 
 #: kbind.cpp:303
 msgid "does not conatain a MimeType=... entry"
@@ -343,11 +356,11 @@ msgstr "innehåller ingen MimeType=...-post"
 
 #: kbind.cpp:377
 msgid "No mime types installed!"
-msgstr "Inga mime-typer installerade!"
+msgstr "Inga MIME-typer installerade!"
 
 #: kbind.cpp:425 kbind.cpp:1188
 msgid "Could not find mime type\n"
-msgstr "Kunde inte hitta mime-typen\n"
+msgstr "Kunde inte hitta MIME-typen\n"
 
 #: kbind.cpp:697 kbind.cpp:707 kbind.cpp:1889 kbind.cpp:1890 kbind.cpp:1902
 #: kbind.cpp:1904
@@ -368,7 +381,7 @@ msgstr "i "
 
 #: kbind.cpp:1332 kbind.cpp:1418
 msgid "Could not execute program\n"
-msgstr "Kunde inte köra progarmmet\n"
+msgstr "Kunde inte köra programmet\n"
 
 #: kbind.cpp:1527
 msgid "Could not find binding"
@@ -379,12 +392,12 @@ msgid ""
 "This is a document!\n"
 "Not an application"
 msgstr ""
-"Det här är ett dokument!\n"
-"Inte en applikation"
+"Det här är ett dokument,\n"
+"inte något program!"
 
 #: kbind.cpp:1555 kbind.cpp:1572
 msgid "Can only start executables on local disks\n"
-msgstr "Kan bara starta exekverbara filer på lokala diskar\n"
+msgstr "Kan bara starta program på lokala diskar\n"
 
 #: kbind.cpp:1630 kbind.cpp:1704 kbind.cpp:1855
 msgid ""
@@ -399,7 +412,9 @@ msgstr ""
 msgid ""
 "Could not access\n"
 "%s"
-msgstr "Kunde inte accessa%s"
+msgstr ""
+"Kunde inte komma åt\n"
+"%s"
 
 #: kbind.cpp:1669
 msgid "The \"Link=....\" entry is empty"
@@ -411,7 +426,7 @@ msgstr "Konfig-filen har ingen \"Type=...\"-rad"
 
 #: kbind.cpp:1714 kbind.cpp:1865
 msgid "Could not access"
-msgstr "Kunde inte accessa"
+msgstr "Kunde inte komma åt"
 
 #: kbind.cpp:1733
 msgid ""
@@ -421,9 +436,9 @@ msgid ""
 "to solve the problem"
 msgstr ""
 "Den här filen har ingen\n"
-"Exec=...\n"
-"post. Redigera egenskaperna\n"
-"för att fixa problemet"
+"Exec=...-post.\n"
+"Redigera filens egenskaper\n"
+"för att åtgärda problemet"
 
 #: kbind.cpp:1821
 msgid "ERROR: No Terminal Setting"
@@ -451,7 +466,7 @@ msgstr "Installerar mallar"
 
 #: main.cpp:239
 msgid "Cd"
-msgstr "Cd"
+msgstr "Byt katalog"
 
 #: main.cpp:240
 msgid "New View"
@@ -475,52 +490,51 @@ msgstr "Töm papperskorgen"
 
 #: main.cpp:251
 msgid "Add to Bookmarks"
-msgstr "Lägg till som bokmärke"
+msgstr "Lägg till bokmärken"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
-msgstr ""
+msgstr "Standardtypsnitt"
 
 #: htmlopts.cpp:68
 msgid "Fixed Font"
-msgstr ""
+msgstr "Ej proportionellt"
 
 #: htmlopts.cpp:214
 msgid "Background Color:"
-msgstr ""
+msgstr "Bakgrundsfärg:"
 
 #: htmlopts.cpp:222
 msgid "Normal Text Color:"
-msgstr ""
+msgstr "Normal textfärg:"
 
 #: htmlopts.cpp:230
 msgid "URL Link Color:"
-msgstr ""
+msgstr "Färg på länkar:"
 
 #: htmlopts.cpp:238
 msgid "Followed Link Color:"
-msgstr ""
+msgstr "Färg på följda länkar:"
 
 #: htmlopts.cpp:246
 msgid "Change cursor over link."
-msgstr ""
+msgstr "Ändra muspekare över länkar"
 
 #: htmlopts.cpp:321
 msgid "Horizontal Root Grid Spacing:"
-msgstr ""
+msgstr "x-avstånd för skrivbordsikoner"
 
 #: htmlopts.cpp:335
 msgid "Vertical Root Grid Spacing:"
-msgstr ""
+msgstr "y-avstånd för skrivbordsikoner"
 
 #: htmlopts.cpp:349
 msgid "Transparent Text for Root Icons."
-msgstr ""
+msgstr "Rita ej textbakgrund till skrivbordsikoner"
 
 #: bookmark.cpp:264
-#, fuzzy
 msgid "Could not write bookmark"
-msgstr "Kunde inte skriva till\n"
+msgstr "Kunde inte spara bokmärke"
 
 #: kfmprops.cpp:242
 msgid "Full Name"
@@ -528,11 +542,11 @@ msgstr "Fullständig sökväg"
 
 #: kfmprops.cpp:260
 msgid "Is the Trash Bin"
-msgstr "Är i papperskorgen"
+msgstr "Detta är papperskorgen"
 
 #: kfmprops.cpp:267
 msgid "Is a Directory"
-msgstr "Är en katalog"
+msgstr "Detta är en katalog"
 
 #: kfmprops.cpp:274
 msgid "Points to"
@@ -556,8 +570,8 @@ msgid ""
 "Could not rename the file or directory\n"
 "The destination seems to already exist\n"
 msgstr ""
-"Kunde inte döpa om filen eller katalogen\n"
-"Destinationen verkar redan finnas\n"
+"Kunde inte döpa om filen eller katalogen.\n"
+"Destinationen verkar redan finnas.\n"
 
 #: kfmprops.cpp:416
 msgid "Access permissions"
@@ -580,7 +594,7 @@ msgid ""
 "Write\n"
 "Entries"
 msgstr ""
-"Skriv\n"
+"Skriva\n"
 "poster"
 
 #: kfmprops.cpp:431
@@ -592,8 +606,8 @@ msgid ""
 "Change\n"
 "Into"
 msgstr ""
-"Gå in\n"
-"i"
+"Gå\n"
+"in i"
 
 #: kfmprops.cpp:438
 msgid "Exec"
@@ -605,7 +619,7 @@ msgstr "Special"
 
 #: kfmprops.cpp:446
 msgid "User"
-msgstr "Användare"
+msgstr "Ägare"
 
 #: kfmprops.cpp:456
 msgid "Others"
@@ -625,15 +639,15 @@ msgstr "Klistrig"
 
 #: kfmprops.cpp:489
 msgid "Ownership"
-msgstr "Ägande"
+msgstr "Ägarinformation"
 
 #: kfmprops.cpp:619
 msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
 msgstr ""
-"Kunde inte ändra rättighetet\n"
-"Kanske nekades åtkomst."
+"Kunde inte ändra rättigheter.\n"
+"Kanske nekades du åtkomst."
 
 #: kfmprops.cpp:634
 #, c-format
@@ -650,16 +664,16 @@ msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
 msgstr ""
-"Kunde inte ändra ägare/grupp\n"
-"Kanske nekades åtkomst."
+"Kunde inte ändra ägare/grupp.\n"
+"Kanske nekades du åtkomst."
 
 #: kfmprops.cpp:663
 msgid "Swallowing on panel"
-msgstr ""
+msgstr "Körning i panelen"
 
 #: kfmprops.cpp:681 kfmprops.cpp:704
 msgid "Execute"
-msgstr "Kör"
+msgstr "Kör program"
 
 #: kfmprops.cpp:685
 msgid "Browse"
@@ -667,11 +681,11 @@ msgstr "Bläddra"
 
 #: kfmprops.cpp:689
 msgid "Working Directory"
-msgstr "Aktuell katalog"
+msgstr "Kör i katalog"
 
 #: kfmprops.cpp:712
 msgid "Window Title"
-msgstr ""
+msgstr "Fönstertitel"
 
 #: kfmprops.cpp:716
 msgid "Run in terminal"
@@ -679,7 +693,7 @@ msgstr "Kör i terminal"
 
 #: kfmprops.cpp:724
 msgid "Terminal Options"
-msgstr "Terminalinställningar"
+msgstr "Terminalinställning"
 
 #: kfmprops.cpp:825 kfmprops.cpp:947 kfmprops.cpp:1390 kfmprops.cpp:1602
 #: kfmprops.cpp:1778
@@ -700,7 +714,7 @@ msgstr "Applicera globalt"
 
 #: kfmprops.cpp:1013 kfmprops.cpp:1085 kfmprops.cpp:1142
 msgid "(Default)"
-msgstr "(Standard)"
+msgstr "(standard)"
 
 #: kfmprops.cpp:1074
 msgid "Could not write to\n"
@@ -708,7 +722,7 @@ msgstr "Kunde inte skriva till\n"
 
 #: kfmprops.cpp:1187
 msgid "(None)"
-msgstr "(Ingen)"
+msgstr "(ingen)"
 
 #: kfmprops.cpp:1233
 msgid "Binary Pattern (netscape;Netscape;)"
@@ -720,7 +734,7 @@ msgstr "Kommentar"
 
 #: kfmprops.cpp:1251
 msgid "Name ( in your language )"
-msgstr "Namn ( på ditt språk )"
+msgstr "Programmets namn ( på ditt språk )"
 
 #: kfmprops.cpp:1480
 msgid "Pattern ( example: *.html;*.HTML; )"
@@ -728,7 +742,7 @@ msgstr "Mönster ( exempel: *.html;*.HTML; )"
 
 #: kfmprops.cpp:1488
 msgid "Mime Type"
-msgstr "Mime-typ"
+msgstr "MIME-typ"
 
 #: kfmprops.cpp:1499
 msgid "Default Application"
@@ -748,7 +762,7 @@ msgstr "Skrivskyddad"
 
 #: kfmprops.cpp:1671
 msgid "Filesystems ( iso9660,msdos,minix,default )"
-msgstr "Filsystem ( iso9660,msdos,minix,standard )"
+msgstr "Filsystem ( iso9660,msdos,minix,default )"
 
 #: kfmprops.cpp:1681
 msgid "Mounted Icon"
@@ -766,7 +780,9 @@ msgstr "Kunde inte skapa ~/.kde/share/apps/kfm/magic"
 msgid ""
 "Please change the password in\n"
 "~/.kde/share/apps/kfm/magic"
-msgstr "Vänligen, ändra lösenordet in~/.kde/share/apps/kfm/magic"
+msgstr ""
+"OBS: Av säkerhetsskäl bör du ändra\n"
+"lösenordet i ~/.kde/share/apps/kfm/magic"
 
 #: kfmserver.cpp:78
 msgid "Do you really want to rearrange your icons ?"
@@ -779,7 +795,7 @@ msgid ""
 "%s\n"
 "is malformed"
 msgstr ""
-"URLen\n"
+"URL:en\n"
 "%s\n"
 "är felaktig"
 
@@ -789,23 +805,23 @@ msgid ""
 "Authorization failed"
 msgstr ""
 "Du har inte filen ~/.kde/share/apps/kfm/magic\n"
-"Auktoriseringen misslyckades"
+"Därför misslyckades identifieringen"
 
 #: kfmserver.cpp:294
 msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
 msgstr ""
-"Filen ~/.kde/share/apps/kfm/magic är inte i rätt format\n"
-"Auktoriseringen misslyckades"
+"Filen ~/.kde/share/apps/kfm/magic är trasig\n"
+"Därför misslyckades identifieringen"
 
 #: kfmserver.cpp:302
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
 msgstr ""
-"Någon försökte auktorisera sig själv\n"
-"med fel lösenord"
+"VARNING: Någon försökte\n"
+"identifiera sig med fel lösenord"
 
 #: root.cpp:672
 msgid ""
@@ -813,10 +829,14 @@ msgid ""
 "New root grid dimensions would move some icons\n"
 "off the desktop."
 msgstr ""
+"Kan ej utföra begäran.\n"
+"Nytt ikonavstånd på skrivbordet\n"
+"skulle medföra att några ikoner\n"
+"hamnade utanför skrivbordet."
 
 #: root.cpp:707
 msgid "Internal Error: desktopDir is malformed"
-msgstr "Internt fel: desktopDir är ogiltligt"
+msgstr "Internt fel: desktopDir är felaktig"
 
 #: root.cpp:718
 #, c-format
@@ -825,7 +845,7 @@ msgstr "FEL: Kunde inte läsa skrivbordskatalogen '%s'"
 
 #: root.cpp:909
 msgid "ERROR: Can not accept drop"
-msgstr "FEL: Kan inte ta emot släpp"
+msgstr "FEL: Kan inte ta emot släppt ikon"
 
 #: kfmman.cpp:1205 root.cpp:1711
 msgid "Dont know what to do."
@@ -849,7 +869,7 @@ msgstr "Arbetar ..."
 
 #: kfmman.cpp:1100 kfmtree.cpp:230
 msgid "Add To Bookmarks"
-msgstr "Lägg till som bokmärke"
+msgstr "Lägg till bokmärken"
 
 #: kiojob.cpp:130
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
@@ -861,12 +881,12 @@ msgid ""
 "Malformed URL\n"
 "%s"
 msgstr ""
-"Ogiltlig URL\n"
+"Felaktig URL\n"
 "%s"
 
 #: kiojob.cpp:250
 msgid "Can only make links on local file system"
-msgstr "Kan bara skapa länkar på lokala filsystem"
+msgstr "Kan bara skapa länkar på det lokala filsystemet"
 
 #: kiojob.cpp:273 kiojob.cpp:292
 #, c-format
@@ -882,7 +902,9 @@ msgstr ""
 msgid ""
 "Could not make symlink to\n"
 "%s"
-msgstr "Kunde inte skapa en symbolisk länk till%s"
+msgstr ""
+"Kunde inte skapa en symbolisk länk till\n"
+"%s"
 
 #: kiojob.cpp:378
 #, c-format
@@ -895,7 +917,7 @@ msgid ""
 "Could not make directory\n"
 "%s"
 msgstr ""
-"Kunde inte skapa katalog\n"
+"Kunde inte skapa katalogen\n"
 "%s"
 
 #: kiojob.cpp:563 kiojob.cpp:1009
@@ -923,7 +945,7 @@ msgstr ""
 "Kunde inte flytta katalogen\n"
 "%s\n"
 "till %s\n"
-"Kanske nekades åtkomst"
+"Kanske nekades du åtkomst."
 
 #: kiojob.cpp:1212 kiojob.cpp:1352
 #, c-format
@@ -934,7 +956,7 @@ msgid ""
 msgstr ""
 "Kunde inte läsa\n"
 "%s\n"
-"Antingen finnns inte filen, eller så nekades åtkomsten"
+"Antingen finns filen inte, eller så nekades du åtkomst."
 
 #: kiojob.cpp:1220
 #, c-format
@@ -943,9 +965,9 @@ msgid ""
 "%s\n"
 "Perhaps access denied"
 msgstr ""
-"Kunde inte skriva\n"
+"Kunde inte skriva till\n"
 "%s\n"
-"Kanske nekades åtkomst."
+"Kanske nekades du åtkomst."
 
 #: kiojob.cpp:1229 kiojob.cpp:1360
 #, c-format
@@ -957,7 +979,7 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1237 kiojob.cpp:1368
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Unknown host in\n"
 "%s"
@@ -971,7 +993,7 @@ msgid ""
 "Could not connect to\n"
 "%s"
 msgstr ""
-"Kunde inte komma åt\n"
+"Kunde inte ansluta till\n"
 "%s"
 
 #: kiojob.cpp:1253 kiojob.cpp:1384
@@ -1003,7 +1025,7 @@ msgid ""
 msgstr ""
 "Kunde inte radera\n"
 "%s\n"
-"URLen finns inte, eller så nekades åtkomst"
+"URL:en finns inte, eller så nekades du åtkomst"
 
 #: kiojob.cpp:1287 kiojob.cpp:1394
 #, c-format
@@ -1060,8 +1082,8 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"Kunde inte montera\n"
-"Fel-log:\n"
+"Kunde inte montera.\n"
+"Fellogg:\n"
 "\n"
 "%s"
 
@@ -1073,8 +1095,8 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"Kunde inte avmontera\n"
-"Fel-log:\n"
+"Kunde inte avmontera.\n"
+"Fellogg:\n"
 "\n"
 "%s"
 
@@ -1114,11 +1136,11 @@ msgstr "Avmonterar %s ..."
 #: kiojob.cpp:1796
 #, c-format
 msgid "Retrieving listing of %s"
-msgstr "Hämter lista för %s"
+msgstr "Hämtar lista för %s"
 
 #: kiojob.cpp:2029
 msgid "Segmentation fault in io subprocess"
-msgstr "Segmenteringsfel i IO-subprocess"
+msgstr "Segmenteringsfel i IO-underprocess"
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"
@@ -1134,7 +1156,7 @@ msgstr " existerar inte\n"
 
 #: kfmtree.cpp:396
 msgid "My Home"
-msgstr "Mitt hem"
+msgstr "Hemkatalogen"
 
 #: kfmtree.cpp:398
 msgid "Desktop"
@@ -1142,7 +1164,7 @@ msgstr "Skrivbord"
 
 #: kfmtree.cpp:400
 msgid "Root"
-msgstr "Rot"
+msgstr "Rotkatalogen"
 
 #: krenamewin.cpp:26
 msgid "Rename"
@@ -1161,11 +1183,8 @@ msgid "Overwrite All"
 msgstr "Skriv över alla"
 
 #: krenamewin.cpp:52
-#, fuzzy
 msgid "You try to overwrite"
-msgstr ""
-"Kunde inte skriva över\n"
-"%s"
+msgstr "Du försöker skriva över"
 
 #: krenamewin.cpp:63
 msgid "already exists. Overwrite with"
@@ -1189,11 +1208,11 @@ msgstr "Försöker öppna"
 
 #: useragentdlg.cpp:20
 msgid "On server:"
-msgstr "På värd:"
+msgstr "På server:"
 
 #: useragentdlg.cpp:31
 msgid "login as:"
-msgstr "logga in som:"
+msgstr "Ange:"
 
 #: useragentdlg.cpp:52
 msgid "Known bindings:"
@@ -1201,53 +1220,51 @@ msgstr "Kända bindningar:"
 
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
-msgstr ""
+msgstr "Glöm inte att spara dina inställningar!"
 
 #: kproxydlg.cpp:16
-#, fuzzy
 msgid "Use proxy"
-msgstr "Användare"
+msgstr "Använd proxy"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"
-msgstr "Ny proxy för:"
+msgstr "Ej proxy för:"
 
 #: kkfmoptdlg.cpp:19
 msgid "&Proxy"
-msgstr ""
+msgstr "&Proxy"
 
 #: kkfmoptdlg.cpp:22
 msgid "&HTTP"
-msgstr ""
+msgstr "&HTTP"
 
 #: kkfmoptdlg.cpp:25
 msgid "User &Agent"
-msgstr ""
+msgstr "&Bläddrar-ID"
 
 #: kkfmoptdlg.cpp:31
 msgid "&Colors"
-msgstr ""
+msgstr "&Färger"
 
 #: kkfmoptdlg.cpp:34
-#, fuzzy
 msgid "&Other"
-msgstr "Andra"
+msgstr "&Övrigt"
 
 #: kkfmoptdlg.cpp:54
 msgid "KFM Browser Settings"
-msgstr "KFM bläddrar-inställningar"
+msgstr "KFM bläddrarinställningar"
 
 #: khttpoptdlg.cpp:13
 msgid "Accept languages:"
-msgstr ""
+msgstr "Acceptera språk:"
 
 #: khttpoptdlg.cpp:18
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Acceptera teckenkodningar:"
 
 #: khttpoptdlg.cpp:23
 msgid "Assume HTML"
-msgstr ""
+msgstr "Antag HTML"
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1287,8 +1304,8 @@ msgid ""
 "The URL %s\n"
 "is malformed"
 msgstr ""
-"URLen %s\n"
-"har fel format"
+"URL:en %s\n"
+"är felaktig"
 
 #: kfmexec/main.cpp:132
 #, c-format
@@ -1313,88 +1330,13 @@ msgid ""
 "kfmexec command [URLs ....]\n"
 msgstr ""
 "Syntaxfel:\n"
-"kfmexec kommando [URLer ...]\n"
+"kfmexec kommando [URL:er ...]\n"
 
-#~ msgid "&New Window"
-#~ msgstr "&Nytt fönster"
+#~ msgid "ERROR: You may only drop URLs"
+#~ msgstr "FEL: Du får bara släppa URL:er"
 
-#~ msgid "Stop"
-#~ msgstr "Stoppa"
+#~ msgid "&Browser"
+#~ msgstr "&Bläddrare"
 
-#~ msgid "KFM Error"
-#~ msgstr "KFM Fel"
-
-#~ msgid "Move"
-#~ msgstr "Flytta"
-
-#~ msgid "Properties"
-#~ msgstr "Egenskaper"
-
-#~ msgid "Continue"
-#~ msgstr "Fortsätt"
-
-#~ msgid "Run normally"
-#~ msgstr "Kör normalt"
-
-#~ msgid "Run in Panel (drag onto Panel to execute)"
-#~ msgstr "Kör i panelen (dra till panelen för att köra)"
-
-#~ msgid "Title of Application"
-#~ msgstr "Programtitel"
-
-#~ msgid "enter the exact title, as normally shown in the window titlebar"
-#~ msgstr "skriv in den exakta titeln, som den normalt står i namnlisten"
-
-#~ msgid ""
-#~ "You can run this program either\n"
-#~ "in the Panel or in a Terminal, \n"
-#~ "but not both!"
-#~ msgstr ""
-#~ "Du kan köra det här programmet antingen\n"
-#~ "i panelen eller i en terminal, \n"
-#~ "men inte både och!"
-
-#~ msgid "&Tool"
-#~ msgstr "&Verktyg"
-
-#~ msgid "Home"
-#~ msgstr "Hem"
-
-#~ msgid "Add Bookmark"
-#~ msgstr "Lägg till bokmärke"
-
-#~ msgid "<!-- Do not edit this file -->"
-#~ msgstr "<!-- Ändra inte den här filen -->"
-
-#~ msgid "Name"
-#~ msgstr "Namn"
-
-#~ msgid "Group"
-#~ msgstr "Grupp"
-
-#~ msgid "Owner"
-#~ msgstr "Ägare"
-
-#
-#~ msgid "Edit Bookmarks"
-#~ msgstr "Redigera bokmärken"
-
-#
-#~ msgid "Move up"
-#~ msgstr "Flytta upp"
-
-#
-#~ msgid "Move down"
-#~ msgstr "Flytta ner"
-
-#
-#~ msgid "Rename Bookmark"
-#~ msgstr "Byt namn på bokmärke"
-
-#
-#~ msgid "Rename Bookmark:"
-#~ msgstr "Byt namn på bokmärke:"
-
-#
-#~ msgid "Only HTTP-Proxy is implemented yet!"
-#~ msgstr "Bara HTTP-Proxy är implementerad för närvarande!!"
+#~ msgid "This group is empty!"
+#~ msgstr "Denna grupp är tom!"

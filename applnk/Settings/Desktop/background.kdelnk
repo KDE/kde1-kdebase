@@ -47,4 +47,5 @@ SwallowTitle[pt]=Fundo do ambiente de trabalho
 SwallowTitle[pt_BR]=Fundo do ambiente de trabalho
 SwallowTitle[hr]=Pozadina radne povr¹ine
 SwallowTitle[zh_CN.GB2312]=×ÀÃæ±³¾°
+SwallowTitle[sv]=Skrivbordsbakgrund
 Init=kcmdisplay -init

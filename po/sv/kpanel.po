@@ -7,9 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-06-16 13:54+0200\n"
-"PO-Revision-Date: 1997-01-07 00:16+0100\n"
-"Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
-"Language-Team: Swedish <LL@li.org>\n"
+"PO-Revision-Date: 1998-07-09 14:50+02:00\n"
+"Last-Translator: Anders Bengtsson <d96-abe@nada.kth.se>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
@@ -76,11 +75,11 @@ msgstr "Konfigurera panel"
 
 #: props.C:145
 msgid "Edit Menus"
-msgstr ""
+msgstr "Redigera menyer"
 
 #: props.C:147
 msgid "Add or remove applications in the menu structure "
-msgstr ""
+msgstr "Lägg till eller ta bort program i menystrukturen"
 
 #: events.C:724 props.C:148
 msgid "Restart"
@@ -104,65 +103,8 @@ msgstr ""
 
 #: events.C:760 props.C:311
 msgid "Oops!"
-msgstr ""
+msgstr "Oops!"
 
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"
-msgstr ""
-
-#~ msgid "Move"
-#~ msgstr "Flytta"
-
-#~ msgid "Properties"
-#~ msgstr "Egenskaper"
-
-#~ msgid "Location"
-#~ msgstr "Placering"
-
-#~ msgid "Taskbar"
-#~ msgstr "Programlista"
-
-#~ msgid "Hidden"
-#~ msgstr "Gömd"
-
-#~ msgid "Top/Left"
-#~ msgstr "Topp/Vänster"
-
-#~ msgid "Tiny Style"
-#~ msgstr "Minimal profil"
-
-#~ msgid "Normal Style"
-#~ msgstr "Normal profil"
-
-#~ msgid "Large Style"
-#~ msgstr "Stor profil"
-
-#~ msgid "Menu Tooltips"
-#~ msgstr "Verktygstips för menyer"
-
-#~ msgid "Personal First"
-#~ msgstr "Personliga menyn först"
-
-#~ msgid "Auto Hide Panel"
-#~ msgstr "Göm panelen automatiskt"
-
-#~ msgid "Auto Hide Taskbar"
-#~ msgstr "Göm aktivitetsfältet automatiskt"
-
-#~ msgid "Visible"
-#~ msgstr "Synlig"
-
-#~ msgid "Width"
-#~ msgstr "Vidd"
-
-#~ msgid "Desktops"
-#~ msgstr "Skrivbord"
-
-#~ msgid "KPanel Configuration"
-#~ msgstr "Konfigurering av KPanel"
-
-#~ msgid "Remove"
-#~ msgstr "Ta bort"
-
-#~ msgid "System"
-#~ msgstr "System"
+msgstr "Kan inte lägga in det här som knapp i panelen!"

@@ -1,18 +1,18 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Magnus Reftel <d96reftl@dtek.chalmers.se>, 1997,1998.
+# Anders Widell <d95-awi@nada.kth.se>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
-"PO-Revision-Date: 1998-01-20 15:35 +0100\n"
-"Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
-"Language-Team: Swedish <LL@li.org>\n"
+"PO-Revision-Date: 1998-07-08 17:09+02:00\n"
+"Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
+"Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
 
 #: main.cpp:59
 msgid "&Windows"
@@ -28,16 +28,15 @@ msgstr "&Namnlist"
 
 #: main.cpp:68
 msgid "&Desktop"
-msgstr ""
+msgstr "&Skrivbord"
 
 #: main.cpp:74
-#, fuzzy
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
-msgstr "användning: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+msgstr "användning: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:105
 msgid "Window manager style"
-msgstr "Stil på fönsterhanteraren"
+msgstr "Fönsterhanterarens inställningar"
 
 #: titlebar.cpp:117
 msgid "Minimize"
@@ -79,24 +78,23 @@ msgstr "Den högra delen av namnlisten är full. Stänger av 'minimera'-knappen\n"
 
 #: titlebar.cpp:926
 msgid "Titlebar appearance"
-msgstr "Utseende på namnlisten"
+msgstr "Namnlistens utseende"
 
 #: titlebar.cpp:928
-#, fuzzy
 msgid "Shaded Vertically"
-msgstr "Maximera vertikalt"
+msgstr "Vertikal toning"
 
 #: titlebar.cpp:930
 msgid "Shaded Horizontally"
-msgstr ""
+msgstr "Horisontell toning"
 
 #: titlebar.cpp:934
 msgid "Plain"
-msgstr "Ren"
+msgstr "Enfärgad"
 
 #: titlebar.cpp:937 titlebar.cpp:958
 msgid "Pixmap"
-msgstr "Pixmap"
+msgstr "Mönster"
 
 #: titlebar.cpp:944
 msgid "Title Animation"
@@ -104,7 +102,7 @@ msgstr "Namnlistsanimering"
 
 #: desktop.cpp:91 titlebar.cpp:947
 msgid "ms"
-msgstr "ms"
+msgstr ""
 
 #: titlebar.cpp:969
 msgid "&Active pixmap"
@@ -116,95 +114,91 @@ msgstr "&Inaktiv pixmap"
 
 #: titlebar.cpp:987
 msgid "Mouse action"
-msgstr ""
+msgstr "Musstyrning"
 
 #: titlebar.cpp:989
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
+"Dubbelklick med vänster musknapp\n"
+"på namnlisten utför:"
 
 #: titlebar.cpp:993
-#, fuzzy
 msgid "(Un)Maximize"
-msgstr "Maximera"
+msgstr "Växla maximering"
 
 #: titlebar.cpp:995
-#, fuzzy
 msgid "(Un)Shade"
-msgstr "Gradient"
+msgstr "Växla skuggning"
 
 #: titlebar.cpp:996
 msgid "Iconify"
-msgstr ""
+msgstr "Ikonifiera"
 
 #: titlebar.cpp:997
-#, fuzzy
 msgid "(Un)Sticky"
-msgstr "Klistrig"
+msgstr "Växla klistrighet"
 
 #: titlebar.cpp:998
 msgid "Resize"
-msgstr ""
+msgstr "Ändra storlek"
 
 #: titlebar.cpp:1000
 msgid "Operations Menu"
-msgstr ""
+msgstr "Visa fönstermeny"
 
 #: windows.cpp:84
 msgid "Window movement"
-msgstr "Fönsterflyttning"
+msgstr "Förflyttning"
 
 #: windows.cpp:85
 msgid "Transparent"
-msgstr "Transparent"
+msgstr "Visa bara ramen"
 
 #: windows.cpp:86 windows.cpp:95
 msgid "Opaque"
-msgstr "Solid"
+msgstr "Visa hela fönstret"
 
 #: windows.cpp:89
-#, fuzzy
 msgid "Window resize"
-msgstr "&Fönster"
+msgstr "Storleksändring"
 
 #: windows.cpp:90
-#, fuzzy
 msgid "Animation:"
-msgstr "Namnlistsanimering"
+msgstr "Animering:"
 
 #: windows.cpp:92
 msgid "Fast"
-msgstr ""
+msgstr "Snabb"
 
 #: windows.cpp:98
 msgid "Placement policy"
-msgstr ""
+msgstr "Placeringspolicy"
 
 #: windows.cpp:100
 msgid "Smart"
-msgstr ""
+msgstr "Smart"
 
 #: windows.cpp:102
 msgid "Cascade"
-msgstr ""
+msgstr "Kaskad"
 
 #: windows.cpp:104
 msgid "Interactive"
-msgstr ""
+msgstr "Interaktiv"
 
 #: windows.cpp:106
 msgid "Random"
-msgstr ""
+msgstr "Slumpmässig"
 
 #: windows.cpp:108
-#, fuzzy
 msgid "Manual"
-msgstr "Meny"
+msgstr "Manuell"
 
 #: windows.cpp:115
 msgid "Allowed Overlap:"
-msgstr ""
+msgstr "Tillåten överlappning:"
 
 #: windows.cpp:122
 msgid "Maximize Style"
@@ -216,29 +210,27 @@ msgstr "Maximera helt"
 
 #: windows.cpp:124
 msgid "Maximize vertically"
-msgstr "Maximera vertikalt"
+msgstr "Maximera bara vertikalt"
 
 #: windows.cpp:127
 msgid "Focus Policy"
-msgstr "Fokus-policy"
+msgstr "Fokuspolicy"
 
 #: windows.cpp:129
 msgid "Click to focus"
-msgstr "Klicka för att fokusera"
+msgstr "Klicka för fokus"
 
 #: windows.cpp:131
 msgid "Focus follows mouse"
 msgstr "Fokus följer musen"
 
 #: windows.cpp:133
-#, fuzzy
 msgid "Classic focus follows mouse"
-msgstr "Fokus följer musen"
+msgstr "Klassisk fokus följer musen"
 
 #: windows.cpp:135
-#, fuzzy
 msgid "Classic sloppy focus"
-msgstr "Klicka för att fokusera"
+msgstr "Klassisk hafsig fokus"
 
 #: windows.cpp:144
 msgid ""
@@ -254,42 +246,36 @@ msgstr "millisekunder"
 
 #: desktop.cpp:77
 msgid "Active desktop borders"
-msgstr ""
+msgstr "Aktiva skrivbordskanter"
 
 #: desktop.cpp:79
 msgid "Enable active desktop borders"
-msgstr ""
+msgstr "Använd aktiva skrivbordskanter"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr ""
+msgstr "Flytta muspekaren mot mitten efter byte"
 
 #: desktop.cpp:87
 msgid "Dekstop switch delay:"
-msgstr ""
+msgstr "Fördröjning innan byte:"
 
 #: desktop.cpp:100
 msgid "Magic Borders"
-msgstr ""
+msgstr "Magiska kanter"
 
 #: desktop.cpp:102
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Skrivbordets kantzon:\n"
+"           (pixlar)"
 
 #: desktop.cpp:116
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-
-#, fuzzy
-#~ msgid "With animation"
-#~ msgstr "Namnlistsanimering"
-
-#~ msgid "Shaded"
-#~ msgstr "Gradient"
-
-#~ msgid "Resize Animation"
-#~ msgstr "Animerad storleksändring"
+"Fönstrens kantzoner:\n"
+"          (pixlar)"
