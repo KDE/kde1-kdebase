@@ -38,9 +38,12 @@ void testDir( const char *_name )
   if ( dp == NULL )
   {
     QString m = _name;
+    if ( m.right(1) == "/" )
+      m.truncate( m.length() - 1 );
+    
     QMessageBox::message( klocale->translate("KFM Information"), 
 			  klocale->translate("Creating directory:\n") + m );
-    ::mkdir( _name, S_IRWXU );
+    ::mkdir( m, S_IRWXU );
   }
   else
     closedir( dp );
