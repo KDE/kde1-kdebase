@@ -21,7 +21,10 @@ will only miss a few screensavers.  The same thing applies with OPENGL
 support.  Here you have to set GL_INCLUDE and GL_LDFLAGS.
 
 If configure claims Qt cannot be found, have a look at http://www.troll.no
-to get a copy of Qt, version 1.41 or newer.
+to get a copy of Qt, version 1.42.
+
+If you get TOC overflow errors on AIX, and are using gcc 2.7.2, you'll
+need to add -mminimal-toc to your CFLAGS and CXXFLAGS.
 
 Be advised, if you're using FreeBSD and the ill-designed port of Qt that
 comes along with it, this is not a good idea.  The KDE does not, and will
