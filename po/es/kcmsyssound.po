@@ -1,19 +1,10 @@
-# kcmsyssound.pot translate file to Spanish
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-18 00:01+0200\n"
-"PO-Revision-Date: 1998-02-22 4:19+0100\n"
-"Last-Translator: Santiago Fernández and Jorge Valencia "
-"<jorgev@est.unileon.es>\n"
-"Language-Team: SPANISH <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"PO-Revision-Date: 1998-04-18 01:32+0200\n"
+"First-Translator: Santiago Fernández and Jorge Valencia <jorgev@est.unileon.es>\n"
+"Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: main.cpp:53
 msgid "&Sound"
@@ -160,28 +151,27 @@ msgid "Unsupported URL"
 msgstr "URL no soportada"
 
 #: syssound.cpp:455
-#, fuzzy
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Lo sentimos, este tipo de URL no esta actualmente soportada por el móduloKDE "
-"System Sound"
+"Lo sentimos, este tipo de URL no esta actualmente soportada por el módulo "
+"de sonido del sistema de KDE"
 
 #: syssound.cpp:465
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"
-"does not seem to be a WAV--file."
+"does not seemto be a WAV--file."
 msgstr ""
-"¡Lo sentimos, pero \n"
+"Lo sentimos, pero \n"
 "%s\n"
-"no parece ser un archivo WAV !"
+"no parece ser un archivo WAV."
 
 #: syssound.cpp:468
 msgid "Improper File Extension"
-msgstr "Extensión de Archivo Impropia"
+msgstr "Extensión de archivo impropia"
 
 #: syssound.cpp:479
 #, c-format
@@ -194,6 +184,6 @@ msgstr ""
 "%s\n"
 "ya esta en la lista"
 
-#: syssound.cpp:483
+#: syssound.cpp:481
 msgid "File Already in List"
 msgstr "El archivo ya esta en lista"
