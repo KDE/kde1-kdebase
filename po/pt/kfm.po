@@ -29,7 +29,7 @@ msgstr "Abrir &Terminal"
 
 #: kfmgui.cpp:249
 msgid "&Open Location"
-msgstr "&Abrir UR&L"
+msgstr "Abrir &URL"
 
 #: kfmgui.cpp:252
 msgid "&Print..."
@@ -41,11 +41,11 @@ msgstr "Fe&char"
 
 #: kfmgui.cpp:257
 msgid "&Quit"
-msgstr "Sair"
+msgstr "&Sair"
 
 #: kfmgui.cpp:262
 msgid "&Copy"
-msgstr "&Colar"
+msgstr "&Copiar"
 
 #: kfmgui.cpp:264
 msgid "&Paste"
@@ -57,7 +57,7 @@ msgstr "&Mover para o Lixo"
 
 #: kfmgui.cpp:268
 msgid "&Delete"
-msgstr "Apagar"
+msgstr "&Apagar"
 
 #: kfmgui.cpp:271
 msgid "&Select"
@@ -65,12 +65,12 @@ msgstr "&Seleccionar"
 
 #: kfmgui.cpp:277
 msgid "Show &Dot Files"
-msgstr "Mostrar Ficheiros Ocultos"
+msgstr "Mostrar Ficheiros &Ocultos"
 
 
 #: kfmgui.cpp:279
 msgid "Show Tr&ee"
-msgstr "Mostrar Arvore"
+msgstr "Mostrar &Arvore"
 
 #: kfmgui.cpp:281
 msgid "&Visual Schnauzer"
@@ -90,11 +90,11 @@ msgstr "Visão por &Texto"
 
 #: kfmgui.cpp:290
 msgid "&Long View"
-msgstr "Visualização Longa"
+msgstr "Visualização &Longa"
 
 #: kfmgui.cpp:293
 msgid "&Save Settings"
-msgstr "Gravar Configuração"
+msgstr "Gravar &Configuração"
 
 #: kfmgui.cpp:299
 msgid "&Reload Document"
@@ -102,7 +102,7 @@ msgstr "&Reler Documento"
 
 #: kfmgui.cpp:301
 msgid "Rescan &bindings"
-msgstr "Rever Dependencias"
+msgstr "Rever &Dependencias"
 
 #: kfmgui.cpp:304
 msgid "&View Frame Source"
@@ -110,7 +110,7 @@ msgstr "&Ver Frame Source"
 
 #: kfmgui.cpp:330
 msgid "&Find"
-msgstr "Procurar"
+msgstr "&Procurar"
 
 #: kfmgui.cpp:339
 msgid "&Add Bookmark"
@@ -138,15 +138,15 @@ msgstr "&Ver"
 
 #: kfmgui.cpp:354
 msgid "&Bookmarks"
-msgstr "Favoritos"
+msgstr "F&avoritos"
 
 #: kfmgui.cpp:355
 msgid "&Tool"
-msgstr "Ferramenta"
+msgstr "&Ferramenta"
 
 #: kfmgui.cpp:357
 msgid "&Help"
-msgstr "Ajuda"
+msgstr "&Ajuda"
 
 #: kfmgui.cpp:381
 msgid "Back"

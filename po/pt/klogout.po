@@ -1,0 +1,12 @@
+
+#: klogout.cpp:76
+msgid "Logout"
+msgstr "Sair"
+
+#: klogout.cpp:77
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: klogout.cpp:86
+msgid "Really exit the KDE?"
+msgstr "Deseja realmenta sair do KDE?"

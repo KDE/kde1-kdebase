@@ -1,0 +1,123 @@
+#: kpanel.C:172
+msgid "Personal menu"
+msgstr "Menu pessoal"
+
+#: kpanel.C:180
+msgid "Add application"
+msgstr "Adicionar aplicação"
+
+#: kpanel.C:182
+msgid "Add special"
+msgstr "Adicionar especial"
+
+#: kpanel.C:183
+msgid "Configure"
+msgstr "Configurar"
+
+#: kpanel.C:185
+msgid "Configure panel"
+msgstr "Configurar painel"
+
+#: kpanel.C:186
+msgid "Restart"
+msgstr "Reinicializar"
+
+#: kpanel.C:188
+msgid "Panel"
+msgstr "Painel"
+
+#: kpanel.C:190
+msgid "Lock Screen"
+msgstr "Trancar ecran"
+
+#: kpanel.C:192
+msgid "Logout"
+msgstr "Sair"
+
+#: kpanel.C:201
+msgid "Move"
+msgstr "Mover"
+
+#: kpanel.C:202
+msgid "Remove"
+msgstr "Remover"
+
+#: kpanel.C:204
+msgid "Properties"
+msgstr "Propriedades"
+
+#: kpanel.C:239
+msgid "System"
+msgstr "Sistema"
+
+#: kpanel.C:316
+msgid "Desktop"
+msgstr "Desktop"
+
+#: kpanel.C:348
+msgid "No info available"
+msgstr "Nenhuma informação disponivel"
+
+#: kpanel.C:435 kpanel.C:451
+msgid "Destroy"
+msgstr "Destruir"
+
+#: kpanel.C:438 kpanel.C:448
+msgid "(Un) Sticky"
+msgstr "(Des) Pregar"
+
+#: kpanel.C:439 kpanel.C:447
+msgid "(Un) Iconify"
+msgstr "(Des) Iconificar"
+
+#: kpanel.C:440 kpanel.C:446
+msgid "(Un) Maximize"
+msgstr "(Des) Maximizar"
+
+#: kpanel.C:441 kpanel.C:445
+msgid "On this desktop"
+msgstr "Neste desktop"
+
+#: props.C:263
+msgid "Location"
+msgstr "Localização"
+
+#: props.C:283
+msgid "Taskbar"
+msgstr "Barra de Tarefas"
+
+#: props.C:284
+msgid "Hidden"
+msgstr "Escondido"
+
+#: props.C:296
+msgid "Top/Left"
+msgstr "Topo/Esquerdo"
+
+#: props.C:307
+msgid "Tiny Style"
+msgstr "Estilo Pequeno"
+
+#: props.C:308
+msgid "Small Style"
+msgstr "Estilo Pequeno"
+
+#: props.C:309
+msgid "Large Style"
+msgstr "Estilo Largo"
+
+#: props.C:321
+msgid "Menu Tooltips"
+msgstr "Dicas de Ferramentas do Menu"
+
+#: props.C:397
+msgid "Visible"
+msgstr "Visivel"
+
+#: props.C:404
+msgid "Width"
+msgstr "Largura"
+
+#: props.C:415
+msgid "KPanel Configuration"
+msgstr "Configuração do KPanel"
