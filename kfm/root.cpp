@@ -1304,7 +1304,7 @@ KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
 
     // Matthias
     // keep root icons lowered
-    KWM::setDecoration(winId(), 1024);
+    KWM::setDecoration(winId(), KWM::desktopIcon);
     
     connect( kapp, SIGNAL( kdisplayFontChanged() ), this, SLOT( slotFontChanged() ) );
 
