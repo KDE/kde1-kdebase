@@ -63,9 +63,6 @@ fi
 AC_SUBST(SETUIDFLAGS)
 
 AC_LANG_CPLUSPLUS
-dnl Checks for libraries.
-AC_PATH_KDE
-
 dnl Checks for libraries. 
 AC_CHECK_LIB(socket, socket, [LIBSOCKET="-lsocket -lnsl"]) dnl for Solaris
 AC_SUBST(LIBSOCKET)
@@ -75,6 +72,7 @@ AC_CHECK_LIB(crypt, main, [LIBCRYPT="-lcrypt"]) dnl for BSD
 AC_SUBST(LIBCRYPT)
 LIBKHTMLW="-lkhtmlw -ljscript" dnl this is somewhat historical, since jscript is ways needed
 AC_SUBST(LIBKHTMLW)
+AC_PATH_KDE 
 
 AC_FIND_GIF
 AC_FIND_JPEG
