@@ -1158,3 +1158,4 @@ void KTitlebarAppearance::inactivePressed()
 
 
 #include "titlebar.moc"
+
