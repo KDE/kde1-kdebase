@@ -370,7 +370,7 @@ void KfmView::slotMountNotify()
 {
     KURL u( manager->getURL().data() );
     
-    if ( strcmp( u.protocol(), "file:" ) == 0 && !u.hasSubProtocol() )
+    if ( u.isLocalFile() )
 	manager->openURL( manager->getURL().data(), true );
 }
 
