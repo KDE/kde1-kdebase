@@ -313,6 +313,8 @@ void KTitlebarButtons::resizeEvent(QResizeEvent *)
     menuRB[i]->move( xs[i], 0);
   h += SPACE_YO + menuB->height();
 
+  setMinimumHeight(h);
+
   drawPreview(TRUE);
 }
 
