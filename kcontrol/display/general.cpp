@@ -303,9 +303,9 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	stackLayout->addWidget( label );
 	
 	lSample = new FontPreview( group );
-	lSample->setText( "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+	lSample->setText(i18n( "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 			  "the quick brown fox jumps over the lazy dog\n"
-			  "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )" );
+			  "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )" ));
 	lSample->setAlignment( AlignLeft | AlignVCenter );
 	lSample->setFixedHeight( 2*lSample->sizeHint().height() );
 	lSample->setFrameStyle( QFrame::Panel | QFrame::Sunken );
