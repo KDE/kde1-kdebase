@@ -281,7 +281,7 @@ QString KFMExec::openLocalURL( const char *_url )
     QString tryURL;
     
     KMimeType *typ = KMimeType::getMagicMimeType( _url );
-    // debugT("URL='%s' Type: '%s'\n",_url,typ->getMimeType());
+
     // A HACK
     // We must support plugin protocols here!
     // Do we try to open a tar file?
@@ -309,8 +309,7 @@ QString KFMExec::openLocalURL( const char *_url )
 	}
     }
     // Uncompressed tar file
-    else if ( /* tmp.right(4) == ".tgz" || tmp.right(4) == ".tar" || tmp.right(7) == ".tar.gz" 
-	      || */ ( typ && strcmp( typ->getMimeType(), "application/x-tar" ) == 0L ) )
+    else if ( typ && strcmp( typ->getMimeType(), "application/x-tar" ) == 0L )
     {
 	// We change the destination on the fly
 	tryURL = "file:";
@@ -333,14 +332,13 @@ QString KFMExec::openLocalURL( const char *_url )
     } */
     else
     {
-	// debugT("EXEC MIMETYPE\n");
 	// Execute the best matching binding for this URL.
+	printf("IS A '%s'\n",typ->getMimeType());
 	if ( typ->run( _url ) )
 	    // No URL left since we have done the job
 	    // => return an empty string
 	    return QString();
 
-	// debugT("Could not run\n");
 	// We could not execute the mimetype
 	tryURL = _url;
     }

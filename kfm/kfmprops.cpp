@@ -569,8 +569,6 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
 	terminalCheck->setChecked( termStr == "1" );
     if ( iconStr.isNull() )
 	iconStr = KMimeType::getDefaultPixmap();
-    
-    iconBox->setIcon( iconStr ); 
 
     QStrList list;
     QString tmp( kapp->kdedir() );
@@ -580,6 +578,8 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     tmp += "/.kde/share/icons";
     list.append( tmp.data() );
     iconBox->iconLoaderDialog().setDir( &list );
+    
+    iconBox->setIcon( iconStr ); 
     
     connect( execBrowse, SIGNAL( pressed() ), this, SLOT( slotBrowseExec() ) );
 }
@@ -1513,9 +1513,6 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
     if ( unmountedStr.isEmpty() )
 	unmountedStr = KMimeType::getDefaultPixmap();    
 
-    mounted->setIcon( mountedStr ); 
-    unmounted->setIcon( unmountedStr ); 
-
     QStrList list;
     QString tmp( kapp->kdedir() );
     tmp += "/share/icons";
@@ -1525,6 +1522,9 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
     list.append( tmp.data() );
     mounted->iconLoaderDialog().setDir( &list );
     unmounted->iconLoaderDialog().setDir( &list );
+
+    mounted->setIcon( mountedStr ); 
+    unmounted->setIcon( unmountedStr ); 
 }
 
 bool DevicePropsPage::supports( KURL *_kurl )

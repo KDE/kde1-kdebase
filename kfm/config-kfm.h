@@ -23,3 +23,4 @@ void debugC( const char *msg , ...);
 #define ID_STRING_PROP 11 /* Properties */
 #define ID_STRING_LINK 12 /* Link */
 #define ID_STRING_TRASH 13 /* Empty Trash Bin*/
+#define ID_STRING_ADD_TO_BOOMARKS 14

@@ -87,6 +87,8 @@ bool KFMManager::isBindingHardcoded( const char *_txt )
 	return true;
     if ( strcmp( klocale->getAlias(ID_STRING_TRASH), _txt ) == 0 )
 	return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_ADD_TO_BOOMARKS), _txt ) == 0 )
+	return true;
 
     return false;
 }
@@ -882,16 +884,16 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
 				    view, SLOT( slotPopupNewView() ) );
 	popupMenu->insertSeparator();    
 	if ( KIOServer::supports( _urls, KIO_Read ) )
-	    id = popupMenu->insertItem( klocale->translate("Copy"), 
+	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_COPY ), 
 					view, SLOT( slotPopupCopy() ) );
 	if ( KIOServer::supports( _urls, KIO_Write ) && KfmView::clipboard.count() != 0 )
-	    id = popupMenu->insertItem( klocale->translate("Paste"), 
+	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_PASTE ), 
 					view, SLOT( slotPopupPaste() ) );
 	if ( KIOServer::supports( _urls, KIO_Move ) )
-	    id = popupMenu->insertItem( klocale->translate("Move to Trash"),  
+	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_MOVE_TO_TRASH ),  
 					view, SLOT( slotPopupTrash() ) );
 	if ( KIOServer::supports( _urls, KIO_Delete ) )
-	    id = popupMenu->insertItem( klocale->translate("Delete"),  
+	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_DELETE ),  
 					view, SLOT( slotPopupDelete() ) );
     }
     else
@@ -901,13 +903,13 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
 				    view, SLOT( slotPopupOpenWith() ) );
 	popupMenu->insertSeparator();    
 	if ( KIOServer::supports( _urls, KIO_Read ) )
-	    id = popupMenu->insertItem( klocale->translate("Copy"), 
+	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_COPY ), 
 					view, SLOT( slotPopupCopy() ) );
 	if ( KIOServer::supports( _urls, KIO_Move ) )
-	    id = popupMenu->insertItem( klocale->translate("Move to Trash"),  
+	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_MOVE_TO_TRASH ),  
 					view, SLOT( slotPopupTrash() ) );
 	if ( KIOServer::supports( _urls, KIO_Delete ) )
-	    id = popupMenu->insertItem( klocale->translate("Delete"),  
+	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_DELETE ),  
 					view, SLOT( slotPopupDelete() ) );
     }
 

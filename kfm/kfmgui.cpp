@@ -440,11 +440,11 @@ void KfmGui::initMenu()
     
     QPopupMenu *help = new QPopupMenu;
     CHECK_PTR( help );
-    help->insertItem( klocale->translate("&About..."), this, SLOT(slotAbout()) );
-    help->insertItem( "About &Qt...", this, SLOT(slotAboutQt()) );
-    help->insertSeparator();
+    // help->insertItem( "About &Qt...", this, SLOT(slotAboutQt()) );
     help->insertItem( klocale->translate("&Help..."), 
 		      this, SLOT(slotHelp()) );
+    help->insertSeparator();
+    help->insertItem( klocale->translate("&About..."), this, SLOT(slotAbout()) );
 
     menu = new KMenuBar( this );
     if ( sumode )

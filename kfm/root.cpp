@@ -102,6 +102,8 @@ bool KRootWidget::isBindingHardcoded( const char *_txt )
 	return true;
     if ( strcmp( klocale->getAlias(ID_STRING_TRASH), _txt ) == 0 )
 	return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_ADD_TO_BOOMARKS), _txt ) == 0 )
+	return true;
 
     return false;
 }
@@ -566,15 +568,15 @@ void KRootWidget::slotDropEvent( KDNDDropZone *_zone )
     // Ask wether we can read from the dropped URL.
     if ( KIOServer::supports( _zone->getURLList(), KIO_Read ) &&
 	 KIOServer::supports( desktopDir.data(), KIO_Write ) )
-	id = popupMenu->insertItem( "Copy", this, SLOT( slotDropCopy() ) );
+	id = popupMenu->insertItem( klocale->getAlias( ID_STRING_CD ), this, SLOT( slotDropCopy() ) );
     // Ask wether we can read from the URL and delete it afterwards
     if ( KIOServer::supports( _zone->getURLList(), KIO_Read ) &&
 	 KIOServer::supports( _zone->getURLList(), KIO_Delete ) &&
 	 KIOServer::supports( desktopDir.data(), KIO_Write ) )
-	id = popupMenu->insertItem( "Move", this, SLOT( slotDropMove() ) );
+	id = popupMenu->insertItem( klocale->getAlias( ID_STRING_MOVE ), this, SLOT( slotDropMove() ) );
     // We can link everything on the local file system
     if ( KIOServer::supports( desktopDir.data(), KIO_Link ) )
-	id = popupMenu->insertItem( "Link", this, SLOT( slotDropLink() ) );
+	id = popupMenu->insertItem( klocale->getAlias( ID_STRING_LINK ), this, SLOT( slotDropLink() ) );
     if ( id == -1 )
     {
         warning(klocale->translate("ERROR: Can not accept drop"));
