@@ -1,15 +1,17 @@
 //-----------------------------------------------------------------------------
-//
+// $Id$
 // KDE screen saver
-//
+//-----------------------------------------------------------------------------
 
-#include <stdlib.h>
+#include <signal.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <signal.h>
-#include "kscreensave.h"
+
 #include <kapp.h>
+
+#include "kscreensave.h"
 
 void kForceLocker()
 {
@@ -36,14 +38,13 @@ void kForceLocker()
 		{
 		    execlp( buffer, buffer, "-test", "-lock", 0 );
 		    
-				// if we make it here then try again using default path
+                    // if we make it here then try again using default path
 		    execlp("kblankscrn.kss","kblankscrn.kss","-test","-lock",0);
 		    
-				// uh oh - failed
+                    // uh oh - failed
 		    fprintf( stderr, "Could not invoke kblankscrn.kss in $PATH or"
-			     " %s/bin\n" , KApplication::kde_bindir().data());
-		    exit( 1 );
+                             " %s/bin\n" , KApplication::kde_bindir().data());
+		    exit (1);
 		}
 	}
 }
-
