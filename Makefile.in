@@ -107,8 +107,11 @@ clean-recursive:
 	done && test -z "$$fail"
 
 clean:  clean-recursive
+
+distclean: clean
 	-rm -f config.status config.log config.cache
 	-rm -f libtool stamp-h
+	find . -name Makefile -exec rm -f \{\} \;
 
 #libraries are installed right through libraries
 kdebase: libraries apps install
