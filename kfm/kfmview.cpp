@@ -931,24 +931,26 @@ void KfmView::slotFormSubmitted( const char *_method, const char *_url, const ch
     
     KURL u1( manager->getURL() );
     KURL u2( u1, _url );
-    QString url_string = u2.url(); 
-    
-    // debugT("Complete is '%s'\n", u2.url().data() );
     if (strcasecmp(_method, "GET")==0)
     {
        // GET
-//       debug("Form Submitted '%s', method = GET '%s', data = '%s'\n", 
-//               _url, _method, _data );
-       url_string += "?";
-       url_string += _data; 
-       openURL( url_string.data() );
+       QString search_part = u2.searchPart();
+       if (!search_part.isNull())
+       {
+           u2.setSearchPart(search_part + "&" + _data);		
+       }
+       else
+       {
+           u2.setSearchPart(_data);		
+       }
+       
+       openURL( u2.url().data() );
     }
     else
     {
        // POST
-//       debug("Form Submitted '%s', method = POST '%s', data = '%s'\n", 
-//               _url, _method, _data );
-       openURL( url_string.data() , _data);    
+
+       openURL( u2.url().data() , _data);    
     }
 }
 
