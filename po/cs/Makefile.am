@@ -1,9 +1,10 @@
 
 # This has to be set. The rest should be reusable
-GMFILES = khexdit.gmo
+GMFILES = kfind.gmo kdehelp.gmo kdisplay.gmo kvt.gmo kwm.gmo \
+	kfontmanager.gmo kdm.gmo kpanel.gmo
 POFILES = $(GMFILES:.gmo=.po)
 
-LANG = cz
+LANG = cs
 
 localedir = $(prefix)/share/locale
 
