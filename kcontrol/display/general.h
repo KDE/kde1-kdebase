@@ -49,7 +49,7 @@ public:
 protected slots:
 	void slotSelectFont( const char *fname );
 	void slotFontSize( int );
-	void slotCharset( int );
+	void slotCharset( const char * );
 	void slotFontBold( bool );
 	void slotFontItalic( bool );
 	void slotChangeStyle(int );
@@ -60,6 +60,7 @@ protected slots:
 	void connectColor();
 
 protected:
+	void fillCharsetCombo();
 	void writeSettings();
 	void getFontList( QStrList &list, const char *pattern );
 	void addFont( QStrList &list, const char *xfont );

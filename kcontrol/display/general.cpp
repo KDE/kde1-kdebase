@@ -26,6 +26,7 @@
 #include <qchkbox.h>
 #include <qcombo.h>
 #include <kapp.h>
+#include <kcharsets.h>
 #include <X11/Xlib.h>
 #include <X11/X.h>
 #include <X11/Xlib.h>
@@ -39,26 +40,6 @@
 
 #include "general.h"
 #include "general.moc"
-
-#define CHARSETS_COUNT 9
-static char *charsetsStr[CHARSETS_COUNT]={"ISO-8859-1","Any",
-                                   "ISO-8859-2",
-                                   "ISO-8859-3",
-                                   "ISO-8859-4",
-                                   "ISO-8859-5",
-                                   "ISO-8859-6",
-                                   "ISO-8859-7",
-                                   "ISO-8859-8"};
-
-static QFont::CharSet charsetsIds[CHARSETS_COUNT]={ QFont::ISO_8859_1,
-                                             QFont::AnyCharSet,
-					     QFont::ISO_8859_2,
-					     QFont::ISO_8859_3,
-					     QFont::ISO_8859_4,
-					     QFont::ISO_8859_5,
-					     QFont::ISO_8859_6,
-					     QFont::ISO_8859_7,
-					     QFont::ISO_8859_8};
 
 extern int dropError(Display *, XErrorEvent *);
 
@@ -173,42 +154,50 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	charset_combo = new QComboBox( false, group );
 	charset_combo->setGeometry(250,125, 180, 30);
 
-	for(i=0;i<CHARSETS_COUNT;i++)
-	  charset_combo->insertItem( charsetsStr[i] );
+        fillCharsetCombo();
 
 	charset_combo->setInsertionPolicy(QComboBox::NoInsertion);
-	connect( charset_combo, SIGNAL(activated(int)),
-		 SLOT(slotCharset(int)) );
+	connect( charset_combo, SIGNAL(activated(const char *)),
+		 SLOT(slotCharset(const char *)) );
 
-	QFont::CharSet charset=generalFont.charSet();
+	
+	connectColor();
+	setColors();
+}
 
-	for(i = 0;i<CHARSETS_COUNT;i++){
-	  if (charset==charsetsIds[i]){
+void KGeneral::fillCharsetCombo(){
+int i;
+	charset_combo->clear();
+	KCharsets *charsets=kapp->getCharsets();
+        QStrList sets=charsets->displayable(generalFont.family());
+	for(QString set=sets.first();set;set=sets.next())
+	  charset_combo->insertItem( set );
+	charset_combo->insertItem( "any" );
+
+	QString charset=charsets->name(generalFont);
+	for(i = 0;i<charset_combo->count();i++){
+	  if (charset==charset_combo->text(i)){
 	    charset_combo->setCurrentItem(i);
 	    break;
 	  }
 	}
-
-	connectColor();
-	setColors();
-
 }
 
-
-void KGeneral::slotCharset(int index)
+void KGeneral::slotCharset(const char *name)
 {
 
-  generalFont.setCharSet(charsetsIds[index]);
+  KCharsets *charsets=kapp->getCharsets();
+  charsets->setQFont(generalFont,name);
 
   changed=TRUE;
-
 }
 
 void KGeneral::slotSelectFont( const char *fname )
 {
 	if( fontTypeList->currentItem() == 0 )
 		generalFont.setFamily( fname );
-	
+		
+	fillCharsetCombo();	
 	slotPreviewFont(0);
 
 	changed=TRUE;
@@ -319,10 +308,11 @@ void KGeneral::readSettings( int )
 	KConfig config;
 	config.setGroup( "General Font" );
 
+        KCharsets *charsets=kapp->getCharsets();
 	
-	int num = config.readNumEntry( "Charset",-1 );
-	if ( num>=0 )
-		generalFont.setCharSet((QFont::CharSet)num);
+	str = config.readEntry( "Charset",0 );
+	if ( !str.isNull() )
+		charsets->setQFont(generalFont);
 
 	str = config.readEntry( "Family" );
 	if ( !str.isNull() )
@@ -378,9 +368,8 @@ void KGeneral::writeSettings()
 	pointSizeStr.sprintf("%d", generalFont.pointSize() );
 	systemConfig->writeEntry("Point Size", pointSizeStr, true, true);
 
-	QString charsetStr(10);
-	charsetStr.sprintf("%d", generalFont.charSet() );
-	systemConfig->writeEntry("Charset", charsetStr, true, true);
+	KCharsets *charsets=kapp->getCharsets();
+	systemConfig->writeEntry("Charset", charsets->name(generalFont), true, true);
 	
 	QString weightStr(10);
 	weightStr.sprintf("%d", generalFont.weight() );
@@ -520,15 +509,7 @@ void KGeneral::loadSettings()
 	
 	cb2->setChecked( generalFont.italic() );
 
-	QFont::CharSet charset=generalFont.charSet();
-
-	for(i = 0; i<CHARSETS_COUNT; i++){
-	  if (charset==charsetsIds[i]){
-	    charset_combo->setCurrentItem(i);
-	    break;
-	  }
-	}
-
+	fillCharsetCombo();
 }
 
 void KGeneral::applySettings()
