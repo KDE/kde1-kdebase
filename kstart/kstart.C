@@ -40,7 +40,7 @@ KStart::KStart(KWMModuleApplication* kwmmapp_arg,
     iconify = iconify_arg;
     sticky = sticky_arg;
     decoration = decoration_arg;
-    
+
     // just connect to the initialized() signal, we want to be
     // informed if we recieved all existing windows
     connect(kwmmapp, SIGNAL(initialized()), SLOT(initialized()));
@@ -110,6 +110,7 @@ void KStart::applyStyle(Window w) {
 int main( int argc, char *argv[] )
 {
   if (argc <= 2) {
+      KApplication dummyForI18n(argc,argv);
       printf(KSTART_VERSION);
       printf(i18n(
        "\n Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
@@ -125,7 +126,7 @@ int main( int argc, char *argv[] )
        "\n              [-sticky] [-iconify] [-maximize] "
        "\n              [-decoration tiny|none] [-activate]"
        "\n "
-       "\n If you do not specify a regular expression for the windows title," 
+       "\n If you do not specify a regular expression for the windows title,"
        "\n then the very first window to appear will be taken. Not recommended!"
        "\n "
        "\n Example usage:"
@@ -143,7 +144,7 @@ int main( int argc, char *argv[] )
   bool iconify = FALSE;
   bool sticky = FALSE;
   int decoration = KWM::normalDecoration;
-  
+
   for (int i = 2; i < argc; i++)
   {
       if (!strcmp(argv[i],"-version")) {
@@ -172,7 +173,7 @@ int main( int argc, char *argv[] )
   }
 
   KWMModuleApplication a (argc, argv);
-  
+
   fcntl(ConnectionNumber(qt_xdisplay()), F_SETFD, 1);
 
 

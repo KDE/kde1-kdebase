@@ -23,8 +23,8 @@ Example usage:
   kstart "xclock -geometry 80x80-0+0"  -window xclock -decoration tiny -sticky
 
 
-kstart requires a KDE compliant windowmanager.
-
+kstart requires a KDE compliant windowmanager
+.
 Hope some people find this useful, 
 
    Matthias
