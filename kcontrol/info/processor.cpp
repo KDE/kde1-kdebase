@@ -9,7 +9,7 @@
 
 #ifdef linux
 #include "processor_linux.cpp"
-#elif sgi
+#elif sgi || sun
 #include "processor_sgi.cpp"
 #elif __FreeBSD__
 #include "processor_fbsd.cpp"
