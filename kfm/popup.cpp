@@ -48,7 +48,7 @@ void KNewMenu::fillMenu()
     for ( templ = templatesList->next(); (templ); templ = templatesList->next())
     {
         QString tmp = templ;
-        KSimpleConfig config(KFMPaths::TemplatesPath() + tmp.data());
+        KSimpleConfig config(KFMPaths::TemplatesPath() + tmp.data(), true);
         config.setGroup( "KDE Desktop Entry" );
         if ( tmp.right(7) == ".kdelnk" )
             tmp.truncate( tmp.length() - 7 );
@@ -103,7 +103,7 @@ void KNewMenu::slotNewFile( int _id )
               "Use \"Rescan Bindings\" in View menu to update the menu"));
           return;
       }
-      KSimpleConfig config(x);
+      KSimpleConfig config(x, true);
       config.setGroup( "KDE Desktop Entry" );
       if ( tmp.right(7) == ".kdelnk" )
 	tmp.truncate( tmp.length() - 7 );
