@@ -9,6 +9,7 @@
 #include <ktopwidget.h>
 #include <kpanner.h>
 #include <time.h>
+#include <kprocess.h>
 
 #include "ksmbstatus.h"
 #include "ksmbstatus.moc"
@@ -21,69 +22,108 @@ void NetMon::help()
 
 }
 
+void NetMon::processLine(char *bufline, int linelen)
+{
+    char *tok;
+    int pid;
+
+    rownumber++;
+    if (rownumber == 2)
+        version->setText(bufline); // second line = samba version
+    else if ((rownumber >= 5) && (readingpart==connexions))
+    {
+        char li[255];
+
+        if (linelen<=1)
+            readingpart=locked_files; // stop after first empty line.
+        else {
+            tok= strtok(bufline," ");
+            sprintf(li,"%s\n",tok);
+            tok= strtok(NULL," ");
+            sprintf(li,"%s%s\n",li,tok);      
+            tok= strtok(NULL," ");
+            sprintf(li,"%s%s\n",li,tok);      
+            tok= strtok(NULL," ");
+            pid= atoi(tok);
+            pids[nrpid++]=pid;
+            sprintf(li,"%s%s\n",li,tok);      
+            tok= strtok(NULL," ");
+            sprintf(li,"%s%s\n",li,tok);      
+            
+            list->insertItem(li);
+        }
+      }
+    else if (readingpart==locked_files)
+    {
+      if ((strncmp(bufline,"No",2) == 0) || (linelen<=1))
+      { // "No locked files"
+          readingpart=finished;
+          debug("finished");
+      }
+      else
+          if ((strncmp(bufline,"Pi", 2) !=0) // "Pid DenyMode ..."
+              && (strncmp(bufline,"--", 2) !=0)) // "------------"
+          {
+            tok=strtok(bufline," ");
+            pid=atoi(tok);
+            lo[pid]++; 
+          }        
+    }
+}
+
+// called when we get some data from smbstatus
+//   can be called for any size of buffer (one line, several lines,
+//     half of one ...)
+void NetMon::slotReceivedData(KProcess *, char *buffer, int
+                              buflen)
+{
+    char s[250],*start,*end;
+    size_t len;
+    start = buffer;
+    while ((end = index(start,'\n'))) // look for '\n'
+    {
+        len = end-start;
+        strncpy(s,start,len);
+        s[len] = '\0';
+        debug(s); debug("**");
+        processLine(s,len); // process each line
+        start=end+1;
+    }
+    // here we could save the remaining part of line, if ever buffer
+    // doesn't end with a '\n' ... but will this happen ?
+}
+
 void NetMon::update()
 {
-    FILE *f;
-    char tmp[255];
-    char st[255];
-    char li[255];
-    char *tok;
-    int pid,n,m;
-    int pids[1000];
-    int lo[65536];
+    int n;
+    KProcess * process = new KProcess();
 
     for(n=0;n<=65536;n++) lo[n]=0;
     list->clear();
-    /* Re-read the Contets ... */
+    /* Re-read the Contents ... */
 
-
-    f = popen("smbstatus","r");
-    if (!f) f=popen("/usr/local/samba/bin/smbstatus","r");
-    if (!f) version->setText("Error ! Cannot find smbstatus in $PATH !");
-    if (f) {
-      fgets(tmp,255,f);
-      fgets(st,255,f);
-      version->setText(st);
-      fgets(tmp,255,f);
-      fgets(tmp,255,f);
-      n=0;
-      while (strlen(fgets(tmp,255,f)) > 1)
-      {
-          tok= strtok(tmp," ");
-          sprintf(li,"%s\n",tok);
-          tok= strtok(NULL," ");
-          sprintf(li,"%s%s\n",li,tok);      
-          tok= strtok(NULL," ");
-          sprintf(li,"%s%s\n",li,tok);      
-          tok= strtok(NULL," ");
-          pid=atoi(tok);
-	  pids[n++]=pid;
-          sprintf(li,"%s%s\n",li,tok);      
-          tok= strtok(NULL," ");
-          sprintf(li,"%s%s\n",li,tok);      
-
-          list->insertItem(li);
-      }
-
-      fgets(tmp,255,f);
-      if (strncmp(tmp,"No",2) != 0) {
-        fgets(tmp,255,f);
-        fgets(tmp,255,f);
-        while (strlen(fgets(tmp,255,f)) > 1)
+    rownumber=0;
+    readingpart=connexions;
+    nrpid=0;
+    connect(process, 
+            SIGNAL(receivedStdout(KProcess *, char *, int)),
+            SLOT(slotReceivedData(KProcess *, char *, int)));
+    *process << "smbstatus"; // the command line
+    debug("update");
+    if (!process->start(KProcess::Block,KProcess::Stdout)) // run smbstatus
+        version->setText("Error launching smbstatus !");
+    else if (rownumber==0) // empty result
+        version->setText("Error ! smbstatus not found or non working !");
+    else { // ok -> count the number of locked files for each pid
+        int m;
+        char tmp[255];
+        for (m=0;m<nrpid;m++) 
         {
-            tok=strtok(tmp," ");
-            pid=atoi(tok);
-            lo[pid]++; 
-        }        
-      }
-      pclose(f);
-      for (m=0;m<n;m++) 
-      {
-          sprintf(tmp,"%d",lo[pids[m]]);
-          list->changeItemPart(tmp,m,5);
-      }
-                  
+            sprintf(tmp,"%d",lo[pids[m]]);
+            list->changeItemPart(tmp,m,5);
+        }
     }
+    delete process;
 }
 
 

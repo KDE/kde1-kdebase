@@ -1,7 +1,12 @@
 Samba Status Module:
 
-  Michael Glauche (glauche@isa.rwth-aachen.de)
+  Michael Glauche <glauche@isa.rwth-aachen.de>
 
 Conversion to kcontrol applet:
 
-  Matthias Hoelzer (hoelzer@physik.uni-wuerzburg.de)9
+  Matthias Hoelzer <hoelzer@physik.uni-wuerzburg.de>
+
+Use of KProcess instead of popen, and more error checking
+
+  David Faure <David.Faure@insa-lyon.fr>
+
