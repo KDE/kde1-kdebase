@@ -50,7 +50,7 @@ msgstr "Prika¾i ploèu"
 
 #: kpanel.C:1108
 msgid "Iconify other &windows"
-msgstr ""
+msgstr "Ikonifiraj ostale &prozore"
 
 #: kpanel.C:1245
 msgid "No comment available"
@@ -65,7 +65,6 @@ msgid "Quickly navigate through the filesystem"
 msgstr ""
 
 #: props.C:167
-#, fuzzy
 msgid "Add Application"
 msgstr "Dodaj aplikaciju"
 
@@ -74,17 +73,14 @@ msgid "Add an application or a submenu onto the panel"
 msgstr "Dodaj aplikaciju ili podizbornik na ploèu"
 
 #: props.C:175
-#, fuzzy
 msgid "Add Disk Navigator"
-msgstr "Navigator diska"
+msgstr "Dodaj Navigator diska"
 
 #: props.C:177
-#, fuzzy
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Dodaj izbornik liste prozora na ploèu"
+msgstr "Dodaj navigator diska na ploèu"
 
 #: props.C:180
-#, fuzzy
 msgid "Add Windowlist"
 msgstr "Dodaj listu prozora"
 
@@ -145,7 +141,6 @@ msgstr ""
 "%b %d"
 
 #: tools.C:919
-#, fuzzy
 msgid "KDiskNavigator"
 msgstr "Navigator diska"
 
@@ -163,7 +158,7 @@ msgstr "Otvori direktorij"
 
 #: pfilemenu.C:483
 msgid "Open this folder (+Shift: Launch a terminal here)"
-msgstr ""
+msgstr "Otvori ovaj direktorij (+Shift: Pokreni terminal ovdje)"
 
 #: pfilemenu.C:491
 msgid "(Too Many Files)"
@@ -190,9 +185,8 @@ msgid "Personal:"
 msgstr "Osobni:"
 
 #: pfilemenu.C:775
-#, fuzzy
 msgid "Personal entries"
-msgstr "Osobni:"
+msgstr "Osobni zapisi:"
 
 #: pfilemenu.C:793
 msgid "Recent:"
@@ -200,13 +194,12 @@ msgstr "Nedavni:"
 
 #: pfilemenu.C:795
 msgid "Recent entries"
-msgstr ""
+msgstr "Skora¹nji zapisi"
 
 #: pfilemenu.C:841
 msgid "Options..."
 msgstr "Postavke..."
 
 #: pfilemenu.C:843
-#, fuzzy
 msgid "Customize Disk Navigator"
-msgstr "Navigator diska"
+msgstr "Podesi navigator diska"
