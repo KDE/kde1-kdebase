@@ -12,19 +12,19 @@ KProcessorWidget::KProcessorWidget(QWidget *parent, const char *name)
   lBox->setFont(QFont("Courier"));
 
   QFile *file = new QFile("/proc/cpuinfo");
-  if(!file->open(IO_ReadOnly))
-    {KMsgBox::message(0,klocale->translate("File Error!"),
-	klocale->translate("Cannot read /proc/cpuinfo"));
+
+  if(!file->open(IO_ReadOnly)) {
+    KMsgBox::message(0,klocale->translate("File Error!"),
+		     klocale->translate("Cannot read /proc/cpuinfo"));
     delete lBox;
     delete file; 
-    return;}
-  while(file->readLine(buf,100) != 0)
-    {
+    return;
+  }
+  while(file->readLine(buf,100) > 0) {
       str.sprintf("%-16s", strtok(buf, ":"));
       str = str + QString(":") + QString(strtok(NULL, "\0"));
-
       lBox->insertItem(str);
-    }
+  }
   file->close();
+  delete file;
 }
-
