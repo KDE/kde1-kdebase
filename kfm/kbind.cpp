@@ -1715,13 +1715,13 @@ KMimeType* KMimeType::getMagicMimeType( const char *_filename )
 	{
 	    KMimeMagicResult* result = KMimeType::findFileType( u.path() );
 
-	    printf("Content=%s Accuracy=%d\n", (const char *)result->getContent(), result->getAccuracy());
-	    
 	    // Is it a directory or dont we know anything about it, or ist it a *.kdelnk file ?
 	    if ( result->getContent() == 0L || strcmp( "application/x-directory", result->getContent() ) == 0 ||
 		 strcmp( "application/x-kdelnk", result->getContent() ) == 0 )
 		return KMimeType::findType( _filename );
 	    
+	    printf("Content=%s Accuracy=%d\n", (const char *)result->getContent(), result->getAccuracy());
+
 	    // Can we trust the result ?
 	    if ( result->getAccuracy() >= 50 )
 	    {
