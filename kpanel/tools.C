@@ -298,10 +298,30 @@ void kPanel::generateWindowlist(QPopupMenu* p){
   int nd = KWM::numberOfDesktops();
   int cd = KWM::currentDesktop();
   Window active_window = KWM::activeWindow();
-  for (d=1; d<=nd; d++){
-    p->insertItem(QString("&")+KWM::getDesktopName(d), 1000+d);
-    if (!active_window && d == cd)
-      p->setItemChecked(1000+d, TRUE);
+  if (nd>1){
+    for (d=1; d<=nd; d++){
+      p->insertItem(QString("&")+KWM::getDesktopName(d), 1000+d);
+      if (!active_window && d == cd)
+	p->setItemChecked(1000+d, TRUE);
+      for (i=0; i<nw;i++){
+	if (
+	    (KWM::desktop(callbacklist[i]) == d
+	     && !KWM::isSticky(callbacklist[i])
+	     )
+	    || 
+	    (d == cd && KWM::isSticky(callbacklist[i]))
+	    ){
+	  p->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
+			QString("   ")+KWM::titleWithState(callbacklist[i]),i);
+	  if (callbacklist[i] == active_window)
+	    p->setItemChecked(i, TRUE);
+	}
+      }
+      if (d < nd)
+	p->insertSeparator();
+    }
+  }
+  else {
     for (i=0; i<nw;i++){
       if (
 	  (KWM::desktop(callbacklist[i]) == d
@@ -310,15 +330,13 @@ void kPanel::generateWindowlist(QPopupMenu* p){
 	  || 
 	  (d == cd && KWM::isSticky(callbacklist[i]))
 	  ){
-	p->insertItem(QString("   ")+KWM::titleWithState(callbacklist[i]),i);
+	p->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
+		      KWM::titleWithState(callbacklist[i]),i);
 	if (callbacklist[i] == active_window)
 	  p->setItemChecked(i, TRUE);
       }
     }
-    if (d < nd)
-      p->insertSeparator();
   }
-  
 }
 
 
@@ -533,24 +551,33 @@ QPixmap kPanel::load_pixmap(const char* name, bool is_folder){
 void kPanel::set_label_date(){
   QDateTime d = QDateTime::currentDateTime();
   QString s;
-  s.sprintf(" %.2d:%.2d \n %s %d ",
-	    d.time().hour(),
-	    d.time().minute(),
-// 	    d.date().dayName(d.date().dayOfWeek()),
-	    d.date().monthName(d.date().month()),
-	    d.date().day());
-  
-  //   s = d.time().toString() + "\n" +d.date().toString();
-  
-  QToolTip::add(label_date, s);
-
-  if (label_date->fontMetrics().height() * 2 > label_date->height()){
-    s.sprintf(" %.2d:%.2d",
+  QString s2;
+  if (!clockAmPm){
+    s.sprintf(" %.2d:%.2d ",
 	      d.time().hour(),
 	      d.time().minute());
   }
+  else {
+    s.sprintf(" %.2d:%.2d",
+	      d.time().hour()%12,
+	      d.time().minute());
+    //    s.append(d.time().hour()<13?"am":"pm");
+  }
   
-  label_date->setText(s);
+  s2.sprintf("\n %s %d ",
+	     // 	    d.date().dayName(d.date().dayOfWeek()),
+	     d.date().monthName(d.date().month()),
+	     d.date().day());
+  
+  //   s = d.time().toString() + "\n" +d.date().toString();
+  
+  QToolTip::add(label_date, s+s2);
+
+  if (label_date->fontMetrics().height() * 2 > label_date->height())
+    label_date->setText(s);
+  else
+    label_date->setText(s+s2);
+
   if ( !mBackTexture.isNull() )
     label_date->setBackgroundPixmap( mBackTexture );
 }

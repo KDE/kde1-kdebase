@@ -1,6 +1,10 @@
 In kpanel-0.18:
 
     Patchlevel 3:
+       - new commandline option: "-no-KDE-compliant-window-manager"
+         forces startup regardless of the module communication.
+       - new kpanelrc option "ClockAmPm=on/off"
+       - added mini icons to the windowlist
        - fixes for the integrated clock (Mario Weilguni)
        - autohide feature for the taskbar
                AutoHideTaskbar=on/off

@@ -319,6 +319,7 @@ private:
   bool autoHide;
   bool autoHidden;
   bool autoHideTaskbar;
+  bool clockAmPm;
   
   // tools
   QPixmap create_arrow_pixmap(QPixmap pm);

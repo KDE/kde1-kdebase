@@ -17,7 +17,6 @@ kPanel *the_panel;
 int o_argc;
 char ** o_argv;
 
-
 void restart_the_panel(){
   QApplication::exit();
   execvp(o_argv[0],  o_argv);
@@ -92,7 +91,7 @@ static void grabKey(KeySym keysym, unsigned int mod){
 }
 
 int main( int argc, char ** argv ){
-
+  
   o_argc = argc;
   o_argv = new char*[o_argc + 2];
   int v;
@@ -102,26 +101,38 @@ int main( int argc, char ** argv ){
 
   MyApp myapp( argc, argv, "kpanel" );
 
+  bool use_kwm = true;
+  
   for (v=1; v<argc; v++){
-    printf(KPANEL_VERSION);
-    printf("\n");
-    printf("Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n\n");
-    if (QString("-version")!=argv[v]){
-      printf("Desktop Panel for the KDE Desktop Environment\n");
-      printf("Permitted arguments:\n");
-      printf("-help : displays this message\n");
-      printf("-version : displays the version number\n");
-      printf("And all KApplication and Qt-toolkit arguments.\n");
+    if (QString("-version")==argv[v]){
+      printf(KPANEL_VERSION);
+      printf("\n");
+      printf("Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n\n");
+      exit(0);
     }
+    if (QString("-no-KDE-compliant-window-manager")==argv[v]){
+      use_kwm = false;
+      break;
+    }
+
+    printf("Desktop Panel for the KDE Desktop Environment\n");
+    printf("Permitted arguments:\n");
+    printf("-help : displays this message\n");
+    printf("-version : displays the version number\n");
+    printf("-no-KDE-compliant-window-manager : force startup without \n");
+    printf("           initializing the module communication \n");
+    printf("And all KApplication and Qt-toolkit arguments.\n");
     exit(0);
   }
   
-  if (!KWM::isKWMInitialized()){
-    printf("kpanel: waiting for windowmanager\n");
-    while (!KWM::isKWMInitialized()) sleep(1);
-    sleep(1);
+  if (use_kwm){
+    if (!KWM::isKWMInitialized()){
+      printf("kpanel: waiting for windowmanager\n");
+      while (!KWM::isKWMInitialized()) sleep(1);
+      sleep(1);
+    }
   }
-  
+    
   the_panel = new kPanel(&myapp);
   the_panel->connect(&myapp, SIGNAL(init()), 
 		     SLOT(kwmInit()));

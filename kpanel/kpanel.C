@@ -63,6 +63,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     
     tbhs = 4;
     number_of_desktops = KWM::numberOfDesktops();
+    if (number_of_desktops == 1)
+       number_of_desktops = 0;
 
     tipTimer = new QTimer( this );
     connect( tipTimer, SIGNAL(timeout()),
@@ -177,6 +179,11 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     else
       config->writeEntry("AutoHideTaskbar", "off");
 
+    clockAmPm = false;
+    if (config->hasKey("ClockAmPm"))
+      clockAmPm = (config->readEntry("ClockAmPm") == "on");
+    else
+      config->writeEntry("ClockAmPm", "off");
 
     QString panelHiddenString = "00000000";
     panelHiddenString = config->readEntry("PanelHidden", 
@@ -278,7 +285,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       tmp_push_button->setFocusPolicy(NoFocus);
     }
     tmp_push_button = (QPushButton*) desktopbar->find(currentDesktop-1);
-    tmp_push_button->toggle();
+    if (tmp_push_button)
+      tmp_push_button->toggle();
     connect(desktopbar, SIGNAL(clicked(int)), SLOT(desktop_change(int)));
 
     taskbar_frame = new myFrame(autoHideTaskbar, 0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);

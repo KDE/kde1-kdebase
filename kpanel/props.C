@@ -358,7 +358,7 @@ void kPanel::configure_panel(){
   for (i=number_of_desktops; i<8; i++)
     led[i]->setEnabled(False);
 
-  sl_nr_db = new QSlider(1, 4, 1, number_of_desktops/2, QSlider::Horizontal, mw);
+  sl_nr_db = new QSlider(0, 4, 1, number_of_desktops/2, QSlider::Horizontal, mw);
   label = new QLabel(klocale->translate("Visible"), mw);
   label->setAlignment(AlignRight | AlignVCenter);
   label->setGeometry(50, 130, 60, 25);
