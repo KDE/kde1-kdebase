@@ -467,7 +467,7 @@ static void catch_sig(int sig)
 
       if(mask == 0x7f)
 	ttmode.c_cflag = B9600 | PARENB | CS7 | CREAD;
-#ifdef __FREEBSD__
+#ifdef __FreeBSD__
       ioctl(0,TIOCSETA,(char *)&ttmode);
 #else
 #   ifdef HPUX
