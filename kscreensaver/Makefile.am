@@ -13,7 +13,7 @@ INSTALL_PROGRAM = @INSTALL@ $(SETUIDFLAGS)
 bin_PROGRAMS = kpolygon.kss kswarm.kss klissie.kss kbanner.kss \
 	klines.kss kblankscrn.kss krock.kss kflame.kss klaser.kss \
 	kpyro.kss khop.kss $(XPM_SAVERS) $(GL_SAVERS) kslip.kss \
-	kforest.kss klock kblob.kss kbouboule.kss kscience.kss bsod.kss
+	kforest.kss klock kblob.kss kbouboule.kss kscience.kss kbsod.kss
 
 EXTRA_PROGRAMS = kbat.kss kmorph3d.kss kspace.kss kpipes.kss
 
