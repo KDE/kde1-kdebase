@@ -53,7 +53,7 @@ msgstr "U¾ívateµ: "
 
 #: mainwidget.cpp:53
 msgid "Hostname: "
-msgstr "Meno poèítaèa: "
+msgstr "Poèítaè: "
 
 #: mainwidget.cpp:61
 msgid "System: "
