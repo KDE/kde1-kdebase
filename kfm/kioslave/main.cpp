@@ -463,7 +463,7 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
 			}
 			if (dest_prot->Write(buffer, l) < l )
 			{
-			    ProcessError(dest_prot, _dest_url);
+                            ipc->fatalError( KIO_ERROR_DiskFull, _dest_url, errno );
 			    return;
 			}
 			c += l;
@@ -953,7 +953,7 @@ bool KIOSlave::copySimple( const char *_src_url, const char *_dest_url, bool _ov
 	    }
 	    if (dest_prot->Write(buffer, l) < l )
 	    {
-		ProcessError(dest_prot, _dest_url);
+                ipc->fatalError( KIO_ERROR_DiskFull, _dest_url, errno );
 		return;
 	    }
 	    c += l;

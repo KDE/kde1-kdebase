@@ -1364,6 +1364,10 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
       case KIO_ERROR_FileDoesNotExist:
 	ksprintf(&msg,i18n("File %s\ndoes not exist"), url.data());
 	break;
+      case KIO_ERROR_DiskFull:
+	ksprintf(&msg, i18n("Could not write\n%s\nPerhaps disk full"), url.data());
+	okToContinue = FALSE;
+        break;
       }
       break;
     case KIOJob::JOB_MOUNT:

@@ -26,4 +26,5 @@
 #define KIO_ERROR_SlaveDied 19
 #define KIO_ERROR_FileDoesNotExist 20
 #define KIO_ERROR_NotADirectory 21
+#define KIO_ERROR_DiskFull 22
 #endif
