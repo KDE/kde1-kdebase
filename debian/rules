@@ -2,29 +2,34 @@
 # Made with the aid of debmake, by Christoph Lameter,
 # based on the sample debian/rules file for GNU hello by Ian Jackson.
 
-build:
+BUILDDIR = ../build_kdebase
+
+build: $(BUILDDIR)/build
+
+$(BUILDDIR)/build:
 	dh_testdir
-## prefix is useless and leads to problems, since configure looks for
-## $prefix/include only, if it's given
-	( CFLAGS="-O2 -g -Wall -Wno-uninitialized -DUTMP_SUPPORT -DUTMP='\"/var/run/utmp\"'" \
+	if test ! -f configure; then \
+	  $(MAKE) -f admin/Makefile.common ;\
+	fi 
+	pwd=`pwd` ;\
+	test -d $(BUILDDIR) || mkdir $(BUILDDIR) ;\
+	cd $(BUILDDIR) ;\
+	CFLAGS="-O2 -g -Wall -Wno-uninitialized -DUTMP_SUPPORT \
+	  -DUTMP='\"/var/run/utmp\"'" \
 	  CXXFLAGS="-O2 -g -Wall -Wno-uninitialized" \
 	  RUN_KAPPFINDER="no" \
-	./configure --with-shadow --without-pam \
+	$$pwd/configure --with-shadow --without-pam \
 	--enable-debug --with-install-root=`pwd`/debian/tmp \
-	--disable-rpath )
+	--disable-rpath && make
 
-	make
+	touch $(BUILDDIR)/build
 
-	touch build
+clean: debian-clean
+	-rm -rf $(BUILDDIR)
 
-clean:
+debian-clean:
 	dh_testdir
-	-rm -f build
-	-make distclean
-	-rm -f `find . -name "*~"`
-	-rm -f `find . -name "*.moc"`
-	-rm -rf debian/tmp debian/files* core debian/substvars \
-		debian/menu debian/*shlibs*
+	-rm -f $(BUILDDIR)/build
 
 binary-indep:	checkroot build
 	$(checkdir)
@@ -36,10 +41,16 @@ binary-arch:	checkroot build
 	dh_testdir
 	dh_testroot
 	dh_clean -k
-	make install prefix=`pwd`/debian/tmp/usr
+	rm -rf $(BUILDDIR)/debian
+	cp -ra debian $(BUILDDIR)/debian
+	(cd $(BUILDDIR) && $(MAKE) -f debian/rules binary-arch2)
+
+binary-arch2:
+	dh_installdirs
+	make install prefix=`pwd`/debian/tmp/usr 
 	-mv debian/tmp/etc/kde/kdmrc \
 			debian/tmp/etc/kde/kdmrc.in
-	perl debian/kderules
+	perl -w debian/kderules
 	cp debian/README.kde debian/tmp/usr/doc/kde
 	install -d debian/tmp/etc/init.d
 	cp debian/kdm.init.d debian/tmp/etc/init.d/kdm
@@ -75,6 +86,7 @@ binary-arch:	checkroot build
 	dh_gencontrol	
 	dh_md5sums
 	dh_builddeb
+	$(MAKE) -f debian/rules debian-clean
 
 # Below here is fairly generic really
 
