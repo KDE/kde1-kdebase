@@ -27,7 +27,10 @@ void kPanel::layoutTaskbar(){
 	   QRect geom(0,y,taskbar_frame->width(), taskbar_height);
 	   button->setGeometry(geom);
 	   geom.moveTopLeft(button->mapToGlobal(QPoint(0,0)));
-	   KWM::setIconGeometry(button->win, geom);
+	   if (taskbar_position == hidden)
+	       KWM::setIconGeometry(button->win, QRect());
+	   else
+	       KWM::setIconGeometry(button->win, geom);
 	   y += taskbar_height+1;
 	   if (!button->isVisible())
 	     button->show();
@@ -55,7 +58,10 @@ void kPanel::layoutTaskbar(){
 	     QRect geom(x,taskbar_height * r, w, taskbar_height);
 	     button->setGeometry(geom);
 	     geom.moveTopLeft(button->mapToGlobal(QPoint(0,0)));
-	     KWM::setIconGeometry(button->win, geom);
+	     if (taskbar_position == hidden)
+		 KWM::setIconGeometry(button->win, QRect());
+	     else
+		 KWM::setIconGeometry(button->win, geom);
 	     n--;
 	     x += w+1;
 	     if (r<nr-1 && x > taskbar_frame->width() - (w+1)){
@@ -300,7 +306,7 @@ void kPanel::check_button_bounds(QWidget* button){
 }
 
 void kPanel::reflow_buttons(QWidget* moved_button){
-// 06.01.1999 thomas.unger@mannheim-netz.de (tu) 
+// 06.01.1999 thomas.unger@mannheim-netz.de (tu)
 
     int my_pos;
     for(my_pos=0 ; my_pos<nbuttons && moved_button != entries[my_pos].button ; my_pos++);
@@ -311,7 +317,7 @@ void kPanel::reflow_buttons(QWidget* moved_button){
          && (my_pos < nbuttons ) ) {
 
        // well, the panel is "visually divided" into two parts by the control-panel.
-       // So I think we have to treat the buttons located on these parts separately. 
+       // So I think we have to treat the buttons located on these parts separately.
 
        int tmp_nbuttons = nbuttons; // default: touch all buttons
 
@@ -333,14 +339,14 @@ void kPanel::reflow_buttons(QWidget* moved_button){
        int mydelta_x =  moving_button_oldpos.x() + moved_button->width()
     	 - entries[my_pos-1].button->x() - entries[my_pos-1].button->width();
 
-       int mydelta_y =  moving_button_oldpos.y() + moved_button->height() 
+       int mydelta_y =  moving_button_oldpos.y() + moved_button->height()
     	 - entries[my_pos-1].button->y() - entries[my_pos-1].button->height();
 
         // now adjust buttons-pos right from moving_button
        for( ; my_pos < tmp_nbuttons  ; my_pos++){
             if (orientation == vertical){
                 // will mydelta_? position the button on the control-panel ?
-                if ((bound_top_left - entries[my_pos].button->height() < entries[my_pos].button->y()-mydelta_y) 
+                if ((bound_top_left - entries[my_pos].button->height() < entries[my_pos].button->y()-mydelta_y)
                     && (bound_bottom_right > entries[my_pos].button->y()-mydelta_y)) {
                     // move right/below to control-panel
                     entries[my_pos].button->move( entries[my_pos].button->x(), bound_bottom_right) ;
@@ -349,8 +355,8 @@ void kPanel::reflow_buttons(QWidget* moved_button){
                     entries[my_pos].button->move(entries[my_pos].button->x(), entries[my_pos].button->y() - mydelta_y );
                 }
             }
-            else{ 
-                if (( bound_top_left - entries[my_pos].button->width() < entries[my_pos].button->x()-mydelta_x) 
+            else{
+                if (( bound_top_left - entries[my_pos].button->width() < entries[my_pos].button->x()-mydelta_x)
                     && (bound_bottom_right > entries[my_pos].button->x()-mydelta_x)) {
                     // move right/below to control-panel
                     entries[my_pos].button->move(bound_bottom_right ,entries[my_pos].button->y() );
