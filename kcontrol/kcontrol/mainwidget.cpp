@@ -8,10 +8,6 @@
 #endif
 
 #include <unistd.h>
-
-// _XOPEN_SOURCE is required on glibc 2.1.x based systems for cuserid();
-#define _XOPEN_SOURCE
-
 #include <kiconloader.h>
 #include <kcharsets.h>
 
@@ -58,7 +54,7 @@ void mainWidget::paintEvent(QPaintEvent *)
   p.setFont(boldFont);
   str= i18n("User: ");
   p.drawText(60,90,str);
-  str.sprintf("%s",cuserid(NULL));
+  str.sprintf("%s",getlogin());
   p.setFont(normalFont);
   p.drawText(180,90,str);
 
