@@ -122,6 +122,7 @@ void KMimeType::setPixmap( const char *_file )
 
 KMimeType* KMimeType::getMagicMimeType( const char *_url )
 {
+    /*
     // Just for speedup, because KURL is slow
     if ( strncmp( _url, "file:/", 6 ) == 0 || _url[0] == '/' )
     {
@@ -157,7 +158,32 @@ KMimeType* KMimeType::getMagicMimeType( const char *_url )
 	}
     }
     
-    return KMimeType::findType( _url );
+    return KMimeType::findType( _url ); */
+
+    KMimeType *type = KMimeType::findType( _url );
+    if ( type != defaultType )
+	return type;
+
+    if ( strncmp( _url, "file:/", 6 ) != 0 && _url[0] != '/' )
+	return type;
+
+    KURL u( _url );
+    // Not a tar file ?
+    if ( u.hasSubProtocol() )
+	return type;
+    
+    KMimeMagicResult* result = KMimeType::findFileType( u.path() );
+
+    // Is it a directory or dont we know anything about it ?
+    if ( result->getContent() == 0L || strcmp( "inode/directory", result->getContent() ) == 0 ||
+	 strcmp( "application/octet-stream", result->getContent() ) == 0 )
+	return type;
+    
+    KMimeType *type2 = KMimeType::findByName( result->getContent() );
+    if ( type2 )
+	return type2;
+    
+    return type;
 }
 
 const char* KMimeType::getPixmapFileStatic( const char *_url, bool _mini )
@@ -1189,15 +1215,20 @@ bool KMimeBind::runBinding( const char *_url )
 
     while ( ( pos = cmd.find( "%c" ) ) != -1 )
     {
-	QString s = _url;
-	if ( s.length() > 7 && s.right( 7 ) == ".kdelnk" )
-	{
-	    s = s.left(s.length()-7);
+	if ( !program.isEmpty() )
+	    cmd.replace( pos, 2, program.data() );
+	else
+	{	
+	    QString s = _url;
+	    if ( s.length() > 7 && s.right( 7 ) == ".kdelnk" )
+	    {
+		s = s.left(s.length()-7);
+	    }
+	    int a = s.findRev("/");
+	    if ( a > -1 )
+		s = s.right(s.length()-1-a);
+	    cmd.replace(pos,2,s.data());
 	}
-	int a = s.findRev("/");
-	if ( a > -1 )
-	    s = s.right(s.length()-1-a);
-	cmd.replace(pos,2,s.data());
     }        
 
     // debugT("::CMD = %s\n",cmd.data());
@@ -1619,6 +1650,7 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
     }
     
     QString exec = config->readEntry( "Exec" );
+    QString name = config->readEntry( "Name" );
     QString term = config->readEntry( "Terminal" );
     QString termOptions = config->readEntry( "TerminalOptions" );
     
@@ -1681,15 +1713,20 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
 	exec.replace( i, 2, _url );
     while ( ( i = exec.find( "%c" ) ) != -1 )
     {
-	QString s = _url;
-	if ( s.length() > 7 && s.right( 7 ) == ".kdelnk" )
+	if ( !name.isEmpty() )
+	    exec.replace( i, 2, name.data() );
+	else
 	{
-	    s = s.left(s.length()-7);
+	    QString s = _url;
+	    if ( s.length() > 7 && s.right( 7 ) == ".kdelnk" )
+	    {
+		s = s.left(s.length()-7);
+	    }
+	    int a = s.findRev("/");
+	    if ( a > -1 )
+		s = s.right(s.length()-1-a);
+	    exec.replace(i,2,s.data());
 	}
-	int a = s.findRev("/");
-	if ( a > -1 )
-	    s = s.right(s.length()-1-a);
-	exec.replace(i,2,s.data());
     }     
     
     if ( term == "1" )

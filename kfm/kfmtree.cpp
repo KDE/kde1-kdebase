@@ -382,21 +382,22 @@ void KFMDirTreeItem::paintCell( QPainter *_painter, int _col )
 {
     int x = 0;
     
+    x += ( PIXMAP_WIDTH + 6 ) * level;
+
     if ( _col == 0 )
     {
 	if ( !bIsFile )
 	{
 	    if ( bOpened )
-		_painter->drawPixmap( QPoint( 4, ( CELL_HEIGHT - PIXMAP_HEIGHT ) / 2 ), KFinder::getOpenPixmap() );
+		_painter->drawPixmap( QPoint( x + 4, ( CELL_HEIGHT - PIXMAP_HEIGHT ) / 2 ), KFinder::getOpenPixmap() );
 	    else
-		_painter->drawPixmap( QPoint( 4, ( CELL_HEIGHT - PIXMAP_HEIGHT ) / 2 ), KFinder::getClosePixmap() );
+		_painter->drawPixmap( QPoint( x + 4, ( CELL_HEIGHT - PIXMAP_HEIGHT ) / 2 ), KFinder::getClosePixmap() );
 	}
 	
 	x += PIXMAP_WIDTH + 4;
-	x += ( PIXMAP_WIDTH + 6 ) * level;
 	
 	QFontMetrics fm = _painter->fontMetrics();
-	_painter->drawPixmap( QPoint( x+ 6, ( CELL_HEIGHT - PIXMAP_HEIGHT ) / 2 ), *pixmap );
+	_painter->drawPixmap( QPoint( x + 6, ( CELL_HEIGHT - PIXMAP_HEIGHT ) / 2 ), *pixmap );
 	_painter->setPen( black );
 	_painter->drawText( x + 6 + PIXMAP_WIDTH + 6, ( CELL_HEIGHT - fm.ascent() - fm.descent() ) / 2 + fm.ascent(), name );
     }
@@ -416,7 +417,8 @@ void KFMDirTreeItem::pressed( QMouseEvent *_ev, const QPoint &_globalPoint  )
 	return;
     }
     
-    if ( _ev->pos().x() >= PIXMAP_WIDTH + 4 )
+    int x = ( PIXMAP_WIDTH + 6 ) * level;
+    if ( _ev->pos().x() >= x + PIXMAP_WIDTH + 4 )
     {
 	dirTree->emitUrlSelected( url, _ev->button() );
 	return;

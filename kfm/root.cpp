@@ -920,8 +920,8 @@ KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
     // connect( drop_zone, SIGNAL( dropLeave( KDNDDropZone *) ), this, SLOT( slotDropLeaveEvent( KDNDDropZone *) ) );
 
     setGeometry( _x - pixmapXOffset, _y, width, height );
-    lower();
     show();
+    lower();
 }
 
 void KRootIcon::initToolTip()

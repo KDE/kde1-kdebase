@@ -211,7 +211,7 @@ KFinderWin::KFinderWin( KFinder *_finder ) : QTableView( _finder )
     
     itemList.setAutoDelete( FALSE );
     
-    setBackgroundColor( lightGray );
+    setBackgroundColor( white );
     
     finder = _finder;
 
@@ -283,7 +283,7 @@ void KFinderWin::offsets( int &_xpos, int &_ypos )
 
 void KFinderWin::paintCell( QPainter * _painter, int _row, int _col )
 {
-    if ( finder->sort == _col || finder->buttonList.count() == 0 )
+    /* if ( finder->sort == _col || finder->buttonList.count() == 0 )
     {
 	_painter->fillRect( 0, 0, cellWidth( _col ), cellHeight(), lightGray );
     }
@@ -294,7 +294,7 @@ void KFinderWin::paintCell( QPainter * _painter, int _row, int _col )
     }
 
     _painter->setPen( white );
-    _painter->drawLine( 0, cellHeight() - 1, width(), cellHeight() - 1 );
+    _painter->drawLine( 0, cellHeight() - 1, width(), cellHeight() - 1 ); */
     
     itemList.at( _row )->paintCell( _painter, _col );
 }

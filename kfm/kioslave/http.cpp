@@ -257,6 +257,13 @@ int KProtocolHTTP::Open(KURL *_url, int mode)
 	if ( _url->path()[0] != '/' ) command += "/";
 	command += _url->path();
 	command += " HTTP/1.0\n"; /* start header */
+
+	command += "Host: "; /* support for virtual hosts */
+	command += _url->host();
+	command += "\n";
+ 
+        if( strlen(_url->user()) != 0 )
+
 	if( strlen(_url->user()) != 0 )
 	{
 		char *www_auth = create_www_auth(_url->user(),_url->passwd());
