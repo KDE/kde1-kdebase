@@ -1147,6 +1147,7 @@ void MyApp::doLogout(){
 void MyApp::reConfigure(){
   getKApplication()->getConfig()->reparseConfiguration();
   readConfiguration();
+  manager->readConfiguration();
 }
 
 // show the modal logout dialog

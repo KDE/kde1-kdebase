@@ -15,6 +15,7 @@
 #include <qregexp.h>
 #include <qdatetm.h>
 
+#include <kapp.h>
 #include <kwm.h>
 
 #ifdef HAVE_CONFIG_H
@@ -68,7 +69,9 @@ Manager::Manager(): QObject(){
   proxy_hints = 0;
   proxy_props = 0;
   proxy_ignore = 0;
-  
+
+  readConfiguration();
+
   int dummy;
   XGCValues gv;
   GC gc;
@@ -1117,6 +1120,22 @@ void Manager::raiseElectricBorders(){
 }
 
 
+void Manager::readConfiguration(){
+  // decoration tricks to be somewhat compatible with traditional window managers
+  no_decoration_titles.clear();
+  tiny_decoration_titles.clear();
+  no_decoration_classes.clear();
+  tiny_decoration_classes.clear();
+
+  KConfig* config = kapp->getConfig();
+
+  config->setGroup( "Decoration" );
+  config->readListEntry("noDecorationTitles", no_decoration_titles);
+  config->readListEntry("tinyDecorationTitles", tiny_decoration_titles);
+  config->readListEntry("noDecorationClasses", no_decoration_classes);
+  config->readListEntry("tinyDecorationClasses", tiny_decoration_classes);
+}
+
 void Manager::randomPlacement(Client* c){
   static int px = TITLEBAR_HEIGHT + BORDER;
   static int py = 2 * TITLEBAR_HEIGHT + BORDER;
@@ -1585,19 +1604,21 @@ void Manager::manage(Window w, bool mapped){
   }
 
   // test for manage prohibitation
+  char* s;
+  QRegExp r;
   if (!mapped) {
     QString t = getprop(w, XA_WM_NAME);
-    char* s;
-    QRegExp r;
-    for (s = do_not_manage_titles.first(); s ; 
-	 s = do_not_manage_titles.next()){
-      r = s;
-      if (r.match(s) != -1){
-	do_not_manage_titles.remove();
-	sendToModules(module_win_add, 0, w);
-	sendToModules(module_win_remove, 0, w);
-	return;
-      } 
+    if (!t.isEmpty()){
+      for (s = do_not_manage_titles.first(); s ; 
+	   s = do_not_manage_titles.next()){
+	r = s;
+	if (r.match(t) != -1){
+	  do_not_manage_titles.remove();
+	  sendToModules(module_win_add, 0, w);
+	  sendToModules(module_win_remove, 0, w);
+	  return;
+	} 
+      }
     }
   }
   
@@ -1658,7 +1679,7 @@ void Manager::manage(Window w, bool mapped){
     // don't show any visible decoration, if the window is shaped
     XShapeGetRectangles(qt_xdisplay(), c->window, ShapeBounding, &n, &order);
     if ( n > 1 ) {
-      c->decoration = 0;
+      c->decoration = KWM::noDecoration;
     }
   }
 
@@ -1685,6 +1706,69 @@ void Manager::manage(Window w, bool mapped){
   c->iconname = getprop(c->window, XA_WM_ICON_NAME);
   c->name = getprop(c->window, XA_WM_NAME); 
   c->setLabel();
+
+  // decoration tricks to be somewhat compatible with traditional window managers
+  if (!c->label.isEmpty()){
+    if (c->getDecoration() == KWM::normalDecoration){
+      for (s = no_decoration_titles.first(); s ; s = no_decoration_titles.next()){
+	r = s; 
+	if (r.match(c->label) != -1){
+	  c->decoration = KWM::noDecoration;
+	  break;
+	} 
+      }
+    }
+    if (c->getDecoration() == KWM::normalDecoration){
+      for (s = tiny_decoration_titles.first(); s ; s = tiny_decoration_titles.next()){
+	r = s; 
+	if (r.match(c->label) != -1){
+	  c->decoration = KWM::tinyDecoration;
+	  break;
+	} 
+      }
+    }
+  }
+  if (!c->instance.isEmpty()){
+    if (c->getDecoration() == KWM::normalDecoration){
+      for (s = no_decoration_classes.first(); s ; s = no_decoration_classes.next()){
+	r = s; 
+	if (r.match(c->instance) != -1){
+	  c->decoration = KWM::noDecoration;
+	  break;
+	} 
+      }
+    }
+    if (c->getDecoration() == KWM::normalDecoration){
+      for (s = tiny_decoration_classes.first(); s ; s = tiny_decoration_classes.next()){
+	r = s; 
+	if (r.match(c->instance) != -1){
+	  c->decoration = KWM::tinyDecoration;
+	  break;
+	} 
+      }
+    }
+  }
+  if (!c->klass.isEmpty()){
+    if (c->getDecoration() == KWM::normalDecoration){
+      for (s = no_decoration_classes.first(); s ; s = no_decoration_classes.next()){
+	r = s; 
+	if (r.match(c->klass) != -1){
+	  c->decoration = KWM::noDecoration;
+	  break;
+	} 
+      }
+    }
+    if (c->getDecoration() == KWM::normalDecoration){
+      for (s = tiny_decoration_classes.first(); s ; s = tiny_decoration_classes.next()){
+	r = s; 
+	if (r.match(c->klass) != -1){
+	  c->decoration = KWM::tinyDecoration;
+	  break;
+	} 
+      }
+    }
+  }
+  
 
   // find out the initial state. Several possibilities exist
   hints = XGetWMHints(qt_xdisplay(), c->window);

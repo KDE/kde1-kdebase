@@ -279,6 +279,10 @@ public:
   // with the mouse. It may switch to another virtual desktop
   void electricBorder(Window border);
 
+  // the manager object also reads a few properties from the
+  // rc-file. This is called when the users wants to reconfigure.
+  void readConfiguration();
+
 signals:
   // this signal is emitted if the manager recieves a configure
   // command (for example from "kwmcom configure")
@@ -468,6 +472,13 @@ private:
   // top. For that reason kwm calls this function always after some
   // windows have been raised.
   void raiseElectricBorders();
+
+  // decoration tricks to be somewhat compatible with traditional window managers
+  QStrList no_decoration_titles;
+  QStrList tiny_decoration_titles;
+  QStrList no_decoration_classes;
+  QStrList tiny_decoration_classes;
+
 
 };
 

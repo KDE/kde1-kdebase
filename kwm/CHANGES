@@ -11,6 +11,22 @@ influences from my experiences with the former kwm.
 
 In 0.11:
 --------
+patchlevel 7:
+        - Some new properties for the kwmrc:
+
+                [Decoration]
+                noDecorationTitles=,
+                tinyDecorationTitles=,
+                noDecorationClasses=,
+                tinyDecorationClasses=,
+
+            Each property allows you to specify a comma separated list
+            of regular expressions. A window whose title or class
+            matches a specified expression will be decorated appropriately. 
+            Note: these hints only affect NEW windows. Do not forget to 
+            call "kwmcom configure" or to restart kwm after you changed the
+            kwmrc file.
+
 patchlevel 6:
         - horizontal shading (blending) a la kpixmap
         - fixed motif decoration hint handling. Useful for the fullscreen view
