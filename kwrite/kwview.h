@@ -1,14 +1,36 @@
+/*
+   Copyright (C) 1998, 1999 Jochen Wilhelmy
+                            digisnap@cs.tu-berlin.de
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Library General Public
+    License as published by the Free Software Foundation; either
+    version 2 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Library General Public License for more details.
+
+    You should have received a copy of the GNU Library General Public License
+    along with this library; see the file COPYING.LIB.  If not, write to
+    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+    Boston, MA 02111-1307, USA.
+*/
+
 #ifndef _KWVIEV_H_
 #define _KWVIEV_H_
 
-#include <qscrbar.h>
-#include <qiodev.h>
-#include <qpopmenu.h>
+#include <qscrollbar.h>
+#include <qiodevice.h>
+#include <qpopupmenu.h>
+#include <qkeycode.h>
 
 #include <kfm.h>
 #include <kconfig.h>
 
 #include "kwdialog.h"
+#include "kguicommand.h"
 
 class KWriteDoc;
 class Highlight;
@@ -58,7 +80,74 @@ const int lfInsert          = 1;
 const int lfNewFile         = 2;
 const int lfNoAutoHl        = 4;
 
+//end of line settings
+const int eolUnix           = 0;
+const int eolMacintosh      = 1;
+const int eolDos            = 2;
+
+//command categories
+const int ctCursorCommands    = 0;
+const int ctEditCommands      = 1;
+const int ctFindCommands      = 2;
+const int ctBookmarkCommands  = 3;
+const int ctStateCommands     = 4;
+
+//cursor movement commands
+const int selectFlag        = 0x100000;
+const int multiSelectFlag   = 0x200000;
+const int cmLeft            = 1;
+const int cmRight           = 2;
+const int cmWordLeft        = 3;
+const int cmWordRight       = 4;
+const int cmHome            = 5;
+const int cmEnd             = 6;
+const int cmUp              = 7;
+const int cmDown            = 8;
+const int cmScrollUp        = 9;
+const int cmScrollDown      = 10;
+const int cmTopOfView       = 11;
+const int cmBottomOfView    = 12;
+const int cmPageUp          = 13;
+const int cmPageDown        = 14;
+const int cmCursorPageUp    = 15;
+const int cmCursorPageDown  = 16;
+const int cmTop             = 17;
+const int cmBottom          = 18;
+//edit commands
+const int cmReturn          = 1;
+const int cmDelete          = 2;
+const int cmBackspace       = 3;
+const int cmKillLine        = 4;
+const int cmUndo            = 5;
+const int cmRedo            = 6;
+const int cmCut             = 7;
+const int cmCopy            = 8;
+const int cmPaste           = 9;
+const int cmIndent          = 10;
+const int cmUnindent        = 11;
+const int cmSelectAll       = 12;
+const int cmDeselectAll     = 13;
+const int cmInvertSelection = 14;
+//find commands
+const int cmFind            = 1;
+const int cmReplace         = 2;
+const int cmFindAgain       = 3;
+const int cmGotoLine        = 4;
+//bookmark commands
+const int cmSetBookmark     = 1;
+const int cmAddBookmark     = 2;
+const int cmClearBookmarks  = 3;
+const int cmSetBookmarks    = 10;
+const int cmGotoBookmarks   = 20;
+//state commands
+const int cmToggleInsert    = 1;
+const int cmToggleVertical  = 2;
+
+
 void resizeBuffer(void *user, int w, int h);
+
+class KWriteView;
+class KWrite;
 
 struct PointStruc {
   int x;
@@ -66,7 +155,9 @@ struct PointStruc {
 };
 
 struct VConfig {
+  KWriteView *view;
   PointStruc cursor;
+  int cXPos;
   int flags;
   int wrapAt;
 };
@@ -77,7 +168,16 @@ struct SConfig {
   int flags;
 };
 
-class KWrite;
+struct LineRange {
+  int start;
+  int end;
+};
+
+struct BracketMark {
+  PointStruc cursor;
+  int sXPos;
+  int eXPos;
+};
 
 class KWriteView : public QWidget {
     Q_OBJECT
@@ -87,14 +187,25 @@ class KWriteView : public QWidget {
     KWriteView(KWrite *, KWriteDoc *);
     ~KWriteView();
 
+    virtual void doCursorCommand(VConfig &, int cmdNum);
+    virtual void doEditCommand(VConfig &, int cmdNum);
+
     void cursorLeft(VConfig &);
     void cursorRight(VConfig &);
-    void cursorUp(VConfig &);
-    void cursorDown(VConfig &);
+    void wordLeft(VConfig &);
+    void wordRight(VConfig &);
     void home(VConfig &);
     void end(VConfig &);
+    void cursorUp(VConfig &);
+    void cursorDown(VConfig &);
+    void scrollUp(VConfig &);
+    void scrollDown(VConfig &);
+    void topOfView(VConfig &);
+    void bottomOfView(VConfig &);
     void pageUp(VConfig &);
     void pageDown(VConfig &);
+    void cursorPageUp(VConfig &);
+    void cursorPageDown(VConfig &);
     void top(VConfig &);
     void bottom(VConfig &);
 
@@ -105,18 +216,22 @@ class KWriteView : public QWidget {
   protected:
     void getVConfig(VConfig &);
     void update(VConfig &);
-//    void updateCursor(PointStruc &start, PointStruc &end, bool insert);
     void insLine(int line);
     void delLine(int line);
     void updateCursor();
     void updateCursor(PointStruc &newCursor);
-    void updateView(int flags, int newXPos = 0, int newYPos = 0);
-//  void scroll2(int, int);
-    void tagLines(int start, int end);
+
+    void lineValues(int h);
+    void tagLines(int start, int end, int x1, int x2);
     void tagAll();
+    void setPos(int x, int y);
+    void center();
+
+    void updateView(int flags);
 
     void paintTextLines(int xPos, int yPos);
     void paintCursor();
+    void paintBracketMark();
 
     void placeCursor(int x, int y, int flags);
 
@@ -124,6 +239,7 @@ class KWriteView : public QWidget {
     virtual void focusOutEvent(QFocusEvent *);
     virtual void keyPressEvent(QKeyEvent *e);
     virtual void mousePressEvent(QMouseEvent *);
+    virtual void mouseDoubleClickEvent(QMouseEvent *);
     virtual void mouseReleaseEvent(QMouseEvent *);
     virtual void mouseMoveEvent(QMouseEvent *);
     virtual void paintEvent(QPaintEvent *);
@@ -149,14 +265,21 @@ class KWriteView : public QWidget {
     int cursorTimer;
     int cXPos;
     int cOldXPos;
-    bool exposeCursor;//cursorMoved;
 
     int startLine;
     int endLine;
+
+    bool exposeCursor;
     int updateState;
-    int updateLines[2];
+  //  int updateLines[2];
+    int numLines;
+    LineRange *lineRanges;
+    int newXPos;
+    int newYPos;
 
     QPixmap *drawBuffer;
+
+    BracketMark bm;
 };
 
 class KWBookmark {
@@ -168,8 +291,8 @@ class KWBookmark {
     QString Name;
 };
 
-/** An edit widget with many options, document/view architecture and syntax
-    highlight.
+/** The KWrite text editor widget. It has many options, document/view
+    architecture and syntax highlight.
     @author Jochen Wilhelmy
 */
 
@@ -185,6 +308,12 @@ class KWrite : public QWidget {
     */
     ~KWrite();
 
+    static void addCursorCommands(KGuiCmdManager &);
+    static void addEditCommands(KGuiCmdManager &);
+    static void addFindCommands(KGuiCmdManager &);
+    static void addBookmarkCommands(KGuiCmdManager &);
+    static void addStateCommands(KGuiCmdManager &);
+
 //status functions
     /** Returns the current line number, that is the line the cursor is on.
         For the first line it returns 0. Signal newCurPos() is emitted on
@@ -195,6 +324,9 @@ class KWrite : public QWidget {
         For the first column it returns 0.
     */
     int currentColumn();
+    /** Returns the number of the character, that the cursor is on (cursor x)
+    */
+    int currentCharNum();
     /** Sets the current cursor position
     */
     void setCursorPosition(int line, int col);
@@ -210,7 +342,7 @@ class KWrite : public QWidget {
     bool isModified();
     /** Sets the modification status of the document
     */
-    void setModified(bool);
+    void setModified(bool m = true);
     /** Returns true if this editor is the only owner of its document
     */
     bool isLastView();
@@ -229,12 +361,15 @@ class KWrite : public QWidget {
     /** Presents a color dialog to the user
     */
     void colDlg();
+    /** Executes state command cmdNum
+    */
+    void doStateCommand(int cmdNum);
+    /** Toggles Insert mode
+    */
+    void toggleInsert();
     /** Toggles "Vertical Selections" option
     */
     void toggleVertical();
-    /** Toggles Overwrite mode
-    */
-    void toggleOverwrite();
   signals:
     /** The cursor position has changed. Get the values with currentLine()
         and currentColumn()
@@ -243,25 +378,38 @@ class KWrite : public QWidget {
     /** Modified flag or config flags have changed
     */
     void newStatus();
-    /** Emits messages for the status line
-    */
-    void statusMsg(const char *);
-    /** The file name has changed. The main window can use this to change
-        its caption
-    */
-    void newCaption();
     /** The undo/redo enable status has changed
     */
     void newUndo();
+    /** The marked text state has changed. This can be used to enable/disable
+        cut and copy
+    */
+    void newMarkStatus();
+    /** The file name has changed. The main window can use this to change
+        its caption
+    */
+    void fileChanged();
+    /** Emits messages for the status line
+    */
+    void statusMsg(const char *);
   protected:
     int configFlags;
     int wrapAt;
 
 //text access
   public:
+     /** Gets the number of text lines;
+     */
+     int numLines();
      /** Gets the complete document content as string
      */
      QString text();
+     /** Gets the text line where the cursor is on
+     */
+     QString currentTextLine();
+     /** Gets a text line
+     */
+     QString textLine(int num);
      /** Gets the word where the cursor is on
      */
      QString currentWord();
@@ -272,12 +420,21 @@ class KWrite : public QWidget {
      /** Discard old text without warning and set new text
      */
      void setText(const char *);
+     /** Insert text at the current cursor position. If length is a positive
+         number, it restricts the number of inserted characters
+     */
+     void insertText(const char *, int len = -1);
+     /** Queries if there is marked text
+     */
+     bool hasMarkedText();
      /** Gets the marked text as string
      */
      QString markedText();
+     int tabWidth();
 //url aware file functions
   public:
-    enum action{GET, PUT}; //tells us what kind of job kwrite is waiting for
+    enum fileAction{GET, PUT}; //tells us what kind of job kwrite is waiting for
+    enum fileResult{OK, CANCEL, RETRY, ERROR};
     /** Loads a file from the given QIODevice. For insert = false the old
         contents will be lost.
     */
@@ -302,6 +459,9 @@ class KWrite : public QWidget {
     void kfmFinished();
     void kfmError(int, const char *);
   public:
+    /** Returns true if the document has a filename (not counting the path).
+    */
+    bool hasFileName();
     /** Returns the URL of the currnet file
     */
     const char *fileName();
@@ -333,17 +493,26 @@ class KWrite : public QWidget {
         name is Untitled, as it is after a call to newFile(), this routing will
         call saveAs().
     */
-    void save();
+    fileResult save();
     /** Allows the user to save the file under a new name. This starts the
         automatic highlight selection.
     */
-    void saveAs();
+    fileResult saveAs();
   protected:
     KFM *kfm;
     QString kfmURL;
     QString kfmFile;
-    action kfmAction;
+    fileAction kfmAction;
     int kfmFlags;
+
+//command processors
+  public slots:
+    /** Does Cursor Command cmdNum
+    */
+    void doCursorCommand(int cmdNum);
+    /** Does Edit Command cmdNum
+    */
+    void doEditCommand(int cmdNum);
 
 //edit functions
   public:
@@ -353,47 +522,47 @@ class KWrite : public QWidget {
   public slots:
     /** Moves the marked text into the clipboard
     */
-    void cut();
+    void cut() {doEditCommand(cmCut);}
     /** Copies the marked text into the clipboard
     */
-    void copy();
+    void copy() {doEditCommand(cmCopy);}
     /** Inserts text from the clipboard at the actual cursor position
     */
-    void paste();
+    void paste() {doEditCommand(cmPaste);}
     /** Undoes the last operation. The number of undo steps is configurable
     */
-    void undo();
+    void undo() {doEditCommand(cmUndo);}
     /** Repeats an operation which has been undone before.
     */
-    void redo();
+    void redo() {doEditCommand(cmRedo);}
     /** Moves the current line or the selection one position to the right
     */
-    void indent();
+    void indent() {doEditCommand(cmIndent);}
     /** Moves the current line or the selection one position to the left
     */
-    void unIndent();
+    void unIndent() {doEditCommand(cmUnindent);}
     /** Selects all text
     */
-    void selectAll();
+    void selectAll() {doEditCommand(cmSelectAll);}
     /** Deselects all text
     */
-    void deselectAll();
+    void deselectAll() {doEditCommand(cmDeselectAll);}
     /** Inverts the current selection
     */
-    void invertSelection();
+    void invertSelection() {doEditCommand(cmInvertSelection);}
 
 //search/replace functions
   public slots:
     /** Presents a search dialog to the user
     */
-    void search();
+    void find();
     /** Presents a replace dialog to the user
     */
     void replace();
     /** Repeasts the last search or replace operation. On replace, the
         user is prompted even if the "Prompt On Replace" option was off.
     */
-    void searchAgain();
+    void findAgain();
     /** Presents a "Goto Line" dialog to the user
     */
     void gotoLine();
@@ -409,8 +578,9 @@ class KWrite : public QWidget {
   protected slots:
     void replaceSlot();
   protected:
-    QString searchFor;
-    QString replaceWith;
+    QStrList searchForList;
+//    QString replaceWith;
+    QStrList replaceWithList;
     int searchFlags;
     int replaces;
     SConfig s;
@@ -430,28 +600,36 @@ class KWrite : public QWidget {
     /** Install a Bookmark Menu. The bookmark items will be added to the
         end of the menu
     */
-    void installBMPopup(QPopupMenu *);
+    void installBMPopup(KGuiCmdPopup *);
     /** Sets the actual edit position as bookmark number n
     */
+    void setBookmark();
+    void addBookmark();
+    void clearBookmarks();
     void setBookmark(int n);
+    void gotoBookmark(int n);
   public slots:
+    void doBookmarkCommand(int cmdNum);
+
     /** Shows a popup that lets the user choose the bookmark number
     */
-    void setBookmark();
+//    void setBookmark();
     /** Adds the actual edit position to the end of the bookmark list
     */
-    void addBookmark();
+//    void addBookmark();
     /** Clears all bookmarks
     */
-    void clearBookmarks();
+//    void clearBookmarks();
     /** Sets the cursor to the bookmark n
     */
-    void gotoBookmark(int n);
+//    void gotoBookmark(int n);
   protected slots:
+    /** Updates the bookmark popup menu when it emit aboutToShow()
+    */
     void updateBMPopup();
   protected:
     QList<KWBookmark> bookmarks;
-    int bmEntries;
+//    int bmEntries;
 
 //config file / session management functions
   public:
@@ -477,13 +655,25 @@ class KWrite : public QWidget {
     /** Presents the highlight setup dialog to the user
     */
     void hlDlg();
+    /** Gets the highlight number
+    */
+    int getHl();
     /** Sets the highlight number n
     */
     void setHl(int n);
+    /** Get the end of line mode (Unix, Macintosh or Dos)
+    */
+    int getEol();
+    /** Set the end of line mode (Unix, Macintosh or Dos)
+    */
+    void setEol(int);
+
+//print
+    void print();
 
 //internal
   protected:
-    virtual void keyPressEvent(QKeyEvent *);
+//    virtual void keyPressEvent(QKeyEvent *);
     virtual void paintEvent(QPaintEvent *);
     virtual void resizeEvent(QResizeEvent *);
 

@@ -5,10 +5,10 @@ LDADD =       $(LIB_KFILE)
 bin_PROGRAMS = kwrite
 
 kwrite_SOURCES = highlight.cpp kwdoc.cpp kwview.cpp \
-	kwdialog.cpp toplevel.cpp kmimemagic.cpp
+	kwdialog.cpp toplevel.cpp kmimemagic.cpp kguicommand.cpp
 
 noinst_HEADERS = highlight.h kwdialog.h kwview.h toplevel.h \
-	kwdoc.h	kmimemagic.h
+	kwdoc.h	kmimemagic.h kguicommand.h
 
 kwrite_METASOURCES = USE_AUTOMOC
 

@@ -1,37 +1,82 @@
+/*
+   Copyright (C) 1998, 1999 Jochen Wilhelmy
+                            digisnap@cs.tu-berlin.de
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Library General Public
+    License as published by the Free Software Foundation; either
+    version 2 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Library General Public License for more details.
+
+    You should have received a copy of the GNU Library General Public License
+    along with this library; see the file COPYING.LIB.  If not, write to
+    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+    Boston, MA 02111-1307, USA.
+*/
+
 #include <string.h>
 
-//#include <qcombo.h>
-#include <qgrpbox.h>
-#include <qtstream.h>
+//#include <qcombobox.h>
+#include <qgroupbox.h>
+#include <qtextstream.h>
 #include <qregexp.h>
 
 #include <kapp.h>
 #include <kfontdialog.h>
 #include <kcharsets.h>
 
-#include <X11/Xlib.h>
+#include <X11/Xlib.h> //used in getXFontList()
 
 #include "highlight.h"
 #include "kwdoc.h"
 #include "kmimemagic.h"
 
-char *cKeywords[] = {
+//colors with Qt-scope do not work with Qt 1.42
+#define Qt
+
+// ISO/IEC 9899:1990 (aka ANSI C)
+// "interrupt" isn´t an ANSI keyword, but an extension of some C compilers
+const char *cKeywords[] = {
   "break", "case", "continue", "default", "do", "else", "enum", "extern",
-  "for", "goto", "if", "interrupt", "register", "return", "struct", "switch",
-  "typedef", "union", "volatile", "while", 0L};
+  "for", "goto", "if", /*"interrupt",*/  "return", "sizeof", "struct",
+  "switch", "typedef", "union", "while", 0L};
 
-char *cTypes[] = {
-  "char", "double", "float", "int", "long", "short", "signed", "static",
-  "unsigned", "void", 0L};
+const char *cTypes[] = {
+  "auto", "char", "const", "double", "float", "int", "long", "register",
+  "short", "signed", "static", "unsigned", "void", "volatile", 0L};
 
-char *cppKeywords[] = {
-  "class", "delete", "false", "friend", "inline", "new", "operator",
-  "private", "protected", "public", "this", "true", "virtual", 0L};
+// ISO/IEC 14882:1998 . Sec. 2.11.1 (aka ANSI C++)
+// keyword "const" (apart from a type spec.) is also a keyword, so it is named inside this array
+// what about typeof?
+const char *cppKeywords[] = {
+  "asm", "catch", "class", "const_cast", "const", "delete", "dynamic_cast",
+  "explicit", "export", "false", "friend", "inline", "namespace", "new",
+  "operator", "private", "protected", "public", "reinterpret_cast",
+  "static_cast", "template", "this", "throw", "true", "try", "typeid",
+  "typename", "using", "virtual",
+  // alternative representations  (these words are reserved and shall not be used otherwise)
+  //  ISO/IEC 14882:1998 . Sec. 2.11.2
+  "and_eq", "and", "bitand", "bitor", "compl", "not_eq", "not", "or_eq", "or",
+  "xor_eq", "xor", 0L};
 
-char *cppTypes[] = {
-  "bool", "const", 0L};
+const char *cppTypes[] = {
+  "bool", "wchar_t", "mutable", 0L};
 
-char *javaKeywords[] = {
+const char *idlKeywords[] = {
+  "module", "interface", "struct", "case", "enum", "typedef", "signal", "slot",
+  "attribute", "readonly", "context", "oneway", "union", "in", "out", "inout",
+  0L};
+
+const char *idlTypes[] = {
+  "long", "short", "unsigned", "double", "octet", "sequence", "char", "wchar",
+  "string", "wstring", "any", "fixed", "Object", "void", "boolean", 0L};
+
+
+const char *javaKeywords[] = {
   "abstract", "break", "case", "cast", "catch", "class", "continue",
   "default", "do", "else", "extends", "false", "finally", "for", "future",
   "generic", "goto", "if", "implements", "import", "inner", "instanceof",
@@ -40,20 +85,20 @@ char *javaKeywords[] = {
   "synchronized", "this", "throws", "throw", "transient", "true", "try",
   "var", "volatile", "while", 0L};
 
-char *javaTypes[] = {
+const char *javaTypes[] = {
   "boolean", "byte", "char", "const", "double", "final", "float", "int",
   "long", "short", "static", "void", 0L};
 
-char *bashKeywords[] = {
+const char *bashKeywords[] = {
   "break","case","done","do","elif","else","esac","exit","export","fi","for",
   "function","if","in","return","select","then","until","while",".",0L};
 
-char *modulaKeywords[] = {
+const char *modulaKeywords[] = {
   "BEGIN","CONST","DEFINITION","DIV","DO","ELSE","ELSIF","END","FOR","FROM",
   "IF","IMPLEMENTATION","IMPORT","MODULE","MOD","PROCEDURE","RECORD","REPEAT",
   "RETURN","THEN","TYPE","VAR","WHILE","WITH","|",0L};
 
-char *adaKeywords[] = {
+const char *adaKeywords[] = {
   "abort","abs","accept","access","all","and","array","at","begin","body",
   "case","constant","declare","delay","delta","digits","do","else","elsif",
   "end","entry","exception","exit","for", "function","generic","goto","if",
@@ -62,17 +107,42 @@ char *adaKeywords[] = {
   "record","renames","return","reverse","select","separate","subtype", "task",
   "terminate","then","type","use","when","while","with","xor",0L};
 
-char *pythonKeywords[] = {
+const char *pythonKeywords[] = {
   "and","assert","break","class","continue","def","del","elif","else",
   "except","exec"," finally","for","from","global","if","import","in","is",
   "lambda","not","or","pass","print","raise","return","try","while",0L};
 
-char *perlKeywords[] = {
+const char *perlKeywords[] = {
   "and","&&", "bless","caller","cmp","continue","dbmclose","dbmopen","do",
-  "die", "dump", "eval", "elsif","eq","exit", "foreach","for","ge", "goto",
-  "gt","if","import", "last","le","local","lt","my","next","ne","no","not",
-  "!","or","||", "package","ref","redo","require","return","sub","tied",
-  "tie","unless","until","untie","use","wantarray","while","xor", 0L};
+  "die", "dump", "eval", "else", "elsif","eq","exit", "foreach","for","ge",
+  "goto", "gt","if","import", "last","le","local","lt","my","next","ne","no",
+  "not", "!","or","||", "package","ref","redo","require","return","sub",
+  "tied", "tie", "unless", "until", "untie", "use", "wantarray", "while",
+  "xor", 0L};
+
+const char *satherKeywords[] = {
+  "and","assert","attr","break!","case","class","const","else","elsif",
+  "end","exception","external","false","if","include","initial","is","ITER",
+  "loop","new","or","post","pre","private","protect","quit","raise",
+  "readonly","result","return","ROUT","SAME","self","shared","then","true",
+  "typecase","type","until!","value","void","when","while!","yield",
+// new in 1.1 and pSather:
+  "abstract","any","bind","fork","guard","immutable","inout","in","lock",
+  "once","out","parloop","partial","par","spread","stub", 0L};
+
+// are those Sather keywords, too?
+//     "nil","do@", "do"
+
+const char *satherSpecClassNames[] = {
+  "$OB","ARRAY","AREF","AVAL","BOOL","CHAR","EXT_OB","FLTDX","FLTD","FLTX",
+  "FLTI","FLT","INTI","INT","$REHASH","STR","SYS",0L};
+
+const char *satherSpecFeatureNames[] = {
+// real special features
+  "create","invariant","main",
+// sugar feature names
+  "aget","aset","div","is_eq","is_geq","is_gt","is_leq","is_lt","is_neq",
+  "minus","mod","negate","not","plus","pow","times", 0L};
 
 
 //char cEscapeChars[] = "abefnrtv\"\'\\";
@@ -189,7 +259,7 @@ void HlKeyword::addWord(const char *s) {
   words.append(word);
 }
 
-void HlKeyword::addList(char **list) {
+void HlKeyword::addList(const char **list) {
 
   while (*list) {
     addWord(*list);
@@ -565,8 +635,206 @@ const char *HlAdaChar::checkHgl(const char *s) {
   return 0L;
 }
 
+HlSatherClassname::HlSatherClassname(int attribute, int context)
+  : HlItemWw(attribute,context) {
+}
+
+const char *HlSatherClassname::checkHgl(const char *s) {
+  if (*s == '$') s++;
+  if (*s >= 'A' && *s <= 'Z') {
+    s++;
+    while ((*s >= 'A' && *s <= 'Z')
+           || (*s >= '0' && *s <= '9')
+           || *s == '_') s++;
+    return s;
+  }
+  return 0L;
+}
+
+HlSatherIdent::HlSatherIdent(int attribute, int context)
+  : HlItemWw(attribute,context) {
+}
+
+const char *HlSatherIdent::checkHgl(const char *s) {
+  if ((*s >= 'a' && *s <= 'z') || (*s >= 'A' && *s <= 'Z')) {
+    s++;
+    while ((*s >= 'a' && *s <= 'z')
+           || (*s >= 'A' && *s <= 'Z')
+           || (*s >= '0' && *s <= '9')
+           || *s == '_') s++;
+    if (*s == '!') s++;
+    return s;
+  }
+  return 0L;
+}
+
+HlSatherDec::HlSatherDec(int attribute, int context)
+  : HlItemWw(attribute,context) {
+}
+
+const char *HlSatherDec::checkHgl(const char *s) {
+  if (*s >= '0' && *s <= '9') {
+    s++;
+    while ((*s >= '0' && *s <= '9') || *s == '_') s++;
+    if (*s == 'i') s++;
+    return s;
+  }
+  return 0L;
+}
+
+HlSatherBaseN::HlSatherBaseN(int attribute, int context)
+  : HlItemWw(attribute,context) {
+}
+
+const char *HlSatherBaseN::checkHgl(const char *s) {
+  if (*s == '0') {
+    s++;
+    if (*s == 'x') {
+      s++;
+      while ((*s >= '0' && *s <= '9')
+             || (*s >= 'a' && *s <= 'f')
+             || (*s >= 'A' && *s <= 'F')
+             || *s == '_') s++;
+    } else if (*s == 'o') {
+      s++;
+      while ((*s >= '0' && *s <= '7') || *s == '_') s++;
+    } else if (*s == 'b') {
+      s++;
+      while (*s == '0' || *s == '1' || *s == '_') s++;
+    } else
+      return 0L;
+    if (*s == 'i') s++;
+    return s;
+  }
+  return 0L;
+}
+
+HlSatherFloat::HlSatherFloat(int attribute, int context)
+  : HlItemWw(attribute,context) {
+}
+
+const char *HlSatherFloat::checkHgl(const char *s) {
+  if (*s >= '0' && *s <= '9') {
+    s++;
+    while ((*s >= '0' && *s <= '9') || *s == '_') s++;
+    if (*s == '.') {
+      s++;
+      while (*s >= '0' && *s <= '9') s++;
+      if (*s == 'e' || *s == 'E') {
+        s++;
+        if (*s == '-') s++;
+        if (*s >= '0' && *s <= '9') {
+          s++;
+          while ((*s >= '0' && *s <= '9') || *s == '_') s++;
+        } else
+          return 0L;
+      }
+      if (*s == 'i') return s+1;
+      if (*s == 'd') s++;
+      if (*s == 'x') s++;
+		// "dx" is allowed too
+      return s;
+    }
+  }
+  return 0L;
+}
+
+HlSatherChar::HlSatherChar(int attribute, int context)
+  : HlItemWw(attribute,context) {
+}
+
+const char *HlSatherChar::checkHgl(const char *s) {
+  if (*s == '\'') {
+    s++;
+    if (*s == '\\') {
+      s++;
+      if (*s == 'a' || *s == 'b' || *s == 'f' || *s == 'n'
+          || *s == 'r' || *s == 't' || *s == 'v' || *s == '\\'
+          || *s == '\'' || *s == '\"') s++;
+      else if (*s>='0' && *s<='7')
+        while (*s>='0' && *s<='7') s++;
+      else
+        return 0L;
+    } else if (*s != '\0') s++;
+  }
+  if (*s == '\'')
+    return s+1;
+  else
+    return 0L;
+}
+
+HlSatherString::HlSatherString(int attribute, int context)
+  : HlItemWw(attribute, context) {
+}
+
+const char *HlSatherString::checkHgl(const char *s) {
+  if (*s == '\"') {
+    s++;
+    while (*s != '\"') {
+      if (*s == '\\')
+        s++;
+      if (*s == '\n' || *s == '\0')
+        return s;
+      s++;
+    }
+    return s+1;
+  }
+  return 0L;
+}
+
+
+HlLatexTag::HlLatexTag(int attribute, int context)
+  : HlItem(attribute, context) {
+}
+
+const char *HlLatexTag::checkHgl(const char *s) {
+  const char *str;
+
+  if (*s == '\\') {
+    s++;
+    if (*s == ' ' || *s == '/' || *s == '\\') return s +1;
+    str = s;
+    while ((*s >= 'a' && *s <= 'z') || (*s >= 'A' && *s <= 'Z')
+      || (*s >= '0' && *s <= '9') || *s == '@') {
+      s++;
+    }
+    if (s != str) return s;
+  } else if (*s == '$') return s +1;
+  return 0L;
+}
+
+HlLatexChar::HlLatexChar(int attribute, int context)
+  : HlItem(attribute, context) {
+}
+
+const char *HlLatexChar::checkHgl(const char *s) {
+  if (*s == '\\') {
+    s++;
+    if (*s && strchr("{}$&#_%", *s)) return s +1;
+  }/* else if (*s == '"') {
+    s++;
+    if (*s && (*s < '0' || *s > '9')) return s +1;
+  } */
+  return 0L;
+}
+
+HlLatexParam::HlLatexParam(int attribute, int context)
+  : HlItem(attribute, context) {
+}
+
+const char *HlLatexParam::checkHgl(const char *s) {
+  if (*s == '#') {
+    s++;
+    while (*s >= '0' && *s <= '9') {
+      s++;
+    }
+    return s;
+  }
+  return 0L;
+}
+
 //--------
-ItemStyle::ItemStyle() : selCol(white), bold(false), italic(false) {
+ItemStyle::ItemStyle() : selCol(Qt::white), bold(false), italic(false) {
 }
 
 ItemStyle::ItemStyle(const QColor &col, const QColor &selCol,
@@ -721,10 +989,11 @@ bool Highlight::isInWord(char ch) {
   return data[ch >> 3] & (1 << (ch & 7));
 }
 */
-void Highlight::doHighlight(int, TextLine *textLine) {
+int Highlight::doHighlight(int, TextLine *textLine) {
 
   textLine->setAttribs(0,0,textLine->length());
   textLine->setAttr(0);
+  return 0;
 }
 
 void Highlight::createItemData(ItemDataList &list) {
@@ -750,7 +1019,7 @@ GenHighlight::GenHighlight(const char *name) : Highlight(name) {
 }
 
 
-void GenHighlight::doHighlight(int ctxNum, TextLine *textLine) {
+int GenHighlight::doHighlight(int ctxNum, TextLine *textLine) {
   HlContext *context;
   const char *str, *s1, *s2;
   char lastChar;
@@ -784,23 +1053,24 @@ void GenHighlight::doHighlight(int ctxNum, TextLine *textLine) {
     lastChar = *s1;
     s1++;
   }
-  //set "end of line"-properties of actual context
+  //set "end of line"-properties
   textLine->setAttr(context->attr);
-  textLine->setContext(context->ctx);
+  //return new context
+  return context->ctx;
 }
 
 
 void GenHighlight::init() {
   int z;
 
-  for (z = 0; z < nAttribs; z++) contextList[z] = 0L;
+  for (z = 0; z < nContexts; z++) contextList[z] = 0L;
   makeContextList();
 }
 
 void GenHighlight::done() {
   int z;
 
-  for (z = 0; z < nAttribs; z++) delete contextList[z];
+  for (z = 0; z < nContexts; z++) delete contextList[z];
 }
 
 
@@ -814,25 +1084,26 @@ CHighlight::~CHighlight() {
 
 void CHighlight::createItemData(ItemDataList &list) {
 
-  list.append(new ItemData("Normal Text",dsNormal));
-  list.append(new ItemData("Keyword",dsKeyword));
-  list.append(new ItemData("Data Type",dsDataType));
-  list.append(new ItemData("Decimal",dsDecVal));
-  list.append(new ItemData("Octal",dsBaseN));
-  list.append(new ItemData("Hex",dsBaseN));
-  list.append(new ItemData("Float",dsFloat));
-  list.append(new ItemData("Char",dsChar));
-  list.append(new ItemData("String",dsString));
-  list.append(new ItemData("String Char",dsChar));
-  list.append(new ItemData("Comment",dsComment));
+  list.append(new ItemData("Normal Text" ,dsNormal));
+  list.append(new ItemData("Keyword"     ,dsKeyword));
+  list.append(new ItemData("Data Type"   ,dsDataType));
+  list.append(new ItemData("Decimal"     ,dsDecVal));
+  list.append(new ItemData("Octal"       ,dsBaseN));
+  list.append(new ItemData("Hex"         ,dsBaseN));
+  list.append(new ItemData("Float"       ,dsFloat));
+  list.append(new ItemData("Char"        ,dsChar));
+  list.append(new ItemData("String"      ,dsString));
+  list.append(new ItemData("String Char" ,dsChar));
+  list.append(new ItemData("Comment"     ,dsComment));
   list.append(new ItemData("Preprocessor",dsOthers));
-  list.append(new ItemData("Prep. Lib",dsOthers,darkYellow,yellow,false,false));
+  list.append(new ItemData("Prep. Lib"   ,dsOthers,Qt::darkYellow,Qt::yellow,false,false));
 }
 
 void CHighlight::makeContextList() {
   HlContext *c;
   HlKeyword *keyword, *dataType;
 
+  //normal context
   contextList[0] = c = new HlContext(0,0);
     c->items.append(keyword = new HlKeyword(1,0));
     c->items.append(dataType = new HlKeyword(2,0));
@@ -845,22 +1116,29 @@ void CHighlight::makeContextList() {
     c->items.append(new Hl2CharDetect(10,2,"//"));
     c->items.append(new Hl2CharDetect(10,3,"/*"));
     c->items.append(new HlCPrep(11,4));
+  //string context
   contextList[1] = c = new HlContext(8,0);
     c->items.append(new HlLineContinue(8,6));
     c->items.append(new HlCStringChar(9,1));
     c->items.append(new HlCharDetect(8,0,'"'));
+  //one line comment context
   contextList[2] = new HlContext(10,0);
+  //multi line comment context
   contextList[3] = c = new HlContext(10,3);
     c->items.append(new Hl2CharDetect(10,0,"*/"));
+  //preprocessor context
   contextList[4] = c = new HlContext(11,0);
     c->items.append(new HlLineContinue(11,7));
     c->items.append(new HlRangeDetect(12,4,"\"\""));
     c->items.append(new HlRangeDetect(12,4,"<>"));
     c->items.append(new Hl2CharDetect(10,2,"//"));
     c->items.append(new Hl2CharDetect(10,5,"/*"));
+  //preprocessor multiline comment context
   contextList[5] = c = new HlContext(10,5);
     c->items.append(new Hl2CharDetect(10,4,"*/"));
+  //string line continue
   contextList[6] = new HlContext(0,1);
+  //preprocessor string line continue
   contextList[7] = new HlContext(0,4);
 
   setKeywords(keyword, dataType);
@@ -889,6 +1167,18 @@ void CppHighlight::setKeywords(HlKeyword *keyword, HlKeyword *dataType) {
   dataType->addList(cppTypes);
 }
 
+IdlHighlight::IdlHighlight(const char *name) : CHighlight(name) {
+  dw = "*.idl";
+  dm = "text/x-idl-src";
+}
+
+IdlHighlight::~IdlHighlight() {
+}
+
+void IdlHighlight::setKeywords(HlKeyword *keyword, HlKeyword *dataType) {
+  keyword->addList(idlKeywords);
+  dataType->addList(idlTypes);
+}
 
 JavaHighlight::JavaHighlight(const char *name) : CHighlight(name) {
   dw = "*.java";
@@ -916,11 +1206,11 @@ HtmlHighlight::~HtmlHighlight() {
 void HtmlHighlight::createItemData(ItemDataList &list) {
 
   list.append(new ItemData("Normal Text",dsNormal));
-  list.append(new ItemData("Char",dsChar,darkGreen,green,false,false));
-  list.append(new ItemData("Comment",dsComment));
-  list.append(new ItemData("Tag Text",dsOthers,black,white,true,false));
-  list.append(new ItemData("Tag",dsKeyword,darkMagenta,magenta,true,false));
-  list.append(new ItemData("Tag Value",dsDecVal,darkCyan,cyan,false,false));
+  list.append(new ItemData("Char"       ,dsChar,Qt::darkGreen,Qt::green,false,false));
+  list.append(new ItemData("Comment"    ,dsComment));
+  list.append(new ItemData("Tag Text"   ,dsOthers,Qt::black,Qt::white,true,false));
+  list.append(new ItemData("Tag"        ,dsKeyword,Qt::darkMagenta,Qt::magenta,true,false));
+  list.append(new ItemData("Tag Value"  ,dsDecVal,Qt::darkCyan,Qt::cyan,false,false));
 }
 
 void HtmlHighlight::makeContextList() {
@@ -952,12 +1242,12 @@ BashHighlight::~BashHighlight() {
 
 void BashHighlight::createItemData(ItemDataList &list) {
 
-  list.append(new ItemData("Normal Text",dsNormal));
-  list.append(new ItemData("Keyword",dsKeyword));
-  list.append(new ItemData("Integer",dsDecVal));
-  list.append(new ItemData("String",dsString));
+  list.append(new ItemData("Normal Text" ,dsNormal));
+  list.append(new ItemData("Keyword"     ,dsKeyword));
+  list.append(new ItemData("Integer"     ,dsDecVal));
+  list.append(new ItemData("String"      ,dsString));
   list.append(new ItemData("Substitution",dsOthers));//darkCyan,cyan,false,false);
-  list.append(new ItemData("Comment",dsComment));
+  list.append(new ItemData("Comment"     ,dsComment));
 }
 
 void BashHighlight::makeContextList() {
@@ -991,12 +1281,12 @@ ModulaHighlight::~ModulaHighlight() {
 void ModulaHighlight::createItemData(ItemDataList &list) {
 
   list.append(new ItemData("Normal Text",dsNormal));
-  list.append(new ItemData("Keyword",dsKeyword));
-  list.append(new ItemData("Decimal",dsDecVal));
-  list.append(new ItemData("Hex",dsBaseN));
-  list.append(new ItemData("Float",dsFloat));
-  list.append(new ItemData("String",dsString));
-  list.append(new ItemData("Comment",dsComment));
+  list.append(new ItemData("Keyword"    ,dsKeyword));
+  list.append(new ItemData("Decimal"    ,dsDecVal));
+  list.append(new ItemData("Hex"        ,dsBaseN));
+  list.append(new ItemData("Float"      ,dsFloat));
+  list.append(new ItemData("String"     ,dsString));
+  list.append(new ItemData("Comment"    ,dsComment));
 }
 
 void ModulaHighlight::makeContextList() {
@@ -1030,13 +1320,13 @@ AdaHighlight::~AdaHighlight() {
 void AdaHighlight::createItemData(ItemDataList &list) {
 
   list.append(new ItemData("Normal Text",dsNormal));
-  list.append(new ItemData("Keyword",dsKeyword));
-  list.append(new ItemData("Decimal",dsDecVal));
-  list.append(new ItemData("Base-N",dsBaseN));
-  list.append(new ItemData("Float",dsFloat));
-  list.append(new ItemData("Char",dsChar));
-  list.append(new ItemData("String",dsString));
-  list.append(new ItemData("Comment",dsComment));
+  list.append(new ItemData("Keyword"    ,dsKeyword));
+  list.append(new ItemData("Decimal"    ,dsDecVal));
+  list.append(new ItemData("Base-N"     ,dsBaseN));
+  list.append(new ItemData("Float"      ,dsFloat));
+  list.append(new ItemData("Char"       ,dsChar));
+  list.append(new ItemData("String"     ,dsString));
+  list.append(new ItemData("Comment"    ,dsComment));
 }
 
 void AdaHighlight::makeContextList() {
@@ -1070,15 +1360,15 @@ PythonHighlight::~PythonHighlight() {
 void PythonHighlight::createItemData(ItemDataList &list) {
 
   list.append(new ItemData("Normal Text",dsNormal));
-  list.append(new ItemData("Keyword",dsKeyword));
-  list.append(new ItemData("Decimal",dsDecVal));
-  list.append(new ItemData("Octal",dsBaseN));
-  list.append(new ItemData("Hex",dsBaseN));
-  list.append(new ItemData("Float",dsFloat));
-  list.append(new ItemData("Char",dsChar));
-  list.append(new ItemData("String",dsString));
+  list.append(new ItemData("Keyword"    ,dsKeyword));
+  list.append(new ItemData("Decimal"    ,dsDecVal));
+  list.append(new ItemData("Octal"      ,dsBaseN));
+  list.append(new ItemData("Hex"        ,dsBaseN));
+  list.append(new ItemData("Float"      ,dsFloat));
+  list.append(new ItemData("Char"       ,dsChar));
+  list.append(new ItemData("String"     ,dsString));
   list.append(new ItemData("String Char",dsChar));
-  list.append(new ItemData("Comment",dsComment));
+  list.append(new ItemData("Comment"    ,dsComment));
 }
 
 void PythonHighlight::makeContextList() {
@@ -1124,12 +1414,13 @@ PerlHighlight::PerlHighlight(const char *name) : Highlight(name) {
 void PerlHighlight::createItemData(ItemDataList &list) {
 
   list.append(new ItemData("Normal Text",dsNormal));
-  list.append(new ItemData("Keyword",dsKeyword));
-  list.append(new ItemData("Variable",dsDecVal));
-  list.append(new ItemData("Operator",dsOthers));
-  list.append(new ItemData("String",dsString));
+  list.append(new ItemData("Keyword"    ,dsKeyword));
+  list.append(new ItemData("Variable"   ,dsDecVal));
+  list.append(new ItemData("Operator"   ,dsOthers));
+  list.append(new ItemData("String"     ,dsString));
   list.append(new ItemData("String Char",dsChar));
-  list.append(new ItemData("Comment",dsComment));
+  list.append(new ItemData("Comment"    ,dsComment));
+  list.append(new ItemData("Pod"        ,dsOthers,darkYellow,yellow,false,true));
 }
 
 /*
@@ -1145,31 +1436,47 @@ Op Customary  Generic     Meaning    Interpolates         Modifiers
 7             tr{}{}   Translation       no               cds
 7              y{}{}   Translation       no               cds
 */
-void PerlHighlight::doHighlight(int ctxNum, TextLine *textLine) {
+int PerlHighlight::doHighlight(int ctxNum, TextLine *textLine) {
   static char *opList[] = {"q", "qq", "qx", "qw", "m", "s", "tr", "y"};
   static int opLenList[] = {1, 2, 2, 2, 1, 1, 2, 1};
   char delimiter;
   int op;
   int argCount;
-  bool interpolating;
-//  bool string;
-  bool brackets;
+  bool interpolating, brackets, pod;
 
   const char *str, *s, *s2;
   bool lastWw;
   int pos, z, l;
 
+  //extract some states out of the context number
   delimiter = ctxNum >> 8;
   op = (ctxNum >> 5) & 7;
   argCount = (ctxNum >> 3) & 3;
-  interpolating = !((ctxNum >> 2) & 1);
-//  string = ctxNum & 1;
-  brackets = ctxNum & 1;
+  interpolating = !(ctxNum & 4);
+  brackets = ctxNum & 2;
+  pod = ctxNum & 1;
 
+  //current line to process
   str = textLine->getString();
+  //whole word check status of last character
   lastWw = true;
-
   s = str;
+
+  //match pod documentation tags
+  if (*s == '=') {
+    s++;
+    pod = true;
+    if (!strncmp(s, "cut", 3)) {
+      pod = false;
+      s += 3;
+      textLine->setAttribs(7, 0, 4);
+    }
+  }
+  if (pod) {
+    textLine->setAttribs(7, 0, textLine->length());
+    textLine->setAttr(7);
+    goto finished;
+  }
   while (*s) {
     pos = s - str;
     if (op == 0 && lastWw) {
@@ -1211,22 +1518,18 @@ void PerlHighlight::doHighlight(int ctxNum, TextLine *textLine) {
         delimiter = *s;
         s++;
         argCount = 1;
-//        string = true;
         textLine->setAttribs(3, pos, pos + 1);
         goto newContext;
       }
     }
-    if (!delimiter/*string*/) {
-      //comment
+    if (!delimiter) { //not in string
+      //match comment
       if (lastWw && *s == '#') {
-        do {
-          s++;
-        } while (*s != '\0');
-        textLine->setAttribs(6, pos, s - str);
+        textLine->setAttribs(6, pos, textLine->length());
         textLine->setAttr(6);
         goto finished;
       }
-      //delimiter
+      //match delimiter
       if (op != 0 && (unsigned char) *s > 32) {
         delimiter = *s;
         if (delimiter == '(') {
@@ -1246,7 +1549,6 @@ void PerlHighlight::doHighlight(int ctxNum, TextLine *textLine) {
           brackets = true;
         }
         s++;
-//        string = true;
         if (op == 1 || op == 4 || op == 7 || (delimiter == '\'' && op != 2))
           interpolating = false;
         textLine->setAttribs(3, pos, pos + 1);
@@ -1254,7 +1556,7 @@ void PerlHighlight::doHighlight(int ctxNum, TextLine *textLine) {
       }
     }
     if (interpolating) {
-      //variable
+      //match variable
       if (*s == '$' || *s == '@' || *s == '%') {
         s2 = s;
         do {
@@ -1266,6 +1568,7 @@ void PerlHighlight::doHighlight(int ctxNum, TextLine *textLine) {
           goto newContext;
         }
       }
+      //match special variables
       if (s[0] == '$' && s[1] != '\0' && s[1] != delimiter) {
         if (strchr("&`'+*./|,\\;#%=-~^:?!@$<>()[]", s[1])) {
           s += 2;
@@ -1274,8 +1577,8 @@ void PerlHighlight::doHighlight(int ctxNum, TextLine *textLine) {
         }
       }
     }
-    if (delimiter/*string*/) {
-      //escaped char
+    if (delimiter) { //in string
+      //match escaped char
       if (interpolating) {
         if (*s == '\\' && s[1] != '\0') {
           s++;
@@ -1285,19 +1588,7 @@ void PerlHighlight::doHighlight(int ctxNum, TextLine *textLine) {
           goto newContext;
         }
       }
-      //string end
-/*      z = 0;
-      if (delimiter == '(' && *s == ')') {
-        z = 1;
-      } else if (delimiter == '<' && *s == '>') {
-        z = 1;
-      } else if (delimiter == '[' && *s == ']') {
-        z = 1;
-      } else if (delimiter == '{' && *s == '}') {
-        z = 1;
-      } else if (delimiter == *s) {
-        z = 2;
-      }*/
+      //match string end
       if (delimiter == *s) {
         s++;
         argCount--;
@@ -1309,13 +1600,13 @@ void PerlHighlight::doHighlight(int ctxNum, TextLine *textLine) {
           op = 0;
         }
         textLine->setAttribs(3, pos, s - str);
-        if (brackets/*z == 1*/ || op == 0) {
+        if (brackets || op == 0) {
           interpolating = true;
-//          string = false;
-          delimiter = '\0';
+          delimiter = '\0'; //string end delimiter = '\0' means "not in string"
           brackets = false;
         }
       } else {
+        //highlight a ordinary character in string
         s++;
         textLine->setAttribs(4, pos, pos + 1);
       }
@@ -1329,13 +1620,15 @@ void PerlHighlight::doHighlight(int ctxNum, TextLine *textLine) {
   textLine->setAttr(0);
   finished:
 
+  //compose new context number
   ctxNum = delimiter << 8;
   ctxNum |= op << 5;
   ctxNum |= argCount << 3;
-  if (!interpolating) ctxNum |= 1 << 2;
-//  if (string) ctxNum |= 1;
-  if (brackets) ctxNum |= 1;
-  textLine->setContext(ctxNum);
+  if (!interpolating) ctxNum |= 4;
+  if (brackets) ctxNum |= 2;
+  if (pod) ctxNum |= 1;
+  return ctxNum;
+  //method will be called again if there are more lines to highlight
 }
 
 void PerlHighlight::init() {
@@ -1347,20 +1640,105 @@ void PerlHighlight::done() {
   delete keyword;
 }
 
+SatherHighlight::SatherHighlight(const char *name) : GenHighlight(name) {
+  dw = "*.sa";
+  dm = "text/x-sather-src";
+}
+
+SatherHighlight::~SatherHighlight() {
+}
+
+void SatherHighlight::createItemData(ItemDataList &list) {
+
+  list.append(new ItemData("Normal Text"        ,dsNormal)); // 0
+  list.append(new ItemData("Keyword"            ,dsKeyword));// 1
+  list.append(new ItemData("Special Classname"  , dsNormal));// 2
+  list.append(new ItemData("Classname"          ,dsNormal)); // 3
+  list.append(new ItemData("Special Featurename",dsOthers)); // 4
+  list.append(new ItemData("Identifier"         ,dsOthers)); // 5
+  list.append(new ItemData("Decimal"            ,dsDecVal)); // 6
+  list.append(new ItemData("Base-N"             ,dsBaseN));  // 7
+  list.append(new ItemData("Float"              ,dsFloat));  // 8
+  list.append(new ItemData("Char"               ,dsChar));   // 9
+  list.append(new ItemData("String"             ,dsString)); // 10
+  list.append(new ItemData("Comment"            ,dsComment));// 11
+}
+
+void SatherHighlight::makeContextList() {
+  HlContext *c;
+  HlKeyword *keyword,*spec_class,*spec_feat;
+
+  //Normal Context
+  contextList[0] = c = new HlContext(0,0);
+    c->items.append(keyword = new HlKeyword(1,0));
+    c->items.append(spec_class = new HlKeyword(2,0));
+    c->items.append(new HlSatherClassname(3,0));
+    c->items.append(spec_feat = new HlKeyword(4,0));
+    c->items.append(new HlSatherIdent(5,0));
+    c->items.append(new HlSatherFloat(8,0)); // check float before int
+    c->items.append(new HlSatherBaseN(7,0));
+    c->items.append(new HlSatherDec(6,0));
+    c->items.append(new HlSatherChar(9,0));
+    c->items.append(new HlSatherString(10,0));
+    c->items.append(new Hl2CharDetect(11,1,"--"));
+  //Comment Context
+  contextList[1] = c = new HlContext(11,0);
+
+  keyword->addList(satherKeywords);
+  spec_class->addList(satherSpecClassNames);
+  spec_feat->addList(satherSpecFeatureNames);
+}
+
+LatexHighlight::LatexHighlight(const char *name) : GenHighlight(name) {
+  dw = "*.tex;*.sty";
+  dm = "text/x-tex";
+}
+
+LatexHighlight::~LatexHighlight() {
+}
+
+void LatexHighlight::createItemData(ItemDataList &list) {
+
+  list.append(new ItemData("Normal Text", dsNormal));
+  list.append(new ItemData("Tag/Keyword", dsKeyword));
+  list.append(new ItemData("Char"       , dsChar));
+  list.append(new ItemData("Parameter"  , dsDecVal));
+  list.append(new ItemData("Comment"    , dsComment));
+}
+
+void LatexHighlight::makeContextList() {
+  HlContext *c;
+
+  //normal context
+  contextList[0] = c = new HlContext(0,0);
+    c->items.append(new HlLatexTag(1,0));
+    c->items.append(new HlLatexChar(2,0));
+    c->items.append(new HlLatexParam(3,0));
+    c->items.append(new HlCharDetect(4,1,'%'));
+  //one line comment context
+  contextList[1] = new HlContext(4,0);
+}
+
+//--------
+
+
 
 HlManager::HlManager() : QObject(0L) {
 
   hlList.setAutoDelete(true);
-  hlList.append(new Highlight("Normal"));
-  hlList.append(new CHighlight("C"));
-  hlList.append(new CppHighlight("C++"));
-  hlList.append(new JavaHighlight("Java"));
-  hlList.append(new HtmlHighlight("HTML"));
-  hlList.append(new BashHighlight("Bash"));
-  hlList.append(new ModulaHighlight("Modula 2"));
-  hlList.append(new AdaHighlight("Ada"));
-  hlList.append(new PythonHighlight("Python"));
-  hlList.append(new PerlHighlight("Perl"));
+  hlList.append(new Highlight(      "Normal"   ));
+  hlList.append(new CHighlight(     "C"        ));
+  hlList.append(new CppHighlight(   "C++"      ));
+  hlList.append(new JavaHighlight(  "Java"     ));
+  hlList.append(new HtmlHighlight(  "HTML"     ));
+  hlList.append(new BashHighlight(  "Bash"     ));
+  hlList.append(new ModulaHighlight("Modula 2" ));
+  hlList.append(new AdaHighlight(   "Ada"      ));
+  hlList.append(new PythonHighlight("Python"   ));
+  hlList.append(new PerlHighlight(  "Perl"     ));
+  hlList.append(new SatherHighlight("Sather"   ));
+  hlList.append(new LatexHighlight( "Latex"    ));
+  hlList.append(new IdlHighlight("IDL"));
 }
 
 HlManager::~HlManager() {
@@ -1380,20 +1758,6 @@ int HlManager::defaultHl() {
 }
 
 
-int HlManager::highlightFind(KWriteDoc *doc)
-{
-  int hl = -1;
-
-  if (doc->hasFileName())
-    hl = wildcardFind(doc->fileName());
-
-  if (hl == -1)
-    hl = mimeFind(doc);
-
-  return hl;
-}
-
-
 int HlManager::nameFind(const char *name) {
   int z;
 
@@ -1409,7 +1773,6 @@ int HlManager::wildcardFind(const char *fileName) {
   QString w;
   for (highlight = hlList.first(); highlight != 0L; highlight = hlList.next()) {
     p1 = 0;
-//    w = highlight->iWildcards;
     highlight->getWildcards(w);
     while (p1 < (int) w.length()) {
       p2 = w.find(';',p1);
@@ -1424,19 +1787,19 @@ int HlManager::wildcardFind(const char *fileName) {
   return -1;
 }
 
-int HlManager::mimeFind(KWriteDoc *doc) 
+int HlManager::mimeFind(const char *contents, int len, const char *fname)
 {
   // Magic file detection init (from kfm/kbind.cpp)    
   QString mimefile = kapp->kde_mimedir().copy();    
   mimefile += "/magic";    
   KMimeMagic magic(mimefile);    
   magic.setFollowLinks(true);      
-
-  // fill the detection buffer with the contents of the text  
+/*
+  // fill the detection buffer with the contents of the text
   const int HOWMANY = 1024;
   char buffer[HOWMANY];
   int number=0, len;
-  
+
   for (int index=0; index<doc->lastLine(); index++)
   {
     len = doc->textLength(index);
@@ -1447,13 +1810,10 @@ int HlManager::mimeFind(KWriteDoc *doc)
     memcpy(&buffer[number], doc->textLine(index)->getText(), len);
     number += len;
   }
-
+*/
   // detect the mime type
   KMimeMagicResult *result;
-  if (doc->hasFileName())
-    result = magic.findBufferFileType(buffer,number,doc->fileName());
-  else
-    result = magic.findBufferType(buffer,number);
+  result = magic.findBufferFileType(contents, len, fname);
 
   Highlight *highlight;
   int p1, p2;
@@ -1530,8 +1890,16 @@ int HlManager::defaultStyles() {
 
 const char *HlManager::defaultStyleName(int n) {
   static const char *names[] = {
-    "Normal","Keyword","Data Type","Decimal/Value","Base-N Integer",
-    "Floating Point","Character","String","Comment","Others"};
+    "Normal",
+    "Keyword",
+    "Data Type",
+    "Decimal/Value",
+    "Base-N Integer",
+    "Floating Point",
+    "Character",
+    "String",
+    "Comment",
+    "Others"};
 
   return names[n];
 }
@@ -1544,7 +1912,7 @@ void HlManager::getDefaults(ItemStyleList &list, ItemFont &font) {
   QRgb col, selCol;
 
   list.setAutoDelete(true);
-  //ItemStyle(color, selected color, bold, italic
+  //ItemStyle(color, selected color, bold, italic)
   list.append(new ItemStyle(black,white,false,false));     //normal
   list.append(new ItemStyle(black,white,true,false));      //keyword
   list.append(new ItemStyle(darkRed,white,false,false));   //datatype
@@ -1619,7 +1987,7 @@ void HlManager::setHlDataList(HlDataList &list) {
   for (z = 0; z < (int) hlList.count(); z++) {
     hlList.at(z)->setData(list.at(z));
   }
-
+  //notify documents about changes in highlight configuration
   emit changed();
 }
 
@@ -1950,7 +2318,7 @@ HighlightDialog::HighlightDialog(HlManager *hlManager,
   group = new QGroupBox(i18n("Config Select"),this);
   gr.setRect(10,10,200,130);
   group->setGeometry(gr);
-  hlCombo = new QComboBox(false,group);
+  hlCombo = new QComboBox(false, group); //read only combo
   label = new QLabel(hlCombo,i18n("Highlight:"),group);
   connect(hlCombo,SIGNAL(activated(int)),SLOT(hlChanged(int)));
   r.setRect(10,15,180,25);
@@ -2038,9 +2406,6 @@ void HighlightDialog::hlChanged(int z) {
   }
 
   itemChanged(0);
-
-//  if (hlCombo->currentItem() != z)
-//    hlCombo->setCurrentItem(z);
 }
 
 void HighlightDialog::itemChanged(int z) {
