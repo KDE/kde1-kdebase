@@ -327,6 +327,7 @@ void KDMBackgroundWidget::applySettings()
   c->writeEntry( "BackGroundColor", colName );
 
   // write wallpaper
+  c->writeEntry("BackGroundPicture", "");
   if(wallpaper != NO_WALLPAPER)
   {
     QFileInfo fi(wallpaper.data());
@@ -337,21 +338,25 @@ void KDMBackgroundWidget::applySettings()
       {
         case Tiled:
   	  c->writeEntry( "BackGroundPictureTile", 1 );
+	  c->deleteEntry( "BackGroundPictureCenter", false );
           break;
         case Centred:
+  	  c->deleteEntry( "BackGroundPictureTile", false );
 	  c->writeEntry( "BackGroundPictureCenter", 1 );
 	  break;
         default:
+  	  c->deleteEntry( "BackGroundPictureTile", false );
+	  c->deleteEntry( "BackGroundPictureCenter", false );
 	break;
       } // switch
     } // if(fi...
-    else
-    {
-      c->deleteEntry("BackGroundPicture", true);
-      c->deleteEntry("BackGroundPictureTile", true);
-      c->deleteEntry("BackGroundPictureCenter", true);
-    }
   } // if(wall...
+  else
+  {
+    c->deleteEntry( "BackGroundPicture", false );
+    c->deleteEntry( "BackGroundPictureTile", false );
+    c->deleteEntry( "BackGroundPictureCenter", false );
+  }
 
   c->writeEntry( "FancyBackGround", fancy );
   delete c;

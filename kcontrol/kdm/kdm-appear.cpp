@@ -259,7 +259,7 @@ void KDMAppearanceWidget::applySettings()
   if(fi.exists())
     c->writeEntry("LogoPixmap", logopath, true);
   else
-    c->deleteEntry("LogoPixmap", true);
+    c->deleteEntry("LogoPixmap", false);
 
   // write GUI style
   c->writeEntry("GUIStyle", guistr, true);
