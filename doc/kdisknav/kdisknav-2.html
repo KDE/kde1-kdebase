@@ -3,8 +3,8 @@
 <HEAD>
 <TITLE>KDE Disk Navigator: Features &amp; Tips</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
-<META NAME="keywords" CONTENT="kdisknav">
-<META NAME="description" CONTENT="kdisknav documentation">
+<META NAME="keywords" CONTENT="kdisknav, disk navigator">
+<META NAME="description" CONTENT="disk navigator documentation">
 </HEAD>
 <BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
 <FONT FACE="Helvetica">
@@ -22,36 +22,38 @@
 
 <P>
 <P>
+<LI>On the top of each menu (except the first one) there is an entry "Open Folder".
+when this entry is selected, a KFM window is launched using the current
+folder as URL. If you hold down the Shift key when selecting this entry, Disk
+Navigator opens a terminal in the current folder.
+</LI>
 <LI>Disk Navigator can be used to quickly access files in any mounted filesystem,
 including local files, remote files (eg. NFS mounts), removable media
 (CD-ROM, Iomega Zip, floppy drive), etc.
 When a file is selected, the action performed is exactly the same performed
 when the file is selected in a KFM window.
 </LI>
-<LI>On the top of each menu (except the first one) there is an entry "Open Folder".
-when this entry is selected, a KFM window is launched using the current
-folder as URL. If you hold the Shift key when selecting this entry, Disk
-Navigator opens a terminal in the current folder.
-</LI>
 <LI>Slow devices: accessing a folder on a slow device can stop Disk Navigator
 for a while (eg. entering a folder with a large number of files on a slow
 CD-ROM reader). Since you may want to place entry points to slow devices on
 the root menu, you might accidentally enter such slow entries.
 To avoid this problem, you can add a "Removable Media" folder to the 
-Global/Local sections, and place links to slow devices in this folder.
+Global/Local sections, and create URL files or links pointing to the slow
+devices in this folder.
 See the "Options" section to see how to customize the Global/Local sections.
 </LI>
-<LI>Copying <CODE>~/.kde</CODE> and $KDEDIR: the current version of Disk
-Navigator uses symbolic links to define entry points in the
-Global/Local sections. Symbolic links are stored in
-<CODE>$KDEDIR/share/disknav</CODE> (Global) and
-<CODE>~/.kde/share/disknav</CODE> (Local). Therefore, if you want to copy
-a KDE directories (for instance &nbsp;/.kde to create a backup copy of your
-KDE settings), you should use <CODE>cp</CODE> with the <CODE>-d</CODE>
-option. This way, symbolic links are copied as symbolic links. If, for
-instance, you use: "<CODE>cp -r ~/.kde kde-backup</CODE>" (without the -d option)
-<CODE>cp</CODE> will follow symbolic links in the
-<CODE>disknav</CODE> directory.
+<LI>URL vs. Links: starting version 0.3, Disk Navigator supports KDE URL files 
+to define filesystem entry points.
+Disk Navigator, in particular, supports local aliases, i.e. URL files referring
+to local files (not, for instance, ftp URLs).
+For more information, see section "Adding, Changing and Removing
+Filesystem Entries". Currently, you can use both URL files and filesystem links
+(hard or symbolic). Using symbolic links, however, can be source of problems
+if you try to make a copy of the KDE directory using the <CODE>-r</CODE> option
+of the <CODE>cp</CODE> command (recursive copy). Linux users can get rid of such
+problem using the <CODE>-d</CODE> option in conjunction with <CODE>-r</CODE> so that
+<CODE>cp</CODE> will not follow symbolic links. Unexperienced users should
+always use URL files to define new entries in the Disk Navigator menu.
 </LI>
 <P>
 <P ALIGN="RIGHT">

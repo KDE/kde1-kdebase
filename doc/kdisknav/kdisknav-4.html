@@ -1,10 +1,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <HTML>
 <HEAD>
-<TITLE>KDE Disk Navigator: Notes</TITLE>
+<TITLE>KDE Disk Navigator: Adding, Changing and Removing Filesystem Entries</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
-<META NAME="keywords" CONTENT="kdisknav">
-<META NAME="description" CONTENT="kdisknav documentation">
+<META NAME="keywords" CONTENT="kdisknav, disk navigator">
+<META NAME="description" CONTENT="disk navigator documentation">
 </HEAD>
 <BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
 <FONT FACE="Helvetica">
@@ -18,29 +18,48 @@
 <A HREF="kdisknav-3.html">Previous</A>
 <A HREF="kdisknav.html#toc4">Table of Contents</A>
 </P>
-<H3><A NAME="s4">4. Notes</A></H3>
+<H3><A NAME="s4">4. Adding, Changing and Removing Filesystem Entries</A></H3>
 
 <P>
+<P>The Disk Navigator menu can be easily customized to contain frequently accessed
+filesystem entries. After installation, the Disk Navigator menu contains some
+example entries (root, user's home, user's desktop, etc.). It is possible
+to remove those entries, change their icons, add new entries, and so on.
+<P>To edit Disk Navigator menu entries, select "Options..." from the Disk
+Navigator menu. Alternatively, select Panel -> Configure from the KPanel
+menu and then select the "Disk Navigator" tab.
+<P>At this point click on "Edit Local..." or "Edit Global..." buttons to edit,
+respectively, user specific entries and common entries (shared among all
+users). Note that you must be logged as root to change global entries.
+<P>After that, a KFM window is displayed, showing the entries for the
+Disk Navigator section that you are editing (Local/Global). 
+If, for instance, you want to add a new entry pointing to /opt/kde you
+can do the following:
 <P>
-<LI>Disk Navigator menus are updated automatically when directory
-contents change, except the first menu, that is updated through the
-Options dialog.
+<LI> Select: File -> New -> URL. A new icon named "URL" should appear in the
+KFM window.
 </LI>
-<LI>The contents of the "Recent" section are saved in the
-&nbsp;/.kde/share/config/kpanelrc configuration file. If you want to clear this
-section, you can clear the <CODE>RecentFolders</CODE> and <CODE>RecentFiles</CODE>
-entries in this file after logging out from KDE.
+<LI> Click with the right mouse button on the new icon and choose "Properties".
 </LI>
-<LI>Documents and applications not accessed through the KPanel are not added 
-to the "Recent" section. This limitation is going to disappear in future
-versions of Disk Navigator.
+<LI> Change the file name to "KDE.kdelnk". "KDE" will be the name of
+the entry in the Disk Navigator menu (the <CODE>.kdelnk</CODE> suffix is ignored).
 </LI>
-<LI>Due to efficiency reasons, most files are not displayed with the same icon
-you would see in a file manager window. With the current version, only
-<CODE>.kdelnk</CODE> files have the corresponding icon displayed. Other files
-are displayed with two different icons to distinguish between data files
-and executables.
+<LI> Select the "URL" tab and write <CODE>/opt/kde</CODE> in the URL input box.
 </LI>
+<LI> Optionally, you can change the icon. This is the icon that will be
+displayed in the Disk Navigator menu.
+</LI>
+<LI> Close the KFM window and "OK" on the Disk Navigator configuration
+window. This should restart KPanel. After that, you will see the new entry
+in the Disk Navigator menu.</LI>
+<P>In place of an URL file you might use symbolic links. However, using 
+symbolic links has some drawbacks and are not recommended. Please read Section
+"Feature &amp; Tips".
+<P>To remove an entry from the Disk Navigator menu simply remove the corresponding
+URL from the KFM window used to edit entries.
+<P>Note that you can also create folders in this window to group common entries.
+For instance, you could create a folder "Network" containing entry points
+to distributed filesystem mount points (NFS, SAMBA, etc).
 <P>
 <P ALIGN="RIGHT">
 

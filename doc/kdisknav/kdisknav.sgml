@@ -1,3 +1,4 @@
+
 <!doctype linuxdoc system>
 
 <!-- KDE Disk Navigator.
@@ -10,7 +11,7 @@
 <title>KDE Disk Navigator
 <author>Pietro Iglio
 (<htmlurl url="mailto:iglio@kde.org" name="iglio@kde.org">)
-<date>v. 0.2 (beta), Aug 06 10:40:20 1998
+<date>v. 0.3 (beta), Nov 17 15:45:00 1998
 
 <!-- Table of contents -->
 <toc>
@@ -64,6 +65,12 @@ The root menu is highly customizable, as explained in the remaining sections.
 <list>
 
 <item>
+On the top of each menu (except the first one) there is an entry "Open Folder".
+when this entry is selected, a KFM window is launched using the current
+folder as URL. If you hold down the Shift key when selecting this entry, Disk
+Navigator opens a terminal in the current folder.
+
+<item>
 Disk Navigator can be used to quickly access files in any mounted filesystem,
 including local files, remote files (eg. NFS mounts), removable media
 (CD-ROM, Iomega Zip, floppy drive), etc.
@@ -71,32 +78,28 @@ When a file is selected, the action performed is exactly the same performed
 when the file is selected in a KFM window.
 
 <item>
-On the top of each menu (except the first one) there is an entry "Open Folder".
-when this entry is selected, a KFM window is launched using the current
-folder as URL. If you hold the Shift key when selecting this entry, Disk
-Navigator opens a terminal in the current folder.
-
-<item>
 Slow devices: accessing a folder on a slow device can stop Disk Navigator
 for a while (eg. entering a folder with a large number of files on a slow
 CD-ROM reader). Since you may want to place entry points to slow devices on
 the root menu, you might accidentally enter such slow entries.
 To avoid this problem, you can add a "Removable Media" folder to the 
-Global/Local sections, and place links to slow devices in this folder.
+Global/Local sections, and create URL files or links pointing to the slow
+devices in this folder.
 See the "Options" section to see how to customize the Global/Local sections.
 
 <item>
-Copying <tt>~/.kde</tt> and $KDEDIR: the current version of Disk
-Navigator uses symbolic links to define entry points in the
-Global/Local sections. Symbolic links are stored in
-<tt>$KDEDIR/share/disknav</tt> (Global) and
-<tt>~/.kde/share/disknav</tt> (Local). Therefore, if you want to copy
-a KDE directories (for instance ~/.kde to create a backup copy of your
-KDE settings), you should use <tt>cp</tt> with the <tt>-d</tt>
-option. This way, symbolic links are copied as symbolic links. If, for
-instance, you use: "<tt>cp -r ~/.kde kde-backup</tt>" (without the -d option)
-<tt>cp</tt> will follow symbolic links in the
-<tt>disknav</tt> directory.
+URL vs. Links: starting version 0.3, Disk Navigator supports KDE URL files 
+to define filesystem entry points.
+Disk Navigator, in particular, supports local aliases, i.e. URL files referring
+to local files (not, for instance, ftp URLs).
+For more information, see section "Adding, Changing and Removing
+Filesystem Entries". Currently, you can use both URL files and filesystem links
+(hard or symbolic). Using symbolic links, however, can be source of problems
+if you try to make a copy of the KDE directory using the <tt>-r</tt> option
+of the <tt>cp</tt> command (recursive copy). Linux users can get rid of such
+problem using the <tt>-d</tt> option in conjunction with <tt>-r</tt> so that
+<tt>cp</tt> will not follow symbolic links. Unexperienced users should
+always use URL files to define new entries in the Disk Navigator menu.
 
 </list>
 
@@ -113,11 +116,12 @@ the KPanel menu. It is possible to set the following options:
   <item><bf>"Edit Local..."</bf>, <bf>"Edit Global..."</bf> these
   buttons allow to change entries in the Local and Global Sections
   (note: only superusers can change global settings).  In both cases,
-  a kfm window is displayed. Use normal dragging operations to create
-  symbolic links and folders in the local
-  (<tt>~/.kde/share/disknav</tt>) and global
-  (<tt>$KDEDIR/share/disknav</tt>) directories. When either the
-  "Apply" or the "OK" button in the Options dialog is selected, these
+  a KFM window is displayed. Use KFM to create URL files, links and folders
+  in the local (<tt>~/.kde/share/disknav</tt>) and global
+  (<tt>$KDEDIR/share/disknav</tt>) directories. For more details, read
+  section "Adding, Changing and Removing Filesystem Entries".
+
+  When either the "Apply" or the "OK" button in the Options dialog is selected, these
   directories are parsed again and the "Disk Navigator" menu is
   updated.  Alternatively, it is possible to change local and global
   directory contents from the command line (e.g. using a shell
@@ -169,6 +173,58 @@ the KPanel menu. It is possible to set the following options:
 
 </list>
 
+<!--################################################################## -->
+<sect>Adding, Changing and Removing Filesystem Entries
+<!--################################################################## -->
+<p>
+
+The Disk Navigator menu can be easily customized to contain frequently accessed
+filesystem entries. After installation, the Disk Navigator menu contains some
+example entries (root, user's home, user's desktop, etc.). It is possible
+to remove those entries, change their icons, add new entries, and so on.
+
+To edit Disk Navigator menu entries, select "Options..." from the Disk
+Navigator menu. Alternatively, select Panel -> Configure from the KPanel
+menu and then select the "Disk Navigator" tab.
+
+At this point click on "Edit Local..." or "Edit Global..." buttons to edit,
+respectively, user specific entries and common entries (shared among all
+users). Note that you must be logged as root to change global entries.
+
+After that, a KFM window is displayed, showing the entries for the
+Disk Navigator section that you are editing (Local/Global). 
+If, for instance, you want to add a new entry pointing to /opt/kde you
+can do the following:
+
+<list>
+<item> Select: File -> New -> URL. A new icon named "URL" should appear in the
+KFM window.
+
+<item> Click with the right mouse button on the new icon and choose "Properties".
+
+<item> Change the file name to "KDE.kdelnk". "KDE" will be the name of
+the entry in the Disk Navigator menu (the <tt>.kdelnk</tt> suffix is ignored).
+
+<item> Select the "URL" tab and write <tt>/opt/kde</tt> in the URL input box.
+
+<item> Optionally, you can change the icon. This is the icon that will be
+displayed in the Disk Navigator menu.
+
+<item> Close the KFM window and "OK" on the Disk Navigator configuration
+window. This should restart KPanel. After that, you will see the new entry
+in the Disk Navigator menu.
+</list>
+
+In place of an URL file you might use symbolic links. However, using 
+symbolic links has some drawbacks and are not recommended. Please read Section
+"Feature & Tips".
+
+To remove an entry from the Disk Navigator menu simply remove the corresponding
+URL from the KFM window used to edit entries.
+
+Note that you can also create folders in this window to group common entries.
+For instance, you could create a folder "Network" containing entry points
+to distributed filesystem mount points (NFS, SAMBA, etc).
 
 <!--################################################################## -->
 <sect>Notes
@@ -190,7 +246,7 @@ entries in this file after logging out from KDE.
 
 <item>
 Documents and applications not accessed through the KPanel are not added 
-to the "Recent" section. This limitation is going to disappear in future
+to the "Recent" section. This limitation will disappear in future
 versions of Disk Navigator.
 
 <item>
@@ -199,6 +255,17 @@ you would see in a file manager window. With the current version, only
 <tt>.kdelnk</tt> files have the corresponding icon displayed. Other files
 are displayed with two different icons to distinguish between data files
 and executables.
+
+<item>
+Copying <tt>~/.kde</tt> and $KDEDIR: if you are using symbolic links to define
+filesystem entry points in the Global/Local sections, you must be careful when
+copying the KDE directory, since the <tt>cp</tt> command with the <tt>-r</tt>
+option follows symbolic links. Under Linux you can use the <tt>-d</tt>
+option to avoid this problem.
+However, you are recommended to change all symbolic links to corresponding 
+KDE URL files.
+Symbolic links are stored under <tt>$KDEDIR/share/disknav</tt> (Global) and
+<tt>~/.kde/share/disknav</tt> (Local).
 
 </list>
 
