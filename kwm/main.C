@@ -490,6 +490,7 @@ void switchActivateClient(Client* c, bool show_warning){
 
 void logout(){
   showWarning(klocale->translate("Preparing session ... "), false); 
+  XUngrabServer(qt_xdisplay());
   XSync(qt_xdisplay(), false);
   kapp->processEvents();
   manager->processSaveYourself();
