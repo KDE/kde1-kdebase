@@ -2,7 +2,7 @@
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
-msgstr "kwm: ao que parece já está a correr. kwm não arrancou"
+msgstr "kwm: ao que parece já está a correr. kwm não arrancou\n"
 
 #: main.C:77
 msgid "kwm: failure during initialisation; aborting\n"

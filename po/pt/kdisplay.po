@@ -253,4 +253,4 @@ msgstr "Italico"
 
 #: kwmcom.cpp:80 kwmcom.cpp:107
 msgid "kwmcom: communication with kwm failed\n"
-msgstr "kwmcom: falha na comunicação com o kwm"
+msgstr "kwmcom: falha na comunicação com o kwm\n"
