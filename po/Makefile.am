@@ -1,9 +1,6 @@
 
 SUBDIRS = cz da de es fi fr it nl ru sv
 
-all: all-@USE_NLS@
-install-data-local: install-@USE_NLS@
-
 # TODO: This does not any longer work
 merge:
 	@catalogs='$(POFILES)'; \
