@@ -35,16 +35,19 @@ help button.
 <p>
 
 <itemize>
-<item> <htmlurl url="bell/bell-1.html" name="Bell Configuration">
-<item> <htmlurl url="info/info-1.html" name="Memory Inforation">
-<item> <htmlurl url="info/info-2.html" name="Processor Information">
-<item> <htmlurl url="input/input-1.html" name="Keyboard Configuration">
-<item> <htmlurl url="input/input-2.html" name="Mouse Configuration">
-<item> <htmlurl url="kwm/kwm-1.html" name="Titlebar Button Configuration">
-<item> <htmlurl url="kwm/kwm-2.html" name="Titlebar Configuration">
-<item> <htmlurl url="kwm/kwm-3.html" name="Window Configuration">
-<item> <htmlurl url="locale/locale-1.html" name="Language Setting">
-<item> <htmlurl url="syssound/syssound.html" name="System Sound Selection">
+<item> <htmlurl url="kcmbell/bell-1.html" name="Bell Configuration">
+<item> <htmlurl url="kcminfo/info-1.html" name="Memory Information">
+<item> <htmlurl url="kcminfo/info-2.html" name="Processor Information">
+<item> <htmlurl url="kcminput/input-1.html" name="Keyboard Configuration">
+<item> <htmlurl url="kcminput/input-2.html" name="Mouse Configuration">
+<item> <htmlurl url="kcmkeys/keys-1.html" name="Configuration of Key Bindings (Shortcut keys)">
+<item> <htmlurl url="kcmkeys/keys-2.html" name="Configuration of the Standard Key Bindings">
+<item> <htmlurl url="kcmkwm/kwm-1.html" name="Titlebar Button Configuration">
+<item> <htmlurl url="kcmkwm/kwm-2.html" name="Titlebar Configuration">
+<item> <htmlurl url="kcmkwm/kwm-3.html" name="Window Configuration">
+<item> <htmlurl url="kcmlocale/locale-1.html" name="Language Setting">
+<item> <htmlurl url="kcmsamba/smbstatus-1.html" name="The Samba Status Monitor">
+<item> <htmlurl url="kcmsyssound/syssound.html" name="System Sound Selection">
 <item> <htmlurl url="kpanel/kpanel.html" name="Panel and Taskbar Configuration">
 <item> <htmlurl url="kdisplay/kdisplay-3.html" name="Background Configuration">
 <item> <htmlurl url="kdisplay/kdisplay-4.html" name="Screen Saver Configuration">
