@@ -2,7 +2,7 @@
 
 INCLUDES= $(all_includes)
 LDADD	= $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_RPATH)
-CXXFLAGS += -export-dynamic
+# CXXFLAGS += -export-dynamic
 
 #######	Files
 
