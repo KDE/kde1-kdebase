@@ -43,10 +43,11 @@ void MYexit(int retcode)
 }
 
 // Signal handler for dying child. Remove communication id file and exit right now.
-void mysigchild(int /*signum*/)
+void mysigchild(int signum)
 {
   unlink (KMServerPidFile);
-  MdDisconnect(&m);
+  if ( (signum != SIGSEGV) && (signum != SIGBUS) )
+    MdDisconnect(&m);  // don't try to clean this up in case of real trouble
   MYexit(1);  
 }
 
