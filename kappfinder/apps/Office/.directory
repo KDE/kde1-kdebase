@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Office
+Name[de]=Office
 Name[fr]=Applications pour la bureautique
 Name[pl]=Biuro
 Name[it]=Ufficio

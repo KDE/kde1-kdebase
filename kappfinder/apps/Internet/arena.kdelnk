@@ -5,6 +5,7 @@ Icon=www.xpm
 Type=Application
 Name=Arena
 Comment=Arena WWW Browser
+Comment[de]=Arena WWW Browser
 Comment[fr]=Navigateur Web Arena
 Comment[pl]=Przegl±darka WWW Arena
 Comment[fi]=Arena WWW-selain

@@ -15,6 +15,7 @@ DocPath=
 Type=Application
 Terminal=0
 Comment=LaTeX Word Processor
+Comment[de]=LaTeX-Textverarbeitung
 Comment[pl]=Edytor tekstu LaTeX
 Comment[fr]=Editeur de textes basé sur LaTeX
 Comment[pt]=Processdor de textos LaTex

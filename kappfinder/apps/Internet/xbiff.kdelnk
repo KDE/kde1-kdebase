@@ -4,6 +4,7 @@ SwallowExec=xbiff
 SwallowTitle=xbiff
 Name=xbiff
 Comment=Mail notification
+Comment[de]=Benachrichtung bei neuer Email
 Comment[pt]=Notificação de mail
 Comment[it]=Controllo Posta
 Comment[cs]=Upozoròuje na novou po¹tu

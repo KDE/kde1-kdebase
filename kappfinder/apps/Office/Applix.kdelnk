@@ -15,6 +15,7 @@ DocPath=
 Type=Application
 Terminal=0
 Comment=ApplixWare Office Suite
+Comment[de]=ApplixWare Office
 Comment[pl]=Pakiet biurowy ApplixWare
 Comment[fi]=Applixware toimisto-ohjelmisto
 Comment[fr]=Suite bureautique ApplixWare

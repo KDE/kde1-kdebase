@@ -14,6 +14,7 @@ DocPath=
 Type=Application
 Terminal=0
 Comment=Calendar Manager
+Comment[de]=Kalendar
 Comment[pl]=Kalendarz
 Comment[fi]=Kalenteriohjelmisto
 Comment[fr]=Gestionnaire d'agenda

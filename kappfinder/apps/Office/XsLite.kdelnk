@@ -15,6 +15,7 @@ DocPath=
 Type=Application
 Terminal=0
 Comment=Spread Sheet
+Comment[de]=Tabellenkalkulation
 Comment[pl]=Arkusz kalkulacyjny
 Comment[fi]=Taulukkolaskentaohjelma
 Comment[fr]=Tableur XsLite
