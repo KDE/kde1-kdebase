@@ -7,13 +7,16 @@ email=flemming@themes.org
 description=New and Improved MacOS theme.
 version=0.9
 #-----------------------------------------------------------------------------
+[Panel]
+background=panel.xpm
+#-----------------------------------------------------------------------------
 [Display]
 CommonDesktop=true
 Wallpaper0=desktop2.jpg
 WallpaperMode0=tiled
 Wallpaper1=desktop.jpg
 WallpaperMode1=tiled
-RootIconTextStyle=0
+RootIconTextStyle=1
 RootIconTextForeground=255,255,255
 RootIconTextBackground=0,0,0
 #-----------------------------------------------------------------------------

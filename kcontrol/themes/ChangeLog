@@ -1,4 +1,12 @@
+1998-12-26  Stefan Taferner  <taferner@kde.org> (V0.7)
+
+	* Implemented first version of theme extractor that
+	creates a theme from the current Kde settings.
+
 1998-12-24  Stefan Taferner  <taferner@kde.org> (V0.6)
+
+	* Added additional information about the selected
+	theme to the About tab page.
 
 	* Added CommonDesktop entry in Desktop section. Now
 	it is possible to have several desktop wallpapers

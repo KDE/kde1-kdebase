@@ -7,17 +7,21 @@ THEMESDIR= $(kde_datadir)/kthememgr/Themes
 #SUBDIRS = 
 bin_PROGRAMS = 	kthememgr
 kthememgr_SOURCES = theme.cpp installer.cpp main.cpp kwmcom.cpp \
-	options.cpp widgetcanvas.cpp colors.cpp about.cpp groupdetails.cpp
+	options.cpp widgetcanvas.cpp about.cpp groupdetails.cpp \
+	themecreator.cpp newthemedlg.cpp
 noinst_HEADERS = theme.h installer.h kwmcom.h widgetcanvas.h \
-	options.h colors.h about.h version.h groupdetails.h
+	options.h colors.h about.h version.h groupdetails.h \
+	themecreator.h newthemedlg.h
 
 kthememgr_LDADD = $(LIB_KIMGIO) $(LIB_KFILE) 
 kthememgr_LDFLAGS = $(all_libraries) $(LDFLAGS) $(KDE_RPATH)
 
 BUILTSOURCES = theme.moc installer.moc colors.moc widgetcanvas.moc \
-	options.moc about.moc groupdetails.moc
+	options.moc about.moc groupdetails.moc themecreator.moc \
+	newthemedlg.moc
 DISTCLEANFILES = theme.moc installer.moc colors.moc widgetcanvas.moc \
-	options.moc about.moc groupdetails.moc
+	options.moc about.moc groupdetails.moc themecreator.moc \
+	newthemedlg.moc
 
 install-data-local: install-themes
 	$(mkinstalldirs) $(APPSDIR)
@@ -80,3 +84,11 @@ about.moc: about.h
 groupdetails.cpp: groupdetails.moc
 groupdetails.moc: groupdetails.h
 	$(MOC) groupdetails.h -o groupdetails.moc
+
+themecreator.cpp: themecreator.moc
+themecreator.moc: themecreator.h
+	$(MOC) themecreator.h -o themecreator.moc
+
+newthemedlg.cpp: newthemedlg.moc
+newthemedlg.moc: newthemedlg.h
+	$(MOC) newthemedlg.h -o newthemedlg.moc

@@ -12,7 +12,7 @@
 #include <kconfig.h>
 
 #include "options.h"
-#include "theme.h"
+#include "themecreator.h"
 #include "global.h"
 #include "groupdetails.h"
 
@@ -164,6 +164,7 @@ void Options::slotInvert()
   mCbxSounds->setChecked(!mCbxSounds->isChecked());
   mCbxIcons->setChecked(!mCbxIcons->isChecked());
   mCbxGimmick->setChecked(!mCbxGimmick->isChecked());
+  applySettings();
 }
 
 
@@ -179,6 +180,7 @@ void Options::slotClear()
   mCbxSounds->setChecked(false);
   mCbxIcons->setChecked(false);
   mCbxGimmick->setChecked(false);
+  applySettings();
 }
 
 
@@ -202,6 +204,7 @@ void Options::slotDetails()
 //-----------------------------------------------------------------------------
 void Options::slotCbxClicked()
 {
+  applySettings();
 }
 
 
@@ -287,6 +290,7 @@ void Options::readConfig()
   mCbxGimmick->setChecked(cfg->readBoolEntry("window-gimmick", true));
   mCbxWallpapers->setChecked(cfg->readBoolEntry("wallpapers", true));
   mCbxSounds->setChecked(cfg->readBoolEntry("sounds", true));
+  applySettings();
 }
 
 //-----------------------------------------------------------------------------

@@ -255,6 +255,9 @@ ConfigFile=desktop1rc
 ConfigAbsolutePaths=true
 Wallpaper1=Wallpaper
 WallpaperMode1=WallpaperMode!
+ColorMode=ColorMode!
+Color1_1=Color1!
+Color2_1=Color2!
 #
 [Display-2]
 ConfigNextGroup=Display-3
@@ -265,6 +268,9 @@ ConfigFile=desktop2rc
 ConfigAbsolutePaths=true
 Wallpaper2=Wallpaper
 WallpaperMode2=WallpaperMode!
+ColorMode2=ColorMode!
+Color1_2=Color1!
+Color2_2=Color2!
 #
 [Display-3]
 ConfigNextGroup=Display-4
@@ -275,6 +281,9 @@ ConfigFile=desktop3rc
 ConfigAbsolutePaths=true
 Wallpaper3=Wallpaper
 WallpaperMode3=WallpaperMode!
+ColorMode3=ColorMode!
+Color1_3=Color1!
+Color2_3=Color2!
 #
 [Display-4]
 ConfigNextGroup=Display-5
@@ -285,6 +294,9 @@ ConfigFile=desktop4rc
 ConfigAbsolutePaths=true
 Wallpaper4=Wallpaper
 WallpaperMode4=WallpaperMode!
+ColorMode4=ColorMode!
+Color1_4=Color1!
+Color2_4=Color2!
 #
 [Display-5]
 ConfigNextGroup=Display-6
@@ -295,6 +307,9 @@ ConfigFile=desktop5rc
 ConfigAbsolutePaths=true
 Wallpaper5=Wallpaper
 WallpaperMode5=WallpaperMode!
+ColorMode5=ColorMode!
+Color1_5=Color1!
+Color2_5=Color2!
 #
 [Display-6]
 ConfigNextGroup=Display-7
@@ -305,6 +320,9 @@ ConfigFile=desktop6rc
 ConfigAbsolutePaths=true
 Wallpaper6=Wallpaper
 WallpaperMode6=WallpaperMode!
+ColorMode6=ColorMode!
+Color1_6=Color1!
+Color2_6=Color2!
 #
 [Display-7]
 ConfigGroup=Desktop0
@@ -315,6 +333,9 @@ ConfigAbsolutePaths=true
 ConfigNextGroup=Display-dtm
 Wallpaper7=Wallpaper
 WallpaperMode7=WallpaperMode!
+ColorMode7=ColorMode!
+Color1_7=Color1!
+Color2_7=Color2!
 #
 [Display-dtm]
 ConfigFile=kdisplayrc
@@ -322,6 +343,7 @@ ConfigGroup=Desktop Common
 ConfigInstallCmd=oneDesktopMode
 ConfigActivateCmd=kwmcom kbgwm_reconfigure
 ConfigNextGroup=Display-root-icon-style
+CommonDesktop=oneDesktopMode!
 #
 [Display-root-icon-style]
 ConfigFile=kfmrc

@@ -1,8 +1,7 @@
 /*
  * theme.h
  *
- * Copyright (c) 1998 Stefan Taferner <taferner@kde.org> and
- *                    Roberto Alsina <ralsina@unl.edu.ar>
+ * Copyright (c) 1998 Stefan Taferner <taferner@kde.org>
  *
  * Requires the Qt widget libraries, available at no cost at
  * http://www.troll.no/

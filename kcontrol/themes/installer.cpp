@@ -1,8 +1,7 @@
 /*
  * installer.cpp
  *
- * Copyright (c) 1998 Stefan Taferner <taferner@kde.org> and
- *                    Roberto Alsina <ralsina@unl.edu.ar>
+ * Copyright (c) 1998 Stefan Taferner <taferner@kde.org>
  *
  * Requires the Qt widget libraries, available at no cost at
  * http://www.troll.no/
@@ -41,8 +40,11 @@
 #include <stdlib.h>
 
 #include "installer.h"
-#include "theme.h"
+#include "themecreator.h"
 #include "global.h"
+#include "newthemedlg.h"
+
+static bool sSettingTheme = false;
 
 
 //-----------------------------------------------------------------------------
@@ -56,6 +58,8 @@ Installer::Installer (QWidget *aParent, const char *aName, bool aInit)
   {
     return;
   }
+
+  mEditing = false;
 
   connect(theme, SIGNAL(changed()), SLOT(slotThemeChanged()));
 
@@ -71,9 +75,8 @@ Installer::Installer (QWidget *aParent, const char *aName, bool aInit)
   bbox = new KButtonBox(this, KButtonBox::HORIZONTAL, 0, 6);
   mGrid->addMultiCellWidget(bbox, 2, 2, 0, 1);
 
-  mBtnNew = bbox->addButton(i18n("New"));
+  mBtnNew = bbox->addButton(i18n("New..."));
   connect(mBtnNew, SIGNAL(clicked()), SLOT(slotNew()));
-  mBtnNew->setEnabled(false);
 
   mBtnRemove = bbox->addButton(i18n("Remove"));
   connect(mBtnRemove, SIGNAL(clicked()), SLOT(slotRemove()));
@@ -123,7 +126,7 @@ void Installer::readThemesList(void)
   {
     if (name[0]=='.') continue;
     if (name=="CVS" || name.right(8)==".themerc") continue;
-    mThemesList->insertItem(name);
+    mThemesList->inSort(name);
   }
 
   // Read global themes
@@ -134,7 +137,7 @@ void Installer::readThemesList(void)
     if (name[0]=='.') continue;
     if (name=="CVS" || name.right(8)==".themerc") continue;
     // Dirty hack: the trailing space marks global themes ;-)
-    mThemesList->insertItem(name + " ");
+    mThemesList->inSort(name + " ");
   }
 }
 
@@ -156,6 +159,24 @@ void Installer::applySettings()
 //-----------------------------------------------------------------------------
 void Installer::slotNew()
 {
+  QString name;
+  NewThemeDlg dlg;
+
+  if (!dlg.exec()) return;
+  dlg.hide();
+
+  name = dlg.fileName();
+  if (!theme->create(name)) return;
+
+  mEditing = true;
+
+  sSettingTheme = true;
+  if (findItem(name) < 0) mThemesList->inSort(name);
+  mThemesList->setCurrentItem(findItem(name));
+  sSettingTheme = false;
+
+  mPreview->setText("");
+  mText->setText("");
 }
 
 
@@ -188,6 +209,8 @@ void Installer::slotSetTheme(int id)
 {
   bool enabled, isGlobal=false;
   QString name;
+
+  if (sSettingTheme) return;
 
   if (id < 0)
   {
@@ -307,6 +330,21 @@ void Installer::slotThemeChanged()
     mPreview->setText(i18n("(no preview pixmap)"));
   else mPreview->setPixmap(theme->preview());
   //mPreview->setFixedSize(theme->preview().size());
+}
+
+
+//-----------------------------------------------------------------------------
+int Installer::findItem(const QString aText) const
+{
+  int id = mThemesList->count()-1;
+
+  while (id >= 0)
+  {
+    if (mThemesList->text(id) == aText) return id;
+    id--;
+  }
+
+  return -1;
 }
 
 

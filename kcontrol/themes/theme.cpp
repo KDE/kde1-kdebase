@@ -1,8 +1,7 @@
 /*
  * theme.h
  *
- * Copyright (c) 1998 Stefan Taferner <taferner@kde.org> and
- *                    Roberto Alsina <ralsina@unl.edu.ar>
+ * Copyright (c) 1998 Stefan Taferner <taferner@kde.org>
  *
  * Requires the Qt widget libraries, available at no cost at
  * http://www.troll.no/
@@ -294,12 +293,21 @@ bool Theme::save(const QString aPath)
   emit apply();
   writeConfig();
   file.setName(mThemePath + mThemercFile);
-  file.open(IO_WriteOnly);
   writeConfigFile(file);
-  file.close();
 
-  cmd.sprintf("cd \"%s\";tar cf - *|gzip -c >\"%s\"",
-	      (const char*)workDir(), (const char*)aPath);
+  if (stricmp(aPath.right(4), ".tgz") == 0 ||
+      stricmp(aPath.right(7), ".tar.gz") == 0)
+  {
+    cmd.sprintf("cd \"%s\";tar cf - *|gzip -c >\"%s\"",
+		(const char*)workDir(), (const char*)aPath);
+  }
+  else
+  {
+    cmd.sprintf("cd \"%s\"; rm -rf \"%s\"; cp -r * \"%s\"",
+		(const char*)workDir(), (const char*)aPath,
+		(const char*)aPath);
+  }
+
   debug(cmd);
   rc = system(cmd);
   if (rc) debug(i18n("Failed to save theme to\n%s\nwith command\n%s"),
@@ -340,6 +348,13 @@ bool Theme::installFile(const QString& aSrc, const QString& aDest)
   else dest = QString(kapp->localkdedir()) + '/' + aDest;
 
   src = mThemePath + aSrc;
+
+  finfo.setFile(src);
+  if (!finfo.exists())
+  {
+    debug("File %s is not in theme package.", (const char*)aSrc);
+    return false;
+  }
 
   finfo.setFile(dest);
   if (finfo.isDir())  // destination is a directory
@@ -405,7 +420,7 @@ int Theme::installGroup(const char* aGroupName)
   KSimpleConfig* cfg = NULL;
   KEntryDictEntry* entry;
   int len, i, installed = 0;
-  const char* missing = NULL;
+  const char* missing = 0;
 
   debug("*** beginning with %s", aGroupName);
   group = aGroupName;
@@ -524,16 +539,17 @@ int Theme::installGroup(const char* aGroupName)
       {
 	if (!themeValue.isEmpty())
 	{
-	  debug("installFile: %s => %s", (const char*)themeValue,
-		(const char*)(appDir + cfgValue));
-	  installFile(themeValue, appDir + cfgValue);
-	  installed++;
+	  if (installFile(themeValue, appDir + cfgValue))
+	    installed++;
+	  else doInstall = false;
 	}
       }
 
-      // Set config entry
+      // Determine config value
       if (cfgValue.isEmpty()) cfgValue = emptyValue;
       else if (doInstall && absPath) cfgValue = appDir + cfgValue;
+ 
+      // Set config entry
       debug("%s=%s", (const char*)cfgKey, (const char*)cfgValue);
       if (cfgKey == "-") cfg->deleteEntry(key, false);
       else cfg->writeEntry(cfgKey, cfgValue);
@@ -1103,15 +1119,17 @@ const QColor& Theme::readColorEntry(KConfigBase* cfg, const char* aKey,
 //-----------------------------------------------------------------------------
 void Theme::clear(void)
 {
-  deleteGroup("General");
-  deleteGroup("Desktop");
-  deleteGroup("Colors");
-  deleteGroup("Window Border");
-  deleteGroup("Window Titlebar");
-  deleteGroup("Sounds");
-  deleteGroup("Icons");
-  deleteGroup("Panel");
-  deleteGroup("Filemanager");
+  KGroupIterator* it;
+  KEntryDict* grp;
+  QString groupName;
+
+  it = groupIterator();
+  for (grp = it->toFirst(); grp; )
+  {
+    groupName = it->currentKey();
+    grp = it->operator++();
+    deleteGroup(groupName);
+  }
 }
 
 

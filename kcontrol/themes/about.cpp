@@ -14,7 +14,7 @@
 #include <qfont.h>
 
 #include "about.h"
-#include "theme.h"
+#include "themecreator.h"
 #include "global.h"
 #include "version.h"
 
@@ -112,14 +112,17 @@ void About::slotThemeChanged()
   lblVersion->setText(str);
 
   // Author and email address
-  str = theme->readEntry("Author");
-  if (str.isEmpty()) str = i18n("Unknown");
-  str.sprintf(i18n("by %s"), (const char*)str);
+  value = theme->readEntry("Author");
+  if (value.isEmpty()) value = i18n("Unknown");
+  str.sprintf(i18n("by %s"), (const char*)value);
 
   value = theme->readEntry("Email");
-  if (value.find('<') >= 0 && value.find('>') >= 0)
-    str += " (" + value + ')';
-  else str += " <" + value + '>';
+  if (!value.isEmpty())
+  {
+    if (value.find('<') >= 0 && value.find('>') >= 0)
+      str += " (" + value + ')';
+    else str += " <" + value + '>';
+  }
   lblAuthor->setText(str);
 
   // Homepage

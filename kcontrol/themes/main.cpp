@@ -1,8 +1,7 @@
 /*
  * main.cpp
  *
- * Copyright (c) 1998 Stefan Taferner <taferner@kde.org> and
- *                    Roberto Alsina <ralsina@unl.edu.ar>
+ * Copyright (c) 1998 Stefan Taferner <taferner@kde.org>
  *
  * Requires the Qt widget libraries, available at no cost at
  * http://www.troll.no/
@@ -24,16 +23,20 @@
 
 #include <kimgio.h>
 #include <kslider.h>
-#include <kcontrol.h>
 #include <kmsgbox.h>
 
-#include "theme.h"
+#define private public
+#include <kcontrol.h>
+#undef private
+
+#include "themecreator.h"
 #include "installer.h"
 #include "global.h"
 #include "options.h"
 #include "about.h"
 
-Theme* theme = NULL;
+
+ThemeCreator* theme = NULL;
 static msg_handler oldMsgHandler = NULL;
 
 
@@ -47,6 +50,10 @@ public:
 
   virtual void init();
   virtual void apply();
+  virtual void defaultValues();
+
+protected:
+  virtual void tweakUi(void);
 
 private:
   Installer* mInstaller;
@@ -63,10 +70,12 @@ KThemesApplication::KThemesApplication(int &argc, char **argv, const char *name)
   initMetaObject();
 
   mInstaller = NULL;
-  theme = new Theme;
+  theme = new ThemeCreator;
 
   if (runGUI())
   {
+    tweakUi();
+
     addPage(mInstaller = new Installer(dialog), i18n("Installer"), 0);
     addPage(mOptions = new Options(dialog), i18n("Contents"), 0);
     addPage(mAbout = new About(dialog), i18n("About"), 0);
@@ -84,9 +93,25 @@ KThemesApplication::~KThemesApplication()
 
 
 //-----------------------------------------------------------------------------
+void KThemesApplication::tweakUi()
+{
+  KControlDialog* dlg = (KControlDialog*)getDialog();
+
+  dlg->defaultBtn->setText(i18n("Extract"));
+}
+
+
+//-----------------------------------------------------------------------------
 void KThemesApplication::init()
 {
   //debug(i18n("No init necessary"));
+}
+
+
+//-----------------------------------------------------------------------------
+void KThemesApplication::defaultValues()
+{
+  theme->extract();
 }
 
 

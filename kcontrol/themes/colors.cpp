@@ -37,7 +37,7 @@
 #include <kcolorbtn.h>
 
 #include "colors.h"
-#include "theme.h"
+#include "themecreator.h"
 #include "widgetcanvas.h"
 #include "global.h"
 

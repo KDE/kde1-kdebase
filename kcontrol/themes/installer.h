@@ -1,8 +1,7 @@
 /*
  * installer.h
  *
- * Copyright (c) 1998 Stefan Taferner <taferner@kde.org> and
- *                    Roberto Alsina <ralsina@unl.edu.ar>
+ * Copyright (c) 1998 Stefan Taferner <taferner@kde.org>
  *
  * Requires the Qt widget libraries, available at no cost at
  * http://www.troll.no/
@@ -30,7 +29,6 @@ class QGridLayout;
 class QListBox;
 class QPushButton;
 class QLabel;
-class Theme;
 class QMultiLineEdit;
 
 #define InstallerInherited KConfigWidget
@@ -43,6 +41,9 @@ public:
 
   virtual void loadSettings();
   virtual void applySettings();
+
+  /** Find item in listbox. Returns item index or -1 if not found */
+  virtual int findItem(const QString text) const;
 
 protected slots:
   virtual void slotImport();
@@ -63,6 +64,7 @@ private:
   QPushButton *mBtnNew, *mBtnExport, *mBtnImport, *mBtnRemove;
   QMultiLineEdit *mText;
   QLabel *mPreview;
+  bool mEditing;
 };
 
 #endif /*INSTALLER_H*/

@@ -1,8 +1,7 @@
 /*
  * global.h
  *
- * Copyright (c) 1998 Stefan Taferner <taferner@kde.org> and
- *                    Roberto Alsina <ralsina@unl.edu.ar>
+ * Copyright (c) 1998 Stefan Taferner <taferner@kde.org>
  *
  * Requires the Qt widget libraries, available at no cost at
  * http://www.troll.no/
@@ -24,7 +23,7 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-class Theme;
-extern Theme* theme;
+class ThemeCreator;
+extern ThemeCreator* theme;
 
 #endif /*GLOBAL_H*/

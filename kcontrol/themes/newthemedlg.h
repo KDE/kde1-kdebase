@@ -1,5 +1,5 @@
 /*
- * global.h
+ * newthemedlg.h
  *
  * Copyright (c) 1998 Stefan Taferner <taferner@kde.org>
  *
@@ -20,10 +20,37 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
-#ifndef GLOBAL_H
-#define GLOBAL_H
+#ifndef NEW_THEME_DLG_H
+#define NEW_THEME_DLG_H
 
-class ThemeCreator;
-extern ThemeCreator* theme;
+#include <qdialog.h>
+#include <qlineedit.h>
 
-#endif /*GLOBAL_H*/
+class QLabel;
+class QGridLayout;
+
+#define NewThemeDlgInherited QDialog
+class NewThemeDlg: public QDialog
+{
+public:
+  NewThemeDlg();
+  virtual ~NewThemeDlg();
+
+  const char* fileName(void) const { return mEdtFilename->text(); }
+  const char* themeName(void) const { return mEdtName->text(); }
+  const char* author(void) const { return mEdtAuthor->text(); }
+  const char* email(void) const { return mEdtEmail->text(); }
+  const char* homepage(void) const { return mEdtHomepage->text(); }
+
+protected:
+  virtual QLineEdit* newLine(const char* lbl);
+  virtual void setValues(void);
+
+protected:
+  int mGridRow;
+  QLineEdit *mEdtFilename, *mEdtName, *mEdtAuthor, *mEdtEmail;
+  QLineEdit *mEdtHomepage;
+  QGridLayout* mGrid;
+};
+
+#endif /*NEW_THEME_DLG_H*/
