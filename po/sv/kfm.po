@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-12-10 01:15+0100\n"
+"POT-Creation-Date: 1998-12-13 01:16+0100\n"
 "PO-Revision-Date: 1998-12-12 19:25+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -18,174 +18,163 @@ msgstr ""
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:949 kbind.cpp:961 kbind.cpp:971 kfmgui.cpp:211 kfmgui.cpp:1066
-#: kfmman.cpp:52 kfmman.cpp:1554 kfmtree.cpp:35 kfmtree.cpp:516 root.cpp:73
-#: root.cpp:1351
-msgid "Folder"
-msgstr "Katalog"
-
-#: kfmgui.cpp:222 kfmman.cpp:63 kfmtree.cpp:46 root.cpp:84
-#, c-format
-msgid "ERROR: Template does not exist '%s'"
-msgstr "FEL: Mallen '%s' finns inte"
-
-#: kfmgui.cpp:257
+#: kfmgui.cpp:222
 msgid "&Move to Trash"
 msgstr "&Flytta till papperskorgen"
 
-#: kfmgui.cpp:264
+#: kfmgui.cpp:229
 msgid "&Select"
 msgstr "&Markera"
 
-#: kfmgui.cpp:266
+#: kfmgui.cpp:231
 msgid "Select &all"
 msgstr "Markera &allt"
 
-#: kfmgui.cpp:269
+#: kfmgui.cpp:234
 msgid "&Find in page..."
 msgstr "&Hitta i sidan..."
 
-#: kfmgui.cpp:271
+#: kfmgui.cpp:236
 msgid "Find &next"
 msgstr "Hitta &nästa"
 
-#: kfmgui.cpp:274
+#: kfmgui.cpp:239
 msgid "Mime &Types"
 msgstr "MIME-&typer"
 
-#: kfmgui.cpp:276
+#: kfmgui.cpp:241
 msgid "App&lications"
 msgstr "&Program"
 
-#: kfmgui.cpp:282
+#: kfmgui.cpp:247
 msgid "Global Mime Types"
 msgstr "Globala MIME-typer"
 
-#: kfmgui.cpp:284
+#: kfmgui.cpp:249
 msgid "Global Applications"
 msgstr "Globala program"
 
-#: kfmgui.cpp:291
+#: kfmgui.cpp:256
 msgid "Show Hi&dden Files"
 msgstr "Visa &gömda filer"
 
-#: kfmgui.cpp:293
+#: kfmgui.cpp:258
 msgid "Show Tr&ee"
 msgstr "Visa t&räd"
 
-#: kfmgui.cpp:295
+#: kfmgui.cpp:260
 msgid "Sho&w Thumbnails"
 msgstr "Visa &miniatyrbilder"
 
-#: kfmgui.cpp:297
+#: kfmgui.cpp:262
 msgid "&HTML View"
 msgstr "Visa &HTML"
 
-#: kfmgui.cpp:300
+#: kfmgui.cpp:265
 msgid "&Icon View"
 msgstr "Visa som &ikoner"
 
-#: kfmgui.cpp:302
+#: kfmgui.cpp:267
 msgid "&Text View"
 msgstr "Visa som &text"
 
-#: kfmgui.cpp:304
+#: kfmgui.cpp:269
 msgid "&Long View"
 msgstr "&Långt format"
 
-#: kfmgui.cpp:306
+#: kfmgui.cpp:271
 msgid "&Short View"
 msgstr "&Kort format"
 
-#: kfmgui.cpp:312
+#: kfmgui.cpp:277
 msgid "Rel&oad Tree"
 msgstr "&Uppdatera trädet"
 
-#: kfmgui.cpp:314
+#: kfmgui.cpp:279
 msgid "&Reload Document"
 msgstr "Uppdatera &dokumentet"
 
-#: kfmgui.cpp:316
+#: kfmgui.cpp:281
 msgid "Rescan &Bindings"
 msgstr "Uppdatera &bindningar"
 
-#: kfmgui.cpp:319
+#: kfmgui.cpp:284
 msgid "&View Frame Source"
 msgstr "Visa r&amens källkod"
 
-#: kfmgui.cpp:321
+#: kfmgui.cpp:286
 msgid "View Docu&ment Source"
 msgstr "Visa d&okumentets källkod"
 
-#: kfmgui.cpp:329
+#: kfmgui.cpp:294
 msgid "Auto"
 msgstr "Automatisk"
 
-#: kfmgui.cpp:337
+#: kfmgui.cpp:302
 msgid "Document Encodin&g"
 msgstr "Dokum&entkodning"
 
-#: kfmgui.cpp:352
+#: kfmgui.cpp:317
 msgid "Show History"
 msgstr "Visa historik"
 
-#: kfmgui.cpp:354
+#: kfmgui.cpp:319
 msgid "Show Cache"
 msgstr "Visa cachen"
 
-#: kfmgui.cpp:356
+#: kfmgui.cpp:321
 msgid "Clear Cache"
 msgstr "Töm cachen"
 
-#: kfmgui.cpp:359
+#: kfmgui.cpp:324
 msgid "Always look in cache"
 msgstr "Titta alltid i cachen"
 
-#: kfmgui.cpp:361
+#: kfmgui.cpp:326
 msgid "Never look in cache"
 msgstr "Titta aldrig i cachen"
 
-#: kfmgui.cpp:363
+#: kfmgui.cpp:328
 msgid "Always save cache"
 msgstr "Spara alltid cachen"
 
-#: kfmgui.cpp:365
+#: kfmgui.cpp:330
 msgid "Never save cache"
 msgstr "Spara aldrig cachen"
 
-#: kfmgui.cpp:376
+#: kfmgui.cpp:341
 msgid "Show &Menubar"
 msgstr "Visa &menyrad"
 
-#: kfmgui.cpp:378
+#: kfmgui.cpp:343
 msgid "Show &Statusbar"
 msgstr "Visa &statusrad"
 
-#: kfmgui.cpp:380
+#: kfmgui.cpp:345
 msgid "Show &Toolbar"
 msgstr "Visa &verktygsrad"
 
-#: kfmgui.cpp:382
+#: kfmgui.cpp:347
 msgid "Show &Location bar"
 msgstr "Visa &platsrad"
 
-#: kfmgui.cpp:385
+#: kfmgui.cpp:350
 msgid "Sa&ve Settings"
 msgstr "Spara &inställningarna"
 
-#: kfmgui.cpp:387
+#: kfmgui.cpp:352
 msgid "Save Settings for this &URL"
 msgstr "Spara inställningar för denna &URL"
 
-#: kfmgui.cpp:394
+#: kfmgui.cpp:359
 msgid "&Configure File Manager..."
 msgstr "Ställ in &filhanteraren..."
 
-#: kfmgui.cpp:396
+#: kfmgui.cpp:361
 msgid "Configure &Browser..."
 msgstr "Ställ in &bläddraren..."
 
-#: kfmgui.cpp:432
+#: kfmgui.cpp:397
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -211,31 +200,31 @@ msgstr ""
 "Nuvarande underhållare: David Faure\n"
 "faure@kde.org"
 
-#: kfmgui.cpp:445
+#: kfmgui.cpp:410
 msgid "&Go"
 msgstr "&Gå"
 
-#: kfmgui.cpp:446
+#: kfmgui.cpp:411
 msgid "&Bookmarks"
 msgstr "&Bokmärken"
 
-#: kfmgui.cpp:447
+#: kfmgui.cpp:412
 msgid "&Cache"
 msgstr "&Cache"
 
-#: kfmgui.cpp:474 main.cpp:239
+#: kfmgui.cpp:439 main.cpp:239
 msgid "Up"
 msgstr "Upp"
 
-#: kfmgui.cpp:484 main.cpp:241
+#: kfmgui.cpp:449 main.cpp:241
 msgid "Forward"
 msgstr "Framåt"
 
-#: kfmgui.cpp:489
+#: kfmgui.cpp:454
 msgid "Home"
 msgstr "Hem"
 
-#: kfmgui.cpp:546
+#: kfmgui.cpp:511
 msgid "Could not load icon\n"
 msgstr "Kunde inte ladda ikonen\n"
 
@@ -244,108 +233,103 @@ msgstr "Kunde inte ladda ikonen\n"
 #: kbind.cpp:1644 kbind.cpp:1703 kbind.cpp:1715 kbind.cpp:1742 kbind.cpp:1757
 #: kbind.cpp:1777 kbind.cpp:1789 kbind.cpp:1805 kbind.cpp:1941 kbind.cpp:1953
 #: kbind.cpp:1998 kbind.cpp:2040 kfmexec.cpp:60 kfmexec.cpp:92
-#: kfmexec/main.cpp:47 kfmgui.cpp:547 kfmgui.cpp:706 kfmman.cpp:381
-#: kfmman.cpp:1133 kfmman.cpp:1354 kfmman.cpp:1380 kfmprops.cpp:377
+#: kfmexec/main.cpp:47 kfmgui.cpp:512 kfmgui.cpp:671 kfmman.cpp:347
+#: kfmman.cpp:1099 kfmman.cpp:1321 kfmman.cpp:1347 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
 #: kfmprops.cpp:1141 kfmprops.cpp:1484 kfmprops.cpp:1716 kfmprops.cpp:1901
 #: kfmserver.cpp:40 kfmserver.cpp:163 kfmserver.cpp:243 kfmserver.cpp:290
-#: kfmserver.cpp:299 kfmserver.cpp:307 kfmtree.cpp:275 kfmtree.cpp:401
-#: kfmtree.cpp:432 kfmtree.cpp:438 kfmtree.cpp:444 kfmview.cpp:390
+#: kfmserver.cpp:299 kfmserver.cpp:307 kfmtree.cpp:246 kfmtree.cpp:373
+#: kfmtree.cpp:404 kfmtree.cpp:410 kfmtree.cpp:416 kfmview.cpp:390
 #: kfmview.cpp:406 kfmview.cpp:425 kfmview.cpp:494 kfmview.cpp:500
 #: kfmview.cpp:506 kfmview.cpp:612 kfmview.cpp:616 kfmview.cpp:655
 #: kfmview.cpp:681 kfmview.cpp:702 kfmview.cpp:710 kfmview.cpp:718
 #: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278 kiojob.cpp:297
 #: kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:557 kiojob.cpp:797
 #: kiojob.cpp:828 kiojob.cpp:869 kiojob.cpp:1679 krenamewin.cpp:120
-#: root.cpp:942 root.cpp:1203 root.cpp:1221 root.cpp:1227 root.cpp:1233
-#: root.cpp:1314 root.cpp:1899 root.cpp:1924
+#: popup.cpp:101 root.cpp:908 root.cpp:1169 root.cpp:1187 root.cpp:1193
+#: root.cpp:1199 root.cpp:1280 root.cpp:1793 root.cpp:1818
 msgid "KFM Error"
 msgstr "KFM-fel"
 
-#: kfmexec.cpp:59 kfmgui.cpp:705 kfmman.cpp:1132
+#: kfmexec.cpp:59 kfmgui.cpp:670 kfmman.cpp:1098
 msgid "Malformed URL\n"
 msgstr "Felaktig URL\n"
 
-#: kfmgui.cpp:892
+#: kfmgui.cpp:859
 msgid "Select files:"
 msgstr "Markera filer:"
 
-#: kfmgui.cpp:947
+#: kfmgui.cpp:914
 msgid "Find Complete"
 msgstr "Sökningen klar"
 
-#: kfmgui.cpp:948
+#: kfmgui.cpp:915
 msgid "Continue search from the top of the page?"
 msgstr "Fortsätta söka från början av sidan?"
 
-#: kfmgui.cpp:966
+#: kfmgui.cpp:933
 msgid "&Edit Bookmarks..."
 msgstr "&Redigera bokmärken..."
 
-#: kfmgui.cpp:976
+#: kfmgui.cpp:943
 msgid "&Add Bookmark"
 msgstr "&Lägg till som bokmärke"
 
-#: kfmgui.cpp:1010 kfmman.cpp:1171 kfmtree.cpp:309 root.cpp:298
+#: kfmgui.cpp:978 kfmman.cpp:1137 kfmtree.cpp:280 root.cpp:263
 msgid "&New"
 msgstr "&Ny"
 
-#: kfmgui.cpp:1013
+#: kfmgui.cpp:984
 msgid "New &Window"
 msgstr "Nytt &fönster"
 
-#: kfmgui.cpp:1016
+#: kfmgui.cpp:987
 msgid "&Run..."
 msgstr "&Kör..."
 
-#: kfmgui.cpp:1018
+#: kfmgui.cpp:989
 msgid "Open &Terminal"
 msgstr "Öppna &terminal"
 
-#: kfmgui.cpp:1021
+#: kfmgui.cpp:992
 msgid "&Open Location..."
 msgstr "Öppna &plats..."
 
-#: finddlg.cpp:66 kfmgui.cpp:1023
+#: finddlg.cpp:66 kfmgui.cpp:994
 msgid "&Find"
 msgstr "&Sök"
 
-#: kfmgui.cpp:1058 kfmgui.cpp:1065 kfmman.cpp:1546 kfmman.cpp:1553
-#: kfmtree.cpp:508 kfmtree.cpp:515 root.cpp:1343 root.cpp:1350
-msgid "New "
-msgstr "Ny "
-
-#: kfmgui.cpp:1114
+#: kfmgui.cpp:1019
 msgid "&Up"
 msgstr "&Upp"
 
-#: kfmgui.cpp:1116
+#: kfmgui.cpp:1021
 msgid "&Back"
 msgstr "&Bakåt"
 
-#: kfmgui.cpp:1118
+#: kfmgui.cpp:1023
 msgid "&Forward"
 msgstr "&Framåt"
 
-#: kfmgui.cpp:1120
+#: kfmgui.cpp:1025
 msgid "&Home"
 msgstr "&Hem"
 
-#: kfmgui.cpp:1177 kfmgui.cpp:1349 kfmjob.cpp:37 kfmman.cpp:264
-#: kfmtree.cpp:433 kfmview.cpp:426 kfmview.cpp:495 kfmview.cpp:703
-#: kiojob.cpp:87 root.cpp:1222
+#: kfmgui.cpp:1082 kfmgui.cpp:1254 kfmjob.cpp:37 kfmman.cpp:230
+#: kfmtree.cpp:405 kfmview.cpp:426 kfmview.cpp:495 kfmview.cpp:703
+#: kiojob.cpp:87 root.cpp:1188
 msgid "ERROR: Malformed URL"
 msgstr "FEL: Felaktig URL"
 
-#: kfmgui.cpp:1303 kfmserver.cpp:184
+#: kfmgui.cpp:1208 kfmserver.cpp:184
 msgid "Open Location:"
 msgstr "Öppna plats:"
 
-#: kfmgui.cpp:1360
+#: kfmgui.cpp:1265
 msgid "KFM Confirm"
 msgstr "KFM Bekräfta"
 
-#: kfmgui.cpp:1361
+#: kfmgui.cpp:1266
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -353,11 +337,11 @@ msgstr ""
 "Vill du verkligen avsluta?\n"
 "Viktiga skrivbordsfunktioner kommer att förloras"
 
-#: kfmgui.cpp:1471
+#: kfmgui.cpp:1376
 msgid "Document: Done"
 msgstr "Dokument: klart"
 
-#: kfmview.cpp:391 root.cpp:943
+#: kfmview.cpp:391 root.cpp:909
 msgid "ERROR: You may only drop URLs"
 msgstr "FEL: Du får bara släppa URL:er"
 
@@ -365,12 +349,12 @@ msgstr "FEL: Du får bara släppa URL:er"
 msgid "ERROR: Drop over malformed URL"
 msgstr "FEL: Du släppte på en felaktig URL"
 
-#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:471 kfmview.cpp:466
-#: kfmview.cpp:746 krenamewin.cpp:20 root.cpp:1265
+#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:443 kfmview.cpp:466
+#: kfmview.cpp:746 krenamewin.cpp:20 root.cpp:1231
 msgid "KFM Warning"
 msgstr "KFM Varning"
 
-#: kfmtree.cpp:472 kfmview.cpp:467 kfmview.cpp:747 root.cpp:1266
+#: kfmtree.cpp:444 kfmview.cpp:467 kfmview.cpp:747 root.cpp:1232
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -380,19 +364,19 @@ msgstr ""
 "\n"
 "Det går inte att återskapa dem."
 
-#: kfmtree.cpp:439 kfmview.cpp:501 kfmview.cpp:711 root.cpp:1228
+#: kfmtree.cpp:411 kfmview.cpp:501 kfmview.cpp:711 root.cpp:1194
 msgid "ERROR: You dropped a URL over itself"
 msgstr "FEL: En URL släpptes på sig själv"
 
-#: kfmtree.cpp:445 kfmview.cpp:507 kfmview.cpp:719 root.cpp:1234
+#: kfmtree.cpp:417 kfmview.cpp:507 kfmview.cpp:719 root.cpp:1200
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "FEL: Du släppte en katalog på en av dess underkataloger"
 
-#: kfmexec.cpp:265 kfmman.cpp:986 kfmview.cpp:523
+#: kfmexec.cpp:265 kfmman.cpp:952 kfmview.cpp:523
 msgid "Open With:"
 msgstr "Öppna med:"
 
-#: kfmview.cpp:554 root.cpp:1165
+#: kfmview.cpp:554 root.cpp:1131
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "FEL: Kan inte öppna egenskaper för flera filer på en gång"
 
@@ -422,11 +406,11 @@ msgstr ""
 "Spara ett bokmärke för denna plats först, eller skapa en\n"
 "kde-länk till den från skrivbordet."
 
-#: kfmtree.cpp:402 kfmview.cpp:656 root.cpp:1315
+#: kfmtree.cpp:374 kfmview.cpp:656 root.cpp:1281
 msgid "Could not access Trash Bin"
 msgstr "Kunde inte komma åt papperskorgen"
 
-#: kfmview.cpp:682 root.cpp:1204
+#: kfmview.cpp:682 root.cpp:1170
 msgid "Can not paste into multiple directories"
 msgstr "Kan inte klistra in i flera kataloger på en gång"
 
@@ -483,6 +467,10 @@ msgstr "Montera"
 #: kbind.cpp:726 kbind.cpp:1967
 msgid "Unmount"
 msgstr "Avmontera"
+
+#: kbind.cpp:949 kbind.cpp:961 kbind.cpp:971 popup.cpp:45 popup.cpp:121
+msgid "Folder"
+msgstr "Katalog"
 
 #: kbind.cpp:1215
 msgid "ERROR"
@@ -585,7 +573,7 @@ msgstr "Byt katalog"
 msgid "New View"
 msgstr "Ny vy"
 
-#: kfmtree.cpp:338 main.cpp:228
+#: kfmtree.cpp:309 main.cpp:228
 msgid "Move to Trash"
 msgstr "Flytta till papperskorgen"
 
@@ -593,11 +581,11 @@ msgstr "Flytta till papperskorgen"
 msgid "Open with"
 msgstr "Öppna med"
 
-#: kfmman.cpp:1372 kfmtree.cpp:267 main.cpp:232
+#: kfmman.cpp:1339 kfmtree.cpp:238 main.cpp:232
 msgid "Move"
 msgstr "Flytta"
 
-#: kfmman.cpp:1376 kfmtree.cpp:271 main.cpp:234
+#: kfmman.cpp:1343 kfmtree.cpp:242 main.cpp:234
 msgid "Link"
 msgstr "Länk"
 
@@ -1012,7 +1000,7 @@ msgstr ""
 "VARNING: Någon försökte\n"
 "identifiera sig med fel lösenord"
 
-#: root.cpp:746
+#: root.cpp:712
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -1023,36 +1011,36 @@ msgstr ""
 "skulle medföra att några ikoner\n"
 "hamnade utanför skrivbordet."
 
-#: root.cpp:781
+#: root.cpp:747
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Internt fel: desktopDir är felaktig"
 
-#: root.cpp:792
+#: root.cpp:758
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "FEL: Kunde inte läsa skrivbordskatalogen '%s'"
 
-#: root.cpp:991
+#: root.cpp:957
 msgid "ERROR: Can not accept drop"
 msgstr "FEL: Kan inte ta emot släppt ikon"
 
-#: kfmman.cpp:1355 root.cpp:1900
+#: kfmman.cpp:1322 root.cpp:1794
 msgid "Dont know what to do."
 msgstr "Vet inte vad som skall göras."
 
-#: kfmman.cpp:1381 kfmtree.cpp:276 root.cpp:1925
+#: kfmman.cpp:1348 kfmtree.cpp:247 root.cpp:1819
 msgid "Dont know what to do"
 msgstr "Vet inte vad som skall göras"
 
-#: kfmexec.cpp:93 kfmman.cpp:382
+#: kfmexec.cpp:93 kfmman.cpp:348
 msgid "The file does not contain a URL"
 msgstr "Filen innehåller ingen URL"
 
-#: kfmman.cpp:432
+#: kfmman.cpp:398
 msgid "Contacting host "
 msgstr "Kontaktar värd "
 
-#: kfmman.cpp:436
+#: kfmman.cpp:402
 msgid "Working ..."
 msgstr "Arbetar ..."
 
@@ -1355,19 +1343,19 @@ msgstr "Katalogen "
 msgid " does not exist\n"
 msgstr " existerar inte\n"
 
-#: kfmtree.cpp:345
+#: kfmtree.cpp:316
 msgid "Add To Bookmarks"
 msgstr "Lägg till bokmärken"
 
-#: kfmtree.cpp:574
+#: kfmtree.cpp:483
 msgid "My Home"
 msgstr "Hemkatalogen"
 
-#: kfmtree.cpp:576
+#: kfmtree.cpp:485
 msgid "Desktop"
 msgstr "Skrivbord"
 
-#: kfmtree.cpp:578
+#: kfmtree.cpp:487
 msgid "Root"
 msgstr "Rotkatalogen"
 
@@ -1422,6 +1410,21 @@ msgstr "Hitta:"
 #: finddlg.cpp:56
 msgid "Case &sensitive"
 msgstr "Känslig för stora/små bokstäver"
+
+#: popup.cpp:69
+#, c-format
+msgid "ERROR: Template does not exist '%s'"
+msgstr "FEL: Mallen '%s' finns inte"
+
+#: popup.cpp:102
+msgid ""
+"Source file doesn't exist anymore ! \n"
+"Use \"Rescan Bindings\" in View menu to update the menu"
+msgstr ""
+
+#: popup.cpp:113 popup.cpp:120
+msgid "New "
+msgstr "Ny "
 
 #: kfmprops.h:73
 msgid "&General"

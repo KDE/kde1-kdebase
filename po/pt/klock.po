@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-12 01:17+0100\n"
+"POT-Creation-Date: 1998-12-13 01:16+0100\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -41,11 +41,6 @@ msgstr ""
 
 #: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
-msgstr ""
-
-#: attraction.cpp:869 attraction.cpp:956 slidescreen.cpp:534
-#: slidescreen.cpp:563
-msgid "Ok"
 msgstr ""
 
 #: attraction.cpp:951

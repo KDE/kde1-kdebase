@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KLOCK\n"
-"POT-Creation-Date: 1998-12-12 01:17+0100\n"
+"POT-Creation-Date: 1998-12-13 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,11 +49,6 @@ msgstr "Hännät"
 #: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
 msgstr "Hehku"
-
-#: attraction.cpp:869 attraction.cpp:956 slidescreen.cpp:534
-#: slidescreen.cpp:563
-msgid "Ok"
-msgstr "Ok"
 
 #: attraction.cpp:951
 msgid "About Attraction"
@@ -888,3 +883,6 @@ msgstr ""
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
 "Siirtänyt kscreensave-ohjelmaan Emanuel Pirker."
+
+#~ msgid "Ok"
+#~ msgstr "Ok"

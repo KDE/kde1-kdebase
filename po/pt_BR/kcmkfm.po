@@ -42,7 +42,8 @@ msgid "&Desktop Icons"
 msgstr "Ícones do &Ambiente"
 
 #: main.cpp:83
-msgid  "usage: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
+#, c-format
+msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
 msgstr "uso:   %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
 
 #: main.cpp:166
