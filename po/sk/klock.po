@@ -462,14 +462,13 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Voµba %s nie je podporovaná na tejto platforme!"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
 "Your system uses shadow passwords.\n"
 "Please contact your system administrator.\n"
 "Tell him that you need suid for the kcheckpass program!"
-msgstr ""
+	msgstr ""
 "Varovanie: Nebudete môc» zamknú» obrazovku!\n"
 "\n"
 "Vá¹ systém pou¾íva tieòové heslá!\n"

@@ -423,7 +423,7 @@ msgstr "Nízka"
 
 #: general.cpp:221
 msgid "Style"
-msgstr ""
+msgstr "©týl"
 
 #: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
@@ -434,9 +434,8 @@ msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr "&Menubar na vrchole obrazovky v ¹týle MacOS"
 
 #: general.cpp:259
-#, fuzzy
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "&Aplikova» ¹týl pre ne-KDE apl."
+msgstr "&Aplikova» písmo a farby pre ne-KDE apl."
 
 #: general.cpp:530
 msgid "General font"
@@ -486,13 +485,13 @@ msgstr "&Farby"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr ""
+msgstr "©&týl"
 
 #: main.cpp:83
-#, fuzzy
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
-msgstr "Pou¾itie: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr 
+"Pou¾itie: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"

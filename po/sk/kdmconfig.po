@@ -163,19 +163,16 @@ msgid "Standard"
 msgstr "©tandardné"
 
 #: kdm-font.cpp:157
-#, fuzzy
 msgid "Greeting font"
-msgstr "Uvítanie"
+msgstr "Písmo uvítania"
 
 #: kdm-font.cpp:161
-#, fuzzy
 msgid "Fail font"
-msgstr "Zlyhanie"
+msgstr "Písmo zlyhania"
 
 #: kdm-font.cpp:165
-#, fuzzy
 msgid "Standard font"
-msgstr "©tandardné"
+msgstr "©tandardné písmo"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"

@@ -121,7 +121,7 @@ msgstr "Podtrháva» odkazy"
 
 #: options.cpp:246
 msgid "Always use my colors"
-msgstr ""
+msgstr "V¾dy pou¾íva» moje farby"
 
 #: options.cpp:334
 msgid "KDE Help Options"

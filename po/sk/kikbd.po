@@ -55,7 +55,6 @@ msgstr ""
 "Alt symboly zakázané"
 
 #: kikbd.cpp:392
-#, fuzzy
 msgid ""
 "Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -64,15 +63,16 @@ msgstr ""
 "Emulácia Caps Locku zakázaná"
 
 #: kikbd.cpp:1003
-#, fuzzy
 msgid "Exiting International Keyboard"
-msgstr "Medzinárodné nastavenie klávesnice"
+msgstr "Ukonèujem medzinárodnú klávesnicu"
 
 #: kikbd.cpp:1004
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
+"Práve chcete ukonèi» \"Medzinárodnú Klávesnicu\".\n"
+" Chcete, aby sa automaticky spustil pri va¹om ïal¹om nahlásení?"
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -160,9 +160,8 @@ msgid "Both Shift's (Shift+Shift)"
 msgstr "Obidva Shifty"
 
 #: kikbdconf.cpp:115
-#, fuzzy
 msgid "Right Meta"
-msgstr "Pravý Alt"
+msgstr "Pravý Meta"
 
 #: kikbdconf.cpp:116
 msgid "Left  Alt"
@@ -173,9 +172,8 @@ msgid "Left  Control"
 msgstr "¥avý Ctrl"
 
 #: kikbdconf.cpp:118
-#, fuzzy
 msgid "Left  Meta"
-msgstr "¥avý Alt"
+msgstr "¥avý Meta"
 
 #: kikbdconf.cpp:121
 msgid "Top Left"
@@ -198,19 +196,20 @@ msgid "X default codes"
 msgstr "¹tandardné X kódy"
 
 #: kikbdconf.cpp:209
-#, fuzzy, c-format
 msgid ""
 "%s\n"
 "Do you want to configure now?"
 msgstr ""
-"\n"
-"Chcete pokraèova»?"
+"%s\n"
+"Chcete teraz konfigurova»?"
 
 #: kikbdconf.cpp:217
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
 msgstr ""
+"Pou¾ívate \"Medzinárodnú Klávesnicu\" poprvý krát.\n"
+"Nain¹taloval som niekoµko ¹tandardných nastavení."
 
 #: kikbdconf.cpp:359
 msgid "unknown"
@@ -265,14 +264,12 @@ msgid "alternative symbols"
 msgstr "alternatívne symboly"
 
 #: kikbdconf.cpp:429
-#, fuzzy
 msgid "Language"
-msgstr "jazyk"
+msgstr "Jazyk"
 
 #: kikbdconf.cpp:433
-#, fuzzy
 msgid "Charset"
-msgstr "znaková sada"
+msgstr "Znaková sada"
 
 #: kikbdconf.cpp:479
 msgid "International keyboard ERROR"
@@ -505,9 +502,8 @@ msgid "&Docked"
 msgstr "&V paneli"
 
 #: widgets.cpp:649
-#, fuzzy
 msgid "Dock into special area in the panel"
-msgstr "Vsunú» sa do panelu"
+msgstr "Vsunú» sa do ¹peciálnej oblasti panelu"
 
 #: widgets.cpp:658
 msgid "Place"
@@ -532,29 +528,3 @@ msgstr "©ta&rt"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Medzinárodné nastavenie klávesnice"
-
-#~ msgid ""
-#~ "%s\n"
-#~ "Do you want to start Configuration?"
-#~ msgstr ""
-#~ "%s\n"
-#~ "Chcete zaèa» konfiguráciu?"
-
-#~ msgid "Your configuration is empty. Install system default."
-#~ msgstr "Va¹a konfigurácia je prázdna. Nain¹talujte ¹tandard. nastavenie."
-
-#, fuzzy
-#~ msgid ""
-#~ "Configuration file you have has older format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "Konfiguraèný súbor má star¹iu formu, ako je oèakávaná.\n"
-#~ "Niektoré nastavenia nemusia by» správne."
-
-#, fuzzy
-#~ msgid ""
-#~ "Configuration file you have has newer format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "Konfiguraèný súbor má nov¹iu formu, ako je oèakávaná.\n"
-#~ "Niektoré nastavenia nemusia by» správne."

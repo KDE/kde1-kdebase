@@ -458,7 +458,6 @@ msgid "The mime type config file "
 msgstr "Konfiguraèný súbor MIME typov "
 
 #: kbind.cpp:305
-#, fuzzy
 msgid "does not contain a MimeType=... entry"
 msgstr "neobsahuje polo¾ku MimeType=..."
 
@@ -1010,12 +1009,11 @@ msgid " ERROR: Could not write to %s"
 msgstr "CHYBA: Nemô¾em zapísa» do %s"
 
 #: kiojob.cpp:567 kiojob.cpp:872
-#, fuzzy, c-format
 msgid ""
 "Could not make symbolic link\n"
 "%s"
 msgstr ""
-"Nie je mo¾né vytvori» symbolický odkaz na\n"
+"Nie je mo¾né vytvori» symbolický odkaz\n"
 "%s"
 
 #: kiojob.cpp:585 kiojob.cpp:893 kiojob.cpp:1330
@@ -1038,21 +1036,25 @@ msgid ""
 "Special file will not be copied\n"
 "%s"
 msgstr ""
+"©peciálny súbor nebude skopírovaný\n"
+"%s"
 
 #: kiojob.cpp:663
 #, c-format
 msgid "%d special files will not be copied."
-msgstr ""
+msgstr "%d ¹peciálnych súborov nebude skopírovaných."
 
 #: kiojob.cpp:668
 msgid ""
 "Recurse copying from file with sub-protocol\n"
 "(for instance, tar files)"
 msgstr ""
+"Rekurzívne kopírovanie zo súboru so sub-protokolom\n"
+"(napríklad tar súbory)"
 
 #: kiojob.cpp:673
 msgid "Recurse copying from/to distant locations"
-msgstr ""
+msgstr "Rekurzívne kopírovanie z/do vzdialených miest"
 
 #: kiojob.cpp:924
 #, c-format
@@ -1082,11 +1084,13 @@ msgid ""
 "Special file will not be moved\n"
 "%s"
 msgstr ""
+"©peciálny súbor nebude presunutý\n"
+"%s"
 
 #: kiojob.cpp:1046
 #, c-format
 msgid "%d special files will not be moved."
-msgstr ""
+msgstr "%d ¹peciálnych súborov nebude presunutých."
 
 #: kiojob.cpp:1310 kiojob.cpp:1381
 #, c-format
@@ -1180,7 +1184,6 @@ msgstr ""
 "Pravdepodobne je chybné heslo."
 
 #: kiojob.cpp:1352
-#, fuzzy, c-format
 msgid ""
 "Tar reported an error\n"
 "%s"
@@ -1189,7 +1192,6 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1355
-#, fuzzy, c-format
 msgid ""
 "Gzip reported an error for\n"
 "%s"
@@ -1199,7 +1201,7 @@ msgstr ""
 
 #: kiojob.cpp:1361
 msgid "Operation technically impossible"
-msgstr ""
+msgstr "Operácie technicky nemo¾ná"
 
 #: kiojob.cpp:1364 kiojob.cpp:1373
 #, c-format
@@ -1510,24 +1512,3 @@ msgid ""
 msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
-
-#~ msgid "Dont know what to do"
-#~ msgstr "Neviem, èo robi»"
-
-#, fuzzy
-#~ msgid "Move here"
-#~ msgstr "Presunú»"
-
-#, fuzzy
-#~ msgid "Link here"
-#~ msgstr "Odkaz"
-
-#~ msgid "Working Directory"
-#~ msgstr "V prieèinku"
-
-#~ msgid ""
-#~ "Please change the password in\n"
-#~ "~/.kde/share/apps/kfm/magic"
-#~ msgstr ""
-#~ "Prosím zmeòte heslo v súbore\n"
-#~ "~/.kde/share/apps/kfm/magic"

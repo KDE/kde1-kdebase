@@ -109,7 +109,7 @@ msgstr "Podtrhnú» linky"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
-msgstr ""
+msgstr "V¾dy pou¾íva» moje farby"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"

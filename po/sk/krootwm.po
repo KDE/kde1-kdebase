@@ -62,38 +62,36 @@ msgid "Bookmarks"
 msgstr "Zálo¾ky"
 
 #: krootwm.C:280
-#, fuzzy
 msgid "Arrange Window Maker icons"
-msgstr "Usporiada» ikony"
+msgstr "Usporiada» ikony Window Makera"
 
 #: krootwm.C:281
 msgid "Show all"
-msgstr ""
+msgstr "Ukáza» v¹etky"
 
 #: krootwm.C:282
 msgid "Hide other"
-msgstr ""
+msgstr "Skry» ostatné"
 
 #: krootwm.C:284
 msgid "Show info panel"
-msgstr ""
+msgstr "Ukazova» infopanel"
 
 #: krootwm.C:285
 msgid "Show legal panel"
-msgstr ""
+msgstr "Ukazova» legal panel"
 
 #: krootwm.C:286
 msgid "Restart"
-msgstr ""
+msgstr "Re¹tart"
 
 #: krootwm.C:288
 msgid "Exit"
-msgstr ""
+msgstr "Koniec"
 
 #: krootwm.C:289
-#, fuzzy
 msgid "Window Maker"
-msgstr "Okná"
+msgstr "Window Maker"
 
 #: krootwm.C:306
 msgid "Desk"
