@@ -1,0 +1,11 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcmbell bell
+Icon=bell.xpm
+Type=Application
+DocPath=kcontrol/kcminput.html#keyboard
+Comment=Bell settings
+Comment[de]=Einstellung der Tastaturglocke
+Name=Bell
+Name[de]=Glocke
+Init=kcmbell -init

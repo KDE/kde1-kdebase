@@ -1,0 +1,10 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcminfo processor
+Icon=processor.xpm
+Type=Application
+DocPath=kcontrol/kcmsample.html
+Comment=Processor information
+Comment[de]=Informationen zum Prozessor
+Name=Processor
+Name[de]=Prozessor

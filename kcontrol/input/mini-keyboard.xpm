@@ -1,0 +1,22 @@
+/* XPM */
+static char *keyboard[] = {
+"16 14 4 1",
+". c #000000",
+"# c #808080",
+"a c #c0c0c0",
+"b c None",
+"c c White",
+"bbbbbbbbbbbbbb.#",
+"bbbbbbbbbbbbb.#b",
+"###############.",
+"#cccccccccccccc.",
+"#cac#ac#ac#ac#a.",
+"#ca#.a#.a#.a#.a.",
+"#cc#ac#ac#ac#aa.",
+"#c#.a#.a#.a#.aa.",
+"#caaaaaaaaaaaaa.",
+"#...............",
+"bbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbb",
+"bbbbbbbbbbbbbbbb"};

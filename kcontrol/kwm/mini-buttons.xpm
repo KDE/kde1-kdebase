@@ -1,0 +1,23 @@
+/* XPM */
+static char *titlebar[] = {
+/* width height num_colors chars_per_pixel */
+"    16    14        3            1",
+/* colors */
+". c blue",
+"# c #c0c0c0",
+"a c None",
+/* pixels */
+"aaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa",
+"################",
+"###..........###",
+"###..........###",
+"###..........###",
+"###..........###",
+"################",
+"aaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa"};

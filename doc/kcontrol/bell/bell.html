@@ -1,0 +1,34 @@
+<html>
+
+<h2>
+Configuring the bell
+</h2>
+
+<p>
+The system bell or <em>beep</em> is a feature of the X server,
+which attempts to make good use of the available hardware. However,
+it isn't always possible for the X server to actually make a beep
+sound with exactly the parameters selected due to hardware
+limitations. For example, on most PCs, volume control is not very
+good so the X server seems to <em>fake</em> low volume with a
+reduced duration of the sound. Thus, if the settings don't seem 
+to do anything, this is because the X server and/or the hardware
+don't support anything better.
+
+<p>
+User's are able to set the following parameters for the bell:
+
+<ul>
+<li>volume (percentage of "maximum" volume)
+<li>pitch (in Hz)
+<li>duration (in milliseconds)
+</ul>
+
+<p>
+In order to make the settings persist from one X session to another,
+the command "kcc -init" must be run (usually from the .xinitrc file).
+The old method (~/Desktop/Autostart/bell_setup.sh) is no longer
+needed and that shell script should be deleted.
+ 
+</html>
+

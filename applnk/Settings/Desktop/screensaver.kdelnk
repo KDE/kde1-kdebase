@@ -1,0 +1,10 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcmdisplay screensaver
+Icon=screensaver.xpm
+Type=Application
+DocPath=
+Comment=Screensaver settings
+Comment[de]=Einstellung des Bildschirmschoners
+Name=Screensaver
+Name[de]=Bildschirmschoner

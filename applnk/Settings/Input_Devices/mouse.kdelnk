@@ -1,0 +1,11 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcminput mouse
+Icon=mouse.xpm
+Type=Application
+DocPath=kcontrol/kcminput.html#mouse
+Comment=Mouse settings
+Comment[de]=Einstellung der Mausparameter
+Name=Mouse
+Name[de]=Maus
+Init=kcminput -init

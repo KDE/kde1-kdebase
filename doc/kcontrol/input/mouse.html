@@ -1,0 +1,33 @@
+<html>
+
+<h2>
+Configuring the mouse
+</h2>
+
+<p>
+User's are able to set the following parameters for the bell:
+
+<ul>
+<li>accelerated movement rate
+<li>threshold for accelerated movement
+</ul>
+
+<p>
+For threshold gives the distance the pointer must move (in a small
+amount of time) before accelerated movement occurs. In this mode,
+the pointer moves some factor faster than normal, relative to the
+amount the user actually moves the pointing device. The factor
+is the accelerated movement rate. These settings allow for slow, 
+precise pointer motion over small distances and rapid motion across 
+the screen with a short but quick motion. Large acceleration
+values and small threshold values may make the pointer too jumpy
+to be useful, as it will always move very quickly.
+
+<p>
+In order to make the settings persist from one X session to another,
+the command "kcc -init" must be run (usually from the .xinitrc file).
+The old method (~/Desktop/Autostart/mouse_setup.sh) is no longer
+needed and that shell script should be deleted.
+
+</html>
+

@@ -1,0 +1,21 @@
+/* XPM */
+static char *mouse[] = {
+"16 14 4 1",
+". c #000000",
+"# c #808080",
+"a c #c0c0c0",
+"b c None",
+"bbbbbbbb.bbbbbbb",
+"bbbb........bbbb",
+"bbb.bb#ab#ba.bbb",
+"bbb.bb#ab#ba.abb",
+"bbb.bb#ab#ba.abb",
+"bbb.########.abb",
+"bbb.bbbbbbba.abb",
+"bbb.bbbbbbba.abb",
+"bbb.bbbbbbba.abb",
+"bbb.bbbbbbba.abb",
+"bbb.bbbbbbaa.abb",
+"bbb.aaaaaaaa.abb",
+"bbbb........abbb",
+"bbbbbaaaaaaabbbb"};

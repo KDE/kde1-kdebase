@@ -1,0 +1,25 @@
+/* XPM */
+static char *bell[] = {
+"16 14 7 1",
+". c #000000",
+"# c #808000",
+"a c #808080",
+"b c #b7b700",
+"c c #ffff00",
+"d c #ffff80",
+"  c None",
+"                ",
+"       .        ",
+"     aaaaa      ",
+"    a##   a     ",
+"    a#bcd a     ",
+"   a#bcccd a    ",
+"   a#bcccd a    ",
+"   a#bcccd a    ",
+"   a#bcccd a    ",
+"   a#bcccd a    ",
+"  aabc     aa   ",
+" a##ccccc    a  ",
+" aaaaaaaaaaaaa  ",
+"                "};
+

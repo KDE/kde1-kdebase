@@ -1,0 +1,10 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcmdisplay colors
+Icon=colors.xpm
+Type=Application
+DocPath=kdisplay/kdisplay-5.html
+Comment=Color settings
+Comment[de]=Einstellung der Bildschirmfarben
+Name=Colors
+Name[de]=Farhen

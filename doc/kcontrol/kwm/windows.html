@@ -1,0 +1,47 @@
+<html>
+
+<h2>
+Configuring window properties
+</h2>
+
+<p>
+The window manager supports the following window-manipulation
+features:
+
+<ul>window moving: transparent or opaque
+<li>window resizing: animated or instant
+<li>window maximizing: expand to full screen or just expand vertically
+<li>focus policy: click or follow mouse
+<li>auto raise: window will be raised automatically
+</ul>
+
+<p>
+Transparent window movement mode supplies a wireframe of the window
+which the user can place, while opaque movement mode means the contents
+of the window remain visible while it is being moved.
+
+<p>
+The resizing animation looks really cool. Try it.
+
+<p>
+The window that is "in focus" receives keyboard input and has the
+active titlebar appearance (usually colored instead of gray). The
+focus can be switched to another window with the keyboard (Alt-TAB)
+or the mouse. If "click to focus" is selected, the user must click
+in the new window to give it the focus. If "focus follows mouse"
+is selected, the focus switches to a widnow as soon as the pointer
+enters it. This makes focus switching without raising a window easier,
+but at the expense that the position of the pointer is important even
+when the pointer isn't being used. Note that kwm uses what is called
+"sloppy focus" in the latter mode: a window stay in focus after the
+pointer leaves if the pointer has not entered another window and given
+it the focus (i.e. the deskop or root window and kpanel do not get
+the focus).
+
+<p>
+Auto raise serves to bring a window to the front (top) when it gets the
+focus. This mode applies to "focus follows mouse" policy only. Auto raise
+can be disabled by setting the delay to zero (0).
+
+</html>
+

@@ -1,0 +1,11 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcminput keyboard
+Icon=keyboard.xpm
+Type=Application
+DocPath=kcontrol/kcminput.html#keyboard
+Comment=Keyboard settings
+Comment[de]=Einstellung der Tastaturparameter
+Name=Keyboard
+Name[de]=Tastatur
+Init=kcminput -init

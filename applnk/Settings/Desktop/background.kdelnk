@@ -1,0 +1,10 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcmdisplay background
+Icon=background.xpm
+Type=Application
+DocPath=
+Comment=Background settings
+Comment[de]=Einstellung des Hintergrunds
+Name=Background
+Name[de]=Hintergrund

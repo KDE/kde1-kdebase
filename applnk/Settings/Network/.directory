@@ -1,0 +1,6 @@
+# KDE Config File
+[KDE Desktop Entry]
+Name=Network
+MiniIcon=html.xpm
+SortOrder=smbstatus.kdelnk,memory.kdelnk,processor.kdelnk
+Icon=Network.xpm

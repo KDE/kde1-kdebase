@@ -1,0 +1,6 @@
+# KDE Config File
+[KDE Desktop Entry]
+Name=Information
+MiniIcon=readme.xpm
+SortOrder=memory.kdelnk,processor.kdelnk
+Icon=Information.xpm

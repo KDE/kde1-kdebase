@@ -1,0 +1,1 @@
+SUBDIRS = sample samba bell display input kwm info

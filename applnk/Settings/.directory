@@ -1,0 +1,6 @@
+# KDE Config File
+[KDE Desktop Entry]
+Name=Settings
+MiniIcon=kcontrol.xpm
+SortOrder=Desktop,Input_Devices,KWM,Network,Information,Sound
+Icon=Settings.xpm
