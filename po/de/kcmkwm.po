@@ -19,12 +19,11 @@ msgstr "&Titelzeile"
 
 #: main.cpp:68
 msgid "&Desktop"
-msgstr ""
+msgstr "&Desktop"
 
 #: main.cpp:74
-#, fuzzy
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
-msgstr "Benutzung: kcmwkm [-init | {windows,buttons,titlebar}]\n"
+msgstr "Benutzung: kcmwkm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:105
 msgid "Window manager style"
@@ -170,15 +169,15 @@ msgstr "Plazierungs Strategie"
 
 #: windows.cpp:84
 msgid "Smart"
-msgstr ""
+msgstr "Geschickt"
 
 #: windows.cpp:86
 msgid "Cascade"
-msgstr ""
+msgstr "Überlappend"
 
 #: windows.cpp:88
 msgid "Random"
-msgstr ""
+msgstr "Zufällig"
 
 #: windows.cpp:93
 msgid "Maximize Style"
@@ -218,16 +217,16 @@ msgstr "Millisekunden"
 
 #: desktop.cpp:62
 msgid "Active desktop borders"
-msgstr ""
+msgstr "Aktive Desktop-Ränder"
 
 #: desktop.cpp:64
 msgid "Enable active desktop borders"
-msgstr ""
+msgstr "Aktive Desktop-Ränder an"
 
 #: desktop.cpp:66
 msgid "Move pointer towards center after switch"
-msgstr ""
+msgstr "Zeiger nach einem Wechsel in die Mitte setzen"
 
 #: desktop.cpp:72
 msgid "Dekstop switch delay in ms:"
-msgstr ""
+msgstr "Zeitraum für Desktop-Wechsel in ms:"
