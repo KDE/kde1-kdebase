@@ -74,6 +74,9 @@
 /* Define if you have usleep */
 #undef HAVE_USLEEP
 
+/* Define if you have random */
+#undef HAVE_RANDOM
+
 /* Define the file for utmp entries */
 #undef UTMP
 
