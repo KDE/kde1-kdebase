@@ -8,12 +8,12 @@ kghostview: 0.3.3 (bug fixed)
 ktetris: 0.2.3
 kmines: 0.6.4
 kpat: 0.3 (patched a lot)
-kview: 0.9
+kview: 0.10
 kpaint: 0.1
 kfind: 0.3
 kedit: 0.3
 kcalc: 0.1
 kacli: 0.5
 kscreensaver: 0.3.3 (patched for QT-1.2)
-kvt: 0.13
+kvt: 0.14
 khexdit: 0.4.5
