@@ -23,6 +23,7 @@
 #include <qpainter.h>
 #include <stdlib.h>
 #include <qfontmet.h> 
+#include <qtooltip.h>
 
 Desktop::Desktop(KWMModuleApplication *a, int id, Pager *parent) :
   QFrame(parent)
@@ -91,7 +92,7 @@ void Desktop::addWindow(Window w)
     win->icony = KWM::isIconified(w);
     win->name = KWM::title(w);
     calculate(win);
-
+    //    QToolTip::add(this, win->prect, win->name);
     windows.append(win);
     fillPixmap();
     repaint( false );
@@ -181,7 +182,7 @@ void Desktop::mousePressEvent( QMouseEvent *e )
 {
     KWM::switchToDesktop(Id);
     for (PagerWindow *win = windows.last(); win; win = windows.prev()) {
-	if (win->prect.contains(e->pos())) {
+	if (!win->icony && win->prect.contains(e->pos())) {
 	    KWM::activate(win->id);
 	    break;
 	}
