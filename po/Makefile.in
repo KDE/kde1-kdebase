@@ -12,8 +12,11 @@ ES_GMFILES = es_kfind.gmo es_kdehelp.gmo es_kdisplay.gmo es_kvt.gmo
 SV_POFILES = sv_kfind.po  sv_kdehelp.po  sv_kdisplay.po  sv_kvt.po
 SV_GMFILES = sv_kfind.gmo sv_kdehelp.gmo sv_kdisplay.gmo sv_kvt.gmo
 
-POFILES = $(DE_POFILES) $(CZ_POFILES) $(ES_POFILES) $(SV_POFILES)
-GMOFILES= $(DE_GMFILES) $(CZ_GMFILES) $(ES_GMFILES) $(SV_GMFILES)
+FR_POFILES = fr_kfind.po  fr_kdehelp.po  fr_kdisplay.po
+FR_GMFILES = fr_kfind.gmo fr_kdehelp.gmo fr_kdisplay.gmo
+
+POFILES = $(DE_POFILES) $(CZ_POFILES) $(ES_POFILES) $(SV_POFILES) $(FR_POFILES)
+GMOFILES= $(DE_GMFILES) $(CZ_GMFILES) $(ES_GMFILES) $(SV_GMFILES) $(FR_GMFILES)
 
 # more general options
 srcdir = @srcdir@
@@ -68,6 +71,30 @@ install-yes: all
 	done
 
 install-no:
+
+uninstall:
+	@catalogs='$(GMOFILES)'; \
+	for cat in $$catalogs; do \
+	destdir=$(localedir); \
+	lang=`echo $$cat | sed 's/_.*$$//'`; \
+	name=`echo $$cat | sed -e 's/^.._//' | sed -e 's/\.gmo/\.mo/'` \
+	dir=$$destdir/$$lang/LC_MESSAGES; \
+	rm -f $$cat $$dir/$$name; \
+	echo "removing $$dir/$$name" ; \
+	done
+
+merge:
+	@catalogs='$(POFILES)'; \
+	for cat in $$catalogs; do \
+	name=`echo $$cat | sed -e 's/^.._//' `; \
+	echo $$cat $$name; \
+	msgmerge $$cat $$name > $$cat.new ; \
+	if diff $$cat $$cat.new; then \
+		rm $$cat.new;  \
+	else  \
+		mv $$cat.new $$cat ; \
+	fi; \
+	done
 
 distclean:
 	rm -f *~ Makefile

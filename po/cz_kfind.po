@@ -1,3 +1,19 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-08-26 12:45+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
 #: kfdird.cpp:46
 msgid "Directories:"
 msgstr ""
@@ -100,77 +116,73 @@ msgid "Save Search Results"
 msgstr "Ulo¾it výsledky"
 
 # ********* Options *************
-#: kfoptions.cpp:53
+#: kfoptions.cpp:54
 msgid "Preferences"
 msgstr "Preference"
 
-#: kfoptions.cpp:69
+#: kfoptions.cpp:70
 msgid "File format:"
 msgstr "Datový formát"
 
-#: kfoptions.cpp:71
+#: kfoptions.cpp:72
 msgid "Save results to file:"
 msgstr "Ulo¾it výsledky do:"
 
-#: kfoptions.cpp:74
+#: kfoptions.cpp:75
 msgid "Save results to file ~/.kfind-results.html"
 msgstr "Ulo¾it výsledky do  ~/.kfind-results.html"
 
-#: kfoptions.cpp:76
+#: kfoptions.cpp:77
 msgid "Browse"
 msgstr "Listovat"
 
-#: kfoptions.cpp:89
+#: kfoptions.cpp:90
 msgid "Plain Text"
 msgstr "Text"
 
-#: kfoptions.cpp:118
+#: kfoptions.cpp:119
 msgid "Saving"
 msgstr "Ukládání"
 
-#: kfoptions.cpp:124
+#: kfoptions.cpp:125
 msgid "Type Description:"
 msgstr ""
 
-#: kfoptions.cpp:125
+#: kfoptions.cpp:126
 msgid "Icon:"
 msgstr ""
 
-#: kfoptions.cpp:126
+#: kfoptions.cpp:127 kfoptions.cpp:193
 msgid "Patterns:"
 msgstr ""
 
-#: kfoptions.cpp:127
+#: kfoptions.cpp:128
 msgid "Default Application:"
 msgstr ""
 
-#: kfoptions.cpp:133 kfoptions.cpp:195
+#: kfoptions.cpp:134 kfoptions.cpp:196
 msgid "Add New"
 msgstr ""
 
-#: kfoptions.cpp:134 kfoptions.cpp:196
+#: kfoptions.cpp:135 kfoptions.cpp:197
 msgid "Remove"
 msgstr ""
 
-#: kfoptions.cpp:180
+#: kfoptions.cpp:181
 #, fuzzy
 msgid "Filetypes"
 msgstr "V¹echny soubory a adresáøe"
 
-#: kfoptions.cpp:186
+#: kfoptions.cpp:187
 msgid "Create Archive:"
 msgstr ""
 
-#: kfoptions.cpp:188
+#: kfoptions.cpp:189
 #, fuzzy
 msgid "Add to Archive:"
 msgstr "Pøidat do archivu"
 
-#: kfoptions.cpp:192
-msgid "Paterns:"
-msgstr ""
-
-#: kfoptions.cpp:234
+#: kfoptions.cpp:235
 #, fuzzy
 msgid "Archivers"
 msgstr "Pøidat do archivu"
