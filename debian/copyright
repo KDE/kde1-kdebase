@@ -1,3 +1,4 @@
+This package was cleaned up by Ivan E. Moore II <rkrusty@debian.org>
 This package was debianized by Andreas Jellinghaus <aj@debian.org>.
 Thanks to Brandon Mitchell <bhmit1@mail.wm.edu> for his work on the
 libc5 version.

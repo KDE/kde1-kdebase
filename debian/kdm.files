@@ -1,0 +1,7 @@
+etc/init.d
+etc/X11
+etc/kde/kdm*
+usr/bin/kdm
+usr/bin/switchdm
+usr/man/man1/kdm.1.gz
+usr/man/man1/switchdm.1.gz

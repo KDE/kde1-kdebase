@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+case "$1" in
+        remove) 
+	if test -n "`pidof kdm`"
+	then /etc/init.d/kdm stop 
+	fi ;;
+        purge) 
+	if test -n "`pidof kdm`"
+	then /etc/init.d/kdm stop 
+	fi ;;
+esac
+          

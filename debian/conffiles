@@ -1,6 +1,4 @@
 /etc/kde/kfmrc
-/etc/kde/kdmrc
 /etc/kde/desktop
-/etc/init.d/kdm
 /etc/kde/kcmlocalerc
 /etc/kde/kpanelrc

@@ -1,0 +1,1 @@
+shlibs:Depends=kdelibs2g (>= 5:1.1.1-5), libc6, libc6 (>= 2.1), libjpeg62, libpam0g, libpng2, libstdc++2.9-glibc2.1, libtiff3g, qt1g (>= 1:1.44-2), xlib6g (>= 3.3.2.3a-2), zlib1g (>= 1:1.1.3)

@@ -1,5 +1,4 @@
 usr/doc/kdebase
-etc/init.d
 etc/menu-methods
-etc/X11
 usr/sbin
+usr/bin

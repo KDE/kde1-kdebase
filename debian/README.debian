@@ -17,7 +17,7 @@ HOW TO START KDE
 a) if you used xdm, you might want to use kdm (same as xdm, but nice
 	outfit). start /usr/sbin/switchdm
 b) edit /etc/X11/window-managers  (the first windowmanager wins !)
-c) use "/usr/X11R6/bin/kde" directly !
+c) use "/usr/bin/kde" directly !
 
 INFORMATIONS ABOUT KDE
 ======================

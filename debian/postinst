@@ -2,10 +2,6 @@
 
 set -e
 
-if [ "$1" = "configure" ]; then
-  update-rc.d kdm defaults 99 01 >/dev/null
-fi  
-
 window_manager_entry='/usr/bin/kde'
 if ! grep -q "^$window_manager_entry$" /etc/X11/window-managers 
 then
@@ -13,61 +9,9 @@ then
         echo "Installed kde in the window-manager list."
 fi
  
-echo "Do you want to setup kdm for your system installation?"
-echo "If you enter y here, /etc/kde/kdmrc will be changed to"
-echo "only list available users and Windowmanagers."
-echo -n "Do you want to update the kdmrc? [Yn]"
-read answer
-if test -z "$answer"; then
-  answer=y
-else
-  answer=`echo $answer | cut -c1 | tr '[A-Z]' '[a-z]'`
-fi
-
-case $answer in
- y) update=yes ;;
- n) update=no;;
- *) echo "\"$answer\" not understood.  Using default of yes"
-   update=no
-   ;;
-esac
-
-if test "$update" = "yes"; then
-echo "Updating kdmrc ..."
-grep -vE "^(NoUsers|SessionTypes)" /etc/kde/kdmrc > /tmp/kdmrc
-echo "[KDM]" >> /tmp/kdmrc  
-echo -n "NoUsers=" >> /tmp/kdmrc
-for user in `sed -e 's#^\([^:]*\):.*:\([0-9]*\):.*$#\2-\1#' /etc/passwd`; do 
-    id=`echo $user | sed -e "s#-.*##"`
-    if test -n "$id" && test ! "$id" = "0" && test ! `expr "$id" \< 1000` = "0" || test ! `expr "$id" \> 65500` = "0"; then
-	echo -n "$user;" | sed -e 's#[0-9]*-##' >> /tmp/kdmrc
-    fi
-done
-echo "" >> /tmp/kdmrc
-echo -n "SessionTypes=kde;" >> /tmp/kdmrc
-for session in `grep -v "^#" /etc/X11/window-managers | sed -e 's#^.*/\([^/]*\)$#\1#' | sort -u | grep -v kde`; do
-    echo -n "$session;" >> /tmp/kdmrc
-done
-mv /tmp/kdmrc /etc/kde/kdmrc
-fi
-
-if ! grep -q "^# Start kdebase added code" /etc/X11/xdm/Xsetup_0; then
-echo "we have to patch /etc/X11/xdm/Xsetup_0 to run kdmdesktop"
-cat >> /etc/X11/xdm/Xsetup_0 <<EOF
-# Start kdebase added code
-if grep -q ^start-kdm /etc/X11/config; then # kdebase added code
-  kdmdesktop & # kdebase added code
-fi # kdebase added code
-# End kdebase added code
-EOF
-fi
-
 if test -L /var/spool/kdeapplnk; then
   rm -f /var/spool/kdeapplnk
 fi
 
 #DEBHELPER#
 #KDEHELPER#
-
-# Starting kdm
-/etc/init.d/kdm start

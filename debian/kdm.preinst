@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+        upgrade) 
+	if test -n "`pidof kdm`"
+	then
+	echo "About to upgrade the kdebase package. To do this, kdm must"
+	echo "be stopped. When they are stopped, all X sessions managed by kdm"
+	echo "will be terminated."
+	echo ""
+ 
+		echo -n "Stop kde display manager now ? (y/n) [n] "
+		read answer
+		case "$answer" in 
+			y|Y) /etc/init.d/kdm stop ;;
+			*)  
+	echo "kdm will not be stopped.  The upgrade of kdebase is"
+	echo "incomplete; you must finish it later, when you are ready to allow"
+	echo "kdm to be stopped."
+			exit 1 ;;
+		esac
+	fi
+	;;
+esac   

@@ -1,26 +1,40 @@
 Source: kdebase
 Section: contrib/x11
-Priority: extra
+Priority: optional
 Maintainer: Stephan Kulow <coolo@kde.org>
-Standards-Version: 2.3.0.0
+Standards-Version: 2.5.0
 
 Package: kdebase
 Architecture: any
-Depends: menu (>=1.5-5), ${shlibs:Depends}, xdm
-Suggests: kdewallpapers
+Depends: menu (>=1.5-5), ${shlibs:Depends}, kdelibs2g
+Suggests: kdewallpapers, kdm, kdeadmin, kdegames, kdegraphics, kdemultimedia, kdenetwork, kdetoys, kdeutils, khotkeys, korganizer, kdebase-doc, kthememgr
 Recommends: kdebase-i18n
 Description: KDE core applications
  This is a suite of all kde core applications :
- file manager kfm, window manager kwm, desktop manager kdm
+ file manager kfm, window manager kwm
  and others.
 
 Package: kdewallpapers
 Recommends: kdebase
 Architecture: all
 Description: Some wallpapers for KDE 
+ Some wallpapers for KDE
 
 Package: kdebase-i18n
 Depends: kdebase
 Architecture: all
 Description: Translations of applications in kdebase.
  It contains translations into 31 languages
+
+Package: kdm
+Depends: kdebase, xdm
+Conflicts: gdm, wdm
+Architecture: any
+Description: The K Desktop Manager
+ The K Desktop Manager
+
+Package: kdebase-doc
+Architecture: all
+Description: Documentation for Applications in kdebase
+ All the documentation for all the Applications in kdebase
+

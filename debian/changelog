@@ -1,3 +1,10 @@
+kdebase (4:1.1.1-19990516-1) unstable; urgency=low
+
+  * migrating kdm into it's own package
+  * fixing i18n build issues
+
+ -- Stephan Kulow <coolo@kde.org>  Sun, 16 May 1999 06:00:55 +0200
+
 kdebase (4:1.1.1-19990424-1) unstable; urgency=low
 
   * new upstream version for KDE 1.1.1

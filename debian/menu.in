@@ -11,12 +11,12 @@ kcmkonsole x11 NONE
 kcmkpanel x11 NONE
 kcmkwm x11 NONE
 kcmlocale x11 Apps/System
-kcmsamba x11 NONE
+kcmsamba x11 Apps/System
 kcmsyssound x11 NONE
 kcontrol x11 Apps/System
 kdehelp x11 Apps/Viewers
 kdisplay kde Modules
-kdmconfig x11 NONE
+kdmconfig x11 Apps/System
 kfind x11 Apps/Tools
 kfmclient kde Modules
 kfmsu x11 System

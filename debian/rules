@@ -13,13 +13,14 @@ $(BUILDDIR)/build-stamp:
 	fi 
 	test -d $(BUILDDIR) || mkdir $(BUILDDIR) ;\
 	if test ! -f $(BUILDDIR)/config.status; then \
+	cp -R po $(BUILDDIR) ;\
 	cd $(BUILDDIR) ;\
 	CFLAGS="-O2 -g -Wall -Wno-uninitialized -DUTMP_SUPPORT \
 	  -DUTMP='\"/var/run/utmp\"'" \
 	  CXXFLAGS="-O2 -g -Wall -Wno-uninitialized" \
 	  RUN_KAPPFINDER="no" \
-	../configure --with-shadow --without-pam \
-	--enable-debug --with-install-root=`pwd`/../debian/tmp \
+	../configure --enable-debug --with-shadow --without-pam \
+	--with-install-root=`pwd`/../debian/tmp \
 	--disable-rpath ; \
 	fi
 	make -C $(BUILDDIR)
@@ -48,23 +49,26 @@ binary-arch: checkroot build
 	dh_clean -k
 	dh_installdirs
 	make -C $(BUILDDIR) RUN_KAPPFINDER="no" install 
-	dh_movefiles
-	perl -w debian/kderules
 	cp debian/README.kde debian/tmp/usr/doc/kde
 	install -d debian/tmp/etc/init.d
 	cp debian/kdm.init.d debian/tmp/etc/init.d/kdm
+	cp debian/xdm.init.d debian/tmp/etc/init.d/xdm
 	install -d debian/tmp/usr/bin
 	mv debian/tmp/usr/bin/startkde debian/tmp/usr/bin/kde
 	ln -s kde debian/tmp/usr/bin/startkde
 	install -d debian/tmp/usr/sbin
-	cp debian/switchdm debian/tmp/usr/sbin
-	install -d debian/tmp/etc/X11
+	cp debian/switchdm debian/tmp/usr/bin
+	install -d debian/tmp/etc/X11/kdm
+	cp debian/kdm.config debian/tmp/etc/X11/kdm/config
 	rm -rf debian/tmp/usr/share/applnk/debian_menu
 	install -d debian/tmp/usr/share/applnk/debian_menu
 	cp debian/debian.kdelnk \
 	      debian/tmp/usr/share/applnk/debian_menu/.directory
-	chmod +x debian/tmp/etc/init.d/kdm debian/tmp/usr/sbin/switchdm 
-	dh_undocumented 
+	chmod +x debian/tmp/etc/init.d/kdm debian/tmp/usr/bin/switchdm \
+	debian/tmp/etc/init.d/xdm
+	dh_undocumented `cat debian/man-pages`
+	dh_movefiles
+	perl -w debian/kderules
 	dh_installdocs
 	dh_installmenu
 	dh_installchangelogs
