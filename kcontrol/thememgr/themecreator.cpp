@@ -284,8 +284,9 @@ void ThemeCreator::extractCmd(KSimpleConfig* aCfg, const QString& aCmd,
     value = aCfg->readEntry("Position");
     if (stricmp(value,"right")==0 || stricmp(value,"left")==0)
     {
-      value = readEntry("BackgroundTexture");
-      rotateImage(workDir() + value, 90);
+      value = readEntry("background");
+      debug("rotating %s", (const char*)value);
+      rotateImage(mThemePath + value, 90);
     }
   }
 
@@ -325,7 +326,7 @@ const QString ThemeCreator::extractFile(const QString& aFileName)
     j++;
     num++;
     fname[j] = '\0';
-    str.sprintf("%s%d.%s", (const char*)fname, num, (const char*)ext);
+    str.sprintf("%s%d%s", (const char*)fname, num, (const char*)ext);
     fname = str;
   }
 
