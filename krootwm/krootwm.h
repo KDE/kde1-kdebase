@@ -76,6 +76,7 @@ private:
   bool kpanel_menu_on_left_button;
 
   void updateBookmarkMenu (void);
+  void buildMenubars(void);//CT
   void scanBookmarks( QPopupMenu*, const char *_dir );
   int bookmarkId;
   QIntDict<QString> bookmarkDict;

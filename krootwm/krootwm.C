@@ -93,8 +93,8 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     myMenuBar = 0;
     myMenuBarContainer = 0;
 
-    kconfig->setGroup("Menubar");
-    if (kconfig->readEntry("position") == "TopOfScreen")
+    kconfig->setGroup("KDE");//CT as Sven asked
+    if (kconfig->readEntry("macStyle") == "on") //CT as Sven asked 
       macMode = true;
     else
       macMode = false;
@@ -189,7 +189,14 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
 	     SLOT( slotBookmarkSelected( int ) ) );
     updateBookmarkMenu();
 
-    // --------- Sven's changes for macmode begin
+ 
+    buildMenubars();
+}
+
+//CT 02Dec1998 - separate menubars building
+void KRootWm::buildMenubars() {
+
+  // --------- Sven's changes for macmode begin
     if (macMode)
     {
       myMenuBarContainer = new QWidget;
@@ -315,6 +322,13 @@ void KRootWm::kwmCommandReceived(QString com)
   //sent by KBookmarkManager::emitChanged()
   if (com == "krootwm:refreshBM")
     updateBookmarkMenu ();
+  if (com == "toggleMacStyle") {
+    delete myMenuBarContainer;
+    myMenuBarContainer = 0;
+    myMenuBar = 0;
+    macMode = !macMode;
+    buildMenubars();
+  }
 }
 
 void KRootWm::updateBookmarkMenu (void)

@@ -205,7 +205,8 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	int i;
 	changed = false;
 	useRM = true;
-	
+	macStyle = false;//CT
+
 	debug("KGeneral::KGeneral");
 	
 	// if we are just initialising we don't need to create setup widget
@@ -222,8 +223,8 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	readSettings();
 	
 	QBoxLayout *topLayout = new QVBoxLayout( this, 10 );
-	QBoxLayout *top2Layout = new QHBoxLayout();
-	topLayout->addLayout(top2Layout);
+	//CT	QBoxLayout *top2Layout = new QHBoxLayout();
+	//CT	topLayout->addLayout(top2Layout);
 	
 	cbStyle = new QCheckBox( i18n( "&Draw widgets in the style of Windows 95" ),
 				 this );
@@ -237,7 +238,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	
 	connect( cbStyle, SIGNAL( clicked() ), SLOT( slotChangeStyle()  )  );
 	
-	top2Layout->addWidget( cbStyle, 10 );
+	topLayout->addWidget( cbStyle, 10 );//CT
 
 	cbRes = new QCheckBox( i18n( "&Apply style to non-KDE apps" ),
 				 this );
@@ -250,7 +251,23 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	
 	connect( cbRes, SIGNAL( clicked() ), SLOT( slotUseResourceManager()  )  );
 	
-	top2Layout->addWidget( cbRes, 10 );
+	topLayout->addWidget( cbRes, 10 );//CT
+
+	//CT 30Nov1998
+	cbMac = new QCheckBox( i18n( "&Menubar on top of the screen in the style of MacOS" ),
+				 this );
+	cbMac->adjustSize();
+	cbMac->setMinimumSize(cbMac->size());
+
+	if( macStyle )
+	        cbMac->setChecked( true );
+	else
+		cbMac->setChecked( false);
+	
+	connect( cbMac, SIGNAL( clicked() ), SLOT( slotMacStyle()  )  );
+	
+	topLayout->addWidget( cbMac, 10 );
+	//CT
 
 	QGroupBox *group = new QGroupBox( i18n( "Desktop fonts" ), this );
 	
@@ -358,6 +375,15 @@ void KGeneral::slotUseResourceManager()
 	changed=true;
 }
 
+//CT 30Nov1998 - mac style set
+void KGeneral::slotMacStyle()
+{
+	macStyle = cbMac->isChecked();
+		
+	changed=true;
+}
+//CT
+
 KGeneral::~KGeneral()
 {
 }
@@ -377,6 +403,15 @@ void KGeneral::readSettings( int )
 	else
 		applicationStyle = MotifStyle;
 
+	//CT 30Nov1998 - mac style set
+
+	str = config.readEntry( "macStyle", "off");
+	if ( str == "on" )
+	  macStyle = true;
+	else
+	  macStyle = false;
+	//CT
+
 		
 	KConfigGroupSaver saver(kapp->getConfig(), "X11");
 	useRM = kapp->getConfig()->readBoolEntry( "useResourceManager", true );
@@ -392,8 +427,11 @@ void KGeneral::setDefaults()
 	
 	cbStyle->setChecked( false );
 	cbRes->setChecked( true );
+	cbMac->setChecked( false );//CT
 	useRM = true;
+	macStyle = false;//CT
 	slotChangeStyle();
+	slotMacStyle();//CT
 }
 
 void KGeneral::defaultSettings()
@@ -418,7 +456,18 @@ void KGeneral::writeSettings()
 	else
 		str.sprintf("Motif" );
 	config->writeEntry("widgetStyle", str, true, true);
+
+	//CT 30Nov1998 - mac style set
+	config->writeEntry( "macStyle", macStyle?"on":"off", true, true);
+	//CT
+
+	//CT 05Dec1998 - assure that krootwm shuts the macStyle *before*
+	if (!macStyle) KWM::sendKWMCommand("toggleMacStyle");
+
 	config->sync();
+
+	//CT 05Dec1998 - assure that krootwm starts the macStyle
+	if (macStyle) KWM::sendKWMCommand("toggleMacStyle");
 	
 	KConfigGroupSaver saver(kapp->getConfig(), "X11");
 	kapp->getConfig()->writeEntry( "useResourceManager", useRM );

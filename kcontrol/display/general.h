@@ -97,6 +97,7 @@ public:
 protected slots:
 	void slotChangeStyle();
 	void slotUseResourceManager();
+	void slotMacStyle();//CT
 	void slotApply();
 	void slotSetFont( QFont fnt );
 	void slotPreviewFont( int index );
@@ -110,6 +111,7 @@ protected:
 	KFontChooser *fntChooser;
 	FontPreview *lSample;
 	QCheckBox *cbStyle, *cbRes;
+	QCheckBox *cbMac;//CT
 	QListBox *lbFonts;
 	
 	Bool changed;
@@ -118,6 +120,7 @@ protected:
 	
 	Bool defaultCharset;
 	bool useRM;
+	bool macStyle;//CT
 	Window root;
 	int screen;
 };
