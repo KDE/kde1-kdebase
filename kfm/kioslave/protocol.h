@@ -72,7 +72,7 @@ public:
 	virtual int ReOpen(KURL *url, int mode);
 
 	/** Set data for POST method **/
-   virtual int SetData(const char *_data) { return FAIL; }
+   virtual int SetData(const char *) { return FAIL; }
   	virtual long Read(void *buffer, long nbytes);
 	virtual long Write(void *buffer, long nbytes);
 	virtual int Close();
