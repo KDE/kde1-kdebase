@@ -31,8 +31,8 @@ Klogout::Klogout( QWidget *parent, const char *name, WFlags f)
     frame = new QFrame( this );
     frame->installEventFilter( this );
     frame->setFrameStyle(QFrame::WinPanel | QFrame:: Raised);
-    button = new QPushButton("Logout", this);
-    button_cancel = new QPushButton("Cancel", this);
+    button = new QPushButton(klocale->translate("Logout"), this);
+    button_cancel = new QPushButton(klocale->translate("Cancel"), this);
     button->setMouseTracking(True);
     button_cancel->setMouseTracking(True);
     button->setDefault( True );
@@ -41,12 +41,12 @@ Klogout::Klogout( QWidget *parent, const char *name, WFlags f)
     button_cancel->installEventFilter( this );
     connect(button, SIGNAL(clicked()), SLOT(logout()));
     connect(button_cancel, SIGNAL(clicked()), SLOT(cleanup()));
-    label = new QLabel("Session prepared for logout", this);
+    label = new QLabel(klocale->translate("Session prepared for logout"), this);
     label->installEventFilter( this );
     label->setAlignment(AlignCenter);
 
     listboxlabel1 = 
-      new QLabel("The following applications contain unsaved data which\nwill be lost in your next session.", this);
+      new QLabel(klocale->translate("The following applications contain unsaved data which\nwill be lost in your next session."), this);
     listboxlabel1->installEventFilter( this );
     listboxlabel1->setAlignment(AlignLeft);
 
@@ -55,7 +55,7 @@ Klogout::Klogout( QWidget *parent, const char *name, WFlags f)
     connect(listbox1, SIGNAL(selected(int)), SLOT(listbox1Select(int)));
 
     listboxlabel2 = 
-      new QLabel("The following applications cannot be restored in your next session,\nonly restarted. Make sure they do not contain important unsaved data.", this);
+      new QLabel(klocale->translate("The following applications cannot be restored in your next session,\nonly restarted. Make sure they do not contain important unsaved data."), this);
     listboxlabel2->installEventFilter( this );
     listboxlabel2->setAlignment(AlignLeft);
 
@@ -64,7 +64,7 @@ Klogout::Klogout( QWidget *parent, const char *name, WFlags f)
     connect(listbox2, SIGNAL(selected(int)), SLOT(listbox2Select(int)));
     
     listboxlabel3 = 
-      new QLabel("The following applications are not X11-aware and though cannot be restored\nin your next session. Make sure they do not contain important unsaved data.", this);
+      new QLabel(klocale->translate("The following applications are not X11-aware and though cannot be restored\nin your next session. Make sure they do not contain important unsaved data."), this);
     listboxlabel3->installEventFilter( this );
     listboxlabel3->setAlignment(AlignLeft);
 

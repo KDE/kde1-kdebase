@@ -31,9 +31,9 @@ Ktask::Ktask( QWidget *parent, const char *name, WFlags f)
     frame = new QFrame( this );
     frame->installEventFilter( this );
     frame->setFrameStyle(QFrame::WinPanel | QFrame:: Raised);
-    button = new QPushButton("Switch to", this);
-    button_logout = new QPushButton("Logout", this);
-    button_cancel = new QPushButton("Cancel", this);
+    button = new QPushButton(klocale->translate("Switch to"), this);
+    button_logout = new QPushButton(klocale->translate("Logout"), this);
+    button_cancel = new QPushButton(klocale->translate("Cancel"), this);
     button->setMouseTracking(True);
     button_logout->setMouseTracking(True);
     button_cancel->setMouseTracking(True);
@@ -45,7 +45,7 @@ Ktask::Ktask( QWidget *parent, const char *name, WFlags f)
     connect(button, SIGNAL(clicked()), SLOT(buttonSelect()));
     connect(button_logout, SIGNAL(clicked()), SLOT(logout()));
     connect(button_cancel, SIGNAL(clicked()), SLOT(cleanup()));
-    label = new QLabel("Current session", this);
+    label = new QLabel(klocale->translate("Current session"), this);
     label->installEventFilter( this );
     label->setAlignment(AlignCenter);
 

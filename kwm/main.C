@@ -60,7 +60,7 @@ int handler(Display *d, XErrorEvent *e){
 	 || e->request_code == X_GrabKey
 	 ) 
 	&& (e->error_code == BadAccess)) {
-      fprintf(stderr, "kwm: it looks like there's already a window manager running.  kwm not started\n");
+      fprintf(stderr, klocale->translate("kwm: it looks like there's already a window manager running.  kwm not started\n"));
       exit(1);
     }
 
@@ -74,7 +74,7 @@ int handler(Display *d, XErrorEvent *e){
     fprintf(stderr, "kwm: %s(0x%lx): %s\n", req, e->resourceid, msg);
 
     if (initting) {
-        fprintf(stderr, "kwm: failure during initialisation; aborting\n");
+        fprintf(stderr, klocale->translate("kwm: failure during initialisation; aborting\n"));
         exit(1);
     }
     return 0;
@@ -349,11 +349,11 @@ MyApp::MyApp(int &argc = 0, char **argv = 0, const QString& rAppName = 0):KAppli
     if (QString("-version") == argv[1]){
       printf(KWM_VERSION);
       printf("\n");
-      printf("Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n");
+      printf(klocale->translate("Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"));
       ::exit(0);
     }
     else {
-      printf("Usage: ");
+      printf(klocale->translate("Usage: "));
       printf("%s [-version]\n", argv[0]);
     }
     ::exit(1); 
@@ -364,17 +364,18 @@ MyApp::MyApp(int &argc = 0, char **argv = 0, const QString& rAppName = 0):KAppli
   XSetErrorHandler(handler);
 
   // these should be internationalized!
-  setStringProperty("KWM_STRING_MAXIMIZE", "Maximize");
-  setStringProperty("KWM_STRING_UNMAXIMIZE", "Restore");
-  setStringProperty("KWM_STRING_ICONIFY", "Iconify");
-  setStringProperty("KWM_STRING_UNICONIFY", "DeIconify");
-  setStringProperty("KWM_STRING_STICKY", "Sticky");
-  setStringProperty("KWM_STRING_UNSTICKY", "UnSticky");
-  setStringProperty("KWM_STRING_MOVE", "Move");
-  setStringProperty("KWM_STRING_RESIZE", "Resize");
-  setStringProperty("KWM_STRING_CLOSE", "Close");
-  setStringProperty("KWM_STRING_TODESKTOP", "To desktop");
-  setStringProperty("KWM_STRING_ONTOCURRENTDESKTOP", "Onto current desktop");
+  setStringProperty("KWM_STRING_MAXIMIZE",   klocale->translate("Maximize"));
+  setStringProperty("KWM_STRING_UNMAXIMIZE", klocale->translate("Restore"));
+  setStringProperty("KWM_STRING_ICONIFY",    klocale->translate("Iconify"));
+  setStringProperty("KWM_STRING_UNICONIFY",  klocale->translate("DeIconify"));
+  setStringProperty("KWM_STRING_STICKY",     klocale->translate("Sticky"));
+  setStringProperty("KWM_STRING_UNSTICKY",   klocale->translate("UnSticky"));
+  setStringProperty("KWM_STRING_MOVE",       klocale->translate("Move"));
+  setStringProperty("KWM_STRING_RESIZE",     klocale->translate("Resize"));
+  setStringProperty("KWM_STRING_CLOSE",      klocale->translate("Close"));
+  setStringProperty("KWM_STRING_TODESKTOP",  klocale->translate("To desktop"));
+  setStringProperty("KWM_STRING_ONTOCURRENTDESKTOP", 
+		    klocale->translate("Onto current desktop"));
 
   desktopMenu = new QPopupMenu; 
   desktopMenu->installEventFilter(this);
@@ -412,21 +413,29 @@ MyApp::MyApp(int &argc = 0, char **argv = 0, const QString& rAppName = 0):KAppli
     config->writeEntry("NumberOfDesktops", 4);
   int number_of_desktops = config->readNumEntry("NumberOfDesktops");
   if (!config->hasKey("Desktop1"))
-    config->writeEntry("Desktop1", "One");
+    config->writeEntry("Desktop1", klocale->translate("One"), 
+		       true, false, true);
   if (!config->hasKey("Desktop2"))
-    config->writeEntry("Desktop2", "Two");
+    config->writeEntry("Desktop2", klocale->translate("Two"),
+		       true, false, true);
   if (!config->hasKey("Desktop3"))
-    config->writeEntry("Desktop3", "Three");
+    config->writeEntry("Desktop3", klocale->translate("Three"),
+		       true, false, true);
   if (!config->hasKey("Desktop4"))
-    config->writeEntry("Desktop4", "Four");
+    config->writeEntry("Desktop4", klocale->translate("Four"),
+		       true, false, true);
   if (!config->hasKey("Desktop5"))
-    config->writeEntry("Desktop5", "Five");
+    config->writeEntry("Desktop5", klocale->translate("Five"),
+		       true, false, true);
   if (!config->hasKey("Desktop6"))
-    config->writeEntry("Desktop6", "Six");
+    config->writeEntry("Desktop6", klocale->translate("Six"),
+		       true, false, true);
   if (!config->hasKey("Desktop7"))
-    config->writeEntry("Desktop7", "Seven");
+    config->writeEntry("Desktop7", klocale->translate("Seven"),
+		       true, false, true);
   if (!config->hasKey("Desktop8"))
-    config->writeEntry("Desktop8", "Eight");
+    config->writeEntry("Desktop8", klocale->translate("Eight"),
+		       true, false, true);
   
   number_of_desktops = (number_of_desktops/2) * 2;
   if (number_of_desktops < 2)
@@ -615,7 +624,8 @@ void MyApp::writeConfiguration(){
   for (i=1; i<=n; i++){
     key.setNum(i);
     key.prepend("Desktop");
-    config->writeEntry(key, KWM::getDesktopName(i));
+    config->writeEntry(key, KWM::getDesktopName(i),
+		       true, false, true);
     key.append("Region");
     QRect r = KWM::getWindowRegion(i);
     if (r == QApplication::desktop()->geometry())
@@ -865,7 +875,7 @@ bool MyApp::handleKeyPress(XKeyEvent key){
 			 infoBoxClient->window);
       }
       else
-	setInfoBoxText("*** No Tasks ***", None);
+	setInfoBoxText(klocale->translate("*** No Tasks ***"), None);
       return False;
     }
   }
