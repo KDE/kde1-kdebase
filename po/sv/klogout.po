@@ -1,12 +1,8 @@
 
 #: klogout.cpp:76
 msgid "Logout"
-msgstr ""
-
-#: klogout.cpp:77
-msgid "Cancel"
-msgstr ""
+msgstr "Logga ur"
 
 #: klogout.cpp:86
 msgid "Really exit the KDE?"
-msgstr ""
+msgstr "Är du säker på att du vill avsluta KDE?"

@@ -1,0 +1,984 @@
+
+#: kfmgui.cpp:205 kfmgui.cpp:851
+msgid "KFM"
+msgstr "KFM"
+
+#: kbind.cpp:188 kbind.cpp:200 kbind.cpp:209 kfmgui.cpp:216 kfmgui.cpp:666
+#: kfmgui.cpp:676
+msgid "Folder"
+msgstr "Ordner"
+
+#: kfmgui.cpp:227
+#, c-format
+msgid "ERROR: Template does not exist '%s'"
+msgstr "FEHLER: Vorlage existiert nicht '%s'"
+
+#: kfmgui.cpp:251
+msgid "&New"
+msgstr "&Neu"
+
+#: kfmgui.cpp:253
+msgid "&New Window"
+msgstr "&Neues Fenster"
+
+#: kfmgui.cpp:256
+msgid "&Run"
+msgstr "&Ausführen"
+
+#: kfmgui.cpp:258
+msgid "Open &Terminal"
+msgstr "Öffne &Terminal"
+
+#: kfmgui.cpp:261
+msgid "&Open Location"
+msgstr "Seite ö&ffnen"
+
+#: kfmgui.cpp:264
+msgid "&Print..."
+msgstr "&Drucke..."
+
+#: kfmgui.cpp:267
+msgid "&Close"
+msgstr "&Schließen"
+
+#: kfmgui.cpp:269
+msgid "&Quit"
+msgstr "&Beenden"
+
+#: kfmgui.cpp:274
+msgid "&Copy"
+msgstr "&Kopieren"
+
+#: kfmgui.cpp:276
+msgid "&Paste"
+msgstr "&Einfügen"
+
+#: kfmgui.cpp:278
+msgid "&Move to Trash"
+msgstr "In den &Papierkorb schieben"
+
+#: kfmgui.cpp:278
+msgid "Move to Trash"
+msgstr "In den Papierkorb schieben"
+
+#: kfmgui.cpp:280
+msgid "&Delete"
+msgstr "&Löschen"
+
+#: kfmgui.cpp:283
+msgid "&Select"
+msgstr "&Auswählen"
+
+#: kfmgui.cpp:289
+msgid "Show &Dot Files"
+msgstr "&Versteckte Dateien anzeigen"
+
+#: kfmgui.cpp:291
+msgid "Show Tr&ee"
+msgstr "Verzeichnis&baum anzeigen"
+
+#: kfmgui.cpp:293
+msgid "&Visual Schnauzer"
+msgstr "Bil&der-Vorschau"
+
+#: kfmgui.cpp:295
+msgid "&HTML View"
+msgstr "&HTML-Ansicht"
+
+#: kfmgui.cpp:298
+msgid "&Icon View"
+msgstr "&Symbol-Ansicht"
+
+#: kfmgui.cpp:300
+msgid "&Text View"
+msgstr "&Text-Ansicht"
+
+#: kfmgui.cpp:302
+msgid "&Long View"
+msgstr "&Ausführliche Ansicht"
+
+#: kfmgui.cpp:305
+msgid "&Save Settings"
+msgstr "&Einstellungen speichern"
+
+#: kfmgui.cpp:311
+msgid "&Reload Document"
+msgstr "Dokument &neu laden"
+
+#: kfmgui.cpp:313
+msgid "Rescan &bindings"
+msgstr "&Zuordnungen neu lesen"
+
+#: kfmgui.cpp:339
+msgid "&Find"
+msgstr "&Suchen"
+
+#: kfmgui.cpp:348
+msgid "&Add Bookmark"
+msgstr "&Lesezeichen hinzufügen"
+
+#: kfmgui.cpp:354
+msgid "&About"
+msgstr "&Über"
+
+#: kfmgui.cpp:355
+msgid "&How can I ..."
+msgstr "&Wie kann ich ...?"
+
+#: kfmgui.cpp:360
+msgid "&File"
+msgstr "&Datei"
+
+#: kfmgui.cpp:361
+msgid "&Edit"
+msgstr "&Bearbeiten"
+
+#: kfmgui.cpp:362
+msgid "&View"
+msgstr "&Ansicht"
+
+#: kfmgui.cpp:363
+msgid "&Bookmarks"
+msgstr "&Lesezeichen"
+
+#: kfmgui.cpp:364
+msgid "&Tool"
+msgstr "&Werkzeug"
+
+#: kfmgui.cpp:366
+msgid "&Help"
+msgstr "&Hilfe"
+
+#: kfmgui.cpp:390
+msgid "Back"
+msgstr "Zurück"
+
+#: kfmgui.cpp:395
+msgid "Forward"
+msgstr "Weiter"
+
+#: kfmgui.cpp:400
+msgid "Home"
+msgstr "Heimatverzeichnis"
+
+#: kfmgui.cpp:407
+msgid "Reload"
+msgstr "Neu laden"
+
+#: kfmgui.cpp:414 kfmman.cpp:666 kfmman.cpp:685 kfmman.cpp:787
+msgid "Copy"
+msgstr "Kopieren"
+
+#: kfmgui.cpp:419 kfmman.cpp:669
+msgid "Paste"
+msgstr "Einfügen"
+
+#: kfmgui.cpp:433
+msgid "Stop"
+msgstr "Stop"
+
+#: kfmgui.cpp:605
+msgid "Select files:"
+msgstr "Dateien auswählen:"
+
+#: kfmgui.cpp:622
+msgid "Add Bookmark"
+msgstr "Lesezeichen hinzufügen"
+
+#: kfmgui.cpp:661
+msgid "New "
+msgstr "Neu "
+
+#: kfmgui.cpp:746 kfmgui.cpp:841 kfmjob.cpp:34 kfmman.cpp:159 kiojob.cpp:65
+msgid "ERROR: Malformed URL"
+msgstr "FEHLER: Fehlerhafte URL"
+
+#: kfmgui.cpp:813
+msgid "Open Location:"
+msgstr "Seite öffnen:"
+
+#: kfmgui.cpp:852
+msgid "Do you really want to quit"
+msgstr "Wirklich beenden?"
+
+#: kfmgui.cpp:876
+#, fuzzy
+msgid ""
+"(c) by Torben Weis\n"
+"weis@kde.org\n"
+"\n"
+"and the KFM team"
+msgstr ""
+"(c) Torben Weis\n"
+"weis@kde.org\n"
+"\n"
+"und das KFM Team"
+
+#: kfmgui.cpp:959
+msgid "Document: Done"
+msgstr "Dokument: Fertig"
+
+#: kfmview.cpp:223
+msgid "ERROR: Drop over malformed URL"
+msgstr "FEHLER: fehlerhafte URL gefunden"
+
+#: kfmexec.cpp:63 kfmexec.cpp:96 kfmjob.cpp:158 kfmman.cpp:188 kfmman.cpp:625
+#: kfmman.cpp:774 kfmman.cpp:800 kfmprops.cpp:628 kfmprops.cpp:815
+#: kfmprops.cpp:1366 kfmprops.cpp:1613 kfmprops.cpp:1855 kfmview.cpp:257
+#: kfmview.cpp:407 kfmview.cpp:430 root.cpp:942 root.cpp:1284 root.cpp:1310
+msgid "KFM Error"
+msgstr "KFM-Fehler"
+
+#: kfmview.cpp:258
+msgid "You dropped some file over itself"
+msgstr "Sie haben ein File auf es selbst gezogen"
+
+#: kfmview.cpp:302 kfmview.cpp:471 krenamewin.cpp:18 root.cpp:901
+msgid "KFM Warning"
+msgstr "KFM-Warnung"
+
+#: kfmview.cpp:303 kfmview.cpp:472 root.cpp:902
+msgid ""
+"Dou you really want to delete the files?\n"
+"\n"
+"There is no way to restore them"
+msgstr ""
+"Sollen die Dateien wirklich gelöscht werden?\n"
+"\n"
+"Es gibt keine Möglichkeit, sie wieder herzustellen."
+
+#: kfmexec.cpp:214 kfmman.cpp:514 kfmview.cpp:325
+msgid "Open With:"
+msgstr "Öffnen mit:"
+
+#: kfmexec.cpp:214 kfmman.cpp:514 kfmview.cpp:325
+msgid "Open with"
+msgstr "Öffnen mit"
+
+#: kfmview.cpp:370 root.cpp:853
+msgid "ERROR: Can not open properties for multiple files"
+msgstr "FEHLER: Kann keine Eigenschaften für mehrere Dateien einstellen."
+
+#: kfmview.cpp:408 root.cpp:943
+msgid "Could not access Trash Bin"
+msgstr "Konnte nicht auf den Papierkorb zugreifen."
+
+#: kfmview.cpp:431
+msgid "Can not paste in multiple directories"
+msgstr "Kann nicht in mehrere Verzeichnisse einfügen."
+
+#: kfmview.cpp:494
+msgid "ERROR: Can not change to multiple directories"
+msgstr "FEHLER: Kann nicht in mehrere Verzeichnisse gleichzeitig gehen."
+
+#: kfmview.cpp:662
+msgid "Symbolic Link"
+msgstr "Symbolische Verknüpfung"
+
+#: kfmview.cpp:664
+#, c-format
+msgid "%s (Link)"
+msgstr "%s (Verknüpfung)"
+
+#: kfmview.cpp:684
+msgid "bytes"
+msgstr "Bytes"
+
+#: kbind.cpp:395
+msgid "Too many protocols in file\n"
+msgstr "Zu viele Protokolle in der Datei\n"
+
+#: kbind.cpp:441
+msgid "ERROR"
+msgstr "FEHLER"
+
+#: kbind.cpp:442
+msgid "Could not find mime type\n"
+msgstr "Konnte Mime-Typ nicht finden\n"
+
+#: kbind.cpp:442
+msgid "in "
+msgstr "in "
+
+#: kbind.cpp:1303
+msgid "ERROR: No Terminal Setting"
+msgstr "FEHLER: Keine Terminal-Einstellungen"
+
+#: kbind.cpp:1373
+msgid "ERROR: You must first mount the device. Use the right mouse button"
+msgstr ""
+"FEHLER: Zuerst muß das Gerät gemountet werden. Rechte Maus-Taste drücken."
+
+#: kbind.cpp:1379
+#, c-format
+msgid "ERROR: Unknown Binding '%s'"
+msgstr "FEHLER: Unbekannte Zuordnung '%s'"
+
+#: kbind.cpp:1581
+msgid "Could not execute program\n"
+msgstr "Konnte Programm nicht ausführen\n"
+
+#: main.cpp:42 main.cpp:179
+msgid "KFM Information"
+msgstr "KFM-Information"
+
+#: main.cpp:43
+msgid "Creating directory:\n"
+msgstr "Erstelle Verzeichis:\n"
+
+#: main.cpp:180
+msgid "Installing Templates"
+msgstr "Installiere Vorlagen"
+
+#: kfmdlg.cpp:34
+msgid "Clear"
+msgstr "Leeren"
+
+#: bookmark.cpp:223
+msgid "<!-- Do not edit this file -->"
+msgstr "<!-- Diese Datei nicht ändern -->"
+
+#: kfmprops.cpp:177
+msgid "Name"
+msgstr "Name"
+
+#: kfmprops.cpp:190
+msgid "Full Name"
+msgstr "Vollständiger Name"
+
+#: kfmprops.cpp:204
+msgid "Is the Trash Bin"
+msgstr "Ist der Papierkorb"
+
+#: kfmprops.cpp:210
+msgid "Is a Directory"
+msgstr "Ist ein Verzeichnis"
+
+#: kfmprops.cpp:216
+msgid "Points to"
+msgstr "Zeigt auf"
+
+#: kfmprops.cpp:238
+#, c-format
+msgid "Size: %i"
+msgstr "Größe %i"
+
+#: kfmprops.cpp:247
+msgid "Last Access"
+msgstr "Letzter Zugriff"
+
+#: kfmprops.cpp:256
+msgid "Last Modified"
+msgstr "Zuletzt bearbeitet"
+
+#: kfmprops.cpp:334
+msgid "Access permissions"
+msgstr "Zugriffsrechte"
+
+#: kfmprops.cpp:337
+msgid "User Read"
+msgstr "Besitzer lesen"
+
+#: kfmprops.cpp:340
+msgid "User Write"
+msgstr "Besitzer schreiben"
+
+#: kfmprops.cpp:343
+msgid "User Exec"
+msgstr "Besitzer ausführen"
+
+#: kfmprops.cpp:346
+msgid "Set UID"
+msgstr "UID setzen"
+
+#: kfmprops.cpp:351
+msgid "Group Read"
+msgstr "Gruppe lesen"
+
+#: kfmprops.cpp:354
+msgid "Group Write"
+msgstr "Gruppe schreiben"
+
+#: kfmprops.cpp:357
+msgid "Group Exec"
+msgstr "Gruppe ausführen"
+
+#: kfmprops.cpp:360
+msgid "Set GID "
+msgstr "GID setzen"
+
+#: kfmprops.cpp:365
+msgid "Others Read"
+msgstr "Andere lesen"
+
+#: kfmprops.cpp:368
+msgid "Others Write"
+msgstr "Andere schreiben"
+
+#: kfmprops.cpp:371
+msgid "Others Exec"
+msgstr "Andere ausführen"
+
+#: kfmprops.cpp:374
+msgid "Sticky"
+msgstr "Sticky"
+
+#: kfmprops.cpp:381
+msgid "Owner"
+msgstr "Besitzer"
+
+#: kfmprops.cpp:387
+msgid "Group"
+msgstr "Gruppe"
+
+#: kfmprops.cpp:454
+#, c-format
+msgid " ERROR: No user %s"
+msgstr " FEHLER: Kein Benutzer %s"
+
+#: kfmprops.cpp:459
+#, c-format
+msgid " ERROR: No group %s"
+msgstr " FEHLER: Keine Gruppe %s "
+
+#: kfmprops.cpp:490
+msgid "Execute"
+msgstr "Ausführen"
+
+#: kfmprops.cpp:494 kfmprops.cpp:1473
+msgid "Icon"
+msgstr "Symbol"
+
+#: kfmprops.cpp:498
+msgid "Working Directory"
+msgstr "Arbeitsverzeichnis"
+
+#: kfmprops.cpp:512
+msgid "Run in terminal"
+msgstr "In Terminal ausführen"
+
+#: kfmprops.cpp:520
+msgid "Terminal Options"
+msgstr "Terminal-Optionen"
+
+#: kfmprops.cpp:524
+msgid "Browse"
+msgstr "Blättern"
+
+# msgstr "Blättern"
+#: kfmprops.cpp:629 kfmprops.cpp:816 kfmprops.cpp:1367 kfmprops.cpp:1614
+#: kfmprops.cpp:1856
+msgid ""
+"Could not save properties\n"
+"Perhaps permissions denied"
+msgstr ""
+"Konnte Eigenschaften nicht sichern.\n"
+"Vielleicht Zugriff verweigert."
+
+#: kfmprops.cpp:714
+msgid "URL"
+msgstr "URL"
+
+#: kfmprops.cpp:885
+msgid "Apply global"
+msgstr "Global übernehmen"
+
+#: kfmprops.cpp:949 kfmprops.cpp:1028 kfmprops.cpp:1161
+msgid "(None)"
+msgstr "(Kein)"
+
+#: kfmprops.cpp:1017
+msgid "Could not write to\n"
+msgstr "Konnte nicht schreiben auf \n"
+
+#: kfmprops.cpp:1204
+msgid "FTP"
+msgstr "FTP"
+
+#: kfmprops.cpp:1206
+msgid "FILE"
+msgstr "FILE"
+
+#: kfmprops.cpp:1208
+msgid "HTTP"
+msgstr "HTTP"
+
+#: kfmprops.cpp:1210
+msgid "TAR"
+msgstr "TAR"
+
+#: kfmprops.cpp:1212
+msgid "MAN"
+msgstr "MAN"
+
+#: kfmprops.cpp:1214
+msgid "INFO"
+msgstr "INFO"
+
+#: kfmprops.cpp:1243
+msgid "Binary Pattern ( netscape;Netscape; )"
+msgstr "Binäres Muster ( netscape;Netscape; )"
+
+#: kfmprops.cpp:1247 kfmprops.cpp:1481
+msgid "Comment"
+msgstr "Beschreibung"
+
+#: kfmprops.cpp:1469
+msgid "Pattern ( example: *.html;*.HTML; )"
+msgstr "Muster ( example: *.html;*.HTML; )"
+
+#: kfmprops.cpp:1477
+msgid "Mime Type"
+msgstr "Mime-Typ"
+
+#: kfmprops.cpp:1488
+msgid "Default Application"
+msgstr "Standard-Anwendung"
+
+#: kfmprops.cpp:1698
+msgid "Device ( /dev/fd0 )"
+msgstr "Gerät ( /dev/fd0 )"
+
+#: kfmprops.cpp:1706
+msgid "Mount Point ( /floppy )"
+msgstr "Montiert auf ( /floppy )"
+
+#: kfmprops.cpp:1714
+msgid "Readonly"
+msgstr "Schreibgeschützt"
+
+#: kfmprops.cpp:1718
+msgid "Filesystems ( iso9660,msdos,minix,default )"
+msgstr "Dateisystem (iso9660, msdos, minix, default)"
+
+#: kfmprops.cpp:1726
+msgid "Mounted Icon"
+msgstr "Symbol für 'montiert'"
+
+#: kfmprops.cpp:1730
+msgid "Unmounted Icon"
+msgstr "Symbol für 'nicht-montiert'"
+
+#: root.cpp:513 root.cpp:646
+msgid "Internal Error: desktopDir is malformed"
+msgstr "INTERNER FEHLER: desktopDir ist fehlerhaft."
+
+#: root.cpp:526
+#, c-format
+msgid "ERROR: Could not read desktop directory '%s'"
+msgstr "FEHLER: Konnte Desktop-Verzeichnis '%s' nicht lesen."
+
+#: root.cpp:634
+msgid "ERROR: Can not accept drop"
+msgstr "FEHLER: Kann Ablegen nicht akzeptieren"
+
+#: root.cpp:657
+msgid "ERROR: Could not read desktop directory"
+msgstr "FEHLER: Konnte Desktop-Verzeichnis nicht lesen"
+
+# ARGH: Ein Computer ist kein "ICH"
+#: kfmman.cpp:775 root.cpp:1285
+msgid "Dont know what to do."
+msgstr "Ich weiß nicht, was ich tun soll."
+
+#: kfmman.cpp:801 root.cpp:1311
+msgid "Dont know what to do"
+msgstr "Ich weiß nicht, was ich tun soll."
+
+#: kfmexec.cpp:97 kfmman.cpp:189
+msgid "The file does not contain a URL"
+msgstr "Die Datei enthält keine URL"
+
+#: kfmman.cpp:262
+#, c-format
+msgid "Contacting host %s"
+msgstr "Verbinde mit %s"
+
+#: kfmexec.cpp:62 kfmman.cpp:624 kiojob.cpp:883 kiojob.cpp:1003
+#, c-format
+msgid ""
+"Malformed URL\n"
+"%s"
+msgstr ""
+"Fehlerhafte URL\n"
+"%s"
+
+#: kfmman.cpp:672 kfmman.cpp:688
+msgid "Move to Trash"
+msgstr "In den Papierkorb verschieben"
+
+#: kfmman.cpp:675 kfmman.cpp:691
+msgid "Delete"
+msgstr "Löschen"
+
+#: kfmman.cpp:695
+msgid "Add To Bookmarks"
+msgstr "Lesezeichen hinzufügen"
+
+#: kfmman.cpp:739
+msgid "Properties"
+msgstr "Eigenschaften"
+
+#: kfmman.cpp:792
+msgid "Move"
+msgstr "Verschieben"
+
+#: kfmman.cpp:796
+msgid "Link"
+msgstr "Verküpfung"
+
+#: kiojob.cpp:110
+msgid "INTERNAL ERROR: You must at least specify the device for mounting"
+msgstr ""
+"INTERNER FEHLER: Wenigstens das zu mountende Gerät muß angegeben werden."
+
+#: kiojob.cpp:237 kiojob.cpp:241
+#, c-format
+msgid "ERROR: Malformed URL '%s'"
+msgstr "FEHLER: Fehlerhaft URL '%s'"
+
+#: kiojob.cpp:246
+msgid "ERROR: Can only make links on local file system"
+msgstr ""
+"FEHLER: Verknüpfungen können nur auf dem lokalen Dateisystem erstellt werden."
+
+#: kiojob.cpp:254
+#, c-format
+msgid "ERROR: Could not make symlink to %s"
+msgstr "FEHLER: Symbolische Verknüpfung zu %s konnte nicht erstellt werden."
+
+#: kiojob.cpp:281
+#, c-format
+msgid " ERROR: Could not write to %s"
+msgstr " FEHLER: Konnte nicht in %s schreiben."
+
+#: kiojob.cpp:378
+#, c-format
+msgid "ERROR: Could not make directory %s"
+msgstr "FEHLER: Konnte das Verzeichnis %s nicht erstellen."
+
+#: kiojob.cpp:387 kiojob.cpp:560 kiojob.cpp:723
+#, c-format
+msgid "ERROR: Could not access directory '%s'"
+msgstr "FEHLER: Konnte nicht auf das Verzeichnis '%s' zugreifen."
+
+#: kiojob.cpp:551
+msgid "ERROR: Could not make directory"
+msgstr "FEHLER: Konnte das Verzeichnis nicht erstellen."
+
+#: kiojob.cpp:594
+#, c-format
+msgid "ERROR: Could not move '%s'"
+msgstr "FEHLER: Konnte '%s' nicht verschieben."
+
+#: kiojob.cpp:887 kiojob.cpp:895 kiojob.cpp:901 kiojob.cpp:908 kiojob.cpp:916
+#: kiojob.cpp:924 kiojob.cpp:932 kiojob.cpp:941 kiojob.cpp:949 kiojob.cpp:957
+#: kiojob.cpp:976 kiojob.cpp:984 kiojob.cpp:990 kiojob.cpp:1007
+#: kiojob.cpp:1015 kiojob.cpp:1024 kiojob.cpp:1032 kiojob.cpp:1040
+#: kiojob.cpp:1048 kiojob.cpp:1067 kiojob.cpp:1075 kiojob.cpp:1083
+msgid "Continue"
+msgstr "Weiter"
+
+#: kiojob.cpp:891 kiojob.cpp:1011
+#, c-format
+msgid ""
+"Could not read\n"
+"%s\n"
+"File does not exist or access denied"
+msgstr ""
+"%s\n"
+"konnte nicht gelesen werden.\n"
+"Datei existiert nicht oder Zugriff verweigert."
+
+#: kiojob.cpp:899
+#, c-format
+msgid ""
+"Could not write\n"
+"%s\n"
+"Perhaps access denied"
+msgstr ""
+"%s\n"
+"konnte nicht geschrieben werden.\n"
+"Vielleicht Zugriff verweigert."
+
+#: kiojob.cpp:904 kiojob.cpp:1019
+#, c-format
+msgid ""
+"Could not create Socket for\n"
+"%s"
+msgstr "Konnte Socket für nicht erstellen:\n"
+"%s"
+
+#: kiojob.cpp:912 kiojob.cpp:1028
+#, c-format
+msgid ""
+"Unknwon host in\n"
+"%s"
+msgstr ""
+"Unbekannter Rechner in\n"
+"%s"
+
+#: kiojob.cpp:920 kiojob.cpp:1036
+#, c-format
+msgid ""
+"Could not connect to\n"
+"%s"
+msgstr "Keine Verbindung zu %s möglich"
+
+#: kiojob.cpp:928 kiojob.cpp:1044
+#, c-format
+msgid ""
+"The requested action\n"
+"'%s'\n"
+"is not implemented yet."
+msgstr ""
+"Die gewünschte Aktion\n"
+"'%s'\n"
+"ist nocht nicht implementiert."
+
+#: kiojob.cpp:936
+#, c-format
+msgid ""
+"Could not make directory\n"
+"%s"
+msgstr ""
+"Verzeichnis %s\n"
+"konnte nicht erstellt werden."
+
+#: kiojob.cpp:945
+#, c-format
+msgid ""
+"Could not list directory contents\n"
+"%s"
+msgstr ""
+"Konnte Verzeichnisinhalt nicht auflisten\n"
+"%s"
+
+#: kiojob.cpp:953
+#, c-format
+msgid ""
+"Could not delete\n"
+"%s\n"
+"URL does not exist or permission denied"
+msgstr ""
+"%s\n"
+"konnte nicht gelöscht werden.\n"
+"URL existiert nicht oder Zugriff verweigert "
+
+#: kiojob.cpp:963 kiojob.cpp:1054
+#, c-format
+msgid ""
+"Could not login for\n"
+"%s\n"
+"Perhaps wrong password"
+msgstr ""
+"Einloggen nicht möglich\n"
+"%s\n"
+"Eventuell falsches Passwort"
+
+#: kiojob.cpp:980 kiojob.cpp:1071
+#, c-format
+msgid ""
+"Tar reproted an error\n"
+"%s"
+msgstr ""
+"Tar meldete einen Fehler\n"
+"%s"
+
+#: kiojob.cpp:988 kiojob.cpp:1079
+#, c-format
+msgid ""
+"Gzip reproted an error\n"
+"%s"
+msgstr ""
+"Gzip meldete einen Fehler\n"
+"%s"
+
+#: kiojob.cpp:1087
+#, c-format
+msgid ""
+"Could not mount\n"
+"Error log:\n"
+"\n"
+"%s"
+msgstr ""
+"Konnte nicht montieren.\n"
+"Fehler-Protokoll:\n"
+"\n"
+"%s"
+
+#: kiojob.cpp:1092
+#, c-format
+msgid ""
+"Could not unmount\n"
+"Error log:\n"
+"\n"
+"%s"
+msgstr ""
+"Konnte nicht demontieren.\n"
+"Fehler-Protokoll:\n"
+"\n"
+"%s"
+
+#: kiojob.cpp:1229
+msgid "Making directory"
+msgstr "Erstelle Verzeichnis"
+
+#: kiojob.cpp:1311 kiojob.cpp:1365 kiojob.cpp:1408
+#, c-format
+msgid "File %i/%i"
+msgstr "Datei %i%i"
+
+#: kiojob.cpp:1314 kiojob.cpp:1369
+#, c-format
+msgid "to %s"
+msgstr "in %s"
+
+#: kiojob.cpp:1344
+#, c-format
+msgid "ERROR: Could not delete dir '%s'"
+msgstr "FEHLER: Konnte Verzeichnis '%s' nicht löschen."
+
+#: kiojob.cpp:1437
+#, c-format
+msgid "Mounting %s ..."
+msgstr "Montiere %s ..."
+
+#: kiojob.cpp:1441
+#, c-format
+msgid "Unmounting %s ..."
+msgstr "Demontiere %s ..."
+
+#: kiojob.cpp:1471
+#, c-format
+msgid "Retrieving listing of %s ..."
+msgstr "Erstelle Liste von %s ..."
+
+#: autostart.cpp:28
+msgid "KFM Installation Error"
+msgstr "KFM-Fehler beim Installieren"
+
+#: autostart.cpp:29
+msgid "The directory "
+msgstr "Das Verzeichnis "
+
+#: autostart.cpp:30
+msgid ""
+" does not exist\n"
+"Run 'setupKFM' to solve the problem"
+msgstr ""
+" existiert nicht.\n"
+"Führen Sie 'setupKFM' aus, um das Problem zu beheben."
+
+#: autostart.cpp:66
+#, c-format
+msgid "ERROR: Could not access file %s\n"
+msgstr "FEHLER: keinen Zugriff auf die Datei %s\n"
+
+#: krenamewin.cpp:20
+msgid "Overwrite"
+msgstr "Überschreiben"
+
+#: krenamewin.cpp:25
+msgid "Overwrite All"
+msgstr "Alle überschreiben"
+
+#: krenamewin.cpp:30
+msgid "Skip"
+msgstr "Übergehen"
+
+#: krenamewin.cpp:35
+msgid "Rename"
+msgstr "Neu benennen"
+
+#: krenamewin.cpp:47
+msgid "already exists. Overwrite with"
+msgstr "existiert bereits. Überschreiben mit"
+
+#: krenamewin.cpp:56
+msgid "Or rename to"
+msgstr "Oder umbenennen nach"
+
+#: passworddialog.cpp:41 passworddialog.cpp:80
+msgid "Password"
+msgstr "Paßwort"
+
+#: kfmexec.cpp:163
+msgid "Trying to open"
+msgstr "Versuche zu öffnen"
+
+msgid "Error"
+msgstr "Fehler"
+
+msgid "Ok"
+msgstr "Ok"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Split window"
+msgstr "Fenster teilen"
+
+msgid "Apply"
+msgstr "Uebernehmen"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nein"
+
+msgid "Toggle HTML View"
+msgstr "HTML-Ansicht"
+
+msgid "Visual Schnauzer ON"
+msgstr "Bilder-Vorschau AN"
+
+msgid "Tree View ON"
+msgstr "Baum-Ansicht AN"
+
+msgid "Update"
+msgstr "Aktualisieren"
+
+msgid "Hide Dot Files"
+msgstr "Versteckte Dateien nicht anzeigen"
+
+msgid "Visual Schnauzer OFF"
+msgstr "Bilder-Vorschau AUS"
+
+msgid "Tree View OFF"
+msgstr "Baum-Ansicht AUS"
+
+msgid ""
+"KFM 0.9.1\n"
+"(c) by Torben Weis\n"
+"weis@kde.org"
+msgstr ""
+"KFM 0.9.1\n"
+"(c) Torben Weis\n"
+"weis@kde.org"
+
+msgid "Opening multiple files not implemented"
+msgstr "Das Öffnen mehrerer Dateien ist nicht implementiert."
+
+msgid "Symblic Link"
+msgstr "Symbolische Verknüpfung"
+
+msgid "Open"
+msgstr "Öffnen"
+
+msgid "Cd"
+msgstr "Cd"
+
+msgid "New View"
+msgstr "Neue Ansicht"
+
+msgid "Open with"
+msgstr "Öffnen mit"
+
+msgid "Cut"
+msgstr "Ausschneiden"
+
+msgid "Empty Trash Bin"
+msgstr "Papierkorb leeren"
+

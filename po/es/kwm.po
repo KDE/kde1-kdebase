@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-08-31 17:45+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: error.C:28
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr ""
+"kwm: parece que ya hay un administrador de ventanas funcionando. El kwm no "
+"arrancar\n"
+
+#: error.C:42
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr "kwm: error durante la inicialización; abortando\n"
+
+#: kwm.C:73
+msgid ""
+"kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
+"     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
+"     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
+"     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
+"     No warranty. Please see the README's\n"
+msgstr ""
+"kwm: versión 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
+"     basado en versiones 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
+"     basado en versión 0.1 Copyright (c) 1996 Matthias Ettrich \n"
+"     Partes derivadas del 9wm 1.1 Copyright (c) 1994 David Hogan\n"
+"     No hay garantías. Por favor lea el archivo README\n"
+
+#: kwm.C:79
+#, c-format
+msgid "patch level %d"
+msgstr "patch level %d"
+
+#: kwm.C:154
+msgid "usage: kwm [-version] [-exec prog] \n"
+msgstr "uso: kwm [-version] [-exec prog] \n"
+
+#: kwm.C:566
+msgid "Desktop"
+msgstr "Escritorio"
+
+#: kwm.C:731
+msgid "kwm: exiting on signal\n"
+msgstr "kwm: saliendo por la señal\n"
+
+#: main.C:371
+msgid "&Help on desktop"
+msgstr "Ayuda sobre el escritorio"
+
+#: main.C:372
+msgid "&Execute command"
+msgstr "&Ejecutar comando"
+
+#: main.C:373
+msgid "&Display properties"
+msgstr "Propiedades del &Display"
+
+#: main.C:374
+msgid "&Refresh desktop"
+msgstr "&Refrescar escritorio"
+
+#: main.C:375
+msgid "&Arrange icons"
+msgstr "&Acomodar iconos"
+
+#: main.C:377
+msgid "&Lock screen"
+msgstr "B&loquear la pantalla"
+
+#: main.C:378
+msgid "Lo&gout"
+msgstr "Salir"
+
+#: main.C:1093
+msgid "One"
+msgstr "Uno"
+
+#: main.C:1095
+msgid "Two"
+msgstr "Dos"
+
+#: main.C:1097
+msgid "Three"
+msgstr "Tres"
+
+#: main.C:1099
+msgid "Four"
+msgstr "Cuatro"
+
+#: main.C:1101
+msgid "Five"
+msgstr "Cinco"
+
+#: main.C:1103
+msgid "Six"
+msgstr "Seis"
+
+#: main.C:1105
+msgid "Seven"
+msgstr "Siete"
+
+#: main.C:1107
+msgid "Eight"
+msgstr "Ocho"
+
+#: main.C:1141
+msgid "(Un) Ma&ximize"
+msgstr "(Des) Ma&ximizar"
+
+#: main.C:1142
+msgid "&Iconify"
+msgstr "&Iconizar"
+
+#: main.C:1143
+msgid "&Move"
+msgstr "&Mover"
+
+#: main.C:1144
+msgid "&Resize"
+msgstr "Cambiar tamaño"
+
+#: main.C:1145
+msgid "(Un) &Sticky"
+msgstr ""
+
+#: main.C:1146
+msgid "&To Desktop"
+msgstr "Al Escritorio"
+
+#: main.C:1148
+msgid "&Close"
+msgstr "&Cerrar"
+
+#: main.C:1149
+msgid "&Destroy"
+msgstr "&Destruir"
+
+#: minicli.C:65
+msgid "Command:"
+msgstr "Comando:"

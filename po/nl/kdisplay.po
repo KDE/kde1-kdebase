@@ -1,22 +1,12 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Dutch translation of the kdisplay messages.
+# Copyright (C) 1997 Jeroen van der Most <jvdmost@wi.leidenuniv.nl>
 #
-#, fuzzy
-msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-08-27 15:03+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+# Words I need a better translation for: Widget, Disabled
+#
 
 #: main.cpp:53
 msgid "KDE Display Configuration"
-msgstr ""
+msgstr "KDE Scherm instellingen"
 
 #: main.cpp:130
 #, c-format
@@ -24,208 +14,212 @@ msgid ""
 "Usage: %s -init|-setup\n"
 "\n"
 msgstr ""
+"Gebruik: %s -init|-setup\n"
+"\n"
 
 #: main.cpp:131
 msgid "  -init               apply current settings to the display\n"
-msgstr ""
+msgstr "  -init               de huidige instellingen activeren\n"
 
 #: main.cpp:132
 msgid "  -setup              setup the display\n"
-msgstr ""
+msgstr "  -setup              de instellingen veranderen\n"
 
 #: backgnd.cpp:140 colorscm.cpp:293
 msgid "Background"
-msgstr ""
+msgstr "Achtergrond"
 
 #: backgnd.cpp:165
 msgid "Color"
-msgstr ""
+msgstr "Kleur"
 
 #: backgnd.cpp:185
 msgid "Flat"
-msgstr ""
+msgstr "Plat"
 
 #: backgnd.cpp:189
 msgid "Gradient"
-msgstr ""
+msgstr "Verlopend"
 
 #: backgnd.cpp:202
 msgid "Portrait"
-msgstr ""
+msgstr "Verticaal"
 
 #: backgnd.cpp:206
 msgid "Landscape"
-msgstr ""
+msgstr "Horizontaal"
 
 #: backgnd.cpp:224
 msgid "Wallpaper"
-msgstr ""
+msgstr "Behang"
 
 #: backgnd.cpp:257
 msgid "Tiled"
-msgstr ""
+msgstr "Naast elkaar"
 
 #: backgnd.cpp:261
 msgid "Centred"
-msgstr ""
+msgstr "Gecentreerd"
 
 #: backgnd.cpp:265
 msgid "Scaled"
-msgstr ""
+msgstr "Vergroot"
 
 #: backgnd.cpp:272
 msgid "Browse..."
-msgstr ""
+msgstr "Bladeren..."
 
 #: scrnsave.cpp:45
 msgid "Ignore"
-msgstr ""
+msgstr "Negeren"
 
 #: scrnsave.cpp:47
 msgid "Lock"
-msgstr ""
+msgstr "Vergrendel"
 
 #: scrnsave.cpp:103 scrnsave.cpp:161
 msgid "Screen Saver"
-msgstr ""
+msgstr "Schermbeveiliging"
 
 #: scrnsave.cpp:182
 msgid "Setup..."
-msgstr ""
+msgstr "Instellingen..."
 
 #: scrnsave.cpp:186
 msgid "Test"
-msgstr ""
+msgstr "Testen"
 
 #: scrnsave.cpp:194
 msgid "Settings"
-msgstr ""
+msgstr "Instellingen"
 
 #: scrnsave.cpp:197
 msgid "Wait:"
-msgstr ""
+msgstr "Wacht:"
 
 #: scrnsave.cpp:208
 msgid "min"
-msgstr ""
+msgstr "minuten"
 
 #: scrnsave.cpp:211
 msgid "Requires Password"
-msgstr ""
+msgstr "Om wachtwoord vragen"
 
 #: scrnsave.cpp:216
 msgid "Priority:"
-msgstr ""
+msgstr "Prioriteit"
 
 #: colorscm.cpp:326 scrnsave.cpp:219
 msgid "High"
-msgstr ""
+msgstr "Hoog"
 
 #: colorscm.cpp:322 scrnsave.cpp:222
 msgid "Low"
-msgstr ""
+msgstr "Laag"
 
 #: colorscm.cpp:139 colorscm.cpp:140
 msgid "Inactive window"
-msgstr ""
+msgstr "Inactief venster"
 
 #: colorscm.cpp:155 colorscm.cpp:156
 msgid "Active window"
-msgstr ""
+msgstr "Actief venster"
 
 #: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:298
 msgid "Window text"
-msgstr ""
+msgstr "Venster tekst"
 
 #: colorscm.cpp:209
 msgid "Disabled"
-msgstr ""
+msgstr "Niet werkend"
 
 #: colorscm.cpp:216 colorscm.cpp:217
 msgid "Selected"
-msgstr ""
+msgstr "Geselecteerd"
 
 #: colorscm.cpp:252 colorscm.cpp:262
 msgid "Color Scheme"
-msgstr ""
+msgstr "Kleur palet"
 
 #: colorscm.cpp:276
 msgid "Remove"
-msgstr ""
+msgstr "Verwijderen"
 
 #: colorscm.cpp:284
 msgid "Widget color"
-msgstr ""
+msgstr "Widget kleur"
 
 #: colorscm.cpp:289
 msgid "Inactive title bar"
-msgstr ""
+msgstr "Inactive titel balk"
 
 #: colorscm.cpp:290
 msgid "Inactive title text"
-msgstr ""
+msgstr "Inactive titeltekst"
 
 #: colorscm.cpp:291
 msgid "Active title bar"
-msgstr ""
+msgstr "Active titelbalk"
 
 #: colorscm.cpp:292
 msgid "Active title text"
-msgstr ""
+msgstr "Active titeltekst"
 
 #: colorscm.cpp:294
 msgid "Text"
-msgstr ""
+msgstr "Tekst"
 
 #: colorscm.cpp:295
 msgid "Select background"
-msgstr ""
+msgstr "Selecteer achtergrond"
 
 #: colorscm.cpp:296
 msgid "Select text"
-msgstr ""
+msgstr "Selecteer tekst"
 
 #: colorscm.cpp:297
 msgid "Window background"
-msgstr ""
+msgstr "Venster achtergrond"
 
 #: colorscm.cpp:309
 msgid "Contrast"
-msgstr ""
+msgstr "Contrast"
 
 #: colorscm.cpp:341
 msgid "Save scheme"
-msgstr ""
+msgstr "Palet bewaren"
 
 #: colorscm.cpp:372 colorscm.cpp:380
 msgid "You have chosen a name used by a supplied color scheme"
-msgstr ""
+msgstr "De gekozen naam bestaat al"
 
 #: colorscm.cpp:463
 msgid "KDE Default"
-msgstr ""
+msgstr "Standaard KDE"
 
 #: colorscm.cpp:687
 msgid "Display Setup"
-msgstr ""
+msgstr "Scherm instellingen"
 
 #: colorscm.cpp:688
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"
 msgstr ""
+"Er was geen kleurpalet gevonden.\n"
+"Moeten de standaard kleuren geinstalleerd worden ?"
 
 #: savescm.cpp:26
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #: general.cpp:55
 msgid "General"
-msgstr ""
+msgstr "Algemeen"
 
 #: general.cpp:59
 msgid "Widget style"
-msgstr ""
+msgstr "Widget stijl"
 
 #: general.cpp:64
 msgid "Motif"
@@ -237,32 +231,74 @@ msgstr ""
 
 #: general.cpp:74
 msgid "Fonts"
-msgstr ""
+msgstr "Lettertypes"
 
 #: general.cpp:79
 msgid "General font"
-msgstr ""
+msgstr "Algemeen lettertype"
 
 #: general.cpp:104
 msgid "Sample"
-msgstr ""
+msgstr "Voorbeeld"
 
 #: general.cpp:110
 msgid "Small"
-msgstr ""
+msgstr "Klein"
 
 #: general.cpp:114
 msgid "Medium"
-msgstr ""
+msgstr "Middel"
 
 #: general.cpp:118
 msgid "Large"
-msgstr ""
+msgstr "Groot"
 
 #: general.cpp:135
 msgid "Italic"
-msgstr ""
+msgstr "Cursief"
 
 #: kwmcom.cpp:80 kwmcom.cpp:107
 msgid "kwmcom: communication with kwm failed\n"
-msgstr ""
+msgstr "kwmcom: de communicatie met kwm is mislukt\n"
+
+#~ msgid "Help"
+#~ msgstr "Help"
+
+#~ msgid "File"
+#~ msgstr "Bestand"
+
+#~ msgid "Edit"
+#~ msgstr "Bewerken"
+
+#~ msgid "Bold"
+#~ msgstr "Vet"
+
+#~ msgid "Input"
+#~ msgstr "Invoer"
+
+#~ msgid "Keyboard"
+#~ msgstr "Toetsenbord"
+
+#~ msgid "Auto Repeat"
+#~ msgstr "Automatisch herhalen"
+
+#~ msgid "Repeat Delay"
+#~ msgstr "Herhalings vertraging"
+
+#~ msgid "Repeat Rate"
+#~ msgstr "Herhalings snelheid"
+
+#~ msgid "Mouse"
+#~ msgstr "Muis"
+
+#~ msgid "Acceleration"
+#~ msgstr "Versnelling"
+
+#~ msgid "Threshold"
+#~ msgstr "Drempel"
+
+#~ msgid "Cancel"
+#~ msgstr "Annuleren"
+
+#~ msgid "Save"
+#~ msgstr "Bewaren"

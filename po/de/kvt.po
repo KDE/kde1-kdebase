@@ -1,0 +1,187 @@
+
+msgid ""
+msgstr ""
+"Date: 1997-08-23 15:45:33+0200\n"
+"From: M G Berberich <berberic@thingol>\n"
+"Content-Type: text/plain; charset=\n"
+"Xgettext-Options: --keyword=translate\n"
+"Files: main.C\n"
+
+#: main.C:220
+msgid "Add characters to word class"
+msgstr "Zeichen zur Wortklasse hinzufügen"
+
+#: main.C:224
+msgid "choose type of color-mode"
+msgstr "Art der Farbdarstellung"
+
+#: main.C:228
+msgid "Ok"
+msgstr "Übernehmen"
+
+#: main.C:230
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: main.C:358
+msgid "&New Terminal"
+msgstr "Neues Terminal"
+
+#: main.C:360
+msgid "E&xit"
+msgstr "Beenden"
+
+#: main.C:365 main.C:670
+msgid "&Hide"
+msgstr "Unsichtbar"
+
+#: main.C:366
+msgid "&Left"
+msgstr "Links"
+
+#: main.C:367
+msgid "&Right"
+msgstr "Rechts"
+
+#: main.C:372
+msgid "&Normal"
+msgstr "Normal"
+
+#: main.C:373
+msgid "&Tiny"
+msgstr "Winzig"
+
+#: main.C:374
+msgid "&Small"
+msgstr "Klein"
+
+#: main.C:375
+msgid "&Medium"
+msgstr "Mittel"
+
+#: main.C:376
+msgid "&Large"
+msgstr "Groß"
+
+#: main.C:377
+msgid "&Huge"
+msgstr "Riesig"
+
+#: main.C:389
+msgid "&black/white"
+msgstr "schwarz/weiß"
+
+#: main.C:390
+msgid "&white/black"
+msgstr "weiß/schwarz"
+
+#: main.C:391
+msgid "&green/black"
+msgstr "grün/schwarz"
+
+#: main.C:392
+msgid "black/light&yellow"
+msgstr "schwarz/hellgelb"
+
+#: main.C:393
+msgid "Linu&x Console"
+msgstr "Linux-Konsole"
+
+#: main.C:400 main.C:595
+msgid "Hide &Menubar"
+msgstr "Menüleiste unsichtbar"
+
+#: main.C:402 main.C:461 main.C:587
+msgid "Show &Menubar"
+msgstr "Menüleiste sichtbar"
+
+#: main.C:403 main.C:605
+msgid "Secure &keyboard"
+msgstr "Tastatur sperren"
+
+#: main.C:405
+msgid "Scroll&bar"
+msgstr "Rollbalken"
+
+#: main.C:406
+msgid "&Font size"
+msgstr "Schriftgröße"
+
+#: main.C:407
+msgid "&Color"
+msgstr "Farben"
+
+#: main.C:408
+msgid "&Size"
+msgstr "Fenstergröße"
+
+#: main.C:409
+msgid "Terminal..."
+msgstr "Terminal..."
+
+#: main.C:411
+msgid "Save &Options"
+msgstr "Einstellungen sichern"
+
+#: main.C:420
+msgid "&About..."
+msgstr "Über..."
+
+#: main.C:421 main.C:431
+msgid "&Help"
+msgstr "Hilfe"
+
+#: main.C:428
+msgid "&File"
+msgstr "Datei"
+
+#: main.C:429
+msgid "&Options"
+msgstr "Einstellungen"
+
+#: main.C:470 main.C:663
+msgid "&Show"
+msgstr "Sichtbar"
+
+#: main.C:601
+msgid "Unsecure &keyboard"
+msgstr "Tastatur entsperren"
+
+#: main.C:740
+msgid "Hint"
+msgstr "Hinweis"
+
+#: main.C:740
+msgid ""
+"New color settings will be displayed\n"
+"when the keyboard is unsecured."
+msgstr ""
+"Die neuen Farbeinstellungen werden sichtbar\n"
+"sobald die Tastatur entsperrt ist."
+
+#: main.C:760
+msgid "About kvt"
+msgstr "Über kvt"
+
+#: main.C:760
+msgid ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08"
+msgstr ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Terminalemulation für das KDE Desktop Environment\n"
+"basierend auf Robert Nations rxvt-2.08"
+
+#: main.C:930
+msgid "Terminal Options"
+msgstr "Terminaleinstellungen"
+
