@@ -681,8 +681,10 @@ int KIOServer::isDir( const char *_url )
     {
         // Do we have cached information about such a directory ?
         KIODirectoryEntry * de = pKIOServer->getDirectoryEntry(_url);
-        if (de)
-	  return (de->isDir() ? 1 : 0);
+        if (de && de->isDir())
+	  return 1;
+        // If isDir is false, then we know nothing. It might be a link on a 
+        // ftp site, pointing to another dir, so let's not assume it's a file
 
 	// We are not sure
 	return -1;
