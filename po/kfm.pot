@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-28 01:15+0100\n"
+"POT-Creation-Date: 1999-01-29 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -246,8 +246,8 @@ msgstr ""
 #: kfmman.cpp:1648 kfmman.cpp:1694 kfmprops.cpp:380 kfmprops.cpp:648
 #: kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092 kfmprops.cpp:1223
 #: kfmprops.cpp:1697 kfmprops.cpp:2058 kfmprops.cpp:2240 kfmserver.cpp:45
-#: kfmserver.cpp:218 kfmserver.cpp:298 kfmserver.cpp:313 kfmserver.cpp:360
-#: kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:341 kfmtree.cpp:468
+#: kfmserver.cpp:213 kfmserver.cpp:293 kfmserver.cpp:308 kfmserver.cpp:355
+#: kfmserver.cpp:364 kfmserver.cpp:372 kfmtree.cpp:341 kfmtree.cpp:468
 #: kfmtree.cpp:499 kfmtree.cpp:505 kfmtree.cpp:511 kfmview.cpp:436
 #: kfmview.cpp:470 kfmview.cpp:489 kfmview.cpp:558 kfmview.cpp:564
 #: kfmview.cpp:570 kfmview.cpp:695 kfmview.cpp:699 kfmview.cpp:738
@@ -315,7 +315,7 @@ msgstr ""
 msgid "ERROR: Malformed URL"
 msgstr ""
 
-#: kfmgui.cpp:1297 kfmserver.cpp:245
+#: kfmgui.cpp:1297 kfmserver.cpp:240
 msgid "Open Location:"
 msgstr ""
 
@@ -341,7 +341,7 @@ msgstr ""
 msgid "ERROR: Drop over malformed URL"
 msgstr ""
 
-#: kfmserver.cpp:133 kfmtree.cpp:538 kfmview.cpp:530 kfmview.cpp:829
+#: kfmserver.cpp:128 kfmtree.cpp:538 kfmview.cpp:530 kfmview.cpp:829
 #: kiojob.cpp:665 kiojob.cpp:1048 krenamewin.cpp:20 root.cpp:1287
 msgid "KFM Warning"
 msgstr ""
@@ -823,11 +823,11 @@ msgstr ""
 msgid "Could not create ~/.kde/share/apps/kfm/magic"
 msgstr ""
 
-#: kfmserver.cpp:134
+#: kfmserver.cpp:129
 msgid "Do you really want to rearrange your icons ?"
 msgstr ""
 
-#: kfmserver.cpp:310
+#: kfmserver.cpp:305
 #, c-format
 msgid ""
 "The URL\n"
@@ -835,19 +835,19 @@ msgid ""
 "is malformed"
 msgstr ""
 
-#: kfmserver.cpp:361
+#: kfmserver.cpp:356
 msgid ""
 "You dont have the file ~/.kde/share/apps/kfm/magic\n"
 "Authorization failed"
 msgstr ""
 
-#: kfmserver.cpp:370
+#: kfmserver.cpp:365
 msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
 msgstr ""
 
-#: kfmserver.cpp:378
+#: kfmserver.cpp:373
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
@@ -1161,7 +1161,7 @@ msgstr ""
 msgid "Retrieving listing of %s"
 msgstr ""
 
-#: kiojob.cpp:2043
+#: kiojob.cpp:2044
 msgid "Segmentation fault in io subprocess"
 msgstr ""
 
