@@ -20,6 +20,7 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <dirent.h>
+#include <errno.h>
 
 #include <qmsgbox.h>
 #include <kfm.h>
@@ -185,7 +186,6 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
 void KRootWm::buildMenubars() {
 
   // --------- Sven's changes for macmode begin
-    debug("buildMenubars");
     if (macMode)
     {
 	myMenuBarContainer = new QWidget(0, 0, WStyle_Customize|WStyle_NoBorder);
@@ -195,7 +195,6 @@ void KRootWm::buildMenubars() {
 	myMenuBarContainer->show();
 	myMenuBarContainer->hide();
 	if (myMenuBar->menuBarPos() != KMenuBar::FloatingSystem) {
-	    debug("destroy");
 	    delete myMenuBarContainer;
 	    myMenuBarContainer = 0;
 	    myMenuBar = 0;
@@ -255,7 +254,7 @@ void KRootWm::buildMenubars() {
     mmb->clear();
     mmb->disconnect( this );
 
-    printf(myMenuBar ? "menuBar\n" : "no menuBar\n");
+    // printf(myMenuBar ? "menuBar\n" : "no menuBar\n");
     if (!myMenuBar)
     {
       // This is because popupmenu cannot be submenu of two
@@ -397,8 +396,10 @@ void KRootWm::scanBookmarks( QPopupMenu *_popup, const char * _path )
   DIR *dp;
   struct dirent *ep;
   dp = opendir( _path );
-  if ( dp == 0L )
-    return;
+  if ( dp == 0L ) { 
+      fprintf(stderr,strerror(errno)); // Can be "too many open files"...
+      return;
+  }
 
   // Loop thru all directory entries
   while ( ( ep = readdir( dp ) ) != 0L )
@@ -485,6 +486,7 @@ void KRootWm::scanBookmarks( QPopupMenu *_popup, const char * _path )
       }
     }
   }
+  closedir(dp);
 }
 
 bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
