@@ -126,7 +126,7 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   // placement policy --- CT 19jan98, 13mar98 ---
   plcBox = new QButtonGroup(klocale->translate("Placement policy"),this);
 
-  QGridLayout *pLay = new QGridLayout(plcBox,2,3,10,5);
+  QGridLayout *pLay = new QGridLayout(plcBox,3,3,10,5);
   pLay->addRowSpacing(0,10);
 
   placementCombo = new QComboBox(FALSE, plcBox);
@@ -143,6 +143,7 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   placementCombo->setCurrentItem(SMART_PLACEMENT);
   placementCombo->adjustSize();
   placementCombo->setMinimumSize(placementCombo->size());
+  placementCombo->setMaximumHeight(placementCombo->height());
   pLay->addWidget(placementCombo,1,0);
 
   //CT 13mar98 interactive trigger config
@@ -162,6 +163,8 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   interactiveTrigger->adjustSize();
   interactiveTrigger->setMinimumSize(interactiveTrigger->size());
   pLay->addWidget(interactiveTrigger,1,2);
+
+  pLay->addRowSpacing(2,10);
 
   pLay->activate();
 
@@ -188,6 +191,7 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
 			 CLASSIC_SLOPPY_FOCUS);
   focusCombo->adjustSize();
   focusCombo->setMinimumSize(focusCombo->size());
+  focusCombo->setMaximumHeight(focusCombo->height());
   fLay->addMultiCellWidget(focusCombo,1,1,0,1);
 
   connect(focusCombo, SIGNAL(activated(int)),this,
