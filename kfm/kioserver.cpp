@@ -153,12 +153,13 @@ void KIOServer::slotDirEntry( const char *_url, const char *_name, bool _isDir, 
 			  const char * _creationDate, const char * _access,
 			  const char * _owner, const char *_group )
 {
+    // debug("KIOServer::slotDirEntry(%s, %s, %d)", _url, _name, _isDir);
     QString url = _url;
 
     KURL u( _url );
 
-    // Dont cache the local file system (if no sub protocol)!
-    if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol())
+    // Dont cache the local file system
+    if ( u.isLocalFile() )
 	return;
 
     // Delete the password if it is in the URL    
@@ -174,6 +175,7 @@ void KIOServer::slotDirEntry( const char *_url, const char *_name, bool _isDir, 
 	dir = new QList<KIODirectoryEntry>;
 	dir->setAutoDelete( true );
 	dirList.insert( url.data(), dir );
+	// debug("Inserted in dirList : url.data() = %s",url.data());
     } else
       dir->setAutoDelete( true );
     
@@ -678,8 +680,8 @@ int KIOServer::isDir( const char *_url )
     {
         // Do we have cached information about such a directory ?
         KIODirectoryEntry * de = pKIOServer->getDirectoryEntry(_url);
-        if (de && de->isDir())
-            return 1;
+        if (de)
+	  return (de->isDir() ? 1 : 0);
 
 	// We are not sure
 	return -1;
