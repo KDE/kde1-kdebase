@@ -10,6 +10,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <kfm.h>
+#include <qbitmap.h>
 
 extern void execute(const char*);
 
@@ -50,17 +51,11 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
     currentDesktop = KWM::currentDesktop();
      
-    //     box_width = 40;
-    //     box_height = 40;
-    //     margin = 0;
-    //     pm_scale_factor = 0.8;
     
-    
-    box_width = 52;
-    box_height = 52;
+    box_width = 47;
+    box_height = 47;
     margin = 4;
-    pm_scale_factor = 1;
-    dbhs = 6;
+    dbhs = 4;
     dbrows = 2;
 
     menu_tool_tips = 1000;
@@ -84,15 +79,14 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
     config->setGroup("kpanel");
     if (!config->hasKey("Style")) {
-      config->writeEntry("Style", "large");
-      config->writeEntry("BoxWidth",52);
-      config->writeEntry("BoxHeight",52);
-      config->writeEntry("Margin",4);
+      config->writeEntry("Style", "normal");
+      config->writeEntry("BoxWidth",45);
+      config->writeEntry("BoxHeight",45);
+      config->writeEntry("Margin",0);
       config->writeEntry("TaskbarButtonHorizontalSize",4);
-      config->writeEntry("IconScale","1.0");
-      config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--14-*");
+      config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--12-*");
       config->writeEntry("DesktopButtonRows",2);
-      config->writeEntry("DateFont","*-times-bold-i-normal--12-*");
+      config->writeEntry("DateFont","*-times-medium-i-normal--12-*");
       config->writeEntry("TaskbarFont","*-helvetica-medium-r-normal--10-*");
     }
 
@@ -125,9 +119,6 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     if (config->hasKey("Margin"))
       margin = config->readNumEntry("Margin");
       
-    if (config->hasKey("IconScale")){
-      pm_scale_factor = QString(config->readEntry("IconScale")).toFloat();
-    }
     if (config->hasKey("DesktopButtonHorizontalSize"))
       dbhs = config->readNumEntry("DesktopButtonHorizontalSize");
 
@@ -175,9 +166,6 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     moving_button = NULL;
     wait_cursor_button = NULL;
     
-    int tx, ty;
-
-
 
     popup_item = new myPopupMenu;
     CHECK_PTR( popup_item);
@@ -205,7 +193,6 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
 
     label_date = new QLabel(this);
-    set_label_date();
     if (config->hasKey("DateVisible")){
       QString aString = config->readEntry("DateVisible");
       if (aString == "false"){
@@ -223,7 +210,6 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     connect( entries[nbuttons-1].button, SIGNAL(pressed()), 
 	     SLOT(button_pressed()) );
     kde_button = entries[nbuttons-1].button;
-    kde_button->setPixmap(create_arrow_pixmap(load_pixmap("system.xpm")));
 
 
     // The control group
@@ -319,7 +305,6 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     connect(exit_button, SIGNAL(clicked()), SLOT(ask_logout()));
     exit_button->installEventFilter( this );
     //     exit_button->setPalette(pal);
-    exit_button->setPixmap(load_pixmap("exit.xpm"));
     
     lock_button = new QPushButton("lock", control_group);
     lock_button->setFocusPolicy(NoFocus);
@@ -328,21 +313,13 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     connect(lock_button, SIGNAL(clicked()), SLOT(call_klock()));
     lock_button->installEventFilter( this );
     //     lock_button->setPalette(pal);
-    lock_button->setPixmap(load_pixmap("key.xpm"));
     
 
     panel_button = new QPushButton("panel", this);
     panel_button->setFocusPolicy(NoFocus);
     panel_button->setMouseTracking(TRUE);
-    panel_button->setPixmap(load_pixmap("kpanel.xpm"));
     QToolTip::add(panel_button, klocale->translate("Hide the panel"));
     panel_button->installEventFilter( this );
-    if (orientation == vertical){
-      QWMatrix m;
-      m.rotate(90);
-      panel_button->setPixmap(panel_button->pixmap()->xForm(m));
-	
-    }
 
     connect( panel_button, SIGNAL(clicked()), 
 	     SLOT(hidePanel()) );
@@ -353,7 +330,6 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     panel_button_standalone  = new QPushButton("panel", panel_button_frame_standalone);
     QToolTip::add(panel_button_standalone, klocale->translate("Show the panel"));
     panel_button_standalone->setFocusPolicy(NoFocus);
-    panel_button_standalone->setPixmap(*panel_button->pixmap());
     panel_button_standalone->setMouseTracking(TRUE);
     panel_button_standalone->installEventFilter( this );
     
@@ -365,8 +341,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
       if (dbrows == 2){
 	exit_button->setGeometry(0,0,
-				 box_width/2,
-				 box_height/2
+				 (box_width-1)/2,
+				 (box_height-1)/2
 				 );
 	
 	lock_button->setGeometry(0,
@@ -377,45 +353,45 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 	for (i=0; (tmp_button = desktopbar->find(i)); i++){
 	  switch (i){
 	  case 0:
-	    tmp_button->setGeometry(0, 0,
+	    tmp_button->setGeometry(1, 0,
 				    exit_button->width() * dbhs, 
 				    exit_button->height());
 	    break;
 	  case 2:
-	    tmp_button->setGeometry(exit_button->width() * dbhs + margin/3, 0, 
+	    tmp_button->setGeometry(exit_button->width() * dbhs + 2, 0, 
 				    exit_button->width() * dbhs, 
 				    exit_button->height());
 	    break;
 	  case 4:
-	    tmp_button->setGeometry(2 * exit_button->width() * dbhs + margin/3, 0, 
+	    tmp_button->setGeometry(2 * exit_button->width() * dbhs + 3, 0, 
 				    exit_button->width() * dbhs, 
 				    exit_button->height());
 	    break;
 	  case 6:
-	    tmp_button->setGeometry(3 * exit_button->width() * dbhs + margin/3, 0, 
+	    tmp_button->setGeometry(3 * exit_button->width() * dbhs + 4, 0, 
 				    exit_button->width() * dbhs, 
 				    exit_button->height());
 	    break;
 	  case 1:
-	    tmp_button->setGeometry(0, 
+	    tmp_button->setGeometry(1, 
 				    lock_button->y(),
 				    exit_button->width() * dbhs, 
 				    exit_button->height());
 	    break;
 	  case 3:    
-	    tmp_button->setGeometry(exit_button->width() * dbhs + margin/3,
+	    tmp_button->setGeometry(exit_button->width() * dbhs + 2,
 				    lock_button->y(),
 				    exit_button->width() * dbhs, 
 				    exit_button->height());
 	    break;
 	  case 5:    
-	    tmp_button->setGeometry(2 * exit_button->width() * dbhs + margin/3,
+	    tmp_button->setGeometry(2 * exit_button->width() * dbhs + 3,
 				    lock_button->y(),
 				    exit_button->width() * dbhs, 
 				    exit_button->height());
 	    break;
 	  case 7:    
-	    tmp_button->setGeometry(3 * exit_button->width() * dbhs + margin/3,
+	    tmp_button->setGeometry(3 * exit_button->width() * dbhs + 4,
 				    lock_button->y(),
 				    exit_button->width() * dbhs, 
 				  exit_button->height());
@@ -424,14 +400,16 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 	}
 	
 	
-	desktopbar->setGeometry(exit_button->width() + margin*2/3,
+	desktopbar->setGeometry(exit_button->width(),
 				0, 
-				exit_button->width() * dbhs * (number_of_desktops/2) + margin/3, 
+				(exit_button->width() * dbhs + 1) * (number_of_desktops/2), 
 				box_height);
 	
-	control_group->setGeometry(w/2 - (exit_button->width() + margin*2/3 + desktopbar->width())/2,
+	control_group->setGeometry(
+				   5 * box_width,
+// 				   w/2 - (exit_button->width() + desktopbar->width())/2,
 				   margin,
-				   exit_button->width() + margin*2/3 + desktopbar->width(),
+				   exit_button->width() + desktopbar->width(),
 				   box_height);
       }
       else {
@@ -441,43 +419,38 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
  				 box_height
  				 );
 	
- 	lock_button->setGeometry(exit_button->width(), 
+ 	lock_button->setGeometry(exit_button->width()+1, 
  				0,
  				 box_width, 
  				 box_height);
 	
 	for (i=0; (tmp_button = desktopbar->find(i)); i++){
-	  tmp_button->setGeometry(i*box_width/2 * dbhs, 
+	  tmp_button->setGeometry(i*(box_width/2) * dbhs + (i+1), 
 				  0,
 				  box_width/2 * dbhs, 
 				  box_height);
 	}
 	
-	desktopbar->setGeometry(lock_button->x() + lock_button->width() + margin*2/3,
+	desktopbar->setGeometry(lock_button->x() + lock_button->width(),
 				0, 
-				box_width /2 * dbhs * number_of_desktops + margin/3, 
+				(box_width/2 * dbhs +1) * number_of_desktops , 
 				box_height);
 	
-	control_group->setGeometry(w/2 - (box_width + margin*2/3 + desktopbar->width())/2,
+	control_group->setGeometry(
+				   5 * box_width,
+// 				   w/2 - (2 * box_width + 1 + desktopbar->width())/2,
 				   margin,
-				   2*box_width + margin*2/3 + desktopbar->width(),
+				   2*box_width + 1 + desktopbar->width(),
 				   box_height);
 
-	// we also may have to rescale the pixmaps
-	if (pm_scale_factor != 1){
-	  float scale = pm_scale_factor;
-	  pm_scale_factor *= 2;
-	  lock_button->setPixmap(load_pixmap("key.xpm"));
-	  exit_button->setPixmap(load_pixmap("exit.xpm"));
-	  pm_scale_factor = scale;
-	}
+	
 
       }
 
-      panel_button->setGeometry(margin,
-				margin,
-				(box_width-(margin/2))/2,
-				box_height);
+      panel_button->setGeometry(0,
+				0,
+				12,
+				box_height+2*margin);
 
       kde_button->setGeometry(panel_button->x()+panel_button->width()
 			      + box_width,
@@ -512,8 +485,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       
 
       exit_button->setGeometry(0,0,
-			       box_width/2 - margin/4,
-			       box_height/2 - margin/4
+			       box_width/2,
+			       box_height/2
 			       );
 
       lock_button->setGeometry(box_width-exit_button->width(),
@@ -522,24 +495,24 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 			       exit_button->height());
 
       for (i=0; (tmp_button = desktopbar->find(i)); i++){
-	tmp_button->setGeometry(0,i*box_height/2, 
+	tmp_button->setGeometry(0,i*(box_height/2) + (i+1), 
 				box_width, box_height/2);
       }
 
       desktopbar->setGeometry(0,
-			      exit_button->height() + margin*2/3,
+			      exit_button->height(),
 			      box_width,
-			      (number_of_desktops/2)*box_height);
+			      number_of_desktops*(box_height/2+1));
 
       control_group->setGeometry(margin,
-				 h/2 - (exit_button->height() + margin*2/3 + desktopbar->height())/2,
+				 h/2 - (exit_button->height() + desktopbar->height())/2,
 				 box_width,
-				 exit_button->height() + margin*2/3 + desktopbar->height());
+				 exit_button->height() + desktopbar->height());
 
-      panel_button->setGeometry(margin,
-				margin,
-				box_width,
-				(box_height-(margin/2))/2);
+      panel_button->setGeometry(0,
+				0,
+				box_width + 2*margin,
+				12);
 
       kde_button->setGeometry(margin?margin:1,
  			      panel_button->y()+panel_button->height()
@@ -559,24 +532,6 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       label_date->setAlignment( AlignHCenter|AlignBottom);
 
 
-      tx = margin;
-      ty = panel_button->y()+panel_button->height();
-      for (i=0; i < nbuttons; i++){
-	switch (i){
-	case 2:
-	  ty = h/4;
-	  break;
-	case 3:
-	  ty = h - 4*box_height - box_height/2;
-	  break;
-	case 6:
-	  ty = h - box_height;
-	  break;
-	}
-	entries[i].button->setGeometry(tx, ty, box_width, box_height);
-	ty += box_height;
-      }
-
       if (position == top_left){
 	setGeometry(0,
 		    0, 
@@ -591,11 +546,84 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       }
     }
 
+    lock_button->setPixmap(kapp->getIconLoader()
+			   ->loadIcon("key.xpm"));
+// 				      lock_button->width()-4,
+// 				      lock_button->height()-4));
+    exit_button->setPixmap(kapp->getIconLoader()
+			   ->loadIcon("exit.xpm"));
+// 				      exit_button->width()-4,
+// 				      exit_button->height()-4));
+
+    
+//     if (orientation == vertical){
+//       QWMatrix m;
+//       m.rotate(90);
+//       QPixmap pm = kapp->getIconLoader()
+// 			      ->loadIcon("kpanel.xpm", 
+// 					 panel_button->height(),
+// 					 panel_button->width());
+//       panel_button->setPixmap(pm.xForm(m));
+//     }else{
+//       panel_button->setPixmap(kapp->getIconLoader()
+// 			      ->loadIcon("kpanel.xpm", 
+// 					 panel_button->width(),
+// 					 panel_button->height()));
+      
+//     }
+
+
+    {
+      // create the stipple pixmap for the panel button
+      QPixmap pm;
+      QBitmap bm;
+      QPainter paint;
+      QPainter paint2;
+      pm.resize(9, (orientation == horizontal)?panel_button->height():panel_button->width());
+      bm.resize(pm.width(), pm.height());
+      bm.fill(color0);
+      pm.setMask(bm);
+      paint.begin(&pm);
+      paint2.begin(pm.mask());
+      int stipple_height = 3;
+      paint.setPen( colorGroup().light() );
+      paint2.setPen( color1 );
+      while ( stipple_height < pm.height()-4 ) {
+	paint.drawPoint( 1, stipple_height+1);
+	paint.drawPoint( 4, stipple_height);
+	paint2.drawPoint( 1, stipple_height+1);
+	paint2.drawPoint( 4, stipple_height);
+	stipple_height+=3;
+      }
+      paint.setPen( colorGroup().dark() );
+      stipple_height = 4;
+      while ( stipple_height < pm.height()-4 ) {
+	paint.drawPoint( 2, stipple_height+1);
+	paint.drawPoint( 5, stipple_height);
+	paint2.drawPoint( 2, stipple_height+1);
+	paint2.drawPoint( 5, stipple_height);
+	stipple_height+=3;
+      }
+
+      paint.end();
+      paint2.end();
+      QPixmap pm2 = pm;
+      arrow_on_pixmap(&pm, LeftArrow);
+      arrow_on_pixmap(&pm2, RightArrow);
+
+      QWMatrix m;
+      m.rotate((orientation == horizontal)?0:90);
+      panel_button->setPixmap(pm.xForm(m));
+      panel_button_standalone->setPixmap(pm2.xForm(m));    
+    }
+
     if (margin == 0){
       margin++;
       box_width-=2;
       box_height-=2;
     }
+
+    kde_button->setPixmap(create_arrow_pixmap(load_pixmap("go.xpm")));
 
     panel_button_frame_standalone->setGeometry(x() + panel_button->x(),
 					       y() + panel_button->y(),
@@ -614,6 +642,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 	    SLOT( slotDropEvent( KDNDDropZone *) ) );
 
 
+    set_label_date();
 
 
     pmenu = new PMenu;
@@ -1083,6 +1112,10 @@ void kPanel::hidePanel(){
   panelHidden[currentDesktop] = True;
   
   if (!panelCurrentlyHidden){
+    panel_button_frame_standalone->setGeometry(x() + panel_button->x(),
+					       y() + panel_button->y(),
+					       panel_button->width(),
+					       panel_button->height());
     panelCurrentlyHidden = True;
     QFrame::hide();
     showMiniPanel();
@@ -1134,8 +1167,8 @@ void kPanel::doGeometry () {
 
    int w = QApplication::desktop()->width();
    int h = QApplication::desktop()->height();
-   int pw = width(); // panel...
-   int ph = height();
+   int pw = width()+1; // panel...
+   int ph = height()+1;
    int px = x();
    int py = y();
    int mw = 0;       // mini panel...
@@ -1149,11 +1182,11 @@ void kPanel::doGeometry () {
      ph = 0;
      px = 0;
      py = 0;
-     sw = panel_button_frame_standalone->width();
-     sh = panel_button_frame_standalone->height();
+     sw = panel_button_frame_standalone->width()+1;
+     sh = panel_button_frame_standalone->height()+1;
      {
-       mw = 2*taskbar_height; // miniPanelFrame->width();
-       mh = taskbar_height; // miniPanelFrame->height();
+       mw = 2*taskbar_height+1; // miniPanelFrame
+       mh = taskbar_height+1; // miniPanelFrame
      }    
     }
    
@@ -1167,15 +1200,15 @@ void kPanel::doGeometry () {
 	{
 	 taskbar_frame->setGeometry(px+sw+mw, py+ph, w-mw-sw, taskbar_height);
 	 KWM::setWindowRegion(currentDesktop, 
-			      QRect(0, ph+taskbar_height,
-				    w, h-ph-taskbar_height));
+			      QRect(0, py+ph+taskbar_height+1,
+				    w, h-ph-taskbar_height-1));
 	}
        else if (taskbar_position == bottom)
 	{
 	 taskbar_frame->setGeometry(px+mw, h-taskbar_height, 
 				    w-mw, taskbar_height);
 	 KWM::setWindowRegion(currentDesktop, 
-			      QRect(0, ph, w, h-ph-taskbar_height));
+			      QRect(0, ph, w, h-ph-taskbar_height-1));
 	}
        else
 	{
@@ -1183,8 +1216,8 @@ void kPanel::doGeometry () {
 				    tbhs*taskbar_height, taskbar_height);
 	 if (taskbar_position == taskbar_top_left)
 	   KWM::setWindowRegion(currentDesktop, 
-				QRect(taskbar_frame->width()+sw, ph,
-				      w-taskbar_frame->width()-sw, h-ph));
+				QRect(taskbar_frame->width()+1+sw, ph,
+				      w-taskbar_frame->width()-sw-1, h-ph));
 	 else // if (taskbar_position=hidden)
 	   KWM::setWindowRegion(currentDesktop, 
 				QRect(0, ph, w, h-ph));
@@ -1197,13 +1230,13 @@ void kPanel::doGeometry () {
 	 taskbar_frame->setGeometry(px+mw+sw, h-ph-taskbar_height, 
 				    w-mw-sw, taskbar_height);
 	   KWM::setWindowRegion(currentDesktop, 
-				QRect(0, 0, w, h-ph-taskbar_height));
+				QRect(0, 0, w, h-ph-taskbar_height-1));
 	}
        else if (taskbar_position == top)
 	{
 	 taskbar_frame->setGeometry(px+mw, 0, w-mw, taskbar_height);
 	 KWM::setWindowRegion(currentDesktop, 
-			      QRect(0, taskbar_height, w, h-ph-taskbar_height));
+			      QRect(0, taskbar_height+1, w, h-ph-taskbar_height-1));
 	}
        else
 	{
@@ -1211,8 +1244,8 @@ void kPanel::doGeometry () {
 				    taskbar_height);
 	 if (taskbar_position == taskbar_top_left)
 	   KWM::setWindowRegion(currentDesktop, 
-				QRect(taskbar_frame->width(), 0,
-				      w-taskbar_frame->width(), h-ph));
+				QRect(taskbar_frame->width()+1, 0,
+				      w-taskbar_frame->width()-1, h-ph));
 	 else
 	   KWM::setWindowRegion(currentDesktop, 
 				QRect(0, 0, w, h-ph));
@@ -1227,15 +1260,15 @@ void kPanel::doGeometry () {
 	{
 	 taskbar_frame->setGeometry(px+pw+mw+sw, py, w-pw-mw-sw, taskbar_height);
 	 KWM::setWindowRegion(currentDesktop, 
-			      QRect(pw, taskbar_frame->height(),
-				    w-pw, h-taskbar_frame->height()));
+			      QRect(pw, taskbar_frame->height()+1,
+				    w-pw, h-taskbar_frame->height()-1));
 	}
        else if (taskbar_position == bottom)
 	{
 	 taskbar_frame->setGeometry(px+pw+mw, h-taskbar_height, 
 				    w-pw-mw, taskbar_height);
 	 KWM::setWindowRegion(currentDesktop, 
-			      QRect(pw, 0, w-pw, h - taskbar_frame->height()));
+			      QRect(pw, 0, w-pw, h - taskbar_frame->height()-1));
 	}
        else
 	{
@@ -1243,8 +1276,8 @@ void kPanel::doGeometry () {
 				    tbhs*taskbar_height, taskbar_height);
 	 if (taskbar_position == taskbar_top_left)
 	 KWM::setWindowRegion(currentDesktop, 
-			      QRect(pw+taskbar_frame->width(), 0,
- 			      w-pw-taskbar_frame->width(), h));
+			      QRect(pw+taskbar_frame->width()+1, 0,
+ 			      w-pw-taskbar_frame->width()-1, h));
 	 else
 	 KWM::setWindowRegion(currentDesktop, 
  			      QRect(pw, 0,
@@ -1257,8 +1290,8 @@ void kPanel::doGeometry () {
 	{
 	 taskbar_frame->setGeometry(mw, 0, w-pw-mw-sw, taskbar_height);
 	 KWM::setWindowRegion(currentDesktop, 
-			      QRect(0, taskbar_frame->height(),
-				    w-pw, h-taskbar_frame->height()));
+			      QRect(0, taskbar_frame->height()+1,
+				    w-pw, h-taskbar_frame->height()-1));
 	}
        else if (taskbar_position == bottom)
 	{
@@ -1266,7 +1299,7 @@ void kPanel::doGeometry () {
 				    w-pw-mw, taskbar_height);
 	 KWM::setWindowRegion(currentDesktop, 
 			      QRect(0, 0,
-				    w-pw, h-taskbar_frame->height()));
+				    w-pw, h-taskbar_frame->height()-1));
 	}
        else
 	{
@@ -1274,8 +1307,8 @@ void kPanel::doGeometry () {
 				    tbhs*taskbar_height, taskbar_height);
 	 if (taskbar_position == taskbar_top_left)
 	 KWM::setWindowRegion(currentDesktop, 
- 			      QRect(taskbar_frame->width(), 0,
-				    w-taskbar_frame->width()-pw, h));
+ 			      QRect(taskbar_frame->width()+1, 0,
+				    w-taskbar_frame->width()-1-pw, h));
 	 else
 	 KWM::setWindowRegion(currentDesktop, 
  			      QRect(0, 0,

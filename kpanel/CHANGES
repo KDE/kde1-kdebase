@@ -1,11 +1,29 @@
-In kpanel-0.17:
+In kpanel-0.18:
 
-    Patchlevel 9:
-       - small visual changes: 
-          * tiny style is a bit smaller now
+    Patchlevel 0:
+       - new icons 
+       - visual changes to work well with the new icons
+          * better scaling (no longer scale_factor). Uses the mini
+            versions of the icons if those are better
+          * styles corrected: tiny uses mini-versions, small/larger
+            use the full versions of the icons (without any scaling)
           * less frames around the control group if margin==0
+            (used in the tiny and the small style)
+          * all pushButtons separated with at least one pixel
+          * motif style button fixed
+          * minipanel uses flat buttons
+          * generated stipple pixmap with arrows for the panel button
+          * few more changes
        - standalone panel button always on top
+       - date label automatically removes the month-information if it
+         is too large. A tooltip gives the full information.
+       - small style removed: This is normal style, now.  
+
+
+In kpanel-0.18:
  
+    Patchlevel 9:
+       ..............
 
     Patchlevel 8:
        - logout while editing desktop buttons fixed.

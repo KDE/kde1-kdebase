@@ -33,6 +33,7 @@
 #include <qtimer.h>
 #include <qchkbox.h>
 #include <qslider.h>
+#include <qdrawutl.h>
 
 
 // KDE includes
@@ -275,13 +276,12 @@ private:
   
   int tbhs;
   
-  float  pm_scale_factor;
-
   bool foldersFirst;
   bool personalFirst;
   
   // tools
   QPixmap create_arrow_pixmap(QPixmap pm);
+  void arrow_on_pixmap(QPixmap* pm, ArrowType rt);
 
   void set_button_text(QButton* button, const char* s);
   int show_popup(QPopupMenu* popup, QWidget* button, bool isTaskButton = False);

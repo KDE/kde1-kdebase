@@ -278,13 +278,13 @@ void kPanel::configure_panel(){
   label->setGeometry(10, 130, 50, 25);
   costy = new QComboBox(mw);
   costy->insertItem(klocale->translate("Tiny Style"));
-  costy->insertItem(klocale->translate("Small Style"));
+  costy->insertItem(klocale->translate("Normal Style"));
   costy->insertItem(klocale->translate("Large Style"));
   costy->setGeometry(70,130, 120, 25);
 
   if (config->readEntry("Style") == "tiny")
     old_style = 0;
-  else if (config->readEntry("Style") == "small")
+  else if (config->readEntry("Style") == "normal")
     old_style = 1;
   else if (config->readEntry("Style") == "large")
     old_style = 2;
@@ -425,19 +425,18 @@ void kPanel::slotPropsApply(){
       config->writeEntry("BoxHeight",26);
       config->writeEntry("Margin",0);
       config->writeEntry("TaskbarButtonHorizontalSize",4);
-      config->writeEntry("IconScale","0.5");
       config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--12-*");
       config->writeEntry("DesktopButtonRows",1);
-      config->writeEntry("DateFont","*-helvetica-medium-r-normal--8-*");
+//       config->writeEntry("DateFont","*-helvetica-medium-r-normal--8-*");
+      config->writeEntry("DateFont","*-times-medium-i-normal--12-*");
       config->writeEntry("TaskbarFont","*-helvetica-medium-r-normal--10-*");
       break;
-    case 1: // small style
-      config->writeEntry("Style", "small");
-      config->writeEntry("BoxWidth",42);
-      config->writeEntry("BoxHeight",42);
+    case 1: // normal style
+      config->writeEntry("Style", "normal");
+      config->writeEntry("BoxWidth",45);
+      config->writeEntry("BoxHeight",45);
       config->writeEntry("Margin",0);
       config->writeEntry("TaskbarButtonHorizontalSize",4);
-      config->writeEntry("IconScale","0.8");
       config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--12-*");
       config->writeEntry("DesktopButtonRows",2);
       config->writeEntry("DateFont","*-times-medium-i-normal--12-*");
@@ -445,11 +444,10 @@ void kPanel::slotPropsApply(){
       break;
     case 2: // large style
       config->writeEntry("Style", "large");
-      config->writeEntry("BoxWidth",52);
-      config->writeEntry("BoxHeight",52);
+      config->writeEntry("BoxWidth",47);
+      config->writeEntry("BoxHeight",47);
       config->writeEntry("Margin",4);
       config->writeEntry("TaskbarButtonHorizontalSize",4);
-      config->writeEntry("IconScale","1.0");
       config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--14-*");
       config->writeEntry("DesktopButtonRows",2);
       config->writeEntry("DateFont","*-times-bold-i-normal--12-*");

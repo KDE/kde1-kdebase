@@ -24,7 +24,7 @@ void kPanel::layoutTaskbar(){
 	     y += 2;
 	   d2++;
 	   button->setGeometry(0,y,taskbar_frame->width(), taskbar_height);
-	   y += taskbar_height;
+	   y += taskbar_height+1;
 	   if (!button->isVisible())
 	     button->show();
 	 }
@@ -46,7 +46,7 @@ void kPanel::layoutTaskbar(){
 	       x += 4;
 	     d2++;
 	     button->setGeometry(x,0,w, taskbar_frame->height());
-	     x += w;
+	     x += w+1;
 	     if (!button->isVisible())
 	       button->show();
 	   }

@@ -107,8 +107,8 @@ void myPushButton::paint(QPainter *painter){
     else {
       qDrawShadePanel( painter, 0, 0, width(), height(), 
 		       colorGroup(), FALSE, 2, 0L );
-      painter->setPen(black);
-      painter->drawRect(0,0,width(),height()); 
+//       painter->setPen(black);
+//       painter->drawRect(0,0,width(),height()); 
     }
   }
 
@@ -409,11 +409,9 @@ void kPanel::set_button_text(QButton* button, const char* s){
 
 QPixmap kPanel::create_arrow_pixmap(QPixmap pm){
   QColorGroup colgrp = QColorGroup( black, backgroundColor(), white, black, black,
-				    black, white );
+  				    black, white );
   QColorGroup colgrp2 = QColorGroup( color1, color0, color1, color1, color1,
-				    color1, color1 );
-  QPalette pal = QPalette(colgrp,colgrp,colgrp);
-
+ 				     color1, color1 );
 
   QPixmap pm2 = QPixmap(box_width, box_height);
   QBitmap bm = QBitmap(box_width, box_height);
@@ -438,30 +436,30 @@ QPixmap kPanel::create_arrow_pixmap(QPixmap pm){
   
   if (orientation == horizontal){
     if (position == top_left){
-      qDrawArrow( &p, DownArrow, MotifStyle, FALSE,
-		  box_width*4/5-2, box_height*4/5-2, box_width/5, box_height/5, colgrp);
-       qDrawArrow( &p2, DownArrow, MotifStyle, FALSE,
- 		  box_width*4/5-2, box_height*4/5-2, box_width/5, box_height/5, colgrp2);
+      qDrawArrow( &p, DownArrow, WindowsStyle, FALSE,
+		  box_width-6, box_height-5, 0, 0, colgrp);
+      qDrawArrow( &p2, DownArrow, WindowsStyle, FALSE,
+ 		  box_width-6, box_height-5, 0, 0, colgrp2);
     }
     else{
-      qDrawArrow( &p, UpArrow, MotifStyle, FALSE,
-		  box_width*4/5-2, 2, box_width/5, box_height/5, colgrp);
-      qDrawArrow( &p2, UpArrow, MotifStyle, FALSE,
-		  box_width*4/5-2, 2, box_width/5, box_height/5, colgrp2);
+      qDrawArrow( &p, UpArrow, WindowsStyle, FALSE,
+		  box_width-6, 4, 0, 0, colgrp);
+      qDrawArrow( &p2, UpArrow, WindowsStyle, FALSE,
+		  box_width-6, 4, 0, 0, colgrp2);
     }
   }
   else{ // position == vertical
     if (position == top_left){
-      qDrawArrow( &p, RightArrow, MotifStyle, FALSE,
-		  box_width*4/5-2, box_height*4/5-2, box_width/5, box_height/5, colgrp);
-      qDrawArrow( &p2, RightArrow, MotifStyle, FALSE,
- 		  box_width*4/5-2, box_height*4/5-2, box_width/5, box_height/5, colgrp2);
+      qDrawArrow( &p, RightArrow, WindowsStyle, FALSE,
+		  box_width-5, box_height-6, 0, 0, colgrp);
+      qDrawArrow( &p2, RightArrow, WindowsStyle, FALSE,
+ 		  box_width-5, box_height-6, 0, 0, colgrp2);
     }
     else{
-      qDrawArrow( &p, LeftArrow, MotifStyle, FALSE,
-		  2, box_height*4/5-2, box_width/5, box_height/5, colgrp);
-      qDrawArrow( &p2, LeftArrow, MotifStyle, FALSE,
-		  2, box_height*4/5-2, box_width/5, box_height/5, colgrp2);
+      qDrawArrow( &p, LeftArrow, WindowsStyle, FALSE,
+		  5, box_height-6, 0, 0, colgrp);
+      qDrawArrow( &p2, LeftArrow, WindowsStyle, FALSE,
+		  5, box_height-6, 0, 0, colgrp2);
     }
   }
   p.end();
@@ -469,20 +467,51 @@ QPixmap kPanel::create_arrow_pixmap(QPixmap pm){
   return pm2;
 }
 
+
+void kPanel::arrow_on_pixmap(QPixmap* pm, ArrowType rt){
+  QColorGroup colgrp = QColorGroup( black, backgroundColor(), white, black, black,
+				    black, white );
+  QColorGroup colgrp2 = QColorGroup( color1, color0, color1, color1, color1,
+				     color1, color1 );
+
+  QPainter paint;
+  QPainter paint2;
+  paint.begin(pm);
+  paint2.begin(pm->mask());
+  qDrawArrow( &paint, rt, WindowsStyle, FALSE,
+	      pm->width()/2, pm->height()/2,
+	      0, 0,
+	      colgrp);
+  qDrawArrow( &paint2, rt, WindowsStyle, FALSE,
+	      pm->width()/2, pm->height()/2,
+	      0, 0,
+	      colgrp2);
+  paint.end();
+  paint2.end();
+}
+
+
 QPixmap kPanel::load_pixmap(const char* name, bool is_folder){
   QPixmap pm;
   pm.resize(0,0);
   if (!name || name[0]=='\0')
     name = is_folder?"folder.xpm":"exec.xpm";
-  pm =  KApplication::getKApplication()->getIconLoader()->loadApplicationIcon(name);
-  if (pm.isNull())
-    pm = KApplication::getKApplication()->getIconLoader()
-      ->loadApplicationIcon(is_folder?"folder.xpm":"exec.xpm");
 
-  if (pm_scale_factor != 1){
-    QWMatrix m;
-    m.scale(pm_scale_factor, pm_scale_factor);
-    return pm.xForm(m);
+  if (box_width-10 > 16 || box_height-10 > 16){
+    pm =  kapp->getIconLoader()
+      ->loadApplicationIcon(name, box_width-4, box_height-4);
+    if (pm.isNull())
+      pm = kapp->getIconLoader()
+	->loadApplicationIcon(is_folder?"folder.xpm":"exec.xpm", 
+			      box_width-4, box_height-4);
+  }
+  else {
+    pm =  kapp->getIconLoader()
+      ->loadApplicationMiniIcon(name, box_width-4, box_height-4);
+    if (pm.isNull())
+      pm = kapp->getIconLoader()
+	->loadApplicationMiniIcon(is_folder?"folder.xpm":"exec.xpm", 
+				  box_width-4, box_height-4);
   }
   return pm;
 }
@@ -499,6 +528,15 @@ void kPanel::set_label_date(){
 	    d.date().day());
   
   //   s = d.time().toString() + "\n" +d.date().toString();
+  
+  QToolTip::add(label_date, s);
+
+  if (label_date->fontMetrics().height() * 2 > label_date->height()){
+    s.sprintf(" %.2d:%.2d",
+	      d.time().hour(),
+	      d.time().minute());
+  }
+  
   label_date->setText(s);
 }
 
@@ -688,10 +726,8 @@ void kPanel::showMiniPanel ()
   
   miniPanelHidden = false;
   
-  QWMatrix m;
   int mh = taskbar_height;
   
-  float dw, dh;
   int h = QApplication::desktop()->height();
   
   miniPanelFrame = new QFrame(0, 0, 
@@ -705,27 +741,20 @@ void kPanel::showMiniPanel ()
   miniPanel->installEventFilter (this);
   connect( miniPanel, SIGNAL( pressed( int )), this, SLOT( miniButtons(int)) );
   
-  miniSystem = new QPushButton("apps", miniPanel);
-  QToolTip::add(miniSystem, klocale->translate("System"));
+  miniSystem = new myPushButton(miniPanel);
+  QToolTip::add(miniSystem, "Where do you want to go tomorrow?");
   miniSystem->setFocusPolicy(NoFocus);
-  miniSystem->setPixmap(load_pixmap("system.xpm"));
-  dh = mh / (float) miniSystem->pixmap()->height();
-  dw = mh / (float) miniSystem->pixmap()->width();
-  m.scale (dh, dw);
-  miniSystem->setPixmap(miniSystem->pixmap()->xForm(m));
-  m.reset();
+  miniSystem->setPixmap(kapp->getIconLoader()
+			->loadMiniIcon("go.xpm", mh,mh)); 
+
   miniSystem->setMouseTracking( TRUE );
   miniSystem->installEventFilter (this);
   
-  miniDesk = new QPushButton("desk", miniPanel);
+  miniDesk = new myPushButton(miniPanel);
   QToolTip::add(miniDesk, klocale->translate("Windowlist"));
   miniDesk->setFocusPolicy(NoFocus);
-  miniDesk->setPixmap(load_pixmap("window_list.xpm"));
-  dh = mh / (float) miniDesk->pixmap()->height();
-  dw = mh / (float) miniDesk->pixmap()->width();
-  m.scale (dh, dw);
-  miniDesk->setPixmap(miniDesk->pixmap()->xForm(m));
-  m.reset();
+  miniDesk->setPixmap(kapp->getIconLoader()
+		      ->loadMiniIcon("window_list.xpm", mh, mh));
   miniDesk->setMouseTracking( TRUE );
   miniDesk->installEventFilter (this);
   
@@ -733,14 +762,14 @@ void kPanel::showMiniPanel ()
   miniPanel->insert(miniSystem, 1);
   miniPanel->insert(miniDesk, 2);
   
-  miniSystem->setGeometry(0, 0, mh, mh);
-  miniDesk->setGeometry(mh, 0, mh, mh);
+  miniSystem->setGeometry(1, 1, mh-1, mh-2);
+  miniDesk->setGeometry(mh, 1, mh-1, mh-2);
   
   int sx=0; int sx1 =0;
   if (position == top_left)
-    sx = x() + panel_button->x() + panel_button->width();
+    sx = x() + panel_button->x() + panel_button->width()+1;
   if (position == bottom_right && orientation == horizontal)
-    sx1 = x() + panel_button->x() + panel_button->width();
+    sx1 = x() + panel_button->x() + panel_button->width()+1;
   
   if (taskbar_position == taskbar_top_left)
     miniPanelFrame->setGeometry(sx, 0, 2*mh, mh);
