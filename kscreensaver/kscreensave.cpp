@@ -43,7 +43,7 @@ void kForceLocker()
 		    
 				// uh oh - failed
 		    fprintf( stderr, "Could not invoke kblankscrn.kss in $PATH or"
-			     " %s/bin\n" , (const char *)KApplication::kde_bindir());
+			     " %s/bin\n" , KApplication::kde_bindir().data());
 		    exit( 1 );
 		}
 	}
