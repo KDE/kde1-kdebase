@@ -152,32 +152,31 @@ msgstr "Assumir HTML"
 
 #: khttpoptdlg.cpp:84
 msgid "Disable Cookies"
-msgstr ""
+msgstr "Desligar Cookies"
 
 #: khttpoptdlg.cpp:91
-#, fuzzy
 msgid "Default accept policy"
-msgstr "Conjunto de caracteres padrão"
+msgstr "Política padrão de aceitação"
 
 #: khttpoptdlg.cpp:100 khttpoptdlg.cpp:148
 msgid "Accept"
-msgstr ""
+msgstr "Aceitar"
 
 #: khttpoptdlg.cpp:105 khttpoptdlg.cpp:153
 msgid "Ask"
-msgstr ""
+msgstr "Perguntar"
 
 #: khttpoptdlg.cpp:110 khttpoptdlg.cpp:158
 msgid "Reject"
-msgstr ""
+msgstr "Rejeitar"
 
 #: khttpoptdlg.cpp:123
 msgid "Domain specific settings:"
-msgstr ""
+msgstr "Configurações específicas de domínios:"
 
 #: khttpoptdlg.cpp:130
 msgid "Change domain accept policy"
-msgstr ""
+msgstr "Mudar a política de aceitação do domínio"
 
 #: useragentdlg.cpp:43
 msgid "On server:"
