@@ -159,6 +159,14 @@ void execute ( const char* cmd )
       bool isLocalExec = false; // Check if "cmd" is locally executable
       QString uri ( cmd );
 
+      // If url starts with // and contains no '~',
+      // clean it up so kfm can behave much like
+      // a normal shell would. (Dawit A.)
+      if ( uri.find("//") == 0 && uri.find ('~') == -1 )
+      {
+         uri = QDir:: cleanDirPath (uri.data());
+         cmd = uri.data();
+      }
       // Strip off "file:/" in order to expand local
       // URLs if necessary.
       if ( uri.find ("file:") == 0 )
