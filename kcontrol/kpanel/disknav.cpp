@@ -59,7 +59,7 @@ KDiskNavConfig::KDiskNavConfig( QWidget *parent, const char* name )
     //CT
 
     edit_entries = new QLabel();
-    edit_entries->setText("Edit entries: (drag a folder and create a link)");
+    edit_entries->setText(i18n("Edit entries: (drag a folder and create a link)"));
 
     edit_local = new QPushButton(i18n("Edit &Local..."), hist_group);
     connect(edit_local, SIGNAL(clicked()), SLOT(edit_local_clicked()));
@@ -109,7 +109,7 @@ KDiskNavConfig::KDiskNavConfig( QWidget *parent, const char* name )
     //CT
 
     recent_folders_size = new QLabel(max_recent_folders_size, 
-                                     "Max recent folder entries:",
+                                     i18n("Max recent folder entries:"),
                                      hist_group);
     //CT 25Oct1998
     recent_folders_size->adjustSize();
@@ -118,7 +118,7 @@ KDiskNavConfig::KDiskNavConfig( QWidget *parent, const char* name )
     //CT
 
     recent_files_size = new QLabel(max_recent_files_size,
-                                   "Max recent file entries:",
+                                   i18n("Max recent file entries:"),
                                    hist_group);
     //CT 25Oct1998
     recent_files_size->adjustSize();
@@ -127,7 +127,7 @@ KDiskNavConfig::KDiskNavConfig( QWidget *parent, const char* name )
     //CT
 
     navigable_folder_size = new QLabel(max_navigable_folder_size,
-                                   "Max files in a single folder:",
+                                   i18n("Max files in a single folder:"),
                                    hist_group);
     //CT 25Oct1998
     navigable_folder_size->adjustSize();
@@ -156,42 +156,42 @@ KDiskNavConfig::KDiskNavConfig( QWidget *parent, const char* name )
     inLay->addRowSpacing(0,10);
     //CT
 
-    show_dot_files = new QCheckBox("Show dot files", misc_group);
+    show_dot_files = new QCheckBox(i18n("Show dot files"), misc_group);
     //CT 25Oct1998
     show_dot_files->adjustSize();
     show_dot_files->setMinimumSize(show_dot_files->size());
     inLay->addWidget(show_dot_files,1,1);
     //CT
 
-    ignore_case = new QCheckBox("Ignore case when sorting", misc_group);
+    ignore_case = new QCheckBox(i18n("Ignore case when sorting"), misc_group);
     //CT 25Oct1998
     ignore_case->adjustSize();
     ignore_case->setMinimumSize(ignore_case->size());
     inLay->addWidget(ignore_case,1,3);
     //CT
 
-    show_global_section = new QCheckBox("Show Global section", misc_group);
+    show_global_section = new QCheckBox(i18n("Show Global section"), misc_group);
     //CT 25Oct1998
     show_global_section->adjustSize();
     show_global_section->setMinimumSize(show_global_section->size());
     inLay->addWidget(show_global_section,2,1);
     //CT
 
-    show_local_section = new QCheckBox("Show Local section", misc_group);
+    show_local_section = new QCheckBox(i18n("Show Local section"), misc_group);
     //CT 25Oct1998
     show_local_section->adjustSize();
     show_local_section->setMinimumSize(show_local_section->size());
     inLay->addWidget(show_local_section,2,3);
     //CT
 
-    show_recent_section = new QCheckBox("Show Recent section", misc_group);
+    show_recent_section = new QCheckBox(i18n("Show Recent section"), misc_group);
     //CT 25Oct1998
     show_recent_section->adjustSize();
     show_recent_section->setMinimumSize(show_recent_section->size());
     inLay->addWidget(show_recent_section,3,1);
     //CT
 
-    show_option_entry = new QCheckBox("Show Option entry", misc_group);
+    show_option_entry = new QCheckBox(i18n("Show Option entry"), misc_group);
     //CT 25Oct1998
     show_option_entry->adjustSize();
     show_option_entry->setMinimumSize(show_option_entry->size());
@@ -207,7 +207,7 @@ KDiskNavConfig::KDiskNavConfig( QWidget *parent, const char* name )
     //CT
 
     terminal_label = new QLabel(terminal, 
-                                "Terminal application:",
+                                i18n("Terminal application:"),
                                 misc_group);
     //CT 25Oct1998
     terminal_label->adjustSize();
@@ -247,15 +247,14 @@ KDiskNavConfig::KDiskNavConfig( QWidget *parent, const char* name )
 void KDiskNavConfig::edit_global_clicked() 
 {
   KShellProcess proc;
-  proc << "kfmclient folder /opt/kde/share/apps/kdisknav";
+  proc << "kfmclient folder " + KApplication::kde_datadir() + "/" + "/kdisknav";
   proc.start(KShellProcess::DontCare);
-
 }
 
 void KDiskNavConfig::edit_local_clicked() 
 {
   KShellProcess proc;
-  proc << "kfmclient folder " + QDir::homeDirPath() + "/.kde/share/apps/kdisknav";
+  proc << "kfmclient folder " + KApplication::localkdedir() + "/share/apps/kdisknav";
   proc.start(KShellProcess::DontCare);
 }
 
