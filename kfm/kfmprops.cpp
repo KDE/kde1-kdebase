@@ -909,6 +909,12 @@ void ExecPropsPage::applyChanges()
 
 void ExecPropsPage::slotBrowseExec()
 {
+    /* We can't use KFileDialog, because it tries to open the bookmarks file,
+       already opened by kfm itself, and Qt doesn't seem to like opening twice
+       the same file from the same process. Could this be solved in KFM III by 
+       having it being opened by a different process (a kfiledialog server) ? I
+       don't know, but probably. DF. */
+    
     QString f = QFileDialog::getOpenFileName( 0, 0L, this );
     if ( f.isNull() )
 	return;
@@ -1019,21 +1025,25 @@ void URLPropsPage::applyChanges()
 
 DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
 {
+    // This is strange, but if we try to use a layout in this page, it centers
+    // the other pages of the dialog (!?). Ok, no layout ! DF.
+
+    // See resize event for widgets placement
     iconBox = new KIconLoaderButton( pkfm->iconLoader(), this );
-    iconBox->raise();
-    iconBox->setGeometry( 10, 20, 50, 50 );
 
-    wallBox = new QComboBox( false, this, "ComboBox_2" );
-    wallBox->raise();
-    wallBox->setGeometry( 10, 90, 120, 30 );
+    QLabel* tmpQLabel = new QLabel( this, "Label_1" );
+    tmpQLabel->setText( klocale->translate("Background") );
+    tmpQLabel->move( 10, 90 );
+    tmpQLabel->adjustSize();
 
-    applyButton = new QPushButton(  klocale->translate("Apply") , this );
-    applyButton->setGeometry( 10, 230, 120, 30 );
+    wallBox = new QComboBox( false, this, "ComboBox_1" );
+
+    applyButton = new QPushButton( klocale->translate("Apply") , this );
+    applyButton->adjustSize();
     connect( applyButton, SIGNAL( clicked() ), this, SLOT( slotApply() ) );
     
-    globalButton = new QPushButton(  klocale->translate("Apply global"),
-				     this );
-    globalButton->setGeometry( 140, 230, 120, 30 );
+    globalButton = new QPushButton( klocale->translate("Apply global"), this );
+    globalButton->adjustSize();
     connect( globalButton, SIGNAL( clicked() ), this, SLOT( slotApplyGlobal() ) );
 
     QString tmp = _props->getKURL()->path();
@@ -1185,7 +1195,7 @@ void DirPropsPage::slotWallPaperChanged( int )
 
 void DirPropsPage::paintEvent( QPaintEvent *_ev )
 {
-    QWidget::paintEvent( _ev );
+    PropsPage::paintEvent( _ev );
     drawWallPaper();
 }
 
@@ -1194,14 +1204,14 @@ void DirPropsPage::drawWallPaper()
     int i = wallBox->currentItem();
     if ( i == -1 )
     {
-	erase( 140, 90, 128, 128 );
+	erase( imageX, imageY, imageW, imageH );
 	return;
     }
     
     const char *text = wallBox->text( i );
     if ( strcmp( text, klocale->translate( "(Default)" ) ) == 0 )
     {
-	erase( 140, 90, 128, 128 );
+	erase( imageX, imageY, imageW, imageH );
 	return;
     }
 
@@ -1220,12 +1230,30 @@ void DirPropsPage::drawWallPaper()
     if ( wallPixmap.isNull() )
 	warning("Could not load wallpaper %s\n",file.data());
     
-    erase( 140, 90, 128, 128 );
+    erase( imageX, imageY, imageW, imageH );
     QPainter painter;
     painter.begin( this );
-    painter.setClipRect( 140, 90, 128, 128 );
-    painter.drawPixmap( QPoint( 140, 90 ), wallPixmap );
+    painter.setClipRect( imageX, imageY, imageW, imageH );
+    painter.drawPixmap( QPoint( imageX, imageY ), wallPixmap );
     painter.end();
+}
+
+void DirPropsPage::resizeEvent ( QResizeEvent *)
+{
+    imageX = 180; // X of the image (10 + width of the combobox + 10)
+    // could be calculated in the future, depending on the length of the items
+    // in the list.
+    imageY = 90 + fontHeight; // so that combo & image are under the label
+    imageW = width() - imageX;
+    imageH = height() - imageY - applyButton->height() - SEPARATION*2;
+    // force a square
+    if (imageW > imageH) imageW = imageH ; else imageH = imageW ;
+
+    iconBox->setGeometry( 10, 20, 50, 50 );
+    wallBox->setGeometry( 10, imageY, imageX-20, 30 );
+    applyButton->move( 10, imageY+imageH+SEPARATION );
+    globalButton->move( applyButton->x() + applyButton->width() + SEPARATION, applyButton->y() );
+    
 }
 
 void DirPropsPage::slotApply()
@@ -1570,7 +1598,6 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     tmpQLabel->setMinimumSize(tmpQLabel->sizeHint());
     vlayout->addWidget(tmpQLabel, 1);
 
-    appBox->setMinimumSize( appBox->sizeHint() );
     appBox->setFixedHeight( fontHeight );
     vlayout->addWidget(appBox, 1);
 

@@ -280,6 +280,7 @@ public slots:
 protected:
     void drawWallPaper();
     virtual void paintEvent ( QPaintEvent *);
+    virtual void resizeEvent ( QResizeEvent *);
     
     QPushButton *applyButton;
     QPushButton *globalButton;
@@ -292,7 +293,7 @@ protected:
 
     QPixmap wallPixmap;
     QString wallFile;
-
+    int imageX, imageW, imageH, imageY;
 };
 
 /// Edit "KDE Desktop Entry" Files.
