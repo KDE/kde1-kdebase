@@ -252,14 +252,6 @@ PFileMenu::~PFileMenu()
 }
 
 //////////////////////////////////////////////////////////////////////////////
-void PFileMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
-{
-  connect( menu, SIGNAL(aboutToShow()), this, SLOT(aboutToShow()) );
-
-  PMenu::createMenu(menu, panel, add_button);
-}
-
-//////////////////////////////////////////////////////////////////////////////
 
 void PFileMenu::calculateMaxEntriesOnScreen(PMenuItem* menu)
 {

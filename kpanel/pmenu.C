@@ -314,7 +314,7 @@ bool PMenuItem::writeConfig( QDir dir )
 }
 
 
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
 PMenu::PMenu()
 {
@@ -322,6 +322,7 @@ PMenu::PMenu()
   list.setAutoDelete(true);
   cmenu = 0;
   altSort = false;
+  parsed = true;
 }
 
 PMenu::PMenu( PMenu &menu )
@@ -336,6 +337,7 @@ PMenu::PMenu( PMenu &menu )
       list.append(new_item);
     }
   altSort = false;
+  parsed = menu.parsed;
 }
 
 PMenu::~PMenu()
@@ -351,6 +353,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
   cmenu = (myPopupMenu *) menu;
   menu->installEventFilter((QObject *) panel);
   connect( menu, SIGNAL(highlighted(int)), this, SLOT(highlighted(int)) );
+  connect( menu, SIGNAL(aboutToShow()), this, SLOT(aboutToShow()) );
   for( item = list.first(); item != 0; item = list.next() )
     {
       et = item->entry_type;
@@ -359,6 +362,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	menu->insertSeparator();
 	continue;
       case submenu:
+	item->sub_menu->parentItem = item;
 	if( add_button )
 	  {
 	    item->cmenu->setFont(menu->font());
@@ -392,7 +396,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 
         item->cmenu->id = item->getId();
 
-        ((PFileMenu*)(item->sub_menu))->parentItem = item;
+        item->sub_menu->parentItem = item; 
 
 	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
 		 SLOT(showToolTip(QString)) );
@@ -478,6 +482,17 @@ void PMenu::insert( PMenuItem *item, int index )
     list.insert(index, item);
 }
 
+short PMenu::parseLazy( QDir d )
+{
+  parsed = false;
+
+  const QFileInfoList *list = d.entryInfoList();
+  if (list->count() < 3)
+    return -1;
+  else
+    return 0;
+}
+
 short PMenu::parse( QDir d )
 {
   if( !d.exists() )
@@ -491,6 +506,8 @@ short PMenu::parse( QDir d )
   item_list.setAutoDelete(false);
   int pos;
   sort_order.setAutoDelete(true);
+
+  this->parsed = true;
 
   if (altSort == true)
     d.setSorting(QDir::DirsFirst | QDir::Name);
@@ -534,7 +551,7 @@ short PMenu::parse( QDir d )
 	  new_menu->setAltSort(altSort);
 	  new_item = new PMenuItem;
           new_dir.setPath( fi->filePath() );
-	  if( new_menu->parse( new_dir ) < 0 || new_item->parse( fi, new_menu ) < 0 )
+	  if( new_menu->parseLazy( new_dir ) < 0 || new_item->parse( fi, new_menu ) < 0 )
 	    {
 	      delete new_menu;
 	      delete new_item;
@@ -807,6 +824,19 @@ void PMenu::highlighted( int id )
        item = list.next() );
   if (item && item->getId() == id)
     item->highlighted();
+}
+
+void
+PMenu::aboutToShow()
+{
+  extern kPanel *the_panel;
+
+  if (this->parsed)
+    return;
+
+  QDir dir(this->parentItem->getFullPathName());
+  this->parse(dir);
+  this->createMenu(this->parentItem->cmenu, the_panel);
 }
 
 PMenuItem*PMenu:: menu_editor_item = 0;

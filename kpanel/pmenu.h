@@ -151,6 +151,7 @@ public:
   void       move( short item_id, short new_pos);
   void       remove( short item_id );
   short      parse ( QDir d );
+  short      parseLazy ( QDir d );
   virtual void createMenu( QPopupMenu *menu, kPanel *panel, bool add_button = FALSE );
   void       create_pixmap( QPixmap &buf, PMenuItem *item, QPopupMenu *menu );
   void       set_net_recv( QObject *receiver, char *member );
@@ -173,15 +174,20 @@ public:
 signals:
 
 public slots:
+  virtual void aboutToShow();
 
 protected slots:
   virtual void highlighted(int id);
+
+private:
+  bool parsed;
 
 protected:
   QString uniqueFileName(QString name, QString dir_name);
 
   QList<PMenuItem> list;
   myPopupMenu      *cmenu;
+  PMenuItem*       parentItem;
 
   bool             altSort;
   static PMenuItem* menu_editor_item;
@@ -240,9 +246,6 @@ public slots:
   void openFolder();
   void end() { exit(0); }   // DMALLOC DEBUG
 
-private:
-  void createMenu( QPopupMenu *menu, kPanel *panel, bool add_button = FALSE);
-
 protected:
 
   static void updateRecentList(EntryType, QString _path, QStrList& recentlist,
@@ -275,7 +278,6 @@ private:
   static int maxEntriesOnScreen;
   static int entryHeight;
   PFileMenu* lastActivated;
-  PMenuItem*     parentItem;
 };
 
 #endif // PMENU_H
