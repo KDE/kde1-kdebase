@@ -464,7 +464,8 @@ WindowProperties *Desktop::windowAtPosition(const QPoint *p,bool *ok,QPoint *pos
     int y=getHeaderHeight();
     double ratiox=(double)width()/(double)screen_width;
     double ratioy=(double)(height()-y)/(double)screen_height;
-    wp->minigeometry.setRect((int)(wp->framegeometry.x()*ratiox),(int)(y+wp->framegeometry.y()*ratioy),(int)(wp->framegeometry.width()*ratiox),(int)(wp->framegeometry.height()*ratioy));
+//    wp->minigeometry.setRect((int)(wp->framegeometry.x()*ratiox),(int)(y+wp->framegeometry.y()*ratioy),(int)(wp->framegeometry.width()*ratiox),(int)(wp->framegeometry.height()*ratioy));
+    wp->minigeometry.setRect((int)(wp->geometry.x()*ratiox),(int)(y+wp->geometry.y()*ratioy),(int)(wp->geometry.width()*ratiox),(int)(wp->geometry.height()*ratioy));
 #ifdef DESKTOPDEBUG
     printf("pos : x %d   y %d\n",p->x(),p->y());
 #endif
@@ -503,13 +504,25 @@ WindowProperties *Desktop::windowAtPosition(const QPoint *p,bool *ok,QPoint *pos
 
 void Desktop::mouseMoveEvent (QMouseEvent *e)
 {
+    printf("m\n");
     if (resizing)
     {
-        resizingWP->minigeometry.setWidth(MAX(0,e->x()-resizingWP->minigeometry.x()));	
-        resizingWP->minigeometry.setHeight(MAX(0,e->y()-getHeaderHeight()-resizingWP->minigeometry.y()));
+	if (resizingWP==0L) {resizing=false;releaseMouse();return;};
+//        resizingWP->minigeometry.setWidth(MAX(0,e->x()-resizingWP->minigeometry.x()));	
+//        resizingWP->minigeometry.setHeight(MAX(0,e->y()/*-getHeaderHeight()*/-resizingWP->minigeometry.y()));
        double ratiox=(double)width()/(double)screen_width;
        double ratioy=(double)(height()-getHeaderHeight())/(double)screen_height;
-	resizingWP->framegeometry.setRect(resizingWP->minigeometry.x()/ratiox,resizingWP->minigeometry.y()/ratioy,resizingWP->minigeometry.width()/ratiox,resizingWP->minigeometry.height()/ratioy);
+/*	resizingWP->framegeometry.setRect(
+		resizingWP->minigeometry.x()/ratiox,
+		(resizingWP->minigeometry.y()-getHeaderHeight())/ratioy,
+		resizingWP->minigeometry.width()/ratiox,
+		resizingWP->minigeometry.height()/ratioy);
+*/
+	resizingWP->framegeometry.setWidth(e->x()/ratiox-resizingWP->framegeometry.x());
+	resizingWP->geometry.setWidth(e->x()/ratiox-resizingWP->geometry.x());
+	resizingWP->framegeometry.setHeight((e->y()-getHeaderHeight())/ratioy-resizingWP->framegeometry.y());
+	resizingWP->geometry.setHeight((e->y()-getHeaderHeight())/ratioy-resizingWP->geometry.y());
+
 	update();
         return;
     };
@@ -565,17 +578,21 @@ void Desktop::mouseMoveEvent (QMouseEvent *e)
 
 void Desktop::mouseReleaseEvent ( QMouseEvent *e )
 {
-#ifdef DESKTOPDEBUG
+//#ifdef DESKTOPDEBUG
     printf("[%d]releaseMouse\n",id);
-#endif
+//#endif
     if (resizing)
     {
-	KWM::setGeometry(resizingWP->id,resizingWP->framegeometry);
+	if (resizingWP==0L) {resizing=false;releaseMouse();return;};
+	printf("res\n");
+	KWM::setGeometry(resizingWP->id,resizingWP->geometry);
+	printf("res\n");
 	resizing=false;
         releaseMouse();
 	return;
     };
 
+printf("nores\n");
 
     if (mousepressed) 
     {
@@ -616,7 +633,9 @@ void Desktop::mousePressEvent ( QMouseEvent *e )
 	resizingWP=windowAtPosition(&e->pos(),&ok);
 	if (resizingWP==0L) return;
 	resizing=true;
+	printf("a\n");
 	grabMouse();
+	printf("b\n");
         return;
     };
     if (e->button()==RightButton)
