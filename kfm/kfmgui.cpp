@@ -1381,7 +1381,7 @@ void KfmGui::slotTextSelected( KHTMLView *v, bool s )
 void KfmGui::slotSaveSettings()
 {
   KConfig *config = kapp->getConfig();
-#warning sven: maybe enable/disable Cache should go to URL properties?
+
   config->setGroup( "Cache" );
   config->writeEntry( "CacheEnabled", HTMLCache::isEnabled() );
   config->writeEntry( "SaveCacheEnabled", HTMLCache::isSaveEnabled() );

@@ -112,6 +112,14 @@ bool KFMManager::isBindingHardcoded( const char *_txt )
 	return true;
     if ( strcmp( klocale->getAlias(ID_STRING_SAVE_URL_PROPS), _txt ) == 0)
         return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_SHOW_MENUBAR), _txt ) == 0)
+        return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_UP), _txt ) == 0)
+        return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_BACK), _txt ) == 0)
+        return true;
+    if ( strcmp( klocale->getAlias(ID_STRING_FORWARD), _txt ) == 0)
+        return true;
                                     
     return false;
 }
@@ -1051,7 +1059,16 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
     popupMenu->clear();
     // store the mouse position. (Matthias)
     popupMenuPosition = QCursor::pos();       
-        
+    //---------- Sven --------------
+    // check if menubar is hidden and if yes add "Show Menubar"
+    if (view->getGUI()->isMenuBarHidden())
+    {
+      
+      popupMenu->insertItem(klocale->getAlias(ID_STRING_SHOW_MENUBAR),
+                                view->getGUI(), SLOT(slotShowMenubar()));
+      popupMenu->insertSeparator();
+    }
+    //------------------------------
     int isdir = KIOServer::isDir( _urls );
     
     if ( KIOServer::isTrash( _urls ) )
@@ -1074,15 +1091,15 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
 	   popupMenu->insertSeparator();  
         */
 
-	id = popupMenu->insertItem( i18n( "Up" ), view, SLOT( slotUp() ), 100 );
+	id = popupMenu->insertItem(klocale->getAlias(ID_STRING_UP), view, SLOT( slotUp() ), 100 );
 	popupMenu->setAccel( ALT + Key_Left, 100 );
 	if ( !view->hasUpHistory() )
 	  popupMenu->setItemEnabled( id, false );
-	id = popupMenu->insertItem( i18n( "Back" ), view, SLOT( slotBack() ), 101 );
+	id = popupMenu->insertItem(klocale->getAlias(ID_STRING_BACK), view, SLOT( slotBack() ), 101 );
 	popupMenu->setAccel( ALT + Key_Left, 101 );
 	if ( !view->hasBackHistory() )
 	  popupMenu->setItemEnabled( id, false );
-	id = popupMenu->insertItem( i18n( "Forward" ), view, SLOT( slotForward() ), 102 );
+	id = popupMenu->insertItem(klocale->getAlias(ID_STRING_FORWARD), view, SLOT( slotForward() ), 102 );
 	popupMenu->setAccel( ALT + Key_Right, 102 );
 	if ( !view->hasForwardHistory() )
 	  popupMenu->setItemEnabled( id, false );
@@ -1126,7 +1143,7 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
 					view, SLOT( slotPopupDelete() ) );
     }
 
-    popupMenu->insertItem( klocale->translate("Add To Bookmarks"), 
+    popupMenu->insertItem( klocale->getAlias(ID_STRING_ADD_TO_BOOMARKS),
 			   view, SLOT( slotPopupBookmarks() ) );
 
     view->setPopupFiles( _urls );
@@ -1207,7 +1224,7 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
         }
         //--------------------------------------------------------------------
 	popupMenu->insertSeparator();
-        popupMenu->insertItem( klocale->translate("Properties"), view, SLOT( slotPopupProperties() ) );
+        popupMenu->insertItem( klocale->getAlias(ID_STRING_PROP), view, SLOT( slotPopupProperties() ) );
     }
     
     // Show the menu

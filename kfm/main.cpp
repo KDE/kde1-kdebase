@@ -238,6 +238,10 @@ int main( int argc, char ** argv )
     klocale->aliasLocale("Empty Trash Bin", ID_STRING_TRASH);
     klocale->aliasLocale("Add to Bookmarks", ID_STRING_ADD_TO_BOOMARKS );
     klocale->aliasLocale("Save settings for this URL", ID_STRING_SAVE_URL_PROPS );
+    klocale->aliasLocale("Show Menubar", ID_STRING_SHOW_MENUBAR );
+    klocale->aliasLocale("Up", ID_STRING_UP );
+    klocale->aliasLocale("Back", ID_STRING_BACK );
+    klocale->aliasLocale("Forward", ID_STRING_FORWARD );
     
     int arg = 1;
     

@@ -168,6 +168,12 @@ public:
      */
     inline void setHasLocal (bool aintGotNoProps) {hasLocal = aintGotNoProps;}
 
+    /**
+     * Returns true if menu bar hidden. Used by KFMManager to add Show Menubar
+     * to popup menu if menubar is hidden. (sven)
+     */
+    inline bool isMenuBarHidden() {return !showMenubar;}
+
 public slots:
     /**
      * Menu "File->Close"
@@ -437,17 +443,21 @@ public slots:
      */
     void slotSaveSettings();
 
-  /**
-	* Configure the built-in browser
-	*/
-  void slotConfigureBrowser();
-
+    /**
+     * Configure the built-in browser
+     */
+    void slotConfigureBrowser();
+    /**
+     * Shows menubar. Public becouse kfmman calls it.(sven)
+     */
+    void slotShowMenubar();
+    
 protected slots:    
     void slotAnimatedLogoTimeout();
 
     void slotShowToolbar();
     void slotShowStatusbar();
-    void slotShowMenubar();
+    
     void slotShowLocationBar();
     void slotTextSelected( KHTMLView *, bool );
     

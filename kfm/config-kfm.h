@@ -23,6 +23,10 @@ void debugC( const char *msg , ...);
 #define ID_STRING_TRASH 13 /* Empty Trash Bin*/
 #define ID_STRING_ADD_TO_BOOMARKS 14
 #define ID_STRING_SAVE_URL_PROPS 15 /* sven */
+#define ID_STRING_SHOW_MENUBAR 16 /* sven */
+#define ID_STRING_UP 17 /* sven */
+#define ID_STRING_BACK 18 /* sven */
+#define ID_STRING_FORWARD 19 /* sven */
 
 // browser/tree window color defaults -- Bernd
 #define HTML_DEFAULT_BG_COLOR white
