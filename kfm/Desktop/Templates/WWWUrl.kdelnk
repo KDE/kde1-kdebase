@@ -3,4 +3,16 @@
 URL=http://www.kde.org
 Icon=www.xpm
 Type=Link
-Comment=World Wide Web URL
+Name=World Wide Web URL
+Name[de]=World-Wide-Web URL
+Name[no]=World Wide Web-URL
+Name[pt]=URL de HTTP
+Name[pt_BR]=URL de HTTP
+Name[it]=Indirizzo World Wide Web
+Name[fi]=WWW URL
+Name[is_IS]=Vefslóð (WWW URL)
+Name[fr]=Adresse World Wide Web (HTTP)
+Name[sk]=Odkaz na World Wide Web (HTTP)
+Name[es]=Dirección del World Wide Web (URL de HTTP)
+Name[ro]=Legãturã Internet WWW  (URL de HTTP)
+Name[ru]=áÄÒÅÓ WWW (HTTP)

@@ -3,4 +3,16 @@
 URL=ftp://ftp.kde.org/pub/kde
 Icon=ftp.xpm
 Type=Link
-Comment=FTP URL
+Name=FTP URL
+Name[de]=FTP URL
+Name[is_IS]=FTP slóð
+Name[no]=FTP-URL
+Name[fr]=Adresse FTP
+Name[pt]=URL de FTP
+Name[pt_BR]=URL de FTP
+Name[it]=Indirizzo FTP
+Name[fi]=FTP -siirto
+Name[sk]=FTP odkaz
+Name[es]=URL de FTP
+Name[ro]=Legãturã FTP (URL)
+Name[ru]=FTP URL
