@@ -12,6 +12,7 @@
 #include <time.h>
 #include <signal.h>
 #include <sys/wait.h>
+#include <sys/stat.h>
 
 #define FTP_LOGIN "anonymous"
 #define FTP_PASSWD "joedoe@nowhere.crg"
