@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1997 Free Software Foundation, Inc.
+# Balazs Nagy <julian7@kva.hu>, 1997.
+#
+
+msgid ""
+msgstr ""
+"Project-Id-Version: kdehelp 0.5.2\n"
+"POT-Creation-Date: 1997-08-21 23:23-0500\n"
+"PO-Revision-Date: 1997-09-21 19:39+MET\n"
+"Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Latin2\n"
+"Content-Transfer-Encoding: iso-8859-2\n"
+
+#: kdmshutdown.cpp:229 kgreeter.cpp:207
+msgid "Cancel"
+msgstr "Mégsem"
+
+#: kdmshutdown.cpp:192
+msgid "Exit kdm"
+msgstr "Kilép"
+
+#: kgreeter.cpp:201
+msgid "Go!"
+msgstr "Mehet!"
+
+#: kgreeter.cpp:179
+msgid "Login failed!"
+msgstr "Érvénytelen bejelentkezés!"
+
+#: kgreeter.cpp:145
+msgid "Login:"
+msgstr "Név:"
+
+#: kdmshutdown.cpp:226
+msgid "Ok"
+msgstr ""
+
+#: kgreeter.cpp:150
+msgid "Password:"
+msgstr "Jelszó:"
+
+#: kgreeter.cpp:185
+msgid "Session Type:"
+msgstr "Futási stílus"
+
+#: kdmshutdown.cpp:169
+msgid "Shutdown"
+msgstr "Leállítás"
+
+#: kdmshutdown.cpp:183
+msgid "Shutdown and restart"
+msgstr "Leállítás és újraindítás"
+
+#: kdmshutdown.cpp:153
+msgid "Shutdown or restart?"
+msgstr "Leállítás vagy újraindítás?"
+
+#: kgreeter.cpp:217
+msgid "Shutdown..."
+msgstr "Leállítás..."
