@@ -112,6 +112,15 @@ void execute ( const char* cmd )
       tmp += cmd;
       cmd = tmp.append("\"").data();
   }
+  // An Easter Egg?? Have Fun !!!!
+  else if ( strnicmp( cmd, "about:kde", 4 ) == 0 )
+  {
+      tmp = getenv( "KDEURL" );
+	  if ( tmp.isEmpty() )
+	    tmp = "http://www.kde.org";
+      tmp.prepend ("kfmclient exec \"");
+      cmd = tmp.append("\"").data();
+  }
   // Looks like a KDEHelp thing ?
   else if ( strnicmp( cmd, "info:", 4) == 0 || strnicmp( cmd, "man:", 4) == 0 || cmd[0] == '#' )
   {
@@ -135,7 +144,7 @@ void execute ( const char* cmd )
   // Looks like a valid URL ?
   else if ( strnicmp ( cmd, "http://", 7) == 0 || strnicmp ( cmd, "ftp://", 6) == 0  ||
             strnicmp ( cmd, "gopher://", 9 ) == 0 || strnicmp ( cmd, "news:", 5) == 0 ||
-            strnicmp ( cmd, "mailto:", 7) == 0 || strnicmp ( cmd, "file:", 5 ) == 0 )
+            strnicmp ( cmd, "mailto:", 7) == 0 )
   {
       tmp = "kfmclient exec \"";
       tmp += cmd;
@@ -150,6 +159,13 @@ void execute ( const char* cmd )
       bool isLocalExec = false; // Check if "cmd" is locally executable
       QString uri ( cmd );
 
+      // Strip off "file:/" in order to expand local
+      // URLs if necessary.
+      if ( uri.find ("file:/") == 0 )
+      {
+         uri.remove (0, 6);
+         cmd = uri.isEmpty() ? "/" : uri.data();
+      }
       // HOME directory ?
       if ( uri[0] == '~' )
       {
@@ -176,11 +192,10 @@ void execute ( const char* cmd )
       // see if it is executable under the user's $PATH variable.
       if ( !isLocalDir && !isLocalFile )
         isLocalExec = isExecutable ( cmd );
-
       // Open with kfmclient if "cmd" is a non-executable local resource.
       if ( isLocalDir || ( isLocalFile && !isLocalExec ) )
       {
-        tmp = "kfmclient exec \"file:";
+        tmp = "kfmclient exec \"";
         tmp += cmd;
         cmd = tmp.append ( "\"").data();
       }
