@@ -258,7 +258,15 @@ AC_OUTPUT(Makefile \
 	doc/kdm/Makefile \
 	doc/kdisplay/Makefile \
 	doc/kwm/Makefile \
-	doc/kvt/Makefile 
+	doc/kvt/Makefile \
+	applnk/Applications/Makefile \
+	applnk/Games/Makefile \
+	applnk/Graphics/Makefile \
+	applnk/Internet/Makefile \
+	applnk/System/Core/Makefile \
+	applnk/System/Makefile \
+	applnk/Utilities/Makefile \
+	applnk/Makefile
 )
 
 
