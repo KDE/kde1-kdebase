@@ -701,7 +701,6 @@ void kPanel::cleanup(){
 }
 
 void kPanel::showSystem(){
-  int i;
   if (!kmenu ||kmenu->isVisible())
     return;
 

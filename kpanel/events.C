@@ -82,7 +82,7 @@ void kPanel::showTaskbar(){
   if (in_animation)
       return;
   doGeometry(TRUE);
-  animateMove(taskbar_frame, taskbar_frame_geometry.x(), taskbar_frame_geometry.y(), 
+  animateMove(taskbar_frame, taskbar_frame_geometry.x(), taskbar_frame_geometry.y(),
 	      taskbar_position == bottom?-2:2);
   doGeometry();
 }
@@ -92,7 +92,7 @@ void kPanel::hideTaskbar(){
       return;
   raise();
   doGeometry(TRUE);
-  animateMove(taskbar_frame, taskbar_frame_geometry.x(), taskbar_frame_geometry.y(), 
+  animateMove(taskbar_frame, taskbar_frame_geometry.x(), taskbar_frame_geometry.y(),
 	      taskbar_position == bottom?1:-1);
   doGeometry();
   KWM::sendKWMCommand("moduleRaised");
@@ -388,7 +388,6 @@ void kPanel::kwmCommandReceived(QString com){
   // Command from krootwm: open GO-menu, Syntax: "kpanel:goxxxxyyyy"
   if (com.length()== 17 && com.left(9) == "kpanel:go"){
     QPoint pos(com.mid( 9, 4).toInt(), com.mid(13, 4).toInt());
-    int i;
     if (kmenu){
       kmenu->popup(pos);
       // dirty hack to work around a possible qt bug (Matthias, qt-1.33)

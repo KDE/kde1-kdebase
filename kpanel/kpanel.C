@@ -1295,7 +1295,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 	   taskbar_height * numberOfTaskbarRows();
 
    int tbw = taskbar_frame->width();
-   
+
    taskbar_frame_geometry = taskbar_frame->geometry();
 
    if (px<0){
@@ -1364,7 +1364,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 	{
 // 	 taskbar_frame_geometry.setRect(tfx+px+sw, tfy+py+ph+mh,
 // 				    tbhs*th, th);
-	 taskbar_frame->move(tfx+px+sw, tfy+py+ph+mh);
+	 taskbar_frame_geometry.moveTopLeft(QPoint(tfx+px+sw, tfy+py+ph+mh));
 	 if (taskbar_position == taskbar_top_left)
 	   KWM::setWindowRegion(currentDesktop,
 				QRect(tfx+tbhs*th+1+sw, ph,
@@ -1393,7 +1393,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 	{
 // 	 taskbar_frame_geometry.setRect(tfx+0, tfy+mh,tbhs*taskbar_height,
 // 				    taskbar_height);
-	 taskbar_frame->move(tfx+0, tfy+mh);
+	 taskbar_frame_geometry.moveTopLeft(QPoint(tfx+0, tfy+mh));
 	 if (taskbar_position == taskbar_top_left)
 	   KWM::setWindowRegion(currentDesktop,
 				QRect(tfx+tbhs*taskbar_height+1, 0,
@@ -1426,7 +1426,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 	{
 // 	 taskbar_frame_geometry.setRect(tfx+px+pw, tfy+py+mh,
 // 				    tbhs*taskbar_height, taskbar_height);
-	 taskbar_frame->move(tfx+px+pw, tfy+py+mh);
+	 taskbar_frame_geometry.moveTopLeft(QPoint(tfx+px+pw, tfy+py+mh));
 	 if (taskbar_position == taskbar_top_left)
 	 KWM::setWindowRegion(currentDesktop,
 			      QRect(tfx+pw+tbhs*taskbar_height+1, 0,
@@ -1458,7 +1458,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 	{
 // 	 taskbar_frame_geometry.setRect(tfx+0, tfy+mh,
 // 				    tbhs*th, taskbar_height);
-	 taskbar_frame->move(tfx+0, tfy+mh);
+	 taskbar_frame_geometry.moveTopLeft(QPoint(tfx+0, tfy+mh));
 	 if (taskbar_position == taskbar_top_left)
 	 KWM::setWindowRegion(currentDesktop,
  			      QRect(tfx+tbhs*taskbar_height+1, 0,
@@ -1472,7 +1472,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
     }
    if (do_not_change_taskbar)
        return;
-   
+
    taskbar_frame->setGeometry(taskbar_frame_geometry);
    taskbar->resize(taskbar_frame->width(), taskbar_frame->height());
    if (taskbar_frame->width() != tbw){
