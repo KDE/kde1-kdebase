@@ -84,6 +84,10 @@ AC_SUBST(LIBSOCKET)
 AC_SUBST(LIBCOMPAT)
 AC_SUBST(LIBCRYPT)
 
-ac_output=`find . -name Makefile.in -print | sed -e 's/.in$//;' | sort`
-AC_OUTPUT($ac_output)
+ac_output=`find . -name Makefile.in -print | sed -e 's#\.in$##' | sed -e 's#^\./##' | sort`
+dnl filter the Makefile, that I handle separatly
+ac_output=`echo $ac_output | sed -e 's#\./Makefile##'`
+ac_output=`echo $ac_output | sed -e 's#\./kpanel/Makefile##'`
+
+AC_OUTPUT(Makefile kpanel/Makefile $ac_output)
 
