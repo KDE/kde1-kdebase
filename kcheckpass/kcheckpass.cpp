@@ -112,6 +112,7 @@ usage(int exitval)
 	  "    Exit codes:\n"
 	  "        0 success\n"
 	  "        1 invalid password\n"
+          "        2 cannot read password database\n"
 	  "    Anything else tells you something's badly hosed.\n",
 #ifdef ACCEPT_OPTIONS
 	" [-dh]"
@@ -143,7 +144,7 @@ main(int argc, char **argv)
 
       if ((nfd = open("/dev/null", O_WRONLY)) < 0) {
         message("cannot open /dev/null: %s\n", strerror(errno));
-	exit(2);
+	exit(10);
       }
       if (c != nfd) {
 	dup2(nfd, c);
@@ -156,7 +157,7 @@ main(int argc, char **argv)
 
 #ifndef ACCEPT_OPTIONS
   if (argc != 1)
-    usage(2);
+    usage(10);
 #else
   while ((c = getopt(argc, argv, "d")) != -1) {
     switch (c) {
@@ -167,7 +168,7 @@ main(int argc, char **argv)
       usage(0);
     default:
       message("Unknown option %c\n", c);
-      usage(2);
+      usage(10);
     }
   }
 #endif
@@ -175,11 +176,11 @@ main(int argc, char **argv)
   uid = getuid();
   if (!(pw = getpwuid(uid))) {
     message("Unknown user (uid %d)\n", uid);
-    exit(2);
+    exit(10);
   }
   if ((login = strdup(pw->pw_name)) == NULL) {
     message("Out of memory on strdup'ing user name \"%.100s\"\n", pw->pw_name);
-    exit(2);
+    exit(10);
   }
 
   /* If we have a tty, use getpass.
@@ -202,7 +203,7 @@ main(int argc, char **argv)
   }
   if (passwd == 0) {
     message("Can't read password: %s\n", strerror(errno));
-    exit(2);
+    exit(10);
   }
 
   /* Now do the fandango */
@@ -211,7 +212,8 @@ main(int argc, char **argv)
   /* Clear password buffer */
   memset(passbuffer, 0, sizeof(passbuffer));
 
-  if (!status) {
+  if ( status == 0 ) {
+    // failure
     time_t	now = time(NULL);
     message("authentication failure for user %s [uid %d]\n",
 	    login, uid);
@@ -221,7 +223,10 @@ main(int argc, char **argv)
     } while (time(NULL) < now + 1);
     exit(1);
   }
-
+  if ( status == 2 ) {
+    // Cannot read password database (e.g. not SUID on shadow systems)
+    exit(2);
+  }
   exit(0);
 }
 

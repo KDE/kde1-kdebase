@@ -38,7 +38,7 @@ int authenticate(const char *login, const char *passwd)
   pw = getspnam(login);
   if ( pw == 0 ) {
     endspent();
-    return 0;
+    return 2; // cannot read password database
   }
 #if defined( __linux__ ) && defined( HAVE_PW_ENCRYPT )
   crpt_passwd = pw_encrypt(passwd, pw->sp_pwdp);  // (1)
