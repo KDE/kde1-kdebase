@@ -848,7 +848,7 @@ void Manager::reparentNotify(XReparentEvent* e){
   Client* c = getClient(e->window);
   Client* p = getClient(e->parent);
   if (c && c != p){
-    withdraw(c);
+    withdraw(c, true);
   }
 }
 
@@ -1796,7 +1796,22 @@ void Manager::manage(Window w, bool mapped){
   }
 
   XSetWindowBorderWidth(qt_xdisplay(), c->window, 0);
-  XReparentWindow(qt_xdisplay(), c->window, c->winId(), 0, 0);
+
+  // it is important to reparent with the correct position! Otherwise the application window may 
+  // do a little jump after beeing fully mapped.
+  switch (c->getDecoration()){
+  case 0:
+    XReparentWindow(qt_xdisplay(), c->window, c->winId(), 0, 0);
+    break;
+  case 2:
+    XReparentWindow(qt_xdisplay(), c->window, c->winId() ,
+		    (BORDER_THIN), (BORDER_THIN) );
+    break;
+  default:
+    XReparentWindow(qt_xdisplay(), c->window, c->winId(),  
+		    (BORDER), (BORDER) + TITLEBAR_HEIGHT);
+    break;
+  }
 
   if (shape) {
     XShapeSelectInput(qt_xdisplay(), c->window, ShapeNotifyMask);
@@ -1922,7 +1937,7 @@ void Manager::manage(Window w, bool mapped){
 
 // put the client in withdraw state (which means it is not managed any
 // longer)
-void Manager::withdraw(Client* c){
+void Manager::withdraw(Client* c,  bool do_not_give_free_if_still_managed){
   DEBUG_EVENTS2("widthdraw client", c,c->window)
   KWM::moveToDesktop(c->window, 0);
 
@@ -1948,6 +1963,11 @@ void Manager::withdraw(Client* c){
     if (wins[i] == c->window){
       // we still manage it => do reparenting 
       DEBUG_EVENTS2("widthdraw we still manage => do reparenting", c,c->window)
+      if (do_not_give_free_if_still_managed){
+	DEBUG_EVENTS2("nope, do not! return", c,c->window)
+                XFree((void *) wins);   
+	return;
+      } 
       gravitate(c, true);
       XUnmapWindow(qt_xdisplay(), c->window);
       XReparentWindow(qt_xdisplay(), c->window, qt_xrootwin(), 
@@ -2307,7 +2327,7 @@ void Manager::switchDesktop(int new_desktop){
 void Manager::sendConfig(Client* c, bool emit_changed){
   XConfigureEvent ce;
 
-
+  printf("********sendconfig\n");
   if (c->isShaded()){
     c->setGeometry(c->geometry.x(), c->geometry.y(),
 		   c->geometry.width(), 2*BORDER+TITLEBAR_HEIGHT);
@@ -2315,6 +2335,7 @@ void Manager::sendConfig(Client* c, bool emit_changed){
   else {
     c->setGeometry(c->geometry);
   }
+  printf("********sendconfig continue\n");
   
   setQRectProperty(c->window, kwm_win_frame_geometry, c->geometry);
 

@@ -104,7 +104,7 @@ public:
 
   // put the client in withdraw state (which means it is not managed
   // any longer)
-  void withdraw(Client* c);
+  void withdraw(Client* c, bool do_not_give_free_if_still_managed = false);
 
   // get a pointer to the Client object from an X11 window. The window
   // can be either the parent window (which is the kwm frame around a
