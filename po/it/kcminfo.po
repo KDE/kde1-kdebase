@@ -225,5 +225,3 @@ msgstr "Non disponibile"
 msgid "Not Available"
 msgstr "Non Disponibile"
 
-#~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
-#~ msgstr "utilizzo: kcminfo [-init | {processor,memory}]\n"

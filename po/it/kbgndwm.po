@@ -51,7 +51,7 @@ msgstr "DeformatoCentrato"
 
 #: kbgndwm.cpp:64
 msgid "CentredMaxpect"
-msgstr ""
+msgstr "MaxpectCentrato"
 
 #: kbgndwm.cpp:65
 msgid "SymmetricalTiled"

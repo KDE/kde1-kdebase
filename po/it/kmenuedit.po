@@ -79,15 +79,15 @@ msgstr "Apri/ Chiudi"
 
 #: confmenu.cpp:117
 msgid "Select item for moving"
-msgstr ""
+msgstr "Scegli oggetto da spostare"
 
 #: confmenu.cpp:118
 msgid "Select menu for moving"
-msgstr ""
+msgstr "Scegli menu da spostare"
 
 #: confmenu.cpp:120
 msgid "New"
-msgstr ""
+msgstr "Nuovo"
 
 #: confmenu.cpp:177 confmenu.cpp:316
 msgid "Warning !"
@@ -164,18 +164,18 @@ msgid "Device"
 msgstr "Dispositivo"
 
 #: entrydialog.cpp:63
-#, fuzzy
+#
 msgid "Type:"
-msgstr "Tipo FS:"
+msgstr "Tipo:"
 
 #: entrydialog.cpp:69
 msgid "File Name:"
 msgstr "Nome file:"
 
 #: entrydialog.cpp:82
-#, fuzzy
+#,
 msgid "Name:"
-msgstr "Nome file:"
+msgstr "Nome:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"

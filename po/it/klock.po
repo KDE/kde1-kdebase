@@ -41,7 +41,7 @@ msgstr "Code"
 
 #: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
-msgstr ""
+msgstr "Bagliore"
 
 #: attraction.cpp:951
 msgid "About Attraction"

@@ -11,11 +11,11 @@ msgstr ""
 
 #: kpager.cpp:72
 msgid "Toggle Global Desktop"
-msgstr ""
+msgstr "(dis)Attiva Desktop Globale"
 
 #: kpager.cpp:74
 msgid "Toggle Menubar"
-msgstr ""
+msgstr "(dis)Attiva Barra menu"
 
 #: kpager.cpp:77
 msgid "Move Right"
@@ -23,51 +23,51 @@ msgstr "Sposta a Destra"
 
 #: kpager.cpp:79
 msgid "Move Left"
-msgstr ""
+msgstr "Sposta a Sinistra"
 
 #: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
-msgstr ""
+msgstr "Nascondi Desktop &Globale"
 
 #: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
 msgid "Show &Global Desktop"
-msgstr ""
+msgstr "Mostra Desktop &Globale"
 
 #: kpager.cpp:97 kpager.cpp:380
 msgid "Hide &Menubar"
-msgstr ""
+msgstr "Nascondi Barra &Menu"
 
 #: kpager.cpp:101 kpager.cpp:386
 msgid "&2 Rows"
-msgstr ""
+msgstr "&2 Righe"
 
 #: kpager.cpp:104
 msgid "&One Click change Desktop"
-msgstr ""
+msgstr "&Un Click cambia Desktop"
 
 #: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
 msgid "Hide Desktop &Names"
-msgstr ""
+msgstr "Nascondi &Nomi Desktop"
 
 #: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
 msgid "Show Desktop &Names"
-msgstr ""
+msgstr "Mostra &Nomi Desktop"
 
 #: kpager.cpp:115 kpager.cpp:402
 msgid "Plain"
-msgstr ""
+msgstr "Piano"
 
 #: kpager.cpp:118 kpager.cpp:404
 msgid "Icon"
-msgstr ""
+msgstr "Icona"
 
 #: kpager.cpp:121 kpager.cpp:406
 msgid "Pixmap"
-msgstr ""
+msgstr "Immagine"
 
 #: kpager.cpp:125 kpager.cpp:412
 msgid "Draw Mode"
-msgstr ""
+msgstr "Modo disegno"
 
 #: kpager.cpp:129
 #, c-format
@@ -84,31 +84,42 @@ msgid ""
 "This is free software, and you are welcome to redistribute it\n"
 "under certain conditions\n"
 msgstr ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"Home Page di KPager: http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager  non ha NESSUNA GARANZIA; per dettagli si veda il file COPYING\n"
+"Questo e' software libero, e sei incoraggiato a ridistribuirlo sotto\n"
+"certe condizioni\n"
 
 #: kpager.cpp:382
 msgid "Show &Menubar"
-msgstr ""
+msgstr "Mostra Barra &Menu"
 
 #: kpager.cpp:389
 msgid "One Click change Desktop"
-msgstr ""
+msgstr "Un Click cambia Desktop"
 
 #: kpager.cpp:446
 msgid "&Maximize"
-msgstr ""
+msgstr "&Ingrandisci"
 
 #: kpager.cpp:447
 msgid "&Iconify"
-msgstr ""
+msgstr "&Riduci a Icona"
 
 #: kpager.cpp:449
 msgid "&UnSticky"
-msgstr ""
+msgstr "&Staccato"
 
 #: kpager.cpp:451
 msgid "&Sticky"
-msgstr ""
+msgstr "&Attaccato"
 
 #: kpager.cpp:453
 msgid "&To Desktop"
-msgstr ""
+msgstr "&Al Desktop"
