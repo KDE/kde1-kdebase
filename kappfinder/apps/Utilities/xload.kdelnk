@@ -3,6 +3,7 @@
 Exec=xload
 SwallowExec=xload -nolabel -fg green -bg Black -hl red -update 3 -geometry 25x25
 SwallowTitle=xload
+SwallowTitle[no]=xload
 SwallowTitle[es]=xload
 SwallowTitle[pl]=xload
 Type=Application
@@ -10,6 +11,7 @@ Name=X Load
 Name[is_IS]=X álagsmælir
 Name[es]=X Load
 Name[pl]=X Load
+Name[no]=X-last
 Comment=X load monitor
 Comment[is_IS]=xload:  X forrit sem mælir álagið á tölvuna
 Comment[es]=Monitor de carga para X

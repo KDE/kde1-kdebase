@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Lyx
+Name[no]=Lyx
 Name[is_IS]=Lyx
 Name[es]=Lyx
 Name[pl]=Lyx

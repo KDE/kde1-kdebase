@@ -1,13 +1,14 @@
 # KDE Config File
 [KDE Desktop Entry]
 SwallowTitle=xclock
+SwallowTitle[no]=xclock
 SwallowTitle[pl]=xclock
 SwallowExec=xclock -padding 0
 BinaryPattern=
 MimeType=
 Name=X Clock
 Name[es]=X Clock
-Name[no]=X Clock
+Name[no]=X-klokke
 Name[pl]=X Clock
 Exec=xclock
 Icon=kclock.xpm

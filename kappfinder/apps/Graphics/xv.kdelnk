@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=XV
+Name[no]=XV
 Name[is_IS]=XV
 Name[es]=XV
 Name[pl]=XV

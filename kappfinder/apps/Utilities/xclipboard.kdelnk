@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=X Clipboard
+Name[no]=X-utklippstavle
 Name[is_IS]=X klemmuspjald
 Name[es]=X Clipboard
 Name[pl]=X Clipboard

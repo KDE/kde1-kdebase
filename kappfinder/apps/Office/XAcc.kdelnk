@@ -3,13 +3,13 @@
 WmCommand=
 BinaryPattern=
 Name=xacc
+Name[no]=xacc
 Name[es]=xacc
 Name[pl]=xacc
 Name[sk]=xacc
 MiniIcon=
 Protocols=
 MimeType=
-Comment=XAcc
 Exec=xacc
 Icon=xacc.xpm
 TerminalOptions=

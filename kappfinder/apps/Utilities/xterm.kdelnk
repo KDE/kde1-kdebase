@@ -21,6 +21,7 @@ Comment[sk]=Terminál pre XWindow
 Comment[ro]=Terminal pentru XWindows
 Comment[ru]=ôÅÒÍÉÎÁÌ ÄÌÑ Xwindows
 Name=X Terminal
+Name[no]=X-terminal
 Name[is_IS]=X skjáhermir
 Name[es]=X Terminal
 Name[fr]=Terminal

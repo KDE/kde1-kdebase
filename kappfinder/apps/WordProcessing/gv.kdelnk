@@ -5,6 +5,7 @@ BinaryPattern=
 Name=GV
 Name[es]=GV
 Name[pl]=GV
+Name[no]=GV
 MiniIcon=mini-gv.xpm
 Protocols=
 MimeType=

@@ -2,7 +2,8 @@
 [KDE Desktop Entry]
 WmCommand=
 BinaryPattern=
-Name=Xpaint
+Name=X Paint
+Name[no]=X-tegner
 Name[is_IS]=Teikniforrit X
 Name[es]=Xpaint
 Name[pl]=Xpaint

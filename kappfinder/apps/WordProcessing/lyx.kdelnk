@@ -2,11 +2,11 @@
 [KDE Desktop Entry]
 WmCommand=
 BinaryPattern=
-Comment=The lyx text processor
-Comment[is_IS]=Lyx ritvinnsluforritið
 MiniIcon=
 Protocols=
 MimeType=
+Comment=The lyx text processor
+Comment[is_IS]=Lyx ritvinnsluforritið
 Comment[es]=Procesador de textos LyX
 Comment[de]=Das LyX Textprogramm
 Comment[no]=LyX-tekstbehandleren
@@ -25,6 +25,7 @@ Name=Lyx
 Name[is_IS]=Lyx
 Name[es]=Lyx
 Name[pl]=Lyx
+Name[no]=Lyx
 Exec=lyx
 Icon=lyx.xpm
 TerminalOptions=

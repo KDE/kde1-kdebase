@@ -6,6 +6,7 @@ Name=GhostView
 Name[is_IS]=GhostView
 Name[es]=Ghostview
 Name[pl]=GhostView
+Name[no]=GhostView
 MiniIcon=mini-gv.xpm
 Protocols=
 MimeType=

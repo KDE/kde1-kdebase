@@ -3,13 +3,13 @@
 WmCommand=
 BinaryPattern=
 Name=XsLite
+Name[no]=XsLite
 Name[es]=XsLite
 Name[pl]=XsLite
 Name[sk]=XsLite
 MiniIcon=mini-xslight.xpm
 Protocols=
 MimeType=
-Comment=XsLite
 Exec=xslite
 Icon=XsLite.xpm
 TerminalOptions=

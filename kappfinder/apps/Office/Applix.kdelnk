@@ -3,12 +3,12 @@
 WmCommand=
 BinaryPattern=
 Name=Applix
+Name[no]=Applix
 Name[es]=Applix
 Name[pl]=Applix
 MiniIcon=
 Protocols=
 MimeType=
-Comment=Applix
 Exec=applix
 Icon=applix.xpm
 TerminalOptions=

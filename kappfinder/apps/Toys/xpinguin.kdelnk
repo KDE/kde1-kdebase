@@ -5,6 +5,7 @@ BinaryPattern=
 Name=Tux
 Name[es]=Tux
 Name[pl]=Tux
+Name[no]=Tux
 MiniIcon=sample.xpm
 Protocols=
 MimeType=

@@ -7,6 +7,7 @@ Name=X DVI
 Name[is_IS]=X DVI
 Name[es]=X DVI
 Name[pl]=X DVI
+Name[no]=X DVI
 Comment=DVI Viewer
 Comment[is_IS]=DVI skoðari
 Comment[es]=Visor de archivos DVI

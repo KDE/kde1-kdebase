@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=X Console
+Name[no]=X-konsoll
 Name[is_IS]=X kerfisskjár
 Name[es]=X Console
 Name[pl]=X Console

@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=Plan
+Name[no]=Plan
 Name[es]=Plan
 Name[pl]=Plan
 Name[sk]=Plan
