@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-01-18 04:22+0600\n"
+"PO-Revision-Date: 1998-11-07 04:22+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,39 +24,39 @@ msgstr "&Процессор"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr ""
+msgstr "П&рерывания"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr ""
+msgstr "&Каналы DMA"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr ""
+msgstr "П&орты ввода/вывода"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr ""
+msgstr "&Шина PCI"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr ""
+msgstr "&Звук"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr ""
+msgstr "&Устройства"
 
 #: main.cpp:103
 msgid "S&CSI"
-msgstr ""
+msgstr "SCSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr ""
+msgstr "&Разделы"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr ""
+msgstr "X-&сервер"
 
 #: main.cpp:120
 msgid ""
@@ -64,6 +64,9 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
+"использование: kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"
@@ -103,14 +106,3 @@ msgstr "%10ld байт  = %8.2f Мб"
 #: memory.cpp:105
 msgid "Not available"
 msgstr "Не известно"
-
-#~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
-#~ msgstr "ипользование: kcminfo [-init | {processor,memory}]\n"
-
-#~ msgid "This system is not yet supported :-("
-#~ msgstr "Эта система не поддерживается :-("
-
-#
-#, fuzzy
-#~ msgid "Not Available"
-#~ msgstr "Не известно"

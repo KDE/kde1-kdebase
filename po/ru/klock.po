@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
 "POT-Creation-Date: 1998-10-29 14:31+0100\n"
-"PO-Revision-Date: 1998-03-16 02:25+0600\n"
+"PO-Revision-Date: 1998-11-07 02:25+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,13 +23,12 @@ msgid "Setup kbanner"
 msgstr "Настройка kbanner"
 
 #: banner.cpp:95
-#, fuzzy
 msgid "Family:"
-msgstr "Неверно"
+msgstr "Семейство:"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
-msgstr ""
+msgstr "Размер:"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -37,7 +36,7 @@ msgstr "Цвет:"
 
 #: banner.cpp:147
 msgid "Bold"
-msgstr ""
+msgstr "Жирный"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
@@ -166,7 +165,7 @@ msgstr "Блобы"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
-msgstr ""
+msgstr "Bouboule"
 
 #
 #: bouboule.cpp:1005
@@ -204,6 +203,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
+"Bouboule v0.1 -- облако сфер, крутящихся и изменяющих размер\n"
+"\n"
+"Copyright (c) 1996 by Jeremie PETIT\n"
+"\n"
+"Переписано на kscreensave Cedric Tefft"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -405,7 +409,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Опция %s не поддерживается на этой платформе!"
 
 #: main.cpp:380
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -413,9 +416,10 @@ msgid ""
 "Please contact your system administrator,\n"
 "tell him, that you need suid for the screensavers!"
 msgstr ""
+"Внимание: Вы не сможете блокировать экран!\n"
+"\n"
 "Ваша система использует скрытые (shadow) пароли!\n"
 "Пожайлуста свяжитесь с вашим системным администратором.\n"
-"\n"
 "Скажите ему, что вам необходимы права (suid root) для хранителей экрана!"
 
 #: main.cpp:385
@@ -429,18 +433,21 @@ msgid ""
 "use klock instead.\n"
 "\n"
 msgstr ""
+"\n"
+"пожайлуста не используйте вместе -test и -lock.\n"
+"вместо этого используйте klock.\n"
+"\n"
 
 #: main.cpp:538
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "Использование: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"       [-corners xxxx] [-delay кол] [-lock] [-nice кол]\n"
+"       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
 #: main.cpp:541
-#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -464,7 +471,7 @@ msgstr ""
 "действия:\n"
 "                     x = i  ничего (игнорировать)\n"
 "                     x = s  сохранять экран\n"
-"                     x = l  закрыть экран\n"
+"                     x = l  заблокировать экран\n"
 "                    порядок: верх-лево, верх-право, вниз-лево, вниз-право\n"
 "  -delay num        Время простоя после которого запускается хранитель\n"
 "                     (по умолчанию 10 мин)\n"
@@ -514,22 +521,19 @@ msgstr ""
 
 #: pipes.cpp:299
 msgid "Pipes (GL)"
-msgstr ""
+msgstr "Трубы (GL)"
 
 #: pipes.cpp:672
-#, fuzzy
 msgid "Setup KPipes"
-msgstr "Настроить KSlip"
+msgstr "Настроить KPipes"
 
 #: pipes.cpp:678
-#, fuzzy
 msgid "Number of Pipes"
-msgstr "Кол Пчел:"
+msgstr "Кол труб"
 
 #: pipes.cpp:743
-#, fuzzy
 msgid "About KPipes"
-msgstr "О Lines"
+msgstr "О KPipes"
 
 #: pipes.cpp:745
 msgid ""
@@ -537,6 +541,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
+"KPipes\n"
+"Copyright (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
 
 #: polygon.cpp:64
 msgid "Polygons"
@@ -755,7 +762,7 @@ msgstr ""
 
 #: space.cpp:491
 msgid "Space (GL)"
-msgstr ""
+msgstr "Пространство (GL)"
 
 #: space.cpp:581
 msgid "Setup KSpace"

@@ -130,14 +130,13 @@ msgstr "Шрифт..."
 
 #: main.C:674
 msgid "Enable &hotkeys"
-msgstr ""
+msgstr "Включить горячие клавиши"
 
 #: main.C:677
 msgid "Save &Options"
 msgstr "Записать опции"
 
 #: main.C:686
-#, fuzzy
 msgid ""
 "\n"
 "\n"
@@ -152,6 +151,7 @@ msgstr ""
 "\n"
 "(C) 1996, 1997 Маттиас Эттрих <ettrich@kde.org>\n"
 "(C) 1997 М. Г. Берберих <berberic@fmi.uni-passau.de>\n"
+"(C) 1998 Иван Шретер (schreter@kdk.sk)\n"
 "\n"
 "Эмуляция терминала для проекта KDE\n"
 "Основан на rxvt-2.08 Роберта Натиона"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-01-18 05:26+0600\n"
+"PO-Revision-Date: 1998-11-07 05:26+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,11 +25,11 @@ msgstr "ОШИБКА: Заготовка не существует '%s'"
 
 #: krootwm.C:180 krootwm.C:577 krootwm.C:585
 msgid "New"
-msgstr ""
+msgstr "Новый"
 
 #: krootwm.C:181
 msgid "Bookmarks"
-msgstr ""
+msgstr "Закладки"
 
 #: krootwm.C:183
 msgid "Help on desktop"
@@ -69,7 +69,7 @@ msgstr "Выйти"
 
 #: krootwm.C:219
 msgid "Edit Bookmarks"
-msgstr ""
+msgstr "Редактировать закладки"
 
 #: krootwm.C:607
 msgid "Could not create folder"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 0.2POT-Creation-Date: 1998-02-19 22:49+0100\n"
 "POT-Creation-Date: 1998-11-03 09:19+0100\n"
-"PO-Revision-Date: 1998-01-20 11:51+0600\n"
+"PO-Revision-Date: 1998-11-07 11:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,6 @@ msgid "ERROR: Template does not exist '%s'"
 msgstr "ОШИБКА: Шаблон '%s' не найден"
 
 #: kfmgui.cpp:304
-#, fuzzy
 msgid "&New"
 msgstr "Новый "
 
@@ -57,9 +56,8 @@ msgid "&Select"
 msgstr "Выделить"
 
 #: kfmgui.cpp:341
-#, fuzzy
 msgid "Select &all"
-msgstr "Выделить"
+msgstr "Выделить все"
 
 #: kfmgui.cpp:344
 msgid "Mime Types"
@@ -87,7 +85,7 @@ msgstr "Показывать дерево"
 
 #: kfmgui.cpp:365
 msgid "&Visual Schnauzer"
-msgstr ""
+msgstr "Визуальный просмотр"
 
 #: kfmgui.cpp:367
 msgid "&HTML View"
@@ -218,12 +216,11 @@ msgstr "Вверх"
 
 #: kfmgui.cpp:533 kfmman.cpp:1078
 msgid "Forward"
-msgstr ""
+msgstr "Вперед"
 
 #: kfmgui.cpp:538
-#, fuzzy
 msgid "Home"
-msgstr "Мой домашний каталог"
+msgstr "Домашний каталог"
 
 #: kfmgui.cpp:595
 msgid "Could not load icon\n"
@@ -249,7 +246,7 @@ msgstr "Не могу загрузить пиктограмму\n"
 #: root.cpp:874 root.cpp:1135 root.cpp:1153 root.cpp:1159 root.cpp:1165
 #: root.cpp:1246 root.cpp:1757 root.cpp:1782
 msgid "KFM Error"
-msgstr ""
+msgstr "Ошибка KFM"
 
 #: kfmexec.cpp:59 kfmgui.cpp:751 kfmman.cpp:1040
 msgid "Malformed URL\n"
@@ -298,9 +295,8 @@ msgid "Document: Done"
 msgstr "Документ: Сделано"
 
 #: kfmview.cpp:350 root.cpp:875
-#, fuzzy
 msgid "ERROR: You may only drop URLs"
-msgstr "ОШИБКА: Вы перенесли URL поверх самого себя"
+msgstr "ОШИБКА: Вы можете переносить только URL"
 
 #: kfmview.cpp:366
 msgid "ERROR: Drop over malformed URL"
@@ -514,7 +510,7 @@ msgstr "Открыть с"
 
 #: kfmman.cpp:1244 kfmtree.cpp:155 main.cpp:235
 msgid "Move"
-msgstr ""
+msgstr "Переместить"
 
 #: kfmman.cpp:1248 kfmtree.cpp:159 main.cpp:237
 msgid "Link"
@@ -530,15 +526,15 @@ msgstr "Добавить закладку"
 
 #: htmlopts.cpp:39
 msgid "Small"
-msgstr ""
+msgstr "Маленький"
 
 #: htmlopts.cpp:43
 msgid "Medium"
-msgstr ""
+msgstr "Средний"
 
 #: htmlopts.cpp:47
 msgid "Large"
-msgstr ""
+msgstr "Большой"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
@@ -581,9 +577,8 @@ msgid "Transparent Text for Root Icons."
 msgstr "Прозрачный текст для пиктограмм"
 
 #: kfmdlg.cpp:114
-#, fuzzy
 msgid "&Browser"
-msgstr "Просматривать"
+msgstr "Просмотришик"
 
 #
 #: bookmark.cpp:296
@@ -591,9 +586,8 @@ msgid "Could not write bookmark"
 msgstr "Не могу записать закладки"
 
 #: kfmprops.cpp:234
-#, fuzzy
 msgid "Name"
-msgstr "Полное имя"
+msgstr "Имя"
 
 #: kfmprops.cpp:251
 msgid "Full Name"
@@ -682,7 +676,7 @@ msgstr "Пользователь"
 
 #: kfmprops.cpp:460 kfmprops.cpp:559
 msgid "Group"
-msgstr ""
+msgstr "Группа"
 
 #: kfmprops.cpp:465
 msgid "Others"
@@ -705,9 +699,8 @@ msgid "Ownership"
 msgstr "Владение"
 
 #: kfmprops.cpp:504
-#, fuzzy
 msgid "Owner"
-msgstr "Владение"
+msgstr "Владелец"
 
 #: kfmprops.cpp:628
 msgid ""
@@ -737,7 +730,7 @@ msgstr ""
 
 #: kfmprops.cpp:672
 msgid "Swallowing on panel"
-msgstr ""
+msgstr "Пиктограмма на панели"
 
 #: kfmprops.cpp:690 kfmprops.cpp:713
 msgid "Execute"
@@ -753,7 +746,7 @@ msgstr "Рабочий подкаталог"
 
 #: kfmprops.cpp:721
 msgid "Window Title"
-msgstr ""
+msgstr "Заголовок окна"
 
 #: kfmprops.cpp:725
 msgid "Run in terminal"
@@ -774,7 +767,7 @@ msgstr ""
 
 #: kfmprops.cpp:883
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: kfmprops.cpp:984
 msgid "Apply global"
@@ -940,8 +933,7 @@ msgstr "Добавить закладку"
 
 #: kiojob.cpp:134
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
-msgstr ""
-"ВНУТРЕННЯЯ ОШИБКА: Вы должны как минимум указать устройство для монтирования"
+msgstr "ВНУТРЕННЯЯ ОШИБКА: Вы должны как минимум указать устройство для монтирования"
 
 #: kiojob.cpp:237 kiojob.cpp:245 kiojob.cpp:1209 kiojob.cpp:1349
 #, c-format
@@ -1301,11 +1293,11 @@ msgstr "Напрямую:"
 
 #: kkfmoptdlg.cpp:19
 msgid "&Proxy"
-msgstr ""
+msgstr "Прокси"
 
 #: kkfmoptdlg.cpp:22
 msgid "&HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: kkfmoptdlg.cpp:25
 msgid "User &Agent"
@@ -1338,7 +1330,7 @@ msgstr "Предполагать HTML"
 
 #: open-with.cpp:132
 msgid "This group is empty!"
-msgstr ""
+msgstr "Эта группа - пустая!"
 
 #: kfmprops.h:73
 msgid "&General"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol\n"
 "POT-Creation-Date: 1998-09-10 14:40+0200\n"
-"PO-Revision-Date: 1998-01-18 05:26+0600\n"
+"PO-Revision-Date: 1998-11-07 05:26+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -46,37 +46,29 @@ msgstr ""
 
 #: mainwidget.cpp:44
 msgid "System:"
-msgstr ""
+msgstr "Система:"
 
 #: mainwidget.cpp:47
 msgid "User: "
-msgstr ""
+msgstr "Пользователь:"
 
 #: mainwidget.cpp:53
 msgid "Hostname: "
-msgstr ""
+msgstr "Имя машины:"
 
 #: mainwidget.cpp:61
 msgid "System: "
-msgstr ""
+msgstr "ОС: "
 
 #: mainwidget.cpp:68
 msgid "Release: "
-msgstr ""
+msgstr "Версия: "
 
 #: mainwidget.cpp:76
 msgid "Version: "
-msgstr ""
+msgstr "Модификация: "
 
 #: mainwidget.cpp:83
 msgid "Machine: "
-msgstr ""
+msgstr "Процессор: "
 
-#~ msgid "&About KControl..."
-#~ msgstr "&Об KControl"
-
-#~ msgid "&Using KControl"
-#~ msgstr "&Использование KControl"
-
-#~ msgid "About KControl"
-#~ msgstr "Об KControl"

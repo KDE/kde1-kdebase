@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
 "POT-Creation-Date: 1998-11-07 01:24+0100\n"
-"PO-Revision-Date: 1998-03-16 01:59+0600\n"
+"PO-Revision-Date: 1998-11-07 01:59+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,11 +16,11 @@ msgstr ""
 
 #: kpanel.C:273
 msgid "&Move"
-msgstr ""
+msgstr "Переместить"
 
 #: kpanel.C:276
 msgid "&Properties"
-msgstr ""
+msgstr "Настройки"
 
 #: kpanel.C:313
 msgid "Go!"
@@ -100,7 +100,7 @@ msgstr "Перезапустить панель"
 
 #: props.C:161
 msgid "Disk Navigator"
-msgstr ""
+msgstr "Исследователь диска"
 
 #: props.C:169
 msgid "Panel"
@@ -123,6 +123,8 @@ msgid ""
 "\n"
 "%b %d"
 msgstr ""
+"\n"
+"%b %d"
 
 #: events.C:819
 msgid "Cannot put this as button onto the panel!"
@@ -130,36 +132,36 @@ msgstr "Невозможно поместить это как кнопку на панель!"
 
 #: pfilemenu.C:337
 msgid "(empty folder)"
-msgstr ""
+msgstr "(пустая папка)"
 
 #: pfilemenu.C:394
 msgid "(Too Many Files)"
-msgstr ""
+msgstr "(Слишком много файлов)"
 
 #: pfilemenu.C:403
 msgid "(Access Denied)"
-msgstr ""
+msgstr "(Доступ запрещен)"
 
 #: pfilemenu.C:406
 msgid "(Unreadable)"
-msgstr ""
+msgstr "(Нечитабельный)"
 
 #: pfilemenu.C:413
 msgid "Open Folder"
-msgstr ""
+msgstr "Открыть папку"
 
 #: pfilemenu.C:657
 msgid "Global:"
-msgstr ""
+msgstr "Глобальные:"
 
 #: pfilemenu.C:676
 msgid "Local:"
-msgstr ""
+msgstr "Локальные:"
 
 #: pfilemenu.C:694
 msgid "Recent:"
-msgstr ""
+msgstr "Недавние:"
 
 #: pfilemenu.C:740
 msgid "Options..."
-msgstr ""
+msgstr "Опции..."

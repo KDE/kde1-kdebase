@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
 "POT-Creation-Date: 1998-11-05 01:17+0100\n"
-"PO-Revision-Date: 1997-09-05 02:51+0600\n"
+"PO-Revision-Date: 1997-11-07 02:51+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -326,7 +326,7 @@ msgstr "&Требуется пароль"
 
 #: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
-msgstr ""
+msgstr "Допускать пароль root'а для разблокирования."
 
 #: scrnsave.cpp:278
 msgid "Show &password as stars"
@@ -357,7 +357,7 @@ msgstr "Рисовать элементы в стиле &Windows 95"
 
 #: general.cpp:242
 msgid "&Apply style to non-KDE apps"
-msgstr ""
+msgstr "Применять стиль для приложений не из KDE"
 
 #
 #: general.cpp:255
@@ -373,9 +373,8 @@ msgid "Fixed font"
 msgstr "Фиксированный шрифт"
 
 #: general.cpp:278
-#, fuzzy
 msgid "Window title font"
-msgstr "Текст в окне"
+msgstr "Шрифт заголовка"
 
 #
 #: general.cpp:283
@@ -446,7 +445,7 @@ msgstr "Выбранный текст"
 
 #: widgetcanvas.cpp:212
 msgid "New"
-msgstr ""
+msgstr "Новый"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"

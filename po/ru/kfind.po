@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfind 0.3.2\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1997-09-05 03:06+0600\n"
+"PO-Revision-Date: 1997-11-07 03:06+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,11 +15,11 @@ msgstr ""
 
 #: kfdird.cpp:46
 msgid "Directories:"
-msgstr "Подкаталоги:"
+msgstr "Каталоги:"
 
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
-msgstr "Не возможно открыть или прочитать подкаталог."
+msgstr "Не возможно открыть или прочитать каталог."
 
 #
 #: kfindtop.cpp:118
@@ -213,7 +213,7 @@ msgstr "SUID исполняемые файлы"
 
 #: kftabdlg.cpp:246
 msgid "(none)"
-msgstr ""
+msgstr "(не важно)"
 
 #: kftabdlg.cpp:247
 msgid "At Least"
@@ -343,14 +343,14 @@ msgid ""
 " to delete this directory"
 msgstr ""
 "Вы не имеете права\n"
-" удалить этот подкаталог"
+" удалить этот каталог"
 
 #: kfwin.cpp:340
 msgid ""
 "Specified directory\n"
 "is not empty!"
 msgstr ""
-"Указанный подкаталог\n"
+"Указанный каталог\n"
 "не пуст!"
 
 #: kfwin.cpp:345
@@ -359,7 +359,7 @@ msgid ""
 "selected directory"
 msgstr ""
 "Невозможно удалить\n"
-"выделенный подкаталог"
+"выделенный каталог"
 
 #: kfwin.cpp:437
 msgid "Couldn't recognize archive type!"

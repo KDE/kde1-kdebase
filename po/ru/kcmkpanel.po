@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-11-03 09:19+0100\n"
-"PO-Revision-Date: 1998-01-18 04:52+0600\n"
+"PO-Revision-Date: 1998-11-07 04:52+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,13 +24,12 @@ msgstr "&Рабочие столы"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr ""
+msgstr "Путеводитель по диску"
 
 #
 #: main.cpp:79
-#, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
-msgstr "использование: kcmkpanel [-init | {panel,options,desktops}]\n"
+msgstr "использование: kcmkpanel [-init | {panel,options,desktops, disknav}]\n"
 
 #: main.cpp:112
 msgid "KPanel Configuration"
@@ -55,7 +54,7 @@ msgstr "Низ"
 
 #: panel.cpp:63
 msgid "&Right"
-msgstr ""
+msgstr "Право"
 
 #: panel.cpp:75
 msgid "Taskbar"
@@ -80,9 +79,8 @@ msgid "Top/Le&ft"
 msgstr "Верх/лево"
 
 #: panel.cpp:95
-#, fuzzy
 msgid "Style"
-msgstr "Маленький"
+msgstr "Тип"
 
 #: panel.cpp:97
 msgid "T&iny"
@@ -122,16 +120,15 @@ msgstr "Задержка"
 
 #: options.cpp:50 options.cpp:68 options.cpp:86
 msgid "Small"
-msgstr ""
+msgstr "Маленький"
 
 #: options.cpp:51 options.cpp:69 options.cpp:87
-#, fuzzy
 msgid "Large"
 msgstr "Большой"
 
 #: options.cpp:62
 msgid "Visuals"
-msgstr ""
+msgstr "Видымых"
 
 #
 #: options.cpp:64
@@ -139,21 +136,20 @@ msgid "Auto &Hide Panel"
 msgstr "Автоскрывать панель"
 
 #: options.cpp:67 options.cpp:85
-#, fuzzy
 msgid "Delay:"
-msgstr "Задержка"
+msgstr "Задержка:"
 
 #: options.cpp:74 options.cpp:93
 msgid "Speed:"
-msgstr ""
+msgstr "Скорость:"
 
 #: options.cpp:75 options.cpp:94 options.cpp:103
 msgid "Slow"
-msgstr ""
+msgstr "Медленно"
 
 #: options.cpp:76 options.cpp:95 options.cpp:104
 msgid "Fast"
-msgstr ""
+msgstr "Быстро"
 
 #
 #: options.cpp:82
@@ -162,11 +158,11 @@ msgstr "Автоскрывать задачи"
 
 #: options.cpp:100
 msgid "Animate Show/Hide"
-msgstr ""
+msgstr "Анимация скрыть/показать"
 
 #: options.cpp:102
 msgid "Speed"
-msgstr ""
+msgstr "Скорость"
 
 #: options.cpp:117
 msgid "Others"
@@ -179,82 +175,65 @@ msgstr "Персональные вначале"
 
 #
 #: options.cpp:120
-#, fuzzy
 msgid "F&olders First"
-msgstr "Персональные вначале"
+msgstr "Папки вначале"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
-msgstr ""
+msgstr "Часы показывают время в AM/PM формате"
 
 #: disknav.cpp:38
 msgid "History"
-msgstr ""
+msgstr "История"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr ""
+msgstr "Редактировать элементы: (возьмите папку и создайте ссылку)"
 
 #: disknav.cpp:64
 msgid "Edit &Local..."
-msgstr ""
+msgstr "Редактировать локальные..."
 
 #: disknav.cpp:74
 msgid "Edit &Global..."
-msgstr ""
+msgstr "Редактировать глобальные..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr ""
+msgstr "Максимальное количество папок в надавних:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr ""
+msgstr "Максимальное количество файлов в недавних:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr ""
+msgstr "Максимальное количество файлов в одной папке:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr ""
+msgstr "Показывать скрытые файлы"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr ""
+msgstr "Игнорировать регистр при сортировке"
 
 #: disknav.cpp:173
 msgid "Show Global section"
-msgstr ""
+msgstr "Показывать глобальные"
 
 #: disknav.cpp:180
-#, fuzzy
 msgid "Show Local section"
-msgstr "Расположение"
+msgstr "Показывать локальные"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr ""
+msgstr "Показывать недавние"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr ""
+msgstr "Показывать элемент опции"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr ""
-
-#~ msgid "ms"
-#~ msgstr "мс"
-
-#~ msgid "Clock"
-#~ msgstr "Часы"
-
-#~ msgid "&24h"
-#~ msgstr "24ч"
-
-#~ msgid "&12h AM/PM"
-#~ msgstr "12 ч"
-
-#~ msgid "Large Style"
-#~ msgstr "Большой"
+msgstr "Терминальное приложение:"
