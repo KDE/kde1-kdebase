@@ -1,108 +1,128 @@
-#: main.C:63
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-10-09 22:06-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.C:64
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
 "kwm: Es scheint, daß schon ein anderer Windowmanager läuft, kwm angehalten\n"
 
-#: main.C:77
+#: main.C:78
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: Probleme beim Initialisieren; gebe auf \n"
 
-#: main.C:352
+#: main.C:363
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:356
+#: main.C:367
 msgid "Usage: "
 msgstr "Verwendung: "
 
-#: main.C:367
+#: main.C:378
 msgid "Maximize"
 msgstr "Maximieren"
 
-#: main.C:368
+#: main.C:379
 msgid "Restore"
 msgstr "Wiederherstellen"
 
-#: main.C:369
+#: main.C:380
 msgid "Iconify"
 msgstr "Minimieren"
 
-#: main.C:370
+#: main.C:381
 msgid "DeIconify"
 msgstr "Wiederherstellen"
 
-#: main.C:371
+#: main.C:382
 msgid "Sticky"
 msgstr "Anheften an"
 
-#: main.C:372
+#: main.C:383
 #, fuzzy
 msgid "UnSticky"
 msgstr "Anheften aus"
 
-#: main.C:373
+#: main.C:384
 msgid "Move"
 msgstr "Verschieben"
 
-#: main.C:374
+#: main.C:385
 msgid "Resize"
 msgstr "Größe ändern"
 
-#: main.C:376
+#: main.C:387
 msgid "To desktop"
 msgstr "Auf Arbeitsplatz"
 
-#: main.C:378
+#: main.C:389
 msgid "Onto current desktop"
 msgstr ""
 
-#: main.C:416
+#: main.C:437
 msgid "One"
 msgstr "Eins"
 
-#: main.C:419
+#: main.C:440
 msgid "Two"
 msgstr "Zwei"
 
-#: main.C:422
+#: main.C:443
 msgid "Three"
 msgstr "Drei"
 
-#: main.C:425
+#: main.C:446
 msgid "Four"
 msgstr "Vier"
 
-#: main.C:428
+#: main.C:449
 msgid "Five"
 msgstr "Fünf"
 
-#: main.C:431
+#: main.C:452
 msgid "Six"
 msgstr "Sechs"
 
-#: main.C:434
+#: main.C:455
 msgid "Seven"
 msgstr "Sieben"
 
-#: main.C:437
+#: main.C:458
 msgid "Eight"
 msgstr "Acht"
 
-#: main.C:878
+#: main.C:841
 msgid "*** No Tasks ***"
 msgstr "*** Keine Programme ***"
 
-#: logout.C:34 task.C:35
+#: minicli.C:66
+msgid "Command:"
+msgstr "Ausführen"
+
+#: logout.C:35 task.C:36
 msgid "Logout"
 msgstr "KDE beenden"
 
-#: logout.C:44
+#: logout.C:45
 msgid "Session prepared for logout"
 msgstr "Sitzung vorbereitet zum Ausloggen"
 
-#: logout.C:49
+#: logout.C:51
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
@@ -110,7 +130,7 @@ msgstr ""
 "Die folgenden Programme enthalten ungespeicherte Daten,\n"
 "die nicht wiederhergestellt werden können."
 
-#: logout.C:58
+#: logout.C:62
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
@@ -118,113 +138,89 @@ msgstr ""
 "Die folgenden Programme können in der nächsten Sitzung nicht voll-\n"
 "kommen wiederhergestellt werden. Sie sollten keine wichtigen Daten enthalten."
 
-#: logout.C:67
+#: logout.C:73
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
 "Die folgenden Programme sind nicht X11-konform und können in der nächsten\n"
-"Sitzung nicht wiederhergestellt werden. Sie sollten keine wichtigen Daten enthalten."
+"Sitzung nicht wiederhergestellt werden. Sie sollten keine wichtigen Daten "
+"enthalten."
 
-#: task.C:34
+#: task.C:35
 msgid "Switch to"
 msgstr "Wechseln zu"
 
-#: task.C:48
+#: task.C:49
 msgid "Current session"
 msgstr "Aktuelle Sitzung"
 
-#: kwm.C:73
-msgid ""
-"kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-"     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-"     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-"     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-"     No warranty. Please see the README's\n"
-msgstr ""
-"Version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-"     basierend auf 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-"     basierend auf 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-"     Teile von 9wm 1.1 Copyright (c) 1994 David Hogan übernommen.\n"
-"     Jegliche Gewährleistung ausgeschlossen\n"
+#~ msgid ""
+#~ "kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
+#~ "     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
+#~ "     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
+#~ "     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
+#~ "     No warranty. Please see the README's\n"
+#~ msgstr ""
+#~ "Version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
+#~ "     basierend auf 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
+#~ "     basierend auf 0.1 Copyright (c) 1996 Matthias Ettrich \n"
+#~ "     Teile von 9wm 1.1 Copyright (c) 1994 David Hogan übernommen.\n"
+#~ "     Jegliche Gewährleistung ausgeschlossen\n"
 
-#: kwm.C:79
-#, c-format
-msgid "patch level %d"
-msgstr "Unterversion %d"
+#~ msgid "patch level %d"
+#~ msgstr "Unterversion %d"
 
-#: kwm.C:154
-msgid "usage: kwm [-version] [-exec prog] \n"
-msgstr "Gebrauch: kwm [-version] [-exec prog]\n"
+#~ msgid "usage: kwm [-version] [-exec prog] \n"
+#~ msgstr "Gebrauch: kwm [-version] [-exec prog]\n"
 
-#: kwm.C:566
-msgid "Desktop"
-msgstr "Arbeitsplatz"
+#~ msgid "Desktop"
+#~ msgstr "Arbeitsplatz"
 
-#: kwm.C:731
-msgid "kwm: exiting on signal\n"
-msgstr "kwm: Abbruch durch Signal\n"
+#~ msgid "kwm: exiting on signal\n"
+#~ msgstr "kwm: Abbruch durch Signal\n"
 
-#: main.C:371
-msgid "&Help on desktop"
-msgstr "&Hilfe zum Desktop"
+#~ msgid "&Help on desktop"
+#~ msgstr "&Hilfe zum Desktop"
 
-#: main.C:372
-msgid "&Execute command"
-msgstr "Befehl &ausführen"
+#~ msgid "&Execute command"
+#~ msgstr "Befehl &ausführen"
 
-#: main.C:373
-msgid "&Display properties"
-msgstr "&Bildschirmeigenschaften"
+#~ msgid "&Display properties"
+#~ msgstr "&Bildschirmeigenschaften"
 
-#: main.C:374
-msgid "&Refresh desktop"
-msgstr "Bildschirm &neu aufbauen"
+#~ msgid "&Refresh desktop"
+#~ msgstr "Bildschirm &neu aufbauen"
 
-#: main.C:375
-msgid "&Arrange icons"
-msgstr "&Icons neu anordnen"
+#~ msgid "&Arrange icons"
+#~ msgstr "&Icons neu anordnen"
 
-#: main.C:377
-msgid "&Lock screen"
-msgstr "Bildschirm &sperren"
+#~ msgid "&Lock screen"
+#~ msgstr "Bildschirm &sperren"
 
-#: main.C:378
-msgid "Lo&gout"
-msgstr "KDE be&enden"
+#~ msgid "Lo&gout"
+#~ msgstr "KDE be&enden"
 
-#: main.C:1141
-msgid "(Un) Ma&ximize"
-msgstr "Ma&ximieren/Minimieren"
+#~ msgid "(Un) Ma&ximize"
+#~ msgstr "Ma&ximieren/Minimieren"
 
-#: main.C:1142
-msgid "&Iconify"
-msgstr "Mi&nimieren"
+#~ msgid "&Iconify"
+#~ msgstr "Mi&nimieren"
 
-#: main.C:1143
-msgid "&Move"
-msgstr "&Verschieben"
+#~ msgid "&Move"
+#~ msgstr "&Verschieben"
 
-#: main.C:1144
-msgid "&Resize"
-msgstr "&Größe ändern"
+#~ msgid "&Resize"
+#~ msgstr "&Größe ändern"
 
-#: main.C:1145
-msgid "(Un) &Sticky"
-msgstr "An&heften an/aus"
+#~ msgid "(Un) &Sticky"
+#~ msgstr "An&heften an/aus"
 
-#: main.C:1146
-msgid "&To Desktop"
-msgstr "Auf &Arbeitsplatz"
+#~ msgid "&To Desktop"
+#~ msgstr "Auf &Arbeitsplatz"
 
-#: main.C:1148
-msgid "&Close"
-msgstr "&Schließen"
+#~ msgid "&Close"
+#~ msgstr "&Schließen"
 
-#: main.C:1149
-msgid "&Destroy"
-msgstr "&Vernichten"
-
-#: minicli.C:65
-msgid "Command:"
-msgstr "Ausführen"
+#~ msgid "&Destroy"
+#~ msgstr "&Vernichten"

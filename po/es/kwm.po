@@ -1,4 +1,20 @@
-#: main.C:63
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-10-09 22:06-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.C:64
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
@@ -6,242 +22,202 @@ msgstr ""
 "kwm: parece que ya hay un administrador de ventanas funcionando. El kwm no "
 "arrancar\n"
 
-#: main.C:77
+#: main.C:78
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: error durante la inicialización; abortando\n"
 
-#: main.C:352
+#: main.C:363
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:356
+#: main.C:367
 msgid "Usage: "
 msgstr ""
 
-#: main.C:367
+#: main.C:378
 #, fuzzy
 msgid "Maximize"
 msgstr "(Des) Ma&ximizar"
 
-#: main.C:368
+#: main.C:379
 msgid "Restore"
 msgstr ""
 
-#: main.C:369
+#: main.C:380
 #, fuzzy
 msgid "Iconify"
 msgstr "&Iconizar"
 
-#: main.C:370
+#: main.C:381
 #, fuzzy
 msgid "DeIconify"
 msgstr "&Iconizar"
 
-#: main.C:371
+#: main.C:382
 msgid "Sticky"
 msgstr ""
 
-#: main.C:372
+#: main.C:383
 msgid "UnSticky"
 msgstr ""
 
-#: main.C:373
+#: main.C:384
 #, fuzzy
 msgid "Move"
 msgstr "&Mover"
 
-#: main.C:374
+#: main.C:385
 #, fuzzy
 msgid "Resize"
 msgstr "Cambiar tamaño"
 
-#: main.C:376
+#: main.C:387
 #, fuzzy
 msgid "To desktop"
 msgstr "Al Escritorio"
 
-#: main.C:378
+#: main.C:389
 msgid "Onto current desktop"
 msgstr ""
 
-#: main.C:416
+#: main.C:437
 msgid "One"
 msgstr "Uno"
 
-#: main.C:419
+#: main.C:440
 msgid "Two"
 msgstr "Dos"
 
-#: main.C:422
+#: main.C:443
 msgid "Three"
 msgstr "Tres"
 
-#: main.C:425
+#: main.C:446
 msgid "Four"
 msgstr "Cuatro"
 
-#: main.C:428
+#: main.C:449
 msgid "Five"
 msgstr "Cinco"
 
-#: main.C:431
+#: main.C:452
 msgid "Six"
 msgstr "Seis"
 
-#: main.C:434
+#: main.C:455
 msgid "Seven"
 msgstr "Siete"
 
-#: main.C:437
+#: main.C:458
 msgid "Eight"
 msgstr "Ocho"
 
-#: main.C:878
+#: main.C:841
 msgid "*** No Tasks ***"
 msgstr ""
 
-#: logout.C:34 task.C:35
+#: minicli.C:66
+msgid "Command:"
+msgstr "Comando:"
+
+#: logout.C:35 task.C:36
 #, fuzzy
 msgid "Logout"
 msgstr "Salir"
 
-#: logout.C:44
+#: logout.C:45
 msgid "Session prepared for logout"
 msgstr ""
 
-#: logout.C:49
+#: logout.C:51
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
 
-#: logout.C:58
+#: logout.C:62
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
 
-#: logout.C:67
+#: logout.C:73
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
 
-#: task.C:34
+#: task.C:35
 msgid "Switch to"
 msgstr ""
 
-#: task.C:48
+#: task.C:49
 msgid "Current session"
 msgstr ""
 
-#: kwm.C:73
-msgid ""
-"kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-"     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-"     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-"     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-"     No warranty. Please see the README's\n"
-msgstr ""
-"kwm: versión 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-"     basado en versiones 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-"     basado en versión 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-"     Partes derivadas del 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-"     No hay garantías. Por favor lea el archivo README\n"
-
-#: kwm.C:79
-#, c-format
-msgid "patch level %d"
-msgstr "patch level %d"
-
-#: kwm.C:154
-msgid "usage: kwm [-version] [-exec prog] \n"
-msgstr "uso: kwm [-version] [-exec prog] \n"
-
-#: kwm.C:566
-msgid "Desktop"
-msgstr "Escritorio"
-
-#: kwm.C:731
-msgid "kwm: exiting on signal\n"
-msgstr "kwm: saliendo por la señal\n"
-
-#: main.C:371
-msgid "&Help on desktop"
-msgstr "Ayuda sobre el escritorio"
-
-#: main.C:372
-msgid "&Execute command"
-msgstr "&Ejecutar comando"
-
-#: main.C:373
-msgid "&Display properties"
-msgstr "Propiedades del &Display"
-
-#: main.C:374
-msgid "&Refresh desktop"
-msgstr "&Refrescar escritorio"
-
-#: main.C:375
-msgid "&Arrange icons"
-msgstr "&Acomodar iconos"
-
-#: main.C:377
-msgid "&Lock screen"
-msgstr "B&loquear la pantalla"
-
-#: main.C:378
-msgid "Lo&gout"
-msgstr "Salir"
-
-#: main.C:1141
-msgid "(Un) Ma&ximize"
-msgstr "(Des) Ma&ximizar"
-
-#: main.C:1142
-msgid "&Iconify"
-msgstr "&Iconizar"
-
-#: main.C:1143
-msgid "&Move"
-msgstr "&Mover"
-
-#: main.C:1144
-msgid "&Resize"
-msgstr "Cambiar tamaño"
-
-#: main.C:1145
-msgid "(Un) &Sticky"
-msgstr ""
-
-#: main.C:1146
-msgid "&To Desktop"
-msgstr "Al Escritorio"
-
-#: main.C:1148
-msgid "&Close"
-msgstr "&Cerrar"
-
-#: main.C:1149
-msgid "&Destroy"
-msgstr "&Destruir"
-
-#: minicli.C:65
-msgid "Command:"
-msgstr "Comando:"
-
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 #~ msgid ""
+#~ "kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
+#~ "     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
+#~ "     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
+#~ "     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
+#~ "     No warranty. Please see the README's\n"
 #~ msgstr ""
-#~ "Project-Id-Version: PACKAGE VERSION\n"
-#~ "POT-Creation-Date: 1997-08-31 17:45+0200\n"
-#~ "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-#~ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-#~ "Language-Team: LANGUAGE <LL@li.org>\n"
-#~ "MIME-Version: 1.0\n"
-#~ "Content-Type: text/plain; charset=CHARSET\n"
-#~ "Content-Transfer-Encoding: ENCODING\n"
+#~ "kwm: versión 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
+#~ "     basado en versiones 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
+#~ "     basado en versión 0.1 Copyright (c) 1996 Matthias Ettrich \n"
+#~ "     Partes derivadas del 9wm 1.1 Copyright (c) 1994 David Hogan\n"
+#~ "     No hay garantías. Por favor lea el archivo README\n"
+
+#~ msgid "patch level %d"
+#~ msgstr "patch level %d"
+
+#~ msgid "usage: kwm [-version] [-exec prog] \n"
+#~ msgstr "uso: kwm [-version] [-exec prog] \n"
+
+#~ msgid "Desktop"
+#~ msgstr "Escritorio"
+
+#~ msgid "kwm: exiting on signal\n"
+#~ msgstr "kwm: saliendo por la señal\n"
+
+#~ msgid "&Help on desktop"
+#~ msgstr "Ayuda sobre el escritorio"
+
+#~ msgid "&Execute command"
+#~ msgstr "&Ejecutar comando"
+
+#~ msgid "&Display properties"
+#~ msgstr "Propiedades del &Display"
+
+#~ msgid "&Refresh desktop"
+#~ msgstr "&Refrescar escritorio"
+
+#~ msgid "&Arrange icons"
+#~ msgstr "&Acomodar iconos"
+
+#~ msgid "&Lock screen"
+#~ msgstr "B&loquear la pantalla"
+
+#~ msgid "Lo&gout"
+#~ msgstr "Salir"
+
+#~ msgid "(Un) Ma&ximize"
+#~ msgstr "(Des) Ma&ximizar"
+
+#~ msgid "&Iconify"
+#~ msgstr "&Iconizar"
+
+#~ msgid "&Move"
+#~ msgstr "&Mover"
+
+#~ msgid "&Resize"
+#~ msgstr "Cambiar tamaño"
+
+#~ msgid "&To Desktop"
+#~ msgstr "Al Escritorio"
+
+#~ msgid "&Close"
+#~ msgstr "&Cerrar"
+
+#~ msgid "&Destroy"
+#~ msgstr "&Destruir"

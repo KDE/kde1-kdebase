@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-08-31 17:45+0200\n"
+"POT-Creation-Date: 1997-10-09 22:06-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,142 +14,190 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: error.C:28
+#: main.C:64
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: zdá se, ¾e je spu¹tìný jiný window manager manager."
-"kwm není spu¹»en\n"
+"kwm: zdá se, ¾e je spu¹tìný jiný window manager manager.kwm není spu¹»en\n"
 
-#: error.C:42
+#: main.C:78
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: selhání bìhem inicializace; ukonèuji\n"
 
-#: kwm.C:73
-msgid ""
-"kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-"     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-"     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-"     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-"     No warranty. Please see the README's\n"
-msgstr ""
-"kwm: verze 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-"     zalo¾eno na verzi 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-"     zalo¾eno na verzi 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-"     Èasti pøevzaté z  9wm 1.1 Copyright (c) 1994 David Hogan\n"
-"     Bez záruky. Prosím pøeètìte si README\n"
-
-#: kwm.C:79
-#, c-format
-msgid "patch level %d"
+#: main.C:363
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: kwm.C:154
-msgid "usage: kwm [-version] [-exec prog] \n"
-msgstr "Pou¾ití: kwm [-version] [-exec prog] \n"
-
-#: kwm.C:566
-msgid "Desktop"
-msgstr "Pracovní plocha"
-
-#: kwm.C:731
-msgid "kwm: exiting on signal\n"
-msgstr "kwm: ukonèení po signálu\n"
-
-#: main.C:371
-msgid "&Help on desktop"
-msgstr "&Nápovìda pracovní plochy"
-
-#: main.C:372
-msgid "&Execute command"
-msgstr "Vykonej &pøíkaz"
-
-#: main.C:373
-msgid "&Display properties"
-msgstr "&Vlastnosti obrazovky"
-
-#: main.C:374
-msgid "&Refresh desktop"
-msgstr "&Obnov pracovní plochu"
-
-#: main.C:375
-msgid "&Arrange icons"
-msgstr "&Uspoøádej ikony"
-
-#: main.C:377
-msgid "&Lock screen"
-msgstr "&©etøiè obrazovky"
+#: main.C:367
+msgid "Usage: "
+msgstr ""
 
 #: main.C:378
-msgid "Lo&gout"
-msgstr "O&dhlá¹ení"
+#, fuzzy
+msgid "Maximize"
+msgstr "(Od)Ma&ximalizuj"
 
-#: main.C:1093
+#: main.C:379
+msgid "Restore"
+msgstr ""
+
+#: main.C:380
+#, fuzzy
+msgid "Iconify"
+msgstr "&Ikonifikuj"
+
+#: main.C:381
+#, fuzzy
+msgid "DeIconify"
+msgstr "&Ikonifikuj"
+
+#: main.C:382
+#, fuzzy
+msgid "Sticky"
+msgstr "&Pøipevnìní (zapnout/vypnout)"
+
+#: main.C:383
+#, fuzzy
+msgid "UnSticky"
+msgstr "&Pøipevnìní (zapnout/vypnout)"
+
+#: main.C:384
+#, fuzzy
+msgid "Move"
+msgstr "Pøe&suò"
+
+#: main.C:385
+#, fuzzy
+msgid "Resize"
+msgstr "&Zmìò velikost"
+
+#: main.C:387
+#, fuzzy
+msgid "To desktop"
+msgstr "&Na pracovní plochu"
+
+#: main.C:389
+msgid "Onto current desktop"
+msgstr ""
+
+#: main.C:437
 msgid "One"
 msgstr "První"
 
-#: main.C:1095
+#: main.C:440
 msgid "Two"
 msgstr "Druhá"
 
-#: main.C:1097
+#: main.C:443
 msgid "Three"
 msgstr "Tøetí"
 
-#: main.C:1099
+#: main.C:446
 msgid "Four"
 msgstr "Ètvrtá"
 
-#: main.C:1101
+#: main.C:449
 msgid "Five"
 msgstr "Pátá"
 
-#: main.C:1103
+#: main.C:452
 msgid "Six"
 msgstr "©está"
 
-#: main.C:1105
+#: main.C:455
 msgid "Seven"
 msgstr "Sedmá"
 
-#: main.C:1107
+#: main.C:458
 msgid "Eight"
 msgstr "Osmá"
 
-#: main.C:1141
-msgid "(Un) Ma&ximize"
-msgstr "(Od)Ma&ximalizuj"
+#: main.C:841
+msgid "*** No Tasks ***"
+msgstr ""
 
-#: main.C:1142
-msgid "&Iconify"
-msgstr "&Ikonifikuj"
-
-#: main.C:1143
-msgid "&Move"
-msgstr "Pøe&suò"
-
-#: main.C:1144
-msgid "&Resize"
-msgstr "&Zmìò velikost"
-
-#: main.C:1145
-msgid "(Un) &Sticky"
-msgstr "&Pøipevnìní (zapnout/vypnout)"
-
-#: main.C:1146
-msgid "&To Desktop"
-msgstr "&Na pracovní plochu"
-
-#: main.C:1148
-msgid "&Close"
-msgstr "&Uzavøi"
-
-#: main.C:1149
-msgid "&Destroy"
-msgstr "&Zniè"
-
-#: minicli.C:65
+#: minicli.C:66
 msgid "Command:"
 msgstr "Pøíkaz:"
 
+#: logout.C:35 task.C:36
+#, fuzzy
+msgid "Logout"
+msgstr "O&dhlá¹ení"
+
+#: logout.C:45
+msgid "Session prepared for logout"
+msgstr ""
+
+#: logout.C:51
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+
+#: logout.C:62
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+
+#: logout.C:73
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+
+#: task.C:35
+msgid "Switch to"
+msgstr ""
+
+#: task.C:49
+msgid "Current session"
+msgstr ""
+
+#~ msgid ""
+#~ "kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
+#~ "     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
+#~ "     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
+#~ "     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
+#~ "     No warranty. Please see the README's\n"
+#~ msgstr ""
+#~ "kwm: verze 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
+#~ "     zalo¾eno na verzi 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
+#~ "     zalo¾eno na verzi 0.1 Copyright (c) 1996 Matthias Ettrich \n"
+#~ "     Èasti pøevzaté z  9wm 1.1 Copyright (c) 1994 David Hogan\n"
+#~ "     Bez záruky. Prosím pøeètìte si README\n"
+
+#~ msgid "usage: kwm [-version] [-exec prog] \n"
+#~ msgstr "Pou¾ití: kwm [-version] [-exec prog] \n"
+
+#~ msgid "Desktop"
+#~ msgstr "Pracovní plocha"
+
+#~ msgid "kwm: exiting on signal\n"
+#~ msgstr "kwm: ukonèení po signálu\n"
+
+#~ msgid "&Help on desktop"
+#~ msgstr "&Nápovìda pracovní plochy"
+
+#~ msgid "&Execute command"
+#~ msgstr "Vykonej &pøíkaz"
+
+#~ msgid "&Display properties"
+#~ msgstr "&Vlastnosti obrazovky"
+
+#~ msgid "&Refresh desktop"
+#~ msgstr "&Obnov pracovní plochu"
+
+#~ msgid "&Arrange icons"
+#~ msgstr "&Uspoøádej ikony"
+
+#~ msgid "&Lock screen"
+#~ msgstr "&©etøiè obrazovky"
+
+#~ msgid "&Close"
+#~ msgstr "&Uzavøi"
+
+#~ msgid "&Destroy"
+#~ msgstr "&Zniè"
