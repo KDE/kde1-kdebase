@@ -701,7 +701,9 @@ void kPanel::cleanup(){
 }
 
 void kPanel::showSystem(){
-  if (entries[0].popup->isVisible())
+  int i;
+  for (i=0; i<nbuttons && entries[i].button!=kde_button; i++);
+  if (!entries[i].popup || entries[0].popup->isVisible())
     return;
 
   if (info_label->isVisible())

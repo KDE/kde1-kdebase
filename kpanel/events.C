@@ -362,7 +362,16 @@ void kPanel::kwmCommandReceived(QString com){
     QPoint pos(com.mid( 9, 4).toInt(), com.mid(13, 4).toInt());
     int i;
     for (i=0; i<nbuttons && entries[i].button!=kde_button; i++);
-    entries[i].popup->popup(pos);
+    if (entries[i].popup){
+      entries[i].popup->popup(pos);
+      // dirty hack to work around a possible qt bug (Matthias, qt-1.33)
+      XGrabPointer( qt_xdisplay(), entries[i].popup->winId(), TRUE,
+		    ButtonPressMask | ButtonReleaseMask |
+		    PointerMotionMask | EnterWindowMask | LeaveWindowMask,
+		    GrabModeAsync, GrabModeAsync,
+		    None, None, CurrentTime );
+    }
+    
   }
 
 }
