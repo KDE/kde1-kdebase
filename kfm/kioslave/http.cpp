@@ -188,8 +188,10 @@ int KProtocolHTTP::init_sockaddr(struct sockaddr_in *server_name, char *hostname
 	return(SUCCESS);
 }
 
-int KProtocolHTTP::Open(KURL *url, int mode)
+int KProtocolHTTP::Open(KURL *_url, int mode)
 {
+    url = _url->url().data();
+  
     bytesRead = 0;
     startTime.start();
     currentTime.start();
@@ -222,7 +224,7 @@ int KProtocolHTTP::Open(KURL *url, int mode)
 	{
 		struct sockaddr_in server_name;
 
-		if(init_sockaddr(&server_name, url->host(), 80) == FAIL)
+		if(init_sockaddr(&server_name, _url->host(), 80) == FAIL)
 		{
     		Error(KIO_ERROR_UnknownHost, "Unknown host", errno );
 			return(FAIL);
@@ -249,15 +251,15 @@ int KProtocolHTTP::Open(KURL *url, int mode)
 	{
 		/** add hostname when using proxy **/
 		command += "http://";
-		command += url->host();
+		command += _url->host();
 	}
 
-	if ( url->path()[0] != '/' ) command += "/";
-	command += url->path();
+	if ( _url->path()[0] != '/' ) command += "/";
+	command += _url->path();
 	command += " HTTP/1.0\n"; /* start header */
-	if( strlen(url->user()) != 0 )
+	if( strlen(_url->user()) != 0 )
 	{
-		char *www_auth = create_www_auth(url->user(),url->passwd());
+		char *www_auth = create_www_auth(_url->user(),_url->passwd());
 		command += www_auth;
 		free(www_auth);
 	}
@@ -303,9 +305,10 @@ int KProtocolHTTP::ProcessHeader()
 	    else if ( strncmp( buffer, "Location: ", 10 ) == 0 )
 	    {
 		Close();
-		emit redirection( buffer + 10 );
-		KURL u( buffer + 10 );
-		return Open( &u, currentMode );
+		KURL u( url );
+		KURL u2( u, buffer + 10 );
+		emit redirection( u2.url() );
+		return Open( &u2, currentMode );
 	    }
 	    
 	}

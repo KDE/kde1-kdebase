@@ -28,6 +28,9 @@ protected:
     long bytesleft;
     long bytesRead;
     FILE *fsocket;
+
+    QString url;
+
     /**
      * Used to store the parameter given by a call to @ref #Open. We need this
      * for HTTP Redirection.

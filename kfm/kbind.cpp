@@ -686,13 +686,9 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, bool _isdir )
     else
     {
 	KMimeType *typ = KMimeType::getMagicMimeType( _url );
-	debugT("================== Found type '%s'\n", typ->getMimeType());
-	
 	if ( !typ->hasBindings() )
 	    return;
 
-	debugT("================ Has Bindings\n");
-	
 	KMimeBind *bind;
 	for ( bind = typ->firstBinding(); bind != 0L; bind = typ->nextBinding() )
 	{
@@ -706,8 +702,8 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, bool _isdir )
 	    for ( bind = defaultType->firstBinding(); bind != 0L; bind = defaultType->nextBinding() )
 	    {
 		// Does the application support the protocol ?
-		if ( bind->supportsProtocol( u.protocol() ) )
-		    _list.append( bind->getProgram() );
+	      // if ( bind->supportsProtocol( u.protocol() ) )
+	      _list.append( bind->getProgram() );
 	    }
 	}
     }
