@@ -1,18 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"PO-Revision-Date: 1998-04-18 00:34+0200\n"
+"Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: krootwm.C:115 krootwm.C:449
 msgid "Folder"
@@ -41,15 +32,15 @@ msgstr "Actualizar escritorio"
 
 #: krootwm.C:173
 msgid "Unclutter windows"
-msgstr ""
+msgstr "Reordenar ventanas"
 
 #: krootwm.C:174
 msgid "Cascade windows"
-msgstr ""
+msgstr "Cascadear ventanas"
 
 #: krootwm.C:175
 msgid "Arrange icons"
-msgstr "Odenar iconos"
+msgstr "Odenar íconos"
 
 #: krootwm.C:177
 msgid "Lock screen"
@@ -69,10 +60,4 @@ msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: krootwm.C:506
 msgid "Usage:"
-msgstr "Uso:"
-
-#~ msgid "Clear"
-#~ msgstr "Limpiar"
-
-#~ msgid "New"
-#~ msgstr "Nuevo"
+msgstr "Modo de uso:"

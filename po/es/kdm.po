@@ -1,12 +1,10 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"Content-Type: text/plain; charset=\n"
-"Date: 1997-09-09 17:23:06+0200\n"
-"From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
-"Xgettext-Options: -s -C -ktranslate\n"
-"Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp "
-"kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
+"PO-Revision-Date: 1998-04-18 01:36+0200\n"
+"First-Translator: Steffen Hansen\n"
+"Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kdmshutdown.cpp:159
 msgid "Shutdown or restart?"
@@ -47,9 +45,3 @@ msgstr "Iniciar"
 #: kgreeter.cpp:229
 msgid "Shutdown..."
 msgstr "Finalizando..."
-
-#~ msgid "Cancel"
-#~ msgstr "Cancelar"
-
-#~ msgid "Ok"
-#~ msgstr "Aceptar"

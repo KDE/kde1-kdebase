@@ -293,6 +293,14 @@ msgid ""
 "Proxy Manager by Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de"
 msgstr ""
+"Autor: Torben Weis\n"
+"weis@kde.org\n"
+"\n"
+"widget de HTML por Martin Jones\n"
+"mjones@kde.org\n"
+"\n"
+"Soporte de proxy por Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de"
 
 #: kfmgui.cpp:1320
 msgid "Document: Done"
@@ -303,9 +311,8 @@ msgid "ERROR: Drop over malformed URL"
 msgstr "ERROR: soltó sobre una URL incorrecta"
 
 #: kfmview.cpp:377
-#, fuzzy
 msgid "ERROR: You dropped some URL over itself"
-msgstr "Soltó un fichero sobre si mismo"
+msgstr "ERROR: Soltó una URL sobre sí misma"
 
 #: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:412
 #: kfmview.cpp:606 krenamewin.cpp:20 root.cpp:1147
@@ -378,15 +385,15 @@ msgstr "bytes"
 
 #: kbind.cpp:302
 msgid "The mime type config file "
-msgstr "El archivo de configuiración del tipo mime"
+msgstr "El archivo de configuración del tipo mime"
 
 #: kbind.cpp:303
 msgid "does not conatain a MimeType=... entry"
-msgstr "no contiene una entrada MimeType=..."
+msgstr "no contiene un marcador MimeType=..."
 
 #: kbind.cpp:377
 msgid "No mime types installed!"
-msgstr "no hay tipos mime instalados"
+msgstr "No hay tipos mime instalados"
 
 #: kbind.cpp:425 kbind.cpp:1188
 msgid "Could not find mime type\n"
@@ -499,10 +506,9 @@ msgstr "Instalando plantillas"
 
 #: main.cpp:235
 msgid "Cd"
-msgstr ""
+msgstr "Cd"
 
 #: main.cpp:236
-#, fuzzy
 msgid "New View"
 msgstr "Ver &Texto"
 
@@ -511,7 +517,6 @@ msgid "Move to Trash"
 msgstr "Tirar a la papelera"
 
 #: main.cpp:241
-#, fuzzy
 msgid "Open with"
 msgstr "Abrir con:"
 
@@ -628,90 +633,89 @@ msgid ""
 "Could not rename the file or directory\n"
 "The destination seems to already exist\n"
 msgstr ""
+"Imposible cambiar el nombre del archivo o directorio\n"
+"El destino ya parece existir\n"
 
 #: kfmprops.cpp:407
 msgid "Access permissions"
-msgstr "Permisos de acceso"
+msgstr "Derechos de acceso"
 
 #: kfmprops.cpp:413
 msgid ""
 "Show\n"
 "Entries"
 msgstr ""
+"Mostrar\n"
+"Entradas"
 
 #: kfmprops.cpp:415
-#, fuzzy
 msgid "Read"
-msgstr "&Actualizar"
+msgstr "Leer"
 
 #: kfmprops.cpp:420
 msgid ""
 "Write\n"
 "Entries"
 msgstr ""
+"Escribir\n"
+"Entradas"
 
 #: kfmprops.cpp:422
-#, fuzzy
 msgid "Write"
-msgstr "Usuario/Escribir"
+msgstr "Escribir"
 
 #: kfmprops.cpp:427
 msgid ""
 "Change\n"
 "Into"
 msgstr ""
+"Cambiar\n"
+"a"
 
 #: kfmprops.cpp:429
-#, fuzzy
 msgid "Exec"
 msgstr "Ejecutar"
 
 #: kfmprops.cpp:433
 msgid "Special"
-msgstr ""
+msgstr "Especial"
 
 #: kfmprops.cpp:437
-#, fuzzy
 msgid "User"
-msgstr "Usuario/Leer"
+msgstr "Usuario"
 
 #: kfmprops.cpp:447
-#, fuzzy
 msgid "Others"
-msgstr "Otros/Leer"
+msgstr "Otros"
 
 #: kfmprops.cpp:460
 msgid "Set UID"
 msgstr "Asignar UID"
 
 #: kfmprops.cpp:461
-#, fuzzy
 msgid "Set GID"
-msgstr "Asignar UID"
+msgstr "Asignar GID"
 
 #: kfmprops.cpp:462
 msgid "Sticky"
 msgstr "Pinchable"
 
 #: kfmprops.cpp:480
-#, fuzzy
 msgid "Ownership"
 msgstr "Propietario"
 
 #: kfmprops.cpp:610
-#, fuzzy
 msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
 msgstr ""
-"Imposible escribir\n"
-"%s\n"
-"Quizás acceso denegado"
+"Imposible cambiar derechos\n"
+"Quizás acceso denegado."
 
 #: kfmprops.cpp:625
 #, c-format
 msgid " ERROR: No user %s"
-msgstr "ERROR: No existe usuario %s"
+msgstr " ERROR: No existe usuario %s"
 
 #: kfmprops.cpp:630
 #, c-format
@@ -719,14 +723,12 @@ msgid " ERROR: No group %s"
 msgstr "ERROR: No existe grupo %s"
 
 #: kfmprops.cpp:636
-#, fuzzy
 msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
 msgstr ""
-"Imposible escribir\n"
-"%s\n"
-"Quizás acceso denegado"
+"Imposible cambiar propietario/grupo\n"
+"Quizás acceso denegado."
 
 #: kfmprops.cpp:654
 msgid "Swallowing on panel"
@@ -747,6 +749,9 @@ msgstr "Directorio de trabajo"
 #: kfmprops.cpp:703
 msgid "Window Title"
 msgstr ""
+"Puede ejecutar este programa\n"
+"en el pánel o en una terminal,\n"
+"pero no en ámbos."
 
 #: kfmprops.cpp:707
 msgid "Run in terminal"
@@ -763,7 +768,7 @@ msgid ""
 "Perhaps permissions denied"
 msgstr ""
 "Imposible guardar las propiedades\n"
-"Quizás se han denegado los permisos"
+"Quizás acceso denegado"
 
 #: kfmprops.cpp:864
 msgid "URL"
@@ -796,7 +801,7 @@ msgstr "Comentario"
 
 #: kfmprops.cpp:1242
 msgid "Name ( in your language )"
-msgstr "Nombre ( en tu idioma )"
+msgstr "Nombre ( en su idioma )"
 
 #: kfmprops.cpp:1471
 msgid "Pattern ( example: *.html;*.HTML; )"
@@ -824,7 +829,7 @@ msgstr "Sólo lectura"
 
 #: kfmprops.cpp:1662
 msgid "Filesystems ( iso9660,msdos,minix,default )"
-msgstr "Sistemas de ficheros ( iso9660,msdos,minix,default )"
+msgstr "Sistemas de archivos ( iso9660,msdos,minix,default )"
 
 #: kfmprops.cpp:1672
 msgid "Mounted Icon"
@@ -836,46 +841,54 @@ msgstr "Icono cuando no está montado"
 
 #: kfmserver.cpp:40
 msgid "Could not create ~/.kde/share/apps/kfm/magic"
-msgstr ""
+msgstr "Imposible crear ~/.kde/share/apps/kfm/magic"
 
 #: kfmserver.cpp:50
 msgid ""
 "Please change the password in\n"
 "~/.kde/share/apps/kfm/magic"
 msgstr ""
+"Por favor cambie su contraseña en\n"
+"~/.kde/share/apps/kfm/magic"
 
 #: kfmserver.cpp:78
-#, fuzzy
 msgid "Do you really want to rearrange your icons ?"
-msgstr "Realmente desea salir"
+msgstr "Realmente desea reorganizar sus íconos?"
 
 #: kfmserver.cpp:234
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "The URL\n"
 "%s\n"
 "is malformed"
 msgstr ""
-"URL incorrecta\n"
+"La URL\n"
 "%s"
+"es incorrecta"
 
 #: kfmserver.cpp:285
 msgid ""
 "You dont have the file ~/.kde/share/apps/kfm/magic\n"
 "Authorization failed"
 msgstr ""
+"No tiene el archivo ~/.kde/share/apps/kfm/magic\n"
+"La autorización falló"
 
 #: kfmserver.cpp:294
 msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
 msgstr ""
+"El archivo ~/.kde/share/apps/kfm/magic se corrumpió\n"
+"La autorización falló"
 
 #: kfmserver.cpp:302
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
 msgstr ""
+"Alguien intentó autorizarse usando\n"
+"una contraseña incorrecta"
 
 #: root.cpp:661
 msgid ""
@@ -883,6 +896,9 @@ msgid ""
 "New root grid dimensions would move some icons\n"
 "off the desktop."
 msgstr ""
+"Imposible ejecutar acción.\n"
+"Las nuevas dimensiones de la red de fondo\n"
+"moverían algunos íconos fuera del escritorio"
 
 #: root.cpp:696
 msgid "Internal Error: desktopDir is malformed"
@@ -899,7 +915,7 @@ msgstr "ERROR: Imposible soltar"
 
 #: kfmman.cpp:1212 root.cpp:1695
 msgid "Dont know what to do."
-msgstr "Imposible determinar la acción"
+msgstr "Imposible determinar la acción."
 
 #: kfmman.cpp:1238 kfmtree.cpp:164 root.cpp:1720
 msgid "Dont know what to do"
@@ -937,23 +953,26 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:240
-#, fuzzy
 msgid "Can only make links on local file system"
-msgstr "ERROR: Sólo se pueden realizar enlaces en sistemas de ficheros locales"
+msgstr "ERROR: Sólo se pueden crear ligas en sistemas de archivos locales"
 
 #: kiojob.cpp:263 kiojob.cpp:282
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not overwrite\n"
 "%s"
-msgstr "Imposible escribir en\n"
+msgstr ""
+"Imposible sobreescribir\n"
+"%s"
 
 #: kiojob.cpp:292 kiojob.cpp:315 kiojob.cpp:334
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not make symlink to\n"
 "%s"
-msgstr "ERROR: Imposible realizar enlace simbólico con %s"
+msgstr ""
+"Imposible crear liga a\n"
+"%s"
 
 #: kiojob.cpp:368
 #, c-format
@@ -1093,7 +1112,7 @@ msgid ""
 msgstr ""
 "Imposible entrar en\n"
 "%s\n"
-"Quizás la contraseña sea incorrecta"
+"Quizás la contraseña es incorrecta"
 
 #: kiojob.cpp:1289 kiojob.cpp:1396
 #, c-format
@@ -1203,24 +1222,23 @@ msgstr "Error de instalación de KFM"
 
 #: autostart.cpp:29
 msgid "The directory "
-msgstr "El directorio"
+msgstr "El directorio "
 
 #: autostart.cpp:30
 msgid " does not exist\n"
 msgstr " no existe\n"
 
 #: kfmtree.cpp:396
-#, fuzzy
 msgid "My Home"
 msgstr "&Inicio"
 
 #: kfmtree.cpp:398
 msgid "Desktop"
-msgstr ""
+msgstr "Escritorio"
 
 #: kfmtree.cpp:400
 msgid "Root"
-msgstr ""
+msgstr "Raíz"
 
 #: krenamewin.cpp:26
 msgid "Rename"
@@ -1239,9 +1257,8 @@ msgid "Overwrite All"
 msgstr "Sobreescribir todo"
 
 #: krenamewin.cpp:52
-#, fuzzy
 msgid "You try to overwrite"
-msgstr "Imposible escribir en\n"
+msgstr "Esta intentando sobreescribir"
 
 #: krenamewin.cpp:63
 msgid "already exists. Overwrite with"
@@ -1253,7 +1270,7 @@ msgstr "O cambiar nombre a"
 
 #: krenamewin.cpp:121
 msgid "You did not change the name!\n"
-msgstr ""
+msgstr "No cambió el nombre!\n"
 
 #: passworddialog.cpp:41 passworddialog.cpp:80
 msgid "Password"

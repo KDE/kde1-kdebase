@@ -1,18 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1997-12-31 15:27+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"PO-Revision-Date: 1998-04-17 22:13+0200\n"
+"Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: main.cpp:99
 msgid "&Appearance"
@@ -39,21 +30,21 @@ msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
 msgstr ""
-"Lo siento, pero no tienes permiso de\n"
-"lectura/escritura sobre el fichero de\n"
-"configuracin del KDM."
+"No tiene derechos de\n"
+"lectura/escritura sobre el archivo\n"
+"de configuración del KDM."
 
 #: main.cpp:121
 msgid "Missing privileges"
-msgstr ""
+msgstr "Faltan privilegios"
 
 #: main.cpp:158
 msgid "KDM Configuration"
-msgstr "Cofiguración del KDM"
+msgstr "Configuración del KDM"
 
 #: kdm-appear.cpp:66
 msgid "Appearance"
-msgstr ""
+msgstr "Aspecto"
 
 #: kdm-appear.cpp:69
 msgid "Greeting string:"
@@ -65,7 +56,7 @@ msgstr "Logotipo del KDM:"
 
 #: kdm-appear.cpp:104 kdm-users.cpp:139
 msgid "Click or drop an image here"
-msgstr "Haga Click, o deje una imagen aquí"
+msgstr "Haga click, o deje caer una imágen aquí"
 
 #: kdm-appear.cpp:109
 msgid "GUI Style:"
@@ -73,42 +64,40 @@ msgstr "Estilo del GUI:"
 
 #: kdm-appear.cpp:115
 msgid "Motif"
-msgstr ""
+msgstr "Motif"
 
 #: kdm-appear.cpp:116
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: kdm-appear.cpp:135 kdm-appear.cpp:219 kdm-users.cpp:244
 msgid ""
 "There was an error loading the image:\n"
 ">"
 msgstr ""
-"Se ha producido un error al cargar la imagen:\n"
+"Hubo un error al cargar la imágen:\n"
 ">"
 
 #: kdm-appear.cpp:137 kdm-appear.cpp:156 kdm-users.cpp:164
 msgid "<"
-msgstr ""
+msgstr "<"
 
 #: kdm-appear.cpp:138 kdm-appear.cpp:157 kdm-appear.cpp:222 kdm-users.cpp:165
 #: kdm-users.cpp:247
 msgid "ERROR"
-msgstr ""
+msgstr "ERROR"
 
 #: kdm-appear.cpp:154 kdm-users.cpp:162
 msgid ""
 "There was an error saving the image:\n"
 ">"
 msgstr ""
-"Se ha producido un error al guardar la imagen:\n"
+"Hubo un error al guardar la imágen:\n"
 ">"
-
-
 
 #: kdm-appear.cpp:187 kdm-users.cpp:195
 msgid "Sorry, but \n"
-msgstr "Lo siento, pero \n"
+msgstr "Perdón, pero \n"
 
 #: kdm-appear.cpp:189 kdm-users.cpp:197
 msgid ""
@@ -124,11 +113,11 @@ msgid ""
 "Please use files with these extensions\n"
 msgstr ""
 "\n"
-"Por favor, utiliza ficheros con las siguientes extensiones\n"
+"Por favor, utilice ficheros con las siguientes extensiones\n"
 
 #: kdm-appear.cpp:192 kdm-users.cpp:200
 msgid "Improper File Extension"
-msgstr "Fichero con extension indebida"
+msgstr "Fichero con extensión indebida"
 
 #: kdm-appear.cpp:221 kdm-users.cpp:246
 msgid ""
@@ -144,7 +133,7 @@ msgstr "Eligir fuentes"
 
 #: kdm-font.cpp:51
 msgid "Change font"
-msgstr "Cambiar fuentes"
+msgstr "Cambiar fuente"
 
 #: kdm-font.cpp:59
 msgid "Greeting"
@@ -160,15 +149,15 @@ msgstr "Estándar"
 
 #: kdm-font.cpp:62
 msgid "Example:"
-msgstr "Ejamplo:"
+msgstr "Ejemplo:"
 
 #: kdm-bgnd.cpp:67
 msgid "Color"
-msgstr ""
+msgstr "Color"
 
 #: kdm-bgnd.cpp:75
 msgid "Wallpaper"
-msgstr "Papel de fondo"
+msgstr "Papel tapíz"
 
 #: kdm-bgnd.cpp:110
 msgid "Tiled"
@@ -224,15 +213,15 @@ msgstr "Ordenar usuarios"
 
 #: kdm-users.cpp:150 kdm-users.cpp:219
 msgid "No user selected"
-msgstr "Ningn usuario seleccionado"
+msgstr "Ningún usuario seleccionado"
 
 #: kdm-users.cpp:151 kdm-users.cpp:220
 msgid "Save image as default image?"
-msgstr "¿Guardar esta imagen como la imagen por defecto?"
+msgstr "¿Guardar esta imagen como la imágen por defecto?"
 
 #: kdm-sess.cpp:51
 msgid "Allow to shutdown:"
-msgstr "Permitir Apager la máquina:"
+msgstr "Permitir apagar la máquina:"
 
 #: kdm-sess.cpp:58
 msgid "None"
@@ -244,7 +233,7 @@ msgstr "Todos"
 
 #: kdm-sess.cpp:60
 msgid "Root Only"
-msgstr "Sólo el SuperUsuario"
+msgstr "Sólo el administrador"
 
 #: kdm-sess.cpp:61
 msgid "Console Only"

@@ -89,19 +89,19 @@ msgstr ""
 
 #: syssound.cpp:162
 msgid "Window Maximize"
-msgstr ""
+msgstr "Maximizar ventana"
 
 #: syssound.cpp:163
 msgid "Window UnMaximize"
-msgstr ""
+msgstr "Demaximizar ventana"
 
 #: syssound.cpp:164
 msgid "Window Sticky"
-msgstr ""
+msgstr "Fijar ventana"
 
 #: syssound.cpp:165
 msgid "Window UnSticky"
-msgstr ""
+msgstr "Liberar ventana"
 
 #: syssound.cpp:166
 msgid "Window Trans New"
@@ -113,27 +113,27 @@ msgstr ""
 
 #: syssound.cpp:168
 msgid "Logout"
-msgstr ""
+msgstr "Salir"
 
 #: syssound.cpp:169
 msgid "Logout Message"
-msgstr ""
+msgstr "Mensaje de salida"
 
 #: syssound.cpp:170
 msgid "Window Move Start"
-msgstr ""
+msgstr "Mover ventana (principio)"
 
 #: syssound.cpp:171
 msgid "Window Move End"
-msgstr ""
+msgstr "Mover ventana (final)"
 
 #: syssound.cpp:172
 msgid "Window Resize Start"
-msgstr ""
+msgstr "Redimensionar ventana (principio)"
 
 #: syssound.cpp:173
 msgid "Window Resize End"
-msgstr ""
+msgstr "Redimensionar ventana (final)"
 
 #: syssound.cpp:195
 msgid "e&nable system sounds"
@@ -141,7 +141,7 @@ msgstr "a&ctivar sonidos del sistema"
 
 #: syssound.cpp:200
 msgid "&Test"
-msgstr "&Testear"
+msgstr "&Probar"
 
 #: syssound.cpp:204
 msgid "&Events:"

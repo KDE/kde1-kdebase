@@ -1,35 +1,26 @@
-# kcmkpanel.pot translate file to SPANISH
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Santiago Fernández and Jorge Valencia "
-"<jorgev@est.unileon.es>\n"
-"Language-Team: SPANISH <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"PO-Revision-Date: 1998-04-18 01:26+0200\n"
+"First-Translator: Santiago Fernández and Jorge Valencia <jorgev@est.unileon.es>\n"
+"Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: main.cpp:62
 msgid "&Panel"
-msgstr ""
+msgstr "&Pánel"
 
 #: main.cpp:68
 msgid "&Desktops"
-msgstr ""
+msgstr "Escritorios"
 
 #: main.cpp:97
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
-msgstr ""
+msgstr "modo de uso: kcmpanel [-init | {panel,options,desktops}]\n"
 
 #: main.cpp:127
 msgid "KPanel Configuration"
-msgstr ""
+msgstr "Configuración de KPanel"
 
 #: panel.cpp:59
 msgid "Location"
@@ -37,112 +28,96 @@ msgstr "Localización"
 
 #: panel.cpp:60
 msgid "&Top"
-msgstr ""
+msgstr "&Arriba"
 
 #: panel.cpp:61
-#, fuzzy
 msgid "&Left"
-msgstr "Arriba/Izda"
+msgstr "&Izquierda"
 
 #: panel.cpp:62
 msgid "&Bottom"
-msgstr ""
+msgstr "A&bajo"
 
 #: panel.cpp:74
 msgid "Taskbar"
 msgstr "Barra de Tareas"
 
 #: panel.cpp:75
-#, fuzzy
 msgid "&Hidden"
-msgstr "Oculta"
+msgstr "&Oculta"
 
 #: panel.cpp:77
 msgid "T&op"
-msgstr ""
+msgstr "A&rriba"
 
 #: panel.cpp:79
 msgid "Botto&m"
-msgstr ""
+msgstr "Aba&jo"
 
 #: panel.cpp:81
-#, fuzzy
 msgid "Top/Le&ft"
-msgstr "Arriba/Izda"
+msgstr "Arriba/I&zquierda"
 
 #: panel.cpp:96
 msgid "T&iny"
-msgstr ""
+msgstr "&Pequeño"
 
 #: panel.cpp:98
-#, fuzzy
 msgid "&Normal"
-msgstr "Estilo Normal"
+msgstr "&Normal"
 
 #: panel.cpp:100
 msgid "L&arge"
-msgstr ""
+msgstr "&Grande"
 
 #: desktops.cpp:73
-#, fuzzy
 msgid "&Visible"
-msgstr "Visibles"
+msgstr "&Visibles"
 
 #: desktops.cpp:82
-#, fuzzy
 msgid "&Width"
-msgstr "Anchura"
+msgstr "Ancho"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
 msgstr "Ayudas de menú"
 
 #: options.cpp:39
-#, fuzzy
 msgid "Show &Menu Tooltips"
-msgstr "Ayudas de menú"
+msgstr "&Mostrar ayudas de menú"
 
 #: options.cpp:44
 msgid "De&lay:"
-msgstr ""
+msgstr "Retardo:"
 
 #: options.cpp:56
 msgid "ms"
-msgstr ""
+msgstr "ms"
 
 #: options.cpp:68
 msgid "Others"
-msgstr ""
+msgstr "Otros"
 
 #: options.cpp:69
-#, fuzzy
 msgid "Personal &First"
-msgstr "Personal Primero"
+msgstr "Personales Primero"
 
 #: options.cpp:71
-#, fuzzy
 msgid "Auto &Hide Panel"
-msgstr "Auto-Ocultar Panel"
+msgstr "Auto-&Ocultar Panel"
 
 #: options.cpp:73
-#, fuzzy
 msgid "Auto Hide &Taskbar"
 msgstr "Auto-Ocultar Barra de Tareas"
 
 #: options.cpp:81
 msgid "Clock"
-msgstr ""
+msgstr "Reloj"
 
 #: options.cpp:83
 msgid "&24h"
-msgstr ""
+msgstr "&24h"
 
 #: options.cpp:85
 msgid "&12h AM/PM"
-msgstr ""
-
-#~ msgid "Tiny Style"
-#~ msgstr "Estilo Muy Pequeño"
-
-#~ msgid "Large Style"
-#~ msgstr "Estilo Muy Grande"
+msgstr "&12h AM/PM"

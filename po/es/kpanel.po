@@ -1,18 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"PO-Revision-Date: 1998-04-18 00:27+0200\n"
+"Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kpanel.C:213
 msgid "Move"
@@ -24,40 +15,39 @@ msgstr "Propiedades"
 
 #: kpanel.C:253
 msgid "Go!"
-msgstr ""
+msgstr "Inicio"
 
 #: kpanel.C:256 tools.C:795
 msgid "Where do you want to go tomorrow?"
-msgstr ""
+msgstr "A dónde quiere ir mañana?"
 
 #: kpanel.C:329
 msgid "No info available"
-msgstr "No hay información"
+msgstr "No hay información disponible"
 
 #: kpanel.C:368 props.C:156 props.C:157
 msgid "Logout"
 msgstr "Terminar"
 
 #: kpanel.C:376 props.C:155
-#, fuzzy
 msgid "Lock screen"
 msgstr "Bloquear pantalla"
 
 #: kpanel.C:385
 msgid "Hide the panel"
-msgstr ""
+msgstr "Esconder el pánel"
 
 #: kpanel.C:395
 msgid "Show the panel"
-msgstr ""
+msgstr "Mostrar el pánel"
 
 #: kpanel.C:1093 tools.C:611
 msgid "No comment available"
-msgstr "No hay comentarios"
+msgstr "No hay comentario disponible"
 
 #: kpanel.C:1102 tools.C:804
 msgid "Windowlist"
-msgstr ""
+msgstr "Lista de ventanas"
 
 #: props.C:136
 msgid "Add application"
@@ -65,15 +55,15 @@ msgstr "Añadir aplicación"
 
 #: props.C:138
 msgid "Add an application or a submenu onto the panel"
-msgstr ""
+msgstr "Añadir aplicación o submenú al pánel"
 
 #: props.C:139
 msgid "Add windowlist"
-msgstr ""
+msgstr "Añadir lista de ventanas"
 
 #: props.C:141
 msgid "Add a windowlist menu onto the panel"
-msgstr ""
+msgstr "Añadir una lista de ventanas al pánel"
 
 #: events.C:705 props.C:142
 msgid "Configure"
@@ -81,15 +71,15 @@ msgstr "Configurar"
 
 #: props.C:144
 msgid "Configure panel"
-msgstr "Configurar panel"
+msgstr "Configurar pánel"
 
 #: props.C:145
 msgid "Edit Menus"
-msgstr ""
+msgstr "Editar Menús"
 
 #: props.C:147
 msgid "Add or remove applications in the menu structure "
-msgstr ""
+msgstr "Añadir o suprimir aplicaciones en la estructura del menú "
 
 #: events.C:707 props.C:148
 msgid "Restart"
@@ -101,7 +91,7 @@ msgstr "Reiniciar panel"
 
 #: props.C:151
 msgid "Panel"
-msgstr "Panel"
+msgstr "Pánel"
 
 #: props.C:153
 msgid "Lock Screen"
@@ -109,90 +99,12 @@ msgstr "Bloquear pantalla"
 
 #: props.C:307
 msgid "The menu editor is not installed."
-msgstr ""
+msgstr "El editor de menús no está instalado."
 
 #: events.C:743 props.C:308
 msgid "Oops!"
-msgstr ""
+msgstr "Ups!"
 
 #: events.C:742
 msgid "Cannot put this as button onto the panel!"
-msgstr ""
-
-#~ msgid "Location"
-#~ msgstr "Localización"
-
-#~ msgid "Taskbar"
-#~ msgstr "Barra de tareas"
-
-#~ msgid "Hidden"
-#~ msgstr "Oculto"
-
-#~ msgid "Top/Left"
-#~ msgstr "Arriba/Izquierda"
-
-#~ msgid "Tiny Style"
-#~ msgstr "Aspecto diminuto"
-
-#, fuzzy
-#~ msgid "Normal Style"
-#~ msgstr "Aspecto pequeño"
-
-#~ msgid "Large Style"
-#~ msgstr "Aspecto grande"
-
-#~ msgid "Menu Tooltips"
-#~ msgstr "Ayuda de menú"
-
-#, fuzzy
-#~ msgid "Personal First"
-#~ msgstr "Menú personal"
-
-#~ msgid "Visible"
-#~ msgstr "Visible"
-
-#~ msgid "Width"
-#~ msgstr "Ancho"
-
-#~ msgid "Desktops"
-#~ msgstr "Escritorios"
-
-#~ msgid "KPanel Configuration"
-#~ msgstr "Configuración de KPanel"
-
-#~ msgid "Add special"
-#~ msgstr "Añadir especial"
-
-#~ msgid "Lock panel"
-#~ msgstr "Bloquear panel"
-
-#~ msgid "Remove"
-#~ msgstr "Eliminar"
-
-#~ msgid "System"
-#~ msgstr "Sistema"
-
-#~ msgid "Destroy"
-#~ msgstr "Destruir"
-
-#~ msgid "(Un) Sticky"
-#~ msgstr "Fijar/Liberar"
-
-#~ msgid "(Un) Iconify"
-#~ msgstr "Minimizar/Restaurar"
-
-#~ msgid "(Un) Maximize"
-#~ msgstr "Maximizar/Restaurar"
-
-#~ msgid "On this desktop"
-#~ msgstr "En este escritorio"
-
-#~ msgid "Sorry"
-#~ msgstr "Disculpe"
-
-#~ msgid ""
-#~ "Could not communicate with nor\n"
-#~ "start a new instance of KFM"
-#~ msgstr ""
-#~ "No se puede comunicar ni tampoco\n"
-#~ "iniciar una nueva sesión KFM"
+msgstr "Imposible poner este botón en el pánel."

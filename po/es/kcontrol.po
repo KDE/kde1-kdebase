@@ -1,22 +1,13 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Ismael Ripoll <iripoll@disca.upv.es>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"PO-Revision-Date: 1998-04-17 20:41+0200\n"
+"Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: configlist.cpp:119
 msgid "Unknown module: "
-msgstr "Módulo desconocido:"
+msgstr "Módulo desconocido: "
 
 #: main.cpp:46 mainwidget.cpp:19
 msgid "KDE Control Center"
@@ -24,7 +15,7 @@ msgstr "Centro de Control del KDE"
 
 #: toplevel.cpp:78
 msgid "&Swallow modules"
-msgstr "Modulos empotrados"
+msgstr "Módulos empotrados"
 
 #: toplevel.cpp:81
 msgid ""
@@ -43,12 +34,3 @@ msgstr ""
 "\n"
 "Gracias a:\n"
 "S. Kulow, P. Dowler, M. Wuebben y M. Jones."
-
-#~ msgid "&About KControl..."
-#~ msgstr "&Acerca de KControl..."
-
-#~ msgid "&Using KControl"
-#~ msgstr "&Utilizando KControl"
-
-#~ msgid "About KControl"
-#~ msgstr "Acerda de KControl"
