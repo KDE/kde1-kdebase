@@ -1,0 +1,13 @@
+Begin3
+Title:  kdm
+Version:  0.5
+Entered-Date:  30 May 1997
+Description:  The KDE Display Manager (replacement for xdm).
+Keywords:  KDE Qt X11 xdm kdm gcc
+Author:  Steffen Hansen (stefh@dit.ou.dk), Matthias Ettrich
+Maintained-by:  Steffen Hansen (stefh@dit.ou.dk)
+Primary-site:  ftp://ftp.kde.org/pub/kde/kdm/
+Alternate-site:  
+Original-site:  
+Platform:  Unix/X
+End
