@@ -1076,31 +1076,52 @@ int main(int argc, char **argv)
   KConfig* sessionconfig = a.getConfig();
   if (a.isRestored()){
     sessionconfig = a.getSessionConfig();
-    // restore all command line arguments like "-sl 1000 -caption Hallo -e ...." 
+  // restore all command line arguments like "-sl 1000 -caption "Hallo World" -e ...." 
     {
       QString entry;
       sessionconfig->setGroup("kvt");
       entry = sessionconfig->readEntry("command_line");
-      
+     
       char *sp;
       char *spe;
       char exec_s[2048];
+      
       int exec_found = 0;
-
+      int string_argument = 0;
+      
       argc = 0;
       argv = new char*[100];
       argv[argc] = NULL;
 
       if(!entry.isEmpty())
-	strcpy(exec_s, (const char*)entry);
-      else
-        strcpy(exec_s, command_line);
-
-      sp = spe = exec_s;
-              
-      while(*spe && !exec_found) 
+        strcpy(command_line, (const char*)entry);
+	
+      strcpy(exec_s, command_line);
+      sp = exec_s;
+                 
+      while(*sp && !exec_found) 
       {
-        while(*spe && *spe != ' ') spe++;
+        while(*sp && *sp == ' ') 
+          sp++;
+        if(*sp && *sp == '"') {
+          string_argument = 1;
+          sp++;
+        }
+        spe = sp;
+
+        if(string_argument) {
+          while(*spe && *spe != '"') spe++;
+          if(*spe == '"')
+            *spe = ' ';
+          else {
+            fprintf(stderr, "Unmatched \" in command line\n%s\n  ...abort\n", command_line);
+            exit(-1);
+          }
+          string_argument = 0;
+        }
+        else
+          while(*spe && *spe != ' ') spe++;
+
         if(spe > sp )
         {
           if(*spe == ' ')
@@ -1111,8 +1132,8 @@ int main(int argc, char **argv)
           {               
             argv[argc++]=strdup(sp);
             argv[argc] = NULL;
-            sp = spe;
           }
+          sp = spe; 
         }
       }    
         
@@ -1123,11 +1144,29 @@ int main(int argc, char **argv)
         com_argv = new char*[100];
         com_argc = 0;
         com_argv[com_argc] = NULL;
-        while(*spe) 
-        {
-          while(*spe && *spe == ' ') spe++;
-          sp = spe;
-          while(*spe && *spe != ' ') spe++;
+        while(*sp) 
+        {          
+          while(*sp && *sp == ' ') 
+            sp++;
+          if(*sp && *sp == '"') {
+            string_argument = 1;
+            sp++;
+          }
+          spe = sp;
+
+          if(string_argument) {
+            while(*spe && *spe != '"') spe++;
+            if(*spe == '"')
+              *spe = ' ';
+            else {
+              fprintf(stderr, "Unmatched \" in command line\n%s\n  ...abort\n", command_line);
+              exit(-1);
+            }
+            string_argument = 0;
+          }
+          else
+            while(*spe && *spe != ' ') spe++;
+
           if(spe > sp )
           {
             if(*spe == ' ')
@@ -1136,7 +1175,7 @@ int main(int argc, char **argv)
             sp = spe;
           }
           com_argv[com_argc]=NULL;
-        } 
+        }
         if(!com_argc)
           delete com_argv;
       }

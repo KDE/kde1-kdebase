@@ -175,7 +175,7 @@ int refresh_nl_limit = 1;
 extern int refresh_type;
 
 /*  Terminal mode structures.
- */
+*/
 static struct termios ttmode;
 #ifndef __FreeBSD__
 #ifndef CINTR
