@@ -1051,8 +1051,8 @@ QString KDELnkMimeType::getComment( const char *_url )
  *
  ***************************************************************/
 
-KMimeBind::KMimeBind( const char * _kdelnkName, const char *_name, const char *_cmd, const char *_icon, bool _allowdefault ) :
-    name(_name), kdelnkName(_kdelnkName), cmd(_cmd), pixmap(0L), allowDefault(_allowdefault)
+KMimeBind::KMimeBind( const char * _kdelnkName, const char *_name, const char *_cmd, const char *_icon, bool _allowdefault, const char *_termOptions ) :
+    name(_name), kdelnkName(_kdelnkName), cmd(_cmd), pixmap(0L), allowDefault(_allowdefault), termOptions(_termOptions)
 {
     appendBinding( this );
   
@@ -1159,7 +1159,13 @@ void KMimeBind::initApplications( const char * _path )
 		    bool allowdefault = true;
 		    if ( str_allowdefault == "0" )
 			allowdefault = false;
-		    
+                    // Read the terminal settings.
+                    // termOptions will store both values (being 0L if Terminal=="0").
+
+                    QString term = config.readEntry( "Terminal" );
+                    QString termOptions = config.readEntry( "TerminalOptions" );
+                    if (term=="0") termOptions = 0L;
+
 		    // Define an icon for the program file perhaps ?
 		    if ( !app_icon.isEmpty() && !app_pattern.isEmpty() )
 		    {
@@ -1188,16 +1194,16 @@ void KMimeBind::initApplications( const char * _path )
 			// Bind this application to all files/directories
 			if ( strcasecmp( bind.data(), "all" ) == 0 )
 			{
-			    defaultType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault ) );
-			    folderType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault ) );
+			    defaultType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault, termOptions.data() ) );
+			    folderType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault, termOptions.data() ) );
 			}
 			else if ( strcasecmp( bind.data(), "alldirs" ) == 0 )
 			{
-			    folderType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault ) );
+			    folderType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault, termOptions.data() ) );
 			}
 			else if ( strcasecmp( bind.data(), "allfiles" ) == 0 )
 			{
-			    defaultType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault ) );
+			    defaultType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault, termOptions.data() ) );
 			}
 			// Bind this application to a mime type
 			else
@@ -1208,7 +1214,7 @@ void KMimeBind::initApplications( const char * _path )
 						      i18n("Could not find mime type\n") + bind + "\n" + i18n("in ") + file );
 			    else
 			    {
-				t->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault ) );
+				t->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault, termOptions.data() ) );
 			    }
 			}
 			
@@ -1337,6 +1343,28 @@ bool KMimeBind::runBinding( const char *_url )
       miniicon.prepend("-miniicon ");
     while ( ( i = cmd.find( "%m" ) ) != -1 )
       cmd.replace( i, 2, miniicon.data());
+
+    if ( !termOptions.isNull() )
+    {
+	KConfig *config = KApplication::getKApplication()->getConfig();
+	config->setGroup( "KFM Misc Defaults" );
+	QString termCmd = config->readEntry( "Terminal", DEFAULT_TERMINAL);
+	termCmd.detach();
+	if ( termCmd.isNull() )
+	{
+	    warning(i18n("ERROR: No Terminal Setting"));
+	    return TRUE;
+	}
+	termCmd += " ";
+	if ( !termOptions.isEmpty() )
+	{
+	    termCmd += termOptions.data();
+	    termCmd += " ";
+	}
+	termCmd += "-e ";
+	termCmd += cmd.data();
+        cmd = termCmd.copy();
+    }
 
     // The application accepts only local files ?
     if ( b_local_app )
