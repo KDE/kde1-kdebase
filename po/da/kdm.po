@@ -26,7 +26,7 @@ msgstr "Luk ned og genstart"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr ""
+msgstr "Genstart X Server"
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -54,24 +54,24 @@ msgstr "Luk ned..."
 
 #: kgreeter.cpp:570
 msgid "Logins not available right now."
-msgstr ""
+msgstr "Login er ikke tilladt lige nu."
 
 #: kgreeter.cpp:611
 msgid "login_getcapstr() failed."
-msgstr ""
+msgstr "login_getcapstr() fejlede."
 
 #: kgreeter.cpp:665 kgreeter.cpp:692
 msgid "Sorry -- your account has expired."
-msgstr ""
+msgstr "Desværre -- deres konto er lukket."
 
 #: kgreeter.cpp:670 kgreeter.cpp:697
 #, c-format
 msgid "Warning: your account expires on %s"
-msgstr ""
+msgstr "Advarsel: Deres konto udløber den %s"
 
 #: kgreeter.cpp:724
 msgid "Home directory not available"
-msgstr ""
+msgstr "Hjemmekatalog ikke tilgængeligt"
 
 #~ msgid "Exit kdm"
 #~ msgstr "Afslut kdm"
