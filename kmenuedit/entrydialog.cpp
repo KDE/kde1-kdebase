@@ -30,12 +30,14 @@
 #include <qstrlist.h>
 
 #include <kiconloader.h>
+#include <kiconloaderdialog.h>
 
 //#include "pmenu.h"
 #include "entrydialog.h"
 #include "entrydialog.moc"
 
 extern KIconLoader *global_pix_loader;
+extern KIconLoaderDialog *global_pix_sel;
 extern QStrList *global_file_types;
 
 EntryDialog::EntryDialog (QWidget* parent, const char* name)
@@ -443,7 +445,7 @@ void EntryDialog::pixButPressed()
 {
   QString name;
   QPixmap temp;
-  temp = global_pix_loader->selectIcon(name, "mini*" );
+  temp = global_pix_sel->selectIcon(name, "mini*" );
   if( name.isNull() )
     return;
   i_pixmap->setText(name);
@@ -454,7 +456,7 @@ void EntryDialog::bigPixButPressed()
 {
   QString name;
   QPixmap temp;
-  temp = global_pix_loader->selectIcon(name, "*" );
+  temp = global_pix_sel->selectIcon(name, "*" );
   if( name.isNull() )
     return;
   i_big_pixmap->setText(name);
@@ -465,7 +467,7 @@ void EntryDialog::umountPixButPressed()
 {
   QString name;
   QPixmap temp;
-  temp = global_pix_loader->selectIcon(name, "*" );
+  temp = global_pix_sel->selectIcon(name, "*" );
   if( name.isNull() )
     return;
   i_mount_pix->setText(name);

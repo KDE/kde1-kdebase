@@ -34,7 +34,7 @@
 #include <kmenubar.h>
 #include <ktoolbar.h>
 #include <kiconloader.h>
-
+#include <kiconloaderdialog.h>
 
 #include "kmenuedit.h"
 #include "kmenuedit.moc"

@@ -4,7 +4,7 @@
 //  kmenuedit
 //
 //  Copyright (C) 1997 Christoph Neerfeld
-//  email:  Christoph.Neerfeld@mail.bonn.netsurf.de
+//  email:  Christoph.Neerfeld@bonn.netsurf.de
 //
 //  This program is free software; you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -28,6 +28,7 @@
 #include <kapp.h>
 #include <drag.h>
 #include <kiconloader.h>
+#include <kiconloaderdialog.h>
 #include <kmsgbox.h>
 
 #include "IconPathDialog.h"
@@ -35,6 +36,7 @@
 #include "kmenuedit.h"
 
 KIconLoader *global_pix_loader;
+KIconLoaderDialog *global_pix_sel;
 
 int main( int argc, char **argv )
 {
@@ -44,6 +46,7 @@ int main( int argc, char **argv )
 
   QString temp1, temp2;
   KConfig *config = a.getConfig();
+  /*
   config->setGroup("KDE Setup");
   if( !config->hasKey("IconPath") )
      {
@@ -56,6 +59,7 @@ int main( int argc, char **argv )
        temp1 = icon_dialog->text();
        config->writeEntry("IconPath", temp1);
      }
+     */
   config->setGroup("KDE Desktop Entries");
   if( !config->hasKey("Path") || !config->hasKey("PersonalPath") )
     {
@@ -102,9 +106,9 @@ int main( int argc, char **argv )
 	  exit(1);
 	}
     }
-
-  global_pix_loader = new KIconLoader();
-  global_pix_loader->setCaching(TRUE);
+  global_pix_loader = KApplication::getKApplication()->getIconLoader();
+  global_pix_loader->insertDirectory(0, KApplication::kdedir()+"/share/icons" );
+  global_pix_sel = new KIconLoaderDialog;
   KMenuEdit edit;
   a.setMainWidget( (QWidget *) &edit );
   a.setRootDropZone( new KDNDDropZone( (QWidget *) &edit, DndNotDnd ) );

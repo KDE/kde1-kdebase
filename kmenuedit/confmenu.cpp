@@ -37,6 +37,7 @@
 #include <qstrlist.h>
 #include <qlistbox.h>
 #include <qobjcoll.h>
+#include <qpushbt.h>
 
 #include <kiconloader.h>
 #include <kstatusbar.h>
