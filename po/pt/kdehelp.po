@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-18 13:52+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,14 +37,6 @@ msgstr "Formato desconhecido: "
 #: helpwin.cpp:831
 msgid "Could not start or find KFM"
 msgstr "Não foi possivel iniciar ou encontrar o KFM"
-
-#: helpwin.cpp:1297
-msgid "Back"
-msgstr "Retroceder"
-
-#: helpwin.cpp:1299
-msgid "Forward"
-msgstr "Avançar"
 
 #: helpwin.cpp:1320
 msgid "Open this Link"
@@ -178,10 +170,6 @@ msgstr "Variados"
 msgid "System Administration"
 msgstr "Administração do Sistema"
 
-#: man.cpp:471
-msgid "New"
-msgstr "Novo"
-
 #: man.cpp:580
 msgid "Reading Dir: "
 msgstr "A ler a directoria: "
@@ -226,22 +214,6 @@ msgstr ""
 #: mainwidget.cpp:140
 msgid "&Search"
 msgstr "&Procurar"
-
-#: mainwidget.cpp:142
-msgid "&Print..."
-msgstr "Im&primir..."
-
-#: mainwidget.cpp:144
-msgid "&Close"
-msgstr "Fe&char"
-
-#: mainwidget.cpp:145
-msgid "&Quit"
-msgstr "&Sair"
-
-#: mainwidget.cpp:149
-msgid "&Copy"
-msgstr "&Copiar"
 
 #: mainwidget.cpp:153
 msgid "&Back"
@@ -313,14 +285,6 @@ msgid ""
 "applicable law."
 msgstr ""
 
-#: mainwidget.cpp:200
-msgid "&File"
-msgstr "&Ficheiro"
-
-#: mainwidget.cpp:201
-msgid "&Edit"
-msgstr "&Editar"
-
 #: mainwidget.cpp:202
 msgid "&Goto"
 msgstr "Ir Para"
@@ -328,14 +292,6 @@ msgstr "Ir Para"
 #: mainwidget.cpp:203
 msgid "&Bookmarks"
 msgstr "Favoritos"
-
-#: mainwidget.cpp:204
-msgid "&Options"
-msgstr "&Opções"
-
-#: mainwidget.cpp:206
-msgid "&Help"
-msgstr "Ajuda"
 
 #: mainwidget.cpp:221
 msgid "Previous Document"
@@ -392,6 +348,39 @@ msgstr "Acerca do KDE Help"
 #: mainwidget.cpp:618
 msgid "&Add Bookmark"
 msgstr "&Adicionar Favorito"
+
+#~ msgid "New"
+#~ msgstr "Novo"
+
+#~ msgid "Back"
+#~ msgstr "Retroceder"
+
+#~ msgid "Forward"
+#~ msgstr "Avançar"
+
+#~ msgid "&Print..."
+#~ msgstr "Im&primir..."
+
+#~ msgid "&Close"
+#~ msgstr "Fe&char"
+
+#~ msgid "&Quit"
+#~ msgstr "&Sair"
+
+#~ msgid "&Copy"
+#~ msgstr "&Copiar"
+
+#~ msgid "&File"
+#~ msgstr "&Ficheiro"
+
+#~ msgid "&Edit"
+#~ msgstr "&Editar"
+
+#~ msgid "&Options"
+#~ msgstr "&Opções"
+
+#~ msgid "&Help"
+#~ msgstr "Ajuda"
 
 #~ msgid "Cancel"
 #~ msgstr "Cancelar"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-28 13:36+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,26 +14,17 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: keyboard.cpp:68
-msgid "Keyboard repeat"
-msgstr "Opakování klávesy"
+#: main.cpp:53
+msgid "&Mouse"
+msgstr "&My¹"
 
-#: keyboard.cpp:70
-msgid "On"
-msgstr "Zapnuto"
+#: main.cpp:56
+msgid "&Keyboard"
+msgstr "&Klávesnice"
 
-#: keyboard.cpp:71
-msgid "Off"
-msgstr "Vypnuto"
-
-#: keyboard.cpp:76
-msgid "Key click volume"
-msgstr "Hlasitost stisku klávesy"
-
-#: keyboard.cpp:77
-#, c-format
-msgid "%"
-msgstr "%"
+#: main.cpp:85
+msgid "Input Devices Properties"
+msgstr ""
 
 #: mouse.cpp:76
 msgid "Acceleration"
@@ -55,22 +46,28 @@ msgstr "Pravoruké"
 msgid "Left handed"
 msgstr "Levoruké"
 
-#: 
-msgid "Apply"
-msgstr "Pou¾ít"
+#: keyboard.cpp:68
+msgid "Keyboard repeat"
+msgstr "Opakování klávesy"
 
-#: 
-msgid "Cancel"
-msgstr "Zru¹it"
+#: keyboard.cpp:76
+msgid "Key click volume"
+msgstr "Hlasitost stisku klávesy"
 
-#:
-msgid "Help"
-msgstr "Nápovìda"
+#~ msgid "On"
+#~ msgstr "Zapnuto"
 
-#:
-msgid "&Keyboard"
-msgstr "&Klávesnice"
+#~ msgid "Off"
+#~ msgstr "Vypnuto"
 
-#:
-msgid "&Mouse"
-msgstr "&My¹"
+#~ msgid "%"
+#~ msgstr "%"
+
+#~ msgid "Apply"
+#~ msgstr "Pou¾ít"
+
+#~ msgid "Cancel"
+#~ msgstr "Zru¹it"
+
+#~ msgid "Help"
+#~ msgstr "Nápovìda"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.10\n"
-"POT-Creation-Date: 1997-12-15 20:12+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: 1997-12-27 03:05+06:00\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: ru <ru@li.org>\n"
@@ -70,10 +70,6 @@ msgstr "Переместить"
 #: main.C:392
 msgid "Resi&ze"
 msgstr "Изменить размер"
-
-#: main.C:393
-msgid "&Close"
-msgstr "Закрыть"
 
 #
 #: main.C:394
@@ -164,6 +160,9 @@ msgstr "Переключиться"
 #: taskmgr.C:49
 msgid "Current session"
 msgstr "Текущая сессия"
+
+#~ msgid "&Close"
+#~ msgstr "Закрыть"
 
 #
 #~ msgid "Iconify"

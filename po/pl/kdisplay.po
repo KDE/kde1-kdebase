@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-14 20:07+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,10 +93,6 @@ msgstr "Wybrany"
 #: colorscm.cpp:252 colorscm.cpp:264
 msgid "Color Scheme"
 msgstr "Schemat kolorów"
-
-#: colorscm.cpp:278
-msgid "Remove"
-msgstr "&Usuñ"
 
 #: colorscm.cpp:286
 msgid "Widget color"
@@ -222,53 +218,49 @@ msgstr "Wymagane has³o"
 msgid "Priority:"
 msgstr "Priorytet:"
 
-#: general.cpp:80
+#: general.cpp:61
 msgid "General"
 msgstr "&Ogólne"
 
-#: general.cpp:84
+#: general.cpp:65
 msgid "Widget style"
 msgstr "Styl elementów"
 
-#: general.cpp:89
+#: general.cpp:70
 msgid "Motif"
 msgstr "Motif"
 
-#: general.cpp:90
+#: general.cpp:71
 msgid "Windows 95"
 msgstr "Windows 95"
 
-#: general.cpp:99
+#: general.cpp:80
 msgid "Fonts"
 msgstr "Czcionki"
 
-#: general.cpp:104
+#: general.cpp:85
 msgid "General font"
 msgstr "Czcionka ogólna"
 
-#: general.cpp:129
+#: general.cpp:110
 msgid "Sample"
 msgstr "Przyk³ad"
 
-#: general.cpp:135
+#: general.cpp:116
 msgid "Small"
 msgstr "Ma³a"
 
-#: general.cpp:139
+#: general.cpp:120
 msgid "Medium"
 msgstr "¦rednia"
 
-#: general.cpp:143
+#: general.cpp:124
 msgid "Large"
 msgstr "Du¿a"
 
-#: general.cpp:160
+#: general.cpp:141
 msgid "Italic"
 msgstr "Italic"
-
-#: general.cpp:170
-msgid "Charset:"
-msgstr "Charset:"
 
 #: main.cpp:61
 msgid "&Background"
@@ -289,6 +281,12 @@ msgstr "&Styl"
 #: main.cpp:105
 msgid "Display settings"
 msgstr "Ustawienia wy¶wietlania"
+
+#~ msgid "Remove"
+#~ msgstr "&Usuñ"
+
+#~ msgid "Charset:"
+#~ msgstr "Charset:"
 
 # Polish translation of KDE kdisplay
 # Version 0.3.0

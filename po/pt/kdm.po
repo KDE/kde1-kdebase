@@ -1,5 +1,6 @@
 msgid ""
 msgstr ""
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-09-09 17:23:06+0200\n"
 "From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
@@ -7,37 +8,9 @@ msgstr ""
 "Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp "
 "kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
 
-#: kdmshutdown.cpp:229 kgreeter.cpp:207
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: kdmshutdown.cpp:192
-msgid "Exit kdm"
-msgstr "Abandonar kdm"
-
-#: kgreeter.cpp:201
-msgid "Go!"
-msgstr "Ir!"
-
-#: kgreeter.cpp:179
-msgid "Login failed!"
-msgstr "Login falhado!"
-
-#: kgreeter.cpp:145
-msgid "Login:"
-msgstr "Login:"
-
-#: kdmshutdown.cpp:226
-msgid "Ok"
-msgstr "Ok"
-
-#: kgreeter.cpp:150
-msgid "Password:"
-msgstr "Password:"
-
-#: kgreeter.cpp:185
-msgid "Session Type:"
-msgstr "Tipo de Sessão:'"
+#: kdmshutdown.cpp:153
+msgid "Shutdown or restart?"
+msgstr "Desligar ou reinicializar?"
 
 #: kdmshutdown.cpp:169
 msgid "Shutdown"
@@ -47,10 +20,36 @@ msgstr "Desligar"
 msgid "Shutdown and restart"
 msgstr "Desligar e reinicializar"
 
-#: kdmshutdown.cpp:153
-msgid "Shutdown or restart?"
-msgstr "Desligar ou reinicializar?"
+#: kdmshutdown.cpp:192
+msgid "Exit kdm"
+msgstr "Abandonar kdm"
 
-#: kgreeter.cpp:217
+#: kgreeter.cpp:137
+msgid "Login:"
+msgstr "Login:"
+
+#: kgreeter.cpp:142
+msgid "Password:"
+msgstr "Password:"
+
+#: kgreeter.cpp:176
+msgid "Login failed!"
+msgstr "Login falhado!"
+
+#: kgreeter.cpp:182
+msgid "Session Type:"
+msgstr "Tipo de Sessão:'"
+
+#: kgreeter.cpp:198
+msgid "Go!"
+msgstr "Ir!"
+
+#: kgreeter.cpp:214
 msgid "Shutdown..."
 msgstr "Desligar..."
+
+#~ msgid "Cancel"
+#~ msgstr "Cancelar"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"

@@ -1,5 +1,6 @@
 msgid ""
 msgstr ""
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -10,37 +11,9 @@ msgstr ""
 "Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp "
 "kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
 
-#: kdmshutdown.cpp:229 kgreeter.cpp:207
-msgid "Cancel"
-msgstr "Mégsem"
-
-#: kdmshutdown.cpp:192
-msgid "Exit kdm"
-msgstr "Kilép"
-
-#: kgreeter.cpp:201
-msgid "Go!"
-msgstr "Mehet!"
-
-#: kgreeter.cpp:179
-msgid "Login failed!"
-msgstr "Érvénytelen bejelentkezés!"
-
-#: kgreeter.cpp:145
-msgid "Login:"
-msgstr "Név:"
-
-#: kdmshutdown.cpp:226
-msgid "Ok"
-msgstr ""
-
-#: kgreeter.cpp:150
-msgid "Password:"
-msgstr "Jelszó:"
-
-#: kgreeter.cpp:185
-msgid "Session Type:"
-msgstr "Futási stílus"
+#: kdmshutdown.cpp:153
+msgid "Shutdown or restart?"
+msgstr "Leállítás vagy újraindítás?"
 
 #: kdmshutdown.cpp:169
 msgid "Shutdown"
@@ -50,10 +23,33 @@ msgstr "Leállítás"
 msgid "Shutdown and restart"
 msgstr "Leállítás és újraindítás"
 
-#: kdmshutdown.cpp:153
-msgid "Shutdown or restart?"
-msgstr "Leállítás vagy újraindítás?"
+#: kdmshutdown.cpp:192
+msgid "Exit kdm"
+msgstr "Kilép"
 
-#: kgreeter.cpp:217
+#: kgreeter.cpp:137
+msgid "Login:"
+msgstr "Név:"
+
+#: kgreeter.cpp:142
+msgid "Password:"
+msgstr "Jelszó:"
+
+#: kgreeter.cpp:176
+msgid "Login failed!"
+msgstr "Érvénytelen bejelentkezés!"
+
+#: kgreeter.cpp:182
+msgid "Session Type:"
+msgstr "Futási stílus"
+
+#: kgreeter.cpp:198
+msgid "Go!"
+msgstr "Mehet!"
+
+#: kgreeter.cpp:214
 msgid "Shutdown..."
 msgstr "Leállítás..."
+
+#~ msgid "Cancel"
+#~ msgstr "Mégsem"

@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-18 13:52+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,14 +40,6 @@ msgstr "Tuntematon formaatti: "
 #: helpwin.cpp:831
 msgid "Could not start or find KFM"
 msgstr "KFM:ää ei löydy tai sitä ei voi avata"
-
-#: helpwin.cpp:1297
-msgid "Back"
-msgstr "Takaisin"
-
-#: helpwin.cpp:1299
-msgid "Forward"
-msgstr "Eteenpäin"
 
 #: helpwin.cpp:1320
 msgid "Open this Link"
@@ -181,10 +173,6 @@ msgstr "Muut"
 msgid "System Administration"
 msgstr "Järjestelmän ylläpito"
 
-#: man.cpp:471
-msgid "New"
-msgstr "Uusi"
-
 #: man.cpp:580
 msgid "Reading Dir: "
 msgstr "Luetaan hakemistoa: "
@@ -229,22 +217,6 @@ msgstr ""
 #: mainwidget.cpp:140
 msgid "&Search"
 msgstr "&Etsi"
-
-#: mainwidget.cpp:142
-msgid "&Print..."
-msgstr "Tul&osta"
-
-#: mainwidget.cpp:144
-msgid "&Close"
-msgstr "&Sulje"
-
-#: mainwidget.cpp:145
-msgid "&Quit"
-msgstr "&Lopeta"
-
-#: mainwidget.cpp:149
-msgid "&Copy"
-msgstr "&Kopioi"
 
 #: mainwidget.cpp:153
 msgid "&Back"
@@ -316,14 +288,6 @@ msgid ""
 "applicable law."
 msgstr ""
 
-#: mainwidget.cpp:200
-msgid "&File"
-msgstr "&Tiedosto"
-
-#: mainwidget.cpp:201
-msgid "&Edit"
-msgstr "&Muokkaa"
-
 #: mainwidget.cpp:202
 msgid "&Goto"
 msgstr "&Siirry"
@@ -331,14 +295,6 @@ msgstr "&Siirry"
 #: mainwidget.cpp:203
 msgid "&Bookmarks"
 msgstr "Osoite&kirja"
-
-#: mainwidget.cpp:204
-msgid "&Options"
-msgstr "&Asetukset"
-
-#: mainwidget.cpp:206
-msgid "&Help"
-msgstr "&Ohje"
 
 #: mainwidget.cpp:221
 msgid "Previous Document"
@@ -395,6 +351,39 @@ msgstr "Tietoja kdehelp:stä"
 #: mainwidget.cpp:618
 msgid "&Add Bookmark"
 msgstr "Lisää osoitekirjaan"
+
+#~ msgid "New"
+#~ msgstr "Uusi"
+
+#~ msgid "Back"
+#~ msgstr "Takaisin"
+
+#~ msgid "Forward"
+#~ msgstr "Eteenpäin"
+
+#~ msgid "&Print..."
+#~ msgstr "Tul&osta"
+
+#~ msgid "&Close"
+#~ msgstr "&Sulje"
+
+#~ msgid "&Quit"
+#~ msgstr "&Lopeta"
+
+#~ msgid "&Copy"
+#~ msgstr "&Kopioi"
+
+#~ msgid "&File"
+#~ msgstr "&Tiedosto"
+
+#~ msgid "&Edit"
+#~ msgstr "&Muokkaa"
+
+#~ msgid "&Options"
+#~ msgstr "&Asetukset"
+
+#~ msgid "&Help"
+#~ msgstr "&Ohje"
 
 #~ msgid "Cancel"
 #~ msgstr "Peruuta"

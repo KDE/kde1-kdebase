@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
-"POT-Creation-Date: 1997-12-14 18:16+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: 1997-10-29 20:15 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
@@ -26,10 +26,6 @@ msgstr "Adresáø"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "Chyba: ©ablona neexistuje '%s'"
-
-#: krootwm.C:160 krootwm.C:396 krootwm.C:404
-msgid "New"
-msgstr "Nový"
 
 #: krootwm.C:162
 msgid "Help on desktop"
@@ -70,6 +66,9 @@ msgstr ""
 #: krootwm.C:463
 msgid "Usage:"
 msgstr "Pou¾ití:"
+
+#~ msgid "New"
+#~ msgstr "Nový"
 
 #~ msgid "Ok"
 #~ msgstr "Ok"

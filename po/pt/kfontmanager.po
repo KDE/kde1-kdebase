@@ -1,16 +1,32 @@
-#: main.cpp:53
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:62
 msgid "KDE Font Manager"
 msgstr "Gestor de Letras do KDE"
 
-#: main.cpp:61
+#: main.cpp:75
 msgid "KDE Fonts"
 msgstr "Letras do KDE"
 
-#: main.cpp:62
+#: main.cpp:76
 msgid "Font Explorer"
 msgstr "Explorador de Letras"
 
-#: main.cpp:63
+#: main.cpp:77
 msgid "Raw X11 Font List"
 msgstr "Lista de Letras do X11"
 
@@ -22,23 +38,15 @@ msgstr "Letras do X11 Disponiveis"
 msgid "Fonts made available to KDE"
 msgstr "Letras disponibilizadas ao KDE"
 
-#: kfontmanager.cpp:74
-msgid "Add"
-msgstr "Adicionar"
-
-#: kfontmanager.cpp:77
-msgid "Remove"
-msgstr "Remover"
-
 #: kfontmanager.cpp:87
 msgid "The KDE Font Manager Example String"
 msgstr "Frase de Exemplo do KDE Font Manager"
 
-#: kfontlist.cpp:65 kfontmanager.cpp:105
+#: kfontlist.cpp:64 kfontmanager.cpp:109
 msgid "About kfontmanager"
 msgstr "Acerca do kfontmanager"
 
-#: kfontmanager.cpp:105
+#: kfontmanager.cpp:109
 msgid ""
 "kfontmanager Version 0.2\n"
 "Copyright 1997\n"
@@ -50,11 +58,7 @@ msgstr ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 
-#: kfontmanager.cpp:212 kfontmanager.cpp:283 kfontmanager.cpp:288
-msgid "Sorry"
-msgstr "Lamento"
-
-#: kfontmanager.cpp:212
+#: kfontmanager.cpp:209
 msgid ""
 "The environment variable HOME\n"
 "is not set\n"
@@ -62,17 +66,19 @@ msgstr ""
 "A variavel de ambiente HOME\n"
 "não está definida\n"
 
-#: kfontmanager.cpp:283
+#: kfontmanager.cpp:286
+#, fuzzy
 msgid ""
 "Can not create:\n"
-" ~/.kde/config/kdefonts\n"
+" ~/.kde/share/config/kdefonts\n"
 msgstr ""
 "Não foi possivel criar:\n"
 " ~/.kde/config/kdefonts\n"
 
-#: kfontmanager.cpp:288
+#: kfontmanager.cpp:291
+#, fuzzy
 msgid ""
-"~/.kde/config/kdefonts exists but\n"
+"~/.kde/share/config/kdefonts exists but\n"
 "is not writeable\n"
 "Can't save KDE Fontlist."
 msgstr ""
@@ -80,7 +86,7 @@ msgstr ""
 "não pode ser escrita\n"
 "Não foi possivel gravar a lista de letras do KDE."
 
-#: kfontlist.cpp:65
+#: kfontlist.cpp:64
 msgid ""
 "kfontmanager Version 0.1\n"
 "Copyright 1997\n"
@@ -91,3 +97,12 @@ msgstr ""
 "Copyright 1997\n"
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
+
+#~ msgid "Add"
+#~ msgstr "Adicionar"
+
+#~ msgid "Remove"
+#~ msgstr "Remover"
+
+#~ msgid "Sorry"
+#~ msgstr "Lamento"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-15 20:12+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,10 +70,6 @@ msgstr "Mover"
 #, fuzzy
 msgid "Resi&ze"
 msgstr "Alterar Tamanho"
-
-#: main.C:393
-msgid "&Close"
-msgstr "&Fechar"
 
 #: main.C:394
 #, fuzzy
@@ -167,6 +163,9 @@ msgstr "Mudar para"
 #: taskmgr.C:49
 msgid "Current session"
 msgstr "Sessão actual"
+
+#~ msgid "&Close"
+#~ msgstr "&Fechar"
 
 #~ msgid "Iconify"
 #~ msgstr "Iconificar"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1997-12-15 20:12+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
@@ -65,10 +65,6 @@ msgstr "Pøe&sunout"
 #: main.C:392
 msgid "Resi&ze"
 msgstr "Zmìnit &velikost"
-
-#: main.C:393
-msgid "&Close"
-msgstr "&Zavøít"
 
 #: main.C:394
 msgid "&To desktop"
@@ -157,3 +153,6 @@ msgstr "Pøepni do"
 #: taskmgr.C:49
 msgid "Current session"
 msgstr "Souèasné sezení"
+
+#~ msgid "&Close"
+#~ msgstr "&Zavøít"

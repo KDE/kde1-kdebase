@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
-"POT-Creation-Date: 1997-12-14 20:07+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: 1997-09-05 02:51+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -93,10 +93,6 @@ msgstr "Выбрано"
 #: colorscm.cpp:252 colorscm.cpp:264
 msgid "Color Scheme"
 msgstr "Цветовая схема"
-
-#: colorscm.cpp:278
-msgid "Remove"
-msgstr "Удалить"
 
 #: colorscm.cpp:286
 msgid "Widget color"
@@ -222,53 +218,49 @@ msgstr "Требуется пароль"
 msgid "Priority:"
 msgstr "Приоритет:"
 
-#: general.cpp:80
+#: general.cpp:61
 msgid "General"
 msgstr "Главное"
 
-#: general.cpp:84
+#: general.cpp:65
 msgid "Widget style"
 msgstr "Вид управляющих элементов"
 
-#: general.cpp:89
+#: general.cpp:70
 msgid "Motif"
 msgstr "Motif"
 
-#: general.cpp:90
+#: general.cpp:71
 msgid "Windows 95"
 msgstr "Windowz 95"
 
-#: general.cpp:99
+#: general.cpp:80
 msgid "Fonts"
 msgstr "Шрифты"
 
-#: general.cpp:104
+#: general.cpp:85
 msgid "General font"
 msgstr "Главные шрифты"
 
-#: general.cpp:129
+#: general.cpp:110
 msgid "Sample"
 msgstr "Пример"
 
-#: general.cpp:135
+#: general.cpp:116
 msgid "Small"
 msgstr "Маленький"
 
-#: general.cpp:139
+#: general.cpp:120
 msgid "Medium"
 msgstr "Средний"
 
-#: general.cpp:143
+#: general.cpp:124
 msgid "Large"
 msgstr "Большой"
 
-#: general.cpp:160
+#: general.cpp:141
 msgid "Italic"
 msgstr "Наклонный"
-
-#: general.cpp:170
-msgid "Charset:"
-msgstr "Кодировка:"
 
 #
 #: main.cpp:61
@@ -293,6 +285,12 @@ msgstr "Стиль"
 #: main.cpp:105
 msgid "Display settings"
 msgstr "Настройка дисплея"
+
+#~ msgid "Remove"
+#~ msgstr "Удалить"
+
+#~ msgid "Charset:"
+#~ msgstr "Кодировка:"
 
 #~ msgid "KDE Display Configuration"
 #~ msgstr "Конфигурация Дисплея KDE"

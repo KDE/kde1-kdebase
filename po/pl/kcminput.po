@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-14 20:07+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,19 +53,15 @@ msgstr "Leworêczna"
 msgid "Keyboard repeat"
 msgstr "Powtarzanie klawiszy"
 
-#: keyboard.cpp:70
-msgid "On"
-msgstr "W³"
-
-#: keyboard.cpp:71
-msgid "Off"
-msgstr "Wy³"
-
 #: keyboard.cpp:76
 msgid "Key click volume"
 msgstr "G³o¶no¶æ klikniêcia"
 
-#: keyboard.cpp:77
-#, c-format
-msgid "%"
-msgstr "%"
+#~ msgid "On"
+#~ msgstr "W³"
+
+#~ msgid "Off"
+#~ msgstr "Wy³"
+
+#~ msgid "%"
+#~ msgstr "%"

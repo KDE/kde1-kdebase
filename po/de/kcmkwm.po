@@ -1,0 +1,140 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkwm\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
+"PO-Revision-Date: 1997-12-29 16:29+01\n"
+"Last-Translator: Stephan Kulow <coolo@kde.org>\n"
+
+#: main.cpp:55
+msgid "&Windows"
+msgstr "&Fenster"
+
+#: main.cpp:58
+msgid "&Buttons"
+msgstr "&Buttons"
+
+#: main.cpp:61
+msgid "&Titlebar"
+msgstr "&Titelzeile"
+
+#: main.cpp:88
+msgid "Window manager style"
+msgstr ""
+
+#: titlebar.cpp:110
+msgid "Minimize"
+msgstr ""
+
+#: titlebar.cpp:114
+msgid "Maximize"
+msgstr ""
+
+#: titlebar.cpp:118
+msgid "Sticky"
+msgstr ""
+
+#: titlebar.cpp:126
+msgid "Menu"
+msgstr ""
+
+#: titlebar.cpp:458
+msgid ""
+"The left side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr ""
+
+#: titlebar.cpp:491
+msgid ""
+"The right side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr ""
+
+#: titlebar.cpp:531
+msgid ""
+"The left side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr ""
+
+#: titlebar.cpp:564
+msgid ""
+"The right side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr ""
+
+#: titlebar.cpp:915
+msgid "Titlebar appearance"
+msgstr ""
+
+#: titlebar.cpp:917
+msgid "Shaded"
+msgstr ""
+
+#: titlebar.cpp:920
+msgid "Plain"
+msgstr ""
+
+#: titlebar.cpp:923 titlebar.cpp:943
+msgid "Pixmap"
+msgstr ""
+
+#: titlebar.cpp:930
+msgid "Title Animation"
+msgstr ""
+
+#: titlebar.cpp:933
+msgid "ms"
+msgstr ""
+
+#: titlebar.cpp:954
+msgid "&Active pixmap"
+msgstr ""
+
+#: titlebar.cpp:956
+msgid "&Inactive pixmap"
+msgstr ""
+
+#: windows.cpp:63
+msgid "Window movement"
+msgstr ""
+
+#: windows.cpp:64
+msgid "Transparent"
+msgstr ""
+
+#: windows.cpp:65
+msgid "Opaque"
+msgstr ""
+
+#: windows.cpp:68
+msgid "Resize Animation"
+msgstr ""
+
+#: windows.cpp:73
+msgid "Focus Policy"
+msgstr ""
+
+#: windows.cpp:74
+msgid "Click to focus"
+msgstr ""
+
+#: windows.cpp:75
+msgid "Focus follows mouse"
+msgstr ""
+
+#: windows.cpp:78
+msgid "Maximize Style"
+msgstr ""
+
+#: windows.cpp:79
+msgid "Maximize fully"
+msgstr ""
+
+#: windows.cpp:80
+msgid "Maximize vertically"
+msgstr ""
+
+#: windows.cpp:85
+msgid ""
+"Auto raise delay\n"
+"(<100 disables)"
+msgstr ""
+
+#: windows.cpp:88
+msgid "miliseconds"
+msgstr ""

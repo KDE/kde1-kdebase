@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-15 20:12+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,10 +68,6 @@ msgstr "Prz&enie¶"
 #: main.C:392
 msgid "Resi&ze"
 msgstr "&Rozmiar"
-
-#: main.C:393
-msgid "&Close"
-msgstr "Zam&knij"
 
 #: main.C:394
 msgid "&To desktop"
@@ -161,3 +157,6 @@ msgstr "&Prze³±cz na"
 #: taskmgr.C:49
 msgid "Current session"
 msgstr "Bierz±ca sesja"
+
+#~ msgid "&Close"
+#~ msgstr "Zam&knij"

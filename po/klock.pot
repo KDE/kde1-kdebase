@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-18 15:43+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,10 +22,6 @@ msgstr ""
 msgid "Setup kbanner"
 msgstr ""
 
-#: banner.cpp:80
-msgid "Font"
-msgstr ""
-
 #: banner.cpp:116 blankscrn.cpp:65
 msgid "Color:"
 msgstr ""
@@ -35,7 +31,7 @@ msgid "Italic"
 msgstr ""
 
 #: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
-#: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1017 polygon.cpp:101
+#: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1020 polygon.cpp:101
 #: rock.cpp:550 slip.cpp:366 swarm.cpp:330
 msgid "Speed:"
 msgstr ""
@@ -347,27 +343,27 @@ msgid ""
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
 
-#: morph3d.cpp:836
+#: morph3d.cpp:839
 msgid "GL can not render with root visual\n"
 msgstr ""
 
-#: morph3d.cpp:937
+#: morph3d.cpp:940
 msgid "Morph3D (GL)"
 msgstr ""
 
-#: morph3d.cpp:1011
+#: morph3d.cpp:1014
 msgid "Setup KMorph3d"
 msgstr ""
 
-#: morph3d.cpp:1027
+#: morph3d.cpp:1030
 msgid "Object Type:"
 msgstr ""
 
-#: morph3d.cpp:1115
+#: morph3d.cpp:1118
 msgid "About Morph3D"
 msgstr ""
 
-#: morph3d.cpp:1116
+#: morph3d.cpp:1119
 msgid ""
 "Morph3D\n"
 "\n"

@@ -6,6 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,37 +14,9 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kdmshutdown.cpp:229 kgreeter.cpp:207
-msgid "Cancel"
-msgstr "Zru¹it"
-
-#: kdmshutdown.cpp:192
-msgid "Exit kdm"
-msgstr "Ukonèi kdm"
-
-#: kgreeter.cpp:201
-msgid "Go!"
-msgstr "Start!"
-
-#: kgreeter.cpp:179
-msgid "Login failed!"
-msgstr "Pøihlá¹ení neúspì¹né!"
-
-#: kgreeter.cpp:145
-msgid "Login:"
-msgstr "U¾ivatel:"
-
-#: kdmshutdown.cpp:226
-msgid "Ok"
-msgstr "Ok"
-
-#: kgreeter.cpp:150
-msgid "Password:"
-msgstr "Pøístupové heslo:"
-
-#: kgreeter.cpp:185
-msgid "Session Type:"
-msgstr "Typ sezení:"
+#: kdmshutdown.cpp:153
+msgid "Shutdown or restart?"
+msgstr "Ukonèit nebo restartovat?"
 
 #: kdmshutdown.cpp:169
 msgid "Shutdown"
@@ -53,10 +26,36 @@ msgstr "Ukonèi"
 msgid "Shutdown and restart"
 msgstr "Ukonèi a restartuj"
 
-#: kdmshutdown.cpp:153
-msgid "Shutdown or restart?"
-msgstr "Ukonèit nebo restartovat?"
+#: kdmshutdown.cpp:192
+msgid "Exit kdm"
+msgstr "Ukonèi kdm"
 
-#: kgreeter.cpp:217
+#: kgreeter.cpp:137
+msgid "Login:"
+msgstr "U¾ivatel:"
+
+#: kgreeter.cpp:142
+msgid "Password:"
+msgstr "Pøístupové heslo:"
+
+#: kgreeter.cpp:176
+msgid "Login failed!"
+msgstr "Pøihlá¹ení neúspì¹né!"
+
+#: kgreeter.cpp:182
+msgid "Session Type:"
+msgstr "Typ sezení:"
+
+#: kgreeter.cpp:198
+msgid "Go!"
+msgstr "Start!"
+
+#: kgreeter.cpp:214
 msgid "Shutdown..."
 msgstr "Ukonèení..."
+
+#~ msgid "Cancel"
+#~ msgstr "Zru¹it"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"

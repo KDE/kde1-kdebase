@@ -1,168 +1,128 @@
 msgid ""
 msgstr ""
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-08-26 14:27:08+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
 "Xgettext-Options: --keyword=translate\n"
 "Files: main.C\n"
 
-#: main.C:220
+#: main.C:236
 msgid "Add characters to word class"
 msgstr "Dodaj znaki do klasy s³ów"
 
-#: main.C:224
+#: main.C:239
 msgid "choose type of color-mode"
 msgstr "Wybierz typ kolorowego trybu"
 
-#: main.C:227
-msgid "Ok"
-msgstr "O&k"
+# Polish translation of KDE kvt
+# Version 0.2.1
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+#: main.C:242
+msgid "The backspace key will send a"
+msgstr "Klawisz backspace <- wysy³a"
 
-#: main.C:229
-msgid "Cancel"
-msgstr "A&nuluj"
-
-#: main.C:357
+#: main.C:383
 msgid "&New Terminal"
 msgstr "&Nowy terminal"
 
-#: main.C:359
-msgid "E&xit"
-msgstr "&Wyj¶cie"
-
-#: main.C:364 main.C:669
+#: main.C:390 main.C:789
 msgid "&Hide"
 msgstr "&Ukryj"
 
-#: main.C:365
+#: main.C:391
 msgid "&Left"
 msgstr "Po &lewej"
 
-#: main.C:366
+#: main.C:392
 msgid "&Right"
 msgstr "Po &prawej"
 
-#: main.C:371
+#: main.C:397
 msgid "&Normal"
 msgstr "No&rmaly"
 
-#: main.C:372
+#: main.C:398
 msgid "&Tiny"
 msgstr "Mi&ni"
 
-#: main.C:373
+#: main.C:399
 msgid "&Small"
 msgstr "&Ma³y"
 
-#: main.C:374
+#: main.C:400
 msgid "&Medium"
 msgstr "¦&redni"
 
-#: main.C:375
+#: main.C:401
 msgid "&Large"
 msgstr "&Du¿y"
 
-#: main.C:376
+#: main.C:402
 msgid "&Huge"
 msgstr "&Wielki"
 
-#: main.C:388
+#: main.C:414
 msgid "&black/white"
 msgstr "&czarno/bia³y"
 
-#: main.C:389
+#: main.C:415
 msgid "&white/black"
 msgstr "&bia³o/czarny"
 
-#: main.C:390
+#: main.C:416
 msgid "&green/black"
 msgstr "&zielono/czarny"
 
-#: main.C:391
+#: main.C:417
 msgid "black/light&yellow"
 msgstr "czarno/&kremowy"
 
-#: main.C:392
+#: main.C:418
 msgid "Linu&x Console"
 msgstr "Konsola &Linuxa"
 
-#: main.C:399 main.C:594
+#: main.C:427
+msgid "&Custom Colors"
+msgstr "&Kolory u¿ytkownika"
+
+#: main.C:434 main.C:735
 msgid "Hide &Menubar"
 msgstr "Ukryj pasek &menu"
 
-#: main.C:401 main.C:460 main.C:586
+#: main.C:436 main.C:599 main.C:727
 msgid "Show &Menubar"
 msgstr "Poka¿ pasek &menu"
 
-#: main.C:402 main.C:604
+#: main.C:437 main.C:745
 msgid "Secure &keyboard"
 msgstr "Zabezpiecz &klawiaturê"
 
-#: main.C:404
+#: main.C:439
 msgid "Scroll&bar"
 msgstr "Pasek &przewijania"
 
-#: main.C:405
+#: main.C:440
 msgid "&Font size"
 msgstr "Rozmiar &czcionki"
 
-#: main.C:406
+#: main.C:441
 msgid "&Color"
 msgstr "Ko&lor"
 
-#: main.C:407
+#: main.C:442
 msgid "&Size"
 msgstr "&Rozmiar"
 
-#: main.C:408
+#: main.C:443
 msgid "Terminal..."
 msgstr "Terminal..."
 
-#: main.C:410
+#: main.C:445
 msgid "Save &Options"
 msgstr "Zachowaj &opcje"
 
-#: main.C:419
-msgid "&About..."
-msgstr "&Informacje..."
-
-#: main.C:420 main.C:430
-msgid "&Help"
-msgstr "Pomo&c"
-
-#: main.C:427
-msgid "&File"
-msgstr "&Plik"
-
-#: main.C:428
-msgid "&Options"
-msgstr "&Opcje"
-
-#: main.C:469 main.C:662
-msgid "&Show"
-msgstr "Po&ka¿"
-
-#: main.C:600
-msgid "Unsecure &keyboard"
-msgstr "Odbezpiecz &klawiaturê"
-
-#: main.C:739
-msgid "Hint"
-msgstr "Podpowied¼"
-
-#: main.C:740
-msgid ""
-"New color settings will be displayed\n"
-"when the keyboard is unsecured."
-msgstr ""
-"Nowe ustawienia kolorów bêd± pokazane\n"
-"gdy klawiatura zostanie odbezpieczona."
-
-#: main.C:760
-msgid "About kvt"
-msgstr "kvt - informacje"
-
-#: main.C:760
+#: main.C:454
 msgid ""
 "\n"
 "\n"
@@ -181,7 +141,32 @@ msgstr ""
 "Emulacja terminala dla ¦rodowiska Graficznego KDE\n"
 "oparta o rxvt-2.08 Roberta Nation'a"
 
-#: main.C:922
+#: main.C:608 main.C:782
+msgid "&Show"
+msgstr "Po&ka¿"
+
+#: main.C:741
+msgid "Unsecure &keyboard"
+msgstr "Odbezpiecz &klawiaturê"
+
+#: main.C:752
+msgid "Terminal Options"
+msgstr "Opcje terminala"
+
+#: main.C:894
+msgid "Hint"
+msgstr "Podpowied¼"
+
+#: main.C:895
+msgid ""
+"New color settings will be displayed\n"
+"when the keyboard is unsecured."
+msgstr ""
+"Nowe ustawienia kolorów bêd± pokazane\n"
+"gdy klawiatura zostanie odbezpieczona."
+
+#: main.C:1084
+#, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -200,7 +185,8 @@ msgid ""
 "-linux\t\t\tset up kvt to mimic linux-console\n"
 "-no_menubar\t\thide the menubar\n"
 "-no_scrollbar\t\thide the scrollbar\n"
-"-T <text>\t\ttext in window titlebar\n"
+"-T <text>\t\ttext in window titlebar \n"
+"                   (Obsolete. Use -caption instead)\n"
 "-tn <TERM>\t\tTerminal type. Default is xterm.\n"
 "-C\t\t\tCapture system console message\n"
 "-n <text>\t\tname in icon or icon window\n"
@@ -245,7 +231,7 @@ msgstr ""
 "-pageup <klawisz>         kombinacja Alt-klawisz przesuwa bufor w górê\n"
 "-pagedown <klawisz>       kombinacja Alt-klawisz przesuwa buforu w dó³\n"
 
-#: main.C:954
+#: main.C:1115
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
@@ -253,21 +239,32 @@ msgstr ""
 "-grk9\t\tgreek kbd = ELOT 928 (domy¶lnie)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
 
-#: main.C:970
-msgid "Terminal Options"
-msgstr "Opcje terminala"
-
-# Polish translation of KDE kvt
-# Version 0.2.1
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
-#~ msgid "The backspace key will send a"
-#~ msgstr "Klawisz backspace <- wysy³a"
-
-#~ msgid "&Custom Colors"
-#~ msgstr "&Kolory u¿ytkownika"
+#~ msgid "E&xit"
+#~ msgstr "&Wyj¶cie"
 
 #~ msgid "&Foreground Color"
 #~ msgstr "Kolor &czcionki"
 
 #~ msgid "&Background Color"
 #~ msgstr "Kolor &t³a"
+
+#~ msgid "Ok"
+#~ msgstr "O&k"
+
+#~ msgid "Cancel"
+#~ msgstr "A&nuluj"
+
+#~ msgid "&About..."
+#~ msgstr "&Informacje..."
+
+#~ msgid "&Help"
+#~ msgstr "Pomo&c"
+
+#~ msgid "&File"
+#~ msgstr "&Plik"
+
+#~ msgid "&Options"
+#~ msgstr "&Opcje"
+
+#~ msgid "About kvt"
+#~ msgstr "kvt - informacje"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-14 18:16+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,10 +26,6 @@ msgstr ""
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr ""
-
-#: krootwm.C:160 krootwm.C:396 krootwm.C:404
-msgid "New"
-msgstr "Ny"
 
 #: krootwm.C:162
 msgid "Help on desktop"
@@ -70,3 +66,6 @@ msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 #: krootwm.C:463
 msgid "Usage:"
 msgstr "Användning:"
+
+#~ msgid "New"
+#~ msgstr "Ny"

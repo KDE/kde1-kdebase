@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1997-12-18 13:52+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-11-17 11:51:29+0100\n"
 "From: didier Belot <dib@avo.fr>\n"
@@ -31,14 +31,6 @@ msgstr "Format inconnu: "
 #: helpwin.cpp:831
 msgid "Could not start or find KFM"
 msgstr "Ne peut ni démarrer, ni trouver KFM"
-
-#: helpwin.cpp:1297
-msgid "Back"
-msgstr "Précédent"
-
-#: helpwin.cpp:1299
-msgid "Forward"
-msgstr "Suivant"
 
 #: helpwin.cpp:1320
 msgid "Open this Link"
@@ -172,10 +164,6 @@ msgstr "Divers"
 msgid "System Administration"
 msgstr "Administration système"
 
-#: man.cpp:471
-msgid "New"
-msgstr "Nouveau"
-
 #: man.cpp:580
 msgid "Reading Dir: "
 msgstr "Lit le répertoire: "
@@ -220,22 +208,6 @@ msgstr "&Recharger"
 #: mainwidget.cpp:140
 msgid "&Search"
 msgstr "&Chercher"
-
-#: mainwidget.cpp:142
-msgid "&Print..."
-msgstr "Im&primer"
-
-#: mainwidget.cpp:144
-msgid "&Close"
-msgstr "&Fermer"
-
-#: mainwidget.cpp:145
-msgid "&Quit"
-msgstr "&Quitter"
-
-#: mainwidget.cpp:149
-msgid "&Copy"
-msgstr "&Copier"
 
 #: mainwidget.cpp:153
 msgid "&Back"
@@ -307,14 +279,6 @@ msgid ""
 "applicable law."
 msgstr ""
 
-#: mainwidget.cpp:200
-msgid "&File"
-msgstr "&Fichier"
-
-#: mainwidget.cpp:201
-msgid "&Edit"
-msgstr "&Edition"
-
 #: mainwidget.cpp:202
 msgid "&Goto"
 msgstr "&Aller à"
@@ -322,14 +286,6 @@ msgstr "&Aller à"
 #: mainwidget.cpp:203
 msgid "&Bookmarks"
 msgstr "&Signets"
-
-#: mainwidget.cpp:204
-msgid "&Options"
-msgstr "&Options"
-
-#: mainwidget.cpp:206
-msgid "&Help"
-msgstr "&Aide"
 
 #: mainwidget.cpp:221
 msgid "Previous Document"
@@ -386,6 +342,39 @@ msgstr "A propos de l'aide KDE"
 #: mainwidget.cpp:618
 msgid "&Add Bookmark"
 msgstr "&Ajouter un signet"
+
+#~ msgid "New"
+#~ msgstr "Nouveau"
+
+#~ msgid "Back"
+#~ msgstr "Précédent"
+
+#~ msgid "Forward"
+#~ msgstr "Suivant"
+
+#~ msgid "&Print..."
+#~ msgstr "Im&primer"
+
+#~ msgid "&Close"
+#~ msgstr "&Fermer"
+
+#~ msgid "&Quit"
+#~ msgstr "&Quitter"
+
+#~ msgid "&Copy"
+#~ msgstr "&Copier"
+
+#~ msgid "&File"
+#~ msgstr "&Fichier"
+
+#~ msgid "&Edit"
+#~ msgstr "&Edition"
+
+#~ msgid "&Options"
+#~ msgstr "&Options"
+
+#~ msgid "&Help"
+#~ msgstr "&Aide"
 
 #, fuzzy
 #~ msgid " Location:"

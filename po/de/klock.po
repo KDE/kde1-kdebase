@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1997-12-18 15:43+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -13,10 +13,6 @@ msgstr "Laufschrift"
 msgid "Setup kbanner"
 msgstr "Einstellungen Banner"
 
-#: banner.cpp:80
-msgid "Font"
-msgstr "Schrift"
-
 #: banner.cpp:116 blankscrn.cpp:65
 msgid "Color:"
 msgstr "Farbe:"
@@ -26,7 +22,7 @@ msgid "Italic"
 msgstr "Kursiv"
 
 #: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
-#: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1017 polygon.cpp:101
+#: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1020 polygon.cpp:101
 #: rock.cpp:550 slip.cpp:366 swarm.cpp:330
 msgid "Speed:"
 msgstr "Geschwindigkeit:"
@@ -400,27 +396,27 @@ msgstr ""
 "  -setup            Bildschirmschoner einstellen\n"
 "  -test             Bildschirmschoner sofort starten\n"
 
-#: morph3d.cpp:836
+#: morph3d.cpp:839
 msgid "GL can not render with root visual\n"
 msgstr "GL kann nicht in Root-Visual zeichnen\n"
 
-#: morph3d.cpp:937
+#: morph3d.cpp:940
 msgid "Morph3D (GL)"
 msgstr "3D-Körper (GL)"
 
-#: morph3d.cpp:1011
+#: morph3d.cpp:1014
 msgid "Setup KMorph3d"
 msgstr "KMorph3D eisntellen"
 
-#: morph3d.cpp:1027
+#: morph3d.cpp:1030
 msgid "Object Type:"
 msgstr "Objektart:"
 
-#: morph3d.cpp:1115
+#: morph3d.cpp:1118
 msgid "About Morph3D"
 msgstr "Über Morph3D"
 
-#: morph3d.cpp:1116
+#: morph3d.cpp:1119
 msgid ""
 "Morph3D\n"
 "\n"
@@ -597,3 +593,6 @@ msgstr ""
 "Copyright (c) 1991 Patrick J. Naughton\n"
 "\n"
 "Portiert für KDE von Emanuel Pirker."
+
+#~ msgid "Font"
+#~ msgstr "Schrift"

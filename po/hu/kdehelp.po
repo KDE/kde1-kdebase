@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.2\n"
-"POT-Creation-Date: 1997-12-18 13:52+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: 1997-09-21 19:39+MET\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -36,14 +36,6 @@ msgstr "Ismeretlen formátum: "
 #: helpwin.cpp:831
 msgid "Could not start or find KFM"
 msgstr "Nincs meg a KFM, vagy nem lehet elindítani"
-
-#: helpwin.cpp:1297
-msgid "Back"
-msgstr "Vissza"
-
-#: helpwin.cpp:1299
-msgid "Forward"
-msgstr "Elõre"
 
 #: helpwin.cpp:1320
 msgid "Open this Link"
@@ -177,10 +169,6 @@ msgstr "Egyéb"
 msgid "System Administration"
 msgstr "Rendszeradminisztráció"
 
-#: man.cpp:471
-msgid "New"
-msgstr "Új"
-
 #: man.cpp:580
 msgid "Reading Dir: "
 msgstr "Könyvtár olvasása: "
@@ -226,22 +214,6 @@ msgstr "Újra&tölt"
 #: mainwidget.cpp:140
 msgid "&Search"
 msgstr "&Keres"
-
-#: mainwidget.cpp:142
-msgid "&Print..."
-msgstr "&Nyomtatás..."
-
-#: mainwidget.cpp:144
-msgid "&Close"
-msgstr "&Bezár"
-
-#: mainwidget.cpp:145
-msgid "&Quit"
-msgstr "Kilé&p"
-
-#: mainwidget.cpp:149
-msgid "&Copy"
-msgstr "&Másol"
 
 #: mainwidget.cpp:153
 msgid "&Back"
@@ -313,14 +285,6 @@ msgid ""
 "applicable law."
 msgstr ""
 
-#: mainwidget.cpp:200
-msgid "&File"
-msgstr ""
-
-#: mainwidget.cpp:201
-msgid "&Edit"
-msgstr "&Szerkesztés"
-
 #: mainwidget.cpp:202
 msgid "&Goto"
 msgstr "&Ugrás"
@@ -328,14 +292,6 @@ msgstr "&Ugrás"
 #: mainwidget.cpp:203
 msgid "&Bookmarks"
 msgstr "&Kedvencek"
-
-#: mainwidget.cpp:204
-msgid "&Options"
-msgstr "&Beállítások"
-
-#: mainwidget.cpp:206
-msgid "&Help"
-msgstr "&Segítség"
 
 #: mainwidget.cpp:221
 msgid "Previous Document"
@@ -392,6 +348,36 @@ msgstr "A KDE Segítség névjegye"
 #: mainwidget.cpp:618
 msgid "&Add Bookmark"
 msgstr "&Hozzáadás a kedvencekhez"
+
+#~ msgid "New"
+#~ msgstr "Új"
+
+#~ msgid "Back"
+#~ msgstr "Vissza"
+
+#~ msgid "Forward"
+#~ msgstr "Elõre"
+
+#~ msgid "&Print..."
+#~ msgstr "&Nyomtatás..."
+
+#~ msgid "&Close"
+#~ msgstr "&Bezár"
+
+#~ msgid "&Quit"
+#~ msgstr "Kilé&p"
+
+#~ msgid "&Copy"
+#~ msgstr "&Másol"
+
+#~ msgid "&Edit"
+#~ msgstr "&Szerkesztés"
+
+#~ msgid "&Options"
+#~ msgstr "&Beállítások"
+
+#~ msgid "&Help"
+#~ msgstr "&Segítség"
 
 #~ msgid "Cancel"
 #~ msgstr "Mégsem"

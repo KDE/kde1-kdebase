@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-15 20:12+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,10 +72,6 @@ msgstr "&Flytta"
 #, fuzzy
 msgid "Resi&ze"
 msgstr "&Ändra storlek"
-
-#: main.C:393
-msgid "&Close"
-msgstr "&Stäng"
 
 #: main.C:394
 #, fuzzy
@@ -166,3 +162,6 @@ msgstr "Byt till"
 #: taskmgr.C:49
 msgid "Current session"
 msgstr "Nuvarande session"
+
+#~ msgid "&Close"
+#~ msgstr "&Stäng"

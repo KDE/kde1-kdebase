@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1997-12-18 13:52+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -28,14 +28,6 @@ msgstr "Unbekanntes Format: "
 #: helpwin.cpp:831
 msgid "Could not start or find KFM"
 msgstr "KFM konnte nicht gefunden oder gestartet werden"
-
-#: helpwin.cpp:1297
-msgid "Back"
-msgstr "Zurück"
-
-#: helpwin.cpp:1299
-msgid "Forward"
-msgstr "Weiter"
 
 #: helpwin.cpp:1320
 msgid "Open this Link"
@@ -172,10 +164,6 @@ msgstr "Diverses"
 msgid "System Administration"
 msgstr "Verwaltung"
 
-#: man.cpp:471
-msgid "New"
-msgstr "Neu"
-
 # Man kann nicht mal Passiv, mal Aktiv für
 # die Maschine benutzen. Entweder immer "ich" (Lese Verzeichnis) 
 # oder immer "wird" (Verzeichnis wird gelesen).
@@ -223,22 +211,6 @@ msgstr ""
 #: mainwidget.cpp:140
 msgid "&Search"
 msgstr "&Suchen"
-
-#: mainwidget.cpp:142
-msgid "&Print..."
-msgstr "Dru&cken ..."
-
-#: mainwidget.cpp:144
-msgid "&Close"
-msgstr "S&chließen"
-
-#: mainwidget.cpp:145
-msgid "&Quit"
-msgstr "&Beenden"
-
-#: mainwidget.cpp:149
-msgid "&Copy"
-msgstr "&Kopieren"
 
 #: mainwidget.cpp:153
 msgid "&Back"
@@ -309,14 +281,6 @@ msgid ""
 "applicable law."
 msgstr ""
 
-#: mainwidget.cpp:200
-msgid "&File"
-msgstr "&Datei"
-
-#: mainwidget.cpp:201
-msgid "&Edit"
-msgstr "&Editieren"
-
 #: mainwidget.cpp:202
 msgid "&Goto"
 msgstr "&Seite"
@@ -327,14 +291,6 @@ msgstr "&Seite"
 #: mainwidget.cpp:203
 msgid "&Bookmarks"
 msgstr "&Lesezeichen"
-
-#: mainwidget.cpp:204
-msgid "&Options"
-msgstr "&Optionen"
-
-#: mainwidget.cpp:206
-msgid "&Help"
-msgstr "&Hilfe"
 
 #: mainwidget.cpp:221
 msgid "Previous Document"
@@ -392,3 +348,36 @@ msgstr "Information über KDE-Hilfe"
 #: mainwidget.cpp:618
 msgid "&Add Bookmark"
 msgstr "&Lesezeichen hinzufügen"
+
+#~ msgid "New"
+#~ msgstr "Neu"
+
+#~ msgid "Back"
+#~ msgstr "Zurück"
+
+#~ msgid "Forward"
+#~ msgstr "Weiter"
+
+#~ msgid "&Print..."
+#~ msgstr "Dru&cken ..."
+
+#~ msgid "&Close"
+#~ msgstr "S&chließen"
+
+#~ msgid "&Quit"
+#~ msgstr "&Beenden"
+
+#~ msgid "&Copy"
+#~ msgstr "&Kopieren"
+
+#~ msgid "&File"
+#~ msgstr "&Datei"
+
+#~ msgid "&Edit"
+#~ msgstr "&Editieren"
+
+#~ msgid "&Options"
+#~ msgstr "&Optionen"
+
+#~ msgid "&Help"
+#~ msgstr "&Hilfe"

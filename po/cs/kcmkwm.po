@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1997-12-14 20:07+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
@@ -45,10 +45,6 @@ msgstr "Pøilepení"
 #: titlebar.cpp:126
 msgid "Menu"
 msgstr "Menu"
-
-#: titlebar.cpp:171 windows.cpp:70
-msgid "Off"
-msgstr "Vypnout"
 
 #: titlebar.cpp:458
 msgid ""
@@ -118,10 +114,6 @@ msgstr "Neprùhledný"
 msgid "Resize Animation"
 msgstr "Animace pøi zmìnì velikosti"
 
-#: windows.cpp:69
-msgid "On"
-msgstr "Zapnout"
-
 #: windows.cpp:73
 msgid "Focus Policy"
 msgstr "Zpùsob zaktivnìní okna"
@@ -157,3 +149,9 @@ msgstr ""
 #: windows.cpp:88
 msgid "miliseconds"
 msgstr "milisekund"
+
+#~ msgid "Off"
+#~ msgstr "Vypnout"
+
+#~ msgid "On"
+#~ msgstr "Zapnout"

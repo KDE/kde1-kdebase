@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-14 20:07+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,10 +94,6 @@ msgstr "Izabran"
 #: colorscm.cpp:252 colorscm.cpp:264
 msgid "Color Scheme"
 msgstr "Raspored boja"
-
-#: colorscm.cpp:278
-msgid "Remove"
-msgstr "Obri¹i"
 
 #: colorscm.cpp:286
 msgid "Widget color"
@@ -223,53 +219,49 @@ msgstr "Zahtjeva lozinku"
 msgid "Priority:"
 msgstr "Prioritet:"
 
-#: general.cpp:80
+#: general.cpp:61
 msgid "General"
 msgstr "Uobièajen"
 
-#: general.cpp:84
+#: general.cpp:65
 msgid "Widget style"
 msgstr "Stil widgeta"
 
-#: general.cpp:89
+#: general.cpp:70
 msgid "Motif"
 msgstr "Motif"
 
-#: general.cpp:90
+#: general.cpp:71
 msgid "Windows 95"
 msgstr "Windows 95"
 
-#: general.cpp:99
+#: general.cpp:80
 msgid "Fonts"
 msgstr "Fontovi"
 
-#: general.cpp:104
+#: general.cpp:85
 msgid "General font"
 msgstr "Uobièajeni font"
 
-#: general.cpp:129
+#: general.cpp:110
 msgid "Sample"
 msgstr "Primjer"
 
-#: general.cpp:135
+#: general.cpp:116
 msgid "Small"
 msgstr "Mali"
 
-#: general.cpp:139
+#: general.cpp:120
 msgid "Medium"
 msgstr "Srednji"
 
-#: general.cpp:143
+#: general.cpp:124
 msgid "Large"
 msgstr "Veliki"
 
-#: general.cpp:160
+#: general.cpp:141
 msgid "Italic"
 msgstr "Nako¹en"
-
-#: general.cpp:170
-msgid "Charset:"
-msgstr ""
 
 #: main.cpp:61
 #, fuzzy
@@ -294,6 +286,9 @@ msgstr ""
 #, fuzzy
 msgid "Display settings"
 msgstr "Pode¹avanje prikaza"
+
+#~ msgid "Remove"
+#~ msgstr "Obri¹i"
 
 #~ msgid "KDE Display Configuration"
 #~ msgstr "KDE pode¹avanje prikaza"

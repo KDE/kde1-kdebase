@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-18 13:52+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,14 +37,6 @@ msgstr "Formato Desconocido: "
 #: helpwin.cpp:831
 msgid "Could not start or find KFM"
 msgstr "KFM no se pudo iniciar o encontrar"
-
-#: helpwin.cpp:1297
-msgid "Back"
-msgstr "Atrás"
-
-#: helpwin.cpp:1299
-msgid "Forward"
-msgstr "Adelante"
 
 #: helpwin.cpp:1320
 msgid "Open this Link"
@@ -178,10 +170,6 @@ msgstr "Misceláneos"
 msgid "System Administration"
 msgstr "Administración del Sistema"
 
-#: man.cpp:471
-msgid "New"
-msgstr "Nuevo"
-
 #: man.cpp:580
 msgid "Reading Dir: "
 msgstr "Leyendo Directorio: "
@@ -226,22 +214,6 @@ msgstr ""
 #: mainwidget.cpp:140
 msgid "&Search"
 msgstr "Bu&scar"
-
-#: mainwidget.cpp:142
-msgid "&Print..."
-msgstr "Im&primir"
-
-#: mainwidget.cpp:144
-msgid "&Close"
-msgstr "&Cerrar"
-
-#: mainwidget.cpp:145
-msgid "&Quit"
-msgstr "Salir"
-
-#: mainwidget.cpp:149
-msgid "&Copy"
-msgstr "&Copiar"
 
 #: mainwidget.cpp:153
 msgid "&Back"
@@ -314,14 +286,6 @@ msgid ""
 "applicable law."
 msgstr ""
 
-#: mainwidget.cpp:200
-msgid "&File"
-msgstr "&Archivo"
-
-#: mainwidget.cpp:201
-msgid "&Edit"
-msgstr "&Editar"
-
 #: mainwidget.cpp:202
 msgid "&Goto"
 msgstr "Ir a"
@@ -329,14 +293,6 @@ msgstr "Ir a"
 #: mainwidget.cpp:203
 msgid "&Bookmarks"
 msgstr "&Favoritos"
-
-#: mainwidget.cpp:204
-msgid "&Options"
-msgstr "&Opciones"
-
-#: mainwidget.cpp:206
-msgid "&Help"
-msgstr "Ayuda"
 
 #: mainwidget.cpp:221
 msgid "Previous Document"
@@ -394,6 +350,39 @@ msgstr "Acerca de la Ayuda KDE"
 #: mainwidget.cpp:618
 msgid "&Add Bookmark"
 msgstr "&Agregar Favorito"
+
+#~ msgid "New"
+#~ msgstr "Nuevo"
+
+#~ msgid "Back"
+#~ msgstr "Atrás"
+
+#~ msgid "Forward"
+#~ msgstr "Adelante"
+
+#~ msgid "&Print..."
+#~ msgstr "Im&primir"
+
+#~ msgid "&Close"
+#~ msgstr "&Cerrar"
+
+#~ msgid "&Quit"
+#~ msgstr "Salir"
+
+#~ msgid "&Copy"
+#~ msgstr "&Copiar"
+
+#~ msgid "&File"
+#~ msgstr "&Archivo"
+
+#~ msgid "&Edit"
+#~ msgstr "&Editar"
+
+#~ msgid "&Options"
+#~ msgstr "&Opciones"
+
+#~ msgid "&Help"
+#~ msgstr "Ayuda"
 
 #~ msgid "Cancel"
 #~ msgstr "Cancelar"

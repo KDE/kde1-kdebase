@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcontrol\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
+"PO-Revision-Date: 1997-12-29 15:59+01\n"
+"Last-Translator: Stephan Kulow <coolo@kde.org>\n"
+
+#: configlist.cpp:119
+msgid "Unknown module: "
+msgstr "Unbekanntes Modul: "
+
+#: main.cpp:46 mainwidget.cpp:18
+msgid "KDE Control Center"
+msgstr "KDE Kontroll-Zentrum"
+
+#: toplevel.cpp:78
+msgid "&Swallow modules"
+msgstr "Modulle &einbetten"
+
+#: toplevel.cpp:81
+msgid "&About KControl..."
+msgstr "&Über KControl..."
+
+#: toplevel.cpp:84
+msgid "&Using KControl"
+msgstr "K&Control benutzen"
+
+#: toplevel.cpp:101
+msgid "About KControl"
+msgstr "Über KControl"
+
+#: toplevel.cpp:102
+msgid ""
+"KDE Control Center - Version 0.3\n"
+"\n"
+"Written by Matthias Hölzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Thanks to:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+msgstr ""
+"KDE Kontroll-Zentrum - Version 0.3\n"
+"\n"
+"Geschrieben von Matthias Hölzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Dank an:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+
+#~ msgid "E&xit"
+#~ msgstr "&Beenden"

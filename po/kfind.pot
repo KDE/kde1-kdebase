@@ -1,365 +1,304 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Date: 1997-10-01 16:40:07+0200\n"
-"From: root <flidr@CyberGate.zcu.cz>\n"
-"Content-Type: text/plain; charset=\n"
-"Xgettext-Options: -s -C -ktranslate\n"
-"Files: kfarch.cpp kfdird.cpp kfind.cpp kfindtop.cpp kfoptions.cpp kfsave.cpp kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp mkfindtop.cpp mkfoptions.cpp mkftabdlg.cpp mkfwin.cpp\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
 
-#: kftabdlg.cpp:214
-msgid " Advanced "
-msgstr ""
-
-#: kftabdlg.cpp:166
-msgid " Date Modified "
-msgstr ""
-
-#: kftabdlg.cpp:94
-msgid " Name& Location "
-msgstr ""
-
-#: kfwin.cpp:104
-msgid "%d file(s) found"
-msgstr ""
-
-#: kfindtop.cpp:185
-msgid "&About"
-msgstr ""
-
-#: kfindtop.cpp:186
-msgid "About &Qt"
-msgstr ""         
-
-#: kfindtop.cpp:137
-msgid "&Add to archive"
-msgstr ""
-
-#: kftabdlg.cpp:114
-msgid "&All files"
-msgstr ""
-
-#: kftabdlg.cpp:52
-msgid "&Browse ..."
-msgstr ""
-
-#: kftabdlg.cpp:173
-msgid "&Containing Text:"
-msgstr ""
-
-#: kfindtop.cpp:162
-msgid "&Copy"
-msgstr ""
-
-#: kfindtop.cpp:160
-msgid "&Cut"
-msgstr ""
-
-#: kfindtop.cpp:140
-msgid "&Delete"
-msgstr ""
-
-#: kfindtop.cpp:189
-msgid "&Edit"
-msgstr ""
-
-#: kfindtop.cpp:188
-msgid "&File"
-msgstr ""
-
-#: kfindtop.cpp:192
-msgid "&Help"
-msgstr ""
-
-#: kfindtop.cpp:167
-msgid "&Invert Selection"
-msgstr ""
-
-#: kftabdlg.cpp:49
-msgid "&Look in:"
-msgstr ""
-
-#: kftabdlg.cpp:47
-msgid "&Named:"
-msgstr ""
-
-#: kfindtop.cpp:135
-msgid "&Open"
-msgstr ""
-
-#: kfindtop.cpp:190
-msgid "&Options"
-msgstr ""
-
-#: kfindtop.cpp:178
-msgid "&Preferences ..."
-msgstr ""
-
-#: kfindtop.cpp:142
-msgid "&Properties"
-msgstr ""
-
-#: kfindtop.cpp:151
-msgid "&Quit"
-msgstr ""
-
-#: kfindtop.cpp:148
-msgid "&Save Search"
-msgstr ""
-
-#: kfindtop.cpp:165
-msgid "&Select All"
-msgstr ""
-
-#: kftabdlg.cpp:175
-msgid "&Size is:"
-msgstr ""
-
-#: kfindtop.cpp:157
-msgid "&Undo"
-msgstr ""
-
-#: kftabdlg.cpp:116
-msgid "&between"
-msgstr ""
-
-#: kftabdlg.cpp:118
-msgid "&during the previous "
-msgstr ""
-
-#: kftabdlg.cpp:205
-msgid "(none)"
-msgstr ""
-
-#: kfoptions.cpp:202
-msgid "Add New"
-msgstr ""
-
-#: kfoptions.cpp:195
-msgid "Add to Archive:"
-msgstr ""
-
-#: kfindtop.cpp:226
-msgid "Add to archive"
-msgstr ""
-
-#: kftabdlg.cpp:198
-msgid "All Files and Folders"
-msgstr ""
-
-#: kfoptions.cpp:243
-msgid "Archivers"
-msgstr ""
-
-#: kftabdlg.cpp:206
-msgid "At Least"
-msgstr ""
-
-#: kftabdlg.cpp:207
-msgid "At Most"
-msgstr ""
-
-#: kfoptions.cpp:83
-msgid "Browse"
-msgstr ""
-
-#: kfdird.cpp:48 kfoptions.cpp:53 kfwin.cpp:144 kfwin.cpp:198 kfwin.cpp:213 kfwin.cpp:220 kfwin.cpp:242 kfwin.cpp:249 kfwin.cpp:255
-msgid "Cancel"
+#: kfdird.cpp:46
+msgid "Directories:"
 msgstr ""
 
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
 msgstr ""
 
-#: kfwin.cpp:349
-msgid "Couldn't recognize archive type!"
-msgstr ""
-
-#: kfoptions.cpp:193
-msgid "Create Archive:"
-msgstr ""
-
-#: kfindtop.cpp:231
-msgid "Delete"
-msgstr ""
-
-#: kfwin.cpp:196
-msgid "Delete File"
-msgstr ""
-
-#: kfdird.cpp:46
-msgid "Directories:"
-msgstr ""
-
-#: kfwin.cpp:194
-msgid ""
-"Do you really want to delete file:\n"
-"%s"
-msgstr ""
-
-#: kfwin.cpp:140 kfwin.cpp:178 kfwin.cpp:209 kfwin.cpp:216 kfwin.cpp:238 kfwin.cpp:245 kfwin.cpp:251 kfwin.cpp:348
-msgid "Error"
-msgstr ""
-
-#: kfwin.cpp:410
-msgid "Error while creating child process!"
-msgstr ""
-
-#: kfoptions.cpp:76
-msgid "File format:"
-msgstr ""
-
-#: kftabdlg.cpp:115
-msgid "Find all files created or &modified:"
-msgstr ""
-
-#: kfindtop.cpp:252
-msgid "Help"
-msgstr ""
-
-#: kftabdlg.cpp:64
-msgid "Include &subfolders"
-msgstr ""
-
-#: kfwin.cpp:252
-msgid ""
-"It isn't possible to delete\n"
-"selected directory"
-msgstr ""
-
-#: kfwin.cpp:217
-msgid ""
-"It isn't possible to delete\n"
-"selected file"
-msgstr ""
-
-#: kfwin.cpp:141
-msgid "It wasn't possible to save results!"
-msgstr ""
-
-#: kfindtop.cpp:122
+#: kfindtop.cpp:118
+#, c-format
 msgid ""
 "KFind %s\n"
 "Frontend to find utility\n"
-"Miroslav Fl\355dr <flidr@kky.zcu.cz>\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "\n"
 "Special thanks to Stephan Kulow\n"
 "<coolo@kde.org>"
 msgstr ""
 
-#: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
-msgid "KFind Results File"
+#: kfindtop.cpp:136
+msgid "&Open"
 msgstr ""
 
-#: kfindtop.cpp:182
-msgid "Kfind &help"
+#: kfindtop.cpp:138
+msgid "&Add to archive"
 msgstr ""
 
-#: kfindtop.cpp:208
-msgid "New Search"
+#: kfindtop.cpp:141
+msgid "&Delete"
 msgstr ""
 
-#: kfdird.cpp:47 kfoptions.cpp:52 kfwin.cpp:143 kfwin.cpp:181 kfwin.cpp:197 kfwin.cpp:212 kfwin.cpp:219 kfwin.cpp:241 kfwin.cpp:248 kfwin.cpp:254 kfwin.cpp:350
-msgid "OK"
+#: kfindtop.cpp:143
+msgid "&Properties"
 msgstr ""
 
-#: kftabdlg.cpp:171
-msgid "Of &type:"
-msgstr ""
-
-#: kfindtop.cpp:221
-msgid "Open"
-msgstr ""
-
-#: kfindtop.cpp:145
+#: kfindtop.cpp:146
 msgid "Open Containing &Folder"
 msgstr ""
 
-#: kfindtop.cpp:241
+#: kfindtop.cpp:149
+msgid "&Save Search"
+msgstr ""
+
+#: kfindtop.cpp:158
+msgid "&Undo"
+msgstr ""
+
+#: kfindtop.cpp:161
+msgid "&Cut"
+msgstr ""
+
+#: kfindtop.cpp:166
+msgid "&Select All"
+msgstr ""
+
+#: kfindtop.cpp:168
+msgid "&Invert Selection"
+msgstr ""
+
+#: kfindtop.cpp:179
+msgid "&Preferences ..."
+msgstr ""
+
+#: kfindtop.cpp:183
+msgid "Kfind &help"
+msgstr ""
+
+#: kfindtop.cpp:186
+msgid "About &Qt"
+msgstr ""
+
+#: kfindtop.cpp:188
+msgid "&About"
+msgstr ""
+
+#: kfindtop.cpp:206
+msgid "Start Search"
+msgstr ""
+
+#: kfindtop.cpp:211
+msgid "New Search"
+msgstr ""
+
+#: kfindtop.cpp:216
+msgid "Stop Search"
+msgstr ""
+
+#: kfindtop.cpp:229
+msgid "Add to archive"
+msgstr ""
+
+#: kfindtop.cpp:239
+msgid "Properties"
+msgstr ""
+
+#: kfindtop.cpp:244
 msgid "Open Containing Folder"
 msgstr ""
 
-#: kfoptions.cpp:199
-msgid "Patterns:"
+#: kfindtop.cpp:249
+msgid "Save Search Results"
 msgstr ""
 
-#: kfoptions.cpp:96
-msgid "Plain Text"
+#: kftabdlg.cpp:48
+msgid "&Named:"
+msgstr ""
+
+#: kftabdlg.cpp:51
+msgid "&Look in:"
+msgstr ""
+
+#: kftabdlg.cpp:54
+msgid "&Browse ..."
+msgstr ""
+
+#: kftabdlg.cpp:66
+msgid "Include &subfolders"
+msgstr ""
+
+#: kftabdlg.cpp:96
+msgid " Name& Location "
+msgstr ""
+
+#: kftabdlg.cpp:108
+msgid "and"
+msgstr ""
+
+#: kftabdlg.cpp:109
+msgid "month(s)"
+msgstr ""
+
+#: kftabdlg.cpp:110
+msgid "day(s)"
+msgstr ""
+
+#: kftabdlg.cpp:116
+msgid "&All files"
+msgstr ""
+
+#: kftabdlg.cpp:117
+msgid "Find all files created or &modified:"
+msgstr ""
+
+#: kftabdlg.cpp:118
+msgid "&between"
+msgstr ""
+
+#: kftabdlg.cpp:119
+msgid "during the previou&s "
+msgstr ""
+
+#: kftabdlg.cpp:120
+msgid "&during the previous "
+msgstr ""
+
+#: kftabdlg.cpp:168
+msgid " Date Modified "
+msgstr ""
+
+#: kftabdlg.cpp:174
+msgid "Of &type:"
+msgstr ""
+
+#: kftabdlg.cpp:176
+msgid "&Containing Text:"
+msgstr ""
+
+#: kftabdlg.cpp:179
+msgid "&Size is:"
+msgstr ""
+
+#: kftabdlg.cpp:202
+msgid "All Files and Folders"
+msgstr ""
+
+#: kftabdlg.cpp:209
+msgid "(none)"
+msgstr ""
+
+#: kftabdlg.cpp:210
+msgid "At Least"
+msgstr ""
+
+#: kftabdlg.cpp:211
+msgid "At Most"
+msgstr ""
+
+#: kftabdlg.cpp:218
+msgid " Advanced "
+msgstr ""
+
+#: kftabdlg.cpp:389
+msgid "The date is not valid!!"
+msgstr ""
+
+#: kftabdlg.cpp:401
+msgid "The month(s) value isn't valid!!"
+msgstr ""
+
+#: kftabdlg.cpp:412
+msgid "The day(s) value isn't valid!!"
+msgstr ""
+
+#: kftabdlg.cpp:429
+msgid "The value in size isn't valid number!!"
 msgstr ""
 
 #: kfoptions.cpp:54
 msgid "Preferences"
 msgstr ""
 
-#: kfindtop.cpp:236
-msgid "Properties"
-msgstr ""
-
-#: kfindtop.cpp:257
-msgid "Quit"
-msgstr ""
-
-#: kfoptions.cpp:204
-msgid "Remove"
-msgstr ""
-
-#: kfwin.cpp:179
-msgid "Results were saved to file\n"
-msgstr ""
-
-#: kfindtop.cpp:246
-msgid "Save Search Results"
-msgstr ""
-
-#: kfoptions.cpp:81
-msgid "Save results to file ~/.kfind-results.html"
+#: kfoptions.cpp:76
+msgid "File format:"
 msgstr ""
 
 #: kfoptions.cpp:78
 msgid "Save results to file:"
 msgstr ""
 
+#: kfoptions.cpp:81
+msgid "Save results to file ~/.kfind-results.html"
+msgstr ""
+
+#: kfoptions.cpp:83
+msgid "Browse"
+msgstr ""
+
+#: kfoptions.cpp:96
+msgid "Plain Text"
+msgstr ""
+
 #: kfoptions.cpp:125
 msgid "Saving"
 msgstr ""
 
-#: kfdird.cpp:167 kfdird.cpp:192 kfdird.cpp:210
-msgid "Sorry"
+#: kfoptions.cpp:132
+msgid "Create Archive:"
 msgstr ""
 
-#: kfwin.cpp:246
+#: kfoptions.cpp:134
+msgid "Add to Archive:"
+msgstr ""
+
+#: kfoptions.cpp:138
+msgid "Patterns:"
+msgstr ""
+
+#: kfoptions.cpp:141
+msgid "Add New"
+msgstr ""
+
+#: kfoptions.cpp:182
+msgid "Archivers"
+msgstr ""
+
+#: kfwin.cpp:78 kfwin.cpp:105
+#, c-format
+msgid "%d file(s) found"
+msgstr ""
+
+#: kfwin.cpp:143
+msgid "It wasn't possible to save results!"
+msgstr ""
+
+#: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
+msgid "KFind Results File"
+msgstr ""
+
+#: kfwin.cpp:179
+msgid "Information"
+msgstr ""
+
+#: kfwin.cpp:180
+msgid "Results were saved to file\n"
+msgstr ""
+
+#: kfwin.cpp:195
+#, c-format
 msgid ""
-"Specified directory\n"
-"is not empty!"
+"Do you really want to delete file:\n"
+"%s"
 msgstr ""
 
-#: kfindtop.cpp:203
-msgid "Start Search"
-msgstr ""
-
-#: kfindtop.cpp:213
-msgid "Stop Search"
-msgstr ""
-
-#: kftabdlg.cpp:384
-msgid "The date is not valid!!"
-msgstr ""
-
-#: kftabdlg.cpp:407
-msgid "The day(s) value isn't valid!!"
-msgstr ""
-
-#: kftabdlg.cpp:396
-msgid "The month(s) value isn't valid!!"
-msgstr ""
-
-#: kftabdlg.cpp:424
-msgid "The value in size isn't valid number!!"
-msgstr ""
-
-#: kfwin.cpp:239
-msgid ""
-"You have no permission\n"
-" to delete this directory"
+#: kfwin.cpp:197
+msgid "Delete File"
 msgstr ""
 
 #: kfwin.cpp:210
@@ -368,18 +307,34 @@ msgid ""
 " to delete this file"
 msgstr ""
 
-#: kftabdlg.cpp:106
-msgid "and"
+#: kfwin.cpp:216
+msgid ""
+"It isn't possible to delete\n"
+"selected file"
 msgstr ""
 
-#: kftabdlg.cpp:108
-msgid "day(s)"
+#: kfwin.cpp:234
+msgid ""
+"You have no permission\n"
+" to delete this directory"
 msgstr ""
 
-#: kftabdlg.cpp:117
-msgid "during the previou&s "
+#: kfwin.cpp:239
+msgid ""
+"Specified directory\n"
+"is not empty!"
 msgstr ""
 
-#: kftabdlg.cpp:107
-msgid "month(s)"
+#: kfwin.cpp:244
+msgid ""
+"It isn't possible to delete\n"
+"selected directory"
+msgstr ""
+
+#: kfwin.cpp:336
+msgid "Couldn't recognize archive type!"
+msgstr ""
+
+#: kfwin.cpp:395
+msgid "Error while creating child process!"
 msgstr ""

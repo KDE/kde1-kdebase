@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-14 20:07+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,10 +48,6 @@ msgstr "Przyklej"
 #: titlebar.cpp:126
 msgid "Menu"
 msgstr "Menu"
-
-#: titlebar.cpp:171 windows.cpp:70
-msgid "Off"
-msgstr "Wy³"
 
 #: titlebar.cpp:458
 msgid ""
@@ -129,10 +125,6 @@ msgstr "Wype³niony"
 msgid "Resize Animation"
 msgstr "Animacja zmiany rozmiaru"
 
-#: windows.cpp:69
-msgid "On"
-msgstr "W³"
-
 #: windows.cpp:73
 msgid "Focus Policy"
 msgstr "Ustawienie focus"
@@ -168,3 +160,9 @@ msgstr ""
 #: windows.cpp:88
 msgid "miliseconds"
 msgstr "milisekundy"
+
+#~ msgid "Off"
+#~ msgstr "Wy³"
+
+#~ msgid "On"
+#~ msgstr "W³"

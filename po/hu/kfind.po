@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-08-26 12:45+0200\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -14,260 +14,16 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: kftabdlg.cpp:214
-msgid " Advanced "
-msgstr " Továbbá "
-
-#: kftabdlg.cpp:166
-msgid " Date Modified "
-msgstr " Módosítva "
-
-#: kftabdlg.cpp:94
-#, fuzzy
-msgid " Name& Location "
-msgstr " Név&hely "
-
-#: kfwin.cpp:104
-msgid "%d file(s) found"
-msgstr "%d file-t találtam"
-
-#: kfindtop.cpp:185
-msgid "&About"
-msgstr ""
-
-#: kfindtop.cpp:186
-msgid "About &Qt"
-msgstr ""
-
-#: kfindtop.cpp:137
-#, fuzzy
-msgid "&Add to archive"
-msgstr "Hozzáad az archívumhoz"
-
-#: kftabdlg.cpp:114
-msgid "&All files"
-msgstr "&Minden file"
-
-#: kftabdlg.cpp:52
-msgid "&Browse ..."
-msgstr "&Tallóz ..."
-
-#: kftabdlg.cpp:173
-msgid "&Containing Text:"
-msgstr "&Tartalmaz:"
-
-#: kfindtop.cpp:162
-#, fuzzy
-msgid "&Copy"
-msgstr "Beilleszt"
-
-#: kfindtop.cpp:160
-#, fuzzy
-msgid "&Cut"
-msgstr "Kivág"
-
-#: kfindtop.cpp:140
-#, fuzzy
-msgid "&Delete"
-msgstr "Töröl"
-
-#: kfindtop.cpp:189
-msgid "&Edit"
-msgstr "&Szerkeszt"
-
-#: kfindtop.cpp:188
-msgid "&File"
-msgstr "&File"
-
-#: kfindtop.cpp:192
-msgid "&Help"
-msgstr "&Segítség"
-
-#: kfindtop.cpp:167
-#, fuzzy
-msgid "&Invert Selection"
-msgstr "Kiválasztás ellenkezõjére"
-
-#: kftabdlg.cpp:49
-msgid "&Look in:"
-msgstr "&Hol keress:"
-
-#: kftabdlg.cpp:47
-msgid "&Named:"
-msgstr "&Neve:"
-
-#: kfindtop.cpp:135
-#, fuzzy
-msgid "&Open"
-msgstr "&Beállítások"
-
-#: kfindtop.cpp:190
-msgid "&Options"
-msgstr "&Beállítások"
-
-#: kfindtop.cpp:178
-#, fuzzy
-msgid "&Preferences ..."
-msgstr "Beállítások..."
-
-#: kfindtop.cpp:142
-#, fuzzy
-msgid "&Properties"
-msgstr "Tulajdonságok"
-
-#: kfindtop.cpp:151
-#, fuzzy
-msgid "&Quit"
-msgstr "&Szerkeszt"
-
-#: kfindtop.cpp:148
-#, fuzzy
-msgid "&Save Search"
-msgstr "Mentsd el a keresést"
-
-#: kfindtop.cpp:165
-#, fuzzy
-msgid "&Select All"
-msgstr "Mindent kiválaszt"
-
-#: kftabdlg.cpp:175
-msgid "&Size is:"
-msgstr "&Mérete:"
-
-#: kfindtop.cpp:157
-#, fuzzy
-msgid "&Undo"
-msgstr "Visszacsinál"
-
-#: kftabdlg.cpp:116
-msgid "&between"
-msgstr "&között:"
-
-#: kftabdlg.cpp:118
-msgid "&during the previous "
-msgstr "az &elõzõ "
-
-#: kftabdlg.cpp:205
-msgid "(none)"
-msgstr "(semmi)"
-
-#: kfoptions.cpp:202
-msgid "Add New"
-msgstr "Bõvít"
-
-#: kfoptions.cpp:195
-msgid "Add to Archive:"
-msgstr "Archívum bõvítése:"
-
-#: kfindtop.cpp:226
-msgid "Add to archive"
-msgstr "Hozzáad az archívumhoz"
-
-#: kftabdlg.cpp:198
-msgid "All Files and Folders"
-msgstr "Minden file és könyvtár"
-
-#: kfoptions.cpp:243
-msgid "Archivers"
-msgstr "Arhiválók"
-
-#: kftabdlg.cpp:206
-msgid "At Least"
-msgstr "Legalább"
-
-#: kftabdlg.cpp:207
-msgid "At Most"
-msgstr "Legfeljebb"
-
-#: kfoptions.cpp:83
-msgid "Browse"
-msgstr "Tallóz"
-
-#: kfdird.cpp:48 kfoptions.cpp:53 kfwin.cpp:144 kfwin.cpp:198 kfwin.cpp:213
-#: kfwin.cpp:220 kfwin.cpp:242 kfwin.cpp:249 kfwin.cpp:255
-msgid "Cancel"
-msgstr ""
+#: kfdird.cpp:46
+msgid "Directories:"
+msgstr "Könyvtárak"
 
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
 msgstr "Nem tudom megnyitni vagy olvasni a könyvtárt"
 
-#: kfwin.cpp:349
-msgid "Couldn't recognize archive type!"
-msgstr "Nem ismerem fel az arhív típusát!"
-
-#: kfoptions.cpp:193
-msgid "Create Archive:"
-msgstr "Archív létrehozása:"
-
-#: kfindtop.cpp:231
-msgid "Delete"
-msgstr "Töröl"
-
-#: kfwin.cpp:196
-msgid "Delete File"
-msgstr "Törlöld a file-t"
-
-#: kfdird.cpp:46
-msgid "Directories:"
-msgstr "Könyvtárak"
-
-#: kfwin.cpp:194
-msgid ""
-"Do you really want to delete file:\n"
-"%s"
-msgstr ""
-"Biztos, hogy törölni akarod a\n"
-"%s file-t?"
-
-#: kfwin.cpp:140 kfwin.cpp:178 kfwin.cpp:209 kfwin.cpp:216 kfwin.cpp:238
-#: kfwin.cpp:245 kfwin.cpp:251 kfwin.cpp:348
-msgid "Error"
-msgstr ""
-
-#: kfwin.cpp:410
-msgid "Error while creating child process!"
-msgstr "Hiba a gyerek process kreálása közben!"
-
-#: kfoptions.cpp:76
-msgid "File format:"
-msgstr "File formátuma:"
-
-#: kftabdlg.cpp:115
-msgid "Find all files created or &modified:"
-msgstr "Keress minden új vagy &módosított file-t:"
-
-#: kfindtop.cpp:252
-#, fuzzy
-msgid "Help"
-msgstr "&Segítség"
-
-#: kftabdlg.cpp:64
-msgid "Include &subfolders"
-msgstr "&Alkönyvtárakkal együtt"
-
-#: kfwin.cpp:252
-msgid ""
-"It isn't possible to delete\n"
-"selected directory"
-msgstr ""
-"A kiválasztott könyvtárat\n"
-"nem lehet törölni"
-
-#: kfwin.cpp:217
-msgid ""
-"It isn't possible to delete\n"
-"selected file"
-msgstr ""
-"A kiválasztott file-t\n"
-"nem lehet törölni"
-
-#: kfwin.cpp:141
-msgid "It wasn't possible to save results!"
-msgstr "Nem tudtam elmenteni az eredményeket!"
-
-#: kfindtop.cpp:122
-#, fuzzy
+#: kfindtop.cpp:118
+#, fuzzy, c-format
 msgid ""
 "KFind %s\n"
 "Frontend to find utility\n"
@@ -280,129 +36,288 @@ msgstr ""
 "Felület a find segédeszközhöz\n"
 "Miroslaf Flídr <flidr@kky.zcu.cz>"
 
-#: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
-msgid "KFind Results File"
-msgstr "KFind eredményfile"
-
-#: kfindtop.cpp:182
+#: kfindtop.cpp:136
 #, fuzzy
-msgid "Kfind &help"
-msgstr "Kfind segítség"
+msgid "&Open"
+msgstr "&Beállítások"
 
-#: kfindtop.cpp:208
-msgid "New Search"
-msgstr "Új keresés"
+#: kfindtop.cpp:138
+#, fuzzy
+msgid "&Add to archive"
+msgstr "Hozzáad az archívumhoz"
 
-#: kfdird.cpp:47 kfoptions.cpp:52 kfwin.cpp:143 kfwin.cpp:181 kfwin.cpp:197
-#: kfwin.cpp:212 kfwin.cpp:219 kfwin.cpp:241 kfwin.cpp:248 kfwin.cpp:254
-#: kfwin.cpp:350
-msgid "OK"
-msgstr ""
+#: kfindtop.cpp:141
+#, fuzzy
+msgid "&Delete"
+msgstr "Töröl"
 
-#: kftabdlg.cpp:171
-msgid "Of &type:"
-msgstr "&Típusa:"
+#: kfindtop.cpp:143
+#, fuzzy
+msgid "&Properties"
+msgstr "Tulajdonságok"
 
-#: kfindtop.cpp:221
-msgid "Open"
-msgstr ""
-
-#: kfindtop.cpp:145
+#: kfindtop.cpp:146
 #, fuzzy
 msgid "Open Containing &Folder"
 msgstr "Nyisd a tartalmazó könyvtárat"
 
-#: kfindtop.cpp:241
+#: kfindtop.cpp:149
+#, fuzzy
+msgid "&Save Search"
+msgstr "Mentsd el a keresést"
+
+#: kfindtop.cpp:158
+#, fuzzy
+msgid "&Undo"
+msgstr "Visszacsinál"
+
+#: kfindtop.cpp:161
+#, fuzzy
+msgid "&Cut"
+msgstr "Kivág"
+
+#: kfindtop.cpp:166
+#, fuzzy
+msgid "&Select All"
+msgstr "Mindent kiválaszt"
+
+#: kfindtop.cpp:168
+#, fuzzy
+msgid "&Invert Selection"
+msgstr "Kiválasztás ellenkezõjére"
+
+#: kfindtop.cpp:179
+#, fuzzy
+msgid "&Preferences ..."
+msgstr "Beállítások..."
+
+#: kfindtop.cpp:183
+#, fuzzy
+msgid "Kfind &help"
+msgstr "Kfind segítség"
+
+#: kfindtop.cpp:186
+msgid "About &Qt"
+msgstr ""
+
+#: kfindtop.cpp:188
+msgid "&About"
+msgstr ""
+
+#: kfindtop.cpp:206
+msgid "Start Search"
+msgstr "Keress"
+
+#: kfindtop.cpp:211
+msgid "New Search"
+msgstr "Új keresés"
+
+#: kfindtop.cpp:216
+msgid "Stop Search"
+msgstr "Állj le"
+
+#: kfindtop.cpp:229
+msgid "Add to archive"
+msgstr "Hozzáad az archívumhoz"
+
+#: kfindtop.cpp:239
+msgid "Properties"
+msgstr "Tulajdonságok"
+
+#: kfindtop.cpp:244
 msgid "Open Containing Folder"
 msgstr "Nyisd a tartalmazó könyvtárat"
 
-#: kfoptions.cpp:199
-msgid "Patterns:"
-msgstr "Minták:"
+#: kfindtop.cpp:249
+msgid "Save Search Results"
+msgstr "Mentsd az eredményeket"
 
-#: kfoptions.cpp:96
-msgid "Plain Text"
-msgstr "Sima szöveg"
+#: kftabdlg.cpp:48
+msgid "&Named:"
+msgstr "&Neve:"
+
+#: kftabdlg.cpp:51
+msgid "&Look in:"
+msgstr "&Hol keress:"
+
+#: kftabdlg.cpp:54
+msgid "&Browse ..."
+msgstr "&Tallóz ..."
+
+#: kftabdlg.cpp:66
+msgid "Include &subfolders"
+msgstr "&Alkönyvtárakkal együtt"
+
+#: kftabdlg.cpp:96
+#, fuzzy
+msgid " Name& Location "
+msgstr " Név&hely "
+
+#: kftabdlg.cpp:108
+msgid "and"
+msgstr "és"
+
+#: kftabdlg.cpp:109
+msgid "month(s)"
+msgstr "hónap(ok)"
+
+#: kftabdlg.cpp:110
+msgid "day(s)"
+msgstr "nap(ok)"
+
+#: kftabdlg.cpp:116
+msgid "&All files"
+msgstr "&Minden file"
+
+#: kftabdlg.cpp:117
+msgid "Find all files created or &modified:"
+msgstr "Keress minden új vagy &módosított file-t:"
+
+#: kftabdlg.cpp:118
+msgid "&between"
+msgstr "&között:"
+
+#: kftabdlg.cpp:119
+msgid "during the previou&s "
+msgstr "az &elõzõ "
+
+#: kftabdlg.cpp:120
+msgid "&during the previous "
+msgstr "az &elõzõ "
+
+#: kftabdlg.cpp:168
+msgid " Date Modified "
+msgstr " Módosítva "
+
+#: kftabdlg.cpp:174
+msgid "Of &type:"
+msgstr "&Típusa:"
+
+#: kftabdlg.cpp:176
+msgid "&Containing Text:"
+msgstr "&Tartalmaz:"
+
+#: kftabdlg.cpp:179
+msgid "&Size is:"
+msgstr "&Mérete:"
+
+#: kftabdlg.cpp:202
+msgid "All Files and Folders"
+msgstr "Minden file és könyvtár"
+
+#: kftabdlg.cpp:209
+msgid "(none)"
+msgstr "(semmi)"
+
+#: kftabdlg.cpp:210
+msgid "At Least"
+msgstr "Legalább"
+
+#: kftabdlg.cpp:211
+msgid "At Most"
+msgstr "Legfeljebb"
+
+#: kftabdlg.cpp:218
+msgid " Advanced "
+msgstr " Továbbá "
+
+#: kftabdlg.cpp:389
+msgid "The date is not valid!!"
+msgstr "A dátum nem érvényes"
+
+#: kftabdlg.cpp:401
+msgid "The month(s) value isn't valid!!"
+msgstr "A megadott hónap értéke hibás!!"
+
+#: kftabdlg.cpp:412
+msgid "The day(s) value isn't valid!!"
+msgstr "A megadott nap értéke hibás!!"
+
+#: kftabdlg.cpp:429
+msgid "The value in size isn't valid number!!"
+msgstr "A megadott szöveg nem egy szám!!"
 
 #: kfoptions.cpp:54
 msgid "Preferences"
 msgstr "Beállítások"
 
-#: kfindtop.cpp:236
-msgid "Properties"
-msgstr "Tulajdonságok"
-
-#: kfindtop.cpp:257
-msgid "Quit"
-msgstr ""
-
-#: kfoptions.cpp:204
-msgid "Remove"
-msgstr "Töröl"
-
-#: kfwin.cpp:179
-msgid "Results were saved to file\n"
-msgstr "Az eredményeket file-ba elmentettem:\n"
-
-#: kfindtop.cpp:246
-msgid "Save Search Results"
-msgstr "Mentsd az eredményeket"
-
-#: kfoptions.cpp:81
-msgid "Save results to file ~/.kfind-results.html"
-msgstr "Eredmények mentése a ~/.kfind-results.html-ba"
+#: kfoptions.cpp:76
+msgid "File format:"
+msgstr "File formátuma:"
 
 #: kfoptions.cpp:78
 msgid "Save results to file:"
 msgstr "Eredmények mentése file-ba:"
 
+#: kfoptions.cpp:81
+msgid "Save results to file ~/.kfind-results.html"
+msgstr "Eredmények mentése a ~/.kfind-results.html-ba"
+
+#: kfoptions.cpp:83
+msgid "Browse"
+msgstr "Tallóz"
+
+#: kfoptions.cpp:96
+msgid "Plain Text"
+msgstr "Sima szöveg"
+
 #: kfoptions.cpp:125
 msgid "Saving"
 msgstr "Mentem"
 
-#: kfdird.cpp:167 kfdird.cpp:192 kfdird.cpp:210
-msgid "Sorry"
-msgstr "Sajnálom"
+#: kfoptions.cpp:132
+msgid "Create Archive:"
+msgstr "Archív létrehozása:"
 
-#: kfwin.cpp:246
-msgid ""
-"Specified directory\n"
-"is not empty!"
+#: kfoptions.cpp:134
+msgid "Add to Archive:"
+msgstr "Archívum bõvítése:"
+
+#: kfoptions.cpp:138
+msgid "Patterns:"
+msgstr "Minták:"
+
+#: kfoptions.cpp:141
+msgid "Add New"
+msgstr "Bõvít"
+
+#: kfoptions.cpp:182
+msgid "Archivers"
+msgstr "Arhiválók"
+
+#: kfwin.cpp:78 kfwin.cpp:105
+#, c-format
+msgid "%d file(s) found"
+msgstr "%d file-t találtam"
+
+#: kfwin.cpp:143
+msgid "It wasn't possible to save results!"
+msgstr "Nem tudtam elmenteni az eredményeket!"
+
+#: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
+msgid "KFind Results File"
+msgstr "KFind eredményfile"
+
+#: kfwin.cpp:179
+msgid "Information"
 msgstr ""
-"A megadott könyvtár\n"
-"nem üres!"
 
-#: kfindtop.cpp:203
-msgid "Start Search"
-msgstr "Keress"
+#: kfwin.cpp:180
+msgid "Results were saved to file\n"
+msgstr "Az eredményeket file-ba elmentettem:\n"
 
-#: kfindtop.cpp:213
-msgid "Stop Search"
-msgstr "Állj le"
-
-#: kftabdlg.cpp:384
-msgid "The date is not valid!!"
-msgstr "A dátum nem érvényes"
-
-#: kftabdlg.cpp:407
-msgid "The day(s) value isn't valid!!"
-msgstr "A megadott nap értéke hibás!!"
-
-#: kftabdlg.cpp:396
-msgid "The month(s) value isn't valid!!"
-msgstr "A megadott hónap értéke hibás!!"
-
-#: kftabdlg.cpp:424
-msgid "The value in size isn't valid number!!"
-msgstr "A megadott szöveg nem egy szám!!"
-
-#: kfwin.cpp:239
+#: kfwin.cpp:195
+#, c-format
 msgid ""
-"You have no permission\n"
-" to delete this directory"
+"Do you really want to delete file:\n"
+"%s"
 msgstr ""
-"Nincs jogod ennek a\n"
-"könyvtárnak a törléséhez"
+"Biztos, hogy törölni akarod a\n"
+"%s file-t?"
+
+#: kfwin.cpp:197
+msgid "Delete File"
+msgstr "Törlöld a file-t"
 
 #: kfwin.cpp:210
 msgid ""
@@ -412,21 +327,78 @@ msgstr ""
 "Nincs jogod ezt a\n"
 "file-t törölni"
 
-#: kftabdlg.cpp:106
-msgid "and"
-msgstr "és"
+#: kfwin.cpp:216
+msgid ""
+"It isn't possible to delete\n"
+"selected file"
+msgstr ""
+"A kiválasztott file-t\n"
+"nem lehet törölni"
 
-#: kftabdlg.cpp:108
-msgid "day(s)"
-msgstr "nap(ok)"
+#: kfwin.cpp:234
+msgid ""
+"You have no permission\n"
+" to delete this directory"
+msgstr ""
+"Nincs jogod ennek a\n"
+"könyvtárnak a törléséhez"
 
-#: kftabdlg.cpp:117
-msgid "during the previou&s "
-msgstr "az &elõzõ "
+#: kfwin.cpp:239
+msgid ""
+"Specified directory\n"
+"is not empty!"
+msgstr ""
+"A megadott könyvtár\n"
+"nem üres!"
 
-#: kftabdlg.cpp:107
-msgid "month(s)"
-msgstr "hónap(ok)"
+#: kfwin.cpp:244
+msgid ""
+"It isn't possible to delete\n"
+"selected directory"
+msgstr ""
+"A kiválasztott könyvtárat\n"
+"nem lehet törölni"
+
+#: kfwin.cpp:336
+msgid "Couldn't recognize archive type!"
+msgstr "Nem ismerem fel az arhív típusát!"
+
+#: kfwin.cpp:395
+msgid "Error while creating child process!"
+msgstr "Hiba a gyerek process kreálása közben!"
+
+#~ msgid "Delete"
+#~ msgstr "Töröl"
+
+#~ msgid "Remove"
+#~ msgstr "Töröl"
+
+#~ msgid "Sorry"
+#~ msgstr "Sajnálom"
+
+#, fuzzy
+#~ msgid "&Quit"
+#~ msgstr "&Szerkeszt"
+
+#, fuzzy
+#~ msgid "&Copy"
+#~ msgstr "Beilleszt"
+
+#~ msgid "&Edit"
+#~ msgstr "&Szerkeszt"
+
+#~ msgid "&File"
+#~ msgstr "&File"
+
+#~ msgid "&Help"
+#~ msgstr "&Segítség"
+
+#~ msgid "&Options"
+#~ msgstr "&Beállítások"
+
+#, fuzzy
+#~ msgid "Help"
+#~ msgstr "&Segítség"
 
 #~ msgid "Type Description:"
 #~ msgstr "Típus leírása:"

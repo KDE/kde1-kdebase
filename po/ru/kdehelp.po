@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.0\n"
-"POT-Creation-Date: 1997-12-18 13:52+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: 1997-09-05 02:21+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -43,16 +43,6 @@ msgstr "Неизвестный формат: "
 #: helpwin.cpp:831
 msgid "Could not start or find KFM"
 msgstr "Невозможно запустить или найти KFM"
-
-#
-#: helpwin.cpp:1297
-msgid "Back"
-msgstr "Назад"
-
-#
-#: helpwin.cpp:1299
-msgid "Forward"
-msgstr "Вперед"
 
 #
 #: helpwin.cpp:1320
@@ -219,11 +209,6 @@ msgid "System Administration"
 msgstr "Системное администрирование"
 
 #
-#: man.cpp:471
-msgid "New"
-msgstr "Новый"
-
-#
 #: man.cpp:580
 msgid "Reading Dir: "
 msgstr "Читаю подкаталог: "
@@ -278,26 +263,6 @@ msgstr "Перезагрузить"
 #: mainwidget.cpp:140
 msgid "&Search"
 msgstr "Искать"
-
-#
-#: mainwidget.cpp:142
-msgid "&Print..."
-msgstr "Распечатать"
-
-#
-#: mainwidget.cpp:144
-msgid "&Close"
-msgstr "Закрыть"
-
-#
-#: mainwidget.cpp:145
-msgid "&Quit"
-msgstr "Выход"
-
-#
-#: mainwidget.cpp:149
-msgid "&Copy"
-msgstr "Копировать"
 
 #
 #: mainwidget.cpp:153
@@ -390,16 +355,6 @@ msgstr ""
 "законодательствcomes."
 
 #
-#: mainwidget.cpp:200
-msgid "&File"
-msgstr "Файл"
-
-#
-#: mainwidget.cpp:201
-msgid "&Edit"
-msgstr "Редактировать"
-
-#
 #: mainwidget.cpp:202
 msgid "&Goto"
 msgstr "Идти"
@@ -408,16 +363,6 @@ msgstr "Идти"
 #: mainwidget.cpp:203
 msgid "&Bookmarks"
 msgstr "Закладки"
-
-#
-#: mainwidget.cpp:204
-msgid "&Options"
-msgstr "Опции"
-
-#
-#: mainwidget.cpp:206
-msgid "&Help"
-msgstr "Помощь"
 
 #
 #: mainwidget.cpp:221
@@ -486,6 +431,50 @@ msgstr "О KDE Help"
 #: mainwidget.cpp:618
 msgid "&Add Bookmark"
 msgstr "Добавить закладку"
+
+#
+#~ msgid "New"
+#~ msgstr "Новый"
+
+#
+#~ msgid "Back"
+#~ msgstr "Назад"
+
+#
+#~ msgid "Forward"
+#~ msgstr "Вперед"
+
+#
+#~ msgid "&Print..."
+#~ msgstr "Распечатать"
+
+#
+#~ msgid "&Close"
+#~ msgstr "Закрыть"
+
+#
+#~ msgid "&Quit"
+#~ msgstr "Выход"
+
+#
+#~ msgid "&Copy"
+#~ msgstr "Копировать"
+
+#
+#~ msgid "&File"
+#~ msgstr "Файл"
+
+#
+#~ msgid "&Edit"
+#~ msgstr "Редактировать"
+
+#
+#~ msgid "&Options"
+#~ msgstr "Опции"
+
+#
+#~ msgid "&Help"
+#~ msgstr "Помощь"
 
 #
 #~ msgid "Cancel"

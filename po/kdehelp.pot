@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-18 13:52+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,14 +36,6 @@ msgstr ""
 
 #: helpwin.cpp:831
 msgid "Could not start or find KFM"
-msgstr ""
-
-#: helpwin.cpp:1297
-msgid "Back"
-msgstr ""
-
-#: helpwin.cpp:1299
-msgid "Forward"
 msgstr ""
 
 #: helpwin.cpp:1320
@@ -178,10 +170,6 @@ msgstr ""
 msgid "System Administration"
 msgstr ""
 
-#: man.cpp:471
-msgid "New"
-msgstr ""
-
 #: man.cpp:580
 msgid "Reading Dir: "
 msgstr ""
@@ -225,22 +213,6 @@ msgstr ""
 
 #: mainwidget.cpp:140
 msgid "&Search"
-msgstr ""
-
-#: mainwidget.cpp:142
-msgid "&Print..."
-msgstr ""
-
-#: mainwidget.cpp:144
-msgid "&Close"
-msgstr ""
-
-#: mainwidget.cpp:145
-msgid "&Quit"
-msgstr ""
-
-#: mainwidget.cpp:149
-msgid "&Copy"
 msgstr ""
 
 #: mainwidget.cpp:153
@@ -310,28 +282,12 @@ msgid ""
 "applicable law."
 msgstr ""
 
-#: mainwidget.cpp:200
-msgid "&File"
-msgstr ""
-
-#: mainwidget.cpp:201
-msgid "&Edit"
-msgstr ""
-
 #: mainwidget.cpp:202
 msgid "&Goto"
 msgstr ""
 
 #: mainwidget.cpp:203
 msgid "&Bookmarks"
-msgstr ""
-
-#: mainwidget.cpp:204
-msgid "&Options"
-msgstr ""
-
-#: mainwidget.cpp:206
-msgid "&Help"
 msgstr ""
 
 #: mainwidget.cpp:221

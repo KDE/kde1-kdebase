@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-14 20:07+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,10 +94,6 @@ msgstr "Aktiv"
 #: colorscm.cpp:252 colorscm.cpp:264
 msgid "Color Scheme"
 msgstr "Palett"
-
-#: colorscm.cpp:278
-msgid "Remove"
-msgstr "Ta bort"
 
 #: colorscm.cpp:286
 msgid "Widget color"
@@ -223,53 +219,49 @@ msgstr "Kräv lösenord"
 msgid "Priority:"
 msgstr "Prioritet"
 
-#: general.cpp:80
+#: general.cpp:61
 msgid "General"
 msgstr "Almänt"
 
-#: general.cpp:84
+#: general.cpp:65
 msgid "Widget style"
 msgstr "Widget-utseende"
 
-#: general.cpp:89
+#: general.cpp:70
 msgid "Motif"
 msgstr ""
 
-#: general.cpp:90
+#: general.cpp:71
 msgid "Windows 95"
 msgstr ""
 
-#: general.cpp:99
+#: general.cpp:80
 msgid "Fonts"
 msgstr "Tysnitt"
 
-#: general.cpp:104
+#: general.cpp:85
 msgid "General font"
 msgstr "Standardtypsnitt"
 
-#: general.cpp:129
+#: general.cpp:110
 msgid "Sample"
 msgstr "Exempel"
 
-#: general.cpp:135
+#: general.cpp:116
 msgid "Small"
 msgstr "Liten"
 
-#: general.cpp:139
+#: general.cpp:120
 msgid "Medium"
 msgstr "Medium"
 
-#: general.cpp:143
+#: general.cpp:124
 msgid "Large"
 msgstr "Stor"
 
-#: general.cpp:160
+#: general.cpp:141
 msgid "Italic"
 msgstr "Kursiv"
-
-#: general.cpp:170
-msgid "Charset:"
-msgstr ""
 
 #: main.cpp:61
 #, fuzzy
@@ -294,6 +286,9 @@ msgstr ""
 #, fuzzy
 msgid "Display settings"
 msgstr "Omgivningsinställningar"
+
+#~ msgid "Remove"
+#~ msgstr "Ta bort"
 
 #~ msgid "KDE Display Configuration"
 #~ msgstr "KDE Omgivningskonfigurering"

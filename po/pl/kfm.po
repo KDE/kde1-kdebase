@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-18 13:53+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,248 +14,196 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kfmgui.cpp:254
+#: kfmgui.cpp:255
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:906 kbind.cpp:918 kbind.cpp:928 kfmgui.cpp:266 kfmgui.cpp:897
+#: kbind.cpp:906 kbind.cpp:918 kbind.cpp:928 kfmgui.cpp:267 kfmgui.cpp:898
 msgid "Folder"
 msgstr "Folder"
 
-#: kfmgui.cpp:277
+#: kfmgui.cpp:278
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "B£¡D: Nie istnieje wzorzec '%s'"
 
-#: kfmgui.cpp:301
+#: kfmgui.cpp:302
 msgid "&New"
 msgstr "&Nowy"
 
-#: kfmgui.cpp:303
+#: kfmgui.cpp:304
 msgid "&New Window"
 msgstr "Now&e okno"
 
-#: kfmgui.cpp:306
+#: kfmgui.cpp:307
 msgid "&Run..."
 msgstr "&Uruchom..."
 
-#: kfmgui.cpp:308
+#: kfmgui.cpp:309
 msgid "Open &Terminal"
 msgstr "Otwórz &terminal"
 
-#: kfmgui.cpp:311
+#: kfmgui.cpp:312
 msgid "&Open Location..."
 msgstr "&Otwórz lokacjê..."
 
-#: kfmgui.cpp:314
-msgid "&Print..."
-msgstr "&Drukuj..."
-
-#: kfmgui.cpp:317
-msgid "&Close"
-msgstr "&Zamknij"
-
-#: kfmgui.cpp:319
+#: kfmgui.cpp:320
 msgid "&Quit..."
 msgstr "&Wyjd¼..."
 
-#: kfmgui.cpp:324
-msgid "&Copy"
-msgstr "&Kopiuj"
-
-#: kfmgui.cpp:326
-msgid "&Paste"
-msgstr "&Wklej"
-
-#: kfmgui.cpp:328
+#: kfmgui.cpp:329
 msgid "&Move to Trash"
 msgstr "Wy¶lij &do ¶mietnika"
 
-#: kfmgui.cpp:330
+#: kfmgui.cpp:331
 msgid "&Delete"
 msgstr "&Skasuj"
 
-#: kfmgui.cpp:333
+#: kfmgui.cpp:334
 msgid "&Select"
 msgstr "&Zaznacz..."
 
-#: kfmgui.cpp:337
+#: kfmgui.cpp:338
 msgid "Mime Types"
 msgstr "Typy &mime"
 
-#: kfmgui.cpp:339
+#: kfmgui.cpp:340
 msgid "Applications"
 msgstr "&Aplikacje"
 
-#: kfmgui.cpp:345
+#: kfmgui.cpp:346
 msgid "Global Mime Types"
 msgstr "Typ mime"
 
-#: kfmgui.cpp:347
+#: kfmgui.cpp:348
 msgid "Global Applications"
 msgstr "Ogólne aplikacje"
 
-#: kfmgui.cpp:354
+#: kfmgui.cpp:355
 msgid "Show &Dot Files"
 msgstr "Pokazuj pliki z &kropk±"
 
-#: kfmgui.cpp:356
+#: kfmgui.cpp:357
 msgid "Show Tr&ee"
 msgstr "Pokazuj &drzewo"
 
-#: kfmgui.cpp:358
+#: kfmgui.cpp:359
 msgid "&Visual Schnauzer"
 msgstr "&Visual Schnauzer"
 
-#: kfmgui.cpp:360
+#: kfmgui.cpp:361
 msgid "&HTML View"
 msgstr "Pokazuj &HTML"
 
-#: kfmgui.cpp:363
+#: kfmgui.cpp:364
 msgid "&Icon View"
 msgstr "Pokazuj &ikony"
 
-#: kfmgui.cpp:365
+#: kfmgui.cpp:366
 msgid "&Text View"
 msgstr "Pokazuj &tekst"
 
-#: kfmgui.cpp:367
+#: kfmgui.cpp:368
 msgid "&Long View"
 msgstr "Pokazuj &d³u¿szy tekst"
 
-#: kfmgui.cpp:373
+#: kfmgui.cpp:374
 msgid "Rel&oad Tree"
 msgstr "Prze³aduj d&rzewo"
 
-#: kfmgui.cpp:375
+#: kfmgui.cpp:376
 msgid "&Reload Document"
 msgstr "&Prze³aduj dokument"
 
-#: kfmgui.cpp:377
+#: kfmgui.cpp:378
 msgid "Rescan &bindings"
 msgstr "Przeskanuj &skojarzenia"
 
-#: kfmgui.cpp:380
+#: kfmgui.cpp:381
 msgid "&View Frame Source"
 msgstr "Poka¿ ¼rod³o &ramki"
 
-#: kfmgui.cpp:382
+#: kfmgui.cpp:383
 msgid "View Docu&ment Source"
 msgstr "Poka¿ ¼ród³o &dokumentu"
 
-#: kfmgui.cpp:393
+#: kfmgui.cpp:394
 msgid "Show Cache"
 msgstr "&Poka¿ cache"
 
-#: kfmgui.cpp:395
+#: kfmgui.cpp:396
 msgid "Clear Cache"
 msgstr "&Czy¶æ cache"
 
-#: kfmgui.cpp:398
+#: kfmgui.cpp:399
 msgid "Always look in cache"
 msgstr "Zawsze &sprawdzaj cache"
 
-#: kfmgui.cpp:400
+#: kfmgui.cpp:401
 msgid "Never look in cache"
 msgstr "Nigdy &nie sprawdzaj cache"
 
-#: kfmgui.cpp:408
+#: kfmgui.cpp:409
 msgid "Show &Menubar"
 msgstr "Pokazuj pasek &menu"
 
-#: kfmgui.cpp:410
+#: kfmgui.cpp:411
 msgid "Show &Statusbar"
 msgstr "Pokazuj pasek &stanu"
 
-#: kfmgui.cpp:412
+#: kfmgui.cpp:413
 msgid "Show &Toolbar"
 msgstr "Pokazuj pasek &narzêdzi"
 
-#: kfmgui.cpp:414
+#: kfmgui.cpp:415
 msgid "Show &Location bar"
 msgstr "Pokazuj pasek &lokacji"
 
-#: kfmgui.cpp:417
+#: kfmgui.cpp:418
 msgid "Sa&ve Settings"
 msgstr "&Zapisz opcje"
 
-#: kfmgui.cpp:419
+#: kfmgui.cpp:420
 msgid "Configure Browser..."
 msgstr "Konfiguruj &przegl±darkê..."
 
-#: kfmgui.cpp:445
+#: kfmgui.cpp:446
 msgid "&Find"
 msgstr "&Znajd¼..."
 
-#: kfmgui.cpp:454
+#: kfmgui.cpp:455
 msgid "&Add Bookmark"
 msgstr "&Dodaj zak³adkê"
 
-#: kfmgui.cpp:461 kfmgui.cpp:479
-msgid "&Help"
-msgstr "Pomo&c"
-
-#: kfmgui.cpp:464
+#: kfmgui.cpp:465
 msgid "&About..."
 msgstr "&Informacje o kfm"
 
-#: kfmgui.cpp:471
-msgid "&File"
-msgstr "&Plik"
-
-#: kfmgui.cpp:472
-msgid "&Edit"
-msgstr "&Edycja"
-
-#: kfmgui.cpp:473
+#: kfmgui.cpp:474
 msgid "&View"
 msgstr "&Widok"
 
-#: kfmgui.cpp:474
+#: kfmgui.cpp:475
 msgid "&Bookmarks"
 msgstr "&Zak³adki"
 
-#: kfmgui.cpp:475
+#: kfmgui.cpp:476
 msgid "&Tool"
 msgstr "&Narzêdzia"
 
-#: kfmgui.cpp:476
+#: kfmgui.cpp:477
 msgid "&Cache"
 msgstr "&Cache"
 
-#: kfmgui.cpp:477
-msgid "&Options"
-msgstr "&Opcje"
-
-#: kfmgui.cpp:503
-msgid "Back"
-msgstr "Do ty³u"
-
-#: kfmgui.cpp:508
-msgid "Forward"
-msgstr "Do przodu"
-
-#: kfmgui.cpp:513
+#: kfmgui.cpp:514
 msgid "Home"
 msgstr "Punkt startowy"
 
-#: kfmgui.cpp:520
-msgid "Reload"
-msgstr "Prze³aduj"
-
-#: kfmgui.cpp:527 kfmman.cpp:1050 kfmtree.cpp:150 kfmtree.cpp:217 main.cpp:199
-msgid "Copy"
-msgstr "Kopiuj"
-
-#: kfmgui.cpp:532 kfmtree.cpp:220 main.cpp:202
-msgid "Paste"
-msgstr "Wklej"
-
-#: kfmgui.cpp:546
+#: kfmgui.cpp:547
 msgid "Stop"
 msgstr "Stop"
 
-#: kfmgui.cpp:570
+#: kfmgui.cpp:571
 #, c-format
 msgid ""
 "Could not load icon\n"
@@ -268,7 +216,7 @@ msgstr ""
 #: kbind.cpp:1527 kbind.cpp:1544 kbind.cpp:1605 kbind.cpp:1617 kbind.cpp:1644
 #: kbind.cpp:1659 kbind.cpp:1679 kbind.cpp:1691 kbind.cpp:1707 kbind.cpp:1829
 #: kbind.cpp:1841 kbind.cpp:1886 kbind.cpp:1928 kfmexec.cpp:58 kfmexec.cpp:92
-#: kfmexec/main.cpp:47 kfmgui.cpp:571 kfmjob.cpp:181 kfmman.cpp:267
+#: kfmexec/main.cpp:47 kfmgui.cpp:572 kfmjob.cpp:181 kfmman.cpp:267
 #: kfmman.cpp:870 kfmman.cpp:1037 kfmman.cpp:1063 kfmprops.cpp:358
 #: kfmprops.cpp:609 kfmprops.cpp:635 kfmprops.cpp:750 kfmprops.cpp:848
 #: kfmprops.cpp:971 kfmprops.cpp:1099 kfmprops.cpp:1409 kfmprops.cpp:1627
@@ -285,32 +233,32 @@ msgstr ""
 msgid "KFM Error"
 msgstr "B³±d KFM"
 
-#: kfmgui.cpp:833
+#: kfmgui.cpp:834
 msgid "Select files:"
 msgstr "Wybierz pliki:"
 
-#: kfmgui.cpp:850
+#: kfmgui.cpp:851
 msgid "Add Bookmark"
 msgstr "Dodaj zak³adkê"
 
-#: kfmgui.cpp:889 kfmgui.cpp:896
+#: kfmgui.cpp:890 kfmgui.cpp:897
 msgid "New "
 msgstr "Nowy "
 
-#: kfmgui.cpp:978 kfmgui.cpp:1138 kfmjob.cpp:32 kfmman.cpp:189 kfmtree.cpp:314
+#: kfmgui.cpp:979 kfmgui.cpp:1139 kfmjob.cpp:32 kfmman.cpp:189 kfmtree.cpp:314
 #: kfmview.cpp:272 kfmview.cpp:336 kfmview.cpp:459 kiojob.cpp:69 root.cpp:983
 msgid "ERROR: Malformed URL"
 msgstr "B£¡D: B³êdny URL "
 
-#: kfmgui.cpp:1092 kfmserver.cpp:176
+#: kfmgui.cpp:1093 kfmserver.cpp:176
 msgid "Open Location:"
 msgstr "Otwórz lokacjê:"
 
-#: kfmgui.cpp:1148
+#: kfmgui.cpp:1149
 msgid "KFM Confirm"
 msgstr "KFM potwierdzenie"
 
-#: kfmgui.cpp:1149
+#: kfmgui.cpp:1150
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -318,11 +266,11 @@ msgstr ""
 "Czy na pewno chcesz wyj¶æ?\n"
 "Funkcjonalno¶æ desktopu zostanie ograniczona"
 
-#: kfmgui.cpp:1176
+#: kfmgui.cpp:1177
 msgid "About KFM"
 msgstr "Informacje o KFM"
 
-#: kfmgui.cpp:1177
+#: kfmgui.cpp:1178
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -340,7 +288,7 @@ msgstr ""
 "(C) 1997 Piotr Roszatycki\n"
 "dexter@fnet.com.pl"
 
-#: kfmgui.cpp:1269
+#: kfmgui.cpp:1270
 msgid "Document: Done"
 msgstr "Dokument: Zrobiony"
 
@@ -537,10 +485,6 @@ msgstr "Przejd¼"
 msgid "New View"
 msgstr "Nowy widok"
 
-#: kfmtree.cpp:226 main.cpp:200 useragentdlg.cpp:47
-msgid "Delete"
-msgstr "Skasuj"
-
 #: kfmtree.cpp:223 main.cpp:201
 msgid "Move to Trash"
 msgstr "Usuñ do ¶mietnika"
@@ -548,10 +492,6 @@ msgstr "Usuñ do ¶mietnika"
 #: main.cpp:203
 msgid "Open with"
 msgstr "Otwórz z"
-
-#: main.cpp:204
-msgid "Cut"
-msgstr "Wytnij"
 
 #: kfmman.cpp:1055 kfmtree.cpp:155 main.cpp:205
 msgid "Move"
@@ -1255,17 +1195,21 @@ msgstr "Serwer:"
 msgid "login as:"
 msgstr "Loguj siê:"
 
-#: useragentdlg.cpp:42
-msgid "Add"
-msgstr "Dodaj"
-
 #: useragentdlg.cpp:52
 msgid "Known bindings:"
 msgstr "Znane skojarzenia:"
 
-#: useragentdlg.cpp:75
-msgid "Set UserAgent"
-msgstr "Ustaw UserAgent"
+#: kproxydlg.cpp:10
+#, fuzzy
+msgid "This feature is not implemented yet!"
+msgstr ""
+"Wybrana akcja\n"
+"'%s'\n"
+"jest jeszcze nie obs³ugiwana"
+
+#: kkfmoptdlg.cpp:39
+msgid "KFM Browser Settings"
+msgstr ""
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1319,6 +1263,57 @@ msgstr ""
 #: kfmexec/main.cpp:133
 msgid "KFM Question"
 msgstr "Pytanie KFM"
+
+#~ msgid "Delete"
+#~ msgstr "Skasuj"
+
+#~ msgid "Add"
+#~ msgstr "Dodaj"
+
+#~ msgid "&Print..."
+#~ msgstr "&Drukuj..."
+
+#~ msgid "&Close"
+#~ msgstr "&Zamknij"
+
+#~ msgid "&Copy"
+#~ msgstr "&Kopiuj"
+
+#~ msgid "&Paste"
+#~ msgstr "&Wklej"
+
+#~ msgid "Back"
+#~ msgstr "Do ty³u"
+
+#~ msgid "Forward"
+#~ msgstr "Do przodu"
+
+#~ msgid "Reload"
+#~ msgstr "Prze³aduj"
+
+#~ msgid "Copy"
+#~ msgstr "Kopiuj"
+
+#~ msgid "Paste"
+#~ msgstr "Wklej"
+
+#~ msgid "Cut"
+#~ msgstr "Wytnij"
+
+#~ msgid "&Help"
+#~ msgstr "Pomo&c"
+
+#~ msgid "&File"
+#~ msgstr "&Plik"
+
+#~ msgid "&Edit"
+#~ msgstr "&Edycja"
+
+#~ msgid "&Options"
+#~ msgstr "&Opcje"
+
+#~ msgid "Set UserAgent"
+#~ msgstr "Ustaw UserAgent"
 
 # Polish translation of KDE kfm
 # Verision 0.4.0

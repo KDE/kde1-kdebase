@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-18 13:52+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,14 +37,6 @@ msgstr "Nieznany format: "
 #: helpwin.cpp:831
 msgid "Could not start or find KFM"
 msgstr "Nie mo¿na uruchomiæ lub znale¼æ KFM"
-
-#: helpwin.cpp:1297
-msgid "Back"
-msgstr "Wstecz"
-
-#: helpwin.cpp:1299
-msgid "Forward"
-msgstr "Dalej"
 
 #: helpwin.cpp:1320
 msgid "Open this Link"
@@ -178,10 +170,6 @@ msgstr "Ró¿ne"
 msgid "System Administration"
 msgstr "Administracja systemu"
 
-#: man.cpp:471
-msgid "New"
-msgstr "Nowe"
-
 #: man.cpp:580
 msgid "Reading Dir: "
 msgstr "Wczytujê katalog: "
@@ -226,22 +214,6 @@ msgstr "P&rze³aduj"
 #: mainwidget.cpp:140
 msgid "&Search"
 msgstr "&Szukaj"
-
-#: mainwidget.cpp:142
-msgid "&Print..."
-msgstr "&Drukuj..."
-
-#: mainwidget.cpp:144
-msgid "&Close"
-msgstr "&Zamknij"
-
-#: mainwidget.cpp:145
-msgid "&Quit"
-msgstr "Za&koñcz"
-
-#: mainwidget.cpp:149
-msgid "&Copy"
-msgstr "&Kopiuj"
 
 #: mainwidget.cpp:153
 msgid "&Back"
@@ -318,14 +290,6 @@ msgstr ""
 "Ten program jest licencjonowany przez GNU General Public License (GPL).\n"
 "KDEHelp nie posiada CA£KOWICIE ¯ADNEJ GWARANCJI na dzia³anie tej aplikacji."
 
-#: mainwidget.cpp:200
-msgid "&File"
-msgstr "&Plik"
-
-#: mainwidget.cpp:201
-msgid "&Edit"
-msgstr "&Edycja"
-
 #: mainwidget.cpp:202
 msgid "&Goto"
 msgstr "&Id¼"
@@ -333,14 +297,6 @@ msgstr "&Id¼"
 #: mainwidget.cpp:203
 msgid "&Bookmarks"
 msgstr "&Zak³adki"
-
-#: mainwidget.cpp:204
-msgid "&Options"
-msgstr "&Opcje"
-
-#: mainwidget.cpp:206
-msgid "&Help"
-msgstr "Pomo&c"
 
 #: mainwidget.cpp:221
 msgid "Previous Document"
@@ -397,6 +353,39 @@ msgstr "Informacje o KDE Pomoc"
 #: mainwidget.cpp:618
 msgid "&Add Bookmark"
 msgstr "&Dodaj zak³adkê"
+
+#~ msgid "New"
+#~ msgstr "Nowe"
+
+#~ msgid "Back"
+#~ msgstr "Wstecz"
+
+#~ msgid "Forward"
+#~ msgstr "Dalej"
+
+#~ msgid "&Print..."
+#~ msgstr "&Drukuj..."
+
+#~ msgid "&Close"
+#~ msgstr "&Zamknij"
+
+#~ msgid "&Quit"
+#~ msgstr "Za&koñcz"
+
+#~ msgid "&Copy"
+#~ msgstr "&Kopiuj"
+
+#~ msgid "&File"
+#~ msgstr "&Plik"
+
+#~ msgid "&Edit"
+#~ msgstr "&Edycja"
+
+#~ msgid "&Options"
+#~ msgstr "&Opcje"
+
+#~ msgid "&Help"
+#~ msgstr "Pomo&c"
 
 # Polish translation of KDE kdehelp
 # Version 0.3.0

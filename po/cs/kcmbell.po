@@ -6,13 +6,21 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-28 13:35+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:51
+msgid "&Bell"
+msgstr "&Zvonek"
+
+#: main.cpp:75
+msgid "Bell settings"
+msgstr ""
 
 #: bell.cpp:85
 msgid "Volume"
@@ -34,18 +42,15 @@ msgstr ""
 msgid "ms"
 msgstr ""
 
-#: 
-msgid "Apply"
-msgstr "Pou¾ít"
+#: bell.cpp:92
+msgid "Test"
+msgstr ""
 
-#: 
-msgid "Cancel"
-msgstr "Zru¹it"
+#~ msgid "Apply"
+#~ msgstr "Pou¾ít"
 
-#:
-msgid "Help"
-msgstr "Nápovìda"
+#~ msgid "Cancel"
+#~ msgstr "Zru¹it"
 
-#:
-msgid "&Bell"
-msgstr "&Zvonek"
+#~ msgid "Help"
+#~ msgstr "Nápovìda"

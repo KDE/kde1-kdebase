@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-14 20:07+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,10 +44,6 @@ msgstr ""
 
 #: titlebar.cpp:126
 msgid "Menu"
-msgstr ""
-
-#: titlebar.cpp:171 windows.cpp:70
-msgid "Off"
 msgstr ""
 
 #: titlebar.cpp:458
@@ -116,10 +112,6 @@ msgstr ""
 
 #: windows.cpp:68
 msgid "Resize Animation"
-msgstr ""
-
-#: windows.cpp:69
-msgid "On"
 msgstr ""
 
 #: windows.cpp:73

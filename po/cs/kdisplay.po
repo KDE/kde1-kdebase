@@ -6,21 +6,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-28 13:19+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
-
-#: backgnd.cpp:165
-msgid "Ok"
-msgstr "Ok"
-
-#: backgnd.cpp:170 savescm.cpp:41
-msgid "Cancel"
-msgstr "Zru¹it"
 
 #: backgnd.cpp:204 backgnd.cpp:239
 msgid "Desktop"
@@ -70,10 +62,6 @@ msgstr "Zvìt¹enì"
 msgid "Browse..."
 msgstr "Listuj.."
 
-#: backgnd.cpp:349 colorscm.cpp:282 general.cpp:165 scrnsave.cpp:192
-msgid "Help"
-msgstr "Nápovìda"
-
 #: backgnd.cpp:489
 msgid "Default"
 msgstr "Implicitní"
@@ -90,14 +78,6 @@ msgstr "Neaktivní okno"
 msgid "Active window"
 msgstr "Aktivní okno"
 
-#: colorscm.cpp:170 colorscm.cpp:172
-msgid "File"
-msgstr "Soubor"
-
-#: colorscm.cpp:179 colorscm.cpp:180
-msgid "Edit"
-msgstr "Upravit"
-
 #: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:300
 msgid "Window text"
 msgstr "Text v oknì"
@@ -113,14 +93,6 @@ msgstr "Vybrané"
 #: colorscm.cpp:252 colorscm.cpp:264
 msgid "Color Scheme"
 msgstr "Barevné schéma"
-
-#: colorscm.cpp:273 scrnsave.cpp:49
-msgid "Save"
-msgstr "Ulo¾it"
-
-#: colorscm.cpp:278
-msgid "Remove"
-msgstr "Odstranit"
 
 #: colorscm.cpp:286
 msgid "Widget color"
@@ -178,10 +150,6 @@ msgstr "Velký"
 msgid "Save scheme"
 msgstr "Ulo¾ schému"
 
-#: colorscm.cpp:373 colorscm.cpp:381
-msgid "Error"
-msgstr "Chyba"
-
 #: colorscm.cpp:374 colorscm.cpp:382
 msgid "You have chosen a name used by a supplied color scheme"
 msgstr "Vybral jste jméno pou¾ité u dodaného barevného schématu"
@@ -202,66 +170,6 @@ msgstr ""
 "Nebyly nalezeny ¾ádná barevná schémata.\n"
 "Chcete nainstalovat implicitni barevné schéma?"
 
-#: colorscm.cpp:695
-msgid "Yes"
-msgstr "Ano"
-
-#: colorscm.cpp:696
-msgid "No"
-msgstr "Ne"
-
-#: general.cpp:80
-msgid "General"
-msgstr "Obecné"
-
-#: general.cpp:84
-msgid "Widget style"
-msgstr "Styl widgetù"
-
-#: general.cpp:89
-msgid "Motif"
-msgstr "Motif"
-
-#: general.cpp:90
-msgid "Windows 95"
-msgstr "Windows 95"
-
-#: general.cpp:99
-msgid "Fonts"
-msgstr "Znakové sady"
-
-#: general.cpp:104
-msgid "General font"
-msgstr "Obecná znaková sada"
-
-#: general.cpp:129
-msgid "Sample"
-msgstr "Vzorek"
-
-#: general.cpp:135
-msgid "Small"
-msgstr "Malé"
-
-#: general.cpp:139
-msgid "Medium"
-msgstr "Støední"
-
-#: general.cpp:143
-msgid "Large"
-msgstr "Velké"
-
-#: general.cpp:155
-msgid "Bold"
-msgstr "Tuèné"
-
-#: general.cpp:160
-msgid "Italic"
-msgstr "Polo¾ené"
-
-#: general.cpp:170
-msgid "Charset:"
-msgstr "Kódování:"
-
 #: kwmcom.cpp:78 kwmcom.cpp:105
 msgid "kwmcom: communication with kwm failed\n"
 msgstr "kwmcom: komunikace s kwm probìhla neúspì¹nì\n"
@@ -270,19 +178,15 @@ msgstr "kwmcom: komunikace s kwm probìhla neúspì¹nì\n"
 msgid "Name"
 msgstr "Jméno"
 
-#: savescm.cpp:35
-msgid "OK"
-msgstr "Ok"
-
-#: scrnsave.cpp:48
+#: scrnsave.cpp:47
 msgid "Ignore"
 msgstr "Ignoruj"
 
-#: scrnsave.cpp:50
+#: scrnsave.cpp:49
 msgid "Lock"
 msgstr "Zámek"
 
-#: scrnsave.cpp:108 scrnsave.cpp:163
+#: scrnsave.cpp:107 scrnsave.cpp:163
 msgid "Screen Saver"
 msgstr "©etøiè obrazovky"
 
@@ -314,22 +218,109 @@ msgstr "Vy¾aduje heslo"
 msgid "Priority:"
 msgstr "Priorita:"
 
-#: scrnsave.cpp:218
+#: general.cpp:61
+msgid "General"
+msgstr "Obecné"
+
+#: general.cpp:65
+msgid "Widget style"
+msgstr "Styl widgetù"
+
+#: general.cpp:70
+msgid "Motif"
+msgstr "Motif"
+
+#: general.cpp:71
+msgid "Windows 95"
+msgstr "Windows 95"
+
+#: general.cpp:80
+msgid "Fonts"
+msgstr "Znakové sady"
+
+#: general.cpp:85
+msgid "General font"
+msgstr "Obecná znaková sada"
+
+#: general.cpp:110
+msgid "Sample"
+msgstr "Vzorek"
+
+#: general.cpp:116
+msgid "Small"
+msgstr "Malé"
+
+#: general.cpp:120
+msgid "Medium"
+msgstr "Støední"
+
+#: general.cpp:124
+msgid "Large"
+msgstr "Velké"
+
+#: general.cpp:141
+msgid "Italic"
+msgstr "Polo¾ené"
+
+#: main.cpp:61
 msgid "&Background"
 msgstr "&Pozadí"
 
-#: 
+#: main.cpp:64
 msgid "&Colors"
 msgstr "&Barvy"
 
-#: 
+#: main.cpp:67
 msgid "&Screensaver"
 msgstr "©etøiè &obrazovky"
 
-#: 
+#: main.cpp:70
 msgid "&Style"
 msgstr "&Styl"
 
-#: 
-msgid "Apply"
-msgstr "Pou¾ít"
+#: main.cpp:105
+#, fuzzy
+msgid "Display settings"
+msgstr "Nastavení obrazovky"
+
+#~ msgid "Remove"
+#~ msgstr "Odstranit"
+
+#~ msgid "Charset:"
+#~ msgstr "Kódování:"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
+
+#~ msgid "Cancel"
+#~ msgstr "Zru¹it"
+
+#~ msgid "Help"
+#~ msgstr "Nápovìda"
+
+#~ msgid "File"
+#~ msgstr "Soubor"
+
+#~ msgid "Edit"
+#~ msgstr "Upravit"
+
+#~ msgid "Save"
+#~ msgstr "Ulo¾it"
+
+#~ msgid "Error"
+#~ msgstr "Chyba"
+
+#~ msgid "Yes"
+#~ msgstr "Ano"
+
+#~ msgid "No"
+#~ msgstr "Ne"
+
+#~ msgid "Bold"
+#~ msgstr "Tuèné"
+
+#~ msgid "OK"
+#~ msgstr "Ok"
+
+#~ msgid "Apply"
+#~ msgstr "Pou¾ít"

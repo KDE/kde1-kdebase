@@ -5,6 +5,7 @@
 # v 0.1 -- 15/10/97
 msgid ""
 msgstr ""
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-09-09 17:23:06+0200\n"
 "From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
@@ -12,37 +13,9 @@ msgstr ""
 "Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp "
 "kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
 
-#: kdmshutdown.cpp:229 kgreeter.cpp:207
-msgid "Cancel"
-msgstr "Annulla"
-
-#: kdmshutdown.cpp:192
-msgid "Exit kdm"
-msgstr "Esci da kdm"
-
-#: kgreeter.cpp:201
-msgid "Go!"
-msgstr "Vai!"
-
-#: kgreeter.cpp:179
-msgid "Login failed!"
-msgstr "Login Fallito!"
-
-#: kgreeter.cpp:145
-msgid "Login:"
-msgstr "Nome utente (login):"
-
-#: kdmshutdown.cpp:226
-msgid "Ok"
-msgstr "Ok"
-
-#: kgreeter.cpp:150
-msgid "Password:"
-msgstr "Password:"
-
-#: kgreeter.cpp:185
-msgid "Session Type:"
-msgstr "Tipo di sessione"
+#: kdmshutdown.cpp:153
+msgid "Shutdown or restart?"
+msgstr "Vuoi spengere o riavviare il computer?"
 
 #: kdmshutdown.cpp:169
 msgid "Shutdown"
@@ -52,10 +25,36 @@ msgstr "Arresta Sistema"
 msgid "Shutdown and restart"
 msgstr "Riavvia il Computer"
 
-#: kdmshutdown.cpp:153
-msgid "Shutdown or restart?"
-msgstr "Vuoi spengere o riavviare il computer?"
+#: kdmshutdown.cpp:192
+msgid "Exit kdm"
+msgstr "Esci da kdm"
 
-#: kgreeter.cpp:217
+#: kgreeter.cpp:137
+msgid "Login:"
+msgstr "Nome utente (login):"
+
+#: kgreeter.cpp:142
+msgid "Password:"
+msgstr "Password:"
+
+#: kgreeter.cpp:176
+msgid "Login failed!"
+msgstr "Login Fallito!"
+
+#: kgreeter.cpp:182
+msgid "Session Type:"
+msgstr "Tipo di sessione"
+
+#: kgreeter.cpp:198
+msgid "Go!"
+msgstr "Vai!"
+
+#: kgreeter.cpp:214
 msgid "Shutdown..."
 msgstr "Arresta sistema..."
+
+#~ msgid "Cancel"
+#~ msgstr "Annulla"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"

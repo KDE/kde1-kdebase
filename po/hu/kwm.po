@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-15 20:12+0100\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -67,10 +67,6 @@ msgstr "&Mozgat"
 #, fuzzy
 msgid "Resi&ze"
 msgstr "Mé&retez"
-
-#: main.C:393
-msgid "&Close"
-msgstr "&Bezár"
 
 #: main.C:394
 #, fuzzy
@@ -155,6 +151,9 @@ msgstr ""
 #: taskmgr.C:49
 msgid "Current session"
 msgstr ""
+
+#~ msgid "&Close"
+#~ msgstr "&Bezár"
 
 #~ msgid "usage: kwm [-version] [-exec prog] \n"
 #~ msgstr "használat: kwm [-version] [-exec prog] \n"
