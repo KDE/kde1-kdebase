@@ -369,6 +369,8 @@ void Manager::clientMessage(XEvent*  ev){
       logout();
     else if (com == "commandLine")
       showMinicli();
+    else if (com == "execute") // for compatibility
+      showMinicli();
     else if (com == "taskManager")
       showTask ();
     else if (com == "configure"){
