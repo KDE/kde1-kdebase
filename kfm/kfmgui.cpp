@@ -1585,7 +1585,7 @@ void KfmGui::slotConfigureBrowser()
 	      if(coloropts.changeCursoroverLink)
 		htmlview->setURLCursor( KCursor::handCursor() );
 	      else
-		htmlview->setURLCursor( arrowCursor );
+		htmlview->setURLCursor( KCursor::arrowCursor() );
 
 	      w->updateView();
 

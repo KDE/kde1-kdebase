@@ -201,7 +201,7 @@ void KfmView::setHTMLWidgetOptions(){
   if(changeCursor)
     htmlview->setURLCursor( KCursor::handCursor() );
   else
-    htmlview->setURLCursor( arrowCursor );
+    htmlview->setURLCursor( KCursor::arrowCursor() );
 
   config->setGroup( "KFM HTML Defaults" );	
   bgColor = config->readColorEntry( "BgColor", &HTML_DEFAULT_BG_COLOR );
