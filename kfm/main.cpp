@@ -258,7 +258,7 @@ int main( int argc, char ** argv )
     }
     // Keep in sync with the same in kfmserver_ipc.cpp!
     QString idir;
-    idir.sprintf(_PATH_TMP"kfm_%i_%i%s\n",(int)getuid(),(int)getpid(),displayName().data());
+    idir.sprintf(_PATH_TMP"/kfm_%i_%i%s\n",(int)getuid(),(int)getpid(),displayName().data());
     fprintf( f, "%i\n%s\n", (int)getpid(),idir.data() );
     fclose( f );
 

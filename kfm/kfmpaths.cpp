@@ -60,7 +60,7 @@ void KFMPaths::initPaths()
   if ( autostartPath->right(1) != "/")
     *autostartPath += "/";
   
-  cachePath->sprintf(_PATH_TMP"kfm-cache-%i", (int)getuid() );
+  cachePath->sprintf(_PATH_TMP"/kfm-cache-%i", (int)getuid() );
 
   if (!QFileInfo(_PATH_TMP).isWritable())
   {

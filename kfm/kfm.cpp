@@ -120,9 +120,9 @@ void Kfm::slotTouch()
 {
   // Prevent the sockets from being removed by the cleanup daemon of some systems.
   QString tmp;
-  tmp.sprintf("touch "_PATH_TMP"kfm_%i_%i%s",(int)getuid(),(int)getpid(),displayName().data() );
+  tmp.sprintf("touch "_PATH_TMP"/kfm_%i_%i%s",(int)getuid(),(int)getpid(),displayName().data() );
   system( tmp.data() );
-  tmp.sprintf("touch "_PATH_TMP"kio_%i_%i%s",(int)getuid(),(int)getpid(),displayName().data() );
+  tmp.sprintf("touch "_PATH_TMP"/kio_%i_%i%s",(int)getuid(),(int)getpid(),displayName().data() );
   system( tmp.data() );
 }
 
@@ -169,10 +169,10 @@ void Kfm::slotShutDown()
   HTMLCache::quit(); // cancel running jobs, if any. David.
   // Delete the sockets
   QString sock;
-  sock.sprintf(_PATH_TMP"kio_%i_%i%s",(int)getuid(), (int)getpid(),displayName().data());
+  sock.sprintf(_PATH_TMP"/kio_%i_%i%s",(int)getuid(), (int)getpid(),displayName().data());
   unlink( sock );
 
-  sock.sprintf(_PATH_TMP"kfm_%i_%i%s",(int)getuid(), (int)getpid(),displayName().data());
+  sock.sprintf(_PATH_TMP"/kfm_%i_%i%s",(int)getuid(), (int)getpid(),displayName().data());
   unlink( sock );
 
   s_bGoingDown = true;
