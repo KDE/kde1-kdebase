@@ -20,7 +20,7 @@ msgstr ""
 
 #: main.cpp:68
 msgid "&Desktops"
-msgstr ""
+msgstr "&Arbejdspladser"
 
 #: main.cpp:97
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
@@ -28,7 +28,7 @@ msgstr ""
 
 #: main.cpp:128
 msgid "KPanel Configuration"
-msgstr ""
+msgstr "KPanel konfigurering"
 
 #: panel.cpp:59
 msgid "Location"
@@ -41,11 +41,11 @@ msgstr ""
 #: panel.cpp:61
 #, fuzzy
 msgid "&Left"
-msgstr "Top/Venstre"
+msgstr "&Venstre"
 
 #: panel.cpp:62
 msgid "&Bottom"
-msgstr ""
+msgstr "&Bund"
 
 #: panel.cpp:74
 msgid "Taskbar"
@@ -54,7 +54,7 @@ msgstr "Procesbjælke"
 #: panel.cpp:75
 #, fuzzy
 msgid "&Hidden"
-msgstr "Gemt"
+msgstr "&Gemt"
 
 #: panel.cpp:77
 msgid "T&op"
@@ -62,7 +62,7 @@ msgstr ""
 
 #: panel.cpp:79
 msgid "Botto&m"
-msgstr ""
+msgstr "Bund"
 
 #: panel.cpp:81
 #, fuzzy
@@ -71,16 +71,16 @@ msgstr "Top/Venstre"
 
 #: panel.cpp:96
 msgid "T&iny"
-msgstr ""
+msgstr "Lille"
 
 #: panel.cpp:98
 #, fuzzy
 msgid "&Normal"
-msgstr "Normal stil"
+msgstr "Normal"
 
 #: panel.cpp:100
 msgid "L&arge"
-msgstr ""
+msgstr "Stor"
 
 #: desktops.cpp:73
 #, fuzzy
@@ -98,11 +98,11 @@ msgstr ""
 
 #: options.cpp:39
 msgid "Show &Menu Tooltips"
-msgstr ""
+msgstr "Vis &menu tooltips"
 
 #: options.cpp:44
 msgid "De&lay:"
-msgstr ""
+msgstr "Vent:"
 
 #: options.cpp:56
 msgid "ms"
@@ -110,7 +110,7 @@ msgstr ""
 
 #: options.cpp:68
 msgid "Others"
-msgstr ""
+msgstr "Andet"
 
 #: options.cpp:69
 #, fuzzy
@@ -129,15 +129,15 @@ msgstr "Auto gem Procesbjælke"
 
 #: options.cpp:81
 msgid "Clock"
-msgstr ""
+msgstr "Ur"
 
 #: options.cpp:83
 msgid "&24h"
-msgstr ""
+msgstr "&24 timers"
 
 #: options.cpp:85
 msgid "&12h AM/PM"
-msgstr ""
+msgstr "&12 AM/PM"
 
 #~ msgid "Tiny Style"
 #~ msgstr "Lille stil"

@@ -128,7 +128,7 @@ msgstr ""
 
 #: main.C:593
 msgid "Font..."
-msgstr ""
+msgstr "Skriftsnit..."
 
 #: main.C:595
 msgid "Save &Options"
@@ -195,7 +195,7 @@ msgstr ""
 
 #: main.C:1326
 msgid "Permitted arguments are:\n"
-msgstr ""
+msgstr "Tilladte argumenter er:\n"
 
 #: main.C:1327
 msgid ""

@@ -45,7 +45,7 @@ msgstr "&Find"
 
 #: kfmgui.cpp:324
 msgid "&Quit..."
-msgstr "&Afslut"
+msgstr "&Afslut..."
 
 #: kfmgui.cpp:333
 msgid "&Move to Trash"
@@ -180,7 +180,7 @@ msgstr "Indstil Browser"
 
 #: kfmgui.cpp:478
 msgid "&About..."
-msgstr "&Om"
+msgstr "&Om..."
 
 #: kfmgui.cpp:488
 msgid "&Bookmarks"
@@ -192,7 +192,7 @@ msgstr "&Cache"
 
 #: kfmgui.cpp:516 kfmman.cpp:1050
 msgid "Up"
-msgstr ""
+msgstr "Op"
 
 #: kfmgui.cpp:588
 msgid "Could not load icon\n"
@@ -488,48 +488,48 @@ msgstr "Tilføj til Bogmærker"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
-msgstr ""
+msgstr "Standard skriftsnit"
 
 #: htmlopts.cpp:68
 msgid "Fixed Font"
-msgstr ""
+msgstr "Fast skriftsnit"
 
 #: htmlopts.cpp:214
 msgid "Background Color:"
-msgstr ""
+msgstr "Baggrundsfarve:"
 
 #: htmlopts.cpp:222
 msgid "Normal Text Color:"
-msgstr ""
+msgstr "Normail tekst farve:"
 
 #: htmlopts.cpp:230
 msgid "URL Link Color:"
-msgstr ""
+msgstr "URL link farve:"
 
 #: htmlopts.cpp:238
 msgid "Followed Link Color:"
-msgstr ""
+msgstr "Fulgt link farve:"
 
 #: htmlopts.cpp:246
 msgid "Change cursor over link."
-msgstr ""
+msgstr "Skift markør over link."
 
 #: htmlopts.cpp:321
 msgid "Horizontal Root Grid Spacing:"
-msgstr ""
+msgstr "Vandret afstand på Arbejdsplads:"
 
 #: htmlopts.cpp:335
 msgid "Vertical Root Grid Spacing:"
-msgstr ""
+msgstr "Lodret afstand på Arbejdsplads:"
 
 #: htmlopts.cpp:349
 msgid "Transparent Text for Root Icons."
-msgstr ""
+msgstr "Transparent tekst for Arbejdsplads ikoner."
 
 #: bookmark.cpp:264
 #, fuzzy
 msgid "Could not write bookmark"
-msgstr "Kunne ikke skrive til\n"
+msgstr "Kunne ikke skrive bogmærke"
 
 #: kfmprops.cpp:242
 msgid "Full Name"
@@ -664,7 +664,7 @@ msgstr ""
 
 #: kfmprops.cpp:663
 msgid "Swallowing on panel"
-msgstr ""
+msgstr "Indlejret i Panelet"
 
 #: kfmprops.cpp:681 kfmprops.cpp:704
 msgid "Execute"
@@ -823,7 +823,9 @@ msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
 "off the desktop."
-msgstr ""
+msgstr "Kunne ikke udføre forespørgslen.\n"
+"De nye dimensioner ville flytte nogle ikoner\n"
+"ud over Arbejdspladsen."
 
 #: root.cpp:707
 msgid "Internal Error: desktopDir is malformed"
@@ -1231,11 +1233,11 @@ msgstr ""
 
 #: kkfmoptdlg.cpp:25
 msgid "User &Agent"
-msgstr ""
+msgstr "Bruger &Agent"
 
 #: kkfmoptdlg.cpp:31
 msgid "&Colors"
-msgstr ""
+msgstr "&Farver"
 
 #: kkfmoptdlg.cpp:34
 #, fuzzy
@@ -1248,15 +1250,15 @@ msgstr "KFM Browser indstillinger"
 
 #: khttpoptdlg.cpp:13
 msgid "Accept languages:"
-msgstr ""
+msgstr "Accepter sprog:"
 
 #: khttpoptdlg.cpp:18
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Accepter karaktersæt:"
 
 #: khttpoptdlg.cpp:23
 msgid "Assume HTML"
-msgstr ""
+msgstr "Antag HTML"
 
 #: kfmprops.h:73
 msgid "&General"

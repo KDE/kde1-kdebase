@@ -41,7 +41,7 @@ msgstr ""
 
 #: main.C:492
 msgid "Preparing session ... "
-msgstr ""
+msgstr "Lukker sessionen ... "
 
 #: main.C:511
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -125,7 +125,7 @@ msgstr "Otte"
 
 #: main.C:628
 msgid "Unnamed Desktop"
-msgstr ""
+msgstr "Unavngiven Arbejdsplads"
 
 #: main.C:962
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"

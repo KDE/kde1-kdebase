@@ -41,11 +41,11 @@ msgstr "Opfrisk Arbejdsplads"
 
 #: krootwm.C:188
 msgid "Unclutter windows"
-msgstr ""
+msgstr "Ryd op i vinduer"
 
 #: krootwm.C:189
 msgid "Cascade windows"
-msgstr ""
+msgstr "Overlæg vinduer"
 
 #: krootwm.C:190
 msgid "Arrange icons"
