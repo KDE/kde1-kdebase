@@ -298,7 +298,7 @@ msgstr "Nasledujúci dokument"
 
 #: mainwidget.cpp:232
 msgid "Previous Node"
-msgstr "Predchádzkajúci uzol"
+msgstr "Predchádzajúci uzol"
 
 #: mainwidget.cpp:237
 msgid "Next Node"
