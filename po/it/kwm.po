@@ -14,75 +14,65 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-# KDE Translation project
-# Italian Translation by Andrea Rizzzi <Bilibao@ouverture.it>
 #: main.C:67
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: Sembra che ci sia già un gestore di finestre attivo. kwm non avviato\n"
+"kwm: sembra che ci sia già un windows manager in esecuzione\n"
+"kwm non può essere avviato."
 
 #: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: fallimento durante l'inizializzazione; abbandono\n"
+msgstr "kwm: fallimento dell'inizializzazione; annullamento\n"
 
 #: main.C:370
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr ""
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:377
 msgid "Usage: "
-msgstr ""
+msgstr "Utilizzo:"
 
 #: main.C:388
-#, fuzzy
 msgid "&Maximize"
 msgstr "Ingrandisci/Riduci"
 
 #: main.C:389
-#, fuzzy
 msgid "&Restore"
-msgstr "&Distruggi"
+msgstr "&Ripristina"
 
 #: main.C:390
-#, fuzzy
 msgid "&Iconify"
 msgstr "&Iconifica"
 
 #: main.C:391
-#, fuzzy
 msgid "&DeIconify"
-msgstr "&Iconifica"
+msgstr "&Deiconifica"
 
 #: main.C:392
-#, fuzzy
 msgid "&Sticky"
-msgstr "&Appiccica/Stacca"
+msgstr "&Appiccicato"
 
 #: main.C:393
-#, fuzzy
 msgid "&UnSticky"
-msgstr "&Appiccica/Stacca"
+msgstr "&Staccato"
 
 #: main.C:394
-#, fuzzy
 msgid "Mo&ve"
-msgstr "&Muovi"
+msgstr "&Sposta"
 
 #: main.C:395
-#, fuzzy
 msgid "Resi&ze"
 msgstr "&Ridimensiona"
 
 #: main.C:397
-#, fuzzy
 msgid "&To desktop"
 msgstr "&Al Desktop"
 
 #: main.C:399
 msgid "&Onto current desktop"
-msgstr ""
+msgstr "&Sul desktop attivo"
 
 #: main.C:449
 msgid "One"
@@ -122,89 +112,55 @@ msgstr ""
 
 #: main.C:975
 msgid "*** No Tasks ***"
-msgstr ""
+msgstr "*** Nessun Task ***"
 
 #: minicli.C:115
 msgid "Command:"
 msgstr "Comando:"
 
 #: logout.C:35 taskmgr.C:106
-#, fuzzy
 msgid "Logout"
 msgstr "&Esci dal KDE"
 
 #: logout.C:45
 msgid "Session prepared for logout"
-msgstr ""
+msgstr "Sessione pronta per il LogOut"
 
 #: logout.C:51
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
+"Le seguenti applicazioni contengono dati non salvati che\n"
+"possono essere persi nella prossima sessione."
 
 #: logout.C:62
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
+"Le seguenti applicazioni non possono essere ripristinate nella prossima "
+"sessione\n"
+"ma soltanto riavviate. Accertarsi che non contengano importanti dati non "
+"ancora salvati."
 
 #: logout.C:73
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
+"Le seguenti applicazioni non sono caratteristiche di X11, quindi non possono "
+"essere\n"
+"ripristinate nella prossima sessione. Accertarsi che non contengano "
+"importanti dati non ancora salvati."
 
 #: taskmgr.C:105
 msgid "Switch to"
-msgstr ""
+msgstr "Passa A"
 
 #: taskmgr.C:119
 msgid "Current session"
-msgstr ""
+msgstr "Sessione attiva"
 
 #~ msgid "&Close"
 #~ msgstr "&Chiudi"
-
-#~ msgid ""
-#~ "kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-#~ "     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-#~ "     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-#~ "     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-#~ "     No warranty. Please see the README's\n"
-#~ msgstr ""
-#~ "kwm: versione 0.9 Copyright (c) 1996,1997 Matthias Ettrich\n"
-#~ "     basato sulla versione 0.2 - 0.5 Copyright (c) 1996-1997 Brian Cooper \n"
-#~ "     basato sulla versione 0.1 Copyright (c) 1996 Matthias Ettrich\n"
-#~ "     parte derivata da 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-#~ "     Senza garanzie. Leggere attentamente i file README \n"
-
-#~ msgid "patch level %d"
-#~ msgstr "livello patch %d"
-
-#~ msgid "usage: kwm [-version] [-exec prog] \n"
-#~ msgstr "utilizzo: kwm [-version] [-exec prog] \n"
-
-#~ msgid "Desktop"
-#~ msgstr "Desktop"
-
-#~ msgid "kwm: exiting on signal\n"
-#~ msgstr "kwm: uscito al segnale\n"
-
-#~ msgid "&Help on desktop"
-#~ msgstr "&Guida KDE"
-
-#~ msgid "&Execute command"
-#~ msgstr "&Esegui comando"
-
-#~ msgid "&Display properties"
-#~ msgstr "&Proprietà schermo"
-
-#~ msgid "&Refresh desktop"
-#~ msgstr "&Agiorna desktop"
-
-#~ msgid "&Arrange icons"
-#~ msgstr "&Disponi icone"
-
-#~ msgid "&Lock screen"
-#~ msgstr "&Blocca schermo"

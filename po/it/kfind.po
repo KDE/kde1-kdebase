@@ -9,15 +9,13 @@ msgstr ""
 "kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp "
 "mkfindtop.cpp mkfoptions.cpp mkftabdlg.cpp mkfwin.cpp\n"
 
-# KDE Translation project
-# Italian Translation by Andrea Rizzzi <Bilibao@ouverture.it>
 #: kfdird.cpp:46
 msgid "Directories:"
 msgstr "Directory:"
 
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
-msgstr "Non si può aprire o leggere la directory."
+msgstr "Impossibile aprire o leggere la directory."
 
 #: kfindtop.cpp:118
 #, c-format
@@ -82,7 +80,7 @@ msgstr "Guida Kfind"
 
 #: kfindtop.cpp:186
 msgid "About &Qt"
-msgstr ""
+msgstr "Info su &Qt"
 
 #: kfindtop.cpp:206
 msgid "Start Search"
@@ -191,7 +189,7 @@ msgstr "(nessuno)"
 
 #: kftabdlg.cpp:210
 msgid "At Least"
-msgstr "Al meno"
+msgstr "Almeno"
 
 #: kftabdlg.cpp:211
 msgid "At Most"
@@ -227,11 +225,11 @@ msgstr "Formato file:"
 
 #: kfoptions.cpp:78
 msgid "Save results to file:"
-msgstr "Salva i risultati sul file:"
+msgstr "Salva i risultati nel file:"
 
 #: kfoptions.cpp:81
 msgid "Save results to file ~/.kfind-results.html"
-msgstr "Salva i risultati nel file ~.kfind-result.html"
+msgstr "Salva i risultati nel file ~./kfind-result.html"
 
 #: kfoptions.cpp:83
 msgid "Browse"
@@ -243,19 +241,19 @@ msgstr "Testo"
 
 #: kfoptions.cpp:125
 msgid "Saving"
-msgstr "Sto Salvando..."
+msgstr "Salvataggio"
 
 #: kfoptions.cpp:132
 msgid "Create Archive:"
-msgstr "Crea archivio:"
+msgstr "Creazione..."
 
 #: kfoptions.cpp:134
 msgid "Add to Archive:"
-msgstr "Aggiungi all'archivio"
+msgstr "Aggiungiunta..."
 
 #: kfoptions.cpp:138
 msgid "Patterns:"
-msgstr "Motivo:"
+msgstr "Schema:"
 
 #: kfoptions.cpp:141
 msgid "Add New"
@@ -263,7 +261,7 @@ msgstr "Aggiungi nuovo"
 
 #: kfoptions.cpp:182
 msgid "Archivers"
-msgstr ""
+msgstr "Creazione Archivi"
 
 #: kfwin.cpp:78 kfwin.cpp:105
 #, c-format
@@ -276,7 +274,7 @@ msgstr "Non è stato possibile salvare i risultati!"
 
 #: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
 msgid "KFind Results File"
-msgstr "File con risultati"
+msgstr "File risultati KFind"
 
 #: kfwin.cpp:180
 msgid "Results were saved to file\n"
@@ -343,30 +341,16 @@ msgstr "Impossibile riconoscere il tipo di archivio!"
 msgid "Error while creating child process!"
 msgstr "Errore nella creazione del processo figlio!"
 
-#, fuzzy
-#~ msgid "&Delete"
-#~ msgstr "Cancella"
-
-#, fuzzy
-#~ msgid "&Undo"
-#~ msgstr "Annulla"
-
-#~ msgid "Delete"
-#~ msgstr "Cancella"
-
-#~ msgid "Remove"
-#~ msgstr "Rimuovi"
-
-#~ msgid "Sorry"
-#~ msgstr "Mi dispiace"
-
-#, fuzzy
-#~ msgid "&Quit"
-#~ msgstr "&Modifica"
+#~ msgid "&About"
+#~ msgstr "Info su..."
 
 #, fuzzy
 #~ msgid "&Copy"
 #~ msgstr "Copia"
+
+#, fuzzy
+#~ msgid "&Delete"
+#~ msgstr "Cancella"
 
 #~ msgid "&Edit"
 #~ msgstr "&Modifica"
@@ -375,14 +359,43 @@ msgstr "Errore nella creazione del processo figlio!"
 #~ msgstr "&File"
 
 #~ msgid "&Help"
-#~ msgstr "&?"
+#~ msgstr "&Aiuto"
 
 #~ msgid "&Options"
 #~ msgstr "&Opzioni"
 
 #, fuzzy
+#~ msgid "&Quit"
+#~ msgstr "&Esci"
+
+#, fuzzy
+#~ msgid "&Undo"
+#~ msgstr "Annulla"
+
+#~ msgid "Cancel"
+#~ msgstr "Annulla"
+
+#~ msgid "Delete"
+#~ msgstr "Cancella"
+
+#~ msgid "Error"
+#~ msgstr "Errore"
+
+#, fuzzy
 #~ msgid "Help"
-#~ msgstr "&?"
+#~ msgstr "&Aiuto"
+
+#~ msgid "Open"
+#~ msgstr "Apri"
+
+#~ msgid "Quit"
+#~ msgstr "Esci"
+
+#~ msgid "Remove"
+#~ msgstr "Rimuovi"
+
+#~ msgid "Sorry"
+#~ msgstr "Mi dispiace"
 
 #~ msgid "Type Description:"
 #~ msgstr "Descrizione tipo:"
