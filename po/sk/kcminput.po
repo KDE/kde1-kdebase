@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminput\n"
-"POT-Creation-Date: 1998-03-05 15:54+0100\n"
+"POT-Creation-Date: 1998-03-05 12:11+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit\n"   
 
 #: main.cpp:53
 msgid "&Mouse"
@@ -25,34 +25,34 @@ msgstr "&Klávesnica"
 msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
 msgstr "Pou¾itie: kcminput [-init | {mouse,keyboard}]\n"
 
-#: main.cpp:94
+#: main.cpp:92
 msgid "Input Devices Properties"
 msgstr "Vlastnosti vstupných zariadení"
 
-#: mouse.cpp:75
+#: mouse.cpp:76
 msgid "Acceleration"
 msgstr "Akcelerácia"
 
-#: mouse.cpp:81
+#: mouse.cpp:82
 msgid "Threshold"
 msgstr "Prah"
 
-#: mouse.cpp:84
+#: mouse.cpp:85
 msgid "Button mapping"
 msgstr "Mapovanie tlaèítok"
 
-#: mouse.cpp:86
+#: mouse.cpp:87
 msgid "Right handed"
 msgstr "Pravoruké"
 
-#: mouse.cpp:88
+#: mouse.cpp:89
 msgid "Left handed"
 msgstr "¥avoruké"
 
-#: keyboard.cpp:67
+#: keyboard.cpp:68
 msgid "Keyboard repeat"
 msgstr "Opakovanie klávesy"
 
-#: keyboard.cpp:75
+#: keyboard.cpp:76
 msgid "Key click volume"
 msgstr "Hlasitos» stlaèenia klávesy"

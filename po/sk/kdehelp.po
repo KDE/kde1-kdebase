@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.6\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-05 12:11+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit\n"   
 
 #: helpwin.cpp:57
 msgid "KDE Help: Open URL"
@@ -194,79 +194,83 @@ msgstr "<!-- Tento súbor needitovat -->"
 msgid "CGI: Destination URL malformed: %s\n"
 msgstr "CGI: Cieµová adresa má chybný formát : %s\n"
 
-#: mainwidget.cpp:132
+#: mainwidget.cpp:133
 msgid "&New Help Window"
 msgstr "&Nové okno s nápovedou"
 
-#: mainwidget.cpp:135
+#: mainwidget.cpp:136
 msgid "&Open File..."
 msgstr "&Otvori» súbor..."
 
-#: mainwidget.cpp:136
+#: mainwidget.cpp:137
 msgid "Open UR&L..."
 msgstr "Otvori» UR&L..."
 
-#: mainwidget.cpp:137
+#: mainwidget.cpp:138
 msgid "&Reload"
 msgstr "O&bnovi»"
 
-#: mainwidget.cpp:139
+#: mainwidget.cpp:140
 msgid "&Search"
 msgstr "&Hµada»"
 
-#: mainwidget.cpp:152
+#: mainwidget.cpp:153
 msgid "&Back"
 msgstr "&Spä»"
 
-#: mainwidget.cpp:153
+#: mainwidget.cpp:154
 msgid "&Forward"
 msgstr "&Ïal¹ie"
 
 #: mainwidget.cpp:156
+msgid "&Contents"
+msgstr "&Obsah"
+
+#: mainwidget.cpp:157
 msgid "&Top"
 msgstr "Hlavná s&tránka"
 
-#: mainwidget.cpp:157
+#: mainwidget.cpp:158
 msgid "&Up"
 msgstr "H&ore"
 
-#: mainwidget.cpp:158
+#: mainwidget.cpp:159
 msgid "&Previous"
 msgstr "&Predchádzajúci uzol"
 
-#: mainwidget.cpp:159
+#: mainwidget.cpp:160
 msgid "&Next"
 msgstr "&Nasledujúci uzol"
 
-#: mainwidget.cpp:171
+#: mainwidget.cpp:172
 msgid "&General Preferences..."
 msgstr "&V¹eobecné nastavenia..."
 
-#: mainwidget.cpp:174
+#: mainwidget.cpp:175
 msgid "Show &Toolbar"
 msgstr "Zobrazuj nás&trojovú li¹tu"
 
-#: mainwidget.cpp:176
+#: mainwidget.cpp:177
 msgid "Show &Location"
 msgstr "Zobrazuj &adresu"
 
-#: mainwidget.cpp:177
+#: mainwidget.cpp:178
 msgid "Show Status&bar"
 msgstr "Zobrazuj stav&ový riadok"
 
-#: mainwidget.cpp:180
+#: mainwidget.cpp:181
 msgid "&Save Options"
 msgstr "&Ulo¾ voµby"
 
-#: mainwidget.cpp:182
+#: mainwidget.cpp:183
 msgid "KDE Help System\n"
 msgstr "KDE pomocník\n"
 
-#: mainwidget.cpp:183
+#: mainwidget.cpp:184
 msgid "Version "
 msgstr "Verzia "
 
-#: mainwidget.cpp:185
+#: mainwidget.cpp:186
 msgid ""
 "\n"
 "\n"
@@ -285,55 +289,55 @@ msgstr ""
 "KDEHelp je poskytovaný BEZ AKEJKO¥VEK ZÁRUKY s výnimkou, ¾e je toto \n"
 "vylúèené miestnymi zákonmi."
 
-#: mainwidget.cpp:201
+#: mainwidget.cpp:202
 msgid "&Goto"
 msgstr "S&tránka"
 
-#: mainwidget.cpp:202
+#: mainwidget.cpp:203
 msgid "&Bookmarks"
 msgstr "&Zálo¾ka"
 
-#: mainwidget.cpp:220
+#: mainwidget.cpp:221
 msgid "Previous Document"
 msgstr "Predchádzajúci dokument"
 
-#: mainwidget.cpp:225
+#: mainwidget.cpp:226
 msgid "Next Document"
 msgstr "Nasledujúci dokument"
 
-#: mainwidget.cpp:232
+#: mainwidget.cpp:233
 msgid "Previous Node"
 msgstr "Predchádzkajúci uzol"
 
-#: mainwidget.cpp:237
+#: mainwidget.cpp:238
 msgid "Next Node"
 msgstr "Nasledujúci uzol"
 
-#: mainwidget.cpp:242
+#: mainwidget.cpp:243
 msgid "Up one Node"
 msgstr "Hore o jeden uzol"
 
-#: mainwidget.cpp:247
+#: mainwidget.cpp:248
 msgid "Top Node"
 msgstr "Hlavný uzol"
 
-#: mainwidget.cpp:254
+#: mainwidget.cpp:255
 msgid "Help Contents"
 msgstr "Obsah nápovedy"
 
-#: mainwidget.cpp:259
+#: mainwidget.cpp:260
 msgid "Reload current document"
 msgstr "Obnov aktuálny dokument"
 
-#: mainwidget.cpp:264
+#: mainwidget.cpp:265
 msgid "Stop"
 msgstr "Stop"
 
-#: mainwidget.cpp:288
+#: mainwidget.cpp:289
 msgid "In the Constructor!"
 msgstr "V kon¹truktore!"
 
-#: mainwidget.cpp:582
+#: mainwidget.cpp:583
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -341,13 +345,10 @@ msgstr ""
 "KDE pomocník\n"
 "Verzia "
 
-#: mainwidget.cpp:584
+#: mainwidget.cpp:585
 msgid "About KDE Help"
 msgstr "O KDE pomocníkovi"
 
-#: mainwidget.cpp:617
+#: mainwidget.cpp:618
 msgid "&Add Bookmark"
 msgstr "&Pridaj zálo¾ku"
-
-#~ msgid "&Contents"
-#~ msgstr "&Obsah"
