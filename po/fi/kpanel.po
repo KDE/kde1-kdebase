@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KPANEL\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr "&Asetukset"
 msgid "Go!"
 msgstr "Siirry!"
 
-#: kpanel.C:333 tools.C:900
+#: kpanel.C:333 tools.C:901
 msgid "Where do you want to go tomorrow?"
 msgstr "Mihin haluat t‰n‰‰n menn‰?"
 
@@ -33,11 +33,11 @@ msgstr "Mihin haluat t‰n‰‰n menn‰?"
 msgid "No info available"
 msgstr "Tietoa ei ole saatavilla"
 
-#: kpanel.C:447 props.C:206 props.C:207
+#: kpanel.C:447 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Poistu"
 
-#: kpanel.C:455 props.C:205
+#: kpanel.C:455 props.C:206
 msgid "Lock screen"
 msgstr "Lukitse n‰yttˆ"
 
@@ -57,83 +57,83 @@ msgstr "Pienenn‰ &muut ikkunat"
 msgid "No comment available"
 msgstr "Tietoa ei ole saatavilla"
 
-#: kpanel.C:1246 tools.C:909
+#: kpanel.C:1246 tools.C:910
 msgid "Windowlist"
 msgstr "Ikkunalista"
 
-#: kpanel.C:1254 props.C:196
+#: kpanel.C:1254 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Selaa nopeasti tiedostopuuta"
 
-#: props.C:166
+#: props.C:167
 msgid "Add Application"
 msgstr "Lis‰‰ Sovellus"
 
-#: props.C:168
+#: props.C:169
 msgid "Add an application or a submenu onto the panel"
 msgstr "Lis‰‰ sovellus tai valikko paneeliin"
 
-#: props.C:174
+#: props.C:175
 msgid "Add Disk Navigator"
 msgstr "Lis‰‰ Levyselain"
 
-#: props.C:176
+#: props.C:177
 msgid "Add a Disk Navigator menu onto the panel"
 msgstr "Lis‰‰ Levyselain -valikko paneeliin"
 
-#: props.C:179
+#: props.C:180
 msgid "Add Windowlist"
 msgstr "Lis‰‰ Ikkunalista"
 
-#: props.C:181
+#: props.C:182
 msgid "Add a windowlist menu onto the panel"
 msgstr "Lis‰‰ ikkunalista -valikko paneeliin"
 
-#: events.C:810 props.C:182
+#: events.C:810 props.C:183
 msgid "Configure"
 msgstr "Asetukset"
 
-#: props.C:184
+#: props.C:185
 msgid "Configure panel"
 msgstr "Paneelin asetukset"
 
-#: props.C:185
+#: props.C:186
 msgid "Edit Menus"
 msgstr "Muokkaa valikoita"
 
-#: props.C:187
+#: props.C:188
 msgid "Add or remove applications in the menu structure "
 msgstr "Lis‰‰ tai poista valikoiden sovelluksia"
 
-#: events.C:812 props.C:188
+#: events.C:812 props.C:189
 msgid "Restart"
 msgstr "K‰ynnist‰ uudelleen"
 
-#: props.C:190
+#: props.C:191
 msgid "Restart panel"
 msgstr "K‰ynnist‰ paneeli uudelleen"
 
-#: props.C:193
+#: props.C:194
 msgid "Disk Navigator"
 msgstr "Levyselain"
 
-#: props.C:201
+#: props.C:202
 msgid "Panel"
 msgstr "Paneeli"
 
-#: props.C:203
+#: props.C:204
 msgid "Lock Screen"
 msgstr "Lukitse n‰yttˆ"
 
-#: props.C:450
+#: props.C:451
 msgid "The menu editor is not installed."
 msgstr "Valikkoeditoria ei ole asennettu."
 
-#: events.C:866 props.C:451
+#: events.C:866 props.C:452
 msgid "Oops!"
 msgstr "Hups!"
 
-#: tools.C:647
+#: tools.C:648
 msgid ""
 "\n"
 "%b %d"
@@ -141,7 +141,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:918
+#: tools.C:919
 msgid "KDiskNavigator"
 msgstr "Levyselain"
 

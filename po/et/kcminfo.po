@@ -21,22 +21,22 @@ msgstr "ekraan #%d"
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr "  mõõtmed	          : %dx%d pixelit (%dx%d mm)\n"
+msgstr "  mõõtmed\t          : %dx%d pixelit (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  resolutsioon	      : %dx%d punkti tollile\n"
+msgstr "  resolutsioon\t      : %dx%d punkti tollile\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr "  sügavus (%d)	       : "
+msgstr "  sügavus (%d)\t       : "
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr "kuva nimi	          : %s"
+msgstr "kuva nimi\t          : %s"
 
 #: info.cpp:87
 #, c-format

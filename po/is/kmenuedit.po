@@ -3,28 +3,28 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-10-20 00:20+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
 
-#: kmenuedit.cpp:68
+#: kmenuedit.cpp:69
 msgid "Change &Menuname"
 msgstr "Breyta &heitum valmynda"
 
-#: kmenuedit.cpp:69
+#: kmenuedit.cpp:70
 msgid "Reload &Filetypes"
 msgstr "Endurlesa skráar&tög"
 
-#: kmenuedit.cpp:76
+#: kmenuedit.cpp:77
 msgid "by"
 msgstr ""
 
-#: kmenuedit.cpp:175 kmenuedit.cpp:200
+#: kmenuedit.cpp:179 kmenuedit.cpp:204
 msgid "Changes not saved !"
 msgstr "Breytingar voru ekki vistaðar!"
 
-#: kmenuedit.cpp:176 kmenuedit.cpp:201
+#: kmenuedit.cpp:180 kmenuedit.cpp:205
 msgid ""
 "\n"
 "Do you want to save your changes ?"
@@ -32,15 +32,15 @@ msgstr ""
 "\n"
 "Viltu vista breytingar?"
 
-#: confmenu.cpp:337 confmenu.cpp:929 kmenuedit.cpp:260
+#: confmenu.cpp:337 confmenu.cpp:934 kmenuedit.cpp:264
 msgid "EMPTY"
 msgstr "TÓMT"
 
-#: kmenuedit.cpp:339
+#: kmenuedit.cpp:343
 msgid "Reload Menus"
 msgstr "Endurlesa valmyndir"
 
-#: kmenuedit.cpp:340
+#: kmenuedit.cpp:344
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -113,7 +113,7 @@ msgstr ""
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Ef þú breytir tagi þessa takka hverfa allar undirvalmyndir hans"
 
-#: confmenu.cpp:338 confmenu.cpp:930
+#: confmenu.cpp:338 confmenu.cpp:935
 msgid "no command"
 msgstr "engin skipun"
 

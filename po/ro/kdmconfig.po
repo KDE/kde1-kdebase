@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -165,6 +165,20 @@ msgstr "Nereuºitã"
 
 #: kdm-font.cpp:59
 msgid "Standard"
+msgstr ""
+
+#: kdm-font.cpp:157
+#, fuzzy
+msgid "Greeting font"
+msgstr "Salutare"
+
+#: kdm-font.cpp:161
+#, fuzzy
+msgid "Fail font"
+msgstr "Nereuºitã"
+
+#: kdm-font.cpp:165
+msgid "Standard font"
 msgstr ""
 
 #: kdm-bgnd.cpp:70

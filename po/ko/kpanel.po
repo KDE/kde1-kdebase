@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Go!"
 msgstr "출발!"
 
-#: kpanel.C:333 tools.C:900
+#: kpanel.C:333 tools.C:901
 msgid "Where do you want to go tomorrow?"
 msgstr "내일 어디로 가시겠습니까?"
 
@@ -34,11 +34,11 @@ msgstr "내일 어디로 가시겠습니까?"
 msgid "No info available"
 msgstr "정보가 없습니다"
 
-#: kpanel.C:447 props.C:206 props.C:207
+#: kpanel.C:447 props.C:207 props.C:208
 msgid "Logout"
 msgstr "로그아웃"
 
-#: kpanel.C:455 props.C:205
+#: kpanel.C:455 props.C:206
 msgid "Lock screen"
 msgstr "화면 잠금"
 
@@ -58,92 +58,92 @@ msgstr ""
 msgid "No comment available"
 msgstr "설명이 없습니다"
 
-#: kpanel.C:1246 tools.C:909
+#: kpanel.C:1246 tools.C:910
 msgid "Windowlist"
 msgstr "윈도우목록"
 
-#: kpanel.C:1254 props.C:196
+#: kpanel.C:1254 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
-#: props.C:166
+#: props.C:167
 #, fuzzy
 msgid "Add Application"
 msgstr "응용프로그램 추가"
 
-#: props.C:168
+#: props.C:169
 msgid "Add an application or a submenu onto the panel"
 msgstr "응용프로그램 또는 하위메뉴 패널에 추가"
 
-#: props.C:174
+#: props.C:175
 msgid "Add Disk Navigator"
 msgstr ""
 
-#: props.C:176
+#: props.C:177
 #, fuzzy
 msgid "Add a Disk Navigator menu onto the panel"
 msgstr "윈도우목록 메뉴 패널에 추가"
 
-#: props.C:179
+#: props.C:180
 #, fuzzy
 msgid "Add Windowlist"
 msgstr "윈도우목록 추가"
 
-#: props.C:181
+#: props.C:182
 msgid "Add a windowlist menu onto the panel"
 msgstr "윈도우목록 메뉴 패널에 추가"
 
-#: events.C:810 props.C:182
+#: events.C:810 props.C:183
 msgid "Configure"
 msgstr "설정"
 
-#: props.C:184
+#: props.C:185
 msgid "Configure panel"
 msgstr "패널 설정"
 
-#: props.C:185
+#: props.C:186
 msgid "Edit Menus"
 msgstr "메뉴 편집"
 
-#: props.C:187
+#: props.C:188
 msgid "Add or remove applications in the menu structure "
 msgstr "메뉴 구조의 응용프로그램 추가 또는 삭제 "
 
-#: events.C:812 props.C:188
+#: events.C:812 props.C:189
 msgid "Restart"
 msgstr "다시 시작"
 
-#: props.C:190
+#: props.C:191
 msgid "Restart panel"
 msgstr "패널 다시 시작"
 
-#: props.C:193
+#: props.C:194
 msgid "Disk Navigator"
 msgstr ""
 
-#: props.C:201
+#: props.C:202
 msgid "Panel"
 msgstr "패널"
 
-#: props.C:203
+#: props.C:204
 msgid "Lock Screen"
 msgstr "화면 잠금"
 
-#: props.C:450
+#: props.C:451
 msgid "The menu editor is not installed."
 msgstr "메뉴 편집기가 설치되지 않았습니다."
 
-#: events.C:866 props.C:451
+#: events.C:866 props.C:452
 msgid "Oops!"
 msgstr "아!"
 
-#: tools.C:647
+#: tools.C:648
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
 
-#: tools.C:918
+#: tools.C:919
 msgid "KDiskNavigator"
 msgstr ""
 

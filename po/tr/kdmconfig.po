@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -164,6 +164,21 @@ msgstr "Baþarýsýz"
 
 #: kdm-font.cpp:59
 msgid "Standard"
+msgstr "Standart"
+
+#: kdm-font.cpp:157
+#, fuzzy
+msgid "Greeting font"
+msgstr "Karþýlama"
+
+#: kdm-font.cpp:161
+#, fuzzy
+msgid "Fail font"
+msgstr "Baþarýsýz"
+
+#: kdm-font.cpp:165
+#, fuzzy
+msgid "Standard font"
 msgstr "Standart"
 
 #: kdm-bgnd.cpp:70

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-12-13 16:01+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -163,6 +163,21 @@ msgstr "Fel"
 
 #: kdm-font.cpp:59
 msgid "Standard"
+msgstr "Normal"
+
+#: kdm-font.cpp:157
+#, fuzzy
+msgid "Greeting font"
+msgstr "Hälsning"
+
+#: kdm-font.cpp:161
+#, fuzzy
+msgid "Fail font"
+msgstr "Fel"
+
+#: kdm-font.cpp:165
+#, fuzzy
+msgid "Standard font"
 msgstr "Normal"
 
 #: kdm-bgnd.cpp:70

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-12-19 18:17+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -12,23 +12,23 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
-#: kmenuedit.cpp:68
+#: kmenuedit.cpp:69
 msgid "Change &Menuname"
 msgstr "Byt &menynamn"
 
-#: kmenuedit.cpp:69
+#: kmenuedit.cpp:70
 msgid "Reload &Filetypes"
 msgstr "Ladda om &filtyper"
 
-#: kmenuedit.cpp:76
+#: kmenuedit.cpp:77
 msgid "by"
 msgstr "av"
 
-#: kmenuedit.cpp:175 kmenuedit.cpp:200
+#: kmenuedit.cpp:179 kmenuedit.cpp:204
 msgid "Changes not saved !"
 msgstr "Ändringarna ej sparade!"
 
-#: kmenuedit.cpp:176 kmenuedit.cpp:201
+#: kmenuedit.cpp:180 kmenuedit.cpp:205
 msgid ""
 "\n"
 "Do you want to save your changes ?"
@@ -36,15 +36,15 @@ msgstr ""
 "\n"
 "Vill du spara dina ändringar ?"
 
-#: confmenu.cpp:337 confmenu.cpp:929 kmenuedit.cpp:260
+#: confmenu.cpp:337 confmenu.cpp:934 kmenuedit.cpp:264
 msgid "EMPTY"
 msgstr "TOM"
 
-#: kmenuedit.cpp:339
+#: kmenuedit.cpp:343
 msgid "Reload Menus"
 msgstr "Ladda om menyer"
 
-#: kmenuedit.cpp:340
+#: kmenuedit.cpp:344
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -118,7 +118,7 @@ msgid "Changing the type of this button will delete all of its submenus"
 msgstr ""
 "Om du ändrar typ på den här knappen kommer alla dess undermenyer försvinna"
 
-#: confmenu.cpp:338 confmenu.cpp:930
+#: confmenu.cpp:338 confmenu.cpp:935
 msgid "no command"
 msgstr "inget kommando"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig 1.0pre2\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-12-02 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -164,6 +164,21 @@ msgstr "Eraro"
 
 #: kdm-font.cpp:59
 msgid "Standard"
+msgstr "Normala"
+
+#: kdm-font.cpp:157
+#, fuzzy
+msgid "Greeting font"
+msgstr "Saluto"
+
+#: kdm-font.cpp:161
+#, fuzzy
+msgid "Fail font"
+msgstr "Eraro"
+
+#: kdm-font.cpp:165
+#, fuzzy
+msgid "Standard font"
 msgstr "Normala"
 
 #: kdm-bgnd.cpp:70

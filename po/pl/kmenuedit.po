@@ -1,28 +1,28 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit \n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-12-29 20:52+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
-#: kmenuedit.cpp:68
+#: kmenuedit.cpp:69
 msgid "Change &Menuname"
 msgstr "Zmieñ nazwê &menu"
 
-#: kmenuedit.cpp:69
+#: kmenuedit.cpp:70
 msgid "Reload &Filetypes"
 msgstr "Prze³aduj &typy plików"
 
-#: kmenuedit.cpp:76
+#: kmenuedit.cpp:77
 msgid "by"
 msgstr "od"
 
-#: kmenuedit.cpp:175 kmenuedit.cpp:200
+#: kmenuedit.cpp:179 kmenuedit.cpp:204
 msgid "Changes not saved !"
 msgstr "Zmiany nie zapisane !"
 
-#: kmenuedit.cpp:176 kmenuedit.cpp:201
+#: kmenuedit.cpp:180 kmenuedit.cpp:205
 msgid ""
 "\n"
 "Do you want to save your changes ?"
@@ -30,15 +30,15 @@ msgstr ""
 "\n"
 "Czy chcesz zapisaæ zmiany ?"
 
-#: confmenu.cpp:337 confmenu.cpp:929 kmenuedit.cpp:260
+#: confmenu.cpp:337 confmenu.cpp:934 kmenuedit.cpp:264
 msgid "EMPTY"
 msgstr "PUSTY"
 
-#: kmenuedit.cpp:339
+#: kmenuedit.cpp:343
 msgid "Reload Menus"
 msgstr "Prze³aduj menu"
 
-#: kmenuedit.cpp:340
+#: kmenuedit.cpp:344
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -110,7 +110,7 @@ msgstr ""
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Zmiana typu tego przycisku spowoduje skasowanie jego podmenu"
 
-#: confmenu.cpp:338 confmenu.cpp:930
+#: confmenu.cpp:338 confmenu.cpp:935
 msgid "no command"
 msgstr "brak polecenia"
 

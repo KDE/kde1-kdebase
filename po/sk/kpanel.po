@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -25,7 +25,7 @@ msgstr "&Nastavenie"
 msgid "Go!"
 msgstr "Ís»!"
 
-#: kpanel.C:333 tools.C:900
+#: kpanel.C:333 tools.C:901
 msgid "Where do you want to go tomorrow?"
 msgstr "Kam si prajete ís» zajtra?"
 
@@ -33,11 +33,11 @@ msgstr "Kam si prajete ís» zajtra?"
 msgid "No info available"
 msgstr "Informácia nie je k dispozícii"
 
-#: kpanel.C:447 props.C:206 props.C:207
+#: kpanel.C:447 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Odhlási»"
 
-#: kpanel.C:455 props.C:205
+#: kpanel.C:455 props.C:206
 msgid "Lock screen"
 msgstr "Zablokova» obrazovku"
 
@@ -57,83 +57,83 @@ msgstr "Ikonifikova» ostatné &okná"
 msgid "No comment available"
 msgstr "Komentár nie je k dispozícii"
 
-#: kpanel.C:1246 tools.C:909
+#: kpanel.C:1246 tools.C:910
 msgid "Windowlist"
 msgstr "Zoznam okien"
 
-#: kpanel.C:1254 props.C:196
+#: kpanel.C:1254 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Rýchlo navigova» systémom súborov"
 
-#: props.C:166
+#: props.C:167
 msgid "Add Application"
 msgstr "Prida» aplikáciu"
 
-#: props.C:168
+#: props.C:169
 msgid "Add an application or a submenu onto the panel"
 msgstr "Prida» aplikáciu alebo menu na panel"
 
-#: props.C:174
+#: props.C:175
 msgid "Add Disk Navigator"
 msgstr "Prida» navigátor disku"
 
-#: props.C:176
+#: props.C:177
 msgid "Add a Disk Navigator menu onto the panel"
 msgstr "Pridá menu disk navigátora na panel"
 
-#: props.C:179
+#: props.C:180
 msgid "Add Windowlist"
 msgstr "Prida» zoznam okien"
 
-#: props.C:181
+#: props.C:182
 msgid "Add a windowlist menu onto the panel"
 msgstr "Prida» zoznam okien na panel"
 
-#: events.C:810 props.C:182
+#: events.C:810 props.C:183
 msgid "Configure"
 msgstr "Nastavenie"
 
-#: props.C:184
+#: props.C:185
 msgid "Configure panel"
 msgstr "Nastavenie panela"
 
-#: props.C:185
+#: props.C:186
 msgid "Edit Menus"
 msgstr "Editova» menu"
 
-#: props.C:187
+#: props.C:188
 msgid "Add or remove applications in the menu structure "
 msgstr "Prida» alebo ubra» aplikácie v ¹truktúre menu "
 
-#: events.C:812 props.C:188
+#: events.C:812 props.C:189
 msgid "Restart"
 msgstr "Spusti» znova"
 
-#: props.C:190
+#: props.C:191
 msgid "Restart panel"
 msgstr "Spusti» panel znova"
 
-#: props.C:193
+#: props.C:194
 msgid "Disk Navigator"
 msgstr "Navigátor disku"
 
-#: props.C:201
+#: props.C:202
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:203
+#: props.C:204
 msgid "Lock Screen"
 msgstr "Blokova» obrazovku"
 
-#: props.C:450
+#: props.C:451
 msgid "The menu editor is not installed."
 msgstr "Editor menu nie je nain¹talovaný."
 
-#: events.C:866 props.C:451
+#: events.C:866 props.C:452
 msgid "Oops!"
 msgstr "Oops!"
 
-#: tools.C:647
+#: tools.C:648
 msgid ""
 "\n"
 "%b %d"
@@ -141,7 +141,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:918
+#: tools.C:919
 msgid "KDiskNavigator"
 msgstr "Navigátor disku"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Go!"
 msgstr "Git!"
 
-#: kpanel.C:333 tools.C:900
+#: kpanel.C:333 tools.C:901
 msgid "Where do you want to go tomorrow?"
 msgstr "Yarýn Nereye Gitmek Ýstersiniz?"
 
@@ -33,11 +33,11 @@ msgstr "Yarýn Nereye Gitmek Ýstersiniz?"
 msgid "No info available"
 msgstr "Ýlgili bilgi yok"
 
-#: kpanel.C:447 props.C:206 props.C:207
+#: kpanel.C:447 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Çýkýþ"
 
-#: kpanel.C:455 props.C:205
+#: kpanel.C:455 props.C:206
 msgid "Lock screen"
 msgstr "Ekraný kilitle"
 
@@ -57,92 +57,92 @@ msgstr ""
 msgid "No comment available"
 msgstr "Yorum yok"
 
-#: kpanel.C:1246 tools.C:909
+#: kpanel.C:1246 tools.C:910
 msgid "Windowlist"
 msgstr "Pencere dökümü"
 
-#: kpanel.C:1254 props.C:196
+#: kpanel.C:1254 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
-#: props.C:166
+#: props.C:167
 #, fuzzy
 msgid "Add Application"
 msgstr "Uygulama ekle"
 
-#: props.C:168
+#: props.C:169
 msgid "Add an application or a submenu onto the panel"
 msgstr "Bir uygulamayý panel'e yada alt menüye ekle"
 
-#: props.C:174
+#: props.C:175
 msgid "Add Disk Navigator"
 msgstr ""
 
-#: props.C:176
+#: props.C:177
 #, fuzzy
 msgid "Add a Disk Navigator menu onto the panel"
 msgstr "Panel'e pencere dökümü menüsü ekle"
 
-#: props.C:179
+#: props.C:180
 #, fuzzy
 msgid "Add Windowlist"
 msgstr "Pencere dökümü ekle"
 
-#: props.C:181
+#: props.C:182
 msgid "Add a windowlist menu onto the panel"
 msgstr "Panel'e pencere dökümü menüsü ekle"
 
-#: events.C:810 props.C:182
+#: events.C:810 props.C:183
 msgid "Configure"
 msgstr "Ayarla"
 
-#: props.C:184
+#: props.C:185
 msgid "Configure panel"
 msgstr "Panel'i ayarla"
 
-#: props.C:185
+#: props.C:186
 msgid "Edit Menus"
 msgstr "Menüleri Düzenle"
 
-#: props.C:187
+#: props.C:188
 msgid "Add or remove applications in the menu structure "
 msgstr "Menü yapýsýna uygulama ekle yada sil"
 
-#: events.C:812 props.C:188
+#: events.C:812 props.C:189
 msgid "Restart"
 msgstr "Yeniden baþlat"
 
-#: props.C:190
+#: props.C:191
 msgid "Restart panel"
 msgstr "Panel'i yeniden baþlat"
 
-#: props.C:193
+#: props.C:194
 msgid "Disk Navigator"
 msgstr ""
 
-#: props.C:201
+#: props.C:202
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:203
+#: props.C:204
 msgid "Lock Screen"
 msgstr "Ekraný kilitle"
 
-#: props.C:450
+#: props.C:451
 msgid "The menu editor is not installed."
 msgstr "Menü düzenleyicisi yüklenmemiþ."
 
-#: events.C:866 props.C:451
+#: events.C:866 props.C:452
 msgid "Oops!"
 msgstr "Hay Allah!"
 
-#: tools.C:647
+#: tools.C:648
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
 
-#: tools.C:918
+#: tools.C:919
 msgid "KDiskNavigator"
 msgstr ""
 

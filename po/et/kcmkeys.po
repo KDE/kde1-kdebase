@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,7 +60,7 @@ msgid ""
 "system where the key scheme is stored."
 msgstr ""
 "Seda klahviskeemi ei saa eemaldada.\n"
-"Võibolla pole sul õigust teha muudatusi selles\n" 
+"Võibolla pole sul õigust teha muudatusi selles\n"
 "failisüsteemis, kus hoitakse klahviskeemi."
 
 #: keyconfig.cpp:343
@@ -74,7 +74,7 @@ msgid ""
 "in the key scheme list."
 msgstr ""
 "Palun vali uuele klahviskeemile kordumatu\n"
-"nimi. Sisestatud nimi juba eksisteerib\n" 
+"nimi. Sisestatud nimi juba eksisteerib\n"
 "klahviskeemide nimekirjas."
 
 #: savescm.cpp:18
@@ -195,22 +195,22 @@ msgstr "Lülitumine üks töölaud alla"
 msgid "New"
 msgstr "Uus"
 
-#: stdbindings.cpp:7
+#: stdbindings.cpp:8
 msgid "Next"
 msgstr "Järgmine"
 
-#: stdbindings.cpp:8
+#: stdbindings.cpp:9
 msgid "Prior"
 msgstr "Eelmine"
 
-#: stdbindings.cpp:13
+#: stdbindings.cpp:14
 msgid "Find"
 msgstr "Leia"
 
-#: stdbindings.cpp:16
+#: stdbindings.cpp:17
 msgid "Home"
 msgstr "Kodu"
 
-#: stdbindings.cpp:17
+#: stdbindings.cpp:18
 msgid "End"
 msgstr "Lõpp"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-12-09 23:50 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
@@ -165,6 +165,21 @@ msgstr "Echec"
 
 #: kdm-font.cpp:59
 msgid "Standard"
+msgstr "Standard"
+
+#: kdm-font.cpp:157
+#, fuzzy
+msgid "Greeting font"
+msgstr "Bienvenue"
+
+#: kdm-font.cpp:161
+#, fuzzy
+msgid "Fail font"
+msgstr "Echec"
+
+#: kdm-font.cpp:165
+#, fuzzy
+msgid "Standard font"
 msgstr "Standard"
 
 #: kdm-bgnd.cpp:70

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,8 @@ msgstr "&Töölaua ikoonid"
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr ""
-"kasutusviis: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+"kasutusviis: %s [-init | "
+"{font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
@@ -84,29 +85,33 @@ msgstr "Vaikimisi kooditabel"
 msgid "Use language charset"
 msgstr "Kasuta keele kooditabelit"
 
-#: htmlopts.cpp:329
+#: htmlopts.cpp:330
 msgid "Background Color:"
 msgstr "Tausta värv:"
 
-#: htmlopts.cpp:341
+#: htmlopts.cpp:342
 msgid "Normal Text Color:"
 msgstr "Normaalse teksti värv:"
 
-#: htmlopts.cpp:353
+#: htmlopts.cpp:354
 msgid "URL Link Color:"
 msgstr "URL lingi värv:"
 
-#: htmlopts.cpp:365
+#: htmlopts.cpp:366
 msgid "Followed Link Color:"
 msgstr "Külastatud lingi värv:"
 
-#: htmlopts.cpp:377
+#: htmlopts.cpp:378
 msgid "Change cursor over link."
 msgstr "Muuda kursorit lingil olles."
 
-#: htmlopts.cpp:383
+#: htmlopts.cpp:384
 msgid "Underline links"
 msgstr "Kriipsuta lingid alla"
+
+#: htmlopts.cpp:391
+msgid "Always use my colors"
+msgstr ""
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
@@ -227,4 +232,3 @@ msgstr "Ikooni tausta värv"
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
 msgstr "Näita töölaual &peidetud faile"
-

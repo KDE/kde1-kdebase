@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-10-05 01:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -20,7 +20,7 @@ msgstr "&Eiginleikar"
 msgid "Go!"
 msgstr "Núna!"
 
-#: kpanel.C:333 tools.C:900
+#: kpanel.C:333 tools.C:901
 msgid "Where do you want to go tomorrow?"
 msgstr "Hvert vilt þú komast á morgun?"
 
@@ -28,11 +28,11 @@ msgstr "Hvert vilt þú komast á morgun?"
 msgid "No info available"
 msgstr "Engar upplýsingar fáanlegar"
 
-#: kpanel.C:447 props.C:206 props.C:207
+#: kpanel.C:447 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Stimpla út"
 
-#: kpanel.C:455 props.C:205
+#: kpanel.C:455 props.C:206
 msgid "Lock screen"
 msgstr "Læsa skjá"
 
@@ -52,83 +52,83 @@ msgstr "Setja aðra &glugga í táknmynd"
 msgid "No comment available"
 msgstr "Engin athugasemd"
 
-#: kpanel.C:1246 tools.C:909
+#: kpanel.C:1246 tools.C:910
 msgid "Windowlist"
 msgstr "Gluggalisti"
 
-#: kpanel.C:1254 props.C:196
+#: kpanel.C:1254 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Flakka hratt um skráakerfið"
 
-#: props.C:166
+#: props.C:167
 msgid "Add Application"
 msgstr "Bæta forriti við"
 
-#: props.C:168
+#: props.C:169
 msgid "Add an application or a submenu onto the panel"
 msgstr "Bæta forriti eða undirvalmynd á spjaldið"
 
-#: props.C:174
+#: props.C:175
 msgid "Add Disk Navigator"
 msgstr "Bæta við diskaflakkara"
 
-#: props.C:176
+#: props.C:177
 msgid "Add a Disk Navigator menu onto the panel"
 msgstr "Bæta diskaflakkara valmynd við spjaldið"
 
-#: props.C:179
+#: props.C:180
 msgid "Add Windowlist"
 msgstr "Bæta gluggalista við"
 
-#: props.C:181
+#: props.C:182
 msgid "Add a windowlist menu onto the panel"
 msgstr "Bæta gluggalistavalmynd á spjaldið"
 
-#: events.C:810 props.C:182
+#: events.C:810 props.C:183
 msgid "Configure"
 msgstr "Stilla"
 
-#: props.C:184
+#: props.C:185
 msgid "Configure panel"
 msgstr "Stilla spjaldið"
 
-#: props.C:185
+#: props.C:186
 msgid "Edit Menus"
 msgstr "Sýsla með valmyndir"
 
-#: props.C:187
+#: props.C:188
 msgid "Add or remove applications in the menu structure "
 msgstr "Bæta forritum við valmyndakerfið, eða fjarlægja þau"
 
-#: events.C:812 props.C:188
+#: events.C:812 props.C:189
 msgid "Restart"
 msgstr "Endurræsa"
 
-#: props.C:190
+#: props.C:191
 msgid "Restart panel"
 msgstr "Endurræsa spjald"
 
-#: props.C:193
+#: props.C:194
 msgid "Disk Navigator"
 msgstr "Diskaflakkari"
 
-#: props.C:201
+#: props.C:202
 msgid "Panel"
 msgstr "Spjald"
 
-#: props.C:203
+#: props.C:204
 msgid "Lock Screen"
 msgstr "Læsa skjá"
 
-#: props.C:450
+#: props.C:451
 msgid "The menu editor is not installed."
 msgstr "Valmyndaritillinn er ekki settur upp."
 
-#: events.C:866 props.C:451
+#: events.C:866 props.C:452
 msgid "Oops!"
 msgstr "Úps!"
 
-#: tools.C:647
+#: tools.C:648
 msgid ""
 "\n"
 "%b %d"
@@ -136,7 +136,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:918
+#: tools.C:919
 msgid "KDiskNavigator"
 msgstr "Diskaflakkari"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig VERSION\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Székely Krisztián <szekelyk@edasz.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -192,6 +192,24 @@ msgstr "Hiba"
 # kdm-font.cpp:61
 #: kdm-font.cpp:59
 msgid "Standard"
+msgstr "Szabvány"
+
+# kdm-font.cpp:59
+#: kdm-font.cpp:157
+#, fuzzy
+msgid "Greeting font"
+msgstr "Üdvözlet"
+
+# kdm-font.cpp:60
+#: kdm-font.cpp:161
+#, fuzzy
+msgid "Fail font"
+msgstr "Hiba"
+
+# kdm-font.cpp:61
+#: kdm-font.cpp:165
+#, fuzzy
+msgid "Standard font"
 msgstr "Szabvány"
 
 #: kdm-bgnd.cpp:70

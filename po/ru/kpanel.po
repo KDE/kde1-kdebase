@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-12-21 01:59+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -25,7 +25,7 @@ msgstr "Настройки"
 msgid "Go!"
 msgstr "Вперед!"
 
-#: kpanel.C:333 tools.C:900
+#: kpanel.C:333 tools.C:901
 msgid "Where do you want to go tomorrow?"
 msgstr "Где вы хотите быть завтра?"
 
@@ -33,11 +33,11 @@ msgstr "Где вы хотите быть завтра?"
 msgid "No info available"
 msgstr "Нет информации"
 
-#: kpanel.C:447 props.C:206 props.C:207
+#: kpanel.C:447 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Выйти"
 
-#: kpanel.C:455 props.C:205
+#: kpanel.C:455 props.C:206
 msgid "Lock screen"
 msgstr "Закрыть экран"
 
@@ -57,83 +57,83 @@ msgstr "Свернуть другие окна"
 msgid "No comment available"
 msgstr "Нет комментариев"
 
-#: kpanel.C:1246 tools.C:909
+#: kpanel.C:1246 tools.C:910
 msgid "Windowlist"
 msgstr "Список окон"
 
-#: kpanel.C:1254 props.C:196
+#: kpanel.C:1254 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Быстро перемещаться по файловой системе"
 
-#: props.C:166
+#: props.C:167
 msgid "Add Application"
 msgstr "Добавить приложение"
 
-#: props.C:168
+#: props.C:169
 msgid "Add an application or a submenu onto the panel"
 msgstr "Добавить приложение или подменю на панель"
 
-#: props.C:174
+#: props.C:175
 msgid "Add Disk Navigator"
 msgstr "Добавить Исследователь диска"
 
-#: props.C:176
+#: props.C:177
 msgid "Add a Disk Navigator menu onto the panel"
 msgstr "Добавить Исследователь диска на панель"
 
-#: props.C:179
+#: props.C:180
 msgid "Add Windowlist"
 msgstr "Добавить список окон"
 
-#: props.C:181
+#: props.C:182
 msgid "Add a windowlist menu onto the panel"
 msgstr "Добавить список окон на панель"
 
-#: events.C:810 props.C:182
+#: events.C:810 props.C:183
 msgid "Configure"
 msgstr "Настройка"
 
-#: props.C:184
+#: props.C:185
 msgid "Configure panel"
 msgstr "Настроить панель"
 
-#: props.C:185
+#: props.C:186
 msgid "Edit Menus"
 msgstr "Редактировать меню"
 
-#: props.C:187
+#: props.C:188
 msgid "Add or remove applications in the menu structure "
 msgstr "Добавить или удалить приложения из структуры меню "
 
-#: events.C:812 props.C:188
+#: events.C:812 props.C:189
 msgid "Restart"
 msgstr "Перезапустить"
 
-#: props.C:190
+#: props.C:191
 msgid "Restart panel"
 msgstr "Перезапустить панель"
 
-#: props.C:193
+#: props.C:194
 msgid "Disk Navigator"
 msgstr "Исследователь диска"
 
-#: props.C:201
+#: props.C:202
 msgid "Panel"
 msgstr "Панель"
 
-#: props.C:203
+#: props.C:204
 msgid "Lock Screen"
 msgstr "Закрыть экран"
 
-#: props.C:450
+#: props.C:451
 msgid "The menu editor is not installed."
 msgstr "Редактор меню не установлен."
 
-#: events.C:866 props.C:451
+#: events.C:866 props.C:452
 msgid "Oops!"
 msgstr "Оопс!"
 
-#: tools.C:647
+#: tools.C:648
 msgid ""
 "\n"
 "%b %d"
@@ -141,7 +141,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:918
+#: tools.C:919
 msgid "KDiskNavigator"
 msgstr "Исследователь диска"
 

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -12,23 +12,23 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kmenuedit.cpp:68
+#: kmenuedit.cpp:69
 msgid "Change &Menuname"
 msgstr "P&romjena imena izbornika"
 
-#: kmenuedit.cpp:69
+#: kmenuedit.cpp:70
 msgid "Reload &Filetypes"
 msgstr "Obnovi &vrste datoteka"
 
-#: kmenuedit.cpp:76
+#: kmenuedit.cpp:77
 msgid "by"
 msgstr "od"
 
-#: kmenuedit.cpp:175 kmenuedit.cpp:200
+#: kmenuedit.cpp:179 kmenuedit.cpp:204
 msgid "Changes not saved !"
 msgstr "Promjene nisu spremljene ! "
 
-#: kmenuedit.cpp:176 kmenuedit.cpp:201
+#: kmenuedit.cpp:180 kmenuedit.cpp:205
 msgid ""
 "\n"
 "Do you want to save your changes ?"
@@ -36,15 +36,15 @@ msgstr ""
 "\n"
 "Da li ¾elite spremiti promjene ?"
 
-#: confmenu.cpp:337 confmenu.cpp:929 kmenuedit.cpp:260
+#: confmenu.cpp:337 confmenu.cpp:934 kmenuedit.cpp:264
 msgid "EMPTY"
 msgstr "PRAZNO"
 
-#: kmenuedit.cpp:339
+#: kmenuedit.cpp:343
 msgid "Reload Menus"
 msgstr "Obnovi Izbornike"
 
-#: kmenuedit.cpp:340
+#: kmenuedit.cpp:344
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -116,7 +116,7 @@ msgstr ""
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Promjena uloge ovog gumba obrisat' æe sve njegove podizbornike"
 
-#: confmenu.cpp:338 confmenu.cpp:930
+#: confmenu.cpp:338 confmenu.cpp:935
 msgid "no command"
 msgstr "bez naredbe"
 

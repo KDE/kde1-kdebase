@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-12-28 9:30+0100\n"
 "Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -10,23 +10,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 "First-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
-#: kmenuedit.cpp:68
+#: kmenuedit.cpp:69
 msgid "Change &Menuname"
 msgstr "Cambiar nombre del &menú"
 
-#: kmenuedit.cpp:69
+#: kmenuedit.cpp:70
 msgid "Reload &Filetypes"
 msgstr "Recargar tipos de &archivos"
 
-#: kmenuedit.cpp:76
+#: kmenuedit.cpp:77
 msgid "by"
 msgstr "por"
 
-#: kmenuedit.cpp:175 kmenuedit.cpp:200
+#: kmenuedit.cpp:179 kmenuedit.cpp:204
 msgid "Changes not saved !"
 msgstr "¡ Hay cambios pendientes de almacenar !"
 
-#: kmenuedit.cpp:176 kmenuedit.cpp:201
+#: kmenuedit.cpp:180 kmenuedit.cpp:205
 msgid ""
 "\n"
 "Do you want to save your changes ?"
@@ -34,15 +34,15 @@ msgstr ""
 "\n"
 "¿Desea guardar los cambios?"
 
-#: confmenu.cpp:337 confmenu.cpp:929 kmenuedit.cpp:260
+#: confmenu.cpp:337 confmenu.cpp:934 kmenuedit.cpp:264
 msgid "EMPTY"
 msgstr "VACIO"
 
-#: kmenuedit.cpp:339
+#: kmenuedit.cpp:343
 msgid "Reload Menus"
 msgstr "Recargar menús"
 
-#: kmenuedit.cpp:340
+#: kmenuedit.cpp:344
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -114,7 +114,7 @@ msgstr ""
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "El cambio de tipo de este botón borrará todos los submenús del mismo"
 
-#: confmenu.cpp:338 confmenu.cpp:930
+#: confmenu.cpp:338 confmenu.cpp:935
 msgid "no command"
 msgstr "no existe el comando"
 

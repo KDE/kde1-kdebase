@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -156,6 +156,21 @@ msgstr "失败"
 
 #: kdm-font.cpp:59
 msgid "Standard"
+msgstr "标准"
+
+#: kdm-font.cpp:157
+#, fuzzy
+msgid "Greeting font"
+msgstr "问候"
+
+#: kdm-font.cpp:161
+#, fuzzy
+msgid "Fail font"
+msgstr "失败"
+
+#: kdm-font.cpp:165
+#, fuzzy
+msgid "Standard font"
 msgstr "标准"
 
 #: kdm-bgnd.cpp:70

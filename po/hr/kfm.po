@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KFM\n"
-"POT-Creation-Date: 1999-01-09 01:15+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-11-23 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -254,24 +254,24 @@ msgid "Could not load icon\n"
 msgstr "Nisam mogao naæi ikonu\n"
 
 #: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:305
-#: kbind.cpp:391 kbind.cpp:443 kbind.cpp:1591 kbind.cpp:1599 kbind.cpp:1617
-#: kbind.cpp:1636 kbind.cpp:1695 kbind.cpp:1707 kbind.cpp:1734 kbind.cpp:1749
-#: kbind.cpp:1769 kbind.cpp:1781 kbind.cpp:1797 kbind.cpp:1932 kbind.cpp:1944
-#: kbind.cpp:1989 kbind.cpp:2031 kfmexec.cpp:60 kfmexec.cpp:112
+#: kbind.cpp:391 kbind.cpp:443 kbind.cpp:1619 kbind.cpp:1627 kbind.cpp:1645
+#: kbind.cpp:1664 kbind.cpp:1723 kbind.cpp:1735 kbind.cpp:1762 kbind.cpp:1777
+#: kbind.cpp:1797 kbind.cpp:1809 kbind.cpp:1825 kbind.cpp:1960 kbind.cpp:1972
+#: kbind.cpp:2017 kbind.cpp:2059 kfmexec.cpp:60 kfmexec.cpp:112
 #: kfmexec/main.cpp:47 kfmgui.cpp:549 kfmgui.cpp:750 kfmman.cpp:361
-#: kfmman.cpp:1390 kfmman.cpp:1618 kfmman.cpp:1644 kfmprops.cpp:380
+#: kfmman.cpp:1394 kfmman.cpp:1622 kfmman.cpp:1648 kfmprops.cpp:380
 #: kfmprops.cpp:648 kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092
 #: kfmprops.cpp:1223 kfmprops.cpp:1697 kfmprops.cpp:2058 kfmprops.cpp:2240
 #: kfmserver.cpp:45 kfmserver.cpp:218 kfmserver.cpp:298 kfmserver.cpp:313
 #: kfmserver.cpp:360 kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:341
 #: kfmtree.cpp:468 kfmtree.cpp:499 kfmtree.cpp:505 kfmtree.cpp:511
-#: kfmview.cpp:441 kfmview.cpp:591 kfmview.cpp:610 kfmview.cpp:679
-#: kfmview.cpp:685 kfmview.cpp:691 kfmview.cpp:801 kfmview.cpp:805
-#: kfmview.cpp:844 kfmview.cpp:870 kfmview.cpp:891 kfmview.cpp:899
-#: kfmview.cpp:907 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
+#: kfmview.cpp:436 kfmview.cpp:470 kfmview.cpp:489 kfmview.cpp:558
+#: kfmview.cpp:564 kfmview.cpp:570 kfmview.cpp:680 kfmview.cpp:684
+#: kfmview.cpp:723 kfmview.cpp:749 kfmview.cpp:770 kfmview.cpp:778
+#: kfmview.cpp:786 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
 #: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:332 kiojob.cpp:351 kiojob.cpp:561
 #: kiojob.cpp:801 kiojob.cpp:832 kiojob.cpp:873 kiojob.cpp:1331
-#: kiojob.cpp:1339 kiojob.cpp:1567 krenamewin.cpp:120 popup.cpp:102
+#: kiojob.cpp:1339 kiojob.cpp:1567 krenamewin.cpp:120 popup.cpp:105
 #: root.cpp:943 root.cpp:1204 root.cpp:1222 root.cpp:1228 root.cpp:1234
 #: root.cpp:1315 root.cpp:1840 root.cpp:1865
 msgid "KFM Error"
@@ -282,7 +282,7 @@ msgstr "KFM Gre¹ka"
 msgid "Location:"
 msgstr "Otvori lokaciju"
 
-#: kfmexec.cpp:59 kfmgui.cpp:749 kfmman.cpp:1389
+#: kfmexec.cpp:59 kfmgui.cpp:749 kfmman.cpp:1393
 msgid "Malformed URL\n"
 msgstr "Neispravan URL\n"
 
@@ -306,7 +306,7 @@ msgstr "&Uredi Oznake..."
 msgid "&Add Bookmark"
 msgstr "Dodaj &Oznaku"
 
-#: kfmgui.cpp:1064 kfmman.cpp:1429 kfmtree.cpp:389 root.cpp:285
+#: kfmgui.cpp:1064 kfmman.cpp:1433 kfmtree.cpp:389 root.cpp:285
 msgid "&New"
 msgstr "&Novi"
 
@@ -330,7 +330,7 @@ msgid "&Home"
 msgstr "Poèetak"
 
 #: kfmgui.cpp:1164 kfmgui.cpp:1323 kfmjob.cpp:36 kfmman.cpp:244
-#: kfmtree.cpp:500 kfmview.cpp:611 kfmview.cpp:680 kfmview.cpp:892
+#: kfmtree.cpp:500 kfmview.cpp:490 kfmview.cpp:559 kfmview.cpp:771
 #: kiojob.cpp:87 root.cpp:1223
 msgid "ERROR: Malformed URL"
 msgstr "GRE©KA: Neispravan URL"
@@ -355,20 +355,20 @@ msgstr ""
 msgid "Document: Done"
 msgstr "Dokument: Gotov"
 
-#: kfmview.cpp:442 root.cpp:944
+#: kfmview.cpp:437 root.cpp:944
 msgid "ERROR: You may only drop URLs"
 msgstr "GRE©KA: Mo¾ete samo ispustiti URLove"
 
-#: kfmview.cpp:592
+#: kfmview.cpp:471
 msgid "ERROR: Drop over malformed URL"
 msgstr "GRE©KA: Ispu¹teno na neispravan URL"
 
-#: kfmserver.cpp:133 kfmtree.cpp:538 kfmview.cpp:651 kfmview.cpp:935
+#: kfmserver.cpp:133 kfmtree.cpp:538 kfmview.cpp:530 kfmview.cpp:814
 #: krenamewin.cpp:20 root.cpp:1266
 msgid "KFM Warning"
 msgstr "KFM Upozorenje"
 
-#: kfmtree.cpp:539 kfmview.cpp:652 kfmview.cpp:936 root.cpp:1267
+#: kfmtree.cpp:539 kfmview.cpp:531 kfmview.cpp:815 root.cpp:1267
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -378,23 +378,23 @@ msgstr ""
 "\n"
 "Ne postoji naèin da ih zatim vratite."
 
-#: kfmtree.cpp:506 kfmview.cpp:686 kfmview.cpp:900 root.cpp:1229
+#: kfmtree.cpp:506 kfmview.cpp:565 kfmview.cpp:779 root.cpp:1229
 msgid "ERROR: You dropped a URL over itself"
 msgstr "GRE©KA: Ispustili ste URL na njega samog"
 
-#: kfmtree.cpp:512 kfmview.cpp:692 kfmview.cpp:908 root.cpp:1235
+#: kfmtree.cpp:512 kfmview.cpp:571 kfmview.cpp:787 root.cpp:1235
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "GRE©KA: Ispustili ste direktorij na jedan od njegovih podirektorija"
 
-#: kfmexec.cpp:286 kfmman.cpp:1182 kfmview.cpp:708
+#: kfmexec.cpp:286 kfmman.cpp:1182 kfmview.cpp:587
 msgid "Open With:"
 msgstr "Otvori s:"
 
-#: kfmview.cpp:743 root.cpp:1166
+#: kfmview.cpp:622 root.cpp:1166
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "GRE©KA: Ne mogu otvoriti vrijednosti za vi¹estruke datoteke"
 
-#: kfmview.cpp:802
+#: kfmview.cpp:681
 msgid ""
 "Can not save properties because\n"
 "this directory is neither writable nor bookmarked.\n"
@@ -402,7 +402,7 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmview.cpp:806
+#: kfmview.cpp:685
 msgid ""
 "Can not save properties because\n"
 "this URL is neither bookmarked nor on desktop.\n"
@@ -410,23 +410,23 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmtree.cpp:469 kfmview.cpp:845 root.cpp:1316
+#: kfmtree.cpp:469 kfmview.cpp:724 root.cpp:1316
 msgid "Could not access Trash Bin"
 msgstr "Ne mogu pristupiti Kanti za Smeæe"
 
-#: kfmview.cpp:871 root.cpp:1205
+#: kfmview.cpp:750 root.cpp:1205
 msgid "Can not paste into multiple directories"
 msgstr "Ne mogu umetnuti u vi¹estruke direktorije"
 
-#: kfmview.cpp:968
+#: kfmview.cpp:847
 msgid "ERROR: Can not change to multiple directories"
 msgstr "GRE©KA: Ne mogu otiæi u vi¹estruke direktorije"
 
-#: kfmview.cpp:1234
+#: kfmview.cpp:1113
 msgid "KFM Security Alert"
 msgstr "KFM Sigurnosno Upozorenje"
 
-#: kfmview.cpp:1235
+#: kfmview.cpp:1114
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -434,16 +434,16 @@ msgstr ""
 "Ova stranica nije provjerena\n"
 "meðjutim sadr¾i vezu na va¹ lokalni datoteèni sustav."
 
-#: kfmview.cpp:1339
+#: kfmview.cpp:1218
 msgid "Symbolic Link"
 msgstr "Dvojnik"
 
-#: kfmview.cpp:1341
+#: kfmview.cpp:1220
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (dvojnik)"
 
-#: kfmview.cpp:1361
+#: kfmview.cpp:1240
 msgid "bytes"
 msgstr "bajtova"
 
@@ -460,40 +460,44 @@ msgstr "ne sadr¾i polje  MimeType=..."
 msgid "No mime types installed!"
 msgstr "Mime tipovi nisu instalirani!"
 
-#: kbind.cpp:440 kbind.cpp:1208
+#: kbind.cpp:440 kbind.cpp:1214
 msgid "Could not find mime type\n"
 msgstr "Ne mogu naæi mime tip\n"
 
-#: kbind.cpp:710 kbind.cpp:720 kbind.cpp:1967 kbind.cpp:1968 kbind.cpp:1980
-#: kbind.cpp:1982
+#: kbind.cpp:710 kbind.cpp:720 kbind.cpp:1995 kbind.cpp:1996 kbind.cpp:2008
+#: kbind.cpp:2010
 msgid "Mount"
 msgstr "Montiraj"
 
-#: kbind.cpp:726 kbind.cpp:1958
+#: kbind.cpp:726 kbind.cpp:1986
 msgid "Unmount"
 msgstr "Demontiraj"
 
-#: kbind.cpp:950 kbind.cpp:962 kbind.cpp:972 popup.cpp:45 popup.cpp:122
+#: kbind.cpp:950 kbind.cpp:962 kbind.cpp:972 popup.cpp:48 popup.cpp:125
 msgid "Folder"
 msgstr "Direktorij"
 
-#: kbind.cpp:1207
+#: kbind.cpp:1213
 msgid "ERROR"
 msgstr "GRE©KA"
 
-#: kbind.cpp:1208
+#: kbind.cpp:1214
 msgid "in "
 msgstr "u"
 
-#: kbind.cpp:1381 kbind.cpp:1474
+#: kbind.cpp:1355 kbind.cpp:1923
+msgid "ERROR: No Terminal Setting"
+msgstr "GRE©KA: Terminal nije pode¹en"
+
+#: kbind.cpp:1409 kbind.cpp:1502
 msgid "Could not execute program\n"
 msgstr "Ne mogu izvr¹iti program\n"
 
-#: kbind.cpp:1590
+#: kbind.cpp:1618
 msgid "Could not find binding"
 msgstr "Ne mogu naæi vezu"
 
-#: kbind.cpp:1600
+#: kbind.cpp:1628
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -501,11 +505,11 @@ msgstr ""
 "Ovo je dokument!\n"
 "Ne aplikacija"
 
-#: kbind.cpp:1618 kbind.cpp:1637
+#: kbind.cpp:1646 kbind.cpp:1665
 msgid "Can only start executables on local disks\n"
 msgstr "Mogu startati samo izvr¹ne datoteke na lokalnom disku\n"
 
-#: kbind.cpp:1696 kbind.cpp:1770 kbind.cpp:1933
+#: kbind.cpp:1724 kbind.cpp:1798 kbind.cpp:1961
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -513,7 +517,7 @@ msgstr ""
 "Mogu raditi s *.kdelnk datotekama\n"
 "samo na lokalnom disku"
 
-#: kbind.cpp:1706
+#: kbind.cpp:1734
 #, c-format
 msgid ""
 "Could not access\n"
@@ -522,19 +526,19 @@ msgstr ""
 "Ne mogu pristupiti\n"
 "%s"
 
-#: kbind.cpp:1735
+#: kbind.cpp:1763
 msgid "The \"Link=....\" entry is empty"
 msgstr "\"Dvojnik=.....\" polje je prazno"
 
-#: kbind.cpp:1750
+#: kbind.cpp:1778
 msgid "The config file has no \"Type=...\" line"
 msgstr "Konfiguracijska datoteka nema redak \"Type=...\" "
 
-#: kbind.cpp:1780 kbind.cpp:1943
+#: kbind.cpp:1808 kbind.cpp:1971
 msgid "Could not access"
 msgstr "Ne mogu pristupiti"
 
-#: kbind.cpp:1798
+#: kbind.cpp:1826
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -546,15 +550,11 @@ msgstr ""
 "polje. Promijenite vrijednosti\n"
 "da biste rije¹ili problem"
 
-#: kbind.cpp:1895
-msgid "ERROR: No Terminal Setting"
-msgstr "GRE©KA: Terminal nije pode¹en"
-
-#: kbind.cpp:1990
+#: kbind.cpp:2018
 msgid "No mount point in *.kdelnk file"
 msgstr "Nema mjesta montiranja u *.kdelnk datoteci"
 
-#: kbind.cpp:2030
+#: kbind.cpp:2058
 msgid "Unknown binding"
 msgstr "Nepoznata veza"
 
@@ -590,11 +590,11 @@ msgstr "Baci u smeæe"
 msgid "Open with"
 msgstr "Otvori s"
 
-#: kfmtree.cpp:333 main.cpp:275
+#: kfmman.cpp:1640 kfmtree.cpp:333 main.cpp:275
 msgid "Move"
 msgstr "Premjesti"
 
-#: kfmtree.cpp:337 main.cpp:277
+#: kfmman.cpp:1644 kfmtree.cpp:337 main.cpp:277
 msgid "Link"
 msgstr "Veza"
 
@@ -942,11 +942,11 @@ msgstr "GRE©KA: Ne mogu èitati direktorij radnog stola '%s'"
 msgid "ERROR: Can not accept drop"
 msgstr "GRE©KA: Ne mogu prihvatiti ispu¹tanje"
 
-#: kfmman.cpp:1619 root.cpp:1841
+#: kfmman.cpp:1623 root.cpp:1841
 msgid "Dont know what to do."
 msgstr "Ne znam ¹to da radim."
 
-#: kfmman.cpp:1645 kfmtree.cpp:342 root.cpp:1866
+#: kfmman.cpp:1649 kfmtree.cpp:342 root.cpp:1866
 msgid "Dont know what to do"
 msgstr "Ne znam ¹to da radim"
 
@@ -961,20 +961,6 @@ msgstr "Spajam se na "
 #: kfmman.cpp:514
 msgid "Working ..."
 msgstr "Radim ..."
-
-#: kfmman.cpp:1631
-msgid "Copy here"
-msgstr ""
-
-#: kfmman.cpp:1636
-#, fuzzy
-msgid "Move here"
-msgstr "Premjesti"
-
-#: kfmman.cpp:1640
-#, fuzzy
-msgid "Link here"
-msgstr "Veza"
 
 #: kiojob.cpp:134
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
@@ -1386,18 +1372,18 @@ msgstr ""
 msgid "&Reject"
 msgstr "&Oznaèi"
 
-#: popup.cpp:69
+#: popup.cpp:72
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "GRE©KA: Predlo¾ak '%s' ne postoji"
 
-#: popup.cpp:103
+#: popup.cpp:106
 msgid ""
 "Source file doesn't exist anymore ! \n"
 "Use \"Rescan Bindings\" in View menu to update the menu"
 msgstr ""
 
-#: popup.cpp:114 popup.cpp:121
+#: popup.cpp:117 popup.cpp:124
 msgid "New "
 msgstr "Novi"
 
@@ -1466,6 +1452,14 @@ msgid ""
 msgstr ""
 "Sintaktièka pogre¹ka:\n"
 "kfmexec naredba [URLovi ....]\n"
+
+#, fuzzy
+#~ msgid "Move here"
+#~ msgstr "Premjesti"
+
+#, fuzzy
+#~ msgid "Link here"
+#~ msgstr "Veza"
 
 #~ msgid "Working Directory"
 #~ msgstr "Radni direktorij"

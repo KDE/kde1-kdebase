@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-12 01:17+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -181,7 +181,7 @@ msgstr ""
 "Uusi värviseadistusi näidatakse peale seda\n"
 "kui sa oled muutnud klaviatuuri mitteturvaliseks."
 
-#: main.C:1435
+#: main.C:1433
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -194,61 +194,63 @@ msgstr ""
 "Terminali emulaator KDE töölaua keskkonna jaoks\n"
 "baseerub Robert Nation'i rakendusel rxvt-2.08\n"
 
-#: main.C:1439
+#: main.C:1437
 msgid "Permitted arguments are:\n"
 msgstr "Lubatud argumendid on:\n"
 
-#: main.C:1440
+#: main.C:1438
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <command> <arg> ...    käivita käsk argumentidega - peab olema viimane argument\n"
+"-e <command> <arg> ...    käivita käsk argumentidega - peab olema viimane "
+"argument\n"
 
-#: main.C:1441
+#: main.C:1439
 msgid "-display <name>           specify the display (server)\n"
 msgstr "-display <name>           täpsusta ekraan (server)\n"
 
-#: main.C:1442
+#: main.C:1440
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr "-vt_geometry <spec>       esialgne vt akna geomeetria\n"
 
-#: main.C:1443
+#: main.C:1441
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr "-print-pipe <name>        määra vt100 printeri toru\n"
 
-#: main.C:1444
+#: main.C:1442
 msgid "-vt_bg <colour>           background color\n"
 msgstr "-vt_bg <colour>           tausta värv\n"
 
-#: main.C:1445
+#: main.C:1443
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr "-vt_fg <colour>           esiplaani värv\n"
 
-#: main.C:1446
+#: main.C:1444
 msgid "-vt_font <fontname>       normal font\n"
 msgstr "-vt_font <fontname>       normaalne font\n"
 
-#: main.C:1447
+#: main.C:1445
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
 msgstr "-no_font_hack             Qt fondi vea parandamine keelatud\n"
 
-#: main.C:1448
+#: main.C:1446
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr "-vt_size <size>           tiny, small, normal, large, huge\n"
 
-#: main.C:1449
+#: main.C:1447
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr "-linux                    seadista kvt kui järeleaimatud linux'i konsool\n"
+msgstr ""
+"-linux                    seadista kvt kui järeleaimatud linux'i konsool\n"
 
-#: main.C:1450
+#: main.C:1448
 msgid "-no_menubar               hide the menubar\n"
 msgstr "-no_menubar               peida menüüriba\n"
 
-#: main.C:1451
+#: main.C:1449
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr "-no_scrollbar             peida kerimisriba\n"
 
-#: main.C:1452
+#: main.C:1450
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
@@ -256,19 +258,19 @@ msgstr ""
 "-T <text>                 tekst akna tiitliribal \n"
 "                          (Vananenud. Kasuta selle asemel -caption)\n"
 
-#: main.C:1454
+#: main.C:1452
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr "-tn <TERM>                Terminali tüüp. Vaikimisi on xterm.\n"
 
-#: main.C:1455
+#: main.C:1453
 msgid "-C                        Capture system console message\n"
 msgstr "-C                        Näita teateid süsteemselt konsoolilt\n"
 
-#: main.C:1456
+#: main.C:1454
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr "-n <text>                 nimi ikoonil või ikooni aknal\n"
 
-#: main.C:1457
+#: main.C:1455
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
@@ -276,7 +278,7 @@ msgstr ""
 "-7                        7 bitine reziim\n"
 "-8                        8 bitine reziim\n"
 
-#: main.C:1459
+#: main.C:1457
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
@@ -286,19 +288,20 @@ msgstr ""
 "-ls-                      käivita kvt shell kui mitte-login shell "
 "(vaikimisi)\n"
 
-#: main.C:1461
+#: main.C:1459
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
-"-meta <arg>               käsitle Meta't prefiksiga ESCAPE, 8.biti seadmiseks või "
-"ignoreeri\n"
+"-meta <arg>               käsitle Meta't prefiksiga ESCAPE, 8.biti "
+"seadmiseks või ignoreeri\n"
 
-#: main.C:1462
+#: main.C:1460
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr "-sl <number>              mitu rida salvestada tagasi kerimiseks puhvrisse\n"
+msgstr ""
+"-sl <number>              mitu rida salvestada tagasi kerimiseks puhvrisse\n"
 
-#: main.C:1463
+#: main.C:1461
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
@@ -310,7 +313,7 @@ msgstr ""
 "-pagedown <keysym>        kasuta kombinatsiooni ALT+keysym puhvris alla "
 "kerimiseks\n"
 
-#: main.C:1467
+#: main.C:1465
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

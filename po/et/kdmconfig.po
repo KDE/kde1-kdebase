@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,7 +33,8 @@ msgstr "&Seansid"
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
-"kasutusviis: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+"kasutusviis: kdmconfig [-init | "
+"{appearance,font,background,sessions,users}]\n"
 
 #: main.cpp:142
 msgid "KDM Configuration"
@@ -162,6 +163,21 @@ msgstr "Ebaõnnestumine"
 
 #: kdm-font.cpp:59
 msgid "Standard"
+msgstr "Standard"
+
+#: kdm-font.cpp:157
+#, fuzzy
+msgid "Greeting font"
+msgstr "Tervitus"
+
+#: kdm-font.cpp:161
+#, fuzzy
+msgid "Fail font"
+msgstr "Ebaõnnestumine"
+
+#: kdm-font.cpp:165
+#, fuzzy
+msgid "Standard font"
 msgstr "Standard"
 
 #: kdm-bgnd.cpp:70

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Go!"
 msgstr "Engheigi :) "
 
-#: kpanel.C:333 tools.C:900
+#: kpanel.C:333 tools.C:901
 msgid "Where do you want to go tomorrow?"
 msgstr "Ia ghici, ce poate fi ãsta ???"
 
@@ -34,11 +34,11 @@ msgstr "Ia ghici, ce poate fi ãsta ???"
 msgid "No info available"
 msgstr "Nici o informaþie disponibilã"
 
-#: kpanel.C:447 props.C:206 props.C:207
+#: kpanel.C:447 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Ieºire"
 
-#: kpanel.C:455 props.C:205
+#: kpanel.C:455 props.C:206
 msgid "Lock screen"
 msgstr "Blocheazã ecranul"
 
@@ -58,92 +58,92 @@ msgstr ""
 msgid "No comment available"
 msgstr "Nici un comentariu disponibil"
 
-#: kpanel.C:1246 tools.C:909
+#: kpanel.C:1246 tools.C:910
 msgid "Windowlist"
 msgstr "Lista de ferestre"
 
-#: kpanel.C:1254 props.C:196
+#: kpanel.C:1254 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
-#: props.C:166
+#: props.C:167
 #, fuzzy
 msgid "Add Application"
 msgstr "Adaugã o aplicaþie"
 
-#: props.C:168
+#: props.C:169
 msgid "Add an application or a submenu onto the panel"
 msgstr "Adaugã o aplicaþie sau un submeniu"
 
-#: props.C:174
+#: props.C:175
 msgid "Add Disk Navigator"
 msgstr ""
 
-#: props.C:176
+#: props.C:177
 #, fuzzy
 msgid "Add a Disk Navigator menu onto the panel"
 msgstr "Adaugã un meniu de liste de ferestre la panou"
 
-#: props.C:179
+#: props.C:180
 #, fuzzy
 msgid "Add Windowlist"
 msgstr "Adaugã listã de ferestre"
 
-#: props.C:181
+#: props.C:182
 msgid "Add a windowlist menu onto the panel"
 msgstr "Adaugã un meniu de liste de ferestre la panou"
 
-#: events.C:810 props.C:182
+#: events.C:810 props.C:183
 msgid "Configure"
 msgstr "Configurare"
 
-#: props.C:184
+#: props.C:185
 msgid "Configure panel"
 msgstr "Configurare panou"
 
-#: props.C:185
+#: props.C:186
 msgid "Edit Menus"
 msgstr "Editare Meniuri"
 
-#: props.C:187
+#: props.C:188
 msgid "Add or remove applications in the menu structure "
 msgstr "Adaugã sau ºterge o aplicaþie din structura meniului "
 
-#: events.C:812 props.C:188
+#: events.C:812 props.C:189
 msgid "Restart"
 msgstr "Restartare"
 
-#: props.C:190
+#: props.C:191
 msgid "Restart panel"
 msgstr "Restartare Panou"
 
-#: props.C:193
+#: props.C:194
 msgid "Disk Navigator"
 msgstr ""
 
-#: props.C:201
+#: props.C:202
 msgid "Panel"
 msgstr "Panou"
 
-#: props.C:203
+#: props.C:204
 msgid "Lock Screen"
 msgstr "Blocheazã ecranul"
 
-#: props.C:450
+#: props.C:451
 msgid "The menu editor is not installed."
 msgstr "Editorul de meniuri nu este instalat. "
 
-#: events.C:866 props.C:451
+#: events.C:866 props.C:452
 msgid "Oops!"
 msgstr "Hopa !"
 
-#: tools.C:647
+#: tools.C:648
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
 
-#: tools.C:918
+#: tools.C:919
 msgid "KDiskNavigator"
 msgstr ""
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -20,7 +20,7 @@ msgstr "特性"
 msgid "Go!"
 msgstr "开始!"
 
-#: kpanel.C:333 tools.C:900
+#: kpanel.C:333 tools.C:901
 msgid "Where do you want to go tomorrow?"
 msgstr "主菜单"
 
@@ -28,11 +28,11 @@ msgstr "主菜单"
 msgid "No info available"
 msgstr "没有信息"
 
-#: kpanel.C:447 props.C:206 props.C:207
+#: kpanel.C:447 props.C:207 props.C:208
 msgid "Logout"
 msgstr "离线"
 
-#: kpanel.C:455 props.C:205
+#: kpanel.C:455 props.C:206
 msgid "Lock screen"
 msgstr "锁住屏幕"
 
@@ -52,92 +52,92 @@ msgstr ""
 msgid "No comment available"
 msgstr "没有说明"
 
-#: kpanel.C:1246 tools.C:909
+#: kpanel.C:1246 tools.C:910
 msgid "Windowlist"
 msgstr "窗口列表"
 
-#: kpanel.C:1254 props.C:196
+#: kpanel.C:1254 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
-#: props.C:166
+#: props.C:167
 #, fuzzy
 msgid "Add Application"
 msgstr "增加应用程序"
 
-#: props.C:168
+#: props.C:169
 msgid "Add an application or a submenu onto the panel"
 msgstr "在窗口面板上新增应用程序或是子菜单"
 
-#: props.C:174
+#: props.C:175
 msgid "Add Disk Navigator"
 msgstr ""
 
-#: props.C:176
+#: props.C:177
 #, fuzzy
 msgid "Add a Disk Navigator menu onto the panel"
 msgstr "在窗口面板上新增窗口列表菜单"
 
-#: props.C:179
+#: props.C:180
 #, fuzzy
 msgid "Add Windowlist"
 msgstr "加在窗口列表中"
 
-#: props.C:181
+#: props.C:182
 msgid "Add a windowlist menu onto the panel"
 msgstr "在窗口面板上新增窗口列表菜单"
 
-#: events.C:810 props.C:182
+#: events.C:810 props.C:183
 msgid "Configure"
 msgstr "配置"
 
-#: props.C:184
+#: props.C:185
 msgid "Configure panel"
 msgstr "配置面板"
 
-#: props.C:185
+#: props.C:186
 msgid "Edit Menus"
 msgstr "编辑菜单项"
 
-#: props.C:187
+#: props.C:188
 msgid "Add or remove applications in the menu structure "
 msgstr "在菜单结构中增加或去掉应用程序 "
 
-#: events.C:812 props.C:188
+#: events.C:812 props.C:189
 msgid "Restart"
 msgstr "重新开始"
 
-#: props.C:190
+#: props.C:191
 msgid "Restart panel"
 msgstr "重新启动面板"
 
-#: props.C:193
+#: props.C:194
 msgid "Disk Navigator"
 msgstr ""
 
-#: props.C:201
+#: props.C:202
 msgid "Panel"
 msgstr "面板"
 
-#: props.C:203
+#: props.C:204
 msgid "Lock Screen"
 msgstr "锁住屏幕"
 
-#: props.C:450
+#: props.C:451
 msgid "The menu editor is not installed."
 msgstr "菜单编辑器没有安装."
 
-#: events.C:866 props.C:451
+#: events.C:866 props.C:452
 msgid "Oops!"
 msgstr "错误!"
 
-#: tools.C:647
+#: tools.C:648
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
 
-#: tools.C:918
+#: tools.C:919
 msgid "KDiskNavigator"
 msgstr ""
 

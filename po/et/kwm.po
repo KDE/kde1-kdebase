@@ -19,7 +19,6 @@ msgid ""
 "started\n"
 msgstr "kwm: näib, et aknahaldur on juba käivitatud. kwm ei käivitunud\n"
 
-
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: viga initsialiseerimisel; katkestamine\n"
@@ -162,8 +161,10 @@ msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Järgnevad rakendused ei ole X11-teadlikud ja nii ei saa neid taastada järgmises\n"
-"seansis. Tee kindlaks, et nad ei sisaldaks tähtsat salvestamata informatsiooni."
+"Järgnevad rakendused ei ole X11-teadlikud ja nii ei saa neid taastada "
+"järgmises\n"
+"seansis. Tee kindlaks, et nad ei sisaldaks tähtsat salvestamata "
+"informatsiooni."
 
 #: taskmgr.C:107
 msgid "Switch to"

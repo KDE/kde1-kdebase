@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1999-01-06 17:59+0100\n"
 "Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -22,7 +22,7 @@ msgstr "&Propiedades"
 msgid "Go!"
 msgstr "Inicio"
 
-#: kpanel.C:333 tools.C:900
+#: kpanel.C:333 tools.C:901
 msgid "Where do you want to go tomorrow?"
 msgstr "¿Hasta dónde quiere llegar mañana?"
 
@@ -30,11 +30,11 @@ msgstr "¿Hasta dónde quiere llegar mañana?"
 msgid "No info available"
 msgstr "No hay información disponible"
 
-#: kpanel.C:447 props.C:206 props.C:207
+#: kpanel.C:447 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Terminar"
 
-#: kpanel.C:455 props.C:205
+#: kpanel.C:455 props.C:206
 msgid "Lock screen"
 msgstr "Bloquear pantalla"
 
@@ -54,83 +54,83 @@ msgstr "Iconizar otras &ventanas"
 msgid "No comment available"
 msgstr "No hay comentario disponible"
 
-#: kpanel.C:1246 tools.C:909
+#: kpanel.C:1246 tools.C:910
 msgid "Windowlist"
 msgstr "Lista de ventanas"
 
-#: kpanel.C:1254 props.C:196
+#: kpanel.C:1254 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Navegar rápidamente a través del sistema de archivos"
 
-#: props.C:166
+#: props.C:167
 msgid "Add Application"
 msgstr "Añadir Aplicación"
 
-#: props.C:168
+#: props.C:169
 msgid "Add an application or a submenu onto the panel"
 msgstr "Añadir aplicación o submenú al panel"
 
-#: props.C:174
+#: props.C:175
 msgid "Add Disk Navigator"
 msgstr "Añadir Navegador de Disco"
 
-#: props.C:176
+#: props.C:177
 msgid "Add a Disk Navigator menu onto the panel"
 msgstr "Añadir un menú de Navegador de Disco al panel"
 
-#: props.C:179
+#: props.C:180
 msgid "Add Windowlist"
 msgstr "Añadir Lista de Ventanas"
 
-#: props.C:181
+#: props.C:182
 msgid "Add a windowlist menu onto the panel"
 msgstr "Añadir una lista de ventanas al panel"
 
-#: events.C:810 props.C:182
+#: events.C:810 props.C:183
 msgid "Configure"
 msgstr "Configurar"
 
-#: props.C:184
+#: props.C:185
 msgid "Configure panel"
 msgstr "Configurar panel"
 
-#: props.C:185
+#: props.C:186
 msgid "Edit Menus"
 msgstr "Editar Menús"
 
-#: props.C:187
+#: props.C:188
 msgid "Add or remove applications in the menu structure "
 msgstr "Añadir o suprimir aplicaciones en la estructura del menú "
 
-#: events.C:812 props.C:188
+#: events.C:812 props.C:189
 msgid "Restart"
 msgstr "Reiniciar"
 
-#: props.C:190
+#: props.C:191
 msgid "Restart panel"
 msgstr "Reiniciar panel"
 
-#: props.C:193
+#: props.C:194
 msgid "Disk Navigator"
 msgstr "Navegador de disco"
 
-#: props.C:201
+#: props.C:202
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:203
+#: props.C:204
 msgid "Lock Screen"
 msgstr "Bloquear pantalla"
 
-#: props.C:450
+#: props.C:451
 msgid "The menu editor is not installed."
 msgstr "El editor de menús no está instalado."
 
-#: events.C:866 props.C:451
+#: events.C:866 props.C:452
 msgid "Oops!"
 msgstr "¡Ups!"
 
-#: tools.C:647
+#: tools.C:648
 msgid ""
 "\n"
 "%b %d"
@@ -138,7 +138,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:918
+#: tools.C:919
 msgid "KDiskNavigator"
 msgstr "Navegador de disco"
 

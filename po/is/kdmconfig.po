@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-11-08 14:17+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: isn\n"
@@ -155,6 +155,21 @@ msgstr "Mistök"
 
 #: kdm-font.cpp:59
 msgid "Standard"
+msgstr "Venjulegt"
+
+#: kdm-font.cpp:157
+#, fuzzy
+msgid "Greeting font"
+msgstr "Kveðja"
+
+#: kdm-font.cpp:161
+#, fuzzy
+msgid "Fail font"
+msgstr "Mistök"
+
+#: kdm-font.cpp:165
+#, fuzzy
+msgid "Standard font"
 msgstr "Venjulegt"
 
 #: kdm-bgnd.cpp:70

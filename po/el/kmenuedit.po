@@ -3,44 +3,44 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: 1998-01-05 20:56+0200\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
 
-#: kmenuedit.cpp:68
+#: kmenuedit.cpp:69
 #, fuzzy
 msgid "Change &Menuname"
 msgstr "Αλλαγή ονόματος καταλόγου"
 
-#: kmenuedit.cpp:69
+#: kmenuedit.cpp:70
 #, fuzzy
 msgid "Reload &Filetypes"
 msgstr "Επαναφόρτωση τύπου αρχείων"
 
-#: kmenuedit.cpp:76
+#: kmenuedit.cpp:77
 msgid "by"
 msgstr ""
 
-#: kmenuedit.cpp:175 kmenuedit.cpp:200
+#: kmenuedit.cpp:179 kmenuedit.cpp:204
 msgid "Changes not saved !"
 msgstr "Οι αλλαγές δεν αποθηκεύτηκαν !"
 
-#: kmenuedit.cpp:176 kmenuedit.cpp:201
+#: kmenuedit.cpp:180 kmenuedit.cpp:205
 #, fuzzy
 msgid ""
 "\n"
 "Do you want to save your changes ?"
 msgstr "Θέλετε να αποθηκέυσετε τις αλλαγές"
 
-#: confmenu.cpp:337 confmenu.cpp:929 kmenuedit.cpp:260
+#: confmenu.cpp:337 confmenu.cpp:934 kmenuedit.cpp:264
 msgid "EMPTY"
 msgstr "ΚΕΝΟ"
 
-#: kmenuedit.cpp:339
+#: kmenuedit.cpp:343
 msgid "Reload Menus"
 msgstr "Επαναφόρτωση καταλόγων"
 
-#: kmenuedit.cpp:340
+#: kmenuedit.cpp:344
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -113,7 +113,7 @@ msgid "Changing the type of this button will delete all of its submenus"
 msgstr ""
 "Αλλάζοντας τον τύπο αυτού του κουμπιού θα διαγραφούν όλοι οι υποκαταλόγοι του"
 
-#: confmenu.cpp:338 confmenu.cpp:930
+#: confmenu.cpp:338 confmenu.cpp:935
 msgid "no command"
 msgstr "Όχι εντολή"
 

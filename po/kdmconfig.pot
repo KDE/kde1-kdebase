@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -150,6 +150,18 @@ msgstr ""
 
 #: kdm-font.cpp:59
 msgid "Standard"
+msgstr ""
+
+#: kdm-font.cpp:157
+msgid "Greeting font"
+msgstr ""
+
+#: kdm-font.cpp:161
+msgid "Fail font"
+msgstr ""
+
+#: kdm-font.cpp:165
+msgid "Standard font"
 msgstr ""
 
 #: kdm-bgnd.cpp:70

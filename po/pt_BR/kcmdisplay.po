@@ -483,7 +483,8 @@ msgstr "&Estilo"
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr ""
-"utilização: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
+"utilização: kcmdisplay [-init | "
+"{background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
