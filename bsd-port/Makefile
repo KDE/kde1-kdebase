@@ -1,5 +1,5 @@
 # New ports collection makefile for:   kdebase
-# Version required:    1.0
+# Version required:    1.1
 # Date created:        18 June 1998
 # Whom:                Alex Zepeda <garbanzo@hooked.net
 #
@@ -10,24 +10,29 @@ CATEGORIES=	x11 kde
 
 MAINTAINER=	garbanzo@hooked.net
 
-BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt \
-		autoconf:${PORTSDIR}/devel/autoconf \
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
 		automake:${PORTSDIR}/devel/automake
 INSTALL_ROOT=	${.CURDIR}/${PKGNAME}
-LIB_DEPENDS=	qt\\.1\\.3[0-9]:${PORTSDIR}/x11/qt \
-		gif\\.[23]\\.:${PORTSDIR}/graphics/giflib \
-		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
-		kdecore\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs \
-		kdeui\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs \
-		jscript\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs \
-		khtmlw\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs \
-		kfm\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs \
-		mediatool\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs
+USE_QT=		yes
+LIB_DEPENDS=    gif.3:${PORTSDIR}/graphics/giflib \
+                jpeg.9:${PORTSDIR}/graphics/jpeg \
+                kdecore.2:${PORTSDIR}/x11/kdelibs11 \
+                Xpm.4:${PORTSDIR}/graphics/xpm
+ 
+
+LIB_DEPENDS=	gif.3]:${PORTSDIR}/graphics/giflib \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.2:${PORTSDIR}/x11/kdelibs11 \
+		jscript.2:${PORTSDIR}/x11/kdelibs11 \
+		khtmlw.2:${PORTSDIR}/x11/kdelibs11 \
+		kfm.2:${PORTSDIR}/x11/kdelibs11 \
+		mediatool.2:${PORTSDIR}/x11/kdelibs11
 NO_MTREE=	yup
 USE_GMAKE=	"without a doubt"
-NO_WRKDIR=	"Cause, you've obviously got the source in the parent directory"
+NO_WRKSUBDIR=	"Cause, you've obviously got the source in the parent directory"
 WRKSRC=		../
-NO_EXTRACT=	"yes, please"
+EXTRACT_ONLY=	"yes, please"
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
 		"--x-inc=$(X11BASE)/include" \
