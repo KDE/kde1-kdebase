@@ -1,157 +1,159 @@
 msgid ""
 msgstr ""
-"Date: 1997-08-24 14:12:35+0200\n"
+"Date: 1997-08-24 14:30:12+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
 "Content-Type: text/plain; charset=\n"
 "Xgettext-Options: --keyword=translate\n"
 "Files: main.C\n"
 
 #: main.C:220
-msgid "_add_character"
+msgid "Add characters to word class"
 msgstr ""
 
 #: main.C:224
-msgid "_choose colormode"
+msgid "choose type of color-mode"
 msgstr ""
 
-#: main.C:228
+#: main.C:227
 msgid "Ok"
 msgstr ""
 
-#: main.C:230
+#: main.C:229
 msgid "Cancel"
 msgstr ""
 
-#: main.C:358
+#: main.C:357
 msgid "&New Terminal"
 msgstr ""
 
-#: main.C:360
+#: main.C:359
 msgid "E&xit"
 msgstr ""
 
-#: main.C:365 main.C:670
+#: main.C:364 main.C:669
 msgid "&Hide"
 msgstr ""
 
-#: main.C:366
+#: main.C:365
 msgid "&Left"
 msgstr ""
 
-#: main.C:367
+#: main.C:366
 msgid "&Right"
 msgstr ""
 
-#: main.C:372
+#: main.C:371
 msgid "&Normal"
 msgstr ""
 
-#: main.C:373
+#: main.C:372
 msgid "&Tiny"
 msgstr ""
 
-#: main.C:374
+#: main.C:373
 msgid "&Small"
 msgstr ""
 
-#: main.C:375
+#: main.C:374
 msgid "&Medium"
 msgstr ""
 
-#: main.C:376
+#: main.C:375
 msgid "&Large"
 msgstr ""
 
-#: main.C:377
+#: main.C:376
 msgid "&Huge"
 msgstr ""
 
-#: main.C:389
+#: main.C:388
 msgid "&black/white"
 msgstr ""
 
-#: main.C:390
+#: main.C:389
 msgid "&white/black"
 msgstr ""
 
-#: main.C:391
+#: main.C:390
 msgid "&green/black"
 msgstr ""
 
-#: main.C:392
+#: main.C:391
 msgid "black/light&yellow"
 msgstr ""
 
-#: main.C:393
+#: main.C:392
 msgid "Linu&x Console"
 msgstr ""
 
-#: main.C:400 main.C:595
+#: main.C:399 main.C:594
 msgid "Hide &Menubar"
 msgstr ""
 
-#: main.C:402 main.C:461 main.C:587
+#: main.C:401 main.C:460 main.C:586
 msgid "Show &Menubar"
 msgstr ""
 
-#: main.C:403 main.C:605
+#: main.C:402 main.C:604
 msgid "Secure &keyboard"
 msgstr ""
 
-#: main.C:405
+#: main.C:404
 msgid "Scroll&bar"
 msgstr ""
 
-#: main.C:406
+#: main.C:405
 msgid "&Font size"
 msgstr ""
 
-#: main.C:407
+#: main.C:406
 msgid "&Color"
 msgstr ""
 
-#: main.C:408
+#: main.C:407
 msgid "&Size"
 msgstr ""
 
-#: main.C:409
+#: main.C:408
 msgid "Terminal..."
 msgstr ""
 
-#: main.C:411
+#: main.C:410
 msgid "Save &Options"
 msgstr ""
 
-#: main.C:420
+#: main.C:419
 msgid "&About..."
 msgstr ""
 
-#: main.C:421 main.C:431
+#: main.C:420 main.C:430
 msgid "&Help"
 msgstr ""
 
-#: main.C:428
+#: main.C:427
 msgid "&File"
 msgstr ""
 
-#: main.C:429
+#: main.C:428
 msgid "&Options"
 msgstr ""
 
-#: main.C:470 main.C:663
+#: main.C:469 main.C:662
 msgid "&Show"
 msgstr ""
 
-#: main.C:601
+#: main.C:600
 msgid "Unsecure &keyboard"
 msgstr ""
 
-#: main.C:740
+#: main.C:739
 msgid "Hint"
 msgstr ""
 
 #: main.C:740
-msgid "_new color secure"
+msgid ""
+"New color settings will be displayed\n"
+"when the keyboard is unsecured."
 msgstr ""
 
 #: main.C:760
@@ -159,7 +161,14 @@ msgid "About kvt"
 msgstr ""
 
 #: main.C:760
-msgid "_copyright"
+msgid ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08"
 msgstr ""
 
 #: main.C:930

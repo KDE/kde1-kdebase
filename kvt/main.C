@@ -217,12 +217,11 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
   : QDialog( parent, name, TRUE )
 {
   QLabel *label_color, *label_class;
-  label_class = new QLabel(trans.translate("_add_character", 
-		"Add characters to word class"), this);
+  label_class = new QLabel(trans.translate("Add characters to word class"), 
+			   this);
   chars = new QLineEdit(this);
 
-  label_color = new QLabel(trans.translate("_choose colormode", 
-		"choose type of color-mode"), this);
+  label_color = new QLabel(trans.translate("choose type of color-mode"), this);
   colormode = new QComboBox(this);
   QPushButton *ok, *cancel;
   ok = new QPushButton( trans.translate("Ok"), this );
@@ -737,7 +736,8 @@ void kVt::color_menu_activated( int item){
     XClearWindow(display,vt_win);
     scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
   }else{
-    QMessageBox::message( trans.translate("Hint"), trans.translate("_new color secure", "New color settings will be displayed \n when the keyboard is unsecured.") );
+    QMessageBox::message( trans.translate("Hint"), 
+			  trans.translate("New color settings will be displayed\nwhen the keyboard is unsecured.") );
   }
 }
 
@@ -757,7 +757,7 @@ void kVt::help_menu_activated(int item){
   QString ver = KVT_VERSION;
   switch (item){
   case 0:
-    QMessageBox::message( trans.translate("About kvt"), ver + trans.translate("_copyright", "\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n\nTerminal emulation for the KDE Desktop Environment\nbased on Robert Nation's rxvt-2.08"));
+    QMessageBox::message( trans.translate("About kvt"), ver + trans.translate("\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n\nTerminal emulation for the KDE Desktop Environment\nbased on Robert Nation's rxvt-2.08"));
     break;
   case 1:
     myapp->invokeHTMLHelp("kvt.html", ""); 
