@@ -77,9 +77,34 @@
 
 
 class KFontExplorer : public QDialog {
+
+    Q_OBJECT
+
+      // Usage of the KFontDialog Class:
+      //
+      // Case 1) The pointer fontlist is null ( Recommended Usage !!)
+      // 
+      // In this case KFontDialog will first search
+      // for ~/.kde/config/kdefonts. If kdefonts if available
+      // it will insert the fonts listed there into the family combo.
+      // 
+      // Note: ~/.kde/config/kdefonts is managed by kfontmanager. 
+      // ~/.kde/config/kdefonts is a newline separated list of font names.
+      // Such as: time\nhelvetica\nfixed\n etc.You should however not 
+      // manipulate that list -- that is the job of kfontmanager.
+      // 
+      // If ~/.kde/config/kdefonts doesn't exist, KFontDialog will query
+      // the X server and insert all availabe fonts.
+      //
+      // Case 2) The pointer fontlist is non null. In this cae KFontDialog 
+      // will insert the strings of that QStrList into the family combo.
+      // 
+      // Note: Due to a bug in Qt 1.2 you must 
+      // supply at this point at least two fonts in the QStrList that
+      // fontlist points to. The bug has been reported and will hopefully
       // be fixed in Qt.1.3. 
-    KFontExplorer( QWidget *parent = NULL, const char *name = NULL,
-			bool modal = FALSE );
+
+
 public:
     KFontExplorer( QWidget *parent = 0L, const char *name = 0L,
 			bool modal = FALSE, const QStrList* fontlist = 0L );
@@ -106,35 +131,44 @@ private slots:
 
       void 	family_chosen_slot(const char* );
       void      size_chosen_slot(const char* );
-      void      fill_family_combo();
+      void      weight_chosen_slot(const char*);
       void      style_chosen_slot(const char*);
       void      display_example(const QFont &font);
-    
+      void      charset_chosen_slot(int index);
+
+private:
 
     bool loadKDEInstalledFonts();
     void fill_family_combo();
     void setCombos();
+   
+    QGroupBox	 *box1;
+    QGroupBox	 *box2;
+    
     // pointer to an optinally supplied list of fonts to 
     // inserted into the fontdialog font-family combo-box
     QStrList     *fontlist; 
 
     QLabel	 *family_label;
+    QLabel	 *size_label;
     QLabel       *weight_label;
     QLabel       *style_label;
     QLabel	 *charset_label;
 
     QLabel	 *actual_family_label;
+    QLabel	 *actual_size_label;
+    QLabel       *actual_weight_label;
     QLabel       *actual_style_label;
     QLabel	 *actual_charset_label;
 
 
     QLabel	 *actual_family_label_data;
-
+    QLabel	 *actual_size_label_data;
     QLabel       *actual_weight_label_data;
     QLabel       *actual_style_label_data;
     QLabel	 *actual_charset_label_data;
     QComboBox    *family_combo;
-    
+    QComboBox    *size_combo;
     QComboBox    *weight_combo;
     QComboBox    *style_combo;
     QComboBox	 *charset_combo;    
@@ -145,6 +179,7 @@ private slots:
     QFont         selFont;
 
 };
+
 
 #endif
 

@@ -35,7 +35,7 @@
 #include "kfontmanager.h"
 #include "kfontlist.h"
 #include "kfontexplorer.h"
-
+#include <kfontdialog.h>
 #include <klocale.h>
 #define i18n(X) klocale->translate(X)
 
@@ -53,13 +53,14 @@ void setup(){
 
 	KFontManager manager(mainWindow,"manager");
 	KFontExplorer explorer(mainWindow,"explorer");
+	
 	KFontList list(mainWindow,"list");
 
 	mainWindow->addTab( &manager, i18n("KDE Fonts") );
 	mainWindow->addTab( &explorer,i18n("Font Explorer"));
 	mainWindow->addTab( &list, i18n("Raw X11 Font List") );
 	
-       	mainWindow->resize( 430, 460 );
+       	mainWindow->resize( 430, 500 );
 	mainWindow->exec();
 }
 
