@@ -139,7 +139,7 @@ msgstr "Logg ut"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Klart til å logge ut"
+msgstr "Klar til å logge ut"
 
 #: logout.C:52
 msgid ""
