@@ -1044,7 +1044,7 @@ bool KCookieJar::loadCookies(const char *_filename)
 	    	continue;
 	    	
             // Domain must be either hostname or domain of hostname
-	    if (strcmp(host,domain) != 0)
+	    if ( strlen(domain) && (strcmp(host,domain) != 0))
 	    {
                 QString checkDomain;
                 stripDomain( host, checkDomain);
