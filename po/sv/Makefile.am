@@ -6,7 +6,8 @@ GMOFILES = kfind.gmo kdehelp.gmo kdisplay.gmo kvt.gmo \
 	kcminfo.gmo kcminput.gmo kcmkpanel.gmo kcmkwm.gmo \
 	kcmlocale.gmo kcmsamba.gmo kcmsample.gmo kdm.gmo \
 	kdmconfig.gmo klock.gmo kcmsyssound.gmo kstart.gmo \
-	kcmkfm.gmo kcmkeys.gmo kpanel.gmo kikbd.gmo konsole.gmo
+	kcmkfm.gmo kcmkeys.gmo kpanel.gmo kikbd.gmo konsole.gmo \
+	kbgndwm.gmo
 
 POFILES = $(GMOFILES:.gmo=.po)
 
