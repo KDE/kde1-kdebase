@@ -1,0 +1,29 @@
+/* XPM */
+/* Drawn for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*email[]={
+"16 16 7 1",
+"# c #000000",
+"a c #ffffff",
+"c c #808080",
+"b c #c0c0c0",
+"e c #0000ff",
+"d c #008000",
+". c None",
+".........##.....",
+".######.#aa#....",
+"#bbbb#c#adda#...",
+".###aa#aaaaaa#..",
+"..#aaaa#aaaaaa#.",
+"..#bbaaa#aaaaaa#",
+"...###aaaaaaaa#.",
+"..#aaaaaaeaaa#..",
+".#aaaaaaeaaa#...",
+"#aaaaaaeaaa#....",
+".#aaaaaaaa#.....",
+"..#aaaaaa#......",
+"...#aaaa#.......",
+"....#aa#........",
+".....##.........",
+"................"};
+

@@ -1,0 +1,29 @@
+/* XPM */
+/* Drawn for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*nedit[]={
+"16 16 7 1",
+"a c #000000",
+"b c #ffffff",
+"c c #c0c0c0",
+". c #000080",
+"d c #a0a0a4",
+"e c #585858",
+"# c None",
+"...#...#########",
+"#.a##.##########",
+"#a.a#.##########",
+"#aa.a.##########",
+"#aba..##########",
+"#aaaaaaaaaaaaaaa",
+"..acccccccccccda",
+"##aeeeeeeeeeeeda",
+"##aebbbbbbbbbbda",
+"##aebeeebbbbbbda",
+"##aebbbbbbbbbbda",
+"##aebeeeebbbbbda",
+"##aebbbbbbbbbbda",
+"##aeccccccccccda",
+"##aaaaaaaaaaaaaa",
+"################"};
+

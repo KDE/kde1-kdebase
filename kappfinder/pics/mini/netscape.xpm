@@ -1,0 +1,33 @@
+/* XPM */
+/* Drawn for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*netscape[]={
+"16 16 11 1",
+"c c #ffffff",
+"b c #ffff00",
+"i c #ffdca8",
+"e c #c0c0c0",
+"g c #c00000",
+"f c #a0a0a4",
+"h c #808080",
+"d c #800000",
+". c #0000c0",
+"a c #000000",
+"# c None",
+".......#.......#",
+"..aa...ba...a.ac",
+"..bdaaaeaa.abafc",
+"...efbbebfgeaefc",
+"...ecgabaaeaafcc",
+"..fegcacafaeaccc",
+"..eda.befacbadcc",
+"eebdbeceeebebe##",
+"##eadgfefadaee##",
+"..ba.fagcbabadfc",
+"..defacdcaefaccc",
+"...efcdfdhefaecc",
+"..bfabeifaaabafc",
+"..aafadffaccaffc",
+".aefccdfdccccccc",
+"#cccccc##ccccccc"};
+

@@ -1,0 +1,27 @@
+/* XPM */
+/* Drawn for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*xfmail[]={
+"16 16 5 1",
+"# c #000000",
+"c c #ffffff",
+"b c #c05800",
+"a c #ffa858",
+". c None",
+".###########....",
+"#aaaaaaaa#b#....",
+"#a##c#c##bb#..#.",
+"#a#######bb#..#.",
+"#aaaaaaa#bb#.##.",
+"#########bb##...",
+"##aaaaa##bb#....",
+"##aaaaa##bb#....",
+"##aaaaa##bb####.",
+"#aa###aa#bb#####",
+"#aaaaaaa#bb#####",
+"#aaaaaaa#b######",
+"###############.",
+"#############...",
+"##......###.....",
+"##......##......"};
+
