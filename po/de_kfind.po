@@ -67,6 +67,9 @@ msgstr "Unterverzeichnisse einschliessen"
 msgid "&Browse ..."
 msgstr "Ä&ndern..."
 
+msgid "Browse"
+msgstr "Auswählen"
+
 msgid "&All files"
 msgstr "Alle Dateien"
 
