@@ -1,319 +1,451 @@
 msgid ""
 msgstr ""
-"Date: 1998-03-18 07:06:55+0300\n"
-"From: Alexander Budnik,LCTA 323,64880,, <budnik@linserv.jinr.ru>\n"
+"Date: 1998-09-26 18:53:09+0400\n"
+"From: Alexander Budnik,LCTA 323,64880, <budnik@linserv.jinr.ru>\n"
 "Content-Type: text/plain; charset=\n"
-"Xgettext-Options: -C -j -ktranslate\n"
-"Files: kconfobjs.h keymap.h keytrans.h kikbd.h kikbdconf.h kobjconf.h mkconfobjs.h mkeymap.h mkobjconf.h kcmikbd/kconfobjs.h kcmikbd/kikbdconf.h kcmikbd/kobjconf.h kcmikbd/mkconfobjs.h kcmikbd/mkobjconf.h kcmikbd/widgets.h keymap.C keytrans.C kikbd.C kikbdconf.C kobjconf.C mkeymap.C mkikbd.C kcmikbd/kikbdconf.C kcmikbd/kobjconf.C kcmikbd/main.C kcmikbd/widgets.C\n"
+"Xgettext-Options: -C -ktranslate -ki18n -x /opt/kde/include/kde.pot\n"
+"Files: kikbd.cpp keytrans.cpp keymap.cpp kikbdconf.cpp kobjconf.cpp kconfobjs.moc.cpp kobjconf.moc.cpp keymap.moc.cpp kikbd.moc.cpp kikbdconf.moc.cpp widgets.cpp kcmikbd.cpp widgets.moc.cpp\n"
 
-#: keymap.C:170
-msgid "KeyMap: cannot allocate memory"
-msgstr ""
-
-#: keymap.C:215
-msgid "KeyMap: can not find symbol %s"
-msgstr ""
-
-#: keymap.C:224
-msgid "KeyMap: do not undestand keycode %s"
-msgstr ""
-
-#: keymap.C:227
-msgid "KeyMap: keycode %s go out of range"
-msgstr ""
-
-#: kikbd.C:90
+#: kikbd.cpp:109
 msgid "KDE International Keyboard already started on this display."
 msgstr ""
 
-#: kikbd.C:289
+#: kikbd.cpp:311
 msgid "Setup"
 msgstr ""
 
-#: kikbd.C:290
+#: kikbd.cpp:312
 msgid "Exit"
 msgstr ""
 
-#: kikbd.C:344 kikbd.C:357
+#: kikbd.cpp:326 kikbd.cpp:339
 msgid "Can not remove %s from Modifiers.\n"
 msgstr ""
 
-#: kikbd.C:347
+#: kikbd.cpp:329
 msgid "Can not add %s to Modifier number 3.\n"
 msgstr ""
 
-#: kikbd.C:372
+#: kikbd.cpp:351
 msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
 "Alt symbols disabled"
 msgstr ""
 
-#: kikbd.C:394
+#: kikbd.cpp:372
 msgid ""
 "Can not remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
 
-#: kikbd.C:874
+#: kikbd.cpp:923
 msgid "kikbd error"
 msgstr ""
 
-#: kikbd.C:885
+#: kikbd.cpp:934
 msgid "kikbd warning"
 msgstr ""
 
-#: kcmikbd/kikbdconf.C:110 kikbdconf.C:110
-msgid "Your configuration is empty. Install system default."
+#: keymap.cpp:190
+msgid "KeyMap: cannot allocate memory"
 msgstr ""
 
-#: kcmikbd/kikbdconf.C:114 kikbdconf.C:114
+#: keymap.cpp:234
+msgid "KeyMap: can not find symbol %s"
+msgstr ""
+
+#: keymap.cpp:242
+msgid "KeyMap: do not undestand keycode %s"
+msgstr ""
+
+#: keymap.cpp:245
+msgid "KeyMap: keycode %s go out of range"
+msgstr ""
+
+#: kikbdconf.cpp:91
+msgid "Global"
+msgstr ""
+
+#: kikbdconf.cpp:91
+msgid "Window"
+msgstr ""
+
+#: kikbdconf.cpp:91
+msgid "Class"
+msgstr ""
+
+#: kikbdconf.cpp:94 kikbdconf.cpp:106
+msgid "(None)"
+msgstr ""
+
+#: kikbdconf.cpp:95 kikbdconf.cpp:107
+msgid "Right Alt"
+msgstr ""
+
+#: kikbdconf.cpp:96 kikbdconf.cpp:108
+msgid "Right Control"
+msgstr ""
+
+#: kikbdconf.cpp:97
+msgid "Rights (Alt+Shift)"
+msgstr ""
+
+#: kikbdconf.cpp:98
+msgid "Rights (Ctrl+Alt)"
+msgstr ""
+
+#: kikbdconf.cpp:99
+msgid "Rights (Ctrl+Shift)"
+msgstr ""
+
+#: kikbdconf.cpp:100
+msgid "Lefts  (Alt+Shift)"
+msgstr ""
+
+#: kikbdconf.cpp:101
+msgid "Lefts  (Ctrl+Alt)"
+msgstr ""
+
+#: kikbdconf.cpp:102
+msgid "Lefts  (Ctrl+Shift)"
+msgstr ""
+
+#: kikbdconf.cpp:103
+msgid "Both Shift's (Shift+Shift)"
+msgstr ""
+
+#: kikbdconf.cpp:109
+msgid "Left  Alt"
+msgstr ""
+
+#: kikbdconf.cpp:110
+msgid "Left  Control"
+msgstr ""
+
+#: kikbdconf.cpp:113
+msgid "Top Left"
+msgstr ""
+
+#: kikbdconf.cpp:114
+msgid "Top Right"
+msgstr ""
+
+#: kikbdconf.cpp:115
+msgid "Bottom Left"
+msgstr ""
+
+#: kikbdconf.cpp:116
+msgid "Bottom Right"
+msgstr ""
+
+#: kikbdconf.cpp:182
 msgid "Do you want to start Configuration?"
 msgstr ""
 
-#: kcmikbd/kikbdconf.C:176 kikbdconf.C:176
+#: kikbdconf.cpp:191
+msgid "Your configuration is empty. Install system default."
+msgstr ""
+
+#: kikbdconf.cpp:197
+msgid ""
+"Configuration file you have has older format when expected.\n"
+"Some settings may be incorrect."
+msgstr ""
+
+#: kikbdconf.cpp:205
+msgid ""
+"Configuration file you have has newer format when expected.\n"
+"Some settings may be incorrect."
+msgstr ""
+
+#: kikbdconf.cpp:253
 msgid "kikbd configuration error"
 msgstr ""
 
-#: kcmikbd/kikbdconf.C:183 kikbdconf.C:183
+#: kikbdconf.cpp:260
 msgid "kikbd configuration message"
 msgstr ""
 
-#: kcmikbd/kikbdconf.C:231 kikbdconf.C:231
-msgid "Label"
+#: kikbdconf.cpp:297
+msgid "default"
 msgstr ""
 
-#: kcmikbd/kobjconf.C:118 kobjconf.C:118
-msgid "yes"
+#: kikbdconf.cpp:323
+msgid "Author:  Not specified"
 msgstr ""
 
-#: kcmikbd/kobjconf.C:119 kobjconf.C:119
-msgid "true"
+#: kikbdconf.cpp:325
+msgid "Author"
 msgstr ""
 
-#: kcmikbd/main.C:42
-msgid "&General"
+#: kikbdconf.cpp:331
+msgid "Description:  "
 msgstr ""
 
-#: kcmikbd/main.C:50 kcmikbd/widgets.C:435
-msgid "&Style"
+#: kikbdconf.cpp:334
+msgid "Source:  "
 msgstr ""
 
-#: kcmikbd/main.C:60
-msgid "Start&Up"
+#: kikbdconf.cpp:335
+msgid "no file"
 msgstr ""
 
-#: kcmikbd/main.C:103
-msgid "International Keyboard"
+#: kikbdconf.cpp:336
+msgid "user file"
 msgstr ""
 
-#: kcmikbd/widgets.C:58
-msgid "Keyboards"
+#: kikbdconf.cpp:337
+msgid "system file"
 msgstr ""
 
-#: kcmikbd/widgets.C:68 kcmikbd/widgets.C:69 kcmikbd/widgets.C:70
-msgid " "
+#: kikbdconf.cpp:342
+msgid "Statistic:  "
 msgstr ""
 
-#: kcmikbd/widgets.C:72
-msgid "List of active keyboard maps"
+#: kikbdconf.cpp:345
+msgid "symbols"
 msgstr ""
 
-#: kcmikbd/widgets.C:76
-msgid "Add"
+#: kikbdconf.cpp:348
+msgid "codes"
 msgstr ""
 
-#: kcmikbd/widgets.C:77
-msgid "Delete"
+#: kikbdconf.cpp:351
+msgid "alternative symbols"
 msgstr ""
 
-#: kcmikbd/widgets.C:78
-msgid "Up"
+#: kikbdconf.cpp:359
+msgid "language"
 msgstr ""
 
-#: kcmikbd/widgets.C:79
-msgid "Down"
+#: kikbdconf.cpp:362
+msgid "charset"
 msgstr ""
 
-#: kcmikbd/widgets.C:90
-msgid "Use \"hotlist\""
-msgstr ""
-
-#: kcmikbd/widgets.C:93
-msgid "Adding new keyboard map"
-msgstr ""
-
-#: kcmikbd/widgets.C:94
-msgid "Remove selected keyboard map"
-msgstr ""
-
-#: kcmikbd/widgets.C:95
-msgid "Up selected keyboard map"
-msgstr ""
-
-#: kcmikbd/widgets.C:96
-msgid "Down selected keyboard map"
-msgstr ""
-
-#: kcmikbd/widgets.C:97
-msgid "Use only default and last active keyboard maps to switching from keyboard"
-msgstr ""
-
-#: kcmikbd/widgets.C:100
-msgid "Switch and Alt Switch"
-msgstr ""
-
-#: kcmikbd/widgets.C:104
-msgid "Key(s) to switch beetwing keyboard maps"
-msgstr ""
-
-#: kcmikbd/widgets.C:109
-msgid "Key to activate Alternate symbols in current keyboard map"
-msgstr ""
-
-#: kcmikbd/widgets.C:112
-msgid "Options"
-msgstr ""
-
-#: kcmikbd/widgets.C:116
-msgid "Beep"
-msgstr ""
-
-#: kcmikbd/widgets.C:118
-msgid "Beep when ever keyboard mapping changed"
-msgstr ""
-
-#: kcmikbd/widgets.C:119 kcmikbd/widgets.C:278
-msgid "Advanced"
-msgstr ""
-
-#: kcmikbd/widgets.C:124
-msgid "Advanced options"
-msgstr ""
-
-#: kcmikbd/widgets.C:214
+#: widgets.cpp:84
 msgid "Add Keyboard"
 msgstr ""
 
-#: kcmikbd/widgets.C:224
-msgid "Adding Keyboard"
-msgstr ""
-
-#: kcmikbd/widgets.C:225
-msgid "There is no more keyboard maps"
-msgstr ""
-
-#: kcmikbd/widgets.C:230
+#: widgets.cpp:88
 msgid "Available keyboard maps"
 msgstr ""
 
-#: kcmikbd/widgets.C:245 kcmikbd/widgets.C:322
-msgid "Ok"
+#: widgets.cpp:187
+msgid "Keyboard maps"
 msgstr ""
 
-#: kcmikbd/widgets.C:246
-msgid "Cancel"
+#: widgets.cpp:199
+msgid "List of active keyboard maps"
 msgstr ""
 
-#: kcmikbd/widgets.C:291
-msgid "Emulate CapsLock"
+#: widgets.cpp:206
+msgid "&Add"
 msgstr ""
 
-#: kcmikbd/widgets.C:293
-msgid "Emulate XServer CapsLock. Needed for some languages to be correct"
+#: widgets.cpp:207
+msgid "Adding new keyboard map"
 msgstr ""
 
-#: kcmikbd/widgets.C:295
-msgid "World Menu"
+#: widgets.cpp:211
+msgid "Remove selected keyboard map"
 msgstr ""
 
-#: kcmikbd/widgets.C:297
+#: widgets.cpp:216
+msgid "&Up"
+msgstr ""
+
+#: widgets.cpp:216
+msgid "Up selected keyboard map"
+msgstr ""
+
+#: widgets.cpp:220
+msgid "Do&wn"
+msgstr ""
+
+#: widgets.cpp:220
+msgid "Down selected keyboard map"
+msgstr ""
+
+#: widgets.cpp:224
+msgid "&Info"
+msgstr ""
+
+#: widgets.cpp:225
+msgid "Display information for selected keyboard map"
+msgstr ""
+
+#: widgets.cpp:233
+msgid "Use \"&hotlist\""
+msgstr ""
+
+#: widgets.cpp:234
+msgid "Use only default and last active keyboard maps to switching from keyboard"
+msgstr ""
+
+#: widgets.cpp:239
+msgid "Switch and Alt Switch"
+msgstr ""
+
+#: widgets.cpp:244
+msgid "Key(s) to switch beetwing keyboard maps"
+msgstr ""
+
+#: widgets.cpp:250
+msgid "Key to activate Alternate symbols in current keyboard map"
+msgstr ""
+
+#: widgets.cpp:263
+msgid "&Beep"
+msgstr ""
+
+#: widgets.cpp:264
+msgid "Beep when ever keyboard mapping changed"
+msgstr ""
+
+#: widgets.cpp:267
+msgid "Ad&vanced"
+msgstr ""
+
+#: widgets.cpp:267
+msgid "Advanced options"
+msgstr ""
+
+#: widgets.cpp:349
+msgid "Keyboard map information"
+msgstr ""
+
+#: widgets.cpp:387
+msgid "Adding Keyboard"
+msgstr ""
+
+#: widgets.cpp:388
+msgid "There is no more keyboard maps"
+msgstr ""
+
+#: widgets.cpp:399
+msgid "Advanced"
+msgstr ""
+
+#: widgets.cpp:415
+msgid "Emulate &CapsLock"
+msgstr ""
+
+#: widgets.cpp:416
+msgid "Emulate XServer CapsLock. Needed for some languagesto be correct"
+msgstr ""
+
+#: widgets.cpp:422
+msgid "World &Menu"
+msgstr ""
+
+#: widgets.cpp:423
 msgid "Show menu in any window by holding Switch keys"
 msgstr ""
 
-#: kcmikbd/widgets.C:301
-msgid "Save Classes"
+#: widgets.cpp:430
+msgid "&Save Classes"
 msgstr ""
 
-#: kcmikbd/widgets.C:304
+#: widgets.cpp:431
 msgid "Save relations between window classes and keyboard maps on exit"
 msgstr ""
 
-#: kcmikbd/widgets.C:306
+#: widgets.cpp:435
 msgid "Input"
 msgstr ""
 
-#: kcmikbd/widgets.C:310
+#: widgets.cpp:439
 msgid "Standard behavior. Keyboard map active for all windows"
 msgstr ""
 
-#: kcmikbd/widgets.C:312
+#: widgets.cpp:443
 msgid "Extended behavior. Each windows remember it's own keyboard map"
 msgstr ""
 
-#: kcmikbd/widgets.C:314
+#: widgets.cpp:447
 msgid "Special behavior. Each windows class remember it's own keyboard map"
 msgstr ""
 
-#: kcmikbd/widgets.C:348
+#: widgets.cpp:495
 msgid "Button Colors"
 msgstr ""
 
-#: kcmikbd/widgets.C:365
+#: widgets.cpp:505
 msgid "Foreground"
 msgstr ""
 
-#: kcmikbd/widgets.C:369
+#: widgets.cpp:506
 msgid "Color of the Text Label"
 msgstr ""
 
-#: kcmikbd/widgets.C:379
+#: widgets.cpp:510
 msgid "With CapsLock"
 msgstr ""
 
-#: kcmikbd/widgets.C:383
+#: widgets.cpp:511
 msgid "Background when Emulated CapsLock active"
 msgstr ""
 
-#: kcmikbd/widgets.C:395
+#: widgets.cpp:517
 msgid "With Alternate"
 msgstr ""
 
-#: kcmikbd/widgets.C:399
+#: widgets.cpp:518
 msgid "Background when Alternate switch is pressed"
 msgstr ""
 
-#: kcmikbd/widgets.C:410
+#: widgets.cpp:527
 msgid "Button Font"
 msgstr ""
 
-#: kcmikbd/widgets.C:418
-msgid "Customize Font"
+#: widgets.cpp:535
+msgid "C&ustomize Font"
 msgstr ""
 
-#: kcmikbd/widgets.C:421
+#: widgets.cpp:536
 msgid "Customize Font for text label or use global settings"
 msgstr ""
 
-#: kcmikbd/widgets.C:424
-msgid "Change Font"
+#: widgets.cpp:540
+msgid "C&hange Font"
 msgstr ""
 
-#: kcmikbd/widgets.C:463
-msgid "Autostart"
+#: kcmikbd.cpp:70 widgets.cpp:551
+msgid "&Style"
 msgstr ""
 
-#: kcmikbd/widgets.C:464
+#: widgets.cpp:577
+msgid "&Autostart"
+msgstr ""
+
+#: widgets.cpp:578
 msgid "Start up automaticaly"
 msgstr ""
 
-#: kcmikbd/widgets.C:474
+#: widgets.cpp:584
+msgid "&Docked"
+msgstr ""
+
+#: widgets.cpp:585
 msgid "Dock into special area in kpanel"
 msgstr ""
 
-#: kcmikbd/widgets.C:482
+#: widgets.cpp:594
 msgid "Place"
 msgstr ""
 
-#: kcmikbd/widgets.C:491
+#: widgets.cpp:601
 msgid "Place in selected corner"
+msgstr ""
+
+#: kcmikbd.cpp:64
+msgid "&General"
+msgstr ""
+
+#: kcmikbd.cpp:78
+msgid "Start&Up"
+msgstr ""
+
+#: kcmikbd.cpp:120
+msgid "International Keyboard"
 msgstr ""
