@@ -14,14 +14,15 @@ INSTALL_PROGRAM = @INSTALL@ $(SETUIDFLAGS)
 bin_PROGRAMS = kpolygon.kss kswarm.kss klissie.kss kbanner.kss \
 	klines.kss kblankscrn.kss krock.kss kflame.kss klaser.kss \
 	kpyro.kss khop.kss $(XPM_SAVERS) $(GL_SAVERS) kslip.kss \
-	kforest.kss klock kblob.kss kbouboule.kss kscience.kss kbsod.kss
+	kforest.kss klock kblob.kss kbouboule.kss kscience.kss \
+	kattraction.kss kslidescreen.kss kbsod.kss
 
 EXTRA_PROGRAMS = kbat.kss kmorph3d.kss kspace.kss kpipes.kss
 
 EXTRA_DIST = kscreensaver.xpm mini-kscreensaver.xpm kscience.gif kscience-small.gif
 
 BASE_SRCS = main.cpp xautolock.cpp saver.cpp passwd.cpp xlock.cpp \
-	    helpers.cpp
+	    helpers.cpp xs_colors.c xs_hsv.c xs_visual.c
 
 SUBDIRS = pixmaps bitmaps
 
@@ -58,6 +59,12 @@ rock.cpp: rock.moc
 
 kslip_kss_SOURCES = $(BASE_SRCS) slip.cpp
 slip.cpp: slip.moc
+
+kattraction_kss_SOURCES = $(BASE_SRCS) attraction.cpp
+attraction.cpp: attraction.moc
+
+kslidescreen_kss_SOURCES = $(BASE_SRCS) slidescreen.cpp
+slidescreen.cpp: slidescreen.moc
 
 kpyro_kss_SOURCES = $(BASE_SRCS) pyro.cpp
 pyro.cpp: pyro.moc
@@ -106,13 +113,16 @@ BUILT_SOURCES = main.moc saver.moc polygon.moc banner.moc\
 		blankscrn.moc rock.moc flame.moc lines.moc laser.moc\
 		pyro.moc hop.moc forest.moc swarm.moc bat.moc slip.moc\
 		lissie.moc morph3d.moc blob.moc space.moc bouboule.moc \
-		kgroupbox.moc science.moc pipes.moc
+		kgroupbox.moc science.moc pipes.moc attraction.moc \
+        slidescreen.moc
 
 noinst_HEADERS = saver.h polygon.h banner.h\
 		blankscrn.h kscreensave.h xlock.h rock.h flame.h lines.h\
 		laser.h pyro.h hop.h forest.h swarm.h bat.h slip.h\
 		lissie.h blob.h space.h bouboule.h  kgroupbox.h science.h main.h \
-		xautolock.h xlockmore.h mode.h helpers.h morph3d.h pipes.h
+		xautolock.h xlockmore.h mode.h helpers.h morph3d.h pipes.h \
+		attraction.h xs_colors.h xs_hsv.h xs_yarandom.h xs_utils.h \
+        slidescreen.h
 
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot *.cpp *.h && mv messages.po ../po/klock.pot
@@ -189,6 +199,12 @@ pipes.moc: pipes.h
 
 science.moc: science.h
 	$(MOC) science.h -o science.moc
+
+attraction.moc: attraction.h
+	$(MOC) attraction.h -o attraction.moc
+
+slidescreen.moc: slidescreen.h
+	$(MOC) slidescreen.h -o slidescreen.moc
 
 kgroupbox.moc: kgroupbox.h
 	$(MOC) kgroupbox.h -o kgroupbox.moc

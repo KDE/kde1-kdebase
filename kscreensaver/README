@@ -47,6 +47,100 @@ use blankscrn.*, polygon.* and banner.* as examples.
 Naming the screensavers *.kss allows kdisplay to locate the available
 screensavers.
 
+
+CHANGES:
+
+Version 0.4
+
+Added attraction and slidescreen - ported from xscreensaver by Tom Vijlbrief
+<tom.vijlbrief@knoware.nl>
+
+Version 0.3.7
+
+added geometry management to all screensaver setups except kmorph3d (Mario
+Weilguni <mweilguni@kde.org>)
+added "science" from Rene Beutler 1998
+
+Version 0.3.6
+
+added "blob" saver from Tiaan Wessels <tiaan@netsys.co.za>
+
+
+Version 0.3.5
+
+fixes from Emanuel Pirker for ported xlock savers.
+
+
+Version 0.3.4
+
+More xlock ports from Emanuel Pirker <epirker@edu.uni-klu.ac.at>
+
+
+Version 0.3.3
+
+Fix small window problem under kwm (hopefully)
+Fixes for Qt-1.2
+
+
+Version 0.3.2
+
+Updated lines
+added About dialogs for all savers
+Shadow password support added by Martin Hartig
+Use libkdeui for colour dialog
+
+
+Version 0.3.1
+
+Ported some xlock savers.  Basic interface code done, but will need more work
+ for some savers yet to be ported.
+Included "lines" (contributed by
+ Dirk Staneker <dirk.staneker@student.uni-tuebingen.de>)
+locking bug fix
+
+
+Version 0.3
+
+fixes to password stuff
+
+
+Version 0.2
+
+kscreensaver.h/cpp external control files
+SIGUSR1 causes the screen saver to lock immediately
+hopefully StaysOnTop and windows opening after ss invoked will not display
+ over saver window anymore
+minor bug fixes
+
+
+CREDITS:
+
+  lines   -  Copyright (c) 1997 Dirk Staneker
+  blob    -  Copyright (c) 1997 Tiaan Wessels <tiaan@netsys.co.za>
+  science -  Copyright (c) 1998 Rene Beutler
+
+Ported from xlockmore:     (but blame me if they don't work)
+  rock    -  Copyright (c) 1992 by Jamie Zawinski
+  flame   -  Copyright (c) 1991 by Patrick J. Naughton.
+  pyro    -  Copyright (c) 1991 by Patrick J. Naughton.
+  laser   -  Copyright (c) 1995 Pascal Pensa <pensa@aurora.unice.fr>
+
+Ported from xlockmore by Emanuel Pirker <epirker@edu.uni-klu.ac.at>:
+  bat     -  Copyright (c) 1988 by Sun Microsystems
+  forest  -  Copyright (c) 1995 Pascal Pensa <pensa@aurora.unice.fr>
+  hop     -  Copyright (c) 1991 by Patrick J. Naughton.
+  lissie  -  Copyright (c) Alexander Jolk <ub9x@rz.uni-karlsruhe.de>
+  slip    -  Copyright (c) 1992 by Scott Draves (spot@cs.cmu.edu)
+  swarm   -  Copyright (c) 1991 by Patrick J. Naughton
+  morph3d -  Copyright (c) 1997 by Marcelo F. Vianna
+
+Ported from xscreensaver by Tom Vijlbrief <tom.vijlbrief@knoware.nl>
+  attraction - Copyright (c) 1997 by Jamie Zawinski <jwz@jwz.org>
+  slidescreen - Copyright (c) 1997 by Jamie Zawinski <jwz@jwz.org>
+
+  The files xs_* are also from xscreensaver.
+
+
 xlock Copyright Notice:
 
  Permission to use, copy, modify, distribute, and sell this software and its
@@ -56,6 +150,19 @@ xlock Copyright Notice:
  documentation.  No representations are made about the suitability of this
  software for any purpose.  It is provided "as is" without express or
  implied warranty.
+
+xscreensaver Copyright Notice:
+
+ Permission to use, copy, modify, distribute, and sell this software and its
+ documentation for any purpose is hereby granted without fee, provided that
+ the above copyright notice appear in all copies and that both that
+ copyright notice and this permission notice appear in supporting
+ documentation.  No representations are made about the suitability of this
+ software for any purpose.  It is provided "as is" without express or
+ implied warranty
+
+blank, banner and polygons are my fault
+
 
 TODO:
 
