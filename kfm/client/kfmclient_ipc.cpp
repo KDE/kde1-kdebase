@@ -2,7 +2,10 @@
 // (c) Torben Weis
 //     weis@stud.uni-frankfurt.de
 
-#include "ipc.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include "kfmipc.h"
 #include "kfmclient_ipc.h"
 
 KfmIpc::KfmIpc( int _port )
@@ -81,7 +84,6 @@ void KfmIpc::readEvent( KSocket * )
     if ( n + cBody == bodyLen )
     {
 	pBody[bodyLen] = 0;
-	printf(">>'%s'\n",pBody);
 	bHeader = TRUE;
 	parse( pBody, bodyLen );
 	return;

@@ -9,7 +9,7 @@ slots:
    void copy( string _src, string _dest );
    void move( string _src, string _dest );
    void moveClient( string _src, string _dest );
-   void ask( int _x, int _y, string _src, string _dest );
+   void copyClient( string _src, string _dest );
    void sortDesktop();
    void auth( string _password );
    void selectRootIcons( int _x, int _y, int _w, int _h, bool _add );

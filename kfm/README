@@ -17,29 +17,16 @@ the KFM Developers
 
 -------------------- ATTENTION ---------------- LATEST NEWS --------------------
 
+KFM wants to have mini icons in $KDEDIR/share/icons/mini
+Every big icon MUST have a small icon of the same name!!
+
+-------------------- ATTENTION ---------------- OLD NEWS :-)  ------------------
 Security fix for KFM. Dont forget to change the password in ~/.kfm/magic and
 make shure that nobody else is allowed to read/write this file. Restart
 the KDE environment after changing the password.
 
-You need libjscript ( JavaScript ) to run KFM
-You need the latest experimental libkhtml to compile KFM but
-this will break for example your KDE Help System.
-
-To compile this KFM you need khtmlw-0.8.0 or greater.
-
-You must apply the patches in the patches directory to libkdeui and
-libkdecore ( if not already included in their distributions ).
-
-KFM expects your trash bin to be in ~/Desktop/Trash
-
 KFM is going to be the first freeware FRAME able browser. Or is there
 one already out there?
-
-KFM has a different setup procedure now. Read the installation instructions
-below careful. No setupKFM anymore. On startup KFM will create everything
-it needs. Before starting kfm the first time make shure that you dont have an
-old ~/.kde/config/.kfmrc
-Please delete it first!!!!
 
 -------------------------------------------------------------------------------
 
@@ -703,6 +690,26 @@ Version 1.23
 - Does not crash if mime types are missing.
 - Calling kmail for "href=mailto"
 
+version 1.24
+- Complete rewrite of kbind.cpp
+
+Version 1.25
+
+- Rewrite of pixmap stuff in kbind.cpp
+- Support for mini icons in kbind.cpp
+  KFM expects the mini icons in $KDEDIR/share/icons/mini
+  The mini icons must have the same name as their big brothers!!
+  And the mini icons must exist. Downscaling is too slow. Please
+  supply mini icon for every usual icon!!!
+
+- Complete rewrite of dir tree
+  - Supports drops
+  - Supports popup menus
+  - Becomes updates automagically
+- Minor bug fixes
+- DnD of root icons works again
+- DnD of multiple root icons
+
 Translation
 -----------
 
@@ -770,15 +777,16 @@ Torben Weis <weis@stud.uni-frankfurt.de>
 KHTML Widget was extended by
 Josip A. Gracin <grac@fly.cc.fer.hr>
 and
-Martin Jones <mjones@powerup.com.au>
+Martin Jones <mjones@powerup.com.au>, <mjones@kde.org>
 The KHTML Widget is now maintained by Martin.
 
 Bookmarks are from Martin Jones, too.
 
 Fritz Elfert <fritz@kde.org> added magic mime type detection.
 
-And thanks to all the others who contributed.
+Stephan Kulow <coolo@kde.org> applied lost of patches.
 
+And thanks to all the others who contributed.
 
 Torben Weis, weis@stud.uni-frankfurt.de, weis@kde.org
 http://www.kde.org

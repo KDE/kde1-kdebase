@@ -1,304 +1,494 @@
-#include <stdlib.h>
+#include <kurl.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <dirent.h>
+#include <kapp.h>
 #include <qmsgbox.h>
 
 #include "kfmtree.h"
-#include <kapp.h>
-#include <config-kfm.h>
+#include "kioserver.h"
+#include "kiojob.h"
+#include "kbind.h"
+#include "config-kfm.h"
+#include "kfmview.h"
+#include "kfmprops.h"
+#include "kfmgui.h"
+#include "kfmpaths.h"
 
-/*************************************************
- *
- * CLASS KFMTree
- *
- ************************************************/
-
-KFMTree::KFMTree( QWidget *_parent ) : KTreeList( _parent )
+KFMDirTree::KFMDirTree( QWidget *_parent, KfmGui *_gui ) : KFinder( _parent )
 {
-	setFrameStyle(QFrame::NoFrame);
+    connect( KIOServer::getKIOServer(), SIGNAL( notify( const char * ) ), this,
+    	     SLOT( slotDirectoryChanged( const char * ) ) );
+
+    gui = _gui;
+    popupMenu = new QPopupMenu();
 }
 
-KFMTree::~KFMTree()
+void KFMDirTree::fill()
 {
-}
-    
-void KFMTree::mousePressEvent( QMouseEvent *_e )
-{
-    // find out which row has been clicked
-    
-    QPoint mouseCoord = _e->pos();
-    int itemClicked = findRow( mouseCoord.y() );
-    
-    // if a valid row was not clicked, do nothing
-    
-    if( itemClicked == -1 ) 
+    DIR *dp = 0L;
+    struct dirent *ep;
+    struct stat buff;
+
+    dp = 0L;
+    dp = opendir( "/" );
+    if ( dp == 0L )
+    {
+	warning( "Could not enter directory /" );
 	return;
-
-    KTreeListItem *item = itemAt( itemClicked );
-    if( !item )
-	return;
-  
-    // translate mouse coord to cell coord
-  
-    int  cellX, cellY;
-    colXPos( 0, &cellX );
-    rowYPos( itemClicked, &cellY );
-    QPoint cellCoord( mouseCoord.x() - cellX, mouseCoord.y() - cellY );
-
-    if ( _e->button() == RightButton )
+    }
+    
+    while ( ( ep = readdir( dp ) ) != 0L )
     {
-	// hit test item
- 
-	if ( item->boundingRect(fontMetrics()).contains(cellCoord) )
+	QString name( "/" );
+	name += ep->d_name;
+
+	if ( name != "/." && name != "/.." )
 	{
-	    QPoint p = mapToGlobal( _e->pos() );
-	    emit showPopup( itemClicked, p );
-	}
-    }
-    else if ( _e->button() == MidButton )
-    {
-    }
-    else
-	KTreeList::mousePressEvent( _e );
-}
-
-/*************************************************
- *
- * CLASS KFMTreeView
- *
- ************************************************/
-
-KFMTreeView::KFMTreeView( QWidget *parent ) : QWidget(parent )
-{
-  oldPath.setAutoDelete(true);
-
-  // load the pixmaps we'll be using
-
-  QString d = kapp->kdedir();
-  d += "/share/apps/kfm/pics/closed.xpm";
-  closedPixmap = new QPixmap();
-  closedPixmap->load( d.data() );
-  if ( closedPixmap->isNull() )
-      QMessageBox::message( "KFM Error", "Could not find\n" + d );
-  
-  d = kapp->kdedir();
-  d += "/share/apps/kfm/pics/open.xpm";
-  openPixmap = new QPixmap();
-  openPixmap->load( d.data() );
-  if ( openPixmap->isNull() )
-      QMessageBox::message( "KFM Error", "Could not find\n" + d );
-  
-  // set up child widgets
-  
-  dirTree = new KFMTree(this);
-  dirTree->setExpandLevel(1);
-    
-  // when an item in the directory tree is highlighted, selected or 
-  // expanded, notify us so we can do something
-  
-  connect(dirTree, SIGNAL(highlighted(int)), this, SLOT(slotDirHighlighted(int)));
-  connect(dirTree, SIGNAL(expanded(int)), this, SLOT(slotDirExpanded(int)));
-  connect(dirTree, SIGNAL(selected(int)), this, SLOT(slotDirSelected(int)));
-  connect(dirTree, SIGNAL(showPopup(int, QPoint&)), this, SLOT(slotShowPopup(int, QPoint&)));
-  
-  // set initial size
-  resize(300, 400);
-  
-  // initializeTree();  
-}
-
-KFMTreeView::~KFMTreeView()
-{
-  // delete the pixmaps
-  // child widgets will be deleted automatically
-  
-  delete closedPixmap;
-  delete openPixmap;
-}
-      
-void KFMTreeView::slotDirExpanded( int index )
-{
-  advanceReadDirectories(index);
-}
-
-// here's where we change the folder pixmaps and list the
-// files in the highlighted directory
-
-void KFMTreeView::slotDirHighlighted( int index )
-{
-    if ( !oldPath.isEmpty() )
-    {
-	dirTree->changeItem(0, closedPixmap, &oldPath);
-	oldPath.clear();
-    }
-
-    oldPath = *dirTree->itemPath(index);
-    dirTree->changeItem(0, openPixmap, &oldPath);
-
-    /* QString dirPath;
-    KPath pathCopy = oldPath;
-    while( !pathCopy.isEmpty() )
-    {
-	dirPath.prepend(*pathCopy.pop());
-	dirPath.prepend("/");
-    }
-
-    int i = 0;
-    while ( dirPath.data()[i] == '/' )
-	i++;
-    QString d = "file:/";
-    d += dirPath.data() + i;
-    
-    emit showDir( d.data() ); */
-}
-
-void KFMTreeView::slotShowPopup( int index, QPoint &_point )
-{
-
-    if ( !oldPath.isEmpty() )
-    {
-	dirTree->changeItem(0, closedPixmap, &oldPath);
-	oldPath.clear();
-    }
-
-    oldPath = *dirTree->itemPath(index);
-    dirTree->changeItem(0, openPixmap, &oldPath);
-    QString dirPath;
-    KPath pathCopy = oldPath;
-    while( !pathCopy.isEmpty() )
-    {
-	dirPath.prepend(*pathCopy.pop());
-	dirPath.prepend("/");
-    }
-
-    int i = 0;
-    while ( dirPath.data()[i] == '/' )
-	i++;
-    QString d = "file:/";
-    d += dirPath.data() + i;
-    
-    emit popupMenu( d.data(), _point );
-    
-    debugT("!!!!!!! POPUP %s\n",d.data());
-}
-
-void KFMTreeView::slotDirSelected(int index)
-{
-    dirTree->expandOrCollapseItem( index );
-
-    oldPath = *dirTree->itemPath(index);
-    dirTree->changeItem(0, openPixmap, &oldPath);
-    QString dirPath;
-    KPath pathCopy = oldPath;
-    while( !pathCopy.isEmpty() )
-    {
-	dirPath.prepend(*pathCopy.pop());
-	dirPath.prepend("/");
-    }
-
-    int i = 0;
-    while ( dirPath.data()[i] == '/' )
-	i++;
-    QString d = "file:/";
-    d += dirPath.data() + i;
-    
-    emit showDir( d.data() );
-    
-    debugT("!!!!!!! SHOW %s\n",d.data());
-}
-
-// reads directories one level deeper in advance of tree expansion
-
-void KFMTreeView::advanceReadDirectories( int index )
-{
-    KTreeListItem *parentItem = dirTree->itemAt( index );
-    KPath *treePath = dirTree->itemPath( index );
-    KTreeListItem *childItem = parentItem->getChild();
-
-    while( childItem )
-    {
-	if ( childItem->hasChild() )
-	    return; // already read!!!
-
-	const char *childDir = childItem->getText();
-	KPath treePathCopy = *treePath;
-	QString filePath = childDir;
-
-	while( !treePathCopy.isEmpty() )
-	{
-	    filePath.prepend("/");
-	    filePath.prepend(*treePathCopy.pop());
-	}
-
-	treePath->push( new QString(childDir) );
-
-	QDir dir( filePath );
-	const QStrList *dirs = dir.entryList(QDir::Dirs | QDir::Readable);
-
-	if ( dirs && dirs->count() != 2 )
-	{ // prevent core dumps in /proc!
-	    QStrListIterator i(*dirs);
-	    for( ; i.current(); ++i )
+	    lstat( name, &buff );
+	    
+	    if ( S_ISDIR( buff.st_mode ) )
 	    {
-		QString currDir(i.current());
-		if(currDir == "." || currDir == "..")
-		    continue;
-		dirTree->addChildItem(currDir, closedPixmap, treePath);
+		KFMDirTreeItem *item = new KFMDirTreeItem( this, name, FALSE );
+		node.append( item );
 	    }
 	}
+    }
+    closedir( dp );
+    
+    changeTree( &node );
+}
 
-	childItem = childItem->getSibling();
-	treePath->pop();
+void KFMDirTree::slotDirectoryChanged( const char *_url )
+{
+    printf("NOTIFY DIRTREE '%s'\n",_url);
+    
+    KURL u( _url );
+    if ( u.isMalformed() )
+	return;
+    
+    printf("Processing\n");
+    
+    // Prepare the path in a way that allows quick comparison
+    // with the return value of KFMDirTreeItem::getURL
+    QString tmp( u.path() );
+    if ( tmp.right(1) == "/" )
+	tmp.truncate( tmp.length() - 1 );
+
+    printf("Checking '%s'\n",tmp.data() );
+    
+    // Do we display this URL ?
+    KFinderItem *item;
+    KFMDirTreeItem *kfmitem;
+    for ( item = first(); item != 0L; item = next() )
+    {
+	kfmitem = (KFMDirTreeItem*)item;
+	debugT("COMAPRING '%s' '%s'\n",tmp.data(),kfmitem->getURL());
+	if ( tmp == kfmitem->getURL() )
+	{
+	    update();
+	    return;
+	}
+    }
+}
+
+void KFMDirTree::update()
+{
+    int ypos, xpos;
+    finderWin->offsets( xpos, ypos );
+        
+    printf("UPDATE\n");
+    
+    // Get a list of all visisble items
+    QList<KFinderItem> openList;
+    openList.setAutoDelete( FALSE);
+    itemList( openList );
+
+    // Find all open items
+    QStrList openURLList;
+    KFinderItem *item;
+    KFMDirTreeItem *kfmitem;
+    for ( item = openList.first(); item != 0L; item = openList.next() )
+    {
+	if ( item->isOpen() )
+	{
+	    kfmitem = (KFMDirTreeItem*)item;
+	    openURLList.append( kfmitem->getURL() );
+	}
     }
 
-    delete treePath;
+    // Clean the tree
+    node.clear();
+    // Fill the tree with level 0
+    fill();
+    
+    // Reopen every directory that was open before
+    QList<KFinderNode> nodeList;
+    nodeList.setAutoDelete( FALSE );
+    nodeList.append( &node );
+    KFinderNode *n;
+
+    QListIterator<KFinderNode> it(nodeList);
+    for ( ; it.current(); ++it )
+    {   
+	n = it.current();
+	for ( item = n->first(); item != 0L; item = n->next() )
+	{
+	    kfmitem = (KFMDirTreeItem*)item;
+	    // Was this item open ?
+	    if ( openURLList.find( kfmitem->getURL() ) != -1 )
+	    {
+		// Open it again
+		item->setOpen( TRUE );
+		// Traverse its items, too
+		nodeList.append( item->node() );
+	    }
+	}
+    }
+
+    // Initialize but dont paint
+    updateTree( FALSE );
+
+    // Adjust scrollbars to original position if possible
+    finderWin->setOffsets( xpos, ypos );
+    
+    finderWin->repaint();
 }
-      
-// reads root directory and fills the tree list to two levels deep
 
-void KFMTreeView::initializeTree()
+void KFMDirTree::openDropMenu( const char *_dest, QStrList &_urls, const QPoint &_p )
 {
-    QDir rootDir = QDir::root();
-    QString rootName = rootDir.absPath();
-    dirTree->insertItem(rootName, closedPixmap, -1);
-    KPath path;
-    path.push(&rootName);
-    const QStrList *dirs = rootDir.entryList( QDir::Dirs | QDir::Readable );
+    dropDestination = _dest;
+    dropDestination.detach();
+    dropSource.copy( _urls );
+    
+    popupMenu->clear();
 
-    if( dirs->count() == 2 )
+    int id = -1;
+    // Ask wether we can read from the dropped URL.
+    if ( KIOServer::supports( _urls, KIO_Read ) &&
+	 KIOServer::supports( _dest, KIO_Write ) )
+	id = popupMenu->insertItem(  klocale->translate("Copy"), 
+				     this, SLOT( slotDropCopy() ) );
+    // Ask wether we can read from the URL and delete it afterwards
+    if ( KIOServer::supports( _urls, KIO_Move ) &&
+	 KIOServer::supports( _dest, KIO_Write ) )
+	id = popupMenu->insertItem(  klocale->translate("Move"),
+				     this, SLOT( slotDropMove() ) );
+    // Ask wether we can link the URL 
+    if ( KIOServer::supports( _dest, KIO_Link ) )
+	id = popupMenu->insertItem(  klocale->translate("Link"), 
+				     this, SLOT( slotDropLink() ) );
+    if ( id == -1 )
+    {
+	QMessageBox::message(  klocale->translate("KFM Error"),
+			       klocale->translate("Dont know what to do") );
+	return;
+    }
+
+    // Show the popup menu
+    popupMenu->popup( _p );
+}
+
+void KFMDirTree::slotDropCopy()
+{
+    KIOJob * job = new KIOJob;
+    job->copy( dropSource, dropDestination.data() );
+}
+
+void KFMDirTree::slotDropMove()
+{
+    KIOJob * job = new KIOJob;
+    job->move( dropSource, dropDestination.data() );
+}
+
+void KFMDirTree::slotDropLink()
+{
+    KIOJob * job = new KIOJob;
+    job->link( dropSource, dropDestination.data() );
+}
+
+void KFMDirTree::openPopupMenu( const char *_url, const QPoint &_point )
+{
+    popupMenu->clear();
+
+    // Store for later use
+    popupDir = _url;
+    
+    if ( KIOServer::isTrash( _url ) )
+    {
+	int id;
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_CD), 
+				    this, SLOT( slotPopupCd() ) );
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_NEW_VIEW), 
+				    this, SLOT( slotPopupNewView() ) );
+	popupMenu->insertSeparator();    
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_TRASH), 
+				    this, SLOT( slotPopupEmptyTrashBin() ) );
+    } 
+    else
+    {
+	int id;
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_CD),
+				    this, SLOT( slotPopupCd() ) );
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_NEW_VIEW), 
+				    this, SLOT( slotPopupNewView() ) );
+	popupMenu->insertSeparator();    
+	if ( KIOServer::supports( _url, KIO_Read ) )
+	    id = popupMenu->insertItem( klocale->translate("Copy"), 
+					this, SLOT( slotPopupCopy() ) );
+	if ( KIOServer::supports( _url, KIO_Write ) && KfmView::clipboard.count() != 0 )
+	    id = popupMenu->insertItem( klocale->translate("Paste"), 
+					this, SLOT( slotPopupPaste() ) );
+	if ( KIOServer::supports( _url, KIO_Move ) )
+	    id = popupMenu->insertItem( klocale->translate("Move to Trash"),  
+					this, SLOT( slotPopupTrash() ) );
+	if ( KIOServer::supports( _url, KIO_Delete ) )
+	    id = popupMenu->insertItem( klocale->translate("Delete"),  
+					this, SLOT( slotPopupDelete() ) );
+    }
+
+    popupMenu->insertItem( klocale->translate("Add To Bookmarks"), 
+			   this, SLOT( slotPopupBookmarks() ) );
+    popupMenu->insertSeparator();    
+    popupMenu->insertItem( klocale->translate("Properties"),
+			   this, SLOT( slotPopupProperties() ) );
+    popupMenu->popup( _point );
+}
+
+void KFMDirTree::slotPopupNewView()
+{
+    KfmGui *m = new KfmGui( 0L, 0L, popupDir );
+    m->show();
+}
+
+void KFMDirTree::slotPopupCd()
+{
+    emit urlSelected( popupDir, LeftButton );
+}
+
+void KFMDirTree::slotPopupProperties()
+{
+    new Properties( popupDir );
+}
+
+void KFMDirTree::slotPopupBookmarks()
+{
+    gui->addBookmark( popupDir, popupDir );
+}
+
+void KFMDirTree::slotPopupEmptyTrashBin()
+{
+    QString d = KFMPaths::TrashPath();
+    QStrList trash;
+    
+    DIR *dp;
+    struct dirent *ep;
+    dp = opendir( d );
+    if ( dp )
+    {
+	// Create list of all trash files
+	while ( ( ep = readdir( dp ) ) != 0L )
+	{
+	    if ( strcmp( ep->d_name, "." ) != 0L && strcmp( ep->d_name, ".." ) != 0L )
+	    {
+		QString t = "file:" + d + ep->d_name;
+		trash.append( t.data() );
+	    }
+	}
+	closedir( dp );
+    }
+    else
+    {
+      QMessageBox::message( klocale->translate("KFM Error"), 
+			    klocale->translate("Could not access Trash Bin") );
+	return;
+    }
+    
+    // Delete all trash files
+    KIOJob * job = new KIOJob;
+    job->del( trash );
+}
+
+void KFMDirTree::slotPopupCopy()
+{
+    KfmView::clipboard.clear();
+    KfmView::clipboard.append( popupDir );
+}
+
+void KFMDirTree::slotPopupPaste()
+{
+    KIOJob * job = new KIOJob;
+    job->copy( KfmView::clipboard, popupDir );
+}
+
+void KFMDirTree::slotPopupTrash()
+{
+    // This function will emit a signal that causes us to redisplay the
+    // contents of our directory if neccessary.
+    KIOJob * job = new KIOJob;
+    
+    QString dest = "file:" + KFMPaths::TrashPath();
+ 
+    job->setOverWriteExistingFiles( TRUE );
+    QStrList list;
+    list.append( popupDir );
+    job->move( list, dest );
+}
+
+void KFMDirTree::slotPopupDelete()
+{   
+    // Is the user really shure ?
+    bool ok = QMessageBox::query( klocale->translate("KFM Warning"), 
+				  klocale->translate("Do you really want to delete the files?\n\nThere is no way to restore them"), 
+				  klocale->translate("Yes"), 
+				  klocale->translate("No") );
+    if ( ok )
+    {
+	QString str( popupDir.data() );
+	KURL::decodeURL( str );
+	KIOJob * job = new KIOJob;
+	job->del( str );
+    }
+}
+
+void KFMDirTree::emitUrlSelected( const char *_url, int _button )
+{
+    emit urlSelected( _url, _button );
+}
+
+KFMDirTreeItem::KFMDirTreeItem( KFMDirTree *_finder, const char *_url, bool _isfile  ) : KFinderItem( _finder )
+{
+    dirTree = _finder;
+    
+    bFilled = FALSE;
+    bIsFile = _isfile;
+    
+    url = _url;
+    
+    QString tmp = _url;
+    if ( tmp.right(1) == "/" && tmp != "/" && tmp.right(2) != ":/" )
+	tmp.truncate( tmp.length() - 1 );
+    KURL u( tmp );
+    
+    name = u.filename();
+
+    // Find the correct icon
+    QString pixmapFile( folderType->getPixmapFile( url, TRUE ) );
+    // Is the icon cached ?
+    pixmap = KMimeType::pixmapCache->find( pixmapFile );
+    // If not => create a new icon
+    if ( pixmap == 0L )
+    {
+	pixmap = new QPixmap();
+	pixmap->load( pixmapFile );
+	KMimeType::pixmapCache->insert( pixmapFile, pixmap );
+    }    
+}
+
+void KFMDirTreeItem::paintCell( QPainter *_painter, int _col )
+{
+    int x = 0;
+    
+    if ( _col == 0 )
+    {
+	if ( !bIsFile )
+	{
+	    if ( bOpened )
+		_painter->drawPixmap( QPoint( 4, ( CELL_HEIGHT - PIXMAP_HEIGHT ) / 2 ), KFinder::getOpenPixmap() );
+	    else
+		_painter->drawPixmap( QPoint( 4, ( CELL_HEIGHT - PIXMAP_HEIGHT ) / 2 ), KFinder::getClosePixmap() );
+	}
+	
+	x += PIXMAP_WIDTH + 4;
+	x += ( PIXMAP_WIDTH + 6 ) * level;
+	
+	QFontMetrics fm = _painter->fontMetrics();
+	_painter->drawPixmap( QPoint( x+ 6, ( CELL_HEIGHT - PIXMAP_HEIGHT ) / 2 ), *pixmap );
+	_painter->setPen( black );
+	_painter->drawText( x + 6 + PIXMAP_WIDTH + 6, ( CELL_HEIGHT - fm.ascent() - fm.descent() ) / 2 + fm.ascent(), name );
+    }
+}
+
+void KFMDirTreeItem::pressed( QMouseEvent *_ev, const QPoint &_globalPoint  )
+{
+    if ( _ev->button() == RightButton )
+    {
+	dirTree->openPopupMenu( url, _globalPoint );
+	return;
+    }
+      
+    if ( bIsFile )
+    {
+	dirTree->emitUrlSelected( url, _ev->button() );
+	return;
+    }
+    
+    if ( _ev->pos().x() >= PIXMAP_WIDTH + 4 )
+    {
+	dirTree->emitUrlSelected( url, _ev->button() );
+	return;
+    }
+
+    setOpen( !bOpened );
+}
+
+void KFMDirTreeItem::setOpen( bool _open )
+{
+    if ( bOpened == _open )
 	return;
 
-    QStrListIterator i(*dirs);
-
-    for ( ; i.current(); ++i )
+    if ( bFilled )
     {
-	QString currDir(i.current());
-	if ( currDir == "." || currDir == "..")
-	    continue;
-
-	dirTree->addChildItem( currDir, closedPixmap, &path );
-	QDir subDir( rootDir.absFilePath( currDir ) );
-	const QStrList *subDirs = subDir.entryList( QDir::Dirs | QDir::Readable );
-	if ( subDirs->count() == 2 )
-	    continue;
-	QStrListIterator j( *subDirs );
-	path.push( new QString( currDir ) );
-
-	for( ; j.current(); ++j )
-	{
-	    QString currSubDir( j.current() );
-	    if ( currSubDir != "." && currSubDir != ".." )
-		dirTree->addChildItem( currSubDir, closedPixmap, &path );
-	}
-
-	QString *junk = path.pop();
-	delete junk;
+	bOpened = _open;
+	return;
     }
+    
+    bOpened = _open;
+    
+    KURL u( url );
+    
+    DIR *dp = 0L;
+    struct dirent *ep;
+    struct stat buff;
+
+    dp = 0L;
+    dp = opendir( u.path() );
+    if ( dp == 0L )
+    {
+	warning( "Could not enter directory %s", url.data() );
+	return;
+    }
+    
+    while ( ( ep = readdir( dp ) ) != 0L )
+    {
+	QString name(ep->d_name);
+	if ( name != "." && name != ".." )
+	{
+	    KURL u2( u, name );
+	    
+	    lstat( u2.path(), &buff );
+
+	    if ( S_ISDIR( buff.st_mode ) )
+	    {
+		KFMDirTreeItem *item = new KFMDirTreeItem( dirTree, u2.path(), FALSE );
+		finderNode->append( item );
+	    }
+	}
+    }
+    
+    closedir( dp );    
+    
+    bFilled = TRUE;    
 }
 
-// if the main window is resized, adjust the widget layout
-
-void KFMTreeView::resizeEvent(QResizeEvent *)
+void KFMDirTreeItem::dropEvent( QStrList &_urls, const QPoint &_point )
 {
-    dirTree->setGeometry( 0, 0, width(), height() );
+    dirTree->openDropMenu( url, _urls, _point );
+}
+
+KFMDirTreeItem::~KFMDirTreeItem()
+{
 }
 
 #include "kfmtree.moc"

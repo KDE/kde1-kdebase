@@ -70,7 +70,7 @@ KRootWidget::KRootWidget( QWidget *parent=0, const char *name=0 ) : QWidget( par
 
     icon_list.setAutoDelete( true );
     layoutList.setAutoDelete( true );
-    
+
     update();
 }
 
@@ -506,17 +506,17 @@ void KRootWidget::update()
 	    // This icon is missing on the screen.
 	    if ( icon == 0L )
 	    {
-		KRootIcon *icon;
-		KMimeType *typ = KMimeType::getMagicMimeType( file.data() );
+		KRootIcon *icon = 0L;
+		// KMimeType *typ = KMimeType::getMagicMimeType( file.data() );
 		QPoint p = findLayout( file );
 		if ( p.x() == 0 && p.y() == 0 )
 		{
-		    icon = new KRootIcon( typ->getPixmapFile( file.data() ), file, -200, -200 );
+		    icon = new KRootIcon( file, -200, -200 );
 		    p = findFreePlace( icon->QWidget::width(), icon->QWidget::height() );
 		    icon->move( p );
 		}
 		else
-		    icon = new KRootIcon( typ->getPixmapFile( file.data() ), file, p.x(), p.y() );
+		    icon = new KRootIcon( file, p.x(), p.y() );
 		icon_list.append( icon );
 		found_icons.append( icon );
 	    }	    
@@ -629,9 +629,8 @@ void KRootWidget::dropUpdateIcons( int _x, int _y )
 	    {
 		KMimeType *typ = KMimeType::getMagicMimeType( file.data() );
 		// KMimeType *typ = KMimeType::findType( file.data() );
-		QPixmap pix = typ->getPixmap( file.data() );
-		KRootIcon *icon = new KRootIcon( typ->getPixmapFile( file.data() ), file, _x - pix.width() / 2,
-						 _y - pix.height() / 2 );
+		QPixmap *pix = typ->getPixmap( file.data() );
+		KRootIcon *icon = new KRootIcon( file, _x - pix->width() / 2, _y - pix->height() / 2 );
 		icon_list.append( icon );
 		found_icons.append( icon );
 	    }	    
@@ -824,8 +823,6 @@ void KRootWidget::slotPropertiesChanged( const char *_url, const char *_new_name
 
 void KRootWidget::slotPopupCopy()
 {
-    debugT(":::::::::::::::::::: COPY ::::::::::::::::::::\n");
-    
     KfmView::clipboard.clear();
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
@@ -835,9 +832,6 @@ void KRootWidget::slotPopupCopy()
 void KRootWidget::slotPopupTrash()
 {
     KIOJob * job = new KIOJob;
-    char *s;
-    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
-      debugT("&&> '%s'\n",s);
     
     QString dest = "file:" + KFMPaths::TrashPath();
     job->move( popupFiles, dest );
@@ -897,7 +891,13 @@ void KRootWidget::slotPopupEmptyTrash()
     job->del( trash );
 }
 
-KRootIcon::KRootIcon( const char *_pixmap_file, QString &_url, int _x, int _y ) :
+/*********************************************************************
+ *
+ * KRootIcon
+ *
+ *********************************************************************/
+
+KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
     KDNDWidget( 0L, 0L, WStyle_Customize | WStyle_Tool | WStyle_NoBorder )
 {
     bSelected = FALSE;
@@ -906,9 +906,9 @@ KRootIcon::KRootIcon( const char *_pixmap_file, QString &_url, int _x, int _y ) 
     
     url = _url;
     url.detach();
-    pixmap.load( _pixmap_file );
-    pixmapFile = _pixmap_file;
-    pixmapFile.detach();
+
+    KMimeType *typ = KMimeType::getMagicMimeType( url );
+    pixmap = typ->getPixmap( url );
     
     init();
     initToolTip();
@@ -950,9 +950,9 @@ void KRootIcon::init()
     int width = p.fontMetrics().width( file.data() );
 
     int w = width;
-    if ( pixmap.width() > w )
+    if ( pixmap->width() > w )
     {
-	w = pixmap.width() + 8;
+	w = pixmap->width() + 8;
 	textXOffset = ( w - width ) / 2;
 	pixmapXOffset = 4;
     }
@@ -960,15 +960,15 @@ void KRootIcon::init()
     {
 	w += 8;
 	textXOffset = 4;
-	pixmapXOffset = ( w - pixmap.width() ) / 2;
+	pixmapXOffset = ( w - pixmap->width() ) / 2;
     }
 
     pixmapYOffset = 2;
-    textYOffset = pixmap.height() + 5 + ascent + 2;
+    textYOffset = pixmap->height() + 5 + ascent + 2;
 
     p.end();
 
-    mask.resize( w, pixmap.height() + 5 + ascent + descent + 4 );
+    mask.resize( w, pixmap->height() + 5 + ascent + descent + 4 );
     mask.fill( color0 );
     QPainter p2;
     p2.begin( &mask );
@@ -979,10 +979,10 @@ void KRootIcon::init()
     else
        p2.fillRect( textXOffset-1, textYOffset-ascent-1, width+2, ascent+descent+2, color1 );     
 
-    if ( pixmap.mask() == 0L )
-	p2.fillRect( pixmapXOffset, pixmapYOffset, pixmap.width(), pixmap.height(), color1 );
+    if ( pixmap->mask() == 0L )
+	p2.fillRect( pixmapXOffset, pixmapYOffset, pixmap->width(), pixmap->height(), color1 );
     else
-	bitBlt( &mask, pixmapXOffset, pixmapYOffset, pixmap.mask() );
+	bitBlt( &mask, pixmapXOffset, pixmapYOffset, pixmap->mask() );
     
     p2.end();
 
@@ -992,7 +992,7 @@ void KRootIcon::init()
       setBackgroundColor( root->iconBackground() );     
 
     this->width = w;
-    this->height = pixmap.height() + 5 + ascent + descent + 4;
+    this->height = pixmap->height() + 5 + ascent + descent + 4;
 }
 
 void KRootIcon::slotDropEvent( KDNDDropZone *_zone )
@@ -1034,7 +1034,7 @@ void KRootIcon::resizeEvent( QResizeEvent * )
 
 void KRootIcon::paintEvent( QPaintEvent * ) 
 {
-    bitBlt( this, pixmapXOffset, pixmapYOffset, &pixmap );
+    bitBlt( this, pixmapXOffset, pixmapYOffset, pixmap );
   
     QPainter p;
     p.begin( this );
@@ -1045,7 +1045,7 @@ void KRootIcon::paintEvent( QPaintEvent * )
     if ( bSelected )
     {
       p.setRasterOp( NotEraseROP );
-      p.fillRect( pixmapXOffset, pixmapYOffset, pixmap.width(), pixmap.height(), blue );
+      p.fillRect( pixmapXOffset, pixmapYOffset, pixmap->width(), pixmap->height(), blue );
     }
     
     p.end();
@@ -1056,7 +1056,6 @@ void KRootIcon::mousePressEvent( QMouseEvent *_mouse )
     // Does the user want to select the icon ?
     if ( _mouse->button() == LeftButton && ( _mouse->state() & ControlButton ) == ControlButton )
     {
-      debugT("Selecting\n");
       select( !bSelected );
     }
     else if ( _mouse->button() == LeftButton )
@@ -1132,14 +1131,13 @@ void KRootIcon::dndMouseMoveEvent( QMouseEvent *_mouse )
 
 	QPixmap pixmap2;
 	// No URL selected ?
-	if ( data.isNull() )
+	if ( data.isEmpty() )
 	    data = url;
 	else 
 	{
 	    // Multiple URLs ?
 	    if ( data.find( '\n' ) != -1 )
 	    {
-		debugT("*************** MULTIPLE ICONS ***************\n");
 		QString tmp = kapp->kdedir();
 		tmp += "/share/apps/kfm/pics/kmultiple.xpm";
 		pixmap2.load( tmp );
@@ -1157,26 +1155,23 @@ void KRootIcon::dndMouseMoveEvent( QMouseEvent *_mouse )
 	if ( !pixmap2.isNull() )
 	    startDrag( new KDNDIcon( pixmap2, p.x() + dx, p.y() + dy ), data.data(), data.length(), DndURL, dx, dy );
 	else
-	    startDrag( new KDNDIcon( pixmap, p.x() + dx, p.y() + dy ), data.data(), data.length(), DndURL, dx, dy );
+	    startDrag( new KDNDIcon( *pixmap, p.x() + dx, p.y() + dy ), data.data(), data.length(), DndURL, dx, dy );
     }
 }
 
 void KRootIcon::updatePixmap()
 {
+    QPixmap *tmp = pixmap;
+    
     KMimeType *typ = KMimeType::getMagicMimeType( url.data() );
-    // KMimeType *typ = KMimeType::findType( url.data() );
-    QString f = typ->getPixmapFile( url.data() );
-    if ( f == pixmapFile )
+    pixmap = typ->getPixmap( url );
+    
+    if ( pixmap == tmp )
 	return;
 
     QToolTip::remove( this );
     initToolTip();
     
-    debugT("Changing from '%s' to '%s\n",pixmapFile.data(),f.data());
-    
-    pixmapFile = f.data();
-    pixmapFile.detach();
-    pixmap = typ->getPixmap( url.data() );
     init();
     setGeometry( x(), y(), width, height );
     repaint();
@@ -1243,11 +1238,7 @@ void KRootIcon::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QPo
 	}
     }
     
-    debugT("Trying to copy\n");
-    
     popupMenu->clear();
-    
-    debugT("1\n");
     
     int id = -1;
     // Ask wether we can read from the dropped URL.
@@ -1271,10 +1262,8 @@ void KRootIcon::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QPo
 	return;
     }
 
-    debugT("2\n");
     // Show the popup menu
     popupMenu->popup( *_p );
-    debugT("3\n");
 }
 
 void KRootIcon::slotDropCopy()

@@ -1,6 +1,6 @@
 
 data_DATA = open.xpm closed.xpm kmultiple.xpm info.xpm exclamation.xpm stopsign.xpm question.xpm \
-	kde1.xpm kde2.xpm kde3.xpm kde4.xpm kde5.xpm kde6.xpm kde7.xpm kde8.xpm kde9.xpm
-
-datadir = $(prefix)/share/apps/kfm/pics
+	kde1.xpm kde2.xpm kde3.xpm kde4.xpm kde5.xpm kde6.xpm kde7.xpm kde8.xpm kde9.xpm \
+	open.xpm close.xpm
+datadir = @prefix@/share/apps/kfm/pics
 

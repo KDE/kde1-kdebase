@@ -230,10 +230,17 @@ void KfmGui::initPanner()
 
 void KfmGui::initTreeView()
 {
-    treeView = new KFMTreeView( pannerChild0 );
-    connect( treeView, SIGNAL( showDir( const char * ) ), this, SLOT( slotOpenURL( const char * ) ) );
-    connect( treeView, SIGNAL( popupMenu( const char *, const QPoint & )),
-	     this, SLOT( slotTreeViewPopupMenu( const char *, const QPoint &)) );
+    treeView = new KFMDirTree( pannerChild0, this );
+
+    connect( treeView, SIGNAL( urlSelected( const char *, int ) ),
+	     this, SLOT( slotTreeUrlSelected( const char *, int ) ) );
+
+    if ( bTreeView )
+    {
+	bTreeViewInitialized = true;
+	treeView->fill();  
+    }
+
     treeView->show();
 }
 
@@ -242,7 +249,6 @@ void KfmGui::initStatusBar()
     statusBar = new KStatusBar( this );
  
     statusBar->insertItem( (char*)klocale->translate("KFM"), 1 );
-    // statusBar->insertItem("Some long comment", 2 );
     
     statusBar->show();
     setStatusBar( statusBar );
@@ -346,6 +352,8 @@ void KfmGui::initMenu()
     mview->insertItem( klocale->translate("Split &window"),
 		       this, SLOT(slotSplitWindow()) ); */
     mview->insertSeparator();
+    mview->insertItem( klocale->translate("Rel&oad Tree"),
+		       this, SLOT(slotReloadTree()) );
     mview->insertItem( klocale->translate("&Reload Document"),
 		       view, SLOT(slotReload()) );
     mview->insertItem( klocale->translate("Rescan &bindings"),
@@ -571,6 +579,12 @@ void KfmGui::updateView()
     view->slotUpdateView();
 }
 
+void KfmGui::slotReloadTree()
+{
+    if ( bTreeViewInitialized )
+	treeView->update();
+}
+
 void KfmGui::slotURLEntered()
 {
     if ( view->getActiveView() )
@@ -629,7 +643,7 @@ void KfmGui::slotPannerChanged()
     if ( !bTreeViewInitialized )
     {
         bTreeViewInitialized = TRUE;
-        treeView->initializeTree();
+	treeView->fill();
     }
 
     if ( panner->getSeparator() == 0 )
@@ -941,7 +955,7 @@ void KfmGui::slotShowTreeView()
     if ( !bTreeViewInitialized )
     {
 	bTreeViewInitialized = true;
-	treeView->initializeTree();  
+	treeView->fill();  
     }
     
     mview->setItemChecked( mview->idAt( 1 ), bTreeView );
@@ -1051,11 +1065,25 @@ void KfmGui::slotHelp()
   kapp->invokeHTMLHelp( "kfm/kfm.html", "" );
 }
 
-void KfmGui::slotTreeViewPopupMenu( const char *_url, const QPoint & )
+void KfmGui::slotTreePopupMenu( const char *_url, const QPoint & )
 {
     debugT("slotPopupMenu single '%s'\n",_url);
+}
 
-    // TODO: viewManager->openPopupMenu( _url, _point );
+void KfmGui::slotTreeUrlSelected( const char *_url , int _button )
+{
+    if ( _button == LeftButton )
+    {
+	slotOpenURL( _url );
+	return;
+    }
+    
+    KfmGui *f = new KfmGui( 0L, 0L, _url );
+    f->show();
+}
+
+void KfmGui::slotTreeDrop( const char *, QStrList & )
+{
 }
 
 void KfmGui::slotTitle( const char *_title )

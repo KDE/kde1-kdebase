@@ -7,7 +7,7 @@
 #include <qobject.h>
 #include <ksock.h>
 #include <ctype.h>
-#include "ipc.h"
+#include "kfmipc.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>

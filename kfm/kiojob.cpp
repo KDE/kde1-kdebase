@@ -1671,7 +1671,10 @@ void KIOJob::done()
     {
 	debugT("NOTIFY '%s'\n",s);
 	if ( globalNotify )
+	{
+	    debugT("NOTIFY IS GLOBAL '%s'\n", s);
 	    KIOServer::sendNotify( s );
+	}
 	emit notify( id, s ); 
     }
 

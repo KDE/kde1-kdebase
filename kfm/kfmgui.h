@@ -219,6 +219,10 @@ public slots:
      * Menu "View->Document Source"
      */
     void slotViewDocumentSource();
+    /**
+     * Menu "View->Reload Tree"
+     */
+    void slotReloadTree();
     
     /**
      * Menu "Bookmarks->Add Bookmark"
@@ -286,7 +290,9 @@ public slots:
     /**
      * Called if the user presses the right mouse button over the tree view.
      */
-    void slotTreeViewPopupMenu( const char *_url, const QPoint &_point );
+    void slotTreePopupMenu( const char *_url, const QPoint &_point );
+    void slotTreeUrlSelected( const char *, int );
+    void slotTreeDrop( const char *, QStrList & );
 
     /**
      * Sets a new text for the status bar.
@@ -461,7 +467,7 @@ protected:
      */
     QString templatePath;
 
-    KFMTreeView *treeView;
+    KFMDirTree *treeView;
     bool bTreeViewInitialized;
     bool bTreeView;
 

@@ -47,21 +47,11 @@ KFMServer::KFMServer() : KfmIpcServer()
 	fclose( f );
 }
 
-void KFMServer::slotAuthorized( KFMClient * _client )
+void KFMServer::slotAccept( KSocket * _sock )
 {
-    connect( _client, SIGNAL( refreshDesktop() ), this, SLOT( slotRefreshDesktop() ) );
-    connect( _client, SIGNAL( openURL( const char* ) ), this, SLOT( slotOpenURL( const char *) ) );    
-    connect( _client, SIGNAL( refreshDirectory( const char* ) ), this, SLOT( slotRefreshDirectory( const char *) ) );    
-    connect( _client, SIGNAL( openProperties( const char* ) ), this, SLOT( slotOpenProperties( const char *) ) );    
-    connect( _client, SIGNAL( exec( const char*, const char* ) ),
-	     this, SLOT( slotExec( const char *, const char*) ) );    
-    connect( _client, SIGNAL( moveClient( const char*, const char* ) ), this,
-	     SLOT( slotMoveClients( const char *, const char* ) ) );    
-    connect( _client, SIGNAL( ask( int, int, const char*, const char* ) ), this,
-	     SLOT( slotAsk( int, int, const char *, const char* ) ) );    
-    connect( _client, SIGNAL( sortDesktop() ), this, SLOT( slotSortDesktop() ) );
-    connect( _client, SIGNAL( selectRootIcons( int, int, int, int, bool ) ),
-	     this, SLOT( slotSelectRootIcons( int, int, int, int, bool ) ) );
+    KfmIpc * i = new KFMClient( _sock, this );
+    connect( i, SIGNAL( authorized( KFMClient * ) ), this, SLOT( slotAuthorized( KFMClient * ) ) );
+    emit newClient( i );
 }
 
 #define root KRootWidget::getKRootWidget()
@@ -75,13 +65,6 @@ void KFMServer::slotSelectRootIcons( int _x, int _y, int _w, int _h, bool _add )
   root->selectIcons( r );
 }
 
-void KFMServer::slotAccept( KSocket * _sock )
-{
-    KfmIpc * i = new KFMClient( _sock );
-    connect( i, SIGNAL( authorized( KFMClient * ) ), this, SLOT( slotAuthorized( KFMClient * ) ) );
-    emit newClient( i );
-}
-
 void KFMServer::slotSortDesktop()
 {
     debugT("JOB: sortDesktop\n");
@@ -91,11 +74,6 @@ void KFMServer::slotSortDesktop()
 void KFMServer::slotRefreshDesktop()
 {
     KRootWidget::getKRootWidget()->update();
-}
-
-void KFMServer::slotAsk( int _x, int _y, const char *_src_urls, const char *_dest_url )
-{
-    new KFMAsk( this, _x, _y, _src_urls, _dest_url );
 }
 
 void KFMServer::slotMoveClients( const char *_src_urls, const char *_dest_url )
@@ -108,19 +86,15 @@ void KFMServer::slotMoveClients( const char *_src_urls, const char *_dest_url )
     if ( dest == "trash:/" )
 	dest = "file:" + KFMPaths::TrashPath();
 
-    debugT("Moving to '%s'\n",dest.data());
-    
     int i;
     while ( ( i = s.find( "\n" ) ) != -1 )
     {
 	QString t = s.left( i );
 	urlList.append( t.data() );
-	debugT("Appened '%s'\n",t.data());
 	s = s.mid( i + 1, s.length() );
     }
     
     urlList.append( s.data() );
-    debugT("Appened '%s'\n",s.data());
 
     KIOJob *job = new KIOJob();
     job->move( urlList, dest.data() );
@@ -262,9 +236,10 @@ void KFMServer::slotExec( const char* _url, const char * _binding )
 	KMimeBind::runBinding( _url, _binding, &sl ); */
 }
 
-KFMClient::KFMClient( KSocket *_sock ) : KfmIpc( _sock )
+KFMClient::KFMClient( KSocket *_sock, KFMServer *_server ) : KfmIpc( _sock )
 {
-    bAuth = true;
+    bAuth = FALSE;
+    server = _server;
     
     connect( this, SIGNAL( auth( const char* ) ), this, SLOT( slotAuth( const char* ) ) );
 }
@@ -303,17 +278,48 @@ void KFMClient::slotAuth( const char *_password )
 	     this, SLOT( slotCopy( const char*, const char* ) ) );
     connect( this, SIGNAL( move( const char*, const char* ) ), 
 	     this, SLOT( slotMove( const char*, const char* ) ) );
-
-    emit authorized( this );
+    connect( this, SIGNAL( copyClient( const char*, const char* ) ),
+	     server, SLOT( slotCopyClient( const char*, const char* ) ) );
+    connect( this, SIGNAL( moveClient( const char*, const char* ) ), 
+	     server, SLOT( slotMoveClient( const char*, const char* ) ) );
+    connect( this, SIGNAL( refreshDesktop() ), server, SLOT( slotRefreshDesktop() ) );
+    connect( this, SIGNAL( openURL( const char* ) ), server, SLOT( slotOpenURL( const char *) ) );    
+    connect( this, SIGNAL( refreshDirectory( const char* ) ), server, SLOT( slotRefreshDirectory( const char *) ) );    
+    connect( this, SIGNAL( openProperties( const char* ) ), server, SLOT( slotOpenProperties( const char *) ) );    
+    connect( this, SIGNAL( exec( const char*, const char* ) ),
+	     server, SLOT( slotExec( const char *, const char*) ) );    
+    connect( this, SIGNAL( sortDesktop() ), server, SLOT( slotSortDesktop() ) );
+    connect( this, SIGNAL( selectRootIcons( int, int, int, int, bool ) ),
+	     server, SLOT( slotSelectRootIcons( int, int, int, int, bool ) ) );
 }
 
-void KFMClient::slotCopy( const char *_src_url, const char * _dest_url )
+void KFMClient::slotCopy( const char *_src_urls, const char * _dest_url )
 {
-    KIOJob * job = new KIOJob();
+    QString s = _src_urls;
+    s.detach();
+    QStrList urlList;
+    
+    QString dest = _dest_url;
+    if ( dest == "trash:/" )
+	dest = "file:" + KFMPaths::TrashPath();
 
+    debugT("Moving to '%s'\n",dest.data());
+    
+    int i;
+    while ( ( i = s.find( "\n" ) ) != -1 )
+    {
+	QString t = s.left( i );
+	urlList.append( t.data() );
+	debugT("Appened '%s'\n",t.data());
+	s = s.mid( i + 1, s.length() );
+    }
+    
+    urlList.append( s.data() );
+    debugT("Appened '%s'\n",s.data());
+
+    KIOJob *job = new KIOJob();
     connect( job, SIGNAL( finished( int ) ), this, SLOT( finished( int ) ) );
-
-    job->copy( _src_url, _dest_url );    
+    job->copy( urlList, dest.data() );
 }
 
 void KFMClient::slotMove( const char *_src_urls, const char *_dest_url )
@@ -350,46 +356,4 @@ void KFMClient::finished( int )
     KfmIpc::finished();
 }
 
-// A Hack for KPanel
-KFMAsk::KFMAsk( KFMServer *_server, int _x, int _y, const char *_src_urls, const char *_dest_url )
-{
-    server = _server;
-    srcURLs = _src_urls;
-    destURL = _dest_url;
- 
-    popupMenu = new QPopupMenu();
-    
-    popupMenu->insertItem( "Copy", this, SLOT( slotCopy() ) );
-    popupMenu->insertItem( "Move", this, SLOT( slotMove() ) );
-    
-    QPoint p( _x, _y );
-    popupMenu->popup( p );   
-}
-
-void KFMAsk::slotMove()
-{
-    delete popupMenu;
-    server->slotMoveClients( srcURLs.data(), destURL.data() );
-    delete this;
-}
-
-void KFMAsk::slotCopy()
-{
-    delete popupMenu;
-    server->slotCopyClients( srcURLs.data(), destURL.data() );
-    delete this;
-}
-
-KFMAsk::~KFMAsk()
-{
-}
-
 #include "kfmserver.moc"
-
-
-
-
-
-
-
-

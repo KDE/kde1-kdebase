@@ -72,7 +72,7 @@ class KRootIcon : public KDNDWidget
 {
     Q_OBJECT
 public:
-    KRootIcon( const char * _pixmap_file, QString & _url, int _x, int _y );
+    KRootIcon( const char* _url, int _x, int _y );
     virtual ~KRootIcon();
 
     /// Updates the pixmap and the tool tip ( if required )
@@ -141,11 +141,10 @@ protected:
      * This is only the filename with no path in front of it.
      */
     QString file;
-    QPixmap pixmap;
     /**
-     * The filename of the currently displayed pixmap.
+     * Dont delete this pixmap. It is cached in @ref KMimeType::pixmapCache
      */
-    QString pixmapFile;
+    QPixmap *pixmap;
     QBitmap mask;
 
     int pixmapXOffset;

@@ -7,7 +7,7 @@
 #include <qobject.h>
 #include <ksock.h>
 #include <ctype.h>
-#include "ipc.h"
+#include "kfmipc.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -54,9 +54,9 @@ signals:
 private:
 	void parse_moveClient( char *_data, int _len );
 signals:
-	void ask(int _x, int _y, const char* _src, const char* _dest);
+	void copyClient(const char* _src, const char* _dest);
 private:
-	void parse_ask( char *_data, int _len );
+	void parse_copyClient( char *_data, int _len );
 signals:
 	void sortDesktop();
 private:

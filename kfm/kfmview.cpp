@@ -461,10 +461,6 @@ void KfmView::slotPopupTrash()
 
 void KfmView::slotPopupDelete()
 {
-    // This function will emit a signal that causes us to redisplay the
-    // contents of our directory if neccessary.
-    KIOJob * job = new KIOJob;
-    
     // Is the user really shure ?
     bool ok = QMessageBox::query( klocale->translate("KFM Warning"), 
 				  klocale->translate("Do you really want to delete the files?\n\nThere is no way to restore them"), 
@@ -482,7 +478,8 @@ void KfmView::slotPopupDelete()
 	    KURL::decodeURL( str );
 	    list.append( str );
 	}
-	
+
+	KIOJob * job = new KIOJob;	
 	job->del( list );
     }
 }

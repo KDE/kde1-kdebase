@@ -106,7 +106,6 @@ void KfmIpc::readEvent( KSocket *_sock )
     if ( n + cBody == bodyLen )
     {
 	pBody[bodyLen] = 0;
-	printf(">>'%s'\n",pBody);
 	bHeader = TRUE;
 	parse( pBody, bodyLen );
 	return;
@@ -130,7 +129,7 @@ void KfmIpc::parse( char *_data, int _len )
 	if ( strcmp( name, "copy" ) == 0 ) { parse_copy( _data, _len ); } else
 	if ( strcmp( name, "move" ) == 0 ) { parse_move( _data, _len ); } else
 	if ( strcmp( name, "moveClient" ) == 0 ) { parse_moveClient( _data, _len ); } else
-	if ( strcmp( name, "ask" ) == 0 ) { parse_ask( _data, _len ); } else
+	if ( strcmp( name, "copyClient" ) == 0 ) { parse_copyClient( _data, _len ); } else
 	if ( strcmp( name, "sortDesktop" ) == 0 ) { parse_sortDesktop( _data, _len ); } else
 	if ( strcmp( name, "auth" ) == 0 ) { parse_auth( _data, _len ); } else
 	if ( strcmp( name, "selectRootIcons" ) == 0 ) { parse_selectRootIcons( _data, _len ); } else

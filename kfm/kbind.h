@@ -9,6 +9,7 @@ class KFMConfig;
 #include <qlist.h>
 #include <qstrlist.h>
 #include <qfile.h>
+#include <qpmcache.h>
 
 #include <kurl.h>
 #include <kapp.h>
@@ -16,6 +17,17 @@ class KFMConfig;
 
 #include "kioserver.h"
 #include "kmimemagic.h"
+
+extern KMimeType *defaultType;
+extern KMimeType *kdelnkType;
+extern KMimeType *folderType;
+extern KMimeType *execType;
+extern KMimeType *batchType;
+extern KMimeType *lockedfolderType;
+extern KMimeType *PipeType;
+extern KMimeType *SocketType;
+extern KMimeType *CDevType;
+extern KMimeType *BDevType;   
 
 // A Hack, since KConfig has no constructor taking only a filename
 class KFMConfig : public KConfig
@@ -295,16 +307,16 @@ public:
      *         the content of the *.kdelnk file => You must tell
      *         about the URL if you want this feature.
      */
-    virtual const char* getPixmapFile( const char *_url );
+    virtual const char* getPixmapFile( const char *_url, bool _mini = FALSE );
     /**
      * This function returns the default icon.
      */
-    const char* getPixmapFile() { return pixmap_file.data(); }
+    const char* getPixmapFile( bool _mini = FALSE );
     /**
      * @returns the pixmap that is associated with this kind of
      *          mime type.
      */
-    virtual QPixmap& getPixmap( const char *_url );
+    virtual QPixmap* getPixmap( const char *_url, bool _mini = FALSE );
     /**
      * @return a pointer to the default binding.
      *         The return may be 0. In this case the user did not specify
@@ -404,7 +416,7 @@ public:
      *
      * @see #getMagicMimeType
      */
-    static const char* getPixmapFileStatic( const char *_filename );
+    static const char* getPixmapFileStatic( const char *_filename, bool _mini = FALSE );
 
     /**
      * Used to determine the mime type of a given file on the local
@@ -467,7 +479,9 @@ public:
     static const char* getIconPath() { return icon_path; }
 
     static const char* getDefaultPixmap() { return "unknown.xpm"; }
-    
+
+    static QPixmapCache* pixmapCache;
+   
     /**
      * Initializes the mime type detection module.
      */
@@ -506,11 +520,13 @@ protected:
      * The full qualified filename ( not an URL ) of the icons
      * pixmap.
      */
-    QString pixmap_file;
+    QString pixmapFile;
+    QString miniPixmapFile;
+    
     /**
      * The pixmap used for the icon.
      */
-    QPixmap pixmap;
+    QPixmap *pixmap;
 
     /**
      * The pattern matching this file. For example: "*.html".
@@ -568,7 +584,7 @@ public:
      * WARNING: This function is NOT reentrant. Copy the returned
      * string before calling the function again.
      */
-    virtual const char* getPixmapFile( const char *_url );
+    virtual const char* getPixmapFile( const char *_url, bool _mini = FALSE );
 
     /**
      * Get the pixmap for the given URL.
@@ -578,7 +594,7 @@ public:
      * WARNING: This function is NOT reentrant. Copy the returned
      * pixmap before calling the function again.
      */
-    virtual QPixmap& getPixmap( const char *_url );
+    virtual QPixmap* getPixmap( const char *_url, bool _mini = FALSE );
 
     /**
      * This function reads the comment in the ".directory" file
@@ -625,7 +641,7 @@ public:
      * WARNING: This function is NOT reentrant. Copy the returned
      * string before calling the function again.
      */
-    virtual const char* getPixmapFile( const char *_url );
+    virtual const char* getPixmapFile( const char *_url, bool _mini = FALSE );
 
     /**
      * Returns the pixmap that is associated with this kind of
@@ -634,7 +650,7 @@ public:
      * WARNING: This function is NOT reentrant. Copy the returned
      * pixmap before calling the function again.
      */
-    virtual QPixmap& getPixmap( const char *_url );
+    virtual QPixmap* getPixmap( const char *_url, bool _mini = FALSE );
 
     /**
      * The return value may be 0L if there is no comment at all.

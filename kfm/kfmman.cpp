@@ -924,7 +924,7 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
 	if ( KIOServer::supports( _urls, KIO_Read ) )
 	    id = popupMenu->insertItem( klocale->translate("Copy"), 
 					view, SLOT( slotPopupCopy() ) );
-	if ( KIOServer::supports( _urls, KIO_Write ) )
+	if ( KIOServer::supports( _urls, KIO_Write ) && KfmView::clipboard.count() != 0 )
 	    id = popupMenu->insertItem( klocale->translate("Paste"), 
 					view, SLOT( slotPopupPaste() ) );
 	if ( KIOServer::supports( _urls, KIO_Move ) )

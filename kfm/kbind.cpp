@@ -9,14 +9,15 @@
 #include <qtstream.h>
 
 #include <kurl.h>
+#include <klocale.h>
 
 #include "kbind.h"
 #include "kfmpaths.h"
 #include "kfmgui.h"
-#include <config-kfm.h>
+#include "config-kfm.h"
 #include "kfmexec.h"
 
-#include <klocale.h>
+QPixmapCache* KMimeType::pixmapCache = 0L;
 
 KMimeMagic* KMimeType::magic = 0L;
 
@@ -52,404 +53,143 @@ KFMConfig::~KFMConfig()
     delete pstream;
 }
 
-const char* KFolderType::getPixmapFile( const char *_url )
-{
-    pixmapFile2 = 0L;
-
-    QString decoded( _url );
-    KURL::decodeURL( decoded );
-
-    // Is this a file located in a tar archive ?
-    if ( strstr( _url, "tar:" ) != 0L )
-    {
-	KURL u( _url );
-	if ( !u.isMalformed() )
-	{
-	    // Get the last subprotocol
-	    QString child = u.childURL();
-	    // Do we really have some subprotocol ?
-	    if ( !child.isEmpty() )
-	    {
-		KURL u2( child );
-		// is "tar" the last subprotocol ?
-		if ( strcmp( u2.protocol(), "tar" ) == 0 )
-		{
-		    // We return an folder icon. Otherwise
-		    // we would get a folder icon with access denied!!!
-		    return folderType->getPixmapFile();
-		    /* pixmapFile2 = getIconPath();
-		    pixmapFile2.detach();
-		    pixmapFile2 += "/folder.xpm"; 
-		    return pixmapFile2.data(); */
-		}
-	    }
-	}
-    }
-    
-    if ( strncmp( _url, "file:", 5 ) != 0 )
-	return KMimeType::getPixmapFile( _url );
-
-    /* Stephan: this is Torben's code. It allows many (readonly) Trash bins 
-    int len = strlen( _url );
-    if ( ( len > 6 && strcmp( _url + len - 6, "/Trash" ) == 0 ) ||
-	 ( len > 7 && strcmp( _url + len - 7, "/Trash/" ) == 0 ) )
-      */
-    QString path = decoded;
-    if ( path.right(1) != "/" )
-       path += "/";
-    QString path2 = QString("file:") + KFMPaths::TrashPath();
-    
-    if ( path == path2 )
-    {
-        DIR *dp;
-        struct dirent *ep;
-        dp = opendir( decoded.data() + 5 );
-	// Stephan: Congratulation Torben for this trick :-)
-	// Torben: Thanks!
-        ep=readdir( dp );
-        ep=readdir( dp );      // ignore '.' and '..' dirent
-        if ( readdir( dp ) == 0L ) // third file is NULL entry -> empty directory
-        {
-           pixmapFile2 = getIconPath();
-           pixmapFile2.detach();
-           pixmapFile2 += "/kfm_trash.xpm";
-	   closedir( dp );
-	   return pixmapFile2.data();
-         }
-         else
-         {
-	   pixmapFile2 = getIconPath();
-	   pixmapFile2.detach();
-	   pixmapFile2 += "/kfm_fulltrash.xpm";
-	   closedir( dp );
-	   return pixmapFile2.data();
-         }
-    }
-    
-    QString n = decoded.data() + 5;
-    if ( _url[ decoded.length() - 1 ] != '/' )
-	n += "/";
-    n += ".directory";
-
-    /* FILE *fh = fopen( n.data(), "rb" );
-    if ( fh == 0L )
-	return KMimeType::getPixmapFile( _url );
-    
-    char buffer[ 1024 ];
-    buffer[0] = 0;
-    fgets( buffer, 1023, fh );
-    fclose( fh );
-
-    if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
-	return KMimeType::getPixmapFile( _url ); */
-
-    QFile f( n.data() );
-    if ( !f.open( IO_ReadOnly ) )
-	return KMimeType::getPixmapFile( _url );
-    
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
-    config.setGroup( "KDE Desktop Entry" );
-
-    QString icon = config.readEntry( "Icon" );
-    if ( icon.isEmpty() )
-	return KMimeType::getPixmapFile( _url );
-
-    /* pixmapFile2 = getIconPath();
-    pixmapFile2.detach();
-    pixmapFile2 += "/";
-    pixmapFile2 += icon.data(); */
-    pixmapFile2 = pixmap_file.data();
-    return pixmapFile2.data();
-}
-
-QPixmap& KFolderType::getPixmap( const char *_url )
-{
-    getPixmapFile( _url );
-    if ( pixmapFile2.isNull() )
-	pixmap.load( pixmap_file );
-    else
-	pixmap.load( pixmapFile2 );
-    return pixmap;
-}
-
-QString KFolderType::getComment( const char *_url )
-{
-    if ( strncmp( _url, "file:", 5 ) != 0 )
-	return QString( klocale->translate("Folder") );
-  
-    QString decoded( _url );
-    KURL::decodeURL( decoded );
-    
-    QString n = decoded.data() + 5;
-    if ( _url[ decoded.length() - 1 ] != '/' )
-	n += "/";
-    n += ".directory";
-
-    QFile f( n.data() );
-    if ( !f.open( IO_ReadOnly ) )
-	return QString( klocale->translate("Folder") );
-    
-    QTextStream pstream( &f );
-    KConfig config( &pstream );
-    config.setGroup( "KDE Desktop Entry" );
-    
-    QString com = config.readEntry( "Comment" );
-
-    if ( com.isNull() )
-	com = klocale->translate("Folder");
-    
-    return QString( com.data() );
-}
-
-const char* KDELnkMimeType::getPixmapFile( const char *_url )
-{
-    // Try to read the file as a [KDE Desktop Entry]
-    KFMConfig *config = KMimeBind::openKFMConfig( _url );
-    
-    if ( config != 0L )
-    {
-	QString typ = config->readEntry( "Type" );
-	if ( typ == "FSDevice" )
-	{
-	    QString dev = config->readEntry( "Dev" );
-	    QString icon = config->readEntry( "Icon" );	    
-	    QString icon2 = config->readEntry( "UnmountIcon" );	    
-	    delete config;
-	    
-	    if ( !dev.isEmpty() && !icon.isEmpty() && !icon2.isEmpty() )
-	    {
-		QString mp = KIOServer::findDeviceMountPoint( dev.data() );
-		pixmapFile2 = getIconPath();
-		pixmapFile2.detach();
-		pixmapFile2 += "/";
-		if ( mp.isNull() )
-		    pixmapFile2 += icon2.data();
-		else
-		    pixmapFile2 += icon.data();
-		return pixmapFile2.data();
-	    }
-	}
-	else
-	{
-	    QString icon = config->readEntry( "Icon" );
-	    delete config;
-	    debugT("ICON=%s '%s'\n",icon.data(),_url);
-	    if ( !icon.isEmpty() )
-	    {
-		pixmapFile2 = getIconPath();
-		pixmapFile2.detach();
-		pixmapFile2 += "/";
-		pixmapFile2 += icon.data();
-		return pixmapFile2.data();
-	    }
-	}
-    }
-    
-    // The default behavior.
-    /* pixmap_file = getIconPath();
-    pixmap_file.detach();
-    pixmap_file += "/kmailion.xpm";
-    return pixmap_file.data(); */
-    pixmapFile2 = KMimeType::getPixmapFile( _url );
-    return pixmapFile2.data();
-}
-
-QString KDELnkMimeType::getComment( const char *_url )
-{
-    KFMConfig *config = KMimeBind::openKFMConfig( _url );
-    
-    if ( config == 0L )
-	return QString();
-    
-    QString erg = config->readEntry( "Comment" );
-    return QString( erg.data() );
-}
-
-QPixmap& KDELnkMimeType::getPixmap( const char *_url )
-{
-    getPixmapFile( _url );
-    pixmap.load( pixmapFile2 );
-    return pixmap;
-}
+/***************************************************************
+ *
+ * KMimeType
+ *
+ ***************************************************************/
 
 KMimeType::KMimeType( const char *_mime_type, const char *_pixmap )
 {
+    if ( pixmapCache == 0L )
+	pixmapCache = new QPixmapCache;
+    
     bApplicationPattern = false;
     
     mimeType = _mime_type;
     mimeType.detach();
     
-    pixmap_file = getIconPath();
-    pixmap_file += "/";
-    pixmap_file.detach();
-    pixmap_file += _pixmap;
+    pixmapFile = getIconPath();
+    pixmapFile += "/";
+    pixmapFile.detach();
+    pixmapFile += _pixmap;
 
-    HTMLImage::cacheImage( pixmap_file.data() );
+    miniPixmapFile = getIconPath();
+    miniPixmapFile += "/mini/";
+    miniPixmapFile.detach();
+    miniPixmapFile += _pixmap;
+
+    pixmap = 0L;
+    
+    HTMLImage::cacheImage( pixmapFile.data() );
+}
+
+// We dont have a look at the URL ( the 1. parameter )
+QPixmap* KMimeType::getPixmap( const char *, bool _mini )
+{
+    if ( pixmap )
+	return pixmap;
+
+    pixmap = pixmapCache->find( getPixmapFile( _mini ) );
+    if ( pixmap == 0L )
+    {
+	pixmap = new QPixmap;
+	pixmap->load( getPixmapFile( _mini ) );
+	pixmapCache->insert( getPixmapFile( _mini ), pixmap );
+    }
+    
+    return pixmap;
+}
+
+// We dont have a look at the URL ( the 1. parameter )
+const char* KMimeType::getPixmapFile( const char *, bool _mini )
+{
+    if ( _mini )
+	return miniPixmapFile;
+    else
+	return pixmapFile;
+}
+
+const char* KMimeType::getPixmapFile( bool _mini )
+{
+    if ( _mini )
+	return miniPixmapFile;
+    else
+	return pixmapFile;
+}
+
+void KMimeType::setPixmap( const char *_file )
+{
+    pixmapFile = getIconPath();
+    pixmapFile.detach();
+    pixmapFile += "/";
+    pixmapFile += _file;
+
+    miniPixmapFile = getIconPath();
+    miniPixmapFile.detach();
+    miniPixmapFile += "/mini/";
+    miniPixmapFile += _file;
+    
+    HTMLImage::cacheImage( pixmapFile.data() );
+}
+
+KMimeType* KMimeType::getMagicMimeType( const char *_url )
+{
+    // Just for speedup, because KURL is slow
+    if ( strncmp( _url, "file:/", 6 ) == 0 || _url[0] == '/' )
+    {
+	KURL u( _url );
+	// Not a tar file ?
+	if ( !u.hasSubProtocol() )
+	{
+	    KMimeMagicResult* result = KMimeType::findFileType( u.path() );
+
+	    // Is it a directory or dont we know anything about it ?
+	    if ( result->getContent() == 0L || strcmp( "inode/directory", result->getContent() ) == 0 ) 
+		/* strcmp( "application/x-kdelnk", result->getContent() ) == 0 ) */
+		return KMimeType::findType( _url );
+
+	    // Can we trust the result ?
+	    if ( result->getAccuracy() >= 50 )
+	    {
+		KMimeType *type = KMimeType::findByName( result->getContent() );
+		// Do we know this mime type ?
+		if ( type )
+		    return type;
+	    }
+	    // Try the usual way
+	    KMimeType *type = KMimeType::findType( _url );
+	    // Perhaps we should better listen to the magic :-)
+	    if ( ( type == 0L || type->isDefault() ) && result->getContent() != 0L && result->getAccuracy() >= 30 )
+	    {
+		KMimeType *type = KMimeType::findByName( result->getContent() );
+		// Do we know this mime type ?
+		if ( type )
+		    return type;
+	    }
+	}
+    }
+    
+    return KMimeType::findType( _url );
+}
+
+const char* KMimeType::getPixmapFileStatic( const char *_url, bool _mini )
+{
+    return KMimeType::getMagicMimeType( _url )->getPixmapFile( _url, _mini );
+}
+
+void KMimeType::initKMimeMagic()
+{
+    // Magic file detection init
+    QString mimefile = kapp->kdedir();
+    mimefile += "/share/mimelnk/magic";
+    magic = new KMimeMagic( mimefile );
+    magic->setFollowLinks( TRUE );
 }
 
 bool KMimeType::isDefault()
 {
     return ( this == defaultType );
-}
-
-void KMimeBind::initApplications( const char * _path )
-{
-    DIR *dp;
-    struct dirent *ep;
-    dp = opendir( _path );
-    if ( dp == 0L )
-	return;
-    
-    // Loop thru all directory entries
-    while ( ( ep = readdir( dp ) ) != 0L )
-    {
-	if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
-	{
-	    QString tmp = ep->d_name;	
-    
-	    QString file = _path;
-	    file += "/";
-	    file += ep->d_name;
-	    struct stat buff;
-	    stat( file.data(), &buff );
-	    if ( S_ISDIR( buff.st_mode ) )
-		initApplications( file.data() );
-	    else if ( tmp.length() > 7 && tmp.right( 7 ) == ".kdelnk" )
-	    {
-		// The name of the application
-		QString app = ep->d_name;
-		if ( app.length() > 7 && app.right(7) == ".kdelnk" )
-		    app = app.left( app.length() - 7 );
-
-		KMimeBind::appendApplication( app.data() );
-		
-		QFile f( file.data() );
-		if ( !f.open( IO_ReadOnly ) )
-		    return;
-		
-		QTextStream pstream( &f );
-		KConfig config( &pstream );
-
-		config.setGroup( "KDE Desktop Entry" );
-		QString exec = config.readEntry( "Exec" );
-		// An icon for the binary
-		QString app_icon = config.readEntry( "Icon" );
-		// The pattern to identify the binary
-		QString app_pattern = config.readEntry( "BinaryPattern" );
-		QString comment = config.readEntry( "Comment" );
-		// A ';' separated list of extension groups
-		QString mime = config.readEntry( "MimeType" );
-		// A ';' separated list of protocols
-		QString protocols = config.readEntry( "Protocols" );
-		// Allow this program to be a default application for a mime type?
-		// For example gzip should never be a default for any mime type.
-		QString str_allowdefault = config.readEntry( "AllowDefault" );
-		bool allowdefault = true;
-		if ( str_allowdefault == "0" )
-		    allowdefault = false;
-		
-		// Define an icon for the program file perhaps ?
-		if ( !app_icon.isNull() && !app_pattern.isNull() )
-		{
-		    debugT("Installing binary pattern '%s' '%s'\n",app_pattern.data(),comment.data());
-		    KMimeType *t;
-		    types->append( t = new KMimeType( app.data(), app_icon.data() ) );
-		    t->setComment( comment.data() );
-		    t->setApplicationPattern();
-		    int pos2 = 0;
-		    int old_pos2 = 0;
-		    while ( ( pos2 = app_pattern.find( ";", pos2 ) ) != - 1 )
-		    {
-			QString pat = app_pattern.mid( old_pos2, pos2 - old_pos2 );
-			t->addPattern( pat.data() );
-			pos2++;
-			old_pos2 = pos2;
-		    }
-		} 
-		    
-		// Which protocols, e.g. file, http, tar, ftp, does the
-		// application support ?
-		int pos2 = 0;
-		int old_pos2 = 0;
-		QString prots[5];
-		int cp = 0;
-		while ( ( pos2 = protocols.find( ";", pos2 ) ) != - 1 )
-		{
-		    QString prot = protocols.mid( old_pos2, pos2 - old_pos2 );
-		    if ( cp <= 4 )
-		    {
-			prots[ cp ] = prot.data();
-			prots[ cp++ ].detach();
-		    }
-		    else
-		    {
-			QMessageBox::message( klocale->translate("Error"),
-					      klocale->translate("Too many protocols in file\n") + file );
-			pos2 = protocols.length();
-		    }
-		    
-		    pos2++;
-		    old_pos2 = pos2;
-		}
-		
-		// To which mime types is the application bound ?
-		pos2 = 0;
-		old_pos2 = 0;
-		while ( ( pos2 = mime.find( ";", pos2 ) ) != - 1 )
-		{
-		    // 'bind' is the name of a mime type
-		    QString bind = mime.mid( old_pos2, pos2 - old_pos2 );
-		    // Bind this application to all files/directories
-		    if ( strcasecmp( bind.data(), "all" ) == 0 )
-		    {
-			defaultType->append( new KMimeBind( app.data(), exec.data(), allowdefault,
-							    prots[0].data(),
-							    prots[1].data(), prots[2].data(),
-							    prots[3].data(), prots[4].data()) );
-			folderType->append( new KMimeBind( app.data(), exec.data(), allowdefault,
-							   prots[0].data(),
-							   prots[1].data(), prots[2].data(),
-							   prots[3].data(), prots[4].data() ) );
-		    }
-		    else if ( strcasecmp( bind.data(), "alldirs" ) == 0 )
-		    {
-			folderType->append( new KMimeBind( app.data(), exec.data(), allowdefault,
-							   prots[0].data(),
-							   prots[1].data(), prots[2].data(),
-							   prots[3].data(), prots[4].data() ) );
-		    }
-		    else if ( strcasecmp( bind.data(), "allfiles" ) == 0 )
-		    {
-			defaultType->append( new KMimeBind( app.data(), exec.data(), allowdefault,
-							    prots[0].data(),
-							    prots[1].data(), prots[2].data(),
-							    prots[3].data(), prots[4].data() ) );
-		    }
-		    // Bind this application to a mime type
-		    else
-		    {
-			KMimeType *t = KMimeType::findByName( bind.data() );
-			if ( t == 0 )
-			    QMessageBox::message( klocale->translate("ERROR"), 
-						  klocale->translate("Could not find mime type\n") + bind + "\n" + klocale->translate("in ") + file );
-			else
-			    t->append( new KMimeBind( app.data(), exec.data(), allowdefault,
-						      prots[0].data(),
-						      prots[1].data(), prots[2].data(),
-						      prots[3].data(), prots[4].data() ) );
-		    }
-		    
-		    pos2++;
-		    old_pos2 = pos2;
-		} 
-		
-		f.close();
-	    }
-	
-	}
-    }
-    (void) closedir( dp );
 }
 
 void KMimeType::initMimeTypes( const char* _path )
@@ -548,152 +288,6 @@ void KMimeType::init()
     ipath += "/share/icons";
     strcpy( icon_path, ipath.data() );
     
-    // KMimeType *ft;
-
-    // kdelnkType = new KDELnkMimeType();
-
-    // Read some informations about standard pixmaps.
-    // KConfig *config = KApplication::getKApplication()->getConfig();
-
-    // Read the deault icons
-    // QString icon;
-    
-    /* execType = new KMimeType();
-    icon = config->readEntry( "Executable" );
-    if ( icon.isNull() )
-    {
-	execType->setPixmap( "exec.xpm" );
-        strcpy( executablePixmap, "exec.xpm" );
-    }
-    else
-    {
-	execType->setPixmap( icon.data() );
-        strcpy( executablePixmap, icon.data() );
-    }
-    execType->setMimeType( "application/x-executable" );
-    execType->setComment( "Executable" );
-    
-    batchType = new KMimeType();
-    icon = config->readEntry( "Batch" );
-    if ( icon.isNull() )
-    {
-	strcpy( batchPixmap, "terminal.xpm" );
-	batchType->setPixmap( "terminal.xpm" );
-    }
-    else
-    {
-	batchType->setPixmap( icon.data() );
-	strcpy( batchPixmap, icon.data() );
-    }
-    batchType->setMimeType( "application/x-shellscript" );
-    batchType->setComment( "Shell Script" );
-    
-    PipeType = new KMimeType();
-    icon = config->readEntry( "Pipe" );
-    if ( icon.isNull() )
-    {
-      strcpy( PipePixmap, "pipe.xpm" );
-      PipeType->setPixmap( "pipe.xpm" );
-    }
-    else
-    {
-       PipeType->setPixmap( icon.data() );
-       strcpy( PipePixmap, icon.data() );
-    }
-    PipeType->setMimeType( "inode/fifo" );
-    PipeType->setComment( "Pipe" );
-
-
-    SocketType = new KMimeType();
-    icon = config->readEntry( "Socket" );
-    if ( icon.isNull() )
-    {
-       strcpy( SocketPixmap, "socket.xpm" );
-       SocketType->setPixmap( "socket.xpm" );
-    }
-    else
-    {
-       SocketType->setPixmap( icon.data() );
-       strcpy( SocketPixmap, icon.data() );
-    }
-    SocketType->setMimeType( "inode/socket" );
-    SocketType->setComment( "Socket" );
-
-
-    CDevType = new KMimeType();
-    icon = config->readEntry( "Chardevice" );
-    if ( icon.isNull() )
-    {
-       strcpy( CDevPixmap, "char_dev.xpm" );
-       CDevType->setPixmap( "char_dev.xpm" );
-    }
-    else
-    {
-       CDevType->setPixmap( icon.data() );
-       strcpy( CDevPixmap, icon.data() );
-    }
-    CDevType->setMimeType( "inode/chardevice" );
-    CDevType->setComment( "Character device" );  
-
-    BDevType = new KMimeType();
-    icon = config->readEntry( "Blockdevice" );
-    if ( icon.isNull() )
-    {
-       strcpy( BDevPixmap, "block_dev.xpm" );
-       BDevType->setPixmap( "block_dev.xpm" );
-    }
-    else
-    {
-       BDevType->setPixmap( icon.data() );
-       strcpy( BDevPixmap, icon.data() );
-    }
-    BDevType->setMimeType( "inode/blockdevice" );
-    BDevType->setComment( "Block device" );
-                            
-    defaultType = new KMimeType();
-    icon = config->readEntry( "Default" );
-    if ( icon.isNull() )
-    {
-	strcpy( defaultPixmap, "unknown.xpm" );
-	defaultType->setPixmap( "unknown.xpm" );
-    }
-    else
-    {
-	strcpy( defaultPixmap, icon.data() );
-	defaultType->setPixmap( icon.data() );
-    }
-    defaultType->setMimeType( "kfm/default" );
-
-    folderType = new KFolderType();
-    icon = config->readEntry( "Folder" );
-    if ( icon.isNull() )
-    {
-	strcpy( folderPixmap, "folder.xpm" );
-	folderType->setPixmap( "folder.xpm" );
-    }
-    else
-    {
-	strcpy( folderPixmap, icon.data() );
-    	folderType->setPixmap( icon.data() );
-    }
-    folderType->setMimeType( "inode/directory" );
-    folderType->setComment( "Folder" );
-    
-    lockedfolderType = new KFolderType();
-    icon = config->readEntry( "LockedFolder" );
-    if ( icon.isNull() )
-    {
-       strcpy( lockedfolderPixmap, "lockedfolder.xpm" );
-       lockedfolderType->setPixmap( "lockedfolder.xpm" );
-    }
-    else
-    {
-       strcpy( lockedfolderPixmap, icon.data() );
-       lockedfolderType->setPixmap( icon.data() );
-    }
-    lockedfolderType->setMimeType( "inode/directory-locked" );
-    lockedfolderType->setComment( "Locked Folder" );
-    */
     types = new QList<KMimeType>;
     types->setAutoDelete( true );
     
@@ -975,6 +569,9 @@ KMimeType* KMimeType::findType( const char *_url )
     return defaultType;
 }
 
+/**
+ * TODO: Some of this code belonks in KDELnkMimeType and others.
+ */
 void KMimeType::getBindings( QStrList &_list, const char *_url, bool _isdir )
 {
     KURL u( _url );
@@ -1117,6 +714,460 @@ KMimeBind* KMimeType::findBinding( const char *_name )
     return 0L;
 }
 
+/***************************************************************
+ *
+ * KFolderType
+ *
+ ***************************************************************/
+
+const char* KFolderType::getPixmapFile( const char *_url, bool _mini )
+{
+    /**
+     * This function is very tricky and dirty, but it is
+     * designed to be as fast as possible.
+     */
+
+    QString decoded( _url );
+    // Add the protocol if its is missing
+    if ( decoded[0] == '/' )
+	decoded.prepend( "file:" );
+    KURL::decodeURL( decoded );
+
+    // Is this a file located in a tar archive ?
+    // This is a preliminary and dirty check, but it
+    // is fast!
+    if ( strstr( decoded, "tar:/" ) != 0L )
+    {
+	// Now we check wether the preliminary test was right ...
+	KURL u( _url );
+	if ( !u.isMalformed() )
+	{
+	    // Get the last subprotocol
+	    QString child = u.childURL();
+	    // Do we really have some subprotocol ?
+	    if ( !child.isEmpty() )
+	    {
+		KURL u2( child );
+		// is "tar" the last subprotocol ?
+		if ( strcmp( u2.protocol(), "tar" ) == 0 )
+		    // We return an folder icon. Otherwise
+		    // we would get a folder icon with access denied!!!
+		    return folderType->getPixmapFile( _mini );
+	    }
+	}
+    }
+    
+    if ( strncmp( decoded, "file:", 5 ) != 0 )
+	return KMimeType::getPixmapFile( _url, _mini );
+
+    QString path = decoded;
+    if ( path.right(1) != "/" )
+       path += "/";
+    QString path2 = QString("file:") + KFMPaths::TrashPath();
+    
+    if ( path == path2 )
+    {
+        DIR *dp;
+        struct dirent *ep;
+	// "+5" to skip "file:", this is fast :-)
+        dp = opendir( decoded.data() + 5 );
+	// Stephan: Congratulation Torben for this trick :-)
+	// Torben: Thanks!
+        ep=readdir( dp );
+        ep=readdir( dp );      // ignore '.' and '..' dirent
+        if ( readdir( dp ) == 0L ) // third file is NULL entry -> empty directory
+        {
+           pixmapFile2 = getIconPath();
+           pixmapFile2.detach();
+	   if ( _mini )
+	       pixmapFile2 += "/mini/kfm_trash.xpm";
+	   else
+	       pixmapFile2 += "/kfm_trash.xpm";
+	   closedir( dp );
+	   return pixmapFile2.data();
+         }
+         else
+         {
+	   pixmapFile2 = getIconPath();
+	   pixmapFile2.detach();
+	   if ( _mini )
+	       pixmapFile2 += "/mini/kfm_fulltrash.xpm";
+	   else
+	       pixmapFile2 += "/kfm_fulltrash.xpm";
+	   closedir( dp );
+	   return pixmapFile2.data();
+         }
+    }
+    
+    // Skip "file:" =>  "+5"
+    QString n = decoded.data() + 5;
+    if ( n[ n.length() - 1 ] != '/' )
+	n += "/";
+    n += ".directory";
+
+    QFile f( n.data() );
+    if ( !f.open( IO_ReadOnly ) )
+	return KMimeType::getPixmapFile( _url, _mini );
+    
+    QTextStream pstream( &f );
+    KConfig config( &pstream );
+    config.setGroup( "KDE Desktop Entry" );
+
+    QString icon = config.readEntry( "Icon" );
+    f.close();
+    
+    if ( icon.isEmpty() )
+	return KMimeType::getPixmapFile( _url, _mini );
+
+    pixmapFile2 = getIconPath();
+    pixmapFile2.detach();
+    if ( _mini )
+	pixmapFile2 += "/";
+    else
+	pixmapFile2 += "/mini/";
+    pixmapFile2 += icon.data();
+
+    return pixmapFile2.data();
+}
+
+QPixmap* KFolderType::getPixmap( const char *_url, bool _mini )
+{
+    const char *_pixmapFile = getPixmapFile( _url, _mini );
+    pixmap = pixmapCache->find( _pixmapFile );
+    if ( pixmap == 0L )
+    {
+	pixmap = new QPixmap;
+	pixmap->load( _pixmapFile );
+	pixmapCache->insert( _pixmapFile, pixmap );
+    }
+    
+    return pixmap;
+}
+
+QString KFolderType::getComment( const char *_url )
+{
+    if ( strncmp( _url, "file:", 5 ) != 0 )
+	return QString( klocale->translate("Folder") );
+  
+    QString decoded( _url );
+    KURL::decodeURL( decoded );
+    
+    QString n = decoded.data() + 5;
+    if ( _url[ decoded.length() - 1 ] != '/' )
+	n += "/";
+    n += ".directory";
+
+    QFile f( n.data() );
+    if ( !f.open( IO_ReadOnly ) )
+	return QString( klocale->translate("Folder") );
+    
+    QTextStream pstream( &f );
+    KConfig config( &pstream );
+    config.setGroup( "KDE Desktop Entry" );
+    
+    QString com = config.readEntry( "Comment" );
+
+    if ( com.isNull() )
+	com = klocale->translate("Folder");
+    
+    return QString( com.data() );
+}
+
+/***************************************************************
+ *
+ * KDELnkMimeType
+ *
+ ***************************************************************/
+
+const char* KDELnkMimeType::getPixmapFile( const char *_url, bool _mini )
+{
+    // Try to read the file as a [KDE Desktop Entry]
+    KFMConfig *config = KMimeBind::openKFMConfig( _url );
+    
+    if ( config != 0L )
+    {
+	QString typ = config->readEntry( "Type" );
+	if ( typ == "FSDevice" )
+	{
+	    QString dev = config->readEntry( "Dev" );
+	    QString icon = config->readEntry( "Icon" );	    
+	    QString icon2 = config->readEntry( "UnmountIcon" );	    
+	    delete config;
+	    
+	    if ( !dev.isEmpty() && !icon.isEmpty() && !icon2.isEmpty() )
+	    {
+		QString mp = KIOServer::findDeviceMountPoint( dev.data() );
+		pixmapFile2 = getIconPath();
+		pixmapFile2.detach();
+		if ( _mini )
+		    pixmapFile2 += "/mini/";
+		else
+		    pixmapFile2 += "/";
+		if ( mp.isNull() )
+		    pixmapFile2 += icon2.data();
+		else
+		    pixmapFile2 += icon.data();
+		return pixmapFile2.data();
+	    }
+	}
+	else
+	{
+	    QString icon = config->readEntry( "Icon" );
+	    delete config;
+	    if ( !icon.isEmpty() )
+	    {
+		pixmapFile2 = getIconPath();
+		pixmapFile2.detach();
+		if ( _mini )
+		    pixmapFile2 += "/mini/";
+		else
+		    pixmapFile2 += "/";
+		pixmapFile2 += icon.data();
+		return pixmapFile2.data();
+	    }
+	}
+    }
+    
+    return KMimeType::getPixmapFile( _url, _mini );
+}
+
+QPixmap* KDELnkMimeType::getPixmap( const char *_url, bool _mini )
+{
+    const char *_pixmapFile = getPixmapFile( _url, _mini );
+    pixmap = pixmapCache->find( _pixmapFile );
+    if ( pixmap == 0L )
+    {
+	pixmap = new QPixmap;
+	pixmap->load( _pixmapFile );
+	pixmapCache->insert( _pixmapFile, pixmap );
+    }
+    
+    return pixmap;
+}
+
+QString KDELnkMimeType::getComment( const char *_url )
+{
+    KFMConfig *config = KMimeBind::openKFMConfig( _url );
+    
+    if ( config == 0L )
+	return QString();
+    
+    QString erg = config->readEntry( "Comment" );
+    return QString( erg.data() );
+}
+
+/***************************************************************
+ *
+ * KMimeBind
+ *
+ ***************************************************************/
+
+KMimeBind::KMimeBind( const char *_prg, const char *_cmd, bool _allowdefault, const char *_prot1, 
+		      const char *_prot2, const char *_prot3,
+		      const char *_prot4, const char *_prot5 )
+{
+    allowDefault = _allowdefault;
+    
+    program = _prg;
+    program.detach();
+  
+    cmd = _cmd;
+    cmd.detach();
+    
+    protocol1 = _prot1;
+    protocol1.detach();
+    
+    if ( _prot2 != 0 )
+    {
+	protocol2 = _prot2;
+	protocol2.detach();
+    }
+    else
+	protocol2 = "";
+    
+    if ( _prot3 != 0 )
+    {
+	protocol3 = _prot3;
+	protocol3.detach();
+    }
+    else
+	protocol3 = "";
+
+    if ( _prot4 != 0 )
+    {
+        protocol4 = _prot4;
+	protocol4.detach();
+    }
+    else
+	protocol4 = "";
+
+    if ( _prot5 != 0 )
+    {
+	protocol5 = _prot5;
+	protocol5.detach();
+    }
+    else
+	protocol5 = "";
+}
+
+void KMimeBind::initApplications( const char * _path )
+{
+    DIR *dp;
+    struct dirent *ep;
+    dp = opendir( _path );
+    if ( dp == 0L )
+	return;
+    
+    // Loop thru all directory entries
+    while ( ( ep = readdir( dp ) ) != 0L )
+    {
+	if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
+	{
+	    QString tmp = ep->d_name;	
+    
+	    QString file = _path;
+	    file += "/";
+	    file += ep->d_name;
+	    struct stat buff;
+	    stat( file.data(), &buff );
+	    if ( S_ISDIR( buff.st_mode ) )
+		initApplications( file.data() );
+	    else if ( tmp.length() > 7 && tmp.right( 7 ) == ".kdelnk" )
+	    {
+		// The name of the application
+		QString app = ep->d_name;
+		if ( app.length() > 7 && app.right(7) == ".kdelnk" )
+		    app = app.left( app.length() - 7 );
+
+		KMimeBind::appendApplication( app.data() );
+		
+		QFile f( file.data() );
+		if ( !f.open( IO_ReadOnly ) )
+		    return;
+		
+		QTextStream pstream( &f );
+		KConfig config( &pstream );
+
+		config.setGroup( "KDE Desktop Entry" );
+		QString exec = config.readEntry( "Exec" );
+		// An icon for the binary
+		QString app_icon = config.readEntry( "Icon" );
+		// The pattern to identify the binary
+		QString app_pattern = config.readEntry( "BinaryPattern" );
+		QString comment = config.readEntry( "Comment" );
+		// A ';' separated list of extension groups
+		QString mime = config.readEntry( "MimeType" );
+		// A ';' separated list of protocols
+		QString protocols = config.readEntry( "Protocols" );
+		// Allow this program to be a default application for a mime type?
+		// For example gzip should never be a default for any mime type.
+		QString str_allowdefault = config.readEntry( "AllowDefault" );
+		bool allowdefault = true;
+		if ( str_allowdefault == "0" )
+		    allowdefault = false;
+		
+		// Define an icon for the program file perhaps ?
+		if ( !app_icon.isNull() && !app_pattern.isNull() )
+		{
+		    KMimeType *t;
+		    types->append( t = new KMimeType( app.data(), app_icon.data() ) );
+		    t->setComment( comment.data() );
+		    t->setApplicationPattern();
+		    int pos2 = 0;
+		    int old_pos2 = 0;
+		    while ( ( pos2 = app_pattern.find( ";", pos2 ) ) != - 1 )
+		    {
+			QString pat = app_pattern.mid( old_pos2, pos2 - old_pos2 );
+			t->addPattern( pat.data() );
+			pos2++;
+			old_pos2 = pos2;
+		    }
+		} 
+		    
+		// Which protocols, e.g. file, http, tar, ftp, does the
+		// application support ?
+		int pos2 = 0;
+		int old_pos2 = 0;
+		QString prots[5];
+		int cp = 0;
+		while ( ( pos2 = protocols.find( ";", pos2 ) ) != - 1 )
+		{
+		    QString prot = protocols.mid( old_pos2, pos2 - old_pos2 );
+		    if ( cp <= 4 )
+		    {
+			prots[ cp ] = prot.data();
+			prots[ cp++ ].detach();
+		    }
+		    else
+		    {
+			QMessageBox::message( klocale->translate("Error"),
+					      klocale->translate("Too many protocols in file\n") + file );
+			pos2 = protocols.length();
+		    }
+		    
+		    pos2++;
+		    old_pos2 = pos2;
+		}
+		
+		// To which mime types is the application bound ?
+		pos2 = 0;
+		old_pos2 = 0;
+		while ( ( pos2 = mime.find( ";", pos2 ) ) != - 1 )
+		{
+		    // 'bind' is the name of a mime type
+		    QString bind = mime.mid( old_pos2, pos2 - old_pos2 );
+		    // Bind this application to all files/directories
+		    if ( strcasecmp( bind.data(), "all" ) == 0 )
+		    {
+			defaultType->append( new KMimeBind( app.data(), exec.data(), allowdefault,
+							    prots[0].data(),
+							    prots[1].data(), prots[2].data(),
+							    prots[3].data(), prots[4].data()) );
+			folderType->append( new KMimeBind( app.data(), exec.data(), allowdefault,
+							   prots[0].data(),
+							   prots[1].data(), prots[2].data(),
+							   prots[3].data(), prots[4].data() ) );
+		    }
+		    else if ( strcasecmp( bind.data(), "alldirs" ) == 0 )
+		    {
+			folderType->append( new KMimeBind( app.data(), exec.data(), allowdefault,
+							   prots[0].data(),
+							   prots[1].data(), prots[2].data(),
+							   prots[3].data(), prots[4].data() ) );
+		    }
+		    else if ( strcasecmp( bind.data(), "allfiles" ) == 0 )
+		    {
+			defaultType->append( new KMimeBind( app.data(), exec.data(), allowdefault,
+							    prots[0].data(),
+							    prots[1].data(), prots[2].data(),
+							    prots[3].data(), prots[4].data() ) );
+		    }
+		    // Bind this application to a mime type
+		    else
+		    {
+			KMimeType *t = KMimeType::findByName( bind.data() );
+			if ( t == 0 )
+			    QMessageBox::message( klocale->translate("ERROR"), 
+						  klocale->translate("Could not find mime type\n") + bind + "\n" + klocale->translate("in ") + file );
+			else
+			    t->append( new KMimeBind( app.data(), exec.data(), allowdefault,
+						      prots[0].data(),
+						      prots[1].data(), prots[2].data(),
+						      prots[3].data(), prots[4].data() ) );
+		    }
+		    
+		    pos2++;
+		    old_pos2 = pos2;
+		} 
+		
+		f.close();
+	    }
+	
+	}
+    }
+    (void) closedir( dp );
+}
+
 bool KMimeBind::runBinding( const char *_url, const char *_binding )
 {
     if ( _binding == 0L )
@@ -1132,22 +1183,6 @@ bool KMimeBind::runBinding( const char *_url, const char *_binding )
     KURL::decodeURL( decodedURL );
     
     KMimeType *typ = KMimeType::getMagicMimeType( _url );    
-    debugT("KMB: URL='%s' TYPE='%s'\n",_url, typ->getMimeType());
-    
-    /* KMimeBind *bind;
-    // We know the mime type ?
-    if ( typ )
-	// Iterate over all applications bound to the mime type
-	for ( bind = typ->firstBinding(); bind != 0L; bind = typ->nextBinding() )
-	{
-	    debugT("!!! '%s' vs '%s'\n",bind->getProgram(), _binding );
-	    // Is it the one we want ?
-	    if ( strcmp( bind->getProgram(), _binding ) == 0 )
-		return bind->runBinding( _url );
-	}
-
-    // Perhaps some binding is hard coded ?
-    return FALSE; */
     return typ->runBinding( _url, _binding );
 }
 
@@ -1161,8 +1196,6 @@ bool KMimeBind::runBinding( const char *_url )
     KURL::decodeURL( decodedPath );
     QString decodedURL( _url );
     KURL::decodeURL( decodedURL );
-
-    debugT("!!! '%s'\n",getCmd());
 
     QString quote1 = KIOServer::shellQuote( decodedPath ).copy();
     QString quote2 = KIOServer::shellQuote( decodedURL ).copy();
@@ -1280,13 +1313,7 @@ void KMimeBind::runCmd( const char *_cmd )
 	QString tmp = KIOServer::shellUnquote( p ).copy();
 	args.append( tmp );
     }
-    
-    // Delete the quotes around the executables name
-    /* if ( exec.left(1) == "\"" )
-	exec = exec.data() + 1;
-    if ( exec.right(1) == "\"" )
-	exec.truncate( exec.length() - 1 ); */
-    
+        
     char **argv = new char*[ args.count() + 3 ];
     char* s;
     int i = 0;
@@ -1318,7 +1345,6 @@ void KMimeBind::runCmd( const char *_cmd )
 
 	exit( 1 );
     }
-    debugT("Deleting\n");
     delete [] argv;
     delete [] cmd;
     debugT("PID of started process is '%i'\n",pid);
@@ -1362,132 +1388,6 @@ KFMConfig* KMimeBind::openKFMConfig( const char *_url )
     return config;
 }
 
-QPixmap& KMimeType::getPixmap( const char * )
-{
-    if ( pixmap.isNull() )
-	pixmap.load( pixmap_file );
-
-    return pixmap;
-}
-
-const char* KMimeType::getPixmapFile( const char * )
-{
-    return pixmap_file.data();
-}
-
-void KMimeType::setPixmap( const char *_file )
-{
-    pixmap_file = getIconPath();
-    pixmap_file.detach();
-    pixmap_file += "/";
-    pixmap_file += _file;
-
-    HTMLImage::cacheImage( pixmap_file.data() );
-}
-
-
-KMimeBind::KMimeBind( const char *_prg, const char *_cmd, bool _allowdefault, const char *_prot1, 
-		      const char *_prot2, const char *_prot3,
-		      const char *_prot4, const char *_prot5 )
-{
-    allowDefault = _allowdefault;
-    
-    program = _prg;
-    program.detach();
-  
-    cmd = _cmd;
-    cmd.detach();
-    
-    protocol1 = _prot1;
-    protocol1.detach();
-    
-    if ( _prot2 != 0 )
-    {
-	protocol2 = _prot2;
-	protocol2.detach();
-    }
-    else
-	protocol2 = "";
-    
-    if ( _prot3 != 0 )
-    {
-	protocol3 = _prot3;
-	protocol3.detach();
-    }
-    else
-	protocol3 = "";
-
-    if ( _prot4 != 0 )
-    {
-        protocol4 = _prot4;
-	protocol4.detach();
-    }
-    else
-	protocol4 = "";
-
-    if ( _prot5 != 0 )
-    {
-	protocol5 = _prot5;
-	protocol5.detach();
-    }
-    else
-	protocol5 = "";
-}
-
-KMimeType* KMimeType::getMagicMimeType( const char *_url )
-{
-    // Just for speedup, because KURL is slow
-    if ( strncmp( _url, "file:/", 6 ) == 0 || _url[0] == '/' )
-    {
-	KURL u( _url );
-	// Not a tar file ?
-	if ( !u.hasSubProtocol() )
-	{
-	    KMimeMagicResult* result = KMimeType::findFileType( u.path() );
-
-	    // Is it a directory or dont we know anything about it ?
-	    if ( result->getContent() == 0L || strcmp( "inode/directory", result->getContent() ) == 0 ) 
-		/* strcmp( "application/x-kdelnk", result->getContent() ) == 0 ) */
-		return KMimeType::findType( _url );
-
-	    // Can we trust the result ?
-	    if ( result->getAccuracy() >= 50 )
-	    {
-		KMimeType *type = KMimeType::findByName( result->getContent() );
-		// Do we know this mime type ?
-		if ( type )
-		    return type;
-	    }
-	    // Try the usual way
-	    KMimeType *type = KMimeType::findType( _url );
-	    // Perhaps we should better listen to the magic :-)
-	    if ( ( type == 0L || type->isDefault() ) && result->getContent() != 0L && result->getAccuracy() >= 30 )
-	    {
-		KMimeType *type = KMimeType::findByName( result->getContent() );
-		// Do we know this mime type ?
-		if ( type )
-		    return type;
-	    }
-	}
-    }
-    
-    return KMimeType::findType( _url );
-}
-
-const char* KMimeType::getPixmapFileStatic( const char *_url )
-{
-    return KMimeType::getMagicMimeType( _url )->getPixmapFile( _url );
-}
-
-void KMimeType::initKMimeMagic()
-{
-    // Magic file detection init
-    QString mimefile = kapp->kdedir();
-    mimefile += "/share/mimelnk/magic";
-    magic = new KMimeMagic( mimefile );
-    magic->setFollowLinks( TRUE );
-}
-
 bool KMimeBind::supportsProtocol( const char *_protocol )
 {
     if ( strcmp( protocol1, _protocol ) == 0 )
@@ -1521,8 +1421,6 @@ bool KMimeBind::supportsProtocol( const char *_protocol )
 
 bool KMimeType::run( const char *_url )
 {
-    debugT("*********************** MIST\n");
-    
     // Do we have some default binding ?
     if ( !defaultBinding.isEmpty() )
     {
@@ -1660,8 +1558,6 @@ bool ExecutableMimeType::runAsApplication( const char *_url, QStrList *_argument
 
 bool KDELnkMimeType::run( const char *_url )
 {
-    debugT("******************************** LNK RUN\n");
-    
     KURL u( _url );
     KFMConfig *config = 0L;
     // Is it a "[KDE Desktop Entry]" file and do we want to open it ?
@@ -1689,13 +1585,11 @@ bool KDELnkMimeType::run( const char *_url )
     }
 
     QString typ = config->readEntry( "Type" );
-    debugT("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Type='%s'\n",typ.data());
     
     // Must we start an executable ?
     if ( typ == "Application" )
     {
 	delete config;
-	debugT("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Application kdelnk\n");
 	return runAsApplication( _url, 0L );
     }
     // Is it a device like CDROM or Floppy ?
@@ -1717,7 +1611,6 @@ bool KDELnkMimeType::run( const char *_url )
 	    return TRUE;
 	}
 	
-	debugT("######################## It is a link\n");
 	KFMExec *exec = new KFMExec;
 	// Try to open the URl somehow
 	exec->openURL( url );
@@ -1903,7 +1796,6 @@ bool KDELnkMimeType::runBinding( const char *_url, const char *_binding )
 	return TRUE;
     }
 
-    debugT("################### Is a KDE Desktop Entry file\n");
     QString typ = config->readEntry( "Type" );
     
     if ( typ == "FSDevice" )
@@ -2024,10 +1916,8 @@ void KFMAutoMount::slotFinished( int )
     delete this;
 }
 
-void KFMAutoMount::slotError( int, const char *_text )
+void KFMAutoMount::slotError( int, const char * )
 {
-    debugT("AUTOMOUNT '%s'\n",_text);
-    
     job->setAutoDelete( TRUE );
     delete this;
 }

@@ -1,57 +1,87 @@
 #ifndef kfmtree_h
 #define kfmtree_h
 
-#undef index
+class KFMDirTree;
+class KFMDirTreeItem;
+class KfmGui;
 
-#include <qapp.h>
-#include <qdir.h>
-#include <qlistbox.h>
-#include <qpushbt.h>
-#include <ktreelist.h>
+#include <qpopmenu.h>
 
-class KFMTree : public KTreeList
+#include "kfinder.h"
+#include "kstrlist.h"
+
+class KFMDirTree : public KFinder
 {
+    friend KFMDirTreeItem;
+    
     Q_OBJECT
 public:
-    KFMTree( QWidget *_parent );
-    ~KFMTree();
+    KFMDirTree( QWidget *_parent, KfmGui *_gui );
 
+    void fill();
+    void update();
+    
 signals:
-    void showPopup( int _index, QPoint &_point );
+    void urlSelected( const char *_url, int _button );
+
+public slots:
+    void slotPopupNewView();
+    void slotPopupCd();
+    void slotPopupProperties();
+    void slotPopupBookmarks();
+    void slotPopupEmptyTrashBin();
+    void slotPopupCopy();
+    void slotPopupPaste();
+    void slotPopupTrash();
+    void slotPopupDelete();
+    
+    void slotDropCopy();
+    void slotDropMove();
+    void slotDropLink();
+
+    void slotDirectoryChanged( const char *_url );
     
 protected:
-    virtual void mousePressEvent( QMouseEvent *_e );
+    void emitUrlSelected( const char *_url, int _button );
 
+    void openPopupMenu( const char *_url, const QPoint &_point );
+    void openDropMenu( const char *_dest, QStrList &_urls, const QPoint &_p );
+    
+    QString popupDir;
+    QString dropDestination;
+    KStrList dropSource;
+    KFinderNode node;
+    QPopupMenu *popupMenu;
+    KfmGui *gui;
 };
 
-class KFMTreeView : public QWidget
+class KFMDirTreeItem : public KFinderItem
 {
     Q_OBJECT
 public:
-    KFMTreeView( QWidget *parent = 0 );
-    ~KFMTreeView();
-
-    void initializeTree();
-
-signals:
-    void showDir( const char *_dir );
-    void popupMenu( const char *_url, const QPoint &_point );
+    KFMDirTreeItem( KFMDirTree* _finder, const char *_url, bool _isfile = FALSE );
+    ~KFMDirTreeItem();
     
-public slots:
-    void slotDirExpanded( int );
-    void slotDirHighlighted( int );
-    void slotDirSelected( int );
-    void slotShowPopup( int, QPoint &_point );
+    virtual void paintCell( QPainter *_painter, int _col );
 
+    virtual void setOpen( bool _open );
+
+    const char* getURL() { return url; }
+    
 protected:
-    virtual void resizeEvent(QResizeEvent *e);
+    virtual void pressed( QMouseEvent *_ev, const QPoint &_globalPoint );
+    virtual void dropEvent( QStrList &urls, const QPoint &_point );
 
-    void advanceReadDirectories( int treeIndex );
-
-    KFMTree *dirTree;
-    QPixmap *openPixmap;
-    QPixmap *closedPixmap;
-    KPath oldPath;
+    /**
+     * Dont delete the pixmap in the destructor. It is cached in
+     * the @ref KMimeType::pixmapCache.
+     */
+    QPixmap *pixmap;
+    QString name;
+    QString url;
+    bool bFilled;
+    bool bIsFile;
+    KFMDirTree *dirTree;
 };
 
 #endif
