@@ -158,6 +158,7 @@ private:
   // internal tools
   int _getprop(Window w, Atom a, Atom type, long len, unsigned char **p);
   QString getprop(Window w, Atom a);
+  bool getSimpleProperty(Window w, Atom a, long &result);
   void sendClientMessage(Window w, Atom a, long x);
 
   // Atoms
@@ -167,6 +168,7 @@ private:
   Atom         wm_delete_window;
   Atom         wm_take_focus;
   Atom         wm_save_yourself;
+  Atom         kwm_save_yourself;
   Atom         wm_client_leader;
   Atom         wm_client_machine;
   Atom         wm_colormap_windows;

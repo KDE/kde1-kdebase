@@ -30,6 +30,7 @@ static char stipple_bits[] = {
 extern bool ignore_badwindow; // for the X error handler
 extern bool initting;
 
+
 Manager::Manager(): QObject(){
   manager = this;
   current_desktop = KWM::currentDesktop();
@@ -52,6 +53,7 @@ Manager::Manager(): QObject(){
   wm_delete_window = XInternAtom(qt_xdisplay(), "WM_DELETE_WINDOW", False);
   wm_take_focus = XInternAtom(qt_xdisplay(), "WM_TAKE_FOCUS", False);
   wm_save_yourself = XInternAtom(qt_xdisplay(), "WM_SAVE_YOURSELF", False);
+  kwm_save_yourself = XInternAtom(qt_xdisplay(), "KWM_SAVE_YOURSELF", False);
   wm_client_leader = XInternAtom(qt_xdisplay(), "WM_CLIENT_LEADER", False);
   wm_client_machine = XInternAtom(qt_xdisplay(), "WM_CLIENT_MACHINE", False);
   wm_colormap_windows = XInternAtom(qt_xdisplay(), "WM_COLORMAP_WINDOWS", False);
@@ -1407,6 +1409,18 @@ QString Manager::getprop(Window w, Atom a){
   return result;
 }
 
+bool Manager::getSimpleProperty(Window w, Atom a, long &result){
+  long *p = 0;
+  
+  if (_getprop(w, a, a, 1L, (unsigned char**)&p) <= 0){
+    return FALSE;
+  }
+  
+  result = p[0];
+  XFree((char *) p);
+  return TRUE;
+}
+
 
 void Manager::sendClientMessage(Window w, Atom a, long x){
   XEvent ev;
@@ -1508,43 +1522,42 @@ void Manager::logout(){
     additional_proxy_hints.clear();
     additional_proxy_props.clear();
 
-    XQueryTree(qt_xdisplay(), qt_xrootwin(), &dw1, &dw2, &wins, &nwins);
-    for (i = 0; i < nwins; i++) {
-      if (!getClient(wins[i])){
-	  Atom *p;
-	  int i2,n;
-	  if (XGetWMProtocols(qt_xdisplay(), wins[i], &p, &n)){
-	    for (i2 = 0; i2 < n; i2++){
-	      if (p[i2] == wm_save_yourself){
-		sendClientMessage(wins[i], wm_protocols, wm_save_yourself);
-		// wait for clients response
-		do {
-		  XWindowEvent(qt_xdisplay(), wins[i], PropertyChangeMask, &ev);
-		  propertyNotify(&ev.xproperty);
-		} while (ev.xproperty.atom != XA_WM_COMMAND);
-		command = getprop(wins[i], XA_WM_COMMAND);
-		if (!command.isEmpty()){
-		  machine = getprop(wins[i], wm_client_machine);
-		  additional_commands.append(command);
-		  additional_machines.append(machine);
-		}
-	      }
-	    }
-	    if (n>0)
-	      XFree(p);
-	  }
-      }
-    }
-    if (nwins>0)
-      XFree((void *) wins);   
+     XQueryTree(qt_xdisplay(), qt_xrootwin(), &dw1, &dw2, &wins, &nwins);
+     for (i = 0; i < nwins; i++) {
+       if (!getClient(wins[i])){
+	 long result = 0;
+	 getSimpleProperty(wins[i], kwm_save_yourself, result);
+	 if (result){
+	   sendClientMessage(wins[i], wm_protocols, wm_save_yourself);
+	   // wait for clients response
+	   do {
+	     XWindowEvent(qt_xdisplay(), wins[i], PropertyChangeMask, &ev);
+	     propertyNotify(&ev.xproperty);
+	   } while (ev.xproperty.atom != XA_WM_COMMAND);
+	   command = getprop(wins[i], XA_WM_COMMAND);
+	   if (!command.isEmpty()){
+	     machine = getprop(wins[i], wm_client_machine);
+	     additional_commands.append(command);
+	     additional_machines.append(machine);
+	   }
+	 }
+       }
+     }
+     if (nwins>0)
+       XFree((void *) wins);   
   }
   
 
 
   for (c = clients.first(); c; c = clients.next()){
     if (c->Psaveyourself){
+      command = getprop(c->window, XA_WM_COMMAND);
       sendClientMessage(c->window, wm_protocols, wm_save_yourself);
       // wait for clients response
+      XSync(qt_xdisplay(), FALSE);
+      timeStamp();
+      XSync(qt_xdisplay(), FALSE);
+      command = getprop(c->window, XA_WM_COMMAND);
       XSelectInput(qt_xdisplay(), c->window, 
 		   PropertyChangeMask| StructureNotifyMask );
       command = getprop(c->window, XA_WM_COMMAND);
@@ -1586,16 +1599,13 @@ void Manager::logout(){
       // poor man's "session" management a la xterm :-(
       c->command = getprop(c->window, XA_WM_COMMAND);
       if (c->command.isNull()){
-	long *p;
-	int n =_getprop(c->window, wm_client_leader, wm_client_leader, 1L, (unsigned char**)&p);
-	if (n > 0){
-	  Window w = (Window) *p;
-	  if (w != c->window && getClient(w))
+	long result = None;
+	getSimpleProperty(c->window, wm_client_leader, result);
+	Window clw = (Window) result;
+	if (clw != None && clw != c->window && getClient(clw))
 	    c->command = ""; // will be stored anyway
 	  else
-	    c->command = getprop(w, XA_WM_COMMAND);
-	  XFree((char *) p);
-	}
+	    c->command = getprop(clw, XA_WM_COMMAND);
       }
     }
   }

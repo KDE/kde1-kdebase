@@ -1,1 +1,1 @@
-#define KWM_VERSION "kwm 0.10 patchlevel 10"
+#define KWM_VERSION "kwm 0.10 patchlevel 11"

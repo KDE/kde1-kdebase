@@ -12,6 +12,10 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 11:
+       - session management for unamanged windows modified. Since this
+         is a KDE special for applications like kfm, other programms
+         make trouble (for example Netscape 4) (Needs current libkdecore!)
   patchlevel 10:
        - internal changes to module registration. (Needs the newest
          libkdecore to work)
