@@ -1,5 +1,4 @@
 # Íslenskun á kmix.po
-
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # FIRST AUTHOR <logir@imf.au.dk>, 1998.
 #
