@@ -29,53 +29,52 @@
 */
        
 
-bool GetInfo_CPU( KTabListBox *lBox )
-{	lBox = lBox;	/* don't give compiler-warning */
+bool GetInfo_CPU( KTabListBox * )
+{
 	return FALSE;
 }
 
-bool GetInfo_IRQ( KTabListBox *lBox )
-{	lBox = lBox;
+bool GetInfo_IRQ( KTabListBox * )
+{
 	return FALSE;
 }
 
-bool GetInfo_DMA( KTabListBox *lBox )
-{	lBox = lBox;
+bool GetInfo_DMA( KTabListBox * )
+{
 	return FALSE;
 }
 
-bool GetInfo_PCI( KTabListBox *lBox )
-{	lBox = lBox;
+bool GetInfo_PCI( KTabListBox * )
+{
 	return FALSE;
 }
 
-bool GetInfo_IO_Ports( KTabListBox *lBox )
-{	lBox = lBox;
+bool GetInfo_IO_Ports( KTabListBox * )
+{
 	return FALSE;
 }
 
-bool GetInfo_Sound( KTabListBox *lBox )
-{	lBox = lBox;
+bool GetInfo_Sound( KTabListBox * )
+{
 	return FALSE;
 }
 
-bool GetInfo_Devices( KTabListBox *lBox )
-{	lBox = lBox;
+bool GetInfo_Devices( KTabListBox * )
+{
 	return FALSE;
 }
 
-bool GetInfo_SCSI( KTabListBox *lBox )
-{	lBox = lBox;
+bool GetInfo_SCSI( KTabListBox * )
+{
 	return FALSE;
 }
 
-bool GetInfo_Partitions( KTabListBox *lBox )
-{	lBox = lBox;
+bool GetInfo_Partitions( KTabListBox * )
+{
 	return FALSE;
 }
 
 bool GetInfo_XServer_and_Video( KTabListBox *lBox )
-{	lBox = lBox;
+{
 	return GetInfo_XServer_Generic( lBox );
 }
-
