@@ -1,0 +1,329 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>The KFM Handbook: Usage</TITLE>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="kfm file manager KDE">
+<META NAME="description" CONTENT="kfm file manager KDE">
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
+<FONT FACE="Helvetica">
+<A HREF="http://www.kde.org/"><IMG SRC="logotp3.gif" BORDER="0" ALT="The K Desktop Environment"></A>
+<HR WIDTH="100%" SIZE=2 ALIGN="CENTER" NOSHADE>
+
+ 
+<P ALIGN="RIGHT">
+
+<A HREF="index-4.html">Next</A>
+<A HREF="index-2.html">Previous</A>
+<A HREF="index.html#toc3">Table of Contents</A>
+</P>
+<H3><A NAME="s3">3. Usage</A></H3>
+
+<P>
+<P>
+<H3><A NAME="ss3.1">3.1 Keyboard shortcuts</A>
+</H3>
+
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+Back in History                                 ALT + Left
+Forward in History                              ALT + Right
+One directory up                                ALT + Up
+Open a file/directory                           Return
+Open a popupmenu for the current file           ESC
+Move among the icons                            Left/Right/Up/Down
+Select/Unselect file                            Space
+Scroll up fast                                  Page Up
+Scroll down fast                                Page Down
+Scroll right (on WWW pages)                     Right
+Scroll left  (on WWW pages)                     Left
+Scroll up    (on WWW pages)                     Up
+Scroll down  (on WWW pages)                     Down
+Copy selected file to clipboard                 CTRL + C
+Paste files from clipboard to current directory CTRL + V
+Select files by pattern                         CTRL + S
+Open a terminal in the current directory        CTRL + T
+Open new location                               CTRL + L
+Find files                                      CTRL + F
+Close window                                    CTRL + W
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>
+<H3><A NAME="ss3.2">3.2 How to install new data types</A>
+</H3>
+
+<P>
+<P>
+<H4>What are data types</H4>
+
+<P>
+<P>A file contains only bits and bytes. One must know how
+to interprete them to give them a meaning. A usual method
+to archive this is to look at the filename. If it ends
+with <CODE>.gif</CODE> for example, you assume that it is a
+GIF image. That's what most desktop environments (further on
+called DE) do. KFM does this, too, since it is very fast, but
+not convenient. If the extension is not available one does
+not know of which data type the file is and that means in turn
+that KFM does not know which appliaction can deal with the data.
+So if KFM can not figure out the data type by extension it will have
+a look in the first bytes of the file and lookup some stuff
+in its magic file. This is called
+automatic-mime-type-detection-magic and works quite nice.
+So if the datatype has an entry in the magic file
+<CODE>$KDEDIR/share/mimelnk/magic</CODE>, then KFM would
+know that the file <CODE>MyGirlFriend</CODE> contains an image.
+<P>
+<P>You must register data types in KFM. This poor little
+helper of yours must know common extensions of this data type,
+an icon, some descriptive text, perhaps a default application
+( we will learn more about this later ) and the mime type.
+<P>
+<H4>What is a Mime Type</H4>
+
+<P>
+<P>Mime types are an internet standard. This standard is a naming
+scheme for data types. A data types name is devided in two sections.
+The first one tells about the general kind of data ( image, video,
+audio, text ... ) and since there are different kinds of text
+( C-sources, english text, ... ) and different formats for saving
+images and so on, the second part tells abou the special format.
+A good example is <CODE>image/gif</CODE>. The first part tell,
+its an image and the second one tells, it is saved in GIF format.
+<P>
+<P>If you are not shure about the correct mime type, then have a look
+at the magic file, many many mime types are already registered there.
+<P>
+<P>Usually this chapter is only of interest for system maintainers and
+application developers. A proper installed KDE should come with all
+this stuff already done, but some people always want to know how stuff
+works, so here we go.
+<P>
+<P>The directory <CODE>$KDEDIR/share/mimelnk</CODE> contains many subdirectories
+which correspond to the first section of the mime type names. For example
+our example <CODE>image/gif</CODE> is represented by a file named
+<CODE>$KDEDIR/share/mimelnk/image/gif.kdelnk</CODE>. Every KFM config file
+has the <CODE>.kdelnk</CODE> extension. Sometimes KFM hides this extension, since
+it does not look very nice.
+<P>
+<P>You will find out sooner or later that the directory structure
+in your global KDE directory is the same as the one in your
+<CODE>~/.kde</CODE> directory. As sysadmin on your local Linux box,
+you may usually want to edit the global configuration, while a user
+at the universities UNIX cluster may only edit his personal
+configuration. Everything we say about the <CODE>$KDEDIR</CODE> directory
+here, applies to the <CODE>~/.kde</CODE> directory, too. To edit the
+global config files in <CODE>$KDEDIR</CODE> you need a super users password,
+for the personal stuff of course not.
+<P>
+<P>
+<H4>Internals</H4>
+
+<P>The config files are very simple and of course human readable.
+You can have a look at it here:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+# KDE Config File
+[KDE Desktop Entry]
+Type=MimeType
+MimeType=image/gif
+Icon=image.xpm
+Patterns=*.gif;*.GIF;
+Comment=Gif images
+Comment[de]=GIF Dokument
+Comment[nl]=Gif afbeelding
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>
+<P>You dont need to understand what this means, since KFM provides a GUI
+for you, that makes things much easier. Hackers never the less
+want to know and hack everything, so here is a brief description.
+<P>
+<P>The first line is the header of every KDE config file.
+The <CODE>Type</CODE>line is included in every KFM config file to
+distinguish the purpose of the config file. This is followed
+by the mime types name, the icon, a <CODE>;</CODE> separated list
+of patterns and comments in english, german, ...
+<P>
+<P>Now the hackers may leave this lesson.
+<P>
+<H3><A NAME="ss3.3">3.3 How to install a new application</A>
+</H3>
+
+<P>
+<P>Every KDE application should come with its configuration
+files so there is no need for the user to edit them. But unless
+every distribution is KDE ready you may want to configure
+existing applications to work with KDE. In this lesson we
+try to install XV in the K Desktop Environment.
+<P>
+<P>
+<H4>Why and where</H4>
+
+<P>
+<P>Every application must put a config file in the directory
+tree <CODE>$KDEDIR/share/applnk</CODE>. In addition you have a local
+directory structure in <CODE>~/.kde/share/applnk</CODE> where you can
+install additional apps. These files will only be visible for
+you, not for other users. KFM and KPanel scan these
+directories on startup. KPanels system menu corresponds to this
+directory structure. The icons in this directory behave like
+real applications. You can click on them to start the
+application and you may drop files on them. It is sometimes
+a good idea to have such config files outside the <CODE>applnk</CODE>
+tree. They work in every directory, but only the ones in the
+<CODE>applnk</CODE> directory are scanned in on startup. So if you
+want to install for example XV as the default app for images, then
+you must move the config file inside this special tree. But perhaps
+there are some apps which you dont want to appear in KFM or KPanel
+but on your desktop, then you may of course create such config files
+on your desktop or elsewhere. The procedure is almost the same as the
+one we are describing here.
+<P>
+<P>If KFM find a file it first tries to find out about its data
+type. After doing so it searches all applications which regsitered for this
+data type. If none is found the user is prompted. If only one is found
+or a default on was specified, KFM will use this one, otherwise KFM will make a
+guess. Using the right popup menu will show you a selection of all
+applications which registered for this data type.
+<P>
+<P>
+<H4>Step by step</H4>
+
+<P>
+<P>You may now continue with the next section while
+the hackers and developers may want to learn more internals.
+<P>
+<P>The config file we want to create will look like this:
+<P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+# KDE Config File
+[KDE Desktop Entry]
+BinaryPattern=xv;
+MimeType=image/gif;image/jpeg;image/tiff;image/x-xbm;image/x-xpm;
+Comment=XV Image App
+Comment[de]=XV Graphik Programm
+Exec=xv %f
+TerminalOptions=
+Icon=image.xpm
+Path=
+Type=Application
+Terminal=0
+Name=XV
+Name[de]=XV
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>The first line contains some magic bytes and
+the second line contains a <CODE>;</CODE> separated list of names that
+the binary of this application may have. This way the binary gets a nice
+icon, too. The next line conatins a list of all mime types the app can
+handle, followed by the usual comments in different languages.
+the <CODE>Exec</CODE> tag contains the shell quoted command that will
+be executed to start the application. The <CODE>%f</CODE> is going to be replaced
+by the documents filenames, but see the next chapter for more details.
+The <CODE>Type</CODE> tag is needed like in every KFM config file. You can
+tell KFM to start the app in a terminal by setting <CODE>Terminal</CODE> to
+1 and by setting some terminal options if needed. In addition the
+<CODE>Path</CODE> tag allows you to specify a working directory. The last two
+lines determine the name of the applicattion. This name is used in KFMs
+context sensitive popup menus for example. As with the comments you must
+provide a english version and may supply diffrent translations.
+<P>
+<P>
+<P>
+<H4>Secret tips</H4>
+
+<P>
+<P>Most old style apps may need the <CODE>%f</CODE> argument. This means that
+they can only accept files on the local hard disks. If you use URLs
+never the less, KFM will download the files first and start the application
+afterwards. If the files are modified by the app, the user is prompted wether
+he wants them to be uploaded.
+<P>
+<P>You may enter <CODE>%u</CODE> instead of <CODE>%f</CODE>. This will cause KFM to
+pass URLs to the application. External files are not preloaded. Some KDE
+apps support this cool feature.
+<P>
+<P>There are addtional tags you may use. Here is a short list:
+<P>
+<UL>
+<LI><B><CODE>%k</CODE></B> The path and name of the config file itself.
+This is useful if the app you want to start should read/modify the
+config file that started it. This way you can for example implement 
+simple printer representations. The same file that repesents the
+printer on your desktop stores your prefered printer settings. Use <CODE>%k</CODE>
+to pass the config file to the printer GUI.</LI>
+<LI><B><CODE>%n</CODE></B> The filename of the documents without path.</LI>
+<LI><B><CODE>%d</CODE></B> The path of the documents without file name.
+The <CODE>%d</CODE> and the <CODE>%n</CODE> tag together are the same
+as <CODE>%f</CODE>.</LI>
+<LI><B><CODE>%c</CODE></B> Name of the application. This is the name of
+the config file itself without path and extension. This way you can set
+the title of the application.</LI>
+</UL>
+<P>
+<P>
+<H3><A NAME="ss3.4">3.4 Bookmarks</A>
+</H3>
+
+<P>
+<P>KFM enlarges the meaning of bookmarks. Bookmarks can refer to every file,
+that means apart from HTML pages and FTP directories documents, applications
+and <CODE>*.kdelnk</CODE> files. If a bookmark is selected in KFM, the convenient
+action follows; a document is opened, an application is started etc. To add a
+file to the collection of bookmarks, you only have to use the right mouse
+button on the file and select the entry 'Bookmarks'.
+<P>
+<P>
+<H4>Editing Bookmarks</H4>
+
+<P>
+<P>Each bookmark corresponds to a file in $HOME/.kde/share/apps/kfm/bookmarks.
+An entry in the bookmarks menu makes it easy to find this directory. Renaming a
+bookmark file also changes the bookmark menu immediately. If you open the
+properties for such a file, you can configure the bookmark, i.e. for example
+change the destination (URL) or the icon. You can move, copy and rename files in
+this directory tree as you desire. Please make sure that these files have a
+suffix <CODE>*.kdelnk</CODE>, so that KFM will easily distinguish them from
+'normal' files.
+<P>
+<H4>Bookmark Tree</H4>
+
+<P>
+<P>Creating a new directory in $HOME/.kde/share/apps/kfm/bookmarks will create
+a submenu of the bookmark menu at the same time. To add a bookmark to the new
+submenu, pop it up. The first entry will add a bookmark for the current
+URL.
+<P>
+<P>
+<H4>Bookmarks outside KFM</H4>
+
+<P>
+<P>The program krootwm allows the access on the bookmarks. Clicking the right
+mouse botton on the background of the desktop makes (besides other stuff) the
+bookmark menu appear. Changings on the bookmarks are not immediately applied
+to krootwm yet. At the moment you have to restart krootwm to do so.
+<P>
+<P>
+<P ALIGN="RIGHT">
+
+<A HREF="index-4.html">Next</A>
+<A HREF="index-2.html">Previous</A>
+<A HREF="index.html#toc3">Table of Contents</A>
+</P>
+<CENTER>
+<HR WIDTH="100%" SIZE=3 ALIGN=CENTER NOSHADE>
+</CENTER>    
+</FONT>
+
+ 
+</BODY>
+</HTML>

@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>The KFM Handbook: Frequently Asked Questions</TITLE>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="kfm file manager KDE">
+<META NAME="description" CONTENT="kfm file manager KDE">
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
+<FONT FACE="Helvetica">
+<A HREF="http://www.kde.org/"><IMG SRC="logotp3.gif" BORDER="0" ALT="The K Desktop Environment"></A>
+<HR WIDTH="100%" SIZE=2 ALIGN="CENTER" NOSHADE>
+
+ 
+<P ALIGN="RIGHT">
+
+<A HREF="index-5.html">Next</A>
+<A HREF="index-3.html">Previous</A>
+<A HREF="index.html#toc4">Table of Contents</A>
+</P>
+<H3><A NAME="s4">4. Frequently Asked Questions</A></H3>
+
+<P>
+<P>
+<H3><A NAME="ss4.1">4.1 How can I run programs on startup</A>
+</H3>
+
+<P>
+<P>KFM can do even more. Throw a program, *.kdelnk file, exectuable, directory
+or a link to any of them in the <CODE>Autostart</CODE> folder on your desktop.
+The Autostart folder has the path <CODE>$HOME/Desktop/Autostart</CODE> by
+default, but you may have a different setup, since it is configureable. If
+KFM finds a kdelnk file, it does what you would epect by clicking on
+the file. Throwing a directory in the autostart folder will open a KFM window
+with this directory, executables will of course be executed. But you may
+put documents! in the autostart folder, too. In this case KFM will start
+the default application for this document with the document as argument.
+You can use this to start for example the word processor with your master
+thesis whenever you login. You may find it useful to put
+<CODE>kdisplay -init</CODE> and <CODE>kpanel</CODE> in the autostart folder. The
+autostart folder can be used as a replacement for <CODE>.xinitrc</CODE>
+<P>
+<P>
+<H3><A NAME="ss4.2">4.2 How can I start KFM without any opened window</A>
+</H3>
+
+<P>
+<P>Many people think that it is annoying that KFM always opens the home
+directory. You may start KFM with the option <CODE>-d</CODE> to avoid this
+behaviour.
+<P>
+<P>
+<P>
+<H3><A NAME="ss4.3">4.3 How can I open a new view for a directory</A>
+</H3>
+
+<P>
+<P>Clicking with the left mouse button will change the directory,
+execute an executable or open a document. One click with the right button
+opens a menu and a click with the middle button on directories will
+open a new window for this directory.
+<P>
+<P>
+<H3><A NAME="ss4.4">4.4 How can I select multiple files</A>
+</H3>
+
+<P>
+<P>Press the CTRL key and click once on every file you want to
+select. Pressing the right mouse button now will show you all actions that
+apply to all files you selected. This way you could start multiple documents
+at once or delete/copy/move a couple of files. If multiple files are selected
+and you start a drag then all selected files are dragged.
+<P>
+<P>
+<H3><A NAME="ss4.5">4.5 How can I mount a device</A>
+</H3>
+
+<P>
+<P>To mount a device you first need a *.kdelnk file that describes the
+device. If you dont have one already, you must read the 
+section 'Usage' in this handbook to see
+how to create such files. Once you have done this you may press the right mouse
+button over the devices icon. Now you have several mount options. Unmounting
+works just like this. Before you can access a device you must mount it first.
+Once the device is mounted you can open it with a click. Sometimes
+it is possible to mount several file systems. But if the default
+one is the correct one, then you may click on the umnounted icon
+once and KFM tries to mount the device and will then open a window
+to show you the content.
+<P>
+<P>
+<H3><A NAME="ss4.6">4.6 How can I print</A>
+</H3>
+
+<P>
+<P>You can throw a document on the printer icon. Now it is up to your printer
+daemon/filter. Usually it only makes sense to throw TeX/DVI/PS/ASCII files on
+the printer. Be careful. In the worst case your printer may dump out lots of
+papers with the ASCII codes of the document you wanted to print. Dont forget
+to open the properties dialog of the printer first to check wether the print
+command is ok on your system. If you dont find printer icons on your
+desktop the you must consult the section 'Usage' in this handbook.
+to see how you can create such a printer icon.
+<P>
+<P>
+<H3><A NAME="ss4.7">4.7 How can I link a URL on the desktop</A>
+</H3>
+
+<P>
+<P>You can link any URL in any place on your hard disk. Open the
+<CODE>Templates</CODE> folder or use the menu <CODE>File->New</CODE> to copy/create a
+new <CODE>URL.kdelnk</CODE> file or something like this. Open the properties menu
+and enter the URL. That's all. If you have a link to this URL in a KFM
+window or in any app that supports DND, you may drop the link on every KFM
+window or on the desktop. Then click on <CODE>Link</CODE> in the popup menu
+and KFM will create a <CODE>*.kdelnk</CODE> file for you on the fly.
+<P>
+<P>
+<H3><A NAME="ss4.8">4.8 How can I look in a TAR file</A>
+</H3>
+
+<P>
+<P>You just have to click on the <CODE>*.tar.gz *.tar *.tgz</CODE> file to
+have a look at it. You may now delete files or drag files out of the tar
+file. Some apps support loading documents out of tar files. You may for
+example use KView to open an image that is located in a tar file.
+<P>
+<P>
+<P>
+<P>
+<P ALIGN="RIGHT">
+
+<A HREF="index-5.html">Next</A>
+<A HREF="index-3.html">Previous</A>
+<A HREF="index.html#toc4">Table of Contents</A>
+</P>
+<CENTER>
+<HR WIDTH="100%" SIZE=3 ALIGN=CENTER NOSHADE>
+</CENTER>    
+</FONT>
+
+ 
+</BODY>
+</HTML>

@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>The KFM Handbook: Philosophy</TITLE>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="kfm file manager KDE">
+<META NAME="description" CONTENT="kfm file manager KDE">
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
+<FONT FACE="Helvetica">
+<A HREF="http://www.kde.org/"><IMG SRC="logotp3.gif" BORDER="0" ALT="The K Desktop Environment"></A>
+<HR WIDTH="100%" SIZE=2 ALIGN="CENTER" NOSHADE>
+
+ 
+<P ALIGN="RIGHT">
+
+<A HREF="index-3.html">Next</A>
+<A HREF="index-1.html">Previous</A>
+<A HREF="index.html#toc2">Table of Contents</A>
+</P>
+<H3><A NAME="s2">2. Philosophy</A></H3>
+
+<P>
+<P>
+<H3><A NAME="ss2.1">2.1 Desktop</A>
+</H3>
+
+<P>
+<P>The desktop metaphor&lt; is very important for KFM.
+Many filemanagers in the UNIX world
+work only in their windows. But KFM gives you a Desktop like OS/2, Apple and
+( I hate to say it ) Win NT/95. Files on the desktop work like the ones
+in the windows.
+Since KFM supports drag and drop it is a good idea to use the Desktop for
+storing some temporary things. On the other hand it is always nice to have
+some important icons always handy on the Desktop. Well, just do what you want
+<P>
+<P>
+<H3><A NAME="ss2.2">2.2 Templates</A>
+</H3>
+
+<P>
+<P>Templates have been introduced by OS/2. KFM has some - not really that
+powerful but never the less nice - feature to support them. All files in the
+Templates directory are supposed to be templates ( I think you would not have
+guessed that! ). Move for example an template for a Lyx letter in here, or a
+default Makefile or whatever. Even complete directory structures may act as
+templates. If for example a project you start always has the same directory
+structure, you can create such a structure in the templates directory. Then
+you change to the directory where you want to have a new
+document/project/what-ever. Open the Menu <CODE>File</CODE> and there the
+submenu <CODE>New</CODE> and you will get a list of all installed
+templates. Just select one to create it. This way you can create
+directories, too. The idea is simple but useful.
+<P>
+<P>
+<H3><A NAME="ss2.3">2.3 *.kdelnk files</A>
+</H3>
+
+<P>
+<P>These files are important for KFM and kpanel and the whole KDE project.
+Such a file can do very much for you. For example it can hold an URL or a
+device or may stand for a program. Using such a file you can mount/unmount
+devices, make links to URLs on your desktop or just create a nice icon
+represantation for an executable. Read the section 'Usage'
+to learn more about these files and what they can do for you.
+You dont need to know how the files are structured,
+because KFM has nice dialogs for you, so you can click some <CODE>*.kdelnk</CODE> files in existence very easy. If you drag for example a URL pointing to
+<CODE>ftp://ftp.kde.org</CODE> on your desktop, KFM will create such a file for
+you. Clicking on it will open a FTP connection for you.
+<P>
+<P>
+<H3><A NAME="ss2.4">2.4 Internet</A>
+</H3>
+
+<P>
+<P>The Internet is very important for KFM, too, because it could be called an
+internet desktop. It uses FTP and HTTP. This means that KFM makes no big
+differences between files on some FTP server or on your local hard disk. Since
+KFM uses HTML to show its output it has no problem with HTML pages. This means
+that you can follow HTML links like you would do with your browser. Indeed KFM
+acts like a Web-Browser many times. It is indeed a Web-Browser with integrated
+file management. The HTML widget is not perfect yet, so some HTML pages are
+ugly, but it is getting better all the time. As a result of the above KFM
+uses URLs instead of usual file names ( of course you can use your old
+fashioned file names, too ). KFM supports an extension to usual URLs. It
+features subprotocols. Ususally the user does not have to deal with them, he
+may still click around with the mouse. For example <CODE>ftp://ftp.cdrom.com/unix/kde.tgz#tar:/kdebase/kfm/main.cpp</CODE> is a valid URL. It defines a tar file on an ftp server and references
+some file in the tar archive. Clicking on some tar archive will do the job for you.
+<P>
+<P>
+<P>
+<H3><A NAME="ss2.5">2.5 Multi Tasking</A>
+</H3>
+
+<P>
+<P>KFM is highly multi tasking. It has some slave processes running that do
+the IO stuff. This means that no IO can block your desktop. This is especially
+important for the Internet. You know that even Netscape can lock up for some
+seconds. KFM does not have this problem any more. It just locks up if you found
+a bug.
+<P>
+<H3><A NAME="ss2.6">2.6 Look</A>
+</H3>
+
+<P>
+<P>KFM gives you control over the look of your directories. If it finds a
+<CODE>.kde.html</CODE> or <CODE>index.html</CODE> file in your directory it displays
+it ( can be turned
+off ). There are some HTML extensions that allow you to separate for example
+directories and documents on such a HTML page. You need not write a link for
+every file in the HTML page. The HTML extension helps you very much here.
+Instead of writing a complete HTML page you can select a background
+color/image for some directories and change the color of the font. You may
+give executables and directories special icons. Those icon settings are
+recognized by kpanel, too. For more details see as usual the
+section 'Usage' in the handbook.
+<P>
+<P>
+<P>
+<P>
+<P>
+<P ALIGN="RIGHT">
+
+<A HREF="index-3.html">Next</A>
+<A HREF="index-1.html">Previous</A>
+<A HREF="index.html#toc2">Table of Contents</A>
+</P>
+<CENTER>
+<HR WIDTH="100%" SIZE=3 ALIGN=CENTER NOSHADE>
+</CENTER>    
+</FONT>
+
+ 
+</BODY>
+</HTML>
