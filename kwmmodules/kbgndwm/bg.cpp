@@ -18,8 +18,7 @@
 
 #include <kapp.h>
 #include <ksimpleconfig.h>
-
-#include "kpixmap.h"
+#include <kpixmap.h>
 
 #include "bg.h"
 #include "bg.moc"
