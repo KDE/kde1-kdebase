@@ -97,8 +97,9 @@ public:
   Window      trans;
   long      decoration;
   bool wants_focus;
+  bool is_menubar;
 
-  // returns the decoration hint. Can be KWM::noDecoration,
+  // returns the clean decoration hint. Can be KWM::noDecoration,
   // KWM::tinyDecoration or KWM::normalDecoration
   long getDecoration(){
     return decoration;
@@ -107,6 +108,11 @@ public:
   // some windows do not want the focus
   bool wantsFocus(){
     return wants_focus;
+  }
+
+  // some windows set the menubar hint
+  bool isMenuBar(){
+    return is_menubar;
   }
 
   // the virtual desktop on which this client is located

@@ -80,7 +80,7 @@ void execute( const char* cmd){
 	  cmd = tmp.data();
       }
   }
-  
+
   KShellProcess proc;
   proc << cmd;
   proc.start(KShellProcess::DontCare);
@@ -91,7 +91,7 @@ Minicli::Minicli( QWidget *parent, const char *name, WFlags f)
   : QFrame(parent, name, f){
     if (!history){
       history = new QList <char>;
-      
+
       // read in the saved history list (M.H.)
       KConfig *config = kapp->getConfig();
       QStrList hist;
@@ -123,6 +123,7 @@ Minicli::Minicli( QWidget *parent, const char *name, WFlags f)
 		400, 38);
 }
 void Minicli::resizeEvent(QResizeEvent *){
+  label->adjustSize();
   label->move(5, (height()-label->height())/2);
   lineedit->setGeometry(10 + label->width(), 5,
 			width()-15-label->width(),
@@ -222,7 +223,7 @@ void Minicli::cleanup(){
 
   unsigned int max = config->readNumEntry("HistoryLength", 50);
   QStrList hist;
-  if (history) 
+  if (history)
     for (char *entry = history->first(); entry != 0; entry = history->next())
       if (strcmp(entry,"") != 0)
         hist.append(entry);

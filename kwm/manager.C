@@ -50,6 +50,7 @@ extern bool initting;
 Manager::Manager(): QObject(){
 
   have_border_windows = false;
+  has_standalone_menubars = false;
   current_border = None;
 
   top_border    = 0;
@@ -824,7 +825,10 @@ void Manager::propertyNotify(XPropertyEvent *e){
       }
     }
 
-    bool wants_focus = (d & KWM::noFocus) == 0;
+    bool is_menubar = (d & KWM::standaloneMenuBar) != 0;
+    has_standalone_menubars |= is_menubar;
+    c->is_menubar = is_menubar;
+    bool wants_focus = (d & KWM::noFocus) == 0 && !is_menubar;
     if (!wants_focus && c->wantsFocus()){
       clients_traversing.removeRef(c);
       sendToModules(module_win_remove, c);
@@ -1750,7 +1754,8 @@ void Manager::manage(Window w, bool mapped){
   if (c->getDecoration() == KWM::normalDecoration){
     long dec = KWM::getDecoration(c->window);
     c->decoration = dec & 255;
-    c->wants_focus = (dec & KWM::noFocus) == 0;
+    c->is_menubar = (dec & KWM::standaloneMenuBar) != 0;
+    c->wants_focus = !c->is_menubar && (dec & KWM::noFocus) == 0;
   }
 
   XSelectInput(qt_xdisplay(), c->window, ColormapChangeMask |
@@ -2090,6 +2095,7 @@ void Manager::activateClient(Client* c, bool set_revert){
 
   c->setactive( true );
   unIconifyTransientOf(c->mainClient());
+  raiseMenubarsOf(c->mainClient());
 
   focusToClient(c);
 
@@ -3389,10 +3395,12 @@ void Manager::stickyTransientOf(Client* c, bool sticky){
 }
 
 // if a window loses focus, then all floating windows are
-// automatically iconified. These are floating toolbars or
-// menubars. We do not need a special deIconifyFloatingOf function,
-// since floating windows are also transient windows. That means
-// that unIconifyTransientOf already does this job.
+// automatically iconified. These are floating toolbars or menubars
+// (except in mac-like style when the menubar really sets the
+// KWM::standaloneMenuBar decoration). We do not need a special
+// deIconifyFloatingOf function, since floating windows are also
+// transient windows. That means that unIconifyTransientOf already
+// does this job.
  void Manager::iconifyFloatingOf(Client* c){
   // DON'T automatically iconify floating menues if the focus policy is
   // focus follows mouse, since otherwise it will be exceptionally hard
@@ -3403,7 +3411,7 @@ void Manager::stickyTransientOf(Client* c, bool sticky){
   QListIterator<Client> it(clients);
   for (it.toFirst(); it.current(); ++it){
     if (it.current() != c && it.current()->trans == c->window){
-      if (it.current()->getDecoration() == KWM::tinyDecoration){
+      if (it.current()->getDecoration() == KWM::tinyDecoration && !it.current()->isMenuBar()){
 	it.current()->iconify(False);
 	sendToModules(module_win_remove, it.current());
 	it.current()->hidden_for_modules = true;
@@ -3412,6 +3420,22 @@ void Manager::stickyTransientOf(Client* c, bool sticky){
       iconifyFloatingOf(it.current());
     }
   }
+}
+
+// kwm sort of supports floating menubars. They are raised when
+// the parent window gets the focus.
+void Manager::raiseMenubarsOf(Client* c)
+{
+    if (!has_standalone_menubars)
+	return; // optimization
+    QListIterator<Client> it(clients);
+    for (it.toFirst(); it.current(); ++it){
+	if (it.current() != c && it.current()->trans == c->window){
+	    if (it.current()->isMenuBar()){
+		it.current()->raise();
+	    }
+	}
+    }
 }
 
 
@@ -3634,7 +3658,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
 	}
       }
     }
-    //CT 
+    //CT
   }
   if (!c->instance.isEmpty()){
     if (c->getDecoration() == KWM::normalDecoration){
@@ -3674,7 +3698,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
 	}
       }
     }
-    //CT 
+    //CT
   }
   if (!c->klass.isEmpty()){
     if (c->getDecoration() == KWM::normalDecoration){
@@ -3714,7 +3738,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
 	}
       }
     }
-    //CT 
+    //CT
   }
 }
 

@@ -367,6 +367,7 @@ Client::Client(Window w, Window _sizegrip, QWidget *parent, const char *name_for
     trans = None;
     decoration = 1;
     wants_focus = true;
+    is_menubar = false;
     do_close = false;
 
     // standard window manager protocols
@@ -1897,13 +1898,13 @@ void Client::maximize(int mode, bool animate){
 
   QRect maxRect = KWM::getWindowRegion(desktop);
 
-//   {
-//       // check for some floating windows (maybe a menubar?)
-//       Client* c = manager->clientAtPosition(maxRect.x(),maxRect.y());
-//       if (c && c->trans == window && c->getDecoration() == KWM::tinyDecoration) {
-// 	  maxRect.setTop(c->geometry.bottom());
-//       }
-//   }
+  {
+      // check for some floating windows (maybe a menubar?)
+      Client* c = manager->clientAtPosition(maxRect.x(),maxRect.y());
+      if (c && c->trans == window && c->isMenuBar()) {
+ 	  maxRect.setTop(c->geometry.bottom());
+      }
+  }
 
   switch (mode) {
   case 1:
@@ -2243,7 +2244,7 @@ void Client::stopAutoraise(bool do_raise){
       && isActive()
       && !do_not_draw
       && options.FocusPolicy != CLICK_TO_FOCUS
-      && 
+      &&
       (
        options.CommandWindow1 == MyApp::MouseRaise ||
        options.CommandWindow1 == MyApp::MouseActivateRaiseAndPassClick ||

@@ -12,6 +12,9 @@ written in plain C).
 
 In 0.13:
 --------
+patchlevel 4:
+        - improved handling for floating menubars
+
 patchlevel 3:
         - fixed semantics with FocusFollowsMouse and AutoRaise:
                There are now two kwmrc properties:

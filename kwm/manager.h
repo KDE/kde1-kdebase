@@ -276,11 +276,18 @@ public:
   void stickyTransientOf(Client* c, bool sticky);
 
   // if a window loses focus, then all floating windows are
-  // automatically iconified. These are floating toolbars or
-  // menubars. We do not need a special deIconifyFloatingOf function,
-  // since floating windows are also transient windows. That means
-  // that unIconifyTransientOf already does this job.
+  // automatically iconified. These are floating toolbars or menubars
+  // (except in mac-like style when the menubar really sets the
+  // KWM::standaloneMenuBar decoration). We do not need a special
+  // deIconifyFloatingOf function, since floating windows are also
+  // transient windows. That means that unIconifyTransientOf already
+  // does this job.
   void iconifyFloatingOf(Client* c);
+
+    
+  // kwm sort of supports floating menubars. They are raised when
+  // the parent window gets the focus.
+  void raiseMenubarsOf(Client* c);
 
   // send a sound event to the kwm sound module. Same function as in
   // KWM from libkdecore.
@@ -512,6 +519,10 @@ private:
 
   // apply the above mentioned global hints
   void doGlobalDecorationAndFocusHints(Client* c);
+    
+    
+  // optimization for standalone menubars
+  bool has_standalone_menubars;
 };
 
 // CC: new KDE Greyer widget
