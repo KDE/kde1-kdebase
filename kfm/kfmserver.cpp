@@ -103,7 +103,7 @@ KFMServer::KFMServer() : KfmIpcServer()
 	pass.sprintf( "%ld", random() );
 	fwrite( pass.data(), 1, pass.length(), f );
 	fclose( f );
-
+	chmod(fn.data(), S_IRUSR | S_IWUSR); // make it 0600
     }
     else
 	fclose( f );
