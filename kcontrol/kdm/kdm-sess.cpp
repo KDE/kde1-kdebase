@@ -81,27 +81,36 @@ void KDMSessionsWidget::setupPage(QWidget *)
 
       session_lined = new QLineEdit(group2);
       session_lined->setFixedHeight(session_lined->sizeHint().height());
+      connect(session_lined, SIGNAL(textChanged(const char*)),
+              SLOT(slotCheckNewSession(const char*)));
       connect(session_lined, SIGNAL(returnPressed()),
               SLOT(slotAddSessionType()));
 
       QLabel *types_label = new QLabel(klocale->translate("Available types"), group2);
       types_label->setFixedSize(types_label->sizeHint());
 
-      sessionslb = new QListBox(group2);
+      sessionslb = new MyListBox(group2);
+      connect(sessionslb, SIGNAL(highlighted(int)), SLOT(slotSessionHighlighted(int)));
       sessionslb->insertStrList(&sessions);
 
-      QButton *btnrm = new QPushButton( klocale->translate("Remove"), group2 );
+      btnrm = new QPushButton( klocale->translate("Remove"), group2 );
       btnrm->setFixedSize(btnrm->sizeHint());
+      btnrm->setEnabled(false);
       connect( btnrm, SIGNAL( clicked() ), SLOT( slotRemoveSessionType() ) );
 
-      QButton *btnadd = new QPushButton( klocale->translate("Add"), group2 );
+      btnadd = new QPushButton( klocale->translate("Add"), group2 );
       btnadd->setFixedSize(btnadd->sizeHint());
+      btnadd->setEnabled(false);
       connect( btnadd, SIGNAL( clicked() ), SLOT( slotAddSessionType() ) );
 
-      KDirectionButton *btnup = new KDirectionButton(UpArrow, group2);
+      btnup = new KDirectionButton(UpArrow, group2);
       btnup->setFixedSize(20, 20);
-      KDirectionButton *btndown = new KDirectionButton(DownArrow, group2);
+      btnup->setEnabled(false);
+      connect(btnup, SIGNAL( clicked() ), SLOT( slotSessionUp() ));
+      btndown = new KDirectionButton(DownArrow, group2);
       btndown->setFixedSize(20, 20);
+      btndown->setEnabled(false);
+      connect(btndown,SIGNAL( clicked() ), SLOT( slotSessionDown() ));
 
       QBoxLayout *main = new QVBoxLayout( this, 10 );
       QBoxLayout *lgroup0 = new QVBoxLayout( group0, 10 );
@@ -118,12 +127,12 @@ void KDMSessionsWidget::setupPage(QWidget *)
 
       main->addWidget(group0);
       main->addWidget(group1);
-      main->addWidget(group2);
+      main->addWidget(group2, 2);
 
       lgroup0->addSpacing(10);
       lgroup0->addWidget(sdcombo);
 
-      lgroup1->addSpacing(10);
+      lgroup1->addSpacing(group1->fontMetrics().height()/2);
       lgroup1->addLayout(lgroup1a);
       lgroup1->addLayout(lgroup1b);
       lgroup1a->addWidget(shutdown_label);
@@ -133,7 +142,7 @@ void KDMSessionsWidget::setupPage(QWidget *)
       lgroup1b->addWidget(restart_lined);
       lgroup1->activate();
 
-      lgroup2->addSpacing(10);
+      lgroup2->addSpacing(group2->fontMetrics().height()/2);
       lgroup2->addLayout(lgroup2sub);
       lgroup2sub->addLayout(lgroup2a, 2);
       lgroup2sub->addLayout(lgroup2b, 2);
@@ -151,6 +160,41 @@ void KDMSessionsWidget::setupPage(QWidget *)
       lgroup2->activate();
 
       main->activate();
+}
+
+void KDMSessionsWidget::slotSessionHighlighted(int s)
+{
+  session_lined->setText(sessionslb->text(s));
+  btnup->setEnabled(s > 0);
+  btndown->setEnabled(s < (int)sessionslb->count()-1);
+  btnrm->setEnabled(sessionslb->currentItem() > -1);
+  if(!sessionslb->isItemVisible(s))
+    sessionslb->centerCurrentItem();
+}
+
+void KDMSessionsWidget::slotCheckNewSession(const char *s)
+{
+  QString str = s;
+  btnadd->setEnabled(str.length() > 0);
+}
+
+void KDMSessionsWidget::slotSessionUp()
+{
+  moveSession(-1);
+}
+
+void KDMSessionsWidget::slotSessionDown()
+{
+  moveSession(1);
+}
+
+void KDMSessionsWidget::moveSession(int d)
+{
+  int id = sessionslb->currentItem();
+  QString str = sessionslb->text(id);
+  sessionslb->removeItem(id);
+  sessionslb->insertItem(str.data(), id+d);
+  sessionslb->setCurrentItem(id+d);
 }
 
 void KDMSessionsWidget::slotAddSessionType()

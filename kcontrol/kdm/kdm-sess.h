@@ -24,7 +24,14 @@
 #include <qlist.h>
 #include <qstring.h>
 #include <qlistbox.h>
+#include <kdbtn.h>
 
+class MyListBox : public QListBox
+{
+public:
+	MyListBox(QWidget *parent) : QListBox(parent) {}
+	isItemVisible(int id) { return itemVisible(id); }
+};
 
 class KDMSessionsWidget : public KConfigWidget
 {
@@ -39,21 +46,30 @@ public:
 	void setupPage(QWidget*);
 
 	enum { Non, All, RootOnly, ConsoleOnly };
+	
+protected:
+	void moveSession(int);
 
-private slots:
+protected slots:
         void slotSetAllowShutdown(int);
         void slotAddSessionType();
         void slotRemoveSessionType();
+        void slotSessionHighlighted(int);
+        void slotCheckNewSession(const char*);
+        void slotSessionUp();
+        void slotSessionDown();
 
 private:
         KIconLoader  *iconloader;
 	QComboBox    *sdcombo;
         QLineEdit    *restart_lined, *shutdown_lined, *session_lined;
-	QListBox     *sessionslb;
+	MyListBox     *sessionslb;
         QString      shutdownstr, restartstr;
         QStrList     sessions;
 	int          sdMode;
         bool         gui;
+        KDirectionButton *btnup, *btndown;
+        QButton      *btnrm, *btnadd;
 };
 
 
