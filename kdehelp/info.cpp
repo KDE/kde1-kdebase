@@ -7,6 +7,10 @@
 //
 // ----------------------------------------------------------------------------
 
+#ifdef __FreeBSD__
+# define DEFAULT_INFOPATH "/usr/local/info:/usr/info:/usr/local/lib/info:/usr/lib/info:/usr/local/gnu/info:/usr/local/gnu/lib/info:/usr/gnu/info:/usr/gnu/lib/info:/opt/gnu/info:/usr/share/info:/usr/share/lib/info:/usr/local/share/info:/usr/local/share/lib/info:/usr/gnu/lib/emacs/info:/usr/local/gnu/lib/emacs/info:/usr/local/lib/emacs/info:/usr/local/emacs/info:."
+#endif
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -1109,7 +1113,7 @@ void cNode::Print()
 //
 cInfo::cInfo()
 {
-	char *envPath;
+	char *envPath=0L;
 
 	compressed = 0;
 	numPaths = 0;
@@ -1118,6 +1122,20 @@ cInfo::cInfo()
 	strcpy(compressExtn, ".gz");
 
 	// get the paths to search for info files
+
+#ifdef DEFAULT_INFOPATH
+	// Add the default ones if we have em
+        char *default_paths = StrDup(DEFAULT_INFOPATH);
+        char *default_p = strtok(default_paths, ":");
+	while (default_p && numPaths < INFO_MAXPATHS-1)
+	{
+		searchPath[numPaths++] = StrDup(default_p);
+		default_p = strtok(NULL, ":");
+	}
+
+	delete [] default_paths;
+
+#endif
 	if ( (envPath = getenv(INFO_ENV)) )
 	{
 		char *paths = StrDup(envPath);
@@ -1227,7 +1245,7 @@ int cInfo::ReadLocation(const char *theNodeName)
 	if (offset < 0)
 	{
 		char msg[128];
-		sprintf(msg, klocale->translate("Node not found: %s"), nodeName);
+		sprintf(msg, i18n("Node not found: %s"), nodeName);
 		Error.Set(ERR_WARNING, msg);
 		delete [] nodeName;
 		return 1;
