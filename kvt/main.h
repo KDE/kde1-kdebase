@@ -18,6 +18,7 @@
 #include <qpixmap.h>
 #include <qcombo.h>
 #include <kmenubar.h>
+#include <klocale.h>
 
 enum KvtScrollbar{kvt_right, kvt_left};
 enum KvtSize{kvt_normal, kvt_tiny, kvt_small, kvt_medium, kvt_large, kvt_huge};
@@ -40,19 +41,19 @@ public:
   void ResizeToDimen(int width, int height);
 
 public slots:
-    void application_signal();
-    void options_menu_activated( int );
-    void scrollbar_menu_activated( int );
-    void size_menu_activated( int );
-    void dimen_menu_activated(int);
-    void color_menu_activated( int );
-    void file_menu_activated(int);
-    void help_menu_activated(int);
-    void scrolling(int);
-    void onDrop( KDNDDropZone* _zone );
-
-    void menubarMoved();
-    void quit();
+  void application_signal();
+  void options_menu_activated( int );
+  void scrollbar_menu_activated( int );
+  void size_menu_activated( int );
+  void dimen_menu_activated(int);
+  void color_menu_activated( int );
+  void file_menu_activated(int);
+  void help_menu_activated(int);
+  void scrolling(int);
+  void onDrop( KDNDDropZone* _zone );
+  
+  void menubarMoved();
+  void quit();
 
 
 protected:
@@ -60,25 +61,25 @@ protected:
     bool eventFilter( QObject *, QEvent * );
 
 private:
-    KMenuBar *menubar;
-    QFrame *frame;
-    QPopupMenu *m_file;
-    QPopupMenu *m_options;
-    QPopupMenu *m_scrollbar;
-    QPopupMenu *m_size;
-    QPopupMenu *m_dimen;
-    QPopupMenu *m_color;
-    QPopupMenu *m_help;
-    QWidget *rxvt;
-    // weird flags
-    Bool setting_to_vt_window;
-
-    Bool keyboard_secured;
-
+  KMenuBar *menubar;
+  QFrame *frame;
+  QPopupMenu *m_file;
+  QPopupMenu *m_options;
+  QPopupMenu *m_scrollbar;
+  QPopupMenu *m_size;
+  QPopupMenu *m_dimen;
+  QPopupMenu *m_color;
+  QPopupMenu *m_help;
+  QWidget *rxvt;
+  // weird flags
+  Bool setting_to_vt_window;
+  KLocale trans;
+  Bool keyboard_secured;
+  
   // options
-       
+  
   KConfig* kvtconfig;
-
+  
   Bool menubar_visible;
   Bool scrollbar_visible;
   KvtScrollbar kvt_scrollbar;
@@ -93,6 +94,9 @@ public:
   QLineEdit *chars;
 
   OptionDialog(QWidget *parent, const char *name );
+
+private:
+  KLocale trans;
 };
 
 

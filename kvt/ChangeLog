@@ -1,3 +1,5 @@
+  - added localisation of messages
+
   - bugfixes in color handling
 
   - added option `-linux' to set up a linux-console conformal kvt.
