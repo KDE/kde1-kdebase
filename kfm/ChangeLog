@@ -1,3 +1,10 @@
+1999-01-19  David Faure  <faure@kde.org>
+
+	* kiojob.cpp: Show 'not implemented' when trying to download a remote 
+	directory or upload a directory to a remote location.
+	
+	* kioserver.cpp: Use DirectoryEntries cache for isDir, if nothing better.
+
 1999-01-18  David Faure  <faure@kde.org>
 
 	* kbind.cpp: Open Properties when left-clicking a mimetype file.

@@ -528,6 +528,7 @@ void KIOJob::copy()
 
     int skipped = 0;
     QString skippedFile;
+    bool bDirNotLocal = false;
     
     // Recursive directory    
     QListIterator<char> it( cmSrcURLList );
@@ -639,7 +640,11 @@ void KIOJob::copy()
 		tmpList1.append( p );
 		tmpList2.append( p2 );
 	    }
-	}
+	} else // src or/and dest isn't local.
+        {
+            if ( KIOServer::isDir( p ) == 1 ) // is source a directory ?
+                bDirNotLocal = true;
+        }
 	++it2;
     }
 
@@ -651,6 +656,11 @@ void KIOJob::copy()
 	else
 	    ksprintf(&tmp, i18n( "%d special files will not be copied."), skipped);
 	QMessageBox::warning( 0, i18n( "KFM Warning" ), tmp.data() );
+    }
+    if (bDirNotLocal)
+    {
+        emit fatalError (KIO_ERROR_NotImplemented, i18n("Recurse copying from/to distant locations"), 0);
+        return;
     }
 
     char *s;
@@ -1303,6 +1313,7 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
 	break;
       case KIO_ERROR_NotImplemented:
 	ksprintf(&msg, i18n("The requested action\n%s\nis not implemented yet."), url.data());
+	okToContinue = FALSE;
 	break;
       case KIO_ERROR_CouldNotMkdir:
 	ksprintf(&msg, i18n("Could not make directory\n%s"), url.data());

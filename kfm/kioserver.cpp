@@ -675,8 +675,15 @@ int KIOServer::isDir( const char *_url )
 	    return 0;
     }
     else
+    {
+        // Do we have cached information about such a directory ?
+        KIODirectoryEntry * de = pKIOServer->getDirectoryEntry(_url);
+        if (de && de->isDir())
+            return 1;
+
 	// We are not sure
 	return -1;
+    }
 }
 
 /* -------------------------------------------------------------------
