@@ -112,48 +112,48 @@ msgstr "&Inaktiv pixmap"
 
 #: titlebar.cpp:981
 msgid "Mouse action"
-msgstr ""
+msgstr "Muse funktion"
 
 #: titlebar.cpp:983
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
-msgstr ""
+msgstr "Venstremuseknap dobbelklik\npå titelbjælken giver:"
 
 #: titlebar.cpp:987
 #, fuzzy
 msgid "(Un)Maximize"
-msgstr "Maksimer"
+msgstr "(U)Maksimer"
 
 #: titlebar.cpp:988
 msgid "Move"
-msgstr ""
+msgstr "Flyt"
 
 #: titlebar.cpp:989
 #, fuzzy
 msgid "(Un)Shade"
-msgstr "Gradueret"
+msgstr "Rul op/ned"
 
 #: titlebar.cpp:990
 msgid "Iconify"
-msgstr ""
+msgstr "Minimer"
 
 #: titlebar.cpp:991
 #, fuzzy
 msgid "(Un)Sticky"
-msgstr "Fastsæt"
+msgstr "Fastsæt/Frigiv"
 
 #: titlebar.cpp:992
 msgid "Resize"
-msgstr ""
+msgstr "Skift størrelse"
 
 #: titlebar.cpp:993
 msgid "Restore"
-msgstr ""
+msgstr "Gendan"
 
 #: titlebar.cpp:994
 msgid "Operations Menu"
-msgstr ""
+msgstr "System menu"
 
 #: windows.cpp:77
 msgid "Window movement"
@@ -161,7 +161,7 @@ msgstr "Vindues bevægelse"
 
 #: windows.cpp:78
 msgid "Transparent"
-msgstr ""
+msgstr "Gennemsigtig"
 
 #: windows.cpp:79
 msgid "Opaque"

@@ -67,7 +67,7 @@ msgstr "Skaleret"
 
 #: backgnd.cpp:388
 msgid "&Browse..."
-msgstr ""
+msgstr "&Gennemsøg..."
 
 #: backgnd.cpp:549
 msgid "Default"
