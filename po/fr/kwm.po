@@ -110,9 +110,8 @@ msgid "Unnamed Desktop"
 msgstr ""
 
 #: main.C:875
-#, fuzzy
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Quelques pixmaps ne sont pas valides ; ShapeMode désactivé\n"
+msgstr "Quelques pixmaps ne sont pas valides: ShapeMode désactivé\n"
 
 #: main.C:1193
 msgid "*** No Tasks ***"

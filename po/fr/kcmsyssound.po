@@ -159,22 +159,20 @@ msgid "Unsupported URL"
 msgstr "URL non supportée"
 
 #: syssound.cpp:458
-#, fuzzy
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Désolé, ce type d'URL n'est pas supporté actuellement par le composant sonde "
+"Désolé, ce type d'URL n'est pas supporté actuellement par le composant son de "
 "KDE"
 
 #: syssound.cpp:468
-#, fuzzy, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"
 "does not seem to be a WAV--file."
 msgstr ""
-"Désolé, mais\n"
+"Désolé, mais \n"
 "%s\n"
 "ne semble pas être un fichier WAV."
 
