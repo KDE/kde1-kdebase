@@ -1,11 +1,14 @@
+# Polish translation of KDE kpanel
+# Version 0.1.1
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 
 #: kpanel.C:172
 msgid "Personal menu"
-msgstr "Prywatne menu"
+msgstr "Osobiste menu"
 
 #: kpanel.C:180
 msgid "Add application"
-msgstr "Dodaj element"
+msgstr "Dodaj aplikacjê"
 
 #: kpanel.C:182
 msgid "Add special"
@@ -21,11 +24,11 @@ msgstr "Konfiguruj panel"
 
 #: kpanel.C:186
 msgid "Restart"
-msgstr "Odµwierz"
+msgstr "Od¶wie¿"
 
 #: kpanel.C:188
 msgid "Restart panel"
-msgstr "Odµwierz panel"
+msgstr "Od¶wie¿ panel"
 
 #: kpanel.C:189 props.C:327
 msgid "Panel"
@@ -41,19 +44,19 @@ msgstr "Zablokuj panel"
 
 #: kpanel.C:194 kpanel.C:195
 msgid "Logout"
-msgstr "Wyloguj siŠ"
+msgstr "Wyloguj siê"
 
 #: kpanel.C:203
 msgid "Move"
-msgstr "Przesu±"
+msgstr "Przesuñ"
 
 #: kpanel.C:204
 msgid "Remove"
-msgstr "Usu±"
+msgstr "Usuñ"
 
 #: kpanel.C:206
 msgid "Properties"
-msgstr "Wþaµciwoµci"
+msgstr "W³a¶ciwo¶ci"
 
 #: kpanel.C:241
 msgid "System"
@@ -61,7 +64,7 @@ msgstr "System"
 
 #: kpanel.C:350
 msgid "No info available"
-msgstr "Informacje niedostŠpne"
+msgstr "Informacje niedostêpne"
 
 #: kpanel.C:437 kpanel.C:453
 msgid "Destroy"
@@ -85,11 +88,11 @@ msgstr "Na tym desktopie"
 
 #: props.C:264
 msgid "Location"
-msgstr "Lokalizacja"
+msgstr "Lokacja"
 
 #: props.C:284
 msgid "Taskbar"
-msgstr "Pasek zada±"
+msgstr "Pasek zadañ"
 
 #: props.C:285
 msgid "Hidden"
@@ -97,19 +100,19 @@ msgstr "Ukryte"
 
 #: props.C:297
 msgid "Top/Left"
-msgstr "Gra/Lewo"
+msgstr "Góra/Lewo"
 
 #: props.C:308
 msgid "Tiny Style"
-msgstr "Maþy"
+msgstr "Ma³y"
 
 #: props.C:309
 msgid "Small Style"
-msgstr "ªredni"
+msgstr "¦redni"
 
 #: props.C:310
 msgid "Large Style"
-msgstr "DuÀy"
+msgstr "Du¿y"
 
 #: props.C:322
 msgid "Menu Tooltips"
@@ -121,7 +124,7 @@ msgstr "Widoczne"
 
 #: props.C:405
 msgid "Width"
-msgstr "Wysokoµ†"
+msgstr "Wysoko¶æ"
 
 #: props.C:410
 msgid "Desktops"
@@ -144,5 +147,5 @@ msgid ""
 "Could not communicate with nor\n"
 "start a new instance of KFM"
 msgstr ""
-"Nie mogŠ skomunikowa† siŠ lub\n"
-"uruchomi† nowej sesji KFM"
+"Nie mogê skomunikowaæ siê lub\n"
+"uruchomiæ nowej sesji KFM"

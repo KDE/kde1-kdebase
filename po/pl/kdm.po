@@ -1,3 +1,6 @@
+# Polish translation of KDE kdm
+# Version 0.1.1
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 
 #: kdmshutdown.cpp:229 kgreeter.cpp:207
 msgid "Cancel"
@@ -5,15 +8,15 @@ msgstr "Anuluj"
 
 #: kdmshutdown.cpp:192
 msgid "Exit kdm"
-msgstr "Zako±cz kdm"
+msgstr "Zakoñcz kdm"
 
 #: kgreeter.cpp:201
 msgid "Go!"
-msgstr "Id­!"
+msgstr "Uruchom!"
 
 #: kgreeter.cpp:179
 msgid "Login failed!"
-msgstr "Brak dostŠpu!"
+msgstr "Brak dostêpu!"
 
 #: kgreeter.cpp:145
 msgid "Login:"
@@ -25,15 +28,15 @@ msgstr "Ok"
 
 #: kgreeter.cpp:150
 msgid "Password:"
-msgstr "Hasþo:"
+msgstr "Has³o:"
 
 #: kgreeter.cpp:185
 msgid "Session Type:"
-msgstr "Rodzaj sesji:"
+msgstr "Argumenty sesji:"
 
 #: kdmshutdown.cpp:169
 msgid "Shutdown"
-msgstr "ZamkniŠcie systemu"
+msgstr "Zamkniêcie systemu"
 
 #: kdmshutdown.cpp:183
 msgid "Shutdown and restart"
@@ -41,8 +44,8 @@ msgstr "Ponowne uruchomienie systemu"
 
 #: kdmshutdown.cpp:153
 msgid "Shutdown or restart?"
-msgstr "Zamkn˜† czy zrestartowa†?"
+msgstr "Zamkn±æ czy zrestartowaæ?"
 
 #: kgreeter.cpp:217
 msgid "Shutdown..."
-msgstr "ZamkniŠcie..."
+msgstr "Zamkniêcie..."

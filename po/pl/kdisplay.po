@@ -1,7 +1,10 @@
+# Polish translation of KDE kdisplay
+# Version 0.1.1
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 
 #: main.cpp:53
 msgid "KDE Display Configuration"
-msgstr "KDE Wþaµciwoµci Wyµwietlania"
+msgstr "KDE W³a¶ciwo¶ci Wy¶wietlania"
 
 #: main.cpp:130
 #, c-format
@@ -21,7 +24,7 @@ msgstr "  -setup              ustawienie nowych wlasciwosci\n"
 
 #: backgnd.cpp:140 colorscm.cpp:293
 msgid "Background"
-msgstr "Tþo"
+msgstr "T³o"
 
 #: backgnd.cpp:165
 msgid "Color"
@@ -29,7 +32,7 @@ msgstr "Kolor"
 
 #: backgnd.cpp:185
 msgid "Flat"
-msgstr "Pþaskie"
+msgstr "P³askie"
 
 #: backgnd.cpp:189
 msgid "Gradient"
@@ -53,7 +56,7 @@ msgstr "Kafelkowana"
 
 #: backgnd.cpp:261
 msgid "Centred"
-msgstr "Wycentrowana"
+msgstr "Wy¶rodkowana"
 
 #: backgnd.cpp:265
 msgid "Scaled"
@@ -61,7 +64,7 @@ msgstr "Skalowana"
 
 #: backgnd.cpp:272
 msgid "Browse..."
-msgstr "Przegl˜daj"
+msgstr "Przegl±daj"
 
 #: scrnsave.cpp:45
 msgid "Ignore"
@@ -69,7 +72,7 @@ msgstr "Ignoruj"
 
 #: scrnsave.cpp:47
 msgid "Lock"
-msgstr "Ochrona hasþem"
+msgstr "Ochrona has³em"
 
 #: scrnsave.cpp:103 scrnsave.cpp:161
 msgid "Screen Saver"
@@ -81,7 +84,7 @@ msgstr "Ustawienia..."
 
 #: scrnsave.cpp:186
 msgid "Test"
-msgstr "Podgl˜d"
+msgstr "Podgl±d"
 
 #: scrnsave.cpp:194
 msgid "Settings"
@@ -97,7 +100,7 @@ msgstr "min"
 
 #: scrnsave.cpp:211
 msgid "Requires Password"
-msgstr "Wymagane hasþo"
+msgstr "Wymagane has³o"
 
 #: scrnsave.cpp:216
 msgid "Priority:"
@@ -125,7 +128,7 @@ msgstr "Tekst w oknie"
 
 #: colorscm.cpp:209
 msgid "Disabled"
-msgstr "Wyþ˜czony"
+msgstr "Wy³±czony"
 
 #: colorscm.cpp:216 colorscm.cpp:217
 msgid "Selected"
@@ -133,11 +136,11 @@ msgstr "Wybrany"
 
 #: colorscm.cpp:252 colorscm.cpp:262
 msgid "Color Scheme"
-msgstr "Schemat kolorw"
+msgstr "Schemat kolorów"
 
 #: colorscm.cpp:276
 msgid "Remove"
-msgstr "Usu±"
+msgstr "Usuñ"
 
 #: colorscm.cpp:284
 msgid "Widget color"
@@ -145,19 +148,19 @@ msgstr "Kolor elementu"
 
 #: colorscm.cpp:289
 msgid "Inactive title bar"
-msgstr "Nieaktywny pasek tytuþowy"
+msgstr "Nieaktywny pasek tytu³owy"
 
 #: colorscm.cpp:290
 msgid "Inactive title text"
-msgstr "Nieaktywny tytuþ okna"
+msgstr "Nieaktywny tytu³ okna"
 
 #: colorscm.cpp:291
 msgid "Active title bar"
-msgstr "Aktywny pasek tytuþowy"
+msgstr "Aktywny pasek tytu³owy"
 
 #: colorscm.cpp:292
 msgid "Active title text"
-msgstr "Aktywny tytuþ okna"
+msgstr "Aktywny tytu³ okna"
 
 #: colorscm.cpp:294
 msgid "Text"
@@ -165,7 +168,7 @@ msgstr "Tekst"
 
 #: colorscm.cpp:295
 msgid "Select background"
-msgstr "Tþo wybranego"
+msgstr "T³o wybranego"
 
 #: colorscm.cpp:296
 msgid "Select text"
@@ -173,7 +176,7 @@ msgstr "Tekst wybranego"
 
 #: colorscm.cpp:297
 msgid "Window background"
-msgstr "Tþo okna"
+msgstr "T³o okna"
 
 #: colorscm.cpp:309
 msgid "Contrast"
@@ -185,7 +188,7 @@ msgstr "Zachowaj schemat"
 
 #: colorscm.cpp:372 colorscm.cpp:380
 msgid "You have chosen a name used by a supplied color scheme"
-msgstr "Wybraþeµ nazwŠ uÀywan˜ przez standardowy schemat koloru"
+msgstr "Wybra³e¶ nazwê u¿ywan± przez standardowy schemat koloru"
 
 #: colorscm.cpp:463
 msgid "KDE Default"
@@ -193,15 +196,15 @@ msgstr "KDE Standard"
 
 #: colorscm.cpp:687
 msgid "Display Setup"
-msgstr "Ustawienia wyµwietlania"
+msgstr "Ustawienia wy¶wietlania"
 
 #: colorscm.cpp:688
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"
 msgstr ""
-"Nie znaleziono schematw kolorw.\n"
-"Czy chcesz zainstalowa† standardowe schematy?"
+"Nie znaleziono schematów kolorów.\n"
+"Czy chcesz zainstalowaæ standardowe schematy?"
 
 #: savescm.cpp:26
 msgid "Name"
@@ -209,11 +212,11 @@ msgstr "Nazwa"
 
 #: general.cpp:55
 msgid "General"
-msgstr "Oglne"
+msgstr "Ogólne"
 
 #: general.cpp:59
 msgid "Widget style"
-msgstr "Styl elementw"
+msgstr "Styl elementów"
 
 #: general.cpp:64
 msgid "Motif"
@@ -229,23 +232,23 @@ msgstr "Czcionki"
 
 #: general.cpp:79
 msgid "General font"
-msgstr "Oglna czcionka"
+msgstr "Czcionka ogólna"
 
 #: general.cpp:104
 msgid "Sample"
-msgstr "Przykþad"
+msgstr "Przyk³ad"
 
 #: general.cpp:110
 msgid "Small"
-msgstr "Maþa"
+msgstr "Ma³a"
 
 #: general.cpp:114
 msgid "Medium"
-msgstr "ªrednia"
+msgstr "¦rednia"
 
 #: general.cpp:118
 msgid "Large"
-msgstr "DuÀa"
+msgstr "Du¿a"
 
 #: general.cpp:135
 msgid "Italic"

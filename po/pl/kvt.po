@@ -1,7 +1,10 @@
+# Polish translation of KDE kvt
+# Version 0.1.1
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 
 #: main.C:220
 msgid "Add characters to word class"
-msgstr "Dodaj znaki do klasy sþw"
+msgstr "Dodaj znaki do klasy s³ów"
 
 #: main.C:224
 msgid "choose type of color-mode"
@@ -21,7 +24,7 @@ msgstr "&Nowy terminal"
 
 #: main.C:359
 msgid "E&xit"
-msgstr "&Wyjµcie"
+msgstr "&Wyj¶cie"
 
 #: main.C:364 main.C:669
 msgid "&Hide"
@@ -29,15 +32,15 @@ msgstr "&Ukryj"
 
 #: main.C:365
 msgid "&Left"
-msgstr "&Lewo"
+msgstr "Po &lewej"
 
 #: main.C:366
 msgid "&Right"
-msgstr "&Prawo"
+msgstr "Po &Prawej"
 
 #: main.C:371
 msgid "&Normal"
-msgstr "No&rmalnie"
+msgstr "No&rmaly"
 
 #: main.C:372
 msgid "&Tiny"
@@ -45,15 +48,15 @@ msgstr "Mi&ni"
 
 #: main.C:373
 msgid "&Small"
-msgstr "&Maþy"
+msgstr "&Ma³y"
 
 #: main.C:374
 msgid "&Medium"
-msgstr "ªre&dni"
+msgstr "¦re&dni"
 
 #: main.C:375
 msgid "&Large"
-msgstr "&DuÀy"
+msgstr "&Du¿y"
 
 #: main.C:376
 msgid "&Huge"
@@ -61,11 +64,11 @@ msgstr "&Wielki"
 
 #: main.C:388
 msgid "&black/white"
-msgstr "&czarno/biaþy"
+msgstr "&czarno/bia³y"
 
 #: main.C:389
 msgid "&white/black"
-msgstr "&biaþo/czarny"
+msgstr "&bia³o/czarny"
 
 #: main.C:390
 msgid "&green/black"
@@ -85,11 +88,11 @@ msgstr "Ukryj pasek &menu"
 
 #: main.C:401 main.C:460 main.C:586
 msgid "Show &Menubar"
-msgstr "PokaÀ pasek &menu"
+msgstr "Poka¿ pasek &menu"
 
 #: main.C:402 main.C:604
 msgid "Secure &keyboard"
-msgstr "Zablokuj &klawiaturŠ"
+msgstr "Zabezpiecz &klawiaturê"
 
 #: main.C:404
 msgid "Scroll&bar"
@@ -117,7 +120,7 @@ msgstr "Zachowaj &opcje"
 
 #: main.C:419
 msgid "&About..."
-msgstr "&Informacje"
+msgstr "&Informacje..."
 
 #: main.C:420 main.C:430
 msgid "&Help"
@@ -133,27 +136,27 @@ msgstr "&Opcje"
 
 #: main.C:469 main.C:662
 msgid "&Show"
-msgstr "Po&kaÀ"
+msgstr "Po&ka¿"
 
 #: main.C:600
 msgid "Unsecure &keyboard"
-msgstr "Odblokuj &klawiaturŠ"
+msgstr "Odbezpiecz &klawiaturê"
 
 #: main.C:739
 msgid "Hint"
-msgstr "Podpowied­"
+msgstr "Podpowied¼"
 
 #: main.C:740
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
-"Nowe ustawienia kolorw bŠd˜ pokazane\n"
-"gdy klawiatura zostanie odblokowana."
+"Nowe ustawienia kolorów bêd± pokazane\n"
+"gdy klawiatura zostanie odbezpieczona."
 
 #: main.C:760
 msgid "About kvt"
-msgstr "Informacje o kvt"
+msgstr "kvt - informacje"
 
 #: main.C:760
 msgid ""

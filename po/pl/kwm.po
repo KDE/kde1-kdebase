@@ -1,10 +1,14 @@
+# Polish translation of KDE kwm
+# Version 0.1.1
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 
 #: error.C:28
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
-msgstr "kwm: wyglada na to, ze menedzer okien jest juz uruchomiony.  "
-"kwm nie uruchomil siŠ\n"
+msgstr ""
+"kwm: wyglada na to, ze menedzer okien jest juz uruchomiony.  "
+"kwm nie uruchomil sie\n"
 
 #: error.C:42
 msgid "kwm: failure during initialisation; aborting\n"
@@ -44,7 +48,7 @@ msgstr "kwm: wyjscie na sygnal\n"
 
 #: main.C:371
 msgid "&Help on desktop"
-msgstr "Wywoþaj &pomoc"
+msgstr "Wywo³aj &pomoc"
 
 #: main.C:372
 msgid "&Execute command"
@@ -52,15 +56,15 @@ msgstr "&Uruchom polecenie"
 
 #: main.C:373
 msgid "&Display properties"
-msgstr "&Wþaµciwoµci wyµwietlania"
+msgstr "&W³a¶ciwo¶ci wy¶wietlania"
 
 #: main.C:374
 msgid "&Refresh desktop"
-msgstr "&OdµwieÀ desktop"
+msgstr "&Od¶wie¿ desktop"
 
 #: main.C:375
 msgid "&Arrange icons"
-msgstr "Uporz˜dkuj &ikony"
+msgstr "Uporz±dkuj &ikony"
 
 #: main.C:377
 msgid "&Lock screen"
@@ -68,7 +72,7 @@ msgstr "&Zablokuj ekran"
 
 #: main.C:378
 msgid "Lo&gout"
-msgstr "Wylo&guj siŠ"
+msgstr "Wylo&guj siê"
 
 #: main.C:1093
 msgid "One"
@@ -88,11 +92,11 @@ msgstr "Cztery"
 
 #: main.C:1101
 msgid "Five"
-msgstr "PiŠ†"
+msgstr "Piêæ"
 
 #: main.C:1103
 msgid "Six"
-msgstr "Szeµ†"
+msgstr "Sze¶æ"
 
 #: main.C:1105
 msgid "Seven"
@@ -112,7 +116,7 @@ msgstr "Mi&nimalizuj"
 
 #: main.C:1143
 msgid "&Move"
-msgstr "Prz&enieµ"
+msgstr "Prz&enie¶"
 
 #: main.C:1144
 msgid "&Resize"
@@ -124,7 +128,7 @@ msgstr "(Od) Przyk&lej"
 
 #: main.C:1146
 msgid "&To Desktop"
-msgstr "&Przywr†"
+msgstr "&Przywróæ"
 
 #: main.C:1148
 msgid "&Close"
