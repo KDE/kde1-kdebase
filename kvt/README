@@ -1,3 +1,43 @@
+
+FAQ:
+How to get 'who' and 'talkd' to work correctly with kvt.
+-----------------------------------------------------
+
+The key to this is the utmp.c file. Unfortunately the location of the
+utmp file which logs loggins varies from system to system, so by
+default kvt compiles without utmp logging. Howver, if you want
+to use talkd or finger or similar you need to have kvt write
+to the utmp file. Here is how to achive that:
+
+a) edit utmp.c and add the following twolines to it:
+
+#define UTMP_SUPPORT 1
+#define HAVE_LASTLOG_H 1
+
+you may get by without the second line ...
+
+b) locate the location of your utmp file and replace 
+
+#ifndef UTMP
+#define UTMP "/etc/utmp"
+#endif
+
+by  
+
+#ifndef UTMP
+#define UTMP "/where/my/utmpfile/resides/utmp"
+#endif
+
+On RedHat 5.0 this would be /var/run/utmp for example.
+
+Recompile kvt and make sure that /var/run/utmp is world writeable,
+eg. chmod 666 /where/my/utmpfile/resides/utmp
+
+Bernd
+wuebben@kde.org
+
+
+
 This is the new release of kvt, the KDE terminal emulation
 
 Version kvt-0.17.3 (based on rxvt-2.08)
