@@ -68,6 +68,17 @@ private:
   void setElectricBorders( int );
   void setElectricBordersMovePointer( bool );
 
+  //CT 15mar98 - magics
+  int getEdgeResistance();
+  void setEdgeResistance( int );
+  
+  int getBorderSnapZone();
+  void setBorderSnapZone( int );
+  
+  int getWindowSnapZone();
+  void setWindowSnapZone( int );
+  //CT ---
+
   QButtonGroup *ElectricBox;
   QCheckBox *enable, *movepointer;
   KSlider *delayslider;
@@ -75,6 +86,12 @@ private:
   QLCDNumber *delaylcd;
   QLabel *sec;
 
+  //CT 15mar98 - magics
+  QButtonGroup *MagicBox;
+  KSlider *EdgeResSlider, *BrdrSnapSlider, *WndwSnapSlider;
+  QLabel *EdgeResLabel, *BrdrSnapLabel, *WndwSnapLabel;
+  QLCDNumber *EdgeResLCD, *BrdrSnapLCD, *WndwSnapLCD;
+  //CT ---
 };
 
 #endif
