@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1998-11-08 01:22+0100\n"
-"PO-Revision-Date: 1998-11-07 05:04+0600\n"
+"PO-Revision-Date: 1998-11-08 05:04+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -90,12 +90,11 @@ msgstr ""
 
 #: titlebar.cpp:924
 msgid "Title Alignment"
-msgstr ""
+msgstr "Выравнивание заголовка"
 
 #: titlebar.cpp:933
-#, fuzzy
 msgid "Middle"
-msgstr "Средняя кнопка"
+msgstr "Средний"
 
 #
 #: titlebar.cpp:954
