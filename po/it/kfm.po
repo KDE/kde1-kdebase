@@ -753,7 +753,7 @@ msgstr "Imposta GID"
 
 #: kfmprops.cpp:489
 msgid "Sticky"
-msgstr "Attacato"
+msgstr "Sticky"
 
 #: kfmprops.cpp:507
 msgid "Ownership"
