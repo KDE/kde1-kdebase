@@ -44,13 +44,13 @@ Pager::Pager(KWMModuleApplication *a, char *name) : QWidget(NULL,  "kwmpager")
     KWM::setUnsavedDataHint(winId(), false);
 
     int count = KWM::numberOfDesktops();
-    desktops.setAutoDelete(true);
     desktop_font = new QFont();
     Desktop *desk;
 
+    desktops.resize(count);
     for (int i = 0; i < count; i++) {
         desk = new Desktop(a, i + 1, this);
-        desktops.append(desk);
+        desktops[i] = desk;
     }
     
     activeDesktop = desktops.at(KWM::currentDesktop() - 1);
@@ -176,8 +176,8 @@ void Pager::resizeEvent ( QResizeEvent * )
     QSize desktop_size(width() / (count / 2), height() / 2);
     
     Desktop *desk;
-    int i;
-    for (desk = desktops.first(), i=0; desk ; desk = desktops.next(), i++) {
+    for (uint i=0; i < desktops.size() ; i++) {
+	desk = desktops[i];
         desk->resize(desktop_size);
         desk->move(desktop_size.width() * (i / 2), 
 		   (i % 2) ? height() / 2 : 0);
@@ -192,37 +192,46 @@ void Pager::resizeEvent ( QResizeEvent * )
  
 void Pager::initDesktops()
 {
-    Desktop *desk;
-    for (desk = desktops.first(); desk != 0L;
-         desk = desktops.next()) {
-	desk->init();
-	desk->setFont(*desktop_font);
+    uint i;
+    for (i=0; i < desktops.size(); i++) {
+	desktops[i]->init();
+	desktops[i]->setFont(*desktop_font);
     }
     for (Window *w = kwmmapp->windows_sorted.first(); w != 0L; 
 	 w = kwmmapp->windows_sorted.next()) {
-	desktops.at(KWM::desktop(*w) - 1) -> addWindow(*w);
+	desktops[KWM::desktop(*w) - 1] -> addWindow(*w);
     }
-    for (desk = desktops.first(); desk != 0L;
-	 desk = desktops.next())
-	desk->repaint(false);
+    for (i=0; i < desktops.size(); i++) {
+	desktops[i]->repaint(false);
+	int l = i - 2;
+	uint r = i + 2;
+	int t = i - 1;
+	uint b = i + 1;
+	desktops[i]->setNeighbours(l >= 0 ? desktops[l] : 0,
+				   r < desktops.size() ? desktops[r] : 0,
+				   t >= 0 ? desktops[t] : 0,
+				   b < desktops.size() ? desktops[b] : 0);
+    }
 }
 
 void Pager::changeNumber(int)
 {
+    uint i;
     windowActivate(0); // clear Desktop With Active Window
-    desktops.clear();
-    int count = KWM::numberOfDesktops();
+    for (i = 0; i < desktops.size(); i++)
+	delete desktops[i];
 
-    for (int i = 0; i < count; i++) {
-	Desktop *desk = new Desktop(kwmmapp, i + 1, this);
-	desktops.append(desk);
-	desk->show();
+    uint count = KWM::numberOfDesktops();
+    desktops.resize(count);
+    for (i = 0; i < count; i++) {
+	desktops[i] = new Desktop(kwmmapp, i + 1, this);
+	desktops[i]->show();
     }
     
-    activeDesktop = desktops.at(KWM::currentDesktop() - 1);
+    activeDesktop = desktops[KWM::currentDesktop() - 1];
     activeDesktop->activate(true);
     
-    resizeEvent(NULL);
+    resizeEvent(0);
     initDesktops();
     repaint(true);
 }
@@ -268,8 +277,9 @@ void Pager::removeWindow(Window w)
     if (win)
 	stickys.remove();
 
-    for (Desktop *desk = desktops.first(); desk; desk = desktops.next())
-	desk -> removeWindow( w );
+    for (uint i = 0; i < desktops.size(); i++)
+	desktops[i]->removeWindow( w );
+
     if (win)
 	delete win;
 }
@@ -293,11 +303,11 @@ void Pager::windowChange(Window w)
     }
 	
     if ( current->getWindow(w) == 0L ) {
-	for (Desktop *desk = desktops.first(); desk; desk = desktops.next())
-	    desk->removeWindow(w);
+	for (uint i = 0; i < desktops.size(); i++)
+	    desktops[i]->removeWindow(w);
 	current->addWindow(w);
     } 
-    desktops.at(KWM::desktop(w) - 1)->changeWindow(w);
+    desktops[KWM::desktop(w) - 1]->changeWindow(w);
 }
 
 void Pager::raiseWindow(Window w)

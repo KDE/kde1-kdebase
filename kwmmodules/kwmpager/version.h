@@ -1,1 +1,1 @@
-#define KWMPAGER_VERSION "kwmpager 0.5 patchlevel 5"
+#define KWMPAGER_VERSION "kwmpager 0.6 patchlevel 1"

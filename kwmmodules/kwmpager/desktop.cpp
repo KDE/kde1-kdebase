@@ -141,6 +141,18 @@ PagerWindow *Desktop::removeWindow(Window w)
     return win;
 }
 
+void Desktop::removeWindow(PagerWindow *w) 
+{
+    if (!w)
+	return;
+
+    windows.remove(w);
+    if (w == activeWindow)
+	activeWindow = 0;
+    fillPixmap();
+    repaint(false);
+}
+
 void Desktop::activateWindow(Window w)
 {
     PagerWindow *win;
@@ -215,7 +227,7 @@ void Desktop::activate(bool flag)
 
 void Desktop::mousePressEvent( QMouseEvent *e )
 {
-    if (e->button() == LeftButton) {
+    if (e->button() == LeftButton) {// || e->button() == MidButton) {
 	KWM::switchToDesktop(Id);
 	PagerWindow *win;
 	for (win = windows.last(); win; win = windows.prev()) {
@@ -232,6 +244,7 @@ void Desktop::mousePressEvent( QMouseEvent *e )
 	cursor_set = false;
 	if (dragWindow)
 	    dragStart = e->pos();
+	buttonPressed = e->button();
     }
 }
 
@@ -248,6 +261,7 @@ void Desktop::mouseReleaseEvent( QMouseEvent * )
     
     QRect rect = KWM::geometry(dragWindow->id); // without frames this time
     dragWindow->rect = QRect(x,y, rect.width(), rect.height());
+    KWM::moveToDesktop(dragWindow->id, Id); 
     KWM::setGeometry(dragWindow->id, dragWindow->rect);
     dragWindow = 0;
     if (cursor_set)
@@ -257,6 +271,27 @@ void Desktop::mouseReleaseEvent( QMouseEvent * )
 void Desktop::mouseDoubleClickEvent ( QMouseEvent *)
 {
     emit doubleClick();
+}
+
+void Desktop::setNeighbours(Desktop *_l, Desktop *_r,
+			    Desktop *_t, Desktop *_b)
+{
+    left = _l;
+    right = _r;
+    top = _t;
+    bottom = _b;
+}
+
+Desktop *Desktop::findNeighbour() {
+    
+    int x = dragWindow->prect.x();
+    int height = dragWindow->prect.height();
+    int width = dragWindow->prect.width();
+    if (x < 0 && -x > width/2) {
+	dragWindow->prect.setX( pixmap_size.width() + x);
+	return left;
+    }
+    return 0;
 }
 
 void Desktop::mouseMoveEvent( QMouseEvent *e)
@@ -278,13 +313,28 @@ void Desktop::mouseMoveEvent( QMouseEvent *e)
     QRect backup = dragWindow->prect;
     dragWindow->prect = dragWindow->mrect;
     dragWindow->prect.moveBy(tmp.x(), tmp.y());
-    QRect inter = dragWindow->prect.intersect(QRect(0,0,
-						    pixmap_size.width(), 
-						    pixmap_size.height()));
-    if (inter.width() < 3 || inter.height() < 3){
-	dragWindow->prect = backup;
+
+    Desktop *dest = 0;
+
+    if (buttonPressed == MidButton) 
+	dest = findNeighbour();
+
+    if (buttonPressed == LeftButton || dest == 0) {
+	QRect inter = dragWindow->prect.intersect(QRect(0,0,
+							pixmap_size.width(), 
+							pixmap_size.height()));
+	if (inter.width() < 3 || inter.height() < 3) {
+	    dragWindow->prect = backup;
+	}
+	
     }
-    
+	
+    if (dest) {
+	dest->addWindow(dragWindow);
+	removeWindow(dragWindow);
+	return;
+    }
+	
     fillPixmap();
     repaint(false);
 }

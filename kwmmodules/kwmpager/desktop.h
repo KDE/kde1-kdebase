@@ -50,12 +50,14 @@ public:
     void addWindow(Window);
     void addWindow(PagerWindow *win);
     PagerWindow *removeWindow(Window);
+    void removeWindow(PagerWindow *w);
     PagerWindow *getWindow(Window);
     void changeWindow(Window w);
     void raiseWindow(Window w);
     void activateWindow(Window w);
     void lowerWindow(Window);
     void init();
+    void setNeighbours(Desktop *_l, Desktop *_r, Desktop *_t, Desktop *_b);
 
 protected:
     void fillPixmap();
@@ -68,6 +70,7 @@ protected:
     virtual void resizeEvent ( QResizeEvent * );  
     virtual void paletteChange ( const QPalette &);
     PagerWindow *activeWindow;
+    Desktop *findNeighbour();
 
 private:
     KWMModuleApplication* kwmmapp;
@@ -79,6 +82,11 @@ private:
     QPoint dragStart;
     PagerWindow *dragWindow;
     bool cursor_set;
+    int buttonPressed;
+    Desktop *left;
+    Desktop *right;
+    Desktop *top;
+    Desktop *bottom;
 
 signals:
     void activated(int);
