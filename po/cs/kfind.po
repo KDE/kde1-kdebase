@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind 0.3.5\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-06-18 09:18 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -197,6 +197,10 @@ msgstr "Spustitelné soubory"
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
 msgstr "Soubory spustitélné jako SUID"
+
+#: kftabdlg.cpp:246
+msgid "(none)"
+msgstr ""
 
 #: kftabdlg.cpp:247
 msgid "At Least"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,23 +34,28 @@ msgstr "Oops!"
 msgid "Unknown format: "
 msgstr "Tuntematon formaatti: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr "Etsintä valmis"
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr "Jatka etsimistä sivun alusta?"
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+#, fuzzy
+msgid "Forward"
+msgstr "&Eteenpäin"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Avaa tämä linkki"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Lisää osoitekirjaan"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "Avaa uudessa ikkunassa"
 
@@ -77,6 +82,18 @@ msgstr "Vakava virhe: "
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Varoitus: "
+
+#: options.cpp:40
+msgid "Small"
+msgstr ""
+
+#: options.cpp:44
+msgid "Medium"
+msgstr ""
+
+#: options.cpp:48
+msgid "Large"
+msgstr ""
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -154,6 +171,10 @@ msgstr "Pelit"
 msgid "System Administration"
 msgstr "Järjestelmän ylläpito"
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr "Luetaan hakemistoa: "
@@ -212,10 +233,6 @@ msgstr "&Takaisin"
 msgid "&Forward"
 msgstr "&Eteenpäin"
 
-#: mainwidget.cpp:157
-msgid "&Contents"
-msgstr "&Sisältö"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "&Alkuun"
@@ -223,6 +240,15 @@ msgstr "&Alkuun"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "&Ylös"
+
+#: mainwidget.cpp:160
+#, fuzzy
+msgid "&Previous"
+msgstr "Edellinen solmu"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr ""
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -335,3 +361,5 @@ msgstr "Eroittele isot ja pienet"
 msgid "&Find"
 msgstr "&Etsi"
 
+#~ msgid "&Contents"
+#~ msgstr "&Sisältö"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-04-20 22:02+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -33,23 +33,28 @@ msgstr "糟糕"
 msgid "Unknown format: "
 msgstr "未知的格式: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+#, fuzzy
+msgid "Forward"
+msgstr "向前[&F]"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "開啟這項鍊結"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "加入書籤"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "在新視窗中開啟"
 
@@ -74,6 +79,18 @@ msgstr "致命的錯誤: "
 #: error.cpp:28
 msgid "Warning: "
 msgstr "警告: "
+
+#: options.cpp:40
+msgid "Small"
+msgstr "小型"
+
+#: options.cpp:44
+msgid "Medium"
+msgstr "中型"
+
+#: options.cpp:48
+msgid "Large"
+msgstr "大型"
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -149,6 +166,10 @@ msgstr "Games(遊戲)"
 msgid "System Administration"
 msgstr "System Administration(系統管理)"
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr "讀取目錄: "
@@ -206,11 +227,6 @@ msgstr "向後[&B]"
 msgid "&Forward"
 msgstr "向前[&F]"
 
-#: mainwidget.cpp:157
-#, fuzzy
-msgid "&Contents"
-msgstr "求助內容"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "頂端[&T]"
@@ -218,6 +234,14 @@ msgstr "頂端[&T]"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "上層[&U]"
+
+#: mainwidget.cpp:160
+msgid "&Previous"
+msgstr "前一頁[&P]"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr "下一頁[&N]"
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -330,20 +354,15 @@ msgstr ""
 msgid "&Find"
 msgstr ""
 
+#, fuzzy
+#~ msgid "&Contents"
+#~ msgstr "求助內容"
+
 #~ msgid "Could not start or find KFM"
 #~ msgstr "無法開啟或找不到 KFM"
 
 #~ msgid "Font Size"
 #~ msgstr "字型大小"
-
-#~ msgid "Small"
-#~ msgstr "小型"
-
-#~ msgid "Medium"
-#~ msgstr "中型"
-
-#~ msgid "Large"
-#~ msgstr "大型"
 
 #~ msgid "Fonts"
 #~ msgstr "字型"
@@ -353,12 +372,6 @@ msgstr ""
 
 #~ msgid "&Reload"
 #~ msgstr "重新載入[&R]"
-
-#~ msgid "&Previous"
-#~ msgstr "前一頁[&P]"
-
-#~ msgid "&Next"
-#~ msgstr "下一頁[&N]"
 
 #~ msgid "Stop"
 #~ msgstr "停止"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-04-20 21:19+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -149,6 +149,10 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "(解除)最大化"
 
+#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
+msgid "Move"
+msgstr "移動"
+
 #: titlebar.cpp:991
 #, fuzzy
 msgid "(Un)Shade"
@@ -192,6 +196,10 @@ msgstr "視窗[&W]"
 #, fuzzy
 msgid "Animation:"
 msgstr "標題列動畫"
+
+#: windows.cpp:91
+msgid "None"
+msgstr ""
 
 #: windows.cpp:92
 msgid "Fast"
@@ -407,9 +415,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "With animation"
 #~ msgstr "標題列動畫"
-
-#~ msgid "Move"
-#~ msgstr "移動"
 
 #~ msgid "Restore"
 #~ msgstr "還原"

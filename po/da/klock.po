@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 13:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-01-29 17:00+CET-1\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -581,6 +581,10 @@ msgstr ""
 msgid "Setup krock"
 msgstr "KRock indstilling"
 
+#: rock.cpp:589
+msgid "Move"
+msgstr "Flyt"
+
 #: rock.cpp:595
 msgid "Rotate"
 msgstr "Roter"
@@ -776,6 +780,3 @@ msgstr ""
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
 "Porteret til kscreensave af Emanuel Pirker."
-
-#~ msgid "Move"
-#~ msgstr "Flyt"

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-08-30 10:36+0200\n"
+"POT-Creation-Date: 1998-10-13 13:29+0200\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-09-09 17:23:06+0200\n"
 "From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
@@ -8,67 +8,72 @@ msgstr ""
 "Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp "
 "kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
 
-#: kdmshutdown.cpp:159
+#: kdmshutdown.cpp:171
 msgid "Shutdown or restart?"
 msgstr "Iskljuèi ili restartaj?"
 
-#: kdmshutdown.cpp:175
+#: kdmshutdown.cpp:187
 msgid "Shutdown"
 msgstr "Iskljuèi"
 
-#: kdmshutdown.cpp:189
+#: kdmshutdown.cpp:201
 msgid "Shutdown and restart"
 msgstr "Iskljuèi i restartaj"
 
-#: kdmshutdown.cpp:198
+#: kdmshutdown.cpp:210
 msgid "Exit kdm"
 msgstr "Zavr¹i i odlogiraj se"
 
-#: kgreeter.cpp:158
+#: kgreeter.cpp:166
 msgid "Login:"
 msgstr "Prijava:"
 
-#: kgreeter.cpp:170
+#: kgreeter.cpp:178
 msgid "Password:"
 msgstr "Lozinka:"
 
-#: kgreeter.cpp:195
+#: kgreeter.cpp:203
 msgid "Login failed!"
 msgstr "Prijava netoèna!"
 
-#: kgreeter.cpp:201
+#: kgreeter.cpp:209
 msgid "Session Type:"
 msgstr "Vrst rasporeda"
 
-#: kgreeter.cpp:217
+#: kgreeter.cpp:225
 msgid "Go!"
 msgstr "Idi!"
 
-#: kgreeter.cpp:233
+#: kgreeter.cpp:241
 msgid "Shutdown..."
 msgstr "Ga¹enje..."
 
-#: kgreeter.cpp:418
-msgid "No login"
-msgstr "Nema prijavnog imena"
+#: kgreeter.cpp:453
+msgid "Logins not available right now."
+msgstr ""
 
-#: kgreeter.cpp:467 kgreeter.cpp:475 kgreeter.cpp:501 kgreeter.cpp:509
-msgid "Expired"
-msgstr "Istekao"
+#: kgreeter.cpp:494
+msgid "bah"
+msgstr ""
 
-#: kgreeter.cpp:468 kgreeter.cpp:502
+#: kgreeter.cpp:547 kgreeter.cpp:574
 msgid "Sorry -- your account has expired."
 msgstr "®alim - va¹ raèun je istekao"
 
-#: kgreeter.cpp:473 kgreeter.cpp:507
+#: kgreeter.cpp:552 kgreeter.cpp:579
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Upozorenje: Va¹ raèun istièe %s"
 
-#: kgreeter.cpp:541
-msgid "No home"
-msgstr "Nema poèetnog direktorija"
-
-#: kgreeter.cpp:542
+#: kgreeter.cpp:606
 msgid "Home directory not available"
 msgstr "Poèetni direktorij nije dostupan"
+
+#~ msgid "No login"
+#~ msgstr "Nema prijavnog imena"
+
+#~ msgid "Expired"
+#~ msgstr "Istekao"
+
+#~ msgid "No home"
+#~ msgstr "Nema poèetnog direktorija"

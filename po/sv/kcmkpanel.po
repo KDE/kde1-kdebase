@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-07-08 17:03+02:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -26,12 +26,12 @@ msgstr "&Skrivbord"
 msgid "Disk &Navigator"
 msgstr ""
 
-#: main.cpp:109
+#: main.cpp:79
 #, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "användning: kcmkpanel [-init | {panel,options,desktops}]\n"
 
-#: main.cpp:142
+#: main.cpp:112
 msgid "KPanel Configuration"
 msgstr "Panelens inställningar"
 

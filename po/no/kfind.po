@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfind.po\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-03-12 14:47+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -197,6 +197,10 @@ msgstr "Programfiler"
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
 msgstr "SUID-programfiler"
+
+#: kftabdlg.cpp:246
+msgid "(none)"
+msgstr ""
 
 #: kftabdlg.cpp:247
 msgid "At Least"

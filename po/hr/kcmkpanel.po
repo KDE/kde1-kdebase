@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -25,12 +25,12 @@ msgstr "&Radne povr¹ine"
 msgid "Disk &Navigator"
 msgstr ""
 
-#: main.cpp:109
+#: main.cpp:79
 #, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "uporaba: kcmkpanel [-init | {ploèa,opcije,radne povr¹ine}]\n"
 
-#: main.cpp:142
+#: main.cpp:112
 msgid "KPanel Configuration"
 msgstr "KPanel Postava"
 

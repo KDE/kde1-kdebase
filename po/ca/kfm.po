@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-12 11:35+0000\n"
 "PO-Revision-Date: 1998-06-10 00:10+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -25,6 +25,11 @@ msgstr "Carpeta"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ERROR: Plantilla inexistent '%s'"
+
+#: kfmgui.cpp:304
+#, fuzzy
+msgid "&New"
+msgstr "Nou "
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -205,6 +210,10 @@ msgstr "&Cau"
 #: kfmgui.cpp:523 kfmman.cpp:1071
 msgid "Up"
 msgstr "Amunt"
+
+#: kfmgui.cpp:533 kfmman.cpp:1079
+msgid "Forward"
+msgstr ""
 
 #: kfmgui.cpp:538
 #, fuzzy
@@ -498,6 +507,10 @@ msgstr "A la Paperera"
 msgid "Open with"
 msgstr "Obrir amb"
 
+#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+msgid "Move"
+msgstr "Moure"
+
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
 msgstr "Enllaç"
@@ -509,6 +522,18 @@ msgstr "Buidar la paperera"
 #: main.cpp:241
 msgid "Add to Bookmarks"
 msgstr "Afegir Punt"
+
+#: htmlopts.cpp:39
+msgid "Small"
+msgstr "Xicoteta"
+
+#: htmlopts.cpp:43
+msgid "Medium"
+msgstr "Mitjana"
+
+#: htmlopts.cpp:47
+msgid "Large"
+msgstr "Gran"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
@@ -1387,23 +1412,11 @@ msgstr ""
 #~ msgid "Stop"
 #~ msgstr "Aturar"
 
-#~ msgid "Move"
-#~ msgstr "Moure"
-
 #~ msgid "Properties"
 #~ msgstr "Propietats"
 
 #~ msgid "Font Size"
 #~ msgstr "Mida de font"
-
-#~ msgid "Small"
-#~ msgstr "Xicoteta"
-
-#~ msgid "Medium"
-#~ msgstr "Mitjana"
-
-#~ msgid "Large"
-#~ msgstr "Gran"
 
 #~ msgid "Continue"
 #~ msgstr "Continuar"

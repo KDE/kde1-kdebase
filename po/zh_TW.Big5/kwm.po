@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-04-20 23:08+0800\n"
 "Last-Translator:  Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -27,100 +27,100 @@ msgstr "kwm: 初始化發生錯誤; 中止\n"
 msgid "Preparing session ... "
 msgstr ""
 
-#: main.C:504
+#: main.C:505
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:511
+#: main.C:512
 msgid "Usage: "
 msgstr "用法: "
 
-#: main.C:522
+#: main.C:523
 msgid "&Maximize"
 msgstr "最大化[&M]"
 
-#: main.C:523
+#: main.C:524
 msgid "&Restore"
 msgstr "還原[&R]"
 
-#: main.C:524
+#: main.C:525
 msgid "&Iconify"
 msgstr "圖示化[&I]"
 
-#: main.C:525
+#: main.C:526
 msgid "&DeIconify"
 msgstr "還原[&D]"
 
-#: main.C:526
+#: main.C:527
 msgid "&Sticky"
 msgstr "黏附[&S]"
 
-#: main.C:527
+#: main.C:528
 msgid "&UnSticky"
 msgstr "取消黏附[&U]"
 
-#: main.C:528
+#: main.C:529
 msgid "Mo&ve"
 msgstr "移動[&V]"
 
-#: main.C:529
+#: main.C:530
 msgid "Resi&ze"
 msgstr "調整視窗大小[&Z]"
 
-#: main.C:531
+#: main.C:532
 msgid "&To desktop"
 msgstr "移至桌面[&T]"
 
-#: main.C:533
+#: main.C:534
 msgid "&Onto current desktop"
 msgstr "移至目前桌面[&O]"
 
-#: main.C:573
+#: main.C:574
 msgid "One"
 msgstr "一"
 
-#: main.C:576
+#: main.C:577
 msgid "Two"
 msgstr "二"
 
-#: main.C:579
+#: main.C:580
 msgid "Three"
 msgstr "三"
 
-#: main.C:582
+#: main.C:583
 msgid "Four"
 msgstr "四"
 
-#: main.C:585
+#: main.C:586
 msgid "Five"
 msgstr "五"
 
-#: main.C:588
+#: main.C:589
 msgid "Six"
 msgstr "六"
 
-#: main.C:591
+#: main.C:592
 msgid "Seven"
 msgstr "七"
 
-#: main.C:594
+#: main.C:595
 msgid "Eight"
 msgstr "八"
 
-#: main.C:608
+#: main.C:609
 msgid "Unnamed Desktop"
 msgstr ""
 
-#: main.C:918
+#: main.C:919
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "一些圖形是無效的: ShapeMode 取消\n"
 
-#: main.C:1030
+#: main.C:1031
 #, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "一些圖形是無效的: ShapeMode 取消\n"
 
-#: main.C:1353
+#: main.C:1354
 msgid "*** No Tasks ***"
 msgstr "*** 沒有任何工作 ***"
 

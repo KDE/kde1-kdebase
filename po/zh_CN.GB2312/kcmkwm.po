@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -134,6 +134,10 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "最大化/恢复"
 
+#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
+msgid "Move"
+msgstr "移动"
+
 #
 #: titlebar.cpp:991
 msgid "(Un)Shade"
@@ -177,6 +181,10 @@ msgstr "窗口改变大小"
 #, fuzzy
 msgid "Animation:"
 msgstr "标题动画"
+
+#: windows.cpp:91
+msgid "None"
+msgstr ""
 
 #: windows.cpp:92
 msgid "Fast"
@@ -391,9 +399,6 @@ msgstr ""
 #
 #~ msgid "With animation"
 #~ msgstr "有动画"
-
-#~ msgid "Move"
-#~ msgstr "移动"
 
 #~ msgid "Restore"
 #~ msgstr "恢复"

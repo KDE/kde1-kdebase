@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1998-10-01 13:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -434,6 +434,7 @@ msgstr ""
 "\n"
 
 #: main.cpp:536
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
@@ -610,6 +611,11 @@ msgstr "Skala"
 #: rock.cpp:549
 msgid "Setup krock"
 msgstr "Nastavenie Skaly"
+
+#: rock.cpp:589
+#, fuzzy
+msgid "Move"
+msgstr "Re¾im:"
 
 #: rock.cpp:595
 msgid "Rotate"

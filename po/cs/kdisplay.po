@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-06-20 14:04 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -251,67 +251,67 @@ msgstr ""
 "Pro zaèátek budou barvy právì pou¾ité v náhledu\n"
 "zkopírovány do tohoto schématu."
 
-#: scrnsave.cpp:48
+#: scrnsave.cpp:47
 msgid "Ignore"
 msgstr "Ignoruj"
 
-#: scrnsave.cpp:49
+#: scrnsave.cpp:48
 msgid "Save Screen"
 msgstr "©etøit obrazovku"
 
-#: scrnsave.cpp:50
+#: scrnsave.cpp:49
 msgid "Lock Screen"
 msgstr "Zablokovat obrazovku"
 
-#: scrnsave.cpp:113 scrnsave.cpp:182
+#: scrnsave.cpp:112 scrnsave.cpp:181
 msgid "Screen Saver"
 msgstr "©etøiè obrazovky"
 
-#: scrnsave.cpp:189 scrnsave.cpp:367 scrnsave.cpp:605 scrnsave.cpp:726
+#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:604 scrnsave.cpp:725
 msgid "No screensaver"
 msgstr "®ádný ¹etøiè obrazovky"
 
-#: scrnsave.cpp:210
+#: scrnsave.cpp:209
 msgid "&Setup ..."
 msgstr "Na&stavit ..."
 
-#: scrnsave.cpp:218
+#: scrnsave.cpp:217
 msgid "&Test"
 msgstr "&Test"
 
-#: scrnsave.cpp:231
+#: scrnsave.cpp:230
 msgid "Settings"
 msgstr "Nastavení"
 
-#: scrnsave.cpp:251
+#: scrnsave.cpp:250
 msgid "&Wait for"
 msgstr "Èe&kat"
 
-#: scrnsave.cpp:261
+#: scrnsave.cpp:260
 msgid "min."
 msgstr "min"
 
-#: scrnsave.cpp:267
+#: scrnsave.cpp:266
 msgid "&Require password"
 msgstr "Vy¾a&dovat heslo"
 
-#: scrnsave.cpp:273
+#: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
 msgstr ""
 
-#: scrnsave.cpp:279
+#: scrnsave.cpp:278
 msgid "Show &password as stars"
 msgstr "Zobrazit heslo jako &hvìzdy"
 
-#: scrnsave.cpp:287
+#: scrnsave.cpp:286
 msgid "Priority"
 msgstr "Priorita"
 
-#: scrnsave.cpp:300
+#: scrnsave.cpp:299
 msgid "&High"
 msgstr "&Velká"
 
-#: scrnsave.cpp:309
+#: scrnsave.cpp:308
 msgid "Low"
 msgstr "Malá"
 
@@ -389,6 +389,10 @@ msgstr "Aktivní okno"
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
 msgid "Selected text"
 msgstr "Vybraný text"
+
+#: widgetcanvas.cpp:212
+msgid "New"
+msgstr ""
 
 #: fontchooser.cpp:82
 msgid "&Typeface"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm 1.0pre2\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-07-15 18:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -148,6 +148,10 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "(Mal)Maksimumigu"
 
+#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
+msgid "Move"
+msgstr ""
+
 #: titlebar.cpp:991
 msgid "(Un)Shade"
 msgstr "(Mal)Suprenvolvu"
@@ -187,6 +191,10 @@ msgstr "Grandecoþanøo"
 #: windows.cpp:90
 msgid "Animation:"
 msgstr "Anima¼o:"
+
+#: windows.cpp:91
+msgid "None"
+msgstr ""
 
 #: windows.cpp:92
 msgid "Fast"

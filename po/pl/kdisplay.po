@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay \n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-06-25 18:45+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -244,67 +244,67 @@ msgstr ""
 "Kolory, które widzisz w zapowiedzi, zostan±\n"
 "skopiowane do tego schematu."
 
-#: scrnsave.cpp:48
+#: scrnsave.cpp:47
 msgid "Ignore"
 msgstr "Ignoruj"
 
-#: scrnsave.cpp:49
+#: scrnsave.cpp:48
 msgid "Save Screen"
 msgstr "Zachowaj ekran"
 
-#: scrnsave.cpp:50
+#: scrnsave.cpp:49
 msgid "Lock Screen"
 msgstr "Zablokuj ekran"
 
-#: scrnsave.cpp:113 scrnsave.cpp:182
+#: scrnsave.cpp:112 scrnsave.cpp:181
 msgid "Screen Saver"
 msgstr "Wygaszacz ekranu"
 
-#: scrnsave.cpp:189 scrnsave.cpp:367 scrnsave.cpp:605 scrnsave.cpp:726
+#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:604 scrnsave.cpp:725
 msgid "No screensaver"
 msgstr "Brak wygaszacza"
 
-#: scrnsave.cpp:210
+#: scrnsave.cpp:209
 msgid "&Setup ..."
 msgstr "U&stawienia..."
 
-#: scrnsave.cpp:218
+#: scrnsave.cpp:217
 msgid "&Test"
 msgstr "&Test"
 
-#: scrnsave.cpp:231
+#: scrnsave.cpp:230
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: scrnsave.cpp:251
+#: scrnsave.cpp:250
 msgid "&Wait for"
 msgstr "&Czekaj"
 
-#: scrnsave.cpp:261
+#: scrnsave.cpp:260
 msgid "min."
 msgstr "min."
 
-#: scrnsave.cpp:267
+#: scrnsave.cpp:266
 msgid "&Require password"
 msgstr "&Wymagane has³o"
 
-#: scrnsave.cpp:273
+#: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
 msgstr ""
 
-#: scrnsave.cpp:279
+#: scrnsave.cpp:278
 msgid "Show &password as stars"
 msgstr "Pokazuj &has³o jako gwiazdki"
 
-#: scrnsave.cpp:287
+#: scrnsave.cpp:286
 msgid "Priority"
 msgstr "Priorytet"
 
-#: scrnsave.cpp:300
+#: scrnsave.cpp:299
 msgid "&High"
 msgstr "&Wysoki"
 
-#: scrnsave.cpp:309
+#: scrnsave.cpp:308
 msgid "Low"
 msgstr "Niski"
 
@@ -385,6 +385,10 @@ msgstr "Aktywne okno"
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
 msgid "Selected text"
 msgstr "Wybrany tekst"
+
+#: widgetcanvas.cpp:212
+msgid "New"
+msgstr ""
 
 #: fontchooser.cpp:82
 msgid "&Typeface"

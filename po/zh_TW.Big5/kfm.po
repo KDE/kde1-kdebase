@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-12 11:35+0000\n"
 "PO-Revision-Date: 1998-04-20 22:30+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -25,6 +25,11 @@ msgstr "資料夾"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "錯誤: 樣板不存在 '%s'"
+
+#: kfmgui.cpp:304
+#, fuzzy
+msgid "&New"
+msgstr "新 "
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -200,6 +205,10 @@ msgstr "快取[&C]"
 
 #: kfmgui.cpp:523 kfmman.cpp:1071
 msgid "Up"
+msgstr ""
+
+#: kfmgui.cpp:533 kfmman.cpp:1079
+msgid "Forward"
 msgstr ""
 
 #: kfmgui.cpp:538
@@ -494,6 +503,10 @@ msgstr "移至垃圾桶"
 msgid "Open with"
 msgstr "以...開啟"
 
+#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+msgid "Move"
+msgstr "搬移"
+
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
 msgstr "鏈結"
@@ -505,6 +518,18 @@ msgstr "空垃圾桶"
 #: main.cpp:241
 msgid "Add to Bookmarks"
 msgstr "加入書籤"
+
+#: htmlopts.cpp:39
+msgid "Small"
+msgstr "小型"
+
+#: htmlopts.cpp:43
+msgid "Medium"
+msgstr "中型"
+
+#: htmlopts.cpp:47
+msgid "Large"
+msgstr "大型"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
@@ -1383,23 +1408,11 @@ msgstr ""
 #~ msgid "Stop"
 #~ msgstr "停止"
 
-#~ msgid "Move"
-#~ msgstr "搬移"
-
 #~ msgid "Properties"
 #~ msgstr "特質內容"
 
 #~ msgid "Font Size"
 #~ msgstr "字型大小"
-
-#~ msgid "Small"
-#~ msgstr "小型"
-
-#~ msgid "Medium"
-#~ msgstr "中型"
-
-#~ msgid "Large"
-#~ msgstr "大型"
 
 #~ msgid "Continue"
 #~ msgstr "繼續"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-03-30 16:29+01\n"
 "Last-Translator: Oliver Hensel <oliver.hensel@gmx.de>\n"
 
@@ -137,6 +137,10 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "Maximieren an/aus"
 
+#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
+msgid "Move"
+msgstr "Bewegen"
+
 #: titlebar.cpp:991
 msgid "(Un)Shade"
 msgstr "Rolladen hoch/runter"
@@ -176,6 +180,10 @@ msgstr "Änderung der Fenstergröße"
 #: windows.cpp:90
 msgid "Animation:"
 msgstr "Animation:"
+
+#: windows.cpp:91
+msgid "None"
+msgstr ""
 
 #: windows.cpp:92
 msgid "Fast"
@@ -380,9 +388,6 @@ msgstr "Aktiviere und lass Klick durch"
 
 #~ msgid "With animation"
 #~ msgstr "Mit Animation"
-
-#~ msgid "Move"
-#~ msgstr "Bewegen"
 
 #~ msgid "Restore"
 #~ msgstr "Wiederherstellen"

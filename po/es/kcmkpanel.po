@@ -1,12 +1,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-10-10 20:12+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 "First-Translator: Santiago Fernández and\n"
 "First-Translator: Jorge Valencia <jorgev@est.unileon.es>\n"
-"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
 #: main.cpp:64
 msgid "&Panel"
@@ -20,11 +20,11 @@ msgstr "&Escritorios"
 msgid "Disk &Navigator"
 msgstr "&Navegador de disco"
 
-#: main.cpp:109
+#: main.cpp:79
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "modo de uso: kcmpanel [-init | {panel,options,desktops,disknav}]\n"
 
-#: main.cpp:142
+#: main.cpp:112
 msgid "KPanel Configuration"
 msgstr "Configuración de KPanel"
 

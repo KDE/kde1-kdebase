@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkeys\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-09-10 15:15+0200\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -22,12 +22,29 @@ msgid "&Global shortcuts"
 msgstr "&Globale hurtigtaster"
 
 #: main.cpp:76
-msgid "usage: kcmdisplay [-init | {standard,global}]\n"
+#, fuzzy
+msgid "usage: kcmkeys [-init | {standard,global}]\n"
 msgstr "bruk: kcmdisplay [-init | {standard,global}]\n"
 
 #: main.cpp:118
 msgid "Key binding settings"
 msgstr "Tastkoblinginnstillinger"
+
+#: standard.cpp:53
+msgid "New"
+msgstr ""
+
+#: standard.cpp:57
+msgid "Next"
+msgstr "Neste"
+
+#: standard.cpp:58
+msgid "Prior"
+msgstr "Forrige"
+
+#: standard.cpp:63
+msgid "Find"
+msgstr ""
 
 #: standard.cpp:66
 msgid "Home"
@@ -105,12 +122,6 @@ msgstr ""
 "\n"
 "Tastene som nå brukes i forhåndsvisningen vil\n"
 "bli kopiert til dette valget til å begynne med."
-
-#~ msgid "Next"
-#~ msgstr "Neste"
-
-#~ msgid "Prior"
-#~ msgstr "Forrige"
 
 #~ msgid "Insert"
 #~ msgstr "Insert"

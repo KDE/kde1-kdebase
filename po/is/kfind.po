@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-10-05 01:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is_IS <???>\n"
@@ -198,6 +198,10 @@ msgstr "Keyranlegar skrár"
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
 msgstr "SUID keyranlegar skrár"
+
+#: kftabdlg.cpp:246
+msgid "(none)"
+msgstr ""
 
 #: kftabdlg.cpp:247
 msgid "At Least"

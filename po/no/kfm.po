@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfm\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-12 11:35+0000\n"
 "PO-Revision-Date: 1998-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -28,6 +28,12 @@ msgstr "Mappe"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "FEIL: Mal finnes ikke '%s'"
+
+# kfmgui.cpp:926 kfmgui.cpp:933
+#: kfmgui.cpp:304
+#, fuzzy
+msgid "&New"
+msgstr "Ny"
 
 # kfmgui.cpp:302
 #: kfmgui.cpp:309
@@ -248,6 +254,10 @@ msgstr "&Mellomlager"
 #: kfmgui.cpp:523 kfmman.cpp:1071
 msgid "Up"
 msgstr "Opp"
+
+#: kfmgui.cpp:533 kfmman.cpp:1079
+msgid "Forward"
+msgstr ""
 
 # kfmtree.cpp:396
 #: kfmgui.cpp:538
@@ -599,6 +609,10 @@ msgstr "Flytt til Papirkurv"
 msgid "Open with"
 msgstr "Åpne med"
 
+#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+msgid "Move"
+msgstr ""
+
 # kfmman.cpp:1233 kfmtree.cpp:159 main.cpp:245
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
@@ -613,6 +627,18 @@ msgstr "Tøm Papirkurv"
 #: main.cpp:241
 msgid "Add to Bookmarks"
 msgstr "Legg til bokmerker"
+
+#: htmlopts.cpp:39
+msgid "Small"
+msgstr ""
+
+#: htmlopts.cpp:43
+msgid "Medium"
+msgstr ""
+
+#: htmlopts.cpp:47
+msgid "Large"
+msgstr ""
 
 # htmlopts.cpp:51
 #: htmlopts.cpp:51

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-07-09 15:30+02:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -201,6 +201,10 @@ msgstr "Körbara filer"
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
 msgstr "SUID körbara filer"
+
+#: kftabdlg.cpp:246
+msgid "(none)"
+msgstr ""
 
 #: kftabdlg.cpp:247
 msgid "At Least"

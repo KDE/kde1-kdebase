@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-12 11:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,6 +26,10 @@ msgstr "Φάκελος"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ΛΑΘΟΣ: Το πρότυπο δεν υπάρχει '%s'"
+
+#: kfmgui.cpp:304
+msgid "&New"
+msgstr "&Νέο"
 
 #: kfmgui.cpp:309
 #, fuzzy
@@ -213,6 +217,10 @@ msgstr ""
 #: kfmgui.cpp:523 kfmman.cpp:1071
 msgid "Up"
 msgstr ""
+
+#: kfmgui.cpp:533 kfmman.cpp:1079
+msgid "Forward"
+msgstr "Μπροστά"
 
 #: kfmgui.cpp:538
 msgid "Home"
@@ -509,6 +517,10 @@ msgstr "Μετακίνηση στα Σκουπίδια"
 msgid "Open with"
 msgstr "¶νοιγμα με:"
 
+#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+msgid "Move"
+msgstr "Μετακίνησε"
+
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
 msgstr "Σύνδεσε"
@@ -522,6 +534,18 @@ msgstr "Είναι τα Σκουπίδια"
 #, fuzzy
 msgid "Add to Bookmarks"
 msgstr "Προσθήκη στους σελιδοδείκτες"
+
+#: htmlopts.cpp:39
+msgid "Small"
+msgstr ""
+
+#: htmlopts.cpp:43
+msgid "Medium"
+msgstr ""
+
+#: htmlopts.cpp:47
+msgid "Large"
+msgstr ""
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
@@ -1398,9 +1422,6 @@ msgstr ""
 #~ msgid "Stop"
 #~ msgstr "Stop"
 
-#~ msgid "Move"
-#~ msgstr "Μετακίνησε"
-
 #~ msgid "Properties"
 #~ msgstr "Ιδιότητες"
 
@@ -1479,9 +1500,6 @@ msgstr ""
 #~ msgid "&Delete"
 #~ msgstr "&Διαγραφή"
 
-#~ msgid "&New"
-#~ msgstr "&Νέο"
-
 #~ msgid "&View"
 #~ msgstr "&Θέα"
 
@@ -1502,9 +1520,6 @@ msgstr ""
 
 #~ msgid "Back"
 #~ msgstr "Πίσω"
-
-#~ msgid "Forward"
-#~ msgstr "Μπροστά"
 
 #~ msgid "Reload"
 #~ msgstr "Ξαναφόρτωσε"

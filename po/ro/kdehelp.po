@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -34,23 +34,28 @@ msgstr "Hopa ! "
 msgid "Unknown format: "
 msgstr "Format necunoscut: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+#, fuzzy
+msgid "Forward"
+msgstr "Îna&inte"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Deschide aceastã locaþie"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Adaugã semn de carte"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "Deschide în fereastrã nouã"
 
@@ -75,6 +80,18 @@ msgstr "Eroare Fatalã : "
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Atenþie: "
+
+#: options.cpp:40
+msgid "Small"
+msgstr ""
+
+#: options.cpp:44
+msgid "Medium"
+msgstr ""
+
+#: options.cpp:48
+msgid "Large"
+msgstr ""
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -150,6 +167,10 @@ msgstr "Jocuri"
 msgid "System Administration"
 msgstr "Administrare Sistem"
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr "Citesc directorul:"
@@ -207,11 +228,6 @@ msgstr "Îna&poi"
 msgid "&Forward"
 msgstr "Îna&inte"
 
-#: mainwidget.cpp:157
-#, fuzzy
-msgid "&Contents"
-msgstr "Cuprins Informaþii"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "&Început"
@@ -219,6 +235,15 @@ msgstr "&Început"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "&Sus"
+
+#: mainwidget.cpp:160
+#, fuzzy
+msgid "&Previous"
+msgstr "Nodul Precedent"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr ""
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -335,6 +360,10 @@ msgstr ""
 #: finddlg.cpp:66
 msgid "&Find"
 msgstr ""
+
+#, fuzzy
+#~ msgid "&Contents"
+#~ msgstr "Cuprins Informaþii"
 
 #~ msgid "Could not start or find KFM"
 #~ msgstr "Nu pot gãsi sau porni KFM"

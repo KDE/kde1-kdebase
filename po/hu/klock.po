@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock VERSION\n"
-"POT-Creation-Date: 1998-10-01 13:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -553,6 +553,11 @@ msgstr "Kõ"
 #, fuzzy
 msgid "Setup krock"
 msgstr "Beállítás"
+
+#: rock.cpp:589
+#, fuzzy
+msgid "Move"
+msgstr "Közepe:"
 
 #: rock.cpp:595
 msgid "Rotate"

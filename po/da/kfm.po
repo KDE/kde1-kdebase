@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-12 11:35+0000\n"
 "PO-Revision-Date: 1998-02-25 13:40+CET-1\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: da <LL@li.org>\n"
@@ -25,6 +25,11 @@ msgstr "Folder"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "FEJL: Skabelonen eksisterer ikke ´%s´"
+
+#: kfmgui.cpp:304
+#, fuzzy
+msgid "&New"
+msgstr "Ny "
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -204,6 +209,10 @@ msgstr "&Cache"
 #: kfmgui.cpp:523 kfmman.cpp:1071
 msgid "Up"
 msgstr "Op"
+
+#: kfmgui.cpp:533 kfmman.cpp:1079
+msgid "Forward"
+msgstr ""
 
 #: kfmgui.cpp:538
 msgid "Home"
@@ -494,6 +503,10 @@ msgstr "Flyt til Affaldsspand"
 msgid "Open with"
 msgstr "Åben med"
 
+#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+msgid "Move"
+msgstr "Flyt"
+
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
 msgstr ""
@@ -505,6 +518,18 @@ msgstr "Tøm Affaldsspand"
 #: main.cpp:241
 msgid "Add to Bookmarks"
 msgstr "Tilføj til Bogmærker"
+
+#: htmlopts.cpp:39
+msgid "Small"
+msgstr ""
+
+#: htmlopts.cpp:43
+msgid "Medium"
+msgstr ""
+
+#: htmlopts.cpp:47
+msgid "Large"
+msgstr ""
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
@@ -1377,9 +1402,6 @@ msgstr "Syntaks fejl [URLs ....]\n"
 
 #~ msgid "Stop"
 #~ msgstr "Stop"
-
-#~ msgid "Move"
-#~ msgstr "Flyt"
 
 #~ msgid "Properties"
 #~ msgstr "Indstillinger"

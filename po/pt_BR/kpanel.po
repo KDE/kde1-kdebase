@@ -1,43 +1,47 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:29+0200\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
-#: kpanel.C:254
+#: kpanel.C:232
+msgid "Move"
+msgstr "Mover"
+
+#: kpanel.C:272
 msgid "Go!"
 msgstr "Ir!"
 
-#: kpanel.C:257 tools.C:828
+#: kpanel.C:275 tools.C:828
 msgid "Where do you want to go tomorrow?"
 msgstr "Onde você quer ir amanhã?"
 
-#: kpanel.C:331
+#: kpanel.C:349
 msgid "No info available"
 msgstr "Nenhuma informação disponível"
 
-#: kpanel.C:370 props.C:173 props.C:174
+#: kpanel.C:388 props.C:173 props.C:174
 msgid "Logout"
 msgstr "Sair"
 
-#: kpanel.C:378 props.C:172
+#: kpanel.C:396 props.C:172
 msgid "Lock screen"
 msgstr "Travar tela"
 
-#: kpanel.C:387
+#: kpanel.C:405 kpanel.C:414
 msgid "Hide the panel"
 msgstr "Esconder o painel"
 
-#: kpanel.C:397
+#: kpanel.C:424 kpanel.C:436
 msgid "Show the panel"
 msgstr "Mostrar o painel"
 
-#: kpanel.C:1106 tools.C:658
+#: kpanel.C:1159 tools.C:658
 msgid "No comment available"
 msgstr "Nenhum comentário disponivel"
 
-#: kpanel.C:1115 tools.C:837
+#: kpanel.C:1168 tools.C:837
 msgid "Windowlist"
 msgstr "Lista de Janelas"
 
@@ -57,7 +61,7 @@ msgstr "Adicionar lista de janelas"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Adicionar lista de janelas ao painel"
 
-#: events.C:752 props.C:149
+#: events.C:772 props.C:149
 msgid "Configure"
 msgstr "Configurar"
 
@@ -73,7 +77,7 @@ msgstr "Editar Menus"
 msgid "Add or remove applications in the menu structure "
 msgstr "Adicionar ou remover aplicações ao menu"
 
-#: events.C:754 props.C:155
+#: events.C:774 props.C:155
 msgid "Restart"
 msgstr "Reinicializar"
 
@@ -97,44 +101,39 @@ msgstr "Travar Tela"
 msgid "The menu editor is not installed."
 msgstr "O editor de menus não está instalado."
 
-#: events.C:790 props.C:400
+#: events.C:810 props.C:400
 msgid "Oops!"
 msgstr "Ooops!"
 
-#: events.C:789
+#: events.C:809
 msgid "Cannot put this as button onto the panel!"
 msgstr "Não é possivel adicionar isto ao painel como botão!"
 
-#: pfilemenu.C:111
-msgid "KFM Information"
-msgstr "Informações KFM"
-
-#: pfilemenu.C:112
-msgid "Creating directory:\n"
-msgstr "Criando diretório:\n"
-
-#: pfilemenu.C:340
+#: pfilemenu.C:351
 msgid "(empty folder)"
 msgstr "(pasta vazia)"
 
-#: pfilemenu.C:397
+#: pfilemenu.C:408
 msgid "(Too Many Files)"
 msgstr "(Arquivos demais)"
 
-#: pfilemenu.C:406
+#: pfilemenu.C:417
 msgid "(Access Denied)"
 msgstr "(Acesso negado)"
 
-#: pfilemenu.C:409
+#: pfilemenu.C:420
 msgid "(Unreadable)"
 msgstr "(Ilegível)"
 
-#: pfilemenu.C:416
+#: pfilemenu.C:427
 msgid "Open Folder"
 msgstr "Abrir Pasta"
 
-#~ msgid "Move"
-#~ msgstr "Mover"
+#~ msgid "KFM Information"
+#~ msgstr "Informações KFM"
+
+#~ msgid "Creating directory:\n"
+#~ msgstr "Criando diretório:\n"
 
 #~ msgid "Properties"
 #~ msgstr "Propriedades"

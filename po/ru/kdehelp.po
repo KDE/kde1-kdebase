@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.0\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1997-09-05 02:21+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -39,26 +39,32 @@ msgstr "Оопс!"
 msgid "Unknown format: "
 msgstr "Неизвестный формат: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr ""
 
 #
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+#, fuzzy
+msgid "Forward"
+msgstr "Вперед"
+
+#
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Открыть ссылку"
 
 #
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Добавить закладку"
 
 #
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "Открыть новое окно"
 
@@ -88,6 +94,21 @@ msgstr "Фатальная ошибка: "
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Предупреждение: "
+
+#
+#: options.cpp:40
+msgid "Small"
+msgstr "Маленький"
+
+#
+#: options.cpp:44
+msgid "Medium"
+msgstr "Средний"
+
+#
+#: options.cpp:48
+msgid "Large"
+msgstr "Большой"
 
 #
 #: options.cpp:52
@@ -181,6 +202,10 @@ msgstr "Игры"
 msgid "System Administration"
 msgstr "Системное администрирование"
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 #
 #: man.cpp:592
 msgid "Reading Dir: "
@@ -250,11 +275,6 @@ msgid "&Forward"
 msgstr "Вперед"
 
 #
-#: mainwidget.cpp:157
-msgid "&Contents"
-msgstr "Содержимое"
-
-#
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "Верх"
@@ -263,6 +283,16 @@ msgstr "Верх"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "Вверх"
+
+#
+#: mainwidget.cpp:160
+msgid "&Previous"
+msgstr "Предыдущий"
+
+#
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr "Следующий"
 
 #
 #: mainwidget.cpp:173
@@ -403,24 +433,16 @@ msgid "&Find"
 msgstr ""
 
 #
+#~ msgid "&Contents"
+#~ msgstr "Содержимое"
+
+#
 #~ msgid "Could not start or find KFM"
 #~ msgstr "Невозможно запустить или найти KFM"
 
 #
 #~ msgid "Font Size"
 #~ msgstr "Размер шрифта"
-
-#
-#~ msgid "Small"
-#~ msgstr "Маленький"
-
-#
-#~ msgid "Medium"
-#~ msgstr "Средний"
-
-#
-#~ msgid "Large"
-#~ msgstr "Большой"
 
 #
 #~ msgid "Fonts"
@@ -434,14 +456,6 @@ msgstr ""
 #
 #~ msgid "&Reload"
 #~ msgstr "Перезагрузить"
-
-#
-#~ msgid "&Previous"
-#~ msgstr "Предыдущий"
-
-#
-#~ msgid "&Next"
-#~ msgstr "Следующий"
 
 #
 #~ msgid "Stop"

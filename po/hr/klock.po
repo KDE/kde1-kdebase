@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-10-01 13:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Stjepan Zlodi <szlodi@public.srce.hr> \n"
 "Language-Team: Croatian\n"
@@ -606,6 +606,11 @@ msgstr "Stijena"
 #: rock.cpp:549
 msgid "Setup krock"
 msgstr "Podesi Stijenu"
+
+#: rock.cpp:589
+#, fuzzy
+msgid "Move"
+msgstr "Naèin:"
 
 #: rock.cpp:595
 msgid "Rotate"

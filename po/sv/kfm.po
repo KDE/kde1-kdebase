@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-12 11:35+0000\n"
 "PO-Revision-Date: 1998-07-09 11:59+02:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -26,6 +26,11 @@ msgstr "Katalog"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "FEL: Mallen '%s' finns inte"
+
+#: kfmgui.cpp:304
+#, fuzzy
+msgid "&New"
+msgstr "Ny "
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -210,6 +215,10 @@ msgstr "&Cache"
 #: kfmgui.cpp:523 kfmman.cpp:1071
 msgid "Up"
 msgstr "Upp"
+
+#: kfmgui.cpp:533 kfmman.cpp:1079
+msgid "Forward"
+msgstr ""
 
 #: kfmgui.cpp:538
 #, fuzzy
@@ -502,6 +511,10 @@ msgstr "Flytta till papperskorgen"
 msgid "Open with"
 msgstr "Öppna med"
 
+#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+msgid "Move"
+msgstr ""
+
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
 msgstr "Länk"
@@ -513,6 +526,18 @@ msgstr "Töm papperskorgen"
 #: main.cpp:241
 msgid "Add to Bookmarks"
 msgstr "Lägg till bokmärken"
+
+#: htmlopts.cpp:39
+msgid "Small"
+msgstr ""
+
+#: htmlopts.cpp:43
+msgid "Medium"
+msgstr ""
+
+#: htmlopts.cpp:47
+msgid "Large"
+msgstr ""
 
 #: htmlopts.cpp:51
 msgid "Standard Font"

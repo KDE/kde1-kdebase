@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock 1.0pre2\n"
-"POT-Creation-Date: 1998-10-01 13:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-07-16 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -609,6 +609,11 @@ msgstr "Asteroidoj"
 #: rock.cpp:549
 msgid "Setup krock"
 msgstr "Konfiguri Asteroidojn"
+
+#: rock.cpp:589
+#, fuzzy
+msgid "Move"
+msgstr "Modo:"
 
 #: rock.cpp:595
 msgid "Rotate"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,7 +33,7 @@ msgstr ""
 "\n"
 "Desideri salvare le modifiche ?"
 
-#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:259
 msgid "EMPTY"
 msgstr "VUOTO"
 
@@ -73,7 +73,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Linea Separatrice"
 
-#: confmenu.cpp:102 confmenu.cpp:317
+#: confmenu.cpp:102 confmenu.cpp:316
 msgid "Open/ Close"
 msgstr "Apri/ Chiudi"
 
@@ -81,7 +81,11 @@ msgstr "Apri/ Chiudi"
 msgid "! PROTECTED Button !"
 msgstr "!Pulsante PROTETTO!"
 
-#: confmenu.cpp:171 confmenu.cpp:300
+#: confmenu.cpp:115
+msgid "New"
+msgstr ""
+
+#: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"
 msgstr "Attenzione !"
 
@@ -89,11 +93,11 @@ msgstr "Attenzione !"
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Se elimini questo pulsante perderai tutti i suoi sottomenu"
 
-#: confmenu.cpp:281
+#: confmenu.cpp:280
 msgid "Wrong filename"
 msgstr "Nome file errato"
 
-#: confmenu.cpp:282
+#: confmenu.cpp:281
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -101,12 +105,12 @@ msgstr ""
 "Un file .kdelnk con questo nome esiste già.\n"
 "Per favore scegli un altro nome."
 
-#: confmenu.cpp:301
+#: confmenu.cpp:300
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr ""
 "Cambiando il tipo di pulsante saranno eliminati tutti  i suoi sottomenu"
 
-#: confmenu.cpp:322 confmenu.cpp:911
+#: confmenu.cpp:321 confmenu.cpp:909
 msgid "no command"
 msgstr "nessun comando"
 
@@ -151,7 +155,7 @@ msgstr "Swallow"
 msgid "Link"
 msgstr "Collegamento"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
 msgid "Device"
 msgstr "Dispositivo"
 

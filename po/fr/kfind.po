@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-01-17 23:30 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -198,6 +198,10 @@ msgstr "Exécutables"
 msgid "SUID executable files"
 msgstr "Exécutables SUID"
 
+#: kftabdlg.cpp:246
+msgid "(none)"
+msgstr "(aucun)"
+
 #: kftabdlg.cpp:247
 msgid "At Least"
 msgstr "Au moins"
@@ -366,6 +370,3 @@ msgstr "Erreur lors de la création du processus fils !"
 
 #~ msgid "About &Qt"
 #~ msgstr "A propos de &Qt"
-
-#~ msgid "(none)"
-#~ msgstr "(aucun)"

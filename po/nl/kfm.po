@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-12 11:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Case Roole <cjr@xs4all.nl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,10 @@ msgstr "Map"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "Fout: Sjabloon '%s' bestaat niet"
+
+#: kfmgui.cpp:304
+msgid "&New"
+msgstr "&Nieuw"
 
 #: kfmgui.cpp:309
 #, fuzzy
@@ -227,6 +231,10 @@ msgstr ""
 #: kfmgui.cpp:523 kfmman.cpp:1071
 msgid "Up"
 msgstr ""
+
+#: kfmgui.cpp:533 kfmman.cpp:1079
+msgid "Forward"
+msgstr "Vooruit"
 
 #: kfmgui.cpp:538
 #, fuzzy
@@ -543,6 +551,10 @@ msgstr "Naar vuilnisbak"
 msgid "Open with"
 msgstr "Openen met:"
 
+#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+msgid "Move"
+msgstr "Verplaats"
+
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
 msgstr "Verbinding"
@@ -556,6 +568,18 @@ msgstr "Leeg de vuilnisbak"
 #, fuzzy
 msgid "Add to Bookmarks"
 msgstr "Aan bladwijzers toevoegen"
+
+#: htmlopts.cpp:39
+msgid "Small"
+msgstr "Klein"
+
+#: htmlopts.cpp:43
+msgid "Medium"
+msgstr "Middelgroot"
+
+#: htmlopts.cpp:47
+msgid "Large"
+msgstr "Groot"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
@@ -1467,23 +1491,11 @@ msgstr ""
 #~ msgid "Stop"
 #~ msgstr "Stoppen"
 
-#~ msgid "Move"
-#~ msgstr "Verplaats"
-
 #~ msgid "Properties"
 #~ msgstr "Eigenschappen"
 
 #~ msgid "Font Size"
 #~ msgstr "Lettertype Grootte"
-
-#~ msgid "Small"
-#~ msgstr "Klein"
-
-#~ msgid "Medium"
-#~ msgstr "Middelgroot"
-
-#~ msgid "Large"
-#~ msgstr "Groot"
 
 #~ msgid "Continue"
 #~ msgstr "Doorgaan"
@@ -1573,9 +1585,6 @@ msgstr ""
 #~ msgid "&Delete"
 #~ msgstr "&Verwijderen"
 
-#~ msgid "&New"
-#~ msgstr "&Nieuw"
-
 #~ msgid "&View"
 #~ msgstr "Beel&d"
 
@@ -1596,9 +1605,6 @@ msgstr ""
 
 #~ msgid "Back"
 #~ msgstr "Terug"
-
-#~ msgid "Forward"
-#~ msgstr "Vooruit"
 
 #~ msgid "Reload"
 #~ msgstr "Ververs"

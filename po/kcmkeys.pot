@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,11 +23,27 @@ msgid "&Global shortcuts"
 msgstr ""
 
 #: main.cpp:76
-msgid "usage: kcmdisplay [-init | {standard,global}]\n"
+msgid "usage: kcmkeys [-init | {standard,global}]\n"
 msgstr ""
 
 #: main.cpp:118
 msgid "Key binding settings"
+msgstr ""
+
+#: standard.cpp:53
+msgid "New"
+msgstr ""
+
+#: standard.cpp:57
+msgid "Next"
+msgstr ""
+
+#: standard.cpp:58
+msgid "Prior"
+msgstr ""
+
+#: standard.cpp:63
+msgid "Find"
 msgstr ""
 
 #: standard.cpp:66

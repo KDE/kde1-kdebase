@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kdisplay\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-02-26 22:36+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -250,67 +250,67 @@ msgstr ""
 "Fargene som brukes nå i forhåndsvisningen vil\n"
 "vil til å starte med bli kopiert inn i dette valget."
 
-#: scrnsave.cpp:48
+#: scrnsave.cpp:47
 msgid "Ignore"
 msgstr "Ignorer"
 
-#: scrnsave.cpp:49
+#: scrnsave.cpp:48
 msgid "Save Screen"
 msgstr "Lagre skjerm"
 
-#: scrnsave.cpp:50
+#: scrnsave.cpp:49
 msgid "Lock Screen"
 msgstr "Lås skjerm"
 
-#: scrnsave.cpp:113 scrnsave.cpp:182
+#: scrnsave.cpp:112 scrnsave.cpp:181
 msgid "Screen Saver"
 msgstr "Skjermsparer"
 
-#: scrnsave.cpp:189 scrnsave.cpp:367 scrnsave.cpp:605 scrnsave.cpp:726
+#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:604 scrnsave.cpp:725
 msgid "No screensaver"
 msgstr "Ingen skjermsparer"
 
-#: scrnsave.cpp:210
+#: scrnsave.cpp:209
 msgid "&Setup ..."
 msgstr "&Oppsett ..."
 
-#: scrnsave.cpp:218
+#: scrnsave.cpp:217
 msgid "&Test"
 msgstr "&Test"
 
-#: scrnsave.cpp:231
+#: scrnsave.cpp:230
 msgid "Settings"
 msgstr "Innstillinger"
 
-#: scrnsave.cpp:251
+#: scrnsave.cpp:250
 msgid "&Wait for"
 msgstr "&Vent på"
 
-#: scrnsave.cpp:261
+#: scrnsave.cpp:260
 msgid "min."
 msgstr "min."
 
-#: scrnsave.cpp:267
+#: scrnsave.cpp:266
 msgid "&Require password"
 msgstr "&Krever passord"
 
-#: scrnsave.cpp:273
+#: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
 msgstr "&Aksepter root-passord for å låse opp"
 
-#: scrnsave.cpp:279
+#: scrnsave.cpp:278
 msgid "Show &password as stars"
 msgstr "Vis &passord som stjerner"
 
-#: scrnsave.cpp:287
+#: scrnsave.cpp:286
 msgid "Priority"
 msgstr "Prioritet"
 
-#: scrnsave.cpp:300
+#: scrnsave.cpp:299
 msgid "&High"
 msgstr "&Høy"
 
-#: scrnsave.cpp:309
+#: scrnsave.cpp:308
 msgid "Low"
 msgstr "Lav"
 
@@ -391,6 +391,10 @@ msgstr "Vindu i bruk"
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
 msgid "Selected text"
 msgstr "Valgt tekst"
+
+#: widgetcanvas.cpp:212
+msgid "New"
+msgstr ""
 
 #: fontchooser.cpp:82
 msgid "&Typeface"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-05-08 23:54+0100\n"
 "Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -193,6 +193,10 @@ msgstr "Ausführbare Dateien"
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
 msgstr "SUID ausführbare Datein"
+
+#: kftabdlg.cpp:246
+msgid "(none)"
+msgstr ""
 
 #: kftabdlg.cpp:247
 msgid "At Least"

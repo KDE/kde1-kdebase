@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-04-20 22:28+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -193,6 +193,10 @@ msgstr ""
 
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
+msgstr ""
+
+#: kftabdlg.cpp:246
+msgid "(none)"
 msgstr ""
 
 #: kftabdlg.cpp:247

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMKWM\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,43 +25,47 @@ msgstr "Sammuta ja käynnistä uudelleen"
 msgid "Exit kdm"
 msgstr "Poistu kdm:stä"
 
-#: kgreeter.cpp:174
+#: kgreeter.cpp:166
 msgid "Login:"
 msgstr "Käyttäjätunnus:"
 
-#: kgreeter.cpp:186
+#: kgreeter.cpp:178
 msgid "Password:"
 msgstr "Salasana:"
 
-#: kgreeter.cpp:211
+#: kgreeter.cpp:203
 msgid "Login failed!"
 msgstr "Kirjautuminen epäonnistui!"
 
-#: kgreeter.cpp:217
+#: kgreeter.cpp:209
 msgid "Session Type:"
 msgstr "Istunnon tyyppi:"
 
-#: kgreeter.cpp:233
+#: kgreeter.cpp:225
 msgid "Go!"
 msgstr "Aloita!"
 
-#: kgreeter.cpp:249
+#: kgreeter.cpp:241
 msgid "Shutdown..."
 msgstr "Alasajo..."
 
-#: kgreeter.cpp:443
+#: kgreeter.cpp:453
 msgid "Logins not available right now."
 msgstr "Sisäänkirjoittautuminen ei ole mahdollista nyt."
 
-#: kgreeter.cpp:515 kgreeter.cpp:542
+#: kgreeter.cpp:494
+msgid "bah"
+msgstr ""
+
+#: kgreeter.cpp:547 kgreeter.cpp:574
 msgid "Sorry -- your account has expired."
 msgstr "Tunnuksesi on vanhentunut."
 
-#: kgreeter.cpp:520 kgreeter.cpp:547
+#: kgreeter.cpp:552 kgreeter.cpp:579
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Varoitus: tunnuksesi vanhentuu %s"
 
-#: kgreeter.cpp:574
+#: kgreeter.cpp:606
 msgid "Home directory not available"
 msgstr "Kotihakemistoa ei löydy"

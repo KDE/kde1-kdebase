@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 13:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -517,6 +517,10 @@ msgstr ""
 
 #: rock.cpp:549
 msgid "Setup krock"
+msgstr ""
+
+#: rock.cpp:589
+msgid "Move"
 msgstr ""
 
 #: rock.cpp:595

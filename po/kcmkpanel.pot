@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,11 +26,11 @@ msgstr ""
 msgid "Disk &Navigator"
 msgstr ""
 
-#: main.cpp:109
+#: main.cpp:79
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr ""
 
-#: main.cpp:142
+#: main.cpp:112
 msgid "KPanel Configuration"
 msgstr ""
 

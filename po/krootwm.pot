@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,10 @@ msgstr ""
 #: krootwm.C:150
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
+msgstr ""
+
+#: krootwm.C:180 krootwm.C:577 krootwm.C:585
+msgid "New"
 msgstr ""
 
 #: krootwm.C:181

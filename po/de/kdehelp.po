@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -25,23 +25,28 @@ msgstr "Oops!"
 msgid "Unknown format: "
 msgstr "Unbekanntes Format: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr "Suche komplett"
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr "Soll die Suche am Anfang der Seite fortgesetzt werden?"
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+#, fuzzy
+msgid "Forward"
+msgstr "&Weiter"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Diesen Link öffnen"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Notiz hinzufügen"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "In einem neuen Fenster öffnen"
 
@@ -66,6 +71,18 @@ msgstr "Nicht behebbarer Fehler: "
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Warnung: "
+
+#: options.cpp:40
+msgid "Small"
+msgstr "Klein"
+
+#: options.cpp:44
+msgid "Medium"
+msgstr "Mittel"
+
+#: options.cpp:48
+msgid "Large"
+msgstr "Groß"
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -144,6 +161,10 @@ msgstr "Spiele"
 msgid "System Administration"
 msgstr "Verwaltung"
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 # Man kann nicht mal Passiv, mal Aktiv für
 # die Maschine benutzen. Entweder immer "ich" (Lese Verzeichnis) 
 # oder immer "wird" (Verzeichnis wird gelesen).
@@ -204,10 +225,6 @@ msgstr "&Zurück"
 msgid "&Forward"
 msgstr "&Weiter"
 
-#: mainwidget.cpp:157
-msgid "&Contents"
-msgstr "&Inhalt"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "&Startseite"
@@ -215,6 +232,14 @@ msgstr "&Startseite"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "&Hoch"
+
+#: mainwidget.cpp:160
+msgid "&Previous"
+msgstr "&Letztes"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr "&Nächstes"
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -341,20 +366,14 @@ msgstr "&Groß-/Kleinschreibung"
 msgid "&Find"
 msgstr "&Suchen"
 
+#~ msgid "&Contents"
+#~ msgstr "&Inhalt"
+
 #~ msgid "Could not start or find KFM"
 #~ msgstr "KFM konnte nicht gefunden oder gestartet werden"
 
 #~ msgid "Font Size"
 #~ msgstr "Schriftgröße"
-
-#~ msgid "Small"
-#~ msgstr "Klein"
-
-#~ msgid "Medium"
-#~ msgstr "Mittel"
-
-#~ msgid "Large"
-#~ msgstr "Groß"
 
 #~ msgid "Fonts"
 #~ msgstr "Zeichensatz"
@@ -364,12 +383,6 @@ msgstr "&Suchen"
 
 #~ msgid "&Reload"
 #~ msgstr "&Neu laden"
-
-#~ msgid "&Previous"
-#~ msgstr "&Letztes"
-
-#~ msgid "&Next"
-#~ msgstr "&Nächstes"
 
 #~ msgid "Stop"
 #~ msgstr "Halt"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1997-01-02 20:51+MET\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -17,11 +17,11 @@ msgstr "&Desktops"
 msgid "Disk &Navigator"
 msgstr "Platten-&Navigator"
 
-#: main.cpp:109
+#: main.cpp:79
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "Benutzung: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
-#: main.cpp:142
+#: main.cpp:112
 msgid "KPanel Configuration"
 msgstr "KPanel Einstellungen"
 
@@ -140,4 +140,3 @@ msgstr "&Globale einstellen"
 #: disknav.cpp:46
 msgid "Edit &Local..."
 msgstr "&Lokale einstellen"
-

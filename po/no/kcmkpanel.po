@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkpanel\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-03-22 17:12+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -25,11 +25,11 @@ msgstr "&Skrivebord"
 msgid "Disk &Navigator"
 msgstr "Disk&navigator"
 
-#: main.cpp:109
+#: main.cpp:79
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "bruk: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
-#: main.cpp:142
+#: main.cpp:112
 msgid "KPanel Configuration"
 msgstr "KPanel konfigurasjon"
 

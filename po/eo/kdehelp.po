@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 1.0pre2\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-07-13 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -34,23 +34,28 @@ msgstr "Ho ve!"
 msgid "Unknown format: "
 msgstr "Nekonata dosiertipo: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+#, fuzzy
+msgid "Forward"
+msgstr "&Antaýen"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Malfermu tiun æi ligon"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Aldonu legosignon"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "Malfermu en nova fenestro"
 
@@ -75,6 +80,18 @@ msgstr "Severa eraro: "
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Averto: "
+
+#: options.cpp:40
+msgid "Small"
+msgstr "Malgranda"
+
+#: options.cpp:44
+msgid "Medium"
+msgstr "Meza"
+
+#: options.cpp:48
+msgid "Large"
+msgstr "Granda"
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -150,6 +167,10 @@ msgstr "Ludoj"
 msgid "System Administration"
 msgstr "Sistemadministrado"
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr "Legas la dosierujon: "
@@ -207,11 +228,6 @@ msgstr "&Malantaýen"
 msgid "&Forward"
 msgstr "&Antaýen"
 
-#: mainwidget.cpp:157
-#, fuzzy
-msgid "&Contents"
-msgstr "Enhavo de la helpo"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "&Plej supra"
@@ -219,6 +235,14 @@ msgstr "&Plej supra"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "S&upren"
+
+#: mainwidget.cpp:160
+msgid "&Previous"
+msgstr "A&ntaýa"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr "&Sekva"
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -337,20 +361,15 @@ msgstr ""
 msgid "&Find"
 msgstr ""
 
+#, fuzzy
+#~ msgid "&Contents"
+#~ msgstr "Enhavo de la helpo"
+
 #~ msgid "Could not start or find KFM"
 #~ msgstr "Ne eblis lanæi aý trovi KFMon"
 
 #~ msgid "Font Size"
 #~ msgstr "Tipargrandeco"
-
-#~ msgid "Small"
-#~ msgstr "Malgranda"
-
-#~ msgid "Medium"
-#~ msgstr "Meza"
-
-#~ msgid "Large"
-#~ msgstr "Granda"
 
 #~ msgid "Fonts"
 #~ msgstr "Tiparoj"
@@ -360,12 +379,6 @@ msgstr ""
 
 #~ msgid "&Reload"
 #~ msgstr "&Remalfermu"
-
-#~ msgid "&Previous"
-#~ msgstr "A&ntaýa"
-
-#~ msgid "&Next"
-#~ msgstr "&Sekva"
 
 #~ msgid "Stop"
 #~ msgstr "Stop!"

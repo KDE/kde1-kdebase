@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-03 22:39+0100\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:29+0200\n"
 "PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi "
 "<Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -9,39 +9,43 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kpanel.C:254
+#: kpanel.C:232
+msgid "Move"
+msgstr "Sposta"
+
+#: kpanel.C:272
 msgid "Go!"
 msgstr "Vai!"
 
-#: kpanel.C:257 tools.C:828
+#: kpanel.C:275 tools.C:828
 msgid "Where do you want to go tomorrow?"
 msgstr "Dove vuoi andare Domani ?"
 
-#: kpanel.C:331
+#: kpanel.C:349
 msgid "No info available"
 msgstr "Nessuna info sul soggetto"
 
-#: kpanel.C:370 props.C:173 props.C:174
+#: kpanel.C:388 props.C:173 props.C:174
 msgid "Logout"
 msgstr "Fine Sessione"
 
-#: kpanel.C:378 props.C:172
+#: kpanel.C:396 props.C:172
 msgid "Lock screen"
 msgstr "Blocca schermo"
 
-#: kpanel.C:387
+#: kpanel.C:405 kpanel.C:414
 msgid "Hide the panel"
 msgstr "Nascondi Pannello"
 
-#: kpanel.C:397
+#: kpanel.C:424 kpanel.C:436
 msgid "Show the panel"
 msgstr "Mostra Pannello"
 
-#: kpanel.C:1106 tools.C:658
+#: kpanel.C:1159 tools.C:658
 msgid "No comment available"
 msgstr "Nessun commento disponibile"
 
-#: kpanel.C:1115 tools.C:837
+#: kpanel.C:1168 tools.C:837
 msgid "Windowlist"
 msgstr "Lista Finestre"
 
@@ -61,7 +65,7 @@ msgstr "Aggiungi Lista Finestre"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Aggiunge la Lista Finestre sul Pannello"
 
-#: events.C:752 props.C:149
+#: events.C:772 props.C:149
 msgid "Configure"
 msgstr "Configura"
 
@@ -77,7 +81,7 @@ msgstr "Modifica Menu"
 msgid "Add or remove applications in the menu structure "
 msgstr "Aggiunge o rimuove un'applicazione dal menu"
 
-#: events.C:754 props.C:155
+#: events.C:774 props.C:155
 msgid "Restart"
 msgstr "Riavvia"
 
@@ -101,44 +105,33 @@ msgstr "Blocca schermo"
 msgid "The menu editor is not installed."
 msgstr "Il menu editor non è installato"
 
-#: events.C:790 props.C:400
+#: events.C:810 props.C:400
 msgid "Oops!"
 msgstr "Ops!"
 
-#: events.C:789
+#: events.C:809
 msgid "Cannot put this as button onto the panel!"
 msgstr "Impossibile mettere questo come pulsante sul pannello!"
 
-#: pfilemenu.C:111
-msgid "KFM Information"
-msgstr ""
-
-#: pfilemenu.C:112
-msgid "Creating directory:\n"
-msgstr ""
-
-#: pfilemenu.C:340
+#: pfilemenu.C:351
 msgid "(empty folder)"
 msgstr ""
 
-#: pfilemenu.C:397
+#: pfilemenu.C:408
 msgid "(Too Many Files)"
 msgstr ""
 
-#: pfilemenu.C:406
+#: pfilemenu.C:417
 msgid "(Access Denied)"
 msgstr ""
 
-#: pfilemenu.C:409
+#: pfilemenu.C:420
 msgid "(Unreadable)"
 msgstr ""
 
-#: pfilemenu.C:416
+#: pfilemenu.C:427
 msgid "Open Folder"
 msgstr ""
-
-#~ msgid "Move"
-#~ msgstr "Sposta"
 
 #~ msgid "Properties"
 #~ msgstr "Proprietà"

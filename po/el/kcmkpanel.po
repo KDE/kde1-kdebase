@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,12 +25,12 @@ msgstr "Γραφεία"
 msgid "Disk &Navigator"
 msgstr ""
 
-#: main.cpp:109
+#: main.cpp:79
 #, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "Σύνταξη: kcmkpanel [-init | {panel,options,desktops}]\n"
 
-#: main.cpp:142
+#: main.cpp:112
 msgid "KPanel Configuration"
 msgstr "Ρύθμιση πινακίου"
 

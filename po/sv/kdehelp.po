@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,23 +34,27 @@ msgstr "Oops!"
 msgid "Unknown format: "
 msgstr "Okänt format: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+msgid "Forward"
+msgstr "Framåt"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Öppna den här länken"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Lägg till som bokmärke"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "Öppna i nytt fönster"
 
@@ -75,6 +79,18 @@ msgstr "Fatalt fel: "
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Varning: "
+
+#: options.cpp:40
+msgid "Small"
+msgstr "Liten"
+
+#: options.cpp:44
+msgid "Medium"
+msgstr "Mellan"
+
+#: options.cpp:48
+msgid "Large"
+msgstr "Stor"
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -150,6 +166,10 @@ msgstr "Spel"
 msgid "System Administration"
 msgstr "Systemadminstration"
 
+#: man.cpp:478
+msgid "New"
+msgstr "Ny"
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr "Läser katalog: "
@@ -208,10 +228,6 @@ msgstr "Till&baka"
 msgid "&Forward"
 msgstr "&Framåt"
 
-#: mainwidget.cpp:157
-msgid "&Contents"
-msgstr "&Innehåll"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "&Startsida"
@@ -219,6 +235,14 @@ msgstr "&Startsida"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "&Upp"
+
+#: mainwidget.cpp:160
+msgid "&Previous"
+msgstr "&Föregående"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr "&Nästa"
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -338,20 +362,14 @@ msgstr ""
 msgid "&Find"
 msgstr ""
 
+#~ msgid "&Contents"
+#~ msgstr "&Innehåll"
+
 #~ msgid "Could not start or find KFM"
 #~ msgstr "Kunde inte hitta eller starta KFM"
 
 #~ msgid "Font Size"
 #~ msgstr "Typsnittsstorlek"
-
-#~ msgid "Small"
-#~ msgstr "Liten"
-
-#~ msgid "Medium"
-#~ msgstr "Mellan"
-
-#~ msgid "Large"
-#~ msgstr "Stor"
 
 #~ msgid "Fonts"
 #~ msgstr "Typsnitt"
@@ -362,23 +380,11 @@ msgstr ""
 #~ msgid "&Reload"
 #~ msgstr "&Ladda om"
 
-#~ msgid "&Previous"
-#~ msgstr "&Föregående"
-
-#~ msgid "&Next"
-#~ msgstr "&Nästa"
-
 #~ msgid "Stop"
 #~ msgstr "Avbryt"
 
-#~ msgid "New"
-#~ msgstr "Ny"
-
 #~ msgid "Back"
 #~ msgstr "Tillbaka"
-
-#~ msgid "Forward"
-#~ msgstr "Framåt"
 
 #~ msgid "&Close"
 #~ msgstr "S&täng"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:29+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -30,43 +30,47 @@ msgstr "Închide ºi restarteazã"
 msgid "Exit kdm"
 msgstr "Ieºire din KDE"
 
-#: kgreeter.cpp:174
+#: kgreeter.cpp:166
 msgid "Login:"
 msgstr "Nume utilizator :"
 
-#: kgreeter.cpp:186
+#: kgreeter.cpp:178
 msgid "Password:"
 msgstr "Parolã:"
 
-#: kgreeter.cpp:211
+#: kgreeter.cpp:203
 msgid "Login failed!"
 msgstr "Autentificare nereuºitã !"
 
-#: kgreeter.cpp:217
+#: kgreeter.cpp:209
 msgid "Session Type:"
 msgstr "Tipul sesiunii :"
 
-#: kgreeter.cpp:233
+#: kgreeter.cpp:225
 msgid "Go!"
 msgstr "Porneºte !"
 
-#: kgreeter.cpp:249
+#: kgreeter.cpp:241
 msgid "Shutdown..."
 msgstr "Închide..."
 
-#: kgreeter.cpp:443
+#: kgreeter.cpp:453
 msgid "Logins not available right now."
 msgstr ""
 
-#: kgreeter.cpp:515 kgreeter.cpp:542
+#: kgreeter.cpp:494
+msgid "bah"
+msgstr ""
+
+#: kgreeter.cpp:547 kgreeter.cpp:574
 msgid "Sorry -- your account has expired."
 msgstr ""
 
-#: kgreeter.cpp:520 kgreeter.cpp:547
+#: kgreeter.cpp:552 kgreeter.cpp:579
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr ""
 
-#: kgreeter.cpp:574
+#: kgreeter.cpp:606
 msgid "Home directory not available"
 msgstr ""

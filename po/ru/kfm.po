@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 0.2POT-Creation-Date: 1998-02-19 22:49+0100\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-12 11:35+0000\n"
 "PO-Revision-Date: 1998-01-20 11:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -26,6 +26,11 @@ msgstr "Папка"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ОШИБКА: Шаблон '%s' не найден"
+
+#: kfmgui.cpp:304
+#, fuzzy
+msgid "&New"
+msgstr "Новый "
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -210,6 +215,10 @@ msgstr "&Буфер"
 #: kfmgui.cpp:523 kfmman.cpp:1071
 msgid "Up"
 msgstr "Вверх"
+
+#: kfmgui.cpp:533 kfmman.cpp:1079
+msgid "Forward"
+msgstr ""
 
 #: kfmgui.cpp:538
 #, fuzzy
@@ -503,6 +512,10 @@ msgstr "Отправить в Корзину"
 msgid "Open with"
 msgstr "Открыть с"
 
+#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+msgid "Move"
+msgstr ""
+
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
 msgstr "Ссылка"
@@ -514,6 +527,18 @@ msgstr "Очистить корзину"
 #: main.cpp:241
 msgid "Add to Bookmarks"
 msgstr "Добавить закладку"
+
+#: htmlopts.cpp:39
+msgid "Small"
+msgstr ""
+
+#: htmlopts.cpp:43
+msgid "Medium"
+msgstr ""
+
+#: htmlopts.cpp:47
+msgid "Large"
+msgstr ""
 
 #: htmlopts.cpp:51
 msgid "Standard Font"

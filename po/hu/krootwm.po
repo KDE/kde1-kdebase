@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-02-26 20:45+MET\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -18,6 +18,10 @@ msgstr "Mappa"
 #: krootwm.C:150
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
+msgstr ""
+
+#: krootwm.C:180 krootwm.C:577 krootwm.C:585
+msgid "New"
 msgstr ""
 
 #: krootwm.C:181

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind 0.3.2\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1997-09-05 03:06+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -210,6 +210,10 @@ msgstr "Исполняемые файлы"
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
 msgstr "SUID исполняемые файлы"
+
+#: kftabdlg.cpp:246
+msgid "(none)"
+msgstr ""
 
 #: kftabdlg.cpp:247
 msgid "At Least"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1997-12-29 16:29+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -29,7 +29,7 @@ msgstr ""
 "\n"
 "Sollen die Änderungen gespeichert werden?"
 
-#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:259
 msgid "EMPTY"
 msgstr "LEER"
 
@@ -69,7 +69,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Trennlinie"
 
-#: confmenu.cpp:102 confmenu.cpp:317
+#: confmenu.cpp:102 confmenu.cpp:316
 msgid "Open/ Close"
 msgstr "Öffnen / Schliessen"
 
@@ -77,7 +77,11 @@ msgstr "Öffnen / Schliessen"
 msgid "! PROTECTED Button !"
 msgstr "! GESCHÜTZTER Button !"
 
-#: confmenu.cpp:171 confmenu.cpp:300
+#: confmenu.cpp:115
+msgid "New"
+msgstr ""
+
+#: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"
 msgstr "Warnung !"
 
@@ -85,11 +89,11 @@ msgstr "Warnung !"
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Wenn Sie diesen Button löschen, verlieren Sie alle Untermenüs"
 
-#: confmenu.cpp:281
+#: confmenu.cpp:280
 msgid "Wrong filename"
 msgstr "Falscher Dateiname"
 
-#: confmenu.cpp:282
+#: confmenu.cpp:281
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -97,11 +101,11 @@ msgstr ""
 "Eine kdelnk-Datei mit diesem Namen existiert schon. \n"
 "Wählen Sie einen anderen Dateiname."
 
-#: confmenu.cpp:301
+#: confmenu.cpp:300
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Ändern des Typs für diesen Button wird alle Untermenüs löschen"
 
-#: confmenu.cpp:322 confmenu.cpp:911
+#: confmenu.cpp:321 confmenu.cpp:909
 msgid "no command"
 msgstr "kein Kommando"
 
@@ -146,7 +150,7 @@ msgstr "Eingebettet"
 msgid "Link"
 msgstr "Verweis"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
 msgid "Device"
 msgstr "Gerät"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -32,7 +32,7 @@ msgstr ""
 "\n"
 "要保存你作的改变吗 ?"
 
-#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:259
 msgid "EMPTY"
 msgstr "空"
 
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Separator"
 msgstr "分隔线"
 
-#: confmenu.cpp:102 confmenu.cpp:317
+#: confmenu.cpp:102 confmenu.cpp:316
 msgid "Open/ Close"
 msgstr "打开/关闭"
 
@@ -80,7 +80,11 @@ msgstr "打开/关闭"
 msgid "! PROTECTED Button !"
 msgstr "! 被保护的按钮 !"
 
-#: confmenu.cpp:171 confmenu.cpp:300
+#: confmenu.cpp:115
+msgid "New"
+msgstr ""
+
+#: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"
 msgstr "警告 !"
 
@@ -88,11 +92,11 @@ msgstr "警告 !"
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "如果你删除这个按钮, 将会失去所有的子菜单"
 
-#: confmenu.cpp:281
+#: confmenu.cpp:280
 msgid "Wrong filename"
 msgstr "错误的文件名"
 
-#: confmenu.cpp:282
+#: confmenu.cpp:281
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -100,11 +104,11 @@ msgstr ""
 "存在相同名字的 kdelnk 文件\n"
 "请选择另外的文件名."
 
-#: confmenu.cpp:301
+#: confmenu.cpp:300
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "改变这个按钮的类型会去掉它的所有子菜单"
 
-#: confmenu.cpp:322 confmenu.cpp:911
+#: confmenu.cpp:321 confmenu.cpp:909
 msgid "no command"
 msgstr "没有命令"
 
@@ -149,7 +153,7 @@ msgstr "Swallow"
 msgid "Link"
 msgstr "链接"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
 msgid "Device"
 msgstr "设备"
 

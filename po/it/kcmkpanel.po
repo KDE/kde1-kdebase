@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-03 22:39+0100\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi "
 "<Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -21,12 +21,12 @@ msgstr "&Desktop"
 msgid "Disk &Navigator"
 msgstr ""
 
-#: main.cpp:109
+#: main.cpp:79
 #, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "utilizzo: kcmkpanel [-init | {panel,options,desktops}]\n"
 
-#: main.cpp:142
+#: main.cpp:112
 msgid "KPanel Configuration"
 msgstr "Configurazione KPanel"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmsyssound\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-07-28 13:10+0100\n"
 "Last-Translator: Bla¾ Zupanèiè <Blaz.Zupancic@guest.arnes.si>\n"
 "Language-Team: Slovenian\n"
@@ -21,6 +21,10 @@ msgstr "Z&vok"
 #: main.cpp:80
 msgid "System Sounds"
 msgstr "Sistemski zvoki"
+
+#: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
+msgid "(none)"
+msgstr ""
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"

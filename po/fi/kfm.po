@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KFM\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-12 11:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,6 +26,11 @@ msgstr "Kansio"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "VIRHE: Pohjaa '%s' ei löydetty."
+
+#: kfmgui.cpp:304
+#, fuzzy
+msgid "&New"
+msgstr "Uusi "
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -205,6 +210,10 @@ msgstr "&Välimuisti"
 #: kfmgui.cpp:523 kfmman.cpp:1071
 msgid "Up"
 msgstr "Ylös"
+
+#: kfmgui.cpp:533 kfmman.cpp:1079
+msgid "Forward"
+msgstr ""
 
 #: kfmgui.cpp:538
 msgid "Home"
@@ -496,6 +505,10 @@ msgstr "Siirrä roskakoriin"
 msgid "Open with"
 msgstr "Avaa sovelluksessa"
 
+#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+msgid "Move"
+msgstr ""
+
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
 msgstr "Linkitä"
@@ -507,6 +520,18 @@ msgstr "Tyhjennä roskakori"
 #: main.cpp:241
 msgid "Add to Bookmarks"
 msgstr "Lisää osoitekirjaan"
+
+#: htmlopts.cpp:39
+msgid "Small"
+msgstr ""
+
+#: htmlopts.cpp:43
+msgid "Medium"
+msgstr ""
+
+#: htmlopts.cpp:47
+msgid "Large"
+msgstr ""
 
 #: htmlopts.cpp:51
 msgid "Standard Font"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-06-08 23:35+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -29,99 +29,99 @@ msgstr "kwm: error al inicialitzar; cancel·lant el procés\n"
 msgid "Preparing session ... "
 msgstr "Preparant la sessió ... "
 
-#: main.C:504
+#: main.C:505
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:511
+#: main.C:512
 msgid "Usage: "
 msgstr "Us: "
 
-#: main.C:522
+#: main.C:523
 msgid "&Maximize"
 msgstr "&Maximitzar"
 
-#: main.C:523
+#: main.C:524
 msgid "&Restore"
 msgstr "&Restaurar"
 
-#: main.C:524
+#: main.C:525
 msgid "&Iconify"
 msgstr "&Iconitzar"
 
-#: main.C:525
+#: main.C:526
 msgid "&DeIconify"
 msgstr "&DesIconitzar"
 
-#: main.C:526
+#: main.C:527
 msgid "&Sticky"
 msgstr "&Apegalós"
 
-#: main.C:527
+#: main.C:528
 msgid "&UnSticky"
 msgstr "&No apegalós"
 
-#: main.C:528
+#: main.C:529
 msgid "Mo&ve"
 msgstr "M&oure"
 
-#: main.C:529
+#: main.C:530
 msgid "Resi&ze"
 msgstr "Dimen&sionar"
 
-#: main.C:531
+#: main.C:532
 msgid "&To desktop"
 msgstr "A l'&escriptori"
 
-#: main.C:533
+#: main.C:534
 msgid "&Onto current desktop"
 msgstr "Sobre l'escriptori &actual"
 
-#: main.C:573
+#: main.C:574
 msgid "One"
 msgstr "Un"
 
-#: main.C:576
+#: main.C:577
 msgid "Two"
 msgstr "Dos"
 
-#: main.C:579
+#: main.C:580
 msgid "Three"
 msgstr "Tres"
 
-#: main.C:582
+#: main.C:583
 msgid "Four"
 msgstr "Quatre"
 
-#: main.C:585
+#: main.C:586
 msgid "Five"
 msgstr "Cinc"
 
-#: main.C:588
+#: main.C:589
 msgid "Six"
 msgstr "Sis"
 
-#: main.C:591
+#: main.C:592
 msgid "Seven"
 msgstr "Set"
 
-#: main.C:594
+#: main.C:595
 msgid "Eight"
 msgstr "Vuit"
 
-#: main.C:608
+#: main.C:609
 msgid "Unnamed Desktop"
 msgstr "Escriptori sense nom"
 
-#: main.C:918
+#: main.C:919
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Alguns pixmaps no són vàlids: desactivat el mode ombrejat\n"
 
-#: main.C:1030
+#: main.C:1031
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Alguns pixmaps no són vàlids: desactivat el mode Gimmick\n"
 
-#: main.C:1353
+#: main.C:1354
 msgid "*** No Tasks ***"
 msgstr "*** Sense Tasques ***"
 

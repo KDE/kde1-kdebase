@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:29+0200\n"
 "PO-Revision-Date: 1997-10-25 18:28 MET DST\n"
 "Last-Translator: Christian Kirsch <ck@held.mind.de>\n"
 "Language-Team: German/KDE\n"
@@ -13,39 +13,43 @@ msgstr ""
 "Content-Type: text/plain; charset=iso_8859_1\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: kpanel.C:254
+#: kpanel.C:232
+msgid "Move"
+msgstr "Verschieben"
+
+#: kpanel.C:272
 msgid "Go!"
 msgstr "Start!"
 
-#: kpanel.C:257 tools.C:828
+#: kpanel.C:275 tools.C:828
 msgid "Where do you want to go tomorrow?"
 msgstr "Where do you want to go tomorrow?"
 
-#: kpanel.C:331
+#: kpanel.C:349
 msgid "No info available"
 msgstr "Keine Informationen verfügbar"
 
-#: kpanel.C:370 props.C:173 props.C:174
+#: kpanel.C:388 props.C:173 props.C:174
 msgid "Logout"
 msgstr "Abmelden"
 
-#: kpanel.C:378 props.C:172
+#: kpanel.C:396 props.C:172
 msgid "Lock screen"
 msgstr "Bildschirm sperren"
 
-#: kpanel.C:387
+#: kpanel.C:405 kpanel.C:414
 msgid "Hide the panel"
 msgstr "Panel verstecken"
 
-#: kpanel.C:397
+#: kpanel.C:424 kpanel.C:436
 msgid "Show the panel"
 msgstr "Panel zeigen"
 
-#: kpanel.C:1106 tools.C:658
+#: kpanel.C:1159 tools.C:658
 msgid "No comment available"
 msgstr "Keine Erklärung verfügbar"
 
-#: kpanel.C:1115 tools.C:837
+#: kpanel.C:1168 tools.C:837
 msgid "Windowlist"
 msgstr "Fensterliste"
 
@@ -65,7 +69,7 @@ msgstr "Fensterliste hinzufügen"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Menü für Fensterliste zum Panel hinzufügen"
 
-#: events.C:752 props.C:149
+#: events.C:772 props.C:149
 msgid "Configure"
 msgstr "Konfigurieren"
 
@@ -81,7 +85,7 @@ msgstr "Menu bearbeiten"
 msgid "Add or remove applications in the menu structure "
 msgstr "Anwendungen in der Menu-Struktur hinzufügen oder löschen "
 
-#: events.C:754 props.C:155
+#: events.C:774 props.C:155
 msgid "Restart"
 msgstr "Neu starten"
 
@@ -105,44 +109,39 @@ msgstr "Bildschirm sperren"
 msgid "The menu editor is not installed."
 msgstr "Der Menu-Editor ist nicht installiert."
 
-#: events.C:790 props.C:400
+#: events.C:810 props.C:400
 msgid "Oops!"
 msgstr "Oops!"
 
-#: events.C:789
+#: events.C:809
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kann dies nicht als Button in das Panel legen!"
 
-#: pfilemenu.C:111
-msgid "KFM Information"
-msgstr "KFM-Information"
-
-#: pfilemenu.C:112
-msgid "Creating directory:\n"
-msgstr "Erzeuge Verzeichnis:\n"
-
-#: pfilemenu.C:340
+#: pfilemenu.C:351
 msgid "(empty folder)"
 msgstr "(leeres Verzeichnis)"
 
-#: pfilemenu.C:397
+#: pfilemenu.C:408
 msgid "(Too Many Files)"
 msgstr "(Zuviele Dateien)"
 
-#: pfilemenu.C:406
+#: pfilemenu.C:417
 msgid "(Access Denied)"
 msgstr "(Zugriff verweigert)"
 
-#: pfilemenu.C:409
+#: pfilemenu.C:420
 msgid "(Unreadable)"
 msgstr "(Nicht lesbar)"
 
-#: pfilemenu.C:416
+#: pfilemenu.C:427
 msgid "Open Folder"
 msgstr "Öffne Verzeichnis"
 
-#~ msgid "Move"
-#~ msgstr "Verschieben"
+#~ msgid "KFM Information"
+#~ msgstr "KFM-Information"
+
+#~ msgid "Creating directory:\n"
+#~ msgstr "Erzeuge Verzeichnis:\n"
 
 #~ msgid "Properties"
 #~ msgstr "Eigenschaften"

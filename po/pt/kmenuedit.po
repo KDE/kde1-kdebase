@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -29,7 +29,7 @@ msgstr ""
 "\n"
 "Quer gravar as suas modificações ?"
 
-#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:259
 msgid "EMPTY"
 msgstr "VAZIO"
 
@@ -69,7 +69,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Separador"
 
-#: confmenu.cpp:102 confmenu.cpp:317
+#: confmenu.cpp:102 confmenu.cpp:316
 msgid "Open/ Close"
 msgstr "Abrir/ Fechar"
 
@@ -77,7 +77,11 @@ msgstr "Abrir/ Fechar"
 msgid "! PROTECTED Button !"
 msgstr "! Botão PROTEGIDO !"
 
-#: confmenu.cpp:171 confmenu.cpp:300
+#: confmenu.cpp:115
+msgid "New"
+msgstr ""
+
+#: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"
 msgstr "Aviso !"
 
@@ -85,11 +89,11 @@ msgstr "Aviso !"
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Se apagar este botão vai perder todos os seus submenus"
 
-#: confmenu.cpp:281
+#: confmenu.cpp:280
 msgid "Wrong filename"
 msgstr "Nome de ficheiro errado"
 
-#: confmenu.cpp:282
+#: confmenu.cpp:281
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -97,11 +101,11 @@ msgstr ""
 "Um ficheiro kdelnk com este nome já existe. \n"
 "Por favor escolha outro nome."
 
-#: confmenu.cpp:301
+#: confmenu.cpp:300
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Mudar o tipo deste botão vai apagar todos os seus submenus"
 
-#: confmenu.cpp:322 confmenu.cpp:911
+#: confmenu.cpp:321 confmenu.cpp:909
 msgid "no command"
 msgstr "sem comando"
 
@@ -146,7 +150,7 @@ msgstr "Engolir"
 msgid "Link"
 msgstr "Ligação"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
 msgid "Device"
 msgstr "Dispositivo"
 

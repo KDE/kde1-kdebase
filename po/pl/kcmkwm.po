@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser \n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-06-25 18:51+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -140,6 +140,10 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "(Od)Maksymalizuj"
 
+#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
+msgid "Move"
+msgstr ""
+
 #: titlebar.cpp:991
 msgid "(Un)Shade"
 msgstr "(Od)Zwiñ"
@@ -179,6 +183,10 @@ msgstr "Zmiana rozmiaru"
 #: windows.cpp:90
 msgid "Animation:"
 msgstr "Animacja:"
+
+#: windows.cpp:91
+msgid "None"
+msgstr ""
 
 #: windows.cpp:92
 msgid "Fast"

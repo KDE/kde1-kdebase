@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-10-01 13:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-06-08 23:45+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -607,6 +607,11 @@ msgstr "Roca"
 #: rock.cpp:549
 msgid "Setup krock"
 msgstr "Valors krock"
+
+#: rock.cpp:589
+#, fuzzy
+msgid "Move"
+msgstr "Mode:"
 
 #: rock.cpp:595
 msgid "Rotate"

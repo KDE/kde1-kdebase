@@ -161,8 +161,7 @@ msgstr "Ala oikea"
 msgid ""
 "%s\n"
 "Do you want to start Configuration?"
-msgstr ""
-"Haluatko k‰ynnist‰‰ Asetukset?"
+msgstr "Haluatko k‰ynnist‰‰ Asetukset?"
 
 #: kikbdconf.cpp:182
 msgid "Your configuration is empty. Install system default."
@@ -304,7 +303,8 @@ msgstr "K‰yt‰ \"&erikoislistaa\""
 msgid ""
 "Use only default and last active keyboard maps to switching from keyboard"
 msgstr ""
-"K‰yt‰ vain oletusta ja edellist‰ aktiivista n‰pp‰inkarttaa n‰pp‰inten vaihtamiseen"
+"K‰yt‰ vain oletusta ja edellist‰ aktiivista n‰pp‰inkarttaa n‰pp‰inten "
+"vaihtamiseen"
 
 #: widgets.cpp:214
 msgid "Adding Keyboard"
@@ -368,7 +368,8 @@ msgstr "&Emuloi CapsLock:a"
 
 #: widgets.cpp:451
 msgid "Emulate XServer CapsLock. Needed for some languagesto be correct"
-msgstr "Emuloi XServerin CapsLock:a. Tarvitaan jotta jotkin kielet toimivat oikein"
+msgstr ""
+"Emuloi XServerin CapsLock:a. Tarvitaan jotta jotkin kielet toimivat oikein"
 
 #: widgets.cpp:457
 msgid "&World Menu"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-01-29 17:00+CET-1\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,23 +33,28 @@ msgstr "Ups!"
 msgid "Unknown format: "
 msgstr "Ukendt format: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr "Søgning færdig"
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr "Fortsæt fra begyndelsen af siden?"
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+#, fuzzy
+msgid "Forward"
+msgstr "&Frem"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Åben dette link"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Tilføj bogmærke"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "Åben i nyt vindue"
 
@@ -74,6 +79,18 @@ msgstr "Fatal fejl: "
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Advarsel: "
+
+#: options.cpp:40
+msgid "Small"
+msgstr "Lille"
+
+#: options.cpp:44
+msgid "Medium"
+msgstr ""
+
+#: options.cpp:48
+msgid "Large"
+msgstr "Stor"
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -149,6 +166,10 @@ msgstr "Spil"
 msgid "System Administration"
 msgstr "System Administration"
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr "Læser folder: "
@@ -206,10 +227,6 @@ msgstr "&Tilbage"
 msgid "&Forward"
 msgstr "&Frem"
 
-#: mainwidget.cpp:157
-msgid "&Contents"
-msgstr "&Indhold"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "&Top"
@@ -217,6 +234,14 @@ msgstr "&Top"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "&Op"
+
+#: mainwidget.cpp:160
+msgid "&Previous"
+msgstr "&Forrige"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr "&Næste"
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -336,17 +361,14 @@ msgstr "Store/Små bogstaver"
 msgid "&Find"
 msgstr "&Find"
 
+#~ msgid "&Contents"
+#~ msgstr "&Indhold"
+
 #~ msgid "Could not start or find KFM"
 #~ msgstr "Kunne ikke starte eller finde KFM"
 
 #~ msgid "Font Size"
 #~ msgstr "Skrift størrelse"
-
-#~ msgid "Small"
-#~ msgstr "Lille"
-
-#~ msgid "Large"
-#~ msgstr "Stor"
 
 #~ msgid "Fonts"
 #~ msgstr "Skriftsnit"
@@ -356,9 +378,3 @@ msgstr "&Find"
 
 #~ msgid "&Reload"
 #~ msgstr "&Genlæs"
-
-#~ msgid "&Previous"
-#~ msgstr "&Forrige"
-
-#~ msgid "&Next"
-#~ msgstr "&Næste"

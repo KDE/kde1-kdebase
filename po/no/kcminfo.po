@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcminfo\n"
-"POT-Creation-Date: 1998-09-10 20:54+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-03-21 13:14+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -13,79 +13,112 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:50
+#: main.cpp:79
 msgid "&Memory"
 msgstr "&Minne"
 
-#: main.cpp:53
+#: main.cpp:82
 msgid "&Processor"
 msgstr "&CPU"
 
-#: main.cpp:62
-msgid "usage: kcminfo [-init | {processor,memory}]\n"
-msgstr "bruk: KCminfo [-init | {processor,memory}]\n"
+#: main.cpp:85
+msgid "&Interrupts"
+msgstr ""
 
-#: main.cpp:74
+#: main.cpp:88
+msgid "DMA-C&hannels"
+msgstr ""
+
+#: main.cpp:91
+msgid "&IO-Ports"
+msgstr ""
+
+#: main.cpp:94
+msgid "PCI-&Bus"
+msgstr ""
+
+#: main.cpp:97
+msgid "S&ound"
+msgstr ""
+
+#: main.cpp:100
+msgid "&Devices"
+msgstr ""
+
+#: main.cpp:103
+msgid "S&CSI"
+msgstr ""
+
+#: main.cpp:106
+msgid "P&artitions"
+msgstr ""
+
+#: main.cpp:109
+msgid "&X-Server"
+msgstr ""
+
+#: main.cpp:120
+msgid ""
+"usage: kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
+msgstr ""
+
+#: main.cpp:148
 msgid "System Information"
 msgstr "Systeminformasjon"
 
-#: memory.cpp:11
+#: memory.cpp:15
 msgid "Total memory"
 msgstr "Totalt minne"
 
-#: memory.cpp:21
+#: memory.cpp:25
 msgid "Free memory"
 msgstr "Ledig minne"
 
-#: memory.cpp:29
+#: memory.cpp:33
 msgid "Shared memory"
 msgstr "Delt minne"
 
-#: memory.cpp:37
+#: memory.cpp:41
 msgid "Buffer memory"
 msgstr "Bufferminne"
 
-#: memory.cpp:45
+#: memory.cpp:49
 msgid "Swap memory"
 msgstr "Vekslefilminne"
 
-#: memory.cpp:53
+#: memory.cpp:57
 msgid "Free swap memory"
 msgstr "Ledig vekslefilminne"
 
-#: memory.cpp:74
+#: memory.cpp:78
 #, c-format
 msgid "%10ld bytes  = %8.2f MB"
 msgstr "%10ld bytes  = %8.2f MB"
 
-#: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
-#: memory.cpp:101 memory_fbsd.cpp:22 memory_fbsd.cpp:23 memory_fbsd.cpp:24
+#: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
+#: memory.cpp:105
 msgid "Not available"
 msgstr "Ikke tilgjengelig"
 
-#: processor.cpp:29
-msgid "This system is not yet supported :-("
-msgstr "Det er foreløpig ikke støtte for dette system :-{"
+#~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
+#~ msgstr "bruk: KCminfo [-init | {processor,memory}]\n"
 
-#: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
-#: memory_sgi.cpp:30
-msgid "Not Available"
-msgstr "Ikke tilgjengelig"
+#~ msgid "This system is not yet supported :-("
+#~ msgstr "Det er foreløpig ikke støtte for dette system :-{"
 
-#: processor_linux.cpp:19
-msgid "File Error!"
-msgstr "Filfeil!"
+#~ msgid "Not Available"
+#~ msgstr "Ikke tilgjengelig"
 
-#: processor_linux.cpp:20
-msgid "Cannot read /proc/cpuinfo"
-msgstr "Kan ikke åpne /proc/cpuinfo"
+#~ msgid "File Error!"
+#~ msgstr "Filfeil!"
 
-#: processor_fbsd.cpp:47
-#, c-format
-msgid "%s, unknown speed"
-msgstr "%s, ukjent hastighet"
+#~ msgid "Cannot read /proc/cpuinfo"
+#~ msgstr "Kan ikke åpne /proc/cpuinfo"
 
-#: processor_fbsd.cpp:49
-#, c-format
-msgid "%s running at %s MHz"
-msgstr "%s kjører på %s MHz"
+#~ msgid "%s, unknown speed"
+#~ msgstr "%s, ukjent hastighet"
+
+#~ msgid "%s running at %s MHz"
+#~ msgstr "%s kjører på %s MHz"

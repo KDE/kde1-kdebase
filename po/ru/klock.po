@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-10-01 13:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-03-16 02:25+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -608,6 +608,10 @@ msgstr "Скала"
 msgid "Setup krock"
 msgstr "Настроить krock"
 
+#: rock.cpp:589
+msgid "Move"
+msgstr "Двигать"
+
 #: rock.cpp:595
 msgid "Rotate"
 msgstr "Вращать"
@@ -803,6 +807,3 @@ msgstr ""
 "Copyright (c) 1991 Патрик Дж. Ноутон\n"
 "\n"
 "Переписано на kscreensave Эмануэлем Пиркером."
-
-#~ msgid "Move"
-#~ msgstr "Двигать"

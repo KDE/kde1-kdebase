@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 13:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -608,6 +608,10 @@ msgstr "Βράχια"
 msgid "Setup krock"
 msgstr "Ρυθμίσεις για τα Βράχια"
 
+#: rock.cpp:589
+msgid "Move"
+msgstr "Κίνηση"
+
 #: rock.cpp:595
 msgid "Rotate"
 msgstr "Περιστροφή"
@@ -803,6 +807,3 @@ msgstr ""
 "Πνευματικά Δικαιώματα (c) 1991 Patrick J. Naughton\n"
 "\n"
 "Προσαρμογή στο KDE από τον Emanuel Pirker."
-
-#~ msgid "Move"
-#~ msgstr "Κίνηση"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KROOTWM\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,10 @@ msgstr "Kansio"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "VIRHE: Pohjaa ei ole olemassa '%s'"
+
+#: krootwm.C:180 krootwm.C:577 krootwm.C:585
+msgid "New"
+msgstr ""
 
 #: krootwm.C:181
 msgid "Bookmarks"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,39 +14,43 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kpanel.C:254
+#: kpanel.C:232
+msgid "Move"
+msgstr ""
+
+#: kpanel.C:272
 msgid "Go!"
 msgstr ""
 
-#: kpanel.C:257 tools.C:828
+#: kpanel.C:275 tools.C:828
 msgid "Where do you want to go tomorrow?"
 msgstr ""
 
-#: kpanel.C:331
+#: kpanel.C:349
 msgid "No info available"
 msgstr ""
 
-#: kpanel.C:370 props.C:173 props.C:174
+#: kpanel.C:388 props.C:173 props.C:174
 msgid "Logout"
 msgstr ""
 
-#: kpanel.C:378 props.C:172
+#: kpanel.C:396 props.C:172
 msgid "Lock screen"
 msgstr ""
 
-#: kpanel.C:387
+#: kpanel.C:405 kpanel.C:414
 msgid "Hide the panel"
 msgstr ""
 
-#: kpanel.C:397
+#: kpanel.C:424 kpanel.C:436
 msgid "Show the panel"
 msgstr ""
 
-#: kpanel.C:1106 tools.C:658
+#: kpanel.C:1159 tools.C:658
 msgid "No comment available"
 msgstr ""
 
-#: kpanel.C:1115 tools.C:837
+#: kpanel.C:1168 tools.C:837
 msgid "Windowlist"
 msgstr ""
 
@@ -66,7 +70,7 @@ msgstr ""
 msgid "Add a windowlist menu onto the panel"
 msgstr ""
 
-#: events.C:752 props.C:149
+#: events.C:772 props.C:149
 msgid "Configure"
 msgstr ""
 
@@ -82,7 +86,7 @@ msgstr ""
 msgid "Add or remove applications in the menu structure "
 msgstr ""
 
-#: events.C:754 props.C:155
+#: events.C:774 props.C:155
 msgid "Restart"
 msgstr ""
 
@@ -106,38 +110,30 @@ msgstr ""
 msgid "The menu editor is not installed."
 msgstr ""
 
-#: events.C:790 props.C:400
+#: events.C:810 props.C:400
 msgid "Oops!"
 msgstr ""
 
-#: events.C:789
+#: events.C:809
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
 
-#: pfilemenu.C:111
-msgid "KFM Information"
-msgstr ""
-
-#: pfilemenu.C:112
-msgid "Creating directory:\n"
-msgstr ""
-
-#: pfilemenu.C:340
+#: pfilemenu.C:351
 msgid "(empty folder)"
 msgstr ""
 
-#: pfilemenu.C:397
+#: pfilemenu.C:408
 msgid "(Too Many Files)"
 msgstr ""
 
-#: pfilemenu.C:406
+#: pfilemenu.C:417
 msgid "(Access Denied)"
 msgstr ""
 
-#: pfilemenu.C:409
+#: pfilemenu.C:420
 msgid "(Unreadable)"
 msgstr ""
 
-#: pfilemenu.C:416
+#: pfilemenu.C:427
 msgid "Open Folder"
 msgstr ""

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkwm\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-03-22 17:21:32+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -141,6 +141,10 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "(Ikke)maksimer"
 
+#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
+msgid "Move"
+msgstr ""
+
 #: titlebar.cpp:991
 msgid "(Un)Shade"
 msgstr "(Ikke)skygge"
@@ -180,6 +184,10 @@ msgstr "Endre vindustørrelse"
 #: windows.cpp:90
 msgid "Animation:"
 msgstr "Animasjon:"
+
+#: windows.cpp:91
+msgid "None"
+msgstr ""
 
 #: windows.cpp:92
 msgid "Fast"

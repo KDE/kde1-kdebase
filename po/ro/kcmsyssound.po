@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -21,6 +21,10 @@ msgstr "&Sunet"
 #: main.cpp:80
 msgid "System Sounds"
 msgstr "Sunete de sistem"
+
+#: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
+msgid "(none)"
+msgstr ""
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"

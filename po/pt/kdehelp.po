@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-01-26 14:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -25,23 +25,28 @@ msgstr "Ooops!"
 msgid "Unknown format: "
 msgstr "Formato desconhecido: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+#, fuzzy
+msgid "Forward"
+msgstr "&Avançar"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Abrir este Link"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Adicionar Favorito"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "Abrir numa nova Janela"
 
@@ -66,6 +71,18 @@ msgstr "Erro Fatal:"
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Aviso: "
+
+#: options.cpp:40
+msgid "Small"
+msgstr ""
+
+#: options.cpp:44
+msgid "Medium"
+msgstr ""
+
+#: options.cpp:48
+msgid "Large"
+msgstr ""
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -141,6 +158,10 @@ msgstr "Jogos"
 msgid "System Administration"
 msgstr "Administração do Sistema"
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr "A ler a directoria: "
@@ -198,11 +219,6 @@ msgstr "&Retroceder"
 msgid "&Forward"
 msgstr "&Avançar"
 
-#: mainwidget.cpp:157
-#, fuzzy
-msgid "&Contents"
-msgstr "Conteúdo da Ajuda"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "&Topo"
@@ -210,6 +226,15 @@ msgstr "&Topo"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "&Cima"
+
+#: mainwidget.cpp:160
+#, fuzzy
+msgid "&Previous"
+msgstr "Nodo Anterior"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr ""
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -330,6 +355,10 @@ msgstr ""
 #: finddlg.cpp:66
 msgid "&Find"
 msgstr ""
+
+#, fuzzy
+#~ msgid "&Contents"
+#~ msgstr "Conteúdo da Ajuda"
 
 #~ msgid "Could not start or find KFM"
 #~ msgstr "Não foi possível iniciar ou encontrar o KFM"

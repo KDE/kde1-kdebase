@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -33,23 +33,28 @@ msgstr "Ups!"
 msgid "Unknown format: "
 msgstr "Nepoznat format: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+#, fuzzy
+msgid "Forward"
+msgstr "Nap&rijed"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Otvori tu vezu"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Dodaj u bookmark"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "Otvori u novom prozoru"
 
@@ -74,6 +79,18 @@ msgstr "Nepovratna gre¹ka: "
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Upozorenje: "
+
+#: options.cpp:40
+msgid "Small"
+msgstr ""
+
+#: options.cpp:44
+msgid "Medium"
+msgstr ""
+
+#: options.cpp:48
+msgid "Large"
+msgstr ""
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -149,6 +166,10 @@ msgstr "Igre"
 msgid "System Administration"
 msgstr "Administracija sustava"
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr "Èitam direktorij: "
@@ -206,11 +227,6 @@ msgstr "Naza&d"
 msgid "&Forward"
 msgstr "Nap&rijed"
 
-#: mainwidget.cpp:157
-#, fuzzy
-msgid "&Contents"
-msgstr "Sadr¾aj pomoæi"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "&Vrh"
@@ -218,6 +234,15 @@ msgstr "&Vrh"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "&Gore"
+
+#: mainwidget.cpp:160
+#, fuzzy
+msgid "&Previous"
+msgstr "Prethodni èvor"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr ""
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -335,6 +360,10 @@ msgstr ""
 #: finddlg.cpp:66
 msgid "&Find"
 msgstr ""
+
+#, fuzzy
+#~ msgid "&Contents"
+#~ msgstr "Sadr¾aj pomoæi"
 
 #~ msgid "Could not start or find KFM"
 #~ msgstr "Ne mogu pokrenuti ili naæi KFM"

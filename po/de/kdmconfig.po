@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1997-12-29 16:29+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -137,44 +137,90 @@ msgid "Select fonts"
 msgstr "Auswahl Schriftarten"
 
 #: kdm-font.cpp:50
-msgid "Change font"
+#, fuzzy
+msgid "Example"
+msgstr "Beispiel:"
+
+#: kdm-font.cpp:52
+#, fuzzy
+msgid "Change font..."
 msgstr "Schriftart ändern"
 
-#: kdm-font.cpp:55
+#: kdm-font.cpp:57
 msgid "Greeting"
 msgstr "Begrüssung"
 
-#: kdm-font.cpp:56
+#: kdm-font.cpp:58
 msgid "Fail"
 msgstr "Gescheitert"
 
-#: kdm-font.cpp:57
+#: kdm-font.cpp:59
 msgid "Standard"
 msgstr "Normal"
 
-#: kdm-font.cpp:59
-msgid "Example:"
-msgstr "Beispiel:"
+#: kdm-bgnd.cpp:70
+msgid "Preview"
+msgstr ""
 
-#: kdm-bgnd.cpp:66
+#: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "Farbe"
 
-#: kdm-bgnd.cpp:74
+#: kdm-bgnd.cpp:101
+#, fuzzy
+msgid "Solid Color"
+msgstr "Farbe"
+
+#: kdm-bgnd.cpp:106
+msgid "Horizontal Blend"
+msgstr ""
+
+#: kdm-bgnd.cpp:111
+msgid "Vertical Blend"
+msgstr ""
+
+#: kdm-bgnd.cpp:130
 msgid "Wallpaper"
 msgstr "Hintergrund"
 
-#: kdm-bgnd.cpp:108
-msgid "Tiled"
+#: kdm-bgnd.cpp:171 kdm-sess.cpp:56
+msgid "None"
+msgstr "Kein"
+
+#: kdm-bgnd.cpp:176
+#, fuzzy
+msgid "Tile"
 msgstr "Fliesen"
 
-#: kdm-bgnd.cpp:112
-msgid "Centred"
+#: kdm-bgnd.cpp:181
+#, fuzzy
+msgid "Center"
 msgstr "Zentriert"
 
-#: kdm-bgnd.cpp:116
-msgid "Scaled"
+#: kdm-bgnd.cpp:186
+#, fuzzy
+msgid "Scale"
 msgstr "Vergrößert"
+
+#: kdm-bgnd.cpp:191
+msgid "TopLeft"
+msgstr ""
+
+#: kdm-bgnd.cpp:196
+msgid "TopRight"
+msgstr ""
+
+#: kdm-bgnd.cpp:201
+msgid "BottomLeft"
+msgstr ""
+
+#: kdm-bgnd.cpp:206
+msgid "BottomRight"
+msgstr ""
+
+#: kdm-bgnd.cpp:211
+msgid "Fancy"
+msgstr ""
 
 #: kdm-users.cpp:48
 msgid "All users"
@@ -220,43 +266,43 @@ msgstr "Kein Benutzer ausgewählt"
 msgid "Save image as default image?"
 msgstr "Speichere Bild als Standard?"
 
-#: kdm-sess.cpp:50
+#: kdm-sess.cpp:52
 msgid "Allow to shutdown"
 msgstr "Herunterfahren ermöglichen"
 
-#: kdm-sess.cpp:55
+#: kdm-sess.cpp:57
 msgid "All"
 msgstr "Alle"
 
-#: kdm-sess.cpp:56
+#: kdm-sess.cpp:58
 msgid "Root Only"
 msgstr "Nur root"
 
-#: kdm-sess.cpp:57
+#: kdm-sess.cpp:59
 msgid "Console Only"
 msgstr "Nur Konsole"
 
-#: kdm-sess.cpp:61
+#: kdm-sess.cpp:63
 msgid "Commands"
 msgstr "Kommandos"
 
-#: kdm-sess.cpp:62
+#: kdm-sess.cpp:64
 msgid "Shutdown"
 msgstr "Herunterfahren"
 
-#: kdm-sess.cpp:67
+#: kdm-sess.cpp:70
 msgid "Restart"
 msgstr "Neustart"
 
-#: kdm-sess.cpp:73
+#: kdm-sess.cpp:77
 msgid "Session types"
 msgstr "Sitzungsart"
 
-#: kdm-sess.cpp:75
+#: kdm-sess.cpp:79
 msgid "New type"
 msgstr "Neuer Typ"
 
-#: kdm-sess.cpp:83
+#: kdm-sess.cpp:89
 msgid "Available types"
 msgstr "Verfügbare Typen"
 
@@ -272,6 +318,3 @@ msgstr "ohne Name!"
 
 #~ msgid "Browse..."
 #~ msgstr "Auswählen..."
-
-#~ msgid "None"
-#~ msgstr "Kein"

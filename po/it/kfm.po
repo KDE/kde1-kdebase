@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-02-19 22:49+0100\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-12 11:35+0000\n"
 "PO-Revision-Date: 1998-02-03 16:00+0100\n"
 "Last-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -21,6 +21,11 @@ msgstr "Cartella"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ERORRE: Modello inesistente '%s'"
+
+#: kfmgui.cpp:304
+#, fuzzy
+msgid "&New"
+msgstr "Nuovo"
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -199,6 +204,10 @@ msgstr "&Cache "
 #: kfmgui.cpp:523 kfmman.cpp:1071
 msgid "Up"
 msgstr "Su"
+
+#: kfmgui.cpp:533 kfmman.cpp:1079
+msgid "Forward"
+msgstr ""
 
 #: kfmgui.cpp:538
 #, fuzzy
@@ -493,6 +502,10 @@ msgstr "Cestina"
 msgid "Open with"
 msgstr "Apri con..."
 
+#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+msgid "Move"
+msgstr ""
+
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
 msgstr "Collegamento"
@@ -504,6 +517,18 @@ msgstr "Svuota il cestino"
 #: main.cpp:241
 msgid "Add to Bookmarks"
 msgstr "Aggiungi ai Segnalibri"
+
+#: htmlopts.cpp:39
+msgid "Small"
+msgstr ""
+
+#: htmlopts.cpp:43
+msgid "Medium"
+msgstr ""
+
+#: htmlopts.cpp:47
+msgid "Large"
+msgstr ""
 
 #: htmlopts.cpp:51
 msgid "Standard Font"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,23 +34,27 @@ msgstr "Oeps!"
 msgid "Unknown format: "
 msgstr "Onbekend formaat: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+msgid "Forward"
+msgstr "Vooruit"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Open deze link"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Bladwijzer toevoegen"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "In een nieuw venster openen"
 
@@ -75,6 +79,18 @@ msgstr "Niet herstelbare fout: "
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Waarschuwing: "
+
+#: options.cpp:40
+msgid "Small"
+msgstr "Klein"
+
+#: options.cpp:44
+msgid "Medium"
+msgstr "Middel"
+
+#: options.cpp:48
+msgid "Large"
+msgstr "Groot"
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -150,6 +166,10 @@ msgstr "Spelletjes"
 msgid "System Administration"
 msgstr "Systeembeheer"
 
+#: man.cpp:478
+msgid "New"
+msgstr "Nieuw"
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr "Directory lezen: "
@@ -211,10 +231,6 @@ msgstr "&Terug"
 msgid "&Forward"
 msgstr "&Vooruit"
 
-#: mainwidget.cpp:157
-msgid "&Contents"
-msgstr "&Inhoud"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "&Top"
@@ -222,6 +238,14 @@ msgstr "&Top"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "&Omhoog"
+
+#: mainwidget.cpp:160
+msgid "&Previous"
+msgstr "Vo&rige"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr "&Volgende"
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -337,20 +361,14 @@ msgstr ""
 msgid "&Find"
 msgstr ""
 
+#~ msgid "&Contents"
+#~ msgstr "&Inhoud"
+
 #~ msgid "Could not start or find KFM"
 #~ msgstr "KFM kon niet gevonden of gestart worden"
 
 #~ msgid "Font Size"
 #~ msgstr "Lettertype grootte"
-
-#~ msgid "Small"
-#~ msgstr "Klein"
-
-#~ msgid "Medium"
-#~ msgstr "Middel"
-
-#~ msgid "Large"
-#~ msgstr "Groot"
 
 #~ msgid "Fonts"
 #~ msgstr "Lettertypen"
@@ -358,23 +376,11 @@ msgstr ""
 #~ msgid "Miscellaneous"
 #~ msgstr "Diversen"
 
-#~ msgid "&Previous"
-#~ msgstr "Vo&rige"
-
-#~ msgid "&Next"
-#~ msgstr "&Volgende"
-
 #~ msgid "Stop"
 #~ msgstr "Stop"
 
-#~ msgid "New"
-#~ msgstr "Nieuw"
-
 #~ msgid "Back"
 #~ msgstr "Terug"
-
-#~ msgid "Forward"
-#~ msgstr "Vooruit"
 
 #~ msgid "&Close"
 #~ msgstr "&Sluiten"

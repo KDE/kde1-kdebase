@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1998-10-01 13:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-05-09 00:03+0100\n"
 "Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -433,6 +433,7 @@ msgstr ""
 "\n"
 
 #: main.cpp:536
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
@@ -607,6 +608,10 @@ msgstr "Asteroiden"
 #: rock.cpp:549
 msgid "Setup krock"
 msgstr "Asteroiden einstellen"
+
+#: rock.cpp:589
+msgid "Move"
+msgstr "Bewegen"
 
 #: rock.cpp:595
 msgid "Rotate"
@@ -799,9 +804,6 @@ msgstr ""
 "Copyright (c) 1991 Patrick J. Naughton\n"
 "\n"
 "Portiert für KDE von Emanuel Pirker."
-
-#~ msgid "Move"
-#~ msgstr "Bewegen"
 
 #~ msgid ""
 #~ "Science Version 0.24.2 beta\n"

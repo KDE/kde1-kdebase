@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-12 11:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Macedonian <LL@li.org>\n"
@@ -26,6 +26,11 @@ msgstr "Direktorium"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "GRESKA: Template ne postoi '%s'"
+
+#: kfmgui.cpp:304
+#, fuzzy
+msgid "&New"
+msgstr "Nov "
 
 #: kfmgui.cpp:309
 #, fuzzy
@@ -202,6 +207,10 @@ msgstr "&Kesh"
 
 #: kfmgui.cpp:523 kfmman.cpp:1071
 msgid "Up"
+msgstr ""
+
+#: kfmgui.cpp:533 kfmman.cpp:1079
+msgid "Forward"
 msgstr ""
 
 #: kfmgui.cpp:538
@@ -494,6 +503,10 @@ msgstr "Odnesi vo Gjubre"
 msgid "Open with"
 msgstr "Otvori so"
 
+#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+msgid "Move"
+msgstr "Odnesi"
+
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
 msgstr "Linkuvaj"
@@ -505,6 +518,18 @@ msgstr "Isprazni ja Kantata za Gjubre"
 #: main.cpp:241
 msgid "Add to Bookmarks"
 msgstr "Dodadi Bookmark"
+
+#: htmlopts.cpp:39
+msgid "Small"
+msgstr "Mal"
+
+#: htmlopts.cpp:43
+msgid "Medium"
+msgstr "Sreden"
+
+#: htmlopts.cpp:47
+msgid "Large"
+msgstr "Golem"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
@@ -1383,23 +1408,11 @@ msgstr ""
 #~ msgid "Stop"
 #~ msgstr "Stop"
 
-#~ msgid "Move"
-#~ msgstr "Odnesi"
-
 #~ msgid "Properties"
 #~ msgstr "Osobini"
 
 #~ msgid "Font Size"
 #~ msgstr "Golemina na Font"
-
-#~ msgid "Small"
-#~ msgstr "Mal"
-
-#~ msgid "Medium"
-#~ msgstr "Sreden"
-
-#~ msgid "Large"
-#~ msgstr "Golem"
 
 #~ msgid "Continue"
 #~ msgstr "Prodolzzenie"

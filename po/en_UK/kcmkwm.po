@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-04-26 21:22+1000\n"
 "Last-Translator: Martin Jones <mjones@kde.org>\n"
 
@@ -133,6 +133,10 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "(Un)Maximise"
 
+#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
+msgid "Move"
+msgstr ""
+
 #: titlebar.cpp:991
 msgid "(Un)Shade"
 msgstr ""
@@ -171,6 +175,10 @@ msgstr ""
 
 #: windows.cpp:90
 msgid "Animation:"
+msgstr ""
+
+#: windows.cpp:91
+msgid "None"
 msgstr ""
 
 #: windows.cpp:92

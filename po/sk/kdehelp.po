@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.6\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -33,23 +33,28 @@ msgstr "Hop!"
 msgid "Unknown format: "
 msgstr "Neznámy formát: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr "Hµadanie kompletné"
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr "Pokraèova» v hµadaní od zaèiatku stránky?"
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+#, fuzzy
+msgid "Forward"
+msgstr "&Ïal¹ie"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Otvori» tento odkaz"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Prida» zálo¾ku"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "Otvori» v novom okne"
 
@@ -74,6 +79,18 @@ msgstr "Záva¾ná chyba: "
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Pozor: "
+
+#: options.cpp:40
+msgid "Small"
+msgstr ""
+
+#: options.cpp:44
+msgid "Medium"
+msgstr ""
+
+#: options.cpp:48
+msgid "Large"
+msgstr ""
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -149,6 +166,10 @@ msgstr "Hry"
 msgid "System Administration"
 msgstr "Administrácia systému"
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr "Èítam prieèinok: "
@@ -206,10 +227,6 @@ msgstr "&Spä»"
 msgid "&Forward"
 msgstr "&Ïal¹ie"
 
-#: mainwidget.cpp:157
-msgid "&Contents"
-msgstr "&Obsah"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "Hlavná s&tránka"
@@ -217,6 +234,15 @@ msgstr "Hlavná s&tránka"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "H&ore"
+
+#: mainwidget.cpp:160
+#, fuzzy
+msgid "&Previous"
+msgstr "Predchádzajúci uzol"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr ""
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -336,3 +362,5 @@ msgstr "Rozli¹ova» &veµké/malé"
 msgid "&Find"
 msgstr "&Hµada»"
 
+#~ msgid "&Contents"
+#~ msgstr "&Obsah"

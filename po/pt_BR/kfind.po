@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-06-23 09:00-0300\n"
 "Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 
@@ -188,6 +188,10 @@ msgstr "Arquivos executáveis"
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
 msgstr "Arquivos executaveis SUID"
+
+#: kftabdlg.cpp:246
+msgid "(none)"
+msgstr ""
 
 #: kftabdlg.cpp:247
 msgid "At Least"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -21,6 +21,10 @@ msgstr "Direktorij"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "GRE©KA: Predlo¾ak ne postoji '%s'"
+
+#: krootwm.C:180 krootwm.C:577 krootwm.C:585
+msgid "New"
+msgstr ""
 
 #: krootwm.C:181
 msgid "Bookmarks"

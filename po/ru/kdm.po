@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:29+0200\n"
 "PO-Revision-Date: 1998-01-18 05:26+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -30,43 +30,47 @@ msgstr "Выключить и перезагрузить"
 msgid "Exit kdm"
 msgstr "Выйти из kdm"
 
-#: kgreeter.cpp:174
+#: kgreeter.cpp:166
 msgid "Login:"
 msgstr "Имя:"
 
-#: kgreeter.cpp:186
+#: kgreeter.cpp:178
 msgid "Password:"
 msgstr "Пароль:"
 
-#: kgreeter.cpp:211
+#: kgreeter.cpp:203
 msgid "Login failed!"
 msgstr "Неудачная попытка!"
 
-#: kgreeter.cpp:217
+#: kgreeter.cpp:209
 msgid "Session Type:"
 msgstr "Тип сессии:"
 
-#: kgreeter.cpp:233
+#: kgreeter.cpp:225
 msgid "Go!"
 msgstr "Вперед!"
 
-#: kgreeter.cpp:249
+#: kgreeter.cpp:241
 msgid "Shutdown..."
 msgstr "Выключить..."
 
-#: kgreeter.cpp:443
+#: kgreeter.cpp:453
 msgid "Logins not available right now."
 msgstr ""
 
-#: kgreeter.cpp:515 kgreeter.cpp:542
+#: kgreeter.cpp:494
+msgid "bah"
+msgstr ""
+
+#: kgreeter.cpp:547 kgreeter.cpp:574
 msgid "Sorry -- your account has expired."
 msgstr ""
 
-#: kgreeter.cpp:520 kgreeter.cpp:547
+#: kgreeter.cpp:552 kgreeter.cpp:579
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr ""
 
-#: kgreeter.cpp:574
+#: kgreeter.cpp:606
 msgid "Home directory not available"
 msgstr ""

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm 1.0pre2\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-12 11:35+0000\n"
 "PO-Revision-Date: 1998-07-13 20:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -26,6 +26,11 @@ msgstr "Dosierujo"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ERARO: Þablono ne ekzistas '%s'"
+
+#: kfmgui.cpp:304
+#, fuzzy
+msgid "&New"
+msgstr "Nova "
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -207,6 +212,10 @@ msgstr "&Tenejo"
 #: kfmgui.cpp:523 kfmman.cpp:1071
 msgid "Up"
 msgstr "Supren"
+
+#: kfmgui.cpp:533 kfmman.cpp:1079
+msgid "Forward"
+msgstr ""
 
 #: kfmgui.cpp:538
 #, fuzzy
@@ -499,6 +508,10 @@ msgstr "Movu al rubujo"
 msgid "Open with"
 msgstr "Malfermu kun"
 
+#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+msgid "Move"
+msgstr ""
+
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
 msgstr "Ligo"
@@ -510,6 +523,18 @@ msgstr "Malplena rubujo"
 #: main.cpp:241
 msgid "Add to Bookmarks"
 msgstr "Aldonu legosignon"
+
+#: htmlopts.cpp:39
+msgid "Small"
+msgstr ""
+
+#: htmlopts.cpp:43
+msgid "Medium"
+msgstr ""
+
+#: htmlopts.cpp:47
+msgid "Large"
+msgstr ""
 
 #: htmlopts.cpp:51
 msgid "Standard Font"

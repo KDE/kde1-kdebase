@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KFM\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-12 11:35+0000\n"
 "PO-Revision-Date: 1998-05-14 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -25,6 +25,11 @@ msgstr "Direktorij"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "GRE©KA: Predlo¾ak '%s' ne postoji"
+
+#: kfmgui.cpp:304
+#, fuzzy
+msgid "&New"
+msgstr "Novi"
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -205,6 +210,10 @@ msgstr "&Predmemorija"
 #: kfmgui.cpp:523 kfmman.cpp:1071
 msgid "Up"
 msgstr "Gore"
+
+#: kfmgui.cpp:533 kfmman.cpp:1079
+msgid "Forward"
+msgstr ""
 
 #: kfmgui.cpp:538
 #, fuzzy
@@ -498,6 +507,10 @@ msgstr "Baci u smeæe"
 msgid "Open with"
 msgstr "Otvori s"
 
+#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+msgid "Move"
+msgstr ""
+
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
 msgstr "Veza"
@@ -509,6 +522,18 @@ msgstr "Isprazni kantu za smeæe"
 #: main.cpp:241
 msgid "Add to Bookmarks"
 msgstr "Dodaj Oznakama"
+
+#: htmlopts.cpp:39
+msgid "Small"
+msgstr ""
+
+#: htmlopts.cpp:43
+msgid "Medium"
+msgstr ""
+
+#: htmlopts.cpp:47
+msgid "Large"
+msgstr ""
 
 #: htmlopts.cpp:51
 msgid "Standard Font"

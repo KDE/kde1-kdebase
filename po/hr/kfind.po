@@ -2,7 +2,7 @@
 # Radoslav Dejanovic <rdejanov@public.srce.hr>, 1998.
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-10-01 16:40:07+0200\n"
 "From: root <flidr@CyberGate.zcu.cz>\n"
@@ -195,6 +195,10 @@ msgstr "Izvr¹ne datoteke"
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
 msgstr "SUID izvr¹ne datoteke"
+
+#: kftabdlg.cpp:246
+msgid "(none)"
+msgstr ""
 
 #: kftabdlg.cpp:247
 msgid "At Least"

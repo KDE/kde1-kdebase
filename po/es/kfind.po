@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-06-18 18:10+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
@@ -191,6 +191,10 @@ msgstr "Archivos ejecutables"
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
 msgstr "Ejecutables SUID"
+
+#: kftabdlg.cpp:246
+msgid "(none)"
+msgstr ""
 
 #: kftabdlg.cpp:247
 msgid "At Least"

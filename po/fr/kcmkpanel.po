@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-02-25 21:36 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -25,12 +25,12 @@ msgstr "&Bureaux"
 msgid "Disk &Navigator"
 msgstr ""
 
-#: main.cpp:109
+#: main.cpp:79
 #, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "utilisation : kcmkpanel [-init | {panel,options,desktops}]\n"
 
-#: main.cpp:142
+#: main.cpp:112
 msgid "KPanel Configuration"
 msgstr "Configuration du panneau"
 

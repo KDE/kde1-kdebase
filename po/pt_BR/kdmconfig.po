@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
@@ -137,44 +137,90 @@ msgid "Select fonts"
 msgstr "Selecionar fontes"
 
 #: kdm-font.cpp:50
-msgid "Change font"
+#, fuzzy
+msgid "Example"
+msgstr "Exemplo:"
+
+#: kdm-font.cpp:52
+#, fuzzy
+msgid "Change font..."
 msgstr "Mudar fonte"
 
-#: kdm-font.cpp:55
+#: kdm-font.cpp:57
 msgid "Greeting"
 msgstr "Saudação"
 
-#: kdm-font.cpp:56
+#: kdm-font.cpp:58
 msgid "Fail"
 msgstr "Falha"
 
-#: kdm-font.cpp:57
+#: kdm-font.cpp:59
 msgid "Standard"
 msgstr "Padrão"
 
-#: kdm-font.cpp:59
-msgid "Example:"
-msgstr "Exemplo:"
+#: kdm-bgnd.cpp:70
+msgid "Preview"
+msgstr ""
 
-#: kdm-bgnd.cpp:66
+#: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "Cor"
 
-#: kdm-bgnd.cpp:74
+#: kdm-bgnd.cpp:101
+#, fuzzy
+msgid "Solid Color"
+msgstr "Cor"
+
+#: kdm-bgnd.cpp:106
+msgid "Horizontal Blend"
+msgstr ""
+
+#: kdm-bgnd.cpp:111
+msgid "Vertical Blend"
+msgstr ""
+
+#: kdm-bgnd.cpp:130
 msgid "Wallpaper"
 msgstr "Papel de parede"
 
-#: kdm-bgnd.cpp:108
-msgid "Tiled"
+#: kdm-bgnd.cpp:171 kdm-sess.cpp:56
+msgid "None"
+msgstr "Nenhum"
+
+#: kdm-bgnd.cpp:176
+#, fuzzy
+msgid "Tile"
 msgstr "Mosaico"
 
-#: kdm-bgnd.cpp:112
-msgid "Centred"
+#: kdm-bgnd.cpp:181
+#, fuzzy
+msgid "Center"
 msgstr "Centrado"
 
-#: kdm-bgnd.cpp:116
-msgid "Scaled"
+#: kdm-bgnd.cpp:186
+#, fuzzy
+msgid "Scale"
 msgstr "Escalado"
+
+#: kdm-bgnd.cpp:191
+msgid "TopLeft"
+msgstr ""
+
+#: kdm-bgnd.cpp:196
+msgid "TopRight"
+msgstr ""
+
+#: kdm-bgnd.cpp:201
+msgid "BottomLeft"
+msgstr ""
+
+#: kdm-bgnd.cpp:206
+msgid "BottomRight"
+msgstr ""
+
+#: kdm-bgnd.cpp:211
+msgid "Fancy"
+msgstr ""
 
 #: kdm-users.cpp:48
 msgid "All users"
@@ -220,43 +266,43 @@ msgstr "Nenhum usuário selecionado"
 msgid "Save image as default image?"
 msgstr "Salvar imagem como imagem padrão?"
 
-#: kdm-sess.cpp:50
+#: kdm-sess.cpp:52
 msgid "Allow to shutdown"
 msgstr "Permitir desligar"
 
-#: kdm-sess.cpp:55
+#: kdm-sess.cpp:57
 msgid "All"
 msgstr "Todos"
 
-#: kdm-sess.cpp:56
+#: kdm-sess.cpp:58
 msgid "Root Only"
 msgstr "Root Apenas"
 
-#: kdm-sess.cpp:57
+#: kdm-sess.cpp:59
 msgid "Console Only"
 msgstr "Console Apenas"
 
-#: kdm-sess.cpp:61
+#: kdm-sess.cpp:63
 msgid "Commands"
 msgstr "Comandos"
 
-#: kdm-sess.cpp:62
+#: kdm-sess.cpp:64
 msgid "Shutdown"
 msgstr "Desligar"
 
-#: kdm-sess.cpp:67
+#: kdm-sess.cpp:70
 msgid "Restart"
 msgstr "Reinicializar"
 
-#: kdm-sess.cpp:73
+#: kdm-sess.cpp:77
 msgid "Session types"
 msgstr "Tipos de sessão"
 
-#: kdm-sess.cpp:75
+#: kdm-sess.cpp:79
 msgid "New type"
 msgstr "Novo tipo"
 
-#: kdm-sess.cpp:83
+#: kdm-sess.cpp:89
 msgid "Available types"
 msgstr "Tipos disponíveis"
 
@@ -269,6 +315,3 @@ msgstr "sem nome!"
 
 #~ msgid "Appearance"
 #~ msgstr "Aparência"
-
-#~ msgid "None"
-#~ msgstr "Nenhum"

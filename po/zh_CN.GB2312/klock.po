@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-01 13:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -607,6 +607,10 @@ msgstr "Rock"
 msgid "Setup krock"
 msgstr "设置 krock"
 
+#: rock.cpp:589
+msgid "Move"
+msgstr "移动"
+
 #: rock.cpp:595
 msgid "Rotate"
 msgstr "旋转"
@@ -805,9 +809,6 @@ msgstr ""
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
 "由 Emanuel Pirker 移植到 kscreensave."
-
-#~ msgid "Move"
-#~ msgstr "移动"
 
 #
 #~ msgid ""

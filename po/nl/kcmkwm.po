@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -150,6 +150,10 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "Maximalizeren"
 
+#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
+msgid "Move"
+msgstr "Verplaats"
+
 #: titlebar.cpp:991
 #, fuzzy
 msgid "(Un)Shade"
@@ -193,6 +197,10 @@ msgstr "&Vensters"
 #, fuzzy
 msgid "Animation:"
 msgstr "Titel bewegen"
+
+#: windows.cpp:91
+msgid "None"
+msgstr ""
 
 #: windows.cpp:92
 msgid "Fast"
@@ -408,9 +416,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "With animation"
 #~ msgstr "Titel bewegen"
-
-#~ msgid "Move"
-#~ msgstr "Verplaats"
 
 #~ msgid "Restore"
 #~ msgstr "Herstel"

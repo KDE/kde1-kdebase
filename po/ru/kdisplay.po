@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1997-09-05 02:51+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -274,75 +274,75 @@ msgstr ""
 "Цвета используемые в предпросмотре будут\n"
 "скопированы в эту схему."
 
-#: scrnsave.cpp:48
+#: scrnsave.cpp:47
 msgid "Ignore"
 msgstr "Игнорировать"
 
-#: scrnsave.cpp:49
+#: scrnsave.cpp:48
 msgid "Save Screen"
 msgstr "Сохранять экран"
 
-#: scrnsave.cpp:50
+#: scrnsave.cpp:49
 msgid "Lock Screen"
 msgstr "Закрывать экран"
 
-#: scrnsave.cpp:113 scrnsave.cpp:182
+#: scrnsave.cpp:112 scrnsave.cpp:181
 msgid "Screen Saver"
 msgstr "Хранитель экрана"
 
 #
 #
-#: scrnsave.cpp:189 scrnsave.cpp:367 scrnsave.cpp:605 scrnsave.cpp:726
+#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:604 scrnsave.cpp:725
 msgid "No screensaver"
 msgstr "Нет хранителя экрана"
 
 #
-#: scrnsave.cpp:210
+#: scrnsave.cpp:209
 msgid "&Setup ..."
 msgstr "&Настроить..."
 
 #
-#: scrnsave.cpp:218
+#: scrnsave.cpp:217
 msgid "&Test"
 msgstr "&Тест"
 
-#: scrnsave.cpp:231
+#: scrnsave.cpp:230
 msgid "Settings"
 msgstr "Установки"
 
-#: scrnsave.cpp:251
+#: scrnsave.cpp:250
 msgid "&Wait for"
 msgstr "&Ждать"
 
 #
-#: scrnsave.cpp:261
+#: scrnsave.cpp:260
 msgid "min."
 msgstr "мин."
 
 #
-#: scrnsave.cpp:267
+#: scrnsave.cpp:266
 msgid "&Require password"
 msgstr "&Требуется пароль"
 
-#: scrnsave.cpp:273
+#: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
 msgstr ""
 
-#: scrnsave.cpp:279
+#: scrnsave.cpp:278
 msgid "Show &password as stars"
 msgstr "Показывать звездочки вместо пароля"
 
 #
-#: scrnsave.cpp:287
+#: scrnsave.cpp:286
 msgid "Priority"
 msgstr "Приоритет"
 
 #
-#: scrnsave.cpp:300
+#: scrnsave.cpp:299
 msgid "&High"
 msgstr "&Высокий"
 
-#: scrnsave.cpp:309
+#: scrnsave.cpp:308
 msgid "Low"
 msgstr "Низкий"
 
@@ -434,6 +434,10 @@ msgstr "Активное окно"
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
 msgid "Selected text"
 msgstr "Выбранный текст"
+
+#: widgetcanvas.cpp:212
+msgid "New"
+msgstr ""
 
 #: fontchooser.cpp:82
 msgid "&Typeface"

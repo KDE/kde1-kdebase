@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmrootwm 1.0pre2\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-07-17 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -22,6 +22,10 @@ msgstr "Dosierujo"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ERARO: Ne ekzistas Þablono '%'"
+
+#: krootwm.C:180 krootwm.C:577 krootwm.C:585
+msgid "New"
+msgstr ""
 
 #: krootwm.C:181
 msgid "Bookmarks"

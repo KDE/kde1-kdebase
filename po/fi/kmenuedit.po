@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KMENUEDIT\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr ""
 "\n"
 "Haluatko tallentaa muutokset ?"
 
-#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:259
 msgid "EMPTY"
 msgstr "TYHJÄ"
 
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Erotin"
 
-#: confmenu.cpp:102 confmenu.cpp:317
+#: confmenu.cpp:102 confmenu.cpp:316
 msgid "Open/ Close"
 msgstr "Avaa / Sulje"
 
@@ -86,7 +86,11 @@ msgstr "Avaa / Sulje"
 msgid "! PROTECTED Button !"
 msgstr "! SUOJATTU Nappi !"
 
-#: confmenu.cpp:171 confmenu.cpp:300
+#: confmenu.cpp:115
+msgid "New"
+msgstr ""
+
+#: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"
 msgstr "Varoitus !"
 
@@ -94,11 +98,11 @@ msgstr "Varoitus !"
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Jos tuhoat tämän napin, menetät sen kaikki alivalikot"
 
-#: confmenu.cpp:281
+#: confmenu.cpp:280
 msgid "Wrong filename"
 msgstr "Väärä tiedostonimi"
 
-#: confmenu.cpp:282
+#: confmenu.cpp:281
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -106,11 +110,11 @@ msgstr ""
 "kdelnk-tiedosto samalla nimellä on jo olemassa. \n"
 "Valitse toinen tiedostonimi."
 
-#: confmenu.cpp:301
+#: confmenu.cpp:300
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Napin tyypin muuttaminen tuhoaa kaikki sen alivalikot"
 
-#: confmenu.cpp:322 confmenu.cpp:911
+#: confmenu.cpp:321 confmenu.cpp:909
 msgid "no command"
 msgstr "ei komentoa"
 
@@ -155,7 +159,7 @@ msgstr "Nielaise"
 msgid "Link"
 msgstr "Linkki"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
 msgid "Device"
 msgstr "Laite"
 

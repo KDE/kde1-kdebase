@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-04-20 18:58+0100\n"
 "Last-Translator: Csaba Major <major@terrasoft.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -28,13 +28,13 @@ msgid "Disk &Navigator"
 msgstr ""
 
 # main.cpp:97
-#: main.cpp:109
+#: main.cpp:79
 #, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "használat: kcmkpanel [-init | {panel,options,desktops}]\n"
 
 # main.cpp:127
-#: main.cpp:142
+#: main.cpp:112
 msgid "KPanel Configuration"
 msgstr "KPanel konfiguráló"
 

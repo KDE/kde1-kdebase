@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -148,6 +148,10 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "(De)Maximizeazã"
 
+#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
+msgid "Move"
+msgstr ""
+
 #: titlebar.cpp:991
 msgid "(Un)Shade"
 msgstr "(De)Umbreºte"
@@ -187,6 +191,10 @@ msgstr "Rescalarea ferestrelor"
 #: windows.cpp:90
 msgid "Animation:"
 msgstr "Animaþie:"
+
+#: windows.cpp:91
+msgid "None"
+msgstr ""
 
 #: windows.cpp:92
 msgid "Fast"

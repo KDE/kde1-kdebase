@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-10-10 20:25+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -14,6 +14,10 @@ msgstr "Carpeta"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ERROR: La plantilla no existe '%s'"
+
+#: krootwm.C:180 krootwm.C:577 krootwm.C:585
+msgid "New"
+msgstr ""
 
 #: krootwm.C:181
 msgid "Bookmarks"

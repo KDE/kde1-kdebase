@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-06-20 13:45 CEST\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -139,6 +139,10 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "Maximalizovat/Obnovit"
 
+#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
+msgid "Move"
+msgstr ""
+
 #: titlebar.cpp:991
 msgid "(Un)Shade"
 msgstr "Zarolovat/Vyrolovat"
@@ -178,6 +182,10 @@ msgstr "Zmìna velikosti okna"
 #: windows.cpp:90
 msgid "Animation:"
 msgstr "Animace:"
+
+#: windows.cpp:91
+msgid "None"
+msgstr ""
 
 #: windows.cpp:92
 msgid "Fast"

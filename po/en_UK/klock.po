@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-10-01 13:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-04-26 21:22+1000\n"
 "Last-Translator: Martin Jones <mjones@kde.org>\n"
 
@@ -513,6 +513,10 @@ msgstr ""
 
 #: rock.cpp:549
 msgid "Setup krock"
+msgstr ""
+
+#: rock.cpp:589
+msgid "Move"
 msgstr ""
 
 #: rock.cpp:595

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-03-16 02:08+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -38,7 +38,7 @@ msgstr ""
 "\n"
 "Вы хотите записать изменения ?"
 
-#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:259
 msgid "EMPTY"
 msgstr "ПУСТО"
 
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Разделитель"
 
-#: confmenu.cpp:102 confmenu.cpp:317
+#: confmenu.cpp:102 confmenu.cpp:316
 msgid "Open/ Close"
 msgstr "Открыть/Закрыть"
 
@@ -86,7 +86,11 @@ msgstr "Открыть/Закрыть"
 msgid "! PROTECTED Button !"
 msgstr "! ЗАЩИЩЕННАЯ КНОПКА !"
 
-#: confmenu.cpp:171 confmenu.cpp:300
+#: confmenu.cpp:115
+msgid "New"
+msgstr ""
+
+#: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"
 msgstr "Внимание !"
 
@@ -94,11 +98,11 @@ msgstr "Внимание !"
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Если вы удалите эту кнопку, то вы лишитесь всех его подменю"
 
-#: confmenu.cpp:281
+#: confmenu.cpp:280
 msgid "Wrong filename"
 msgstr "Неверное имя файла"
 
-#: confmenu.cpp:282
+#: confmenu.cpp:281
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -106,11 +110,11 @@ msgstr ""
 "kdelnk-файл с таким именем уже существует.\n"
 "Пожайлуста выберите другое имя."
 
-#: confmenu.cpp:301
+#: confmenu.cpp:300
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Изменение типа этой кнопки удалит все ее подменю"
 
-#: confmenu.cpp:322 confmenu.cpp:911
+#: confmenu.cpp:321 confmenu.cpp:909
 msgid "no command"
 msgstr "нет команды"
 
@@ -155,7 +159,7 @@ msgstr "На панель"
 msgid "Link"
 msgstr "Ссылка"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
 msgid "Device"
 msgstr "Устройство"
 

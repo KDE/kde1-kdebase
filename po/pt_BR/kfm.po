@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-12 11:35+0000\n"
 "PO-Revision-Date: 1998-06-23 09:00-0300\n"
 "Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 
@@ -17,6 +17,11 @@ msgstr "Pasta"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ERRO: Não existe o modelo '%s'"
+
+#: kfmgui.cpp:304
+#, fuzzy
+msgid "&New"
+msgstr "Novo"
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -197,6 +202,10 @@ msgstr "&Cache"
 #: kfmgui.cpp:523 kfmman.cpp:1071
 msgid "Up"
 msgstr "Acima"
+
+#: kfmgui.cpp:533 kfmman.cpp:1079
+msgid "Forward"
+msgstr ""
 
 #: kfmgui.cpp:538
 msgid "Home"
@@ -488,6 +497,10 @@ msgstr "Mover para a Lixeira"
 msgid "Open with"
 msgstr "Abrir com"
 
+#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+msgid "Move"
+msgstr ""
+
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
 msgstr "Link"
@@ -499,6 +512,18 @@ msgstr "Esvaziar lixeira"
 #: main.cpp:241
 msgid "Add to Bookmarks"
 msgstr "Adicionar aos Favoritos"
+
+#: htmlopts.cpp:39
+msgid "Small"
+msgstr ""
+
+#: htmlopts.cpp:43
+msgid "Medium"
+msgstr ""
+
+#: htmlopts.cpp:47
+msgid "Large"
+msgstr ""
 
 #: htmlopts.cpp:51
 msgid "Standard Font"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Case Roole <cjr@xs4all.nl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr ""
 "\n"
 "Wilt u uw wijzigingen opslaan ?"
 
-#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:259
 msgid "EMPTY"
 msgstr "LEEG"
 
@@ -79,7 +79,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Scheiding"
 
-#: confmenu.cpp:102 confmenu.cpp:317
+#: confmenu.cpp:102 confmenu.cpp:316
 msgid "Open/ Close"
 msgstr "Openen/ Sluiten"
 
@@ -87,7 +87,11 @@ msgstr "Openen/ Sluiten"
 msgid "! PROTECTED Button !"
 msgstr "! BESCHERMDE knop !"
 
-#: confmenu.cpp:171 confmenu.cpp:300
+#: confmenu.cpp:115
+msgid "New"
+msgstr ""
+
+#: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"
 msgstr "Waarschuwing !"
 
@@ -95,11 +99,11 @@ msgstr "Waarschuwing !"
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Als u deze regel wist verliest u ook al zijn submenus"
 
-#: confmenu.cpp:281
+#: confmenu.cpp:280
 msgid "Wrong filename"
 msgstr "Dubbele bestandsnaam"
 
-#: confmenu.cpp:282
+#: confmenu.cpp:281
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -107,11 +111,11 @@ msgstr ""
 "Er bestaat al een kdelnk-bestand met deze naam.\n"
 "U moet een andere naam kiezen."
 
-#: confmenu.cpp:301
+#: confmenu.cpp:300
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Als u het type van deze regel verandert verliest u al zijn submenus"
 
-#: confmenu.cpp:322 confmenu.cpp:911
+#: confmenu.cpp:321 confmenu.cpp:909
 msgid "no command"
 msgstr "geen commando"
 
@@ -157,7 +161,7 @@ msgstr "Opnemen"
 msgid "Link"
 msgstr "Verbinding"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
 msgid "Device"
 msgstr "Apparaat"
 

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,10 @@ msgstr "&Suono"
 #: main.cpp:80
 msgid "System Sounds"
 msgstr "Suoni di sistema"
+
+#: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
+msgid "(none)"
+msgstr ""
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"

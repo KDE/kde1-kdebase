@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit \n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-06-25 19:01+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -30,7 +30,7 @@ msgstr ""
 "\n"
 "Czy chcesz zapisaæ zmiany ?"
 
-#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:259
 msgid "EMPTY"
 msgstr "PUSTY"
 
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Separator"
 
-#: confmenu.cpp:102 confmenu.cpp:317
+#: confmenu.cpp:102 confmenu.cpp:316
 msgid "Open/ Close"
 msgstr "Otwórz/Zamknij"
 
@@ -78,7 +78,11 @@ msgstr "Otwórz/Zamknij"
 msgid "! PROTECTED Button !"
 msgstr "! ZABEZPIECZONY Przycisk !"
 
-#: confmenu.cpp:171 confmenu.cpp:300
+#: confmenu.cpp:115
+msgid "New"
+msgstr ""
+
+#: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"
 msgstr "Ostrze¿enie !"
 
@@ -86,11 +90,11 @@ msgstr "Ostrze¿enie !"
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Je¶li skasujesz ten przycisk, skasujesz równie¿ jego podmenu"
 
-#: confmenu.cpp:281
+#: confmenu.cpp:280
 msgid "Wrong filename"
 msgstr "B³êdna nazwa pliku"
 
-#: confmenu.cpp:282
+#: confmenu.cpp:281
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -98,11 +102,11 @@ msgstr ""
 "Plik kdelnk o tej nazwie ju¿ istnieje. \n"
 "Wybierz inn± nazwê."
 
-#: confmenu.cpp:301
+#: confmenu.cpp:300
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Zmiana typu tego przycisku spowoduje skasowanie jego podmenu"
 
-#: confmenu.cpp:322 confmenu.cpp:911
+#: confmenu.cpp:321 confmenu.cpp:909
 msgid "no command"
 msgstr "brak polecenia"
 
@@ -147,7 +151,7 @@ msgstr "Zadokowanie"
 msgid "Link"
 msgstr "Odno¶nik"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
 msgid "Device"
 msgstr "Urz±dzenie"
 

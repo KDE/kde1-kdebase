@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-03-19 23:20+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr ""
 "\n"
 "Voleu desar els canvis ?"
 
-#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:259
 msgid "EMPTY"
 msgstr "BUIT"
 
@@ -77,7 +77,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Separador"
 
-#: confmenu.cpp:102 confmenu.cpp:317
+#: confmenu.cpp:102 confmenu.cpp:316
 msgid "Open/ Close"
 msgstr "Obrir/ Tancar"
 
@@ -85,7 +85,11 @@ msgstr "Obrir/ Tancar"
 msgid "! PROTECTED Button !"
 msgstr "! Botó PROTEGIT !"
 
-#: confmenu.cpp:171 confmenu.cpp:300
+#: confmenu.cpp:115
+msgid "New"
+msgstr ""
+
+#: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"
 msgstr "Avís !"
 
@@ -93,11 +97,11 @@ msgstr "Avís !"
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Si esborreu aquest botó, perdreu tots els seus submenús"
 
-#: confmenu.cpp:281
+#: confmenu.cpp:280
 msgid "Wrong filename"
 msgstr "Nom de fitxer erròni"
 
-#: confmenu.cpp:282
+#: confmenu.cpp:281
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -105,11 +109,11 @@ msgstr ""
 "Ja existeix un fitxer kdelnk amb aquest nom. \n"
 "Si us plau, trieu un altre nom de fitxer."
 
-#: confmenu.cpp:301
+#: confmenu.cpp:300
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Al canviar el tipus d'aquest botó esborrareu tots els seus submenús"
 
-#: confmenu.cpp:322 confmenu.cpp:911
+#: confmenu.cpp:321 confmenu.cpp:909
 msgid "no command"
 msgstr "sense comanda"
 
@@ -154,7 +158,7 @@ msgstr "Encastar"
 msgid "Link"
 msgstr "Enllaç"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
 msgid "Device"
 msgstr "Dispositiu"
 

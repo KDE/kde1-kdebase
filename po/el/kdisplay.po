@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -258,74 +258,74 @@ msgid ""
 "be copied into this scheme to begin with."
 msgstr ""
 
-#: scrnsave.cpp:48
+#: scrnsave.cpp:47
 msgid "Ignore"
 msgstr "Αγνόησε"
 
-#: scrnsave.cpp:49
+#: scrnsave.cpp:48
 msgid "Save Screen"
 msgstr ""
 
-#: scrnsave.cpp:50
+#: scrnsave.cpp:49
 msgid "Lock Screen"
 msgstr ""
 
-#: scrnsave.cpp:113 scrnsave.cpp:182
+#: scrnsave.cpp:112 scrnsave.cpp:181
 msgid "Screen Saver"
 msgstr "Προφύλαξη Οθόνης"
 
-#: scrnsave.cpp:189 scrnsave.cpp:367 scrnsave.cpp:605 scrnsave.cpp:726
+#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:604 scrnsave.cpp:725
 #, fuzzy
 msgid "No screensaver"
 msgstr "Προφύλαξη Οθόνης"
 
-#: scrnsave.cpp:210
+#: scrnsave.cpp:209
 #, fuzzy
 msgid "&Setup ..."
 msgstr "Ρύσμισε..."
 
-#: scrnsave.cpp:218
+#: scrnsave.cpp:217
 #, fuzzy
 msgid "&Test"
 msgstr "Δοκιμή"
 
-#: scrnsave.cpp:231
+#: scrnsave.cpp:230
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: scrnsave.cpp:251
+#: scrnsave.cpp:250
 msgid "&Wait for"
 msgstr ""
 
-#: scrnsave.cpp:261
+#: scrnsave.cpp:260
 #, fuzzy
 msgid "min."
 msgstr "λεπτά"
 
-#: scrnsave.cpp:267
+#: scrnsave.cpp:266
 #, fuzzy
 msgid "&Require password"
 msgstr "Απαίτηση Κωδικού"
 
-#: scrnsave.cpp:273
+#: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
 msgstr ""
 
-#: scrnsave.cpp:279
+#: scrnsave.cpp:278
 msgid "Show &password as stars"
 msgstr ""
 
-#: scrnsave.cpp:287
+#: scrnsave.cpp:286
 #, fuzzy
 msgid "Priority"
 msgstr "Προτερεότητα:"
 
-#: scrnsave.cpp:300
+#: scrnsave.cpp:299
 #, fuzzy
 msgid "&High"
 msgstr "Υψηλή"
 
-#: scrnsave.cpp:309
+#: scrnsave.cpp:308
 msgid "Low"
 msgstr "Χαμηλή"
 
@@ -412,6 +412,10 @@ msgstr "Ενεργό παράθυρο"
 #, fuzzy
 msgid "Selected text"
 msgstr "Επιλογή κειμένου"
+
+#: widgetcanvas.cpp:212
+msgid "New"
+msgstr ""
 
 #: fontchooser.cpp:82
 msgid "&Typeface"

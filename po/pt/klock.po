@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 13:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -599,6 +599,11 @@ msgstr "Rocha"
 #: rock.cpp:549
 msgid "Setup krock"
 msgstr "Configurar Rocha"
+
+#: rock.cpp:589
+#, fuzzy
+msgid "Move"
+msgstr "Modo:"
 
 #: rock.cpp:595
 msgid "Rotate"

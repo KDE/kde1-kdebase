@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm 1.27\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-12 11:35+0000\n"
 "PO-Revision-Date: 1998-02-26 20:20+MET\n"
 "Last-Translator: Balázs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -25,6 +25,11 @@ msgstr "Könyvtár"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "HIBA: A '%s' nevû sablon nem létezik!"
+
+#: kfmgui.cpp:304
+#, fuzzy
+msgid "&New"
+msgstr "Új "
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -200,6 +205,10 @@ msgstr "&Gyorstár"
 
 #: kfmgui.cpp:523 kfmman.cpp:1071
 msgid "Up"
+msgstr ""
+
+#: kfmgui.cpp:533 kfmman.cpp:1079
+msgid "Forward"
 msgstr ""
 
 #: kfmgui.cpp:538
@@ -488,6 +497,10 @@ msgstr "Kukába dob"
 msgid "Open with"
 msgstr "Megnyitás mással"
 
+#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+msgid "Move"
+msgstr "Mozgat"
+
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
 msgstr "Lánc"
@@ -499,6 +512,18 @@ msgstr "Kuka ürítése"
 #: main.cpp:241
 msgid "Add to Bookmarks"
 msgstr "Hozzáadás a kedvencekhez"
+
+#: htmlopts.cpp:39
+msgid "Small"
+msgstr ""
+
+#: htmlopts.cpp:43
+msgid "Medium"
+msgstr ""
+
+#: htmlopts.cpp:47
+msgid "Large"
+msgstr ""
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
@@ -1339,9 +1364,6 @@ msgstr ""
 
 #~ msgid "Stop"
 #~ msgstr "Állj"
-
-#~ msgid "Move"
-#~ msgstr "Mozgat"
 
 #~ msgid "Properties"
 #~ msgstr "Tulajdonságok"

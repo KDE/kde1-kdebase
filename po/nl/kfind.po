@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-10-01 16:40:07+0200\n"
 "From: root <flidr@CyberGate.zcu.cz>\n"
@@ -208,6 +208,10 @@ msgstr ""
 msgid "SUID executable files"
 msgstr ""
 
+#: kftabdlg.cpp:246
+msgid "(none)"
+msgstr "(geen)"
+
 #: kftabdlg.cpp:247
 msgid "At Least"
 msgstr "minstens"
@@ -384,9 +388,6 @@ msgstr "Fout tijdens het creëren van een kindproces!"
 
 #~ msgid "About &Qt"
 #~ msgstr "Informatie over &Qt"
-
-#~ msgid "(none)"
-#~ msgstr "(geen)"
 
 #, fuzzy
 #~ msgid "&Delete"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-05-20 00:35+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -197,6 +197,10 @@ msgstr "Fitxers executables"
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
 msgstr "Fitxers executables SUID"
+
+#: kftabdlg.cpp:246
+msgid "(none)"
+msgstr ""
 
 #: kftabdlg.cpp:247
 msgid "At Least"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -38,7 +38,7 @@ msgstr ""
 "\n"
 "Vreþi sã salvaþi schimbãrile ?"
 
-#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:259
 msgid "EMPTY"
 msgstr "GOL"
 
@@ -76,7 +76,7 @@ msgstr "Nu este posibilã crearea directorului pentru meniul personal."
 msgid "Separator"
 msgstr "Separator"
 
-#: confmenu.cpp:102 confmenu.cpp:317
+#: confmenu.cpp:102 confmenu.cpp:316
 msgid "Open/ Close"
 msgstr "Deschide / Închide"
 
@@ -84,7 +84,11 @@ msgstr "Deschide / Închide"
 msgid "! PROTECTED Button !"
 msgstr "! Buton PROTEJAT"
 
-#: confmenu.cpp:171 confmenu.cpp:300
+#: confmenu.cpp:115
+msgid "New"
+msgstr ""
+
+#: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"
 msgstr "Atenþie !"
 
@@ -92,11 +96,11 @@ msgstr "Atenþie !"
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Dacã ºtergeþi acest buton veþi pierde toate submeniurile sale"
 
-#: confmenu.cpp:281
+#: confmenu.cpp:280
 msgid "Wrong filename"
 msgstr "Nume incorect de fiºier"
 
-#: confmenu.cpp:282
+#: confmenu.cpp:281
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -104,11 +108,11 @@ msgstr ""
 "Existã deja un fiºier kdelnk cu acest nume. \n"
 "Alegeþi alt nume."
 
-#: confmenu.cpp:301
+#: confmenu.cpp:300
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Schimbând tipul acestui buton, va ºterge toate submeniurile sale"
 
-#: confmenu.cpp:322 confmenu.cpp:911
+#: confmenu.cpp:321 confmenu.cpp:909
 msgid "no command"
 msgstr "nici o comandã"
 
@@ -153,7 +157,7 @@ msgstr "Înghite"
 msgid "Link"
 msgstr "Legãturã"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
 msgid "Device"
 msgstr "Dispozitiv"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -252,71 +252,71 @@ msgstr ""
 "正在预览的的颜色将被拷贝到这个色彩主题\n"
 "中."
 
-#: scrnsave.cpp:48
+#: scrnsave.cpp:47
 msgid "Ignore"
 msgstr "忽略"
 
 #
-#: scrnsave.cpp:49
+#: scrnsave.cpp:48
 msgid "Save Screen"
 msgstr "屏幕保护"
 
-#: scrnsave.cpp:50
+#: scrnsave.cpp:49
 msgid "Lock Screen"
 msgstr "锁住屏幕"
 
-#: scrnsave.cpp:113 scrnsave.cpp:182
+#: scrnsave.cpp:112 scrnsave.cpp:181
 msgid "Screen Saver"
 msgstr "屏幕保护程序"
 
 #
-#: scrnsave.cpp:189 scrnsave.cpp:367 scrnsave.cpp:605 scrnsave.cpp:726
+#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:604 scrnsave.cpp:725
 msgid "No screensaver"
 msgstr "没有屏幕保护程序"
 
-#: scrnsave.cpp:210
+#: scrnsave.cpp:209
 msgid "&Setup ..."
 msgstr "设置[&S]"
 
 #
-#: scrnsave.cpp:218
+#: scrnsave.cpp:217
 msgid "&Test"
 msgstr "测试[&T]"
 
-#: scrnsave.cpp:231
+#: scrnsave.cpp:230
 msgid "Settings"
 msgstr "设置"
 
-#: scrnsave.cpp:251
+#: scrnsave.cpp:250
 msgid "&Wait for"
 msgstr "等待[&W]"
 
-#: scrnsave.cpp:261
+#: scrnsave.cpp:260
 msgid "min."
 msgstr "分钟"
 
-#: scrnsave.cpp:267
+#: scrnsave.cpp:266
 msgid "&Require password"
 msgstr "需要密码[&R]"
 
-#: scrnsave.cpp:273
+#: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
 msgstr ""
 
-#: scrnsave.cpp:279
+#: scrnsave.cpp:278
 msgid "Show &password as stars"
 msgstr "以 `*' 显示密码"
 
-#: scrnsave.cpp:287
+#: scrnsave.cpp:286
 msgid "Priority"
 msgstr "优先级"
 
 #
-#: scrnsave.cpp:300
+#: scrnsave.cpp:299
 msgid "&High"
 msgstr "高[&H]"
 
-#: scrnsave.cpp:309
+#: scrnsave.cpp:308
 msgid "Low"
 msgstr "低"
 
@@ -397,6 +397,10 @@ msgstr "活动窗口"
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
 msgid "Selected text"
 msgstr "选中的文字"
+
+#: widgetcanvas.cpp:212
+msgid "New"
+msgstr ""
 
 #: fontchooser.cpp:82
 msgid "&Typeface"

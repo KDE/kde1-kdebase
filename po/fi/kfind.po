@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMBELL\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -196,6 +196,10 @@ msgstr "Suoritettavat tiedostot"
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
 msgstr "SUID suoritettava tiedosto"
+
+#: kftabdlg.cpp:246
+msgid "(none)"
+msgstr ""
 
 #: kftabdlg.cpp:247
 msgid "At Least"

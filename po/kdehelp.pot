@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,23 +34,27 @@ msgstr ""
 msgid "Unknown format: "
 msgstr ""
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1329
-msgid "Open this Link"
+#: helpwin.cpp:1309
+msgid "Forward"
 msgstr ""
 
 #: helpwin.cpp:1330
-msgid "Add Bookmark"
+msgid "Open this Link"
 msgstr ""
 
 #: helpwin.cpp:1331
+msgid "Add Bookmark"
+msgstr ""
+
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr ""
 
@@ -74,6 +78,18 @@ msgstr ""
 
 #: error.cpp:28
 msgid "Warning: "
+msgstr ""
+
+#: options.cpp:40
+msgid "Small"
+msgstr ""
+
+#: options.cpp:44
+msgid "Medium"
+msgstr ""
+
+#: options.cpp:48
+msgid "Large"
 msgstr ""
 
 #: options.cpp:52
@@ -150,6 +166,10 @@ msgstr ""
 msgid "System Administration"
 msgstr ""
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr ""
@@ -207,16 +227,20 @@ msgstr ""
 msgid "&Forward"
 msgstr ""
 
-#: mainwidget.cpp:157
-msgid "&Contents"
-msgstr ""
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr ""
 
 #: mainwidget.cpp:159
 msgid "&Up"
+msgstr ""
+
+#: mainwidget.cpp:160
+msgid "&Previous"
+msgstr ""
+
+#: mainwidget.cpp:161
+msgid "&Next"
 msgstr ""
 
 #: mainwidget.cpp:173

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.4\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-02-26 19:39+MET\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -33,23 +33,28 @@ msgstr "Hiba!"
 msgid "Unknown format: "
 msgstr "Ismeretlen formátum: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+#, fuzzy
+msgid "Forward"
+msgstr "&Elõre"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Hivatkozás megnyitása"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Hozzáadás a kedvencekhez"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "Megnyitás új ablakban"
 
@@ -74,6 +79,18 @@ msgstr "Fatális hiba: "
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Vigyázat: "
+
+#: options.cpp:40
+msgid "Small"
+msgstr "Kicsi"
+
+#: options.cpp:44
+msgid "Medium"
+msgstr "Közepes"
+
+#: options.cpp:48
+msgid "Large"
+msgstr "Nagy"
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -149,6 +166,10 @@ msgstr "Játékok"
 msgid "System Administration"
 msgstr "Rendszeradminisztráció"
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr "Könyvtár olvasása: "
@@ -207,11 +228,6 @@ msgstr "&Vissza"
 msgid "&Forward"
 msgstr "&Elõre"
 
-#: mainwidget.cpp:157
-#, fuzzy
-msgid "&Contents"
-msgstr "Tartalom"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "&Eleje"
@@ -219,6 +235,14 @@ msgstr "&Eleje"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "&Fel"
+
+#: mainwidget.cpp:160
+msgid "&Previous"
+msgstr "E&lõzõ"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr "&Következõ"
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -331,20 +355,15 @@ msgstr ""
 msgid "&Find"
 msgstr ""
 
+#, fuzzy
+#~ msgid "&Contents"
+#~ msgstr "Tartalom"
+
 #~ msgid "Could not start or find KFM"
 #~ msgstr "Nincs meg a KFM, vagy nem lehet elindítani"
 
 #~ msgid "Font Size"
 #~ msgstr "Fontméret"
-
-#~ msgid "Small"
-#~ msgstr "Kicsi"
-
-#~ msgid "Medium"
-#~ msgstr "Közepes"
-
-#~ msgid "Large"
-#~ msgstr "Nagy"
 
 #~ msgid "Fonts"
 #~ msgstr "Fontok"
@@ -354,12 +373,6 @@ msgstr ""
 
 #~ msgid "&Reload"
 #~ msgstr "Újra&tölt"
-
-#~ msgid "&Previous"
-#~ msgstr "E&lõzõ"
-
-#~ msgid "&Next"
-#~ msgstr "&Következõ"
 
 #~ msgid "Stop"
 #~ msgstr "Állj"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-10-01 13:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-07-09 15:37+02:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -608,6 +608,11 @@ msgstr "Bumling"
 #: rock.cpp:549
 msgid "Setup krock"
 msgstr "Ställ in Bumling"
+
+#: rock.cpp:589
+#, fuzzy
+msgid "Move"
+msgstr "Läge:"
 
 #: rock.cpp:595
 msgid "Rotate"

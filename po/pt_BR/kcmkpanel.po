@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
@@ -17,11 +17,11 @@ msgstr "&Ambientes de Trabalho"
 msgid "Disk &Navigator"
 msgstr "&Navegador de disco"
 
-#: main.cpp:109
+#: main.cpp:79
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "utilização: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
-#: main.cpp:142
+#: main.cpp:112
 msgid "KPanel Configuration"
 msgstr "Configuração do Painel"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-10-01 13:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-02-25 21:41 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -610,6 +610,10 @@ msgstr "Rock"
 msgid "Setup krock"
 msgstr "Configuration de krock"
 
+#: rock.cpp:589
+msgid "Move"
+msgstr "Déplacer"
+
 #: rock.cpp:595
 msgid "Rotate"
 msgstr "Tourner"
@@ -801,9 +805,6 @@ msgstr ""
 "Copyright (c) 1991 par Patrick J. Naughton\n"
 "\n"
 "Porté vers kscreensave by Emanuel Pirker."
-
-#~ msgid "Move"
-#~ msgstr "Déplacer"
 
 #~ msgid ""
 #~ "Science Version 0.24.2 beta\n"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kdehelp\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date:1998-03-16 HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -33,23 +33,28 @@ msgstr "Ops!"
 msgid "Unknown format: "
 msgstr "Ukjent format: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr "Finn fullført"
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr "Fortsett søk fra toppen av siden?"
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+#, fuzzy
+msgid "Forward"
+msgstr "&Fremover"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Åpne denne linken"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Legg til bokmerke"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "Åpne i nytt vindu"
 
@@ -74,6 +79,18 @@ msgstr "Fatal feil: "
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Advarsel: "
+
+#: options.cpp:40
+msgid "Small"
+msgstr ""
+
+#: options.cpp:44
+msgid "Medium"
+msgstr ""
+
+#: options.cpp:48
+msgid "Large"
+msgstr ""
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -149,6 +166,10 @@ msgstr "Spill"
 msgid "System Administration"
 msgstr "Systemadministrasjon"
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr "Leser mappe: "
@@ -206,10 +227,6 @@ msgstr "&Tilbake"
 msgid "&Forward"
 msgstr "&Fremover"
 
-#: mainwidget.cpp:157
-msgid "&Contents"
-msgstr "&Innhold"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "&Topp"
@@ -217,6 +234,15 @@ msgstr "&Topp"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "&Opp"
+
+#: mainwidget.cpp:160
+#, fuzzy
+msgid "&Previous"
+msgstr "Forrige node"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr ""
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -335,3 +361,6 @@ msgstr "Avhengig av &bokstavstørrelse"
 #: finddlg.cpp:66
 msgid "&Find"
 msgstr "&Finn"
+
+#~ msgid "&Contents"
+#~ msgstr "&Innhold"

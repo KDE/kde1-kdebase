@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-03 22:39+0100\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi "
 "<Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -29,23 +29,28 @@ msgstr "Oops!"
 msgid "Unknown format: "
 msgstr "Formato sconosciuto: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+#, fuzzy
+msgid "Forward"
+msgstr "&Avanti"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Apri questo collegamento"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Aggiungi segnalibro"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "Apri in una nuova finestra"
 
@@ -70,6 +75,18 @@ msgstr "Errore fatale: "
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Attenzione: "
+
+#: options.cpp:40
+msgid "Small"
+msgstr "Piccolo"
+
+#: options.cpp:44
+msgid "Medium"
+msgstr "Medio"
+
+#: options.cpp:48
+msgid "Large"
+msgstr "Grande"
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -145,6 +162,10 @@ msgstr "Giochi"
 msgid "System Administration"
 msgstr "Amministrazione sistema"
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr "Sto leggendo la directory:"
@@ -202,10 +223,6 @@ msgstr "&Indietro"
 msgid "&Forward"
 msgstr "&Avanti"
 
-#: mainwidget.cpp:157
-msgid "&Contents"
-msgstr "&Contenuti"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "In &alto"
@@ -213,6 +230,14 @@ msgstr "In &alto"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "&Su"
+
+#: mainwidget.cpp:160
+msgid "&Previous"
+msgstr "&Precedente"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr "P&rossimo"
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -332,20 +357,14 @@ msgstr ""
 msgid "&Find"
 msgstr ""
 
+#~ msgid "&Contents"
+#~ msgstr "&Contenuti"
+
 #~ msgid "Could not start or find KFM"
 #~ msgstr "Impossibile avviare o trovare KFM"
 
 #~ msgid "Font Size"
 #~ msgstr "Dimensioni carattere"
-
-#~ msgid "Small"
-#~ msgstr "Piccolo"
-
-#~ msgid "Medium"
-#~ msgstr "Medio"
-
-#~ msgid "Large"
-#~ msgstr "Grande"
 
 #~ msgid "Fonts"
 #~ msgstr "Caratteri"
@@ -355,12 +374,6 @@ msgstr ""
 
 #~ msgid "&Reload"
 #~ msgstr "&Ricarica"
-
-#~ msgid "&Previous"
-#~ msgstr "&Precedente"
-
-#~ msgid "&Next"
-#~ msgstr "P&rossimo"
 
 #~ msgid "Stop"
 #~ msgstr "Ferma"

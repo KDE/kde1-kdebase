@@ -1,44 +1,48 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:29+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
-#: kpanel.C:254
+#: kpanel.C:232
+msgid "Move"
+msgstr "移动"
+
+#: kpanel.C:272
 msgid "Go!"
 msgstr "开始!"
 
-#: kpanel.C:257 tools.C:828
+#: kpanel.C:275 tools.C:828
 msgid "Where do you want to go tomorrow?"
 msgstr "主菜单"
 
-#: kpanel.C:331
+#: kpanel.C:349
 msgid "No info available"
 msgstr "没有信息"
 
-#: kpanel.C:370 props.C:173 props.C:174
+#: kpanel.C:388 props.C:173 props.C:174
 msgid "Logout"
 msgstr "离线"
 
-#: kpanel.C:378 props.C:172
+#: kpanel.C:396 props.C:172
 msgid "Lock screen"
 msgstr "锁住屏幕"
 
-#: kpanel.C:387
+#: kpanel.C:405 kpanel.C:414
 msgid "Hide the panel"
 msgstr "隐藏面板"
 
-#: kpanel.C:397
+#: kpanel.C:424 kpanel.C:436
 msgid "Show the panel"
 msgstr "显示面板"
 
-#: kpanel.C:1106 tools.C:658
+#: kpanel.C:1159 tools.C:658
 msgid "No comment available"
 msgstr "没有说明"
 
-#: kpanel.C:1115 tools.C:837
+#: kpanel.C:1168 tools.C:837
 msgid "Windowlist"
 msgstr "窗口列表"
 
@@ -58,7 +62,7 @@ msgstr "加在窗口列表中"
 msgid "Add a windowlist menu onto the panel"
 msgstr "在窗口面板上新增窗口列表菜单"
 
-#: events.C:752 props.C:149
+#: events.C:772 props.C:149
 msgid "Configure"
 msgstr "配置"
 
@@ -74,7 +78,7 @@ msgstr "编辑菜单项"
 msgid "Add or remove applications in the menu structure "
 msgstr "在菜单结构中增加或去掉应用程序 "
 
-#: events.C:754 props.C:155
+#: events.C:774 props.C:155
 msgid "Restart"
 msgstr "重新开始"
 
@@ -98,44 +102,33 @@ msgstr "锁住屏幕"
 msgid "The menu editor is not installed."
 msgstr "菜单编辑器没有安装."
 
-#: events.C:790 props.C:400
+#: events.C:810 props.C:400
 msgid "Oops!"
 msgstr "错误!"
 
-#: events.C:789
+#: events.C:809
 msgid "Cannot put this as button onto the panel!"
 msgstr "不能把这个对象当作按钮放到面板上!"
 
-#: pfilemenu.C:111
-msgid "KFM Information"
-msgstr ""
-
-#: pfilemenu.C:112
-msgid "Creating directory:\n"
-msgstr ""
-
-#: pfilemenu.C:340
+#: pfilemenu.C:351
 msgid "(empty folder)"
 msgstr ""
 
-#: pfilemenu.C:397
+#: pfilemenu.C:408
 msgid "(Too Many Files)"
 msgstr ""
 
-#: pfilemenu.C:406
+#: pfilemenu.C:417
 msgid "(Access Denied)"
 msgstr ""
 
-#: pfilemenu.C:409
+#: pfilemenu.C:420
 msgid "(Unreadable)"
 msgstr ""
 
-#: pfilemenu.C:416
+#: pfilemenu.C:427
 msgid "Open Folder"
 msgstr ""
-
-#~ msgid "Move"
-#~ msgstr "移动"
 
 #~ msgid "Properties"
 #~ msgstr "特性"

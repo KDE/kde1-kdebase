@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-10-01 13:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -528,6 +528,10 @@ msgstr ""
 
 #: rock.cpp:549
 msgid "Setup krock"
+msgstr ""
+
+#: rock.cpp:589
+msgid "Move"
 msgstr ""
 
 #: rock.cpp:595

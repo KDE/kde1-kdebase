@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/klock\n"
-"POT-Creation-Date: 1998-10-01 13:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 98-03-23 18:21+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -610,6 +610,11 @@ msgstr "Rock"
 #: rock.cpp:549
 msgid "Setup krock"
 msgstr "KRock-oppsett"
+
+#: rock.cpp:589
+#, fuzzy
+msgid "Move"
+msgstr "Modus:"
 
 #: rock.cpp:595
 msgid "Rotate"

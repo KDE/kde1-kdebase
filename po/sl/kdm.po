@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDM\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:29+0200\n"
 "PO-Revision-Date: 1998-09-25 11:37+0100\n"
 "Last-Translator: blazzupancic@hotmail.com\n"
 "Language-Team:  Slovene\n"
@@ -30,44 +30,48 @@ msgstr "Odklop in ponovni zagon"
 msgid "Exit kdm"
 msgstr "Izhod iz kdm"
 
-#: kgreeter.cpp:174
+#: kgreeter.cpp:166
 msgid "Login:"
 msgstr "Prijava:"
 
-#: kgreeter.cpp:186
+#: kgreeter.cpp:178
 msgid "Password:"
 msgstr "Geslo:"
 
-#: kgreeter.cpp:211
+#: kgreeter.cpp:203
 msgid "Login failed!"
 msgstr "Prijava ni uspela!"
 
-#: kgreeter.cpp:217
+#: kgreeter.cpp:209
 msgid "Session Type:"
 msgstr "Tip seanse:"
 
-#: kgreeter.cpp:233
+#: kgreeter.cpp:225
 msgid "Go!"
 msgstr "Pojdi!"
 
-#: kgreeter.cpp:249
+#: kgreeter.cpp:241
 msgid "Shutdown..."
 msgstr "Odklop..."
 
-#: kgreeter.cpp:443
+#: kgreeter.cpp:453
 msgid "Logins not available right now."
 msgstr ""
 
-#: kgreeter.cpp:515 kgreeter.cpp:542
+#: kgreeter.cpp:494
+msgid "bah"
+msgstr ""
+
+#: kgreeter.cpp:547 kgreeter.cpp:574
 msgid "Sorry -- your account has expired."
 msgstr "®al je va¹ raèun potekel."
 
-#: kgreeter.cpp:520 kgreeter.cpp:547
+#: kgreeter.cpp:552 kgreeter.cpp:579
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Opozorilo: va¹ raèun poteèe %s"
 
-#: kgreeter.cpp:574
+#: kgreeter.cpp:606
 msgid "Home directory not available"
 msgstr "Domaèi imenik ni na voljo"
 

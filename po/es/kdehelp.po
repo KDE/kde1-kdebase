@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-10-10 10:32+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -26,23 +26,28 @@ msgstr "Cancelar"
 msgid "Unknown format: "
 msgstr "Formato desconocido: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr "Encontrar completo"
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr "Continuar búsqueda desde el principio de la página?"
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+#, fuzzy
+msgid "Forward"
+msgstr "A&delante"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Abrir este enlace"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Agregar a marcadores"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "Abrir en una ventana nueva"
 
@@ -67,6 +72,18 @@ msgstr "Error fatal: "
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Advertencia: "
+
+#: options.cpp:40
+msgid "Small"
+msgstr ""
+
+#: options.cpp:44
+msgid "Medium"
+msgstr ""
+
+#: options.cpp:48
+msgid "Large"
+msgstr ""
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -142,6 +159,10 @@ msgstr "Juegos"
 msgid "System Administration"
 msgstr "Administración del sistema"
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr "Leyendo directorio: "
@@ -199,10 +220,6 @@ msgstr "&Atrás"
 msgid "&Forward"
 msgstr "A&delante"
 
-#: mainwidget.cpp:157
-msgid "&Contents"
-msgstr "&Contenido"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "&Principio"
@@ -210,6 +227,15 @@ msgstr "&Principio"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "A&rriba"
+
+#: mainwidget.cpp:160
+#, fuzzy
+msgid "&Previous"
+msgstr "Nodo previo"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr ""
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -330,3 +356,6 @@ msgstr "Distinguir mayúsculas"
 #: finddlg.cpp:66
 msgid "&Find"
 msgstr "&Buscar"
+
+#~ msgid "&Contents"
+#~ msgstr "&Contenido"

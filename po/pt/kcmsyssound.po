@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmsyssound\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-02-03 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -12,6 +12,10 @@ msgstr "&Som"
 #: main.cpp:80
 msgid "System Sounds"
 msgstr "Sons do Sistema"
+
+#: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
+msgid "(none)"
+msgstr ""
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"

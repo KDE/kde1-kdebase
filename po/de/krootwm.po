@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -13,6 +13,10 @@ msgstr "Verzeichnis"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "FEHLER: Vorlage existiert nicht '%s'"
+
+#: krootwm.C:180 krootwm.C:577 krootwm.C:585
+msgid "New"
+msgstr ""
 
 #: krootwm.C:181
 msgid "Bookmarks"

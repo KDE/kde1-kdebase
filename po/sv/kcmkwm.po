@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-07-08 17:09+02:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -142,6 +142,10 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "Växla maximering"
 
+#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
+msgid "Move"
+msgstr ""
+
 #: titlebar.cpp:991
 msgid "(Un)Shade"
 msgstr "Växla skuggning"
@@ -181,6 +185,10 @@ msgstr "Storleksändring"
 #: windows.cpp:90
 msgid "Animation:"
 msgstr "Animering:"
+
+#: windows.cpp:91
+msgid "None"
+msgstr ""
 
 #: windows.cpp:92
 msgid "Fast"

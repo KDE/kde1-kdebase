@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-02-22 20:47+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -143,44 +143,90 @@ msgid "Select fonts"
 msgstr "選擇字型"
 
 #: kdm-font.cpp:50
-msgid "Change font"
+#, fuzzy
+msgid "Example"
+msgstr "範例:"
+
+#: kdm-font.cpp:52
+#, fuzzy
+msgid "Change font..."
 msgstr "改變字型"
 
-#: kdm-font.cpp:55
+#: kdm-font.cpp:57
 msgid "Greeting"
 msgstr "問候"
 
-#: kdm-font.cpp:56
+#: kdm-font.cpp:58
 msgid "Fail"
 msgstr "失敗"
 
-#: kdm-font.cpp:57
+#: kdm-font.cpp:59
 msgid "Standard"
 msgstr "標準"
 
-#: kdm-font.cpp:59
-msgid "Example:"
-msgstr "範例:"
+#: kdm-bgnd.cpp:70
+msgid "Preview"
+msgstr ""
 
-#: kdm-bgnd.cpp:66
+#: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "顏色"
 
-#: kdm-bgnd.cpp:74
+#: kdm-bgnd.cpp:101
+#, fuzzy
+msgid "Solid Color"
+msgstr "顏色"
+
+#: kdm-bgnd.cpp:106
+msgid "Horizontal Blend"
+msgstr ""
+
+#: kdm-bgnd.cpp:111
+msgid "Vertical Blend"
+msgstr ""
+
+#: kdm-bgnd.cpp:130
 msgid "Wallpaper"
 msgstr "桌布"
 
-#: kdm-bgnd.cpp:108
-msgid "Tiled"
+#: kdm-bgnd.cpp:171 kdm-sess.cpp:56
+msgid "None"
+msgstr "無"
+
+#: kdm-bgnd.cpp:176
+#, fuzzy
+msgid "Tile"
 msgstr "鋪排"
 
-#: kdm-bgnd.cpp:112
-msgid "Centred"
+#: kdm-bgnd.cpp:181
+#, fuzzy
+msgid "Center"
 msgstr "置於中央"
 
-#: kdm-bgnd.cpp:116
-msgid "Scaled"
+#: kdm-bgnd.cpp:186
+#, fuzzy
+msgid "Scale"
 msgstr "放大至全螢幕"
+
+#: kdm-bgnd.cpp:191
+msgid "TopLeft"
+msgstr ""
+
+#: kdm-bgnd.cpp:196
+msgid "TopRight"
+msgstr ""
+
+#: kdm-bgnd.cpp:201
+msgid "BottomLeft"
+msgstr ""
+
+#: kdm-bgnd.cpp:206
+msgid "BottomRight"
+msgstr ""
+
+#: kdm-bgnd.cpp:211
+msgid "Fancy"
+msgstr ""
 
 #: kdm-users.cpp:48
 msgid "All users"
@@ -226,44 +272,44 @@ msgstr "沒有選擇任何使用者"
 msgid "Save image as default image?"
 msgstr "儲存為預設圖形?"
 
-#: kdm-sess.cpp:50
+#: kdm-sess.cpp:52
 #, fuzzy
 msgid "Allow to shutdown"
 msgstr "允許\關機:"
 
-#: kdm-sess.cpp:55
+#: kdm-sess.cpp:57
 msgid "All"
 msgstr "全部"
 
-#: kdm-sess.cpp:56
+#: kdm-sess.cpp:58
 msgid "Root Only"
 msgstr "只允許\ Root"
 
-#: kdm-sess.cpp:57
+#: kdm-sess.cpp:59
 msgid "Console Only"
 msgstr "只允許\電腦操作台"
 
-#: kdm-sess.cpp:61
+#: kdm-sess.cpp:63
 msgid "Commands"
 msgstr "命令"
 
-#: kdm-sess.cpp:62
+#: kdm-sess.cpp:64
 msgid "Shutdown"
 msgstr "關機"
 
-#: kdm-sess.cpp:67
+#: kdm-sess.cpp:70
 msgid "Restart"
 msgstr "重新開始"
 
-#: kdm-sess.cpp:73
+#: kdm-sess.cpp:77
 msgid "Session types"
 msgstr "環境類型"
 
-#: kdm-sess.cpp:75
+#: kdm-sess.cpp:79
 msgid "New type"
 msgstr "新類型"
 
-#: kdm-sess.cpp:83
+#: kdm-sess.cpp:89
 msgid "Available types"
 msgstr "可用類型"
 
@@ -276,6 +322,3 @@ msgstr ""
 
 #~ msgid "Appearance"
 #~ msgstr "外觀"
-
-#~ msgid "None"
-#~ msgstr "無"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-01-08 23:37 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français <fr@kde.org>\n"
@@ -33,23 +33,28 @@ msgstr "Houlà !"
 msgid "Unknown format: "
 msgstr "Format inconnu :"
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+#, fuzzy
+msgid "Forward"
+msgstr "En a&vant"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Ouvrir ce lien"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Ajouter un signet"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "Ouvrir dans une nouvelle fenêtre"
 
@@ -74,6 +79,18 @@ msgstr "Erreur fatale :"
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Attention :"
+
+#: options.cpp:40
+msgid "Small"
+msgstr "Petite"
+
+#: options.cpp:44
+msgid "Medium"
+msgstr "Moyenne"
+
+#: options.cpp:48
+msgid "Large"
+msgstr "Grande"
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -149,6 +166,10 @@ msgstr "Jeux"
 msgid "System Administration"
 msgstr "Administration système"
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr "Lecture du répertoire : "
@@ -206,10 +227,6 @@ msgstr "En a&rrière"
 msgid "&Forward"
 msgstr "En a&vant"
 
-#: mainwidget.cpp:157
-msgid "&Contents"
-msgstr "&Contenu"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "&Début"
@@ -217,6 +234,14 @@ msgstr "&Début"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "Re&monter"
+
+#: mainwidget.cpp:160
+msgid "&Previous"
+msgstr "&Précédent"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr "&Suivant"
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -343,20 +368,14 @@ msgstr ""
 msgid "&Find"
 msgstr ""
 
+#~ msgid "&Contents"
+#~ msgstr "&Contenu"
+
 #~ msgid "Could not start or find KFM"
 #~ msgstr "Impossible de démarrer ou de trouver KFM"
 
 #~ msgid "Font Size"
 #~ msgstr "Taille de la police"
-
-#~ msgid "Small"
-#~ msgstr "Petite"
-
-#~ msgid "Medium"
-#~ msgstr "Moyenne"
-
-#~ msgid "Large"
-#~ msgstr "Grande"
 
 #~ msgid "Fonts"
 #~ msgstr "Polices"
@@ -366,12 +385,6 @@ msgstr ""
 
 #~ msgid "&Reload"
 #~ msgstr "&Recharger"
-
-#~ msgid "&Previous"
-#~ msgstr "&Précédent"
-
-#~ msgid "&Next"
-#~ msgstr "&Suivant"
 
 #~ msgid "Stop"
 #~ msgstr "Stop"

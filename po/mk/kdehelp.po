@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-05-22 10:10+0000\n"
 "Last-Translator: Sasha Konecni <sasha@msi-uk.com>\n"
 "Language-Team: Macedonian\n"
@@ -32,23 +32,28 @@ msgstr "Uuf!"
 msgid "Unknown format: "
 msgstr "Nepoznat format: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+#, fuzzy
+msgid "Forward"
+msgstr "&Napred"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Otvori ja ovaa Vrska "
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Dodajte Zabelashka"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "Otvorete vo nov Prozorec"
 
@@ -73,6 +78,18 @@ msgstr "Fatalna Greshka: "
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Vnimavaj: "
+
+#: options.cpp:40
+msgid "Small"
+msgstr "Mal"
+
+#: options.cpp:44
+msgid "Medium"
+msgstr "Sreden"
+
+#: options.cpp:48
+msgid "Large"
+msgstr "Golem"
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -148,6 +165,10 @@ msgstr "Igri"
 msgid "System Administration"
 msgstr "Sistemska Administracija"
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr "Chita Dir: "
@@ -205,11 +226,6 @@ msgstr "&Nazad"
 msgid "&Forward"
 msgstr "&Napred"
 
-#: mainwidget.cpp:157
-#, fuzzy
-msgid "&Contents"
-msgstr "Sodrzhina na Pomosh"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "&Vrv"
@@ -217,6 +233,14 @@ msgstr "&Vrv"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "&Gore"
+
+#: mainwidget.cpp:160
+msgid "&Previous"
+msgstr "&Prethodno"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr "&Sledno"
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -336,20 +360,15 @@ msgstr ""
 msgid "&Find"
 msgstr ""
 
+#, fuzzy
+#~ msgid "&Contents"
+#~ msgstr "Sodrzhina na Pomosh"
+
 #~ msgid "Could not start or find KFM"
 #~ msgstr "Ne mozhe da se pochne ili najde KFM"
 
 #~ msgid "Font Size"
 #~ msgstr "Golemina na Fontot"
-
-#~ msgid "Small"
-#~ msgstr "Mal"
-
-#~ msgid "Medium"
-#~ msgstr "Sreden"
-
-#~ msgid "Large"
-#~ msgstr "Golem"
 
 #~ msgid "Fonts"
 #~ msgstr "Fontovi"
@@ -359,12 +378,6 @@ msgstr ""
 
 #~ msgid "&Reload"
 #~ msgstr "&Povtorno Vchitaj"
-
-#~ msgid "&Previous"
-#~ msgstr "&Prethodno"
-
-#~ msgid "&Next"
-#~ msgstr "&Sledno"
 
 #~ msgid "Stop"
 #~ msgstr "Zastani"
