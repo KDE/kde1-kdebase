@@ -505,7 +505,7 @@ KGreeter::restrict_expired(){
 				 DEFAULT_WARN, DEFAULT_WARN);
 #else
      bool quietlog = false;
-     warntime = DEFAULT_WARN;
+     time_t warntime = DEFAULT_WARN;
 #endif
      if (pwd->pw_expire)
 	  if (pwd->pw_expire <= time(NULL)) {
