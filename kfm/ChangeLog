@@ -1,3 +1,12 @@
+1998-12-09  David Faure  <faure@kde.org>
+
+	* kfmman.cpp: Fixed Visual Schnauzer for files with special chars
+	such as "'". Bug reported by Christian Fertig
+	<fertig@informatik.uni-frankfurt.de>.
+	
+	* kfmgui.cpp: Added slotConfigure, which re-reads the
+	configuration and applies it.
+
 1998-12-07  Alex Zepeda  <garbanzo@hooked.net>
 
 	* kbind.cpp: Quashed another "uninitalized" variable.
