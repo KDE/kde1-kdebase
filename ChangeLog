@@ -1,5 +1,7 @@
 1998-05-28  Stephan Kulow  <coolo@kde.org>
 
+	* acinclude.m4.in: fixed KDE_CHECK_STL. Checks for HP and SGI type
+
 	* acinclude.m4.in: embraced every variable with "" to make 
 	it consistent
 
