@@ -158,7 +158,9 @@ public:
   PMenuItem *searchItem( QString name );
 
   PMenuItem *searchItem( int id );
-
+  bool       addFromDrop( QString a);
+  bool       copyFiles( QString source, QString dest);
+  
 #ifdef DISKNAV_DEBUG
   PMenuItem *searchItem( PMenu* item );  // DEBUG
 #endif
@@ -186,6 +188,7 @@ private:
 protected:
   QString uniqueFileName(QString name, QString dir_name);
   void parseBeforeShowing(bool is_add_menu);
+  void clearSubmenus();
 
   QList<PMenuItem> list;
   myPopupMenu      *cmenu;

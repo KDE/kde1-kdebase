@@ -796,22 +796,32 @@ void kPanel::slotDropEvent( KDNDDropZone *_zone ){
       a = a.right(a.length() - 5);
       if (a.right(1) == "/")
 	a.truncate(a.length()-1);
-      PMenuItem* pmi = pmenu->searchItem(a);
 
-      if (pmi){
-	int x = margin;
-	int y = margin;
-	if (orientation == vertical){
-	  y = drop_zone->getMouseY()-box_height/2;
-	  if (y<margin) y=margin;
+      QPoint p = mapFromGlobal(QPoint(drop_zone->getMouseX(), drop_zone->getMouseY()));
+      if( QRect(kde_button->x(), kde_button->y(), kde_button->width(), 
+		kde_button->height()).contains(p) ){
+	// file was dropped onto the K-Button
+	if( personal_menu->addFromDrop(a) )
+	  return;
+      }
+      else {
+	PMenuItem* pmi = pmenu->searchItem(a);
+
+	if (pmi){
+	  int x = margin;
+	  int y = margin;
+	  if (orientation == vertical){
+	    y = drop_zone->getMouseY()-box_height/2;
+	    if (y<margin) y=margin;
+	  }
+	  else{
+	    x = drop_zone->getMouseX()-box_width/2;
+	    if (x<margin) x=margin;
+	  }
+	  addButtonInternal(pmi, x, y);
+	  writeOutConfiguration();
+	  return;
 	}
-	else{
-	  x = drop_zone->getMouseX()-box_width/2;
-	  if (x<margin) x=margin;
-	}
-	addButtonInternal(pmi, x, y);
-	writeOutConfiguration();
-	return;
       }
     }
 

@@ -758,7 +758,12 @@ PMenuItem * PMenu::searchItem(QString name)
 			      i.fileName(),    // name
 			      i.absFilePath()  // command
 			      );
-	  pmi->big_pixmap_name = "exec.xpm";
+	  QPixmap tmp = KApplication::getKApplication()->getIconLoader()->
+	    loadApplicationIcon(i.baseName() + ".xpm");
+	  if( tmp.isNull() )
+	    pmi->big_pixmap_name = "exec.xpm";
+	  else
+	    pmi->big_pixmap_name = i.baseName() + ".xpm";
 	  pmi->pixmap_name = "";
 	  QString dir_name = KApplication::localkdedir() + "/share/apps/kpanel/applnk";
 	  pmi->real_name = uniqueFileName(i.fileName(), dir_name );
@@ -799,6 +804,142 @@ QString PMenu::uniqueFileName(QString name, QString dir_name)
       i++;
     }
   return file_name;
+}
+
+bool PMenu::addFromDrop( QString name )
+{
+  extern kPanel *the_panel;
+  PMenuItem *pmi;
+  QFileInfo i(name);
+  KConfig *config = KApplication::getKApplication()->getConfig();
+  config->setGroup("KDE Desktop Entries");
+  QString temp = KApplication::localkdedir() +"/share/applnk";
+  QString dir_name = config->readEntry("PersonalPath", temp.data() );
+  QString real_name = uniqueFileName(i.baseName(), dir_name );
+  if( isKdelnkFile(name) )
+    {
+      // make a copy of the kdelnk-file
+      pmi = new PMenuItem(unix_com);
+      pmi->parse(name);
+      if( !copyFiles(pmi->dir_path + '/' + pmi->real_name, dir_name + '/' + real_name) )
+	return FALSE;
+
+      if( list.getLast()->entry_type == prog_com )
+	insert(pmi, list.count()-7);
+      else
+	add(pmi);
+      clearSubmenus();
+      createMenu(cmenu, the_panel, FALSE);
+      return TRUE;
+    } 
+  else 
+    {
+      /*
+      if( i.isDir() ) {
+	PMenu *dir = new PMenu();
+	dir->parse(QDir(name));
+	pmi = new PMenuItem(submenu);
+	pmi->parse(&i, dir);
+	if( list.getLast()->entry_type == prog_com )
+	  insert(pmi, list.count()-7);
+	else
+	  add(pmi);
+	clearSubmenus();
+	createMenu(cmenu, the_panel, FALSE);
+	return TRUE;
+      }
+      */
+      // create a new kdelnk-file on the fly
+      if( i.isExecutable() ) 
+	{
+	  pmi = new PMenuItem(unix_com,        // type
+			      i.fileName(),    // name
+			      i.absFilePath()  // command
+			      );
+	  pmi->pixmap = KApplication::getKApplication()->getIconLoader()->
+	    loadApplicationMiniIcon(i.baseName() + ".xpm", 16, 16);
+	  if( pmi->pixmap.isNull() )
+	    {
+	      pmi->pixmap = KApplication::getKApplication()->getIconLoader()->
+		loadApplicationMiniIcon("mini-default.xpm", 16, 16);
+	      pmi->pixmap_name = "";
+	    }
+	  else
+	    {
+	      pmi->pixmap_name = i.baseName() + ".xpm";
+	    }
+	  QPixmap tmp = KApplication::getKApplication()->getIconLoader()->
+	    loadApplicationIcon(i.baseName() + ".xpm");
+	  if( tmp.isNull() )
+	    pmi->big_pixmap_name = "exec.xpm";
+	  else
+	    pmi->big_pixmap_name = i.baseName() + ".xpm";
+	  pmi->real_name = real_name;
+	  if( pmi->real_name != 0 ) 
+	    {
+	      if( !pmi->writeConfig(QDir(dir_name))) 
+		{
+		  delete pmi;
+		  pmi = 0;
+		  return FALSE;
+		}
+	      if( list.getLast()->entry_type == prog_com )
+		insert(pmi, list.count()-7);
+	      else
+		add(pmi);
+	      clearSubmenus();
+	      createMenu(cmenu, the_panel, FALSE);
+	    } 
+	  else
+	    {
+	      delete pmi;
+	      pmi = 0;
+	      return FALSE;
+	    }
+	}
+    }
+  return TRUE;
+}
+
+bool PMenu::copyFiles( QString source, QString dest )
+{
+  char data[1024];
+  QFile in(source);
+  QFile out(dest);
+  if( !in.open(IO_ReadOnly) )
+    return FALSE;
+  if( !out.open(IO_WriteOnly) )
+    return FALSE;
+  int len;
+  while( (len = in.readBlock(data, 1024)) > 0 )
+    {
+      if( out.writeBlock(data,len) < len )
+        {
+          len = -1;
+          break;
+        }
+    }
+  out.close();
+  in.close();
+  if( len == -1 )
+    { // abort and remove destination file
+      QFileInfo fi(dest);
+      fi.dir().remove(dest);
+      return FALSE;
+    }
+  return TRUE;
+}
+
+void PMenu::clearSubmenus()
+{
+  PMenuItem *item;
+  if( cmenu != 0L )
+    cmenu->clear();
+  for( item = list.first(); item != 0; item = list.next() )
+    {
+      if( item->cmenu != 0L ) 
+	item->sub_menu->clearSubmenus();
+    }
 }
 
 PMenuItem * PMenu::searchItem(int id)

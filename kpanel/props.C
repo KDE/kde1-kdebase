@@ -107,11 +107,11 @@ void kPanel::parseMenus(){
 
     if (personalFirst){
       pmenu->parse(QDir(personal));
+      personal_menu = pmenu;         // I need this for K-Button drops; chris
       p_pmenu = new PMenu;
       p_pmenu->setAltSort(foldersFirst);
       p_pmenu->parse(QDir(kde_apps));
       PMenuItem* pmi = new PMenuItem ;
-      //QFileInfo fi(personal);
       QFileInfo fi(kde_apps);
       pmi->parse(&fi, p_pmenu);
       pmenu->add( new PMenuItem((EntryType) separator) );
@@ -127,6 +127,7 @@ void kPanel::parseMenus(){
 	p_pmenu = new PMenu;
 	p_pmenu->setAltSort(foldersFirst);
 	p_pmenu->parse(QDir(personal));
+	personal_menu = p_pmenu;         // I need this for K-Button drops; chris
 	PMenuItem* pmi = new PMenuItem ;
 	QFileInfo fi(personal);
 	pmi->parse(&fi, p_pmenu);
