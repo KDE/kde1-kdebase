@@ -802,6 +802,7 @@ void KBackground::slotWallpaper( const char *filename )
 	{
 	    if ( !strcmp( filename, NO_WALLPAPER ) )
 		{
+		    wpPixmap.resize(0, 0); // make NULL pixmap
 		    wallpaper = filename;
 		    setMonitor();
 		}
