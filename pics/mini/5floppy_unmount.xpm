@@ -1,7 +1,7 @@
 /* XPM */
 static char*floppy_unmount[]={
 "16 16 6 1",
-"a c #a0a0a0",
+"a c #a0a0a4",
 "# c #000000",
 "d c #303030",
 ". c None",

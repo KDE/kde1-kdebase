@@ -2,7 +2,7 @@
 static char*floppy_mount[]={
 "16 16 8 1",
 "e c #008000",
-"a c #a0a0a0",
+"a c #a0a0a4",
 "# c #000000",
 "d c #303030",
 ". c None",

@@ -2,7 +2,7 @@
 static char*www[]={
 "32 32 15 1",
 "i c #008000",
-"a c #c3c3c3",
+"a c #c0c0c0",
 "m c #c0c000",
 "j c #000080",
 "d c #00ff00",

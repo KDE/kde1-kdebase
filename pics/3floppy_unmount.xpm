@@ -2,8 +2,8 @@
 static char*floppy_unmount[]={
 "32 32 10 1",
 "h c #808080",
-"g c #a0a0a0",
-"f c #c3c3c3",
+"g c #a0a0a4",
+"f c #c0c0c0",
 "b c #000080",
 "# c #000000",
 "e c #0000c0",

@@ -2,7 +2,7 @@
 static char*java[]={
 "32 32 16 1",
 "# c #ffa858",
-"f c #c3c3c3",
+"f c #c0c0c0",
 "m c #c0c000",
 "g c #000080",
 "n c #808000",
