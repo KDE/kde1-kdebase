@@ -1,4 +1,5 @@
 *background: BACKGROUND
 *foreground: FOREGROUND
 *Font: FONT
-*fontList: FONT
+*font: FONT
+*fontList: FONTLIST

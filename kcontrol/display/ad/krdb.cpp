@@ -23,9 +23,18 @@
 #include <kapp.h>
 #include <kprocess.h>
 
+enum FontStyle { Normal, Bold, Italic, Fixed, Title };
 
-QString fontString( QFont rFont )
+QString fontString( QFont rFont, FontStyle style )
 {
+        rFont.setBold( false );
+	rFont.setItalic( false );
+
+        if( style == Bold )
+          rFont.setBold( true );
+
+        if( style == Italic )
+          rFont.setItalic( true );
 
 	QString aValue;
 #if QT_VERSION > 140
@@ -147,14 +156,25 @@ main( int argc, char ** argv )
 	preproc += s;
 	
 	fnt = config->readFontEntry( "font", new QFont( fnt ) );
-	s = fontString( fnt );
+	s = fontString( fnt, Normal );
 	s += "\n";
 	s.prepend( "#define FONT " );
 	preproc += s;
-	preproc += "*font: FONT\n";
 	
+	fnt = config->readFontEntry( "font", new QFont( fnt ) );
+	s = fontString( fnt, Bold );
+	s += "\n";
+	s.prepend( "#define BOLD_FONT " );
+	preproc += s;
+
+	fnt = config->readFontEntry( "font", new QFont( fnt ) );
+	s = fontString( fnt, Italic );
+	s += "\n";
+	s.prepend( "#define ITALIC_FONT " );
+	preproc += s;
+
 	fnt = config->readFontEntry( "fixedFont", new QFont( fnt ) );
-	s = fontString( fnt );
+	s = fontString( fnt, Fixed );
 	s += "\n";
 	s.prepend( "#define FIXED_FONT " );
 	preproc += s;
@@ -192,9 +212,14 @@ main( int argc, char ** argv )
 	preproc += s;
 	
 	fnt = config->readFontEntry( "titleFont", new QFont( fnt ) );
-	s = fontString( fnt );
+	s = fontString( fnt, Title );
 	s += "\n";
 	s.prepend( "#define TITLE_FONT " );
+	preproc += s;
+
+	s = "FONT, BOLD_FONT=BOLD, ITALIC_FONT=ITAIC";
+	s += "\n";
+        s.prepend( "#define FONTLIST ");
 	preproc += s;
 
 	config->setGroup( "KDE" );
@@ -343,5 +368,5 @@ main( int argc, char ** argv )
 	QDir d;
 	d.setPath( "/tmp" );
 		if ( d.exists() )
-			d.remove( tmpFile );
+		         d.remove( tmpFile );
 }

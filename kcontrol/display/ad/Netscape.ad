@@ -6,13 +6,13 @@ netscape*XmTextField*foreground: WINDOW_FOREGROUND
 netscape*XmTextField*background: WINDOW_BACKGROUND
 netscape*XmList*foreground: WINDOW_FOREGROUND
 netsacpe*XmList*background: WINDOW_BACKGROUND
-netscape*fontList: FONT
 netscape*topShadowColor: HIGHLIGHT
 netscape*bottomShadowColor: LOWLIGHT
 netscape*urlText*foreground: WINDOW_FOREGROUND
 netscape*urlText*background: WINDOW_BACKGROUND
 netscape*XmLGrid.foreground: WINDOW_FOREGROUND
-netscape*XmLGrid.background: WINDOW_BACKGROUND
+netscape*XmLGrid.background: BACKGROUND
+netscape*XmLGrid*fontList: FONTLIST
 netscape*urlLabel*foreground: WINDOW_FOREGROUND
 netscape*urlLabel*background: WINDOW_BACKGROUND
 netscape*thermo.slider.foreground: SELECT_BACKGROUND
@@ -25,3 +25,4 @@ netscape*highlightColor: BACKGROUND
 netscape*highlightThickness: 1
 netscape*selectForeground: SELECT_FOREGROUND
 netscape*selectBackground: SELECT_BACKGROUND
+netscape*banner*folderDropdown*fontList: FONTLIST
