@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-02-03 01:15+0100\n"
+"POT-Creation-Date: 1999-02-04 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,19 +50,19 @@ msgstr ""
 msgid "Show the panel"
 msgstr ""
 
-#: kpanel.C:1109
+#: kpanel.C:1068
 msgid "Iconify other &windows"
 msgstr ""
 
-#: kpanel.C:1246
+#: kpanel.C:1205
 msgid "No comment available"
 msgstr ""
 
-#: kpanel.C:1255 tools.C:910
+#: kpanel.C:1214 tools.C:910
 msgid "Windowlist"
 msgstr ""
 
-#: kpanel.C:1263 props.C:197
+#: kpanel.C:1222 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-02-03 01:15+0100\n"
+"POT-Creation-Date: 1999-02-04 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -245,9 +245,9 @@ msgstr ""
 #: kfmgui.cpp:547 kfmgui.cpp:757 kfmman.cpp:370 kfmman.cpp:1420
 #: kfmman.cpp:1651 kfmman.cpp:1697 kfmprops.cpp:380 kfmprops.cpp:648
 #: kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092 kfmprops.cpp:1223
-#: kfmprops.cpp:1697 kfmprops.cpp:2058 kfmprops.cpp:2240 kfmserver.cpp:45
-#: kfmserver.cpp:213 kfmserver.cpp:293 kfmserver.cpp:308 kfmserver.cpp:355
-#: kfmserver.cpp:364 kfmserver.cpp:372 kfmtree.cpp:341 kfmtree.cpp:468
+#: kfmprops.cpp:1697 kfmprops.cpp:2058 kfmprops.cpp:2240 kfmserver.cpp:50
+#: kfmserver.cpp:230 kfmserver.cpp:310 kfmserver.cpp:325 kfmserver.cpp:372
+#: kfmserver.cpp:381 kfmserver.cpp:389 kfmtree.cpp:341 kfmtree.cpp:468
 #: kfmtree.cpp:499 kfmtree.cpp:505 kfmtree.cpp:511 kfmview.cpp:437
 #: kfmview.cpp:471 kfmview.cpp:490 kfmview.cpp:572 kfmview.cpp:578
 #: kfmview.cpp:584 kfmview.cpp:709 kfmview.cpp:713 kfmview.cpp:752
@@ -315,7 +315,7 @@ msgstr ""
 msgid "ERROR: Malformed URL"
 msgstr ""
 
-#: kfmgui.cpp:1347 kfmserver.cpp:240
+#: kfmgui.cpp:1347 kfmserver.cpp:257
 msgid "Open Location:"
 msgstr ""
 
@@ -341,7 +341,7 @@ msgstr ""
 msgid "ERROR: Drop over malformed URL"
 msgstr ""
 
-#: kfmserver.cpp:128 kfmtree.cpp:538 kfmview.cpp:544 kfmview.cpp:844
+#: kfmserver.cpp:145 kfmtree.cpp:538 kfmview.cpp:544 kfmview.cpp:844
 #: kiojob.cpp:665 kiojob.cpp:1075 krenamewin.cpp:20 root.cpp:1288
 msgid "KFM Warning"
 msgstr ""
@@ -819,15 +819,15 @@ msgstr ""
 msgid "Unmounted Icon"
 msgstr ""
 
-#: kfmserver.cpp:46
+#: kfmserver.cpp:51
 msgid "Could not create ~/.kde/share/apps/kfm/magic"
 msgstr ""
 
-#: kfmserver.cpp:129
+#: kfmserver.cpp:146
 msgid "Do you really want to rearrange your icons ?"
 msgstr ""
 
-#: kfmserver.cpp:305
+#: kfmserver.cpp:322
 #, c-format
 msgid ""
 "The URL\n"
@@ -835,19 +835,19 @@ msgid ""
 "is malformed"
 msgstr ""
 
-#: kfmserver.cpp:356
+#: kfmserver.cpp:373
 msgid ""
 "You dont have the file ~/.kde/share/apps/kfm/magic\n"
 "Authorization failed"
 msgstr ""
 
-#: kfmserver.cpp:365
+#: kfmserver.cpp:382
 msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
 msgstr ""
 
-#: kfmserver.cpp:373
+#: kfmserver.cpp:390
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
