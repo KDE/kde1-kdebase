@@ -1,6 +1,7 @@
 #include "kfmpaths.h"
 #include <kconfig.h>
 #include <qdir.h>
+#include <qfileinfo.h>
 #include <kapp.h>
 
 #include <unistd.h>
@@ -60,6 +61,15 @@ void KFMPaths::initPaths()
     *autostartPath += "/";
   
   cachePath->sprintf(_PATH_TMP"kfm-cache-%i", (int)getuid() );
+
+  if (!QFileInfo(_PATH_TMP).isWritable())
+  {
+      QString s;
+      s.sprintf("ERROR ! kfm needs write permissions to %s\n",_PATH_TMP);
+      execlp("kfmwarn","kfmwarn",s.data(), 0);
+      fprintf(stderr, s.data()); // in case kfmwarn didn't work
+      exit( 1 );
+  }
 }
 
 QString KFMPaths::DesktopPath()
