@@ -1612,7 +1612,8 @@ void Client::createGimmick(){
 }
 
 void Client::hideGimmick(){
-  gimmick->hide();
+  if(gimmick)
+    gimmick->hide();
 }
 void Client::placeGimmick(){
   if (!is_active)
