@@ -13,6 +13,7 @@ Comment[pl]=Tux, maskotka Linuxa
 Comment[fi]=Tux, linuxin maskotti
 Comment[sv]=Tux, linuxmaskoten
 Comment[pt]=Tux, a mascote do Linux
+Comment[it]=Tux, la mascotte di Linux
 Exec=xpinguin
 Icon=pinguin.xpm
 TerminalOptions=

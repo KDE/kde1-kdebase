@@ -11,4 +11,5 @@ Comment[de]=X Auslastungsanzeige
 Comment[sv]=X Lastmätare
 Comment[fi]=X kuormitusmittari
 Comment[pt]=Monitor de carga para X
+Comment[it]=Controllo carico Cpu
 Icon=xload.xpm

@@ -12,6 +12,7 @@ Comment[fr]=Affichage de la console sous X
 Comment[pl]=X Konsola
 Comment[fi]=X Konsoli
 Comment[sv]=X Konsoll
+Comment[iy]=Console per Xwin
 Exec=xconsole
 Icon=UNIX.xpm
 TerminalOptions=

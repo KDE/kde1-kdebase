@@ -6,6 +6,7 @@ Name=Coolmail
 Comment=Coolmail
 Comment[pl]=Coolmail
 Comment[pt]=Coolmail
+Comment[it]=Coolmail
 Exec=coolmail
 Icon=mail.xpm
 TerminalOptions=
