@@ -738,6 +738,7 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     f.close();
 
     KConfig config( _props->getKURL()->path() );
+    config.setDollarExpansion( false );
     config.setGroup( "KDE Desktop Entry" );
     execStr = config.readEntry( "Exec" );
     pathStr = config.readEntry( "Path" );
