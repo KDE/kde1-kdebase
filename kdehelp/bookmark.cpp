@@ -25,7 +25,6 @@
 
 #include <qfile.h>
 #include "bookmark.h"
-#include "bookmark.moc"
 
 #include <klocale.h>
 #include <kapp.h>

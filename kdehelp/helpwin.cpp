@@ -30,8 +30,6 @@
 
 #include "dbnew.h"
 
-#include "helpwin.moc"
-
 #ifdef HAVE_PATHS_H
 #include <paths.h>
 #endif

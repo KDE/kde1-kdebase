@@ -9,8 +9,6 @@
 
 #include <stdlib.h>
 
-#include "mainwidget.moc"
-
 #include <klocale.h>
 #include <kwm.h>
 

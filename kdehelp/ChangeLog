@@ -1,0 +1,6 @@
+1998-11-24  Alex Zepeda  <garbanzo@hooked.net>
+
+	* Makefile.am, bookmark.cpp, cgi.cpp, finddlg.cpp, helpwin.cpp
+	mainwidget.cpp, options.cpp: Convert to use automoc.
+
+	* README: Removed comment about alpha quality code.

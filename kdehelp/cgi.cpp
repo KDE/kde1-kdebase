@@ -20,7 +20,6 @@
 #include <kapp.h>
 #include "cgi.h"
 
-#include "cgi.moc"
 #include <config.h>
 
 #include <klocale.h>
