@@ -1,0 +1,343 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kikbd\n"
+"PO-Revision-Date: 1998-05-03 21:20+0100\n"
+"Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
+"Language-Team: German <kde-i18n@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: iso-8859-1\n"
+"Date: 1998-04-15 09:13:42+0400\n"
+"From: Alexander Budnik,LCTA 323,64880,, <budnik@linserv.jinr.ru>\n"
+"Xgettext-Options: -C -ktranslate\n"
+"Files: kikbd.C mkikbd.C keytrans.C keymap.C mkeymap.C kikbdconf.C kobjconf.C "
+"kcmikbd/kikbdconf.C kcmikbd/kobjconf.C kcmikbd/main.C kcmikbd/mwidgets.C "
+"kcmikbd/widgets.C\n"
+
+#: kikbd.C:89
+msgid "KDE International Keyboard already started on this display."
+msgstr ""
+"Die KDE-Internationale-Tastatur wurde bereits auf diesem Display gestartert."
+
+#: kikbd.C:293
+msgid "Setup"
+msgstr "Einstellungen"
+
+#: kikbd.C:294
+msgid "Exit"
+msgstr "Beenden"
+
+#: kikbd.C:308 kikbd.C:321
+msgid "Can not remove %s from Modifiers.\n"
+msgstr "Kann %s nicht von den Modikikatoren entfernen.\n"
+
+#: kikbd.C:311
+msgid "Can not add %s to Modifier number 3.\n"
+msgstr "Kann %s nicht zum Modifikator Nummer 3 hinzufügen.\n"
+
+#: kikbd.C:336
+msgid ""
+"Can not set Mode Switch as %s for keyboard %s.\n"
+"Alt symbols disabled"
+msgstr ""
+"Kann den Modusschalter nicht auf %s setzten bei Tastertur %s.\n"
+"Alt-Symbole deaktiviert"
+
+#: kikbd.C:358
+msgid ""
+"Can not remove Caps Lock from Modifiers.\n"
+"Caps Lock Emulation disabled"
+msgstr ""
+"Kann CapsLock nicht von den Modifikatoren entfernen.\n"
+"CapsLock-Emulation deaktiviert"
+
+#: kikbd.C:907
+msgid "kikbd error"
+msgstr "kikbd-Fehler"
+
+#: kikbd.C:918
+msgid "kikbd warning"
+msgstr "kikbd-Warnung"
+
+#: keymap.C:170
+msgid "KeyMap: cannot allocate memory"
+msgstr "KeyMap: Kann Speicher nicht reservieren"
+
+#: keymap.C:215
+msgid "KeyMap: can not find symbol %s"
+msgstr "KeyMap: Kann Symbol %s nicht finden"
+
+#: keymap.C:224
+msgid "KeyMap: do not undestand keycode %s"
+msgstr "KeyMap: Verstehe Zeichencode %s nicht"
+
+#: keymap.C:227
+msgid "KeyMap: keycode %s go out of range"
+msgstr "KeyMap: Zeichenkode %s ist außerhalb des Bereiches"
+
+#: kcmikbd/kikbdconf.C:112 kikbdconf.C:112
+msgid "Your configuration is empty. Install system default."
+msgstr "Ihre Konfiguration ist leer. Installiere Voreinstellung"
+
+#: kcmikbd/kikbdconf.C:116 kikbdconf.C:116
+msgid "Do you want to start Configuration?"
+msgstr "Möchten Sie die Konfiguration starten?"
+
+#: kcmikbd/kikbdconf.C:178 kikbdconf.C:178
+msgid "kikbd configuration error"
+msgstr "kikbd Konfigurationsfehler"
+
+#: kcmikbd/kikbdconf.C:185 kikbdconf.C:185
+msgid "kikbd configuration message"
+msgstr "kikbd Konfigurationsmeldung"
+
+#: kcmikbd/kikbdconf.C:233 kcmikbd/widgets.C:71 kikbdconf.C:233
+msgid "Label"
+msgstr "Label"
+
+#: kcmikbd/kobjconf.C:118 kobjconf.C:118
+msgid "yes"
+msgstr "ja"
+
+#: kcmikbd/kobjconf.C:119 kobjconf.C:119
+msgid "true"
+msgstr "wahr"
+
+#: kcmikbd/main.C:42
+msgid "&General"
+msgstr "&Allgemein"
+
+#: kcmikbd/main.C:50 kcmikbd/widgets.C:446
+msgid "&Style"
+msgstr "&Stil"
+
+#: kcmikbd/main.C:60
+msgid "Start&Up"
+msgstr "Programms&tart"
+
+#: kcmikbd/main.C:103
+msgid "International Keyboard"
+msgstr "Internationale Tastertur"
+
+#: kcmikbd/widgets.C:60
+msgid "Keyboards"
+msgstr "Tastaturen"
+
+#: kcmikbd/widgets.C:73
+msgid "Locale"
+msgstr "Lokale"
+
+#: kcmikbd/widgets.C:75
+msgid "Description"
+msgstr "Beschreibung"
+
+#: kcmikbd/widgets.C:77
+msgid "List of active keyboard maps"
+msgstr "Liste der aktiven Tastaturtabellen"
+
+#: kcmikbd/widgets.C:81
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: kcmikbd/widgets.C:82
+msgid "Delete"
+msgstr "Entfernen"
+
+#: kcmikbd/widgets.C:83
+msgid "Up"
+msgstr "Oben"
+
+#: kcmikbd/widgets.C:84
+msgid "Down"
+msgstr "Unten"
+
+#: kcmikbd/widgets.C:95
+msgid "Use \"hotlist\""
+msgstr "Verwende ,,Hotlist\""
+
+#: kcmikbd/widgets.C:98
+msgid "Adding new keyboard map"
+msgstr "Füge neue Tastaturtabelle hinzu"
+
+#: kcmikbd/widgets.C:99
+msgid "Remove selected keyboard map"
+msgstr "Entferne ausgewählte Tastaturtabelle"
+
+#: kcmikbd/widgets.C:100
+msgid "Up selected keyboard map"
+msgstr "Ausgwählte Tastaturtabelle nach oben"
+
+#: kcmikbd/widgets.C:101
+msgid "Down selected keyboard map"
+msgstr "Ausgewählte Tastaturtabelle nach unten"
+
+#: kcmikbd/widgets.C:102
+msgid ""
+"Use only default and last active keyboard maps to switching from keyboard"
+msgstr ""
+"Verwende nur voreingestellte und letztaktive Tastaturtabellen zum "
+"Tastaturwechsel"
+
+#: kcmikbd/widgets.C:105
+msgid "Switch and Alt Switch"
+msgstr "Wechseln und Alt-Wechseln"
+
+#: kcmikbd/widgets.C:109
+msgid "Key(s) to switch beetwing keyboard maps"
+msgstr "Taste(n) zum Wechseln der Tastaturtabellen"
+
+#: kcmikbd/widgets.C:114
+msgid "Key to activate Alternate symbols in current keyboard map"
+msgstr ""
+"Taste zum Aktivieren alternierender Symbole in der aktuellen Tastaturtabelle"
+
+#: kcmikbd/widgets.C:117
+msgid "Options"
+msgstr "Optionen"
+
+#: kcmikbd/widgets.C:121
+msgid "Beep"
+msgstr "Ton"
+
+#: kcmikbd/widgets.C:123
+msgid "Beep when ever keyboard mapping changed"
+msgstr "Ton beim Wechsel der Tasterturtabelle"
+
+#: kcmikbd/widgets.C:124 kcmikbd/widgets.C:289
+msgid "Advanced"
+msgstr "Erweitert"
+
+#: kcmikbd/widgets.C:129
+msgid "Advanced options"
+msgstr "Erweiterte Optionen"
+
+#: kcmikbd/widgets.C:225
+msgid "Add Keyboard"
+msgstr "Tastatur hinzufügen"
+
+#: kcmikbd/widgets.C:235
+msgid "Adding Keyboard"
+msgstr "Füge Tastatur hinzu"
+
+#: kcmikbd/widgets.C:236
+msgid "There is no more keyboard maps"
+msgstr "Es gibt keine weiteren Tastaturtabellen"
+
+#: kcmikbd/widgets.C:241
+msgid "Available keyboard maps"
+msgstr "Verfügbare Tastaturtabellen"
+
+#: kcmikbd/widgets.C:256 kcmikbd/widgets.C:333
+msgid "Ok"
+msgstr "Ok"
+
+#: kcmikbd/widgets.C:257
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: kcmikbd/widgets.C:302
+msgid "Emulate CapsLock"
+msgstr "Emuliere CapsLock"
+
+#: kcmikbd/widgets.C:304
+msgid "Emulate XServer CapsLock. Needed for some languages to be correct"
+msgstr "Emuliere XServer-CapsLock. Für manche Sprachen benötigt"
+
+#: kcmikbd/widgets.C:306
+msgid "World Menu"
+msgstr "Weltmenü"
+
+#: kcmikbd/widgets.C:308
+msgid "Show menu in any window by holding Switch keys"
+msgstr "Zeige Menü in jedem Fenster durch Drücken der Wechseltasten"
+
+#: kcmikbd/widgets.C:312
+msgid "Save Classes"
+msgstr "Klassen speichern"
+
+#: kcmikbd/widgets.C:315
+msgid "Save relations between window classes and keyboard maps on exit"
+msgstr ""
+"Speichere Abhängigkeit zwischen Fensterklassen und Tastaturtabellen beim "
+"Beenden"
+
+#: kcmikbd/widgets.C:317
+msgid "Input"
+msgstr "Eingabe"
+
+#: kcmikbd/widgets.C:321
+msgid "Standard behavior. Keyboard map active for all windows"
+msgstr "Standardverhalten: Tastaturtabelle in allen Fenstern aktiv"
+
+#: kcmikbd/widgets.C:323
+msgid "Extended behavior. Each windows remember it's own keyboard map"
+msgstr "Erweitertes Verhalten: Jedes Fenster merkt sich seine Tastaturtabelle"
+
+#: kcmikbd/widgets.C:325
+msgid "Special behavior. Each windows class remember it's own keyboard map"
+msgstr "Sonderverhalten: Jede Fensterklasse merkt sich ihre Tasterturtabelle"
+
+#: kcmikbd/widgets.C:359
+msgid "Button Colors"
+msgstr "Tasten-Farbe"
+
+#: kcmikbd/widgets.C:376
+msgid "Foreground"
+msgstr "Vordergrund"
+
+#: kcmikbd/widgets.C:380
+msgid "Color of the Text Label"
+msgstr "Farbe des Text-Labels"
+
+#: kcmikbd/widgets.C:390
+msgid "With CapsLock"
+msgstr "Mit CapsLock"
+
+#: kcmikbd/widgets.C:394
+msgid "Background when Emulated CapsLock active"
+msgstr "Hindergrund, wenn emuliertes CapsLock aktiv ist"
+
+#: kcmikbd/widgets.C:406
+msgid "With Alternate"
+msgstr "Mit Alterniern"
+
+#: kcmikbd/widgets.C:410
+msgid "Background when Alternate switch is pressed"
+msgstr "Hintergrund, wenn Alternieren-Schalter gedrückt ist"
+
+#: kcmikbd/widgets.C:421
+msgid "Button Font"
+msgstr "Tasten-Schrift"
+
+#: kcmikbd/widgets.C:429
+msgid "Customize Font"
+msgstr "Schrift anpassen"
+
+#: kcmikbd/widgets.C:432
+msgid "Customize Font for text label or use global settings"
+msgstr ""
+"Schrift des Text-Labels anpassen oder allgemeine Einstellungen benutzen"
+
+#: kcmikbd/widgets.C:435
+msgid "Change Font"
+msgstr "Schrift ändern"
+
+#: kcmikbd/widgets.C:474
+msgid "Autostart"
+msgstr "Autostart"
+
+#: kcmikbd/widgets.C:475
+msgid "Start up automaticaly"
+msgstr "Starte automatisch"
+
+#: kcmikbd/widgets.C:485
+msgid "Dock into special area in kpanel"
+msgstr "Docke in KPanel in einem besonderen Bereich"
+
+#: kcmikbd/widgets.C:493
+msgid "Place"
+msgstr "Platzieren"
+
+#: kcmikbd/widgets.C:502
+msgid "Place in selected corner"
+msgstr "Platziere in ausgewählter Ecke"

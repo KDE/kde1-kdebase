@@ -1,0 +1,336 @@
+# kikbd
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Vladimir Vuksan <vuksan@veus.hr>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdenonebeta\n"
+"POT-Creation-Date: 1997-11-08 23:50+0100\n"
+"PO-Revision-Date: 1998-03-15 20:00-0500\n"
+"Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kikbd.C:89
+msgid "KDE International Keyboard already started on this display."
+msgstr "KDE internacionalna tipkovnica veæ zapoèeta na ovom zaslonu."
+
+#: kikbd.C:293
+msgid "Setup"
+msgstr "Postava"
+
+#: kikbd.C:294
+msgid "Exit"
+msgstr "Zavr¹i"
+
+#: kikbd.C:308 kikbd.C:321
+msgid "Can not remove %s from Modifiers.\n"
+msgstr "Ne mogu ukloniti %s iz Modifiers.\n"
+
+#: kikbd.C:311
+msgid "Can not add %s to Modifier number 3.\n"
+msgstr "Ne mogu dodati %s u Modifiers broj 3.\n"
+
+#: kikbd.C:336
+msgid ""
+"Can not set Mode Switch as %s for keyboard %s.\n"
+"Alt symbols disabled"
+msgstr ""
+"Ne mogu namjestiti sklopku za promjenu kao %s za tipkovnicu %s\n"
+"Alt znakovi iskljuèeni"
+
+#: kikbd.C:358
+msgid ""
+"Can not remove Caps Lock from Modifiers.\n"
+"Caps Lock Emulation disabled"
+msgstr ""
+"Ne mogu ukloniti Caps Lock iz Modifiers.\n"
+"Caps Lock opona¹anje iskljuèeno"
+
+#: kikbd.C:907
+msgid "kikbd error"
+msgstr "kikbd gre¹ka"
+
+#: kikbd.C:918
+msgid "kikbd warning"
+msgstr "kikbd upozorenje"
+
+#: keymap.C:170
+msgid "KeyMap: cannot allocate memory"
+msgstr "KeyMap: ne mogu alocirati memoriju"
+
+#: keymap.C:215
+msgid "KeyMap: can not find symbol %s"
+msgstr "KeyMap: ne mogu naæi znak %s"
+
+#: keymap.C:224
+msgid "KeyMap: do not undestand keycode %s"
+msgstr "KeyMap: ne razumijem tipkovni kod %s"
+
+#: keymap.C:227
+msgid "KeyMap: keycode %s go out of range"
+msgstr "KeyMap: tipkovni kod %s je izvan raspona"
+
+#: kcmikbd/kikbdconf.C:112 kikbdconf.C:112
+msgid "Your configuration is empty. Install system default."
+msgstr ""
+"Va¹a datoteka sa postavom je prazna. Postavi uobièajenu sistemsku datoteku"
+
+#: kcmikbd/kikbdconf.C:116 kikbdconf.C:116
+msgid "Do you want to start Configuration?"
+msgstr "Da li želite poèeti sa postavom?"
+
+#: kcmikbd/kikbdconf.C:178 kikbdconf.C:178
+msgid "kikbd configuration error"
+msgstr "kikbd: gre¹ka prilikom postave"
+
+#: kcmikbd/kikbdconf.C:185 kikbdconf.C:185
+msgid "kikbd configuration message"
+msgstr "kikbd: poruka prilikom postave "
+
+#: kcmikbd/kikbdconf.C:233 kcmikbd/widgets.C:71 kikbdconf.C:233
+msgid "Label"
+msgstr "Oznaka"
+
+#: kcmikbd/kobjconf.C:118 kobjconf.C:118
+msgid "yes"
+msgstr "da"
+
+#: kcmikbd/kobjconf.C:119 kobjconf.C:119
+msgid "true"
+msgstr "toèno"
+
+#: kcmikbd/main.C:42
+msgid "&General"
+msgstr "&Opæenito"
+
+#: kcmikbd/main.C:50 kcmikbd/widgets.C:446
+msgid "&Style"
+msgstr "&Stil"
+
+#: kcmikbd/main.C:60
+msgid "Start&Up"
+msgstr "Po"
+
+#: kcmikbd/main.C:103
+msgid "International Keyboard"
+msgstr "Internacionalna tipkovnica"
+
+#: kcmikbd/widgets.C:60
+msgid "Keyboards"
+msgstr "Tipkovnica"
+
+#: kcmikbd/widgets.C:73
+msgid "Locale"
+msgstr "Lokal"
+
+#: kcmikbd/widgets.C:75
+msgid "Description"
+msgstr "Opis"
+
+#: kcmikbd/widgets.C:77
+msgid "List of active keyboard maps"
+msgstr "Popis aktivnih mapa tipkovnica"
+
+#: kcmikbd/widgets.C:81
+msgid "Add"
+msgstr "Dodaj"
+
+#: kcmikbd/widgets.C:82
+msgid "Delete"
+msgstr "Pobri¹i"
+
+#: kcmikbd/widgets.C:83
+msgid "Up"
+msgstr "Gore"
+
+#: kcmikbd/widgets.C:84
+msgid "Down"
+msgstr "Dolje"
+
+#: kcmikbd/widgets.C:95
+msgid "Use \"hotlist\""
+msgstr "Koristi \"hotlist\""
+
+#: kcmikbd/widgets.C:98
+msgid "Adding new keyboard map"
+msgstr "Dodajem novu mapu tipkovnice"
+
+#: kcmikbd/widgets.C:99
+msgid "Remove selected keyboard map"
+msgstr "Ukloni izabranu mapu tipkovnice"
+
+#: kcmikbd/widgets.C:100
+msgid "Up selected keyboard map"
+msgstr ""
+
+#: kcmikbd/widgets.C:101
+msgid "Down selected keyboard map"
+msgstr ""
+
+#: kcmikbd/widgets.C:102
+msgid ""
+"Use only default and last active keyboard maps to switching from keyboard"
+msgstr ""
+
+#: kcmikbd/widgets.C:105
+msgid "Switch and Alt Switch"
+msgstr ""
+
+#: kcmikbd/widgets.C:109
+msgid "Key(s) to switch beetwing keyboard maps"
+msgstr "Tipka(e) za promjenu izmeðu mapa tipkovnica"
+
+#: kcmikbd/widgets.C:114
+msgid "Key to activate Alternate symbols in current keyboard map"
+msgstr ""
+
+#: kcmikbd/widgets.C:117
+msgid "Options"
+msgstr "Opcije"
+
+#: kcmikbd/widgets.C:121
+msgid "Beep"
+msgstr "Pip"
+
+#: kcmikbd/widgets.C:123
+msgid "Beep when ever keyboard mapping changed"
+msgstr "Pipni kod svake promjene mapiranja tipkovnice"
+
+#: kcmikbd/widgets.C:124 kcmikbd/widgets.C:289
+msgid "Advanced"
+msgstr "Napredno"
+
+#: kcmikbd/widgets.C:129
+msgid "Advanced options"
+msgstr "Napredne opcije"
+
+#: kcmikbd/widgets.C:225
+msgid "Add Keyboard"
+msgstr "Dodaj tipkovnicu"
+
+#: kcmikbd/widgets.C:235
+msgid "Adding Keyboard"
+msgstr "Dodajem tipkovnicu"
+
+#: kcmikbd/widgets.C:236
+msgid "There is no more keyboard maps"
+msgstr "Nema vi¹e mapa za tipkovnice"
+
+#: kcmikbd/widgets.C:241
+msgid "Available keyboard maps"
+msgstr "Dostupne mape za tipkovnice"
+
+#: kcmikbd/widgets.C:256 kcmikbd/widgets.C:333
+msgid "Ok"
+msgstr "U redu"
+
+#: kcmikbd/widgets.C:257
+msgid "Cancel"
+msgstr "Poni¹ti"
+
+#: kcmikbd/widgets.C:302
+msgid "Emulate CapsLock"
+msgstr "Opona¹aj CapsLock"
+
+#: kcmikbd/widgets.C:304
+msgid "Emulate XServer CapsLock. Needed for some languages to be correct"
+msgstr "Opona¹aj XServer CapsLock. Potrebno je "
+
+#: kcmikbd/widgets.C:306
+msgid "World Menu"
+msgstr "Svijet Izbornik"
+
+#: kcmikbd/widgets.C:308
+msgid "Show menu in any window by holding Switch keys"
+msgstr ""
+
+#: kcmikbd/widgets.C:312
+msgid "Save Classes"
+msgstr "Spremi Classes"
+
+#: kcmikbd/widgets.C:315
+msgid "Save relations between window classes and keyboard maps on exit"
+msgstr ""
+
+#: kcmikbd/widgets.C:317
+msgid "Input"
+msgstr "Ulaz"
+
+#: kcmikbd/widgets.C:321
+msgid "Standard behavior. Keyboard map active for all windows"
+msgstr "Standardno pona¹anje. Mapa tipkovnice aktivna za sve prozore"
+
+#: kcmikbd/widgets.C:323
+msgid "Extended behavior. Each windows remember it's own keyboard map"
+msgstr "Pro¹ireno pona¹anje. Svaki prozor pamti svoju mapu tipkovnice"
+
+#: kcmikbd/widgets.C:325
+msgid "Special behavior. Each windows class remember it's own keyboard map"
+msgstr "Posebno pona¹anje. Svaki razred prozora pamti svoju mapu tipkovnice"
+
+#: kcmikbd/widgets.C:359
+msgid "Button Colors"
+msgstr "Boje gumbi"
+
+#: kcmikbd/widgets.C:376
+msgid "Foreground"
+msgstr "Prvi plan"
+
+#: kcmikbd/widgets.C:380
+msgid "Color of the Text Label"
+msgstr "Boja tekstualne oznake"
+
+#: kcmikbd/widgets.C:390
+msgid "With CapsLock"
+msgstr "Sa CapsLockom"
+
+#: kcmikbd/widgets.C:394
+msgid "Background when Emulated CapsLock active"
+msgstr ""
+
+#: kcmikbd/widgets.C:406
+msgid "With Alternate"
+msgstr "Sa Alternate"
+
+#: kcmikbd/widgets.C:410
+msgid "Background when Alternate switch is pressed"
+msgstr ""
+
+#: kcmikbd/widgets.C:421
+msgid "Button Font"
+msgstr "Pismo na gumbima"
+
+#: kcmikbd/widgets.C:429
+msgid "Customize Font"
+msgstr "Podesi pismo"
+
+#: kcmikbd/widgets.C:432
+msgid "Customize Font for text label or use global settings"
+msgstr ""
+
+#: kcmikbd/widgets.C:435
+msgid "Change Font"
+msgstr "Promijeni pismo"
+
+#: kcmikbd/widgets.C:474
+msgid "Autostart"
+msgstr "Automatsko pokretanje"
+
+#: kcmikbd/widgets.C:475
+msgid "Start up automaticaly"
+msgstr "Pokreni automatski"
+
+#: kcmikbd/widgets.C:485
+msgid "Dock into special area in kpanel"
+msgstr "Pristani na ploèu"
+
+#: kcmikbd/widgets.C:493
+msgid "Place"
+msgstr "Polo¾i"
+
+#: kcmikbd/widgets.C:502
+msgid "Place in selected corner"
+msgstr "Polo¾i u izabrani kut"

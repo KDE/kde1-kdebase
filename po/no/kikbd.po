@@ -1,0 +1,335 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 1998-06-05 14:42+0100\n"
+"Last-Translator: Svein Olav Aasen <soaasen@onlin.no / svein.aasen@caa.no>\n"
+"Language-Team: no <LL@li.org>\n"
+"Content-Type: text/plain; charset=\n"
+"Date: 1998-04-15 09:13:42+0400\n"
+"From: Alexander Budnik,LCTA 323,64880,, <budnik@linserv.jinr.ru>\n"
+"Xgettext-Options: -C -ktranslate\n"
+"Files: kikbd.C mkikbd.C keytrans.C keymap.C mkeymap.C kikbdconf.C kobjconf.C "
+"kcmikbd/kikbdconf.C kcmikbd/kobjconf.C kcmikbd/main.C kcmikbd/mwidgets.C "
+"kcmikbd/widgets.C\n"
+
+#: kikbd.C:89
+msgid "KDE International Keyboard already started on this display."
+msgstr "KDE internasjonalt tastatur er allerede started på denne skjerm."
+
+#: kikbd.C:293
+msgid "Setup"
+msgstr "Oppsett"
+
+#: kikbd.C:294
+msgid "Exit"
+msgstr "Avslutt"
+
+#: kikbd.C:308 kikbd.C:321
+msgid "Can not remove %s from Modifiers.\n"
+msgstr "Kan ikke fjerne %s fra \"Modifiers\".\n"
+
+#: kikbd.C:311
+msgid "Can not add %s to Modifier number 3.\n"
+msgstr "Kan ikke legge til %s til \"Modifier\" nr. 3.\n"
+
+#: kikbd.C:336
+msgid ""
+"Can not set Mode Switch as %s for keyboard %s.\n"
+"Alt symbols disabled"
+msgstr ""
+"Kan ikke sette Mode Switch som %s for tastatur %s.\n"
+"\"Alt\" symboler utkoplet"
+
+#: kikbd.C:358
+msgid ""
+"Can not remove Caps Lock from Modifiers.\n"
+"Caps Lock Emulation disabled"
+msgstr ""
+"Kan ikke fjerne Caps Lock fra Modifiers.\n"
+"Caps Lock emulering utkoplet"
+
+#: kikbd.C:907
+msgid "kikbd error"
+msgstr "kikbd feil"
+
+#: kikbd.C:918
+msgid "kikbd warning"
+msgstr "kikbd advarsel"
+
+#: keymap.C:170
+msgid "KeyMap: cannot allocate memory"
+msgstr "Tastaturkart: kan ikke tildele minne"
+
+#: keymap.C:215
+msgid "KeyMap: can not find symbol %s"
+msgstr "Tastaturkart: kan ikke finne symbol %s"
+
+#: keymap.C:224
+msgid "KeyMap: do not undestand keycode %s"
+msgstr "Tastaturkart: forstår ikke tastkode %s"
+
+#: keymap.C:227
+msgid "KeyMap: keycode %s go out of range"
+msgstr "Tastaturkart: tastkode % går utenfor gyldig område"
+
+#: kcmikbd/kikbdconf.C:112 kikbdconf.C:112
+msgid "Your configuration is empty. Install system default."
+msgstr "Din konfigurasjon er tom. Installer system standard."
+
+#: kcmikbd/kikbdconf.C:116 kikbdconf.C:116
+msgid "Do you want to start Configuration?"
+msgstr "Ønsker du å starte Konfigurasjon?"
+
+#: kcmikbd/kikbdconf.C:178 kikbdconf.C:178
+msgid "kikbd configuration error"
+msgstr "kikbd konfigurasjonsfeil"
+
+#: kcmikbd/kikbdconf.C:185 kikbdconf.C:185
+msgid "kikbd configuration message"
+msgstr "kikbd konfigurasjonsmelding"
+
+#: kcmikbd/kikbdconf.C:233 kcmikbd/widgets.C:71 kikbdconf.C:233
+msgid "Label"
+msgstr "Merkelapp"
+
+#: kcmikbd/kobjconf.C:118 kobjconf.C:118
+msgid "yes"
+msgstr "ja"
+
+#: kcmikbd/kobjconf.C:119 kobjconf.C:119
+msgid "true"
+msgstr "sant"
+
+#: kcmikbd/main.C:42
+msgid "&General"
+msgstr "&Generell"
+
+#: kcmikbd/main.C:50 kcmikbd/widgets.C:446
+msgid "&Style"
+msgstr "&Stil"
+
+#: kcmikbd/main.C:60
+msgid "Start&Up"
+msgstr "&Oppstart"
+
+#: kcmikbd/main.C:103
+msgid "International Keyboard"
+msgstr "Internasjonalt tastatur"
+
+#: kcmikbd/widgets.C:60
+msgid "Keyboards"
+msgstr "Tastatur"
+
+#: kcmikbd/widgets.C:73
+msgid "Locale"
+msgstr "Lokal"
+
+#: kcmikbd/widgets.C:75
+msgid "Description"
+msgstr "Beskrivelse"
+
+#: kcmikbd/widgets.C:77
+msgid "List of active keyboard maps"
+msgstr "Liste med aktive tastaturkart"
+
+#: kcmikbd/widgets.C:81
+msgid "Add"
+msgstr "Legg til"
+
+#: kcmikbd/widgets.C:82
+msgid "Delete"
+msgstr "Slett"
+
+#: kcmikbd/widgets.C:83
+msgid "Up"
+msgstr "Opp"
+
+#: kcmikbd/widgets.C:84
+msgid "Down"
+msgstr "Ned"
+
+#: kcmikbd/widgets.C:95
+msgid "Use \"hotlist\""
+msgstr "Bruk \"hotlist\""
+
+#: kcmikbd/widgets.C:98
+msgid "Adding new keyboard map"
+msgstr "Legg til nytt tastaturkart"
+
+#: kcmikbd/widgets.C:99
+msgid "Remove selected keyboard map"
+msgstr "Fjern valgte tastaturkart"
+
+#: kcmikbd/widgets.C:100
+msgid "Up selected keyboard map"
+msgstr "Opp valgt tastaturkart"
+
+#: kcmikbd/widgets.C:101
+msgid "Down selected keyboard map"
+msgstr "Ned valgt tastaturkart"
+
+#: kcmikbd/widgets.C:102
+msgid ""
+"Use only default and last active keyboard maps to switching from keyboard"
+msgstr "Bruk bare standard og siste aktive tastaturkart for å endre tastatur"
+
+#: kcmikbd/widgets.C:105
+msgid "Switch and Alt Switch"
+msgstr "Bryter og Alt bryter"
+
+#: kcmikbd/widgets.C:109
+msgid "Key(s) to switch beetwing keyboard maps"
+msgstr "Tast(er) for å skifte mellom tastaturkart"
+
+#: kcmikbd/widgets.C:114
+msgid "Key to activate Alternate symbols in current keyboard map"
+msgstr "Tast for å aktivere alternative symboler i gjeldende tastaturkart"
+
+#: kcmikbd/widgets.C:117
+msgid "Options"
+msgstr "Valg"
+
+#: kcmikbd/widgets.C:121
+msgid "Beep"
+msgstr "Bip"
+
+#: kcmikbd/widgets.C:123
+msgid "Beep when ever keyboard mapping changed"
+msgstr "Bip når tastaturkart er endret"
+
+#: kcmikbd/widgets.C:124 kcmikbd/widgets.C:289
+msgid "Advanced"
+msgstr "Avansert"
+
+#: kcmikbd/widgets.C:129
+msgid "Advanced options"
+msgstr "Avanserte valg"
+
+#: kcmikbd/widgets.C:225
+msgid "Add Keyboard"
+msgstr "Legg til tastatur"
+
+#: kcmikbd/widgets.C:235
+msgid "Adding Keyboard"
+msgstr "Legger til tastatur"
+
+#: kcmikbd/widgets.C:236
+msgid "There is no more keyboard maps"
+msgstr "Det finnes ikke flere tastaturkart"
+
+#: kcmikbd/widgets.C:241
+msgid "Available keyboard maps"
+msgstr "Tilgjengelige tastaturkart"
+
+#: kcmikbd/widgets.C:256 kcmikbd/widgets.C:333
+msgid "Ok"
+msgstr "OK"
+
+#: kcmikbd/widgets.C:257
+msgid "Cancel"
+msgstr "Kanseller"
+
+#: kcmikbd/widgets.C:302
+msgid "Emulate CapsLock"
+msgstr "Emuler \"CapsLock\""
+
+#: kcmikbd/widgets.C:304
+msgid "Emulate XServer CapsLock. Needed for some languages to be correct"
+msgstr ""
+"Emuler XServer CapsLock. Trengs til noen språk for at de skal være korrekt."
+
+#: kcmikbd/widgets.C:306
+msgid "World Menu"
+msgstr "Verdensmeny"
+
+#: kcmikbd/widgets.C:308
+msgid "Show menu in any window by holding Switch keys"
+msgstr "Vis meny i hvilken som helst vindu ved å holde nede Switch taster"
+
+#: kcmikbd/widgets.C:312
+msgid "Save Classes"
+msgstr "Lagre klasser"
+
+#: kcmikbd/widgets.C:315
+msgid "Save relations between window classes and keyboard maps on exit"
+msgstr "Lagre relasjoner mellom vindusklasser og tastaturkart ved avsluttning."
+
+#: kcmikbd/widgets.C:317
+msgid "Input"
+msgstr "Data inn"
+
+#: kcmikbd/widgets.C:321
+msgid "Standard behavior. Keyboard map active for all windows"
+msgstr "Standard oppførsel. Tastaturkart er ikke aktiv for alle vinduer"
+
+#: kcmikbd/widgets.C:323
+msgid "Extended behavior. Each windows remember it's own keyboard map"
+msgstr "Utvidet oppførsel. Hvert vindu husker dens eget tastatur"
+
+#: kcmikbd/widgets.C:325
+msgid "Special behavior. Each windows class remember it's own keyboard map"
+msgstr "Spesiell oppførsel. Hver vindu klasse husker sitt eget tastaturkart"
+
+#: kcmikbd/widgets.C:359
+msgid "Button Colors"
+msgstr "Knappefarger"
+
+#: kcmikbd/widgets.C:376
+msgid "Foreground"
+msgstr "Forgrunn"
+
+#: kcmikbd/widgets.C:380
+msgid "Color of the Text Label"
+msgstr "Farge på tekst merkelapper"
+
+#: kcmikbd/widgets.C:390
+msgid "With CapsLock"
+msgstr "Med CapsLock:"
+
+#: kcmikbd/widgets.C:394
+msgid "Background when Emulated CapsLock active"
+msgstr "Bakgrunn når emulert CapsLock er aktiv"
+
+#: kcmikbd/widgets.C:406
+msgid "With Alternate"
+msgstr "Med alternativ"
+
+#: kcmikbd/widgets.C:410
+msgid "Background when Alternate switch is pressed"
+msgstr "Bakgrunn når alternativ bryter er nedtrykkt"
+
+#: kcmikbd/widgets.C:421
+msgid "Button Font"
+msgstr "Knappeskrifttype"
+
+#: kcmikbd/widgets.C:429
+msgid "Customize Font"
+msgstr "Egendefinert skrifttype"
+
+#: kcmikbd/widgets.C:432
+msgid "Customize Font for text label or use global settings"
+msgstr ""
+"Egendefiner skrifttype for tekst merkelapp eller bruk globale innstillinger"
+
+#: kcmikbd/widgets.C:435
+msgid "Change Font"
+msgstr "Endre skrifttype"
+
+#: kcmikbd/widgets.C:474
+msgid "Autostart"
+msgstr "Autostart"
+
+#: kcmikbd/widgets.C:475
+msgid "Start up automaticaly"
+msgstr "Automatisk oppstart"
+
+#: kcmikbd/widgets.C:485
+msgid "Dock into special area in kpanel"
+msgstr "Dokke inn i spesielt område i kpanel"
+
+#: kcmikbd/widgets.C:493
+msgid "Place"
+msgstr "Plasser"
+
+#: kcmikbd/widgets.C:502
+msgid "Place in selected corner"
+msgstr "Plasser i utvalgt hjørne"
