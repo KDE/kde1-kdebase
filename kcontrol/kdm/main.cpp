@@ -60,22 +60,10 @@ KDMConfigApplication::KDMConfigApplication(int &argc, char **argv, const char *n
 
   if (runGUI())
   {
-    KWM::setMiniIcon(KWM::activeWindow(), kapp->getMiniIcon());
-    KWM::setIcon(KWM::activeWindow(), kapp->getIcon());
-    //if(geteuid() != 0)
     QString fn(CONFIGFILE);
-    //debug("KDMAppl. Configfile: %s", fn.data());
     QFileInfo fi(fn.data());
-    //if(!fi.exists())
-      //debug("Doesn't exist");
     if(fi.isReadable() && fi.isWritable())
     {
-/*
-#ifdef HAVE_LIBGIF
-      QImageIO::defineIOHandler("GIF", "^GIF[0-9][0-9][a-z]", 
-  			      0, read_gif_file, NULL);
-#endif
-*/
 #ifdef HAVE_LIBJPEG
       QImageIO::defineIOHandler("JFIF","^\377\330\377\340", 
 			      0, read_jpeg_jfif, NULL);
@@ -120,13 +108,6 @@ KDMConfigApplication::KDMConfigApplication(int &argc, char **argv, const char *n
         }
 
     }
-    else
-    {
-      QString msg = klocale->translate("Sorry, but you don't have read/write\n"
-				       "permission to the KDM setup file.");
-      KMsgBox::message( dialog, klocale->translate("Missing privileges"), msg);
-      this->exit(-1);
-    }
   }
 }
 
@@ -164,7 +145,18 @@ int main(int argc, char **argv)
   app.setTitle(klocale->translate("KDM Configuration"));
   
   if (app.runGUI())
-    return app.exec();
+  {
+    QString fn(CONFIGFILE);
+    QFileInfo fi(fn.data());
+    if(fi.isReadable() && fi.isWritable())
+      return app.exec();
+    else
+    {
+      QString msg = klocale->translate("Sorry, but you don't have read/write\n"
+				       "permission to the KDM setup file.");
+      KMsgBox::message( 0, klocale->translate("Missing privileges"), msg);
+    }
+  }
   else
     {
 //      app.init();
