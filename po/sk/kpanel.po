@@ -51,7 +51,7 @@ msgstr "Ukáza» panel"
 
 #: kpanel.C:1100
 msgid "Iconify other &windows"
-msgstr ""
+msgstr "Ikonifikova» ostatné &okná"
 
 #: kpanel.C:1237
 msgid "No comment available"
@@ -63,10 +63,9 @@ msgstr "Zoznam okien"
 
 #: kpanel.C:1254 props.C:196
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Rýchlo navigova» systémom súborov"
 
 #: props.C:166
-#, fuzzy
 msgid "Add Application"
 msgstr "Prida» aplikáciu"
 
@@ -75,17 +74,14 @@ msgid "Add an application or a submenu onto the panel"
 msgstr "Prida» aplikáciu alebo menu na panel"
 
 #: props.C:174
-#, fuzzy
 msgid "Add Disk Navigator"
-msgstr "Navigátor disku"
+msgstr "Prida» navigátor disku"
 
 #: props.C:176
-#, fuzzy
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Prida» zoznam okien na panel"
+msgstr "Pridá menu disk navigátora na panel"
 
 #: props.C:179
-#, fuzzy
 msgid "Add Windowlist"
 msgstr "Prida» zoznam okien"
 
@@ -146,7 +142,6 @@ msgstr ""
 "%b %d"
 
 #: tools.C:908
-#, fuzzy
 msgid "KDiskNavigator"
 msgstr "Navigátor disku"
 
@@ -176,19 +171,19 @@ msgstr "(neèitateµné)"
 
 #: pfilemenu.C:752
 msgid "Shared:"
-msgstr ""
+msgstr "Zdieµané:"
 
 #: pfilemenu.C:754
 msgid "Entries shared among all users"
-msgstr ""
+msgstr "Polo¾ky zdielané medzi v¹etkými u¾ívateµmi"
 
 #: pfilemenu.C:773
 msgid "Personal:"
-msgstr ""
+msgstr "Osobné:"
 
 #: pfilemenu.C:775
 msgid "Personal entries"
-msgstr ""
+msgstr "Osobné polo¾ky"
 
 #: pfilemenu.C:793
 msgid "Recent:"
@@ -196,19 +191,12 @@ msgstr "Nedávne:"
 
 #: pfilemenu.C:795
 msgid "Recent entries"
-msgstr ""
+msgstr "Nedávne polo¾ky"
 
 #: pfilemenu.C:841
 msgid "Options..."
 msgstr "Vlastnosti..."
 
 #: pfilemenu.C:843
-#, fuzzy
 msgid "Customize Disk Navigator"
-msgstr "Navigátor disku"
-
-#~ msgid "Global:"
-#~ msgstr "Globálne:"
-
-#~ msgid "Local:"
-#~ msgstr "Lokálne:"
+msgstr "Vlastnosti navigátoru disku"
