@@ -28,7 +28,7 @@
 
 KRootWidget* KRootWidget::pKRootWidget = 0L;
 
-KRootWidget::KRootWidget( QWidget *parent=0, const char *name=0 ) : QWidget( parent, name )
+KRootWidget::KRootWidget( QWidget *parent, const char *name ) : QWidget( parent, name )
 {
     KConfig *config = KApplication::getKApplication()->getConfig();
 

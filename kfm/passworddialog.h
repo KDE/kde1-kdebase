@@ -8,6 +8,9 @@
 #ifndef MRQPASSWD_H
 #define MRQPASSWD_H
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
 
 #include <qdialog.h>
 #include <qlined.h>

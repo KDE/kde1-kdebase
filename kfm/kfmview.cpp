@@ -101,7 +101,7 @@ KfmView::~KfmView()
     // debugT("Deleted\n");
 }
 
-void KfmView::begin( const char *_url = 0L, int _x_offset = 0, int _y_offset = 0 )
+void KfmView::begin( const char *_url, int _x_offset, int _y_offset )
 {
     // Delete all frames in this view
     childViewList.clear();

@@ -802,7 +802,7 @@ void KIOJob::del()
 	    struct stat buff;
 	    stat( su.path(), &buff );
 	    struct stat lbuff;
-	    lstat( su.path(), &buff );
+	    lstat( su.path(), &lbuff );
 
 	    if ( S_ISLNK( lbuff.st_mode ) )
 	    {

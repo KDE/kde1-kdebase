@@ -104,10 +104,6 @@ void KMsgWin::initMe(const char *caption, const char *message,
 }
 
 
-KMsgWin::~KMsgWin()
-{
-}
-
 void KMsgWin::resizeEvent( QResizeEvent * )
 {
     /*

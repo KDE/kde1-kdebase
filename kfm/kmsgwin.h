@@ -16,7 +16,7 @@
 
 class KMsgWin : public QWidget
 {
-    Q_OBJECT;
+    Q_OBJECT
 public:
 
     enum {INFORMATION = 1, EXCLAMATION = 2, STOP = 4, QUESTION = 8};
@@ -53,7 +53,7 @@ protected:
 
     void        initMe(const char *caption, const char *message, const char *b1text,
                        const char *b2text, const char *b3text, const char *b4text,
-                       const QPixmap & icon = 0);
+                       const QPixmap & icon = QPixmap());
 
 public slots:
     void b1Pressed();

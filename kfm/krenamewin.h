@@ -12,7 +12,7 @@
 
 class KRenameWin : public QDialog
 {
-    Q_OBJECT;
+    Q_OBJECT
 public:
     
     KRenameWin( QWidget *parent, const char *_src, const char *_dest, bool _modal = FALSE );

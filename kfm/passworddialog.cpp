@@ -17,8 +17,8 @@
 #include <klocale.h>
 #include <kapp.h>
 
-PasswordDialog::PasswordDialog(const char *head, QWidget* parent, const char* name, bool modal, WFlags f)
-   : QDialog(parent, name, modal, f)
+PasswordDialog::PasswordDialog(const char *head, QWidget* parent, const char* name, bool modal, WFlags wflags)
+   : QDialog(parent, name, modal, wflags)
 {
     debugT("Here we go!!\n");
     

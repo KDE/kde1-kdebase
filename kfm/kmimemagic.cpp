@@ -25,12 +25,16 @@
 /*
  * data structures and related constants
  */
+// Stephan: the CC doesn't support such macros
+/*
 #define MIME_MAGIC_DEBUG  0
 #if MIME_MAGIC_DEBUG
 #define debug(fmt, args...)  debugT(fmt "\n" , ## args)
 #else
 #define debug(fmt, args...)
 #endif
+*/
+#define debug debugT
 
 #define DECLINED 999
 #define ERROR    998
