@@ -142,7 +142,7 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      // a resonal height that observes a proportional aspect.
      // -- Bernd
      int leheight;
-     leheight = QMAX( 35,loginEdit->sizeHint().height());
+     leheight = QMAX( 32,loginEdit->sizeHint().height());
      loginEdit->setFixedHeight( leheight);
      loginEdit->setFocus();
 
@@ -151,7 +151,7 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      passwdEdit = new QLineEdit( this);
 
      int pweheight;
-     pweheight = QMAX( 35,passwdEdit->sizeHint().height());
+     pweheight = QMAX( 32,passwdEdit->sizeHint().height());
      passwdEdit->setFixedHeight( pweheight);
 
      passwdEdit->setEchoMode( QLineEdit::NoEcho);
