@@ -32,3 +32,6 @@
 	replaced --enable-kscreensaver by --disable-kscreensaver
 	updated kpanel to 0.15
 	some bugfixes (thanks Marco)
+	some bugfixes (thanks Martin)
+	changed acinclude.m4, because aclocal won't
+	update kwm to 0.4.8 (patched it again for Qt-1.2)
