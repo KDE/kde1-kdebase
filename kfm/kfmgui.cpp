@@ -752,11 +752,11 @@ void KfmGui::slotURLEntered()
         else if ( url.find ( QRegExp ( "^~.*" ) ) == 0 )
         {
             int length = url.length();
-            if ( length == 1 )
+            int index = url.find ( "/" );
+            if ( length == 1 || index == 1 )
                 url.replace ( 0, 1, QDir::homeDirPath().data() );
-            else if ( length > 1 )
+            else
             {
-              int index = url.find ( "/" );
               struct passwd *dir = ((index == -1) ? getpwnam(url.mid(1,length).data()) : getpwnam( url.mid(1,index-1).data()));
                if ( !dir ) return; // unkown user
               (index == -1) ? url.replace (0, length,  dir->pw_dir) : url.replace (0, index, dir->pw_dir);
