@@ -26,9 +26,8 @@ msgid "&Rename ..."
 msgstr "&Premenova»..."
 
 #: backgnd.cpp:184
-#, fuzzy
 msgid "&Common Background"
-msgstr "&Pozadie"
+msgstr "&Be¾né pozadie"
 
 #: backgnd.cpp:213 colorscm.cpp:94
 msgid "Colors"
@@ -36,11 +35,11 @@ msgstr "Farby"
 
 #: backgnd.cpp:240
 msgid "&One Color"
-msgstr "Jednofarebné"
+msgstr "&Jednofarebné"
 
 #: backgnd.cpp:257
 msgid "&Two Color"
-msgstr "Dvojfarebné"
+msgstr "&Dvojfarebné"
 
 #: backgnd.cpp:276
 msgid "Set&up ..."
@@ -60,94 +59,86 @@ msgid "&Browse..."
 msgstr "&Nalistova»..."
 
 #: backgnd.cpp:333
-#, fuzzy
 msgid "Tiled"
-msgstr "Vydlá¾dená"
+msgstr "Vydlá¾dené"
 
 #: backgnd.cpp:334
 msgid "Mirrored"
-msgstr ""
+msgstr "Zrkadlené"
 
 #: backgnd.cpp:335
-#, fuzzy
 msgid "Center Tiled"
-msgstr "Centrovaná"
+msgstr "Centrovane vydlá¾dené"
 
 #: backgnd.cpp:336
-#, fuzzy
 msgid "Centred"
-msgstr "Centrovaná"
+msgstr "Centrované"
 
 #: backgnd.cpp:337
-#, fuzzy
 msgid "Centred Brick"
-msgstr "Centrovaná"
+msgstr "Centrovaná tehla"
 
 #: backgnd.cpp:338
-#, fuzzy
 msgid "Centred Warp"
-msgstr "Centrovaná"
+msgstr "Centrovaný warp"
 
 #: backgnd.cpp:339
-#, fuzzy
 msgid "Centred Maxpect"
-msgstr "Centrovaná"
+msgstr "Centrovaný maxpect"
 
 #: backgnd.cpp:340
 msgid "Symmetrical Tiled"
-msgstr ""
+msgstr "Symetricky vydlá¾dené"
 
 #: backgnd.cpp:341
 msgid "Symmetrical Mirrored"
-msgstr ""
+msgstr "Symetricky zrkadlené"
 
 #: backgnd.cpp:342
-#, fuzzy
 msgid "Scaled"
-msgstr "©kálovaná"
+msgstr "©kálované"
 
 #: backgnd.cpp:354
 msgid "Ra&ndom"
-msgstr ""
+msgstr "&Náhodné"
 
 #: backgnd.cpp:363
-#, fuzzy
 msgid "Setu&p..."
 msgstr "Nastavi».."
 
 #: backgnd.cpp:371
 msgid "&Dock into the panel"
-msgstr ""
+msgstr "&Vsunú» sa do panelu"
 
 #: backgnd.cpp:381
 msgid "Cache size"
-msgstr ""
+msgstr "Veµkos» ke¹e"
 
 #: backgnd.cpp:399
 msgid "kb"
-msgstr ""
+msgstr "kb"
 
 #: backgnd.cpp:1264
 msgid "Desktop names"
 msgstr "Názvy plôch"
 
 #: backgnd.cpp:1309
-#, fuzzy
 msgid "File error"
-msgstr "Chyba pri pomenovávaní"
+msgstr "Chyba súboru"
 
 #: backgnd.cpp:1310
 msgid "Can't load image file"
-msgstr ""
+msgstr "Nemô¾em nahra» obrázok"
 
 #: backgnd.cpp:1333 backgnd.cpp:1803
 msgid "Unsupported URL"
-msgstr ""
+msgstr "Nepodporované URL"
 
 #: backgnd.cpp:1334 backgnd.cpp:1804
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
+"Prepáète, ale tento typ URL nie je momentálne podporovaný KDE Display modulom"
 
 #: backgnd.cpp:1365
 msgid "Two color backgrounds"
@@ -203,44 +194,39 @@ msgstr "Cobbled Pavement"
 
 #: backgnd.cpp:1632
 msgid "Random mode setup"
-msgstr ""
+msgstr "Nastavenie náhodného re¾imu"
 
 #: backgnd.cpp:1638
 msgid "Pick files from &directory"
-msgstr ""
+msgstr "Zvoli» súbory z &prieèinku"
 
 #: backgnd.cpp:1652
-#, fuzzy
 msgid "&Browse ..."
 msgstr "&Nalistova»..."
 
 #: backgnd.cpp:1673
 msgid "Timer Delay in seconds :"
-msgstr ""
+msgstr "Pauza èasovaèa v sekundách:"
 
 #: backgnd.cpp:1685
-#, fuzzy
 msgid "In &order"
-msgstr "Ignorova»"
+msgstr "V p&oradí"
 
 #: backgnd.cpp:1702
-#, fuzzy
 msgid "Desktops :"
-msgstr "Pracovná plocha"
+msgstr "Plochy :"
 
 #: backgnd.cpp:1740
-#, fuzzy
 msgid "&Add"
-msgstr "&Prida»..."
+msgstr "&Prida»"
 
 #: backgnd.cpp:1910
-#, fuzzy
 msgid "Directory error"
-msgstr "Chyba pri pomenovávaní"
+msgstr "Chyba prieèinku"
 
 #: backgnd.cpp:1911
 msgid "Selected directory doesn't exists"
-msgstr ""
+msgstr "Zvolený prieèinok neexistuje"
 
 #: colorscm.cpp:120
 msgid "Color Scheme"
@@ -461,9 +447,8 @@ msgid "Fixed font"
 msgstr "Písmo s fixnou ¹írkou"
 
 #: general.cpp:278
-#, fuzzy
 msgid "Window title font"
-msgstr "Text v okne"
+msgstr "Písmo titulku okna"
 
 #: general.cpp:283
 msgid "Panel button font"
@@ -555,6 +540,3 @@ msgstr "¹tandardné"
 msgid "any"
 msgstr "µubovoµné"
 
-#, fuzzy
-#~ msgid "One Des&ktop"
-#~ msgstr "Pracovná plocha"
