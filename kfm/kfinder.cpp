@@ -356,7 +356,7 @@ void KFinderWin::mousePressEvent( QMouseEvent *_ev )
     if ( row == -1 )
 	return;
 
-    QPoint p( _ev->pos().x() - xOffset(), _ev->pos().y() );
+    QPoint p( _ev->pos().x() + xOffset(), _ev->pos().y() );
     QPoint p2( mapToGlobal( _ev->pos() ) );
     QMouseEvent ev( Event_MouseButtonPress, p, _ev->button(), _ev->state() );
     
