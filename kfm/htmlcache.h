@@ -60,7 +60,7 @@ protected:
  * Every KFileView instance for example has an instance of this class. You can
  * tell this class to download pages/images from the web and cache them on the
  * local disk. Its signal/slot interface fits the one KHTMLWidget uses.
- * The cached files are stored in 'cachePath' which is usually "$HOME/.kfm/cache".
+ * The cached files are stored in 'cachePath'.
  * If two instances request the same page it is only loaded once. So a job running
  * in one instance of HTMLCache may server several KHTMLWidgets. This means that the
  * design of this class is somewhat wired.
@@ -71,7 +71,7 @@ class HTMLCache : public QObject
 public:
     /**
      * Creates an interface for the cache.
-     * The real cache lives in the static variables and memeber functions. But every
+     * The real cache lives in the static variables and member functions. But every
      * KHTMLWidget must create an instance of this class to use the signal/slot mechanism.
      */
     HTMLCache();

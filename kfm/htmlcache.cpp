@@ -332,7 +332,14 @@ void HTMLCache::load()
     warning("Could not scan %s", KFMPaths::CachePath().data() );
     return;
   }
-    
+
+  QFileInfo finfo(KFMPaths::CachePath().data());
+  if (finfo.isSymLink() || !finfo.isDir()) {
+      QMessageBox::warning( 0L, i18n("KFM Error"), KFMPaths::CachePath()+i18n(
+          " is not a directory ! Security Alert !\nPlease check it.\n"));
+      return;
+  }
+  
   while ( ( ep = readdir( dp ) ) != 0L )
   {
     if ( strcmp( ep->d_name, "." ) != 0L && strcmp( ep->d_name, ".." ) != 0L )
