@@ -16,6 +16,7 @@
 #include <qlined.h>
 #include <qscrbar.h>
 #include <qlabel.h>
+#include <qcursor.h>
 
 #include <kfm.h>
 
@@ -28,6 +29,7 @@
 #include "man.h"
 #include "options.h"
 #include "history.h"
+#include "finddlg.h"
 
 // accelerator IDs
 #define NEW			100
@@ -35,7 +37,7 @@
 #define QUIT			102
 #define COPY			200
 
-#define KDEHELP_VERSION		"0.5.6"
+#define KDEHELP_VERSION		"0.6"
 
 #define STATUSBAR_HEIGHT	20
 #define SCROLLBAR_WIDTH		16
@@ -139,6 +141,9 @@ public slots:
 	void	slotPrint();
 
 	void	slotCopy();
+	void	slotFind();
+	void	slotFindNext();
+	void	slotFindNext( const QRegExp & );
 	void	slotBack();
 	void	slotForward();
 	void	slotDir();
@@ -158,8 +163,6 @@ public slots:
 	void	slotFormSubmitted( const char *, const char *, const char * );
 	void	slotPopupMenu( const char *, const QPoint & );
 	void	slotDropEvent( KDNDDropZone * );
-//	void	slotImageRequest( const char * );
-	void	slotRemoteDone();
 	void	slotCGIDone();
 	void	slotScrollVert( int _y );
 	void	slotScrollHorz( int _y );
@@ -189,7 +192,6 @@ private:
 	int 	formatInfo( int bodyOnly = FALSE );
 	int	formatMan( int bodyOnly = FALSE );
 	int 	openHTML( const char *location );
-	int	openRemote( const char *_url );
 	int	runCGI( const char *_url );
 	FileType detectFileType( const QString &filename );
 	void	convertSpecial( const char *buffer, QString &converted );
@@ -209,9 +211,8 @@ private:
 	KHelpView *view;
 	KDNDDropZone *dropZone;
 	KOpenURLDialog *openURLDialog;
+	KFindTextDialog *findDialog;
 
-	KFM *remotePage;
-	QString remoteFile;
 	QString localFile;
 
 	KCGI *CGIServer;
@@ -243,6 +244,8 @@ private:
 
 	// busy parsing
 	bool busy;
+
+	QCursor oldCursor;
 
 	cHistory<KPageInfo> history;
 	cHTMLFormat html;

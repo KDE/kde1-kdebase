@@ -106,8 +106,6 @@ bool KCGI::runScript()
 			setenv( "QUERY_STRING", query.data(), TRUE );
 		setenv( "PATH_INFO", pathInfo.data(), TRUE );
 
-//		printf( "Running: %s\n", command.data() );
-
 		FILE *fp = popen( command, "w" );
 
 		if ( fp == NULL )

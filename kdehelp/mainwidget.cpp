@@ -146,6 +146,8 @@ void KHelpMain::createMenu()
 	editMenu = new QPopupMenu;
 	CHECK_PTR( editMenu );
 	idCopy = editMenu->insertItem(klocale->translate("&Copy"), helpwin, SLOT(slotCopy()), CTRL+Key_C );
+	editMenu->insertItem(klocale->translate("&Find..."), helpwin, SLOT(slotFind()), CTRL+Key_F );
+	editMenu->insertItem(klocale->translate("Find &next"), helpwin, SLOT(slotFindNext()), Key_F3 );
 
 	gotoMenu = new QPopupMenu;
 	CHECK_PTR( gotoMenu );

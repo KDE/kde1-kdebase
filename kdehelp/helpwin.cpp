@@ -16,12 +16,14 @@
 #include <qlayout.h>
 #include <qclipbrd.h>
 #include <qbitmap.h>
+#include <qregexp.h>
 #include <kapp.h>
 #include <kconfig.h>
 #include <kurl.h>
 #include <kfm.h>
 #include <klocale.h>
 #include <kfiledialog.h>
+#include <kmsgbox.h>
 #include "cgi.h"
 #include "kbutton.h"
 #include "helpwin.h"
@@ -127,12 +129,12 @@ QColor KHelpWindow::vLinkColor;
 KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	: QWidget( parent, name ), history(50), format(&html)
 {
-	openURLDialog = NULL;
-	remotePage = NULL;
-	CGIServer = NULL;
+	openURLDialog = 0;
+	CGIServer = 0;
 	busy = false;
 	scrollTo = 0;
-	rmbPopup = NULL;
+	rmbPopup = 0;
+	findDialog = 0;
 
 	DOCS_PATH = kapp->kde_htmldir() + "/default/kdehelp/";
 
@@ -196,8 +198,6 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 			SLOT( slotViewResized( const QSize & ) ) );
 	connect( view, SIGNAL( textSelected( bool ) ), 
 			SLOT( slotTextSelected( bool ) ) );
-//	connect( view, SIGNAL( imageRequest( const char * ) ), 
-//			SLOT( slotImageRequest( const char * ) ) );
 
 	connect( vert, SIGNAL(valueChanged(int)), view, SLOT(slotScrollVert(int)) );
 	connect( horz, SIGNAL(valueChanged(int)), view, SLOT(slotScrollHorz(int)) );
@@ -261,6 +261,15 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 
 	scrollTo = 0;
 	ref = "";
+
+	if ( busy )
+		view->setCursor( oldCursor );
+
+	if ( CGIServer )
+	{
+		delete CGIServer;
+		CGIServer = 0;
+	}
 
 	if ( !URL )
 		return 1;
@@ -333,8 +342,8 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 
 	strcpy( location, colon+1 );
 
-	QCursor oldCursor = cursor();
-	setCursor( waitCursor );
+	oldCursor = view->cursor();
+	view->setCursor( waitCursor );
 
 	if ( fullURL.find( "file:" ) >= 0 )
 	{
@@ -367,14 +376,10 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 			formatMan();
 	}
 	else if ( fullURL.find( "http:" ) >= 0 )
-	{// until http in kdehelp works properly, let kfm handle it.
+	{
 		KFM *kfm = new KFM;
 		kfm->openURL( fullURL );
 		delete kfm;
-/*
-		rv = openRemote( fullURL );
-		isRemote = true;
-*/
 	}
 	else if ( fullURL.find( "ftp:" ) >= 0 )
 	{
@@ -414,10 +419,11 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 			horz->setValue( 0 );
 			emit setURL( currentURL );
 			emit setLocation( currentURL ); 
+			view->setCursor( oldCursor );
 		}
 	}
-
-	setCursor( oldCursor );
+	else
+	    view->setCursor( oldCursor );
 
 	return rv;
 }
@@ -659,11 +665,7 @@ int KHelpWindow::formatMan( int bodyOnly )
 	{
 		if ( inDir && curr->type != MAN_DIR )
 		{
-#if KHTMLW_VERSION > 800
 			view->write( "</grid><pre>" );
-#else
-			view->write( "</grid>" );
-#endif
 			inDir = FALSE;
 		}
 
@@ -712,22 +714,16 @@ int KHelpWindow::formatMan( int bodyOnly )
 			case MAN_DIR:
 				if ( !inDir )
 				{
-#if KHTMLW_VERSION > 800
 					view->write( "</pre>" );
-#endif
 					view->write( "<grid width=" );
 					view->write( gridWidth );
 					view->write( " align=left>" );
 					inDir = TRUE;
 				}
 
-#if KHTMLW_VERSION > 800
 				view->write( "<cell width=" );
 				view->write( gridWidth );
 				view->write( " align=left><pre>" );
-#else
-				view->write( "<cell>" );
-#endif
 				view->write( "<a href=\"man:" );
 				view->write( ((cManDir *)curr)->page );
 				view->write( "\">" );
@@ -741,11 +737,7 @@ int KHelpWindow::formatMan( int bodyOnly )
 					convertSpecial( ((cManDir *)curr)->desc, converted );
 					view->write( converted );
 				}
-#if KHTMLW_VERSION > 800
 				view->write( "</pre></cell>" );
-#else
-				view->write( "</cell>" );
-#endif
 				break;
 
 			case MAN_XREF:
@@ -809,51 +801,6 @@ int KHelpWindow::openHTML( const char *location )
 
 	return 0;
 }
-
-
-// initiate a remote transfer
-int KHelpWindow::openRemote( const char *_url )
-{
-	remoteFile = _url;
-	remoteFile.detach();
-	KURL u( remoteFile.data() );
-	if ( u.isMalformed() )
-	{
-		QMessageBox::message( klocale->translate("Error"), 
-				      klocale->translate("Malformed URL"), 
-				      klocale->translate("OK") );
-		return 1;
-	}
-
-	if ( remotePage != NULL )
-	{
-		delete remotePage;
-		KURL u( localFile );
-		unlink( u.path() );
-	}
-
-	remotePage = new KFM;
-
-	if ( !remotePage->isOK() )
-	{
-		QMessageBox::message (klocale->translate("Error"), 
-				      klocale->translate("Could not start or find KFM"), 
-				      klocale->translate("OK"));
-		delete remotePage;
-		remotePage = NULL;
-		return 1;
-	}
-
-	char filename[20] = _PATH_TMP"kdehelpXXXXXX";
-	mktemp( filename );
-	localFile.sprintf( "file:%s", filename );
-
-	connect( remotePage, SIGNAL( finished() ), this, SLOT( slotRemoteDone() ) );
-	remotePage->copy( remoteFile.data(), localFile.data() );
-
-	return 0;
-}
-
 
 int KHelpWindow::runCGI( const char *_url )
 {
@@ -1103,6 +1050,57 @@ void KHelpWindow::slotCopy()
 	cb->setText( text );
 }
 
+void KHelpWindow::slotFind()
+{
+    // if we haven't already created a find dialog then do it now
+    if ( !findDialog )
+    {
+	findDialog = new KFindTextDialog();
+	connect( findDialog, SIGNAL( find( const QRegExp & ) ),
+			     SLOT( slotFindNext( const QRegExp & ) ) );
+    }
+
+    // reset the find iterator
+    view->findTextBegin();
+
+    findDialog->show();
+}
+
+void KHelpWindow::slotFindNext()
+{
+    if ( findDialog )
+    {
+	// We have a find dialog, so use the reg exp it maintains.
+	slotFindNext( findDialog->regExp() );
+    }
+    else
+    {
+	// no find has been attempted yet - open the find dialog.
+	slotFind();
+    }
+}
+
+void KHelpWindow::slotFindNext( const QRegExp &regExp )
+{
+    if ( !view->findTextNext( regExp ) )
+    {
+	// We've reached the end of the document.
+	// Can either stop searching and close the find dialog,
+	// or start again from the top.
+	if ( KMsgBox::yesNo( this, i18n( "Find Complete" ),
+	    i18n( "Continue search from the top of the page?" ),
+	    KMsgBox::DB_SECOND | KMsgBox::QUESTION ) == 1 )
+	{
+	    view->findTextBegin();
+	    slotFindNext( regExp );
+	}
+	else
+	{
+	    view->findTextEnd();
+	    findDialog->hide();
+	}
+    }
+}
 
 void KHelpWindow::slotBack()
 {
@@ -1229,20 +1227,13 @@ void KHelpWindow::slotStopProcessing()
 	if ( !busy )
 		return;
 
-	if ( remotePage )
-	{
-		delete remotePage;
-		KURL u( localFile );
-		unlink( u.path() );
-		remotePage = NULL;
-	}
-
 	if ( CGIServer )
 	{
 		delete CGIServer;
 		KURL u( localFile );
 		unlink( u.path() );
 		CGIServer = NULL;
+		view->setCursor( oldCursor );
 	}
 
 	view->stopParser();
@@ -1250,8 +1241,6 @@ void KHelpWindow::slotStopProcessing()
 	busy = false;
 	emit enableMenuItems();
 }
-
-
 
 void KHelpWindow::slotSetTitle( const char *_title )
 {
@@ -1353,46 +1342,9 @@ void KHelpWindow::slotDropEvent( KDNDDropZone *zone )
 		openURL( kurl.url() );
 }
 
-/*
-void KHelpWindow::slotImageRequest( const char * _url )
-{
-	remoteFile = _url;
-	remoteFile.detach();
-	KURL u( remoteFile.data() );
-	if ( u.isMalformed() )
-	{
-		QMessageBox::message( "Error", "Malformed URL", "OK" );
-		return 1;
-	}
-
-	QString file;
-	file.sprintf( "file:"_PATH_TMP"kdehelpXXXXXX" );
-	mktemp( file.data() );
-
-	RemoteImage *img = new RemoteImage( _url, file );
-	remoteImage.append( img );
-
-	connect( img, SIGNAL( finished() ), this, SLOT( slotRemoteImageDone() ) );
-	img->copy( remoteFile.data(), file.data() );
-}
-*/
-
-void KHelpWindow::slotRemoteDone()
-{
-	KURL u( localFile.data() );
-	openFile( u.path() );
-	emit setURL( currentURL );
-	emit setLocation( currentURL );
-
-	delete remotePage;
-	remotePage = NULL;
-
-	unlink( u.path() );
-}
-
-
 void KHelpWindow::slotCGIDone()
 {
+	view->setCursor( oldCursor );
 	KURL u( localFile );
 	if ( !openFile( u.path() ) )
 		view->parse();
@@ -1400,7 +1352,7 @@ void KHelpWindow::slotCGIDone()
 	emit setLocation( currentURL ); 
 
 	delete CGIServer;
-	CGIServer = NULL;
+	CGIServer = 0;
 
 	unlink( u.path() );
 }

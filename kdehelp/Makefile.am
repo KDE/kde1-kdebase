@@ -8,13 +8,14 @@ SUBDIRS = search index
 bin_PROGRAMS = kdehelp
 kdehelp_SOURCES =  main.cpp helpwin.cpp info.cpp error.cpp misc.cpp options.cpp\
 		man.cpp bookmark.cpp cgi.cpp mainwidget.cpp history.cpp\
-		booktoken.cpp
-BUILT_SOURCES = helpwin.moc options.moc bookmark.moc cgi.moc mainwidget.moc
+		booktoken.cpp finddlg.cpp
+BUILT_SOURCES = helpwin.moc options.moc bookmark.moc cgi.moc mainwidget.moc\
+		finddlg.moc
 DISTCLEANFILES = $(BUILT_SOURCES)
 
 noinst_HEADERS = helpwin.h info.h error.h misc.h man.h options.h\
 		bookmark.h dbnew.cpp cgi.h mainwidget.h history.h\
-		booktoken.h fmthtml.h fmtbase.h dbnew.h khelp.h
+		booktoken.h fmthtml.h fmtbase.h dbnew.h khelp.h finddlg.h
 
 EXTRA_DIST = kdehelp.xpm mini-kdehelp.xpm
 
@@ -23,6 +24,7 @@ options.cpp: options.moc
 bookmark.cpp: bookmark.moc
 cgi.cpp: cgi.moc
 mainwidget.cpp: mainwidget.moc
+finddlg.cpp: finddlg.moc
 
 ########## Meta objects ##########
 
@@ -40,6 +42,9 @@ cgi.moc: cgi.h
 
 mainwidget.moc: mainwidget.h
 	$(MOC) mainwidget.h -o mainwidget.moc
+
+finddlg.moc: finddlg.h
+	$(MOC) finddlg.h -o finddlg.moc
 
 install-data-local:
 	$(mkinstalldirs) $(kde_minidir)
