@@ -1,6 +1,6 @@
 
 # This has to be set. The rest should be reusable
-GMOFILES = kfind.gmo kfm.gmo kdm.gmo kdisplay.gmo kdehelp.gmo
+GMOFILES = kfind.gmo kfm.gmo kdm.gmo kcmdisplay.gmo kdehelp.gmo
 
 POFILES = $(GMOFILES:.gmo=.po)
 

@@ -1,6 +1,6 @@
 
 # This has to be set. The rest should be reusable
-GMOFILES = kfm.gmo kdehelp.gmo kdisplay.gmo kdm.gmo kfind.gmo \
+GMOFILES = kfm.gmo kdehelp.gmo kcmdisplay.gmo kdm.gmo kfind.gmo \
 	kfontmanager.gmo klock.gmo kpanel.gmo \
 	kvt.gmo kwm.gmo kcminfo.gmo kcminput.gmo kcmkwm.gmo kcmkpanel.gmo \
 	kcmsamba.gmo kcmsample.gmo kcontrol.gmo kdmconfig.gmo krootwm.gmo \
