@@ -6,10 +6,11 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:48:52 1997
 // Last Modified By : Hans Petter Bieker
-// Last Modified On : Wed Sep  2 20:41:59 CEST 1998
-// Update Count     : 154
+// Last Modified On : Thu Sep  3 18:34:26 CEST 1998
+// Update Count     : 155
 // Status           : Unknown, Use with caution!
 // 
+
 
 #include "kgreeter.h"
 #include <qmsgbox.h>
@@ -493,7 +494,7 @@ KGreeter::restrict_expired(){
 
      warntime = DEFAULT_WARN;
 
-     if (swd->sp_expire > 0)
+     if (swd->sp_expire != -1)
 	 if (swd->sp_expire*ONEDAY <= time(NULL)) {
 	     QMessageBox::critical(NULL, i18n("Expired"),
 				   i18n("Sorry -- your account has expired."),
