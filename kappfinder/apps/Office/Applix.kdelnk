@@ -1,0 +1,35 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=Applix
+Name[ru]=ApplixWare
+MiniIcon=
+Protocols=
+MimeType=
+Exec=applix
+Icon=applix.xpm
+TerminalOptions=
+Path=
+DocPath=
+Type=Application
+Terminal=0
+Comment=ApplixWare Office Suite
+Comment[ca]=Aplicació d'oficina d'ApplixWare
+Comment[cs]=Kanceláøský balík Applixware
+Comment[da]=ApplixWare kontorpakken
+Comment[de]=ApplixWare Office
+Comment[es]=Suite de Oficina ApplixWare
+Comment[fi]=Applixware toimisto-ohjelmisto
+Comment[fr]=Suite bureautique ApplixWare
+Comment[is]=ApplixWare vöndullinn
+Comment[it]=Ambiente Ufficio ApplixWare
+Comment[no]=ApplixWare-kontorpakken
+Comment[pl]=Pakiet biurowy ApplixWare
+Comment[pt]=Pacote de escritório ApplixWare
+Comment[pt_BR]=Pacote ApplixWare
+Comment[ro]=Suita de Aplicaþii ApplixWare
+Comment[ru]=îÁÂÏÒ ÄÌÑ ÏÆÉÓÁ ApplixWare
+Comment[sk]=Kancelársky balík Applixware
+Comment[sl]=Pisarni¹ki paket ApplixWare
+Comment[sv]=ApplixWare officepaket

@@ -1,0 +1,22 @@
+# KDE Config File
+[KDE Desktop Entry]
+MiniIcon=folder_blue.xpm
+Comment=KDE Installation Folder
+Comment[ca]=Carpeta d'instal·lació KDE
+Comment[cs]=Instalaèní adresáø KDE
+Comment[da]=KDE installationsfolder
+Comment[es]=Carpeta de instalación de KDE
+Comment[fi]=KDE:n asennuskansio
+Comment[fr]=Répertoire d'Installation de KDE
+Comment[is]=KDE uppsetningarmappa
+Comment[it]=Cartella di installazione KDE
+Comment[no]=KDE Installasjonsmappe
+Comment[pt_BR]=Pasta de Instalação do KDE
+Comment[ro]=Directorul unde este instalat KDE
+Comment[ru]=ğÁĞËÁ, ÇÄÅ ÕÓÔÁÎÏ×ÌÅÎ KDE
+Comment[sk]=In¹talaènı prieèinok KDE
+Comment[sl]=Namestitveni imenik za KDE
+Comment[sv]=KDE:s installationskatalog
+URL=file:$KDEDIR
+Icon=folder_blue.xpm
+Type=Link

@@ -1,0 +1,36 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+MiniIcon=
+Protocols=
+MimeType=
+Comment=The lyx text processor
+Comment[ca]=El processador de textos Lyx
+Comment[cs]=Textov˝ procesor LyX
+Comment[da]=Lyx tekstbehandleren
+Comment[de]=Das LyX Textprogramm
+Comment[es]=Procesador de textos LyX
+Comment[fi]=Lyx tekstink‰sittelyohjelma
+Comment[fr]=Editeur de textes LyX (basÈ sur LaTeX)
+Comment[is]=Lyx ritvinnsluforriti
+Comment[it]=Il manipolatore di testi Lyx
+Comment[no]=LyX-tekstbehandleren
+Comment[pl]=Edytor tekstu LyX
+Comment[pt]=Processador de textos lyx
+Comment[pt_BR]=Processador de textos LyX
+Comment[ro]=Procesorul de texte LyX
+Comment[ru]=Ù≈À”‘œ◊Ÿ  –“œ√≈””œ“ LyX
+Comment[sk]=Textov˝ procesor LyX
+Comment[sl]=Urejevalnik LyX
+Comment[sv]=Lyx latexeditor
+Name=Lyx
+Name[cs]=LyX
+Name[ru]=LyX
+Name[sl]=LyX
+Exec=lyx
+Icon=lyx.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

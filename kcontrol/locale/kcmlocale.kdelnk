@@ -1,0 +1,568 @@
+[KCM Locale]
+Languages=C,br,ca,cs,da,de,el,en,en_UK,eo,es,fi,fr,he,hr,hu,is,it,ko,mk,nl,no,pl,pt,pt_BR,ro,ru,sk,sv,tr,zh_CN.GB2312,zh_TW.Big5,et
+
+[br]
+Name=Breton
+Name[ca]=Bretó
+Name[cs]=Bretoòskı
+Name[da]=Bretagnsk
+Name[es]=Bretón
+Name[it]=Bretone
+Name[no]=Bretangsk
+Name[pt_BR]=Bretão
+Name[ru]=âÒÅÔÏÎÓËÉÊ
+Name[sk]=Bretónsky
+Name[sl]=breton¹èina
+Name[sv]=Bretagniska
+
+[ca]
+Name=Catalan
+Name[ca]=Català
+Name[cs]=Katalánskı
+Name[da]=Katalansk
+Name[es]=Catalán
+Name[fi]=Katalonia
+Name[it]=Catalano
+Name[no]=Katalansk
+Name[pt_BR]=Catalão
+Name[ru]=ëÁÔÁÌÁÎÓËÉÊ
+Name[sk]=Katalánsky
+Name[sl]=katalon¹èina
+Name[sv]=Katalanska
+
+[ro]
+Name=Romanian
+Name[ca]=Romanès
+Name[cs]=Rumunskı
+Name[da]=Rumænsk
+Name[es]=Rumano
+Name[fi]=Romania
+Name[fr]=Roumain
+Name[is]=Rúmenskt
+Name[it]=Rumeno
+Name[no]=Rumensk
+Name[pt_BR]=Romano
+Name[ro]=Românesc
+Name[ru]=òÕÍÙÎÓËÉÊ
+Name[sk]=Rumunskı
+Name[sl]=romun¹èina
+Name[sv]=Rumänska
+
+[C]
+Name=Default language
+Name[ca]=Idioma per omissió
+Name[cs]=Implicitní jazyk
+Name[da]=Standard sprog
+Name[es]=Idioma por defecto
+Name[fi]=Oletuskieli
+Name[fr]=Langue par défaut
+Name[is]=Sjálfgefiğ túngumál
+Name[it]=Lingua predefinita
+Name[no]=Standardspråk
+Name[pt_BR]=Idioma padrão
+Name[ro]=Limbaj implicit
+Name[ru]=ñÚÙË ĞÏ ÕÍÏÌŞÁÎÉÀ
+Name[sk]=©tandardnı jazyk
+Name[sl]=privzeti jezik
+Name[sv]=Standardspråk
+
+[de]
+Name=German
+Name[ca]=Alemany
+Name[cs]=Nìmeckı
+Name[da]=Tysk
+Name[es]=Alemán
+Name[fi]=Saksa
+Name[fr]=Allemand
+Name[is]=Şıska
+Name[it]=Tedesco
+Name[no]=Tysk
+Name[pt_BR]=Alemão
+Name[ru]=îÅÍÅÃËÉÊ
+Name[sk]=Nemeckı
+Name[sl]=nem¹èina
+Name[sv]=Tyska
+
+[en_UK]
+Name=English - UK
+Name[ca]=Anglès - UK
+Name[cs]=Anglickı - UK
+Name[da]=Engelsk - UK
+Name[es]=Inglés - UK
+Name[fi]=Englanti - UK
+Name[fr]=Anglais - UK
+Name[is]=Enska - UK
+Name[it]=Inglese - UK
+Name[no]=Engelsk - UK
+Name[pt_BR]=Inglês - Reino Unido
+Name[ro]=Englez - Anglia
+Name[ru]=âÒÉÔÁÎÓËÉÊ áÎÇÌÉÊÓËÉÊ
+Name[sk]=Anglickı - UK
+Name[sl]=britanska angle¹èina
+Name[sv]=Engelska
+
+
+[en]
+Name=English - US
+Name[ca]=Anglès - US
+Name[cs]=Anglickı - US
+Name[da]=Engelsk - US
+Name[es]=Inglés - US
+Name[fi]=Englanti - US
+Name[fr]=Anglais - US
+Name[is]=Enska - USA
+Name[it]=Inglese - US
+Name[no]=Engelsk - US
+Name[pt_BR]=Inglês - EUA
+Name[ro]=Englez - SUA
+Name[ru]=áÍÅÒÉËÁÎÓËÉÊ ÁÎÇÌÉÊÓËÉÊ
+Name[sk]=Anglickı - US
+Name[sl]=ameri¹ka angle¹èina
+Name[sv]=Amerikansk engelska
+
+[fr]
+Name=French
+Name[ca]=Francès
+Name[cs]=Francouzskı
+Name[da]=Fransk
+Name[es]=Francés
+Name[fi]=Ranska
+Name[fr]=Français
+Name[is]=Franska
+Name[it]=Francese
+Name[no]=Fransk
+Name[pt_BR]=Francês
+Name[ro]=Francez
+Name[ru]=æÒÁÎÃÕÚÓËÉÊ
+Name[sk]=Francúzsky
+Name[sl]=franco¹èina
+Name[sv]=Franska
+
+[cs]
+Name=Czech
+Name[ca]=Txec
+Name[cs]=Èeskı
+Name[da]=Tjekkisk
+Name[es]=Checo
+Name[fi]=Tshekki
+Name[fr]=Tchèque
+Name[is]=Tékkneska
+Name[it]=Ceco
+Name[no]=Tjekkisk
+Name[pt_BR]=Tcheco
+Name[ro]=Cehoslovac
+Name[ru]=şÅÛÓËÉÊ
+Name[sk]=Èeskı
+Name[sl]=èe¹èina
+Name[sv]=Tjeckiska
+
+[is]
+Name=Icelandic
+Name[ca]=Islandès
+Name[cs]=Islandskı
+Name[da]=Islandsk
+Name[es]=Islandés
+Name[fi]=Islanti
+Name[fr]=Islandais
+Name[is]=Íslenska
+Name[it]=Islandese
+Name[no]=Islandsk
+Name[pt_BR]=Islândico
+Name[ro]=Islandez
+Name[ru]=éÓÌÁÎÄÓËÉÊ
+Name[sk]=Islandskı
+Name[sl]=island¹èina
+Name[sv]=Isländska
+
+[sv]
+Name=Swedish
+Name[ca]=Suec
+Name[cs]=©védskı
+Name[da]=Svensk
+Name[es]=Sueco
+Name[fi]=Ruotsi
+Name[fr]=Suédois
+Name[is]=Sænska
+Name[it]=Svedese
+Name[no]=Svensk
+Name[pt_BR]=Sueco
+Name[ro]=Suedez
+Name[ru]=û×ÅÄÓËÉÊ
+Name[sk]=©védsky
+Name[sl]=¹ved¹èina
+Name[sv]=Svenska
+
+[es]
+Name=Spanish
+Name[ca]=Espanyol
+Name[cs]=©panìlskı
+Name[da]=Spansk
+Name[es]=Español
+Name[fi]=Espanja
+Name[fr]=Espagnol
+Name[is]=Spænska
+Name[it]=Spagnolo
+Name[no]=Spansk
+Name[pt_BR]=Espanhol
+Name[ro]=Spaniol
+Name[ru]=éÓĞÁÎÓËÉÊ
+Name[sk]=©panielsky
+Name[sl]=¹pan¹èina
+Name[sv]=Spanska
+
+[ru]
+Name=Russian
+Name[ca]=Rus
+Name[cs]=Ruskı
+Name[da]=Russisk
+Name[es]=Ruso
+Name[fi]=Venäjä
+Name[fr]=Russe
+Name[is]=Rússneska
+Name[it]=Russo
+Name[no]=Russisk
+Name[pt_BR]=Russo
+Name[ro]=Rusesc
+Name[ru]=òÕÓÓËÉÊ
+Name[sk]=age=Ruskı
+Name[sl]=ru¹èina
+Name[sv]=Ryska
+
+[nl]
+Name=Dutch
+Name[ca]=Holandès
+Name[cs]=Holandskı
+Name[da]=Hollandsk
+Name[es]=Holandés
+Name[fi]=Hollanti
+Name[fr]=Hollandais
+Name[is]=Hollenska
+Name[it]=Olandese
+Name[no]=Nederlandsk
+Name[pt_BR]=Holandês
+Name[ro]=German
+Name[ru]=çÏÌÌÁÎÄÓËÉÊ
+Name[sk]=Holandskı
+Name[sl]=nizozem¹èina
+Name[sv]=Holländska
+
+[hu]
+Name=Hungarian
+Name[ca]=Hongarès
+Name[cs]=Maïarskı
+Name[da]=Ungarsk
+Name[es]=Húngaro
+Name[fi]=Unkari
+Name[fr]=Hongrois
+Name[is]=Ungverska
+Name[it]=Ungherese
+Name[no]=Ungarsk
+Name[pt_BR]=Húngaro
+Name[ro]=Unguresc
+Name[ru]=÷ÅÎÇÅÒÓËÉÊ
+Name[sk]=Maïarskı
+Name[sl]=mad¾ar¹èina
+Name[sv]=Ungerska
+
+[da]
+Name=Danish
+Name[ca]=Danès
+Name[cs]=Dánskı
+Name[da]=Dansk
+Name[es]=Danés
+Name[fi]=Tanska
+Name[fr]=Danois
+Name[is]=Danska
+Name[it]=Danese
+Name[no]=Dansk
+Name[ro]=Danez
+Name[ru]=äÁÔÓËÉÊ
+Name[sk]=Dánsky
+Name[sl]=dan¹èina
+Name[sv]=Danska
+
+[fi]
+Name=Finnish
+Name[ca]=Finlandès
+Name[cs]=Finskı
+Name[da]=Finsk
+Name[es]=Finlandés
+Name[fi]=Suomi
+Name[fr]=Finlandais
+Name[is]=Finnska
+Name[it]=Finlandese
+Name[no]=Finsk
+Name[pt_BR]=Finlandês
+Name[ro]=Finlandez
+Name[ru]=æÉÎÓËÉÊ
+Name[sk]=Fínsky
+Name[sl]=fin¹èina
+Name[sv]=Finska
+
+[it]
+Name=Italian
+Name[ca]=Italià
+Name[cs]=Italskı
+Name[da]=Italiensk
+Name[es]=Italiano
+Name[fi]=Italia
+Name[fr]=Italien
+Name[is]=Ítalska
+Name[it]=Italiano
+Name[no]=Italiensk
+Name[pt_BR]=Italiano
+Name[ru]=éÔÁÌØÑÎÓËÉÊ
+Name[sk]=Taliansky
+Name[sl]=italijan¹èina
+Name[sv]=Italienska
+
+[pt]
+Name=Portuguese
+Name[ca]=Portuguès
+Name[cs]=Portugalskı
+Name[da]=Portugisisk
+Name[es]=Portugués
+Name[fi]=Portugal
+Name[fr]=Portugais
+Name[is]=Portúgalska
+Name[it]=Portoghese
+Name[no]=Portugisisk
+Name[pt_BR]=Português
+Name[ro]=Portughez
+Name[ru]=ğÏÒÔÕÇÁÌØÓËÉÊ
+Name[sk]=Portugalskı
+Name[sl]=portugal¹èina
+Name[sv]=Portugisiska
+
+[pl]
+Name=Polish
+Name[ca]=Polonès
+Name[cs]=Polskı
+Name[da]=Polsk
+Name[es]=Polaco
+Name[fi]=Puola
+Name[fr]=Polonais
+Name[is]=Pólska
+Name[it]=Polacco
+Name[no]=Polsk
+Name[pt_BR]=Polonês
+Name[ro]=Polonez
+Name[ru]=ğÏÌØÓËÉÊ
+Name[sk]=Poµskı
+Name[sl]=polj¹èina
+Name[sv]=Polska
+
+[no]
+Name=Norwegian
+Name[ca]=Noruec
+Name[cs]=Norskı
+Name[da]=Norsk
+Name[es]=Noruego
+Name[fi]=Norja
+Name[fr]=Norvégien
+Name[is]=Norska
+Name[it]=Norvegese
+Name[no]=Norsk
+Name[pt_BR]=Norueguês
+Name[ro]=Norvegian
+Name[ru]=îÏÒ×ÅÖÓËÉÊ
+Name[sk]=Nórsky
+Name[sl]=norve¹èina
+Name[sv]=Norska
+
+[el]
+Name=Greek
+Name[ca]=Grec
+Name[cs]=Øeckı
+Name[da]=Græsk
+Name[es]=Griego
+Name[fi]=Kreikka
+Name[fr]=Grec
+Name[is]=Gríska
+Name[it]=Greco
+Name[no]=Gresk
+Name[pt_BR]=Grego
+Name[ro]=Grecesc
+Name[ru]=çÒÅŞÅÓËÉÊ
+Name[sk]=Grécky
+Name[sl]=gr¹èina
+Name[sv]=Grekiska
+
+[hr]
+Name=Croatian
+Name[ca]=Croata
+Name[cs]=Chorvatskı
+Name[da]=Kroatisk
+Name[es]=Croata
+Name[fi]=Kroatia
+Name[fr]=Croate
+Name[is]=Cróatíska
+Name[it]=Croato
+Name[no]=Kroatisk
+Name[pt_BR]=Croata
+Name[ro]=Croat
+Name[ru]=èÏÒ×ÁÔÓËÉÊ
+Name[sk]=Chorvátsky
+Name[sl]=hrva¹èina
+Name[sv]=Kroatiska
+
+[sk]
+Name=Slovak
+Name[ca]=Eslovac
+Name[cs]=Slovenskı
+Name[da]=Slovakisk
+Name[es]=Eslovaco
+Name[fi]=Slovakki
+Name[fr]=Slovaque
+Name[is]=Slavneska
+Name[it]=Slovacco
+Name[no]=Slovakisk
+Name[pt_BR]=Eslovaco
+Name[ro]=Slovac
+Name[ru]=óÌÏ×ÁÃËÉÊ
+Name[sk]=Slovenskı
+Name[sl]=slova¹èina
+Name[sv]=Slovakiska
+
+[zh_TW.Big5]
+Name=Chinese
+Name[ca]=Xinès
+Name[cs]=Èínskı
+Name[da]=Kinesisk
+Name[es]=Chino
+Name[fi]=Kiina
+Name[fr]=Chinois
+Name[is]=Kínverska
+Name[it]=Cinese
+Name[no]=Kinesisk
+Name[pt_BR]=Chinês
+Name[ro]=Chinez
+Name[ru]=ëÉÔÁÊÓËÉÊ
+Name[sk]=Èínsky
+Name[sl]=kitaj¹èina
+Name[sv]=Kinesiska
+
+[zh_CN.GB2312]
+Name=Simplified Chinese
+Name[ca]=Xinès simplificat
+Name[cs]=Zjednodu¹enı èínskı
+Name[da]=Forenklet kinesisk
+Name[es]=Chino Simplificado
+Name[fi]=Yksinkertaistettu Kiina
+Name[fr]=Chinois simplifié
+Name[is]=Einfölduğ kínverska
+Name[it]=Cinese Semplificato
+Name[no]=Forenklet kinesisk
+Name[pt_BR]=Chinês Simplificado
+Name[ro]=Chinez simplificat
+Name[ru]=õĞÒÏİÅÎÎÙÊ ËÉÔÁÊÓËÉÊ
+Name[sk]=Zjednodu¹ená èín¹tina
+Name[sl]=poenostavljena kitaj¹èina
+Name[sv]=Förenklad kinesiska
+
+[pt_BR]
+Name=Brazil portuguese
+Name[ca]=Portuguès del Brasil
+Name[cs]=Brazilská portugal¹tina
+Name[da]=Brasiliansk portugisisk
+Name[es]=Portugés de Brasil
+Name[fi]=Brasilian portugal
+Name[fr]=Portugais brésilien
+Name[is]=Brasilíuportúgalska
+Name[it]=Portoghese brasiliano
+Name[no]=Brasiliansk portugisisk
+Name[pt_BR]=Português do Brasil
+Name[ro]=Portughezã brazilianã
+Name[ru]=âÒÁÚÉÌØÓËÉÊ ĞÏÒÔÕÇÁÌØÓËÉÊ
+Name[sk]=Brazílska portugalèina
+Name[sl]=brazilska portugal¹èina
+Name[sv]=Brasiliansk portugisiska
+
+[eo]
+Name=Esperanto
+Name[fr]=Espéranto
+Name[ru]=üÓĞÅÒÁÎÔÏ
+Name[sl]=esperanto
+
+[mk]
+Name=Macedonian
+Name[ca]=Macedònic
+Name[cs]=Makedonskı
+Name[da]=Makedonisk
+Name[es]=Macedonio
+Name[fi]=Makedonia
+Name[fr]=Macédonien
+Name[it]=Macedone
+Name[no]=Makedonsk
+Name[pt_BR]=Macedoniano
+Name[ru]=íÁËÅÄÏÎÓËÉÊ
+Name[sk]=Macedónsky
+Name[sl]=makedon¹èina
+Name[sv]=Makedoniska
+
+[ko]
+Name=Korean
+Name[ca]=Coreà
+Name[cs]=Korejskı
+Name[da]=Koreansk
+Name[es]=Koreano
+Name[fi]=Korea
+Name[fr]=Coréen
+Name[is]=Kóreska
+Name[it]=Coreano
+Name[no]=Koreansk
+Name[pt_BR]=Coreano
+Name[ro]=Corean
+Name[ru]=ëÏÒÅÊÓËÉÊ
+Name[sk]=Kórejskı
+Name[sl]=korej¹èina
+Name[sv]=Koreanska
+
+[tr]
+Name=Turkish
+Name[ca]=Turc
+Name[cs]=Tureckı
+Name[da]=Tyrkisk
+Name[es]=Turco
+Name[fi]=Turkki
+Name[fr]=Turc
+Name[is]=Tyrkneska
+Name[it]=Turco
+Name[no]=Tyrkisk
+Name[pt_BR]=Turco
+Name[ro]=Turcesc
+Name[ru]=ôÕÒËÓËÉÊ
+Name[sk]=Tureckı
+Name[sl]=tur¹èina
+Name[sv]=Turkiska
+
+[he]
+Name=Hebrew
+Name[ca]=Hebreu
+Name[cs]=Hebrejskı
+Name[da]=Hebræisk
+Name[es]=Hebreo
+Name[fi]=Heprea
+Name[fr]=Hébreu
+Name[is]=Hebreska
+Name[it]=Ebraico
+Name[no]=Hebraisk
+Name[pt_BR]=Hebreu
+Name[ro]=Ebraicã
+Name[ru]=é×ÒÉÔ
+Name[sk]=Hebrejskı
+Name[sl]=hebrej¹èina
+Name[sv]=Hebreiska
+
+[et]
+Name=Estonian
+Name[ca]=Estonià
+Name[cs]=Estonskı
+Name[fr]=Estonien
+Name[is]=Eistneska
+Name[no]=Estonsk
+Name[pt_BR]=Estoniano
+Name[ru]=üÓÔÏÎÓËÉÊ
+Name[sl]=eston¹èina
+Name[sv]=Estoniska
+

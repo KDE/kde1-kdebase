@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+SwallowExec=coolmail
+SwallowTitle=coolmail
+SwallowTitle[pl]=coolmail
+SwallowTitle[sk]=coolmail
+SwallowTitle[no]=coolmail
+Name=Coolmail
+Comment=Coolmail
+Comment[fi]=Coolmail -postiohjelma
+Comment[is]=Póstforritið Coolmail
+Exec=coolmail
+Icon=mail.xpm
+TerminalOptions=
+Type=Application
+Terminal=0

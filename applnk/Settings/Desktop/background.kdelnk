@@ -1,0 +1,59 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcmdisplay background
+Icon=background.xpm
+MiniIcon=background.xpm
+Type=Application
+DocPath=kcontrol/kcmdisplay/kdisplay-3.html
+Comment=Background settings
+Comment[ca]=Arranjament del fons
+Comment[cs]=NastavenÌ pozadÌ
+Comment[da]=Baggrundsindstillinger
+Comment[de]=Einstellung des Hintergrunds
+Comment[eo]=Tapetokonfiguraºo
+Comment[es]=ConfiguraciÛn del fondo de la pantalla
+Comment[fi]=Taustan asetukset
+Comment[fr]=Configuration du fond d'Ècran
+Comment[hr]=Postava za pozadinu
+Comment[hu]=H·ttÈr be·llÌt·sai
+Comment[is]=Stillingar bakgrunns
+Comment[it]=Impostazioni sfondo
+Comment[no]=Innstill bakgrunnen
+Comment[pl]=Ustawienia t≥a
+Comment[pt]=ConfiguraÁ„o do fundo de Ècran
+Comment[pt_BR]=ConfiguraÁ„o do fundo de tela
+Comment[ro]=Set„rile fundalului.
+Comment[ru]=Ó¡”‘“œ À… ∆œŒ¡
+Comment[sk]=Nastavenie pozadia
+Comment[sl]=Nastavitve ozadja
+Comment[sv]=Inst‰llningar fˆr bakgrunden
+Comment[zh_CN.GB2312]=±≥æ∞…Ë÷√
+Name=Background
+Name[ca]=Fons
+Name[cs]=PozadÌ
+Name[da]=Baggrund
+Name[de]=Hintergrund
+Name[eo]=Tapeto
+Name[es]=Fondo
+Name[fi]=Tausta
+Name[fr]=Fond d'Ècran
+Name[hr]=Pozadina
+Name[hu]=H·ttÈr
+Name[is]=Bakgrunnir
+Name[it]=Sfondo
+Name[no]=Bakgrunn
+Name[pl]=T≥o
+Name[pt]=Fundo de Ècran
+Name[pt_BR]=Fundo da tela
+Name[ro]=Fundal
+Name[ru]=ÊœŒ
+Name[sk]=Pozadie
+Name[sl]=Ozadje
+Name[sv]=Bakgrund
+Name[zh_CN.GB2312]=±≥æ∞
+Init=kcmdisplay -init
+
+
+
+
+

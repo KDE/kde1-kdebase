@@ -1,0 +1,36 @@
+# KDE Config File 
+[KDE Desktop Entry]
+Name=Acrobat Reader
+Name[da]=Acrobat læser
+Name[fi]=Acrobat -lukija
+Name[is]=Acrobat lesarinn
+Name[it]=Lettore Acrobat
+Name[no]=Acrobat-leser
+Name[ro]=Cititor Acrobat
+Name[sl]=Bralnik Acrobat
+Name[sv]=Acrobatläsare
+MimeType=application/pdf;
+Exec=acroread %f
+Icon=kghostview.xpm
+Type=Application
+DocPath=
+Comment=PDF document viewer
+Comment[ca]=Visualitzador de documents PDF
+Comment[cs]=Prohlí¾eè PDF dokumentù
+Comment[da]=PDF dokumentfremviser
+Comment[es]=Visor de documentos PDF
+Comment[fi]=PDF-dokumenttien näyttäjä
+Comment[fr]=Un visualiseur de documents PDF
+Comment[is]=xpdf:  Tól til að skoða PDF skrár
+Comment[it]=Lettore documenti PDF
+Comment[no]=PDF-dokumentfremviser
+Comment[pl]=Przegl±darka dokumentów PDF
+Comment[pt_BR]=Visualizador de documentos PDF
+Comment[ro]=Vizualizor de documente PDF
+Comment[ru]=ðÒÏÓÍÏÔÒÝÉË PDF ÄÏËÕÍÅÎÔÏ×
+Comment[sk]=Prezeraè dokumentov PDF
+Comment[sl]=Pregledovalnik spisov PDF
+Comment[sv]=PDF-dokumentvisare
+Terminal=0
+MiniIcon=kghostview.xpm
+Caption=PDF Viewer
