@@ -22,7 +22,7 @@ msgstr "Colore:"
 #: polygon.cpp:122 rock.cpp:561 science.cpp:1025 slip.cpp:378 space.cpp:587
 #: swarm.cpp:341
 msgid "Speed:"
-msgstr "Velocita`:"
+msgstr "Velocità:"
 
 #: banner.cpp:188
 msgid "Message:"
@@ -46,7 +46,7 @@ msgstr ""
 
 #: banner.cpp:461
 msgid "KDE is great"
-msgstr "KDE e` grande"
+msgstr "KDE è grande"
 
 #: bat.cpp:462
 msgid "Bat"
@@ -160,7 +160,7 @@ msgstr "Dimensione punti:"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr ""
+msgstr "Frequenza cambiamento colore:"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
@@ -178,6 +178,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
+"Couboule v0.1 -- sfere che girano e cambiano dimensione\n"
+"\n"
+"Copyright (c) 1996 di Jeremie PETIT\n"
+"\n"
+"Importato nei salvaschermo KDE da Cedric Tefft"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -376,7 +381,7 @@ msgstr ""
 #: main.cpp:286
 #, c-format
 msgid "Option %s is not support on this plattform!"
-msgstr ""
+msgstr "L'opzione %s non è supportata su questa piattaforma!"
 
 #: main.cpp:313
 msgid ""
@@ -578,83 +583,79 @@ msgstr "Sbagliata"
 
 #: science.cpp:65
 msgid "Whirl"
-msgstr ""
+msgstr "Turbine"
 
 #: science.cpp:68
-#, fuzzy
 msgid "Sphere"
-msgstr "Velocita`:"
+msgstr "Sfera"
 
 #: science.cpp:71
 msgid "Exponential"
-msgstr ""
+msgstr "Espnenziale"
 
 #: science.cpp:74
 msgid "Contraction"
-msgstr ""
+msgstr "Contrazione"
 
 #: science.cpp:77
 msgid "Wave"
-msgstr ""
+msgstr "Onda"
 
 #: science.cpp:80
 msgid "Curvature"
-msgstr ""
+msgstr "Curvatura"
 
 #: science.cpp:112
 msgid "Science"
-msgstr ""
+msgstr "Scienza"
 
 #: science.cpp:447
 msgid "rendering lens..."
-msgstr ""
+msgstr "renderizzazione lenti..."
 
 #: science.cpp:769
 msgid "grabbing screen..."
-msgstr ""
+msgstr "cattura schermo..."
 
 #: science.cpp:931
-#, fuzzy
 msgid "Setup Science"
-msgstr "Configurazione salvaschermo \"Linee\""
+msgstr "Configurazione salvaschermo \"Scienza\""
 
 #: science.cpp:949
-#, fuzzy
 msgid "Mode:"
-msgstr "Medio:"
+msgstr "Modo:"
 
 #: science.cpp:964
 msgid "Inverse"
-msgstr ""
+msgstr "Inverso"
 
 #: science.cpp:974
 msgid "Gravity"
-msgstr ""
+msgstr "Gravita'"
 
 #: science.cpp:983
 msgid "Hide Background"
-msgstr ""
+msgstr "Nascondi Sfondo"
 
 #: science.cpp:1009
 msgid "Intensity:"
-msgstr ""
+msgstr "Intensita':"
 
 #: science.cpp:1039
 msgid "Motion:"
-msgstr ""
+msgstr "Movimento:"
 
 #: science.cpp:1260
 msgid "Science Version"
-msgstr ""
+msgstr "Versione di Scienza"
 
 #: science.cpp:1261
 msgid "written by"
-msgstr ""
+msgstr "scritto da"
 
 #: science.cpp:1262
-#, fuzzy
 msgid "About Science"
-msgstr "Info su Klines"
+msgstr "Info su Scienza"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -741,6 +742,3 @@ msgstr ""
 "Copyright (c) 1991 Patrick J. Naughton\n"
 "\n"
 "Porting su KDE di Emanuel Pirker."
-
-#~ msgid "Move"
-#~ msgstr "Movimento"

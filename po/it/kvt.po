@@ -272,6 +272,9 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
+"-ls                       avvia la shell kvt come shell di login\n"
+"-ls-                      non avvia la shell kvt come shell di login "
+"(default)\n"
 
 #: main.C:1348
 msgid ""
@@ -281,7 +284,7 @@ msgstr ""
 
 #: main.C:1349
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr ""
+msgstr "-sl <nnnn>             salva nel buffer  <nnnn> linee\n"
 
 #: main.C:1350
 msgid ""
@@ -290,6 +293,10 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
+"-pageup <keysym>          usa i tasti alt-keysym per scorrere in alto il "
+"buffer\n"
+"-pagedown <keysym>        usa i tasti alt-keysym per scorrere in basso il "
+"buffer\n"
 
 #: main.C:1354
 msgid ""
