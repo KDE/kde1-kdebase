@@ -19,5 +19,5 @@ Name[sk]=Editory
 Name[sl]=Urejevalniki
 Name[sv]=Editorer
 SortOrder=emacs.kdelnk,xedit.kdelnk,xemacs.kdelnk
-Icon=kedit.xpm
-MiniIcon=kedit.xpm
+Icon=editors_package.xpm
+MiniIcon=editors_package.xpm
