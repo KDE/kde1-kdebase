@@ -1,5 +1,5 @@
 # Polish translation of KDE kfontmanager
-# Version 0.1.0
+# Version 0.1.1
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 
 #: main.cpp:53
@@ -8,15 +8,15 @@ msgstr "KDE Mened¿er Czcionek"
 
 #: main.cpp:61
 msgid "KDE Fonts"
-msgstr "Czionki KDE"
+msgstr "Czionki &KDE"
 
 #: main.cpp:62
 msgid "Font Explorer"
-msgstr "Eksplorator Czcionek"
+msgstr "Eksplorator &Czcionek"
 
 #: main.cpp:63
 msgid "Raw X11 Font List"
-msgstr "Lista czcionek X11"
+msgstr "Lista czcionek &X11"
 
 #: kfontmanager.cpp:61
 msgid "Available X11 Fonts"
@@ -28,11 +28,11 @@ msgstr "Czcionki dostêpne dla KDE"
 
 #: kfontmanager.cpp:74
 msgid "Add"
-msgstr "Dodaj"
+msgstr "&Dodaj"
 
 #: kfontmanager.cpp:77
 msgid "Remove"
-msgstr "Usuñ"
+msgstr "&Usuñ"
 
 #: kfontmanager.cpp:87
 msgid "The KDE Font Manager Example String"
@@ -40,7 +40,7 @@ msgstr "Przyk³adowy ci±g znaków mened¿era czcionek"
 
 #: kfontlist.cpp:65 kfontmanager.cpp:105
 msgid "About kfontmanager"
-msgstr "kfontmanager - informacje"
+msgstr "Informacje"
 
 #: kfontmanager.cpp:105
 msgid ""
