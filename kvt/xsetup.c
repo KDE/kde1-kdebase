@@ -266,7 +266,7 @@ int init_display(int argc,char **argv)
   /* if no terminal has been set by -tn option, set one */ 
   if (!terminal) {
     terminal = safemalloc(strlen("xterm-color")+6, "terminal");
-    sprintf(terminal, "TERM=%s", "xterm-color");
+    sprintf(terminal, "TERM=%s", "xterm");
     putenv(terminal);
   }
 
