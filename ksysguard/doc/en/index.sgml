@@ -31,7 +31,7 @@ processor load and memory usage monitor.
 <sect1> Authors<p>
 
 KTop is currently developed and maintained by Chris Schl&auml;ger
-<htmlurl url="mailto:cs@axys.de" name="cs@axys.de">. In the past several other people have worked on KTop:
+<htmlurl url="mailto:cs@kde.org" name="cs@kde.org">. In the past several other people have worked on KTop:
 
 <itemize>
 <item> A. Sanda &lt;alex@darkstar.ping.at&gt;
@@ -69,25 +69,25 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 <p>
 <sect1>How to obtain KTop
 <p>
-KTop is part of the KDE project <url url="http://www.kde.org">.  KTop
-can be found on the KTop Homepage at <url
-url="http://www.iss.rwth-aachen.de/~schlaege/ktop"> or <url
-url="ftp://ftp.kde.org/pub/kde/">, the main ftp site of the KDE
-project.
+KTop is part of the <htmlurl url="http://www.kde.org" name="KDE
+Project">.  KTop can be found on the <htmlurl
+url="http://www.iss.rwth-aachen.de/~schlaege/ktop" name="KTop
+Homepage"> or <htmlurl url="ftp://ftp.kde.org/pub/kde/" name="KDE FTP
+Server">, the main ftp site of the KDE Project.
 
 <sect1>Requirements
 <p>
 In order to successfully compile KTop, you need the KDE 1.x and Qt 1.42.
 All required libraries as well as KTop itself can be found
-on <url url="ftp://ftp.kde.org/pub/kde/">. 
+on the <htmlurl url="ftp://ftp.kde.org/pub/kde/" name="KDE FTP Server">. 
 
 At the moment the following flavors of UNIX are supported:
 
 <itemize>
-<item> Linux 2.x <p> 
-For KTop to work it is necessary to compile the
-Linux-Kernel with the /proc-Filesystem enabled. This is the default
-setting and most Linux-Distribution have it already.
+<item> Linux 2.x <p> For KTop to work it is necessary to compile the
+Linux-Kernel with the /proc-File-system enabled. This is the default
+setting and most Linux-Distribution have it already. For SMP support
+Linux 2.2 is required.
 
 <item> FreeBSD <p> 
 
@@ -119,6 +119,16 @@ Start Menu/Panel/Add Application Menu to do so. If you have the xload
 program installed you will see a performance history display instead
 of the KTop icon. Clicking on the icon or performance meter will start
 the Task Manager.
+
+<sect1> Reporting Bugs <p>
+
+No software is perfect and so KTop isn't. Although I made a lot of
+efforts to ensure the usability you might encounter a situation where
+KTop does not behave as you would expect. Please report all bugs to
+the highly sophisticated <htmlurl url="http://bugs.kde.org" name="KDE
+Bug Tracking System">. Do not report bugs directly to me. Reporting to
+the Bug Track System will ensure that all developers have a chance to
+read about it and fix it.
 
 <sect>Using the KDE Task Manager
 <p>
@@ -158,7 +168,7 @@ used on systems that are shared by many people. Longer running jobs
 interactive processes.
 
 This menu is only enabled when a process has been selected. It's also
-available as Right-Mouse-Button-Popup menu when clicking on a process.
+available as Right-Mouse-Button-Pop-up menu when clicking on a process.
 
 <sect1>The Process List Page<p>
 
@@ -255,10 +265,10 @@ memory use by certain programs but a sign of good caching strategies.
 
 Physical memory that is used for buffers or data caching is displayed
 in green and yellow. The red part is swapped-out memory. That is data
-from your main memory that was temperarily swapped to the hard disk to
+from your main memory that was temporarily swapped to the hard disk to
 make room for more important data in memory.
 
-On SMP systems you will get additional meters for each processor.
+On Linux 2.2 SMP systems you will get additional meters for each processor.
 
 If the KTop window is large enough not only the load/memory history is
 shown but also digital meters for each value. If you don't see them
@@ -266,7 +276,24 @@ just increase the size of the KTop window.
 
 <sect>Questions and answers<p>
 
-Nothing here yet!
+<sect1> I get the message "Your system is currently not supported.". What can I do? <p>
+
+KTop will compile on many UNIX systems but it can only be used on
+some. If your system is not yet supported you will get this message
+when running KTop. You can download the sources from the KDE CVS or
+the <htmlurl url="http://www.iss.rwth-aachen.de/~schlaege/ktop"
+name="KTop Homepage">. Look at the OS*.h classes and implement support
+for your OS. Please contact me in advance to avoid duplicated
+efforts. Your help is greatly appreciated.
+
+<sect1> I have a multi processor box but I don't get the additional meters for each CPU. Why not? <p>
+
+Your operating system kernel needs to provide this information. If it
+is not available KTop cannot display the load for each
+processor. Currently only Linux 2.2 kernels provide this
+information. Linux 2.0 or earlier kernels do not provide the required
+information.
+
 
 <p>
 </article>

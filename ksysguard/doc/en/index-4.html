@@ -20,7 +20,29 @@ Next<A HREF="index-3.html">Previous</A>
 <H3><A NAME="s4">4. Questions and answers</A></H3>
 
 <P>
-<P>Nothing here yet!
+<P>
+<H3><A NAME="ss4.1">4.1 I get the message "Your system is currently not supported.". What can I do? </A>
+</H3>
+
+<P>
+<P>KTop will compile on many UNIX systems but it can only be used on
+some. If your system is not yet supported you will get this message
+when running KTop. You can download the sources from the KDE CVS or
+the 
+<A HREF="http://www.iss.rwth-aachen.de/~schlaege/ktop">KTop Homepage</A>. Look at the OS*.h classes and implement support
+for your OS. Please contact me in advance to avoid duplicated
+efforts. Your help is greatly appreciated.
+<P>
+<H3><A NAME="ss4.2">4.2 I have a multi processor box but I don't get the additional meters for each CPU. Why not? </A>
+</H3>
+
+<P>
+<P>Your operating system kernel needs to provide this information. If it
+is not available KTop cannot display the load for each
+processor. Currently only Linux 2.2 kernels provide this
+information. Linux 2.0 or earlier kernels do not provide the required
+information.
+<P>
 <P>
 <P>
 <P ALIGN="RIGHT">
