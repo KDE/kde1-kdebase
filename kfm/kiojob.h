@@ -10,6 +10,7 @@ class KIODirectoryEntry;
 #include <qstring.h>
 #include <qlabel.h>
 #include <qwidget.h>
+#include <qdict.h>
 
 #include <kprogress.h>
 #include <kurl.h>
@@ -134,6 +135,17 @@ signals:
     void bytes( int _bytes );
     
 protected:
+    /**
+     * Looks wether the '_url' specifies a user but not a password. If so the
+     * function will ask the user for a password if we dont know it already.
+     * The a complete URL us assembled and returned.
+     *
+     * @return a complete URL with password if needed.
+     *
+     * @see #passwordDict
+     */
+    QString KIOJob::completeURL( const char *_url );
+    
     void done();
     /// This one makes recursive copy possible
     /**
@@ -274,7 +286,13 @@ protected:
       This info is needed if the file already exists, to show the right URLs in the dialog.
       */
     QString lastDest;
-    
+
+    /**
+     * The keys for this dict look like "user@host".
+     *
+     * @see #completeURL
+     */
+    static QDict<QString> passwordDict;
 };
 
 #include "kioserver.h"

@@ -773,10 +773,10 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 		{
 		    view->write( "\"><img width=16 height=16 src=\"" ); 
 		    view->write( KFileType::findType( str )->getPixmapFile( str ) );
-		    view->write( "\"></td><td>" );
+		    view->write( "\"></td><td><tt>" );
 		}
 		else
-		    view->write( "\">" );
+		    view->write( "\"><tt>" );
 		
 		if ( S_ISDIR( buff.st_mode ) )
 		    buffer[0] = 'd';
@@ -785,7 +785,7 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 		else
 		    buffer[0] = '-';
 		sprintf( buffer + 1,
-			 "%c%c%c%c%c%c%c%c%c</td><td>%8s</td><td>%8s</td><td>%i</td><td>%i:%i</td><td>%i.%i.%i</td><td>",
+			 "%c%c%c%c%c%c%c%c%c</tt></td><td>%8s</td><td>%8s</td><td>%i</td><td>%i:%i</td><td>%i.%i.%i</td><td>",
 			 ((( buff.st_mode & S_IRUSR ) == S_IRUSR ) ? 'r' : '-' ),
 			 ((( buff.st_mode & S_IWUSR ) == S_IWUSR ) ? 'w' : '-' ),
 			 ((( buff.st_mode & S_IXUSR ) == S_IXUSR ) ? 'x' : '-' ),
@@ -1036,8 +1036,8 @@ void KTarManager::slotShowFiles( int _id )
     view->write( "<cell><a href=\"");
     view->write( fd.data() );
     view->write( "\"><center><img src=\"file:" );
-    view->write( PICS_PATH );
-    view->write( "/folder.xpm\"><br>..</center><br></a></cell>" );
+    view->write( KFileType::findType( fd.data() )->getPixmapFile( fd.data() ) );
+    view->write( "\"><br>..</center><br></a></cell>" );
 
     KIODirectoryEntry *s;
     for ( s = files.first(); s != 0L; s = files.next() )
@@ -1276,7 +1276,7 @@ void KFtpManager::slotShowFiles( int _id )
 	{
 	    view->write( "<tr><td><a href=\"" );
 	    view->write( s.data() );
-	    view->write( "\"><img src=\"file:" );
+	    view->write( "\"><img width=16 height=16 src=\"file:" );
 	    view->write( KFileType::findType( s.data() )->getPixmapFile( s.data() ) );
 	    view->write( "\"></td><td>..</a></td>" );
 	    view->write( "<td></td><td></td><td></td><td></td><td></td></tr>" );

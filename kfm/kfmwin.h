@@ -171,6 +171,8 @@ public slots:
     void slotLongView();
     /// Menu "View->Text View"
     void slotTextView();
+    /// Menu "View->Rescan Bindings"
+    void slotRescanBindings();
     
     /// Menu "Bookmarks->Add Bookmark"
     void slotAddBookmark();
@@ -308,6 +310,7 @@ protected:
     virtual void initStatusBar();
     virtual void initPanner();
     virtual void initTreeView();
+    virtual void initLayout();
     
     /******************************************************
      * Creates all file managers and opens the directory _dir

@@ -4,10 +4,11 @@
 class HTMLToolTip;
 class KFileView;
 
+#include "kbind.h"
+
 #include <qstrlist.h>
 #include <qtooltip.h>
 
-#include "kbind.h"
 #include "htmlcache.h"
 
 #include <html.h>
@@ -33,6 +34,8 @@ protected:
     virtual void dndMouseReleaseEvent( QMouseEvent * _mouse );
     virtual void dndMouseMoveEvent( QMouseEvent * );
 
+    virtual void resizeEvent( QResizeEvent *_ev );
+    
     HTMLCache *htmlCache;
 };
 

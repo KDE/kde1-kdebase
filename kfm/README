@@ -1,4 +1,4 @@
-Alpha Version 0.61a
+Alpha Version 0.6.3
 
 -------------------- ATTENTION ---------------- LATEST NEWS --------------------
 
@@ -415,6 +415,25 @@ Version 0.6.1
 
 - Put the application KPanel->KFM->Refresh Desktop on the KPanel. Klicking on it
   refreshes the desktop icons and scans for new files on the desktop.
+
+Version 0.6.2
+
+- Works with Qt-1.2
+
+- When changing filetype or application properties, the file manager is updated.
+  No restart has to be done. If you changed the filetypes/apps outside KFM you
+  may invoke "View->Rescan Binding" to update the file manager.
+
+- Basic support for URLs with passwords. For example ftp://weis:localhost will
+  work now, but it is still buggy.
+
+- Stephan added a configure script
+
+- kioslaves should die after kfm died. Please report any exception!!!
+
+Version 0.6.3
+
+- Changes in the makefile and the distribution
 
 Authors
 -------

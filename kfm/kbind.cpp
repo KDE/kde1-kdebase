@@ -888,8 +888,10 @@ void KFileType::runBinding( const char *_url, const char *_binding, QStrList * _
     // Used to store a modified value for _url
     QString tmp;
     
-    // Is it a "[KDE Desktop Entry]" file ?
-    KFMConfig *config = KFileType::openKFMConfig( _url );
+    KFMConfig *config = 0L;
+    // Is it a "[KDE Desktop Entry]" file and do we want to open it ?
+    if ( strcasecmp( _binding, "Open" ) == 0 )
+	config = KFileType::openKFMConfig( _url );
     
     if ( config != 0L )
     {

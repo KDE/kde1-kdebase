@@ -19,6 +19,11 @@ KFileView::~KFileView()
     delete htmlCache;
 }
 
+void KFileView::resizeEvent( QResizeEvent *_ev )
+{
+    parse();
+}
+
 void KFileView::dndMouseMoveEvent( QMouseEvent * _mouse )
 {
     if ( !pressed )

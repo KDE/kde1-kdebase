@@ -2,6 +2,7 @@
 #include <qpushbt.h>
 #include <qpainter.h>
 #include <qdict.h>
+#include <kurl.h>
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -16,8 +17,10 @@
 #include "kioslave/kio_errors.h"
 #include "kmsgwin.h"
 #include "krenamewin.h"
+#include "passworddialog.h"
 
 QList<KIOJob> KIOJob::jobList;
+QDict<QString> KIOJob::passwordDict;
 
 KIOJob::KIOJob( int _id )
 {
@@ -248,16 +251,16 @@ void KIOJob::link()
 		    QTextStream pstream( &f );
 		    KConfig config( &pstream );
 		    config.setGroup( "KDE Desktop Entry" );
-		    config.writeEntry( QString("URL"), QString(p2) );
-		    config.writeEntry( QString("Type"), QString("Link"));
+		    config.writeEntry( "URL", p2 );
+		    config.writeEntry( "Type", "Link" );
 		    if ( strcmp( du.protocol(), "ftp" ) == 0 )
-			config.writeEntry( QString("Icon"), QString("ftp.xpm") );
+			config.writeEntry( "Icon", "ftp.xpm" );
 		    else if ( strcmp( du.protocol(), "http" ) == 0 )
-			config.writeEntry( QString("Icon"), QString("www.xpm") );
+			config.writeEntry( "Icon", "www.xpm" );
 		    else if ( strcmp( du.protocol(), "info" ) == 0 )
-			config.writeEntry( QString("Icon"), QString("info.xpm") );
+			config.writeEntry( "Icon", "info.xpm" );
 		    else
-			config.writeEntry( QString("Icon"), QString(KFileType::getDefaultPixmap()) );
+			config.writeEntry( "Icon", KFileType::getDefaultPixmap() );
 		    config.sync();
 		    if ( globalNotify )
 			KIOServer::sendNotify( p2 );
@@ -862,7 +865,18 @@ void KIOJob::fatalError( int _kioerror, const char* _url, int _errno )
 	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Continue", "Cancel" );
 	    break;
 	case KIO_ERROR_CouldNotLogin:
-	    msg.sprintf("Could not login for\n%s\nPerhaps wrong password",_url);
+	    {
+		KURL u( _url );
+		msg.sprintf("Could not login for\n%s\nPerhaps wrong password",u.host());
+		// Remove the password from the dict, since it seems to be wrong.
+		if ( u.user() != 0L && u.user()[0] != 0 && u.passwd() != 0L && u.passwd()[0] != 0 )
+		{
+		    QString tmp;
+		    tmp.sprintf( "%s@%s", u.user(), u.host() );
+		    printf("Removing '%s' from dict !!!!!!!!!!!!!!!! ########### !!!!!!\n",tmp.data() );
+		    passwordDict.remove( tmp.data() );
+		}
+	    }
 	    m = new KMsgWin( 0L, "Error", msg.data(), KMsgWin::EXCLAMATION, "Continue", "Cancel" );
 	    break;
 	case KIO_ERROR_TarError:
@@ -1064,8 +1078,10 @@ void KIOJob::slaveIsReady()
 
 	    lastSource = cmSrcURLList.first();
 	    lastDest = cmDestURLList.first();
-	    
-	    slave->copy( cmSrcURLList.first(), cmDestURLList.first(), overwriteExistingFiles );
+
+	    QString src = completeURL( cmSrcURLList.first() ).data();	    
+	    QString dest = completeURL( cmDestURLList.first() ).data();
+	    slave->copy( src.data(), dest.data(), overwriteExistingFiles );
 	    cmSrcURLList.removeRef( cmSrcURLList.first() );
 	    cmDestURLList.removeRef( cmDestURLList.first() );
 	}
@@ -1117,7 +1133,8 @@ void KIOJob::slaveIsReady()
 	    // In this turn delete the file we copied last turn
 	    if ( moveDelMode )
 	    {
-		slave->del( cmSrcURLList.first() );
+		QString src = completeURL( cmSrcURLList.first() ).data();
+		slave->del( src.data() );
 		cmSrcURLList.removeRef( cmSrcURLList.first() );
 		cmDestURLList.removeRef( cmDestURLList.first() );
 	    }
@@ -1126,7 +1143,9 @@ void KIOJob::slaveIsReady()
 		lastSource = cmSrcURLList.first();
 		lastDest = cmDestURLList.first();
 
-		slave->copy( cmSrcURLList.first(), cmDestURLList.first(), overwriteExistingFiles );
+		QString dest = completeURL( cmDestURLList.first() ).data();
+		QString src = completeURL( cmSrcURLList.first() ).data();
+		slave->copy( src.data(), dest.data(), overwriteExistingFiles );
 	    }
 	    
 	    moveDelMode = !moveDelMode;
@@ -1152,8 +1171,9 @@ void KIOJob::slaveIsReady()
 		if ( cmCount != mvDelURLList.count() )
 		     progress->setValue( cmCount * 100 / ( cmCount - mvDelURLList.count() ) );
 	    }
-	    
-	    slave->del( mvDelURLList.first() );
+
+	    QString dest = completeURL( mvDelURLList.first() ).data();	    
+	    slave->del( dest.data() );
 	    mvDelURLList.removeRef( mvDelURLList.first() );
 	}
 	break;
@@ -1207,6 +1227,7 @@ void KIOJob::slaveIsReady()
 		line1->setText( buffer );
 	    }
 	    
+	    lstURL = completeURL( lstURL.data() ).data();
 	    slave->list( lstURL.data() );
 	}
 	break;
@@ -1308,6 +1329,62 @@ void KIOJob::deleteAllJobs()
     KIOJob *j;
     for ( j = jobList.first(); j != 0L; j = jobList.next() )
 	j->cancel();
+}
+
+QString KIOJob::completeURL( const char *_url )
+{
+    printf("Is '%s' complete ? \n",_url );
+    
+    KURL u( _url );
+    if ( u.isMalformed() )
+	return QString( _url );
+    
+    printf("Is not malformed '%s' '%s'\n",u.user(), u.passwd() );
+    
+    if ( u.user() != 0L && u.user()[0] != 0 && ( u.passwd() == 0L || u.passwd()[0] == 0 ) )
+    {
+	printf("Looking for password\n");
+	   
+	QString head;
+	head.sprintf( "Password for %s@%s", u.user(), u.passwd() );
+	
+	QString passwd;
+	QString tmp2;
+	tmp2.sprintf( "%s@%s", u.user(), u.host() );
+	
+	if ( passwordDict[ tmp2.data() ] == 0L )
+	{
+	    printf("A\n");
+	    
+	    PasswordDialog *dlg = new PasswordDialog( head.data(), 0L, "", TRUE );
+	    if ( !dlg->exec() )
+	    {
+		printf("Cancled\n");
+		return QString( _url );
+	    }
+	    printf("B\n");
+	    passwd = dlg->password();
+	    delete dlg;
+	}
+	else
+	    passwd = passwordDict[ tmp2.data() ]->data();
+
+	// If the password is wrong, the error function will remove it from
+	// the dict again.
+	passwordDict.insert( tmp2.data(), new QString( passwd.data() ) );
+	
+	QString tmp;
+	tmp.sprintf( "%s:%s", u.user(), passwd.data() );
+	QString url = u.url();
+	int i = url.find( "@" );
+	int j = url.find( "://" );
+	url.replace( j + 3, i - ( j + 3 ), tmp.data() );
+
+	printf("<<<<<<<<<<<<< Converted to '%s'\n",url.data() );
+	return QString( url );
+    }
+    
+    return QString( _url );
 }
 
 #include "kiojob.moc"

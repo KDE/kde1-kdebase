@@ -1,8 +1,6 @@
 #ifndef KBIND_H
 #define KBIND_H
 
-#define PICS_PATH "/home/src/kfm_a034/pics"
-
 #include <qstring.h>
 #include <qlist.h>
 #include <qstrlist.h>

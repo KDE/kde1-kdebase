@@ -29,6 +29,7 @@
 #include "kfmdlg.h"
 #include "kfmprops.h"
 #include "kbutton.h"
+#include "root.h"
 
 QStrList KFileWindow::clipboard;
 
@@ -90,8 +91,6 @@ KFileWindow::KFileWindow( QWidget *parent, const char *name, const char* _url )
 
     windowList.setAutoDelete( FALSE );
     windowList.append( this );
-
-    resizeEvent( 0L );
 }
 
 void KFileWindow::init( const char *_url )
@@ -130,6 +129,22 @@ void KFileWindow::initGUI()
     initTreeView();
     initView();
     initStatusBar();
+    initLayout();
+}
+
+void KFileWindow::initLayout()
+{
+    QGridLayout *gl = new QGridLayout( pannerChild0, 1, 1 );
+    gl->addWidget( treeView, 0, 0 );
+    
+    gl = new QGridLayout( pannerChild1, 2, 2 );
+    gl->addWidget( view, 0, 0 );
+    gl->addWidget( vert, 0, 1 );
+    gl->addWidget( horz, 1, 0 );
+    gl->setRowStretch( 0, 1 );
+    gl->setColStretch( 0, 1 );
+    gl->setRowStretch( 1, 0 );
+    gl->setColStretch( 1, 0 );
 }
 
 void KFileWindow::initPanner()
@@ -236,6 +251,7 @@ void KFileWindow::initMenu()
     mview->insertItem( "Visual Schnauzer ON", this, SLOT(slotShowSchnauzer()) );
     mview->insertItem( "Tree View ON", this, SLOT(slotShowTreeView()), ALT+Key_T );
     mview->insertItem( "Update", this, SLOT(slotViewUpdate()), ALT+Key_U );
+    mview->insertItem( "Rescan bindings", this, SLOT(slotRescanBindings()) );
     mview->insertSeparator();
     mview->insertItem( "Icon View", this, SLOT(slotIconView()), ALT+Key_I );
     mview->insertItem( "Text View", this, SLOT(slotTextView()) );
@@ -271,6 +287,7 @@ void KFileWindow::initMenu()
     menu->insertItem( "View", mview );
     menu->insertItem( "Bookmarks", bookmarkMenu );
     menu->insertItem( "Tool", tool );
+    menu->insertSeparator();
     menu->insertItem( "Help", help );
 }
 
@@ -421,6 +438,11 @@ void KFileWindow::initView()
     vert = new QScrollBar( 0, 0, 10, 40, 0, QScrollBar::Vertical, pannerChild1, "vert" );
     vert->setGeometry( width() - 16, topOffset, 16, height() - topOffset - 16- 20 );
 
+    //    horz->setGeometry( 0, pannerChild1->height() - 16, pannerChild1->width() - 16, 16 );
+    //    vert->setGeometry( pannerChild1->width() - 16, 0, 16, pannerChild1->height() - 16 );
+    horz->setMinimumSize( 16, 16 );
+    vert->setMinimumSize( 16, 16 );
+    
     view = new KFileView( pannerChild1, "view" );
     CHECK_PTR( view );
 
@@ -474,6 +496,17 @@ KFileWindow::~KFileWindow()
     printf("Deleted\n");
 }
 
+void KFileWindow::slotRescanBindings()
+{
+    KFileType::clearAll();
+    KFileType::init();
+    KRootWidget::getKRootWidget()->update();
+
+    KFileWindow *win;
+    for ( win = windowList.first(); win != 0L; win = windowList.next() )
+	win->slotViewUpdate();
+}
+
 void KFileWindow::slotRun()
 {
     QString dir = getenv( "HOME" );
@@ -518,6 +551,8 @@ void KFileWindow::slotPannerChanged()
     if ( !bTreeViewInitialized )
 	treeView->initializeTree();  
 
+    printf("Panner has changed !!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+    
     resizeEvent( 0L );
 }
 
@@ -995,7 +1030,7 @@ void KFileWindow::slotPaste()
 
 void KFileWindow::slotAbout()
 {
-    QMessageBox::message( "About", "KFM 0.6.1\n\r(c) by Torben Weis\n\rweis@kde.org", "Ok" );
+    QMessageBox::message( "About", "KFM 0.6.3\n\r(c) by Torben Weis\n\rweis@kde.org", "Ok" );
 }
 
 void KFileWindow::slotHelp()
@@ -1249,6 +1284,8 @@ void KFileWindow::slotOnURL( const char *_url )
 
 void KFileWindow::resizeEvent( QResizeEvent * )
 {
+    printf("Got resize event !!!!!!!!!!!!!!!!!!!!!!!! %i %i\n",width(),height());
+    
     if ( toolbar != 0L )
 	toolbar->setGeometry( 0, menu->height(), width(), toolbar->height() );
 
@@ -1260,12 +1297,14 @@ void KFileWindow::resizeEvent( QResizeEvent * )
     else
 	pannerChild1->setGeometry( 0, topOffset , width(), height() - topOffset - 20 );
 
-    view->setGeometry( 0, 0, pannerChild1->width() - vert->width() , 
+    printf("Panner %i is now %i | %i\n", panner->width(), pannerChild0->width(), pannerChild1->width());
+    
+    /* view->setGeometry( 0, 0, pannerChild1->width() - vert->width() , 
 		       pannerChild1->height() - horz->height() );
     horz->setGeometry( 0, pannerChild1->height() - 16,
 		       pannerChild1->width() - 16, 16 );
     vert->setGeometry( pannerChild1->width() - 16, 0, 16, pannerChild1->height() - 16 );
-    view->parse();
+    view->parse(); */
 
     statusBar->setGeometry( 0, height() - 20, width() / 2, 20 );
     statusBar2->setGeometry( width() / 2, height() - 20, width() / 2 - 1, 20 );
@@ -1280,7 +1319,6 @@ void KFileWindow::resizeEvent( QResizeEvent * )
     if ( view->docHeight() > view->height() )
 	vert->setRange( 0, view->docHeight() - view->height() );
 }
-	    
 
 #include "kfmwin.moc"
 

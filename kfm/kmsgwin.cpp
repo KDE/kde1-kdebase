@@ -93,10 +93,10 @@ void KMsgWin::initMe(const char *caption, const char *message,
         nr_buttons++;
     }
     
-    msg = new QLabel(message, this, "_msg");
+    msg = new QLabel(message, this, "_msg" );
     msg->setAlignment(AlignCenter);
     msg->adjustSize();
-    picture = new QLabel(this, "_pict");
+    picture = new QLabel(this, "_pict" );
     picture->setAutoResize(TRUE);
     picture->setPixmap(icon);
     calcOptimalSize();
