@@ -21,7 +21,7 @@ msgstr "Добавьте символы к классу"
 
 #: main.C:243
 msgid "The backspace key will send a"
-msgstr ""
+msgstr "Клавиша забой будет посылать "
 
 #: main.C:384
 msgid "&New Terminal"
@@ -98,7 +98,7 @@ msgstr "Показать меню"
 
 #: main.C:438 main.C:747
 msgid "Secure &keyboard"
-msgstr "Шифровать клавиатуру"
+msgstr "Захватить клавиатуру"
 
 #: main.C:440
 msgid "Scroll&bar"
