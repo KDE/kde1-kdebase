@@ -1,0 +1,30 @@
+
+                  README file for kstart
+                  ======================
+ Developed and maintained by Matthias Ettrich (ettrich@kde.org)
+
+
+kstart is a tiny utility to launch legay applications with special KDE
+window properties such as iconified, maximized, a certain virtual
+desktop, a special decoration or sticky.
+
+In addition, the -activate switch will jump to the window even if it
+is started on a different virtual desktop.
+
+Usage:
+
+kstart <command> [-window <regular expression>] [-desktop <number>]
+       [-sticky] [-iconify] [-maximize] [-decoration tiny|none] [-activate]
+
+If you do not specify a regular expression for the windows title, then
+the very first window to appear will be taken. Not recommended!
+
+Example usage:
+  kstart "xclock -geometry 80x80-0+0"  -window xclock -decoration tiny -sticky
+
+
+kstart requires a KDE compliant windowmanager.
+
+Hope some people find this useful, 
+
+   Matthias
