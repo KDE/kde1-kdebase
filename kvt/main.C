@@ -849,7 +849,7 @@ void kVt::help_menu_activated(int item){
   QString ver = KVT_VERSION;
   switch (item){
   case 0:
-    myapp->invokeHTMLHelp("kvt.html", ""); 
+    myapp->invokeHTMLHelp("kvt/index.html", ""); 
     break;
   case 2:
     QMessageBox::about( this, "kvt", 
