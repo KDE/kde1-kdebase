@@ -277,6 +277,7 @@ private:
   float  pm_scale_factor;
 
   bool foldersFirst;
+  bool personalFirst;
   
   // tools
   QPixmap create_arrow_pixmap(QPixmap pm);
@@ -306,9 +307,9 @@ private:
   QComboBox *costy; 
   QButtonGroup *bgrloc, *bgrta;
   QCheckBox *cbtt;
+  QCheckBox *cbpf;
   int old_style;
   QSlider *sl_dbhs, *sl_nr_db;
-  QCheckBox *cbas;
 
   int menu_tool_tips;
 

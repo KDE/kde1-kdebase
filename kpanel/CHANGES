@@ -2,6 +2,9 @@ In kpanel-0.17:
  
     Patchlevel 8:
        - logout while editing desktop buttons fixed.
+       - new option: PersonalFirst=on/off
+         Also setable from the Go!->Panel->Configure dialog
+         (which will nevertheless dissappear soon)
 
     Patchlevel 7:
        - alternate sorting order: folders first (Michael Bialas)

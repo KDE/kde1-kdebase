@@ -147,12 +147,19 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       menu_tool_tips = config->readNumEntry("MenuToolTips");
     else
       config->writeEntry("MenuToolTips", menu_tool_tips);
+    
 
     foldersFirst = true;
     if (config->hasKey("FoldersFirst"))
       foldersFirst = (config->readEntry("FoldersFirst") == "on");
     else
       config->writeEntry("FoldersFirst", "on");
+
+    personalFirst = false;
+    if (config->hasKey("PersonalFirst"))
+      personalFirst = (config->readEntry("PersonalFirst") == "on");
+    else
+      config->writeEntry("PersonalFirst", "off");
 
     QString panelHiddenString = "00000000";
     panelHiddenString = config->readEntry("PanelHidden", 
@@ -629,9 +636,19 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     temp = KApplication::kdedir()+"/share/applnk";
     QString kde_apps = config->readEntry("Path", temp.data() );
 
-    pmenu->parse(QDir(kde_apps));
-    
-    if (personal){
+
+    if (personalFirst){
+      pmenu->parse(QDir(personal));
+      p_pmenu = new PMenu;
+      p_pmenu->setAltSort(foldersFirst);
+      p_pmenu->parse(QDir(kde_apps));
+      PMenuItem* pmi = new PMenuItem ;
+      pmi->parse(&QFileInfo(personal), p_pmenu);
+      pmenu->add( new PMenuItem((EntryType) separator) );
+      pmenu->add( pmi );
+    }
+    else {
+      pmenu->parse(QDir(kde_apps));
       PMenu* tmp = new PMenu;
       tmp->setAltSort(foldersFirst);
       tmp->parse(QDir(personal));
@@ -647,7 +664,6 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       }
       delete tmp;
     }
-    
     
     pmenu->add( new PMenuItem(separator) );
     pmenu_add = new PMenu(*pmenu);

@@ -291,8 +291,13 @@ void kPanel::configure_panel(){
 
   cbtt = new QCheckBox(klocale->translate("Menu Tooltips"), mw);
   cbtt->setGeometry(220, 130, 110, 25);
+  cbtt->setGeometry(220, 120, 110, 25);
   cbtt->setChecked(config->readNumEntry("MenuToolTips")>=0);
   
+  cbpf = new QCheckBox(klocale->translate("Personal First"), mw);
+  cbpf->setGeometry(220, 140, 110, 25);
+  cbpf->setChecked(config->readEntry("PersonalFirst") == "on");
+
   
   tab->addTab(mw, klocale->translate("Panel"));
 
@@ -385,6 +390,8 @@ void kPanel::slotPropsApply(){
     config->writeEntry("MenuToolTips", 1000);
   else
     config->writeEntry("MenuToolTips", -1);
+
+  config->writeEntry("PersonalFirst", cbpf->isChecked()?"on":"off");
 
   QButton* tmp_button;
   for (i=0; (tmp_button = bgrloc->find(i)); i++){
