@@ -3,7 +3,7 @@
 SwallowExec=kwmpager -geometry 50x50+10000+10000
 SwallowTitle=kwmpager
 BinaryPattern=
-Name=KWM Pager
+Name=Desktop Pager
 Protocols=
 MimeType=
 Comment=Shows the positions of the windows
