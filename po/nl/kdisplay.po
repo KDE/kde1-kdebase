@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-16 13:56+0200\n"
+"POT-Creation-Date: 1998-06-16 15:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Case Roole <cjr@xs4all.nl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,126 +14,126 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:58
+#: backgnd.cpp:59
 msgid "Enter new desktop name"
 msgstr "Voer nieuw buroblad naam in"
 
-#: backgnd.cpp:114 backgnd.cpp:149
+#: backgnd.cpp:115 backgnd.cpp:150
 msgid "Desktop"
 msgstr "Buroblad"
 
-#: backgnd.cpp:166
+#: backgnd.cpp:167
 msgid "&Rename ..."
 msgstr "&Hernoem ..."
 
-#: backgnd.cpp:192 colorscm.cpp:93
+#: backgnd.cpp:193 colorscm.cpp:93
 #, fuzzy
 msgid "Colors"
 msgstr "Kleuren"
 
-#: backgnd.cpp:219
+#: backgnd.cpp:220
 #, fuzzy
 msgid "&One Color"
 msgstr "&Een Kleur"
 
-#: backgnd.cpp:236
+#: backgnd.cpp:237
 #, fuzzy
 msgid "&Two Color"
 msgstr "&Twee Kleuren"
 
-#: backgnd.cpp:255
+#: backgnd.cpp:256
 #, fuzzy
 msgid "Set&up ..."
 msgstr "Instellingen..."
 
-#: backgnd.cpp:264
+#: backgnd.cpp:265
 msgid "Wallpaper"
 msgstr "Behang"
 
-#: backgnd.cpp:274
+#: backgnd.cpp:275
 #, fuzzy
 msgid "Ti&led"
 msgstr "Naast elkaar"
 
-#: backgnd.cpp:282
+#: backgnd.cpp:283
 #, fuzzy
 msgid "&Centred"
 msgstr "Ge&centreerd"
 
-#: backgnd.cpp:290
+#: backgnd.cpp:291
 #, fuzzy
 msgid "&Scaled"
 msgstr "&Vergroot"
 
-#: backgnd.cpp:306 backgnd.cpp:426 backgnd.cpp:439 backgnd.cpp:787
+#: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
 #, fuzzy
 msgid "No wallpaper"
 msgstr "Behang"
 
-#: backgnd.cpp:334
+#: backgnd.cpp:335
 #, fuzzy
 msgid "&Browse..."
 msgstr "&Bladeren..."
 
-#: backgnd.cpp:863
+#: backgnd.cpp:864
 msgid "Desktop names"
 msgstr "Buroblad namen"
 
-#: backgnd.cpp:909
+#: backgnd.cpp:910
 #, fuzzy
 msgid "Two color backgrounds"
 msgstr "Twee kleuren achtergrond installing"
 
-#: backgnd.cpp:946
+#: backgnd.cpp:947
 #, fuzzy
 msgid "Blend colors from &top to bottom"
 msgstr "&Meng kleuren van rechts naar links"
 
-#: backgnd.cpp:952
+#: backgnd.cpp:953
 #, fuzzy
 msgid "Blend colors from &right to left"
 msgstr "&Meng kleuren van rechts naar links"
 
-#: backgnd.cpp:958
+#: backgnd.cpp:959
 #, fuzzy
 msgid "Use &pattern"
 msgstr "&Patroon"
 
-#: backgnd.cpp:985
+#: backgnd.cpp:986
 msgid "Preview"
 msgstr "Vooruitblik"
 
-#: backgnd.cpp:996
+#: backgnd.cpp:997
 #, fuzzy
 msgid "Pattern &name"
 msgstr "Patroon naam"
 
-#: backgnd.cpp:1035
+#: backgnd.cpp:1036
 msgid "Current"
 msgstr "Huidig"
 
-#: backgnd.cpp:1095
+#: backgnd.cpp:1096
 #, fuzzy
 msgid "Filled"
 msgstr "Bestand"
 
-#: backgnd.cpp:1098
+#: backgnd.cpp:1099
 msgid "Fish net"
 msgstr "Visnet"
 
-#: backgnd.cpp:1101
+#: backgnd.cpp:1102
 msgid "Triangles"
 msgstr "Driehoeken"
 
-#: backgnd.cpp:1104
+#: backgnd.cpp:1105
 msgid "Flowers"
 msgstr "Bloemen"
 
-#: backgnd.cpp:1107
+#: backgnd.cpp:1108
 msgid "Rattan"
 msgstr "Rotan"
 
-#: backgnd.cpp:1110
+#: backgnd.cpp:1111
 msgid "Cobbled Pavement"
 msgstr "Kinderkopjes"
 

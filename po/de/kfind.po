@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-16 15:37+0200\n"
 "PO-Revision-Date: 1998-05-08 23:54+0100\n"
 "Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -222,72 +222,72 @@ msgstr "Der Tag existiert nicht!"
 msgid "The value in size isn't valid number!!"
 msgstr "\"Größe\" ist keine Zahl!"
 
-#: kfoptions.cpp:51
+#: kfoptions.cpp:52
 msgid "Preferences"
 msgstr "Präferenzen"
 
-#: kfoptions.cpp:73
+#: kfoptions.cpp:74
 msgid "File format:"
 msgstr "Dateiformat"
 
-#: kfoptions.cpp:75
+#: kfoptions.cpp:76
 msgid "Save results to file:"
 msgstr "Ergebnisse speichern in:"
 
-#: kfoptions.cpp:78
+#: kfoptions.cpp:79
 msgid "Save results to file ~/.kfind-results.html"
 msgstr "Ergebnisse speichern in ~/.kfind-results.html"
 
-#: kfoptions.cpp:80
+#: kfoptions.cpp:81
 msgid "Browse"
 msgstr "Auswählen"
 
-#: kfoptions.cpp:93
+#: kfoptions.cpp:94
 msgid "Plain Text"
 msgstr "Textdatei"
 
-#: kfoptions.cpp:122
+#: kfoptions.cpp:123
 msgid "Saving"
 msgstr "Speichern"
 
-#: kfoptions.cpp:129
+#: kfoptions.cpp:130
 msgid "Create Archive:"
 msgstr "Archiv erzeugen"
 
-#: kfoptions.cpp:131
+#: kfoptions.cpp:132
 msgid "Add to Archive:"
 msgstr "Zum Archiv hinzufügen:"
 
-#: kfoptions.cpp:135
+#: kfoptions.cpp:136
 msgid "Patterns:"
 msgstr "Filter:"
 
-#: kfoptions.cpp:138
+#: kfoptions.cpp:139
 msgid "Add New"
 msgstr "Hinzufügen"
 
-#: kfoptions.cpp:179
+#: kfoptions.cpp:180
 msgid "Archivers"
 msgstr "Archivprogramme"
 
-#: kfwin.cpp:110 kfwin.cpp:117 kfwin.cpp:133 kfwin.cpp:160
+#: kfwin.cpp:111 kfwin.cpp:118 kfwin.cpp:134 kfwin.cpp:161
 #, c-format
 msgid "%d file(s) found"
 msgstr "%d Datei(en) gefunden"
 
-#: kfwin.cpp:244
+#: kfwin.cpp:245
 msgid "It wasn't possible to save results!"
 msgstr "Es konnte nicht gesichert werden!"
 
-#: kfwin.cpp:252 kfwin.cpp:254 kfwin.cpp:256
+#: kfwin.cpp:253 kfwin.cpp:255 kfwin.cpp:257
 msgid "KFind Results File"
 msgstr "KFind Ergebnisdatei"
 
-#: kfwin.cpp:281
+#: kfwin.cpp:282
 msgid "Results were saved to file\n"
 msgstr "Ergebnisse wurden gespeichert unter\n"
 
-#: kfwin.cpp:296
+#: kfwin.cpp:297
 #, c-format
 msgid ""
 "Do you really want to delete file:\n"
@@ -296,11 +296,11 @@ msgstr ""
 "Wollen Sie wirklich diese Datei löschen:\n"
 "%s"
 
-#: kfwin.cpp:298
+#: kfwin.cpp:299
 msgid "Delete File"
 msgstr "Datei löschen"
 
-#: kfwin.cpp:310
+#: kfwin.cpp:311
 msgid ""
 "You have no permission\n"
 " to delete this file"
@@ -308,7 +308,7 @@ msgstr ""
 "Sie dürfen diese Datei\n"
 " nicht löschen."
 
-#: kfwin.cpp:316
+#: kfwin.cpp:317
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
@@ -316,7 +316,7 @@ msgstr ""
 "Es war nicht möglich, die\n"
 "angegebene Datei zu löschen"
 
-#: kfwin.cpp:334
+#: kfwin.cpp:335
 msgid ""
 "You have no permission\n"
 " to delete this directory"
@@ -324,7 +324,7 @@ msgstr ""
 "Sie dürfen dieses Verzeichnis\n"
 " nicht löschen."
 
-#: kfwin.cpp:339
+#: kfwin.cpp:340
 msgid ""
 "Specified directory\n"
 "is not empty!"
@@ -332,7 +332,7 @@ msgstr ""
 "Das angegebene Verzeichnis\n"
 "ist nicht leer!"
 
-#: kfwin.cpp:344
+#: kfwin.cpp:345
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
@@ -340,11 +340,11 @@ msgstr ""
 "Es ist nicht möglich, das\n"
 "angegebene Verzeichnis zu löschen"
 
-#: kfwin.cpp:436
+#: kfwin.cpp:437
 msgid "Couldn't recognize archive type!"
 msgstr "Typ des Archivs konnte nicht ermittelt werden!"
 
-#: kfwin.cpp:495
+#: kfwin.cpp:496
 msgid "Error while creating child process!"
 msgstr "Fehler beim Erzeugen des Unterprozesses!"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-16 15:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -152,23 +152,23 @@ msgstr ""
 msgid "Example:"
 msgstr ""
 
-#: kdm-bgnd.cpp:67
+#: kdm-bgnd.cpp:66
 msgid "Color"
 msgstr ""
 
-#: kdm-bgnd.cpp:75
+#: kdm-bgnd.cpp:74
 msgid "Wallpaper"
 msgstr ""
 
-#: kdm-bgnd.cpp:109
+#: kdm-bgnd.cpp:108
 msgid "Tiled"
 msgstr ""
 
-#: kdm-bgnd.cpp:113
+#: kdm-bgnd.cpp:112
 msgid "Centred"
 msgstr ""
 
-#: kdm-bgnd.cpp:117
+#: kdm-bgnd.cpp:116
 msgid "Scaled"
 msgstr ""
 

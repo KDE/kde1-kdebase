@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm 1.27\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-16 15:37+0200\n"
 "PO-Revision-Date: 1998-02-26 20:20+MET\n"
 "Last-Translator: Balázs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -521,36 +521,36 @@ msgstr ""
 msgid "Could not write bookmark"
 msgstr "Nem lehet írni\n"
 
-#: kfmprops.cpp:241
+#: kfmprops.cpp:242
 msgid "Full Name"
 msgstr "Teljes név"
 
-#: kfmprops.cpp:259
+#: kfmprops.cpp:260
 msgid "Is the Trash Bin"
 msgstr "a szemetes kuka"
 
-#: kfmprops.cpp:266
+#: kfmprops.cpp:267
 msgid "Is a Directory"
 msgstr "egy könyvtár"
 
-#: kfmprops.cpp:273
+#: kfmprops.cpp:274
 msgid "Points to"
 msgstr "mutat"
 
-#: kfmprops.cpp:298
+#: kfmprops.cpp:299
 #, c-format
 msgid "Size: %i"
 msgstr "Méret: %i"
 
-#: kfmprops.cpp:308
+#: kfmprops.cpp:309
 msgid "Last Access"
 msgstr "Utolsó hozzáférés"
 
-#: kfmprops.cpp:318
+#: kfmprops.cpp:319
 msgid "Last Modified"
 msgstr "Utolsó módosítás"
 
-#: kfmprops.cpp:367
+#: kfmprops.cpp:368
 msgid ""
 "Could not rename the file or directory\n"
 "The destination seems to already exist\n"
@@ -558,69 +558,69 @@ msgstr ""
 "Nem lehet átnevezni a file-t vagy könyvtárat.\n"
 "A célnév már létezik.\n"
 
-#: kfmprops.cpp:415
+#: kfmprops.cpp:416
 msgid "Access permissions"
 msgstr "Hozzáférési jogok"
 
-#: kfmprops.cpp:421
+#: kfmprops.cpp:422
 msgid ""
 "Show\n"
 "Entries"
 msgstr ""
 
-#: kfmprops.cpp:423
+#: kfmprops.cpp:424
 msgid "Read"
 msgstr "Olvasás"
 
-#: kfmprops.cpp:428
+#: kfmprops.cpp:429
 msgid ""
 "Write\n"
 "Entries"
 msgstr ""
 
-#: kfmprops.cpp:430
+#: kfmprops.cpp:431
 msgid "Write"
 msgstr "Írás"
 
-#: kfmprops.cpp:435
+#: kfmprops.cpp:436
 msgid ""
 "Change\n"
 "Into"
 msgstr ""
 
-#: kfmprops.cpp:437
+#: kfmprops.cpp:438
 msgid "Exec"
 msgstr "Végrehajtás"
 
-#: kfmprops.cpp:441
+#: kfmprops.cpp:442
 msgid "Special"
 msgstr "Speciális"
 
-#: kfmprops.cpp:445
+#: kfmprops.cpp:446
 msgid "User"
 msgstr "Felhasználó"
 
-#: kfmprops.cpp:455
+#: kfmprops.cpp:456
 msgid "Others"
 msgstr "Többiek"
 
-#: kfmprops.cpp:468
+#: kfmprops.cpp:469
 msgid "Set UID"
 msgstr ""
 
-#: kfmprops.cpp:469
+#: kfmprops.cpp:470
 msgid "Set GID"
 msgstr ""
 
-#: kfmprops.cpp:470
+#: kfmprops.cpp:471
 msgid "Sticky"
 msgstr ""
 
-#: kfmprops.cpp:488
+#: kfmprops.cpp:489
 msgid "Ownership"
 msgstr "Tulajdonos"
 
-#: kfmprops.cpp:618
+#: kfmprops.cpp:619
 msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
@@ -628,17 +628,17 @@ msgstr ""
 "Nem lehet a jogokat állítani\n"
 "Hozzáférés megtagadva."
 
-#: kfmprops.cpp:633
+#: kfmprops.cpp:634
 #, c-format
 msgid " ERROR: No user %s"
 msgstr " HIBA: Nincs '%s' user"
 
-#: kfmprops.cpp:638
+#: kfmprops.cpp:639
 #, c-format
 msgid " ERROR: No group %s"
 msgstr " HIBA: Nincs '%s' csoport"
 
-#: kfmprops.cpp:644
+#: kfmprops.cpp:645
 msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
@@ -646,36 +646,36 @@ msgstr ""
 "Nem lehet a tulajdonost/csoportot állítani.\n"
 "Hozzáférés megtagadva."
 
-#: kfmprops.cpp:662
+#: kfmprops.cpp:663
 msgid "Swallowing on panel"
 msgstr ""
 
-#: kfmprops.cpp:680 kfmprops.cpp:703
+#: kfmprops.cpp:681 kfmprops.cpp:704
 msgid "Execute"
 msgstr "Végrehajtás"
 
-#: kfmprops.cpp:684
+#: kfmprops.cpp:685
 msgid "Browse"
 msgstr "Tallóz"
 
-#: kfmprops.cpp:688
+#: kfmprops.cpp:689
 msgid "Working Directory"
 msgstr "Munkakönyvtár"
 
-#: kfmprops.cpp:711
+#: kfmprops.cpp:712
 msgid "Window Title"
 msgstr ""
 
-#: kfmprops.cpp:715
+#: kfmprops.cpp:716
 msgid "Run in terminal"
 msgstr "Futtatás terminálban"
 
-#: kfmprops.cpp:723
+#: kfmprops.cpp:724
 msgid "Terminal Options"
 msgstr "Terminál opciók"
 
-#: kfmprops.cpp:824 kfmprops.cpp:946 kfmprops.cpp:1389 kfmprops.cpp:1601
-#: kfmprops.cpp:1777
+#: kfmprops.cpp:825 kfmprops.cpp:947 kfmprops.cpp:1390 kfmprops.cpp:1602
+#: kfmprops.cpp:1778
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -683,71 +683,71 @@ msgstr ""
 "Nem lehet a tulajdonságokat menteni\n"
 "Hozzáférés megtagadva."
 
-#: kfmprops.cpp:872
+#: kfmprops.cpp:873
 msgid "URL"
 msgstr ""
 
-#: kfmprops.cpp:973
+#: kfmprops.cpp:974
 msgid "Apply global"
 msgstr "Globálisan alkalmaz"
 
-#: kfmprops.cpp:1012 kfmprops.cpp:1084 kfmprops.cpp:1141
+#: kfmprops.cpp:1013 kfmprops.cpp:1085 kfmprops.cpp:1142
 msgid "(Default)"
 msgstr "(Alapértelmezett)"
 
-#: kfmprops.cpp:1073
+#: kfmprops.cpp:1074
 msgid "Could not write to\n"
 msgstr "Nem lehet írni\n"
 
-#: kfmprops.cpp:1186
+#: kfmprops.cpp:1187
 msgid "(None)"
 msgstr "(Semmi)"
 
-#: kfmprops.cpp:1232
+#: kfmprops.cpp:1233
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr ""
 
-#: kfmprops.cpp:1239 kfmprops.cpp:1491
+#: kfmprops.cpp:1240 kfmprops.cpp:1492
 msgid "Comment"
 msgstr "Megjegyzés"
 
-#: kfmprops.cpp:1250
+#: kfmprops.cpp:1251
 msgid "Name ( in your language )"
 msgstr "Név (magyarul)"
 
-#: kfmprops.cpp:1479
+#: kfmprops.cpp:1480
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "Minta (pl.: *.html;*.HTML;)"
 
-#: kfmprops.cpp:1487
+#: kfmprops.cpp:1488
 msgid "Mime Type"
 msgstr "MIME típus"
 
-#: kfmprops.cpp:1498
+#: kfmprops.cpp:1499
 msgid "Default Application"
 msgstr "Alapértelmezett program"
 
-#: kfmprops.cpp:1646
+#: kfmprops.cpp:1647
 msgid "Device ( /dev/fd0 )"
 msgstr "Meghajtó (/dev=fd0)"
 
-#: kfmprops.cpp:1654
+#: kfmprops.cpp:1655
 msgid "Mount Point ( /floppy )"
 msgstr "Mount pont (/floppy)"
 
-#: kfmprops.cpp:1664
+#: kfmprops.cpp:1665
 msgid "Readonly"
 msgstr "Csak olvasható"
 
-#: kfmprops.cpp:1670
+#: kfmprops.cpp:1671
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Filerendszerek (iso9660,msdos,minix,alapértelmezett)"
 
-#: kfmprops.cpp:1680
+#: kfmprops.cpp:1681
 msgid "Mounted Icon"
 msgstr "Csatlakoztatott ikon"
 
-#: kfmprops.cpp:1684
+#: kfmprops.cpp:1685
 msgid "Unmounted Icon"
 msgstr "Nem csatlakoztatott ikon"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KFM\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-16 15:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -530,36 +530,36 @@ msgstr "L‰pin‰kyv‰ teksti p‰‰ikoneille"
 msgid "Could not write bookmark"
 msgstr "Kirjanmerkin kirjoittaminen ei onnistu"
 
-#: kfmprops.cpp:241
+#: kfmprops.cpp:242
 msgid "Full Name"
 msgstr "Koko nimi"
 
-#: kfmprops.cpp:259
+#: kfmprops.cpp:260
 msgid "Is the Trash Bin"
 msgstr "On roskakori"
 
-#: kfmprops.cpp:266
+#: kfmprops.cpp:267
 msgid "Is a Directory"
 msgstr "On hakemisto"
 
-#: kfmprops.cpp:273
+#: kfmprops.cpp:274
 msgid "Points to"
 msgstr "Osoittaa"
 
-#: kfmprops.cpp:298
+#: kfmprops.cpp:299
 #, c-format
 msgid "Size: %i"
 msgstr "Koko: %i"
 
-#: kfmprops.cpp:308
+#: kfmprops.cpp:309
 msgid "Last Access"
 msgstr "Viimeisin k‰sittely"
 
-#: kfmprops.cpp:318
+#: kfmprops.cpp:319
 msgid "Last Modified"
 msgstr "Viimeeksi muokattu"
 
-#: kfmprops.cpp:367
+#: kfmprops.cpp:368
 msgid ""
 "Could not rename the file or directory\n"
 "The destination seems to already exist\n"
@@ -567,11 +567,11 @@ msgstr ""
 "En voi nimet‰ uudelleen tiedostoa tai hakemistoa\n"
 "Kohde on jo olemassa\n"
 
-#: kfmprops.cpp:415
+#: kfmprops.cpp:416
 msgid "Access permissions"
 msgstr "K‰sittely oikeudet"
 
-#: kfmprops.cpp:421
+#: kfmprops.cpp:422
 msgid ""
 "Show\n"
 "Entries"
@@ -579,11 +579,11 @@ msgstr ""
 "N‰yt‰\n"
 "Tietueet"
 
-#: kfmprops.cpp:423
+#: kfmprops.cpp:424
 msgid "Read"
 msgstr "Luku"
 
-#: kfmprops.cpp:428
+#: kfmprops.cpp:429
 msgid ""
 "Write\n"
 "Entries"
@@ -591,11 +591,11 @@ msgstr ""
 "Kirjoita\n"
 "Tietuetta"
 
-#: kfmprops.cpp:430
+#: kfmprops.cpp:431
 msgid "Write"
 msgstr "Kirjoitus"
 
-#: kfmprops.cpp:435
+#: kfmprops.cpp:436
 msgid ""
 "Change\n"
 "Into"
@@ -603,39 +603,39 @@ msgstr ""
 "Muuta\n"
 " "
 
-#: kfmprops.cpp:437
+#: kfmprops.cpp:438
 msgid "Exec"
 msgstr "Suoritus"
 
-#: kfmprops.cpp:441
+#: kfmprops.cpp:442
 msgid "Special"
 msgstr "Erikoinen"
 
-#: kfmprops.cpp:445
+#: kfmprops.cpp:446
 msgid "User"
 msgstr "K‰ytt‰j‰"
 
-#: kfmprops.cpp:455
+#: kfmprops.cpp:456
 msgid "Others"
 msgstr "Muut"
 
-#: kfmprops.cpp:468
+#: kfmprops.cpp:469
 msgid "Set UID"
 msgstr "Aseta UID"
 
-#: kfmprops.cpp:469
+#: kfmprops.cpp:470
 msgid "Set GID"
 msgstr "Aseta GID"
 
-#: kfmprops.cpp:470
+#: kfmprops.cpp:471
 msgid "Sticky"
 msgstr "Kiinnitetty"
 
-#: kfmprops.cpp:488
+#: kfmprops.cpp:489
 msgid "Ownership"
 msgstr "Omistajuus"
 
-#: kfmprops.cpp:618
+#: kfmprops.cpp:619
 msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
@@ -643,17 +643,17 @@ msgstr ""
 "Oikeuksia ei voitu muuttaa\n"
 "K‰sittely on mahdollisesti estetty."
 
-#: kfmprops.cpp:633
+#: kfmprops.cpp:634
 #, c-format
 msgid " ERROR: No user %s"
 msgstr " VIRHE: Tuntematon k‰yt‰j‰ %s"
 
-#: kfmprops.cpp:638
+#: kfmprops.cpp:639
 #, c-format
 msgid " ERROR: No group %s"
 msgstr " VIRHE: Tuntematon ryhm‰ %s"
 
-#: kfmprops.cpp:644
+#: kfmprops.cpp:645
 msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
@@ -661,36 +661,36 @@ msgstr ""
 "Omistajaa/ryhm‰‰ ei saatu vaihdettua\n"
 "K‰sittely on mahdollisesti estetty"
 
-#: kfmprops.cpp:662
+#: kfmprops.cpp:663
 msgid "Swallowing on panel"
 msgstr "Paneeliin nielaisu"
 
-#: kfmprops.cpp:680 kfmprops.cpp:703
+#: kfmprops.cpp:681 kfmprops.cpp:704
 msgid "Execute"
 msgstr "Suorita"
 
-#: kfmprops.cpp:684
+#: kfmprops.cpp:685
 msgid "Browse"
 msgstr "Selaa"
 
-#: kfmprops.cpp:688
+#: kfmprops.cpp:689
 msgid "Working Directory"
 msgstr "Tyˆskentelyhakemisto"
 
-#: kfmprops.cpp:711
+#: kfmprops.cpp:712
 msgid "Window Title"
 msgstr "Ikkunan otsikko"
 
-#: kfmprops.cpp:715
+#: kfmprops.cpp:716
 msgid "Run in terminal"
 msgstr "Suorita p‰‰tteess‰"
 
-#: kfmprops.cpp:723
+#: kfmprops.cpp:724
 msgid "Terminal Options"
 msgstr "P‰‰teasetukset"
 
-#: kfmprops.cpp:824 kfmprops.cpp:946 kfmprops.cpp:1389 kfmprops.cpp:1601
-#: kfmprops.cpp:1777
+#: kfmprops.cpp:825 kfmprops.cpp:947 kfmprops.cpp:1390 kfmprops.cpp:1602
+#: kfmprops.cpp:1778
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -698,71 +698,71 @@ msgstr ""
 "Ominaisuuksia ei voitu tallentaa\n"
 "Mahdollisesti p‰‰sy estetty."
 
-#: kfmprops.cpp:872
+#: kfmprops.cpp:873
 msgid "URL"
 msgstr "URL"
 
-#: kfmprops.cpp:973
+#: kfmprops.cpp:974
 msgid "Apply global"
 msgstr "Muuta globaalisti"
 
-#: kfmprops.cpp:1012 kfmprops.cpp:1084 kfmprops.cpp:1141
+#: kfmprops.cpp:1013 kfmprops.cpp:1085 kfmprops.cpp:1142
 msgid "(Default)"
 msgstr "(Oletus)"
 
-#: kfmprops.cpp:1073
+#: kfmprops.cpp:1074
 msgid "Could not write to\n"
 msgstr "Kirjoittaminen ei onnistu\n"
 
-#: kfmprops.cpp:1186
+#: kfmprops.cpp:1187
 msgid "(None)"
 msgstr "(Ei mik‰‰n)"
 
-#: kfmprops.cpp:1232
+#: kfmprops.cpp:1233
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr "Ohjelman kuvio (netscape;Netscape;)"
 
-#: kfmprops.cpp:1239 kfmprops.cpp:1491
+#: kfmprops.cpp:1240 kfmprops.cpp:1492
 msgid "Comment"
 msgstr "Kommentti"
 
-#: kfmprops.cpp:1250
+#: kfmprops.cpp:1251
 msgid "Name ( in your language )"
 msgstr "Nimi ( omalla kielelll‰si )"
 
-#: kfmprops.cpp:1479
+#: kfmprops.cpp:1480
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "Kuvio ( esimerkki: *.html;*.HTML; )"
 
-#: kfmprops.cpp:1487
+#: kfmprops.cpp:1488
 msgid "Mime Type"
 msgstr "MIME-tyyppi"
 
-#: kfmprops.cpp:1498
+#: kfmprops.cpp:1499
 msgid "Default Application"
 msgstr "Oletus sovellus"
 
-#: kfmprops.cpp:1646
+#: kfmprops.cpp:1647
 msgid "Device ( /dev/fd0 )"
 msgstr "Laite ( /dev/fd0 )"
 
-#: kfmprops.cpp:1654
+#: kfmprops.cpp:1655
 msgid "Mount Point ( /floppy )"
 msgstr "Liitospiste (/floppy)"
 
-#: kfmprops.cpp:1664
+#: kfmprops.cpp:1665
 msgid "Readonly"
 msgstr "Vain luku"
 
-#: kfmprops.cpp:1670
+#: kfmprops.cpp:1671
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Tiedostoj‰rjestelm‰t ( iso9660,msdos,minix,default )"
 
-#: kfmprops.cpp:1680
+#: kfmprops.cpp:1681
 msgid "Mounted Icon"
 msgstr "Liitetyn ikoni"
 
-#: kfmprops.cpp:1684
+#: kfmprops.cpp:1685
 msgid "Unmounted Icon"
 msgstr "Irroitetun ikoni"
 

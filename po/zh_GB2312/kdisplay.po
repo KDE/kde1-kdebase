@@ -1,120 +1,120 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-06-16 13:56+0200\n"
+"POT-Creation-Date: 1998-06-16 15:37+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
-#: backgnd.cpp:58
+#: backgnd.cpp:59
 msgid "Enter new desktop name"
 msgstr "键入新的桌面的名称"
 
-#: backgnd.cpp:114 backgnd.cpp:149
+#: backgnd.cpp:115 backgnd.cpp:150
 msgid "Desktop"
 msgstr "桌面"
 
-#: backgnd.cpp:166
+#: backgnd.cpp:167
 msgid "&Rename ..."
 msgstr "重命名[&R] ..."
 
-#: backgnd.cpp:192 colorscm.cpp:93
+#: backgnd.cpp:193 colorscm.cpp:93
 msgid "Colors"
 msgstr "颜色"
 
-#: backgnd.cpp:219
+#: backgnd.cpp:220
 msgid "&One Color"
 msgstr "单色[&C]"
 
 #
-#: backgnd.cpp:236
+#: backgnd.cpp:237
 msgid "&Two Color"
 msgstr "双色[&C]"
 
-#: backgnd.cpp:255
+#: backgnd.cpp:256
 msgid "Set&up ..."
 msgstr "设置[&U] ..."
 
-#: backgnd.cpp:264
+#: backgnd.cpp:265
 msgid "Wallpaper"
 msgstr "墙纸"
 
-#: backgnd.cpp:274
+#: backgnd.cpp:275
 msgid "Ti&led"
 msgstr "并列[&L]"
 
-#: backgnd.cpp:282
+#: backgnd.cpp:283
 msgid "&Centred"
 msgstr "放置在中间[&C]"
 
-#: backgnd.cpp:290
+#: backgnd.cpp:291
 msgid "&Scaled"
 msgstr "比例缩放[&S]"
 
 #
-#: backgnd.cpp:306 backgnd.cpp:426 backgnd.cpp:439 backgnd.cpp:787
+#: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
 msgid "No wallpaper"
 msgstr "没有墙纸"
 
-#: backgnd.cpp:334
+#: backgnd.cpp:335
 msgid "&Browse..."
 msgstr ""
 
 #
-#: backgnd.cpp:863
+#: backgnd.cpp:864
 msgid "Desktop names"
 msgstr "桌面名称"
 
-#: backgnd.cpp:909
+#: backgnd.cpp:910
 msgid "Two color backgrounds"
 msgstr "两个彩色背景"
 
-#: backgnd.cpp:946
+#: backgnd.cpp:947
 msgid "Blend colors from &top to bottom"
 msgstr "从上到下使用渐变色"
 
-#: backgnd.cpp:952
+#: backgnd.cpp:953
 msgid "Blend colors from &right to left"
 msgstr "从右到左使用渐变色"
 
-#: backgnd.cpp:958
+#: backgnd.cpp:959
 msgid "Use &pattern"
 msgstr "使用花样[&P]"
 
-#: backgnd.cpp:985
+#: backgnd.cpp:986
 msgid "Preview"
 msgstr "预览"
 
-#: backgnd.cpp:996
+#: backgnd.cpp:997
 msgid "Pattern &name"
 msgstr "花样名[&N]"
 
-#: backgnd.cpp:1035
+#: backgnd.cpp:1036
 msgid "Current"
 msgstr "当前的"
 
-#: backgnd.cpp:1095
+#: backgnd.cpp:1096
 msgid "Filled"
 msgstr "填充的"
 
-#: backgnd.cpp:1098
+#: backgnd.cpp:1099
 msgid "Fish net"
 msgstr "鱼网"
 
-#: backgnd.cpp:1101
+#: backgnd.cpp:1102
 msgid "Triangles"
 msgstr "三角形"
 
 #
-#: backgnd.cpp:1104
+#: backgnd.cpp:1105
 msgid "Flowers"
 msgstr "花朵"
 
-#: backgnd.cpp:1107
+#: backgnd.cpp:1108
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1110
+#: backgnd.cpp:1111
 msgid "Cobbled Pavement"
 msgstr "Cobbled Pavement"
 

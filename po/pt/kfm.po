@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-16 15:37+0200\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -524,36 +524,36 @@ msgstr "Texto Transparente para Ícones Raiz."
 msgid "Could not write bookmark"
 msgstr "Não foi possível escrever favorito"
 
-#: kfmprops.cpp:241
+#: kfmprops.cpp:242
 msgid "Full Name"
 msgstr "Nome Completo"
 
-#: kfmprops.cpp:259
+#: kfmprops.cpp:260
 msgid "Is the Trash Bin"
 msgstr "É o Caixote do Lixo"
 
-#: kfmprops.cpp:266
+#: kfmprops.cpp:267
 msgid "Is a Directory"
 msgstr "É uma Directoria"
 
-#: kfmprops.cpp:273
+#: kfmprops.cpp:274
 msgid "Points to"
 msgstr "Aponta para"
 
-#: kfmprops.cpp:298
+#: kfmprops.cpp:299
 #, c-format
 msgid "Size: %i"
 msgstr "Tamanho: %i"
 
-#: kfmprops.cpp:308
+#: kfmprops.cpp:309
 msgid "Last Access"
 msgstr "Último Acesso"
 
-#: kfmprops.cpp:318
+#: kfmprops.cpp:319
 msgid "Last Modified"
 msgstr "Última Modificação"
 
-#: kfmprops.cpp:367
+#: kfmprops.cpp:368
 msgid ""
 "Could not rename the file or directory\n"
 "The destination seems to already exist\n"
@@ -561,11 +561,11 @@ msgstr ""
 "Não consegui mudar o nome do ficheiro ou directoria\n"
 "O destino parece já existir\n"
 
-#: kfmprops.cpp:415
+#: kfmprops.cpp:416
 msgid "Access permissions"
 msgstr "Permissões de acesso"
 
-#: kfmprops.cpp:421
+#: kfmprops.cpp:422
 msgid ""
 "Show\n"
 "Entries"
@@ -573,11 +573,11 @@ msgstr ""
 "Mostrar\n"
 "Entradas"
 
-#: kfmprops.cpp:423
+#: kfmprops.cpp:424
 msgid "Read"
 msgstr "Ler"
 
-#: kfmprops.cpp:428
+#: kfmprops.cpp:429
 msgid ""
 "Write\n"
 "Entries"
@@ -585,11 +585,11 @@ msgstr ""
 "Escrever\n"
 "Entradas"
 
-#: kfmprops.cpp:430
+#: kfmprops.cpp:431
 msgid "Write"
 msgstr "Escrever"
 
-#: kfmprops.cpp:435
+#: kfmprops.cpp:436
 msgid ""
 "Change\n"
 "Into"
@@ -597,39 +597,39 @@ msgstr ""
 "Mudar\n"
 "Para"
 
-#: kfmprops.cpp:437
+#: kfmprops.cpp:438
 msgid "Exec"
 msgstr "Executar"
 
-#: kfmprops.cpp:441
+#: kfmprops.cpp:442
 msgid "Special"
 msgstr "Especial"
 
-#: kfmprops.cpp:445
+#: kfmprops.cpp:446
 msgid "User"
 msgstr "Utilizador"
 
-#: kfmprops.cpp:455
+#: kfmprops.cpp:456
 msgid "Others"
 msgstr "Outros"
 
-#: kfmprops.cpp:468
+#: kfmprops.cpp:469
 msgid "Set UID"
 msgstr "Inserir UID"
 
-#: kfmprops.cpp:469
+#: kfmprops.cpp:470
 msgid "Set GID"
 msgstr "Inserir UID"
 
-#: kfmprops.cpp:470
+#: kfmprops.cpp:471
 msgid "Sticky"
 msgstr "Pegajoso"
 
-#: kfmprops.cpp:488
+#: kfmprops.cpp:489
 msgid "Ownership"
 msgstr "Dono"
 
-#: kfmprops.cpp:618
+#: kfmprops.cpp:619
 msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
@@ -637,17 +637,17 @@ msgstr ""
 "Não foi possível mudar as permissões\n"
 "Talvez acesso negado."
 
-#: kfmprops.cpp:633
+#: kfmprops.cpp:634
 #, c-format
 msgid " ERROR: No user %s"
 msgstr " ERRO: Não existe o utilizador %s"
 
-#: kfmprops.cpp:638
+#: kfmprops.cpp:639
 #, c-format
 msgid " ERROR: No group %s"
 msgstr " ERRO: Não existe o grupo %s"
 
-#: kfmprops.cpp:644
+#: kfmprops.cpp:645
 msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
@@ -655,36 +655,36 @@ msgstr ""
 "Não foi possível modificar o dono/grupo\n"
 "possívelmente acesso negado."
 
-#: kfmprops.cpp:662
+#: kfmprops.cpp:663
 msgid "Swallowing on panel"
 msgstr "Engolir no painel"
 
-#: kfmprops.cpp:680 kfmprops.cpp:703
+#: kfmprops.cpp:681 kfmprops.cpp:704
 msgid "Execute"
 msgstr "Executar"
 
-#: kfmprops.cpp:684
+#: kfmprops.cpp:685
 msgid "Browse"
 msgstr "Examinar"
 
-#: kfmprops.cpp:688
+#: kfmprops.cpp:689
 msgid "Working Directory"
 msgstr "Directoria de Trabalho"
 
-#: kfmprops.cpp:711
+#: kfmprops.cpp:712
 msgid "Window Title"
 msgstr "Título da Janela"
 
-#: kfmprops.cpp:715
+#: kfmprops.cpp:716
 msgid "Run in terminal"
 msgstr "Correr no terminal"
 
-#: kfmprops.cpp:723
+#: kfmprops.cpp:724
 msgid "Terminal Options"
 msgstr "Opções de terminal"
 
-#: kfmprops.cpp:824 kfmprops.cpp:946 kfmprops.cpp:1389 kfmprops.cpp:1601
-#: kfmprops.cpp:1777
+#: kfmprops.cpp:825 kfmprops.cpp:947 kfmprops.cpp:1390 kfmprops.cpp:1602
+#: kfmprops.cpp:1778
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -692,71 +692,71 @@ msgstr ""
 "Não foi possível gravar as propriedades\n"
 "Talvez permissões negadas"
 
-#: kfmprops.cpp:872
+#: kfmprops.cpp:873
 msgid "URL"
 msgstr "URL"
 
-#: kfmprops.cpp:973
+#: kfmprops.cpp:974
 msgid "Apply global"
 msgstr "Aplicar global"
 
-#: kfmprops.cpp:1012 kfmprops.cpp:1084 kfmprops.cpp:1141
+#: kfmprops.cpp:1013 kfmprops.cpp:1085 kfmprops.cpp:1142
 msgid "(Default)"
 msgstr "(Por omissão)"
 
-#: kfmprops.cpp:1073
+#: kfmprops.cpp:1074
 msgid "Could not write to\n"
 msgstr "Não foi possível escrever em\n"
 
-#: kfmprops.cpp:1186
+#: kfmprops.cpp:1187
 msgid "(None)"
 msgstr "(Nenhum)"
 
-#: kfmprops.cpp:1232
+#: kfmprops.cpp:1233
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr "Padrão Binário (netscape;Netscape;)"
 
-#: kfmprops.cpp:1239 kfmprops.cpp:1491
+#: kfmprops.cpp:1240 kfmprops.cpp:1492
 msgid "Comment"
 msgstr "Comentário"
 
-#: kfmprops.cpp:1250
+#: kfmprops.cpp:1251
 msgid "Name ( in your language )"
 msgstr "Nome ( na sua linguagem )"
 
-#: kfmprops.cpp:1479
+#: kfmprops.cpp:1480
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "Padrão ( exemplo: *.html;*.HTML; )"
 
-#: kfmprops.cpp:1487
+#: kfmprops.cpp:1488
 msgid "Mime Type"
 msgstr "Tipo Mime"
 
-#: kfmprops.cpp:1498
+#: kfmprops.cpp:1499
 msgid "Default Application"
 msgstr "Aplicação por Defeito"
 
-#: kfmprops.cpp:1646
+#: kfmprops.cpp:1647
 msgid "Device ( /dev/fd0 )"
 msgstr "Dispositivo ( /dev/fd0 )"
 
-#: kfmprops.cpp:1654
+#: kfmprops.cpp:1655
 msgid "Mount Point ( /floppy )"
 msgstr "Ponto de Montagem ( /floppy )"
 
-#: kfmprops.cpp:1664
+#: kfmprops.cpp:1665
 msgid "Readonly"
 msgstr "Leitura apenas"
 
-#: kfmprops.cpp:1670
+#: kfmprops.cpp:1671
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Filesystems ( iso9660,msdos,minix,default )"
 
-#: kfmprops.cpp:1680
+#: kfmprops.cpp:1681
 msgid "Mounted Icon"
 msgstr "Ícone Montado"
 
-#: kfmprops.cpp:1684
+#: kfmprops.cpp:1685
 msgid "Unmounted Icon"
 msgstr "Ícone Não Montado"
 

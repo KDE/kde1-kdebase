@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-16 15:37+0200\n"
 "PO-Revision-Date: 1998-05-17 20:00-0500-\n"
 "Last-Translator: Vlatko Cingoski <vlatko@eml.hiroshima-u.ac.jp>\n"
 "Language-Team: Macedonian\n"
@@ -223,72 +223,72 @@ msgstr "Den(ovite) ne se korektni!!"
 msgid "The value in size isn't valid number!!"
 msgstr "Vrednosta ne e korektna - greshen broj!!"
 
-#: kfoptions.cpp:51
+#: kfoptions.cpp:52
 msgid "Preferences"
 msgstr "Moi Baranja"
 
-#: kfoptions.cpp:73
+#: kfoptions.cpp:74
 msgid "File format:"
 msgstr "Format na Dokumentot"
 
-#: kfoptions.cpp:75
+#: kfoptions.cpp:76
 msgid "Save results to file:"
 msgstr "Zapishi gi rezultatite vo dokument:"
 
-#: kfoptions.cpp:78
+#: kfoptions.cpp:79
 msgid "Save results to file ~/.kfind-results.html"
 msgstr "Zapisi gi rezultatite vo dokument ~/.kfind-results.html"
 
-#: kfoptions.cpp:80
+#: kfoptions.cpp:81
 msgid "Browse"
 msgstr "Listaj"
 
-#: kfoptions.cpp:93
+#: kfoptions.cpp:94
 msgid "Plain Text"
 msgstr "Obichen Tekst"
 
-#: kfoptions.cpp:122
+#: kfoptions.cpp:123
 msgid "Saving"
 msgstr "Zapishuvanje"
 
-#: kfoptions.cpp:129
+#: kfoptions.cpp:130
 msgid "Create Archive:"
 msgstr "Sozdadi Arhiva:"
 
-#: kfoptions.cpp:131
+#: kfoptions.cpp:132
 msgid "Add to Archive:"
 msgstr "Dodadi vo Arhivata:"
 
-#: kfoptions.cpp:135
+#: kfoptions.cpp:136
 msgid "Patterns:"
 msgstr "Mustra:"
 
-#: kfoptions.cpp:138
+#: kfoptions.cpp:139
 msgid "Add New"
 msgstr "Dodadi Nov:"
 
-#: kfoptions.cpp:179
+#: kfoptions.cpp:180
 msgid "Archivers"
 msgstr "Arhivari"
 
-#: kfwin.cpp:110 kfwin.cpp:117 kfwin.cpp:133 kfwin.cpp:160
+#: kfwin.cpp:111 kfwin.cpp:118 kfwin.cpp:134 kfwin.cpp:161
 #, c-format
 msgid "%d file(s) found"
 msgstr "%d dociment(i) se pronajdeni"
 
-#: kfwin.cpp:244
+#: kfwin.cpp:245
 msgid "It wasn't possible to save results!"
 msgstr "Ne mozze da se zapishat rezultatite!"
 
-#: kfwin.cpp:252 kfwin.cpp:254 kfwin.cpp:256
+#: kfwin.cpp:253 kfwin.cpp:255 kfwin.cpp:257
 msgid "KFind Results File"
 msgstr "KFind Document so Rezultatite"
 
-#: kfwin.cpp:281
+#: kfwin.cpp:282
 msgid "Results were saved to file\n"
 msgstr "Rezultatite se zapishani vo document\n"
 
-#: kfwin.cpp:296
+#: kfwin.cpp:297
 #, c-format
 msgid ""
 "Do you really want to delete file:\n"
@@ -297,11 +297,11 @@ msgstr ""
 "Dali navistina sakate da go izbrisite dokumentot:\n"
 "%s"
 
-#: kfwin.cpp:298
+#: kfwin.cpp:299
 msgid "Delete File"
 msgstr "Izbrishi go Dokumentot"
 
-#: kfwin.cpp:310
+#: kfwin.cpp:311
 msgid ""
 "You have no permission\n"
 " to delete this file"
@@ -309,7 +309,7 @@ msgstr ""
 "Nemate dozvola\n"
 " za da go izbrishite ovoj document"
 
-#: kfwin.cpp:316
+#: kfwin.cpp:317
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
@@ -317,7 +317,7 @@ msgstr ""
 "Ne e mozzno da se izbrishe\n"
 "izbraniot dokument"
 
-#: kfwin.cpp:334
+#: kfwin.cpp:335
 msgid ""
 "You have no permission\n"
 " to delete this directory"
@@ -325,7 +325,7 @@ msgstr ""
 "Nemate dozvola\n"
 "za da go izbrishite ovoj direktorium"
 
-#: kfwin.cpp:339
+#: kfwin.cpp:340
 msgid ""
 "Specified directory\n"
 "is not empty!"
@@ -333,7 +333,7 @@ msgstr ""
 "Opredeleniot direktorium\n"
 "ne e prazen!"
 
-#: kfwin.cpp:344
+#: kfwin.cpp:345
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
@@ -341,11 +341,11 @@ msgstr ""
 "Ne e mozzno da se izbrishe\n"
 "izbraniot direktorium"
 
-#: kfwin.cpp:436
+#: kfwin.cpp:437
 msgid "Couldn't recognize archive type!"
 msgstr "Ne mozzam da go prepoznaam tipot na arhivata!"
 
-#: kfwin.cpp:495
+#: kfwin.cpp:496
 msgid "Error while creating child process!"
 msgstr "Greshka pri sozdavanjeto na noviot proces!"
 

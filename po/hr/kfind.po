@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-16 15:37+0200\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-10-01 16:40:07+0200\n"
 "From: root <flidr@CyberGate.zcu.cz>\n"
@@ -223,72 +223,72 @@ msgstr "Dan(i) nije(su) ispravan!!"
 msgid "The value in size isn't valid number!!"
 msgstr "Vrijednost velièine nije ispravna!!"
 
-#: kfoptions.cpp:51
+#: kfoptions.cpp:52
 msgid "Preferences"
 msgstr "Postava"
 
-#: kfoptions.cpp:73
+#: kfoptions.cpp:74
 msgid "File format:"
 msgstr "Format datoteke:"
 
-#: kfoptions.cpp:75
+#: kfoptions.cpp:76
 msgid "Save results to file:"
 msgstr "Spremi rezultate u datoteku:"
 
-#: kfoptions.cpp:78
+#: kfoptions.cpp:79
 msgid "Save results to file ~/.kfind-results.html"
 msgstr "Spremi rezultate u datoteku ~/.kfind-results.html"
 
-#: kfoptions.cpp:80
+#: kfoptions.cpp:81
 msgid "Browse"
 msgstr "Potra¾i"
 
-#: kfoptions.cpp:93
+#: kfoptions.cpp:94
 msgid "Plain Text"
 msgstr "Èisti tekst"
 
-#: kfoptions.cpp:122
+#: kfoptions.cpp:123
 msgid "Saving"
 msgstr "Spremam"
 
-#: kfoptions.cpp:129
+#: kfoptions.cpp:130
 msgid "Create Archive:"
 msgstr "Naèini arhivu:"
 
-#: kfoptions.cpp:131
+#: kfoptions.cpp:132
 msgid "Add to Archive:"
 msgstr "Dodaj u arhivu:"
 
-#: kfoptions.cpp:135
+#: kfoptions.cpp:136
 msgid "Patterns:"
 msgstr "Uzorci:"
 
-#: kfoptions.cpp:138
+#: kfoptions.cpp:139
 msgid "Add New"
 msgstr "Dodaj novi"
 
-#: kfoptions.cpp:179
+#: kfoptions.cpp:180
 msgid "Archivers"
 msgstr "Arhiveri"
 
-#: kfwin.cpp:110 kfwin.cpp:117 kfwin.cpp:133 kfwin.cpp:160
+#: kfwin.cpp:111 kfwin.cpp:118 kfwin.cpp:134 kfwin.cpp:161
 #, c-format
 msgid "%d file(s) found"
 msgstr "%d datoteka naðeno/a"
 
-#: kfwin.cpp:244
+#: kfwin.cpp:245
 msgid "It wasn't possible to save results!"
 msgstr "Nisam mogao spremiti rezultate!"
 
-#: kfwin.cpp:252 kfwin.cpp:254 kfwin.cpp:256
+#: kfwin.cpp:253 kfwin.cpp:255 kfwin.cpp:257
 msgid "KFind Results File"
 msgstr "KFind datoteka s rezultatima"
 
-#: kfwin.cpp:281
+#: kfwin.cpp:282
 msgid "Results were saved to file\n"
 msgstr "Rezultati su spremljeni u datoteku\n"
 
-#: kfwin.cpp:296
+#: kfwin.cpp:297
 #, c-format
 msgid ""
 "Do you really want to delete file:\n"
@@ -297,11 +297,11 @@ msgstr ""
 "®elite li zbilja obrisati datoteku:\n"
 "%s"
 
-#: kfwin.cpp:298
+#: kfwin.cpp:299
 msgid "Delete File"
 msgstr "Obri¹i datoteku"
 
-#: kfwin.cpp:310
+#: kfwin.cpp:311
 msgid ""
 "You have no permission\n"
 " to delete this file"
@@ -309,13 +309,13 @@ msgstr ""
 "Nemate ovlasti\n"
 " za brisanje te datoteke"
 
-#: kfwin.cpp:316
+#: kfwin.cpp:317
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
 msgstr "Ne mogu obrisati biranu datoteku"
 
-#: kfwin.cpp:334
+#: kfwin.cpp:335
 msgid ""
 "You have no permission\n"
 " to delete this directory"
@@ -323,7 +323,7 @@ msgstr ""
 "Nemate ovlasti\n"
 " za brisanje tog direktorija"
 
-#: kfwin.cpp:339
+#: kfwin.cpp:340
 msgid ""
 "Specified directory\n"
 "is not empty!"
@@ -331,7 +331,7 @@ msgstr ""
 "Navedeni direktorij\n"
 "nije prazan!"
 
-#: kfwin.cpp:344
+#: kfwin.cpp:345
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
@@ -339,11 +339,11 @@ msgstr ""
 "Ne mogu obrisati\n"
 "birani direktorij"
 
-#: kfwin.cpp:436
+#: kfwin.cpp:437
 msgid "Couldn't recognize archive type!"
 msgstr "Ne prepoznajem vrstu arhive!"
 
-#: kfwin.cpp:495
+#: kfwin.cpp:496
 msgid "Error while creating child process!"
 msgstr "Gre¹ka prilikom stvaranja nasljednog (child) procesa!"
 

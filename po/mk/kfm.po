@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-16 15:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Macedonian <LL@li.org>\n"
@@ -527,36 +527,36 @@ msgstr ""
 msgid "Could not write bookmark"
 msgstr "Nemozzam da zapisham vo\n"
 
-#: kfmprops.cpp:241
+#: kfmprops.cpp:242
 msgid "Full Name"
 msgstr "Polno Ime"
 
-#: kfmprops.cpp:259
+#: kfmprops.cpp:260
 msgid "Is the Trash Bin"
 msgstr "Ova e Kanta za Djubre"
 
-#: kfmprops.cpp:266
+#: kfmprops.cpp:267
 msgid "Is a Directory"
 msgstr "Ova e Direktorium"
 
-#: kfmprops.cpp:273
+#: kfmprops.cpp:274
 msgid "Points to"
 msgstr "Nasochen kon"
 
-#: kfmprops.cpp:298
+#: kfmprops.cpp:299
 #, c-format
 msgid "Size: %i"
 msgstr "Golemina: %i"
 
-#: kfmprops.cpp:308
+#: kfmprops.cpp:309
 msgid "Last Access"
 msgstr "Posleden Prikluchok"
 
-#: kfmprops.cpp:318
+#: kfmprops.cpp:319
 msgid "Last Modified"
 msgstr "Posleden pat Prerabotan"
 
-#: kfmprops.cpp:367
+#: kfmprops.cpp:368
 msgid ""
 "Could not rename the file or directory\n"
 "The destination seems to already exist\n"
@@ -564,11 +564,11 @@ msgstr ""
 "Ne mozzam da go promenam imeto na direktoriumot\n"
 "Izgleda deka takvo ime veke postoi\n"
 
-#: kfmprops.cpp:415
+#: kfmprops.cpp:416
 msgid "Access permissions"
 msgstr "Dozvola za prikluchuvanje"
 
-#: kfmprops.cpp:421
+#: kfmprops.cpp:422
 msgid ""
 "Show\n"
 "Entries"
@@ -576,11 +576,11 @@ msgstr ""
 "Prikazi\n"
 "Vlezovi"
 
-#: kfmprops.cpp:423
+#: kfmprops.cpp:424
 msgid "Read"
 msgstr "Prochitaj"
 
-#: kfmprops.cpp:428
+#: kfmprops.cpp:429
 msgid ""
 "Write\n"
 "Entries"
@@ -588,11 +588,11 @@ msgstr ""
 "Zapishi\n"
 "Vlezovi"
 
-#: kfmprops.cpp:430
+#: kfmprops.cpp:431
 msgid "Write"
 msgstr "Zapishi"
 
-#: kfmprops.cpp:435
+#: kfmprops.cpp:436
 msgid ""
 "Change\n"
 "Into"
@@ -600,39 +600,39 @@ msgstr ""
 "Promeni\n"
 "vo"
 
-#: kfmprops.cpp:437
+#: kfmprops.cpp:438
 msgid "Exec"
 msgstr "Izvrshi"
 
-#: kfmprops.cpp:441
+#: kfmprops.cpp:442
 msgid "Special"
 msgstr "Specijalno"
 
-#: kfmprops.cpp:445
+#: kfmprops.cpp:446
 msgid "User"
 msgstr "Korisnik"
 
-#: kfmprops.cpp:455
+#: kfmprops.cpp:456
 msgid "Others"
 msgstr "Ostanati"
 
-#: kfmprops.cpp:468
+#: kfmprops.cpp:469
 msgid "Set UID"
 msgstr "Promeni UID"
 
-#: kfmprops.cpp:469
+#: kfmprops.cpp:470
 msgid "Set GID"
 msgstr "Promeni GID"
 
-#: kfmprops.cpp:470
+#: kfmprops.cpp:471
 msgid "Sticky"
 msgstr "Zalepeni Prozorci"
 
-#: kfmprops.cpp:488
+#: kfmprops.cpp:489
 msgid "Ownership"
 msgstr "Sopstvenost"
 
-#: kfmprops.cpp:618
+#: kfmprops.cpp:619
 msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
@@ -640,52 +640,52 @@ msgstr ""
 "Ne mozzam da ja promenam dozvolata\n"
 "Mozebi ne mi e dozvolen pristap."
 
-#: kfmprops.cpp:633
+#: kfmprops.cpp:634
 #, c-format
 msgid " ERROR: No user %s"
 msgstr " GRESKA: Ne postoi korisnik %s"
 
-#: kfmprops.cpp:638
+#: kfmprops.cpp:639
 #, c-format
 msgid " ERROR: No group %s"
 msgstr " GRESKA: Ne postoi grupa %s"
 
-#: kfmprops.cpp:644
+#: kfmprops.cpp:645
 msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
 msgstr ""
 
-#: kfmprops.cpp:662
+#: kfmprops.cpp:663
 msgid "Swallowing on panel"
 msgstr ""
 
-#: kfmprops.cpp:680 kfmprops.cpp:703
+#: kfmprops.cpp:681 kfmprops.cpp:704
 msgid "Execute"
 msgstr "Izvrshi"
 
-#: kfmprops.cpp:684
+#: kfmprops.cpp:685
 msgid "Browse"
 msgstr "Prebaraj"
 
-#: kfmprops.cpp:688
+#: kfmprops.cpp:689
 msgid "Working Directory"
 msgstr "Raboten Direktorium"
 
-#: kfmprops.cpp:711
+#: kfmprops.cpp:712
 msgid "Window Title"
 msgstr ""
 
-#: kfmprops.cpp:715
+#: kfmprops.cpp:716
 msgid "Run in terminal"
 msgstr "Raboti vo terminal"
 
-#: kfmprops.cpp:723
+#: kfmprops.cpp:724
 msgid "Terminal Options"
 msgstr "Opcii na Terminalot"
 
-#: kfmprops.cpp:824 kfmprops.cpp:946 kfmprops.cpp:1389 kfmprops.cpp:1601
-#: kfmprops.cpp:1777
+#: kfmprops.cpp:825 kfmprops.cpp:947 kfmprops.cpp:1390 kfmprops.cpp:1602
+#: kfmprops.cpp:1778
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -693,71 +693,71 @@ msgstr ""
 "Ne mozam da gi zapisam osobinite\n"
 "Mozzebi nemam dozvola za toa"
 
-#: kfmprops.cpp:872
+#: kfmprops.cpp:873
 msgid "URL"
 msgstr "URL"
 
-#: kfmprops.cpp:973
+#: kfmprops.cpp:974
 msgid "Apply global"
 msgstr "Primeni globalno"
 
-#: kfmprops.cpp:1012 kfmprops.cpp:1084 kfmprops.cpp:1141
+#: kfmprops.cpp:1013 kfmprops.cpp:1085 kfmprops.cpp:1142
 msgid "(Default)"
 msgstr "(Normalno)"
 
-#: kfmprops.cpp:1073
+#: kfmprops.cpp:1074
 msgid "Could not write to\n"
 msgstr "Nemozzam da zapisham vo\n"
 
-#: kfmprops.cpp:1186
+#: kfmprops.cpp:1187
 msgid "(None)"
 msgstr "(Nikoj)"
 
-#: kfmprops.cpp:1232
+#: kfmprops.cpp:1233
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr "Binaren patern (netscapel;Netscape;)"
 
-#: kfmprops.cpp:1239 kfmprops.cpp:1491
+#: kfmprops.cpp:1240 kfmprops.cpp:1492
 msgid "Comment"
 msgstr "Obrazlozzenie"
 
-#: kfmprops.cpp:1250
+#: kfmprops.cpp:1251
 msgid "Name ( in your language )"
 msgstr "Ime ( na tvoj jazik )"
 
-#: kfmprops.cpp:1479
+#: kfmprops.cpp:1480
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "Patern ( primer: *html;*HTML; )"
 
-#: kfmprops.cpp:1487
+#: kfmprops.cpp:1488
 msgid "Mime Type"
 msgstr "Mime tipovi"
 
-#: kfmprops.cpp:1498
+#: kfmprops.cpp:1499
 msgid "Default Application"
 msgstr "Normalna Aplikacija"
 
-#: kfmprops.cpp:1646
+#: kfmprops.cpp:1647
 msgid "Device ( /dev/fd0 )"
 msgstr "Device ( /dev/fd0 )"
 
-#: kfmprops.cpp:1654
+#: kfmprops.cpp:1655
 msgid "Mount Point ( /floppy )"
 msgstr "Mount (Zakachi) Tocka ( /floppy )"
 
-#: kfmprops.cpp:1664
+#: kfmprops.cpp:1665
 msgid "Readonly"
 msgstr "Readonly"
 
-#: kfmprops.cpp:1670
+#: kfmprops.cpp:1671
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Tip na file sistem ( iso9660, msdos, minix, default )"
 
-#: kfmprops.cpp:1680
+#: kfmprops.cpp:1681
 msgid "Mounted Icon"
 msgstr "Mounted (Zakachi) Ikona"
 
-#: kfmprops.cpp:1684
+#: kfmprops.cpp:1685
 msgid "Unmounted Icon"
 msgstr "Unmounted (Otkachi) Ikona"
 

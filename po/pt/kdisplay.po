@@ -1,115 +1,115 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay.po\n"
-"POT-Creation-Date: 1998-06-16 13:56+0200\n"
+"POT-Creation-Date: 1998-06-16 15:37+0200\n"
 "PO-Revision-Date: 1998-01-26 14:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
-#: backgnd.cpp:58
+#: backgnd.cpp:59
 msgid "Enter new desktop name"
 msgstr "Insira o nome do novo ambiente de trabalho"
 
-#: backgnd.cpp:114 backgnd.cpp:149
+#: backgnd.cpp:115 backgnd.cpp:150
 msgid "Desktop"
 msgstr "Ambiente de trabalho"
 
-#: backgnd.cpp:166
+#: backgnd.cpp:167
 msgid "&Rename ..."
 msgstr "&Mudar nome..."
 
-#: backgnd.cpp:192 colorscm.cpp:93
+#: backgnd.cpp:193 colorscm.cpp:93
 msgid "Colors"
 msgstr "Cores"
 
-#: backgnd.cpp:219
+#: backgnd.cpp:220
 msgid "&One Color"
 msgstr "&Uma Cor"
 
-#: backgnd.cpp:236
+#: backgnd.cpp:237
 msgid "&Two Color"
 msgstr "&Duas Cores"
 
-#: backgnd.cpp:255
+#: backgnd.cpp:256
 msgid "Set&up ..."
 msgstr "Config&urar..."
 
-#: backgnd.cpp:264
+#: backgnd.cpp:265
 msgid "Wallpaper"
 msgstr "Papel de parede"
 
-#: backgnd.cpp:274
+#: backgnd.cpp:275
 msgid "Ti&led"
 msgstr "&Mosaico"
 
-#: backgnd.cpp:282
+#: backgnd.cpp:283
 msgid "&Centred"
 msgstr "&Centrado"
 
-#: backgnd.cpp:290
+#: backgnd.cpp:291
 msgid "&Scaled"
 msgstr "&Escalonado"
 
-#: backgnd.cpp:306 backgnd.cpp:426 backgnd.cpp:439 backgnd.cpp:787
+#: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
 msgid "No wallpaper"
 msgstr "Nenhumm papel de parede"
 
-#: backgnd.cpp:334
+#: backgnd.cpp:335
 msgid "&Browse..."
 msgstr "&Escolher..."
 
-#: backgnd.cpp:863
+#: backgnd.cpp:864
 msgid "Desktop names"
 msgstr "Nomes dos ambiente de trabalho"
 
-#: backgnd.cpp:909
+#: backgnd.cpp:910
 msgid "Two color backgrounds"
 msgstr "Fundos de duas cores"
 
-#: backgnd.cpp:946
+#: backgnd.cpp:947
 msgid "Blend colors from &top to bottom"
 msgstr "Misturar cores do &topo para baixo"
 
-#: backgnd.cpp:952
+#: backgnd.cpp:953
 msgid "Blend colors from &right to left"
 msgstr "Misturar cores da di&reita para a esquerda"
 
-#: backgnd.cpp:958
+#: backgnd.cpp:959
 msgid "Use &pattern"
 msgstr "Utilizar &padrão"
 
-#: backgnd.cpp:985
+#: backgnd.cpp:986
 msgid "Preview"
 msgstr "Previsão"
 
-#: backgnd.cpp:996
+#: backgnd.cpp:997
 msgid "Pattern &name"
 msgstr "&Nome do padrão"
 
-#: backgnd.cpp:1035
+#: backgnd.cpp:1036
 msgid "Current"
 msgstr "Actual"
 
-#: backgnd.cpp:1095
+#: backgnd.cpp:1096
 msgid "Filled"
 msgstr "Sólido"
 
-#: backgnd.cpp:1098
+#: backgnd.cpp:1099
 msgid "Fish net"
 msgstr "Rede de pesca"
 
-#: backgnd.cpp:1101
+#: backgnd.cpp:1102
 msgid "Triangles"
 msgstr "Triângulos"
 
-#: backgnd.cpp:1104
+#: backgnd.cpp:1105
 msgid "Flowers"
 msgstr "Flores"
 
-#: backgnd.cpp:1107
+#: backgnd.cpp:1108
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1110
+#: backgnd.cpp:1111
 msgid "Cobbled Pavement"
 msgstr "Pavimento"
 

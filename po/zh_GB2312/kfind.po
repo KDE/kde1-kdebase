@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-16 15:37+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -222,72 +222,72 @@ msgstr "天数不对"
 msgid "The value in size isn't valid number!!"
 msgstr "无效的文件大小"
 
-#: kfoptions.cpp:51
+#: kfoptions.cpp:52
 msgid "Preferences"
 msgstr "偏好设置"
 
-#: kfoptions.cpp:73
+#: kfoptions.cpp:74
 msgid "File format:"
 msgstr "文件格式: "
 
-#: kfoptions.cpp:75
+#: kfoptions.cpp:76
 msgid "Save results to file:"
 msgstr "保存结果到文件:"
 
-#: kfoptions.cpp:78
+#: kfoptions.cpp:79
 msgid "Save results to file ~/.kfind-results.html"
 msgstr "保存结果到 ~/.kfind-results.html 文件"
 
-#: kfoptions.cpp:80
+#: kfoptions.cpp:81
 msgid "Browse"
 msgstr "浏览"
 
-#: kfoptions.cpp:93
+#: kfoptions.cpp:94
 msgid "Plain Text"
 msgstr "纯文本文件"
 
-#: kfoptions.cpp:122
+#: kfoptions.cpp:123
 msgid "Saving"
 msgstr "保存"
 
-#: kfoptions.cpp:129
+#: kfoptions.cpp:130
 msgid "Create Archive:"
 msgstr "建立压缩文件:"
 
-#: kfoptions.cpp:131
+#: kfoptions.cpp:132
 msgid "Add to Archive:"
 msgstr "添加到压缩文件中:"
 
-#: kfoptions.cpp:135
+#: kfoptions.cpp:136
 msgid "Patterns:"
 msgstr "模式"
 
-#: kfoptions.cpp:138
+#: kfoptions.cpp:139
 msgid "Add New"
 msgstr "加入新项目"
 
-#: kfoptions.cpp:179
+#: kfoptions.cpp:180
 msgid "Archivers"
 msgstr "压缩文件"
 
-#: kfwin.cpp:110 kfwin.cpp:117 kfwin.cpp:133 kfwin.cpp:160
+#: kfwin.cpp:111 kfwin.cpp:118 kfwin.cpp:134 kfwin.cpp:161
 #, c-format
 msgid "%d file(s) found"
 msgstr "找到 %d 个文件"
 
-#: kfwin.cpp:244
+#: kfwin.cpp:245
 msgid "It wasn't possible to save results!"
 msgstr "无法保存搜寻结果!"
 
-#: kfwin.cpp:252 kfwin.cpp:254 kfwin.cpp:256
+#: kfwin.cpp:253 kfwin.cpp:255 kfwin.cpp:257
 msgid "KFind Results File"
 msgstr "KFind 搜寻结果文件"
 
-#: kfwin.cpp:281
+#: kfwin.cpp:282
 msgid "Results were saved to file\n"
 msgstr "搜寻结果已经保存到文件\n"
 
-#: kfwin.cpp:296
+#: kfwin.cpp:297
 #, c-format
 msgid ""
 "Do you really want to delete file:\n"
@@ -296,45 +296,45 @@ msgstr ""
 "确定要删除文件? :\n"
 "%s"
 
-#: kfwin.cpp:298
+#: kfwin.cpp:299
 msgid "Delete File"
 msgstr "删除文件"
 
-#: kfwin.cpp:310
+#: kfwin.cpp:311
 msgid ""
 "You have no permission\n"
 " to delete this file"
 msgstr "你没有权限删除这个文件"
 
-#: kfwin.cpp:316
+#: kfwin.cpp:317
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
 msgstr "无法删除选定的文件"
 
-#: kfwin.cpp:334
+#: kfwin.cpp:335
 msgid ""
 "You have no permission\n"
 " to delete this directory"
 msgstr "你没有权限删除这个目录"
 
-#: kfwin.cpp:339
+#: kfwin.cpp:340
 msgid ""
 "Specified directory\n"
 "is not empty!"
 msgstr "指定的目录不是空的!"
 
-#: kfwin.cpp:344
+#: kfwin.cpp:345
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
 msgstr "无法删除选定的目录"
 
-#: kfwin.cpp:436
+#: kfwin.cpp:437
 msgid "Couldn't recognize archive type!"
 msgstr "无法认出压缩格式!"
 
-#: kfwin.cpp:495
+#: kfwin.cpp:496
 msgid "Error while creating child process!"
 msgstr "建立子进程时发生错误!"
 

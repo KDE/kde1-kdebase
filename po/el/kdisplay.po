@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-16 13:56+0200\n"
+"POT-Creation-Date: 1998-06-16 15:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,122 +14,122 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:58
+#: backgnd.cpp:59
 msgid "Enter new desktop name"
 msgstr ""
 
-#: backgnd.cpp:114 backgnd.cpp:149
+#: backgnd.cpp:115 backgnd.cpp:150
 msgid "Desktop"
 msgstr ""
 
-#: backgnd.cpp:166
+#: backgnd.cpp:167
 msgid "&Rename ..."
 msgstr ""
 
-#: backgnd.cpp:192 colorscm.cpp:93
+#: backgnd.cpp:193 colorscm.cpp:93
 #, fuzzy
 msgid "Colors"
 msgstr "Χρώμα"
 
-#: backgnd.cpp:219
+#: backgnd.cpp:220
 #, fuzzy
 msgid "&One Color"
 msgstr "Χρώμα"
 
-#: backgnd.cpp:236
+#: backgnd.cpp:237
 #, fuzzy
 msgid "&Two Color"
 msgstr "Χρώμα"
 
-#: backgnd.cpp:255
+#: backgnd.cpp:256
 #, fuzzy
 msgid "Set&up ..."
 msgstr "Ρύσμισε..."
 
-#: backgnd.cpp:264
+#: backgnd.cpp:265
 msgid "Wallpaper"
 msgstr "Ταπετσαρία"
 
-#: backgnd.cpp:274
+#: backgnd.cpp:275
 #, fuzzy
 msgid "Ti&led"
 msgstr "Πλακάκια"
 
-#: backgnd.cpp:282
+#: backgnd.cpp:283
 #, fuzzy
 msgid "&Centred"
 msgstr "Κεντραρισμένο"
 
-#: backgnd.cpp:290
+#: backgnd.cpp:291
 #, fuzzy
 msgid "&Scaled"
 msgstr "Υπό κλίμακα"
 
-#: backgnd.cpp:306 backgnd.cpp:426 backgnd.cpp:439 backgnd.cpp:787
+#: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
 #, fuzzy
 msgid "No wallpaper"
 msgstr "Ταπετσαρία"
 
-#: backgnd.cpp:334
+#: backgnd.cpp:335
 #, fuzzy
 msgid "&Browse..."
 msgstr "Κοίταξε"
 
-#: backgnd.cpp:863
+#: backgnd.cpp:864
 msgid "Desktop names"
 msgstr ""
 
-#: backgnd.cpp:909
+#: backgnd.cpp:910
 #, fuzzy
 msgid "Two color backgrounds"
 msgstr "Επιλογή φόντου"
 
-#: backgnd.cpp:946
+#: backgnd.cpp:947
 msgid "Blend colors from &top to bottom"
 msgstr ""
 
-#: backgnd.cpp:952
+#: backgnd.cpp:953
 msgid "Blend colors from &right to left"
 msgstr ""
 
-#: backgnd.cpp:958
+#: backgnd.cpp:959
 msgid "Use &pattern"
 msgstr ""
 
-#: backgnd.cpp:985
+#: backgnd.cpp:986
 msgid "Preview"
 msgstr ""
 
-#: backgnd.cpp:996
+#: backgnd.cpp:997
 msgid "Pattern &name"
 msgstr ""
 
-#: backgnd.cpp:1035
+#: backgnd.cpp:1036
 msgid "Current"
 msgstr ""
 
-#: backgnd.cpp:1095
+#: backgnd.cpp:1096
 #, fuzzy
 msgid "Filled"
 msgstr "Πλακάκια"
 
-#: backgnd.cpp:1098
+#: backgnd.cpp:1099
 msgid "Fish net"
 msgstr ""
 
-#: backgnd.cpp:1101
+#: backgnd.cpp:1102
 msgid "Triangles"
 msgstr ""
 
-#: backgnd.cpp:1104
+#: backgnd.cpp:1105
 msgid "Flowers"
 msgstr ""
 
-#: backgnd.cpp:1107
+#: backgnd.cpp:1108
 msgid "Rattan"
 msgstr ""
 
-#: backgnd.cpp:1110
+#: backgnd.cpp:1111
 msgid "Cobbled Pavement"
 msgstr ""
 

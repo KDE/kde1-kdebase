@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDISPLAY\n"
-"POT-Creation-Date: 1998-06-16 13:56+0200\n"
+"POT-Creation-Date: 1998-06-16 15:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,111 +13,111 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:58
+#: backgnd.cpp:59
 msgid "Enter new desktop name"
 msgstr "Uuden työpöydän nimi"
 
-#: backgnd.cpp:114 backgnd.cpp:149
+#: backgnd.cpp:115 backgnd.cpp:150
 msgid "Desktop"
 msgstr "Työpöytä"
 
-#: backgnd.cpp:166
+#: backgnd.cpp:167
 msgid "&Rename ..."
 msgstr "&Nimeä Uudelleen..."
 
-#: backgnd.cpp:192 colorscm.cpp:93
+#: backgnd.cpp:193 colorscm.cpp:93
 msgid "Colors"
 msgstr "Värit"
 
-#: backgnd.cpp:219
+#: backgnd.cpp:220
 msgid "&One Color"
 msgstr "&Yksi väri"
 
-#: backgnd.cpp:236
+#: backgnd.cpp:237
 msgid "&Two Color"
 msgstr "K&aksi väriä"
 
-#: backgnd.cpp:255
+#: backgnd.cpp:256
 msgid "Set&up ..."
 msgstr "&Asetukset..."
 
-#: backgnd.cpp:264
+#: backgnd.cpp:265
 msgid "Wallpaper"
 msgstr "Taustakuva"
 
-#: backgnd.cpp:274
+#: backgnd.cpp:275
 msgid "Ti&led"
 msgstr "&Monistettu"
 
-#: backgnd.cpp:282
+#: backgnd.cpp:283
 msgid "&Centred"
 msgstr "&Keskitetty"
 
-#: backgnd.cpp:290
+#: backgnd.cpp:291
 msgid "&Scaled"
 msgstr "V&enytetty"
 
-#: backgnd.cpp:306 backgnd.cpp:426 backgnd.cpp:439 backgnd.cpp:787
+#: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
 msgid "No wallpaper"
 msgstr "Ei taustakuvaa"
 
-#: backgnd.cpp:334
+#: backgnd.cpp:335
 msgid "&Browse..."
 msgstr "&Selaa..."
 
-#: backgnd.cpp:863
+#: backgnd.cpp:864
 msgid "Desktop names"
 msgstr "Työpöytien nimet"
 
-#: backgnd.cpp:909
+#: backgnd.cpp:910
 msgid "Two color backgrounds"
 msgstr "Kaksivärinen tausta"
 
-#: backgnd.cpp:946
+#: backgnd.cpp:947
 msgid "Blend colors from &top to bottom"
 msgstr "Sekoita värit &ylhäältä alas"
 
-#: backgnd.cpp:952
+#: backgnd.cpp:953
 msgid "Blend colors from &right to left"
 msgstr "&Sekoita värit oikealta vasemmalle"
 
-#: backgnd.cpp:958
+#: backgnd.cpp:959
 msgid "Use &pattern"
 msgstr "Käytä k&uviota"
 
-#: backgnd.cpp:985
+#: backgnd.cpp:986
 msgid "Preview"
 msgstr "Esikatselu"
 
-#: backgnd.cpp:996
+#: backgnd.cpp:997
 msgid "Pattern &name"
 msgstr "Kuvion &nimi"
 
-#: backgnd.cpp:1035
+#: backgnd.cpp:1036
 msgid "Current"
 msgstr "Nykyinen"
 
-#: backgnd.cpp:1095
+#: backgnd.cpp:1096
 msgid "Filled"
 msgstr "Täytetty"
 
-#: backgnd.cpp:1098
+#: backgnd.cpp:1099
 msgid "Fish net"
 msgstr "Kalaverkko"
 
-#: backgnd.cpp:1101
+#: backgnd.cpp:1102
 msgid "Triangles"
 msgstr "Kolmiot"
 
-#: backgnd.cpp:1104
+#: backgnd.cpp:1105
 msgid "Flowers"
 msgstr "Kukat"
 
-#: backgnd.cpp:1107
+#: backgnd.cpp:1108
 msgid "Rattan"
 msgstr "Kangas"
 
-#: backgnd.cpp:1110
+#: backgnd.cpp:1111
 msgid "Cobbled Pavement"
 msgstr "Kivetys"
 

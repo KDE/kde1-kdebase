@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-28 09:54+0100\n"
-"POT-Creation-Date: 1998-06-16 13:56+0200\n"
+"POT-Creation-Date: 1998-06-16 15:37+0200\n"
 "PO-Revision-Date: 1998-02-03 15:00+0100\n"
 "Last-Translator: Rizzi Andrea <Bilibao@Ouverture.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -9,111 +9,111 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:58
+#: backgnd.cpp:59
 msgid "Enter new desktop name"
 msgstr "Inserisci il nuovo nome per il desktop"
 
-#: backgnd.cpp:114 backgnd.cpp:149
+#: backgnd.cpp:115 backgnd.cpp:150
 msgid "Desktop"
 msgstr "Desktop"
 
-#: backgnd.cpp:166
+#: backgnd.cpp:167
 msgid "&Rename ..."
 msgstr "&Rinomina ..."
 
-#: backgnd.cpp:192 colorscm.cpp:93
+#: backgnd.cpp:193 colorscm.cpp:93
 msgid "Colors"
 msgstr "Colori"
 
-#: backgnd.cpp:219
+#: backgnd.cpp:220
 msgid "&One Color"
 msgstr "&Colore Uno"
 
-#: backgnd.cpp:236
+#: backgnd.cpp:237
 msgid "&Two Color"
 msgstr "Colore &Due"
 
-#: backgnd.cpp:255
+#: backgnd.cpp:256
 msgid "Set&up ..."
 msgstr "&Impostazioni ..."
 
-#: backgnd.cpp:264
+#: backgnd.cpp:265
 msgid "Wallpaper"
 msgstr "Sfondo"
 
-#: backgnd.cpp:274
+#: backgnd.cpp:275
 msgid "Ti&led"
 msgstr "Ri&petuto"
 
-#: backgnd.cpp:282
+#: backgnd.cpp:283
 msgid "&Centred"
 msgstr "&Centrato"
 
-#: backgnd.cpp:290
+#: backgnd.cpp:291
 msgid "&Scaled"
 msgstr "&In scala"
 
-#: backgnd.cpp:306 backgnd.cpp:426 backgnd.cpp:439 backgnd.cpp:787
+#: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
 msgid "No wallpaper"
 msgstr "Nessuno Sfondo"
 
-#: backgnd.cpp:334
+#: backgnd.cpp:335
 msgid "&Browse..."
 msgstr "&Sfoglia"
 
-#: backgnd.cpp:863
+#: backgnd.cpp:864
 msgid "Desktop names"
 msgstr "Nomi dei Desktop"
 
-#: backgnd.cpp:909
+#: backgnd.cpp:910
 msgid "Two color backgrounds"
 msgstr "Impostazioni sfondi bicolore"
 
-#: backgnd.cpp:946
+#: backgnd.cpp:947
 msgid "Blend colors from &top to bottom"
 msgstr "Sfuma i colori dal'&alto al basso"
 
-#: backgnd.cpp:952
+#: backgnd.cpp:953
 msgid "Blend colors from &right to left"
 msgstr "Sfuma i colori da &destra a sinistra"
 
-#: backgnd.cpp:958
+#: backgnd.cpp:959
 msgid "Use &pattern"
 msgstr "Usa &Motivo"
 
-#: backgnd.cpp:985
+#: backgnd.cpp:986
 msgid "Preview"
 msgstr "Anteprima"
 
-#: backgnd.cpp:996
+#: backgnd.cpp:997
 msgid "Pattern &name"
 msgstr "&Nome motivo"
 
-#: backgnd.cpp:1035
+#: backgnd.cpp:1036
 msgid "Current"
 msgstr "Attuale"
 
-#: backgnd.cpp:1095
+#: backgnd.cpp:1096
 msgid "Filled"
 msgstr "Pieno"
 
-#: backgnd.cpp:1098
+#: backgnd.cpp:1099
 msgid "Fish net"
 msgstr "Spina di pesce"
 
-#: backgnd.cpp:1101
+#: backgnd.cpp:1102
 msgid "Triangles"
 msgstr "Triangoli"
 
-#: backgnd.cpp:1104
+#: backgnd.cpp:1105
 msgid "Flowers"
 msgstr "Fiori"
 
-#: backgnd.cpp:1107
+#: backgnd.cpp:1108
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1110
+#: backgnd.cpp:1111
 msgid "Cobbled Pavement"
 msgstr "Lastricato"
 
