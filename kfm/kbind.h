@@ -706,7 +706,7 @@ public:
     
 public slots:
     void slotFinished( int );
-    void slotError( int _id, const char *_text );
+    void slotError( int , const char *, int );
     
 protected:
     KIOJob *job;

@@ -2097,8 +2097,9 @@ KFMAutoMount::KFMAutoMount( bool _readonly, const char *_format, const char *_de
     device = _device;
     
     job = new KIOJob();
+    //    job->display(false); // we want the errors here
     connect( job, SIGNAL( finished( int ) ), this, SLOT( slotFinished( int ) ) );
-    connect( job, SIGNAL( error( int, const char* ) ), this, SLOT( slotError( int, const char* ) ) );
+    connect( job, SIGNAL( errorFilter( int, const char*, int ) ), this, SLOT( slotError( int, const char*, int ) ) );
     
     if ( !_format )
 	job->mount( false, 0L, _device, 0L );
@@ -2117,9 +2118,10 @@ void KFMAutoMount::slotFinished( int )
     delete this;
 }
 
-void KFMAutoMount::slotError( int, const char * )
+void KFMAutoMount::slotError( int _kioerror, const char *_text, int _errno )
 {
     job->setAutoDelete( TRUE );
+    disconnect(job,0,this,0); // we don't want slotFinished to be called
     delete this;
 }
 
