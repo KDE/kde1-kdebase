@@ -1,0 +1,70 @@
+<HTML><HEAD><TITLE>KFM Manual - Mime Types</TITLE></HEAD>
+<BODY bgcolor=#FFFFFF>
+<a href="manual.html"><img border=0 src="manual.jpeg"></a><img src="previous2.jpeg"><a href="mime2.html"><img border=0 src="next.jpeg"></a><br>
+<h2>What are data types</h2>
+<p>A file contains only bits and bytes. One must know how
+to interprete them to give them a meaning. A usual method
+to archive this is to look at the filename. If it ends
+with <tt>.gif</tt> for example, you assume that it is a
+GIF image. That's what most desktop environments (further on
+called DE) do. KFM does this, too, since it is very fast, but
+not convenient. If the extension is not available one does
+not know of which data type the file is and that means in turn
+that KFM does not know which appliaction can deal with the data.
+So if KFM can not figure out the data type by extension it will have
+a look in the first bytes of the file and lookup some stuff
+in its <i>magic file</i>. This is called
+<i>automatic-mime-type-detection-magic</i> and works quite nice.
+So if the datatype has an entry in the magic file
+<tt>$KDEDIR/share/mimelnk/magic</tt>, then KFM would
+know that the file <tt>MyGirlFriend</tt> contains an image.</p>
+<p>You must register data types in KFM. This poor little
+helper of yours must know common extensions of this data type,
+an icon, some descriptive text, perhaps a default application
+( we will learn more about this later ) and the mime type.</p>
+<h2>What is a Mime Type</h2>
+<p>Mime types are an internet standard. This standard is a naming
+scheme for data types. A data types name is devided in two sections.
+The first one tells about the general kind of data ( image, video,
+audio, text ... ) and since there are different kinds of text
+( C-sources, english text, ... ) and different formats for saving
+images and so on, the second part tells abou the special format.
+A good example is <tt>image/gif</tt>. The first part tell,
+its an image and the second one tells, it is saved in GIF format.</p>
+<p>If you are not shure about the correct mime type, then have a look
+at the magic file, many many mime types are already registered there.</p>
+<p>Usually this chapter is only of interest for system maintainers and
+application developers. A proper installed KDE should come with all
+this stuff already done, but some people always want to know how stuff
+works, so here we go.
+<p>The directory <tt>$KDEDIR/share/mimelnk</tt> contains many subdirectories
+which correspond to the first section of the mime type names. For example
+our example <tt>image/gif</tt> is represented by a file named
+<tt>$KDEDIR/share/mimelnk/image/gif.kdelnk</tt>. Every KFM config file
+has the <tt>.kdelnk</tt> extension. Sometimes KFM hides this extension, since
+it does not look very nice. Hackers may now have a look at this file, it is
+very simple and of course human readable. But you can have a look at it
+here:</p>
+<pre>
+# KDE Config File
+[KDE Desktop Entry]
+Type=MimeType
+MimeType=image/gif
+Icon=image.xpm
+Patterns=*.gif;*.GIF;
+Comment=Gif images
+Comment[de]=GIF Dokument
+Comment[nl]=Gif afbeelding
+</pre>
+<p>You dont need to understand what this means, since KFM provides a GUI
+for you, that makes things much easier. Hackers may continue reading here,
+all the others can skip this and continue in the <a href="mime2.html">next
+chapter</a>.</p>
+<p>The first line is the header of every KDE config file.
+The <tt>Type</tt>line is included in every KFM config file to
+distinguish the purpose of the config file. This is followed
+by the mime types name, the icon, a <tt>;</tt> separated list
+of patterns and comments in english, german, ...</p>
+<p>Now the hackers may leave this lesson.</p>
+</BODY>
+</HTML>

@@ -3,43 +3,48 @@
 <TITLE>KFM Philosophy</TITLE>
 <!--Created by Applixware HTML Authoring System, Release 4.3 on Wed Aug 13 16:45:55 1997-->
 </HEAD>
-<BODY>
-<H1>Philosophy</H1>
-<H2>Desktop</H2>
-<P>The Desktop is very important for KFM. Many filemanagers in the UNIX world
-work only in their windows. But KFM gives you a Desktop like OS/2 and ( I hate
-to say it ) Win NT/95. Files on the desktop work like the ones in the windows.
+<BODY bgcolor=#FFFFFF>
+<H2>Philosophy</H2>
+<H3>Desktop</H3>
+<P>The <i>desktop metaphor</i> is very important for KFM.
+Many filemanagers in the UNIX world
+work only in their windows. But KFM gives you a Desktop like OS/2, Apple and
+( I hate to say it ) Win NT/95. Files on the desktop work like the ones
+in the windows.
 Since KFM supports drag and drop it is a good idea to use the Desktop for
 storing some temporary things. On the other hand it is always nice to have
-some important icons always handy on the Desktop. Well, just do what you want :-)
-</P>
-<H2>Templates</H2>
-<P>Templates have been introduced by OS/2. KFM has some not really that
-powerful but never the less nice feature to support them. All files in the
+some important icons always handy on the Desktop. Well, just do what you want
+<tt>:-)</tt></P>
+<H3>Templates</H3>
+<P>Templates have been introduced by OS/2. KFM has some - not really that
+powerful but never the less nice - feature to support them. All files in the
 Templates directory are supposed to be templates ( I think you would not have
 guessed that! ). Move for example an template for a Lyx letter in here, or a
 default Makefile or whatever. Even complete directory structures may act as
 templates. If for example a project you start always has the same directory
 structure, you can create such a structure in the templates directory. Then
 you change to the directory where you want to have a new
-document/project/what-ever. Open the Menu New and you will get a list of all
-templates you have. Just select one to create it. This way you can create
+document/project/what-ever. Open the Menu <tt>File</tt> and there the
+submenu <tt>New</tt> and you will get a list of all installed
+templates. Just select one to create it. This way you can create
 directories, too. The idea is simple but useful.</P>
-<H2>Trash</H2>
-<P>Well, dont know what to say about this. It would be some trash anyway :-)
+<H3>Trash</H3>
+<P>Well, dont know what to say about this. It would be some trash anyway
+<tt>:-)</tt>
 </P>
-<H2>*.kdelnk</H2>
+<H3>*.kdelnk files</H3>
 <P>These files are important for KFM and kpanel and the whole KDE project.
 Such a file can do very much for you. For example it can hold an URL or a
 device or may stand for a program. Using such a file you can mount/unmount
-devices, make links to URLs on your Desktop or just create a nice icon
-represantation for an executable. Read the section about how to <A HREF="kfm_config.html">configure
-KFM</A> for details. You dont need to know how the files are structured,
+devices, make links to URLs on your desktop or just create a nice icon
+represantation for an executable. Read the <A HREF="manual.html">manual</a>
+to learn more about these files and what they can do for you.
+You dont need to know how the files are structured,
 because KFM has nice dialogs for you, so you can click some <TT>*.kdelnk
-</TT> files together very easy. If you drag a URL to <TT>ftp://ftp.kde.org
-</TT> for example on your desktop, KFM will create such a file for you.
-Clicking on it will open a FTP connection for you.</P>
-<H2>Internet</H2>
+</TT> files in existence very easy. If you drag for example a URL pointing to
+<TT>ftp://ftp.kde.org</TT> on your desktop, KFM will create such a file for
+you. Clicking on it will open a FTP connection for you.</P>
+<H3>Internet</H3>
 <P>The Internet is very important for KFM, too, because it could be called an
 internet desktop. It uses FTP and HTTP. This means that KFM makes no big
 differences between files on some FTP server or on your local hard disk. Since
@@ -50,27 +55,29 @@ file management. The HTML widget is not perfect yet, so some HTML pages are
 ugly, but it is getting better all the time :-) As a result of the above KFM
 uses URLs instead of usual file names ( of course you can use your old
 fashioned file names, too ). KFM supports an extension to usual URLs. It
-features subprotocols. Ususally the user does not have to dela with them, he
+features subprotocols. Ususally the user does not have to deal with them, he
 may still click around with the mouse. For example <TT>ftp://ftp.cdrom.com/unix/kde.tgz#tar:/kdebase/kfm/main.cpp
 </TT> is a valid URL. It defines a tar file on an ftp server and references
 some file in the tar archive. Clicking on some tar archive will do the job for you.
 </P>
-<P>Multi Tasking</P>
+<h3>Multi Tasking</h3>
 <P>KFM is highly multi tasking. It has some slave processes running that do
 the IO stuff. This means that no IO can block your desktop. This is especially
 important for the Internet. You know that even Netscape can lock up for some
-seconds. KFM does not has this problem any more. It just locks up if you found
+seconds. KFM does not have this problem any more. It just locks up if you found
 a bug :-)</P>
-<P>Look</P>
+<h3>Look</h3>
 <P>KFM gives you control over the look of your directories. If it finds a
-.kde.html or index.html file in your directory it displays it ( can be turned
+<tt>.kde.html</tt> or <tt>index.html</tt> file in your directory it displays
+it ( can be turned
 off ). There are some HTML extensions that allow you to separate for example
 directories and documents on such a HTML page. You need not write a link for
 every file in the HTML page. The HTML extension helps you very much here.
 Instead of writing a complete HTML page you can select a background
 color/image for some directories and change the color of the font. You may
 give executables and directories special icons. Those icon settings are
-recognized by kpanel, too.</P>
+recognized by kpanel, too. For more details see as usual the
+<a href="manual.html">manual</a>.</P>
 <HR>
 <P>Torben Weis, <A HREF="mailto:weis@kde.org">weis@kde.org</A></P>
 </BODY>

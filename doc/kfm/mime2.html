@@ -1,0 +1,83 @@
+<HTML><HEAD><TITLE>KFM Manual - Mime Types 2</TITLE></HEAD>
+<BODY bgcolor=#FFFFFF>
+<a href="manual.html"><img border=0 src="manual.jpeg"></a><a href="mime.html"><img border=0 src="previous.jpeg"></a><a href="app.html"><img border=0 src="next.jpeg"></a><br>
+<h2>Installing new mime types step by step</h2>
+<p>This chapter could be named <i>installing mime types for
+dummies</i> since it comes with many nice pictures <tt>:-)</tt>.</p>
+<p>In the following we want to see how I installed the <tt>image/gif</tt>
+mime type. You dont need to reproduce these steps, since this mime type
+is already installed. After reading this chapter and after having a look
+at all the images you should know how to install new ones.</p>
+<p>The black numbers on yellow circels in the images correspond
+to the numbered list under the image.</p>
+<h3>Open a KFM window</h3>
+<p>On your desktop you will find icons like these:</p>
+<img src="templates.gif">
+<p>Click once with the left mouse button on <tt>Templates</tt>.
+Have a look at the files in this directory, you will
+remember them later in this chapter. Now open the
+menu <tt>Edit</tt> and choose <tt>Data types</tt>.
+Now you will see something like this:</p>
+<img src="mime1.gif">
+<br>
+<ol>
+<li>This is the magic file we talked about before. You should have
+a look at it later, but dont, worry, no need to understand it.
+<li>The folder containing the <tt>image/gif</tt> mime type file.
+Click on this folder with the left mouse button to open it.
+</ol>
+<h3>Creating a new mime type file</h3>
+<p>Open the menu <tt>File</tt> and select </tt>New</tt>. You may
+have notice by now that the names in this popup menu correspond to the
+names in the tamplates folder. This menu gives you quick access to the
+templates. You can have the same effect by opening the templates folder
+and doing drag and drop. Now select <tt>Mime Type</tt>. A window like
+this one will popup:</p>
+<img src="mime2.gif">
+<br>
+<ol>
+<li>Enter the name of the file here. Please dont delete the
+<tt>.kdelnk</tt> extension. You should notice here that the
+name of the file is only the second part of the mime types name.
+The first part is coverd by the directory you move the file in.
+The name of the file and the subdirectory you put it in does not
+really matter, it just needs to be in <tt>$KDEDIR/share/mimelnk</tt>.
+<li>Now press the OK button and the new icon will appear in the
+KFM window.
+</ol>
+<h3>Opening the properties dialog</h3>
+<p>Now press the right mouse button over the new icon and select
+<tt>Properties</tt> from the popup menu. A dialog appears:</p>
+<img src="mime3.gif">
+<br>
+<ol>
+<li>Select the tab called <tt>Binding</tt>.
+<li>Enter some patterns that usually match files of this
+data type. If you have multiple patterns, then you must separate
+them with a <tt>;</tt>
+<li>Enter a descriptive text here. If your language is
+supported, you will notice that the description is in your
+native language. KFM can store multiple descriptions, one for
+each language. If you enter something here then it will be stored
+under your language. Application developers should make shure
+that at least a english description is available. How to do this
+was discussed one chapter before in the hackers section.
+<li>Enter the full name of the mime type.
+<li>You can select a default application here. This is of interest
+if multiple applications regsitered for the same mime type. If you
+click on such a data type file KFM makes a guess which app to use.
+By choosing a default app you can keep KFM away from guessing.
+<li>Select a icon. All icons are stored in <tt>$KDEDIR/share/icons</tt>.
+For every icon in this directory there exists a icon of the same name
+but half size in <tt>$KDEDIR/share/icons/mini</tt>. Usual icons have
+the size <tt>32x32</tt> and the mini icons <tt>16x16</tt>.
+<li>Press the OK button.
+</ol>
+<p>Now KFM rescans all opened directories because the icons and stuff
+could have changed. You can force KFM manually to do so by
+choosing <tt>Rescan Bindings</tt> in the <tt>View</tt> menu.
+Your mime type is now registered and KFM should know about it.</p>
+<p>Congratulations, you survived this lesson. Time for a break now
+<tt>:-)</tt></p>
+</BODY>
+</HTML>

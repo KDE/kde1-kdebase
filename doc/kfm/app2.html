@@ -1,0 +1,87 @@
+<HTML><HEAD><TITLE>KFM Manual - Applications</TITLE></HEAD>
+<BODY bgcolor=#FFFFFF>
+<a href="manual.html"><img border=0 src="manual.jpeg"></a><a href="app.html"><img border=0 src="previous.jpeg"></a><img border=0 src="next2.jpeg"><br>
+<h2>Integrating an application step by step</h2>
+<p>In this chapter I will show you how to register XV in
+the K Desktop Environment. After following these steps XV will
+be registered for various image data types and will be able to
+load and save images from the web... you did not expect that
+<tt>:-)</tt>. So, here we go.
+<h2>Opening a KFM window</h2>
+<p>I assume that you know from the previous lesson how to
+open a KFM window. Now open the menu <tt>Edit</tt> and
+select <tt>Applications</tt>. You will now be shown a
+window like this one:</p>
+<img src="app1.gif">
+<br>
+<ol>
+<li>Here you can see the directory we are visiting right now.
+This directory tree contains all informations about registered
+apps in your KDE.
+<li>Now click on this folder, since we want to install XV
+in the graphics section.
+</ol>
+<h2>Creating a new application file</h2>
+<p>From the menu <tt>File</tt> open the submenu <tt>New</tt>
+and select <tt>Program</tt>. You will now be prompted by
+a new window:</p>
+<img src="app2.gif">
+<br>
+<ol>
+<li>You must enter the applications name here followed by
+the extension <tt>.kdelnk</tt>. The name you use does not need
+to be the name of the binary. It may be any name but it has
+to be a unique name for the app.
+<li>Now press OK.
+</ol>
+<h2>Opening the properties</h2>
+<p>You will now see a new icon in the window. Press the right
+mosue button to open the properties menu. Now you have to fill
+out a form like this one:</p>
+<img src="app3.gif">
+<br>
+<ol>
+<li>Select <tt>Execute</tt> to see this form.
+<li>Enter the command line which starts the app. This is the
+same you would enter in a terminal session, but instead of
+the data files, you must place a <tt>%f</tt> here. In the
+hackers section of the previous chapter you will find more information
+on this place holders.
+<li>In seldom cases one needs to define a working directory for
+an application. Usually this line is empty.
+<li>Choose an icon for the application.
+<li>Select this checkbox if the app must run in a terminal.
+This is the case for pine for example.
+<li>You may enter special special command line aarguments here which
+will ba passed to the terminal ( usually kvt ).
+</ol>
+<h2>The second form</h2>
+<p>The last step is to fill out the second form:</p>
+<img src="app4.gif">
+<br>
+<ol>
+<li>Click on <tt>Application</tt> to reach this page.
+<li>You may enter the names of binaries here. Multiple
+binaries have to be separated by <tt>;</tt>. This causes
+every binary of this name to become the applications icon, too.
+So this line is for better look & feel only.
+<li>Enter a small comment in your language here. Developers must
+take care that there is at least a default english comment
+provided at the end.
+<li>This list contains all mime types that this app can handle.
+<li>Use this buttons to move mime types between the two lists.
+<li>This list contains all registered mime types which are not
+handled by the application.
+<li>Press Ok
+</ol>
+<p>That is the end of the show, your application is registered now.
+KFM has updated its bindings automatically, only KPanel will
+need to be restarted ( System menu of kpanel ). XV should now
+appear in the list of applications once you hit the right mouse
+button over an image file containing one of the selected data
+types. If the image is not located on your local hard disk, KFM
+will download it and run XV afterwards. If the file is
+modified by XV, KFM will ask you wether it should be uploaded.
+It is now time for a coffee or two.</p>
+</BODY>
+</HTML>

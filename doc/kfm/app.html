@@ -1,0 +1,91 @@
+<HTML><HEAD><TITLE>KFM Manual - Applications</TITLE></HEAD>
+<BODY bgcolor=#FFFFFF>
+<a href="manual.html"><img border=0 src="manual.jpeg"></a><a href="mime2.html"><img border=0 src="previous.jpeg"></a><a href="app2.html"><img border=0 src="next.jpeg"></a><br>
+<h2>How to install a new application</h2>
+<p>Every KDE application should come with its configuration
+files so there is no need for the user to edit them. But unless
+every distribution is KDE ready you may want to configure
+existing applications to work with KDE. In this lesson we
+try to install XV in the K Desktop Environment.</p>
+<h2>Why and where</h2>
+<p>Every application must put a config file in the directory
+tree <tt>$KDEDIR/share/applnk</tt>. KFM and KPanel scan these
+files on startup. KPanels system menu corresponds to this
+directory structure. The icons in this directory behave like
+real applications. You can click on them to start the
+application and you may drop files on them. It is sometimes
+a good idea to have such config files outside the <tt>applnk</tt>
+tree. They work in every directory, but only the ones in the
+<tt>applnk</tt> directory are scanned in on startup. So if you
+want to install for example XV as the default app for images, then
+you must move the config file inside this special tree. But perhaps
+there are some apps which you dont want to appear in KFM or KPanel
+but on your desktop, then you may of course create such config files
+on your desktop or elsewhere. The procedure is almost the same as the
+one we are describing here.</p>
+<p>If KFM find a file it first tries to find out about its data
+type ( see <a href="mime.html">mime types</a> for more information ).
+After doing so it searches all applications which regsitered for this
+data type. If none is found the user is prompted. If only one is found
+or a default on was specified ( see <a href="mime.html">mime types</a> for
+more information ), KFM will use this one, otherwise KFM will make a
+guess. Using the right popup menu will show you a selection of all
+applications which registered for this data type.</p>
+<h2>Step by step</h2>
+<p>You may now continue with the <a href="app2.html">next chapter</a> while
+the hackers and developers may want to learn more internals.</p>
+<h2>Hackers</h2>
+<p>The config file we want to create will look like this:</p>
+<pre>
+# KDE Config File
+[KDE Desktop Entry]
+BinaryPattern=xv;
+MimeType=image/gif;image/jpeg;image/tiff;image/x-xbm;image/x-xpm;
+Comment=XV Image App
+Comment[de]=XV Graphik Programm
+Exec=xv %f
+TerminalOptions=
+Icon=image.xpm
+Path=
+Type=Application
+Terminal=0
+</pre>
+<p>The first line contains some magic bytes and
+the second line contains a <tt>;</tt> separated list of names that
+the binary of this application may have. This way the binary gets a nice
+icon, too. The next line conatins a list of all mime types the app can
+handle, followed by the usual comments in different languages.
+the <tt>Exec</tt> tag contains the shell quoted command that will
+be executed to start the application. The <tt>%f</tt> is going to be replaced
+by the documents filenames, but see the next chapter for more details.
+The <tt>Type</tt> tag is needed like in every KFM config file. You can
+tell KFM to start the app in a terminal by setting <tt>Terminal</tt> to
+1 and by setting some terminal options if needed. In addition the
+<tt>Path</tt> tag allows you to specify a working directory.</p>
+<h2>Secret tips</h2>
+<p>Most old style apps may need the <tt>%f</tt> argument. This means that
+they can only accept files on the local hard disks. If you use URLs
+never the less, KFM will download the files first and start the application
+afterwards. If the files are modified by the app, the user is prompted wether
+he wants them to be uploaded.</p>
+<p>You may enter <tt>%u</tt> instead of <tt>%f</tt>. This will cause KFM to
+pass URLs to the application. External files are not preloaded. Some KDE
+apps support this cool feature.</p>
+<p>There are addtional tags you may use. Here is a short list
+<ul>
+<li><b><tt>%k</tt></b> The path and name of the config file itself.
+This is useful if the app you want to start should read/modify the
+config file that started it. This way you can for example implement 
+simple printer representations. The same file that repesents the
+printer on your desktop stores your prefered printer settings. Use <tt>%k</tt>
+to pass the config file to the printer GUI.
+<li><b><tt>%n</tt></b> The filename of the documents without path.
+<li><b><tt>%d</tt></b> The path of the documents without file name.
+The <tt>%d</tt> and the <tt>%n</tt> tag together are the same
+as <tt>%f</tt>.
+<li><b><tt>%c</tt></b> Name of the application. This is the name of
+the config file itself without path and extension. This way you can set
+the title of the application.
+<ul>
+</BODY>
+</HTML>

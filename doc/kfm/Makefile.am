@@ -1,5 +1,11 @@
 
-data_DATA = kfm.html kfm_apps.html kfm_config.html kfm_filetypes.html kfm_how.html kfm_install.html kfm_new.html kfm_phil.html
+data_DATA = app.html mime.html app2.html mime2.html \
+	index.html kfm_phil.html kfm_how.html manual.html \
+	app1.gif       app3.gif       mime1.gif      mime3.gif \
+	app2.gif       app4.gif       mime2.gif      templates.gif \
+	dontpanic.jpeg  lesson2.jpeg    manual.jpeg     previous.jpeg \
+	kfm.jpeg        lesson3.jpeg    next.jpeg       previous2.jpeg \
+	lesson1.jpeg    lesson4.jpeg    next2.jpeg
 
 datadir = $(prefix)/share/doc/HTML/kfm
 
