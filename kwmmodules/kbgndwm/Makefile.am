@@ -15,9 +15,6 @@ kbgndwm.moc: kbgndwm.h
 	$(MOC) kbgndwm.h -o kbgndwm.moc
 
 install-data-local:
-	$(mkinstalldirs) $(kde_appsdir)/System
-	$(INSTALL_DATA) kbgndwm.kdelnk $(kde_appsdir)/System
 
 uninstall-local:
-	-rm -f $(kde_appsdir)/System/kbgndwm.kdelnk
 
