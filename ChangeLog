@@ -1,3 +1,9 @@
+1998-12-02  Alex Zepeda  <garbanzo@hooked.net>
+
+	* Makefile.cvs: Tweaked this a bit so it looks somewhat prettier
+	and gives some more useful instructions.  This is somewhat similar
+	to the Makfile.cvs that kfte uses.
+
 1998-11-23  Alex Zepeda  <garbanzo@hooked.net>
 
 	* Makefile.cvs: Use admin/automoc.
