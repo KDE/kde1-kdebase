@@ -243,6 +243,9 @@ KiKbdMapConfig::KiKbdMapConfig(const char* nm):name(nm)
   config.loadConfig();
   /*--- check information ---*/
   if(comment.isNull() ) comment  = "";
+  else {
+    if(comment[comment.length()-1] != '.') comment += ".";
+  }
   if(language.isNull()) language = "unknown";
   if(charset.isEmpty()) charset  = "unknown";
   if(label.isNull() || label == "")
@@ -282,12 +285,7 @@ const QString KiKbdMapConfig::getInfo()
   }
   com += "\n\n";
   // description
-  com += klocale->translate("Description:  Keyboard map for language \"");
-  com += language + klocale->translate("\" with ");
-  com += charset + " ";
-  com += klocale->translate("charset");
-  com += ".";
-  if(!comment.isEmpty()) com += " " + comment;
+  com += klocale->translate("Description:  ") + getGoodLabel();
   com += "\n\n";
   // source
   com += klocale->translate("Source:  ");
@@ -313,23 +311,29 @@ const QString KiKbdMapConfig::getInfo()
 }
 const QString KiKbdMapConfig::getGoodLabel() const
 {
-  QString item(128);
-  item.sprintf("%s (%s %s)", (const char*)comment,
-               klocale->translate("Label"),
-               (const char*)label);
-  if(userData) {
-    item += klocale->translate("(User)");
-  }
-  return item;
+  QString label;
+  label += language + " ";
+  label += klocale->translate("language");
+  label += ", " + charset + " ";
+  label += klocale->translate("charset");
+  label += ". " + comment;
+  return label;
 }
 const QColor KiKbdMapConfig::getColor() const
 {
   return noFile?mapNoFileColor:(userData?mapUserColor:mapNormalColor);
 }
+KIconLoader *loader = 0L;
+const QPixmap getIcon(const QString& locale)
+{
+  if(loader == 0L) {
+    loader = new KIconLoader();
+    loader->insertDirectory(0, kapp->kde_datadir()+"/kcmlocale/pics/");
+  }
+  return loader->loadIcon(QString("flag_")+locale+".gif", 21, 14);
+}
 const QPixmap KiKbdMapConfig::getIcon() const
 {
-  KIconLoader loader;
-  QString file = kapp->kde_datadir()+"/kcmlocale/pics/flag_"
-			 +locale+".gif";
-  return loader.loadIcon(file);
+  QPixmap pm(::getIcon(locale));
+  return pm;
 }

@@ -1,13 +1,12 @@
 # KDE Config File
 
 [International Keyboard]
-Comment=Czech Typewriter Keyboard (QWERTZ)
-Comment[cs]=хeskА klАvesnice psacМho stroje (QWERTZ)
-Comment[ru]=Чешская клавиатура (QWERTZ)
+Comment=Typewriter Keyboard (QWERTZ)
+Comment[cs]=KlАvesnice psacМho stroje (QWERTZ)
+Comment[ru]=Клавиатура (QWERTZ)
 
-Long Comment=Czech Typewriter Keyboard (QWERTZ)
-Long Comment[cs]=хeskА klАvesnice psacМho stroje (QWERTZ)
-Long Comment[ru]=Чешская клавиатура (QWERTZ)
+Language=Czech
+Language[ru]=Чешский
 
 Label=Csz
 Locale=cs

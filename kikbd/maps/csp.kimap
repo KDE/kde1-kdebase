@@ -1,13 +1,12 @@
 # KDE Config File
 
 [International Keyboard]
-Comment=Czech Programmers Keyboard
-Comment[cs]=хeskА programАtorskА klАvesnice
-Comment[ru]=Чешская клавиатура програмиста
+Comment=Programmers Keyboard
+Comment[cs]=ProgramАtorskА klАvesnice
+Comment[ru]=Клавиатура програмиста
 
-Long Comment=Czech Programmers Keyboard
-Long Comment[cs]=хeskА programАtorskА klАvesnice
-Long Comment[ru]=Чешская клавиатура програмиста
+Language=Czech
+Language[ru]=Чешский
 
 Label=Csp
 Locale=cs

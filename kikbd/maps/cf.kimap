@@ -1,16 +1,13 @@
 # KDE Config File
-# Created by Michel Goraczko
-# Additions CT (25feb98)
-#
 
 [International Keyboard]
-Authors=Michel Goraczko
+Authors=Michel Goraczko,
+Authors[ru]=Михаил Горазько
 
-Comment=French Canadian Keyboard
-Comment[ru]=Французко-Канадская клавиатура
-Long Comment=Keyboard for using in QuИbec
-Long Comment[ru]=Французко-Канадская клавиатура
+Language=Canadian French
+Language[ru]=Канадский Французкий
 
+Charset=latin
 Label=Cf
 Locale=cf
 

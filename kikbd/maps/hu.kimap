@@ -1,17 +1,10 @@
 # KDE Config File
-# created by Sebestyen Zoltan (szoli@digo.inf.elte.hu)
-#
 
 [International Keyboard]
-Authors=Sebestyen Zoltan <szoli@digo.inf.elte.hu>
+Authors=Sebestyen Zoltan <szoli@digo.inf.elte.hu>,
 
-Comment=Hungarian Keyboard
-Comment[ru]=Венгерская клавиатура
-Comment[pl]=Klawiatura wЙgierska
-
-Long Comment=Keyboard for using in Hungary
-Long Comment[ru]=Венгерская клавиатура
-Long Comment=Klawiatura wЙgierska
+Language=Hungarian
+Language[ru]=Венгерский
 
 Label=Hu
 Locale=hu

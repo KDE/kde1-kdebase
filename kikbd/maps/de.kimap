@@ -1,18 +1,16 @@
 # KDE Config File
 
 [International Keyboard]
-Comment=Deutsche Tastatur
-Comment[ru]=Германская клавиатура
+Comment=Deutsches (BRD) Tastatur-Layout
 
-Long Comment=Deutsches (BRD) Tastatur-Layout
+Language=German
+Language[ru]=Немецкий
 
 Label=De
 Locale=de
 
 
 [KeyboardMap]
-# keysum0..n [meaningless!]
-#       <unshifted symbol in server.map (us)>, <unshifted symbol>, <shifted symbol>, <alt symbol>, <alt+shift symbol>
 keysym0=grave,asciicircum,degree,
 keysym1=2,2,quotedbl,twosuperior
 keysym2=3,3,section,threesuperior

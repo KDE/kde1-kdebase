@@ -1,17 +1,14 @@
 # KDE Config File
-# Created by Jacek Konieczny (jajcus@zeus.polsl.gliwice.pl)
-#
 
 [International Keyboard]
-Authors=Jacek Konieczny <jajcus@zeus.polsl.gliwice.pl>
+Authors=Jacek Konieczny <jajcus@zeus.polsl.gliwice.pl>,
 
 Comment=Polish 'programmers' Keyboard
-Comment[ru]=Польская клавиатура
-Comment[pl]=Polska klawiatura programisty
+Comment[ru]=Клавиатура програмиста
+Comment[pl]=Klawiatura programisty
 
-Long Comment=Keyboard for using in Poland
-Long Comment[ru]=Польская клавиатура 
-Long Comment[pl]=Polska klawiatura programisty 
+Language=Polish
+Language[ru]=Польский
 
 Label=Pl
 Locale=pl

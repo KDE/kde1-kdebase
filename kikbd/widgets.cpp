@@ -348,15 +348,21 @@ void KiKbdGeneralWidget::addMap()
   //--- load list of maps
   for(i=0; i<mapsToAdd.count(); i++) {
     KiKbdMapConfig *map = kikbdConfig->getMap(mapsToAdd.at(i));
-    QPixmap pm(300, 16);
+    int width = 400;
+    QPixmap  pm(width, 16);
     QPainter p;
+
     pm.fill(white);
     p.begin(&pm);
     p.setPen(map->getColor());
-    p.drawText(24, 1, 200, 16, AlignLeft | AlignTop, map->getName());
+    p.drawText(25, 0, width-24, 15, AlignLeft | AlignVCenter,
+	       map->getGoodLabel());
+    p.fillRect(0, 0, 23, 15, gray);
     QPixmap flag(map->getIcon());
     if(!flag.isNull())
       p.drawPixmap(1, 1, flag);
+    p.setPen(black);
+    p.drawText(1, 1, 22, 14, AlignCenter, map->getLabel());
     p.end();
     maps->insertItem(pm);
   }

@@ -1,17 +1,15 @@
 # KDE Config File
-# created by "Denis V. Dmitrienko"
-#
 
 [International Keyboard]
-Authors=Denis V. Dmitrienko
+Authors=Denis V. Dmitrienko <denis@null.net>,
 
-Comment=Ukrainian Keyboard (cp1251) Microsoft layout
-Comment[ru]=Украинская клавиатура (cp1251) раскладка Microsoft
-Comment[pl]=Klawiatura ukraiЯska (cp1251) Microsoft layout
+Comment=Microsoft layout. Has English characters as alternate symbols.
+Comment[ru]=Раскладкой Microsoft. Позволяет набирать латинские символы используя Алтернативные переключатель.
 
-Long Comment=Keyboard for Ukrainian language (windows code page 1251) with Microsoft layout. Has English characters as alternate symbols.
-Long Comment[ru]=Украинская клавиатура в кодировке MS Windows (cp1251) с раскладкой Microsoft. Позволяет набирать латинские символы используя Алтернативные переключатель.
+Language=Ukrainian
+Language[ru]=Украинский
 
+Charset=cp1251
 Label=UW
 Locale=ua
 
