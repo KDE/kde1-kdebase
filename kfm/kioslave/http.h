@@ -13,12 +13,15 @@
 #include <stdio.h>
 
 #include <qdatetm.h>
+#include <qlist.h>
+
 #include <klocale.h>
 
 class KProtocolHTTP :public KProtocol
 {
     Q_OBJECT
 protected:
+    QList<char> *agent_strings;
     QString noProxyForStr;    
     int use_proxy;
     QString proxy_user;

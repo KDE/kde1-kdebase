@@ -13,6 +13,8 @@
 #include <klocale.h>
 #include <qregexp.h>
 
+#include "../config-kfm.h"
+
 #define MAX_HTTP_HEADER_SIZE  4096
 
 /************************** Authorization stuff: copied from wget-source *****/
@@ -98,7 +100,7 @@ KProtocolHTTP::KProtocolHTTP()
     use_proxy = 0;
     
 
-    int port = 80;
+    int port = 80, i=0, count;
 
     QString proxyStr;
     QString tmp;
@@ -146,6 +148,19 @@ KProtocolHTTP::KProtocolHTTP()
     PrepareLanguageList(tmp); // prepare list for use in HTTP header
     tmp = kfmcnf.readEntry( "AcceptCharsets","" );
     PrepareCharsetList(tmp); // prepare list for use in HTTP header
+    kfmcnf.setGroup("Browser Settings/UserAgent");
+    count = kfmcnf.readNumEntry("EntriesCount",-1);
+    agent_strings = new QList<char>();
+    agent_strings->clear();
+    if (count==-1 || count==0) {
+      agent_strings->append(DEFAULT_USERAGENT_STRING);
+    } else {
+       for (i=0; i<count; i++) {
+         QString ent;
+         ent.sprintf("Entry%d",i);
+         agent_strings->append(kfmcnf.readEntry(ent, ":"));
+       }
+    }
 }
 
 KProtocolHTTP::~KProtocolHTTP()
@@ -546,8 +561,34 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 	    command += "?";
 	    command += _url->searchPart();
 	}
-	command += " HTTP/1.0\r\n"; /* start header */
-	command += "User-Agent: Konqueror/1.0\r\n"; /* User agent */
+	command += " HTTP/1.1\r\n"; /* start header, we're HTTP/1.1 compliant, sorta */
+	command += "Connection: close\r\n"; /* Make sure we don't use persistant connections */
+
+	QString _host = _url->host(); QString agent_host=""; QString agent_string="";
+	bool found=false;
+
+	
+	for (agent_strings->first(); agent_strings->current(); agent_strings->next()) {
+
+	  if (strcmp(agent_strings->current(),":") == 0) // If it's a NULL marker.
+	    continue;
+
+	  if (QString(agent_strings->current()).find(":") < 1)  // If it's got no :
+	    continue;
+
+	  agent_string = QString(agent_strings->current());
+	  agent_host = agent_string.mid(0, agent_string.find(":"));
+
+	  if (agent_host == _host) {
+	    agent_string = agent_string.mid(agent_string.find(":")+1,agent_string.length());
+	    found=true;
+	    break;
+	  }
+	}
+	if (!found)
+	  agent_string = QString(DEFAULT_USERAGENT_STRING).copy();
+
+	command += "User-Agent: "+agent_string+"\r\n"; /* User agent */
 	
 	if ( _reload ){ /* No caching for reload */
 	  command += "Pragma: no-cache\r\n"; /* for HTTP/1.0 caches */
@@ -562,7 +603,7 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 	if ( ! languages.isEmpty() )
 	   command += "Accept-Language: "+languages+"\r\n";
 	
-	command += "Host: "; /* support for virtual hosts */
+	command += "Host: "; /* support for virtual hosts, required by HTTP/1.1 */
 	command += _url->host();
 	if ( _url->port() != 0 )
 	{
