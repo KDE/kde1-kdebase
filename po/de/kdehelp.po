@@ -348,4 +348,3 @@ msgstr "Information über KDE-Hilfe"
 #: mainwidget.cpp:618
 msgid "&Add Bookmark"
 msgstr "&Lesezeichen hinzufügen"
-

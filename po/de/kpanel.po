@@ -156,4 +156,3 @@ msgstr "Desktops"
 #: props.C:380
 msgid "KPanel Configuration"
 msgstr "KPanel-Einstellungen"
-

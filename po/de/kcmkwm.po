@@ -47,7 +47,8 @@ msgstr ""
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Die rechte Seite der Titelzeile ist voll... Entferne den 'maximieren' Button\n"
+"Die rechte Seite der Titelzeile ist voll... Entferne den 'maximieren' "
+"Button\n"
 
 #: titlebar.cpp:531
 msgid ""
@@ -59,7 +60,8 @@ msgstr ""
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Die rechte Seite der Titelzeile ist voll... Entferne den 'minimieren' Button\n"
+"Die rechte Seite der Titelzeile ist voll... Entferne den 'minimieren' "
+"Button\n"
 
 #: titlebar.cpp:915
 msgid "Titlebar appearance"

@@ -46,4 +46,3 @@ msgstr ""
 "\n"
 "Dank an:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
-

@@ -273,4 +273,3 @@ msgstr "S&til"
 #: main.cpp:105
 msgid "Display settings"
 msgstr "Eigenschaften der Umgebung"
-

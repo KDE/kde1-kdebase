@@ -593,4 +593,3 @@ msgstr ""
 "Copyright (c) 1991 Patrick J. Naughton\n"
 "\n"
 "Portiert für KDE von Emanuel Pirker."
-
