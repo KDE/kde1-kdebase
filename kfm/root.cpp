@@ -375,7 +375,7 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
     if ( _urls.first() == 0L )
 	return;
 
-    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
+    QRect area = getWindowRegion();
 
     int gx = area.width() / gridwidth;
     int gy = area.height() / gridheight;
@@ -580,7 +580,7 @@ QPoint KRootWidget::findFreePlace()
 {
     // Matthias
     // use the window area to layout the icons
-    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
+    QRect area = getWindowRegion();
 
     int gx = area.width() / gridwidth;
     int gy = area.height() / gridheight;
@@ -612,7 +612,7 @@ QPoint KRootWidget::findFreePlace( int x, int y )
 {
     // Matthias
     // use the window area to layout the icons
-    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
+    QRect area = getWindowRegion();
 
     int gx = area.width() / gridwidth;
     int gy = area.height() / gridheight;
@@ -662,16 +662,8 @@ void KRootWidget::rearrangeIcons()
   // modifications.
   // -- Bernd
 
-    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
+    QRect area = getWindowRegion();
     
-    {
-	// check for mac menubar;
-	KConfig config;
-	config.setGroup("KDE");
-	if (config.readEntry("macStyle") == "on") 
-	    area.setTop(area.top() + 30);
-    }
-
     int my = area.height() / oldgridheight;
     int mx = area.width() / oldgridwidth;
 
@@ -746,7 +738,7 @@ void KRootWidget::update()
 	return;
 
     // Area where we can place icons
-    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
+    QRect area = getWindowRegion();
 
     KURL u ( KFMPaths::DesktopPath() ); // KURL::KURL adds a file:
 
@@ -972,7 +964,7 @@ void KRootWidget::slotDropEvent( KDNDDropZone *_zone )
 void KRootWidget::slotDropCopy()
 {
     // Calculate grid position for files
-    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
+    QRect area = getWindowRegion();
     int x = ( dropFileX - area.x() ) / gridwidth;
     int y = ( dropFileY - area.y() ) / gridheight;
 
@@ -995,7 +987,7 @@ void KRootWidget::slotDropCopy()
 void KRootWidget::slotDropMove()
 {
     // Calculate grid position for files
-    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
+    QRect area = getWindowRegion();
     int x = ( dropFileX - area.x() ) / gridwidth;
     int y = ( dropFileY - area.y() ) / gridheight;
 
@@ -1018,7 +1010,7 @@ void KRootWidget::slotDropMove()
 void KRootWidget::slotDropLink()
 {
     // Calculate grid position for files
-    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
+    QRect area = getWindowRegion();
     int x = ( dropFileX - area.x() ) / gridwidth;
     int y = ( dropFileY - area.y() ) / gridheight;
 
@@ -1292,6 +1284,18 @@ void KRootWidget::slotPopupEmptyTrash()
 
     KIOJob * job = new KIOJob;
     job->del( trash );
+}
+
+QRect KRootWidget::getWindowRegion()
+{
+    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
+    
+    // check for mac menubar (ettrich)
+    KConfig config;
+    config.setGroup("KDE");
+    if (config.readEntry("macStyle") == "on") 
+        area.setTop(area.top() + 30);
+    return area;
 }
 
 /*********************************************************************

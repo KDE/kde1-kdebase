@@ -355,6 +355,11 @@ protected:
      *         returned are positions in the root widgets grid.
      */
     QPoint findFreePlace();
+
+    /**
+     * @return the window region of the current desktop
+     */
+    QRect getWindowRegion();
     
     /**
      * Contains a list of all visible icons on the root window.
