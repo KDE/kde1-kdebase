@@ -174,7 +174,7 @@ msgid ""
 "%s\n"
 "does not seem to be a WAV--file."
 msgstr ""
-"Ho sento, pero \n" # "Ho sento, però
+"Ho sento, pero \n"
 "%s\n"
 "no sembla ser un fitxer WAV."
 
