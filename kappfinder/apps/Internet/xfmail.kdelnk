@@ -1,0 +1,7 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=xfmail
+Icon=xfmail.xpm
+Type=Application
+Name=Arena
+Comment=Mailer
