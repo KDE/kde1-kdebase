@@ -103,7 +103,7 @@ void errorHandler( int type, char *msg )
 	}
 }
 
-QString displayName()
+static QString displayName()
 {
     QString d( getenv( "DISPLAY" ) );
     int i = d.find( ':' );
