@@ -3699,10 +3699,12 @@ void Manager::addModule(Window w){
   // modules) and its current stacking order (important for a pager,
   // for example)
   Client* c;
-  for (c=clients.first(); c; c=clients.next()){
+  QListIterator<Client> it(clients);
+  for (it.toFirst(); it.current(); ++it){
+      c = it.current();
       if (!c->hidden_for_modules){
 	  if ( c->isDialog() )
-	      sendClientMessage(w, module_win_add, c->window);
+	      sendClientMessage(w, module_dialog_win_add, c->window);
 	  sendClientMessage(w, module_win_add, c->window);
       }
   }

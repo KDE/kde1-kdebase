@@ -323,6 +323,7 @@ public:
   Client* mainClient();
     
     // returns whether the client is only a dialog window
+    //#### uses build-in iterator ot the manager's client list!!
   bool isDialog() {
       return mainClient() != this;
   }
