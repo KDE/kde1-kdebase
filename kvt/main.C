@@ -133,6 +133,7 @@ void kvt_set_scrollbar(int b){
 
 void kvt_set_size_increment(int dx, int dy){
     kvt->setSizeIncrement(QSize(dx, dy));
+    kvt->setMinimumSize(160,100);
 }
 
 class MyApp:public KApplication {
@@ -381,6 +382,7 @@ kVt::kVt( QWidget *parent, const char *name )
     keyboard_secured = FALSE;
     
     setAcceptFocus( TRUE );
+
 }
 
 // only works for hiding!!
