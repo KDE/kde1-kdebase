@@ -6,8 +6,8 @@
 #include "kfmpaths.h"
 #include "kmimemagic.h"
 #include "kfm.h"
-
-#include <config-kfm.h>
+#include "utils.h"
+#include "config-kfm.h"
 
 #include <kapp.h>
 #include <unistd.h>
@@ -155,6 +155,7 @@ int main( int argc, char ** argv )
     
     QString file = QDir::homeDirPath();
     file += "/.kde/share/apps/kfm/pid";
+    file += displayName();
     
     FILE *f = fopen( file.data(), "wb" );
     if ( f == 0L )
@@ -206,14 +207,14 @@ int main( int argc, char ** argv )
     
     debugT("3. Init Root widget\n");
 
+    KFM kfm;
+    a.setMainWidget( &kfm );
+
     if ( KfmGui::rooticons )
 	new KRootWidget();
     
     debugT("4. Init window\n");
-    
-    KFM kfm;
-    a.setMainWidget( &kfm );
-    
+        
     if ( KfmGui::rooticons == false )
     {
 	QString home = "file:";

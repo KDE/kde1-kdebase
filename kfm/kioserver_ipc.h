@@ -102,7 +102,7 @@ signals:
    /**
     * MODIFIED
     */
-   void closed();
+   void closed( KIOSlaveIPC* );
 };
 
 class KIOSlaveIPCServer : public QObject

@@ -50,9 +50,10 @@ KIOSlaveIPC::~KIOSlaveIPC()
     /**
      * MODIFIED
      */
-    emit closed();
-    
-    data_sock->enableRead( FALSE );
+    emit closed( this );
+    printf("CLOSE EMITTED %x\n",this);
+   
+    // data_sock->enableRead( FALSE );
     delete data_sock;
     if ( pBody != 0L )
 	free( pBody );
@@ -60,6 +61,7 @@ KIOSlaveIPC::~KIOSlaveIPC()
 
 void KIOSlaveIPC::closeEvent( KSocket * )
 {
+    printf("CLOSE EVENT\n");
     delete this;
     return;
 }

@@ -6,8 +6,10 @@
 #include <klocale.h>
 #include <kapp.h>
 
+#include <klined.h>
 #include "kfmdlg.h"
 #include "fileentry.h"
+#include "kURLcompletion.h"
 
 DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *parent, bool _file_mode )
         : QDialog( parent, 0L, true )
@@ -16,11 +18,23 @@ DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *pare
 
     QLabel *label = new QLabel( _text , this );
     label->setGeometry( 10, 10, 330, 15 );
+
+    edit = new KLined( this, 0L );
     
-    if ( _file_mode )
-        edit = new KFileEntry( this, 0L );
+    if ( _file_mode ) {
+        completion = new KURLCompletion();
+	connect ( edit, SIGNAL (completion()),
+		  completion, SLOT (make_completion()));
+	connect ( edit, SIGNAL (rotation()),
+		  completion, SLOT (make_rotation()));
+	connect ( edit, SIGNAL (textChanged(const char *)),
+		  completion, SLOT (edited(const char *)));
+	connect ( completion, SIGNAL (setText (const char *)),
+		  edit, SLOT (setText (const char *)));
+    }
     else
-        edit = new QLineEdit( this, 0L );
+	    completion = 0L;
+
     edit->setGeometry( 10, 40, 330, 25 );
     connect( edit, SIGNAL(returnPressed()), SLOT(accept()) );
 
@@ -43,9 +57,17 @@ DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *pare
     edit->setFocus();
 }
 
+DlgLineEntry::~DlgLineEntry()
+{
+	delete completion;
+}
+
 void DlgLineEntry::slotClear()
 {
     edit->setText("");
 }
 
 #include "kfmdlg.moc"
+
+
+

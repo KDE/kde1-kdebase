@@ -27,7 +27,8 @@
 #include "kbutton.h"
 #include "root.h"
 #include "kbind.h"
-#include <config-kfm.h>
+#include "config-kfm.h"
+#include "utils.h"
 
 #include <klocale.h>
 
@@ -550,7 +551,7 @@ void KfmGui::initToolBar()
 	    {
 		QString e;
 		e.sprintf( klocale->translate( "Could not load icon\n%s" ), n.data() );
-		QMessageBox::warning( 0, klocale->translate( "KFM Error" ), e.data() );
+		QMessageBox::warning( this, klocale->translate( "KFM Error" ), e.data() );
 	    }
 	    animatedLogo.append( p );
 	}
@@ -565,6 +566,16 @@ void KfmGui::initToolBar()
     toolbarURL = new KToolBar(this, "URL History");
     toolbarURL->insertLined( "", TOOLBAR_URL_ID,
 			  SIGNAL( returnPressed() ), this, SLOT( slotURLEntered() ) );
+    KToolBarLined *lined = toolbarURL->getLined (TOOLBAR_URL_ID);
+    completion = new KURLCompletion();
+    connect ( lined, SIGNAL (completion()),
+	      completion, SLOT (make_completion()));
+    connect ( lined, SIGNAL (rotation()),
+	      completion, SLOT (make_rotation()));
+    connect ( lined, SIGNAL (textChanged(const char *)),
+	      completion, SLOT (edited(const char *)));
+    connect ( completion, SIGNAL (setText (const char *)),
+	      lined, SLOT (setText (const char *)));
     addToolBar( toolbarURL );
     toolbarURL->setFullWidth( TRUE );
     toolbarURL->setItemAutoSized( TOOLBAR_URL_ID, TRUE );
@@ -1093,6 +1104,7 @@ void KfmGui::slotQuit()
     
     QString file = QDir::homeDirPath();
     file += "/.kde/share/apps/kfm/pid";
+    file += displayName();
     unlink( file.data() );
 
     // Clean up IO stuff
@@ -1334,6 +1346,7 @@ KfmGui::~KfmGui()
 	delete toolbarURL;
     
     delete view;
+    delete completion;
     windowList.remove( this );
 
     // Last window and in window-only-mode ?
@@ -1342,6 +1355,7 @@ KfmGui::~KfmGui()
 	// remove pid file
 	QString file = QDir::homeDirPath();
 	file += "/.kde/share/apps/kfm/pid";
+	file += displayName();
 	unlink( file.data() );
 	// quit
 	exit(0);

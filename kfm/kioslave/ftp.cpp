@@ -503,7 +503,7 @@ KProtocolDirEntry *KProtocolFTP::ReadDir()
 					    de.date.sprintf("%s %s %s",p_date_1, p_date_2, p_date_3);
 					    return(&de);
 					}
-					    }
+    }
 	return(NULL);
 }
 

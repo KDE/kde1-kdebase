@@ -209,7 +209,7 @@ void KFMJob::slotData( const char *_text, int _len )
     {
 	// dataBuffer += _text;
 	// if ( dataBuffer.length() )
-	    testMimeType( _text, _len );
+	testMimeType( _text, _len );
 	return;
     }
     

@@ -1,4 +1,5 @@
 #include "utils.h"
+#include <stdlib.h>
 
 void openWithOldApplication( const char *_cmd, QStrList& _urlList )
 {
@@ -57,4 +58,14 @@ void openWithOldApplication( const char *_cmd, QStrList& _urlList )
 
       KMimeBind::runCmd( cmd.data() );
     }
+}
+
+QString displayName()
+{
+    QString d( getenv( "DISPLAY" ) );
+    int i = d.find( ':' );
+    if ( i != -1 )
+	d[i] = '_';
+    
+    return d;
 }

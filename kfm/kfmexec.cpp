@@ -19,25 +19,19 @@
  *
  ***************************************************************************/
 
-QList<KFMExec> *execList = 0L;
+QList<KFMExec>* KFMExec::lstZombies = 0L;
 
 KFMExec::KFMExec()
 {
-    /*
     // Create a list of currently running KFMExecs
-    if ( execList == 0L )
+    if ( lstZombies == 0L )
     {
-	execList = new QList<KFMExec>;
-	execList->setAutoDelete( TRUE );
+	lstZombies = new QList<KFMExec>;
+	lstZombies->setAutoDelete( TRUE );
     }
-    
-    // Delete all KFMExecs which are prepared to die
-    KFMExec *e = 0L;
-    for ( e = execList->first(); e != 0L; e = execList->next() )
-	if ( e->isDone() )
-	    execList->removeRef( e );
-    execList->append( this );
-    */
+
+    lstZombies->clear();
+
     // We are not prepared to die yet
     bDone = FALSE;
     dlg = 0L;
@@ -54,15 +48,14 @@ KFMExec::KFMExec()
 
 void KFMExec::openURL( const char *_url  )
 {
-    // debugT("Interested in %s\n", _url );
-    
     KURL u( _url );
     if ( u.isMalformed() )
     {
 	QString tmp;
 	tmp.sprintf(klocale->translate("Malformed URL\n%s"), _url );
 	QMessageBox::warning( 0, klocale->translate("KFM Error"), tmp );
-	delete this;
+	// We are a zombie now
+	prepareToDie();
 	return;
     }
 
@@ -76,8 +69,7 @@ void KFMExec::openURL( const char *_url  )
 	QFile file( path );
 	if ( file.open( IO_ReadOnly ) )
 	{
-	  file.close(); // kalle
-	  //	    QTextStream pstream( &file );
+	    file.close();
 	    KConfig config( path );
 	    config.setGroup( "KDE Desktop Entry" );
 	    QString typ = config.readEntry( "Type" );
@@ -97,7 +89,8 @@ void KFMExec::openURL( const char *_url  )
 		    // The *.kdelnk file is broken
 		    QMessageBox::warning( 0, klocale->translate("KFM Error"), 
 					  klocale->translate("The file does not contain a URL") );
-		    delete this;
+		    // We are a zombie now
+		    prepareToDie();
 		    return;
 		}
 	    }
@@ -148,7 +141,8 @@ void KFMExec::openURL( const char *_url  )
 
 void KFMExec::slotCancel()
 {
-    delete this;
+    // We are a zombie now
+    prepareToDie();
     return;
 }
 
@@ -171,8 +165,8 @@ void KFMExec::slotNewDirEntry( KIODirectoryEntry * _entry )
 	KfmGui *m = new KfmGui( 0L, 0L, tryURL );
 	m->show();
 
-	// We have done our job, so lets set the "ready to die" flag
-	delete this;
+	// We are a zombie now
+	prepareToDie();
 	return;
     }
 }
@@ -181,8 +175,8 @@ void KFMExec::slotMimeType( const char *_type )
 {
     // Stop browsing. We need an application
     job->stop();
-    delete job;
-    job = 0L;
+    // delete job;
+    // job = 0L;
     
     // GZIP
     if ( _type && strcmp( _type, "application/x-gzip" ) == 0L )
@@ -222,22 +216,25 @@ void KFMExec::slotMimeType( const char *_type )
 	if ( _type != 0L )
 	{
 	    KMimeType *mime = KMimeType::findByName( _type );
+	    // Try to run the URL if we know the mime type
 	    if ( mime && mime->run( tryURL ) )
 	    {
-		delete this;
+		// We are a zombie now
+		prepareToDie();
 		return;
 	    }
 	}
 		
 	// Ask the user what we should do
 	DlgLineEntry l( klocale->translate("Open With:"), "", 0L, true );
-	// debugT("OPENING DLG\n");
 	if ( l.exec() )
 	{
 	    QString pattern = l.getText();
+	    // The user did not enter anything ?
 	    if ( pattern.isEmpty() )
 	    {
-		delete this;
+		// We are a zombie now
+		prepareToDie();
 		return;
 	    }
 	    
@@ -245,21 +242,7 @@ void KFMExec::slotMimeType( const char *_type )
 	    list.append( tryURL );
 	    openWithOldApplication( pattern, list );
 	    
-	    /* QString decoded( tryURL );
-	    KURL::decodeURL( decoded );
-	    decoded = KIOServer::shellQuote( decoded ).data();
-	    
-	    QString cmd;
-	    cmd = l.getText();
-	    cmd += " ";
-	    cmd += "\"";
-	    cmd += decoded;
-	    cmd += "\"";
-	    // debugT("Executing stuff '%s'\n", cmd.data()); 
-	    
-	    KMimeBind::runCmd( cmd.data() ); */
-
-	    delete this;
+	    prepareToDie();
 	    return;
 	}
     }
@@ -269,7 +252,9 @@ void KFMExec::slotMimeType( const char *_type )
 	// Ok, lets open a new window
 	KfmGui *m = new KfmGui( 0L, 0L, tryURL );
 	m->show();
-	delete this;
+	
+	// We are a zombie now
+	prepareToDie();
 	return;
     }
 }
@@ -344,6 +329,21 @@ QString KFMExec::openLocalURL( const char *_url )
     }
     
     return tryURL;
+}
+
+void KFMExec::prepareToDie()
+{
+    if ( dlg )
+    {
+	delete dlg;
+	dlg = 0L;
+    }
+
+    if ( job )
+	disconnect( job, 0, this, 0 );
+
+    bDone = true;
+    lstZombies->append( this );
 }
 
 KFMExec::~KFMExec()

@@ -185,6 +185,26 @@ public:
      * Unquotes a filename/URL that is quoted like the shell ( bash ) would expect it.
      */
     static QString shellUnquote( const char *_data );
+
+    /**
+     * This function is used in @ref KfmView::slotDropEvent for example
+     * to check wether some user tries to copy his home directory to his
+     * Desktop, which is a sub directory of its home directory.
+     *
+     * @return true if '_src_url' does not contain '_dest_canonical'. 
+     *
+     * @param _src_url is a usual URL
+     * @param _dest_canonical is a path on your local hadr drives that does not
+     *                        contain any simlynks or a usual URL if the file this
+     *                        URL points to is not a file on your local hard drives.
+     */
+    static bool testDirInclusion( const char *_src_url, const char *_dest_canonical );
+    
+    /**
+     * Does nothing on protocols other then "file" or if there is a sub protocol
+     * in the URL. The canonical URL does not contain any symlinks.
+     */
+    static QString canonicalURL( const char *_url );
     
 public slots:
     /// If a new slave is created, this slot is called.
@@ -197,7 +217,8 @@ public slots:
 		   const char * creationDate, const char * _access,
 		   const char * _owner, const char *_group );
     void slotFlushDir( const char *_url );
-
+    void slotSlaveClosed( KIOSlaveIPC* );
+    
 signals:
     /// This notify is emitted each time a URL changed.
     /**

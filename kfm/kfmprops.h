@@ -6,6 +6,9 @@
 #ifndef KFMPROPS_H
 #define KFMPROPS_H
 
+#include <sys/stat.h>
+#include <unistd.h>
+
 #include <qtabdlg.h>
 #include <qradiobt.h>
 #include <qlabel.h>
@@ -103,28 +106,19 @@ public:
     static bool supports( KURL *_kurl );
     
 protected:
-    QCheckBox *permUR;
-    QCheckBox *permUW;
-    QCheckBox *permUX;
-    QCheckBox *permUS;
-    QCheckBox *permGR;
-    QCheckBox *permGW;
-    QCheckBox *permGX;
-    QCheckBox *permGS;
-    QCheckBox *permOR;
-    QCheckBox *permOW;
-    QCheckBox *permOX;
-    QCheckBox *permOS;
-
-    QLineEdit *grp;
+    QCheckBox *permBox[3][4];
+    QComboBox *grp;
     QLineEdit *owner;
 
     /// Old permissions
-    int permissions;
+    mode_t permissions;
     /// Old group
     QString strGroup;
     /// Old owner
     QString strOwner;
+
+    /// Changeable Permissions
+    static mode_t fperm[3][4];
 };
 
 /// The main class.

@@ -647,15 +647,16 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, int _isdir )
 			    p++;
 			}
 			
-			QString s( "Mount " );
+			QString s( klocale->translate( "Mount" ) );
 			s.detach();
+			s += " ";
 			s += (const char*)start;
 			_list.append( s.data() );   
 		    }			
 		}
 		else
 		{
-		    QString s( "Unmount" );
+		    QString s( klocale->translate( "Unmount" ) );
 		    s.detach();
 		    _list.append( s.data() );
 		}
@@ -669,7 +670,6 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, int _isdir )
 		tmp = url.data();
 		tmp.detach();
 		_url = tmp.data();
-		// debugT("Changed to '%s'\n",_url);
 		KURL u2( _url );
 		u = u2;
 	    }
@@ -864,8 +864,6 @@ const char* KFolderType::getPixmapFile( const char *_url, bool _mini )
 	pixmapFile2 += "/";
     pixmapFile2 += icon.data();
 
-    debugT("ICON = '%s'\n",pixmapFile2.data());
-    
     return pixmapFile2.data();
 }
 
@@ -1234,9 +1232,7 @@ bool KMimeBind::runBinding( const char *_url )
 	}
     }        
 
-    // debugT("::CMD = %s\n",cmd.data());
     runCmd( cmd.data() );
-    // debugT("Executed the binding\n");
     return TRUE;
 }
 
@@ -1273,7 +1269,7 @@ void KMimeBind::runCmd( const char *_exec, QStrList &_args )
 
 void KMimeBind::runCmd( const char *_cmd )
 {
-    // debugT("CMD='%s'\n",_cmd );
+    printf("CMD='%s'\n",_cmd );
     
     char *cmd = new char[ strlen( _cmd ) + 1 ];
     strcpy( cmd, _cmd );
@@ -1334,8 +1330,10 @@ void KMimeBind::runCmd( const char *_cmd )
 	return;
     }
     
-    // debugT("Running '%s'\n",argv[0] );
-
+    printf("Running '%s'\n",argv[0] );
+    for ( int j = 0; j < i; j++ )
+	printf("ARG: '%s'\n",argv[j]);
+    
     int pid;
     if ( ( pid = fork() ) == 0 )
     {    
@@ -1354,7 +1352,6 @@ void KMimeBind::runCmd( const char *_cmd )
     }
     delete [] argv;
     delete [] cmd;
-    // debugT("PID of started process is '%i'\n",pid);
 }
 
 KConfig* KMimeBind::openKConfig( const char *_url ) // kalle
@@ -1446,7 +1443,6 @@ bool KMimeType::runBinding( const char *_url, const char *_binding )
     // Iterate over all applications bound to the mime type
     for ( bind = firstBinding(); bind != 0L; bind = nextBinding() )
     {
-	// debugT("!!! '%s' vs '%s'\n",bind->getProgram(), _binding );
 	// Is it the one we want ?
 	if ( strcmp( bind->getProgram(), _binding ) == 0 )
 	    return bind->runBinding( _url );
@@ -1550,14 +1546,12 @@ bool ExecutableMimeType::runAsApplication( const char *_url, QStrList *_argument
 
 bool KDELnkMimeType::run( const char *_url )
 {
-    // debugT("A\n");
-  
     KURL u( _url );
-    KConfig *config = 0L; // kalle
+    KConfig *config = 0L;
     // Is it a "[KDE Desktop Entry]" file and do we want to open it ?
     // ... but only if it is on the local hard disk!
     if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
-	  config = KMimeBind::openKConfig( _url ); // kalle
+	  config = KMimeBind::openKConfig( _url );
     else
     {
 	QMessageBox::message( klocale->translate( "KFM Error" ),
@@ -1596,7 +1590,7 @@ bool KDELnkMimeType::run( const char *_url )
     else if ( strcmp( typ, "Link" ) == 0 )
     {
 	QString url = config->readEntry( "URL" );
-	// delete config; // Again, Torben !!!
+
 	if ( url.isEmpty() )
 	{
 	    QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
@@ -1627,11 +1621,11 @@ bool KDELnkMimeType::run( const char *_url )
 bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
 {
     KURL u2( _url );
-    KConfig *config = 0L; // kalle
+    KConfig *config = 0L;
     // Is it a "[KDE Desktop Entry]" file and do we want to open it ?
     // ... but only if it is on the local hard disk!
     if ( strcmp( u2.protocol(), "file" ) == 0 && !u2.hasSubProtocol() )
-	  config = KMimeBind::openKConfig( _url ); // kalle
+	  config = KMimeBind::openKConfig( _url );
     else
     {
 	QMessageBox::message( klocale->translate( "KFM Error" ),
@@ -1763,15 +1757,11 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
 	}
 	cmd += "-e ";
 	cmd += exec.data();
-	// debugT("Running '%s'\n",cmd.data());
-	// system( cmd.data() );
 	KMimeBind::runCmd( cmd );
     }
     else
     {
 	QString cmd = exec.data();
-	// debugT("Running '%s'\n",cmd.data());
-	// system( cmd.data() );
 	KMimeBind::runCmd( cmd );
     }
 
@@ -1821,7 +1811,8 @@ bool KDELnkMimeType::runBinding( const char *_url, const char *_binding )
 		delete config;
 		return TRUE;
 	    }
-	    else if ( strncmp( _binding, klocale->translate( "Mount" ), 5 ) == 0 )
+	    else if ( strncmp( _binding, klocale->translate( "Mount" ),
+			       strlen( klocale->translate( "Mount" ) ) ) == 0 )
 	    {
 		QString readonly = config->readEntry( "ReadOnly" );
 		bool ro = FALSE;
@@ -1831,9 +1822,11 @@ bool KDELnkMimeType::runBinding( const char *_url, const char *_binding )
 		
 		KIOJob *job = new KIOJob;
 		
-		// The binding is names 'Mount FSType' => +6
-		if ( strcasecmp( _binding, klocale->translate( "Mount default" ) ) == 0 ||
-		     strcasecmp( _binding, klocale->translate( "Mount" ) ) == 0 )
+		// The binding is named 'Mount FSType' => length >=5
+		QString tmp;
+		tmp.sprintf( "%s Default", klocale->translate( "Mount" ) );
+		if ( strcmp( _binding, tmp.data() ) == 0 ||
+		     strcmp( _binding, klocale->translate( "Mount" ) ) == 0 )
 		    job->mount( false, 0L, dev, 0L );
 		else
 		    job->mount( ro, _binding + 6, dev, point );

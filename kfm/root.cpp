@@ -121,7 +121,6 @@ void KRootWidget::slotPopupActivated( int _id )
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
     {
-	// debugT("Exec '%s'\n", s );
 	// Run the action 'txt' on every single file
 	KMimeBind::runBinding( s, txt );    
     }
@@ -483,7 +482,6 @@ void KRootWidget::update()
     
     if ( dp == NULL )
     {
-	// debugT("'%s'\n",u.path());
 	warning(klocale->translate("ERROR: Could not read desktop directory '%s'"), desktopDir.data());
 	exit(1);
     }
@@ -550,21 +548,30 @@ void KRootWidget::slotDropEvent( KDNDDropZone *_zone )
     popupMenu->clear();
 
     QStrList & list = _zone->getURLList();
-    char *s;
-    for ( s = list.first(); s != 0L; s = list.next() )
+    char *s = list.first();
+    KURL u( s );
+    if ( !u.isMalformed() )
     {
-	KURL u( s );
-	if ( !u.isMalformed() )
+	if ( strcmp( u.directoryURL(), desktopDir.data() ) == 0 )
 	{
-	    if ( strcmp( u.directoryURL(), desktopDir.data() ) == 0 )
-	    {
-		QPoint p( _zone->getMouseX(), _zone->getMouseY() );
-		moveIcons( list, p );
-		return;
-	    }
+	    QPoint p( _zone->getMouseX(), _zone->getMouseY() );
+	    moveIcons( list, p );
+	    return;
 	}
     }
-    
+
+    // Test wether the destination includes the source
+    QString url( KIOServer::canonicalURL( KFMPaths::DesktopPath() ) );
+    for ( s = list.first(); s != 0L; s = list.next() )
+    {
+	if ( !KIOServer::testDirInclusion( s, url ) )
+	{
+	    QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+				  klocale->translate( "You dropped some file over itself\nor one of its sub-directories" ) );
+	    return;
+	}
+    }
+	    
     int id = 1;
     // Ask wether we can read from the dropped URL.
     if ( KIOServer::supports( _zone->getURLList(), KIO_Read ) &&
@@ -598,7 +605,6 @@ void KRootWidget::dropUpdateIcons( int _x, int _y )
     
     DIR *dp;
     struct dirent *ep;
-    // debugT("Opening '%s'\n",u.path());
     
     dp = opendir( u.path() );
     if ( dp == NULL )
@@ -793,7 +799,6 @@ void KRootWidget::slotPopupOpenWith()
 	cmd += "\" ";
     }
     
-    debugT("Executing '%s'\n", cmd.data());    
     KMimeBind::runCmd( cmd.data() );
 }              
 
@@ -1218,8 +1223,6 @@ void KRootIcon::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QPo
     dropDestination.detach();
     
     dropZone = _zone;
-    
-    // debugT(" Drop with destination %s\n", _dest );
     
     KURL u( _dest );
     

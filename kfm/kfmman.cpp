@@ -118,13 +118,23 @@ void KFMManager::writeWrapped( char *_str )
 	    // search for a suitable separator in the previous 8 characters
 	    for (sepPos=pos, j=0; j<8 && sepPos>part; j++, sepPos--)
 	    {
-		if (ispunct(*sepPos) || isdigit(*sepPos)) break;
-       if (isupper(*sepPos) && !isupper(*(sepPos-1))) break;
+		/* if (ispunct(*sepPos) || isdigit(*sepPos)) break;
+		   if (isupper(*sepPos) && !isupper(*(sepPos-1))) break;
 	    }
 	    if (j<8 && j>0)
 	    {
-		pos = sepPos;
-		//width = width - XTextWidth (fs, pos, j);
+q		pos = sepPos;
+		//width = width - XTextWidth (fs, pos, j); */
+		if (ispunct(*sepPos) || isdigit(*sepPos))
+                {
+                    pos = sepPos;
+                    break;
+                }
+                if (isupper(*sepPos) && !isupper(*(sepPos-1)))
+                {
+                    pos = sepPos;
+                    break;
+               }               
 	    }
 	    
 	    c = *pos;
@@ -473,7 +483,7 @@ void KFMManager::writeBeginning()
 	    view->write( "<tr><td><a href=\"" );
 	    view->write( s.data() );
 	    view->write( "\"><img border=0 width=16 height=16 src=\"file:" );
-	    view->write( KMimeType::getPixmapFileStatic( s.data() ) );
+	    view->write( KMimeType::getPixmapFileStatic( s.data(), TRUE ) );
 	    view->write( "\"></td><td>..</a></td>" );
 	    view->write( "<td></td><td></td><td></td><td></td><td></td></tr>" );
 	}
@@ -544,7 +554,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	
 	view->write( filename.data() );
 	view->write( "\"><img border=0 width=16 height=16 src=\"file:" );
-	view->write( KMimeType::getPixmapFileStatic( filename.data() ) );
+	view->write( KMimeType::getPixmapFileStatic( filename.data(), TRUE ) );
 	view->write( "\"></td><td>" );
 	if ( s->getAccess() && s->getAccess()[0] == 'l' )
 	    view->write("<i>");

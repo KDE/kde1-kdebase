@@ -31,6 +31,7 @@ class KfmGui;
 
 #include "kfmman.h"
 #include "kfmtree.h"
+#include "kURLcompletion.h"
 
 class KfmGui : public KTopLevelWidget
 {
@@ -556,6 +557,11 @@ protected:
      * This list contains all previuosly visited URLs.
      */
     QStrList historyList;
+
+    /**
+      * Completion Object, connected to URL-Line
+      */
+    KURLCompletion *completion;
 
     bool showToolbar;
     KToolBar::BarPosition toolbarPos;

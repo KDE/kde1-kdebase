@@ -28,4 +28,6 @@
  */
 void openWithOldApplication( const char *_cmd, QStrList& _urlList );
 
+QString displayName();
+
 #endif

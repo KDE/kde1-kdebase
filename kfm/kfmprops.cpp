@@ -1,3 +1,12 @@
+/*
+ * kfmprops.cpp
+ * View/Edit Properties of files
+ *
+ * (c) Torben Weiss <weis@kde.org>
+ * some FilePermissionsPropsPage-changes by 
+ *  Henner Zeller <zeller@think.de>
+ */
+
 #include <pwd.h>
 #include <grp.h>
 #include <sys/types.h>
@@ -14,6 +23,7 @@
 #include <qstrlist.h>
 
 #include <kurl.h>
+#include <klocale.h>
 
 #include "kfmprops.h"
 #include "kbind.h"
@@ -21,17 +31,22 @@
 #include "kfmgui.h"
 #include "kfmpaths.h"
 #include "root.h"
-#include <config-kfm.h>
+#include "config-kfm.h"
+#include "kfm.h"
 
-#include <klocale.h>
+mode_t FilePermissionsPropsPage::fperm[3][4] = {
+        {S_IRUSR, S_IWUSR, S_IXUSR, S_ISUID},
+        {S_IRGRP, S_IWGRP, S_IXGRP, S_ISGID},
+        {S_IROTH, S_IWOTH, S_IXOTH, S_ISVTX}
+    };
 
 Properties::Properties( const char *_url ) : QObject()
 {
     pageList.setAutoDelete( true );
-    
+  
     url = _url;
     url.detach();
-    
+  
     kurl = new KURL( url );
     if ( kurl->isMalformed() )
 	delete this;
@@ -314,7 +329,8 @@ void FilePropsPage::applyChanges()
     }
 }
 
-FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : PropsPage( _props )
+FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) 
+: PropsPage( _props )
 {
     QString path = properties->getKURL()->path();
     KURL::decodeURL( path );
@@ -324,9 +340,14 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : Props
     struct stat buff;
     stat( path, &buff );
     struct passwd * user = getpwuid( buff.st_uid );
-    struct group * g = getgrgid( buff.st_gid );
-    
-    permissions = buff.st_mode & ( S_IRWXU | S_IRWXG | S_IRWXO );
+    struct group * ge = getgrgid( buff.st_gid );
+
+    bool IamRoot = (geteuid() == 0);
+    bool IsMyFile  = (geteuid() == buff.st_uid);
+    bool IsDir =  S_ISDIR (buff.st_mode);
+
+    permissions = buff.st_mode & ( S_IRWXU | S_IRWXG | S_IRWXO |
+				   S_ISUID | S_ISGID | S_ISVTX );
     strOwner = "";
     strGroup = "";
     if ( user != 0L )
@@ -334,89 +355,185 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : Props
 	strOwner = user->pw_name;
 	strOwner.detach();
     }    
-    if ( g != 0L )
+    if ( ge != 0L )
     {
-	strGroup = g->gr_name;
+	strGroup = ge->gr_name;
 	strGroup.detach();
     }    
 
+    QBoxLayout *box = new QVBoxLayout( this, 3 );
+
     QLabel *l;
-    // QBoxLayout *bl2;
-    int y = 10;
+    QGroupBox *gb;
+    QGridLayout *gl;
+
+    /* Group: Access Permissions */
+    gb = new QGroupBox ( klocale->translate("Access permissions"), this );
+    box->addWidget (gb);
+    gl = new QGridLayout (gb, 4, 6, 15);
+
+    if (IsDir)
+	    l = new QLabel( klocale->translate("Show\nEntries"), gb );
+    else
+	    l = new QLabel( klocale->translate("Read"), gb );
+    l->setMinimumSize( l->sizeHint() );
+    gl->addWidget (l, 0, 1);
+
+    if (IsDir) 
+	    l = new QLabel( klocale->translate("Write\nEntries"), gb );
+    else
+	    l = new QLabel( klocale->translate("Write"), gb );
+    l->setMinimumSize( l->sizeHint() );
+    gl->addWidget (l, 0, 2);
+
+    if (IsDir)
+	    l = new QLabel( klocale->translate("Change\nInto"), gb );
+    else
+	    l = new QLabel( klocale->translate("Exec"), gb );
+    l->setMinimumSize( l->sizeHint() );
+    gl->addWidget (l, 0, 3);
+
+    l = new QLabel( klocale->translate("Special"), gb );
+    l->setMinimumSize( l->sizeHint() );
+    gl->addWidget (l, 0, 4);
+
+    l = new QLabel( klocale->translate("User"), gb );
+    l->setMinimumSize( l->sizeHint() );
+    l->setEnabled (IamRoot || IsMyFile);
+    gl->addWidget (l, 1, 0);
+
+    l = new QLabel( klocale->translate("Group"), gb );
+    l->setMinimumSize( l->sizeHint() );
+    l->setEnabled (IamRoot || IsMyFile);
+    gl->addWidget (l, 2, 0);
+
+    l = new QLabel( klocale->translate("Others"), gb );
+    l->setMinimumSize( l->sizeHint() );
+    l->setEnabled (IamRoot || IsMyFile);
+    gl->addWidget (l, 3, 0);
+
+    /* Draw Checkboxes */
+    for (int row = 0; row < 3 ; ++row) {
+	    for (int col = 0; col < 4; ++col) {
+	            QCheckBox *cb;
+		    const char *desc;
+
+		    /* some boxes need further description .. */
+		    switch (fperm[row][col]) {
+		    case S_ISUID : desc = klocale->translate("Set UID"); break;
+		    case S_ISGID : desc = klocale->translate("Set GID"); break;
+		    case S_ISVTX : desc = klocale->translate("Sticky"); break;
+		    default      : desc = "";
+		    }
+		    
+		    cb = new QCheckBox (desc, gb);
+		    cb->setChecked ((buff.st_mode & fperm[row][col]) 
+				    == fperm[row][col]);
+		    cb->setEnabled (IsMyFile || IamRoot);
+		    cb->setMinimumSize (cb->sizeHint());
+		    permBox[row][col] = cb;
+		    gl->addWidget (permBox[row][col], row+1, col+1);
+	    }
+    }
+    gl->setColStretch(5, 10);
+    gl->activate();
+    gb->adjustSize();
+
+    /**** Group: Ownership ****/
+    gb = new QGroupBox ( klocale->translate("Ownership"), this );
+    box->addWidget (gb);
+
+    gl = new QGridLayout (gb, 2, 3, 15);
+
+    /*** Set Owner ***/
+    l = new QLabel( klocale->translate("Owner"), gb );
+    l->setMinimumSize( l->sizeHint() );
+    gl->addWidget (l, 0, 0);
     
-    l = new QLabel( klocale->translate("Access permissions"), this );
-    l->setGeometry( 10, y, 200, 20 );
-    y += 25;
-    l = new QLabel( klocale->translate("Read"), this );
-    l->setGeometry( 90, y, 80, 20 );
-    l = new QLabel( klocale->translate("Write"), this );
-    l->setGeometry( 170, y, 80, 20 );
-    l = new QLabel( klocale->translate("Exec"), this );
-    l->setGeometry( 250, y, 80, 20 );
-    y += 25;
-
-    l = new QLabel( klocale->translate("User"), this );
-    l->setGeometry( 10, y, 80, 20 );
-    permUR = new QCheckBox( "", this );
-    permUR->setGeometry( 90, y, 100, 30 );
-    permUR->setChecked( ( buff.st_mode & S_IRUSR ) == S_IRUSR );
-    permUW = new QCheckBox( "", this );
-    permUW->setGeometry( 170, y, 100, 30 );
-    permUW->setChecked( ( buff.st_mode & S_IWUSR ) == S_IWUSR );
-    permUX = new QCheckBox( "", this );
-    permUX->setGeometry( 250, y, 100, 30 );
-    permUX->setChecked( ( buff.st_mode & S_IXUSR ) == S_IXUSR );
-    permUS = new QCheckBox( klocale->translate("UID"), this );
-    permUS->setGeometry( 310, y, 100, 30 );
-    permUS->setChecked( ( buff.st_mode & S_ISUID ) == S_ISUID );      
-    y += 35;
-
-    l = new QLabel( klocale->translate("Group"), this );
-    l->setGeometry( 10, y, 80, 20 );
-    permGR = new QCheckBox( "", this );
-    permGR->setGeometry( 90, y, 100, 30 );
-    permGR->setChecked( ( buff.st_mode & S_IRGRP ) == S_IRGRP );
-    permGW = new QCheckBox( "", this );
-    permGW->setGeometry( 170, y, 100, 30 );
-    permGW->setChecked( ( buff.st_mode & S_IWGRP ) == S_IWGRP );
-    permGX = new QCheckBox( "", this );
-    permGX->setGeometry( 250, y, 100, 30 );
-    permGX->setChecked( ( buff.st_mode & S_IXGRP ) == S_IXGRP );
-    permGS = new QCheckBox( klocale->translate("GID "), this );
-    permGS->setGeometry( 310, y, 100, 30 );
-    permGS->setChecked( ( buff.st_mode & S_ISGID ) == S_ISGID );   
-
-    y += 35;
-    l = new QLabel( klocale->translate("Others"), this );
-    l->setGeometry( 10, y, 80, 20 );
-    permOR = new QCheckBox( "", this );
-    permOR->setGeometry( 90, y, 100, 30 );
-    permOR->setChecked( ( buff.st_mode & S_IROTH ) == S_IROTH );
-    permOW = new QCheckBox( "", this );
-    permOW->setGeometry( 170, y, 100, 30 );
-    permOW->setChecked( ( buff.st_mode & S_IWOTH ) == S_IWOTH );
-    permOX = new QCheckBox( "", this );
-    permOX->setGeometry( 250, y, 100, 30 );
-    permOX->setChecked( ( buff.st_mode & S_IXOTH ) == S_IXOTH );
-    permOS = new QCheckBox( klocale->translate("Sticky"), this );
-    permOS->setGeometry( 310, y, 100, 30 );
-    permOS->setChecked( ( buff.st_mode & S_ISVTX ) == S_ISVTX );    
-    y += 35;
-
-    y += 10;
-    
-    l = new QLabel( klocale->translate("Owner"), this );
-    l->setGeometry( 10, y, 100, 30 );
-    owner = new QLineEdit( this );
-    owner->setGeometry( 60, y, 100, 30 );
+    /* maybe this should be a combo-box, but this isn't handy
+     * if there are 2000 Users (tiny scrollbar!)
+     * anyone developing a combo-box with incremental search .. ?
+     */
+    owner = new QLineEdit( gb );
+    owner->setMinimumSize( owner->sizeHint() );
+    gl->addWidget (owner, 0, 1);
     owner->setText( strOwner );
-    y += 35;
-    l = new QLabel( klocale->translate("Group"), this );
-    l->setGeometry( 10, y, 100, 30 );
-    grp = new QLineEdit( this );
-    grp->setGeometry( 60, y, 100, 30 );
-    grp->setText( strGroup );
-    y += 35;
+    owner->setEnabled ( IamRoot || IsMyFile );
+
+    /*** Set Group ***/
+    /* get possible groups .. */
+    QStrList *groupList = new QStrList (true);
+
+    if (IsMyFile || IamRoot) {  // build list just if we have to
+      setgrent();
+      while ((ge = getgrent()) != 0L) {
+	if (IamRoot)
+	  groupList->inSort (ge->gr_name);
+	else {
+	  /* pick just the groups the user can change the file to */
+	  char ** members = ge->gr_mem;
+	  char * member;
+	  while ((member = *members) != 0L) {
+	    if (strcmp (member, strOwner.data()) == 0) {
+	      groupList->inSort (ge->gr_name);
+	      break;
+	    }
+	    ++members;
+	  }
+	}
+      }
+      endgrent();
+      
+      /* add the effective Group to the list .. */
+      ge = getgrgid (getegid());
+      if (ge != 0L)
+	if (groupList->find (ge->gr_name) < 0)
+	  groupList->inSort (ge->gr_name);      
+    }
+    
+    /* add the group the file currently belongs to ..
+     * .. if its not there already 
+     */
+    if (groupList->find (strGroup) < 0)
+      groupList->inSort (strGroup);
+    
+    l = new QLabel( klocale->translate("Group"), gb );
+    l->setMinimumSize( l->sizeHint() );
+    gl->addWidget (l, 1, 0);
+
+    if (groupList->count() > 1 && 
+	(IamRoot || IsMyFile)) { 
+      /* Combo-Box .. if there is anything to change */
+      if (groupList->count() <= 10)
+	/* Motif-Style looks _much_ nicer for few items */
+	grp = new QComboBox( gb ); 
+      else
+	grp = new QComboBox( false, gb );
+      
+      grp->insertStrList ( groupList );
+      grp->setCurrentItem (groupList->find ( strGroup ));
+      grp->setMinimumSize( grp->sizeHint() );
+      gl->addWidget (grp, 1, 1);
+      grp->setEnabled (IamRoot || IsMyFile);
+    }
+    else {
+      // no choice; just present the group in a disabled edit-field
+      QLineEdit *e = new QLineEdit ( gb );
+      e->setMinimumSize (e->sizeHint());
+      e->setText ( strGroup );
+      e->setEnabled (false);
+      gl->addWidget (e, 1, 1);
+      grp = 0L;
+    }
+    
+    delete groupList;
+
+    gl->setColStretch(2, 10);
+    gl->activate();
+    gb->adjustSize();
+
+    box->addStretch (10);
+    box->activate();
 }
 
 bool FilePermissionsPropsPage::supports( KURL *_kurl )
@@ -437,31 +554,11 @@ void FilePermissionsPropsPage::applyChanges()
     QString fname = properties->getKURL()->filename();
     KURL::decodeURL( fname );
 
-    int p = 0L;
-    if ( permUR->isChecked() )
-	p |= S_IRUSR;
-    if ( permUW->isChecked() )
-	p |= S_IWUSR;
-    if ( permUX->isChecked() )
-	p |= S_IXUSR;
-    if ( permUS->isChecked() )
-        p |= S_ISUID;      
-    if ( permGR->isChecked() )
-	p |= S_IRGRP;
-    if ( permGW->isChecked() )
-	p |= S_IWGRP;
-    if ( permGX->isChecked() )
-	p |= S_IXGRP;
-    if ( permGS->isChecked() )
-        p |= S_ISGID;                        
-    if ( permOR->isChecked() )
-	p |= S_IROTH;
-    if ( permOW->isChecked() )
-	p |= S_IWOTH;
-    if ( permOX->isChecked() )
-	p |= S_IXOTH;
-    if ( permOS->isChecked() )
-        p |= S_ISVTX;          
+    mode_t p = 0L;
+    for (int row = 0;row < 3; ++row)
+        for (int col = 0; col < 4; ++col)
+	    if (permBox[row][col]->isChecked())
+	        p |= fperm[row][col];
 
     if ( p != permissions )
     {
@@ -474,10 +571,11 @@ void FilePermissionsPropsPage::applyChanges()
 				  klocale->translate( "Could not change permissions\nPerhaps access denied." ) );	    
     }
 
-    if ( strcmp( owner->text(), strOwner.data() ) != 0 || strcmp( grp->text(), strGroup.data() ) != 0 )
+    if ( strcmp( owner->text(), strOwner.data() ) != 0 || 
+	 strcmp( grp->text(grp->currentItem()), strGroup.data() ) != 0 )
     {
 	struct passwd* pw = getpwnam( owner->text() );
-	struct group* g = getgrnam( grp->text() );
+	struct group* g = getgrnam( grp->text(grp->currentItem()) );
 	if ( pw == 0L )
 	{
 	    warning(klocale->translate(" ERROR: No user %s"),owner->text() );
@@ -485,7 +583,8 @@ void FilePermissionsPropsPage::applyChanges()
 	}
 	if ( g == 0L )
 	{
-	    warning(klocale->translate(" ERROR: No group %s"),grp->text() );
+	    warning(klocale->translate(" ERROR: No group %s"),
+		    grp->text(grp->currentItem()) ); // should never happen
 	    return;
 	}
 	if ( chown( path, pw->pw_uid, g->gr_gid ) != 0 )
@@ -498,7 +597,7 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
 {
     execEdit = new QLineEdit( this, "LineEdit_1" );
     pathEdit = new QLineEdit( this, "LineEdit_2" );
-    iconBox = new KIconLoaderButton( this );
+    iconBox = new KIconLoaderButton( pkfm->iconLoader(), this );
     terminalCheck = new QCheckBox( this, "CheckBox_1" );
     terminalEdit = new QLineEdit( this, "LineEdit_4" );
     execBrowse = new QPushButton( this, "Button_1" );
@@ -569,15 +668,6 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
 	terminalCheck->setChecked( termStr == "1" );
     if ( iconStr.isNull() )
 	iconStr = KMimeType::getDefaultPixmap();
-
-    QStrList list;
-    QString tmp( kapp->kdedir() );
-    tmp += "/share/icons";
-    list.append( tmp.data() );
-    tmp = getenv( "HOME" );
-    tmp += "/.kde/share/icons";
-    list.append( tmp.data() );
-    iconBox->iconLoaderDialog().setDir( &list );
     
     iconBox->setIcon( iconStr ); 
     
@@ -664,7 +754,7 @@ void ExecPropsPage::slotBrowseExec()
 URLPropsPage::URLPropsPage( Properties *_props ) : PropsPage( _props )
 {
     URLEdit = new QLineEdit( this, "LineEdit_1" );
-    iconBox = new KIconLoaderButton( this );
+    iconBox = new KIconLoaderButton( pkfm->iconLoader(), this );
 
     URLEdit->raise();
     URLEdit->setGeometry( 10, 40, 210, 30 );
@@ -696,15 +786,6 @@ URLPropsPage::URLPropsPage( Properties *_props ) : PropsPage( _props )
 	URLEdit->setText( URLStr.data() );
     if ( iconStr.isNull() )
 	iconStr = KMimeType::getDefaultPixmap();
-
-    QStrList list;
-    QString tmp( kapp->kdedir() );
-    tmp += "/share/icons";
-    list.append( tmp.data() );
-    tmp = getenv( "HOME" );
-    tmp += "/.kde/share/icons";
-    list.append( tmp.data() );
-    iconBox->iconLoaderDialog().setDir( &list );
 
     iconBox->setIcon( iconStr );
 }
@@ -766,7 +847,7 @@ void URLPropsPage::applyChanges()
 
 DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
 {
-    iconBox = new KIconLoaderButton( this );
+    iconBox = new KIconLoaderButton( pkfm->iconLoader(), this );
     iconBox->raise();
     iconBox->setGeometry( 10, 20, 50, 50 );
 
@@ -808,15 +889,6 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
 	iconStr = u.filename();
     }
     
-    QStrList list2;
-    tmp = kapp->kdedir();
-    tmp += "/share/icons";
-    list2.append( tmp.data() );
-    tmp = getenv( "HOME" );
-    tmp += "/.kde/share/icons";
-    list2.append( tmp.data() );
-    iconBox->iconLoaderDialog().setDir( &list2 );
-
     iconBox->setIcon( iconStr );
 
     // Load all wallpapers in the combobox
@@ -1242,7 +1314,7 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     patternEdit = new QLineEdit( this, "LineEdit_1" );
     commentEdit = new QLineEdit( this, "LineEdit_3" );
     mimeEdit = new QLineEdit( this, "LineEdit_3" );
-    iconBox = new KIconLoaderButton( this );
+    iconBox = new KIconLoaderButton( pkfm->iconLoader(), this );
     appBox = new QComboBox( false, this, "ComboBox_2" );
 
     patternEdit->raise();
@@ -1307,15 +1379,6 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     if ( !mimeStr.isEmpty() )
 	mimeEdit->setText( mimeStr.data() );
     
-    QStrList list;
-    QString tmp( kapp->kdedir() );
-    tmp += "/share/icons";
-    list.append( tmp.data() );
-    tmp = getenv( "HOME" );
-    tmp += "/.kde/share/icons";
-    list.append( tmp.data() );
-    iconBox->iconLoaderDialog().setDir( &list );
-
     iconBox->setIcon( iconStr );
     
     // Get list of all applications
@@ -1475,10 +1538,10 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
     tmpQLabel->setGeometry( 170, 220, 150, 30 );
     tmpQLabel->setText(  klocale->translate("Unmounted Icon") );
     
-    mounted = new KIconLoaderButton( this );
+    mounted = new KIconLoaderButton( pkfm->iconLoader(), this );
     mounted->setGeometry( 10, 250, 50, 50 );
     
-    unmounted = new KIconLoaderButton( this );
+    unmounted = new KIconLoaderButton( pkfm->iconLoader(), this );
     unmounted->setGeometry( 170, 250, 50, 50 );
 
     QString path( _props->getKURL()->path() );
@@ -1512,16 +1575,6 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
 	mountedStr = KMimeType::getDefaultPixmap();
     if ( unmountedStr.isEmpty() )
 	unmountedStr = KMimeType::getDefaultPixmap();    
-
-    QStrList list;
-    QString tmp( kapp->kdedir() );
-    tmp += "/share/icons";
-    list.append( tmp.data() );
-    tmp = getenv( "HOME" );
-    tmp += "/.kde/share/icons";
-    list.append( tmp.data() );
-    mounted->iconLoaderDialog().setDir( &list );
-    unmounted->iconLoaderDialog().setDir( &list );
 
     mounted->setIcon( mountedStr ); 
     unmounted->setIcon( unmountedStr ); 

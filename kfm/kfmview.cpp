@@ -57,7 +57,7 @@ KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_p
     
     stackLock = false;
 
-    ignoreMouseRelease = false; // Stephan: Just guessed. It was undefined
+    // ignoreMouseRelease = false; // Stephan: Just guessed. It was undefined
 
     backStack.setAutoDelete( false );
     forwardStack.setAutoDelete( false );
@@ -126,15 +126,32 @@ void KfmView::splitWindow()
 
 void KfmView::slotRun()
 {
-    QString dir = getenv( "HOME" );
+    QString url2 = "";
+    if ( manager->getURL() )
+	url2 = manager->getURL();
     
-    KURL u( manager->getURL() );
-    if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
-	dir = u.path();
-    
-    QString cmd;
-    cmd.sprintf( "cd %s; kcli &", dir.data() );
-    system( cmd.data() );
+    DlgLineEntry l( klocale->translate("Run:"), "", this, true );
+    if ( l.exec() )
+    {
+	QString exec = l.getText();
+	exec = exec.stripWhiteSpace();
+	// Exit if the user did not enter an URL
+	if ( exec.data()[0] == 0 )
+	    return;
+
+	QString dir = getenv( "HOME" );
+
+	if ( !url2.isEmpty() )
+	{
+	    KURL u( url2 );
+	    if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
+		dir = u.path();
+	}
+	
+        QString cmd;    
+	cmd.sprintf( "cd %s; %s &", dir.data(), exec.data() );
+	system( cmd.data() );
+    }
 }
 
 void KfmView::slotTerminal()
@@ -163,13 +180,11 @@ void KfmView::slotStop()
 
 void KfmView::slotReload()
 {
-    // debugT("################## RELOAD ########################\n");
     manager->openURL( manager->getURL(), true );
 }
 
 void KfmView::slotUpdateView()
 {
-    // debugT("################## UPDATE ########################\n");
     if ( isFrame() )
     {
 	KfmView *v;
@@ -182,7 +197,6 @@ void KfmView::slotUpdateView()
 
 void KfmView::slotMountNotify()
 {
-    // debugT("################## MOUNT ########################\n");
     KURL u( manager->getURL().data() );
     
     if ( strcmp( u.protocol(), "file:" ) == 0 && !u.hasSubProtocol() )
@@ -191,7 +205,6 @@ void KfmView::slotMountNotify()
 
 void KfmView::slotFilesChanged( const char *_url )
 {
-    // debugT("################## FILES CHANGED ########################\n");
     QString u1 = _url;
     if ( u1.right( 1 ) != "/" )
 	u1 += "/";
@@ -201,10 +214,8 @@ void KfmView::slotFilesChanged( const char *_url )
     if ( u2.right( 1 ) != "/" )
 	u2 += "/";
 
-    // debugT("Comparing '%s' to '%s'\n",u1.data(), u2.data() );
     if ( u1 == u2 )
 	manager->openURL( manager->getURL().data(), true );
-    // debugT("Changed\n");
 }
 
 void KfmView::slotDropEnterEvent( KDNDDropZone * )
@@ -239,7 +250,7 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
 	    canonical = dir.canonicalPath();
 	    if ( canonical.isEmpty() )
 		canonical = u.path();
-	    fprintf(stderr,"u='%s' can='%s'\n",u.path(),dir.canonicalPath().data());
+	    // fprintf(stderr,"u='%s' can='%s'\n",u.path(),dir.canonicalPath().data());
 	}
 	
 	// Check wether we drop a file on itself
@@ -247,7 +258,7 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
 	char *s;
 	for ( s = list.first(); s != 0L; s = list.next() )
 	{
-	    fprintf(stderr,"U2='%s' U1='%s'\n",s,canonical.data());
+	    // fprintf(stderr,"U2='%s' U1='%s'\n",s,canonical.data());
 	    QString url2( s );
 	    // replace all symlinks if we are on the local hard disk
 	    KURL u2( s );
@@ -260,11 +271,11 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
 		    url2 = dir2.canonicalPath();
 		    if ( url2.isEmpty() )
 			url2 = u2.path();
-		    fprintf(stderr,"2. u='%s' can='%s'\n",u2.path(),dir2.canonicalPath().data());
+		    // fprintf(stderr,"2. u='%s' can='%s'\n",u2.path(),dir2.canonicalPath().data());
 		}
 	    }
 	    
-	    fprintf(stderr,"U2='%s' U1='%s'\n",url2.data(),canonical.data());
+	    // fprintf(stderr,"U2='%s' U1='%s'\n",url2.data(),canonical.data());
 	    
 	    // Are both symlinks equal ?
 	    if ( strcmp( url2, canonical ) == 0 )
@@ -275,15 +286,11 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
 	    }
 	}
 	
-	// debugT(" Dropped over object\n");
-		
 	QPoint p( _zone->getMouseX(), _zone->getMouseY() );
 	manager->dropPopupMenu( _zone, url, &p );
     }
     else // dropped over white ground
     {
-	// debugT("Dropped over white\n");
-	
 	QPoint p( _zone->getMouseX(), _zone->getMouseY() );
 	manager->dropPopupMenu( _zone, manager->getURL(), &p );
     }
@@ -765,6 +772,9 @@ KfmView* KfmView::getActiveView()
 
 bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mouse, bool _isselected )
 {
+    rectStart = false;
+    selectedURL = "";
+    
     // Select by drawing a rectangle
     if ( _url == 0L && _mouse->button() == LeftButton )
     {
@@ -776,7 +786,7 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
 	rectY2 = rectY1;
 	if ( !dPainter )
 	    dPainter = new QPainter;
-	// debugT ("KFileView::mousePressEvent: starting a rectangle (w/Painter)\n");   
+
 	return true;
     }
     // Select a URL with Ctrl Button
@@ -784,27 +794,16 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
 	      ( _mouse->state() & ControlButton ) == ControlButton )
     {   
 	selectByURL( 0L, _url, !_isselected );
-	ignoreMouseRelease = true;
+	selectedURL = _url;
+	// ignoreMouseRelease = true;
 	return true;
     }
     else if ( _url != 0L && _mouse->button() == LeftButton )
     {
-	QStrList list;
-	getSelected( list );
-
-	// The user selected the first icon
-	if ( list.count() == 0 )
-	{
-	    selectByURL( 0L, _url, true );
-	    return false;
-	}
-	// The user selected one of the icons that are already selected
-	if ( list.find( _url ) != -1 )
-	    return false;
-	// The user selected another icon => deselect the selected ones
-	select( 0L, false );
-	selectByURL( 0L, _url, true );
-	return false;
+	// We can not do much here, since we dont know wether
+	// this may be the start of some DND action.
+	selectedURL = _url;
+	return true;
     }
     // Context Menu
     else if ( _url != 0L && _mouse->button() == RightButton )
@@ -894,12 +893,43 @@ bool KfmView::mouseMoveHook( QMouseEvent *_mouse )
 
 bool KfmView::mouseReleaseHook( QMouseEvent *_mouse )
 {
-    if ( ignoreMouseRelease )
+    /* if ( ignoreMouseRelease )
     {
 	ignoreMouseRelease = false;
 	return true;
+    } */
+
+    if ( !selectedURL.isEmpty() && _mouse->button() == LeftButton &&
+	 ( _mouse->state() & ControlButton ) == ControlButton )
+    {
+	// This is already done, so we jusrt consume this event
+	selectedURL = "";
+	return true;
     }
-    
+    // The user pressed the mouse over an URL, did no DND and released it
+    else if ( !selectedURL.isEmpty() && _mouse->button() == LeftButton )
+    {
+	QStrList list;
+	getSelected( list );
+
+	// The user selected the first icon
+	if ( list.count() == 0 )
+	{
+	    selectByURL( 0L, selectedURL, true );
+	    selectedURL = "";
+	    return false;
+	}
+	// The user selected one of the icons that are already selected
+	// if ( list.find( selectedURL ) != -1 )
+	// return ;
+
+	// The user selected one icon => deselect the other ones if there are any
+	select( 0L, false );
+	selectByURL( 0L, selectedURL, true );
+	selectedURL = "";
+	return false;
+    }
+   
     if ( rectStart )
     {
 	rectX2 = _mouse->pos().x();
@@ -947,18 +977,22 @@ bool KfmView::mouseReleaseHook( QMouseEvent *_mouse )
 
 bool KfmView::dndHook( const char *_url, QPoint &_p )
 {
+    selectedURL = "";
+
     if ( _url == 0L )
 	return true;
     
     QStrList l;
     getSelected( l );
+    // Did the user drag an icon that was not selected ?
+    if ( l.find( _url ) == -1 )
+    {
+	l.clear();
+	l.append( _url );
+    }
     
     QPixmap pixmap;
-    
-    // Is anything selected at all ?
-    if ( l.count() == 0 )
-	l.append( _url );
-    
+        
     // Do we drag multiple files ?
     if ( l.count() == 1 )
     {

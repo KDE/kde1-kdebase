@@ -80,6 +80,8 @@ public slots:
     void slotCancel();
     
 protected:
+    void prepareToDie();
+    
     /**
      * The URL we try to open.
      */
@@ -101,6 +103,13 @@ protected:
      * are doing something at least.
      */
     QDialog *dlg;
+
+    static QList<KFMExec> *lstZombies;
 };
 
 #endif
+
+
+
+
+

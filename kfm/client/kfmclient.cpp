@@ -6,13 +6,23 @@
 #include <qapp.h>
 #include <qdir.h>
 #include <qmsgbox.h>
-
+#include <qstring.h>
 #include "kfmclient_ipc.h"
-#include <config-kfm.h>
+#include "config-kfm.h"
 
 char flag = 0;
 
 int doIt( int argc, char **argv );
+
+QString displayName()
+{
+    QString d( getenv( "DISPLAY" ) );
+    int i = d.find( ':' );
+    if ( i != -1 )
+	d[i] = '_';
+    
+    return d;
+}
 
 int main( int argc, char **argv )
 {
@@ -55,6 +65,7 @@ int doIt( int argc, char **argv )
 {
     QString file = QDir::homeDirPath();
     file += "/.kde/share/apps/kfm/pid";
+    file += displayName();
     
     FILE *f = fopen( file.data(), "rb" );
     if ( f == 0L )

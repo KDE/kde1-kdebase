@@ -380,7 +380,15 @@ protected:
      * @see #mousePressedHook
      */
     bool ignoreMouseRelease;
-  
+
+    /**
+     * This is just a temporary variable. It stores the URL the user clicked
+     * on, until he releases the mouse again.
+     *
+     * @ref #mouseMoveHook
+     * @ref #mousePressedHook
+     */
+    QString selectedURL;
 };
 
 #endif

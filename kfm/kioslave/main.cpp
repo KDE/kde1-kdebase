@@ -50,7 +50,8 @@ void KIOSlave::ProcessError(KProtocol *prot, const char *srcurl)
 
     prot->GetLastError(KError, message, SysError);
 
-    fprintf( stderr, "KIOSlave-ERROR (%s): %s\n",srcurl,message.data());
+    fprintf( stderr, "KIOSlave-ERROR (%s): %s; %s\n",srcurl,message.data(),
+	     strerror(SysError));
     ipc->fatalError(KError, srcurl, SysError);
 }
 

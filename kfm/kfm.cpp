@@ -6,8 +6,12 @@
 #include <kapp.h>
 #include <kconfig.h>
 
+KFM *KFM::pKfm = 0L;
+
 KFM::KFM()
 {
+    pKfm = this;
+    
     kapp->setTopWidget( this );
 
     if ( KfmGui::rooticons )
@@ -46,6 +50,17 @@ KFM::KFM()
 	    }
 	}
     }
+
+    pIconLoader = new KIconLoader();
+
+    QStrList* list = pIconLoader->getDirList();
+    list->clear();
+    QString tmp( kapp->kdedir() );
+    tmp += "/share/icons";
+    list->append( tmp.data() );
+    tmp = getenv( "HOME" );
+    tmp += "/.kde/share/icons";
+    list->append( tmp.data() );
 }
 
 KFM::~KFM()

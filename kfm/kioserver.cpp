@@ -131,8 +131,13 @@ void KIOServer::slotDirEntry( const char *_url, const char *_name, bool _isDir, 
 {
     QString url = _url;
 
-    // Delete the password if it is in the URL
     KURL u( _url );
+
+    // Dont cache the local file system!
+    if ( strcmp( u.protocol(), "file" ) == 0 )
+	return;
+
+    // Delete the password if it is in the URL    
     if ( u.passwd() != 0L && u.passwd()[0] != 0 )
     {
         u.setPassword( "" );
@@ -586,22 +591,19 @@ void KIOServer::newSlave( KIOSlaveIPC * _slave )
 	     this, SLOT( slotDirEntry( const char *, const char *, bool, int, const char *,
 					 const char *, const char *, const char * ) ) );
     connect( _slave, SIGNAL( flushDir( const char* ) ), this, SLOT( slotFlushDir( const char * ) ) );
+    connect( _slave, SIGNAL( closed( KIOSlaveIPC* ) ), this, SLOT( slotSlaveClosed( KIOSlaveIPC* ) ) );
     
     newSlave2( _slave );
 }
 
 void KIOServer::newSlave2( KIOSlaveIPC * _slave )
 {
-    // debugT("New Slave arrived\n");
-    
     if ( waitingJobs.count() == 0 )
     {
-	// debugT("No Job waiting\n");
 	freeSlaves.append( _slave );
 	return;
     }
     
-    // debugT("Job served with new slave\n");
     KIOJob* job = waitingJobs.first();
     waitingJobs.removeRef( job );
     job->doIt( _slave );
@@ -609,16 +611,13 @@ void KIOServer::newSlave2( KIOSlaveIPC * _slave )
 
 void KIOServer::getSlave( KIOJob *_job )
 {
-    // debugT("Request for slave\n");
     if ( freeSlaves.count() == 0 )
     {
-	// debugT("No slave avaulable\n");
 	waitingJobs.append( _job );
 	runNewSlave();
 	return;
     }
     
-    // debugT("Job served with waiting slave\n");
     KIOSlaveIPC *slave = freeSlaves.first();
     freeSlaves.removeRef( slave );
     _job->doIt( slave );
@@ -635,14 +634,68 @@ void KIOServer::runNewSlave()
     if ( fork() == 0 )
     {
         execlp( ipath.data(), "kioslave", buffer, 0 );
+	fatal( "ERROR: Could not start kioslave\n");
         exit( 1 );
     }
 }
 
 void KIOServer::freeSlave( KIOSlaveIPC *_slave )
 {
-    // debugT("++++++++ Got Slace back\n");
     newSlave2( _slave );
+}
+
+void KIOServer::slotSlaveClosed( KIOSlaveIPC* _slave )
+{
+    freeSlaves.removeRef( _slave );
+}
+
+bool KIOServer::testDirInclusion( const char *_src_url, const char *_dest_canonical )
+{
+    KURL u( _src_url );
+    if ( u.isMalformed() )
+	return false;
+
+    KURL u2( _dest_canonical );
+    if ( u2.isMalformed() )
+	return false;
+    
+    // Any URL that is not a file on the local hard disk ?
+    if ( strcmp( u.protocol(), "file" ) != 0L || strcmp( u2.protocol(), "file" ) != 0L ||
+	 u.hasSubProtocol() || u2.hasSubProtocol() )
+    {
+	// Inclusion ?
+	if ( strncmp( _src_url, _dest_canonical, strlen( _src_url ) ) == 0 )
+	    return false;
+
+	return true;
+    }
+    
+    QString url;
+    // replace all symlinks if we are on the local hard disk
+    // Get the canonical path.
+    QDir dir( u.path() );
+    url = dir.canonicalPath();
+    if ( url.isEmpty() )
+	url = u.path();
+
+    if ( strncmp( url.data(), _dest_canonical, url.length() ) == 0 )
+	return false;
+    
+    return true;
+}
+
+QString KIOServer::canonicalURL( const char *_url )
+{
+    KURL u( _url );
+    if ( u.isMalformed() || strcmp( u.protocol(), "file" ) != 0L || u.hasSubProtocol() )
+	return QString( _url );
+    
+    QDir dir( u.path() );
+    QString url = dir.canonicalPath();
+    if ( url.isEmpty() )
+	return QString( _url );
+    
+    return u.path();
 }
 
 #include "kioserver.moc"

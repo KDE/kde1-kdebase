@@ -5,6 +5,7 @@
 #include <qlined.h>
 #include <qpushbt.h>
 #include <qlabel.h>
+#include "kURLcompletion.h"
 
 /**
  * @sort Asking for a single line of text
@@ -23,6 +24,7 @@ public:
      *                   completion ( Ctrl-S and Ctrl-D )
      */
     DlgLineEntry( const char *_text, const char *_value, QWidget *parent, bool _file_mode = FALSE );
+    ~DlgLineEntry();
 
     /**
      * @return the value the user entered
@@ -40,6 +42,11 @@ protected:
      * The line edit widget
      */
     QLineEdit *edit;
+
+    /**
+      * Completion helper ..
+      */
+    KURLCompletion * completion;
 };
 
 

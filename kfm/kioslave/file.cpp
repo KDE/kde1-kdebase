@@ -7,6 +7,10 @@
 
 #include <qregexp.h>
 
+SortedKProtocolDirEntry::~SortedKProtocolDirEntry()
+{
+}
+
 int SortedKProtocolDirEntry::compareItems( GCI i1, GCI i2)
 {
     KProtocolDirEntry *de1 = (KProtocolDirEntry *)i1;

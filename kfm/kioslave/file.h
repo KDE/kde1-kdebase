@@ -24,7 +24,7 @@ class SortedKProtocolDirEntry : public QList<KProtocolDirEntry>
 {
     int compareItems( GCI i1, GCI i2 );
 public:
-    ~SortedKProtocolDirEntry() {};
+    ~SortedKProtocolDirEntry();
     int sortMode;
 };
 

@@ -84,7 +84,7 @@ KProtocolHTTP::KProtocolHTTP()
     char *proxy = 0L;
     int port = 80;
     
-    QString tmp = getenv("HTTP_PROXY");
+    QString tmp = getenv("http_proxy");
     if ( !tmp.isEmpty() )
     {
 	KURL u( tmp );
@@ -188,6 +188,29 @@ int KProtocolHTTP::init_sockaddr(struct sockaddr_in *server_name, char *hostname
 	return(SUCCESS);
 }
 
+/* Domain suffix match. E.g. return 1 if host is "cuzco.inka.de" and
+   nplist is "inka.de,hadiko.de" */
+int revmatch(const char *host, const char *nplist)
+{
+        const char *p;
+        const char *q = nplist + qstrlen(nplist);
+        const char *r = host + qstrlen(host) - 1;
+
+	p = r;
+	while (--q>=nplist) {
+	  if (*q!=*p || --p<host) {
+	    p=r;
+	    while (--q>=nplist && *q!=',' && *q!=' ')
+	      ;
+	  } else {
+	    if ((q==nplist || q[-1]==',' || q[-1]==' ') &&
+		(p<host || *p=='.'))
+	      return 1;
+	  }
+	}
+	return 0;
+}
+
 int KProtocolHTTP::Open(KURL *_url, int mode)
 {
     url = _url->url().data();
@@ -212,8 +235,19 @@ int KProtocolHTTP::Open(KURL *_url, int mode)
 	    return(FAIL);
 	}
 
-	if(use_proxy)
+	int do_proxy = use_proxy;
+	if (do_proxy)
 	{
+	    if (char *p = getenv("no_proxy")) {
+	         do_proxy = !revmatch(_url->host(), p);
+	    }
+	}
+
+	if(do_proxy)
+	{
+                printf("HTTP::Open: connecting to proxy %s:%d\n",
+		       inet_ntoa(proxy_name.sin_addr),
+		       ntohs(proxy_name.sin_port));
 		if(::connect(sock,(struct sockaddr*)(&proxy_name),sizeof(proxy_name)))
 		{
 	    	Error(KIO_ERROR_CouldNotConnect,"Could not connect to proxy",errno);
@@ -223,13 +257,19 @@ int KProtocolHTTP::Open(KURL *_url, int mode)
 	else
 	{
 		struct sockaddr_in server_name;
+		int port = _url->port();
+		if ( port == 0 )
+			port = 80;
 
-		if(init_sockaddr(&server_name, _url->host(), 80) == FAIL)
+		if(init_sockaddr(&server_name, _url->host(), port) == FAIL)
 		{
     		Error(KIO_ERROR_UnknownHost, "Unknown host", errno );
 			return(FAIL);
 		}
 
+                printf("HTTP::Open: connecting to %s:%d\n",
+		       inet_ntoa(server_name.sin_addr),
+		       ntohs(server_name.sin_port));
 		if(::connect(sock,(struct sockaddr*)(&server_name),sizeof(server_name)))
 		{
 	    	Error(KIO_ERROR_CouldNotConnect, "Could not connect host", errno);
@@ -245,13 +285,18 @@ int KProtocolHTTP::Open(KURL *_url, int mode)
 	    return(FAIL);
 	}
 
-	QString command = "GET ";
+	QString command;
 
-	if(use_proxy)
+	if(do_proxy)
 	{
 		/** add hostname when using proxy **/
-		command += "http://";
-		command += _url->host();
+		int port = _url->port();
+		if (! port )  // use default one
+			port = 80;
+                command.sprintf("GET http://%s:%d", _url->host(), port);
+
+	} else {
+		command = "GET ";
 	}
 
 	if ( _url->path()[0] != '/' ) command += "/";
@@ -262,8 +307,6 @@ int KProtocolHTTP::Open(KURL *_url, int mode)
 	command += _url->host();
 	command += "\n";
  
-        if( strlen(_url->user()) != 0 )
-
 	if( strlen(_url->user()) != 0 )
 	{
 		char *www_auth = create_www_auth(_url->user(),_url->passwd());

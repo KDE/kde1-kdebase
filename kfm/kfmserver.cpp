@@ -134,12 +134,8 @@ void KFMServer::slotCopyClients( const char *_src_urls, const char *_dest_url )
 
 void KFMServer::slotOpenURL( const char* _url )
 {
-    // debugT("KFMServer::Opening URL '%s'\n", _url );
-
     if ( _url[0] != 0 )
     {
-	// debugT("There is an URL\n");
-	
 	QString url = _url;
 	KURL u( _url );
 	if ( u.isMalformed() )
@@ -147,23 +143,19 @@ void KFMServer::slotOpenURL( const char* _url )
 	    QMessageBox::warning( 0, "KFM Error", "Malformed URL\n" + url );
 	    return;
 	}
-	// debugT("OK\n");
-	
+
 	url = u.url().copy();
 	
 	if ( url == "trash:/" )
 	    url = "file:" + KFMPaths::TrashPath();
 	
-	// debugT("Seaerching window\n");
 	KfmGui *w = KfmGui::findWindow( url.data() );
 	if ( w != 0L )
 	{
-	    // debugT("Window found\n");
 	    w->show();
 	    return;
 	}
 	
-	// debugT("Opening new window\n");
 	KfmGui *f = new KfmGui( 0L, 0L, url.data() );
 	f->show();
 	return;
@@ -195,7 +187,6 @@ void KFMServer::slotOpenURL( const char* _url )
 	KURL u( url.data() );
 	if ( u.isMalformed() )
 	{
-	    // debugT("ERROR: Malformed URL\n");
 	    return;
 	}
 
@@ -205,9 +196,7 @@ void KFMServer::slotOpenURL( const char* _url )
 }
 
 void KFMServer::slotRefreshDirectory( const char* _url )
-{
-    // debugT("CMD: refeshDirectory '%s'\n",_url );
-    
+{   
     QString tmp = _url;
     
     KURL u( _url );
@@ -215,7 +204,6 @@ void KFMServer::slotRefreshDirectory( const char* _url )
 	KIOServer::sendNotify( u.url() );
     else
     {
-	// debugT("Sending something to '%s'\n",u.directoryURL());
 	KIOServer::sendNotify( u.directoryURL() );
     }
 }
@@ -227,8 +215,6 @@ void KFMServer::slotOpenProperties( const char* _url )
 
 void KFMServer::slotExec( const char* _url, const char * _documents )
 {
-    // debugT("EXEC GOT '%s' and '%s'\n",_url,_documents);
-    
     KURL u( _url );
     if ( u.isMalformed() )
     {
@@ -334,19 +320,15 @@ void KFMClient::slotCopy( const char *_src_urls, const char * _dest_url )
     if ( dest == "trash:/" )
 	dest = "file:" + KFMPaths::TrashPath();
 
-    // debugT("Copying to '%s'\n",dest.data());
-    
     int i;
     while ( ( i = s.find( "\n" ) ) != -1 )
     {
 	QString t = s.left( i );
 	urlList.append( t.data() );
-	// debugT("Appened '%s'\n",t.data());
 	s = s.mid( i + 1, s.length() );
     }
     
     urlList.append( s.data() );
-    // debugT("Appened '%s'\n",s.data());
 
     KIOJob *job = new KIOJob();
     connect( job, SIGNAL( finished( int ) ), this, SLOT( finished( int ) ) );
@@ -366,8 +348,6 @@ void KFMClient::slotMove( const char *_src_urls, const char *_dest_url )
     if ( dest == "trash:/" )
 	dest = "file:" + KFMPaths::TrashPath();
 
-    // debugT("Moving to '%s'\n",dest.data());
-    
     int i;
     while ( ( i = s.find( "\n" ) ) != -1 )
     {

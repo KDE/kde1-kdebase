@@ -851,7 +851,7 @@ void KIOJob::doIt( KIOSlaveIPC * _slave )
     connect( slave, SIGNAL( fatalError( int, const char*, int ) ),
 	     this, SLOT( fatalError( int, const char*, int ) ) );
     connect( slave, SIGNAL( setPID( int ) ), this, SLOT( start( int ) ) );
-    connect( slave, SIGNAL( closed() ), this, SLOT( slotSlaveClosed() ) );
+    connect( slave, SIGNAL( closed( KIOSlaveIPC* ) ), this, SLOT( slotSlaveClosed( KIOSlaveIPC* ) ) );
 
     slave->getPID();
 }
@@ -1641,9 +1641,10 @@ void KIOJob::slotInfo( const char *_text )
 
 void KIOJob::cancel()
 {
-    // debugT("**********A\n");
+    printf("**********A\n");
     if ( slave )
     {
+	printf("Killing slave\n");
 	KIOSlaveIPC *s = slave;
 	slave = 0L;
 	pid_t p = (pid_t)s->pid;    
@@ -1658,10 +1659,11 @@ void KIOJob::cancel()
 
 void KIOJob::done()
 {
-    // debugT("Done\n");
+    printf("Done\n");
     
     if ( slave != 0L )
     {
+	printf("Handing slave back\n");
 	disconnect( server, 0, this, 0 );
 	server->freeSlave( slave );
     }
@@ -1764,7 +1766,7 @@ QString KIOJob::completeURL( const char *_url )
     return QString( _url );
 }
 
-void KIOJob::slotSlaveClosed()
+void KIOJob::slotSlaveClosed( KIOSlaveIPC* )
 {
     // We assumed that the slave is going to die.
     if ( slave == 0L )
