@@ -494,28 +494,16 @@ void KBackground::readSettings( int num )
   QString group;
   ksprintf( &group, "/desktop%drc", num);
 
-  bool first_time = false;
-
-  QFileInfo fi( KApplication::localconfigdir() + group );
-  if ( ! fi.exists() ){
-    first_time = true;
-    group = "/kcmdisplayrc";
-  }
-
   KConfig config(KApplication::kde_configdir() + group,
 		  KApplication::localconfigdir() + group);
 
-  if ( !first_time ) {
-    config.setGroup( "Common" );
-    randomMode = config.readBoolEntry( "RandomMode", DEFAULT_ENABLE_RANDOM_MODE);
+  config.setGroup( "Common" );
+  randomMode = config.readBoolEntry( "RandomMode", DEFAULT_ENABLE_RANDOM_MODE);
 
-    if ( randomMode || !interactive )
-      ksprintf( &group, "Desktop%d", random );
-    else
-      ksprintf( &group, "Desktop%d", DEFAULT_DESKTOP);
-  }
+  if ( randomMode || !interactive )
+    ksprintf( &group, "Desktop%d", random );
   else
-    ksprintf( &group, "Desktop%d", num + 1);
+    ksprintf( &group, "Desktop%d", DEFAULT_DESKTOP);
 
   config.setGroup( group );
   
