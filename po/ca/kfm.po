@@ -2,12 +2,11 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Sebastià Pla <sastia@redestb.es>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-06-11 00:07+0200\n"
-"PO-Revision-Date: 1998-03-03 10:30+0100\n"
+"PO-Revision-Date: 1998-06-10 00:10+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -104,9 +103,8 @@ msgid "&Long View"
 msgstr "Vista &Llarga"
 
 #: kfmgui.cpp:374
-#, fuzzy
 msgid "&Short View"
-msgstr "Vista d'&Icones"
+msgstr "Vista C&urta"
 
 #: kfmgui.cpp:380
 msgid "Rel&oad Tree"
@@ -130,7 +128,7 @@ msgstr "Veure Font del &Document"
 
 #: kfmgui.cpp:400
 msgid "Show History"
-msgstr ""
+msgstr "Mostrar Història"
 
 #: kfmgui.cpp:402
 msgid "Show Cache"
@@ -196,7 +194,7 @@ msgstr "&Cau"
 
 #: kfmgui.cpp:516
 msgid "Up"
-msgstr ""
+msgstr "Amunt"
 
 #: kfmgui.cpp:564
 msgid "Stop"
@@ -318,7 +316,7 @@ msgid ""
 msgstr ""
 "De veres voleu esborrar el(s) fitxer(s) seleccionat(s)?\n"
 "\n"
-"No hi haura manera de recuperar-los"
+"No hi haurà manera de recuperar-los"
 
 #: kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1123
 msgid "ERROR: You dropped a URL over itself"
@@ -529,64 +527,63 @@ msgstr "Afegir Punt"
 
 #: htmlopts.cpp:35
 msgid "Font Size"
-msgstr ""
+msgstr "Mida de font"
 
 #: htmlopts.cpp:39
 msgid "Small"
-msgstr ""
+msgstr "Xicoteta"
 
 #: htmlopts.cpp:43
 msgid "Medium"
-msgstr ""
+msgstr "Mitjana"
 
 #: htmlopts.cpp:47
 msgid "Large"
-msgstr ""
+msgstr "Gran"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
-msgstr ""
+msgstr "Font estàndard"
 
 #: htmlopts.cpp:68
 msgid "Fixed Font"
-msgstr ""
+msgstr "Font fixa"
 
 #: htmlopts.cpp:214
 msgid "Background Color:"
-msgstr ""
+msgstr "Color de fons:"
 
 #: htmlopts.cpp:222
 msgid "Normal Text Color:"
-msgstr ""
+msgstr "Color de text normal:"
 
 #: htmlopts.cpp:230
 msgid "URL Link Color:"
-msgstr ""
+msgstr "Color d'enllaç URL:"
 
 #: htmlopts.cpp:238
 msgid "Followed Link Color:"
-msgstr ""
+msgstr "Color d'enllaç conegut:"
 
 #: htmlopts.cpp:246
 msgid "Change cursor over link."
-msgstr ""
+msgstr "Canviar el cursor sobre l'enllaç."
 
 #: htmlopts.cpp:321
 msgid "Horizontal Root Grid Spacing:"
-msgstr ""
+msgstr "Separació graella horitzontal a Root:"
 
 #: htmlopts.cpp:335
 msgid "Vertical Root Grid Spacing:"
-msgstr ""
+msgstr "Separació graella vertical a Root:"
 
 #: htmlopts.cpp:349
 msgid "Transparent Text for Root Icons."
 msgstr ""
 
 #: bookmark.cpp:259
-#, fuzzy
 msgid "Could not write bookmark"
-msgstr "No s'ha pogut escriure a\n"
+msgstr "No es pot escriure el punt"
 
 #: kfmprops.cpp:241
 msgid "Full Name"
@@ -721,7 +718,7 @@ msgstr ""
 
 #: kfmprops.cpp:662
 msgid "Swallowing on panel"
-msgstr ""
+msgstr "Encastar al panell"
 
 #: kfmprops.cpp:680 kfmprops.cpp:703
 msgid "Execute"
@@ -737,7 +734,7 @@ msgstr "Directori de treball"
 
 #: kfmprops.cpp:711
 msgid "Window Title"
-msgstr ""
+msgstr "Títol de finestra"
 
 #: kfmprops.cpp:715
 msgid "Run in terminal"
@@ -786,7 +783,7 @@ msgstr "Comentari"
 
 #: kfmprops.cpp:1250
 msgid "Name ( in your language )"
-msgstr "Nom ( en la vostra llengua )"
+msgstr "Nom ( en el vostre idioma )"
 
 #: kfmprops.cpp:1479
 msgid "Pattern ( example: *.html;*.HTML; )"
@@ -881,6 +878,9 @@ msgid ""
 "New root grid dimensions would move some icons\n"
 "off the desktop."
 msgstr ""
+"No s'ha pogut executar la petició.\n"
+"Les noves dimensions de la graella root desplaçarien\n"
+"algunes icones fora de l'escriptori."
 
 #: root.cpp:707
 msgid "Internal Error: desktopDir is malformed"
@@ -1036,7 +1036,7 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1237 kiojob.cpp:1368
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Unknown host in\n"
 "%s"
@@ -1273,16 +1273,15 @@ msgstr "login com:"
 
 #: useragentdlg.cpp:52
 msgid "Known bindings:"
-msgstr "Enllaçs coneguts:"
+msgstr "Enllaços coneguts:"
 
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
 msgstr "No oblideu desar els arranjaments!"
 
 #: kproxydlg.cpp:16
-#, fuzzy
 msgid "Use proxy"
-msgstr "Usuari"
+msgstr "Usar procuració"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"
@@ -1290,24 +1289,23 @@ msgstr "Sense procuració:"
 
 #: kkfmoptdlg.cpp:19
 msgid "&Proxy"
-msgstr ""
+msgstr "&Procuració"
 
 #: kkfmoptdlg.cpp:21
 msgid "User &Agent"
-msgstr ""
+msgstr "&Agent d'usuari"
 
 #: kkfmoptdlg.cpp:24
 msgid "&Fonts"
-msgstr ""
+msgstr "&Fonts"
 
 #: kkfmoptdlg.cpp:27
 msgid "&Colors"
-msgstr ""
+msgstr "&Colors"
 
 #: kkfmoptdlg.cpp:30
-#, fuzzy
 msgid "&Other"
-msgstr "Altres"
+msgstr "A&ltres"
 
 #: kkfmoptdlg.cpp:50
 msgid "KFM Browser Settings"
@@ -1378,60 +1376,3 @@ msgid ""
 msgstr ""
 "Error de sintàxi:\n"
 "comanda kfmexec [URLs....]\n"
-
-#~ msgid "Run normally"
-#~ msgstr "Execució normal"
-
-#~ msgid "Run in Panel (drag onto Panel to execute)"
-#~ msgstr "Execució al panell (amollar sobre el panell per executar)"
-
-#~ msgid "Title of Application"
-#~ msgstr "Títol de l'aplicació"
-
-#~ msgid "enter the exact title, as normally shown in the window titlebar"
-#~ msgstr "entreu el títol exacte, tal surt a la barra de títol de la finestra"
-
-#~ msgid ""
-#~ "You can run this program either\n"
-#~ "in the Panel or in a Terminal, \n"
-#~ "but not both!"
-#~ msgstr ""
-#~ "Podeu executar el programa o bé\n"
-#~ "al panell o a una terminal, \n"
-#~ "pero no als dos!"
-
-#~ msgid "&Tool"
-#~ msgstr "E&ina"
-
-#~ msgid "Home"
-#~ msgstr "Llar"
-
-#~ msgid "Add Bookmark"
-#~ msgstr "Afegir Punt"
-
-#~ msgid "<!-- Do not edit this file -->"
-#~ msgstr "<!-- No editeu aquest fitxer -->"
-
-#~ msgid "Name"
-#~ msgstr "Nom"
-
-#~ msgid "Group"
-#~ msgstr "Grup"
-
-#~ msgid "Owner"
-#~ msgstr "Amo"
-
-#~ msgid "Edit Bookmarks"
-#~ msgstr "Editar Punts"
-
-#~ msgid "Move up"
-#~ msgstr "Amunt"
-
-#~ msgid "Move down"
-#~ msgstr "Avall"
-
-#~ msgid "Rename Bookmark"
-#~ msgstr "Renombrar punt"
-
-#~ msgid "Rename Bookmark:"
-#~ msgstr "Renombrar punt:"

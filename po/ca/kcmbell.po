@@ -2,12 +2,11 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Sebastià Pla <sastia@redestb.es>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmbell\n"
 "POT-Creation-Date: 1998-05-13 12:05+0200\n"
-"PO-Revision-Date: 1998-02-24 00:23+0100\n"
+"PO-Revision-Date: 1998-06-09 23:55+0100\n"
 "Last-Translator: Sebastià <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"

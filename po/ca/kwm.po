@@ -2,12 +2,11 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Sebastià Pla <sastia@redestb.es>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
 "POT-Creation-Date: 1998-06-11 00:07+0200\n"
-"PO-Revision-Date: 1998-03-24 23:35+0100\n"
+"PO-Revision-Date: 1998-06-08 23:35+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +64,7 @@ msgstr "&Iconitzar"
 
 #: main.C:532
 msgid "&DeIconify"
-msgstr "&DeIconitzar"
+msgstr "&DesIconitzar"
 
 #: main.C:533
 msgid "&Sticky"
@@ -125,7 +124,7 @@ msgstr "Vuit"
 
 #: main.C:628
 msgid "Unnamed Desktop"
-msgstr ""
+msgstr "Escriptori sense nom"
 
 #: main.C:950
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"

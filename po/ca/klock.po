@@ -2,12 +2,11 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Sebastià Pla <sastia@redestb.es>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
 "POT-Creation-Date: 1998-05-30 17:26+0200\n"
-"PO-Revision-Date: 1998-03-26 23:10+0100\n"
+"PO-Revision-Date: 1998-06-08 23:45+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -153,35 +152,31 @@ msgstr "Taca"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
-msgstr ""
+msgstr "Pasterada"
 
 #: bouboule.cpp:1005
-#, fuzzy
 msgid "Setup KBouboule"
-msgstr "Valors KFlame"
+msgstr "Valors Pasterada"
 
 #: bouboule.cpp:1032
-#, fuzzy
 msgid "Number of points:"
-msgstr "Número de rats penats:"
+msgstr "Número de punts:"
 
 #: bouboule.cpp:1046
-#, fuzzy
 msgid "Point size:"
-msgstr "Número Punts:"
+msgstr "Grandària de punt:"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr ""
+msgstr "Freqüència de canvi de color:"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
-msgstr ""
+msgstr "Mode 3D"
 
 #: bouboule.cpp:1223
-#, fuzzy
 msgid "About Bouboule"
-msgstr "Quant a Taca"
+msgstr "Quant a Pasterada"
 
 #: bouboule.cpp:1224
 msgid ""
@@ -191,6 +186,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
+"Pasterada v0.1 -- un grumoll d'esferes girant i canviant de grandària\n"
+"\n"
+"Copyright (c) 1996 by Jeremie PETIT\n"
+"\n"
+"Portat a kscreensave per Cedric Tefft"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -389,7 +389,7 @@ msgstr ""
 #: main.cpp:280
 #, c-format
 msgid "Option %s is not support on this plattform!"
-msgstr ""
+msgstr "L'opció %s no té suport en aquesta plataforma!"
 
 #: main.cpp:307
 msgid ""
@@ -592,12 +592,11 @@ msgstr "Fallat"
 
 #: science.cpp:74
 msgid "Science"
-msgstr ""
+msgstr "Ciència"
 
 #: science.cpp:562
-#, fuzzy
 msgid "Setup Science"
-msgstr "Valors klines"
+msgstr "Valors Ciència"
 
 #: science.cpp:580
 #, fuzzy
@@ -623,24 +622,28 @@ msgstr ""
 
 #: science.cpp:632
 msgid "Intensity:"
-msgstr ""
+msgstr "Intensitat:"
 
 #: science.cpp:660
 msgid "Motion:"
 msgstr ""
 
 #: science.cpp:845
-#, fuzzy
 msgid "About Science"
-msgstr "Quant a Línies"
+msgstr "Quant a Ciència"
 
 #: science.cpp:846
+#, fuzzy
 msgid ""
 "Science Version 0.24.2 beta\n"
 "\n"
 "written by Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"
 msgstr ""
+"Ciència Versió 0.2beta\n"
+"\n"
+"escrit per Rene Beutler 1998\n"
+"rbeutler@g26.ethz.ch"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -674,21 +677,19 @@ msgstr ""
 
 #: space.cpp:491
 msgid "Space (GL)"
-msgstr ""
+msgstr "Espai (GL)"
 
 #: space.cpp:581
-#, fuzzy
 msgid "Setup KSpace"
-msgstr "Valors KSlip"
+msgstr "Valors KSpace"
 
 #: space.cpp:597
 msgid "Warp Interval:"
-msgstr ""
+msgstr "Interval de deformació:"
 
 #: space.cpp:685
-#, fuzzy
 msgid "About KSpace"
-msgstr "Quant a Slip"
+msgstr "Quant a KSpace"
 
 #: space.cpp:687
 msgid ""
@@ -696,6 +697,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 msgstr ""
+"KSpace\n"
+"Copyright (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
 
 #: swarm.cpp:257
 msgid "Swarm"

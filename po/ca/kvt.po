@@ -2,12 +2,11 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Sebastià Pla <sastia@redestb.es>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kvt\n"
 "POT-Creation-Date: 1998-05-30 17:26+0200\n"
-"PO-Revision-Date: 1998-03-10 21:55+0100\n"
+"PO-Revision-Date: 1998-05-20 23:27+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -76,7 +75,7 @@ msgstr "&blanc/negre"
 
 #: main.C:449
 msgid "&green/black"
-msgstr "&vert/negre"
+msgstr "&verd/negre"
 
 #: main.C:450
 msgid "black/light&yellow"
@@ -169,7 +168,6 @@ msgstr ""
 "es mostrarà un nou arranjament de colors."
 
 #: main.C:1156
-#, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -177,86 +175,89 @@ msgid ""
 "based on Robert Nation's rxvt-2.08\n"
 "\n"
 msgstr ""
-"\n"
-"\n"
-"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
-"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
-"\n"
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
 "Emulació de terminal per l'entorn d'escriptori KDE\n"
-"basat en el programa rxvt-2.08 de Robert Nation"
+"basat en el programa rxvt-2.08 de Robert Nation\n"
 
 #: main.C:1160
 msgid "Permitted arguments are:\n"
-msgstr ""
+msgstr "Els arguments permesos són:\n"
 
 #: main.C:1161
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
+"-e <comanda> <arg> ...    executa comanda amb arg - ha d'estar al final\n"
 
 #: main.C:1162
 msgid "-display <name>           specify the display (server)\n"
-msgstr ""
+msgstr "-display <nom>            especifica la pantalla (servidor)\n"
 
 #: main.C:1163
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr ""
+msgstr "-vt_geometry <espec>      la geometria inicial de la finestra vt\n"
 
 #: main.C:1164
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr ""
+msgstr "-print-pipe <nom>         especifica el tub per la impressora vt100\n"
 
 #: main.C:1165
 msgid "-vt_bg <colour>           background color\n"
-msgstr ""
+msgstr "-vt_bg <color>            color de fons\n"
 
 #: main.C:1166
 msgid "-vt_fg <colour>           foreground color\n"
-msgstr ""
+msgstr "-vt_fg <color>            color de primer pla\n"
 
 #: main.C:1167
 msgid "-vt_font <fontname>       normal font\n"
-msgstr ""
+msgstr "-vt_font <nomfont>        font normal\n"
 
 #: main.C:1168
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
-msgstr ""
+msgstr "-vt_size <mida>           minúscula, petita, mitjana, gran, enorme\n"
 
 #: main.C:1169
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr ""
+msgstr "-linux                    arranjar kvt per imitar la consola linux\n"
 
 #: main.C:1170
 msgid "-no_menubar               hide the menubar\n"
-msgstr ""
+msgstr "-no_menubar               ocultar la barra de menú\n"
 
 #: main.C:1171
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr ""
+msgstr "-no_scrollbar             ocultar la barra de desplaçament\n"
 
 #: main.C:1172
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
+"-T <text>                 text del títol de finestra \n"
+"                          (Obsolet. Useu l'opció - caption)\n"
 
 #: main.C:1174
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr ""
+msgstr "-tn <TERM>                Tipus de terminal. Per omissió és xterm.\n"
 
 #: main.C:1175
 msgid "-C                        Capture system console message\n"
 msgstr ""
+"-C                        Capturar els missatges de la consola del sistema\n"
 
 #: main.C:1176
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr ""
+msgstr "-n <text>                 nom de la icona o la finestra de la icona\n"
 
 #: main.C:1177
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
+"-7                        executar en mode 7 bits\n"
+"-8                        executar en mode 8 bits\n"
 
 #: main.C:1179
 msgid ""
@@ -264,16 +265,22 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
+"-ls                       iniciar kvt amb un nou login\n"
+"-ls-                      iniciar kvt sense un nou login (omissió)\n"
 
 #: main.C:1181
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
+"-meta <arg>               manegar Meta amb prefix ESCAPE, 8THBIT fix, o "
+"ignorar\n"
 
 #: main.C:1182
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr ""
+"-sl <nombre>              desar nombre línies a l'àrea de desplaçament "
+"enrera\n"
 
 #: main.C:1183
 msgid ""
@@ -282,6 +289,8 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
+"-pageup <keysym>          usar la tecla alt-keysym per desplaçar-se amunt\n"
+"-pagedown <keysym>        usar la tecla alt-keysym per desplaçar-se avall\n"
 
 #: main.C:1187
 msgid ""
@@ -290,67 +299,3 @@ msgid ""
 msgstr ""
 "-grk9\t\tteclat grec = ELOT 928 (omissió)\n"
 "-grk4\t\tteclat grec = IBM 437\n"
-
-#~ msgid ""
-#~ "Copyright(C) 1996, 1997 Matthias Ettrich\n"
-#~ "Copyright(C) 1997 M G Berberich\n"
-#~ "Terminal emulation for the KDE Desktop Environment\n"
-#~ "based on Robert Nation's rxvt-2.08\n"
-#~ "\n"
-#~ "Permitted arguments are:\n"
-#~ "-e <command> <arg> ...\texecute command with ars - must be last argument\n"
-#~ "-display <name>\tspecify the display (server)\n"
-#~ "-vt_geometry <spec>\tthe initial vt window geometry\n"
-#~ "-print-pipe <name>\tspecify pipe for vt100 printer\n"
-#~ "-vt_bg <colour>\t\tbackground color\n"
-#~ "-vt_fg <colour>\t\tforeground color\n"
-#~ "-vt_font <fontname>\tnormal font\n"
-#~ "-vt_size <size>     \ttiny, small, normal, large, huge\n"
-#~ "-linux\t\t\tset up kvt to mimic linux-console\n"
-#~ "-no_menubar\t\thide the menubar\n"
-#~ "-no_scrollbar\t\thide the scrollbar\n"
-#~ "-T <text>\t\ttext in window titlebar \n"
-#~ "                   (Obsolete. Use -caption instead)\n"
-#~ "-tn <TERM>\t\tTerminal type. Default is xterm.\n"
-#~ "-C\t\t\tCapture system console message\n"
-#~ "-n <text>\t\tname in icon or icon window\n"
-#~ "-7\t\t        run in 7 bit mode\n"
-#~ "-8\t\t\trun in 8 bit mode\n"
-#~ "-ls\t\t\tinitiate kvt's shell as a login shell\n"
-#~ "-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
-#~ "-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
-#~ "-sl <number>\t\tsave number lines in scroll-back buffer\n"
-#~ "-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
-#~ "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
-#~ msgstr ""
-#~ "Copyright(C) 1996, 1997 Matthias Ettrich\n"
-#~ "Copyright(C) 1997 M G Berberich\n"
-#~ "Emulació de terminal per l'entorn d'escriptori KDE\n"
-#~ "basat en el programa rxvt-2.08 de Robert Nation\n"
-#~ "\n"
-#~ "Els arguments permesos són:\n"
-#~ "-e <comanda> <arg> ...\texecutar comanda amb arg - ha d'esser el darrer "
-#~ "argument\n"
-#~ "-display <nom>\t\tespecificar la pantalla (servidor)\n"
-#~ "-vt_geometry <espec>\tla geometria inicial de la finestra\n"
-#~ "-print-pipe <nom>\tespecificar tub per la impressora vt100\n"
-#~ "-vt_bg <color>\t\tcolor de fons\n"
-#~ "-vt_fg <color>\t\tcolor de primer pla\n"
-#~ "-vt_font <nomfont>\tfont normal\n"
-#~ "-vt_size <mida>     \tminúscula, petita, mitjana, gran, enorme\n"
-#~ "-linux\t\t\tarranjar kvt per imitar la consola linux\n"
-#~ "-no_menubar\t\tocultar la barra de menú\n"
-#~ "-no_scrollbar\t\tocultar la barra de desplaçament\n"
-#~ "-T <text>\t\ttext del títol de finestra \n"
-#~ "                   (Obsolet. Usar l'opció -caption)\n"
-#~ "-tn <TERM>\t\tTipus de terminal. Per omissió és xterm.\n"
-#~ "-C\t\t\tCapturar els missatges de la consola del sistema\n"
-#~ "-n <text>\t\tnom de la icona o la finestra de la icona\n"
-#~ "-7\t\t\texecutar en mode 7 bit\n"
-#~ "-8\t\t\texecutar en mode 8 bit\n"
-#~ "-ls\t\t\tiniciar kvt amb un nou login\n"
-#~ "-ls-\t\t\tiniciar kvt sense un nou login (omissió)\n"
-#~ "-meta\t\t\tmanegar Meta amb prefix ESCAPE, 8THBIT fix, o ignorar\n"
-#~ "-sl <nombre>\t\tdesar nombre línies a l'àrea de desplaçament enrera\n"
-#~ "-pageup <keysym>\tusar la tecla alt-keysym per desplaçar-se amunt\n"
-#~ "-pagedown <keysym>\tusar la tecla alt-keysym per desplaçar-se avall\n"

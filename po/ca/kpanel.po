@@ -2,12 +2,11 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Sebastià Pla <sastia@redestb.es>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-30 17:26+0200\n"
-"PO-Revision-Date: 1998-02-23 19:44\n"
+"PO-Revision-Date: 1998-05-20 23:55\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -84,11 +83,11 @@ msgstr "Configurar el panell"
 
 #: props.C:145
 msgid "Edit Menus"
-msgstr ""
+msgstr "Editar Menús"
 
 #: props.C:147
 msgid "Add or remove applications in the menu structure "
-msgstr ""
+msgstr "Afegir o eliminar aplicacions de l'estructura de menú "
 
 #: events.C:724 props.C:148
 msgid "Restart"
@@ -108,69 +107,12 @@ msgstr "Bloquejar la pantalla"
 
 #: props.C:310
 msgid "The menu editor is not installed."
-msgstr ""
+msgstr "L'editor de menú no s'ha instal·lat."
 
 #: events.C:760 props.C:311
 msgid "Oops!"
-msgstr ""
+msgstr "Ep!"
 
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"
-msgstr ""
-
-#~ msgid "Location"
-#~ msgstr "Posició"
-
-#~ msgid "Taskbar"
-#~ msgstr "Barra de tasques"
-
-#~ msgid "Hidden"
-#~ msgstr "Oculta"
-
-#~ msgid "Top/Left"
-#~ msgstr "Dalt/Esquerra"
-
-#~ msgid "Tiny Style"
-#~ msgstr "Estil petit"
-
-#~ msgid "Normal Style"
-#~ msgstr "Estil normal"
-
-#~ msgid "Large Style"
-#~ msgstr "Estil gran"
-
-#~ msgid "Menu Tooltips"
-#~ msgstr "Indicacions de menú"
-
-#~ msgid "Others"
-#~ msgstr "Altres"
-
-#~ msgid "Personal First"
-#~ msgstr "Personal primer"
-
-#~ msgid "Auto Hide Panel"
-#~ msgstr "Auto ocultar panell"
-
-#~ msgid "Auto Hide Taskbar"
-#~ msgstr "Auto ocultar barra de tasques"
-
-#~ msgid "Clock"
-#~ msgstr "Rellotge"
-
-#~ msgid "24h"
-#~ msgstr "24h"
-
-#~ msgid "12h AM/PM"
-#~ msgstr "12h AM/PM"
-
-#~ msgid "Visible"
-#~ msgstr "Visible"
-
-#~ msgid "Width"
-#~ msgstr "Amplada"
-
-#~ msgid "Desktops"
-#~ msgstr "Escriptoris"
-
-#~ msgid "KPanel Configuration"
-#~ msgstr "Configuració de KPanel"
+msgstr "No es pot posar un botó amb això damunt el panell!"

@@ -2,12 +2,11 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Sebastià Pla <sastia@redestb.es>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
 "POT-Creation-Date: 1998-05-24 00:14+0200\n"
-"PO-Revision-Date: 1998-03-02 23:38+0100\n"
+"PO-Revision-Date: 1998-05-20 00:35+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -61,9 +60,8 @@ msgid "&Select All"
 msgstr "&Seleccionar tot"
 
 #: kfindtop.cpp:154
-#, fuzzy
 msgid "Unse&lect All"
-msgstr "&Seleccionar tot"
+msgstr "&Deseleccionar tot"
 
 #: kfindtop.cpp:156
 msgid "&Invert Selection"
@@ -192,27 +190,27 @@ msgstr "Tots els fitxers i carpetes"
 
 #: kftabdlg.cpp:233
 msgid "Files"
-msgstr ""
+msgstr "Fitxers"
 
 #: kftabdlg.cpp:234
 msgid "Folders"
-msgstr ""
+msgstr "Carpetes"
 
 #: kftabdlg.cpp:235
 msgid "Symbolic links"
-msgstr ""
+msgstr "Enllaços simbòlics"
 
 #: kftabdlg.cpp:236
 msgid "Special files (sockets, device files...)"
-msgstr ""
+msgstr "Fitxers especials (sockets, fitxers dispositiu...)"
 
 #: kftabdlg.cpp:237
 msgid "Executable files"
-msgstr ""
+msgstr "Fitxers executables"
 
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
-msgstr ""
+msgstr "Fitxers executables SUID"
 
 #: kftabdlg.cpp:247
 msgid "At Least"
@@ -367,9 +365,3 @@ msgstr "No reconec el tipus d'arxiu!"
 #: kfwin.cpp:495
 msgid "Error while creating child process!"
 msgstr "Error al crear el procés fill!"
-
-#~ msgid "Kfind &help"
-#~ msgstr "&Ajut KFind"
-
-#~ msgid "About &Qt"
-#~ msgstr "Quant a Q&t"

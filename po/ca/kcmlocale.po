@@ -2,12 +2,11 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Sebastià Pla <sastia@redestb.es>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmlocale\n"
 "POT-Creation-Date: 1998-05-13 12:05+0200\n"
-"PO-Revision-Date: 1998-03-24 23:10+0100\n"
+"PO-Revision-Date: 1998-06-08 23:35+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +19,7 @@ msgstr "&Escenari"
 
 #: main.cpp:58
 msgid "usage: kcmlocale [-init | language]\n"
-msgstr "us: kcmlocale [-init | language]\n"
+msgstr "us: kcmlocale [-init | idioma]\n"
 
 #: main.cpp:86
 msgid "Locale settings"

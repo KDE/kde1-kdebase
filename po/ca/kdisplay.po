@@ -2,12 +2,11 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Sebastià Pla <sastia@redestb.es>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-05-30 17:26+0200\n"
-"PO-Revision-Date: 1998-03-09 23:05+0100\n"
+"PO-Revision-Date: 1998-05-19 22:50+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,150 +15,135 @@ msgstr ""
 
 #: backgnd.cpp:58
 msgid "Enter new desktop name"
-msgstr ""
+msgstr "Entreu el nom del nou escriptori"
 
 #: backgnd.cpp:114 backgnd.cpp:149
 msgid "Desktop"
 msgstr "Escriptori"
 
 #: backgnd.cpp:166
-#, fuzzy
 msgid "&Rename ..."
-msgstr "Renombrar..."
+msgstr "&Renombrar ..."
 
 #: backgnd.cpp:192 colorscm.cpp:93
-#, fuzzy
 msgid "Colors"
-msgstr "&Colors"
+msgstr "Colors"
 
 #: backgnd.cpp:219
-#, fuzzy
 msgid "&One Color"
-msgstr "&Colors"
+msgstr "&Un Color"
 
 #: backgnd.cpp:236
-#, fuzzy
 msgid "&Two Color"
-msgstr "&Colors"
+msgstr "&Dos Colors"
 
 #: backgnd.cpp:255
-#, fuzzy
 msgid "Set&up ..."
-msgstr "Valors..."
+msgstr "&Valors ..."
 
 #: backgnd.cpp:264
 msgid "Wallpaper"
 msgstr "Paper pintat"
 
 #: backgnd.cpp:274
-#, fuzzy
 msgid "Ti&led"
-msgstr "Mosaic"
+msgstr "&Mosaic"
 
 #: backgnd.cpp:282
-#, fuzzy
 msgid "&Centred"
-msgstr "Centrat"
+msgstr "&Centrat"
 
 #: backgnd.cpp:290
-#, fuzzy
 msgid "&Scaled"
-msgstr "Escalat"
+msgstr "&Escalat"
 
 #: backgnd.cpp:306 backgnd.cpp:426 backgnd.cpp:439 backgnd.cpp:787
-#, fuzzy
 msgid "No wallpaper"
-msgstr "Paper pintat"
+msgstr "Sense paper pintat"
 
 #: backgnd.cpp:334
 msgid "&Browse..."
-msgstr ""
+msgstr "&Fullejar..."
 
 #: backgnd.cpp:863
-#, fuzzy
 msgid "Desktop names"
-msgstr "Escriptori"
+msgstr "Noms d'escriptoris"
 
 #: backgnd.cpp:909
-#, fuzzy
 msgid "Two color backgrounds"
-msgstr "Fons de selecció"
+msgstr "Fons de dos colors"
 
 #: backgnd.cpp:946
 msgid "Blend colors from &top to bottom"
-msgstr ""
+msgstr "Barrejar colors de &dalt a baix"
 
 #: backgnd.cpp:952
 msgid "Blend colors from &right to left"
-msgstr ""
+msgstr "Barrejar colors de d&reta a esquerra"
 
 #: backgnd.cpp:958
 msgid "Use &pattern"
-msgstr ""
+msgstr "Usar &patró"
 
 #: backgnd.cpp:985
 msgid "Preview"
-msgstr ""
+msgstr "Vista prèvia"
 
 #: backgnd.cpp:996
 msgid "Pattern &name"
-msgstr ""
+msgstr "&Nom de patró"
 
 #: backgnd.cpp:1035
 msgid "Current"
-msgstr ""
+msgstr "Actual"
 
 #: backgnd.cpp:1095
-#, fuzzy
 msgid "Filled"
-msgstr "Mosaic"
+msgstr "Farcit"
 
 #: backgnd.cpp:1098
 msgid "Fish net"
-msgstr ""
+msgstr "Xarxa de pesca"
 
 #: backgnd.cpp:1101
 msgid "Triangles"
-msgstr ""
+msgstr "Triangles"
 
 #: backgnd.cpp:1104
 msgid "Flowers"
-msgstr ""
+msgstr "Flors"
 
 #: backgnd.cpp:1107
 msgid "Rattan"
-msgstr ""
+msgstr "Rattan"
 
 #: backgnd.cpp:1110
 msgid "Cobbled Pavement"
-msgstr ""
+msgstr "Llambordes"
 
 #: colorscm.cpp:119
 msgid "Color Scheme"
 msgstr "Esquema de color"
 
 #: colorscm.cpp:130
-#, fuzzy
 msgid "Current scheme"
-msgstr "Desar esquema"
+msgstr "Esquema actual"
 
 #: colorscm.cpp:132
-#, fuzzy
 msgid "KDE default"
 msgstr "KDE per omissió"
 
 #: colorscm.cpp:145
 msgid "&Add ..."
-msgstr ""
+msgstr "&Afegir ..."
 
 #: colorscm.cpp:153
 msgid "&Remove"
-msgstr ""
+msgstr "&Eliminar"
 
 #: colorscm.cpp:162
-#, fuzzy
 msgid "&Save changes"
-msgstr "Desar esquema"
+msgstr "&Desar canvis"
 
 #: colorscm.cpp:176
 msgid "Widget color"
@@ -171,12 +155,11 @@ msgstr "Barra de títol inactiva"
 
 #: colorscm.cpp:184
 msgid "Inactive title text"
-msgstr "Text del títol inactiu"
+msgstr "Text de títol inactiu"
 
 #: colorscm.cpp:185
-#, fuzzy
 msgid "Inactive title blend"
-msgstr "Barra de títol inactiva"
+msgstr "Barreja de títol inactiu"
 
 #: colorscm.cpp:186
 msgid "Active title bar"
@@ -187,9 +170,8 @@ msgid "Active title text"
 msgstr "Text de títol actiu"
 
 #: colorscm.cpp:188
-#, fuzzy
 msgid "Active title blend"
-msgstr "Barra de títol activa"
+msgstr "Barreja de títol actiu"
 
 #: colorscm.cpp:189
 msgid "Background"
@@ -220,9 +202,8 @@ msgid "Contrast"
 msgstr "Contrast"
 
 #: colorscm.cpp:238
-#, fuzzy
 msgid "&Low"
-msgstr "Baix"
+msgstr "&Baix"
 
 #: colorscm.cpp:246
 msgid "High"
@@ -230,7 +211,7 @@ msgstr "Alt"
 
 #: colorscm.cpp:318
 msgid "Error removing"
-msgstr ""
+msgstr "Error en eliminar"
 
 #: colorscm.cpp:319
 msgid ""
@@ -238,10 +219,13 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the color scheme is stored."
 msgstr ""
+"Aquest esquema de color no s'ha pogut eliminar.\n"
+"Potser no teniu permissos per alterar el fitxer\n"
+"de sistema on es guarda l'esquema de color."
 
 #: colorscm.cpp:376
 msgid "Naming error"
-msgstr ""
+msgstr "Error en nombrar"
 
 #: colorscm.cpp:377
 msgid ""
@@ -249,11 +233,13 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
+"Si us plau, trieu un nom únic pel nou esquema\n"
+"de color. El que heu entrat ja hi és a la llista\n"
+"d'esquemes de color."
 
 #: savescm.cpp:18
-#, fuzzy
 msgid "Add a color scheme"
-msgstr "Esquema de color"
+msgstr "Afegir un esquema de color"
 
 #: savescm.cpp:32
 msgid ""
@@ -263,6 +249,11 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
+"&Entreu un nom pel nou esquema de color\n"
+"que s'afegirà a la vostra llista personal.\n"
+"\n"
+"Per començar, és copiaran a l'esquema\n"
+"els colors en ús a la vista prèvia."
 
 #: scrnsave.cpp:48
 msgid "Ignore"
@@ -270,30 +261,27 @@ msgstr "Ignorar"
 
 #: scrnsave.cpp:49
 msgid "Save Screen"
-msgstr ""
+msgstr "Desar Pantalla"
 
 #: scrnsave.cpp:50
 msgid "Lock Screen"
-msgstr ""
+msgstr "Bloquejar Pantalla"
 
 #: scrnsave.cpp:110 scrnsave.cpp:179
 msgid "Screen Saver"
 msgstr "Salva Pantalles"
 
 #: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:553 scrnsave.cpp:662
-#, fuzzy
 msgid "No screensaver"
-msgstr "&Salvapantalles"
+msgstr "Sense salvapantalles"
 
 #: scrnsave.cpp:207
-#, fuzzy
 msgid "&Setup ..."
-msgstr "Valors..."
+msgstr "&Valors ..."
 
 #: scrnsave.cpp:215
-#, fuzzy
 msgid "&Test"
-msgstr "Prova"
+msgstr "&Prova"
 
 #: scrnsave.cpp:228
 msgid "Settings"
@@ -301,45 +289,39 @@ msgstr "Arranjament"
 
 #: scrnsave.cpp:248
 msgid "&Wait for"
-msgstr ""
+msgstr "&Esperar"
 
 #: scrnsave.cpp:258
-#, fuzzy
 msgid "min."
-msgstr "min"
+msgstr "min."
 
 #: scrnsave.cpp:264
-#, fuzzy
 msgid "&Require password"
-msgstr "Cal paraula de pas"
+msgstr "&Cal password"
 
 #: scrnsave.cpp:272
-#, fuzzy
 msgid "Priority"
-msgstr "Prioritat:"
+msgstr "Prioritat"
 
 #: scrnsave.cpp:285
-#, fuzzy
 msgid "&High"
-msgstr "Alt"
+msgstr "&Alta"
 
 #: scrnsave.cpp:294
 msgid "Low"
-msgstr "Baix"
+msgstr "Baixa"
 
 #: general.cpp:216
-#, fuzzy
 msgid "Fonts etc."
-msgstr "Fonts"
+msgstr "Fonts etc."
 
 #: general.cpp:222
 msgid "&Draw widgets in the style of Windows 95"
-msgstr ""
+msgstr "&Dibuixar estris a l'estil Windows 95"
 
 #: general.cpp:236
-#, fuzzy
 msgid "Desktop fonts"
-msgstr "Escriptori"
+msgstr "Fonts d'escriptori"
 
 #: general.cpp:248
 msgid "General font"
@@ -347,20 +329,19 @@ msgstr "Font general"
 
 #: general.cpp:253
 msgid "Fixed font"
-msgstr ""
+msgstr "Font fixa"
 
 #: general.cpp:263
 msgid "Panel button font"
-msgstr ""
+msgstr "Font botons panell"
 
 #: general.cpp:268
 msgid "Panel clock font"
-msgstr ""
+msgstr "Font rellotge panell"
 
 #: main.cpp:62
-#, fuzzy
 msgid "&Fonts etc."
-msgstr "Fonts"
+msgstr "&Fonts etc."
 
 #: main.cpp:65
 msgid "&Background"
@@ -391,17 +372,16 @@ msgid "Active window"
 msgstr "Finestra activa"
 
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
-#, fuzzy
 msgid "Selected text"
-msgstr "Text de selecció"
+msgstr "Text seleccionat"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
-msgstr ""
+msgstr "&Negreta"
 
 #: fontchooser.cpp:96
 msgid "&Italic"
-msgstr ""
+msgstr "&Cursiva"
 
 #: fontchooser.cpp:262
 msgid "default"
@@ -413,83 +393,3 @@ msgstr "qualsevol"
 
 #~ msgid "Default"
 #~ msgstr "Omissió"
-
-#, fuzzy
-#~ msgid "Window title font"
-#~ msgstr "Text de la finestra"
-
-#~ msgid "kwmcom: communication with kwm failed\n"
-#~ msgstr "kwmcom: error en la comunicació amb kwm\n"
-
-#~ msgid "Lock"
-#~ msgstr "Bloquejar"
-
-#~ msgid "General"
-#~ msgstr "General"
-
-#~ msgid "Color"
-#~ msgstr "Color"
-
-#~ msgid "Flat"
-#~ msgstr "Llis"
-
-#~ msgid "Gradient"
-#~ msgstr "Gradient"
-
-#~ msgid "Portrait"
-#~ msgstr "Vertical"
-
-#~ msgid "Landscape"
-#~ msgstr "Apaïsat"
-
-#~ msgid "Desktop Title"
-#~ msgstr "Nom d'escriptori"
-
-#~ msgid "Disabled"
-#~ msgstr "Desactivat"
-
-#~ msgid "Selected"
-#~ msgstr "Seleccionat"
-
-#~ msgid "You have chosen a name used by a supplied color scheme"
-#~ msgstr "Heu triat un nom en ús per un esquema de color"
-
-#~ msgid "Display Setup"
-#~ msgstr "Inicialització del monitor"
-
-#~ msgid ""
-#~ "No desktop color schemes were found.\n"
-#~ "Do you want to install the default color schemes now ?"
-#~ msgstr ""
-#~ "No s'han trobat esquemes de color.\n"
-#~ "Voleu instal·lar els esquemes de color per omissió ?"
-
-#~ msgid "Name"
-#~ msgstr "Nom"
-
-#~ msgid "Wait:"
-#~ msgstr "Esperar:"
-
-#~ msgid "Widget style"
-#~ msgstr "Estil d'estris"
-
-#~ msgid "Motif"
-#~ msgstr "Motif"
-
-#~ msgid "Windows 95"
-#~ msgstr "Windows 95"
-
-#~ msgid "Sample"
-#~ msgstr "Mostra"
-
-#~ msgid "Small"
-#~ msgstr "Xicoteta"
-
-#~ msgid "Medium"
-#~ msgstr "Mitjana"
-
-#~ msgid "Large"
-#~ msgstr "Gran"
-
-#~ msgid "&Style"
-#~ msgstr "&Estil"

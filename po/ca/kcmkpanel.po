@@ -2,12 +2,11 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Sebastià Pla <sastia@redestb.es>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: 1998-03-26 23:55+0100\n"
+"PO-Revision-Date: 1998-06-09 00:10+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,19 +15,19 @@ msgstr ""
 
 #: main.cpp:62
 msgid "&Panel"
-msgstr ""
+msgstr "&Panell"
 
 #: main.cpp:68
 msgid "&Desktops"
-msgstr ""
+msgstr "&Escriptoris"
 
 #: main.cpp:97
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
-msgstr ""
+msgstr "us: kcmkpanel [-init | {panel,options,desktops}]\n"
 
 #: main.cpp:127
 msgid "KPanel Configuration"
-msgstr ""
+msgstr "Configuració KPanel"
 
 #: panel.cpp:59
 msgid "Location"
@@ -36,112 +35,96 @@ msgstr "Posició"
 
 #: panel.cpp:60
 msgid "&Top"
-msgstr ""
+msgstr "&Dalt"
 
 #: panel.cpp:61
-#, fuzzy
 msgid "&Left"
-msgstr "Dalt/Esquerra"
+msgstr "E&squerra"
 
 #: panel.cpp:62
 msgid "&Bottom"
-msgstr ""
+msgstr "&Baix"
 
 #: panel.cpp:74
 msgid "Taskbar"
 msgstr "Barra de tasques"
 
 #: panel.cpp:75
-#, fuzzy
 msgid "&Hidden"
-msgstr "Oculta"
+msgstr "O&cult"
 
 #: panel.cpp:77
 msgid "T&op"
-msgstr ""
+msgstr "D&alt"
 
 #: panel.cpp:79
 msgid "Botto&m"
-msgstr ""
+msgstr "Ba&ix"
 
 #: panel.cpp:81
-#, fuzzy
 msgid "Top/Le&ft"
-msgstr "Dalt/Esquerra"
+msgstr "Dalt/Es&querra"
 
 #: panel.cpp:96
 msgid "T&iny"
-msgstr ""
+msgstr "&Xicotet"
 
 #: panel.cpp:98
-#, fuzzy
 msgid "&Normal"
-msgstr "Estil normal"
+msgstr "&Normal"
 
 #: panel.cpp:100
 msgid "L&arge"
-msgstr ""
+msgstr "&Gran"
 
 #: desktops.cpp:73
-#, fuzzy
 msgid "&Visible"
-msgstr "Visible"
+msgstr "&Visible"
 
 #: desktops.cpp:82
-#, fuzzy
 msgid "&Width"
-msgstr "Amplada"
+msgstr "&Ample"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
 msgstr "Indicacions de menú"
 
 #: options.cpp:39
-#, fuzzy
 msgid "Show &Menu Tooltips"
-msgstr "Indicacions de menú"
+msgstr "Mostrar &Indicacions de menú"
 
 #: options.cpp:44
 msgid "De&lay:"
-msgstr ""
+msgstr "&Retard"
 
 #: options.cpp:56
 msgid "ms"
-msgstr ""
+msgstr "ms"
 
 #: options.cpp:68
 msgid "Others"
-msgstr ""
+msgstr "Altres"
 
 #: options.cpp:69
-#, fuzzy
 msgid "Personal &First"
-msgstr "Personal primer"
+msgstr "Personal &Primer"
 
 #: options.cpp:71
-#, fuzzy
 msgid "Auto &Hide Panel"
-msgstr "Auto ocultar panell"
+msgstr "Auto &Ocultar Panell"
 
 #: options.cpp:73
-#, fuzzy
 msgid "Auto Hide &Taskbar"
-msgstr "Auto ocultar barra de tasques"
+msgstr "Auto Ocultar &Barra de tasques"
 
 #: options.cpp:81
 msgid "Clock"
-msgstr ""
+msgstr "Rellotge"
 
 #: options.cpp:83
 msgid "&24h"
-msgstr ""
+msgstr "&24h"
 
 #: options.cpp:85
 msgid "&12h AM/PM"
-msgstr ""
-
-#~ msgid "Tiny Style"
-#~ msgstr "Estil petit"
-
-#~ msgid "Large Style"
-#~ msgstr "Estil gran"
+msgstr "&12h AM/PM"

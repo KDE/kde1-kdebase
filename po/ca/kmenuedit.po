@@ -2,7 +2,6 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Sebastià Pla <sastia@redestb.es>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
@@ -15,34 +14,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: kmenuedit.cpp:62
-#, fuzzy
 msgid "&Reload"
-msgstr "Refrescar Menús"
+msgstr "&Refrescar"
 
 #: kmenuedit.cpp:68
-#, fuzzy
 msgid "Change &Menuname"
-msgstr "Canviar Noms de Menú"
+msgstr "Canviar noms de &Menú"
 
 #: kmenuedit.cpp:69
-#, fuzzy
 msgid "Reload &Filetypes"
-msgstr "Refrescar tipus fitxers"
+msgstr "Refrescar tipus de &Fitxers"
 
 #: kmenuedit.cpp:76
 msgid "by"
-msgstr ""
+msgstr "per"
 
 #: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
 msgstr "Els canvis no s'han desat!"
 
 #: kmenuedit.cpp:176 kmenuedit.cpp:201
-#, fuzzy
 msgid ""
 "\n"
 "Do you want to save your changes ?"
-msgstr "Voleu desar els canvis ?"
+msgstr ""
+"\n"
+"Voleu desar els canvis ?"
 
 #: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"
@@ -155,7 +152,7 @@ msgstr "Aplicació"
 
 #: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
 msgid "Swallow"
-msgstr ""
+msgstr "Encastar"
 
 #: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
 msgid "Link"
@@ -206,18 +203,16 @@ msgid "Binary Pattern:"
 msgstr "Patró binari"
 
 #: entrydialog.cpp:300
-#, fuzzy
 msgid "Application to swallow:"
-msgstr "Aplicació"
+msgstr "Aplicació a encastar:"
 
 #: entrydialog.cpp:306
-#, fuzzy
 msgid "Title of application:"
-msgstr "Aplicació"
+msgstr "Títol de l'aplicació:"
 
 #: entrydialog.cpp:312
 msgid "Application to execute on button press:"
-msgstr ""
+msgstr "Aplicació a executar en prèmer el botó:"
 
 #: entrydialog.cpp:342
 msgid "URL:"
@@ -258,27 +253,3 @@ msgstr "Personal:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Omissió:"
-
-#~ msgid "Type:"
-#~ msgstr "Tipus:"
-
-#~ msgid "Name:"
-#~ msgstr "Nom:"
-
-#~ msgid ""
-#~ "KMenuedit 0.2.3\n"
-#~ "(C) by Christoph Neerfeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-#~ msgstr ""
-#~ "KMenuedit 0.2.3\n"
-#~ "(C) by Christoph Neefeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-
-#~ msgid "Fvwm Command"
-#~ msgstr "Comanda Fvwm"
-
-#~ msgid "Fvwm"
-#~ msgstr "Fvwm"
-
-#~ msgid "Fvwm Command:"
-#~ msgstr "Comanda Fvwm"

@@ -2,12 +2,11 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Sebastià Pla <sastia@redestb.es>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1998-05-30 13:16+0200\n"
-"PO-Revision-Date: 1998-03-20 00:15+0100\n"
+"PO-Revision-Date: 1998-05-21 00:18+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,12 +27,11 @@ msgstr "Barra de &Títol"
 
 #: main.cpp:68
 msgid "&Desktop"
-msgstr ""
+msgstr "&Escriptori"
 
 #: main.cpp:74
-#, fuzzy
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
-msgstr "us: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+msgstr "us: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:105
 msgid "Window manager style"
@@ -118,48 +116,47 @@ msgstr "Pixmap &Inactiu"
 
 #: titlebar.cpp:987
 msgid "Mouse action"
-msgstr ""
+msgstr "Acció del ratolí"
 
 #: titlebar.cpp:989
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
+"Un doble clic del botó esquerre del ratolí\n"
+"    a la barra de títol provoca:"
 
 #: titlebar.cpp:993
-#, fuzzy
 msgid "(Un)Maximize"
-msgstr "Maximitzar"
+msgstr "(Des)Maximitzar"
 
 #: titlebar.cpp:994
 msgid "Move"
-msgstr ""
+msgstr "Moure"
 
 #: titlebar.cpp:995
-#, fuzzy
 msgid "(Un)Shade"
-msgstr "Ombrejada"
+msgstr "(Des)Arronsar"
 
 #: titlebar.cpp:996
 msgid "Iconify"
-msgstr ""
+msgstr "Iconitzar"
 
 #: titlebar.cpp:997
-#, fuzzy
 msgid "(Un)Sticky"
-msgstr "Apegalós"
+msgstr "(Des)Apegalós"
 
 #: titlebar.cpp:998
 msgid "Resize"
-msgstr ""
+msgstr "Dimensionar"
 
 #: titlebar.cpp:999
 msgid "Restore"
-msgstr ""
+msgstr "Restaurar"
 
 #: titlebar.cpp:1000
 msgid "Operations Menu"
-msgstr ""
+msgstr "Menú d'operacions"
 
 #: windows.cpp:74
 msgid "Window movement"
@@ -189,28 +186,27 @@ msgstr "Política de col·locació"
 
 #: windows.cpp:87
 msgid "Smart"
-msgstr ""
+msgstr "Astuta"
 
 #: windows.cpp:89
 msgid "Cascade"
-msgstr ""
+msgstr "Cascada"
 
 #: windows.cpp:91
 msgid "Interactive"
-msgstr ""
+msgstr "Interactiva"
 
 #: windows.cpp:93
 msgid "Random"
-msgstr ""
+msgstr "Aleatòria"
 
 #: windows.cpp:95
-#, fuzzy
 msgid "Manual"
-msgstr "Menú"
+msgstr "Manual"
 
 #: windows.cpp:102
 msgid "Allowed Overlap:"
-msgstr ""
+msgstr "Encavallament:"
 
 #: windows.cpp:109
 msgid "Maximize Style"
@@ -251,7 +247,7 @@ msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
 msgstr ""
-"Retard al auto elevar\n"
+"Retard d'auto elevació\n"
 "(<100 desactiva)"
 
 #: windows.cpp:134
@@ -260,44 +256,42 @@ msgstr "milisegons"
 
 #: desktop.cpp:77
 msgid "Active desktop borders"
-msgstr ""
+msgstr "Vores de l'escriptori actives"
 
 #: desktop.cpp:79
 msgid "Enable active desktop borders"
-msgstr ""
+msgstr "Habilitar vores de l'escriptori actives"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr ""
+msgstr "Moure el punter cap al centre després de canviar"
 
 #: desktop.cpp:87
 msgid "Dekstop switch delay:"
-msgstr ""
+msgstr "Retard en canviar d'escriptori:"
 
 #: desktop.cpp:100
 msgid "Magic Borders"
-msgstr ""
+msgstr "Vores màgiques"
 
 #: desktop.cpp:102
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Zona de salt a les vores:\n"
+"       (pixels)"
 
 #: desktop.cpp:116
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Zona de salt a les finestres:\n"
+"       (pixels)"
 
 #~ msgid "Shaded"
 #~ msgstr "Ombrejada"
 
 #~ msgid "Resize Animation"
 #~ msgstr "Animació al dimensionar"
-
-#~ msgid "Random placement"
-#~ msgstr "Col·locació aleatòria"
-
-#~ msgid "Smart placement"
-#~ msgstr "Col·locació astuta"
