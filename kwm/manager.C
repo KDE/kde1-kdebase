@@ -1547,7 +1547,12 @@ void Manager::switchDesktop(int new_desktop){
       c->showClient();
       setWindowState(c, NormalState);
     }
+    if (c->isSticky() && ! c->isIconified() && c != current()){
+      if (clients_traversing.removeRef(c))
+       clients_traversing.insert(0,c);
+    }
   }
+
   if (!current())
     noFocus();
 }
