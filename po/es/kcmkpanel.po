@@ -1,0 +1,68 @@
+
+# kcmkpanel.pot translate file to SPANISH
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-2-22 13:23+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Santiago Fernández and Jorge Valencia <jorgev@est.unileon.es>\n"
+"Language-Team: SPANISH <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: panel.cpp:58
+msgid "Location"
+msgstr "Localización"
+
+#: panel.cpp:66
+msgid "Taskbar"
+msgstr "Barra de Tareas"
+
+#: panel.cpp:67
+msgid "Hidden"
+msgstr "Oculta"
+
+#: panel.cpp:70
+msgid "Top/Left"
+msgstr "Arriba/Izda"
+
+#: panel.cpp:91
+msgid "Tiny Style"
+msgstr "Estilo Muy Pequeño"
+
+#: panel.cpp:92
+msgid "Normal Style"
+msgstr "Estilo Normal"
+
+#: panel.cpp:93
+msgid "Large Style"
+msgstr "Estilo Muy Grande"
+
+#: panel.cpp:101
+msgid "Menu Tooltips"
+msgstr "Ayudas de menú"
+
+#: panel.cpp:103
+msgid "Personal First"
+msgstr "Personal Primero"
+
+#: panel.cpp:105
+msgid "Auto Hide Panel"
+msgstr "Auto-Ocultar Panel"
+
+#: panel.cpp:107
+msgid "Auto Hide Taskbar"
+msgstr "Auto-Ocultar Barra de Tareas"
+
+#: desktops.cpp:67
+msgid "Visible"
+msgstr "Visibles"
+
+#: desktops.cpp:75
+msgid "Width"
+msgstr "Anchura"
