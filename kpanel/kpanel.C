@@ -218,6 +218,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     connect( entries[nbuttons-1].button, SIGNAL(pressed()), 
 	     SLOT(button_pressed()) );
     kde_button = entries[nbuttons-1].button;
+    if (!mBackTexture.isNull())
+      kde_button->setBackgroundPixmap( mBackTexture );
 
 
     // The control group

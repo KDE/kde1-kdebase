@@ -421,53 +421,39 @@ QPixmap kPanel::create_arrow_pixmap(QPixmap pm){
 
   QPixmap pm2 = QPixmap(box_width, box_height);
   QBitmap bm = QBitmap(box_width, box_height);
-  bool haveTexture = !mBackTexture.isNull();
-  
-  if ( !haveTexture )
-  	{
-  	bm.fill(color0);
-  	pm2.setMask(bm);
-	}
+  bm.fill(color0);
+  pm2.setMask(bm);
 
   QPainter p;
   QPainter p2;
   
-  if ( !haveTexture )
-  	pm2.fill( backgroundColor() );
+  pm2.fill( backgroundColor() );
 	  	
   p.begin( &pm2 );
   
-  if ( haveTexture )
-  	p.drawPixmap( 0, 0, mBackTexture, 0, 0, box_width, box_height );
-  else
-  	p2.begin( pm2.mask());
+  p2.begin( pm2.mask());
 	
   if (!pm.isNull()){
     p.drawPixmap( (pm2.width()-pm.width())/2, 
 		  (pm2.height()-pm.height())/2, 
 		  pm, 0, 0, pm.width(), pm.height());
- 	if ( !haveTexture )
-		{
-    	if (pm.mask())
-      		p2.drawPixmap( (pm2.width()-pm.mask()->width())/2, 
+    if (pm.mask())
+      p2.drawPixmap( (pm2.width()-pm.mask()->width())/2, 
 		     (pm2.height()-pm.mask()->height())/2, 
 		     *(pm.mask()), 0, 0, pm.mask()->width(), pm.mask()->height());
-	  	}
   }
   
   if (orientation == horizontal){
     if (position == top_left){
       qDrawArrow( &p, DownArrow, WindowsStyle, FALSE,
 		  box_width-6, box_height-5, 0, 0, colgrp);
-	  if ( !haveTexture )
-      	qDrawArrow( &p2, DownArrow, WindowsStyle, FALSE,
+      qDrawArrow( &p2, DownArrow, WindowsStyle, FALSE,
  		  box_width-6, box_height-5, 0, 0, colgrp2);
     }
     else{
       qDrawArrow( &p, UpArrow, WindowsStyle, FALSE,
 		  box_width-6, 4, 0, 0, colgrp);
-      if ( !haveTexture )
-	  	qDrawArrow( &p2, UpArrow, WindowsStyle, FALSE,
+      qDrawArrow( &p2, UpArrow, WindowsStyle, FALSE,
 		  box_width-6, 4, 0, 0, colgrp2);
     }
   }
@@ -475,21 +461,18 @@ QPixmap kPanel::create_arrow_pixmap(QPixmap pm){
     if (position == top_left){
       qDrawArrow( &p, RightArrow, WindowsStyle, FALSE,
 		  box_width-5, box_height-6, 0, 0, colgrp);
-	  if ( !haveTexture )
-      	qDrawArrow( &p2, RightArrow, WindowsStyle, FALSE,
+      qDrawArrow( &p2, RightArrow, WindowsStyle, FALSE,
  		  box_width-5, box_height-6, 0, 0, colgrp2);
     }
     else{
       qDrawArrow( &p, LeftArrow, WindowsStyle, FALSE,
 		  5, box_height-6, 0, 0, colgrp);
-      if ( !haveTexture )
-	  	qDrawArrow( &p2, LeftArrow, WindowsStyle, FALSE,
+      qDrawArrow( &p2, LeftArrow, WindowsStyle, FALSE,
 		  5, box_height-6, 0, 0, colgrp2);
     }
   }
   p.end();
-  if ( !haveTexture )
-	  p2.end();
+  p2.end();
   return pm2;
 }
 
