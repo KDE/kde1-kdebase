@@ -4,7 +4,6 @@ Exec=xfig
 Icon=xfig.xpm
 Type=Application
 Name=Xfig
-Name[da]=Xfigur
 Name[no]=X-figur
 Comment=Xfig drawing application
 Comment[ca]=Aplicació de dibuix Xfig
