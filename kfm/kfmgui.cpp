@@ -2041,6 +2041,9 @@ KfmGui::~KfmGui()
 	delete toolbarURL;
     if (menu)
        delete menu;
+
+    if ( findDialog )
+        delete findDialog;
  
     delete view;
     delete completion;
