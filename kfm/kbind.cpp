@@ -226,7 +226,7 @@ void KMimeType::initMimeTypes( const char* _path )
 		if ( mime.isEmpty() )
 		{
 		    QString tmp;
-		    tmp.sprintf( "%s\n%s", klocale->translate( "The mime type config file " ),
+		    tmp.sprintf( "%s\n%s\n%s", klocale->translate( "The mime type config file " ),
 				 file.data(), klocale->translate("does not conatain a MimeType=... entry" ) );
 		    QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
 		    bSkip = true;
