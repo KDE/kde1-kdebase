@@ -129,5 +129,6 @@ slip.moc: slip.h
 lissie.moc: lissie.h
 	$(MOC) lissie.h -o lissie.moc
 
-
+morph3d.moc: morph3d.h
+	$(MOC) morph3d.h -o morph3d.moc
 
