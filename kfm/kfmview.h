@@ -87,6 +87,8 @@ public:
 
     virtual void openURL( const char *_url );
 
+    virtual void openURL( const char *_url, const char *_data );
+
     /**
      * Return the currently opened URL.
      */
@@ -378,7 +380,7 @@ protected slots:
      * @param _url is the <form action=...> value
      * @param _method is the <form method=...> value
      */
-    virtual void slotFormSubmitted( const char *_method, const char *_url );
+    virtual void slotFormSubmitted( const char *_method, const char *_url, const char *_data );
     
 protected:
     /**

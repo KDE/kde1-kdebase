@@ -25,7 +25,7 @@ KFMJob::KFMJob( )
     bError = false;
 }
 
-bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_currentURL, QList<KIODirectoryEntry> *_list )
+bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_currentURL, QList<KIODirectoryEntry> *_list, const char *_data )
 {
     bError = false;
 
@@ -37,6 +37,7 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
     }
 
     url = _url;
+    post_data = _data;
 
     if ( job )
 	delete job;	
@@ -125,7 +126,7 @@ void KFMJob::openFile(bool _reload)
 	url = url.left( url.length() - 1 );
     
     bFileLoad = TRUE;
-    job->get( url,_reload );
+    job->get( url, _reload, post_data );
 }
 
 void KFMJob::slotRedirection( const char *_url )

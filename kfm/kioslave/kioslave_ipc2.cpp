@@ -188,9 +188,14 @@ void KIOSlaveIPC::parse_get( char *_data, int _len )
 	// Parsing string
 	const char* _url;
 	_url = read_string( _data, pos, _len );
+	// Parsing string
+	const char* _post_data;
+	_post_data = read_string( _data, pos, _len );
+
 	// Calling function
-	emit get( _url );
+	emit get( _url, _post_data );
 	free( (void*)_url );
+	free( (void*)_post_data );
 }
 
 void KIOSlaveIPC::parse_reload( char *_data, int _len )

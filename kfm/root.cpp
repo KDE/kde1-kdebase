@@ -1024,12 +1024,21 @@ void KRootWidget::slotFilesChanged( const char *_url )
 
 void KRootWidget::slotPopupOpenWith()
 {
-    DlgLineEntry l( "Open With:", "", this, true );
+    OpenWithDlg l( "Open With:", "", this, true );
     if ( l.exec() )
     {
-	QString pattern = l.getText();
-	if ( pattern.length() == 0 )
-	    return;
+      KMimeBind *bind = l.mimeBind();
+      if ( bind )
+      {
+	const char *s;
+	for( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
+	  bind->runBinding( s );
+	return;
+      }
+
+      QString pattern = l.getText();
+      if ( pattern.length() == 0 )
+	return;
     }
     else
 	return;
@@ -1068,8 +1077,6 @@ void KRootWidget::slotPopupProperties()
 	warning(klocale->translate("ERROR: Can not open properties for multiple files") );
 	return;
     }
-    
-    printf("OPENING=%s\n",popupFiles.first());
     
     Properties *p = new Properties( popupFiles.first() );
     connect( p, SIGNAL( propertiesChanged( const char *, const char * ) ), this,

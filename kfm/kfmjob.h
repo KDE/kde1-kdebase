@@ -22,7 +22,7 @@ public:
      * Open a new URL
      */
     virtual bool browse( const char *_url, bool _reload = FALSE, bool _bHTML = FALSE,
-			 const char *_currentURL = 0L, QList<KIODirectoryEntry> *list = 0L );
+			 const char *_currentURL = 0L, QList<KIODirectoryEntry> *list = 0L, const char *_data = 0L );
 
     /**
      * Stop the KIOJob that downloads the directory information.
@@ -77,6 +77,7 @@ protected:
     bool bFileLoad;
     QString tmpFile;
     QString url;
+    QString post_data;
     int bytesRead;
     QString dataBuffer;
     /**

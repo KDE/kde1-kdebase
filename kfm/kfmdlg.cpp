@@ -5,11 +5,13 @@
 
 #include <klocale.h>
 #include <kapp.h>
-
+#include <kbind.h>
 #include <klined.h>
+
 #include "kfmdlg.h"
 #include "fileentry.h"
 #include "kURLcompletion.h"
+#include "open-with.h"
 
 DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *parent, bool _file_mode )
         : QDialog( parent, 0L, true )
@@ -67,7 +69,101 @@ void DlgLineEntry::slotClear()
     edit->setText("");
 }
 
+/***************************************************************
+ *
+ * OpenWithDlg
+ *
+ ***************************************************************/
+
+OpenWithDlg::OpenWithDlg( const char *_text, const char* _value, QWidget *parent, bool _file_mode )
+        : QDialog( parent, 0L, true )
+{
+  m_pTree = 0L;
+  m_pBind = 0L;
+  
+  setGeometry( x(), y(), 370, 110 );
+  
+  QLabel *label = new QLabel( _text , this );
+  label->setGeometry( 10, 10, 350, 15 );
+  
+  edit = new KLined( this, 0L );
+    
+  if ( _file_mode )
+  {
+    completion = new KURLCompletion();
+    connect ( edit, SIGNAL (completion()),
+	      completion, SLOT (make_completion()));
+    connect ( edit, SIGNAL (rotation()),
+	      completion, SLOT (make_rotation()));
+    connect ( edit, SIGNAL (textChanged(const char *)),
+	      completion, SLOT (edited(const char *)));
+    connect ( completion, SIGNAL (setText (const char *)),
+	      edit, SLOT (setText (const char *)));
+  }
+  else
+    completion = 0L;
+
+  edit->setGeometry( 10, 40, 350, 25 );
+  connect( edit, SIGNAL(returnPressed()), SLOT(accept()) );
+  
+  ok = new QPushButton( klocale->translate("Ok"), this );
+  ok->setGeometry( 10,70, 80,30 );
+  connect( ok, SIGNAL(clicked()), SLOT(accept()) );
+  
+  browse = new QPushButton( klocale->translate("&Browser"), this );
+  browse->setGeometry( 100, 70, 80, 30 );
+  connect( browse, SIGNAL(clicked()), SLOT(slotBrowse()) );
+  
+  clear = new QPushButton( klocale->translate("Clear"), this );
+  clear->setGeometry( 190, 70, 80, 30 );
+  connect( clear, SIGNAL(clicked()), SLOT(slotClear()) );
+  
+  cancel = new QPushButton( klocale->translate("Cancel"), this );
+  cancel->setGeometry( 280, 70, 80, 30 );
+  connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
+  
+  edit->setText( _value );
+  edit->setFocus();
+}
+
+OpenWithDlg::~OpenWithDlg()
+{
+  delete completion;
+}
+
+void OpenWithDlg::slotClear()
+{
+  edit->setText("");
+}
+
+void OpenWithDlg::slotBrowse()
+{
+  if ( m_pTree )
+    return;
+  
+  browse->setEnabled( false );
+
+  ok->setGeometry( 10,280, 80,30 );
+  browse->setGeometry( 100, 280, 80, 30 );
+  clear->setGeometry( 190, 280, 80, 30 );
+  cancel->setGeometry( 280, 280, 80, 30 );
+
+  m_pTree = new KApplicationTree( this );
+  connect( m_pTree, SIGNAL( selected( const char* ) ), this, SLOT( slotSelected( const char* ) ) );
+  m_pTree->setGeometry( 10, 70, 350, 200 );
+  m_pTree->show();
+  m_pTree->setFocus();
+  
+  resize( width(), height() + 210 );
+}
+
+void OpenWithDlg::slotSelected( const char* _name )
+{
+  edit->setText( "" );
+  m_pBind = KMimeBind::findByName( _name );
+  
+  accept();
+}
+
 #include "kfmdlg.moc"
-
-
 

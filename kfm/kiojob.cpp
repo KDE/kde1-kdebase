@@ -385,12 +385,13 @@ void KIOJob::link()
     done();
 }
 
-void KIOJob::get( const char *_url, bool _reload )
+void KIOJob::get( const char *_url, bool _reload, const char *_data )
 {
     action = KIOJob::JOB_GET;
 
-    reload=_reload;
-  
+    reload = _reload;
+    post_data = _data;
+
     cmSrcURLList.clear();
     cmSrcURLList.append( _url );
 
@@ -1615,7 +1616,7 @@ void KIOJob::slaveIsReady()
 
 	    QString src = completeURL( cmSrcURLList.first() ).data();	   
 	    if (!reload){
-	      slave->get( src.data() );
+	      slave->get( src.data(), post_data.data() );
 	    }
 	    else{
 	      slave->reload( src.data() );

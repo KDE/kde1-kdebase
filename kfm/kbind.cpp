@@ -50,7 +50,7 @@ QString *defaultIcon = 0L;
 // but this is NOT a URL
 QString *defaultMiniIcon = 0L;
 
-QStrList *KMimeBind::appList;
+QList<KMimeBind> *KMimeBind::s_lstBindings;
 
 QDict<QString>* KMimeType::iconDict = 0L;
 QDict<QString>* KMimeType::miniIconDict = 0L;
@@ -59,9 +59,9 @@ QPixmap* emptyPixmap = 0L;
 
 void KMimeBind::InitStatic()
 {
-    appList = new QStrList;
-    if ( emptyPixmap == 0L )
-	emptyPixmap = new QPixmap();
+  s_lstBindings = new QList<KMimeBind>;
+  if ( emptyPixmap == 0L )
+    emptyPixmap = new QPixmap();
 }
 
 void KMimeType::InitStatic()
@@ -432,7 +432,7 @@ void KMimeType::errorMissingMimeType( const char *_type, KMimeType **_ptr )
     
 void KMimeType::clearAll()
 {
-    KMimeBind::clearApplicationList();
+    KMimeBind::clearBindingList();
     
     delete types;
 }
@@ -1036,6 +1036,8 @@ QString KDELnkMimeType::getComment( const char *_url )
 
 KMimeBind::KMimeBind( const char *_prg, const char *_cmd, const char *_icon, bool _allowdefault )
 {
+    appendBinding( this );
+  
     allowDefault = _allowdefault;
     
     program = _prg;
@@ -1051,6 +1053,23 @@ KMimeBind::KMimeBind( const char *_prg, const char *_cmd, const char *_icon, boo
     
     cmd = _cmd;
     cmd.detach();    
+}
+
+QListIterator<KMimeBind> KMimeBind::bindingIterator()
+{
+  return QListIterator<KMimeBind>( *s_lstBindings );
+}
+
+KMimeBind* KMimeBind::findByName( const char *_name )
+{
+  QListIterator<KMimeBind> it = KMimeBind::bindingIterator();
+  for ( ; it.current() != 0L; ++it )
+  {
+    if ( strcmp( it.current()->getProgram(), _name ) == 0 )
+      return it.current();
+  }
+
+  return 0L;
 }
 
 QPixmap* KMimeBind::getPixmap( bool _mini )
@@ -1125,7 +1144,6 @@ void KMimeBind::initApplications( const char * _path )
 		    QString name = config.readEntry( "Name" );
 		    if ( name.isEmpty() )
 			name = app;
-		    KMimeBind::appendApplication( name.data() );
 		    // An icon for the binary
 		    QString app_icon = config.readEntry( "Icon" );
 		    // The pattern to identify the binary

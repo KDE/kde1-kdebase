@@ -198,14 +198,22 @@ void KIOSlaveIPC::copy(const char* _from_url, const char* _to_url, bool _overwri
 	write_bool( data_sock->socket(), _overwrite );
 }
 
-void KIOSlaveIPC::get(const char* _url)
+void KIOSlaveIPC::get(const char* _url, const char* _data)
 {
+        if (!_data)
+        {
+            _data = "";
+        }
+
 	int len = 0;
 	len += len_string( _url );
+	len += len_string( _data );
 	len += len_string("get");
+
 	write_int( data_sock->socket(), len );
 	write_string( data_sock->socket(), "get" );
 	write_string( data_sock->socket(), _url );
+        write_string( data_sock->socket(), _data );
 }
 
 void KIOSlaveIPC::reload(const char* _url)

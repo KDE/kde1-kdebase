@@ -1,5 +1,25 @@
 Sun Jun 21 00:08:32 1998  Torben Weis  <weis@localhost>
 
+	* kioslave/icon.cpp (Open): Fixed little QString bug
+
+	* kfmexec.cpp (slotMimeType): Made it work with the new goodie.
+
+	* root.cpp (slotPopupOpenWith): Made it work with the new goodie.
+
+	* kfmman.cpp (slotMimeType): Made it work with the new goodie.
+
+	* kfmview.cpp (slotPopupOpenWith): Made it work with the new goodie.
+
+	* kfmprops.cpp (BindingPropsPage): Made it work with the changes
+	  in kbind.cpp/h
+
+	* kbind.h (class KMimeBind): Changed internal data structures.
+	  Some cleanups.
+
+	* kfmdlg.cpp (OpenWithDlg): Added a little goodie :-)
+
+	* bookmark.cpp (KBookmark): Removed debug output
+
 	* main.cpp (main): sockets do now have the name
 	  /tmp/kfm_uid_pid_display and /tmp/kio_uid_pid_display.
 	  This solves problems with sockets names used by other

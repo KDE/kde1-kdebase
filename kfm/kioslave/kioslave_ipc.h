@@ -57,7 +57,7 @@ signals:
 private:
 	void parse_copy( char *_data, int _len );
 signals:
-	void get(const char* _url);
+	void get(const char* _url, const char* _data);
 private:
 	void parse_get( char *_data, int _len );
 signals:

@@ -412,6 +412,12 @@ int revmatch(const char *host, const char *nplist)
     return 0;
 }
 
+int KProtocolHTTP::SetData(const char *_data)
+{
+    post_data = _data;
+    return SUCCESS;
+}
+
 int KProtocolHTTP::Open( KURL *_url, int mode )
 {
   return OpenHTTP( _url, mode, false );
@@ -505,7 +511,17 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 	    return(FAIL);
 	}
 
-	QString command( "GET " );
+	QString command;
+	
+	if (post_data.isEmpty())
+	{
+            command = "GET ";
+        }
+        else
+        {
+            _reload = TRUE;     /* no caching allowed */
+            command = "POST ";
+        }
 
 	if(do_proxy)
 	{
@@ -514,10 +530,6 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 			port = 80;
 		command += "http://";
 		command << _url->host() << ":" << port;
-	}
-	else
-        {
-		command = "GET ";
 	}
 
 	if ( _url->path()[0] != '/' ) command += "/";
@@ -548,6 +560,15 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 	    command += tmp;
 	}
 	command += "\r\n";
+
+        if (!post_data.isEmpty())
+        {
+            command += "Content-Length: ";
+            QString tmp;
+            tmp.setNum( post_data.length());
+            command += tmp;
+	    command += "\r\n";
+        }
  
 	if( strlen(_url->user()) != 0 )
 	{
@@ -567,6 +588,10 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 	}
 
 	command += "\r\n";  /* end header */
+        if (!post_data.isEmpty())
+        {
+            command += post_data;
+        }
 
 	// write(0, command.data(), command.length());
 	write(sock, command.data(), command.length());

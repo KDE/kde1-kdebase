@@ -72,7 +72,7 @@ public slots:
 public slots:
 	void copy(const char* _from_url, const char* _to_url, bool _overwrite);
 public slots:
-	void get(const char* _url);
+	void get(const char* _url, const char* _data);
 public slots:
 	void reload(const char* _url);
 public slots:

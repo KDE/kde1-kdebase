@@ -185,7 +185,7 @@ bool KFMManager::eventFilter( QObject *ob, QEvent *ev )
     return false;
 }
     
-bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yoffset )
+bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yoffset, const char *_data )
 {
     nextXOffset = _xoffset;
     nextYOffset = _yoffset;
@@ -233,7 +233,10 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     
     // Is page cached ?
     const char *file;
-    if ( ( file = view->getHTMLCache()->isCached( _url ) ) != 0L && !_reload )
+    if ( ( file = view->getHTMLCache()->isCached( _url ) ) != 0L && 
+         !_reload && 
+         !_data
+       )
     {
 	FILE* f = fopen( file, "rb" );
 	if ( f )
@@ -335,7 +338,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     // at once by a call to this function. 'browse' may emit the signal
     // 'newDirEntry' which uses 'files'. So 'files' has to be cleared
     // before! such signal is emitted.
-    job->browse( tryURL, _reload, view->getGUI()->isViewHTML(), url, &files );
+    job->browse( tryURL, _reload, view->getGUI()->isViewHTML(), url, &files, _data );
     
     // Something cached ? In this case a call to browse was all we need
     if ( bFinished )
@@ -865,34 +868,27 @@ void KFMManager::slotMimeType( const char *_type )
 	}
 	
 	// Ask the user what we should do
-	DlgLineEntry l( klocale->translate("Open With:"), "", 0L, true );
+	OpenWithDlg l( klocale->translate("Open With:"), "", 0L, true );
 	// debugT("OPENING DLG\n");
 	if ( l.exec() )
 	{
-	    QString pattern = l.getText();
-	    if ( pattern.isEmpty() )
-	    {
-	        delete typestr;
-		return;
-	    }	
+	  KMimeBind *bind = l.mimeBind();
+	  if ( bind )
+	  {
+	    bind->runBinding( tryURL );
+	    return;
+	  }
 
-	    QStrList list;
-	    list.append( tryURL );
-	    openWithOldApplication( l.getText(), list );
-	    
-	    /* QString decoded( tryURL );
-	    KURL::decodeURL( decoded );
-	    decoded = KIOServer::shellQuote( decoded ).data();
-	    
-	    QString cmd;
-	    cmd = l.getText();
-	    cmd += " ";
-	    cmd += "\"";
-	    cmd += decoded;
-	    cmd += "\"";
-	    // debugT("Executing stuff '%s'\n", cmd.data());
-	    
-	    KMimeBind::runCmd( cmd.data() ); */
+	  QString pattern = l.getText();
+	  if ( pattern.isEmpty() )
+	  {
+	    delete typestr;
+	    return;
+	  }	
+	  
+	  QStrList list;
+	  list.append( tryURL );
+	  openWithOldApplication( l.getText(), list );
 	}
     }
     else

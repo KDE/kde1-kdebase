@@ -70,7 +70,10 @@ public:
 	
 	/** Opening for reload (no cache) **/
 	virtual int ReOpen(KURL *url, int mode);
-	virtual long Read(void *buffer, long nbytes);
+
+	/** Set data for POST method **/
+   virtual int SetData(const char *_data) { return FAIL; }
+  	virtual long Read(void *buffer, long nbytes);
 	virtual long Write(void *buffer, long nbytes);
 	virtual int Close();
 	virtual int atEOF();

@@ -23,6 +23,7 @@ protected:
     int use_proxy;
     QString proxy_user;
     QString proxy_pass;
+    QString post_data;
 
 // needed for language/charset support 
     KLocale *klocale;
@@ -71,6 +72,7 @@ public:
     virtual int Open(KURL *url, int mode);
     virtual int ReOpen(KURL *url, int mode);
     virtual int Close();
+    virtual int SetData(const char *_data);
     virtual long Read(void *buffer, long len);
     virtual long Size();
     virtual int atEOF();

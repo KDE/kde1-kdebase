@@ -469,12 +469,21 @@ void KfmView::slotPopupMenu( QStrList &_urls, const QPoint &_point, bool _curren
 
 void KfmView::slotPopupOpenWith()
 {
-    DlgLineEntry l( klocale->translate("Open With:"), "", this, true );
+    OpenWithDlg l( klocale->translate("Open With:"), "", this, true );
     if ( l.exec() )
     {
-	QString pattern = l.getText();
-	if ( pattern.length() == 0 )
-	    return;
+      KMimeBind *bind = l.mimeBind();
+      if ( bind )
+      {
+	const char *s;
+	for( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
+	  bind->runBinding( s );
+	return;
+      }
+      
+      QString pattern = l.getText();
+      if ( pattern.length() == 0 )
+	return;
     }
     else
       return;
@@ -662,6 +671,12 @@ void KfmView::openURL( const char *_url )
 {
     emit newURL( _url );
     manager->openURL( _url );
+}
+
+void KfmView::openURL( const char *_url, const char *_data )
+{
+    emit newURL( _url );
+    manager->openURL( _url, FALSE, 0, 0, _data );
 }
 
 void KfmView::pushURLToHistory()
@@ -890,16 +905,31 @@ void KfmView::slotOnURL( const char *_url )
     }
 }
 
-void KfmView::slotFormSubmitted( const char *, const char *_url )
+void KfmView::slotFormSubmitted( const char *_method, const char *_url, const char *_data )
 {   
     // debugT("Form Submitted '%s'\n", _url );
     
     KURL u1( manager->getURL() );
     KURL u2( u1, _url );
+    QString url_string = u2.url(); 
     
     // debugT("Complete is '%s'\n", u2.url().data() );
-    
-    openURL( u2.url().data() );    
+    if (strcasecmp(_method, "GET")==0)
+    {
+       // GET
+//       debug("Form Submitted '%s', method = GET '%s', data = '%s'\n", 
+//               _url, _method, _data );
+       url_string += "?";
+       url_string += _data; 
+       openURL( url_string.data() );
+    }
+    else
+    {
+       // POST
+//       debug("Form Submitted '%s', method = POST '%s', data = '%s'\n", 
+//               _url, _method, _data );
+       openURL( url_string.data() , _data);    
+    }
 }
 
 KfmView* KfmView::getActiveView()

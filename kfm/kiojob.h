@@ -44,7 +44,7 @@ public:
     
     void copy( QStrList & _src_url_list, const char *_dest_dir_url );    
     void copy( const char *_src_url, const char *_dest_url );
-    void get( const char *_url, bool _reload=false );
+    void get( const char *_url, bool _reload=false, const char *_data = 0L );
     void move( QStrList & _src_url_list, const char *_dest_dir_url );    
     void move( const char *_src_url, const char *_dest_url );
     void link( QStrList & _src_url_list, const char *_dest_dir_url );    
@@ -336,6 +336,11 @@ protected:
      * The URL, as used by the LIST command.
      */
     QString lstURL;
+
+    /**
+     * Data sent by POST
+     */
+    QString post_data;
     
     KIOServer *server;
 

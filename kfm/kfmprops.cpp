@@ -1528,14 +1528,14 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     // Get list of all applications
     int index = -1;
     int i = 0;
-    const char *p;
-    for ( p = KMimeBind::getFirstApplication(); p != 0L; p = KMimeBind::getNextApplication() )
+    QListIterator<KMimeBind> it = KMimeBind::bindingIterator();
+    for ( ; it.current() != 0L; ++it )
     {
 	if ( appStr.data() != 0L )
-	    if ( strcmp( p, appStr.data() ) == 0 )
+	    if ( strcmp( it.current()->getProgram(), appStr.data() ) == 0 )
 		index = i;
 
-	appBox->insertItem( p );
+	appBox->insertItem( it.current()->getProgram() );
 	i++;
     }
     appBox->insertItem( "" );

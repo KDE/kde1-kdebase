@@ -83,39 +83,32 @@ public:
     virtual bool runBinding( const char *_url );
 
     /**
-     * Register another application.
+     * Register another binding.
      * Every application is registered using this function. This way we have
      * a list of all registered applications. This list is needed in the properties
-     * for example. It is not trivial to construct such a list from the KMimeBind
-     * instances, that is the reason for this set of static functions.
+     * for example.
      *
      * @see #appList
      */
-    static void appendApplication( const char *_appname ) { appList->append( _appname ); }
+    static void appendBinding( KMimeBind *_bind ) { s_lstBindings->append( _bind ); }
     
     /**
      * @return the name of the first registered application.
      *
-     * @see #appendApplication
+     * @see #appendBinding
      */
-    static const char* getFirstApplication() { return appList->first(); }
-    /**
-     * Use this function only after a call to @ref #getFirstApplication.
-     *
-     * @return the name of the next registered application.
-     *
-     * @see #appendApplication
-     */
-    static const char* getNextApplication() { return appList->next(); }
+    static QListIterator<KMimeBind> bindingIterator();
     /**
      * Clear the list of registered applications.
      * This function is used if the user changes some of the application/MimeType
      * entries and they have to be refreshed.
      *
-     * @see #appendApplication
+     * @see #appendBinding
      */
-    static void clearApplicationList() { appList->clear(); }
+    static void clearBindingList() { s_lstBindings->clear(); }
 
+    static KMimeBind* findByName( const char *_name );
+  
     /**
      * This function tries to find out about the mime type of the URL.
      * It then searches the matching binding and tells the binding
@@ -178,11 +171,11 @@ protected:
     QPixmap *pixmap;
     
     /**
-     * List of all registered applications.
+     * List of all bindings.
      *
-     * @see #appendApplication
+     * @see #appendBinding
      */
-    static QStrList *appList;
+    static QList<KMimeBind>* s_lstBindings;
     
     /**
      * @see #IsAllowedAsDefault

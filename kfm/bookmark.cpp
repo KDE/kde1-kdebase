@@ -67,8 +67,6 @@ void KBookmarkManager::slotNotify( const char *_url )
   if ( p2.isEmpty() )
     p2 = p.data();
   
-  printf("Checking '%s' and '%s'\n",p1.data(),p2.data() );
-  
   if ( strncmp( p1.data(), p2.data(), p2.length() ) == 0 )
   {
     QString d = kapp->localkdedir().data();
@@ -135,8 +133,6 @@ void KBookmarkManager::scanIntern( KBookmark *_bm, const char * _path )
       struct stat buff;
       stat( file.data(), &buff );
 
-      printf("Scanning %s\n", file.data());
-      
       if ( S_ISDIR( buff.st_mode ) )
       {
 	KBookmark* bm = new KBookmark( this, _bm, KBookmark::decode( ep->d_name ) );

@@ -25,7 +25,7 @@ public:
     /**
      * Open a new URL.
      */
-    virtual bool openURL( const char *_url, bool _refresh = FALSE, int _x_offset = 0, int _y_offset = 0 );
+    virtual bool openURL( const char *_url, bool _refresh = FALSE, int _x_offset = 0, int _y_offset = 0, const char *_data = 0L );
     /**
      * The user pressed the right mouse button over _url at point _p.
      *

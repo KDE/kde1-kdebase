@@ -71,8 +71,8 @@ KIOSlave::KIOSlave( char * _path )
 
     connect( ipc, SIGNAL( copy( const char*, const char*, bool ) ),
 	     this, SLOT( copy( const char*, const char*, bool ) ) );
-    connect( ipc, SIGNAL( get( const char* ) ),
-	     this, SLOT( get( const char* ) ) );
+    connect( ipc, SIGNAL( get( const char*, const char* ) ),
+	     this, SLOT( get( const char*, const char* ) ) );
     connect( ipc, SIGNAL( reload( const char* ) ),
 	     this, SLOT( reload( const char* ) ) );
     connect( ipc, SIGNAL( del( const char* ) ), this, SLOT( del( const char* ) ) );
@@ -507,9 +507,9 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
     ipc->done();
 }
 
-void KIOSlave::get( const char *_url )
+void KIOSlave::get( const char *_url, const char *_data )
 {  
-  get( _url, false );
+  get( _url, false, _data );
 }
 
 void KIOSlave::reload( const char *_url )
@@ -517,7 +517,7 @@ void KIOSlave::reload( const char *_url )
   get( _url, true );
 }
 
-void KIOSlave::get( const char *_url, bool _reload )
+void KIOSlave::get( const char *_url, bool _reload, const char *_data )
 {
   KURL u( _url );
   if ( u.isMalformed() )
@@ -525,8 +525,8 @@ void KIOSlave::get( const char *_url, bool _reload )
     fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
     ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
     return;
-    }
-  
+  }
+
   KURL su( u.nestedURL() );
   if ( su.isMalformed() )
   {
@@ -546,11 +546,13 @@ void KIOSlave::get( const char *_url, bool _reload )
     connect( src_prot, SIGNAL( info( const char* ) ),
 	     ipc, SLOT( info( const char* ) ) );
     int err;
+    src_prot->SetData(_data);
+    
     if ( !_reload )
       err = src_prot->Open( &su, KProtocol::READ );
     else    
       err = src_prot->ReOpen( &su, KProtocol::READ );
-    
+
     if( err != KProtocol::SUCCESS )
     {
       ProcessError( src_prot, _url );

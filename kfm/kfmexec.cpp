@@ -251,24 +251,32 @@ void KFMExec::slotMimeType( const char *_type )
 	}
 		
 	// Ask the user what we should do
-	DlgLineEntry l( klocale->translate("Open With:"), "", 0L, true );
+	OpenWithDlg l( klocale->translate("Open With:"), "", 0L, true );
 	if ( l.exec() )
 	{
+	  KMimeBind *bind = l.mimeBind();
+	  if ( bind )
+	  {
+	    bind->runBinding( tryURL );
+	  }
+	  else
+	  {
 	    QString pattern = l.getText();
 	    // The user did not enter anything ?
 	    if ( pattern.isEmpty() )
 	    {
-		// We are a zombie now
-		prepareToDie();
+	      // We are a zombie now
+	      prepareToDie();
 	    }
 	    else 
 	    {
-	        QStrList list;
-	        list.append( tryURL );
-	        openWithOldApplication( pattern, list );
-	    
-	        prepareToDie();
-	    }	
+	      QStrList list;
+	      list.append( tryURL );
+	      openWithOldApplication( pattern, list );
+	      
+	      prepareToDie();
+	    }
+	  }	
 	}
     }
     // It is HTML

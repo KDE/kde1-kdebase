@@ -32,7 +32,7 @@ public slots:
      * Retrieves '_url' and sends the content of this URL via the 'data' signal.
      * This is faster then doing a copy the local file system all the time.
      */
-    void get( const char *_url );
+    void get( const char *_url, const char *_data );
     /**
      * Retrieves '_url' and sends the content of this URL via the 'data' signal.
      * This is faster then doing a copy the local file system all the time.
@@ -67,7 +67,7 @@ public slots:
 protected:
     void ProcessError(KProtocol *, const char *);
     
-    void get( const char *_url, bool _reload=false );
+    void get( const char *_url, bool _reload=false, const char *_data=0L );
 
     /// Test an error log file
     /**
