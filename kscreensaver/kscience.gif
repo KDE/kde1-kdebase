@@ -1,0 +1,25 @@
+Hi,
+
+> You take the award for most options in a
+> screensaver.
+
+I have plenty of others in mind...
+But don't panic...
+
+this is a new version
+  - providing a gif image which is shown in the preview widget
+    (the user might have an empty desktop)
+  - 'niced' prepare dialog (also a little gif)
+  - some small bugfixes
+  
+the gifs should go to (kdedir)/share/apps/kscreensaver, but I don't
+know how to set up the makefiles for this purpose. sorry for the 
+inconvenience...
+
+greets,
+rene beutler
+
+
+btw: do you remember my patch for the password dialog,
+     which showed the stars when typing? I liked this
+     interaction. what do you think?

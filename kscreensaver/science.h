@@ -56,7 +56,7 @@ class KScienceSaver : public kScreenSaver
 {
 	Q_OBJECT
 public:
-	KScienceSaver(Drawable drawable, bool setup=false);
+	KScienceSaver(Drawable drawable, bool setup=false, bool gP=false);
 	virtual ~KScienceSaver();
 
 	void do_refresh( const QRect & rect );
@@ -76,6 +76,7 @@ public:
 private:
 	void readSettings();
 	void initLens();
+	void initialize();
 	void releaseLens();
 	void (KScienceSaver::*applyLens)(int xs, int ys, int xd, int yd, int w, int h);
 
@@ -84,6 +85,7 @@ protected slots:
 
 protected:
 	void       grabRootWindow();
+	void       grabPreviewWidget();
 	void       initWhirlLens();
 	void       initSphereLens();
 	void       initExponentialLens();
@@ -99,7 +101,7 @@ protected:
 	QTimer     timer;
 	bool       moveOn;
 	bool       setup;
-	bool       showDialog;
+	bool       grabPixmap;	bool       showDialog;
 	int        mode;
 	bool       inverse[MAX_MODES];
 	bool       gravity[MAX_MODES];

@@ -13,6 +13,8 @@
 #include <kapp.h> 
 #include <kcharsets.h>
 
+#include <qpainter.h>
+#include <qpixmap.h>
 #include <qlabel.h>
 #include <qpushbt.h>
 #include <qmsgbox.h> 
@@ -48,6 +50,8 @@
 
 static KScienceSaver *saver = 0;
 extern KLocale *glocale;
+
+#define PIXDIR   KApplication::getKApplication()->kde_datadir() + "/kscreensaver/"
 
 struct {
 	char name[64];
@@ -116,8 +120,10 @@ const char *getScreenSaverName()
 KPrepareDlg::KPrepareDlg( QWidget *parent ) : QWidget( parent )
 {
 	save = 0;
-	w = 290;
-	h = 90;
+	QPixmap pmap( PIXDIR + "kscience-small.gif" );
+	w = ( pmap.isNull() ) ? 300 : 400;
+	h = 99;
+
 	x = ( QApplication::desktop()->width()  - w ) >> 1;
 	y = ( QApplication::desktop()->height() - h ) >> 1;
      
@@ -125,7 +131,7 @@ KPrepareDlg::KPrepareDlg( QWidget *parent ) : QWidget( parent )
 	Display *dsp = qt_xdisplay();
         Window rootwin = RootWindow( dsp, qt_xscreen() );
         save = XGetImage( dsp, rootwin, x, y, w, h, AllPlanes, ZPixmap);
-//	saver->myAssert( save != 0, "unable to grab screen" );
+	saver->myAssert( save != 0, "unable to grab screen" );
         bpl = save->bytes_per_line;
 	
         frame = new QFrame( parent );
@@ -136,12 +142,21 @@ KPrepareDlg::KPrepareDlg( QWidget *parent ) : QWidget( parent )
 	KApplication::getKApplication()->getCharsets()->setQFont(font);
 
 	label = new QLabel( 0, frame );
-	label->setGeometry( 20, 25, 240, 30 );
 	label->setAlignment( AlignCenter );
 	label->setFont( font );
+	label->show();
+
+	if( !pmap.isNull() )
+	{
+		QWidget *image = new QWidget( frame );
+		image->setGeometry( 7, 7, 110, 85 );
+		image->setBackgroundPixmap( pmap );
+		label->setGeometry( 120, 25, 240, 30 );
+	}
+	else
+		label->setGeometry( 30, 35, 240, 30 );
 
         frame->setGeometry( x, y, w, h );	
-
 	frame->raise();
 }          
 
@@ -154,7 +169,9 @@ KPrepareDlg::~KPrepareDlg()
 
 void KPrepareDlg::show()
 {
+	frame->raise();
 	frame->show();
+	kapp->processEvents();
 }
 
 void KPrepareDlg::hide()
@@ -167,6 +184,7 @@ void KPrepareDlg::setText( const char *msg = 0 )
 	if( msg != 0 )
 	{
 		label->setText( msg );	
+		kapp->processEvents();
 	}
 }
 
@@ -193,47 +211,32 @@ void KPreviewWidget::notifySaver( KScienceSaver *s = 0 )
 // Screen Saver
 //
 
-KScienceSaver::KScienceSaver( Drawable drawable, bool s = false ) : kScreenSaver( drawable )
+KScienceSaver::KScienceSaver( Drawable drawable, bool s = false, bool gP = false ) : kScreenSaver( drawable )
 {
 	xRootWin = buffer = 0;
 	dlg = 0;
 
 	moveOn = true;
-	
+	grabPixmap = gP;
 	setup = s;
 	showDialog = !setup && 	(RootWindow( qt_xdisplay(), qt_xscreen() ) != drawable) &&
                      width >= 320 && height >= 200;
+
 	if( showDialog )
 	{
 		dlg = new KPrepareDlg( QWidget::find( drawable ) );
 		myAssert( dlg != 0, "unable to create prepare dialog" );
 	}
-	grabRootWindow();
 
 	vx = vy = 0.0;
 	readSettings();
-	initLens();
 
-	signed int ws = (signed int) (width -  diam);
-	signed int hs = (signed int) (height - diam);
-
-	srand( (int) time( (time_t *) NULL ) );
-	x = (double) ( (ws > 0) ? (rand() % ws ) : 0 );
-	y = (double) ( (hs > 0) ? (rand() % hs ) : 0 );
-
-	xcoord = (int) x;
-	ycoord = (int) y;		
-
-	switch( bpp ) {
-		case 1 : applyLens = &applyLens8bpp;  break;
-		case 2 : applyLens = &applyLens16bpp; break;
-		case 3 : applyLens = &applyLens24bpp; break;
-		case 4 : applyLens = &applyLens32bpp; break;
-		default: myAssert( false, "unsupported colordepth "\
-		                   "(only 8, 16, 24, 32 bpp supported)" );
+	if( !grabPixmap )
+	{
+		grabRootWindow();
+		initialize();
+		do_refresh( QRect ( 0, 0, width, height ) );
 	}
-
-	do_refresh( QRect ( 0, 0, width, height ) );
 
 	connect( &timer, SIGNAL( timeout() ), SLOT( slotTimeout() ) );
 	timer.start( SCI_MAX_SPEED - speed[mode] );
@@ -255,6 +258,29 @@ void KScienceSaver::myAssert( bool term, char *eMsg )
 		fprintf(stderr, "Error in KScreensaver - mode Science: %s\n", eMsg);
 		releaseLens();
 		exit(-1);
+	}
+}
+
+void KScienceSaver::initialize()
+{
+	initLens();
+	signed int ws = (signed int) (width -  diam);
+	signed int hs = (signed int) (height - diam);
+
+	srand( (int) time( (time_t *) NULL ) );
+	x = (double) ( (ws > 0) ? (rand() % ws ) : 0 );
+	y = (double) ( (hs > 0) ? (rand() % hs ) : 0 );
+
+	xcoord = (int) x;
+	ycoord = (int) y;		
+
+	switch( bpp ) {
+		case 1 : applyLens = &applyLens8bpp;  break;
+		case 2 : applyLens = &applyLens16bpp; break;
+		case 3 : applyLens = &applyLens24bpp; break;
+		case 4 : applyLens = &applyLens32bpp; break;
+		default: myAssert( false, "unsupported colordepth "\
+		                   "(only 8, 16, 24, 32 bpp supported)" );
 	}
 }
 
@@ -568,6 +594,7 @@ void KScienceSaver::setGravity( bool b )
 
 	releaseLens();
 	gravity[mode] = b;
+	vy = copysign( moveY[mode], vy );
 	initLens();
 
 	timer.start( SCI_MAX_SPEED - speed[mode]);
@@ -613,6 +640,8 @@ void KScienceSaver::readSettings()
 
 void KScienceSaver::do_refresh( const QRect & rect )
 {
+	if( grabPixmap ) 
+		return;
 	rect.normalize();
 
 	if( hideBG[mode] )
@@ -634,6 +663,14 @@ void KScienceSaver::do_refresh( const QRect & rect )
 
 void KScienceSaver::slotTimeout()
 {
+	if( grabPixmap ) {
+		if( !QWidget::find(d)->isActiveWindow() )
+			return;
+		grabPreviewWidget();
+		initialize();
+		grabPixmap = false;
+	}
+
 	signed int oldx = xcoord, oldy = ycoord;
 
 	if( gravity[mode] ) {
@@ -756,8 +793,21 @@ void KScienceSaver::grabRootWindow()
 			q += dlg->bpl;
 		}
 	}
+}
 
-//printf("grabRootWindow: width = %d, height = %d, bpl = %d, bpp = %d\n", width, height, xRootWin->bytes_per_line, bpp);
+void KScienceSaver::grabPreviewWidget()
+{
+	myAssert( QWidget::find(d)->isActiveWindow(), "can't grab preview widget: dialog not active()" );
+
+	if( xRootWin )
+		XDestroyImage( xRootWin );
+
+	Display *dsp = qt_xdisplay();
+	xRootWin = XGetImage( dsp, d, 0, 0, width, height, AllPlanes, ZPixmap);
+	myAssert( xRootWin, "unable to grab preview window\n" );
+
+	imgnext = xRootWin->bytes_per_line;
+	bpp = ( xRootWin->bits_per_pixel ) >> 3;		
 }
 
 void KScienceSaver::blackPixel( int x, int y )
@@ -1013,7 +1063,11 @@ KScienceSetup::KScienceSetup(  QWidget *parent, const char *name ) :
 	// preview
 	preview = new KPreviewWidget( this );
 	preview->setFixedSize( 220, 170 );
-	preview->setBackgroundColor( black );
+	QPixmap p( PIXDIR + "kscience.gif" );
+	if( p.isNull() )
+		preview->setBackgroundColor( black );
+	else
+		preview->setBackgroundPixmap( p );
 	preview->show();	// otherwise saver does not get correct size
 	ltu->addWidget( preview );
 
@@ -1035,7 +1089,7 @@ KScienceSetup::KScienceSetup(  QWidget *parent, const char *name ) :
 	// let the preview window display before creating the saver
 	kapp->processEvents();
 
-	saver = new KScienceSaver( preview->winId(), true );
+	saver = new KScienceSaver( preview->winId(), true, !p.isNull() );
 	preview->notifySaver( saver );
 }
 
@@ -1201,9 +1255,9 @@ void KScienceSetup::slotAbout()
 {
 	QString about;
 
-	about.sprintf( "%s 0.25.9 beta\n\n%s Rene Beutler 1998\nrbeutler@g26.ethz.ch",		i18n( "Science Version"),
-		i18n( "written by" ) );
-	QMessageBox::message( i18n("About Science"), 
+	about.sprintf( "%s 0.26.3 beta\n\n%s Rene Beutler 1998\nrbeutler@g26.ethz.ch",
+	               i18n( "Science Version"),
+	               i18n( "written by" ) );	QMessageBox::message( i18n("About Science"), 
 	                      (const char *) about,
 	                      i18n("Ok") );
 }
