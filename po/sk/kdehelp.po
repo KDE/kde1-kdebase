@@ -42,9 +42,8 @@ msgid "Continue search from the top of the page?"
 msgstr "Pokraèova» v hµadaní od zaèiatku stránky?"
 
 #: helpwin.cpp:1309
-#, fuzzy
 msgid "Forward"
-msgstr "&Ïal¹ie"
+msgstr "Ïalej"
 
 #: helpwin.cpp:1330
 msgid "Open this Link"
@@ -236,9 +235,8 @@ msgid "&Up"
 msgstr "H&ore"
 
 #: mainwidget.cpp:160
-#, fuzzy
 msgid "&Previous"
-msgstr "Predchádzajúci uzol"
+msgstr "&Predchádzajúci"
 
 #: mainwidget.cpp:161
 msgid "&Next"
