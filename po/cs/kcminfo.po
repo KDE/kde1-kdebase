@@ -1,0 +1,73 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-12-28 13:35+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: memory.cpp:10
+msgid "Total memory"
+msgstr "Pamì» celkem"
+
+#: memory.cpp:18
+msgid "Free memory"
+msgstr "Volná pamì»"
+
+#: memory.cpp:26
+msgid "Shared memory"
+msgstr "Sdílená pamì»"
+
+#: memory.cpp:34
+msgid "Buffer memory"
+msgstr "Vyrovnávací pamì»"
+
+#: memory.cpp:42
+msgid "Swap memory"
+msgstr "Swapovací pamì»"
+
+#: memory.cpp:50
+msgid "Free swap memory"
+msgstr "Volná swapovací pamì»"
+
+#: memory.cpp:71
+#, c-format
+msgid "%10ld bytes  = %8.2f MB"
+msgstr "%10ld bytù  = %8.2f MB"
+
+#: memory.cpp:93 memory.cpp:94 memory.cpp:95 memory.cpp:96 memory.cpp:97
+#: memory.cpp:98
+msgid "not available"
+msgstr "není pøístupná"
+
+#: processor.cpp:29
+msgid "This system is not yet supported :-("
+msgstr "Tento systém není je¹tì podporován :-("
+
+#: processor_linux.cpp:16
+msgid "File Error!"
+msgstr "Chyba souoru!"
+
+#: processor_linux.cpp:17
+msgid "Cannot read /proc/cpuinfo"
+msgstr "Není mo¾né èíst /proc/cpuinfo"
+
+#:
+msgid "Help"
+msgstr "Nápovìda"
+
+#:
+msgid "&Memory"
+msgstr "&Pamì»"
+
+#:
+msgid "&Processor"
+msgstr "&Procesor"
