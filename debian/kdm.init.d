@@ -5,7 +5,7 @@ set -e
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 DAEMON=/usr/bin/kdm
-PIDFILE=/var/run/kdm.pid
+PIDFILE=/var/run/xdm.pid
 
 test -x $DAEMON || exit 0
 

@@ -95,7 +95,7 @@ binary-arch: checkroot build
 	cp konsole/other/linux*.pcf.gz debian/tmp/usr/X11R6/lib/X11/fonts/misc
 	dh_movefiles
 	install -d debian/kdm/var/state/kdm
-	cp debian/kde.pamd debian/tmp/etc/pam.d/kde
+#	cp debian/kde.pamd debian/tmp/etc/pam.d/kde
 	dh_installdocs
 	dh_installmenu
 	dh_installchangelogs
@@ -107,7 +107,7 @@ binary-arch: checkroot build
 	chmod 4755 debian/tmp/usr/bin/konsole_grantpty
 	chmod 4755 debian/tmp/usr/bin/kvt
 	chown root.root debian/kdm/etc/pam.d/kde
-	chown root.root debian/tmp/etc/pam.d/kde
+#	chown root.root debian/tmp/etc/pam.d/kde
 	chown root.root debian/kdm/var/state/kdm
 	dh_suidregister
 	dh_makeshlibs
