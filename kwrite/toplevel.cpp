@@ -95,11 +95,22 @@ void TopLevel::init() {
 }
 
 void TopLevel::closeEvent(QCloseEvent *e) {
-  if (queryExit()) {
-    e->accept();
-    delete this;
+  if (queryExit())
+  {
+    if (memberList->count() > 1) 
+    {
+      e->accept();
+      delete this;
+    }
+    else
+    {
+      e->accept();
+      delete this;
+      qApp->quit();
+    }
   }
 }
+
 
 bool TopLevel::queryExit() {
   int query;
