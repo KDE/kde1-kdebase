@@ -79,7 +79,7 @@ msgstr "Zentrierte Verzerrung"
 
 #: backgnd.cpp:381
 msgid "Centred Maxpect"
-msgstr "&Zentriert Maximalgröße"
+msgstr "Zentriert Maximalgröße"
 
 #: backgnd.cpp:382
 msgid "Symmetrical Tiled"
@@ -424,7 +424,7 @@ msgstr "&Windows 95-Stil"
 
 #: general.cpp:245
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr "&Menüleiste oben am Bildschirm nach MacOS Manier"
+msgstr "&Menüleiste am oberen Bildschirmrand nach MacOS Manier"
 
 #: general.cpp:259
 msgid "&Apply fonts and colors to non-KDE apps"
