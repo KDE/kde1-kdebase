@@ -1,0 +1,354 @@
+
+#: kfdird.cpp:46
+msgid "Directories:"
+msgstr "Adresáøe:"
+
+#: kfdird.cpp:167 kfdird.cpp:192 kfdird.cpp:210
+msgid "Sorry"
+msgstr "Sorry"
+
+#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
+msgid "Cannot open or read directory."
+msgstr "Nemohu otevøít nebo èíst adresáø."
+
+#: kfindtop.cpp:110
+#, c-format
+msgid ""
+"KFind %s\n"
+"Frontend to find utility\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>"
+msgstr ""
+"KFind %s\n"
+"Frontend to find utility\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>"
+
+#: kfindtop.cpp:123
+msgid "&File"
+msgstr "&Soubor"
+
+#: kfindtop.cpp:124
+msgid "&Edit"
+msgstr "Úp&ravy"
+
+#: kfindtop.cpp:125
+msgid "&Options"
+msgstr "&Mo¾nosti"
+
+#: kfindtop.cpp:127
+msgid "&Help"
+msgstr "Nápo&vìda"
+
+#: kfindtop.cpp:132 kfindtop.cpp:216
+msgid "Add to archive"
+msgstr "Pøidat do archivu"
+
+#: kfindtop.cpp:135 kfindtop.cpp:221
+msgid "Delete"
+msgstr "Od&stranit"
+
+#: kfindtop.cpp:137 kfindtop.cpp:226
+msgid "Properties"
+msgstr "&Vlastnosti"
+
+#: kfindtop.cpp:140 kfindtop.cpp:231
+msgid "Open Containing Folder"
+msgstr "Otevøít o&dpovídající adresáø"
+
+#: kfindtop.cpp:143
+msgid "Save Search"
+msgstr "&Ulo¾it výsledky"
+
+#: kfindtop.cpp:152
+msgid "Undo"
+msgstr "&Zpìt"
+
+#: kfindtop.cpp:155
+msgid "Cut"
+msgstr "&Vyjmout"
+
+#: kfindtop.cpp:157
+msgid "Copy"
+msgstr "&Kopírovat"
+
+#: kfindtop.cpp:160
+msgid "Select All"
+msgstr "Vybr&at v¹e"
+
+#: kfindtop.cpp:162
+msgid "Invert Selection"
+msgstr "&Invertovat výbìr"
+
+#: kfindtop.cpp:173
+msgid "Preferences ..."
+msgstr "&Preference..."
+
+#: kfindtop.cpp:177
+msgid "Kfind help"
+msgstr "Nápovìda kfindu"
+
+#: kfindtop.cpp:193
+msgid "Start Search"
+msgstr "Spustit hledání"
+
+#: kfindtop.cpp:198
+msgid "New Search"
+msgstr "Nové hledání"
+
+#: kfindtop.cpp:203
+msgid "Stop Search"
+msgstr "Zastavit hledání"
+
+#: kfindtop.cpp:236
+msgid "Save Search Results"
+msgstr "Ulo¾it výsledky"
+
+#: kfoptions.cpp:54
+msgid "Preferences"
+msgstr "Preference"
+
+#: kfoptions.cpp:70
+msgid "File format:"
+msgstr "Datový formát"
+
+#: kfoptions.cpp:72
+msgid "Save results to file:"
+msgstr "Ulo¾it výsledky do:"
+
+#: kfoptions.cpp:75
+msgid "Save results to file ~/.kfind-results.html"
+msgstr "o¾it výsledky do ~/.kfind-results.html"
+
+#: kfoptions.cpp:77
+msgid "Browse"
+msgstr "Listovat"
+
+#: kfoptions.cpp:90
+msgid "Plain Text"
+msgstr "Text"
+
+#: kfoptions.cpp:119
+msgid "Saving"
+msgstr "Ukládání"
+
+#: kfoptions.cpp:125
+msgid "Type Description:"
+msgstr "Popis typu:"
+
+#: kfoptions.cpp:126
+msgid "Icon:"
+msgstr "Ikona:"
+
+#: kfoptions.cpp:127 kfoptions.cpp:193
+msgid "Patterns:"
+msgstr "Filter"
+
+#: kfoptions.cpp:128
+msgid "Default Application:"
+msgstr "Implicitní aplikace:"
+
+#: kfoptions.cpp:134 kfoptions.cpp:196
+msgid "Add New"
+msgstr "Pøidej nový"
+
+#: kfoptions.cpp:135 kfoptions.cpp:197
+msgid "Remove"
+msgstr "Odstraò"
+
+#: kfoptions.cpp:181
+msgid "Filetypes"
+msgstr "Datové typy"
+
+#: kfoptions.cpp:187
+msgid "Create Archive:"
+msgstr "Vytvoøení archivu:"
+
+#: kfoptions.cpp:189
+msgid "Add to Archive:"
+msgstr "Pøidání do archivu"
+
+#: kfoptions.cpp:235
+msgid "Archivers"
+msgstr "Pakovaèe"
+
+#: kftabdlg.cpp:47
+msgid "&Named:"
+msgstr "Náz&ev"
+
+#: kftabdlg.cpp:49
+msgid "&Look in:"
+msgstr "&Kde hledat:"
+
+#: kftabdlg.cpp:52
+msgid "&Browse ..."
+msgstr "&Listuj..."
+
+#: kftabdlg.cpp:64
+msgid "Include &subfolders"
+msgstr "Vèe&tnì vnoøených adresáøù"
+
+#: kftabdlg.cpp:94
+msgid " Name&Location "
+msgstr "Název a umístìní"
+
+#: kftabdlg.cpp:106
+msgid "and"
+msgstr "a"
+
+#: kftabdlg.cpp:107
+msgid "month(s)"
+msgstr "mìsícù"
+
+#: kftabdlg.cpp:108
+msgid "day(s)"
+msgstr "dnù"
+
+#: kftabdlg.cpp:114
+msgid "&All files"
+msgstr "V¹echny so&ubory"
+
+#: kftabdlg.cpp:115
+msgid "Find all files created or &modified:"
+msgstr "Najít soubo&ry vytvoøené nebo zmìnìné:"
+
+#: kftabdlg.cpp:116
+msgid "&between"
+msgstr "m&ezi"
+
+#: kftabdlg.cpp:117
+msgid "during the previou&s "
+msgstr "bìhem posle&dních"
+
+#: kftabdlg.cpp:118
+msgid "&during the previous "
+msgstr "bìhem poslední&ch"
+
+#: kftabdlg.cpp:166
+msgid " Date Modified "
+msgstr "Poslední zmìna"
+
+#: kftabdlg.cpp:171
+msgid "Of &type:"
+msgstr "&Typ:"
+
+#: kftabdlg.cpp:173
+msgid "&Containing Text:"
+msgstr "Obsahuje te&xt:"
+
+#: kftabdlg.cpp:175
+msgid "&Size is:"
+msgstr "Veli&kost:"
+
+#: kftabdlg.cpp:198
+msgid "All Files and Folders"
+msgstr "V¹echny soubory a adresáøe"
+
+#: kftabdlg.cpp:205
+msgid "(none)"
+msgstr "(¾ádná)"
+
+#: kftabdlg.cpp:206
+msgid "At Least"
+msgstr "pøinejmen¹ím"
+
+#: kftabdlg.cpp:207
+msgid "At Most"
+msgstr "nejvíce"
+
+#: kftabdlg.cpp:214
+msgid " Advanced "
+msgstr "Upøesnit"
+
+#: kftabdlg.cpp:377
+msgid "The date is not valid!!"
+msgstr "Toto datum neexistuje!"
+
+#: kftabdlg.cpp:389
+msgid "The month(s) value isn't valid!!"
+msgstr "Tento mìsíc neexistuje!"
+
+#: kftabdlg.cpp:400
+msgid "The day(s) value isn't valid!!"
+msgstr "Tento den neexistuje!"
+
+#: kftabdlg.cpp:417
+msgid "The value in size isn't valid number!!"
+msgstr "Hodnota velikosti není platné èíslo!"
+
+#: kfwin.cpp:99
+#, c-format
+msgid "%d file(s) found"
+msgstr "Nalezeno %d souborù"
+
+#: kfwin.cpp:136
+msgid "It wasn't possible to save results!"
+msgstr "Nebylo mo¾né ulo¾it výsledky!"
+
+#: kfwin.cpp:146 kfwin.cpp:148 kfwin.cpp:150
+msgid "KFind Results File"
+msgstr "Soubor výsledkù hledání"
+
+#: kfwin.cpp:174
+msgid "Results were saved to file\n"
+msgstr "Výsledky byly ulo¾eny do souboru\n"
+
+#: kfwin.cpp:189
+#, c-format
+msgid ""
+"Do you really want to delete file:\n"
+"%s"
+msgstr ""
+"Opravdu si pøejete zru¹it soubor:\n"
+"%s"
+#: kfwin.cpp:191
+msgid "Delete File"
+msgstr "Zru¹it soubor"
+
+#: kfwin.cpp:205
+msgid ""
+"You have no permission\n"
+" to delete this file"
+msgstr ""
+" Nemáte pøístupová práva\n"
+"ke zru¹ení tohoto souboru"
+
+#: kfwin.cpp:212
+msgid ""
+"It isn't possible to delete\n"
+"selected file"
+msgstr ""
+"Není mo¾né zru¹it\n"
+" vybraný soubor"
+
+#: kfwin.cpp:234
+msgid ""
+"You have no permission\n"
+" to delete this directory"
+msgstr ""
+" Nemáte pøístupová práva\n"
+"ke zru¹ení tohoto adresáøe"
+
+#: kfwin.cpp:241
+msgid ""
+"Specified directory\n"
+"is not empty!"
+msgstr ""
+"Specifikovaný adresáø\n"
+"   není prázdný!"
+
+#: kfwin.cpp:247
+msgid ""
+"It isn't possible to delete\n"
+"selected directory"
+msgstr ""
+"Není mo¾né zru¹it\n"
+" vybraný adresáø"
+
+
+#: kfwin.cpp:340
+msgid "Couldn't recognize archive type!"
+msgstr "Nemohu urèit typ archivu!"
+
+#: kfwin.cpp:401
+msgid "Error while creating child process!"
+msgstr "Chyba pøi vytváøení procesu!"
+
