@@ -181,7 +181,6 @@ AC_OUTPUT(Makefile \
 	doc/kvt/Makefile \
 	doc/kmenuedit/Makefile \
 	doc/kcontrol/Makefile \
- 	doc/kcontrol/kdisplay/Makefile \
 	doc/kcontrol/input/Makefile \
 	doc/kcontrol/bell/Makefile \
 	doc/kcontrol/kwm/Makefile \
