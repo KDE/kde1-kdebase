@@ -31,7 +31,7 @@ patchlevel 7:
             kwmrc file.
 
         - cleanups and performance improvements for horziontal shading 
-           and titlebar animation
+           and titlebar animation 
 
 patchlevel 6:
         - horizontal shading (blending) a la kpixmap

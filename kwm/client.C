@@ -1398,12 +1398,36 @@ void Client::setactive(bool on){
 // animation.
 void Client::paintState(bool only_label, bool colors_have_changed){
   QRect r = title_rect;
+  bool double_buffering = false;
+  QPixmap* buffer = 0;
 
   if (r.width() <= 0 || r.height() <= 0 
       || getDecoration()!=KWM::normalDecoration)
     return;
   int x;
 
+
+  TITLEBAR_LOOK look = options.TitlebarLook;
+
+  if (look == SHADED){
+    // the new horizontal shading code
+    if (colors_have_changed){
+      aShadepm.resize(0,0);
+      iaShadepm.resize(0,0);
+    }
+
+    // the user selected shading. Do a plain titlebar anyway if the
+    // shading would be senseless (higher performance and less memory
+    // consumption)
+    if (is_active){
+      if ( myapp->activeTitleColor ==  myapp->activeTitleBlend)
+	look = PLAIN;
+    }
+    else {
+      if ( myapp->inactiveTitleColor ==  myapp->inactiveTitleBlend)
+	look = PLAIN;
+    }
+  }
 
   // the following is the old/handmade vertical shading code
 
@@ -1446,23 +1470,35 @@ void Client::paintState(bool only_label, bool colors_have_changed){
 //     }
 //   }
     
-  if (only_label){
-    titlestring_offset += titlestring_offset_delta;
-    if (titlestring_offset_delta > 0)
-      bitBlt(this, 
-	     r.x()+titlestring_offset_delta, r.y(), 
-	     this, 
-	     r.x(), r.y(), 
-	     r.width()-titlestring_offset_delta, r.height());
-    else
-      bitBlt(this, 
-	     r.x(), r.y(), 
-	     this, 
-	     r.x()-titlestring_offset_delta, r.y(), 
-	     r.width()+titlestring_offset_delta, r.height());
-  }
   QPainter p;
-  p.begin( this );
+
+  if (only_label){
+    double_buffering = (look == SHADED || look == PIXMAP);
+    titlestring_offset += titlestring_offset_delta;
+    if (!double_buffering){
+      if (titlestring_offset_delta > 0)
+	bitBlt(this, 
+	       r.x()+titlestring_offset_delta, r.y(), 
+	       this, 
+	       r.x(), r.y(), 
+	       r.width()-titlestring_offset_delta, r.height());
+      else
+	bitBlt(this, 
+	       r.x(), r.y(), 
+	       this, 
+	       r.x()-titlestring_offset_delta, r.y(), 
+	       r.width()+titlestring_offset_delta, r.height());
+    }
+  }
+  
+  if (!double_buffering)
+    p.begin( this );
+  else {
+    // enable double buffering to avoid flickering with horizontal shading
+    buffer = new QPixmap(r.width(), r.height());
+    p.begin(buffer);
+    r.setRect(0,0,r.width(),r.height());
+  }
     
   QPixmap *pm;
   p.setClipRect(r);
@@ -1476,41 +1512,12 @@ void Client::paintState(bool only_label, bool colors_have_changed){
 //       pm = is_active ? shaded_pm_active : shaded_pm_inactive;
 //     else
 
-  TITLEBAR_LOOK look = options.TitlebarLook;
-
-  if (look == SHADED){
-    // the new horizontal shading code
-    if (colors_have_changed){
-      aShadepm.resize(0,0);
-      iaShadepm.resize(0,0);
-    }
-
-    // the user selected shading. Do a plain titlebar anyway if the
-    // shading would be senseless (higher performance and less memory
-    // consumption)
-    if (is_active){
-      if ( myapp->activeTitleColor ==  myapp->activeTitleBlend)
-	look = PLAIN;
-    }
-    else {
-      if ( myapp->inactiveTitleColor ==  myapp->inactiveTitleBlend)
-	look = PLAIN;
-    }
-  }
 
 
   if (look == PIXMAP){
       pm = is_active ? options.titlebarPixmapActive: options.titlebarPixmapInactive;    
-    if (only_label){
-      x = r.x()-(pm->width()-10);
-      p.drawPixmap(x, r.y(), *pm);
-      x = r.x() + r.width() - 10;
-      p.drawPixmap(x, r.y(), *pm);
-    }
-    else {
       for (x = r.x(); x < r.x() + r.width(); x+=pm->width())
 	p.drawPixmap(x, r.y(), *pm);
-    }
   }
   else if (look == SHADED){
     // the new horizontal shading code
@@ -1530,20 +1537,11 @@ void Client::paintState(bool only_label, bool colors_have_changed){
       pm = &iaShadepm;
     }
 
-    if (only_label){
-	p.drawPixmap(r.x(), r.y(), *pm , 
-		     0, 0, TITLE_ANIMATION_STEP+1, r.height());
-	p.drawPixmap(r.x()+r.width()-TITLE_ANIMATION_STEP-1, r.y(), *pm, 
-		     r.width()-TITLE_ANIMATION_STEP-1, 0, 
-		     TITLE_ANIMATION_STEP+1, r.height());
-    }
-    else {
-      p.drawPixmap( r.x(), r.y(), *pm ); 
-    }
+    p.drawPixmap( r.x(), r.y(), *pm ); 
   }
   else { // TitlebarLook == TITLEBAR_PLAIN
     p.setBackgroundColor( is_active ? myapp->activeTitleColor : myapp->inactiveTitleColor);
-    if (only_label){
+    if (only_label && !double_buffering){
        p.eraseRect(QRect(r.x(), r.y(), TITLE_ANIMATION_STEP+1, r.height()));
        p.eraseRect(QRect(r.x()+r.width()-TITLE_ANIMATION_STEP-1, r.y(), 
  			TITLE_ANIMATION_STEP+1, r.height()));
@@ -1590,6 +1588,12 @@ void Client::paintState(bool only_label, bool colors_have_changed){
     p.setClipping(False);
   }
   p.end();
+  if (double_buffering){
+    p.begin(this);
+    p.drawPixmap( title_rect.x(), title_rect.y(), *buffer ); 
+    p.end();
+    delete buffer;
+  }
 }
 
 
