@@ -191,23 +191,22 @@ static long from_oct(int, char *);
 
 typedef struct asc_type {
 	char *type;
-	int  tclass;
 	int  kwords;
 	double  weight;
 } asc_type;
 
 static asc_type types[] = {
-	{ "text/html",         L_HTML, 10, 1.2 },
-	{ "text/x-c",          L_C,     9, 1.3 },
-	{ "text/x-makefile",   L_MAKE,  4, 1.9 },
-	{ "text/x-pli",        L_PLI,   1, 3 },
-	{ "text/x-assembler",  L_MACH,  6, 2.1 },
-	{ "text/english",      L_ENG,   2, 0.2 },
-	{ "text/x-pascal",     L_PAS,   1, 1 },
-	{ "text/x-java",       L_JAVA, 14, 1 },
-	{ "text/x-c++",        L_CPP,  14, 1 },
-	{ "message/rfc822",    L_MAIL,  4, 1.9 },
-	{ "message/news",      L_NEWS,  3, 2 }
+	{ "text/html",         10, 1.2 },
+	{ "text/x-c",           9, 1.3 },
+	{ "text/x-makefile",    4, 1.9 },
+	{ "text/x-pli",         1, 3 },
+	{ "text/x-assembler",   6, 2.1 },
+	{ "text/english",       2, 0.2 },
+	{ "text/x-pascal",      1, 1 },
+	{ "text/x-java",       14, 1 },
+	{ "text/x-c++",        14, 1 },
+	{ "message/rfc822",     4, 1.9 },
+	{ "message/news",       3, 2 }
 };
 
 #define NTYPES (sizeof(types)/sizeof(asc_type))
@@ -1698,7 +1697,7 @@ KMimeMagic::ascmagic(unsigned char *buf, int nbytes)
 	int i;
 	double pct, maxpct, pctsum;
 	double pcts[NTYPES];
-	int mostaccurate, allmatches, setcount, tokencount;
+	int mostaccurate, tokencount;
 	int typeset, jonly, conly, jconly, cppcomm, ccomm;
 	int has_escapes = 0;
 	unsigned char *s;
@@ -1755,9 +1754,6 @@ KMimeMagic::ascmagic(unsigned char *buf, int nbytes)
 		for (p = names; p->name ; p++) {
 			if (STREQ(p->name, token)) {
 			        tokencount++;
-#if MIME_MAGIC_DEBUG
-//				printf("Match '%s'\n", p->name);
-#endif
 				typeset |= p->type;
 				if (p->type == L_JAVA)
 					jonly++;
@@ -1815,16 +1811,14 @@ KMimeMagic::ascmagic(unsigned char *buf, int nbytes)
 	 * Simply take the token-class with the highest
 	 * matchcount > 0
 	 */
-	mostaccurate = allmatches = setcount = 0;
+	mostaccurate = -1;
 	maxpct = pctsum = 0.0;
 	for (i = 0; i < (int)NTYPES; i++) {
-		allmatches += typecount[i];
-		  setcount++;
-		  pct = (double)typecount[i] / (double)types[i].kwords *
+	 	pct = (double)typecount[i] / (double)types[i].kwords *
 		    (double)types[i].weight;
-		  pcts[i] = pct;
-		  pctsum += pct;
-		  if (pct > maxpct) {
+		pcts[i] = pct;
+		pctsum += pct;
+		if (pct > maxpct) {
 		    maxpct = pct;
 		    mostaccurate = i;
 		  }
@@ -1834,13 +1828,6 @@ KMimeMagic::ascmagic(unsigned char *buf, int nbytes)
 			 pct, maxpct);
 #endif
 	}
-	/*
-	 * Now we have:
-	 *  allmatches  = Number of keywords found
-	 *  setcount    = Number of different keyword-classes found
-	 *  mostmatches = The keyword-class with most matches
-	 */
-
 	if (mostaccurate >= 0.0) {
 		accuracy = (int)(pcts[mostaccurate] / pctsum * 60);
 		resultBuf += QString(types[mostaccurate].type);
