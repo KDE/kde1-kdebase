@@ -3,6 +3,7 @@
 //
 // Copyright (C) 1996 Matthias Ettrich
 //
+// (C) 1999 Leon Widdershoven
 
 #ifndef MAIN_H
 #define MAIN_H

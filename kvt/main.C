@@ -4,6 +4,8 @@
 //
 // Copyright (C) 1996 Matthias Ettrich
 //
+// (C) 1999 Leon Widdershoven
+//
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
