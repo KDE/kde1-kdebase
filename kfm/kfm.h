@@ -37,6 +37,17 @@ public:
      */
   static bool isTreeViewFollowMode() {return bTreeViewFollowMode;}
   static void setTreeViewFollowMode(bool flag) { bTreeViewFollowMode = flag;}
+  
+  /**
+   * This function checks if destination is global mime/apps path and
+   * if so, makes a local variant of it. It vreates all needed
+   * directories and .directory files. It modifies dest so it can be
+   * used with kojob or any other functions. If user has
+   * access to given path nothing is done.
+   * This function is here to reduce duplication of code. It is
+   * verbatim copy of code from kfmview's slotDropEvent.
+   */
+  static void setUpDest (QString *dest);
 
 public slots:
   void slotSave();

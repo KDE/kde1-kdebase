@@ -188,6 +188,156 @@ void Kfm::addToHistory( const char *_url )
   pHistory->append( _url );
 }
 
+void Kfm::setUpDest (QString *url)
+{
+  // This function checks if destination is global mime/apps path and
+  //  if so, makes a local variant of it. It vreates all needed
+  // directories and .directory files. It modifies dest so it can be
+  // used with kojob or any other functions. If user is root and/or has
+  // access to given path nothing is done.
+  // This function is here to reduce duplication of code. It is
+  // verbatim copy of code from kfmview's slotDropEvent.
+
+  //-------- Sven's write to pseudo global mime/app dirs start ---
+
+  // Consider the following case:
+  // User opened mime/apps dir and has not any local items =>
+  // displayed are global items or global dirs with items.
+  // Now he clicks on dir Images/. Global Images/ dir openes. Now
+  // user wants to drag some new item  he got from friend to this
+  // dir; He can't; this is a global directory. He is frustrated.
+
+  // Fix: If url contains global mime/apps path, repair it to
+  // point to local variant; create all needed dirs too.
+  // before you use: think twice; check if user is a root - it is not
+  // checked here;
+  // If user is not root but can somehow write to globals
+  // (whole KDE installed in his home dir), also do nothing.
+
+  // Most of code is from kfmprops.cpp (= tested good).
+
+#define GLOBALMIME kapp->kde_mimedir().data()
+#define LOCALMIME (kapp->localkdedir() + "/share/mimelnk").data()
+
+#define GLOBALAPPS kapp->kde_appsdir().data()
+#define LOCALAPPS (kapp->localkdedir() + "/share/applnk").data()
+
+  
+  QString tryPath;
+  tryPath = url->data(); // copy (hope deep)
+  bool specialCase = false;
+  bool err;
+
+  // Some users CAN write to GLOBAL*.
+  if (tryPath.contains(GLOBALMIME) && // if global mime..
+      access (GLOBALMIME, W_OK) != 0) // ..and canot write
+  {
+    tryPath.remove(5, strlen(GLOBALMIME));
+    tryPath.insert(5, LOCALMIME);
+    specialCase = true;
+  }
+  else  if (tryPath.contains(GLOBALAPPS) && // if global apps..
+	    access (GLOBALAPPS, W_OK) != 0) // ..and canot write
+  {
+    tryPath.remove(5, strlen(GLOBALAPPS));
+    tryPath.insert(5, LOCALAPPS);
+    specialCase = true;
+  }
+  // Ok repaired. Now we have to check/create nedded dir(s)
+
+  if (specialCase)
+  {
+    QString path = &(url->data())[5];
+    QDir lDir;
+    // debug ("********SPECIAL CASE");
+    if (path.find(kapp->kde_appsdir()) == 0) // kde_appsdir on start of path
+    {
+      path.remove(0, strlen(kapp->kde_appsdir())); //remove kde_appsdir
+      lDir.setPath(LOCALAPPS);
+    }
+    else if (path.find(kapp->kde_mimedir()) == 0) // kde_mimedir on start of path
+    {
+      path.remove(0, strlen(kapp->kde_mimedir())); //remove kde_appsdir
+      lDir.setPath(LOCALMIME);
+    }
+    else
+    {
+      debug ("HEEELP");
+      return;
+    }
+
+    if (path[0] == '/')
+      path.remove(0, 1); // remove /
+    bool err;
+    while (path.contains('/'))
+    {
+      int i = path.find('/'); // find separator
+      if (!lDir.cd(path.left(i)))  // exists?
+      {
+	lDir.mkdir((path.left(i)));  // no, create
+	if (!lDir.cd((path.left(i)))) // can cd to?
+	{
+	  err = true;                 // no flag it...
+	  // debug ("Can't cd to  %s in %s", path.left(i).data(),
+	  //	 lDir.absPath().data());
+	  break;                      // and exit while
+	}
+	// Begin copy .directory if exists here.
+	// This block can be commented out without problems
+	// in case of problems.
+	{
+	  QFile tmp(kapp->kde_appsdir() +
+		    "/" + path.left(i) + "/.directory");
+	  //debug ("---- looking for: %s", tmp.name());
+	  if (tmp.open( IO_ReadOnly))
+	  {
+	    //debug ("--- opened RO");
+	    char *buff = new char[tmp.size()+10];
+	    if (buff != 0)
+	    {
+	      if (tmp.readBlock(buff, tmp.size()) != -1)
+	      {
+		size_t tmpsize = tmp.size();
+		//debug ("--- read");
+		tmp.close();
+		tmp.setName(lDir.absPath() + "/.directory");
+		//debug ("---- copying to: %s", tmp.name());
+		if (tmp.open(IO_ReadWrite))
+		{
+		  //debug ("--- opened RW");
+		  if (tmp.writeBlock(buff, tmpsize) != -1)
+		  {
+		    //debug ("--- wrote");
+		    tmp.close();
+		  }
+		  else
+		  {
+		    //debug ("--- removed");
+		    tmp.remove();
+		  }
+		}                 // endif can open to write
+	      }                   // endif can read
+	      else     //coulnd't read
+		tmp.close();
+
+	      delete[] buff;
+	    }                     // endif is alocated
+	  }                       // can open to write
+	}
+	// End coping .directory file
+
+      }
+      path.remove (0, i);           // cded to;
+      if (path[0] == '/')
+	path.remove(0, 1); // remove / from path
+    }
+
+    // if it fails, kfmman will let us know
+    url->setStr(tryPath.data());
+  }                            // end if special case
+  //-------- Sven's write to pseudo global mime/app dirs end ---
+}
+
 bool Kfm::saveHTMLHistory( const char *_filename )
 {
   FILE *f = fopen( _filename, "w" );
