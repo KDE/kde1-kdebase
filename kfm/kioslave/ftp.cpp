@@ -116,7 +116,7 @@ int KProtocolFTP::readresp(char c)
  *
  * return 1 if connected, 0 if not
  */
-int KProtocolFTP::ftpOpen(const char *host)
+int KProtocolFTP::ftpOpen(const char *host, unsigned short int port)
 {
     struct sockaddr_in sin;
     struct hostent *phe;
@@ -127,12 +127,17 @@ int KProtocolFTP::ftpOpen(const char *host)
     memset(&sin,0,sizeof(sin));
     sin.sin_family = AF_INET;
 
-    if ((pse = getservbyname("ftp","tcp")) == NULL)
+    if (port)
+      sin.sin_port = htons(port);
+    else
     {
+      if ((pse = getservbyname("ftp","tcp")) == NULL)
+      {
 		perror("getservbyname");
 		return 0;
+      }
+      sin.sin_port = pse->s_port;
     }
-    sin.sin_port = pse->s_port;
 
     if ((phe = gethostbyname(host)) == NULL)
     {
@@ -622,7 +627,7 @@ int KProtocolFTP::Connect(KURL *url)
 {
     QString user, passwd;
 
-    if (!ftpOpen(url->host()))
+    if (!ftpOpen(url->host(), url->port()))
 	return(Error(KIO_ERROR_CouldNotConnect, "Could not connect", 0));
     
     if(strlen(url->user()))
