@@ -44,6 +44,9 @@
 #else
 #include <curses.h>
 #endif
+#ifdef HAVE_SETUPTERM
+#include <term.h>
+#endif
 
 #ifdef GREEK_KBD	
 #include "grkelot.h"
@@ -297,7 +300,7 @@ int init_display(int argc,char **argv)
     char **ptr = termlist;
     int i;
     while(*ptr) {
-    	if (setupterm(*ptr, 1, &i) != ERR) {
+    	if ((setupterm(*ptr, 1, &i)) != ERR && (i == 1)) {
 	    terminal = safemalloc(strlen(*ptr)+6, "terminal");
 	    sprintf(terminal, "TERM=%s", *ptr);
 	    break;
