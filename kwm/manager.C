@@ -434,7 +434,9 @@ void Manager::propertyNotify(XPropertyEvent *e){
     getWindowTrans(c);
     if(c->trans){
       int i;
-      for (i=0; i<6; i++){
+      if (c->buttons[0] && c->buttons[0] != c->buttonMenu)
+	c->buttons[0]->hide();
+      for (i=1; i<6; i++){
 	if (c->buttons[i])
 	  c->buttons[i]->hide();
       }
@@ -672,7 +674,10 @@ void Manager::manage(Window w, bool mapped){
 
   if(c->trans || !c->isDecorated()){
     int i;
-    for (i=0; i<6; i++){
+    if (c->buttons[0] && 
+	(c->buttons[0] != c->buttonMenu || !c->isDecorated()))
+      c->buttons[0]->hide();
+    for (i=1; i<6; i++){
       if (c->buttons[i])
 	c->buttons[i]->hide();
     }

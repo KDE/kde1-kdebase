@@ -359,7 +359,7 @@ void Client::generateButtons(){
 	buttons[i]->show();
     }
     else {
-      if (buttons[i])
+      if (buttons[i] && (i>0 || buttons[i] != buttonMenu))
 	buttons[i]->hide();
     }
   }
@@ -385,57 +385,69 @@ void Client::layoutButtons(){
   
   if (!isDecorated()){
     // nothing
-  } else if(!trans){
+  } else {
     trX = BORDER;
     trY = BORDER;
     trW = width() - 2 * BORDER;
     trH = TITLEBAR_HEIGHT - TITLEWINDOW_SEPARATION;
     
-    if( buttons[0]){
+    if( buttons[0] && (!trans || buttons[0] == buttonMenu)){
       trX += BUTTON_SIZE;
       trW -= BUTTON_SIZE;
       buttons[0]->setGeometry(BORDER, 
-	BORDER + (TITLEBAR_HEIGHT - TITLEWINDOW_SEPARATION - BUTTON_SIZE)/ 2, 
+	BORDER + (TITLEBAR_HEIGHT - TITLEWINDOW_SEPARATION 
+		  - BUTTON_SIZE)/ 2, 
 	BUTTON_SIZE, BUTTON_SIZE);
     }
-    if( buttons[1] ){
-      trX += BUTTON_SIZE;
-      trW -= BUTTON_SIZE;
-      buttons[1]->setGeometry(BORDER + BUTTON_SIZE, 
-	BORDER + (TITLEBAR_HEIGHT - TITLEWINDOW_SEPARATION - BUTTON_SIZE)/ 2, 
-	BUTTON_SIZE, BUTTON_SIZE);
+    if (!trans){
+      if( buttons[1] ){
+	trX += BUTTON_SIZE;
+	trW -= BUTTON_SIZE;
+	buttons[1]->setGeometry(BORDER + BUTTON_SIZE, 
+				BORDER + (TITLEBAR_HEIGHT 
+					  - TITLEWINDOW_SEPARATION 
+					  - BUTTON_SIZE)/ 2, 
+				BUTTON_SIZE, BUTTON_SIZE);
+      }
+      if( buttons[2] ){
+	trX += BUTTON_SIZE;
+	trW -= BUTTON_SIZE;
+	buttons[2]->setGeometry(BORDER + 2*BUTTON_SIZE, 
+				BORDER + (TITLEBAR_HEIGHT 
+					  - TITLEWINDOW_SEPARATION 
+					  - BUTTON_SIZE)/ 2, 
+				BUTTON_SIZE, BUTTON_SIZE);
+      }
+      
+      if( buttons[3] ){
+	trW -= BUTTON_SIZE;
+	buttons[3]->setGeometry(trX + trW,
+				BORDER + (TITLEBAR_HEIGHT 
+					  - TITLEWINDOW_SEPARATION 
+					  - BUTTON_SIZE)/ 2, 
+				BUTTON_SIZE, BUTTON_SIZE);
+      }
+      if( buttons[4] ){
+	trW -= BUTTON_SIZE;
+	if (options.buttons[3] == CLOSE)
+	  trW -= 2;
+	buttons[4]->setGeometry(trX + trW,
+				BORDER + (TITLEBAR_HEIGHT 
+					  - TITLEWINDOW_SEPARATION 
+					  - BUTTON_SIZE)/ 2, 
+				BUTTON_SIZE, BUTTON_SIZE);
+      }
+      if( buttons[5] ){
+	trW -= BUTTON_SIZE;
+	if (!buttons[4] && options.buttons[3] == CLOSE)
+	  trW -= 2;
+	buttons[5]->setGeometry(trX + trW,
+				BORDER + (TITLEBAR_HEIGHT 
+					  - TITLEWINDOW_SEPARATION 
+					  - BUTTON_SIZE)/ 2, 
+				BUTTON_SIZE, BUTTON_SIZE);
+      }
     }
-    if( buttons[2] ){
-      trX += BUTTON_SIZE;
-      trW -= BUTTON_SIZE;
-      buttons[2]->setGeometry(BORDER + 2*BUTTON_SIZE, 
-	BORDER + (TITLEBAR_HEIGHT - TITLEWINDOW_SEPARATION - BUTTON_SIZE)/ 2, 
-	BUTTON_SIZE, BUTTON_SIZE);
-    }
-
-    if( buttons[3] ){
-      trW -= BUTTON_SIZE;
-      buttons[3]->setGeometry(trX + trW,
-	BORDER + (TITLEBAR_HEIGHT - TITLEWINDOW_SEPARATION - BUTTON_SIZE)/ 2, 
-	BUTTON_SIZE, BUTTON_SIZE);
-    }
-    if( buttons[4] ){
-      trW -= BUTTON_SIZE;
-      if (options.buttons[3] == CLOSE)
-	trW -= 2;
-      buttons[4]->setGeometry(trX + trW,
-	BORDER + (TITLEBAR_HEIGHT - TITLEWINDOW_SEPARATION - BUTTON_SIZE)/ 2, 
-	BUTTON_SIZE, BUTTON_SIZE);
-    }
-    if( buttons[5] ){
-      trW -= BUTTON_SIZE;
-      if (!buttons[4] && options.buttons[3] == CLOSE)
-	trW -= 2;
-      buttons[5]->setGeometry(trX + trW,
-	BORDER + (TITLEBAR_HEIGHT - TITLEWINDOW_SEPARATION - BUTTON_SIZE)/ 2, 
-	BUTTON_SIZE, BUTTON_SIZE);
-    }
-
     if (trX > BORDER) {
       trX += TITLEWINDOW_SEPARATION;
       trW -= TITLEWINDOW_SEPARATION;
@@ -443,15 +455,7 @@ void Client::layoutButtons(){
     if (trW < width() - trX - BORDER) {
       trW -= TITLEWINDOW_SEPARATION;
     }
-    
-
-  }  
-  else{
-    trX = BORDER;
-    trY = BORDER;
-    trW = width() - 2 * BORDER;
-    trH = TITLEBAR_HEIGHT - TITLEWINDOW_SEPARATION;
-  }
+  }   
   
   title_rect.setRect(trX,trY,trW,trH);
 }
