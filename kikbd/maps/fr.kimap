@@ -3,10 +3,13 @@
 # file by David Faure <faure@kde.org>
        
 [International Keyboard]
+Authors=David Faure <faure@kde.org>, Alexander Budnik <budnik@linserv.jinr.ru>
+
 Comment=French Keyboard
-Long Comment=Keyboard for using in French
 Comment[ru]=Французкая клавиатура
+Long Comment=Keyboard for using in French
 Long Comment[ru]=Французкая клавиатура
+
 Label=Fr
 Locale=fr
 

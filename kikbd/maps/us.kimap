@@ -5,9 +5,7 @@
 Comment=English American Keyboard
 Comment[ru]=Английская клавиатура
 Comment[pl]=Klawiatura amerykaЯska
-Long Comment=Keyboard for English American language
-Long Comment[ru]=Английская клавиатура
-Long Comment[pl]=Klawiatura amerykaЯska
+
 Label=En
 Locale=us
 

@@ -4,10 +4,13 @@
 #
 
 [International Keyboard]
+Authors=Michel Goraczko
+
 Comment=French Canadian Keyboard
 Comment[ru]=Французко-Канадская клавиатура
 Long Comment=Keyboard for using in QuИbec
 Long Comment[ru]=Французко-Канадская клавиатура
+
 Label=Cf
 Locale=cf
 

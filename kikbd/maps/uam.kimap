@@ -3,12 +3,16 @@
 #
 
 [International Keyboard]
+Authors=Denis V. Dmitrienko
+
 Comment=Ukrainian Keyboard (KOI8-U) Microsoft layout
 Comment[ru]=Украинская клавиатура (КОИ8-У) раскладка Microsoft
 Comment[pl]=Klawiatura ukraiЯska (KOI8-U) Microsoft layout
+
 Long Comment=Keyboard for Ukrainian language (KOI8-U) with Microsoft layout. Has English characters as alternate symbols.
 Long Comment[ru]=Украинская клавиатура в кодировке КОИ8-У с раскладкой Microsoft. Позволяет набирать латинские символы используя Алтернативный переключатель.
 Long Comment[pl]=Klawiatura ukraiЯska (KOI8-U) ze znakami ЁaciЯskimi jako alternatywnymi. Microsoft layout
+
 Label=Ua
 Locale=ua
 

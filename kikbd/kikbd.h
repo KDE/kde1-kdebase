@@ -40,7 +40,10 @@ class WindowList: public QListT<WindowEntry> {
  public:
   WindowList();
   ~WindowList(){}
-  bool findWindow  (Window win) {return find(&WindowEntry(win))!=-1;}
+  bool findWindow  (Window win) {
+    WindowEntry entry(win);
+    return find(&entry)!=-1;
+  }
 };
 /**
    window class list. Class name, keyboard map Id.

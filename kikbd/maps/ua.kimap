@@ -3,12 +3,16 @@
 #
 
 [International Keyboard]
+Authors=Denis V. Dmitrienko
+
 Comment=Ukrainian Keyboard (KOI8-U)
 Comment[ru]=Украинская клавиатура (КОИ8-У)
 Comment[pl]=Klawiatura ukraiЯska (KOI8-U)
+
 Long Comment=Keyboard for Ukrainian language (KOI8-U). Has English characters as alternate symbols.
 Long Comment[ru]=Украинская клавиатура в кодировке КОИ8-У. Позволяет набирать латинские символы используя Алтернативный переключатель.
 Long Comment[pl]=Klawiatura ukraiЯska (KOI8-U) ze znakami ЁaciЯskimi jako alternatywnymi.
+
 Label=Ua
 Locale=ua
 

@@ -34,15 +34,19 @@ class KiKbdGeneralWidget: public KConfigWidget {
   void addMap();
   void upMap();
   void downMap();
+  void infoMap();
   void deleteMap();
   void highlighted(int, int){chkActivate();}
+  void selected(int, int){infoMap();}
   void advanced();
   void setLongComment(int);
   void newSwitch(const char*);
+  QString mapInfo(const char*) const;
  signals:
   void activateDelete(bool);
   void activateUp(bool);
   void activateDown(bool);
+  void activateInfo(bool);
   void activateHot(bool);
   void setLongComment(const char*);
 };

@@ -4,12 +4,16 @@
 #
 
 [International Keyboard]
+Authors=Alexander Budnik <budnik@linserv.jinr.ru>, Denis V. Dmitrienko
+
 Comment=Russian Keyboard (KOI8)
 Comment[ru]=Русская клавиатура (КОИ8)
 Comment[pl]=Klawiatura rosyjska
+
 Long Comment=Keyboard for Russian language (KOI8). Has English characters as alternate symbols.
 Long Comment[ru]=Русская клавиатура в кодировке КОИ8. Позволяет набирать латинские символы используя Алтернативный переключатель.
 Long Comment[pl]=Klawiatura rosyjska ze znakami ЁaciЯskimi jako alternatywnymi.
+
 Label=Ru
 Locale=ru
 

@@ -4,12 +4,16 @@
 #
 
 [International Keyboard]
+Authors=Alexander Budnik <budnik@linserv.jinr.ru>, Denis V. Dmitrienko
+
 Comment=Russian Keyboard (cp1251)
 Comment[ru]=Русская клавиатура (cp1251)
 Comment[pl]=Klawiatura rosyjska (cp1251)
+
 Long Comment=Keyboard for Russian language (windows code page 1251). Has English characters as alternate symbols.
 Long Comment[ru]=Русская клавиатура в кодировке MS Windows (cp1251). Позволяет набирать латинские символы используя Алтернативный переключатель.
 Long Comment[pl]=Klawiatura rosyjska (cp1251) ze znakami ЁaciЯskimi jako alternatywnymi
+
 Label=RW
 Locale=ru
 

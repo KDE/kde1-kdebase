@@ -392,8 +392,9 @@ void KiKbdApplication::loadConfig()
 	  /**
 	     set window class Id
 	  */
-	  if(classList.find(&WindowClassEntry(cl.at(0))))
-	    classList.append(new WindowClassEntry(cl.at(0)));
+	  WindowClassEntry *entry = new WindowClassEntry(cl.at(0));
+	  if(classList.find(entry)) classList.append(entry);
+	  else delete entry;
 	  classList.current()->map = j;
 	  for(j=0; j<keyMaps.count(); j++) {
 	    if(cl.at(2) == keyMaps.at(j)->getName()) {
@@ -755,7 +756,8 @@ void KiKbdApplication::selectWindowInput(Window win)
   /**
      init class list
   */
-  if(classList.find(&WindowClassEntry(wclass)) == -1)
+  WindowClassEntry entry(wclass);
+  if(classList.find(&entry) == -1)
     classList.append(new WindowClassEntry(wclass));
   /**
      insert window into window list with class Id

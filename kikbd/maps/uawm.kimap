@@ -3,11 +3,15 @@
 #
 
 [International Keyboard]
+Authors=Denis V. Dmitrienko
+
 Comment=Ukrainian Keyboard (cp1251) Microsoft layout
 Comment[ru]=Украинская клавиатура (cp1251) раскладка Microsoft
 Comment[pl]=Klawiatura ukraiЯska (cp1251) Microsoft layout
+
 Long Comment=Keyboard for Ukrainian language (windows code page 1251) with Microsoft layout. Has English characters as alternate symbols.
 Long Comment[ru]=Украинская клавиатура в кодировке MS Windows (cp1251) с раскладкой Microsoft. Позволяет набирать латинские символы используя Алтернативные переключатель.
+
 Label=UW
 Locale=ua
 

@@ -1,13 +1,17 @@
 # KDE Config File
+
 [International Keyboard]
 Comment=Czech Typewriter Keyboard (QWERTY)
 Comment[cs]=хeskА klАvesnice psacМho stroje (QWERTY)
 Comment[ru]=Чешская клавиатура (QWERTY)
+
 Long Comment=Czech Typewriter Keyboard (QWERTY)
 Long Comment[cs]=хeskА klАvesnice psacМho stroje (QWERTY)
 Long Comment[ru]=Чешская клавиатура (QWERTY)
+
 Label=Csy
 Locale=cs
+
 [KeyboardMap]
 CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m
 keysym0=1,plus,1,exclam,,

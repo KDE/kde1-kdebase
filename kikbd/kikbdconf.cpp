@@ -27,6 +27,7 @@ static const char* confStringLabel      = "Label";
 static const char* confStringComment    = "Comment";
 static const char* confStringLongComment= "Long Comment";
 static const char* confStringLocale     = "Locale";
+static const char* confStringAuthors    = "Authors";
 static const char* confStringCaps       = "CapsSymbols";
 static const char* confStringCapsColor  = "CapsLockColor";
 static const char* confStringAltColor   = "AltColor";
@@ -146,7 +147,7 @@ QStrList KiKbdConfig::availableMaps()
 	{
 	  QString name = entry.at(j);
 	  name.resize(name.find(".")+1);
-	  list.inSort(name);
+	  if(list.find(name) == -1) list.inSort(name);
 	}
     }
   return list;
@@ -195,6 +196,7 @@ KiKbdMapConfig::KiKbdMapConfig(const char* nm):name(nm)
   config.registerString(confStringComment, comment);
   config.registerString(confStringLongComment, longcomment);
   config.registerString(confStringLocale, locale);
+  config.registerString(confStringAuthors, authors);
   config.setGroup(confMapsGroup);
   QStrList symList, codeList;
   config.registerObject(new KConfigMatchKeysObject(QRegExp("^keysym[0-9]+$"),
@@ -202,7 +204,16 @@ KiKbdMapConfig::KiKbdMapConfig(const char* nm):name(nm)
   config.registerObject(new KConfigMatchKeysObject(QRegExp("^keycode[0-9]+$"),
 						   codeList));
   config.registerStrList(confStringCaps, capssyms);
+  userData = true;
+  connect(&config, SIGNAL(noUserDataFile(const char*)),
+		   SLOT(noUserDataFile(const char*)));
   config.loadConfig();
+  /*--- check information ---*/
+  if(authors.isNull()) authors = klocale->translate("Not specified");
+  if(comment.isNull()) comment = klocale->translate("No comment");
+  if(longcomment.isNull() || longcomment == "") longcomment = comment;
+  if(locale.isNull() || locale == "") locale = "C";
+  if(label.isNull() || label == "") label = locale;
   /*--- parsing ---*/
   keysyms.setAutoDelete(TRUE);
   keycodes.setAutoDelete(TRUE);
@@ -226,11 +237,11 @@ KiKbdMapConfig::KiKbdMapConfig(const char* nm):name(nm)
 const QString KiKbdMapConfig::getGoodLabel() const
 {
   QString item(128);
-  if (comment.isNull() || label.isNull())
-   item = "default";
-  else
-   item.sprintf("%s (%s %s)", (const char*)comment,
+  item.sprintf("%s (%s %s)", (const char*)comment,
                klocale->translate("Label"),
                (const char*)label);
+  if(userData) {
+    item += klocale->translate("(User)");
+  }
   return item;
 }

@@ -9,6 +9,7 @@
 #include <qdir.h>
 #include <qcombo.h>
 #include <qtooltip.h>
+#include <qcolor.h>
 
 #include <kiconloader.h>
 #include <kmsgbox.h>
@@ -82,15 +83,19 @@ KiKbdGeneralWidget::KiKbdGeneralWidget(QWidget* parent, const char* name)
   QPushButton *butDelete = new QPushButton(klocale->translate("Delete"), group);
   QPushButton *butUp   = new QPushButton(klocale->translate("Up"), group);
   QPushButton *butDown = new QPushButton(klocale->translate("Down"), group);
+  QPushButton *butInfo = new QPushButton(klocale->translate("Info"), group);
   butAdd->setMinimumSize(butAdd->sizeHint());
   butDelete->setMinimumSize(butDelete->sizeHint());
   butDelete->setEnabled(FALSE);
   butUp->setMinimumSize(butUp->sizeHint());
   butDown->setMinimumSize(butDown->sizeHint());
+  butInfo->setMinimumSize(butInfo->sizeHint());
+  butInfo->setEnabled(FALSE);
   vbox->addWidget(butAdd);
   vbox->addWidget(butDelete);
   vbox->addWidget(butUp);
   vbox->addWidget(butDown);
+  vbox->addWidget(butInfo);
   vbox->addStretch(5);
   QWidget *hot = kikbdConfig->hotListWidget(klocale->translate("Use \"hotlist\""), group);
   mbox->addWidget(hot);
@@ -99,6 +104,7 @@ KiKbdGeneralWidget::KiKbdGeneralWidget(QWidget* parent, const char* name)
   QToolTip::add(butDelete, klocale->translate("Remove selected keyboard map"));
   QToolTip::add(butUp, klocale->translate("Up selected keyboard map"));
   QToolTip::add(butDown, klocale->translate("Down selected keyboard map"));
+  QToolTip::add(butInfo, klocale->translate("Display information for selected keyboard map"));
   QToolTip::add(hot, klocale->translate("Use only default and last active keyboard maps to switching from keyboard"));
 
   //--- switches group
@@ -133,12 +139,16 @@ KiKbdGeneralWidget::KiKbdGeneralWidget(QWidget* parent, const char* name)
   //--- connect delete button
   connect(mapsList, SIGNAL(highlighted(int, int)), 
 	  SLOT(highlighted(int, int)));
+  connect(mapsList, SIGNAL(selected(int, int)), 
+	  SLOT(selected(int, int)));
   connect(this, SIGNAL(activateDelete(bool)), butDelete,
 	  SLOT(setEnabled(bool)));
   connect(this, SIGNAL(activateUp(bool)), butUp, SLOT(setEnabled(bool)));
   connect(butUp, SIGNAL(clicked()), SLOT(upMap()));
   connect(butDown, SIGNAL(clicked()), SLOT(downMap()));
+  connect(butInfo, SIGNAL(clicked()), SLOT(infoMap()));
   connect(this, SIGNAL(activateDown(bool)), butDown, SLOT(setEnabled(bool)));
+  connect(this, SIGNAL(activateInfo(bool)), butInfo, SLOT(setEnabled(bool)));
   connect(butDelete, SIGNAL(clicked()), SLOT(deleteMap()));
   connect(butAdv, SIGNAL(clicked()), SLOT(advanced()));
   connect(switchBox, SIGNAL(activated(const char*)), 
@@ -166,18 +176,23 @@ void KiKbdGeneralWidget::loadSettings()
 void KiKbdGeneralWidget::chkActivate()
 {
   int current = mapsList->currentItem();
-  emit activateDelete(current >= 0);
-  emit activateUp(current>0);
-  emit activateDown((unsigned)current < mapsList->count()-1);
+  bool marked = mapsList->isMarked(current);
+  emit activateDelete(current >= 0 && marked);
+  emit activateUp(current > 0 && marked);
+  emit activateDown((unsigned)current < mapsList->count()-1 && marked);
+  emit activateInfo(current >= 0 && marked);
   emit activateHot(mapsList->count() > 2);
 }
 void KiKbdGeneralWidget::addMap(const char* name)
 {
+  KiKbdMapConfig* map = kikbdConfig->getMap(name);
   mapsStr.append(name);
-  QString label = kikbdConfig->getMap(name)->getLabel();
-  QString locale = kikbdConfig->getMap(name)->getLocale();
-  QString comment = kikbdConfig->getMap(name)->getComment();
+  QString label   = map->getLabel();
+  QString locale  = map->getLocale();
+  QString comment = map->getComment();
   mapsList->insertItem(label+"\t"+locale+"\t"+comment);
+  if(map->getUserData())
+    mapsList->changeItemColor(darkBlue);
   newSwitch(switchBox->currentText());
   chkActivate();
 }
@@ -213,10 +228,70 @@ void KiKbdGeneralWidget::downMap()
   mapsList->insertItem(label, current-1);
   chkActivate();
 }
+void KiKbdGeneralWidget::infoMap()
+{
+  QDialog dialog(this, "", TRUE);
+  dialog.setCaption(klocale->translate("Layout information"));
+  QBoxLayout *topLayout = new QVBoxLayout(&dialog, 5);
+  QGroupBox  *group = new QGroupBox("", &dialog);
+  topLayout->addWidget(group, 10);
+  QBoxLayout *choise = new QVBoxLayout(group, 20);
+  QLabel *label = new QLabel(&dialog);
+  label->setAlignment(WordBreak);
+  choise->addWidget(label, 10);
+  label->setText(mapInfo(mapsStr.at(mapsList->currentItem())));
+
+  QBoxLayout *buttons = new QHBoxLayout(10);
+  topLayout->addLayout(buttons, 2);
+  QPushButton *ok = new QPushButton(klocale->translate("OK"), &dialog);
+  ok->setFixedSize(ok->sizeHint());
+  connect(ok, SIGNAL(clicked()), &dialog, SLOT(accept()));
+  buttons->addStretch(10);
+  buttons->addWidget(ok);
+  buttons->addStretch(10);
+
+  dialog.resize(400, 260);
+  ok->setFocus();
+  dialog.exec();
+}
+QString KiKbdGeneralWidget::mapInfo(const char* name) const
+{
+  KiKbdMapConfig* map = kikbdConfig->getMap(name);
+  QString com;
+  // authors
+  com += klocale->translate("Authors");
+  com += ": " + map->getAuthors() + "\n\n";
+  // comment
+  com += klocale->translate("Comment");
+  com += ": " + map->getLongComment() + "\n\n";
+  // locale
+  com += klocale->translate("Locale");
+  com += ": " + map->getLocale() + "\n\n";
+  // source
+  com += klocale->translate("Source");
+  com += ": ";
+  com += (map->getUserData())?klocale->translate("user")
+    :klocale->translate("system");
+  com += " \"" + map->getName() + ".kimap\"";
+  com += "\n\n";
+  // statistic
+  QString num;
+  com += klocale->translate("Statistic");
+  num.setNum(map->getKeysyms().count());
+  com += ": " + num + " ";
+  com += klocale->translate("symbols");
+  num.setNum(map->getKeycodes().count());
+  com += ", " + num + " ";
+  com += klocale->translate("codes");
+  if(map->getHasAltKeys()) {
+    com += ", ";
+    com += klocale->translate("alternative keys");
+  }
+  return com;
+}
 void KiKbdGeneralWidget::setLongComment(int i)
 {
-  QString com = kikbdConfig->getMap(mapsToAdd.at(i))->getLongComment();
-  emit setLongComment((const char*)com);
+  emit setLongComment((const char*)mapInfo(mapsToAdd.at(i)));
 }
 void KiKbdGeneralWidget::addMap()
 {
@@ -267,7 +342,7 @@ void KiKbdGeneralWidget::addMap()
   buttons->addWidget(cancel);
   buttons->addStretch(10);
 
-  dialog.resize(440, 240);
+  dialog.resize(440, 340);
 
   //--- load list of maps
   for(i=0; i<mapsToAdd.count(); i++)
@@ -445,7 +520,8 @@ void KiKbdStyleWidget::aboutToShow(const char* page)
   if(QString(page) == klocale->translate("&Style")) {
     emit enableCaps(kikbdConfig->getEmuCapsLock());
     emit enableAlternate(!kikbdConfig->oneKeySwitch() 
-			 && kikbdConfig->hasAltKeys());
+			 && kikbdConfig->hasAltKeys()
+			 && strcmp(kikbdConfig->getAltSwitch().at(0), "None"));
   }
 }
 
@@ -497,7 +573,7 @@ KiKbdStartupWidget::KiKbdStartupWidget(QWidget* parent, const char* name)
   						    group), 0);
   hbox->addStretch(5);
   vbox->addSpacing(20);
-  topLayout->addStretch(5);
+  topLayout->addStretch(20);
   QToolTip::add(startPlace, klocale->translate("Place in selected corner"));
 
   //connect(autoStart, SIGNAL(toggled(bool)), docked, SLOT(setEnabled(bool)));

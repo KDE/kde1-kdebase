@@ -4,18 +4,21 @@
 #include <kapp.h>
 #include "kobjconf.h"
 
-class KiKbdMapConfig {
+class KiKbdMapConfig: public QObject {
+  Q_OBJECT
  protected:
   QList<QStrList> keysyms, keycodes;
   QStrList  capssyms;
-  QString   name, label, comment, longcomment, locale;
+  QString   name, label, comment, longcomment, locale, authors;
   bool      hasAltKeys;
+  bool      userData;
   int       numberOfSyms;
  public:
   KiKbdMapConfig(const char*);
   friend class KiKbdConfig;
   /*--- public information ---*/
   const QString getName     () const {return name;}
+  const QString getAuthors  () const {return authors;}
   const QString getLabel    () const {return label;}
   const QString getLocale   () const {return locale;}
   const QString getComment  () const {return comment;}
@@ -24,13 +27,17 @@ class KiKbdMapConfig {
   }
   const QString getGoodLabel() const;
   const bool getHasAltKeys  () const {return hasAltKeys;}
+  const bool getUserData    () const {return userData;}
   const unsigned getNumberOfSyms() const {return numberOfSyms;}
   QList<QStrList>& getKeysyms() {return keysyms;}
   QList<QStrList>& getKeycodes(){return keycodes;}
   QStrList&        getCapssyms(){return capssyms;}
+ public slots:
+  void noUserDataFile(const char*){userData = false;}
 };
 
 class KiKbdConfig: public KObjectConfig {
+  Q_OBJECT
  public:
   enum {Input_Global, Input_Window, Input_Class};
  protected:

@@ -3,12 +3,16 @@
 #
 
 [International Keyboard]
+Authors=Jacek Konieczny <jajcus@zeus.polsl.gliwice.pl>
+
 Comment=New Polish "programmer's" keyboard
 Comment[ru]=Новая польская клавиатура
 Comment[pl]=Polska klawiatura programisty
+
 Long Comment=Keyboard for using in Poland (Polish locale)
 Long Comment[ru]=Новая польская клавиатура 
 Long Comment[pl]=Polska klawiatura programisty dla polskich locale
+
 Label=nPl
 Locale=pl
 

@@ -3,12 +3,16 @@
 #
 
 [International Keyboard]
+Authors=Sebestyen Zoltan <szoli@digo.inf.elte.hu>
+
 Comment=Hungarian Keyboard
 Comment[ru]=Венгерская клавиатура
 Comment[pl]=Klawiatura wЙgierska
+
 Long Comment=Keyboard for using in Hungary
 Long Comment[ru]=Венгерская клавиатура
 Long Comment=Klawiatura wЙgierska
+
 Label=Hu
 Locale=hu
 

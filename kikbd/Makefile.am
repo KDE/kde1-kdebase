@@ -22,17 +22,17 @@ SUBDIRS = doc maps
 # you can add here more. This one gets installed 
 bin_PROGRAMS = 	kikbd kcmikbd
 BUILT_SOURCES = kconfobjs.moc.cpp kobjconf.moc.cpp \
-	widgets.moc.cpp keymap.moc.cpp kikbd.moc.cpp
+	widgets.moc.cpp keymap.moc.cpp kikbd.moc.cpp kikbdconf.moc.cpp
 
 kikbd_SOURCES = kikbd.cpp keytrans.cpp \
 	keymap.cpp kikbdconf.cpp kobjconf.cpp \
-	kconfobjs.moc.cpp kobjconf.moc.cpp keymap.moc.cpp kikbd.moc.cpp
+	kconfobjs.moc.cpp kobjconf.moc.cpp keymap.moc.cpp kikbd.moc.cpp kikbdconf.moc.cpp
 kikbd_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 kikbd_LDADD   = -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET)
 
 kcmikbd_SOURCES = widgets.cpp main.cpp \
 	kikbdconf.cpp kobjconf.cpp \
-	kconfobjs.moc.cpp kobjconf.moc.cpp widgets.moc.cpp
+	kconfobjs.moc.cpp kobjconf.moc.cpp widgets.moc.cpp kikbdconf.moc.cpp
 kcmikbd_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 kcmikbd_LDADD   = -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET)
 
@@ -77,7 +77,8 @@ keymap.moc.cpp: keymap.h
 	$(MOC) -o $@ $<
 kikbd.moc.cpp: kikbd.h
 	$(MOC) -o $@ $<
-
+kikbdconf.moc.cpp: kikbdconf.h
+	$(MOC) -o $@ $<
 
 
 

@@ -1,8 +1,11 @@
 # KDE Config File
+
 [International Keyboard]
 Comment=Deutsche Tastatur
-Long Comment=Deutsches (BRD) Tastatur-Layout
 Comment[ru]=Германская клавиатура
+
+Long Comment=Deutsches (BRD) Tastatur-Layout
+
 Label=De
 Locale=de
 

@@ -4,6 +4,8 @@
 # Това е клавиатурна подредба за български - фонетична кирилица. За да бъде създадена са  използвани елементи от кирилизацията на Станислав Цоловски
 
 [International Keyboard]
+Authors=Jordan Ostreff <http://www.biscom.net/~jostreff/>
+
 Comment=Bulgarian Keyboard (Phonetic)
 Comment[bg]=Кирилица ФОНЕТИЧНА (cp1251)
 Comment[pl]=Klawiatura bulgarska
@@ -11,6 +13,7 @@ Comment[ru]=вПМЗБТУЛБС ЛМБЧЙБФХТБ
 Long Comment=Keyboard for Bulgarian language (cp1251). Has English characters as alternate symbols.  
 Long Comment[bg]=Кодова таблица за използване на фонетика сас wincp-1251 
 Long Comment[ru]=вПМЗБТУЛБС ЛМБЧЙБФХТБ Ч ЛПДЙТПЧЛЕ wincp-1251 
+
 Label=Bg 
 Locale=bg
 
