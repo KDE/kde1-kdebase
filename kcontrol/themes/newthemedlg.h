@@ -25,6 +25,7 @@
 
 #include <qdialog.h>
 #include <qlineedit.h>
+#include <qmultilinedit.h>
 
 class QLabel;
 class QGridLayout;
@@ -37,19 +38,23 @@ public:
   virtual ~NewThemeDlg();
 
   const char* fileName(void) const { return mEdtFilename->text(); }
-  const char* themeName(void) const { return mEdtName->text(); }
+  const char* description(void) const { return mEdtDesc->text(); }
   const char* author(void) const { return mEdtAuthor->text(); }
   const char* email(void) const { return mEdtEmail->text(); }
   const char* homepage(void) const { return mEdtHomepage->text(); }
 
 protected:
   virtual QLineEdit* newLine(const char* lbl);
+  virtual QMultiLineEdit* newMultiLine(const char* lbl);
   virtual void setValues(void);
 
 protected:
   int mGridRow;
-  QLineEdit *mEdtFilename, *mEdtName, *mEdtAuthor, *mEdtEmail;
+  QLineEdit *mEdtFilename; 
+  QLineEdit *mEdtAuthor;
+  QLineEdit *mEdtEmail;
   QLineEdit *mEdtHomepage;
+  QMultiLineEdit *mEdtDesc;
   QGridLayout* mGrid;
 };
 

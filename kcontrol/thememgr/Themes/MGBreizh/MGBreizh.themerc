@@ -25,6 +25,9 @@ background=panel.xpm
 [Display]
 Wallpaper0=kdegear.jpg
 WallpaperMode0=Centred
+CommonDesktop=true
+Color1_0=#000000
+ColorMode0=Flat
 #
 #-----------------------------------------------------------------------------
 [Colors]

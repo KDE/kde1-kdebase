@@ -30,8 +30,9 @@
 
 class KConfig;
 
-#define ThemeInherited KSimpleConfig
-class Theme: public KSimpleConfig
+//#define ThemeInherited KSimpleConfig
+#define ThemeInherited QObject
+class Theme : public QObject
 {
   Q_OBJECT
 public:
@@ -41,7 +42,7 @@ public:
 
   /** Load theme and prepare it for installation or modification. Returns
    true on success. */
-  virtual bool load(const QString path);
+  virtual bool load(const QString path, const QString name);
 
   /** Apply current theme to the users Kde configuration. This updates several
       config files and executes the initialization programs. */
@@ -56,10 +57,28 @@ public:
 
   /** Get/set theme name. */
   const QString name(void) const { return mName; }
-  virtual void setName(const QString newName);
+  virtual void setName(const QString newName)
+     { mName = newName; }
+     
+  /** Get/set theme version **/
+  const QString version(void) const { return mVersion; }
+  virtual void setVersion(const QString newVersion) 
+     { mVersion = newVersion; }
 
-  /** Returns path + name where theme is stored. */
-  const QString fileName(void) { return mFileName; }
+  /** Get/set theme author **/
+  const QString author(void) const { return mAuthor; }
+  virtual void setAuthor(const QString newAuthor) 
+     { mAuthor = newAuthor; }
+
+  /** Get/set theme email address **/
+  const QString email(void) const { return mEmail; }
+  virtual void setEmail(const QString newEmail) 
+     { mEmail = newEmail; }
+
+  /** Get/set theme homepage **/
+  const QString homepage(void) const { return mHomepage; }
+  virtual void setHomepage(const QString newHomepage) 
+     { mHomepage = newHomepage; }
 
   /** Get preview pixmap. */
   const QPixmap& preview(void) const { return mPreview; }
@@ -214,6 +233,10 @@ protected:
 
 protected:
   QString mName;           // Name of the theme
+  QString mVersion;        // Version of the theme
+  QString mAuthor;         // Author of the theme
+  QString mEmail;          // Email-address of the author
+  QString mHomepage;       // Homepage of the author
   QString mFileName;       // Name+path
   QString mThemePath;      // Path to dir where theme files are stored
   QString mDescription;
@@ -223,6 +246,7 @@ protected:
   QPixmap mPreview;
   QString mConfigDir;
   KSimpleConfig* mMappings;
+  KSimpleConfig* mConfig;
   QStrList mCmdList;
   QStrList mInstFiles;     // List of installed files
   int mInstIcons;          // Number of installed icons

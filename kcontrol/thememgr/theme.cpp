@@ -58,15 +58,14 @@ Theme::Theme(): ThemeInherited(0), mInstFiles(true)
 
   initMetaObject();
 
-  setLocale();
-
   instOverwrite = false;
 
   mConfigDir = kapp->localconfigdir();
   len = mConfigDir.length();
   if (len > 0 && mConfigDir[len-1] != '/') mConfigDir += '/';
 
-  mMappings = NULL;
+  mMappings = 0;
+  mConfig = 0;
   loadMappings();
 
   // ensure that work directory exists
@@ -81,6 +80,9 @@ Theme::~Theme()
 {
   saveSettings();
   if (mMappings) delete mMappings;
+  if (mConfig) {
+      delete mConfig; mConfig = 0;
+  }
 }
 
 
@@ -111,19 +113,6 @@ void Theme::saveSettings(void)
 void Theme::setDescription(const QString aDescription)
 {
   mDescription = aDescription.copy();
-}
-
-
-//-----------------------------------------------------------------------------
-void Theme::setName(const QString aName)
-{
-  int i;
-  i = aName.findRev('/');
-  if (i>0) mName = aName.mid(i+1, 1024);
-  else mName = aName.copy();
-
-  if (aName[0]=='/') mFileName = aName.copy();
-  else mFileName = workDir() + aName;
 }
 
 
@@ -196,10 +185,9 @@ void Theme::cleanupWorkDir(void)
 
 
 //-----------------------------------------------------------------------------
-bool Theme::load(const QString aPath)
+bool Theme::load(const QString aPath, QString aName)
 {
   QString cmd, str;
-  QFile file;
   QFileInfo finfo(aPath);
   int rc, num, i;
 
@@ -208,7 +196,7 @@ bool Theme::load(const QString aPath)
 
   clear();
   cleanupWorkDir();
-  setName(aPath);
+  mName = aName.copy();
 
   if (finfo.isDir())
   {
@@ -272,11 +260,11 @@ bool Theme::load(const QString aPath)
   dir.setNameFilter("*.preview.*");
   mPreviewFile = dir[0];
 
+  if (mConfig) {
+      delete mConfig; mConfig = 0;
+  }
   // read theme config file
-  file.setName(mThemePath + mThemercFile);
-  file.open(IO_ReadOnly);
-  parseOneConfigFile(file, NULL);
-  file.close();
+  mConfig = new KSimpleConfig( mThemePath + mThemercFile, true);
 
   readConfig();
 
@@ -294,8 +282,8 @@ bool Theme::save(const QString aPath)
 
   emit apply();
   writeConfig();
-  file.setName(mThemePath + mThemercFile);
-  writeConfigFile(file);
+
+  mConfig->sync();
 
   if (stricmp(aPath.right(4), ".tgz") == 0 ||
       stricmp(aPath.right(7), ".tar.gz") == 0)
@@ -427,7 +415,7 @@ int Theme::installGroup(const char* aGroupName)
 
   debug("*** beginning with %s", aGroupName);
   group = aGroupName;
-  setGroup(group);
+  mConfig->setGroup(group);
   
   if (!instOverwrite) uninstallFiles(aGroupName);
   else readInstFileList(aGroupName);
@@ -539,7 +527,7 @@ int Theme::installGroup(const char* aGroupName)
       }
       else oldValue = 0;
 
-      themeValue = readEntry(key);
+      themeValue = mConfig->readEntry(key);
       if (cfgValue.isEmpty()) cfgValue = themeValue;
 
       // Install file
@@ -559,8 +547,20 @@ int Theme::installGroup(const char* aGroupName)
  
       // Set config entry
       debug("%s=%s", (const char*)cfgKey, (const char*)cfgValue);
+#if 0
       if (cfgKey == "-") cfg->deleteEntry(key, false);
       else cfg->writeEntry(cfgKey, cfgValue);
+#else
+      if (cfgKey != "-") {
+          if (cfgValue.isEmpty()) {
+              cfg->deleteEntry(cfgKey, false);
+          } else {
+              cfg->writeEntry(cfgKey, cfgValue);
+          }
+      }
+#endif
+      
+
     }
 
     if (!instCmd.isEmpty()) installCmd(cfg, instCmd, installed);
@@ -590,13 +590,13 @@ void Theme::preInstallCmd(KSimpleConfig* aCfg, const QString& aCmd)
 
   if (cmd == "stretchBorders")
   {
-    value = readEntry("ShapePixmapBottom");
+    value = mConfig->readEntry("ShapePixmapBottom");
     if (!value.isEmpty()) stretchPixmap(mThemePath + value, false);
-    value = readEntry("ShapePixmapTop");
+    value = mConfig->readEntry("ShapePixmapTop");
     if (!value.isEmpty()) stretchPixmap(mThemePath + value, false);
-    value = readEntry("ShapePixmapLeft");
+    value = mConfig->readEntry("ShapePixmapLeft");
     if (!value.isEmpty()) stretchPixmap(mThemePath + value, true);
-    value = readEntry("ShapePixmapRight");
+    value = mConfig->readEntry("ShapePixmapRight");
     if (!value.isEmpty()) stretchPixmap(mThemePath + value, true);
   }
   else
@@ -624,16 +624,21 @@ void Theme::installCmd(KSimpleConfig* aCfg, const QString& aCmd,
   }
   else if (cmd == "winTitlebar")
   {
-    if (hasKey("TitlebarPixmapActive") || hasKey("TitlebarPixmapInactive"))
+    if (mConfig->hasKey("TitlebarPixmapActive") || 
+        mConfig->hasKey("TitlebarPixmapInactive")) {
       value = "pixmap";
-    else if (aCfg->readEntry("TitlebarLook") == "pixmap")
+    } else if (aCfg->readEntry("TitlebarLook") == "pixmap") {
       value = "shadedHorizontal";
-    else value = 0;
-    if (!value.isEmpty()) aCfg->writeEntry("TitlebarLook", value);
+    } else {
+      value = 0;
+    }
+    if (!value.isEmpty()) {
+      aCfg->writeEntry("TitlebarLook", value);
+    }
   }
   else if (cmd == "winGimmickMode")
   {
-    if (hasKey("Pixmap")) value = "on";
+    if (mConfig->hasKey("Pixmap")) value = "on";
     else value = "off";
     aCfg->writeEntry("GimmickMode", value);
   }
@@ -660,7 +665,7 @@ void Theme::installCmd(KSimpleConfig* aCfg, const QString& aCmd,
   }
   else if (cmd == "oneDesktopMode")
   {
-    flag = readBoolEntry("CommonDesktop", true);
+    flag = mConfig->readBoolEntry("CommonDesktop", true);
     flag |= (aInstalled==1);
     aCfg->writeEntry("OneDesktopMode",  flag);
     if (flag) aCfg->writeEntry("DeskNum", 0);
@@ -770,7 +775,7 @@ int Theme::installIcons(void)
   }
   else readInstFileList(groupName);
 
-  setGroup(groupName);
+  mConfig->setGroup(groupName);
   mMappings->setGroup(groupName);
 
   // Construct search path for kdelnk files
@@ -785,7 +790,7 @@ int Theme::installIcons(void)
   localShareDir = kapp->localkdedir() + "/share/";
 
   // Process all mapping entries for the group
-  it = entryIterator(groupName);
+  it = mConfig->entryIterator(groupName);
   if (it) for (entry=it->toFirst(); entry; entry=it->operator++())
   {
     key = it->currentKey();
@@ -888,9 +893,9 @@ int Theme::installIcons(void)
   writeInstFileList(groupName);
 
   // Handle extra icons
-  setGroup(groupNameExtra);
+  mConfig->setGroup(groupNameExtra);
   mMappings->setGroup(groupNameExtra);
-  it = entryIterator(groupNameExtra);
+  it = mConfig->entryIterator(groupNameExtra);
   if (it) for (entry=it->toFirst(); entry; entry=it->operator++())
   {
     key = it->currentKey();
@@ -1079,23 +1084,27 @@ void Theme::readConfig(void)
   QColor col;
   col.setRgb(192,192,192);
 
-  setGroup("General");
-  mDescription = readEntry("description", mName + " Theme");
+  mConfig->setGroup("General");
+  mDescription = mConfig->readEntry("description", mName + " Theme");
+  mVersion = mConfig->readEntry("Version");
+  mAuthor = mConfig->readEntry("Author");
+  mEmail = mConfig->readEntry("Email");
+  mHomepage = mConfig->readEntry("Homepage");
 
-  setGroup("Colors");
-  foregroundColor = readColorEntry(this, "foreground", &col);
-  backgroundColor = readColorEntry(this, "background", &col);
-  selectForegroundColor = readColorEntry(this, "selectForeground", &col);
-  selectBackgroundColor = readColorEntry(this, "selectBackground", &col);
-  activeForegroundColor = readColorEntry(this, "activeForeground", &col);
-  activeBackgroundColor = readColorEntry(this, "activeBackground", &col);
-  activeBlendColor = readColorEntry(this, "activeBlend", &col);
-  inactiveForegroundColor = readColorEntry(this, "inactiveForeground", &col);
-  inactiveBackgroundColor = readColorEntry(this, "inactiveBackground", &col);
-  inactiveBlendColor = readColorEntry(this, "inactiveBlend", &col);
-  windowForegroundColor = readColorEntry(this, "windowForeground", &col);
-  windowBackgroundColor = readColorEntry(this, "windowBackground", &col);
-  contrast = readNumEntry("Contrast", 7);
+  mConfig->setGroup("Colors");
+  foregroundColor = readColorEntry(mConfig, "foreground", &col);
+  backgroundColor = readColorEntry(mConfig, "background", &col);
+  selectForegroundColor = readColorEntry(mConfig, "selectForeground", &col);
+  selectBackgroundColor = readColorEntry(mConfig, "selectBackground", &col);
+  activeForegroundColor = readColorEntry(mConfig, "activeForeground", &col);
+  activeBackgroundColor = readColorEntry(mConfig, "activeBackground", &col);
+  activeBlendColor = readColorEntry(mConfig, "activeBlend", &col);
+  inactiveForegroundColor = readColorEntry(mConfig, "inactiveForeground", &col);
+  inactiveBackgroundColor = readColorEntry(mConfig, "inactiveBackground", &col);
+  inactiveBlendColor = readColorEntry(mConfig, "inactiveBlend", &col);
+  windowForegroundColor = readColorEntry(mConfig, "windowForeground", &col);
+  windowBackgroundColor = readColorEntry(mConfig, "windowBackground", &col);
+  contrast = mConfig->readNumEntry("Contrast", 7);
 
   if (!mPreviewFile.isEmpty())
   {
@@ -1116,22 +1125,22 @@ void Theme::writeConfig(void)
   debug("Theme::writeConfig() is broken");
   return;
 
-  setGroup("General");
-  writeEntry("description", mDescription);
+  mConfig->setGroup("General");
+  mConfig->writeEntry("description", mDescription);
 
 #ifdef BROKEN
-  setGroup("Colors");
-  writeColorEntry(this, "BackgroundColor", backgroundColor);
-  writeColorEntry(this, "SelectColor", selectColor);
-  writeColorEntry(this, "TextColor", textColor);
-  writeColorEntry(this, "ActiveTitleTextColor", activeTextColor);
-  writeColorEntry(this, "InactiveTitleBarColor", inactiveTitleColor);
-  writeColorEntry(this, "ActiveTitleBarColor", activeTitleColor);
-  writeColorEntry(this, "InactiveTitleTextColor", inactiveTextColor);
-  writeColorEntry(this, "WindowTextColor", windowTextColor);
-  writeColorEntry(this, "WindowColor", windowColor);
-  writeColorEntry(this, "SelectTextColor", selectTextColor);
-  writeEntry("Contrast", contrast);
+  mConfig->setGroup("Colors");
+  writeColorEntry(mConfig, "BackgroundColor", backgroundColor);
+  writeColorEntry(mConfig, "SelectColor", selectColor);
+  writeColorEntry(mConfig, "TextColor", textColor);
+  writeColorEntry(mConfig, "ActiveTitleTextColor", activeTextColor);
+  writeColorEntry(mConfig, "InactiveTitleBarColor", inactiveTitleColor);
+  writeColorEntry(mConfig, "ActiveTitleBarColor", activeTitleColor);
+  writeColorEntry(mConfig, "InactiveTitleTextColor", inactiveTextColor);
+  writeColorEntry(mConfig, "WindowTextColor", windowTextColor);
+  writeColorEntry(mConfig, "WindowColor", windowColor);
+  writeColorEntry(mConfig, "SelectTextColor", selectTextColor);
+  mConfig->writeEntry("Contrast", contrast);
 #endif
 }
 
@@ -1163,16 +1172,14 @@ const QColor& Theme::readColorEntry(KConfigBase* cfg, const char* aKey,
 //-----------------------------------------------------------------------------
 void Theme::clear(void)
 {
-  KGroupIterator* it;
-  KEntryDict* grp;
-  QString groupName;
+  if (!mConfig) return;
 
-  it = groupIterator();
-  for (grp = it->toFirst(); grp; )
+  KGroupIterator *it = mConfig->groupIterator();
+  for (KEntryDict *grp = it->toFirst(); grp; )
   {
-    groupName = it->currentKey();
+    QString groupName = it->currentKey();
     grp = it->operator++();
-    deleteGroup(groupName);
+    mConfig->deleteGroup(groupName);
   }
 }
 
@@ -1220,7 +1227,7 @@ bool Theme::mkdirhier(const char* aDir, const char* aBaseDir)
 //-----------------------------------------------------------------------------
 bool Theme::hasGroup(const QString& aName, bool aNotEmpty)
 {
-  KGroupIterator* it = groupIterator();
+  KGroupIterator* it = mConfig->groupIterator();
   KEntryDict* grp;
   bool found = false;
 

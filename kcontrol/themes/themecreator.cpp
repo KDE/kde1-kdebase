@@ -72,8 +72,13 @@ bool ThemeCreator::create(const QString aThemeName)
   mPreviewFile = 0;
   mPreview.resize(0,0);
 
-  mFile.setName(mThemePath + mThemercFile);
-  parseOneConfigFile(mFile, NULL);
+  if (mConfig)
+  {
+    delete mConfig; mConfig = 0;
+  }
+
+  // Create Read/Write config file
+  mConfig = new KSimpleConfig( mThemePath + mThemercFile, false);
 
   setGroupGeneral();
 
@@ -101,9 +106,8 @@ bool ThemeCreator::extract(void)
 
   debug("Theme::extract() done");
 
-  writeConfigFile(mFile);
+  mConfig->sync();
   saveSettings();
-  save(themesDir() + mName);
 
   return true;
 }
@@ -123,7 +127,7 @@ int ThemeCreator::extractGroup(const char* aGroupName)
 
   debug("*** beginning with %s", aGroupName);
   group = aGroupName;
-  setGroup(group);
+  mConfig->setGroup(group);
 
   while (!group.isEmpty())
   {
@@ -188,6 +192,7 @@ int ThemeCreator::extractGroup(const char* aGroupName)
     // Set group in config file
     cfg->setGroup(cfgGroup);
     debug("%s: [%s]", (const char*)cfgFile, (const char*)cfgGroup);
+printf("%s: [%s]\n", (const char*)cfgFile, (const char*)cfgGroup);
     // Process all mapping entries for the group
     it = mMappings->entryIterator(group);
     if (it) for (entry=it->toFirst(); entry; entry=it->operator++())
@@ -218,11 +223,19 @@ int ThemeCreator::extractGroup(const char* aGroupName)
       if (cfgKey.isEmpty()) cfgKey = key;
       value = cfg->readEntry(cfgKey);
 
+printf("Line 220: cfgKey = %s cfgValue = %s value =%s\n", 
+(const char *) cfgKey, (const char *) cfgValue, (const char *) value);
+
       if (doCopyFile)
       {
+printf("DoCopyFile!\n");
+        if (!cfgValue.isEmpty()) {
+// Add path!
+          value =appDir+cfgValue;
+        }
 	if (!value.isEmpty())
 	{
-	  if (value[0] != '/') value = appDir + value;
+printf("extractFile! value =%s\n", (const char *) (value));
 	  str = extractFile(value);
 	  if (!str.isEmpty())
 	  {
@@ -236,8 +249,15 @@ int ThemeCreator::extractGroup(const char* aGroupName)
       // Set config entry
       if (value == emptyValue) value = "";
       debug("%s=%s", (const char*)key, (const char*)value);
-      if (value.isEmpty()) deleteEntry(key, false);
-      else writeEntry(key, value);
+printf("Line 264: ey = %s value =%s\n", 
+(const char *) key, (const char *) value);
+      if (value.isEmpty()) {
+         mConfig->deleteEntry(key, false);
+printf("deleteEntry..\n");
+      } else {
+         mConfig->writeEntry(key, value);
+printf("writeEntry..\n");
+      }
     }
 
     if (!instCmd.isEmpty()) extractCmd(cfg, instCmd, extracted);
@@ -275,8 +295,8 @@ void ThemeCreator::extractCmd(KSimpleConfig* aCfg, const QString& aCmd,
   {
     if (aCfg->readEntry("TitlebarLook") != "pixmap")
     {
-      deleteEntry("TitlebarPixmapActive", false);
-      deleteEntry("TitlebarPixmapInactive", false);
+      mConfig->deleteEntry("TitlebarPixmapActive", false);
+      mConfig->deleteEntry("TitlebarPixmapInactive", false);
     }
   }
   else if (cmd == "panelBack")
@@ -284,7 +304,7 @@ void ThemeCreator::extractCmd(KSimpleConfig* aCfg, const QString& aCmd,
     value = aCfg->readEntry("Position");
     if (stricmp(value,"right")==0 || stricmp(value,"left")==0)
     {
-      value = readEntry("background");
+      value = mConfig->readEntry("background");
       debug("rotating %s", (const char*)value);
       rotateImage(mThemePath + value, 90);
     }
@@ -305,6 +325,7 @@ const QString ThemeCreator::extractFile(const QString& aFileName)
 
   if (!finfo.exists() || !finfo.isFile())
   {
+printf("File %s does not exist or is no file.", (const char*)aFileName);
     debug("File %s does not exist or is no file.", (const char*)aFileName);
     return 0;
   }
@@ -330,6 +351,8 @@ const QString ThemeCreator::extractFile(const QString& aFileName)
     fname = str;
   }
 
+printf("Extracting %s to %s", (const char*)aFileName,
+	(const char*)(mThemePath + fname));
   debug("Extracting %s to %s", (const char*)aFileName,
 	(const char*)(mThemePath + fname));
 
@@ -373,12 +396,12 @@ void ThemeCreator::setGroupGeneral(void)
   KConfig* cfg = kapp->getConfig();
 
   cfg->setGroup("General");
-  setGroup("General");
-  writeEntry("name", mName);
-  writeEntry("author", cfg->readEntry("author"));
-  writeEntry("email", cfg->readEntry("email"));
-  writeEntry("homepage", cfg->readEntry("homepage"));
-  writeEntry("version", "0.1");
+  mConfig->setGroup("General");
+  mConfig->writeEntry("description", mDescription);
+  mConfig->writeEntry("Author", mAuthor);
+  mConfig->writeEntry("Email", mEmail);
+  mConfig->writeEntry("Homepage", mHomepage);
+  mConfig->writeEntry("Version", mVersion);
 }
 
 

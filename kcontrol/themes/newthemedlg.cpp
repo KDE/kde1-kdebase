@@ -26,6 +26,7 @@
 #include <qlayout.h>
 #include <qpushbutton.h>
 #include <kapp.h>
+#include <kbuttonbox.h>
 
 #include "newthemedlg.h"
 #include "themecreator.h"
@@ -37,35 +38,41 @@ NewThemeDlg::NewThemeDlg():
   NewThemeDlgInherited(0, i18n("Create New Theme"), true)
 {
   QPushButton* btn;
-  QHBoxLayout* bbox = new QHBoxLayout;
 
-  mGrid = new QGridLayout(this, 8, 3, 20, 4);
+  mGrid = new QGridLayout(this, 8, 2, 20, 10);
   mGridRow = 0;
 
-  mEdtFilename = newLine(i18n("File name"));
-  mEdtName = newLine(i18n("Detailed name"));
-  mEdtAuthor = newLine(i18n("Author"));
-  mEdtEmail = newLine(i18n("Email"));
-  mEdtHomepage = newLine(i18n("Webpage"));
+  mEdtFilename = newLine(i18n("&Name"));
+  mEdtAuthor = newLine(i18n("&Author"));
+  mEdtEmail = newLine(i18n("&Email"));
+  mEdtHomepage = newLine(i18n("&Webpage"));
+  mEdtDesc = newMultiLine(i18n("&Description"));
 
-  mGrid->setRowStretch(mGridRow++, 10);
+  
+  mGrid->addRowSpacing(mGridRow++, 10);
 
-  mGrid->addLayout(bbox, mGridRow++, 2);
-  btn = new QPushButton(i18n("OK"), this);
-  btn->setFixedSize(100, btn->sizeHint().height());
-  bbox->addWidget(btn);
+  KButtonBox *bbox = new KButtonBox( this);
+  bbox->addStretch( 10 );
+
+  btn = bbox->addButton("&OK");
+  btn->setDefault(true);
   connect(btn, SIGNAL(clicked()), SLOT(accept()));
 
-  btn = new QPushButton(i18n("Cancel"), this);
-  btn->setFixedSize(100, btn->sizeHint().height());
-  bbox->addWidget(btn);
+  bbox->addStretch( 10 );
+
+  btn = bbox->addButton("&Cancel");
   connect(btn, SIGNAL(clicked()), SLOT(reject()));
+
+  bbox->addStretch( 10 );
+
+  bbox->layout();
+
+  mGrid->addMultiCellWidget(bbox, mGridRow, mGridRow, 0, 1);
 
   setValues();
 
-  mGrid->setColStretch(0, 1);
+  mGrid->setColStretch(0, 0);
   mGrid->setColStretch(1, 1);
-  mGrid->setColStretch(2, 100);
   mGrid->activate();
 
   resize(sizeHint());
@@ -84,11 +91,12 @@ void NewThemeDlg::setValues(void)
   KConfig* cfg = kapp->getConfig();
   cfg->setGroup("General");
 
-  mEdtFilename->setText(i18n("NewTheme"));
-  mEdtName->setText(i18n("A New Theme"));
+  mEdtFilename->setText(i18n("MyNewTheme"));
   mEdtAuthor->setText(cfg->readEntry("author"));
   mEdtEmail->setText(cfg->readEntry("email"));
-  mEdtHomepage->setText(cfg->readEntry("homepage"));
+  mEdtHomepage->setText(cfg->readEntry("homepage", "http://kde.themes.org"));
+  mEdtDesc->setText(i18n("Give a short description of the theme
+here..."));
 }
 
 
@@ -101,13 +109,34 @@ QLineEdit* NewThemeDlg::newLine(const char* aLabelText)
   edt = new QLineEdit(this);
   edt->setMinimumSize(edt->sizeHint());
   edt->setMaximumSize(32767, edt->sizeHint().height());
-  mGrid->addMultiCellWidget(edt, mGridRow, mGridRow, 1, 2);
+  mGrid->addWidget(edt, mGridRow, 1);
 
-  lbl = new QLabel(aLabelText, this);
+  lbl = new QLabel(edt, aLabelText, this);
   lbl->setMinimumSize(lbl->sizeHint());
   lbl->setMaximumSize(512, edt->sizeHint().height());
   //lbl->setBuddy(edt);
   mGrid->addWidget(lbl, mGridRow, 0);
+
+  mGridRow++;
+  return edt;
+}
+
+//-----------------------------------------------------------------------------
+QMultiLineEdit* NewThemeDlg::newMultiLine(const char* aLabelText)
+{
+  QLabel* lbl;
+  QMultiLineEdit* edt;
+
+  edt = new QMultiLineEdit(this);
+  edt->setMinimumSize( 350, 100);
+  mGrid->addWidget(edt, mGridRow, 1);
+
+  lbl = new QLabel(edt, aLabelText, this);
+  lbl->setMinimumSize(lbl->sizeHint());
+  //lbl->setMaximumSize(512, edt->sizeHint().height());
+  //lbl->setBuddy(edt);
+  mGrid->addWidget(lbl, mGridRow, 0);
+  mGrid->setRowStretch(mGridRow, 1);
 
   mGridRow++;
   return edt;

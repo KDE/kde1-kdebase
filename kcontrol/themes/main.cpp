@@ -52,9 +52,6 @@ public:
   virtual void apply();
   virtual void defaultValues();
 
-protected:
-  virtual void tweakUi(void);
-
 private:
   Installer* mInstaller;
   Options* mOptions;
@@ -74,8 +71,6 @@ KThemesApplication::KThemesApplication(int &argc, char **argv, const char *name)
 
   if (runGUI())
   {
-    tweakUi();
-
     addPage(mInstaller = new Installer(dialog), i18n("Installer"), "kthememgr-1.html" );
     addPage(mOptions = new Options(dialog), i18n("Contents"), "kthememgr-2.html" );
     addPage(mAbout = new About(dialog), i18n("About"), "kthememgr-3.html" );
@@ -91,16 +86,6 @@ KThemesApplication::~KThemesApplication()
   if (theme) delete theme;
 }
 
-
-//-----------------------------------------------------------------------------
-void KThemesApplication::tweakUi()
-{
-  KControlDialog* dlg = (KControlDialog*)getDialog();
-
-  dlg->defaultBtn->setText(i18n("Extract"));
-}
-
-
 //-----------------------------------------------------------------------------
 void KThemesApplication::init()
 {
@@ -111,7 +96,7 @@ void KThemesApplication::init()
 //-----------------------------------------------------------------------------
 void KThemesApplication::defaultValues()
 {
-  theme->extract();
+    mInstaller->defaultSettings();
 }
 
 

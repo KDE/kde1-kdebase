@@ -64,8 +64,6 @@ protected:
   /** Do some special things */
   virtual void extractCmd(KSimpleConfig* aCfg, const QString& aCmd,
 			  int aInstalled);
-protected:
-  QFile mFile;
 };
 
 #endif /*THEMECREATOR_H*/
