@@ -6,7 +6,6 @@ msgstr ""
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
 #: kstart.C:116
-#, fuzzy, c-format
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
