@@ -194,6 +194,7 @@ main(int argc, char **argv)
   passwd = 0;
   if (havetty) {
     passwd = getpass("Password: ");
+    passlen = strlen(passwd);
   } else {
     passlen = read(0, passbuffer, sizeof(passbuffer)-1);
     if (passlen >= 0) {
