@@ -6,5 +6,7 @@ Type=Application
 DocPath=kdisplay/kdisplay/colorscm.html
 Comment=Color settings
 Comment[de]=Einstellung der Bildschirmfarben
+Comment[pl]=Ustawienia kolorów
 Name=Colors
 Name[de]=Farhen
+Name[pl]=Kolory

@@ -1,6 +1,7 @@
 # Polish translation of KDE kfm
-# Verision 0.2.0
+# Verision 0.2.1
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+
 
 msgid "Help"
 msgstr "Pomoc"
@@ -11,7 +12,14 @@ msgstr "Typy &mime"
 msgid "Applications"
 msgstr "&Aplikacje"
 
+msgid "Configure Browser"
+msgstr "Konfiguruj &przegl±darkê"
 
+msgid "&Help..."
+msgstr "Pomo&c"
+
+msgid "&About..."
+msgstr "&Informacje o kfm"
 
 #: kfmgui.cpp:254 kfmgui.cpp:1081
 msgid "KFM"
@@ -281,7 +289,7 @@ msgid "Open Location:"
 msgstr "Otwórz lokacjê:"
 
 #: kfmgui.cpp:1082
-msgid "Do you really want to quit"
+msgid "Do you really want to quit?"
 msgstr "Czy na pewno chcesz wyj¶æ?"
 
 #: kfmgui.cpp:1108
@@ -295,8 +303,12 @@ msgstr ""
 "Autor: Torben Weis\n"
 "weis@kde.org\n"
 "\n"
-"HTML widget - Martina Jones\n"
-"mjones@kde.org"
+"HTML widget - Martin Jones\n"
+"mjones@kde.org\n"
+"\n"
+"Polskie t³umaczenie\n"
+"(C) 1997 Piotr Roszatycki\n"
+"dexter@fnet.com.pl"
 
 #: kfmgui.cpp:1196
 msgid "Document: Done"
@@ -317,9 +329,9 @@ msgstr "Ostrze¿enie KFM"
 
 #: kfmtree.cpp:335 kfmview.cpp:316 kfmview.cpp:492 root.cpp:845
 msgid ""
-"Do you really want to delete the files?\n"
+"Do you really want to delete the selected file(s)?\n"
 "\n"
-"There is no way to restore them"
+"There is no way to restore them."
 msgstr ""
 "Czy na pewno chcesz skasowaæ te pliki?\n"
 "\n"

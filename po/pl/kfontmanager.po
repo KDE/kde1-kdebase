@@ -1,6 +1,9 @@
 # Polish translation of KDE kfontmanager
-# Version 0.1.1
+# Version 0.1.2
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+
+msgid "Dolor Ipse"
+msgstr "G¿eg¿ó³ka"
 
 #: main.cpp:53
 msgid "KDE Font Manager"

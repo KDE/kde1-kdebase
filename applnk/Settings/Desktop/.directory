@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Desktop
+Name[pl]=Desktop
 MiniIcon=style.xpm
 SortOrder=background.kdelnk,colors.kdelnk,screensaver.kdelnk,style.kdelnk
 Icon=Desktop.xpm

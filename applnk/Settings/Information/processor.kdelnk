@@ -6,5 +6,7 @@ Type=Application
 DocPath=kcontrol/info/processor.html
 Comment=Processor information
 Comment[de]=Informationen zum Prozessor
+Comment[pl]=Informacje o procesorze
 Name=Processor
 Name[de]=Prozessor
+Name[pl]=Procesor

@@ -1,7 +1,9 @@
 # Polish translation of KDE krootwm
-# Version 0.1.0
+# Version 0.1.1
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 
+msgid "New"
+msgstr "&Nowy"
 
 #: krootwm.C:63
 msgid "Help on desktop"

@@ -5,5 +5,7 @@ Icon=smbstatus.xpm
 Type=Application
 Comment=Samba status monitor
 Comment[de]=Samba Status-Monitor
+Comment[pl]=Samba status monitor
 Name=Samba Status
 Name[de]=Samba Status
+Name[pl]=Samba Status

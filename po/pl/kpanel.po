@@ -1,9 +1,12 @@
 # Polish translation of KDE kpanel
-# Version 0.2.1
+# Version 0.2.2
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 
 msgid "Personal First"
 msgstr "Wpierw prywatne"
+
+msgid "Normal Style"
+msgstr "¦redni"
 
 #: kpanel.C:172
 msgid "Move"

@@ -1,12 +1,12 @@
 # Polish translation of KDE kdisplay
-# Version 0.1.4
+# Version 0.1.5
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 
 msgid "Desktop Title"
 msgstr "Tytu³ desktopu"
 
 msgid "Desktop"
-msgstr "&Desktop"
+msgstr "Desktop"
 
 msgid "Save"
 msgstr "&Zachowaj"
@@ -16,6 +16,24 @@ msgstr "Plik"
 
 msgid "Edit"
 msgstr "Edycja"
+
+msgid "Rename..."
+msgstr "Zmieñ &nazwê..."
+
+msgid "Charset:"
+msgstr "Charset:"
+
+msgid "&Background"
+msgstr "&T³o"
+
+msgid "&Colors"
+msgstr "&Kolory"
+
+msgid "&Screensaver"
+msgstr "&Wygaszacz"
+
+msgid "&Style"
+msgstr "&Styl"
 
 #: main.cpp:53
 msgid "KDE Display Configuration"
@@ -151,7 +169,7 @@ msgstr "Wybrany"
 
 #: colorscm.cpp:252 colorscm.cpp:262
 msgid "Color Scheme"
-msgstr "Schema&t kolorów"
+msgstr "Schemat kolorów"
 
 #: colorscm.cpp:276
 msgid "Remove"

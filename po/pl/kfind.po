@@ -1,6 +1,9 @@
 # Polish translation of KDE kfind
-# Version 0.1.1
+# Version 0.1.2
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+
+msgid "About &Qt"
+msgstr "Informacje o &Qt"
 
 #: kftabdlg.cpp:214
 msgid " Advanced "
@@ -20,7 +23,7 @@ msgstr "%d plik(ów) znaleziono"
 
 #: kfindtop.cpp:185
 msgid "&About"
-msgstr "&Informacje..."
+msgstr "&Informacje o KFind"
 
 #: kfindtop.cpp:137
 msgid "&Add to archive"

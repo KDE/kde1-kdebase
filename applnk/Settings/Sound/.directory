@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Sound
+Name[pl]=D¼wiêk
 MiniIcon=sound.xpm
 SortOrder=bell.kdelnk
 Icon=Sound.xpm

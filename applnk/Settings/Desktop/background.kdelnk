@@ -6,5 +6,7 @@ Type=Application
 DocPath=kcontrol/kdisplay/backgnd.html
 Comment=Background settings
 Comment[de]=Einstellung des Hintergrunds
+Commant[pl]=Ustawienia t³a
 Name=Background
 Name[de]=Hintergrund
+Name[pl]=T³o

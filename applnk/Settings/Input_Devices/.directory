@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Input Devices
+Name[pl]=Urz±dzenia wej¶ciowe
 MiniIcon=mini-lower.xpm
 SortOrder=keyboard.kdelnk,mouse.kdelnk
 Icon=Input_Devices.xpm

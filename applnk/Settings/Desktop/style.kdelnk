@@ -6,5 +6,7 @@ Type=Application
 DocPath=kcontrol/dispaly/general.html
 Comment=General style settings
 Comment[de]=Einstellung des Stils
+Comment[pl]=Ustawienia stylu
 Name=Style
 Name[de]=Stil
+Name[pl]=Styl

@@ -6,5 +6,7 @@ Type=Application
 DocPath=kcontrol/kdisplay/scrnsave.html
 Comment=Screensaver settings
 Comment[de]=Einstellung des Bildschirmschoners
+Comment[pl]=Ustawienia wygaszacza ekranu
 Name=Screensaver
 Name[de]=Bildschirmschoner
+Name[pl]=Wygaszacz ekranu
