@@ -14,7 +14,7 @@ Done! Make it more portable?
 - Require homedirs etc to login
 Done!
 - Handle expired accounts correctly
-Done! On BSD.
+Done! On BSD and Linux.
 - Do html documentation.
 Partially done.
 - Make a kchooser!
