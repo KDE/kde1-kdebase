@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: krootwm.C:109 krootwm.C:471
+msgid "Folder"
+msgstr ""
+
+#: krootwm.C:136
+#, c-format
+msgid "ERROR: Template does not exist '%s'"
+msgstr "FEJL: Skabelon eksisterer ikke ´%s´"
+
+#: krootwm.C:162
+msgid "Help on desktop"
+msgstr "Hjælp om Arbejdsplads"
+
+#: krootwm.C:163
+msgid "Execute command"
+msgstr "Kør..."
+
+#: krootwm.C:164
+msgid "Display properties"
+msgstr "Skærm indstillinger"
+
+#: krootwm.C:165
+msgid "Refresh desktop"
+msgstr "Opfrisk Arbejdsplads"
+
+#: krootwm.C:166
+msgid "Arrange icons"
+msgstr "Arranger ikoner"
+
+#: krootwm.C:168
+msgid "Lock screen"
+msgstr "Lås skærm"
+
+#: krootwm.C:169
+msgid "Logout"
+msgstr "Log ud"
+
+#: krootwm.C:491
+msgid "Could not create folder"
+msgstr "Kunne ikke oprette folder"
+
+#: krootwm.C:524
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""
+
+#: krootwm.C:528
+msgid "Usage:"
+msgstr "Brug:"

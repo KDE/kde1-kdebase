@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-01-25 13:23+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 1998-01-25 13:23\n"
+"Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
@@ -16,45 +16,44 @@ msgstr ""
 
 #: main.cpp:51
 msgid "&Locale"
-msgstr "&Maa"
+msgstr ""
 
 #: main.cpp:57
 msgid "usage: kcmlocale [-init | language]\n"
-msgstr "käyttö: kcmlocale [-init | kieli]\n"
+msgstr "brug: kcmlocale [-init | language]\n"
 
 #: main.cpp:79
 msgid "Locale settings"
-msgstr "Maa asetukset"
+msgstr "Locale indstillinger"
 
 #: locale.cpp:40
 msgid "Language"
-msgstr "Kieli"
+msgstr "Sprog"
 
 #: locale.cpp:45
 msgid "First"
-msgstr "Ensimmäinen"
+msgstr "Primært"
 
 #: locale.cpp:52
 msgid "Second"
-msgstr "Toinen"
+msgstr "Sekundært"
 
 #: locale.cpp:59
 msgid "Third"
-msgstr "Kolmas"
+msgstr "Tertiært"
 
 #: locale.cpp:94
 msgid "without name!"
-msgstr "ilman nimeä!"
+msgstr "uden navn!"
 
 #: locale.cpp:160
 msgid "Applying language settings"
-msgstr "Otan kieliasetukset käyttöön"
+msgstr "Udfører nye sprogindstillinger"
 
 #: locale.cpp:161
 msgid ""
 "Changed language settings apply only to newly started applications.\n"
 "To change the language of all programs, you will have to logout first."
 msgstr ""
-"Muutetut kieliasetukset ovat voimassa vain uudelleen käynnistetyissä\n"
-"ohjelmissa. Vaihtaaksesi kielen kaikkiin ohjelmiin sinun tulee lopettaa "
-"ensin."
+"De nye sprog indstillinger gælder kun for nyligt startede programmer.\n"
+"For at ændre sprog for alle programmer må du logge ud først."

@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmbell\n"
+"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"PO-Revision-Date: 1998-01-29 17:00+CET-1\n"
+"Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:51
+msgid "&Bell"
+msgstr "&Klokke"
+
+#: main.cpp:57
+msgid "usage: kcmbell [-init | bell]\n"
+msgstr "brug: kcmbell [-init | bell]\n"
+
+#: main.cpp:81
+msgid "Bell settings"
+msgstr "Klokke indstillinger"
+
+#: bell.cpp:85
+msgid "Volume"
+msgstr "Lydstyrke"
+
+#: bell.cpp:86
+msgid "Pitch"
+msgstr ""
+
+#: bell.cpp:87
+msgid "Duration"
+msgstr "Varighed"
+
+#: bell.cpp:89
+msgid "Hz"
+msgstr "Hz"
+
+#: bell.cpp:90
+msgid "ms"
+msgstr "ms"
+
+#: bell.cpp:92
+msgid "Test"
+msgstr ""

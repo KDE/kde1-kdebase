@@ -1,152 +1,161 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kwm\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-01-25 13:22+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+"PO-Revision-Date: 1998-01-27 15:40+CET-1\n"
+"Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
 
 #: main.C:67
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: ao que parece já está a correr um window manager. kwm não arrancou\n"
+"kwm: Det ser ud til at der allerede kører en window manager. KWM er ikke "
+"startet.\n"
 
 #: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: ocorreu uma falha durante a initialização; a desistir\n"
+msgstr "kwm: fejl under initialiseringen; afbryder\n"
 
 #: main.C:370
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""
 
 #: main.C:377
 msgid "Usage: "
-msgstr "Utilização"
+msgstr "Brug: "
 
 #: main.C:388
 msgid "&Maximize"
-msgstr "&Maximizar"
+msgstr "&Maksimer"
 
 #: main.C:389
 msgid "&Restore"
-msgstr "&Restaurar"
+msgstr "&Gendan"
 
 #: main.C:390
 msgid "&Iconify"
-msgstr "&Iconificar"
+msgstr "&Minimer"
 
 #: main.C:391
 msgid "&DeIconify"
-msgstr "&DesIconificar"
+msgstr "&Gendan"
 
 #: main.C:392
 msgid "&Sticky"
-msgstr "&Pregar"
+msgstr "&Fastsat"
 
 #: main.C:393
 msgid "&UnSticky"
-msgstr "D&esPregar"
+msgstr "&Ikke fastsat"
 
 #: main.C:394
 msgid "Mo&ve"
-msgstr "Mo&ver"
+msgstr "&Flyt"
 
 #: main.C:395
 msgid "Resi&ze"
-msgstr "Alterar &Tamanho"
+msgstr "&Ændr størrelse"
 
 #: main.C:397
 msgid "&To desktop"
-msgstr "Para o &ambiente de trabalho"
+msgstr "&Til Arbejdsplads"
 
 #: main.C:399
 msgid "&Onto current desktop"
-msgstr "Para &o ambiente de trabalho actual"
+msgstr "Til &aktuel arbejdsplads"
 
 #: main.C:449
 msgid "One"
-msgstr "Um"
+msgstr "En"
 
 #: main.C:452
 msgid "Two"
-msgstr "Dois"
+msgstr "To"
 
 #: main.C:455
 msgid "Three"
-msgstr "Tres"
+msgstr "Tre"
 
 #: main.C:458
 msgid "Four"
-msgstr "Quatro"
+msgstr "Fire"
 
 #: main.C:461
 msgid "Five"
-msgstr "Cinco"
+msgstr "Fem"
 
 #: main.C:464
 msgid "Six"
-msgstr "Seis"
+msgstr "Seks"
 
 #: main.C:467
 msgid "Seven"
-msgstr "Sete"
+msgstr "Syv"
 
 #: main.C:470
 msgid "Eight"
-msgstr "Oito"
+msgstr "Otte"
 
 #: main.C:743
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Alguns pixmaps não são válidos: ShapeMode desactivado\n"
+msgstr "Nogle pixmaps er ubrugelige: ShapeMode ikke iværksat\n"
 
 #: main.C:986
 msgid "*** No Tasks ***"
-msgstr "*** Nenhuma Tarefa ***"
+msgstr ""
 
 #: minicli.C:115
 msgid "Command:"
-msgstr "Comando:"
+msgstr "Kommando:"
 
 #: logout.C:35 taskmgr.C:106
 msgid "Logout"
-msgstr "Sair"
+msgstr "Log ud"
 
 #: logout.C:45
 msgid "Session prepared for logout"
-msgstr "Sessão preparada para desligar"
+msgstr "Sessionen er klargjort til at logge ud"
 
 #: logout.C:51
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"As seguintes aplicações conteem dados que não foram gravados e que\n"
-"serão perdidos na sua proxima sessão."
+"De følgende applikationer indeholder ugemt data\n"
+"som ikke findes i den næste session."
 
 #: logout.C:62
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"As seguintes aplicações não poderão ser restauradas na sua proxima sessão,\n"
-"apenas reinicializadas. Certifique-se de que não conteem dados importantes "
-"por gravar"
+"De følgende applikationer kan ikke blive gendannet under næste session,\n"
+"kun genstartet. Vær sikker på at de ikke indeholder vigtige ugemte data."
 
 #: logout.C:73
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"As seguintes aplicações não reconhecem o X11 e por isso não podem ser "
-"restauradas\n"
-"na sua proxima sessão. Certifique-se de que não contêm dados importantes por "
-"gravar."
+"De følgende applikationer er ikke X11-klar og kan derfor ikke blive "
+"gendannet\n"
+"i din næste session.  Vær sikker på at de ikke indeholder vigtige ugemte "
+"data."
 
 #: taskmgr.C:105
 msgid "Switch to"
-msgstr "Mudar para"
+msgstr "Skift til"
 
 #: taskmgr.C:119
 msgid "Current session"
-msgstr "Sessão actual"
+msgstr "Aktuelle session"

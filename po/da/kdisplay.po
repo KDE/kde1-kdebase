@@ -1,279 +1,287 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kdisplay.po\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-01-25 13:23+0100\n"
-"PO-Revision-Date: 1998-01-26 14:00+0000\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+"PO-Revision-Date: 1998-01-29 17:00+CET-1\n"
+"Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
 
 #: backgnd.cpp:204 backgnd.cpp:239
 msgid "Desktop"
-msgstr "Ambiente de trabalho"
+msgstr "Arbejdsplads"
 
 #: backgnd.cpp:249
 msgid "Rename..."
-msgstr "Renomear..."
+msgstr "Omdøb..."
 
 #: backgnd.cpp:255
 msgid "Color"
-msgstr "Cor"
+msgstr "Farve"
 
 #: backgnd.cpp:273
 msgid "Flat"
-msgstr "Espalmado"
+msgstr "Fast"
 
 #: backgnd.cpp:277
 msgid "Gradient"
-msgstr "Gradiente"
+msgstr "Graduerende"
 
 #: backgnd.cpp:287
 msgid "Portrait"
-msgstr "Retrato"
+msgstr "Portræt"
 
 #: backgnd.cpp:291
 msgid "Landscape"
-msgstr "Paisagem"
+msgstr "Landskab"
 
 #: backgnd.cpp:298
 msgid "Wallpaper"
-msgstr "Papel de parede"
+msgstr "Tapet"
 
 #: backgnd.cpp:331
 msgid "Tiled"
-msgstr "Mosaíco"
+msgstr "Fliselagt"
 
 #: backgnd.cpp:335
 msgid "Centred"
-msgstr "Centrado"
+msgstr "Centreret"
 
 #: backgnd.cpp:339
 msgid "Scaled"
-msgstr "Escalonado"
+msgstr "Skaleret"
 
 #: backgnd.cpp:489
 msgid "Default"
-msgstr "Por defeito"
+msgstr ""
 
 #: backgnd.cpp:821
 msgid "Desktop Title"
-msgstr "Título do Ambiente de Trabalho"
+msgstr "Arbejdsplads titel"
 
 #: colorscm.cpp:142 colorscm.cpp:143
 msgid "Inactive window"
-msgstr "Janela inactiva"
+msgstr "Inaktivt vindue"
 
 #: colorscm.cpp:158 colorscm.cpp:159
 msgid "Active window"
-msgstr "Janela activa"
+msgstr "Aktivt vindue"
 
 #: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:300
 msgid "Window text"
-msgstr "Texto da janela"
+msgstr "Vindues tekst"
 
 #: colorscm.cpp:209
 msgid "Disabled"
-msgstr "Desactivado"
+msgstr ""
 
 #: colorscm.cpp:216 colorscm.cpp:217
 msgid "Selected"
-msgstr "Seleccionado"
+msgstr "Valgt"
 
 #: colorscm.cpp:252 colorscm.cpp:264
 msgid "Color Scheme"
-msgstr "Esquema de cor"
+msgstr "Farve skema"
 
 #: colorscm.cpp:286
 msgid "Widget color"
-msgstr "Cor da widget"
+msgstr "Widget farve"
 
 #: colorscm.cpp:291
 msgid "Inactive title bar"
-msgstr "Barra de titulo inactiva"
+msgstr "Inaktiv titelbjælke"
 
 #: colorscm.cpp:292
 msgid "Inactive title text"
-msgstr "Texto de titulo inactivo"
+msgstr "Inaktiv titeltekst"
 
 #: colorscm.cpp:293
 msgid "Active title bar"
-msgstr "Barra de titulo inactiva"
+msgstr "Aktiv titelbjælke"
 
 #: colorscm.cpp:294
 msgid "Active title text"
-msgstr "Texto de titulo activo"
+msgstr "Aktiv titeltekst"
 
 #: colorscm.cpp:295
 msgid "Background"
-msgstr "Fundo"
+msgstr "Baggrund"
 
 #: colorscm.cpp:296
 msgid "Text"
-msgstr "Texto"
+msgstr "Tekst"
 
 #: colorscm.cpp:297
 msgid "Select background"
-msgstr "Escolha o fundo"
+msgstr "Vælg baggrund"
 
 #: colorscm.cpp:298
 msgid "Select text"
-msgstr "Excolha o texto"
+msgstr "Vælg tekst"
 
 #: colorscm.cpp:299
 msgid "Window background"
-msgstr "Fundo da janela"
+msgstr "Vindues baggrund"
 
 #: colorscm.cpp:311
 msgid "Contrast"
-msgstr "Contraste"
+msgstr "Kontrast"
 
 #: colorscm.cpp:324 scrnsave.cpp:224
 msgid "Low"
-msgstr "Baixa"
+msgstr "Lav"
 
 #: colorscm.cpp:328 scrnsave.cpp:221
 msgid "High"
-msgstr "Alta"
+msgstr "Høj"
 
 #: colorscm.cpp:343
 msgid "Save scheme"
-msgstr "Gravar esquema"
+msgstr "Gem skema"
 
 #: colorscm.cpp:374 colorscm.cpp:382
 msgid "You have chosen a name used by a supplied color scheme"
-msgstr "Escolheu um nome já  utilizado por um esquema de cor existente"
+msgstr "Du har valgt et navn på et medfølgende farveskema"
 
 #: colorscm.cpp:467
 msgid "KDE Default"
-msgstr "KDE Default"
+msgstr ""
 
 #: colorscm.cpp:693
 msgid "Display Setup"
-msgstr "Configuração do Ecran"
+msgstr "Skærm indstilling"
 
 #: colorscm.cpp:694
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"
 msgstr ""
-"Não foram encontrados esquemas de cores para o desktop.\n"
-"Quer instalar os esquemas de cor por defeito agora ?"
+"Ingen Arbejdsplads farveskemaer indstalleret.\n"
+"Vil du installere standard skemaerne nu?"
 
 #: kwmcom.cpp:78 kwmcom.cpp:105
 msgid "kwmcom: communication with kwm failed\n"
-msgstr "kwmcom: falha na comunicação com o kwm\n"
+msgstr "kwmcom: kommunikation med kwm fejlede\n"
 
 #: savescm.cpp:26
 msgid "Name"
-msgstr "Nome"
+msgstr "Navn"
 
 #: scrnsave.cpp:47
 msgid "Ignore"
-msgstr "Ignorar"
+msgstr "Ignorer"
 
 #: scrnsave.cpp:49
 msgid "Lock"
-msgstr "Trancar"
+msgstr "Lås"
 
 #: scrnsave.cpp:107 scrnsave.cpp:163
 msgid "Screen Saver"
-msgstr "Protecção do Ecran"
+msgstr "Skærmskåner"
 
 #: scrnsave.cpp:184
 msgid "Setup..."
-msgstr "Configurar..."
+msgstr "Indstil..."
 
 #: scrnsave.cpp:188
 msgid "Test"
-msgstr "Testar"
+msgstr ""
 
 #: scrnsave.cpp:196
 msgid "Settings"
-msgstr "Definições"
+msgstr "Indstillinger"
 
 #: scrnsave.cpp:199
 msgid "Wait:"
-msgstr "Esperar:"
+msgstr "Vent:"
 
 #: scrnsave.cpp:210
 msgid "min"
-msgstr "min"
+msgstr ""
 
 #: scrnsave.cpp:213
 msgid "Requires Password"
-msgstr "Necessita de Password"
+msgstr "Kræver kodeord"
 
 #: scrnsave.cpp:218
 msgid "Priority:"
-msgstr "Prioridade:"
+msgstr "Prioritet:"
 
 #: general.cpp:61
 msgid "General"
-msgstr "Geral"
+msgstr "Generelt"
 
 #: general.cpp:65
 msgid "Widget style"
-msgstr "Estilo de widget"
+msgstr "Widget stil"
 
 #: general.cpp:70
 msgid "Motif"
-msgstr "Motif"
+msgstr ""
 
 #: general.cpp:71
 msgid "Windows 95"
-msgstr "Windows 95"
+msgstr ""
 
 #: general.cpp:80
 msgid "Fonts"
-msgstr "Letras"
+msgstr "Skriftsnit"
 
 #: general.cpp:85
 msgid "General font"
-msgstr "Letra geral"
+msgstr "Generelt skriftsnit"
 
 #: general.cpp:110
 msgid "Sample"
-msgstr "Amostra"
+msgstr "Eksempel"
 
 #: general.cpp:116
 msgid "Small"
-msgstr "Pequena"
+msgstr "Lille"
 
 #: general.cpp:120
 msgid "Medium"
-msgstr "Media"
+msgstr ""
 
 #: general.cpp:124
 msgid "Large"
-msgstr "Grande"
+msgstr "Stor"
 
 #: general.cpp:173
 msgid "default"
-msgstr "por defeito"
+msgstr ""
 
 #: general.cpp:176
 msgid "any"
-msgstr "qualquer"
+msgstr "enhver"
 
 #: main.cpp:61
 msgid "&Background"
-msgstr "&Fundo"
+msgstr "&Baggrund"
 
 #: main.cpp:64
 msgid "&Colors"
-msgstr "&Cor"
+msgstr "&Farver"
 
 #: main.cpp:67
 msgid "&Screensaver"
-msgstr "&Protecção do Ecran"
+msgstr "&Skærmskåner"
 
 #: main.cpp:70
 msgid "&Style"
-msgstr "E&stilo"
+msgstr "&Stil"
 
 #: main.cpp:76
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
-msgstr ""
-"utilização: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr "brug: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
 #: main.cpp:112
 msgid "Display settings"
-msgstr "Configuração do Ecran"
+msgstr "Skærm indstillinger"

@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"PO-Revision-Date: 1998-01-29 17:00+CET-1\n"
+"Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:61
+msgid "KDE Font Manager"
+msgstr "KDE Skriftsnit Manager"
+
+#: main.cpp:74
+msgid "KDE Fonts"
+msgstr "KDE Skriftsnit"
+
+#: main.cpp:75
+msgid "Font Explorer"
+msgstr "Skriftsnit Udforsker"
+
+#: main.cpp:76
+msgid "Raw X11 Font List"
+msgstr "Rå X11 skriftsnit liste"
+
+#: kfontmanager.cpp:60
+msgid "Available X11 Fonts"
+msgstr "Tilgængelige X11 skriftsnit"
+
+#: kfontmanager.cpp:67
+msgid "Fonts made available to KDE"
+msgstr "Skriftsnit tilgængelige for KDE"
+
+#: kfontmanager.cpp:86
+msgid "The KDE Font Manager Example String"
+msgstr "KDE Skriftsnit Manager Eksempel Tekst"
+
+#: kfontlist.cpp:63 kfontmanager.cpp:108
+msgid "About kfontmanager"
+msgstr "Om kfontmanager"
+
+#: kfontmanager.cpp:108
+msgid ""
+"kfontmanager Version 0.2\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+
+#: kfontmanager.cpp:208
+msgid ""
+"The environment variable HOME\n"
+"is not set\n"
+msgstr ""
+"Variablen HOME\n"
+"er ikke sat\n"
+
+#: kfontmanager.cpp:285
+msgid ""
+"Can not create:\n"
+" ~/.kde/share/config/kdefonts\n"
+msgstr ""
+"Kan ikke oprette:\n"
+" ~/.kde/share/config/kdefonts\n"
+
+#: kfontmanager.cpp:290
+msgid ""
+"~/.kde/share/config/kdefonts exists but\n"
+"is not writeable\n"
+"Can't save KDE Fontlist."
+msgstr ""
+"~/.kde/share/config/kdefonts eksisterer, men\n"
+"er ikke skrivbar\n"
+"Kan ikke gemme KDE skriftsnit liste."
+
+#: kfontlist.cpp:63
+msgid ""
+"kfontmanager Version 0.1\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""

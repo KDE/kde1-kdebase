@@ -1,166 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kpanel\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-01-28 10:06+0100\n"
-"PO-Revision-Date: 1998-01-26 20:00+0000\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+"PO-Revision-Date: 1998-01-27 HO:MI+ZONE\n"
+"Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
 
 #: kpanel.C:210
 msgid "Move"
-msgstr "Mover"
+msgstr "Flyt"
 
 #: kpanel.C:213
 msgid "Properties"
-msgstr "Propriedades"
+msgstr "Indstillinger"
 
 #: kpanel.C:245
 msgid "Go!"
-msgstr "Começar!"
+msgstr ""
 
 #: kpanel.C:247 tools.C:805
 msgid "Where do you want to go tomorrow?"
-msgstr "Aonde é que queres ir amanhã?"
+msgstr ""
 
 #: kpanel.C:320
 msgid "No info available"
-msgstr "Nenhuma informação disponivel"
+msgstr "Ingen tilgængelig information"
 
 #: kpanel.C:359 kpanel.C:779 kpanel.C:780
 msgid "Logout"
-msgstr "Sair"
+msgstr "Log ud"
 
 #: kpanel.C:367 kpanel.C:778
 msgid "Lock screen"
-msgstr "Trancar ecran"
+msgstr "Lås skærm"
 
 #: kpanel.C:376
 msgid "Hide the panel"
-msgstr "Esconder o painel"
+msgstr "Gem Panel"
 
 #: kpanel.C:386
 msgid "Show the panel"
-msgstr "Mostrar o painel"
+msgstr "Vis Panel"
 
 #: kpanel.C:762
 msgid "Add application"
-msgstr "Adicionar aplicação"
+msgstr "Tilføj applikation"
 
 #: kpanel.C:764
 msgid "Add an application or a submenu onto the panel"
-msgstr "Adicionar uma aplicação ou um submenu ao painel"
+msgstr "Tilføj applikation eller undermenu"
 
 #: kpanel.C:765
 msgid "Add windowlist"
-msgstr "Adicionar lista de janelas"
+msgstr "Tilføj vindues oversigt"
 
 #: kpanel.C:767
 msgid "Add a windowlist menu onto the panel"
-msgstr "Adicionar um menu de lista de janelas ao painel"
+msgstr "Tilføj vindues oversigt på panelet"
 
 #: kpanel.C:768
 msgid "Configure"
-msgstr "Configurar"
+msgstr "Konfigurer"
 
 #: kpanel.C:770
 msgid "Configure panel"
-msgstr "Configurar painel"
+msgstr "Konfigurer panel"
 
 #: kpanel.C:771
 msgid "Restart"
-msgstr "Reinicializar"
+msgstr "Genstart"
 
 #: kpanel.C:773
 msgid "Restart panel"
-msgstr "Reinicializar painel"
+msgstr "Genstart panel"
 
 #: kpanel.C:774 props.C:396
 msgid "Panel"
-msgstr "Painel"
+msgstr ""
 
 #: kpanel.C:776
 msgid "Lock Screen"
-msgstr "Trancar ecran"
+msgstr "Lås skærm"
 
 #: kpanel.C:1143 tools.C:621
 msgid "No comment available"
-msgstr "Nenhum comentário disponivel"
+msgstr "Ingen tilgængelig kommentar"
 
 #: kpanel.C:1152 tools.C:814
 msgid "Windowlist"
-msgstr "Lista de Janelas"
+msgstr "Vindues oversigt"
 
 #: props.C:327
 msgid "Location"
-msgstr "Localização"
+msgstr "Placering"
 
 #: props.C:340
 msgid "Taskbar"
-msgstr "Barra de Tarefas"
+msgstr "Procesbjælke"
 
 #: props.C:341
 msgid "Hidden"
-msgstr "Escondido"
+msgstr "Gemt"
 
 #: props.C:350
 msgid "Top/Left"
-msgstr "Topo/Esquerdo"
+msgstr "Top/Venstre"
 
 #: props.C:380
 msgid "Tiny Style"
-msgstr "Estilo Pequeno"
+msgstr "Mini stil"
 
 #: props.C:381
 msgid "Normal Style"
-msgstr "Estilo Normal"
+msgstr "Normal stil"
 
 #: props.C:382
 msgid "Large Style"
-msgstr "Estilo Largo"
+msgstr "Stor stil"
 
 #: props.C:401
 msgid "Menu Tooltips"
-msgstr "Dicas de Ferramentas do Menu"
+msgstr ""
 
 #: props.C:447
 msgid "Others"
-msgstr "Outros"
+msgstr "Andre"
 
 #: props.C:449
 msgid "Personal First"
-msgstr "Pessoal Primeiro"
+msgstr "Personlige først"
 
 #: props.C:452
 msgid "Auto Hide Panel"
-msgstr "Esconder Painel Automáticamente"
+msgstr "Auto gem Panel"
 
 #: props.C:455
 msgid "Auto Hide Taskbar"
-msgstr "Esconder Barra de Tarefas Automáticamente"
+msgstr "Auto gem procesbjælke"
 
 #: props.C:473
 msgid "Clock"
-msgstr "Relógio"
+msgstr "Ur"
 
 #: props.C:475
 msgid "24h"
-msgstr "24h"
+msgstr "24-timer"
 
 #: props.C:479
 msgid "12h AM/PM"
-msgstr "12h AM/PM"
+msgstr "12-timer"
 
 #: props.C:540
 msgid "Visible"
-msgstr "Visivel"
+msgstr "Synlig"
 
 #: props.C:547
 msgid "Width"
-msgstr "Largura"
+msgstr "Bredde"
 
 #: props.C:552
 msgid "Desktops"
-msgstr "Ambientes de Trabalho"
+msgstr "Arbejdspladser"
 
 #: props.C:558
 msgid "KPanel Configuration"
-msgstr "Configuração do KPanel"
+msgstr "KPanel indstillinger"

@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"PO-Revision-Date: 1998-01-25 13:23\n"
+"Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:57
+msgid "&Windows"
+msgstr "&Vinduer"
+
+#: main.cpp:60
+msgid "&Buttons"
+msgstr "Tryk&knapper"
+
+#: main.cpp:63
+msgid "&Titlebar"
+msgstr "&Titelbjælke"
+
+#: main.cpp:69
+msgid "usage: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+msgstr "brug: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+
+#: main.cpp:98
+msgid "Window manager style"
+msgstr "Vindues manager stil"
+
+#: titlebar.cpp:113
+msgid "Minimize"
+msgstr "Minimer"
+
+#: titlebar.cpp:117
+msgid "Maximize"
+msgstr "Maksimer"
+
+#: titlebar.cpp:121
+msgid "Sticky"
+msgstr "Fastsæt"
+
+#: titlebar.cpp:129
+msgid "Menu"
+msgstr ""
+
+#: titlebar.cpp:459
+msgid ""
+"The left side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr ""
+"Den venstre side af titelbjælken er fuld... 'Maksimer' knappen er sat ud af "
+"funktion\n"
+
+#: titlebar.cpp:492
+msgid ""
+"The right side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr ""
+"Den højre side af titelbjælken er fuld... 'Maksimer' knappen er sat ud af "
+"funktion\n"
+
+#: titlebar.cpp:532
+msgid ""
+"The left side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr ""
+"Den venstre side af titelbjælken er fuld... 'Minimer' knappen er sat ud af "
+"funktion\n"
+
+#: titlebar.cpp:565
+msgid ""
+"The right side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr ""
+"Den højre side af titelbjælken er fuld... 'Maksimer' knappen er sat ud af "
+"funktion\n"
+
+#: titlebar.cpp:916
+msgid "Titlebar appearance"
+msgstr "Titelbjælkens udseende"
+
+#: titlebar.cpp:918
+msgid "Shaded"
+msgstr "Gradueret"
+
+#: titlebar.cpp:921
+msgid "Plain"
+msgstr "Almindelig"
+
+#: titlebar.cpp:924 titlebar.cpp:944
+msgid "Pixmap"
+msgstr ""
+
+#: titlebar.cpp:931
+msgid "Title Animation"
+msgstr "Titel animation"
+
+#: titlebar.cpp:934
+msgid "ms"
+msgstr ""
+
+#: titlebar.cpp:955
+msgid "&Active pixmap"
+msgstr "&Aktiv pixmap"
+
+#: titlebar.cpp:957
+msgid "&Inactive pixmap"
+msgstr "&Inaktiv pixmap"
+
+#: windows.cpp:69
+msgid "Window movement"
+msgstr "Vindues bevægelse"
+
+#: windows.cpp:70
+msgid "Transparent"
+msgstr ""
+
+#: windows.cpp:71
+msgid "Opaque"
+msgstr ""
+
+#: windows.cpp:74
+msgid "Resize Animation"
+msgstr "Animation"
+
+#: windows.cpp:79
+msgid "Placement policy"
+msgstr "Placerings politik"
+
+#: windows.cpp:80
+msgid "Random placement"
+msgstr "Tilfældig placering"
+
+#: windows.cpp:81
+msgid "Smart placement"
+msgstr "Smart placering"
+
+#: windows.cpp:84
+msgid "Maximize Style"
+msgstr "Maksimerings stil"
+
+#: windows.cpp:85
+msgid "Maximize fully"
+msgstr "Maksimer helt"
+
+#: windows.cpp:86
+msgid "Maximize vertically"
+msgstr "Maksimer vertikalt"
+
+#: windows.cpp:89
+msgid "Focus Policy"
+msgstr "Focus politik"
+
+#: windows.cpp:90
+msgid "Click to focus"
+msgstr "Klik til fokus"
+
+#: windows.cpp:91
+msgid "Focus follows mouse"
+msgstr "Fokus følger mus"
+
+#: windows.cpp:96
+msgid ""
+"Auto raise delay\n"
+"(<100 disables)"
+msgstr ""
+"Til top efter\n"
+"(<100 sætter ud af drift"
+
+#: windows.cpp:99
+msgid "miliseconds"
+msgstr "millisekunder"
