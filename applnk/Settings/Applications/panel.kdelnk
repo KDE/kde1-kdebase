@@ -1,5 +1,6 @@
 # KDE Config File
 [KDE Desktop Entry]
+Type=Application
 Name=Panel
 Name[pl]=Panel
 Name[fi]=Paneeli
@@ -9,5 +10,7 @@ Name[hu]=Panel
 Name[pt]=Painel
 Name[sk]=Panel
 Comment=You can configure here, how the panel should look like
+SwallowTitle=Panel Options
 Icon=panel_settings.xpm
+Exec=kcmkpanel
 
