@@ -233,7 +233,7 @@ void PMenuItem::writeConfig( QDir dir )
     return;
   config.close(); // kalle
   // kalle  QTextStream st( (QIODevice *) &config);
-  KConfig kconfig(file); // kalle
+  KConfig kconfig(name); // kalle
   kconfig.setGroup("KDE Desktop Entry");
   kconfig.writeEntry("Exec", command_name );
   kconfig.writeEntry("MiniIcon", pixmap_name );

@@ -106,10 +106,6 @@ display.
 
 <p>
 
-You will not see the wallpaper when you choose a color gradient fill.
-
-<p>
-
 A gradient fill uses only 8 colors leaving plenty free for other
 applications. However, it requires an image the size of your display to be
 maintained in memory.
@@ -329,43 +325,6 @@ correctly when their fonts are changed, or if a large font is used.
 <!-- NEW SECTION	NEW SECTION		NEW SECTION		NEW SECTION		 -->
 
 
-
-<sect>Input
-<p>
-
-The Input setup dialog is comprised of two sections:
-
-<enum>
-<item>The <bf>Keyboard</bf> group.
-<item>The <bf>Mouse</bf> group.
-</enum>
-
-<sect1>Keyboard
-<p>
-
-This allows customisation of the keyboard.  The <em>Auto Repeat</em>
-check box controls the behaviour when a key is help pressed.  If
-<em>Auto Repeat</em> is on then the key will be outputted repeatedly
-until you release the key.
-<p>
-The <em>Repeat Delay</em> is the time to wait before the first key press
-is repeated.
-<p>
-The <em>Repeat Rate</em> is how quickly more key presses should be generated
-after the first repeat.
-<p>
-<bf>Note:</bf> Only the XFree86 X server supports <em>Repeat Delay</em> and
-<em>Repeat Rate</em> (though I couldn't make it work on my machine - if
-this works for you please let me know).
-
-<sect1>Mouse
-<p>
-
-<em>Acceleration</em> sets the speed the pointer should move after the
-mouse has moved faster than the <em>Threshold</em>.
-
-
-<!-- NEW SECTION	NEW SECTION		NEW SECTION		NEW SECTION		 -->
 
 <sect>Questions and answers
 <p>

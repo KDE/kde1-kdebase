@@ -57,7 +57,7 @@ int main( int argc, char *argv[] )
     KBGndManager kbgnd( &a );
 
     kbgnd.connect(&a, SIGNAL(desktopChange(int)), SLOT(desktopChange(int)));
-    kbgnd.connect(&a, SIGNAL(commandReceived(int)), SLOT(commandReceived(int)));
+    kbgnd.connect(&a, SIGNAL(commandReceived(QString)), SLOT(commandReceived(QString)));
 
     a.connectToKWM();
 
