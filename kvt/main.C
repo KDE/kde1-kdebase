@@ -471,7 +471,10 @@ kVt::kVt( KConfig* sessionconfig, QWidget *parent, const char *name )
       menubar->hide();
     
     frame = new QFrame( this );
-    frame ->setFrameStyle( QFrame::WinPanel | QFrame::Sunken);
+	if( style() == WindowsStyle )
+      frame ->setFrameStyle( QFrame::WinPanel | QFrame::Sunken);
+	else
+	  frame ->setFrameStyle( QFrame::Panel | QFrame::Sunken);
 
     scrollbar = new QScrollBar(QScrollBar::Vertical, this );
     connect( scrollbar, SIGNAL(valueChanged(int)), SLOT(scrolling(int)) );
@@ -502,6 +505,12 @@ kVt::kVt( KConfig* sessionconfig, QWidget *parent, const char *name )
 
 }
 
+void kVt::styleChange( GUIStyle ) {
+  if( style() == WindowsStyle )
+    frame ->setFrameStyle( QFrame::WinPanel | QFrame::Sunken);
+  else
+    frame ->setFrameStyle( QFrame::Panel | QFrame::Sunken); 
+} 
 
 void kVt::saveYourself(){
   KConfig* config = KApplication::getKApplication()->getSessionConfig();
@@ -648,21 +657,23 @@ void kVt::resizeEvent( QResizeEvent * ev)
   //        return;
   //      }
   //    }
+    
+	int frameWidth = frame->lineWidth();
   
    if (scrollbar_visible) {
      switch (kvt_scrollbar){
      case kvt_right:
-       rxvt->setGeometry(frame->x()+2, frame->y()+2,
-			 frame->width()-4 - 16, frame->height()-4);
+       rxvt->setGeometry(frame->x()+frameWidth, frame->y()+frameWidth,
+			 frame->width()-2*frameWidth - 16, frame->height()-2*frameWidth);
        scrollbar->setGeometry(rxvt->x() + rxvt->width(),
 			      rxvt->y(),
 			      16,
 			      rxvt->height());
        break;
      case kvt_left:
-       rxvt->setGeometry(frame->x()+2 + 16, frame->y()+2,
-			 frame->width()-4 - 16, frame->height()-4);
-       scrollbar->setGeometry(2,
+       rxvt->setGeometry(frame->x()+frameWidth + 16, frame->y()+frameWidth,
+			 frame->width()-2*frameWidth - 16, frame->height()-2*frameWidth);
+       scrollbar->setGeometry(frameWidth,
 			      rxvt->y(),
 			      16,
 			      rxvt->height());
@@ -670,8 +681,8 @@ void kVt::resizeEvent( QResizeEvent * ev)
      }
    }
    else {
-     rxvt->setGeometry(frame->x()+2, frame->y()+2,
-		       frame->width()-4, frame->height()-4);
+     rxvt->setGeometry(frame->x()+frameWidth, frame->y()+frameWidth,
+		       frame->width()-2*frameWidth, frame->height()-2*frameWidth);
      scrollbar->setGeometry(rxvt->x() + rxvt->width(),
 			    rxvt->y(),
 			    16,

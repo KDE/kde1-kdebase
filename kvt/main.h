@@ -62,6 +62,7 @@ public slots:
 protected:
     void    resizeEvent( QResizeEvent * );
     bool eventFilter( QObject *, QEvent * );
+	void styleChange( GUIStyle );
 
 private:
   KMenuBar *menubar;
