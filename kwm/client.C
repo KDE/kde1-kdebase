@@ -906,7 +906,8 @@ void Client::paintEvent( QPaintEvent* e){
 		  height()-TITLEBAR_HEIGHT-BORDER+TITLEWINDOW_SEPARATION-2);
       qDrawWinPanel(&p, rect(), colorGroup());
       p.eraseRect(width()-18, height()-18, 16, 16);
-      qDrawShadeRect( &p, width()-20, height()-20, 20, 20, colorGroup(), False);
+      if ( !fixedSize() )
+	  qDrawShadeRect( &p, width()-20, height()-20, 20, 20, colorGroup(), False);
   }
   else {
     // the users wants shaped windows! A lot of code but more or less trivial....
