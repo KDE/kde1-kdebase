@@ -719,12 +719,23 @@ void Manager::manage(Window w, bool mapped){
   XSync(qt_xdisplay(), False);
 
   // get some KDE specific hints
-  int desktop_tmp = KWM::desktop(c->window);
-  if (!kwm_error)
-    c->desktop = desktop_tmp;
-  else {
+
+  // transient windows on their parent's desktop
+  if (c->trans != None && c->trans != qt_xrootwin()){
+    Client* pc = getClient(c->trans);
+    if (pc)
+      c->desktop = pc->desktop;
     KWM::moveToDesktop(c->window, c->desktop);
   }
+  else {
+    int desktop_tmp = KWM::desktop(c->window);
+    if (!kwm_error && (desktop_tmp>0 && desktop_tmp <= number_of_desktops) )
+      c->desktop = desktop_tmp;
+    else {
+      KWM::moveToDesktop(c->window, c->desktop);
+    }
+  }
+  
   c->iconified = KWM::isIconified(c->window);
   if (kwm_error){
     if (dohide){
@@ -796,6 +807,7 @@ void Manager::manage(Window w, bool mapped){
 }
 
 void Manager::withdraw(Client* c){
+  KWM::moveToDesktop(c->window, 0);
   XUnmapWindow(qt_xdisplay(), c->winId());
   gravitate(c, TRUE);
   XReparentWindow(qt_xdisplay(), c->window, qt_xrootwin(), 
@@ -1552,20 +1564,19 @@ void Manager::logout(){
   for (c = clients.first(); c; c = clients.next()){
     if (c->Psaveyourself){
       command = getprop(c->window, XA_WM_COMMAND);
-      sendClientMessage(c->window, wm_protocols, wm_save_yourself);
-      // wait for clients response
-      XSync(qt_xdisplay(), FALSE);
-      timeStamp();
-      XSync(qt_xdisplay(), FALSE);
-      command = getprop(c->window, XA_WM_COMMAND);
+      machine = getprop(c->window, wm_client_machine);
+      properties = KWM::getProperties(c->window);
       XSelectInput(qt_xdisplay(), c->window, 
 		   PropertyChangeMask| StructureNotifyMask );
       command = getprop(c->window, XA_WM_COMMAND);
       machine = getprop(c->window, wm_client_machine);
-      properties = KWM::getProperties(c->window);
+      XSync(qt_xdisplay(), FALSE);
+      sendClientMessage(c->window, wm_protocols, wm_save_yourself);
+      // wait for clients response
       do {
 	XWindowEvent(qt_xdisplay(), c->window, PropertyChangeMask
 		     | StructureNotifyMask, &ev);
+	XSync(qt_xdisplay(), FALSE);
 	if (ev.type != PropertyNotify){
 	  // special code for clients like xfig which unamp their
 	  // window instead of setting XA_WM_COMMAND....
@@ -1584,7 +1595,7 @@ void Manager::logout(){
 	  propertyNotify(&ev.xproperty);
 	  if (ev.xproperty.atom == XA_WM_COMMAND){
 	    c->machine = getprop(c->window, wm_client_machine);
-	    return;
+	    break;
 	  }
 	}
       } while (1);
