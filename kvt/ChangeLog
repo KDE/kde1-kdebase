@@ -1,3 +1,5 @@
+ - new option "-tn" for terminal type
+
   - background white leads to lightgrey for applications.
     This allows dialog-programms to look nice (e.g. LISA)
   - bugfixes in the event loop. First version that seems to work properly :) 

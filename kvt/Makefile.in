@@ -60,10 +60,7 @@ all: $(TARGET)
 $(TARGET): main.moc $(OBJS)
 	$(CXX) -o kvt $(OBJS) $(LDFLAGS)
 
-Makefile: Makefile.in
-	cd .. && CONFIG_FILES=kvt/$@ CONFIG_HEADERS= $(SHELL) ./config.status
-
-install: all
+install:
 	$(INSTALL_DIR) $(BINDIR)
 	$(INSTALL) $(TARGET) $(BINDIR)
 	$(INSTALL_DIR) $(PICSDIR)
