@@ -89,7 +89,7 @@ void KIOJob::list( const char *_url, bool _reload, bool _bHTML )
     
     bHTML = _bHTML;
    
-    u.setPassword("");
+    // u.setPassword("");
     lstURL = u.url().data();
     if ( lstURL.right(1) != "/" && u.hasPath() )
 	lstURL += "/";
