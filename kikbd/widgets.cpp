@@ -109,6 +109,8 @@ KiKbdMapsWidget::KiKbdMapsWidget(QWidget* parent)
   addToolTip(mapsList=new QListBox(parent), 
 	     gettext("List of active keyboard maps"));
   hbox->addWidget(mapsList, 20);
+  connect(mapsList, SIGNAL(highlighted(int)), SLOT(highlighted(int)));
+  connect(mapsList, SIGNAL(selected(int)), SLOT(selected(int)));
 
   vbox = new QVBoxLayout(5);
   hbox->addLayout(vbox);
@@ -145,6 +147,10 @@ KiKbdMapsWidget::KiKbdMapsWidget(QWidget* parent)
 			   gettext("Use only default and last active "
 				   "keyboard maps to switching from keyboard")));
   connect(this, SIGNAL(activateHot(bool)), wid, SLOT(setEnabled(bool)));
+
+  accel->connectItem(accel->insertItem(Key_Up), this, SLOT(selectionUp()));
+  accel->connectItem(accel->insertItem(Key_Down), this, 
+		     SLOT(selectionDown()));
   dataChanged();
 }
 void KiKbdMapsWidget::dataChanged()
@@ -362,7 +368,6 @@ KiKbdGeneralWidget::KiKbdGeneralWidget(QWidget* parent)
   QBoxLayout  *topLayout = new QVBoxLayout(this, 20);
   QGroupBox   *group = new QGroupBox(i18n("Keyboard maps"), this);
   QVBoxLayout *mbox  = new QVBoxLayout(group, 20);
-  QAccel      *accel = new QAccel(parent);
   QBoxLayout  *hbox;
   QWidget     *wid;
   
@@ -405,10 +410,6 @@ KiKbdGeneralWidget::KiKbdGeneralWidget(QWidget* parent)
   group->setMinimumHeight(2*wid->height());
   topLayout->addWidget(group);
 
-  // connections
-  accel->connectItem(accel->insertItem(Key_Up), this, SLOT(selectionUp()));
-  accel->connectItem(accel->insertItem(Key_Down), this, 
-		     SLOT(selectionDown()));
   newSwitch(0L);
 }
 void KiKbdGeneralWidget::newSwitch(const char*)
