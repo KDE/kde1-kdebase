@@ -692,7 +692,7 @@ void KMimeType::init()
     
     // Read the application bindings
     QString path = kapp->kdedir();
-    path += "/mimetypes";
+    path += "/share/mimelnk";
     initMimeTypes( path.data() );
 
     if ( ( defaultType = KMimeType::findByName( "application/octet-stream" ) ) == 0L )
