@@ -34,11 +34,11 @@ clean: debian-clean
 
 debian-clean:
 	dh_testdir
+	-rm -f debian/debiandirs
 	-rm -f $(BUILDDIR)/build-stamp
-	-rm -f debian/files
-	-rm -f debian/*substvars
-	-rm -f debian/menu
-	-rm -f configure
+	if test -d CVS; then \
+	  make -f admin/Makefile.common cvs-clean ;\
+	fi
 
 binary-indep:	checkroot build
 	$(checkdir)
@@ -60,11 +60,11 @@ binary-arch: checkroot build
 	install -d debian/tmp/etc/X11/kdm
 	install -d debian/tmp/usr/doc/kdm
 	install -d debian/tmp/usr/X11R6/lib/X11/kdm
-	install -d debian/tmp/usr/man/man5
-	install -d debian/tmp/usr/man/man1
+	install -d debian/tmp/usr/share/man/man5
+	install -d debian/tmp/usr/share/man/man1
 	install -d debian/tmp/var/state/kdm
 	install -d debian/tmp/etc/pam.d
-	cp debian/kdm.1.gz debian/tmp/usr/man/man1
+	cp debian/kdm.1.gz debian/tmp/usr/share/man/man1
 	cp debian/kdm.init.d debian/tmp/etc/init.d/kdm
 	chmod +x debian/tmp/etc/init.d/kdm
 # skipping CVS
