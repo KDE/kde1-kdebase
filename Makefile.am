@@ -1,10 +1,10 @@
 ## kdebase/Makefile.am
 ## (C) 1997 Stephan Kulow
 
-SUBDIRS = kfm kdehelp kdisplay kfontmanager kfind kvt \
+SUBDIRS = kfm mimetypes kdehelp kdisplay kfontmanager kfind kvt \
 	kwm kpanel kwmcom kwmmodules krootwm kdm kscreensaver \
 	kmenuedit kaudio kcontrolcenter \
-	pics po mimetypes doc applnk 
+	pics applnk doc po 
 
 # AUTOMAKE_OPTIONS = no-dependencies
 
