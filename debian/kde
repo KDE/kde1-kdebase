@@ -5,7 +5,9 @@ kcontrol -init &
 
 kbgndwm &
 krootwm &
+kwmsound &
 kpanel &
+krdb &
 
 exec kwm 
 
