@@ -65,6 +65,7 @@ struct kwmOptions {
   int TitleAnimation;
   int AutoRaise;
   int ElectricBorder;
+  int ElectricBorderNumberOfPushes;
   bool ElectricBorderMovePointer;
   bool ControlTab;
   bool Button3Grab;

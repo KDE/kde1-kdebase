@@ -1791,13 +1791,13 @@ void Client::stickyToggled(bool depressed){
 void Client::menuPressed(){
   // the menu button is somewhat special since it does not only show a
   // popup menu but also reacts on doubleclicks. 
-  static QTime *clicktime = 0;
+  static QTime click_time;
   if (!isActive()){
     myapp->operations->hide();
     manager->raiseClient(this);
     manager->activateClient(this);
   }
-  if (clicktime && clicktime->msecsTo(QTime::currentTime())<700){
+  if (click_time.msecsTo(QTime::currentTime())<700){
     // some kind of doubleclick => close. Will be checked in the
     // menuReleased handler.
     do_close = TRUE;
@@ -1807,10 +1807,7 @@ void Client::menuPressed(){
     showOperations();
   }
   
-  if (!clicktime)
-    clicktime = new QTime(QTime::currentTime());
-  else
-    *clicktime = QTime::currentTime();
+  click_time = QTime::currentTime();
 }
 
 

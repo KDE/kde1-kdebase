@@ -5,6 +5,7 @@
  *
  */
 
+
 #include "manager.moc"
 #include "main.h"
 #include <stdio.h>
@@ -12,6 +13,7 @@
 #include <unistd.h>
 #include <X11/cursorfont.h>
 #include <qregexp.h>
+#include <qdatetm.h>
 
 #include <kwm.h>
 
@@ -61,6 +63,7 @@ Manager::Manager(): QObject(){
   manager = this;
   current_desktop = KWM::currentDesktop();
   number_of_desktops = KWM::numberOfDesktops();
+  printf("manager: number of desktops = %d \n", number_of_desktops);
 
   proxy_hints = 0;
   proxy_props = 0;
@@ -168,6 +171,11 @@ Manager::Manager(): QObject(){
 
 }
 
+// Electric Border Window management. Electric borders allow a user
+// to change the virtual desktop by moving the mouse pointer to the
+// borders. Technically this is done with input only windows. Since
+// electric borders can be switched on and off, we have these two
+// functions to create and destroy them.
 void Manager::createBorderWindows(){
 
   if( have_border_windows)
@@ -230,6 +238,11 @@ void Manager::createBorderWindows(){
 }
 
 
+// Electric Border Window management. Electric borders allow a user
+// to change the virtual desktop by moving the mouse pointer to the
+// borders. Technically this is done with input only windows. Since
+// electric borders can be switched on and off, we have these two
+// functions to create and destroy them.
 void Manager::destroyBorderWindows(){
 
   if( !have_border_windows)
@@ -503,33 +516,6 @@ void Manager::clientMessage(XEvent*  ev){
       if (current())
 	current()->handleOperation(Client::operationFromCommand(com));
     }
-    else if (com == "desktop1") {
-      switchDesktop(1);
-    }
-    else if (com == "desktop1") {
-      switchDesktop(1);
-    }
-    else if (com == "desktop2") {
-      switchDesktop(2);
-    }
-    else if (com == "desktop3") {
-      switchDesktop(3);
-    }
-    else if (com == "desktop4") {
-      switchDesktop(4);
-    }
-    else if (com == "desktop5") {
-      switchDesktop(5);
-    }
-    else if (com == "desktop6") {
-      switchDesktop(6);
-    }
-    else if (com == "desktop7") {
-      switchDesktop(7);
-    }
-    else if (com == "desktop8") {
-      switchDesktop(8);
-    }
     else if (com == "desktop+1") {
       int d = current_desktop + 1;
       if (d > number_of_desktops)
@@ -559,6 +545,9 @@ void Manager::clientMessage(XEvent*  ev){
 	switchDesktop(current_desktop + 1);
       else
 	switchDesktop(current_desktop - 1);
+    }
+    else if (com.left(7) == "desktop"){
+      switchDesktop(com.right(com.length()-7).toInt());
     }
     else if (com == "moduleRaised") {
       raiseElectricBorders();
@@ -678,13 +667,16 @@ void Manager::colormapNotify(XColormapEvent *e){
 
 // a property of one of the windows changed
 void Manager::propertyNotify(XPropertyEvent *e){
-  static Atom da[8] = {0,0,0,0,0,0,0,0};
+  static Atom da[32] = {0,0,0,0,0,0,0,0,
+			0,0,0,0,0,0,0,0,
+			0,0,0,0,0,0,0,0,
+			0,0,0,0,0,0,0,0};
   Atom a;
   int del;
   Client *c;
   int i;
   if (!da[0]){
-    for (i=0;i<7;i++){
+    for (i=0;i<32;i++){
       QString n;
       n.setNum(i+1);
       n.prepend("KWM_DESKTOP_NAME_");
@@ -707,7 +699,7 @@ void Manager::propertyNotify(XPropertyEvent *e){
       number_of_desktops = KWM::numberOfDesktops();
       sendToModules(module_desktop_number_change, 0, (Window) number_of_desktops);
     }
-    for (i=0;i<8;i++){
+    for (i=0;i<32;i++){
       if (a == da[i]){
 	// a desktop got a new name
 	sendToModules(module_desktop_name_change, 0, (Window) i+1);
@@ -856,7 +848,7 @@ void Manager::motionNotify(XMotionEvent* e){
 }
 
 // the pointer entered one of our windows. We may have to activate a
-// window (when focus follows mouse) or start an electric border timer.
+// window (when focus follows mouse) or handle electric borders.
 void Manager::enterNotify(XCrossingEvent *e){
   Client *c;
   if (options.FocusPolicy == FOCUS_FOLLOW_MOUSE){ 
@@ -903,36 +895,19 @@ void Manager::enterNotify(XCrossingEvent *e){
       }
     }
   }
-
-  if(have_border_windows){
-    // the user moved the pointer onto an electric border => start the
-    // single shot timer and store the border in current_border
-    if (e->window == top_border ||
-	e->window == left_border ||
-	e->window == bottom_border ||
-	e->window == right_border){
-      if (options.ElectricBorder > -1){
-	QTimer::singleShot(options.ElectricBorder, 
-			 this, SLOT(electricBorder()));
-	current_border = e->window;
-      }
-    }
+  
+  if (have_border_windows &&
+      (e->window == top_border ||
+       e->window == left_border ||
+       e->window == bottom_border ||
+       e->window == right_border)){
+    // the user entered an electric border
+    electricBorder(e->window);
   }
 }
 
-// the pointer left one of our windows. Maybe an electric border
-// will have to be deactivated.
-void Manager::leaveNotify(XCrossingEvent *e){
-
-
-  if(have_border_windows){
-    if (e->window == top_border ||
-	e->window == left_border ||
-	e->window == bottom_border ||
-	e->window == right_border){
-      current_border = None;
-    }
-  }
+// the pointer left one of our windows.
+void Manager::leaveNotify(XCrossingEvent * /* e */){
 }
 
 // switch to another virtual desktop according to the specified direction.
@@ -1030,22 +1005,55 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
   }
 }
 
-// this slot is connected to a single shot timer after the user
-// entered an electric border with the mouse
-// pointer. electricBorder() will then check the current_border
-// attribute and switch the virtual desktop according to its value.
-void Manager::electricBorder(){
+// this function is called when the user entered an electric border
+// with the mouse. It may switch to another virtual desktop
+void Manager::electricBorder(Window border){
+  static QTime electric_time;
+  if(!have_border_windows || options.ElectricBorder < 0)
+    return; // no electric borders
+
+  if (current_border == border){
+    current_border_push_count++;
+    if (electric_time.msecsTo(QTime::currentTime())>options.ElectricBorder
+	&& current_border_push_count < options.ElectricBorderNumberOfPushes){
+      current_border_push_count = 1;
+      electric_time = QTime::currentTime();
+    }
+    if (current_border_push_count > options.ElectricBorderNumberOfPushes){
+      if (current_border == top_border){
+	moveDesktopInDirection(Up);
+      }
+      else if (current_border == bottom_border){
+	moveDesktopInDirection(Down);
+      }
+      else if (current_border == left_border){
+	moveDesktopInDirection(Left);
+      }
+      else if (current_border == right_border){
+	moveDesktopInDirection(Right);
+      }
+      current_border = 0;
+    }
+  }
+  else {
+    current_border = border;
+    current_border_push_count = 1;
+    electric_time = QTime::currentTime();
+  }
+  
+  // reset the pointer to find out wether the user is really pushing
+  QPoint pos =QCursor::pos();
   if (current_border == top_border){
-    moveDesktopInDirection(Up);
+    QCursor::setPos(pos.x(), pos.y()+1);
   }
   else if (current_border == bottom_border){
-    moveDesktopInDirection(Down);
+    QCursor::setPos(pos.x(), pos.y()-1);
   }
   else if (current_border == left_border){
-    moveDesktopInDirection(Left);
+    QCursor::setPos(pos.x()+1, pos.y());
   }
   else if (current_border == right_border){
-    moveDesktopInDirection(Right);
+    QCursor::setPos(pos.x()-1, pos.y());
   }
 }
 

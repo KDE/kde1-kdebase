@@ -555,15 +555,15 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
   number_of_desktops = (number_of_desktops/2) * 2;
   if (number_of_desktops < 2)
     number_of_desktops = 2;
-  if (number_of_desktops > 8)
-    number_of_desktops = 8;
+  if (number_of_desktops > 32)
+    number_of_desktops = 32;
   
   KWM::setNumberOfDesktops(number_of_desktops);
-  for (i=1; i <= 8; i++){
+  for (i=1; i <= 32; i++){
     QString a = "";
     a.setNum(i);
     a.prepend("Desktop"); 
-    QString b = config->readEntry(a);
+    QString b = config->readEntry(a,klocale->translate("Unnamed Desktop"));
     b.stripWhiteSpace();
     KWM::setDesktopName(i, b);
     a.append("Region");
@@ -775,6 +775,15 @@ void MyApp::readConfiguration(){
     config->writeEntry("ElectricBorder", options.ElectricBorder);
   }
 
+  if (config->hasKey("ElectricBorderNumberOfPushes")){
+    options.ElectricBorderNumberOfPushes = config->readNumEntry("ElectricBorderNumberOfPushes");
+    if (options.ElectricBorderNumberOfPushes < -1)
+      options.ElectricBorderNumberOfPushes = 5;
+  }
+  else{
+    options.ElectricBorderNumberOfPushes = 5;
+    config->writeEntry("ElectricBorderNumberOfPushes", options.ElectricBorderNumberOfPushes);
+  }
 
   key = config->readEntry("ElectricBorderMovePointer");
   if( key == "on")

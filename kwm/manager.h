@@ -68,10 +68,9 @@ public:
   // notification of pointer movements
   void motionNotify(XMotionEvent* e);
   // the pointer entered one of our windows. We may have to activate a
-  // window (when focus follows mouse) or start an electric border timer.
+  // window (when focus follows mouse) or handle electric borders.
   void enterNotify(XCrossingEvent *e);
-  // the pointer left one of our windows. Maybe an electric border
-  // will have to be deactivated.
+  // the pointer left one of our windows. 
   void leaveNotify(XCrossingEvent *e);
     
 
@@ -262,13 +261,16 @@ public:
   // KWM from libkdecore.
   void raiseSoundEvent(const QString &);
 
-  // Electric Border Window management Electric borders allow a user
+  // Electric Border Window management. Electric borders allow a user
   // to change the virtual desktop by moving the mouse pointer to the
   // borders. Technically this is done with input only windows. Since
   // electric borders can be switched on and off, we have these two
   // functions to create and destroy them.
   void createBorderWindows();
   void destroyBorderWindows();
+  // this function is called when the user entered an electric border
+  // with the mouse. It may switch to another virtual desktop
+  void electricBorder(Window border);
 
 signals:
   // this signal is emitted if the manager recieves a configure
@@ -277,14 +279,6 @@ signals:
   // this signal is emitted after finishing the session managers
   // logout procedure (logout())
   void showLogout();
-
-
-private slots:
-  // this slot is connected to a single shot timer after the user
-  // entered an electric border with the mouse
-  // pointer. electricBorder() will then check the current_border
-  // attribute and switch the virtual desktop according to its value.
-  void electricBorder();
 
 
 private:
@@ -454,6 +448,7 @@ private:
 
   // electric borders
   Window current_border;
+  int current_border_push_count;
   Window left_border;
   Window top_border;
   Window right_border;

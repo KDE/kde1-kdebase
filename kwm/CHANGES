@@ -12,6 +12,14 @@ influences from my experiences with the former kwm.
 In 0.11:
 --------
 patchlevel 4:
+        - raised the number of possible virtual desktops to 32. Note that you need
+           a current libkdecore to take the full benefit from this.
+        - electric borders need to be "pushed" if you want to switch to another virtual 
+           desktop without dragging a window. The number of pushes within the
+           timeframe given by the ElectricBorder property is defined in the new property
+           ElectricBorderNumberOfPushes. The default is 5.
+
+patchlevel 4:
         - new option: WindowResizeType={Opaque, Transparent}
 
 patchlevel 3:
