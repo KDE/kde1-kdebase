@@ -1005,7 +1005,8 @@ void KFMManager::slotData( const char *_text, int _len)
 	tmp = "<img border=0 src=\"";
 	tmp += KMimeType::getPixmapFileStatic( tmp2 );
 	tmp += "\">";
-	_text = tmp;
+	_text = tmp.data();
+        _len = strlen(_text);
     }
     
     // HACK
