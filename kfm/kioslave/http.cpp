@@ -428,7 +428,17 @@ int KProtocolHTTP::ProcessHeader()
 	    {
 	    // Jacek: We can't send mimeType signal now,
 	    //    because there may be another Content-Type to come
-		mType=buffer + 14;
+	      const char * _type = buffer + 14;
+	      const char * tmpsep;
+	      QString tmptype;
+	      if ( tmpsep = strchr( _type, ';' ) )
+              {
+		tmptype = _type;
+		tmptype = tmptype.left( tmpsep - _type );
+		_type = tmptype.data();
+	      }
+
+	      mType = _type;
 	    }
 	    else if ( strncmp( buffer, "HTTP/1.0 ", 9 ) == 0 )
 	    {

@@ -1,3 +1,9 @@
+Fri Mar 27 13:46:56 1998    <weis@snoopy.rz.uni-frankfurt.de>
+
+	* kioslave/http.cpp (ProcessHeader): Fixed bug that
+	  appeard with the following line:
+	  "Content-Type: text/html; charset=..."
+
 Thu Mar 26 02:40:24 1998  Torben Weis  <weis@localhost>
 
 	* kioslave: Fixed bug that appeard while copying very
