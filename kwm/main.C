@@ -1022,7 +1022,7 @@ void MyApp::readConfiguration(){
   else if( key == "FullWarp")
     options.ElectricBorderPointerWarp = FULL_WARP;
   else{
-    config->writeEntry("ElectricBorderPointerWarp", "FullWarp");
+    config->writeEntry("ElectricBorderPointerWarp", "NoWarp");
     options.ElectricBorderPointerWarp = FULL_WARP;
   }
 
@@ -1727,16 +1727,16 @@ void MyApp::slotKMenu(){
 }
 
 void MyApp::slotSwitchOneDesktopLeft(){
-  manager->moveDesktopInDirection(Manager::Left);
+  manager->moveDesktopInDirection(Manager::Left, 0, FALSE);
 }
 void MyApp::slotSwitchOneDesktopRight(){
-  manager->moveDesktopInDirection(Manager::Right);
+  manager->moveDesktopInDirection(Manager::Right, 0, FALSE);
 }
 void MyApp::slotSwitchOneDesktopUp(){
-  manager->moveDesktopInDirection(Manager::Up);
+  manager->moveDesktopInDirection(Manager::Up, 0, FALSE);
 }
 void MyApp::slotSwitchOneDesktopDown(){
-  manager->moveDesktopInDirection(Manager::Down);
+  manager->moveDesktopInDirection(Manager::Down, 0, FALSE);
 }
 
 void MyApp::slotSwitchDesktop1(){
