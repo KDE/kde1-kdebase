@@ -124,7 +124,7 @@ int main( int argc, char *argv[] )
        "\n Usage:"
        "\n %s <command> [-window <regular expression>] [-desktop <number>]"
        "\n              [-sticky] [-iconify] [-maximize] "
-       "\n              [-decoration tiny|none] [-activate] [-nofocus]"
+       "\n              [-decoration tiny|none] [-activate] [-nofocus] [-staysontop]"
        "\n "
        "\n If you do not specify a regular expression for the windows title,"
        "\n then the very first window to appear will be taken. Not recommended!"
@@ -147,6 +147,7 @@ int main( int argc, char *argv[] )
   bool iconify = FALSE;
   bool sticky = FALSE;
   int noFocus = 0;
+  int staysOnTop = 0;
   int decoration = KWM::normalDecoration;
 
   for (int i = 2; i < argc; i++)
@@ -175,6 +176,7 @@ int main( int argc, char *argv[] )
     if (!strcmp(argv[i],"-iconify") ) iconify = true;
     if (!strcmp(argv[i],"-sticky") ) sticky = true;
     if (!strcmp(argv[i],"-nofocus") ) noFocus = KWM::noFocus;
+    if (!strcmp(argv[i],"-staysontop") ) staysOnTop = KWM::staysOnTop;
   }
 
   KWMModuleApplication a (argc, argv);
@@ -182,7 +184,7 @@ int main( int argc, char *argv[] )
   fcntl(ConnectionNumber(qt_xdisplay()), F_SETFD, 1);
 
 
-  new KStart(&a, argv[1], window, desktop, activate, maximize, iconify, sticky, decoration | noFocus);
+  new KStart(&a, argv[1], window, desktop, activate, maximize, iconify, sticky, decoration | noFocus | staysOnTop);
 
 
   return a.exec();
