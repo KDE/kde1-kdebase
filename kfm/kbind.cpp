@@ -1656,7 +1656,7 @@ bool KDELnkMimeType::run( const char *_url )
     else if ( strcmp( typ, "Link" ) == 0 )
     {
 	QString url = config->readEntry( "URL" );
-	delete config;
+	// delete config; // Again, Torben !!!
 	if ( url.isEmpty() )
 	{
 	    QMessageBox::message( klocale->translate( "KFM Error" ),
