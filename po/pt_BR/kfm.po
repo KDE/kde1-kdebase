@@ -1036,7 +1036,7 @@ msgstr "%d arquivos especiais não serão copiados."
 
 #: kiojob.cpp:662
 msgid "Recurse copying from/to distant locations"
-msgstr ""
+msgstr "Cópia recursiva de/para localizações distantes"
 
 #: kiojob.cpp:913
 #, c-format

@@ -182,19 +182,19 @@ msgid "X default codes"
 msgstr "Códigos padrões do X"
 
 #: kikbdconf.cpp:209
-#, fuzzy, c-format
 msgid ""
 "%s\n"
 "Do you want to configure now?"
 msgstr ""
-"\n"
+"%s\n"
 "Você quer continuar?"
 
 #: kikbdconf.cpp:217
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
-msgstr ""
+msgstr "Você está usando o \"Teclado Internacional\" pela primeira vez.\n"
+ "Instalei algumas configurações padrões."
 
 #: kikbdconf.cpp:357
 msgid "unknown"
@@ -249,14 +249,12 @@ msgid "alternative symbols"
 msgstr "símbolos alternativos"
 
 #: kikbdconf.cpp:427
-#, fuzzy
 msgid "Language"
-msgstr "linguagem"
+msgstr "Linguagem"
 
 #: kikbdconf.cpp:431
-#, fuzzy
 msgid "Charset"
-msgstr "charset"
+msgstr "Charset"
 
 #: kikbdconf.cpp:477
 msgid "International keyboard ERROR"
@@ -490,7 +488,6 @@ msgid "&Docked"
 msgstr "&Embutido"
 
 #: widgets.cpp:649
-#, fuzzy
 msgid "Dock into special area in the panel"
 msgstr "Embutir em área especial do KPanel"
 
