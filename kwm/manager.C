@@ -83,6 +83,7 @@ Manager::Manager(): QObject(){
   kwm_win_frame_geometry = XInternAtom(qt_xdisplay(),"KWM_WIN_FRAME_GEOMETRY",False);
 
   kwm_command = XInternAtom(qt_xdisplay(), "KWM_COMMAND", False);
+  kwm_do_not_manage = XInternAtom(qt_xdisplay(), "KWM_DO_NOT_MANAGE", False);
   kwm_activate_window = XInternAtom(qt_xdisplay(), "KWM_ACTIVATE_WINDOW", False);
 
   kwm_running = XInternAtom(qt_xdisplay(), "KWM_RUNNING", False);
@@ -334,8 +335,23 @@ void Manager::clientMessage(XClientMessageEvent *  e){
 	c->iconify();
     }
   }
+  if (e->message_type == kwm_do_not_manage){
+    char c[21];
+    int i;
+    for (i=0;i<20;i++)
+      c[i] = e->data.b[i];
+    c[i] = '\0';
+    QString com = c;
+    do_not_manage_titles.append(com);
+  }
+
   if (e->message_type == kwm_command){
-    QString com = e->data.b;
+    char c[21];
+    int i;
+    for (i=0;i<20;i++)
+      c[i] = e->data.b[i];
+    c[i] = '\0';
+    QString com = c;
     if (com == "refreshScreen")
       refreshScreen();
     else if (com == "darkenScreen")
@@ -654,6 +670,19 @@ void Manager::manage(Window w, bool mapped){
     return;
   }
 
+  // test for manage prohibitation
+  if (!mapped) {
+    char* s;
+    for (s = do_not_manage_titles.first(); s ; 
+	 s = do_not_manage_titles.next()){
+      if (getprop(w, XA_WM_NAME) == s){
+	do_not_manage_titles.remove();
+	sendToModules(module_win_add, 0, w);
+	sendToModules(module_win_remove, 0, w);
+	return;
+      } 
+    }
+  }
   
   // create a client
   if (!initting)

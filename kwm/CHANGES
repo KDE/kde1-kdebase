@@ -17,6 +17,7 @@ In 0.10:
          Most toolkits define user-defined if it is is programm-defined
          anyway so this should not harm.
        - fixes and enhancements for dock-windows
+       - support for KWM_DO_NOT_MANAGE command (smoother swallowing)
 
   patchlevel 20:
        - self-transient do not crash kwm anymore

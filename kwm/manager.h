@@ -147,6 +147,8 @@ private:
   QStrList additional_machines;
   QStrList additional_proxy_hints;
   QStrList additional_proxy_props;
+
+  QStrList do_not_manage_titles;
    
 
   void scanWins();
@@ -197,6 +199,7 @@ private:
   Atom   kwm_win_frame_geometry;
 
   Atom kwm_command;
+  Atom kwm_do_not_manage;
   Atom kwm_activate_window;
 
   Atom kwm_running;
