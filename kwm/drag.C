@@ -17,6 +17,7 @@
 #include <qcursor.h>
 
 #include "manager.h"
+#include <kwm.h>
 
 #define ButtonMask  (ButtonPressMask|ButtonReleaseMask)
 
@@ -197,6 +198,11 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
     cy = ry = c->geometry.y() + c->old_cursor_pos.y();
     bool return_pressed = false;
 
+    if (recalc != dragcalc)
+      KWM::raiseSoundEvent("Window Resize Start");
+    else
+      KWM::raiseSoundEvent("Window Move Start");
+
     // set the focus policy to ClickToFocus to avoid flickering
     FOCUS_POLICY oldFocusPolicy = options.FocusPolicy;
     options.FocusPolicy = CLICK_TO_FOCUS;
@@ -286,6 +292,12 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
     }
     
     options.FocusPolicy =  oldFocusPolicy;
+
+    if (recalc != dragcalc)
+      KWM::raiseSoundEvent("Window Resize End");
+    else
+      KWM::raiseSoundEvent("Window Move End");
+
     return false;
 }
 

@@ -222,6 +222,7 @@ static void setStringProperty(const char* atomname, const char* value){
 
 
 static void showLogout(){
+  KWM::raiseSoundEvent("Logout Message");
   if (!klogout){
     klogout = new Klogout(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
     // next is a dirty hack to fix a qt-1.2 bug 
@@ -876,6 +877,7 @@ void MyApp::changeToTaskClient(QString label){
 }
 
 void MyApp::doLogout(){
+  KWM::raiseSoundEvent("Logout");
   saveSession();
   writeConfiguration();
   manager->cleanup();
@@ -1277,7 +1279,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
     }
     break;
   case ClientMessage:
-    manager->clientMessage(&ev->xclient);
+    manager->clientMessage(ev);
     break;
   case ColormapNotify:
     manager->colormapNotify(&ev->xcolormap);

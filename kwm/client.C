@@ -252,6 +252,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     state = WithdrawnState;
     maximized = False;
     iconified = False;
+    sticky = False;
     cmap = None;
     border = 0;
     ncmapwins = 0;
@@ -1418,6 +1419,7 @@ void Client::iconify(bool animation){
   if (state == NormalState){
     hideClient();
     if (animation)
+      KWM::raiseSoundEvent("Window Iconify");
       animate_size_change(geometry, 
 			  QRect(geometry.x()+geometry.width()/2,
 				geometry.y()+geometry.height()/2,
@@ -1438,12 +1440,13 @@ void Client::unIconify(bool animation){
     return;
   if (!isIconified())
     return;
-  
+
   iconified = False;
   KWM::setIconify(window, False);
   manager->changedClient(this);
   if (isOnDesktop(manager->currentDesktop())){
     if (animation)
+      KWM::raiseSoundEvent("Window DeIconify");
       animate_size_change(QRect(geometry.x()+geometry.width()/2,
 				geometry.y()+geometry.height()/2,
 				0,0), geometry,
@@ -1529,6 +1532,7 @@ void Client::maximize(int mode){
 
   adjustSize();
   if (state == NormalState)
+    KWM::raiseSoundEvent("Window Maximize");
     animate_size_change(geometry_restore, geometry,
 			getDecoration()==1,
 			title_rect.x(), 
@@ -1546,6 +1550,7 @@ void Client::unMaximize(){
     return;
   maximized = FALSE;
   if (geometry != geometry_restore && state == NormalState)
+    KWM::raiseSoundEvent("Window UnMaximize");
     animate_size_change(geometry, geometry_restore,
 			getDecoration()==1,
 			title_rect.x(), 
@@ -1596,7 +1601,13 @@ void Client::closeClicked(){
 
 void Client::stickyToggled(bool depressed){
   QPixmap* pm;
+
+  if (depressed == isSticky())
+    return;
+
   KWM::setSticky(window, depressed);
+  sticky = depressed;
+
   if (depressed){
     pm = pm_pin_down;
     if (state != NormalState && !isIconified()){
@@ -1610,6 +1621,13 @@ void Client::stickyToggled(bool depressed){
     desktop = manager->currentDesktop();
     KWM::moveToDesktop(window, desktop);
     pm = pm_pin_up;
+  }
+
+  if (state == NormalState && !trans) {
+    if (depressed)
+      KWM::raiseSoundEvent("Window Sticky");
+    else
+      KWM::raiseSoundEvent("Window UnSticky");
   }
   manager->changedClient(this);
   buttonSticky->setPixmap(*pm);

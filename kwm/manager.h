@@ -49,7 +49,7 @@ public:
 
   void unmapNotify(XUnmapEvent *e);
   void destroyNotify(XDestroyWindowEvent *e);
-  void clientMessage(XClientMessageEvent *e);
+  void clientMessage(XEvent *e);
   void colormapNotify(XColormapEvent *e);
   void propertyNotify(XPropertyEvent *e);
   void shapeNotify(XShapeEvent *e);
@@ -151,6 +151,8 @@ private:
   QStrList additional_proxy_props;
 
   QStrList do_not_manage_titles;
+
+  QStrList sound_events;
    
 
   void scanWins();
@@ -205,6 +207,10 @@ private:
   Atom kwm_activate_window;
 
   Atom kwm_running;
+
+  Atom kde_sound_event;
+  Atom kde_register_sound_event;
+  Atom kde_unregister_sound_event;
 
 
   int current_desktop;

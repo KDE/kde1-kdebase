@@ -11,6 +11,27 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 23:
+       - support for KDE SOUND EVENTS.
+         raises: 
+                  "Window Iconify"
+                  "Window DeIconify"
+                  "Window Maximize"
+                  "Window UnMaximize"
+                  "Window Sticky"
+                  "Window UnSticky"
+                  "Window New"
+                  "Window Delete"
+                  "Window New Trans"
+                  "Window Delete Trans"
+                  "Logout"
+                  "Logout Message"
+
+      Also passes KDE_SOUND_EVENT, KDE_REGISTER_SOUND_EVENT and
+      KDE_UNREGISTER_SOUND_EVENT to the modules. REGISTER-events are
+      stored. That means it is possible to launch the sound module after
+      the applications without losing any registered sound-event.
+
   patchlevel 22:
        - fixes for the screen-shading during logout. The old way had
          severe problems with backing store. (Christian Czezatke)

@@ -108,6 +108,11 @@ Manager::Manager(): QObject(){
   module_dockwin_add = XInternAtom(qt_xdisplay(), "KWM_MODULE_DOCKWIN_ADD", False);
   module_dockwin_remove = XInternAtom(qt_xdisplay(), "KWM_MODULE_DOCKWIN_REMOVE", False);
 
+
+  kde_sound_event = XInternAtom(qt_xdisplay(), "KDE_SOUND_EVENT", False);
+  kde_register_sound_event = XInternAtom(qt_xdisplay(), "KDE_REGISTER_SOUND_EVENT", False);
+  kde_unregister_sound_event = XInternAtom(qt_xdisplay(), "KDE_UNREGISTER_SOUND_EVENT", False);
+
   gv.function = GXxor;
   gv.line_width = 0;
   gv.foreground = WhitePixel(qt_xdisplay(), qt_xscreen())^BlackPixel(qt_xdisplay(), qt_xscreen());
@@ -327,8 +332,9 @@ void Manager::destroyNotify(XDestroyWindowEvent *e){
     removeClient(c);
 }
 
-void Manager::clientMessage(XClientMessageEvent *  e){
+void Manager::clientMessage(XEvent*  ev){
   Client *c;
+  XClientMessageEvent* e = &ev->xclient;
   
   if (e->message_type == wm_change_state) {
     c = getClient(e->window);
@@ -370,26 +376,37 @@ void Manager::clientMessage(XClientMessageEvent *  e){
     }
     else {
       // send unknown command to the modules
-      XEvent ev;
-      int status;
-      long mask;
-      memset(&ev, 0, sizeof(ev));
-      ev.xclient.type = ClientMessage;
-      ev.xclient.message_type = kwm_command;
-      ev.xclient.format = 8;
-      int i;
-      const char* s = com.data();
-      for (i=0;i<19 && s[i];i++)
-	ev.xclient.data.b[i]=s[i];
-      mask = 0L;
+//       XEvent ev;
+//       int status;
+//       long mask;
+//       memset(&ev, 0, sizeof(ev));
+//       ev.xclient.type = ClientMessage;
+//       ev.xclient.message_type = kwm_command;
+//       ev.xclient.format = 8;
+//       int i;
+//       const char* s = com.data();
+//       for (i=0;i<19 && s[i];i++)
+// 	ev.xclient.data.b[i]=s[i];
+//       mask = 0L;
+//       Window* mw;
+//       for (mw=modules.first(); mw; mw=modules.next()){
+// 	ev.xclient.window = *mw;
+// 	if (ev.xclient.window == qt_xrootwin())
+// 	  mask = SubstructureRedirectMask;
+// 	status = XSendEvent(qt_xdisplay(), ev.xclient.window, 
+// 			    False, mask, &ev);
+//       }
+
+      long mask = 0L;
       Window* mw;
       for (mw=modules.first(); mw; mw=modules.next()){
-	ev.xclient.window = *mw;
-	if (ev.xclient.window == qt_xrootwin())
-	  mask = SubstructureRedirectMask;
-	status = XSendEvent(qt_xdisplay(), ev.xclient.window, 
-			    False, mask, &ev);
+	ev->xclient.window = *mw;
+ 	if (ev->xclient.window == qt_xrootwin())
+ 	  mask = SubstructureRedirectMask;
+ 	XSendEvent(qt_xdisplay(), *mw, 
+		   False, mask, ev);
       }
+      
     }
   }
   if (e->message_type == kwm_activate_window){
@@ -404,6 +421,55 @@ void Manager::clientMessage(XClientMessageEvent *  e){
       addModule(w);
     else
       removeModule(w);
+  }
+
+  if (e->message_type == kde_sound_event){
+      long mask = 0L;
+      Window* mw;
+      for (mw=modules.first(); mw; mw=modules.next()){
+	ev->xclient.window = *mw;
+ 	if (ev->xclient.window == qt_xrootwin())
+ 	  mask = SubstructureRedirectMask;
+ 	XSendEvent(qt_xdisplay(), *mw, 
+		   False, mask, ev);
+      }
+  }
+  if (e->message_type == kde_register_sound_event){
+    char c[21];
+    int i;
+    for (i=0;i<20;i++)
+      c[i] = e->data.b[i];
+    c[i] = '\0';
+    QString com = c;
+    sound_events.append(com);
+    long mask = 0L;
+    Window* mw;
+    for (mw=modules.first(); mw; mw=modules.next()){
+      ev->xclient.window = *mw;
+      if (ev->xclient.window == qt_xrootwin())
+	mask = SubstructureRedirectMask;
+      XSendEvent(qt_xdisplay(), *mw, 
+		 False, mask, ev);
+    }
+  }
+
+  if (e->message_type == kde_unregister_sound_event){
+    char c[21];
+    int i;
+    for (i=0;i<20;i++)
+      c[i] = e->data.b[i];
+    c[i] = '\0';
+    QString com = c;
+    sound_events.remove(com);
+    long mask = 0L;
+    Window* mw;
+    for (mw=modules.first(); mw; mw=modules.next()){
+      ev->xclient.window = *mw;
+      if (ev->xclient.window == qt_xrootwin())
+	mask = SubstructureRedirectMask;
+      XSendEvent(qt_xdisplay(), *mw, 
+		 False, mask, ev);
+    }
   }
 }
 
@@ -535,8 +601,9 @@ void Manager::propertyNotify(XPropertyEvent *e){
     }
   }
   else if (a == kwm_win_sticky){
-    if (c->isSticky() != KWM::isSticky(c->window))
+    if (c->isSticky() != KWM::isSticky(c->window)){
       c->buttonSticky->toggle();
+    }
   }
   else if (a == kwm_win_decoration){
     // TODO this needs a cleanup very very very soon!!!
@@ -938,7 +1005,12 @@ void Manager::manage(Window w, bool mapped){
 //     }
     c->geometry_restore = tmprec;
   }
-  
+ 
+  if (c->trans)
+    KWM::raiseSoundEvent("Window Trans New");
+  else
+    KWM::raiseSoundEvent("Window New");
+
 
   if (!dohide && c->getDecoration())
     activateClient(c);
@@ -1025,6 +1097,11 @@ void Manager::activateClient(Client* c, bool set_revert){
 }
 
 void Manager::removeClient(Client* c){
+  if (c->trans)
+    KWM::raiseSoundEvent("Window Trans Delete");
+  else
+    KWM::raiseSoundEvent("Window Delete");
+
   bool do_nofocus = (current() == c);
   clients.removeRef(c);
   clients_sorted.removeRef(c);
@@ -2127,6 +2204,29 @@ void Manager::addModule(Window w){
   }
   if (current())
     sendClientMessage(w, module_win_activate, (long) current()->window);
+
+  const char* s;
+  for (s=sound_events.first(); s; s=sound_events.next()){
+    XEvent ev;
+    int status;
+    long mask;
+    memset(&ev, 0, sizeof(ev));
+    ev.xclient.type = ClientMessage;
+    ev.xclient.message_type = kde_register_sound_event;
+    ev.xclient.format = 8;
+    int i;
+    for (i=0;i<19 && s[i];i++)
+      ev.xclient.data.b[i]=s[i];
+    mask = 0L;
+    Window* mw;
+    for (mw=modules.first(); mw; mw=modules.next()){
+      ev.xclient.window = *mw;
+      if (ev.xclient.window == qt_xrootwin())
+	mask = SubstructureRedirectMask;
+      status = XSendEvent(qt_xdisplay(), ev.xclient.window, 
+			  False, mask, &ev);
+    }
+  }
 }
 void Manager::removeModule(Window w){
   Window *mw;

@@ -147,11 +147,11 @@ public:
   bool isOnDesktop(int desktop_arg){
     return desktop == desktop_arg || isSticky();
   }
-  bool isSticky(){
-    return buttonSticky->isOn();;
-  }
   bool isMaximized(){
     return maximized;
+  }
+  bool isSticky(){
+    return sticky;
   }
   bool isWithdrawn(){
     return state == WithdrawnState;
@@ -182,6 +182,7 @@ public:
   void animateTitlebar();
 
   bool maximized;
+  bool sticky;
   bool iconified;
   
   void unIconify(bool animation = True);
