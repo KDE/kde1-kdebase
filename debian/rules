@@ -89,7 +89,7 @@ binary-arch: checkroot build
 	cp debian/debian.kdelnk \
 	      debian/tmp/usr/share/applnk/debian_menu/.directory
 	dh_undocumented 
-	perl -w debian/kderules
+	perl -w admin/debianrules
 	mv debian/tmp/usr/share/mimelnk/magic debian/tmp/etc/kde
 	ln -s /etc/kde/magic debian/tmp/usr/share/mimelnk/magic
 	cp konsole/other/linux*.pcf.gz debian/tmp/usr/X11R6/lib/X11/fonts/misc
@@ -120,7 +120,7 @@ binary-arch: checkroot build
 	dh_shlibdeps
 	dh_gencontrol	
 	dh_md5sums
-	perl -w debian/kderules update
+	perl -w admin/debianrules update
 	dh_builddeb
 
 # Below here is fairly generic really

@@ -33,6 +33,7 @@ Description: The K Desktop Manager
  The K Desktop Manager
 
 Package: kdebase-doc
+Section: contrib/doc
 Suggests: kdebase, kdm
 Architecture: all
 Description: Documentation for Applications in kdebase
