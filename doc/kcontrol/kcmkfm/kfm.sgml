@@ -8,7 +8,7 @@
 <author>David Faure 
 <htmlurl url="mailto:faure@kde.org"
 name="faure@kde.org">
-<date>v1.0 12 January 1999
+<date>v1.01 14 April 1999
 
 <!-- Table of contents -->
 <toc>
@@ -237,7 +237,7 @@ To activate your changes, click on <bf>Apply</bf> or
 <sect> KFM Web Browser Configuration: Cookies
 <p>
 
-"<bf>Cookies</bf>" are little messages you receive from a 
+``<bf>Cookies</bf>'' are little messages you receive from a 
 remote website which are intended to be stored on your
 system, and  sent
 back by your browser to that site the next time you visit it 
@@ -251,39 +251,39 @@ on a site. Used as such, some people consider cookies an attack on their
 privacy. KFM offers you a broad range of possibilities to decide which cookies
 you want to receive and which you don't.  
 
-If "<bf>Enable Cookies</bf>" is activated,  cookies will be accepted 
+If ``<bf>Enable Cookies</bf>'' is activated,  cookies will be accepted 
 according to the following settings and
 stored cookies will be sent.
 If it is <bf>not</bf> activated, no cookie will ever be sent, 
 and no new cookies will be accepted.
 
-The "<bf>default accept policy</bf>" setting
+The ``<bf>default accept policy</bf>'' setting
 defines what to do with cookies which do not originate from
 a domain which has a domain-specific setting. 
 <itemize>
 <item> "<bf>Accept</bf>" will accept all cookies received without 
 notifying the user.
-<item> "<bf>Ask</bf>" will open a popup box to
+<item> ``<bf>Ask</bf>'' will open a popup box to
 ask the user what to do, each time
 a cookie is received.
-<item> "<bf>Reject</bf>" will reject all cookies received without 
+<item> ``<bf>Reject</bf>'' will reject all cookies received without 
 notifying the user.
 </itemize>
 
 You may set specific policies for  how to treat cookies received
-from domains listed in the "<bf>Domain specific settings</bf>" box.
+from domains listed in the ``<bf>Domain specific settings</bf>'' box.
 
 To add such a domain, type its name in the 
-"<bf>change domain accept policy</bf>" box, and click on one of the
+``<bf>change domain accept policy</bf>'' box, and click on one of the
 three policies (<bf>accept/ask/reject</bf>). Then click on 
-"<bf>change</bf>" to add the new entry to the list of domain-specific
+``<bf>change</bf>'' to add the new entry to the list of domain-specific
 settings.    To modify the entry for an exiting domain in the list,
 click on it to highlight it, then set a new cookie acceptance policy for it, 
 or click on <bf>delete</bf> to remove it.
 
 Cookies originating from one of these domains will be treated according to the
 policy set for them. 
-When you have selected '<bf>ask</bf>' for a domain you will get a 
+When you have selected ``<bf>ask</bf>'' for a domain you will get a 
 popup window when
 a cookie is received from this domain, which asks you what to do
 with the cookie. This popup window can also be used to change the acceptance 
@@ -296,23 +296,25 @@ In this screen, you can control the default spacing of the icons
 on your KDE desktop, and how their names are displayed.
 
 <itemize>
-<item> Specify the "<bf>Horizontal Root Grid Spacing</bf>" and
-the  "<bf>Vertical Root Grid Spacing</bf>" to chose the hidden
+<item> Specify the ``<bf>Horizontal Root Grid Spacing</bf>'' and
+the  ``<bf>Vertical Root Grid Spacing</bf>'' to chose the hidden
 grid on which the desktop icons will, by default,  be placed.
 
 <item> The icon names appear as text below the icon. 
 By default, the text appears on a small opaque rectangular
 background that hides the Desktop wallpaper below. 
-To remove this background, press the 
-"<bf>Transparent Text for Desktop Icons</bf>"
-button.
+To remove this background, activate 
+``<bf>Transparent Text for Desktop Icons</bf>''.
 
-<item> Click on the "<bf>Icon foreground color</bf>" box to 
+<item> Click on the ``<bf>Icon foreground color</bf>'' box to 
 chose the color of the text giving the icon name.
 
-<item> Click on the box "<bf>Icon background color</bf>" to 
+<item> Click on the box ``<bf>Icon background color</bf>'' to 
 chose the color of the background on  which the icon name is written.
 (Inactive if "Transparent Text for Desktop Icons" is selected.)
+
+<item> You may also choose activate the feature ``<bf>Show
+Hidden Files on Desktop</bf>''.
 
 </itemize>
 
