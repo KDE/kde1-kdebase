@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-12-25 01:11+0100\n"
-"PO-Revision-Date: 1998-12-22 15:25+01:00\n"
+"PO-Revision-Date: 1998-12-27 21:12+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -192,7 +192,7 @@ msgstr "Ställ in &filhanteraren..."
 
 #: kfmgui.cpp:393
 msgid "Configure &Browser..."
-msgstr "Ställ in &bläddraren..."
+msgstr "Ställ in &webläsaren..."
 
 #: kfmgui.cpp:429
 msgid ""

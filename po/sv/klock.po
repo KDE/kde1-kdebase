@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
 "POT-Creation-Date: 1998-12-21 01:17+0100\n"
-"PO-Revision-Date: 1998-12-21 15:22+01:00\n"
+"PO-Revision-Date: 1998-12-27 22:23+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -74,11 +74,11 @@ msgstr ""
 
 #: banner.cpp:62
 msgid "Banner"
-msgstr "Baner"
+msgstr "Rubrik"
 
 #: banner.cpp:84
 msgid "Setup kbanner"
-msgstr "Ställ in Baner"
+msgstr "Ställ in Rubrik"
 
 #: banner.cpp:95
 msgid "Family:"
@@ -109,7 +109,7 @@ msgstr "Text:"
 
 #: banner.cpp:357
 msgid "About Banner"
-msgstr "Om Baner"
+msgstr "Om Rubrik"
 
 #: banner.cpp:358
 msgid ""
@@ -118,7 +118,7 @@ msgid ""
 "written by Martin R. Jones 1996\n"
 "mjones@kde.org"
 msgstr ""
-"Baner version 0.1\n"
+"Rubrik version 0.1\n"
 "\n"
 "skriven av Martin R. Jones 1996\n"
 "mjones@kde.org"
@@ -265,15 +265,15 @@ msgstr ""
 
 #: bsod.cpp:1192
 msgid "Black Screen of Death"
-msgstr "Svarta dödsskärmen"
+msgstr "Svarta kraschskärmen"
 
 #: flame.cpp:310
 msgid "Flame"
-msgstr "Låga"
+msgstr "Flammor"
 
 #: flame.cpp:397
 msgid "Setup KFlame"
-msgstr "Ställ in Låga"
+msgstr "Ställ in Flammor"
 
 #: flame.cpp:423
 msgid "Max Levels:"
@@ -285,7 +285,7 @@ msgstr "Antal prickar:"
 
 #: flame.cpp:551
 msgid "About Flame"
-msgstr "Om Låga"
+msgstr "Om Flammor"
 
 #: flame.cpp:552
 msgid ""
@@ -295,7 +295,7 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-"Låga version 3.3\n"
+"Flammor version 3.3\n"
 "\n"
 "Copyright (c) 1991 av Patrick J. Naughton\n"
 "\n"
@@ -625,11 +625,11 @@ msgstr ""
 
 #: pyro.cpp:439
 msgid "Pyro"
-msgstr "Pyro"
+msgstr "Fyrverkeri"
 
 #: pyro.cpp:517
 msgid "Setup KPyro"
-msgstr "Ställ in Pyro"
+msgstr "Ställ in Fyrverkeri"
 
 #: pyro.cpp:543
 msgid "Cloud"
@@ -637,7 +637,7 @@ msgstr "Moln"
 
 #: pyro.cpp:629
 msgid "About Pyro"
-msgstr "Om Pyro"
+msgstr "Om Fyrverkeri"
 
 #: pyro.cpp:630
 msgid ""
@@ -647,7 +647,7 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-"Pyro version 3.4\n"
+"Fyrverkeri version 3.4\n"
 "\n"
 "Copyright (c) 1991 av Patrick J. Naughton\n"
 "\n"
@@ -655,11 +655,11 @@ msgstr ""
 
 #: rock.cpp:441
 msgid "Rock"
-msgstr "Bumling"
+msgstr "Stenar"
 
 #: rock.cpp:549
 msgid "Setup krock"
-msgstr "Ställ in Bumling"
+msgstr "Ställ in Stenar"
 
 #: rock.cpp:589
 msgid "Move"
@@ -671,7 +671,7 @@ msgstr "Rotera"
 
 #: rock.cpp:719
 msgid "About Rock"
-msgstr "Om Bumling"
+msgstr "Om Stenar"
 
 #: rock.cpp:720
 msgid ""
@@ -681,7 +681,7 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-"Bumling version 3.3\n"
+"Stenar version 3.3\n"
 "\n"
 "Copyright (c) 1992 av Jamie Zawinski\n"
 "\n"
@@ -713,7 +713,7 @@ msgstr "Sammandragning"
 
 #: science.cpp:77
 msgid "Wave"
-msgstr "Våg"
+msgstr "Vågor"
 
 #: science.cpp:80
 msgid "Curvature"

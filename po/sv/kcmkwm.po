@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1998-12-19 01:20+0100\n"
-"PO-Revision-Date: 1998-12-19 17:18+01:00\n"
+"PO-Revision-Date: 1998-12-27 22:38+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -183,7 +183,7 @@ msgstr "Fönster"
 
 #: windows.cpp:82
 msgid "Vertical maximization only by default"
-msgstr "Maximera enbart vertikalt som standard"
+msgstr "Standard är att maximera enbart vertikalt"
 
 #: windows.cpp:87
 msgid "Display content in moving windows"

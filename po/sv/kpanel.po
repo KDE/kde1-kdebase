@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
 "POT-Creation-Date: 1998-12-25 01:11+0100\n"
-"PO-Revision-Date: 1998-12-19 18:30+01:00\n"
+"PO-Revision-Date: 1998-12-27 22:48+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -51,7 +51,7 @@ msgstr "Visa panelen"
 
 #: kpanel.C:1100
 msgid "Iconify other &windows"
-msgstr "Ikonifiera de andra &fönstren"
+msgstr "Ikonifiera alla andra &fönster"
 
 #: kpanel.C:1237
 msgid "No comment available"
@@ -91,7 +91,7 @@ msgstr "Lägg till fönsterlista till panelen"
 
 #: events.C:800 props.C:182
 msgid "Configure"
-msgstr "Konfigurera"
+msgstr "Anpassa"
 
 #: props.C:184
 msgid "Configure panel"
