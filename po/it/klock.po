@@ -1,0 +1,495 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdehelp \n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"PO-Revision-Date: 1997-12-28 14:57+01\n"
+"Last-Translator: Natali Giuliano \n"
+
+msgid ""
+"  -corners xxxx     Placing cursor in corner performs action:\n"
+"                     x = i  no action (ignore)\n"
+"                     x = s  save screen\n"
+"                     x = l  lock screen\n"
+"                    order: top-left, top-right, bottom-left, bottom-right\n"
+"  -delay num        Amount of idle time before screen saver\n"
+"                     starts  (default 10min)\n"
+"  -desc             Print the screen saver's description to stdout\n"
+"  -install          Install screen saver\n"
+"  -lock             Require password to stop screen saver\n"
+"  -nice num         Run with specified nice value\n"
+"\n"
+"  -preview wid      Run in the specified XWindow\n"
+"  -inroot           Run in the root window\n"
+"  -setup            Setup screen saver\n"
+"  -test             Invoke the screen saver immediately\n"
+msgstr ""
+"  -corners xxxx     Avvicinando il cursore all'angolo si \n"
+"                             eseguono le seguenti azioni:\n"
+"                     x = i  ignora\n"
+"                     x = s  salvaschermo (senza richiesta password)\n"
+"                     x = l  salvaschermo (con richiesta password)\n"
+"                    nell'ordine: alto-sinistra, alto-destra,\n"
+"                                 basso-sinistra, basso-destra\n"
+"  -delay num        Tempo di attesa prima che il salvaschermo\n"
+"                     parta  (predefiniti 10 minuti)\n"
+"  -desc             Mostra a video la descrizione del salvaschermo\n"
+"  -install          Installa salvaschermo\n"
+"  -lock             Richiede la password per uscire dal salvaschermo\n"
+"  -nice num         Esegue il salvaschermo con priorita` (num)\n"
+"\n"
+"  -preview wid      Esegue il salvaschermo in finestra\n"
+"  -inroot           Esegue il salvaschermo sulla finestra principale(sfondo)\n"
+"  -setup            Configura il salvaschermo\n"
+"  -test             Esegue il salvaschermo immediatamente\n"
+
+
+msgid "About Banner"
+msgstr "Info su Banner(testo scorrevole)"
+
+msgid "About Bat"
+msgstr "Info su Bat(Boing)"
+
+msgid "About Blob"
+msgstr "Info su Blob(goccie)"
+
+msgid "About Flame"
+msgstr "Info su KFlame(fiamme)"
+
+msgid "About Forest"
+msgstr "Info su Forest(alberi)"
+
+msgid "About Hop"
+msgstr "Info su Hop(frattali)"
+
+msgid "About Laser"
+msgstr "Info su Laser"
+
+msgid "About Lines"
+msgstr "Info su Klines"
+
+msgid "About Lissie"
+msgstr "Info su Lissie(anelli)"
+
+msgid "About Morph3D"
+msgstr "Info su Morph3D"
+
+msgid "About Polygon"
+msgstr "Info su Polygon"
+
+msgid "About Pyro"
+msgstr "Info su Pyro(fuochi d'artificio)"
+
+msgid "About Rock"
+msgstr "Info su Rock(asteroidi)"
+
+msgid "About Slip"
+msgstr "Info su Slip"
+
+msgid "About Swarm"
+msgstr "Info su Swarm"
+
+msgid "Algorithm"
+msgstr "Algoritmo"
+
+msgid "Banner"
+msgstr "Testo scorrevole"
+
+msgid ""
+"Banner Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Banner Versione 0.1\n"
+"\n"
+"Autore: Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+msgid "Bat"
+msgstr "Boing"
+
+msgid ""
+"Bat\n"
+"\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
+"\n"
+"Ported on kscreensave by Emanuel Pirker."
+msgstr ""
+"Boing\n"
+"\n"
+"Copyright (c) 1986 della Sun Microsystems\n"
+"\n"
+"Porting su KDE da Emanuel Pirker."
+
+msgid "Batchcount:"
+msgstr "Nr. pezzi:"
+
+msgid "Beginning:"
+msgstr "Inizio:"
+
+msgid "Blank Screen"
+msgstr "Schermo nero"
+
+msgid "Blobs"
+msgstr "Goccie"
+
+msgid ""
+"Blobsaver Version 0.1\n"
+"\n"
+"written by Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+msgstr ""
+"Blobsaver Versione 0.1\n"
+"\n"
+"Autoree: Tiaan Wessel 1997\n"
+"tiaan@netsys.co.za"
+
+msgid "Circular Bounce"
+msgstr "Rimbalzi circolari"
+
+msgid "Cloud"
+msgstr "Nuvole"
+
+msgid "Color:"
+msgstr "Colore:"
+
+msgid "Cycles:"
+msgstr "Cicli:"
+
+msgid "End:"
+msgstr "Fine:"
+
+msgid "Enter Password"
+msgstr "Inserisci password"
+
+msgid "Failed"
+msgstr "Sbagliata" 
+
+msgid "Flame"
+msgstr "Fiamme"
+
+msgid ""
+"Flame Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"KFlame Versione 3.3\n"
+"\n"
+"Copyright (c) 1991 Patrick J. Naughton\n"
+"\n"
+"Porting su KDE di Martin Jones."
+
+msgid "Forest"
+msgstr "Foresta"
+
+msgid ""
+"Forest\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Foresta\n"
+"\n"
+"Copyright (c) 1995 Pascal Pensa\n"
+"\n"
+"Porting su KDE di Emanuel Pirker."
+
+msgid "Frame Show sec."
+msgstr "Diapositive (Secondi)"
+
+msgid "GL can not render with root visual\n"
+msgstr "Le GL non funzionano sullo sfondo\n"
+
+msgid "Hop"
+msgstr "Frattali"
+
+msgid ""
+"Hop Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Frattali Versione 3.3\n"
+"\n"
+"Copyright (c) 1991 Patrick J. Naughton\n"
+"\n"
+"Porting su KDE di Emanuel Pirker."
+
+msgid "Horizonal Sine"
+msgstr "Sinusoidi orizzontali"
+
+msgid "KDE is great"
+msgstr "KDE e` grande"
+
+msgid "Laser"
+msgstr "Laser"
+
+msgid ""
+"Laser Version 3.3\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Laser Versione 3.3\n"
+"\n"
+"Copyright (c) 1995 Pascal Pensa\n"
+"\n"
+"Porting su KDE di Martin Jones."
+
+msgid "Length:"
+msgstr "Lunghezza:"
+
+msgid "Lines"
+msgstr "Linee"
+
+msgid ""
+"Lines Version 0.1.1\n"
+"\n"
+"written by Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+msgstr ""
+"Linee Versione 0.1.1\n"
+"\n"
+"Autoree: Dirk Staneker 1997\n"
+"<dirk.stanerker@student.uni-tuebingen.de>"
+
+msgid "Lissie"
+msgstr "Anelli"
+
+msgid ""
+"Lissie\n"
+"\n"
+"Copyright (c) 1996 by Alexander Jolk\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Anelli\n"
+"\n"
+"Copyright (c) 1996 Alexander Jolk\n"
+"\n"
+"Porting su KDE di Emanuel Pirker."
+
+msgid "Max Levels:"
+msgstr "Livello massimo:"
+
+msgid "Message:"
+msgstr "Messaggio:"
+
+msgid "Middle:"
+msgstr "Medio:"
+
+msgid ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 by Marcelo F. Vianna\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 Marcelo F. Vianna\n"
+"\n"
+"Porting su KDE di Emanuel Pirker."
+
+msgid "Morph3D (GL)"
+msgstr "Morph3D (GL)"
+
+msgid "Move"
+msgstr "Movimento"
+
+msgid "Num Points:"
+msgstr "Punti:"
+
+msgid "Num of Lissies:"
+msgstr "Numero di anelli:"
+
+msgid "Num of Trees:"
+msgstr "Num di Alberi:"     
+
+msgid "Number of Bees:"
+msgstr "Numero di api:"
+
+msgid "Number of bats:"
+msgstr "Numero di pipistrelli:"
+
+msgid "Number:"
+msgstr "Numero:"
+
+msgid "Object Type:"
+msgstr "Tipo di Oggetto:"
+
+msgid "Polar Coordinates"
+msgstr "Coordinate Polari"
+
+msgid ""
+"Polygon Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Poligoni Versione 0.1\n"
+"\n"
+"Autore: Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+msgid "Polygons"
+msgstr "Poligoni"
+
+msgid "Pyro"
+msgstr "Fuochi d'artificio"
+
+msgid ""
+"Pyro Version 3.4\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Fiamme Versione 3.4\n"
+"\n"
+"Copyright (c) 1991 Patrick J. Naughton\n"
+"\n"
+"Porting su KDE di Martin Jones."
+
+msgid "Random"
+msgstr "Casuale"
+
+msgid "Random Linear"
+msgstr "Linee casuali"
+
+msgid "Rock"
+msgstr "Asteroidi"
+
+msgid ""
+"Rock Version 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Asteroidi Versione 3.3\n"
+"\n"
+"Copyright (c) 1992 Jamie Zawinski\n"
+"\n"
+"Porting su KDE di  Martin Jones."
+
+msgid "Rotate"
+msgstr "Rotazioni"
+
+msgid "Samecolor Pixels:"
+msgstr "Pixel dello stesso colore:"
+
+msgid "Setup Blob Saver"
+msgstr "Configurazione salvaschermo \"Goccie\""
+
+msgid "Setup KBat"
+msgstr "Configurazione salvaschermo \"Boing\""
+
+msgid "Setup KFlame"
+msgstr "Configurazione salvaschermo \"Fiamme\""
+
+msgid "Setup KForest"
+msgstr "Configurazione salvaschermo \"Foresta\""
+
+msgid "Setup KHop"
+msgstr "Configurazione salvaschermo \"Frattali\""
+
+msgid "Setup KLaser"
+msgstr "Configurazione salvaschermo \"Laser\""
+
+msgid "Setup KLissie"
+msgstr "Configurazione salvaschermo \"Anelli\""
+
+msgid "Setup KMorph3d"
+msgstr "Configurazione salvaschermo \"KMorph3D\""
+
+msgid "Setup KPyro"
+msgstr "Configurazione salvaschermo \"Fuochi d'artificio\""
+
+msgid "Setup KSlip"
+msgstr "Configurazione salvaschermo \"KSlip\""
+
+msgid "Setup KSwarm"
+msgstr "Configurazione salvaschermo \"Swarm\""
+
+msgid "Setup kbanner"
+msgstr "Configurazione salvaschermo \"Testo scorrevole\""
+
+msgid "Setup kblankscrn"
+msgstr "Configurazione salvaschermo \"Nero\""
+
+msgid "Setup klines"
+msgstr "Configurazione salvaschermo \"Linee\""
+
+msgid "Setup kpolygon"
+msgstr "Configurazione salvaschermo \"Poligoni\""
+
+msgid "Setup krock"
+msgstr "Configurazione salvaschermo \"Asteroidi\""
+
+msgid "Shadow Passwords"
+msgstr "Shadow passwords"
+
+msgid "Slip"
+msgstr "Slip"
+
+msgid ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 by Scott Draves\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 Scott Draves\n"
+"\n"
+"Porting su KDE di Emanuel Pirker."
+
+msgid "Sorry. This screensaver needs a color display"
+msgstr "Spiacente. Questo salvaschermo ha bisogno di un monitor a colori."
+
+msgid "Speed:"
+msgstr "Velocita`:"
+
+msgid "Swarm"
+msgstr "Swarm"
+
+msgid ""
+"Swarm\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Swarm\n"
+"\n"
+"Copyright (c) 1991 Patrick J. Naughton\n"
+"\n"
+"Porting su KDE di Emanuel Pirker."
+
+msgid ""
+"Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+msgstr ""
+"Uso: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+
+msgid "Vertices:"
+msgstr "Vertici:"
+
+msgid ""
+"Your system uses shadow passwords!\n"
+"Please contact your system administrator.\n"
+"\n"
+"Tell him, that you need suid for the screensavers!"
+msgstr ""
+"Questo sistema usa le shadow passwords!\n"
+"Contattate l'amministratore di sistema.\n"
+"\n"
+"Abbisognate dei permessi di suid per il salvaschermo!"
