@@ -2,6 +2,7 @@ In this file:
 
 * About kdebase
 * Common Mistakes
+* Common Compiling Errors
 * Configuring
 * Debugging
 * Upgrading
@@ -30,7 +31,10 @@ will only miss a few screensavers.  The same thing applies with OPENGL
 support.  Here you have to set GL_INCLUDE and GL_LDFLAGS.
 
 If configure claims Qt cannot be found, have a look at http://www.troll.no
-to get a copy of Qt, version 1.42.
+to get a copy of Qt, version 1.42, not 1.44.
+
+Common Compiling Errors
+-----------------------
 
 If you get TOC overflow errors on AIX, and are using gcc 2.7.2, you'll
 need to add -mminimal-toc to your CFLAGS and CXXFLAGS.
@@ -45,6 +49,27 @@ If you would like to include "C2" style secure encryption, define
 HAVE_OSF_C2_PASSWD in config.h, and link kcheckpass with the appropiate
 libraries.  This has been tested on Digital Unix, which requires the
 security library.
+
+If you get errors when running or linking a KDE program to the effect of:
+
+ld-elf.so complains about not finding these symbols:
+ __ti6QFrame
+ __ti7QObject
+ __ti7Qblahblahblah
+
+You're compiling Qt without RunTime Type Info (rtti) support.  Currently
+no KDE 1.1 application uses rtti, so you have two choices:
+
+* Include -fno-rtti in the CXXFLAGS variable when compiling kdelibs,
+kdebase, and any other kde applications.  This will make it impossible to
+use rttin in any KDE app.
+
+*OR*
+
+* Remove any instance of -fno-rtti in the Qt configuration file (usually
+in $QTDIR/configs).  On a FreeBSD machine, this is most likely
+freebsd-g++-shared.
+
 
 Configuring
 -----------
