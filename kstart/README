@@ -1,10 +1,10 @@
-
                   README file for kstart
                   ======================
- Developed and maintained by Matthias Ettrich (ettrich@kde.org)
+
+ Developed and maintained by Matthias Ettrich <ettrich@kde.org>
 
 
-kstart is a tiny utility to launch legay applications with special KDE
+kstart is a tiny utility to launch legacy applications with special KDE
 window properties such as iconified, maximized, a certain virtual
 desktop, a special decoration or sticky.
 
