@@ -1,0 +1,43 @@
+[International Keyboard]
+Authors=Can Bican (bican@metu.edu.tr)
+Comment=Turkish Q Keyboard (Turkey)
+Comment[tr]=Türkçe Q Klavye (Türkiye)
+ 
+Language=Turkish
+Language[tr]=Türkçe
+Language[fr]=Turque
+Language[ro]=Turca
+ 
+Label=Trq
+Locale=tr
+ 
+[KeyboardMap]
+keysym0=comma,odiaeresis,Odiaeresis
+keysym1=grave,quotedbl,eacute
+keysym1=backslash,comma,semicolon,grave
+keysym2=1,1,exclam
+keysym3=2,2,apostrophe
+keysym4=3,3,asciicircum,numbersign
+keysym5=4,4,plus,dollar
+keysym6=5,5,percent
+keysym7=6,6,ampersand
+keysym8=7,7,slash,braceleft
+keysym9=8,8,parenleft,bracketleft
+keysym10=9,9,parenright,bracketright
+keysym11=0,0,equal,braceright
+keysym12=equal,minus,underscore
+keysym13=minus,asterisk,question,backslash
+keysym14=q,q,Q,at
+keysym15=u,u,U,ucircumflex,Ucircumflex
+keysym16=o,o,O,ocircumflex,Ocircumflex
+keysym17=a,a,A,acircumflex,Acircumflex
+keysym18=i,yacute,I,icircumflex,Icircumflex
+keysym19=comma,comma,semicolon,grave
+keysym20=period,period,colon,slash
+keysym21=less,less,greater,bar
+keysym22=bracketleft,eth,ETH
+keysym23=bracketright,udiaeresis,Udiaeresis,asciitilde
+keysym24=semicolon,thorn,THORN
+keysym25=apostrophe,i,Yacute
+keysym26=period,ccedilla,Ccedilla
+keysym27=slash,period,colon,slash
