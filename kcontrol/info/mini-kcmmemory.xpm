@@ -1,0 +1,23 @@
+/* XPM */
+static char * mini_chip_xpm[] = {
+"16 16 4 1",
+" 	c none",
+".	c #861786178617",
+"X	c #000000000000",
+"o	c #BEFBBAEABEFB",
+"       .        ",
+"      ...X      ",
+"     . .XXX     ",
+"    ...XXXoX    ",
+"   . .XXXXXoX   ",
+"  ...XXXXXXXXo  ",
+" . .XXXXXXXXoX  ",
+"...XXXXXXXXoXX. ",
+" .oXXXXXXXoXX...",
+"  XoXXXXXoXX. . ",
+"  XXoXXXoXX...  ",
+"   XXoXoXX. .   ",
+"    XXoXX...    ",
+"     XXX. .     ",
+"      X...      ",
+"        .       "};

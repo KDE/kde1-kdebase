@@ -17,3 +17,9 @@ Info Module:
 Conversion to kcontrol applet:
 
   Matthias Hoelzer (hoelzer@physik.uni-wuerzburg.de)
+  
+added more informations:
+    (pci,dma,interrupts,Sound,X-Server,devices,ioports,partitions,SCSI)
+    [Linux only, empty functions for the other systems]):
+    Helge Deller (helge.deller@ruhr-uni-bochum.de)
+  

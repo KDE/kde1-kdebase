@@ -4,57 +4,61 @@
 #include "memory.h"
 #include "memory.moc"
 
+#define STARTX  20
+#define STARTX2 200
+#define STARTY  20
+#define DY      24
 
 KMemoryWidget::KMemoryWidget(QWidget *parent, const char *name)
   : KConfigWidget(parent, name)
 {
-  totalMem = new QLabel(klocale->translate("Total memory"), this);
-  totalMem->move(8,8);
+  totalMem = new QLabel(i18n("Total memory"), this);
+  totalMem->move(STARTX,STARTY+0*DY);
   totalMem->setAutoResize(TRUE);
   totalMem = new QLabel("0k", this);
-  totalMem->move(200,8);
+  totalMem->move(STARTX2,STARTY+0*DY);
   totalMem->setAutoResize(TRUE);
   QFont courierFont("Courier");
   KApplication::getKApplication()->getCharsets()->setQFont(courierFont);
   totalMem->setFont(courierFont);
 
-  freeMem = new QLabel(klocale->translate("Free memory"), this);
-  freeMem->move(8,32);
+  freeMem = new QLabel(i18n("Free memory"), this);
+  freeMem->move(STARTX,STARTY+1*DY);
   freeMem->setAutoResize(TRUE);
   freeMem = new QLabel("0k", this);
-  freeMem->move(200,32);
+  freeMem->move(STARTX2,STARTY+1*DY);
   freeMem->setAutoResize(TRUE);
   freeMem->setFont(courierFont);
 
-  sharedMem = new QLabel(klocale->translate("Shared memory"), this);
-  sharedMem->move(8,56);
+  sharedMem = new QLabel(i18n("Shared memory"), this);
+  sharedMem->move(STARTX,STARTY+2*DY);
   sharedMem->setAutoResize(TRUE);
   sharedMem = new QLabel("0k", this);
-  sharedMem->move(200,56);
+  sharedMem->move(STARTX2,STARTY+2*DY);
   sharedMem->setAutoResize(TRUE);
   sharedMem->setFont(courierFont);
 
-  bufferMem = new QLabel(klocale->translate("Buffer memory"), this);
-  bufferMem->move(8,80);
+  bufferMem = new QLabel(i18n("Buffer memory"), this);
+  bufferMem->move(STARTX,STARTY+3*DY);
   bufferMem->setAutoResize(TRUE);
   bufferMem = new QLabel("0k", this);
-  bufferMem->move(200,80);
+  bufferMem->move(STARTX2,STARTY+3*DY);
   bufferMem->setAutoResize(TRUE);
   bufferMem->setFont(courierFont);
 
-  swapMem = new QLabel(klocale->translate("Swap memory"), this);
-  swapMem->move(8,112);
+  swapMem = new QLabel(i18n("Swap memory"), this);
+  swapMem->move(STARTX,STARTY+5*DY);
   swapMem->setAutoResize(TRUE);
   swapMem = new QLabel("0k", this);
-  swapMem->move(200,112);
+  swapMem->move(STARTX2,STARTY+5*DY);
   swapMem->setAutoResize(TRUE);
   swapMem->setFont(courierFont);
 
-  freeSwapMem = new QLabel(klocale->translate("Free swap memory"), this);
-  freeSwapMem->move(8,136);
+  freeSwapMem = new QLabel(i18n("Free swap memory"), this);
+  freeSwapMem->move(STARTX,STARTY+6*DY);
   freeSwapMem->setAutoResize(TRUE);
   freeSwapMem = new QLabel("0k", this);
-  freeSwapMem->move(200,136);
+  freeSwapMem->move(STARTX2,STARTY+6*DY);
   freeSwapMem->setAutoResize(TRUE);
   freeSwapMem->setFont(courierFont);
 
@@ -71,7 +75,7 @@ QString format(unsigned long value)
   QString  text;
   double   mb = value / 1048576.0;
   
-  text.sprintf(klocale->translate("%10ld bytes  = %8.2f MB"), value, mb);
+  text.sprintf(i18n("%10ld bytes  = %8.2f MB"), value, mb);
   return text;
 }
 
@@ -93,12 +97,12 @@ QString format(unsigned long value)
 void KMemoryWidget::update()
 {
   // Numerical values
-  totalMem->setText(klocale->translate("Not available"));
-  freeMem->setText(klocale->translate("Not available"));
-  sharedMem->setText(klocale->translate("Not available"));
-  bufferMem->setText(klocale->translate("Not available"));
-  swapMem->setText(klocale->translate("Not available"));
-  freeSwapMem->setText(klocale->translate("Not available"));
+  totalMem->setText(i18n("Not available"));
+  freeMem->setText(i18n("Not available"));
+  sharedMem->setText(i18n("Not available"));
+  bufferMem->setText(i18n("Not available"));
+  swapMem->setText(i18n("Not available"));
+  freeSwapMem->setText(i18n("Not available"));
 }
 
 #endif
