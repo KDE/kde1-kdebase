@@ -34,8 +34,10 @@ int authenticate(const char *login, const char *passwd)
   int result;
 
   pw = getspnam(login);
-  if ( pw == 0 )
+  if ( pw == 0 ) {
+    endspent();
     return 0;
+  }
 #if defined( __linux__ ) && defined( HAVE_PW_ENCRYPT )
   crpt_passwd = pw_encrypt(passwd, pw->sp_pwdp);  // (1)
 #else  
