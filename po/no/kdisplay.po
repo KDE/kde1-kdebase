@@ -324,7 +324,7 @@ msgstr "&Tegn widgets i samme stil som Windows 95"
 
 #: general.cpp:242
 msgid "&Apply style to non-KDE apps"
-msgstr ""
+msgstr "&La ikke-KDE-programmer bruke stil"
 
 #: general.cpp:255
 msgid "Desktop fonts"

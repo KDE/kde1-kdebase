@@ -156,20 +156,19 @@ msgstr "&Vinduer"
 
 #: windows.cpp:80
 msgid "Vertical maximization only by default"
-msgstr ""
+msgstr "Vertikal maksimering kun som standard"
 
 #: windows.cpp:85
 msgid "Display content in moving windows"
-msgstr ""
+msgstr "Vis innholdet når vinduet flyttes"
 
 #: windows.cpp:90
 msgid "Display content in resizing windows"
-msgstr ""
+msgstr "Vis innholdet når vinduet endrer størrelse"
 
 #: windows.cpp:96
-#, fuzzy
 msgid "Resize animation:"
-msgstr "Tittelanimasjon"
+msgstr "Endrestørrelseanim.:"
 
 #: windows.cpp:109
 msgid "None"
@@ -209,9 +208,10 @@ msgid ""
 "  Allowed overlap:\n"
 "(% of desktop space)"
 msgstr ""
+"  Godtatte overlappinger:\n"
+"(% av skrivebordsplass)"
 
 #: windows.cpp:170
-#, fuzzy
 msgid "Focus policy"
 msgstr "Fokuseringspolitikk"
 
@@ -238,7 +238,7 @@ msgstr "Legg øverst"
 
 #: windows.cpp:204
 msgid "Delay (ms)"
-msgstr ""
+msgstr "Forsinkelse (ms)"
 
 #: desktop.cpp:65
 msgid "Active desktop borders"

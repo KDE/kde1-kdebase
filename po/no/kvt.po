@@ -131,7 +131,7 @@ msgstr "Skrifttype..."
 
 #: main.C:674
 msgid "Enable &hotkeys"
-msgstr ""
+msgstr "Skru på &hurtigtaster"
 
 #: main.C:677
 msgid "Save &Options"

@@ -171,7 +171,7 @@ msgstr "&Klokke viser tid i am/pm-format"
 
 #: disknav.cpp:38
 msgid "History"
-msgstr ""
+msgstr "Historie"
 
 #: disknav.cpp:64
 msgid "Edit &Local..."
@@ -180,36 +180,3 @@ msgstr "Rediger &local..."
 #: disknav.cpp:74
 msgid "Edit &Global..."
 msgstr "Rediger &global..."
-
-#~ msgid "Edit entries: (drag a folder and create a link)"
-#~ msgstr "Rediger oppføringer: (dra en mappe og lag en lenke)"
-
-#~ msgid "Max recent folder entries:"
-#~ msgstr "Maks antall nylige mapperoppføringer:"
-
-#~ msgid "Max recent file entries:"
-#~ msgstr "Maks antall nylige filoppføringer:"
-
-#~ msgid "Max files in a single folder:"
-#~ msgstr "Maks antall filer i en enkelt mappe:"
-
-#~ msgid "Show dot files"
-#~ msgstr "Vis dott-filer"
-
-#~ msgid "Ignore case when sorting"
-#~ msgstr "Ignorer bokstavstørrelse ved sorteringer"
-
-#~ msgid "Show Global section"
-#~ msgstr "Vis Global-seksjon"
-
-#~ msgid "Show Local section"
-#~ msgstr "Vis Lokal-seksjon"
-
-#~ msgid "Show Recent section"
-#~ msgstr "Vis Nylig-seksjon"
-
-#~ msgid "Show Option entry"
-#~ msgstr "Vis Valg-seksjon"
-
-#~ msgid "Terminal application:"
-#~ msgstr "Terminal-applikasjon:"

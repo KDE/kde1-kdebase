@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "POT-Creation-Date: 1998-10-30 11:57+0100\n"
 "PO-Revision-Date: 1998-06-05 14:42+0100\n"
-"Last-Translator: Svein Olav Aasen <soaasen@onlin.no / svein.aasen@caa.no>\n"
+"Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1998-04-15 09:13:42+0400\n"
@@ -22,6 +22,8 @@ msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
+"X-kodefilen \"%s\" finnes ikke.\n"
+"Bruker standard X-koder."
 
 #: kikbd.cpp:307
 #, c-format
@@ -29,6 +31,8 @@ msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skiping this map."
 msgstr ""
+"Tastaturmappe \"%s\" finnes ikke.\n"
+"Hopper over denne mappen."
 
 #: kikbd.cpp:324
 msgid "Setup"
@@ -73,27 +77,25 @@ msgid ""
 "You can preset X codes in \"Advanced\" section\n"
 "of configuration program."
 msgstr ""
+"Kan ikke finne symbol \"%s\".\n"
+"Kanhende dine standard X-koder ikke passer.\n"
+"Du kan forhåndssette X-koder i \"Avansert\"-seksjonen\n"
+"av konfigurasjonsprogrammet."
 
 #: keymap.cpp:228
 #, fuzzy, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
-msgstr ""
-"Tastaturkart: kan ikke finne symbol \"%s\".\n"
-"Vil du fortsette?"
+msgstr "Tastaturkart: kan ikke finne symbol \"%s\"."
 
 #: keymap.cpp:236
 #, fuzzy, c-format
 msgid "KeyMap: do not undestand keycode \"%s\"."
-msgstr ""
-"Tastaturkart: kan ikke forstå tastkode \"%s\".\n"
-"Vil du fortsette?"
+msgstr "Tastaturkart: kan ikke forstå tastkode \"%s\"."
 
 #: keymap.cpp:242
 #, fuzzy, c-format
 msgid "KeyMap: keycode \"%s\" go out of range."
-msgstr ""
-"Tastaturkart: tastkode \"%s\" går utenfor gyldig område.\n"
-"Vil du fortsette?"
+msgstr "Tastaturkart: tastkode \"%s\" går utenfor gyldig område."
 
 #: kikbdconf.cpp:95
 msgid "Global"
@@ -172,9 +174,8 @@ msgid "Bottom Right"
 msgstr "Høyre bunn"
 
 #: kikbdconf.cpp:147
-#, fuzzy
 msgid "X default codes"
-msgstr "standard"
+msgstr "X-standardkoder"
 
 #: kikbdconf.cpp:204
 #, c-format
@@ -279,7 +280,7 @@ msgstr "Internasjonalt tastatur-spørsmål"
 
 #: kikbdconf.cpp:487
 msgid "Configure"
-msgstr ""
+msgstr "Konfigurer"
 
 #: kikbdconf.cpp:497
 #, fuzzy
@@ -287,8 +288,8 @@ msgid ""
 "\n"
 "Do you want to continue?"
 msgstr ""
-"%s\n"
-"Ønsker du å starte Konfigurasjon?"
+"\n"
+"Vil du fortsette?"
 
 #: widgets.cpp:107
 msgid "List of active keyboard maps"
@@ -422,7 +423,7 @@ msgstr "Lagre relasjoner mellom vindusklasser og tastaturkart ved avsluttning."
 
 #: widgets.cpp:488
 msgid "Define X codes"
-msgstr ""
+msgstr "Definer X-koder"
 
 #: widgets.cpp:491
 msgid "Input"

@@ -1,10 +1,10 @@
-# Norwegian translations for KDE Base, kstartondesk
+# Norwegian translations for KDE Base, kstart
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Hans Petter Bieker <zerium@webindex.no>, 1998.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: KDE BASE/kstartondesk\n"
+"Project-Id-Version: KDE BASE/kstart\n"
 "POT-Creation-Date: 1998-10-29 13:59+0100\n"
 "PO-Revision-Date: 1998-04-08 HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
@@ -44,23 +44,9 @@ msgid ""
 msgstr ""
 
 #: kstart.C:151
-#, fuzzy
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr "Enerett (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-
-#~ msgid "Usage:"
-#~ msgstr "Bruk:"
-
-#~ msgid "command "
-#~ msgstr "kommando "
-
-#~ msgid "title "
-#~ msgstr "tittel "
-
-#~ msgid "desktop"
-#~ msgstr "skrivebord"
-
-#~ msgid "Example"
-#~ msgstr "Eksempel"
+msgstr ""
+"\n"
+" Enerett (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"

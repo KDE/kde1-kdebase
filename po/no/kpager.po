@@ -1,0 +1,68 @@
+# Norwegian translations for KDE Base, kpager
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Hans Petter Bieker <zerium@webindex.no>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE BASE/kpager\n"
+"POT-Creation-Date: 1998-09-30 07:19:56+0000\n"
+"PO-Revision-Date: 1998-10-30 18:05+0100\n"
+"Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
+"Language-Team: no <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kpager.cpp:77 kpager.cpp:156
+msgid "Hide &Global Desktop"
+msgstr "Skul &globalt skrivebord"
+
+#: kpager.cpp:79 kpager.cpp:149
+msgid "Show &Global Desktop"
+msgstr "Vis &globalt skrivebord"
+
+#: kpager.cpp:81
+msgid "Hide &Menubar"
+msgstr "Skjul &menylinje"
+
+#: kpager.cpp:85
+msgid "Plain"
+msgstr "Enkel"
+
+#: kpager.cpp:88
+msgid "Icon"
+msgstr "Ikon"
+
+#: kpager.cpp:91
+msgid "Pixmap"
+msgstr "Pixmap"
+
+#: kpager.cpp:95
+msgid "Draw Mode"
+msgstr "Tegnemodus"
+
+#: kpager.cpp:99
+msgid ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"KPager's homepage is at : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n"
+"This is free software, and you are welcome to redistribute it\n"
+"under certain conditions\n"
+msgstr ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"KPagers hjemmeside er på : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager kommer med ABSOLUTT INGEN GARANTI; for detaljer, se COPYING-filen\n"
+"Dette er gratis programvare, og du er velkommen til å vidredistribuere\n"
+"den under visse vilkår\n"

@@ -59,7 +59,7 @@ msgstr "Innlogging er for øyeblikket ikke tilgjengelig."
 
 #: kgreeter.cpp:518
 msgid "login_getcapstr() failed."
-msgstr ""
+msgstr "login_getcapstr() mislyktes."
 
 #: kgreeter.cpp:572 kgreeter.cpp:599
 msgid "Sorry -- your account has expired."
