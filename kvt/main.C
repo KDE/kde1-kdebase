@@ -764,6 +764,8 @@ void kVt::toggleHotkeys() {
     s.replace(r, "");
   menubar->insertItem( s.data(), m_options);
 
+  menubar->insertSeparator();
+
   s = i18n("&Help");
   if(!enableHotkeys)
     s.replace(r, "");
