@@ -1311,7 +1311,7 @@ KMimeMagic::process(const char * fn)
 	if (nbytes == 0) {
 		resultBuf += MIME_BINARY_ZEROSIZE;
 	} else {
-		buf[nbytes++] = '\0';	/* null-terminate it */
+		buf[nbytes] = '\0';	/* null-terminate it */
 		tryit(buf, nbytes);
 	}
 
