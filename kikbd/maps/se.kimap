@@ -10,6 +10,10 @@
 Authors=Lars HamrИn <hamren@sdu.se>
 
 Language=Swedish
+Language[da]=Svensk
+Language[pt_BR]=Sueco
+Language[ru]=Шведский
+Language[sv]=Svenskt
 
 Label=Se
 Locale=se
