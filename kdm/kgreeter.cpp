@@ -345,15 +345,15 @@ KGreeter::save_wm()
 
      // open file as user which is loging in
      seteuid(pwd->pw_uid);
-     int i = f.open(IO_WriteOnly);
-     seteuid(0);
+     bool noerr = f.open(IO_WriteOnly) != 0;
 
-     if ( i ) {
+     if ( noerr ) {
 	  QTextStream t;
 	  t.setDevice( &f );
 	  t << sessionargBox->text( sessionargBox->currentItem()) << endl;
 	  f.close();
      }
+     seteuid(0);
 }
 
 void
@@ -373,12 +373,11 @@ KGreeter::load_wm()
 
      // open file as user which is loging in
      seteuid(pwd->pw_uid);
-     int err = f.open(IO_ReadOnly);
-     seteuid(0);
+     bool noerr = f.open(IO_ReadOnly) != 0;
 
      // set default wm
      int wm = 0;
-     if ( err ) {
+     if ( noerr ) {
 	  QTextStream t( &f );
 	  QString s;
 	  if ( !t.eof() ) s = t.readLine();
@@ -390,6 +389,7 @@ KGreeter::load_wm()
 		    break;
 	       }
      }
+     seteuid(0);
      sessionargBox->setCurrentItem(wm);
 }
 
@@ -409,8 +409,9 @@ KGreeter::restrict()
 
 #ifdef HAVE_SETUSERCONTEXT
      lc = login_getpwclass(pwd);
-#elif USESHADOW
-     swd= getspnam(greet->name);
+#endif
+#if USESHADOW
+     swd = getspnam(greet->name);
      endspent();
      if (!swd) return false;
 #endif
@@ -692,11 +693,10 @@ GreetUser(
      int argc = 4;
      char* argv[5] = {"kdm", "-display", NULL, NULL, NULL};
  
-      struct sigaction sig;
+     struct sigaction sig;
  
- 
-      /* KApplication trashes xdm's signal handlers :-( */
-      sigaction(SIGCHLD,NULL,&sig);
+     /* KApplication trashes xdm's signal handlers :-( */
+     sigaction(SIGCHLD,NULL,&sig);
  
      argv[2] = d->name;
      MyApp* myapp = new MyApp( argc, argv );
@@ -731,13 +731,15 @@ GreetUser(
      if (source (verify->systemEnviron, d->startup) != 0)
      {
           char buf[256];
-	  sprintf(buf, "Startup program %s exited with non-zero status.\n"
+	  snprintf(buf, sizeof(buf),
+		  "Startup program %s exited with non-zero status.\n"
 		  "Please contact your system administrator.\n",
 		 d->startup);
 	  qApp->restoreOverrideCursor();
 	  QMessageBox::critical( 0, "Login aborted", buf, "Retry");
 	  SessionExit (d, OBEYSESS_DISPLAY, FALSE);
-     }              
+     }
+
      // Clean up and log user in:
      XKillClient( qt_xdisplay(), AllTemporary);
      //qApp->desktop()->setCursor( arrowCursor);
