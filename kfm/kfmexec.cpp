@@ -63,6 +63,26 @@ void KFMExec::openURL( const char *_url  )
 	return;
     }
 
+    // --- start do mailto kdelnks ----
+    // Pasted from kfmman.cpp - almost verbatim
+    // This way kfm can open mailto kdelnks from desktop and other
+    // places too - nothing can stop us now to have address book
+    // done like bookmarks :-) (sven)
+    // Dirty hack for calling kmail
+    if ( strcmp( u.protocol(), "mailto" ) == 0 )
+    {
+	QString subject;
+	QString to( u.path() );
+	int i;
+	if ( ( i = to.find( '?' ) ) != -1 )
+	    to = to.left( i ).data();
+	QString cmd;
+	cmd << "kmail -s \"" << subject << "\" \"" << to << "\"";
+	KMimeBind::runCmd( cmd );
+	return;
+    }
+    // --- end do mailto kdelnks ----
+    
     // A link to the web in form of a *.kdelnk file ?
     QString path = u.path();
     if ( !u.hasSubProtocol() && strcmp( u.protocol(), "file" ) == 0 && path.right(7) == ".kdelnk" )
