@@ -637,7 +637,11 @@ int KHelpWindow::formatMan( int bodyOnly )
 	{
 		if ( inDir && curr->type != MAN_DIR )
 		{
-			view->write( "</cell>" );
+#if KHTMLW_VERSION > 800
+			view->write( "</grid><pre>" );
+#else
+			view->write( "</grid>" );
+#endif
 			inDir = FALSE;
 		}
 
@@ -686,13 +690,22 @@ int KHelpWindow::formatMan( int bodyOnly )
 			case MAN_DIR:
 				if ( !inDir )
 				{
+#if KHTMLW_VERSION > 800
+					view->write( "</pre>" );
+#endif
 					view->write( "<grid width=" );
 					view->write( gridWidth );
 					view->write( " align=left>" );
 					inDir = TRUE;
 				}
 
+#if KHTMLW_VERSION > 800
+				view->write( "<cell width=" );
+				view->write( gridWidth );
+				view->write( " align=left><pre>" );
+#else
 				view->write( "<cell>" );
+#endif
 				view->write( "<a href=\"man:" );
 				view->write( ((cManDir *)curr)->page );
 				view->write( "\">" );
@@ -706,7 +719,11 @@ int KHelpWindow::formatMan( int bodyOnly )
 					convertSpecial( ((cManDir *)curr)->desc, converted );
 					view->write( converted );
 				}
+#if KHTMLW_VERSION > 800
+				view->write( "</pre></cell>" );
+#else
 				view->write( "</cell>" );
+#endif
 				break;
 
 			case MAN_XREF:

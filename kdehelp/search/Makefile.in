@@ -7,7 +7,7 @@ MOC = @MOC@
 INCFLAGS = -I. @all_includes@ -I.. -I../..
 CXXFLAGS = -Wall
 DEFS = -DHAVE_CONFIG_H
-LDFLAGS = @all_libraries@ -lkdecore -lkhtmlw -lqt -lXext -lX11 @LIBSOCKET@ @LIBCOMPAT@ -lgif -ljpeg
+LDFLAGS = @all_libraries@ -lkdecore -lqt -lXext -lX11 @LIBSOCKET@ @LIBCOMPAT@ -lgif -ljpeg
 .SUFFIXES: .cpp
 
 ########## Implicit Rules ##########
