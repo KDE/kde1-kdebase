@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-03-19 22:17+0100\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Stjepan Zlodi <szlodi@public.srce.hr> \n"
 "Language-Team: Croatian\n"
@@ -14,34 +14,32 @@ msgstr ""
 "Content-Transfer-Encoding: iso-8859-2\n"
 
 #: kmenuedit.cpp:62
-#, fuzzy
 msgid "&Reload"
-msgstr "Obnovi Izbornike"
+msgstr "&Obnovi"
 
 #: kmenuedit.cpp:68
-#, fuzzy
 msgid "Change &Menuname"
-msgstr "Promjena imena izbornika"
+msgstr "P&romjena imena izbornika"
 
 #: kmenuedit.cpp:69
-#, fuzzy
 msgid "Reload &Filetypes"
-msgstr "Obnovi vrste datoteka"
+msgstr "Obnovi &vrste datoteka"
 
 #: kmenuedit.cpp:76
 msgid "by"
-msgstr ""
+msgstr "od"
 
 #: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
 msgstr "Promjene nisu spremljene ! "
 
 #: kmenuedit.cpp:176 kmenuedit.cpp:201
-#, fuzzy
 msgid ""
 "\n"
 "Do you want to save your changes ?"
-msgstr "Da li ¾elite spremiti promjene"
+msgstr 
+"\n"
+"Da li ¾elite spremiti promjene ?"
 
 #: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"
@@ -89,7 +87,7 @@ msgstr "Otvori/ Zatvori"
 
 #: confmenu.cpp:110
 msgid "! PROTECTED Button !"
-msgstr "! ZA©TIÈEN Gumb !"
+msgstr "! ZA©TIæEN Gumb !"
 
 #: confmenu.cpp:171 confmenu.cpp:300
 msgid "Warning !"
@@ -164,9 +162,17 @@ msgstr "Veza"
 msgid "Device"
 msgstr "Ureðaj"
 
+#: entrydialog.cpp:63
+msgid "Type:"
+msgstr "Vrsta:"
+
 #: entrydialog.cpp:69
 msgid "File Name:"
 msgstr "Ime Datoteke:"
+
+#: entrydialog.cpp:82
+msgid "Name:"
+msgstr "Ime:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"
@@ -205,18 +211,16 @@ msgid "Binary Pattern:"
 msgstr "Binarni Uzorak:"
 
 #: entrydialog.cpp:300
-#, fuzzy
 msgid "Application to swallow:"
-msgstr "Aplikacije"
+msgstr "Aplikacije koje treba progutati:"
 
 #: entrydialog.cpp:306
-#, fuzzy
 msgid "Title of application:"
-msgstr "Aplikacije"
+msgstr "Naziv aplikacijeK"
 
 #: entrydialog.cpp:312
 msgid "Application to execute on button press:"
-msgstr ""
+msgstr "Aplikaciju koju treba izvesti kod pritiska gumba:"
 
 #: entrydialog.cpp:342
 msgid "URL:"
@@ -256,28 +260,4 @@ msgstr "Osobni:"
 
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
-msgstr "Podrazumijevani:"
-
-#~ msgid "Type:"
-#~ msgstr "Vrsta:"
-
-#~ msgid "Name:"
-#~ msgstr "Ime:"
-
-#~ msgid ""
-#~ "KMenuedit 0.2.3\n"
-#~ "(C) by Christoph Neerfeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-#~ msgstr ""
-#~ "KMenuedit 0.2.3\n"
-#~ "(C) Christoph Neerfeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-
-#~ msgid "Fvwm Command"
-#~ msgstr "Fvwm Naredba"
-
-#~ msgid "Fvwm"
-#~ msgstr "Fvwm"
-
-#~ msgid "Fvwm Command:"
-#~ msgstr "Fvwm Naredba:"
+msgstr "Uobièajeni:"
