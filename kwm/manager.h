@@ -14,6 +14,8 @@
 #include <qlabel.h>
 #include <qpushbt.h>
 #include <qpixmap.h>
+#include <qbrush.h>
+#include <qpainter.h>
 #include <qpoint.h>
 #include <qpopmenu.h>
 #include <qchkbox.h>
@@ -235,5 +237,18 @@ private:
   Client* delayed_focus_follow_mouse_client;
  
 };
+
+// CC: new KDE Greyer widget
+
+class KGreyerWidget : public QWidget
+{
+ Q_OBJECT
+ public:
+  KGreyerWidget();
+
+ protected:
+  void paintEvent(QPaintEvent *e);
+};
+
 
 #endif // MANAGER_H

@@ -26,6 +26,8 @@ extern bool kwm_error;
 
 extern Manager* manager;
 
+KGreyerWidget *greyer_widget = 0;
+
 Window root;
 Display *dpy;
 GC rootgc;
@@ -174,9 +176,9 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
       break;
     case 2:
       if (e->value_mask & CWWidth)
-	dx = e->width + 2 * BORDER;
+	dx = e->width + 2 * BORDER_THIN;
       if (e->value_mask & CWHeight)
-	dy = e->height + 2 * BORDER;
+	dy = e->height + 2 * BORDER_THIN;
       break;
     default:
       if (e->value_mask & CWWidth)
@@ -209,8 +211,8 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
       wc.y = 0;
       break;
     case 2:
-      wc.x = BORDER;
-      wc.y = BORDER;
+      wc.x = BORDER_THIN;
+      wc.y = BORDER_THIN;
       break;
     default:
       wc.x = BORDER;
@@ -836,7 +838,7 @@ void Manager::manage(Window w, bool mapped){
     XReparentWindow(qt_xdisplay(), c->window, c->winId(), 0, 0);
     break;
   case 2:
-    XReparentWindow(qt_xdisplay(), c->window, c->winId(), (BORDER), (BORDER));
+    XReparentWindow(qt_xdisplay(), c->window, c->winId(), (BORDER_THIN), (BORDER_THIN));
     break;
   default:
     XReparentWindow(qt_xdisplay(), c->window, c->winId(), (BORDER), (BORDER) + 
@@ -1259,10 +1261,10 @@ void Manager::sendConfig(Client* c, bool emit_changed){
     ce.height = c->geometry.height();
     break;
   case 2:
-    ce.x = c->geometry.x() + BORDER;
-    ce.y = c->geometry.y() + BORDER;
-    ce.width = c->geometry.width() - 2*BORDER;
-    ce.height = c->geometry.height() - 2*BORDER;
+    ce.x = c->geometry.x() + BORDER_THIN;
+    ce.y = c->geometry.y() + BORDER_THIN;
+    ce.width = c->geometry.width() - 2*BORDER_THIN;
+    ce.height = c->geometry.height() - 2*BORDER_THIN;
     break;
   default:
     ce.x = c->geometry.x() + BORDER;
@@ -1431,7 +1433,7 @@ void Manager::setShape(Client* c){
       break;
     case 2:
       XShapeCombineShape(qt_xdisplay(), c->winId(), ShapeBounding, 
-			 (BORDER), (BORDER),
+			 (BORDER_THIN), (BORDER_THIN),
 			 c->window, ShapeBounding, ShapeSet);
       break;
     default:
@@ -1548,13 +1550,15 @@ void Manager::gravitate(Client* c, bool invert){
   
   int titlebar_height = (c->getDecoration() != 1)?0:TITLEBAR_HEIGHT;
 
+  int border = (c->getDecoration()==1)?BORDER:BORDER_THIN;
+
   dx = dy = 0;
 
   gravity = NorthWestGravity;
   if (c->size.flags & PWinGravity)
     gravity = c->size.win_gravity;
   
-  delta = BORDER - 1;
+  delta = border - 1;
 
   switch (gravity) {
   case NorthWestGravity:
@@ -1599,13 +1603,13 @@ void Manager::gravitate(Client* c, bool invert){
   }
   if (invert) {
     c->geometry.moveBy(-dx, -dy);
-    c->geometry.setWidth(c->geometry.width() - 2*BORDER);
-    c->geometry.setHeight(c->geometry.height()- 2*BORDER-titlebar_height);
+    c->geometry.setWidth(c->geometry.width() - 2*border);
+    c->geometry.setHeight(c->geometry.height()- 2*border-titlebar_height);
   }
   else {
     c->geometry.moveBy(dx, dy);
-    c->geometry.setWidth(c->geometry.width() + 2*BORDER);
-    c->geometry.setHeight(c->geometry.height()+ 2*BORDER+titlebar_height);
+    c->geometry.setWidth(c->geometry.width() + 2*border);
+    c->geometry.setHeight(c->geometry.height()+ 2*border+titlebar_height);
   }
 }
 
@@ -1686,51 +1690,56 @@ void Manager::refreshScreen(){
   // In this case, I have to save the screen manually
   // _before_ darkenScreen.
 
-  valuemask = CWBackingStore;
-  attributes.backing_store = NotUseful;
-  Client *c;
-  for (c = clients.first();c;c=clients.next()){
-    if (c->backing_store != NotUseful){
-      XChangeWindowAttributes(qt_xdisplay(), c->window,
-			      valuemask, &attributes);
+  // CC: if there is a greyer widget, remove it
+  //     else, we have to do a full refresh of the display
+  if (0 != greyer_widget) {
+    delete greyer_widget;
+    greyer_widget = 0;
+  } else {
+    valuemask = CWBackingStore;
+    attributes.backing_store = NotUseful;
+    Client *c;
+    for (c = clients.first();c;c=clients.next()){
+      if (c->backing_store != NotUseful){
+	XChangeWindowAttributes(qt_xdisplay(), c->window,
+				valuemask, &attributes);
+      }
+    }
+    XSync (qt_xdisplay(), False);
+    timeStamp();
+    
+    
+    valuemask = (CWBackPixel | CWBackingStore);
+    attributes.background_pixel = 0;
+    Window w = XCreateWindow (qt_xdisplay(), qt_xrootwin(), 0, 0,
+			      QApplication::desktop()->width(),
+			      QApplication::desktop()->height(),
+			      (unsigned int) 0,
+			      CopyFromParent, (unsigned int) CopyFromParent,
+			      (Visual *) CopyFromParent, valuemask,
+			      &attributes);
+    XMapWindow (qt_xdisplay(), w);
+    XSync (qt_xdisplay(), False);
+    timeStamp();
+    XDestroyWindow (qt_xdisplay(), w);
+    XSync (qt_xdisplay(), False);
+    timeStamp();
+    
+    valuemask = CWBackingStore;
+    for (c = clients.first();c;c=clients.next()){
+      if (c->backing_store != NotUseful){
+	attributes.backing_store = c->backing_store;
+	XChangeWindowAttributes(qt_xdisplay(), c->window,
+				valuemask, &attributes);
+      }
     }
   }
-  XSync (qt_xdisplay(), False);
-  timeStamp();
-
-
-  valuemask = (CWBackPixel | CWBackingStore);
-  attributes.background_pixel = 0;
-  Window w = XCreateWindow (qt_xdisplay(), qt_xrootwin(), 0, 0,
-		     QApplication::desktop()->width(),
-		     QApplication::desktop()->height(),
-                     (unsigned int) 0,
-                     CopyFromParent, (unsigned int) CopyFromParent,
-                     (Visual *) CopyFromParent, valuemask,
-                     &attributes);
-  XMapWindow (qt_xdisplay(), w);
-  XSync (qt_xdisplay(), False);
-  timeStamp();
-  XDestroyWindow (qt_xdisplay(), w);
-  XSync (qt_xdisplay(), False);
-  timeStamp();
-
-  valuemask = CWBackingStore;
-  for (c = clients.first();c;c=clients.next()){
-    if (c->backing_store != NotUseful){
-      attributes.backing_store = c->backing_store;
-      XChangeWindowAttributes(qt_xdisplay(), c->window,
-			      valuemask, &attributes);
-    }
-  }
-
 }
 
 void Manager::darkenScreen(){
-  XFillRectangle(qt_xdisplay(), qt_xrootwin(), rootfillsolidgc, 
-		 0,0,
-		 QApplication::desktop()->width(),
-		 QApplication::desktop()->height());
+  if (0 != greyer_widget)
+    delete greyer_widget;
+  greyer_widget = new KGreyerWidget();
 }
 
 void Manager::logout(){
@@ -2182,4 +2191,25 @@ void Manager::removeDockWindow(Window w){
 
 
 
+//// CC: Implementation of the KDE Greyer Widget
+
+KGreyerWidget::KGreyerWidget():
+  QWidget(0,0,WStyle_Customize|WStyle_NoBorder)
+{
+  setBackgroundMode(QWidget::NoBackground);
+  setGeometry(0,0, QApplication::desktop()->width(),
+		   QApplication::desktop()->height());
+  show();
+}
+
+void KGreyerWidget::paintEvent(QPaintEvent *)
+{
+ QPainter p;
+ QBrush b;
+
+ b.setStyle(Dense4Pattern);
+ p.begin(this);
+ p.fillRect(geometry(),b);
+ p.end();
+}
 

@@ -10,7 +10,8 @@
 #ifndef OPTIONS_H
 #define OPTIONS_H
 
-#define BORDER     4
+extern int BORDER;
+#define BORDER_THIN 4
 #define TITLEWINDOW_SEPARATION  2
 #define BUTTON_SIZE    20
 #define TITLEBAR_HEIGHT 20
@@ -62,6 +63,15 @@ struct kwmOptions {
   QPixmap* titlebarPixmapActive;
   QPixmap* titlebarPixmapInactive;
 
+  bool ShapeMode;
+  QPixmap* shapePixmapTop;
+  QPixmap* shapePixmapLeft;
+  QPixmap* shapePixmapBottom;
+  QPixmap* shapePixmapRight;
+  QPixmap* shapePixmapTopLeft;
+  QPixmap* shapePixmapTopRight;
+  QPixmap* shapePixmapBottomLeft;
+  QPixmap* shapePixmapBottomRight;
 };
 
 extern kwmOptions options;

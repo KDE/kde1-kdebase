@@ -145,15 +145,15 @@ void draw_animation_rectangle(int x, int y, int dx, int dy, bool decorated, int 
    XDrawRectangles(dpy,root,rootgc,rects,3);
    if (decorated){
      if (dy > TITLEBAR_HEIGHT + 3 + BORDER){
-       XDrawLine(dpy, root, rootgc, x+3, y+TITLEBAR_HEIGHT, 
-		 x+dx-3, y+TITLEBAR_HEIGHT);
-       XDrawLine(dpy, root, rootgc, x+3, y+TITLEBAR_HEIGHT+1, 
-		 x+dx-3, y+TITLEBAR_HEIGHT+1);
+       XDrawLine(dpy, root, rootgc, x+3, y+BORDER+TITLEBAR_HEIGHT, 
+		 x+dx-3, y+BORDER+TITLEBAR_HEIGHT);
+       XDrawLine(dpy, root, rootgc, x+3, y+BORDER+TITLEBAR_HEIGHT+1, 
+		 x+dx-3, y+BORDER+TITLEBAR_HEIGHT+1);
        if (dx > o1 + o2){
 	 XFillRectangle(dpy, root, rootfillgc,
-			x+o1, y+BORDER,
+			x+o1, y+BORDER+1,
 			dx-o1-o2, 
-			TITLEBAR_HEIGHT - TITLEWINDOW_SEPARATION - BORDER);
+			TITLEBAR_HEIGHT - TITLEWINDOW_SEPARATION -2);
        }
      }
    }

@@ -10,7 +10,7 @@
 
 #include <qapp.h>
 #include <qwidget.h>
-#include <qframe.h>
+#include <qlabel.h>
 #include <qpushbt.h>
 #include <qpixmap.h>
 #include <qpoint.h>
@@ -58,7 +58,7 @@ protected:
 
 class Client;
 
-class Client : public QFrame {
+class Client : public QLabel {
 
   Q_OBJECT
   
@@ -247,7 +247,6 @@ private:
   bool is_active;
   
   bool autoraised_stopped;
-
 
 private slots:
   void autoRaise();

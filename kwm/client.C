@@ -38,6 +38,8 @@
 #include <X11/cursorfont.h>
 #include <X11/Xos.h>
 
+#include <X11/extensions/shape.h>
+
 
 extern Manager* manager;
 
@@ -241,7 +243,7 @@ void animate_size_change(QRect before, QRect after, bool decorated, int o1, int 
 
 
 Client::Client(Window w, QWidget *parent, const char *name_for_qt)
-  : QFrame( parent, name_for_qt){
+  : QLabel( parent, name_for_qt){
     //, WStyle_Customize | WStyle_NoBorder | WStyle_Tool ){
     window = w;
 
@@ -405,40 +407,40 @@ void Client::layoutButtons(){
     trW = width() - 2 * BORDER;
     trH = TITLEBAR_HEIGHT - TITLEWINDOW_SEPARATION;
     
+    int button_y = BORDER + (TITLEBAR_HEIGHT 
+			     - TITLEWINDOW_SEPARATION 
+			     - BUTTON_SIZE)/ 2;
+    if (button_y < 2)
+      button_y = 2;
+
+
     if( buttons[0] && (!trans || buttons[0] == buttonMenu)){
       trX += BUTTON_SIZE;
       trW -= BUTTON_SIZE;
       buttons[0]->setGeometry(BORDER, 
-	BORDER + (TITLEBAR_HEIGHT - TITLEWINDOW_SEPARATION 
-		  - BUTTON_SIZE)/ 2, 
-	BUTTON_SIZE, BUTTON_SIZE);
+			      button_y,
+			      BUTTON_SIZE, BUTTON_SIZE);
     }
     if (!trans){
       if( buttons[1] ){
 	trX += BUTTON_SIZE;
 	trW -= BUTTON_SIZE;
 	buttons[1]->setGeometry(BORDER + BUTTON_SIZE, 
-				BORDER + (TITLEBAR_HEIGHT 
-					  - TITLEWINDOW_SEPARATION 
-					  - BUTTON_SIZE)/ 2, 
+				button_y,
 				BUTTON_SIZE, BUTTON_SIZE);
       }
       if( buttons[2] ){
 	trX += BUTTON_SIZE;
 	trW -= BUTTON_SIZE;
 	buttons[2]->setGeometry(BORDER + 2*BUTTON_SIZE, 
-				BORDER + (TITLEBAR_HEIGHT 
-					  - TITLEWINDOW_SEPARATION 
-					  - BUTTON_SIZE)/ 2, 
+				button_y,
 				BUTTON_SIZE, BUTTON_SIZE);
       }
       
       if( buttons[3] ){
 	trW -= BUTTON_SIZE;
 	buttons[3]->setGeometry(trX + trW,
-				BORDER + (TITLEBAR_HEIGHT 
-					  - TITLEWINDOW_SEPARATION 
-					  - BUTTON_SIZE)/ 2, 
+				button_y,
 				BUTTON_SIZE, BUTTON_SIZE);
       }
       if( buttons[4] ){
@@ -446,9 +448,7 @@ void Client::layoutButtons(){
 	if (options.buttons[3] == CLOSE)
 	  trW -= 2;
 	buttons[4]->setGeometry(trX + trW,
-				BORDER + (TITLEBAR_HEIGHT 
-					  - TITLEWINDOW_SEPARATION 
-					  - BUTTON_SIZE)/ 2, 
+				button_y,
 				BUTTON_SIZE, BUTTON_SIZE);
       }
       if( buttons[5] ){
@@ -456,9 +456,7 @@ void Client::layoutButtons(){
 	if (!buttons[4] && options.buttons[3] == CLOSE)
 	  trW -= 2;
 	buttons[5]->setGeometry(trX + trW,
-				BORDER + (TITLEBAR_HEIGHT 
-					  - TITLEWINDOW_SEPARATION 
-					  - BUTTON_SIZE)/ 2, 
+				button_y,
 				BUTTON_SIZE, BUTTON_SIZE);
       }
     }
@@ -627,30 +625,32 @@ void Client::mouseMoveEvent( QMouseEvent *ev ){
       return; // mouse over application window
     }
 
-      if (ev->pos().x() <= width() && ev->pos().x() >= width()-20
-	  && ev->pos().y() <= height() && ev->pos().y() >= height() - 20)
-	set_x_cursor(bottom_right_cursor);
-      else if (ev->pos().x() >= 0 && ev->pos().x() <= 20
-	  && ev->pos().y() <= height() && ev->pos().y() >= height() - 20)
-	set_x_cursor(bottom_left_cursor);
-      else if (ev->pos().x() >= 0 && ev->pos().x() <= 20
-	       && ev->pos().y() >= 0  && ev->pos().y() <= 20)
-	set_x_cursor(top_left_cursor);
-      else if (ev->pos().x() <= width() && ev->pos().x() >= width()-20
-	       && ev->pos().y() >= 0  && ev->pos().y() <= 20)
-	set_x_cursor(top_right_cursor);
-      else if (ev->pos().x() <= BORDER) 
-	set_x_cursor(left_side_cursor);
-      else if (ev->pos().x() >= width() - BORDER) 
-	set_x_cursor(right_side_cursor);
-      else if (ev->pos().y() <= BORDER) 
-	set_x_cursor(top_side_cursor);
-      else if (ev->pos().y() >= height() - BORDER) 
-	set_x_cursor(bottom_side_cursor);
-      else 
-	set_x_cursor(normal_cursor);
+    int corner = 20 > BORDER ? 20 : BORDER;
+
+    if (ev->pos().x() <= width() && ev->pos().x() >= width()-corner
+	&& ev->pos().y() <= height() && ev->pos().y() >= height() - corner)
+      set_x_cursor(bottom_right_cursor);
+    else if (ev->pos().x() >= 0 && ev->pos().x() <= corner
+	     && ev->pos().y() <= height() && ev->pos().y() >= height() - corner)
+      set_x_cursor(bottom_left_cursor);
+    else if (ev->pos().x() >= 0 && ev->pos().x() <= corner
+	     && ev->pos().y() >= 0  && ev->pos().y() <= corner)
+      set_x_cursor(top_left_cursor);
+    else if (ev->pos().x() <= width() && ev->pos().x() >= width()-corner
+	     && ev->pos().y() >= 0  && ev->pos().y() <= corner)
+      set_x_cursor(top_right_cursor);
+    else if (ev->pos().x() <= BORDER) 
+      set_x_cursor(left_side_cursor);
+    else if (ev->pos().x() >= width() - BORDER) 
+      set_x_cursor(right_side_cursor);
+    else if (ev->pos().y() <= BORDER) 
+      set_x_cursor(top_side_cursor);
+    else if (ev->pos().y() >= height() - BORDER) 
+      set_x_cursor(bottom_side_cursor);
+    else 
+      set_x_cursor(normal_cursor);
       
-      return;
+    return;
   }
   
 
@@ -705,10 +705,149 @@ void Client::leaveEvent( QEvent * ){
 }
 
 void Client::paintEvent( QPaintEvent* ev ){
-  QFrame::paintEvent(ev);
+  QLabel::paintEvent(ev);
   QPainter p;
   p.begin(this);
-  qDrawShadeRect( &p, width()-20, height()-20, 20, 20, colorGroup(), False);
+  if (!options.ShapeMode || getDecoration() != 1){
+    qDrawShadeRect( &p, width()-20, height()-20, 20, 20, colorGroup(), False);
+  }
+  else {
+    int x,y;
+    // first the corners
+    int w1 = options.shapePixmapTopLeft->width();
+    int h1 = options.shapePixmapTopLeft->height();
+    if (w1 > width()/2) w1 = width()/2;
+    if (h1 > height()/2) h1 = height()/2;
+    p.drawPixmap(0,0,*(options.shapePixmapTopLeft),
+		 0,0,w1, h1);
+    int w2 = options.shapePixmapTopRight->width();
+    int h2 = options.shapePixmapTopRight->height();
+    if (w2 > width()/2) w2 = width()/2;
+    if (h2 > height()/2) h2 = height()/2;
+    p.drawPixmap(width()-w2,0,*(options.shapePixmapTopRight),
+		 options.shapePixmapTopRight->width()-w2,0,w2, h2);
+
+    int w3 = options.shapePixmapBottomLeft->width();
+    int h3 = options.shapePixmapBottomLeft->height();
+    if (w3 > width()/2) w3 = width()/2;
+    if (h3 > height()/2) h3 = height()/2;
+    p.drawPixmap(0,height()-h3,*(options.shapePixmapBottomLeft),
+		 0,options.shapePixmapBottomLeft->height()-h3,w3, h3);
+    
+    int w4 = options.shapePixmapBottomRight->width();
+    int h4 = options.shapePixmapBottomRight->height();
+    if (w4 > width()/2) w4 = width()/2;
+    if (h4 > height()/2) h4 = height()/2;
+    p.drawPixmap(width()-w4,height()-h4,*(options.shapePixmapBottomRight),
+		 options.shapePixmapBottomRight->width()-w4,
+		 options.shapePixmapBottomRight->height()-h4,
+		 w4, h4);
+
+    QPixmap pm;
+    QWMatrix m;
+    int n,s,w;
+    //top
+    pm = *(options.shapePixmapTop);
+
+    s = width()-w2-w1;
+    n = s/pm.width();
+    w = n>0?s/n:s;
+    m.reset();
+    m.scale(w/(float)pm.width(), 1);
+    pm = pm.xForm(m);
+
+    x = w1;
+    while (1){
+      if (pm.width() < width()-w2-x){
+	p.drawPixmap(x,BORDER-options.shapePixmapTop->height()-1,
+		     pm);
+	x += pm.width();
+      }
+      else {
+	p.drawPixmap(x,BORDER-pm.height()-1,
+		     pm,
+		     0,0,width()-w2-x,pm.height());
+	break;
+      }
+    }
+
+    //bottom
+    pm = *(options.shapePixmapBottom);
+
+    s = width()-w4-w3;
+    n = s/pm.width();
+    w = n>0?s/n:s;
+    m.reset();
+    m.scale(w/(float)pm.width(), 1);
+    pm = pm.xForm(m);
+
+    x = w3;
+    while (1){
+      if (pm.width() < width()-w4-x){
+	p.drawPixmap(x,height()-BORDER+1,pm);
+	x += pm.width();
+      }
+      else {
+	p.drawPixmap(x,height()-BORDER,pm,
+		     0,0,width()-w4-x,pm.height());
+	break;
+      }
+    }
+
+    //left
+    pm = *(options.shapePixmapLeft);
+
+    s = height()-h3-h1;
+    n = s/pm.height();
+    w = n>0?s/n:s;
+    m.reset();
+    m.scale(1, w/(float)pm.height());
+    pm = pm.xForm(m);
+
+    y = h1;
+    while (1){
+      if (pm.height() < height()-h3-y){
+	p.drawPixmap(BORDER-pm.width()-1, y,
+		     pm);
+	y += pm.height();
+      }
+      else {
+	p.drawPixmap(BORDER-pm.width()-1, y,
+		     pm,
+		     0,0, pm.width(),
+		     height()-h3-y);
+	break;
+      }
+    }
+
+    //right
+    pm = *(options.shapePixmapRight);
+
+    s = height()-h4-h2;
+    n = s/pm.height();
+    w = n>0?s/n:s;
+    m.reset();
+    m.scale(1, w/(float)pm.height());
+    pm = pm.xForm(m);
+
+    y = h2;
+    while (1){
+      if (pm.height() < height()-h4-y){
+	p.drawPixmap(width()-BORDER+1, y,
+		     pm);
+	y += pm.height();
+      }
+      else {
+	p.drawPixmap(width()-BORDER+1, y,
+		     pm,
+		     0,0, pm.width(),
+		     height()-h4-y);
+	break;
+      }
+    }
+    
+    p.eraseRect(BORDER-1, BORDER-1, width()-2*BORDER+2, height()-2*BORDER+2);
+  }
   p.end();
   paintState();
 }
@@ -722,9 +861,9 @@ void Client::resizeEvent( QResizeEvent * ){
 		      geometry.width(), geometry.height());
     break;
   case 2:
-    XMoveResizeWindow(qt_xdisplay(), window, (BORDER), (BORDER),
-		      geometry.width() - 2*BORDER, 
-		      geometry.height() - 2*BORDER);
+    XMoveResizeWindow(qt_xdisplay(), window, (BORDER_THIN), (BORDER_THIN),
+		      geometry.width() - 2*BORDER_THIN, 
+		      geometry.height() - 2*BORDER_THIN);
     break;
   default:
     XMoveResizeWindow(qt_xdisplay(), window, (BORDER), (BORDER) + TITLEBAR_HEIGHT,
@@ -733,6 +872,162 @@ void Client::resizeEvent( QResizeEvent * ){
     break;
   }
     
+  if (options.ShapeMode && getDecoration() == 1){	
+
+    QBitmap shapemask(width(), height());
+    shapemask.fill(color0);
+    QPainter p;
+    p.begin(&shapemask);
+    p.setBrush(color1);
+    p.setPen(color1);
+
+
+
+    int x,y;
+    // first the corners
+    int w1 = options.shapePixmapTopLeft->width();
+    int h1 = options.shapePixmapTopLeft->height();
+    if (w1 > width()/2) w1 = width()/2;
+    if (h1 > height()/2) h1 = height()/2;
+    p.drawPixmap(0,0,*(options.shapePixmapTopLeft->mask()),
+		 0,0,w1, h1);
+    int w2 = options.shapePixmapTopRight->width();
+    int h2 = options.shapePixmapTopRight->height();
+    if (w2 > width()/2) w2 = width()/2;
+    if (h2 > height()/2) h2 = height()/2;
+    p.drawPixmap(width()-w2,0,*(options.shapePixmapTopRight->mask()),
+		 options.shapePixmapTopRight->width()-w2,0,w2, h2);
+
+    int w3 = options.shapePixmapBottomLeft->width();
+    int h3 = options.shapePixmapBottomLeft->height();
+    if (w3 > width()/2) w3 = width()/2;
+    if (h3 > height()/2) h3 = height()/2;
+    p.drawPixmap(0,height()-h3,*(options.shapePixmapBottomLeft->mask()),
+		 0,options.shapePixmapBottomLeft->height()-h3,w3, h3);
+    
+    int w4 = options.shapePixmapBottomRight->width();
+    int h4 = options.shapePixmapBottomRight->height();
+    if (w4 > width()/2) w4 = width()/2;
+    if (h4 > height()/2) h4 = height()/2;
+    p.drawPixmap(width()-w4,height()-h4,*(options.shapePixmapBottomRight->mask()),
+		 options.shapePixmapBottomRight->width()-w4,
+		 options.shapePixmapBottomRight->height()-h4,
+		 w4, h4);
+
+
+    QPixmap pm;
+    QWMatrix m;
+    int n,s,w;
+    //top
+    pm = *(options.shapePixmapTop->mask());
+
+    s = width()-w2-w1;
+    n = s/pm.width();
+    w = n>0?s/n:s;
+    m.reset();
+    m.scale(w/(float)pm.width(), 1);
+    pm = pm.xForm(m);
+
+    x = w1;
+    while (1){
+      if (pm.width() < width()-w2-x){
+	p.drawPixmap(x,BORDER-pm.height()-1,
+		     pm);
+	x += pm.width();
+      }
+      else {
+	p.drawPixmap(x,BORDER-pm.height()-1,
+		     pm,
+		     0,0,width()-w2-x,pm.height());
+	break;
+      }
+    }
+
+    //bottom
+    pm = *(options.shapePixmapBottom->mask());
+
+    s = width()-w4-w3;
+    n = s/pm.width();
+    w = n>0?s/n:s;
+    m.reset();
+    m.scale(w/(float)pm.width(), 1);
+    pm = pm.xForm(m);
+
+    x = w3;
+    while (1){
+      if (pm.width() < width()-w4-x){
+	p.drawPixmap(x,height()-BORDER+1,pm);
+	x += pm.width();
+      }
+      else {
+	p.drawPixmap(x,height()-BORDER,pm,
+		     0,0,width()-w4-x,pm.height());
+	break;
+      }
+    }
+
+    //left
+    pm = *(options.shapePixmapLeft->mask());
+
+    s = height()-h3-h1;
+    n = s/pm.height();
+    w = n>0?s/n:s;
+    m.reset();
+    m.scale(1, w/(float)pm.height());
+    pm = pm.xForm(m);
+
+    y = h1;
+    while (1){
+      if (pm.height() < height()-h3-y){
+	p.drawPixmap(BORDER-pm.width()-1, y,
+		     pm);
+	y += pm.height();
+      }
+      else {
+	p.drawPixmap(BORDER-pm.width()-1, y,
+		     pm,
+		     0,0, pm.width(),
+		     height()-h3-y);
+	break;
+      }
+    }
+
+    //right
+    pm = *(options.shapePixmapRight->mask());
+
+    s = height()-h4-h2;
+    n = s/pm.height();
+    w = n>0?s/n:s;
+    m.reset();
+    m.scale(1, w/(float)pm.height());
+    pm = pm.xForm(m);
+
+    y = h2;
+    while (1){
+      if (pm.height() < height()-h4-y){
+	p.drawPixmap(width()-BORDER+1, y,
+		     pm);
+	y += pm.height();
+      }
+      else {
+	p.drawPixmap(width()-BORDER+1, y,
+		     pm,
+		     0,0, pm.width(),
+		     height()-h4-y);
+	break;
+      }
+    }
+    
+    p.fillRect(BORDER-1, BORDER-1, width()-2*BORDER+2, height()-2*BORDER+2, color1);
+    
+    p.end();
+
+    // finally set the shape :-) 
+    XShapeCombineMask( qt_xdisplay(), winId(), 
+		       ShapeBounding, 0, 0, shapemask.handle(), 
+		       ShapeSet );
+  }
+  
 }  
 
 myPushButton * Client::getNewButton(BUTTON_FUNCTIONS buttonFunction){
@@ -920,8 +1215,8 @@ void Client::showOperations(){
     myapp->operations->popup(geometry.topLeft());
     break;
   case 2:
-    myapp->operations->popup(QPoint(geometry.x() + BORDER, 
-			     geometry.y() + BORDER));
+    myapp->operations->popup(QPoint(geometry.x() + BORDER_THIN, 
+			     geometry.y() + BORDER_THIN));
     break;
   default:
     myapp->operations->popup(QPoint(geometry.x() + BORDER, 
@@ -1532,12 +1827,12 @@ void Client::adjustSize(){
   case 0:
     break;
   case 2:
-    if (dx < 2*BORDER+BUTTON_SIZE)
-      dx = 2*BORDER+BUTTON_SIZE+1;
-    if (dy < 2*BORDER+20+1)
-      dy = 2*BORDER+20+1;
-    dx -= 2*BORDER;
-    dy -= 2*BORDER;
+    if (dx < 2*BORDER_THIN+BUTTON_SIZE)
+      dx = 2*BORDER_THIN+BUTTON_SIZE+1;
+    if (dy < 2*BORDER_THIN+20+1)
+      dy = 2*BORDER_THIN+20+1;
+    dx -= 2*BORDER_THIN;
+    dy -= 2*BORDER_THIN;
     break;
   default:
     if (dx < 2*BORDER+BUTTON_SIZE)
@@ -1573,8 +1868,8 @@ void Client::adjustSize(){
   case 0:
     break;
   case 2:
-    dx += 2*BORDER;
-    dy += 2*BORDER;
+    dx += 2*BORDER_THIN;
+    dy += 2*BORDER_THIN;
     break;
   default:
     dx += 2*BORDER;

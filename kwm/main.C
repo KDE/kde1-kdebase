@@ -49,6 +49,8 @@
 #undef INT32
 
 
+int BORDER;
+
 bool initting;
 bool ignore_badwindow;
 
@@ -553,6 +555,9 @@ void MyApp::readConfiguration(){
   
   config = getKApplication()->getConfig();
   config->setGroup( "General" );
+
+  BORDER = 4;
+
   key = config->readEntry("WindowMoveType");
   if( key == "Transparent")
     options.WindowMoveType = TRANSPARENT;
@@ -666,6 +671,89 @@ void MyApp::readConfiguration(){
     config->writeEntry("AutoRaise", options.AutoRaise);
   }
 
+
+  key = config->readEntry("ShapeMode");
+  if( key == "on")
+    options.ShapeMode = true;
+  else if( key == "off")
+    options.ShapeMode = false;
+  else{
+    config->writeEntry("ShapeMode", "on");
+    options.ControlTab = true;
+  }
+
+  if (options.ShapeMode){
+
+    options.shapePixmapTop = new QPixmap;
+    options.shapePixmapLeft = new QPixmap;
+    options.shapePixmapBottom = new QPixmap;
+    options.shapePixmapRight = new QPixmap;
+    options.shapePixmapTopLeft = new QPixmap;
+    options.shapePixmapTopRight = new QPixmap;
+    options.shapePixmapBottomLeft = new QPixmap;
+    options.shapePixmapBottomRight = new QPixmap;
+
+
+
+    if (config->hasKey("ShapePixmapTop")){
+      *(options.shapePixmapTop) = getIconLoader()
+	->loadIcon(config->readEntry("ShapePixmapTop"));
+    }
+    if (config->hasKey("ShapePixmapBottom")){
+      *(options.shapePixmapBottom) = getIconLoader()
+	->loadIcon(config->readEntry("ShapePixmapBottom"));
+    }
+    if (config->hasKey("ShapePixmapLeft")){
+      *(options.shapePixmapLeft) = getIconLoader()
+	->loadIcon(config->readEntry("ShapePixmapLeft"));
+    }
+    if (config->hasKey("ShapePixmapRight")){
+      *(options.shapePixmapRight) = getIconLoader()
+	->loadIcon(config->readEntry("ShapePixmapRight"));
+    }
+    if (config->hasKey("ShapePixmapTopLeft")){
+      *(options.shapePixmapTopLeft) = getIconLoader()
+	->loadIcon(config->readEntry("ShapePixmapTopLeft"));
+    }
+    if (config->hasKey("ShapePixmapTopRight")){
+      *(options.shapePixmapTopRight) = getIconLoader()
+	->loadIcon(config->readEntry("ShapePixmapTopRight"));
+    }
+    if (config->hasKey("ShapePixmapBottomLeft")){
+      *(options.shapePixmapBottomLeft) = getIconLoader()
+	->loadIcon(config->readEntry("ShapePixmapBottomLeft"));
+    }
+    if (config->hasKey("ShapePixmapBottomRight")){
+      *(options.shapePixmapBottomRight) = getIconLoader()
+	->loadIcon(config->readEntry("ShapePixmapBottomRight"));
+    }
+
+
+    
+    if (
+	options.shapePixmapTop->isNull() ||
+	options.shapePixmapLeft->isNull() ||
+	options.shapePixmapBottom->isNull() ||
+	options.shapePixmapRight->isNull() ||
+	options.shapePixmapTopLeft->isNull() ||
+	options.shapePixmapTopRight->isNull() ||
+	options.shapePixmapBottomLeft->isNull() ||
+	options.shapePixmapBottomRight->isNull()){
+      fprintf(stderr, klocale->translate("Some pixmaps are not valid: ShapeMode dissabled\n"));
+      options.ShapeMode = false;
+    }
+    else {
+      if (options.shapePixmapTop->height() > BORDER)
+	BORDER = options.shapePixmapTop->height();
+      if (options.shapePixmapBottom->height() > BORDER)
+	BORDER = options.shapePixmapBottom->height();
+      if (options.shapePixmapLeft->width() > BORDER)
+	BORDER = options.shapePixmapLeft->width();
+      if (options.shapePixmapRight->width() > BORDER)
+	BORDER = options.shapePixmapRight->width();
+    }
+  }
+  
 
   options.rstart = config->readEntry("RstartProtocol", "rstart -v");
   config->writeEntry("RstartProtocol", options.rstart);
