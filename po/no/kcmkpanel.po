@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkpanel\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-17 15:05+0200\n"
 "PO-Revision-Date: 1998-03-22 17:12+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -109,37 +109,69 @@ msgstr "Vis &menyverktøytips"
 msgid "De&lay:"
 msgstr "&Forsinkelse:"
 
-#: options.cpp:56
-msgid "ms"
-msgstr "ms"
+#: options.cpp:50 options.cpp:68 options.cpp:86
+msgid "Small"
+msgstr "Liten"
 
-#: options.cpp:68
-msgid "Others"
-msgstr "Andre"
+#: options.cpp:51 options.cpp:69 options.cpp:87
+msgid "Large"
+msgstr "Stor"
 
-#: options.cpp:69
-msgid "Personal &First"
-msgstr "P&ersonlig først"
+#: options.cpp:62
+msgid "Visuals"
+msgstr "Bildeside"
 
-#: options.cpp:71
+#: options.cpp:64
 msgid "Auto &Hide Panel"
 msgstr "Auto-sk&jul panel"
 
-#: options.cpp:73
+#: options.cpp:67 options.cpp:85
+msgid "Delay:"
+msgstr "Forsinkelse:"
+
+#: options.cpp:74 options.cpp:93
+msgid "Speed:"
+msgstr "Hurtighet:"
+
+#: options.cpp:75 options.cpp:94 options.cpp:103
+msgid "Slow"
+msgstr "Sakte"
+
+#: options.cpp:76 options.cpp:95 options.cpp:104
+msgid "Fast"
+msgstr "Hurtig"
+
+#: options.cpp:82
 msgid "Auto Hide &Taskbar"
 msgstr "Auto-skjul ver&ktøylinje"
 
-#: options.cpp:81
-msgid "Clock"
-msgstr "Ur"
+#: options.cpp:100
+msgid "Animate Show/Hide"
+msgstr "Animer vis/skjul"
 
-#: options.cpp:83
-msgid "&24h"
-msgstr "&24 timer"
+#: options.cpp:102
+msgid "Speed"
+msgstr "Hastighet"
 
-#: options.cpp:85
-msgid "&12h AM/PM"
-msgstr "&12 AM/PM"
+#: options.cpp:117
+msgid "Others"
+msgstr "Andre"
+
+#: options.cpp:118
+msgid "Personal &First"
+msgstr "P&ersonlig først"
+
+#: options.cpp:120
+msgid "F&olders First"
+msgstr "M&apper først"
+
+#: options.cpp:122
+msgid "&Clock shows time in AM/PM format"
+msgstr "&Klokke viser tid i am/pm-format"
+
+#: disknav.cpp:41
+msgid "Edit entries: (drag a folder and create a link)"
+msgstr "Rediger oppføringer: (dra en mappe og lag en lenke)"
 
 #: disknav.cpp:43
 msgid "Edit &Global..."
@@ -148,3 +180,43 @@ msgstr "Rediger &global..."
 #: disknav.cpp:46
 msgid "Edit &Local..."
 msgstr "Rediger &local..."
+
+#: disknav.cpp:62
+msgid "Max recent folder entries:"
+msgstr "Maks antall nylige mapperoppføringer:"
+
+#: disknav.cpp:65
+msgid "Max recent file entries:"
+msgstr "Maks antall nylige filoppføringer:"
+
+#: disknav.cpp:69
+msgid "Max files in a single folder:"
+msgstr "Maks antall filer i en enkelt mappe:"
+
+#: disknav.cpp:73
+msgid "Show dot files"
+msgstr "Vis dott-filer"
+
+#: disknav.cpp:74
+msgid "Ignore case when sorting"
+msgstr "Ignorer bokstavstørrelse ved sorteringer"
+
+#: disknav.cpp:76
+msgid "Show Global section"
+msgstr "Vis Global-seksjon"
+
+#: disknav.cpp:77
+msgid "Show Local section"
+msgstr "Vis Lokal-seksjon"
+
+#: disknav.cpp:78
+msgid "Show Recent section"
+msgstr "Vis Nylig-seksjon"
+
+#: disknav.cpp:79
+msgid "Show Option entry"
+msgstr "Vis Valg-seksjon"
+
+#: disknav.cpp:85
+msgid "Terminal application:"
+msgstr "Terminal-applikasjon:"
