@@ -1157,6 +1157,7 @@ void kPanel::show(){
   KWM::sendKWMCommand("moduleRaised");
 }
 
+extern bool in_animation;
 
 void kPanel::hidePanel(){
   Bool old = panelHidden[currentDesktop];
@@ -1186,6 +1187,7 @@ void kPanel::hidePanel(){
     panelCurrentlyHidden = True;
 
     QRect geom = geometry();
+    in_animation = true;
     if (orientation == vertical) {
 	for (int i = 0; i<geom.height();i+=10){
 	    move(geom.x(), geom.y()-i);
@@ -1201,6 +1203,7 @@ void kPanel::hidePanel(){
     }
     QFrame::hide();
     move(geom.x(), geom.y());
+    in_animation = false;
 
 
     showMiniPanel();
@@ -1234,6 +1237,7 @@ void kPanel::showPanel(){
     raise();
 
     QRect geom = geometry();
+    in_animation = true;
     move(-10000, -10000);
     QFrame::show();
     if (orientation == vertical) {
@@ -1250,6 +1254,7 @@ void kPanel::showPanel(){
 	}
     }
     move(geom.x(), geom.y());
+    in_animation = false;
 
   }
   hideMiniPanel();

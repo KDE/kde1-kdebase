@@ -14,7 +14,9 @@
 #include <ksimpleconfig.h>
 #include <qregexp.h>
 
+bool in_animation = false;
 void animateMove(QWidget*w, int xn, int yn, int step ){
+    in_animation = true;
     int xi = w->x();
     int yi = w->y();
     for (; QABS(xi-xn)>QABS(step); xi+=step){
@@ -28,6 +30,7 @@ void animateMove(QWidget*w, int xn, int yn, int step ){
 	w->move(xi,yi);
     }
     w->move(xn, yn);
+    in_animation = false;
 }
 
 myFrame::myFrame(bool _autoHide, QWidget *parent, const char* name, WFlags f):QFrame(parent, name, f){
@@ -76,6 +79,8 @@ void myFrame::hideTimerDone(){
 
 
 void kPanel::showTaskbar(){
+  if (in_animation)
+      return;
   doGeometry(TRUE);
   animateMove(taskbar_frame, taskbar_frame_geometry.x(), taskbar_frame_geometry.y(), 
 	      taskbar_position == bottom?-2:2);
@@ -83,6 +88,8 @@ void kPanel::showTaskbar(){
 }
 
 void kPanel::hideTaskbar(){
+  if (in_animation)
+      return;
   raise();
   doGeometry(TRUE);
   animateMove(taskbar_frame, taskbar_frame_geometry.x(), taskbar_frame_geometry.y(), 
@@ -641,6 +648,8 @@ void kPanel::resizeEvent( QResizeEvent * ){
 }
 
 void kPanel::enterEvent( QEvent * ){
+  if (in_animation)
+      return;
   hideTimer->start(4000, true);
 
   if (
@@ -656,9 +665,6 @@ void kPanel::enterEvent( QEvent * ){
   if (!autoHidden)
     return;
   raise();
-  if (taskbar_frame->isVisible()){
-    taskbar_frame->raise();
-  }
   if (orientation == horizontal){
     if (position == top_left)
       animateMove (this, 0,0,4);
@@ -671,6 +677,9 @@ void kPanel::enterEvent( QEvent * ){
     else
       animateMove (this, QApplication::desktop()->width()-width(),0, -4);
 
+  }
+  if (taskbar_frame->isVisible()){
+    taskbar_frame->raise();
   }
   doGeometry();
   layoutTaskbar();
@@ -701,7 +710,7 @@ void kPanel::hideTimerDone(){
   else
     do_hide = false;
 
-
+  do_hide = do_hide && !in_animation;
 
   for (bi=0; bi<nbuttons; bi++){
     do_hide = do_hide && (entries[bi].button->flat &&
