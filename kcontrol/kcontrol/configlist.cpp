@@ -282,6 +282,8 @@ void KModuleListEntry::addWindow(Window w)
 
       swallowWidget->swallowWindow(w);
       swallowWidget->setFocus(); //workaround (ettrich)
+
+      swallowWidget->resize(swallowParent->size());
       
       // disconnect from KWM events
       disconnect(kapp, SIGNAL(windowAdd(Window)), this, SLOT(addWindow(Window)));
