@@ -20,7 +20,7 @@ msgstr "&Varoitusääni"
 
 #: main.cpp:57
 msgid "usage: kcmbell [-init | bell]\n"
-msgstr ""
+msgstr "käyttö: kcmbell [-init | bell]\n"
 
 #: main.cpp:81
 msgid "Bell settings"

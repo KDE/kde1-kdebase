@@ -57,7 +57,7 @@ msgstr "En voi luoda kansiota"
 
 #: krootwm.C:524
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr ""
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: krootwm.C:528
 msgid "Usage:"

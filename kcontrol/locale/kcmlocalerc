@@ -3,6 +3,7 @@ Languages=C,cs,da,de,el,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sv,
 
 [ro]
 Name=Romanian
+Name[fi]=Romania
 
 [C]
 Name=Default language

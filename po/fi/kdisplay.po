@@ -63,7 +63,7 @@ msgstr "Oletus"
 
 #: backgnd.cpp:821
 msgid "Desktop Title"
-msgstr ""
+msgstr "Työpöydän otsikko"
 
 #: colorscm.cpp:142 colorscm.cpp:143
 msgid "Inactive window"
@@ -271,31 +271,8 @@ msgstr "Tyyli"
 
 #: main.cpp:76
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
-msgstr ""
+msgstr "käyttö: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
 #: main.cpp:112
 msgid "Display settings"
 msgstr "Näytön asetukset"
-
-#~ msgid "Browse..."
-#~ msgstr "Selaa..."
-
-#~ msgid "Italic"
-#~ msgstr "Kursiivi"
-
-#~ msgid "Remove"
-#~ msgstr "Poista"
-
-#~ msgid "KDE Display Configuration"
-#~ msgstr "KDE Näytön asetukset"
-
-#~ msgid ""
-#~ "Usage: %s -init|-setup\n"
-#~ "\n"
-#~ msgstr "Syntaksi: %s -init | -setup\n"
-
-#~ msgid "  -init               apply current settings to the display\n"
-#~ msgstr "  -init                 ota nykyiset asetukset käyttöön\n"
-
-#~ msgid "  -setup              setup the display\n"
-#~ msgstr "  -setup                muuta asetuksia\n"

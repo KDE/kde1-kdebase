@@ -168,9 +168,8 @@ msgid "&Add Bookmark"
 msgstr "&Lisää osoitekirjaan"
 
 #: kfmgui.cpp:461 kfmgui.cpp:893
-#, fuzzy
 msgid "&Edit Bookmarks..."
-msgstr "Osoite&kirja"
+msgstr "&Muokkaa osoitekirjaa..."
 
 #: kfmgui.cpp:472
 msgid "&About..."
@@ -578,6 +577,8 @@ msgid ""
 "Write\n"
 "Entries"
 msgstr ""
+"Kirjoita\n"
+"Tietuetta"
 
 #: kfmprops.cpp:436
 msgid "Write"
@@ -1191,11 +1192,8 @@ msgid "Overwrite All"
 msgstr "Kirjoita kaikki yli"
 
 #: krenamewin.cpp:52
-#, fuzzy
 msgid "You try to overwrite"
-msgstr ""
-"En voi ylikirjoittaa\n"
-"%s"
+msgstr "Yrität ylikirjoittaa"
 
 #: krenamewin.cpp:63
 msgid "already exists. Overwrite with"
@@ -1242,29 +1240,24 @@ msgid "KFM Browser Settings"
 msgstr "KFM Selaimen asetukset"
 
 #: kbookmarkdlg.cpp:19 kbookmarkdlg.cpp:24
-#, fuzzy
 msgid "Edit Bookmarks"
-msgstr "Lisää osoitekirjaan"
+msgstr "Muokkaa osoitekirjaa"
 
 #: kbookmarkdlg.cpp:36
-#, fuzzy
 msgid "Move up"
-msgstr "Siirrä"
+msgstr "Siirry ylös"
 
 #: kbookmarkdlg.cpp:37
-#, fuzzy
 msgid "Move down"
-msgstr "Siirrä"
+msgstr "Siirry alas"
 
 #: kbookmarkdlg.cpp:176
-#, fuzzy
 msgid "Rename Bookmark"
-msgstr "Lisää osoitekirjaan"
+msgstr "Uudelleennimeä osoite"
 
 #: kbookmarkdlg.cpp:178
-#, fuzzy
 msgid "Rename Bookmark:"
-msgstr "Lisää osoitekirjaan"
+msgstr "Uudelleennimeä osoite:"
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1331,149 +1324,3 @@ msgid ""
 msgstr ""
 "Syntaksivirhe\n"
 "kfmexec command [URLs ....]\n"
-
-#~ msgid "The URL"
-#~ msgstr "URL"
-
-#, fuzzy
-#~ msgid "is malformed\n"
-#~ msgstr "on virheellinen"
-
-#, fuzzy
-#~ msgid "Could not move directory\n"
-#~ msgstr ""
-#~ "Hakemiston\n"
-#~ "%s\n"
-#~ "luominen epäonnistui."
-
-#, fuzzy
-#~ msgid ""
-#~ "\n"
-#~ "Perhaps access denied"
-#~ msgstr ""
-#~ "Kirjoittaminen epäonnistui\n"
-#~ "%s\n"
-#~ "Mahdollisesti käsittely on estetty"
-
-#~ msgid "&Delete"
-#~ msgstr "&Tuhoa"
-
-#~ msgid "&New"
-#~ msgstr "&Uusi"
-
-#~ msgid "&View"
-#~ msgstr "&Näytä"
-
-#~ msgid "Clear"
-#~ msgstr "Tyhjennä"
-
-#~ msgid "Delete"
-#~ msgstr "Tuhoa"
-
-#~ msgid "&Print..."
-#~ msgstr "Tul&osta ..."
-
-#~ msgid "&Close"
-#~ msgstr "&Sulje"
-
-#~ msgid "&Copy"
-#~ msgstr "&Kopioi"
-
-#~ msgid "&Paste"
-#~ msgstr "&Liitä"
-
-#~ msgid "Back"
-#~ msgstr "Takaisin"
-
-#~ msgid "Forward"
-#~ msgstr "Eteenpäin"
-
-#~ msgid "Reload"
-#~ msgstr "Lataa uudelleen"
-
-#~ msgid "Copy"
-#~ msgstr "Kopioi"
-
-#~ msgid "Paste"
-#~ msgstr "Liitä"
-
-#~ msgid "Cut"
-#~ msgstr "Leikkaa"
-
-#~ msgid "&Help"
-#~ msgstr "&Ohje"
-
-#~ msgid "&File"
-#~ msgstr "&Tiedosto"
-
-#~ msgid "&Edit"
-#~ msgstr "&Muokkaa"
-
-#~ msgid "&Options"
-#~ msgstr "&Asetukset"
-
-#, fuzzy
-#~ msgid "&Help..."
-#~ msgstr "&Ohje"
-
-#, fuzzy
-#~ msgid "Do you really want to quit?"
-#~ msgstr "Haluatko todella lopettaa?"
-
-#~ msgid "&How can I ..."
-#~ msgstr "&Miten teen ..."
-
-#~ msgid "ERROR: Could not read desktop directory"
-#~ msgstr "VIRHE: Työpöytähakemistoa ei voitu lukea."
-
-#~ msgid ""
-#~ "(c) by Torben Weis\n"
-#~ "weis@kde.org\n"
-#~ "\n"
-#~ "and the KFM team"
-#~ msgstr ""
-#~ "(c) Torben Weis\n"
-#~ "weis@kde.org\n"
-#~ "\n"
-#~ "ja KDE tiimi"
-
-#~ msgid "Too many protocols in file\n"
-#~ msgstr "Liian monta protokollaa tiedostossa.\n"
-
-#~ msgid "ERROR: You must first mount the device. Use the right mouse button"
-#~ msgstr ""
-#~ "VIRHE: Sinun täytyy ensin mountata laite. Käytä oikeaa hiiren näppäintä"
-
-#~ msgid "Icon"
-#~ msgstr "Ikoni"
-
-#~ msgid "FTP"
-#~ msgstr "FTP"
-
-#~ msgid "FILE"
-#~ msgstr "TIEDOSTO"
-
-#~ msgid "HTTP"
-#~ msgstr "HTTP"
-
-#~ msgid "TAR"
-#~ msgstr "TAR"
-
-#~ msgid "MAN"
-#~ msgstr "OHJE"
-
-#~ msgid "INFO"
-#~ msgstr "INFO"
-
-#~ msgid "ERROR: Malformed URL '%s'"
-#~ msgstr "VIRHE: Virheellinen URL '%s'"
-
-#~ msgid ""
-#~ " does not exist\n"
-#~ "Run 'setupKFM' to solve the problem"
-#~ msgstr ""
-#~ " ei ole olemassa.\n"
-#~ "Suorita 'setupKFM' poistaaksesi ongelman."
-
-#~ msgid "ERROR: Could not access file %s\n"
-#~ msgstr "VIRHE: Tiedostoa %s ei voitu käsitellä.\n"

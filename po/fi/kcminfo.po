@@ -24,7 +24,7 @@ msgstr "&Prosessori"
 
 #: main.cpp:62
 msgid "usage: kcminfo [-init | {processor,memory}]\n"
-msgstr ""
+msgstr "käyttö: kcminfo [-init | {processor,memory}]\n"
 
 #: main.cpp:74
 msgid "System Information"

@@ -47,6 +47,3 @@ msgstr "Aloita!"
 #: kgreeter.cpp:213
 msgid "Shutdown..."
 msgstr "Alasajo ..."
-
-#~ msgid "Cancel"
-#~ msgstr "Peruuta"

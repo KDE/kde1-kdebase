@@ -24,7 +24,7 @@ msgstr "&Näppäimistö"
 
 #: main.cpp:62
 msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
-msgstr ""
+msgstr "käyttö: kcminput [-init | {mouse,keyboard}]\n"
 
 #: main.cpp:92
 msgid "Input Devices Properties"

@@ -58,7 +58,7 @@ msgstr ""
 
 #: button.cpp:209 main.cpp:80 main.cpp:93
 msgid "KMenuedit"
-msgstr ""
+msgstr "KMenueditori"
 
 #: main.cpp:81
 msgid ""

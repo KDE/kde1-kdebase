@@ -8,4 +8,5 @@ Name=X Load
 Comment=X load monitor
 Comment[de]=X Auslastungsanzeige
 Comment[sv]=X Lastmätare
+Comment[fi]=X kuormitusmittari
 Icon=xload.xpm

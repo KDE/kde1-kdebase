@@ -28,7 +28,7 @@ msgstr "&Otsikko"
 
 #: main.cpp:69
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar}]\n"
-msgstr ""
+msgstr "käyttö: kcmkwm [-init | {windows,buttons,titlebar}]\n"
 
 #: main.cpp:98
 msgid "Window manager style"

@@ -24,7 +24,7 @@ msgstr "&Työpöydät"
 
 #: main.cpp:65
 msgid "usage: kcmkpanel [-init | {panel,desktops}]\n"
-msgstr ""
+msgstr "käyttö: kcmkpanel [-init | {panel,desktops}]\n"
 
 #: main.cpp:94
 msgid "KPanel Configuration"

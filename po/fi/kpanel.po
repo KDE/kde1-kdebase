@@ -139,7 +139,7 @@ msgstr "Piiloita paneeli"
 
 #: props.C:306
 msgid "Auto Hide Taskbar"
-msgstr ""
+msgstr "Piilota tehtäväpaneeli"
 
 #: props.C:362
 msgid "Visible"
@@ -157,26 +157,3 @@ msgstr "Työpöydät"
 msgid "KPanel Configuration"
 msgstr "KPanel asetukset"
 
-#~ msgid "Remove"
-#~ msgstr "Poista"
-
-#~ msgid "System"
-#~ msgstr "Järjestelmä"
-
-#~ msgid "Add special"
-#~ msgstr "Lisää erityinen"
-
-#~ msgid "Destroy"
-#~ msgstr "Tuhoa"
-
-#~ msgid "(Un) Sticky"
-#~ msgstr "Naulaa/Poista naulaus"
-
-#~ msgid "(Un) Iconify"
-#~ msgstr "Ikoniksi"
-
-#~ msgid "(Un) Maximize"
-#~ msgstr "Suurenna/Pienennä"
-
-#~ msgid "On this desktop"
-#~ msgstr "Tällä työpöydällä"

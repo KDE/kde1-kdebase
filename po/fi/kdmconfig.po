@@ -72,11 +72,11 @@ msgstr "Käyttöliittymän tyyli:"
 
 #: kdm-appear.cpp:115
 msgid "Motif"
-msgstr ""
+msgstr "Motif"
 
 #: kdm-appear.cpp:116
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: kdm-appear.cpp:135 kdm-appear.cpp:219 kdm-users.cpp:244
 msgid ""
@@ -88,7 +88,7 @@ msgstr ""
 
 #: kdm-appear.cpp:137 kdm-appear.cpp:156 kdm-users.cpp:164
 msgid "<"
-msgstr ""
+msgstr "<"
 
 #: kdm-appear.cpp:138 kdm-appear.cpp:157 kdm-appear.cpp:222 kdm-users.cpp:165
 #: kdm-users.cpp:247

@@ -21,7 +21,7 @@ msgstr "Kwm: Virhe alkurutiineissa; lopetetaan\n"
 
 #: main.C:370
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr ""
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:377
 msgid "Usage: "
@@ -153,38 +153,3 @@ msgstr "Siirry"
 msgid "Current session"
 msgstr "Nykyinen istunto"
 
-#~ msgid "&Close"
-#~ msgstr "Sulje"
-
-#~ msgid "patch level %d"
-#~ msgstr "patch taso %d"
-
-#~ msgid "usage: kwm [-version] [-exec prog] \n"
-#~ msgstr "syntaksi: kwm [-version] [-exec ohjelma] \n"
-
-#~ msgid "Desktop"
-#~ msgstr "Työpöytä"
-
-#~ msgid "kwm: exiting on signal\n"
-#~ msgstr "Kwm: Lopetetaan signaalilla\n"
-
-#~ msgid "&Help on desktop"
-#~ msgstr "&Ohje työpöydästä"
-
-#~ msgid "&Execute command"
-#~ msgstr "Suorita komento"
-
-#~ msgid "&Display properties"
-#~ msgstr "Näytön ominaisuudet"
-
-#~ msgid "&Refresh desktop"
-#~ msgstr "Päivitä työpöytä"
-
-#~ msgid "&Arrange icons"
-#~ msgstr "Järjestele ikonit"
-
-#~ msgid "&Lock screen"
-#~ msgstr "Lukitse näyttö"
-
-#~ msgid "&Destroy"
-#~ msgstr "Tuhoa"
