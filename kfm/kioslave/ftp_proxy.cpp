@@ -191,7 +191,7 @@ int KProtocolProxyFTP::OpenProxy(KURL *_url, int mode, bool _reload)
 	}
 	
 	if ( _url->path()[0] != '/' ) command += "/";
-	command += _url->path();
+	command += _url->httpPath(); // keep path encoded. Thanks to Josef.Weidendorfer@bmw.de
 
 	command += " HTTP/1.0\n"; /* start header */
 	command += "User-Agent: Konqueror/1.0\r\n"; /* User agent */
