@@ -346,6 +346,11 @@ void myListBrowser::setEnabled(bool a) {
      dEdit->setEnabled(a);
      bList->setEnabled(a);*/
   browserBox->setEnabled(a);
+  //CT 13Apr1999 - why a groupbox doesn't disable/enable its children
+  bEdit->setEnabled(a);
+  bAdd ->setEnabled(a);
+  bDel ->setEnabled(a);
+  bList->setEnabled(a);
   if(a) {
      bAdd->setEnabled(FALSE);
      bDel->setEnabled(FALSE);
