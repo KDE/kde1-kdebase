@@ -1,3 +1,10 @@
+1998-12-13  Waldo Bastian  <bastian@kde.org>
+
+        * Created popup window asking the user what to do with incoming
+        HTTP-cookies.
+
+        * Fixed timezone bug in kcookiejar.cpp (BSD only). 
+
 1998-12-12  David Faure  <faure@kde.org>
 
 	* popup.cpp, popup.h : Created for the KNewMenu class. Moved code
