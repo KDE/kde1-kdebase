@@ -13,6 +13,7 @@
 #include <sys/stat.h>
 #include <qapp.h>
 #include <X11/Xlib.h>
+#include <X11/Xutil.h>
 #include <X11/keysym.h>
 #include <qkeycode.h>
 #include <qdialog.h>
@@ -21,7 +22,6 @@
 #include "xautolock.h"
 #include "saver.h"
 #include "main.h"
-
 #include "main.moc"
 
 extern void startScreenSaver( Drawable d );

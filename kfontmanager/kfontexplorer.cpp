@@ -22,6 +22,9 @@
     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
   
     $Log$
+    Revision 1.1  1997/05/04 12:39:01  kulow
+    Coolo: added kfontmanager-0.2.1
+    Revision 1.5  1997/08/31 19:45:52  kdecvs
     Kalle:
     adapted to changes in KConfig and KLocale
 
@@ -42,7 +45,7 @@
 
 
 
-
+#include "stdio.h"
 
 #include "stdio.h"
 #include "qfile.h"

@@ -35,7 +35,7 @@
 
 #include <sys/stat.h>
 #include <unistd.h>
-
+#include <X11/Xlib.h>
 #include "kfontmanager.h"
 
 extern char DOCS_PATH[256];

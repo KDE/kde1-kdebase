@@ -66,7 +66,7 @@ protected:
 	QLabel *example_label;
 	QStrList fontList;
 	
-	Bool changed;
+	bool changed;
 	
 	Window root;
 	int screen;
