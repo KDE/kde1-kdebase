@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
 "PO-Revision-Date: 1998-02-26 20:45+MET\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -11,51 +11,51 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: krootwm.C:122 krootwm.C:498
+#: krootwm.C:118 krootwm.C:500
 msgid "Folder"
 msgstr "Mappa"
 
-#: krootwm.C:149
+#: krootwm.C:145
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr ""
 
-#: krootwm.C:175
+#: krootwm.C:171
 msgid "Help on desktop"
 msgstr "Segítség"
 
-#: krootwm.C:176
+#: krootwm.C:172
 msgid "Execute command"
 msgstr "Parancs futtatása"
 
-#: krootwm.C:177
+#: krootwm.C:173
 msgid "Display properties"
 msgstr "Kijelzõ beállításai"
 
-#: krootwm.C:178
+#: krootwm.C:174
 msgid "Refresh desktop"
 msgstr "Asztal frissítése"
 
-#: krootwm.C:179
+#: krootwm.C:175
 msgid "Arrange icons"
 msgstr "Ikonok rendezése"
 
-#: krootwm.C:181
+#: krootwm.C:177
 msgid "Lock screen"
 msgstr "Képernyõ zárolása"
 
-#: krootwm.C:182
+#: krootwm.C:178
 msgid "Logout"
 msgstr "Kilépés"
 
-#: krootwm.C:518
+#: krootwm.C:520
 msgid "Could not create folder"
 msgstr "Nem lehet mappát létrehozni"
 
-#: krootwm.C:551
+#: krootwm.C:553
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: krootwm.C:555
+#: krootwm.C:557
 msgid "Usage:"
 msgstr "Használat:"

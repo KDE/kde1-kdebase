@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -146,11 +146,11 @@ msgstr "Der gewählte Name existiert schon"
 msgid "KDE Default"
 msgstr "KDE-Standard"
 
-#: colorscm.cpp:693
+#: colorscm.cpp:695
 msgid "Display Setup"
 msgstr "Farbpaletten"
 
-#: colorscm.cpp:694
+#: colorscm.cpp:696
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"

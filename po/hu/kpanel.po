@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.2\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
 "PO-Revision-Date: 1997-09-21 19:39+MET\n"
 "Last-Translator: Nagy Balazs <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -25,7 +25,7 @@ msgstr "Tulajdonságok"
 msgid "Go!"
 msgstr "Mehet!"
 
-#: kpanel.C:248 tools.C:816
+#: kpanel.C:248 tools.C:799
 msgid "Where do you want to go tomorrow?"
 msgstr ""
 
@@ -50,11 +50,11 @@ msgstr "Panel rejtése"
 msgid "Show the panel"
 msgstr "Panel megjelenítése"
 
-#: kpanel.C:1078 tools.C:632
+#: kpanel.C:1078 tools.C:615
 msgid "No comment available"
 msgstr "Nincs róla info"
 
-#: kpanel.C:1087 tools.C:825
+#: kpanel.C:1087 tools.C:808
 msgid "Windowlist"
 msgstr "Ablaklista"
 
@@ -74,7 +74,7 @@ msgstr "Ablaklista hozzáadása"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Ablaklista hozzáadása a panelhez"
 
-#: props.C:206
+#: events.C:701 props.C:206
 msgid "Configure"
 msgstr "Konfigurálás"
 
@@ -82,7 +82,7 @@ msgstr "Konfigurálás"
 msgid "Configure panel"
 msgstr "Panel konfigurálása"
 
-#: props.C:209
+#: events.C:703 props.C:209
 msgid "Restart"
 msgstr "Újraindítás"
 

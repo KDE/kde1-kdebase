@@ -1,55 +1,55 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
-#: krootwm.C:122 krootwm.C:498
+#: krootwm.C:118 krootwm.C:500
 msgid "Folder"
 msgstr "Verzeichnis"
 
-#: krootwm.C:149
+#: krootwm.C:145
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "FEHLER: Vorlage existiert nicht '%s'"
 
-#: krootwm.C:175
+#: krootwm.C:171
 msgid "Help on desktop"
 msgstr "Hilfe zum Desktop"
 
-#: krootwm.C:176
+#: krootwm.C:172
 msgid "Execute command"
 msgstr "Kommando ausführen"
 
-#: krootwm.C:177
+#: krootwm.C:173
 msgid "Display properties"
 msgstr "Eigenschaften der Umgebung"
 
-#: krootwm.C:178
+#: krootwm.C:174
 msgid "Refresh desktop"
 msgstr "Desktop auffrischen"
 
-#: krootwm.C:179
+#: krootwm.C:175
 msgid "Arrange icons"
 msgstr "Icons ordnen"
 
-#: krootwm.C:181
+#: krootwm.C:177
 msgid "Lock screen"
 msgstr "Bildschirm sperren"
 
-#: krootwm.C:182
+#: krootwm.C:178
 msgid "Logout"
 msgstr "Abmelden"
 
-#: krootwm.C:518
+#: krootwm.C:520
 msgid "Could not create folder"
 msgstr "Konnte Verzeichnis nicht erstellen"
 
-#: krootwm.C:551
+#: krootwm.C:553
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:555
+#: krootwm.C:557
 msgid "Usage:"
 msgstr "Benutzung:"

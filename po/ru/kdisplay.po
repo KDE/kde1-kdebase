@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
 "PO-Revision-Date: 1997-09-05 02:51+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -154,11 +154,11 @@ msgstr "Вы выбрали уже используемое имя"
 msgid "KDE Default"
 msgstr "KDE по умолчанию"
 
-#: colorscm.cpp:693
+#: colorscm.cpp:695
 msgid "Display Setup"
 msgstr "Настройка дисплея"
 
-#: colorscm.cpp:694
+#: colorscm.cpp:696
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"

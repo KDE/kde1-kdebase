@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-05 15:53+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ionescu Paul <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -14,188 +14,188 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kfmgui.cpp:242
+#: kfmgui.cpp:247
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:908 kbind.cpp:920 kbind.cpp:930 kfmgui.cpp:254 kfmgui.cpp:905
+#: kbind.cpp:908 kbind.cpp:920 kbind.cpp:930 kfmgui.cpp:259 kfmgui.cpp:910
 msgid "Folder"
 msgstr "Director"
 
-#: kfmgui.cpp:265
+#: kfmgui.cpp:270
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "Eroare: nu exista modelul '%s'"
 
-#: kfmgui.cpp:291
+#: kfmgui.cpp:296
 msgid "&New Window"
 msgstr "Fereastrã &Nouã"
 
-#: kfmgui.cpp:294
+#: kfmgui.cpp:299
 msgid "&Run..."
 msgstr "&Porneºte"
 
-#: kfmgui.cpp:296
+#: kfmgui.cpp:301
 msgid "Open &Terminal"
 msgstr "Deschide &Terminal"
 
-#: kfmgui.cpp:299
+#: kfmgui.cpp:304
 msgid "&Open Location..."
 msgstr "&Deschide Locaþie..."
 
-#: kfmgui.cpp:307
+#: kfmgui.cpp:312
 msgid "&Quit..."
 msgstr "&Pa..."
 
-#: kfmgui.cpp:316
+#: kfmgui.cpp:321
 msgid "&Move to Trash"
 msgstr "Mutã la Gunoi"
 
-#: kfmgui.cpp:321
+#: kfmgui.cpp:326
 msgid "&Select"
 msgstr "&Selecteazã"
 
-#: kfmgui.cpp:325
+#: kfmgui.cpp:330
 msgid "Mime Types"
 msgstr "Tipuri de 'MIME'"
 
-#: kfmgui.cpp:327
+#: kfmgui.cpp:332
 msgid "Applications"
 msgstr "Aplicaþii"
 
-#: kfmgui.cpp:333
+#: kfmgui.cpp:338
 msgid "Global Mime Types"
 msgstr "Tipuri 'MIME' globale"
 
-#: kfmgui.cpp:335
+#: kfmgui.cpp:340
 msgid "Global Applications"
 msgstr "Aplicaþii Globale"
 
-#: kfmgui.cpp:342
+#: kfmgui.cpp:347
 msgid "Show &Dot Files"
 msgstr "Afiºeazã fiºierele .* "
 
-#: kfmgui.cpp:344
+#: kfmgui.cpp:349
 msgid "Show Tr&ee"
 msgstr "Afiºeazã Arbor&e"
 
-#: kfmgui.cpp:346
+#: kfmgui.cpp:351
 msgid "&Visual Schnauzer"
 msgstr "Schnauzer &Vizual"
 
-#: kfmgui.cpp:348
+#: kfmgui.cpp:353
 msgid "&HTML View"
 msgstr "Vedere &HTML"
 
-#: kfmgui.cpp:351
+#: kfmgui.cpp:356
 msgid "&Icon View"
 msgstr "Vedere &Iconicã"
 
-#: kfmgui.cpp:353
+#: kfmgui.cpp:358
 msgid "&Text View"
 msgstr "Vedere &Text"
 
-#: kfmgui.cpp:355
+#: kfmgui.cpp:360
 msgid "&Long View"
 msgstr "Vedere &Detaliatã"
 
-#: kfmgui.cpp:361
+#: kfmgui.cpp:366
 msgid "Rel&oad Tree"
 msgstr "Reîncarcã arb&orele"
 
-#: kfmgui.cpp:363
+#: kfmgui.cpp:368
 msgid "&Reload Document"
 msgstr "&Reîncarcã Documentul"
 
-#: kfmgui.cpp:365
+#: kfmgui.cpp:370
 msgid "Rescan &bindings"
 msgstr "Rescaneazã atribuirile"
 
-#: kfmgui.cpp:368
+#: kfmgui.cpp:373
 msgid "&View Frame Source"
 msgstr "&Afiºarea Sursei Porþiunii"
 
-#: kfmgui.cpp:370
+#: kfmgui.cpp:375
 msgid "View Docu&ment Source"
 msgstr "Afiºarea Sursei Docu&mentului"
 
-#: kfmgui.cpp:381
+#: kfmgui.cpp:386
 msgid "Show Cache"
 msgstr "Afiºare Cache"
 
-#: kfmgui.cpp:383
+#: kfmgui.cpp:388
 msgid "Clear Cache"
 msgstr "ªterge Cache"
 
-#: kfmgui.cpp:386
+#: kfmgui.cpp:391
 msgid "Always look in cache"
 msgstr "Totdeauna încerci în cache"
 
-#: kfmgui.cpp:388
+#: kfmgui.cpp:393
 msgid "Never look in cache"
 msgstr "Niciodatã nu încerci în cache"
 
-#: kfmgui.cpp:396
+#: kfmgui.cpp:401
 msgid "Show &Menubar"
 msgstr "Afiºeazã Bara de &Meniu"
 
-#: kfmgui.cpp:398
+#: kfmgui.cpp:403
 msgid "Show &Statusbar"
 msgstr "Afiºeazã Bara de &Info"
 
-#: kfmgui.cpp:400
+#: kfmgui.cpp:405
 msgid "Show &Toolbar"
 msgstr "Afiºeazã Bara de &Scule"
 
-#: kfmgui.cpp:402
+#: kfmgui.cpp:407
 msgid "Show &Location bar"
 msgstr "Afiºeazã Bara de &Locaþie"
 
-#: kfmgui.cpp:405
+#: kfmgui.cpp:410
 msgid "Sa&ve Settings"
 msgstr "Sal&veazã Setãrile"
 
-#: kfmgui.cpp:407
+#: kfmgui.cpp:412
 msgid "Configure Browser..."
 msgstr "Configurare Navigator..."
 
-#: kfmgui.cpp:433
+#: kfmgui.cpp:438
 msgid "&Find"
 msgstr "&Cautã"
 
-#: kfmgui.cpp:442
+#: kfmgui.cpp:447
 msgid "&Add Bookmark"
 msgstr "&Adaugã semn de carte"
 
-#: kfmgui.cpp:445 kfmgui.cpp:857
+#: kfmgui.cpp:450 kfmgui.cpp:862
 msgid "&Edit Bookmarks..."
 msgstr "&Editeazã semnele de carte..."
 
-#: kfmgui.cpp:456
+#: kfmgui.cpp:461
 msgid "&About..."
 msgstr "&Despre..."
 
-#: kfmgui.cpp:466
+#: kfmgui.cpp:471
 msgid "&Bookmarks"
 msgstr "&Semne de carte"
 
-#: kfmgui.cpp:467
+#: kfmgui.cpp:472
 msgid "&Tool"
 msgstr "&Unelte"
 
-#: kfmgui.cpp:468
+#: kfmgui.cpp:473
 msgid "&Cache"
 msgstr "&Cache"
 
-#: kfmgui.cpp:505
+#: kfmgui.cpp:510
 msgid "Home"
 msgstr "Acasã"
 
-#: kfmgui.cpp:538
+#: kfmgui.cpp:543
 msgid "Stop"
 msgstr "Stop"
 
-#: kfmgui.cpp:562
+#: kfmgui.cpp:567
 msgid "Could not load icon\n"
 msgstr "Nu pot încãrca icoana\n"
 
@@ -203,54 +203,55 @@ msgstr "Nu pot încãrca icoana\n"
 #: kbind.cpp:1518 kbind.cpp:1535 kbind.cpp:1593 kbind.cpp:1605 kbind.cpp:1632
 #: kbind.cpp:1647 kbind.cpp:1667 kbind.cpp:1679 kbind.cpp:1695 kbind.cpp:1817
 #: kbind.cpp:1829 kbind.cpp:1874 kbind.cpp:1916 kfmexec.cpp:59 kfmexec.cpp:91
-#: kfmexec/main.cpp:47 kfmgui.cpp:563 kfmgui.cpp:691 kfmjob.cpp:181
-#: kfmman.cpp:264 kfmman.cpp:866 kfmman.cpp:1033 kfmman.cpp:1059
+#: kfmexec/main.cpp:47 kfmgui.cpp:568 kfmgui.cpp:696 kfmjob.cpp:181
+#: kfmman.cpp:264 kfmman.cpp:888 kfmman.cpp:1055 kfmman.cpp:1081
 #: kfmprops.cpp:365 kfmprops.cpp:616 kfmprops.cpp:642 kfmprops.cpp:757
 #: kfmprops.cpp:860 kfmprops.cpp:988 kfmprops.cpp:1112 kfmprops.cpp:1428
 #: kfmprops.cpp:1640 kfmprops.cpp:1816 kfmserver.cpp:39 kfmserver.cpp:157
 #: kfmserver.cpp:237 kfmserver.cpp:284 kfmserver.cpp:293 kfmserver.cpp:301
 #: kfmtree.cpp:163 kfmtree.cpp:286 kfmtree.cpp:317 kfmtree.cpp:323
-#: kfmtree.cpp:329 kfmview.cpp:257 kfmview.cpp:276 kfmview.cpp:282
-#: kfmview.cpp:342 kfmview.cpp:348 kfmview.cpp:354 kfmview.cpp:426
-#: kfmview.cpp:448 kfmview.cpp:466 kfmview.cpp:472 kfmview.cpp:478
+#: kfmtree.cpp:329 kfmview.cpp:343 kfmview.cpp:362 kfmview.cpp:368
+#: kfmview.cpp:431 kfmview.cpp:437 kfmview.cpp:443 kfmview.cpp:515
+#: kfmview.cpp:537 kfmview.cpp:555 kfmview.cpp:561 kfmview.cpp:567
 #: kiojob.cpp:223 kiojob.cpp:231 kiojob.cpp:238 kiojob.cpp:263 kiojob.cpp:282
 #: kiojob.cpp:293 kiojob.cpp:315 kiojob.cpp:334 kiojob.cpp:536 kiojob.cpp:771
 #: kiojob.cpp:802 kiojob.cpp:843 kiojob.cpp:1649 krenamewin.cpp:120
-#: root.cpp:970 root.cpp:988 root.cpp:994 root.cpp:1000 root.cpp:1075
-#: root.cpp:1504 root.cpp:1529
+#: root.cpp:1124 root.cpp:1142 root.cpp:1148 root.cpp:1154 root.cpp:1229
+#: root.cpp:1658 root.cpp:1683
 msgid "KFM Error"
 msgstr "Eroare KFM"
 
-#: kfmexec.cpp:58 kfmgui.cpp:690 kfmman.cpp:865
+#: kfmexec.cpp:58 kfmgui.cpp:695 kfmman.cpp:887
 msgid "Malformed URL\n"
 msgstr "URL Malformat\n"
 
-#: kfmgui.cpp:837
+#: kfmgui.cpp:842
 msgid "Select files:"
 msgstr "Selecteazã fiºierele:"
 
-#: kfmgui.cpp:854
+#: kfmgui.cpp:859
 msgid "Add Bookmark"
 msgstr "Adaugã semn de carte"
 
-#: kfmgui.cpp:897 kfmgui.cpp:904
+#: kfmgui.cpp:902 kfmgui.cpp:909
 msgid "New "
 msgstr "Nou"
 
-#: kfmgui.cpp:996 kfmgui.cpp:1156 kfmjob.cpp:32 kfmman.cpp:188 kfmtree.cpp:318
-#: kfmview.cpp:277 kfmview.cpp:343 kfmview.cpp:467 kiojob.cpp:70 root.cpp:989
+#: kfmgui.cpp:1001 kfmgui.cpp:1161 kfmjob.cpp:32 kfmman.cpp:188
+#: kfmtree.cpp:318 kfmview.cpp:363 kfmview.cpp:432 kfmview.cpp:556
+#: kiojob.cpp:70 root.cpp:1143
 msgid "ERROR: Malformed URL"
 msgstr "Eroare: URL Malformat"
 
-#: kfmgui.cpp:1110 kfmserver.cpp:178
+#: kfmgui.cpp:1115 kfmserver.cpp:178
 msgid "Open Location:"
 msgstr "Deschide Locaþia:"
 
-#: kfmgui.cpp:1166
+#: kfmgui.cpp:1171
 msgid "KFM Confirm"
 msgstr "Confirmã KFM"
 
-#: kfmgui.cpp:1167
+#: kfmgui.cpp:1172
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -258,11 +259,11 @@ msgstr ""
 "Chiar vrei sa renunþi?\n"
 "Funcþionalitãþi importante ale mediului vor fi inactive"
 
-#: kfmgui.cpp:1194
+#: kfmgui.cpp:1199
 msgid "About KFM"
 msgstr "Despre KFM"
 
-#: kfmgui.cpp:1195
+#: kfmgui.cpp:1200
 #, fuzzy
 msgid ""
 "Author: Torben Weis\n"
@@ -280,24 +281,24 @@ msgstr ""
 "Rutine HTML de Martin Jones\n"
 "mjones@kde.org"
 
-#: kfmgui.cpp:1287
+#: kfmgui.cpp:1292
 msgid "Document: Done"
 msgstr "Document: Gata"
 
-#: kfmview.cpp:258
+#: kfmview.cpp:344
 msgid "ERROR: Drop over malformed URL"
 msgstr "Eroare: Pus peste un URL malformat"
 
-#: kfmview.cpp:283
+#: kfmview.cpp:369
 msgid "ERROR: You dropped some URL over itself"
 msgstr "Eroare: Ai scãpat un URL peste el însuºi"
 
-#: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:355 kfmview.cpp:315
-#: kfmview.cpp:502 krenamewin.cpp:20 root.cpp:1030
+#: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:404
+#: kfmview.cpp:591 krenamewin.cpp:20 root.cpp:1184
 msgid "KFM Warning"
 msgstr "KFM Atenþie"
 
-#: kfmtree.cpp:356 kfmview.cpp:316 kfmview.cpp:503 root.cpp:1031
+#: kfmtree.cpp:357 kfmview.cpp:405 kfmview.cpp:592 root.cpp:1185
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -307,54 +308,54 @@ msgstr ""
 "\n"
 "Nu mai este nici o speranþã de recuperare."
 
-#: kfmtree.cpp:324 kfmview.cpp:349 kfmview.cpp:473 root.cpp:995
+#: kfmtree.cpp:324 kfmview.cpp:438 kfmview.cpp:562 root.cpp:1149
 msgid "ERROR: You dropped a URL over itself"
 msgstr "Eroare: Ai scãpat un URL peste el însuºi"
 
-#: kfmtree.cpp:330 kfmview.cpp:355 kfmview.cpp:479 root.cpp:1001
+#: kfmtree.cpp:330 kfmview.cpp:444 kfmview.cpp:568 root.cpp:1155
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "Eroare: Ai scãpat un director peste o ramurã a sa"
 
-#: kfmexec.cpp:233 kfmman.cpp:728 kfmview.cpp:371
+#: kfmexec.cpp:233 kfmman.cpp:727 kfmview.cpp:460
 msgid "Open With:"
 msgstr "Deschide cu:"
 
-#: kfmview.cpp:388 root.cpp:943
+#: kfmview.cpp:477 root.cpp:1097
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "Eroare: Nu pot deschide proprietãþile pentru mai multe fiºiere"
 
-#: kfmtree.cpp:287 kfmview.cpp:427 root.cpp:1076
+#: kfmtree.cpp:287 kfmview.cpp:516 root.cpp:1230
 msgid "Could not access Trash Bin"
 msgstr "Nu pot accesa Gunoiul"
 
-#: kfmview.cpp:449 root.cpp:971
+#: kfmview.cpp:538 root.cpp:1125
 msgid "Can not paste into multiple directories"
 msgstr "Nu pot sã fac 'paste' în directoare multiple"
 
-#: kfmview.cpp:535
+#: kfmview.cpp:624
 msgid "ERROR: Can not change to multiple directories"
 msgstr "Eroare: Nu pot sã merg în directoare multiple"
 
-#: kfmview.cpp:619
+#: kfmview.cpp:708
 msgid "KFM Security Alert"
 msgstr "KFM Alertã de Securitate"
 
-#: kfmview.cpp:620
+#: kfmview.cpp:709
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
 msgstr ""
 
-#: kfmview.cpp:704
+#: kfmview.cpp:793
 msgid "Symbolic Link"
 msgstr "Legãturã Simbolicã"
 
-#: kfmview.cpp:706
+#: kfmview.cpp:795
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (Legãturã)"
 
-#: kfmview.cpp:726
+#: kfmview.cpp:815
 msgid "bytes"
 msgstr "octeþi"
 
@@ -482,15 +483,15 @@ msgstr "Mutã în Gunoi"
 msgid "Open with"
 msgstr "Deschide cu"
 
-#: kfmman.cpp:1051 kfmtree.cpp:155 main.cpp:216
+#: kfmman.cpp:1073 kfmtree.cpp:155 main.cpp:216
 msgid "Move"
 msgstr "Mutã"
 
-#: kfmman.cpp:994 kfmtree.cpp:233 main.cpp:217
+#: kfmman.cpp:1016 kfmtree.cpp:233 main.cpp:217
 msgid "Properties"
 msgstr "Proprietãþi"
 
-#: kfmman.cpp:1055 kfmtree.cpp:159 main.cpp:218
+#: kfmman.cpp:1077 kfmtree.cpp:159 main.cpp:218
 msgid "Link"
 msgstr "Legãturã"
 
@@ -501,6 +502,58 @@ msgstr "Goleºte coºul de gunoi"
 #: main.cpp:220
 msgid "Add to Bookmarks"
 msgstr "Adaugã la semne de carte"
+
+#: htmlopts.cpp:34
+msgid "Font Size"
+msgstr ""
+
+#: htmlopts.cpp:38
+msgid "Small"
+msgstr ""
+
+#: htmlopts.cpp:42
+msgid "Medium"
+msgstr ""
+
+#: htmlopts.cpp:46
+msgid "Large"
+msgstr ""
+
+#: htmlopts.cpp:50
+msgid "Standard Font"
+msgstr ""
+
+#: htmlopts.cpp:67
+msgid "Fixed Font"
+msgstr ""
+
+#: htmlopts.cpp:213
+msgid "Background Color:"
+msgstr ""
+
+#: htmlopts.cpp:221
+msgid "Normal Text Color:"
+msgstr ""
+
+#: htmlopts.cpp:229
+msgid "URL Link Color:"
+msgstr ""
+
+#: htmlopts.cpp:237
+msgid "Followed Link Color:"
+msgstr ""
+
+#: htmlopts.cpp:245
+msgid "Change cursor over link."
+msgstr ""
+
+#: htmlopts.cpp:320
+msgid "Horizontal Root Grid Spacing:"
+msgstr ""
+
+#: htmlopts.cpp:334
+msgid "Vertical Root Grid Spacing:"
+msgstr ""
 
 #: bookmark.cpp:229
 msgid "<!-- Do not edit this file -->"
@@ -795,24 +848,31 @@ msgid ""
 "using a wrong password"
 msgstr ""
 
-#: root.cpp:582
+#: root.cpp:697
+msgid ""
+"Cannot execute request.\n"
+"New root grid dimensions would move some icons\n"
+"off the desktop."
+msgstr ""
+
+#: root.cpp:736
 msgid "Internal Error: desktopDir is malformed"
 msgstr ""
 
-#: root.cpp:593
+#: root.cpp:747
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr ""
 
-#: root.cpp:784
+#: root.cpp:938
 msgid "ERROR: Can not accept drop"
 msgstr ""
 
-#: kfmman.cpp:1034 root.cpp:1505
+#: kfmman.cpp:1056 root.cpp:1659
 msgid "Dont know what to do."
 msgstr ""
 
-#: kfmman.cpp:1060 kfmtree.cpp:164 root.cpp:1530
+#: kfmman.cpp:1082 kfmtree.cpp:164 root.cpp:1684
 msgid "Dont know what to do"
 msgstr ""
 
@@ -828,7 +888,7 @@ msgstr "Iau legãtura ..."
 msgid "Working ..."
 msgstr "Lucrez ..."
 
-#: kfmman.cpp:929 kfmtree.cpp:230
+#: kfmman.cpp:951 kfmtree.cpp:230
 msgid "Add To Bookmarks"
 msgstr "Adaugã la semne de carte"
 
@@ -1069,15 +1129,15 @@ msgstr "Directorul "
 msgid " does not exist\n"
 msgstr " nu existã\n"
 
-#: kfmtree.cpp:395
+#: kfmtree.cpp:396
 msgid "My Home"
 msgstr "Acasã"
 
-#: kfmtree.cpp:397
+#: kfmtree.cpp:398
 msgid "Desktop"
 msgstr "Ecran"
 
-#: kfmtree.cpp:399
+#: kfmtree.cpp:400
 msgid "Root"
 msgstr ""
 
@@ -1141,7 +1201,7 @@ msgstr ""
 msgid "No Proxy for:"
 msgstr ""
 
-#: kkfmoptdlg.cpp:39
+#: kkfmoptdlg.cpp:50
 msgid "KFM Browser Settings"
 msgstr "Setãri navigator KFM"
 

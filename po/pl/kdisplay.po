@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay \n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
 "PO-Revision-Date: 1998-01-29 18:28+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -146,11 +146,11 @@ msgstr "Wybra³e¶ nazwê u¿ywan± przez standardowy schemat koloru"
 msgid "KDE Default"
 msgstr "KDE Standard"
 
-#: colorscm.cpp:693
+#: colorscm.cpp:695
 msgid "Display Setup"
 msgstr "Ustawienia wy¶wietlania"
 
-#: colorscm.cpp:694
+#: colorscm.cpp:696
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"

@@ -1,126 +1,126 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-05 15:53+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-08-26 14:27:08+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
 "Xgettext-Options: --keyword=translate\n"
 "Files: main.C\n"
 
-#: main.C:236
-msgid "Add characters to word class"
-msgstr "Aggiungi caratteri alla classe di caratteri"
-
-#: main.C:239
+#: main.C:237
 msgid "choose type of color-mode"
 msgstr "Imposta il tipo di modo-colore"
 
-#: main.C:242
+#: main.C:240
+msgid "Add characters to word class"
+msgstr "Aggiungi caratteri alla classe di caratteri"
+
+#: main.C:243
 msgid "The backspace key will send a"
 msgstr ""
 
-#: main.C:383
+#: main.C:384
 msgid "&New Terminal"
 msgstr "Altro Termi&nale"
 
-#: main.C:390 main.C:789
+#: main.C:391 main.C:791
 msgid "&Hide"
 msgstr "&Nascondi"
 
-#: main.C:391
+#: main.C:392
 msgid "&Left"
 msgstr "&Sinistra"
 
-#: main.C:392
+#: main.C:393
 msgid "&Right"
 msgstr "&Destra"
 
-#: main.C:397
+#: main.C:398
 msgid "&Normal"
 msgstr "&Normale"
 
-#: main.C:398
+#: main.C:399
 msgid "&Tiny"
 msgstr "P&iccolissimo"
 
-#: main.C:399
+#: main.C:400
 msgid "&Small"
 msgstr "&Piccolo"
 
-#: main.C:400
+#: main.C:401
 msgid "&Medium"
 msgstr "&Medio"
 
-#: main.C:401
+#: main.C:402
 msgid "&Large"
 msgstr "&Grande"
 
-#: main.C:402
+#: main.C:403
 msgid "&Huge"
 msgstr "&Immenso"
 
-#: main.C:414
+#: main.C:415
 msgid "&black/white"
 msgstr "&nero su bianco"
 
-#: main.C:415
+#: main.C:416
 msgid "&white/black"
 msgstr "&bianco su nero"
 
-#: main.C:416
+#: main.C:417
 msgid "&green/black"
 msgstr "&verde su nero"
 
-#: main.C:417
+#: main.C:418
 msgid "black/light&yellow"
 msgstr "nero su giallo chiaro"
 
-#: main.C:418
+#: main.C:419
 msgid "Linu&x Console"
 msgstr "Console Linu&x"
 
-#: main.C:427
+#: main.C:428
 #, fuzzy
 msgid "&Custom Colors"
 msgstr "&Colore"
 
-#: main.C:434 main.C:735
+#: main.C:435 main.C:737
 msgid "Hide &Menubar"
 msgstr "Nascondi Barra &Menu"
 
-#: main.C:436 main.C:599 main.C:727
+#: main.C:437 main.C:601 main.C:729
 msgid "Show &Menubar"
 msgstr "Mostra Barra &Menu"
 
-#: main.C:437 main.C:745
+#: main.C:438 main.C:747
 msgid "Secure &keyboard"
 msgstr "&Tastiera Sicura"
 
-#: main.C:439
+#: main.C:440
 msgid "Scroll&bar"
 msgstr "&Barra di scorrimento"
 
-#: main.C:440
+#: main.C:441
 msgid "&Font size"
 msgstr "Dimensione &Carattere"
 
-#: main.C:441
+#: main.C:442
 msgid "&Color"
 msgstr "&Colore"
 
-#: main.C:442
+#: main.C:443
 msgid "&Size"
 msgstr "&Dimensione"
 
-#: main.C:443
+#: main.C:444
 msgid "Terminal..."
 msgstr "Terminale..."
 
-#: main.C:445
+#: main.C:446
 msgid "Save &Options"
 msgstr "Salva &Opzioni"
 
-#: main.C:454
+#: main.C:455
 msgid ""
 "\n"
 "\n"
@@ -138,23 +138,23 @@ msgstr ""
 "Emulazione Terminale  per il K Desktop Environment\n"
 "basato su rxvt-2.08 di Robert Nation"
 
-#: main.C:608 main.C:782
+#: main.C:610 main.C:784
 msgid "&Show"
 msgstr "&Mostra"
 
-#: main.C:741
+#: main.C:743
 msgid "Unsecure &keyboard"
 msgstr "&Tastiera Insicura"
 
-#: main.C:752
+#: main.C:754
 msgid "Terminal Options"
 msgstr "Opzioni del Terminale"
 
-#: main.C:894
+#: main.C:896
 msgid "Hint"
 msgstr "Consiglio"
 
-#: main.C:895
+#: main.C:897
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -162,7 +162,7 @@ msgstr ""
 "I colori impostati saranno effettivi\n"
 "quando la tastiera sara resa insicura."
 
-#: main.C:1087
+#: main.C:1213
 #, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
@@ -227,7 +227,7 @@ msgstr ""
 "-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
 "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer"
 
-#: main.C:1118
+#: main.C:1244
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

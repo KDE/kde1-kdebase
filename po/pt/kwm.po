@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -10,8 +10,7 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: ao que parece já está a correr um window manager. kwm não "
-"arrancou\n"
+"kwm: ao que parece já está a correr um window manager. kwm não arrancou\n"
 
 #: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
@@ -97,11 +96,11 @@ msgstr "Sete"
 msgid "Eight"
 msgstr "Oito"
 
-#: main.C:743
+#: main.C:744
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Algumas imagens não são válidas: ShapeMode desactivado\n"
 
-#: main.C:986
+#: main.C:1011
 msgid "*** No Tasks ***"
 msgstr "*** Nenhuma Tarefa ***"
 
@@ -109,15 +108,15 @@ msgstr "*** Nenhuma Tarefa ***"
 msgid "Command:"
 msgstr "Comando:"
 
-#: logout.C:35 taskmgr.C:106
+#: logout.C:36 taskmgr.C:107
 msgid "Logout"
 msgstr "Sair"
 
-#: logout.C:45
+#: logout.C:46
 msgid "Session prepared for logout"
 msgstr "Sessão preparada para desligar"
 
-#: logout.C:51
+#: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
@@ -125,7 +124,7 @@ msgstr ""
 "As seguintes aplicações contêm dados que não foram gravados e que\n"
 "não serão recuperados na sua próxima sessão."
 
-#: logout.C:62
+#: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
@@ -134,20 +133,20 @@ msgstr ""
 "apenas reinicializadas. Certifique-se de que não contêm dados importantes "
 "por gravar"
 
-#: logout.C:73
+#: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
 "As seguintes aplicações não reconhecem o X11 e por isso não podem ser "
 "restauradas\n"
-"na sua próxima sessão. Certifique-se de que não contêm dados importantes "
-"por gravar."
+"na sua próxima sessão. Certifique-se de que não contêm dados importantes por "
+"gravar."
 
-#: taskmgr.C:105
+#: taskmgr.C:106
 msgid "Switch to"
 msgstr "Mudar para"
 
-#: taskmgr.C:119
+#: taskmgr.C:120
 msgid "Current session"
 msgstr "Sessão actual"

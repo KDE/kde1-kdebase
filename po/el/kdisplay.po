@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -155,11 +155,11 @@ msgstr "Επιλέξατε όνομα που χρησιμοποιήται από άλλη ομάδα χρωμάτων"
 msgid "KDE Default"
 msgstr "Συνιθισμένο KDE"
 
-#: colorscm.cpp:693
+#: colorscm.cpp:695
 msgid "Display Setup"
 msgstr "Ρύθμιση οθόνης"
 
-#: colorscm.cpp:694
+#: colorscm.cpp:696
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"

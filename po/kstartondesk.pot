@@ -14,46 +14,26 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.cpp:53
-msgid "&Mouse"
+#: kstartondesk.C:70
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.cpp:56
-msgid "&Keyboard"
+#: kstartondesk.C:74
+msgid "Usage:"
 msgstr ""
 
-#: main.cpp:62
-msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
+#: kstartondesk.C:76
+msgid "command "
 msgstr ""
 
-#: main.cpp:94
-msgid "Input Devices Properties"
+#: kstartondesk.C:77
+msgid "title "
 msgstr ""
 
-#: mouse.cpp:75
-msgid "Acceleration"
+#: kstartondesk.C:78
+msgid "desktop"
 msgstr ""
 
-#: mouse.cpp:81
-msgid "Threshold"
-msgstr ""
-
-#: mouse.cpp:84
-msgid "Button mapping"
-msgstr ""
-
-#: mouse.cpp:86
-msgid "Right handed"
-msgstr ""
-
-#: mouse.cpp:88
-msgid "Left handed"
-msgstr ""
-
-#: keyboard.cpp:67
-msgid "Keyboard repeat"
-msgstr ""
-
-#: keyboard.cpp:75
-msgid "Key click volume"
+#: kstartondesk.C:80
+msgid "Example"
 msgstr ""

@@ -100,7 +100,6 @@ msgid ""
 "Module"
 msgstr ""
 "Helaas, dit type URL wordt nog niet ondersteund door de KDE geluidsmodule"
-""
 
 #: syssound.cpp:326
 #, c-format

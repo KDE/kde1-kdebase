@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
 "PO-Revision-Date: 1998-01-29 17:00+CET-1\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -154,11 +154,11 @@ msgstr "Du har valgt et navn på et medfølgende farveskema"
 msgid "KDE Default"
 msgstr ""
 
-#: colorscm.cpp:693
+#: colorscm.cpp:695
 msgid "Display Setup"
 msgstr "Skærm indstilling"
 
-#: colorscm.cpp:694
+#: colorscm.cpp:696
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr "Eigenschappen"
 msgid "Go!"
 msgstr "Gaan"
 
-#: kpanel.C:248 tools.C:816
+#: kpanel.C:248 tools.C:799
 msgid "Where do you want to go tomorrow?"
 msgstr "Waar wil je morgen heen?"
 
@@ -50,11 +50,11 @@ msgstr "Verberg het paneel"
 msgid "Show the panel"
 msgstr "Laat het paneel zien"
 
-#: kpanel.C:1078 tools.C:632
+#: kpanel.C:1078 tools.C:615
 msgid "No comment available"
 msgstr "Geen informatie beschikbaar"
 
-#: kpanel.C:1087 tools.C:825
+#: kpanel.C:1087 tools.C:808
 msgid "Windowlist"
 msgstr "Vensterlijst"
 
@@ -74,7 +74,7 @@ msgstr "Vensterlijst toevoegen"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Plaats een menu met de vensterlijst op het paneel"
 
-#: props.C:206
+#: events.C:701 props.C:206
 msgid "Configure"
 msgstr "Instellingen"
 
@@ -82,7 +82,7 @@ msgstr "Instellingen"
 msgid "Configure panel"
 msgstr "Instellingen paneel"
 
-#: props.C:209
+#: events.C:703 props.C:209
 msgid "Restart"
 msgstr "Herstarten"
 

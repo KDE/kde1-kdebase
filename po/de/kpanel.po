@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
 "PO-Revision-Date: 1997-10-25 18:28 MET DST\n"
 "Last-Translator: Christian Kirsch <ck@held.mind.de>\n"
 "Language-Team: German/KDE\n"
@@ -25,7 +25,7 @@ msgstr "Eigenschaften"
 msgid "Go!"
 msgstr "Start!"
 
-#: kpanel.C:248 tools.C:816
+#: kpanel.C:248 tools.C:799
 msgid "Where do you want to go tomorrow?"
 msgstr "Where do you want to go tomorrow?"
 
@@ -49,11 +49,11 @@ msgstr "Panel verstecken"
 msgid "Show the panel"
 msgstr "Panel zeigen"
 
-#: kpanel.C:1078 tools.C:632
+#: kpanel.C:1078 tools.C:615
 msgid "No comment available"
 msgstr "Keine Erklärung verfügbar"
 
-#: kpanel.C:1087 tools.C:825
+#: kpanel.C:1087 tools.C:808
 msgid "Windowlist"
 msgstr "Fensterliste"
 
@@ -73,7 +73,7 @@ msgstr "Fensterliste hinzufügen"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Menü für Fensterliste zum Panel hinzufügen"
 
-#: props.C:206
+#: events.C:701 props.C:206
 msgid "Configure"
 msgstr "Konfigurieren"
 
@@ -81,7 +81,7 @@ msgstr "Konfigurieren"
 msgid "Configure panel"
 msgstr "Panel konfigurieren"
 
-#: props.C:209
+#: events.C:703 props.C:209
 msgid "Restart"
 msgstr "Neu starten"
 

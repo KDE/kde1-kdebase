@@ -1,4 +1,3 @@
-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -99,7 +98,8 @@ msgstr "URL som ikke støttes"
 msgid ""
 "Sorry, this type of URL is currently unsupported by the KDE System Sound "
 "Module"
-msgstr "Beklager, denne type URL er for tiden ikke støttet av KDE system lyder "
+msgstr ""
+"Beklager, denne type URL er for tiden ikke støttet av KDE system lyder "
 
 #: syssound.cpp:326
 #, c-format
@@ -107,7 +107,8 @@ msgid ""
 "Sorry, but \n"
 "%s\n"
 "does not seem to be a WAV--file!"
-msgstr "Beklager, men \n"
+msgstr ""
+"Beklager, men \n"
 "ser ikke ut til å være en WAV--fil!\n"
 "%s"
 
@@ -121,7 +122,8 @@ msgid ""
 "The file\n"
 "%s\n"
 "is already in the list"
-msgstr "Filen\n"
+msgstr ""
+"Filen\n"
 "%s\n"
 "er allerede i listen"
 

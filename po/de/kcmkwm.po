@@ -198,4 +198,3 @@ msgstr ""
 #: windows.cpp:113
 msgid "miliseconds"
 msgstr "Millisekunden"
-

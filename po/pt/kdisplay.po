@@ -1,59 +1,59 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay.po\n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
 "PO-Revision-Date: 1998-01-26 14:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
-#: backgnd.cpp:204 backgnd.cpp:239
+#: backgnd.cpp:196 backgnd.cpp:231
 msgid "Desktop"
 msgstr "Ambiente de trabalho"
 
-#: backgnd.cpp:249
+#: backgnd.cpp:241
 msgid "Rename..."
 msgstr "Mudar nome..."
 
-#: backgnd.cpp:255
+#: backgnd.cpp:247
 msgid "Color"
 msgstr "Cor"
 
-#: backgnd.cpp:273
+#: backgnd.cpp:265
 msgid "Flat"
 msgstr "Uniforme"
 
-#: backgnd.cpp:277
+#: backgnd.cpp:269
 msgid "Gradient"
 msgstr "Gradiente"
 
-#: backgnd.cpp:287
+#: backgnd.cpp:279
 msgid "Portrait"
 msgstr "Retrato"
 
-#: backgnd.cpp:291
+#: backgnd.cpp:283
 msgid "Landscape"
 msgstr "Paisagem"
 
-#: backgnd.cpp:298
+#: backgnd.cpp:290
 msgid "Wallpaper"
 msgstr "Papel de parede"
 
-#: backgnd.cpp:331
+#: backgnd.cpp:322
 msgid "Tiled"
 msgstr "Mosaico"
 
-#: backgnd.cpp:335
+#: backgnd.cpp:326
 msgid "Centred"
 msgstr "Centrado"
 
-#: backgnd.cpp:339
+#: backgnd.cpp:330
 msgid "Scaled"
 msgstr "Escalonado"
 
-#: backgnd.cpp:489
+#: backgnd.cpp:480
 msgid "Default"
 msgstr "Por defeito"
 
-#: backgnd.cpp:821
+#: backgnd.cpp:811
 msgid "Desktop Title"
 msgstr "Título do Ambiente de Trabalho"
 
@@ -145,11 +145,11 @@ msgstr "Escolheu um nome já  utilizado por um esquema de cor existente"
 msgid "KDE Default"
 msgstr "KDE por Defeito"
 
-#: colorscm.cpp:693
+#: colorscm.cpp:695
 msgid "Display Setup"
 msgstr "Configuração do Écran"
 
-#: colorscm.cpp:694
+#: colorscm.cpp:696
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"
@@ -272,7 +272,8 @@ msgstr "E&stilo"
 
 #: main.cpp:76
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
-msgstr "utilização: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr ""
+"utilização: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
 #: main.cpp:112
 msgid "Display settings"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
 "PO-Revision-Date: 1998-01-27 13:55 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -25,7 +25,7 @@ msgstr "Vlastnosti"
 msgid "Go!"
 msgstr "Start"
 
-#: kpanel.C:248 tools.C:816
+#: kpanel.C:248 tools.C:799
 msgid "Where do you want to go tomorrow?"
 msgstr "Kam si pøejete jít zítra?"
 
@@ -49,11 +49,11 @@ msgstr "Schovat panel"
 msgid "Show the panel"
 msgstr "Ukázat panel"
 
-#: kpanel.C:1078 tools.C:632
+#: kpanel.C:1078 tools.C:615
 msgid "No comment available"
 msgstr "Komentáø není k dispozici"
 
-#: kpanel.C:1087 tools.C:825
+#: kpanel.C:1087 tools.C:808
 msgid "Windowlist"
 msgstr "Seznam oken"
 
@@ -73,7 +73,7 @@ msgstr "Pøidat seznam oken"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Pøidat seznam oken na panel"
 
-#: props.C:206
+#: events.C:701 props.C:206
 msgid "Configure"
 msgstr "Konfiguruj"
 
@@ -81,7 +81,7 @@ msgstr "Konfiguruj"
 msgid "Configure panel"
 msgstr "Konfiguruj panel"
 
-#: props.C:209
+#: events.C:703 props.C:209
 msgid "Restart"
 msgstr "Spustit znova"
 

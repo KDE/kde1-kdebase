@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminput\n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -17,34 +17,34 @@ msgstr "&Teclado"
 msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
 msgstr "utilização: kcminput [-init | {mouse,keyboard}]\n"
 
-#: main.cpp:92
+#: main.cpp:94
 msgid "Input Devices Properties"
 msgstr "Propriedades do Dispositivos de Entrada"
 
-#: mouse.cpp:76
+#: mouse.cpp:75
 msgid "Acceleration"
 msgstr "Aceleração"
 
-#: mouse.cpp:82
+#: mouse.cpp:81
 msgid "Threshold"
 msgstr "Sensibilidade"
 
-#: mouse.cpp:85
+#: mouse.cpp:84
 msgid "Button mapping"
 msgstr "Mapeamento de botões"
 
-#: mouse.cpp:87
+#: mouse.cpp:86
 msgid "Right handed"
 msgstr "Destro"
 
-#: mouse.cpp:89
+#: mouse.cpp:88
 msgid "Left handed"
 msgstr "Esquerdino"
 
-#: keyboard.cpp:68
+#: keyboard.cpp:67
 msgid "Keyboard repeat"
 msgstr "Repetição do teclado"
 
-#: keyboard.cpp:76
+#: keyboard.cpp:75
 msgid "Key click volume"
 msgstr "Volume do click das teclas"

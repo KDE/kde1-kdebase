@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-09-09 17:23:06+0200\n"
 "From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
 "Xgettext-Options: -s -C -ktranslate\n"
 "Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp "
 "kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>"
 
 #: kdmshutdown.cpp:153
 msgid "Shutdown or restart?"
@@ -25,26 +25,26 @@ msgstr "Desligar e reinicializar"
 msgid "Exit kdm"
 msgstr "Abandonar kdm"
 
-#: kgreeter.cpp:136
+#: kgreeter.cpp:137
 msgid "Login:"
 msgstr "Login:"
 
-#: kgreeter.cpp:141
+#: kgreeter.cpp:142
 msgid "Password:"
 msgstr "Password:"
 
-#: kgreeter.cpp:175
+#: kgreeter.cpp:176
 msgid "Login failed!"
 msgstr "Login falhou!"
 
-#: kgreeter.cpp:181
+#: kgreeter.cpp:182
 msgid "Session Type:"
 msgstr "Tipo de Sessão:'"
 
-#: kgreeter.cpp:197
+#: kgreeter.cpp:198
 msgid "Go!"
 msgstr "Ir!"
 
-#: kgreeter.cpp:213
+#: kgreeter.cpp:214
 msgid "Shutdown..."
 msgstr "Desligar..."

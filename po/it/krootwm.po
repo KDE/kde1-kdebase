@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-03 22:39+0100\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
 "PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi "
 "<Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -14,51 +14,51 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: krootwm.C:122 krootwm.C:498
+#: krootwm.C:118 krootwm.C:500
 msgid "Folder"
 msgstr "Cartella"
 
-#: krootwm.C:149
+#: krootwm.C:145
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ERORRE: Modello inesistente '%s'"
 
-#: krootwm.C:175
+#: krootwm.C:171
 msgid "Help on desktop"
 msgstr "Guida in linea"
 
-#: krootwm.C:176
+#: krootwm.C:172
 msgid "Execute command"
 msgstr "Esegui comando"
 
-#: krootwm.C:177
+#: krootwm.C:173
 msgid "Display properties"
 msgstr "Proprietà schermo"
 
-#: krootwm.C:178
+#: krootwm.C:174
 msgid "Refresh desktop"
 msgstr "Pulisci Desktop"
 
-#: krootwm.C:179
+#: krootwm.C:175
 msgid "Arrange icons"
 msgstr "Disponi Icone"
 
-#: krootwm.C:181
+#: krootwm.C:177
 msgid "Lock screen"
 msgstr "Blocca schermo"
 
-#: krootwm.C:182
+#: krootwm.C:178
 msgid "Logout"
 msgstr "Fine Sessione"
 
-#: krootwm.C:518
+#: krootwm.C:520
 msgid "Could not create folder"
 msgstr "Impossibile creare la cartella"
 
-#: krootwm.C:551
+#: krootwm.C:553
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:555
+#: krootwm.C:557
 msgid "Usage:"
 msgstr "Utilizzo:"
