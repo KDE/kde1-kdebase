@@ -52,9 +52,9 @@ test "$enable_static" = no && libtool_static=" --disable-static"
 AC_ARG_ENABLE(dlopen,
 [  --disable-dlopen        link kcontrol staticly [default=no]] ,   
 [if test "$enableval" = yes; then
-  enable_dlopen=no
-else
   enable_dlopen=yes
+else
+  enable_dlopen=no
 fi])     
 
 if test $ac_cv_header_dlfcn_h = "no" || test $ac_cv_lib_dl_main = "no" || test "$enable_dlopen" = no ; then
