@@ -25,7 +25,7 @@
 
 // this refers to klock.po. If you want an extra dictionary, 
 // create an extra KLocale instance here.
-extern KLocale glocale;
+extern KLocale *glocale;
 
 static kPolygonSaver *saver = NULL;
 
@@ -55,7 +55,7 @@ int setupScreenSaver()
 
 const char *getScreenSaverName()
 {
-	return glocale.translate("Polygons");
+	return glocale->translate("Polygons");
 }
 
 //-----------------------------------------------------------------------------
@@ -76,9 +76,9 @@ kPolygonSetup::kPolygonSetup( QWidget *parent, const char *name )
 	QPushButton *button;
 	KSlider *sb;
 
-	setCaption( glocale.translate("Setup kpolygon") );
+	setCaption( glocale->translate("Setup kpolygon") );
 
-	label = new QLabel( glocale.translate("Length:"), this );
+	label = new QLabel( glocale->translate("Length:"), this );
 	label->setGeometry( 15, 15, 60, 20 );
 
 	sb = new KSlider( KSlider::Horizontal, this );
@@ -88,7 +88,7 @@ kPolygonSetup::kPolygonSetup( QWidget *parent, const char *name )
 	sb->setValue( length );
 	connect( sb, SIGNAL( valueChanged( int ) ), SLOT( slotLength( int ) ) );
 
-	label = new QLabel( glocale.translate("Vertices:"), this );
+	label = new QLabel( glocale->translate("Vertices:"), this );
 	label->setGeometry( 15, 60, 60, 20 );
 
 	sb = new KSlider( KSlider::Horizontal, this );
@@ -98,7 +98,7 @@ kPolygonSetup::kPolygonSetup( QWidget *parent, const char *name )
 	sb->setValue( vertices );
 	connect( sb, SIGNAL( valueChanged( int ) ), SLOT( slotVertices( int ) ) );
 
-	label = new QLabel( glocale.translate("Speed:"), this );
+	label = new QLabel( glocale->translate("Speed:"), this );
 	label->setGeometry( 15, 105, 60, 20 );
 
 	sb = new KSlider( KSlider::Horizontal, this );
@@ -114,15 +114,15 @@ kPolygonSetup::kPolygonSetup( QWidget *parent, const char *name )
 	preview->show();    // otherwise saver does not get correct size
 	saver = new kPolygonSaver( preview->winId() );
 
-	button = new QPushButton( glocale.translate("About"), this );
+	button = new QPushButton( glocale->translate("About"), this );
 	button->setGeometry( 130, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
 
-	button = new QPushButton( glocale.translate("Ok"), this );
+	button = new QPushButton( glocale->translate("Ok"), this );
 	button->setGeometry( 235, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( glocale.translate("Cancel"), this );
+	button = new QPushButton( glocale->translate("Cancel"), this );
 	button->setGeometry( 300, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
 }
@@ -206,11 +206,11 @@ void kPolygonSetup::slotOkPressed()
 
 void kPolygonSetup::slotAbout()
 {
-	QMessageBox::message(glocale.translate("About Polygon"), 
-			     glocale.translate("Polygon Version 0.1\n\n"\
+	QMessageBox::message(glocale->translate("About Polygon"), 
+			     glocale->translate("Polygon Version 0.1\n\n"\
 					       "written by Martin R. Jones 1996\n"\
 					       "mjones@kde.org"), 
-			     glocale.translate("Ok"));
+			     glocale->translate("Ok"));
 }
 
 //-----------------------------------------------------------------------------

@@ -30,7 +30,7 @@
 #include "main.moc"
 #include <kmsgbox.h>
 
-KLocale glocale("klock");
+KLocale *glocale;
 
 extern void startScreenSaver( Drawable d );
 extern void stopScreenSaver();
@@ -211,6 +211,8 @@ int main( int argc, char *argv[] )
 	ssApp a( argc, argv );
 	initPasswd();
 
+	glocale = new KLocale("klock");
+
 	if ( argc == 1 )
 		usage( argv[0] );
 
@@ -260,8 +262,8 @@ int main( int argc, char *argv[] )
 	{
 	 if (!canGetPasswd) {
 	   KMsgBox::message(NULL, 
-			    glocale.translate("Shadow Passwords"), 
-			    glocale.translate("Your system uses shadow passwords!\n"\
+			    glocale->translate("Shadow Passwords"), 
+			    glocale->translate("Your system uses shadow passwords!\n"\
 					      "Please contact your system administrator."));
 	 };
 	 pidFile = getenv( "HOME" );
@@ -416,10 +418,10 @@ static void cleanup( int )
 
 void usage( char *name )
 {
-	printf( glocale.translate(
+	printf( glocale->translate(
 	   "Usage: %s -install|-setup|-test|-desc|-preview wid\n"\
 	   "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"), name );
-	printf( glocale.translate(
+	printf( glocale->translate(
 	"  -corners xxxx     Placing cursor in corner performs action:\n"\
 	"                     x = i  no action (ignore)\n"\
 	"                     x = s  save screen\n"\

@@ -204,7 +204,7 @@ drawlissie(Window win, lissiestruct * lissie)
 
 // this refers to klock.po. If you want an extra dictionary, 
 // create an extra KLocale instance here.
-extern KLocale glocale;
+extern KLocale *glocale;
 
 static kLissieSaver *saver = NULL;
 
@@ -231,7 +231,7 @@ int setupScreenSaver()
 
 const char *getScreenSaverName()
 {
-	return glocale.translate("Lissie");
+	return glocale->translate("Lissie");
 }
 
 //-----------------------------------------------------------------------------
@@ -317,13 +317,13 @@ kLissieSetup::kLissieSetup( QWidget *parent, const char *name )
 
 	readSettings();
 
-	setCaption( glocale.translate("Setup KLissie") );
+	setCaption( glocale->translate("Setup KLissie") );
 
 	QLabel *label;
 	QPushButton *button;
 	KSlider *slider;
 
-	label = new QLabel( glocale.translate("Speed:"), this );
+	label = new QLabel( glocale->translate("Speed:"), this );
 	label->setGeometry( 15, 15, 60, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
@@ -333,7 +333,7 @@ kLissieSetup::kLissieSetup( QWidget *parent, const char *name )
 	slider->setValue( speed );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
 
-	label = new QLabel( glocale.translate("Num of Lissies:"), this );
+	label = new QLabel( glocale->translate("Num of Lissies:"), this );
 	label->setGeometry( 15, 65, 90, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
@@ -343,7 +343,7 @@ kLissieSetup::kLissieSetup( QWidget *parent, const char *name )
 	slider->setValue( maxLevels );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotLevels( int ) ) );
 
-	label = new QLabel( glocale.translate("Cycles:"), this );
+	label = new QLabel( glocale->translate("Cycles:"), this );
 	label->setGeometry( 15, 115, 90, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
@@ -359,15 +359,15 @@ kLissieSetup::kLissieSetup( QWidget *parent, const char *name )
 	preview->show();    // otherwise saver does not get correct size
 	saver = new kLissieSaver( preview->winId() );
 
-	button = new QPushButton( glocale.translate("About"), this );
+	button = new QPushButton( glocale->translate("About"), this );
 	button->setGeometry( 130, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
 
-	button = new QPushButton( glocale.translate("Ok"), this );
+	button = new QPushButton( glocale->translate("Ok"), this );
 	button->setGeometry( 235, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( glocale.translate("Cancel"), this );
+	button = new QPushButton( glocale->translate("Cancel"), this );
 	button->setGeometry( 300, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
 }
@@ -448,9 +448,9 @@ void kLissieSetup::slotOkPressed()
 
 void kLissieSetup::slotAbout()
 {
-	QMessageBox::message(glocale.translate("About Lissie"), 
-			     glocale.translate("Lissie\n\nCopyright (c) 1996 by Alexander Jolk\n\nPorted to kscreensave by Emanuel Pirker."), 
-			     glocale.translate("Ok"));
+	QMessageBox::message(glocale->translate("About Lissie"), 
+			     glocale->translate("Lissie\n\nCopyright (c) 1996 by Alexander Jolk\n\nPorted to kscreensave by Emanuel Pirker."), 
+			     glocale->translate("Ok"));
 }
 
 

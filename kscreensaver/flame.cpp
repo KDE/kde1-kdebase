@@ -273,7 +273,7 @@ drawflame(Window win)
 
 // this refers to klock.po. If you want an extra dictionary, 
 // create an extra KLocale instance here.
-extern KLocale glocale;
+extern KLocale *glocale;
 
 static kFlameSaver *saver = NULL;
 
@@ -300,7 +300,7 @@ int setupScreenSaver()
 
 const char *getScreenSaverName()
 {
-	return glocale.translate("Flame");
+	return glocale->translate("Flame");
 }
 
 //-----------------------------------------------------------------------------
@@ -387,13 +387,13 @@ kFlameSetup::kFlameSetup( QWidget *parent, const char *name )
 
 	readSettings();
 
-	setCaption( glocale.translate("Setup KFlame") );
+	setCaption( glocale->translate("Setup KFlame") );
 
 	QLabel *label;
 	QPushButton *button;
 	KSlider *slider;
 
-	label = new QLabel( glocale.translate("Speed:"), this );
+	label = new QLabel( glocale->translate("Speed:"), this );
 	label->setGeometry( 15, 15, 60, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
@@ -403,7 +403,7 @@ kFlameSetup::kFlameSetup( QWidget *parent, const char *name )
 	slider->setValue( speed );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
 
-	label = new QLabel( glocale.translate("Max Levels:"), this );
+	label = new QLabel( glocale->translate("Max Levels:"), this );
 	label->setGeometry( 15, 65, 90, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
@@ -413,7 +413,7 @@ kFlameSetup::kFlameSetup( QWidget *parent, const char *name )
 	slider->setValue( maxLevels );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotLevels( int ) ) );
 
-	label = new QLabel( glocale.translate("Num Points:"), this );
+	label = new QLabel( glocale->translate("Num Points:"), this );
 	label->setGeometry( 15, 115, 90, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
@@ -429,15 +429,15 @@ kFlameSetup::kFlameSetup( QWidget *parent, const char *name )
 	preview->show();    // otherwise saver does not get correct size
 	saver = new kFlameSaver( preview->winId() );
 
-	button = new QPushButton( glocale.translate("About"), this );
+	button = new QPushButton( glocale->translate("About"), this );
 	button->setGeometry( 130, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
 
-	button = new QPushButton( glocale.translate("Ok"), this );
+	button = new QPushButton( glocale->translate("Ok"), this );
 	button->setGeometry( 235, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( glocale.translate("Cancel"), this );
+	button = new QPushButton( glocale->translate("Cancel"), this );
 	button->setGeometry( 300, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
 }
@@ -518,9 +518,9 @@ void kFlameSetup::slotOkPressed()
 
 void kFlameSetup::slotAbout()
 {
-  QMessageBox::message(glocale.translate("About Flame"),
-		       glocale.translate("Flame Version 3.3\n\nCopyright (c) 1991 by Patrick J. Naughton\n\nPorted to kscreensave by Martin Jones."), 
-		       glocale.translate("Ok"));
+  QMessageBox::message(glocale->translate("About Flame"),
+		       glocale->translate("Flame Version 3.3\n\nCopyright (c) 1991 by Patrick J. Naughton\n\nPorted to kscreensave by Martin Jones."), 
+		       glocale->translate("Ok"));
 }
 
 

@@ -18,7 +18,7 @@ static KBlankSaver *saver = NULL;
 
 // this refers to klock.po. If you want an extra dictionary, 
 // create an extra KLocale instance here.
-extern KLocale glocale;
+extern KLocale *glocale;
 
 //-----------------------------------------------------------------------------
 // standard screen saver interface functions
@@ -46,7 +46,7 @@ int setupScreenSaver()
 
 const char *getScreenSaverName()
 {
-  return glocale.translate("Blank Screen");
+  return glocale->translate("Blank Screen");
 }
 
 //-----------------------------------------------------------------------------
@@ -60,9 +60,9 @@ KBlankSetup::KBlankSetup( QWidget *parent, const char *name )
 	QLabel *label;
 	QPushButton *button;
 
-	setCaption( glocale.translate("Setup kblankscrn") );
+	setCaption( glocale->translate("Setup kblankscrn") );
 
-	label = new QLabel( glocale.translate("Color:"), this );
+	label = new QLabel( glocale->translate("Color:"), this );
 	label->setGeometry( 15, 15, 60, 20 );
 
 	colorPush = new QPushButton( "", this );
@@ -78,11 +78,11 @@ KBlankSetup::KBlankSetup( QWidget *parent, const char *name )
 	preview->show();    // otherwise saver does not get correct size
 	saver = new KBlankSaver( preview->winId() );
 
-	button = new QPushButton( glocale.translate("Ok"), this );
+	button = new QPushButton( glocale->translate("Ok"), this );
 	button->setGeometry( 235, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( glocale.translate("Cancel"), this );
+	button = new QPushButton( glocale->translate("Cancel"), this );
 	button->setGeometry( 300, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
 }
