@@ -593,7 +593,7 @@ void Manager::clientMessage(XEvent*  ev){
     Window w = (Window) e->data.l[0];
     c = getClient(w);
     if (c && c->state == NormalState){
-      switchActivateClient(c);
+      switchActivateClient(c,true);
     }
   }
   if (e->message_type == kwm_module){
