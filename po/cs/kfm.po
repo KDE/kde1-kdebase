@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-18 13:45+0100\n"
+"POT-Creation-Date: 1997-12-18 13:53+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -724,7 +724,7 @@ msgstr ""
 "Nemohu zmìnit vlastníka/skupinu\n"
 "Mo¾ná nemáte pøístup."
 
-#: kfmprops.cpp:673 kfmprops.h:198
+#: kfmprops.cpp:673
 msgid "Execute"
 msgstr "Vykonej"
 
@@ -778,7 +778,7 @@ msgstr ""
 "Není mo¾né ulo¾it vlastnosti\n"
 "Mo¾ná nemáte pøístup."
 
-#: kfmprops.cpp:903 kfmprops.h:249
+#: kfmprops.cpp:903
 msgid "URL"
 msgstr "URL"
 
@@ -1269,29 +1269,40 @@ msgid "Set UserAgent"
 msgstr ""
 
 #: kfmprops.h:73
-msgid "General"
+msgid "&General"
 msgstr ""
 
 #: kfmprops.h:108
 #, fuzzy
-msgid "Permissions"
+msgid "&Permissions"
 msgstr "Pøístupová práva"
 
+#: kfmprops.h:198
+#, fuzzy
+msgid "E&xecute"
+msgstr "Vykonej"
+
+#: kfmprops.h:249
+#, fuzzy
+msgid "U&RL"
+msgstr "URL"
+
 #: kfmprops.h:273
-msgid "Dir"
+msgid "&Dir"
 msgstr ""
 
 #: kfmprops.h:316
 #, fuzzy
-msgid "Application"
+msgid "&Application"
 msgstr "Aplikace"
 
 #: kfmprops.h:358
-msgid "Binding"
-msgstr ""
+#, fuzzy
+msgid "&Binding"
+msgstr "&Hledej"
 
 #: kfmprops.h:388
-msgid "Device"
+msgid "De&vice"
 msgstr ""
 
 #: kfmexec/main.cpp:46

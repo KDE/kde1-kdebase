@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-18 13:45+0100\n"
+"POT-Creation-Date: 1997-12-18 13:53+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,12 +83,10 @@ msgid "&Select"
 msgstr "&Välj"
 
 #: kfmgui.cpp:337
-#, fuzzy
 msgid "Mime Types"
-msgstr "Mime-typ"
+msgstr "Mime-typer"
 
 #: kfmgui.cpp:339
-#, fuzzy
 msgid "Applications"
 msgstr "Standardprogram"
 
@@ -133,7 +131,7 @@ msgstr "Visa som &lång text"
 #: kfmgui.cpp:373
 #, fuzzy
 msgid "Rel&oad Tree"
-msgstr "Ladda om"
+msgstr "Ladda om träd"
 
 #: kfmgui.cpp:375
 msgid "&Reload Document"
@@ -145,7 +143,7 @@ msgstr "Läs in &bindningar igen"
 
 #: kfmgui.cpp:380
 msgid "&View Frame Source"
-msgstr ""
+msgstr "&Läs ramens källkod"
 
 #: kfmgui.cpp:382
 #, fuzzy
@@ -176,7 +174,7 @@ msgstr "Visa &träd"
 
 #: kfmgui.cpp:410
 msgid "Show &Statusbar"
-msgstr ""
+msgstr "Visa &statusrad"
 
 #: kfmgui.cpp:412
 #, fuzzy
@@ -185,7 +183,7 @@ msgstr "Visa &träd"
 
 #: kfmgui.cpp:414
 msgid "Show &Location bar"
-msgstr ""
+msgstr "Visa &platsrad"
 
 #: kfmgui.cpp:417
 #, fuzzy
@@ -193,8 +191,9 @@ msgid "Sa&ve Settings"
 msgstr "&Spara inställningar"
 
 #: kfmgui.cpp:419
+#, fuzzy
 msgid "Configure Browser..."
-msgstr ""
+msgstr "Ställ in &bläddrare"
 
 #: kfmgui.cpp:445
 msgid "&Find"
@@ -209,9 +208,8 @@ msgid "&Help"
 msgstr "&Hjälp"
 
 #: kfmgui.cpp:464
-#, fuzzy
 msgid "&About..."
-msgstr "&Om"
+msgstr "&Om..."
 
 #: kfmgui.cpp:471
 msgid "&File"
@@ -240,7 +238,7 @@ msgstr ""
 #: kfmgui.cpp:477
 #, fuzzy
 msgid "&Options"
-msgstr "&Öppna plats"
+msgstr "&Inställningar"
 
 #: kfmgui.cpp:503
 msgid "Back"
@@ -322,9 +320,8 @@ msgid "Open Location:"
 msgstr "Öppna plats"
 
 #: kfmgui.cpp:1148
-#, fuzzy
 msgid "KFM Confirm"
-msgstr "KFM-information"
+msgstr "KFM Bekräfta"
 
 #: kfmgui.cpp:1149
 msgid ""
@@ -429,15 +426,15 @@ msgstr "byte"
 
 #: kbind.cpp:303
 msgid "The mime type config file "
-msgstr ""
+msgstr "konfigfilen för mime-typer "
 
 #: kbind.cpp:304
 msgid "does not conatain a MimeType=... entry"
-msgstr ""
+msgstr "innehåller ingen MimeType=...-rad"
 
 #: kbind.cpp:379
 msgid "No mime types installed!"
-msgstr ""
+msgstr "Inga mime-typer installerade"
 
 #: kbind.cpp:428 kbind.cpp:1161
 msgid "Could not find mime type\n"
@@ -446,7 +443,7 @@ msgstr "Kunde inte hitta mime-typen\n"
 #: kbind.cpp:700 kbind.cpp:710 kbind.cpp:1864 kbind.cpp:1865 kbind.cpp:1877
 #: kbind.cpp:1879
 msgid "Mount"
-msgstr ""
+msgstr "Montera"
 
 #: kbind.cpp:716 kbind.cpp:1855
 #, fuzzy
@@ -475,16 +472,20 @@ msgid ""
 "This is a document!\n"
 "Not an application"
 msgstr ""
+"Det här är ett dokument!\n"
+"Inte en applikation"
 
 #: kbind.cpp:1528 kbind.cpp:1545
 msgid "Can only start executables on local disks\n"
-msgstr ""
+msgstr "Kan bara starta exekverbara filer på lokala diskar"
 
 #: kbind.cpp:1606 kbind.cpp:1680 kbind.cpp:1830
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
 msgstr ""
+"Kan bara arbeta med *.kdelnk-filer\n"
+"på lokala hårddiskar"
 
 #: kbind.cpp:1616 kbind.cpp:1690 kbind.cpp:1840
 #, fuzzy
@@ -493,11 +494,11 @@ msgstr "Kunde inte komma åt papperskorgen"
 
 #: kbind.cpp:1645
 msgid "The \"Link=....\" entry is empty"
-msgstr ""
+msgstr "\"Link=...\"-raden är tom"
 
 #: kbind.cpp:1660
 msgid "The config file has no \"Type=...\" line"
-msgstr ""
+msgstr "Konfig-filen har ingen \"Type=...\"-rad"
 
 #: kbind.cpp:1708
 msgid ""
@@ -506,6 +507,10 @@ msgid ""
 "entry. Edit the Properties\n"
 "to solve the probelm"
 msgstr ""
+"Den här filen har ingen\n"
+"Exec=...\n"
+"rad. Redigera egenskaperna\n"
+"för att fixa det här problemet"
 
 #: kbind.cpp:1796
 msgid "ERROR: No Terminal Setting"
@@ -522,7 +527,7 @@ msgstr "FEL: Okänd bindning '%s'"
 
 #: main.cpp:65 main.cpp:164
 msgid "KFM Information"
-msgstr "KFM-information"
+msgstr "KFM Information"
 
 #: main.cpp:66
 msgid "Creating directory:\n"
@@ -534,7 +539,7 @@ msgstr "Installerar mallar"
 
 #: main.cpp:197
 msgid "Cd"
-msgstr ""
+msgstr "Cd"
 
 #: main.cpp:198
 #, fuzzy
@@ -556,7 +561,7 @@ msgstr "Öppna med"
 
 #: main.cpp:204
 msgid "Cut"
-msgstr ""
+msgstr "Klipp ur"
 
 #: kfmman.cpp:1055 kfmtree.cpp:155 main.cpp:205
 msgid "Move"
@@ -573,7 +578,7 @@ msgstr "Länk"
 #: main.cpp:208
 #, fuzzy
 msgid "Empty Trash Bin"
-msgstr "Är i papperskorgen"
+msgstr "Töm papperskorgen"
 
 #: main.cpp:209
 #, fuzzy
@@ -594,7 +599,7 @@ msgstr "Namn"
 
 #: kfmprops.cpp:228
 msgid "Full Name"
-msgstr "För- och efternamn"
+msgstr "Fullständig sökväg"
 
 #: kfmprops.cpp:246
 msgid "Is the Trash Bin"
@@ -636,28 +641,34 @@ msgid ""
 "Show\n"
 "Entries"
 msgstr ""
+"Visa\n"
+"innehåll"
 
 #: kfmprops.cpp:413
 #, fuzzy
 msgid "Read"
-msgstr "Ladda om"
+msgstr "Läs"
 
 #: kfmprops.cpp:418
 msgid ""
 "Write\n"
 "Entries"
 msgstr ""
+"Skriv\n"
+"innehåll"
 
 #: kfmprops.cpp:420
 #, fuzzy
 msgid "Write"
-msgstr "Användare Skriv"
+msgstr "Skriv"
 
 #: kfmprops.cpp:425
 msgid ""
 "Change\n"
 "Into"
 msgstr ""
+"Gå in\n"
+"i"
 
 #: kfmprops.cpp:427
 #, fuzzy
@@ -666,7 +677,7 @@ msgstr "Kör"
 
 #: kfmprops.cpp:431
 msgid "Special"
-msgstr ""
+msgstr "Special"
 
 #: kfmprops.cpp:435
 #, fuzzy
@@ -687,18 +698,16 @@ msgid "Set UID"
 msgstr "Sätt UID"
 
 #: kfmprops.cpp:459
-#, fuzzy
 msgid "Set GID"
-msgstr "Sätt UID"
+msgstr "Sätt GID"
 
 #: kfmprops.cpp:460
 msgid "Sticky"
-msgstr "Sticky"
+msgstr "Klistrig"
 
 #: kfmprops.cpp:478
-#, fuzzy
 msgid "Ownership"
-msgstr "Ägare"
+msgstr "Ägande"
 
 #: kfmprops.cpp:484
 msgid "Owner"
@@ -734,7 +743,7 @@ msgstr ""
 "%s\n"
 "Kanske nekades åtkomst"
 
-#: kfmprops.cpp:673 kfmprops.h:198
+#: kfmprops.cpp:673
 msgid "Execute"
 msgstr "Kör"
 
@@ -788,9 +797,9 @@ msgstr ""
 "Kunde inte spara egenskaper\n"
 "Kanske är rättigheterna fel"
 
-#: kfmprops.cpp:903 kfmprops.h:249
+#: kfmprops.cpp:903
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: kfmprops.cpp:998
 msgid "Apply global"
@@ -798,7 +807,7 @@ msgstr "Applicera globalt"
 
 #: kfmprops.cpp:1038 kfmprops.cpp:1111 kfmprops.cpp:1168
 msgid "(Default)"
-msgstr ""
+msgstr "(Standard)"
 
 #: kfmprops.cpp:1100
 msgid "Could not write to\n"
@@ -819,7 +828,7 @@ msgstr "Kommentar"
 
 #: kfmprops.cpp:1277
 msgid "Name ( in your language )"
-msgstr ""
+msgstr "Namn ( på ditt språk )"
 
 #: kfmprops.cpp:1500
 msgid "Pattern ( example: *.html;*.HTML; )"
@@ -870,11 +879,11 @@ msgstr ""
 #: kfmserver.cpp:77
 #, fuzzy
 msgid "Do you really want to rearrange your icons ?"
-msgstr "Vill du verkligen avsluta"
+msgstr "Vill du verkligen avsluta?"
 
 #: kfmserver.cpp:232
 msgid "The URL"
-msgstr ""
+msgstr "URL:en"
 
 #: kfmserver.cpp:233
 #, fuzzy
@@ -929,7 +938,7 @@ msgstr "Filen innehåller ingen URL"
 #: kfmman.cpp:319
 #, c-format
 msgid "Contacting host %s"
-msgstr "Innehåller värd %s"
+msgstr "Kontaktar värd %s"
 
 #: kfmman.cpp:323
 #, fuzzy
@@ -1104,7 +1113,7 @@ msgid ""
 "%s\n"
 "Perhaps wrong password"
 msgstr ""
-"Kunde inte logga in som\n"
+"Kunde inte logga in på\n"
 "%s\n"
 "Kanske är lösenordet fel"
 
@@ -1127,11 +1136,11 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1102 kiojob.cpp:1117
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "File %s\n"
 "does not exist"
-msgstr ""
+msgstr " existerar inte\n"
 
 #: kiojob.cpp:1208
 #, c-format
@@ -1199,7 +1208,7 @@ msgstr "Hämter listning för %s ..."
 
 #: kiojob.cpp:1815
 msgid "Segmentation fault in io subprocess"
-msgstr ""
+msgstr "Segmentationsfel i IO-subprocess"
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"
@@ -1211,7 +1220,7 @@ msgstr "Katalogen "
 
 #: autostart.cpp:30
 msgid " does not exist\n"
-msgstr ""
+msgstr " existerar inte\n"
 
 #: kfmtree.cpp:391
 #, fuzzy
@@ -1264,54 +1273,66 @@ msgstr "Försöker öppna"
 
 #: useragentdlg.cpp:20
 msgid "On server:"
-msgstr ""
+msgstr "På värd:"
 
 #: useragentdlg.cpp:31
 msgid "login as:"
-msgstr ""
+msgstr "logga in som:"
 
 #: useragentdlg.cpp:42
 msgid "Add"
-msgstr ""
+msgstr "Lägg till"
 
 #: useragentdlg.cpp:52
-#, fuzzy
 msgid "Known bindings:"
-msgstr "FEL: Okänd bindning '%s'"
+msgstr "Kända bindningar:"
 
 #: useragentdlg.cpp:75
 msgid "Set UserAgent"
-msgstr ""
+msgstr "Sätt UserAgent"
 
 #: kfmprops.h:73
-msgid "General"
-msgstr ""
+#, fuzzy
+msgid "&General"
+msgstr "Allmänt"
 
 #: kfmprops.h:108
 #, fuzzy
-msgid "Permissions"
-msgstr "Åtkomsträttigheter"
+msgid "&Permissions"
+msgstr "Rättigheter"
+
+#: kfmprops.h:198
+#, fuzzy
+msgid "E&xecute"
+msgstr "Kör"
+
+#: kfmprops.h:249
+#, fuzzy
+msgid "U&RL"
+msgstr "URL"
 
 #: kfmprops.h:273
-msgid "Dir"
-msgstr ""
+#, fuzzy
+msgid "&Dir"
+msgstr "Katalog"
 
 #: kfmprops.h:316
 #, fuzzy
-msgid "Application"
-msgstr "Standardprogram"
+msgid "&Application"
+msgstr "Applikation"
 
 #: kfmprops.h:358
-msgid "Binding"
-msgstr ""
+#, fuzzy
+msgid "&Binding"
+msgstr "&Sök"
 
 #: kfmprops.h:388
-msgid "Device"
+msgid "De&vice"
 msgstr ""
 
 #: kfmexec/main.cpp:46
 msgid "is malformed"
-msgstr ""
+msgstr "är ogiltlig"
 
 #: kfmexec/main.cpp:132
 #, c-format
@@ -1321,21 +1342,26 @@ msgid ""
 "has been modified.\n"
 "Do you want to save it?"
 msgstr ""
+"Filen\n"
+"%s\n"
+"har ändrats.\n"
+"Vill du spara den?"
 
 #: kfmexec/main.cpp:133
 msgid "KFM Question"
-msgstr ""
-
-#, fuzzy
-#~ msgid "&Help..."
-#~ msgstr "&Hjälp"
-
-#, fuzzy
-#~ msgid "Do you really want to quit?"
-#~ msgstr "Vill du verkligen avsluta"
+msgstr "KFM Fråga"
 
 #~ msgid "&How can I ..."
 #~ msgstr "&Hur kan jag..."
+
+#~ msgid "Do you really want to quit"
+#~ msgstr "Vill du verkligen avsluta"
+
+#~ msgid "Mount default"
+#~ msgstr "Montera standard"
+
+#~ msgid "UID"
+#~ msgstr "UID"
 
 #, fuzzy
 #~ msgid "GID "
@@ -1344,65 +1370,5 @@ msgstr ""
 #~ msgid "ERROR: Could not read desktop directory"
 #~ msgstr "FEL: Kunde inte läsa skrivbordskatalogen"
 
-#~ msgid ""
-#~ "(c) by Torben Weis\n"
-#~ "weis@kde.org\n"
-#~ "\n"
-#~ "and the KFM team"
-#~ msgstr ""
-#~ "(c) av by Torben Weis\n"
-#~ "weis@kde.org\n"
-#~ "\n"
-#~ "och KFM-teamet"
-
-#~ msgid "Too many protocols in file\n"
-#~ msgstr "För många protokoll i fil\n"
-
-#~ msgid "ERROR: You must first mount the device. Use the right mouse button"
-#~ msgstr "FEL: Du måste montera enheten först. Använd rätt musknapp"
-
-#~ msgid "Icon"
-#~ msgstr "Ikon"
-
-#~ msgid "ERROR: Malformed URL '%s'"
-#~ msgstr "FEL: URLen '%s' är ogiltlig"
-
-#~ msgid ""
-#~ " does not exist\n"
-#~ "Run 'setupKFM' to solve the problem"
-#~ msgstr ""
-#~ " finns inte\n"
-#~ "Kör 'setupKFM' för at årgärda problemet"
-
-#~ msgid "ERROR: Could not access file %s\n"
-#~ msgstr "FEL: Kunde inte komma år filen %s\n"
-
-#~ msgid "User Exec"
-#~ msgstr "Användare Kör"
-
-#~ msgid "Group Read"
-#~ msgstr "Grupp Läs"
-
-#~ msgid "Group Write"
-#~ msgstr "Grupp Skriv"
-
-#~ msgid "Group Exec"
-#~ msgstr "Grupp Kör"
-
-#~ msgid "Others Write"
-#~ msgstr "Andra Skriv"
-
-#~ msgid "Others Exec"
-#~ msgstr "Andra Kör"
-
-#~ msgid "ERROR: Could not make directory %s"
-#~ msgstr "FEL: Kunde inte skapa katalogen %s"
-
-#~ msgid "ERROR: Could not make directory"
-#~ msgstr "FEL: Kunde inte skapa katalog"
-
-#~ msgid "ERROR: Could not move '%s'"
-#~ msgstr "FEL: Kunde inte flytta '%s'"
-
-#~ msgid "ERROR: Could not delete dir '%s'"
-#~ msgstr "FEL: Kunde inte radera katalogen '%s'"
+#~ msgid "&Help..."
+#~ msgstr "&Hjälp..."

@@ -303,8 +303,9 @@ KHelpOptionsDialog::KHelpOptionsDialog( QWidget *parent, const char *name )
 
 	resize( 350, 300 );
 
-	setCancelButton();
-	setApplyButton();
+        setOKButton( klocale->translate("OK") );
+        setCancelButton( klocale->translate("Cancel") );
+        setApplyButton( klocale->translate("Apply") );
 
 	fontOptions = new KFontOptions( this, klocale->translate("Fonts") );
 	addTab( fontOptions, klocale->translate("Fonts") );

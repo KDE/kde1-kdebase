@@ -12,7 +12,7 @@ msgstr "Lägg till tecken till ordklass"
 
 #: main.C:224
 msgid "choose type of color-mode"
-msgstr "välg typ av färgläge"
+msgstr "välj typ av färgläge"
 
 #: main.C:227
 msgid "Ok"
@@ -223,3 +223,6 @@ msgstr ""
 #: main.C:970
 msgid "Terminal Options"
 msgstr "Terminalinställningar"
+
+#~ msgid "The backspace key will send a"
+#~ msgstr "Backspace skickar"

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1997-12-18 13:45+0100\n"
+"POT-Creation-Date: 1997-12-18 13:53+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-11-17 14:28:25+0100\n"
 "From: didier Belot <dib@avo.fr>\n"
@@ -713,7 +713,7 @@ msgstr ""
 "Ne peut changer le propriétaire/le groupe\n"
 "Accès probablement refusé."
 
-#: kfmprops.cpp:673 kfmprops.h:198
+#: kfmprops.cpp:673
 msgid "Execute"
 msgstr "Exécution"
 
@@ -767,7 +767,7 @@ msgstr ""
 "Impossible d'enregistrer les propriétés\n"
 "Permissions probablement refusées."
 
-#: kfmprops.cpp:903 kfmprops.h:249
+#: kfmprops.cpp:903
 msgid "URL"
 msgstr "URL"
 
@@ -1262,29 +1262,40 @@ msgid "Set UserAgent"
 msgstr ""
 
 #: kfmprops.h:73
-msgid "General"
+msgid "&General"
 msgstr ""
 
 #: kfmprops.h:108
 #, fuzzy
-msgid "Permissions"
+msgid "&Permissions"
 msgstr "Permissions d'accès"
 
+#: kfmprops.h:198
+#, fuzzy
+msgid "E&xecute"
+msgstr "Exécution"
+
+#: kfmprops.h:249
+#, fuzzy
+msgid "U&RL"
+msgstr "URL"
+
 #: kfmprops.h:273
-msgid "Dir"
+msgid "&Dir"
 msgstr ""
 
 #: kfmprops.h:316
 #, fuzzy
-msgid "Application"
+msgid "&Application"
 msgstr "Applications"
 
 #: kfmprops.h:358
-msgid "Binding"
-msgstr ""
+#, fuzzy
+msgid "&Binding"
+msgstr "&Chercher"
 
 #: kfmprops.h:388
-msgid "Device"
+msgid "De&vice"
 msgstr ""
 
 #: kfmexec/main.cpp:46

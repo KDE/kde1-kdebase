@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: ENCODING\n"
 
 # Polish translation of KDE kwm
-# Version 0.2.0
+# Version 0.3.0
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #: main.C:65
 msgid ""
@@ -160,4 +160,4 @@ msgstr "&Prze³±cz na"
 
 #: taskmgr.C:49
 msgid "Current session"
-msgstr "Bierz±ca sesja"
+msgstr "Bie¿±ca sesja"

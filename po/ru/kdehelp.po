@@ -1,4 +1,20 @@
 #
+# Локализация для kdehelp.
+# Copyright (C) 1997 Free Software Foundation, Inc.
+# Denis Y. Pershin <dyp@siblug.org>, 1997.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdehelp 0.5.0\n"
+"POT-Creation-Date: 1997-12-18 13:52+0100\n"
+"PO-Revision-Date: 1997-09-05 02:21+0600\n"
+"Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#
 #: helpwin.cpp:57
 msgid "KDE Help: Open URL"
 msgstr "KDE Help: Открываю URL"
@@ -136,12 +152,12 @@ msgid "KDE Help Options"
 msgstr "Опции KDE Help"
 
 #
-#: options.cpp:309 options.cpp:310
+#: options.cpp:310 options.cpp:311
 msgid "Fonts"
 msgstr "Шрифты"
 
 #
-#: options.cpp:314 options.cpp:315
+#: options.cpp:315 options.cpp:316
 msgid "Colors"
 msgstr "Цвета"
 
@@ -491,19 +507,3 @@ msgstr "Добавить закладку"
 #
 #~ msgid "&About"
 #~ msgstr "О программе"
-
-#
-# Локализация для kdehelp.
-# Copyright (C) 1997 Free Software Foundation, Inc.
-# Denis Y. Pershin <dyp@siblug.org>, 1997.
-#
-#~ msgid ""
-#~ msgstr ""
-#~ "Project-Id-Version: kdehelp 0.5.0\n"
-#~ "POT-Creation-Date: 1997-08-21 23:23-0500\n"
-#~ "PO-Revision-Date: 1997-09-05 02:21+0600\n"
-#~ "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
-#~ "Language-Team: Russian <ru@li.org>\n"
-#~ "MIME-Version: 1.0\n"
-#~ "Content-Type: text/plain; charset=koi8-r\n"
-#~ "Content-Transfer-Encoding: 8-bit\n"

@@ -1,3 +1,22 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# 	Last modified 14.09.1997
+#	Juha.Tuomala@iki.fi 
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-12-18 13:52+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
 #: helpwin.cpp:57
 msgid "KDE Help: Open URL"
 msgstr "KDE Ohje: Avaa URL"
@@ -108,11 +127,11 @@ msgstr "Seuratun linkin v‰ri:"
 msgid "KDE Help Options"
 msgstr "KDE Help asetukset"
 
-#: options.cpp:309 options.cpp:310
+#: options.cpp:310 options.cpp:311
 msgid "Fonts"
 msgstr "Fontti"
 
-#: options.cpp:314 options.cpp:315
+#: options.cpp:315 options.cpp:316
 msgid "Colors"
 msgstr "V‰rit"
 
@@ -397,22 +416,3 @@ msgstr "Lis‰‰ osoitekirjaan"
 
 #~ msgid "&About"
 #~ msgstr "&Tietoja"
-
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-# 	Last modified 14.09.1997
-#	Juha.Tuomala@iki.fi 
-#
-#, fuzzy
-#~ msgid ""
-#~ msgstr ""
-#~ "Project-Id-Version: PACKAGE VERSION\n"
-#~ "POT-Creation-Date: 1997-08-21 23:23-0500\n"
-#~ "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-#~ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-#~ "Language-Team: LANGUAGE <LL@li.org>\n"
-#~ "MIME-Version: 1.0\n"
-#~ "Content-Type: text/plain; charset=CHARSET\n"
-#~ "Content-Transfer-Encoding: ENCODING\n"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-18 13:45+0100\n"
+"POT-Creation-Date: 1997-12-18 13:53+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -88,7 +88,7 @@ msgstr "Typy &mime"
 
 #: kfmgui.cpp:339
 msgid "Applications"
-msgstr "Domy¶lna aplikacja"
+msgstr "&Aplikacje"
 
 #: kfmgui.cpp:345
 msgid "Global Mime Types"
@@ -96,7 +96,7 @@ msgstr "Typ mime"
 
 #: kfmgui.cpp:347
 msgid "Global Applications"
-msgstr "Domy¶lna aplikacja"
+msgstr "Ogólne aplikacje"
 
 #: kfmgui.cpp:354
 msgid "Show &Dot Files"
@@ -108,7 +108,7 @@ msgstr "Pokazuj &drzewo"
 
 #: kfmgui.cpp:358
 msgid "&Visual Schnauzer"
-msgstr ""
+msgstr "&Visual Schnauzer"
 
 #: kfmgui.cpp:360
 msgid "&HTML View"
@@ -148,20 +148,19 @@ msgstr "Poka¿ ¼ród³o &dokumentu"
 
 #: kfmgui.cpp:393
 msgid "Show Cache"
-msgstr ""
+msgstr "&Poka¿ cache"
 
 #: kfmgui.cpp:395
-#, fuzzy
 msgid "Clear Cache"
-msgstr "&Czy¶æ"
+msgstr "&Czy¶æ cache"
 
 #: kfmgui.cpp:398
 msgid "Always look in cache"
-msgstr ""
+msgstr "Zawsze &sprawdzaj cache"
 
 #: kfmgui.cpp:400
 msgid "Never look in cache"
-msgstr ""
+msgstr "Nigdy &nie sprawdzaj cache"
 
 #: kfmgui.cpp:408
 msgid "Show &Menubar"
@@ -226,7 +225,7 @@ msgstr "&Narzêdzia"
 
 #: kfmgui.cpp:476
 msgid "&Cache"
-msgstr ""
+msgstr "&Cache"
 
 #: kfmgui.cpp:477
 msgid "&Options"
@@ -312,9 +311,8 @@ msgid "Open Location:"
 msgstr "Otwórz lokacjê:"
 
 #: kfmgui.cpp:1148
-#, fuzzy
 msgid "KFM Confirm"
-msgstr "KFM - informacje"
+msgstr "KFM potwierdzenie"
 
 #: kfmgui.cpp:1149
 msgid ""
@@ -323,9 +321,8 @@ msgid ""
 msgstr ""
 
 #: kfmgui.cpp:1176
-#, fuzzy
 msgid "About KFM"
-msgstr "&Informacje..."
+msgstr "Informacje o KFM"
 
 #: kfmgui.cpp:1177
 msgid ""
@@ -354,9 +351,8 @@ msgid "ERROR: Drop over malformed URL"
 msgstr "B£¡D: Upu¶ci³e¶ na b³êdny URL"
 
 #: kfmview.cpp:278
-#, fuzzy
 msgid "ERROR: You dropped some URL over itself"
-msgstr "Upu¶ci³e¶ na ten sam plik"
+msgstr "B£¡D: Upu¶ci³e¶ URL na ten sam"
 
 #: kfmserver.cpp:48 kfmserver.cpp:76 kfmtree.cpp:351 kfmview.cpp:311
 #: kfmview.cpp:494 krenamewin.cpp:17 root.cpp:1024
@@ -374,13 +370,12 @@ msgstr ""
 "Nie bêdzie mo¿na ju¿ ich odzyskaæ"
 
 #: kfmtree.cpp:320 kfmview.cpp:342 kfmview.cpp:465 root.cpp:989
-#, fuzzy
 msgid "ERROR: You dropped a URL over itself"
-msgstr "Upu¶ci³e¶ na ten sam plik"
+msgstr "B£¡D: Upu¶ci³e¶ URL na ten sam"
 
 #: kfmtree.cpp:326 kfmview.cpp:348 kfmview.cpp:471 root.cpp:995
 msgid "ERROR: You dropped a directory over one of its children"
-msgstr ""
+msgstr "B£¡D: Upu¶ci³e¶ katalog na jeden z jego podkatalogów"
 
 #: kfmexec.cpp:234 kfmman.cpp:732 kfmview.cpp:364
 msgid "Open With:"
@@ -395,7 +390,6 @@ msgid "Could not access Trash Bin"
 msgstr "Nie ma dostêpu do ¶mietnika"
 
 #: kfmview.cpp:441 root.cpp:965
-#, fuzzy
 msgid "Can not paste into multiple directories"
 msgstr "Nie mogê wkleiæ do kilku katalogów naraz"
 
@@ -405,13 +399,15 @@ msgstr "B£¡D: Nie mogê wej¶æ do kilku katalogów naraz"
 
 #: kfmview.cpp:614
 msgid "KFM Security Alert"
-msgstr ""
+msgstr "KFM alarm ochrony"
 
 #: kfmview.cpp:615
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
 msgstr ""
+"Ta strona jest niewiarygodna\n"
+"i zawiera odno¶niki do twojego lokalnego systemu plików."
 
 #: kfmview.cpp:701
 msgid "Symbolic Link"
@@ -517,7 +513,7 @@ msgstr "B£¡D: Brak ustawieñ terminala"
 
 #: kbind.cpp:1887
 msgid "No mount point in *.kdelnk file"
-msgstr ""
+msgstr "Brak miejsca podmontowania w pliku *.kdelnk"
 
 #: kbind.cpp:1927
 msgid "Unknown binding"
@@ -576,7 +572,6 @@ msgid "Empty Trash Bin"
 msgstr "Opró¿nij ¶mietnik"
 
 #: main.cpp:209
-#, fuzzy
 msgid "Add to Bookmarks"
 msgstr "Dodaj do zak³adek"
 
@@ -636,6 +631,8 @@ msgid ""
 "Show\n"
 "Entries"
 msgstr ""
+"Pozwól\n"
+"odczytaæ"
 
 #: kfmprops.cpp:413
 msgid "Read"
@@ -646,6 +643,8 @@ msgid ""
 "Write\n"
 "Entries"
 msgstr ""
+"Pozwól\n"
+"zapisaæ"
 
 #: kfmprops.cpp:420
 msgid "Write"
@@ -656,6 +655,8 @@ msgid ""
 "Change\n"
 "Into"
 msgstr ""
+"Pozwól\n"
+"wykonaæ"
 
 #: kfmprops.cpp:427
 msgid "Exec"
@@ -663,7 +664,7 @@ msgstr "Wykonanie"
 
 #: kfmprops.cpp:431
 msgid "Special"
-msgstr ""
+msgstr "Specjalne"
 
 #: kfmprops.cpp:435
 msgid "User"
@@ -679,18 +680,17 @@ msgstr "Inni"
 
 #: kfmprops.cpp:458
 msgid "Set UID"
-msgstr ""
+msgstr "Set UID"
 
 #: kfmprops.cpp:459
 msgid "Set GID"
-msgstr ""
+msgstr "Set GID"
 
 #: kfmprops.cpp:460
 msgid "Sticky"
-msgstr ""
+msgstr "Sticky"
 
 #: kfmprops.cpp:478
-#, fuzzy
 msgid "Ownership"
 msgstr "W³a¶ciciel"
 
@@ -724,7 +724,7 @@ msgstr ""
 "Nie mogê zmieniæ w³a¶ciciela/grupy\n"
 "Prawdopodobnie brak dostêpu."
 
-#: kfmprops.cpp:673 kfmprops.h:198
+#: kfmprops.cpp:673
 msgid "Execute"
 msgstr "Wykonanie"
 
@@ -737,22 +737,20 @@ msgid "Working Directory"
 msgstr "Katalog roboczy"
 
 #: kfmprops.cpp:697
-#, fuzzy
 msgid "Run normally"
-msgstr "Uruchom w terminalu"
+msgstr "Uruchom normalnie"
 
 #: kfmprops.cpp:701
 msgid "Run in Panel (drag onto Panel to execute)"
-msgstr ""
+msgstr "Uruchom w Panelu (przenie¶ na Panel by uruchomiæ)"
 
 #: kfmprops.cpp:705
-#, fuzzy
 msgid "Title of Application"
-msgstr "Domy¶lna aplikacja"
+msgstr "Tytu³ aplikacji"
 
 #: kfmprops.cpp:710
 msgid "enter the exact title, as normally shown in the window titlebar"
-msgstr ""
+msgstr "wprowad¿ nazwê, która siê normalnie pokazuje w pasku tytu³owym"
 
 #: kfmprops.cpp:714
 msgid "Run in terminal"
@@ -768,6 +766,9 @@ msgid ""
 "in the Panel or in a Terminal, \n"
 "but not both!"
 msgstr ""
+"Mo¿esz uruchomiæ ten program\n"
+"albo na Panelu albo w Terminalu, \n"
+"ale nie jednocze¶nie!"
 
 #: kfmprops.cpp:849 kfmprops.cpp:972 kfmprops.cpp:1410 kfmprops.cpp:1628
 #: kfmprops.cpp:1799
@@ -778,7 +779,7 @@ msgstr ""
 "Nie mogê zapisaæ w³a¶ciwo¶ci\n"
 "Prawdopodobnie brak dostêpu"
 
-#: kfmprops.cpp:903 kfmprops.h:249
+#: kfmprops.cpp:903
 msgid "URL"
 msgstr "URL"
 
@@ -799,9 +800,8 @@ msgid "(None)"
 msgstr "(Brak)"
 
 #: kfmprops.cpp:1259
-#, fuzzy
 msgid "Binary Pattern (netscape;Netscape;)"
-msgstr "Wzorzec binarny ( netscape;Netscape; )"
+msgstr "Wzorzec binarny (netscape;Netscape;)"
 
 #: kfmprops.cpp:1266 kfmprops.cpp:1512
 msgid "Comment"
@@ -849,18 +849,19 @@ msgstr "Ikona odmontowania"
 
 #: kfmserver.cpp:39
 msgid "Could not create ~/.kde/share/apps/kfm/magic"
-msgstr ""
+msgstr "Nie mo¿na utworzyæ ~/.kde/share/apps/kfm/magic"
 
 #: kfmserver.cpp:49
 msgid ""
 "Please change the password in\n"
 "~/.kde/share/apps/kfm/magic"
 msgstr ""
+"Proszê zmieniæ has³o w\n"
+"~/.kde/share/apps/kfm/magic"
 
 #: kfmserver.cpp:77
-#, fuzzy
 msgid "Do you really want to rearrange your icons ?"
-msgstr "Czy na pewno chcesz wyj¶æ?"
+msgstr "Czy na pewno chcesz przestawiæ ikony?"
 
 #: kfmserver.cpp:232
 msgid "The URL"
@@ -919,9 +920,8 @@ msgid "Contacting host %s"
 msgstr "Po³±czenie z hostem %s"
 
 #: kfmman.cpp:323
-#, fuzzy
 msgid "Working ..."
-msgstr "Montowanie %s ..."
+msgstr "Wykonuje ..."
 
 #: kfmexec.cpp:57 kfmman.cpp:869 kiojob.cpp:990 kiojob.cpp:1125
 #, c-format
@@ -1113,11 +1113,13 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1102 kiojob.cpp:1117
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "File %s\n"
 "does not exist"
-msgstr " nie instnieje\n"
+msgstr ""
+"Plik %s\n"
+"nie istnieje"
 
 #: kiojob.cpp:1208
 #, c-format
@@ -1200,17 +1202,16 @@ msgid " does not exist\n"
 msgstr " nie instnieje\n"
 
 #: kfmtree.cpp:391
-#, fuzzy
 msgid "My Home"
 msgstr "Punkt startowy"
 
 #: kfmtree.cpp:393
 msgid "Desktop"
-msgstr ""
+msgstr "Desktop"
 
 #: kfmtree.cpp:395
 msgid "Root"
-msgstr ""
+msgstr "Root"
 
 #: krenamewin.cpp:23
 msgid "Rename"
@@ -1238,7 +1239,7 @@ msgstr "Lub zmieniæ nazwê na"
 
 #: krenamewin.cpp:104
 msgid "You did not change the name!\n"
-msgstr ""
+msgstr "Nazwa nie zosta³a zmieniona!\n"
 
 #: passworddialog.cpp:41 passworddialog.cpp:80
 msgid "Password"
@@ -1250,50 +1251,55 @@ msgstr "Próbujê otworzyæ"
 
 #: useragentdlg.cpp:20
 msgid "On server:"
-msgstr ""
+msgstr "Serwerze:"
 
 #: useragentdlg.cpp:31
 msgid "login as:"
-msgstr ""
+msgstr "Loguj jako:"
 
 #: useragentdlg.cpp:42
 msgid "Add"
-msgstr ""
+msgstr "Dodaj"
 
 #: useragentdlg.cpp:52
-#, fuzzy
 msgid "Known bindings:"
-msgstr "Nieznane skojarzenie"
+msgstr "Znane skojarzenia:"
 
 #: useragentdlg.cpp:75
 msgid "Set UserAgent"
-msgstr ""
+msgstr "Ustaw UserAgent"
 
 #: kfmprops.h:73
-msgid "General"
-msgstr ""
+msgid "&General"
+msgstr "&Ogólne"
 
 #: kfmprops.h:108
-#, fuzzy
-msgid "Permissions"
-msgstr "Zezwolenia na dostêp"
+msgid "&Permissions"
+msgstr "&Prawa"
+
+#: kfmprops.h:198
+msgid "E&xecute"
+msgstr "&Wykonanie"
+
+#: kfmprops.h:249
+msgid "U&RL"
+msgstr "U&RL"
 
 #: kfmprops.h:273
-msgid "Dir"
-msgstr ""
+msgid "&Dir"
+msgstr "Ka&talog"
 
 #: kfmprops.h:316
-#, fuzzy
-msgid "Application"
-msgstr "Domy¶lna aplikacja"
+msgid "&Application"
+msgstr "&Aplikacja"
 
 #: kfmprops.h:358
-msgid "Binding"
-msgstr ""
+msgid "&Binding"
+msgstr "&Skojarzenie"
 
 #: kfmprops.h:388
-msgid "Device"
-msgstr ""
+msgid "De&vice"
+msgstr "U&rz±dzenie"
 
 #: kfmexec/main.cpp:46
 msgid "is malformed"
@@ -1316,29 +1322,14 @@ msgstr ""
 msgid "KFM Question"
 msgstr "Pytanie KFM"
 
+# Polish translation of KDE kfm
+# Verision 0.3.0
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+#~ msgid "Help"
+#~ msgstr "Pomoc"
+
 #~ msgid "&Help..."
 #~ msgstr "Pomo&c"
 
 #~ msgid "Do you really want to quit?"
 #~ msgstr "Czy na pewno chcesz wyj¶æ?"
-
-# Polish translation of KDE kfm
-# Verision 0.2.1
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
-#~ msgid "Help"
-#~ msgstr "Pomoc"
-
-#~ msgid "&How can I ..."
-#~ msgstr "&Jak to zrobiæ..."
-
-#~ msgid "Mount default"
-#~ msgstr "Zamontuj domy¶lne"
-
-#~ msgid "UID"
-#~ msgstr "UID"
-
-#~ msgid "GID "
-#~ msgstr "GID "
-
-#~ msgid "ERROR: Could not read desktop directory"
-#~ msgstr "B£¡D: Nie mo¿na odczytaæ katalogu desktopu"

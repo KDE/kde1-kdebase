@@ -8,6 +8,9 @@ msgstr ""
 "kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp "
 "mkfindtop.cpp mkfoptions.cpp mkftabdlg.cpp mkfwin.cpp\n"
 
+# Polish translation of KDE kfind
+# Version 0.2.0
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #: kftabdlg.cpp:214
 msgid " Advanced "
 msgstr " &Zaawansowane "
@@ -28,9 +31,6 @@ msgstr "%d plik(ów) znaleziono"
 msgid "&About"
 msgstr "&Informacje o KFind"
 
-# Polish translation of KDE kfind
-# Version 0.1.2
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #: kfindtop.cpp:186
 msgid "About &Qt"
 msgstr "Informacje o &Qt"
@@ -153,7 +153,7 @@ msgstr "Wszystkie pliki i katalogi"
 
 #: kfoptions.cpp:243
 msgid "Archivers"
-msgstr "Archiwizatory"
+msgstr "&Archiwizatory"
 
 #: kftabdlg.cpp:206
 msgid "At Least"
@@ -344,7 +344,7 @@ msgstr "Zachowaj rezultaty w pliku:"
 
 #: kfoptions.cpp:125
 msgid "Saving"
-msgstr "Zachowanie"
+msgstr "&Zachowanie"
 
 #: kfdird.cpp:167 kfdird.cpp:192 kfdird.cpp:210
 msgid "Sorry"
@@ -408,7 +408,7 @@ msgstr "dnia/dni"
 
 #: kftabdlg.cpp:117
 msgid "during the previou&s "
-msgstr "podczas &poprzedniego "
+msgstr "&podczas poprzedniego "
 
 #: kftabdlg.cpp:107
 msgid "month(s)"

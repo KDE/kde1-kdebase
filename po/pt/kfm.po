@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-18 13:45+0100\n"
+"POT-Creation-Date: 1997-12-18 13:53+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -724,7 +724,7 @@ msgstr ""
 "Não foi possivel modificar o dono/grupo\n"
 "Possivelmente acesso negado."
 
-#: kfmprops.cpp:673 kfmprops.h:198
+#: kfmprops.cpp:673
 msgid "Execute"
 msgstr "Executar"
 
@@ -778,7 +778,7 @@ msgstr ""
 "Não foi possivel gravar as propriedades\n"
 "Talvez permissões negadas"
 
-#: kfmprops.cpp:903 kfmprops.h:249
+#: kfmprops.cpp:903
 msgid "URL"
 msgstr "URL"
 
@@ -1276,29 +1276,40 @@ msgid "Set UserAgent"
 msgstr ""
 
 #: kfmprops.h:73
-msgid "General"
+msgid "&General"
 msgstr ""
 
 #: kfmprops.h:108
 #, fuzzy
-msgid "Permissions"
+msgid "&Permissions"
 msgstr "Permissões de Acesso"
 
+#: kfmprops.h:198
+#, fuzzy
+msgid "E&xecute"
+msgstr "Executar"
+
+#: kfmprops.h:249
+#, fuzzy
+msgid "U&RL"
+msgstr "URL"
+
 #: kfmprops.h:273
-msgid "Dir"
+msgid "&Dir"
 msgstr ""
 
 #: kfmprops.h:316
 #, fuzzy
-msgid "Application"
+msgid "&Application"
 msgstr "Aplicação por Defeito"
 
 #: kfmprops.h:358
-msgid "Binding"
-msgstr ""
+#, fuzzy
+msgid "&Binding"
+msgstr "&Procurar"
 
 #: kfmprops.h:388
-msgid "Device"
+msgid "De&vice"
 msgstr ""
 
 #: kfmexec/main.cpp:46

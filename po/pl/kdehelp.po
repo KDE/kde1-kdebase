@@ -1,3 +1,19 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-12-18 13:52+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
 #: helpwin.cpp:57
 msgid "KDE Help: Open URL"
 msgstr "KDE Pomoc: Otwórz URL"
@@ -12,7 +28,7 @@ msgstr "Nie mo¿na otworzyæ: "
 
 #: helpwin.cpp:454 helpwin.cpp:463
 msgid "Oops!"
-msgstr "Ojej!"
+msgstr "&Ojej!"
 
 #: helpwin.cpp:462
 msgid "Unknown format: "
@@ -108,11 +124,11 @@ msgstr "Kolor odwiedzonych:"
 msgid "KDE Help Options"
 msgstr "Opcje KDE Pomoc"
 
-#: options.cpp:309 options.cpp:310
+#: options.cpp:310 options.cpp:311
 msgid "Fonts"
 msgstr "&Czcionki"
 
-#: options.cpp:314 options.cpp:315
+#: options.cpp:315 options.cpp:316
 msgid "Colors"
 msgstr "&Kolory"
 
@@ -237,7 +253,7 @@ msgstr "&Dalej"
 
 #: mainwidget.cpp:156
 msgid "&Contents"
-msgstr "&Tre¶æ"
+msgstr "Spis &tre¶ci"
 
 #: mainwidget.cpp:157
 msgid "&Top"
@@ -296,6 +312,12 @@ msgid ""
 "KDEHelp comes with ABSOLUTELY NO WARRANY to the extent permitted by "
 "applicable law."
 msgstr ""
+"\n"
+"\n"
+"Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
+"\n"
+"Ten program jest licencjonowany przez GNU General Public License (GPL).\n"
+"KDEHelp nie posiada CA£KOWICIE ¯ADNEJ GWARANCJI na dzia³anie tej aplikacji."
 
 #: mainwidget.cpp:200
 msgid "&File"
@@ -371,11 +393,17 @@ msgstr ""
 
 #: mainwidget.cpp:585
 msgid "About KDE Help"
-msgstr "KDE Pomoc - informacje"
+msgstr "Informacje o KDE Pomoc"
 
 #: mainwidget.cpp:618
 msgid "&Add Bookmark"
 msgstr "&Dodaj zak³adkê"
+
+# Polish translation of KDE kdehelp
+# Version 0.2.0
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+#~ msgid "Open"
+#~ msgstr "&Otwórz"
 
 #~ msgid "Cancel"
 #~ msgstr "A&nuluj"
@@ -396,16 +424,4 @@ msgstr "&Dodaj zak³adkê"
 #~ msgstr "&U¿ycie KDE Pomoc"
 
 #~ msgid "&About"
-#~ msgstr "&Informacje..."
-
-# Polish translation of KDE kdehelp
-# Version 0.1.5
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
-#~ msgid "Open"
-#~ msgstr "&Otwórz"
-
-#~ msgid "About "
-#~ msgstr "&Informacje o "
-
-#~ msgid "About KDE"
-#~ msgstr "Informacje o &KDE"
+#~ msgstr "&Informacje"

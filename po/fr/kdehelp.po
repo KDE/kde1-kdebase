@@ -1,3 +1,13 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1997-12-18 13:52+0100\n"
+"Content-Type: text/plain; charset=\n"
+"Date: 1997-11-17 11:51:29+0100\n"
+"From: didier Belot <dib@avo.fr>\n"
+"Xgettext-Options: -C -ktranslate -x ../../kdelibs/po/kde.pot\n"
+"Files: bookmark.cpp cgi.cpp dbnew.cpp error.cpp helpwin.cpp history.cpp "
+"info.cpp khelp.cpp main.cpp mainwidget.cpp man.cpp misc.cpp options.cpp\n"
+
 #: helpwin.cpp:57
 msgid "KDE Help: Open URL"
 msgstr "Aide KDE: Ouvrir"
@@ -108,11 +118,11 @@ msgstr "Lien suivi:"
 msgid "KDE Help Options"
 msgstr "Options de l'aide KDE"
 
-#: options.cpp:309 options.cpp:310
+#: options.cpp:310 options.cpp:311
 msgid "Fonts"
 msgstr "Polices"
 
-#: options.cpp:314 options.cpp:315
+#: options.cpp:315 options.cpp:316
 msgid "Colors"
 msgstr "Couleurs"
 
@@ -388,12 +398,3 @@ msgstr "&Ajouter un signet"
 #, fuzzy
 #~ msgid "&Using KDE Help"
 #~ msgstr "A propos de l'aide KDE"
-
-#~ msgid ""
-#~ msgstr ""
-#~ "Date: 1997-11-17 11:51:29+0100\n"
-#~ "From: didier Belot <dib@avo.fr>\n"
-#~ "Content-Type: text/plain; charset=\n"
-#~ "Xgettext-Options: -C -ktranslate -x ../../kdelibs/po/kde.pot\n"
-#~ "Files: bookmark.cpp cgi.cpp dbnew.cpp error.cpp helpwin.cpp history.cpp "
-#~ "info.cpp khelp.cpp main.cpp mainwidget.cpp man.cpp misc.cpp options.cpp\n"

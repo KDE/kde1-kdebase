@@ -32,17 +32,17 @@ msgstr ""
 
 #: main.C:374
 msgid "Usage: "
-msgstr ""
+msgstr "Användning: "
 
 #: main.C:385
 #, fuzzy
 msgid "&Maximize"
-msgstr "(av) ma&ximera"
+msgstr "Maximera"
 
 #: main.C:386
 #, fuzzy
 msgid "&Restore"
-msgstr "&Ändra storlek"
+msgstr "&Återställ storlek"
 
 #: main.C:387
 msgid "&Iconify"
@@ -56,12 +56,12 @@ msgstr "&Ikonifiera"
 #: main.C:389
 #, fuzzy
 msgid "&Sticky"
-msgstr "(av) &Sticky"
+msgstr "&Klistrig"
 
 #: main.C:390
 #, fuzzy
 msgid "&UnSticky"
-msgstr "(av) &Sticky"
+msgstr "&Inte Klistrig"
 
 #: main.C:391
 #, fuzzy
@@ -133,95 +133,36 @@ msgstr "Lo&gga ur"
 
 #: logout.C:45
 msgid "Session prepared for logout"
-msgstr ""
+msgstr "Sessionen klar för urloggning"
 
 #: logout.C:51
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
+"Följande applikationer innehåller osparad data som\n"
+"kommer att förloras i din nästa session."
 
 #: logout.C:62
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
+"Följande applikationer kan inte återställas i din nästa session,\n"
+"bara omstartas. Se till att de inte innehåller viktig osparad data."
 
 #: logout.C:73
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
+"Följande applikationer är inte X11-medvetna, och kan inte återstartas\n"
+"i din nästa session. Se till att de inte innehåller viktig osparad data."
 
 #: taskmgr.C:35
 msgid "Switch to"
-msgstr ""
+msgstr "Byt till"
 
 #: taskmgr.C:49
 msgid "Current session"
-msgstr ""
-
-#, fuzzy
-#~ msgid "Iconify"
-#~ msgstr "&Ikonifiera"
-
-#~ msgid ""
-#~ "kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-#~ "     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-#~ "     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-#~ "     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-#~ "     No warranty. Please see the README's\n"
-#~ msgstr ""
-#~ "kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-#~ "     baserad på version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-#~ "     baserad på version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-#~ "     Delar härstammande från 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-#~ "     Ingen garanti. Vänligen läs README-filerna\n"
-
-#~ msgid "patch level %d"
-#~ msgstr "patch-nivå %d"
-
-#~ msgid "usage: kwm [-version] [-exec prog] \n"
-#~ msgstr "användning> kwm [-version] [-exec pgrogram] \n"
-
-#~ msgid "Desktop"
-#~ msgstr "Skrivbord"
-
-#~ msgid "kwm: exiting on signal\n"
-#~ msgstr "kwm: avslutar på grun av signal\n"
-
-#~ msgid "&Help on desktop"
-#~ msgstr "&Hjälp om skrivbordet"
-
-#~ msgid "&Execute command"
-#~ msgstr "&Kör kommando"
-
-#~ msgid "&Display properties"
-#~ msgstr "&Omgivningsinställningar"
-
-#~ msgid "&Refresh desktop"
-#~ msgstr "&Uppdatera skrivbordet"
-
-#~ msgid "&Arrange icons"
-#~ msgstr "&Ordna ikoner"
-
-#~ msgid "&Lock screen"
-#~ msgstr "&Lås skärmen"
-
-#~ msgid "Lo&gout"
-#~ msgstr "Lo&gga ur"
-
-#~ msgid "(Un) Ma&ximize"
-#~ msgstr "(av) ma&ximera"
-
-#~ msgid "&Move"
-#~ msgstr "&Flytta"
-
-#~ msgid "(Un) &Sticky"
-#~ msgstr "(av) &Sticky"
-
-#~ msgid "&To Desktop"
-#~ msgstr "&Till skrivbord"
-
-#~ msgid "&Destroy"
-#~ msgstr "&Krossa"
+msgstr "Nuvarande session"
