@@ -882,6 +882,3 @@ msgstr ""
 "Kopibeskyttet (c) 1991 av Patrick J. Naughton\n"
 "\n"
 "Portet til kscreensave av Emanuel Pirker."
-
-#~ msgid "Ok"
-#~ msgstr "Ok"

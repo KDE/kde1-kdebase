@@ -541,9 +541,3 @@ msgstr "standard"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "hvilken som helst"
-
-#~ msgid "Mode:"
-#~ msgstr "Modus:"
-
-#~ msgid "kb"
-#~ msgstr "kB"

@@ -213,6 +213,3 @@ msgstr "Home"
 #: stdbindings.cpp:17
 msgid "End"
 msgstr "End"
-
-#~ msgid "KDE lite"
-#~ msgstr "KDE enkel"

@@ -224,6 +224,3 @@ msgstr "Vis valgoppføring"
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Terminal-applikasjoner:"
-
-#~ msgid "Speed"
-#~ msgstr "Hastighet"

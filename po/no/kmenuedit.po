@@ -265,6 +265,3 @@ msgstr "Personlig:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Standardverdi:"
-
-#~ msgid "! PROTECTED Button !"
-#~ msgstr "! Beskyttet knapp !"

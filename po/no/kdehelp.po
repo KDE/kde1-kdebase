@@ -359,9 +359,3 @@ msgstr "Avhengig av &bokstavstørrelse"
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr "&Finn"
-
-#~ msgid "Open UR&L..."
-#~ msgstr "Åpne UR&L..."
-
-#~ msgid "&Contents"
-#~ msgstr "&Innhold"

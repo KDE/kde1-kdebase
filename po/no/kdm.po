@@ -77,15 +77,3 @@ msgstr "Varsel: din konto går ut %s"
 #: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr "Hjemmekatalog er ikke tilgjengelig"
-
-#~ msgid "Exit kdm"
-#~ msgstr "Gå ut av kdm"
-
-#~ msgid "No login"
-#~ msgstr "Ingen logginn"
-
-#~ msgid "Expired"
-#~ msgstr "Utgått"
-
-#~ msgid "No home"
-#~ msgstr "Intet hjem"
