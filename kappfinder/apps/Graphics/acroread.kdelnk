@@ -1,12 +1,14 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=Acrobat Reader
+Name[no]=Acrobat-leser
 MimeType=application/pdf;
 Exec=acroread %f
 Icon=kghostview.xpm
 Type=Application
 DocPath=
 Comment=PDF document viewer
+Comment[no]=PDF-dokumentfremviser
 Terminal=0
 MiniIcon=kghostview.xpm
 Caption=PDF Viewer
