@@ -58,7 +58,7 @@ FontUseItem::FontUseItem( const char *n, QFont default_fnt, bool f = false )
 QString FontUseItem::fontString( QFont rFont )
 {
 	QString aValue;
-#if QT_VERSION >= 140
+#if QT_VERSION > 140
 	aValue = rFont.rawName();
 	return aValue;
 #endif
