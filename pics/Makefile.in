@@ -12,7 +12,7 @@ install:
 	$(INSTALL_DIR) $(libdir)/pics/toolbar
 	$(INSTALL_DIR) $(libdir)/pics/wallpapers
 	@for i in $(PICS); do \
-	 echo "$(INSTALL_DATA) $$i $(libdir)/pics"; \
-	 $(INSTALL_DATA) "$$i" $(libdir)/pics; \
+	 echo "$(INSTALL_DATA) $$i $(libdir)/pics/$$i"; \
+	 $(INSTALL_DATA) "$$i" $(libdir)/pics/$$i; \
 	done
 

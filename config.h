@@ -77,6 +77,6 @@ const bool true = 1;
 #endif
  
 /* Define if the `long double' type works.  */
-/* #undef HAVE_LONG_DOUBLE */
+#define HAVE_LONG_DOUBLE 1
 
 

@@ -1817,8 +1817,8 @@ fi
 if test "$qt_libraries" = "$x_libraries"; then
  QT_LDFLAGS=""
 else
- QT_LDLFLAGS="-L$qt_libraries"
- all_libraries="$all_libraries $QT_LDLFLAGS"
+ QT_LDFLAGS="-L$qt_libraries"
+ all_libraries="$all_libraries $QT_LDFLAGS"
 fi
 
 
@@ -2458,9 +2458,52 @@ EOF
 
 fi
 
+echo $ac_n "checking for long double""... $ac_c" 1>&6
+echo "configure:2463: checking for long double" >&5
+if eval "test \"`echo '$''{'ac_cv_c_long_double'+set}'`\" = set"; then
+  echo $ac_n "(cached) $ac_c" 1>&6
+else
+  if test "$GCC" = yes; then
+  ac_cv_c_long_double=yes
+else
+if test "$cross_compiling" = yes; then
+    { echo "configure: error: can not run test program while cross compiling" 1>&2; exit 1; }
+else
+  cat > conftest.$ac_ext <<EOF
+#line 2474 "configure"
+#include "confdefs.h"
+int main() {
+/* The Stardent Vistra knows sizeof(long double), but does not support it.  */
+long double foo = 0.0;
+/* On Ultrix 4.3 cc, long double is 4 and double is 8.  */
+exit(sizeof(long double) < sizeof(double)); }
+EOF
+if { (eval echo configure:2482: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest && (./conftest; exit) 2>/dev/null
+then
+  ac_cv_c_long_double=yes
+else
+  echo "configure: failed program was:" >&5
+  cat conftest.$ac_ext >&5
+  rm -fr conftest*
+  ac_cv_c_long_double=no
+fi
+rm -fr conftest*
+fi
+
+fi
+fi
+
+echo "$ac_t""$ac_cv_c_long_double" 1>&6
+if test $ac_cv_c_long_double = yes; then
+  cat >> confdefs.h <<\EOF
+#define HAVE_LONG_DOUBLE 1
+EOF
+
+fi
+
 
 echo $ac_n "checking for bool""... $ac_c" 1>&6
-echo "configure:2464: checking for bool" >&5;
+echo "configure:2507: checking for bool" >&5;
         ac_ext=C
 # CXXFLAGS is not in ac_cpp because -g, -O, etc. are not valid cpp options.
 ac_cpp='$CXXCPP $CPPFLAGS'
@@ -2469,14 +2512,14 @@ ac_link='${CXX-g++} -o conftest $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $L
 cross_compiling=$ac_cv_prog_cxx_cross
 
         cat > conftest.$ac_ext <<EOF
-#line 2473 "configure"
+#line 2516 "configure"
 #include "confdefs.h"
 
 int main() {
 bool aBool = true;
 ; return 0; }
 EOF
-if { (eval echo configure:2480: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>&5; }; then
+if { (eval echo configure:2523: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>&5; }; then
   rm -rf conftest*
   echo "$ac_t""yes" 1>&6 ; cat >> confdefs.h <<\EOF
 #define HAVE_BOOL 1
@@ -2493,12 +2536,12 @@ rm -f conftest*
 for ac_func in socket
 do
 echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
-echo "configure:2497: checking for $ac_func" >&5
+echo "configure:2540: checking for $ac_func" >&5
 if eval "test \"`echo '$''{'ac_cv_func_$ac_func'+set}'`\" = set"; then
   echo $ac_n "(cached) $ac_c" 1>&6
 else
   cat > conftest.$ac_ext <<EOF
-#line 2502 "configure"
+#line 2545 "configure"
 #include "confdefs.h"
 /* System header to define __stub macros and hopefully few prototypes,
     which can conflict with char $ac_func(); below.  */
@@ -2524,7 +2567,7 @@ $ac_func();
 
 ; return 0; }
 EOF
-if { (eval echo configure:2528: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+if { (eval echo configure:2571: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
   rm -rf conftest*
   eval "ac_cv_func_$ac_func=yes"
 else
@@ -2549,12 +2592,12 @@ fi
 done
 
 echo $ac_n "checking for setenv""... $ac_c" 1>&6
-echo "configure:2553: checking for setenv" >&5
+echo "configure:2596: checking for setenv" >&5
 if eval "test \"`echo '$''{'ac_cv_func_setenv'+set}'`\" = set"; then
   echo $ac_n "(cached) $ac_c" 1>&6
 else
   cat > conftest.$ac_ext <<EOF
-#line 2558 "configure"
+#line 2601 "configure"
 #include "confdefs.h"
 /* System header to define __stub macros and hopefully few prototypes,
     which can conflict with char setenv(); below.  */
@@ -2580,7 +2623,7 @@ setenv();
 
 ; return 0; }
 EOF
-if { (eval echo configure:2584: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+if { (eval echo configure:2627: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
   rm -rf conftest*
   eval "ac_cv_func_setenv=yes"
 else
@@ -2798,7 +2841,7 @@ s%@X_LDFLAGS@%$X_LDFLAGS%g
 s%@qt_libraries@%$qt_libraries%g
 s%@qt_includes@%$qt_includes%g
 s%@QT_INCLUDES@%$QT_INCLUDES%g
-s%@QT_LDLFLAGS@%$QT_LDLFLAGS%g
+s%@QT_LDFLAGS@%$QT_LDFLAGS%g
 s%@MOC@%$MOC%g
 s%@kde_libraries@%$kde_libraries%g
 s%@kde_includes@%$kde_includes%g

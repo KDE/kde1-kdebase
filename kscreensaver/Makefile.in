@@ -4,23 +4,21 @@
 
 .SUFFIXES: .cpp
 
-CXX = g++
-CC = gcc
-MOC = moc
-INCFLAGS = -I. -I/usr/openwin/include -I$(QTDIR)/include -I$(KDEDIR)/include
-#CXXFLAGS = -g -Wall $(INCFLAGS) -DSTDC_HEADERS $(DEBUG)
-CXXFLAGS = -O2 $(INCFLAGS) -DSTDC_HEADERS $(DEBUG)
-LDFLAGS = -L/usr/openwin/lib -L$(QTDIR)/lib -L$(KDEDIR)/lib -L. -lqt\
-			-lkdecore -lkdeui -lXext -lX11
+CXX = @CXX@
+CC = @CC@
+MOC = @MOC@
+INCFLAGS = -I. @all_includes@ -I../..
+CXXFLAGS += $(INCFLAGS) @DEFS@ $(DEBUG)
+LDFLAGS = @all_libraries@ -L. -lqt -lkdecore -lkdeui -lXext -lX11
 
 ############# Install ##############
 
-INSTALL = install -s -m 0755
-INSTALL_STICKY = install -s -m 4755
-INSTALL_DATA = install -m 0644
-INSTALL_DIR = install -d -m 0755
+INSTALL = @INSTALL@ -s -m 0755
+INSTALL_STICKY = @INSTALL@ -s -m 4755
+INSTALL_DATA = @INSTALL@ -m 0644
+INSTALL_DIR = @INSTALL@ -d -m 0755
 
-prefix = $(KDEDIR)
+prefix = @prefix@
 BINDIR = $(prefix)/bin
 LIBDIR = $(prefix)/lib
 PICSDIR = $(LIBDIR)/pics
@@ -112,10 +110,10 @@ install-shadow:
 	$(INSTALL_STICKY) $(TARGETS) $(BINDIR)
 
 clean:
-	rm -f core *~ *.bak *.BAK $(SRCMETA) $(OBJS)
+	-rm -f core *~ *.bak *.BAK $(SRCMETA) $(OBJS) $(TARGETS)
 
 veryclean:
-	rm -f *~ *.bak *.BAK $(TARGETS) $(SRCMETA) $(OBJS) core
+	-rm -f *~ *.bak *.BAK $(TARGETS) $(SRCMETA) $(OBJS) core
 
 depend: $(SRCS)
 	@makedepend $(INCFLAGS) $(SRCS) 2> /dev/null
