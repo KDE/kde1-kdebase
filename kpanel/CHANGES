@@ -2,6 +2,7 @@ In kpanel-0.18:
 
     Patchlevel 8:
        - some tuning. Startup time dramatically reduced.
+       - workaround for syncronous menues re-introduced :(
 
     Patchlevel 7:
        - optimization in loading of kdelnkfiles with readonly 

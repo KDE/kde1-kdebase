@@ -178,6 +178,7 @@ int main( int argc, char ** argv ){
   the_panel->parseMenus();
   XSelectInput(qt_xdisplay(), qt_xrootwin(), 
 	       KeyPressMask);
-  myapp.exec(); 
+  while (1)
+    myapp.exec(); 
   return 0;
 }
