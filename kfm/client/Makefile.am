@@ -1,7 +1,7 @@
 
-INCLUDES=       $(all_includes) -I..
+INCLUDES=       $(all_includes) -I$(srcdir)/..
 LDFLAGS = 	$(all_libraries) $(KDE_RPATH)
-LDADD   =             $(LIB_KFM) 
+LDADD   =       $(LIB_KFM) 
 
 bin_PROGRAMS = kfmclient
 
@@ -13,8 +13,8 @@ kfmclient_DEPENDENCIES = debug.o
 BUILT_SOURCES =
 DISTCLEANFILES = $(BUILT_SOURCES)
 
-debug.o: ../debug.cpp ../config-kfm.h
-	$(CXXCOMPILE) -c ../debug.cpp
+debug.o: $(top_srcdir)/kfm/debug.cpp $(top_srcdir)/kfm/config-kfm.h
+	$(CXXCOMPILE) -c $(top_srcdir)/kfm/debug.cpp
 
 ####### Meta objects
 

@@ -52,111 +52,111 @@ DISTCLEANFILES = $(BUILT_SOURCES)
 
 kfmgui.cpp:kfmgui.moc
 kfmgui.moc: kfmgui.h
-	$(MOC) kfmgui.h -o kfmgui.moc
+	$(MOC) $(srcdir)/kfmgui.h -o kfmgui.moc
 
 kioserver.cpp:kioserver.moc
 kioserver.moc: kioserver.h
-	$(MOC) kioserver.h -o kioserver.moc
+	$(MOC) $(srcdir)/kioserver.h -o kioserver.moc
 
 kfmdlg.cpp:kfmdlg.moc
 kfmdlg.moc: kfmdlg.h
-	$(MOC) kfmdlg.h -o kfmdlg.moc
+	$(MOC) $(srcdir)/kfmdlg.h -o kfmdlg.moc
 
 kURLcompletion.cpp:kURLcompletion.moc
 kURLcompletion.moc: kURLcompletion.h
-	$(MOC) kURLcompletion.h -o kURLcompletion.moc
+	$(MOC) $(srcdir)/kURLcompletion.h -o kURLcompletion.moc
 
 kfmserver.cpp:kfmserver.moc
 kfmserver.moc: kfmserver.h
-	$(MOC) kfmserver.h -o kfmserver.moc
+	$(MOC) $(srcdir)/kfmserver.h -o kfmserver.moc
 
 kiojob.cpp:kiojob.moc
 kiojob.moc: kiojob.h
-	$(MOC) kiojob.h -o kiojob.moc
+	$(MOC) $(srcdir)/kiojob.h -o kiojob.moc
 
 root.cpp:root.moc
 root.moc: root.h
-	$(MOC) root.h -o root.moc
+	$(MOC) $(srcdir)/root.h -o root.moc
 
 cgi.cpp:cgi.moc
 cgi.moc: cgi.h
-	$(MOC) cgi.h -o cgi.moc
+	$(MOC) $(srcdir)/cgi.h -o cgi.moc
 
 kfmview.cpp:kfmview.moc
 kfmview.moc: kfmview.h
-	$(MOC) kfmview.h -o kfmview.moc
+	$(MOC) $(srcdir)/kfmview.h -o kfmview.moc
 
 kfmtree.cpp:kfmtree.moc
 kfmtree.moc: kfmtree.h
-	$(MOC) kfmtree.h -o kfmtree.moc
+	$(MOC) $(srcdir)/kfmtree.h -o kfmtree.moc
 
 krenamewin.cpp:krenamewin.moc
 krenamewin.moc: krenamewin.h
-	$(MOC) krenamewin.h -o krenamewin.moc
+	$(MOC) $(srcdir)/krenamewin.h -o krenamewin.moc
 
 kcookiewin.cpp:kcookiewin.moc
 kcookiewin.moc: kcookiewin.h
-	$(MOC) kcookiewin.h -o kcookiewin.moc
+	$(MOC) $(srcdir)/kcookiewin.h -o kcookiewin.moc
 
 kfmserver_ipc.cpp:kfmserver_ipc.moc
 kfmserver_ipc.moc: kfmserver_ipc.h
-	$(MOC) kfmserver_ipc.h -o kfmserver_ipc.moc
+	$(MOC) $(srcdir)/kfmserver_ipc.h -o kfmserver_ipc.moc
 
 kioserver_ipc.cpp:kioserver_ipc.moc
 kioserver_ipc.moc: kioserver_ipc.h
-	$(MOC) kioserver_ipc.h -o kioserver_ipc.moc
+	$(MOC) $(srcdir)/kioserver_ipc.h -o kioserver_ipc.moc
 
 passworddialog.cpp:passworddialog.moc
 passworddialog.moc: passworddialog.h
-	$(MOC) passworddialog.h -o passworddialog.moc
+	$(MOC) $(srcdir)/passworddialog.h -o passworddialog.moc
 
 kfmprops.cpp:kfmprops.moc
 kfmprops.moc: kfmprops.h
-	$(MOC) kfmprops.h -o kfmprops.moc
+	$(MOC) $(srcdir)/kfmprops.h -o kfmprops.moc
 
 kfmman.cpp:kfmman.moc
 kfmman.moc: kfmman.h
-	$(MOC) kfmman.h -o kfmman.moc
+	$(MOC) $(srcdir)/kfmman.h -o kfmman.moc
 
 htmlcache.cpp:htmlcache.moc
 htmlcache.moc: htmlcache.h
-	$(MOC) htmlcache.h -o htmlcache.moc
+	$(MOC) $(srcdir)/htmlcache.h -o htmlcache.moc
 
 bookmark.cpp:bookmark.moc
 bookmark.moc: bookmark.h
-	$(MOC) bookmark.h -o bookmark.moc
+	$(MOC) $(srcdir)/bookmark.h -o bookmark.moc
 
 kfmjob.cpp:kfmjob.moc
 kfmjob.moc: kfmjob.h
-	$(MOC) kfmjob.h -o kfmjob.moc
+	$(MOC) $(srcdir)/kfmjob.h -o kfmjob.moc
 
 kfmexec.cpp:kfmexec.moc
 kfmexec.moc: kfmexec.h
-	$(MOC) kfmexec.h -o kfmexec.moc
+	$(MOC) $(srcdir)/kfmexec.h -o kfmexec.moc
 
 kbind.cpp:kbind.moc
 kbind.moc: kbind.h
-	$(MOC) kbind.h -o kbind.moc
+	$(MOC) $(srcdir)/kbind.h -o kbind.moc
 
 kfinder.cpp:kfinder.moc
 kfinder.moc: kfinder.h
-	$(MOC) kfinder.h -o kfinder.moc
+	$(MOC) $(srcdir)/kfinder.h -o kfinder.moc
 
 kfm.cpp:kfm.moc
 kfm.moc: kfm.h
-	$(MOC) kfm.h -o kfm.moc
+	$(MOC) $(srcdir)/kfm.h -o kfm.moc
 
 open-with.cpp:open-with.moc
 open-with.moc: open-with.h
-	$(MOC) open-with.h -o open-with.moc
+	$(MOC) $(srcdir)/open-with.h -o open-with.moc
 
 finddlg.cpp:finddlg.moc
 finddlg.moc:finddlg.h
-	$(MOC) finddlg.h -o finddlg.moc
+	$(MOC) $(srcdir)/finddlg.h -o finddlg.moc
 
 popup.cpp:popup.moc
 popup.moc: popup.h
-	$(MOC) popup.h -o popup.moc
+	$(MOC) $(srcdir)/popup.h -o popup.moc
 
 SUBDIRS = kfmwarn client kioslave pics Desktop kfmexec config
 

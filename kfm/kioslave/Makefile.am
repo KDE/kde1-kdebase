@@ -1,5 +1,5 @@
 
-INCLUDES= $(all_includes) -I..
+INCLUDES= $(all_includes) -I$(top_srcdir)/kfm
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
 LDADD   = $(LIB_KIMGIO) $(LIB_KDECORE) 
 CXXFLAGS= $(NOOPT_CXXFLAGS)
@@ -31,34 +31,34 @@ gzip.cpp: gzip.moc
 icon.cpp: icon.moc
 ftp_proxy.cpp: ftp_proxy.moc
 
-debug.o: ../debug.cpp ../config-kfm.h
-	$(CXXCOMPILE) -c ../debug.cpp
+debug.o: $(top_srcdir)/kfm/debug.cpp $(top_srcdir)/kfm/config-kfm.h
+	$(CXXCOMPILE) -c $(top_srcdir)/kfm/debug.cpp
 
 ####### Meta objects
 
 kioslave_ipc.moc: kioslave_ipc.h
-	$(MOC) kioslave_ipc.h -o kioslave_ipc.moc
+	$(MOC) $(srcdir)/kioslave_ipc.h -o kioslave_ipc.moc
 file.moc: file.h
-	$(MOC) file.h -o file.moc
+	$(MOC) $(srcdir)/file.h -o file.moc
 ftp.moc: ftp.h
-	$(MOC) ftp.h -o ftp.moc
+	$(MOC) $(srcdir)/ftp.h -o ftp.moc
 http.moc: http.h
-	$(MOC) http.h -o http.moc
+	$(MOC) $(srcdir)/http.h -o http.moc
 tar.moc: tar.h
-	$(MOC) tar.h -o tar.moc
+	$(MOC) $(srcdir)/tar.h -o tar.moc
 protocol.moc: protocol.h
-	$(MOC) protocol.h -o protocol.moc
+	$(MOC) $(srcdir)/protocol.h -o protocol.moc
 subprotocol.moc: subprotocol.h
-	$(MOC) subprotocol.h -o subprotocol.moc
+	$(MOC) $(srcdir)/subprotocol.h -o subprotocol.moc
 main.moc: main.h
-	$(MOC) main.h -o main.moc
+	$(MOC) $(srcdir)/main.h -o main.moc
 cgi.moc: cgi.h
-	$(MOC) cgi.h -o cgi.moc
+	$(MOC) $(srcdir)/cgi.h -o cgi.moc
 gzip.moc: gzip.h
-	$(MOC) gzip.h -o gzip.moc
+	$(MOC) $(srcdir)/gzip.h -o gzip.moc
 icon.moc: icon.h
-	$(MOC) icon.h -o icon.moc
+	$(MOC) $(srcdir)/icon.h -o icon.moc
 ftp_proxy.moc: ftp_proxy.h
-	$(MOC) ftp_proxy.h -o ftp_proxy.moc
+	$(MOC) $(srcdir)/ftp_proxy.h -o ftp_proxy.moc
 
 

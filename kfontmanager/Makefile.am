@@ -2,7 +2,7 @@
 
 ###################################################################
 
-LDADD   =	  -lm    $(LIB_KDECORE)
+LDADD   =       $(LIB_KDECORE) -lm
 LDFLAGS = 	$(all_libraries) $(KDE_RPATH)
 INCLUDES=	$(all_includes)
 
@@ -22,19 +22,19 @@ kfontexplorer.cpp: kfontexplorer.moc
 ####### Meta objects
 
 kfontmanager.moc: kfontmanager.h
-	$(MOC) kfontmanager.h -o kfontmanager.moc
+	$(MOC) $(srcdir)/kfontmanager.h -o kfontmanager.moc
 
 kfontexplorer.moc: kfontexplorer.h
-	$(MOC) kfontexplorer.h -o kfontexplorer.moc
+	$(MOC) $(srcdir)/kfontexplorer.h -o kfontexplorer.moc
 
 kfontlist.moc: kfontlist.h
-	$(MOC) kfontlist.h -o kfontlist.moc
+	$(MOC) $(srcdir)/kfontlist.h -o kfontlist.moc
 
 install-data-local:
 	$(mkinstalldirs) $(kde_icondir)
-	$(INSTALL_DATA) kfontmanager.xpm $(kde_icondir)/kfontmanager.xpm
+	$(INSTALL_DATA) $(srcdir)/kfontmanager.xpm $(kde_icondir)/kfontmanager.xpm
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-kfontmanager.xpm $(kde_minidir)/kfontmanager.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kfontmanager.xpm $(kde_minidir)/kfontmanager.xpm
 
 uninstall-local:
 	rm -f $(kde_icondir)/kfontmanager.xpm

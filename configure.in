@@ -160,21 +160,21 @@ fi
 AC_CHECK_UTMP_FILE
 
 AC_OUTPUT(Makefile \
+	applnk/Makefile \
 	applnk/Applications/Makefile \
 	applnk/Games/Makefile \
 	applnk/Graphics/Makefile \
 	applnk/Internet/Makefile \
-	applnk/Makefile \
 	applnk/Multimedia/Makefile \
+	applnk/Settings/Makefile \
+	applnk/Settings/Applications/Makefile \
 	applnk/Settings/Desktop/Makefile \
 	applnk/Settings/Information/Makefile \
 	applnk/Settings/Input_Devices/Makefile \
-	applnk/Settings/Makefile \
+	applnk/Settings/Keys/Makefile \
 	applnk/Settings/Network/Makefile \
-	applnk/Settings/Applications/Makefile \
 	applnk/Settings/Sound/Makefile \
 	applnk/Settings/Windows/Makefile \
-	applnk/Settings/Keys/Makefile \
 	applnk/System/Makefile \
 	applnk/Utilities/Makefile \
 	config/Makefile \
@@ -209,11 +209,11 @@ AC_OUTPUT(Makefile \
 	doc/kdisknav/Makefile \
 	doc/kpager/Makefile \
 	kappfinder/Makefile \
+	kappfinder/apps/Makefile \
 	kappfinder/apps/Development/Makefile \
 	kappfinder/apps/Editors/Makefile \
 	kappfinder/apps/Graphics/Makefile \
 	kappfinder/apps/Internet/Makefile \
-	kappfinder/apps/Makefile \
 	kappfinder/apps/System/Makefile \
 	kappfinder/apps/Toys/Makefile \
 	kappfinder/apps/Utilities/Makefile \
@@ -281,8 +281,8 @@ AC_OUTPUT(Makefile \
 	kmenuedit/Makefile \
 	kmenuedit/icons/Makefile \
 	konsole/Makefile \
+	konsole/doc/Makefile \
  	konsole/doc/sgml/Makefile \
- 	konsole/doc/Makefile \
 	konsole/doc/VT100/Makefile \
 	konsole/include/Makefile \
 	konsole/other/Makefile \
@@ -290,6 +290,7 @@ AC_OUTPUT(Makefile \
 	kpanel/Makefile \
 	kpanel/pics/Makefile \
 	kpanel/pics/mini/Makefile \
+	kpanel/sample_kdelnk_files/Makefile \
 	krootwm/Makefile \
 	kscreensaver/Makefile \
 	kscreensaver/bitmaps/Makefile	\

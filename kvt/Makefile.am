@@ -21,16 +21,16 @@ EXTRA_DIST = kvt.xpm mini-kvt.xpm
 main.C: main.moc
 
 main.moc: main.h
-	$(MOC) main.h -o main.moc
+	$(MOC) $(srcdir)/main.h -o main.moc
+
+icon_DATA = kvt.xpm
+icondir = $(kde_icondir)
 
 install-data-local: 
-	$(mkinstalldirs) $(kde_icondir)
-	$(INSTALL_DATA) kvt.xpm $(kde_icondir)/kvt.xpm
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-kvt.xpm $(kde_minidir)/kvt.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kvt.xpm $(kde_minidir)/kvt.xpm
 
 uninstall-local:
-	rm -f $(kde_icondir)/kvt.xpm
 	rm -f $(kde_minidir)/kvt.xpm
 
 messages:

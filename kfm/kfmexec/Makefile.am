@@ -1,7 +1,7 @@
 
-INCLUDES=       $(all_includes) -I..
+INCLUDES= $(all_includes) -I$(srcdir)/..
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
-LDADD   =             $(LIB_KFM) 
+LDADD   = $(LIB_KFM) 
 
 ####### Files
 
@@ -18,6 +18,6 @@ main.cpp: main.moc
 ####### Meta objects
 
 main.moc: main.h
-	$(MOC) main.h -o main.moc
+	$(MOC) $(srcdir)/main.h -o main.moc
 
 
