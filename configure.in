@@ -274,7 +274,7 @@ AC_OUTPUT(Makefile \
 	applnk/Utilities/Makefile \
 	applnk/Makefile \
 	po/Makefile \
-	po/cz/Makefile \
+	po/cs/Makefile \
 	po/da/Makefile \
 	po/de/Makefile \
 	po/es/Makefile \
