@@ -280,7 +280,9 @@ void KfmGui::initMenu()
     edit->insertItem( klocale->translate("&Move to Trash"), 
 		      this, SLOT(slotTrash()) );
     edit->insertItem( klocale->translate("&Delete"), this, 
-		      SLOT(slotDelete()), Key_Delete );
+		      SLOT(slotDelete())); 
+        // adding Key_Delete here prevents deleting chars in toolbarURL (lined)
+
     edit->insertSeparator();
     edit->insertItem( klocale->translate("&Select"), this, 
 		      SLOT(slotSelect()), CTRL+Key_S );
