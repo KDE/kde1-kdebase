@@ -154,6 +154,10 @@ void HTMLCache::slotJobFinished( HTMLCacheJob* _job )
         //debug("HTMLCACHE::slotJobFinished : inserting %s",s->data());
         urlDict->replace( _job->getSrcURL(), s );
     }
+    else 
+    {
+       delete s;
+    }
 
     // Tell all instances
     HTMLCache *p;
@@ -334,7 +338,11 @@ void HTMLCache::load()
 	  if ( lstat( s->data(), &buff ) == 0 ) {
             //debug("HTMLCACHE : inserting %s",s->data());
 	    urlDict->replace( url, s );
-          } //else debug("HTMLCACHE : _not_ inserting %s",s->data());
+          } 
+          else 
+          {
+            delete s;
+          }
 	}
       }
     } while ( p );

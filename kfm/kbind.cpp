@@ -973,12 +973,13 @@ QPixmap* KDELnkMimeType::getPixmap( const char *_url, bool _mini )
 
 QString KDELnkMimeType::getComment( const char *_url )
 {
-  KSimpleConfig *config = KMimeBind::openKConfig( _url ); // kalle
+    KSimpleConfig *config = KMimeBind::openKConfig( _url ); // kalle
     
     if ( config == 0L )
 	return QString();
     
     QString erg = config->readEntry( "Comment" );
+    delete config;
     return QString( erg.data() );
 }
 
