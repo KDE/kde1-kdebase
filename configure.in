@@ -277,6 +277,7 @@ AC_OUTPUT(Makefile \
 	kikbd/doc/en/Makefile \
 	kikbd/doc/ru/Makefile \
 	kikbd/maps/Makefile \
+	kikbd/maps/codes/Makefile \
 	kmenuedit/Makefile \
 	kmenuedit/icons/Makefile \
 	kpanel/Makefile \
