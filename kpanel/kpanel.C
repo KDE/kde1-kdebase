@@ -203,9 +203,9 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     }
 
     
-    entries[nbuttons++].button = new myPushButton( this, klocale->translate("System"));
+    entries[nbuttons++].button = new myPushButton( this, klocale->translate("Go!"));
     entries[nbuttons-1].button->installEventFilter( this );
-    QToolTip::add(entries[nbuttons-1].button, klocale->translate("System"));
+    QToolTip::add(entries[nbuttons-1].button, "Where do you want to go tomorrow?");
 
     connect( entries[nbuttons-1].button, SIGNAL(clicked()), 
 	     SLOT(button_clicked()) );
