@@ -51,6 +51,20 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
         hlay->addWidget(leTerminal, 5);
         //-------------------------------
 
+        //---------------- "Editor" lineedit ---------------
+        hlay = new QHBoxLayout(10);
+        lay->addLayout(hlay);
+        label = new QLabel(i18n("Editor"),this);
+        label->adjustSize();
+        label->setMinimumSize(label->size());
+        hlay->addWidget(label, 1);
+        
+        leEditor = new QLineEdit(this);
+        leEditor->adjustSize();
+        leEditor->setMinimumSize(leEditor->size());
+        hlay->addWidget(leEditor, 5);
+        //-------------------------------
+
         lay->addStretch(10);
         lay->activate();
  
@@ -66,12 +80,14 @@ void KMiscOptions::loadSettings()
     bool bUrlprops = g_pConfig->readBoolEntry( "EnablePerURLProps", false);
     bool bTreeFollow = g_pConfig->readBoolEntry( "TreeFollowsView", false);
     QString sTerminal = g_pConfig->readEntry( "Terminal", DEFAULT_TERMINAL );
+    QString sEditor = g_pConfig->readEntry( "Editor", DEFAULT_EDITOR );
 
     // *** apply to GUI ***
 
     urlpropsbox->setChecked(bUrlprops);
     treefollowbox->setChecked(bTreeFollow);
     leTerminal->setText(sTerminal);
+    leEditor->setText(sEditor);
 }
 
 void KMiscOptions::defaultSettings()
@@ -79,6 +95,7 @@ void KMiscOptions::defaultSettings()
     urlpropsbox->setChecked(false);
     treefollowbox->setChecked(false);
     leTerminal->setText(DEFAULT_TERMINAL);
+    leEditor->setText(DEFAULT_EDITOR);
 }
 
 void KMiscOptions::saveSettings()
@@ -87,6 +104,7 @@ void KMiscOptions::saveSettings()
     g_pConfig->writeEntry( "EnablePerURLProps", urlpropsbox->isChecked());
     g_pConfig->writeEntry( "TreeFollowsView", treefollowbox->isChecked());
     g_pConfig->writeEntry( "Terminal", leTerminal->text());
+    g_pConfig->writeEntry( "Editor", leEditor->text());
     g_pConfig->sync();
 }
 

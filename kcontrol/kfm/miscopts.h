@@ -39,6 +39,7 @@ private:
         QCheckBox *urlpropsbox;
         QCheckBox *treefollowbox;
         QLineEdit *leTerminal;
+        QLineEdit *leEditor;
 };
 
 #endif // __KFM_MISC_OPTIONS_H
