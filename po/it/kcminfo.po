@@ -12,119 +12,122 @@ msgstr ""
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr ""
+msgstr "schermo #%d"
 
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr ""
+msgstr "  dimesnione          : %dx%s pixel (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr ""
+msgstr "  risoluzione         : %dx%d punti per pollice\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr ""
+msgstr "  colori (%d)          : "
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr ""
+msgstr "nome del display      : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr ""
+msgstr "numero versione       : %i.%i"
 
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr ""
+msgstr "stringa distributore  : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr ""
+msgstr "numero release ditrib.: %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr ""
+msgstr "numero schermo predef.: %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr ""
+msgstr "numero di schermi     : %i"
 
 #: info.cpp:179
-#, fuzzy
+#,          
 msgid ""
 "No Information available\n"
 " or\n"
 "this system is not yet supported :-("
-msgstr "Questo sistema non è ancora supportato :-("
+msgstr ""
+"Nessuna informazione disponibile\n" 
+" o\n"
+"questo sistema non è ancora supportato :-("
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr ""
+msgstr "%s, velocità sconosciuta"
 
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr ""
+msgstr "%s attivo a % MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr ""
+msgstr "Ahh impossibile aprire fstab!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
-msgstr ""
+msgstr "Dispositivo"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
-msgstr ""
+msgstr "Punto di Montaggio"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr ""
+msgstr "Tipo FS"   
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr ""
+msgstr "Opzioni montaggio"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
-msgstr ""
+msgstr "tipo di CPU sconosciuto"
 
 #: info_hpux.cpp:62
-#, fuzzy
+#,      
 msgid "unavailable"
-msgstr "Non disponibile"
+msgstr "non disponibile"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr ""
+msgstr "Numero di processorei attivi= "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr ""
+msgstr "Valore"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
-msgstr ""
+msgstr "Canali DMA"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr ""
+msgstr "usato da"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr ""
+msgstr "Range di I/O"
 
 #: main.cpp:79
 msgid "&Memory"
@@ -140,35 +143,35 @@ msgstr ""
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr ""
+msgstr "Canali-&DMA"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr ""
+msgstr "&Porte di IO"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr ""
+msgstr "Bu&s PCI"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr ""
+msgstr "Su&ono"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr ""
+msgstr "Dispositi&vi"
 
 #: main.cpp:103
 msgid "S&CSI"
-msgstr ""
+msgstr "&SCSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr ""
+msgstr "Parti&zioni"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr ""
+msgstr "Server &X"
 
 #: main.cpp:120
 msgid ""
@@ -176,6 +179,9 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
+"utilizzo:  kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"

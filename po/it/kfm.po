@@ -38,24 +38,24 @@ msgstr "&Trova"
 
 #: kfmgui.cpp:252
 msgid "&Move to Trash"
-msgstr "&Cestina"
+msgstr "Cesti&na"
 
 #: kfmgui.cpp:261
 msgid "&Select"
 msgstr "&Seleziona"
 
 #: kfmgui.cpp:263
-#, fuzzy
+#,         
 msgid "Select &all"
 msgstr "Seleziona &tutto"
 
 #: kfmgui.cpp:266
 msgid "&Find in page..."
-msgstr "&Cerca nella pagina..."
+msgstr "Ce&rca nella pagina..."
 
 #: kfmgui.cpp:268
 msgid "Find &next"
-msgstr "Cerca &successivo"
+msgstr "Cerca successi&vo"
 
 #
 #: kfmgui.cpp:271
@@ -63,7 +63,7 @@ msgid "Mime &Types"
 msgstr "Mime T&ypes"
 
 #: kfmgui.cpp:273
-#, fuzzy
+#,       
 msgid "App&lications"
 msgstr "A&pplicazioni"
 
@@ -82,15 +82,15 @@ msgstr "Mostra File &Nascosti"
 
 #: kfmgui.cpp:290
 msgid "Show Tr&ee"
-msgstr "Mostra Struttura Dir&ectory"
+msgstr "Mostra Struttura &Directory"
 
 #: kfmgui.cpp:292
 msgid "Sho&w Thumbnails"
-msgstr "Mostra T&humbnails"
+msgstr "Mostra &Thumbnails"
 
 #: kfmgui.cpp:294
 msgid "&HTML View"
-msgstr "HTML"
+msgstr "&HTML"
 
 #: kfmgui.cpp:297
 msgid "&Icon View"
@@ -110,16 +110,16 @@ msgstr "&Rapida"
 
 #: kfmgui.cpp:309
 msgid "Rel&oad Tree"
-msgstr "Rileggi Struttura Directory"
+msgstr "Rile&ggi Struttura Directory"
 
 #: kfmgui.cpp:311
 msgid "&Reload Document"
-msgstr "&Rileggi Documento"
+msgstr "R&ileggi Documento"
 
 #
 #: kfmgui.cpp:313
 msgid "Rescan &Bindings"
-msgstr "RiLeggi &Collegamenti"
+msgstr "Rileggi &Collegamenti"
 
 #: kfmgui.cpp:316
 msgid "&View Frame Source"
@@ -127,7 +127,7 @@ msgstr "&Mostra Sorgente del Frame"
 
 #: kfmgui.cpp:318
 msgid "View Docu&ment Source"
-msgstr "Mostra Sorgente del Documento"
+msgstr "Mostra Sor&gente del Documento"
 
 #: kfmgui.cpp:326
 msgid "Auto"
@@ -192,17 +192,17 @@ msgid "Save Settings for this &URL"
 msgstr "Sal&va Impostazioni per questa URL"
 
 #: kfmgui.cpp:391
-#, fuzzy
+#        
 msgid "&Configure File Manager..."
-msgstr "Configura Browser..."
+msgstr "Configura File &Manager..."
 
 #: kfmgui.cpp:393
-#, fuzzy
+#,       
 msgid "Configure &Browser..."
-msgstr "Configura Browser..."
+msgstr "Configura &Browser..."
 
 #: kfmgui.cpp:429
-#, fuzzy
+#
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -225,7 +225,7 @@ msgstr ""
 "Proxy Manager di Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de\n"
 "\n"
-"Bug reports e patch a David Faure\n"
+"Responsabile: David Faure\n"
 "faure@kde.org"
 
 #: kfmgui.cpp:442
@@ -282,9 +282,9 @@ msgid "KFM Error"
 msgstr "Errore KFM"
 
 #: kfmgui.cpp:560
-#, fuzzy
+#
 msgid "Location:"
-msgstr "Apri locazione:"
+msgstr "Locazione:"
 
 #: kfmexec.cpp:59 kfmgui.cpp:746 kfmman.cpp:1387
 msgid "Malformed URL\n"
@@ -329,7 +329,7 @@ msgid "&Forward"
 msgstr "&Avanti"
 
 #: kfmgui.cpp:1082
-#, fuzzy
+#
 msgid "&Home"
 msgstr "&Home"
 
@@ -359,7 +359,7 @@ msgstr ""
 msgid "Document: Done"
 msgstr "Documento: Ok"
 
-# ,fuzzy
+# 
 #: kfmview.cpp:439 root.cpp:909
 msgid "ERROR: You may only drop URLs"
 msgstr "ERRORE: Puoi fare il drop solo di URL"
@@ -586,6 +586,10 @@ msgid ""
 "\n"
 "Would you like to install the new ones?"
 msgstr ""
+"Una nuova versione di KDE è stata installata.\n"
+"I file Modello potrebbero essere cambiati.\n"
+"\n"
+"Vuoi installare quelli nuovi ?"
 
 #: main.cpp:266
 msgid "Cd"
@@ -752,7 +756,7 @@ msgid "Ownership"
 msgstr "Proprietà"
 
 #: kfmprops.cpp:505
-#, fuzzy
+#
 msgid "Owner"
 msgstr "Proprietario"
 
@@ -787,9 +791,9 @@ msgid "Execute"
 msgstr "Esegui"
 
 #: kfmprops.cpp:686
-#, fuzzy
+#
 msgid "&Browse..."
-msgstr "&Sfoglia"
+msgstr "&Sfoglia..."
 
 #: kfmprops.cpp:698
 msgid "Working Directory"
@@ -1186,21 +1190,21 @@ msgstr ""
 "non esiste"
 
 #: kiojob.cpp:1287
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Tar reported a fatal error\n"
 "%s"
 msgstr ""
-"Tar ha riscontrato un errore\n"
+"Tar ha riscontrato un errore fatale\n"
 "%s"
 
 #: kiojob.cpp:1291
-#, fuzzy, c-format
+#,, c-format
 msgid ""
 "Gzip reported a fatal error\n"
 "%s"
 msgstr ""
-"Gzip ha riscontrato un errore\n"
+"Gzip ha riscontrato un errore fatale\n"
 "%s"
 
 #: kiojob.cpp:1295
@@ -1360,9 +1364,9 @@ msgid "This group is empty!"
 msgstr "Questo gruppo è vuoto!"
 
 #: finddlg.cpp:41
-#, fuzzy
+#
 msgid "Find:"
-msgstr "Trova:"
+msgstr "Cerca:"
 
 #: finddlg.cpp:56
 msgid "Case &sensitive"
@@ -1370,32 +1374,32 @@ msgstr "Sensibile masiucole/minuscole"
 
 #: kcookiewin.cpp:58
 msgid "Cookie Alert!"
-msgstr ""
+msgstr "Avviso Cookie!"
 
 #: kcookiewin.cpp:76
 msgid "You received a cookie from host:"
-msgstr ""
+msgstr "Hai ricevuto un cookie dall'host:"
 
 #: kcookiewin.cpp:89
 msgid "Do you want to accept or reject this cookie?"
-msgstr ""
+msgstr "Vuoi accettare o respingere questo cookie?"
 
 #: kcookiewin.cpp:120
-#, fuzzy
+#
 msgid "Apply to "
-msgstr "Applica globalmente"
+msgstr "Applica a "
 
 #: kcookiewin.cpp:125
 msgid "&This cookie only"
-msgstr ""
+msgstr "&Solo questo cookie"
 
 #: kcookiewin.cpp:133
 msgid "All cookies from this &domain"
-msgstr ""
+msgstr "Tutti i cookie da questo &dominio"
 
 #: kcookiewin.cpp:140
 msgid "All &cookies"
-msgstr ""
+msgstr "Tutti i &cookie"
 
 #: popup.cpp:69
 #, c-format
@@ -1407,6 +1411,8 @@ msgid ""
 "Source file doesn't exist anymore ! \n"
 "Use \"Rescan Bindings\" in View menu to update the menu"
 msgstr ""
+"Il sorgente non esiste pi€ ! \n"
+"Usa \"Rileggi Collegamenti\" nel menu visualizza per aggiornare il menu"
 
 #: popup.cpp:114 popup.cpp:121
 msgid "New "
@@ -1526,11 +1532,11 @@ msgstr ""
 #~ msgid "Vertical Root Grid Spacing:"
 #~ msgstr "Spaziatura Verticale griglia:"
 
-#, fuzzy
+#, uzzy
 #~ msgid "&Allow per-URL settings"
 #~ msgstr "Autorizza impostazioni per URL"
 
-#, fuzzy
+#, uzzy
 #~ msgid "&Transparent Text for Root Icons."
 #~ msgstr "Testo trasparente per le Icone di Root."
 
@@ -1597,7 +1603,7 @@ msgstr ""
 #~ msgid "&Visual Schnauzer"
 #~ msgstr "&Visualizza Contenuti"
 
-#, fuzzy
+#,  uzzy
 #~ msgid "Name"
 #~ msgstr "Nome completo"
 

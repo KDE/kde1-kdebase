@@ -15,7 +15,7 @@ msgstr "Centro di Controllo KDE"
 
 #: toplevel.cpp:78
 msgid "&Swallow modules"
-msgstr "Importa moduli"
+msgstr "&Importa moduli"
 
 #: toplevel.cpp:81
 msgid ""
@@ -36,28 +36,28 @@ msgstr ""
 
 #: mainwidget.cpp:45
 msgid "System:"
-msgstr ""
+msgstr "Sistema:"
 
 #: mainwidget.cpp:48
 msgid "User: "
-msgstr ""
+msgstr "Utente: "
 
 #: mainwidget.cpp:54
 msgid "Hostname: "
-msgstr ""
+msgstr "Nome host: "
 
 #: mainwidget.cpp:62
 msgid "System: "
-msgstr ""
+msgstr "Sistema: "
 
 #: mainwidget.cpp:69
 msgid "Release: "
-msgstr ""
+msgstr "Release: "
 
 #: mainwidget.cpp:77
 msgid "Version: "
-msgstr ""
+msgstr "Versione: "
 
 #: mainwidget.cpp:84
 msgid "Machine: "
-msgstr ""
+msgstr "Macchina: "

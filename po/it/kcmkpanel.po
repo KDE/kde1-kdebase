@@ -110,7 +110,7 @@ msgstr "&Attesa:"
 
 #: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
-msgstr ""
+msgstr "Piccola"
 
 #
 #: options.cpp:98 options.cpp:167 options.cpp:269
@@ -119,7 +119,7 @@ msgstr "Grande"
 
 #: options.cpp:110
 msgid "Visuals"
-msgstr ""
+msgstr "Visuali"  
 
 #: options.cpp:144
 msgid "Auto &Hide Panel"
@@ -136,7 +136,7 @@ msgstr "Velocità:"
 
 #: options.cpp:191 options.cpp:293 options.cpp:356
 msgid "Slow"
-msgstr "Lento:"
+msgstr "Lenta:" 
 
 #: options.cpp:198 options.cpp:300 options.cpp:363
 msgid "Fast"
@@ -155,32 +155,32 @@ msgid "Others"
 msgstr "Altri"
 
 #: options.cpp:408
-#, fuzzy
+#,       
 msgid "Personal Menu Entries &First"
-msgstr "P&rima Personale"
+msgstr "P&rima Voci del Menu Personale"
 
 #
 #: options.cpp:416
-#, fuzzy
+#         
 msgid "Menu F&olders First"
-msgstr "Prima le &cartelle"
+msgstr "Prima le &Cartelle menu"
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
 msgstr "&Ora scritta in formato AM/PM"
 
 #: options.cpp:432
-#, fuzzy
+#         
 msgid "Clock shows time in &Internet beats"
-msgstr "&Ora scritta in formato AM/PM"
+msgstr ""                               
 
 #: disknav.cpp:38
 msgid "History"
-msgstr ""
+msgstr "Storia"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr ""
+msgstr "Modifca voci: (trascina una cartella e crea un link)"
 
 #: disknav.cpp:64
 msgid "Edit &Personal..."
@@ -192,15 +192,15 @@ msgstr "Modifica &comuni..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr ""
+msgstr "Numero massimo cartelle recenti"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr ""
+msgstr "Numero massimo file recenti"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr ""
+msgstr "Numero massimo di file per cartella:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
@@ -213,20 +213,20 @@ msgstr "Ignora maiuscole nel riordinamento"
 #
 #: disknav.cpp:173
 msgid "Show Shared section"
-msgstr ""
+msgstr "Mostra sezioni condivise"
 
 #
 #: disknav.cpp:180
 msgid "Show Personal section"
-msgstr ""
+msgstr "Mostra sezione Personale"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr ""
+msgstr "Mostra sezione Recenti"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr ""
+msgstr "Mostra la voce Opzioni"
 
 #: disknav.cpp:210
 msgid "Terminal application:"

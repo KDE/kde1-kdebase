@@ -40,7 +40,7 @@ msgstr "utilizzo: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
-msgstr "Stile Gestore Finestre"
+msgstr "Stile Window manager"  
 
 #: titlebar.cpp:125
 msgid "Minimize"
@@ -161,9 +161,9 @@ msgid "(Un)Sticky"
 msgstr "Appiccica/Stacca"
 
 #: titlebar.cpp:1107
-#, fuzzy
+#            
 msgid "Title animation"
-msgstr "Animazione Titolo"
+msgstr "Animazione titolo"
 
 #: titlebar.cpp:1123
 msgid "ms"
@@ -200,7 +200,7 @@ msgid "Display content in resizing windows"
 msgstr "Mostra contenuto durante il ridimensionamento delle finestre"
 
 #: windows.cpp:98
-#, fuzzy
+#          
 msgid "Resize animation:"
 msgstr "Animazione ridimensionamento:"
 
@@ -271,9 +271,9 @@ msgid "Auto Raise"
 msgstr "Primo piano automatico"
 
 #: windows.cpp:209
-#, fuzzy
+#        
 msgid "Click Raise"
-msgstr "Alza"
+msgstr "Click Alza"
 
 #: windows.cpp:216
 msgid "Delay (ms)"
@@ -292,9 +292,9 @@ msgid "Move pointer towards center after switch"
 msgstr "Metti il cursore al centro dopo il cambio di desktop"
 
 #: desktop.cpp:87
-#, fuzzy
+#        
 msgid "Desktop switch delay:"
-msgstr "Attesa cambio di Desktop:"
+msgstr "Attesa cambiamento desktop:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"
@@ -374,9 +374,9 @@ msgid "Lower"
 msgstr "Abbassa"
 
 #: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
-#, fuzzy
+#        
 msgid "Operations menu"
-msgstr "Menu Operazioni"
+msgstr "Menu operazioni"
 
 #: mouse.cpp:116 mouse.cpp:125 mouse.cpp:135 mouse.cpp:194 mouse.cpp:205
 #: mouse.cpp:216

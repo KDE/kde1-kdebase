@@ -140,14 +140,14 @@ msgid "Select fonts"
 msgstr "Seleziona fonts"
 
 #: kdm-font.cpp:50
-#, fuzzy
+#        
 msgid "Example"
-msgstr "Esempio:"
+msgstr "Esempio" 
 
 #: kdm-font.cpp:52
-#, fuzzy
+#,      
 msgid "Change font..."
-msgstr "Cambia font"
+msgstr "Cambia font..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
@@ -170,17 +170,17 @@ msgid "Color"
 msgstr "Colore"
 
 #: kdm-bgnd.cpp:101
-#, fuzzy
+#,       
 msgid "Solid Color"
-msgstr "Colore"
+msgstr "Tinta unita"      
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr ""
+msgstr "Sfumatura Orizontale"        
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr ""
+msgstr "Sfumatura Verticale"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
@@ -191,39 +191,39 @@ msgid "None"
 msgstr "Nessuno"
 
 #: kdm-bgnd.cpp:176
-#, fuzzy
+#,        
 msgid "Tile"
 msgstr "Affiancata"
 
 #: kdm-bgnd.cpp:181
-#, fuzzy
+#,        
 msgid "Center"
 msgstr "Centrata"
 
 #: kdm-bgnd.cpp:186
-#, fuzzy
+#,       
 msgid "Scale"
-msgstr "Schermo pieno"
+msgstr "In scala"     
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr ""
+msgstr "AltoSinistra"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr ""
+msgstr "AltoDestra"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr ""
+msgstr "BassoSinistra"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr ""
+msgstr "BassoDestra"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr ""
+msgstr "Allegro"
 
 #: kdm-users.cpp:48
 msgid "All users"
@@ -270,9 +270,9 @@ msgid "Save image as default image?"
 msgstr "Salvo l'immagine come predefinita?"
 
 #: kdm-sess.cpp:52
-#, fuzzy
+#,               
 msgid "Allow to shutdown"
-msgstr "Autorizzato ad eseguire lo shutdown:"
+msgstr "Autorizza ad eseguire lo shutdown" 
 
 #: kdm-sess.cpp:57
 msgid "All"
