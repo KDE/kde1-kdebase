@@ -356,7 +356,7 @@ main( int argc, char ** argv )
 
         // primitive ~/.Xdefaults support
         {
-          QFile f(QDir::home() + "/.Xdefaults");
+          QFile f(QDir::homeDirPath() + "/.Xdefaults");
           
           if ( f.open(IO_ReadOnly) ) {
             
