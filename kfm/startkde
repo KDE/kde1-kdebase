@@ -1,6 +1,6 @@
 #!/bin/sh
 # It looks like the sleeps do speed up the startup time
-(sleep 1 && exec kaudioserver &
+(sleep 1 && exec kaudioserver) &
 (sleep 1 && exec kwmsound) &
 
 (sleep 1 && exec kfm) &
@@ -8,5 +8,5 @@
 
 (sleep 1 && exec kbgndwm) &
 (sleep 1 && exec krootwm) &
-(sleep 1 && exec kpanel &
+(sleep 1 && exec kpanel) &
 sleep 2 ; exec kwm
