@@ -3,10 +3,13 @@
 Type=Application
 DocPath=kcontrol/kcmkfm/kfm-1.html
 Name=File Manager
+Name[no]=Filbehandler
 Name[ru]=Менеджер Файлов
 Comment=You can configure here the filemanagers look and feel
+Comment[no]=Her kan du konfigurere hvordan skal filbehandleren skal se ut og fЬles
 Comment[ru]=Вы можете сконфигурировать как будет выглядеть менеджер файлов
 SwallowTitle=File Manager Options
+SwallowTitle[no]=Filbehandlervalg
 SwallowTitle[ru]=Опции Менеджера Файлов
 Icon=kfm.xpm
 Exec=kcmkfm
