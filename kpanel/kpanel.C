@@ -1105,7 +1105,6 @@ void kPanel::taskbarPressed(int item){
 }
 
 
-
 void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
    QPixmap pm;
    entries[nbuttons++].button = new myPushButton( this);

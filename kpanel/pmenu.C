@@ -353,7 +353,12 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
   cmenu = (myPopupMenu *) menu;
   menu->installEventFilter((QObject *) panel);
   connect( menu, SIGNAL(highlighted(int)), this, SLOT(highlighted(int)) );
-  connect( menu, SIGNAL(aboutToShow()), this, SLOT(aboutToShow()) );
+
+  if (add_button)
+    connect( menu, SIGNAL(aboutToShow()), this, SLOT(aboutToShowAddMenu()) );
+  else
+    connect( menu, SIGNAL(aboutToShow()), this, SLOT(aboutToShow()) );
+
   for( item = list.first(); item != 0; item = list.next() )
     {
       et = item->entry_type;
@@ -677,11 +682,11 @@ void PMenu::create_pixmap( QPixmap &buf, PMenuItem *item, QPopupMenu *menu)
   p.end();
 }
 
+// search for kdelnk-file as a PMenuItem inside this PMenu hierarchy
+// if it can't find the file it will return a new created PMenuItem
+//
 PMenuItem * PMenu::searchItem(QString name)
 {
-  // search for kdelnk-file as a PMenuItem inside this PMenu hierarchy
-  // if it can't find the file it will return a new created PMenuItem
-
   getPaths();
   PMenuItem *found_item = 0L;
   PMenuItem *item;
@@ -826,8 +831,17 @@ void PMenu::highlighted( int id )
     item->highlighted();
 }
 
-void
-PMenu::aboutToShow()
+void PMenu::aboutToShow()
+{
+  parseBeforeShowing(false);
+}
+
+void PMenu::aboutToShowAddMenu()
+{
+  parseBeforeShowing(true);
+}
+
+void PMenu::parseBeforeShowing(bool is_add_menu)
 {
   extern kPanel *the_panel;
 
@@ -836,7 +850,7 @@ PMenu::aboutToShow()
 
   QDir dir(this->parentItem->getFullPathName());
   this->parse(dir);
-  this->createMenu(this->parentItem->cmenu, the_panel);
+  this->createMenu(this->parentItem->cmenu, the_panel, is_add_menu);
 }
 
 PMenuItem*PMenu:: menu_editor_item = 0;

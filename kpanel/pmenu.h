@@ -175,6 +175,7 @@ signals:
 
 public slots:
   virtual void aboutToShow();
+  virtual void aboutToShowAddMenu();
 
 protected slots:
   virtual void highlighted(int id);
@@ -184,6 +185,7 @@ private:
 
 protected:
   QString uniqueFileName(QString name, QString dir_name);
+  void parseBeforeShowing(bool is_add_menu);
 
   QList<PMenuItem> list;
   myPopupMenu      *cmenu;
