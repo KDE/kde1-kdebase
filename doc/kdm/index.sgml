@@ -263,20 +263,28 @@ order it was read. The default is to display users in sorted order.
 </descrip>
 
 <sect1>KDMDESKTOP
-
 <p>
 This section controls the background. The keys are:
-<tscreen><verb>
-BackgroundPicture
-BackgroundColor
-BackgroundPictureTile
-BackgroundPictureCenter
-FancyBackground
+<tscreen><verb> 
+BackgroundPicture 
+BackgroundColor1 
+BackgroundColor2 
+BackgroundPictureMode 
 </verb></tscreen>
 
-The first is the path to an image, the second a named color and the
-rest are booleans (<tt>0</tt> or <tt>1</tt>). Note that
-<tt>FancyBackground=1</tt> looks nice, but is <bf>very</bf> slow.
+A short description of the keys: 
+<descrip> 
+
+<tag/BackgroundPicture/ is the path to an image. 
+<p>
+<tag/BackgroundColor[1|2]/ are named colors for solid and blended background. 
+<p>
+<tag/BackgroundPictureMode/ can contain one of the following options:
+<p>
+<tt>None | Tile | Scale | Center | TopLeft | TopRight | BottomLeft | BottomRight | Fancy</tt>
+<p> 
+Note that <tt>Fancy</tt> background looks nice, but is <bf>very</bf> slow.
+</descrip> 
 <p>
 <sect1>Locale
 

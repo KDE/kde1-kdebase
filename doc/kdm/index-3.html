@@ -4,7 +4,7 @@
 <TITLE>KDE Display Manager (KDM): Configuring kdm</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
 <META NAME="keywords" CONTENT="KDM installation introduction">
-<META NAME="description" CONTENT="Installing KDM">
+<META NAME="description" CONTENT="KDM">
 </HEAD>
 <BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
 <FONT FACE="Helvetica">
@@ -101,16 +101,21 @@ order it was read. The default is to display users in sorted order.
 <P>This section controls the background. The keys are:
 <BLOCKQUOTE><CODE>
 <PRE>
-BackgroundPicture
-BackgroundColor
-BackgroundPictureTile
-BackgroundPictureCenter
-FancyBackground
+ BackgroundPicture BackgroundColor1 BackgroundColor2 BackgroundPictureMode 
 </PRE>
 </CODE></BLOCKQUOTE>
-<P>The first is the path to an image, the second a named color and the
-rest are booleans (<CODE>0</CODE> or <CODE>1</CODE>). Note that
-<CODE>FancyBackground=1</CODE> looks nice, but is <B>very</B> slow.
+<P>A short description of the keys: 
+<DL>
+<DT><B>BackgroundPicture</B><DD><P>is the path to an image. 
+<P>
+<DT><B>BackgroundColor[1|2]</B><DD><P>are named colors for solid and blended background. 
+<P>
+<DT><B>BackgroundPictureMode</B><DD><P>can contain one of the following options:
+<P><CODE>None | Tile | Scale | Center | TopLeft | TopRight | BottomLeft | BottomRight | Fancy</CODE>
+<P> Note that 
+<CODE>Fancy</CODE> background looks nice, but is <B>very</B> slow.
+</DL>
+ 
 <P>
 <H3><A NAME="ss3.3">3.3 Locale</A>
 </H3>
