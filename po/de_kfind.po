@@ -1,0 +1,150 @@
+msgid "Add to archive"
+msgstr "Zum Archive hinzufügen"
+
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "Properties"
+msgstr "Eigenschaften"
+
+msgid "Open Containing Folder"
+msgstr "Öffen des Entsprechenden Verzeichnisses"
+
+msgid "Save Search"
+msgstr "Suchergebnisse speichern"
+
+msgid "_abouttext"
+msgstr "Kfind %s\n Grafische Oberfläche für Programm find\nMiroslav Flídr <flidr@kky.zcu.cz>"
+
+msgid "&File"
+msgstr "&Datei"
+
+msgid "&Edit"
+msgstr "&Bearbeiten"
+
+msgid "&Options"
+msgstr "&Einstellungen"
+
+msgid "&Help"
+msgstr "&Hilfe"
+
+msgid "Undo"
+msgstr "Rückgängig"
+
+msgid "Cut"
+msgstr "Ausschneiden"
+
+msgid "Copy"
+msgstr "Kopieren"
+
+msgid "Select All"
+msgstr "Alle auswählen"
+
+msgid "Invert Selection"
+msgstr "Auswahl invertieren"
+
+msgid "Preferences ..."
+msgstr "Präferenzen ..."
+
+msgid " Name&Location "
+msgstr " Name&Pfad "
+
+msgid " Date Modified "
+msgstr " Änderungsdatum "
+
+msgid " Advanced "
+msgstr " Erweitert "
+
+msgid "&Named:"
+msgstr "Name:"
+
+msgid "&Look in:"
+msgstr "Suche in:"
+
+msgid "Include &subfolders"
+msgstr "Unterverzeichnisse einschliessen"
+
+msgid "&Browse ..."
+msgstr "Ä&ndern..."
+
+msgid "&All files"
+msgstr "Alle Dateien"
+
+msgid "_findall"
+msgstr "Suche alle Dateien erstellt oder verändert:"
+
+msgid "&between"
+msgstr "zwischen  "
+
+msgid "and"
+msgstr "und"
+
+msgid "during the previou&s "
+msgstr "in den letzten"
+
+msgid "&during the previous "
+msgstr "in den letzten"
+
+msgid "month(s)"
+msgstr "Monat(en)"
+
+msgid "day(s)"
+msgstr "Tag(en)"
+
+msgid "Kfind help"
+msgstr "Kfind Hilfe"
+
+msgid "Of &type:"
+msgstr "Vom &Typ:"
+
+msgid "_alltypes"
+msgstr "Alle Dateien und Verzeichnisse"
+
+msgid "&Containing Text:"
+msgstr "Beinhaltet Text:"
+
+msgid "&Size is:" 
+msgstr "Größe ist:"
+
+msgid "At Least" 
+msgstr "mindestens"
+
+msgid "At Most" 
+msgstr "höchstens"
+
+# ********* Options *************
+msgid "Preferences" 
+msgstr "Präferenzen"
+
+msgid "Saving" 
+msgstr "Speichern"
+
+msgid "File format:" 
+msgstr "Dateiformat"
+
+msgid "Save results to file:" 
+msgstr "Ergebnisse speichern in:"
+
+msgid "Save results to file ~/.kfind-results.html" 
+msgstr "Ergebnisse speichern in ~/.kfind-results.html"
+
+msgid "Plain Text" 
+msgstr "Einfache Datei"
+
+#*********** Tooltips ************
+
+msgid "Start Search" 
+msgstr "Suche starten"
+
+msgid "New Search" 
+msgstr "Neue Suche"
+
+msgid "Stop Search" 
+msgstr "Suche abbrechen"
+
+msgid "Save Search Results" 
+msgstr "Suchergebnisse speichern"
+
+msgid "Help" 
+msgstr "Hilfe"
+

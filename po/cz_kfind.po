@@ -1,0 +1,153 @@
+msgid "Add to archive"
+msgstr "Pøidat do archivu"
+
+msgid "Delete"
+msgstr "Smazat"
+
+msgid "Properties"
+msgstr "Vlastnosti"
+
+msgid "Open Containing Folder"
+msgstr "Otevøít odpovídající aresáø"
+
+msgid "Save Search"
+msgstr "Ulo¾it výsledky"
+
+msgid "_abouttext"
+msgstr "Kfind %s\n Grafická nadstavba programu find\nMiroslav Flídr <flidr@kky.zcu.cz>"
+
+msgid "&File"
+msgstr "&Soubor"
+
+msgid "&Edit"
+msgstr "&Editovat"
+
+msgid "&Nastavení"
+msgstr "&Einstelungen"
+
+msgid "&Help"
+msgstr "&Nápovìda"
+
+msgid "Undo"
+msgstr "Anulovat"
+
+msgid "Cut"
+msgstr "Vyøíznout"
+
+msgid "Copy"
+msgstr "Kopírovat"
+
+msgid "Select All"
+msgstr "Vybrat v¹e"
+
+msgid "Invert Selection"
+msgstr "Invertovat výbìr"
+
+msgid "Preferences ..."
+msgstr "Preference ..."
+
+msgid " Name&Location "
+msgstr " Jméno&Místo "
+
+msgid " Date Modified "
+msgstr " Zmìnìné datum "
+
+msgid " Advanced "
+msgstr " Pokroèilé "
+
+msgid "&Named:"
+msgstr "Pojmenované:"
+
+msgid "&Look in:"
+msgstr "Hledej v:"
+
+msgid "Include &subfolders"
+msgstr "Zahrò podaresáøe"
+
+msgid "&Browse ..."
+msgstr "Listuj ..."
+
+msgid "&All files"
+msgstr "V¹echny soubory"
+
+msgid "_findall"
+msgstr "Hledej v¹echny soubory vytvoøené nebo modifikované:"
+
+msgid "&between"
+msgstr "mezi  "
+
+msgid "and"
+msgstr "a"
+
+msgid "during the previou&s "
+msgstr "bìhem posledních"
+
+msgid "&during the previous "
+msgstr "bìhem posledních"
+
+msgid "month(s)"
+msgstr "mìsícù"
+
+msgid "day(s)"
+msgstr "dnù"
+
+msgid "Kfind help"
+msgstr "Nápovìda Kfindu"
+
+msgid "Of &type:"
+msgstr "Datový typ:"
+
+msgid "_alltypes"
+msgstr "V¹echny soubory a adresáøe"
+
+msgid "&Containing Text:"
+msgstr "Obsahující text:"
+
+msgid "&Size is:" 
+msgstr "Velikost je:"
+
+msgid "At Least" 
+msgstr "pøinejmen¹ím"
+
+msgid "At Most" 
+msgstr "nanejvý¹"
+
+# ********* Options *************
+msgid "Preferences" 
+msgstr "Preference"
+
+msgid "Saving" 
+msgstr "Ukládání"
+
+msgid "File format:" 
+msgstr "Datový formát"
+
+msgid "Save results to file:" 
+msgstr "Ulo¾it výsledky do:"
+
+msgid "Save results to file ~/.kfind-results.html" 
+msgstr "Ulo¾it výsledky do  ~/.kfind-results.html"
+
+msgid "Browse" 
+msgstr "Listovat"
+
+msgid "Plain Text" 
+msgstr "Text"
+
+#*********** Tooltips ************
+
+msgid "Start Search" 
+msgstr "Spustit hledání"
+
+msgid "New Search" 
+msgstr "Nové hledání"
+
+msgid "Stop Search" 
+msgstr "Zastavit hledání"
+
+msgid "Save Search Results" 
+msgstr "Ulo¾it výsledky"
+
+msgid "Help" 
+msgstr "Napovìda"
+
