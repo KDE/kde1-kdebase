@@ -123,7 +123,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	example_label->setFont(generalFont);
 	example_label->setGeometry( 345, 20, 85, 30 );
 	example_label->setAlignment(AlignCenter);
-	example_label->setBackgroundColor(white);
+	//	example_label->setBackgroundColor(white);
 	example_label->setFrameStyle( QFrame::WinPanel | QFrame::Sunken );
 	example_label->setLineWidth( 1 );
 	example_label->setText(klocale->translate("Sample"));
