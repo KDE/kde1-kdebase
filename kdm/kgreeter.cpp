@@ -343,14 +343,13 @@ KGreeter::save_wm()
      if (!pwd) return;
 
      QString file;
-     file.sprintf("%s/"WMRC, pwd->pw_dir);
+     ksprintf(&file, "%s/"WMRC, pwd->pw_dir);
      QFile f(file);
 
      // open file as user which is loging in
      seteuid(pwd->pw_uid);
-     bool noerr = f.open(IO_WriteOnly) != 0;
 
-     if ( noerr ) {
+     if ( f.open(IO_WriteOnly) ) {
 	  QTextStream t;
 	  t.setDevice( &f );
 	  t << sessionargBox->text( sessionargBox->currentItem()) << endl;
@@ -371,16 +370,15 @@ KGreeter::load_wm()
      if( !pwd) return;
 
      QString file;
-     file.sprintf("%s/"WMRC, pwd->pw_dir);
+     ksprintf(&file, "%s/"WMRC, pwd->pw_dir);
      QFile f(file);
 
      // open file as user which is loging in
      seteuid(pwd->pw_uid);
-     bool noerr = f.open(IO_ReadOnly) != 0;
 
      // set default wm
      int wm = 0;
-     if ( noerr ) {
+     if ( f.open(IO_ReadOnly) ) {
 	  QTextStream t( &f );
 	  QString s;
 	  if ( !t.eof() ) s = t.readLine();
@@ -519,7 +517,7 @@ KGreeter::restrict_expired(){
 	       return true;
 	  } else if (pwd->pw_expire - time(NULL) < warntime && !quietlog) {
 	       QString str;
-	       str.sprintf(i18n("Warning: your account expires on %s"), 
+	       ksprintf(&str, i18n("Warning: your account expires on %s"), 
 			   ctime(&pwd->pw_expire));  // use locales
 	       QMessageBox::critical(NULL, NULL,
 				     str,
@@ -546,7 +544,7 @@ KGreeter::restrict_expired(){
 	     return true;
 	 } else if (expiresec - time(NULL) < warntime) {
              QString str;
-	     str.sprintf(i18n("Warning: your account expires on %s"),
+	     ksprintf(&str, i18n("Warning: your account expires on %s"),
 			 ctime(&expiresec));  // use locales
 	     QMessageBox::critical(NULL, NULL,
 				   str,
