@@ -67,7 +67,11 @@ public:
      * @return TRUE if the icon is selected ( highlighted )
      */
     bool isSelected() { return bSelected; }
-  
+ 
+    bool isbeingmoved() { return beingmoved; }
+    void startmove() { beingmoved = true; } 
+    void endmove() { beingmoved = false; } 
+
     /// Call to rename an icon
     /**
       _new_name is not a complete URL. It is only the filename.
@@ -151,6 +155,12 @@ protected:
 
     int grid_x;
     int grid_y;
+
+    /*
+     * whether the icon currently occupies space or is in a state where a
+     * new position for it is to be calculated
+     */
+    bool beingmoved;
 
     /**
      * Tells, wether this icons represents a link in the UNIX sense of

@@ -180,7 +180,7 @@ int KProtocolProxyFTP::Open(KURL *_url, int mode)
 	command += _url->path();
 
 	command += " HTTP/1.0\n"; /* start header */
-	command += "UserAgent: Konqueror/1.0"; /* User agent */
+	command += "User-Agent: Konqueror/1.0"; /* User agent */
 
 	command += "Host: "; /* support for virtual hosts */
 	command += _url->host();

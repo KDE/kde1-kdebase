@@ -1,5 +1,7 @@
 Fri Mar 27 13:46:56 1998    <weis@snoopy.rz.uni-frankfurt.de>
 
+	* kioslave/ftp_proxy.cpp (Open): Fixed bug in UserAgent tag.
+
 	* kiojob.cpp (start): Added layout management
 	  for progress dialogs.
 

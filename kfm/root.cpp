@@ -347,27 +347,39 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
     dx /= gridwidth;
     dy /= gridheight;
     
-         
+    // first, mark the icons as being moved, so that they do not occupy
+    // the space for our move operation, where icons can only be moved
+    // to free space (before this, you could never move an icon to the
+    // position it was before
+ 
+    char *s;
+    for ( s = _urls.first(); s != 0L; s = _urls.next() )
+    {
+      KRootIcon* icon = findIcon( s );
+      if( icon != 0L )
+	icon->startmove();
+    }
+  
     for ( char *s = _urls.first(); s != 0L; s = _urls.next() )
     {
 	KRootIcon* icon = findIcon( s );
         if (icon)
 	{
            int ix = icon->gridX() + dx;
-           if (ix < 0)
+           if ( ix < 0 )
                ix = 0;
-           if (ix > gx)
-               ix = gx;
+           if ( ix >= gx )
+               ix = gx - 1;
                
            int iy = icon->gridY() + dy;
-           if (iy < 0)
+           if ( iy < 0 )
                iy = 0;
-           if (iy > gy)
-               iy = gy;
+           if ( iy >= gy )
+               iy = gy - 1;
                
            if ( isPlaceUsed( ix, iy ) && (dx || dy) )
-	    {
-		QPoint p = findFreePlace( ix, iy );
+	   {
+	       QPoint p = findFreePlace( ix, iy );
                
                // Take this free place only, when it's really
                // more adjacent to our desired position.
@@ -385,6 +397,7 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
 	    icon->setGridY( iy );
 	    icon->move( area.x() + gridwidth * ix + ( gridwidth - icon->QWidget::width() ) / 2,
 			area.y() + gridheight * iy + ( gridheight - icon->QWidget::height() ) );
+	    icon->endmove();
 	}
     }
     
@@ -547,7 +560,8 @@ bool KRootWidget::isPlaceUsed( int x, int y )
 {
     QListIterator<KRootIcon> it( icon_list );
     for ( ; it.current(); ++it )
-	if ( it.current()->gridX() == x && it.current()->gridY() == y )
+	if ( it.current()->gridX() == x && it.current()->gridY() == y
+		&& !it.current()->isbeingmoved())
 	    return true;
 
     return false;
@@ -1232,7 +1246,8 @@ KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
 {
     grid_x = -1;
     grid_y = -1;
-    
+   
+    beingmoved = false; 
     bSelected = FALSE;
   
     popupMenu = new QPopupMenu();
