@@ -409,6 +409,7 @@ int KProtocolHTTP::Open(KURL *_url, int mode)
 int KProtocolHTTP::ProcessHeader()
 {
 	char buffer[1024];
+	QString mType;
 	int len = 1;
 
 	size = 0xFFFFFFF;
@@ -425,7 +426,9 @@ int KProtocolHTTP::ProcessHeader()
 	    else if ( strncmp( buffer, "Content-Type: ", 14 ) == 0 
 		 ||   strncmp( buffer, "Content-type: ", 14 ) == 0 )
 	    {
-		emit mimeType( buffer + 14 );
+	    // Jacek: We can't send mimeType signal now,
+	    //    because there may be another Content-Type to come
+		mType=buffer + 14;
 	    }
 	    else if ( strncmp( buffer, "HTTP/1.0 ", 9 ) == 0 )
 	    {
@@ -447,6 +450,7 @@ int KProtocolHTTP::ProcessHeader()
 	    }
 	    
 	}
+	emit mimeType( mType );
 	bytesleft = size;
 	return(SUCCESS);
 }

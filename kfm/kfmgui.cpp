@@ -1582,6 +1582,11 @@ void KfmGui::slotViewDocumentSource()
     cmd << "kedit \"" << view->getURL() << "\"";
     KMimeBind::runCmd( cmd );
 }
+
+void KfmGui::setCharset(const char *_c){
+
+   view->setCharset(_c);
+}
     
 KfmGui::~KfmGui()
 {

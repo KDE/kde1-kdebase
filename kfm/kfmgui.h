@@ -145,6 +145,12 @@ public:
 	bookmarkManager = new KBookmarkManager;
     
     }
+    
+    /**
+     * Sets view charset
+     * Called from kfmexec, when mimeType contains charset information
+     */
+    void setCharset(const char *_c);
 
 public slots:
     /**

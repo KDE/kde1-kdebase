@@ -674,18 +674,42 @@ void KFMManager::slotInfo( const char *_text )
 
 void KFMManager::slotMimeType( const char *_type )
 {
+
+    char *typestr=0;
+    const char *aType=0;
+    const char *aCharset=0;
+    if (_type)
+    {
+        printf("MimeType: %s\n",_type);
+        typestr=new char[strlen(_type)+1];
+        strcpy(typestr,_type);
+	aType=strtok(typestr," ;\t\n");
+	char *tmp;
+	while((tmp=strtok(0," ;\t\n"))){
+	    printf("token: %s\n",tmp);
+            if ( strncmp(tmp,"charset=",8)==0 ) aCharset=tmp+8;
+	}    
+	if ( aCharset != 0 )
+	{
+	    printf("charset: %s\n",aCharset);
+	    tmp=strpbrk(aCharset," ;\t\n");
+	    if ( tmp != 0 ) *tmp=0;
+	    printf("charset: %s\n",aCharset);
+	}    
+    }  
+ 
     // Recursion for special mime types which are
     // handled by KFM itself
 
     // GZIP
-    if ( _type &&  strcmp( _type, "application/x-gzip" ) == 0L )
+    if ( aType &&  strcmp( aType, "application/x-gzip" ) == 0L )
     {
 	job->stop();
 	tryURL += "#gzip:/";
 	openURL( tryURL, bReload );
     }
     // TAR
-    else if ( _type && strcmp( _type, "application/x-tar" ) == 0L )
+    else if ( aType && strcmp( aType, "application/x-tar" ) == 0L )
     {
 	// Is this tar file perhaps hosted in a gzipped file ?
 	KURL u( tryURL );
@@ -707,7 +731,7 @@ void KFMManager::slotMimeType( const char *_type )
 	openURL( tryURL, bReload );
     }
     // No HTML ?
-    else if ( _type == 0L || strcmp( _type, "text/html" ) != 0L )
+    else if ( aType == 0L || strcmp( aType, "text/html" ) != 0L )
     {
 	view->getGUI()->slotRemoveWaitingWidget( view );
 
@@ -715,12 +739,14 @@ void KFMManager::slotMimeType( const char *_type )
 	job->stop();
 
 	// Do we know the mime type ?
-	if ( _type )
+	if ( aType )
 	{
-	    KMimeType *typ = KMimeType::findByName( _type );
+	    KMimeType *typ = KMimeType::findByName( aType );
 	    // Have we registered this mime type in KDE ?
-	    if ( typ && typ->run( tryURL ) )
+	    if ( typ && typ->run( tryURL ) ){
+	        delete typestr;
 		return;
+             }		
 	}
 	
 	// Ask the user what we should do
@@ -730,7 +756,10 @@ void KFMManager::slotMimeType( const char *_type )
 	{
 	    QString pattern = l.getText();
 	    if ( pattern.isEmpty() )
+	    {
+	        delete typestr;
 		return;
+	    }	
 
 	    QStrList list;
 	    list.append( tryURL );
@@ -750,7 +779,6 @@ void KFMManager::slotMimeType( const char *_type )
 	    
 	    KMimeBind::runCmd( cmd.data() ); */
 	}
-	return;
     }
     else
     {
@@ -777,6 +805,7 @@ void KFMManager::slotMimeType( const char *_type )
 	    bBufferPage = FALSE;
 	    // view->begin( u2 );
 	    view->begin( url );
+	    if ( aCharset != 0 ) view->setCharset(aCharset);
 	    view->parse();
 	}
 	else

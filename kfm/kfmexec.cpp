@@ -1,3 +1,4 @@
+#include <string.h>
 #include <qlist.h>
 #include <qmsgbox.h>
 #include <kconfig.h>
@@ -177,21 +178,43 @@ void KFMExec::slotNewDirEntry( KIODirectoryEntry * _entry )
 
 void KFMExec::slotMimeType( const char *_type )
 {
+    char *typestr=0;
+    const char *aType=0;
+    const char *aCharset=0;
+    if (_type)
+    {
+        printf("MimeType: %s\n",_type);
+        typestr=new char[strlen(_type)+1];
+        strcpy(typestr,_type);
+	aType=strtok(typestr," ;\t\n");
+	char *tmp;
+	while((tmp=strtok(0," ;\t\n"))){
+	    printf("token: %s\n",tmp);
+            if ( strncmp(tmp,"charset=",8)==0 ) aCharset=tmp+8;
+	}    
+	if ( aCharset != 0 )
+	{
+	    printf("charset: %s\n",aCharset);
+	    tmp=strpbrk(aCharset," ;\t\n");
+	    if ( tmp != 0 ) *tmp=0;
+	    printf("charset: %s\n",aCharset);
+	}    
+    }  
+    
     // Stop browsing. We need an application
     job->stop();
     // delete job;
     // job = 0L;
     
     // GZIP
-    if ( _type && strcmp( _type, "application/x-gzip" ) == 0L )
+    if ( aType && strcmp( aType, "application/x-gzip" ) == 0L )
     {
 	job->stop();
 	tryURL += "#gzip:/";
 	openURL( tryURL );
-	return;
     }
     // TAR
-    else if ( _type && strcmp( _type, "application/x-tar" ) == 0L )
+    else if ( aType && strcmp( aType, "application/x-tar" ) == 0L )
     {
 	// Is this tar file perhaps hosted in a gzipped file ?
 	KURL u( tryURL );
@@ -211,21 +234,19 @@ void KFMExec::slotMimeType( const char *_type )
 	job->stop();
 	tryURL += "#tar:/";
 	openURL( tryURL );
-	return;
     }
     // No HTML ?
-    else if ( _type == 0L || strcmp( _type, "text/html" ) != 0L )
+    else if ( aType == 0L || strcmp( aType, "text/html" ) != 0L )
     {
 	// Do we know the mime type ?
-	if ( _type != 0L )
+	if ( aType != 0L )
 	{
-	    KMimeType *mime = KMimeType::findByName( _type );
+	    KMimeType *mime = KMimeType::findByName( aType );
 	    // Try to run the URL if we know the mime type
 	    if ( mime && mime->run( tryURL ) )
 	    {
 		// We are a zombie now
 		prepareToDie();
-		return;
 	    }
 	}
 		
@@ -239,15 +260,15 @@ void KFMExec::slotMimeType( const char *_type )
 	    {
 		// We are a zombie now
 		prepareToDie();
-		return;
 	    }
+	    else 
+	    {
+	        QStrList list;
+	        list.append( tryURL );
+	        openWithOldApplication( pattern, list );
 	    
-	    QStrList list;
-	    list.append( tryURL );
-	    openWithOldApplication( pattern, list );
-	    
-	    prepareToDie();
-	    return;
+	        prepareToDie();
+	    }	
 	}
     }
     // It is HTML
@@ -255,12 +276,13 @@ void KFMExec::slotMimeType( const char *_type )
     {
 	// Ok, lets open a new window
 	KfmGui *m = new KfmGui( 0L, 0L, tryURL );
+	if ( aCharset != 0 ) m->setCharset(aCharset);
 	m->show();
 	
 	// We are a zombie now
 	prepareToDie();
-	return;
     }
+    delete typestr;
 }
 
 QString KFMExec::openLocalURL( const char *_url )
