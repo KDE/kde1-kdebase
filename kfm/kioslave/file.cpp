@@ -257,9 +257,12 @@ int KProtocolFILE::OpenDir( KURL *url )
 	buffer[10] = 0;
 
 	// A link pointing to nowhere ?
-	if ( stat_ret == -1 && S_ISLNK( lbuff.st_mode ) )
+	if ( stat_ret == -1 && S_ISLNK( lbuff.st_mode ) ) {
 	    strcpy( buffer, "lrwxrwxrwx" );
-	
+            _de->size = lbuff.st_size;
+        } else 
+            _de->size = buff.st_size;
+   	
 	_de->access = buffer;
 	_de->name = name.data();
 	_de->owner = (( user != 0L ) ? user->pw_name : "???" );
@@ -267,7 +270,6 @@ int KProtocolFILE::OpenDir( KURL *url )
 	QString d;
 	d.sprintf("%02i:%02i %02i.%02i.%02i", t->tm_hour,t->tm_min,t->tm_mday,t->tm_mon + 1,t->tm_year );
 	_de->date = d.data();
-	_de->size = buff.st_size;
 	if ( _de->isdir )
 	    _de->name += "/";
 
