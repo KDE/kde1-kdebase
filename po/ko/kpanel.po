@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-11-25 01:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Go!"
 msgstr "출발!"
 
-#: kpanel.C:316 tools.C:830
+#: kpanel.C:316 tools.C:831
 msgid "Where do you want to go tomorrow?"
 msgstr "내일 어디로 가시겠습니까?"
 
@@ -54,7 +54,7 @@ msgstr "패널 보이기"
 msgid "No comment available"
 msgstr "설명이 없습니다"
 
-#: kpanel.C:1210 tools.C:839
+#: kpanel.C:1210 tools.C:840
 msgid "Windowlist"
 msgstr "윈도우목록"
 
@@ -122,7 +122,7 @@ msgstr "메뉴 편집기가 설치되지 않았습니다."
 msgid "Oops!"
 msgstr "아!"
 
-#: tools.C:617
+#: tools.C:618
 msgid ""
 "\n"
 "%b %d"
@@ -132,38 +132,38 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr "패널에 단추로 넣을 수 없습니다!"
 
-#: pfilemenu.C:423
+#: pfilemenu.C:415
 msgid "(empty folder)"
 msgstr ""
 
-#: pfilemenu.C:480
-msgid "(Too Many Files)"
-msgstr ""
-
-#: pfilemenu.C:489
-msgid "(Access Denied)"
-msgstr ""
-
-#: pfilemenu.C:492
-msgid "(Unreadable)"
-msgstr ""
-
-#: pfilemenu.C:499
+#: pfilemenu.C:470
 msgid "Open Folder"
 msgstr ""
 
-#: pfilemenu.C:749
+#: pfilemenu.C:481
+msgid "(Too Many Files)"
+msgstr ""
+
+#: pfilemenu.C:490
+msgid "(Access Denied)"
+msgstr ""
+
+#: pfilemenu.C:493
+msgid "(Unreadable)"
+msgstr ""
+
+#: pfilemenu.C:742
 msgid "Shared:"
 msgstr ""
 
-#: pfilemenu.C:770
+#: pfilemenu.C:763
 msgid "Personal:"
 msgstr ""
 
-#: pfilemenu.C:790
+#: pfilemenu.C:783
 msgid "Recent:"
 msgstr ""
 
-#: pfilemenu.C:838
+#: pfilemenu.C:831
 msgid "Options..."
 msgstr ""

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-11-25 01:11+0100\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -30,99 +30,99 @@ msgstr "kwm: eroare în timpul iniþializãrii; pa \n"
 msgid "Preparing session ... "
 msgstr "Preparare sesiune ... "
 
-#: main.C:505
+#: main.C:507
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:512
+#: main.C:514
 msgid "Usage: "
 msgstr "Folosire: "
 
-#: main.C:523
+#: main.C:525
 msgid "&Maximize"
 msgstr "Ma&ximizare"
 
-#: main.C:524
+#: main.C:526
 msgid "&Restore"
 msgstr "&Restaurare"
 
-#: main.C:525
+#: main.C:527
 msgid "&Iconify"
 msgstr "Mi&nimizare"
 
-#: main.C:526
+#: main.C:528
 msgid "&DeIconify"
 msgstr "&DeMinimizare"
 
-#: main.C:527
+#: main.C:529
 msgid "&Sticky"
 msgstr "Þ&intuitã"
 
-#: main.C:528
+#: main.C:530
 msgid "&UnSticky"
 msgstr "&Deþintuitã"
 
-#: main.C:529
+#: main.C:531
 msgid "Mo&ve"
 msgstr "&Mutã"
 
-#: main.C:530
+#: main.C:532
 msgid "Resi&ze"
 msgstr "R&edimensioneazã"
 
-#: main.C:532
+#: main.C:534
 msgid "&To desktop"
 msgstr "În &ecranul"
 
-#: main.C:534
+#: main.C:536
 msgid "&Onto current desktop"
 msgstr "&În ecranul curent"
 
-#: main.C:574
+#: main.C:576
 msgid "One"
 msgstr "Unu"
 
-#: main.C:577
+#: main.C:579
 msgid "Two"
 msgstr "Doi"
 
-#: main.C:580
+#: main.C:582
 msgid "Three"
 msgstr "Trei"
 
-#: main.C:583
+#: main.C:585
 msgid "Four"
 msgstr "Patru"
 
-#: main.C:586
+#: main.C:588
 msgid "Five"
 msgstr "Cinci"
 
-#: main.C:589
+#: main.C:591
 msgid "Six"
 msgstr "ªase"
 
-#: main.C:592
+#: main.C:594
 msgid "Seven"
 msgstr "ªapte"
 
-#: main.C:595
+#: main.C:597
 msgid "Eight"
 msgstr "Opt"
 
-#: main.C:609
+#: main.C:611
 msgid "Unnamed Desktop"
 msgstr "Ecran fãrã nume"
 
-#: main.C:949
+#: main.C:991
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Niºte pixmap-uri sunt defecte: ShapeMode nu este activat\n"
 
-#: main.C:1061
+#: main.C:1103
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Niºte pixmap-uri sunt defecte: GimmickMode nu este activat\n"
 
-#: main.C:1386
+#: main.C:1428
 msgid "*** No Tasks ***"
 msgstr "*** Nici un Program ***"
 

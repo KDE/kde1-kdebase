@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-11-25 01:11+0100\n"
 "PO-Revision-Date: 1998-07-18 15:00+0100\n"
 "Last-Translator: luka steger <luka_steger@hotmail.com>\n"
 "Language-Team: slovene <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr "Lastnosti"
 msgid "Go!"
 msgstr "Pojdi!"
 
-#: kpanel.C:316 tools.C:830
+#: kpanel.C:316 tools.C:831
 msgid "Where do you want to go tomorrow?"
 msgstr "Kam ¾elite iti jutri?"
 
@@ -56,7 +56,7 @@ msgstr "Prika¾i pult"
 msgid "No comment available"
 msgstr "Komentar ni na voljo"
 
-#: kpanel.C:1210 tools.C:839
+#: kpanel.C:1210 tools.C:840
 msgid "Windowlist"
 msgstr "Seznam oken"
 
@@ -124,7 +124,7 @@ msgstr "Urejevalnik menijev ni name¹èen."
 msgid "Oops!"
 msgstr "Ups!"
 
-#: tools.C:617
+#: tools.C:618
 msgid ""
 "\n"
 "%b %d"
@@ -134,38 +134,38 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr "Ne morem narediti gumba na pultu!"
 
-#: pfilemenu.C:423
+#: pfilemenu.C:415
 msgid "(empty folder)"
 msgstr ""
 
-#: pfilemenu.C:480
-msgid "(Too Many Files)"
-msgstr ""
-
-#: pfilemenu.C:489
-msgid "(Access Denied)"
-msgstr ""
-
-#: pfilemenu.C:492
-msgid "(Unreadable)"
-msgstr ""
-
-#: pfilemenu.C:499
+#: pfilemenu.C:470
 msgid "Open Folder"
 msgstr ""
 
-#: pfilemenu.C:749
+#: pfilemenu.C:481
+msgid "(Too Many Files)"
+msgstr ""
+
+#: pfilemenu.C:490
+msgid "(Access Denied)"
+msgstr ""
+
+#: pfilemenu.C:493
+msgid "(Unreadable)"
+msgstr ""
+
+#: pfilemenu.C:742
 msgid "Shared:"
 msgstr ""
 
-#: pfilemenu.C:770
+#: pfilemenu.C:763
 msgid "Personal:"
 msgstr ""
 
-#: pfilemenu.C:790
+#: pfilemenu.C:783
 msgid "Recent:"
 msgstr ""
 
-#: pfilemenu.C:838
+#: pfilemenu.C:831
 msgid "Options..."
 msgstr ""

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KWM\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-11-25 01:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,99 +23,99 @@ msgstr "Kwm: Virhe alkurutiineissa; lopetetaan\n"
 msgid "Preparing session ... "
 msgstr "Valmistelen sessiota ... "
 
-#: main.C:505
+#: main.C:507
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:512
+#: main.C:514
 msgid "Usage: "
 msgstr "Käyttö: "
 
-#: main.C:523
+#: main.C:525
 msgid "&Maximize"
 msgstr "&Suurenna"
 
-#: main.C:524
+#: main.C:526
 msgid "&Restore"
 msgstr "&Palauta"
 
-#: main.C:525
+#: main.C:527
 msgid "&Iconify"
 msgstr "&Kuvakkeeksi"
 
-#: main.C:526
+#: main.C:528
 msgid "&DeIconify"
 msgstr "P&oista kuvake"
 
-#: main.C:527
+#: main.C:529
 msgid "&Sticky"
 msgstr "&Naulaa"
 
-#: main.C:528
+#: main.C:530
 msgid "&UnSticky"
 msgstr "&Poista naulaus"
 
-#: main.C:529
+#: main.C:531
 msgid "Mo&ve"
 msgstr "S&iirrä"
 
-#: main.C:530
+#: main.C:532
 msgid "Resi&ze"
 msgstr "&Muuta kokoa"
 
-#: main.C:532
+#: main.C:534
 msgid "&To desktop"
 msgstr "&Työpöydälle"
 
-#: main.C:534
+#: main.C:536
 msgid "&Onto current desktop"
 msgstr "&Nykyiselle työpöydälle"
 
-#: main.C:574
+#: main.C:576
 msgid "One"
 msgstr "Yksi"
 
-#: main.C:577
+#: main.C:579
 msgid "Two"
 msgstr "Kaksi"
 
-#: main.C:580
+#: main.C:582
 msgid "Three"
 msgstr "Kolme"
 
-#: main.C:583
+#: main.C:585
 msgid "Four"
 msgstr "Neljä"
 
-#: main.C:586
+#: main.C:588
 msgid "Five"
 msgstr "Viisi"
 
-#: main.C:589
+#: main.C:591
 msgid "Six"
 msgstr "Kuusi"
 
-#: main.C:592
+#: main.C:594
 msgid "Seven"
 msgstr "Seitsemän"
 
-#: main.C:595
+#: main.C:597
 msgid "Eight"
 msgstr "Kahdeksan"
 
-#: main.C:609
+#: main.C:611
 msgid "Unnamed Desktop"
 msgstr "Nimeämätön työpöytä"
 
-#: main.C:949
+#: main.C:991
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Jotkut kuvat eivät ole kelvollisia: ShapeMode poistettu\n"
 
-#: main.C:1061
+#: main.C:1103
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Jotkut kuvat eivät ole kelvollisia: GimmickMode poistettu\n"
 
-#: main.C:1386
+#: main.C:1428
 msgid "*** No Tasks ***"
 msgstr "*** Ei töitä ***"
 

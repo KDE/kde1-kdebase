@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-11-25 01:11+0100\n"
 "PO-Revision-Date: 1998-04-20 23:02+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr "內容"
 msgid "Go!"
 msgstr ""
 
-#: kpanel.C:316 tools.C:830
+#: kpanel.C:316 tools.C:831
 msgid "Where do you want to go tomorrow?"
 msgstr "主選單"
 
@@ -56,7 +56,7 @@ msgstr "顯示 panel"
 msgid "No comment available"
 msgstr "沒有任何說明"
 
-#: kpanel.C:1210 tools.C:839
+#: kpanel.C:1210 tools.C:840
 msgid "Windowlist"
 msgstr "視窗列表"
 
@@ -124,7 +124,7 @@ msgstr "沒有安裝功\能表編輯程式."
 msgid "Oops!"
 msgstr "糟糕"
 
-#: tools.C:617
+#: tools.C:618
 msgid ""
 "\n"
 "%b %d"
@@ -134,38 +134,38 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
 
-#: pfilemenu.C:423
+#: pfilemenu.C:415
 msgid "(empty folder)"
 msgstr ""
 
-#: pfilemenu.C:480
-msgid "(Too Many Files)"
-msgstr ""
-
-#: pfilemenu.C:489
-msgid "(Access Denied)"
-msgstr ""
-
-#: pfilemenu.C:492
-msgid "(Unreadable)"
-msgstr ""
-
-#: pfilemenu.C:499
+#: pfilemenu.C:470
 msgid "Open Folder"
 msgstr ""
 
-#: pfilemenu.C:749
+#: pfilemenu.C:481
+msgid "(Too Many Files)"
+msgstr ""
+
+#: pfilemenu.C:490
+msgid "(Access Denied)"
+msgstr ""
+
+#: pfilemenu.C:493
+msgid "(Unreadable)"
+msgstr ""
+
+#: pfilemenu.C:742
 msgid "Shared:"
 msgstr ""
 
-#: pfilemenu.C:770
+#: pfilemenu.C:763
 msgid "Personal:"
 msgstr ""
 
-#: pfilemenu.C:790
+#: pfilemenu.C:783
 msgid "Recent:"
 msgstr ""
 
-#: pfilemenu.C:838
+#: pfilemenu.C:831
 msgid "Options..."
 msgstr ""

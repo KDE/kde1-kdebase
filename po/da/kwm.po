@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-11-25 01:11+0100\n"
 "PO-Revision-Date: 1998-01-27 15:40+CET-1\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,99 +29,99 @@ msgstr "kwm: fejl under initialiseringen; afbryder\n"
 msgid "Preparing session ... "
 msgstr "Lukker sessionen ... "
 
-#: main.C:505
+#: main.C:507
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:512
+#: main.C:514
 msgid "Usage: "
 msgstr "Brug: "
 
-#: main.C:523
+#: main.C:525
 msgid "&Maximize"
 msgstr "&Maksimer"
 
-#: main.C:524
+#: main.C:526
 msgid "&Restore"
 msgstr "&Gendan"
 
-#: main.C:525
+#: main.C:527
 msgid "&Iconify"
 msgstr "&Minimer"
 
-#: main.C:526
+#: main.C:528
 msgid "&DeIconify"
 msgstr "&Gendan"
 
-#: main.C:527
+#: main.C:529
 msgid "&Sticky"
 msgstr "&Fastsat"
 
-#: main.C:528
+#: main.C:530
 msgid "&UnSticky"
 msgstr "&Ikke fastsat"
 
-#: main.C:529
+#: main.C:531
 msgid "Mo&ve"
 msgstr "&Flyt"
 
-#: main.C:530
+#: main.C:532
 msgid "Resi&ze"
 msgstr "&Ændr størrelse"
 
-#: main.C:532
+#: main.C:534
 msgid "&To desktop"
 msgstr "&Til Arbejdsplads"
 
-#: main.C:534
+#: main.C:536
 msgid "&Onto current desktop"
 msgstr "Til &aktuel arbejdsplads"
 
-#: main.C:574
+#: main.C:576
 msgid "One"
 msgstr "En"
 
-#: main.C:577
+#: main.C:579
 msgid "Two"
 msgstr "To"
 
-#: main.C:580
+#: main.C:582
 msgid "Three"
 msgstr "Tre"
 
-#: main.C:583
+#: main.C:585
 msgid "Four"
 msgstr "Fire"
 
-#: main.C:586
+#: main.C:588
 msgid "Five"
 msgstr "Fem"
 
-#: main.C:589
+#: main.C:591
 msgid "Six"
 msgstr "Seks"
 
-#: main.C:592
+#: main.C:594
 msgid "Seven"
 msgstr "Syv"
 
-#: main.C:595
+#: main.C:597
 msgid "Eight"
 msgstr "Otte"
 
-#: main.C:609
+#: main.C:611
 msgid "Unnamed Desktop"
 msgstr "Unavngiven Arbejdsplads"
 
-#: main.C:949
+#: main.C:991
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Nogle pixmaps er ubrugelige: ShapeMode ikke iværksat\n"
 
-#: main.C:1061
+#: main.C:1103
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Nogle pixmaps er ubrugelige: GimmickMode ikke iværksat\n"
 
-#: main.C:1386
+#: main.C:1428
 msgid "*** No Tasks ***"
 msgstr ""
 

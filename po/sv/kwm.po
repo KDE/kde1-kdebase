@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-11-25 01:11+0100\n"
 "PO-Revision-Date: 1998-07-09 15:38+02:00\n"
 "Last-Translator: Anders Bengtsson <d96-abe@nada.kth.se>\n"
 "MIME-Version: 1.0\n"
@@ -29,99 +29,99 @@ msgstr "kwm: initieringsfel; avbryter\n"
 msgid "Preparing session ... "
 msgstr "Förbereder session ... "
 
-#: main.C:505
+#: main.C:507
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:512
+#: main.C:514
 msgid "Usage: "
 msgstr "Användning: "
 
-#: main.C:523
+#: main.C:525
 msgid "&Maximize"
 msgstr "&Maximera"
 
-#: main.C:524
+#: main.C:526
 msgid "&Restore"
 msgstr "&Återställ"
 
-#: main.C:525
+#: main.C:527
 msgid "&Iconify"
 msgstr "&Ikonifiera"
 
-#: main.C:526
+#: main.C:528
 msgid "&DeIconify"
 msgstr "&Av-ikonifiera"
 
-#: main.C:527
+#: main.C:529
 msgid "&Sticky"
 msgstr "&Klistrig"
 
-#: main.C:528
+#: main.C:530
 msgid "&UnSticky"
 msgstr "&Inte Klistrig"
 
-#: main.C:529
+#: main.C:531
 msgid "Mo&ve"
 msgstr "&Flytta"
 
-#: main.C:530
+#: main.C:532
 msgid "Resi&ze"
 msgstr "&Ändra storlek"
 
-#: main.C:532
+#: main.C:534
 msgid "&To desktop"
 msgstr "&Till skrivbord"
 
-#: main.C:534
+#: main.C:536
 msgid "&Onto current desktop"
 msgstr "Till den &här skrivbordet"
 
-#: main.C:574
+#: main.C:576
 msgid "One"
 msgstr "Ett"
 
-#: main.C:577
+#: main.C:579
 msgid "Two"
 msgstr "Två"
 
-#: main.C:580
+#: main.C:582
 msgid "Three"
 msgstr "Tre"
 
-#: main.C:583
+#: main.C:585
 msgid "Four"
 msgstr "Fyra"
 
-#: main.C:586
+#: main.C:588
 msgid "Five"
 msgstr "Fem"
 
-#: main.C:589
+#: main.C:591
 msgid "Six"
 msgstr "Sex"
 
-#: main.C:592
+#: main.C:594
 msgid "Seven"
 msgstr "Sju"
 
-#: main.C:595
+#: main.C:597
 msgid "Eight"
 msgstr "Åtta"
 
-#: main.C:609
+#: main.C:611
 msgid "Unnamed Desktop"
 msgstr ""
 
-#: main.C:949
+#: main.C:991
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Några pixmapar är ogiltiga: ShapeMode avstängt\n"
 
-#: main.C:1061
+#: main.C:1103
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Några pixmapar är ogiltiga: GimmickMode avstängt\n"
 
-#: main.C:1386
+#: main.C:1428
 msgid "*** No Tasks ***"
 msgstr "*** Inga uppdrag ***"
 

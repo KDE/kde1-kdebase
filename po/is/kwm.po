@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-11-25 01:11+0100\n"
 "PO-Revision-Date: 1998-10-21 20:41+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -24,102 +24,102 @@ msgstr "kwm: villa í frumstillingu. Hætt við!\n"
 msgid "Preparing session ... "
 msgstr "Undirbý setu..."
 
-#: main.C:505
+#: main.C:507
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Höfundarréttur 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:512
+#: main.C:514
 msgid "Usage: "
 msgstr "Notkun: "
 
-#: main.C:523
+#: main.C:525
 msgid "&Maximize"
 msgstr "&Hámarka"
 
-#: main.C:524
+#: main.C:526
 msgid "&Restore"
 msgstr "&Endurheimta"
 
-#: main.C:525
+#: main.C:527
 msgid "&Iconify"
 msgstr "Í &táknmynd"
 
-#: main.C:526
+#: main.C:528
 msgid "&DeIconify"
 msgstr "Úr táknmynd"
 
-#: main.C:527
+#: main.C:529
 msgid "&Sticky"
 msgstr "&Líma við gler"
 
-#: main.C:528
+#: main.C:530
 msgid "&UnSticky"
 msgstr "&Losa af gleri"
 
-#: main.C:529
+#: main.C:531
 msgid "Mo&ve"
 msgstr "&Færa"
 
-#: main.C:530
+#: main.C:532
 msgid "Resi&ze"
 msgstr "&Breyta stærð"
 
-#: main.C:532
+#: main.C:534
 msgid "&To desktop"
 msgstr "Á &skjáborð"
 
-#: main.C:534
+#: main.C:536
 msgid "&Onto current desktop"
 msgstr "Á þetta &skjáborð"
 
-#: main.C:574
+#: main.C:576
 msgid "One"
 msgstr "Eitt"
 
-#: main.C:577
+#: main.C:579
 msgid "Two"
 msgstr "Tvö"
 
-#: main.C:580
+#: main.C:582
 msgid "Three"
 msgstr "Þrjú"
 
-#: main.C:583
+#: main.C:585
 msgid "Four"
 msgstr "Fjögur"
 
-#: main.C:586
+#: main.C:588
 msgid "Five"
 msgstr "Fimm"
 
-#: main.C:589
+#: main.C:591
 msgid "Six"
 msgstr "Sex"
 
-#: main.C:592
+#: main.C:594
 msgid "Seven"
 msgstr "Sjö"
 
-#: main.C:595
+#: main.C:597
 msgid "Eight"
 msgstr "Átta"
 
-#: main.C:609
+#: main.C:611
 msgid "Unnamed Desktop"
 msgstr "Ónefnt skjáborð"
 
 # FIXME?
-#: main.C:949
+#: main.C:991
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr ""
 
 # FIXME?
-#: main.C:1061
+#: main.C:1103
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr ""
 
 # FIXME
-#: main.C:1386
+#: main.C:1428
 msgid "*** No Tasks ***"
 msgstr "*** Engin verkefni ***"
 

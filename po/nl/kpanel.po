@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-11-25 01:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr "Eigenschappen"
 msgid "Go!"
 msgstr "Gaan"
 
-#: kpanel.C:316 tools.C:830
+#: kpanel.C:316 tools.C:831
 msgid "Where do you want to go tomorrow?"
 msgstr "Waar wil je morgen heen?"
 
@@ -56,7 +56,7 @@ msgstr "Laat het paneel zien"
 msgid "No comment available"
 msgstr "Geen informatie beschikbaar"
 
-#: kpanel.C:1210 tools.C:839
+#: kpanel.C:1210 tools.C:840
 msgid "Windowlist"
 msgstr "Vensterlijst"
 
@@ -124,7 +124,7 @@ msgstr ""
 msgid "Oops!"
 msgstr ""
 
-#: tools.C:617
+#: tools.C:618
 msgid ""
 "\n"
 "%b %d"
@@ -134,40 +134,40 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
 
-#: pfilemenu.C:423
+#: pfilemenu.C:415
 msgid "(empty folder)"
 msgstr ""
 
-#: pfilemenu.C:480
-msgid "(Too Many Files)"
-msgstr ""
-
-#: pfilemenu.C:489
-msgid "(Access Denied)"
-msgstr ""
-
-#: pfilemenu.C:492
-msgid "(Unreadable)"
-msgstr ""
-
-#: pfilemenu.C:499
+#: pfilemenu.C:470
 msgid "Open Folder"
 msgstr ""
 
-#: pfilemenu.C:749
+#: pfilemenu.C:481
+msgid "(Too Many Files)"
+msgstr ""
+
+#: pfilemenu.C:490
+msgid "(Access Denied)"
+msgstr ""
+
+#: pfilemenu.C:493
+msgid "(Unreadable)"
+msgstr ""
+
+#: pfilemenu.C:742
 msgid "Shared:"
 msgstr ""
 
-#: pfilemenu.C:770
+#: pfilemenu.C:763
 #, fuzzy
 msgid "Personal:"
 msgstr "Eigen menus eerst"
 
-#: pfilemenu.C:790
+#: pfilemenu.C:783
 msgid "Recent:"
 msgstr ""
 
-#: pfilemenu.C:838
+#: pfilemenu.C:831
 msgid "Options..."
 msgstr ""
 

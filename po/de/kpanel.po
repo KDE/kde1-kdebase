@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel VERSION\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-11-25 01:11+0100\n"
 "PO-Revision-Date: 1997-10-25 18:28 MET DST\n"
 "Last-Translator: Christian Kirsch <ck@held.mind.de>\n"
 "Language-Team: German/KDE\n"
@@ -25,7 +25,7 @@ msgstr "&Eigenschaften"
 msgid "Go!"
 msgstr "Start!"
 
-#: kpanel.C:316 tools.C:830
+#: kpanel.C:316 tools.C:831
 msgid "Where do you want to go tomorrow?"
 msgstr "Where do you want to go tomorrow?"
 
@@ -53,7 +53,7 @@ msgstr "Panel zeigen"
 msgid "No comment available"
 msgstr "Keine Erklärung verfügbar"
 
-#: kpanel.C:1210 tools.C:839
+#: kpanel.C:1210 tools.C:840
 msgid "Windowlist"
 msgstr "Fensterliste"
 
@@ -121,7 +121,7 @@ msgstr "Der Menu-Editor ist nicht installiert."
 msgid "Oops!"
 msgstr "Oops!"
 
-#: tools.C:617
+#: tools.C:618
 msgid ""
 "\n"
 "%b %d"
@@ -133,39 +133,39 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kann dies nicht als Button in das Panel legen!"
 
-#: pfilemenu.C:423
+#: pfilemenu.C:415
 msgid "(empty folder)"
 msgstr "(leeres Verzeichnis)"
 
-#: pfilemenu.C:480
-msgid "(Too Many Files)"
-msgstr "(Zuviele Dateien)"
-
-#: pfilemenu.C:489
-msgid "(Access Denied)"
-msgstr "(Zugriff verweigert)"
-
-#: pfilemenu.C:492
-msgid "(Unreadable)"
-msgstr "(Nicht lesbar)"
-
-#: pfilemenu.C:499
+#: pfilemenu.C:470
 msgid "Open Folder"
 msgstr "Öffne Verzeichnis"
 
-#: pfilemenu.C:749
+#: pfilemenu.C:481
+msgid "(Too Many Files)"
+msgstr "(Zuviele Dateien)"
+
+#: pfilemenu.C:490
+msgid "(Access Denied)"
+msgstr "(Zugriff verweigert)"
+
+#: pfilemenu.C:493
+msgid "(Unreadable)"
+msgstr "(Nicht lesbar)"
+
+#: pfilemenu.C:742
 msgid "Shared:"
 msgstr ""
 
-#: pfilemenu.C:770
+#: pfilemenu.C:763
 msgid "Personal:"
 msgstr ""
 
-#: pfilemenu.C:790
+#: pfilemenu.C:783
 msgid "Recent:"
 msgstr "Letzte:"
 
-#: pfilemenu.C:838
+#: pfilemenu.C:831
 msgid "Options..."
 msgstr "Optionen..."
 

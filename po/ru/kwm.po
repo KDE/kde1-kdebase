@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.10\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-11-25 01:11+0100\n"
 "PO-Revision-Date: 1998-01-18 05:15+06:00\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: ru <ru@li.org>\n"
@@ -28,108 +28,108 @@ msgstr "kwm: ошибка инициализации; прерывание\n"
 msgid "Preparing session ... "
 msgstr "Подготавливаю сессию ... "
 
-#: main.C:505
+#: main.C:507
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Маттиас Эттрих (ettrich@kde.org)\n"
 
-#: main.C:512
+#: main.C:514
 msgid "Usage: "
 msgstr "Использование:"
 
 #
-#: main.C:523
+#: main.C:525
 msgid "&Maximize"
 msgstr "Максимизировать"
 
 #
-#: main.C:524
+#: main.C:526
 msgid "&Restore"
 msgstr "Восстановить"
 
-#: main.C:525
+#: main.C:527
 msgid "&Iconify"
 msgstr "Минимизировать"
 
 #
-#: main.C:526
+#: main.C:528
 msgid "&DeIconify"
 msgstr "Максимизировать"
 
 #
-#: main.C:527
+#: main.C:529
 msgid "&Sticky"
 msgstr "Приколоть"
 
 #
-#: main.C:528
+#: main.C:530
 msgid "&UnSticky"
 msgstr "Отколоть"
 
 #
-#: main.C:529
+#: main.C:531
 msgid "Mo&ve"
 msgstr "Переместить"
 
 #
-#: main.C:530
+#: main.C:532
 msgid "Resi&ze"
 msgstr "Изменить размер"
 
 #
-#: main.C:532
+#: main.C:534
 msgid "&To desktop"
 msgstr "На рабочий стол"
 
-#: main.C:534
+#: main.C:536
 msgid "&Onto current desktop"
 msgstr "На текуший рабочий стол"
 
-#: main.C:574
+#: main.C:576
 msgid "One"
 msgstr "Один"
 
-#: main.C:577
+#: main.C:579
 msgid "Two"
 msgstr "Два"
 
-#: main.C:580
+#: main.C:582
 msgid "Three"
 msgstr "Три"
 
-#: main.C:583
+#: main.C:585
 msgid "Four"
 msgstr "Четыре"
 
-#: main.C:586
+#: main.C:588
 msgid "Five"
 msgstr "Пять"
 
-#: main.C:589
+#: main.C:591
 msgid "Six"
 msgstr "Шесть"
 
-#: main.C:592
+#: main.C:594
 msgid "Seven"
 msgstr "Семь"
 
-#: main.C:595
+#: main.C:597
 msgid "Eight"
 msgstr "Восемь"
 
-#: main.C:609
+#: main.C:611
 msgid "Unnamed Desktop"
 msgstr "Неименованный рабочий стол"
 
-#: main.C:949
+#: main.C:991
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Некоторые пиктограммы некорректны: ShapeMode отключено\n"
 
 #
-#: main.C:1061
+#: main.C:1103
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Некоторые пиктограммы некорректны: GimmickMode отключено\n"
 
-#: main.C:1386
+#: main.C:1428
 msgid "*** No Tasks ***"
 msgstr "*** Задач нет ***"
 

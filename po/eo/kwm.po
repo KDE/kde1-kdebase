@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm 1.0pre2\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-11-25 01:11+0100\n"
 "PO-Revision-Date: 1998-07-17 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -28,99 +28,99 @@ msgstr "kwm: Eraro dum lanæado; mortante\n"
 msgid "Preparing session ... "
 msgstr "Preparante seancon ... "
 
-#: main.C:505
+#: main.C:507
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Kopirajto (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:512
+#: main.C:514
 msgid "Usage: "
 msgstr "uzo: "
 
-#: main.C:523
+#: main.C:525
 msgid "&Maximize"
 msgstr "M&aksimigu"
 
-#: main.C:524
+#: main.C:526
 msgid "&Restore"
 msgstr "&Restarigu"
 
-#: main.C:525
+#: main.C:527
 msgid "&Iconify"
 msgstr "&Piktogramigu"
 
-#: main.C:526
+#: main.C:528
 msgid "&DeIconify"
 msgstr "Malp&iktogramigu"
 
-#: main.C:527
+#: main.C:529
 msgid "&Sticky"
 msgstr "&Fiksu"
 
-#: main.C:528
+#: main.C:530
 msgid "&UnSticky"
 msgstr "Malfi&ksu"
 
-#: main.C:529
+#: main.C:531
 msgid "Mo&ve"
 msgstr "&Movu"
 
-#: main.C:530
+#: main.C:532
 msgid "Resi&ze"
 msgstr "Þanøu &grandecon"
 
-#: main.C:532
+#: main.C:534
 msgid "&To desktop"
 msgstr "Al &labortabulo"
 
-#: main.C:534
+#: main.C:536
 msgid "&Onto current desktop"
 msgstr "&Sur aktualan labortabulon"
 
-#: main.C:574
+#: main.C:576
 msgid "One"
 msgstr "Unu"
 
-#: main.C:577
+#: main.C:579
 msgid "Two"
 msgstr "Du"
 
-#: main.C:580
+#: main.C:582
 msgid "Three"
 msgstr "Tri"
 
-#: main.C:583
+#: main.C:585
 msgid "Four"
 msgstr "Kvar"
 
-#: main.C:586
+#: main.C:588
 msgid "Five"
 msgstr "Kvin"
 
-#: main.C:589
+#: main.C:591
 msgid "Six"
 msgstr "Ses"
 
-#: main.C:592
+#: main.C:594
 msgid "Seven"
 msgstr "Sep"
 
-#: main.C:595
+#: main.C:597
 msgid "Eight"
 msgstr "Ok"
 
-#: main.C:609
+#: main.C:611
 msgid "Unnamed Desktop"
 msgstr "nenomita labortabulo"
 
-#: main.C:949
+#: main.C:991
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Kelkaj rastrobildoj ne estas en ordo: Figurmodo malaktivigita\n"
 
-#: main.C:1061
+#: main.C:1103
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Kelkaj rastrobildoj ne estas en ordo: Anima¼modo malaktivigita\n"
 
-#: main.C:1386
+#: main.C:1428
 msgid "*** No Tasks ***"
 msgstr "*** Neniuj taskoj ****"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-11-25 01:11+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -20,99 +20,99 @@ msgstr "kwm: Probleme beim Initialisieren; gebe auf\n"
 msgid "Preparing session ... "
 msgstr "Bereite Sitzung vor..."
 
-#: main.C:505
+#: main.C:507
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:512
+#: main.C:514
 msgid "Usage: "
 msgstr "Verwendung: "
 
-#: main.C:523
+#: main.C:525
 msgid "&Maximize"
 msgstr "&Maximieren"
 
-#: main.C:524
+#: main.C:526
 msgid "&Restore"
 msgstr "&Wiederherstellen"
 
-#: main.C:525
+#: main.C:527
 msgid "&Iconify"
 msgstr "Mi&nimieren"
 
-#: main.C:526
+#: main.C:528
 msgid "&DeIconify"
 msgstr "(&De)Iconisieren"
 
-#: main.C:527
+#: main.C:529
 msgid "&Sticky"
 msgstr "&Anheften an"
 
-#: main.C:528
+#: main.C:530
 msgid "&UnSticky"
 msgstr "Anhe&ften aus"
 
-#: main.C:529
+#: main.C:531
 msgid "Mo&ve"
 msgstr "&Verschieben"
 
-#: main.C:530
+#: main.C:532
 msgid "Resi&ze"
 msgstr "G&röße ändern"
 
-#: main.C:532
+#: main.C:534
 msgid "&To desktop"
 msgstr "A&uf Arbeitsplatz"
 
-#: main.C:534
+#: main.C:536
 msgid "&Onto current desktop"
 msgstr "Auf aktuellen Arbeitsplatz"
 
-#: main.C:574
+#: main.C:576
 msgid "One"
 msgstr "Eins"
 
-#: main.C:577
+#: main.C:579
 msgid "Two"
 msgstr "Zwei"
 
-#: main.C:580
+#: main.C:582
 msgid "Three"
 msgstr "Drei"
 
-#: main.C:583
+#: main.C:585
 msgid "Four"
 msgstr "Vier"
 
-#: main.C:586
+#: main.C:588
 msgid "Five"
 msgstr "Fünf"
 
-#: main.C:589
+#: main.C:591
 msgid "Six"
 msgstr "Sechs"
 
-#: main.C:592
+#: main.C:594
 msgid "Seven"
 msgstr "Sieben"
 
-#: main.C:595
+#: main.C:597
 msgid "Eight"
 msgstr "Acht"
 
-#: main.C:609
+#: main.C:611
 msgid "Unnamed Desktop"
 msgstr "Unbenannter Desktop"
 
-#: main.C:949
+#: main.C:991
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Ein paar Pixmaps sind ungültig: Shape-Modus ausgeschaltet\n"
 
-#: main.C:1061
+#: main.C:1103
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Ein paar Pixmaps sind ungültig: Gimmick-Modus ausgeschaltet\n"
 
-#: main.C:1386
+#: main.C:1428
 msgid "*** No Tasks ***"
 msgstr "*** Keine Programme ***"
 

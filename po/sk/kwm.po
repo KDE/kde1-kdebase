@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm 0.10.23\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-11-25 01:11+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -29,99 +29,99 @@ msgstr "kwm: zlyhanie behom inicializácie; ukonèujem\n"
 msgid "Preparing session ... "
 msgstr "Pripravujem sedenie ... "
 
-#: main.C:505
+#: main.C:507
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:512
+#: main.C:514
 msgid "Usage: "
 msgstr "Pou¾itie:"
 
-#: main.C:523
+#: main.C:525
 msgid "&Maximize"
 msgstr "&Maximalizova»"
 
-#: main.C:524
+#: main.C:526
 msgid "&Restore"
 msgstr "&Obnovi»"
 
-#: main.C:525
+#: main.C:527
 msgid "&Iconify"
 msgstr "&Ikonizova»"
 
-#: main.C:526
+#: main.C:528
 msgid "&DeIconify"
 msgstr "O&dikonizova»"
 
-#: main.C:527
+#: main.C:529
 msgid "&Sticky"
 msgstr "&Prilepi»"
 
-#: main.C:528
+#: main.C:530
 msgid "&UnSticky"
 msgstr "Od&lepi»"
 
-#: main.C:529
+#: main.C:531
 msgid "Mo&ve"
 msgstr "Pre&sunú»"
 
-#: main.C:530
+#: main.C:532
 msgid "Resi&ze"
 msgstr "Zmeni» &veµkos»"
 
-#: main.C:532
+#: main.C:534
 msgid "&To desktop"
 msgstr "&Na pracovnú plochu"
 
-#: main.C:534
+#: main.C:536
 msgid "&Onto current desktop"
 msgstr "Na &súèasnú pracovnú plochu"
 
-#: main.C:574
+#: main.C:576
 msgid "One"
 msgstr "Prvá"
 
-#: main.C:577
+#: main.C:579
 msgid "Two"
 msgstr "Druhá"
 
-#: main.C:580
+#: main.C:582
 msgid "Three"
 msgstr "Tretia"
 
-#: main.C:583
+#: main.C:585
 msgid "Four"
 msgstr "©tvrtá"
 
-#: main.C:586
+#: main.C:588
 msgid "Five"
 msgstr "Piata"
 
-#: main.C:589
+#: main.C:591
 msgid "Six"
 msgstr "©iesta"
 
-#: main.C:592
+#: main.C:594
 msgid "Seven"
 msgstr "Siedma"
 
-#: main.C:595
+#: main.C:597
 msgid "Eight"
 msgstr "Ôsma"
 
-#: main.C:609
+#: main.C:611
 msgid "Unnamed Desktop"
 msgstr "Nepomenovaná plocha"
 
-#: main.C:949
+#: main.C:991
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Niektoré bodové mapy nie sú korektné: ShapeMode vypnutý\n"
 
-#: main.C:1061
+#: main.C:1103
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Niektoré bodové mapy nie sú korektné: GimmickMode vypnutý\n"
 
-#: main.C:1386
+#: main.C:1428
 msgid "*** No Tasks ***"
 msgstr "*** ®iadne úlohy ***"
 

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-11-25 01:11+0100\n"
 "PO-Revision-Date: 1998-02-26 20:46+MET\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -27,100 +27,100 @@ msgstr "kwm: hiba inicializálás közben; a futtatás megszakadt\n"
 msgid "Preparing session ... "
 msgstr ""
 
-#: main.C:505
+#: main.C:507
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:512
+#: main.C:514
 msgid "Usage: "
 msgstr "Használat: "
 
-#: main.C:523
+#: main.C:525
 msgid "&Maximize"
 msgstr "Ma&ximalizál"
 
-#: main.C:524
+#: main.C:526
 msgid "&Restore"
 msgstr "&Visszaállít"
 
-#: main.C:525
+#: main.C:527
 msgid "&Iconify"
 msgstr "&Ikonizál"
 
-#: main.C:526
+#: main.C:528
 msgid "&DeIconify"
 msgstr "&Nem Ikonizál"
 
-#: main.C:527
+#: main.C:529
 msgid "&Sticky"
 msgstr "&Rajzszög be"
 
-#: main.C:528
+#: main.C:530
 #, fuzzy
 msgid "&UnSticky"
 msgstr "&Rajzszög ki"
 
-#: main.C:529
+#: main.C:531
 msgid "Mo&ve"
 msgstr "&Mozgat"
 
-#: main.C:530
+#: main.C:532
 msgid "Resi&ze"
 msgstr "Mé&retez"
 
-#: main.C:532
+#: main.C:534
 msgid "&To desktop"
 msgstr "&Másik asztalra"
 
-#: main.C:534
+#: main.C:536
 msgid "&Onto current desktop"
 msgstr "A &jelenlegi asztalra"
 
-#: main.C:574
+#: main.C:576
 msgid "One"
 msgstr "Egyes"
 
-#: main.C:577
+#: main.C:579
 msgid "Two"
 msgstr "Kettes"
 
-#: main.C:580
+#: main.C:582
 msgid "Three"
 msgstr "Hármas"
 
-#: main.C:583
+#: main.C:585
 msgid "Four"
 msgstr "Négyes"
 
-#: main.C:586
+#: main.C:588
 msgid "Five"
 msgstr "Ötös"
 
-#: main.C:589
+#: main.C:591
 msgid "Six"
 msgstr "Hatos"
 
-#: main.C:592
+#: main.C:594
 msgid "Seven"
 msgstr "Hetes"
 
-#: main.C:595
+#: main.C:597
 msgid "Eight"
 msgstr "Nyolcas"
 
-#: main.C:609
+#: main.C:611
 msgid "Unnamed Desktop"
 msgstr ""
 
-#: main.C:949
+#: main.C:991
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr ""
 
-#: main.C:1061
+#: main.C:1103
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr ""
 
-#: main.C:1386
+#: main.C:1428
 msgid "*** No Tasks ***"
 msgstr "*** Nincsenek programok ***"
 
