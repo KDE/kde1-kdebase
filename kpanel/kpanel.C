@@ -521,56 +521,15 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 				 box_height - exit_button->height(),
 				 exit_button->width(),
 				 exit_button->height());
-	
-	for (i=0; (tmp_button = desktopbar->find(i)); i++){
-	  switch (i){
-	  case 0:
-	    tmp_button->setGeometry(1, 0,
+
+	//CT 29Jan1999 - fix for more than 8 buttons and cleaner code
+	for (int i=0; (tmp_button = desktopbar->find(i)); i++){
+	  tmp_button->setGeometry( (i / 2)*(exit_button->width() * dbhs+1)+1,
+				  !(i % 2)?0:lock_button->y(),
 				    exit_button->width() * dbhs,
 				    exit_button->height());
-	    break;
-	  case 2:
-	    tmp_button->setGeometry(exit_button->width() * dbhs + 2, 0,
-				    exit_button->width() * dbhs,
-				    exit_button->height());
-	    break;
-	  case 4:
-	    tmp_button->setGeometry(2 * exit_button->width() * dbhs + 3, 0,
-				    exit_button->width() * dbhs,
-				    exit_button->height());
-	    break;
-	  case 6:
-	    tmp_button->setGeometry(3 * exit_button->width() * dbhs + 4, 0,
-				    exit_button->width() * dbhs,
-				    exit_button->height());
-	    break;
-	  case 1:
-	    tmp_button->setGeometry(1,
-				    lock_button->y(),
-				    exit_button->width() * dbhs,
-				    exit_button->height());
-	    break;
-	  case 3:
-	    tmp_button->setGeometry(exit_button->width() * dbhs + 2,
-				    lock_button->y(),
-				    exit_button->width() * dbhs,
-				    exit_button->height());
-	    break;
-	  case 5:
-	    tmp_button->setGeometry(2 * exit_button->width() * dbhs + 3,
-				    lock_button->y(),
-				    exit_button->width() * dbhs,
-				    exit_button->height());
-	    break;
-	  case 7:
-	    tmp_button->setGeometry(3 * exit_button->width() * dbhs + 4,
-				    lock_button->y(),
-				    exit_button->width() * dbhs,
-				  exit_button->height());
-	    break;
-	  }
 	}
-	
+	//CT	
 	
 	desktopbar->setGeometry(exit_button->width(),
 				0,
