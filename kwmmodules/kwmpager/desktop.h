@@ -62,7 +62,10 @@ protected:
     virtual void drawContents ( QPainter * );
     virtual void resizeEvent ( QResizeEvent * );  
     PagerWindow *activeWindow;
-    
+
+public slots:    
+    void refresh();
+
 private:
     KWMModuleApplication* kwmmapp;
     int Id;

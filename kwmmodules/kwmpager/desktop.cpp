@@ -81,6 +81,12 @@ void Desktop::init()
     pixmap.fill(backgroundColor());
 }
 
+void Desktop::refresh()
+{
+    fillPixmap();
+    repaint(true);
+}
+
 PagerWindow *Desktop::getWindow(Window w)
 {
     PagerWindow *win = 0L;
