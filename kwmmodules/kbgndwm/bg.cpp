@@ -335,6 +335,8 @@ void KBackground::apply()
 void KBackground::cancel()
 {
     killTimers();
+    if ( bgPixmap )
+	delete bgPixmap;
 }
 
 void KBackground::timerEvent( QTimerEvent * )
