@@ -64,15 +64,18 @@ void execute( const char* cmd){
       tmp += cmd;
       cmd = tmp.data();
   }
-  // Usual file or executable
+  // Usual file or directory
   else
   {
       struct stat buff;
       const char *p = cmd;
       if ( strncmp( p, "file:", 5 ) == 0 )
 	  p = p + 5;
+      // An absolute path ?
+      if ( ( *p == '/') &&
       // Just a document ?
-      if ( stat( p, &buff ) == 0 && ( S_ISREG( buff.st_mode ) || S_ISDIR( buff.st_mode ) ) )
+          stat( p, &buff ) == 0 &&
+           ( S_ISREG( buff.st_mode ) || S_ISDIR( buff.st_mode ) ) )
       {
 	  // Tell KFM to open the document
 	  tmp = "kfmclient openURL ";
