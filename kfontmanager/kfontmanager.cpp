@@ -84,7 +84,10 @@ KFontManager::KFontManager (QWidget * parent, const char *name)
   example_label->setAlignment(AlignCenter);
 //  example_label->setBackgroundColor(white);
   example_label->setFrameStyle( QFrame::WinPanel | QFrame::Sunken );
-  example_label->setText(i18n("The KDE Font Manager Example String"));
+//  example_label->setText(i18n("The KDE Font Manager Example String"));
+  // the following example string is better; is uses all letters in alphabet
+  example_label->setText(i18n("The Quick Brown Fox Jumps Over The Lazy Dog\n"
+			      "AaBbCc123"));
 
   connect( parent, SIGNAL( applyButtonPressed() ),
 	   this, SLOT( writeKDEInstalledFonts() ) );  	  
