@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-08-26 12:45+0200\n"
+"PO-Revision-Date: 1997-11-13 12:20+0100\n"
+"Last-Translator: John Zero <johnzero@telnet.hu>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:53
+msgid "KDE Font Manager"
+msgstr "KDE fontkezelõ"
+
+#: main.cpp:61
+msgid "KDE Fonts"
+msgstr "KDE fontok"
+
+#: main.cpp:62
+msgid "Font Explorer"
+msgstr "Font felfedezõ"
+
+#: main.cpp:63
+msgid "Raw X11 Font List"
+msgstr "Nyers X11 fontlista"
+
+#: kfontmanager.cpp:61
+msgid "Available X11 Fonts"
+msgstr "Elérhetõ X11 fontok"
+
+#: kfontmanager.cpp:68
+msgid "Fonts made available to KDE"
+msgstr "KDE számára használható fontok"
+
+#: kfontmanager.cpp:74
+msgid "Add"
+msgstr "Hozzáad"
+
+#: kfontmanager.cpp:77
+msgid "Remove"
+msgstr "Töröl"
+
+#: kfontmanager.cpp:87
+msgid "The KDE Font Manager Example String"
+msgstr "árvíztûrõ tükörfúrógép ABC ÁÍÛÕ ÜÖÚÓÉ"
+
+#: kfontlist.cpp:65 kfontmanager.cpp:105
+msgid "About kfontmanager"
+msgstr "A kfontmanagerrõl"
+
+#: kfontmanager.cpp:105
+msgid ""
+"kfontmanager Version 0.2\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+
+#: kfontmanager.cpp:212 kfontmanager.cpp:283 kfontmanager.cpp:288
+msgid "Sorry"
+msgstr "Sajnálom"
+
+#: kfontmanager.cpp:212
+msgid ""
+"The environment variable HOME\n"
+"is not set\n"
+msgstr ""
+"A HOME környezeti változó\n"
+"nincs beállítva\n"
+
+#: kfontmanager.cpp:283
+msgid ""
+"Can not create:\n"
+" ~/.kde/config/kdefonts\n"
+msgstr ""
+"Nem tudtam létrehozni a\n"
+" ~/.kde/config/kdefonts file-t\n"
+
+#: kfontmanager.cpp:288
+msgid ""
+"~/.kde/config/kdefonts exists but\n"
+"is not writeable\n"
+"Can't save KDE Fontlist."
+msgstr ""
+"A ~/.kde/config/kdefonts file\n"
+"létezik, de nem írható, ezért\n"
+"nem tudom elmenteni a fontlistát."
+
+#: kfontlist.cpp:65
+msgid ""
+"kfontmanager Version 0.1\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+
