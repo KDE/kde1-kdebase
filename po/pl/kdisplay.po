@@ -337,10 +337,11 @@ msgid "Sample text"
 msgstr "Przyk³adowy tekst"
 
 #: general.cpp:306
+#, fuzzy
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
-"0 1 2 3 4 5 6 7 8 9   ! \" # $ % ^ & * ( )"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
 "¯Ó£W NA STARO¦Æ WYDZIELA WSTRÊTN¡ WOÑ\n"
 "¿ó³w na staro¶æ wydziela wstrêtn± woñ\n"
