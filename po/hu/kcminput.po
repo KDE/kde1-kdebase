@@ -1,18 +1,36 @@
+# KTranslator Generated File
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Marcell Lengyel <miketkf@yahoo.com>, 1998.
+#
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# John Zero <johnzero@telnet.hu>, 1998.
+# Balazs Nagy <julian7@kva.hu>, 1998.
+# Marcell Lengyel <miketkf@yahoo.com>, 1998.
+#
+#
+# KTranslator Generated File
+# John Zero <johnzero@telnet.hu>, 1997
+# Balazs Nagy <julian7@kva.hu>, 1998
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # John Zero <johnzero@telnet.hu>, 1998.
 #
-#, fuzzy
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase 981215\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-12-17 12:21+0100\n"
+"PO-Revision-Date: Thu Apr 22 1999 09:56:31+0100\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"X-Generator: KTranslator v 0.4.0"
 
 #: main.cpp:54
 msgid "&Mouse"
@@ -40,7 +58,7 @@ msgstr "Határérték"
 
 #: mouse.cpp:72
 msgid "pixels"
-msgstr ""
+msgstr "képpont"
 
 #: mouse.cpp:81
 msgid "Button mapping"

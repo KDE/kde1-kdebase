@@ -1,155 +1,169 @@
 # KTranslator Generated File
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Marcell Lengyel <miketkf@yahoo.com>, 1998.
+#
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# John Zero <johnzero@telnet.hu>, 1998.
+# Balazs Nagy <julian7@kva.hu>, 1998.
+# Marcell Lengyel <miketkf@yahoo.com>, 1998.
+#
+#
+# KTranslator Generated File
 # John Zero <johnzero@telnet.hu>, 1997
 # Balazs Nagy <julian7@kva.hu>, 1998
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay VERSION\n"
-"POT-Creation-Date: 1999-04-20 01:17+0200\n"
-"PO-Revision-Date: Mon Mar 8 1999 15:59:45+0100\n"
+"POT-Creation-Date: 1999-03-21 01:19+0100\n"
+"PO-Revision-Date: Thu Apr 22 1999 09:45:24+0100\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"X-Generator: KTranslator v 0.4.0\n"
+"X-Generator: KTranslator v 0.4.0"
 
-#: backgnd.cpp:55
+#: backgnd.cpp:54
 msgid "Enter new desktop name"
 msgstr "Írd be az új munkaasztal nevét"
 
-#: backgnd.cpp:111 backgnd.cpp:164
+#: backgnd.cpp:110 backgnd.cpp:163
 msgid "Desktop"
 msgstr "Asztal"
 
 #
-#: backgnd.cpp:186
+#: backgnd.cpp:185
 msgid "&Rename ..."
 msgstr "Á&tnevez..."
 
 #
-#: backgnd.cpp:197
+#: backgnd.cpp:196
 msgid "&Common Background"
 msgstr "&Közös háttér"
 
 #
-#: backgnd.cpp:225 colorscm.cpp:82
+#: backgnd.cpp:224 colorscm.cpp:82
 msgid "Colors"
 msgstr "Színek"
 
 #
-#: backgnd.cpp:252
+#: backgnd.cpp:251
 msgid "&One Color"
 msgstr "&Egy szín"
 
 #
-#: backgnd.cpp:269
+#: backgnd.cpp:268
 msgid "&Two Color"
 msgstr "&Két szín"
 
 #
-#: backgnd.cpp:288
+#: backgnd.cpp:287
 msgid "Set&up ..."
 msgstr "&Beállítás..."
 
-#: backgnd.cpp:297
+#: backgnd.cpp:296
 msgid "Wallpaper"
 msgstr "Tapéta"
 
 #
-#: backgnd.cpp:328 backgnd.cpp:1213 backgnd.cpp:1378 backgnd.cpp:1917
+#: backgnd.cpp:327 backgnd.cpp:1210 backgnd.cpp:1372 backgnd.cpp:1911
 msgid "No wallpaper"
 msgstr "Nincs tapéta"
 
-#: backgnd.cpp:361
+#: backgnd.cpp:360
 msgid "&Browse..."
 msgstr "&Tallóz..."
 
-#: backgnd.cpp:369
+#: backgnd.cpp:368
 msgid "Arrangement:"
 msgstr "Elrendezés:"
 
 #
-#: backgnd.cpp:376
+#: backgnd.cpp:375
 msgid "Tiled"
 msgstr "Egymás mellett"
 
-#: backgnd.cpp:377
+#: backgnd.cpp:376
 msgid "Mirrored"
 msgstr "Tükrözött"
 
 #
-#: backgnd.cpp:378
+#: backgnd.cpp:377
 msgid "Center Tiled"
 msgstr "Középe, egymás mellett"
 
 #
-#: backgnd.cpp:379
+#: backgnd.cpp:378
 msgid "Centred"
 msgstr "Középre igzított"
 
 #
-#: backgnd.cpp:380
+#: backgnd.cpp:379
 msgid "Centred Brick"
 msgstr "Középen, tégla szerûen"
 
 #
-#: backgnd.cpp:381
+#: backgnd.cpp:380
 msgid "Centred Warp"
 msgstr "Középen, behajtva"
 
 #
-#: backgnd.cpp:382
+#: backgnd.cpp:381
 msgid "Centred Maxpect"
 msgstr "Középen, arányos maximum"
 
-#: backgnd.cpp:383
+#: backgnd.cpp:382
 msgid "Symmetrical Tiled"
 msgstr "Szimmetrikusan egymás mellett"
 
-#: backgnd.cpp:384
+#: backgnd.cpp:383
 msgid "Symmetrical Mirrored"
 msgstr "Szimmetrikusan tükrözött"
 
 #
-#: backgnd.cpp:385
+#: backgnd.cpp:384
 msgid "Scaled"
 msgstr "Nyújtott"
 
-#: backgnd.cpp:400
+#: backgnd.cpp:399
 msgid "Ra&ndom"
 msgstr "Véletle&nszerûen"
 
-#: backgnd.cpp:409
-#, fuzzy
+#: backgnd.cpp:408
+#
 msgid "Setu&p..."
 msgstr "Beá&llítás..."
 
-#: backgnd.cpp:419
+#: backgnd.cpp:418
 msgid "&Dock into the panel"
 msgstr "Panelba &dokkolás"
 
-#: backgnd.cpp:444
+#: backgnd.cpp:443
 msgid "Cache size (kB):"
 msgstr "Gyorstár mérete (kB):"
 
 #
-#: backgnd.cpp:1345
+#: backgnd.cpp:1339
 msgid "Desktop names"
 msgstr "Asztalok nevei"
 
-#: backgnd.cpp:1390
+#: backgnd.cpp:1384
 msgid "File error"
 msgstr "Fájl hiba"
 
-#: backgnd.cpp:1391
+#: backgnd.cpp:1385
 msgid "Can't load image file"
 msgstr "Nem lehet betölteni a képet"
 
-#: backgnd.cpp:1414 backgnd.cpp:1887
+#: backgnd.cpp:1408 backgnd.cpp:1881
 msgid "Unsupported URL"
 msgstr "Nem támogatott URL"
 
-#: backgnd.cpp:1415 backgnd.cpp:1888
+#: backgnd.cpp:1409 backgnd.cpp:1882
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
@@ -157,95 +171,95 @@ msgstr ""
 "Modulja"
 
 #
-#: backgnd.cpp:1447
+#: backgnd.cpp:1441
 msgid "Two color backgrounds"
 msgstr "Két színû háttér"
 
-#: backgnd.cpp:1484
+#: backgnd.cpp:1478
 msgid "Blend colors from &top to bottom"
 msgstr "Színátmenet &felülrõl lefelé"
 
-#: backgnd.cpp:1490
+#: backgnd.cpp:1484
 msgid "Blend colors from &right to left"
 msgstr "Színátmenet &jobbról balra"
 
-#: backgnd.cpp:1496
+#: backgnd.cpp:1490
 msgid "Use &pattern"
 msgstr "Használjon &mintát"
 
-#: backgnd.cpp:1523
+#: backgnd.cpp:1517
 msgid "Preview"
 msgstr "Vázlat"
 
-#: backgnd.cpp:1534
+#: backgnd.cpp:1528
 msgid "Pattern &name"
 msgstr "Minta &neve"
 
-#: backgnd.cpp:1573
+#: backgnd.cpp:1567
 msgid "Current"
 msgstr "Jelenlegi"
 
 #
-#: backgnd.cpp:1633
+#: backgnd.cpp:1627
 msgid "Filled"
 msgstr "Kitöltött"
 
-#: backgnd.cpp:1636
+#: backgnd.cpp:1630
 msgid "Fish net"
 msgstr "Halászháló"
 
-#: backgnd.cpp:1639
+#: backgnd.cpp:1633
 msgid "Triangles"
 msgstr "Háromszögek"
 
-#: backgnd.cpp:1642
+#: backgnd.cpp:1636
 msgid "Flowers"
 msgstr "Virágok"
 
-#: backgnd.cpp:1645
+#: backgnd.cpp:1639
 msgid "Rattan"
 msgstr "Rácsos"
 
-#: backgnd.cpp:1648
+#: backgnd.cpp:1642
 msgid "Cobbled Pavement"
 msgstr "Macskakõ"
 
-#: backgnd.cpp:1714
+#: backgnd.cpp:1708
 msgid "Random mode setup"
 msgstr "Véletlenszerû mód beállítás"
 
-#: backgnd.cpp:1720
+#: backgnd.cpp:1714
 msgid "Pick files from &directory"
 msgstr "&Ebbõl a könyvtárból vegye a fájlokat"
 
 #
-#: backgnd.cpp:1734
+#: backgnd.cpp:1728
 msgid "&Browse ..."
 msgstr "&Tallóz..."
 
-#: backgnd.cpp:1755
+#: backgnd.cpp:1749
 msgid "Timer Delay in seconds :"
 msgstr "Késleltetés másodpercben:"
 
 #
-#: backgnd.cpp:1767
+#: backgnd.cpp:1761
 msgid "In &order"
 msgstr "S&orban"
 
 #
-#: backgnd.cpp:1784
+#: backgnd.cpp:1778
 msgid "Desktops :"
 msgstr "Asztalok:"
 
-#: backgnd.cpp:1823
+#: backgnd.cpp:1817
 msgid "&Add"
 msgstr "Hozzá&adás"
 
-#: backgnd.cpp:1995
+#: backgnd.cpp:1989
 msgid "Directory error"
 msgstr "Könyvtár hiba"
 
-#: backgnd.cpp:1996
+#: backgnd.cpp:1990
 msgid "Selected directory doesn't exists"
 msgstr "A választott könyvtár nem létezik"
 
@@ -367,7 +381,7 @@ msgstr ""
 "a színösszeállítás listában."
 
 #: savescm.cpp:18
-#, fuzzy
+#
 msgid "Add a color scheme"
 msgstr "Szín összeállítás hozzáadás"
 
@@ -506,6 +520,9 @@ msgid ""
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
+" \n"
+"Árvíztûrõ Tükörfúrógép\n"
+" "
 
 #
 #: main.cpp:64
@@ -581,97 +598,3 @@ msgstr "alapértelmezett"
 msgid "any"
 msgstr "bármelyik"
 
-#, fuzzy
-#~ msgid "Fonts etc."
-#~ msgstr "Betûk"
-
-#, fuzzy
-#~ msgid "Desktop fonts"
-#~ msgstr "Asztal"
-
-#, fuzzy
-#~ msgid "&Fonts etc."
-#~ msgstr "Betûk"
-
-#, fuzzy
-#~ msgid "One Des&ktop"
-#~ msgstr "Asztal"
-
-#, fuzzy
-#~ msgid "&Remove"
-#~ msgstr "Kompozíció mentése"
-
-#, fuzzy
-#~ msgid "Default"
-#~ msgstr "KDE alap"
-
-#~ msgid "kwmcom: communication with kwm failed\n"
-#~ msgstr "kwmcom: nem lehet kapcsolatba lépni a kwm-mel\n"
-
-#~ msgid "Lock"
-#~ msgstr "Zárol"
-
-#~ msgid "General"
-#~ msgstr "Általános"
-
-#~ msgid "You have chosen a name used by a supplied color scheme"
-#~ msgstr "Már létezik színkompozíció ilyen névvel"
-
-#~ msgid "Display Setup"
-#~ msgstr "Kijelzõ beállítása"
-
-#~ msgid ""
-#~ "No desktop color schemes were found.\n"
-#~ "Do you want to install the default color schemes now ?"
-#~ msgstr ""
-#~ "A színkompozíciók nem találhatóak.\n"
-#~ "Fel kívánja telepíteni az alapértelmezetteket?"
-
-#~ msgid "Disabled"
-#~ msgstr "Kikapcsolt"
-
-#~ msgid "Selected"
-#~ msgstr "Kiválasztott"
-
-#~ msgid "Name"
-#~ msgstr "Név"
-
-#~ msgid "Wait:"
-#~ msgstr "Várjon:"
-
-#~ msgid "Widget style"
-#~ msgstr "Megjelenés"
-
-#~ msgid "Sample"
-#~ msgstr "Minta"
-
-#~ msgid "Small"
-#~ msgstr "Kicsi"
-
-#~ msgid "Medium"
-#~ msgstr "Közepes"
-
-#~ msgid "Large"
-#~ msgstr "Nagy"
-
-#~ msgid "Color"
-#~ msgstr "Szín"
-
-#, fuzzy
-#~ msgid "&Flat"
-#~ msgstr "Síma"
-
-#, fuzzy
-#~ msgid "&Gradient"
-#~ msgstr "Átmenet"
-
-#, fuzzy
-#~ msgid "&Portrait"
-#~ msgstr "Álló"
-
-#, fuzzy
-#~ msgid "&Landscape"
-#~ msgstr "Fekvõ"
-
-#~ msgid "Desktop Title"
-#~ msgstr "Asztal neve"

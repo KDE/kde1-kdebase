@@ -1,20 +1,28 @@
+# KTranslator Generated File
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Marcell Lengyel <miketkf@yahoo.com>, 1998.
+#
+#
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # John Zero <johnzero@telnet.hu>, 1998.
 # Balazs Nagy <julian7@kva.hu>, 1998.
 # Marcell Lengyel <miketkf@yahoo.com>, 1998.
 #
-#, fuzzy
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmbell\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-12-17 16:02+0100\n"
+"PO-Revision-Date: Thu Apr 22 1999 09:43:56+0100\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"X-Generator: KTranslator v 0.4.0"
 
 #: main.cpp:52
 msgid "&Bell"
@@ -46,11 +54,9 @@ msgstr "Hossz"
 
 #: bell.cpp:72
 msgid "milliseconds"
-msgstr ""
+msgstr "miliszekundum"
 
 #: bell.cpp:87
 msgid "Test"
 msgstr "Próba"
 
-#~ msgid "ms"
-#~ msgstr "msec"
