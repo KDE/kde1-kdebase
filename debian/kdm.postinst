@@ -1,11 +1,39 @@
 #!/bin/sh
+# Mostly stolen from the Debian xdm scripts
+# Copyright 1998, 1999 Branden Robinson.  Licensed under the GNU GPL.
+# Acknowlegements to Stephen Early, Mark Eichin, and Manoj Srivastava.
 
 set -e
 
+
+cleanup () {
+  # unroll changes in kdm preinst
+  for file in /usr/X11R6/lib/X11/xdm/xdm-config; do
+    if [ -e $file.kdm-old ]; then
+      rm $file
+      mv $file.kdm-old $file
+    fi
+  done
+}
+
 if [ "$1" = "configure" ]; then
   update-rc.d kdm defaults 99 01 >/dev/null
-  update-rc.d xdm defaults 99 01 >/dev/null
 fi  
+
+nostart=
+for hostname in "" "localhost" "$(hostname)" "$(hostname -f)"; do
+  if echo $DISPLAY | grep -q "^$hostname:0.*"; then
+    nostart=yes
+  fi
+done
+
+if start-stop-daemon --stop --quiet --signal 0 --pid /var/run/kdm.pid --exec /usr/bin/kdm; then
+  nostart=yes
+fi
+# or if the options file says not to
+if ! grep -qs ^restart-on-upgrade /etc/X11/kdm/kdm.options; then
+  nostart=yes
+fi
 
 echo "Do you want to setup kdm for your system installation?"
 echo "If you enter y here, /etc/kde/kdmrc will be changed to"
@@ -45,57 +73,9 @@ done
 mv $TMPFILE /etc/kde/kdmrc
 fi
 
-echo -n "Patching away old kdm bug... "
-sed "s|/etc/X11/config|/etc/X11/kdm/config|" </etc/X11/xdm/Xsetup_0 >/etc/X11/xdm/Xsetup_0-new
-cat /etc/X11/xdm/Xsetup_0-new >/etc/X11/xdm/Xsetup_0
-rm -f /etc/X11/xdm/Xsetup_0-new
-echo "done."
-
-if ! grep -q "^# Start kdebase added code" /etc/X11/xdm/Xsetup_0; then
-echo "we have to patch /etc/X11/xdm/Xsetup_0 to run kdmdesktop"
-cat >> /etc/X11/xdm/Xsetup_0 <<EOF
-# Start kdebase added code v2DEB
-if grep -q ^start-kdm /etc/X11/kdm/config; then # kdebase added code
-  /usr/bin/kdmdesktop & # kdebase added code
-fi # kdebase added code
-# End kdebase added code
-EOF
-fi
-
-if ! grep -q "^# Start kdebase added code v2DEB" /etc/X11/xdm/Xsetup_0; then
-echo -n "Patching away another old kdm bug... "
-sed "s|kdmdesktop|/usr/bin/kdmdesktop|" </etc/X11/xdm/Xsetup_0 >/etc/X11/xdm/Xsetup_0-new
-cat /etc/X11/xdm/Xsetup_0-new >/etc/X11/xdm/Xsetup_0
-rm -f /etc/X11/xdm/Xsetup_0-new
-
-sed "s|Start kdebase added code|Start kdebase added code v2DEB|" </etc/X11/xdm/Xsetup_0 >/etc/X11/xdm/Xsetup_0-new
-cat /etc/X11/xdm/Xsetup_0-new >/etc/X11/xdm/Xsetup_0
-rm -f /etc/X11/xdm/Xsetup_0-new
-echo "done."  
-fi
-
-
 #DEBHELPER#
 #KDEHELPER#
 
-# Starting kdm
-# /etc/init.d/kdm start
-if ! grep -q ^start-kdm /etc/X11/kdm/config; then
-  /usr/bin/switchdm
-else
+[ "$nostart" ] || /etc/init.d/kdm start || true
 
- if test -n "`pidof kdm`"
- then
-   echo "KDM is already running, you may need to stop it and restart it"
-   echo "manually"
- else
-    echo -n "Start kde display manager now ? (y/n) [n] "
-    read answer
-    case "$answer" in
-    y|Y) /etc/init.d/kdm start ;;
-    *)
-    echo "kdm will not be started.  "
- esac
- fi
 
-fi

@@ -29,6 +29,10 @@ $(BUILDDIR)/build-stamp:
 
 clean: debian-clean
 	-rm -rf $(BUILDDIR)
+	-rm -f debian/files
+	-rm -f debian/*substvars
+	-rm -f debian/menu
+	-rm -f configure
 	dh_clean -k
 
 debian-clean:
@@ -52,28 +56,33 @@ binary-arch: checkroot build
 	dh_installdirs
 	make -C $(BUILDDIR) RUN_KAPPFINDER="no" install 
 	cp debian/README.kde debian/tmp/usr/doc/kde
+
+## Install KDM
 	install -d debian/tmp/etc/init.d
+	install -d debian/tmp/etc/X11/kdm
+	install -d debian/tmp/usr/doc/kdm
 	cp debian/kdm.init.d debian/tmp/etc/init.d/kdm
-	cp debian/xdm.init.d debian/tmp/etc/init.d/xdm
+	chmod +x debian/tmp/etc/init.d/kdm
+	cp debian/xdm/* debian/tmp/etc/X11/kdm
+	install -d debian/tmp/usr/X11R6/lib/X11/xdm
+	ln -s /etc/X11/kdm/kdm-config debian/tmp/usr/X11R6/lib/X11/xdm/xdm-config
+	cp debian/README.xdm debian/tmp/usr/doc/kdm/README.Debian
+	install -d debian/tmp/usr/man/man5
+	cp debian/kdm.options.5.gz debian/tmp/usr/man/man5
+	cp debian/kdmrc debian/tmp/etc/kde
+## Move on to rest
 	install -d debian/tmp/usr/bin
 	cp debian/kappfinder debian/tmp/usr/bin
 	mv debian/tmp/usr/bin/startkde debian/tmp/usr/bin/kde
 	ln -s kde debian/tmp/usr/bin/startkde
-	install -d debian/tmp/usr/sbin
-	cp debian/switchdm debian/tmp/usr/bin
-	install -d debian/tmp/etc/X11/kdm
-	cp debian/kdm.config debian/tmp/etc/X11/kdm/config
 	rm -rf debian/tmp/usr/share/applnk/debian_menu
 	install -d debian/tmp/usr/share/applnk/debian_menu
 	cp debian/debian.kdelnk \
 	      debian/tmp/usr/share/applnk/debian_menu/.directory
-	chmod +x debian/tmp/etc/init.d/kdm debian/tmp/usr/bin/switchdm \
-	debian/tmp/etc/init.d/xdm
 	dh_undocumented 
 	perl -w debian/kderules
 	mv debian/tmp/usr/share/mimelnk/magic debian/tmp/etc/kde
 	ln -s /etc/kde/magic debian/tmp/usr/share/mimelnk/magic
-	cp debian/kdmrc debian/tmp/etc/kde
 	dh_movefiles
 	dh_installdocs
 	dh_installmenu
@@ -86,6 +95,7 @@ binary-arch: checkroot build
 	chmod 4755 debian/tmp/usr/bin/konsole_grantpty
 	chmod 4755 debian/tmp/usr/bin/kvt
 	dh_suidregister
+	dh_makeshlibs
 	dh_installdeb
 	dh_shlibdeps
 	dh_gencontrol	

@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# /etc/X11/kdm/Xstartup
+#
+# This script is run as root after the user logs in.
+# If this script exits with a return code other than 0, the user's
+# session will not be started.
+
+if grep -qs ^ignore-nologin /etc/X11/kdm/kdm.options; then
+  if [ -f /etc/nologin ]; then
+    if [ -x /usr/bin/X11/xmessage ]; then
+      xmessage -file /etc/nologin -geometry 640x480
+    fi
+  fi
+elif [ -f /etc/nologin ]; then
+  if [ -x /usr/bin/X11/xmessage ]; then
+    xmessage -file /etc/nologin -geometry 640x480
+  fi
+  exit 1
+fi 
+
+# Insert a utmp entry for the session
+if grep -qs ^use-sessreg /etc/X11/kdm/kdm.options; then
+  exec sessreg -a -l $DISPLAY -u /var/run/utmp -x /etc/X11/kdm/Xservers $USER
+  # NOTREACHED
+fi
+
+exit 0

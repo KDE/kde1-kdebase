@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# /etc/X11/kdm/Xsetup
+#
+# This script is run whenever kdm is asked to manage a display other than :0
+
+exit 0

@@ -1,0 +1,21 @@
+! /etc/X11/kdm/kdm-config
+!
+! resources specific to kdm itself
+DisplayManager.authDir:		/var/state/xdm
+DisplayManager.errorLogFile:	/var/log/kdm.log
+DisplayManager.pidFile:		/var/run/kdm.pid
+DisplayManager.keyFile:		/etc/X11/kdm/kdm-keys
+DisplayManager.servers:		/etc/X11/kdm/Xservers
+DisplayManager.accessFile:	/etc/X11/kdm/Xaccess
+DisplayManager._0.authorize:	true
+DisplayManager._0.resources:	/etc/X11/kdm/Xresources_0
+DisplayManager._0.setup:	/etc/X11/kdm/Xsetup_0
+DisplayManager._0.startup:	/etc/X11/kdm/Xstartup_0
+DisplayManager._0.reset:	/etc/X11/kdm/Xreset_0
+DisplayManager*resources:	/etc/X11/kdm/Xresources
+DisplayManager*setup:		/etc/X11/kdm/Xsetup
+DisplayManager*startup:		/etc/X11/kdm/Xstartup
+DisplayManager*reset:		/etc/X11/kdm/Xreset
+DisplayManager*session:		/etc/X11/Xsession
+DisplayManager*userPath:	/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games
+DisplayManager*systemPath:	/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11

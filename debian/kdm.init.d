@@ -1,17 +1,15 @@
-#!/bin/bash
-# /etc/init.d/kdm: start or stop XDM.
+#!/bin/sh
+# /etc/init.d/kdm: start or stop the X display manager
 
-test -x /usr/bin/kdm || exit 0
+set -e
 
-test -f /etc/X11/kdm/config || exit 0
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+DAEMON=/usr/bin/kdm
+PIDFILE=/var/run/xdm.pid
 
-grep -q ^start-kdm /etc/X11/kdm/config || exit 0
-if grep -q ^start-xdm /etc/X11/kdm/config
-then
-  echo "WARNING : can only start xdm or kdm, but not both !"
-fi
+test -x $DAEMON || exit 0
 
-if grep -qs ^check-local-xserver /etc/X11/xdm/xdm.options; then
+if grep -qs ^check-local-xserver /etc/X11/kdm/kdm.options; then
   if head -1 /etc/X11/Xserver 2> /dev/null | grep -q Xsun; then
     # the Xsun X servers do not use XF86Config
     CHECK_LOCAL_XSERVER=
@@ -45,30 +43,39 @@ case "$1" in
         echo "done."
       fi
     fi
-
-    echo -n "Starting kde display manager: kdm"    
-    start-stop-daemon --start --quiet --exec /usr/bin/kdm
+    echo -n "Starting X display manager: kdm"
+    start-stop-daemon --start --quiet --pid $PIDFILE --exec $DAEMON || echo -n " already running"
     echo "."
-    ;;
-  stop)
-      echo -n "Stopping kde display manager: kdm"    
-      start-stop-daemon --stop --quiet --pid /var/run/xdm.pid || echo " not running"
-      echo "."
-    ;;
-# the last options are taken from kerneld
-  restart) 
-		$0 stop
-		$0 start
-    ;; 
+  ;;
+
+  restart)
+    /etc/init.d/kdm stop
+    /etc/init.d/kdm start
+  ;;
+
   reload)
-		start-stop-daemon --stop --signal 1 --q quiet --exec /usr/bin/kdm
- 	;;
+    echo -n "Reloading X display manager configuration..."
+    if start-stop-daemon --stop --signal 1 --quiet --pid $PIDFILE --exec $DAEMON; then
+      echo "done."
+    else
+      echo "kdm not running."
+    fi
+  ;;
+
   force-reload)
-		$0 reload 
-	;;
+    /etc/init.d/kdm reload
+  ;;
+
+  stop)
+    echo -n "Stopping X display manager: kdm"
+    start-stop-daemon --stop --quiet --pid $PIDFILE --exec $DAEMON || echo -n " not running"
+    echo "."
+  ;;
+
   *)
-    echo "Usage: /etc/init.d/kdm {start|stop}"
+    echo "Usage: /etc/init.d/kdm {start|stop|restart|reload|force-reload}"
     exit 1
+    ;;
 esac
 
 exit 0

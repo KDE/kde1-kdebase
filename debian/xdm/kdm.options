@@ -1,0 +1,10 @@
+# /etc/X11/kdm.options
+#
+# configuration options for kdm
+# See kdm.options(5) for an explanation of the available options.
+
+check-local-xserver
+no-ignore-nologin
+no-restart-on-upgrade
+run-xconsole
+use-sessreg

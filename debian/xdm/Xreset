@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# /etc/X11/kdm/Xreset
+#
+# This script is run as root after any X session ends.
+
+# Remove the utmp entry for the session
+if grep -qs ^use-sessreg /etc/X11/kdm/kdm.options; then
+  sessreg -d -l $DISPLAY -u /var/run/utmp -x /etc/X11/kdm/Xservers $USER
+fi
+
+exit 0

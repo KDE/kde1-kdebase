@@ -1,4 +1,14 @@
-/etc/init.d/kdm
-/etc/init.d/xdm
 /etc/kde/kdmrc
-/etc/X11/kdm/config
+/etc/X11/kdm/Xaccess
+/etc/X11/kdm/Xreset
+/etc/X11/kdm/Xreset_0
+/etc/X11/kdm/Xresources
+/etc/X11/kdm/Xresources_0
+/etc/X11/kdm/Xservers
+/etc/X11/kdm/Xsetup
+/etc/X11/kdm/Xsetup_0
+/etc/X11/kdm/Xstartup
+/etc/X11/kdm/Xstartup_0
+/etc/X11/kdm/kdm-config
+/etc/X11/kdm/kdm.options
+/etc/init.d/kdm

@@ -3,6 +3,7 @@ kdebase (4:1.1.1-19990529-1) unstable; urgency=low
   * Down to just one lintian warning. (that will probably stay)
   * Fixing final issues with package.  This includes cleaned up kdmrc output
     postrm scripts, and removal of final lintian errors.
+  * Making kdm not require xdm
 
  -- Ivan E. Moore II <rkrusty@debian.org>  Sat, 29 May 1999 22:00:55 -0400
 
