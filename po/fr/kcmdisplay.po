@@ -8,12 +8,11 @@ msgstr ""
 "POT-Creation-Date: 1999-03-21 01:19+0100\n"
 "PO-Revision-Date: 1999-01-29 21:15 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
-"<Francois-Xavier.Duranceau@loria.fr>\n"
+"<duranceau@kde.org>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; \n"
 "Content-Transfer-Encoding: 8bit\n"
-"Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 
 #: backgnd.cpp:54
 msgid "Enter new desktop name"
@@ -113,7 +112,7 @@ msgstr "Confi&gurer..."
 
 #: backgnd.cpp:418
 msgid "&Dock into the panel"
-msgstr "Insérer &dans le panneau"
+msgstr "Placer sur le &tableau de bord"
 
 #: backgnd.cpp:443
 msgid "Cache size (kB):"
@@ -454,11 +453,11 @@ msgstr "Police du titre des fenêtres"
 
 #: general.cpp:545
 msgid "Panel button font"
-msgstr "Police des boutons du panneau"
+msgstr "Police des boutons du tableau de bord"
 
 #: general.cpp:550
 msgid "Panel clock font"
-msgstr "Police de l'horloge du panneau"
+msgstr "Police de l'horloge du tableau de bord"
 
 #: general.cpp:580
 msgid "Sample text"

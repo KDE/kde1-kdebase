@@ -8,12 +8,11 @@ msgstr ""
 "POT-Creation-Date: 1999-04-02 01:15+0200\n"
 "PO-Revision-Date: 1999-03-12 10:00+0100\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
-"<Francois-Xavier.Duranceau@loria.fr>\n"
+"<duranceau@kde.org>\n"
 "Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
-"Next-Translator: Alain Gibaud <Alain.Gibaud@univ-valenciennes.fr>\n"
 
 #: kikbd.cpp:124
 msgid "KDE International Keyboard already started on this display."

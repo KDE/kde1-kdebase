@@ -8,12 +8,11 @@ msgstr ""
 "POT-Creation-Date: 1999-04-02 01:15+0200\n"
 "PO-Revision-Date: 1999-03-04 01:00 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
-"<Francois-Xavier.Duranceau@loria.fr>\n"
+"<duranceau@kde.org>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain;\n"
 "Content-Transfer-Encoding: 8bits\n"
-"Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 
 #: kpanel.C:292
 msgid "&Move"
@@ -41,11 +40,11 @@ msgstr "Verrouiller l'écran"
 
 #: kpanel.C:471 kpanel.C:480
 msgid "Hide the panel"
-msgstr "Cacher le panneau"
+msgstr "Cacher le tableau de bord"
 
 #: kpanel.C:490 kpanel.C:502
 msgid "Show the panel"
-msgstr "Afficher le panneau"
+msgstr "Afficher le tableau de bord"
 
 #: kpanel.C:1066
 msgid "Iconify other &windows"
@@ -65,7 +64,7 @@ msgstr "Ajouter une application"
 
 #: props.C:169
 msgid "Add an application or a submenu onto the panel"
-msgstr "Ajouter une application ou un sous-menu au panneau"
+msgstr "Ajouter une application ou un sous-menu au tableau de bord"
 
 #: props.C:175
 msgid "Add Disk Navigator"
@@ -73,7 +72,7 @@ msgstr "Ajouter Disk Navigator"
 
 #: props.C:177
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Ajouter un menu de Disk Navigator dans le panneau"
+msgstr "Ajouter le menu Disk Navigator dans le tableau de bord"
 
 #: props.C:180
 msgid "Add Windowlist"
@@ -82,7 +81,7 @@ msgstr "Ajouter la liste des fenêtres"
 #: props.C:182
 msgid "Add a windowlist menu onto the panel"
 msgstr ""
-"Ajouter le menu d'affichage et de sélection des fenêtres dans le panneau"
+"Ajouter le menu de sélection des fenêtres dans le tableau de bord"
 
 #: events.C:855 props.C:183
 msgid "Configure"
@@ -90,7 +89,7 @@ msgstr "Configurer"
 
 #: props.C:185
 msgid "Configure panel"
-msgstr "Configurer le panneau"
+msgstr "Configurer le tableau de bord"
 
 #: props.C:186
 msgid "Edit Menus"
@@ -106,7 +105,7 @@ msgstr "Redémarrer"
 
 #: props.C:191
 msgid "Restart panel"
-msgstr "Relancer le panneau"
+msgstr "Relancer le tableau de bord"
 
 #: props.C:194
 msgid "Disk Navigator"
@@ -114,7 +113,7 @@ msgstr "Disk Navigator"
 
 #: props.C:202
 msgid "Panel"
-msgstr "Panneau"
+msgstr "Tableau de bord"
 
 #: props.C:204
 msgid "Lock Screen"
@@ -142,7 +141,7 @@ msgstr "KDiskNavigator"
 
 #: events.C:911
 msgid "Cannot put this as button onto the panel!"
-msgstr "Impossible d'ajouter cette application comme bouton sur le panneau !"
+msgstr "Impossible d'ajouter cette application comme bouton sur le tableau de bord !"
 
 #: pfilemenu.C:425
 msgid "(empty folder)"
@@ -200,8 +199,3 @@ msgstr "Options..."
 msgid "Customize Disk Navigator"
 msgstr "Personnaliser Disk Navigator"
 
-#~ msgid "Where do you want to go tomorrow?"
-#~ msgstr "Où voulez-vous aller demain ?"
-
-#~ msgid "No comment available"
-#~ msgstr "Commentaire non disponible"

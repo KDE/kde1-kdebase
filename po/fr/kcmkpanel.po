@@ -16,7 +16,7 @@ msgstr ""
 
 #: main.cpp:64
 msgid "&Panel"
-msgstr "&Panneau"
+msgstr "&Tableau de bord"
 
 #: main.cpp:70
 msgid "&Desktops"
@@ -32,7 +32,7 @@ msgstr "utilisation : kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
 #: main.cpp:113
 msgid "KPanel Configuration"
-msgstr "Configuration du panneau"
+msgstr "Configuration de KPanel"
 
 #: panel.cpp:59
 msgid "Location"
@@ -56,7 +56,7 @@ msgstr "&Droite"
 
 #: panel.cpp:75
 msgid "Taskbar"
-msgstr "Barre de tâches"
+msgstr "Barre des tâches"
 
 #: panel.cpp:76
 msgid "&Hidden"
@@ -100,15 +100,15 @@ msgstr "&Largeur"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
-msgstr "Info-bulles des menus"
+msgstr "Bulles d'aide des menus"
 
 #: options.cpp:62
 msgid "Show &Menu Tooltips"
-msgstr "Afficher les &info-bulles des menus"
+msgstr "Afficher les &bulles d'aide des menus"
 
 #: options.cpp:84
 msgid "De&lay:"
-msgstr "&Délai :"
+msgstr "Délai :"
 
 #: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
@@ -124,7 +124,7 @@ msgstr "Visuels"
 
 #: options.cpp:144
 msgid "Auto &Hide Panel"
-msgstr "Panneau &auto-masquable"
+msgstr "Tableau de bord &auto-masquable"
 
 #: options.cpp:153 options.cpp:255
 msgid "Delay:"
@@ -144,11 +144,11 @@ msgstr "Rapide"
 
 #: options.cpp:246
 msgid "Auto Hide &Taskbar"
-msgstr "Barre de &tâches auto-masquable"
+msgstr "Barre des &tâches auto-masquable"
 
 #: options.cpp:341
 msgid "Animate Show/Hide"
-msgstr "Animation pour Afficher/Cacher"
+msgstr "Ani&mation pour Afficher/Cacher"
 
 #: options.cpp:395
 msgid "Others"

@@ -39,7 +39,7 @@ msgstr "Recherche terminée"
 
 #: helpwin.cpp:1111
 msgid "Continue search from the top of the page?"
-msgstr "Continuer la recherche à partir du haut de la page?"
+msgstr "Continuer la recherche à partir du haut de la page ?"
 
 #: helpwin.cpp:1325
 msgid "Forward"
@@ -200,7 +200,7 @@ msgstr "<!-- Ne pas éditer ce fichier -->"
 #: cgi.cpp:79
 #, c-format
 msgid "CGI: Destination URL malformed: %s\n"
-msgstr "CGI: URL de destination incorrecte : %s\n"
+msgstr "CGI : URL de destination incorrecte : %s\n"
 
 #: mainwidget.cpp:132
 msgid "&New Help Window"
@@ -216,11 +216,11 @@ msgstr "Re&chercher"
 
 #: mainwidget.cpp:157
 msgid "&Find..."
-msgstr "&Rechercher..."
+msgstr "&Chercher..."
 
 #: mainwidget.cpp:159
 msgid "Find &next"
-msgstr "Prochaine recherche"
+msgstr "Chercher à &nouveau"
 
 #: mainwidget.cpp:164
 msgid "&Back"
@@ -361,12 +361,12 @@ msgstr "&Ajouter un signet"
 
 #: finddlg.cpp:39
 msgid "Find:"
-msgstr "Rechercher:"
+msgstr "Chercher :"
 
 #: finddlg.cpp:54
 msgid "Case &sensitive"
-msgstr "Respecter la casse"
+msgstr "Respecter la &casse"
 
 #: finddlg.cpp:64
 msgid "&Find"
-msgstr "&Rechercher"
+msgstr "&Chercher"
