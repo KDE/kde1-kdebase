@@ -48,11 +48,6 @@
 // CT 19jan98
 #define KWM_PLACEMENT "WindowsPlacement"
 
-//CT 31jan98
-#define SMART_STR         "Smart"
-#define CASCADE_STR       "Cascade"
-#define RANDOM_STR        "Random"
-
 KWindowConfig::~KWindowConfig ()
 {
   delete transparent;
@@ -86,11 +81,11 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   // placement policy --- CT 19jan98 ---
   placementBox = new QButtonGroup(klocale->translate("Placement policy"), this);
   placementCombo = new QComboBox(FALSE, placementBox);
-  placementCombo->insertItem(klocale->translate(SMART_STR),
+  placementCombo->insertItem(klocale->translate(i18n("Smart")),
 			     SMART_PLACEMENT);
-  placementCombo->insertItem(klocale->translate(CASCADE_STR),
+  placementCombo->insertItem(klocale->translate(i18n("Cascade")),
 			     CASCADE_PLACEMENT);
-  placementCombo->insertItem(klocale->translate(RANDOM_STR),
+  placementCombo->insertItem(klocale->translate(i18n("Random")),
 			     RANDOM_PLACEMENT);
   placementCombo->setCurrentItem(RANDOM_PLACEMENT);
   

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-03-02 00:16+0100\n"
+"POT-Creation-Date: 1998-03-10 22:48+0100\n"
 "PO-Revision-Date: 1998-01-27 13:48 MET\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -13,23 +13,28 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:57
+#: main.cpp:59
 msgid "&Windows"
 msgstr "&Vlastnosti okna"
 
-#: main.cpp:60
+#: main.cpp:62
 msgid "&Buttons"
 msgstr "&Dekorace okna"
 
-#: main.cpp:63
+#: main.cpp:65
 msgid "&Titlebar"
 msgstr "&Titulek"
 
-#: main.cpp:69
-msgid "usage: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+#: main.cpp:68
+msgid "&Desktop"
+msgstr ""
+
+#: main.cpp:74
+#, fuzzy
+msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 msgstr "Pou¾ití: kcmkwm [-init | {windows,buttons,titlebar}]\n"
 
-#: main.cpp:98
+#: main.cpp:105
 msgid "Window manager style"
 msgstr "Vlastnosti správce oken"
 
@@ -89,7 +94,7 @@ msgstr "Obrázek"
 msgid "Title Animation"
 msgstr "Animace titulku"
 
-#: titlebar.cpp:943
+#: desktop.cpp:76 titlebar.cpp:943
 msgid "ms"
 msgstr "ms"
 
@@ -101,96 +106,108 @@ msgstr "Obrázek pro titulek &aktivního okna"
 msgid "&Inactive pixmap"
 msgstr "Obrázek pro titulek &neaktivního okna"
 
-#: titlebar.cpp:981
+#: titlebar.cpp:982
 msgid "Mouse action"
 msgstr ""
 
-#: titlebar.cpp:983
+#: titlebar.cpp:984
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
 
-#: titlebar.cpp:987
+#: titlebar.cpp:988
 #, fuzzy
 msgid "(Un)Maximize"
 msgstr "Maximalizace"
 
-#: titlebar.cpp:988
+#: titlebar.cpp:989
 msgid "Move"
 msgstr ""
 
-#: titlebar.cpp:989
+#: titlebar.cpp:990
 #, fuzzy
 msgid "(Un)Shade"
 msgstr "Stínovaný"
 
-#: titlebar.cpp:990
+#: titlebar.cpp:991
 msgid "Iconify"
 msgstr ""
 
-#: titlebar.cpp:991
+#: titlebar.cpp:992
 #, fuzzy
 msgid "(Un)Sticky"
 msgstr "Pøilepení"
 
-#: titlebar.cpp:992
+#: titlebar.cpp:993
 msgid "Resize"
 msgstr ""
 
-#: titlebar.cpp:993
+#: titlebar.cpp:994
 msgid "Restore"
 msgstr ""
 
-#: titlebar.cpp:994
+#: titlebar.cpp:995
 msgid "Operations Menu"
 msgstr ""
 
-#: windows.cpp:77
+#: windows.cpp:72
 msgid "Window movement"
 msgstr "Pohyb okna"
 
-#: windows.cpp:78
+#: windows.cpp:73
 msgid "Transparent"
 msgstr "Transparentní"
 
-#: windows.cpp:79
+#: windows.cpp:74
 msgid "Opaque"
 msgstr "Neprùhledný"
 
-#: windows.cpp:82
+#: windows.cpp:77
 msgid "Resize Animation"
 msgstr "Animace pøi zmìnì velikosti"
 
-#: windows.cpp:87
+#: windows.cpp:82
 msgid "Placement policy"
 msgstr "Zpùsob umís»ování"
 
-#: windows.cpp:98
+#: windows.cpp:84
+msgid "Smart"
+msgstr ""
+
+#: windows.cpp:86
+msgid "Cascade"
+msgstr ""
+
+#: windows.cpp:88
+msgid "Random"
+msgstr ""
+
+#: windows.cpp:93
 msgid "Maximize Style"
 msgstr "Styl maximalizace"
 
-#: windows.cpp:99
+#: windows.cpp:94
 msgid "Maximize fully"
 msgstr "Plnì maximalizuj"
 
-#: windows.cpp:100
+#: windows.cpp:95
 msgid "Maximize vertically"
 msgstr "Maximalizuj vertikálnì"
 
-#: windows.cpp:103
+#: windows.cpp:98
 msgid "Focus Policy"
 msgstr "Zpùsob zaktivnìní okna"
 
-#: windows.cpp:104
+#: windows.cpp:99
 msgid "Click to focus"
 msgstr "Kliknout k aktivaci"
 
-#: windows.cpp:105
+#: windows.cpp:100
 msgid "Focus follows mouse"
 msgstr "Okno pod my¹í je aktivní"
 
-#: windows.cpp:110
+#: windows.cpp:105
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -198,9 +215,25 @@ msgstr ""
 "Prodleva pøed pøesunutím\n"
 "okna navrch (<100 vypíná)"
 
-#: windows.cpp:113
+#: windows.cpp:108
 msgid "miliseconds"
 msgstr "milisekund"
+
+#: desktop.cpp:62
+msgid "Active desktop borders"
+msgstr ""
+
+#: desktop.cpp:64
+msgid "Enable active desktop borders"
+msgstr ""
+
+#: desktop.cpp:66
+msgid "Move pointer towards center after switch"
+msgstr ""
+
+#: desktop.cpp:72
+msgid "Dekstop switch delay in ms:"
+msgstr ""
 
 #~ msgid "Random placement"
 #~ msgstr "Náhodné umís»ování"
