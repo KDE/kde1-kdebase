@@ -184,7 +184,7 @@ public:
   KRandomDlg(int _desktop, KBackground *_kb, char *name = 0 );
   ~KRandomDlg() {}
 
-  friend KBackground;
+  friend class KBackground;
 
 protected:
   void addToPicList( QString pic );
@@ -247,8 +247,8 @@ public:
   virtual void applySettings();
   virtual void defaultSettings();
 
-  friend KItem;
-  friend KRandomDlg;
+  friend class KItem;
+  friend class KRandomDlg;
 
 protected slots:
 

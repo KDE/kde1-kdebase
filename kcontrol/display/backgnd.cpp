@@ -297,24 +297,25 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 
   //CT - 30Nov1998 - replaced with grip layout, "fixed" a little the logic of
   //   widgets placing    
-  grid = new QGridLayout( group, 7, 3, 5, 5 );
+  grid = new QGridLayout( group, 8, 3, 5, 5 );
 
   grid->addRowSpacing(0,10);
-  grid->addRowSpacing(2,10);
-  grid->addRowSpacing(4,5);
-  grid->addRowSpacing(6,5);
+  grid->addRowSpacing(3,5);
+  grid->addRowSpacing(5,10);
+  grid->addRowSpacing(7,10);
 
   grid->setRowStretch(0,0);
   grid->setRowStretch(1,0);
-  grid->setRowStretch(2,2);
-  grid->setRowStretch(3,0);
-  grid->setRowStretch(4,1);
-  grid->setRowStretch(5,0);
+  grid->setRowStretch(2,0);
+  grid->setRowStretch(3,1);
+  grid->setRowStretch(4,0);
+  grid->setRowStretch(5,2);
   grid->setRowStretch(6,0);
+  grid->setRowStretch(7,0);
 
   grid->setColStretch(0,0);
   grid->setColStretch(1,1);
-  grid->setColStretch(2,0);
+  grid->setColStretch(2,2);
   //CT
 
   QString path = kapp->kde_wallpaperdir().copy();
@@ -326,7 +327,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   wpCombo->setCurrentItem( 0 );
 
   //CT 30Nov1998
-  grid->addMultiCellWidget( wpCombo, 1,1,0,1 );
+  grid->addMultiCellWidget( wpCombo, 1,1,0,2 );
   //  groupLayout->addStretch( 3 );
     
   QStrListIterator it( *list );
@@ -360,13 +361,13 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   browseButton->setFixedHeight( browseButton->height() );
   browseButton->setMinimumWidth( browseButton->width() );
   connect( browseButton, SIGNAL( clicked() ), SLOT( slotBrowse() ) );
-  grid->addWidget( browseButton,1,2 );//CT 30Nov1998
+  grid->addWidget( browseButton,2,1 );//CT 30Nov1998
 
   //CT 30Nov1998
   QLabel *aLabel = new QLabel(i18n("Arrangement:"), group );
   aLabel->adjustSize();
   aLabel->setMinimumSize(aLabel->size());
-  grid->addWidget(aLabel, 3, 0 );
+  grid->addWidget(aLabel, 4, 0 );
   //CT
 
   wpModeCombo = new QComboBox( false, group );
@@ -386,7 +387,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   connect( wpModeCombo, SIGNAL( activated( int ) ),
 	   SLOT( slotWallpaperMode( int )  )  );
 
-  grid->addMultiCellWidget( wpModeCombo, 3,3,1,2 ); //CT 30Nov1998
+  grid->addMultiCellWidget( wpModeCombo, 4,4,1,2 ); //CT 30Nov1998
   /*CT 30Nov1998
   groupLayout->addStretch( 3 );
   
@@ -400,7 +401,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   randomButton->setMinimumWidth( randomButton->width() );
   connect( randomButton, SIGNAL( clicked() ), SLOT( slotToggleRandom() ) );
 
-  grid->addWidget( randomButton, 5, 0 );//CT 30Nov1998
+  grid->addWidget( randomButton, 6, 0 );//CT 30Nov1998
   //CT  pushLayout->addStretch( 5 );
 
   randomSetupButton = new QPushButton( i18n("Setu&p..."), group );
@@ -409,7 +410,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   randomSetupButton->setMinimumWidth( randomSetupButton->width() );
   connect( randomSetupButton, SIGNAL( clicked() ), SLOT( slotSetupRandom() ) );
 
-  grid->addMultiCellWidget( randomSetupButton, 5, 5, 1, 2 );//CT 30Nov1998
+  grid->addWidget( randomSetupButton, 6, 1 );//CT 30Nov1998
 
   grid->activate();
 
