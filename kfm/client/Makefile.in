@@ -1,7 +1,7 @@
 
 INCDIR  =       @all_includes@ -I..
 CXXFLAGS=	@CXXFLAGS@ $(INCDIR) -DHAVE_CONFIG_H -I../..
-LDFLAGS =       @all_libraries@ -lqt -lXext -lX11 -lkdecore @LIBSOCKET@
+LDFLAGS =       @all_libraries@ -lkdeui -lqt -lXext -lX11 @LIBSOCKET@
 CXX     =       @CXX@
 MOC     =       @MOC@
 

@@ -2,7 +2,7 @@
 
 INCDIR	=	@all_includes@  -I.. -I.
 CXXFLAGS=	$(INCDIR) @CXXFLAGS@ -DHAVE_CONFIG_H
-LDFLAGS	=	@all_libraries@ -lqt -lXext -lX11 -lkdeui -lkdecore -lkhtmlw @LIBSOCKET@ -ljpeg -lgif -ljscript
+LDFLAGS	=	@all_libraries@ -lkhtmlw -lkdeui -lkdecore -ljscript -lqt -lXext -lX11 @LIBSOCKET@ -ljpeg -lgif 
 CXX 	=	@CXX@
 MOC	=	@MOC@
 
@@ -73,7 +73,6 @@ cleanroot:
 	-rm -f $(SRCMETA) $(TARGET)
 
 clean: cleanroot
-
 	(cd client; $(MAKE) clean)
 	(cd kioslave; $(MAKE) clean)
 	(cd kfmwarn && $(MAKE) clean)
