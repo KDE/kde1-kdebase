@@ -616,8 +616,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 				12,
 				box_height+2*margin);
 
-	  panel_button2->setGeometry( w - margin-12, 0, 12,
-								  box_height+2*margin );
+      panel_button2->setGeometry( w -12, 0, 12,
+				  box_height+2*margin );
 
 
       kde_button->setGeometry(panel_button->x()+panel_button->width()
