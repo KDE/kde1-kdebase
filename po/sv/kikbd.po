@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
-"PO-Revision-Date: 1998-10-29 19:05+0100\n"
+"POT-Creation-Date: 1998-11-05 01:17+0100\n"
+"PO-Revision-Date: 1998-11-15 19:05+0100\n"
 "Last-Translator: Karl Backström <backstrom@kde.org>\n"
 "Language-Team: Sv <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,6 +24,8 @@ msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
+"X koder \"%s\" filen hittades inte.\n"
+"Använder X standard koder."
 
 #: kikbd.cpp:313
 #, c-format
@@ -31,6 +33,8 @@ msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
 msgstr ""
+"Tangentbordslayouten \"%s\" hittades inte.\n"
+"Hoppar över layouten."
 
 #: kikbd.cpp:330
 msgid "Setup"
@@ -52,6 +56,8 @@ msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
 "Alt symbols disabled"
 msgstr ""
+"KAn inte sätta modeswitchen som %s för tangentbordet %s.\n"
+"Alternativa symboler ej tillgängliga."
 
 #: kikbd.cpp:392
 msgid ""
@@ -73,27 +79,25 @@ msgid ""
 "You can preset X codes in \"Advanced\" section\n"
 "of configuration program."
 msgstr ""
+"Kan inte hitta symbolen \"%s\".\n"
+"Kan vara att dina standard X symboler inte passar.\n"
+"Du kan introdusera X koder i \"Advancerad\" delen\n"
+"av programmet."
 
 #: keymap.cpp:233
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
-msgstr ""
-"KeyMap: kan inte hitta symbolen \"%s\".\n"
-"Vill du fortsätta ?"
+msgstr "KeyMap: kan inte hitta symbolen \"%s\".\n"
 
 #: keymap.cpp:241
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: do not understand key code \"%s\"."
-msgstr ""
-"KeyMap: Förstår inte tangentkoden \"%s\".\n"
-"Vill du fortsätta ?"
+msgstr "KeyMap: Förstår inte tangentkoden \"%s\".\n"
 
 #: keymap.cpp:247
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: key code \"%s\" go out of range."
-msgstr ""
-"KeyMap: tangentkoden \"%s\" är utanför gränsen.\n"
-"Vill du fortsätta ?"
+msgstr "KeyMap: tangentkoden \"%s\" är utanför gränsen.\n"
 
 #: kikbdconf.cpp:95
 msgid "Global"
@@ -259,7 +263,7 @@ msgstr "alternativa symboler"
 
 #: kikbdconf.cpp:418
 msgid "language"
-msgstr " "
+msgstr "tangentbord"
 
 #: kikbdconf.cpp:419
 msgid "charset"
@@ -282,13 +286,12 @@ msgid "Configure"
 msgstr ""
 
 #: kikbdconf.cpp:497
-#, fuzzy
 msgid ""
 "\n"
 "Do you want to continue?"
 msgstr ""
-"%s\n"
-"Vill du påbörja konfigurationen?"
+"\n"
+"Vill du fortsätta?"
 
 #: widgets.cpp:107
 msgid "List of active keyboard maps"
@@ -331,9 +334,8 @@ msgid "Display information for selected keyboard map"
 msgstr "Visa information om den valda teckenuppsättningen"
 
 #: widgets.cpp:145
-#, fuzzy
 msgid "Use &hot list"
-msgstr "Använd \"&hotlist\""
+msgstr "Använd &hotlistan"
 
 #: widgets.cpp:146
 msgid ""
@@ -535,6 +537,6 @@ msgstr "&Stil"
 msgid "Start&Up"
 msgstr "&Uppstart"
 
-#: kcmikbd.cpp:80
+#: kcmikbd.cpp:121
 msgid "International Keyboard"
 msgstr "Internationellt Tangentbord"
