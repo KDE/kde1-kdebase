@@ -698,19 +698,18 @@ StartClient (verify, d, pidp, name, passwd)
 	CleanUpChild ();
 
 	/* Do system-dependent login setup here */
-#ifdef HAVE_PAM_MISC
-    /* if we have a pam_misc library on this system, pass in environment
-    variables set by libpam and modules it called */
-    if(pamh != NULL)
-    {
-        long i;
-        char **pam_env = pam_misc_copy_env(pamh);
-        for(i = 0; pam_env && pam_env[i]; i++)
-        {
-            verify->userEnviron = putEnv(pam_env[i], verify->userEnviron);
-        }
-    }
-#endif /* HAVE_PAM_MISC */
+
+#ifdef USE_PAM
+    /* pass in environment variables set by libpam and modules it called */
+	if (pamh) {
+	  long i;
+	  char **pam_env = pam_getenvlist(pamh);
+	  for(i = 0; pam_env && pam_env[i]; i++)
+	    {
+	      verify->userEnviron = putEnv(pam_env[i], verify->userEnviron);
+	    }
+	}
+#endif
 
 #ifdef HAVE_SETUSERCONTEXT
         /*
