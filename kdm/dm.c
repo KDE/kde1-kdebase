@@ -512,8 +512,9 @@ int WaitForChild ()
 		    RestartDisplay (d, TRUE);
 		break;
 	    case waitCompose (SIGTERM,0,0):
+	    case waitCompose (SIGKILL,0,0):
 		d->startTries = 0;
-		Debug ("Display exited on SIGTERM\n");
+		Debug ("Display exited on SIGTERM/SIGKILL\n");
 		if (d->displayType.origin == FromXDMCP || d->status == zombie)
 		    StopDisplay(d);
 		else
