@@ -99,22 +99,28 @@ void KDesktopsConfig::loadSettings() {
     width->setValue(width_value);
 }
 
-void KDesktopsConfig::justSave() {
+bool KDesktopsConfig::justSave() {
     width_value = width->value();
     for (int i = 0; i < 8; i++)
 	KWM::setDesktopName(i+1, fields[i]->text());
     config->writeEntry("DesktopButtonHorizontalSize", width_value);
+    if (KWM::numberOfDesktops() != visible->value() * 2) {
+	KWM::setNumberOfDesktops(visible->value() * 2);
+	return true;
+    } else
+	return false; 
 }
 
 void KDesktopsConfig::saveSettings() {
+    debug("save");
     justSave();
-    // this will reset kpanel 
-    // If this changes this somewhen, I must
-    KWM::setNumberOfDesktops(visible->value() * 2);
+    config->sync();
 }
 
 void KDesktopsConfig::applySettings() {
+    debug("apply");
     saveSettings();
 }
+
 
 

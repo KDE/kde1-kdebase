@@ -52,21 +52,20 @@ KKPanelApplication::KKPanelApplication(int &argc, char **argv,
 
   if (runGUI())
     {
-      if (!pages || pages->contains("panel"))
-	addPage(panel = new KPanelConfig(dialog, "panel"), 
-		klocale->translate("&Panel"), "panel.html");
-      if (!pages || pages->contains("desktops"))
-	addPage(desktops = new KDesktopsConfig(dialog, "desktops"),
-		klocale->translate("&Desktops"), "desktops.html");
-
-      if (panel || desktops)
-        dialog->show();
-      else
-        {
-          fprintf(stderr, klocale->translate("usage: kcmkpanel [-init | {panel,desktops}]\n"));
-          justInit = TRUE;
-        }
-     
+	if (!pages || pages->contains("panel"))
+	    addPage(panel = new KPanelConfig(dialog, "panel"), 
+		    i18n("&Panel"), "panel.html");
+	if (!pages || pages->contains("desktops"))
+	    addPage(desktops = new KDesktopsConfig(dialog, "desktops"),
+		    i18n("&Desktops"), "desktops.html");
+	
+	if (panel || desktops)
+	    dialog->show();
+	else {
+	    fprintf(stderr, i18n("usage: kcmkpanel [-init | {panel,desktops}]\n"));
+	    justInit = true;
+	}
+	
     }
 }
 
@@ -78,10 +77,12 @@ void KKPanelApplication::apply()
 {
     if (panel)
 	panel->saveSettings();
-    if (desktops)
-	desktops->justSave();
-    config->sync();
-    KWM::sendKWMCommand("kpanel:restart");
+
+    bool restarted = false;
+    if (desktops) // desktop restarts kpanel by it's own
+	restarted = desktops->justSave();
+    if (!restarted)
+	KWM::sendKWMCommand("kpanel:restart");
 }
 
 
@@ -90,7 +91,7 @@ int main(int argc, char **argv)
     config = new KConfig(KApplication::localconfigdir() + "/kpanelrc");
     KKPanelApplication app(argc, argv, "kcmkpanel");
     
-    app.setTitle(klocale->translate("KPanel Configuration"));
+    app.setTitle(i18n("KPanel Configuration"));
 
     int ret;
     if (app.runGUI())

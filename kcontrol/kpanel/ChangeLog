@@ -1,3 +1,8 @@
+Fri Jan 16 22:48:33 1998  Stephan Kulow  <coolo@kde.org>
+
+	* desktops.cpp: somehow my kpanel restart magic didn't work
+	anymore, so I needed to fix it
+
 Sun Jan 11 13:29:18 1998  Stephan Kulow  <coolo@kde.org>
 
 	* added code to change the location/taskbar (very embarrassing)
