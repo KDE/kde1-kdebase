@@ -220,6 +220,7 @@ void KfmGui::initMenu()
 
     templatesList.clear();
     
+    templatesList.append( QString( "Folder") );
     QDir d( KFMPaths::TemplatesPath() );
     const QFileInfoList *list = d.entryInfoList();
     if ( list == 0L )
