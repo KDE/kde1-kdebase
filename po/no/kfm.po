@@ -132,12 +132,12 @@ msgstr "&Kort visning"
 # kfmgui.cpp:373
 #: kfmgui.cpp:382
 msgid "Rel&oad Tree"
-msgstr "Last tre på nytt"
+msgstr "L&ast tre på nytt"
 
 # kfmgui.cpp:375
 #: kfmgui.cpp:384
 msgid "&Reload Document"
-msgstr "Last dokument på nytt"
+msgstr "&Last dokument på nytt"
 
 # kfmgui.cpp:377
 #: kfmgui.cpp:386
