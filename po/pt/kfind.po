@@ -318,9 +318,3 @@ msgstr "Não foi possível reconhecer o tipo de arquivo!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Erro ao criar o processo filho!"
-
-#~ msgid "Kfind &help"
-#~ msgstr "&Ajuda do Kfind"
-
-#~ msgid "About &Qt"
-#~ msgstr "Acerca do &Qt"

@@ -158,7 +158,7 @@ msgstr ""
 "de Sistema do KDE"
 
 #: syssound.cpp:465
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"

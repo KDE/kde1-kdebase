@@ -264,6 +264,3 @@ msgid ""
 msgstr ""
 "Zona de Snap da Janela:\n"
 "       (pixels)"
-
-#~ msgid "Edge Resistance:"
-#~ msgstr "Resistência:"

@@ -245,9 +245,3 @@ msgstr "Pessoal:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Por defeito:"
-
-#~ msgid "Type:"
-#~ msgstr "Tipo:"
-
-#~ msgid "Name:"
-#~ msgstr "Nome:"

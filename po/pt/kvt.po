@@ -256,14 +256,14 @@ msgstr ""
 "-8                        correr em modo de 8 bits\n"
 
 #: main.C:1174
-#, fuzzy
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
 "-ls                       iniciar kvt como shell de login\n"
-"-ls-                      initiar kvt não como shell de login (por omissão)\n"
+"-ls-                      initiar kvt não como shell de login "
+"(por omissão)\n"
 
 #: main.C:1176
 msgid ""

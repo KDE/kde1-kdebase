@@ -50,9 +50,8 @@ msgid "&Scaled"
 msgstr "&Escalonado"
 
 #: backgnd.cpp:305 backgnd.cpp:425 backgnd.cpp:438 backgnd.cpp:783
-#, fuzzy
 msgid "No wallpaper"
-msgstr "Papel de parede"
+msgstr "Nenhumm papel de parede"
 
 #: backgnd.cpp:333
 msgid "&Browse..."
@@ -67,33 +66,28 @@ msgid "Desktop names"
 msgstr "Nomes dos ambiente de trabalho"
 
 #: backgnd.cpp:907
-#, fuzzy
 msgid "Two color backgrounds"
-msgstr "Configuração de fundo de duas cores"
+msgstr "Fundos de duas cores"
 
 #: backgnd.cpp:944
-#, fuzzy
 msgid "Blend colors from &top to bottom"
-msgstr "&Misturar cores da direita para a esquerda"
+msgstr "Misturar cores do &topo para baixo"
 
 #: backgnd.cpp:950
-#, fuzzy
 msgid "Blend colors from &right to left"
-msgstr "&Misturar cores da direita para a esquerda"
+msgstr "Misturar cores da di&reita para a esquerda"
 
 #: backgnd.cpp:956
-#, fuzzy
 msgid "Use &pattern"
-msgstr "&Padrão"
+msgstr "Utilizar &padrão"
 
 #: backgnd.cpp:983
 msgid "Preview"
 msgstr "Previsão"
 
 #: backgnd.cpp:994
-#, fuzzy
 msgid "Pattern &name"
-msgstr "Nome do padrão"
+msgstr "&Nome do padrão"
 
 #: backgnd.cpp:1033
 msgid "Current"
@@ -263,20 +257,19 @@ msgstr "Ignorar"
 
 #: scrnsave.cpp:49
 msgid "Save Screen"
-msgstr ""
+msgstr "Proteger Écran"
 
 #: scrnsave.cpp:50
 msgid "Lock Screen"
-msgstr ""
+msgstr "Trancar Écran"
 
 #: scrnsave.cpp:110 scrnsave.cpp:179
 msgid "Screen Saver"
 msgstr "Protecção do Écran"
 
 #: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:548 scrnsave.cpp:657
-#, fuzzy
 msgid "No screensaver"
-msgstr "&Protecção do Écran"
+msgstr "Nenhuma protecção do écran"
 
 #: scrnsave.cpp:207
 msgid "&Setup ..."
@@ -315,9 +308,8 @@ msgid "Low"
 msgstr "Baixa"
 
 #: general.cpp:147
-#, fuzzy
 msgid "Fonts etc."
-msgstr "&Fontes etc."
+msgstr "Fontes etc."
 
 #: general.cpp:153
 msgid "&Draw widgets in the style of Windows 95"
@@ -399,15 +391,3 @@ msgstr "por defeito"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "qualquer"
-
-#~ msgid "Blen&d"
-#~ msgstr "&Mistura"
-
-#~ msgid "kwmcom: communication with kwm failed\n"
-#~ msgstr "kwmcom: falha na comunicação com o kwm\n"
-
-#~ msgid "Lock"
-#~ msgstr "Trancar"
-
-#~ msgid "General"
-#~ msgstr "Geral"
