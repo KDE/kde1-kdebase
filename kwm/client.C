@@ -1648,10 +1648,14 @@ void Client::paintState(bool only_label, bool colors_have_changed, bool animate)
 
   p.setPen(is_active ? myapp->activeTextColor : myapp->inactiveTextColor);
 
+  /*CT 03Nov1998 - a customized titlebar font
   QFont fnt = kapp->generalFont;
   fnt.setPointSize(12);
   fnt.setBold(true);
-  p.setFont(fnt);
+  p.setFont(fnt);*/
+  p.setFont(myapp->tFont);
+  //CT
+
   titlestring_too_large = (p.fontMetrics().width(QString(" ")+label+" ")>r.width());
   if (titlestring_offset_delta > 0){
     if (titlestring_offset > 0

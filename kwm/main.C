@@ -687,6 +687,13 @@ void MyApp::readConfiguration(){
   activeTitleBlend = config->readColorEntry( "activeBlend", &black );
   inactiveTitleBlend = config->readColorEntry( "inactiveBlend", &backgroundColor);
 
+  //CT 03Nov1998 - a titlebar font
+  tFont=kapp->generalFont;
+  tFont.setPointSize(12);
+  tFont.setBold(true);
+  tFont=config->readFontEntry( "titleFont", &tFont);
+  //CT
+
   config->setGroup( "General" );
 
   BORDER = 4;

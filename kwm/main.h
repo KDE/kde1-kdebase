@@ -9,6 +9,7 @@
 #define MAIN_H
 #include <qapp.h>
 #include <qpopmenu.h>
+#include <qfont.h> //CT 03Nov1998
 #include <kapp.h>
 #include <qcolor.h>
 #include <kglobalaccel.h>
@@ -25,6 +26,7 @@ public:
   // extend KApp (this should move to kapp some day in the future...
   QColor activeTitleBlend;
   QColor inactiveTitleBlend;
+  QFont  tFont; //CT 03Nov1998
 
   // store the session in the kwm configuration file
   void saveSession();

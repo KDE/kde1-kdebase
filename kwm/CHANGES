@@ -17,6 +17,7 @@ patchlevel 2:
            the former behaviour with MMB-movement.
         - new signal "initialized" emited to modules when the
           initialization is finished.
+	- titlebar font choosing enabled (CT)
 
 patchlevel 1:
         - simplified outline drawing since the previous nifty stippled

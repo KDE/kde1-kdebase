@@ -274,10 +274,11 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	item->setRC( "General", "fixedFont" );
 	fontUseList.append( item );
 	
-	/*item = new FontUseItem( i18n("Window title font"),
+	//CT 03Nov1998 - this code was here already. Only reactivated
+	item = new FontUseItem( i18n("Window title font"),
 				QFont( "helvetica", 12, QFont::Bold ) );
 	item->setRC( "WM", "titleFont" );
-	fontUseList.append( item );*/
+	fontUseList.append( item );
 				
 	item = new FontUseItem( i18n("Panel button font"),
 				QFont( "helvetica", 12 )  );
