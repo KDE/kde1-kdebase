@@ -11,6 +11,13 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 21:
+       - fix for motif applications: program-defined positioning will
+         be ignored while user-defined positiong still works.
+         Most toolkits define user-defined if it is is programm-defined
+         anyway so this should not harm.
+       - fixes and enhancements for dock-windows
+
   patchlevel 20:
        - self-transient do not crash kwm anymore
        - new option:

@@ -311,12 +311,12 @@ void Manager::unmapNotify(XUnmapEvent *e){
 	break;
       }
     }
-    removeDockWindow(e->window);
 }
 
 void Manager::destroyNotify(XDestroyWindowEvent *e){
     Client *c;
     removeModule(e->window);
+    removeDockWindow(e->window);
     c = getClient(e->window);
     if (c == 0 || c->window != e->window){
         return;
@@ -649,14 +649,16 @@ void Manager::manage(Window w, bool mapped){
   XWMHints *hints;
   XWindowAttributes attr;
   
-  if (!initting)
-    XGrabServer(qt_xdisplay()); // we want to be alone...
-  
-  // create a client
   if (KWM::isDockWindow(w)){
     addDockWindow(w);
     return;
   }
+
+  
+  // create a client
+  if (!initting)
+    XGrabServer(qt_xdisplay()); // we want to be alone...
+
   Client* c = getClient(w);
   if (!c){
     // create a very new client
@@ -787,7 +789,7 @@ void Manager::manage(Window w, bool mapped){
   }
   
   if (mapped || c->trans != None 
-      ||c->size.flags & PPosition
+      // ||c->size.flags & PPosition
       ||c->size.flags & USPosition 
       || pseudo_session_management
       ){
@@ -2063,6 +2065,8 @@ void Manager::addModule(Window w){
   wp = new Window;
   *wp = w;
   modules.append(wp);
+  sendClientMessage(w, module_init, 0);
+
   if (KWM::isKWMDockModule(w)){
     if (dock_module != None) //we have already a dock module
       KWM::setKWMModule(w);
@@ -2073,7 +2077,7 @@ void Manager::addModule(Window w){
 	sendClientMessage(dock_module, module_dockwin_add, (long) *dw);
     }
   }
-  sendClientMessage(w, module_init, 0);
+
   Client* c;
   for (c=clients.first(); c; c=clients.next()){
     if (!c->hidden_for_modules)
@@ -2112,12 +2116,26 @@ void Manager::sendToModules(Atom a, Client* c, Window w){
 }
 
 void Manager::addDockWindow(Window w){
-  Window *wp = new Window;
-  *wp = w;
-  dock_windows.append(wp);
+  bool already_there = False;
+  Window* w2;
+  for (w2=dock_windows.first(); w2; w2=dock_windows.next()){
+    already_there = already_there || *w2 == w;
+  }
 
-  if (dock_module != None)
-    sendClientMessage(dock_module, module_dockwin_add, (long) w);
+  if (!already_there) {
+    Window *wp = new Window;
+    *wp = w;
+    dock_windows.append(wp);
+    
+    XSelectInput(qt_xdisplay(), w, 
+		 StructureNotifyMask
+		 );
+    
+    
+    if (dock_module != None)
+      sendClientMessage(dock_module, module_dockwin_add, (long) w);
+
+  }
 }
 
 void Manager::removeDockWindow(Window w){
@@ -2128,6 +2146,7 @@ void Manager::removeDockWindow(Window w){
       delete dw;
       if (dock_module != None)
 	sendClientMessage(dock_module, module_dockwin_remove, (long) w);
+      break;
     }
   }
 }
