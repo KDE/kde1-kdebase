@@ -12,6 +12,7 @@
 #include "saver.h"
 
 #include "saver.moc"
+extern KLocale glocale;
 
 int checkPasswd(char *);
 
@@ -46,7 +47,7 @@ KPasswordDlg::KPasswordDlg( QWidget *parent ) : QWidget( parent )
 	frame->setGeometry( 0, 0, 200, 100 );
 
 	QFont font( "helvetica", 18 );
-	label = new QLabel( "Enter Password", frame );
+	label = new QLabel( glocale.translate("Enter Password"), frame );
 	label->setGeometry( 20, 20, 160, 30 );
 	label->setAlignment( AlignCenter );
 	label->setFont( font );
@@ -76,7 +77,7 @@ void KPasswordDlg::keyPressed( QKeyEvent *e )
 				emit passOk();
 			else
 			{
-				label->setText( "Failed" );
+				label->setText( glocale.translate("Failed") );
 				password = "";
 				timerMode = 1;
 				timer.start( 1500, TRUE );
@@ -169,7 +170,7 @@ void KPasswordDlg::timeout()
 {
 	if ( timerMode )
 	{
-		label->setText( "Enter Password" );
+		label->setText( glocale.translate("Enter Password") );
 		timerMode = 0;
 		timer.start( 5000, TRUE );
 	}

@@ -42,6 +42,11 @@
 
 #ifdef HAVE_GL
 
+#include <klocale.h>
+// this refers to klock.po. If you want an extra dictionary, 
+// create an extra KLocale instance here.
+extern KLocale glocale;
+
 #include <math.h>
 #include <X11/Intrinsic.h>
 #include <GL/xmesa.h>
@@ -828,7 +833,7 @@ initmorph3d(Window window)
 		   so fall back on color, but keep the mono "look & feel". */
 		if (!getVisual(wantVis)) {
 			if (!getVisual(wantVis)) {
-				(void) fprintf(stderr, "GL can not render with root visual\n");
+				(void) fprintf(stderr, glocale.translate("GL can not render with root visual\n"));
 				return;
 			}
 		}
@@ -903,10 +908,6 @@ release_morph3d()
 #include "morph3d.h"
 
 #include "morph3d.moc"
-
-// this refers to klock.po. If you want an extra dictionary, 
-// create an extra KLocale instance here.
-extern KLocale glocale;
 
 static kMorph3dSaver *saver = NULL;
 
@@ -1007,13 +1008,13 @@ kMorph3dSetup::kMorph3dSetup( QWidget *parent, const char *name )
 {
 	readSettings();
 
-	setCaption( "Setup KMorph3d" );
+	setCaption( glocale.translate("Setup KMorph3d") );
 
 	QLabel *label;
 	QPushButton *button;
 	KSlider *slider;
 
-	label = new QLabel( "Speed:", this );
+	label = new QLabel( glocale.translate("Speed:"), this );
 	label->setGeometry( 15, 15, 60, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
@@ -1023,7 +1024,7 @@ kMorph3dSetup::kMorph3dSetup( QWidget *parent, const char *name )
 	slider->setValue( speed );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
 
-	label = new QLabel( "Object Type:", this );
+	label = new QLabel( glocale.translate("Object Type:"), this );
 	label->setGeometry( 15, 65, 90, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
@@ -1039,15 +1040,15 @@ kMorph3dSetup::kMorph3dSetup( QWidget *parent, const char *name )
 	preview->show();    // otherwise saver does not get correct size
 	saver = new kMorph3dSaver( preview->winId() );
 
-	button = new QPushButton( "About", this );
+	button = new QPushButton( glocale.translate("About"), this );
 	button->setGeometry( 130, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
 
-	button = new QPushButton( "Ok", this );
+	button = new QPushButton( glocale.translate("Ok"), this );
 	button->setGeometry( 235, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( "Cancel", this );
+	button = new QPushButton( glocale.translate("Cancel"), this );
 	button->setGeometry( 300, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
 }
@@ -1111,7 +1112,9 @@ void kMorph3dSetup::slotOkPressed()
 
 void kMorph3dSetup::slotAbout()
 {
-	QMessageBox::message("About Morph3D", "Morph3D\n\nCopyright (c) 1997 by Marcelo F. Vianna\n\nPorted to kscreensave by Emanuel Pirker.", "Ok");
+	QMessageBox::message(glocale.translate("About Morph3D"), 
+			     glocale.translate("Morph3D\n\nCopyright (c) 1997 by Marcelo F. Vianna\n\nPorted to kscreensave by Emanuel Pirker."),
+			     glocale.translate("Ok"));
 }
 
 

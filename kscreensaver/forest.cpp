@@ -269,13 +269,13 @@ kForestSetup::kForestSetup( QWidget *parent, const char *name )
 {
 	readSettings();
 
-	setCaption( "Setup KForest" );
+	setCaption( glocale.translate("Setup KForest") );
 
 	QLabel *label;
 	QPushButton *button;
 	KSlider *slider;
 
-	label = new QLabel( "Speed:", this );
+	label = new QLabel( glocale.translate("Speed:"), this );
 	label->setGeometry( 15, 15, 60, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
@@ -285,7 +285,7 @@ kForestSetup::kForestSetup( QWidget *parent, const char *name )
 	slider->setValue( speed );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
 
-	label = new QLabel( "Num of Trees:", this );
+	label = new QLabel( glocale.translate("Num of Trees:"), this );
 	label->setGeometry( 15, 65, 90, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
@@ -301,15 +301,15 @@ kForestSetup::kForestSetup( QWidget *parent, const char *name )
 	preview->show();    // otherwise saver does not get correct size
 	saver = new kForestSaver( preview->winId() );
 
-	button = new QPushButton( "About", this );
+	button = new QPushButton( glocale.translate("About"), this );
 	button->setGeometry( 130, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
 
-	button = new QPushButton( "Ok", this );
+	button = new QPushButton( glocale.translate("Ok"), this );
 	button->setGeometry( 235, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( "Cancel", this );
+	button = new QPushButton( glocale.translate("Cancel"), this );
 	button->setGeometry( 300, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
 }
@@ -372,7 +372,9 @@ void kForestSetup::slotOkPressed()
 
 void kForestSetup::slotAbout()
 {
-	QMessageBox::message("About Forest", "Forest\n\nCopyright (c) 1995 by Pascal Pensa\n\nPorted to kscreensave by Emanuel Pirker.", "Ok");
+	QMessageBox::message(glocale.translate("About Forest"),
+			     glocale.translate("Forest\n\nCopyright (c) 1995 by Pascal Pensa\n\nPorted to kscreensave by Emanuel Pirker."), 
+			     glocale.translate("Ok"));
 }
 
 

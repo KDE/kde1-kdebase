@@ -84,7 +84,7 @@ noinst_HEADERS = saver.h polygon.h banner.h\
 		lissie.h blob.h
 
 messages:
-	@XGETTEXT@ -C -ktranslate *.cpp # && mv messages.po ../po/klock.po 
+	@XGETTEXT@ -C -ktranslate *.cpp -x ../../kdelibs/po/kde.po # && mv messages.po ../po/klock.po 
 
 ########## Meta objects ##########
 

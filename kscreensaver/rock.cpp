@@ -534,13 +534,13 @@ kRockSetup::kRockSetup( QWidget *parent, const char *name )
 
 	readSettings();
 
-	setCaption( "Setup krock" );
+	setCaption( glocale.translate("Setup krock") );
 
 	QLabel *label;
 	QPushButton *button;
 	KSlider *slider;
 
-	label = new QLabel( "Speed:", this );
+	label = new QLabel( glocale.translate("Speed:"), this );
 	label->setGeometry( 15, 15, 60, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
@@ -550,7 +550,7 @@ kRockSetup::kRockSetup( QWidget *parent, const char *name )
 	slider->setValue( speed );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
 
-	label = new QLabel( "Number:", this );
+	label = new QLabel( glocale.translate("Number:"), this );
 	label->setGeometry( 15, 65, 60, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
@@ -560,12 +560,12 @@ kRockSetup::kRockSetup( QWidget *parent, const char *name )
 	slider->setValue( number );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotNumber( int ) ) );
 
-	QCheckBox *cb = new QCheckBox( "Move", this );
+	QCheckBox *cb = new QCheckBox( glocale.translate("Move"), this );
 	cb->setGeometry( 15, 115, 60, 20 );
 	cb->setChecked( move );
 	connect( cb, SIGNAL( toggled( bool ) ), SLOT( slotMove( bool ) ) );
 
-	cb = new QCheckBox( "Rotate", this );
+	cb = new QCheckBox( glocale.translate("Rotate"), this );
 	cb->setGeometry( 15, 135, 60, 20 );
 	cb->setChecked( rotate );
 	connect( cb, SIGNAL( toggled( bool ) ), SLOT( slotRotate( bool ) ) );
@@ -576,15 +576,15 @@ kRockSetup::kRockSetup( QWidget *parent, const char *name )
 	preview->show();	// otherwise saver does not get correct size
 	saver = new kRockSaver( preview->winId() );
 
-	button = new QPushButton( "About", this );
+	button = new QPushButton( glocale.translate("About"), this );
 	button->setGeometry( 130, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
 
-	button = new QPushButton( "Ok", this );
+	button = new QPushButton( glocale.translate("Ok"), this );
 	button->setGeometry( 235, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( "Cancel", this );
+	button = new QPushButton( glocale.translate("Cancel"), this );
 	button->setGeometry( 300, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
 }
@@ -683,6 +683,8 @@ void kRockSetup::slotOkPressed()
 
 void kRockSetup::slotAbout()
 {
-	QMessageBox::message("About Rock", "Rock Version 3.3\n\nCopyright (c) 1992 by Jamie Zawinski\n\nPorted to kscreensave by Martin Jones.", "Ok");
+	QMessageBox::message(glocale.translate("About Rock"),
+			     glocale.translate("Rock Version 3.3\n\nCopyright (c) 1992 by Jamie Zawinski\n\nPorted to kscreensave by Martin Jones."),
+			     glocale.translate("Ok"));
 }
 

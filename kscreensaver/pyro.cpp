@@ -508,13 +508,13 @@ kPyroSetup::kPyroSetup( QWidget *parent, const char *name )
 
 	readSettings();
 
-	setCaption( "Setup KPyro" );
+	setCaption( glocale.translate("Setup KPyro") );
 
 	QLabel *label;
 	QPushButton *button;
 	KSlider *slider;
 
-	label = new QLabel( "Number:", this );
+	label = new QLabel( glocale.translate("Number:"), this );
 	label->setGeometry( 15, 15, 60, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
@@ -524,7 +524,7 @@ kPyroSetup::kPyroSetup( QWidget *parent, const char *name )
 	slider->setValue( number );
 	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotNumber( int ) ) );
 
-	QCheckBox *cb = new QCheckBox( "Cloud", this );
+	QCheckBox *cb = new QCheckBox( glocale.translate("Cloud"), this );
 	cb->setGeometry( 15, 75, 60, 20 );
 	cb->setChecked( cloud );
 	connect( cb, SIGNAL( toggled( bool ) ), SLOT( slotCloud( bool ) ) );
@@ -536,15 +536,15 @@ kPyroSetup::kPyroSetup( QWidget *parent, const char *name )
 	preview->show();    // otherwise saver does not get correct size
 	saver = new kPyroSaver( preview->winId() );
 
-	button = new QPushButton( "About", this );
+	button = new QPushButton( glocale.translate("About"), this );
 	button->setGeometry( 130, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
 
-	button = new QPushButton( "Ok", this );
+	button = new QPushButton( glocale.translate("Ok"), this );
 	button->setGeometry( 235, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( "Cancel", this );
+	button = new QPushButton( glocale.translate("Cancel"), this );
 	button->setGeometry( 300, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
 }
@@ -596,7 +596,7 @@ void kPyroSetup::slotOkPressed()
 	snumber.setNum( number );
 	config->writeEntry( "Number", snumber );
 
-	config->writeEntry( "Cloud", cloud ? QString( "yes" ) : QString( "no" ) );
+	config->writeEntry( "Cloud", cloud ? "yes" : "no");
 
 	config->sync();
 
@@ -605,6 +605,8 @@ void kPyroSetup::slotOkPressed()
 
 void kPyroSetup::slotAbout()
 {
-	QMessageBox::message("About Pyro", "Pyro Version 3.4\n\nCopyright (c) 1991 by Patrick J. Naughton\n\nPorted to kscreensave by Martin Jones.", "Ok");
+	QMessageBox::message(glocale.translate("About Pyro"), 
+			     glocale.translate("Pyro Version 3.4\n\nCopyright (c) 1991 by Patrick J. Naughton\n\nPorted to kscreensave by Martin Jones."),
+			     glocale.translate("Ok"));
 }
 

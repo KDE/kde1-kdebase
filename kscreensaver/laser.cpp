@@ -384,13 +384,13 @@ kLaserSetup::kLaserSetup( QWidget *parent, const char *name )
 
 	readSettings();
 
-	setCaption( "Setup KLaser" );
+	setCaption( glocale.translate("Setup KLaser") );
 
 	QLabel *label;
 	QPushButton *button;
 	KSlider *slider;
 
-	label = new QLabel( "Speed:", this );
+	label = new QLabel( glocale.translate("Speed:"), this );
 	label->setGeometry( 15, 15, 60, 20 );
 
 	slider = new KSlider( KSlider::Horizontal, this );
@@ -406,15 +406,15 @@ kLaserSetup::kLaserSetup( QWidget *parent, const char *name )
 	preview->show();    // otherwise saver does not get correct size
 	saver = new kLaserSaver( preview->winId() );
 
-	button = new QPushButton( "About", this );
+	button = new QPushButton( glocale.translate("About"), this );
 	button->setGeometry( 130, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
 
-	button = new QPushButton( "Ok", this );
+	button = new QPushButton( glocale.translate("Ok"), this );
 	button->setGeometry( 235, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( "Cancel", this );
+	button = new QPushButton( glocale.translate("Cancel"), this );
 	button->setGeometry( 300, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
 }
@@ -459,6 +459,8 @@ void kLaserSetup::slotOkPressed()
 
 void kLaserSetup::slotAbout()
 {
-	QMessageBox::message("About Laser", "Laser Version 3.3\n\nCopyright (c) 1995 by Pascal Pensa\n\nPorted to kscreensave by Martin Jones.", "Ok");
+	QMessageBox::message(glocale.translate("About Laser"),
+			     glocale.translate("Laser Version 3.3\n\nCopyright (c) 1995 by Pascal Pensa\n\nPorted to kscreensave by Martin Jones."),
+			     glocale.translate("Ok"));
 }
 

@@ -125,9 +125,9 @@ kLinesSetup::kLinesSetup(QWidget *parent, const char *name):QDialog(parent, name
 	QPushButton *button;
 	KSlider *sb;
 
-	setCaption("Setup klines");
+	setCaption(glocale.translate("Setup klines"));
 
-	label=new QLabel("Length:", this);
+	label=new QLabel(glocale.translate("Length:"), this);
 	label->setGeometry(15, 15, 60, 20);
 
 	sb=new KSlider(KSlider::Horizontal, this);
@@ -137,7 +137,7 @@ kLinesSetup::kLinesSetup(QWidget *parent, const char *name):QDialog(parent, name
 	sb->setValue(length);
 	connect(sb, SIGNAL(valueChanged(int)), SLOT(slotLength(int)));
 
-	label=new QLabel("Speed:", this);
+	label=new QLabel(glocale.translate("Speed:"), this);
 	label->setGeometry(15, 55, 60, 20);
 
 	sb=new KSlider( KSlider::Horizontal, this );
@@ -147,7 +147,7 @@ kLinesSetup::kLinesSetup(QWidget *parent, const char *name):QDialog(parent, name
 	sb->setValue( speed );
 	connect( sb, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
 
-        label=new QLabel("Beginning:", this);
+        label=new QLabel(glocale.translate("Beginning:"), this);
         label->setGeometry(15, 95, 100, 20);
         colorPush0=new QPushButton(this);
         colorPush0->setGeometry(15, 115, 100, 20);
@@ -156,7 +156,7 @@ kLinesSetup::kLinesSetup(QWidget *parent, const char *name):QDialog(parent, name
         colorPush0->setPalette(QPalette(colgrp0, colgrp0, colgrp0));
         connect(colorPush0, SIGNAL(clicked()), SLOT(slotColstart()));
 
-        label=new QLabel("Middle:", this);
+        label=new QLabel(glocale.translate("Middle:"), this);
         label->setGeometry(15, 135, 100, 20);
         colorPush1=new QPushButton(this);
         colorPush1->setGeometry(15, 155, 100, 20);
@@ -165,7 +165,7 @@ kLinesSetup::kLinesSetup(QWidget *parent, const char *name):QDialog(parent, name
         colorPush1->setPalette(QPalette(colgrp1, colgrp1, colgrp1));
         connect(colorPush1, SIGNAL(clicked()), SLOT(slotColmid()));
 
-        label=new QLabel("End:", this);
+        label=new QLabel(glocale.translate("End:"), this);
         label->setGeometry(15, 175, 100, 20);
         colorPush2=new QPushButton(this);
         colorPush2->setGeometry(15, 195, 100, 20);
@@ -180,15 +180,15 @@ kLinesSetup::kLinesSetup(QWidget *parent, const char *name):QDialog(parent, name
 	preview->show();    // otherwise saver does not get correct size
 	saver=new kLinesSaver(preview->winId());
 
-	button = new QPushButton( "About", this );
+	button = new QPushButton( glocale.translate("About"), this );
 	button->setGeometry( 130, 210, 50, 25 );
 	connect(button, SIGNAL(clicked()), SLOT(slotAbout()));
 
-	button = new QPushButton( "Ok", this );
+	button = new QPushButton( glocale.translate("Ok"), this );
 	button->setGeometry( 235, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( "Cancel", this );
+	button = new QPushButton( glocale.translate("Cancel"), this );
 	button->setGeometry( 300, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
 }
@@ -256,7 +256,9 @@ void kLinesSetup::slotColend(){
 }
 
 void kLinesSetup::slotAbout(){
-	QMessageBox::message("About Lines", "Lines Version 0.1.1\n\r\n\rwritten by Dirk Staneker 1997\n\rdirk.stanerker@student.uni-tuebingen.de", "Ok");
+	QMessageBox::message(glocale.translate("About Lines"),
+			     glocale.translate("Lines Version 0.1.1\n\nwritten by Dirk Staneker 1997\ndirk.stanerker@student.uni-tuebingen.de"),
+			     glocale.translate("Ok"));
 }
 
 // Ok pressed - save settings and exit

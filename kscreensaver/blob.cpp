@@ -41,8 +41,19 @@ extern KLocale glocale;
 
 static KBlobSaver *saver = NULL;
 
-char *alg_str[] = { "Random Linear", "Horizonal Sine", "Circular Bounce",
-	"Polar Coordinates", "Random" };
+char alg_str[5][30];
+/* Stephan: I have to replace this to enable i18n
+   char *alg_str[] = { "Random Linear", "Horizonal Sine", "Circular Bounce",
+   "Polar Coordinates", "Random" };
+   */
+void initAlg() 
+{
+  strcpy(alg_str[0], glocale.translate("Random Linear"));
+  strcpy(alg_str[1], glocale.translate("Horizonal Sine"));
+  strcpy(alg_str[2], glocale.translate("Circular Bounce"));
+  strcpy(alg_str[3], glocale.translate("Polar Coordinates"));
+  strcpy(alg_str[4], glocale.translate("Random"));
+}
 
 //-----------------------------------------------------------------------------
 // the blob screensaver's code
@@ -53,9 +64,11 @@ KBlobSaver::KBlobSaver
 )
 : kScreenSaver(drawable)
 {
-	QColor color;
+ initAlg();
+ QColor color;
 	float ramp = (256.0-64.0)/(float)RAMP;
-	char *msg = "Sorry. This screensaver needs a color display";
+	const char *msg = 
+	  glocale.translate("Sorry. This screensaver needs a color display");
 
 	// needs colors to work this one
 	if (QPixmap::defaultDepth() < 8)
@@ -423,6 +436,7 @@ KBlobSetup::KBlobSetup
 )
 : QDialog( parent, name, TRUE )
 {
+  initAlg();
 	QPushButton *button;
 	char str[32];
 
@@ -432,17 +446,18 @@ KBlobSetup::KBlobSetup
 	// get saver configuration from kde registry
 	readSettings();
 
-	setCaption("Setup Blob Saver");
+	setCaption(glocale.translate("Setup Blob Saver"));
 
 	// seconds to generate on a frame
-	(new QLabel("Frame Show sec.", this))->setGeometry(10, 15, 120, 20);
+	(new QLabel(glocale.translate("Frame Show sec."), 
+		    this))->setGeometry(10, 15, 120, 20);
 	stime = new QLineEdit(this);
 	stime->setGeometry(10, 35, 100, 20);
 	sprintf(str, "%d", showtime);
 	stime->setText(str);
 
 	// available algorithms
-	(new QLabel("Algorithm", this))->setGeometry(10, 60, 120, 20);
+	(new QLabel(glocale.translate("Algorithm"), this))->setGeometry(10, 60, 120, 20);
 	algs = new QListBox(this);
 	algs->setGeometry(10, 80, 150, 105);
 	for (int i = 0; i <= ALG_RANDOM; i++)
@@ -465,17 +480,17 @@ KBlobSetup::KBlobSetup
 	connect(algs, SIGNAL(highlighted(int)), saver, SLOT(setAlgorithm(int)));
 
 	// show an address to send flame mail to
-	button = new QPushButton("About", this);
+	button = new QPushButton(glocale.translate("About"), this);
 	button->setGeometry(170, 210, 50, 25);
 	connect(button, SIGNAL(clicked()), SLOT(slotAbout()));
 
 	// means attempt to register settings with kde registry
-	button = new QPushButton("OK", this);
+	button = new QPushButton(glocale.translate("OK"), this);
 	button->setGeometry(275, 210, 50, 25);
 	connect(button, SIGNAL(clicked()), SLOT(slotOkPressed()));
 
 	// ignore changes
-	button = new QPushButton("Cancel", this);
+	button = new QPushButton(glocale.translate("Cancel"), this);
 	button->setGeometry(340, 210, 50, 25);
 	connect(button, SIGNAL(clicked()), SLOT(reject()));
 }
@@ -522,7 +537,9 @@ void KBlobSetup::slotOkPressed()
 
 void KBlobSetup::slotAbout()
 {
-	QMessageBox::message("About Blob", "Blobsaver Version 0.1\n\r\n\rwritten by Tiaan Wessels 1997\n\rtiaan@netsys.co.za", "OK");
+	QMessageBox::message(glocale.translate("About Blob"), 
+			     glocale.translate("Blobsaver Version 0.1\n\nwritten by Tiaan Wessels 1997\ntiaan@netsys.co.za"), 
+			     glocale.translate("OK"));
 	if (saver)
 		saver->setAlgorithm(algs->currentItem());
 }
