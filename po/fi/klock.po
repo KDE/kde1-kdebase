@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: banner.cpp:56
@@ -361,6 +361,8 @@ msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 msgstr ""
+"K‰yttˆ: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
 #: main.cpp:460
 msgid ""
@@ -381,6 +383,22 @@ msgid ""
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
+"  -corners xxxx     Kursorin sijoittaminen nurkkaan suorittaa:\n"
+"                     x = i  ei mit‰‰n\n"
+"                     x = s  tallenna ruutu\n"
+"                     x = l  lukitse ruutu\n"
+"                    j‰rjestys: yl‰vasen, yl‰oikea, alavasen, alaoikea\n"
+"  -delay num        Aika joka odotetaan ennenkuin ruuduns‰‰st‰j‰\n"
+"                     k‰ynnistet‰‰n  (oletus 10min)\n"
+"  -desc             Tulosta ruuduns‰‰st‰j‰n kuvaus stdout:n\n"
+"  -install          Asenna ruuduns‰‰ts‰j‰\n"
+"  -lock             Vaadi salasana ruuduns‰‰tj‰n‰ lopettamiseksi\n"
+"  -nice num         Ajaa halutulla nice arvolla\n"
+"\n"
+"  -preview wid      Aja m‰‰ritellyss‰ X-Ikkunassa\n"
+"  -inroot           Aja root-ikkunassa\n"
+"  -setup            Aseta ruuduns‰‰st‰j‰‰\n"
+"  -test             K‰ynnist‰ ruuduns‰‰tj‰j‰ heti\n"
 
 #: morph3d.cpp:839
 msgid "GL can not render with root visual\n"
@@ -388,7 +406,7 @@ msgstr "GL ei pysty varjostamaan root ruudulla\n"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
-msgstr ""
+msgstr "Morph3D (GL)"
 
 #: morph3d.cpp:1015
 msgid "Setup KMorph3d"

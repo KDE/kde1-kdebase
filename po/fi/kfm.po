@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kfmgui.cpp:258
@@ -264,7 +264,6 @@ msgid "About KFM"
 msgstr "&Tietoja KFM:tä"
 
 #: kfmgui.cpp:1231
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -278,8 +277,11 @@ msgstr ""
 "Tekijä: Torben Weis\n"
 "weis@kde.org\n"
 "\n"
-"HTML työkalu Martin Jones\n"
+"HTML kontrolli Martin Jones\n"
 "mjones@kde.org"
+"\n"
+"Välityspalvelimen hallinta Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de"
 
 #: kfmgui.cpp:1323
 msgid "Document: Done"
@@ -1233,11 +1235,11 @@ msgstr "Tunnettuja sidoksia:"
 
 #: kproxydlg.cpp:14
 msgid "Don't forget to save your settings!"
-msgstr ""
+msgstr "Älä unohda tallettaa asetuksiasi!"
 
 #: kproxydlg.cpp:43
 msgid "No Proxy for:"
-msgstr "Ei Proxyä:"
+msgstr "Ei välityspalvelinta:"
 
 #: kkfmoptdlg.cpp:39
 msgid "KFM Browser Settings"
@@ -1328,6 +1330,3 @@ msgid ""
 msgstr ""
 "Syntaksivirhe\n"
 "kfmexec command [URLs ....]\n"
-
-#~ msgid "Only HTTP-Proxy is implemented yet!"
-#~ msgstr "Vain HTTP-Proxy on toteutettu!"

@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: backgnd.cpp:204 backgnd.cpp:239
@@ -254,13 +254,12 @@ msgid "Large"
 msgstr "Suuri"
 
 #: general.cpp:173
-#, fuzzy
 msgid "default"
-msgstr "Oletus"
+msgstr "oletus"
 
 #: general.cpp:176
 msgid "any"
-msgstr ""
+msgstr "kaikki"
 
 #: main.cpp:61
 msgid "&Background"

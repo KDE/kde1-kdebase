@@ -1,19 +1,18 @@
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Juha Tuomala <Juha.Tuomala@iki.fi>, 1997.
+#
+#, fuzzy
 msgid ""
 msgstr ""
+"Project-Id-Version: KCMBELL\n"
 "POT-Creation-Date: 1998-01-25 13:22+0100\n"
-"Content-Type: text/plain; charset=\n"
-"Date: 1997-10-01 16:40:07+0200\n"
-"From: root <flidr@CyberGate.zcu.cz>\n"
-"Xgettext-Options: -s -C -ktranslate\n"
-"Files: kfarch.cpp kfdird.cpp kfind.cpp kfindtop.cpp kfoptions.cpp kfsave.cpp "
-"kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp "
-"mkfindtop.cpp mkfoptions.cpp mkftabdlg.cpp mkfwin.cpp\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: ENCODING\n"
 
-#
-#	Versio 0.4
-#
-#	Changed 19.09.1997 by Juha.Tuomala@iki.fi
-#
 #: kfdird.cpp:46
 msgid "Directories:"
 msgstr "Hakemistot:"
@@ -335,6 +334,3 @@ msgstr "Tunnistamaton arkistotyyppi!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Virhe luodessa lapsiprosessia!"
-
-#~ msgid "(none)"
-#~ msgstr "(ei mit‰‰n)"

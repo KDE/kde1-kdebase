@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kpanel.C:210
@@ -131,7 +131,7 @@ msgstr "Valikon vinkit"
 
 #: props.C:447
 msgid "Others"
-msgstr ""
+msgstr "Muut"
 
 #: props.C:449
 msgid "Personal First"
@@ -147,19 +147,19 @@ msgstr "Piilota teht‰v‰paneeli"
 
 #: props.C:473
 msgid "Clock"
-msgstr ""
+msgstr "Kello"
 
 #: props.C:475
 msgid "24h"
-msgstr ""
+msgstr "24h"
 
 #: props.C:479
 msgid "12h AM/PM"
-msgstr ""
+msgstr "12h AM/PM"
 
 #: props.C:540
 msgid "Visible"
-msgstr "M‰‰r‰"
+msgstr "N‰kyviss‰"
 
 #: props.C:547
 msgid "Width"
