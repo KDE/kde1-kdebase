@@ -228,7 +228,7 @@ void kPanel::read_in_configuration(){
 	     buttonAdded = TRUE;
 	 }
 	 else {
-	   pmi = primary_menu->searchItem( button_entry_value);
+	   pmi = pmenu->searchItem( button_entry_value);
 	   if (pmi){
 	     addButtonInternal(pmi, (int)x, (int)y);
 	     buttonAdded = TRUE;
@@ -305,7 +305,7 @@ void kPanel::configure_panel(){
   int i;
 
   if (tab){
-    for (i=0; i<MAX_DESKTOPS; i++)
+    for (i=0; i<8; i++)
       led[i]->setText(KWM::getDesktopName(i+1));
     tab->show();
     tab->raise();
@@ -490,7 +490,7 @@ void kPanel::configure_panel(){
 
   QLabel *label;
   
-  for (i=0; i<MAX_DESKTOPS; i++){
+  for (i=0; i<8; i++){
     QString s;
     s.setNum(i+1);
     label = new QLabel(s, mw);
@@ -533,10 +533,10 @@ void kPanel::configure_panel(){
     }
   }
 
-  for (i=number_of_desktops; i<MAX_DESKTOPS; i++)
+  for (i=number_of_desktops; i<8; i++)
     led[i]->setEnabled(False);
 
-  sl_nr_db = new QSlider(0, 4, 1, number_of_desktops/2, QSlider::Horizontal, mw);
+  sl_nr_db = new QSlider(1, 4, 1, number_of_desktops/2, QSlider::Horizontal, mw);
   label = new QLabel(klocale->translate("Visible"), mw);
   label->setAlignment(AlignRight | AlignVCenter);
   label->setGeometry(50, 130, 60, 25);
@@ -564,7 +564,7 @@ void kPanel::slotPropsApply(){
   KConfig *config = KApplication::getKApplication()->getConfig();
   config->setGroup("kpanel");
   int i;
-  for (i=0; i<MAX_DESKTOPS; i++){
+  for (i=0; i<8; i++){
     KWM::setDesktopName(i+1, led[i]->text());
   }
   KWM::setNumberOfDesktops(sl_nr_db->value()*2);
@@ -624,7 +624,7 @@ void kPanel::slotPropsCancel(){
 
 void kPanel::slotsl_nr_db(int value){
   int i;
-  for (i=0; i<MAX_DESKTOPS; i++){
+  for (i=0; i<8; i++){
     led[i]->setEnabled(i<value*2);
   }
 }

@@ -35,6 +35,7 @@
 #include <qslider.h>
 #include <qdrawutl.h>
 
+
 // KDE includes
 #include <kconfig.h>
 #include <kwmmapp.h>
@@ -42,13 +43,10 @@
 #include <kprocess.h>
 #include <X11/Xlib.h>
 
-// kpanel includes
 #include "pmenu.h"
 
-#define MAX_DESKTOPS 8
-
-enum Orientation     {horizontal, vertical};
-enum Position        {top_left, bottom_right};
+enum Orientation {horizontal, vertical};
+enum Position {top_left, bottom_right};
 enum TaskbarPosition {hidden, top, bottom, taskbar_top_left};
 
 void restart_the_panel();
@@ -67,6 +65,10 @@ enum {
   OP_STICKY,
   OP_ONTO_CURRENT_DESKTOP
 };
+
+enum StyleSize { tiny = 0, normal, large };
+
+
 
 class myPushButton: public QPushButton
 {
@@ -92,6 +94,7 @@ protected:
   bool draw_down;
 };
 
+
 class myFrame: public QFrame
 {
   Q_OBJECT
@@ -104,16 +107,18 @@ public:
 signals:
   void showMe();
   void hideMe();   
-  
+
 protected:
   void enterEvent( QEvent * );
-  
+
  private slots:
  void hideTimerDone();
-  
+
 private:
   QTimer *hideTimer;
 };
+
+
 
 class myTaskButton: public myPushButton
 {
@@ -125,29 +130,30 @@ public:
   void setActive(bool value = TRUE);
   Window win;
   int virtual_desktop;
-protected:
+ protected:
   virtual void drawButtonLabel( QPainter *painter );
-private:
+ private:
   QString s;
   static myTaskButton* active;
 };
+
 
 class DesktopEntry {
 public:
   DesktopEntry();
   myPushButton* button;
-  QPopupMenu*   popup;
-  PMenuItem*    pmi;
+  QPopupMenu* popup;
+  PMenuItem* pmi;
   KDNDDropZone* drop_zone;
 
-  QString       swallow;
-  Window        swallowed;
-  int           app_id;
-  QString       identity;
-  QPixmap*      icon[4];
+  QString swallow;
+  Window swallowed;
+  int app_id;
+  QString identity;
+  QPixmap* icon[4];
 };
+  
 
-enum StyleSize { tiny = 0, normal, large };
 
 class kPanel : public QFrame
 {
@@ -221,6 +227,7 @@ public:
   void tipTimerDone();
   void tipSleepTimerDone();
   void hideTimerDone();
+
   // the autoHideTaskbar feature
   void showTaskbar();
   void hideTaskbar();
@@ -245,11 +252,10 @@ private slots:
 signals:
     
 private:  
-
   void     writeInitStyle(KConfig *config, int size);
   bool     initConfigFile(KConfig *config);
   void     createPixmap();
-    
+
   QPixmap mBackTexture;
   KWMModuleApplication* kwmmapp;
   Window* callbacklist;
@@ -284,9 +290,9 @@ private:
   
   QPopupMenu *popup_item;
 
-  PMenu*      primary_menu;
-  PMenu*      secondary_menu;
-  PMenu*      addapp_menu;
+  PMenu* pmenu;
+  PMenu* pmenu_add;
+  PMenu* p_pmenu;
 
   int wId;
   QPopupMenu *taskbarPopup;
@@ -351,13 +357,15 @@ private:
   void reposition(int l = 0);
   void find_a_free_place();
   void check_button_bounds(QWidget* button);
+
   void load_and_set_some_fonts();
 
   // dialogs
   QTabDialog* tab;  
 
-  QLineEdit *led[MAX_DESKTOPS];
+  QLineEdit *led[8];
   QComboBox *costy; 
+
   QButtonGroup 
     *bgrloc, // panel location
     *bgrta,  // taskbar location 
@@ -373,6 +381,10 @@ private:
   QRadioButton *mttb;
   QRadioButton *mttt;
 
+
+
+
+
   int old_style;
   QSlider *sl_dbhs, *sl_nr_db;
 
@@ -380,22 +392,25 @@ private:
   bool menu_tool_tips_disabled;
 
   // development
+
   myPushButton* kde_button;
 
   QPopupMenu* windows;
   QPopupMenu* windowlist;
-
-  void    generateWindowlist(QPopupMenu*);
+  void generateWindowlist(QPopupMenu*);
+  
   QPixmap load_pixmap(const char* name, bool is_folder = false);
-  void    write_out_configuration();
-  void    read_in_configuration();
 
-  void    showMiniPanel(); // sven
-  void    hideMiniPanel ();
+  
+  void write_out_configuration();
+  void read_in_configuration();
+
+  void showMiniPanel(); // sven
+  void hideMiniPanel ();
  
   int currentDesktop;
  
-  Bool panelHidden[MAX_DESKTOPS+1];
+  Bool panelHidden[8+1];
   Bool panelCurrentlyHidden;
   Bool miniPanelHidden;
 
@@ -414,8 +429,3 @@ private:
 
 
 #endif // KPANEL_H
-
-
-
-
-

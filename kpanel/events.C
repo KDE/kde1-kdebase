@@ -675,7 +675,7 @@ void kPanel::slotDropEvent( KDNDDropZone *_zone ){
       a = a.right(a.length() - 5);
       if (a.right(1) == "/")
 	a.truncate(a.length()-1);
-      PMenuItem* pmi = primary_menu->searchItem(a);
+      PMenuItem* pmi = pmenu->searchItem(a);
       
       if (pmi){
 	int x = margin;

@@ -1,5 +1,9 @@
 In kpanel-0.18:
 
+    Patchlevel 7:
+       - cleanups reverted (too many sideeffects). Nicer
+         configuration dialog still included.
+
     Patchlevel 6:
        - cleanups and a nicer configuration dialog (Martin Scherbaum)
 

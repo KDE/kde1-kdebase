@@ -665,7 +665,7 @@ void kPanel::addButton(PMenuItem* pmi)
 {
   QString s = pmi->getSaveName().copy();
   s.remove(0,1);
-  PMenuItem* pmi2 = primary_menu->searchItem(s);
+  PMenuItem* pmi2 = pmenu->searchItem(s);
   addButtonInternal(pmi2);
   write_out_configuration();
 }
