@@ -1,3 +1,8 @@
+
+since kvt-0.16:
+
+  - re-arranged help menu (Matthias)
+	
   - added user-configurable backspace (^H/^?)
     (Jeroen van der Most <jvdmost@wi.leidenuniv.nl>)
 
@@ -19,8 +24,6 @@
     unincomplete or antiquated terminfo/termcap databases. (This is
     based on curses.)
 
-since kvt-0.16:
-  	
   - added a linux-console compatible color-mode (M G Berberich)
 
 since kvt-0.15:

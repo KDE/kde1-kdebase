@@ -43,6 +43,7 @@ extern void get_token();
 extern void handle_X_event(XEvent event);
 extern void screen_refresh();
 extern void extract_colors( char *fg_string, char *bg_string);
+extern void clean_exit(int);
 
 void rxvt_main(int argc,char **argv);
 
@@ -445,8 +446,10 @@ kVt::kVt( QWidget *parent, const char *name )
 
     m_help = new QPopupMenu;
     CHECK_PTR( m_help );
+    m_help->insertItem(klocale->translate("&Contents"));
+    m_help->insertSeparator();
     m_help->insertItem(klocale->translate("&About..."));
-    m_help->insertItem(klocale->translate("&Help"));
+    m_help->insertItem(klocale->translate("&About Qt..."));
     connect(m_help, SIGNAL(activated(int)), SLOT(help_menu_activated(int)));
 
     menubar = new KMenuBar( this );
@@ -804,16 +807,20 @@ void kVt::help_menu_activated(int item){
   QString ver = KVT_VERSION;
   switch (item){
   case 0:
-    QMessageBox::message( klocale->translate("About kvt"), ver + klocale->translate("\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n\nTerminal emulation for the KDE Desktop Environment\nbased on Robert Nation's rxvt-2.08"));
-    break;
-  case 1:
     myapp->invokeHTMLHelp("kvt.html", ""); 
+    break;
+  case 2:
+    QMessageBox::about( this, "kvt", 
+			ver + klocale->translate("\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n\nTerminal emulation for the KDE Desktop Environment\nbased on Robert Nation's rxvt-2.08"));
+    break;
+  case 3:
+    QMessageBox::aboutQt(this);
     break;
   }
 }
 
 bool kVt::eventFilter( QObject *obj, QEvent * ev){
-  static QPoint tmp_point;
+  static QPoint tmp_point(-10,-10);
   if (obj == m_options){
     if (ev->type() == Event_MouseButtonRelease){
       if (QCursor::pos() == tmp_point){
