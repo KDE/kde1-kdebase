@@ -21,7 +21,7 @@
 
 
 #include <kwm.h>
-#include "kcontrol.h"
+#include <kcontrol.h>
 #include "windows.h"
 #include "titlebar.h"
 

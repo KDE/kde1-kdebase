@@ -5,15 +5,11 @@ DISTCLEANFILES = $(BUILT_SOURCES)
 
 bin_PROGRAMS = kcmdisplay
 
-kcmdisplay_SOURCES = backgnd.cpp gif.cpp jpeg.cpp display.cpp kcontrol.cpp \
+kcmdisplay_SOURCES = backgnd.cpp gif.cpp jpeg.cpp display.cpp \
                         colorscm.cpp kwmcom.cpp savescm.cpp scrnsave.cpp \
 			general.cpp main.cpp
 BUILT_SOURCES = backgnd.moc display.moc colorscm.moc savescm.moc kwmcom.moc \
-                scrnsave.moc general.moc kcontrol.moc
-
-kcontrol.cpp:kcontrol.moc
-kcontrol.moc: kcontrol.h
-	$(MOC) kcontrol.h -o kcontrol.moc
+                scrnsave.moc general.moc
 
 backgnd.cpp:backgnd.moc
 backgnd.moc: backgnd.h
@@ -45,8 +41,6 @@ general.moc: general.h
 
 
 install-data-local: 
-#	$(mkinstalldirs) $(kde_icondir)
-#	$(INSTALL_DATA) kcontrol.xpm $(kde_icondir)/kcontrol.xpm
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) mini-background.xpm $(kde_minidir)/background.xpm
 	$(INSTALL_DATA) mini-colors.xpm $(kde_minidir)/colors.xpm
@@ -56,7 +50,6 @@ install-data-local:
 	$(INSTALL_DATA) monitor.xpm $(kde_datadir)/kdisplay/pics
 
 uninstall-local:
-#	rm -f $(kde_icondir)/kcontrol.xpm
 	rm -f $(kde_minidir)/background.xpm
 	rm -f $(kde_minidir)/colors.xpm
 	rm -f $(kde_minidir)/screensaver.xpm

@@ -34,7 +34,7 @@
 #include <qradiobt.h> 
 
 #include <kslider.h>
-#include "kcontrol.h"
+#include <kcontrol.h>
 
 
 class KBellConfig : public KConfigWidget

@@ -24,7 +24,7 @@
 //#include <qobject.h>
 #include <kslider.h>
 
-#include "kcontrol.h"
+#include <kcontrol.h>
 #include "display.h"
 #include "colorscm.h"
 #include "scrnsave.h"

@@ -20,7 +20,7 @@
   */
 
 
-#include "kcontrol.h"
+#include <kcontrol.h>
 #include "memory.h"
 #include "processor.h"
 

@@ -12,7 +12,7 @@
 #include <qfile.h>
 #include <qevent.h>
 #include <kmsgbox.h>
-#include "kcontrol.h"
+#include <kcontrol.h>
 
 
 class KProcessorWidget : public KConfigWidget

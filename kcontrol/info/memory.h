@@ -10,7 +10,7 @@
 #include <qtimer.h>
 
 
-#include "kcontrol.h"
+#include <kcontrol.h>
 
 
 class KMemoryWidget : public KConfigWidget

@@ -16,7 +16,7 @@
 #include <qbttngrp.h>
 #include "kcolordlg.h"
 #include "kcolorbtn.h"
-#include "kcontrol.h"
+#include <kcontrol.h>
 #include "display.h"
 
 class KBGMonitor : public QWidget

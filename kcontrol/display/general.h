@@ -16,7 +16,7 @@
 #include <qtimer.h>
 #include <qpainter.h>
 #include <qchkbox.h>
-#include "kcontrol.h"
+#include <kcontrol.h>
 #include <X11/X.h>
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>

@@ -20,7 +20,7 @@
   */
 
 
-#include "kcontrol.h"
+#include <kcontrol.h>
 
 
 int main(int argc, char **argv)

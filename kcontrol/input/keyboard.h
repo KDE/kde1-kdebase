@@ -32,7 +32,7 @@
 #include <kapp.h>
 #include <kslider.h>
 
-#include "kcontrol.h"
+#include <kcontrol.h>
 
 
 class KeyboardConfig : public KConfigWidget

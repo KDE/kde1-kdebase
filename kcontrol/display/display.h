@@ -10,7 +10,7 @@
 
 #include <qwidget.h>
 
-#include "kcontrol.h"
+#include <kcontrol.h>
 
 class KDisplayModule : public KConfigWidget
 {

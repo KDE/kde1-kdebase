@@ -38,7 +38,7 @@
 
 #include <kslider.h>
 
-#include "kcontrol.h"
+#include <kcontrol.h>
 
 #include <kwm.h>
 

@@ -2,7 +2,7 @@
 #define main_included
  
 #include "ktablistbox.h"
-#include "kcontrol.h"
+#include <kcontrol.h>
 
 class NetMon : public KConfigWidget
 {
