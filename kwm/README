@@ -1,0 +1,152 @@
+       README file for kwm, the KDE window manager
+       ============================================
+ Developed and maintained by Matthias Ettrich (ettrich@kde.org)
+
+
+Version 0.10 
+
+Please see the CHANGES file for detailed informations about the actual
+development and the history of kwm.
+
+
+This document contains
+
+  1) PREFACE
+  2) FAQ
+  3) SHORTCUTS
+  4) MOUSE CONTROL
+  5) LOW LEVEL CONFIGURATION (kwmrc)
+
+
+
+1) PREFACE
+==========
+
+This file may be incomplete. For further questions how to customize
+kwm in the low level (only interesting for the kwinconfig
+developers....)  please have a look into the generated kwmrc and the
+source code.
+
+For all programmers: check out kwm.h in libkdecore for lots of
+informations how to use kwm for your purposes. For modules the class
+KWMModuleApplication (maybe some day in libkdecore, at present used
+and defined by krootwm) is also a good example on how to write
+modules.
+
+
+2) FAQ
+======
+
+FAQ 1: Why should I use kwm? I spent several days in learning how to
+     configure 10 different windowmangers. And now where I have a 678
+     lines long resourcefile doing exactly what I want, you are comming
+     along and want to take my windowmanager away!
+
+Answer: You _should_ not, it is only a _free_ offer. But IMHO your
+    are making a mistake if not ;-)
+
+    Some arguments:
+   
+    - shameless integration into KDE
+    - 2nd generation windowmanager. That means it uses a modern GUI
+      toolkit for its widgets (buttons, menus, listboxes, etc) instead
+      of blowing up the code with a proprietary unconvienient plain Xlib
+      implementation.
+    - modern and pretty look and _feel_ with unique window titles and icons 
+      which do not need to be defined in cryptic resource files.
+    - can be configured during runtime without the need to restart it
+    - complete keyboard control 
+    - excellent focus handling even if you work on different virtual
+      desktops (no longer desktopswitching-and-losing-focus like it is
+      standard with other windowmangers)
+    - includes session management and a really working session management
+      proxy for older applications. This proxy is able to restore your
+      applications exactly, that means with the correct window properties
+      (maximized, sticky, iconified, etc.) on the correct virtual desktop.
+    - modern module concept that uses X wherever it is possible. Also
+      kwm modules are very independent: They can be started before or
+      after kwm. Kwm can even be restarted while the modules are still
+      running and will reconnect them automatically.
+    - offers some extensions to X in kwm.h: Now applications can even maximize
+      theirselfs (or sticky, or decorate/undecorate or whatever) and define 
+      miniicons. This works also for mapped (visible) windows!
+
+
+FAQ 2: Why can't I define new shortcuts for launching applications or
+    do whatever? This is very important for me! 
+
+Answer: Because this is not the task of the windowmanger. Use KGlobalShortcut
+    for this purpose.
+
+
+FAQ 3: Why does kwm look so much like Windows 95?
+
+Answer: Ooops, does it? Let me see.... (Matthias trying to find somebody
+    who has Windows 95 because he does not have any windows on all his
+    computers... Damn... nobody has windows here. Well let's grab an old
+    Linux distribution and install fvwm95-2.....) No, I cannot verify
+    that at all. kwm looks much prettier :-)
+
+
+FAQ 4: Is it possible to add the KDE extensions to other windowmanagers?
+
+Answer: Yes it is. You simple have to go through kwm.h/kwm.C from
+    libkdecore and extend your favorite windowmanager to response correct
+    to these requests. BTW it is also possible to implement an object 
+    request broker in x86 assembler. It's just a question of the 
+    investment/result ratio.
+   
+
+
+3) SHORTCUTS
+============
+
+    Alt-Esc / Control-Esc :  "Current Session"-manager with logout-button
+    Alt-Tab / Alt-Shift-Tab : Traverse the windows of the current desktop
+    Ctrl-Tab / Ctrl-Shift-Tab : Traverse the virtual desktops
+
+    Alt-F2 : Execute command
+    Alt-F3 : window operation popup
+    Alt-F4 : Close window
+
+    Ctrl-Alt-Esc: Destroy window mode (cursor becomes a pirate)
+   
+
+4) MOUSE CONTROL
+================
+
+     click onto the border or the titlebar:
+            left mouse button: activate and raise the window
+            middle mouse button: activate and lower the window
+            right mouse button: show windows operation menu if the
+                 window is active, otherwise activate it without raising.
+
+     doubleclick on title toggles maximize
+
+     drag of the titlebar: move window (left mouse raises, middle mouse
+            keeps the stacking position)
+
+     drag of corners or edges: resize the window (left mouse raises, middle 
+            mouse keeps the stacking position)
+
+     the entire window:
+            Alt-(left mouse button): move
+            Alt-(middle mouse button): raise
+            Alt-(right mouse button): resize
+
+
+5) LOW LEVEL CONFIGURATION (kwmrc):
+===================================
+
+    [Buttons]
+    Button[A-F]=Menu, Sticky, Iconify, Maximize, Close, Off
+
+    [General]
+    WindowMoveType=Opaque, Transparent
+    FocusPolicy=ClickToFocus, FocusFollowMouse
+    AutoRaise=0 (milliseconds)
+    MaximizeOnlyVertically=off, on
+    TitlebarLook=shaded, plain
+    TitleAnimation=50 (milliseconds)
+    ResizeAnimation=on, off
+	
