@@ -78,6 +78,7 @@ protected:
 	QStrList fontList;
 	
 	Bool changed;
+	Bool defaultCharset;
 	
 	Window root;
 	int screen;

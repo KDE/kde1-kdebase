@@ -170,9 +170,10 @@ int i;
 	charset_combo->clear();
 	KCharsets *charsets=kapp->getCharsets();
         QStrList sets=charsets->displayable(generalFont.family());
+	charset_combo->insertItem( klocale->translate("default") );
 	for(QString set=sets.first();set;set=sets.next())
 	  charset_combo->insertItem( set );
-	charset_combo->insertItem( "any" );
+	charset_combo->insertItem( klocale->translate("any") );
 
 	QString charset=charsets->name(generalFont);
 	for(i = 0;i<charset_combo->count();i++){
@@ -187,7 +188,14 @@ void KGeneral::slotCharset(const char *name)
 {
 
   KCharsets *charsets=kapp->getCharsets();
-  charsets->setQFont(generalFont,name);
+  if (strcmp(name,"default")==0){
+     charsets->setQFont(generalFont,klocale->charset());
+     defaultCharset=TRUE;
+  }   
+  else{   
+     charsets->setQFont(generalFont,name);
+     defaultCharset=FALSE;
+  }   
 
   changed=TRUE;
 }
@@ -311,8 +319,14 @@ void KGeneral::readSettings( int )
         KCharsets *charsets=kapp->getCharsets();
 	
 	str = config.readEntry( "Charset",0 );
-	if ( !str.isNull() )
+	if ( !str.isNull() && str!="default" && KCharset(str).ok() ){
 		charsets->setQFont(generalFont);
+		defaultCharset=FALSE;
+	}	
+	else{
+		charsets->setQFont(generalFont,klocale->charset());
+		defaultCharset=TRUE;
+	}	
 
 	str = config.readEntry( "Family" );
 	if ( !str.isNull() )
@@ -369,7 +383,11 @@ void KGeneral::writeSettings()
 	systemConfig->writeEntry("Point Size", pointSizeStr, true, true);
 
 	KCharsets *charsets=kapp->getCharsets();
-	systemConfig->writeEntry("Charset", charsets->name(generalFont), true, true);
+	if (!defaultCharset)
+	    systemConfig->writeEntry("Charset",
+	               charsets->name(generalFont), true, true);
+	else	       
+	    systemConfig->writeEntry("Charset","default", true, true);
 	
 	QString weightStr(10);
 	weightStr.sprintf("%d", generalFont.weight() );
