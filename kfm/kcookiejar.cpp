@@ -352,7 +352,7 @@ static void stripDomain(const char *_fqdn, QString &_domain)
 
 }
 
-const static char haystack[37]="janfebmaraprmayjunjulaugsepoctnovdec";
+static const char haystack[37]="janfebmaraprmayjunjulaugsepoctnovdec";
 
 static time_t parseExpire(const char *expireDate)
 {
