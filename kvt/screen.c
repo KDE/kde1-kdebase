@@ -233,7 +233,9 @@ void init_color_mode(int mode)
   case COLOR_TYPE_Linux:
     color_type = COLOR_TYPE_Linux;
     color_names = linux_color_names;
-    alloc_color(STD_BOLD_COLOR);
+    if (!colors_loaded[STD_BOLD_COLOR]) {
+      alloc_color(STD_BOLD_COLOR);
+    }
     break;
   default:
     error("invalid colormode %d.", mode);
@@ -254,14 +256,13 @@ void set_color_mode(int mode)
       color_names = std_color_names;
       for (i=2; i<10; i++) {
 	if (colors_loaded[i]) {
-	  XFreeColors(display, colormap, &pixel_colors[i], 1, 0);
+	  free_color(i);
 	  alloc_color(i);
 	}
       }
       for (i=10; i<18; i++) {
 	if (colors_loaded[i]) {
-	  XFreeColors(display, colormap, &pixel_colors[i], 1, 0);
-	  colors_loaded[i] = 0;
+	  free_color(i);
 	}
       }
     }
@@ -272,10 +273,9 @@ void set_color_mode(int mode)
       color_names = linux_color_names;
       for (i=2; i<10; i++) {
 	if (colors_loaded[i]) {
-	  XFreeColors(display, colormap, &pixel_colors[i], 1, 0);
+	  free_color(i);
 	  alloc_color(i);
 	  alloc_color(i+8);
-	  colors_loaded[i+8] = 1;
 	}
       }
       if (colors_loaded[0] && !colors_loaded[STD_BOLD_COLOR]) {
@@ -2501,9 +2501,17 @@ void scr_rev_vid(int mode)
 }
 
 /***************************************************************************
- * Allocate a color.
+ * Free a color. [bmg]
  **************************************************************************/
-/* bmg */
+int free_color(int color)
+{
+  XFreeColors(display, colormap, &pixel_colors[color], 1, 0);
+  colors_loaded[color] = 0;
+}
+
+/***************************************************************************
+ * Allocate a color. [bmg]
+ **************************************************************************/
 int alloc_color(int color)
 {
   XColor new_color;
