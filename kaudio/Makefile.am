@@ -9,7 +9,7 @@ demo_SOURCES = democlient.cpp
 MOCS = democlient.moc
 
 bin_PROGRAMS = maudio kaudioserver
-# noinst_PROGRAMS = demo
+noinst_PROGRAMS = demo
 noinst_HEADERS = version.h
 
 datadir = $(kde_htmldir)/en/kmedia/
