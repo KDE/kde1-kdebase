@@ -1489,31 +1489,63 @@ void process_print_pipe()
 {
   extern char *print_pipe;
   int c = 0;
+  int pid, roura[2];
   char escape_seq [4] = "\033[4i";
   char rev_escape_seq [4] = "i4[\033";
   int index = 0;
-  FILE *pipe_file;
+  FILE *pipe_file=NULL;
 
-  pipe_file = popen (print_pipe, "w");
+  //****************** new part ****************************
+  if(pipe(roura)==-1){
+    perror("kvt:pipe");
+    return;
+    }
+  pid=fork();
+  if(pid<0){
+    perror("kvt:fork");
+    return;
+    }
+  if(pid==0){
+    if(close(0)==-1 || dup(roura[0])==-1 || close(roura[0])==-1 || close(roura[1])==-1){
+      perror("kvt:child:dup");
+      exit(1);
+      }
+    if(execlp(print_pipe,print_pipe,0)==-1){
+      perror("kvt:exec");
+      exit(1);
+      }
+    }
+  else{
+    if(close(roura[0])==-1)
+      perror("kvt:close");
+    if((pipe_file=fdopen(roura[1],"w"))==NULL)
+      perror("kvt:fdopen");
+    }        
+  //********************* end **************************
+      
   if (pipe_file == NULL)
     {
     fprintf (stderr, "rxvt: can't open printer pipe!\n");
     return ;
     }
-
   while (1)
     {
     c = get_com_char(0);
     
-    if (c == escape_seq [index]) index++;
-    else if (index)
-      for (/*no init'ln*/; index > 0; index--)
-        fputc (rev_escape_seq [index-1], pipe_file);
+    if (c == escape_seq [index])
+      index++;
+    else 
+      if (index)
+        for (/*no init'ln*/; index > 0; index--)
+          fputc (rev_escape_seq [index-1], pipe_file);
     
     if (index == 4) 
       {
-      fflush (pipe_file);
-      pclose (pipe_file);
+      //*********** some changes ************
+
+      //fflush (pipe_file);   --fclose flushes too
+      fclose (pipe_file);
+      //waitpid(pid,&stat,WUNTRACED);
       return ;
       }
 
