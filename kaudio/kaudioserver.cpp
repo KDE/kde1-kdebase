@@ -15,7 +15,7 @@
    along with this program; if not, write to the Free Software
    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
- 	kaudioserver.cpp: Audio server for libmediatool/maudio
+ 	kaudioserver.cpp: Audio server starter for libmediatool/maudio
 */
 
 #include <stdio.h>
@@ -43,19 +43,61 @@ pid_t		maudioPID = 0;
 
 
 
+/************************************************************************
+ Following are some functions which deal with shutting down the audio
+ system. This is very tricky, as the code must deal with two possible
+ scenarios:
+ 1. Starting X11 via startx
+ 2. Starting X11 via kdm/xdm
 
+ The easy scenario is 1: Here the controlling shell (bash, tcsh, ...)
+ is acting as process group leader. So this shell will see to that all
+ signals propagate properly through all affected child processes. I
+ only must make sure, the "lock file" ~/.kaudioserver gets removed on
+ exit.
+
+ Quite more difficult is 2: Here is no controlling shell available.
+ kdm and xdm don't play the role as process group leader. Any process
+ that does NOT get terminated due to "X connection to DISPLAY_NAME broken",
+ will simply be reparented by the OS and does not get killed.
+
+ Solution: kaudioserver sets up a connection to the X Server. For cleanly
+ exiting, an IO Error handler is set up for X11 via XSetIOErrorHandler()
+ and additionaly many signals do get catched. So in any case, before
+ kaudioserver goes down, it will be notified via signal or error handler.
+
+ This situation is being used, to notify the real audio server "maudio"
+ to shut down, too. Potentially, I could send a mediatool message from
+ kaudioserver to maudio. Alas, this doesn't work, as stupid SysV IPC
+ can remove the memory segment as soon as the controlling process goes
+ down. In therory this should not happen. The exeact reason has not
+ been searched for.
+ Instead an always working solution has been used. kaudioserver sends
+ maudio a SIGKILL. Sending SIGQUIT would be nicer, but fails in case
+ the user uses kdm or xdm. Here again, it is not clear why.
+
+ The moral: kdm/xdm should really be process group leader, but this
+ is just a dream.
+ */
 
 /*
  * disconnectChild() removes the maudio process. This could
  * be done by using the MdDisconnect() command. But in case
  * of severe trouble (SHM segment garbled), I still want to
  * make sure, maudio does get killed.
- * So I send maudio a "QUIT" signal, which always should work.
+ * So I send maudio a "KILL" signal, which always should work.
  */
 void disconnectChild()
 {
-  if (maudioPID != 0)
-    kill(maudioPID, SIGQUIT);
+  fprintf(stderr, "kaudioserver: disconnectChild() with pid %i\n",maudioPID);
+
+  if (maudioPID != 0) {
+    int ret = kill(maudioPID, SIGKILL);
+    fprintf(stderr, "            Return = %i\n", ret);
+  }
+  else
+    fprintf(stderr, "            maudioPID == 0 :-(\n");
+
 }
 
 
@@ -66,12 +108,14 @@ void myExit(int retcode)
 {
   disconnectChild();
   unlink (KMServerPidFile);
+  fprintf(stderr, "kaudioserver: Exiting on myExit(%i).\n", retcode);
   exit (retcode);
 }
 
 // signal handler for various signals. Calls myExit() -------------------
 void mysigchild(int signum)
 {
+  fprintf(stderr, "kaudioserver: Captured signal %i.\n", signum);
   myExit(1);  
 }
 
@@ -189,7 +233,7 @@ int main ( int argc , char **argv )
   initXconnection();
   if ( globalDisplay == 0 ) {
     fprintf(stdout, "kaudioserver: Can't connect to the X Server.\n" \
-	" Audio system might not terminate at end of session.\n");
+	"kaudioserver: Audio system might not terminate at end of session.\n");
   }
 
 
@@ -197,18 +241,18 @@ int main ( int argc , char **argv )
 
   // Read old communication id
   KMServerPidHandle = fopen(KMServerPidFile,"r");
-  if (KMServerPidHandle == NULL)
+  if (KMServerPidHandle == 0) {
     PidRead[0]=0;
-  else
+  }
+  else {
     fgets(PidRead, 100, KMServerPidHandle);
-
-  if(KMServerPidHandle)
     fclose(KMServerPidHandle);
-  int ret =  initMediatool(PidRead);
+  }
+  int ret = initMediatool(PidRead);
   if (ret==0)
     fatalexit(NotStarted);
 
-  if (ret ==1 ) {
+  if (ret == 1) {
     printf("Using old audio server with talk id %s\n", PidRead);
     exit (0);
   }
@@ -261,11 +305,11 @@ int main ( int argc , char **argv )
      * child to die :'-|
      */
     while(1) {
-      XEvent *event_return;
+      XEvent event_return;
       if (globalDisplay != 0) {
-        //XCheckMaskEvent(globalDisplay, (long)(-1l) , event_return);
+        //XCheckMaskEvent(globalDisplay, (long)(-1l) , &event_return);
         //XFlush(globalDisplay);
-        XNextEvent(globalDisplay, event_return);
+        XNextEvent(globalDisplay, &event_return);
       }
       sleep(1);
     }
@@ -274,4 +318,3 @@ int main ( int argc , char **argv )
   fprintf(stdout,"Failed starting audio server!\n");
   myExit(1);
 }
-

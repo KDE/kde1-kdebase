@@ -1,6 +1,12 @@
+1998-12-17  Christian Esken  <esken@kde.org>
+
+	* kaudioserver.cpp: Adding XIO Error Handler. Now kaudioserver
+	shuts down on X11 termination. Changing SIGQUIT to SIGKILL,
+	that is being sent from kaudioserver to maudio.
+
 1998-11-18  Christian Esken  <esken@kde.org>
 
-	* AudioDev::emitSilence() : Fixed so that it emits
+	* io_oss.cpp: AudioDev::emitSilence() : Fixed so that it emits
 	silence multiple times if neccesary. This fixes the
 	"play garbage at end of audio file or while pause"
 	problem - This garbage was there due to playback underrun.
@@ -74,8 +80,12 @@ Sun Feb  8 15:41:13 CET 1998 Christian Esken <esken@kde.org>
 	is useful if you have multiple audio devices or the SoftOSS extensions.
 
 
+1998-02-05 Christian Esken <esken@kde.org>
+
+        * Adding feature: Setting the current position in the media stream.
+
+
 Sat Jan 10 06:19:50 1998  Bernd Johannes Wuebben  <wuebben@math.cornell.edu>
 
 	* kaudioserver.cpp (main): fixed segfault on startup. return value
 	of fopen on line 123 was ignored which led to a sefault of fclose.
-
