@@ -7,12 +7,14 @@ Comment=New "programmer's" keyboard
 Comment[ru]=Новая клавиатура програмиста
 Comment[pl]=Klawiatura programisty
 Comment[fi]=Ohjelmoijan nДppДimistЖ
+Comment[sv]=Nytt 'programmerings' tangentbord
 
 Language=Polish
 Language[no]=Polsk
 Language[ru]=Польский
 Language[fi]=Puola
 Language[pl]=Polski
+LAnguage[pl]=Polska
 
 Label=nPl
 Locale=pl

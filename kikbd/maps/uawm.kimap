@@ -7,12 +7,14 @@ Comment=Microsoft layout. Has English characters as alternate symbols.
 Comment[ru]=Раскладкой Microsoft. Позволяет набирать латинские символы используя Алтернативные переключатель.
 Comment[fi]=Microsoft jДrjestys. SisДltДД englantilaiset kirjaimet vaihtoehtoisina symboleina.
 Comment[pl]=UЁo©enie Microsoftu. Znaki alfabetu ЁaciЯskiego jako symbole alternatywne.
+Comment[sv]=Microsofts teckenuppsДttning. Har engelska bockstДver som alternativa symboler.
 
 Language=Ukrainian
 Language[no]=Ukrainsk
 Language[ru]=Украинский
 Language[fi]=Ukraina
 Language[pl]=UkraiЯski
+Language[sv]=Ukrainska
 
 Charset=cp1251
 Label=UW

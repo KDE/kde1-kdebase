@@ -5,12 +5,14 @@ Comment=Typewriter Keyboard (QWERTZ)
 Comment[cs]=Klávesnice psacího stroje (QWERTZ)
 Comment[ru]=ëÌÁ×ÉÁÔÕÒÁ (QWERTZ)
 Comment[fi]=Kirjoituskonenäppäimistö (QWERTZ)
+Comment[sv]=Skrivmaskins tangentbord (QWERTY)
 
 Language=Czech
 Language[no]=Tjekkisk
 Language[ru]=şÅÛÓËÉÊ
 Language[fi]=Tsekki
 Language[pl]=Czeski
+Language[sv]=Tjeckiska
 
 Label=Csz
 Locale=cs

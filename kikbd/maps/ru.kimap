@@ -6,12 +6,14 @@ Authors=Alexander Budnik <budnik@linserv.jinr.ru>,Denis V. Dmitrienko <denis@nul
 Comment=Has latin characters as alternate symbols.
 Comment[ru]=Содержит латинские символы в качестве алтернативных.
 Comment[fi]=Latinalaiset kirjaimet vaihtoehtoisina symboleina.
+Comment[sv]=Har latinska bockstДver som alternativa symboler.
 
 Language=Russian
 Language[no]=Russisk
 Language[ru]=Русский
 Language[fi]=VenДjД
 Language[pl]=Rosyjski
+LAnguage[sv]=Ryska
 
 Charset=koi8-r
 Label=Ru

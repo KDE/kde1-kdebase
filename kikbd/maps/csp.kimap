@@ -5,12 +5,14 @@ Comment=Programmers Keyboard
 Comment[cs]=Programátorská klávesnice
 Comment[ru]=ëÌÁ×ÉÁÔÕÒÁ ĞÒÏÇÒÁÍÉÓÔÁ
 Comment[fi]=Ohjelmoijan näppäimistö
+Comment[sv]=Programmerings tangentbord
 
 Language=Czech
 Language[no]=Tjekkisk
 Language[ru]=şÅÛÓËÉÊ
 Language[fi]=Tsekki
 Language[pl]=Czeski
+Language[sv]=Tjeckiska
 
 Label=Csp
 Locale=cs

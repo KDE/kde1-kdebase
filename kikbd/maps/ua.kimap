@@ -7,12 +7,14 @@ Comment=Has English characters as alternate symbols.
 Comment[ru]=Позволяет набирать латинские символы используя Алтернативный переключатель.
 Comment[fi]=Englantilaiset kirjaimet vaihtoehtoisina symboleina.
 Comment[pl]=Znaki alfabetu ЁaciЯskiego jako symbole alternatywne.
+Comment[sv]=Har engelska bockstДver som alternativa symboler. 
 
 Language=Ukrainian
 Language[no]=Ukrainsk
 Language[ru]=Украинский
 Language[fi]=Ukraina
 Language[pl]=UkraiЯski
+Language[sv]=Ukrainska
 
 Charset=koi8-u
 Label=Ua

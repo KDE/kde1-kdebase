@@ -7,12 +7,14 @@ Comment=Polish 'programmers' Keyboard
 Comment[ru]=Клавиатура програмиста
 Comment[pl]=Klawiatura programisty
 Comment[fi]=Puolalainen ohjelmoijan nДppДimistЖ
+Commant[sv]=Polskt 'programmerings' tangentbord
 
 Language=Polish
 Language[no]=Polsk
 Language[ru]=Польский
 Language[fi]=Puola
 Language[pl]=Polski
+LAnguage[sv]=Polska
 
 Label=Pl
 Locale=pl
