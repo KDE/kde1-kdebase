@@ -256,31 +256,5 @@ class ModulaHighlight : public Highlight {
     virtual void makeContextList();
 };
 
-/*
-class HighlightDialog : public QDialog {
-    Q_OBJECT
-  public:
-    HighlightDialog(QStrList &types, QWidget *parent, const char *newHlSlot);
 
-    void newHl(Highlight *);
-
-    static Highlight *getHighlight(QStrList &types,
-      QWidget *parent, const char *newHlSlot);
-  signals:
-    void newHl(int index);
-  protected slots:
-    void newItem(int);
-    void newCol(const QColor &);
-    void newSelCol(const QColor &);
-    void newFont();
-
-  protected:
-    Highlight *highlight;
-    Attribute *a;
-    QListBox *typeLB;
-    QListBox *itemLB;
-    KColorButton *col;
-    KColorButton *selCol;
-};
-*/
 #endif //HIGHLIGHT_H
