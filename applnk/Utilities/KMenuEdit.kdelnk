@@ -3,6 +3,7 @@
 Name=Menu Editor
 Name[de]=Menueditor
 Name[pl]=Edytor menu
+Name[cs]=Editor menu
 Type=Application
 Exec=kmenuedit
 Icon=kmenuedit.xpm
@@ -13,3 +14,4 @@ Terminal=0
 Comment=Program to change the menues of kpanel and ktaskbar
 Comment[de]=Programm zur Veränderung der Menüs von kpanel und ktaskbar
 Comment[pl]=Program pozwalaj±cy zmieniaæ menu dla kpanel i ktaskbar.
+Comment[cs]=Program urèený ke zmìnì menu pro kpanel a ktaskbar
