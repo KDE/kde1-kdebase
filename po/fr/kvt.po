@@ -131,14 +131,13 @@ msgstr "Police..."
 
 #: main.C:674
 msgid "Enable &hotkeys"
-msgstr ""
+msgstr "Utiliser les &raccourcis"
 
 #: main.C:677
 msgid "Save &Options"
 msgstr "Enregistrer les &options"
 
 #: main.C:686
-#, fuzzy
 msgid ""
 "\n"
 "\n"
@@ -153,6 +152,7 @@ msgstr ""
 "\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
 "\n"
 "Emulation de terminal pour le KDE Desktop Environment\n"
 "basé sur rxvt-2.08 de Robert Nation"

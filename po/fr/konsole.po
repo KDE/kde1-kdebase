@@ -4,150 +4,142 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-05 01:14+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Serge 'sergio' Tellène <tells@mygale.org>\n"
+"Project-Id-Version: konsole 0.9.8\n"
+"POT-Creation-Date: 1998-12-01 01:14+0100\n"
+"PO-Revision-Date: 1998-12-05 00:35 CET\n"
+"Last-Translator: Francois-Xavier DURANCEAU <Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.C:260
+#: main.C:239
 msgid "&Normal"
 msgstr "&Normal"
 
-#: main.C:263
+#: main.C:242
 msgid "&Small"
 msgstr "&Petit"
 
-#: main.C:264
+#: main.C:243
 msgid "&Medium"
 msgstr "&Moyen"
 
-#: main.C:265
+#: main.C:244
 msgid "&Large"
 msgstr "&Grand"
 
-#: main.C:266
+#: main.C:245
 msgid "&Huge"
 msgstr "&Enorme"
 
-#: main.C:268
+#: main.C:247
 msgid "&Linux"
-msgstr ""
+msgstr "&Linux"
 
-#: main.C:269
-#, fuzzy
+#: main.C:248
 msgid "Linux (small)"
-msgstr "40x15 (&petit)"
+msgstr "Linux (petit)"
 
-#: main.C:272
+#: main.C:251
 msgid "&More ..."
 msgstr "&Plus..."
 
-#: main.C:278
+#: main.C:257
 msgid "&Hide"
 msgstr "&Cacher"
 
-#: main.C:279
+#: main.C:258
 msgid "&Left"
 msgstr "&Gauche"
 
-#: main.C:280
+#: main.C:259
 msgid "&Right"
 msgstr "&Droite"
 
-#: main.C:286
+#: main.C:265
 msgid "40x15 (&small)"
 msgstr "40x15 (&petit)"
 
-#: main.C:287
+#: main.C:266
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:288
+#: main.C:267
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:289
-#, fuzzy
+#: main.C:268
 msgid "80x40 (&xterm)"
-msgstr "80x24 (&vt100)"
+msgstr "80x40 (&xterm)"
 
-#: main.C:290
-#, fuzzy
+#: main.C:269
 msgid "80x52 (ibmv&ga)"
-msgstr "80x25 (&ibmpc)"
+msgstr "80x52 (ibmv&ga)"
 
-#: main.C:299
+#: main.C:278
 msgid "&Menubar"
 msgstr "Barre de &menu"
 
-#: main.C:301
+#: main.C:280
 msgid "&Frame"
 msgstr "&Cadre"
 
-#: main.C:303
+#: main.C:282
 msgid "Scroll&bar"
 msgstr "&Ascenseur"
 
-#: main.C:305
+#: main.C:284
 msgid "BS sends &DEL"
 msgstr "BS envoie &DEL"
 
-#: main.C:308
+#: main.C:287
 msgid "&Font"
 msgstr "&Police"
 
-#: main.C:309
+#: main.C:288
 msgid "&Size"
 msgstr "&Taille"
 
-#: main.C:310
-#, fuzzy
+#: main.C:289
 msgid "&Schema"
-msgstr "&Petit"
+msgstr "&Schéma"
 
-#: main.C:312
+#: main.C:291
 msgid "&Save options"
 msgstr "&Enregistrer les options"
 
-#: main.C:316
+#: main.C:295
 msgid "&About ..."
 msgstr "&A propos..."
 
-#: main.C:317
+#: main.C:296
 msgid "&User's Manual ..."
 msgstr "Manuel &utilisateur..."
 
-#: main.C:318
+#: main.C:297
 msgid "&Technical Reference ..."
 msgstr "Référence &technique..."
 
-#: main.C:322
-msgid "cd"
-msgstr ""
-
-#: main.C:334
+#: main.C:308
 msgid "New"
-msgstr ""
+msgstr "Nouveau"
 
-#: main.C:335
+#: main.C:309
 msgid "Sessions"
-msgstr ""
+msgstr "Sessions"
 
-#: main.C:532
+#: main.C:506
 #, c-format
 msgid "(%d columns x %d lines)"
-msgstr ""
+msgstr "(%d colonnes x %d lignes)"
 
-#: main.C:562
-#, fuzzy, c-format
+#: main.C:536
+#, c-format
 msgid "About %s"
-msgstr "&A propos..."
+msgstr "A propos %s"
 
-#: main.C:564
+#: main.C:538
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -159,8 +151,16 @@ msgid ""
 "WITHOUT ANY WARRANTY.\n"
 "See `LICENSE.readme´ for details."
 msgstr ""
+"%s version %s - un terminal X\n"
+"\n"
+"Copyright (c) 1998 par Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"Ce programme est un logiciel libre sous les\n"
+"termes de la Licence Artistic et vient\n"
+"SANS AUCUNE GARANTIE.\n"
+"Voir `LICENSE.readme´ pour plus de détails."
 
-#: main.C:880
+#: main.C:854
 msgid "Welcome to the console"
 msgstr "Bienvenue à la console"
 
