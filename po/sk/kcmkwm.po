@@ -22,19 +22,17 @@ msgid "&Titlebar"
 msgstr "&Titulok"
 
 #: main.cpp:70
-#, fuzzy
 msgid "Bo&rders"
-msgstr "&Okraje"
+msgstr "Ok&raje"
 
 #: main.cpp:73
 msgid "&Mouse"
 msgstr "&My¹ka"
 
 #: main.cpp:79
-#, fuzzy
 msgid "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
 msgstr ""
-"Pou¾itie: kcmkwm [-init | {windows,buttons,titlebar,borders,desktop}]\n"
+"Pou¾itie: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
 
 #: main.cpp:114
 msgid "Window manager style"
@@ -101,25 +99,20 @@ msgid "Pixmap"
 msgstr "Obrázok"
 
 #: titlebar.cpp:990
-#, fuzzy
 msgid "Active pixmap:"
-msgstr "Obrázok pre titulok &aktívneho okna"
+msgstr "Aktívna pixmapa:"
 
 #: titlebar.cpp:995
-#, fuzzy
 msgid "Inactive pixmap:"
-msgstr "Obrázok pre titulok &neaktívneho okna"
+msgstr "Neaktívna pixmapa"
 
 #: titlebar.cpp:1005
 msgid "Mouse action"
 msgstr "Akcia my¹i"
 
 #: titlebar.cpp:1013
-#, fuzzy
 msgid "Left Button double click does:"
-msgstr ""
-"Dvojitý klik µavým tlaèítkom\n"
-"    na titulku spraví:"
+msgstr "Dvojitý klik µavým tlaèítkom:"
 
 #: titlebar.cpp:1023
 msgid "(Un)Maximize"
@@ -138,7 +131,6 @@ msgid "(Un)Sticky"
 msgstr "Prilepenie/Odlepenie"
 
 #: titlebar.cpp:1046
-#, fuzzy
 msgid "Title animation"
 msgstr "Animácia titulku"
 
@@ -147,26 +139,24 @@ msgid "ms"
 msgstr "ms"
 
 #: windows.cpp:66
-#, fuzzy
 msgid "Windows"
-msgstr "&Vlastnosti okna"
+msgstr "Okná"
 
 #: windows.cpp:80
 msgid "Vertical maximization only by default"
-msgstr ""
+msgstr "©tandardne len vertikálna maximalizácia"
 
 #: windows.cpp:85
 msgid "Display content in moving windows"
-msgstr ""
+msgstr "Zobrazova» obsah v presúvaných oknách"
 
 #: windows.cpp:90
 msgid "Display content in resizing windows"
-msgstr ""
+msgstr "Zobrazova» obsah v zväè¹ujúcich sa oknách"
 
 #: windows.cpp:96
-#, fuzzy
 msgid "Resize animation:"
-msgstr "Animácia titulku"
+msgstr "Animácia zmeny veµkosti:"
 
 #: windows.cpp:109
 msgid "None"
@@ -206,11 +196,12 @@ msgid ""
 "  Allowed overlap:\n"
 "(% of desktop space)"
 msgstr ""
+"  Povolený prekryv:\n"
+"(% priestoru plochy)"
 
 #: windows.cpp:170
-#, fuzzy
 msgid "Focus policy"
-msgstr "Spôsob aktivácie okna"
+msgstr "Spôsob aktivácie"
 
 #: windows.cpp:180
 msgid "Click to focus"
@@ -229,13 +220,12 @@ msgid "Classic sloppy focus"
 msgstr "Sloppy aktivácia"
 
 #: windows.cpp:197
-#, fuzzy
 msgid "Auto Raise"
-msgstr "Zdvihnú»"
+msgstr "Auto. zdvihnú»"
 
 #: windows.cpp:204
 msgid "Delay (ms)"
-msgstr ""
+msgstr "Po èase(ms)"
 
 #: desktop.cpp:65
 msgid "Active desktop borders"
@@ -369,46 +359,3 @@ msgstr "Presunú»"
 #: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
 msgid "Resize"
 msgstr "Zmena veµkosti"
-
-#~ msgid "Titlebar appearance"
-#~ msgstr "Vzhµad titulku"
-
-#~ msgid "Operations Menu"
-#~ msgstr "Menu operácií"
-
-#~ msgid "Window movement"
-#~ msgstr "Pohyb okna"
-
-#~ msgid "Transparent"
-#~ msgstr "Transparentný"
-
-#~ msgid "Opaque"
-#~ msgstr "Nepriehµadný"
-
-#~ msgid "Window resize"
-#~ msgstr "Zmena veµkosti"
-
-#~ msgid "Animation:"
-#~ msgstr "Animácia:"
-
-#~ msgid "Allowed Overlap:"
-#~ msgstr "Povolený prekryv:"
-
-#~ msgid "Maximize Style"
-#~ msgstr "©týl maximalizácie"
-
-#~ msgid "Maximize fully"
-#~ msgstr "Maximalizuj úplne"
-
-#~ msgid "Maximize vertically"
-#~ msgstr "Maximalizuj vertikálne"
-
-#~ msgid ""
-#~ "Auto raise delay\n"
-#~ "(<100 disables)"
-#~ msgstr ""
-#~ "Oneskorenie pred presunutím\n"
-#~ "okna navrch (<100 vypína)"
-
-#~ msgid "miliseconds"
-#~ msgstr "milisekúnd"
