@@ -68,10 +68,12 @@ void KKPanelApplication::init() {}
 
 void KKPanelApplication::apply()
 {
-  if (panel)
-    panel->applySettings();
-  if (desktops)
-      desktops->applySettings();
+    if (panel)
+	panel->saveSettings();
+    if (desktops)
+	desktops->justSave();
+    config.sync();
+    KWM::sendKWMCommand("kpanel:restart");
 }
 
 

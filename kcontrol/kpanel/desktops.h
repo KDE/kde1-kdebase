@@ -49,6 +49,7 @@ public:
     virtual void loadSettings();
     virtual void saveSettings();
     virtual void applySettings();
+    void justSave();
 
 protected slots:
     void visible_changed(int value);

@@ -141,7 +141,7 @@ void KPanelConfig::resizeEvent(QResizeEvent *e) {
     // style_combo->move(0, (style_combo_frame->height() - style_combo->height())/ 2);
 }
 
-void KPanelConfig::loadSettings(void) {
+void KPanelConfig::loadSettings() {
    
     config.setGroup("kpanel");
     int i = 0;
@@ -179,12 +179,12 @@ void KPanelConfig::loadSettings(void) {
     style_combo->setCurrentItem(style);
 }
 
-void KPanelConfig::applySettings(void) {
+void KPanelConfig::applySettings() {
     saveSettings();
-    KWM::sendKWMCommand("kpanel:config");
+    KWM::sendKWMCommand("kpanel:restart");
 }
 
-void KPanelConfig::saveSettings(void) {
+void KPanelConfig::saveSettings() {
     config.setGroup("kpanel");
     config.writeEntry("Position", locations[location]);
     config.writeEntry("TaskbarPosition", taskbar_locations[taskbar]);
