@@ -602,7 +602,7 @@ void resize_window(int width, int height)
       old_width = width;
       old_height = height;
       prev_screen = current_screen;
-      /* scr_reset will only work if I'm on the low screen! */
+      /* scrn_reset will only work if I'm on the low screen! */
       if(!first)
 	{
 	  scr_clear_selection();
@@ -617,7 +617,7 @@ void resize_window(int width, int height)
       XResizeWindow(display,vt_win,width,height);
       XClearWindow(display,vt_win);
       XSync(display,0);  
-      scr_reset();
+      scrn_reset();
       if(!first)
 	scr_change_screen(prev_screen);
     }
