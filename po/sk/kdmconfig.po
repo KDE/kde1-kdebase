@@ -252,7 +252,7 @@ msgstr ""
 
 #: kdm-users.cpp:97
 msgid "Show users"
-msgstr "Ukázova» u¾ív."
+msgstr "Ukazova» u¾ív."
 
 #: kdm-users.cpp:103
 msgid "Sort users"
