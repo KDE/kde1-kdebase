@@ -1,0 +1,78 @@
+DlgEdit {
+	ClassHeader {DevicePropsPage.h}
+	ClassSource {DevicePropsPage.cpp}
+	ClassName {DevicePropsPage}
+	DataHeader {DevicePropsPageData.h}
+	DataSource {DevicePropsPageData.cpp}
+	DataName {DevicePropsPageData}
+	DataInherited {TRUE}
+		WindowBaseClass {QWidget}
+}
+WidgetLayout {
+		Rect {5 100 400 300}
+		Grid {10}
+
+Label {
+		Text {Device ( /dev/fd0 )}
+		Rect {10 10 140 30}
+		Name {Label_1}
+}
+LineEdit {
+		Text {}
+		Rect {10 40 180 30}
+		Name {LineEdit_1}
+		Variable {device}
+}
+Label {
+		Text {Mount Point ( /floppy )}
+		Rect {10 80 170 30}
+		Name {Label_2}
+}
+LineEdit {
+		Text {}
+		Rect {10 110 180 30}
+		Name {LineEdit_2}
+		Variable {mountpoint}
+}
+CheckBox {
+		Checked {FALSE}
+		Text {Readonly}
+		Rect {220 40 100 30}
+		Name {CheckBox_1}
+		Variable {readonly}
+}
+Label {
+		Text {Filesystems ( iso9660,msdos,minix,default )}
+		Rect {10 150 300 30}
+		Name {Label_4}
+}
+LineEdit {
+		Text {}
+		Rect {10 180 280 30}
+		Name {LineEdit_3}
+		Variable {fstype}
+}
+Label {
+		Text {Mounted Icon}
+		Rect {10 220 100 30}
+		Name {Label_5}
+}
+Label {
+		Text {Unmounted Icon}
+		Rect {170 220 100 30}
+		Name {Label_6}
+}
+ComboBox {
+		Style {ReadOnly}
+		SizeLimit {10}
+		Policy {AtBottom}
+		Rect {10 250 120 30}
+		Name {ComboBox_1}
+}
+ComboBox {
+		Style {ReadOnly}
+		SizeLimit {10}
+		Policy {AtBottom}
+		Rect {170 250 120 30}
+		Name {ComboBox_2}
+}}
