@@ -34,8 +34,8 @@ class TopLevel : public KTMainWindow {
     ~TopLevel();
     void init(); //initialize caption, status and show
 
-//    virtual void closeEvent(QCloseEvent *e);
     virtual bool queryClose();
+    virtual bool queryExit();
 
     void loadURL(const char *url, int flags = 0);
   protected:
@@ -45,7 +45,6 @@ class TopLevel : public KTMainWindow {
     void setupStatusBar();
 
     KWrite *kWrite;
-//    KWriteDoc *kWriteDoc;
     int menuUndo, menuRedo;
     int menuVertical, menuShowTB, menuShowSB;
 //    int statusID, toolID, verticalID, indentID;
@@ -60,13 +59,11 @@ class TopLevel : public KTMainWindow {
 
 //    void add_recent_file(const char*);
   public slots:
+    void openRecent(int);
     void newWindow();
     void newView();
     void closeWindow();
     void quitEditor();
-
-//    void hlDlg();
-//    void newHl(int index);
 
     void toggleStatusBar();
     void toggleToolBar();
@@ -86,16 +83,19 @@ class TopLevel : public KTMainWindow {
 
     //config file functions
   public:
+    //common config
+    void readConfig(KConfig *);
+    void writeConfig(KConfig *);
+    //config file
     void readConfig();
   public slots:
     void writeConfig();
-
     //session management
   public:
     void restore(KConfig *,int);
   protected:
-    virtual void readProperties(KConfig*);
-    virtual void saveProperties(KConfig*);
+    virtual void readProperties(KConfig *);
+    virtual void saveProperties(KConfig *);
     virtual void saveData(KConfig *);
 };
 

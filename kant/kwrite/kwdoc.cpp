@@ -426,15 +426,9 @@ int KWriteDoc::lastLine() const {
 }
 
 TextLine *KWriteDoc::textLine(int line) {
+//  if (line < 0) line = 0;
+//  if (line >= (int) contents.count()) line = contents.count() -1;
   return contents.at(line);
-/*
-  TextLine *textLine;
-
-  if (line < 0 || line >= (int) contents.count()) line = contents.count() -1;
-  textLine = contents.at(line);
-
-  return textLine->getString();
-*/
 }
 
 int KWriteDoc::textLength(int line) {
@@ -1376,11 +1370,27 @@ QString KWriteDoc::text() {
   for (z = 0; z <= last; z++) {
     textLine = contents.at(z);
     end = textLine->length();
+    for (i = 0; i < end; i++) s[len + i] = textLine->getChar(i);
     len += end;
-    for (i = 0; i < end; i++) s[len] = textLine->getChar(i);
     s[len] = '\n';
     len++;
   }
+  s[len] = '\0';
+  return s;
+}
+
+QString KWriteDoc::currentWord(PointStruc &cursor) {
+  TextLine *textLine;
+  int start, end, len, z;
+
+  textLine = contents.at(cursor.y);
+  len = textLine->length();
+  start = end = cursor.x;
+  while (start > 0 && highlight->isInWord(textLine->getChar(start - 1))) start--;
+  while (end < len && highlight->isInWord(textLine->getChar(end))) end++;
+  len = end - start;
+  QString s(len +1);
+  for (z = 0; z < len; z++) s[z] = textLine->getChar(start + z);
   s[len] = '\0';
   return s;
 }

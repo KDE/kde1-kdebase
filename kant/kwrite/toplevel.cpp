@@ -93,23 +93,7 @@ void TopLevel::init() {
 
   show();
 }
-/*
-void TopLevel::closeEvent(QCloseEvent *e) {
-  if (queryClose()) {
-    if (memberList->count() > 1)
-    {
-      e->accept();
-      delete this;
-    }
-    else
-    {
-      e->accept();
-      delete this;
-      qApp->quit();
-    }
-  }
-}
-*/
+
 bool TopLevel::queryClose() {
   int query;
 
@@ -132,6 +116,11 @@ bool TopLevel::queryClose() {
     }
   }
 //  writeConfig();
+  return true;
+}
+
+bool TopLevel::queryExit() {
+  writeConfig();
   return true;
 }
 
@@ -177,16 +166,13 @@ void TopLevel::setupMenuBar() {
   file->insertItem(i18n("Ne&w..."),kWrite,SLOT(newDoc()),CTRL+Key_N);
   file->insertItem(i18n("&Open..."),kWrite,SLOT(open()),CTRL+Key_O);
   file->insertItem(i18n("&Insert..."),kWrite,SLOT(insertFile()));
-//  file->insertItem(i18n("Open Recen&t"), recentpopup);
-//  connect(recentPopup,SIGNAL(activated(int)),SLOT(openRecent(int)));
+  file->insertItem(i18n("Open Recen&t"), recentPopup);
+  connect(recentPopup,SIGNAL(activated(int)),SLOT(openRecent(int)));
   file->insertSeparator ();
   file->insertItem(i18n("&Save"),kWrite,SLOT(save()),CTRL+Key_S);
   file->insertItem(i18n("S&ave as..."),kWrite,SLOT(saveAs()));
   file->insertItem(i18n("&Close"),this,SLOT(closeWindow()),CTRL+Key_W);
   file->insertSeparator ();
-//  file->insertItem(i18n("Open &URL..."),this,SLOT(file_open_url()));
-//  file->insertItem(i18n("Save to U&RL..."),this,SLOT(file_save_url()));
-//  file->insertSeparator ();
 //  file->insertItem(i18n("&Print..."),this,SLOT(print()));
 //  file->insertSeparator ();
 //  file->insertItem (i18n("&Mail..."),this,SLOT(mail()));
@@ -260,7 +246,7 @@ void TopLevel::setupMenuBar() {
 */
 
   help = kapp->getHelpMenu(true,
-    "KWrite 0.97\n\nCopyright 1998\nJochen Wilhelmy\ndigisnap@cs.tu-berlin.de");
+    "KWrite 0.98\n\nCopyright 1998\nJochen Wilhelmy\ndigisnap@cs.tu-berlin.de");
 
 //  help->insertItem (i18n("&Help..."),this,SLOT(helpSelected()));
 //  help->insertSeparator();
@@ -374,6 +360,9 @@ void TopLevel::setupStatusBar(){
 }
 
 
+void TopLevel::openRecent(int id) {
+  loadURL(recentPopup->text(id));
+}
 
 void TopLevel::newWindow() {
 
@@ -508,10 +497,24 @@ void TopLevel::timeout() {
 }
 
 void TopLevel::newCaption() {
-    if (kWrite->fileName())
-	setCaption(kWrite->fileName());
-    else
-	setCaption(kapp->getCaption() );
+  const char *caption;
+  int z;
+
+  caption = kWrite->fileName();
+  if (caption != 0L && *caption != '\0') {
+    setCaption(caption);
+    //set recent files popup menu
+    z = (int) recentPopup->count();
+    while (z > 0) {
+      z--;
+      if (!strcmp(caption, recentPopup->text(z))) recentPopup->removeItemAt(z);
+    }
+    recentPopup->insertItem(caption, 0, 0);
+    if (recentPopup->count() > 5) recentPopup->removeItemAt(5);
+    for (z = 0; z < 5; z++) recentPopup->setId(z, z);
+  } else {
+    setCaption(kapp->getCaption());
+  }
 }
 
 void TopLevel::newUndo() {
@@ -551,7 +554,36 @@ void TopLevel::showHighlight()
 }
 
 
-//config
+//common config
+void TopLevel::readConfig(KConfig *config) {
+  int z;
+  char name[16];
+  QString s;
+
+  hideToolBar = config->readNumEntry("HideToolBar");
+  hideStatusBar = config->readNumEntry("HideStatusBar");
+
+  for (z = 0; z < 5; z++) {
+    sprintf(name, "Recent%d", z + 1);
+    s = config->readEntry(name);
+    if (!s.isEmpty()) recentPopup->insertItem(s);
+  }
+}
+
+void TopLevel::writeConfig(KConfig *config) {
+  int z;
+  char name[16];
+
+  config->writeEntry("HideToolBar",hideToolBar);
+  config->writeEntry("HideStatusBar",hideStatusBar);
+
+  for (z = 0; z < (int) recentPopup->count(); z++) {
+    sprintf(name, "Recent%d", z + 1);
+    config->writeEntry(name, recentPopup->text(z));
+  }
+}
+
+//config file
 void TopLevel::readConfig() {
   KConfig *config;
   int w, h;
@@ -563,8 +595,9 @@ void TopLevel::readConfig() {
   h = config->readNumEntry("Height",400);
   resize(w,h);
 
-  hideToolBar = config->readNumEntry("HideToolBar");
-  hideStatusBar = config->readNumEntry("HideStatusBar");
+  readConfig(config);
+//  hideToolBar = config->readNumEntry("HideToolBar");
+//  hideStatusBar = config->readNumEntry("HideStatusBar");
 
   kWrite->readConfig(config);
   kWrite->doc()->readConfig(config);
@@ -578,8 +611,10 @@ void TopLevel::writeConfig() {
   config->setGroup("General Options");
   config->writeEntry("Width",width());
   config->writeEntry("Height",height());
-  config->writeEntry("HideToolBar",hideToolBar);
-  config->writeEntry("HideStatusBar",hideStatusBar);
+
+  writeConfig(config);
+//  config->writeEntry("HideToolBar",hideToolBar);
+//  config->writeEntry("HideStatusBar",hideStatusBar);
 
   kWrite->writeConfig(config);
   kWrite->doc()->writeConfig(config);
@@ -600,23 +635,23 @@ void TopLevel::restore(KConfig *config, int n) {
 
 void TopLevel::readProperties(KConfig *config) {
 
+  readConfig(config);
   kWrite->readSessionConfig(config);
 }
 
 void TopLevel::saveProperties(KConfig *config) {
 
+  writeConfig(config);
   config->writeEntry("DocumentNumber",docList.find(kWrite->doc()) + 1);
   kWrite->writeSessionConfig(config);
   setUnsavedData(kWrite->isModified());
 }
 
-void TopLevel::saveData(KConfig *config) {//DocSaver::saveYourself() {
-//  KConfig *config;
+void TopLevel::saveData(KConfig *config) { //save documents
   int z;
   char buf[16];
   KWriteDoc *doc;
 
-//  config = kapp->getSessionConfig();
   config->setGroup("Number");
   config->writeEntry("NumberOfDocuments",docList.count());
 
