@@ -104,7 +104,12 @@ int main(int argc, char *argv[])
 	for ( i = 1; i < argc; i++ )
 	{
 		if ( argv[i][0] == '-' )
+		{
+			// skip caption
+			if ( strcasecmp( argv[i], "-caption" ) == 0 )
+				i++;
 			continue;
+		}
 
 		initDoc = argv[i];
 		break;
