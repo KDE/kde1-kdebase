@@ -151,8 +151,8 @@ msgid "Device"
 msgstr "Dispositivo"
 
 #: entrydialog.cpp:69
-msgid "File Name:"
-msgstr "Nome do Arquivo:"
+msgid  "File Name:"
+msgstr "Nome Arq.:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"
@@ -164,7 +164,7 @@ msgstr "Ícone:"
 
 #: entrydialog.cpp:133
 msgid "Comment:"
-msgstr "Comentário:"
+msgstr "Coment:"
 
 #: entrydialog.cpp:165 entrydialog.cpp:535
 msgid "Execute"
@@ -180,7 +180,7 @@ msgstr "Diretório de Trabalho:"
 
 #: entrydialog.cpp:205
 msgid "Run in terminal"
-msgstr "Executar em modo terminal"
+msgstr "Modo terminal"
 
 #: entrydialog.cpp:211
 msgid "Terminal Options:"
