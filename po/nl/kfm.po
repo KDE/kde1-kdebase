@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-20 01:15+0100\n"
+"POT-Creation-Date: 1999-01-21 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Case Roole <cjr@xs4all.nl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -246,7 +246,7 @@ msgstr ""
 "Proxy Manager door Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de"
 
-#: kfmgui.cpp:443 kfmgui.cpp:1125
+#: kfmgui.cpp:443 kfmgui.cpp:1126
 msgid "&Go"
 msgstr ""
 
@@ -284,7 +284,7 @@ msgstr ""
 #: kbind.cpp:1804 kbind.cpp:1816 kbind.cpp:1832 kbind.cpp:1967 kbind.cpp:1979
 #: kbind.cpp:2024 kbind.cpp:2066 kfmexec.cpp:63 kfmexec.cpp:115
 #: kfmexec/main.cpp:47 kfmgui.cpp:548 kfmgui.cpp:758 kfmman.cpp:367
-#: kfmman.cpp:1400 kfmman.cpp:1628 kfmman.cpp:1674 kfmprops.cpp:380
+#: kfmman.cpp:1410 kfmman.cpp:1638 kfmman.cpp:1684 kfmprops.cpp:380
 #: kfmprops.cpp:648 kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092
 #: kfmprops.cpp:1223 kfmprops.cpp:1697 kfmprops.cpp:2058 kfmprops.cpp:2240
 #: kfmserver.cpp:45 kfmserver.cpp:218 kfmserver.cpp:298 kfmserver.cpp:313
@@ -307,73 +307,73 @@ msgstr "KFM fout"
 msgid "Location:"
 msgstr "Open locatie:"
 
-#: kfmexec.cpp:62 kfmgui.cpp:757 kfmman.cpp:1399
+#: kfmexec.cpp:62 kfmgui.cpp:757 kfmman.cpp:1409
 #, fuzzy
 msgid "Malformed URL\n"
 msgstr ""
 "Misvormde URL\n"
 "%s"
 
-#: kfmgui.cpp:943
+#: kfmgui.cpp:944
 msgid "Select files:"
 msgstr "Bestanden selecteren:"
 
-#: kfmgui.cpp:1011
+#: kfmgui.cpp:1012
 msgid "Find Complete"
 msgstr ""
 
-#: kfmgui.cpp:1012
+#: kfmgui.cpp:1013
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: kfmgui.cpp:1030
+#: kfmgui.cpp:1031
 #, fuzzy
 msgid "&Edit Bookmarks..."
 msgstr "B&ladwijzers"
 
-#: kfmgui.cpp:1040
+#: kfmgui.cpp:1041
 msgid "&Add Bookmark"
 msgstr "Bladwijzer toevoegen"
 
-#: kfmgui.cpp:1076 kfmman.cpp:1439 kfmtree.cpp:389 root.cpp:285
+#: kfmgui.cpp:1077 kfmman.cpp:1449 kfmtree.cpp:389 root.cpp:285
 msgid "&New"
 msgstr "&Nieuw"
 
-#: kfmgui.cpp:1101
+#: kfmgui.cpp:1102
 msgid "&Up"
 msgstr ""
 
-#: kfmgui.cpp:1103
+#: kfmgui.cpp:1104
 #, fuzzy
 msgid "&Back"
 msgstr "Terug"
 
-#: kfmgui.cpp:1105
+#: kfmgui.cpp:1106
 #, fuzzy
 msgid "&Forward"
 msgstr "Vooruit"
 
-#: kfmgui.cpp:1107
+#: kfmgui.cpp:1108
 #, fuzzy
 msgid "&Home"
 msgstr "Mijn Home"
 
-#: kfmgui.cpp:1176 kfmgui.cpp:1344 kfmjob.cpp:36 kfmman.cpp:250
+#: kfmgui.cpp:1177 kfmgui.cpp:1345 kfmjob.cpp:36 kfmman.cpp:250
 #: kfmtree.cpp:500 kfmview.cpp:490 kfmview.cpp:559 kfmview.cpp:786
 #: kiojob.cpp:87 root.cpp:1243
 msgid "ERROR: Malformed URL"
 msgstr "Fout: Misvormde URL"
 
-#: kfmgui.cpp:1298 kfmserver.cpp:245
+#: kfmgui.cpp:1299 kfmserver.cpp:245
 msgid "Open Location:"
 msgstr "Open locatie:"
 
-#: kfmgui.cpp:1355
+#: kfmgui.cpp:1356
 #, fuzzy
 msgid "KFM Confirm"
 msgstr "KFM Bevestig"
 
-#: kfmgui.cpp:1356
+#: kfmgui.cpp:1357
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -381,7 +381,7 @@ msgstr ""
 "Bent u zeker dat u KFM wilt verlaten?\n"
 "Belangrijke buroblad functionaliteit zal verloren gaan."
 
-#: kfmgui.cpp:1483
+#: kfmgui.cpp:1484
 msgid "Document: Done"
 msgstr "Document: klaar"
 
@@ -422,7 +422,7 @@ msgstr "FOUT: Een bestand mag niet op zichzelf geplaatst worden"
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "FOUT: Een directory mag niet over z'n kinderen geplaatst worden"
 
-#: kfmexec.cpp:298 kfmman.cpp:1188 kfmview.cpp:587
+#: kfmexec.cpp:298 kfmman.cpp:1198 kfmview.cpp:587
 msgid "Open With:"
 msgstr "Openen met:"
 
@@ -634,11 +634,11 @@ msgstr "Naar vuilnisbak"
 msgid "Open with"
 msgstr "Openen met:"
 
-#: kfmman.cpp:1666 kfmtree.cpp:333 main.cpp:275
+#: kfmman.cpp:1676 kfmtree.cpp:333 main.cpp:275
 msgid "Move"
 msgstr "Verplaats"
 
-#: kfmman.cpp:1670 kfmtree.cpp:337 main.cpp:277
+#: kfmman.cpp:1680 kfmtree.cpp:337 main.cpp:277
 msgid "Link"
 msgstr "Verbinding"
 
@@ -1003,11 +1003,11 @@ msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "Fout: Kan buroblad-map '%s' niet lezen"
 
 # FIXME Fout: kan niet ... neerzetten
-#: kfmman.cpp:1652 root.cpp:992 root.cpp:1012
+#: kfmman.cpp:1662 root.cpp:992 root.cpp:1012
 msgid "ERROR: Can not accept drop"
 msgstr "Fout: Kan 'drop' niet aanvaarden"
 
-#: kfmman.cpp:1629 kfmman.cpp:1675 kfmtree.cpp:342 root.cpp:1861 root.cpp:1886
+#: kfmman.cpp:1639 kfmman.cpp:1685 kfmtree.cpp:342 root.cpp:1861 root.cpp:1886
 msgid "Dont know what to do."
 msgstr "Weet niet wat ik moet doen."
 
