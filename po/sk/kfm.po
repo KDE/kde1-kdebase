@@ -84,7 +84,7 @@ msgstr "Ukáza» &strom"
 
 #: kfmgui.cpp:356
 msgid "&Visual Schnauzer"
-msgstr "&Visual Schnauzer"
+msgstr "Inteligentné zaro&vnávanie"
 
 #: kfmgui.cpp:358
 msgid "&HTML View"
@@ -103,9 +103,8 @@ msgid "&Long View"
 msgstr "&Podrobný pohµad"
 
 #: kfmgui.cpp:367
-#, fuzzy
 msgid "&Short View"
-msgstr "Pohµad s &ikonami"
+msgstr "&Krátky pohµad"
 
 # kfmgui.cpp:???
 #: kfmgui.cpp:373
@@ -491,7 +490,7 @@ msgstr "In¹talujem ¹ablóny"
 
 #: main.cpp:235
 msgid "Cd"
-msgstr "Cd"
+msgstr "Choï dnu"
 
 #: main.cpp:236
 msgid "New View"
@@ -543,11 +542,11 @@ msgstr "Veµké"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
-msgstr "©tandardné písmo"
+msgstr "©tand. písmo"
 
 #: htmlopts.cpp:68
 msgid "Fixed Font"
-msgstr "Fixovaný font"
+msgstr "Fixov. písmo"
 
 #: htmlopts.cpp:214
 msgid "Background Color:"
@@ -563,7 +562,7 @@ msgstr "Farba URL odkazu:"
 
 #: htmlopts.cpp:238
 msgid "Followed Link Color:"
-msgstr "Farba nasledovaného odkazu:"
+msgstr "Farba nasled. odkazu:"
 
 #: htmlopts.cpp:246
 msgid "Change cursor over link."
@@ -571,11 +570,11 @@ msgstr "Zmeò kurzor nad odkazom."
 
 #: htmlopts.cpp:321
 msgid "Horizontal Root Grid Spacing:"
-msgstr "Horizontálne vzdialenosti mrie¾ky:"
+msgstr "Horizontálne vzdialenosti:"
 
 #: htmlopts.cpp:335
 msgid "Vertical Root Grid Spacing:"
-msgstr "Vertikálne vzdialenosti mrie¾ky:"
+msgstr "Vertikálne vzdialenosti:"
 
 #: bookmark.cpp:259
 msgid "Could not write bookmark"
@@ -628,7 +627,7 @@ msgid ""
 "Entries"
 msgstr ""
 "Zobrazi»\n"
-"polo¾ky"
+"súbory"
 
 #: kfmprops.cpp:423
 msgid "Read"
@@ -639,8 +638,8 @@ msgid ""
 "Write\n"
 "Entries"
 msgstr ""
-"Zápis do\n"
-"polo¾iek"
+"Vytvori»\n"
+"súbory"
 
 #: kfmprops.cpp:430
 msgid "Write"
@@ -714,7 +713,7 @@ msgstr ""
 
 #: kfmprops.cpp:662
 msgid "Swallowing on panel"
-msgstr ""
+msgstr "Pripevnenie na panel"
 
 #: kfmprops.cpp:680 kfmprops.cpp:703
 msgid "Execute"
@@ -726,19 +725,19 @@ msgstr "Listuj"
 
 #: kfmprops.cpp:688
 msgid "Working Directory"
-msgstr "Pracovný prieèinok"
+msgstr "V prieèinku"
 
 #: kfmprops.cpp:711
 msgid "Window Title"
-msgstr ""
+msgstr "Titulok okna"
 
 #: kfmprops.cpp:715
 msgid "Run in terminal"
-msgstr "Spusti v termináli"
+msgstr "Spusti» v termináli"
 
 #: kfmprops.cpp:723
 msgid "Terminal Options"
-msgstr "Parametre terminálu"
+msgstr "Parametre term."
 
 #: kfmprops.cpp:824 kfmprops.cpp:946 kfmprops.cpp:1389 kfmprops.cpp:1601
 #: kfmprops.cpp:1777
@@ -1266,7 +1265,7 @@ msgstr "Server:"
 
 #: useragentdlg.cpp:31
 msgid "login as:"
-msgstr "u¾ívateµ:"
+msgstr "Re»azec:"
 
 #: useragentdlg.cpp:52
 msgid "Known bindings:"
@@ -1278,28 +1277,27 @@ msgstr "Nezabudnite ulo¾i» va¹e nastavenie!"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"
-msgstr "®iadne proxy pre:"
+msgstr "®iadne pre:"
 
 #: kkfmoptdlg.cpp:19
 msgid "&Proxy"
-msgstr ""
+msgstr "&Proxy"
 
 #: kkfmoptdlg.cpp:21
 msgid "User &Agent"
-msgstr ""
+msgstr "Prehli&adaè"
 
 #: kkfmoptdlg.cpp:24
 msgid "&Fonts"
-msgstr ""
+msgstr "&Znak. sady"
 
 #: kkfmoptdlg.cpp:27
 msgid "&Colors"
-msgstr ""
+msgstr "&Farby"
 
 #: kkfmoptdlg.cpp:30
-#, fuzzy
 msgid "&Other"
-msgstr "Ostatní"
+msgstr "&Ostatné"
 
 #: kkfmoptdlg.cpp:50
 msgid "KFM Browser Settings"
@@ -1371,23 +1369,5 @@ msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
 
-#~ msgid "Run normally"
-#~ msgstr "Vykonaj normálne"
-
-#~ msgid "Run in Panel (drag onto Panel to execute)"
-#~ msgstr "Vykonaj v Paneli (presuò na Panel pre vykonanie)"
-
-#~ msgid "Title of Application"
-#~ msgstr "Titulok aplikácie"
-
-#~ msgid "enter the exact title, as normally shown in the window titlebar"
-#~ msgstr "vlo¾ presný titulok, ktorý je normálne zobrazený v titulku okna"
-
-#~ msgid ""
-#~ "You can run this program either\n"
-#~ "in the Panel or in a Terminal, \n"
-#~ "but not both!"
-#~ msgstr ""
-#~ "Mô¾ete vykona» tento program\n"
-#~ "buï v Paneli alebo v Termináli,\n"
-#~ "ale nie v oboch súèasne!"
+#~ msgid "Use proxy"
+#~ msgstr "Povoli»"

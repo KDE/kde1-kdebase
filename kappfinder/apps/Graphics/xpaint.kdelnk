@@ -15,6 +15,7 @@ Comment[fr]=Programme de dessin par points Xpaint
 Comment[pt]=Aplicação de pintura
 Comment[it]=Applicazione di pittura XPaint
 Comment[cs]=Aplikace pro kreslení bitmapových obrázkù
+Comment[sk]=Aplikácia pre kreslenie bitmapových obrázkov
 Exec=xpaint
 Icon=xpaint.xpm
 TerminalOptions=

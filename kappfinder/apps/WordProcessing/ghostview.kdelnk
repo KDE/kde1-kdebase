@@ -15,6 +15,7 @@ Comment[sv]=Postskriptsvisare
 Comment[pt]=Visualizador de documentos Postscript
 Comment[it]=Visualizzatore File Postscript
 Comment[cs]=Prohlí¾eè Postscriptových souborù
+Comment[sk]=Prehliadaè Postskriptových súborov
 Exec=ghostview
 Icon=gv.xpm
 TerminalOptions=

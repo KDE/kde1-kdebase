@@ -9,5 +9,6 @@ Name[sv]=Ordbehandlare
 Name[it]=Manipolazione Testi
 Name[pt]=Processamento de Texto
 Name[cs]=Textové procesory
+Name[sk]=Textové procesory
 SortOrder=gv.kdelnk,lyx.kdelnk,xpdf.kdelnk
 Icon=package.xpm

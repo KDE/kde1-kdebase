@@ -3,12 +3,12 @@ msgstr ""
 "Project-Id-Version: kfm \n"
 "POT-Creation-Date: 1998-05-07 18:15+0200\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
-"Translator: Claudia Sorg <csorg@stud.uni-frankfurt.de>\n"
 "Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: iso-8859-1\n"
+"Translator: Claudia Sorg <csorg@stud.uni-frankfurt.de>\n"
 
 #: kfmgui.cpp:250
 msgid "KFM"

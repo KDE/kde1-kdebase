@@ -152,35 +152,31 @@ msgstr "Blobs"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
-msgstr ""
+msgstr "Bouboule"
 
 #: bouboule.cpp:1005
-#, fuzzy
 msgid "Setup KBouboule"
-msgstr "Nastavenie plameòov"
+msgstr "Nastavenie KBouboule"
 
 #: bouboule.cpp:1032
-#, fuzzy
 msgid "Number of points:"
-msgstr "Netopierov:"
+msgstr "Poèet bodov:"
 
 #: bouboule.cpp:1046
-#, fuzzy
 msgid "Point size:"
-msgstr "Poèet bodov:"
+msgstr "Veµkos» bodu:"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr ""
+msgstr "Rýchlos» zmeny farby:"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
-msgstr ""
+msgstr "3D mód"
 
 #: bouboule.cpp:1223
-#, fuzzy
 msgid "About Bouboule"
-msgstr "Informácie o Blobe"
+msgstr "Informácie o Bouboule"
 
 #: bouboule.cpp:1224
 msgid ""
@@ -190,6 +186,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
+"Bouboule v0.1 -- behajúce gulièky, èo menia farbu\n"
+"\n"
+"Copyright (c) 1996 by Jeremie PETIT\n"
+"\n"
+"Ported to kscreensave by Cedric Tefft"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -592,21 +593,19 @@ msgstr "Neúspe¹né"
 
 #: science.cpp:60
 msgid "Science"
-msgstr ""
+msgstr "Science"
 
 #: science.cpp:386
-#, fuzzy
 msgid "Setup Science"
-msgstr "Nastavenie èiar"
+msgstr "Nastavenie Science"
 
 #: science.cpp:413
 msgid "Intensity:"
-msgstr ""
+msgstr "Intenzita:"
 
 #: science.cpp:544
-#, fuzzy
 msgid "About Science"
-msgstr "Informácie o èiarach"
+msgstr "Informácie o Science"
 
 #: science.cpp:545
 msgid ""
@@ -615,6 +614,10 @@ msgid ""
 "written by Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"
 msgstr ""
+"Science Verzia 0.2beta\n"
+"\n"
+"napísal Rene Beutler 1998\n"
+"rbeutler@g26.ethz.ch"
 
 #: slip.cpp:293
 msgid "Slip"

@@ -338,7 +338,7 @@ msgstr ""
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
-msgstr 
+msgstr ""
 "Ne mogu obrisati\n"
 "birani direktorij"
 

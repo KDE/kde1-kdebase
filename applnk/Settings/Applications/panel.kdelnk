@@ -16,6 +16,7 @@ Comment=You can configure here, how the panel should look like
 Comment[de]=Sie können hier einstellen, wie das Panel aussehen soll
 Comment[pt]=Configuração do painel
 Comment[fr]=Ici vous pouvez modifier la façon dont le panneau est affiché
+Comment[sk]=Nastavenie vzhµadu a správania sa panelu KDE
 SwallowTitle=Panel Options
 SwallowTitle[de]=Panel-Optionen
 SwallowTitle[pt]=Opções do Painel

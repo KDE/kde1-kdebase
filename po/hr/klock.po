@@ -7,7 +7,6 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-05-06 20:58+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
-"Last-Translator: Vladimir Vuksan <vuksan@veus.hr> \n"
 "Last-Translator: Stjepan Zlodi <szlodi@public.srce.hr> \n"
 "Language-Team: Croatian\n"
 "MIME-Version: 1.0\n"
@@ -74,8 +73,9 @@ msgid "About Bat"
 msgstr "O ©i¹mi¹u"
 
 #: bat.cpp:662
+#, fuzzy
 msgid ""
-"©i¹mi¹\n"
+"Bat\n"
 "\n"
 "Copyright (c) 1986 by Sun Microsystems\n"
 "\n"
@@ -192,7 +192,7 @@ msgstr ""
 "Copyright (c) 1996 Jeremie PETIT\n"
 "\n"
 "Prilagodio za kscreensave Cedric Tefft"
-	
+
 #: flame.cpp:310
 msgid "Flame"
 msgstr "Plamen"

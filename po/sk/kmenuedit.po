@@ -127,7 +127,7 @@ msgstr ""
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
-msgstr "Cesta k polo¾kám pracovnej plochy KDE nie je nastavená."
+msgstr "Cesta k polo¾kám menu KDE nenastavená."
 
 #: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"
@@ -164,19 +164,19 @@ msgstr "Zariadenie"
 
 #: entrydialog.cpp:69
 msgid "File Name:"
-msgstr "Meno súboru:"
+msgstr "Súbor"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"
-msgstr "Mini ikona:"
+msgstr "Mini"
 
 #: entrydialog.cpp:127
 msgid "Icon:"
-msgstr "Ikona:"
+msgstr "Ikona"
 
 #: entrydialog.cpp:133
 msgid "Comment:"
-msgstr "Komentár:"
+msgstr "Komentár"
 
 #: entrydialog.cpp:165 entrydialog.cpp:535
 msgid "Execute"
@@ -184,19 +184,19 @@ msgstr "Vykona» príkaz"
 
 #: entrydialog.cpp:186
 msgid "Execute:"
-msgstr "Vykona»:"
+msgstr "Vykona»"
 
 #: entrydialog.cpp:192
 msgid "Working Directory:"
-msgstr "Pracovný prieèinok:"
+msgstr "V prieèinku"
 
 #: entrydialog.cpp:205
 msgid "Run in terminal"
-msgstr "Spusti» v termináli"
+msgstr "V termináli"
 
 #: entrydialog.cpp:211
 msgid "Terminal Options:"
-msgstr "Parametre terminálu:"
+msgstr "Parametre term."
 
 #: entrydialog.cpp:292
 msgid "Binary Pattern:"
@@ -204,39 +204,39 @@ msgstr "Binárny vzor:"
 
 #: entrydialog.cpp:300
 msgid "Application to swallow:"
-msgstr "Apl. na zhltnutie:"
+msgstr "Apl. na zhltnutie"
 
 #: entrydialog.cpp:306
 msgid "Title of application:"
-msgstr "Titulok aplikácie:"
+msgstr "Titulok aplikácie"
 
 #: entrydialog.cpp:312
 msgid "Application to execute on button press:"
-msgstr "Aplikácia na vykonanie pri stlaèení tlaèítka:"
+msgstr "Aplikácia na vykonanie po aktivovaní"
 
 #: entrydialog.cpp:342
 msgid "URL:"
-msgstr "URL:"
+msgstr "URL"
 
 #: entrydialog.cpp:391
 msgid "Read Only"
-msgstr "Iba èítanie"
+msgstr "Iba èíta»"
 
 #: entrydialog.cpp:397
 msgid "Device:"
-msgstr "Zariadenie:"
+msgstr "Názov"
 
 #: entrydialog.cpp:403
 msgid "Mount Point:"
-msgstr "Miesto pripojenia"
+msgstr "Pripojenie"
 
 #: entrydialog.cpp:409
 msgid "FS Type:"
-msgstr "Súborový systém:"
+msgstr "Typ FS"
 
 #: entrydialog.cpp:415
 msgid "Unmount Icon:"
-msgstr "Ikona odpojeného:"
+msgstr "Odpoji» (ik)"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"
@@ -253,9 +253,3 @@ msgstr "Osobné:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "©tandardné:"
-
-#~ msgid "Type:"
-#~ msgstr "Typ:"
-
-#~ msgid "Name:"
-#~ msgstr "Meno:"

@@ -8,6 +8,7 @@ Comment[de]=Benachrichtung bei neuer Email
 Comment[pt]=Notificação de mail
 Comment[it]=Controllo Posta
 Comment[cs]=Upozoròuje na novou po¹tu
+Comment[sk]=Upozoròuje na novú po¹tu
 Comment[fi]=Postista ilmoitus
 Comment[fr]=Notification d'arrivée de courrier
 Exec=kmail

@@ -107,7 +107,7 @@ msgstr "Ôsma"
 
 #: main.C:566
 msgid "Unnamed Desktop"
-msgstr ""
+msgstr "Nepomenovaná"
 
 #: main.C:875
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"

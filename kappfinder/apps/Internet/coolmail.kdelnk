@@ -9,6 +9,7 @@ Comment[de]=Coolmail
 Comment[pt]=Coolmail
 Comment[it]=Coolmail
 Comment[cs]=Coolmail
+Comment[sk]=Coolmail
 Comment[fr]=Coolmail
 Exec=coolmail
 Icon=mail.xpm
