@@ -52,7 +52,7 @@ msgstr "Los!"
 
 #: kgreeter.cpp:274
 msgid "Shutdown..."
-msgstr "Beenden...
+msgstr "Beenden..."
 
 #: kgreeter.cpp:479
 msgid "Logins not available right now."
@@ -60,7 +60,7 @@ msgstr "Benutzernamen derzeicht nicht verfügbar."
 
 #: kgreeter.cpp:520
 msgid "login_getcapstr() failed."
-msgstr "login_getcapstr() fehlgeschlagen.
+msgstr "login_getcapstr() fehlgeschlagen."
 
 #: kgreeter.cpp:574 kgreeter.cpp:601
 msgid "Sorry -- your account has expired."

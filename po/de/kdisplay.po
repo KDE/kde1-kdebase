@@ -183,7 +183,7 @@ msgstr "Einstellung für den Zufalls-Modus"
 
 #: backgnd.cpp:1600
 msgid "Pick files from &directory"
-msgstr "Nimm Dateien aus &Verzeichnis""
+msgstr "Nimm Dateien aus &Verzeichnis"
 
 #: backgnd.cpp:1614
 msgid "&Browse ..."

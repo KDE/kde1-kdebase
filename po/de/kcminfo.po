@@ -39,7 +39,7 @@ msgstr "&Geräte"
 
 #: main.cpp:103
 msgid "S&CSI"
-msgstr "S&CSI""
+msgstr "S&CSI"
 
 #: main.cpp:106
 msgid "P&artitions"
@@ -94,4 +94,3 @@ msgstr "%10ld Bytes  = %8.2f MB"
 msgid "Not available"
 msgstr "Nicht errechenbar"
 
-k

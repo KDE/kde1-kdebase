@@ -83,7 +83,7 @@ msgid ""
 msgstr ""
 "Symbol \"%s\" nicht gefunden.\n"
 "Vielleicht passen Ihre Standard X Codes nicht.\n"
-"Sie können die X Xodes unter \"Erweitert\"
+"Sie können die X Xodes unter \"Erweitert\"\n"
 "im Konfigurationsprogramm voreinstellen."
 
 #: keymap.cpp:233
@@ -288,7 +288,9 @@ msgstr "Konfigurieren"
 msgid ""
 "\n"
 "Do you want to continue?"
-msgstr "Möchten Sie die fortfahren?"
+msgstr ""
+"\n"
+"Möchten Sie die fortfahren?"
 
 #: widgets.cpp:107
 msgid "List of active keyboard maps"
