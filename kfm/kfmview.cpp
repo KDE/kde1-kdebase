@@ -661,16 +661,19 @@ void KfmView::slotSaveLocalProperties()
   //Dir not writable or not a file: url. See if it is on desktop
   if (KRootWidget::pKRootWidget) // if there is one. DF.
   {
-      QString s1, s2;
+      QString s1, s2, kurl;
       s1 = _url;
       if (s1.right( 1 ) == "/")
 	s1.resize(s1.length());
       
       for (KRootIcon *i = IconList.first(); i; i = IconList.next())
-          if (strstr (i->getURL(), ".kdelnk"))
+      {
+	  kurl = i->getURL();
+	  KURL::decodeURL(kurl); // Decode kdelnk filename
+          if (kurl.contains(".kdelnk"))
           {
-              //debug ("Got a kdelnk: %s", &(i->getURL())[5]);
-              KSimpleConfig cfg(&(i->getURL())[5]); // #inline, so it's fast
+              debug ("Got a kdelnk: %s", &(kurl.data())[5]);
+              KSimpleConfig cfg(&(kurl.data())[5], true); //RO, #inline, so it's fast
 	      cfg.setGroup("KDE Desktop Entry");
 	      
 	      s2 = cfg.readEntry("URL").data();
@@ -678,12 +681,13 @@ void KfmView::slotSaveLocalProperties()
 		s2.resize(s2.length());
 
               if (s1 == s2)
-              {
-                  //debug ("Writing");
-                  gui->writeProperties((KConfig *) &cfg); // will sync on end
-                  return;
+	      {
+		KSimpleConfig wcfg(&(kurl.data())[5]); //rw
+		gui->writeProperties((KConfig *) &wcfg); // will sync on end
+		return;
               }
-          }
+	  }
+      }
   }
   // Not found or not writable:
   if (!isADir )
@@ -905,7 +909,7 @@ void KfmView::checkLocalProperties (const char *_url)
   KBookmark *bm = gui->getBookmarkManager()->findBookmark(_url);
   if (bm)
   {
-    KSimpleConfig cfg(bm->file());
+    KSimpleConfig cfg(bm->file(), true); //RO
     gui->loadProperties((KConfig *) &cfg); // will sync on end
     return;
   }
@@ -914,9 +918,12 @@ void KfmView::checkLocalProperties (const char *_url)
   // See if it is on desktop
   
   for (KRootIcon *i = IconList.first(); i; i = IconList.next())
-      if (strstr (i->getURL(), ".kdelnk"))
+  {
+    QString kurl = i->getURL();
+    KURL::decodeURL(kurl); // Decode kdelnk filename
+    if (kurl.contains(".kdelnk"))
       {
-          KSimpleConfig cfg(&(i->getURL())[5]); // #inline, so it's fast
+          KSimpleConfig cfg(&(kurl.data())[5], true); // RO, #inline, so it's fast
           cfg.setGroup("KDE Desktop Entry");
           if (!strcmp (cfg.readEntry("URL").data(), _url))
           {
@@ -924,7 +931,7 @@ void KfmView::checkLocalProperties (const char *_url)
               return;
           }
       }
-  
+  }
   // Not found or not readable:
   // Tell gui that there is no URL properties!!!!
   gui->setHasLocal(false);
