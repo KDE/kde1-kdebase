@@ -1,3 +1,12 @@
+1999-02-22  Dirk A. Mueller <dmuell@gmx.net>
+
+	* kioslave/http.cpp : User-Agent settings now support pattern matching. 
+	You can use the standard QRegExp wildcard characters, which are
+          ? match any character
+          * matches any sequence of charaters
+         [] matches a defined set of characters
+        Remember that the first-match of all entries will count. 
+
 1999-02-18  David Faure  <faure@kde.org>
 
 	* kioserver.cpp (getDestNameForLink): Completely changed the behaviour.
