@@ -3,6 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/types.h>
+#include <pwd.h>
 #include <stddef.h>
 
 #include <qpopmenu.h>
@@ -609,8 +610,6 @@ void KfmGui::initView()
 	     this, SLOT( slotAddWaitingWidget( KHTMLView * ) ) );
     connect( view, SIGNAL( documentDone( KHTMLView * ) ), 
 	     this, SLOT( slotRemoveWaitingWidget( KHTMLView * ) ) );
-    connect( view, SIGNAL( textSelected( KHTMLView *, bool ) ), 
-	     this, SLOT( slotTextSelected( KHTMLView *, bool ) ) );
     view->show();
     view->setFocus();
 }
@@ -742,21 +741,27 @@ void KfmGui::slotURLEntered()
         url.stripWhiteSpace();
 
         // Exit if the user did not enter a URL
-        if ( url.data()[0] == 0 )
+        if ( url[0] == 0 )
 	        return;
 
     	// Root directory?
-	    if ( url.data()[0] == '/' )
-    	{
-            KURL u( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );
-            url = u.url().data();
-        }
+	if ( url[0] == '/' )
+            url.prepend( "file:" );
+
         // Home directory?
-        else if ( url.data()[0] == '~' )
+        else if ( url.find ( QRegExp ( "^~.*" ) ) == 0 )
         {
-            QString tmp( QDir::homeDirPath().data() );
-            tmp += toolbarURL->getLinedText( TOOLBAR_URL_ID ) + 1;
-            url = tmp.prepend("file:").data();
+            int length = url.length();
+            if ( length == 1 )
+                url.replace ( 0, 1, QDir::homeDirPath().data() );
+            else if ( length > 1 )
+            {
+              int index = url.find ( "/" );
+              struct passwd *dir = ((index == -1) ? getpwnam(url.mid(1,length).data()) : getpwnam( url.mid(1,index-1).data()));
+               if ( !dir ) return; // unkown user
+              (index == -1) ? url.replace (0, length,  dir->pw_dir) : url.replace (0, index, dir->pw_dir);
+            }
+            url.prepend("file:");
         }
         //Valid URL?
         // Do nothing if URL, for our purposes here, is VALID. This check is
@@ -783,16 +788,15 @@ void KfmGui::slotURLEntered()
         else
         {
             KURL path ( getURL() );
-            QDir::setCurrent ( path.directory () );
+            QDir::setCurrent ( path.directory()  );
             QFileInfo f ( QDir::currentDirPath().append( "/" ).append( url ).data() );
-            debug ( f.filePath() );
-        	if ( f.exists() )
+            if ( f.exists() )
                 url = f.filePath();
             else
                 url = url.prepend ("http://");
         }
 
-	    KURL u( url.data() );
+	KURL u( url.data() );
     	if ( u.isMalformed() )
 	    {
 	        QString tmp;
