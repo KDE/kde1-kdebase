@@ -870,17 +870,7 @@ void MyApp::readConfiguration(){
   
   // Windows Placement config --- CT 18jan98 ---
   key = config->readEntry("WindowsPlacement");
-  if( key == "smart")
-    options.Placement = SMART_PLACEMENT;
-  else if( key == "cascade")
-    options.Placement = CASCADE_PLACEMENT;
-  //CT 30jan98
-  else if( key == "random")
-    options.Placement = RANDOM_PLACEMENT;
-  //CT 07mar98 bad hack. To clean
-  else if( key == "manual")
-    options.Placement = MANUAL_PLACEMENT;
-  else if( key.left(11) == "interactive") {
+  if( key.left(11) == "interactive") {
     options.Placement = INTERACTIVE_PLACEMENT;
     int comma_pos = key.find(',');
     if (comma_pos < 0)
@@ -890,11 +880,23 @@ void MyApp::readConfiguration(){
 	key.right(key.length()-comma_pos).toUInt(0);
   }
   else {
-    config->writeEntry("WindowsPlacement", "smart");
-    options.Placement = SMART_PLACEMENT;
+    options.interactive_trigger = -1;
+    if( key == "smart")
+      options.Placement = SMART_PLACEMENT;
+    else if( key == "cascade")
+      options.Placement = CASCADE_PLACEMENT;
+    //CT 30jan98
+    else if( key == "random")
+      options.Placement = RANDOM_PLACEMENT;
+    //CT 07mar98 bad hack. To clean
+    else if( key == "manual")
+      options.Placement = MANUAL_PLACEMENT;
+    else {
+      config->writeEntry("WindowsPlacement", "smart");
+      options.Placement = SMART_PLACEMENT;
+    }
   }
   
-
   options.rstart = qstrdup(config->readEntry("RstartProtocol", "rstart -v"));
   config->writeEntry("RstartProtocol", options.rstart);
 
