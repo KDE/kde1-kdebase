@@ -24,9 +24,7 @@
 #include "bg.h"
 #include "bg.moc"
 
-//----------------------------------------------------------------------------
-
-#define NO_WALLPAPER	"(none)"
+//#define NO_WALLPAPER	"(none)"
 
 //----------------------------------------------------------------------------
 
@@ -40,6 +38,7 @@ KBackground::KBackground()
     applied = false;
 
     hasPm = false;
+	bUseWallpaper = false;
 }
 
 KBackground::~KBackground()
@@ -105,10 +104,15 @@ void KBackground::readSettings( const char *group )
 	    wpMode = Scaled;
     }
 
-    wallpaper = NO_WALLPAPER;
-    str = config.readEntry( "Wallpaper" );
-    if ( !str.isEmpty() )
-	wallpaper = str;
+	wallpaper.sprintf( i18n("No wallpaper") );
+	bUseWallpaper = config.readBoolEntry( "UseWallpaper", false );
+	if ( bUseWallpaper )
+    	wallpaper = config.readEntry( "Wallpaper", i18n("No wallpaper") );
+
+    //wallpaper = NO_WALLPAPER;
+    //str = config.readEntry( "Wallpaper" );
+    //if ( !str.isEmpty() )
+	//wallpaper = str;
 
     name.sprintf( "%s_%d_%d_%d#%02x%02x%02x#%02x%02x%02x#", wallpaper.data(), 
 		  wpMode, gfMode, orMode, color1.red(), color1.green(), 
@@ -126,8 +130,9 @@ void KBackground::readSettings( const char *group )
 
 QPixmap *KBackground::loadWallpaper()
 {
-    if ( wallpaper == NO_WALLPAPER )
-	return 0;
+    //if ( wallpaper == NO_WALLPAPER )
+	//return 0;
+	if( !bUseWallpaper ) return 0;
 
     QString filename;
 

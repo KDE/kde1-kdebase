@@ -1,11 +1,22 @@
+/* This file is part of the KDE libraries
+    Copyright (C) 1998	Mark Donohoe <donohoe@kde.org>
+						Stephan Kulow				  
 
-//
-// KPixmap
-//
-// Copyright (c)  Mark Donohoe 1998
-//
-// Pattern fill by Stephan Kulow 1998
-//
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Library General Public
+    License as published by the Free Software Foundation; either
+    version 2 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Library General Public License for more details.
+
+    You should have received a copy of the GNU Library General Public License
+    along with this library; see the file COPYING.LIB.  If not, write to
+    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+    Boston, MA 02111-1307, USA.
+*/
 
 #include <qpixmap.h>
 #include <qpainter.h>
@@ -20,7 +31,6 @@
 
 // Fast diffuse dither to 3x3x3 color cube
 // Based on Qt's image conversion functions
-
 static bool kdither_32_to_8( const QImage *src, QImage *dst )
 {
     register QRgb *p;
@@ -30,11 +40,10 @@ static bool kdither_32_to_8( const QImage *src, QImage *dst )
 	//printf("kconvert_32_to_8\n");
 	
     if ( !dst->create(src->width(), src->height(), 8, 256) ) {
-		printf("kconvert - Destination not valid\n");
+		warning("KPixmap: destination image not valid\n");
 		return FALSE;
 	}
 
-	printf("kconvert32_to8 - Will quantize this image \n");
     int ncols = 256;
 
     static uint bm[16][16];
@@ -218,9 +227,9 @@ void KPixmap::gradientFill( QColor ca, QColor cb, bool upDown, int ncols )
 	    }
 	}
 	
-	if ( QColor::numBitPlanes() <= 16 ) {
+	if ( depth() <= 16 ) {
 	
-		if ( QColor::numBitPlanes() == 16 ) ncols = 16;
+		if( depth() == 16 ) ncols = 32;
 		if ( ncols < 2 || ncols > 256 ) ncols = 3;
 
 		QColor *dPal = new QColor[ncols];
@@ -305,7 +314,7 @@ void KPixmap::patternFill( QColor ca, QColor cb, uint pattern[8] )
 bool KPixmap::load( const char *fileName, const char *format,
 		    int conversion_flags )
 {
-    QImageIO io( fileName, format );
+	QImageIO io( fileName, format );
 
     bool result = io.read();
 	
@@ -322,41 +331,41 @@ bool KPixmap::load( const char *fileName, const char *format,
     int conversion_flags = 0;
     switch (mode) {
       case Color:
-	conversion_flags |= ColorOnly;
-	break;
+		conversion_flags |= ColorOnly;
+		break;
       case Mono:
-	conversion_flags |= MonoOnly;
-	break;
-		case LowColor:
-	conversion_flags |= LowOnly;
-	break;
+		conversion_flags |= MonoOnly;
+		break;
+	  case LowColor:
+		conversion_flags |= LowOnly;
+		break;
 	  case WebColor:
-	conversion_flags |= WebOnly;
-	break;
+		conversion_flags |= WebOnly;
+		break;
       default:
-	;// Nothing.
+		break;// Nothing.
     }
     return load( fileName, format, conversion_flags );
 }
 
 bool KPixmap::convertFromImage( const QImage &img, ColorMode mode )
 {
-int conversion_flags = 0;
+	int conversion_flags = 0;
     switch (mode) {
       case Color:
-	conversion_flags |= ColorOnly;
-	break;
+		conversion_flags |= ColorOnly;
+		break;
       case Mono:
-	conversion_flags |= MonoOnly;
-	break;
+		conversion_flags |= MonoOnly;
+		break;
 		case LowColor:
-	conversion_flags |= LowOnly;
-	break;
+		conversion_flags |= LowOnly;
+		break;
 	  case WebColor:
-	conversion_flags |= WebOnly;
-	break;
+		conversion_flags |= WebOnly;
+		break;
       default:
-	;	// Nothing.
+		break;	// Nothing.
     }
     return convertFromImage( img, conversion_flags );
 }
@@ -370,13 +379,30 @@ bool KPixmap::convertFromImage( const QImage &img, int conversion_flags  )
 	return FALSE;
     }
     detach();					// detach other references
+	
+	int dd = defaultDepth();
     
-	if( ( conversion_flags != LowOnly && conversion_flags != WebOnly ) 
-		||  QColor::numBitPlanes() > 8 ) {
+	// If color mode not one of KPixmaps extra modes nothing to do
+	if( ( conversion_flags & KColorMode_Mask ) != LowOnly &&
+	     ( conversion_flags & KColorMode_Mask ) != WebOnly ) {
 		return QPixmap::convertFromImage ( img, conversion_flags );
 	}
-		
-	if( conversion_flags == LowOnly ) {
+	
+	// If the default pixmap depth is not 8bpp, KPixmap color modes have no
+	// effect. Ignore them and use AutoColor instead.
+	if ( dd > 8 ) {
+		if ( ( conversion_flags & KColorMode_Mask ) == LowOnly ||
+			 ( conversion_flags & KColorMode_Mask ) == WebOnly )
+			conversion_flags = (conversion_flags & ~KColorMode_Mask)
+					| Auto;
+		return QPixmap::convertFromImage ( img, conversion_flags );
+	}
+	
+	if ( ( conversion_flags & KColorMode_Mask ) == LowOnly ) {
+		// Here we skimp a little on the possible conversion modes
+		// Don't offer ordered or threshold dither of RGB channels or
+		// diffuse or ordered dither of alpha channel. It hardly seems
+		// worth the effort for this specialised mode.
 		
 		// If image uses icon palette don't dither it.
 		if( img.numColors() > 0 && img.numColors() <=40 ) {
@@ -390,9 +416,10 @@ bool KPixmap::convertFromImage( const QImage &img, int conversion_flags  )
 		QImage tImage( image.width(), image.height(), 8, 256 );
 		kdither_32_to_8( &image, &tImage );
 		
-		return QPixmap::convertFromImage ( tImage);
+		return QPixmap::convertFromImage ( tImage, QPixmap::Auto );
 	} else {
-		QImage  image = img.convertDepth(32);
+		QImage  image = img.convertDepth( 32 );
+		conversion_flags = (conversion_flags & ~ColorMode_Mask) | Auto;
 		return QPixmap::convertFromImage ( image, conversion_flags );
 	}
 }
@@ -467,7 +494,7 @@ bool KPixmap::checkColorTable( const QImage &image )
 	int j;
 	QRgb* ctable = image.colorTable();
 	
-	// Allow one failure = transparent background
+	// Allow one failure which could be transparent background
 	int failures = 0;
 	
 	for ( i=0; i<ncols; i++ ) {
