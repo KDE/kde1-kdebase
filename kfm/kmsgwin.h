@@ -6,7 +6,7 @@
 #include <qlabel.h>
 #include <qframe.h>
 
-#include <kpixmap.h>
+#include <qpixmap.h>
 
 
 /// KMsgWin
