@@ -1474,7 +1474,7 @@ void BindingPropsPage::applyChanges()
 	if ( tmp.right(1) != ";" )
 	    tmp += ";";
     config.writeEntry( "Patterns", tmp.data() );
-    config.writeEntry( "Comment", commentEdit->text() );
+    config.writeEntry( "Comment", commentEdit->text(), true, false, true );
     config.writeEntry( "MimeType", mimeEdit->text() );
     config.writeEntry( "Icon", iconBox->icon() );
 
