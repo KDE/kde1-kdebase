@@ -5,7 +5,7 @@ slots:
    void progress( int _percent );
    void info( string _text );
    void dirEntry( string _dir, string _name, bool _isDir, int _size, string _date, string _access, string _owner, string _group );
-   void data( string _text );
+   void data( mem _text );
    void flushDir( string _dir );	
    void done();
    void fatalError( int _error, string _text, int _errno );

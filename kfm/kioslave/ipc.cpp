@@ -38,6 +38,18 @@ void write_string( int _fd, const char* _value )
     write( _fd, (const char*)_value, strlen(_value) );
 }
 
+void write_mem( int _fd, IPCMemory _mem )
+{
+    if ( _mem.data == 0L )
+    {
+	write_int( _fd, -1 );
+	return;
+    }
+    
+    write_int( _fd, _mem.size );
+    write( _fd, _mem.data, _mem.size );
+}
+
 void write_intList( int _fd, intList* _list )
 {
     int len = _list->elements * sizeof(int);
@@ -61,7 +73,7 @@ void write_charList( int _fd, charList* _list )
 
 void write_stringList( int _fd, stringList* _list )
 {
-    int len = _list->elements * sizeof(int);
+    // int len = _list->elements * sizeof(int);
     write( _fd, (const char*)&(_list->elements), sizeof(int) );
     for( int i = 0; i < _list->elements; i++ )
     {
@@ -82,6 +94,18 @@ char* read_string( char *_data, int &_pos, int _len )
     return str;
 }
 
+IPCMemory read_mem( char *_data, int &_pos, int _len )
+{
+    int tmp = read_int( _data, _pos, _len );
+    if ( tmp == -1 )
+	return IPCMemory( 0L, 0 );
+    
+    char *str = (char*)malloc(tmp);
+    memcpy( str, _data + _pos, tmp );
+    _pos += tmp;
+    return IPCMemory( str, tmp );
+}
+
 int read_int( char *_data, int &_pos, int _len )
 {
     int i = _pos;
@@ -96,7 +120,7 @@ int read_int( char *_data, int &_pos, int _len )
     return atoi( _data + i );
 }
 
-char read_char( char *_data, int &_pos, int _len )
+char read_char( char *_data, int &_pos, int )
 {
     char tmp = *((char*)_data + _pos);
     _pos += sizeof(char);
@@ -209,7 +233,7 @@ int len_double( double _value )
     return strlen(buffer) + 1;
 }
 
-int len_char( char _value )
+int len_char( char )
 {
     return 1;
 }
@@ -221,6 +245,14 @@ int len_string( const char *_str )
 	return 3;
     int len = strlen( _str );
     return len + len_int( len );
+}
+
+int len_mem( IPCMemory _mem )
+{
+    if ( _mem.data == 0L )
+	// The '-1' takes 2 characters + 1 space
+	return 3;
+    return _mem.size + len_int( _mem.size );
 }
 
 int len_stringList( stringList *_list )

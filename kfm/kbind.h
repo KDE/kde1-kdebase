@@ -222,11 +222,6 @@ class KMimeType
 {
 public:
     /**
-     * Create a mime type. You must later on call @setPixmap and
-     * @setPattern and so on to fill the object with data.
-     */
-    KMimeType() { }
-    /**
      * Create a mime type and give it an icon.
      */
     KMimeType( const char *_mime_type, const char *_pixmap );
@@ -450,25 +445,20 @@ public:
      * Scan the $KDEDIR/MimeTypes directory for the mime types
      */
     static void initMimeTypes( const char *_path );
-    
+
+    /**
+     * Prints out an error and exits if the mime type '_type'
+     * is missing but required.
+     */
+    static void errorMissingMimeType( const char *_type );
+
     /**
      * @return the path for the icons
      */
     static const char* getIconPath() { return icon_path; }
 
-    /**
-     * @return the name of the default icon pixmap.
-     */
-    static const char* getDefaultPixmap() { return defaultPixmap; }    
-    static const char* getExecutablePixmap() { return executablePixmap; }    
-    static const char* getBatchPixmap() { return batchPixmap; }    
-    static const char* getFolderPixmap() { return folderPixmap; }    
-    static const char* getLockedFolderPixmap() { return lockedfolderPixmap; }
-    static const char* getPipePixmap() { return PipePixmap; }
-    static const char* getSocketPixmap() { return SocketPixmap; }
-    static const char* getCDevPixmap() { return CDevPixmap; }
-    static const char* getBDevPixmap() { return BDevPixmap; }         
-
+    static const char* getDefaultPixmap() { return "unknown.xpm"; }
+    
     static void initKMimeMagic();
     static KMimeMagic* getKMimeMagic() { return magic; }
     static KMimeMagicResult* findFileType( const char *_filename ) 
@@ -524,42 +514,6 @@ protected:
      * The path to the icons.
      */
     static char icon_path[ 1024 ];
-    /**
-     * Default pixmap for executables.
-     */
-    static char executablePixmap[ 1024 ];
-    /**
-     * Default pixmap for batch files.
-     */
-    static char batchPixmap[ 1024 ];
-    /**
-     * General default pixmap.
-     */
-    static char defaultPixmap[ 1024 ];
-    /**
-     * Default pixmap for folders.
-     */
-    static char folderPixmap[ 1024 ];    
-    /**
-     * Default pixmap for locked folders
-     */
-    static char lockedfolderPixmap[ 1024 ];
-    /**
-     * Default pixmap for Pipes
-     */
-    static char PipePixmap[ 1024 ];
-    /**
-     * Default pixmap for Sockets
-     */
-    static char SocketPixmap[ 1024 ];
-    /**
-     * Default pixmap for a character device
-     */
-    static char CDevPixmap[ 1024 ];
-    /**
-     * Default pixmap for a block device
-     */
-    static char BDevPixmap[ 1024 ];        
 
     /**
      * This flag is set if this file type is only an application pattern.
@@ -580,7 +534,8 @@ protected:
 class KFolderType : public KMimeType
 {
 public:
-    KFolderType() : KMimeType() { }
+    KFolderType( const char *_mime_type, const char *_pixmap ) :
+	KMimeType( _mime_type, _pixmap ) { }
 
     /**
      * Get the pixmap files full name.
@@ -626,10 +581,10 @@ class KDELnkMimeType : public KMimeType
 {
 public:
     /**
-     * Create a KDELnkMimeType. You need not specify pixmaps or
-     * patterns. All information is in the *.kdelnk files.
+     * Create a KDELnkMimeType.
      */
-    KDELnkMimeType() : KMimeType() { }
+    KDELnkMimeType( const char *_mime_type, const char *_pixmap ) :
+	KMimeType( _mime_type, _pixmap ) { }
 
     /**
      * WARNING: This function is NOT reentrant. Copy the returned

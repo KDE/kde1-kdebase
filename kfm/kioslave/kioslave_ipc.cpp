@@ -31,9 +31,9 @@ bool KIOSlaveIPC::isConnected()
 
 void KIOSlaveIPC::closeEvent( KSocket * )
 {
-    connected = FALSE;
-    printf("***********EXIT************\n");
+    printf("******** EXIT ********\n");
     exit(1);
+    connected = FALSE;
 }
 
 void KIOSlaveIPC::readEvent( KSocket * )
@@ -83,7 +83,6 @@ void KIOSlaveIPC::readEvent( KSocket * )
     if ( n + cBody == bodyLen )
     {
 	pBody[bodyLen] = 0;
-	printf(">>'%s'\n",pBody);
 	bHeader = TRUE;
 	parse( pBody, bodyLen );
 	return;

@@ -36,8 +36,17 @@ public:
      * After calling this function dont reference this instance any
      * more. It will destroy itself after its job is done.
      */
-    void openURL( const char *_url, bool _reload );
+    void openURL( const char *_url );
     
+    /**
+     * This function handles some special stuff for local files. For example
+     * it changes the URL, if the file is zipped or a tar file. The changed
+     * URL is then returned. Sometimes the function can execute the URL
+     * itself ( executables, mime-type with binding ). Then an empty string
+     * is returned. This function is used by KFMExec and @ref KFMManager.
+     */
+    static QString openLocalURL( const char *_filename );
+
     /**
      * Internal function. Used to find out wether the job
      * of this instance is already finished. In this case

@@ -25,6 +25,24 @@ struct charList
     char *list;
 };
 
+class IPCMemory
+{
+  public:
+    IPCMemory()
+    {
+	size = 0;
+	data = 0L;
+    }
+    IPCMemory( const char *_d, int _l ) 
+    {
+	size = _l;
+	data = _d;
+    }
+    
+    int size;
+    const char* data;
+};
+
 #define boolList charList
 #define write_bool write_char
 #define read_bool read_char
@@ -37,11 +55,13 @@ void write_int( int _fd, int _value );
 void write_double( int _fd, double _value );
 void write_char( int _fd, char _value );
 void write_string( int _fd, const char* _value );
+void write_mem( int _fd, IPCMemory _mem );
 void write_intList( int _fd, intList* _list );
 void write_doubleList( int _fd, doubleList* _list );
 void write_charList( int _fd, charList* _list );
 void write_stringList( int _fd, stringList* _list );
 char* read_string( char *_data, int &_pos, int _len );
+IPCMemory read_mem( char *_data, int &_pos, int _len );
 int read_int( char *_data, int &_pos, int _len );
 char read_char( char *_data, int &_pos, int _len );
 double read_double( char *_data, int &_pos, int _len );
@@ -68,5 +88,6 @@ int len_stringList( stringList *_list );
 int len_intList( intList *_list );
 int len_doubleList( doubleList *_list );
 int len_charList( charList *_list );
+int len_mem( IPCMemory _mem );
 
 #endif

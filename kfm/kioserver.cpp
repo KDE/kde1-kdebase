@@ -281,7 +281,14 @@ QString KIOServer::getDestNameForLink( const char *_url )
 
 bool KIOServer::supports( const char *_url, int _mode )
 {
-    KURL u( _url );
+    KURL u2( _url );
+    if ( u2.isMalformed() )
+	return false;
+    // We are interested in the right most protocol.
+    // HACK
+    // We dont check wether the parent protocols support the needed
+    // read/write actions.
+    KURL u( u2.nestedURL() );
     if ( u.isMalformed() )
 	return false;
     
@@ -306,6 +313,12 @@ bool KIOServer::supports( const char *_url, int _mode )
     else if ( strcmp( u.protocol(), "tar" ) == 0 )
     {
         if ( ( ( KIO_Delete | KIO_Read | KIO_List ) & _mode ) == _mode )
+	    return true;
+	return false;
+    }
+    else if ( strcmp( u.protocol(), "gzip" ) == 0 )
+    {
+        if ( ( ( KIO_Read ) & _mode ) == _mode )
 	    return true;
 	return false;
     }

@@ -91,7 +91,7 @@ void KIOJob::list( const char *_url, bool _reload, bool _bHTML )
     
     if ( dir != 0L )
     {
-	printf("GOT Cached information\n");
+	debugT("GOT Cached information\n");
 	KIODirectoryEntry *e;
 	for ( e = dir->first(); e != 0L; e = dir->next() )
 	    emit newDirEntry( id, e );
@@ -1112,9 +1112,9 @@ void KIOJob::fatalError( int _kioerror, const char* _url, int )
 	r->show();
     }
     if ( !msg.isEmpty() && r == 0L )
-	emit error( msg );
+	emit error( _kioerror, msg );
     else if ( r == 0L )
-	emit error( "" );
+	emit error( _kioerror, "" );
 }
 
 void KIOJob::start( int _pid )
@@ -1244,7 +1244,7 @@ void KIOJob::start( int _pid )
     }
     
     connect( slave, SIGNAL( done() ), this, SLOT( slaveIsReady() ) );
-    connect( slave, SIGNAL( data( const char* ) ), this, SLOT( slotData( const char* ) ) );
+    connect( slave, SIGNAL( data( IPCMemory ) ), this, SLOT( slotData( IPCMemory ) ) );
     connect( slave, SIGNAL( info( const char* ) ), this, SLOT( slotInfo( const char* ) ) );
     connect( slave, SIGNAL( redirection( const char* ) ), this, SLOT( slotRedirection( const char* ) ) );
     connect( slave, SIGNAL( mimeType( const char* ) ), this, SLOT( slotMimeType( const char* ) ) );
@@ -1525,9 +1525,9 @@ void KIOJob::slaveProgress( int _percent )
     emit progress( _percent, 0 );
 }
 
-void KIOJob::slotData( const char *_data )
+void KIOJob::slotData( IPCMemory _mem )
 {
-    emit data( _data );
+    emit data( _mem.data, _mem.size );
 }
 
 void KIOJob::slotRedirection( const char *_url )

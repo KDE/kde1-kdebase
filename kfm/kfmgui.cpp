@@ -105,23 +105,19 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     else
       visualSchnauzer = true;
     
-    entry = "Yes";
+    entry = "yes";
     if ( config->readEntry("HTMLView", entry) == entry)
       bViewHTML = true;
     else
       bViewHTML = false;
 
-    debugT("Hi 4\n");
     initGUI();
-    debugT("Hi 5\n");
 
     windowList.setAutoDelete( false );
     windowList.append( this );
 
-    debugT("Hi 6\n");
     if ( _url )
 	view->openURL( _url );
-    debugT("Hi 7\n");
 }
 
 KfmGui* KfmGui::findWindow( const char *_url )
@@ -138,26 +134,17 @@ void KfmGui::initGUI()
 {
     setMinimumSize( 100, 100 );
 
-    debugT("GUI 2\n");
     initAccel();
-    debugT("GUI 3\n");
     initPanner();
-    debugT("GUI 4\n");
     initTreeView();
-    debugT("GUI 5\n");
     initStatusBar();
-    debugT("GUI 6\n");
     initView();
-    debugT("GUI 7\n");
     initMenu();
-    debugT("GUI 1\n");
     initToolBar();
     QGridLayout *gl = new QGridLayout( pannerChild0, 1, 1 );
     gl->addWidget( treeView, 0, 0 );
-    debugT("GUI 8\n");
     gl = new QGridLayout( pannerChild1, 1, 1 );
     gl->addWidget( view, 0, 0 );
-    debugT("GUI 9\n");
 }
 
 void KfmGui::initAccel()
@@ -436,7 +423,8 @@ void KfmGui::initToolBar()
 			  SLOT( slotStop() ), false, 
 			  klocale->translate("Stop"));
 
-    path = KMimeType::getIconPath();
+    path = kapp->kdedir() + "/share/apps/kfm/pics/";
+
     pixmap.load( path + "/kde1.xpm" );
     
     toolbar->insertButton(pixmap, 8, SIGNAL( clicked() ), this, 
@@ -454,7 +442,11 @@ void KfmGui::initToolBar()
 	    QPixmap *p = new QPixmap();
 	    p->load( path + n );
 	    if ( p->isNull() )
-	      debugT("????????????????????? Could not load '%s' ????????????\n",n.data());
+	    {
+		QString e;
+		e.sprintf( klocale->translate( "Could not load icon\n\r%s" ), n.data() );
+		QMessageBox::message( klocale->translate( "KFM Error" ), e.data() );
+	    }
 	    animatedLogo.append( p );
 	}
     }
@@ -462,7 +454,6 @@ void KfmGui::initToolBar()
     addToolBar( toolbar );
     toolbar->setBarPos(KToolBar::Top);
     toolbar->show();                
-    
 }
 
 void KfmGui::initView()
@@ -482,7 +473,6 @@ void KfmGui::initView()
 
 void KfmGui::closeEvent( QCloseEvent *e )
 {
-    debugT("Closing\n");
     e->accept();
 
     delete this;
@@ -549,6 +539,7 @@ void KfmGui::slotSplitWindow()
 void KfmGui::slotViewHTML( )
 {
     bViewHTML = !mview->isItemChecked( 3 );
+    debugT("VIEW is '%i'\n",(int)bViewHTML);
     // viewMode = ICON_VIEW;
     mview->setItemChecked( mview->idAt( 3 ), !mview->isItemChecked( 3 ) );
     view->slotUpdateView();
@@ -820,12 +811,11 @@ void KfmGui::slotOpenLocation( )
     
     DlgLineEntry l( klocale->translate("Open Location:"), url.data(), 
 		    this, true );
-    //if ( l.exec() )
     int x = l.exec();
-    printf("DEBUG=%i\n",x);
     if ( x )
     {
 	QString url = l.getText();
+	url = url.stripWhiteSpace();
 	// Exit if the user did not enter an URL
 	if ( url.data()[0] == 0 )
 	    return;
@@ -853,6 +843,9 @@ void KfmGui::slotOpenLocation( )
 	    url = "ftp://";
 	    url += l.getText();
 	}
+	/**
+	 * Something for fun :-)
+	 */
 	if ( url == "about:kde" ) {
     		url = getenv( "KDEURL" );
 		if ( url.isEmpty() )
@@ -896,10 +889,6 @@ void KfmGui::slotClose()
 
 void KfmGui::slotAbout()
 {
-    printf("1\n");
-    printf("'%s'\n",kfm_getrev());
-    printf("2\n");
-    
     QString tmp;
     tmp.sprintf("KFM %s\n\n%s", kfm_getrev(), klocale->translate("(c) by Torben Weis\nweis@kde.org\n\nand the KFM team") );
     QMessageBox::message( klocale->translate("About"), 
@@ -1035,9 +1024,9 @@ void KfmGui::slotSaveSettings()
   config->writeEntry("VisualSchnauzer", entry);
 
   if (bViewHTML == true)
-    entry = "Yes";
+    entry = "yes";
   else
-    entry = "No";
+    entry = "no";
   
   config->writeEntry("HTMLView", entry);
   config->sync();

@@ -9,10 +9,11 @@ bin_PROGRAMS = kioslave
 
 kioslave_SOURCES = kioslave_ipc.cpp kioslave_ipc2.cpp main.cpp \
 	ipc.cpp protocol.cpp http.cpp file.cpp ftp.cpp manage.cpp \
-	slave.cpp tar.cpp subprotocol.cpp cgi.cpp ../debug.cpp
+	slave.cpp tar.cpp subprotocol.cpp cgi.cpp gzip.cpp ../debug.cpp
 noinst_HEADERS = kioslave_ipc.h main.h ipc.h protocol.h http.h \
-	file.h ftp.h manage.h slave.h tar.h subprotocol.h cgi.h
-BUILT_SOURCES =	kioslave_ipc.moc main.moc http.moc file.moc tar.moc ftp.moc protocol.moc subprotocol.h cgi.moc
+	file.h ftp.h manage.h slave.h tar.h subprotocol.h cgi.h gzip.h
+BUILT_SOURCES =	kioslave_ipc.moc main.moc http.moc file.moc tar.moc ftp.moc \
+	protocol.moc subprotocol.h cgi.moc gzip.moc
 
 kioslave_ipc.cpp: kioslave_ipc.moc
 main.cpp: main.moc
@@ -23,6 +24,7 @@ tar.cpp: tar.moc
 protocol.cpp: protocol.moc
 subprotocol.cpp: subprotocol.moc
 cgi.cpp: cgi.moc
+gzip.cpp: gzip.moc
 
 debug.o: ../debug.cpp ../config-kfm.h
 	$(CXXCOMPILE) -c ../debug.cpp
@@ -47,5 +49,7 @@ main.moc: main.h
 	$(MOC) main.h -o main.moc
 cgi.moc: cgi.h
 	$(MOC) cgi.h -o cgi.moc
+gzip.moc: gzip.h
+	$(MOC) gzip.h -o gzip.moc
 
 

@@ -1,3 +1,11 @@
+/**
+ * KMimeMagic is inspired by the code of the
+ * Apache Web Server.
+ *
+ * Rewritten for KDE by Fritz Elfert
+ * fritz@kde.org
+ */
+
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>

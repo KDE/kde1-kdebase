@@ -158,8 +158,12 @@ void KIOSlave::list( const char *_url, bool _bHTML )
 	prot->AllowHTML( _bHTML );
 	if ( prot->OpenDir(&su) == KProtocol::FAIL )
 	{
-	    printf("ERROR: No permission to enter '%s'\n",_url );
-	    ipc->fatalError( KIO_ERROR_CouldNotList, _url, 0 );
+	    int kerror;
+	    QString msg;
+	    int syserror;
+	    prot->GetLastError( kerror, msg, syserror );
+	    printf("ERROR: Could not enter '%s'\n",_url );
+	    ipc->fatalError( kerror, _url, syserror );
 	    return;
 	}
 	    
@@ -537,7 +541,6 @@ void KIOSlave::get( const char *_url )
 		printf("Copyloop starting\n");
 		while ( !src_prot->atEOF() )
 		{
-			printf("read\n");
 			if ((l = src_prot->Read( buffer, 1024 ) ) < 0)
 			{
 			    printf("read error (%ld)\n",l);
@@ -545,8 +548,7 @@ void KIOSlave::get( const char *_url )
 			    return;
 			}
 			buffer[l] = 0;
-			ipc->data( buffer );
-			printf("progress\n");
+			ipc->data( IPCMemory( buffer, l ) );
 			c += l;
 			if ( ( c * 100 / size ) != last )
 			{

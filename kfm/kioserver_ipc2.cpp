@@ -32,6 +32,7 @@ void KIOSlaveIPC::parse_info( char *_data, int _len )
 	_text = read_string( _data, pos, _len );
 	// Calling function
 	emit info( _text );
+	free( (void*)_text );
 }
 
 void KIOSlaveIPC::parse_dirEntry( char *_data, int _len )
@@ -64,17 +65,24 @@ void KIOSlaveIPC::parse_dirEntry( char *_data, int _len )
 	_group = read_string( _data, pos, _len );
 	// Calling function
 	emit dirEntry( _dir, _name, _isDir, _size, _date, _access, _owner, _group );
+	free( (void*)_dir );
+	free( (void*)_name );
+	free( (void*)_date );
+	free( (void*)_access );
+	free( (void*)_owner );
+	free( (void*)_group );
 }
 
 void KIOSlaveIPC::parse_data( char *_data, int _len )
 {
 	int pos = 0;
 
-	// Parsing string
-	const char* _text;
-	_text = read_string( _data, pos, _len );
+	// Parsing mem
+	IPCMemory _text;
+	_text = read_mem( _data, pos, _len );
 	// Calling function
 	emit data( _text );
+	free( (void*)_text.data );
 }
 
 void KIOSlaveIPC::parse_flushDir( char *_data, int _len )
@@ -86,6 +94,7 @@ void KIOSlaveIPC::parse_flushDir( char *_data, int _len )
 	_dir = read_string( _data, pos, _len );
 	// Calling function
 	emit flushDir( _dir );
+	free( (void*)_dir );
 }
 
 void KIOSlaveIPC::parse_done( char *_data, int _len )
@@ -111,6 +120,7 @@ void KIOSlaveIPC::parse_fatalError( char *_data, int _len )
 	_errno = read_int( _data, pos, _len );
 	// Calling function
 	emit fatalError( _error, _text, _errno );
+	free( (void*)_text );
 }
 
 void KIOSlaveIPC::parse_setPID( char *_data, int _len )
@@ -133,6 +143,7 @@ void KIOSlaveIPC::parse_redirection( char *_data, int _len )
 	_url = read_string( _data, pos, _len );
 	// Calling function
 	emit redirection( _url );
+	free( (void*)_url );
 }
 
 void KIOSlaveIPC::parse_mimeType( char *_data, int _len )
@@ -144,6 +155,7 @@ void KIOSlaveIPC::parse_mimeType( char *_data, int _len )
 	_type = read_string( _data, pos, _len );
 	// Calling function
 	emit mimeType( _type );
+	free( (void*)_type );
 }
 
 void KIOSlaveIPC::mount(bool _ro, const char* _fstype, const char* _dev, const char* _point)

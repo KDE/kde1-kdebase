@@ -34,16 +34,6 @@ KMimeType *CDevType;
 KMimeType *BDevType;   
 
 char KMimeType::icon_path[ 1024 ];
-char KMimeType::executablePixmap[ 1024 ];
-char KMimeType::batchPixmap[ 1024 ];
-char KMimeType::defaultPixmap[ 1024 ];
-char KMimeType::folderPixmap[ 1024 ];
-char KMimeType::lockedfolderPixmap[ 1024 ];
-char KMimeType::PipePixmap[ 1024 ];
-
-char KMimeType::SocketPixmap[ 1024 ];
-char KMimeType::CDevPixmap[ 1024 ];
-char KMimeType::BDevPixmap[ 1024 ];       
 
 QStrList KMimeBind::appList;
 
@@ -506,7 +496,14 @@ void KMimeType::initMimeTypes( const char* _path )
 		KMimeType *t = KMimeType::findByName( ext.data() );
 		// If not then create a new type, but only if we have an icon
 		if ( t == 0L && !icon.isNull() )
-		    types->append( t = new KMimeType( ext.data(), icon.data() ) );
+		{
+		    if ( mime == "inode/directory" )
+			types->append( t = new KFolderType( ext.data(), icon.data() ) );
+		    else if ( mime == "application/x-kdelnk" )
+			types->append( t = new KDELnkMimeType( ext.data(), icon.data() ) );
+		    else
+			types->append( t = new KMimeType( ext.data(), icon.data() ) );
+		}
 		// If we have this type already we perhaps only change the pixmap ?
 		else if ( !icon.isNull() )
 		    t->setPixmap( icon.data() );
@@ -540,22 +537,21 @@ void KMimeType::initMimeTypes( const char* _path )
 void KMimeType::init()
 {
     QString ipath = kapp->kdedir();
-    
     ipath.detach();
-    ipath += "/share/apps/kfm/pics";
+    ipath += "/share/icons";
     strcpy( icon_path, ipath.data() );
     
     // KMimeType *ft;
 
-    kdelnkType = new KDELnkMimeType();
+    // kdelnkType = new KDELnkMimeType();
 
     // Read some informations about standard pixmaps.
-    KConfig *config = KApplication::getKApplication()->getConfig();
+    // KConfig *config = KApplication::getKApplication()->getConfig();
 
     // Read the deault icons
-    QString icon;
+    // QString icon;
     
-    execType = new KMimeType();
+    /* execType = new KMimeType();
     icon = config->readEntry( "Executable" );
     if ( icon.isNull() )
     {
@@ -567,7 +563,7 @@ void KMimeType::init()
 	execType->setPixmap( icon.data() );
         strcpy( executablePixmap, icon.data() );
     }
-    execType->setMimeType( "kfm/exec" );
+    execType->setMimeType( "application/x-executable" );
     execType->setComment( "Executable" );
     
     batchType = new KMimeType();
@@ -582,7 +578,7 @@ void KMimeType::init()
 	batchType->setPixmap( icon.data() );
 	strcpy( batchPixmap, icon.data() );
     }
-    batchType->setMimeType( "kfm/script" );
+    batchType->setMimeType( "application/x-shellscript" );
     batchType->setComment( "Shell Script" );
     
     PipeType = new KMimeType();
@@ -597,7 +593,7 @@ void KMimeType::init()
        PipeType->setPixmap( icon.data() );
        strcpy( PipePixmap, icon.data() );
     }
-    PipeType->setMimeType( "kfm/pipe" );
+    PipeType->setMimeType( "inode/fifo" );
     PipeType->setComment( "Pipe" );
 
 
@@ -613,7 +609,7 @@ void KMimeType::init()
        SocketType->setPixmap( icon.data() );
        strcpy( SocketPixmap, icon.data() );
     }
-    SocketType->setMimeType( "kfm/socket" );
+    SocketType->setMimeType( "inode/socket" );
     SocketType->setComment( "Socket" );
 
 
@@ -629,7 +625,7 @@ void KMimeType::init()
        CDevType->setPixmap( icon.data() );
        strcpy( CDevPixmap, icon.data() );
     }
-    CDevType->setMimeType( "kfm/exec" );
+    CDevType->setMimeType( "inode/chardevice" );
     CDevType->setComment( "Character device" );  
 
     BDevType = new KMimeType();
@@ -644,7 +640,7 @@ void KMimeType::init()
        BDevType->setPixmap( icon.data() );
        strcpy( BDevPixmap, icon.data() );
     }
-    BDevType->setMimeType( "kfm/exec" );
+    BDevType->setMimeType( "inode/blockdevice" );
     BDevType->setComment( "Block device" );
                             
     defaultType = new KMimeType();
@@ -673,7 +669,7 @@ void KMimeType::init()
 	strcpy( folderPixmap, icon.data() );
     	folderType->setPixmap( icon.data() );
     }
-    folderType->setMimeType( "kfm/folder" );
+    folderType->setMimeType( "inode/directory" );
     folderType->setComment( "Folder" );
     
     lockedfolderType = new KFolderType();
@@ -688,9 +684,9 @@ void KMimeType::init()
        strcpy( lockedfolderPixmap, icon.data() );
        lockedfolderType->setPixmap( icon.data() );
     }
-    lockedfolderType->setMimeType( "kfm/folder-locked" );
+    lockedfolderType->setMimeType( "inode/directory-locked" );
     lockedfolderType->setComment( "Locked Folder" );
-       
+    */
     types = new QList<KMimeType>;
     types->setAutoDelete( true );
     
@@ -699,12 +695,42 @@ void KMimeType::init()
     path += "/mimetypes";
     initMimeTypes( path.data() );
 
+    if ( ( defaultType = KMimeType::findByName( "application/octet-stream" ) ) == 0L )
+	errorMissingMimeType( "application/octet-stream" );
+    if ( ( folderType = KMimeType::findByName( "inode/directory" ) ) == 0L )
+	errorMissingMimeType( "inode/directory" );
+    if ( ( lockedfolderType = KMimeType::findByName( "inode/directory-locked" ) ) == 0L )
+	errorMissingMimeType( "inode/directory-locked" );
+    if ( ( BDevType = KMimeType::findByName( "inode/blockdevice" ) ) == 0L )
+	errorMissingMimeType( "inode/blockdevice" );
+    if ( ( CDevType = KMimeType::findByName( "inode/chardevice" ) ) == 0L )
+	errorMissingMimeType( "inode/chardevice" );
+    if ( ( SocketType = KMimeType::findByName( "inode/socket" ) ) == 0L )
+	errorMissingMimeType( "inode/socket" );
+    if ( ( PipeType = KMimeType::findByName( "inode/fifo" ) ) == 0L )
+	errorMissingMimeType( "inode/fifo" );
+    if ( ( batchType = KMimeType::findByName( "application/x-shellscript" ) ) == 0L )
+	errorMissingMimeType( "application/x-shellscript" );
+    if ( ( execType = KMimeType::findByName( "application/x-executable" ) ) == 0L )
+	errorMissingMimeType( "application/x-executable" );
+    if ( ( kdelnkType = KMimeType::findByName( "application/x-kdelnk" ) ) == 0L )
+	errorMissingMimeType( "application/x-kdelnk" );
+
     // Read the application bindings
     path = kapp->kdedir();
     path += "/apps";
     KMimeBind::initApplications( path.data() );
 }
 
+void KMimeType::errorMissingMimeType( const char *_type )
+{
+    QString tmp = klocale->translate( "Could not find mime type\r\n" );
+    tmp += _type;
+    
+    QMessageBox::message( klocale->translate( "KFM Error" ), _type );
+    exit(1);
+}
+    
 void KMimeType::clearAll()
 {
     KMimeBind::clearApplicationList();
@@ -771,29 +797,37 @@ KMimeType* KMimeType::findType( const char *_url )
     if ( tmp.length() > 7 && tmp.right(7) == ".kdelnk" )
 	return kdelnkType;
     
+    // Is it really a directory ?
     if ( KIOServer::isDir( _url ) > 0 )
     {
-       if ( strcmp( u.protocol(), "file" ) == 0 && ( u.reference() == 0L || *(u.reference()) == 0 ) )
-       {   
-           if ( access( _url + 5, R_OK|X_OK ) < 0 )
-           {
-                 debugT("Folder %s status: %s\n", _url, strerror(errno));
-                 return lockedfolderType;
-           }
-       }
-       else
-       {
-	   QString user = u.user();
-	   if ( user.data() == 0L || user.data()[0] == 0 )
-	     user = "anonymous";
-           KIODirectoryEntry *e = KIOServer::getKIOServer()->getDirectoryEntry( _url );
-	   if ( e != 0L )
-           {
-	     if ( !e->mayRead( user.data() ) || !e->mayExec( user.data() ) )
-	       return lockedfolderType;
-           } 
-       }    
-       return folderType;
+	// File on the local hard disk ?
+	if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
+	{   
+	    if ( access( _url + 5, R_OK|X_OK ) < 0 )
+	    {
+		debugT("Folder %s status: %s\n", _url, strerror(errno));
+		return lockedfolderType;
+	    }
+	}
+	else
+	{
+	    // Is it a directory in a tar file ?
+	    KURL u2( u.nestedURL() );
+	    if ( strcmp( u2.protocol(), "tar" ) == 0 )
+		// Those directories are always accessible
+		return folderType;
+	    
+	    QString user = u.user();
+	    if ( user.data() == 0L || user.data()[0] == 0 )
+		user = "anonymous";
+	    KIODirectoryEntry *e = KIOServer::getKIOServer()->getDirectoryEntry( _url );
+	    if ( e != 0L )
+	    {
+		if ( !e->mayRead( user.data() ) || !e->mayExec( user.data() ) )
+		    return lockedfolderType;
+	    } 
+	}    
+	return folderType;
     }              
 
     KMimeType *typ;
@@ -1704,21 +1738,30 @@ KMimeBind::KMimeBind( const char *_prg, const char *_cmd, bool _allowdefault, co
 	protocol5 = "";
 }
 
-KMimeType* KMimeType::getMagicMimeType( const char *_filename )
+KMimeType* KMimeType::getMagicMimeType( const char *_url )
 {
     // Just for speedup, because KURL is slow
-    if ( strncmp( _filename, "file:/", 6 ) == 0 || _filename[0] == '/' )
+    if ( strncmp( _url, "file:/", 6 ) == 0 || _url[0] == '/' )
     {
-	KURL u( _filename );
+	KURL u( _url );
 	// Not a tar file ?
 	if ( !u.hasSubProtocol() )
 	{
 	    KMimeMagicResult* result = KMimeType::findFileType( u.path() );
 
+<<<<<<< kbind.cpp
+	    printf("Content=%s Accuracy=%d '%s'\n", (const char *)result->getContent(), result->getAccuracy(),_url);
+	    
+	    // Is it a directory or dont we know anything about it ?
+	    if ( result->getContent() == 0L || strcmp( "application/x-directory", result->getContent() ) == 0 ) 
+		/* strcmp( "application/x-kdelnk", result->getContent() ) == 0 ) */
+		return KMimeType::findType( _url );
+=======
 	    // Is it a directory or dont we know anything about it, or ist it a *.kdelnk file ?
 	    if ( result->getContent() == 0L || strcmp( "application/x-directory", result->getContent() ) == 0 ||
 		 strcmp( "application/x-kdelnk", result->getContent() ) == 0 )
 		return KMimeType::findType( _filename );
+>>>>>>> 1.19
 	    
 	    printf("Content=%s Accuracy=%d\n", (const char *)result->getContent(), result->getAccuracy());
 
@@ -1730,9 +1773,10 @@ KMimeType* KMimeType::getMagicMimeType( const char *_filename )
 		if ( type )
 		    return type;
 	    }
-	    KMimeType *type = KMimeType::findType( _filename );
+	    // Try the usual way
+	    KMimeType *type = KMimeType::findType( _url );
 	    // Perhaps we should better listen to the magic :-)
-	    if (( type == 0L || type->isDefault() ) && result->getContent() != 0L && result->getAccuracy() >= 30 )
+	    if ( ( type == 0L || type->isDefault() ) && result->getContent() != 0L && result->getAccuracy() >= 30 )
 	    {
 		KMimeType *type = KMimeType::findByName( result->getContent() );
 		// Do we know this mime type ?
@@ -1742,12 +1786,12 @@ KMimeType* KMimeType::getMagicMimeType( const char *_filename )
 	}
     }
     
-    return KMimeType::findType( _filename );
+    return KMimeType::findType( _url );
 }
 
-const char* KMimeType::getPixmapFileStatic( const char *_filename )
+const char* KMimeType::getPixmapFileStatic( const char *_url )
 {
-    return KMimeType::getMagicMimeType( _filename )->getPixmapFile( _filename );
+    return KMimeType::getMagicMimeType( _url )->getPixmapFile( _url );
 }
 
 void KMimeType::initKMimeMagic()

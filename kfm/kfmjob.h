@@ -34,25 +34,25 @@ public slots:
       is called once for every file in the directory.
       */
     void slotNewDirEntry( int _id, KIODirectoryEntry * _entry );
-    void slotError( const char *_text );
+    void slotError( int _kioerror, const char *_text );
     void slotFinished( int _id );
-    void slotDirHTMLData( const char *_data );
-    void slotData( const char* _data );
+    void slotDirHTMLData( const char *_data, int _len );
+    void slotData( const char* _data, int _len );
     void slotMimeType( const char *_type );
     void slotRedirection( const char *_url );
     void slotInfo( const char *_text );
    
 signals:
-    void data( const char *_text );
+    void data( const char *_text, int _len );
     void newDirEntry( KIODirectoryEntry *e );
     void finished();
     void mimeType( const char *_type );
-    void error( const char *_text );
+    void error( int _kioerror, const char *_text );
     void info( const char *_text );
     
 protected:
     void openFile();
-    void testMimeType( const char *_data );
+    void testMimeType( const char *_data, int _len );
     
     KIOJob *job;
     FILE *f;

@@ -50,7 +50,7 @@ KFMExec::KFMExec()
     connect( job, SIGNAL( mimeType( const char* ) ), this, SLOT( slotMimeType( const char* ) ) );
 }
 
-void KFMExec::openURL( const char *_url, bool _reload )
+void KFMExec::openURL( const char *_url  )
 {
     debugT("Interested in %s\n", _url );
     
@@ -86,7 +86,7 @@ void KFMExec::openURL( const char *_url, bool _reload )
 		if ( !u2.isEmpty() )
 		{
 		    // It is a link and we have new URL => Recursion with the new URL
-		    openURL( u2, _reload );
+		    openURL( u2  );
 		    return;
 		}
 		else
@@ -104,35 +104,11 @@ void KFMExec::openURL( const char *_url, bool _reload )
     
     // Do we know that it is !really! a file ?
     // This gives us some speedup on local hard disks.
-    if ( KIOServer::isDir( _url ) == 0 )
+    if ( KIOServer::isDir( _url ) == 0 && !u.hasSubProtocol() && strcmp( u.protocol(), "file" ) == 0 )
     {    
-	// A HACK
-	// We must support plugin protocols here!
-	// Do we try to open a tar file?
-	KMimeType *typ = KMimeType::findType( _url );
-	if ( strcmp( typ->getMimeType(), "application/tar" ) == 0L )
-	{
-	    // We change the destination on the fly
-	    tryURL = _url;
-	    tryURL += "#tar:/";
-	}
-	// HTML stuff is handled by us
-	else if ( strcmp( typ->getMimeType(), "text/html" ) == 0L )
-	{
-	    tryURL = _url;
-	}
-	else
-	{
-	    printf("EXEC MIMETYPE\n");
-	    // Can we run some default binding ?
-	    if ( KMimeBind::runBinding( _url ) )
-	    {
-		slotSetDone();
-		return;
-	    }
-	    else // Ok, lets find out wether it is perhaps HTML
-		tryURL = _url;
-	}
+	tryURL = openLocalURL( u.path() );
+	if ( tryURL.isEmpty() )
+	    return;
     }
     // Do we really know that it is a directory ?
     else if ( KIOServer::isDir( _url ) == 1 )
@@ -148,7 +124,8 @@ void KFMExec::openURL( const char *_url, bool _reload )
 	// We try to load this URL now
 	tryURL = _url;
     
-    job->browse( tryURL, _reload );
+    // Find out what to do with this URL.
+    job->browse( tryURL, false );
 
     // Show the user that we are doing something, since it may take
     // us some time.
@@ -198,7 +175,37 @@ void KFMExec::slotMimeType( const char *_type )
     // Stop browsing. We need an application
     job->stop();
 
-    if ( _type == 0L || strcmp( _type, "text/html" ) != 0L )
+    // GZIP
+    if ( _type && strcmp( _type, "application/x-gzip" ) == 0L )
+    {
+	job->stop();
+	tryURL += "#gzip:/";
+	openURL( tryURL );
+    }
+    // TAR
+    else if ( _type && strcmp( _type, "application/x-tar" ) == 0L )
+    {
+	// Is this tar file perhaps hosted in a gzipped file ?
+	KURL u( tryURL );
+	// ... then we already have a 'gzip' subprotocol
+	if ( u.hasSubProtocol() )
+	{
+	    KURL u2( u.nestedURL() );
+	    if ( strcmp( u2.protocol(), "gzip" ) == 0 )
+	    {
+		// Remove the 'gzip' protocol. It will only slow down the process,
+		// since two subprotocols '#gzip:/#tar:/' are not very fast
+		// right now.
+		tryURL = u.parentURL();
+	    }
+	}
+	
+	job->stop();
+	tryURL += "#tar:/";
+	openURL( tryURL );
+    }
+    // No HTML ?
+    else if ( _type == 0L || strcmp( _type, "text/html" ) != 0L )
     {
 	// Try to run the default binding on the URL since we
 	// know that it is a real file ( directories have no
@@ -233,6 +240,7 @@ void KFMExec::slotMimeType( const char *_type )
 	    KMimeBind::runCmd( cmd.data() );
 	}
     }
+    // It is HTML
     else
     {
 	// Ok, lets open a new window
@@ -252,7 +260,76 @@ void KFMExec::slotSetDone()
 	job->stop();
     bDone = TRUE;
 }
+
+QString KFMExec::openLocalURL( const char *_filename )
+{
+    QString tryURL;
     
+    KMimeType *typ = KMimeType::getMagicMimeType( _filename );
+    debugT("URL='%s' Type: '%s'\n",_filename,typ->getMimeType());
+    // A HACK
+    // We must support plugin protocols here!
+    // Do we try to open a tar file?
+    // tar files ( zipped ones ) can be recognized by extension very fast
+    QString tmp = _filename;
+    if ( tmp.right(4) == ".tgz" || tmp.right(7) == ".tar.gz" )
+    {
+	// We change the destination on the fly
+	tryURL = "file:";
+	tryURL += _filename;
+	tryURL += "#tar:/";
+    }	
+    // Zipped file
+    else if ( strcmp( typ->getMimeType(), "application/x-gzip" ) == 0L )
+    {
+	// We change the destination on the fly
+	tryURL = "file:";
+	tryURL += _filename;
+	tryURL += "#gzip:/";
+    }
+    // Uncompressed tar file
+    else if ( /* tmp.right(4) == ".tgz" || tmp.right(4) == ".tar" || tmp.right(7) == ".tar.gz" 
+	      || */ ( typ && strcmp( typ->getMimeType(), "application/x-tar" ) == 0L ) )
+    {
+	// We change the destination on the fly
+	tryURL = "file:";
+	tryURL = _filename;
+	tryURL += "#tar:/";
+    }	
+    // HTML stuff is handled by us
+    else if ( strcmp( typ->getMimeType(), "text/html" ) == 0L )
+    {
+	tryURL = "file:";
+	tryURL += _filename;
+    }
+    // Executables
+    else if ( strcmp( typ->getMimeType(), "application/x-executable" ) == 0L ||
+	      strcmp( typ->getMimeType(), "application/x-shellscript" ) == 0L )
+    {
+	KMimeBind::runCmd( _filename );
+	// No URL left since we have done the job
+	// => return an empty string
+	return QString();
+    }
+    else
+    {
+	debugT("EXEC MIMETYPE\n");
+	// Execute the best matching binding for this URL.
+	QString u = "file:";
+	u += _filename;
+	if ( typ->run( u ) )
+	    // No URL left since we have done the job
+	    // => return an empty string
+	    return QString();
+
+	// We could not execute the mimetype
+	tryURL = "file:";
+	tryURL += _filename;
+    }
+    
+    return tryURL;
+}
+
 KFMExec::~KFMExec()
 {
     delete job;

@@ -116,7 +116,6 @@ void $mod\::readEvent( KSocket * )
     if ( n + cBody == bodyLen )
     {
 	pBody[bodyLen] = 0;
-	printf(">>'%s'\\n",pBody);
 	bHeader = TRUE;
 	parse( pBody, bodyLen );
 	return;
@@ -389,6 +388,24 @@ sub printClientParser
     }
     print $OUT " );\n";
 
+    # Free all allocated memory
+
+    @param = split( /,/, $param );
+    for $i (0..$#param)
+    {
+	$_ = @param[$i];
+	/(\w*)( |@)(\w*)/ || die "Syntax error in parameter '$_'\n";
+	( testType( $1 ) == 1 ) || die "Unknown type '$1'\n";
+	if ( $1 eq "mem" )
+        {
+	    print $OUT "\tfree( (void*)$3.data );\n";
+        }  
+	elsif ( $1 eq "string" )
+        {
+	    print $OUT "\tfree( (void*)$3 );\n";
+        }  
+    }
+
     print $OUT "}\n\n";
 }
 
@@ -566,7 +583,6 @@ void $mod\::readEvent( KSocket *_sock )
     if ( n + cBody == bodyLen )
     {
 	pBody[bodyLen] = 0;
-	printf(">>'%s'\\n",pBody);
 	bHeader = TRUE;
 	parse( pBody, bodyLen );
 	return;
@@ -811,6 +827,22 @@ sub printServerParser
     }
     print $OUT " );\n";
 
+    @param = split( /,/, $param );
+    for $i (0..$#param)
+    {
+	$_ = @param[$i];
+	/(\w*)( |@)(\w*)/ || die "Syntax error in parameter '$_'\n";
+	( testType( $1 ) == 1 ) || die "Unknown type '$1'\n";
+	if ( $1 eq "mem" )
+        {
+	    print $OUT "\tfree( (void*)$3.data );\n";
+        }  
+	elsif ( $1 eq "string" )
+        {
+	    print $OUT "\tfree( (void*)$3 );\n";
+        }  
+    }
+
     print $OUT "}\n\n";
 }
 
@@ -896,6 +928,10 @@ sub cppPrintType
     {
 	print $OUT "const char*";
     }
+    elsif ( $type eq "mem" )
+    {
+	print $OUT "IPCMemory";
+    }
     elsif ( $type eq "hash" )
     {
 	print $OUT "hash*";
@@ -934,7 +970,7 @@ sub testType
 {
     my $p = shift;
     $_ = $p;
-    if ( /^void$|^string$|^hash$|^int$|^double$|^bool$/ ) { 1; } else { 0; }
+    if ( /^void$|^string$|^mem$|^hash$|^int$|^double$|^bool$/ ) { 1; } else { 0; }
 }
 
 # The Main Parser

@@ -17,6 +17,7 @@
 #include <qfontmet.h>
 #include <qmsgbox.h>
 #include <Kconfig.h>
+#include <klocale.h>
 
 #include "kfmman.h"
 #include "xview.h"
@@ -24,8 +25,7 @@
 #include <config-kfm.h>
 #include "kmsgwin.h"
 #include "kfmdlg.h"
-
-#include <klocale.h>
+#include "kfmexec.h"
 
 // A HACK
 QString HTMLBuffer;
@@ -44,11 +44,11 @@ KFMManager::KFMManager( KfmView *_v )
 
     files.setAutoDelete( true );
     job = new KFMJob;
-    connect( job, SIGNAL( error( const char* ) ), this, SLOT( slotError( const char* ) ) );
+    connect( job, SIGNAL( error( int, const char* ) ), this, SLOT( slotError( int, const char* ) ) );
     connect( job, SIGNAL( newDirEntry( KIODirectoryEntry* ) ),
 	     this, SLOT( slotNewDirEntry( KIODirectoryEntry* ) ) );
     connect( job, SIGNAL( finished() ), this, SLOT( slotFinished() ) );
-    connect( job, SIGNAL( data( const char * ) ), this, SLOT( slotData( const char * ) ) );
+    connect( job, SIGNAL( data( const char *, int ) ), this, SLOT( slotData( const char *, int ) ) );
     connect( job, SIGNAL( mimeType( const char* ) ), this, SLOT( slotMimeType( const char* ) ) );
     connect( job, SIGNAL( info( const char* ) ), this, SLOT( slotInfo( const char* ) ) );
 }
@@ -152,7 +152,25 @@ bool KFMManager::eventFilter( QObject *ob, QEvent *ev )
     
 bool KFMManager::openURL( const char *_url, bool _reload )
 {
-    debugT("Changing to ftp %s\n", _url );
+    // By Default we display everything at the moment we
+    // get it => now buffering of HTML code
+    bBufferPage = FALSE;
+    
+    // Used to store the modified URL
+    QString tmpurl;
+    // Is the URL a local file ?
+    if ( *_url == '/' )
+    {
+	// Prepend the "file" protocol
+	tmpurl = "file:";
+	tmpurl += _url;
+	_url = tmpurl.data();
+    }
+    
+    // Store the parameter for recursive function calls
+    bReload = _reload;
+    
+    debugT("Changing to URL %s\n", _url );
     
     KURL u( _url );
     if ( u.isMalformed() )
@@ -242,34 +260,39 @@ bool KFMManager::openURL( const char *_url, bool _reload )
     // the best matching binding
     if ( KIOServer::isDir( _url ) == 0 && strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
     {    
-	debugT("It is for shure a FILE\n");
-	// A HACK
-	// We must support plugin protocols here!
-	// Do we try to open a tar file? We try to figure this
-	// out by looking at the extension only.
+	tryURL = KFMExec::openLocalURL( u.path() );
+	if ( tryURL.isEmpty() )
+	    return false;
+	/*
 	KMimeType *typ = KMimeType::getMagicMimeType( u.path() );
 	printf("URL='%s' Type: '%s'\n",u.path(),typ->getMimeType());
 	// A HACK
-	// tar files ( zipped ones ) can only be recognized by file extension.
+	// We must support plugin protocols here!
+	// Do we try to open a tar file?
+	// tar files ( zipped ones ) can be recognized by extension very fast
 	QString tmp = _url;
-	if ( tmp.right(4) == ".tgz" || tmp.right(4) == ".tar" || tmp.right(7) == ".tar.gz" )
+	if ( tmp.right(4) == ".tgz" || tmp.right(7) == ".tar.gz" )
 	{
 	    // We change the destination on the fly
 	    tryURL = _url;
 	    tryURL += "#tar:/";
 	}	
-	// This is the smarter way to find out about tar files
-	// HACK: This just looks at the extension, too
-	//       Use KMimeMagic
-	else if ( strcmp( typ->getMimeType(), "application/x-tar" ) == 0L )
+	// Zipped file
+	else if ( strcmp( typ->getMimeType(), "application/x-gzip" ) == 0L )
+	{
+	    // We change the destination on the fly
+	    tryURL = _url;
+	    tryURL += "#gzip:/";
+	}
+	// Uncompressed tar file
+	else if ( tmp.right(4) == ".tgz" || tmp.right(4) == ".tar" || tmp.right(7) == ".tar.gz" 
+	     || ( typ && strcmp( typ->getMimeType(), "application/x-tar" ) == 0L ) )
 	{
 	    // We change the destination on the fly
 	    tryURL = _url;
 	    tryURL += "#tar:/";
-	}
+	}	
 	// HTML stuff is handled by us
-	// HACK: This just looks at the extension, too
-	//       Use KMimeMagic
 	else if ( strcmp( typ->getMimeType(), "text/html" ) == 0L )
 	{
 	    tryURL = _url;
@@ -285,14 +308,10 @@ bool KFMManager::openURL( const char *_url, bool _reload )
 	{
 	    printf("EXEC MIMETYPE\n");
 	    // Execute the best matching binding for this URL.
-	    typ->run( _url );
-	    return false;
-	    // Can we run some default binding ?
-	    // if ( KMimeBind::runBinding( _url ) )
-	    // return false;
-	    //	    else // Ok, lets find out wether it is a directory or HTML
-	    //tryURL = _url;
-	}
+	    if ( typ->run( _url ) )
+		return false;
+	    tryURL = _url;
+	} */
     }
     else
 	// We try to load this URL now
@@ -321,7 +340,7 @@ bool KFMManager::openURL( const char *_url, bool _reload )
     return true;
 }
 
-void KFMManager::slotError( const char * )
+void KFMManager::slotError( int, const char * )
 {
     view->getGUI()->slotRemoveWaitingWidget( view );
 }
@@ -369,12 +388,12 @@ void KFMManager::writeBodyTag()
 	else
 	    d += ".directory";
     
-	printf("Trying .directory\n");
+	debugT("Trying .directory\n");
     
 	QFile f( d.data() );
 	if ( f.open( IO_ReadOnly ) )
 	{
-	    printf("Opened .directory\n");
+	    debugT("Opened .directory\n");
 	    
 	    QTextStream pstream( &f );
 	    KConfig config( &pstream );
@@ -401,31 +420,24 @@ void KFMManager::writeBodyTag()
 		    bg_image += tmp.data();
 		}
 	}
-	
-	printf("Back again\n");
     }
 
     view->write( "<body" );
 
-    printf("2\n");
-
     if ( !text_color.isNull() )
     {
-	printf("3\n");
 	view->write(" text=" );
 	view->write( text_color.data() );
     }
-    printf("4\n");
+
     if ( !link_color.isNull() )
     {
-	printf("5\n");
 	view->write(" link=" );
 	view->write( link_color.data() );
     }
-    printf("6\n");
+
     if ( !bg_image.isNull() )
     {
-	printf("7\n");
 	KURL u2( u, bg_image.data() );
 	view->write(" background=\"" );
 	QString t = u2.url();
@@ -434,11 +446,10 @@ void KFMManager::writeBodyTag()
     }
     else if ( !bg_color.isNull() )
     {
-	printf("8\n");
 	view->write(" bgcolor=" );
 	view->write( bg_color.data() );
     }
-    printf("9\n");
+
     view->write( ">" );
 }
 
@@ -536,7 +547,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	view->write( "\"><center><img border=0 src=\"file:" );
 
 	view->write( KMimeType::getPixmapFileStatic( filename ) );
-		
+
 	view->write( "\"><br>" );
 	if ( s->getAccess() && s->getAccess()[0] == 'l' )
 	    view->write("<i>");
@@ -605,7 +616,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
     }
 }
 
-void KFMManager::slotData( const char *_text )
+void KFMManager::slotData( const char *_text, int )
 {
     pageBuffer += _text;
     
@@ -627,9 +638,7 @@ void KFMManager::slotData( const char *_text )
     
 	char c = HTMLBuffer[i + 1];
 	HTMLBuffer[i + 1] = 0;
-	printf(">>%s",HTMLBuffer.data());
 	view->write( HTMLBuffer );
-	printf("--------\n");
 	HTMLBuffer[i + 1] = c;
 	memmove( HTMLBuffer.data(), HTMLBuffer.data() + i + 1, l - i );
     } while( 1 );
@@ -651,7 +660,40 @@ void KFMManager::slotInfo( const char *_text )
 
 void KFMManager::slotMimeType( const char *_type )
 {
-    if ( _type == 0L || strcmp( _type, "text/html" ) != 0L )
+    // Recursion for special mime types which are
+    // handled by KFM itself
+
+    // GZIP
+    if ( _type &&  strcmp( _type, "application/x-gzip" ) == 0L )
+    {
+	job->stop();
+	tryURL += "#gzip:/";
+	openURL( tryURL, bReload );
+    }
+    // TAR
+    else if ( _type && strcmp( _type, "application/x-tar" ) == 0L )
+    {
+	// Is this tar file perhaps hosted in a gzipped file ?
+	KURL u( tryURL );
+	// ... then we already have a 'gzip' subprotocol
+	if ( u.hasSubProtocol() )
+	{
+	    KURL u2( u.nestedURL() );
+	    if ( strcmp( u2.protocol(), "gzip" ) == 0 )
+	    {
+		// Remove the 'gzip' protocol. It will only slow down the process,
+		// since two subprotocols '#gzip:/#tar:/' are not very fast
+		// right now.
+		tryURL = u.parentURL();
+	    }
+	}
+	
+	job->stop();
+	tryURL += "#tar:/";
+	openURL( tryURL, bReload );
+    }
+    // No HTML ?
+    else if ( _type == 0L || strcmp( _type, "text/html" ) != 0L )
     {
 	view->getGUI()->slotRemoveWaitingWidget( view );
 
@@ -717,9 +759,15 @@ void KFMManager::slotMimeType( const char *_type )
 	// Lets get the directory
 	KURL u( url );
 	QString u2 = u.directoryURL();
-	// Initialize the HTML widget
-	view->begin( u2 );
-	view->parse();
+	// Initialize the HTML widget,
+	// but only if it is NOT a local file
+	if ( u.hasSubProtocol() || strcmp( u.protocol(), "file" ) == 0 )
+	{
+	    bBufferPage = TRUE;
+	    view->begin( u2 );
+	    view->parse();
+	}
+
     }
 }
 
@@ -732,13 +780,21 @@ void KFMManager::slotFinished()
     // We retrieved a ready to go HTML page ?
     if ( bHTML )
     {
-	// A HACK
-	// view->write( HTMLBuffer );
-	if ( !HTMLBuffer.isEmpty() )
-	    slotData( "\n" );
+	KURL u( url );
+	// Did we buffer the complete HTML stuff ?
+	if ( bBufferPage )
+	{
+	    // Display it now
+	    QString u2 = u.directoryURL();
+	    view->begin( u2 );
+	    view->write( pageBuffer );
+	    view->parse();
+	}
+	// Empty the line buffer
+	else if ( !HTMLBuffer.isEmpty() )
+	    slotData( "\n", 1 );
 	view->end();
 	// Checkin this page in the cache
-	KURL u( url );
 	if ( !u.hasSubProtocol() && ( strcmp( u.protocol(), "http" ) == 0 ||
 				      strcmp( u.protocol(), "cgi" ) == 0 ) )
 	     view->getHTMLCache()->slotCheckinURL( url, pageBuffer );

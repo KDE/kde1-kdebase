@@ -112,7 +112,7 @@ int main( int argc, char ** argv )
     if ( f2 == 0L )
     {
 	QString cmd;
-	cmd.sprintf( "cp %s/share/apps/kfm/desktop %s/.kde/desktop", kapp->kdedir().data(), getenv( "HOME" ) );
+	cmd.sprintf( "cp %s/share/config/desktop %s/.kde/desktop", kapp->kdedir().data(), getenv( "HOME" ) );
 	system( cmd.data() );
     }
     else

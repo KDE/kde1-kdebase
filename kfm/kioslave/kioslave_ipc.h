@@ -31,7 +31,7 @@ public slots:
 public slots:
 	void dirEntry(const char* _dir, const char* _name, bool _isDir, int _size, const char* _date, const char* _access, const char* _owner, const char* _group);
 public slots:
-	void data(const char* _text);
+	void data(IPCMemory _text);
 public slots:
 	void flushDir(const char* _dir);
 public slots:

@@ -98,7 +98,7 @@
 
 # XPM icons (Greg Roelofs, newt@uchicago.edu)
 # ideally should go into "images", but entries below would tag XPM as C source
-0	string		/*\ XPM		image/x-xbm	7bit
+0	string		/*\ XPM		image/x-xpm	7bit
 
 # this first will upset you if you're a PL/1 shop... (are there any left?)
 # in which case rm it; ascmagic will catch real C programs
@@ -288,8 +288,13 @@
 0	string		\<!--		text/html
 0	string		\<h1		text/html
 0	string		\<H1		text/html
+<<<<<<< magic
+0	string		\<!doctype\ HTML	text/html
+0	string		\<!DOCTYPE\ HTML	text/html
+=======
 0	string		\<!doctype\ HTML		text/html
 0	string		\<!DOCTYPE\ HTML		text/html
+>>>>>>> 1.5
 
 #------------------------------------------------------------------------------
 # images:  file(1) magic for image formats (see also "c-lang" for XPM bitmaps)
@@ -513,4 +518,9 @@
 0		string			MZ				application/x-dosexec
 #
 # KDE
+<<<<<<< magic
+0		string	[KDE\ Desktop\ Entry]	application/x-kdelnk
+0		string	\#\ KDE\ Config\ File	application/x-kdelnk
+=======
 0		string	\# KDE\ Config\ file	application/x-kdelnk
+>>>>>>> 1.5

@@ -153,7 +153,19 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 {
     QString path = properties->getKURL()->path();
     KURL::decodeURL( path );
-    QString filename = properties->getKURL()->filename();
+
+    // Extract the directories name without path
+    QString filename;
+    QString tmp2 = properties->getKURL()->path();
+    if ( tmp2.right(1) == "/" )
+	tmp2.truncate( tmp2.length() - 1 );
+    int i = tmp2.findRev( "/" );
+    // Is is not the root directory ?
+    if ( i != -1 )
+	filename = tmp2.mid( i + 1, tmp2.length() );
+    else
+	filename = "/";
+    
     KURL::decodeURL( filename );
     
     QString tmp = path.data();
@@ -181,7 +193,8 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     name = new QLineEdit( this );
     name->setGeometry( 10, y, 200, 30 );
     name->setText( filename );
-    if ( isTrash )
+    // Dont rename trash or root directory
+    if ( isTrash || filename == "/" )
 	name->setEnabled( false );
     oldName = filename;
     oldName.detach();
@@ -334,42 +347,56 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : Props
     l = new QLabel( klocale->translate("Access permissions"), this );
     l->setGeometry( 10, y, 200, 20 );
     y += 25;
-    permUR = new QCheckBox( klocale->translate("User Read"), this );
-    permUR->setGeometry( 10, y, 100, 30 );
+    l = new QLabel( klocale->translate("Read"), this );
+    l->setGeometry( 90, y, 80, 20 );
+    l = new QLabel( klocale->translate("Write"), this );
+    l->setGeometry( 170, y, 80, 20 );
+    l = new QLabel( klocale->translate("Exec"), this );
+    l->setGeometry( 250, y, 80, 20 );
+    y += 25;
+
+    l = new QLabel( klocale->translate("User"), this );
+    l->setGeometry( 10, y, 80, 20 );
+    permUR = new QCheckBox( "", this );
+    permUR->setGeometry( 90, y, 100, 30 );
     permUR->setChecked( ( buff.st_mode & S_IRUSR ) == S_IRUSR );
-    permUW = new QCheckBox( klocale->translate("User Write"), this );
-    permUW->setGeometry( 110, y, 100, 30 );
+    permUW = new QCheckBox( "", this );
+    permUW->setGeometry( 170, y, 100, 30 );
     permUW->setChecked( ( buff.st_mode & S_IWUSR ) == S_IWUSR );
-    permUX = new QCheckBox( klocale->translate("User Exec"), this );
-    permUX->setGeometry( 210, y, 100, 30 );
+    permUX = new QCheckBox( "", this );
+    permUX->setGeometry( 250, y, 100, 30 );
     permUX->setChecked( ( buff.st_mode & S_IXUSR ) == S_IXUSR );
-    permUS = new QCheckBox( klocale->translate("Set UID"), this );
+    permUS = new QCheckBox( klocale->translate("UID"), this );
     permUS->setGeometry( 310, y, 100, 30 );
     permUS->setChecked( ( buff.st_mode & S_ISUID ) == S_ISUID );      
     y += 35;
 
-    permGR = new QCheckBox( klocale->translate("Group Read"), this );
-    permGR->setGeometry( 10, y, 100, 30 );
+    l = new QLabel( klocale->translate("Group"), this );
+    l->setGeometry( 10, y, 80, 20 );
+    permGR = new QCheckBox( "", this );
+    permGR->setGeometry( 90, y, 100, 30 );
     permGR->setChecked( ( buff.st_mode & S_IRGRP ) == S_IRGRP );
-    permGW = new QCheckBox( klocale->translate("Group Write"), this );
-    permGW->setGeometry( 110, y, 100, 30 );
+    permGW = new QCheckBox( "", this );
+    permGW->setGeometry( 170, y, 100, 30 );
     permGW->setChecked( ( buff.st_mode & S_IWGRP ) == S_IWGRP );
-    permGX = new QCheckBox( klocale->translate("Group Exec"), this );
-    permGX->setGeometry( 210, y, 100, 30 );
+    permGX = new QCheckBox( "", this );
+    permGX->setGeometry( 250, y, 100, 30 );
     permGX->setChecked( ( buff.st_mode & S_IXGRP ) == S_IXGRP );
-    permGS = new QCheckBox( klocale->translate("Set GID "), this );
+    permGS = new QCheckBox( klocale->translate("GID "), this );
     permGS->setGeometry( 310, y, 100, 30 );
     permGS->setChecked( ( buff.st_mode & S_ISGID ) == S_ISGID );   
 
     y += 35;
-    permOR = new QCheckBox( klocale->translate("Others Read"), this );
-    permOR->setGeometry( 10, y, 100, 30 );
+    l = new QLabel( klocale->translate("Others"), this );
+    l->setGeometry( 10, y, 80, 20 );
+    permOR = new QCheckBox( "", this );
+    permOR->setGeometry( 90, y, 100, 30 );
     permOR->setChecked( ( buff.st_mode & S_IROTH ) == S_IROTH );
-    permOW = new QCheckBox( klocale->translate("Others Write"), this );
-    permOW->setGeometry( 110, y, 100, 30 );
+    permOW = new QCheckBox( "", this );
+    permOW->setGeometry( 170, y, 100, 30 );
     permOW->setChecked( ( buff.st_mode & S_IWOTH ) == S_IWOTH );
-    permOX = new QCheckBox( klocale->translate("Others Exec"), this );
-    permOX->setGeometry( 210, y, 100, 30 );
+    permOX = new QCheckBox( "", this );
+    permOX->setGeometry( 250, y, 100, 30 );
     permOX->setChecked( ( buff.st_mode & S_IXOTH ) == S_IXOTH );
     permOS = new QCheckBox( klocale->translate("Sticky"), this );
     permOS->setGeometry( 310, y, 100, 30 );
@@ -545,7 +572,7 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     if ( !termStr.isNull() )
 	terminalCheck->setChecked( termStr == "1" );
     if ( iconStr.isNull() )
-	iconStr = KMimeType::getExecutablePixmap();
+	iconStr = KMimeType::getDefaultPixmap();
     
     // Load all pixmaps files in the combobox
     QDir d( KMimeType::getIconPath() );
@@ -922,35 +949,30 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
 	wallStr = config.readEntry( "BgImage" );
 	iconStr = config.readEntry( "Icon" );
     }
-    
-    if ( iconStr.isNull() )
-	iconStr = KMimeType::getFolderPixmap();
-    
+        
     // Load all pixmaps files in the combobox
     QDir d( KMimeType::getIconPath() );
     const QFileInfoList *list = d.entryInfoList();
     QFileInfoListIterator it( *list );      // create list iterator
     QFileInfo *fi;                          // pointer for traversing
 
-    int index = -1;
-    int i = 0;  
+    // Insert default value
+    iconBox->insertItem( klocale->translate( "(Default)" ), 0 );
+
+    // Loop over all pixmaps
+    int index = 0;
+    int i = 1;  
     while ( ( fi = it.current() ) )
     {
 	if ( fi->fileName() != ".." && fi->fileName() != "." )
 	{
 	    // Is this the currently selected icon ?
-	    if ( strcmp( iconStr.data(), fi->fileName().data() ) == 0 )
+	    if ( !iconStr.isEmpty() && strcmp( iconStr.data(), fi->fileName().data() ) == 0 )
 		index = i;
 	    iconBox->insertItem( fi->fileName().data(), i );
 	    i++;
 	}
 	++it;                               // goto next list element
-    }
-    // The currently selected icon is not in the list .... strange ... ? Lets add it.
-    if ( index == -1 && iconStr.length() > 0 )
-    {
-	iconBox->insertItem( iconStr.data(), i );
-	index = i;
     }
     // Select the current icon
     iconBox->setCurrentItem( index );
@@ -965,9 +987,9 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
     list = d2.entryInfoList();
     QFileInfoListIterator it2( *list );      // create list iterator
 
-    wallBox->insertItem(  klocale->translate("(None)"), 0 );
+    wallBox->insertItem(  klocale->translate("(Default)"), 0 );
     
-    index = -1;
+    index = 0;
     i = 1;  
     while ( ( fi = it2.current() ) )
     {
@@ -981,15 +1003,9 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
 	}
 	++it2;                               // goto next list element
     }
-    // The currently selected image is not in the list .... strange ... ? Lets add it.
-    if ( index == -1 && wallStr.length() > 0 )
-    {
-	wallBox->insertItem( wallStr.data(), i );
-	index = i;
-    }
     // Select the current icon
-    if ( index != -1 )
-	wallBox->setCurrentItem( index );
+    wallBox->setCurrentItem( index );
+
     drawWallPaper();
 
     connect( wallBox, SIGNAL( activated( int ) ), this, SLOT( slotWallPaperChanged( int ) ) );
@@ -1044,7 +1060,7 @@ void DirPropsPage::applyChanges()
     int i = wallBox->currentItem();
     if ( i != -1 )
     {
-	if ( strcmp( wallBox->text( i ),  klocale->translate("(None)") ) == 0 )
+	if ( strcmp( wallBox->text( i ),  klocale->translate("(Default)") ) == 0 )
 	    config.writeEntry( "BgImage", "" );
 	else
 	    config.writeEntry( "BgImage", wallBox->text( i ) );
@@ -1052,8 +1068,13 @@ void DirPropsPage::applyChanges()
     
     i = iconBox->currentItem();
     if ( i != -1 )
-	config.writeEntry( "Icon", iconBox->text( i )  );
-
+    {
+	if ( strcmp( iconBox->text( i ),  klocale->translate("(Default)") ) == 0 )
+	    config.writeEntry( "Icon", "" );
+	else
+	    config.writeEntry( "Icon", iconBox->text( i )  );
+    }
+    
     config.sync();
     f.close();
 
@@ -1102,16 +1123,23 @@ void DirPropsPage::drawIcon()
 	return;
     }
     
-    const char *text = iconBox->text( i );
-    QString file = KMimeType::getIconPath();
-    file += "/";
-    file += text;
+    QString file;
+    // Default value ?
+    if ( i == 0 )
+	file = KMimeType::getPixmapFileStatic( properties->getKURL()->url() );
+    else
+    {
+	file = KMimeType::getIconPath();
+	file += "/";
+	file += iconBox->text( i );
+    }
     
     if ( file != pixmapFile )
     {
 	pixmapFile = file.data();
 	pixmapFile.detach();	
-	pixmap.load( file.data() );
+	if ( !pixmap.load( file.data() ) )
+	    warning("Could not load icon %s\n",file.data());
     }
     
     erase( 140, 20, 64, 64 );
@@ -1132,7 +1160,7 @@ void DirPropsPage::drawWallPaper()
     }
     
     const char *text = wallBox->text( i );
-    if ( strcmp( text, "(None)" ) == 0 )
+    if ( strcmp( text, klocale->translate( "(Default)" ) ) == 0 )
     {
 	erase( 140, 90, 128, 128 );
 	return;
@@ -1151,7 +1179,7 @@ void DirPropsPage::drawWallPaper()
     }
     
     if ( wallPixmap.isNull() )
-	debugT("Could not load\n");
+	warning("Could not load wallpaper %s\n",file.data());
     
     erase( 140, 90, 128, 128 );
     QPainter painter;

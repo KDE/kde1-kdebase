@@ -38,7 +38,7 @@ signals:
 private:
 	void parse_dirEntry( char *_data, int _len );
 signals:
-	void data(const char* _text);
+	void data(IPCMemory _text);
 private:
 	void parse_data( char *_data, int _len );
 signals:

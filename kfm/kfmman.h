@@ -71,9 +71,9 @@ public slots:
      */
     void slotDropMove();
 
-    void slotError( const char *_text );
+    void slotError( int _kioerror, const char *_text );
     void slotFinished();
-    void slotData( const char *_data );
+    void slotData( const char *_data, int _len );
     void slotMimeType( const char *_type );
     void slotInfo( const char *_text );
     
@@ -131,6 +131,12 @@ protected:
      * @see #tryURL
      */
     KFMJob *job;
+    /**
+     * This is the parameter passed to @ref #openURL. Sometimes we have to call
+     * this function recursively with another URL, but this parameter should stay
+     * the same. That is the reason why we have to store it here.
+     */
+    bool bReload;
     /**
      * The URL we are currenty trying to load.
      *
@@ -197,6 +203,12 @@ protected:
      * after it is entirely loaded.
      */
     QString pageBuffer;
+    /**
+     * If we know that we get the HTML stuff fast, we buffer the HTML code
+     * and write it to the widget in one write command. This flag indicates
+     * wether we want to do so.
+     */
+    bool bBufferPage;
 };
 
 #endif

@@ -350,7 +350,7 @@ void KfmView::slotPopupOpenWith()
 	cmd += "\"";
 	KURL file = s;    
 	
-	if ( strcmp( file.protocol(), "file" ) == 0L )
+	if ( strcmp( file.protocol(), "file" ) == 0L && !file.hasSubProtocol() )
 	{
 	    QString decoded( file.path() );
 	    KURL::decodeURL( decoded );
@@ -472,17 +472,27 @@ void KfmView::slotPopupDelete()
     // This function will emit a signal that causes us to redisplay the
     // contents of our directory if neccessary.
     KIOJob * job = new KIOJob;
-    char *s;
-    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
-      debugT("&&> '%s'\n",s);
     
+    // Is the user really shure ?
     bool ok = QMessageBox::query( klocale->translate("KFM Warning"), 
 				  klocale->translate("Dou you really want to delete the files?\n\nThere is no way to restore them"), 
 				  klocale->translate("Yes"), 
 				  klocale->translate("No") );
-    
     if ( ok )
-	job->del( popupFiles );
+    {
+	// Store the decoded URLs here.
+	QStrList list;
+	char *s;
+	for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
+	{
+	    // Decode the URL
+	    QString str( s );
+	    KURL::decodeURL( str );
+	    list.append( str );
+	}
+	
+	job->del( list );
+    }
 }
 
 void KfmView::slotPopupNewView()

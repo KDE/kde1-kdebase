@@ -99,7 +99,7 @@ public slots:
     void cancel();
     void start( int _pid );
     
-    void slotData( const char *_data );
+    void slotData( IPCMemory _mem );
     void fatalError( int _kioerror, const char* _url, int _errno );
     void msgResult( QWidget*, int );
     /// Called if the user closes the rename dialog.
@@ -117,7 +117,7 @@ public slots:
     void slotInfo( const char *_text );
     
 signals:
-    void data( const char *_data );
+    void data( const char *_data, int _len );
     void redirection( const char *_url );
     void mimeType( const char *_type );
     void info( const char *_text );
@@ -137,7 +137,7 @@ signals:
      */
     void finished( int _id );
 
-    void error( const char *_txt );
+    void error( int _kioerror, const char *_txt );
     
     /**
      * Notify signals indicate that some URLs contents has changed.

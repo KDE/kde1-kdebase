@@ -4,8 +4,7 @@
 #include <time.h>
 #include <sys/types.h>
 
-int
-SortedKProtocolDirEntry::compareItems( GCI i1, GCI i2)
+int SortedKProtocolDirEntry::compareItems( GCI i1, GCI i2)
 {
     KProtocolDirEntry *de1 = (KProtocolDirEntry *)i1;
     KProtocolDirEntry *de2 = (KProtocolDirEntry *)i2;
@@ -146,7 +145,6 @@ int KProtocolFILE::OpenDir( KURL *url )
     // Are we allows to respond with HTML ?
     if ( allowHTML )
     {
-	
 	// Try to open index.html
 	FILE *f;
 	QString t( path.data() );
@@ -157,6 +155,7 @@ int KProtocolFILE::OpenDir( KURL *url )
 		file = f;
 		return SUCCESS;
 	    }
+
 	// Try to open .kde.html
 	t = path.data();
 	t += ".kde.html";
@@ -178,6 +177,7 @@ int KProtocolFILE::OpenDir( KURL *url )
 
     dlist = new SortedKProtocolDirEntry();
     dlist->sortMode = sortMode;
+
     while ( ( ep = readdir( dp ) ) != 0L )
     {
     	QString name(ep->d_name);
@@ -283,7 +283,7 @@ void KProtocolFILE::EmitData( KIOSlaveIPC *_ipc )
 	if ( n > 0 )
 	{
 	    buffer[n] = 0;
-	    _ipc->data( buffer );
+	    _ipc->data( IPCMemory( buffer, n ) );
 	}
     }
 }

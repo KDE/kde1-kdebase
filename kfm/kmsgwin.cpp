@@ -18,7 +18,7 @@ KMsgWin::KMsgWin(QWidget *parent, const char *caption, const char *message, int 
 	
         QString ipath = kapp->kdedir();
 	ipath.detach();
-	ipath += "/share/icons/";
+	ipath += "/share/kfm/pics/";
         icons[0].load(ipath + "info.xpm");
         icons[1].load(ipath + "exclamation.xpm");
         icons[2].load(ipath + "stopsign.xpm");

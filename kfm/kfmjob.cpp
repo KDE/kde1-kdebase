@@ -12,6 +12,7 @@
 #include "kmsgwin.h"
 #include "kfmdlg.h"
 #include "kmimemagic.h"
+#include "kioslave/kio_errors.h"
 
 #include <klocale.h>
 
@@ -39,7 +40,7 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
 	delete job;	
     job = 0L;
 
-    dataBuffer = "";
+    // dataBuffer = "";
     
     // We are not shure yet
     isDir = FALSE;
@@ -81,16 +82,16 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
 	    url += "/"; 
 
 	// Lets try to load it as directory
-	printf("Loading DIRECTORY\n");    
+	debugT("Loading DIRECTORY\n");    
 	bFileLoad = FALSE;
 	job = new KIOJob;
 	job->setAutoDelete( FALSE );
 	job->display( false );
-	connect( job, SIGNAL( error( const char* ) ), this, SLOT( slotError( const char* ) ) );
+	connect( job, SIGNAL( error( int, const char* ) ), this, SLOT( slotError( int, const char* ) ) );
 	connect( job, SIGNAL( newDirEntry( int, KIODirectoryEntry* ) ),
 		 this, SLOT( slotNewDirEntry( int, KIODirectoryEntry* ) ) );
 	connect( job, SIGNAL( finished( int ) ), this, SLOT( slotFinished( int ) ) );
-	connect( job, SIGNAL( data( const char* ) ), this, SLOT( slotDirHTMLData( const char* ) ) );
+	connect( job, SIGNAL( data( const char*, int ) ), this, SLOT( slotDirHTMLData( const char*, int ) ) );
 	connect( job, SIGNAL( redirection( const char* ) ), this, SLOT( slotRedirection( const char* ) ) );
 	connect( job, SIGNAL( info( const char* ) ), this, SLOT( slotInfo( const char* ) ) );
 
@@ -105,7 +106,7 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
 
 void KFMJob::openFile()
 {
-    printf("OPEN FILE\n");
+    debugT("OPEN FILE\n");
     isDir = FALSE;
     
     // OK, we try to load the file
@@ -113,14 +114,16 @@ void KFMJob::openFile()
     job->setAutoDelete( FALSE );
     job->display( false );
     connect( job, SIGNAL( finished( int ) ), this, SLOT( slotFinished( int ) ) );
-    connect( job, SIGNAL( error( const char* ) ), this, SLOT( slotError( const char* ) ) );
-    connect( job, SIGNAL( data( const char* ) ), this, SLOT( slotData( const char* ) ) );
+    connect( job, SIGNAL( error( int, const char* ) ), this, SLOT( slotError( int, const char* ) ) );
+    connect( job, SIGNAL( data( const char*, int ) ), this, SLOT( slotData( const char*, int ) ) );
     connect( job, SIGNAL( mimeType( const char* ) ), this, SLOT( slotMimeType( const char* ) ) );
     connect( job, SIGNAL( redirection( const char* ) ), this, SLOT( slotRedirection( const char* ) ) );
     connect( job, SIGNAL( info( const char* ) ), this, SLOT( slotInfo( const char* ) ) );
     
-    // Delete the trailing / since we assume that the URL is a file
-    if ( url.right(1) == "/" )
+    // Delete the trailing / since we assume that the URL is a file.
+    // But dont delete the root '/', since for example "file:" is considered
+    // malformed.
+    if ( url.right(1) == "/" && url.right(2) != ":/" )
 	url = url.left( url.length() - 1 );
     
     bFileLoad = TRUE;
@@ -137,65 +140,84 @@ void KFMJob::slotInfo( const char *_text )
     emit info( _text );
 }
 
-void KFMJob::slotDirHTMLData( const char *_data )
+void KFMJob::slotDirHTMLData( const char *_data, int _len )
 {
+    // Did we already check the mimetype ?
     if ( !bCheckedMimeType )
     {
 	// This slot is called due to "job->list".
-	// If we get a call we can assume that the URL is indeed a directory.
+	// If we get a call we can assume that the URL is indeed a directory
+	// and directories are displayed using HTML.
 	isDir = TRUE;
+	// Tell our client about the mime type.
 	emit mimeType( "text/html" );
 	bCheckedMimeType = TRUE;
     }
     
-    emit data( _data );
+    emit data( _data, _len );
 }
 
-void KFMJob::slotError( const char *_text )
+void KFMJob::slotError( int _kioerror, const char *_text )
 {
+    // We tried something that the protocol did not
+    // support
+    if ( _kioerror == KIO_ERROR_NotPossible )
+    {
+	// Was the unsupported action perhaps some 'list' command ?
+	// Perhaps we tried to list a gzip file or something
+	// stupid like that ?
+	if ( !bFileLoad && !isDir )
+	{
+	    // Stop the running job, since it is nonsense
+	    disconnect( job, 0, this, 0 );
+	    job->setAutoDelete( TRUE );
+	    job = 0L;
+	    // Try to open as file
+	    openFile();
+	    return;
+	}
+    }
+
+    // Print an error
     QMessageBox::message( klocale->translate("KFM Error"),
 			  _text );
-    emit error( _text );
-    
-    /*
-    KMsgWin *m = new KMsgWin( 0L, klocale->translate("Error"), 
-			      _text, KMsgWin::EXCLAMATION, 
-			      klocale->translate("Close") );
-    m->exec(); */
+    // Tell our client about it
+    emit error( _kioerror, _text );
 }
 
 void KFMJob::slotNewDirEntry( int , KIODirectoryEntry * _entry )
 {
+    // Now we know that it is a directory
     isDir = TRUE;
     emit newDirEntry( _entry );
 }
 
 void KFMJob::slotMimeType( const char *_type )
 {
+    // Tell our client that the protocol knows about
+    // the mimetype. This is usually HTTP.
     bCheckedMimeType = TRUE;
     emit mimeType( _type );
 }
 
-void KFMJob::slotData( const char *_text )
+void KFMJob::slotData( const char *_text, int _len )
 {
     if ( !bCheckedMimeType )
     {
-	dataBuffer += _text;
-	if ( dataBuffer.length() )
-	    testMimeType( dataBuffer );
+	// dataBuffer += _text;
+	// if ( dataBuffer.length() )
+	    testMimeType( _text, _len );
 	return;
     }
     
-    emit data( _text );
+    emit data( _text, _len );
 }
 
-void KFMJob::testMimeType( const char *_text)
+void KFMJob::testMimeType( const char *_text, int _len )
 {
     bCheckedMimeType = TRUE;
     
-    debugT("SAMPLE:\n%s\n",_text);
-    
-    KMimeMagicResult *result = KMimeType::findBufferType( _text, strlen( _text ) );
+    KMimeMagicResult *result = KMimeType::findBufferType( _text, _len );
     debugT("RETURN '%s' '%i'\n",result->getContent().data(),result->getAccuracy() );
     
     if ( strcmp( "text/html", result->getContent() ) == 0 ) 
@@ -203,9 +225,9 @@ void KFMJob::testMimeType( const char *_text)
 	debugT("IS HTML\n");
 	isHTML = TRUE;
 	emit mimeType( "text/html" );
-	emit data( _text );
+	emit data( _text, _len );
     }
-    else if ( result->getAccuracy() > 40 )
+    else if ( result->getAccuracy() > 0 )
     {
 	emit mimeType( result->getContent() );
     }
@@ -238,9 +260,11 @@ void KFMJob::slotFinished( int )
 	// Did we check for the mime type already ?
 	if ( !bCheckedMimeType )
 	{
-	    testMimeType( dataBuffer );
+	    // Since we did not get any data ...
+	    emit mimeType( "application/x-zerosize" );
+	    //testMimeType( dataBuffer );
 	}
-    }
+    } 
     
     disconnect( job, 0, this, 0 );
     job->setAutoDelete( TRUE );
@@ -258,7 +282,7 @@ void KFMJob::stop()
     
     bRunning = FALSE;
    
-    printf("Stopping\n");
+    debugT("Stopping\n");
     
     if ( job )
     {

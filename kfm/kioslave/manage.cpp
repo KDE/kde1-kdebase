@@ -5,6 +5,7 @@
 #include "ftp.h"
 #include "tar.h"
 #include "cgi.h"
+#include "gzip.h"
 
 int ProtocolSupported(const char *url)
 {
@@ -25,28 +26,6 @@ int ProtocolSupported(const char *url)
     } while ( u.hasSubProtocol() );
     
     return TRUE;
-
-    /* char *urlcp = strdup(url);
-	char *pptr, *eptr;
-	int supported = 1;
-
-	pptr = urlcp;
-
-	do
-	{
-		eptr = strchr(pptr,'#');
-		if(eptr)
-		{
-			*eptr = 0;
-			supported &= HaveProto(pptr);
-			pptr = eptr+1;
-		}
-	}	while(eptr);
-	supported &= HaveProto(pptr);
-
-	free(urlcp);
-	printf("url %s supported = %d\n",url, supported);
-	return(supported); */
 }
 
 int HaveProto(const char *url)
@@ -54,11 +33,12 @@ int HaveProto(const char *url)
 	printf("Checking for support: %s\n",url);
 	// Something on the local file system ?
 	if( url[0] == '/' ) return 1;
-	if(strncmp(url,"ftp:",4) == 0) return(1);
-	if(strncmp(url,"tar:",4) == 0) return(1);
-	if(strncmp(url,"file:",5) == 0) return(1);
-	if(strncmp(url,"http:",5) == 0) return(1);
-	if(strncmp(url,"cgi:",4) == 0) return(1);
+	if( strncmp( url, "ftp:", 4 ) == 0) return 1;
+	if( strncmp( url, "tar:", 4 ) == 0) return 1;
+	if( strncmp( url, "file:", 5 ) == 0) return 1;
+	if( strncmp( url, "http:", 5 ) == 0) return 1;
+	if( strncmp( url, "cgi:", 4 ) == 0) return 1;
+	if( strncmp( url, "gzip:", 5 ) == 0) return 1;
 	return(0);
 }
 
@@ -79,44 +59,24 @@ KProtocol *CreateProtocol(const char *url)
 
     // A Hack. Does allow only one subprotocol.
     if( lasturl[0] == '/' ) return(new KProtocolFILE);
-    if(strncmp(lasturl,"file:",5) == 0) return(new KProtocolFILE);
-    if(strncmp(lasturl,"http:",5) == 0) return(new KProtocolHTTP);
-    if(strncmp(lasturl,"ftp:",4) == 0) return(new KProtocolFTP);
-    if(strncmp(lasturl,"cgi:",4) == 0) return(new KProtocolCGI);
-    if(strncmp(lasturl,"tar:",4) == 0)
+    if( strncmp( lasturl, "file:", 5 ) == 0 ) return( new KProtocolFILE );
+    if( strncmp( lasturl, "http:", 5 ) == 0 ) return( new KProtocolHTTP );
+    if( strncmp( lasturl, "ftp:", 4 ) == 0 ) return( new KProtocolFTP );
+    if( strncmp( lasturl, "cgi:", 4 ) == 0 ) return( new KProtocolCGI );
+    if( strncmp( lasturl, "gzip:", 5 ) == 0 )
+    {
+	KSubProtocol *sub = new KProtocolGZIP;
+	sub->InitSubProtocol( u.parentURL() );
+	
+	return(sub);
+    }
+    if( strncmp( lasturl, "tar:", 4 ) == 0 )
     {
 	KSubProtocol *sub = new KProtocolTAR;
 	sub->InitSubProtocol( u.parentURL() );
 	
-	/* char *urlcp = strdup(url);
-	char *urlstart;
-	if( ( urlstart = strrchr(urlcp,'#') ) ) *urlstart = 0;
-	char *parenturlname = strrchr(urlcp,'#');
-	if(!parenturlname) parenturlname=urlcp; */
-
-	/* QString parenturlname( u.parentURL() );
-	KURL parenturl( parenturlname ); 
-	sub->InitSubProtocol( parenturlname, parenturl ); */
-	
 	return(sub);
     }
-    return(NULL);
+    return NULL;
 }
 
-/* char *ReformatURL(const char *url)
-{
-	QString reformattedurl;
-	if(strncmp(url,"tar:",4) == 0)
-	{
-		printf("WARNING: Old KFM-style URL found: '%s'\n", url);
-		char *urlcp = strdup(url);
-		char *path=strrchr(urlcp,'#');
-		*path = 0;
-		path++;
-		reformattedurl.sprintf("file:%s#tar:/%s",urlcp+4,path);
-		url=reformattedurl.data();
-		printf("WARNING: URL changed to '%s'\n",url);
-		free(urlcp);
-	}
-	return(strdup(url));
-} */

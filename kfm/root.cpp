@@ -252,120 +252,23 @@ void KRootWidget::openPopupMenu( QStrList &_urls, const QPoint &_point )
 void KRootWidget::openURL( const char *_url )
 {
     KFMExec *e = new KFMExec();
-    e->openURL( _url, FALSE );
-
-    /*
-    // _url has "file" protocol.
-    // It would be possible to handle the whole stuff
-    // with KFMExec. But KFMExec is not optimized for local
-    // files, so we try on our own here first.
-    KURL u( _url );
-    if ( u.isMalformed() )
-    {
-	QString tmp;
-	tmp.sprintf("Malformed URL\n\r%s", _url );
-	QMessageBox::message( "KFM Error", tmp );
-	return;
-    }
-
-    // A link to the web in form of a *.kdelnk file ?
-    QString path = u.path();
-    if ( !u.hasSubProtocol() && strcmp( u.protocol(), "file" ) == 0 && path.right(7) == ".kdelnk" )
-    {
-	KURL::decodeURL( path );
-    
-	// Try tp open the *.kdelnk file
-	QFile file( path );
-	if ( file.open( IO_ReadOnly ) )
-	{
-	    QTextStream pstream( &file );
-	    KConfig config( &pstream );
-	    config.setGroup( "KDE Desktop Entry" );
-	    QString typ = config.readEntry( "Type" );
-	    // Is it a link ?
-	    if ( typ == "Link" )
-	    {
-		// Is there a URL ?
-		QString u2 = config.readEntry( "URL" );
-		if ( !u2.isEmpty() )
-		{
-		    // It is a link and we have a URL => Give the job away
-		    KFMExec *e = new KFMExec( u2 );
-		    e->openURL( u2, _reload );
-		    return;
-		}
-		else
-		{
-		    // The *.kdelnk file is broken
-		    QMessageBox::message( "KFM Error", "The file does not contain a URL" );
-		    return;
-		}
-	    }
-	    file.close();
-	}
-    }
-
-    // Is it really a directory ?
-    if ( KIOServer::isDir( _url ) == 1 )
-    {
-	// Open a new window
-	KfmGui *m = new KfmGui( 0L, 0L, _url );
-	m->show();
-	return;
-    }
-    
-    // We have a real file here.
-    // So try to run the default binding on it.
-    if ( KMimeType::runBinding( _url ) )
-	return;
-
-    // We dont know what to do with the file, so
-    // ask the user what we should do
-    DlgLineEntry l( "Open With:", "", 0L, true );
-    debugT("OPENING DLG\n");
-    if ( l.exec() )
-    {
-	QString pattern = l.getText();
-	if ( pattern.isEmpty() )
-	    return;
-
-	QString decoded( tryURL );
-	KURL::decodeURL( decoded );
-	decoded = KIOServer::shellQuote( decoded ).data();
-	    
-	QString cmd;
-	cmd = l.getText();
-	cmd += " ";
-	cmd += "\"";
-	cmd += decoded;
-	cmd += "\"";
-	debugT("Executing stuff '%s'\n", cmd.data());
-	    
-	KMimeType::runCmd( cmd.data() );
-    }
-    */
+    e->openURL( _url );
 }
 
 void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
 {
-    debugT("1\n");
     char *s;
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
     {
-	debugT("2\n");
 	KRootIcon *icon = findIcon( s );
 	if ( icon != 0L )
 	{
-	    debugT("3\n");
 	    icon->move( icon->x() + p.x() - icon->getDndStartPos().x(),
 			icon->y() + p.y() - icon->getDndStartPos().y() );
 	}
-	debugT("4\n");
     }
 
-    debugT("5\n");
     saveLayout();
-    debugT("6\n");
 }
 
 void KRootWidget::selectIcons( QRect &_rect )
@@ -498,8 +401,6 @@ QPoint KRootWidget::findFreePlace( int _width, int _height )
 
     KRootIcon *icon;
 
-    debugT("Searching free place %i,%i\n",_width,_height);
-    
     for ( int x = 0; x <= dwidth - ROOT_GRID_WIDTH; x += ROOT_GRID_WIDTH )
     {
 	for ( int y = 80; y <= dheight - ROOT_GRID_HEIGHT; y += ROOT_GRID_HEIGHT )
@@ -508,7 +409,6 @@ QPoint KRootWidget::findFreePlace( int _width, int _height )
 	    
 	    for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
 	    {
-		debugT("Testing %i|%i against %i|%i '%s'\n",x,y,icon->x(),icon->y(),icon->getURL() );
 		QRect r1( x, y, _width, _height );
 		QRect r2( icon->x(), icon->y(), icon->QWidget::width(),icon->QWidget::height() );
 		if ( r1.intersects( r2 ) == false )
@@ -541,7 +441,6 @@ void KRootWidget::sortIcons()
     for ( ; it.current(); ++it )
 	if ( it.current()->y() == -200 )
 	{
-	    debugT("Moving '%s'\n",it.current()->getURL() );
 	    QPoint p = findFreePlace( it.current()->QWidget::width(), it.current()->QWidget::height() );
 	    it.current()->move( p );
 	}
@@ -572,7 +471,6 @@ void KRootWidget::update()
     struct dirent *ep;
     
     dp = opendir( u.path() );
-    debugT("%i : %i %i %i %i %i %i\n",errno, EACCES,EMFILE,ENFILE,ENOENT,ENOMEM,ENOTDIR);
     
     if ( dp == NULL )
     {
@@ -603,7 +501,7 @@ void KRootWidget::update()
 	    if ( icon == 0L )
 	    {
 		KRootIcon *icon;
-		KMimeType *typ = KMimeType::findType( file.data() );
+		KMimeType *typ = KMimeType::getMagicMimeType( file.data() );
 		QPoint p = findLayout( file );
 		if ( p.x() == 0 && p.y() == 0 )
 		{
@@ -618,19 +516,7 @@ void KRootWidget::update()
 	    }	    
 	    else  // Icon is already there
 	    {
-		// Perhaps the pixmap changed. This may only happen to
-		// *.kdelnk files.
-		// if ( file.right( 7 ) == ".kdelnk" )
-		// {
-		//KConfig *config = KFileType::openKFMConfig( file.data() );
-		    /* if ( config != 0L )
-		    {
-			QString typ = config->readEntry( "Type" );
-			if ( typ == "FSDevice" ) */
-		    icon->updatePixmap(); 
-		    // delete config;
-			// }
-		    // }
+		icon->updatePixmap(); 
 		found_icons.append( icon );
 	    }
 	}
@@ -735,7 +621,8 @@ void KRootWidget::dropUpdateIcons( int _x, int _y )
 	    // This icon is missing on the screen.
 	    if ( icon == 0L )
 	    {
-		KMimeType *typ = KMimeType::findType( file.data() );
+		KMimeType *typ = KMimeType::getMagicMimeType( file.data() );
+		// KMimeType *typ = KMimeType::findType( file.data() );
 		QPixmap pix = typ->getPixmap( file.data() );
 		KRootIcon *icon = new KRootIcon( typ->getPixmapFile( file.data() ), file, _x - pix.width() / 2,
 						 _y - pix.height() / 2 );
@@ -1159,7 +1046,7 @@ void KRootIcon::mousePressEvent( QMouseEvent *_mouse )
     // Does the user want to select the icon ?
     if ( _mouse->button() == LeftButton && ( _mouse->state() & ControlButton ) == ControlButton )
     {
-      printf("Selecting\n");
+      debugT("Selecting\n");
       select( !bSelected );
     }
     else if ( _mouse->button() == LeftButton )
@@ -1259,7 +1146,8 @@ void KRootIcon::dndMouseMoveEvent( QMouseEvent *_mouse )
 
 void KRootIcon::updatePixmap()
 {
-    KMimeType *typ = KMimeType::findType( url.data() );
+    KMimeType *typ = KMimeType::getMagicMimeType( url.data() );
+    // KMimeType *typ = KMimeType::findType( url.data() );
     QString f = typ->getPixmapFile( url.data() );
     if ( f == pixmapFile )
 	return;

@@ -17,5 +17,11 @@
 #define KIO_ERROR_TarError 15
 #define KIO_ERROR_GzipError 16
 #define KIO_ERROR_FileExists 17
+/**
+ * Use this if it is technically impossible to fullfill the
+ * request. For example it is impossible to list the directory
+ * structure of a GZIP file.
+ */
+#define KIO_ERROR_NotPossible 18
 
 #endif

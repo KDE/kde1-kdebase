@@ -1,3 +1,6 @@
+#ifndef _kslave_h
+#define _kslave_h
+
 #include <unistd.h>
 #include <stdio.h>
 
@@ -5,25 +8,30 @@
 
 class KSlave
 {
-private:
-	int BuildPipe(int *from, int *to);
-
-	int running;
-	int s_in, s_out, s_err;		// FDs for the slave connected to the FDs below
-	int SubProcess;
-
 public:
-	const int IN=1, OUT=2, ERR=4;
+    KSlave();
+    ~KSlave();
+    
+    bool isRunning() { return ( running == 0 ); }
+    bool isClosed() { return closed; }
+    
+    void SetNDelay(int value);
+    int Start( const char *command);
+    long Write(void *buffer, long len);
+    int WaitIO(long sec, long usec);
+    int Close();
+    int Stop();
 
-	int in, out, err;			// FDs to read/write to the slave
+    const int IN=1, OUT=2, ERR=4;    
+    int in, out, err;			// FDs to read/write to the slave
 
-	KSlave();
-	~KSlave();
-
-	void SetNDelay(int value);
-	int Start(char *command);
-	long Write(void *buffer, long len);
-	int WaitIO(long sec, long usec);
-	int Close();
-	int Stop();
+private:
+    int BuildPipe(int *from, int *to);
+    
+    int running;
+    bool closed;
+    int s_in, s_out, s_err;		// FDs for the slave connected to the FDs below
+    int SubProcess;
 };
+
+#endif
