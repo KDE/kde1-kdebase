@@ -380,7 +380,7 @@ msgstr "bruk: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
 #: main.cpp:130
 msgid "Display settings"
-msgstr "Skjerm innstillinger"
+msgstr "Skjerminnstillinger"
 
 #: widgetcanvas.cpp:104 widgetcanvas.cpp:105
 msgid "Inactive window"

@@ -6,6 +6,7 @@ Type=Application
 Name=Netscape
 Comment=Netscape Navigator
 Comment[de]=Netscape Navigator
+Comment[no]=Netscape Navigator
 Comment[fr]=Navigateur Netscape
 Comment[pl]=Netscape Navigator
 Comment[fi]=Netscape Navigator selainohjelma

@@ -33,7 +33,7 @@ msgstr "Kjør"
 
 #: krootwm.C:186
 msgid "Display properties"
-msgstr "Skjerm innstillinger"
+msgstr "Skjerminnstillinger"
 
 #: krootwm.C:187
 msgid "Refresh desktop"
@@ -69,4 +69,4 @@ msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: krootwm.C:651
 msgid "Usage:"
-msgstr "Bruk"
+msgstr "Bruk:"
