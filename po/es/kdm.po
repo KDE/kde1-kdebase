@@ -2,13 +2,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-11-24 20:36+0100\n"
-"Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"PO-Revision-Date: 1998-12-28 9:30+0100\n"
+"First-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
 
 #: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
-msgstr "¿Finalizar o reiniciar?"
+msgstr "¿Apagar o reiniciar?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
@@ -16,11 +21,11 @@ msgstr "(Introduzca Password de Root)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
-msgstr "Finalizar"
+msgstr "Apagar"
 
 #: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
-msgstr "Finalizar y reiniciar"
+msgstr "Apagar y reiniciar"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
@@ -40,15 +45,15 @@ msgstr "¡Entrada errónea!"
 
 #: kgreeter.cpp:265
 msgid "Session Type:"
-msgstr "Tipo de sesión:"
+msgstr "Tipo de Sesión:"
 
 #: kgreeter.cpp:312
 msgid "Go!"
-msgstr "Iniciar!"
+msgstr "Iniciar"
 
 #: kgreeter.cpp:328
 msgid "Shutdown..."
-msgstr "Finalizando..."
+msgstr "Apagar..."
 
 #: kgreeter.cpp:570
 msgid "Logins not available right now."

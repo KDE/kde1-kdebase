@@ -2,9 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-10-23 17:12+0200\n"
-"Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"PO-Revision-Date: 1998-12-28 9:30+0100\n"
+"First-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
 
 #: main.cpp:53
 msgid "&Sound"
@@ -88,7 +93,7 @@ msgstr "Maximizar ventana"
 
 #: syssound.cpp:166
 msgid "Window UnMaximize"
-msgstr "Demaximizar ventana"
+msgstr "Desmaximizar ventana"
 
 #: syssound.cpp:167
 msgid "Window Sticky"
@@ -124,11 +129,11 @@ msgstr "Mover vent. fin"
 
 #: syssound.cpp:175
 msgid "Window Resize Start"
-msgstr "Redimensionar v. principio"
+msgstr "Redimensionar - principio"
 
 #: syssound.cpp:176
 msgid "Window Resize End"
-msgstr "Redimensionar v. fin"
+msgstr "Redimensionar - fin"
 
 #: syssound.cpp:198
 msgid "e&nable system sounds"
@@ -148,7 +153,7 @@ msgstr "&Sonidos:"
 
 #: syssound.cpp:216
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Archivos WAV adicionales pueden ser posados en la lista de sonidos."
+msgstr "Archivos WAV adicionales pueden ser soltados en la lista de sonidos."
 
 #: syssound.cpp:456
 msgid "Unsupported URL"

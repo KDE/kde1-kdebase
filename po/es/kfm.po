@@ -2,9 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-12-25 01:11+0100\n"
-"PO-Revision-Date: 1998-11-27 19:43+0100\n"
-"Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"PO-Revision-Date: 1998-12-28 9:30+0100\n"
+"First-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
 #: kfmgui.cpp:203
 msgid "KFM"
@@ -60,19 +64,19 @@ msgstr "Ap&licaciones"
 
 #: kfmgui.cpp:279
 msgid "Global Mime Types"
-msgstr "Tipos MIME globales"
+msgstr "Tipos Mime Globales"
 
 #: kfmgui.cpp:281
 msgid "Global Applications"
-msgstr "Aplicaciones globales"
+msgstr "Aplicaciones Globales"
 
 #: kfmgui.cpp:288
 msgid "Show Hi&dden Files"
-msgstr "Mostrar archivos &ocultos"
+msgstr "Mostrar Archivos &Ocultos"
 
 #: kfmgui.cpp:290
 msgid "Show Tr&ee"
-msgstr "Mostrar &árbol"
+msgstr "Mostrar &Árbol"
 
 #: kfmgui.cpp:292
 msgid "Sho&w Thumbnails"
@@ -84,39 +88,39 @@ msgstr "Vista de &HTML"
 
 #: kfmgui.cpp:297
 msgid "&Icon View"
-msgstr "Vista de &iconos"
+msgstr "Vista de &Iconos"
 
 #: kfmgui.cpp:299
 msgid "&Text View"
-msgstr "Vista de &texto"
+msgstr "Vista de &Texto"
 
 #: kfmgui.cpp:301
 msgid "&Long View"
-msgstr "Vista &detallada"
+msgstr "Vista &Detallada"
 
 #: kfmgui.cpp:303
 msgid "&Short View"
-msgstr "Vista &compacta"
+msgstr "Vista &Compacta"
 
 #: kfmgui.cpp:309
 msgid "Rel&oad Tree"
-msgstr "&Actualizar árbol"
+msgstr "&Actualizar Árbol"
 
 #: kfmgui.cpp:311
 msgid "&Reload Document"
-msgstr "A&ctualizar documento"
+msgstr "A&ctualizar Documento"
 
 #: kfmgui.cpp:313
 msgid "Rescan &Bindings"
-msgstr "Releer &uniones"
+msgstr "Releer &Uniones"
 
 #: kfmgui.cpp:316
 msgid "&View Frame Source"
-msgstr "Ver &fuente del frame"
+msgstr "Ver &Fuente del Frame"
 
 #: kfmgui.cpp:318
 msgid "View Docu&ment Source"
-msgstr "Ver fuente del d&ocumento"
+msgstr "Ver Fuente del D&ocumento"
 
 #: kfmgui.cpp:326
 msgid "Auto"
@@ -124,35 +128,35 @@ msgstr "Auto"
 
 #: kfmgui.cpp:334
 msgid "Document Encodin&g"
-msgstr "Codificado del &documento"
+msgstr "Codificado del &Documento"
 
 #: kfmgui.cpp:349
 msgid "Show History"
-msgstr "Mostrar &historia"
+msgstr "Mostrar &Historia"
 
 #: kfmgui.cpp:351
 msgid "Show Cache"
-msgstr "Mostrar &cache"
+msgstr "Mostrar &Caché"
 
 #: kfmgui.cpp:353
 msgid "Clear Cache"
-msgstr "&Limpiar cache"
+msgstr "&Limpiar Caché"
 
 #: kfmgui.cpp:356
 msgid "Always look in cache"
-msgstr "&Siempre mirar en el cache"
+msgstr "&Siempre mirar en el caché"
 
 #: kfmgui.cpp:358
 msgid "Never look in cache"
-msgstr "&Nunca mirar en el cache"
+msgstr "&Nunca mirar en el caché"
 
 #: kfmgui.cpp:360
 msgid "Always save cache"
-msgstr "Siempre &guardar cache"
+msgstr "Siempre &guardar caché"
 
 #: kfmgui.cpp:362
 msgid "Never save cache"
-msgstr "Nunca g&uardar cache"
+msgstr "Nunca g&uardar caché"
 
 #: kfmgui.cpp:373
 msgid "Show &Menubar"

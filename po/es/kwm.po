@@ -2,8 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-12-19 01:20+0100\n"
-"PO-Revision-Date: 1998-06-22 21:36+0200\n"
-"Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"PO-Revision-Date: 1998-12-28 9:30+0100\n"
+"First-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
+"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
 
 #: main.C:68
 msgid ""
@@ -55,19 +61,19 @@ msgstr "D&espegar"
 
 #: main.C:533
 msgid "Mo&ve"
-msgstr "&Mover"
+msgstr "Mo&ver"
 
 #: main.C:534
 msgid "Resi&ze"
-msgstr "Cambiar tamaño"
+msgstr "Cambiar &tamaño"
 
 #: main.C:536
 msgid "&To desktop"
-msgstr "Al escritorio"
+msgstr "&Al escritorio"
 
 #: main.C:538
 msgid "&Onto current desktop"
-msgstr "Al escritorio actual"
+msgstr "&Al escritorio actual"
 
 #: main.C:578
 msgid "One"
