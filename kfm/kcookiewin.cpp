@@ -158,12 +158,12 @@ KCookieWin::KCookieWin(QWidget *parent, KCookie *_cookie) :
     KButtonBox *bbox = new KButtonBox( this );
     bbox->addStretch( 20 );
                 
-    QPushButton *b0 = bbox->addButton( "&Accept" );
+    QPushButton *b0 = bbox->addButton( i18n("&Accept") );
     connect( b0, SIGNAL( clicked() ), this, SLOT( b0Pressed() ) );
 
     bbox->addStretch( 10 );
 
-    QPushButton *b1 = bbox->addButton( "&Reject" );
+    QPushButton *b1 = bbox->addButton( i18n("&Reject") );
     connect( b1, SIGNAL( clicked() ), this, SLOT( b1Pressed() ) );
 
     bbox->addStretch( 20 );
