@@ -81,7 +81,7 @@ public:
   }
   int number_of_desktops;
 
-  void sendConfig(Client* c);
+  void sendConfig(Client* c, bool emit_changed = TRUE);
 
   void cleanup();
 

@@ -715,7 +715,7 @@ void Manager::manage(Window w, bool mapped){
   
   XAddToSaveSet(qt_xdisplay(), c->window);
   XSync(dpy, False);
-  sendConfig(c);
+  sendConfig(c, FALSE);
   XSync(qt_xdisplay(), False);
 
   // get some KDE specific hints
@@ -1049,7 +1049,7 @@ void Manager::switchDesktop(int new_desktop){
 
 
 
-void Manager::sendConfig(Client* c){
+void Manager::sendConfig(Client* c, bool emit_changed){
   XConfigureEvent ce;
 
   c->setGeometry(c->geometry);
@@ -1076,7 +1076,9 @@ void Manager::sendConfig(Client* c){
   ce.above = None;
   ce.override_redirect = 0;
   XSendEvent(qt_xdisplay(), c->window, False, StructureNotifyMask, (XEvent*)&ce);
-  changedClient(c);
+
+  if (emit_changed)
+    changedClient(c);
 }
 
 
