@@ -19,6 +19,8 @@ In 0.10:
        - re-introduced explicit XUnmapWindow calls for the inner windows.
          This is important for video cards etc. I hope I did not break 
          anything.
+       - resize animation improved (thanks to Hans-Guenther Nusseck)
+       - bugfixes for auto-iconify
 
   patchlevel 18:
        - transient windows become iconified if the main window loses

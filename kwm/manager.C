@@ -947,20 +947,12 @@ void Manager::activateClient(Client* c, bool set_revert){
     return;
   if (cc){
     cc->setactive( FALSE );
-    if (c->trans != cc->window && cc->trans != c->window){
-      if (cc->trans != None && cc->trans != qt_xrootwin()){
-	cc = getClient(cc->trans);
-	if (cc)
-	  iconifyFloatingOf(cc);
-      }
-      else {
-	iconifyFloatingOf(cc);
-      }
-    }
+    if (cc->mainClient() != c->mainClient())
+      iconifyFloatingOf(cc->mainClient());
   }
 
   c->setactive( TRUE );
-  unIconifyFloatingOf(c);
+  unIconifyTransientOf(c->mainClient());
   
   XSetInputFocus(qt_xdisplay(), c->window, RevertToPointerRoot, timeStamp());
   
@@ -1115,15 +1107,7 @@ void Manager::noFocus(){
   c = current();
   if (c){
     c->setactive(False);
-    if (c->trans != None && c->trans != qt_xrootwin()){
-      c = getClient(c->trans);
-      if (c)
-	iconifyFloatingOf(c);
-    }
-    else {
-      iconifyFloatingOf(c);
-    }
-
+    iconifyFloatingOf(c->mainClient());
   }
   
   if (w == 0) {
@@ -2036,28 +2020,14 @@ void Manager::stickyTransientOf(Client* c, bool sticky){
 void Manager::iconifyFloatingOf(Client* c){
   QListIterator<Client> it(clients);
   for (it.toFirst(); it.current(); ++it){
-    if (it.current() != c && it.current()->trans == c->window
-	&& it.current()->getDecoration() == 2){
-      it.current()->iconify(False);
-      sendToModules(module_win_remove, it.current()->window);
-      it.current()->hidden_for_modules = TRUE; 
-      clients_traversing.removeRef(it.current());
-    }
-  }
-}
-
-
-void Manager::unIconifyFloatingOf(Client* c){
-  QListIterator<Client> it(clients);
-  for (it.toFirst(); it.current(); ++it){
-    if (it.current() != c && it.current()->trans == c->window
-	&& it.current()->getDecoration() == 2){
-      if (it.current()->hidden_for_modules){
-	sendToModules(module_win_add, it.current()->window);
-	it.current()->hidden_for_modules = FALSE;
-	clients_traversing.insert(0,it.current());
+    if (it.current() != c && it.current()->trans == c->window){
+      if (it.current()->getDecoration() == 2){
+	it.current()->iconify(False);
+	sendToModules(module_win_remove, it.current()->window);
+	it.current()->hidden_for_modules = TRUE; 
+	clients_traversing.removeRef(it.current());
       }
-      it.current()->unIconify(False);
+      iconifyFloatingOf(it.current());
     }
   }
 }

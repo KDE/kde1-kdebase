@@ -187,6 +187,9 @@ public:
 
   void stopAutoraise();
 
+  Client* mainClient();
+  
+
  public slots:
    void iconify();
    void maximizeToggled(bool);

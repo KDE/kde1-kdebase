@@ -176,86 +176,57 @@ static QColor shaded_pm_inactive_color;
 
 
 
-bool near(int v, int a, int b){
-  return a<b?b-a<=v:a-b<=v;
-}
-
 void animate_size_change(QRect before, QRect after, bool decorated, int o1, int o2){
 
-  int x1=before.x();
-  int y1=before.y();
-  int dx1=before.width();
-  int dy1=before.height(); 
-  int x2=after.x();
-  int y2=after.y();
-  int dx2=after.width();
-  int dy2=after.height();
-  int xm, ym, dxm, dym;
-  int f = 20;
+  float lf,rf,tf,bf;
 
   if (!options.ResizeAnimation)
     return;
-  
-  // calculate the step
-  dxm = dx1>dx2?dx1-dx2:dx2-dx1;
-  dym = dy1>dy2?dy1-dy2:dy2-dy1;
-  Time mpp = 1;
-  if (dxm>dym?dxm:dym > 0)
-    mpp = 400 / (dxm>dym?dxm:dym);
-  if (mpp < 1)
-    mpp = 1;
-  if (mpp > 10)
-     mpp = 10;
-  f = 1;
-  dx1 = x1+dx1;
-  dy1 = y1+dy1;
-  dx2 = x2 + dx2;
-  dy2 = y2 + dy2;
+
+
+  lf = (after.left() - before.left())/400.0;
+  rf = (after.right() - before.right())/400.0;
+  tf = (after.top() - before.top())/400.0;
+  bf = (after.bottom() - before.bottom())/400.0;
+
+
+  QRect area = before;
+  QRect area2;
 
   XGrabServer(qt_xdisplay());
 
-  xm = x1<x2?+f:-f;
-  ym = y1<y2?+f:-f;
-  dxm = dx1<dx2?+f:-f;
-  dym = dy1<dy2?+f:-f;
-
-  Time tt = manager->timeStamp();
-  Time tt2 = tt + 1;
-  Time i;
-
-  while (!near(f, x1, x2) 
-	 || !near(f, y1, y2) 
-	 || !near(f, dx1, dx2) 
-	 || !near(f, dy1, dy2) ){
-
-    for (i = 0; i < (tt2 - tt)/mpp; i++){
-      if (!near(f, x1, x2))
-	x1 += xm;
-      else
-	x1 = x2;
-      if (!near(f, y1, y2))
-	y1 += ym;
-      else
-	y1 = y2;
-      if (!near(f, dx1, dx2))
-	dx1 += dxm;
-      else
-	dx1 = dx2;
-      if (!near(f, dy1, dy2))
-	dy1 += dym;
-      else
-	dy1 = dy2;
+  Time ts = manager->timeStamp();
+  Time tt = ts;
+  float diff;
+  
+  do {
+    if (area2 != area){
+      draw_animation_rectangle(area.left(), 
+			       area.top(), 
+			       area.width(), 
+			       area.height(), 
+			       decorated, o1, o2);
+      area2 = area;
     }
-    tt2 = tt = manager->timeStamp();
-    
-    draw_animation_rectangle(x1, y1, dx1-x1, dy1-y1, decorated, o1, o2);
     XFlush(qt_xdisplay());
     XSync(qt_xdisplay(), False);
-    do {
-      tt2 = manager->timeStamp();
-    } while (tt2 - tt < mpp);
-    draw_animation_rectangle(x1, y1, dx1-x1, dy1-y1, decorated, o1, o2);
-  }
+    tt = manager->timeStamp();
+    diff = tt - ts;
+    if (diff > 500)
+      diff = 500;
+    area.setLeft(before.left() + int(diff*lf));
+    area.setRight(before.right() + int(diff*rf));
+    area.setTop(before.top() + int(diff*tf));
+    area.setBottom(before.bottom() + int(diff*bf));
+    if (area2 != area){
+      draw_animation_rectangle(area2.left(), 
+			       area2.top(), 
+			       area2.width(), 
+			       area2.height(), 
+			       decorated, o1, o2);
+    }
+  } while (tt - ts < 400);
+  
   XUngrabServer(qt_xdisplay());
 }
 
@@ -1509,7 +1480,14 @@ void Client::stopAutoraise(){
   autoraised_stopped = TRUE;
 }
 
-
+Client* Client::mainClient(){
+  if (trans != None && trans != qt_xrootwin()){
+    Client* c = manager->getClient(trans);
+    if (c)
+      return c->mainClient();
+  }
+  return this;
+}
 
 void Client::adjustSize(){
   int dx = geometry.width();
