@@ -7,7 +7,7 @@ APPS = kcmbell kcminfo kcminput kcmkeys kcmkfm kcmkpanel kcmkwm \
 	kcmlocale kcmsamba kcmsample kcmsyssound kcontrol kdehelp \
 	kdisplay kdm kdmconfig kfind kfm kfontmanager kikbd \
 	klock kmenuedit konsole kpanel krootwm kstart kvt kwm \
-	kpager
+	kpager kbgndwm
 
 merge:
 	@apps='$(APPS)'; \
