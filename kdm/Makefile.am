@@ -14,11 +14,12 @@ CXXFLAGS += -DHAVE_CONFIG_H
 bin_PROGRAMS = kdm kdmdesktop
 
 # Libraries:
-LDADD  = $(all_libraries) -lkdecore -lqt -lXext\
-           -lXau $(LIBXDMCP) -lX11 $(PASSLIB) $(LIB_LIBS) $(LIBSOCKET) $(LIBCRYPT) $(KDE_RPATH) $(LIBUCB) $(LIBUTIL) $(KIMGIO_LIBS) 
+LDADD  = $(all_libraries) -lkdecore -lqt -lXext \
+	-lXau $(LIBXDMCP) -lX11 $(PASSLIB) $(LIB_LIBS) $(LIBSOCKET) $(LIBCRYPT) \
+	$(KDE_RPATH) $(LIBUCB) $(LIBUTIL) -lkimgio $(KIMGIO_LIBS) 
 
 # For kdmdesktop
-kdmdesktop_LDADD = $(all_libraries) -lkdecore -lqt -lm $(KIMGIO_LIBS) -lXext\
+kdmdesktop_LDADD = $(all_libraries) -lkdecore -lqt -lm -lkimgio $(KIMGIO_LIBS) -lXext\
 		   -lX11 $(LIBSOCKET) $(KDE_RPATH)
 
 # Sources for xdm (both C and C++):
