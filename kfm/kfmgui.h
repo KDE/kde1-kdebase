@@ -349,6 +349,22 @@ public slots:
      */
     void slotSetCharset( int );
 
+    /**
+     * Menu 'Go->Up'
+     */
+    void slotUp();    
+    /**
+     * Menu 'Go->Back'
+     */
+    void slotBack();    
+    /**
+     * Menu 'Go->Forward'
+     */
+    void slotForward();
+    /**
+     * Bound to all history menu items in "Go" menu. DF.
+     */
+    void slotGoHistory( int id );
     
     /**
      * Menu "Bookmarks->Edit Bookmarks"
@@ -578,6 +594,7 @@ protected:
     KStatusBar *statusBar;
 
     QPopupMenu *mview;
+    QPopupMenu *mgo;
     QPopupMenu *mcache;
     QPopupMenu *moptions;
     

@@ -363,6 +363,21 @@ void KfmGui::initMenu()
     mview->setItemChecked( mview->idAt( 2 ), visualSchnauzer );
     mview->setItemChecked( mview->idAt( 3 ), bViewHTML );
 
+    mgo = new QPopupMenu;
+    CHECK_PTR( mgo );
+    // The go menu, with items in the same order as the toolbar. Is this a good 
+    // idea ? DF.
+    mgo->insertItem( klocale->translate( "&Up" ),
+			this, SLOT( slotUp() ) );
+    mgo->insertItem( klocale->translate( "&Back" ),
+			this, SLOT( slotBack() ) );
+    mgo->insertItem( klocale->translate( "&Forward" ),
+			this, SLOT( slotForward() ) );
+    mgo->insertItem( klocale->translate( "&Home" ),
+			this, SLOT( slotHome() ) );
+    mgo->insertSeparator();
+    // ... to be continued with history menu items, calling slotGoHistory
+
     mcache = new QPopupMenu;
     CHECK_PTR( mcache );
     mcache->setCheckable(true);
@@ -401,7 +416,7 @@ void KfmGui::initMenu()
     moptions->insertSeparator();
     moptions->insertItem( klocale->translate("Sa&ve Settings"),
                           this, SLOT(slotSaveSettings()) );
-    moptions->insertItem( klocale->getAlias(ID_STRING_SAVE_URL_PROPS),
+    moptions->insertItem( klocale->translate("Save Settings for this &URL"),
                           view, SLOT(slotSaveLocalProperties()));
     if (pkfm->isURLPropesEnabled())
       moptions->setItemEnabled(moptions->idAt( 6 ), true);
@@ -461,6 +476,7 @@ klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin J
     menu->insertItem( klocale->translate("&File"), file );
     menu->insertItem( klocale->translate("&Edit"), edit );
     menu->insertItem( klocale->translate("&View"), mview );
+    menu->insertItem( klocale->translate("&Go"), mgo );
     menu->insertItem( klocale->translate("&Bookmarks"), bookmarkMenu );
     menu->insertItem( klocale->translate("&Cache"), mcache );
     menu->insertItem( klocale->translate("&Options"), moptions );
@@ -1665,6 +1681,27 @@ void KfmGui::slotSetCharset( int id )
 void KfmGui::setCharset(const char *_c){
 
    view->setCharset(_c);
+}
+
+
+void KfmGui::slotUp( )
+{
+    view->getActiveView()->slotUp();
+}
+
+void KfmGui::slotBack( )
+{
+    view->getActiveView()->slotBack();
+}
+
+void KfmGui::slotForward( )
+{
+    view->getActiveView()->slotForward();
+}
+
+void KfmGui::slotGoHistory( int id )
+{  
+    // TODO
 }
 
 //-------------------------------------------------------------------------

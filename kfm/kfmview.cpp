@@ -967,7 +967,7 @@ void KfmView::slotBack()
 
     SavedPage *s = backStack->pop();
     // try to find the corresponding htmlview. If only this view
-    // (the one that changes saves itself, we will reduce flicker
+    // (the one that changes & saves itself), we will reduce flicker
     // a lot...
     
     // we are the top level widget, since we get signals from kfmgui
