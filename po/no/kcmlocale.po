@@ -31,7 +31,7 @@ msgstr "Språk"
 
 #: locale.cpp:55
 msgid "First"
-msgstr "Først"
+msgstr "Første"
 
 #: locale.cpp:65
 msgid "Second"
