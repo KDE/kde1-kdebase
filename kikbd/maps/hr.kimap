@@ -1,0 +1,64 @@
+# KDE Config File
+
+[International Keyboard]
+Authors=Vedran Vyroubal <vedran.vyroubal@fer.hr>,
+
+Comment=Croatian keyboard layout
+Comment[hr]=Hrvatska tipkovnica
+
+Language=Croatian
+Language[hr]=Hrvatski
+
+Label=Hr 
+Locale=hr
+
+[KeyboardMap]
+CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m,bracketleft,bracketright,semicolon,apostrophe,grave,comma,period,less,backslash
+keysym10=q,q,Q,backslash
+keysym11=w,w,W,bar
+keysym12=e,e,E,,,
+keysym13=r,r,R,,,
+keysym14=t,t,T,,,
+keysym15=y,z,Z,,,
+keysym16=u,u,U,,,
+keysym17=i,i,I,,,
+keysym18=o,o,O,,,
+keysym19=p,p,P,,,
+keysym20=bracketleft,0xB9,0xA9,division,braceleft
+keysym21=bracketright,0xF0,0xD0,multiply,braceright
+keysym22=a,a,A,,,
+keysym23=s,s,S,,,
+keysym24=d,d,D,,,
+keysym25=f,f,F,bracketleft
+keysym26=g,g,G,bracketright
+keysym27=h,h,H,,,
+keysym28=j,j,J,,,
+keysym29=k,k,K,0xB3
+keysym30=l,l,L,0xA3
+keysym31=semicolon,0xE8,0xC8,,,
+keysym32=apostrophe,0xE6,0xC6,,,
+keysym33=backslash,0xBE,0xAE,,,
+keysym34=z,y,Y,,,
+keysym35=x,x,X,,,
+keysym36=c,c,C,,,
+keysym37=v,v,V,at
+keysym38=b,b,B,braceleft
+keysym39=n,n,N,braceright
+keysym40=m,m,M,section
+keysym41=comma,comma,semicolon
+keysym42=period,period,colon
+keysym43=slash,minus,underscore
+keysym44=1,1,exclam,asciitilde
+keysym45=2,2,quotedbl,caron
+keysym46=3,3,numbersign,asciicircum
+keysym47=4,4,dollar,breve
+keysym48=5,5,percent,degree
+keysym49=6,6,ampersand,ogonek
+keysym50=7,7,slash,grave
+keysym51=8,8,parenleft,abovedot
+keysym52=9,9,parenright,acute
+keysym53=0,0,equal,doubleacute
+keysym54=apostrophe,question,diaeresis
+keysym55=minus,apostrophe,question
+keysym56=equal,plus,asterisk,cedilla
+keycode57=101,less,greater,,,
