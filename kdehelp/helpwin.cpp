@@ -984,10 +984,10 @@ bool KHelpWindow::canCurrentlyDo(AllowedActions action)
 	case Copy:        return view->isTextSelected();
 	case GoBack:      return history.IsBack();
 	case GoForward:   return history.IsForward();
-	case GoPrevious:  return format->PrevNode();
-	case GoNext:      return format->NextNode();
-	case GoUp:        return format->UpNode();
-	case GoTop:       return format->TopNode();
+	case GoPrevious:  return format->PrevNode() != NULL;
+	case GoNext:      return format->NextNode() != NULL;
+	case GoUp:        return format->UpNode() != NULL;
+	case GoTop:       return format->TopNode() != NULL;
 	case Stop:        return busy;
 	default: 
 	      warning("KHelpWindow::canCurrentlyDo: missing case in \"switch\" statement\n");

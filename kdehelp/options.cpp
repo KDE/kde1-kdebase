@@ -55,7 +55,8 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 	getFontList( standardFonts, "-*-*-*-*-*-*-*-*-*-*-p-*-*-*" );
 	cb->insertStrList( &standardFonts );
 	QStrListIterator sit( standardFonts );
-	for ( int i = 0; sit.current(); ++sit, i++ )
+	int i;
+	for ( i = 0; sit.current(); ++sit, i++ )
 	{
 		if ( !strcmp( stdName, sit.current() ) )
 			cb->setCurrentItem( i );
@@ -71,7 +72,7 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 	getFontList( fixedFonts, "-*-*-*-*-*-*-*-*-*-*-m-*-*-*" );
 	cb->insertStrList( &fixedFonts );
 	QStrListIterator fit( fixedFonts );
-	for ( int i = 0; fit.current(); ++fit, i++ )
+	for ( i = 0; fit.current(); ++fit, i++ )
 	{
 		if ( !strcmp( fixedName, fit.current() ) )
 			cb->setCurrentItem( i );

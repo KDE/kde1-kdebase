@@ -182,8 +182,8 @@ int cManTextList::Read(ifstream &stream)
 				xRef = FindXRef(strchr(xRef, ')') + 1);
 				chPos += i;
 				ptr = strchr(ptr, ')');
-				if (*(ptr + 1) == '\b') ptr += 3;
-				else ptr++;
+				while (*(ptr + 1) == '\b') ptr += 2;
+				ptr++;
 
 				if (*(ptr+1) != '\b') mode = MAN_TEXT;
 				else if (*ptr == '_') mode = MAN_UNDERLINE;
