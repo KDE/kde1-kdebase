@@ -1,256 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#	Versio 0.4
-#
-#	Changed 19.09.1997 by Juha.Tuomala@iki.fi
-#
-
-#: kfdird.cpp:46
-msgid "Directories:"
-msgstr "Hakemistot:"
-
-#: kfdird.cpp:167 kfdird.cpp:192 kfdird.cpp:210
-msgid "Sorry"
-msgstr "Pahoittelen"
-
-#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
-msgid "Cannot open or read directory."
-msgstr "Tiedostoa tai hakemistoa ei voi avata."
-
-#: kfindtop.cpp:110
-#, c-format
 msgid ""
-"KFind %s\n"
-"Frontend to find utility\n"
-"Miroslav FlÌdr <flidr@kky.zcu.cz>"
 msgstr ""
-"KFind %s\n"
-"Graafinen k‰yttˆliittym‰ find tyˆkalulle.\n"
-"Miroslav FlÌdr <flidr@kky.zcu.cz>" 
 
+#~ # SOME DESCRIPTIVE TITLE.
+#~ # Copyright (C) YEAR Free Software Foundation, Inc.
+#~ # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#~ #
+#~ msgid ""
+#~ msgstr ""
 
-#: kfindtop.cpp:123
-msgid "&File"
-msgstr "&Tiedosto"
-
-#: kfindtop.cpp:124
-msgid "&Edit"
-msgstr "&Muokkaa"
-
-#: kfindtop.cpp:125
-msgid "&Options"
-msgstr "&Asetukset"
-
-#: kfindtop.cpp:127
-msgid "&Help"
-msgstr "&Ohje"
-
-#: kfindtop.cpp:132 kfindtop.cpp:216
-msgid "Add to archive"
-msgstr "Lis‰‰ arkistoon"
-
-#: kfindtop.cpp:135 kfindtop.cpp:221
-msgid "Delete"
-msgstr "Poista"
-
-#: kfindtop.cpp:137 kfindtop.cpp:226
-msgid "Properties"
-msgstr "Ominaisuudet"
-
-#: kfindtop.cpp:140 kfindtop.cpp:231
-msgid "Open Containing Folder"
-msgstr "Avaa kohteen kansio"
-
-#: kfindtop.cpp:143
-msgid "Save Search"
-msgstr "&Tallenna etsint‰"
-
-#: kfindtop.cpp:152
-msgid "Undo"
-msgstr "&Peruuta"
-
-#: kfindtop.cpp:155
-msgid "Cut"
-msgstr "&Leikkaa"
-
-#: kfindtop.cpp:157
-msgid "Copy"
-msgstr "&Kopioi"
-
-#: kfindtop.cpp:160
-msgid "Select All"
-msgstr "&Valitse kaikki"
-
-#: kfindtop.cpp:162
-msgid "Invert Selection"
-msgstr "K‰‰nn‰ &valinta"
-
-#: kfindtop.cpp:173
-msgid "Preferences ..."
-msgstr "&Ominaisuudet ..."
-
-#: kfindtop.cpp:177
-msgid "Kfind help"
-msgstr "KFind &ohje"
-
-#: kfindtop.cpp:193
-msgid "Start Search"
-msgstr "Aloita etsint‰"
-
-#: kfindtop.cpp:198
-msgid "New Search"
-msgstr "Uusi etsint‰"
-
-#: kfindtop.cpp:203
-msgid "Stop Search"
-msgstr "Lopeta etsint‰"
-
-#: kfindtop.cpp:236
-msgid "Save Search Results"
-msgstr "Tallenna etsinn‰n tulokset"
-
-#: kfoptions.cpp:54
-msgid "Preferences"
-msgstr "Ominaisuudet"
-
-#: kfoptions.cpp:70
-msgid "File format:"
-msgstr "Tiedosto formaatti:"
-
-#: kfoptions.cpp:72
-msgid "Save results to file:"
-msgstr "Tallenna tulokset tiedostoon:"
-
-#: kfoptions.cpp:75
-msgid "Save results to file ~/.kfind-results.html"
-msgstr "Tallenna tulokset tiedostoon ~/.kfind-results.html"
-
-#: kfoptions.cpp:77
-msgid "Browse"
-msgstr "Selaa"
-
-#: kfoptions.cpp:90
-msgid "Plain Text"
-msgstr "Pelkk‰ teksti"
-
-#: kfoptions.cpp:119
-msgid "Saving"
-msgstr "Tallennetaan"
-
-#: kfoptions.cpp:125
-msgid "Type Description:"
-msgstr "Tyypin kuvaus:"
-
-#: kfoptions.cpp:126
-msgid "Icon:"
-msgstr "Ikoni:"
-
-#: kfoptions.cpp:127 kfoptions.cpp:193
-msgid "Patterns:"
-msgstr "Kuvio:"
-
-#: kfoptions.cpp:128
-msgid "Default Application:"
-msgstr "Oletus sovellus:"
-
-#: kfoptions.cpp:134 kfoptions.cpp:196
-msgid "Add New"
-msgstr "Lis‰‰ uusi"
-
-#: kfoptions.cpp:135 kfoptions.cpp:197
-msgid "Remove"
-msgstr "Poista"
-
-#: kfoptions.cpp:181
-msgid "Filetypes"
-msgstr "Tiedostotyypit"
-
-#: kfoptions.cpp:187
-msgid "Create Archive:"
-msgstr "Luo arkisto:"
-
-#: kfoptions.cpp:189
-msgid "Add to Archive:"
-msgstr "Lis‰‰ arkistoon:"
-
-#: kfoptions.cpp:235
-msgid "Archivers"
-msgstr "Arkistoijat"
-
-#: kftabdlg.cpp:47
-msgid "&Named:"
-msgstr "&Nimi / Kuvio:"
-
-#: kftabdlg.cpp:49
-msgid "&Look in:"
-msgstr "&Kansiosta:"
-
-#: kftabdlg.cpp:52
-msgid "&Browse ..."
-msgstr "&Selaa ..."
-
-#: kftabdlg.cpp:64
-msgid "Include &subfolders"
-msgstr "Etsi &alikansioista"
-
-#: kftabdlg.cpp:94
-msgid " Name&Location "
-msgstr "Nimi & Sijainti"
-
-#: kftabdlg.cpp:106
-msgid "and"
-msgstr "ja"
-
-#: kftabdlg.cpp:107
-msgid "month(s)"
-msgstr "kuukauden/kuukausien aikana"
-
-#: kftabdlg.cpp:108
-msgid "day(s)"
-msgstr "p‰iv‰n/p‰ivien aikana"
-
-#: kftabdlg.cpp:114
-msgid "&All files"
-msgstr "&Kaikki tiedostot"
-
-#: kftabdlg.cpp:115
-msgid "Find all files created or &modified:"
-msgstr "Etsi kaikki luodut tai &muutetut tiedostot:"
-
-#: kftabdlg.cpp:116
-msgid "&between"
-msgstr "&v‰lill‰"
-
-#: kftabdlg.cpp:117
-msgid "during the previou&s "
-msgstr "&kuluneen"
-
-#: kftabdlg.cpp:118
-msgid "&during the previous "
-msgstr "k&uluneen"
+#: kftabdlg.cpp:214
+msgid " Advanced "
+msgstr " Tarkennettu "
 
 #: kftabdlg.cpp:166
 msgid " Date Modified "
 msgstr " Muutettu P‰iv‰n‰ "
 
-#: kftabdlg.cpp:171
-msgid "Of &type:"
-msgstr "&Tyyppi‰:"
+#: kftabdlg.cpp:94
+msgid " Name& Location "
+msgstr " Nimi& Sijainti "
+
+#: kfwin.cpp:104
+msgid "%d file(s) found"
+msgstr "%d tiedostoa lˆydetty"
+
+#: kfindtop.cpp:185
+msgid "&About"
+msgstr "&Tietoja"
+
+#: kfindtop.cpp:186
+msgid "About &Qt"
+msgstr ""
+
+#: kfindtop.cpp:137
+msgid "&Add to archive"
+msgstr "&Lis‰‰ arkistoon"
+
+#: kftabdlg.cpp:114
+msgid "&All files"
+msgstr "&Kaikki tiedostot"
+
+#: kftabdlg.cpp:52
+msgid "&Browse ..."
+msgstr "&Selaa ..."
 
 #: kftabdlg.cpp:173
 msgid "&Containing Text:"
 msgstr "&Sis‰lt‰‰ Tekstin:"
 
+#: kfindtop.cpp:162
+msgid "&Copy"
+msgstr "&Kopioi"
+
+#: kfindtop.cpp:160
+msgid "&Cut"
+msgstr "&Leikkaa"
+
+#: kfindtop.cpp:140
+msgid "&Delete"
+msgstr "&Poista"
+
+#: kfindtop.cpp:189
+msgid "&Edit"
+msgstr "&Muokkaa"
+
+#: kfindtop.cpp:188
+msgid "&File"
+msgstr "&Tiedosto"
+
+#: kfindtop.cpp:192
+msgid "&Help"
+msgstr "&Ohje"
+
+#: kfindtop.cpp:167
+msgid "&Invert Selection"
+msgstr "K‰‰nn‰ v&alinta"
+
+#: kftabdlg.cpp:49
+msgid "&Look in:"
+msgstr "&Kansiosta:"
+
+#: kftabdlg.cpp:47
+msgid "&Named:"
+msgstr "&Nimi / Kuvio:"
+
+#: kfindtop.cpp:135
+msgid "&Open"
+msgstr "&Asetukset"
+
+#: kfindtop.cpp:190
+msgid "&Options"
+msgstr "&Asetukset"
+
+#: kfindtop.cpp:178
+msgid "&Preferences ..."
+msgstr "&Ominaisuudet ..."
+
+#: kfindtop.cpp:142
+msgid "&Properties"
+msgstr "&Ominaisuudet"
+
+#: kfindtop.cpp:151
+msgid "&Quit"
+msgstr "&Muokkaa"
+
+#: kfindtop.cpp:148
+msgid "&Save Search"
+msgstr "&Tallenna etsint‰"
+
+#: kfindtop.cpp:165
+msgid "&Select All"
+msgstr "&Valitse kaikki"
+
 #: kftabdlg.cpp:175
 msgid "&Size is:"
 msgstr "&Kooltaan:"
+
+#: kfindtop.cpp:157
+msgid "&Undo"
+msgstr "&Peruuta"
+
+#: kftabdlg.cpp:116
+msgid "&between"
+msgstr "&v‰lill‰"
+
+#: kftabdlg.cpp:118
+msgid "&during the previous "
+msgstr "k&uluneen"
+
+#: kftabdlg.cpp:205
+msgid "(none)"
+msgstr "(ei mit‰‰n)"
+
+#: kfoptions.cpp:202
+msgid "Add New"
+msgstr "Lis‰‰ uusi"
+
+#: kfoptions.cpp:195
+msgid "Add to Archive:"
+msgstr "Lis‰‰ arkistoon:"
+
+#: kfindtop.cpp:226
+msgid "Add to archive"
+msgstr "Lis‰‰ arkistoon"
 
 #: kftabdlg.cpp:198
 msgid "All Files and Folders"
 msgstr "Kaikki tiedostot ja kansiot"
 
-#: kftabdlg.cpp:205
-msgid "(none)"
-msgstr "(ei mit‰‰n)"
+#: kfoptions.cpp:243
+msgid "Archivers"
+msgstr "Arkistoijat"
 
 #: kftabdlg.cpp:206
 msgid "At Least"
@@ -260,45 +164,45 @@ msgstr "V‰hint‰‰n"
 msgid "At Most"
 msgstr "Enint‰‰n"
 
-#: kftabdlg.cpp:214
-msgid " Advanced "
-msgstr " Tarkennettu "
+#: kfoptions.cpp:83
+msgid "Browse"
+msgstr "Selaa"
 
-#: kftabdlg.cpp:377
-msgid "The date is not valid!!"
-msgstr "P‰iv‰m‰‰r‰ ei ole oikein!!"
+#: kfdird.cpp:48 kfoptions.cpp:53 kfwin.cpp:144 kfwin.cpp:198 kfwin.cpp:213
+#: kfwin.cpp:220 kfwin.cpp:242 kfwin.cpp:249 kfwin.cpp:255
+msgid "Cancel"
+msgstr ""
 
-#: kftabdlg.cpp:389
-msgid "The month(s) value isn't valid!!"
-msgstr "Kuukausi ei ole oikein!!"
+#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
+msgid "Cannot open or read directory."
+msgstr "Tiedostoa tai hakemistoa ei voi avata."
 
-#: kftabdlg.cpp:400
-msgid "The day(s) value isn't valid!!"
-msgstr "P‰iv‰ ei ole oikein!!"
+#: kfwin.cpp:349
+msgid "Couldn't recognize archive type!"
+msgstr "Tunnistamaton arkistotyyppi!"
 
-#: kftabdlg.cpp:417
-msgid "The value in size isn't valid number!!"
-msgstr "Koko arvo ei ole oikein!!"
+#: kfoptions.cpp:193
+msgid "Create Archive:"
+msgstr "Luo arkisto:"
 
-#: kfwin.cpp:99
-#, c-format
-msgid "%d file(s) found"
-msgstr "%d tiedostoa lˆydetty"
+#: kfindtop.cpp:231
+msgid "Delete"
+msgstr "Poista"
 
-#: kfwin.cpp:136
-msgid "It wasn't possible to save results!"
-msgstr "Tuloksien tallentaminen ei onnistunut!"
+#: kfwin.cpp:196
+msgid "Delete File"
+msgstr "Poista tiedosto"
 
-#: kfwin.cpp:146 kfwin.cpp:148 kfwin.cpp:150
-msgid "KFind Results File"
-msgstr "KFind etsinn‰n tulokset:"
+#
+#	Versio 0.4
+#
+#	Changed 19.09.1997 by Juha.Tuomala@iki.fi
+#
+#: kfdird.cpp:46
+msgid "Directories:"
+msgstr "Hakemistot:"
 
-#: kfwin.cpp:174
-msgid "Results were saved to file\n"
-msgstr "Tulokset tallennettu tiedostoon\n"
-
-#: kfwin.cpp:189
-#, c-format
+#: kfwin.cpp:194
 msgid ""
 "Do you really want to delete file:\n"
 "%s"
@@ -306,43 +210,32 @@ msgstr ""
 "Haluatko todella poistaa tiedoston:\n"
 "%s"
 
-#: kfwin.cpp:191
-msgid "Delete File"
-msgstr "Poista tiedosto"
-
-#: kfwin.cpp:205
-msgid ""
-"You have no permission\n"
-" to delete this file"
+#: kfwin.cpp:140 kfwin.cpp:178 kfwin.cpp:209 kfwin.cpp:216 kfwin.cpp:238
+#: kfwin.cpp:245 kfwin.cpp:251 kfwin.cpp:348
+msgid "Error"
 msgstr ""
-"Sinulla ei ole oikeutta\n"
-" poistaa t‰t‰ tiedostoa."
 
-#: kfwin.cpp:212
-msgid ""
-"It isn't possible to delete\n"
-"selected file"
-msgstr ""
-"Valittua tiedostoa ei ole\n"
-"mahdollista poistaa."
+#: kfwin.cpp:410
+msgid "Error while creating child process!"
+msgstr "Virhe luodessa lapsiprosessia!"
 
-#: kfwin.cpp:234
-msgid ""
-"You have no permission\n"
-" to delete this directory"
-msgstr ""
-"Sinulla ei ole oikeutta\n"
-"poistaa t‰t‰ hakemistoa."
+#: kfoptions.cpp:76
+msgid "File format:"
+msgstr "Tiedosto formaatti:"
 
-#: kfwin.cpp:241
-msgid ""
-"Specified directory\n"
-"is not empty!"
-msgstr ""
-"M‰‰ritetty hakemisto\n"
-"ei ole tyhj‰."
+#: kftabdlg.cpp:115
+msgid "Find all files created or &modified:"
+msgstr "Etsi kaikki luodut tai &muutetut tiedostot:"
 
-#: kfwin.cpp:247
+#: kfindtop.cpp:252
+msgid "Help"
+msgstr "&Ohje"
+
+#: kftabdlg.cpp:64
+msgid "Include &subfolders"
+msgstr "Etsi &alikansioista"
+
+#: kfwin.cpp:252
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
@@ -350,13 +243,187 @@ msgstr ""
 "Valittua hakemistoa ei ole\n"
 "mahdollista poistaa."
 
-#: kfwin.cpp:340
-msgid "Couldn't recognize archive type!"
-msgstr "Tunnistamaton arkistotyyppi!"
+#: kfwin.cpp:217
+msgid ""
+"It isn't possible to delete\n"
+"selected file"
+msgstr ""
+"Valittua tiedostoa ei ole\n"
+"mahdollista poistaa."
 
+#: kfwin.cpp:141
+msgid "It wasn't possible to save results!"
+msgstr "Tuloksien tallentaminen ei onnistunut!"
 
-#: kfwin.cpp:401
-msgid "Error while creating child process!"
-msgstr "Virhe luodessa lapsiprosessia!"
+#: kfindtop.cpp:122
+msgid ""
+"KFind %s\n"
+"Frontend to find utility\n"
+"Miroslav FlÌdr <flidr@kky.zcu.cz>\n"
+"\n"
+"Special thanks to Stephan Kulow\n"
+"<coolo@kde.org>"
+msgstr ""
+"KFind %s\n"
+"Graafinen k‰yttˆliittym‰ find tyˆkalulle.\n"
+"Miroslav FlÌdr <flidr@kky.zcu.cz>\n"
+"Erikoiset kiitokset Stephan Kulow:lle\n"
+"<coolo@kde.org>"
 
+#: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
+msgid "KFind Results File"
+msgstr "KFind etsinn‰n tulokset:"
 
+#: kfindtop.cpp:182
+msgid "Kfind &help"
+msgstr "KFind &ohje"
+
+#: kfindtop.cpp:208
+msgid "New Search"
+msgstr "Uusi etsint‰"
+
+#: kfdird.cpp:47 kfoptions.cpp:52 kfwin.cpp:143 kfwin.cpp:181 kfwin.cpp:197
+#: kfwin.cpp:212 kfwin.cpp:219 kfwin.cpp:241 kfwin.cpp:248 kfwin.cpp:254
+#: kfwin.cpp:350
+msgid "OK"
+msgstr ""
+
+#: kftabdlg.cpp:171
+msgid "Of &type:"
+msgstr "&Tyyppi‰:"
+
+#: kfindtop.cpp:221
+msgid "Open"
+msgstr ""
+
+#: kfindtop.cpp:145
+msgid "Open Containing &Folder"
+msgstr "Avaa kohteen &kansio"
+
+#: kfindtop.cpp:241
+msgid "Open Containing Folder"
+msgstr "Avaa kohteen kansio"
+
+#: kfoptions.cpp:199
+msgid "Patterns:"
+msgstr "Kuvio:"
+
+#: kfoptions.cpp:96
+msgid "Plain Text"
+msgstr "Pelkk‰ teksti"
+
+#: kfoptions.cpp:54
+msgid "Preferences"
+msgstr "Ominaisuudet"
+
+#: kfindtop.cpp:236
+msgid "Properties"
+msgstr "Ominaisuudet"
+
+#: kfindtop.cpp:257
+msgid "Quit"
+msgstr ""
+
+#: kfoptions.cpp:204
+msgid "Remove"
+msgstr "Poista"
+
+#: kfwin.cpp:179
+msgid "Results were saved to file\n"
+msgstr "Tulokset tallennettu tiedostoon\n"
+
+#: kfindtop.cpp:246
+msgid "Save Search Results"
+msgstr "Tallenna etsinn‰n tulokset"
+
+#: kfoptions.cpp:81
+msgid "Save results to file ~/.kfind-results.html"
+msgstr "Tallenna tulokset tiedostoon ~/.kfind-results.html"
+
+#: kfoptions.cpp:78
+msgid "Save results to file:"
+msgstr "Tallenna tulokset tiedostoon:"
+
+#: kfoptions.cpp:125
+msgid "Saving"
+msgstr "Tallennus"
+
+#: kfdird.cpp:167 kfdird.cpp:192 kfdird.cpp:210
+msgid "Sorry"
+msgstr "Pahoittelen"
+
+#: kfwin.cpp:246
+msgid ""
+"Specified directory\n"
+"is not empty!"
+msgstr ""
+"M‰‰ritetty hakemisto\n"
+"ei ole tyhj‰."
+
+#: kfindtop.cpp:203
+msgid "Start Search"
+msgstr "Aloita etsint‰"
+
+#: kfindtop.cpp:213
+msgid "Stop Search"
+msgstr "Lopeta etsint‰"
+
+#: kftabdlg.cpp:384
+msgid "The date is not valid!!"
+msgstr "P‰iv‰m‰‰r‰ ei ole oikein!!"
+
+#: kftabdlg.cpp:407
+msgid "The day(s) value isn't valid!!"
+msgstr "P‰iv‰ ei ole oikein!!"
+
+#: kftabdlg.cpp:396
+msgid "The month(s) value isn't valid!!"
+msgstr "Kuukausi ei ole oikein!!"
+
+#: kftabdlg.cpp:424
+msgid "The value in size isn't valid number!!"
+msgstr "Koko arvo ei ole oikein!!"
+
+#: kfwin.cpp:239
+msgid ""
+"You have no permission\n"
+" to delete this directory"
+msgstr ""
+"Sinulla ei ole oikeutta\n"
+"poistaa t‰t‰ hakemistoa."
+
+#: kfwin.cpp:210
+msgid ""
+"You have no permission\n"
+" to delete this file"
+msgstr ""
+"Sinulla ei ole oikeutta\n"
+" poistaa t‰t‰ tiedostoa."
+
+#: kftabdlg.cpp:106
+msgid "and"
+msgstr "ja"
+
+#: kftabdlg.cpp:108
+msgid "day(s)"
+msgstr "p‰iv‰n/p‰ivien aikana"
+
+#: kftabdlg.cpp:117
+msgid "during the previou&s "
+msgstr "&kuluneen"
+
+#: kftabdlg.cpp:107
+msgid "month(s)"
+msgstr "kuukauden/kuukausien aikana"
+
+#~ msgid "Type Description:"
+#~ msgstr "Tyypin kuvaus:"
+
+#~ msgid "Icon:"
+#~ msgstr "Ikoni:"
+
+#~ msgid "Default Application:"
+#~ msgstr "Oletus sovellus:"
+
+#~ msgid "Filetypes"
+#~ msgstr "Tiedostotyypit"
