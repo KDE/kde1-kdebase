@@ -46,25 +46,31 @@ public:
     enum ViewMode { ICON_VIEW, TEXT_VIEW, LONG_VIEW, SHORT_VIEW };    
     /**
      * For example KFileManager use this to determine how to display the
-     * directory listing.
-     *
+     * directory listing. If there are settings local to current url
+     * returns local settings. Called from KFMManager. (sven)
      * @return the view mode.
      *
      * @see #ViewMode
      */
-    ViewMode getViewMode() { return viewMode; }
+     ViewMode getViewMode() { return hasLocal?viewModeLocal:viewMode; }
     /**
      * @return TRUE if we want to display .kde.html or index.html files.
+     * If there are settings local to current url returns local settings.
+     * Called from KFMManager. (sven)
      */
-    bool isViewHTML() { return bViewHTML; }
+     bool isViewHTML() { return hasLocal?bViewHTMLLocal:bViewHTML; }
     /**
      * @return TRUE if the user wants to see the .dot files.
+     * If there are settings local to current url returns local settings.
+     * Called from KFMManager and KFMDirTree and KFMDirTreeItem. (sven)
      */
-    bool isShowDot() { return showDot; }
+    bool isShowDot() { return hasLocal?showDotLocal:showDot; }
     /**
      * @return TRUE if the user enabled the visual schnauzer.
+     * If there are settings local to current url returns local settings.
+     * Called from KFMManager.
      */
-    bool isVisualSchnauzer() { return visualSchnauzer; }
+    bool isVisualSchnauzer() { return hasLocal?visualSchnauzerLocal:visualSchnauzer; }
 
     /**
      * @return the URL that the @ref #view is currently displaying.
@@ -155,6 +161,12 @@ public:
      * Returns bookmarkmanager - sven
      */
     KBookmarkManager *getBookmarkManager() {return bookmarkManager;}
+
+    /**
+     * Sets flag hasLocal - used by KfmView to tell GUI that no props
+     * were found (sven)
+     */
+    inline void setHasLocal (bool aintGotNoProps) {hasLocal = aintGotNoProps;}
 
 public slots:
     /**
@@ -500,21 +512,46 @@ protected:
      * tells us wether the user wants this or not. Default is TRUE.
      */
     bool bViewHTML;
+
+    /**
+     * Tells us if current URL has local setting.
+     * @see #bViewHTML (sven)
+     */
+    bool bViewHTMLLocal; 
+    
     /**
      * Contains LongView, IconView, TextView.
      * With this variable you can switch the view mode.
      * The default is ICON_VIEW.
      */
     ViewMode viewMode;
+
+    /**
+     * View mode for current URL. (sven)
+     * @see #viewMode;
+     */
+    ViewMode viewModeLocal;
+
     /**
      * This flag is set if we display the .* files, too.
      */
     bool showDot;
 
     /**
+     * Wether we display .dot files in current URL. (sven)
+     * @see #showDot
+     */
+    bool showDotLocal;
+
+    /**
      * This flag is set, if kfm should work like a visual schnauzer.
      */
     bool visualSchnauzer;
+
+    /**
+     * If kfm should work like a visual schnauzer in current URL. (sven)
+     */
+    bool visualSchnauzerLocal;
     
     KMenuBar *menu;
 
@@ -617,10 +654,14 @@ protected:
     int kfmgui_height;
     int kfmgui_width;
 
-    int localWidth;
-    int localHeight;
-    bool localTree;
-    bool enablePerUrlProps; //sven
+    /**
+     * Flag: false intill whole GUI is initianilized (sven)
+     */
+    bool GUI_ready;
+    /**
+     * Flag: true if current URL has local settings. (sven)
+     */
+    bool hasLocal;
 };
 
 #endif

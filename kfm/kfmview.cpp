@@ -807,14 +807,16 @@ void KfmView::checkLocalProperties (const char *_url)
       }
     }
 
-  // Not found or not readable: ignore
+  // Not found or not readable:
+  // Tell gui that there is no URL properties!!!!
+  gui->setHasLocal(false);
 }
 //------------------------------------------------------------------------
 
 
 void KfmView::openURL( const char *_url, bool _refresh, int _xoffset, int _yoffset )
 {
-    //checkLocalProperties (_url);
+    checkLocalProperties (_url);
     emit newURL( _url );
     manager->openURL( _url, _refresh, _xoffset, _yoffset );
 }
@@ -828,7 +830,7 @@ void KfmView::openURL( const char *_url )
 
 void KfmView::openURL( const char *_url, const char *_data )
 {
-    //checkLocalProperties (_url);
+    checkLocalProperties (_url);
     emit newURL( _url );
     manager->openURL( _url, FALSE, 0, 0, _data );
 }

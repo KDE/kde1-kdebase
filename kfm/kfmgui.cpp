@@ -73,9 +73,13 @@ QList<QPixmap> *KfmGui::animatedLogo;
 KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     : KTopLevelWidget( name )
 {
+    GUI_ready = false; //sven: flag to know do we fire up or what.
+  
     toolbarButtons = 0L;
     toolbarURL = 0L;
     findDialog = 0;
+
+    bTreeViewInitialized = false; // this is alway true (sven: moved it here)
     
     // Timer used for animated logo
     animatedLogoTimer = new QTimer( this );
@@ -87,9 +91,35 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
        settings are not defined or if there are unknown
        words in it. */
 
+    kfmgui_width = KFMGUI_WIDTH;
+    kfmgui_height = KFMGUI_HEIGHT;
+
+    bTreeView = false;
+    viewMode = ICON_VIEW;
+    showDot = false;
+    visualSchnauzer = false;
+    bViewHTML = true;
+
+    kfmgui_width = KFMGUI_WIDTH;
+    kfmgui_height = KFMGUI_HEIGHT;
+
+    showToolbar = true;
+    toolbarPos = KToolBar::Top;
+
+    showLocationBar = true;
+    locationBarPos = KToolBar::Top;
+
+    showMenubar = true;;
+    menubarPos = KMenuBar::Top;
+
+    showStatusbar = true;
+
+    
     KConfig *config = kapp->getConfig();
     config->setGroup( "Settings" );
-    
+    readProperties( config );
+// ---------  this will go to other function--------------------
+/*
     kfmgui_width = config->readNumEntry("kfmgui_width",  KFMGUI_WIDTH);
     kfmgui_height = config->readNumEntry("kfmgui_height",KFMGUI_HEIGHT);
 
@@ -129,7 +159,7 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
       bViewHTML = true;
     else
       bViewHTML = false;
-
+    
     entry = config->readEntry("Toolbar", "top");
     showToolbar = true;
     if ( entry == "top" )
@@ -185,7 +215,9 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
 	showStatusbar = false;
 	statusbarPos = KStatusBar::Top;
     }
-
+*/
+    //---------------- GOING OUT END ---------------------------
+    // Sven: We leave this out, since it's in other group.
     config->setGroup( "Cache" );
     bool on;
     on=config->readBoolEntry( "CacheEnabled", true );
@@ -194,27 +226,15 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     HTMLCache::enableSaveCache(on);
 
     initGUI();
-
+    
+    GUI_ready = true; //sven: finished constructor;
+    
     windowList->setAutoDelete( false );
     windowList->append( this );
 
-    localWidth = 0;
-    localHeight = 0;
-
     if ( _url )
-      view->openURL( _url );
-    //----------------------------------------------------------------
-    // We create new window - check this location's settings
-    // View did set all local props by now. (sven)
-    if (localWidth && localHeight)
-    {
-      this->resize (localWidth, localHeight);   // set
-      bTreeView = !localTree; // slotShowTree inverts
-      slotShowTreeView();
-    }
-    else                                         // defaults, tree already set
-      this->resize(kfmgui_width,kfmgui_height);
-    //----------------------------------------------------------------
+      view->openURL( _url ); // sven: local props get read here!!!
+    this->resize(kfmgui_width,kfmgui_height);
 }
 
 KfmGui* KfmGui::findWindow( const char *_url )
@@ -893,6 +913,7 @@ void KfmGui::slotViewHTML( )
 {
     bViewHTML = !mview->isItemChecked( mview->idAt(3) );
     mview->setItemChecked( mview->idAt( 3 ), bViewHTML);
+    bViewHTMLLocal = bViewHTML; //force local mode too (sven)
     view->slotUpdateView();
 }
 
@@ -903,6 +924,7 @@ void KfmGui::slotIconView()
     mview->setItemChecked( mview->idAt( 6 ), false );
     mview->setItemChecked( mview->idAt( 7 ), false );
     mview->setItemChecked( mview->idAt( 8 ), false );
+    viewModeLocal = viewMode; //force local mode too (sven)
     view->slotUpdateView( false );
 }
 
@@ -913,6 +935,7 @@ void KfmGui::slotLongView()
     mview->setItemChecked( mview->idAt( 6 ), false);
     mview->setItemChecked( mview->idAt( 7 ), true );
     mview->setItemChecked( mview->idAt( 8 ), false );
+    viewModeLocal = viewMode; //force local mode too (sven)
     view->slotUpdateView( false );
 }
 
@@ -923,6 +946,7 @@ void KfmGui::slotTextView()
     mview->setItemChecked( mview->idAt( 6 ), true );
     mview->setItemChecked( mview->idAt( 7 ), false );
     mview->setItemChecked( mview->idAt( 8 ), false );
+    viewModeLocal = viewMode; //force local mode too (sven)
     view->slotUpdateView( false );
 }
 
@@ -933,6 +957,7 @@ void KfmGui::slotShortView()
     mview->setItemChecked( mview->idAt( 6 ), false );
     mview->setItemChecked( mview->idAt( 7 ), false );
     mview->setItemChecked( mview->idAt( 8 ), true );
+    viewModeLocal = viewMode; //force local mode too (sven)
     view->slotUpdateView( false );
 }
 
@@ -1191,6 +1216,7 @@ void KfmGui::slotShowMenubar()
 	menu->hide();
     updateRects();
     // TODO: does not work yet
+    // sven: what doesn't work? Ah, how do I show my menubar back?
 }
 
 void KfmGui::slotShowToolbar()
@@ -1201,7 +1227,7 @@ void KfmGui::slotShowToolbar()
 	toolbarButtons->enable( KToolBar::Hide );
     else
 	toolbarButtons->enable( KToolBar::Show );
-    resizeEvent( 0L );
+    resizeEvent( 0L ); //sven: why this?
 }
 
 void KfmGui::slotShowLocationBar()
@@ -1212,7 +1238,7 @@ void KfmGui::slotShowLocationBar()
 	toolbarURL->enable( KToolBar::Hide );
     else
 	toolbarURL->enable( KToolBar::Show );
-    resizeEvent( 0L );
+    resizeEvent( 0L ); //sven: why this?
 }
 
 void KfmGui::slotShowStatusbar()
@@ -1223,13 +1249,14 @@ void KfmGui::slotShowStatusbar()
 	statusBar->enable( KStatusBar::Hide );
     else
 	statusBar->enable( KStatusBar::Show );
-    resizeEvent( 0L );
+    resizeEvent( 0L ); //sven: why this?
 }
 
 void KfmGui::slotShowDot()
 {
-    showDot = !showDot;
+    showDot = !mview->isItemChecked( mview->idAt( 0 ));
     mview->setItemChecked( mview->idAt( 0 ), showDot );
+    showDotLocal = showDot; //force local mode too. (sven)
     view->slotUpdateView();
     if ( bTreeViewInitialized )
 	treeView->update();
@@ -1237,8 +1264,9 @@ void KfmGui::slotShowDot()
 
 void KfmGui::slotShowSchnauzer()
 {
-    visualSchnauzer = !visualSchnauzer;
+    visualSchnauzer = !mview->isItemChecked( mview->idAt( 2 ));
     mview->setItemChecked( mview->idAt( 2 ), visualSchnauzer );
+    visualSchnauzerLocal = visualSchnauzer; //force local mode too. (sven)
     view->slotUpdateView();
 }
 
@@ -1319,6 +1347,7 @@ void KfmGui::slotOpenLocation( )
     }
 }
 
+//Sven: we don't need this any more. Or?
 void KfmGui::slotQuit()
 {
     if ( QMessageBox::warning( 0, klocale->translate("KFM Confirm"), 
@@ -1432,7 +1461,7 @@ void KfmGui::slotRemoveWaitingWidget( KHTMLView *_w )
 	slotSetStatusBar( klocale->translate("Document: Done") );
     }
 
-    debug( "Removed waiting: %ld, %d", (unsigned long)_w, waitingWidgetList.count() );
+    //debug( "Removed waiting: %ld, %d", (unsigned long)_w, waitingWidgetList.count() );
 }
 
 void KfmGui::slotTextSelected( KHTMLView *v, bool s )
@@ -1450,100 +1479,13 @@ void KfmGui::slotTextSelected( KHTMLView *v, bool s )
 void KfmGui::slotSaveSettings()
 {
   KConfig *config = kapp->getConfig();
-  config->setGroup( "Settings" );
-
-  config->writeEntry("kfmgui_width",this->width());
-  config->writeEntry("kfmgui_height",this->height());
-
-  QString entry;
-
-  if ( bTreeView == false)
-    entry = "Off";
-  else
-    entry = "On";
-  
-  config->writeEntry("TreeView", entry);
-  
-  switch (viewMode)
-    {
-    case ICON_VIEW:
-      entry = "IconView";
-      break;
-    case LONG_VIEW:
-      entry = "LongView";
-      break;
-    case TEXT_VIEW:
-      entry = "TextView";
-      break;
-    case SHORT_VIEW:
-      entry = "ShortView";
-      break;
-    }
-
-  config->writeEntry("ViewMode", entry);
-
-  if (showDot == true)
-    entry = "yes";
-  else
-    entry = "no";
-  
-  config->writeEntry("ShowDotFiles", entry);
-
-  if (visualSchnauzer == false)
-    entry = "Off";
-  else
-    entry = "On";
-  
-  config->writeEntry("VisualSchnauzer", entry);
-
-  if (bViewHTML == true)
-    entry = "yes";
-  else
-    entry = "no";
-  
-  config->writeEntry("HTMLView", entry);
-
-  if ( !showToolbar )
-      config->writeEntry( "Toolbar", "hide" );
-  else if ( toolbarButtons->barPos() == KToolBar::Top )
-      config->writeEntry( "Toolbar", "top" );
-  else if ( toolbarButtons->barPos() == KToolBar::Bottom )
-      config->writeEntry( "Toolbar", "bottom" );
-  else if ( toolbarButtons->barPos() == KToolBar::Left )
-      config->writeEntry( "Toolbar", "left" );
-  else if ( toolbarButtons->barPos() == KToolBar::Right )
-      config->writeEntry( "Toolbar", "right" );
-  else if ( toolbarButtons->barPos() == KToolBar::Floating )
-      config->writeEntry( "Toolbar", "floating" );
-
-  if ( !showLocationBar )
-      config->writeEntry( "LocationBar", "hide" );
-  else if ( toolbarURL->barPos() == KToolBar::Top )
-      config->writeEntry( "LocationBar", "top" );
-  else if ( toolbarURL->barPos() == KToolBar::Bottom )
-      config->writeEntry( "LocationBar", "bottom" );
-  else if ( toolbarURL->barPos() == KToolBar::Floating )
-      config->writeEntry( "LocationBar", "floating" );
-
-  if ( !showStatusbar )
-      config->writeEntry( "Statusbar", "hide" );
-  else
-      config->writeEntry( "Statusbar", "bottom" );
-
-  if ( !showMenubar )
-      config->writeEntry( "Menubar", "hide" );
-  else if ( menu->menuBarPos() == KMenuBar::Top )
-      config->writeEntry( "Menubar", "top" );
-  else if ( menu->menuBarPos() == KMenuBar::Bottom )
-      config->writeEntry( "Menubar", "bottom" );
-  else if ( menu->menuBarPos() == KMenuBar::Floating )
-      config->writeEntry( "Menubar", "floating" );
-  
+#warning sven: maybe enable/disable Cache should go to URL properties?
   config->setGroup( "Cache" );
   config->writeEntry( "CacheEnabled", HTMLCache::isEnabled() );
   config->writeEntry( "SaveCacheEnabled", HTMLCache::isSaveEnabled() );
 
-  config->sync();
+  config->setGroup( "Settings" );
+  saveProperties (config); //this will sync on end.
 }
 
 
@@ -1745,7 +1687,11 @@ void KfmGui::setCharset(const char *_c){
    view->setCharset(_c);
 }
 
-// session management
+//-------------------------------------------------------------------------
+// session management readProperties - cannot be used for othe stuff (sven)
+// Because thy apply settings, so they cannot be called from constructor.
+// Rearanging constructor and would be too heavy.
+
 void KfmGui::readProperties(int number)
 {
   KTopLevelWidget::readPropertiesInternal(kapp->getConfig(), number);
@@ -1768,37 +1714,233 @@ void KfmGui::readProperties(int number)
     slotShowStatusbar();
 }
 
+
+// What an idiot I am! Nobody calls this function!!! I can do with it
+// whatever I want! (sven)
+void KfmGui::readProperties( KConfig* config )
+{
+
+  // GUI_ready == true -> constructor reads global defaults
+  // GUI_ready == false -> view reads URL proerties
+  
+  
+    QString entry;
+
+    entry = config->readEntry("ViewMode", "unset");
+    if ( entry == "IconView")
+      viewModeLocal = ICON_VIEW;
+    else if (entry == "LongView")
+      viewModeLocal = LONG_VIEW;
+    else if (entry == "TextView")
+      viewModeLocal = TEXT_VIEW;
+    else if (entry == "ShortView")
+      viewModeLocal = SHORT_VIEW;
+    else
+      viewModeLocal = viewMode;
+    
+    entry = config->readEntry("ShowDotFiles","unset");
+    if (entry == "yes")
+      showDotLocal = true;
+    else if (entry == "no")
+      showDotLocal = false;
+    else
+      showDotLocal = showDot;
+    
+    entry = config->readEntry("VisualSchnauzer", "unset");
+    if (entry == "Off")
+      visualSchnauzerLocal = false;
+    else if (entry == "On")
+      visualSchnauzerLocal = true;
+    else
+      visualSchnauzerLocal = visualSchnauzer;
+    
+    entry = config->readEntry("HTMLView", "unset");
+    if (entry == "yes")
+      bViewHTMLLocal = true;
+    else  if (entry == "no")
+      bViewHTMLLocal = false;
+    else
+      bViewHTMLLocal = bViewHTML;
+    
+    // Now set the changes!!
+
+    if (GUI_ready) //if these are local changes...
+    {
+      // Tricky - if we browse we want GLOBAL values, and not those from
+      // previous dir. But this also avoids more updateViews we don't have
+      // to updateView since we read new URL. (sven)
+
+      hasLocal = false;
+      
+      if (bViewHTML != bViewHTMLLocal)
+      {
+        hasLocal = true;
+        mview->setItemChecked( mview->idAt( 3 ), bViewHTMLLocal);
+      }
+      
+      if (visualSchnauzer != visualSchnauzerLocal)
+      {
+        hasLocal = true;
+        mview->setItemChecked( mview->idAt( 2 ), visualSchnauzerLocal );
+      }
+
+      if (showDot != showDotLocal)
+      {
+        hasLocal = true;
+        mview->setItemChecked( mview->idAt( 0 ), showDotLocal );
+      }
+
+      if (viewMode != viewModeLocal)
+      {
+        hasLocal = true;
+        
+        mview->setItemChecked( mview->idAt( 5 ), false);
+        mview->setItemChecked( mview->idAt( 6 ), false);
+        mview->setItemChecked( mview->idAt( 7 ), false);
+        mview->setItemChecked( mview->idAt( 8 ), false);
+
+        switch (viewModeLocal)
+        {
+          case ICON_VIEW:
+            mview->setItemChecked( mview->idAt( 5 ), true );
+            break;
+
+          case LONG_VIEW:
+            mview->setItemChecked( mview->idAt( 7 ), true );
+            break;
+
+          case SHORT_VIEW:
+            mview->setItemChecked( mview->idAt( 8 ), true );
+            break;
+
+          case TEXT_VIEW:
+            mview->setItemChecked( mview->idAt( 6 ), true );
+            break;
+        }
+      }
+    }
+    else // else if constructor reads globals
+    {
+      bViewHTML = bViewHTMLLocal;
+      visualSchnauzer = visualSchnauzerLocal;
+      showDot = showDotLocal;
+      viewMode = viewModeLocal;
+    }
+        
+    // The rest should be read only if we open new window
+
+    if (!isVisible())
+    {
+
+      kfmgui_width = config->readNumEntry("kfmgui_width",  kfmgui_width);
+      kfmgui_height = config->readNumEntry("kfmgui_height",kfmgui_height);
+
+      entry = config->readEntry("TreeView", "unset");
+      if (entry == "Off")
+        bTreeView = false;
+      else if (entry == "On")
+        bTreeView = true;
+    
+      entry = config->readEntry("Toolbar", "unset");
+      showToolbar = true;
+      if ( entry == "top" )
+        toolbarPos = KToolBar::Top;
+      else if ( entry == "left" )
+        toolbarPos = KToolBar::Left;
+      else if ( entry == "right" )
+        toolbarPos = KToolBar::Right;
+      else if ( entry == "bottom" )
+        toolbarPos = KToolBar::Bottom;
+      else if ( entry == "floating" )
+        toolbarPos = KToolBar::Floating;
+      else if ( entry == "flat" )
+        toolbarPos = KToolBar::Flat;
+      else if (entry == "hide"){
+        showToolbar = false;
+        toolbarPos = KToolBar::Top;
+      }
+
+      entry = config->readEntry("LocationBar", "unset");
+      showLocationBar = true;
+      if ( entry == "top" )
+        locationBarPos = KToolBar::Top;
+      else if ( entry == "bottom" )
+        locationBarPos = KToolBar::Bottom;
+      else if ( entry == "floating" )
+        locationBarPos = KToolBar::Floating;
+      else if ( entry == "flat" )
+        locationBarPos = KToolBar::Flat;
+      else if (entry == "hide"){
+        showLocationBar = false;
+        locationBarPos = KToolBar::Top;
+      }
+
+      entry = config->readEntry("Menubar", "unset");
+      showMenubar = true;
+      if ( entry == "top" )
+        menubarPos = KMenuBar::Top;
+      else if ( entry == "bottom" )
+        menubarPos = KMenuBar::Bottom;
+      else if ( entry == "floating" )
+        menubarPos = KMenuBar::Floating;
+      else if ( entry == "flat" )
+        menubarPos = KMenuBar::Flat;
+      else if (entry == "hide") {
+        showMenubar = false;
+        menubarPos = KMenuBar::Top;
+      }
+
+      entry = config->readEntry("Statusbar", "unset");
+      showStatusbar = true;
+      if ( entry == "show" )
+        showStatusbar = true;
+      else if (entry == "hide")
+        showStatusbar = false;
+
+      if (GUI_ready)
+      {
+        bTreeView =!bTreeView;
+        slotShowTreeView();
+
+        showMenubar = !showMenubar;
+        menu->setMenuBarPos(menubarPos);
+        slotShowMenubar ();
+
+        showToolbar = !showToolbar;
+        toolbarButtons->setBarPos(toolbarPos);
+        slotShowToolbar();
+
+        showLocationBar = !showLocationBar;
+        toolbarURL->setBarPos(locationBarPos);
+        slotShowLocationBar ();
+
+        showStatusbar = !showStatusbar;
+        slotShowStatusbar();
+      }
+    }
+}
+//--------------------------------------------------------------------------
+// Theese are SM saveProperties used for normal and local properties as well
+
 void KfmGui::saveProperties(int number)
 {
   KTopLevelWidget::savePropertiesInternal(kapp->getConfig(), number);
 } 
 
-void KfmGui::readProperties( KConfig* config )
-{
-  //adjusting internal state of tree to match the actual state
-  bool bEntry = config->readBoolEntry("TreeView", false);
-  if( ( bEntry  && !bTreeView )
-      || ( !bEntry && bTreeView ) )
-    slotShowTreeView();
-    
-  //adjusting internal state of view mode to match the actual state
-  QString entry = config->readEntry("ViewMode", "IconView");
-  if (entry == "LongView")
-    slotLongView();
-  else if (entry == "TextView")
-    slotTextView();
-  else if (entry == "ShortView")
-    slotShortView();
-  else 
-    slotIconView();
-
-}
 
 void KfmGui::saveProperties( KConfig* config )
 {
   QString entry;
 
-  config->writeEntry("TreeView", bTreeView);
+  config->writeEntry("kfmgui_width",this->width());
+  config->writeEntry("kfmgui_height",this->height());
+
+  if ( bTreeView == false)
+    entry = "Off";
+  else
+    entry = "On";
+  
+  config->writeEntry("TreeView", entry);
   
   switch (viewMode)
     {
@@ -1818,6 +1960,68 @@ void KfmGui::saveProperties( KConfig* config )
 
   config->writeEntry("ViewMode", entry);
 
+  if (showDot == true)
+    entry = "yes";
+  else
+    entry = "no";
+  
+  config->writeEntry("ShowDotFiles", entry);
+
+  if (visualSchnauzer == false)
+    entry = "Off";
+  else
+    entry = "On";
+  
+  config->writeEntry("VisualSchnauzer", entry);
+
+  if (bViewHTML == true)
+    entry = "yes";
+  else
+    entry = "no";
+  
+  config->writeEntry("HTMLView", entry);
+
+  if ( !showToolbar )
+      config->writeEntry( "Toolbar", "hide" );
+  else if ( toolbarButtons->barPos() == KToolBar::Top )
+      config->writeEntry( "Toolbar", "top" );
+  else if ( toolbarButtons->barPos() == KToolBar::Bottom )
+      config->writeEntry( "Toolbar", "bottom" );
+  else if ( toolbarButtons->barPos() == KToolBar::Left )
+      config->writeEntry( "Toolbar", "left" );
+  else if ( toolbarButtons->barPos() == KToolBar::Right )
+      config->writeEntry( "Toolbar", "right" );
+  else if ( toolbarButtons->barPos() == KToolBar::Floating )
+      config->writeEntry( "Toolbar", "floating" );
+  else if ( toolbarButtons->barPos() == KToolBar::Flat )
+      config->writeEntry( "Toolbar", "flat" );
+
+  if ( !showLocationBar )
+      config->writeEntry( "LocationBar", "hide" );
+  else if ( toolbarURL->barPos() == KToolBar::Top )
+      config->writeEntry( "LocationBar", "top" );
+  else if ( toolbarURL->barPos() == KToolBar::Bottom )
+      config->writeEntry( "LocationBar", "bottom" );
+  else if ( toolbarURL->barPos() == KToolBar::Floating )
+      config->writeEntry( "LocationBar", "floating" );
+  else if ( toolbarURL->barPos() == KToolBar::Flat )
+      config->writeEntry( "LocationBar", "flat" );
+
+  if ( !showStatusbar )
+      config->writeEntry( "Statusbar", "hide" );
+  else
+      config->writeEntry( "Statusbar", "show" );
+
+  if ( !showMenubar )
+      config->writeEntry( "Menubar", "hide" );
+  else if ( menu->menuBarPos() == KMenuBar::Top )
+      config->writeEntry( "Menubar", "top" );
+  else if ( menu->menuBarPos() == KMenuBar::Bottom )
+      config->writeEntry( "Menubar", "bottom" );
+  else if ( menu->menuBarPos() == KMenuBar::Floating )
+      config->writeEntry( "Menubar", "floating" );
+  else if ( menu->menuBarPos() == KMenuBar::Flat )
+      config->writeEntry( "Menubar", "flat" );
   config->sync();
 }
 
@@ -1825,32 +2029,16 @@ void KfmGui::saveProperties( KConfig* config )
 void KfmGui::writeProperties(KConfig *cfg)
 {
   //Sven - mostly because saveProperties is protected :-(
+  // And I have to set Group!
   cfg->setGroup("URL properties");
-  cfg->writeEntry("Width", width());
-  cfg->writeEntry("Height", height());
   saveProperties(cfg); // will sync on end
 }
 
 void KfmGui::loadProperties(KConfig *cfg)
 {
   cfg->setGroup("URL properties");
-  localWidth = cfg->readNumEntry("Width", 0);
-  localHeight = cfg->readNumEntry("Height", 0);
-  localTree = cfg->readBoolEntry("TreeView", false);
-
-  //adjusting internal state of view mode to match the actual state
-  QString entry = cfg->readEntry("ViewMode", "IconView");
-  if (entry == "LongView")
-    slotLongView();
-  else if (entry == "TextView")
-    slotTextView();
-  else if (entry == "ShortView")
-    slotShortView();
-  else 
-    slotIconView();
+  readProperties(cfg);
 }
-//--------------------------------------------------------------------------
-
 
 KfmGui::~KfmGui()
 {
