@@ -130,6 +130,7 @@ void kPanel::parseMenus(){
     }
 
     pmenu_add = new PMenu(*pmenu);
+
     pmenu->add( new PMenuItem(separator) );
 
     PMenu *panel_menu = new PMenu;
