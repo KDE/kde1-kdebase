@@ -1,0 +1,31 @@
+/* XPM */
+static char *folder[] = {
+"16 16 8 1",
+". c None",
+"# c #d7a679",
+"a c #404040",
+"b c #ffffff",
+"c c #bf7949",
+"d c #808080",
+"e c #000000",
+"f c #8e5930",
+"...#.aa.........",
+"...bb#caa.......",
+"aa.bbbb#caa.dd..",
+"a#aebbbbb#caadd.",
+"a###aebbbbb#caa.",
+".c####aebbbb#fa.",
+".c######aebb#fa.",
+".f########a##a..",
+".fc#####ccca#a..",
+"..cccccccccada..",
+"..fcccccccfada..",
+"..fffccfffffa...",
+"...cafffffffa...",
+".....cafffffa...",
+".......cafffa...",
+".........cafa..."};
+
+
+
+

@@ -13,4 +13,4 @@ data_DATA = 3floppy_mount.xpm 3floppy_unmount.xpm 5floppy_mount.xpm \
 	zip_mount.xpm zip_unmount.xpm  
 
 datadir = $(prefix)/share/icons
-SUBDIRS = toolbar wallpapers
+SUBDIRS = toolbar wallpapers mini
