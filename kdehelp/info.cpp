@@ -38,6 +38,22 @@
 #define EATSPACE(ptr)	while ((*ptr == ' ')||(*ptr == '\t')) ptr++;
 
 // ============================================================================
+// cIndirect member functions
+
+cIndirect::cIndirect( const char *f, int off )
+{
+    mFile = StrDup( f );
+    mOffset = off;
+    mNext = 0;
+}
+
+cIndirect::~cIndirect()
+{
+    delete [] mFile;
+}
+
+
+// ============================================================================
 // cIndirectList member functions
 
 // ----------------------------------------------------------------------------
@@ -45,7 +61,7 @@
 //
 cIndirectList::cIndirectList()
 {
-	head = tail = NULL;
+	head = tail = 0;
 }
 
 // ----------------------------------------------------------------------------
@@ -61,16 +77,16 @@ cIndirectList::~cIndirectList()
 //
 void cIndirectList::Reset()
 {
-	sIndirect *tmp, *curr = head;
+	cIndirect *tmp, *curr = head;
 
 	while (curr)
 	{
 		tmp = curr;
-		curr = curr->next;
+		curr = curr->next();
 		delete tmp;
 	}
 
-	head = tail = NULL;
+	head = tail = 0;
 }
 
 // ----------------------------------------------------------------------------
@@ -92,12 +108,12 @@ int cIndirectList::Read(const char *filename)
 				stream.getline(buffer, 255);
 				if (buffer[0] == INFO_MARKER) continue;
 				file = strtok(buffer, ":");
-				if (file == NULL)
+				if (file == 0)
 				{
 					Error.Set(ERR_FATAL, klocale->translate("Error in info file"));
 					return 1;
 				}
-				posPtr = strtok(NULL, ".");
+				posPtr = strtok(0, ".");
                 if ( posPtr )
                 {
                     Add(file, atoi(posPtr));
@@ -120,17 +136,11 @@ int cIndirectList::Read(const char *filename)
 //
 void cIndirectList::Add(const char *file, int offset)
 {
-	sIndirect *indirect = new sIndirect;
-
-	strncpy(indirect->file, file, 255);
-    indirect->file[255] = '\0';
-
-	indirect->offset = offset;
-	indirect->next = NULL;
+	cIndirect *indirect = new cIndirect( file, offset );
 
 	if (head)
 	{
-		tail->next = indirect;
+		tail->setNext( indirect );
 		tail = indirect;
 	}
 	else
@@ -142,22 +152,22 @@ void cIndirectList::Add(const char *file, int offset)
 // ----------------------------------------------------------------------------
 // find the node at 'offset'
 //
-char *cIndirectList::Find(int &offset)
+const char *cIndirectList::Find(int &offset)
 {
-	sIndirect *curr = head, *prev = head;
+	cIndirect *curr = head, *prev = head;
 	int fileOffset = 0;
 
 	while (curr)
 	{
-		if (curr->offset > offset) break;
-		fileOffset = curr->offset;
+		if (curr->offset() > offset) break;
+		fileOffset = curr->offset();
 		prev = curr;
-		curr = curr->next;
+		curr = curr->next();
 	}
 
-	offset = offset - fileOffset + head->offset;
+	offset = offset - fileOffset + head->offset();
 
-	return prev->file;
+	return prev->file();
 }
 
 // ----------------------------------------------------------------------------
@@ -165,13 +175,29 @@ char *cIndirectList::Find(int &offset)
 //
 void cIndirectList::Print()
 {
-	sIndirect *curr = head;
+	cIndirect *curr = head;
 
 	while (curr)
 	{
-		cout << "File : " << curr->file << ", Pos : " << curr->offset << endl;
-		curr = curr->next;
+		cout << "File : " << curr->file() << ", Pos : " << curr->offset()
+             << endl;
+		curr = curr->next();
 	}
+}
+
+// ============================================================================
+// cTag member functions
+
+cTag::cTag( const char *n, int off )
+{
+    mNode = StrDup( n );
+    mOffset = off;
+    mNext = 0;
+}
+
+cTag::~cTag()
+{
+    delete [] mNode;
 }
 
 // ============================================================================
@@ -182,7 +208,7 @@ void cIndirectList::Print()
 //
 cTagTable::cTagTable()
 {
-	head = tail = NULL;
+	head = tail = 0;
 }
 
 // ----------------------------------------------------------------------------
@@ -198,16 +224,16 @@ cTagTable::~cTagTable()
 //
 void cTagTable::Reset()
 {
-	sTag *tmp, *current = head;
+	cTag *tmp, *current = head;
 
 	while (current)
 	{
 		tmp = current;
-		current = current->next;
+		current = current->next();
 		delete tmp;
 	}
 
-	head = tail = NULL;
+	head = tail = 0;
 }
 
 // ----------------------------------------------------------------------------
@@ -217,10 +243,10 @@ void cTagTable::Read(const char *filename)
 {
 	char buffer[256];
 	char *token;
-        char haveTable = 0;
+    char haveTable = 0;
 	char *file;
-        char *node = NULL;
-        char *offsetPtr = NULL;
+    char *node = 0;
+    char *offsetPtr = 0;
 	ifstream stream(filename);
 
 	while (FindMarker(stream))
@@ -231,32 +257,37 @@ void cTagTable::Read(const char *filename)
 			do							// read the tag table
 			{
 				haveTable = 1;
-				file = NULL;
+				file = 0;
+                node = 0;
 				stream.getline(buffer, 256);
 				if (!strcmp(buffer, "(Indirect)")) continue;
 				if (buffer[0] == INFO_MARKER) break;
 
 				token = strtok(buffer, ":");
 				EATSPACE(token);
-
+/*
 				if (!strcmp(token, INFO_FILE_TOKEN))
 				{
-					token = strtok(NULL, ",");
+					token = strtok(0, ",");
 					EATSPACE(token);
 					file = token;
-					token = strtok(NULL, ":");
+					token = strtok(0, ":");
 					EATSPACE(token);
 				}
+*/
 				if (!strcmp(token, INFO_NODE_TOKEN))
 				{
-					token = strtok(NULL, INFO_TAGSEPARATOR);
+					token = strtok(0, INFO_TAGSEPARATOR);
 					EATSPACE(token);
 					node = token;
-					token = strtok(NULL, ".");
+					token = strtok(0, ".");
 					offsetPtr = token;
 				}
 
-				Add(file, node, atoi(offsetPtr));
+                if ( node && offsetPtr )
+                {
+                    Add(node, atoi(offsetPtr));
+                }
 			}
 			while ((buffer[0] != INFO_MARKER) && (!stream.eof()));
 		}
@@ -279,10 +310,10 @@ void cTagTable::Read(const char *filename)
 void cTagTable::CreateTable(const char *filename)
 {
 	int offset;
-	char *buffer = new char [256];
+	char buffer[256];
 	char *token;
 	char *file;
-        char *node = NULL;
+    char *node = 0;
 	ifstream stream(filename);
 
 	if (stream.fail())
@@ -294,7 +325,8 @@ void cTagTable::CreateTable(const char *filename)
 	while (FindMarker(stream))
 	{
 		offset = stream.tellg() - 2;
-		file = NULL;
+		file = 0;
+        node = 0;
 		stream.getline(buffer, 255);
 
 		token = strtok(buffer, ":");
@@ -303,44 +335,36 @@ void cTagTable::CreateTable(const char *filename)
 
 		if (!strcmp(token, INFO_FILE_TOKEN))
 		{
-			token = strtok(NULL, "\t,");
+			token = strtok(0, "\t,");
 			if (!token) continue;
 			EATSPACE(token);
 			file = token;
-			token = strtok(NULL, ":");
+			token = strtok(0, ":");
 			if (!token) continue;
 			EATSPACE(token);
 		}
 		if (!strcmp(token, INFO_NODE_TOKEN))
 		{
-			token = strtok(NULL, "\t,");
+			token = strtok(0, "\t,");
 			if (!token) continue;
 			EATSPACE(token);
 			node = token;
 		}
-		if (file)
-			Add(file, node, offset);
+		if (node)
+			Add(node, offset);
 	}
-
-	delete [] buffer;
 }
 
 // ----------------------------------------------------------------------------
 // add a tag to the tag table
 //
-void cTagTable::Add(const char *file, char *node, int offset)
+void cTagTable::Add(char *node, int offset)
 {
-	sTag *tag = new sTag;
-
-	tag->setFile( file );
-
-	strcpy(tag->node, node);
-	tag->offset = offset;
-	tag->next = NULL;
+	cTag *tag = new cTag( node, offset );
 
 	if (head)
 	{
-		tail->next = tag;
+		tail->setNext( tag );
 		tail = tag;
 	}
 	else
@@ -354,13 +378,13 @@ void cTagTable::Add(const char *file, char *node, int offset)
 //
 int cTagTable::Find(char *node)
 {
-	sTag *current = head;
+	cTag *current = head;
 
 	while (current)
 	{
-		if (!strcasecmp(current->node, node))
-			return current->offset;
-		current = current->next;
+		if (!strcasecmp(current->node(), node))
+			return current->offset();
+		current = current->next();
 	}
 
 	return -1;
@@ -371,13 +395,13 @@ int cTagTable::Find(char *node)
 //
 void cTagTable::Print()
 {
-	sTag *current = head;
+	cTag *current = head;
 
 	while (current)
 	{
-		cout << "File : " << current->file() << ", Node : " << current->node
-			 << ", Offset : " << current->offset << endl;
-		current = current->next;
+		cout << "Node : " << current->node()
+			 << ", Offset : " << current->offset() << endl;
+		current = current->next();
 	}
 }
 
@@ -389,7 +413,7 @@ void cTagTable::Print()
 //
 cNodeLineList::cNodeLineList()
 {
-	head = tail = NULL;
+	head = tail = 0;
 }
 
 
@@ -416,7 +440,7 @@ void cNodeLineList::Reset()
 		delete tmp;
 	}
 
-	head = tail = curr = NULL;
+	head = tail = curr = 0;
 }
 
 // ----------------------------------------------------------------------------
@@ -606,7 +630,7 @@ void cNodeLineList::AddMenu(const char *buffer)
 			while ( *ptr1 != ')' )
 				ptr1++;
 		}
-		if ( ( ptr2 = strchr( ptr1, '.' ) ) == NULL )
+		if ( ( ptr2 = strchr( ptr1, '.' ) ) == 0 )
 			 ptr2 = ptr1+1;
 		*ptr2 = '\0';
 		nodeMenu->node = StrDup(nodePtr);
@@ -650,7 +674,7 @@ void cNodeLineList::AddXRef(ifstream &stream, char *buffer)
 
 	if (ptr && ptr1)
 		ptr = ptr < ptr1 ? ptr : ptr1;
-	else if (ptr == NULL)
+	else if (ptr == 0)
 		ptr = ptr1;
 
 	*ptr = '\0';
@@ -660,7 +684,7 @@ void cNodeLineList::AddXRef(ifstream &stream, char *buffer)
 	EATSPACE( ptr );
 
 	*ref = '\0';
-	if ( ( ptr1 = strchr( ptr, ':' ) ) == NULL )
+	if ( ( ptr1 = strchr( ptr, ':' ) ) == 0 )
 	{
 		strcpy( ref, ptr );
 		stream.getline( buffer, 256 );
@@ -686,7 +710,7 @@ void cNodeLineList::AddXRef(ifstream &stream, char *buffer)
 		nodeXRef->name = StrDup(ref);
 		EATSPACE( ptr1 );
 		*node = '\0';
-		if ( ( ptr = strpbrk( ptr1, ",." ) ) == NULL )
+		if ( ( ptr = strpbrk( ptr1, ",." ) ) == 0 )
 		{
 			strcpy( node, ptr1 );
 			stream.getline( buffer, 256 );
@@ -736,7 +760,7 @@ void cNodeLineList::AddXRef(ifstream &stream, char *buffer)
 
 	if (ptr && ptr1)
 		ptr = ptr < ptr1 ? ptr : ptr1;
-	else if (ptr == NULL)
+	else if (ptr == 0)
 		ptr = ptr1;
 
 	do
@@ -762,7 +786,7 @@ void cNodeLineList::AddXRef(ifstream &stream, char *buffer)
 			EATSPACE(ptr1);
 			nodeXRef->name = new char [strlen(ptr1) + 2];
 			strcpy(nodeXRef->name, ptr1);
-			ptr1 = strtok(NULL, ",.");
+			ptr1 = strtok(0, ",.");
 			EATSPACE(ptr1);
 			nodeXRef->node = StrDup(ptr1);
 			buf = ptr1 + strlen(ptr1) + 1;
@@ -781,7 +805,7 @@ void cNodeLineList::AddXRef(ifstream &stream, char *buffer)
 
 		if (ptr && ptr1)
 			ptr = ptr < ptr1 ? ptr : ptr1;
-		else if (ptr == NULL)
+		else if (ptr == 0)
 			ptr = ptr1;
 
 		if (ptr)
@@ -832,7 +856,7 @@ void cNodeLineList::AddLongText(char *buffer, int &pos, int indentSize)
 		strcat(line, ptr);
 		strcat(line, " ");
 
-		ptr = strtok(NULL, " \t");
+		ptr = strtok(0, " \t");
 	}
 
 	AddInlineText(line);
@@ -872,8 +896,8 @@ void cNodeLineList::Print()
 //
 cNode::cNode()
 {
-	file = node = next = prev = up = NULL;
-	findString = NULL;
+	file = node = next = prev = up = 0;
+	findString = 0;
 }
 
 // ----------------------------------------------------------------------------
@@ -895,7 +919,7 @@ void cNode::Reset()
 	if (prev) delete [] prev;
 	if (up)   delete [] up;
 
-	file = node = next = prev = up = NULL;
+	file = node = next = prev = up = 0;
 
 	nodeLines.Reset();
 }
@@ -930,36 +954,36 @@ int cNode::Read(const char *filename, int offset)
 		EATSPACE(token);
 		if (!strcmp(token, INFO_FILE_TOKEN))
 		{
-			token = strtok(NULL, ",\t");
+			token = strtok(0, ",\t");
 			EATSPACE(token);
 			file = StrDup(token);
 		}
 		else if (!strcmp(token, INFO_NODE_TOKEN))
 		{
-			token = strtok(NULL, ",\t");
+			token = strtok(0, ",\t");
 			EATSPACE(token);
 			node = StrDup(token);
 		}
 		else if (!strcmp(token, INFO_NEXT_TOKEN))
 		{
-			token = strtok(NULL, ",\t");
+			token = strtok(0, ",\t");
 			EATSPACE(token);
 			next = StrDup(token);
 		}
 		else if (!strcmp(token, INFO_PREV_TOKEN))
 		{
-			token = strtok(NULL, ",\t");
+			token = strtok(0, ",\t");
 			EATSPACE(token);
 			prev = StrDup(token);
 		}
 		else if (!strcmp(token, INFO_UP_TOKEN))
 		{
-			token = strtok(NULL, ",\t");
+			token = strtok(0, ",\t");
 			EATSPACE(token);
 			up = StrDup(token);
 		}
 
-		token = strtok(NULL, ":");
+		token = strtok(0, ":");
 	}
 	while (token);
 
@@ -1014,7 +1038,7 @@ char *cNode::GetPositionString()
 //
 void cNode::initFind(const char *string, char caseSens, char subString)
 {
-	if (string == NULL)
+	if (string == 0)
 		return;
 
 	findCase = caseSens;
@@ -1034,7 +1058,7 @@ void cNode::initFind(const char *string, char caseSens, char subString)
 //
 int cNode::findNext()
 {
-	if (findString == NULL)
+	if (findString == 0)
 		return 1;
 
 	char *str;
@@ -1142,7 +1166,7 @@ cInfo::cInfo()
 	while (default_p && numPaths < INFO_MAXPATHS-1)
 	{
 		searchPath[numPaths++] = StrDup(default_p);
-		default_p = strtok(NULL, ":");
+		default_p = strtok(0, ":");
 	}
 
 	delete [] default_paths;
@@ -1156,7 +1180,7 @@ cInfo::cInfo()
 		while (p && numPaths < INFO_MAXPATHS-1)
 		{
 			searchPath[numPaths++] = StrDup(p);
-			p = strtok(NULL, ":");
+			p = strtok(0, ":");
 		}
 
 		delete [] paths;
@@ -1482,7 +1506,7 @@ int cInfo::findNext()
 
 	while (tagTable.Get())
 	{
-		ReadLocation(tagTable.Get()->node);
+		ReadLocation(tagTable.Get()->node());
 
 		if (!node.findNext())
 		{

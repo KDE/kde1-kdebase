@@ -51,19 +51,31 @@
 // Indirect structure - hold indirect file attributes
 // file 	: filename of indirect file
 // pos		: where this fits in the overall scheme of things
-struct sIndirect
+class cIndirect
 {
-	char file[256];
-	int offset;
-	sIndirect *next;
+public:
+    cIndirect( const char *f, int off );
+    ~cIndirect();
+
+    const char *file() const { return mFile; }
+    int offset() const { return mOffset; }
+    cIndirect *next() const { return mNext; }
+
+    void setNext( cIndirect *n )
+        { mNext = n; }
+
+protected:
+	int mOffset;
+	char *mFile;
+	cIndirect *mNext;
 };
 
 // ----------------------------------------------------------------------------
 class cIndirectList
 {
 private:
-	sIndirect *head;
-	sIndirect *tail;
+	cIndirect *head;
+	cIndirect *tail;
 
 public:
 	cIndirectList();
@@ -72,7 +84,7 @@ public:
 	void Reset();
 	int  Read(const char *filename);
 	void Add(const char *name, int offset);
-	char *Find(int &offset);
+	const char *Find(int &offset);
 	void Print();
 };
 
@@ -81,33 +93,26 @@ public:
 
 // ----------------------------------------------------------------------------
 // Tag structure - holds tag attributes
-// file 	: null if no file is given (indirect?)
 // node 	: node name
 // offset	: offset into file (may be into indirect files)
 
-class sTag
+class cTag
 {
-	char *_file;
 public:
-	char node[256];
-	int offset;
-	sTag *next;
 
-	sTag() { _file = NULL; }
-	~sTag() { if (_file) delete [] _file; }
+	cTag( const char *n, int off);
+	~cTag();
 
-	void setFile( const char *f )
-	{
-		if (_file)
-			delete [] _file;
-		_file = NULL;
-		if (!f)
-			return;
-		_file = new char [strlen(f)+1];
-		strcpy(_file, f);
-	}
+    const char *node() const { return mNode; }
+    int offset() const { return mOffset; }
+    cTag *next() const { return mNext; }
 
-	const char *file()	{	return _file; }
+    void setNext( cTag *n ) { mNext = n; }
+
+protected:
+	char *mNode;
+	int  mOffset;
+	cTag *mNext;
 };
 
 // ----------------------------------------------------------------------------
@@ -116,9 +121,9 @@ public:
 class cTagTable
 {
 private:
-	sTag *head;
-	sTag *tail;
-	sTag *curr;
+	cTag *head;
+	cTag *tail;
+	cTag *curr;
 
 public:
 	cTagTable();
@@ -127,11 +132,11 @@ public:
 	void Reset();
 	void Read(const char *filename);
 	void CreateTable(const char *filename);
-	void Add(const char *file, char *node, int offset);
+	void Add(char *node, int offset);
 	int  Find(char *node);
 	void GotoHead()		{	curr = head; }
-	sTag *Get()			{	return curr; }
-	void Next()			{	curr = curr->next; }
+	cTag *Get()			{	return curr; }
+	void Next()			{	curr = curr->next(); }
 	void Print();
 };
 

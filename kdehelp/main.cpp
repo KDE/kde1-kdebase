@@ -127,14 +127,13 @@ int main(int argc, char *argv[])
 	{
 		if ( argv[i][0] == '-' )
 		{
-			// skip caption
-			if ( strcasecmp( argv[i], "-caption" ) == 0 )
-				i++;
-			if ( strcasecmp( argv[i], "-icon" ) == 0 )
-				i++;
-			if ( strcasecmp( argv[i], "-miniicon" ) == 0 )
-				i++;
-			continue;
+            if ( ( strcasecmp( argv[i], "-caption" ) == 0 ) ||
+                ( strcasecmp( argv[i], "-icon" ) == 0 ) ||
+                ( strcasecmp( argv[i], "-miniicon" ) == 0 ) )
+            {
+                i++;
+            }
+            continue;
 		}
 
 		initDoc = argv[i];
@@ -303,6 +302,12 @@ static void cleanup( int sig )
 	if (msgqid >= 0)
 		msgctl( msgqid, IPC_RMID, 0 );
 	remove( pidFile );
+    if ( sig == SIGPIPE )
+    {
+        // Broken pipe is probably broken X connection.
+        // This causes problems with global Qt destructors.
+        _exit(1);
+    }
     exit(0);
 }
 
