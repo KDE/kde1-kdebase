@@ -2,7 +2,7 @@
 
 INCLUDES= $(all_includes)
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
-LDADD	= $(LIB_KHTMLW) $(LIB_KFILE)
+LDADD	= $(LIB_KHTMLW) $(LIB_KFILE) $(LIBVOLMGT)
 CONFIGDIR = $(kde_confdir)
 MIMELNKDIR = $(kde_mimedir)
 
