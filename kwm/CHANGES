@@ -13,6 +13,25 @@ In 0.12:
 --------
 patchlevel 2:
         - improved shaped window handling
+	- CT: "pinned down" the pixmaps names for titlebar texture 
+		and shaped borders. Now the only parameters necessary 
+		in kwmrc to make these two features work are
+
+		TitlebarLook=pixmap 
+		ShapeMode=on
+
+		The names of the pixmaps are no longer defined in the 
+		kwmrc. They are fixed to: top.xpm, bottom.xpm, left.xpm, 
+		right.xpm, topleft.xpm, topright.xpm, bottomleft.xpm, 
+		bottomright.xpm, activetitlebar.xpm, inactivetitlebar.xpm. 
+		All these pixmap s should to be found either in 
+		$KDEDIR$/share/apps/kwm/pics/ or in 
+		$USER_KDEDIR$ /share/apps/kwm/pics.
+
+		This modification introduces consistancy with the technique 
+		used to define titlebar buttons pixmaps and allows simplified
+		theme constructions.
+
 patchlevel 1:
         - first attempts of configurable mousebindings
 patchlevel 0:
