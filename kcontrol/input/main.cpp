@@ -70,9 +70,11 @@ KInputApplication::KInputApplication(int &argc, char **argv, const char *name)
 void KInputApplication::init()
 {
   MouseConfig *mouse = new MouseConfig(0, 0, TRUE);
+  mouse->applySettings();
   delete mouse;
 
   KeyboardConfig *keyboard = new KeyboardConfig(0, 0, TRUE);
+  keyboard->applySettings();
   delete keyboard;
 }
 
