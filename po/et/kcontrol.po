@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Hasso C. Tepper <heathcliff@iname.com>, 1999.
+# Hasso Tepper <hasso@ewsound.estnet.ee>, 1999.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-01-27 01:14+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 1999-06-26 HO:MI+ZONE\n"
+"Last-Translator: Hasso Tepper <hasso@ewsound.estnet.ee>\n"
+"Language-Team: LANGUAGE <linux-ee@eenet.ee>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
@@ -44,9 +44,8 @@ msgstr ""
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 
 #: mainwidget.cpp:44
-#, fuzzy
 msgid "KDE Version: "
-msgstr "Versioon: "
+msgstr "KDE Versioon: "
 
 #: mainwidget.cpp:52
 msgid "User: "
@@ -71,6 +70,3 @@ msgstr "Versioon: "
 #: mainwidget.cpp:88
 msgid "Machine: "
 msgstr "Masin: "
-
-#~ msgid "System:"
-#~ msgstr "Süsteem:"

@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Hasso C. Tepper <heathcliff@iname.com>, 1999.
+# Hasso Tepper <hasso@ewsound.estnet.ee>, 1999.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-04-05 01:20+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 1999-06-28 12:28+0200\n"
+"Last-Translator: Hasso Tepper <hasso@ewsound.estnet.ee>\n"
+"Language-Team: Estonian <linux-ee@eenet.ee>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
@@ -133,11 +133,11 @@ msgstr "Uups!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
-msgstr "Välja logimine"
+msgstr "Lõpeta sessioon"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Seanss ette valmistatud välja logimiseks"
+msgstr "Sessioon lõpetamiseks ette valmistatud"
 
 #: logout.C:52
 msgid ""
@@ -145,14 +145,14 @@ msgid ""
 "will be lost in your next session."
 msgstr ""
 "Järgnevad rakendused sisaldavad salvestamata andmeid,\n"
-"mis ei ole taastatavad järgmistes seanssides."
+"mis ei ole taastatavad järgmistes sessioonides."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"Järgnevaid rakendusi ei saa taastada järgmises seansis, vaid ainult\n"
+"Järgnevaid rakendusi ei saa taastada järgmises sessioonis, vaid ainult\n"
 "uuesti käivitada. Tee kindlaks, et nad ei sisaldaks tähtsat salveastamata\n"
 "informatsiooni."
 
@@ -163,7 +163,7 @@ msgid ""
 msgstr ""
 "Järgnevad rakendused ei ole X11-teadlikud ja nii ei saa neid taastada "
 "järgmises\n"
-"seansis. Tee kindlaks, et nad ei sisaldaks tähtsat salvestamata "
+"sessioonis. Tee kindlaks, et nad ei sisaldaks tähtsat salvestamata "
 "informatsiooni."
 
 #: taskmgr.C:107
@@ -172,4 +172,4 @@ msgstr "Lülita"
 
 #: taskmgr.C:121
 msgid "Current session"
-msgstr "Käesolev seanss"
+msgstr "Käesolev sessioon"

@@ -138,7 +138,6 @@ msgid "Save &Options"
 msgstr "Salvesta v&alikud"
 
 #: main.C:688
-#, fuzzy
 msgid ""
 "\n"
 "\n"
@@ -155,6 +154,7 @@ msgstr ""
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
 "(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
+"(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
 "\n"
 "Terminali emulaator KDE töölaua keskkonna jaoks\n"
 "baseerub Robert Nation'i rakendusel rxvt-2.08"

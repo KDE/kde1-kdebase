@@ -60,7 +60,6 @@ msgstr ""
 
 #
 #: kikbd.cpp:406
-#, fuzzy
 msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -69,7 +68,6 @@ msgstr ""
 "CapsLock'i emuleerimine keelatud"
 
 #: kikbd.cpp:1097
-#, fuzzy
 msgid "Exiting International Keyboard"
 msgstr "Rahvusvahelisest klaviatuurist väljumine"
 
@@ -82,12 +80,11 @@ msgstr ""
 "Soovid sa, et see käivitataks automaatselt järgmisel sisse logimisel?"
 
 #: keymap.cpp:186
-#, fuzzy
 msgid "KeyMap: can't allocate memory"
 msgstr "KeyMap: mälu pole võimalik jaotada"
 
 #: keymap.cpp:233
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Can't find symbol \"%s\".\n"
 "Maybe your default X codes do not match.\n"
@@ -100,17 +97,17 @@ msgstr ""
 "programmi sektsioonis \"Täpsemalt\"."
 
 #: keymap.cpp:238
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
 msgstr "Klavitabel: sümbolit \"%s\" pole võimalik leida."
 
 #: keymap.cpp:246
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
 msgstr "Klahvitabel: ei saa aru klahvi koodist \"%s\"."
 
 #: keymap.cpp:252
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
 msgstr "Klahvitabel: klahvi kood \"%s\" on piirkonnast väljas"
 
@@ -316,7 +313,6 @@ msgid "&Add"
 msgstr "&Lisa"
 
 #: widgets.cpp:127
-#, fuzzy
 msgid "Add new keyboard map"
 msgstr "Uue klahvitabeli lisamine"
 
@@ -329,18 +325,16 @@ msgid "U&p"
 msgstr "Ül&es"
 
 #: widgets.cpp:136
-#, fuzzy
 msgid "Move up selected keyboard map"
-msgstr "Eemalda valitud klahvitabel"
+msgstr "Liiguta valitud klahvitabel üles"
 
 #: widgets.cpp:140
 msgid "D&own"
 msgstr "&Alla"
 
 #: widgets.cpp:140
-#, fuzzy
 msgid "Move down selected keyboard map"
-msgstr "Valitud klahvitabel alla"
+msgstr "Liiguta valitud klahvitabel alla"
 
 #: widgets.cpp:144
 msgid "&Info"
@@ -355,7 +349,6 @@ msgid "Use &hot list"
 msgstr "Kasuta &kuuma listi"
 
 #: widgets.cpp:155
-#, fuzzy
 msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
@@ -368,9 +361,8 @@ msgid "Adding Keyboard"
 msgstr "Klaviatuuri lisamine"
 
 #: widgets.cpp:225
-#, fuzzy
 msgid "There are no keyboard maps left to add"
-msgstr "Rohkem klahvitabeleid pole"
+msgstr "Rohkem klahvitabeleid pole, mida lisada"
 
 #: widgets.cpp:258
 msgid "Keyboard map information"
@@ -393,12 +385,10 @@ msgid "Switch and Alt Switch"
 msgstr "Lüliti ja alt lüliti"
 
 #: widgets.cpp:419
-#, fuzzy
 msgid "Key(s) for switching between keyboard maps"
-msgstr "Klahv(id) klahvitabelite lülitamiseks"
+msgstr "Klahv(id) klahvitabelite vahel lülitamiseks"
 
 #: widgets.cpp:425
-#, fuzzy
 msgid "Key for activating Alternate symbols in current keyboard map"
 msgstr "Klahv aktiveerimaks alternatiivseid sümboleid käesolevas klahvitabelis"
 
@@ -407,7 +397,6 @@ msgid "&Beep"
 msgstr "&Piiks"
 
 #: widgets.cpp:439
-#, fuzzy
 msgid "Beep when keyboard map is changed"
 msgstr "Piiks kui klahvitabelit muudetakse"
 
@@ -428,7 +417,6 @@ msgid "&Emulate Caps Lock"
 msgstr "&Emuleeri CapsLock'i"
 
 #: widgets.cpp:476
-#, fuzzy
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
@@ -439,9 +427,8 @@ msgid "&World Menu"
 msgstr "&Maailma menüü"
 
 #: widgets.cpp:483
-#, fuzzy
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
-msgstr "Näita menüüd igas aknas hoides all lülitus klahve"
+msgstr "Näita menüüd igas aknas hoides all lülitusklahve"
 
 #: widgets.cpp:491
 msgid "&Save Classes"
@@ -460,21 +447,18 @@ msgid "Input"
 msgstr "Sisend"
 
 #: widgets.cpp:505
-#, fuzzy
 msgid "Standard behavior. Keyboard map effective for all windows"
 msgstr "Standartne viis. Klahvitabel on aktiivne kõikide akende jaoks"
 
 #: widgets.cpp:509
-#, fuzzy
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Standartne viis. Klahvitabel on aktiivne kõikide akende jaoks"
+msgstr "Täiendatud viis. Klahvitabel salvestatakse iga akna jaoks eraldi"
 
 #: widgets.cpp:513
-#, fuzzy
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "Standartne viis. Klahvitabel on aktiivne kõikide akende jaoks"
+msgstr "Spetsiaalne viis. Klahvitabel salvestatakse iga aknaklassi jaoks eraldi"
 
 #: widgets.cpp:561
 msgid "Button Colors"
@@ -486,15 +470,15 @@ msgstr "Esiplaan"
 
 #: widgets.cpp:572
 msgid "Text label foreground color"
-msgstr ""
+msgstr "Teksti esiplaani värv"
 
 #: widgets.cpp:576
 msgid "Background"
-msgstr ""
+msgstr "Taust"
 
 #: widgets.cpp:577
 msgid "Text label background color"
-msgstr ""
+msgstr "Teksti tausta värv"
 
 #: widgets.cpp:581
 msgid "With Caps Lock"
@@ -509,7 +493,6 @@ msgid "With Alternate"
 msgstr "ALT'iga"
 
 #: widgets.cpp:589
-#, fuzzy
 msgid "Background when Alternate switch key is pressed"
 msgstr "Taust kui ALT klahv on alla vajutatud"
 
@@ -569,15 +552,3 @@ msgstr "Al&glaadimine"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Rahvusvaheline klaviatuur"
-
-#~ msgid "Up selected keyboard map"
-#~ msgstr "Valitud klahvitabel üles"
-
-#~ msgid "Extended behavior. Each windows remember it's own keyboard map"
-#~ msgstr "Laiendatud viis. Iga aken jätab meelde oma klahvitabeli"
-
-#~ msgid "Special behavior. Each windows class remember it's own keyboard map"
-#~ msgstr "Spetsiaalne viis. Iga aknaklass jätab meelde oma klahvitabeli"
-
-#~ msgid "Color of the text label"
-#~ msgstr "Tekstipealdise värv"
