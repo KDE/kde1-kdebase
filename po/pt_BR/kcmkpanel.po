@@ -162,9 +162,8 @@ msgid "&Clock shows time in AM/PM format"
 msgstr "&Relógio mostra hora em formato AM/PM"
 
 #: options.cpp:124
-#, fuzzy
 msgid "&Clock shows time in Internet beats"
-msgstr "&Relógio mostra hora em formato AM/PM"
+msgstr "&Relógio mostra hora em toques da Internet"
 
 #: disknav.cpp:38
 msgid "History"

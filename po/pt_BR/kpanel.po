@@ -43,7 +43,7 @@ msgstr "Mostrar o painel"
 
 #: kpanel.C:1091
 msgid "Iconify other &windows"
-msgstr ""
+msgstr "Minimizar outras &janelas"
 
 #: kpanel.C:1228
 msgid "No comment available"

@@ -274,9 +274,8 @@ msgid "Move pointer towards center after switch"
 msgstr "Move ponteiro para o centro depois de mudança"
 
 #: desktop.cpp:87
-#, fuzzy
 msgid "Desktop switch delay:"
-msgstr "Demora de mudança:"
+msgstr "Demora de mudança de ambiente:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"

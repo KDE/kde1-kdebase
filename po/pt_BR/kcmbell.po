@@ -35,7 +35,7 @@ msgstr "Duração"
 
 #: bell.cpp:72
 msgid "milliseconds"
-msgstr ""
+msgstr "milissegundos"
 
 #: bell.cpp:87
 msgid "Test"

@@ -1167,21 +1167,19 @@ msgstr ""
 "não existe"
 
 #: kiojob.cpp:1287
-#, fuzzy, c-format
 msgid ""
 "Tar reported a fatal error\n"
 "%s"
 msgstr ""
-"Tar reportou um erro\n"
+"Tar reportou um erro fatal\n"
 "%s"
 
 #: kiojob.cpp:1291
-#, fuzzy, c-format
 msgid ""
 "Gzip reported a fatal error\n"
 "%s"
 msgstr ""
-"Gzip reportou um erro\n"
+"Gzip reportou um erro fatal\n"
 "%s"
 
 #: kiojob.cpp:1295

@@ -112,7 +112,7 @@ msgstr "Visão em á&rvore segue navegação"
 
 #: miscopts.cpp:43
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
