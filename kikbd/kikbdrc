@@ -5,7 +5,7 @@ CapsLockColor=0,128,128
 Beep=true
 Font=helvetica,12,5,iso-8859-1,50,0
 EmulateCapsLock=false
-Map0=us
+Map0=en
 HotList=false
 Map1=
 Input=Global
@@ -18,7 +18,7 @@ AltSwitch=Alt_R
 [KObjectConfig]
 Version=1.00
 [Run Time]
-class0=ROOT,us,us,
+class0=ROOT,en,en,
 class1=
 [StartUp]
 Docking=true
