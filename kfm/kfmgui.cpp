@@ -729,7 +729,7 @@ void KfmGui::slotURLEntered()
     {
         QString url = toolbarURL->getLinedText( TOOLBAR_URL_ID );
         // strip any leading and trailing spaces.
-        url.stripWhiteSpace();
+        url = url.stripWhiteSpace();
         // Exit if the user did not enter a URL
         if ( url.isEmpty() )
 	        return;
