@@ -110,8 +110,7 @@ bool AudioDev::grab(bool probeOnly)
        return false;
      }
      else {
-       if (probeOnly)
-          return true;
+       if (!probeOnly) {
        /*
 	* Now set sample format, then channels, then speed. It is important to follow this
 	* scheme. See OSS documentation for more info.
@@ -145,6 +144,7 @@ bool AudioDev::grab(bool probeOnly)
        Param= stereo    ; ioctl(audiodev, SNDCTL_DSP_STEREO     , &Param);
        Param= frequency ; ioctl(audiodev, SNDCTL_DSP_SPEED      , &Param);
 #endif
+       }
        opened = true;
        ParamsChanged=false;
      }
