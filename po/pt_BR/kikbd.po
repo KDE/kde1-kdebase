@@ -55,7 +55,6 @@ msgstr ""
 "Simbolos Alt desligados"
 
 #: kikbd.cpp:406
-#, fuzzy
 msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -76,12 +75,10 @@ msgstr ""
 "reiniciá-lo automaticamente em sua próxima sessão ?"
 
 #: keymap.cpp:186
-#, fuzzy
 msgid "KeyMap: can't allocate memory"
 msgstr "KeyMap: impossível alocar memória"
 
 #: keymap.cpp:233
-#, fuzzy, c-format
 msgid ""
 "Can't find symbol \"%s\".\n"
 "Maybe your default X codes do not match.\n"
@@ -93,19 +90,16 @@ msgstr ""
 "Você pode pré-selecionar códigos X na seção 'Avançada.'"
 
 #: keymap.cpp:238
-#, fuzzy, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
 msgstr "KeyMap: símbolo \"%s\" não encontrado"
 
 #: keymap.cpp:246
-#, fuzzy, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
-msgstr "KeyMap: keycode \"%s\" ininteligível"
+msgstr "KeyMap: impossível ler keycode \"%s\"."
 
 #: keymap.cpp:252
-#, fuzzy, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
-msgstr "KeyMap: keycode \"%s\" está fora da faixa"
+msgstr "KeyMap: keycode \"%s\" está fora da faixa."
 
 #: kikbdconf.cpp:102
 msgid "Global"
@@ -305,9 +299,8 @@ msgid "&Add"
 msgstr "&Adicionar"
 
 #: widgets.cpp:127
-#, fuzzy
 msgid "Add new keyboard map"
-msgstr "Adicionando novo mapa de teclado"
+msgstr "Adicionar novo mapa de teclado"
 
 #: widgets.cpp:131
 msgid "Remove selected keyboard map"
@@ -318,18 +311,16 @@ msgid "U&p"
 msgstr "Ac&ima"
 
 #: widgets.cpp:136
-#, fuzzy
 msgid "Move up selected keyboard map"
-msgstr "Remover mapa de teclado selecionado"
+msgstr "Mover mapa de teclado selecionado para cima"
 
 #: widgets.cpp:140
 msgid "D&own"
 msgstr "A&baixo"
 
 #: widgets.cpp:140
-#, fuzzy
 msgid "Move down selected keyboard map"
-msgstr "Mapa de teclado selecionado - abaixo"
+msgstr "Mover mapa de teclado selecionado para baixo"
 
 #: widgets.cpp:144
 msgid "&Info"
@@ -344,18 +335,16 @@ msgid "Use &hot list"
 msgstr "Use &hot-list"
 
 #: widgets.cpp:155
-#, fuzzy
 msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
-msgstr "Usar somente mapas padrões/últimos ativos para mudar de teclado"
+msgstr "Usar somente mapas padrões/últimos ativos quando a seqüência de teclas de chaveamento é usada"
 
 #: widgets.cpp:224
 msgid "Adding Keyboard"
 msgstr "Adicionando Teclado"
 
 #: widgets.cpp:225
-#, fuzzy
 msgid "There are no keyboard maps left to add"
 msgstr "Não há mais mapas de teclado"
 
@@ -380,12 +369,10 @@ msgid "Switch and Alt Switch"
 msgstr "Chavear e Chavear Alt"
 
 #: widgets.cpp:419
-#, fuzzy
 msgid "Key(s) for switching between keyboard maps"
 msgstr "Tecla(s) para chavear entre mapas de teclado"
 
 #: widgets.cpp:425
-#, fuzzy
 msgid "Key for activating Alternate symbols in current keyboard map"
 msgstr "Tecla para ativar símbolos alternativos no mapa de teclado corrente"
 
@@ -394,7 +381,6 @@ msgid "&Beep"
 msgstr "Bip&e"
 
 #: widgets.cpp:439
-#, fuzzy
 msgid "Beep when keyboard map is changed"
 msgstr "Bipe quando mudar o mapa de teclado"
 
@@ -415,7 +401,6 @@ msgid "&Emulate Caps Lock"
 msgstr "&Emular CapsLock"
 
 #: widgets.cpp:476
-#, fuzzy
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
@@ -426,7 +411,6 @@ msgid "&World Menu"
 msgstr "&Menu mundial"
 
 #: widgets.cpp:483
-#, fuzzy
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
 msgstr "Mostrar menu em qualquer janela ao segurar teclas de chaveamento"
 
@@ -447,21 +431,18 @@ msgid "Input"
 msgstr "Entrada"
 
 #: widgets.cpp:505
-#, fuzzy
 msgid "Standard behavior. Keyboard map effective for all windows"
 msgstr "Comportamento padrão. Mapa de teclado ativo para todas as janelas"
 
 #: widgets.cpp:509
-#, fuzzy
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Comportamento padrão. Mapa de teclado ativo para todas as janelas"
+msgstr "Comportamento estendido. Mapa de teclado salvo para cada janela"
 
 #: widgets.cpp:513
-#, fuzzy
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "Comportamento padrão. Mapa de teclado ativo para todas as janelas"
+msgstr "Comportamento especial. Mapa de teclado salvo para cada classe de janela"
 
 #: widgets.cpp:561
 msgid "Button Colors"
@@ -496,9 +477,8 @@ msgid "With Alternate"
 msgstr "Com Alternativa"
 
 #: widgets.cpp:589
-#, fuzzy
 msgid "Background when Alternate switch key is pressed"
-msgstr "Fundo quando chave Alternativa estiver preessionada"
+msgstr "Fundo quando a tecla Alternate estiver preessionada"
 
 #: widgets.cpp:598
 msgid "Button Font"
