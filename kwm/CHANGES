@@ -10,11 +10,14 @@ originally based on David Hogan's 9wm (a smart and small windowmanager
 written in plain C).
 
 
+
 In 0.13:
 --------
 patchlevel 5:
         - animation of shaded windows improved
          - "restart" command in addition to "go:" and "configure"
+         - sensitive handling of maximized windows when the window 
+            region changes.
 
 patchlevel 4:
         - improved handling for floating menubars

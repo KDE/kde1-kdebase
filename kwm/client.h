@@ -275,7 +275,8 @@ public:
   void animateTitlebar();
 
   // attributes to store the current state of the client
-  bool maximized;
+  bool maximized; 
+  int maximize_mode;
   bool sticky;
   bool iconified;
   bool shaded;

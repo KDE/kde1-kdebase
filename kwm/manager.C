@@ -618,8 +618,9 @@ void Manager::clientMessage(XEvent*  ev){
 
   if ( e->message_type == kwm_window_region_changed) {
       // someone informed us about a changed window region, just
-      // update the menubars
+      // update the menubars and the maximized windows
       updateMenuBars();
+      updateMaximizedWindows();
   }
 
   if (e->message_type == kde_sound_event){
@@ -2457,7 +2458,7 @@ void Manager::switchDesktop(int new_desktop){
 }
 
 
-
+// make the menubars fit to the current desktop region  
 void Manager::updateMenuBars()
 {
  myapp->resetSystemMenuBar();
@@ -2475,6 +2476,21 @@ void Manager::updateMenuBars()
  }
 }
 
+// make the maximized windows fit to the current desktop region  
+// make the menubars fit to the current desktop region  
+void Manager::updateMaximizedWindows()
+{
+    QRect r =  KWM::getWindowRegion(currentDesktop());
+    QListIterator<Client> it(clients);
+    for (it.toFirst(); it.current(); ++it){
+	if (it.current()->isMaximized() && it.current()->isOnDesktop(currentDesktop())){
+	    it.current()->maximized = FALSE;
+	    it.current()->geometry = it.current()->geometry_restore;
+	    it.current()->maximize(it.current()->maximize_mode, FALSE);
+	}
+    }
+
+}
 
 
 

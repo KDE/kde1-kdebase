@@ -355,6 +355,7 @@ Client::Client(Window w, Window _sizegrip, QWidget *parent, const char *name_for
     backing_store = false;
     state = WithdrawnState;
     maximized = False;
+    maximize_mode = 0;
     iconified = False;
     sticky = False;
     shaded = False;
@@ -1706,11 +1707,11 @@ void Client::paintState(bool only_label, bool colors_have_changed, bool animate)
 		r.x()+(options.TitleAnimation?titlestring_offset:aln),
 		r.y()+(r.height()-p.fontMetrics().height())/2,
 		need,
-		p.fontMetrics().height()); 
+		p.fontMetrics().height());
   }
   //CT
 
-  //CT 02Dec1998 - vertical text centering, 
+  //CT 02Dec1998 - vertical text centering,
   //     thanks to Nils Meier <nmeier@vossnet.de>
   p.drawText(r.x()+
 	     (options.TitleAnimation?titlestring_offset:aln),
@@ -1917,6 +1918,7 @@ void Client::maximize(int mode, bool animate){
   if (isShaded())
       toggleShade();
   maximized = true;
+  maximize_mode = mode;
   geometry_restore = geometry;
   KWM::setGeometryRestore(window, geometry_restore);
 

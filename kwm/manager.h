@@ -284,7 +284,7 @@ public:
   // does this job.
   void iconifyFloatingOf(Client* c);
 
-    
+
   // kwm sort of supports floating menubars. They are raised when
   // the parent window gets the focus.
   void raiseMenubarsOf(Client* c);
@@ -521,9 +521,13 @@ private:
 
   // apply the above mentioned global hints
   void doGlobalDecorationAndFocusHints(Client* c);
-    
-  void updateMenuBars();  
-    
+
+   // make the menubars fit to the current desktop region  
+  void updateMenuBars();
+
+    // make the maximized windows fit to the current desktop region  
+  void updateMaximizedWindows();
+
   // optimization for standalone menubars
   bool has_standalone_menubars;
 };
