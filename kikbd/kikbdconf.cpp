@@ -324,11 +324,16 @@ bool KiKbdConfig::readAutoStart()
 }
 void KiKbdConfig::startConfigProgram(int opt)
 {
+  int pid = 0;
+
   switch(opt) {
   case Config_Normal: 
-    if(!fork()) {
+    pid = fork();
+    if (!pid) {
       execlp("kcmikbd", "kcmikbd", 0L);
       ::exit(1);
+    } else {
+      waitpid(pid, NULL, 0);
     }
     break;
   case Config_StartKikbd: execlp("kcmikbd", "kcmikbd", "-startkikbd", 0L);
