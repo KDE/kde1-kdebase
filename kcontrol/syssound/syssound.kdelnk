@@ -1,0 +1,14 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcmsyssound
+Icon=kcmsyssound.xpm
+Type=Application
+DocPath=kcontrol/syssound/syssound.html
+Comment=System Sound Configuration
+Comment[de]=Einstellungen für Systemklänge
+Name=System Sounds
+Name[de]=Systemklänge
+Init=
+SwallowTitle=System Sounds
+SwallowTitle[de]=Systemklänge
+
