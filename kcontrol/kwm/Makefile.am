@@ -3,9 +3,10 @@ LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_
 
 bin_PROGRAMS = kcmkwm
 
-kcmkwm_SOURCES = main.cpp titlebar.cpp windows.cpp desktop.cpp mouse.cpp
-BUILT_SOURCES = titlebar.moc windows.moc desktop.moc mouse.moc
-noinst_HEADERS = windows.h desktop.h titlebar.h geom.h mouse.h
+kcmkwm_SOURCES = main.cpp titlebar.cpp windows.cpp desktop.cpp \
+		mouse.cpp advanced.cpp
+BUILT_SOURCES = titlebar.moc windows.moc desktop.moc mouse.moc advanced.moc
+noinst_HEADERS = windows.h desktop.h titlebar.h geom.h mouse.h advanced.h
 
 EXTRA_DIST = mini-windows.xpm mini-titlebar.xpm mini-buttons.xpm \
 		kcmkwm.xpm mini-winprops.xpm
@@ -26,6 +27,10 @@ titlebar.moc: titlebar.h
 mouse.cpp: mouse.moc
 mouse.moc: mouse.h
 	$(MOC) mouse.h -o mouse.moc
+
+advanced.cpp: advanced.moc
+advanced.moc: advanced.h
+	$(MOC) advanced.h -o advanced.moc
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)

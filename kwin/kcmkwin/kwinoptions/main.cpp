@@ -27,6 +27,7 @@
 #include "desktop.h"
 #include "titlebar.h"
 #include "mouse.h"
+#include "advanced.h"
 
 KConfig *config;
 
@@ -46,13 +47,15 @@ private:
   KTitlebarAppearance *appearance;
   KDesktopConfig *desktop;
   KMouseConfig *mouse;
+  KAdvancedConfig *advanced;
 };
 
 
 KKWMApplication::KKWMApplication(int &argc, char **argv, const char *name)
   : KControlApplication(argc, argv, name)
 {
-  options = 0; buttons = 0; appearance = 0; desktop = 0; mouse = 0; 
+  options = 0; buttons = 0; appearance = 0; desktop = 0; mouse = 0;
+  advanced = 0;
 
   if (runGUI())
     {
@@ -72,11 +75,15 @@ KKWMApplication::KKWMApplication(int &argc, char **argv, const char *name)
 	addPage(mouse = new KMouseConfig(dialog, "mouse"), 
 		klocale->translate("&Mouse"), "kwm-3.html");
 
-      if (options || buttons || appearance || desktop || mouse )
+      if (!pages || pages->contains("advanced"))
+	addPage(advanced = new KAdvancedConfig(dialog, "advanced"), 
+		klocale->translate("&Advanced"), "kwm-3.html");
+
+      if (options || buttons || appearance || desktop || mouse || advanced)
         dialog->show();
       else
         {
-          fprintf(stderr, klocale->translate("usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"));
+          fprintf(stderr, klocale->translate("usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"));
           justInit = TRUE;
         }
 
@@ -101,6 +108,8 @@ void KKWMApplication::apply()
     appearance->applySettings();
   if (mouse)
     mouse->applySettings();
+  if (advanced)
+    advanced->applySettings();
 
   KWM::configureWm();
 }

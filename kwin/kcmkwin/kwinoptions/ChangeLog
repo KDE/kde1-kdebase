@@ -1,3 +1,12 @@
+1998-11-09  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
+
+	* advanced.[cpp,h] : new tab for some of the last of the
+  		kwm's options which remained out of the GUI config:
+		CtrlTab, TraverseAll, AltTabeMode, Button3Grab and 
+		the filter lists for decorations, focus, stickyness,
+		session management ignore ( I kinda disklike the solution
+		I got for the latest)
+
 1998-11-06  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
 
 	* titlebar.[cpp,h] : added title alignment config
