@@ -293,7 +293,9 @@ int main( int argc, char ** argv )
 	    if ( strchr( argv[arg], 's' ) != 0L )
 		KfmGui::sumode = true;
 	}
-
+    if (getuid() == 0)       // Am I root?
+      KfmGui::sumode = true; // Yes; then act as one (sven)
+    
     KMimeType::init();
     
     Kfm kfm;
