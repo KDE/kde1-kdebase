@@ -1,38 +1,39 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-10-23 17:22+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
-#: main.cpp:87
+#: main.cpp:84
 msgid "&Appearance"
 msgstr "&Aspecto"
 
-#: main.cpp:95
+#: main.cpp:92
 msgid "&Background"
 msgstr "F&ondo"
 
-#: main.cpp:98
+#: main.cpp:95
 msgid "&Users"
 msgstr "&Usuarios"
 
-#: main.cpp:101
+#: main.cpp:98
 msgid "&Sessions"
 msgstr "&Sesiones"
 
-#: main.cpp:106
+#: main.cpp:103
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
-"Modo de uso: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+"Modo de uso: kdmconfig [-init | "
+"{appearance,font,background,sessions,users}]\n"
 
-#: main.cpp:145
+#: main.cpp:142
 msgid "KDM Configuration"
 msgstr "Configuración del KDM"
 
-#: main.cpp:155
+#: main.cpp:152
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
@@ -41,7 +42,7 @@ msgstr ""
 "lectura/escritura sobre el archivo\n"
 "de configuración del KDM."
 
-#: main.cpp:157
+#: main.cpp:154
 msgid "Missing privileges"
 msgstr "Faltan privilegios"
 

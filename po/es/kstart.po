@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-10-29 13:56+0100\n"
+"POT-Creation-Date: 1998-10-29 13:59+0100\n"
 "PO-Revision-Date: 1998-05-09 10:07+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "First-Translator: Jorge Valencia Alvarez <jorgev@est.unileon.es>\n"

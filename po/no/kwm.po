@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kwm\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-09-30 17:28+0200\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -121,7 +121,7 @@ msgstr "Noen pixmaps er ubrukelige: ShapeMode ikke iverksatt\n"
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Noen pixmaps er ubrukelige: ShapeMode ikke iverksatt\n"
 
-#: main.C:1354
+#: main.C:1356
 msgid "*** No Tasks ***"
 msgstr "*** Ingen oppgaver ***"
 

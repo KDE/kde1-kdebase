@@ -6,17 +6,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-01-18 05:04+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
-
-#: main.cpp:61
-msgid "&Windows"
-msgstr "&Окна"
 
 #: main.cpp:64
 msgid "&Buttons"
@@ -28,7 +24,7 @@ msgstr "&Заголовок"
 
 #: main.cpp:70
 #, fuzzy
-msgid "&Borders"
+msgid "Bo&rders"
 msgstr "Волшебные границы"
 
 #: main.cpp:73
@@ -38,251 +34,225 @@ msgstr ""
 #
 #: main.cpp:79
 #, fuzzy
-msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,borders,mouse}]\n"
+msgid "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
 msgstr "использование: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:114
 msgid "Window manager style"
 msgstr "Вид главного форточника"
 
-#: titlebar.cpp:116
+#: titlebar.cpp:118
 msgid "Minimize"
 msgstr "Минимизировать"
 
-#: titlebar.cpp:120
+#: titlebar.cpp:122
 msgid "Maximize"
 msgstr "Максимизировать"
 
-#: titlebar.cpp:124
+#: titlebar.cpp:126
 msgid "Sticky"
 msgstr "Приколоть"
 
-#: titlebar.cpp:132
+#: titlebar.cpp:134
 msgid "Menu"
 msgstr "Меню"
 
-#: titlebar.cpp:169
+#: titlebar.cpp:171
 msgid "Left"
 msgstr ""
 
-#: titlebar.cpp:173
+#: titlebar.cpp:175
 msgid "Right"
 msgstr ""
 
-#: titlebar.cpp:462
+#: titlebar.cpp:464
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Левая часть заголовка переполнена... отключаю кнопку 'максимизировать'\n"
 
-#: titlebar.cpp:495
+#: titlebar.cpp:497
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Правая часть заголовка переполнена... отключаю кнопку 'максимизировать'\n"
 
-#: titlebar.cpp:535
+#: titlebar.cpp:537
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Левая часть заголовка переполнена... отключаю кнопку 'минимизировать'\n"
 
-#: titlebar.cpp:568
+#: titlebar.cpp:570
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Правая часть заголовка переполнена... отключаю кнопку 'минимизировать'\n"
 
-#: titlebar.cpp:922
-msgid "Titlebar appearance"
-msgstr "Вид заголовка"
-
 #
-#: titlebar.cpp:924
+#: titlebar.cpp:927
 msgid "Shaded Vertically"
 msgstr "Вертикальный переход"
 
-#: titlebar.cpp:926
+#: titlebar.cpp:933
 msgid "Shaded Horizontally"
 msgstr "Горизонтальный переход"
 
-#: titlebar.cpp:930
+#: titlebar.cpp:942
 msgid "Plain"
 msgstr "Обычный"
 
-#: titlebar.cpp:933 titlebar.cpp:954
+#: titlebar.cpp:950 titlebar.cpp:962
 msgid "Pixmap"
 msgstr "Картинка"
 
-#: titlebar.cpp:940
-msgid "Title Animation"
-msgstr "Анимация заголовка"
-
-#: titlebar.cpp:943
-msgid "ms"
-msgstr "мс"
-
-#: titlebar.cpp:965
-msgid "&Active pixmap"
+#: titlebar.cpp:990
+#, fuzzy
+msgid "Active pixmap:"
 msgstr "&Активная пиктограмма"
 
-#: titlebar.cpp:967
-msgid "&Inactive pixmap"
+#: titlebar.cpp:995
+#, fuzzy
+msgid "Inactive pixmap:"
 msgstr "&Неактивная пиктограмма"
 
-#: titlebar.cpp:983
+#: titlebar.cpp:1005
 msgid "Mouse action"
 msgstr "Действие мышью"
 
-#: titlebar.cpp:985
-msgid ""
-"LeftMouseButton double click\n"
-"    on titlebar does:"
+#: titlebar.cpp:1013
+#, fuzzy
+msgid "Left Button double click does:"
 msgstr ""
 "Двойной щелчок левой кнопкой мыши\n"
 "    на заголовке:"
 
 #
-#: titlebar.cpp:989
+#: titlebar.cpp:1023
 msgid "(Un)Maximize"
 msgstr "(Мин)Максимизировать"
 
-#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
-msgid "Move"
-msgstr "Перемещать"
-
 #
-#: titlebar.cpp:991
+#: titlebar.cpp:1024
 msgid "(Un)Shade"
 msgstr "Градиент"
 
-#: titlebar.cpp:992
+#: titlebar.cpp:1025
 msgid "Iconify"
 msgstr "Минимизировать"
 
 #
-#: titlebar.cpp:993
+#: titlebar.cpp:1026
 msgid "(Un)Sticky"
 msgstr "Приколоть"
 
-#: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217 titlebar.cpp:994
-msgid "Resize"
-msgstr "Изменить размер"
+#: titlebar.cpp:1046
+#, fuzzy
+msgid "Title animation"
+msgstr "Анимация заголовка"
 
-#: titlebar.cpp:996
-msgid "Operations Menu"
-msgstr "Меню операций"
+#: titlebar.cpp:1062
+msgid "ms"
+msgstr "мс"
 
-#: windows.cpp:84
-msgid "Window movement"
-msgstr "Перемещение окна"
+#: windows.cpp:66
+#, fuzzy
+msgid "Windows"
+msgstr "&Окна"
+
+#: windows.cpp:80
+msgid "Vertical maximization only by default"
+msgstr ""
 
 #: windows.cpp:85
-msgid "Transparent"
-msgstr "Прозрачно"
+msgid "Display content in moving windows"
+msgstr ""
 
-#: windows.cpp:86 windows.cpp:95
-msgid "Opaque"
-msgstr "Непрозрачно"
-
-#
-#: windows.cpp:89
-msgid "Window resize"
-msgstr "Изменить размер окна"
-
-#
 #: windows.cpp:90
-msgid "Animation:"
-msgstr "Анимация:"
+msgid "Display content in resizing windows"
+msgstr ""
 
-#: windows.cpp:91
+#: windows.cpp:96
+#, fuzzy
+msgid "Resize animation:"
+msgstr "Анимация изменения размера"
+
+#: windows.cpp:109
 msgid "None"
 msgstr ""
 
-#: windows.cpp:92
+#: windows.cpp:115
 msgid "Fast"
 msgstr "Быстро"
 
-#: windows.cpp:98
+#: windows.cpp:126
 msgid "Placement policy"
 msgstr "Правила расположения"
 
-#: windows.cpp:100
+#: windows.cpp:132
 msgid "Smart"
 msgstr "Умные"
 
-#: windows.cpp:102
+#: windows.cpp:134
 msgid "Cascade"
 msgstr "Каскадом"
 
-#: windows.cpp:104
+#: windows.cpp:136
 msgid "Interactive"
 msgstr "Диалоговый"
 
-#: windows.cpp:106
+#: windows.cpp:138
 msgid "Random"
 msgstr "Случайно"
 
 #
-#: windows.cpp:108
+#: windows.cpp:140
 msgid "Manual"
 msgstr "Ручное"
 
-#: windows.cpp:115
-msgid "Allowed Overlap:"
-msgstr "Возможны перекрытия:"
+#: windows.cpp:151
+#, c-format
+msgid ""
+"  Allowed overlap:\n"
+"(% of desktop space)"
+msgstr ""
 
-#: windows.cpp:122
-msgid "Maximize Style"
-msgstr "Тип максимизации"
-
-#: windows.cpp:123
-msgid "Maximize fully"
-msgstr "Полностью"
-
-#: windows.cpp:124
-msgid "Maximize vertically"
-msgstr "Вертикально"
-
-#: windows.cpp:127
-msgid "Focus Policy"
+#: windows.cpp:170
+#, fuzzy
+msgid "Focus policy"
 msgstr "Вид фокуса"
 
-#: windows.cpp:129
+#: windows.cpp:180
 msgid "Click to focus"
 msgstr "Щелчком"
 
-#: windows.cpp:131
+#: windows.cpp:182
 msgid "Focus follows mouse"
 msgstr "Фокус за мышкой"
 
 #
-#: windows.cpp:133
+#: windows.cpp:184
 msgid "Classic focus follows mouse"
 msgstr "Классичекий фокус за мышкой"
 
 #
-#: windows.cpp:135
+#: windows.cpp:186
 msgid "Classic sloppy focus"
 msgstr "Классический фокус щелчком"
 
-#: windows.cpp:144
-msgid ""
-"Auto raise delay\n"
-"(<100 disables)"
+#: windows.cpp:197
+msgid "Auto Raise"
 msgstr ""
-"Задержка авто-уменьшения\n"
-"(<100 отключается)"
 
-#: windows.cpp:147
-msgid "miliseconds"
-msgstr "миллисекунд"
+#: windows.cpp:204
+msgid "Delay (ms)"
+msgstr ""
 
-#: desktop.cpp:77
+#: desktop.cpp:65
 msgid "Active desktop borders"
 msgstr "Активные границы рабочего стола"
 
-#: desktop.cpp:79
+#: desktop.cpp:74
 msgid "Enable active desktop borders"
 msgstr "Включить активные границы рабочего стола"
 
@@ -294,11 +264,11 @@ msgstr "Перемещать курсор к центру после переключения"
 msgid "Dekstop switch delay:"
 msgstr "Задержка в переключении:"
 
-#: desktop.cpp:100
+#: desktop.cpp:117
 msgid "Magic Borders"
 msgstr "Волшебные границы"
 
-#: desktop.cpp:102
+#: desktop.cpp:126
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
@@ -306,7 +276,7 @@ msgstr ""
 "Зона захвата по границе:\n"
 "       (пикселов)"
 
-#: desktop.cpp:116
+#: desktop.cpp:151
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
@@ -407,6 +377,59 @@ msgstr ""
 msgid "Activate and pass click"
 msgstr ""
 
+#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215
+msgid "Move"
+msgstr "Перемещать"
+
+#: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
+msgid "Resize"
+msgstr "Изменить размер"
+
+#~ msgid "Titlebar appearance"
+#~ msgstr "Вид заголовка"
+
+#~ msgid "Operations Menu"
+#~ msgstr "Меню операций"
+
+#~ msgid "Window movement"
+#~ msgstr "Перемещение окна"
+
+#~ msgid "Transparent"
+#~ msgstr "Прозрачно"
+
+#~ msgid "Opaque"
+#~ msgstr "Непрозрачно"
+
+#
+#~ msgid "Window resize"
+#~ msgstr "Изменить размер окна"
+
+#
+#~ msgid "Animation:"
+#~ msgstr "Анимация:"
+
+#~ msgid "Allowed Overlap:"
+#~ msgstr "Возможны перекрытия:"
+
+#~ msgid "Maximize Style"
+#~ msgstr "Тип максимизации"
+
+#~ msgid "Maximize fully"
+#~ msgstr "Полностью"
+
+#~ msgid "Maximize vertically"
+#~ msgstr "Вертикально"
+
+#~ msgid ""
+#~ "Auto raise delay\n"
+#~ "(<100 disables)"
+#~ msgstr ""
+#~ "Задержка авто-уменьшения\n"
+#~ "(<100 отключается)"
+
+#~ msgid "miliseconds"
+#~ msgstr "миллисекунд"
+
 #~ msgid "&Desktop"
 #~ msgstr "Рабочий Стол"
 
@@ -419,6 +442,3 @@ msgstr ""
 
 #~ msgid "Shaded"
 #~ msgstr "Градиент"
-
-#~ msgid "Resize Animation"
-#~ msgstr "Анимация изменения размера"

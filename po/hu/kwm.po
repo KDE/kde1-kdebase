@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-02-26 20:46+MET\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -120,7 +120,7 @@ msgstr ""
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr ""
 
-#: main.C:1354
+#: main.C:1356
 msgid "*** No Tasks ***"
 msgstr "*** Nincsenek programok ***"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Andrea Rizzi <Bilibao@Ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -117,7 +117,7 @@ msgstr "Alcune pixmap non sono valide: Il modo Shape viene disabilitato\n"
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Alcune pixmap non sono valide: Il modo Gimmick viene disabilitato\n"
 
-#: main.C:1354
+#: main.C:1356
 msgid "*** No Tasks ***"
 msgstr "*** Nessun Task ***"
 

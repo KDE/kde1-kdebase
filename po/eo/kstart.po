@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kstartondesk 1.0pre2\n"
-"POT-Creation-Date: 1998-10-29 13:56+0100\n"
+"POT-Creation-Date: 1998-10-29 13:59+0100\n"
 "PO-Revision-Date: 1998-07-17 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"

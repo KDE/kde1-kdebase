@@ -6,133 +6,155 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-13 13:29+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-07-09 14:50+02:00\n"
 "Last-Translator: Anders Bengtsson <d96-abe@nada.kth.se>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kpanel.C:232
+#: kpanel.C:273
 msgid "Move"
 msgstr ""
 
-#: kpanel.C:272
+#: kpanel.C:313
 msgid "Go!"
 msgstr "Starta!"
 
-#: kpanel.C:275 tools.C:828
+#: kpanel.C:316 tools.C:828
 msgid "Where do you want to go tomorrow?"
 msgstr "Vart vill du gå i morgon?"
 
-#: kpanel.C:349
+#: kpanel.C:391
 msgid "No info available"
 msgstr "Ingen information tillgänglig"
 
-#: kpanel.C:388 props.C:173 props.C:174
+#: kpanel.C:430 props.C:174 props.C:175
 msgid "Logout"
 msgstr "Logga ut"
 
-#: kpanel.C:396 props.C:172
+#: kpanel.C:438 props.C:173
 msgid "Lock screen"
 msgstr "Lås skärmen"
 
-#: kpanel.C:405 kpanel.C:414
+#: kpanel.C:447 kpanel.C:456
 msgid "Hide the panel"
 msgstr "Göm panelen"
 
-#: kpanel.C:424 kpanel.C:436
+#: kpanel.C:466 kpanel.C:478
 msgid "Show the panel"
 msgstr "Visa panelen"
 
-#: kpanel.C:1159 tools.C:658
+#: kpanel.C:1201 tools.C:658
 msgid "No comment available"
 msgstr "Ingen kommentar tillgänglig"
 
-#: kpanel.C:1168 tools.C:837
+#: kpanel.C:1210 tools.C:837
 msgid "Windowlist"
 msgstr "Fönsterlista"
 
-#: props.C:143
+#: props.C:144
 msgid "Add application"
 msgstr "Lägg till applikation"
 
-#: props.C:145
+#: props.C:146
 msgid "Add an application or a submenu onto the panel"
 msgstr "Lägg till applikation eller undermeny till panelen"
 
-#: props.C:146
+#: props.C:147
 msgid "Add windowlist"
 msgstr "Lägg till fönsterlista"
 
-#: props.C:148
+#: props.C:149
 msgid "Add a windowlist menu onto the panel"
 msgstr "Lägg till fönsterlista till panelen"
 
-#: events.C:772 props.C:149
+#: events.C:782 props.C:150
 msgid "Configure"
 msgstr "Konfigurera"
 
-#: props.C:151
+#: props.C:152
 msgid "Configure panel"
 msgstr "Konfigurera panel"
 
-#: props.C:152
+#: props.C:153
 msgid "Edit Menus"
 msgstr "Redigera menyer"
 
-#: props.C:154
+#: props.C:155
 msgid "Add or remove applications in the menu structure "
 msgstr "Lägg till eller ta bort program i menystrukturen"
 
-#: events.C:774 props.C:155
+#: events.C:784 props.C:156
 msgid "Restart"
 msgstr "Starta om"
 
-#: props.C:157
+#: props.C:158
 msgid "Restart panel"
 msgstr "Starta om panel"
 
-#: props.C:160
+#: props.C:161
 msgid "Disk Navigator"
 msgstr ""
 
-#: props.C:168
+#: props.C:169
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:170
+#: props.C:171
 msgid "Lock Screen"
 msgstr "Lås skärmen"
 
-#: props.C:399
+#: props.C:400
 msgid "The menu editor is not installed."
 msgstr ""
 
-#: events.C:810 props.C:400
+#: events.C:820 props.C:401
 msgid "Oops!"
 msgstr "Oops!"
 
-#: events.C:809
+#: tools.C:617
+msgid ""
+"\n"
+"%b %d"
+msgstr ""
+
+#: events.C:819
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kan inte lägga in det här som knapp i panelen!"
 
-#: pfilemenu.C:351
+#: pfilemenu.C:337
 msgid "(empty folder)"
 msgstr ""
 
-#: pfilemenu.C:408
+#: pfilemenu.C:394
 msgid "(Too Many Files)"
 msgstr ""
 
-#: pfilemenu.C:417
+#: pfilemenu.C:403
 msgid "(Access Denied)"
 msgstr ""
 
-#: pfilemenu.C:420
+#: pfilemenu.C:406
 msgid "(Unreadable)"
 msgstr ""
 
-#: pfilemenu.C:427
+#: pfilemenu.C:413
 msgid "Open Folder"
+msgstr ""
+
+#: pfilemenu.C:657
+msgid "Global:"
+msgstr ""
+
+#: pfilemenu.C:676
+msgid "Local:"
+msgstr ""
+
+#: pfilemenu.C:694
+msgid "Recent:"
+msgstr ""
+
+#: pfilemenu.C:740
+msgid "Options..."
 msgstr ""

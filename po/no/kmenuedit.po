@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kmenuedit\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-03-21 13:22+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -37,15 +37,15 @@ msgstr ""
 "\n"
 "Ønsker du å lagre dine endringer ?"
 
-#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:260
 msgid "EMPTY"
 msgstr "TOM"
 
-#: kmenuedit.cpp:335
+#: kmenuedit.cpp:339
 msgid "Reload Menus"
 msgstr "Last inn menyer på nytt"
 
-#: kmenuedit.cpp:336
+#: kmenuedit.cpp:340
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -53,11 +53,11 @@ msgstr ""
 "Ny innlasting av menyene vil forkaste alle endringer.\n"
 "Er du sikker på at du ønsker å laste inn på nytt?"
 
-#: button.cpp:209 main.cpp:78 main.cpp:91
+#: button.cpp:209 main.cpp:79 main.cpp:92
 msgid "KMenuedit"
 msgstr "KMenuedit"
 
-#: main.cpp:79
+#: main.cpp:80
 msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
@@ -65,7 +65,7 @@ msgstr ""
 "Mappen for din personlige meny eksisterer ikke.\n"
 " Ønsker du å lage den nå ?"
 
-#: main.cpp:92
+#: main.cpp:93
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."

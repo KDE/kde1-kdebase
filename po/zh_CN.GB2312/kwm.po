@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -113,7 +113,7 @@ msgstr "一些位图是无效的: 取消 ShapMode\n"
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "一些位图是无效的: 取消 ShapMode\n"
 
-#: main.C:1354
+#: main.C:1356
 msgid "*** No Tasks ***"
 msgstr "*** 没有任务 ***"
 

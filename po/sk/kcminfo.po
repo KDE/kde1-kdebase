@@ -104,4 +104,3 @@ msgstr "%10ld bajtov  = %8.2f MB"
 #: memory.cpp:105
 msgid "Not available"
 msgstr "nie je prístupná"
-

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock VERSION\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -358,12 +358,12 @@ msgid ""
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
 
-#: main.cpp:349
+#: main.cpp:351
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "A(z) %s paraméter nem értelmezhetõ ezen a platformon!"
 
-#: main.cpp:378
+#: main.cpp:380
 #, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
@@ -376,11 +376,11 @@ msgstr ""
 "Lépjen kapcsolatba a rendszergazdával, hogy adjon\n"
 "SUID-ot a képernyõvédõknek."
 
-#: main.cpp:383
+#: main.cpp:385
 msgid "Shadow Passwords"
 msgstr "Rejtett jelszavak"
 
-#: main.cpp:428
+#: main.cpp:430
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -388,7 +388,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: main.cpp:536
+#: main.cpp:538
 #, fuzzy, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -397,7 +397,7 @@ msgstr ""
 "Használat: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:539
+#: main.cpp:541
 #, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"

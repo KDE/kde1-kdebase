@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Natali Giuliano \n"
 
@@ -391,12 +391,12 @@ msgstr ""
 "\n"
 "Porting su KDE di Emanuel Pirker."
 
-#: main.cpp:349
+#: main.cpp:351
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "L'opzione %s non è supportata su questa piattaforma!"
 
-#: main.cpp:378
+#: main.cpp:380
 #, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
@@ -410,11 +410,11 @@ msgstr ""
 "\n"
 "Abbisognate dei permessi di suid per il salvaschermo!"
 
-#: main.cpp:383
+#: main.cpp:385
 msgid "Shadow Passwords"
 msgstr "Shadow passwords"
 
-#: main.cpp:428
+#: main.cpp:430
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -422,7 +422,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: main.cpp:536
+#: main.cpp:538
 #, fuzzy, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -431,7 +431,7 @@ msgstr ""
 "Uso: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:539
+#: main.cpp:541
 #, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"

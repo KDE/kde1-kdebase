@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-18 22:51+0200\n"
+"POT-Creation-Date: 1998-10-29 14:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Serge 'sergio' Tellène <tells@mygale.org>\n"
 "Language-Team: Français <fr@li.org>\n"
@@ -13,133 +13,151 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: src/main.C:176
+#: main.C:174
 msgid "&Normal"
 msgstr "&Normal"
 
-#: src/main.C:179
+#: main.C:177
 msgid "&Small"
 msgstr "&Petit"
 
-#: src/main.C:180
+#: main.C:178
 msgid "&Medium"
 msgstr "&Moyen"
 
-#: src/main.C:181
+#: main.C:179
 msgid "&Large"
 msgstr "&Grand"
 
-#: src/main.C:182
+#: main.C:180
 msgid "&Huge"
 msgstr "&Enorme"
 
-#: src/main.C:185
-msgid "&VGA"
-msgstr "&VGA"
+#: main.C:183
+msgid "&Linux"
+msgstr ""
 
-#: src/main.C:189
+#: main.C:187
 msgid "&More ..."
 msgstr "&Plus..."
 
-#: src/main.C:200
-msgid "&black/white"
-msgstr "&noir/blanc"
-
-#: src/main.C:201
-msgid "&white/black"
-msgstr "&blanc/noir"
-
-#: src/main.C:202
-msgid "&green/black"
-msgstr "&vert/noir"
-
-#: src/main.C:203
-msgid "black/light&yellow"
-msgstr "noir/&jaune"
-
-#: src/main.C:205
-msgid "&System colors"
-msgstr "Couleurs &système"
-
-#: src/main.C:206
-msgid "&Custom Colors"
-msgstr "Couleurs &utilisateur"
-
-#: src/main.C:211
+#: main.C:193
 msgid "&Hide"
 msgstr "&Cacher"
 
-#: src/main.C:212
+#: main.C:194
 msgid "&Left"
 msgstr "&Gauche"
 
-#: src/main.C:213
+#: main.C:195
 msgid "&Right"
 msgstr "&Droite"
 
-#: src/main.C:219
+#: main.C:201
 msgid "40x15 (&small)"
 msgstr "40x15 (&petit)"
 
-#: src/main.C:220
+#: main.C:202
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: src/main.C:221
+#: main.C:203
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: src/main.C:229
+#: main.C:204
+#, fuzzy
+msgid "80x40 (&xterm)"
+msgstr "80x24 (&vt100)"
+
+#: main.C:205
+#, fuzzy
+msgid "80x52 (ibmv&ga)"
+msgstr "80x25 (&ibmpc)"
+
+#: main.C:214
 msgid "&Menubar"
 msgstr "Barre de &menu"
 
-#: src/main.C:231
+#: main.C:216
 msgid "&Frame"
 msgstr "&Cadre"
 
-#: src/main.C:233
+#: main.C:218
 msgid "Scroll&bar"
 msgstr "&Ascenseur"
 
-#: src/main.C:235
+#: main.C:220
 msgid "BS sends &DEL"
 msgstr "BS envoie &DEL"
 
-#: src/main.C:238
+#: main.C:223
 msgid "&Font"
 msgstr "&Police"
 
-#: src/main.C:239
-msgid "&Color"
-msgstr "&Couleur"
-
-#: src/main.C:240
+#: main.C:224
 msgid "&Size"
 msgstr "&Taille"
 
-#: src/main.C:241
-msgid "&Background"
-msgstr "&Fond d'écran"
+#: main.C:225
+#, fuzzy
+msgid "&Schema"
+msgstr "&Petit"
 
-#: src/main.C:244
+#: main.C:227
 msgid "&Save options"
 msgstr "&Enregistrer les options"
 
-#: src/main.C:249
+#: main.C:231
 msgid "&About ..."
 msgstr "&A propos..."
 
-#: src/main.C:250
+#: main.C:232
 msgid "&User's Manual ..."
 msgstr "Manuel &utilisateur..."
 
-#: src/main.C:251
+#: main.C:233
 msgid "&Technical Reference ..."
 msgstr "Référence &technique..."
 
-#: src/main.C:607
+#: main.C:241
+msgid "New"
+msgstr ""
+
+#: main.C:242
+msgid "Sessions"
+msgstr ""
+
+#: main.C:843
 msgid "Welcome to the console"
 msgstr "Bienvenue à la console"
+
+#~ msgid "&VGA"
+#~ msgstr "&VGA"
+
+#~ msgid "&black/white"
+#~ msgstr "&noir/blanc"
+
+#~ msgid "&white/black"
+#~ msgstr "&blanc/noir"
+
+#~ msgid "&green/black"
+#~ msgstr "&vert/noir"
+
+#~ msgid "black/light&yellow"
+#~ msgstr "noir/&jaune"
+
+#~ msgid "&System colors"
+#~ msgstr "Couleurs &système"
+
+#~ msgid "&Custom Colors"
+#~ msgstr "Couleurs &utilisateur"
+
+#~ msgid "&Color"
+#~ msgstr "&Couleur"
+
+#~ msgid "&Background"
+#~ msgstr "&Fond d'écran"
 
 #~ msgid "&Exit"
 #~ msgstr "&Quitter"

@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
+"Content-Type: text/plain; charset=\n"
 "Date: 1998-09-30 07:19:56+0000\n"
 "From: antonio <antonio@jupiter.arrakis.es>\n"
-"Content-Type: text/plain; charset=\n"
 "Xgettext-Options: -C -ki18n -x /opt/kde/include/kde.pot\n"
-"Files: jpeg.cpp windowdrag.cpp ktrianglebutton.cpp desktop.cpp kpagerclient.cpp kpager.cpp main.cpp\n"
+"Files: jpeg.cpp windowdrag.cpp ktrianglebutton.cpp desktop.cpp "
+"kpagerclient.cpp kpager.cpp main.cpp\n"
 
 #: kpager.cpp:77 kpager.cpp:156
 msgid "Hide &Global Desktop"
@@ -59,4 +60,3 @@ msgstr ""
 "KPager prichádza BEZ AKEJKO¥VEK ZÁRUKY; pre podrobnosti pozrite súbor\n"
 "COPYING. Toto je voµne ¹íriteµný softvér a budeme radi, ak ho budete\n"
 "redistribuova» za urèitých podmienok\n"
-

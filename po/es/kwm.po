@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-06-22 21:36+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
@@ -113,7 +113,7 @@ msgstr "Algunos pixmaps no son válidos: desactivando modo de formas\n"
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Algunos pixmaps no son válidos: desactivando modo de gimmicks\n"
 
-#: main.C:1354
+#: main.C:1356
 msgid "*** No Tasks ***"
 msgstr "*** Sin tareas ***"
 

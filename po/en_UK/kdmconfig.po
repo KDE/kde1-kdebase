@@ -6,42 +6,42 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-04-26 21:22+1000\n"
 "Last-Translator: Martin Jones <mjones@kde.org>\n"
 
-#: main.cpp:87
+#: main.cpp:84
 msgid "&Appearance"
 msgstr ""
 
-#: main.cpp:95
+#: main.cpp:92
 msgid "&Background"
 msgstr ""
 
-#: main.cpp:98
+#: main.cpp:95
 msgid "&Users"
 msgstr ""
 
-#: main.cpp:101
+#: main.cpp:98
 msgid "&Sessions"
 msgstr ""
 
-#: main.cpp:106
+#: main.cpp:103
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
 
-#: main.cpp:145
+#: main.cpp:142
 msgid "KDM Configuration"
 msgstr ""
 
-#: main.cpp:155
+#: main.cpp:152
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
 msgstr ""
 
-#: main.cpp:157
+#: main.cpp:154
 msgid "Missing privileges"
 msgstr ""
 

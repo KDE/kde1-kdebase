@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkeys\n"
-"POT-Creation-Date: 1998-10-26 10:19+0100\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-10-28 18:59 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -29,6 +29,10 @@ msgstr "Pou¾ití: kcmkeys [-init | {standard,global}]\n"
 msgid "Key binding settings"
 msgstr "Nastavení klávesových vazeb"
 
+#: standard.cpp:53
+msgid "New"
+msgstr ""
+
 #: standard.cpp:57
 msgid "Next"
 msgstr "Dal¹í"
@@ -37,9 +41,13 @@ msgstr "Dal¹í"
 msgid "Prior"
 msgstr "Pøede¹lý"
 
-#: standard.cpp:65
-msgid "Insert"
-msgstr "Vlo¾it"
+#: standard.cpp:63
+msgid "Find"
+msgstr ""
+
+#: standard.cpp:66
+msgid "Home"
+msgstr ""
 
 #: standard.cpp:67
 msgid "End"
@@ -114,3 +122,6 @@ msgstr ""
 "\n"
 "Klávesy pou¾ité v náhledu budou do tohoto\n"
 "schématu zkopírované."
+
+#~ msgid "Insert"
+#~ msgstr "Vlo¾it"

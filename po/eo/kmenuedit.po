@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit 1.0pre2\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-07-17 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -38,15 +38,15 @@ msgstr ""
 "\n"
 "Æu vi volas sekurigi viajn þanøojn?"
 
-#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:260
 msgid "EMPTY"
 msgstr "MALPLENA"
 
-#: kmenuedit.cpp:335
+#: kmenuedit.cpp:339
 msgid "Reload Menus"
 msgstr "Relegu menuojn"
 
-#: kmenuedit.cpp:336
+#: kmenuedit.cpp:340
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -54,11 +54,11 @@ msgstr ""
 "Relego de la menuoj malvalidigos æiujn viajn þanøojn.\n"
 "Æu vi estas certa, ke vi volas relegi?"
 
-#: button.cpp:209 main.cpp:78 main.cpp:91
+#: button.cpp:209 main.cpp:79 main.cpp:92
 msgid "KMenuedit"
 msgstr "KMenuedit"
 
-#: main.cpp:79
+#: main.cpp:80
 msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
@@ -66,7 +66,7 @@ msgstr ""
 "LA dosierujo por via persona menuo ne ekzistas.\n"
 " Æu vi volas krei øin nun?"
 
-#: main.cpp:92
+#: main.cpp:93
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."

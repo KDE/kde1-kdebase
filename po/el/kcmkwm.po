@@ -5,17 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
-
-#: main.cpp:61
-msgid "&Windows"
-msgstr "Παράθυρα"
 
 #: main.cpp:64
 msgid "&Buttons"
@@ -26,7 +22,7 @@ msgid "&Titlebar"
 msgstr "Γραμμή τίτλου"
 
 #: main.cpp:70
-msgid "&Borders"
+msgid "Bo&rders"
 msgstr ""
 
 #: main.cpp:73
@@ -35,250 +31,224 @@ msgstr ""
 
 #: main.cpp:79
 #, fuzzy
-msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,borders,mouse}]\n"
+msgid "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
 msgstr "Σύνταξη: kcmkwm [-init | {windows,buttons,titlebar}]\n"
 
 #: main.cpp:114
 msgid "Window manager style"
 msgstr "Μορφή Διαχειριστή Παραθύρων"
 
-#: titlebar.cpp:116
+#: titlebar.cpp:118
 msgid "Minimize"
 msgstr "Ελαχιστοποίηση"
 
-#: titlebar.cpp:120
+#: titlebar.cpp:122
 msgid "Maximize"
 msgstr "Μεγιστοποίηση"
 
-#: titlebar.cpp:124
+#: titlebar.cpp:126
 msgid "Sticky"
 msgstr "Σταθερό"
 
-#: titlebar.cpp:132
+#: titlebar.cpp:134
 msgid "Menu"
 msgstr "Μενού"
 
-#: titlebar.cpp:169
+#: titlebar.cpp:171
 msgid "Left"
 msgstr ""
 
-#: titlebar.cpp:173
+#: titlebar.cpp:175
 msgid "Right"
 msgstr ""
 
-#: titlebar.cpp:462
+#: titlebar.cpp:464
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Η αριστερή πλευρά της γραμμής τίτλου είναι γεμάτη... Απενεργοποίηση πλήκτρου "
 "μεγιστοποίησης\n"
 
-#: titlebar.cpp:495
+#: titlebar.cpp:497
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Η δεξιά πλευρά της γραμμής τίτλου είναι γεμάτη... Απενεργοποίηση πλήκτρου "
 "μεγιστοποίησης\n"
 
-#: titlebar.cpp:535
+#: titlebar.cpp:537
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Η αριστερή πλευρά της γραμμής τίτλου είναι γεμάτη... Απενεργοποίηση πλήκτρου "
 "ελαχιστοποίησης\n"
 
-#: titlebar.cpp:568
+#: titlebar.cpp:570
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Η δεξιά πλευρά της γραμμής τίτλου είναι γεμάτη... Απενεργοποίηση πλήκτρου "
 "ελαχιστοποίησης\n"
 
-#: titlebar.cpp:922
-msgid "Titlebar appearance"
-msgstr "Μορφή γραμμής τίτλου"
-
-#: titlebar.cpp:924
+#: titlebar.cpp:927
 #, fuzzy
 msgid "Shaded Vertically"
 msgstr "Κατακόρυφη μεγιστοποίηση"
 
-#: titlebar.cpp:926
+#: titlebar.cpp:933
 msgid "Shaded Horizontally"
 msgstr ""
 
-#: titlebar.cpp:930
+#: titlebar.cpp:942
 msgid "Plain"
 msgstr "Απλό"
 
-#: titlebar.cpp:933 titlebar.cpp:954
+#: titlebar.cpp:950 titlebar.cpp:962
 msgid "Pixmap"
 msgstr "Με εικόνα"
 
-#: titlebar.cpp:940
-msgid "Title Animation"
-msgstr "Κίνηση τίτλου"
-
-#: titlebar.cpp:943
-msgid "ms"
-msgstr "χιλιοστά του δευτερολέπτου"
-
-#: titlebar.cpp:965
-msgid "&Active pixmap"
+#: titlebar.cpp:990
+#, fuzzy
+msgid "Active pixmap:"
 msgstr "Εικόνα Ενεργού Παραθύρου"
 
-#: titlebar.cpp:967
-msgid "&Inactive pixmap"
+#: titlebar.cpp:995
+#, fuzzy
+msgid "Inactive pixmap:"
 msgstr "Εικόνα ανενεργού παραθύρου"
 
-#: titlebar.cpp:983
+#: titlebar.cpp:1005
 msgid "Mouse action"
 msgstr "Ενέργεια ποντικιού "
 
-#: titlebar.cpp:985
-msgid ""
-"LeftMouseButton double click\n"
-"    on titlebar does:"
+#: titlebar.cpp:1013
+#, fuzzy
+msgid "Left Button double click does:"
 msgstr "Διπλό αριστερό κλικ στην γραμμή τίτλου προκαλεί: "
 
-#: titlebar.cpp:989
+#: titlebar.cpp:1023
 msgid "(Un)Maximize"
 msgstr "(Απο)Μεγιστοποίηση"
 
-#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
-msgid "Move"
-msgstr "Μετακίνηση"
-
-#: titlebar.cpp:991
+#: titlebar.cpp:1024
 msgid "(Un)Shade"
 msgstr "(Απο)Σκίαση"
 
-#: titlebar.cpp:992
+#: titlebar.cpp:1025
 msgid "Iconify"
 msgstr "Εικονοποίηση"
 
-#: titlebar.cpp:993
+#: titlebar.cpp:1026
 msgid "(Un)Sticky"
 msgstr "(Απο)Σταθεροποίηση"
 
-#: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217 titlebar.cpp:994
-msgid "Resize"
-msgstr "Αλλαγή Μεγέθους"
-
-#: titlebar.cpp:996
-msgid "Operations Menu"
-msgstr "Μενού Λειτουργιών"
-
-#: windows.cpp:84
-msgid "Window movement"
-msgstr "Μετακίνηση παραθύρου"
-
-#: windows.cpp:85
-msgid "Transparent"
-msgstr "Διάφανο"
-
-#: windows.cpp:86 windows.cpp:95
-msgid "Opaque"
-msgstr "Αδιαφανές"
-
-#: windows.cpp:89
+#: titlebar.cpp:1046
 #, fuzzy
-msgid "Window resize"
-msgstr "Παράθυρα"
-
-#: windows.cpp:90
-#, fuzzy
-msgid "Animation:"
+msgid "Title animation"
 msgstr "Κίνηση τίτλου"
 
-#: windows.cpp:91
+#: titlebar.cpp:1062
+msgid "ms"
+msgstr "χιλιοστά του δευτερολέπτου"
+
+#: windows.cpp:66
+#, fuzzy
+msgid "Windows"
+msgstr "Παράθυρα"
+
+#: windows.cpp:80
+msgid "Vertical maximization only by default"
+msgstr ""
+
+#: windows.cpp:85
+msgid "Display content in moving windows"
+msgstr ""
+
+#: windows.cpp:90
+msgid "Display content in resizing windows"
+msgstr ""
+
+#: windows.cpp:96
+#, fuzzy
+msgid "Resize animation:"
+msgstr "Κίνηση αλλαγής μεγέθους"
+
+#: windows.cpp:109
 msgid "None"
 msgstr ""
 
-#: windows.cpp:92
+#: windows.cpp:115
 msgid "Fast"
 msgstr ""
 
-#: windows.cpp:98
+#: windows.cpp:126
 msgid "Placement policy"
 msgstr "Πολιτική τοποθέτησης"
 
-#: windows.cpp:100
+#: windows.cpp:132
 msgid "Smart"
 msgstr ""
 
-#: windows.cpp:102
+#: windows.cpp:134
 msgid "Cascade"
 msgstr ""
 
-#: windows.cpp:104
+#: windows.cpp:136
 msgid "Interactive"
 msgstr ""
 
-#: windows.cpp:106
+#: windows.cpp:138
 msgid "Random"
 msgstr ""
 
-#: windows.cpp:108
+#: windows.cpp:140
 #, fuzzy
 msgid "Manual"
 msgstr "Μενού"
 
-#: windows.cpp:115
-msgid "Allowed Overlap:"
+#: windows.cpp:151
+#, c-format
+msgid ""
+"  Allowed overlap:\n"
+"(% of desktop space)"
 msgstr ""
 
-#: windows.cpp:122
-msgid "Maximize Style"
-msgstr "Μορφή μεγιστοποίησης"
-
-#: windows.cpp:123
-msgid "Maximize fully"
-msgstr "Πλήρης μεγιστοποίηση"
-
-#: windows.cpp:124
-msgid "Maximize vertically"
-msgstr "Κατακόρυφη μεγιστοποίηση"
-
-#: windows.cpp:127
-msgid "Focus Policy"
+#: windows.cpp:170
+#, fuzzy
+msgid "Focus policy"
 msgstr "Πολιτική ενεργοποίησης"
 
-#: windows.cpp:129
+#: windows.cpp:180
 msgid "Click to focus"
 msgstr "Ενεργοποίηση με κλικ"
 
-#: windows.cpp:131
+#: windows.cpp:182
 msgid "Focus follows mouse"
 msgstr "Η ενεργοποίηση ακολουθεί τον δείκτη του ποντικιού"
 
-#: windows.cpp:133
+#: windows.cpp:184
 #, fuzzy
 msgid "Classic focus follows mouse"
 msgstr "Η ενεργοποίηση ακολουθεί τον δείκτη του ποντικιού"
 
-#: windows.cpp:135
+#: windows.cpp:186
 #, fuzzy
 msgid "Classic sloppy focus"
 msgstr "Ενεργοποίηση με κλικ"
 
-#: windows.cpp:144
-msgid ""
-"Auto raise delay\n"
-"(<100 disables)"
+#: windows.cpp:197
+msgid "Auto Raise"
 msgstr ""
-"Καθυστέρηση αυτόματης ανάδυσης\n"
-"(<100 απενεργοποιεί)"
 
-#: windows.cpp:147
-msgid "miliseconds"
-msgstr "χιλιοστά του δευτερολέπτου"
+#: windows.cpp:204
+msgid "Delay (ms)"
+msgstr ""
 
-#: desktop.cpp:77
+#: desktop.cpp:65
 msgid "Active desktop borders"
 msgstr ""
 
-#: desktop.cpp:79
+#: desktop.cpp:74
 msgid "Enable active desktop borders"
 msgstr ""
 
@@ -290,17 +260,17 @@ msgstr ""
 msgid "Dekstop switch delay:"
 msgstr ""
 
-#: desktop.cpp:100
+#: desktop.cpp:117
 msgid "Magic Borders"
 msgstr ""
 
-#: desktop.cpp:102
+#: desktop.cpp:126
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
 
-#: desktop.cpp:116
+#: desktop.cpp:151
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
@@ -399,6 +369,56 @@ msgstr ""
 msgid "Activate and pass click"
 msgstr ""
 
+#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215
+msgid "Move"
+msgstr "Μετακίνηση"
+
+#: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
+msgid "Resize"
+msgstr "Αλλαγή Μεγέθους"
+
+#~ msgid "Titlebar appearance"
+#~ msgstr "Μορφή γραμμής τίτλου"
+
+#~ msgid "Operations Menu"
+#~ msgstr "Μενού Λειτουργιών"
+
+#~ msgid "Window movement"
+#~ msgstr "Μετακίνηση παραθύρου"
+
+#~ msgid "Transparent"
+#~ msgstr "Διάφανο"
+
+#~ msgid "Opaque"
+#~ msgstr "Αδιαφανές"
+
+#, fuzzy
+#~ msgid "Window resize"
+#~ msgstr "Παράθυρα"
+
+#, fuzzy
+#~ msgid "Animation:"
+#~ msgstr "Κίνηση τίτλου"
+
+#~ msgid "Maximize Style"
+#~ msgstr "Μορφή μεγιστοποίησης"
+
+#~ msgid "Maximize fully"
+#~ msgstr "Πλήρης μεγιστοποίηση"
+
+#~ msgid "Maximize vertically"
+#~ msgstr "Κατακόρυφη μεγιστοποίηση"
+
+#~ msgid ""
+#~ "Auto raise delay\n"
+#~ "(<100 disables)"
+#~ msgstr ""
+#~ "Καθυστέρηση αυτόματης ανάδυσης\n"
+#~ "(<100 απενεργοποιεί)"
+
+#~ msgid "miliseconds"
+#~ msgstr "χιλιοστά του δευτερολέπτου"
+
 #, fuzzy
 #~ msgid "With animation"
 #~ msgstr "Κίνηση τίτλου"
@@ -408,6 +428,3 @@ msgstr ""
 
 #~ msgid "Shaded"
 #~ msgstr "Σκιασμένο"
-
-#~ msgid "Resize Animation"
-#~ msgstr "Κίνηση αλλαγής μεγέθους"

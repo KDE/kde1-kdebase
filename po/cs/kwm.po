@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm 0.10.23\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-06-19 08:37 MET DST\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -121,7 +121,7 @@ msgstr "Nìkteré pixmapy nejsou korektní: ShapeMode vypnut\n"
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Nìkteré pixmapy nejsou korektní: GimmickMode vypnut\n"
 
-#: main.C:1354
+#: main.C:1356
 msgid "*** No Tasks ***"
 msgstr "*** ®ádné úlohy ***"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-26 10:19+0100\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-10-28 18:57 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -73,6 +73,10 @@ msgstr "D&ole"
 msgid "Top/Le&ft"
 msgstr "Nahoøe/Vle&vo"
 
+#: panel.cpp:95
+msgid "Style"
+msgstr "Styl"
+
 #: panel.cpp:97
 msgid "T&iny"
 msgstr "D&robný"
@@ -104,6 +108,15 @@ msgstr "Zobrazovat nápovìdy v &menu"
 #: options.cpp:44
 msgid "De&lay:"
 msgstr "&Zpo¾dìní"
+
+#: options.cpp:50 options.cpp:68 options.cpp:86
+msgid "Small"
+msgstr ""
+
+#: options.cpp:51 options.cpp:69 options.cpp:87
+#, fuzzy
+msgid "Large"
+msgstr "V&elký"
 
 #: options.cpp:62
 msgid "Visuals"
@@ -168,9 +181,6 @@ msgstr "Upravit &lokální"
 #: disknav.cpp:74
 msgid "Edit &Global..."
 msgstr "Upravit &globální"
-
-#~ msgid "Style"
-#~ msgstr "Styl"
 
 #~ msgid "ms"
 #~ msgstr "ms"

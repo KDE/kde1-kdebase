@@ -1,14 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
-
-#: main.cpp:61
-msgid "&Windows"
-msgstr "窗口[&W]"
 
 #: main.cpp:64
 msgid "&Buttons"
@@ -20,7 +16,7 @@ msgstr "标题行[&T]"
 
 #: main.cpp:70
 #, fuzzy
-msgid "&Borders"
+msgid "Bo&rders"
 msgstr "神奇边界"
 
 #: main.cpp:73
@@ -29,246 +25,220 @@ msgstr ""
 
 #: main.cpp:79
 #, fuzzy
-msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,borders,mouse}]\n"
+msgid "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
 msgstr "用法: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:114
 msgid "Window manager style"
 msgstr "窗口管理器风格"
 
-#: titlebar.cpp:116
+#: titlebar.cpp:118
 msgid "Minimize"
 msgstr "最小化"
 
-#: titlebar.cpp:120
+#: titlebar.cpp:122
 msgid "Maximize"
 msgstr "最大化"
 
-#: titlebar.cpp:124
+#: titlebar.cpp:126
 msgid "Sticky"
 msgstr "粘附"
 
-#: titlebar.cpp:132
+#: titlebar.cpp:134
 msgid "Menu"
 msgstr "菜单"
 
-#: titlebar.cpp:169
+#: titlebar.cpp:171
 msgid "Left"
 msgstr ""
 
-#: titlebar.cpp:173
+#: titlebar.cpp:175
 msgid "Right"
 msgstr ""
 
-#: titlebar.cpp:462
+#: titlebar.cpp:464
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr "标题行左边空间已满...请移去 '最大化' 按钮\n"
 
-#: titlebar.cpp:495
+#: titlebar.cpp:497
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr "标题行右边空间已满...请移去 '最大化' 按钮\n"
 
-#: titlebar.cpp:535
+#: titlebar.cpp:537
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "标题行左边空间已满...请移去 '最小化' 按钮\n"
 
-#: titlebar.cpp:568
+#: titlebar.cpp:570
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "标题行右边空间已满...请移去 '最小化' 按钮\n"
 
-#: titlebar.cpp:922
-msgid "Titlebar appearance"
-msgstr "标题行外观"
-
 #
-#: titlebar.cpp:924
+#: titlebar.cpp:927
 msgid "Shaded Vertically"
 msgstr "垂直渐变色"
 
-#: titlebar.cpp:926
+#: titlebar.cpp:933
 msgid "Shaded Horizontally"
 msgstr "水平渐变色"
 
-#: titlebar.cpp:930
+#: titlebar.cpp:942
 msgid "Plain"
 msgstr "普通"
 
-#: titlebar.cpp:933 titlebar.cpp:954
+#: titlebar.cpp:950 titlebar.cpp:962
 msgid "Pixmap"
 msgstr "位图"
 
-#: titlebar.cpp:940
-msgid "Title Animation"
-msgstr "标题动画"
-
-#: titlebar.cpp:943
-msgid "ms"
-msgstr "毫秒"
-
-#: titlebar.cpp:965
-msgid "&Active pixmap"
+#: titlebar.cpp:990
+#, fuzzy
+msgid "Active pixmap:"
 msgstr "活动标题位图[&A]"
 
-#: titlebar.cpp:967
-msgid "&Inactive pixmap"
+#: titlebar.cpp:995
+#, fuzzy
+msgid "Inactive pixmap:"
 msgstr "非活动标题位图[&I]"
 
-#: titlebar.cpp:983
+#: titlebar.cpp:1005
 msgid "Mouse action"
 msgstr "鼠标动作"
 
-#: titlebar.cpp:985
-msgid ""
-"LeftMouseButton double click\n"
-"    on titlebar does:"
+#: titlebar.cpp:1013
+#, fuzzy
+msgid "Left Button double click does:"
 msgstr ""
 "鼠标左键在标题行双击\n"
 "    的结果:"
 
 #
-#: titlebar.cpp:989
+#: titlebar.cpp:1023
 msgid "(Un)Maximize"
 msgstr "最大化/恢复"
 
-#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
-msgid "Move"
-msgstr "移动"
-
 #
-#: titlebar.cpp:991
+#: titlebar.cpp:1024
 msgid "(Un)Shade"
 msgstr "渐变色/恢复"
 
-#: titlebar.cpp:992
+#: titlebar.cpp:1025
 msgid "Iconify"
 msgstr "图标化"
 
 #
-#: titlebar.cpp:993
+#: titlebar.cpp:1026
 msgid "(Un)Sticky"
 msgstr "粘附/恢复"
 
-#: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217 titlebar.cpp:994
-msgid "Resize"
-msgstr "改变大小"
-
-#: titlebar.cpp:996
-msgid "Operations Menu"
-msgstr "操作菜单"
-
-#: windows.cpp:84
-msgid "Window movement"
-msgstr "窗口移动"
-
-#: windows.cpp:85
-msgid "Transparent"
-msgstr "透明的"
-
-#: windows.cpp:86 windows.cpp:95
-msgid "Opaque"
-msgstr "不透明的"
-
-#
-#: windows.cpp:89
-msgid "Window resize"
-msgstr "窗口改变大小"
-
-#: windows.cpp:90
+#: titlebar.cpp:1046
 #, fuzzy
-msgid "Animation:"
+msgid "Title animation"
 msgstr "标题动画"
 
-#: windows.cpp:91
+#: titlebar.cpp:1062
+msgid "ms"
+msgstr "毫秒"
+
+#: windows.cpp:66
+#, fuzzy
+msgid "Windows"
+msgstr "窗口[&W]"
+
+#: windows.cpp:80
+msgid "Vertical maximization only by default"
+msgstr ""
+
+#: windows.cpp:85
+msgid "Display content in moving windows"
+msgstr ""
+
+#: windows.cpp:90
+msgid "Display content in resizing windows"
+msgstr ""
+
+#: windows.cpp:96
+#, fuzzy
+msgid "Resize animation:"
+msgstr "大小改变时的动画效果"
+
+#: windows.cpp:109
 msgid "None"
 msgstr ""
 
-#: windows.cpp:92
+#: windows.cpp:115
 msgid "Fast"
 msgstr ""
 
-#: windows.cpp:98
+#: windows.cpp:126
 msgid "Placement policy"
 msgstr "窗口放置策略"
 
-#: windows.cpp:100
+#: windows.cpp:132
 msgid "Smart"
 msgstr "智能"
 
-#: windows.cpp:102
+#: windows.cpp:134
 msgid "Cascade"
 msgstr "层叠"
 
-#: windows.cpp:104
+#: windows.cpp:136
 msgid "Interactive"
 msgstr "交互式"
 
-#: windows.cpp:106
+#: windows.cpp:138
 msgid "Random"
 msgstr "随机"
 
-#: windows.cpp:108
+#: windows.cpp:140
 msgid "Manual"
 msgstr "手工"
 
-#: windows.cpp:115
-msgid "Allowed Overlap:"
-msgstr "允许重叠"
+#: windows.cpp:151
+#, c-format
+msgid ""
+"  Allowed overlap:\n"
+"(% of desktop space)"
+msgstr ""
 
-#: windows.cpp:122
-msgid "Maximize Style"
-msgstr "最大化风格"
-
-#: windows.cpp:123
-msgid "Maximize fully"
-msgstr "完全最大化"
-
-#: windows.cpp:124
-msgid "Maximize vertically"
-msgstr "垂直最大化"
-
-#: windows.cpp:127
-msgid "Focus Policy"
+#: windows.cpp:170
+#, fuzzy
+msgid "Focus policy"
 msgstr "焦点策略"
 
-#: windows.cpp:129
+#: windows.cpp:180
 msgid "Click to focus"
 msgstr "点击取得焦点"
 
-#: windows.cpp:131
+#: windows.cpp:182
 msgid "Focus follows mouse"
 msgstr "焦点随鼠标移动"
 
 #
-#: windows.cpp:133
+#: windows.cpp:184
 msgid "Classic focus follows mouse"
 msgstr "老式地焦点随鼠标移动"
 
 #
-#: windows.cpp:135
+#: windows.cpp:186
 msgid "Classic sloppy focus"
 msgstr "老式的随意取得焦点"
 
-#: windows.cpp:144
-msgid ""
-"Auto raise delay\n"
-"(<100 disables)"
+#: windows.cpp:197
+msgid "Auto Raise"
 msgstr ""
-"窗口自动弹起的\n"
-"延迟时间(<100 取消此功能)"
 
-#: windows.cpp:147
-msgid "miliseconds"
-msgstr "毫秒"
+#: windows.cpp:204
+msgid "Delay (ms)"
+msgstr ""
 
-#: desktop.cpp:77
+#: desktop.cpp:65
 msgid "Active desktop borders"
 msgstr "活动桌面边界"
 
-#: desktop.cpp:79
+#: desktop.cpp:74
 msgid "Enable active desktop borders"
 msgstr "激活活动桌面边界"
 
@@ -280,11 +250,11 @@ msgstr "在转换桌面后把鼠标移到桌面中心"
 msgid "Dekstop switch delay:"
 msgstr "桌面转换的延迟时间:"
 
-#: desktop.cpp:100
+#: desktop.cpp:117
 msgid "Magic Borders"
 msgstr "神奇边界"
 
-#: desktop.cpp:102
+#: desktop.cpp:126
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
@@ -292,7 +262,7 @@ msgstr ""
 "Border Snap Zone:\n"
 "       (像素)"
 
-#: desktop.cpp:116
+#: desktop.cpp:151
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
@@ -393,6 +363,59 @@ msgstr ""
 msgid "Activate and pass click"
 msgstr ""
 
+#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215
+msgid "Move"
+msgstr "移动"
+
+#: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
+msgid "Resize"
+msgstr "改变大小"
+
+#~ msgid "Titlebar appearance"
+#~ msgstr "标题行外观"
+
+#~ msgid "Operations Menu"
+#~ msgstr "操作菜单"
+
+#~ msgid "Window movement"
+#~ msgstr "窗口移动"
+
+#~ msgid "Transparent"
+#~ msgstr "透明的"
+
+#~ msgid "Opaque"
+#~ msgstr "不透明的"
+
+#
+#~ msgid "Window resize"
+#~ msgstr "窗口改变大小"
+
+#, fuzzy
+#~ msgid "Animation:"
+#~ msgstr "标题动画"
+
+#~ msgid "Allowed Overlap:"
+#~ msgstr "允许重叠"
+
+#~ msgid "Maximize Style"
+#~ msgstr "最大化风格"
+
+#~ msgid "Maximize fully"
+#~ msgstr "完全最大化"
+
+#~ msgid "Maximize vertically"
+#~ msgstr "垂直最大化"
+
+#~ msgid ""
+#~ "Auto raise delay\n"
+#~ "(<100 disables)"
+#~ msgstr ""
+#~ "窗口自动弹起的\n"
+#~ "延迟时间(<100 取消此功能)"
+
+#~ msgid "miliseconds"
+#~ msgstr "毫秒"
+
 #~ msgid "&Desktop"
 #~ msgstr "桌面[&D]"
 
@@ -405,6 +428,3 @@ msgstr ""
 
 #~ msgid "Shaded"
 #~ msgstr "渐变色"
-
-#~ msgid "Resize Animation"
-#~ msgstr "大小改变时的动画效果"

@@ -90,7 +90,7 @@ msgid ""
 msgstr ""
 "Den här tangentbindningen kunde inte tas bort.\n"
 "Du har kanske inte har rättigheter att ändra den del\n"
-"av filsystemet som tangentbindnings filen är lagrad på." 
+"av filsystemet som tangentbindnings filen är lagrad på."
 
 #: global.cpp:314
 msgid "Naming conflict"

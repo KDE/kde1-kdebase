@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-10-19 22:00+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
@@ -20,11 +20,11 @@ msgstr "S&kjáborð"
 msgid "Disk &Navigator"
 msgstr "Diskaflakkari"
 
-#: main.cpp:109
+#: main.cpp:79
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "notkun: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
-#: main.cpp:142
+#: main.cpp:112
 msgid "KPanel Configuration"
 msgstr "KSpjald Stillingar"
 
@@ -104,42 +104,89 @@ msgstr "Sýna &vísbendingar"
 msgid "De&lay:"
 msgstr "&Töf"
 
-#: options.cpp:56
-msgid "ms"
-msgstr "ms"
+#: options.cpp:50 options.cpp:68 options.cpp:86
+msgid "Small"
+msgstr ""
 
-#: options.cpp:68
-msgid "Others"
-msgstr "Annað"
+#: options.cpp:51 options.cpp:69 options.cpp:87
+#, fuzzy
+msgid "Large"
+msgstr "S&tórt"
 
-#: options.cpp:69
-msgid "Personal &First"
-msgstr "&Eigin valmynd fyrst"
+#: options.cpp:62
+msgid "Visuals"
+msgstr ""
 
-#: options.cpp:71
+#: options.cpp:64
 msgid "Auto &Hide Panel"
 msgstr "&Fela spjald sjálfvirkt"
 
-#: options.cpp:73
+#: options.cpp:67 options.cpp:85
+#, fuzzy
+msgid "Delay:"
+msgstr "&Töf"
+
+#: options.cpp:74 options.cpp:93
+msgid "Speed:"
+msgstr ""
+
+#: options.cpp:75 options.cpp:94 options.cpp:103
+msgid "Slow"
+msgstr ""
+
+#: options.cpp:76 options.cpp:95 options.cpp:104
+msgid "Fast"
+msgstr ""
+
+#: options.cpp:82
 msgid "Auto Hide &Taskbar"
 msgstr "Fela &Verkefnaslá sjálfvirkt"
 
-#: options.cpp:81
-msgid "Clock"
-msgstr "Klukka"
+#: options.cpp:100
+msgid "Animate Show/Hide"
+msgstr ""
 
-#: options.cpp:83
-msgid "&24h"
-msgstr "24 tíma"
+#: options.cpp:102
+msgid "Speed"
+msgstr ""
 
-#: options.cpp:85
-msgid "&12h AM/PM"
-msgstr "12 tíma AM/PM"
+#: options.cpp:117
+msgid "Others"
+msgstr "Annað"
 
-#: disknav.cpp:43
+#: options.cpp:118
+msgid "Personal &First"
+msgstr "&Eigin valmynd fyrst"
+
+#: options.cpp:120
+#, fuzzy
+msgid "F&olders First"
+msgstr "&Eigin valmynd fyrst"
+
+#: options.cpp:122
+msgid "&Clock shows time in AM/PM format"
+msgstr ""
+
+#: disknav.cpp:38
+msgid "History"
+msgstr ""
+
+#: disknav.cpp:64
+msgid "Edit &Local..."
+msgstr "Breyta staðvært..."
+
+#: disknav.cpp:74
 msgid "Edit &Global..."
 msgstr "Breyta víðvært..."
 
-#: disknav.cpp:46
-msgid "Edit &Local..."
-msgstr "Breyta staðvært..."
+#~ msgid "ms"
+#~ msgstr "ms"
+
+#~ msgid "Clock"
+#~ msgstr "Klukka"
+
+#~ msgid "&24h"
+#~ msgstr "24 tíma"
+
+#~ msgid "&12h AM/PM"
+#~ msgstr "12 tíma AM/PM"

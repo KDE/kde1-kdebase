@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig VERSION\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Székely Krisztián <szekelyk@edasz.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -14,37 +14,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 
 # main.cpp:99
-#: main.cpp:87
+#: main.cpp:84
 msgid "&Appearance"
 msgstr "&Megjelenés"
 
 # main.cpp:107
-#: main.cpp:95
+#: main.cpp:92
 msgid "&Background"
 msgstr "&Háttér"
 
 # main.cpp:110
-#: main.cpp:98
+#: main.cpp:95
 msgid "&Users"
 msgstr "&Felhasználók"
 
 # main.cpp:113
-#: main.cpp:101
+#: main.cpp:98
 msgid "&Sessions"
 msgstr "&Kapcsolat"
 
-#: main.cpp:106
+#: main.cpp:103
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
 
 # main.cpp:158
-#: main.cpp:145
+#: main.cpp:142
 msgid "KDM Configuration"
 msgstr "KDM beállítás"
 
 # main.cpp:119
-#: main.cpp:155
+#: main.cpp:152
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
@@ -53,7 +53,7 @@ msgstr ""
 "jogod a KDM beállító fájlra."
 
 # main.cpp:121
-#: main.cpp:157
+#: main.cpp:154
 msgid "Missing privileges"
 msgstr "Hiányzó jogosultság"
 

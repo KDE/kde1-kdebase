@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kstartondesk\n"
-"POT-Creation-Date: 1998-10-29 13:56+0100\n"
+"POT-Creation-Date: 1998-10-29 13:59+0100\n"
 "PO-Revision-Date: 1998-04-08 HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"

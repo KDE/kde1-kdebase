@@ -6,46 +6,46 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-02-22 20:47+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.cpp:87
+#: main.cpp:84
 msgid "&Appearance"
 msgstr "外觀[&A]"
 
-#: main.cpp:95
+#: main.cpp:92
 msgid "&Background"
 msgstr "背景[&B]"
 
-#: main.cpp:98
+#: main.cpp:95
 msgid "&Users"
 msgstr "使用者[&U]"
 
-#: main.cpp:101
+#: main.cpp:98
 msgid "&Sessions"
 msgstr "環境[&S]"
 
-#: main.cpp:106
+#: main.cpp:103
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
 "用法: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 
-#: main.cpp:145
+#: main.cpp:142
 msgid "KDM Configuration"
 msgstr "KDM 設定"
 
-#: main.cpp:155
+#: main.cpp:152
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
 msgstr "抱歉, 你沒有權限讀取/寫入 KDM 設定檔"
 
-#: main.cpp:157
+#: main.cpp:154
 msgid "Missing privileges"
 msgstr ""
 

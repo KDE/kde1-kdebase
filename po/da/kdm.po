@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-10-13 13:29+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-09-09 17:23:06+0200\n"
 "From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
@@ -24,48 +24,48 @@ msgstr "Luk ned og genstart"
 msgid "Exit kdm"
 msgstr "Afslut kdm"
 
-#: kgreeter.cpp:166
+#: kgreeter.cpp:172
 msgid "Login:"
 msgstr "Login:"
 
-#: kgreeter.cpp:178
+#: kgreeter.cpp:184
 msgid "Password:"
 msgstr "Adgangskode:"
 
-#: kgreeter.cpp:203
+#: kgreeter.cpp:209
 msgid "Login failed!"
 msgstr "Login fejlede!"
 
-#: kgreeter.cpp:209
+#: kgreeter.cpp:215
 msgid "Session Type:"
 msgstr "Session Type:"
 
-#: kgreeter.cpp:225
+#: kgreeter.cpp:258
 msgid "Go!"
 msgstr "Start!"
 
-#: kgreeter.cpp:241
+#: kgreeter.cpp:274
 msgid "Shutdown..."
 msgstr "Luk ned..."
 
-#: kgreeter.cpp:453
+#: kgreeter.cpp:477
 msgid "Logins not available right now."
 msgstr ""
 
-#: kgreeter.cpp:494
-msgid "bah"
+#: kgreeter.cpp:518
+msgid "login_getcapstr() failed."
 msgstr ""
 
-#: kgreeter.cpp:547 kgreeter.cpp:574
+#: kgreeter.cpp:572 kgreeter.cpp:599
 msgid "Sorry -- your account has expired."
 msgstr ""
 
-#: kgreeter.cpp:552 kgreeter.cpp:579
+#: kgreeter.cpp:577 kgreeter.cpp:604
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr ""
 
-#: kgreeter.cpp:606
+#: kgreeter.cpp:631
 msgid "Home directory not available"
 msgstr ""
 

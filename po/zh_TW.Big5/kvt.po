@@ -6,134 +6,138 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kvt\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-02-25 11:17+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.C:421
+#: main.C:424
 msgid "choose type of color-mode"
 msgstr "選擇彩色模式"
 
-#: main.C:427
+#: main.C:430
 msgid "Add characters to word class"
 msgstr ""
 
-#: main.C:433
+#: main.C:436
 msgid "The backspace key will send a"
 msgstr "送出倒退鍵的字元"
 
-#: main.C:439
+#: main.C:442
 msgid "Cursor key set"
 msgstr ""
 
-#: main.C:606
+#: main.C:611
 msgid "&New Terminal"
 msgstr "新終端機[&N]"
 
-#: main.C:613 main.C:987
+#: main.C:618 main.C:1022
 msgid "&Hide"
 msgstr "隱藏[&H]"
 
-#: main.C:614
+#: main.C:619
 msgid "&Left"
 msgstr "左邊[&L]"
 
-#: main.C:615
+#: main.C:620
 msgid "&Right"
 msgstr "右邊[&R]"
 
-#: main.C:620
+#: main.C:625
 msgid "&Normal"
 msgstr "正常[&N]"
 
-#: main.C:621
+#: main.C:626
 msgid "&Tiny"
 msgstr "最小[&T]"
 
-#: main.C:622
+#: main.C:627
 msgid "&Small"
 msgstr "小型[&S]"
 
-#: main.C:623
+#: main.C:628
 msgid "&Medium"
 msgstr "中型[&M]"
 
-#: main.C:624
+#: main.C:629
 msgid "&Large"
 msgstr "大型[&L]"
 
-#: main.C:625
+#: main.C:630
 msgid "&Huge"
 msgstr "超大[&H]"
 
-#: main.C:637
+#: main.C:642
 msgid "&black/white"
 msgstr "黑/白[&B]"
 
-#: main.C:638
+#: main.C:643
 msgid "&white/black"
 msgstr "白/黑[&W]"
 
-#: main.C:639
+#: main.C:644
 msgid "&green/black"
 msgstr "綠/黑[&G]"
 
-#: main.C:640
+#: main.C:645
 msgid "black/light&yellow"
 msgstr "黑/亮黃[&Y]"
 
-#: main.C:641
+#: main.C:646
 msgid "Linu&x Console"
 msgstr "Linux 主控台[&X]"
 
-#: main.C:650
+#: main.C:655
 msgid "&Custom Colors"
 msgstr "自訂顏色[&C]"
 
-#: main.C:657 main.C:921
+#: main.C:663 main.C:948
 msgid "Hide &Menubar"
 msgstr "隱藏選單[&M]"
 
-#: main.C:659 main.C:843 main.C:913
+#: main.C:665 main.C:870 main.C:940
 msgid "Show &Menubar"
 msgstr "顯示選單[&M]"
 
-#: main.C:660 main.C:931
+#: main.C:666 main.C:958
 msgid "Secure &keyboard"
 msgstr ""
 
-#: main.C:662
+#: main.C:668
 msgid "Scroll&bar"
 msgstr "捲動軸[&B]"
 
-#: main.C:663
+#: main.C:669
 msgid "&Font size"
 msgstr "字型大小[&F]"
 
-#: main.C:664
+#: main.C:670
 msgid "&Color"
 msgstr "顏色[&C]"
 
-#: main.C:665
+#: main.C:671
 msgid "&Size"
 msgstr "大小[&S]"
 
-#: main.C:666
+#: main.C:672
 msgid "Terminal..."
 msgstr "終端機..."
 
-#: main.C:667
+#: main.C:673
 msgid "Font..."
 msgstr ""
 
-#: main.C:669
+#: main.C:674
+msgid "Enable &hotkeys"
+msgstr ""
+
+#: main.C:677
 msgid "Save &Options"
 msgstr "儲存選項"
 
-#: main.C:678
+#: main.C:686
 msgid ""
 "\n"
 "\n"
@@ -145,29 +149,29 @@ msgid ""
 "based on Robert Nation's rxvt-2.08"
 msgstr ""
 
-#: main.C:852 main.C:980
+#: main.C:879 main.C:1015
 msgid "&Show"
 msgstr "顯示[&S]"
 
-#: main.C:927
+#: main.C:954
 msgid "Unsecure &keyboard"
 msgstr ""
 
-#: main.C:938
+#: main.C:965
 msgid "Terminal Options"
 msgstr "終端機選項"
 
-#: main.C:1092
+#: main.C:1127
 msgid "Hint"
 msgstr "提示"
 
-#: main.C:1093
+#: main.C:1128
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
 
-#: main.C:1394
+#: main.C:1429
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -176,101 +180,101 @@ msgid ""
 "\n"
 msgstr ""
 
-#: main.C:1398
+#: main.C:1433
 msgid "Permitted arguments are:\n"
 msgstr ""
 
-#: main.C:1399
+#: main.C:1434
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 
-#: main.C:1400
+#: main.C:1435
 msgid "-display <name>           specify the display (server)\n"
 msgstr ""
 
-#: main.C:1401
+#: main.C:1436
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr ""
 
-#: main.C:1402
+#: main.C:1437
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr ""
 
-#: main.C:1403
+#: main.C:1438
 msgid "-vt_bg <colour>           background color\n"
 msgstr ""
 
-#: main.C:1404
+#: main.C:1439
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr ""
 
-#: main.C:1405
+#: main.C:1440
 msgid "-vt_font <fontname>       normal font\n"
 msgstr ""
 
-#: main.C:1406
+#: main.C:1441
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
 msgstr ""
 
-#: main.C:1407
+#: main.C:1442
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr ""
 
-#: main.C:1408
+#: main.C:1443
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr ""
 
-#: main.C:1409
+#: main.C:1444
 msgid "-no_menubar               hide the menubar\n"
 msgstr ""
 
-#: main.C:1410
+#: main.C:1445
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr ""
 
-#: main.C:1411
+#: main.C:1446
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
 
-#: main.C:1413
+#: main.C:1448
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr ""
 
-#: main.C:1414
+#: main.C:1449
 msgid "-C                        Capture system console message\n"
 msgstr ""
 
-#: main.C:1415
+#: main.C:1450
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr ""
 
-#: main.C:1416
+#: main.C:1451
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
 
-#: main.C:1418
+#: main.C:1453
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
 
-#: main.C:1420
+#: main.C:1455
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
 
-#: main.C:1421
+#: main.C:1456
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr ""
 
-#: main.C:1422
+#: main.C:1457
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
@@ -278,7 +282,7 @@ msgid ""
 "buffer\n"
 msgstr ""
 
-#: main.C:1426
+#: main.C:1461
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

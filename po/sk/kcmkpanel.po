@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -109,42 +109,89 @@ msgstr "Ukazova» pomocníka v &menu"
 msgid "De&lay:"
 msgstr "&Oneskorenie:"
 
-#: options.cpp:56
-msgid "ms"
-msgstr "ms"
+#: options.cpp:50 options.cpp:68 options.cpp:86
+msgid "Small"
+msgstr ""
 
-#: options.cpp:68
-msgid "Others"
-msgstr "Ostatné"
+#: options.cpp:51 options.cpp:69 options.cpp:87
+#, fuzzy
+msgid "Large"
+msgstr "&Veµký"
 
-#: options.cpp:69
-msgid "Personal &First"
-msgstr "Osobné menu j&e hlavné"
+#: options.cpp:62
+msgid "Visuals"
+msgstr ""
 
-#: options.cpp:71
+#: options.cpp:64
 msgid "Auto &Hide Panel"
 msgstr "Automaticky skry» &panel"
 
-#: options.cpp:73
+#: options.cpp:67 options.cpp:85
+#, fuzzy
+msgid "Delay:"
+msgstr "&Oneskorenie:"
+
+#: options.cpp:74 options.cpp:93
+msgid "Speed:"
+msgstr ""
+
+#: options.cpp:75 options.cpp:94 options.cpp:103
+msgid "Slow"
+msgstr ""
+
+#: options.cpp:76 options.cpp:95 options.cpp:104
+msgid "Fast"
+msgstr ""
+
+#: options.cpp:82
 msgid "Auto Hide &Taskbar"
 msgstr "Automaticky skry» panel úloh"
 
-#: options.cpp:81
-msgid "Clock"
-msgstr "Hodinky"
+#: options.cpp:100
+msgid "Animate Show/Hide"
+msgstr ""
 
-#: options.cpp:83
-msgid "&24h"
-msgstr "&24h"
+#: options.cpp:102
+msgid "Speed"
+msgstr ""
 
-#: options.cpp:85
-msgid "&12h AM/PM"
-msgstr "&12h AM/PM"
+#: options.cpp:117
+msgid "Others"
+msgstr "Ostatné"
 
-#: disknav.cpp:43
+#: options.cpp:118
+msgid "Personal &First"
+msgstr "Osobné menu j&e hlavné"
+
+#: options.cpp:120
+#, fuzzy
+msgid "F&olders First"
+msgstr "Osobné menu j&e hlavné"
+
+#: options.cpp:122
+msgid "&Clock shows time in AM/PM format"
+msgstr ""
+
+#: disknav.cpp:38
+msgid "History"
+msgstr ""
+
+#: disknav.cpp:64
+msgid "Edit &Local..."
+msgstr "Editova» &lokálne..."
+
+#: disknav.cpp:74
 msgid "Edit &Global..."
 msgstr "Editova» &globálne..."
 
-#: disknav.cpp:46
-msgid "Edit &Local..."
-msgstr "Editova» &lokálne..."
+#~ msgid "ms"
+#~ msgstr "ms"
+
+#~ msgid "Clock"
+#~ msgstr "Hodinky"
+
+#~ msgid "&24h"
+#~ msgstr "&24h"
+
+#~ msgid "&12h AM/PM"
+#~ msgstr "&12h AM/PM"

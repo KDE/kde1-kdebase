@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -110,42 +110,74 @@ msgstr ""
 msgid "De&lay:"
 msgstr ""
 
-#: options.cpp:56
-msgid "ms"
+#: options.cpp:50 options.cpp:68 options.cpp:86
+msgid "Small"
 msgstr ""
 
-#: options.cpp:68
-msgid "Others"
+#: options.cpp:51 options.cpp:69 options.cpp:87
+msgid "Large"
 msgstr ""
 
-#: options.cpp:69
-msgid "Personal &First"
+#: options.cpp:62
+msgid "Visuals"
 msgstr ""
 
-#: options.cpp:71
+#: options.cpp:64
 msgid "Auto &Hide Panel"
 msgstr ""
 
-#: options.cpp:73
+#: options.cpp:67 options.cpp:85
+msgid "Delay:"
+msgstr ""
+
+#: options.cpp:74 options.cpp:93
+msgid "Speed:"
+msgstr ""
+
+#: options.cpp:75 options.cpp:94 options.cpp:103
+msgid "Slow"
+msgstr ""
+
+#: options.cpp:76 options.cpp:95 options.cpp:104
+msgid "Fast"
+msgstr ""
+
+#: options.cpp:82
 msgid "Auto Hide &Taskbar"
 msgstr ""
 
-#: options.cpp:81
-msgid "Clock"
+#: options.cpp:100
+msgid "Animate Show/Hide"
 msgstr ""
 
-#: options.cpp:83
-msgid "&24h"
+#: options.cpp:102
+msgid "Speed"
 msgstr ""
 
-#: options.cpp:85
-msgid "&12h AM/PM"
+#: options.cpp:117
+msgid "Others"
 msgstr ""
 
-#: disknav.cpp:43
-msgid "Edit &Global..."
+#: options.cpp:118
+msgid "Personal &First"
 msgstr ""
 
-#: disknav.cpp:46
+#: options.cpp:120
+msgid "F&olders First"
+msgstr ""
+
+#: options.cpp:122
+msgid "&Clock shows time in AM/PM format"
+msgstr ""
+
+#: disknav.cpp:38
+msgid "History"
+msgstr ""
+
+#: disknav.cpp:64
 msgid "Edit &Local..."
+msgstr ""
+
+#: disknav.cpp:74
+msgid "Edit &Global..."
 msgstr ""

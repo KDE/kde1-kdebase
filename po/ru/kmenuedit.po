@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-03-16 02:08+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -38,15 +38,15 @@ msgstr ""
 "\n"
 "Вы хотите записать изменения ?"
 
-#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:260
 msgid "EMPTY"
 msgstr "ПУСТО"
 
-#: kmenuedit.cpp:335
+#: kmenuedit.cpp:339
 msgid "Reload Menus"
 msgstr "Перегрузить Меню"
 
-#: kmenuedit.cpp:336
+#: kmenuedit.cpp:340
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -54,11 +54,11 @@ msgstr ""
 "Перзагрузка меню уничтожит все изменения.\n"
 "Вы уверены, что вы хотите перезагрузить меню ?"
 
-#: button.cpp:209 main.cpp:78 main.cpp:91
+#: button.cpp:209 main.cpp:79 main.cpp:92
 msgid "KMenuedit"
 msgstr ""
 
-#: main.cpp:79
+#: main.cpp:80
 msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
@@ -66,7 +66,7 @@ msgstr ""
 "Подкаталог для вашего персонального меню не существует.\n"
 "Вы хотите создать его сейчас ?"
 
-#: main.cpp:92
+#: main.cpp:93
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."

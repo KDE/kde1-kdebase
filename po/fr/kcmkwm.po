@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-04-27 14:14+0100\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -13,10 +13,6 @@ msgstr ""
 "Content-Type: text/plain; \n"
 "Content-Transfer-Encoding: 8bit\n"
 "Main-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
-
-#: main.cpp:61
-msgid "&Windows"
-msgstr "&Fenêtres"
 
 #: main.cpp:64
 msgid "&Buttons"
@@ -28,7 +24,7 @@ msgstr "Barre de &titre"
 
 #: main.cpp:70
 #, fuzzy
-msgid "&Borders"
+msgid "Bo&rders"
 msgstr "Bords magiques"
 
 #: main.cpp:73
@@ -37,246 +33,223 @@ msgstr "&Souris"
 
 #: main.cpp:79
 #, fuzzy
-msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,borders,mouse}]\n"
+msgid "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
 msgstr "utilisation : kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:114
 msgid "Window manager style"
 msgstr "Style du gestionnaire de fenêtres"
 
-#: titlebar.cpp:116
+#: titlebar.cpp:118
 msgid "Minimize"
 msgstr "Icônifier"
 
-#: titlebar.cpp:120
+#: titlebar.cpp:122
 msgid "Maximize"
 msgstr "Maximiser"
 
-#: titlebar.cpp:124
+#: titlebar.cpp:126
 msgid "Sticky"
 msgstr "Clouer"
 
-#: titlebar.cpp:132
+#: titlebar.cpp:134
 msgid "Menu"
 msgstr "Menu"
 
-#: titlebar.cpp:169
+#: titlebar.cpp:171
 msgid "Left"
 msgstr "Gauche"
 
-#: titlebar.cpp:173
+#: titlebar.cpp:175
 msgid "Right"
 msgstr "Droite"
 
-#: titlebar.cpp:462
+#: titlebar.cpp:464
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "La partie gauche de la barre de titre est pleine...\n"
 "Désactivation du bouton \"Maximiser\".\n"
 
-#: titlebar.cpp:495
+#: titlebar.cpp:497
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "La partie droite de la barre de titre est pleine...\n"
 "Désactivation du bouton \"Maximiser\".\n"
 
-#: titlebar.cpp:535
+#: titlebar.cpp:537
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "La partie gauche de la barre de titre est pleine...\n"
 "Désactivation du bouton \"Icônifier\".\n"
 
-#: titlebar.cpp:568
+#: titlebar.cpp:570
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "La partie droite de la barre de titre est pleine...\n"
 "Désactivation du bouton \"Icônifier\".\n"
 
-#: titlebar.cpp:922
-msgid "Titlebar appearance"
-msgstr "Apparence de la barre de titre"
-
-#: titlebar.cpp:924
+#: titlebar.cpp:927
 msgid "Shaded Vertically"
 msgstr "Ombrée verticalement"
 
-#: titlebar.cpp:926
+#: titlebar.cpp:933
 msgid "Shaded Horizontally"
 msgstr "Ombrée horizontalement"
 
-#: titlebar.cpp:930
+#: titlebar.cpp:942
 msgid "Plain"
 msgstr "Uni"
 
-#: titlebar.cpp:933 titlebar.cpp:954
+#: titlebar.cpp:950 titlebar.cpp:962
 msgid "Pixmap"
 msgstr "Image"
 
-#: titlebar.cpp:940
-msgid "Title Animation"
-msgstr "Animation du titre"
-
-#: titlebar.cpp:943
-msgid "ms"
-msgstr "millisecondes"
-
-#: titlebar.cpp:965
-msgid "&Active pixmap"
+#: titlebar.cpp:990
+#, fuzzy
+msgid "Active pixmap:"
 msgstr "Image \"&active\""
 
-#: titlebar.cpp:967
-msgid "&Inactive pixmap"
+#: titlebar.cpp:995
+#, fuzzy
+msgid "Inactive pixmap:"
 msgstr "Image \"&inactive\""
 
-#: titlebar.cpp:983
+#: titlebar.cpp:1005
 msgid "Mouse action"
 msgstr "Action à la souris"
 
-#: titlebar.cpp:985
-msgid ""
-"LeftMouseButton double click\n"
-"    on titlebar does:"
+#: titlebar.cpp:1013
+#, fuzzy
+msgid "Left Button double click does:"
 msgstr ""
 "Un double-clic sur la barre de titre \n"
 "avec le bouton gauche de la souris provoquera :"
 
-#: titlebar.cpp:989
+#: titlebar.cpp:1023
 msgid "(Un)Maximize"
 msgstr "(Dé)Maximiser"
 
-#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
-msgid "Move"
-msgstr "Déplacer"
-
-#: titlebar.cpp:991
+#: titlebar.cpp:1024
 msgid "(Un)Shade"
 msgstr "(Dé)Masquer"
 
-#: titlebar.cpp:992
+#: titlebar.cpp:1025
 msgid "Iconify"
 msgstr "Icônifier"
 
-#: titlebar.cpp:993
+#: titlebar.cpp:1026
 msgid "(Un)Sticky"
 msgstr "(Dé)Clouer"
 
-#: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217 titlebar.cpp:994
-msgid "Resize"
-msgstr "Redimensionner"
+#: titlebar.cpp:1046
+#, fuzzy
+msgid "Title animation"
+msgstr "Animation du titre"
 
-#: titlebar.cpp:996
-msgid "Operations Menu"
-msgstr "Menu des opérations"
+#: titlebar.cpp:1062
+msgid "ms"
+msgstr "millisecondes"
 
-#: windows.cpp:84
-msgid "Window movement"
-msgstr "Déplacement des fenêtres"
+#: windows.cpp:66
+#, fuzzy
+msgid "Windows"
+msgstr "&Fenêtres"
+
+#: windows.cpp:80
+msgid "Vertical maximization only by default"
+msgstr ""
 
 #: windows.cpp:85
-msgid "Transparent"
-msgstr "Transparent"
-
-#: windows.cpp:86 windows.cpp:95
-msgid "Opaque"
-msgstr "Opaque"
-
-#: windows.cpp:89
-msgid "Window resize"
-msgstr "Redimensionner la fenêtre"
+msgid "Display content in moving windows"
+msgstr ""
 
 #: windows.cpp:90
-msgid "Animation:"
-msgstr "Animation :"
+msgid "Display content in resizing windows"
+msgstr ""
 
-#: windows.cpp:91
+#: windows.cpp:96
+#, fuzzy
+msgid "Resize animation:"
+msgstr "Animation lors des redimensionnements"
+
+#: windows.cpp:109
 msgid "None"
 msgstr "Aucun"
 
-#: windows.cpp:92
+#: windows.cpp:115
 msgid "Fast"
 msgstr "Rapide"
 
-#: windows.cpp:98
+#: windows.cpp:126
 msgid "Placement policy"
 msgstr "Politique de placement des fenêtres"
 
-#: windows.cpp:100
+#: windows.cpp:132
 msgid "Smart"
 msgstr "Intelligente"
 
-#: windows.cpp:102
+#: windows.cpp:134
 msgid "Cascade"
 msgstr "En cascade"
 
-#: windows.cpp:104
+#: windows.cpp:136
 msgid "Interactive"
 msgstr "Interactive"
 
-#: windows.cpp:106
+#: windows.cpp:138
 msgid "Random"
 msgstr "Aléatoire"
 
-#: windows.cpp:108
+#: windows.cpp:140
 msgid "Manual"
 msgstr "Manuelle"
 
-#: windows.cpp:115
-msgid "Allowed Overlap:"
-msgstr "Permettre le recouvrement :"
+#: windows.cpp:151
+#, c-format
+msgid ""
+"  Allowed overlap:\n"
+"(% of desktop space)"
+msgstr ""
 
-#: windows.cpp:122
-msgid "Maximize Style"
-msgstr "Type de maximisation"
-
-#: windows.cpp:123
-msgid "Maximize fully"
-msgstr "Maximisation complète"
-
-#: windows.cpp:124
-msgid "Maximize vertically"
-msgstr "Maximisation verticale"
-
-#: windows.cpp:127
-msgid "Focus Policy"
+#: windows.cpp:170
+#, fuzzy
+msgid "Focus policy"
 msgstr "Gestion du focus"
 
-#: windows.cpp:129
+#: windows.cpp:180
 msgid "Click to focus"
 msgstr "Cliquer pour avoir le focus"
 
-#: windows.cpp:131
+#: windows.cpp:182
 msgid "Focus follows mouse"
 msgstr "Le focus suit la souris"
 
-#: windows.cpp:133
+#: windows.cpp:184
 msgid "Classic focus follows mouse"
 msgstr "Le focus suit la souris"
 
-#: windows.cpp:135
+#: windows.cpp:186
 msgid "Classic sloppy focus"
 msgstr "Cliquer pour avoir le focus"
 
-#: windows.cpp:144
-msgid ""
-"Auto raise delay\n"
-"(<100 disables)"
+#: windows.cpp:197
+#, fuzzy
+msgid "Auto Raise"
+msgstr "Agrandir"
+
+#: windows.cpp:204
+msgid "Delay (ms)"
 msgstr ""
-"Délai avant le passage au premier plan\n"
-"(désactivé si inférieur à 100 ms)"
 
-#: windows.cpp:147
-msgid "miliseconds"
-msgstr "millisecondes"
-
-#: desktop.cpp:77
+#: desktop.cpp:65
 msgid "Active desktop borders"
 msgstr "Bords du bureau actifs"
 
-#: desktop.cpp:79
+#: desktop.cpp:74
 msgid "Enable active desktop borders"
 msgstr "Rendre actifs les bords du bureau"
 
@@ -288,11 +261,11 @@ msgstr "Placer la souris au centre de l'écran après un changement de bureau"
 msgid "Dekstop switch delay:"
 msgstr "Délai avant un changement de bureau :"
 
-#: desktop.cpp:100
+#: desktop.cpp:117
 msgid "Magic Borders"
 msgstr "Bords magiques"
 
-#: desktop.cpp:102
+#: desktop.cpp:126
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
@@ -300,7 +273,7 @@ msgstr ""
 "Zone d'attraction des bords :\n"
 "       (pixels)"
 
-#: desktop.cpp:116
+#: desktop.cpp:151
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
@@ -401,6 +374,57 @@ msgstr ""
 msgid "Activate and pass click"
 msgstr ""
 
+#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215
+msgid "Move"
+msgstr "Déplacer"
+
+#: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
+msgid "Resize"
+msgstr "Redimensionner"
+
+#~ msgid "Titlebar appearance"
+#~ msgstr "Apparence de la barre de titre"
+
+#~ msgid "Operations Menu"
+#~ msgstr "Menu des opérations"
+
+#~ msgid "Window movement"
+#~ msgstr "Déplacement des fenêtres"
+
+#~ msgid "Transparent"
+#~ msgstr "Transparent"
+
+#~ msgid "Opaque"
+#~ msgstr "Opaque"
+
+#~ msgid "Window resize"
+#~ msgstr "Redimensionner la fenêtre"
+
+#~ msgid "Animation:"
+#~ msgstr "Animation :"
+
+#~ msgid "Allowed Overlap:"
+#~ msgstr "Permettre le recouvrement :"
+
+#~ msgid "Maximize Style"
+#~ msgstr "Type de maximisation"
+
+#~ msgid "Maximize fully"
+#~ msgstr "Maximisation complète"
+
+#~ msgid "Maximize vertically"
+#~ msgstr "Maximisation verticale"
+
+#~ msgid ""
+#~ "Auto raise delay\n"
+#~ "(<100 disables)"
+#~ msgstr ""
+#~ "Délai avant le passage au premier plan\n"
+#~ "(désactivé si inférieur à 100 ms)"
+
+#~ msgid "miliseconds"
+#~ msgstr "millisecondes"
+
 #~ msgid "&Desktop"
 #~ msgstr "&Bureau"
 
@@ -412,6 +436,3 @@ msgstr ""
 
 #~ msgid "Shaded"
 #~ msgstr "Dégradé"
-
-#~ msgid "Resize Animation"
-#~ msgstr "Animation lors des redimensionnements"

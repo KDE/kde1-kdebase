@@ -63,7 +63,7 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
- 
+
 #: main.cpp:148
 msgid "System Information"
 msgstr "Informations système"

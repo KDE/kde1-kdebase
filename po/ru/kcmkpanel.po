@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-01-18 04:52+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -120,48 +120,96 @@ msgstr "Тоолтипсы у меню"
 msgid "De&lay:"
 msgstr "Задержка"
 
-#: options.cpp:56
-msgid "ms"
-msgstr "мс"
+#: options.cpp:50 options.cpp:68 options.cpp:86
+msgid "Small"
+msgstr ""
 
-#: options.cpp:68
+#: options.cpp:51 options.cpp:69 options.cpp:87
+#, fuzzy
+msgid "Large"
+msgstr "Большой"
+
+#: options.cpp:62
+msgid "Visuals"
+msgstr ""
+
+#
+#: options.cpp:64
+msgid "Auto &Hide Panel"
+msgstr "Автоскрывать панель"
+
+#: options.cpp:67 options.cpp:85
+#, fuzzy
+msgid "Delay:"
+msgstr "Задержка"
+
+#: options.cpp:74 options.cpp:93
+msgid "Speed:"
+msgstr ""
+
+#: options.cpp:75 options.cpp:94 options.cpp:103
+msgid "Slow"
+msgstr ""
+
+#: options.cpp:76 options.cpp:95 options.cpp:104
+msgid "Fast"
+msgstr ""
+
+#
+#: options.cpp:82
+msgid "Auto Hide &Taskbar"
+msgstr "Автоскрывать задачи"
+
+#: options.cpp:100
+msgid "Animate Show/Hide"
+msgstr ""
+
+#: options.cpp:102
+msgid "Speed"
+msgstr ""
+
+#: options.cpp:117
 msgid "Others"
 msgstr "Другие"
 
 #
-#: options.cpp:69
+#: options.cpp:118
 msgid "Personal &First"
 msgstr "Персональные вначале"
 
 #
-#: options.cpp:71
-msgid "Auto &Hide Panel"
-msgstr "Автоскрывать панель"
+#: options.cpp:120
+#, fuzzy
+msgid "F&olders First"
+msgstr "Персональные вначале"
 
-#
-#: options.cpp:73
-msgid "Auto Hide &Taskbar"
-msgstr "Автоскрывать задачи"
+#: options.cpp:122
+msgid "&Clock shows time in AM/PM format"
+msgstr ""
 
-#: options.cpp:81
-msgid "Clock"
-msgstr "Часы"
+#: disknav.cpp:38
+msgid "History"
+msgstr ""
 
-#: options.cpp:83
-msgid "&24h"
-msgstr "24ч"
+#: disknav.cpp:64
+msgid "Edit &Local..."
+msgstr ""
 
-#: options.cpp:85
-msgid "&12h AM/PM"
-msgstr "12 ч"
-
-#: disknav.cpp:43
+#: disknav.cpp:74
 msgid "Edit &Global..."
 msgstr ""
 
-#: disknav.cpp:46
-msgid "Edit &Local..."
-msgstr ""
+#~ msgid "ms"
+#~ msgstr "мс"
+
+#~ msgid "Clock"
+#~ msgstr "Часы"
+
+#~ msgid "&24h"
+#~ msgstr "24ч"
+
+#~ msgid "&12h AM/PM"
+#~ msgstr "12 ч"
 
 #~ msgid "Large Style"
 #~ msgstr "Большой"

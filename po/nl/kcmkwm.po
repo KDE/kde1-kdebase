@@ -6,17 +6,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
-
-#: main.cpp:61
-msgid "&Windows"
-msgstr "&Vensters"
 
 #: main.cpp:64
 msgid "&Buttons"
@@ -28,7 +24,7 @@ msgstr "&Titelbalk"
 
 #: main.cpp:70
 #, fuzzy
-msgid "&Borders"
+msgid "Bo&rders"
 msgstr "Magische grenzen"
 
 #: main.cpp:73
@@ -37,254 +33,228 @@ msgstr ""
 
 #: main.cpp:79
 #, fuzzy
-msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,borders,mouse}]\n"
+msgid "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
 msgstr "gebruik: kcmkwm [-init | {windows,buttons,titlebar}]\n"
 
 #: main.cpp:114
 msgid "Window manager style"
 msgstr "Venstermanager stijl"
 
-#: titlebar.cpp:116
+#: titlebar.cpp:118
 msgid "Minimize"
 msgstr "Minimalizeren"
 
-#: titlebar.cpp:120
+#: titlebar.cpp:122
 msgid "Maximize"
 msgstr "Maximalizeren"
 
-#: titlebar.cpp:124
+#: titlebar.cpp:126
 msgid "Sticky"
 msgstr "Vastplakken"
 
-#: titlebar.cpp:132
+#: titlebar.cpp:134
 msgid "Menu"
 msgstr ""
 
-#: titlebar.cpp:169
+#: titlebar.cpp:171
 msgid "Left"
 msgstr ""
 
-#: titlebar.cpp:173
+#: titlebar.cpp:175
 msgid "Right"
 msgstr ""
 
-#: titlebar.cpp:462
+#: titlebar.cpp:464
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "De linkerkant van de titelbalk is vol... de 'maximalizeren' knop wordt "
 "afgezet\n"
 
-#: titlebar.cpp:495
+#: titlebar.cpp:497
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "De rechterkant van de titelbalk is vol... de 'maximalizeren' knop wordt "
 "afgezet\n"
 
-#: titlebar.cpp:535
+#: titlebar.cpp:537
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "De linkerkant van de titelbalk is vol... de 'minimalizeren' knop wordt "
 "afgezet\n"
 
-#: titlebar.cpp:568
+#: titlebar.cpp:570
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "De rechterkant van de titelbalk is vol... de 'minimalizeren' knop wordt "
 "afgezet\n"
 
-#: titlebar.cpp:922
-msgid "Titlebar appearance"
-msgstr "Uiterlijk titelbalk"
-
-#: titlebar.cpp:924
+#: titlebar.cpp:927
 #, fuzzy
 msgid "Shaded Vertically"
 msgstr "Maximale verticale grootte"
 
-#: titlebar.cpp:926
+#: titlebar.cpp:933
 msgid "Shaded Horizontally"
 msgstr ""
 
-#: titlebar.cpp:930
+#: titlebar.cpp:942
 msgid "Plain"
 msgstr "Normaal"
 
-#: titlebar.cpp:933 titlebar.cpp:954
+#: titlebar.cpp:950 titlebar.cpp:962
 msgid "Pixmap"
 msgstr "Pixmap"
 
-#: titlebar.cpp:940
-msgid "Title Animation"
-msgstr "Titel bewegen"
-
-#: titlebar.cpp:943
-msgid "ms"
-msgstr ""
-
-#: titlebar.cpp:965
-msgid "&Active pixmap"
+#: titlebar.cpp:990
+#, fuzzy
+msgid "Active pixmap:"
 msgstr "&Actieve pixmap"
 
-#: titlebar.cpp:967
-msgid "&Inactive pixmap"
+#: titlebar.cpp:995
+#, fuzzy
+msgid "Inactive pixmap:"
 msgstr "&Inactieve pixmap"
 
-#: titlebar.cpp:983
+#: titlebar.cpp:1005
 msgid "Mouse action"
 msgstr "Muis handeling"
 
-#: titlebar.cpp:985
-msgid ""
-"LeftMouseButton double click\n"
-"    on titlebar does:"
+#: titlebar.cpp:1013
+#, fuzzy
+msgid "Left Button double click does:"
 msgstr ""
 "LinkerMuisKnop dubbele klik\n"
 "    op titelbalk bewerktstelligt:"
 
-#: titlebar.cpp:989
+#: titlebar.cpp:1023
 #, fuzzy
 msgid "(Un)Maximize"
 msgstr "Maximalizeren"
 
-#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
-msgid "Move"
-msgstr "Verplaats"
-
-#: titlebar.cpp:991
+#: titlebar.cpp:1024
 #, fuzzy
 msgid "(Un)Shade"
 msgstr "Schaduw"
 
-#: titlebar.cpp:992
+#: titlebar.cpp:1025
 msgid "Iconify"
 msgstr "Minimalizeer"
 
-#: titlebar.cpp:993
+#: titlebar.cpp:1026
 #, fuzzy
 msgid "(Un)Sticky"
 msgstr "Vastplakken"
 
-#: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217 titlebar.cpp:994
-msgid "Resize"
-msgstr "Verander grootte"
-
-#: titlebar.cpp:996
-msgid "Operations Menu"
-msgstr "Operaties menu"
-
-#: windows.cpp:84
-msgid "Window movement"
-msgstr "Verplaatsing vensters"
-
-#: windows.cpp:85
-msgid "Transparent"
-msgstr "Transparant"
-
-#: windows.cpp:86 windows.cpp:95
-msgid "Opaque"
-msgstr "Ondoorzichtig"
-
-#: windows.cpp:89
+#: titlebar.cpp:1046
 #, fuzzy
-msgid "Window resize"
-msgstr "&Vensters"
-
-#: windows.cpp:90
-#, fuzzy
-msgid "Animation:"
+msgid "Title animation"
 msgstr "Titel bewegen"
 
-#: windows.cpp:91
+#: titlebar.cpp:1062
+msgid "ms"
+msgstr ""
+
+#: windows.cpp:66
+#, fuzzy
+msgid "Windows"
+msgstr "&Vensters"
+
+#: windows.cpp:80
+msgid "Vertical maximization only by default"
+msgstr ""
+
+#: windows.cpp:85
+msgid "Display content in moving windows"
+msgstr ""
+
+#: windows.cpp:90
+msgid "Display content in resizing windows"
+msgstr ""
+
+#: windows.cpp:96
+#, fuzzy
+msgid "Resize animation:"
+msgstr "Animatie bij veranderen grootte"
+
+#: windows.cpp:109
 msgid "None"
 msgstr ""
 
-#: windows.cpp:92
+#: windows.cpp:115
 msgid "Fast"
 msgstr ""
 
-#: windows.cpp:98
+#: windows.cpp:126
 msgid "Placement policy"
 msgstr "Plaatsing nieuwe vensters"
 
-#: windows.cpp:100
+#: windows.cpp:132
 msgid "Smart"
 msgstr "Intelligent"
 
-#: windows.cpp:102
+#: windows.cpp:134
 msgid "Cascade"
 msgstr "Gedeeltelijk overlappend"
 
-#: windows.cpp:104
+#: windows.cpp:136
 msgid "Interactive"
 msgstr "Interactief"
 
-#: windows.cpp:106
+#: windows.cpp:138
 msgid "Random"
 msgstr "Willekeurig"
 
-#: windows.cpp:108
+#: windows.cpp:140
 msgid "Manual"
 msgstr "Handmatig"
 
-#: windows.cpp:115
-msgid "Allowed Overlap:"
-msgstr "Toegestane overlapping:"
+#: windows.cpp:151
+#, c-format
+msgid ""
+"  Allowed overlap:\n"
+"(% of desktop space)"
+msgstr ""
 
-#: windows.cpp:122
-msgid "Maximize Style"
-msgstr "Maximalizatie Stijl"
-
-#: windows.cpp:123
-msgid "Maximize fully"
-msgstr "Schermvullend venster"
-
-#: windows.cpp:124
-msgid "Maximize vertically"
-msgstr "Maximale verticale grootte"
-
-#: windows.cpp:127
-msgid "Focus Policy"
+#: windows.cpp:170
+#, fuzzy
+msgid "Focus policy"
 msgstr "Gedrag focus"
 
-#: windows.cpp:129
+#: windows.cpp:180
 msgid "Click to focus"
 msgstr "Klikken voor focus"
 
-#: windows.cpp:131
+#: windows.cpp:182
 msgid "Focus follows mouse"
 msgstr "Focus volgt de muis"
 
-#: windows.cpp:133
+#: windows.cpp:184
 #, fuzzy
 msgid "Classic focus follows mouse"
 msgstr "Focus volgt de muis"
 
-#: windows.cpp:135
+#: windows.cpp:186
 #, fuzzy
 msgid "Classic sloppy focus"
 msgstr "Klikken voor focus"
 
-#: windows.cpp:144
-msgid ""
-"Auto raise delay\n"
-"(<100 disables)"
+#: windows.cpp:197
+msgid "Auto Raise"
 msgstr ""
-"Vertraging voor automatisch\n"
-"naar voren brengen (<100 afzetten)"
 
-#: windows.cpp:147
-msgid "miliseconds"
-msgstr "milliseconden"
+#: windows.cpp:204
+msgid "Delay (ms)"
+msgstr ""
 
-#: desktop.cpp:77
+#: desktop.cpp:65
 msgid "Active desktop borders"
 msgstr "Ingestelde buroblad grenzen"
 
-#: desktop.cpp:79
+#: desktop.cpp:74
 msgid "Enable active desktop borders"
 msgstr "Zet ingestelde buroblad grenzen aan"
 
@@ -297,11 +267,11 @@ msgstr "Verplaats wijzer naar centrum na overgang"
 msgid "Dekstop switch delay:"
 msgstr "Buroblad overgang vertraging:"
 
-#: desktop.cpp:100
+#: desktop.cpp:117
 msgid "Magic Borders"
 msgstr "Magische grenzen"
 
-#: desktop.cpp:102
+#: desktop.cpp:126
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
@@ -309,7 +279,7 @@ msgstr ""
 "Grens Verspring Zone:\n"
 "       (pixels)"
 
-#: desktop.cpp:116
+#: desktop.cpp:151
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
@@ -410,6 +380,59 @@ msgstr ""
 msgid "Activate and pass click"
 msgstr ""
 
+#: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215
+msgid "Move"
+msgstr "Verplaats"
+
+#: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
+msgid "Resize"
+msgstr "Verander grootte"
+
+#~ msgid "Titlebar appearance"
+#~ msgstr "Uiterlijk titelbalk"
+
+#~ msgid "Operations Menu"
+#~ msgstr "Operaties menu"
+
+#~ msgid "Window movement"
+#~ msgstr "Verplaatsing vensters"
+
+#~ msgid "Transparent"
+#~ msgstr "Transparant"
+
+#~ msgid "Opaque"
+#~ msgstr "Ondoorzichtig"
+
+#, fuzzy
+#~ msgid "Window resize"
+#~ msgstr "&Vensters"
+
+#, fuzzy
+#~ msgid "Animation:"
+#~ msgstr "Titel bewegen"
+
+#~ msgid "Allowed Overlap:"
+#~ msgstr "Toegestane overlapping:"
+
+#~ msgid "Maximize Style"
+#~ msgstr "Maximalizatie Stijl"
+
+#~ msgid "Maximize fully"
+#~ msgstr "Schermvullend venster"
+
+#~ msgid "Maximize vertically"
+#~ msgstr "Maximale verticale grootte"
+
+#~ msgid ""
+#~ "Auto raise delay\n"
+#~ "(<100 disables)"
+#~ msgstr ""
+#~ "Vertraging voor automatisch\n"
+#~ "naar voren brengen (<100 afzetten)"
+
+#~ msgid "miliseconds"
+#~ msgstr "milliseconden"
+
 #~ msgid "&Desktop"
 #~ msgstr "&Buroblad"
 
@@ -422,9 +445,6 @@ msgstr ""
 
 #~ msgid "Shaded"
 #~ msgstr "Schaduw"
-
-#~ msgid "Resize Animation"
-#~ msgstr "Animatie bij veranderen grootte"
 
 #~ msgid "Edge Resistance:"
 #~ msgstr "Grens weerstand:"

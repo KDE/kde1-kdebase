@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-07-09 15:26+02:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -320,35 +320,39 @@ msgstr "Låg"
 msgid "Fonts etc."
 msgstr "Typsnitt etc."
 
-#: general.cpp:226
+#: general.cpp:228
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "Rita gränssnittet i Windows 95-stil"
 
-#: general.cpp:240
+#: general.cpp:242
+msgid "&Apply style to non-KDE apps"
+msgstr ""
+
+#: general.cpp:255
 msgid "Desktop fonts"
 msgstr "Typsnitt"
 
-#: general.cpp:252
+#: general.cpp:267
 msgid "General font"
 msgstr "Standard"
 
-#: general.cpp:257
+#: general.cpp:272
 msgid "Fixed font"
 msgstr "Ej proportionellt"
 
-#: general.cpp:267
+#: general.cpp:282
 msgid "Panel button font"
 msgstr "Panelknappar"
 
-#: general.cpp:272
+#: general.cpp:287
 msgid "Panel clock font"
 msgstr "Panelklocka"
 
-#: general.cpp:302
+#: general.cpp:317
 msgid "Sample text"
 msgstr "Exempeltext"
 
-#: general.cpp:310
+#: general.cpp:325
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KLOCK\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -399,12 +399,12 @@ msgstr ""
 "\n"
 "Siirtänyt kscreensave-ohjelmaan Emanuel Pirker."
 
-#: main.cpp:349
+#: main.cpp:351
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "Toimintoa %s ei tueta tällä alustalla!"
 
-#: main.cpp:378
+#: main.cpp:380
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -418,11 +418,11 @@ msgstr ""
 "Ota yhteyttä järjestelmän ylläpitäjään.\n"
 "Ja kerro tarvitsevasi suid:n näytönsäästäjiin!"
 
-#: main.cpp:383
+#: main.cpp:385
 msgid "Shadow Passwords"
 msgstr "Shadow salasanat"
 
-#: main.cpp:428
+#: main.cpp:430
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -434,7 +434,7 @@ msgstr ""
 "Käytä mielummin klock:a.\n"
 "\n"
 
-#: main.cpp:536
+#: main.cpp:538
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -443,7 +443,7 @@ msgstr ""
 "Käyttö: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
-#: main.cpp:539
+#: main.cpp:541
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"

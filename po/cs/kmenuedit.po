@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit 0.2.3\n"
-"POT-Creation-Date: 1998-10-26 10:18+0100\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-10-28 18:25 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -85,6 +85,10 @@ msgstr "Otevøít/ Zavøít"
 msgid "! PROTECTED Button !"
 msgstr "! CHRÁNÌNÉ tlaèítko !"
 
+#: confmenu.cpp:115
+msgid "New"
+msgstr ""
+
 #: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"
 msgstr "Pozor !"
@@ -158,8 +162,18 @@ msgstr "Odkaz"
 msgid "Device"
 msgstr "Zaøízení"
 
+#: entrydialog.cpp:63
+#, fuzzy
+msgid "Type:"
+msgstr "Souborový systém:"
+
 #: entrydialog.cpp:69
 msgid "File Name:"
+msgstr "Jméno souboru:"
+
+#: entrydialog.cpp:82
+#, fuzzy
+msgid "Name:"
 msgstr "Jméno souboru:"
 
 #: entrydialog.cpp:95

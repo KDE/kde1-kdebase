@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kpanel\n"
-"POT-Creation-Date: 1998-10-19 19:22+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-02-27 12:35+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -13,103 +13,103 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kpanel.C:274
+#: kpanel.C:273
 msgid "Move"
 msgstr "Flytt"
 
-#: kpanel.C:314
+#: kpanel.C:313
 msgid "Go!"
 msgstr "Sett igang!"
 
-#: kpanel.C:317 tools.C:826
+#: kpanel.C:316 tools.C:828
 msgid "Where do you want to go tomorrow?"
 msgstr "Hvor vil du dra i morgen?"
 
-#: kpanel.C:392
+#: kpanel.C:391
 msgid "No info available"
 msgstr "Ingen informasjon tilgjengelig"
 
-#: kpanel.C:431 props.C:173 props.C:174
+#: kpanel.C:430 props.C:174 props.C:175
 msgid "Logout"
 msgstr "Logg ut"
 
-#: kpanel.C:439 props.C:172
+#: kpanel.C:438 props.C:173
 msgid "Lock screen"
 msgstr "Lås skjerm"
 
-#: kpanel.C:448 kpanel.C:457
+#: kpanel.C:447 kpanel.C:456
 msgid "Hide the panel"
 msgstr "Skjul panelet"
 
-#: kpanel.C:467 kpanel.C:479
+#: kpanel.C:466 kpanel.C:478
 msgid "Show the panel"
 msgstr "Vis panelet"
 
-#: kpanel.C:1219 tools.C:656
+#: kpanel.C:1201 tools.C:658
 msgid "No comment available"
 msgstr "Ingen kommentar tilgjengelig"
 
-#: kpanel.C:1228 tools.C:835
+#: kpanel.C:1210 tools.C:837
 msgid "Windowlist"
 msgstr "Vindusliste"
 
-#: props.C:143
+#: props.C:144
 msgid "Add application"
 msgstr "Tilføy applikasjon"
 
-#: props.C:145
+#: props.C:146
 msgid "Add an application or a submenu onto the panel"
 msgstr "Tilføy en applikasjon eller en undermeny til panelet"
 
-#: props.C:146
+#: props.C:147
 msgid "Add windowlist"
 msgstr "Tilføy vindusliste"
 
-#: props.C:148
+#: props.C:149
 msgid "Add a windowlist menu onto the panel"
 msgstr "Tilføy en vindusliste meny til panelet"
 
-#: events.C:786 props.C:149
+#: events.C:782 props.C:150
 msgid "Configure"
 msgstr "Konfigurer"
 
-#: props.C:151
+#: props.C:152
 msgid "Configure panel"
 msgstr "Konfigurer panel"
 
-#: props.C:152
+#: props.C:153
 msgid "Edit Menus"
 msgstr "Redigere menyer"
 
-#: props.C:154
+#: props.C:155
 msgid "Add or remove applications in the menu structure "
 msgstr "Legg til eller fjerne applikasjoner i meny-strukturen "
 
-#: events.C:788 props.C:155
+#: events.C:784 props.C:156
 msgid "Restart"
 msgstr "Omstart"
 
-#: props.C:157
+#: props.C:158
 msgid "Restart panel"
 msgstr "Omstart av panel"
 
-#: props.C:160
+#: props.C:161
 msgid "Disk Navigator"
 msgstr "Disknavigator"
 
-#: props.C:168
+#: props.C:169
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:170
+#: props.C:171
 msgid "Lock Screen"
 msgstr "Lås skjerm"
 
-#: props.C:399
+#: props.C:400
 msgid "The menu editor is not installed."
 msgstr "Meny-editoren er ikke installert."
 
-#: events.C:826 props.C:400
+#: events.C:820 props.C:401
 msgid "Oops!"
 msgstr "Ops!"
 
@@ -121,42 +121,42 @@ msgstr ""
 "\n"
 "%d. %b"
 
-#: events.C:825
+#: events.C:819
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kan ikke putte denne knappen på panelet!"
 
-#: pfilemenu.C:351
+#: pfilemenu.C:337
 msgid "(empty folder)"
 msgstr "(tom mappe)"
 
-#: pfilemenu.C:408
+#: pfilemenu.C:394
 msgid "(Too Many Files)"
 msgstr "(For mange filer)"
 
-#: pfilemenu.C:417
+#: pfilemenu.C:403
 msgid "(Access Denied)"
 msgstr "(Tilgang nektet)"
 
-#: pfilemenu.C:420
+#: pfilemenu.C:406
 msgid "(Unreadable)"
 msgstr "(Uleslig)"
 
-#: pfilemenu.C:427
+#: pfilemenu.C:413
 msgid "Open Folder"
 msgstr "Åpne mappe"
 
-#: pfilemenu.C:668
+#: pfilemenu.C:657
 msgid "Global:"
 msgstr "Global:"
 
-#: pfilemenu.C:687
+#: pfilemenu.C:676
 msgid "Local:"
 msgstr "Lokal:"
 
-#: pfilemenu.C:705
+#: pfilemenu.C:694
 msgid "Recent:"
 msgstr "Nylig:"
 
-#: pfilemenu.C:751
+#: pfilemenu.C:740
 msgid "Options..."
 msgstr "Valg..."

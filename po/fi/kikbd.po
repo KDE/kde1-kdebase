@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KIKBD\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,25 +14,39 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kikbd.cpp:110
+#: kikbd.cpp:116
 msgid "KDE International Keyboard already started on this display."
 msgstr "KDE Kansainvälinen näppäimistö käynnistetty jo tällä näytöllä."
 
-#: kikbd.cpp:305
+#: kikbd.cpp:289
+#, c-format
+msgid ""
+"X codes \"%s\" file does not exist.\n"
+"Using X default codes."
+msgstr ""
+
+#: kikbd.cpp:307
+#, c-format
+msgid ""
+"Keyboard map \"%s\" does not exists.\n"
+"Skiping this map."
+msgstr ""
+
+#: kikbd.cpp:324
 msgid "Setup"
 msgstr "Asetukset"
 
-#: kikbd.cpp:320 kikbd.cpp:333
+#: kikbd.cpp:339 kikbd.cpp:352
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
 msgstr "En voi poistaa %s:ää Modifieriin. \n"
 
-#: kikbd.cpp:323
+#: kikbd.cpp:342
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
 msgstr "En voi lisätä %s:ää Modifier 3.\n"
 
-#: kikbd.cpp:345
+#: kikbd.cpp:364
 #, c-format
 msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
@@ -41,7 +55,7 @@ msgstr ""
 "En saanut asetettua Mode Switch:a %s:ksi näppäimistölle %s.\n"
 "Alt symbolit estetty"
 
-#: kikbd.cpp:367
+#: kikbd.cpp:386
 msgid ""
 "Can not remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -49,125 +63,133 @@ msgstr ""
 "En saanut poistettua Caps Lock:a Modifier:sta.\n"
 "Caps Lock emulaatio poistettu"
 
-#: keymap.cpp:174
+#: keymap.cpp:176
 msgid "KeyMap: cannot allocate memory"
 msgstr "KeyMap: en saanut haettua muistia"
 
-#: keymap.cpp:218
+#: keymap.cpp:222
 #, c-format
 msgid ""
-"KeyMap: can not find symbol \"%s\".\n"
-"Do you want to continue?"
+"Can not find symbol \"%s\".\n"
+"May be your default X codes does not match.\n"
+"You can preset X codes in \"Advanced\" section\n"
+"of configuration program."
+msgstr ""
+
+#: keymap.cpp:227
+#, fuzzy, c-format
+msgid "KeyMap: can not find symbol \"%s\"."
 msgstr ""
 "KeyMap: en löydä symbolia \"%s\".\n"
 "Haluatko jatkaa?"
 
-#: keymap.cpp:229
-#, c-format
-msgid ""
-"KeyMap: do not undestand keycode \"%s\".\n"
-"Do you want to continue?"
+#: keymap.cpp:235
+#, fuzzy, c-format
+msgid "KeyMap: do not undestand keycode \"%s\"."
 msgstr ""
 "KeyMap: en ymmärrä  näppäinkoodia \"%s\".\n"
 "Haluatko jatkaa?"
 
-#: keymap.cpp:235
-#, c-format
-msgid ""
-"KeyMap: keycode \"%s\" go out of range.\n"
-"Do you want to continue?"
+#: keymap.cpp:241
+#, fuzzy, c-format
+msgid "KeyMap: keycode \"%s\" go out of range."
 msgstr ""
 "KeyMap: näppäinkoodi \"%s\" menee rajojen ulkopuolelle.\n"
 "Haluatko jatkaa?"
 
-#: kikbdconf.cpp:92
+#: kikbdconf.cpp:95
 msgid "Global"
 msgstr "Yleiset"
 
-#: kikbdconf.cpp:92
+#: kikbdconf.cpp:95
 msgid "Window"
 msgstr "Ikkuna"
 
-#: kikbdconf.cpp:92
+#: kikbdconf.cpp:95
 msgid "Class"
 msgstr "Luokka"
 
-#: kikbdconf.cpp:95 kikbdconf.cpp:107
+#: kikbdconf.cpp:98 kikbdconf.cpp:110
 msgid "(None)"
 msgstr "(Ei mikään)"
 
-#: kikbdconf.cpp:96 kikbdconf.cpp:108
+#: kikbdconf.cpp:99 kikbdconf.cpp:111
 msgid "Right Alt"
 msgstr "Oikea Alt"
 
-#: kikbdconf.cpp:97 kikbdconf.cpp:109
+#: kikbdconf.cpp:100 kikbdconf.cpp:112
 msgid "Right Control"
 msgstr "Oikea Control"
 
-#: kikbdconf.cpp:98
+#: kikbdconf.cpp:101
 msgid "Rights (Alt+Shift)"
 msgstr "Oikeat (Alt+Shift)"
 
-#: kikbdconf.cpp:99
+#: kikbdconf.cpp:102
 msgid "Rights (Ctrl+Alt)"
 msgstr "Oikeat (Ctrl+Alt)"
 
-#: kikbdconf.cpp:100
+#: kikbdconf.cpp:103
 msgid "Rights (Ctrl+Shift)"
 msgstr "Oikeat (Ctrl+Shift)"
 
-#: kikbdconf.cpp:101
+#: kikbdconf.cpp:104
 msgid "Lefts  (Alt+Shift)"
 msgstr "Vasemmat (Alt+Shift)"
 
-#: kikbdconf.cpp:102
+#: kikbdconf.cpp:105
 msgid "Lefts  (Ctrl+Alt)"
 msgstr "Vasemmat (Ctrl+Alt)"
 
-#: kikbdconf.cpp:103
+#: kikbdconf.cpp:106
 msgid "Lefts  (Ctrl+Shift)"
 msgstr "Vasemmat (Ctrl+Shift)"
 
-#: kikbdconf.cpp:104
+#: kikbdconf.cpp:107
 msgid "Both Shift's (Shift+Shift)"
 msgstr "Molemmat shiftit (Shift+Shift)"
 
-#: kikbdconf.cpp:110
+#: kikbdconf.cpp:113
 msgid "Left  Alt"
 msgstr "Vasen Alt"
 
-#: kikbdconf.cpp:111
+#: kikbdconf.cpp:114
 msgid "Left  Control"
 msgstr "Vasen Control"
 
-#: kikbdconf.cpp:114
+#: kikbdconf.cpp:117
 msgid "Top Left"
 msgstr "Ylä vasen"
 
-#: kikbdconf.cpp:115
+#: kikbdconf.cpp:118
 msgid "Top Right"
 msgstr "Ylä oikea"
 
-#: kikbdconf.cpp:116
+#: kikbdconf.cpp:119
 msgid "Bottom Left"
 msgstr "Ala vasen"
 
-#: kikbdconf.cpp:117
+#: kikbdconf.cpp:120
 msgid "Bottom Right"
 msgstr "Ala oikea"
 
-#: kikbdconf.cpp:173
+#: kikbdconf.cpp:147
+#, fuzzy
+msgid "X default codes"
+msgstr "oletus"
+
+#: kikbdconf.cpp:203
 #, c-format
 msgid ""
 "%s\n"
 "Do you want to start Configuration?"
 msgstr "Haluatko käynnistää Asetukset?"
 
-#: kikbdconf.cpp:182
+#: kikbdconf.cpp:211
 msgid "Your configuration is empty. Install system default."
 msgstr "Asetuksesi ovat tyhjät. Asenna systeemin oletus."
 
-#: kikbdconf.cpp:188
+#: kikbdconf.cpp:217
 msgid ""
 "Configuration file you have has older format when expected.\n"
 "Some settings may be incorrect."
@@ -175,7 +197,7 @@ msgstr ""
 "Asetustiedostossasi on oletettua vahnempi muoto.\n"
 "Jotkin asetuksista voivat olla vääriä."
 
-#: kikbdconf.cpp:196
+#: kikbdconf.cpp:225
 msgid ""
 "Configuration file you have has newer format when expected.\n"
 "Some settings may be incorrect."
@@ -183,77 +205,88 @@ msgstr ""
 "Asetustiedostossasi on oletettua uudempi muoto.\n"
 "Jotkin asetuksista voivat olla vääriä."
 
-#: kikbdconf.cpp:298
+#: kikbdconf.cpp:352
 msgid "unknown"
 msgstr "tuntematon"
 
-#: kikbdconf.cpp:302
+#: kikbdconf.cpp:356
 msgid "default"
 msgstr "oletus"
 
-#: kikbdconf.cpp:328
+#: kikbdconf.cpp:382
 msgid "Author:  Not specified"
 msgstr "Tekijä: Ei määritelty"
 
-#: kikbdconf.cpp:330
+#: kikbdconf.cpp:384
 msgid "Author"
 msgstr "Tekijä"
 
-#: kikbdconf.cpp:336
+#: kikbdconf.cpp:390
 msgid "Description:  "
 msgstr "Kuvaus:  "
 
-#: kikbdconf.cpp:339
+#: kikbdconf.cpp:393
 msgid "Source:  "
 msgstr "Lähde:  "
 
-#: kikbdconf.cpp:340
+#: kikbdconf.cpp:394
 msgid "no file"
 msgstr "ei tiedostoa"
 
-#: kikbdconf.cpp:341
+#: kikbdconf.cpp:395
 msgid "user file"
 msgstr "käyttäjätiedosto"
 
-#: kikbdconf.cpp:342
+#: kikbdconf.cpp:396
 msgid "system file"
 msgstr "systeemitiedosto"
 
-#: kikbdconf.cpp:347
+#: kikbdconf.cpp:401
 msgid "Statistic:  "
 msgstr "Tilastot:  "
 
-#: kikbdconf.cpp:350
+#: kikbdconf.cpp:404
 msgid "symbols"
 msgstr "symbolia"
 
-#: kikbdconf.cpp:353
+#: kikbdconf.cpp:407
 msgid "codes"
 msgstr "koodia"
 
-#: kikbdconf.cpp:356
+#: kikbdconf.cpp:410
 msgid "alternative symbols"
 msgstr "vaihtoehtoista symbolia"
 
-#: kikbdconf.cpp:363
+#: kikbdconf.cpp:417
 msgid "language"
 msgstr " "
 
-#: kikbdconf.cpp:364
+#: kikbdconf.cpp:418
 msgid "charset"
 msgstr "kirjasinperhe"
 
-#: kikbdconf.cpp:402
+#: kikbdconf.cpp:456
 msgid "International keyboard ERROR"
 msgstr "Kansainvälisen näppäimistön virhe"
 
-#: kikbdconf.cpp:414
+#: kikbdconf.cpp:472
 msgid "International keyboard warning"
 msgstr "Kansainväliset näppäimistön varoitus"
 
-#: kikbdconf.cpp:421
+#: kikbdconf.cpp:479 kikbdconf.cpp:484 kikbdconf.cpp:497
 msgid "International keyboard question"
 msgstr "Kansainvälisen näppäimistön kysymys"
+
+#: kikbdconf.cpp:486
+msgid "Configure"
+msgstr ""
+
+#: kikbdconf.cpp:496
+#, fuzzy
+msgid ""
+"\n"
+"Do you want to continue?"
+msgstr "Haluatko käynnistää Asetukset?"
 
 #: widgets.cpp:107
 msgid "List of active keyboard maps"
@@ -306,168 +339,172 @@ msgstr ""
 "Käytä vain oletusta ja edellistä aktiivista näppäinkarttaa näppäinten "
 "vaihtamiseen"
 
-#: widgets.cpp:214
+#: widgets.cpp:215
 msgid "Adding Keyboard"
 msgstr "Lisään näppäimistön"
 
-#: widgets.cpp:215
+#: widgets.cpp:216
 msgid "There is no more keyboard maps"
 msgstr "Ei näppäinkarttoja olemassa"
 
-#: widgets.cpp:248
+#: widgets.cpp:249
 msgid "Keyboard map information"
 msgstr "Näppäinkartan tiedot"
 
-#: widgets.cpp:282
+#: widgets.cpp:283
 msgid "Add Keyboard"
 msgstr "Lisää mäppäimistö"
 
-#: widgets.cpp:286
+#: widgets.cpp:287
 msgid "Available keyboard maps"
 msgstr "Saatavillaolevat näppäinkartat"
 
-#: widgets.cpp:378
+#: widgets.cpp:394
 msgid "Keyboard maps"
 msgstr "Näppäinkartat"
 
-#: widgets.cpp:389
+#: widgets.cpp:405
 msgid "Switch and Alt Switch"
 msgstr "Vaihto ja Alt Vaihto"
 
-#: widgets.cpp:394
+#: widgets.cpp:410
 msgid "Key(s) to switch beetwing keyboard maps"
 msgstr "Vaihtonäppäin näppäinkarttojen välillä"
 
-#: widgets.cpp:400
+#: widgets.cpp:416
 msgid "Key to activate Alternate symbols in current keyboard map"
 msgstr "Näppäin vaihtoehtoisten symbolien aktivoimiseen"
 
-#: widgets.cpp:413
+#: widgets.cpp:429
 msgid "&Beep"
 msgstr "&Piippaa"
 
-#: widgets.cpp:414
+#: widgets.cpp:430
 msgid "Beep when ever keyboard mapping changed"
 msgstr "Piippaa kun näppäinkerttaa vaihdetaan"
 
-#: widgets.cpp:417
+#: widgets.cpp:433
 msgid "Ad&vanced"
 msgstr "&Edistyneet optiot"
 
-#: widgets.cpp:417
+#: widgets.cpp:433
 msgid "Advanced options"
 msgstr "Edistyneet optiot"
 
-#: widgets.cpp:434
+#: widgets.cpp:450
 msgid "Advanced"
 msgstr "Edistyneet optiot"
 
-#: widgets.cpp:450
+#: widgets.cpp:466
 msgid "&Emulate CapsLock"
 msgstr "&Emuloi CapsLock:a"
 
-#: widgets.cpp:451
+#: widgets.cpp:467
 msgid "Emulate XServer CapsLock. Needed for some languagesto be correct"
 msgstr ""
 "Emuloi XServerin CapsLock:a. Tarvitaan jotta jotkin kielet toimivat oikein"
 
-#: widgets.cpp:457
+#: widgets.cpp:473
 msgid "&World Menu"
 msgstr "&Maailma valikko"
 
-#: widgets.cpp:458
+#: widgets.cpp:474
 msgid "Show menu in any window by holding Switch keys"
 msgstr "Näytä valikko joka ikkunassa painamalla vaihtonäppäintä"
 
-#: widgets.cpp:465
+#: widgets.cpp:481
 msgid "&Save Classes"
 msgstr "&Tallenna luokat"
 
-#: widgets.cpp:466
+#: widgets.cpp:482
 msgid "Save relations between window classes and keyboard maps on exit"
 msgstr "Tallenna yhteydet ikkunaluokkien ja näppäimistön välillä lopetettaessa"
 
-#: widgets.cpp:470
+#: widgets.cpp:488
+msgid "Define X codes"
+msgstr ""
+
+#: widgets.cpp:491
 msgid "Input"
 msgstr "Syöte"
 
-#: widgets.cpp:474
+#: widgets.cpp:495
 msgid "Standard behavior. Keyboard map active for all windows"
 msgstr "Normaalitoiminta, näppäinkartta aktiivinen kaikille ikkunoille"
 
-#: widgets.cpp:478
+#: widgets.cpp:499
 msgid "Extended behavior. Each windows remember it's own keyboard map"
 msgstr "Laajennettu toiminta, jokainen ikkuna muistaa oman näppäinkarttansa"
 
-#: widgets.cpp:482
+#: widgets.cpp:503
 msgid "Special behavior. Each windows class remember it's own keyboard map"
 msgstr "Erikoistoiminta, jokainen ikkuneluokka muistaa oman näppäinkerttansa"
 
-#: widgets.cpp:530
+#: widgets.cpp:551
 msgid "Button Colors"
 msgstr "Näppäinten värit"
 
-#: widgets.cpp:540
+#: widgets.cpp:561
 msgid "Foreground"
 msgstr "Tausta"
 
-#: widgets.cpp:541
+#: widgets.cpp:562
 msgid "Color of the Text Label"
 msgstr "Tekstikentän väri"
 
-#: widgets.cpp:545
+#: widgets.cpp:566
 msgid "With CapsLock"
 msgstr "CapsLock:n kanssa"
 
-#: widgets.cpp:546
+#: widgets.cpp:567
 msgid "Background when Emulated CapsLock active"
 msgstr "Tausta kun emuloitu CapsLock on aktivoitu"
 
-#: widgets.cpp:552
+#: widgets.cpp:573
 msgid "With Alternate"
 msgstr "Alt:n kanssa"
 
-#: widgets.cpp:553
+#: widgets.cpp:574
 msgid "Background when Alternate switch is pressed"
 msgstr "Tausta kun Alt-näppäintä painettu"
 
-#: widgets.cpp:562
+#: widgets.cpp:583
 msgid "Button Font"
 msgstr "Näppäimen kirjasin"
 
-#: widgets.cpp:570
+#: widgets.cpp:591
 msgid "&Customize Font"
 msgstr "&Muuta kirjasinta"
 
-#: widgets.cpp:571
+#: widgets.cpp:592
 msgid "Customize Font for text label or use global settings"
 msgstr "Muuta kirjasinta tekstikenttään tai käytä yleisiä asetuksia"
 
-#: widgets.cpp:575
+#: widgets.cpp:596
 msgid "C&hange Font"
 msgstr "&Vaihda kirjasinta"
 
-#: widgets.cpp:620
+#: widgets.cpp:641
 msgid "&Autostart"
 msgstr "&Automaattikäynnistys"
 
-#: widgets.cpp:621
+#: widgets.cpp:642
 msgid "Start up automaticaly"
 msgstr "Käynnistä automaattisesti"
 
-#: widgets.cpp:627
+#: widgets.cpp:648
 msgid "&Docked"
 msgstr "&Nielaise"
 
-#: widgets.cpp:628
+#: widgets.cpp:649
 msgid "Dock into special area in kpanel"
 msgstr "Nielaise paneeliin"
 
-#: widgets.cpp:637
+#: widgets.cpp:658
 msgid "Place"
 msgstr "Paikka"
 
-#: widgets.cpp:644
+#: widgets.cpp:665
 msgid "Place in selected corner"
 msgstr "Aseta valittuun kulmaan"
 

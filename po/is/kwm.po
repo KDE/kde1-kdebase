@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-10-21 20:41+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -24,102 +24,102 @@ msgstr "kwm: villa í frumstillingu. Hætt við!\n"
 msgid "Preparing session ... "
 msgstr "Undirbý setu..."
 
-#: main.C:504
+#: main.C:505
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Höfundarréttur 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:511
+#: main.C:512
 msgid "Usage: "
 msgstr "Notkun: "
 
-#: main.C:522
+#: main.C:523
 msgid "&Maximize"
 msgstr "&Hámarka"
 
-#: main.C:523
+#: main.C:524
 msgid "&Restore"
 msgstr "&Endurheimta"
 
-#: main.C:524
+#: main.C:525
 msgid "&Iconify"
 msgstr "Í &táknmynd"
 
-#: main.C:525
+#: main.C:526
 msgid "&DeIconify"
 msgstr "Úr táknmynd"
 
-#: main.C:526
+#: main.C:527
 msgid "&Sticky"
 msgstr "&Líma við gler"
 
-#: main.C:527
+#: main.C:528
 msgid "&UnSticky"
 msgstr "&Losa af gleri"
 
-#: main.C:528
+#: main.C:529
 msgid "Mo&ve"
 msgstr "&Færa"
 
-#: main.C:529
+#: main.C:530
 msgid "Resi&ze"
 msgstr "&Breyta stærð"
 
-#: main.C:531
+#: main.C:532
 msgid "&To desktop"
 msgstr "Á &skjáborð"
 
-#: main.C:533
+#: main.C:534
 msgid "&Onto current desktop"
 msgstr "Á &þetta skjáborð"
 
-#: main.C:573
+#: main.C:574
 msgid "One"
 msgstr "Eitt"
 
-#: main.C:576
+#: main.C:577
 msgid "Two"
 msgstr "Tvö"
 
-#: main.C:579
+#: main.C:580
 msgid "Three"
 msgstr "Þrjú"
 
-#: main.C:582
+#: main.C:583
 msgid "Four"
 msgstr "Fjögur"
 
-#: main.C:585
+#: main.C:586
 msgid "Five"
 msgstr "Fimm"
 
-#: main.C:588
+#: main.C:589
 msgid "Six"
 msgstr "Sex"
 
-#: main.C:591
+#: main.C:592
 msgid "Seven"
 msgstr "Sjö"
 
-#: main.C:594
+#: main.C:595
 msgid "Eight"
 msgstr "Átta"
 
-#: main.C:608
+#: main.C:609
 msgid "Unnamed Desktop"
 msgstr "Ónefnt skjáborð"
 
-#: main.C:918
 # FIXME?
+#: main.C:919
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr ""
 
-#: main.C:1030
 # FIXME?
+#: main.C:1031
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr ""
 
-#: main.C:1353
 # FIXME
+#: main.C:1356
 msgid "*** No Tasks ***"
 msgstr "*** Engin verkefni ***"
 
@@ -143,8 +143,7 @@ msgstr "Seta búin undir útstimplun"
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
-msgstr ""
-"Þessi forrit innihalda óvistuð gögn sem munu glatast."
+msgstr "Þessi forrit innihalda óvistuð gögn sem munu glatast."
 
 #: logout.C:63
 msgid ""
@@ -159,7 +158,8 @@ msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Þessi forrit kunna ekki á X11 og þau er því ekki hægt að endurheimta í næstu\n"
+"Þessi forrit kunna ekki á X11 og þau er því ekki hægt að endurheimta í "
+"næstu\n"
 "setu. Gaktu úr skugga um að í þeim séu engin mikilvæg óvistuð gögn."
 
 #: taskmgr.C:107

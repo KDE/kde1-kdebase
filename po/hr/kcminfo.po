@@ -63,8 +63,8 @@ msgid ""
 "erver}]\n"
 msgstr ""
 "uporaba: kcminfo [-init | "
-"{memorija,procesor,interupti,dma,ioportovi,pci,zvuk,ureðaji,scsi,particije,x"
-"poslu¾itelj}]\n"
+"{memorija,procesor,interupti,dma,ioportovi,pci,zvuk,ureðaji,scsi,particije,xp"
+"oslu¾itelj}]\n"
 
 #: main.cpp:148
 msgid "System Information"

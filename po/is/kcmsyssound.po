@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-10-19 22:00+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
@@ -15,6 +15,10 @@ msgstr "&Hljóð"
 #: main.cpp:80
 msgid "System Sounds"
 msgstr "Kerfishljóð"
+
+#: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
+msgid "(none)"
+msgstr ""
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"
@@ -156,8 +160,7 @@ msgstr "Óstudd slóð (URL)"
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
-msgstr ""
-"KDE Kerfisljóðaeiningin styður ekki svona slóð (URL) í augnablikinu"
+msgstr "KDE Kerfisljóðaeiningin styður ekki svona slóð (URL) í augnablikinu"
 
 #: syssound.cpp:468
 #, c-format

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -14,127 +14,131 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.C:421
+#: main.C:424
 msgid "choose type of color-mode"
 msgstr "alege tipul de culoare"
 
-#: main.C:427
+#: main.C:430
 msgid "Add characters to word class"
 msgstr "Adaugã caractere la clasa de cuvinte"
 
-#: main.C:433
+#: main.C:436
 msgid "The backspace key will send a"
 msgstr "Tasta backspace va trimite "
 
-#: main.C:439
+#: main.C:442
 msgid "Cursor key set"
 msgstr "Setare Cursor key"
 
-#: main.C:606
+#: main.C:611
 msgid "&New Terminal"
 msgstr "Terminal &Nou"
 
-#: main.C:613 main.C:987
+#: main.C:618 main.C:1022
 msgid "&Hide"
 msgstr "&Ascunde"
 
-#: main.C:614
+#: main.C:619
 msgid "&Left"
 msgstr "&Stânga"
 
-#: main.C:615
+#: main.C:620
 msgid "&Right"
 msgstr "&Dreapta"
 
-#: main.C:620
+#: main.C:625
 msgid "&Normal"
 msgstr "&Normal"
 
-#: main.C:621
+#: main.C:626
 msgid "&Tiny"
 msgstr "&Puchineþe"
 
-#: main.C:622
+#: main.C:627
 msgid "&Small"
 msgstr "&Mic"
 
-#: main.C:623
+#: main.C:628
 msgid "&Medium"
 msgstr "&Normal"
 
-#: main.C:624
+#: main.C:629
 msgid "&Large"
 msgstr "M&are"
 
-#: main.C:625
+#: main.C:630
 msgid "&Huge"
 msgstr "&Imens (cicã)"
 
-#: main.C:637
+#: main.C:642
 msgid "&black/white"
 msgstr "&negru/alb"
 
-#: main.C:638
+#: main.C:643
 msgid "&white/black"
 msgstr "&alb/negru"
 
-#: main.C:639
+#: main.C:644
 msgid "&green/black"
 msgstr "&verde/negru"
 
-#: main.C:640
+#: main.C:645
 msgid "black/light&yellow"
 msgstr "negru/&galben deschis"
 
-#: main.C:641
+#: main.C:646
 msgid "Linu&x Console"
 msgstr "Consolã de &Linux"
 
-#: main.C:650
+#: main.C:655
 msgid "&Custom Colors"
 msgstr "&Culori utilizator"
 
-#: main.C:657 main.C:921
+#: main.C:663 main.C:948
 msgid "Hide &Menubar"
 msgstr "Ascunde bara de meniu"
 
-#: main.C:659 main.C:843 main.C:913
+#: main.C:665 main.C:870 main.C:940
 msgid "Show &Menubar"
 msgstr "Afiºeazã bara de meniu"
 
-#: main.C:660 main.C:931
+#: main.C:666 main.C:958
 msgid "Secure &keyboard"
 msgstr "Securizeazã tastatura"
 
-#: main.C:662
+#: main.C:668
 msgid "Scroll&bar"
 msgstr "Barã de defilare"
 
-#: main.C:663
+#: main.C:669
 msgid "&Font size"
 msgstr "Mãrimea &fontului"
 
-#: main.C:664
+#: main.C:670
 msgid "&Color"
 msgstr "&Culoare"
 
-#: main.C:665
+#: main.C:671
 msgid "&Size"
 msgstr "&Mãrime"
 
-#: main.C:666
+#: main.C:672
 msgid "Terminal..."
 msgstr "Terminal..."
 
-#: main.C:667
+#: main.C:673
 msgid "Font..."
 msgstr ""
 
-#: main.C:669
+#: main.C:674
+msgid "Enable &hotkeys"
+msgstr ""
+
+#: main.C:677
 msgid "Save &Options"
 msgstr "Salveazã &Opþiunile"
 
-#: main.C:678
+#: main.C:686
 #, fuzzy
 msgid ""
 "\n"
@@ -154,23 +158,23 @@ msgstr ""
 "Emulator de terminal pentru Mediul de Lucru KDE\n"
 "bazat pe rxvt-2.08-ul lui Robert Nation"
 
-#: main.C:852 main.C:980
+#: main.C:879 main.C:1015
 msgid "&Show"
 msgstr "&Aratã"
 
-#: main.C:927
+#: main.C:954
 msgid "Unsecure &keyboard"
 msgstr "Desecurizeazã tastatura"
 
-#: main.C:938
+#: main.C:965
 msgid "Terminal Options"
 msgstr "Opþiunile Terminalului"
 
-#: main.C:1092
+#: main.C:1127
 msgid "Hint"
 msgstr "Sugestie"
 
-#: main.C:1093
+#: main.C:1128
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -178,7 +182,7 @@ msgstr ""
 "Noi setãri de culoare vor fi afiºate\n"
 "când tastatura nu este securizatã."
 
-#: main.C:1394
+#: main.C:1429
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -191,63 +195,63 @@ msgstr ""
 "Emulator de terminal pentru Mediul de Lucru KDE\n"
 "bazat pe rxvt-2.08-ul lui Robert Nation\n"
 
-#: main.C:1398
+#: main.C:1433
 msgid "Permitted arguments are:\n"
 msgstr "Argumentele permise sunt:\n"
 
-#: main.C:1399
+#: main.C:1434
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 "-e <comanda> <arg> ...    executa comanda cu arg - trebuie sa fie ultimul "
 "argument\n"
 
-#: main.C:1400
+#: main.C:1435
 msgid "-display <name>           specify the display (server)\n"
 msgstr "-display <nume>           specifica serverul X de afiºare\n"
 
-#: main.C:1401
+#: main.C:1436
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr "-vt_geometry <spec>       geometria iniþialã a ferestrei\n"
 
-#: main.C:1402
+#: main.C:1437
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr ""
 "-print-pipe <nume>        specificã conexiunea pentru imprimanta vt100\n"
 
-#: main.C:1403
+#: main.C:1438
 msgid "-vt_bg <colour>           background color\n"
 msgstr "-vt_bg <culoare>          culoare fundal\n"
 
-#: main.C:1404
+#: main.C:1439
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr "-vt_fg <culoare>          culoare font\n"
 
-#: main.C:1405
+#: main.C:1440
 msgid "-vt_font <fontname>       normal font\n"
 msgstr "-vt_font <nume_font>      font normal\n"
 
-#: main.C:1406
+#: main.C:1441
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
 msgstr "-no_font_hack             dezactiveazã - Qt font bug workaround -\n"
 
-#: main.C:1407
+#: main.C:1442
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr "-vt_size <dimensiune>     tiny, small, normal, large, huge\n"
 
-#: main.C:1408
+#: main.C:1443
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr "-linux                    seteazã kvt sã emuleze o consolã de linux\n"
 
-#: main.C:1409
+#: main.C:1444
 msgid "-no_menubar               hide the menubar\n"
 msgstr "-no_menubar               fãrã barã de meniu\n"
 
-#: main.C:1410
+#: main.C:1445
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr "-no_scrollbar             fãrã barã de defilare\n"
 
-#: main.C:1411
+#: main.C:1446
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
@@ -255,19 +259,19 @@ msgstr ""
 "-T <text>                 titlul ferestrei kvt \n"
 "                          (Demodat. Folosiþi -caption în loc)\n"
 
-#: main.C:1413
+#: main.C:1448
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr "-tn <TERM>                Tipul de terminal. Implicit este xterm.\n"
 
-#: main.C:1414
+#: main.C:1449
 msgid "-C                        Capture system console message\n"
 msgstr "-C                        Captureazã mesajele consolei de sistem\n"
 
-#: main.C:1415
+#: main.C:1450
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr "-n <text>                 numele icoanei\n"
 
-#: main.C:1416
+#: main.C:1451
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
@@ -275,7 +279,7 @@ msgstr ""
 "-7                        ruleazã în modul 7 bit\n"
 "-8                        ruleazã în modul 8 bit\n"
 
-#: main.C:1418
+#: main.C:1453
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
@@ -285,7 +289,7 @@ msgstr ""
 "-ls-                      porneºte shell-ul kvt ca un shell non-login "
 "(implicit)\n"
 
-#: main.C:1420
+#: main.C:1455
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
@@ -294,13 +298,13 @@ msgstr ""
 "setat,\n"
 "                          sau ignorã\n"
 
-#: main.C:1421
+#: main.C:1456
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr ""
 "-sl <numãr>               numãrul de linii de defilare înapoi care se "
 "salveazã\n"
 
-#: main.C:1422
+#: main.C:1457
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
@@ -312,7 +316,7 @@ msgstr ""
 "-pagedown <keysym>        foloseºte alt-keysym pt. a defila în jos prin "
 "buffer\n"
 
-#: main.C:1426
+#: main.C:1461
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

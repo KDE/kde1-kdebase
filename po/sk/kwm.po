@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm 0.10.23\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -121,7 +121,7 @@ msgstr "Niektoré bodové mapy nie sú korektné: ShapeMode vypnutý\n"
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Niektoré bodové mapy nie sú korektné: GimmickMode vypnutý\n"
 
-#: main.C:1354
+#: main.C:1356
 msgid "*** No Tasks ***"
 msgstr "*** ®iadne úlohy ***"
 

@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-10-20 00:20+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
@@ -32,15 +32,15 @@ msgstr ""
 "\n"
 "Viltu vista breytingar?"
 
-#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:260
 msgid "EMPTY"
 msgstr "TÓMT"
 
-#: kmenuedit.cpp:335
+#: kmenuedit.cpp:339
 msgid "Reload Menus"
 msgstr "Endurlesa valmyndir"
 
-#: kmenuedit.cpp:336
+#: kmenuedit.cpp:340
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -49,11 +49,11 @@ msgstr ""
 "allar breytingar sem þú hefur gert.\n"
 "Viltu örugglega endurlesa þær?"
 
-#: button.cpp:209 main.cpp:78 main.cpp:91
+#: button.cpp:209 main.cpp:79 main.cpp:92
 msgid "KMenuedit"
 msgstr "KValmyndasýsl"
 
-#: main.cpp:79
+#: main.cpp:80
 msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
@@ -61,7 +61,7 @@ msgstr ""
 "Mappan fyrir þína valmynd er ekki til.\n"
 " Viltu búa hana til núna?"
 
-#: main.cpp:92
+#: main.cpp:93
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
@@ -73,7 +73,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Strik"
 
-#: confmenu.cpp:102 confmenu.cpp:317
+#: confmenu.cpp:102 confmenu.cpp:316
 msgid "Open/ Close"
 msgstr "Opna/Loka"
 
@@ -81,7 +81,11 @@ msgstr "Opna/Loka"
 msgid "! PROTECTED Button !"
 msgstr "VARINN takki "
 
-#: confmenu.cpp:171 confmenu.cpp:300
+#: confmenu.cpp:115
+msgid "New"
+msgstr ""
+
+#: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"
 msgstr "Aðvörun!"
 
@@ -89,11 +93,11 @@ msgstr "Aðvörun!"
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Ef þú eyðir þessum takka hverfa allar undirvalmyndir hans"
 
-#: confmenu.cpp:281
+#: confmenu.cpp:280
 msgid "Wrong filename"
 msgstr "Rangt skráarnafn"
 
-#: confmenu.cpp:282
+#: confmenu.cpp:281
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -101,11 +105,11 @@ msgstr ""
 "Nú þegar er til kdelnk skrá með þessu nafni.\n"
 "Veldu annað nafn."
 
-#: confmenu.cpp:301
+#: confmenu.cpp:300
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Ef þú breytir tagi þessa takka hverfa allar undirvalmyndir hans"
 
-#: confmenu.cpp:322 confmenu.cpp:911
+#: confmenu.cpp:321 confmenu.cpp:909
 msgid "no command"
 msgstr "engin skipun"
 
@@ -150,7 +154,7 @@ msgstr "Gleypa"
 msgid "Link"
 msgstr "Tenging"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
 msgid "Device"
 msgstr "Tæki"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -110,42 +110,89 @@ msgstr "Βοήθεια Μενού Ενεργή"
 msgid "De&lay:"
 msgstr "Καθυστέρηση"
 
-#: options.cpp:56
-msgid "ms"
-msgstr "χιλιοστά του δευτερολέπτου"
+#: options.cpp:50 options.cpp:68 options.cpp:86
+msgid "Small"
+msgstr ""
 
-#: options.cpp:68
-msgid "Others"
-msgstr "Άλλα"
+#: options.cpp:51 options.cpp:69 options.cpp:87
+#, fuzzy
+msgid "Large"
+msgstr "Μεγάλο"
 
-#: options.cpp:69
-msgid "Personal &First"
-msgstr "Τα προσωπικά πρώτα"
+#: options.cpp:62
+msgid "Visuals"
+msgstr ""
 
-#: options.cpp:71
+#: options.cpp:64
 msgid "Auto &Hide Panel"
 msgstr "Αυτόματη απόκρυψη πινακιδίου"
 
-#: options.cpp:73
+#: options.cpp:67 options.cpp:85
+#, fuzzy
+msgid "Delay:"
+msgstr "Καθυστέρηση"
+
+#: options.cpp:74 options.cpp:93
+msgid "Speed:"
+msgstr ""
+
+#: options.cpp:75 options.cpp:94 options.cpp:103
+msgid "Slow"
+msgstr ""
+
+#: options.cpp:76 options.cpp:95 options.cpp:104
+msgid "Fast"
+msgstr ""
+
+#: options.cpp:82
 msgid "Auto Hide &Taskbar"
 msgstr "Αυτόματη απόκρυψη γραμμής εργασιών"
 
-#: options.cpp:81
-msgid "Clock"
-msgstr "Ρολόι"
+#: options.cpp:100
+msgid "Animate Show/Hide"
+msgstr ""
 
-#: options.cpp:83
-msgid "&24h"
-msgstr "24ωρο"
+#: options.cpp:102
+msgid "Speed"
+msgstr ""
 
-#: options.cpp:85
-msgid "&12h AM/PM"
-msgstr "12ωρο - πμ/μμ"
+#: options.cpp:117
+msgid "Others"
+msgstr "Άλλα"
 
-#: disknav.cpp:43
+#: options.cpp:118
+msgid "Personal &First"
+msgstr "Τα προσωπικά πρώτα"
+
+#: options.cpp:120
+#, fuzzy
+msgid "F&olders First"
+msgstr "Τα προσωπικά πρώτα"
+
+#: options.cpp:122
+msgid "&Clock shows time in AM/PM format"
+msgstr ""
+
+#: disknav.cpp:38
+msgid "History"
+msgstr ""
+
+#: disknav.cpp:64
+msgid "Edit &Local..."
+msgstr ""
+
+#: disknav.cpp:74
 msgid "Edit &Global..."
 msgstr ""
 
-#: disknav.cpp:46
-msgid "Edit &Local..."
-msgstr ""
+#~ msgid "ms"
+#~ msgstr "χιλιοστά του δευτερολέπτου"
+
+#~ msgid "Clock"
+#~ msgstr "Ρολόι"
+
+#~ msgid "&24h"
+#~ msgstr "24ωρο"
+
+#~ msgid "&12h AM/PM"
+#~ msgstr "12ωρο - πμ/μμ"

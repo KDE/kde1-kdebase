@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,39 +13,39 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.cpp:87
+#: main.cpp:84
 msgid "&Appearance"
 msgstr "Μορφή"
 
-#: main.cpp:95
+#: main.cpp:92
 msgid "&Background"
 msgstr "Φόντο"
 
-#: main.cpp:98
+#: main.cpp:95
 msgid "&Users"
 msgstr "Χρήστες"
 
-#: main.cpp:101
+#: main.cpp:98
 msgid "&Sessions"
 msgstr "Συνδέσεις"
 
-#: main.cpp:106
+#: main.cpp:103
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
 "Σύνταξη: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 
-#: main.cpp:145
+#: main.cpp:142
 msgid "KDM Configuration"
 msgstr "Ρυθμίσεις KDM"
 
-#: main.cpp:155
+#: main.cpp:152
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
 msgstr "Συγγνώμη, αλλά δεν έχετε πρόσβαση στο αρχείο ρυθμίσεων του KDM."
 
-#: main.cpp:157
+#: main.cpp:154
 msgid "Missing privileges"
 msgstr "Ελλιπή δικαιώματα πρόσβασης"
 

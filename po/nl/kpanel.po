@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-13 13:29+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,128 +14,150 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kpanel.C:232
+#: kpanel.C:273
 msgid "Move"
 msgstr "Verplaatsen"
 
-#: kpanel.C:272
+#: kpanel.C:313
 msgid "Go!"
 msgstr "Gaan"
 
-#: kpanel.C:275 tools.C:828
+#: kpanel.C:316 tools.C:828
 msgid "Where do you want to go tomorrow?"
 msgstr "Waar wil je morgen heen?"
 
-#: kpanel.C:349
+#: kpanel.C:391
 msgid "No info available"
 msgstr "Geen informatie beschikbaar"
 
-#: kpanel.C:388 props.C:173 props.C:174
+#: kpanel.C:430 props.C:174 props.C:175
 msgid "Logout"
 msgstr "Uitloggen"
 
-#: kpanel.C:396 props.C:172
+#: kpanel.C:438 props.C:173
 msgid "Lock screen"
 msgstr "Scherm beveiligen"
 
-#: kpanel.C:405 kpanel.C:414
+#: kpanel.C:447 kpanel.C:456
 msgid "Hide the panel"
 msgstr "Verberg het paneel"
 
-#: kpanel.C:424 kpanel.C:436
+#: kpanel.C:466 kpanel.C:478
 msgid "Show the panel"
 msgstr "Laat het paneel zien"
 
-#: kpanel.C:1159 tools.C:658
+#: kpanel.C:1201 tools.C:658
 msgid "No comment available"
 msgstr "Geen informatie beschikbaar"
 
-#: kpanel.C:1168 tools.C:837
+#: kpanel.C:1210 tools.C:837
 msgid "Windowlist"
 msgstr "Vensterlijst"
 
-#: props.C:143
+#: props.C:144
 msgid "Add application"
 msgstr "Toepassing toevoegen"
 
-#: props.C:145
+#: props.C:146
 msgid "Add an application or a submenu onto the panel"
 msgstr "Plaats een toepassing of submenu op het paneel"
 
-#: props.C:146
+#: props.C:147
 msgid "Add windowlist"
 msgstr "Vensterlijst toevoegen"
 
-#: props.C:148
+#: props.C:149
 msgid "Add a windowlist menu onto the panel"
 msgstr "Plaats een menu met de vensterlijst op het paneel"
 
-#: events.C:772 props.C:149
+#: events.C:782 props.C:150
 msgid "Configure"
 msgstr "Instellingen"
 
-#: props.C:151
+#: props.C:152
 msgid "Configure panel"
 msgstr "Instellingen paneel"
 
-#: props.C:152
+#: props.C:153
 msgid "Edit Menus"
 msgstr ""
 
-#: props.C:154
+#: props.C:155
 msgid "Add or remove applications in the menu structure "
 msgstr ""
 
-#: events.C:774 props.C:155
+#: events.C:784 props.C:156
 msgid "Restart"
 msgstr "Herstarten"
 
-#: props.C:157
+#: props.C:158
 msgid "Restart panel"
 msgstr "Paneel opnieuw herstarten (configuratie opnieuw inlezen)"
 
-#: props.C:160
+#: props.C:161
 msgid "Disk Navigator"
 msgstr ""
 
-#: props.C:168
+#: props.C:169
 msgid "Panel"
 msgstr "Paneel"
 
-#: props.C:170
+#: props.C:171
 msgid "Lock Screen"
 msgstr "Scherm beveiligen"
 
-#: props.C:399
+#: props.C:400
 msgid "The menu editor is not installed."
 msgstr ""
 
-#: events.C:810 props.C:400
+#: events.C:820 props.C:401
 msgid "Oops!"
 msgstr ""
 
-#: events.C:809
+#: tools.C:617
+msgid ""
+"\n"
+"%b %d"
+msgstr ""
+
+#: events.C:819
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
 
-#: pfilemenu.C:351
+#: pfilemenu.C:337
 msgid "(empty folder)"
 msgstr ""
 
-#: pfilemenu.C:408
+#: pfilemenu.C:394
 msgid "(Too Many Files)"
 msgstr ""
 
-#: pfilemenu.C:417
+#: pfilemenu.C:403
 msgid "(Access Denied)"
 msgstr ""
 
-#: pfilemenu.C:420
+#: pfilemenu.C:406
 msgid "(Unreadable)"
 msgstr ""
 
-#: pfilemenu.C:427
+#: pfilemenu.C:413
 msgid "Open Folder"
+msgstr ""
+
+#: pfilemenu.C:657
+msgid "Global:"
+msgstr ""
+
+#: pfilemenu.C:676
+msgid "Local:"
+msgstr ""
+
+#: pfilemenu.C:694
+msgid "Recent:"
+msgstr ""
+
+#: pfilemenu.C:740
+msgid "Options..."
 msgstr ""
 
 #~ msgid "Properties"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm 0.5\n"
-"POT-Creation-Date: 1998-10-13 13:29+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -29,50 +29,53 @@ msgstr "Ukonèi» a re¹tartova»"
 msgid "Exit kdm"
 msgstr "Ukonèi» kdm"
 
-#: kgreeter.cpp:166
+#: kgreeter.cpp:172
 msgid "Login:"
 msgstr "U¾ívateµ:"
 
-#: kgreeter.cpp:178
+#: kgreeter.cpp:184
 msgid "Password:"
 msgstr "Heslo:"
 
-#: kgreeter.cpp:203
+#: kgreeter.cpp:209
 msgid "Login failed!"
 msgstr "Prihlásenie neúspe¹né!"
 
-#: kgreeter.cpp:209
+#: kgreeter.cpp:215
 msgid "Session Type:"
 msgstr "Typ sedenia:"
 
-#: kgreeter.cpp:225
+#: kgreeter.cpp:258
 msgid "Go!"
 msgstr "Choï!"
 
-#: kgreeter.cpp:241
+#: kgreeter.cpp:274
 msgid "Shutdown..."
 msgstr "Ukonèenie..."
 
-#: kgreeter.cpp:453
+#: kgreeter.cpp:477
 msgid "Logins not available right now."
 msgstr "Prihlásenia teraz nie sú prístupné."
 
-#: kgreeter.cpp:494
-msgid "bah"
-msgstr "bah"
+#: kgreeter.cpp:518
+msgid "login_getcapstr() failed."
+msgstr ""
 
-#: kgreeter.cpp:547 kgreeter.cpp:574
+#: kgreeter.cpp:572 kgreeter.cpp:599
 msgid "Sorry -- your account has expired."
 msgstr "Je mi µúto, vá¹ úèet expiroval."
 
-#: kgreeter.cpp:552 kgreeter.cpp:579
+#: kgreeter.cpp:577 kgreeter.cpp:604
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Varovanie: vá¹ úèet expiruje %s"
 
-#: kgreeter.cpp:606
+#: kgreeter.cpp:631
 msgid "Home directory not available"
 msgstr "Domovský prieèinok nie je prístupný"
+
+#~ msgid "bah"
+#~ msgstr "bah"
 
 #~ msgid "Expired"
 #~ msgstr "Expirované"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kibd\n"
-"POT-Creation-Date: 1998-10-26 10:19+0100\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-10-28 18:35 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <flidr@kky.zcu.cz>\n"
@@ -203,6 +203,10 @@ msgstr ""
 "Konfiguraèní soubor má novìj¹í formát ne¾ je oèekáváno.\n"
 "Nìkterá nastavení nejsou správná."
 
+#: kikbdconf.cpp:352
+msgid "unknown"
+msgstr "neznámý"
+
 #: kikbdconf.cpp:356
 msgid "default"
 msgstr "implicitní"
@@ -279,7 +283,9 @@ msgstr "Nastavit"
 msgid ""
 "\n"
 "Do you want to continue?"
-msgstr "\nPøejete si pokraèovat?"
+msgstr ""
+"\n"
+"Pøejete si pokraèovat?"
 
 #: widgets.cpp:107
 msgid "List of active keyboard maps"
@@ -515,6 +521,3 @@ msgstr "Sp&u¹tení"
 #: kcmikbd.cpp:121
 msgid "International Keyboard"
 msgstr "Mezinárodní klávesnice"
-
-#~ msgid "unknown"
-#~ msgstr "neznámý"

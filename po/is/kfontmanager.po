@@ -78,7 +78,8 @@ msgstr ""
 "en þú hefur ekki skrifréttindi í hana.\n"
 "Því tókst ekki að vista KDE leturlistann."
 
-#: kfontlist.cpp:62  (I'll be damned if this should be here!)
+# kfontlist.cpp:62  (I'll be damned if this should be here!)
+#: kfontlist.cpp:62
 msgid ""
 "kfontmanager Version 0.1\n"
 "Copyright 1997\n"

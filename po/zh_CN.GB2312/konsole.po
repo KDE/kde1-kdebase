@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-18 22:51+0200\n"
+"POT-Creation-Date: 1998-10-29 14:04+0100\n"
 "PO-Revision-Date: 1998-06-10 00:50+0200\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN (gb2312)\n"
@@ -13,130 +13,148 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: src/main.C:176
+#: main.C:174
 msgid "&Normal"
 msgstr "普通[&N]"
 
-#: src/main.C:179
+#: main.C:177
 msgid "&Small"
 msgstr "小型[&S]"
 
-#: src/main.C:180
+#: main.C:178
 msgid "&Medium"
 msgstr "中型[&M]"
 
-#: src/main.C:181
+#: main.C:179
 msgid "&Large"
 msgstr "大型[&L]"
 
-#: src/main.C:182
+#: main.C:180
 msgid "&Huge"
 msgstr "巨型[&H]"
 
-#: src/main.C:185
-msgid "&VGA"
-msgstr "&VGA"
+#: main.C:183
+msgid "&Linux"
+msgstr ""
 
-#: src/main.C:189
+#: main.C:187
 msgid "&More ..."
 msgstr "更多[&M] ..."
 
-#: src/main.C:200
-msgid "&black/white"
-msgstr "黑/白[&B]"
-
-#: src/main.C:201
-msgid "&white/black"
-msgstr "白/黑[&W]"
-
-#: src/main.C:202
-msgid "&green/black"
-msgstr "绿/黑[&G]"
-
-#: src/main.C:203
-msgid "black/light&yellow"
-msgstr "黑/浅黄[&Y]"
-
-#: src/main.C:205
-msgid "&System colors"
-msgstr "系统颜色[&S]"
-
-#: src/main.C:206
-msgid "&Custom Colors"
-msgstr "自定义颜色[&C]"
-
-#: src/main.C:211
+#: main.C:193
 msgid "&Hide"
 msgstr "隐藏[&H]"
 
-#: src/main.C:212
+#: main.C:194
 msgid "&Left"
 msgstr "左[&L]"
 
-#: src/main.C:213
+#: main.C:195
 msgid "&Right"
 msgstr "右[&R]"
 
-#: src/main.C:219
+#: main.C:201
 msgid "40x15 (&small)"
 msgstr "40x15 (小)[&S]"
 
-#: src/main.C:220
+#: main.C:202
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: src/main.C:221
+#: main.C:203
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: src/main.C:229
+#: main.C:204
+#, fuzzy
+msgid "80x40 (&xterm)"
+msgstr "80x24 (&vt100)"
+
+#: main.C:205
+#, fuzzy
+msgid "80x52 (ibmv&ga)"
+msgstr "80x25 (&ibmpc)"
+
+#: main.C:214
 msgid "&Menubar"
 msgstr "菜单条[&M]"
 
-#: src/main.C:231
+#: main.C:216
 msgid "&Frame"
 msgstr "外框[&F]"
 
-#: src/main.C:233
+#: main.C:218
 msgid "Scroll&bar"
 msgstr "滚动条[&B]"
 
-#: src/main.C:235
+#: main.C:220
 msgid "BS sends &DEL"
 msgstr "BS 送出 &DEL"
 
-#: src/main.C:238
+#: main.C:223
 msgid "&Font"
 msgstr "字体[&F]"
 
-#: src/main.C:239
-msgid "&Color"
-msgstr "颜色[&C]"
-
-#: src/main.C:240
+#: main.C:224
 msgid "&Size"
 msgstr "大小[&S]"
 
-#: src/main.C:241
-msgid "&Background"
-msgstr "背景[&B]"
+#: main.C:225
+#, fuzzy
+msgid "&Schema"
+msgstr "小型[&S]"
 
-#: src/main.C:244
+#: main.C:227
 msgid "&Save options"
 msgstr "保存选项[&S]"
 
-#: src/main.C:249
+#: main.C:231
 msgid "&About ..."
 msgstr "关于[&A] ..."
 
-#: src/main.C:250
+#: main.C:232
 msgid "&User's Manual ..."
 msgstr "使用手册[&U] ..."
 
-#: src/main.C:251
+#: main.C:233
 msgid "&Technical Reference ..."
 msgstr "技术参考[&T] ..."
 
-#: src/main.C:607
+#: main.C:241
+msgid "New"
+msgstr ""
+
+#: main.C:242
+msgid "Sessions"
+msgstr ""
+
+#: main.C:843
 msgid "Welcome to the console"
 msgstr "欢迎使用 console"
+
+#~ msgid "&VGA"
+#~ msgstr "&VGA"
+
+#~ msgid "&black/white"
+#~ msgstr "黑/白[&B]"
+
+#~ msgid "&white/black"
+#~ msgstr "白/黑[&W]"
+
+#~ msgid "&green/black"
+#~ msgstr "绿/黑[&G]"
+
+#~ msgid "black/light&yellow"
+#~ msgstr "黑/浅黄[&Y]"
+
+#~ msgid "&System colors"
+#~ msgstr "系统颜色[&S]"
+
+#~ msgid "&Custom Colors"
+#~ msgstr "自定义颜色[&C]"
+
+#~ msgid "&Color"
+#~ msgstr "颜色[&C]"
+
+#~ msgid "&Background"
+#~ msgstr "背景[&B]"

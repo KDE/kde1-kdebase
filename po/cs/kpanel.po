@@ -5,13 +5,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1998-10-26 10:18+0100\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-10-28 18:24 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: kpanel.C:273
+msgid "Move"
+msgstr ""
 
 #: kpanel.C:313
 msgid "Go!"
@@ -113,7 +117,9 @@ msgstr "Ouha!"
 msgid ""
 "\n"
 "%b %d"
-msgstr "\n%b %d"
+msgstr ""
+"\n"
+"%b %d"
 
 #: events.C:819
 msgid "Cannot put this as button onto the panel!"

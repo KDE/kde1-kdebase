@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-10-05 01:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -28,23 +28,28 @@ msgstr "Úps!"
 msgid "Unknown format: "
 msgstr "Óþekkt snið: "
 
-#: helpwin.cpp:1090
+#: helpwin.cpp:1091
 msgid "Find Complete"
 msgstr "Leit lokið"
 
-#: helpwin.cpp:1091
+#: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
 msgstr "Halda leit áfram frá byrjun?"
 
-#: helpwin.cpp:1329
+#: helpwin.cpp:1309
+#, fuzzy
+msgid "Forward"
+msgstr "Á&fram"
+
+#: helpwin.cpp:1330
 msgid "Open this Link"
 msgstr "Opna þessa tengingu"
 
-#: helpwin.cpp:1330
+#: helpwin.cpp:1331
 msgid "Add Bookmark"
 msgstr "Setja bókamerki"
 
-#: helpwin.cpp:1331
+#: helpwin.cpp:1332
 msgid "Open in new Window"
 msgstr "Opna í nýjum glugga"
 
@@ -69,6 +74,18 @@ msgstr "Banvæn villa: "
 #: error.cpp:28
 msgid "Warning: "
 msgstr "Aðvörun: "
+
+#: options.cpp:40
+msgid "Small"
+msgstr ""
+
+#: options.cpp:44
+msgid "Medium"
+msgstr ""
+
+#: options.cpp:48
+msgid "Large"
+msgstr ""
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -144,6 +161,10 @@ msgstr "Leikir"
 msgid "System Administration"
 msgstr "Kerfisstjórnun"
 
+#: man.cpp:478
+msgid "New"
+msgstr ""
+
 #: man.cpp:592
 msgid "Reading Dir: "
 msgstr "Les möppu: "
@@ -203,10 +224,6 @@ msgstr "&Aftur"
 msgid "&Forward"
 msgstr "Á&fram"
 
-#: mainwidget.cpp:157
-msgid "&Contents"
-msgstr "Í &innihald"
-
 #: mainwidget.cpp:158
 msgid "&Top"
 msgstr "&Efst"
@@ -214,6 +231,15 @@ msgstr "&Efst"
 #: mainwidget.cpp:159
 msgid "&Up"
 msgstr "&Upp"
+
+#: mainwidget.cpp:160
+#, fuzzy
+msgid "&Previous"
+msgstr "Fyrri hlekkur"
+
+#: mainwidget.cpp:161
+msgid "&Next"
+msgstr ""
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -331,3 +357,6 @@ msgstr "Háð há-/lágstöfum"
 #: finddlg.cpp:66
 msgid "&Find"
 msgstr "&Finna"
+
+#~ msgid "&Contents"
+#~ msgstr "Í &innihald"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmpanel\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-09-24  18:04+0100\n"
 "Last-Translator: luka steger, <luka_steger@hotmail.com>\n"
 "Language-Team: slovene\n"
@@ -111,42 +111,89 @@ msgstr "Po&ka¾i namige"
 msgid "De&lay:"
 msgstr "&Zakasnitev"
 
-#: options.cpp:56
-msgid "ms"
-msgstr "ms"
+#: options.cpp:50 options.cpp:68 options.cpp:86
+msgid "Small"
+msgstr ""
 
-#: options.cpp:68
-msgid "Others"
-msgstr "Ostalo"
+#: options.cpp:51 options.cpp:69 options.cpp:87
+#, fuzzy
+msgid "Large"
+msgstr "&Velik"
 
-#: options.cpp:69
-msgid "Personal &First"
-msgstr "&Najprej uporabni¹ki meni"
+#: options.cpp:62
+msgid "Visuals"
+msgstr ""
 
-#: options.cpp:71
+#: options.cpp:64
 msgid "Auto &Hide Panel"
 msgstr "Samodejno skrij &pult"
 
-#: options.cpp:73
+#: options.cpp:67 options.cpp:85
+#, fuzzy
+msgid "Delay:"
+msgstr "&Zakasnitev"
+
+#: options.cpp:74 options.cpp:93
+msgid "Speed:"
+msgstr ""
+
+#: options.cpp:75 options.cpp:94 options.cpp:103
+msgid "Slow"
+msgstr ""
+
+#: options.cpp:76 options.cpp:95 options.cpp:104
+msgid "Fast"
+msgstr ""
+
+#: options.cpp:82
 msgid "Auto Hide &Taskbar"
 msgstr "Samodejno skrij &opravilno vrstico"
 
-#: options.cpp:81
-msgid "Clock"
-msgstr "Ura"
+#: options.cpp:100
+msgid "Animate Show/Hide"
+msgstr ""
 
-#: options.cpp:83
-msgid "&24h"
-msgstr "&24h"
+#: options.cpp:102
+msgid "Speed"
+msgstr ""
 
-#: options.cpp:85
-msgid "&12h AM/PM"
-msgstr "&12h AM/PM"
+#: options.cpp:117
+msgid "Others"
+msgstr "Ostalo"
 
-#: disknav.cpp:43
+#: options.cpp:118
+msgid "Personal &First"
+msgstr "&Najprej uporabni¹ki meni"
+
+#: options.cpp:120
+#, fuzzy
+msgid "F&olders First"
+msgstr "&Najprej uporabni¹ki meni"
+
+#: options.cpp:122
+msgid "&Clock shows time in AM/PM format"
+msgstr ""
+
+#: disknav.cpp:38
+msgid "History"
+msgstr ""
+
+#: disknav.cpp:64
+msgid "Edit &Local..."
+msgstr ""
+
+#: disknav.cpp:74
 msgid "Edit &Global..."
 msgstr ""
 
-#: disknav.cpp:46
-msgid "Edit &Local..."
-msgstr ""
+#~ msgid "ms"
+#~ msgstr "ms"
+
+#~ msgid "Clock"
+#~ msgstr "Ura"
+
+#~ msgid "&24h"
+#~ msgstr "&24h"
+
+#~ msgid "&12h AM/PM"
+#~ msgstr "&12h AM/PM"

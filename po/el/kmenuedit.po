@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-01-05 20:56+0200\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
 
@@ -32,15 +32,15 @@ msgid ""
 "Do you want to save your changes ?"
 msgstr "Θέλετε να αποθηκέυσετε τις αλλαγές"
 
-#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:260
 msgid "EMPTY"
 msgstr "ΚΕΝΟ"
 
-#: kmenuedit.cpp:335
+#: kmenuedit.cpp:339
 msgid "Reload Menus"
 msgstr "Επαναφόρτωση καταλόγων"
 
-#: kmenuedit.cpp:336
+#: kmenuedit.cpp:340
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -48,11 +48,11 @@ msgstr ""
 "Η επαναφόρτωση των καταλόγων θα απορρίψειόλες τις αλλαγές.\n"
 "Είστε σίγουροι ότι θέλετε να επαναφορτώσετε ?"
 
-#: button.cpp:209 main.cpp:78 main.cpp:91
+#: button.cpp:209 main.cpp:79 main.cpp:92
 msgid "KMenuedit"
 msgstr "KMenuedit"
 
-#: main.cpp:79
+#: main.cpp:80
 msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
@@ -60,7 +60,7 @@ msgstr ""
 "Ο φάκελλος για τον προσωπικό σας κατάλογο δεν υπάρχει.\n"
 "Θέλετε να δημιουργηθεί τώρα ?"
 
-#: main.cpp:92
+#: main.cpp:93
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-01-18 05:26+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -14,32 +14,32 @@ msgstr ""
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: main.cpp:87
+#: main.cpp:84
 msgid "&Appearance"
 msgstr "&Вид"
 
-#: main.cpp:95
+#: main.cpp:92
 msgid "&Background"
 msgstr "&Фон"
 
-#: main.cpp:98
+#: main.cpp:95
 msgid "&Users"
 msgstr "&Пользователи"
 
-#: main.cpp:101
+#: main.cpp:98
 msgid "&Sessions"
 msgstr "&Сессии"
 
-#: main.cpp:106
+#: main.cpp:103
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr "использование [-init | {appearance,font,background,sessions,users}]\n"
 
-#: main.cpp:145
+#: main.cpp:142
 msgid "KDM Configuration"
 msgstr "Конфигурация KDM"
 
-#: main.cpp:155
+#: main.cpp:152
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
@@ -47,7 +47,7 @@ msgstr ""
 "Извините, но вы не имеете права читать\n"
 "и писать в конфигурационный файл KDM."
 
-#: main.cpp:157
+#: main.cpp:154
 msgid "Missing privileges"
 msgstr "Недостаточно привилегий"
 

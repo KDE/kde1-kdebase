@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkpanel\n"
-"POT-Creation-Date: 1998-10-17 15:05+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-03-22 17:12+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -169,54 +169,47 @@ msgstr "M&apper først"
 msgid "&Clock shows time in AM/PM format"
 msgstr "&Klokke viser tid i am/pm-format"
 
-#: disknav.cpp:41
-msgid "Edit entries: (drag a folder and create a link)"
-msgstr "Rediger oppføringer: (dra en mappe og lag en lenke)"
+#: disknav.cpp:38
+msgid "History"
+msgstr ""
 
-#: disknav.cpp:43
-msgid "Edit &Global..."
-msgstr "Rediger &global..."
-
-#: disknav.cpp:46
+#: disknav.cpp:64
 msgid "Edit &Local..."
 msgstr "Rediger &local..."
 
-#: disknav.cpp:62
-msgid "Max recent folder entries:"
-msgstr "Maks antall nylige mapperoppføringer:"
-
-#: disknav.cpp:65
-msgid "Max recent file entries:"
-msgstr "Maks antall nylige filoppføringer:"
-
-#: disknav.cpp:69
-msgid "Max files in a single folder:"
-msgstr "Maks antall filer i en enkelt mappe:"
-
-#: disknav.cpp:73
-msgid "Show dot files"
-msgstr "Vis dott-filer"
-
 #: disknav.cpp:74
-msgid "Ignore case when sorting"
-msgstr "Ignorer bokstavstørrelse ved sorteringer"
+msgid "Edit &Global..."
+msgstr "Rediger &global..."
 
-#: disknav.cpp:76
-msgid "Show Global section"
-msgstr "Vis Global-seksjon"
+#~ msgid "Edit entries: (drag a folder and create a link)"
+#~ msgstr "Rediger oppføringer: (dra en mappe og lag en lenke)"
 
-#: disknav.cpp:77
-msgid "Show Local section"
-msgstr "Vis Lokal-seksjon"
+#~ msgid "Max recent folder entries:"
+#~ msgstr "Maks antall nylige mapperoppføringer:"
 
-#: disknav.cpp:78
-msgid "Show Recent section"
-msgstr "Vis Nylig-seksjon"
+#~ msgid "Max recent file entries:"
+#~ msgstr "Maks antall nylige filoppføringer:"
 
-#: disknav.cpp:79
-msgid "Show Option entry"
-msgstr "Vis Valg-seksjon"
+#~ msgid "Max files in a single folder:"
+#~ msgstr "Maks antall filer i en enkelt mappe:"
 
-#: disknav.cpp:85
-msgid "Terminal application:"
-msgstr "Terminal-applikasjon:"
+#~ msgid "Show dot files"
+#~ msgstr "Vis dott-filer"
+
+#~ msgid "Ignore case when sorting"
+#~ msgstr "Ignorer bokstavstørrelse ved sorteringer"
+
+#~ msgid "Show Global section"
+#~ msgstr "Vis Global-seksjon"
+
+#~ msgid "Show Local section"
+#~ msgstr "Vis Lokal-seksjon"
+
+#~ msgid "Show Recent section"
+#~ msgstr "Vis Nylig-seksjon"
+
+#~ msgid "Show Option entry"
+#~ msgstr "Vis Valg-seksjon"
+
+#~ msgid "Terminal application:"
+#~ msgstr "Terminal-applikasjon:"
