@@ -10,6 +10,7 @@ Name[br]=Brezhoneg
 Name[es]=Bretón
 Name[pt]=Bretõens
 Name[no]=Bretagnsk
+Name[sv]=bretagniska
 
 [ca]
 Name=Catalan
@@ -82,7 +83,7 @@ Name[fr]=Anglais - UK
 Name[hu]=Angol - UK
 Name[zh]=­^¤å - UK
 Name[pt]=Inglês - UK
-Name[sv]=engelska - br.
+Name[sv]=engelska
 Name[ro]=Englez
 Name[ru]=áÎÇÌÉÊÓËÉÊ
 Name[he]=UK - úéìâğà
@@ -99,7 +100,7 @@ Name[fr]=Anglais - US
 Name[hu]=Angol - US
 Name[zh]=­^¤å - US
 Name[pt]=Inglês - EUA
-Name[sv]=engelska - am.
+Name[sv]=amerikansk engelska
 Name[ro]=Englez-American
 Name[ru]=áÎÇÌÏ-áÍÅÒÉËÁÎÓËÉÊ
 Name[he]=ú''øà - úéìâğà
@@ -396,27 +397,32 @@ Name[no]=Esperanto
 Name[de]=Esperanto
 Name[ro]=Esperanto
 Name[br]=Esperanteg
+Name[sv]=esperanto
 
 [mk]
 Name=Macedonian
 Name[de]=Mazedonisch
 Name[br]=Makedonieg
 Name[no]=Makedonsk
+Name[sv]=makedoniska
 
 [ko]
 Name=Korean
 Name[de]=Koreanisch
 Name[br]=Koreeg
 Name[no]=Koreansk
+Name[sv]=koreanska
 
 [tr]
 Name=Turkish
 Name[de]=Türkisch
 Name[br]=Turkeg
 Name[no]=Tyrkisk
+Name[sv]=turkiska
 
 [he]
 Name=Hebrew
 Name[de]=Hebräisch
 Name[he]=úéøáò
 Name[no]=Hebraisk
+Name[sv]=hebreiska
