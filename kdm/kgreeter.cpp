@@ -55,7 +55,7 @@ void SessionExit(void*,void*,void*);
 }
 
 #ifdef USESHADOW
-#include<shadow.h>
+#include <shadow.h>
 #endif
 
 #ifdef HAVE_LOGIN_CAP_H
@@ -331,7 +331,6 @@ KGreeter::save_wm()
      struct passwd *pwd = getpwnam(greet->name);
      endpwent();
      if (!pwd) return;
-
      // we don't need the password
      memset(pwd->pw_passwd, 0, strlen(pwd->pw_passwd));
 #ifdef USESHADOW
@@ -361,7 +360,6 @@ KGreeter::load_wm()
      passwd *pwd = getpwnam(loginEdit->text());
      endpwent();
      if (!pwd) return;
-
      // we don't need the password
      memset(pwd->pw_passwd, 0, strlen(pwd->pw_passwd));
 #ifdef USESHADOW
@@ -411,7 +409,6 @@ KGreeter::restrict()
      pwd = getpwnam(greet->name);
      endpwent();
      if (!pwd) return false;
-
      // we don't need the password
      memset(pwd->pw_passwd, 0, strlen(pwd->pw_passwd));
 #ifdef USESHADOW
