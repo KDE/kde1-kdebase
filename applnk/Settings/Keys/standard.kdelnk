@@ -10,6 +10,7 @@ Comment[cs]=Nastavení standardních klávesových zkratek
 Comment[da]=Værktøj til indstilling af standard taster
 Comment[de]=Konfiguration der Standard-Tastenbelegungen
 Comment[es]=Configuración de teclas normales
+Comment[et]=Standardsete kiirklahvide konfigureerimine
 Comment[fi]=Perusnäppäinten asetukset
 Comment[fr]=Configuration des raccourcis standard
 Comment[hr]=Postava standardnih tipki
@@ -32,6 +33,7 @@ Name[cs]=Standarní klávesové zkratky
 Name[da]=Standard taster
 Name[de]=name[de]=Standard-Tastenbelegungen
 Name[es]=Teclas Normales
+Name[et]=Standardsed kiirklahvid
 Name[fi]=Perusnäppäimet
 Name[fr]=Raccourcis standard
 Name[hr]=Standardne tipke
