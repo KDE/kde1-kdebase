@@ -143,7 +143,7 @@ void KRootOptions::loadSettings()
     icon_fg = g_pConfig->readColorEntry("Foreground",&DEFAULT_ICON_FG);
     icon_bg = g_pConfig->readColorEntry("Background",&DEFAULT_ICON_BG);
     //CT
-    g_pConfig->setGroup( "KFM Root Defaults" );
+    g_pConfig->setGroup( "KFM Misc Defaults" );
     int gridwidth = g_pConfig->readNumEntry( "GridWidth", DEFAULT_GRID_WIDTH );
     int gridheight = g_pConfig->readNumEntry( "GridHeight", DEFAULT_GRID_HEIGHT );
     
@@ -185,7 +185,7 @@ void KRootOptions::saveSettings()
     g_pConfig->writeEntry( "Foreground", icon_fg);
     g_pConfig->writeEntry( "Background", icon_bg);
     //CT
-    g_pConfig->setGroup( "KFM Root Defaults" );
+    g_pConfig->setGroup( "KFM Misc Defaults" );
     g_pConfig->writeEntry( "GridWidth", hspin->getValue()+DEFAULT_GRID_MIN);
     g_pConfig->writeEntry( "GridHeight", vspin->getValue()+DEFAULT_GRID_MIN);
 

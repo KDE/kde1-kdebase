@@ -48,7 +48,7 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 void KMiscOptions::loadSettings()
 {
     // *** load ***
-
+    g_pConfig->setGroup( "KFM Misc Defaults" );
     bool bUrlprops = g_pConfig->readBoolEntry( "EnablePerURLProps", false);
     bool bTreeFollow = g_pConfig->readBoolEntry( "TreeFollowsView", false);
 
@@ -66,7 +66,7 @@ void KMiscOptions::defaultSettings()
 
 void KMiscOptions::saveSettings()
 {
-    g_pConfig->setGroup( "KFM Root Icons" );
+    g_pConfig->setGroup( "KFM Misc Defaults" );
     g_pConfig->writeEntry( "EnablePerURLProps", urlpropsbox->isChecked());
     g_pConfig->writeEntry( "TreeFollowsView", treefollowbox->isChecked());
     g_pConfig->sync();
