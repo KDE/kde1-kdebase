@@ -75,7 +75,7 @@ void kwmcom_send_to_kwm(Atom a, long a1, long a2,
 		      kwmcom_rootwindow, 
 		      False, mask, &ev);
   if (status == 0){
-    fprintf(stderr, klocale->translate("kwmcom: communication with kwm failed\n"));
+    fprintf(stderr, i18n("kwmcom: communication with kwm failed\n"));
   }
   XSync(kwmcom_display, False);
 }
@@ -102,7 +102,7 @@ void kwmcom_send_to_kwm(Atom a, char * s){
 		      kwmcom_rootwindow, 
 		      False, mask, &ev);
   if (status == 0){
-    fprintf(stderr, klocale->translate("kwmcom: communication with kwm failed\n"));
+    fprintf(stderr, i18n("kwmcom: communication with kwm failed\n"));
   }
   XSync(kwmcom_display, False);
 }

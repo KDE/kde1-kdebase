@@ -139,8 +139,8 @@ void WidgetCanvas::drawSampleWidgets()
     
   paint.setFont( QFont("Helvetica", 12, QFont::Bold) );
   paint.setPen( inactiveTextColor );
-  paint.drawText( (width()-25)/2-40, 20, klocale->translate("Inactive window") );
-  textLen = paint.fontMetrics().width(  klocale->translate("Inactive window") );
+  paint.drawText( (width()-25)/2-40, 20, i18n("Inactive window") );
+  textLen = paint.fontMetrics().width(  i18n("Inactive window") );
     
   hotspots[0] = HotSpot( QRect( (width()-25)/2-40, 8, textLen, 14 ), 1 ); // inactive text
   hotspots[1] = HotSpot( QRect( 5, 5, width()-30, 20 ), 0 ); // inactive title
@@ -155,8 +155,8 @@ void WidgetCanvas::drawSampleWidgets()
     
   paint.setFont( QFont("Helvetica", 12, QFont::Bold) );
   paint.setPen( activeTextColor );
-  paint.drawText( 30+5+width()-32-(width()-32)/2-50, 45+5,  klocale->translate("Active window") );
-  textLen = paint.fontMetrics().width(  klocale->translate("Active window" ));
+  paint.drawText( 30+5+width()-32-(width()-32)/2-50, 45+5, i18n("Active window") );
+  textLen = paint.fontMetrics().width( i18n("Active window" ));
     
   hotspots[2] = HotSpot( QRect( 30+5+width()-32-(width()-32)/2-50, 38, textLen, 14 ), 3 ); // Active text
   hotspots[3] = HotSpot( QRect( 25, 35, width()-32, 20 ), 2 ); // Active title
@@ -167,17 +167,17 @@ void WidgetCanvas::drawSampleWidgets()
     
   paint.setFont( QFont("Helvetica", 12, QFont::Normal) );
   paint.setPen(textColor );
-  textLen = paint.fontMetrics().width( klocale->translate("File") );
+  textLen = paint.fontMetrics().width( i18n("File") );
   qDrawShadePanel ( &paint, 30, 52+5+2, textLen + 10, 21, cg, FALSE, 2, &brush);
-  paint.drawText( 35, 69+5, klocale->translate("File") );
+  paint.drawText( 35, 69+5, i18n("File") );
 
   hotspots[4] = HotSpot( QRect( 35, 62, textLen, 14 ), 5 ); 
   hotspots[5] = HotSpot( QRect( 27, 52+5, 33, 21 ), 4 ); 
     
   paint.setFont( QFont("Helvetica", 12, QFont::Normal) );
   paint.setPen( textColor );
-  paint.drawText( 35 + textLen + 20, 69+5, klocale->translate("Edit") );
-  textLen = paint.fontMetrics().width( klocale->translate("Edit") );
+  paint.drawText( 35 + textLen + 20, 69+5, i18n("Edit") );
+  textLen = paint.fontMetrics().width( i18n("Edit") );
 
   hotspots[6] = HotSpot( QRect( 65, 62, textLen, 14 ), 5 ); // text
 
@@ -189,8 +189,8 @@ void WidgetCanvas::drawSampleWidgets()
     
   paint.setFont( QFont("Helvetica", 14, QFont::Normal) );
   paint.setPen( windowTextColor );
-  paint.drawText( 200, 127-10, klocale->translate( "Window text") );
-  textLen = paint.fontMetrics().width( klocale->translate("Window text") );
+  paint.drawText( 200, 127-10, i18n( "Window text") );
+  textLen = paint.fontMetrics().width( i18n("Window text") );
 
   hotspots[7] = HotSpot( QRect( 200, 113-10, textLen, 14 ), 9 ); // window text
   hotspots[8] = HotSpot( QRect( 116, 87, width()-138, height()-82-5 ), 8 ); // window bg
@@ -206,15 +206,15 @@ void WidgetCanvas::drawSampleWidgets()
 
   paint.setFont( QFont("Helvetica", 12, QFont::Normal) );
   paint.setPen( lightGray.dark() );
-  paint.drawText( 38, 97, klocale->translate("Disabled") );
+  paint.drawText( 38, 97, i18n("Disabled") );
     
   qDrawShadePanel ( &paint, 32, 101, 80, 25, cg, FALSE, 2,
 		    &brush);
    
   paint.setFont( QFont("Helvetica", 12, QFont::Normal) );
   paint.setPen( textColor );
-  paint.drawText( 38, 119, klocale->translate("Selected") );
-  textLen = paint.fontMetrics().width( klocale->translate("Selected") );
+  paint.drawText( 38, 119, i18n("Selected") );
+  textLen = paint.fontMetrics().width( i18n("Selected") );
 
   hotspots[10] = HotSpot( QRect( 38, 105, textLen, 14 ), 5 ); 
   hotspots[11] = HotSpot( QRect( 28, 101, 78, 21 ), 4 ); 

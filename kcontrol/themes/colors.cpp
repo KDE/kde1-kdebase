@@ -72,16 +72,16 @@ Colors::Colors (QWidget * aParent, const char *aName, bool aInit)
 
   mCbxColorNames = new QComboBox(this);
   mCbxColorNames->setFixedSize(160, 25);
-  mCbxColorNames->insertItem(klocale->translate("Inactive title bar"));
-  mCbxColorNames->insertItem(klocale->translate("Inactive title text"));
-  mCbxColorNames->insertItem(klocale->translate("Active title bar"));
-  mCbxColorNames->insertItem(klocale->translate("Active title text"));
-  mCbxColorNames->insertItem(klocale->translate("Background"));
-  mCbxColorNames->insertItem(klocale->translate("Text"));
-  mCbxColorNames->insertItem(klocale->translate("Select background"));
-  mCbxColorNames->insertItem(klocale->translate("Select text"));
-  mCbxColorNames->insertItem(klocale->translate("Window background"));
-  mCbxColorNames->insertItem(klocale->translate("Window text"));
+  mCbxColorNames->insertItem(i18n("Inactive title bar"));
+  mCbxColorNames->insertItem(i18n("Inactive title text"));
+  mCbxColorNames->insertItem(i18n("Active title bar"));
+  mCbxColorNames->insertItem(i18n("Active title text"));
+  mCbxColorNames->insertItem(i18n("Background"));
+  mCbxColorNames->insertItem(i18n("Text"));
+  mCbxColorNames->insertItem(i18n("Select background"));
+  mCbxColorNames->insertItem(i18n("Select text"));
+  mCbxColorNames->insertItem(i18n("Window background"));
+  mCbxColorNames->insertItem(i18n("Window text"));
   mGrid->addWidget(mCbxColorNames, 2, 0);
   connect(mCbxColorNames, SIGNAL(activated(int)), SLOT(slotWidgetColor(int)));
 

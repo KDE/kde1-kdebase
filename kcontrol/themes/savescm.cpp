@@ -23,7 +23,7 @@ SaveScm::SaveScm( QWidget *parent, const char *name )
 	QLabel* tmpQLabel;
 	tmpQLabel = new QLabel( this );
 	tmpQLabel->setGeometry( 15, 25, 35, 25 );
-	tmpQLabel->setText( klocale->translate("Name") );
+	tmpQLabel->setText( i18n("Name") );
 	tmpQLabel->setAlignment( 290 );
 
 	nameLine = new QLineEdit( this );
@@ -32,13 +32,13 @@ SaveScm::SaveScm( QWidget *parent, const char *name )
 	
 	ok = new QPushButton( this );
 	ok->setGeometry( 115, 80, 65, 30 );
-	ok->setText( klocale->translate("OK") );
+	ok->setText( i18n("OK") );
 	ok->setAutoDefault(TRUE);
 	connect( ok, SIGNAL(clicked()), SLOT(accept()) );
 
 	cancel = new QPushButton( this );
 	cancel->setGeometry( 190, 80, 60, 30 );
-	cancel->setText( klocale->translate("Cancel") );
+	cancel->setText( i18n("Cancel") );
 	cancel->setAutoDefault(TRUE);
 	connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
 

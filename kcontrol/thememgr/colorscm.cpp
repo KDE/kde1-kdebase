@@ -139,8 +139,8 @@ void WidgetCanvas::drawSampleWidgets()
     
   paint.setFont( QFont("Helvetica", 12, QFont::Bold) );
   paint.setPen( inactiveTextColor );
-  paint.drawText( (width()-25)/2-40, 20, klocale->translate("Inactive window") );
-  textLen = paint.fontMetrics().width(  klocale->translate("Inactive window") );
+  paint.drawText( (width()-25)/2-40, 20, i18n("Inactive window") );
+  textLen = paint.fontMetrics().width(  i18n("Inactive window") );
     
   hotspots[0] = HotSpot( QRect( (width()-25)/2-40, 8, textLen, 14 ), 1 ); // inactive text
   hotspots[1] = HotSpot( QRect( 5, 5, width()-30, 20 ), 0 ); // inactive title
@@ -155,8 +155,8 @@ void WidgetCanvas::drawSampleWidgets()
     
   paint.setFont( QFont("Helvetica", 12, QFont::Bold) );
   paint.setPen( activeTextColor );
-  paint.drawText( 30+5+width()-32-(width()-32)/2-50, 45+5,  klocale->translate("Active window") );
-  textLen = paint.fontMetrics().width(  klocale->translate("Active window" ));
+  paint.drawText( 30+5+width()-32-(width()-32)/2-50, 45+5,  i18n("Active window") );
+  textLen = paint.fontMetrics().width(  i18n("Active window" ));
     
   hotspots[2] = HotSpot( QRect( 30+5+width()-32-(width()-32)/2-50, 38, textLen, 14 ), 3 ); // Active text
   hotspots[3] = HotSpot( QRect( 25, 35, width()-32, 20 ), 2 ); // Active title
@@ -167,17 +167,17 @@ void WidgetCanvas::drawSampleWidgets()
     
   paint.setFont( QFont("Helvetica", 12, QFont::Normal) );
   paint.setPen(textColor );
-  textLen = paint.fontMetrics().width( klocale->translate("File") );
+  textLen = paint.fontMetrics().width( i18n("File") );
   qDrawShadePanel ( &paint, 30, 52+5+2, textLen + 10, 21, cg, FALSE, 2, &brush);
-  paint.drawText( 35, 69+5, klocale->translate("File") );
+  paint.drawText( 35, 69+5, i18n("File") );
 
   hotspots[4] = HotSpot( QRect( 35, 62, textLen, 14 ), 5 ); 
   hotspots[5] = HotSpot( QRect( 27, 52+5, 33, 21 ), 4 ); 
     
   paint.setFont( QFont("Helvetica", 12, QFont::Normal) );
   paint.setPen( textColor );
-  paint.drawText( 35 + textLen + 20, 69+5, klocale->translate("Edit") );
-  textLen = paint.fontMetrics().width( klocale->translate("Edit") );
+  paint.drawText( 35 + textLen + 20, 69+5, i18n("Edit") );
+  textLen = paint.fontMetrics().width( i18n("Edit") );
 
   hotspots[6] = HotSpot( QRect( 65, 62, textLen, 14 ), 5 ); // text
 
@@ -189,8 +189,8 @@ void WidgetCanvas::drawSampleWidgets()
     
   paint.setFont( QFont("Helvetica", 14, QFont::Normal) );
   paint.setPen( windowTextColor );
-  paint.drawText( 200, 127-10, klocale->translate( "Window text") );
-  textLen = paint.fontMetrics().width( klocale->translate("Window text") );
+  paint.drawText( 200, 127-10, i18n( "Window text") );
+  textLen = paint.fontMetrics().width( i18n("Window text") );
 
   hotspots[7] = HotSpot( QRect( 200, 113-10, textLen, 14 ), 9 ); // window text
   hotspots[8] = HotSpot( QRect( 116, 87, width()-138, height()-82-5 ), 8 ); // window bg
@@ -206,15 +206,15 @@ void WidgetCanvas::drawSampleWidgets()
 
   paint.setFont( QFont("Helvetica", 12, QFont::Normal) );
   paint.setPen( lightGray.dark() );
-  paint.drawText( 38, 97, klocale->translate("Disabled") );
+  paint.drawText( 38, 97, i18n("Disabled") );
     
   qDrawShadePanel ( &paint, 32, 101, 80, 25, cg, FALSE, 2,
 		    &brush);
    
   paint.setFont( QFont("Helvetica", 12, QFont::Normal) );
   paint.setPen( textColor );
-  paint.drawText( 38, 119, klocale->translate("Selected") );
-  textLen = paint.fontMetrics().width( klocale->translate("Selected") );
+  paint.drawText( 38, 119, i18n("Selected") );
+  textLen = paint.fontMetrics().width( i18n("Selected") );
 
   hotspots[10] = HotSpot( QRect( 38, 105, textLen, 14 ), 5 ); 
   hotspots[11] = HotSpot( QRect( 28, 101, 78, 21 ), 4 ); 
@@ -249,7 +249,7 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
   screen = DefaultScreen(kde_display);
   root = RootWindow(kde_display, screen);
     
-  setName( klocale->translate("Color Scheme") );
+  setName( i18n("Color Scheme") );
 	
   sampleWidgets = new WidgetCanvas( this );
 
@@ -261,7 +261,7 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
   connect( sampleWidgets, SIGNAL( widgetSelected( int ) ), 
 	   SLOT( slotWidgetColor( int ) ) );
 
-  QGroupBox *group = new QGroupBox( klocale->translate("Color Scheme"), this );
+  QGroupBox *group = new QGroupBox( i18n("Color Scheme"), this );
   group->setGeometry( 210, 170, 245, 150 );
 
   sList = new QListBox( group );
@@ -270,34 +270,34 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
   connect( sList, SIGNAL( highlighted( int ) ),
 	   SLOT( slotPreviewScheme( int ) ) );
 
-  saveBt = new QPushButton(  klocale->translate("Save"), group );
+  saveBt = new QPushButton(  i18n("Save"), group );
   saveBt->setGeometry( 140, 35, 95, 25 );
   connect( saveBt, SIGNAL( clicked() ), SLOT( slotSave() ) );
   ss = new SaveScm( 0,  "save scheme" );
 		
-  removeBt = new QPushButton(  klocale->translate("Remove"), group );
+  removeBt = new QPushButton(  i18n("Remove"), group );
   removeBt->setGeometry( 140, 70, 95, 25 );
   removeBt->setEnabled(FALSE);
 
-  QPushButton *button = new QPushButton(  klocale->translate("Help"), group );
+  QPushButton *button = new QPushButton(  i18n("Help"), group );
   button->setGeometry( 140, 105, 95, 25 );
   connect( button, SIGNAL( clicked() ), SLOT( slotHelp() ) );
 
-  group = new QGroupBox(  klocale->translate("Widget color"), this );
+  group = new QGroupBox(  i18n("Widget color"), this );
   group->setGeometry( 15, 170, 180, 95 );
 
   wcCombo = new QComboBox( group );
   wcCombo->setGeometry( 10, 20, 160, 25 );
-  wcCombo->insertItem(  klocale->translate("Inactive title bar") );
-  wcCombo->insertItem(  klocale->translate("Inactive title text") );
-  wcCombo->insertItem(  klocale->translate("Active title bar") );
-  wcCombo->insertItem(  klocale->translate("Active title text") );
-  wcCombo->insertItem(  klocale->translate("Background") );
-  wcCombo->insertItem(  klocale->translate("Text") );
-  wcCombo->insertItem(  klocale->translate("Select background") );
-  wcCombo->insertItem(  klocale->translate("Select text") );
-  wcCombo->insertItem(  klocale->translate("Window background") );
-  wcCombo->insertItem(  klocale->translate("Window text") );
+  wcCombo->insertItem(  i18n("Inactive title bar") );
+  wcCombo->insertItem(  i18n("Inactive title text") );
+  wcCombo->insertItem(  i18n("Active title bar") );
+  wcCombo->insertItem(  i18n("Active title text") );
+  wcCombo->insertItem(  i18n("Background") );
+  wcCombo->insertItem(  i18n("Text") );
+  wcCombo->insertItem(  i18n("Select background") );
+  wcCombo->insertItem(  i18n("Select text") );
+  wcCombo->insertItem(  i18n("Window background") );
+  wcCombo->insertItem(  i18n("Window text") );
   connect( wcCombo, SIGNAL( activated(int) ),
 	   SLOT( slotWidgetColor(int)  )  );
 	
@@ -308,7 +308,7 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
   connect( colorButton, SIGNAL( changed(const QColor &) ),
 	   SLOT( slotSelectColor(const QColor &) ) );
 	
-  group = new QGroupBox(  klocale->translate("Contrast"), this );
+  group = new QGroupBox(  i18n("Contrast"), this );
   group->setGeometry( 15, 270, 180, 50 );
 	
   sb = new QSlider( QSlider::Horizontal,group,"Slider" );
@@ -321,11 +321,11 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
     
   QLabel *label = new QLabel( group );
   label->setGeometry( 10, 20, 45, 20 );
-  label->setText( klocale->translate("Low"));
+  label->setText( i18n("Low"));
     
   label = new QLabel( group );
   label->setGeometry( 130, 20, 40, 20 );
-  label->setText(  klocale->translate("High"));    
+  label->setText(  i18n("High"));    
 	
   kwmcom_init( qt_xdisplay(), 0 );
 }
@@ -340,7 +340,7 @@ void KColorScheme::slotSave()
 {
   // Prepare the ss dialog.
 	
-  ss->setCaption( klocale->translate("Save scheme"));
+  ss->setCaption( i18n("Save scheme"));
   ss->nameLine->setFocus();
 	
   int ind = sList->currentItem();
@@ -370,16 +370,16 @@ void KColorScheme::slotSave()
     // against dereferencing null pointers
 		
     if ( str == "KDE Default" ) {
-      KMsgBox::message(0,  klocale->translate("Error"), 
-		       klocale->translate( "You have chosen a name used by a supplied color scheme"), 2 );
+      KMsgBox::message(0,  i18n("Error"), 
+		       i18n( "You have chosen a name used by a supplied color scheme"), 2 );
       return;
     }
 		
     int i;
     for ( i = 1; it.current(); ++it ) {
       if ( str == it.current() && i <= SUPPLIED_SCHEMES) {
-	KMsgBox::message(0, klocale->translate("Error"), 
-	klocale->translate( "You have chosen a name used by a supplied color scheme"), 2 );
+	KMsgBox::message(0, i18n("Error"), 
+	i18n( "You have chosen a name used by a supplied color scheme"), 2 );
 	return;
       }
       i++;
@@ -464,7 +464,7 @@ void KColorScheme::initSchemeList()
 {
   sList->clear();
 
-  sList->insertItem( klocale->translate("KDE Default"), 0 );
+  sList->insertItem( i18n("KDE Default"), 0 );
 	
   QStrListIterator it( *schemeList );
   int i;
@@ -690,10 +690,10 @@ void KColorScheme::readSettings( int )
   else {
     schemes = 0;
     if(
-       QMessageBox::query(klocale->translate("Display Setup"),
-			  klocale->translate("No desktop color schemes were found.\nDo you want to install the default color schemes now ?"), 
-			  klocale->translate("Yes"), 
-			  klocale->translate("No") )
+       QMessageBox::query(i18n("Display Setup"),
+			  i18n("No desktop color schemes were found.\nDo you want to install the default color schemes now ?"), 
+			  i18n("Yes"), 
+			  i18n("No") )
        ) {
       installSchemes();
       config = KApplication::getKApplication()->getConfig();
