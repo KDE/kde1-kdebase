@@ -329,6 +329,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, window, True, ButtonPressMask, 
 		GrabModeSync, GrabModeAsync, None, normal_cursor );
  
+    unmap_events = 0;
 }  
 
 Client::~Client(){
@@ -339,6 +340,23 @@ Client::~Client(){
   if (is_active && myapp->operations->isVisible())
     myapp->operations->hide();
 }
+
+
+void Client::showClient(){
+  XMapWindow(qt_xdisplay(),window);
+  show();
+}
+
+void Client::hideClient(){
+  hide();
+  XUnmapWindow(qt_xdisplay(), window);
+  unmap_events++;
+}
+
+
+
+
+
 
 
 static QPixmap* pm_max = NULL;
@@ -1108,7 +1126,7 @@ void Client::iconify(bool animation){
   iconified = True;
 
   if (state == NormalState){
-    hide();           // hide the frame
+    hideClient();
     if (animation)
       animate_size_change(geometry, 
 			  QRect(geometry.x()+geometry.width()/2,
@@ -1143,10 +1161,7 @@ void Client::unIconify(bool animation){
 			  title_rect.x(), 
 			  width()-title_rect.right());
     
-    show();                       // unhide the window
-    XMapWindow(qt_xdisplay(), winId());
-    XRaiseWindow(qt_xdisplay(), winId());
-    XMapWindow(qt_xdisplay(), window);
+    showClient();
     manager->setWindowState(this, NormalState);
     manager->raiseClient( this );
   }
@@ -1180,7 +1195,7 @@ void Client::ontoDesktop(int new_desktop){
   manager->changedClient(this);
   
   if (state == NormalState){
-    hide();
+    hideClient();
     manager->setWindowState(this, IconicState); 
 
     if (isActive())
@@ -1191,9 +1206,8 @@ void Client::ontoDesktop(int new_desktop){
   manager->ontoDesktopTransientOf(this);
 
   if (desktop == manager->currentDesktop() && !isIconified()){
-    show();  
+    showClient();  
     manager->setWindowState(this, NormalState);
-    XMapWindow(qt_xdisplay(), window);
     manager->raiseClient( this );
     manager->activateClient( this );
   }
@@ -1296,9 +1310,8 @@ void Client::stickyToggled(bool depressed){
   if (depressed){
     pm = pm_pin_down;
     if (state != NormalState && !isIconified()){
-      show();  
+      showClient();  
       manager->setWindowState(this, NormalState);
-      XMapWindow(qt_xdisplay(), window);
       manager->raiseClient( this );
       manager->activateClient( this );
     }

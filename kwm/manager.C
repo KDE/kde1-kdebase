@@ -275,8 +275,7 @@ void Manager::mapRequest(XMapRequestEvent *e){
 	manage(c->window);
 	break;
       case NormalState:
-        XMapWindow(qt_xdisplay(), c->winId());
-        XMapWindow(qt_xdisplay(), c->window);
+	c->showClient();
         raiseClient(c);
         setWindowState(c, NormalState);
 	activateClient(c);
@@ -292,6 +291,10 @@ void Manager::unmapNotify(XUnmapEvent *e){
     if (c && c->window == e->window) {
       if(c->reparenting){
 	c->reparenting = FALSE;
+	return;
+      }
+      if (c->unmap_events > 0){
+	c->unmap_events--;
 	return;
       }
       switch (c->state) {
@@ -844,12 +847,11 @@ void Manager::manage(Window w, bool mapped){
   sendToModules(module_win_add, c->window);
 
   if (dohide){
-    c->hide();
+    c->hideClient();
     setWindowState(c, IconicState); 
   }
   else {
-    c->show();
-    XMapWindow(qt_xdisplay(), c->window);
+    c->showClient();
     setWindowState(c, NormalState);
 //     if (c->decoration_not_allowed)
 //       lowerClient(c);
@@ -903,7 +905,7 @@ void Manager::manage(Window w, bool mapped){
 
 void Manager::withdraw(Client* c){
   KWM::moveToDesktop(c->window, 0);
-  c->hide();
+  c->hideClient();
   gravitate(c, TRUE);
   XReparentWindow(qt_xdisplay(), c->window, qt_xrootwin(), 
 		  c->geometry.x() , c->geometry.y());
@@ -949,16 +951,16 @@ void Manager::activateClient(Client* c, bool set_revert){
       if (cc->trans != None && cc->trans != qt_xrootwin()){
 	cc = getClient(cc->trans);
 	if (cc)
-	  iconifyTransientOf(cc);
+	  iconifyFloatingOf(cc);
       }
       else {
-	iconifyTransientOf(cc);
+	iconifyFloatingOf(cc);
       }
     }
   }
 
   c->setactive( TRUE );
-  unIconifyTransientOf(c);
+  unIconifyFloatingOf(c);
   
   XSetInputFocus(qt_xdisplay(), c->window, RevertToPointerRoot, timeStamp());
   
@@ -1116,10 +1118,10 @@ void Manager::noFocus(){
     if (c->trans != None && c->trans != qt_xrootwin()){
       c = getClient(c->trans);
       if (c)
-	iconifyTransientOf(c);
+	iconifyFloatingOf(c);
     }
     else {
-      iconifyTransientOf(c);
+      iconifyFloatingOf(c);
     }
 
   }
@@ -1177,7 +1179,7 @@ void Manager::switchDesktop(int new_desktop){
   Client* c;
   for (c=clients_sorted.first(); c ; c=clients_sorted.next()){
     if (c->isOnDesktop(current_desktop) && !c->isIconified() && !c->isSticky()){
-      c->hide();
+      c->hideClient();
       setWindowState(c, IconicState); 
     }
   }
@@ -1188,8 +1190,7 @@ void Manager::switchDesktop(int new_desktop){
 
   for (c=clients_sorted.last(); c ; c=clients_sorted.prev()){
     if (c->isOnDesktop(current_desktop) && !c->isIconified() && !c->isSticky()){
-      c->show();
-      XMapWindow(qt_xdisplay(), c->window);
+      c->showClient();
       setWindowState(c, NormalState);
     }
   }
@@ -2028,6 +2029,35 @@ void Manager::stickyTransientOf(Client* c, bool sticky){
     if (it.current() != c && it.current()->trans == c->window){
       if (it.current()->isSticky() != sticky)
 	it.current()->buttonSticky->toggle();
+    }
+  }
+}
+
+void Manager::iconifyFloatingOf(Client* c){
+  QListIterator<Client> it(clients);
+  for (it.toFirst(); it.current(); ++it){
+    if (it.current() != c && it.current()->trans == c->window
+	&& it.current()->getDecoration() == 2){
+      it.current()->iconify(False);
+      sendToModules(module_win_remove, it.current()->window);
+      it.current()->hidden_for_modules = TRUE; 
+      clients_traversing.removeRef(it.current());
+    }
+  }
+}
+
+
+void Manager::unIconifyFloatingOf(Client* c){
+  QListIterator<Client> it(clients);
+  for (it.toFirst(); it.current(); ++it){
+    if (it.current() != c && it.current()->trans == c->window
+	&& it.current()->getDecoration() == 2){
+      if (it.current()->hidden_for_modules){
+	sendToModules(module_win_add, it.current()->window);
+	it.current()->hidden_for_modules = FALSE;
+	clients_traversing.insert(0,it.current());
+      }
+      it.current()->unIconify(False);
     }
   }
 }

@@ -128,6 +128,9 @@ public:
   void ontoDesktopTransientOf(Client* c);
   void stickyTransientOf(Client* c, bool sticky);
 
+  void iconifyFloatingOf(Client* c);
+  void unIconifyFloatingOf(Client* c);
+
 signals:
   void reConfigure();
   void showLogout();

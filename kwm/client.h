@@ -67,6 +67,14 @@ public:
   ~Client();
    
   Window      window;
+
+  void showClient();
+  void hideClient();
+  /* the number of unmap events produced by us in hideClient.
+   * These will be ignored in Manager::unmapNotify
+   */
+  int unmap_events; 
+
   
   Window      trans;
   long      decoration;
