@@ -42,6 +42,7 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
   CHECK_PTR( popup_m );
   popup_m->setCheckable( TRUE );
 
+  popup_m->insertItem(i18n("Display Settings"), this, SLOT(displaySettings()));
   popup_m->insertItem(i18n("Background Settings"), this, SLOT(settings()));
   popup_m->insertSeparator();
   o_id = popup_m->insertItem(i18n("Common Background"), this, SLOT(toggleOneDesktop()));
@@ -61,15 +62,15 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
   modePopup->insertItem(i18n("SymmetricalTiled") );
   modePopup->insertItem(i18n("SymmetricalMirrored") );
   modePopup->insertItem(i18n("Scaled") );
-  connect( modePopup, SIGNAL( activated( int ) ), 
+  connect( modePopup, SIGNAL( activated( int ) ),
 	   this, SLOT( slotModeSelected( int ) ) );
 
   // setup icon
-  QString pixdir = KApplication::kde_datadir();  
+  QString pixdir = KApplication::kde_datadir();
   pixmap = (pixdir + "/kdisplay/pics/logo.xpm").data();
 
   KDNDDropZone *myDropZone = new KDNDDropZone(this, DndURL);
-  connect( myDropZone, SIGNAL( dropAction( KDNDDropZone *) ), 
+  connect( myDropZone, SIGNAL( dropAction( KDNDDropZone *) ),
 	   this, SLOT( slotDropEvent( KDNDDropZone *) ) );
 
   applyDesktop( current );
@@ -118,7 +119,7 @@ void KBGndManager::desktopChange( int d )
 
   if ( current != d )
     cacheDesktop();
-      
+
   applyDesktop( d );
 
   current = d;
@@ -131,12 +132,12 @@ void KBGndManager::commandReceived( QString com )
   if ( com == "kbgwm_reconfigure" )
     {
       debug( "Got background reload event" );
-      
+
       QString oldName = desktops[current].getName();
-      
-      KConfig config2(KApplication::kde_configdir() + "/kdisplayrc", 
+
+      KConfig config2(KApplication::kde_configdir() + "/kdisplayrc",
 		      KApplication::localconfigdir() + "/kdisplayrc");
-      
+
       config2.setGroup( "Desktop Common" );
       oneDesktopMode = config2.readBoolEntry( "OneDesktopMode", false );
       popup_m->setItemChecked( o_id, oneDesktopMode );
@@ -196,7 +197,7 @@ void KBGndManager::cacheDesktop()
 void KBGndManager::readSettings()
 {
 
-  KConfig config2(KApplication::kde_configdir() + "/kdisplayrc", 
+  KConfig config2(KApplication::kde_configdir() + "/kdisplayrc",
 		  KApplication::localconfigdir() + "/kdisplayrc");
 
   config2.setGroup( "Desktop Common" );
@@ -229,9 +230,9 @@ void KBGndManager::toggleOneDesktop()
   oneDesktopMode = !oneDesktopMode;
   desktop = KWM::currentDesktop() - 1;
 
-  KConfig config2(KApplication::kde_configdir() + "/kdisplayrc", 
+  KConfig config2(KApplication::kde_configdir() + "/kdisplayrc",
 		  KApplication::localconfigdir() + "/kdisplayrc");
-  
+
   config2.setGroup( "Desktop Common" );
   config2.writeEntry( "OneDesktopMode", oneDesktopMode );
   config2.writeEntry( "DeskNum", desktop );
@@ -273,6 +274,13 @@ void KBGndManager::mousePressEvent(QMouseEvent *e)
   }
 }
 
+void KBGndManager::displaySettings()
+{
+  KShellProcess proc;
+  proc << "kcmdisplay";
+  proc.start(KShellProcess::DontCare);
+}
+
 
 void KBGndManager::settings()
 {
@@ -285,7 +293,7 @@ void KBGndManager::settings()
 void KBGndManager::dock()
 {
   if (!docked) {
-    
+
     // prepare panel to accept this widget
     KWM::setDockWindow (this->winId());
 
@@ -294,16 +302,16 @@ void KBGndManager::dock()
 
     // finally dock the widget
     this->show();
-    
+
     docked = true;
-  } 
+  }
 }
 
 void KBGndManager::undock()
 {
   if (docked) {
 
-    // the widget's window has to be destroyed in order 
+    // the widget's window has to be destroyed in order
     // to undock from the panel. Simply using hide() is
     // not enough (seems to be necessary though).
 

@@ -57,6 +57,7 @@ public slots:
 
 private slots:
   void mousePressEvent(QMouseEvent *e);
+  void displaySettings();
   void settings();
 
 private:
