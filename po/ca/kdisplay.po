@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-11-22 01:13+0100\n"
+"POT-Creation-Date: 1998-11-29 01:12+0100\n"
 "PO-Revision-Date: 1998-05-19 22:50+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgstr "&Renombrar ..."
 msgid "&Common Background"
 msgstr "&Fons"
 
-#: backgnd.cpp:213 colorscm.cpp:94
+#: backgnd.cpp:213 colorscm.cpp:82
 msgid "Colors"
 msgstr "Colors"
 
@@ -242,95 +242,95 @@ msgstr "Error en nombrar"
 msgid "Selected directory doesn't exists"
 msgstr ""
 
-#: colorscm.cpp:120
+#: colorscm.cpp:104
 msgid "Color Scheme"
 msgstr "Esquema de color"
 
-#: colorscm.cpp:131
+#: colorscm.cpp:115
 msgid "Current scheme"
 msgstr "Esquema actual"
 
-#: colorscm.cpp:133
+#: colorscm.cpp:117
 msgid "KDE default"
 msgstr "KDE per omissió"
 
-#: colorscm.cpp:146
+#: colorscm.cpp:130
 msgid "&Add ..."
 msgstr "&Afegir ..."
 
-#: colorscm.cpp:163
+#: colorscm.cpp:147
 msgid "&Save changes"
 msgstr "&Desar canvis"
 
-#: colorscm.cpp:177
+#: colorscm.cpp:161
 msgid "Widget color"
 msgstr "Color de l'estri"
 
-#: colorscm.cpp:184
+#: colorscm.cpp:168
 msgid "Inactive title bar"
 msgstr "Barra de títol inactiva"
 
-#: colorscm.cpp:185
+#: colorscm.cpp:169
 msgid "Inactive title text"
 msgstr "Text de títol inactiu"
 
-#: colorscm.cpp:186
+#: colorscm.cpp:170
 msgid "Inactive title blend"
 msgstr "Barreja de títol inactiu"
 
-#: colorscm.cpp:187
+#: colorscm.cpp:171
 msgid "Active title bar"
 msgstr "Barra de títol activa"
 
-#: colorscm.cpp:188
+#: colorscm.cpp:172
 msgid "Active title text"
 msgstr "Text de títol actiu"
 
-#: colorscm.cpp:189
+#: colorscm.cpp:173
 msgid "Active title blend"
 msgstr "Barreja de títol actiu"
 
-#: colorscm.cpp:190
+#: colorscm.cpp:174
 msgid "Background"
 msgstr "Fons"
 
-#: colorscm.cpp:191
+#: colorscm.cpp:175
 msgid "Text"
 msgstr "Text"
 
-#: colorscm.cpp:192
+#: colorscm.cpp:176
 msgid "Select background"
 msgstr "Fons de selecció"
 
-#: colorscm.cpp:193
+#: colorscm.cpp:177
 msgid "Select text"
 msgstr "Text de selecció"
 
-#: colorscm.cpp:194
+#: colorscm.cpp:178
 msgid "Window background"
 msgstr "Fons de finestra"
 
-#: colorscm.cpp:195 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+#: colorscm.cpp:179 widgetcanvas.cpp:175 widgetcanvas.cpp:176
 msgid "Window text"
 msgstr "Text de la finestra"
 
-#: colorscm.cpp:223
+#: colorscm.cpp:207
 msgid "Contrast"
 msgstr "Contrast"
 
-#: colorscm.cpp:239
+#: colorscm.cpp:223
 msgid "&Low"
 msgstr "&Baix"
 
-#: colorscm.cpp:247
+#: colorscm.cpp:231
 msgid "High"
 msgstr "Alt"
 
-#: colorscm.cpp:320
+#: colorscm.cpp:304
 msgid "Error removing"
 msgstr "Error en eliminar"
 
-#: colorscm.cpp:321
+#: colorscm.cpp:305
 msgid ""
 "This color scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -340,11 +340,11 @@ msgstr ""
 "Potser no teniu permissos per alterar el fitxer\n"
 "de sistema on es guarda l'esquema de color."
 
-#: colorscm.cpp:378
+#: colorscm.cpp:362
 msgid "Naming error"
 msgstr "Error en nombrar"
 
-#: colorscm.cpp:379
+#: colorscm.cpp:363
 msgid ""
 "Please choose a unique name for the new color\n"
 "scheme. The one you entered already appears\n"

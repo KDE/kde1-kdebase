@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay \n"
-"POT-Creation-Date: 1998-11-22 01:13+0100\n"
+"POT-Creation-Date: 1998-11-29 01:12+0100\n"
 "PO-Revision-Date: 1998-06-25 18:45+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -23,7 +23,7 @@ msgstr "&Zmieñ nazwê..."
 msgid "&Common Background"
 msgstr "&T³o"
 
-#: backgnd.cpp:213 colorscm.cpp:94
+#: backgnd.cpp:213 colorscm.cpp:82
 msgid "Colors"
 msgstr "Kolory"
 
@@ -235,95 +235,95 @@ msgstr "B³±d nazwy"
 msgid "Selected directory doesn't exists"
 msgstr ""
 
-#: colorscm.cpp:120
+#: colorscm.cpp:104
 msgid "Color Scheme"
 msgstr "Schemat kolorów"
 
-#: colorscm.cpp:131
+#: colorscm.cpp:115
 msgid "Current scheme"
 msgstr "Bie¿±cy schemat"
 
-#: colorscm.cpp:133
+#: colorscm.cpp:117
 msgid "KDE default"
 msgstr "KDE domy¶lne"
 
-#: colorscm.cpp:146
+#: colorscm.cpp:130
 msgid "&Add ..."
 msgstr "&Dodaj..."
 
-#: colorscm.cpp:163
+#: colorscm.cpp:147
 msgid "&Save changes"
 msgstr "&Zapisz zmiany"
 
-#: colorscm.cpp:177
+#: colorscm.cpp:161
 msgid "Widget color"
 msgstr "Kolor elementu"
 
-#: colorscm.cpp:184
+#: colorscm.cpp:168
 msgid "Inactive title bar"
 msgstr "Nieaktywny pasek tytu³u"
 
-#: colorscm.cpp:185
+#: colorscm.cpp:169
 msgid "Inactive title text"
 msgstr "Nieaktywny tytu³ okna"
 
-#: colorscm.cpp:186
+#: colorscm.cpp:170
 msgid "Inactive title blend"
 msgstr "Nieaktywne przej¶cie tytu³u"
 
-#: colorscm.cpp:187
+#: colorscm.cpp:171
 msgid "Active title bar"
 msgstr "Aktywny pasek tytu³u"
 
-#: colorscm.cpp:188
+#: colorscm.cpp:172
 msgid "Active title text"
 msgstr "Aktywny tytu³ okna"
 
-#: colorscm.cpp:189
+#: colorscm.cpp:173
 msgid "Active title blend"
 msgstr "Aktywne przej¶cie tytu³u"
 
-#: colorscm.cpp:190
+#: colorscm.cpp:174
 msgid "Background"
 msgstr "T³o"
 
-#: colorscm.cpp:191
+#: colorscm.cpp:175
 msgid "Text"
 msgstr "Tekst"
 
-#: colorscm.cpp:192
+#: colorscm.cpp:176
 msgid "Select background"
 msgstr "T³o wybranego"
 
-#: colorscm.cpp:193
+#: colorscm.cpp:177
 msgid "Select text"
 msgstr "Tekst wybranego"
 
-#: colorscm.cpp:194
+#: colorscm.cpp:178
 msgid "Window background"
 msgstr "T³o okna"
 
-#: colorscm.cpp:195 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+#: colorscm.cpp:179 widgetcanvas.cpp:175 widgetcanvas.cpp:176
 msgid "Window text"
 msgstr "Tekst w oknie"
 
-#: colorscm.cpp:223
+#: colorscm.cpp:207
 msgid "Contrast"
 msgstr "Kontrast"
 
-#: colorscm.cpp:239
+#: colorscm.cpp:223
 msgid "&Low"
 msgstr "&Niski"
 
-#: colorscm.cpp:247
+#: colorscm.cpp:231
 msgid "High"
 msgstr "Wysoki"
 
-#: colorscm.cpp:320
+#: colorscm.cpp:304
 msgid "Error removing"
 msgstr "B³±d usuniêcia"
 
-#: colorscm.cpp:321
+#: colorscm.cpp:305
 msgid ""
 "This color scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -333,11 +333,11 @@ msgstr ""
 "Prawdopodobnie nie masz praw do pliku systemowego,\n"
 "w którym przechowywane s± schematy kolorów."
 
-#: colorscm.cpp:378
+#: colorscm.cpp:362
 msgid "Naming error"
 msgstr "B³±d nazwy"
 
-#: colorscm.cpp:379
+#: colorscm.cpp:363
 msgid ""
 "Please choose a unique name for the new color\n"
 "scheme. The one you entered already appears\n"

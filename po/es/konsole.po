@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-24 01:15+0100\n"
+"POT-Creation-Date: 1998-11-28 01:12+0100\n"
 "PO-Revision-Date: 1998-11-27 23:01+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -123,17 +123,17 @@ msgstr "Nuevo"
 msgid "Sessions"
 msgstr "Sesiones"
 
-#: main.C:471
+#: main.C:470
 #, c-format
 msgid "(%d columns x %d lines)"
 msgstr "(%d columas x %d renglones)"
 
-#: main.C:501
+#: main.C:500
 #, c-format
 msgid "About %s"
 msgstr "Acerca de %s"
 
-#: main.C:503
+#: main.C:502
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -154,6 +154,6 @@ msgstr ""
 "SIN GARANTIA DE CUALQUIER TIPO.\n"
 "Vea `LICENSE.readme´ para los detalles."
 
-#: main.C:819
+#: main.C:818
 msgid "Welcome to the console"
 msgstr "Bienvenido a la consola"

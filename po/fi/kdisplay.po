@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDISPLAY\n"
-"POT-Creation-Date: 1998-11-22 01:13+0100\n"
+"POT-Creation-Date: 1998-11-29 01:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr "&Nimeä Uudelleen..."
 msgid "&Common Background"
 msgstr "&Yhteinen tausta"
 
-#: backgnd.cpp:213 colorscm.cpp:94
+#: backgnd.cpp:213 colorscm.cpp:82
 msgid "Colors"
 msgstr "Värit"
 
@@ -227,95 +227,95 @@ msgstr "Hakemistovirhe"
 msgid "Selected directory doesn't exists"
 msgstr "Valittua hakemistoa ei ole olemassa"
 
-#: colorscm.cpp:120
+#: colorscm.cpp:104
 msgid "Color Scheme"
 msgstr "Väriteema"
 
-#: colorscm.cpp:131
+#: colorscm.cpp:115
 msgid "Current scheme"
 msgstr "Nykyinen teema"
 
-#: colorscm.cpp:133
+#: colorscm.cpp:117
 msgid "KDE default"
 msgstr "KDE:n Oletus"
 
-#: colorscm.cpp:146
+#: colorscm.cpp:130
 msgid "&Add ..."
 msgstr "&Lisää ..."
 
-#: colorscm.cpp:163
+#: colorscm.cpp:147
 msgid "&Save changes"
 msgstr "&Tallenna muutokset"
 
-#: colorscm.cpp:177
+#: colorscm.cpp:161
 msgid "Widget color"
 msgstr "Työkalun väri"
 
-#: colorscm.cpp:184
+#: colorscm.cpp:168
 msgid "Inactive title bar"
 msgstr "Passiivinen otsikkopalkki"
 
-#: colorscm.cpp:185
+#: colorscm.cpp:169
 msgid "Inactive title text"
 msgstr "Passiivinen otsikkoteksti"
 
-#: colorscm.cpp:186
+#: colorscm.cpp:170
 msgid "Inactive title blend"
 msgstr "Passiivisen otsikon sekoitus"
 
-#: colorscm.cpp:187
+#: colorscm.cpp:171
 msgid "Active title bar"
 msgstr "Aktiivinen otsikkopalkki"
 
-#: colorscm.cpp:188
+#: colorscm.cpp:172
 msgid "Active title text"
 msgstr "Aktiivinen otsikkoteksti"
 
-#: colorscm.cpp:189
+#: colorscm.cpp:173
 msgid "Active title blend"
 msgstr "Aktiivisen otsikon sekoitus"
 
-#: colorscm.cpp:190
+#: colorscm.cpp:174
 msgid "Background"
 msgstr "Tausta"
 
-#: colorscm.cpp:191
+#: colorscm.cpp:175
 msgid "Text"
 msgstr "Teksti"
 
-#: colorscm.cpp:192
+#: colorscm.cpp:176
 msgid "Select background"
 msgstr "Valinnan tausta"
 
-#: colorscm.cpp:193
+#: colorscm.cpp:177
 msgid "Select text"
 msgstr "Valinnan teksti"
 
-#: colorscm.cpp:194
+#: colorscm.cpp:178
 msgid "Window background"
 msgstr "Ikkunan tausta"
 
-#: colorscm.cpp:195 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+#: colorscm.cpp:179 widgetcanvas.cpp:175 widgetcanvas.cpp:176
 msgid "Window text"
 msgstr "Ikkunan teksti"
 
-#: colorscm.cpp:223
+#: colorscm.cpp:207
 msgid "Contrast"
 msgstr "Kontrasti"
 
-#: colorscm.cpp:239
+#: colorscm.cpp:223
 msgid "&Low"
 msgstr "&Matala"
 
-#: colorscm.cpp:247
+#: colorscm.cpp:231
 msgid "High"
 msgstr "Korkea"
 
-#: colorscm.cpp:320
+#: colorscm.cpp:304
 msgid "Error removing"
 msgstr "Virhe poistaessa"
 
-#: colorscm.cpp:321
+#: colorscm.cpp:305
 msgid ""
 "This color scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -325,11 +325,11 @@ msgstr ""
 "Sinulla ei todennäköisesti ole oikeuksia muuttaa\n"
 "väritiedostoa siellä minne se on talletettu."
 
-#: colorscm.cpp:378
+#: colorscm.cpp:362
 msgid "Naming error"
 msgstr "Nimeämisvirhe"
 
-#: colorscm.cpp:379
+#: colorscm.cpp:363
 msgid ""
 "Please choose a unique name for the new color\n"
 "scheme. The one you entered already appears\n"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-22 01:13+0100\n"
+"POT-Creation-Date: 1998-11-29 01:12+0100\n"
 "PO-Revision-Date: 1998-01-29 17:00+CET-1\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgstr "&Omdøb..."
 msgid "&Common Background"
 msgstr "&Baggrund"
 
-#: backgnd.cpp:213 colorscm.cpp:94
+#: backgnd.cpp:213 colorscm.cpp:82
 msgid "Colors"
 msgstr "Farver"
 
@@ -246,98 +246,98 @@ msgstr "Navngivelses fejl"
 msgid "Selected directory doesn't exists"
 msgstr ""
 
-#: colorscm.cpp:120
+#: colorscm.cpp:104
 msgid "Color Scheme"
 msgstr "Farve skema"
 
-#: colorscm.cpp:131
+#: colorscm.cpp:115
 #, fuzzy
 msgid "Current scheme"
 msgstr "Aktuelle skema"
 
-#: colorscm.cpp:133
+#: colorscm.cpp:117
 msgid "KDE default"
 msgstr "KDE standard"
 
-#: colorscm.cpp:146
+#: colorscm.cpp:130
 msgid "&Add ..."
 msgstr "&Tilføj..."
 
-#: colorscm.cpp:163
+#: colorscm.cpp:147
 msgid "&Save changes"
 msgstr "&Gem ændringer"
 
-#: colorscm.cpp:177
+#: colorscm.cpp:161
 msgid "Widget color"
 msgstr "Widget farve"
 
-#: colorscm.cpp:184
+#: colorscm.cpp:168
 msgid "Inactive title bar"
 msgstr "Inaktiv titelbjælke"
 
-#: colorscm.cpp:185
+#: colorscm.cpp:169
 msgid "Inactive title text"
 msgstr "Inaktiv titeltekst"
 
-#: colorscm.cpp:186
+#: colorscm.cpp:170
 #, fuzzy
 msgid "Inactive title blend"
 msgstr "Inaktiv titel blanding"
 
-#: colorscm.cpp:187
+#: colorscm.cpp:171
 msgid "Active title bar"
 msgstr "Aktiv titelbjælke"
 
-#: colorscm.cpp:188
+#: colorscm.cpp:172
 msgid "Active title text"
 msgstr "Aktiv titeltekst"
 
-#: colorscm.cpp:189
+#: colorscm.cpp:173
 #, fuzzy
 msgid "Active title blend"
 msgstr "Aktiv titelblanding"
 
-#: colorscm.cpp:190
+#: colorscm.cpp:174
 msgid "Background"
 msgstr "Baggrund"
 
-#: colorscm.cpp:191
+#: colorscm.cpp:175
 msgid "Text"
 msgstr "Tekst"
 
-#: colorscm.cpp:192
+#: colorscm.cpp:176
 msgid "Select background"
 msgstr "Vælg baggrund"
 
-#: colorscm.cpp:193
+#: colorscm.cpp:177
 msgid "Select text"
 msgstr "Vælg tekst"
 
-#: colorscm.cpp:194
+#: colorscm.cpp:178
 msgid "Window background"
 msgstr "Vindues baggrund"
 
-#: colorscm.cpp:195 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+#: colorscm.cpp:179 widgetcanvas.cpp:175 widgetcanvas.cpp:176
 msgid "Window text"
 msgstr "Vindues tekst"
 
-#: colorscm.cpp:223
+#: colorscm.cpp:207
 msgid "Contrast"
 msgstr "Kontrast"
 
-#: colorscm.cpp:239
+#: colorscm.cpp:223
 msgid "&Low"
 msgstr "&Lav"
 
-#: colorscm.cpp:247
+#: colorscm.cpp:231
 msgid "High"
 msgstr "Høj"
 
-#: colorscm.cpp:320
+#: colorscm.cpp:304
 msgid "Error removing"
 msgstr "Kunne ikke fjerne"
 
-#: colorscm.cpp:321
+#: colorscm.cpp:305
 msgid ""
 "This color scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -347,11 +347,11 @@ msgstr ""
 "Måske har du ikke tilladelse til at ændre det\n"
 "filsystem hvor farve skemaet er gemt."
 
-#: colorscm.cpp:378
+#: colorscm.cpp:362
 msgid "Naming error"
 msgstr "Navngivelses fejl"
 
-#: colorscm.cpp:379
+#: colorscm.cpp:363
 msgid ""
 "Please choose a unique name for the new color\n"
 "scheme. The one you entered already appears\n"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
-"POT-Creation-Date: 1998-11-22 01:13+0100\n"
+"POT-Creation-Date: 1998-11-29 01:12+0100\n"
 "PO-Revision-Date: 1998-11-17 10:29+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -29,7 +29,7 @@ msgstr "Pø&ejmenovat ..."
 msgid "&Common Background"
 msgstr "Spoleèné &pozadí"
 
-#: backgnd.cpp:213 colorscm.cpp:94
+#: backgnd.cpp:213 colorscm.cpp:82
 msgid "Colors"
 msgstr "Barvy"
 
@@ -229,95 +229,95 @@ msgstr "Adresáøová chyba"
 msgid "Selected directory doesn't exists"
 msgstr "Vybraný adresáø neexistuje"
 
-#: colorscm.cpp:120
+#: colorscm.cpp:104
 msgid "Color Scheme"
 msgstr "Barevné schéma"
 
-#: colorscm.cpp:131
+#: colorscm.cpp:115
 msgid "Current scheme"
 msgstr "Souèasné schéma"
 
-#: colorscm.cpp:133
+#: colorscm.cpp:117
 msgid "KDE default"
 msgstr "KDE implicitní"
 
-#: colorscm.cpp:146
+#: colorscm.cpp:130
 msgid "&Add ..."
 msgstr "Pøid&at ..."
 
-#: colorscm.cpp:163
+#: colorscm.cpp:147
 msgid "&Save changes"
 msgstr "&Ulo¾it zmìny"
 
-#: colorscm.cpp:177
+#: colorscm.cpp:161
 msgid "Widget color"
 msgstr "Barva widgetu"
 
-#: colorscm.cpp:184
+#: colorscm.cpp:168
 msgid "Inactive title bar"
 msgstr "Neaktivní titulek"
 
-#: colorscm.cpp:185
+#: colorscm.cpp:169
 msgid "Inactive title text"
 msgstr "Text neaktivního titulku"
 
-#: colorscm.cpp:186
+#: colorscm.cpp:170
 msgid "Inactive title blend"
 msgstr "Clona neaktivního titulku"
 
-#: colorscm.cpp:187
+#: colorscm.cpp:171
 msgid "Active title bar"
 msgstr "Aktivní titulek"
 
-#: colorscm.cpp:188
+#: colorscm.cpp:172
 msgid "Active title text"
 msgstr "Text aktivního titulku"
 
-#: colorscm.cpp:189
+#: colorscm.cpp:173
 msgid "Active title blend"
 msgstr "Clona aktivního titulku"
 
-#: colorscm.cpp:190
+#: colorscm.cpp:174
 msgid "Background"
 msgstr "Pozadí"
 
-#: colorscm.cpp:191
+#: colorscm.cpp:175
 msgid "Text"
 msgstr "Text"
 
-#: colorscm.cpp:192
+#: colorscm.cpp:176
 msgid "Select background"
 msgstr "Vyber Pozadí"
 
-#: colorscm.cpp:193
+#: colorscm.cpp:177
 msgid "Select text"
 msgstr "Vyber text"
 
-#: colorscm.cpp:194
+#: colorscm.cpp:178
 msgid "Window background"
 msgstr "Pozadí okna"
 
-#: colorscm.cpp:195 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+#: colorscm.cpp:179 widgetcanvas.cpp:175 widgetcanvas.cpp:176
 msgid "Window text"
 msgstr "Text v oknì"
 
-#: colorscm.cpp:223
+#: colorscm.cpp:207
 msgid "Contrast"
 msgstr "Kontrast"
 
-#: colorscm.cpp:239
+#: colorscm.cpp:223
 msgid "&Low"
 msgstr "Ma&lý"
 
-#: colorscm.cpp:247
+#: colorscm.cpp:231
 msgid "High"
 msgstr "Velký"
 
-#: colorscm.cpp:320
+#: colorscm.cpp:304
 msgid "Error removing"
 msgstr "Chyba odstraòování"
 
-#: colorscm.cpp:321
+#: colorscm.cpp:305
 msgid ""
 "This color scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -327,11 +327,11 @@ msgstr ""
 "Pravdìpodobnì nemáte pøístupová práva ke zmìnì\n"
 "souboru, ve kterém jsou ulo¾eny schémata."
 
-#: colorscm.cpp:378
+#: colorscm.cpp:362
 msgid "Naming error"
 msgstr "Chyba pojmenování"
 
-#: colorscm.cpp:379
+#: colorscm.cpp:363
 msgid ""
 "Please choose a unique name for the new color\n"
 "scheme. The one you entered already appears\n"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay\n"
-"POT-Creation-Date: 1998-11-22 01:13+0100\n"
+"POT-Creation-Date: 1998-11-29 01:12+0100\n"
 "PO-Revision-Date: 1998-04-20 22:09+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr "重新命名[&R] ..."
 msgid "&Common Background"
 msgstr "背景[&B]"
 
-#: backgnd.cpp:213 colorscm.cpp:94
+#: backgnd.cpp:213 colorscm.cpp:82
 #, fuzzy
 msgid "Colors"
 msgstr "顏色"
@@ -251,100 +251,100 @@ msgstr "命名時發生錯誤"
 msgid "Selected directory doesn't exists"
 msgstr ""
 
-#: colorscm.cpp:120
+#: colorscm.cpp:104
 msgid "Color Scheme"
 msgstr "色彩主題"
 
-#: colorscm.cpp:131
+#: colorscm.cpp:115
 #, fuzzy
 msgid "Current scheme"
 msgstr "色彩主題"
 
-#: colorscm.cpp:133
+#: colorscm.cpp:117
 #, fuzzy
 msgid "KDE default"
 msgstr "KDE 預設"
 
-#: colorscm.cpp:146
+#: colorscm.cpp:130
 msgid "&Add ..."
 msgstr "新增[&A] ..."
 
-#: colorscm.cpp:163
+#: colorscm.cpp:147
 msgid "&Save changes"
 msgstr "儲存變更[&S]"
 
-#: colorscm.cpp:177
+#: colorscm.cpp:161
 msgid "Widget color"
 msgstr "項目顏色"
 
-#: colorscm.cpp:184
+#: colorscm.cpp:168
 msgid "Inactive title bar"
 msgstr "無作用視窗的標題列"
 
-#: colorscm.cpp:185
+#: colorscm.cpp:169
 msgid "Inactive title text"
 msgstr "無作用視窗的標題列文字"
 
-#: colorscm.cpp:186
+#: colorscm.cpp:170
 #, fuzzy
 msgid "Inactive title blend"
 msgstr "無作用視窗的標題列"
 
-#: colorscm.cpp:187
+#: colorscm.cpp:171
 msgid "Active title bar"
 msgstr "作用中視窗的標題列"
 
-#: colorscm.cpp:188
+#: colorscm.cpp:172
 msgid "Active title text"
 msgstr "作用中視窗的標題列文字"
 
-#: colorscm.cpp:189
+#: colorscm.cpp:173
 #, fuzzy
 msgid "Active title blend"
 msgstr "作用中視窗的標題列"
 
-#: colorscm.cpp:190
+#: colorscm.cpp:174
 msgid "Background"
 msgstr "背景"
 
-#: colorscm.cpp:191
+#: colorscm.cpp:175
 msgid "Text"
 msgstr "文字"
 
-#: colorscm.cpp:192
+#: colorscm.cpp:176
 msgid "Select background"
 msgstr "選擇 背景"
 
-#: colorscm.cpp:193
+#: colorscm.cpp:177
 msgid "Select text"
 msgstr "選擇 文字"
 
-#: colorscm.cpp:194
+#: colorscm.cpp:178
 msgid "Window background"
 msgstr "視窗背景"
 
-#: colorscm.cpp:195 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+#: colorscm.cpp:179 widgetcanvas.cpp:175 widgetcanvas.cpp:176
 msgid "Window text"
 msgstr "視窗文字"
 
-#: colorscm.cpp:223
+#: colorscm.cpp:207
 msgid "Contrast"
 msgstr "對比"
 
-#: colorscm.cpp:239
+#: colorscm.cpp:223
 #, fuzzy
 msgid "&Low"
 msgstr "低"
 
-#: colorscm.cpp:247
+#: colorscm.cpp:231
 msgid "High"
 msgstr "高"
 
-#: colorscm.cpp:320
+#: colorscm.cpp:304
 msgid "Error removing"
 msgstr "移除時發生錯誤"
 
-#: colorscm.cpp:321
+#: colorscm.cpp:305
 msgid ""
 "This color scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -353,11 +353,11 @@ msgstr ""
 "這個色彩主題無法移除.\n"
 "可能是您並沒有權限去更改這個色彩主題."
 
-#: colorscm.cpp:378
+#: colorscm.cpp:362
 msgid "Naming error"
 msgstr "命名時發生錯誤"
 
-#: colorscm.cpp:379
+#: colorscm.cpp:363
 msgid ""
 "Please choose a unique name for the new color\n"
 "scheme. The one you entered already appears\n"

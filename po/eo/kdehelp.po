@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 1.0pre2\n"
-"POT-Creation-Date: 1998-11-26 01:13+0100\n"
+"POT-Creation-Date: 1998-11-29 01:12+0100\n"
 "PO-Revision-Date: 1998-07-13 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -14,48 +14,48 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-3\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: helpwin.cpp:66
+#: helpwin.cpp:55
 msgid "KDE Help: Open URL"
 msgstr "KDE-helpo: Malfermi URLon"
 
-#: helpwin.cpp:68
+#: helpwin.cpp:57
 msgid "Open URL"
 msgstr "URL:"
 
-#: helpwin.cpp:465 info.cpp:285
+#: helpwin.cpp:456 info.cpp:285
 msgid "Cannot open: "
 msgstr "Ne eblas malfermi: "
 
-#: helpwin.cpp:466 helpwin.cpp:475
+#: helpwin.cpp:457 helpwin.cpp:466
 msgid "Oops!"
 msgstr "Ho ve!"
 
-#: helpwin.cpp:474
+#: helpwin.cpp:465
 msgid "Unknown format: "
 msgstr "Nekonata dosiertipo: "
 
-#: helpwin.cpp:1115
+#: helpwin.cpp:1106
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1116
+#: helpwin.cpp:1107
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1333
+#: helpwin.cpp:1324
 #, fuzzy
 msgid "Forward"
 msgstr "&Antaýen"
 
-#: helpwin.cpp:1354
+#: helpwin.cpp:1345
 msgid "Open this Link"
 msgstr "Malfermu tiun æi ligon"
 
-#: helpwin.cpp:1355
+#: helpwin.cpp:1346
 msgid "Add Bookmark"
 msgstr "Aldonu legosignon"
 
-#: helpwin.cpp:1356
+#: helpwin.cpp:1347
 msgid "Open in new Window"
 msgstr "Malfermu en nova fenestro"
 
@@ -117,11 +117,15 @@ msgstr "Koloro de URL-ligoj:"
 msgid "Followed Link Color:"
 msgstr "Koloro de vizititaj ligoj:"
 
-#: options.cpp:301
+#: options.cpp:238
+msgid "Underline links"
+msgstr ""
+
+#: options.cpp:317
 msgid "KDE Help Options"
 msgstr "KDE-Helpopcioj"
 
-#: options.cpp:314 options.cpp:315
+#: options.cpp:330 options.cpp:331
 msgid "Colors"
 msgstr "Koloroj"
 
