@@ -102,6 +102,12 @@ struct kwmOptions {
   QPixmap* shapePixmapTopRight;
   QPixmap* shapePixmapBottomLeft;
   QPixmap* shapePixmapBottomRight;
+  bool GimmickMode;
+  int GimmickPositionX;
+  int GimmickPositionY;
+  int GimmickOffsetX;
+  int GimmickOffsetY;
+  QPixmap* gimmickPixmap;
 };
 
 extern kwmOptions options;

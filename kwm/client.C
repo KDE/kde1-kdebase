@@ -420,6 +420,7 @@ Client::~Client(){
   }
 }
 
+QLabel* Client::gimmick=0;
 
 // show the client. This means the decoration frame and the inner window
 void Client::showClient(){
@@ -1146,7 +1147,6 @@ void Client::resizeEvent( QResizeEvent * ){
 		       ShapeBounding, 0, 0, shapemask.handle(), 
 		       ShapeSet );
   }
-  
 }  
 
 // create a new pushbutton associated with the specified button
@@ -1390,6 +1390,7 @@ void Client::setactive(bool on){
     stopAutoraise(false);
     doButtonGrab();
   }
+  placeGimmick();
 }  
 
 // Repaint the state of a window. Active or inactive windows differ
@@ -1596,7 +1597,46 @@ void Client::paintState(bool only_label, bool colors_have_changed){
   }
 }
 
+void Client::createGimmick(){
+  if (gimmick)
+    delete gimmick;
+  gimmick = new QLabel;
+  gimmick->resize(options.gimmickPixmap->size());
+  gimmick->setPixmap(*(options.gimmickPixmap));
+  if (options.gimmickPixmap->mask()){
+    XShapeCombineMask( qt_xdisplay(), gimmick->winId(), 
+		       ShapeBounding, 0, 0, 
+		       options.gimmickPixmap->mask()->handle(),
+		       ShapeSet);
+  }
+}
 
+void Client::hideGimmick(){
+  gimmick->hide();
+}
+void Client::placeGimmick(){
+  if (!is_active)
+    return;
+  if (options.GimmickMode){
+    if (!gimmick)
+      createGimmick();
+    gimmick->show();
+    gimmick->move(geometry.x()+geometry.width()*options.GimmickPositionX/100+
+		  options.GimmickOffsetX,
+		  geometry.y()+geometry.height()*options.GimmickPositionY/100+
+		  options.GimmickOffsetY-gimmick->width());
+    
+    // put the gimmick right above the window itself in the stacking order
+    Window* new_stack = new Window[2];
+    new_stack[0]=winId();
+    new_stack[1]=gimmick->winId();
+    XRestackWindows(qt_xdisplay(), new_stack, 2);
+    new_stack[0]=gimmick->winId();
+    new_stack[1]=winId();
+    XRestackWindows(qt_xdisplay(), new_stack, 2);
+    delete [] new_stack;
+  }
+}
 
 // set the mouse pointer shape to the specified cursor. Also
 // stores the defined shaped in current_cursor.

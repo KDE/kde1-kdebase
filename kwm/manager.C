@@ -512,6 +512,7 @@ void Manager::clientMessage(XEvent*  ev){
       showTask ();
     else if (com == "configure"){
       emit reConfigure();
+      Client::createGimmick();
       Client* t;
       for (t = clients_sorted.first(); t; t=clients_sorted.next())
 	t->reconfigure();
@@ -2053,6 +2054,7 @@ void Manager::raiseClient(Client* c){
   QList <Client> sorted_tmp = clients_sorted;
 
   sorted_tmp.removeRef(c);
+
   // raise the client
   tmp.append(c);
 
@@ -2083,8 +2085,13 @@ void Manager::raiseClient(Client* c){
     sendToModules(module_win_raise, c);
   }
   // X Semantics are somewhat cryptic
-  Window* new_stack = new Window[tmp.count()];
+  Window* new_stack = new Window[tmp.count()+1];
   int i = 0;
+  // take care about the gimmick: this should be always on top!
+  if (options.GimmickMode && tmp.first() == current() && Client::gimmickWindow() != None){
+    new_stack[i]=Client::gimmickWindow();
+    i++;
+  }
   for (c=tmp.last();c;c=tmp.prev()){
     new_stack[i] = c->winId();
     i++;
@@ -2132,9 +2139,10 @@ void Manager::lowerClient(Client* c){
   XRestackWindows(qt_xdisplay(), new_stack, n);
   for (i=0; i<nh; i++)
     XMapWindow(qt_xdisplay(), hide_stack[i]);
-
   delete [] new_stack;
   XFree((void *) wins);   
+  if (current())
+    current()->placeGimmick();
 }
 
 // close a client. clients with WM_DELETE_WINDOW protocol set
@@ -2183,6 +2191,7 @@ void Manager::noFocus(){
     iconifyFloatingOf(c->mainClient());
   }
   
+  Client::hideGimmick();
   focusToNull();
   sendToModules(module_win_activate, 0);
 
@@ -2339,7 +2348,7 @@ void Manager::sendConfig(Client* c, bool emit_changed){
 
   if (emit_changed)
     changedClient(c);
-
+  c->placeGimmick();
 }
 
 

@@ -866,7 +866,7 @@ void MyApp::readConfiguration(){
     options.ShapeMode = false;
   else{
     config->writeEntry("ShapeMode", "off");
-    options.ControlTab = true;
+    options.ShapeMode = false;
   }
 
   if (options.ShapeMode){
@@ -941,6 +941,8 @@ void MyApp::readConfiguration(){
     }
   }
   
+
+
   // Windows Placement config --- CT 18jan98 ---
   key = config->readEntry("WindowsPlacement");
   if( key.left(11) == "interactive") {
@@ -1011,6 +1013,36 @@ void MyApp::readConfiguration(){
     config->writeEntry("TraverseAll", "off");
     options.TraverseAll = false;
   }
+
+  config->setGroup( "Gimmick");
+
+  options.GimmickMode = false;
+  key = config->readEntry("GimmickMode");
+  options.GimmickMode =( key == "on");
+  options.GimmickPositionX=config->readNumEntry("GimmickPositionX", 0);
+  options.GimmickPositionY=config->readNumEntry("GimmickPositionY", 0);
+  options.GimmickOffsetX=config->readNumEntry("GimmickOffsetX", 0);
+  options.GimmickOffsetY=config->readNumEntry("GimmickOffsetY", 0);
+  if (options.GimmickPositionX<0)options.GimmickPositionX=0;
+  if (options.GimmickPositionY<0)options.GimmickPositionY=0;
+  if (options.GimmickOffsetX<0)options.GimmickOffsetX=0;
+  if (options.GimmickOffsetY<0)options.GimmickOffsetY=0;
+  if (options.GimmickPositionX>100)options.GimmickPositionX=100;
+  if (options.GimmickPositionY>100)options.GimmickPositionY=100;
+  if (options.GimmickOffsetX>100)options.GimmickOffsetX=100;
+  if (options.GimmickOffsetY>100)options.GimmickOffsetY=100;
+  if (options.GimmickMode){
+    options.gimmickPixmap = new QPixmap;
+    if (config->hasKey("GimmickPixmap")){
+      *(options.gimmickPixmap) = getIconLoader()
+	->loadIcon(config->readEntry("GimmickPixmap"));
+      if (options.gimmickPixmap->isNull()){
+	fprintf(stderr, klocale->translate("Some pixmaps are not valid: GimmickMode dissabled\n"));
+	options.GimmickMode = false;
+      }
+    }
+  }
+      
 
   config->setGroup( "Buttons");
 

@@ -392,6 +392,16 @@ private:
   KPixmap aShadepm;
   KPixmap iaShadepm;
 
+  // the gimmick widget
+  static QLabel* gimmick;
+ public:
+  static void createGimmick();
+  void placeGimmick();
+  static void hideGimmick();
+  static Window gimmickWindow(){
+    return gimmick?gimmick->winId():None;
+  }
+
 private slots:
   // this slot is connect with a singleshot timer when we are doing
   // auto raising (related to the focus follow mouse policy). If
