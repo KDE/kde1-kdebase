@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
-"POT-Creation-Date: 1998-12-12 14:27+0100\n"
+"POT-Creation-Date: 1998-12-15 01:15+0100\n"
 "PO-Revision-Date: 1998-12-14 09:42+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
@@ -171,7 +171,8 @@ msgid "Vertical Root Grid Spacing:"
 msgstr "Vertikální rozteè møí¾ky:"
 
 #: rootopts.cpp:92
-msgid "&Transparent Text for Root Icons."
+#, fuzzy
+msgid "&Transparent Text for Desktop Icons."
 msgstr "&Transparentní text pod ikonami na plo¹e."
 
 #: rootopts.cpp:103

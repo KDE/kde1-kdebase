@@ -92,7 +92,6 @@ msgstr ""
 "Peut-être n'avez vous pas la permission de modifier le fichier\n"
 "système ou le raccourci clavier est stocké."
 
-
 #: global.cpp:314
 msgid "Naming conflict"
 msgstr "Conflit de nom"

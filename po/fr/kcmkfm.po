@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-12-12 14:27+0100\n"
+"POT-Creation-Date: 1998-12-15 01:15+0100\n"
 "PO-Revision-Date: 1998-01-25 18:31 CET\n"
 "Last-Translator: David Faure <David.Faure@insa-lyon.fr>\n"
 "Language-Team: Français\n"
@@ -173,7 +173,8 @@ msgid "Vertical Root Grid Spacing:"
 msgstr "Espacement de la grille verticale du bureau :"
 
 #: rootopts.cpp:92
-msgid "&Transparent Text for Root Icons."
+#, fuzzy
+msgid "&Transparent Text for Desktop Icons."
 msgstr "Texte &transparent pour les icônes du bureau."
 
 #: rootopts.cpp:103

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
-"POT-Creation-Date: 1998-12-12 14:27+0100\n"
+"POT-Creation-Date: 1998-12-15 01:15+0100\n"
 "PO-Revision-Date: 1998-12-05 16:41+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -171,7 +171,7 @@ msgid "Vertical Root Grid Spacing:"
 msgstr ""
 
 #: rootopts.cpp:92
-msgid "&Transparent Text for Root Icons."
+msgid "&Transparent Text for Desktop Icons."
 msgstr ""
 
 #: rootopts.cpp:103

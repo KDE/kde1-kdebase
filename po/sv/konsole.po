@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: konsole\n"
-"POT-Creation-Date: 1998-12-05 01:14+0100\n"
+"POT-Creation-Date: 1998-12-15 01:15+0100\n"
 "PO-Revision-Date: 1998-12-12 18:17+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -13,137 +13,128 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
-#: main.C:260
+#: main.C:261
 msgid "&Normal"
 msgstr "&Normalt"
 
-#: main.C:263
+#: main.C:264
 msgid "&Small"
 msgstr "&Litet"
 
-#: main.C:264
+#: main.C:265
 msgid "&Medium"
 msgstr "&Medelstort"
 
-#: main.C:265
+#: main.C:266
 msgid "&Large"
 msgstr "&Stort"
 
-#: main.C:266
+#: main.C:267
 msgid "&Huge"
 msgstr "&Enormt"
 
-#: main.C:268
+#: main.C:269
 msgid "&Linux"
 msgstr "L&inux"
 
-#: main.C:269
+#: main.C:270
 msgid "Linux (small)"
 msgstr "Linux (litet)"
 
-#: main.C:272
+#: main.C:273
 msgid "&More ..."
 msgstr "&Mer ..."
 
-#: main.C:278
+#: main.C:279
 msgid "&Hide"
 msgstr "&Göm"
 
-#: main.C:279
+#: main.C:280
 msgid "&Left"
 msgstr "&Vänster"
 
-#: main.C:280
+#: main.C:281
 msgid "&Right"
 msgstr "&Höger"
 
-#: main.C:286
+#: main.C:287
 msgid "40x15 (&small)"
 msgstr "40x15 (&liten)"
 
-#: main.C:287
+#: main.C:288
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:288
+#: main.C:289
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:289
+#: main.C:290
 msgid "80x40 (&xterm)"
 msgstr "80x40 (&xterm)"
 
-#: main.C:290
+#: main.C:291
 msgid "80x52 (ibmv&ga)"
 msgstr "80x52 (ibmv&ga)"
 
-#: main.C:299
+#: main.C:300
 msgid "&Menubar"
 msgstr "&Menyrad"
 
-#: main.C:301
+#: main.C:302
 msgid "&Frame"
 msgstr "&Ram"
 
-#: main.C:303
+#: main.C:304
 msgid "Scroll&bar"
 msgstr "Rullnings&list"
 
-#: main.C:305
+#: main.C:306
 msgid "BS sends &DEL"
 msgstr "&BS skickar DEL"
 
-#: main.C:308
+#: main.C:309
 msgid "&Font"
 msgstr "&Typsnitt"
 
-#: main.C:309
+#: main.C:310
 msgid "&Size"
 msgstr "&Storlek"
 
-#: main.C:310
+#: main.C:311
 msgid "&Schema"
 msgstr "S&chema"
 
-#: main.C:312
+#: main.C:313
 msgid "&Save options"
 msgstr "Spara &inställningar"
 
-#: main.C:316
+#: main.C:317
 msgid "&About ..."
 msgstr "&Om ..."
 
-#: main.C:317
+#: main.C:318
 msgid "&User's Manual ..."
 msgstr "&Användarmanual ..."
 
-#: main.C:318
+#: main.C:319
 msgid "&Technical Reference ..."
 msgstr "&Teknisk referensmanual ..."
 
-#: main.C:322
+#: main.C:323
 msgid "cd"
 msgstr ""
 
-#: main.C:334
-msgid "New"
-msgstr "Ny"
-
-#: main.C:335
+#: main.C:336
 msgid "Sessions"
 msgstr "Sessioner"
 
-#: main.C:532
-#, c-format
-msgid "(%d columns x %d lines)"
-msgstr "(%d kolumner x %d rader)"
-
-#: main.C:562
+#: main.C:565
 #, c-format
 msgid "About %s"
 msgstr "Om %s"
 
-#: main.C:564
+#: main.C:567
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -164,6 +155,12 @@ msgstr ""
 "UTAN NÅGRA SOM HELST GARANTIER.\n"
 "Se `LICENSE.readme´ för detaljer."
 
-#: main.C:880
+#: main.C:883
 msgid "Welcome to the console"
 msgstr "Välkommen till konsolen"
+
+#~ msgid "New"
+#~ msgstr "Ny"
+
+#~ msgid "(%d columns x %d lines)"
+#~ msgstr "(%d kolumner x %d rader)"

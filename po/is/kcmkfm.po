@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-12 14:27+0100\n"
+"POT-Creation-Date: 1998-12-15 01:15+0100\n"
 "PO-Revision-Date: 1998-10-26 23:49+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -166,7 +166,7 @@ msgid "Vertical Root Grid Spacing:"
 msgstr ""
 
 #: rootopts.cpp:92
-msgid "&Transparent Text for Root Icons."
+msgid "&Transparent Text for Desktop Icons."
 msgstr ""
 
 #: rootopts.cpp:103

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfm\n"
-"POT-Creation-Date: 1998-12-12 14:27+0100\n"
+"POT-Creation-Date: 1998-12-15 01:15+0100\n"
 "PO-Revision-Date: 1998-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -191,7 +191,8 @@ msgid "Vertical Root Grid Spacing:"
 msgstr "Avstand mellom vertikale bunngitter:"
 
 #: rootopts.cpp:92
-msgid "&Transparent Text for Root Icons."
+#, fuzzy
+msgid "&Transparent Text for Desktop Icons."
 msgstr "&Gjennomsiktig tekst for bunnikoner"
 
 #: rootopts.cpp:103

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-12-12 14:27+0100\n"
+"POT-Creation-Date: 1998-12-15 01:15+0100\n"
 "Last-Translator: Juraj Bednar <bednar@isternet.sk>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -170,7 +170,7 @@ msgid "Vertical Root Grid Spacing:"
 msgstr ""
 
 #: rootopts.cpp:92
-msgid "&Transparent Text for Root Icons."
+msgid "&Transparent Text for Desktop Icons."
 msgstr ""
 
 #: rootopts.cpp:103

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
-"POT-Creation-Date: 1998-12-12 14:27+0100\n"
+"POT-Creation-Date: 1998-12-15 01:15+0100\n"
 "PO-Revision-Date: 1998-12-13 14:42+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -173,7 +173,8 @@ msgid "Vertical Root Grid Spacing:"
 msgstr "y-avstånd för skrivbordsikoner:"
 
 #: rootopts.cpp:92
-msgid "&Transparent Text for Root Icons."
+#, fuzzy
+msgid "&Transparent Text for Desktop Icons."
 msgstr "&Rita ej textbakgrund till skrivbordsikoner"
 
 #: rootopts.cpp:103

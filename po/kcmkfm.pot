@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-12 14:27+0100\n"
+"POT-Creation-Date: 1998-12-15 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -172,7 +172,7 @@ msgid "Vertical Root Grid Spacing:"
 msgstr ""
 
 #: rootopts.cpp:92
-msgid "&Transparent Text for Root Icons."
+msgid "&Transparent Text for Desktop Icons."
 msgstr ""
 
 #: rootopts.cpp:103

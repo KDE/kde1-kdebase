@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmfm \n"
-"POT-Creation-Date: 1998-12-12 14:27+0100\n"
+"POT-Creation-Date: 1998-12-15 01:15+0100\n"
 "PO-Revision-Date: 1998-12-10 22:45+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -165,7 +165,8 @@ msgid "Vertical Root Grid Spacing:"
 msgstr "Vertikaler Gitter-Abstand auf dem Desktop:"
 
 #: rootopts.cpp:92
-msgid "&Transparent Text for Root Icons."
+#, fuzzy
+msgid "&Transparent Text for Desktop Icons."
 msgstr "Text für Desktop-Icons &transparent unterlegen"
 
 #: rootopts.cpp:103
