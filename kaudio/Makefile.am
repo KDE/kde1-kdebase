@@ -5,11 +5,11 @@ LDADD =  $(all_libraries) -lmediatool -lkdeui -lkdecore -lXext -lX11 $(LIBSOCKET
 
 maudio_SOURCES = io_oss.cpp maudio.cpp sample.cpp
 kaudioserver_SOURCES = kaudioserver.cpp
-demo_SOURCES = democlient.cpp
+# demo_SOURCES = democlient.cpp
 MOCS = democlient.moc
 
 bin_PROGRAMS = maudio kaudioserver
-noinst_PROGRAMS = demo
+# noinst_PROGRAMS = demo
 noinst_HEADERS = version.h
 
 datadir = $(kde_htmldir)/en/kmedia/
