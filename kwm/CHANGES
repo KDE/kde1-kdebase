@@ -26,6 +26,8 @@ In 0.10:
        - fixed a very old bug: now you can press Control-F1
          Control-F2 Control-F1 Control-F2 Control-F1 Control-F2
          like a maniac without any windows loosing their frames :-)
+       - kURL-completion (Torben Weis, Henner Zeller)
+       - fixed a bug that menu-button-click sometimes closes a window
 
   patchlevel 16:
        - fix for "move" via keyboard (pointer warp)

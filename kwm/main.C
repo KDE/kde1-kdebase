@@ -771,12 +771,12 @@ void MyApp::showLogout(){
 }
 
 static void freeKeyboard(bool pass){
-    XSync(qt_xdisplay(), 0);
+    XSync(qt_xdisplay(), False);
     if (!pass)
       XAllowEvents(qt_xdisplay(), AsyncKeyboard, CurrentTime);
     else
       XAllowEvents(qt_xdisplay(), ReplayKeyboard, CurrentTime);
-    XSync(qt_xdisplay(), 0);
+    XSync(qt_xdisplay(), False);
 }
 
 static bool tab_grab = False;
@@ -928,11 +928,6 @@ bool MyApp::handleKeyPress(XKeyEvent key){
     return False;
   }    
 
-  if( (kc == XK_F1)  && (km == ControlMask) ){
-    freeKeyboard(False);
-    manager->switchDesktop(1);
-    return False;
-  }
   if( (kc == XK_F1)  && (km == ControlMask) ){
     freeKeyboard(False);
     manager->switchDesktop(1);

@@ -1311,23 +1311,26 @@ void Client::stickyToggled(bool depressed){
 }
 
 void Client::menuPressed(){
-  static QTime clicktime;
-  
+  static QTime *clicktime = 0;
   if (!isActive()){
     myapp->operations->hide();
     manager->raiseClient(this);
     manager->activateClient(this);
   }
   
-  if (clicktime.msecsTo(QTime::currentTime())<700){
+  if (clicktime && clicktime->msecsTo(QTime::currentTime())<700){
     // some kind of doubleclick => close
     closeClicked();
   }
   else {
-    clicktime = QTime::currentTime();
     ignore_release_on_this = buttonMenu;
     showOperations();
   }
+  
+  if (!clicktime)
+    clicktime = new QTime(QTime::currentTime());
+  else
+    *clicktime = QTime::currentTime();
 };
 
 
