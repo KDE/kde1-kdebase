@@ -1,0 +1,41 @@
+# Polish translation of KDE krootwm
+# Version 0.1.0
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+
+
+#: krootwm.C:63
+msgid "Help on desktop"
+msgstr "Wywo³aj pomo&c"
+
+#: krootwm.C:64
+msgid "Execute command"
+msgstr "Wykonaj &polecenie"
+
+#: krootwm.C:65
+msgid "Display properties"
+msgstr "W³a¶ciwo¶ci &wy¶wietlania"
+
+#: krootwm.C:66
+msgid "Refresh desktop"
+msgstr "&Od¶wie¿ desktop"
+
+#: krootwm.C:67
+msgid "Arrange icons"
+msgstr "Uporz±dkuj &ikony"
+
+#: krootwm.C:69
+msgid "Lock screen"
+msgstr "Zabezpiecz &ekran"
+
+#: krootwm.C:70
+msgid "Logout"
+msgstr "Wy&loguj siê"
+
+#: krootwm.C:274
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: krootwm.C:278
+msgid "Usage:"
+msgstr "U¿ycie:"
+
