@@ -254,11 +254,11 @@ static void splitDomainAdvice(const char *configStr,
 
 void KHTTPOptions::removeDomain(const char *domain)
 {
-    const char *configStr = domainConfig.first();
+    const char *configStr = 0L;
     QString searchFor(domain);
     searchFor += ":";
     
-    for( ;
+    for( configStr = domainConfig.first();
          configStr != 0;
          configStr = domainConfig.next())
     {
