@@ -84,7 +84,7 @@ AC_HEADER_STDC
 AC_CHECK_HEADERS(fcntl.h sys/time.h unistd.h crypt.h sys/select.h \
 	sys/ioctl.h sys/stropts.h termio.h termios.h lastlog.h malloc.h \
 	sys/sockio.h krb5/krb5.h rpc/rpc.h rpc/key_prot.h sys/m_wait.h \
-	sys/param.h ncurses.h)
+	sys/param.h ncurses.h paths.h)
 
 kde_have_setupterm=yes
 AC_CHECK_LIB(curses, setupterm, [LIBCURSES=-lcurses],
