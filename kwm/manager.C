@@ -1443,6 +1443,8 @@ void Manager::deskCascade() {
  
   Client *cl;
   cl = clients.first();
+  if (!cl)
+    return; //save our souls
   cascadePlacement(cl,True);
   sendConfig(cl, false);
   for(cl = clients.next(); cl; cl = clients.next()) {
