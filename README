@@ -33,10 +33,10 @@ default variation is listed, so if you see --enable-debug, the default is
 --disable debug.
 
 `--x-includes=DIR'
-     X include files are in DIR
+     use X include files in DIR
 
 `--x-libraries=DIR'
-     X library files are in DIR
+     use X library files in DIR
 
 `--enable-debug'
      creates debugging code [default=no]
@@ -52,46 +52,48 @@ default variation is listed, so if you see --enable-debug, the default is
      force libtool not to do file locking
 
 `--disable-nls'
-     do not use Native Language Support
+     do not use Native Language Support (i18n)
 
 `--with-qt-dir'
      where the root of qt is installed 
 
 `--with-qt-includes=DIR'
-     Look for the Qt header files in DIR.
+     look for the Qt header files in DIR
 
 `--with-qt-libraries=DIR'
-     Look for the Qt library in DIR.
+     look for the Qt library in DIR
 
 `--with-extra-includes=DIR'
-     adds non standard include paths
+     look for include files in DIR in addition to any other
+     `standard' paths
 
 `--with-extra-libs=DIR'
-     adds non standard library paths
+     look for [extra] libraries in DIR too
 
 `--disable-path-check'
-     don't try to find out, where to install
+     don't try to find out where to install
  
 `--with-install-root=DIR'
-     the root, where to install to [default=/]
+     the root (base KDE dir), to install to [default=/]
 
 `--disable-rpath'
      do not use the rpath feature of ld
 
-`--with-xdmdir'
-     If the xdm config dir can't be found automaticly
+`--with-xdmdir=DIR'
+     use xdm (and config files) from DIR if the xdm config dir can't be
+     found automaticly
 
 `--with-pam[=ARG]'
      enable support for PAM: ARG=[yes|no|service name]
 
 `--with-shadow'
-    If you want shadow password support 
+     if you want shadow password support 
 
 `--without-gl'
-    disable 3D GL modes
+     disable 3D GL modes
 
 `--without-xpm'
-    disable color pixmap XPM tests
+     disable color pixmap XPM tests
 
 Debugging
 ---------
