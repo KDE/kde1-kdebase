@@ -69,6 +69,8 @@ KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_p
     connect( this, SIGNAL( goUp() ), this, SLOT( slotUp() ) );
     connect( this, SIGNAL( goRight() ), this, SLOT( slotForward() ) );
     connect( this, SIGNAL( goLeft() ), this, SLOT( slotBack() ) );
+    connect ( getKHTMLWidget(), SIGNAL( redirect( int , const char *) ),
+	      this, SLOT( slotRedirect( int, const char * )) );
 
     gui = _gui;
  
@@ -924,6 +926,38 @@ void KfmView::slotBack()
     stackLock = false;
 
     delete s;
+}
+
+void KfmView::slotRedirect( int _delay, const char * _url )
+{
+    if ( _delay == 0 )
+    {
+	stackLock = true;
+	openURL( _url );
+	stackLock = false;
+    } 
+    else
+    {
+	redirectURL = _url;
+	redirectDelay = _delay;
+	connect( this, SIGNAL( documentDone(KHTMLView *)),
+		 this, SLOT( slotDelayedRedirect(KHTMLView *) ) );
+    }
+}
+
+void KfmView::slotDelayedRedirect(KHTMLView *)
+{
+    disconnect( this, SIGNAL( documentDone(KHTMLView *)),
+		this, SLOT( slotDelayedRedirect(KHTMLView *) ) );
+    QTimer::singleShot(1000*redirectDelay, this, SLOT( slotDelayedRedirect2() ) );
+}
+void KfmView::slotDelayedRedirect2()
+{
+    stackLock = true;
+    openURL( redirectURL );
+    stackLock = false;
+    redirectURL = "";
+    redirectDelay = 0;
 }
 
 void KfmView::slotURLSelected( const char *_url, int _button, const char *_target )

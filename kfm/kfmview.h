@@ -227,6 +227,13 @@ public slots:
     void slotReload();
     
     /**
+     * called, when khtml detects a redirect
+     */
+    void slotRedirect( int delay, const char * url );
+    void slotDelayedRedirect(KHTMLView *);
+    void slotDelayedRedirect2();
+
+    /**
      * Copy the currently selected URLs to the @ref #clipboard.
      */
     void slotCopy();
@@ -435,6 +442,12 @@ protected:
      * Lock @ref #backStack and @ref #forwardStack .
      */
     bool stackLock;
+
+    /**
+     * url for redirection and delay 
+     */
+    QString redirectURL;
+    int redirectDelay;
 
     KfmGui *gui;
     

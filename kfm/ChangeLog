@@ -1,3 +1,7 @@
+1998-11-21 Lars Knoll <knoll@mpi-hd.mpg.de>
+	* added support for url redirections
+	  (<meta http-equiv="refresh" ...>) command
+	
 1998-11-14  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
 
 	* layout management for *all* the Browser Configuration dialog
