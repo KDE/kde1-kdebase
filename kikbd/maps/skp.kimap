@@ -6,11 +6,12 @@ Authors=Jan ONDREJ (SAL) <ondrejj@intrak.tuke.sk>
 Comment=Programmers Keyboard
 Comment[sk]=Programátorská klávesnica
 Comment[ru]=ëÌÁ×ÉÁÔÕÒÁ ĞÒÏÇÒÁÍÉÓÔÁ
+Comment[no]=Programmeringstastatur
 Comment[sv]=Programmeringstangentbord
 
 Language=Slovak
 Language[de]=Slowakische
-#Language[no]=Tjekkisk
+Language[no]=Slovakisk
 #Language[ru]=şÅÛÓËÉÊ
 Language[sk]=Slovenskı
 Language[cs]=Slovenskı

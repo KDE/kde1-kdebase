@@ -6,12 +6,13 @@ Authors=Jan ONDREJ (SAL) <ondrejj@intrak.tuke.sk>
 Comment=Typewriter Keyboard (QWERTZ)
 Comment[sk]=Klávesnica písacieho stroja (QWERTZ)
 Comment[ru]=ëÌÁ×ÉÁÔÕÒÁ (QWERTZ)
+Comment[no]=Skrivmaskstastatur (QWERTY)
 Comment[sv]=Skrivmaskinstangentbord (QWERTY)
 
 Language=Slovak
 Language[de]=Slowakische
 Language[sk]=Slovenskı
-#Language[no]=Tjekkisk
+Language[no]=Slovakisk
 #Language[ru]=şÅÛÓËÉÊ
 Language[cs]=Slovenskı
 Language[sv]=Slovakiskt

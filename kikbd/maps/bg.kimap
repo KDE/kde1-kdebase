@@ -9,6 +9,7 @@ Authors=Jordan Ostreff <http://www.biscom.net/~jostreff/>,
 Comment=Phonetic layout. Has English characters as alternate symbols.
 Comment[de]=Phonetisches Layout. Englische Zeichen als Alternativ-Belegung.
 Comment[fi]=Foneettinen järjestys. Englantilaiset kirjaimet vaihtoehtoisina symboleina.
+Comment[no]=Fonetisk utseende. Har i tillegg engelske tegn som symboler.
 Comment[sv]=Fonetisk layout. Har engelska tecken som tilläggs symboler.
 
 Language=Bulgarian

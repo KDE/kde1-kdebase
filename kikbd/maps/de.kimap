@@ -2,6 +2,7 @@
 
 [International Keyboard]
 Comment=Deutsches (BRD) Tastatur-Layout
+Comment[no]=Tysk (BRD) tastaturutseende
 Comment[sv]= Tysk (BRD) tangentbordslayout
 
 Language=German
