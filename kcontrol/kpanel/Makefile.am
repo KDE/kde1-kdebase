@@ -12,6 +12,16 @@ noinst_HEADERS = panel.h desktops.h options.h disknav.h
 messages:
 	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kcmkpanel_SOURCES) && mv messages.po ../../po/kcmkpanel.pot
 
+icon_DATA = kcmkpanel.xpm
+icondir = $(kde_icondir)
+
+install-data-local:
+	$(mkinstalldirs) $(kde_minidir)
+	$(INSTALL_DATA) mini-kcmkpanel.xpm $(kde_minidir)/kcmkpanel.xpm
+
+uninstall-local:
+	-rm -f $(kde_minidir)/kcmkpanel.xpm
+
 DISTCLEANFILES = $(BUILT_SOURCES)
 
 panel.cpp:panel.moc

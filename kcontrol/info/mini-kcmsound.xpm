@@ -1,25 +1,22 @@
 /* XPM */
-static char *magick[] = {
-/* columns rows colors chars-per-pixel */
+static char*kcmsound[]={
 "14 14 5 1",
-"  c #000000",
-". c #595959",
-"X c #0000ff",
-"o c #ffffff",
-"O c None",
-/* pixels */
-"OOOOOX.OOOOOXX",
-"OOOOOXX.OOXX..",
-"OOOOOX.XXX..XX",
-"OOOOOXX...XX..",
-"OOOOOX.XXX..OO",
-"OOOOOX....oOOO",
-"OOOOOX.OOoOoOO",
-"OOOOOX.oOoOoOO",
-"OOXX.X.OoOoOoO",
-"XXXXXX.OoOoOoO",
-"XXXXXX.oOoOoOO",
-"XXXXXX.OOoOoOO",
-"XXXXX.OOOOoOOO",
-"OOXX.OOOOOOOOO"
-};
+"c c #000080",
+"a c #0000c0",
+"# c #0000ff",
+". c None",
+"b c #585858",
+".....###......",
+".....#aa##....",
+".....#b.aa##..",
+".....#aa..aa#.",
+".....#b.aa..#b",
+".....#b...aa#b",
+".....#b.....#b",
+".###.#b.....#b",
+"##aaa#b.....#b",
+"#aaaacb.....#b",
+".#ccbb..###.#b",
+".......##aaa#b",
+".......#aaaacb",
+".........ccbb."};

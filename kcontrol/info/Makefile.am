@@ -22,7 +22,8 @@ info.moc: info.h
 
 main.cpp: info.moc
 
-icon_DATA = 
+icon_DATA = kcmdevices.xpm kcmmemory.xpm kcmpci.xpm kcmprocessor.xpm \
+	kcmscsi.xpm kcmsound.xpm kcmx.xpm 
 icondir = $(kde_icondir)
 
 install-data-local: 
