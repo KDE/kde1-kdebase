@@ -938,6 +938,8 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
    entries[nbuttons-1].icon[1] = NULL;
    entries[nbuttons-1].icon[2] = NULL;
    entries[nbuttons-1].icon[3] = NULL;
+   entries[nbuttons-1].drop_zone = NULL;
+
    connect( entries[nbuttons-1].button, SIGNAL(clicked()), 
 	    SLOT(button_clicked()) );
    connect( entries[nbuttons-1].button, SIGNAL(pressed()), 
