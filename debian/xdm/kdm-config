@@ -1,7 +1,7 @@
 ! /etc/X11/kdm/kdm-config
 !
 ! resources specific to kdm itself
-DisplayManager.authDir:		/var/state/xdm
+DisplayManager.authDir:		/var/state/kdm
 DisplayManager.errorLogFile:	/var/log/kdm.log
 DisplayManager.pidFile:		/var/run/kdm.pid
 DisplayManager.keyFile:		/etc/X11/kdm/kdm-keys

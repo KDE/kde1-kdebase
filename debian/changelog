@@ -1,3 +1,11 @@
+kdebase (4:1.1.1-19990612-3) unstable; urgency=low
+
+  * Adding in a Pre-Depends for xbase-clients that I had missed
+    Thanks Thomas!
+  * Fixed an error in the kdm-config file that was pointing to a xdm file
+
+ -- Ivan E. Moore II <rkrusty@debian.org>  Thu, 17 Jun 1999 08:15:27 -0400
+
 kdebase (4:1.1.1-19990612-2) unstable; urgency=low
 
   * remove the .gmo files on clean
