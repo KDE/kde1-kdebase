@@ -47,7 +47,8 @@ public slots:
 
   void loadSettings();
   void applySettings();
-  
+  void defaultSettings();
+    
 private:
 
   KLanguageCombo *combo1, *combo2, *combo3;

@@ -187,6 +187,14 @@ void KLocaleConfig::applySettings()
 }
 
 
+void KLocaleConfig::defaultSettings()
+{
+  combo1->setCurrentItem(0);
+  combo2->setCurrentItem(0);
+  combo3->setCurrentItem(0);
+}
+
+
 void KLocaleConfig::changed(int)
 {
   changedFlag = TRUE;

@@ -32,6 +32,7 @@ public:
 
   void init();
   void apply();
+  void defaultValues();
 
 private:
 
@@ -70,6 +71,12 @@ void KLocaleApplication::apply()
 {
   if (locale)
     locale->applySettings();
+}
+
+void KLocaleApplication::defaultValues()
+{
+  if (locale)
+    locale->defaultSettings();
 }
 
 
