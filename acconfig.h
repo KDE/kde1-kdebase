@@ -56,3 +56,5 @@
 /* Define if you have dlopen and co. */
 #undef HAVE_DLFCN
 
+/* Define if you have shl_load and co. */
+#undef HAVE_SHLOAD
