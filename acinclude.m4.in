@@ -156,7 +156,8 @@ else
 fi
 
 fi
-bindir = $kde_bindir
+bindir=$kde_bindir
+
 ])
 
 AC_DEFUN(AC_SUBST_KFSSTND,

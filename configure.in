@@ -20,6 +20,22 @@ AM_CONFIG_HEADER(config.h) dnl at the distribution this done
 
 dnl Checks for programs.
 AC_CHECK_COMPILERS
+
+# the following is to allow programs, that are known to 
+# have problems when compiled with -O2
+if test -n "$CXXFLAGS"; then
+  safe_IFS=$IFS
+  IFS=" "
+  NOOPT_CXXFLAGS=""
+  for i in $CXXFLAGS; do
+    if test "$i" = "-O2"; then
+      i=""
+    fi
+    NOOPT_CXXFLAGS="$NOOPT_CXXFLAGS $i"
+  done
+fi
+AC_SUBST(NOOPT_CXXFLAGS)
+IFS=$safe_IFS
 KDE_PROG_LIBTOOL
 
 dnl WITH_NLS is for the po files
