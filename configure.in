@@ -42,6 +42,7 @@ if test $KSCREEN = "kscreensaver"; then
  esac
 fi 
 
+AC_LANG_CPLUSPLUS
 dnl Checks for libraries.
 AC_PATH_KDE
 

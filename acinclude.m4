@@ -117,6 +117,25 @@ AC_MSG_CHECKING([for QT])
 ac_qt_includes=NO ac_qt_libraries=NO
 qt_libraries=""
 qt_includes=""
+AC_ARG_WITH(qt-dir,
+    [  --with-qt-dir           where the root of qt is installed ],
+    [  ac_qt_includes="$withval"/include
+       ac_qt_libraries="$withval"/lib
+    ])
+
+AC_ARG_WITH(qt-includes,
+    [  --with-qt-includes      where the qt includes are. ],
+    [  
+       ac_qt_includes="$withval"
+    ])
+    
+AC_ARG_WITH(qt-libraries,
+    [  --with-qt-libraries     where the qt library is installed.],
+    [  ac_qt_libraries="$withval"
+    ])
+
+if test "$ac_qt_includes" = NO || test "$ac_qt_libraries" = NO; then
+
 AC_CACHE_VAL(ac_cv_have_qt,
 AC_PATH_QT_DIRECT
 [#try to guess qt locations
@@ -157,7 +176,7 @@ fi
 rm -f conftest*
 CXXFLAGS=$ac_cxxflags_safe
 LDFLAGS=$ac_ldflags_safe
- 
+
 if test "$ac_qt_includes" = NO || test "$ac_qt_libraries" = NO; then
   ac_cv_have_qt="have_qt=no"
   ac_qt_notfound=""
@@ -173,9 +192,12 @@ if test "$ac_qt_includes" = NO || test "$ac_qt_libraries" = NO; then
 
   AC_MSG_ERROR([QT1.2 $ac_qt_notfound not found. Please check your installation! ]);
 else
-  ac_cv_have_qt="have_qt=yes \
-  ac_qt_includes=$ac_qt_includes ac_qt_libraries=$ac_qt_libraries"
-fi])dnl
+  have_qt="yes"
+fi
+])
+else
+  have_qt="yes"
+fi
 
 eval "$ac_cv_have_qt"
 
@@ -300,7 +322,7 @@ dnl slightly changed version of AC_CHECK_FUNC(setenv)
 AC_DEFUN(AC_CHECK_SETENV,
 [AC_MSG_CHECKING([for setenv])
 AC_CACHE_VAL(ac_cv_func_setenv,
-[AC_LANG_C
+[AC_LANG_CPLUSPLUS
 AC_TRY_LINK(
 dnl Don't include <ctype.h> because on OSF/1 3.0 it includes <sys/types.h>
 dnl which includes <sys/select.h> which contains a prototype for
@@ -392,12 +414,21 @@ fi
 ])
 
 AC_DEFUN(AC_CHECK_BOOL,
-        [AC_MSG_CHECKING(for bool);
-        AC_LANG_CPLUSPLUS
-        AC_TRY_COMPILE([],
-                [bool aBool = true;],
-                AC_MSG_RESULT(yes) ; AC_DEFINE(HAVE_BOOL),
-                AC_MSG_RESULT(no))])
+[
+	AC_MSG_CHECKING(for bool)
+        AC_CACHE_VAL(ac_cv_have_bool,
+        [
+		AC_LANG_CPLUSPLUS
+          	AC_TRY_COMPILE([],
+                 [bool aBool = true;],
+                 [ac_cv_have_bool="yes"],
+                 [ac_cv_have_bool="no"])
+        ]) dnl end AC_CHECK_VAL
+        AC_MSG_RESULT($ac_cv_have_bool)
+        if test "$ac_cv_have_bool" = "yes"; then
+        	AC_DEFINE(HAVE_BOOL) 
+        fi 
+])
 
 AC_DEFUN(AC_SET_DEBUG,
 [
@@ -414,7 +445,7 @@ AC_DEFUN(AC_SET_NODEBUG,
 ])
 
 AC_DEFUN(AC_CHECK_DEBUG,
-[AC_ARG_ENABLE(debug,[ --enable-debug 	creates debugging code [default=no]],
+[AC_ARG_ENABLE(debug,[  --enable-debug 	  creates debugging code [default=no]],
 [ if test $enableval = "no"; then AC_SET_NODEBUG
 else AC_SET_DEBUG 
 fi
@@ -434,12 +465,12 @@ AC_SUBST(LDFLAGS)
 dnl Check for the type of the third argument of getsockname
 AC_DEFUN(AC_CHECK_KSIZE_T,
 [AC_MSG_CHECKING(for the third argument of getsockname)  
-AC_CACHE_VAL(ac_ksize_t_int,
+AC_CACHE_VAL(ac_cv_ksize_t_int,
 [AC_TRY_COMPILE([#include <sys/types.h>
 #include <sys/socket.h>],[int a=0; getsockname(0,(struct sockaddr*)NULL, &a);],
-eval "ac_ksize_t_int=yes",
-eval "ac_ksize_t_int=no")])
-if eval "test \"`echo `$ac_ksize_t_int\" = yes"; then
+eval "ac_cv_ksize_t_int=yes",
+eval "ac_cv_ksize_t_int=no")])
+if eval "test \"`echo `$ac_cv_ksize_t_int\" = yes"; then
   AC_MSG_RESULT(int)
   AC_DEFINE(ksize_t, int)
 else
@@ -448,30 +479,3 @@ else
 fi
 ])
 
-dnl this should be included by aclocal, but it wont't
-dnl Don't know, why
-# serial 1 AM_PROG_LIBTOOL
-AC_DEFUN(AM_PROG_LIBTOOL,
-[AC_REQUIRE([AC_CANONICAL_HOST])
-AC_REQUIRE([AC_PROG_CC])
-AC_REQUIRE([AC_PROG_RANLIB])
-
-# Always use our own libtool.
-LIBTOOL='$(top_builddir)/libtool'
-AC_SUBST(LIBTOOL)
-
-dnl Allow the --disable-shared flag to stop us from building shared libs.
-AC_ARG_ENABLE(shared,
-[  --enable-shared         build shared libraries [default=yes]],
-test "$enableval" = no && libtool_shared=" --disable-shared",
-libtool_shared=)
-
-libtool_flags="$libtool_shared"
-test "$silent" = yes && libtool_flags="$libtool_flags --silent"
-test "$ac_cv_prog_gcc" = yes && libtool_flags="$libtool_flags --with-gcc"
-
-# Actually configure libtool.  ac_aux_dir is where install-sh is found.
-CC="$CC" CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" LD="$LD" RANLIB="$RANLIB" \
-$ac_aux_dir/ltconfig $libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
-|| AC_MSG_ERROR([libtool configure failed])
-])
