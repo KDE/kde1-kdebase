@@ -1,0 +1,69 @@
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Logi Ragnarsson <logi@hi.is>
+#
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1998-11-28 01:10+0100\n"
+"PO-Revision-Date: 1998-12-17 22:28+0100\n"
+"Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
+"Language-Team: ia <kde-isl@mmedia.is>\n"
+
+#: kbgndwm.cpp:45
+msgid "Display Settings"
+msgstr "Skjástillingar"
+
+#: kbgndwm.cpp:46
+msgid "Background Settings"
+msgstr "Bakgrunnsstillingar"
+
+#: kbgndwm.cpp:48
+msgid "Common Background"
+msgstr "Eins bakgrunnur"
+
+#: kbgndwm.cpp:50
+msgid "Undock"
+msgstr "Af spjaldi"
+
+#: kbgndwm.cpp:58
+msgid "Tiled"
+msgstr "Flísalagt"
+
+#: kbgndwm.cpp:59
+msgid "Mirrored"
+msgstr "Speiglað"
+
+#: kbgndwm.cpp:60
+msgid "CenterTiled"
+msgstr "Miðjað speiglað"
+
+#: kbgndwm.cpp:61
+msgid "Centred"
+msgstr "Miðjað"
+
+#: kbgndwm.cpp:62
+msgid "CentredBrick"
+msgstr "Miðjaðir múrsteinar"
+
+#: kbgndwm.cpp:63
+msgid "CentredWarp"
+msgstr "Miðjað í geimferð"
+
+#: kbgndwm.cpp:64
+msgid "CentredMaxpect"
+msgstr "Miðjað stækkað"
+
+#: kbgndwm.cpp:65
+msgid "SymmetricalTiled"
+msgstr "Samhverft flísalagt"
+
+#: kbgndwm.cpp:66
+msgid "SymmetricalMirrored"
+msgstr "Samhverft speiglað"
+
+#: kbgndwm.cpp:67
+msgid "Scaled"
+msgstr "Teygt"
+
+#: bg.cpp:235 bg.cpp:238
+msgid "No wallpaper"
+msgstr "Ekkert veggfóður"

@@ -1,0 +1,53 @@
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Logi Ragnarsson <logi@hi.is>
+#
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"PO-Revision-Date: 1998-12-17 22:28+0100\n"
+"Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
+"Language-Team: ia <kde-isl@mmedia.is>\n"
+
+#: main.cpp:48
+msgid "&Status"
+msgstr "&Staða"
+
+#: main.cpp:57
+msgid "usage: kcmsamba [-init | status]\n"
+msgstr "notkun: kcmsamba [-init | status]\n"
+
+#: main.cpp:68
+msgid "Samba"
+msgstr "Samba"
+
+#: ksmbstatus.cpp:114
+msgid "Error launching smbstatus !"
+msgstr "Ekki tókst að ræsa smbstatus !"
+
+#: ksmbstatus.cpp:116
+msgid "Error ! smbstatus not found or non working !"
+msgstr "Villa! smbstatus fannst ekki eða virkar ekki!"
+
+#: ksmbstatus.cpp:158
+msgid "Service"
+msgstr "Þjónusta"
+
+#: ksmbstatus.cpp:160
+msgid "UID"
+msgstr "UID"
+
+#: ksmbstatus.cpp:161
+msgid "GID"
+msgstr "GID"
+
+#: ksmbstatus.cpp:162
+msgid "PID"
+msgstr "PID"
+
+#: ksmbstatus.cpp:163
+msgid "Machine"
+msgstr "Vél"
+
+#: ksmbstatus.cpp:164
+msgid "Open Files"
+msgstr "Opnar skrár"

@@ -11,60 +11,60 @@ msgstr ""
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr ""
+msgstr "skjáflötur númer %d"
 
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr ""
+msgstr "  stærð               : %dx%d punktar (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr ""
+msgstr "  upplausn            : %dx%d punktar á tommu\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr ""
+msgstr "  litadýpt (%d)        : "
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr ""
+msgstr "nafn skjás            : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr ""
+msgstr "útgáfunúmer           : %i.%i"
 
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr ""
+msgstr "einkenni framleiðanda : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr ""
+msgstr "útfærslunúmer         : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr ""
+msgstr "sjálfgfinn skjáflötur : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr ""
+msgstr "fjöldi skjáflata      : %i"
 
 #: info.cpp:179
-#, fuzzy
 msgid ""
 "No Information available\n"
 " or\n"
 "this system is not yet supported :-("
-msgstr "Við styðjum ekki enn þetta kerfi"
+msgstr "Annað hvort eru engar upplýsingar fánlegar,\n"
+"eða þá að þetta kerfi er ennþá óstutt."
 
 #: info_fbsd.cpp:73
 #, c-format
@@ -78,53 +78,51 @@ msgstr "%s á %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr ""
+msgstr "Ekki tókst að opna fstab skrána!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
-msgstr ""
+msgstr "Tæki"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
-msgstr ""
+msgstr "Tengipunktur"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr ""
+msgstr "Skráakerfi"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr ""
+msgstr "Tengi"
 
 #: info_hpux.cpp:54
-#, fuzzy
 msgid "unknown CPU type"
-msgstr "%s, óþekktur hraði"
+msgstr "%s, óþekktur örgjörvi"
 
 #: info_hpux.cpp:62
-#, fuzzy
 msgid "unavailable"
-msgstr "Ekki til"
+msgstr "ekki tiltækt"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr ""
+msgstr "Fjöldi virkra örgjörva= "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr ""
+msgstr "Gildi"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
-msgstr ""
+msgstr "DMA-Rás"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr ""
+msgstr "hver notar"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr ""
+msgstr "inn/út bil"
 
 #: main.cpp:79
 msgid "&Memory"
@@ -136,39 +134,39 @@ msgstr "Ör&gjörvi"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr ""
+msgstr "Ígri&p"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr ""
+msgstr "DMA-&Rásir"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr ""
+msgstr "&Inn/út gáttir"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr ""
+msgstr "PCI &Braut"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr ""
+msgstr "&Hljóð"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr ""
+msgstr "&Tæki"
 
 #: main.cpp:103
 msgid "S&CSI"
-msgstr ""
+msgstr "S&CSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr ""
+msgstr "&Disksvæði"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr ""
+msgstr "&X-þjónn"
 
 #: main.cpp:120
 msgid ""
@@ -176,6 +174,9 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
+"notkun: kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"

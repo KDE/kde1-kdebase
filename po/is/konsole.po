@@ -1,0 +1,154 @@
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Logi Ragnarsson <logi@hi.is>
+#
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1998-12-15 01:15+0100\n"
+"PO-Revision-Date: 1998-12-17 22:28+0100\n"
+"Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
+"Language-Team: ia <kde-isl@mmedia.is>\n"
+
+#: main.C:261
+msgid "&Normal"
+msgstr "&Venjulegt"
+
+#: main.C:264
+msgid "&Small"
+msgstr "&Lítið"
+
+#: main.C:265
+msgid "&Medium"
+msgstr "&Miðlungs"
+
+#: main.C:266
+msgid "&Large"
+msgstr "S&tórt"
+
+#: main.C:267
+msgid "&Huge"
+msgstr "&Risastórt"
+
+#: main.C:269
+msgid "&Linux"
+msgstr "&Linux"
+
+#: main.C:270
+msgid "Linux (small)"
+msgstr "L&inux (lítið)"
+
+#: main.C:273
+msgid "&More ..."
+msgstr "&Meira ..."
+
+#: main.C:279
+msgid "&Hide"
+msgstr "&Fela"
+
+#: main.C:280
+msgid "&Left"
+msgstr "&vinstri"
+
+#: main.C:281
+msgid "&Right"
+msgstr "&Hægri"
+
+#: main.C:287
+msgid "40x15 (&small)"
+msgstr "40x15 (&lítið)"
+
+#: main.C:288
+msgid "80x24 (&vt100)"
+msgstr "80x24 (&vt100)"
+
+#: main.C:289
+msgid "80x25 (&ibmpc)"
+msgstr "80x25 (&ibmpc)"
+
+#: main.C:290
+msgid "80x40 (&xterm)"
+msgstr "80x40 (&xterm)"
+
+#: main.C:291
+msgid "80x52 (ibmv&ga)"
+msgstr "80x52 (ibmv&ga)"
+
+#: main.C:300
+msgid "&Menubar"
+msgstr "V&alslá"
+
+#: main.C:302
+msgid "&Frame"
+msgstr "&Rammi"
+
+#: main.C:304
+msgid "Scroll&bar"
+msgstr "&Rennislá"
+
+#: main.C:306
+msgid "BS sends &DEL"
+msgstr "BS sendir &DEL"
+
+#: main.C:309
+msgid "&Font"
+msgstr "&Letur"
+
+#: main.C:310
+msgid "&Size"
+msgstr "&Stærð"
+
+#: main.C:311
+msgid "&Schema"
+msgstr "S&tef"
+
+#: main.C:313
+msgid "&Save options"
+msgstr "&Vista stillingar"
+
+#: main.C:317
+msgid "&About ..."
+msgstr "&Um ..."
+
+#: main.C:318
+msgid "&User's Manual ..."
+msgstr "&Handbók ..."
+
+#: main.C:319
+msgid "&Technical Reference ..."
+msgstr "&Tæknilegar uplýsingar ..."
+
+#: main.C:323
+msgid "cd"
+msgstr "cd"
+
+#: main.C:336
+msgid "Sessions"
+msgstr "Setur"
+
+#: main.C:565
+#, c-format
+msgid "About %s"
+msgstr "Um %s"
+
+#: main.C:567
+#, c-format
+msgid ""
+"%s version %s - an X terminal\n"
+"\n"
+"Copyright (c) 1998 by Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"This program is free software under the\n"
+"terms of the Artistic License and comes\n"
+"WITHOUT ANY WARRANTY.\n"
+"See `LICENSE.readme´ for details."
+msgstr ""
+"%s, útgáfa %s - X skjáhermir\n"
+"\n"
+"Höfundarréttur (c) 1998 Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"Þetta forrit er frjáls hugbúnaður samkvæmt ákvæðum\n"
+"\"Artistic License\" og ENGIN ÁBYRGÐ er tekin á virkni\n"
+"þess. Sjá nánar í skránni LICENSE.readme"
+
+#: main.C:883
+msgid "Welcome to the console"
+msgstr "Velkomin í skjáherminn"

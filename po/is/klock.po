@@ -1,0 +1,869 @@
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Logi Ragnarsson <logi@hi.is>
+#
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1998-12-14 01:17+0100\n"
+"PO-Revision-Date: 1998-12-17 22:28+0100\n"
+"Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
+"Language-Team: ia <kde-isl@mmedia.is>\n"
+
+#: attraction.cpp:716
+msgid "Attraction"
+msgstr "Aðdráttur"
+
+#: attraction.cpp:803
+msgid "Setup KAttraction"
+msgstr "Stilla KAðdrátt"
+
+#: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
+msgid "Number:"
+msgstr "Fjöldi:"
+
+#: attraction.cpp:829 science.cpp:993 slidescreen.cpp:493
+msgid "Mode:"
+msgstr "Hamur:"
+
+#: attraction.cpp:834 slidescreen.cpp:498
+msgid "Balls"
+msgstr "Boltar"
+
+#: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
+msgid "Lines"
+msgstr "Línur"
+
+#: attraction.cpp:836 polygon.cpp:64 slidescreen.cpp:500
+msgid "Polygons"
+msgstr "Marghyrningar"
+
+#: attraction.cpp:837 slidescreen.cpp:501
+msgid "Tails"
+msgstr "Skott"
+
+#: attraction.cpp:850 slidescreen.cpp:514
+msgid "Glow"
+msgstr "Glóð"
+
+#: attraction.cpp:951
+msgid "About Attraction"
+msgstr "Um aðdrátt"
+
+#: attraction.cpp:952
+msgid ""
+"Attraction Version 1.0\n"
+"\n"
+"Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"Ported to kscreensaver by:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
+msgstr ""
+"Útgáfa 1.0 af Aðdrætti\n"
+"\n"
+"Höfundarréttur (C) 1992-1997 Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl>\n"
+"Flutti í kscreensaver í október 1998"
+
+#: banner.cpp:62
+msgid "Banner"
+msgstr "Skilti"
+
+#: banner.cpp:84
+msgid "Setup kbanner"
+msgstr "Stilla kskilti"
+
+#: banner.cpp:95
+msgid "Family:"
+msgstr "Leturgerð:"
+
+#: banner.cpp:114 science.cpp:1036
+msgid "Size:"
+msgstr "Stærð:"
+
+#: banner.cpp:134 blankscrn.cpp:76
+msgid "Color:"
+msgstr "Litur:"
+
+#: banner.cpp:147
+msgid "Bold"
+msgstr "Feitletrað"
+
+#: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
+#: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1069 slip.cpp:378 space.cpp:587
+#: swarm.cpp:341
+msgid "Speed:"
+msgstr "Hraði:"
+
+#: banner.cpp:188
+msgid "Message:"
+msgstr "Skilaboð:"
+
+#: banner.cpp:357
+msgid "About Banner"
+msgstr "Um skilti"
+
+#: banner.cpp:358
+msgid ""
+"Banner Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Skilti, úrgáfa 0.1\n"
+"\n"
+"skrifað af Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: banner.cpp:461
+msgid "KDE is great"
+msgstr "KDE er æði!"
+
+#: bat.cpp:462
+msgid "Bat"
+msgstr "Leðurblaka"
+
+#: bat.cpp:537
+msgid "Setup KBat"
+msgstr "Stilla KLeðurblöku"
+
+#: bat.cpp:564
+msgid "Number of bats:"
+msgstr "Fjöldi:"
+
+#: bat.cpp:661
+msgid "About Bat"
+msgstr "Um leðurblöku"
+
+#: bat.cpp:662
+msgid ""
+"Bat\n"
+"\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Leðurblaka\n"
+"\n"
+"Höfundarréttur (c) 1986, Sun Microsystems\n"
+"\n"
+"Emanuel Pirker flutti í kscreensave."
+
+#: blankscrn.cpp:53
+msgid "Blank Screen"
+msgstr "Sverta skjá"
+
+#: blankscrn.cpp:67
+msgid "Setup kblankscrn"
+msgstr "Stilla KSverta"
+
+#: blob.cpp:57
+msgid "Random Linear"
+msgstr "Slembið linulegt"
+
+#: blob.cpp:58
+msgid "Horizonal Sine"
+msgstr "Lágréttur sínus"
+
+#: blob.cpp:59
+msgid "Circular Bounce"
+msgstr "Hringabopp"
+
+#: blob.cpp:60
+msgid "Polar Coordinates"
+msgstr "Pólhnit"
+
+#: blob.cpp:61
+msgid "Random"
+msgstr "Slembið"
+
+#: blob.cpp:77
+msgid "Sorry. This screensaver needs a color display"
+msgstr "Þetta skjáskraut þarf litaskjá"
+
+#: blob.cpp:458
+msgid "Setup Blob Saver"
+msgstr "Stilla klessuskreytingu"
+
+#: blob.cpp:468
+msgid "Frame Show sec."
+msgstr "Rammar á sek."
+
+#: blob.cpp:480
+msgid "Algorithm"
+msgstr "Reiknirit"
+
+#: blob.cpp:570
+msgid "About Blob"
+msgstr "Um slessu"
+
+#: blob.cpp:571
+msgid ""
+"Blobsaver Version 0.1\n"
+"\n"
+"written by Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+msgstr ""
+"Klessuskraut, útgáfa 1.0\n"
+"\n"
+"Skrifað af Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+
+#: blob.cpp:606
+msgid "Blobs"
+msgstr "Klessur"
+
+#: bouboule.cpp:863
+msgid "Bouboule"
+msgstr "Kúluský"
+
+#: bouboule.cpp:1005
+msgid "Setup KBouboule"
+msgstr "Skilla KKúluský"
+
+#: bouboule.cpp:1032
+msgid "Number of points:"
+msgstr "Fjöldi punkta:"
+
+#: bouboule.cpp:1046
+msgid "Point size:"
+msgstr "Punktastærð:"
+
+#: bouboule.cpp:1060
+msgid "Color-change frequency:"
+msgstr "Tíðni litabreytinga:"
+
+#: bouboule.cpp:1077
+msgid "3D mode"
+msgstr "Þrívíður hamur"
+
+#: bouboule.cpp:1223
+msgid "About Bouboule"
+msgstr "Um kúluský"
+
+#: bouboule.cpp:1224
+msgid ""
+"Bouboule v0.1 -- a glob of spheres twisting and changing size\n"
+"\n"
+"Copyright (c) 1996 by Jeremie PETIT\n"
+"\n"
+"Ported to kscreensave by Cedric Tefft"
+msgstr ""
+"Kúluský 0.1, ský af kúlum sem sveigir og breytir um stærð\n"
+"\n"
+"Höfundarréttur (c) 1996, Jeremie PETIT\n"
+"\n"
+"Cedric Tefft flutti í kscreensaver"
+
+#: bsod.cpp:1192
+msgid "Black Screen of Death"
+msgstr "Tölvufrost"
+
+#: flame.cpp:310
+msgid "Flame"
+msgstr "Logi"
+
+#: flame.cpp:397
+msgid "Setup KFlame"
+msgstr "Stilla KLoga"
+
+#: flame.cpp:423
+msgid "Max Levels:"
+msgstr "Hámark þrepa:"
+
+#: flame.cpp:438
+msgid "Num Points:"
+msgstr "Fjöldi punkta:"
+
+#: flame.cpp:551
+msgid "About Flame"
+msgstr "Um Loga"
+
+#: flame.cpp:552
+msgid ""
+"Flame Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Logi, útgáfa 3.3\n"
+"\n"
+"Höfundarréttur (c) 1991, Patrick J. Noughton\n"
+"\n"
+"Martin Jones flutti í kscreensaver.\n"
+"\n"
+"Logi Ragnarsson íslenskaði"
+
+#: forest.cpp:206
+msgid "Forest"
+msgstr "Skógur"
+
+#: forest.cpp:278
+msgid "Setup KForest"
+msgstr "Stilla KSkóg"
+
+#: forest.cpp:304
+msgid "Num of Trees:"
+msgstr "Fjöldi trjáa:"
+
+#: forest.cpp:399
+msgid "About Forest"
+msgstr "Um skóg"
+
+#: forest.cpp:400
+msgid ""
+"Forest\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Skógur\n"
+"\n"
+"Höfundarréttur (c) 1995, Pascal Pensa\n"
+"\n"
+"Emanuel Pirker flutti í kscreensave by"
+
+#: hop.cpp:226
+msgid "Hop"
+msgstr "Hopp"
+
+#: hop.cpp:311
+msgid "Setup KHop"
+msgstr "Stilla KHopp"
+
+#: hop.cpp:337
+msgid "Samecolor Pixels:"
+msgstr "Einslitir punktar:"
+
+#: hop.cpp:351 lissie.cpp:367
+msgid "Cycles:"
+msgstr "Lykkjur:"
+
+#: hop.cpp:464
+msgid "About Hop"
+msgstr "Um Hopp"
+
+#: hop.cpp:465
+msgid ""
+"Hop Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"HopP, útgáfa 3.3\n"
+"\n"
+"Höfundarretur (c) 1991, Patrick J. Naughton\n"
+"\n"
+"Emanuel Pirker flutti í kscreensave."
+
+#: laser.cpp:333
+msgid "Laser"
+msgstr "Leysir"
+
+#: laser.cpp:393
+msgid "Setup KLaser"
+msgstr "Stilla KLeysi"
+
+#: laser.cpp:482
+msgid "About Laser"
+msgstr "Um Leysi"
+
+#: laser.cpp:483
+msgid ""
+"Laser Version 3.3\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Leysir, útgáfa 3.3\n"
+"\n"
+"Höfundarréttur (c) 1995, Pascal Pensa\n"
+"\n"
+"Martin Jones flutti í kscreensave."
+
+#: lines.cpp:134
+msgid "Setup klines"
+msgstr "Stilla KLínur"
+
+#: lines.cpp:142 polygon.cpp:93
+msgid "Length:"
+msgstr "Lengd:"
+
+#: lines.cpp:168
+msgid "Beginning:"
+msgstr "Upphaf:"
+
+#: lines.cpp:182
+msgid "Middle:"
+msgstr "Miðja:"
+
+#: lines.cpp:195
+msgid "End:"
+msgstr "Endi:"
+
+#: lines.cpp:294
+msgid "About Lines"
+msgstr "Um Línur"
+
+#: lines.cpp:295
+msgid ""
+"Lines Version 0.1.1\n"
+"\n"
+"written by Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+msgstr ""
+"Línur, útgáfa 0.1.1\n"
+"\n"
+"Skrifað af Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+
+#: lissie.cpp:241
+msgid "Lissie"
+msgstr "Lísa"
+
+#: lissie.cpp:327
+msgid "Setup KLissie"
+msgstr "Stilla KLísu"
+
+#: lissie.cpp:353
+msgid "Num of Lissies:"
+msgstr "Fjöldi Lísa:"
+
+#: lissie.cpp:480
+msgid "About Lissie"
+msgstr "Um Lísu"
+
+#: lissie.cpp:481
+msgid ""
+"Lissie\n"
+"\n"
+"Copyright (c) 1996 by Alexander Jolk\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Lísa\n"
+"\n"
+"Höfundarretur (c) 1996, Alexander Jolk\n"
+"\n"
+"Emanuel Pirker flutti í kscreensave."
+
+#: main.cpp:384
+#, c-format
+msgid "Option %s is not support on this plattform!"
+msgstr "Þetta kerfi styður ekki valmöguleika %s !"
+
+#: main.cpp:422
+msgid ""
+"Warning: You won't be able to lock the screen!\n"
+"\n"
+"Your system uses shadow passwords.\n"
+"Please contact your system administrator,\n"
+"tell him, that you need suid for the screensavers!"
+msgstr ""
+"Aðvörun: :Þú getur ekki lst skjánum!\n"
+"\n"
+"Kerfið notar skuggalykilorð. Hafðu samband við\n"
+"kerfisstjórann of segðust þurfa suid fyrir\n"
+"skjaskreytingarnar!"
+
+#: main.cpp:427
+msgid "Shadow Passwords"
+msgstr "Skuggalykilorð"
+
+#: main.cpp:472
+msgid ""
+"\n"
+"please don't use -test together with -lock.\n"
+"use klock instead.\n"
+"\n"
+msgstr ""
+"\n"
+"Ekki nota -test með -lock.\n"
+"Notaðu frekar klock.\n"
+
+#: main.cpp:580
+#, c-format
+msgid ""
+"Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
+msgstr ""
+"Notkun: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"        [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
+
+#: main.cpp:583
+msgid ""
+"  -corners xxxx     Placing cursor in corner performs action:\n"
+"                     x = i  no action (ignore)\n"
+"                     x = s  save screen\n"
+"                     x = l  lock screen\n"
+"                    order: top-left, top-right, bottom-left, bottom-right\n"
+"  -delay num        Amount of idle time before screen saver\n"
+"                     starts  (default 10min)\n"
+"  -desc             Print the screen saver's description to stdout\n"
+"  -install          Install screen saver\n"
+"  -lock             Require password to stop screen saver\n"
+"  -allow-root       Accept root password to unlock\n"
+"  -nice num         Run with specified nice value\n"
+"\n"
+"  -preview wid      Run in the specified XWindow\n"
+"  -inroot           Run in the root window\n"
+"  -setup            Setup screen saver\n"
+"  -test             Invoke the screen saver immediately\n"
+msgstr ""
+"  -corners xxxx     Sé bendill settur í hornið er framkvæmt:\n"
+"                     x = i  ekkert (ignore)\n"
+"                     x = s  skreyta skjá\n"
+"                     x = l  læsa skjá\n"
+"                    röð: UV, UH, NV, NH\n"
+"  -delay num        Hve lengi óhreyft áður en skjár skreyttur. (10 min.)\n"
+"  -desc             Skrifa lýsingu skjáskreytingarinnar á aðalúttak\n"
+"  -install          Setja skjáskreytingu inn\n"
+"  -lock             Krefjast lykilorðs til að stöðva skjáskreytingu\n"
+"  -allow-root       Samþykkja rótarlykilorð til að opena skjá\n"
+"  -nice num         KEyra á tilteknu forgangsþrepi\n"
+"\n"
+"  -preview wid      Keyra í tilteknum X glugga\n"
+"  -inroot           Keyra í rótarglugga\n"
+"  -setup            Stilla skjáskreytingu\n"
+"  -test             Virkja skjáskreytinguna samstundis\n"
+
+#: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
+msgid "GL can not render with root visual\n"
+msgstr ""
+
+#: morph3d.cpp:940
+msgid "Morph3D (GL)"
+msgstr ""
+
+#: morph3d.cpp:1015
+msgid "Setup KMorph3d"
+msgstr ""
+
+#: morph3d.cpp:1031
+msgid "Object Type:"
+msgstr ""
+
+#: morph3d.cpp:1120
+msgid "About Morph3D"
+msgstr ""
+
+#: morph3d.cpp:1121
+msgid ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 by Marcelo F. Vianna\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+
+#: pipes.cpp:299
+msgid "Pipes (GL)"
+msgstr ""
+
+#: pipes.cpp:672
+msgid "Setup KPipes"
+msgstr ""
+
+#: pipes.cpp:678
+msgid "Number of Pipes"
+msgstr ""
+
+#: pipes.cpp:743
+msgid "About KPipes"
+msgstr ""
+
+#: pipes.cpp:745
+msgid ""
+"KPipes\n"
+"Copyright (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
+msgstr ""
+
+#: polygon.cpp:85
+msgid "Setup kpolygon"
+msgstr "Stilla KMarghyrning"
+
+#: polygon.cpp:107
+msgid "Vertices:"
+msgstr "Horn:"
+
+#: polygon.cpp:238
+msgid "About Polygon"
+msgstr "Um Marghyrning"
+
+#: polygon.cpp:239
+msgid ""
+"Polygon Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Marghyrningur, útgáfa 0.1\n"
+"\n"
+"skrifað af Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: pyro.cpp:439
+msgid "Pyro"
+msgstr "Flugeldar"
+
+#: pyro.cpp:517
+msgid "Setup KPyro"
+msgstr "Stilla KFlugelda"
+
+#: pyro.cpp:543
+msgid "Cloud"
+msgstr "Ský"
+
+#: pyro.cpp:629
+msgid "About Pyro"
+msgstr "Um Flugelda"
+
+#: pyro.cpp:630
+msgid ""
+"Pyro Version 3.4\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Flugeldar, útgáfa 3.4\n"
+"\n"
+"Höfundarretur (c) 1991, Patrick J. Naughton\n"
+"\n"
+"Martin Jones flutti í kscreensave."
+
+#: rock.cpp:441
+msgid "Rock"
+msgstr "Grjót"
+
+#: rock.cpp:549
+msgid "Setup krock"
+msgstr "Stilla KGrjót"
+
+#: rock.cpp:589
+msgid "Move"
+msgstr "Færa"
+
+#: rock.cpp:595
+msgid "Rotate"
+msgstr "Snúa"
+
+#: rock.cpp:719
+msgid "About Rock"
+msgstr "Um Grjót"
+
+#: rock.cpp:720
+msgid ""
+"Rock Version 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"grjót, útgáfa 3.3\n"
+"\n"
+"Höfundarréttur (c) 1992, Jamie Zawinski\n"
+"\n"
+"Martin Jones flutti í kscreensave."
+
+#: saver.cpp:60 saver.cpp:191
+msgid "Enter Password"
+msgstr "Sláðu inn lykilorð"
+
+#: saver.cpp:121
+msgid "Failed"
+msgstr "Mistókst"
+
+#: science.cpp:65
+msgid "Whirl"
+msgstr "Hvirfill"
+
+#: science.cpp:68
+msgid "Sphere"
+msgstr "Kúla"
+
+#: science.cpp:71
+msgid "Exponential"
+msgstr "Veldisfall"
+
+#: science.cpp:74
+msgid "Contraction"
+msgstr "Smadráttur"
+
+#: science.cpp:77
+msgid "Wave"
+msgstr "Bylgja"
+
+#: science.cpp:80
+msgid "Curvature"
+msgstr "Sveigja"
+
+#: science.cpp:112
+msgid "Science"
+msgstr "Vísindi"
+
+#: science.cpp:491
+msgid "rendering lens..."
+msgstr "teikna linsu..."
+
+#: science.cpp:813
+msgid "grabbing screen..."
+msgstr "gríp skjámynd..."
+
+#: science.cpp:975
+msgid "Setup Science"
+msgstr "Stilla Vísindi"
+
+#: science.cpp:1008
+msgid "Inverse"
+msgstr "Andhverft"
+
+#: science.cpp:1018
+msgid "Gravity"
+msgstr "Þyngdarafl"
+
+#: science.cpp:1027
+msgid "Hide Background"
+msgstr "Fela bakgrunn"
+
+#: science.cpp:1053
+msgid "Intensity:"
+msgstr "Styrkur:"
+
+#: science.cpp:1083
+msgid "Motion:"
+msgstr "Hreyfing:"
+
+#: science.cpp:1304
+msgid "Science Version"
+msgstr "Vísindi, útgáfa"
+
+#: science.cpp:1305
+msgid "written by"
+msgstr "Skrifað af"
+
+#: science.cpp:1306
+msgid "About Science"
+msgstr "Um Vísindi"
+
+#: slidescreen.cpp:419
+msgid "SlideScreen"
+msgstr "Renniskjár"
+
+#: slidescreen.cpp:465
+msgid "Setup KSlideScreen"
+msgstr "Stilla Renniskjá"
+
+#: slidescreen.cpp:558
+msgid "About SlideScreen"
+msgstr "Um renniskjá"
+
+#: slidescreen.cpp:559
+msgid ""
+"SlideScreen Version 1.1\n"
+"\n"
+"Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"Ported to kscreensaver by:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
+msgstr ""
+"Renniskjár, útgáfa 1.1\n"
+"\n"
+"Höfundarréttur (c) 1992-1997, Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998\n"
+"\n"
+"flutti í kscreensave."
+
+#: slip.cpp:293
+msgid "Slip"
+msgstr "Sleipt"
+
+#: slip.cpp:366
+msgid "Setup KSlip"
+msgstr "Stilla KSleipt"
+
+#: slip.cpp:392
+msgid "Batchcount:"
+msgstr "Flokkafjöldi:"
+
+#: slip.cpp:488
+msgid "About Slip"
+msgstr "Um Sleipt"
+
+#: slip.cpp:489
+msgid ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 by Scott Draves\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Sleipt\n"
+"\n"
+"Höfundarrétur (c) 1991, Scott Draves\n"
+"\n"
+"Emanuel Pirker flutti í kscreensave."
+
+#: space.cpp:491
+msgid "Space (GL)"
+msgstr "Geimur (GL)"
+
+#: space.cpp:581
+msgid "Setup KSpace"
+msgstr "Still KGeim"
+
+#: space.cpp:597
+msgid "Warp Interval:"
+msgstr "Bil milli Varpana"
+
+#: space.cpp:685
+msgid "About KSpace"
+msgstr "UM KGeim"
+
+#: space.cpp:687
+msgid ""
+"KSpace\n"
+"Copyright (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
+msgstr ""
+"KGeimur\n"
+"Höfundarretur (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
+
+#: swarm.cpp:257
+msgid "Swarm"
+msgstr "Mýmökkur"
+
+#: swarm.cpp:329
+msgid "Setup KSwarm"
+msgstr "Still KMýmökk"
+
+#: swarm.cpp:355
+msgid "Number of Bees:"
+msgstr "Fjöldi fluga:"
+
+#: swarm.cpp:450
+msgid "About Swarm"
+msgstr "Um Mýmökk"
+
+#: swarm.cpp:451
+msgid ""
+"Swarm\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Mýmökkur\n"
+"\n"
+"Höfundarréttur (c) 1991, Patrick J. Naughton\n"
+"\n"
+"Emanuel Pirker flutti í kscreensave."

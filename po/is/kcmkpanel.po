@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-20 03:02+0600\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-10-19 22:00+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
@@ -96,150 +96,126 @@ msgstr "&Breidd"
 msgid "Menu Tooltips"
 msgstr "Vísbendingar í valmynd"
 
-#: options.cpp:62
+#: options.cpp:39
 msgid "Show &Menu Tooltips"
 msgstr "Sýna &vísbendingar"
 
-#: options.cpp:84
+#: options.cpp:44
 msgid "De&lay:"
 msgstr "&Töf"
 
-#: options.cpp:91 options.cpp:160 options.cpp:262
+#: options.cpp:50 options.cpp:68 options.cpp:86
 msgid "Small"
 msgstr "Lítil"
 
-#: options.cpp:98 options.cpp:167 options.cpp:269
+#: options.cpp:51 options.cpp:69 options.cpp:87
 msgid "Large"
 msgstr "Stór"
 
-#: options.cpp:110
+#: options.cpp:62
 msgid "Visuals"
-msgstr ""
+msgstr "Sjónrænt"
 
-#: options.cpp:144
+#: options.cpp:64
 msgid "Auto &Hide Panel"
 msgstr "&Fela spjald sjálfvirkt"
 
-#: options.cpp:153 options.cpp:255
+#: options.cpp:67 options.cpp:85
 msgid "Delay:"
 msgstr "Töf:"
 
-#: options.cpp:184 options.cpp:286 options.cpp:349
+#: options.cpp:74 options.cpp:93
 msgid "Speed:"
 msgstr "Hraði:"
 
-#: options.cpp:191 options.cpp:293 options.cpp:356
+#: options.cpp:75 options.cpp:94 options.cpp:103
 msgid "Slow"
 msgstr "Hægt"
 
-#: options.cpp:198 options.cpp:300 options.cpp:363
+#: options.cpp:76 options.cpp:95 options.cpp:104
 msgid "Fast"
 msgstr "Hratt"
 
-#: options.cpp:246
+#: options.cpp:82
 msgid "Auto Hide &Taskbar"
 msgstr "Fela &Verkefnaslá sjálfvirkt"
 
-#: options.cpp:341
+#: options.cpp:100
 msgid "Animate Show/Hide"
 msgstr "Hreyfimynd þegar sýnt/falið"
 
-#: options.cpp:395
+#: options.cpp:102
+msgid "Speed"
+msgstr "Hraði"
+
+#: options.cpp:117
 msgid "Others"
 msgstr "Annað"
 
-#: options.cpp:408
-#, fuzzy
-msgid "Personal Menu Entries &First"
+#: options.cpp:118
+msgid "Personal &First"
 msgstr "&Eigin valmynd fyrst"
 
-#: options.cpp:416
-#, fuzzy
-msgid "Menu F&olders First"
+#: options.cpp:120
+msgid "F&olders First"
 msgstr "&Möppur fyrst"
 
-#: options.cpp:424
+#: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
-msgstr "Klukkan &sýnd á FH/EH formi"
-
-#: options.cpp:432
-#, fuzzy
-msgid "Clock shows time in &Internet beats"
 msgstr "Klukkan &sýnd á FH/EH formi"
 
 #: disknav.cpp:38
 msgid "History"
-msgstr ""
+msgstr "Ferill"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr ""
+msgstr "Breyta færslum: (slepptu möppu til að tengja)"
 
 #: disknav.cpp:64
-#, fuzzy
 msgid "Edit &Personal..."
-msgstr "Breyta staðvært..."
+msgstr "Breyta &einka..."
 
 #: disknav.cpp:74
-#, fuzzy
 msgid "Edit &Shared..."
-msgstr "Breyta staðvært..."
+msgstr "Breyta &sameign..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr ""
+msgstr "Hámark nýlegra mappa:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr ""
+msgstr "Hámark nýlegra skráa:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr ""
+msgstr "Hámark skráa í gefinni möppu:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr ""
+msgstr "Sýna punktskrár"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr ""
+msgstr "Raða óháð há/lág-stöfum"
 
 #: disknav.cpp:173
 msgid "Show Shared section"
-msgstr ""
+msgstr "Sýna sameign"
 
 #: disknav.cpp:180
-#, fuzzy
 msgid "Show Personal section"
-msgstr "&Eigin valmynd fyrst"
+msgstr "Sýna einka fyrst"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr ""
+msgstr "Sýna nýlegt"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr ""
+msgstr "Sýna stillingar"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr ""
-
-#~ msgid "Speed"
-#~ msgstr "Hraði"
-
-#~ msgid "ms"
-#~ msgstr "ms"
-
-#~ msgid "Clock"
-#~ msgstr "Klukka"
-
-#~ msgid "&24h"
-#~ msgstr "24 tíma"
-
-#~ msgid "&12h FH/EH"
-#~ msgstr "12 tíma FH/EH"
-
-#~ msgid "Edit &Global..."
-#~ msgstr "Breyta víðvært..."
+msgstr "Skjáhermir:"

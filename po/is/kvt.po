@@ -126,7 +126,7 @@ msgstr "Letur..."
 
 #: main.C:674
 msgid "Enable &hotkeys"
-msgstr ""
+msgstr "Virkja &flýtihnappa"
 
 #: main.C:677
 msgid "Save &Options"
@@ -229,8 +229,7 @@ msgstr "-no_font_hack             ekki fara framhjá villum í Qt\n"
 
 #: main.C:1448
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
-msgstr ""
-"-vt_size <stærð>          leturstærð: tiny, small, normal, large, huge\n"
+msgstr "-vt_size <stærð>          leturstærð: tiny, small, normal, large, huge\n"
 
 #: main.C:1449
 msgid "-linux                    set up kvt to mimic linux-console\n"
