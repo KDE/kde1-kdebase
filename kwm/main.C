@@ -687,6 +687,16 @@ void MyApp::readConfiguration(){
   }
 
 
+  if (config->hasKey("ElectricBorderMovePointer")){
+    options.ElectricBorderMovePointer = 
+      (bool)config->readNumEntry("ElectricBorderMovePointer");
+  }
+  else{
+    options.ElectricBorderMovePointer = true;
+    config->writeEntry("ElectricBorderMovePointer", (int)options.ElectricBorder);
+  }
+
+
   key = config->readEntry("ShapeMode");
   if( key == "on")
     options.ShapeMode = true;

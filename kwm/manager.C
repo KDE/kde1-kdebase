@@ -825,8 +825,11 @@ void Manager::leaveNotify(XCrossingEvent *e){
 }
 
 void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
+
   int nd;
+
   switch (d){
+
   case Up:
     if (current_desktop % 2 == 1)
       nd = current_desktop + 1;
@@ -835,10 +838,18 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
     if (c)
       c->desktop = nd;
     switchDesktop(nd);
-    QCursor::setPos(QCursor::pos().x(), 
-		    QApplication::desktop()->height()-3);
+
+    if(!options.ElectricBorderMovePointer){
+      QCursor::setPos(QCursor::pos().x(), QApplication::desktop()->height()-3);
+    }
+    else{
+      QCursor::setPos(QCursor::pos().x(), QApplication::desktop()->height()/2);
+    }
+
     break;
+
   case Down:
+
     if (current_desktop % 2 == 1)
       nd = current_desktop + 1;
     else
@@ -846,28 +857,50 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
     if (c)
       c->desktop = nd;
     switchDesktop(nd);
-    QCursor::setPos(QCursor::pos().x(), 
-		    3);
+
+    if(!options.ElectricBorderMovePointer){
+      QCursor::setPos(QCursor::pos().x(),3);
+    }
+    else{
+      QCursor::setPos(QCursor::pos().x(), QApplication::desktop()->height()/2);
+    }
+
     break;
+
   case Left:
+
     nd = current_desktop - 2;
     if (nd < 1)
 	nd += number_of_desktops;
     if (c)
       c->desktop = nd;
     switchDesktop(nd);
-    QCursor::setPos(QApplication::desktop()->width()-3,
-		    QCursor::pos().y());
+
+    if(!options.ElectricBorderMovePointer){
+      QCursor::setPos(QApplication::desktop()->width()-3, QCursor::pos().y());
+    }
+    else{
+      QCursor::setPos(QApplication::desktop()->width()/2, QCursor::pos().y());
+    }
+
     break;
+
   case Right:
+
     nd = current_desktop - 2;
     if (nd < 1)
       nd += number_of_desktops;
     if (c)
       c->desktop = nd;
     switchDesktop(nd);
-    QCursor::setPos(3,
-		    QCursor::pos().y());
+
+    if(!options.ElectricBorderMovePointer){
+      QCursor::setPos(3,QCursor::pos().y());
+    }
+    else{
+      QCursor::setPos(QApplication::desktop()->width()/2, QCursor::pos().y());
+    }
+
     break;
   }
 }
