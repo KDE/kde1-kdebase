@@ -124,18 +124,25 @@ void execute ( const char* cmd)
       cmd = tmp.append("\"").data();
   }
   // Looks like a KDEHelp thing ?
-  else if ( strstr( cmd, "man:" ) != 0L || strstr( cmd, "MAN:" ) != 0L || cmd[0] == '#' )
+  else if ( strnicmp( cmd, "info:", 4) == 0 || strnicmp( cmd, "man:", 4) == 0 || cmd[0] == '#' )
   {
       tmp = "kdehelp \"";
-      if ( cmd[0] == '#' )
+      if ( strncmp ( cmd, "##", 2 ) == 0 )
+      {
+        tmp += "info:(";
+        tmp += (strlen (cmd) == 2) ? "dir" : cmd + 2;
+        tmp += ")";
+      }
+      else if ( cmd[0] == '#' )
       {
         tmp += "man:";
-        tmp += cmd + 1;
+        tmp += (strlen (cmd) == 1) ? "(index)" : cmd + 1;
       }
       else
         tmp += cmd;
       cmd = tmp.append("\"").data();
   }
+
   // Looks like a valid URL ?
   else if ( strnicmp ( cmd, "http://", 7) == 0 || strnicmp ( cmd, "ftp://", 6) == 0  ||
             strnicmp ( cmd, "gopher://", 9 ) == 0 || strnicmp ( cmd, "news:", 5) == 0 ||
@@ -158,12 +165,13 @@ void execute ( const char* cmd)
       if ( uri[0] == '~' )
       {
          int len = uri.length();
-         if ( len == 1 )
+         int index = uri.find ( "/" );
+         if ( len == 1 || index == 1 )
             uri.replace ( 0, 1, QDir::homeDirPath().data() );
-         else if ( len > 1 )
+         else
          {
-           int index = uri.find ( "/" );
-           struct passwd *dir = ((index == -1) ? getpwnam(uri.mid(1,len).data()) : getpwnam(uri.mid(1,index-1).data()));
+           struct passwd *dir;
+           dir = (index == -1) ? getpwnam(uri.mid(1,len).data()) : getpwnam(uri.mid(1,index-1).data());
            if ( !dir ) return; // Unknown user
            (index == -1) ? uri.replace (0, len,  dir->pw_dir) : uri.replace (0, index, dir->pw_dir);
          }
