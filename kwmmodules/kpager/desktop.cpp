@@ -1087,8 +1087,8 @@ void Desktop::prepareBackground(void)
                     
                     QPainter paint( backgroundPixmap );
                     int w=width();
-                    int h=height()-getHeaderHeight();
-                    
+                    //int h=height()-getHeaderHeight();  // If it's unused don't code it.
+
                     paint.setPen( white );
                     for ( i=k=0; i < (int)w; i+=7,k++ ) 
                     {

@@ -1,3 +1,7 @@
+1998-12-07  Alex Zepeda  <garbanzo@hooked.net>
+
+	* Removed unused variable.
+
 * Fri Dic  4 7:20:00 CEST 1998
 
 Finally implemented support for all the kbgndwm background modes
