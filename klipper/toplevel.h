@@ -36,18 +36,21 @@ protected:
     void mousePressEvent(QMouseEvent *);
 
 protected slots:
-    void globalKeyEvent() { mousePressEvent( 0L ); }
-  
+    void showPopupMenu();
+
 private slots:
     void newClipData();
     void clickedMenu(int);
+    void clickedSubMenu(int);
 
 private:
     QString QSlast;
-    QPopupMenu *pQPMmenu;
+    QPopupMenu *pQPMmenu, *pQPMsubMenu;
     QIntDict<QString> *pQIDclipData;
     QTimer *pQTcheck;
     QPixmap *pQPpic;
+    bool bPopupAtMouse, bClipEmpty;
+    QString QSempty;
 };
 
 #endif

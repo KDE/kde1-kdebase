@@ -12,14 +12,18 @@
 #include "toplevel.h"
 #include <mykapp.h>
 #include <kwm.h>
+#include <qcursor.h>
 #include <qintdict.h>
 #include <qpainter.h>
 #include "qmessagebox.h"
+#include <qmenudata.h>
 #include "kiconloader.h"
 #include <kkeydialog.h>
+#include <kconfig.h>
 
 #define QUIT_ITEM   50
 #define CONFIG_ITEM 60
+#define POPUP_ITEM  70
 
 /* XPM */
 /* Drawn  by Andreas Thienemann for the K Desktop Environment */
@@ -63,16 +67,33 @@ static const char*mouse[]={
 TopLevel::TopLevel() /*FOLD00*/
   : KTMainWindow()
 {
+    KConfig *kc = kapp->getConfig();
+    kc->setGroup("General");
+    bPopupAtMouse = kc->readBoolEntry("PopupAtMousePosition", false);
+  
     QSlast = "";
     pQPMmenu = new QPopupMenu(0x0, "main_menu");
     connect(pQPMmenu, SIGNAL(activated(int)),
             this, SLOT(clickedMenu(int)));
-    pQPMmenu->insertItem(i18n("Quit Clipboard History"), QUIT_ITEM);
-    pQPMmenu->insertSeparator();
-    pQPMmenu->insertItem(i18n("Configure Shortcut"), CONFIG_ITEM);
+
+    pQPMsubMenu = new QPopupMenu(0x0, "sub_menu");
+    connect(pQPMsubMenu, SIGNAL(activated(int)),
+	    this, SLOT(clickedSubMenu(int)));
+    pQPMsubMenu->setCheckable(true);
+    pQPMsubMenu->insertItem(i18n("Shortcut..."), CONFIG_ITEM);
+    pQPMsubMenu->insertItem(i18n("Popup at mouse position"), POPUP_ITEM);
+    pQPMsubMenu->setItemChecked(POPUP_ITEM, bPopupAtMouse);
+    pQPMsubMenu->insertSeparator();
+    pQPMsubMenu->insertItem(i18n("Quit"), QUIT_ITEM);
+    
+    pQPMmenu->insertItem(i18n("Clipboard History"), pQPMsubMenu);
     pQPMmenu->insertSeparator();
     pQIDclipData = new QIntDict<QString>();
     pQIDclipData->setAutoDelete(TRUE);
+    QSempty = i18n("<empty clipboard>");
+    bClipEmpty = ((QString)kapp->clipboard()->text()).simplifyWhiteSpace().isEmpty();
+    if(bClipEmpty)
+        kapp->clipboard()->setText(QSempty);
     newClipData();
     pQTcheck = new QTimer(this, "timer");
     pQTcheck->start(1000, FALSE);
@@ -83,13 +104,14 @@ TopLevel::TopLevel() /*FOLD00*/
     globalKeys = new KGlobalAccel();
     globalKeys->insertItem(i18n("Select clipboard contents"),
 				"select-clipboard", "CTRL+ALT+V");
-    globalKeys->connectItem("select-clipboard", this, SLOT(globalKeyEvent()));
+    globalKeys->connectItem("select-clipboard", this, SLOT(showPopupMenu()));
     globalKeys->readSettings();
 }
 
 TopLevel::~TopLevel()
 {
     delete pQTcheck;
+    delete pQPMsubMenu;
     delete pQPMmenu;
     delete pQIDclipData;
     delete pQPpic;
@@ -126,6 +148,12 @@ void TopLevel::newClipData()
             return;
         }
         QString *data = new QString(clipData);
+	if (bClipEmpty) { // remove <clipboard empty> from popupmenu
+	    if (*data != QSempty) {
+	        bClipEmpty = false;
+		pQPMmenu->removeItemAt(2);
+	    }
+	}
         data->detach();
         while(pQPMmenu->count() > 12){
             int id = pQPMmenu->idAt(2);
@@ -144,21 +172,44 @@ void TopLevel::newClipData()
 
 void TopLevel::clickedMenu(int id)
 {
-    if(id == QUIT_ITEM)
-        kapp->quit();
-    else if (id == CONFIG_ITEM) {
-      KKeyDialog::configureKeys( globalKeys );
-    }
-      
-      pQTcheck->stop();
+    pQTcheck->stop();
     QString *data = pQIDclipData->find(id);
-    if(data != 0x0){
+    if(data != 0x0 && *data != QSempty){
         kapp->clipboard()->setText(data->data());
-        QSlast = data->copy();
+	QSlast = data->copy();
     }
-    
+  
     else
         warning("Unable to find item: %d", id);
     pQTcheck->start(1000);
 }
 
+void TopLevel::clickedSubMenu(int id)
+{
+    if(id == QUIT_ITEM) {
+        kapp->quit();
+    }
+    else if (id == CONFIG_ITEM) {
+        KKeyDialog::configureKeys(globalKeys);
+    }
+    else if (id == POPUP_ITEM) {
+        bool isChecked = pQPMsubMenu->isItemChecked(POPUP_ITEM);
+	pQPMsubMenu->setItemChecked(POPUP_ITEM, !isChecked);
+	bPopupAtMouse = !isChecked;
+
+	KConfig *kc = kapp->getConfig();
+	kc->setGroup("General");
+	kc->writeEntry("PopupAtMousePosition", bPopupAtMouse);
+	kc->sync();
+    }
+}
+
+void TopLevel::showPopupMenu()
+{
+  if (!bPopupAtMouse) {
+      mousePressEvent(0L);
+  }
+  else {
+      pQPMmenu->popup(QCursor::pos() );
+  }
+}
