@@ -1,5 +1,9 @@
 1999-01-11  David Faure  <faure@kde.org>
 
+	* kioslave/ftp.cpp: Follow links on ftp site. Fix found by 
+	Sven Fischer <herpes@kawo2.rwth-aachen.de> (kb1551).
+	I also removed calls to ksprintf (less secure than +=).
+
 	* kioslave/file.cpp (OpenDir): Added a cache to reduce calls to 
 	getpwuid and getgrgid. Improves speed, esp for NIS users (kb1536).
 	Initial patch from Philipp Hullmann <hullmann@nano.uni-hannover.de>.
