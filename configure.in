@@ -133,9 +133,10 @@ AC_CACHE_VAL(kde_cv_utmp_file,
 [
 kde_cv_utmp_file=no
 
-   for ac_file in               \
-                               \
+   for ac_file in     \
+                      \
 	/var/run/utmp \
+	/var/adm/utmp \
 	/etc/utmp \
      ; \
    do
@@ -148,7 +149,7 @@ kde_cv_utmp_file=no
 
 AC_MSG_RESULT($kde_cv_utmp_file)
 if test "$kde_cv_utmp_file" != "no"; then
-  AC_DEFINE_UNQUOTED(UTMP, $kde_cv_utmp_file)
+  AC_DEFINE_UNQUOTED(UTMP, "$kde_cv_utmp_file")
 fi
 
 
