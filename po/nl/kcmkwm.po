@@ -24,11 +24,11 @@ msgstr "&Knoppen"
 
 #: main.cpp:65
 msgid "&Titlebar"
-msgstr "&Taakbalk"
+msgstr "&Titelbalk"
 
 #: main.cpp:68
 msgid "&Desktop"
-msgstr ""
+msgstr "&Buroblad"
 
 #: main.cpp:74
 #, fuzzy
@@ -37,7 +37,7 @@ msgstr "gebruik: kcmkwm [-init | {windows,buttons,titlebar}]\n"
 
 #: main.cpp:105
 msgid "Window manager style"
-msgstr "Windowmanager stijl"
+msgstr "Venstermanager stijl"
 
 #: titlebar.cpp:117
 msgid "Minimize"
@@ -117,13 +117,15 @@ msgstr "&Inactieve pixmap"
 
 #: titlebar.cpp:982
 msgid "Mouse action"
-msgstr ""
+msgstr "Muis handeling"
 
 #: titlebar.cpp:984
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
+"LinkerMuisKnop dubbele klik\n"
+"    op titelbalk bewerktstelligt:"
 
 #: titlebar.cpp:988
 #, fuzzy
@@ -132,7 +134,7 @@ msgstr "Maximalizeren"
 
 #: titlebar.cpp:989
 msgid "Move"
-msgstr ""
+msgstr "Verplaats"
 
 #: titlebar.cpp:990
 #, fuzzy
@@ -141,7 +143,7 @@ msgstr "Schaduw"
 
 #: titlebar.cpp:991
 msgid "Iconify"
-msgstr ""
+msgstr "Minimalizeer"
 
 #: titlebar.cpp:992
 #, fuzzy
@@ -150,15 +152,15 @@ msgstr "Vastplakken"
 
 #: titlebar.cpp:993
 msgid "Resize"
-msgstr ""
+msgstr "Verander grootte"
 
 #: titlebar.cpp:994
 msgid "Restore"
-msgstr ""
+msgstr "Herstel"
 
 #: titlebar.cpp:995
 msgid "Operations Menu"
-msgstr ""
+msgstr "Operaties menu"
 
 #: windows.cpp:74
 msgid "Window movement"
@@ -182,31 +184,31 @@ msgstr "Plaatsing nieuwe vensters"
 
 #: windows.cpp:86
 msgid "Smart"
-msgstr ""
+msgstr "Intelligent"
 
 #: windows.cpp:88
 msgid "Cascade"
-msgstr ""
+msgstr "Gedeeltelijk overlappend"
 
 #: windows.cpp:90
 msgid "Interactive"
-msgstr ""
+msgstr "Interactief"
 
 #: windows.cpp:92
 msgid "Random"
-msgstr ""
+msgstr "Willekeurig"
 
 #: windows.cpp:94
 msgid "Manual"
-msgstr ""
+msgstr "Handmatig"
 
 #: windows.cpp:101
 msgid "Allowed Overlap:"
-msgstr ""
+msgstr "Toegestane overlapping:"
 
 #: windows.cpp:108
 msgid "Maximize Style"
-msgstr "Gedrag maximalizeren"
+msgstr "Maximalizatie Stijl"
 
 #: windows.cpp:109
 msgid "Maximize fully"
@@ -242,35 +244,43 @@ msgstr "milliseconden"
 
 #: desktop.cpp:77
 msgid "Active desktop borders"
-msgstr ""
+msgstr "Ingestelde buroblad grenzen"
 
 #: desktop.cpp:79
 msgid "Enable active desktop borders"
-msgstr ""
+msgstr "Zet ingestelde buroblad grenzen aan"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr ""
+msgstr "Verplaats wijzer naar centrum na overgang"
 
+# FIXME: 'dekstop' instead of 'desktop'
 #: desktop.cpp:87
 msgid "Dekstop switch delay:"
-msgstr ""
+msgstr "Buroblad overgang vertraging:"
 
 #: desktop.cpp:100
 msgid "Magic Borders"
-msgstr ""
+msgstr "Magische grenzen"
 
 #: desktop.cpp:102
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Grens Verspring Zone:\n"
+"       (pixels)"
 
 #: desktop.cpp:116
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Venster Verspring Zone:\n"
+"       (pixels)"
+
+#~ msgid "Edge Resistance:"
+#~ msgstr "Grens weerstand:"
 
 #~ msgid "Random placement"
 #~ msgstr "Willekeurig"

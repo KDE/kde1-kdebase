@@ -36,7 +36,7 @@ msgstr "Versnelling"
 
 #: mouse.cpp:81
 msgid "Threshold"
-msgstr ""
+msgstr "Grens"
 
 #: mouse.cpp:84
 msgid "Button mapping"

@@ -20,7 +20,7 @@ msgstr "Letters aan woordklasse toevoegen"
 
 #: main.C:255
 msgid "The backspace key will send a"
-msgstr ""
+msgstr "De terugtoets verzendt een"
 
 #: main.C:399
 msgid "&New Terminal"
@@ -143,7 +143,7 @@ msgstr ""
 
 #: main.C:631 main.C:805
 msgid "&Show"
-msgstr "&Laat zien"
+msgstr "&Toon"
 
 # FIXME
 #: main.C:764
@@ -163,7 +163,7 @@ msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
-"De nieuwe kleurinstellingen zullen getoont\n"
+"De nieuwe kleurinstellingen zullen getoond\n"
 "worden als het toetsenbord niet meer veilig is."
 
 #: main.C:1151
@@ -185,76 +185,82 @@ msgstr ""
 
 #: main.C:1155
 msgid "Permitted arguments are:\n"
-msgstr ""
+msgstr "Toegestane argumenten zijn:\n"
 
+# FIXME: 'ars' should be 'args'
 #: main.C:1156
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
+"-e <commando> <arg> ...    voer commando uit met args, met '-' als laatste\n"
 
 #: main.C:1157
 msgid "-display <name>           specify the display (server)\n"
-msgstr ""
+msgstr "-display <naam>           specificeer de display (server)\n"
 
 #: main.C:1158
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr ""
+msgstr "-vt_geometry <spec>       de oorspronkelijke vt venster geometrie\n"
 
 #: main.C:1159
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr ""
+msgstr "-print-piper <naam>      speciceer pipe voor vt100 printer\n"
 
 #: main.C:1160
 msgid "-vt_bg <colour>           background color\n"
-msgstr ""
+msgstr "-vt_bg <kleur>            achtergrond kleur\n"
 
 #: main.C:1161
 msgid "-vt_fg <colour>           foreground color\n"
-msgstr ""
+msgstr "-vt_fg <kleur>            voorgrond kleur\n"
 
 #: main.C:1162
 msgid "-vt_font <fontname>       normal font\n"
-msgstr ""
+msgstr "-vt_font <lettertypenaam> normaal lettertype\n"
 
 #: main.C:1163
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
-msgstr ""
+msgstr "-vt_size <grootte>        zeer klein,klein,normaal,groot,zeer groot\n"
 
 #: main.C:1164
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr ""
+msgstr "-linux                    stel kvt in als linux-console\n"
 
 #: main.C:1165
 msgid "-no_menubar               hide the menubar\n"
-msgstr ""
+msgstr "-no_menubar               verberg de menubalk\n"
 
 #: main.C:1166
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr ""
+msgstr "-no_scrollbar             verberg de schijfbalk\n"
 
 #: main.C:1167
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
+"-T <tekst>                tekst in de titelbalk van het venster \n"
+"                          (Gedateerd. Gebruik -caption in plaats hiervan)\n"
 
 #: main.C:1169
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr ""
+msgstr "-tn <TERM>                Terminal type. Standard is xterm.\n"
 
 #: main.C:1170
 msgid "-C                        Capture system console message\n"
-msgstr ""
+msgstr "-C                        Onderschep systeem console boodschap\n"
 
 #: main.C:1171
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr ""
+msgstr "-n <tekst>                naam in pictogram of pictogram venster\n"
 
 #: main.C:1172
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
+"-7                        voer uit in 7 bit mode\n"
+"-8                        voer uit in 8 bit mode\n"
 
 #: main.C:1174
 msgid ""
@@ -262,16 +268,21 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
+"-ls                       start kvt's shell als een login shell\n"
+"-ls-                      start kvt's shell als een non-login shell "
+"(standaard)\n"
 
 #: main.C:1176
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
+"-meta <arg>               doe Meta met ESCAPE prefix, 8THBIT ingesteld, of "
+"negeer\n"
 
 #: main.C:1177
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr ""
+msgstr "-sl <nummer>              sla aantal regels in terugschuifbuffer op\n"
 
 #: main.C:1178
 msgid ""
@@ -280,6 +291,10 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
+"-pageup <keysym>          gebruik toets alt-keysym om omhoog te schuiven "
+"door de buffer\n"
+"-pagedown <keysym>        gebruik toets alt-keysym om omlaag te schuiven "
+"door de buffer\n"
 
 #: main.C:1182
 msgid ""

@@ -191,7 +191,7 @@ msgstr "hoog uit"
 
 #: kftabdlg.cpp:217
 msgid " Advanced "
-msgstr " Geavanceerd "
+msgstr "Geavanceerd "
 
 #: kftabdlg.cpp:389
 msgid "The date is not valid!!"
@@ -257,7 +257,7 @@ msgstr "Voeg nieuwe toe"
 # FIXME
 #: kfoptions.cpp:179
 msgid "Archivers"
-msgstr ""
+msgstr "Archief programmas"
 
 #: kfwin.cpp:78 kfwin.cpp:105
 #, c-format
@@ -343,6 +343,9 @@ msgstr "Fout tijdens het creëren van een kindproces!"
 #, fuzzy
 #~ msgid "Kfind &help"
 #~ msgstr "Kfind help"
+
+#~ msgid "About &Qt"
+#~ msgstr "Informatie over &Qt"
 
 #~ msgid "(none)"
 #~ msgstr "(geen)"

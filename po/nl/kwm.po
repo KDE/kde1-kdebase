@@ -34,7 +34,7 @@ msgstr ""
 
 #: main.C:455
 msgid "Usage: "
-msgstr ""
+msgstr "Gebruik: "
 
 #: main.C:466
 #, fuzzy
@@ -44,7 +44,7 @@ msgstr "Ma&ximaliseren aan/uit"
 #: main.C:467
 #, fuzzy
 msgid "&Restore"
-msgstr "&Grootte veranderen"
+msgstr "&Herstel"
 
 #: main.C:468
 msgid "&Iconify"
@@ -58,12 +58,12 @@ msgstr "Mi&nimaliseren"
 #: main.C:470
 #, fuzzy
 msgid "&Sticky"
-msgstr "&Kleven aan/uit"
+msgstr "&Vastplakken"
 
 #: main.C:471
 #, fuzzy
 msgid "&UnSticky"
-msgstr "&Kleven aan/uit"
+msgstr "&Losweken"
 
 #: main.C:472
 #, fuzzy
@@ -118,11 +118,11 @@ msgstr "Acht"
 
 #: main.C:855
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr ""
+msgstr "Sommige pixmaps zijn niet geldig: VormModus uitgezet\n"
 
 #: main.C:1164
 msgid "*** No Tasks ***"
-msgstr ""
+msgstr "*** Geen Taken ***"
 
 #: minicli.C:115
 msgid "Command:"
@@ -135,33 +135,41 @@ msgstr "&Uitloggen"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr ""
+msgstr "Sessie klaar om uit te loggen"
 
 #: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
+"De volgende toepassingen bevatten onopgeslagen gegevens welke\n"
+"verloren zal zijn in uw volgende sessie."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
+"De volgende toepassingen kunnen niet worden hersteld in uw volgende sessie,\n"
+"enkel opnieuw opgestart. Verzeker u ervan dat ze geen belangrijke \n"
+"onopgeslagen gegevens bevatten."
 
 #: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
+"De volgende toepassingen zijn niet X11-geschikt en kunnen daarom niet \n"
+"worden hersteld in uw volgende sessie. Verzeker u ervan dat ze geen \n"
+"belangrijke onopgeslagen gegevens bevatten."
 
 #: taskmgr.C:106
 msgid "Switch to"
-msgstr ""
+msgstr "Wissel naar"
 
 #: taskmgr.C:120
 msgid "Current session"
-msgstr ""
+msgstr "Huidige sessie"
 
 #~ msgid "&Close"
 #~ msgstr "&Sluiten"

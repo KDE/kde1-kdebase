@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Case Roole <cjr@xs4all.nl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
@@ -133,16 +133,16 @@ msgstr "Het pad voor de menus is niet ingesteld."
 
 #: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"
-msgstr ""
+msgstr "Ik suggereer de volgende ingangen:"
 
 #: DesktopPathDialogData.cpp:55
 msgid "Path:"
-msgstr ""
+msgstr "Pad:"
 
 #: DesktopPathDialogData.cpp:68
 #, fuzzy
 msgid "PersonalPath:"
-msgstr "Persoonlijk:"
+msgstr "PersoonlijkPad:"
 
 #: entrydialog.cpp:53
 msgid "Submenu"
@@ -159,7 +159,7 @@ msgstr "Opnemen"
 
 #: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
 msgid "Link"
-msgstr ""
+msgstr "Verbinding"
 
 #: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
 msgid "Device"

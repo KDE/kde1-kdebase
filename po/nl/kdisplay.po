@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Case Roole <cjr@xs4all.nl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
@@ -16,30 +16,30 @@ msgstr ""
 
 #: backgnd.cpp:57
 msgid "Enter new desktop name"
-msgstr ""
+msgstr "Voer nieuw buroblad naam in"
 
 #: backgnd.cpp:113 backgnd.cpp:148
 msgid "Desktop"
-msgstr ""
+msgstr "Buroblad"
 
 #: backgnd.cpp:165
 msgid "&Rename ..."
-msgstr ""
+msgstr "&Hernoem ..."
 
 #: backgnd.cpp:191 colorscm.cpp:93
 #, fuzzy
 msgid "Colors"
-msgstr "Kleur"
+msgstr "Kleuren"
 
 #: backgnd.cpp:218
 #, fuzzy
 msgid "&One Color"
-msgstr "Kleur"
+msgstr "&Een Kleur"
 
 #: backgnd.cpp:235
 #, fuzzy
 msgid "&Two Color"
-msgstr "Kleur"
+msgstr "&Twee Kleuren"
 
 #: backgnd.cpp:254
 #, fuzzy
@@ -58,12 +58,12 @@ msgstr "Naast elkaar"
 #: backgnd.cpp:281
 #, fuzzy
 msgid "&Centred"
-msgstr "Gecentreerd"
+msgstr "Ge&centreerd"
 
 #: backgnd.cpp:289
 #, fuzzy
 msgid "&Scaled"
-msgstr "Vergroot"
+msgstr "&Vergroot"
 
 #: backgnd.cpp:305 backgnd.cpp:425 backgnd.cpp:438 backgnd.cpp:783
 #, fuzzy
@@ -73,7 +73,7 @@ msgstr "Behang"
 #: backgnd.cpp:333
 #, fuzzy
 msgid "&Browse..."
-msgstr "Bladeren..."
+msgstr "&Bladeren..."
 
 #: backgnd.cpp:530
 #, fuzzy
@@ -82,36 +82,40 @@ msgstr "Standaard KDE"
 
 #: backgnd.cpp:861
 msgid "Desktop names"
-msgstr ""
+msgstr "Buroblad namen"
 
 #: backgnd.cpp:907
 #, fuzzy
 msgid "Two color backgrounds"
-msgstr "Selecteer achtergrond"
+msgstr "Twee kleuren achtergrond installing"
 
 #: backgnd.cpp:944
+#, fuzzy
 msgid "Blend colors from &top to bottom"
-msgstr ""
+msgstr "&Meng kleuren van rechts naar links"
 
 #: backgnd.cpp:950
+#, fuzzy
 msgid "Blend colors from &right to left"
-msgstr ""
+msgstr "&Meng kleuren van rechts naar links"
 
 #: backgnd.cpp:956
+#, fuzzy
 msgid "Use &pattern"
-msgstr ""
+msgstr "&Patroon"
 
 #: backgnd.cpp:983
 msgid "Preview"
-msgstr ""
+msgstr "Vooruitblik"
 
 #: backgnd.cpp:994
+#, fuzzy
 msgid "Pattern &name"
-msgstr ""
+msgstr "Patroon naam"
 
 #: backgnd.cpp:1033
 msgid "Current"
-msgstr ""
+msgstr "Huidig"
 
 #: backgnd.cpp:1093
 #, fuzzy
@@ -120,32 +124,32 @@ msgstr "Bestand"
 
 #: backgnd.cpp:1096
 msgid "Fish net"
-msgstr ""
+msgstr "Visnet"
 
 #: backgnd.cpp:1099
 msgid "Triangles"
-msgstr ""
+msgstr "Driehoeken"
 
 #: backgnd.cpp:1102
 msgid "Flowers"
-msgstr ""
+msgstr "Bloemen"
 
 #: backgnd.cpp:1105
 msgid "Rattan"
-msgstr ""
+msgstr "Rotan"
 
 #: backgnd.cpp:1108
 msgid "Cobbled Pavement"
-msgstr ""
+msgstr "Kinderkopjes"
 
 #: colorscm.cpp:119
 msgid "Color Scheme"
-msgstr "Kleur palet"
+msgstr "Kleuren palet"
 
 #: colorscm.cpp:130
 #, fuzzy
 msgid "Current scheme"
-msgstr "Kleur palet"
+msgstr "Huidig kleuren palet"
 
 #: colorscm.cpp:132
 #, fuzzy
@@ -154,16 +158,16 @@ msgstr "Standaard KDE"
 
 #: colorscm.cpp:145
 msgid "&Add ..."
-msgstr ""
+msgstr "&Voeg toe ..."
 
 #: colorscm.cpp:153
 #, fuzzy
 msgid "&Remove"
-msgstr "Verwijderen"
+msgstr "Ver&wijderen"
 
 #: colorscm.cpp:162
 msgid "&Save changes"
-msgstr ""
+msgstr "&Bewaar veranderingen"
 
 #: colorscm.cpp:176
 msgid "Widget color"
@@ -171,29 +175,29 @@ msgstr "Widget kleur"
 
 #: colorscm.cpp:183
 msgid "Inactive title bar"
-msgstr "Inactive titel balk"
+msgstr "Inactieve titelbalk"
 
 #: colorscm.cpp:184
 msgid "Inactive title text"
-msgstr "Inactive titeltekst"
+msgstr "Inactieve titeltekst"
 
 #: colorscm.cpp:185
 #, fuzzy
 msgid "Inactive title blend"
-msgstr "Inactive titel balk"
+msgstr "Inactieve titel gemengd"
 
 #: colorscm.cpp:186
 msgid "Active title bar"
-msgstr "Active titelbalk"
+msgstr "Actieve titelbalk"
 
 #: colorscm.cpp:187
 msgid "Active title text"
-msgstr "Active titeltekst"
+msgstr "Actieve titeltekst"
 
 #: colorscm.cpp:188
 #, fuzzy
 msgid "Active title blend"
-msgstr "Active titelbalk"
+msgstr "Actieve titel gemengd"
 
 #: colorscm.cpp:189
 msgid "Background"
@@ -234,7 +238,7 @@ msgstr "Hoog"
 
 #: colorscm.cpp:318
 msgid "Error removing"
-msgstr ""
+msgstr "Fout bij verwijderen"
 
 #: colorscm.cpp:319
 msgid ""
@@ -242,10 +246,13 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the color scheme is stored."
 msgstr ""
+"Dit kleuren palet kon niet verwijderd worden.\n"
+"Misschien ontbreekt de toestemming om het bestand te\n"
+"wijzigen waarin het palet is opgeslagen."
 
 #: colorscm.cpp:376
 msgid "Naming error"
-msgstr ""
+msgstr "Naam fout"
 
 #: colorscm.cpp:377
 msgid ""
@@ -253,11 +260,14 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
+"Kies a.u.b. een unieke naam voor het nieuwe kleuren\n"
+"palet. De ingevoerde naam is al onderdeel van de\n"
+"lijst met kleuren paletten."
 
 #: savescm.cpp:18
 #, fuzzy
 msgid "Add a color scheme"
-msgstr "Kleur palet"
+msgstr "Voeg een kleuren palet toe"
 
 #: savescm.cpp:32
 msgid ""
@@ -267,6 +277,13 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
+"&Voer een naam in voor het nieuwe kleuren palet\n"
+"als welke het wordt toegevoegd aan je persoonlijke\n"
+"lijst.\n"
+"\n"
+"De kleuren welke momenteel worden gebruikt in de\n"
+"vooruitblik zullen worden toegevoegd aan dit palet\n"
+"om mee te beginnen."
 
 #: scrnsave.cpp:48
 msgid "Ignore"
@@ -287,7 +304,7 @@ msgstr "Schermbeveiliging"
 #: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:548 scrnsave.cpp:657
 #, fuzzy
 msgid "No screensaver"
-msgstr "Schermbeveiliging"
+msgstr "&Schermbeveiliging"
 
 #: scrnsave.cpp:207
 #, fuzzy
@@ -305,7 +322,7 @@ msgstr "Instellingen"
 
 #: scrnsave.cpp:248
 msgid "&Wait for"
-msgstr ""
+msgstr "&Wacht gedurende"
 
 #: scrnsave.cpp:258
 #, fuzzy
@@ -325,24 +342,24 @@ msgstr "Prioriteit"
 #: scrnsave.cpp:285
 #, fuzzy
 msgid "&High"
-msgstr "Hoog"
+msgstr "&Hoog"
 
 #: scrnsave.cpp:294
 msgid "Low"
-msgstr "Laag"
+msgstr "&Laag"
 
 #: general.cpp:147
 #, fuzzy
 msgid "Fonts etc."
-msgstr "Lettertypes"
+msgstr "&Lettertypen enz."
 
 #: general.cpp:153
 msgid "&Draw widgets in the style of Windows 95"
-msgstr ""
+msgstr "Teken widgets in de stijl van Windows 95"
 
 #: general.cpp:167
 msgid "Desktop fonts"
-msgstr ""
+msgstr "Buroblad lettertypen"
 
 #: general.cpp:179
 msgid "General font"
@@ -350,45 +367,45 @@ msgstr "Algemeen lettertype"
 
 #: general.cpp:184
 msgid "Fixed font"
-msgstr ""
+msgstr "Vast lettertype"
 
 #: general.cpp:189
 #, fuzzy
 msgid "Window title font"
-msgstr "Venster tekst"
+msgstr "Venster titel lettertype"
 
 #: general.cpp:194
 #, fuzzy
 msgid "Panel button font"
-msgstr "Algemeen lettertype"
+msgstr "Paneel knop lettertype"
 
 #: general.cpp:199
 msgid "Panel clock font"
-msgstr ""
+msgstr "Panel klok lettertype"
 
 #: main.cpp:61
 #, fuzzy
 msgid "&Fonts etc."
-msgstr "Lettertypes"
+msgstr "&Lettertypen enz."
 
 #: main.cpp:64
 #, fuzzy
 msgid "&Background"
-msgstr "Achtergrond"
+msgstr "&Achtergrond"
 
 #: main.cpp:67
 #, fuzzy
 msgid "&Screensaver"
-msgstr "Schermbeveiliging"
+msgstr "&Schermbeveiliging"
 
 #: main.cpp:71
 #, fuzzy
 msgid "&Colors"
-msgstr "Kleur"
+msgstr "&Kleuren"
 
 #: main.cpp:77
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
-msgstr ""
+msgstr "gebruik: kcdisplay [-init | {background,screensaver,colors,styl}]\n"
 
 #: main.cpp:117
 #, fuzzy
@@ -411,12 +428,12 @@ msgstr "Selecteer tekst"
 #: fontchooser.cpp:89
 #, fuzzy
 msgid "&Bold"
-msgstr "Vet"
+msgstr "&Vet"
 
 #: fontchooser.cpp:96
 #, fuzzy
 msgid "&Italic"
-msgstr "Cursief"
+msgstr "&Cursief"
 
 #: fontchooser.cpp:262
 #, fuzzy
@@ -425,11 +442,11 @@ msgstr "Standaard KDE"
 
 #: fontchooser.cpp:265
 msgid "any"
-msgstr ""
+msgstr "enige"
 
 #, fuzzy
 #~ msgid "Blen&d"
-#~ msgstr "Vet"
+#~ msgstr "Gemengd"
 
 #~ msgid "kwmcom: communication with kwm failed\n"
 #~ msgstr "kwmcom: de communicatie met kwm is mislukt\n"
