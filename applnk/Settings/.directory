@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Name=Settings
 Name[pl]=Ustawienia
+Name[cs]=Nastavení
 MiniIcon=kcontrol.xpm
 SortOrder=Desktop,Input_Devices,KWM,Network,Information,Sound
 Icon=kcontrol.xpm
