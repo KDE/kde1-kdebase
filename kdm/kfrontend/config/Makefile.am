@@ -10,8 +10,10 @@ Xservers: Xservers.ws
 	$(LN_S) Xservers.ws Xservers
 
 Xservers.ws: Xserv.ws.cpp
-	sed -e "s#BINDIR#$(XBINDIR)#" Xserv.ws.cpp | sed -e '/^#  *[0-9][0-9]*  *.*$$/d' -e '/^XCOMM$$/s//#/' -e '/^XCOMM[^a-zA-Z0-9_]/s/^XCOMM/#/' > Xservers.ws
+	BINDIR=$(XBINDIR) ;\
+	sed -e "s#BINDIR#$$BINDIR#" Xserv.ws.cpp | sed -e '/^#  *[0-9][0-9]*  *.*$$/d' -e '/^XCOMM$$/s//#/' -e '/^XCOMM[^a-zA-Z0-9_]/s/^XCOMM/#/' > Xservers.ws
 
 xdm-config: xdm-conf.cpp
-	sed -e "s#XDMDIR#$(XDMDIR)#" xdm-conf.cpp |sed -e '/^#  *[0-9][0-9]*  *.*$$/d' -e '/^XCOMM$$/s//#/' -e '/^XCOMM[^a-zA-Z0-9_]/s/^XCOMM/#/'> xdm-config
+	XDMDIR=$(ac_xdmdir) ;\
+	sed -e "s#XDMDIR#$$XDMDIR#" xdm-conf.cpp |sed -e '/^#  *[0-9][0-9]*  *.*$$/d' -e '/^XCOMM$$/s//#/' -e '/^XCOMM[^a-zA-Z0-9_]/s/^XCOMM/#/'> xdm-config
 

@@ -52,9 +52,9 @@ dnl this is for kdm:
 dnl checks for X server
 AC_PATH_PROG(X_SERVER, X)
 if test ! -z "$X_SERVER"; then
-X_SERVER=`echo $X_SERVER | sed -e 's+/X++'`
+X_SERVER=`echo $X_SERVER | sed -e 's+/X$++'`
 AC_DEFINE_UNQUOTED(XBINDIR,$X_SERVER)
-XBINDIR=$XDM
+XBINDIR=$X_SERVER
 AC_SUBST(XBINDIR)
 fi
 
