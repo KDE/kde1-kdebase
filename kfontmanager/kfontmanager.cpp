@@ -49,39 +49,42 @@ extern char PICS_PATH[256];
 #define HEIGHT 290
 #define WIDTH 400
 
+#include <klocale.h>
+#define klocale KLocale::klocale()
+#define i18n(X) klocale->translate(X)
 
 KFontManager::KFontManager (QWidget * parent, const char *name)
     : QDialog (parent, name)
 {
 
 
-  availableLabel = new QLabel("Available X11 Fonts", this,"availlabel");
+  availableLabel = new QLabel(i18n("Available X11 Fonts"), this,"availlabel");
 
   availableFontsList = new QListBox(this,"avalableFonts");
   
   connect(availableFontsList,SIGNAL(highlighted(int)),
 	  this,SLOT(display_available_example(int)));
   
-  selectedLabel = new QLabel("Fonts made available to KDE", this,"selectlabel");
+  selectedLabel = new QLabel(i18n("Fonts made available to KDE"), this,"selectlabel");
   selectedFontsList = new QListBox(this,"avalableFonts");
 
   connect(selectedFontsList,SIGNAL(highlighted(int)),
 	  this,SLOT(display_selected_example(int)));
 
-  add = new QPushButton("Add", this);
+  add = new QPushButton(i18n("Add"), this);
   connect(add,SIGNAL(clicked()),this,SLOT(add_slot()));
 
-  remove = new QPushButton("Remove", this);
+  remove = new QPushButton(i18n("Remove"), this);
   connect(remove,SIGNAL(clicked()),this,SLOT(remove_slot()));
 
-  help = new QPushButton("Help", this);
+  help = new QPushButton(i18n("Help"), this);
   connect(help,SIGNAL(clicked()),SLOT(helpselected()));
 
   example_label = new QLabel(this,"examples");
   example_label->setAlignment(AlignCenter);
   example_label->setBackgroundColor(white);
   example_label->setFrameStyle( QFrame::WinPanel | QFrame::Sunken );
-  example_label->setText("The KDE Font Manager Example String");
+  example_label->setText(i18n("The KDE Font Manager Example String"));
 
   connect( parent, SIGNAL( applyButtonPressed() ),
 	   this, SLOT( writeKDEInstalledFonts() ) );  	  
@@ -99,9 +102,9 @@ KFontManager::KFontManager (QWidget * parent, const char *name)
 
 void KFontManager::about(){
 
-  QMessageBox::message ("About kfontmanager", "kfontmanager Version 0.2\n"\
+  QMessageBox::message (i18n("About kfontmanager"), i18n("kfontmanager Version 0.2\n"\
 			"Copyright 1997\nBernd Johannes Wuebben\n"\
-			"wuebben@math.cornell.edu\n","Ok");
+			"wuebben@math.cornell.edu\n"),i18n("Ok"));
 
 }
 
@@ -206,8 +209,8 @@ bool KFontManager::loadKDEInstalledFonts(){
 
   fontfilename =  getenv("HOME");
   if(fontfilename.isEmpty()){
-    QMessageBox::message("Sorry","The environment variable HOME\n"\
-			 "is not set\n","OK");
+    QMessageBox::message(i18n("Sorry"),i18n("The environment variable HOME\n"\
+			 "is not set\n"),i18n("Ok"));
     QApplication::exit(1);
 
   }
@@ -277,14 +280,14 @@ bool KFontManager::writeKDEInstalledFonts(){
   QFile fontfile(fontfilename);
 
   if (!fontfile.open(IO_WriteOnly | IO_Truncate)){
-    QMessageBox::message("Sorry","Can not create:\n ~/.kde/config/kdefonts\n","OK");
+    QMessageBox::message(i18n("Sorry"),i18n("Can not create:\n ~/.kde/config/kdefonts\n"),i18n("Ok"));
     return false;
   }
 
   if (!fontfile.isWritable()){
-    QMessageBox::message("Sorry","~/.kde/config/kdefonts exists but\n"\
+    QMessageBox::message(i18n("Sorry"),i18n("~/.kde/config/kdefonts exists but\n"\
 			 "is not writeable\n"\
-			 "Can't save KDE Fontlist.","OK");
+			 "Can't save KDE Fontlist."),i18n("Ok"));
     return false;
   }
 

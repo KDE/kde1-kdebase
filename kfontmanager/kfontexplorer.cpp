@@ -22,6 +22,10 @@
     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
   
     $Log$
+    sure they are still ok.
+
+    Revision 1.7  1997/11/09 04:04:59  wuebben
+    Bernd: necessary iso charset changes
 
     Revision 1.6  1997/11/07 18:45:15  kulow
     some more porting issues. Mainly default arguments and variable binding
@@ -67,6 +71,10 @@
 #define XOFFSET 5
 #include <X11/Xlib.h>
 
+#include <klocale.h>
+#define klocale KLocale::klocale()
+#include <kapp.h>
+#include "kfontexplorer.h"
 
 #define YOFFSET  5
 #define XOFFSET  5
@@ -74,32 +82,32 @@
 #define LABLE_HEIGHT 20
 #include <klocale.h>
 #define i18n(X) klocale->translate(X)
-  box1->setTitle("Requested Font");
+					     QFont::ISO_8859_2,
 KFontExplorer::KFontExplorer( QWidget *parent, const char *name,  bool modal)
     : QDialog( parent, name, modal ){
 					     QFont::ISO_8859_6,
 					     QFont::ISO_8859_7,
-  box1->setTitle("Actual Font");
+                   
   box1->setGeometry(15,15 ,SIZE_X -  XOFFSET +10
 		   ,140);
   box1->setTitle(i18n("Requested Font"));
-  family_label->setText("Family:");
+{
 
   box1->setGeometry(15,165,SIZE_X -  XOFFSET + 10 
   setCaption( klocale->translate("Select Font") );
-  actual_family_label->setText("Family:");
+  box1->setTitle(i18n("Actual Font"));
   box1->setGeometry(XOFFSET,YOFFSET,SIZE_X -  XOFFSET
 		   ,150);
   box1->setTitle( klocale->translate("Requested Font") );
   family_label->setText(i18n("Family:"));
   family_label->setGeometry(5*XOFFSET,10*YOFFSET,LABLE_LENGTH,LABLE_HEIGHT);
   box1->setGeometry(XOFFSET,160,SIZE_X -  XOFFSET
-  size_label->setText("Size:");
+		   ,130);
   actual_family_label->setText(i18n("Family:"));
   actual_family_label->setGeometry(5*XOFFSET,190,40,LABLE_HEIGHT);
 
   family_label = new QLabel(this,"family");
-  actual_size_label->setText("Size:");
+  actual_family_label_data->setGeometry(5*XOFFSET +50 ,190,110,LABLE_HEIGHT);
 			     LABLE_HEIGHT);
 
   size_label->setText(i18n("Size:"));
@@ -108,12 +116,12 @@ KFontExplorer::KFontExplorer( QWidget *parent, const char *name,  bool modal)
 
   actual_charset_label_data = new QLabel(this,"acharsetd");
   actual_size_label->setText(i18n("Size:"));
-  weight_label->setText("Weight:");
+  actual_size_label->setGeometry(5*XOFFSET,190 +LABLE_HEIGHT ,
 				 LABLE_LENGTH,LABLE_HEIGHT);
   size_label->setText(klocale->translate("Size:"));
   size_label->setGeometry(6*XOFFSET + LABLE_LENGTH + 12*XOFFSET +2* FONTLABLE_LENGTH,
   actual_size_label_data->setGeometry(5*XOFFSET +50 ,190 + LABLE_HEIGHT
-  actual_weight_label->setText("Weight:");
+
   actual_size_label = new QLabel(this,"asize");
   actual_size_label->setText(klocale->translate("Size:"));
   weight_label->setText(i18n("Weight:"));
@@ -122,7 +130,7 @@ KFontExplorer::KFontExplorer( QWidget *parent, const char *name,  bool modal)
   actual_size_label_data = new QLabel(this,"asized");
   actual_size_label_data->setGeometry(3*XOFFSET +60 ,200 + LABLE_HEIGHT
   actual_weight_label->setText(i18n("Weight:"));
-  style_label->setText("Style:");
+  actual_weight_label->setGeometry(5*XOFFSET,190 + 2*LABLE_HEIGHT ,
 				 LABLE_LENGTH,LABLE_HEIGHT);
   weight_label->setText(klocale->translate("Weight:"));
   weight_label->setGeometry(3*XOFFSET,15*YOFFSET + LABLE_HEIGHT -20 
@@ -130,7 +138,7 @@ KFontExplorer::KFontExplorer( QWidget *parent, const char *name,  bool modal)
 
   actual_weight_label = new QLabel(this,"aweight");
   actual_weight_label->setText(klocale->translate("Weight:"));
-  actual_style_label->setText("Style:");
+  style_label->setText(i18n("Style:"));
   style_label->setGeometry(7*XOFFSET + LABLE_LENGTH + 12*XOFFSET + 
 
 			   17*YOFFSET + LABLE_HEIGHT 
@@ -209,12 +217,12 @@ KFontExplorer::KFontExplorer( QWidget *parent, const char *name,  bool modal)
   style_combo->insertItem( "italic" );
   style_combo->setGeometry(12*XOFFSET + 6*LABLE_LENGTH
 			    ,21*YOFFSET- COMBO_ADJUST
-  cancel_button = new QPushButton("Cancel",this);
+	   SLOT(weight_chosen_slot(const char *)) );
   // QToolTip::add( weight_combo, "Select Font Weight" );
 
   style_combo = new QComboBox( TRUE, this, klocale->translate("Style") );
 
-  /*  ok_button = new QPushButton( "Ok", this );
+  // QToolTip::add( style_combo, "Select Font Style" );
   style_combo->insertItem( klocale->translate("italic") );
   style_combo->setGeometry(10*XOFFSET + 6*LABLE_LENGTH
   cancel_button = new QPushButton(i18n("Cancel"),this);

@@ -37,6 +37,10 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
+#include <klocale.h>
+#define klocale KLocale::klocale()
+#define i18n(X) klocale->translate(X)
+
 extern char DOCS_PATH[256];
 extern char PICS_PATH[256];
 
@@ -58,9 +62,9 @@ KFontList::KFontList (QWidget * parent, const char *name)
 
 void KFontList::about(){
 
-  QMessageBox::message ("About kfontmanager", "kfontmanager Version 0.1\n"\
+  QMessageBox::message (i18n("About kfontmanager"), i18n("kfontmanager Version 0.1\n"\
 			"Copyright 1997\nBernd Johannes Wuebben\n"\
-			"wuebben@math.cornell.edu\n","Ok");
+			"wuebben@math.cornell.edu\n"),i18n("Ok"));
 
 }
 

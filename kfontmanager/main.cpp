@@ -36,26 +36,31 @@
 #include "kfontlist.h"
 #include "kfontexplorer.h"
 
+#include <klocale.h>
+#define klocale KLocale::klocale()
+#define i18n(X) klocale->translate(X)
+
 char DOCS_PATH[256];
 char PICS_PATH[256];
 
+KLocale local("kfontmanager");
 
 void setup(){
 
 
 	QTabDialog *mainWindow = new QTabDialog( 0, 0, TRUE );
 
-	mainWindow->setCaption( "KDE Font Manager" );
-	mainWindow->setCancelButton();
-	mainWindow->setApplyButton();
+	mainWindow->setCaption( i18n("KDE Font Manager") );
+	mainWindow->setCancelButton(i18n("Cancel"));
+	mainWindow->setApplyButton(i18n("Apply"));
 
 	KFontManager manager(mainWindow,"manager");
 	KFontExplorer explorer(mainWindow,"explorer");
 	KFontList list(mainWindow,"list");
 
-	mainWindow->addTab( &manager, "KDE Fonts" );
-	mainWindow->addTab( &explorer,"Font Explorer");
-	mainWindow->addTab( &list, "Raw X11 Font List" );
+	mainWindow->addTab( &manager, i18n("KDE Fonts") );
+	mainWindow->addTab( &explorer,i18n("Font Explorer"));
+	mainWindow->addTab( &list, i18n("Raw X11 Font List") );
 	
        	mainWindow->resize( 430, 460 );
 	mainWindow->exec();
