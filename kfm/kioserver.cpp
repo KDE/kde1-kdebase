@@ -653,8 +653,9 @@ int KIOServer::isDir( const char *_url )
 
     int i = strlen( _url );
 
-    // This is always a directory
-    if ( i >= 1 && _url[ i - 1 ] == '/' )
+    // A url ending with '/' is always a directory (said somebody)
+    // Wrong, says David : file:/tmp/myfile.gz#gzip:/ isn't !
+    if ( !u.hasSubProtocol() && i >= 1 && _url[ i - 1 ] == '/' )
 	return 1;
     // With HTTP we can be shure that everything that does not end with '/'
     // is NOT a directory
