@@ -180,7 +180,7 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	
 	topLayout->addWidget( group, 2, 1 );
 	
-	QBoxLayout *groupLayout = new QVBoxLayout( group, 10 );
+	QBoxLayout *groupLayout = new QVBoxLayout( group, 10, 5 );
 
 	ssList = new QListBox( group );
 	ssList->insertItem( NO_SCREENSAVER, 0 );
@@ -214,7 +214,7 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	
 	groupLayout->addWidget( testBt );
 	
-	QBoxLayout *stackLayout = new QVBoxLayout( 10 );
+	QBoxLayout *stackLayout = new QVBoxLayout( 5 );
 	
 	topLayout->addLayout( stackLayout, 2, 2 );
 
@@ -222,7 +222,7 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	
 	stackLayout->addWidget( group, 15 );
 	
-	groupLayout = new QVBoxLayout( group, 10 );
+	groupLayout = new QVBoxLayout( group, 10, 5 );
 	
 	QBoxLayout *pushLayout = new QHBoxLayout( 5 );
 	

@@ -42,7 +42,7 @@ KFontChooser::KFontChooser( QWidget *parent, const char *name )
 	fnt = QFont( "helvetica", 12 );
 	changed = False;
 	
-	QBoxLayout *topLayout = new QVBoxLayout( this, 10 );
+	QBoxLayout *topLayout = new QVBoxLayout( this, 10, 5 );
 	topLayout->addStretch( 5 );
 	
 	QBoxLayout *stackLayout = new QVBoxLayout( 4 );

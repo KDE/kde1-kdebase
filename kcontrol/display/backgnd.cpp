@@ -51,7 +51,7 @@ KRenameDeskDlg::KRenameDeskDlg( const char *t, QWidget *parent )
     : QDialog( parent, 0, true )
 {
     
-    QVBoxLayout *vlayout = new QVBoxLayout( this, 5 );
+    QVBoxLayout *vlayout = new QVBoxLayout( this, 5, 10 );
 
 	vlayout->addSpacing(10);
 
@@ -150,7 +150,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 
 	topLayout->addWidget( group, 1,1 );
 	
-	QBoxLayout *groupLayout = new QVBoxLayout( group, 10 );
+	QBoxLayout *groupLayout = new QVBoxLayout( group, 10, 5 );
 
     deskListBox = new QListBox( group );
     getDeskNameList();
@@ -184,7 +184,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 	
     group = new QGroupBox( i18n( "Colors" ), this );
 	
-	QGridLayout *grid = new QGridLayout( group, 8, 5, 5 );
+	QGridLayout *grid = new QGridLayout( group, 6, 4, 10, 5 );
 	
 	grid->setRowStretch(0,50);
 	grid->setRowStretch(1,10);
@@ -192,17 +192,13 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 	grid->setRowStretch(3,10);
 	grid->setRowStretch(4,10);
 	grid->setRowStretch(5,10);
-	grid->setRowStretch(6,10);
-	grid->setRowStretch(7,10);
 
 	grid->setColStretch(0,0);
 	grid->setColStretch(1,10);
 	grid->setColStretch(2,90);
 	grid->setColStretch(3,90);
-	grid->setColStretch(4,0);
 	
-	grid->addRowSpacing(0,15);
-	grid->addRowSpacing(5,1);
+	grid->addRowSpacing(0,1);
 	
 	//grid->setRowSpacing(0,15);
 	
@@ -242,7 +238,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 	colButton2->setFixedHeight( changeButton->sizeHint().height() );
     connect(changeButton, SIGNAL(clicked()) , SLOT(slotSetup2Color()) );
 	
-	grid->addMultiCellWidget( changeButton, 6, 6, 2, 3 );
+	grid->addMultiCellWidget( changeButton, 5, 5, 2, 3 );
 
 	topLayout->addWidget( group, 2, 1 );
 
@@ -286,9 +282,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 	wpCombo->setFixedHeight( wpCombo->sizeHint().height() );
 	
 	//groupLayout->addStretch( 5 );
-	groupLayout->addSpacing( 5 );
 	groupLayout->addWidget( wpCombo, 10 );
-	groupLayout->addSpacing( 5 );
 	
     QStrListIterator it( *list );
     for ( int i = 1; it.current(); ++it, i++ )
@@ -997,7 +991,7 @@ KBPatternDlg::KBPatternDlg( QColor col1, QColor col2, uint *p, int *orient,
 
     toplevelHL->activate();
 	
-	resize(250,0);
+	resize(350,0);
 
     
 }

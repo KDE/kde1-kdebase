@@ -124,7 +124,7 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	
 	topLayout->addWidget( group, 2, 1 );
 	
-	QBoxLayout *groupLayout = new QVBoxLayout( group, 10 );
+	QBoxLayout *groupLayout = new QVBoxLayout( group, 10, 5 );
 	
 	sFileList = new QStrList(); 
 	sList = new QListBox( group );
@@ -166,7 +166,7 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	
 	groupLayout->addWidget( saveBt, 10 );
 	
-	QBoxLayout *stackLayout = new QVBoxLayout( 10 );
+	QBoxLayout *stackLayout = new QVBoxLayout( 5  );
 	
 	topLayout->addLayout( stackLayout, 2, 2 );
 
@@ -174,7 +174,7 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	
 	stackLayout->addWidget( group, 10 );
 	
-	groupLayout = new QVBoxLayout( group, 10 );
+	groupLayout = new QVBoxLayout( group, 10, 5 );
 
 	wcCombo = new QComboBox( false, group );
 	wcCombo->insertItem(  i18n("Inactive title bar") );
@@ -212,7 +212,7 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	
 	stackLayout->addWidget( group, 50 );
 	
-	groupLayout = new QHBoxLayout( group, 20 );
+	groupLayout = new QHBoxLayout( group, 10 );
 	
 	sb = new QSlider( QSlider::Horizontal,group,"Slider" );
     sb->setRange( 0, 10 );

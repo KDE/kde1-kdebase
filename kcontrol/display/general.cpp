@@ -160,7 +160,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	
 	topLayout->addWidget( group, 100 );
 	
-	QBoxLayout *groupLayout = new QVBoxLayout( group, 10 );
+	QBoxLayout *groupLayout = new QVBoxLayout( group, 10, 5 );
 	
 	groupLayout->addSpacing( 15 );
 	

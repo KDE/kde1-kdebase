@@ -3,7 +3,7 @@ LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBJPEG) $(LIBSOC
 
 data_DATA = Netscape.ad XV.ad Nedit.ad
 
-datadir = $(kde_datadir)/kdisplay
+datadir = $(kde_datadir)/kdisplay/app-defaults
 
 bin_PROGRAMS = krdb
 

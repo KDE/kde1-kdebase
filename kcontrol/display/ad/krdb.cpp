@@ -1,21 +1,21 @@
 /****************************************************************************
 **
-** Copyright (C) 1998 by Mark Donohoe 
-** This class is freely distributable under the GNU Public License.
+**
+** KRDB - puts current KDE color and font scheme into preprocessor statements
+** cats specially written application default files and uses xrdb -merge to
+** write to RESOURCE_MANAGER. Thus it gives a  simple way to make non-KDE
+** applications fit in with the desktop
+**
+** Copyright (C) 1998 by Mark Donohoe
+** This application is freely distributable under the GNU Public License.
 **
 *****************************************************************************/
 
-#include <qpaintd.h>
 #include <qdir.h>
 #include <qdstream.h>
 #include <qdatetm.h>
 #include <qstring.h>
-#include <qimage.h>
-#include <qpixmap.h>
 #include <qtstream.h> 
-#include <qbitmap.h>
-#include <qpainter.h>
-#include <qregexp.h> 
 
 #include <stdlib.h>
 #include <time.h>
@@ -197,108 +197,135 @@ main( int argc, char ** argv )
 	s.sprintf("#%02x%02x%02x\n", col.red(), col.green(), col.blue());
 	s.prepend( "#define LOWLIGHT " );
 	preproc += s;
+	
+	//---------------------------------------------------------------
+	
+	QFileInfoList *sysList = 0;
+	QFileInfoListIterator *sysIt = 0;
+	QFileInfoList *userList = 0;
+	QStrList *userNames = 0;
+	QFileInfoListIterator *userIt = 0;
 		
 	QString adPath( kapp->kde_datadir() );
 	adPath += "/kdisplay/app-defaults";
+	QDir dSys;
+	dSys.setPath( adPath );
 	
-	QDir d;
-	d.setPath( adPath );
-	d.setFilter( QDir::Files );
-	d.setSorting( QDir::Name );
-	d.setNameFilter("*.ad");
-	
-	const QFileInfoList *sysList = d.entryInfoList();
-	QFileInfoListIterator sysIt( *sysList );
-		
-	QFileInfo *fi;
-	while ( ( fi = sysIt.current() ) ) {
-		++sysIt;
+	if ( dSys.exists() ) {
+		dSys.setFilter( QDir::Files );
+		dSys.setSorting( QDir::Name );
+		dSys.setNameFilter("*.ad");
+		sysList = new QFileInfoList( *dSys.entryInfoList() );
 	}
-	sysIt.toFirst();
-	
 	
 	adPath.sprintf( getenv( "HOME" ) );
 	adPath += "/.kde/share/apps/kdisplay/app-defaults";
+	QDir dUser;
+	dUser.setPath( adPath );
 	
-	d.setPath( adPath );
-	d.setFilter( QDir::Files );
-	d.setSorting( QDir::Name );
-	d.setNameFilter("*.ad");
+	if ( dUser.exists() ) {
+		dUser.setFilter( QDir::Files );
+		dUser.setSorting( QDir::Name );
+		dUser.setNameFilter("*.ad");
+		userList = new QFileInfoList( *dUser.entryInfoList() );
+		userNames = new QStrList( *dUser.entryList() );
+	}
+
+	if ( !sysList && !userList ) {
+		debug("No app-defaults files on system");
+		exit(0);
+	}
 	
-	QFileInfoList *userList = new QFileInfoList( *d.entryInfoList() );
-	QFileInfoListIterator userIt( *userList );
-	
+	if (sysList) sysIt = new QFileInfoListIterator( *sysList );
+	if (userList) userIt = new QFileInfoListIterator( *userList );
 	
 	QString propString;
-	
+
 	long timestamp;
-	::time( (long *) &timestamp ); 
-	
+	::time( (long *) &timestamp );
+
 	QString tmpFile;
 	tmpFile.sprintf("/tmp/krdb.%ld", timestamp);
 	
 	QFile tmp( tmpFile );
 	if ( tmp.open( IO_WriteOnly ) ) {
-		tmp.writeBlock( preproc.data(), preproc.length() );
-
-	while ( ( fi = sysIt.current() ) ) {
-		if ( !userList->find( fi ) ) {
-		QString fileName;
-		fileName.sprintf("./%s", fi->filePath() );
-		//fileName += fi->fileName();
-
-		QFile f( fi->filePath() );
-
-		if ( f.open(IO_ReadOnly) ) {    
-
-			QTextStream t( &f ); 
-			
-    		while ( !t.eof() ) {
-        		propString += t.readLine();       // line of text excluding '\n'
-				propString +="\n";
-    		}
-    		f.close();
-		}
-		tmp.writeBlock( propString.data(), propString.length() );
-		propString.resize(0);
-		}
-		++sysIt;
+			tmp.writeBlock( preproc.data(), preproc.length() );
+	} else {
+		debug("Couldn't open temp file");
+		exit(0);
 	}
 	
-	while ( ( fi = userIt.current() ) ) {
-		QString fileName;
-		fileName.sprintf("%s", fi->filePath() );
-		//fileName += fi->fileName();
+	
+//	debug("Creating file %s", tmpFile.data() );
 
-		QFile f( fi->filePath() );
+	QFileInfo *fi;
+	if ( sysList  ) {
+		//debug("Found system list");
+	
+		while ( ( fi = sysIt->current() ) ) {
+			int result = -1;
+			if ( userList )
+				result = userNames->find( fi->fileName() );
+		
+			if ( result != -1 ) {
+				//debug("System ad's overridden by user ads.");
+			} else {
+				
+				//debug("Concatenate %s",  fi->filePath() );
 
-		if ( f.open(IO_ReadOnly) ) {    
+				QFile f( fi->filePath() );
 
-			QTextStream t( &f ); 
-			
-    		while ( !t.eof() ) {
-        		propString += t.readLine();       // line of text excluding '\n'
-				propString +="\n";
-    		}
-    		f.close();
+				if ( f.open(IO_ReadOnly) ) {    
+
+					QTextStream t( &f ); 
+
+    				while ( !t.eof() ) {
+        				propString += t.readLine();
+						propString +="\n";
+    				}
+    				f.close();
+				}
+				tmp.writeBlock( propString.data(), propString.length() );
+				propString.resize(0);
+			}
+			++*sysIt;
 		}
-		tmp.writeBlock( propString.data(), propString.length() );
-		propString.resize(0);
-		++userIt;
 	}
 	
+	if ( userList ) {
+		//debug("Found user list");
+		while ( ( fi = userIt->current() ) ) {
+			//debug("Concatenate %s",  fi->filePath() );
+
+			QFile f( fi->filePath() );
+
+			if ( f.open(IO_ReadOnly) ) {    
+
+				QTextStream t( &f ); 
+
+    			while ( !t.eof() ) {
+        			propString += t.readLine();
+					propString +="\n";
+    			}
+    			f.close();
+			}
+			tmp.writeBlock( propString.data(), propString.length() );
+			propString.resize(0);
+			++*userIt;
+		}
+	}
+
 	tmp.close();
-	}
-	
+
 	KProcess proc;
-	
+
 	proc.setExecutable("xrdb");
 	proc << "-merge" << tmpFile.data();
 
 	proc.start( KProcess::Block, KProcess::Stdin );
-		
+
+	QDir d;
 	d.setPath( "/tmp" );
 		if ( d.exists() )
 			d.remove( tmpFile );
-
 }
