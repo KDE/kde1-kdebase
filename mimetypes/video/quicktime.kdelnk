@@ -3,7 +3,7 @@
 Type=MimeType
 MimeType=video/quicktime
 Icon=video.xpm
-Patterns=*.mov;*.MOV;
+Patterns=*.qt;*.mov;*.moov;*.hqx;*.qtvr;*.QT;*.MOV;*.MOOV;*.MooV;*.HQX;*.QTVR;
 DefaultApp=aktion
 Comment=Quicktime Video
 Comment[br]=Fiñvskeudenn Quicktime
