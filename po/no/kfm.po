@@ -227,7 +227,7 @@ msgstr "&Om..."
 # kfmgui.cpp:474
 #: kfmgui.cpp:488
 msgid "&Bookmarks"
-msgstr "Bokmerker"
+msgstr "&Bokmerker"
 
 # kfmgui.cpp:475
 #: kfmgui.cpp:489
