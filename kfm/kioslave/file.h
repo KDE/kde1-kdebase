@@ -13,6 +13,8 @@
 #include <pwd.h>
 #include <grp.h>
 
+#include <qlist.h>
+
 #define DIRSORT_NONE        0
 #define DIRSORT_BYNAME      1
 #define DIRSORT_BYSIZE      2
@@ -36,6 +38,10 @@ private:
     QString path;
     bool allowHTML;
     int sortMode;
+    bool bKdeHtml;
+    int kdeHtmlSize;
+    
+    bool OpenKdeHtml( KIOSlaveIPC *_ipc );
     
 public:
     KProtocolFILE();

@@ -618,6 +618,21 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 
 void KFMManager::slotData( const char *_text, int )
 {
+    QString tmp;
+    // HACK
+    // Special tag that is only created by kioslave and may only
+    // appear at the beginning of some data block.
+    if ( strncmp( _text, "<icon ", 6 ) == 0 )
+    {
+	QString tmp2( _text + 6 );
+	tmp2.truncate( tmp2.length() - 1 );
+	// Replace the data block with an image tag.
+	tmp = "<img border=0 src=\"";
+	tmp += KMimeType::getPixmapFileStatic( tmp2 );
+	tmp += "\">";
+	_text = tmp;
+    }
+    
     pageBuffer += _text;
     if ( bBufferPage )
 	return;

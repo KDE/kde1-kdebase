@@ -1,4 +1,4 @@
-Alpha Version 0.8.2
+Alpha Version 1.23
 
 PREVIEW VERSION
 ===============
@@ -694,6 +694,23 @@ Version 0.8.2
   has functions for selecting root icons. Pressing Ctrl and using the
   left mouse button marks multiple icons.
 
+Version 1.23
+
+- .kde.html files work again with their special tags.
+- Bug in recursive move fixed.
+- locked folders have locked icon again.
+- Better/more error messages
+- Does not crash if mime types are missing.
+
+Translation
+-----------
+
+Representatives for the translations:
+
+German:
+ Claudia Sorg
+ csorg@stud.uni-frankfurt.de
+
 KNOWN BUGS
 ----------
 
@@ -757,10 +774,12 @@ The KHTML Widget is now maintained by Martin.
 
 Bookmarks are from Martin Jones, too.
 
+Fritz Elfert <fritz@kde.org> added magic mime type detection.
+
 And thanks to all the others who contributed.
 
 
 Torben Weis, weis@stud.uni-frankfurt.de, weis@kde.org
 http://www.kde.org
-Last change: 27.6.97
+Last change: 14.9.97
 
