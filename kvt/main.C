@@ -207,14 +207,14 @@ int kvt_get_font_handle(QFont *fnt)
 		// change font name
 		char buf[256];
 		int chset = (fnt->charSet() == QFont::ISO_8859_1)?1:2;
-		sprintf(buf, "-*-fixed-%s-r-semicondensed-*-%d-*-*-*-*-*-"
+		sprintf(buf, "-*-fixed-%s-r-semicondensed-*-%d-*-75-75-*-*-"
 			"iso8859-%d",
 			(fnt->weight() >= QFont::Bold)?"bold":"medium",
 			fnt->pointSize(), chset);
 		fnt->setFamily(buf);
 		fnt->setRawMode(true);
 		if (!fnt->exactMatch()) {
-			sprintf(buf, "-*-fixed-%s-r-normal-*-%d-*-*-*-*-*-"
+			sprintf(buf, "-*-fixed-%s-r-normal-*-%d-*-75-75-*-*-"
 				"iso8859-%d",
 				(fnt->weight() >= QFont::Bold)?"bold":"medium",
 				fnt->pointSize(), chset);
