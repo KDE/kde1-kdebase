@@ -48,6 +48,9 @@ install-data-local:
 	$(INSTALL_DATA) mini-style.xpm $(kde_minidir)/style.xpm
 	$(mkinstalldirs) $(kde_datadir)/kdisplay/pics
 	$(INSTALL_DATA) monitor.xpm $(kde_datadir)/kdisplay/pics
+	$(mkinstalldirs) $(kde_icondir)
+	$(INSTALL_DATA) background.xpm $(kde_icondir)/background.xpm
+	$(INSTALL_DATA) palette.xpm $(kde_icondir)/palette.xpm
 
 uninstall-local:
 	rm -f $(kde_minidir)/background.xpm
@@ -55,3 +58,5 @@ uninstall-local:
 	rm -f $(kde_minidir)/screensaver.xpm
 	rm -f $(kde_minidir)/style.xpm
 	rm -f $(kde_datadir)/kdisplay/pics/monitor.xpm
+	rm -f $(kde_icondir)/background.xpm
+	rm -f $(kde_icondir)/palette.xpm
