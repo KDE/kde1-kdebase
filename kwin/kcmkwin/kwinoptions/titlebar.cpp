@@ -903,7 +903,8 @@ void TitlebarPreview::paintEvent( QPaintEvent * )
 // appearance dialog
 KTitlebarAppearance::~KTitlebarAppearance ()
 {
-  delete shaded;
+  delete vShaded;
+  delete hShaded;
   delete plain;
   delete titlebarBox;
 
@@ -924,9 +925,12 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
   // titlebar shading style
   titlebarBox = new QButtonGroup(klocale->translate("Titlebar appearance"), 
 				 this);
-  shaded = new QRadioButton(klocale->translate("Shaded"), 
+  vShaded = new QRadioButton(klocale->translate("Shaded Vertically"), 
 			    titlebarBox);
-  connect(shaded, SIGNAL(clicked()), this, SLOT(titlebarChanged()));
+  hShaded = new QRadioButton(klocale->translate("Shaded Horizontally"), 
+			    titlebarBox);
+  connect(vShaded, SIGNAL(clicked()), this, SLOT(titlebarChanged()));
+  connect(hShaded, SIGNAL(clicked()), this, SLOT(titlebarChanged()));
   plain = new QRadioButton(klocale->translate("Plain"), 
 			   titlebarBox);
   connect(plain, SIGNAL(clicked()), this, SLOT(titlebarChanged()));
@@ -943,7 +947,8 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
   sec = new QLabel(klocale->translate("ms"), this);
   connect( titleAnim,   SIGNAL(valueChanged(int)), t, SLOT(display(int)) );
 
-  shaded->adjustSize();
+  vShaded->adjustSize();
+  hShaded->adjustSize();
   plain->adjustSize();
   pixmap->adjustSize();
   t->adjustSize();
@@ -1011,20 +1016,22 @@ void KTitlebarAppearance::resizeEvent(QResizeEvent *)
   QFontMetrics fm = titlebarBox->font();
   int titleH = fm.height();
   int titleW = fm.width( titlebarBox->title() );
-  int buttonH = shaded->height();
-  int buttonW = max( shaded->width(), plain->width() );
+  int buttonH = vShaded->height();
+  int buttonW = max( vShaded->width(), plain->width() );
+  buttonW = max( buttonW, hShaded->width() );
   buttonW = max( buttonW, pixmap->width() );
   int boxH = 0;
   int boxW = 0;
-  boxH = 3*buttonH + 4*SPACE_YI + titleH;
+  boxH = 4*buttonH + 5*SPACE_YI + titleH;
   if (boxW < titleW + 4*SPACE_XI)
     boxW =  titleW + 4*SPACE_XI;
   if (boxW < buttonW + 2*SPACE_XI)
     boxW = buttonW + 2*SPACE_XI;
 
-  shaded->move(SPACE_XI, SPACE_YI + titleH);
-  plain->move(SPACE_XI, 2*SPACE_YI + buttonH + titleH);
-  pixmap->move(SPACE_XI, 3*SPACE_YI + 2 * buttonH + titleH);
+  vShaded->move(SPACE_XI, SPACE_YI + titleH);
+  hShaded->move(SPACE_XI, 2*SPACE_YI + buttonH +titleH);
+  plain->move(SPACE_XI, 3*SPACE_YI + 2 * buttonH + titleH);
+  pixmap->move(SPACE_XI, 4*SPACE_YI + 3 * buttonH + titleH);
   titlebarBox->setGeometry(SPACE_XO, h, boxW, boxH);
   pixmapBox->setGeometry(2*SPACE_XO+boxW, h, boxW, boxH);
 
@@ -1094,49 +1101,70 @@ void KTitlebarAppearance::resizeEvent(QResizeEvent *)
 
 int KTitlebarAppearance::getTitlebar()
 {
-  if (shaded->isChecked())
-    return TITLEBAR_SHADED;
-  else
-    if (pixmap->isChecked())
+  if (vShaded->isChecked())
+    return TITLEBAR_SHADED_VERT;
+  else if (hShaded->isChecked())
+    return TITLEBAR_SHADED_HORIZ;
+  else if (pixmap->isChecked())
       return TITLEBAR_PIXMAP;
-    else
+  else
       return TITLEBAR_PLAIN;
 }
 
 void KTitlebarAppearance::setTitlebar(int tb)
 {
   if (tb == TITLEBAR_PIXMAP)
-  {
-    plain->setChecked(FALSE);
-    shaded->setChecked(FALSE);
-    pixmap->setChecked(TRUE);
-    pixmapBox->setEnabled(TRUE);
-    lPixmapActive->setEnabled(TRUE);
-    pbPixmapActive->setEnabled(TRUE);
-    lPixmapInactive->setEnabled(TRUE);
-    pbPixmapInactive->setEnabled(TRUE);
-    return;
-  }
-  if (tb == TITLEBAR_SHADED)
-  {
-    shaded->setChecked(TRUE);
-    plain->setChecked(FALSE);
-    pixmap->setChecked(FALSE);
-    pixmapBox->setEnabled(FALSE);
-    lPixmapActive->setEnabled(FALSE);
-    pbPixmapActive->setEnabled(FALSE);
-    lPixmapInactive->setEnabled(FALSE);
-    pbPixmapInactive->setEnabled(FALSE);
-    return;
-  }
-  plain->setChecked(TRUE);
-  shaded->setChecked(FALSE);
-  pixmap->setChecked(FALSE);
-  pixmapBox->setEnabled(FALSE);
-  lPixmapActive->setEnabled(FALSE);
-  pbPixmapActive->setEnabled(FALSE);
-  lPixmapInactive->setEnabled(FALSE);
-  pbPixmapInactive->setEnabled(FALSE);
+    {
+      vShaded->setChecked(FALSE);
+      hShaded->setChecked(FALSE);
+      plain->setChecked(FALSE);
+      pixmap->setChecked(TRUE);
+      pixmapBox->setEnabled(TRUE);
+      lPixmapActive->setEnabled(TRUE);
+      pbPixmapActive->setEnabled(TRUE);
+      lPixmapInactive->setEnabled(TRUE);
+      pbPixmapInactive->setEnabled(TRUE);
+      return;
+    }
+  if (tb == TITLEBAR_SHADED_VERT)
+    {
+      vShaded->setChecked(TRUE);
+      hShaded->setChecked(FALSE);
+      plain->setChecked(FALSE);
+      pixmap->setChecked(FALSE);
+      pixmapBox->setEnabled(FALSE);
+      lPixmapActive->setEnabled(FALSE);
+      pbPixmapActive->setEnabled(FALSE);
+      lPixmapInactive->setEnabled(FALSE);
+      pbPixmapInactive->setEnabled(FALSE);
+      return;
+    }
+  if (tb == TITLEBAR_SHADED_HORIZ)
+    {
+      vShaded->setChecked(FALSE);
+      hShaded->setChecked(TRUE);
+      plain->setChecked(FALSE);
+      pixmap->setChecked(FALSE);
+      pixmapBox->setEnabled(FALSE);
+      lPixmapActive->setEnabled(FALSE);
+      pbPixmapActive->setEnabled(FALSE);
+      lPixmapInactive->setEnabled(FALSE);
+      pbPixmapInactive->setEnabled(FALSE);
+      return;
+    }
+  if (tb == TITLEBAR_PLAIN)
+    {
+      vShaded->setChecked(FALSE);
+      hShaded->setChecked(FALSE);
+      plain->setChecked(TRUE);
+      pixmap->setChecked(FALSE);
+      pixmapBox->setEnabled(FALSE);
+      lPixmapActive->setEnabled(FALSE);
+      pbPixmapActive->setEnabled(FALSE);
+      lPixmapInactive->setEnabled(FALSE);
+      pbPixmapInactive->setEnabled(FALSE);
+      return;
+    }
 }
  
 int KTitlebarAppearance::getTitleAnim()
@@ -1165,12 +1193,13 @@ void KTitlebarAppearance::SaveSettings( void )
 {
   config->setGroup( "General" );
   int t = getTitlebar();
-  if (t == TITLEBAR_SHADED)
-    config->writeEntry(KWM_TITLEBARLOOK, "shaded");
-  else
-    if (t == TITLEBAR_PIXMAP)
+  if (t == TITLEBAR_SHADED_VERT)
+    config->writeEntry(KWM_TITLEBARLOOK, "shadedVertical");
+  else if (t == TITLEBAR_SHADED_HORIZ)
+    config->writeEntry(KWM_TITLEBARLOOK, "shadedHorizontal");
+  else if (t == TITLEBAR_PIXMAP)
       config->writeEntry(KWM_TITLEBARLOOK, "pixmap");
-    else
+  else
       config->writeEntry(KWM_TITLEBARLOOK, "plain");
 
   config->writeEntry("TitlebarPixmapActive", sPixmapActive);
@@ -1227,8 +1256,10 @@ void KTitlebarAppearance::GetSettings( void )
   config->setGroup( "General" );
 
   key = config->readEntry("TitlebarLook");
-  if( key == "shaded")
-    setTitlebar(TITLEBAR_SHADED);
+  if( key == "shadedVertical")
+    setTitlebar(TITLEBAR_SHADED_VERT);
+  else if( key == "shadedHorizontal")
+    setTitlebar(TITLEBAR_SHADED_HORIZ);
   else if( key == "pixmap")
     setTitlebar(TITLEBAR_PIXMAP);
   else

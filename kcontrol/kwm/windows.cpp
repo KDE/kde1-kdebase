@@ -42,7 +42,8 @@
 #define KWM_MOVE      "WindowMoveType"
 #define KWM_FOCUS     "FocusPolicy"
 #define KWM_MAXIMIZE  "MaximizeOnlyVertically"
-#define KWM_RESIZE    "ResizeAnimation"
+#define KWM_RESIZE_ANIM    "ResizeAnimation"
+#define KWM_RESIZE_OPAQUE    "WindowResizeType"
 #define KWM_AUTORAISE "AutoRaise"
 
 // CT 19jan98
@@ -52,14 +53,13 @@ KWindowConfig::~KWindowConfig ()
 {
   delete transparent;
   delete opaque;
-  delete clickTo;
-  delete placementCombo;    //CT 11feb98 - leaking memory
+  delete placementCombo;    
   delete iTLabel;                       
   delete interactiveTrigger;
-  delete placementBox;      //CT 31jan98 - leaking memory bug squash :-)
-  delete followMouse;
-  delete animOn;
-  delete animOff;
+  delete placementBox;      
+  delete focusCombo;
+  delete resizeAnimOn;
+  delete resizeOpaqueOn;
   delete moveBox;
   delete resizeBox;
   delete focusBox;
@@ -75,10 +75,11 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   transparent = new QRadioButton(klocale->translate("Transparent"), moveBox);
   opaque = new QRadioButton(klocale->translate("Opaque"), moveBox);
 
-  // resize animation
-  resizeBox = new QButtonGroup(klocale->translate("Resize Animation"), this);
-  animOn = new QRadioButton(klocale->translate("On"), resizeBox);
-  animOff = new QRadioButton(klocale->translate("Off"), resizeBox);
+  // resize animation - CT 27May98
+  resizeBox = new QButtonGroup(klocale->translate("Window resize"), this);
+  resizeAnimOn = new QCheckBox(klocale->translate("With animation"), 
+				  resizeBox);
+  resizeOpaqueOn = new QCheckBox(klocale->translate("Opaque"), resizeBox);
 
   // placement policy --- CT 19jan98, 13mar98 ---
   placementBox = new QButtonGroup(klocale->translate("Placement policy"), this);
@@ -111,8 +112,18 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
 
   // focus policy
   focusBox = new QButtonGroup(klocale->translate("Focus Policy"), this);
-  clickTo =  new QRadioButton(klocale->translate("Click to focus"), focusBox);
-  followMouse = new QRadioButton(klocale->translate("Focus follows mouse"), focusBox);
+  focusCombo =  new QComboBox(FALSE, focusBox);
+  focusCombo->insertItem(klocale->translate("Click to focus"), 
+			 CLICK_TO_FOCUS);
+  focusCombo->insertItem(klocale->translate("Focus follows mouse"), 
+			 FOCUS_FOLLOWS_MOUSE);
+  focusCombo->insertItem(klocale->translate("Classic focus follows mouse"),
+			 CLASSIC_FOCUS_FOLLOWS_MOUSE);
+  focusCombo->insertItem(klocale->translate("Classic sloppy focus"), 
+			 CLASSIC_SLOPPY_FOCUS);
+  connect(focusCombo, SIGNAL(activated(int)),this,
+	  SLOT(setAutoRaiseEnabled()) );
+
 
   // autoraise delay
   autoRaise = new KSlider(0,3000,100,0, KSlider::Horizontal, this);
@@ -125,8 +136,6 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   s->adjustSize();
   alabel->adjustSize();
   sec->adjustSize();
-  connect( clickTo, SIGNAL(clicked()), this, SLOT(setAutoRaiseEnabled()));
-  connect( followMouse, SIGNAL(clicked()), this, SLOT(setAutoRaiseEnabled()));
 
   GetSettings();
 }
@@ -160,15 +169,15 @@ void KWindowConfig::resizeEvent(QResizeEvent *)
     boxW = buttonW + 2*SPACE_XI;
 
   // resize animation
-  animOn->adjustSize();
-  animOn->move(SPACE_XI, SPACE_YI + titleH);
-  animOff->adjustSize();
-  animOff->move(SPACE_XI, 2*SPACE_YI + buttonH + titleH);
+  resizeAnimOn->adjustSize();
+  resizeAnimOn->move(SPACE_XI, SPACE_YI + titleH);
+  resizeOpaqueOn->adjustSize();
+  resizeOpaqueOn->move(SPACE_XI, 2*SPACE_YI + buttonH + titleH);
   int h2 = h;
   h += boxH + SPACE_YO;
 
   titleW = fm.width(resizeBox->title());
-  buttonW = max( animOff->width(), animOn->width() );
+  buttonW = max( resizeAnimOn->width(), resizeOpaqueOn->width() );
   if (boxW < titleW + 4*SPACE_XI)
     boxW =  titleW + 4*SPACE_XI;
   if (boxW < buttonW + 2*SPACE_XI)
@@ -215,15 +224,21 @@ void KWindowConfig::resizeEvent(QResizeEvent *)
     boxW = buttonW + 2*SPACE_XI;
 
     // focus policy
-  clickTo->adjustSize();
-  clickTo->move(SPACE_XI, SPACE_YI + titleH);
-  followMouse->adjustSize();
-  followMouse->move(SPACE_XI, 2*SPACE_YI + buttonH + titleH);
+  focusCombo->adjustSize();
+  focusCombo->move(SPACE_XI, SPACE_YI + titleH);
+  if (focusCombo->width() < (boxW - 2*SPACE_XI)) 
+    focusCombo->setGeometry(SPACE_XI,
+				SPACE_YI + titleH,
+				boxW - 2*SPACE_XI,
+				focusCombo->height());
+  else
+    focusCombo->move(SPACE_XI, SPACE_YI + titleH);
+
   int h5 = h;
   h += boxH + SPACE_YO;
 
   titleW = fm.width(focusBox->title());
-  buttonW = max( clickTo->width(), followMouse->width() );
+  buttonW = focusCombo->width();
   if (boxW < titleW + 4*SPACE_XI)
     boxW =  titleW + 4*SPACE_XI;
   if (boxW < buttonW + 2*SPACE_XI)
@@ -283,46 +298,44 @@ void KWindowConfig::setPlacement(int plac)
 
 int KWindowConfig::getFocus()
 {
-  if (clickTo->isChecked())
-    return CLICK_TO_FOCUS;
-  else
-    return FOCUS_FOLLOW_MOUSE;
+    return focusCombo->currentItem();
 }
 
 void KWindowConfig::setFocus(int foc)
 {
-  if (foc == CLICK_TO_FOCUS)
-  {
-    clickTo->setChecked(TRUE);
-    followMouse->setChecked(FALSE);
-  }
-  else
-  {
-    followMouse->setChecked(TRUE); 
-    clickTo->setChecked(FALSE);
-  }
+  focusCombo->setCurrentItem(foc);
 }
 
-int KWindowConfig::getAnim()
+int KWindowConfig::getResizeAnim()
 {
-  if (animOn->isChecked())
+  if (resizeAnimOn->isChecked())
     return RESIZE_ANIM_ON;
   else
     return RESIZE_ANIM_OFF;
 }
 
-void KWindowConfig::setAnim(int tb)
+void KWindowConfig::setResizeAnim(int anim)
 {
-  if (tb == RESIZE_ANIM_ON)
-  {
-    animOn->setChecked(TRUE);
-    animOff->setChecked(FALSE);
-  }
+  if (anim == RESIZE_ANIM_ON)
+    resizeAnimOn->setChecked(TRUE);
   else
-  {
-    animOff->setChecked(TRUE);
-    animOn->setChecked(FALSE);
-  }
+    resizeAnimOn->setChecked(FALSE);
+}
+
+int KWindowConfig::getResizeOpaque()
+{
+  if (resizeOpaqueOn->isChecked())
+    return RESIZE_OPAQUE;
+  else
+    return RESIZE_TRANSPARENT;
+}
+
+void KWindowConfig::setResizeOpaque(int opaque)
+{
+  if (opaque == RESIZE_OPAQUE)
+    resizeOpaqueOn->setChecked(TRUE);
+  else
+    resizeOpaqueOn->setChecked(FALSE);
 }
 
 void KWindowConfig::setMaximize(int tb)
@@ -361,7 +374,7 @@ int KWindowConfig::getAutoRaise()
 void KWindowConfig::setAutoRaiseEnabled( )
 {
   // the auto raise related widgets are: autoRaise, alabel, s, sec
-  if ( followMouse->isChecked() )
+  if ( focusCombo->currentItem() != CLICK_TO_FOCUS )
     {
       autoRaise->show();
       alabel->show();
@@ -403,11 +416,17 @@ void KWindowConfig::GetSettings( void )
   else if( key == "Opaque")
     setMove(OPAQUE);
 
-  key = config->readEntry(KWM_RESIZE);
+  key = config->readEntry(KWM_RESIZE_ANIM);
   if( key == "on")
-    setAnim(RESIZE_ANIM_ON);
+    setResizeAnim(RESIZE_ANIM_ON);
   else if( key == "off")
-    setAnim(RESIZE_ANIM_OFF);
+    setResizeAnim(RESIZE_ANIM_OFF);
+
+  key = config->readEntry(KWM_RESIZE_OPAQUE);
+  if( key == "on")
+    setResizeOpaque(RESIZE_OPAQUE);
+  else if ( key == "off")
+    setResizeOpaque(RESIZE_TRANSPARENT);
 
   // placement policy --- CT 19jan98 ---
   key = config->readEntry(KWM_PLACEMENT);
@@ -443,7 +462,11 @@ void KWindowConfig::GetSettings( void )
   if( key == "ClickToFocus")
     setFocus(CLICK_TO_FOCUS);
   else if( key == "FocusFollowMouse")
-    setFocus(FOCUS_FOLLOW_MOUSE);
+    setFocus(FOCUS_FOLLOWS_MOUSE);
+  else if(key == "ClassicFocusFollowMouse")
+    setFocus(CLASSIC_FOCUS_FOLLOWS_MOUSE);
+  else if(key == "ClassicSloppyFocus")
+    setFocus(CLASSIC_SLOPPY_FOCUS);
 
   key = config->readEntry(KWM_MAXIMIZE);
   if( key == "on")
@@ -491,14 +514,24 @@ void KWindowConfig::SaveSettings( void )
   v = getFocus();
   if (v == CLICK_TO_FOCUS)
     config->writeEntry(KWM_FOCUS,"ClickToFocus");
-  else
+  else if (v == CLASSIC_SLOPPY_FOCUS)
+    config->writeEntry(KWM_FOCUS,"ClassicSloppyFocus");
+  else if (v == CLASSIC_FOCUS_FOLLOWS_MOUSE)
+    config->writeEntry(KWM_FOCUS,"ClassicFocusFollowMouse");
+  else 
     config->writeEntry(KWM_FOCUS,"FocusFollowMouse");
-     
-  v = getAnim();
+  
+  v = getResizeAnim();
   if (v == RESIZE_ANIM_ON)
-    config->writeEntry(KWM_RESIZE, "on");
+    config->writeEntry(KWM_RESIZE_ANIM, "on");
   else
-    config->writeEntry(KWM_RESIZE, "off");
+    config->writeEntry(KWM_RESIZE_ANIM, "off");
+
+  v = getResizeOpaque();
+  if (v == RESIZE_OPAQUE)
+    config->writeEntry(KWM_RESIZE_OPAQUE, "Opaque");
+  else
+    config->writeEntry(KWM_RESIZE_OPAQUE, "Transparent");
 
   v = getMaximize();
   if (v == MAXIMIZE_VERT)

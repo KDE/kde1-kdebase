@@ -28,7 +28,8 @@
 #include <qlabel.h>
 #include <qdialog.h>
 #include <qmsgbox.h>
-#include <qradiobt.h> 
+#include <qradiobt.h>
+#include <qchkbox.h> 
 #include <qbttngrp.h>
 #include <qpushbt.h>
 #include <kslider.h>
@@ -50,6 +51,9 @@
 #define RESIZE_ANIM_OFF 0
 #define RESIZE_ANIM_ON  1
 
+#define RESIZE_TRANSPARENT  0
+#define RESIZE_OPAQUE       1
+
 #define MAXIMIZE_FULL 0
 #define MAXIMIZE_VERT 1
 
@@ -59,6 +63,11 @@
 #define INTERACTIVE_PLACEMENT 2 //CT 13mar98
 #define RANDOM_PLACEMENT      3
 #define MANUAL_PLACEMENT      4 //CT 13mar98
+
+#define  CLICK_TO_FOCUS                0
+#define  FOCUS_FOLLOWS_MOUSE           1
+#define  CLASSIC_FOCUS_FOLLOWS_MOUSE   2
+#define  CLASSIC_SLOPPY_FOCUS          3
 
 
 class KWindowConfig : public KConfigWidget
@@ -82,14 +91,16 @@ private:
   void GetSettings( void );
 
   int getMove( void );
-  int getAnim( void );
+  int getResizeAnim( void );
+  int getResizeOpaque ( void );
   int getPlacement( void ); //CT
   int getFocus( void );
   int getMaximize( void );
   int getAutoRaise( void );
 
   void setMove(int);
-  void setAnim(int);
+  void setResizeAnim(int);
+  void setResizeOpaque(int);
   void setPlacement(int); //CT
   void setFocus(int);
   void setMaximize(int);
@@ -107,10 +118,10 @@ private:
 
 
   QButtonGroup *focusBox;
-  QRadioButton *clickTo, *followMouse;
+  QComboBox *focusCombo;
 
   QButtonGroup *resizeBox;
-  QRadioButton *animOn, *animOff;
+  QCheckBox *resizeAnimOn, *resizeOpaqueOn;
 
   QButtonGroup *maximizeBox;
   QRadioButton *fullScreen, *vertOnly;

@@ -53,9 +53,10 @@
 
 #define NUM_BUTTONS 6
 
-#define TITLEBAR_PLAIN  0
-#define TITLEBAR_SHADED 1
-#define TITLEBAR_PIXMAP 2
+#define TITLEBAR_PLAIN                0
+#define TITLEBAR_SHADED_VERT          1
+#define TITLEBAR_SHADED_HORIZ         2
+#define TITLEBAR_PIXMAP               3
 
 //CT 11feb98
 #define DCTB_MAXIMIZE      0
@@ -163,7 +164,7 @@ private:
  void setTitleAnim(int);
 
  QButtonGroup *titlebarBox;
- QRadioButton *shaded, *plain, *pixmap;
+ QRadioButton *vShaded, *hShaded, *plain, *pixmap;
 
  //CT 11feb98
  int getDCTBAction();
