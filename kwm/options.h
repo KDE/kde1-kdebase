@@ -101,6 +101,11 @@ struct kwmOptions {
   int WindowSnapZone;
   //CT ---
 
+  //CT 02Dec1998 - weird options
+  bool framedActiveTitle;
+  bool PixmapUnderTitleText;
+  //CT
+
   const char* rstart;
   int titlebar_doubleclick_command;
 

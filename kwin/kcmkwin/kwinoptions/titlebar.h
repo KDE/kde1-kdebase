@@ -36,6 +36,7 @@
 #include <qbttngrp.h>
 #include <qlcdnum.h>
 #include <qcombo.h> //CT 11feb98
+#include <qchkbox.h> //CT 02Dec1998
 
 #include <kslider.h>
 
@@ -162,6 +163,12 @@ private slots:
 private:
  void GetSettings( void );
 
+ //CT 02Dec1998 macStyle
+ bool getFramedTitle(void);
+ void setFramedTitle(bool);
+ bool getPixedText(void);
+ void setPixedText(bool);
+
  //CT 06Nov1998
  int getAlign(void);
  void setAlign(int);
@@ -172,6 +179,10 @@ private:
 
  int getTitleAnim( void );
  void setTitleAnim(int);
+
+ //CT 02Dec1998 macStyle
+ QCheckBox *cbFrame, *cbPixedText;
+ QGroupBox *appearBox;
 
  //CT 06Nov1998
  QButtonGroup *alignBox;

@@ -1652,7 +1652,8 @@ void Client::paintState(bool only_label, bool colors_have_changed, bool animate)
   }
   p.setClipping(False);
 
-  if (is_active)
+  //CT 02Dec1998 - optional shade, suggested by Nils Meier <nmeier@vossnet.de>
+  if (is_active && options.framedActiveTitle)
     qDrawShadePanel( &p, r, colorGroup(), true );
 
   p.setPen(is_active ? myapp->activeTextColor : myapp->inactiveTextColor);
@@ -1697,9 +1698,31 @@ void Client::paintState(bool only_label, bool colors_have_changed, bool animate)
   if (!titlestring_too_large)
     titlestring_offset = aln;
 
-  p.drawText(r.x()+(options.TitleAnimation?titlestring_offset:aln),
-	     r.y()+p.fontMetrics().ascent(),
+  //CT 02Dec1998 - optional noPixmap behind text,
+  //     suggested by Nils Meier <nmeier@vossnet.de>
+  if (!options.PixmapUnderTitleText && look == PIXMAP ) {
+    /* NM 02Dec1998 - Clear bg behind text */
+    p.setBackgroundColor(is_active ? myapp->activeTitleColor :
+			 myapp->inactiveTitleColor);
+    p.eraseRect(
+		r.x()+(options.TitleAnimation?titlestring_offset:aln),
+		r.y()+(r.height()-p.fontMetrics().height())/2,
+		need,
+		p.fontMetrics().height()); 
+  }
+  //CT
+
+  //CT 02Dec1998 - vertical text centering, 
+  //     thanks to Nils Meier <nmeier@vossnet.de>
+  p.drawText(r.x()+
+	     (options.TitleAnimation?titlestring_offset:aln),
+
+	     r.y()+
+	     (r.height()-p.fontMetrics().height())/2+
+	     p.fontMetrics().ascent(),
+
 	     QString(" ")+label+" ");
+
   p.setClipping(False);
   p.end();
   if (double_buffering){

@@ -45,6 +45,12 @@ extern KConfig *config;
 #define KWM_TITLEBARLOOK   "TitlebarLook"
 #define KWM_TITLEANIMATION "TitleAnimation"
 #define KWM_TITLEALIGN     "TitleAlignment"
+
+//CT 02Dec1998 - weird hacks
+#define KWM_TITLEFRAME     "TitleFrameShaded"
+#define KWM_PIXMAP_TEXT    "PixmapUnderTitleText"
+//CT
+
 //  buttons 1 2 3 are on left, 4 5 6 on right
 #define KWM_B1 "ButtonA"
 #define KWM_B2 "ButtonB"
@@ -945,11 +951,18 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
   lay->addMultiCellWidget(alignBox,0,0,0,1);
   //CT
 
-  titlebarBox = new QButtonGroup(klocale->translate("Appearance"), 
+  //CT 02Dec1998 - foul changes for some weird options
+  appearBox = new QGroupBox(klocale->translate("Appearance"), 
 				 this);
 
+  QBoxLayout *appearLay = new QVBoxLayout (appearBox,10,5);
+  appearLay->addSpacing(10);
+
+  titlebarBox = new QButtonGroup(appearBox);
+  titlebarBox->setFrameStyle(QFrame::NoFrame);
+
   QBoxLayout *pushLay = new QVBoxLayout (titlebarBox,10,5);
-  pushLay->addSpacing(10);
+  //CT
 
   vShaded = new QRadioButton(klocale->translate("Shaded Vertically"), 
 			    titlebarBox);
@@ -982,13 +995,26 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
 
   connect(pixmap, SIGNAL(clicked()), this, SLOT(titlebarChanged()));
 
+  //CT 02Dec1998 - macStyle soup options
   pushLay->activate();
 
-  lay->addWidget(titlebarBox,1,0);
+  appearLay->addWidget(titlebarBox);
+
+  cbFrame = new QCheckBox(klocale->translate("Active title has shaded frame"),
+	                   appearBox);
+  cbFrame->adjustSize();
+  cbFrame->setMinimumSize(cbFrame->size());
+  appearLay->addWidget(cbFrame);
+
+  appearLay->activate();
+
+  //CT
+
+  lay->addWidget(appearBox,1,0);
 
   pixmapBox    = new QGroupBox(klocale->translate("Pixmap"), this); 
  
-  pixLay = new QGridLayout(pixmapBox,6,2,10,5);
+  pixLay = new QGridLayout(pixmapBox,7,2,10,5);
   pixLay->addRowSpacing(0,10);
   pixLay->addRowSpacing(3,10);
   pixLay->addColSpacing(0,20);
@@ -998,6 +1024,7 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
   pixLay->setRowStretch(3,1);
   pixLay->setRowStretch(4,0);
   pixLay->setRowStretch(5,0);
+  pixLay->setRowStretch(6,1);
   pixLay->setColStretch(0,0);
 
   pbPixmapActive = new QPushButton(pixmapBox);
@@ -1023,6 +1050,13 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
   lPixmapInactive->adjustSize();
   lPixmapInactive->setMinimumSize(lPixmapInactive->size());
   pixLay->addMultiCellWidget(lPixmapInactive,4,4,0,1);
+
+  //CT 02Dec1998 - macStyle soup options
+  cbPixedText = new QCheckBox(klocale->translate("No pixmap under text"),pixmapBox);
+  cbPixedText->adjustSize();
+  cbPixedText->setMinimumSize(cbPixedText->size());
+  pixLay->addMultiCellWidget(cbPixedText,6,6,0,1);
+  //CT
 
   pixLay->activate();
 
@@ -1120,6 +1154,23 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
   GetSettings();
 }
 
+//CT 02Dec1998
+bool KTitlebarAppearance::getFramedTitle() {
+  return cbFrame->isChecked();
+}
+
+void KTitlebarAppearance::setFramedTitle(bool a) {
+  cbFrame->setChecked(a);
+}
+
+bool KTitlebarAppearance::getPixedText() {
+  return !cbPixedText->isChecked();
+}
+
+void KTitlebarAppearance::setPixedText(bool a) {
+  cbPixedText->setChecked(!a);
+}
+
 
 //CT 06Nov1998
 int KTitlebarAppearance::getAlign() {
@@ -1163,6 +1214,7 @@ void KTitlebarAppearance::setTitlebar(int tb)
       pbPixmapActive->setEnabled(TRUE);
       lPixmapInactive->setEnabled(TRUE);
       pbPixmapInactive->setEnabled(TRUE);
+      cbPixedText->setEnabled(TRUE);
       return;
     }
   if (tb == TITLEBAR_SHADED_VERT)
@@ -1176,6 +1228,7 @@ void KTitlebarAppearance::setTitlebar(int tb)
       pbPixmapActive->setEnabled(FALSE);
       lPixmapInactive->setEnabled(FALSE);
       pbPixmapInactive->setEnabled(FALSE);
+      cbPixedText->setEnabled(FALSE);
       return;
     }
   if (tb == TITLEBAR_SHADED_HORIZ)
@@ -1189,6 +1242,7 @@ void KTitlebarAppearance::setTitlebar(int tb)
       pbPixmapActive->setEnabled(FALSE);
       lPixmapInactive->setEnabled(FALSE);
       pbPixmapInactive->setEnabled(FALSE);
+      cbPixedText->setEnabled(FALSE);
       return;
     }
   if (tb == TITLEBAR_PLAIN)
@@ -1202,6 +1256,7 @@ void KTitlebarAppearance::setTitlebar(int tb)
       pbPixmapActive->setEnabled(FALSE);
       lPixmapInactive->setEnabled(FALSE);
       pbPixmapInactive->setEnabled(FALSE);
+      cbPixedText->setEnabled(FALSE);
       return;
     }
 }
@@ -1238,6 +1293,13 @@ void KTitlebarAppearance::SaveSettings( void )
   if (t == AT_MIDDLE) config->writeEntry(KWM_TITLEALIGN, "middle");
   else if (t == AT_RIGHT) config->writeEntry(KWM_TITLEALIGN, "right");
   else config->writeEntry(KWM_TITLEALIGN, "left");
+  //CT
+
+  //CT 02Dec1998 - optional shaded frame on titlebar
+  config->writeEntry(KWM_TITLEFRAME, getFramedTitle()?"yes":"no");
+
+  //CT 02Dec1998 - optional pixmap under the title text
+  config->writeEntry(KWM_PIXMAP_TEXT, getPixedText()?"yes":"no");
   //CT
 
   t = getTitlebar();
@@ -1362,6 +1424,18 @@ void KTitlebarAppearance::GetSettings( void )
   if( key == "middle" ) setAlign(AT_MIDDLE);
   else if ( key == "right" ) setAlign(AT_RIGHT);
   else setAlign(AT_LEFT);
+  //CT
+
+  //CT 02Dec1998 - optional shaded frame on titlebar
+  key = config->readEntry(KWM_TITLEFRAME);
+  if (key == "no") setFramedTitle(false);
+  else setFramedTitle(true);
+  //CT
+
+  //CT 02Dec1998 - optional pixmap under the title text
+  key = config->readEntry(KWM_PIXMAP_TEXT);
+  if (key == "no") setPixedText(false);
+  else setPixedText (true);
   //CT
 
   key = config->readEntry(KWM_TITLEBARLOOK);

@@ -814,6 +814,31 @@ void MyApp::readConfiguration(){
     options.alignTitle = AT_LEFT;
   }
 
+  //CT 02Dec1998 - optional shaded frame on titlebar
+  key = config->readEntry("TitleFrameShaded");
+  if (key == "no")
+    options.framedActiveTitle = false;
+  else if (key == "yes")
+    options.framedActiveTitle = true;
+  else {
+    config->writeEntry("TitleFrameShaded","yes");
+    options.framedActiveTitle = true;
+  }
+  //CT
+
+  //CT 02Dec1998 - optional pixmap under the title text
+  key = config->readEntry("PixmapUnderTitleText");
+  if (key == "no")
+    options.PixmapUnderTitleText = false;
+  else if (key == "yes")
+    options.PixmapUnderTitleText = true;
+  else {
+    config->writeEntry("PixmapUnderTitleText","yes");
+    options.PixmapUnderTitleText = true;
+  }
+  //CT
+
+    
   //CT 23Sep1998 - fixed the name of the titlebar pixmaps to become
   //   consistent with the buttons pixmaps definition technique
   if (options.TitlebarLook == PIXMAP) {
