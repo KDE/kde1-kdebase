@@ -14,16 +14,23 @@ char *cKeywords[] = {
 char *cppTypes[] = {
   "bool",0L};
 char *cppKeywords[] = {
-  "class","const","delete","friend","inline","new","private","protected",
-  "public","this","virtual",0L};
+  "class","const","delete","friend","inline","new","operator","private",
+  "protected","public","this","virtual",0L};
 char *bashKeywords[] = {
   "break","case","done","do","elif","else","esac","exit","export","fi","for",
   "function","if","in","return","select","then","until","while",".",0L};
 
 char *modulaKeywords[] = {
-  "BEGIN","CONST","DEFINITION","DO","ELSE","ELSIF","END","FOR","FROM","IF",
-  "IMPLEMENTATION","IMPORT","MODULE","PROCEDURE","RECORD","REPEAT","RETURN",
-  "THEN","TYPE","VAR","WHILE","WITH","|",0L};
+  "BEGIN","CONST","DEFINITION","DIV","DO","ELSE","ELSIF","END","FOR","FROM",
+  "IF","IMPLEMENTATION","IMPORT","MODULE","MOD","PROCEDURE","RECORD","REPEAT",
+  "RETURN","THEN","TYPE","VAR","WHILE","WITH","|",0L};
+
+
+bool testWw(char c) {
+  static char data[] = {0,0,0,0,0,64,255,3,254,255,255,135,254,255,255,7};
+  if (c & 128) return false;
+  return !(data[c >> 3] & (1 << (c & 7)));
+}
 
 
 HlItem::HlItem(int attribute, int context)
@@ -32,12 +39,6 @@ HlItem::HlItem(int attribute, int context)
 
 HlItemWw::HlItemWw(int attribute, int context)
   : HlItem(attribute,context) {
-}
-
-bool HlItemWw::startEnable(char ch) {
-  static char data[] = {0,0,0,0,0,64,255,3,254,255,255,135,254,255,255,7};
-  if (ch & 128) return false;
-  return !(data[ch >> 3] & (1 << (ch & 7)));
 }
 
 
@@ -161,14 +162,14 @@ HlFloat::HlFloat(int attribute, int context)
 }
 
 const char *HlFloat::checkHgl(const char *s) {
-  bool b;
+  bool b, p;
 
   b = false;
   while (*s >= '0' && *s <= '9') {
     s++;
     b = true;
   }
-  if (*s == '.') {
+  if (p = (*s == '.')) {
     s++;
     while (*s >= '0' && *s <= '9') {
       s++;
@@ -176,7 +177,7 @@ const char *HlFloat::checkHgl(const char *s) {
     }
   }
   if (!b) return 0L;
-  if (*s == 'E' || *s == 'e') s++; else return s;
+  if (*s == 'E' || *s == 'e') s++; else return (p) ? s : 0L;
   if (*s == '-') s++;
   b = false;
   while (*s >= '0' && *s <= '9') {
@@ -251,10 +252,6 @@ HlLineContinue::HlLineContinue(int attribute, int context)
   : HlItem(attribute,context) {
 }
 
-bool HlLineContinue::endEnable(char c) {
-  return c == '\0';
-}
-
 const char *HlLineContinue::checkHgl(const char *s) {
   if (*s == '\\') return s + 1;
   return 0L;
@@ -325,10 +322,6 @@ HlCPrep::HlCPrep(int attribute, int context)
   : HlItem(attribute,context) {
 }
 
-bool HlCPrep::startEnable(char c) {
-  return c == '\0';
-}
-
 const char *HlCPrep::checkHgl(const char *s) {
 
   while (*s == ' ' || *s == '\t') s++;
@@ -358,10 +351,6 @@ HlHtmlTag::HlHtmlTag(int attribute, int context)
   : HlItem(attribute,context) {
 }
 
-bool HlHtmlTag::startEnable(char c) {
-  return c == '<';
-}
-
 const char *HlHtmlTag::checkHgl(const char *s) {
   while (*s == ' ' || *s == '\t') s++;
   while (*s != ' ' && *s != '\t' && *s != '>' && *s != '\0') s++;
@@ -370,10 +359,6 @@ const char *HlHtmlTag::checkHgl(const char *s) {
 
 HlHtmlValue::HlHtmlValue(int attribute, int context)
   : HlItem(attribute,context) {
-}
-
-bool HlHtmlValue::startEnable(char c) {
-  return c == '=';
 }
 
 const char *HlHtmlValue::checkHgl(const char *s) {
@@ -391,9 +376,9 @@ const char *HlHtmlValue::checkHgl(const char *s) {
 }
 
 HlShellComment::HlShellComment(int attribute, int context)
-  : HlItemWw(attribute,context) {
+  : HlCharDetect(attribute,context,'#') {
 }
-
+/*
 const char *HlShellComment::checkHgl(const char *s) {
   if (*s == '#') {
     do s++; while (*s);
@@ -401,6 +386,21 @@ const char *HlShellComment::checkHgl(const char *s) {
   }
   return 0L;
 }
+*/
+HlMHex::HlMHex(int attribute, int context)
+  : HlItemWw(attribute,context) {
+}
+
+const char *HlMHex::checkHgl(const char *s) {
+
+  if (*s >= '0' && *s <= '9') {
+    s++;
+    while ((*s >= '0' && *s <= '9') || (*s >= 'A' && *s <= 'F')) s++;
+    if (*s == 'H') return s + 1;
+  }
+  return 0L;
+}
+
 
 HlContext::HlContext(int attribute, int lineEndContext)
   : attr(attribute), ctx(lineEndContext) {
@@ -706,11 +706,12 @@ void BashHighlight::makeContextList() {
     c->items.append(new HlInt(2,0));
     c->items.append(new HlCharDetect(3,1,'"'));
     c->items.append(new HlCharDetect(4,2,'`'));
-    c->items.append(new HlShellComment(5,0));
+    c->items.append(new HlShellComment(5,3));
   contextList[1] = c = new HlContext(3,0);
     c->items.append(new HlCharDetect(3,0,'"'));
   contextList[2] = c = new HlContext(4,0);
     c->items.append(new HlCharDetect(4,0,'`'));
+  contextList[3] = new HlContext(5,0);
 
   keyword->addList(bashKeywords);
 }
@@ -742,9 +743,9 @@ void ModulaHighlight::makeContextList() {
 
   contextList[0] = c = new HlContext(0,0);
     c->items.append(keyword = new HlKeyword(1,0));
-    c->items.append(new HlCInt(2,0));
-    c->items.append(new HlCHex(3,0));
-    c->items.append(new HlCFloat(4,0));
+    c->items.append(new HlInt(2,0));
+    c->items.append(new HlMHex(3,0));
+    c->items.append(new HlFloat(4,0));
     c->items.append(new HlCharDetect(5,1,'"'));
     c->items.append(new Hl2CharDetect(6,2,"(*"));
   contextList[1] = c = new HlContext(5,0);

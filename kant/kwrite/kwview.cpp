@@ -15,6 +15,7 @@
 
 #include <kapp.h>
 #include <kfiledialog.h>
+
 #include <kdir.h>
 
 #include <X11/Xlib.h> //used to have XSetTransientForHint()
@@ -1449,6 +1450,30 @@ void KWrite::paste() {
   kWriteDoc->updateViews();
 }
 
+void KWrite::undo() {
+  kWriteDoc->undo(kWriteView,configFlags);
+  kWriteDoc->updateViews();
+}
+
+void KWrite::redo() {
+  kWriteDoc->redo(kWriteView,configFlags);
+  kWriteDoc->updateViews();
+}
+
+void KWrite::indent() {
+  VConfig c;
+  kWriteView->getVConfig(c);
+  kWriteDoc->indent(kWriteView,c);
+  kWriteDoc->updateViews();
+}
+
+void KWrite::unIndent() {
+  VConfig c;
+  kWriteView->getVConfig(c);
+  kWriteDoc->unIndent(kWriteView,c);
+  kWriteDoc->updateViews();
+}
+
 void KWrite::selectAll() {
   kWriteDoc->selectAll();
   kWriteDoc->updateViews();
@@ -1461,16 +1486,6 @@ void KWrite::deselectAll() {
 
 void KWrite::invertSelection() {
   kWriteDoc->invertSelection();
-  kWriteDoc->updateViews();
-}
-
-void KWrite::undo() {
-  kWriteDoc->undo(kWriteView,configFlags);
-  kWriteDoc->updateViews();
-}
-
-void KWrite::redo() {
-  kWriteDoc->redo(kWriteView,configFlags);
   kWriteDoc->updateViews();
 }
 
@@ -1841,7 +1856,6 @@ void KWrite::installBMPopup(KWBookPopup *p) {
 void KWrite::setBookmark(int n) {
   KWBookmark *b;
 
-  if (n == -1) n = bookmarks.count();
   while ((int) bookmarks.count() <= n) bookmarks.append(new KWBookmark());
   b = bookmarks.at(n);
   b->xPos = kWriteView->xPos;
@@ -1873,8 +1887,12 @@ void KWrite::setBookmark() {
 }
 
 void KWrite::addBookmark() {
+  int z;
 
-  setBookmark(bookmarks.count());
+  for (z = 0; z < (int) bookmarks.count(); z++) {
+    if (bookmarks.at(z)->cursor.y == -1) break;
+  }
+  setBookmark(z);
 }
 
 void KWrite::gotoBookmark(int n) {
@@ -1987,6 +2005,10 @@ void KWrite::writeConfig(KConfig *config) {
 
 void KWrite::readSessionConfig(KConfig *config) {
   PointStruc cursor;
+  int count, z;
+  char s1[16];
+  QString s2;
+  KWBookmark *b;
 
   searchFlags = config->readNumEntry("SearchFlags",sfPrompt);
 //  setConfig(config->readNumEntry("ConfigFlags"));
@@ -1998,9 +2020,25 @@ void KWrite::readSessionConfig(KConfig *config) {
   cursor.x = config->readNumEntry("CursorX");
   cursor.y = config->readNumEntry("CursorY");
   kWriteView->updateCursor(cursor);
+
+  count = config->readNumEntry("Bookmarks");
+  for (z = 0; z < count; z++) {
+    b = new KWBookmark();
+    bookmarks.append(b);
+    sprintf(s1,"Bookmark%d",z+1);
+    s2 = config->readEntry(s1);
+    if (!s2.isEmpty()) {
+      sscanf(s2,"%d,%d,%d,%d",&b->xPos,&b->yPos,&b->cursor.x,&b->cursor.y);
+    }
+  }
 }
 
 void KWrite::writeSessionConfig(KConfig *config) {
+  int z;
+  char s1[16];
+  char s2[64];
+  KWBookmark *b;
+
   config->writeEntry("SearchFlags",searchFlags);
   config->writeEntry("ConfigFlags",configFlags);
   config->writeEntry("WrapAt",wrapAt);
@@ -2009,6 +2047,16 @@ void KWrite::writeSessionConfig(KConfig *config) {
   config->writeEntry("YPos",kWriteView->yPos);
   config->writeEntry("CursorX",kWriteView->cursor.x);
   config->writeEntry("CursorY",kWriteView->cursor.y);
+
+  config->writeEntry("Bookmarks",bookmarks.count());
+  for (z = 0; z < (int) bookmarks.count(); z++) {
+    b = bookmarks.at(z);
+    if (b->cursor.y != -1) {
+      sprintf(s1,"Bookmark%d",z+1);
+      sprintf(s2,"%d,%d,%d,%d",b->xPos,b->yPos,b->cursor.x,b->cursor.y);
+      config->writeEntry(s1,s2);
+    }
+  }
 }
 
 

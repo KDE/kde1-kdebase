@@ -227,6 +227,9 @@ class KWriteDoc : QObject {
 
     void setPseudoModal(QWidget *);
 
+    void indent(KWriteView *, VConfig &);
+    void unIndent(KWriteView *, VConfig &);
+
     QList<TextLine> contents;
     QColor selCols[4];
     Highlight *highlight;

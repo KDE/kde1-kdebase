@@ -49,8 +49,8 @@ class TopLevel : public KTMainWindow {
     int menuUndo, menuRedo;
     int menuVertical, menuShowTB, menuShowSB;
 //    int statusID, toolID, verticalID, indentID;
-    QPopupMenu *file, *edit, *options, *help;
-    QPopupMenu *rightMouseButton, *colors, *recentPopup;
+//    QPopupMenu *file, *edit, *options, *help;
+    QPopupMenu *edit, *options, *recentPopup;
     QStrList recentFiles;
 
     bool hideToolBar;

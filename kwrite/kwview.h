@@ -244,11 +244,13 @@ class KWrite : public QWidget {
     void cut();
     void copy();
     void paste();
+    void undo();
+    void redo();
+    void indent();
+    void unIndent();
     void selectAll();
     void deselectAll();
     void invertSelection();
-    void undo();
-    void redo();
 
 //search functions
   public slots:

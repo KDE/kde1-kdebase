@@ -735,7 +735,7 @@ void KWriteDoc::insertChar(KWriteView *view, VConfig &c, char ch) {
 
   if (c.flags & cfWordWrap) {
     int line;
-    const char *s;
+    const unsigned char *s;
     int pos;
     PointStruc actionCursor;
 
@@ -743,34 +743,41 @@ void KWriteDoc::insertChar(KWriteView *view, VConfig &c, char ch) {
     line = c.cursor.y;
     do {
       textLine = contents.at(line);
-      s = textLine->getText();
+      s = (unsigned char *) textLine->getText();
       l = textLine->length();
-      for (z = c.wrapAt; z < l; z++) if (s[z] > 32) break;
+      for (z = c.wrapAt; z < l; z++) if (s[z] > 32) break; //search for text to wrap
       if (z >= l) break; // nothing more to wrap
       pos = c.wrapAt;
-      for (; z >= 0; z--) {
+      for (; z >= 0; z--) { //find wrap position
         if (s[z] <= 32) {
           pos = z + 1;
           break;
         }
       }
-      // do indent
+      //pos = wrap position
 
       if (line == c.cursor.y && pos <= c.cursor.x) {
+        //wrap cursor
         c.cursor.y++;
         c.cursor.x -= pos;
       }
-      line++;
 
       if (textLine == contents.getLast()) {
+        //at end of doc: create new line
         actionCursor.x = pos;
-        actionCursor.y = line - 1;
+        actionCursor.y = line;
         recordAction(KWAction::newLine,actionCursor);
       } else {
+        //wrap
+        actionCursor.y = line + 1;
+        if (s[l - 1] > 32) { //add space in next line if necessary
+          actionCursor.x = 0;
+          recordReplace(actionCursor,0," ",1);
+        }
         actionCursor.x = textLine->length() - pos;
-        actionCursor.y = line;
         recordAction(KWAction::wordWrap,actionCursor);
       }
+      line++;
     } while (true);
   }
   recordEnd(view,c);
@@ -1968,7 +1975,7 @@ void KWriteDoc::doWordWrap(KWAction *a) {
 
   tagLine(a->cursor.y - 1);
   tagLine(a->cursor.y);
-  if (selectEnd == a->cursor.y - 1) selectEnd++;//addSelection(a->cursor.y);
+  if (selectEnd == a->cursor.y - 1) selectEnd++;
 
   a->action = KWAction::wordUnWrap;
 }
@@ -2175,4 +2182,60 @@ void KWriteDoc::setUndoSteps(int steps) {
 void KWriteDoc::setPseudoModal(QWidget *w) {
   delete pseudoModal;
   pseudoModal = w;
+}
+
+void KWriteDoc::indent(KWriteView *view, VConfig &c) {
+  TextLine *textLine;
+
+  recordStart(c.cursor);
+  c.cursor.x = 0;
+  if (selectEnd < selectStart) {
+    //indent single line
+    textLine = contents.at(c.cursor.y);
+    recordReplace(c.cursor,0," ",1);
+  } else {
+    //indent selection
+    for (c.cursor.y = selectStart; c.cursor.y <= selectEnd; c.cursor.y++) {
+      textLine = contents.at(c.cursor.y);
+      if (textLine->isSelected() || textLine->numSelected()) recordReplace(c.cursor,0," ",1);
+    }
+    c.cursor.y--;
+  }
+  recordEnd(view,c);
+}
+
+void KWriteDoc::unIndent(KWriteView *view, VConfig &c) {
+  char s[16];
+  PointStruc cursor;
+  TextLine *textLine;
+  int l;
+
+  memset(s,' ',16);
+  cursor = c.cursor;
+  c.cursor.x = 0;
+  if (selectEnd < selectStart) {
+    //unindent single line
+    textLine = contents.at(c.cursor.y);
+    if (textLine->firstChar() == 0) return;
+    recordStart(cursor);
+    l = (textLine->getChar(0) == '\t') ? tabChars - 1 : 0;
+    recordReplace(c.cursor,1,s,l);
+  } else {
+    //unindent selection
+    for (c.cursor.y = selectStart; c.cursor.y <= selectEnd; c.cursor.y++) {
+      textLine = contents.at(c.cursor.y);
+      if ((textLine->isSelected() || textLine->numSelected())
+        && textLine->firstChar() == 0) return;
+    }
+    recordStart(cursor);
+    for (c.cursor.y = selectStart; c.cursor.y <= selectEnd; c.cursor.y++) {
+      textLine = contents.at(c.cursor.y);
+      if (textLine->isSelected() || textLine->numSelected()) {
+        l = (textLine->getChar(0) == '\t') ? tabChars - 1 : 0;
+        recordReplace(c.cursor,1,s,l);
+      }
+    }
+    c.cursor.y--;
+  }
+  recordEnd(view,c);
 }

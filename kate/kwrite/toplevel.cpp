@@ -162,20 +162,22 @@ void TopLevel::setupEditWidget(KWriteDoc *doc) {
 
 void TopLevel::setupMenuBar() {
   KMenuBar *menubar;
+  QPopupMenu *file, *help;
+  KWBookPopup *bookmarks;
 
 //  KStdAccel keys(kapp->getConfig());
 
   file =        new QPopupMenu();
   edit =        new QPopupMenu();
+  bookmarks =   new KWBookPopup();
   options =     new QPopupMenu();
   help =        new QPopupMenu();
   recentPopup = new QPopupMenu();
-//  colors =    new QPopupMenu();
 
 
   file->insertItem(i18n("Ne&w..."),kWrite,SLOT(newDoc()),CTRL+Key_N);
   file->insertItem(i18n("&Open..."),kWrite,SLOT(open()),CTRL+Key_O);
-  file->insertItem(i18n("&Insert..."),kWrite,SLOT(insertFile()),CTRL+Key_I);
+  file->insertItem(i18n("&Insert..."),kWrite,SLOT(insertFile()));
 //  file->insertItem(i18n("Open Recen&t"), recentpopup);
 //  connect(recentPopup,SIGNAL(activated(int)),SLOT(openRecent(int)));
   file->insertSeparator ();
@@ -205,17 +207,25 @@ void TopLevel::setupMenuBar() {
   edit->insertItem(i18n("Find &Again"),kWrite,SLOT(searchAgain()),Key_F3);
   edit->insertItem(i18n("&Goto Line..."),kWrite,SLOT(gotoLine()),CTRL+Key_G);
   edit->insertSeparator();
-  menuUndo = edit->insertItem(i18n("&Undo"),kWrite,SLOT(undo()),CTRL+Key_Z);
-  menuRedo = edit->insertItem(i18n("&Redo"),kWrite,SLOT(redo()),CTRL+Key_Y);
+  menuUndo = edit->insertItem(i18n("U&ndo"),kWrite,SLOT(undo()),CTRL+Key_Z);
+  menuRedo = edit->insertItem(i18n("R&edo"),kWrite,SLOT(redo()),CTRL+Key_Y);
+  edit->insertSeparator();
+  edit->insertItem(i18n("&Indent"),kWrite,SLOT(indent()),CTRL+Key_I);
+  edit->insertItem(i18n("Uninden&t"),kWrite,SLOT(unIndent()),CTRL+Key_U);
   edit->insertSeparator();
 //  edit->insertItem(i18n("Format..."),kWrite,SLOT(format()));
 //  edit->insertSeparator();
   edit->insertItem(i18n("&Select All"),kWrite,SLOT(selectAll()));
   edit->insertItem(i18n("&Deselect All"),kWrite,SLOT(deselectAll()));
-  edit->insertItem(i18n("&Invert Selection"),kWrite,SLOT(invertSelection()));
+  edit->insertItem(i18n("In&vert Selection"),kWrite,SLOT(invertSelection()));
 //  edit->insertSeparator();
 //  edit->insertItem(i18n("Insert &Date"),this,SLOT(insertDate()));
 //  edit->insertItem(i18n("Insert &Time"),this,SLOT(insertTime()));
+
+  bookmarks->insertItem(i18n("&Set Bookmark..."),kWrite,SLOT(setBookmark()),ALT+Key_S);
+  bookmarks->insertItem(i18n("&Add Bookmark"),kWrite,SLOT(addBookmark()));
+  bookmarks->insertItem(i18n("&Clear Bookmarks"),kWrite,SLOT(clearBookmarks()),ALT+Key_C);
+  kWrite->installBMPopup(bookmarks);
 
 
   options->setCheckable(TRUE);
@@ -243,7 +253,7 @@ void TopLevel::setupMenuBar() {
 */
 
   help = kapp->getHelpMenu(true,
-    "KWrite 0.94\n\nCopyright 1998\nJochen Wilhelmy\ndigisnap@cs.tu-berlin.de");
+    "KWrite 0.95\n\nCopyright 1998\nJochen Wilhelmy\ndigisnap@cs.tu-berlin.de");
 
 //  help->insertItem (i18n("&Help..."),this,SLOT(helpSelected()));
 //  help->insertSeparator();
@@ -252,6 +262,7 @@ void TopLevel::setupMenuBar() {
 
 //  setMenu(menubar);
 
+  //right mouse button popup
   QPopupMenu *popup;
   popup = new QPopupMenu();
   popup->insertItem(i18n("&Open..."),kWrite,SLOT(open()),CTRL+Key_O);
@@ -263,17 +274,10 @@ void TopLevel::setupMenuBar() {
   popup->insertItem(i18n("&Paste"),kWrite,SLOT(paste()),CTRL+Key_V);
   kWrite->installRBPopup(popup);
 
-  KWBookPopup *bookPopup;
-  bookPopup = new KWBookPopup();
-  bookPopup->insertItem(i18n("&Set Bookmark..."),kWrite,SLOT(setBookmark()),ALT+Key_S);
-  bookPopup->insertItem(i18n("&Add Bookmark"),kWrite,SLOT(addBookmark()));
-  bookPopup->insertItem(i18n("&Clear Bookmarks"),kWrite,SLOT(clearBookmarks()),ALT+Key_C);
-  kWrite->installBMPopup(bookPopup);
-
   menubar = menuBar();//new KMenuBar(this,"menubar");
   menubar->insertItem(i18n("&File"),file);
   menubar->insertItem(i18n("&Edit"),edit);
-  menubar->insertItem(i18n("&Bookmarks"),bookPopup);
+  menubar->insertItem(i18n("&Bookmarks"),bookmarks);
   menubar->insertItem(i18n("&Options"),options);
   menubar->insertSeparator();
   menubar->insertItem(i18n("&Help"),help);

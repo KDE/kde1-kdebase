@@ -8,7 +8,7 @@
 
 #include "kwdoc.h"
 
-
+bool testWw(char c); //whole word check: false for 'A'-'Z','a'-'z','0'-'9','_'
 
 class HlItem {
   public:
@@ -23,8 +23,8 @@ class HlItem {
 class HlItemWw : public HlItem {
   public:
     HlItemWw(int attribute, int context);
-    virtual bool startEnable(char);
-    virtual bool endEnable(char c) {return startEnable(c);};
+    virtual bool startEnable(char c) {return testWw(c);};
+    virtual bool endEnable(char c) {return testWw(c);};
 };
 
 
@@ -121,7 +121,7 @@ class HlCFloat : public HlFloat {
 class HlLineContinue : public HlItem {
   public:
     HlLineContinue(int attribute, int context);
-    virtual bool endEnable(char);
+    virtual bool endEnable(char c) {return c == '\0';};
     virtual const char *checkHgl(const char *);
 };
 
@@ -140,37 +140,38 @@ class HlCChar : public HlItemWw {
 class HlCPrep : public HlItem {
   public:
     HlCPrep(int attribute, int context);
-    virtual bool startEnable(char);
+    virtual bool startEnable(char c) {return c == '\0';};
     virtual const char *checkHgl(const char *);
 };
-/*
-class HlHtmlChar : public HlItem {
-  public:
-    HlHtmlChar(int attribute, int context);
-    virtual const char *checkHgl(const char *);
-};
-*/
+
 class HlHtmlTag : public HlItem {
   public:
     HlHtmlTag(int attribute, int context);
-    virtual bool startEnable(char);
+    virtual bool startEnable(char c) {return c == '<';};
     virtual const char *checkHgl(const char *);
 };
 
 class HlHtmlValue : public HlItem {
   public:
     HlHtmlValue(int attribute, int context);
-    virtual bool startEnable(char);
+    virtual bool startEnable(char c) {return c == '=';};
     virtual const char *checkHgl(const char *);
 };
 
-class HlShellComment : public HlItemWw {
+class HlShellComment : public HlCharDetect {
   public:
     HlShellComment(int attribute, int context);
-    virtual bool endEnable(char) {return true;};
+    virtual bool startEnable(char c) {return testWw(c);};
+};
+
+//modula 2 hex
+class HlMHex : public HlItemWw {
+  public:
+    HlMHex(int attribute, int context);
     virtual const char *checkHgl(const char *);
 };
 
+//context
 class HlContext {
   public:
     HlContext(int attribute, int lineEndContext);
