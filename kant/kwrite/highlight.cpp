@@ -1019,7 +1019,8 @@ void AdaHighlight::makeContextList() {
 
 
 PythonHighlight::PythonHighlight(const char *name) : GenHighlight(name) {
-  //dw = "*.python"; ??
+  dw = "*.py";
+  dm = "text/x-python-src";
 }
 
 PythonHighlight::~PythonHighlight() {
