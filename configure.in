@@ -230,6 +230,7 @@ AC_OUTPUT(Makefile \
 	kappfinder/kappfinder \
 	kappfinder/pics/Makefile \
 	kappfinder/pics/mini/Makefile \
+	kappfinder/pics/large/Makefile \
 	kaudio/Makefile \
         kcheckpass/Makefile \
 	kcontrol/Makefile \
