@@ -12,7 +12,7 @@
 
 <title>Display Setup Handbook
 <author>Mark Donohoe and Martin Jones, updated by Duncan.
-<date>v1.3, 06 September 1999
+<date>v1.4, 06 September 1999
 
 <!-- Table of contents -->
 <toc>
@@ -501,7 +501,13 @@ icons.  You may make this choice separately for icons
 used in the <bf>Panel</bf>,
 <bf>File manager and desktop icons</bf>,
 and <bf>Other</bf> icons.
-
+<itemize>
+<item> <bf>Note:</bf> The <bf>Panel Icon Style</bf> controls the size of the
+Panel.   For more complete configuration, including the choice
+of ``<bf>tiny</bf>'' style icons for the Panel, use the panel configuration
+dialog (select ``Configure'' in the Panel menu, or go to the 
+``Applications -> Panel'' configuration menu).
+</itemize>
 
 
 <p>
