@@ -11,7 +11,7 @@
 <author>Alexander Budnik, <tt>budnik@linserv.jinr.ru</tt> and
 Dimitrios P. Bouras, <tt>dbouras@hol.gr</tt>  .  Document revision
 by Duncan <tt>duncan@kde.org</tt> 
-<date>v1.0b4, March 24 1999, revisions August 20, 1999,
+<date>v1.0b4, March 24 1999, revisions August 23, 1999,
 <abstract>This Handbook describes International Keyboard Version 1.0b4
 
 <!-- Table of contents -->
@@ -113,20 +113,20 @@ and choose
 
 <sect> Configuring the KDE International Keyboard.<label id="config"<p>
 
-There are three configuration screens for the
+There are three configuration dialogs for the
 KDE <it>International Keyboard</it>.
 
 <itemize>
 
-<item> The  <ref id="general" name="General"> settings screen,
+<item> The  <ref id="general" name="General"> settings dialog,
 for selecting the keyboard map, and hot keys. This also
-accesses the  <ref id="advanced" name="Advanced Options"> screen.
+accesses the  <ref id="advanced" name="Advanced Options"> dialog.
 
-<item> The <ref id="style" name="Style"> screen for
+<item> The <ref id="style" name="Style"> dialog for
 configuring the fonts and colors used by the <it>International
 Keyboard</it> keyboard-indicator button.
 
-<item> The <ref id="startup" name="Startup"> screen for
+<item> The <ref id="startup" name="Startup"> dialog for
 configuring how the <it>International Keyboard</it> is started, 
 and the placement of the keyboard-indicator  button.
 
@@ -155,7 +155,7 @@ program  is running.
 
   <p><img SRC=general.gif>
 
-The <bf>General Settings</bf>  screen configures the keyboard
+The <bf>General Settings</bf>  dialog configures the keyboard
 maps and ``hotkeys''.
 
 
@@ -177,10 +177,10 @@ Use the buttons at the right to control your keyboard map list.
 <item>Click on the <bf>Add</bf> button to add entries to
 the list of keyboard maps.   
 This opens the
-<bf>Add Keyboard</bf> screen which has a pull-down list of available
+<bf>Add Keyboard</bf> dialog which has a pull-down list of available
 keyboard maps, and gives information about the keyboard you select
 from it.  Click on its <bf>OK</bf> button to add the chosen keyboard map
-to your personal list, or on <bf>Cancel</bf> to close the screen without
+to your personal list, or on <bf>Cancel</bf> to close the dialog without
 changing your list.
 
 <item>
@@ -194,13 +194,13 @@ highlighted, is the ``<it>hot</it>'' keyboard.
 
 <item>
 Click on the <bf>Info</bf> button to view the
-<bf>Keyboard Map Information</bf> screen about the  selected
+<bf>Keyboard Map Information</bf>  about the  selected
 keyboard.
 
 </itemize>
 <p>
-    If you use more then two keyboard maps, it is very helpful to check
-    the ``<bf>Use hotlist</bf>'' box. In this case you can switch between
+    If you use more then two keyboard maps, it is very helpful to activate
+    the ``<bf>Use hotlist</bf>'' option. In this case you can switch between
     the ``<it>hot</it>'' (highlighted) keyboard and the <it>default</it> 
     (first) keyboard by 
     using the <bf>Switch</bf>
@@ -225,7 +225,7 @@ the <bf>Switch</bf> key .
 map to the the next one in your personal list of keyboard maps 
 (or between the <it>default</it> and the highlighted (``<it>hot</it>'') 
 map, if
-the ``<bf>use hotlist</bf>'' box is checked).   
+the ``<bf>use hotlist</bf>'' option is active).   
 </itemize>
 
 The box on the right shows the key chosen as the <bf>Alternate Switch</bf>
@@ -261,12 +261,12 @@ This section allows other options to be configured.
     
 <itemize>
 <item>
-If the ``<bf>Beep</bf>'' box is checked,
+If the ``<bf>Beep</bf>'' option is activated,
 the system will make an audible beep each time the keyboard map  changes.
 
 <item>
 Click on the <bf>Advanced</bf> button to open the 
-<ref id="advanced" name="Advanced Options screen">
+<ref id="advanced" name="Advanced Options dialog">
 for more options.
 
 </itemize>
@@ -279,7 +279,8 @@ for more options.
 
      For some keyboards (e.g. Russian, Greek) there are problems with
      the default <bf>CapsLock</bf> behavior. 
-     If you check this box, you instruct the <it>International Keyboard</it>
+     If you activate this option, 
+     you instruct the <it>International Keyboard</it>
      to emulate <bf>CapsLock</bf> in order to fix this problem. 
      The ``Caps Lock'' state (on or off) is then indicated by the color of the 
      keyboard-indicator button instead of
@@ -287,7 +288,8 @@ for more options.
 
     <bf>World Menu</bf>:
 
-      If you check this box, You can get a <it>International Keyboard</it>
+      If you activate this option, 
+      you can get a <it>International Keyboard</it>
        pop-up menu in any active window by pressing and holding
        down the <bf>Switch</bf>
        key combination  until the menu appears.
@@ -296,7 +298,7 @@ for more options.
 
       If the the selection in the <bf>Input</bf> section (see below) is 
       ``<bf>Class</bf>'', you may
-      check the ``<bf>Save Classes</bf>'' box so that
+      activate the ``<bf>Save Classes</bf>'' option so that
       the  
       association of a given keyboard map with a given class
       of windows is automatically saved at the end of each KDE Session,
@@ -363,7 +365,7 @@ for more options.
 
     <p><img SRC=style.gif>
 
-    In the <bf>Style</bf> screen, You can customize the colors and
+    In the <bf>Style</bf> dialog, You can customize the colors and
     font used by the <it>International Keyboard</it>  
     keyboard-indicator button that indicates which
     keyboard map is currently in use, and (by its color) shows whether
@@ -374,7 +376,7 @@ for more options.
 <bf>Button Colors</bf>:
 
 Clicking on one of the colored buttons opens the
-``<bf>Select Color</bf>'' menu screen, which allows
+``<bf>Select Color</bf>'' dialog, which allows
 you to change the corresponding color used for the 
 <it>International Keyboard</it> keyboard-indicator button.
 
@@ -407,17 +409,17 @@ This section allows you to change the font used on the
 keyboard-indicator button.
 <itemize>
 <item>
-    Check the ``<bf>Customize Font</bf>'' box if you
+    Activate the ``<bf>Customize Font</bf>'' option if you
     wish to use custom or KDE wide fonts.   If this
-    box is checked, clicking the <bf>Change Font</bf>
-    button will open the ``<bf>Select Font</bf>'' menu screen.
+    option is active, clicking the <bf>Change Font</bf>
+    button will open the ``<bf>Select Font</bf>'' dialog.
 </itemize>
 
   <sect>International Keyboard - Startup<label id="startup"><p>
 
   <img SRC=startup.gif>
 
-  The  <bf>Startup</bf> screen configures how  the 
+  The  <bf>Startup</bf> dialog configures how  the 
   <it>International Keyboard</it>
   is started, and the placement of its keyboard-indicator
 button.
@@ -425,18 +427,18 @@ button.
 <itemize>
 
 <item> <bf>Autostart</bf>:
-If this box is checked,
+If this option is activated,
 the <it>International Keyboard</it>  will be started automatically at the
 beginning of each KDE session.
 
 
 <item>  <bf>Docked</bf>:
-   If this box is checked,  the
+   If this option is activated,  the
    keyboard-indicator button will be docked into the panel.
 
 <item>  <bf>Place</bf>:
-    If the ``<bf>Docked</bf>'' box
-    is <bf>not</bf> checked, the
+    If the ``<bf>Docked</bf>''  option
+    is <bf>not</bf> active, the
     keyboard-indicator
     button will be placed at one of the four corners of the display.
     The  pull-down <bf>Place</bf> menu presents a list
@@ -510,7 +512,7 @@ beginning of each KDE session.
     <p>
     Beginning with version 1.0b1, you can
     predefine symbols in the
-    <ref id="advanced" name="Advanced Options"> configuration screen
+    <ref id="advanced" name="Advanced Options"> configuration dialog
     for fixing this problem. 
    (<it> This feature not currently available </it>) 
   </sect1>
