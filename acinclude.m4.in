@@ -1628,7 +1628,6 @@ AC_DEFUN(AC_PATH_PAM,
    PAMLIBS=$ac_pam_libs
    test "x$pam_includes" = xNONE && pam_includes=$ac_pam_includes
    test "x$pam_libraries" = xNONE && pam_libraries=$ac_pam_libraries
-   echo "$ac_pam_libraries $pam_libraries"
    AC_MSG_RESULT([libraries $pam_libraries, headers $pam_includes])
  fi
  
