@@ -308,7 +308,7 @@ void KfmGui::initMenu()
     mview->insertItem( klocale->translate("Rel&oad Tree"),
 		       this, SLOT(slotReloadTree()) );
     mview->insertItem( klocale->translate("&Reload Document"),
-		       view, SLOT(slotReload()) );
+		       view, SLOT(slotReload()), Key_F5 );
     mview->insertItem( klocale->translate("Rescan &Bindings"),
 		       this, SLOT(slotRescanBindings()) );
     mview->insertSeparator();
@@ -1032,6 +1032,8 @@ void KfmGui::slotBookmarksChanged()
 			      this, SLOT(slotEditBookmarks()) );
 
     fillBookmarkMenu( bookmarkManager->root(), bookmarkMenu );
+    bookmarkMenu->setAccel( CTRL + Key_B, bookmarkManager->root()->id() );
+    // set Ctrl+Key_B for toplevel "add bookmark" menu entry.
 }
 
 void KfmGui::fillBookmarkMenu( KBookmark *parent, QPopupMenu *menu )
