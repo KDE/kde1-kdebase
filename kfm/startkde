@@ -1,6 +1,6 @@
 #!/bin/sh
 
-$(KDEDIR:?"KDEDIR is not set!"}
+DUMMY = ${KDEDIR:?"KDEDIR is not set!"}
 
 kaudioserver &
 kfm -d &
