@@ -20,27 +20,27 @@ msgstr ""
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr ""
+msgstr "  velièina            : %dx%d piksela (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr ""
+msgstr "  rezolucija	      : %dx%d toèaka po inèu\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr ""
+msgstr "  dubine (%d)          :"
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr ""
+msgstr "ime prikaza	      : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr ""
+msgstr "inaèica               : %i.%i"
 
 #: info.cpp:89
 #, c-format
@@ -72,55 +72,52 @@ msgstr ""
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr ""
+msgstr "%s, nepoznata brzina"
 
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr ""
+msgstr "%s radi na %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr ""
+msgstr "Ahh ne mogu otvoriti fstab!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
-#, fuzzy
 msgid "Device"
-msgstr "&Ureðaji"
+msgstr "Ureðaj"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
-msgstr ""
+msgstr "Mjesto montiranja"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr ""
+msgstr "Vrsta DS(FS)"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr ""
+msgstr "Opcije za montiranje"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
-msgstr ""
+msgstr "Nepoznata vrsta CPUa"
 
 #: info_hpux.cpp:62
-#, fuzzy
 msgid "unavailable"
-msgstr "Nije dostupno"
+msgstr "nije dostupno"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr ""
+msgstr "Broj aktivnih procesora= "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr ""
+msgstr "Vrijednost"
 
 #: info_linux.cpp:114
-#, fuzzy
 msgid "DMA-Channel"
-msgstr "DMA-ka&nali"
+msgstr "DMA-kanal"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
@@ -128,7 +125,7 @@ msgstr ""
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr ""
+msgstr "I/O-Raspon"
 
 #: main.cpp:79
 msgid "&Memory"
@@ -224,6 +221,5 @@ msgstr "Nije dostupno"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
-#, fuzzy
 msgid "Not Available"
 msgstr "Nije dostupno"

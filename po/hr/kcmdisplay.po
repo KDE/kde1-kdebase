@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-01-15 01:15+0100\n"
-"PO-Revision-Date: 1998-11-22 20:00-0500\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"PO-Revision-Date: 1998-12-22 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,103 +16,104 @@ msgstr ""
 msgid "Enter new desktop name"
 msgstr "Unesi ime radne povr¹ine"
 
-#: backgnd.cpp:110 backgnd.cpp:163
+#: backgnd.cpp:110 backgnd.cpp:162
 msgid "Desktop"
 msgstr "Radna povr¹ina"
 
-#: backgnd.cpp:185
+#: backgnd.cpp:184
 msgid "&Rename ..."
 msgstr "&Promijeni ime ..."
 
-#: backgnd.cpp:196
+#: backgnd.cpp:195
 msgid "&Common Background"
-msgstr "&Zajednièka pozadina"
+msgstr ""
 
-#: backgnd.cpp:224 colorscm.cpp:82
+#: backgnd.cpp:223 colorscm.cpp:82
 msgid "Colors"
 msgstr "Boje"
 
-#: backgnd.cpp:251
+#: backgnd.cpp:250
 msgid "&One Color"
 msgstr "&Jedna Boja"
 
-#: backgnd.cpp:268
+#: backgnd.cpp:267
 msgid "&Two Color"
 msgstr "&Dvije Boje"
 
-#: backgnd.cpp:287
+#: backgnd.cpp:286
 msgid "Set&up ..."
 msgstr "&Podesi..."
 
-#: backgnd.cpp:296
+#: backgnd.cpp:295
 msgid "Wallpaper"
 msgstr "Pozadinska slika"
 
-#: backgnd.cpp:327 backgnd.cpp:1214 backgnd.cpp:1372 backgnd.cpp:1910
+#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1218
+#: backgnd.cpp:1372 backgnd.cpp:1910
 msgid "No wallpaper"
 msgstr "Nema pozadinske slike"
 
-#: backgnd.cpp:360
+#: backgnd.cpp:359
 msgid "&Browse..."
 msgstr "Po&tra¾i..."
 
-#: backgnd.cpp:368
+#: backgnd.cpp:367
 msgid "Arrangement:"
 msgstr "Raspored:"
 
-#: backgnd.cpp:375
+#: backgnd.cpp:374
 msgid "Tiled"
 msgstr "Pop&loèano"
 
-#: backgnd.cpp:376
+#: backgnd.cpp:375
 msgid "Mirrored"
 msgstr "Zrcaljeno"
 
-#: backgnd.cpp:377
+#: backgnd.cpp:376
 msgid "Center Tiled"
 msgstr ""
 
-#: backgnd.cpp:378
+#: backgnd.cpp:377
 msgid "Centred"
 msgstr "Centrirano"
 
-#: backgnd.cpp:379
+#: backgnd.cpp:378
 msgid "Centred Brick"
 msgstr ""
 
-#: backgnd.cpp:380
+#: backgnd.cpp:379
 msgid "Centred Warp"
 msgstr ""
 
-#: backgnd.cpp:381
+#: backgnd.cpp:380
 msgid "Centred Maxpect"
 msgstr ""
 
-#: backgnd.cpp:382
+#: backgnd.cpp:381
 msgid "Symmetrical Tiled"
 msgstr ""
 
-#: backgnd.cpp:383
+#: backgnd.cpp:382
 msgid "Symmetrical Mirrored"
-msgstr "Zrcaljeno simetrièki"
+msgstr ""
 
-#: backgnd.cpp:384
+#: backgnd.cpp:383
 msgid "Scaled"
 msgstr "Razvuèeno"
 
-#: backgnd.cpp:399
+#: backgnd.cpp:398
 msgid "Ra&ndom"
 msgstr "Nasu&mièno"
 
-#: backgnd.cpp:408
+#: backgnd.cpp:407
 msgid "Setu&p..."
 msgstr "&Postavke..."
 
-#: backgnd.cpp:418
+#: backgnd.cpp:417
 msgid "&Dock into the panel"
 msgstr "P&ristani na ploèu"
 
-#: backgnd.cpp:443
+#: backgnd.cpp:442
 msgid "Cache size (kB):"
 msgstr "Velièina predmemorije (kB):"
 
@@ -196,7 +197,7 @@ msgstr ""
 
 #: backgnd.cpp:1713
 msgid "Pick files from &directory"
-msgstr ""
+msgstr "Izaberi datoteke iz &direktorija"
 
 #: backgnd.cpp:1727
 msgid "&Browse ..."
@@ -204,7 +205,7 @@ msgstr "Po&tra¾i..."
 
 #: backgnd.cpp:1748
 msgid "Timer Delay in seconds :"
-msgstr ""
+msgstr "Ka¹njenje alarma u sekundama :"
 
 #: backgnd.cpp:1760
 msgid "In &order"
@@ -218,11 +219,11 @@ msgstr "Radne povr¹ine:"
 msgid "&Add"
 msgstr "&Dodaj"
 
-#: backgnd.cpp:1988
+#: backgnd.cpp:1987
 msgid "Directory error"
 msgstr "Gre¹ka na direktoriju"
 
-#: backgnd.cpp:1989
+#: backgnd.cpp:1988
 msgid "Selected directory doesn't exists"
 msgstr "Izabrani direktorij ne postoji"
 
@@ -372,7 +373,7 @@ msgstr "Zakljuèaj zaslon (screen)"
 msgid "Screen Saver"
 msgstr "Za¹tita zaslona"
 
-#: scrnsave.cpp:188 scrnsave.cpp:382 scrnsave.cpp:623 scrnsave.cpp:744
+#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:605 scrnsave.cpp:726
 msgid "No screensaver"
 msgstr "Nema za¹tite zaslona (screensaver)"
 
@@ -404,63 +405,67 @@ msgstr "&Zahtjevaj lozinku"
 msgid "&Accept root password to unlock"
 msgstr "Dozvoli admin. lozinku za otkljuèavanje"
 
-#: scrnsave.cpp:280
+#: scrnsave.cpp:278
 msgid "Show &password as stars"
 msgstr "Prika¾i &lozinku kao zvjezdice"
 
-#: scrnsave.cpp:288
+#: scrnsave.cpp:286
 msgid "Priority"
 msgstr "Prioritet"
 
-#: scrnsave.cpp:301
+#: scrnsave.cpp:299
 msgid "&High"
 msgstr "&Visok"
 
-#: scrnsave.cpp:310
+#: scrnsave.cpp:308
 msgid "Low"
 msgstr "Nizak"
 
-#: general.cpp:221
-msgid "Style"
-msgstr ""
+#: general.cpp:222
+msgid "Fonts etc."
+msgstr "Pisma itd."
 
-#: general.cpp:229
+#: general.cpp:230
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "&Crtaj widgete u stilu Windows 95"
 
-#: general.cpp:245
+#: general.cpp:244
+msgid "&Apply style to non-KDE apps"
+msgstr "&Primjeni stil na sve aplikacije"
+
+#: general.cpp:258
 msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr ""
 
-#: general.cpp:259
-msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "&Primjeni pisma i boje na ne-KDE aplikacije"
+#: general.cpp:273
+msgid "Desktop fonts"
+msgstr "Pisma radne povr¹ine"
 
-#: general.cpp:530
+#: general.cpp:285
 msgid "General font"
 msgstr "Opæenito pismo"
 
-#: general.cpp:535
+#: general.cpp:290
 msgid "Fixed font"
 msgstr "Jednoliko pismo"
 
-#: general.cpp:541
+#: general.cpp:296
 msgid "Window title font"
 msgstr "Pismo na naslovu prozora"
 
-#: general.cpp:546
+#: general.cpp:301
 msgid "Panel button font"
 msgstr "Pismo gumbi na ploèi"
 
-#: general.cpp:551
+#: general.cpp:306
 msgid "Panel clock font"
 msgstr "Pismo sata na ploèi"
 
-#: general.cpp:581
+#: general.cpp:336
 msgid "Sample text"
 msgstr "Ogledni tekst"
 
-#: general.cpp:589
+#: general.cpp:344
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
@@ -470,29 +475,27 @@ msgstr ""
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   è æ ¹ È © & * ( )"
 
-#: main.cpp:64
+#: main.cpp:63
 msgid "&Background"
 msgstr "&Pozadina"
 
-#: main.cpp:67
+#: main.cpp:66
 msgid "&Screensaver"
 msgstr "&Za¹tita zaslona"
 
-#: main.cpp:71
+#: main.cpp:70
 msgid "&Colors"
 msgstr "&Boje"
 
-#: main.cpp:77
-msgid "&Style"
-msgstr "&Stil"
+#: main.cpp:73
+msgid "&Fonts etc."
+msgstr "P&isma itd."
 
-#: main.cpp:83
-msgid ""
-"usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
-msgstr ""
-"uporaba: kcmdisplay [-init | {pozadina,za¹tita zaslona,boje,pisma,stil}]\n"
+#: main.cpp:79
+msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr "uporaba: kcmdisplay [-init | {pozadina,za¹tita zaslona,boje,stil}]\n"
 
-#: main.cpp:150
+#: main.cpp:140
 msgid "Display settings"
 msgstr "Pode¹avanje prikaza"
 

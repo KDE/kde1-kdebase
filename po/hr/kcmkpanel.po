@@ -30,7 +30,7 @@ msgstr "uporaba: kcmkpanel [-init | {ploèa,opcije,radne povr¹ine,disknav}]\n"
 
 #: main.cpp:112
 msgid "KPanel Configuration"
-msgstr "Postavke KPanel"
+msgstr "Postavke za KPanel"
 
 #: panel.cpp:59
 msgid "Location"
@@ -154,11 +154,12 @@ msgstr "Druge opcije"
 
 #: options.cpp:408
 msgid "Personal Menu Entries &First"
-msgstr "&Prvo osobne izbornike"
+msgstr "Osobne &Prvo"
 
 #: options.cpp:416
+#, fuzzy
 msgid "Menu F&olders First"
-msgstr ""
+msgstr "&Prvo direktoriji"
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
@@ -166,7 +167,7 @@ msgstr "Sa&t pokazuje vrijeme u AM/PM formatu"
 
 #: options.cpp:432
 msgid "Clock shows time in &Internet beats"
-msgstr "Sa&t pokazuje vrijeme u otkucajima &Interneta"
+msgstr "Sat pokazuje vrijeme u &Internet otkucajima"
 
 #: disknav.cpp:38
 msgid "History"
@@ -174,7 +175,7 @@ msgstr "Povijest"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr "Promijeni zapise: (dovucite direktorij i stvorite vezu)"
+msgstr "Promijeni "
 
 #: disknav.cpp:64
 msgid "Edit &Personal..."
@@ -182,7 +183,7 @@ msgstr "Promijeni &osobne..."
 
 #: disknav.cpp:74
 msgid "Edit &Shared..."
-msgstr "Promijeni &dijeljene"
+msgstr "Promijeni &djeljene"
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
@@ -190,11 +191,11 @@ msgstr ""
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr "Max. skora¹njih datoteka:"
+msgstr ""
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr "Max. datoteka u jednom direktoriju:"
+msgstr ""
 
 #: disknav.cpp:159
 msgid "Show dot files"
@@ -202,19 +203,19 @@ msgstr "Prika¾i datoteke s toèkom"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr "Ne razlikuj velika i mala slova kod sortiranja"
+msgstr ""
 
 #: disknav.cpp:173
 msgid "Show Shared section"
-msgstr "Poka¾i dijeljene"
+msgstr ""
 
 #: disknav.cpp:180
 msgid "Show Personal section"
-msgstr "Poka¾i osobne"
+msgstr ""
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr "Poka¾i skora¹nje"
+msgstr ""
 
 #: disknav.cpp:194
 msgid "Show Option entry"
@@ -222,4 +223,4 @@ msgstr ""
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr "Terminalska program:"
+msgstr "Terminalska aplikacija:"

@@ -30,7 +30,7 @@ msgstr "&Mi¹"
 
 #: main.cpp:80
 msgid "&Advanced"
-msgstr "&Napredno"
+msgstr "&Napredne"
 
 #: main.cpp:86
 msgid ""
@@ -49,15 +49,15 @@ msgstr "Smanji"
 
 #: titlebar.cpp:129
 msgid "Maximize"
-msgstr "Poveæaj"
+msgstr "Poveæava prozor"
 
 #: titlebar.cpp:133
 msgid "Sticky"
-msgstr "Zalijepi"
+msgstr "Lijepi prozor"
 
 #: titlebar.cpp:141
 msgid "Menu"
-msgstr "Izbornik"
+msgstr "Prikazuje izbornik"
 
 #: titlebar.cpp:178 titlebar.cpp:934
 msgid "Left"
@@ -90,11 +90,11 @@ msgstr ""
 
 #: titlebar.cpp:930
 msgid "Title Alignment"
-msgstr "Polo¾aj naslova"
+msgstr ""
 
 #: titlebar.cpp:939
 msgid "Middle"
-msgstr "Sredina"
+msgstr "Srednji"
 
 #: titlebar.cpp:967
 msgid "Shaded Vertically"
@@ -126,7 +126,7 @@ msgstr "Neaktivna pixmapa"
 
 #: titlebar.cpp:1055
 msgid "No pixmap under text"
-msgstr "Nema pixmape ispod teksta"
+msgstr "Bez pixmape ispod teksta"
 
 #: titlebar.cpp:1066
 msgid "Mouse action"
@@ -138,11 +138,11 @@ msgstr "Dvostruki pritisak na lijevi gumb mi¹a èini:"
 
 #: titlebar.cpp:1084
 msgid "(Un)Maximize"
-msgstr "(Umanji)Poveæaj"
+msgstr "Poveæaj"
 
 #: titlebar.cpp:1085
 msgid "(Un)Shade"
-msgstr "(Ne)zasjenjeno"
+msgstr "Nezasjenjeno"
 
 #: titlebar.cpp:1086
 msgid "Iconify"
@@ -150,7 +150,7 @@ msgstr "Napravi ga ikonom"
 
 #: titlebar.cpp:1087
 msgid "(Un)Sticky"
-msgstr "(Od)lijepi"
+msgstr "Odlijepi"
 
 #: titlebar.cpp:1107
 msgid "Title animation"
@@ -162,13 +162,15 @@ msgstr "ms"
 
 #: titlebar.cpp:1366
 msgid "Window manager setup - ERROR"
-msgstr "Postava upravitelja prozora - GRE©KA"
+msgstr "GRE©KA - postava upravljaèa prozora (wm)"
 
 #: titlebar.cpp:1367
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
+"Ne mogu spremiti pixmape za naslovnu\n"
+"traku! Molim provjerite privilegije."
 
 #: windows.cpp:68
 msgid "Windows"
@@ -180,15 +182,15 @@ msgstr ""
 
 #: windows.cpp:87
 msgid "Display content in moving windows"
-msgstr "Prika¾i sadr¾aj u prozorima koje mièemo"
+msgstr "Prika¾i sadr¾aj dok mièem prozore"
 
 #: windows.cpp:92
 msgid "Display content in resizing windows"
-msgstr "Prika¾i sadr¾aj u prozorima kojima mijenjamo velièinu"
+msgstr "Prika¾i sadr¾aj dok mijenjam velièinu prozora"
 
 #: windows.cpp:98
 msgid "Resize animation:"
-msgstr "Promijeni velièinu animacije:"
+msgstr "Promijeniti velièinu animacije"
 
 #: windows.cpp:111
 msgid "None"
@@ -228,6 +230,8 @@ msgid ""
 "  Allowed overlap:\n"
 "(% of desktop space)"
 msgstr ""
+"Dozvoljeno preklapanje:\n"
+"(% radne povr¹ine)"
 
 #: windows.cpp:175
 msgid "Focus policy"
@@ -275,7 +279,7 @@ msgstr "Premjesti pokazivaè prema centru nakon promjene"
 
 #: desktop.cpp:87
 msgid "Desktop switch delay:"
-msgstr "Ka¹njenje prilikom promjene radne povr¹ine:"
+msgstr "Ka¹njenje promjene radne povr¹ine:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"
@@ -299,15 +303,15 @@ msgstr ""
 
 #: mouse.cpp:54
 msgid "Active"
-msgstr "Aktivan"
+msgstr "Aktivno"
 
 #: mouse.cpp:58
 msgid "Inactive"
-msgstr "Neaktivan"
+msgstr "Neaktivno"
 
 #: mouse.cpp:62
 msgid "Titlebar and frame:"
-msgstr "Traka i okvir:"
+msgstr "Naslovna traka i okvir:"
 
 #: mouse.cpp:66
 msgid "Inactive inner window:"
@@ -400,11 +404,11 @@ msgstr "Tipkovnica i mi¹"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr "Ctrl-Tab ¹eæe kroz radne povr¹ine"
+msgstr "Ctrl-Tab mijenja povr¹ine"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr "Alt-Tab je ogranièen na trenutnu radnu povr¹inu"
+msgstr "Alt-Tab je ogranièen na trenutnu povr¹inu"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
@@ -432,27 +436,27 @@ msgstr "Prozori æe:"
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr "imate male ukrase"
+msgstr "imati male ukrase"
 
 #: advanced.cpp:105
 msgid "have no decorations"
-msgstr "biti bez ukrasa"
+msgstr "neæe imati ukrase"
 
 #: advanced.cpp:106
 msgid "never gain focus"
-msgstr "neæe se moæi fokusirati"
+msgstr "neæe nikada imati fokus"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr "zapoèeti zaljepljeno"
+msgstr "poèeti naljepljeni"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr ""
+msgstr "biti iskljuèeni iz upravljanja sesije"
 
 #: advanced.cpp:116
 msgid "if they match the following:"
-msgstr "ukoliko odgovaraju "
+msgstr "ukoliko odgovaraju slijedeæem:"
 
 #: advanced.cpp:121
 msgid "Titles"
