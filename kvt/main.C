@@ -1183,8 +1183,6 @@ int main(int argc, char **argv)
   }
 
   kvt = new kVt(sessionconfig);
-  a.setMainWidget( kvt );
-  a.setTopWidget( kvt );
 
   if (!a.isRestored()){
     // a bisserl gehackt. [bmg]
@@ -1258,6 +1256,8 @@ int main(int argc, char **argv)
   if (!a.isRestored())
     kvt->ResizeToVtWindow();
 
+  a.setMainWidget( kvt );
+  a.setTopWidget( kvt );
   kvt->show();
 
   return a.exec();
