@@ -440,15 +440,6 @@ void KColorScheme::writeScheme()
 	config->writeEntry("SelectTextColor", sampleWidgets->selectTextColor);
 	config->writeEntry("Contrast", sampleWidgets->contrast);
 	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->windowColor.red(), sampleWidgets->windowColor.green(), sampleWidgets->windowColor.blue());
-	config->writeEntry("WindowColor", str);
-	
-	str.sprintf("#%02x%02x%02x", sampleWidgets->selectTextColor.red(), sampleWidgets->selectTextColor.green(), sampleWidgets->selectTextColor.blue());
-	config->writeEntry("SelectTextColor", str);
-	
-	str.sprintf("%d", sampleWidgets->contrast);
-	config->writeEntry("Contrast", str);
-	
 	config->sync();
 }
 
