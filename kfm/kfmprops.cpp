@@ -231,16 +231,13 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 
     QLabel *l;
  
-    // BL: layout mngt
     layout = new QBoxLayout(this, QBoxLayout::TopToBottom, SEPARATION); 
 
-    l = new QLabel( klocale->translate("Name"), this );
-    // BL: layout mngt
+    l = new QLabel( klocale->translate("File Name"), this );
     l->setFixedSize(l->sizeHint());
     layout->addWidget(l, 0, AlignLeft);
     
     name = new QLineEdit( this );
-    // BL: layout mngt
     name->setMinimumSize(200, fontHeight);
     name->setMaximumSize(QLayout::unlimited, fontHeight);
     layout->addWidget(name, 0, AlignLeft);
@@ -252,17 +249,16 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     oldName.detach();
 
     l = new QLabel( klocale->translate("Full Name"), this );
-    // BL: layout mngt
     l->setFixedSize(l->sizeHint());
     layout->addWidget(l, 0, AlignLeft);
     
-    fname = new QLineEdit( this );
-    // BL: layout mngt
+    QLabel *fname = new QLabel( this );
+    fname->setText( path );
     fname->setMinimumSize(200, fontHeight);
     fname->setMaximumSize(QLayout::unlimited, fontHeight);
+    fname->setLineWidth(1);
+    fname->setFrameStyle(QFrame::Box | QFrame::Raised);
     layout->addWidget(fname, 0, AlignLeft);
-    fname->setText( path );
-    fname->setEnabled( false );
     
     // BL: layout mngt
     layout->addSpacing(SEPARATION);
