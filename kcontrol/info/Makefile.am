@@ -14,28 +14,27 @@ EXTRA_DIST = mini-kcmmemory.xpm mini-kcmprocessor.xpm mini-kcmdevices.xpm mini-k
 
 memory.cpp: memory.moc
 memory.moc: memory.h
-	$(MOC) memory.h -o memory.moc
+	$(MOC) $(srcdir)/memory.h -o memory.moc
 
 info.cpp: info.moc
 info.moc: info.h
-	$(MOC) info.h -o info.moc
+	$(MOC) $(srcdir)/info.h -o info.moc
 
 main.cpp: info.moc
 
-icon_DATA = kcmdevices.xpm kcmmemory.xpm kcmpci.xpm kcmprocessor.xpm \
+kde_icon_DATA = kcmdevices.xpm kcmmemory.xpm kcmpci.xpm kcmprocessor.xpm \
 	kcmscsi.xpm kcmsound.xpm kcmx.xpm 
-icondir = $(kde_icondir)
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-kcmmemory.xpm     $(kde_minidir)/kcmmemory.xpm
-	$(INSTALL_DATA) mini-kcmpci.xpm        $(kde_minidir)/kcmpci.xpm
-	$(INSTALL_DATA) mini-kcmprocessor.xpm  $(kde_minidir)/kcmprocessor.xpm
-	$(INSTALL_DATA) mini-kcmdevices.xpm    $(kde_minidir)/kcmdevices.xpm
-	$(INSTALL_DATA) mini-kcmpartitions.xpm $(kde_minidir)/kcmpartitions.xpm
-	$(INSTALL_DATA) mini-kcmscsi.xpm       $(kde_minidir)/kcmscsi.xpm
-	$(INSTALL_DATA) mini-kcmsound.xpm      $(kde_minidir)/kcmsound.xpm
-	$(INSTALL_DATA) mini-kcmx.xpm          $(kde_minidir)/kcmx.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kcmmemory.xpm     $(kde_minidir)/kcmmemory.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kcmpci.xpm        $(kde_minidir)/kcmpci.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kcmprocessor.xpm  $(kde_minidir)/kcmprocessor.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kcmdevices.xpm    $(kde_minidir)/kcmdevices.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kcmpartitions.xpm $(kde_minidir)/kcmpartitions.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kcmscsi.xpm       $(kde_minidir)/kcmscsi.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kcmsound.xpm      $(kde_minidir)/kcmsound.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kcmx.xpm          $(kde_minidir)/kcmx.xpm
 
 uninstall-local:
 	rm -f $(kde_minidir)/kcmmemory.xpm
@@ -45,7 +44,7 @@ uninstall-local:
 	rm -f $(kde_minidir)/kcmscsi.xpm
 	rm -f $(kde_minidir)/kcmsound.xpm
 	rm -f $(kde_minidir)/kcmx.xpm
-	
+
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x ../../../kdelibs/po/kde.pot *.cpp && mv messages.po ../../po/kcminfo.pot
 

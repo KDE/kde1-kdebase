@@ -22,14 +22,13 @@ noinst_HEADERS =	helpwin.h info.h error.h misc.h man.h options.h\
 
 EXTRA_DIST	=	kdehelp.xpm mini-kdehelp.xpm
 
+kde_icon_DATA = kdehelp.xpm
+
 install-data-local:
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) kdehelp.xpm $(kde_icondir)/kdehelp.xpm
-	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-kdehelp.xpm $(kde_minidir)/kdehelp.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kdehelp.xpm $(kde_minidir)/kdehelp.xpm
 
 uninstall-local:
-	rm -f $(kde_icondir)/kdehelp.xpm
 	rm -f $(kde_minidir)/kdehelp.xpm
 
 messages:

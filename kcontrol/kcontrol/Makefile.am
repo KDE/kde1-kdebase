@@ -22,30 +22,29 @@ messages:
 
 kswallow.cpp: kswallow.moc
 kswallow.moc: kswallow.h
-	$(MOC) kswallow.h -o kswallow.moc
+	$(MOC) $(srcdir)/kswallow.h -o kswallow.moc
 
 toplevel.cpp: toplevel.moc
 toplevel.moc: toplevel.h
-	$(MOC) toplevel.h -o toplevel.moc
+	$(MOC) $(srcdir)/toplevel.h -o toplevel.moc
 
 configlist.cpp: configlist.moc
 configlist.moc: configlist.h
-	$(MOC) configlist.h -o configlist.moc
+	$(MOC) $(srcdir)/configlist.h -o configlist.moc
 
 mainwidget.cpp: mainwidget.moc
 mainwidget.moc: mainwidget.h
-	$(MOC) mainwidget.h -o mainwidget.moc
+	$(MOC) $(srcdir)/mainwidget.h -o mainwidget.moc
 
 kdelnk.cpp: kdelnk.moc
 kdelnk.moc: kdelnk.h
-	$(MOC) kdelnk.h -o kdelnk.moc
+	$(MOC) $(srcdir)/kdelnk.h -o kdelnk.moc
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-kcontrol.xpm $(kde_minidir)/kcontrol.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kcontrol.xpm $(kde_minidir)/kcontrol.xpm
 
 uninstall-local:
-	rm -f $(APPSDIR)/kcontrol.kdelnk
 	rm -f $(kde_minidir)/kcontrol.xpm
 
 

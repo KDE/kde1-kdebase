@@ -162,10 +162,10 @@ SUBDIRS = kfmwarn client kioslave pics Desktop kfmexec config
 
 install-data-local:
 	$(mkinstalldirs) $(CONFIGDIR)
-	$(INSTALL_DATA) config/kfmrc $(CONFIGDIR)
-	$(INSTALL_DATA) config/desktop $(CONFIGDIR)
+	$(INSTALL_DATA) $(srcdir)/config/kfmrc $(CONFIGDIR)
+	$(INSTALL_DATA) $(srcdir)/config/desktop $(CONFIGDIR)
 	$(mkinstalldirs) $(MIMELNKDIR)
-	$(INSTALL_DATA) magic $(MIMELNKDIR)
+	$(INSTALL_DATA) $(srcdir)/magic $(MIMELNKDIR)
 
 uninstall-local:
 	-rm -f $(CONFIGDIR)/kfmrc

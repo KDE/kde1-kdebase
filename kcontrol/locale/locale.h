@@ -55,12 +55,12 @@ private:
   QGroupBox *gbox;
   
   QStrList tags, languages;
+  bool changedFlag;
 
 private slots:
 
   void changed(int);
-
-  bool changedFlag;
+ 
 };
 
 

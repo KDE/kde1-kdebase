@@ -31,8 +31,8 @@ kde_icon_DATA = mouse.xpm keyboard.xpm
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-mouse.xpm $(kde_minidir)/mouse.xpm
-	$(INSTALL_DATA) mini-keyboard.xpm $(kde_minidir)/keyboard.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-mouse.xpm $(kde_minidir)/mouse.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-keyboard.xpm $(kde_minidir)/keyboard.xpm
 
 uninstall-local:
 	rm -f $(kde_minidir)/mouse.xpm

@@ -27,12 +27,12 @@ version.h: VERSION
 democlient.cpp: democlient.moc
 
 democlient.moc: democlient.h
-	$(MOC) -o democlient.moc democlient.h
+	$(MOC) -o democlient.moc $(srcdir)/democlient.h
 
 kplayaudio.cpp: kplayaudio.moc
 
 kplayaudio.moc: kplayaudio.h
-	$(MOC) -o kplayaudio.moc kplayaudio.h
+	$(MOC) -o kplayaudio.moc $(srcdir)/kplayaudio.h
 
 
 messages:

@@ -20,9 +20,9 @@ MOCS =	kmenuedit.moc pmenu.moc cpopmenu.moc confmenu.moc\
 	MenuNameDialog.moc MenuNameDialogData.moc
 
 noinst_HEADERS = kmenuedit.h pmenu.h MenuNameDialog.h cpopmenu.h \
-				MenuNameDialogData.h confmenu.h button.h IconPathDialog.h \
-				IconPathDialogData.h DesktopPathDialog.h \
-				DesktopPathDialogData.h entrydialog.h
+		MenuNameDialogData.h confmenu.h button.h IconPathDialog.h \
+		IconPathDialogData.h DesktopPathDialog.h \
+		DesktopPathDialogData.h entrydialog.h
 
 EXTRA_DIST = kmenuedit.xpm mini-kmenuedit.xpm
 
@@ -30,56 +30,56 @@ DISTCLEANFILES = $(MOCS)
 
 kmenuedit.cpp:kmenuedit.moc
 kmenuedit.moc: kmenuedit.h
-	$(MOC) kmenuedit.h -o kmenuedit.moc
+	$(MOC) $(srcdir)/kmenuedit.h -o kmenuedit.moc
 
 pmenu.cpp:pmenu.moc
 pmenu.moc: pmenu.h
-	$(MOC) pmenu.h -o pmenu.moc
+	$(MOC) $(srcdir)/pmenu.h -o pmenu.moc
 
 cpopmenu.cpp:cpopmenu.moc
 cpopmenu.moc: cpopmenu.h
-	$(MOC) cpopmenu.h -o cpopmenu.moc
+	$(MOC) $(srcdir)/cpopmenu.h -o cpopmenu.moc
 
 confmenu.cpp:confmenu.moc
 confmenu.moc: confmenu.h
-	$(MOC) confmenu.h -o confmenu.moc
+	$(MOC) $(srcdir)/confmenu.h -o confmenu.moc
 
 button.cpp:button.moc
 button.moc: button.h
-	$(MOC) button.h -o button.moc
+	$(MOC) $(srcdir)/button.h -o button.moc
 
 IconPathDialog.cpp:IconPathDialog.moc IconPathDialogData.moc
 IconPathDialog.moc: IconPathDialog.h
-	$(MOC) IconPathDialog.h -o IconPathDialog.moc
+	$(MOC) $(srcdir)/IconPathDialog.h -o IconPathDialog.moc
 
 IconPathDialogData.moc: IconPathDialogData.h
-	$(MOC) IconPathDialogData.h -o IconPathDialogData.moc
+	$(MOC) $(srcdir)/IconPathDialogData.h -o IconPathDialogData.moc
 
 DesktopPathDialog.cpp: DesktopPathDialog.moc DesktopPathDialogData.moc
 DesktopPathDialog.moc: DesktopPathDialog.h
-	$(MOC) DesktopPathDialog.h -o DesktopPathDialog.moc
+	$(MOC) $(srcdir)/DesktopPathDialog.h -o DesktopPathDialog.moc
 
 DesktopPathDialogData.moc: DesktopPathDialogData.h
-	$(MOC) DesktopPathDialogData.h -o DesktopPathDialogData.moc
+	$(MOC) $(srcdir)/DesktopPathDialogData.h -o DesktopPathDialogData.moc
 
 entrydialog.cpp: entrydialog.moc
 entrydialog.moc: entrydialog.h
-	$(MOC) entrydialog.h -o entrydialog.moc
+	$(MOC) $(srcdir)/entrydialog.h -o entrydialog.moc
 
 MenuNameDialog.cpp: MenuNameDialog.moc MenuNameDialogData.moc
 MenuNameDialog.moc: MenuNameDialog.h
-	$(MOC) MenuNameDialog.h -o MenuNameDialog.moc
+	$(MOC) $(srcdir)/MenuNameDialog.h -o MenuNameDialog.moc
+
 MenuNameDialogData.moc: MenuNameDialogData.h
-	$(MOC) MenuNameDialogData.h -o MenuNameDialogData.moc
+	$(MOC) $(srcdir)/MenuNameDialogData.h -o MenuNameDialogData.moc
+
+kde_icon_DATA = kmenuedit.xpm
 
 install-data-local: 
-	$(mkinstalldirs) $(kde_icondir)
-	$(INSTALL_DATA) kmenuedit.xpm $(kde_icondir)/kmenuedit.xpm
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-kmenuedit.xpm $(kde_minidir)/kmenuedit.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kmenuedit.xpm $(kde_minidir)/kmenuedit.xpm
 
 uninstall-local:
-	rm -f $(kde_icondir)/kmenuedit.xpm
 	rm -f $(kde_minidir)/kmenuedit.xpm
 
 messages:

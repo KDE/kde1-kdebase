@@ -30,25 +30,19 @@ EXTRA_DIST = kcmsyssound.xpm mini-kcmsyssound.xpm
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kcmsyssound_SOURCES) && mv messages.po ../../po/kcmsyssound.pot
 
-# just install datas here. Use install-exec-data for scripts and etc.
-# the binary itself is already installed from automake
-# use mkinstalldirs, not "install -d"
-# don't install a list of file. Just one file per install.
-# if you have more of them, create a subdirectory with an extra Makefile 
+kde_icon_DATA = kcmsyssound.xpm
+
 install-data-local: 
-	$(mkinstalldirs) $(kde_icondir)
-	$(INSTALL_DATA) kcmsyssound.xpm $(kde_icondir)
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-kcmsyssound.xpm $(kde_minidir)/kcmsyssound.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kcmsyssound.xpm $(kde_minidir)/kcmsyssound.xpm
 
 # remove ALL you have installed in install-data-local or install-exec-local
 uninstall-local:
-	-rm -f $(kde_icondir)/kcmsyssound.xpm
 	-rm -f $(kde_minidir)/kcmsyssound.xpm
 
 # add a dependency for every moc file to be full portable
 # I've added a key binding to emacs for this. 
 syssound.cpp:syssound.moc
 syssound.moc: syssound.h
-	$(MOC) syssound.h -o syssound.moc
+	$(MOC)  $(srcdir)/syssound.h -o syssound.moc
 

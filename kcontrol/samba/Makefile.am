@@ -19,7 +19,7 @@ kde_icon_DATA = smbstatus.xpm
 
 install-data-local:
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-smbstatus.xpm $(kde_minidir)/smbstatus.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-smbstatus.xpm $(kde_minidir)/smbstatus.xpm
 
 uninstall-local:
 	rm -f $(kde_minidir)/smbstatus.xpm

@@ -11,7 +11,7 @@ EXTRA_DIST = mini-sample.xpm
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-sample.xpm $(kde_minidir)/sample.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-sample.xpm $(kde_minidir)/sample.xpm
 
 uninstall-local:
 	rm -f $(kde_minidir)/sample.xpm

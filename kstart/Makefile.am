@@ -15,7 +15,7 @@ noinst_HEADERS = kstart.h version.h
 
 kstart.C:kstart.moc
 kstart.moc: kstart.h
-	$(MOC) kstart.h -o kstart.moc
+	$(MOC) $(srcdir)/kstart.h -o kstart.moc
 
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kstart_SOURCES) && mv messages.po ../po/kstart.pot

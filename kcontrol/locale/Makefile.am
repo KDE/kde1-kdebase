@@ -14,23 +14,22 @@ EXTRA_DIST = kcmlocalerc locale.xpm mini-locale.xpm
 
 locale.cpp: locale.moc
 locale.moc: locale.h
-	$(MOC) locale.h -o locale.moc
+	$(MOC) $(srcdir)/locale.h -o locale.moc
 
 klangcombo.cpp: klangcombo.moc
 klangcombo.moc: klangcombo.h
-	$(MOC) klangcombo.h -o klangcombo.moc
+	$(MOC) $(srcdir)/klangcombo.h -o klangcombo.moc
+
+kde_icon_DATA = locale.xpm
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_confdir)
-	$(INSTALL_DATA) kcmlocale.kdelnk $(kde_confdir)/kcmlocalerc
-	$(mkinstalldirs) $(kde_icondir)
-	$(INSTALL_DATA) locale.xpm $(kde_icondir)
+	$(INSTALL_DATA) $(srcdir)/kcmlocale.kdelnk $(kde_confdir)/kcmlocalerc
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-locale.xpm $(kde_minidir)/locale.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-locale.xpm $(kde_minidir)/locale.xpm
 
 uninstall-local:
 	rm -f $(kde_confdir)/kcmlocalerc
-	rm -f $(kde_icondir)/locale.xpm
 	rm -f $(kde_minidir)/locale.xpm
 
 messages:

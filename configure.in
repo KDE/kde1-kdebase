@@ -261,9 +261,9 @@ AC_OUTPUT(Makefile \
 	kdm/xdmconfig/Makefile \
 	kfind/Makefile \
 	kfind/pics/Makefile \
+	kfm/Makefile \
 	kfm/Desktop/Makefile \
 	kfm/Desktop/Templates/Makefile \
-	kfm/Makefile \
 	kfm/client/Makefile \
 	kfm/kfmexec/Makefile \
 	kfm/kfmsu2 \

@@ -23,7 +23,7 @@ kde_icon_DATA = bell.xpm
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-bell.xpm $(kde_minidir)/bell.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-bell.xpm $(kde_minidir)/bell.xpm
 
 uninstall-local:
 	rm -f $(kde_minidir)/bell.xpm
