@@ -1,26 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kdisplay.po\n"
 "POT-Creation-Date: 1998-01-25 13:23+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"PO-Revision-Date: 1998-01-26 14:00+0000\n"
+"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
 #: backgnd.cpp:204 backgnd.cpp:239
 msgid "Desktop"
-msgstr ""
+msgstr "Ambiente de trabalho"
 
 #: backgnd.cpp:249
 msgid "Rename..."
-msgstr ""
+msgstr "Renomear..."
 
 #: backgnd.cpp:255
 msgid "Color"
@@ -48,7 +39,7 @@ msgstr "Papel de parede"
 
 #: backgnd.cpp:331
 msgid "Tiled"
-msgstr ""
+msgstr "Mosaíco"
 
 #: backgnd.cpp:335
 msgid "Centred"
@@ -59,13 +50,12 @@ msgid "Scaled"
 msgstr "Escalonado"
 
 #: backgnd.cpp:489
-#, fuzzy
 msgid "Default"
-msgstr "KDE Default"
+msgstr "Por defeito"
 
 #: backgnd.cpp:821
 msgid "Desktop Title"
-msgstr ""
+msgstr "Título do Ambiente de Trabalho"
 
 #: colorscm.cpp:142 colorscm.cpp:143
 msgid "Inactive window"
@@ -256,63 +246,33 @@ msgid "Large"
 msgstr "Grande"
 
 #: general.cpp:173
-#, fuzzy
 msgid "default"
-msgstr "KDE Default"
+msgstr "por defeito"
 
 #: general.cpp:176
 msgid "any"
-msgstr ""
+msgstr "qualquer"
 
 #: main.cpp:61
-#, fuzzy
 msgid "&Background"
-msgstr "Fundo"
+msgstr "&Fundo"
 
 #: main.cpp:64
-#, fuzzy
 msgid "&Colors"
-msgstr "Cor"
+msgstr "&Cor"
 
 #: main.cpp:67
-#, fuzzy
 msgid "&Screensaver"
-msgstr "Protecção do Ecran"
+msgstr "&Protecção do Ecran"
 
 #: main.cpp:70
 msgid "&Style"
-msgstr ""
+msgstr "E&stilo"
 
 #: main.cpp:76
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
-msgstr ""
+msgstr "utilização: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
 #: main.cpp:112
-#, fuzzy
 msgid "Display settings"
 msgstr "Configuração do Ecran"
-
-#~ msgid "Browse..."
-#~ msgstr "Examinar..."
-
-#~ msgid "Italic"
-#~ msgstr "Italico"
-
-#~ msgid "Remove"
-#~ msgstr "Remover"
-
-#~ msgid "KDE Display Configuration"
-#~ msgstr "Configuração do Ecran do KDE"
-
-#~ msgid ""
-#~ "Usage: %s -init|-setup\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Utilização: %s -init|-setup\n"
-#~ "\n"
-
-#~ msgid "  -init               apply current settings to the display\n"
-#~ msgstr " -init\t\t     aplica a configuração actual no ecran\n"
-
-#~ msgid "  -setup              setup the display\n"
-#~ msgstr " -setup              configura o ecran\n"

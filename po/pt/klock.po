@@ -1,27 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-01-25 13:22+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"PO-Revision-Date: 1998-01-26 20:00+0000\n"
+"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
 #: banner.cpp:56
 msgid "Banner"
 msgstr ""
 
 #: banner.cpp:78
-#, fuzzy
 msgid "Setup kbanner"
-msgstr "Configurar kblankscrn"
+msgstr "Configurar kbanner"
 
 #: banner.cpp:116 blankscrn.cpp:65
 msgid "Color:"
@@ -346,7 +336,6 @@ msgstr ""
 "Transposto para o kscreensave por Emanuel Pirker."
 
 #: main.cpp:296
-#, fuzzy
 msgid ""
 "Your system uses shadow passwords!\n"
 "Please contact your system administrator.\n"
@@ -355,22 +344,23 @@ msgid ""
 msgstr ""
 "Este sistema utiliza shadow passwords!\n"
 "Por favor contacte o seu administrador de sistema."
+"\n"
+"Diga-lhe que precisa de suid para os screensavers!"
 
 #: main.cpp:301
 msgid "Shadow Passwords"
-msgstr ""
+msgstr "Passwords Shadow"
 
 #: main.cpp:457
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 msgstr ""
-"Utilização: %s -install|-setup|-test|-desc|-preview wid\n"
+"Utilização: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
 #: main.cpp:460
-#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -402,7 +392,8 @@ msgstr ""
 "  -lock             Requerer a password para parar a protecção de ecran\n"
 "  -nice num         Executar com o valor especificado de nice\n"
 "\n"
-"  -preview wid      Executar na XWindow especificada\n"
+"  -preview wid      Executar na X Window especificada\n"
+"  -inroot           Executar na janela de root\n"
 "  -setup            Configurar protecção de ecran\n"
 "  -test             Inicializar a rotecção de ecran imediatamente\n"
 
@@ -603,9 +594,3 @@ msgstr ""
 "Copyright (c) 1991 por Patrick J. Naughton\n"
 "\n"
 "Transposto para kscreensave por Emanuel Pirker."
-
-#~ msgid "Italic"
-#~ msgstr "Italico"
-
-#~ msgid "Font"
-#~ msgstr "Letra"

@@ -56,15 +56,3 @@ msgstr "Visível"
 #: desktops.cpp:75
 msgid "Width"
 msgstr "Largura"
-
-#~ msgid "&Panel"
-#~ msgstr "&Painel"
-
-#~ msgid "&Desktops"
-#~ msgstr "Ambientes &de trabalho"
-
-#~ msgid "usage: kcmkpanel [-init | {panel,desktops}]\n"
-#~ msgstr "utilização: kcmkpanel [-init | {panel,desktops}]\n"
-
-#~ msgid "KPanel Configuration"
-#~ msgstr "Configuração do KPanel"

@@ -1,18 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kdehelp\n"
 "POT-Creation-Date: 1998-01-25 13:22+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"PO-Revision-Date: 1998-01-26 14:00+0000\n"
+"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
 #: helpwin.cpp:57
 msgid "KDE Help: Open URL"
@@ -209,7 +200,7 @@ msgstr "Abrir UR&L..."
 
 #: mainwidget.cpp:138
 msgid "&Reload"
-msgstr ""
+msgstr "&Recarregar"
 
 #: mainwidget.cpp:140
 msgid "&Search"
@@ -264,15 +255,12 @@ msgid "&Save Options"
 msgstr "Gravar Opções"
 
 #: mainwidget.cpp:183
-#, fuzzy
 msgid "KDE Help System\n"
-msgstr ""
-"Sistema de Ajuda do KDE\n"
-"Versão "
+msgstr "Sistema de Ajuda do KDE\n"
 
 #: mainwidget.cpp:184
 msgid "Version "
-msgstr ""
+msgstr "Versão "
 
 #: mainwidget.cpp:186
 msgid ""
@@ -284,14 +272,21 @@ msgid ""
 "KDEHelp comes with ABSOLUTELY NO WARRANY to the extent permitted by "
 "applicable law."
 msgstr ""
+"\n"
+"\n"
+"Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
+"\n"
+"Este programa está licenciado sobre a Licença Geral Pública GNU (GPL).\n"
+"KDEHelp não tem ABSOLUTAMENTE NENHUMA GARANTIA até ao permitido pela "
+"lei aplicável."
 
 #: mainwidget.cpp:202
 msgid "&Goto"
-msgstr "Ir Para"
+msgstr "&Ir Para"
 
 #: mainwidget.cpp:203
 msgid "&Bookmarks"
-msgstr "Favoritos"
+msgstr "&Favoritos"
 
 #: mainwidget.cpp:221
 msgid "Previous Document"
@@ -323,7 +318,7 @@ msgstr "Conteúdo da Ajuda"
 
 #: mainwidget.cpp:260
 msgid "Reload current document"
-msgstr ""
+msgstr "Recarregar documento actual"
 
 #: mainwidget.cpp:265
 msgid "Stop"
@@ -348,57 +343,3 @@ msgstr "Acerca do KDE Help"
 #: mainwidget.cpp:618
 msgid "&Add Bookmark"
 msgstr "&Adicionar Favorito"
-
-#~ msgid "New"
-#~ msgstr "Novo"
-
-#~ msgid "Back"
-#~ msgstr "Retroceder"
-
-#~ msgid "Forward"
-#~ msgstr "Avançar"
-
-#~ msgid "&Print..."
-#~ msgstr "Im&primir..."
-
-#~ msgid "&Close"
-#~ msgstr "Fe&char"
-
-#~ msgid "&Quit"
-#~ msgstr "&Sair"
-
-#~ msgid "&Copy"
-#~ msgstr "&Copiar"
-
-#~ msgid "&File"
-#~ msgstr "&Ficheiro"
-
-#~ msgid "&Edit"
-#~ msgstr "&Editar"
-
-#~ msgid "&Options"
-#~ msgstr "&Opções"
-
-#~ msgid "&Help"
-#~ msgstr "Ajuda"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancelar"
-
-#~ msgid " Location:"
-#~ msgstr " Localização"
-
-#~ msgid "KDE Help"
-#~ msgstr "KDE Help"
-
-#~ msgid "Waiting for kmail to be finished..."
-#~ msgstr "Á espera que o kmail esteja terminado..."
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "&Using KDE Help"
-#~ msgstr "&Utilizando KDE Help"
-
-#~ msgid "&About"
-#~ msgstr "&Acerca"

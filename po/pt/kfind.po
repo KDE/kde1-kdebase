@@ -1,18 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kfind\n"
 "POT-Creation-Date: 1998-01-25 13:22+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"PO-Revision-Date: 1998-01-26 20:00+0000\n"
+"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
 #: kfdird.cpp:46
 msgid "Directories:"
@@ -23,7 +14,6 @@ msgid "Cannot open or read directory."
 msgstr "Não foi possivel abrir ou ler a directoria"
 
 #: kfindtop.cpp:118
-#, fuzzy, c-format
 msgid ""
 "KFind %s\n"
 "Frontend to find utility\n"
@@ -33,62 +23,55 @@ msgid ""
 "<coolo@kde.org>"
 msgstr ""
 "KFind %s\n"
-"Frontend para o programa find\n"
+"Interface para o programa find\n"
 "Miroslav Flødr <flidr@kky.zcu.cz>"
+"\n"
+"Special thanks to Stephan Kulow\n"
+"<coolo@kde.org>"
 
 #: kfindtop.cpp:136
-#, fuzzy
 msgid "&Open"
-msgstr "&Opções"
+msgstr "&Abrir"
 
 #: kfindtop.cpp:138
-#, fuzzy
 msgid "&Add to archive"
-msgstr "Adicionar ao arquivo"
+msgstr "A&dicionar ao arquivo"
 
 #: kfindtop.cpp:143
-#, fuzzy
 msgid "&Properties"
-msgstr "Propriedades"
+msgstr "&Propriedades"
 
 #: kfindtop.cpp:146
-#, fuzzy
 msgid "Open Containing &Folder"
-msgstr "Abrir a Pasta que Contem"
+msgstr "Ab&rir a Pasta que Contem"
 
 #: kfindtop.cpp:149
-#, fuzzy
 msgid "&Save Search"
-msgstr "Gravar Pesquisa"
+msgstr "&Gravar Pesquisa"
 
 #: kfindtop.cpp:161
-#, fuzzy
 msgid "&Cut"
-msgstr "Cortar"
+msgstr "&Cortar"
 
 #: kfindtop.cpp:166
-#, fuzzy
 msgid "&Select All"
-msgstr "Seleccionar Todos"
+msgstr "&Seleccionar Todos"
 
 #: kfindtop.cpp:168
-#, fuzzy
 msgid "&Invert Selection"
-msgstr "Inverter Selecção"
+msgstr "&Inverter Selecção"
 
 #: kfindtop.cpp:179
-#, fuzzy
 msgid "&Preferences ..."
-msgstr "Preferencias ..."
+msgstr "&Preferencias ..."
 
 #: kfindtop.cpp:183
-#, fuzzy
 msgid "Kfind &help"
-msgstr "Ajuda do Kfind"
+msgstr "&Ajuda do Kfind"
 
 #: kfindtop.cpp:186
 msgid "About &Qt"
-msgstr ""
+msgstr "Acerca do &Qt"
 
 #: kfindtop.cpp:206
 msgid "Start Search"
@@ -135,9 +118,8 @@ msgid "Include &subfolders"
 msgstr "Incluir &subpastas"
 
 #: kftabdlg.cpp:96
-#, fuzzy
 msgid " Name& Location "
-msgstr "Nome&Localização"
+msgstr " Nome& Localização "
 
 #: kftabdlg.cpp:108
 msgid "and"
@@ -145,7 +127,7 @@ msgstr "e"
 
 #: kftabdlg.cpp:109
 msgid "month(s)"
-msgstr "mes(es)"
+msgstr "mês(es)"
 
 #: kftabdlg.cpp:110
 msgid "day(s)"
@@ -169,11 +151,11 @@ msgstr "durante os ultimo&s"
 
 #: kftabdlg.cpp:120
 msgid "&during the previous "
-msgstr "&durante os ultimos"
+msgstr "&durante os últimos"
 
 #: kftabdlg.cpp:168
 msgid " Date Modified "
-msgstr " Data de Modificação"
+msgstr " Data de Modificação "
 
 #: kftabdlg.cpp:174
 msgid "Of &type:"
@@ -185,7 +167,7 @@ msgstr "&Contendo o Texto:"
 
 #: kftabdlg.cpp:179
 msgid "&Size is:"
-msgstr "Tamanho e:"
+msgstr "&Tamanho é:"
 
 #: kftabdlg.cpp:202
 msgid "All Files and Folders"
@@ -209,7 +191,7 @@ msgstr "A data não é válida!!"
 
 #: kftabdlg.cpp:401
 msgid "The month(s) value isn't valid!!"
-msgstr "O valor do(s) mes(es) não é válido!!"
+msgstr "O valor do(s) mês(es) não é válido!!"
 
 #: kftabdlg.cpp:412
 msgid "The day(s) value isn't valid!!"
@@ -221,7 +203,7 @@ msgstr "O valor em tamanho não é um número válido"
 
 #: kfoptions.cpp:54
 msgid "Preferences"
-msgstr "Preferencias"
+msgstr "Preferências"
 
 #: kfoptions.cpp:76
 msgid "File format:"
@@ -257,7 +239,7 @@ msgstr "Adicionar ao Arquivo:"
 
 #: kfoptions.cpp:138
 msgid "Patterns:"
-msgstr "Padrões"
+msgstr "Padrões:"
 
 #: kfoptions.cpp:141
 msgid "Add New"
@@ -344,59 +326,3 @@ msgstr "Não foi possivel reconhecer o tipo de arquivo!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Erro ao criar o processo filho!"
-
-#~ msgid "(none)"
-#~ msgstr "(nenhum)"
-
-#, fuzzy
-#~ msgid "&Delete"
-#~ msgstr "Apagar"
-
-#, fuzzy
-#~ msgid "&Undo"
-#~ msgstr "Desfazer"
-
-#~ msgid "Delete"
-#~ msgstr "Apagar"
-
-#~ msgid "Remove"
-#~ msgstr "Remover"
-
-#~ msgid "Sorry"
-#~ msgstr "Lamento"
-
-#, fuzzy
-#~ msgid "&Quit"
-#~ msgstr "&Editar"
-
-#, fuzzy
-#~ msgid "&Copy"
-#~ msgstr "Copiar"
-
-#~ msgid "&Edit"
-#~ msgstr "&Editar"
-
-#~ msgid "&File"
-#~ msgstr "&Ficheiro"
-
-#~ msgid "&Help"
-#~ msgstr "&Ajuda"
-
-#~ msgid "&Options"
-#~ msgstr "&Opções"
-
-#, fuzzy
-#~ msgid "Help"
-#~ msgstr "&Ajuda"
-
-#~ msgid "Type Description:"
-#~ msgstr "Descrição de Tipo:"
-
-#~ msgid "Icon:"
-#~ msgstr "Icon:"
-
-#~ msgid "Default Application:"
-#~ msgstr "Aplicação por Defeito:"
-
-#~ msgid "Filetypes"
-#~ msgstr "Filetypes"

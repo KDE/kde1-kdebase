@@ -1,24 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kwm\n"
 "POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
 #: main.C:67
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
-msgstr "kwm: ao que parece já está a correr. kwm não arrancou\n"
+msgstr ""
+"kwm: ao que parece já está a correr um window manager. kwm não "
+"arrancou\n"
 
 #: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
@@ -26,60 +19,51 @@ msgstr "kwm: ocorreu uma falha durante a initialização; a desistir\n"
 
 #: main.C:370
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr ""
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:377
 msgid "Usage: "
 msgstr "Utilização"
 
 #: main.C:388
-#, fuzzy
 msgid "&Maximize"
-msgstr "Maximizar"
+msgstr "&Maximizar"
 
 #: main.C:389
-#, fuzzy
 msgid "&Restore"
-msgstr "Restaurar"
+msgstr "&Restaurar"
 
 #: main.C:390
 msgid "&Iconify"
 msgstr "&Iconificar"
 
 #: main.C:391
-#, fuzzy
 msgid "&DeIconify"
-msgstr "DesIconificar"
+msgstr "&DesIconificar"
 
 #: main.C:392
-#, fuzzy
 msgid "&Sticky"
-msgstr "Pregar"
+msgstr "&Pregar"
 
 #: main.C:393
-#, fuzzy
 msgid "&UnSticky"
-msgstr "DesPregar"
+msgstr "D&esPregar"
 
 #: main.C:394
-#, fuzzy
 msgid "Mo&ve"
-msgstr "Mover"
+msgstr "Mo&ver"
 
 #: main.C:395
-#, fuzzy
 msgid "Resi&ze"
-msgstr "Alterar Tamanho"
+msgstr "Alterar &Tamanho"
 
 #: main.C:397
-#, fuzzy
 msgid "&To desktop"
-msgstr "Para o desktop"
+msgstr "Para o &ambiente de trabalho"
 
 #: main.C:399
-#, fuzzy
 msgid "&Onto current desktop"
-msgstr "Para o desktop corrente"
+msgstr "Para &o ambiente de trabalho actual"
 
 #: main.C:449
 msgid "One"
@@ -115,7 +99,7 @@ msgstr "Oito"
 
 #: main.C:743
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr ""
+msgstr "Alguns pixmaps não são válidos: ShapeMode desactivado\n"
 
 #: main.C:986
 msgid "*** No Tasks ***"
@@ -156,9 +140,9 @@ msgid ""
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
 "As seguintes aplicações não reconhecem o X11 e por isso não podem ser "
-"restauras\n"
-"na sua proxima sessão. Certifique-se de que não conteem dados importantes "
-"porgravar."
+"restauradas\n"
+"na sua proxima sessão. Certifique-se de que não contêm dados importantes "
+"por gravar."
 
 #: taskmgr.C:105
 msgid "Switch to"
@@ -167,70 +151,3 @@ msgstr "Mudar para"
 #: taskmgr.C:119
 msgid "Current session"
 msgstr "Sessão actual"
-
-#~ msgid "&Close"
-#~ msgstr "&Fechar"
-
-#~ msgid "Iconify"
-#~ msgstr "Iconificar"
-
-#~ msgid ""
-#~ "kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-#~ "     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-#~ "     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-#~ "     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-#~ "     No warranty. Please see the README's\n"
-#~ msgstr ""
-#~ "wm: versão 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-#~ "     baseado na versão 0.2 -0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-#~ "     baseado na versão 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-#~ "     Em parte derivado do 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-#~ "     Nenhuma garantoa. Por favor veja os ficheiros README\n"
-
-#~ msgid "usage: kwm [-version] [-exec prog] \n"
-#~ msgstr "utilização: kwm [-version] [-exec prog] \n"
-
-#~ msgid "Desktop"
-#~ msgstr "Desktop"
-
-#~ msgid "kwm: exiting on signal\n"
-#~ msgstr "kwm: saindo ao sinal\n"
-
-#~ msgid "&Help on desktop"
-#~ msgstr "&Ajuda no desktop"
-
-#~ msgid "&Execute command"
-#~ msgstr "&Executar comando"
-
-#~ msgid "&Display properties"
-#~ msgstr "Propriedades do ecran"
-
-#~ msgid "&Refresh desktop"
-#~ msgstr "&Refrescar o desktop"
-
-#~ msgid "&Arrange icons"
-#~ msgstr "&Arranjar icons"
-
-#~ msgid "&Lock screen"
-#~ msgstr "&Trancar screen"
-
-#~ msgid "Lo&gout"
-#~ msgstr "&Sair"
-
-#~ msgid "(Un) Ma&ximize"
-#~ msgstr "(Des) Ma&ximizar"
-
-#~ msgid "&Move"
-#~ msgstr "&Mover"
-
-#~ msgid "&Resize"
-#~ msgstr "&Modificar Tamanho"
-
-#~ msgid "(Un) &Sticky"
-#~ msgstr "(Des) &Pregar"
-
-#~ msgid "&To Desktop"
-#~ msgstr "&Para o Desktop"
-
-#~ msgid "&Destroy"
-#~ msgstr "&Destruir"

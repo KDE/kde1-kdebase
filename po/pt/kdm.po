@@ -7,6 +7,7 @@ msgstr ""
 "Xgettext-Options: -s -C -ktranslate\n"
 "Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp "
 "kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
+"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>"
 
 #: kdmshutdown.cpp:153
 msgid "Shutdown or restart?"
@@ -47,9 +48,3 @@ msgstr "Ir!"
 #: kgreeter.cpp:213
 msgid "Shutdown..."
 msgstr "Desligar..."
-
-#~ msgid "Cancel"
-#~ msgstr "Cancelar"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"

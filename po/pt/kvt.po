@@ -6,6 +6,7 @@ msgstr ""
 "From: M G Berberich <berberic@thingol>\n"
 "Xgettext-Options: --keyword=translate\n"
 "Files: main.C\n"
+"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
 #: main.C:236
 msgid "Add characters to word class"
@@ -17,7 +18,7 @@ msgstr "escolher tipo de modo de cor"
 
 #: main.C:242
 msgid "The backspace key will send a"
-msgstr ""
+msgstr "A tecla de backspace gera um"
 
 #: main.C:383
 msgid "&New Terminal"
@@ -41,7 +42,7 @@ msgstr "&Normal"
 
 #: main.C:398
 msgid "&Tiny"
-msgstr "&Minuscula"
+msgstr "&Minúscula"
 
 #: main.C:399
 msgid "&Small"
@@ -49,7 +50,7 @@ msgstr "&Pequena"
 
 #: main.C:400
 msgid "&Medium"
-msgstr "&Media"
+msgstr "&Média"
 
 #: main.C:401
 msgid "&Large"
@@ -80,9 +81,8 @@ msgid "Linu&x Console"
 msgstr "Consola de Linu&x"
 
 #: main.C:427
-#, fuzzy
 msgid "&Custom Colors"
-msgstr "&Cor"
+msgstr "&Cores Personalizadas"
 
 #: main.C:434 main.C:735
 msgid "Hide &Menubar"
@@ -135,7 +135,7 @@ msgstr ""
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
 "\n"
-"Emulação de terminal emulation para o KDE Desktop Environment\n"
+"Emulação de terminal para o KDE Desktop Environment\n"
 "baseado no rvt-2.08 de Robert Nation"
 
 #: main.C:608 main.C:782
@@ -163,7 +163,6 @@ msgstr ""
 "quando o teclado estiver inseguro."
 
 #: main.C:1084
-#, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -196,6 +195,11 @@ msgid ""
 "-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
 "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
 msgstr ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08\n"
+"\n"
 "Argumentos permitidos são:\n"
 "-e <comando> <arg> ...\texecutar comando com agrs - precisa de ser o ultimo "
 "argumento\n"
@@ -229,27 +233,5 @@ msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
 msgstr ""
-
-#~ msgid "E&xit"
-#~ msgstr "&Sair"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancelar"
-
-#~ msgid "&About..."
-#~ msgstr "&Acerca..."
-
-#~ msgid "&Help"
-#~ msgstr "&Ajuda"
-
-#~ msgid "&File"
-#~ msgstr "&Ficheiro"
-
-#~ msgid "&Options"
-#~ msgstr "&Opções"
-
-#~ msgid "About kvt"
-#~ msgstr "Acerca do kvt"
+"-grk9\t\tgreek kbd = ELOT 928 (por defeito)\n"
+"-grk4\t\tgreek kbd = IBM 437\n"
