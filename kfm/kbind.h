@@ -52,8 +52,9 @@ public:
      *   will use '%f'.
      * @param _pixmap the pixmap defined by Icon= in the app. kdelnk
      * @param _allowdefault whether this can be a default binding (see AllowDefault= field)
+     * @param _termOptions 0L if doesn't run in a terminal, otherwise the terminal options
      */
-    KMimeBind( const char *_kdelnkName, const char *_name, const char *_cmd, const char *_pixmap, bool _allowdefault );
+    KMimeBind( const char *_kdelnkName, const char *_name, const char *_cmd, const char *_pixmap, bool _allowdefault, const char *_termOptions );
     virtual ~KMimeBind() {}
     
     /**
@@ -194,6 +195,11 @@ protected:
      * @see #IsAllowedAsDefault
      */
     bool allowDefault;
+
+    /*
+     * Terminal options (0L if not terminal used)
+     */
+    QString termOptions;
 };
 
 /**
