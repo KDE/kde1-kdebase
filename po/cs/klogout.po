@@ -1,8 +1,0 @@
-msgid "Cancel"
-msgstr "Zru¹it"
-#
-msgid "Logout"
-msgstr "Odhlásit"
-#
-msgid "Really exit the KDE?"
-msgstr "Opravdu opustit KDE?"

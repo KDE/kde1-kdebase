@@ -1,7 +1,6 @@
 
 # This has to be set. The rest should be reusable
-GMFILES = kdehelp.gmo kfm.gmo klogout.gmo \
-	kdm.gmo kpanel.gmo
+GMFILES = kdehelp.gmo kfm.gmo kdm.gmo kpanel.gmo
 POFILES = $(GMFILES:.gmo=.po)
 
 LANG = hu
