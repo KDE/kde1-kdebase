@@ -1,3 +1,4 @@
+#include <fcntl.h>
 #include "file.h"
 #include <sys/stat.h>
 #include <unistd.h>
