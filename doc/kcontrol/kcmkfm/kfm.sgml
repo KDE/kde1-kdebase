@@ -8,7 +8,7 @@
 <author>David Faure 
 <htmlurl url="mailto:faure@kde.org"
 name="faure@kde.org">
-<date>v0.1. 18 December 1998
+<date>v1.0 12 January 1999
 
 <!-- Table of contents -->
 <toc>
@@ -53,17 +53,17 @@ in a File Manager window.
 
 <item> "<bf>Normal Text Color</bf>
 is the color used for displaying normal 
-test (i.e., text without hypertext links) 
+text (i.e., text without hypertext links) 
 within a hypertext document viewed with
 the KDE File Manager and Browser, KFM.
 
 <item> "<bf>URL Link Color</bf>" is the color
-in which text with clickable hypertext URL links is
+in which clickable hypertext links are
 shown on pages viewed with the KDE File Manager 
 and Browser (KFM),
 <it>before</it> the link is followed.
 Directory entries viewed with KFM are also
-URL links.
+URL hypertext links.
 
 <item> "<bf>Followed  Link Color</bf>" is the color
 in which clickable  links are shown, <it>after</it> the
@@ -86,20 +86,28 @@ links are underlined.
 <sect> KFM File Manager Configuration: Other
 <p>
 <itemize>
-<item> "<bf>Allow per-URL settings</bf>"
-means allow to save settings (whether menubar, toolbar, statusbar, and URL are
+<item> Activating the "<bf>Allow  per-URL settings</bf>" button
+allows you  to save KDE settings 
+(e.g., whether menubar, toolbar, statusbar, and URL are
 shown or hidden, the window size, all the options from the 'View' menu, ...)
 as settings for a given URL. This can be, for example, any directory on your
 disk where you have write access, or any URL (directory or even Web URL) which
 has a shortcut on your desktop or which you have bookmarked.
 
-<item> If "<bf>Tree view follows navigation</bf>" is selected, the tree view
-(the one on the left when it is enabled) will open the directories you enter in 
-the right view. However, it will never close them by itself, so that you can go 
-in a previous directory easily, by finding it in the tree.
+<item> One of the KFM File Manager features is to display a view of
+the directory tree in the left part of its window if "Show Tree"
+in its "View"  menu is enabled.
+If the "<bf>Tree view follows navigation</bf>" option is selected here, 
+the tree view
+of  directories you enter by clicking on their icons in 
+the right part of the File Manger window will appear, 
+and will continue to be displayed after you leave the directory.
+You can then return 
+to a previously-entered  directory easily, by clicking on its
+entry in in the tree.
 
 </itemize>  
-In the "<bf>terminal</bf>" box, you can type the command that
+In the "<bf>terminal</bf>" box, you can enter the command that
 will be  executed to provide a terminal whenever you select
 "Open Terminal" in the File Manager "File" menu, and when an application is
 about to be run in a terminal by the file manager.
@@ -108,34 +116,97 @@ The default terminal application is <tt>konsole</tt>.
 
 <sect> KFM Web Browser Configuration: Proxy
 <p>
-FIXME: documentation needed
+
+This screen configures the KFM browser to use a Proxy-server.
+
+If you click on the "<bf>Use proxy</bf>" button to activate it, 
+all HTTP and FTP connections
+will be made via a proxy-server which runs on the specified proxy-hosts.
+
+You might want to use a Proxy-servers if you are connected to the Internet 
+via a firewall or via a (slow) dial-up connection. 
+Most ISPs have a proxy-server available for their customers. 
+Ask your ISP for the settings mentioned here.
+
+When "use proxy" is activated, you can specify  
+the proxy-host to use for HTTP connections in the
+<bf>HTTP Proxy</bf> box. You can
+either specify the hostname or the IP-number of the proxy host.
+The "<bf>Port</bf>" box next to it allows you to define which port on 
+the proxy-host should 
+be connected to find the HTTP proxy-server. 
+Most HTTP proxy-servers use port 8080.
+
+Use the <bf>FTP proxy</bf> box, and the <bf>Port</bf> box next to it,
+to specify the proxy-host and port to use for 
+FTP connections. (To use the same setting for the FTP and HTTP
+proxy, click on the arrow button next to the HTTP Port; this copies
+the HTTP proxy entries to the FTP ones).
+
+
+The box labeled "<bf>No proxy for:</bf>" 
+defines a list of hosts and/or domains for which the proxy 
+should <bf>not</bf> be used. 
+The list may be separated either by commas or by spaces.
+If a hostname or a part of the hostname occurs in the list, no proxy-server
+will be used for connections to this host.
+
+This option is useful if you want to access hosts which your computer knows 
+about but which are unknown to the proxy-server or which give problems when
+acccessed via the proxy-server. Typically you want to 
+add '<tt>localhost</tt>' here.
+
 
 <sect> KFM Web Browser Configuration: HTTP
 <p>
-FIXME: documentation needed
+
+This screen allows you to configure certain browser options.
+
+Some Web sites are able to send versions of a given  html document in 
+different languages. You can specify your list of preferred languages in the
+"<bf>Accept Languages</bf> box. The list is in 
+decreasing order of preference, e.g. the first language is the most preferable.
+You can use the asterisk ("<bf> * </bf>") to specify 'any' language.
+
+A language should be specified with its 2-digit abbreviation. Examples are:
+<itemize>
+<item> en	English
+<item> de      German
+<item> fr	French
+<item> nl	Dutch
+</itemize>
+
+The box "<bf>Accept character sets:</bf>" allows you
+to  list the character sets which are accepted by the browser.
+You can use the asterisk  ("<bf> * </bf>") to specify 'any' charset.
+
+Not all www-servers send correct information about the contents of documents.
+If the "<bf>Assume HTML</bf>" option is enabled, all data received via HTTP 
+is assumed to be HTML unless the remote www-server defined it otherwise. 
+
+If opening a webpage from a remote web-site results in a 'Open with' dialog 
+box, you might want to try this option. 
+
+
 
 <sect> KFM Web Browser Configuration: User Agent
 <p>
 
-In this screen, you can configure the
-<bf>User-Agent String</bf>, which is what the
-KFM Browser reports as its name and version to web servers,
-when requesting web pages.
+When requesting web pages, Web Browsers identify themselves to Web Servers by 
+reporting
+their name and version as a  <bf>User-Agent String</bf>.
+The default User-Agent string for KFM is set to <bf>Konqueror</bf>
+plus version information
+(a conqueror of course being the next one in the
+sequence Navigator - Explorer - ... )!
 
-This name can be configured to be specific for a given
-web site.    
-
-The usefulness of this is that webservers may decide
-on what form to send the information (i.e., frames or
-no frames) depending of which browser application it
+You can also configure the KFM Browser to report a different User-Agent String
+to a specfic web sites,  while reporting the default string to other
+sites. 
+The usefulness of this is that web servers may decide
+on what form to send the information (e.g., frames or
+no frames) depending on which browser application it
 thinks it is talking to.  
-
-Rumor also has it that certain
-browser distributors' sites have in the past been 
-programmed to send error messages when the the User-Agent
-String of a competing browser application is reported
-to them!
-
 
 The KFM Browser is perfectly capable of handling frames,
 but this  may not be known to a web site that only sends frames
@@ -146,15 +217,78 @@ as <bf>Netscape Navigator</bf> (tm),
 which has user-agent string "<bf>Mozilla</bf>", plus version information,
 or <bf>Interner Explorer</bf>(tm).
 
+To create a binding between a User-Agent String and a web site:
+<itemize>
+<item> enter the address of the website in the box labelled 
+"<bf>On Server:</bf>"
+<item> enter the desired User-Agent String in the box labelled
+"<bf>Login as:</bf>"
+<item> Click on the <bf>Add</bf> button.
+</itemize>
 
-The default User-Agent string for KFM is set to <bf>Konqueror</bf>
-plus version information
-(a conqueror of course being the next one in the
-sequence navigator - explorer - * )!
+To remove such a binding, click on its entry in the list of 
+<bf>Known bindings</bf> to highlight it, then 
+click on the <bf>Delete</bf> button.
+
+To activate your changes, click on <bf>Apply</bf> or
+<bf>OK</bf>.  To exit without applying the changes, click on
+<bf>Cancel</bf>.
+
 
 <sect> KFM Web Browser Configuration: Cookies
 <p>
-FIXME: documentation needed
+
+"<bf>Cookies</bf>" are little messages you receive from a 
+remote website which are intended to be sent
+back by your browser to that site the next time you visit it 
+(or when you visit
+another page on the site). 
+
+Cookies can be used by websites to automatically
+identify you for a longer period of time. A website can use this to store
+your preferences. Cookies can also be used to track your behaviour
+on a site. Used as such, some people consider cookies an attack on their
+privacy. KFM offers you a broad range of possibilities to decide which cookies
+you want to receive and which you don't.  
+
+If "<bf>Enable Cookies</bf>" is activated,  cookies will be accepted 
+according to the following settings and
+stored cookies will be sent.
+If it is <bf>not</bf> activated, no cookie will ever be sent, 
+and no new cookies will be accepted.
+
+The "<bf>default accept policy</bf>" setting
+defines what to do with cookies which do not originate from
+a domain which has a domain-specific setting. 
+<itemize>
+<item> "<bf>Accept</bf>" will accept all cookies received without 
+notifying the user.
+<item> "<bf>Ask</bf>" will open a popup box to
+ask the user what to do, each time
+a cookie is received.
+<item> "<bf>Reject</bf>" will reject all cookies received without 
+notifying the user.
+</itemize>
+
+You may set specific policies for  how to treat cookies received
+from domains listed in the "<bf>Domain specific settings</bf>" box.
+
+To add such a domain, type its name in the 
+"<bf>change domain accept policy</bf>" box, and click on one of the
+three policies (<bf>accept/ask/reject</bf>). Then click on 
+"<bf>change</bf>" to add the new entry to the list of domain-specific
+settings.    To modify the entry for an exiting domain in the list,
+click on it to highlight it, then set a new cookie acceptance policy for it, 
+or click on <bf>delete</bf> to remove it.
+
+Cookies originating from one of these domains will be treated according to the
+policy set for them. 
+When you have selected '<bf>ask</bf>' for a domain you will get a 
+popup window when
+a cookie is received from this domain, which asks you what to do
+with the cookie. This popup window can also be used to change the acceptance 
+policy for the domain. 
+
 
 <sect> KFM Configuration: Desktop Icons
 <p>
