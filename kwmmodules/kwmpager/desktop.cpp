@@ -31,7 +31,7 @@ Desktop::Desktop(KWMModuleApplication *a, int id, Pager *parent) :
     kwmmapp = a;
     Id = id;
     setFrameStyle(Panel | Raised);
-    root_size = KWM::geometry( qt_xrootwin(), true ).size();
+    root_size = KWM::geometry( qt_xrootwin()).size();
     pixmap_size = contentsRect().size() - QSize(2,2);
     windows.setAutoDelete( false );
     activeWindow = 0L;
@@ -88,7 +88,7 @@ void Desktop::addWindow(Window w)
 	activeWindow = win;
     
     win->id = w;
-    win->rect = KWM::geometry(w, TRUE);
+    win->rect = KWM::geometry(w, true);
     win->icony = KWM::isIconified(w);
     win->name = KWM::title(w);
     calculate(win);
@@ -156,7 +156,7 @@ void Desktop::changeWindow(Window w)
     if (!win)
 	return;
     
-    win->rect = KWM::geometry(w, TRUE);
+    win->rect = KWM::geometry(w, true);
     win->icony = KWM::isIconified(w);
     win->name = KWM::title(w);
     
