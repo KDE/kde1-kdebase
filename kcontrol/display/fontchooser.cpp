@@ -79,7 +79,7 @@ KFontChooser::KFontChooser( QWidget *parent, const char *name )
 	connect( cmbFont, SIGNAL( activated( const char * ) ),
 		SLOT( slotSelectFont( const char * ) ) );
 		
-	QLabel *label = new QLabel( cmbFont, "&Typeface", this );
+	QLabel *label = new QLabel( cmbFont, i18n("&Typeface"), this );
 	label->adjustSize();
 	label->setMinimumSize( label->size() );
 	
@@ -122,7 +122,7 @@ KFontChooser::KFontChooser( QWidget *parent, const char *name )
 	connect( sbSize, SIGNAL( valueIncreased() ),
 		 SLOT( slotFontSize() ) );
 	
-	label = new QLabel( sbSize, "&Size", this );
+	label = new QLabel( sbSize, i18n("&Size"), this );
 	label->setMinimumSize( label->sizeHint() );
 
 	cmbCharset = new QComboBox( false, this );
@@ -144,7 +144,7 @@ KFontChooser::KFontChooser( QWidget *parent, const char *name )
 	
 	pushLayout->addLayout( stackLayout, 30 );
 	
-	label = new QLabel( cmbCharset, "&Character set", this );
+	label = new QLabel( cmbCharset, i18n("&Character set"), this );
 	label->adjustSize();
 	label->setMinimumSize( label->size() );
 	
