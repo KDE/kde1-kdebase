@@ -172,6 +172,7 @@ void KFMJob::slotRedirection( const char *_url )
         // This allows to store the "/index.html" in 'url'
         // without changing the url stored here and in kfmman. David.
         url = _url;
+        post_data = 0;
         openFileOrDir(false);
     }
 }
