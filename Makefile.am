@@ -2,7 +2,7 @@
 ## (C) 1997 Stephan Kulow
 
 SUBDIRS = kfm kdehelp kdisplay kfontmanager kfind kpanel kvt \
-	kwm klogout kwmclient kdm kscreensaver \
+	@KWM@ kdm kscreensaver \
 	kmenuedit kaudio \
 	pics po mimetypes doc applnk
 

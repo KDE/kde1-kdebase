@@ -102,6 +102,13 @@ AC_CHECK_FUNCS(socket powl sqrtl strdup getdtablesize vsnprintf setpgid)
 AC_CHECK_KSIZE_T
 AC_CHECK_SETENV
 
+KWM="kwm klogout kwmclient"
+AC_ARG_WITH(kwm2, [  --with-kwm2             If you want to try the new kwm],
+if test "x$withval" = "xyes"; then
+KWM="kwm2 kwmcom krootwm"
+fi)
+AC_SUBST(KWM)
+
 dnl output files
 topdir=`pwd`
 AC_SUBST(topdir)
@@ -184,6 +191,7 @@ AC_OUTPUT(Makefile \
 	po/sv/Makefile \
 	kwm2/Makefile \
 	kwm2/pics/Makefile \
+	kwmcom/Makefile \
 	krootwm/Makefile)
 
 
