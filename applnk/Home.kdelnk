@@ -28,6 +28,7 @@ Name[pt_BR]=Diretório do Usuário
 Name[ro]=Directorul de bazã
 Name[ru]=äÏÍÁÛÎÉÊ ËÁÔÁÌÏÇ
 Name[sk]=Domovskı prieèinok
+Name[sl]=Domaèi imenik
 Name[sv]=Hemkatalogen
 Name[zh_CN.GB2312]=Ê¹ÓÃÕßÖ÷Ä¿Â¼
 Comment=This folder contains all your personal files
@@ -51,6 +52,7 @@ Comment[pt_BR]=Esta pasta contém os seus arquivos pessoais
 Comment[ro]=Directorul de bazã al utilizatorului (home dir).
 Comment[ru]=üÔÁ ĞÁĞËÁ ÓÏÄÅÒÖÉÔ ×ÓÅ ×ÁÛÉ ÌÉŞÎÙÅ ÆÁÊÌÙ
 Comment[sk]=Tento prieèinok obsahuje va¹e osobné súbory
+Comment[sl]=V tem imeniku so shranjene vse va¹e osebne datoteke
 Comment[sv]=Den här katalogen innehåller alla dina personliga filer
 Comment[zh_CN.GB2312]=Õâ¸öÎÄ¼ş¼Ğ°üº¬ÄãµÄËùÓĞ¸öÈËÎÄ¼ş
 

@@ -23,6 +23,7 @@ Comment[pt_BR]=Visualizador de Imagens
 Comment[ro]=Vizualizor de imagini Нn diverse formate
 Comment[ru]=Просмотрщик изображений XV
 Comment[sk]=PrehliadaХ obrАzkov
+Comment[sl]=Program za ogled in obdelavo slik XV
 Comment[sv]=XV bildvisare
 Exec=xv
 Icon=xv.xpm

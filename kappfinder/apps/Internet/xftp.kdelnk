@@ -26,6 +26,7 @@ Comment[pt_BR]=Cliente de FTP
 Comment[ro]=Client de ftp pentru X
 Comment[ru]=FTP клиент для Xwindows
 Comment[sk]=FTP klient pre XWindow
+Comment[sl]=Odjemnik FTP za okna X
 Comment[sv]=X FTP-klient
 Exec=xftp
 Icon=www.xpm

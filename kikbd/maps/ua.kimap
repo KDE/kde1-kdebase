@@ -17,6 +17,7 @@ Comment[pt_BR]=Tem caracteres ingleses bem como símbolos alternativos.
 Comment[ro]=Are caractere englezeºti ca simboluri alternative
 Comment[ru]=óÏÄÅÒÖÉÔ ÌÁÔÉÎÓËÉÅ ÓÉÍ×ÏÌÙ × ËÁŞÅÓÔ×Å ÁÌÔÅÒÎÁÔÉ×ÎÙÈ.
 Comment[sk]=Má anglické znaky ako alternatívne symboly.
+Comment[sl]=Angle¹ki znaki kot alternativni.
 Comment[sv]=Har engelska bokstäver som alternativa symboler.
 
 Language=Ukrainian
@@ -26,12 +27,14 @@ Language[de]=Ukrainische
 Language[es]=Ucraniano
 Language[fi]=Ukraina
 Language[fr]=Ukrainien
+Language[is]=Úkraínskt
 Language[no]=Ukrainsk
 Language[pl]=Ukraiñski
 Language[pt_BR]=raniano
 Language[ro]=Ucraineanã
 Language[ru]=õËÒÁÉÎÓËÉÊ
 Language[sk]=Ukrajinskı
+Language[sl]=ukrajinsko
 Language[sv]=Ukrainskt
 
 Charset=koi8-u

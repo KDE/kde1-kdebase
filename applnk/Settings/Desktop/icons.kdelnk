@@ -16,10 +16,13 @@ Name[pt_BR]=мcones do Ambiente
 Name[ro]=e
 Name[ru]=Пиктограммы рабочего стола
 Name[sk]=Ikonky plochy
+Name[sl]=Ikone na namizju
 Name[sv]=Skrivbordsikoner
 Comment=You can customize the desktop icons here
+Comment[cs]=Zde je mo╬nИ nastavit ikony pracovnМ plochy
 Comment[no]=Her kan du definere ikonene pЕ skrivebordet
 Comment[pt_BR]=VocЙ pode personalizar aqui os Мcones do Ambiente
+Comment[ru]=Здесь вы можете настроить пиктограммы рабочего стола
 # Needs another icon !
 Icon=kfm.xpm
 MiniIcon=kfm.xpm

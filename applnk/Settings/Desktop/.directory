@@ -16,6 +16,7 @@ Name[pt_BR]=Ambiente de Trabalho
 Name[ro]=Ecran
 Name[ru]=Рабочий стол
 Name[sk]=PracovnА plocha
+Name[sl]=Namizje
 Name[sv]=Skrivbordet
 SortOrder=background.kdelnk,colors.kdelnk,screensaver.kdelnk,style.kdelnk
 Icon=desktop.xpm

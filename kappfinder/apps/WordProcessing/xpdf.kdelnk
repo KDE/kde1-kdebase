@@ -24,6 +24,7 @@ Comment[pt_BR]=Visualizador de arquivos PDF
 Comment[ro]=Vizualizor de documente PDF
 Comment[ru]=Просмотрщик PDF документов
 Comment[sk]=PrehliadaХ PDF sЗborov
+Comment[sl]=Pregledovalnik datotek PDF
 Comment[sv]=PDF-visare
 Exec=xpdf
 Icon=gv.xpm

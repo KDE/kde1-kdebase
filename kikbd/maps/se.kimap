@@ -10,10 +10,14 @@
 Authors=Lars Hamrén <hamren@sdu.se>
 
 Language=Swedish
+Language[cs]=©védskı
 Language[da]=Svensk
+Language[fr]=Suédois
+Language[is]=Sænskt
 Language[no]=Svensk
 Language[pt_BR]=Sueco
 Language[ru]=û×ÅÄÓËÉÊ
+Language[sl]=¹vedsko
 Language[sv]=Svenskt
 
 Label=Se

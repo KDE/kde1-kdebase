@@ -23,6 +23,7 @@ Comment[pt_BR]=Visualizador de arquivos Postscript
 Comment[ro]=Vizualizor de documente PostScript
 Comment[ru]=ğÒÏÓÍÏÔÒİÉË Postscript ÄÏËÕÍÅÎÔÏ×
 Comment[sk]=Prehliadaè Postskriptovıch súborov
+Comment[sl]=Pregledovalnik za PostScript
 Comment[sv]=Postskriptvisare
 Exec=gv
 Icon=gv.xpm

@@ -30,6 +30,7 @@ Comment[pt_BR]=Aplicação de pintura
 Comment[ro]=Aplicaşie de desen scalar (bitmap)
 Comment[ru]=çÒÁÆÉŞÅÓËÉÊ ÒÅÄÁËÔÏÒ Xpaint
 Comment[sk]=Aplikácia pre kreslenie bitmapovıch obrázkov
+Comment[sl]=Program za slikanje Xpaint
 Comment[sv]=XPaint ritprogram
 Exec=xpaint
 Icon=xpaint.xpm

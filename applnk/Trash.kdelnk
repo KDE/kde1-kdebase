@@ -28,6 +28,7 @@ Name[pt_BR]=Lixo
 Name[ro]=Coº de Gunoi
 Name[ru]=ëÏÒÚÉÎÁ
 Name[sk]=Kô¹
+Name[sl]=Ko¹
 Name[sv]=Papperskorg
 Name[zh_CN.GB2312]=·ÏÖ½Â¨
 Comment=This folder contains files to be deleted
@@ -51,6 +52,7 @@ Comment[pt_BR]=Esta pasta contém arquivos desnecessários
 Comment[ro]=Acest director conşine fiºierele care vor fi ºterse.P
 Comment[ru]=üÔÏÔ ËÁÔÁÌÏÇ ÓÏÄÅÒÖÉÔ ÆÁÊÌÙ, ËÏÔÏÒÙÅ ÂÕÄÕÔ ÕÄÁÌÅÎÙ
 Comment[sk]=Tento prieèinok obsahuje súbory urèené k zmazaniu.
+Comment[sl]=Imenik vsebuje datoteke, oznaèene za brisanje
 Comment[sv]=Den här katalogen innehåller filer som skall tas bort
 Comment[zh_CN.GB2312]=Õâ¸öÎÄ¼ş¼Ğ·ÅÓĞÒª±»É¾³ıµÄÎÄ¼ş
 

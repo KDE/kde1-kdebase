@@ -16,6 +16,7 @@ Comment[pt_BR]=Tem caracteres latinos bem como símbolos alternativos.
 Comment[ro]=Are carachere latine ca simboluri alternative
 Comment[ru]=óÏÄÅÒÖÉÔ ÌÁÔÉÎÓËÉÅ ÓÉÍ×ÏÌÙ × ËÁŞÅÓÔ×Å ÁÌÔÅÒÎÁÔÉ×ÎÙÈ.
 Comment[sk]=Má latin znaky ako alternatívne symboly.
+Comment[sl]=Latinièni znaki kot alternativni.
 Comment[sv]=Har latinska bokstäver som alternativa symboler.
 
 Language=Russian
@@ -25,6 +26,7 @@ Language[de]=Russische
 Language[es]=Ruso
 Language[fi]=Venäjä
 Language[fr]=Russe
+Language[is]=Rússneskt
 Language[it]=Russo
 Language[no]=Russisk
 Language[pl]=Rosyjski
@@ -32,6 +34,7 @@ Language[pt_BR]=sso
 Language[ro]=Ruseascã
 Language[ru]=òÕÓÓËÉÊ
 Language[sk]=Ruskı
+Language[sl]=rusko
 Language[sv]=Ryskt
 
 Charset=koi8-r

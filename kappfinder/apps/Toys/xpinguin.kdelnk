@@ -24,6 +24,7 @@ Comment[pt_BR]=Tux, a mascote do Linux
 Comment[ro]=Mascota Linuxului, Tux
 Comment[ru]=Tux, Üอยฬลอม Linux'ม
 Comment[sk]=Tux, maskot Linuxu
+Comment[sl]=Tux, maskota Linuxa
 Comment[sv]=Tux, linuxmaskoten
 Exec=xpinguin
 Icon=pinguin.xpm

@@ -27,6 +27,7 @@ Comment[pt_BR]=Monitor de sistema
 Comment[ro]=Monitorizare de sistem
 Comment[ru]=Системный монитор
 Comment[sk]=Monitor systИmu
+Comment[sl]=Sistemski nadzornik
 Comment[sv]=Systemmonitor
 Exec=xosview
 Icon=Information.xpm

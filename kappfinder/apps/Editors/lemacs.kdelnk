@@ -19,6 +19,7 @@ Comment[pt]=Editor Lucid Emacs
 Comment[pt_BR]=Editor Lucid Emacs
 Comment[ru]=Редактор Emacs c Lucid
 Comment[sk]=Editor Lucid Emacs
+Comment[sl]=Urejevalnik Lucid Emacs
 BinaryPattern=
 MimeType=
 Exec=lemacs %f

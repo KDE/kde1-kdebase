@@ -7,16 +7,23 @@
 Authors=Petter Reinholdtsen <pere@td.org.uit.no>,
 
 Comment=Normal layout
+Comment[cs]=Nornální rozvr¾ení
 Comment[da]=Normal udlægning
+Comment[is]=Venjuleg uppsetning
 Comment[no]=Normalt utseende
 Comment[pt_BR]=Disposição normal
 Comment[ru]=îÏÒÍÁÌØÎÁÑ ÒÁÓËÌÁÄËÁ
+Comment[sl]=Normalni razpored
 
 Language=Norwegian
+Language[cs]=Norskı
 Language[da]=k
+Language[fr]=égien
+Language[is]=Norskt
 Language[no]=Norsk
 Language[pt_BR]=Norueguês
 Language[ru]=îÏÒ×ÅÖÓËÉÊ
+Language[sl]=norve¹ko
 Language[sv]=kt
 
 Charset=ISO-8859-1

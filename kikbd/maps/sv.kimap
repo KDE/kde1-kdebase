@@ -7,16 +7,23 @@
 Authors=Karl Backström <backstrom@kde.org>,
 
 Comment=Normal layout
+Comment[cs]=Nornální rozvr¾ení
 Comment[da]=Normal udlægning
+Comment[is]=Venjuleg uppsetning
 Comment[no]=Normalt utseende
 Comment[pt_BR]=Disposição normal
 Comment[ru]=îÏÒÍÁÌØÎÁÑ ÒÁÓËÌÁÄËÁ
+Comment[sl]=Normalni razpored
 
 Language=Swedish
+Language[cs]=©védskı
 Language[da]=Svensk
+Language[fr]=Suédois
+Language[is]=Sænskt
 Language[no]=Svensk
 Language[pt_BR]=Sueco
 Language[ru]=û×ÅÄÓËÉÊ
+Language[sl]=¹vedsko
 Language[sv]=Svenskt
 
 Charset=ISO-8859-1

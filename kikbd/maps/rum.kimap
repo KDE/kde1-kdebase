@@ -16,6 +16,7 @@ Comment[pt_BR]=Disposição Microsoft. Tem caracteres ingleses bem como símbolos a
 Comment[ro]=Machetã microsoft. Are caractere englezeºti ca simboluri alternative
 Comment[ru]=òÁÓËÌÁÄËÏÊ Microsoft. ğÏÚ×ÏÌÑÅÔ ÎÁÂÉÒÁÔØ ÌÁÔÉÎÓËÉÅ ÓÉÍ×ÏÌÙ ÉÓĞÏÌØÚÕÑ áÌÔÅÒÎÁÔÉ×ÎÙÊ ĞÅÒÅËÌÀŞÁÔÅÌØ.
 Comment[sk]=Microsof»ácky layout. Má anglické znaky ako alternatívne symboly.
+Comment[sl]=Microsoftov razpored. Angle¹ki znaki kot alternativni.
 Comment[sv]=Microsofts layout. Har engelska bokstäver som alternativa symboler.
 
 Language=Russian
@@ -25,6 +26,7 @@ Language[de]=Russische
 Language[es]=Ruso
 Language[fi]=Venäjä
 Language[fr]=Russe
+Language[is]=Rússneskt
 Language[it]=Russo
 Language[no]=Russisk
 Language[pl]=Rosyjski
@@ -32,6 +34,7 @@ Language[pt_BR]=sso
 Language[ro]=Ruseascã
 Language[ru]=òÕÓÓËÉÊ
 Language[sk]=Ruskı
+Language[sl]=rusko
 Language[sv]=Ryskt
 
 Charset=koi8-r

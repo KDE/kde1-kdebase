@@ -19,6 +19,7 @@ Comment[pt_BR]=Disposição fonética. Tem caracteres ingleses bem como símbolos al
 Comment[ro]=Machetã foneticã. Are caractere englezeºti ca simboluri suplimentare.
 Comment[ru]=æÏÎÅÔÉÃÅÓËÁÑ ÒÁÓËÌÁÄËÁ. áÎÇÌÉÊÓËÉÅ ÓÉÍ×ÏÌÙ, ËÁË ÁÌØÔÅÒÎÁÔÉ×ÎÙÅ.
 Comment[sk]=Fonetickı layout. Má anglické znaky ako alternatívne symboly.
+Comment[sl]=Fonetièna razporeditev. Angle¹ki znaki kot alternativni.
 Comment[sv]=Fonetisk layout. Har engelska tecken som alternativa symboler.
 
 Language=Bulgarian
@@ -28,6 +29,7 @@ Language[de]=Bulgarische
 Language[es]=Búlgaro
 Language[fi]=Bulgaria
 Language[fr]=Bulgare
+Language[is]=Búlgarska
 Language[it]=Bulgaro
 Language[no]=Bulgarsk
 Language[pl]=Bu³garski
@@ -35,6 +37,7 @@ Language[pt_BR]=lgariano
 Language[ro]=Bulgãreascã
 Language[ru]=âÏÌÇÁÒÓËÉÊ
 Language[sk]=Bulharskı
+Language[sl]=bolgarsko
 Language[sv]=Bulgariskt
 
 Charset=cp1251

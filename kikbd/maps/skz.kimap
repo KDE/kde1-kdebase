@@ -17,6 +17,7 @@ Comment[pt]=Teclado Internacional
 Comment[pt_BR]=Teclado de datilógrafo (QWERTZ)
 Comment[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ËÌÁ×ÉÁÔÕÒÁ
 Comment[sk]=Medzinárodná klávesnica
+Comment[sl]=Razpored QWERTZ
 Comment[sv]=Maskinskrivningstangentbord (QWERTZ)
 
 Language=Slovak
@@ -25,12 +26,14 @@ Language[da]=Slovakisk
 Language[es]=Eslovaco
 Language[fi]=Slovakki
 Language[fr]=Slovaque
+Language[is]=Slavneskt
 Language[it]=Slovacco
 Language[no]=Slovakisk
 Language[pt_BR]=lovaco
 Language[ro]=Slovacã
 Language[ru]=ÁÃËÉÊ
 Language[sk]=Slovenskı
+Language[sl]=slova¹ko
 Language[sv]=Slovakiskt
 #Language[ru]=şÅÛÓËÉÊ
 

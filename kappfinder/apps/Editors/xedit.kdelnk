@@ -2,7 +2,7 @@
 [KDE Desktop Entry]
 Name=X Editor
 Name[ca]=Editor X
-Name[da]=X editor
+Name[da]=X skriver
 Name[es]=Editor X
 Name[fi]=X Editori
 Name[fr]=Editeur X
@@ -16,7 +16,7 @@ Name[ru]=Редактор X
 Comment=X Editor
 Comment[ca]=Editor X
 Comment[cs]=Editor pro Xwindows
-Comment[da]= X editor
+Comment[da]= X skriver
 Comment[es]=Editor para X
 Comment[fi]=X editori
 Comment[fr]=Editeur pour X
@@ -28,6 +28,7 @@ Comment[pt_BR]=Editor X
 Comment[ro]=Editor pentru Xwindows
 Comment[ru]=Редактор для Xwindows
 Comment[sk]=Editor pre Xwindows
+Comment[sl]=Urejevalnik za okna X
 WmCommand=
 BinaryPattern=
 MiniIcon=

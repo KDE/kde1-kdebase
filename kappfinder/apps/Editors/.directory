@@ -2,7 +2,7 @@
 [KDE Desktop Entry]
 Name=Editors
 Name[cs]=Editory
-Name[da]=Editorer
+Name[da]=Tekstbehandling
 Name[de]=Editoren
 Name[es]=Editores
 Name[fi]=Editorit
@@ -16,6 +16,7 @@ Name[pt_BR]=Editores
 Name[ro]=Editoare
 Name[ru]=Редакторы
 Name[sk]=Editory
+Name[sl]=Urejevalniki
 Name[sv]=Editorer
 SortOrder=emacs.kdelnk,xedit.kdelnk,xemacs.kdelnk
 Icon=kedit.xpm

@@ -33,6 +33,7 @@ Comment[pt_BR]=Console X
 Comment[ro]=ConsolЦ de X
 Comment[ru]=Консоль для Xwindows
 Comment[sk]=Konzola pre Xwindow
+Comment[sl]=Konzola za okna X
 Comment[sv]=X Konsolvisare
 Exec=xconsole
 Icon=UNIX.xpm

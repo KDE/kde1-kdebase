@@ -17,10 +17,13 @@ Name[pt_BR]=Navegador Web
 Name[ro]=Navigator de web
 Name[ru]=Просмотрщик
 Name[sk]=PrehliadaХ strАnok
+Name[sl]=Spletni brskalnik
 Name[sv]=WeblДsaren
 Comment=You can configure the web browser here
+Comment[cs]=Zde je mo╬nИ nastavit prohlМ╬eХ pro web
 Comment[no]=Her kan du konfigurere nettlosen
 Comment[pt_BR]=VocЙ pode configurar aqui o navegador Web
+Comment[ru]=Здесь вы можете настроить просмотрщик
 # This needs a new icon !
 Icon=kfm.xpm
 MiniIcon=kfm.xpm
