@@ -759,6 +759,7 @@ void Manager::manage(Window w, bool mapped){
   dohide = (c->isIconified() || !c->isOnDesktop(currentDesktop()));
 
   addClient(c);
+  sendToModules(module_win_add, c->window);
 
   if (dohide){
     XUnmapWindow(qt_xdisplay(), c->window);
@@ -802,8 +803,6 @@ void Manager::manage(Window w, bool mapped){
     c->geometry_restore = tmprec;
   }
   
-
-  sendToModules(module_win_add, c->window);
 
   if (!dohide){
     if (c->isDecorated())

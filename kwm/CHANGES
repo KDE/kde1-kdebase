@@ -12,6 +12,8 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 9:
+       - small fix for kwm modules
   patchlevel 8:
        - needs qt-1.3
        - for modules: 
