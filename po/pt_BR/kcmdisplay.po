@@ -31,7 +31,7 @@ msgstr "&Uma Cor"
 
 #: backgnd.cpp:268
 msgid "&Two Color"
-msgstr "&Duas Cores"
+msgstr "&Degradê"
 
 #: backgnd.cpp:287
 msgid "Set&up ..."
@@ -132,7 +132,7 @@ msgstr "Desculpe, esse tipo de URL não é suportada pelo KDE"
 
 #: backgnd.cpp:1441
 msgid "Two color backgrounds"
-msgstr "Fundos de duas cores"
+msgstr "Fundos degradê"
 
 #: backgnd.cpp:1478
 msgid "Blend colors from &top to bottom"
