@@ -1,15 +1,8 @@
-Release 0.2.2:
+Release 0.3.1:
 ==============
 
-Minor bug fix release. 
-
-o KFontManager used to insert spurious empty line in the KDE fonts list.
-  fixed
-o Documentation now in sgml, html, dvi and ps format
-o clean compile
-
-Please read kfontmanager.html in the docs directory for information 
-about KFontManger and its role in the KDE project.
+Please read the HTML docs for information about KFontManger and its role
+in the KDE project.
 
 Best Regards,
 
