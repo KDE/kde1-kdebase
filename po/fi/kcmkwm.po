@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMKWM\n"
-"POT-Creation-Date: 1998-03-10 22:48+0100\n"
+"POT-Creation-Date: 1998-03-19 22:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,12 +28,11 @@ msgstr "&Otsikko"
 
 #: main.cpp:68
 msgid "&Desktop"
-msgstr ""
+msgstr "&Työpöytä"
 
 #: main.cpp:74
-#, fuzzy
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
-msgstr "käyttö: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+msgstr "käyttö: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:105
 msgid "Window manager style"
@@ -95,7 +94,7 @@ msgstr "Kuva"
 msgid "Title Animation"
 msgstr "Otsikon animaatio"
 
-#: desktop.cpp:76 titlebar.cpp:943
+#: desktop.cpp:93 titlebar.cpp:943
 msgid "ms"
 msgstr "ms"
 
@@ -109,106 +108,118 @@ msgstr "&Poissaoleva kuva"
 
 #: titlebar.cpp:982
 msgid "Mouse action"
-msgstr ""
+msgstr "Hiiren toiminta"
 
 #: titlebar.cpp:984
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
+"Vasemman hiirinapin tuplapainallus\n"
+"    otsikkopalkkiin tekee:"
 
 #: titlebar.cpp:988
-#, fuzzy
 msgid "(Un)Maximize"
-msgstr "Suurenna"
+msgstr "Suurenna/Pienennä"
 
 #: titlebar.cpp:989
 msgid "Move"
-msgstr ""
+msgstr "Siirrä"
 
 #: titlebar.cpp:990
-#, fuzzy
 msgid "(Un)Shade"
 msgstr "Varjostettu"
 
 #: titlebar.cpp:991
 msgid "Iconify"
-msgstr ""
+msgstr "Muuta ikoniksi"
 
 #: titlebar.cpp:992
-#, fuzzy
 msgid "(Un)Sticky"
-msgstr "Pysyvä"
+msgstr "Naulaa"
 
 #: titlebar.cpp:993
 msgid "Resize"
-msgstr ""
+msgstr "Muuta kokoa"
 
 #: titlebar.cpp:994
 msgid "Restore"
-msgstr ""
+msgstr "Palauta"
 
 #: titlebar.cpp:995
 msgid "Operations Menu"
-msgstr ""
+msgstr "Toimintovalikko"
 
-#: windows.cpp:72
+#: windows.cpp:74
 msgid "Window movement"
 msgstr "Ikkunan liikutus"
 
-#: windows.cpp:73
+#: windows.cpp:75
 msgid "Transparent"
 msgstr "Läpinäkyvä"
 
-#: windows.cpp:74
+#: windows.cpp:76
 msgid "Opaque"
 msgstr "Kuultava"
 
-#: windows.cpp:77
+#: windows.cpp:79
 msgid "Resize Animation"
 msgstr "Aseta animaation koko"
 
-#: windows.cpp:82
+#: windows.cpp:84
 msgid "Placement policy"
 msgstr "Sijoitustyyli"
 
-#: windows.cpp:84
-msgid "Smart"
-msgstr ""
-
 #: windows.cpp:86
-msgid "Cascade"
-msgstr ""
+msgid "Smart"
+msgstr "Älykäs"
 
 #: windows.cpp:88
-msgid "Random"
+msgid "Cascade"
+msgstr "Sarjaan"
+
+#: windows.cpp:90
+msgid "Interactive"
 msgstr ""
 
-#: windows.cpp:93
+#: windows.cpp:92
+msgid "Random"
+msgstr "Satunnainen"
+
+#: windows.cpp:94
+#, fuzzy
+msgid "Manual"
+msgstr "Valikko"
+
+#: windows.cpp:101
+msgid "Allowed Overlap:"
+msgstr ""
+
+#: windows.cpp:108
 msgid "Maximize Style"
 msgstr "Suurenna tyyli"
 
-#: windows.cpp:94
+#: windows.cpp:109
 msgid "Maximize fully"
 msgstr "Suurenna täysin"
 
-#: windows.cpp:95
+#: windows.cpp:110
 msgid "Maximize vertically"
 msgstr "Suurenna pystysuunnassa"
 
-#: windows.cpp:98
+#: windows.cpp:113
 msgid "Focus Policy"
 msgstr "Kohdistustapa"
 
-#: windows.cpp:99
+#: windows.cpp:114
 msgid "Click to focus"
 msgstr "Kohdista napilla"
 
-#: windows.cpp:100
+#: windows.cpp:115
 msgid "Focus follows mouse"
 msgstr "Kohdistus seuraa hiirtä"
 
-#: windows.cpp:105
+#: windows.cpp:120
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -216,28 +227,43 @@ msgstr ""
 "automaattinoston viive\n"
 "(<100 poistaa)"
 
-#: windows.cpp:108
+#: windows.cpp:123
 msgid "miliseconds"
 msgstr "millisekuntia"
 
-#: desktop.cpp:62
+#: desktop.cpp:79
 msgid "Active desktop borders"
-msgstr ""
+msgstr "Aktiiviset työpöydän reunat"
 
-#: desktop.cpp:64
+#: desktop.cpp:81
 msgid "Enable active desktop borders"
-msgstr ""
+msgstr "Käytä aktiivisia työpöydän reunoja"
 
-#: desktop.cpp:66
+#: desktop.cpp:83
 msgid "Move pointer towards center after switch"
+msgstr "Siirrä osoitin ruudun keskustaan"
+
+#: desktop.cpp:89
+#, fuzzy
+msgid "Dekstop switch delay:"
+msgstr "Työpöydän vaihtoviime ms:"
+
+#: desktop.cpp:102
+msgid "Magic Borders"
 msgstr ""
 
-#: desktop.cpp:72
-msgid "Dekstop switch delay in ms:"
+#: desktop.cpp:104
+msgid "Edge Resistance:"
 msgstr ""
 
-#~ msgid "Random placement"
-#~ msgstr "Satunnainen sijoitus"
+#: desktop.cpp:118
+msgid ""
+"Border Snap Zone:\n"
+"       (pixels)"
+msgstr ""
 
-#~ msgid "Smart placement"
-#~ msgstr "Älykäs sijoitus"
+#: desktop.cpp:132
+msgid ""
+"Window Snap Zone:\n"
+"       (pixels)"
+msgstr ""

@@ -23,15 +23,16 @@ msgid "Cannot open or read directory."
 msgstr "Kan ikke åpne eller lese mappe."
 
 #: kfindtop.cpp:118
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "KFind %s\n"
 "Frontend to find utility\n"
-"Miroslav Fl_dr <flidr@kky.zcu.cz>\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "\n"
 "Special thanks to Stephan Kulow\n"
 "<coolo@kde.org>"
-msgstr "KFind %s\n"
+msgstr ""
+"KFind %s\n"
 "Front til programmet \"find\"\n"
 "Miroslav Fl_dr <flidr@kky.zcu.cz>\n"
 "\n"
@@ -280,7 +281,8 @@ msgstr "Resultat ble lagret i fil\n"
 msgid ""
 "Do you really want to delete file:\n"
 "%s"
-msgstr "Ønsker du virkelig å slette fil:\n"
+msgstr ""
+"Ønsker du virkelig å slette fil:\n"
 "%s"
 
 #: kfwin.cpp:197
@@ -291,35 +293,40 @@ msgstr "Slett fil"
 msgid ""
 "You have no permission\n"
 " to delete this file"
-msgstr "Du har ingen tillatelse\n"
+msgstr ""
+"Du har ingen tillatelse\n"
 "til å slette denne fil"
 
 #: kfwin.cpp:216
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
-msgstr "Det er ikke mulig å slette\n"
+msgstr ""
+"Det er ikke mulig å slette\n"
 "valgt fil"
 
 #: kfwin.cpp:234
 msgid ""
 "You have no permission\n"
 " to delete this directory"
-msgstr "Du har ingen tillatelse\n"
+msgstr ""
+"Du har ingen tillatelse\n"
 "til å slette denne mappe"
 
 #: kfwin.cpp:239
 msgid ""
 "Specified directory\n"
 "is not empty!"
-msgstr "Angitt mappe\n"
+msgstr ""
+"Angitt mappe\n"
 "er ikke tom!"
 
 #: kfwin.cpp:244
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
-msgstr "Det er ikke mulig å slette\n"
+msgstr ""
+"Det er ikke mulig å slette\n"
 "valgt mappe"
 
 #: kfwin.cpp:336

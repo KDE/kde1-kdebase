@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-10 22:48+0100\n"
+"POT-Creation-Date: 1998-03-19 22:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -103,7 +103,7 @@ msgstr "Pixmap"
 msgid "Title Animation"
 msgstr "Titel bewegen"
 
-#: desktop.cpp:76 titlebar.cpp:943
+#: desktop.cpp:93 titlebar.cpp:943
 msgid "ms"
 msgstr ""
 
@@ -160,63 +160,75 @@ msgstr ""
 msgid "Operations Menu"
 msgstr ""
 
-#: windows.cpp:72
+#: windows.cpp:74
 msgid "Window movement"
 msgstr "Verplaatsing vensters"
 
-#: windows.cpp:73
+#: windows.cpp:75
 msgid "Transparent"
 msgstr "Transparant"
 
-#: windows.cpp:74
+#: windows.cpp:76
 msgid "Opaque"
 msgstr "Ondoorzichtig"
 
-#: windows.cpp:77
+#: windows.cpp:79
 msgid "Resize Animation"
 msgstr "Animatie bij veranderen grootte"
 
-#: windows.cpp:82
+#: windows.cpp:84
 msgid "Placement policy"
 msgstr "Plaatsing nieuwe vensters"
 
-#: windows.cpp:84
+#: windows.cpp:86
 msgid "Smart"
 msgstr ""
 
-#: windows.cpp:86
+#: windows.cpp:88
 msgid "Cascade"
 msgstr ""
 
-#: windows.cpp:88
+#: windows.cpp:90
+msgid "Interactive"
+msgstr ""
+
+#: windows.cpp:92
 msgid "Random"
 msgstr ""
 
-#: windows.cpp:93
+#: windows.cpp:94
+msgid "Manual"
+msgstr ""
+
+#: windows.cpp:101
+msgid "Allowed Overlap:"
+msgstr ""
+
+#: windows.cpp:108
 msgid "Maximize Style"
 msgstr "Gedrag maximalizeren"
 
-#: windows.cpp:94
+#: windows.cpp:109
 msgid "Maximize fully"
 msgstr "Schermvullend venster"
 
-#: windows.cpp:95
+#: windows.cpp:110
 msgid "Maximize vertically"
 msgstr "Maximale verticale grootte"
 
-#: windows.cpp:98
+#: windows.cpp:113
 msgid "Focus Policy"
 msgstr "Gedrag focus"
 
-#: windows.cpp:99
+#: windows.cpp:114
 msgid "Click to focus"
 msgstr "Klikken voor focus"
 
-#: windows.cpp:100
+#: windows.cpp:115
 msgid "Focus follows mouse"
 msgstr "Focus volgt de muis"
 
-#: windows.cpp:105
+#: windows.cpp:120
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -224,24 +236,44 @@ msgstr ""
 "Vertraging voor automatisch\n"
 "naar voren brengen (<100 afzetten)"
 
-#: windows.cpp:108
+#: windows.cpp:123
 msgid "miliseconds"
 msgstr "milliseconden"
 
-#: desktop.cpp:62
+#: desktop.cpp:79
 msgid "Active desktop borders"
 msgstr ""
 
-#: desktop.cpp:64
+#: desktop.cpp:81
 msgid "Enable active desktop borders"
 msgstr ""
 
-#: desktop.cpp:66
+#: desktop.cpp:83
 msgid "Move pointer towards center after switch"
 msgstr ""
 
-#: desktop.cpp:72
-msgid "Dekstop switch delay in ms:"
+#: desktop.cpp:89
+msgid "Dekstop switch delay:"
+msgstr ""
+
+#: desktop.cpp:102
+msgid "Magic Borders"
+msgstr ""
+
+#: desktop.cpp:104
+msgid "Edge Resistance:"
+msgstr ""
+
+#: desktop.cpp:118
+msgid ""
+"Border Snap Zone:\n"
+"       (pixels)"
+msgstr ""
+
+#: desktop.cpp:132
+msgid ""
+"Window Snap Zone:\n"
+"       (pixels)"
 msgstr ""
 
 #~ msgid "Random placement"

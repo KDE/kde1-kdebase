@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-05 15:54+0100\n"
+"POT-Creation-Date: 1998-03-19 22:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ionescu Paul <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -14,162 +14,131 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kpanel.C:211
+#: kpanel.C:213
 msgid "Move"
 msgstr "Mutã"
 
-#: kpanel.C:214
+#: kpanel.C:216
 msgid "Properties"
 msgstr "Proprietãþi"
 
-#: kpanel.C:246
+#: kpanel.C:252
 msgid "Go!"
 msgstr "Engheigi :) "
 
-#: kpanel.C:248 tools.C:799
+#: kpanel.C:254 tools.C:797
 msgid "Where do you want to go tomorrow?"
 msgstr "Ia ghici, ce poate fi ãsta ???"
 
-#: kpanel.C:321
+#: kpanel.C:327
 msgid "No info available"
 msgstr "Nici o informaþie disponibilã"
 
-#: kpanel.C:360 props.C:217 props.C:218
+#: kpanel.C:366 props.C:151 props.C:152
 msgid "Logout"
 msgstr "Ieºire"
 
-#: kpanel.C:368 props.C:216
+#: kpanel.C:374 props.C:150
 msgid "Lock screen"
 msgstr "Blocheazã ecranul"
 
-#: kpanel.C:377
+#: kpanel.C:383
 msgid "Hide the panel"
 msgstr "Ascunde panoul"
 
-#: kpanel.C:387
+#: kpanel.C:393
 msgid "Show the panel"
 msgstr "Afiºeazã panoul"
 
-#: kpanel.C:1078 tools.C:615
+#: kpanel.C:1092 tools.C:613
 msgid "No comment available"
 msgstr "Nici un comentariu disponibil"
 
-#: kpanel.C:1087 tools.C:808
+#: kpanel.C:1101 tools.C:806
 msgid "Windowlist"
 msgstr "Lista de ferestre"
 
-#: props.C:200
+#: props.C:134
 msgid "Add application"
 msgstr "Adaugã o aplicaþie"
 
-#: props.C:202
+#: props.C:136
 msgid "Add an application or a submenu onto the panel"
 msgstr "Adaugã o aplicaþie sau un submeniu"
 
-#: props.C:203
+#: props.C:137
 msgid "Add windowlist"
 msgstr "Adaugã listã de ferestre"
 
-#: props.C:205
+#: props.C:139
 msgid "Add a windowlist menu onto the panel"
 msgstr "Adaugã un meniu de liste de ferestre la panou"
 
-#: events.C:701 props.C:206
+#: events.C:705 props.C:140
 msgid "Configure"
 msgstr "Configurare"
 
-#: props.C:208
+#: props.C:142
 msgid "Configure panel"
 msgstr "Configurare panou"
 
-#: events.C:703 props.C:209
+#: events.C:707 props.C:143
 msgid "Restart"
 msgstr "Restartare"
 
-#: props.C:211
+#: props.C:145
 msgid "Restart panel"
 msgstr "Restartare Panou"
 
-#: props.C:212 props.C:467
+#: props.C:146
 msgid "Panel"
 msgstr "Panou"
 
-#: props.C:214
+#: props.C:148
 msgid "Lock Screen"
 msgstr "Blocheazã ecranul"
 
-#: props.C:398
-msgid "Location"
-msgstr "Locaþie"
+#~ msgid "Location"
+#~ msgstr "Locaþie"
 
-#: props.C:411
-msgid "Taskbar"
-msgstr "Taskbar"
+#~ msgid "Taskbar"
+#~ msgstr "Taskbar"
 
-#: props.C:412
-msgid "Hidden"
-msgstr "Ascuns"
+#~ msgid "Hidden"
+#~ msgstr "Ascuns"
 
-#: props.C:421
-msgid "Top/Left"
-msgstr "Stg./Sus"
+#~ msgid "Top/Left"
+#~ msgstr "Stg./Sus"
 
-#: props.C:451
-msgid "Tiny Style"
-msgstr "Mic"
+#~ msgid "Tiny Style"
+#~ msgstr "Mic"
 
-#: props.C:452
-msgid "Normal Style"
-msgstr "Normal"
+#~ msgid "Normal Style"
+#~ msgstr "Normal"
 
-#: props.C:453
-msgid "Large Style"
-msgstr "Mare"
+#~ msgid "Large Style"
+#~ msgstr "Mare"
 
-#: props.C:472
-msgid "Menu Tooltips"
-msgstr "Bule de informatie"
+#~ msgid "Menu Tooltips"
+#~ msgstr "Bule de informatie"
 
-#: props.C:518
-msgid "Others"
-msgstr ""
+#~ msgid "Personal First"
+#~ msgstr "Întâi cele personale"
 
-#: props.C:520
-msgid "Personal First"
-msgstr "Întâi cele personale"
+#~ msgid "Auto Hide Panel"
+#~ msgstr "Auto-Ascunde panoul"
 
-#: props.C:523
-msgid "Auto Hide Panel"
-msgstr "Auto-Ascunde panoul"
+#~ msgid "Auto Hide Taskbar"
+#~ msgstr "Auto-Ascunde Taskbarul"
 
-#: props.C:526
-msgid "Auto Hide Taskbar"
-msgstr "Auto-Ascunde Taskbarul"
+#~ msgid "Visible"
+#~ msgstr "Vizibil"
 
-#: props.C:544
-msgid "Clock"
-msgstr ""
+#~ msgid "Width"
+#~ msgstr "Lãþime"
 
-#: props.C:546
-msgid "24h"
-msgstr ""
+#~ msgid "Desktops"
+#~ msgstr "Ecrane"
 
-#: props.C:550
-msgid "12h AM/PM"
-msgstr ""
-
-#: props.C:611
-msgid "Visible"
-msgstr "Vizibil"
-
-#: props.C:618
-msgid "Width"
-msgstr "Lãþime"
-
-#: props.C:623
-msgid "Desktops"
-msgstr "Ecrane"
-
-#: props.C:629
-msgid "KPanel Configuration"
-msgstr "Configurare KPanel"
+#~ msgid "KPanel Configuration"
+#~ msgstr "Configurare KPanel"

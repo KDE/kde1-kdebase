@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-19 22:17+0100\n"
 "PO-Revision-Date: 1998-01-20 14:45+0100\n"
 "Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
 "Language-Team: Sewdish <LL@li.org>\n"
@@ -14,19 +14,19 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kdmshutdown.cpp:153
+#: kdmshutdown.cpp:159
 msgid "Shutdown or restart?"
 msgstr "Sänga av eller starta om?"
 
-#: kdmshutdown.cpp:169
+#: kdmshutdown.cpp:175
 msgid "Shutdown"
 msgstr "Stänga av"
 
-#: kdmshutdown.cpp:183
+#: kdmshutdown.cpp:189
 msgid "Shutdown and restart"
 msgstr "Stänga av och starta om"
 
-#: kdmshutdown.cpp:192
+#: kdmshutdown.cpp:198
 msgid "Exit kdm"
 msgstr "Avsluta kdm"
 

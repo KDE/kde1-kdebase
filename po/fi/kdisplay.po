@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDISPLAY\n"
-"POT-Creation-Date: 1998-03-09 00:13+0100\n"
+"POT-Creation-Date: 1998-03-19 22:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,162 +13,99 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:239 backgnd.cpp:274
-msgid "Desktop"
-msgstr "Työpöytä"
-
-#: backgnd.cpp:284
-msgid "Rename..."
-msgstr "Nimeä Uudelleen..."
-
-#: backgnd.cpp:290
-msgid "Color"
-msgstr "Väri"
-
-#: backgnd.cpp:309
-#, fuzzy
-msgid "&Flat"
-msgstr "Tasainen väri"
-
-#: backgnd.cpp:313
-#, fuzzy
-msgid "&Gradient"
-msgstr "Väriliuku"
-
-#: backgnd.cpp:327
-#, fuzzy
-msgid "&Portrait"
-msgstr "Pystysuunnassa"
-
-#: backgnd.cpp:331
-#, fuzzy
-msgid "&Landscape"
-msgstr "Vaakasuunnassa"
-
-#: backgnd.cpp:342
-msgid "Wallpaper"
-msgstr "Taustakuva"
-
-#: backgnd.cpp:374
-#, fuzzy
-msgid "Ti&led"
-msgstr "Monistettu"
-
-#: backgnd.cpp:378
-#, fuzzy
-msgid "&Centred"
-msgstr "Keskitetty"
-
-#: backgnd.cpp:382
-#, fuzzy
-msgid "&Scaled"
-msgstr "Venytetty"
-
-#: backgnd.cpp:388
-msgid "&Browse..."
-msgstr ""
-
-#: backgnd.cpp:549
-msgid "Default"
-msgstr "Oletus"
-
-#: backgnd.cpp:888
-msgid "Desktop Title"
-msgstr "Työpöydän otsikko"
-
-#: colorscm.cpp:142 colorscm.cpp:143
+#: colorscm.cpp:145 colorscm.cpp:146
 msgid "Inactive window"
 msgstr "Passiivinen ikkuna"
 
-#: colorscm.cpp:158 colorscm.cpp:159
+#: colorscm.cpp:161 colorscm.cpp:162
 msgid "Active window"
 msgstr "Aktiivinen ikkuna"
 
-#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:300
+#: colorscm.cpp:197 colorscm.cpp:198 colorscm.cpp:306
 msgid "Window text"
 msgstr "Ikkunan teksti"
 
-#: colorscm.cpp:209
+#: colorscm.cpp:215
 msgid "Disabled"
 msgstr "Valitsematon"
 
-#: colorscm.cpp:216 colorscm.cpp:217
+#: colorscm.cpp:222 colorscm.cpp:223
 msgid "Selected"
 msgstr "Valittu"
 
-#: colorscm.cpp:252 colorscm.cpp:264
+#: colorscm.cpp:258 colorscm.cpp:270
 msgid "Color Scheme"
 msgstr "Väriteema"
 
-#: colorscm.cpp:286
+#: colorscm.cpp:292
 msgid "Widget color"
 msgstr "Työkalun väri"
 
-#: colorscm.cpp:291
+#: colorscm.cpp:297
 msgid "Inactive title bar"
 msgstr "Passiivinen otsikkopalkki"
 
-#: colorscm.cpp:292
+#: colorscm.cpp:298
 msgid "Inactive title text"
 msgstr "Passivinen otsikkoteksti"
 
-#: colorscm.cpp:293
+#: colorscm.cpp:299
 msgid "Active title bar"
 msgstr "Aktiivinen otsikkopalkki"
 
-#: colorscm.cpp:294
+#: colorscm.cpp:300
 msgid "Active title text"
 msgstr "Aktiivinen otsikkoteksti"
 
-#: colorscm.cpp:295
+#: colorscm.cpp:301
 msgid "Background"
 msgstr "Tausta"
 
-#: colorscm.cpp:296
+#: colorscm.cpp:302
 msgid "Text"
 msgstr "Teksti"
 
-#: colorscm.cpp:297
+#: colorscm.cpp:303
 msgid "Select background"
 msgstr "Valitse tausta"
 
-#: colorscm.cpp:298
+#: colorscm.cpp:304
 msgid "Select text"
 msgstr "Valitse teksti"
 
-#: colorscm.cpp:299
+#: colorscm.cpp:305
 msgid "Window background"
 msgstr "Ikkunan tausta"
 
-#: colorscm.cpp:311
+#: colorscm.cpp:317
 msgid "Contrast"
 msgstr "Kontrasti"
 
-#: colorscm.cpp:324 scrnsave.cpp:224
+#: colorscm.cpp:330 scrnsave.cpp:224
 msgid "Low"
 msgstr "Matala"
 
-#: colorscm.cpp:328 scrnsave.cpp:221
+#: colorscm.cpp:334 scrnsave.cpp:221
 msgid "High"
 msgstr "Korkea"
 
-#: colorscm.cpp:343
+#: colorscm.cpp:349
 msgid "Save scheme"
 msgstr "Tallenna teema"
 
-#: colorscm.cpp:374 colorscm.cpp:382
+#: colorscm.cpp:380 colorscm.cpp:388
 msgid "You have chosen a name used by a supplied color scheme"
 msgstr "Olet valinnut nimen joka on jo väriteeman käytössä"
 
-#: colorscm.cpp:467
+#: colorscm.cpp:452
 msgid "KDE Default"
 msgstr "KDE Oletus"
 
-#: colorscm.cpp:695
+#: colorscm.cpp:714
 msgid "Display Setup"
 msgstr "Näytön asetukset"
 
-#: colorscm.cpp:696
+#: colorscm.cpp:715
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"
@@ -292,6 +229,48 @@ msgstr "T&yyli"
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr "käyttö: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
-#: main.cpp:112
+#: main.cpp:116
 msgid "Display settings"
 msgstr "Näytön asetukset"
+
+#~ msgid "Desktop"
+#~ msgstr "Työpöytä"
+
+#~ msgid "Rename..."
+#~ msgstr "Nimeä Uudelleen..."
+
+#~ msgid "Color"
+#~ msgstr "Väri"
+
+#~ msgid "&Flat"
+#~ msgstr "&Tasainen väri"
+
+#~ msgid "&Gradient"
+#~ msgstr "&Väriliuku"
+
+#~ msgid "&Portrait"
+#~ msgstr "&Pystysuunnassa"
+
+#~ msgid "&Landscape"
+#~ msgstr "V&aakasuunnassa"
+
+#~ msgid "Wallpaper"
+#~ msgstr "Taustakuva"
+
+#~ msgid "Ti&led"
+#~ msgstr "&Monistettu"
+
+#~ msgid "&Centred"
+#~ msgstr "&Keskitetty"
+
+#~ msgid "&Scaled"
+#~ msgstr "V&enytetty"
+
+#~ msgid "&Browse..."
+#~ msgstr "&Selaa..."
+
+#~ msgid "Default"
+#~ msgstr "Oletus"
+
+#~ msgid "Desktop Title"
+#~ msgstr "Työpöydän otsikko"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-19 22:16+0100\n"
 "PO-Revision-Date:1998-03-16 HO:MI+ZONE\n"
 "Last-Translator: Svein Olav Aasen <svein.aasen@caa.no / soaasen@online.no>\n"
 "Language-Team: no<LL@li.org>\n"
@@ -330,7 +330,8 @@ msgstr "I konstrukt°ren!"
 msgid ""
 "KDE Help System\n"
 "Version "
-msgstr "KDE hjelpe system\n"
+msgstr ""
+"KDE hjelpe system\n"
 "Versjon"
 
 #: mainwidget.cpp:584

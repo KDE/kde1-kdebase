@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMKWM\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-19 22:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -9,19 +9,19 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kdmshutdown.cpp:153
+#: kdmshutdown.cpp:159
 msgid "Shutdown or restart?"
 msgstr "Sammutetaanko vai k‰ynnistet‰‰n uudelleen"
 
-#: kdmshutdown.cpp:169
+#: kdmshutdown.cpp:175
 msgid "Shutdown"
 msgstr "Sammuta"
 
-#: kdmshutdown.cpp:183
+#: kdmshutdown.cpp:189
 msgid "Shutdown and restart"
 msgstr "Sammuta ja k‰ynnist‰ uudelleen"
 
-#: kdmshutdown.cpp:192
+#: kdmshutdown.cpp:198
 msgid "Exit kdm"
 msgstr "Poistu kdm:st‰"
 

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-19 22:17+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-09-09 17:23:06+0200\n"
 "From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
@@ -8,19 +8,19 @@ msgstr ""
 "Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp "
 "kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
 
-#: kdmshutdown.cpp:153
+#: kdmshutdown.cpp:159
 msgid "Shutdown or restart?"
-msgstr "Ugasi ili restartaj?"
+msgstr "Iskljuèi ili restartaj?"
 
-#: kdmshutdown.cpp:169
+#: kdmshutdown.cpp:175
 msgid "Shutdown"
-msgstr "Ugasi"
+msgstr "Iskljuèi"
 
-#: kdmshutdown.cpp:183
+#: kdmshutdown.cpp:189
 msgid "Shutdown and restart"
-msgstr "Ugasi i restartaj"
+msgstr "Iskljuèi i restartaj"
 
-#: kdmshutdown.cpp:192
+#: kdmshutdown.cpp:198
 msgid "Exit kdm"
 msgstr "Zavr¹i i odlogiraj se"
 
@@ -46,7 +46,7 @@ msgstr "Idi!"
 
 #: kgreeter.cpp:214
 msgid "Shutdown..."
-msgstr "Gasim se..."
+msgstr "Ga¹enje..."
 
 #~ msgid "Cancel"
 #~ msgstr "Odustani"

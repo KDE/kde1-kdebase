@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-11 15:37+0100\n"
+"POT-Creation-Date: 1998-03-19 22:17+0100\n"
 "PO-Revision-Date: 1998-01-20 16:00+0100\n"
 "Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
 "Language-Team: Swedish <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr "Färg:"
 
 #: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
 #: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1021 polygon.cpp:101
-#: rock.cpp:550 slip.cpp:366 space.cpp:581 swarm.cpp:330
+#: rock.cpp:550 slip.cpp:366 space.cpp:587 swarm.cpp:330
 msgid "Speed:"
 msgstr "Hastighet:"
 
@@ -410,7 +410,7 @@ msgstr ""
 "  -inroot           Kör i rotfönstret\n"
 "  -test             Starta skärmsläckaren med en gång\n"
 
-#: morph3d.cpp:839 space.cpp:413
+#: morph3d.cpp:839 space.cpp:419
 msgid "GL can not render with root visual\n"
 msgstr "GL kan inte rendrera med root visual\n"
 
@@ -540,11 +540,11 @@ msgstr ""
 "\n"
 "Portad till kscreensave av Martin Jones."
 
-#: saver.cpp:50 saver.cpp:110
+#: saver.cpp:52 saver.cpp:112
 msgid "Enter Password"
 msgstr "Ange lösenord"
 
-#: saver.cpp:80
+#: saver.cpp:82
 msgid "Failed"
 msgstr "Misslyckades"
 
@@ -578,25 +578,25 @@ msgstr ""
 "\n"
 "Portad till kscreensave av Emanuel Pirker."
 
-#: space.cpp:485
+#: space.cpp:491
 msgid "Space (GL)"
 msgstr ""
 
-#: space.cpp:575
+#: space.cpp:581
 #, fuzzy
 msgid "Setup KSpace"
 msgstr "Ställ in lappar"
 
-#: space.cpp:591
+#: space.cpp:597
 msgid "Warp Interval:"
 msgstr ""
 
-#: space.cpp:679
+#: space.cpp:685
 #, fuzzy
 msgid "About KSpace"
 msgstr "Om Lappar"
 
-#: space.cpp:681
+#: space.cpp:687
 msgid ""
 "KSpace\n"
 "Copyright (c) 1998\n"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMKPANEL\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-19 22:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,19 +16,19 @@ msgstr ""
 
 #: main.cpp:62
 msgid "&Panel"
-msgstr ""
+msgstr "&Paneeli"
 
 #: main.cpp:68
 msgid "&Desktops"
-msgstr ""
+msgstr "&Työpöydät"
 
 #: main.cpp:97
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
-msgstr ""
+msgstr "käyttö: kcmkpanel [-init | {panel,options,desktops}]\n"
 
 #: main.cpp:127
 msgid "KPanel Configuration"
-msgstr ""
+msgstr "KPaneelin asetukset"
 
 #: panel.cpp:59
 msgid "Location"
@@ -36,112 +36,96 @@ msgstr "Paikka"
 
 #: panel.cpp:60
 msgid "&Top"
-msgstr ""
+msgstr "&Ylhäällä"
 
 #: panel.cpp:61
-#, fuzzy
 msgid "&Left"
-msgstr "Ylhäällä/Vasemmalla"
+msgstr "&Vasemmalla"
 
 #: panel.cpp:62
 msgid "&Bottom"
-msgstr ""
+msgstr "&Alhaalla"
 
 #: panel.cpp:74
 msgid "Taskbar"
 msgstr "Työpalkki"
 
 #: panel.cpp:75
-#, fuzzy
 msgid "&Hidden"
-msgstr "Piilotettu"
+msgstr "&Piilotettu"
 
 #: panel.cpp:77
 msgid "T&op"
-msgstr ""
+msgstr "Y&lhäällä"
 
 #: panel.cpp:79
 msgid "Botto&m"
-msgstr ""
+msgstr "Al&haalla"
 
 #: panel.cpp:81
-#, fuzzy
 msgid "Top/Le&ft"
-msgstr "Ylhäällä/Vasemmalla"
+msgstr "Ylhäällä/Vase&mmalla"
 
 #: panel.cpp:96
 msgid "T&iny"
-msgstr ""
+msgstr "&Pieni"
 
 #: panel.cpp:98
-#, fuzzy
 msgid "&Normal"
-msgstr "Normaali tyyli"
+msgstr "&Normaali tyyli"
 
 #: panel.cpp:100
 msgid "L&arge"
-msgstr ""
+msgstr "&Suuri"
 
 #: desktops.cpp:73
-#, fuzzy
 msgid "&Visible"
-msgstr "Näkyvissä"
+msgstr "&Näkyvissä"
 
 #: desktops.cpp:82
-#, fuzzy
 msgid "&Width"
-msgstr "Leveys"
+msgstr "&Leveys"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
 msgstr "Valikon vinkit"
 
 #: options.cpp:39
-#, fuzzy
 msgid "Show &Menu Tooltips"
-msgstr "Valikon vinkit"
+msgstr "Näytä valikon vinkit"
 
 #: options.cpp:44
 msgid "De&lay:"
-msgstr ""
+msgstr "Vi&ive:"
 
 #: options.cpp:56
 msgid "ms"
-msgstr ""
+msgstr "ms"
 
 #: options.cpp:68
 msgid "Others"
-msgstr ""
+msgstr "Muut"
 
 #: options.cpp:69
-#, fuzzy
 msgid "Personal &First"
-msgstr "Henkilökohtainen ensin"
+msgstr "Henkilökohtainen &ensin"
 
 #: options.cpp:71
-#, fuzzy
 msgid "Auto &Hide Panel"
-msgstr "Automaattisesti piilota Paneeli"
+msgstr "Automaattisesti &piilota Paneeli"
 
 #: options.cpp:73
-#, fuzzy
 msgid "Auto Hide &Taskbar"
-msgstr "Automaattisesti piilota työpalkki"
+msgstr "Automaattisesti piilota &työpalkki"
 
 #: options.cpp:81
 msgid "Clock"
-msgstr ""
+msgstr "Kello"
 
 #: options.cpp:83
 msgid "&24h"
-msgstr ""
+msgstr "&24h"
 
 #: options.cpp:85
 msgid "&12h AM/PM"
-msgstr ""
-
-#~ msgid "Tiny Style"
-#~ msgstr "Pieni tyyli"
-
-#~ msgid "Large Style"
-#~ msgstr "Suuri tyyli"
+msgstr "&12h AM/PM"

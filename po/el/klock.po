@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-19 22:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgstr "Χρώμα:"
 
 #: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
 #: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1021 polygon.cpp:101
-#: rock.cpp:550 slip.cpp:366 swarm.cpp:330
+#: rock.cpp:550 slip.cpp:366 space.cpp:587 swarm.cpp:330
 msgid "Speed:"
 msgstr "Ταχύτητα:"
 
@@ -50,6 +50,7 @@ msgstr ""
 "\n"
 "προγραμματισμός από τον Martin R. Jones 1996\n"
 "mjones@kde.org"
+
 #: banner.cpp:419
 msgid "KDE is great"
 msgstr "Το KDE είναι καταπληκτικό"
@@ -211,13 +212,15 @@ msgstr ""
 "Πνευματικά δικαιώματα (c) 1995 Pascal Pensa\n"
 "\n"
 "Προσαρμογή για το KDE από τον Emanuel Pirker."
+
 #: hop.cpp:221
 msgid "Hop"
 msgstr "Hop"
 
 #: hop.cpp:306
-msgid "Ρυθμίσεις KHop"
-msgstr ""
+#, fuzzy
+msgid "Setup KHop"
+msgstr "Ρυθμίσεις Πυροτεχνημάτων"
 
 #: hop.cpp:322
 msgid "Samecolor Pixels:"
@@ -344,7 +347,7 @@ msgstr ""
 #: main.cpp:279
 #, c-format
 msgid "Option %s is not support on this plattform!"
-msgstr "Η επιλογή %s δεν υποστηρίζεται σε αυτό το σύστημα!" 
+msgstr "Η επιλογή %s δεν υποστηρίζεται σε αυτό το σύστημα!"
 
 #: main.cpp:306
 msgid ""
@@ -394,7 +397,8 @@ msgstr ""
 "                     x = i  Τίποτα (το αγνοεί)\n"
 "                     x = s  Ενεργοποίηση προφύλαξης οθόνης\n"
 "                     x = l  Κλείδωμα οθόνης\n"
-"                    Σειρά: πάνω-αριστερά, πάνω-δεξιά, κάτω-αριστερά, κάτω-δεξιά\n"
+"                    Σειρά: πάνω-αριστερά, πάνω-δεξιά, κάτω-αριστερά, "
+"κάτω-δεξιά\n"
 "  -delay num        Χρόνος αναμονής για ενεργοποίηση προφύλαξης \n"
 "                     οθόνης  (αρχική τιμή 10 λεπτά)\n"
 "  -desc             Εκτύπωση περιγραφής προφύλαξης οθόνης\n"
@@ -407,7 +411,7 @@ msgstr ""
 "  -setup            Ρύθμιση προφύλαξης οθόνης\n"
 "  -test             ’μεση ενεργοποίηση προφύλαξης οθόνης\n"
 
-#: morph3d.cpp:839
+#: morph3d.cpp:839 space.cpp:419
 msgid "GL can not render with root visual\n"
 msgstr ""
 
@@ -537,11 +541,11 @@ msgstr ""
 "\n"
 "Προσαρμογή στο KDE από τον Martin Jones."
 
-#: saver.cpp:50 saver.cpp:110
+#: saver.cpp:52 saver.cpp:112
 msgid "Enter Password"
 msgstr "Εισάγετε κωδικό"
 
-#: saver.cpp:80
+#: saver.cpp:82
 msgid "Failed"
 msgstr "Αποτυχία"
 
@@ -574,6 +578,31 @@ msgstr ""
 "Πνευματικά δικαιώματα (c) 1991 Scott Draves\n"
 "\n"
 "Μεταφορά στο KDE από τον Emanuel Pirker."
+
+#: space.cpp:491
+msgid "Space (GL)"
+msgstr ""
+
+#: space.cpp:581
+#, fuzzy
+msgid "Setup KSpace"
+msgstr "Ρυθμίσεις Γλυστρήματος"
+
+#: space.cpp:597
+msgid "Warp Interval:"
+msgstr ""
+
+#: space.cpp:685
+#, fuzzy
+msgid "About KSpace"
+msgstr "Για το Γλύστρημα"
+
+#: space.cpp:687
+msgid ""
+"KSpace\n"
+"Copyright (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
+msgstr ""
 
 #: swarm.cpp:252
 msgid "Swarm"

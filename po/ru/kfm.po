@@ -4,15 +4,15 @@
 #
 #
 msgid ""
-msgstr "Project-Id-Version: KDE 0.2"
-"POT-Creation-Date: 1998-02-19 22:49+0100\n"
+msgstr ""
+"Project-Id-Version: KDE 0.2POT-Creation-Date: 1998-02-19 22:49+0100\n"
+"POT-Creation-Date: 1998-03-19 22:15+0100\n"
 "PO-Revision-Date: 1998-01-20 11:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
-""
 
 #: kfmgui.cpp:247
 msgid "KFM"
@@ -202,26 +202,26 @@ msgstr "Не могу загрузить пиктограмму\n"
 #: kbind.cpp:304 kbind.cpp:376 kbind.cpp:428 kbind.cpp:1492 kbind.cpp:1500
 #: kbind.cpp:1518 kbind.cpp:1535 kbind.cpp:1593 kbind.cpp:1605 kbind.cpp:1632
 #: kbind.cpp:1647 kbind.cpp:1667 kbind.cpp:1679 kbind.cpp:1695 kbind.cpp:1817
-#: kbind.cpp:1829 kbind.cpp:1874 kbind.cpp:1916 kfmexec.cpp:59 kfmexec.cpp:91
+#: kbind.cpp:1829 kbind.cpp:1874 kbind.cpp:1916 kfmexec.cpp:60 kfmexec.cpp:92
 #: kfmexec/main.cpp:47 kfmgui.cpp:568 kfmgui.cpp:696 kfmjob.cpp:181
-#: kfmman.cpp:264 kfmman.cpp:892 kfmman.cpp:1059 kfmman.cpp:1085
+#: kfmman.cpp:264 kfmman.cpp:921 kfmman.cpp:1088 kfmman.cpp:1114
 #: kfmprops.cpp:365 kfmprops.cpp:616 kfmprops.cpp:642 kfmprops.cpp:757
 #: kfmprops.cpp:860 kfmprops.cpp:988 kfmprops.cpp:1112 kfmprops.cpp:1428
 #: kfmprops.cpp:1640 kfmprops.cpp:1816 kfmserver.cpp:39 kfmserver.cpp:157
 #: kfmserver.cpp:237 kfmserver.cpp:284 kfmserver.cpp:293 kfmserver.cpp:301
 #: kfmtree.cpp:163 kfmtree.cpp:286 kfmtree.cpp:317 kfmtree.cpp:323
 #: kfmtree.cpp:329 kfmview.cpp:349 kfmview.cpp:368 kfmview.cpp:374
-#: kfmview.cpp:437 kfmview.cpp:443 kfmview.cpp:449 kfmview.cpp:521
-#: kfmview.cpp:543 kfmview.cpp:561 kfmview.cpp:567 kfmview.cpp:573
+#: kfmview.cpp:437 kfmview.cpp:443 kfmview.cpp:449 kfmview.cpp:524
+#: kfmview.cpp:546 kfmview.cpp:564 kfmview.cpp:570 kfmview.cpp:576
 #: kiojob.cpp:223 kiojob.cpp:231 kiojob.cpp:238 kiojob.cpp:263 kiojob.cpp:282
 #: kiojob.cpp:293 kiojob.cpp:315 kiojob.cpp:334 kiojob.cpp:536 kiojob.cpp:771
 #: kiojob.cpp:802 kiojob.cpp:843 kiojob.cpp:1649 krenamewin.cpp:120
 #: root.cpp:1107 root.cpp:1125 root.cpp:1131 root.cpp:1137 root.cpp:1212
-#: root.cpp:1668 root.cpp:1693
+#: root.cpp:1687 root.cpp:1712
 msgid "KFM Error"
 msgstr "Ошибка KFM"
 
-#: kfmexec.cpp:58 kfmgui.cpp:695 kfmman.cpp:891
+#: kfmexec.cpp:59 kfmgui.cpp:695 kfmman.cpp:920
 msgid "Malformed URL\n"
 msgstr "Некорретный URL\n"
 
@@ -238,7 +238,7 @@ msgid "New "
 msgstr "Новый "
 
 #: kfmgui.cpp:1001 kfmgui.cpp:1161 kfmjob.cpp:32 kfmman.cpp:188
-#: kfmtree.cpp:318 kfmview.cpp:369 kfmview.cpp:438 kfmview.cpp:562
+#: kfmtree.cpp:318 kfmview.cpp:369 kfmview.cpp:438 kfmview.cpp:565
 #: kiojob.cpp:70 root.cpp:1126
 msgid "ERROR: Malformed URL"
 msgstr "ОШИБКА: Некорретный URL"
@@ -296,11 +296,11 @@ msgid "ERROR: You dropped some URL over itself"
 msgstr "ОШИБКА: Вы перенесли URL поверх самого себя"
 
 #: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:410
-#: kfmview.cpp:597 krenamewin.cpp:20 root.cpp:1167
+#: kfmview.cpp:600 krenamewin.cpp:20 root.cpp:1167
 msgid "KFM Warning"
 msgstr "Предупреждение KFM"
 
-#: kfmtree.cpp:357 kfmview.cpp:411 kfmview.cpp:598 root.cpp:1168
+#: kfmtree.cpp:357 kfmview.cpp:411 kfmview.cpp:601 root.cpp:1168
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -310,15 +310,15 @@ msgstr ""
 "\n"
 "Их невозможно будет восстановить."
 
-#: kfmtree.cpp:324 kfmview.cpp:444 kfmview.cpp:568 root.cpp:1132
+#: kfmtree.cpp:324 kfmview.cpp:444 kfmview.cpp:571 root.cpp:1132
 msgid "ERROR: You dropped a URL over itself"
 msgstr "ОШИБКА: Вы перенесли URL поверх самого себя"
 
-#: kfmtree.cpp:330 kfmview.cpp:450 kfmview.cpp:574 root.cpp:1138
+#: kfmtree.cpp:330 kfmview.cpp:450 kfmview.cpp:577 root.cpp:1138
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "ОШИБКА: Вы перенесли директорию на одного из ее поддиректорий"
 
-#: kfmexec.cpp:233 kfmman.cpp:727 kfmview.cpp:466
+#: kfmexec.cpp:254 kfmman.cpp:753 kfmview.cpp:466
 msgid "Open With:"
 msgstr "Открыть с:"
 
@@ -326,23 +326,23 @@ msgstr "Открыть с:"
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "ОШИБКА: Невозможно показать свойства нескольких файлов"
 
-#: kfmtree.cpp:287 kfmview.cpp:522 root.cpp:1213
+#: kfmtree.cpp:287 kfmview.cpp:525 root.cpp:1213
 msgid "Could not access Trash Bin"
 msgstr "Невозможно получить доступ к Мусорной Корзине"
 
-#: kfmview.cpp:544 root.cpp:1108
+#: kfmview.cpp:547 root.cpp:1108
 msgid "Can not paste into multiple directories"
 msgstr "Невозможно вставить в несколько директорий"
 
-#: kfmview.cpp:630
+#: kfmview.cpp:633
 msgid "ERROR: Can not change to multiple directories"
 msgstr "ОШИБКА: Невозможно перейти в несколько директорий"
 
-#: kfmview.cpp:714
+#: kfmview.cpp:717
 msgid "KFM Security Alert"
 msgstr "Предупреждение о безопасности KFM"
 
-#: kfmview.cpp:715
+#: kfmview.cpp:718
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -350,16 +350,16 @@ msgstr ""
 "Эта страница не относится к доверенным\n"
 "но содержит ссылки на локальную файловую систему."
 
-#: kfmview.cpp:799
+#: kfmview.cpp:802
 msgid "Symbolic Link"
 msgstr "Символьная Ссылка"
 
-#: kfmview.cpp:801
+#: kfmview.cpp:804
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (Ссылка)"
 
-#: kfmview.cpp:821
+#: kfmview.cpp:824
 msgid "bytes"
 msgstr "байт"
 
@@ -497,15 +497,15 @@ msgstr "Отправить в Корзину"
 msgid "Open with"
 msgstr "Открыть с"
 
-#: kfmman.cpp:1077 kfmtree.cpp:155 main.cpp:216
+#: kfmman.cpp:1106 kfmtree.cpp:155 main.cpp:216
 msgid "Move"
 msgstr "Переместить"
 
-#: kfmman.cpp:1020 kfmtree.cpp:233 main.cpp:217
+#: kfmman.cpp:1049 kfmtree.cpp:233 main.cpp:217
 msgid "Properties"
 msgstr "Свойства"
 
-#: kfmman.cpp:1081 kfmtree.cpp:159 main.cpp:218
+#: kfmman.cpp:1110 kfmtree.cpp:159 main.cpp:218
 msgid "Link"
 msgstr "Ссылка"
 
@@ -913,15 +913,15 @@ msgstr "ОШИБКА: Не могу прочитать подкаталог рабочего стола '%s'"
 msgid "ERROR: Can not accept drop"
 msgstr "ОШИБКА: Не могу подтвердить перенос"
 
-#: kfmman.cpp:1060 root.cpp:1669
+#: kfmman.cpp:1089 root.cpp:1688
 msgid "Dont know what to do."
 msgstr "Не знаю, что делать."
 
-#: kfmman.cpp:1086 kfmtree.cpp:164 root.cpp:1694
+#: kfmman.cpp:1115 kfmtree.cpp:164 root.cpp:1713
 msgid "Dont know what to do"
 msgstr "Не знаю, что делать"
 
-#: kfmexec.cpp:92 kfmman.cpp:265
+#: kfmexec.cpp:93 kfmman.cpp:265
 msgid "The file does not contain a URL"
 msgstr "Файл не содержит URL"
 
@@ -933,13 +933,14 @@ msgstr "Связываюсь с сервером "
 msgid "Working ..."
 msgstr "Работаю..."
 
-#: kfmman.cpp:955 kfmtree.cpp:230
+#: kfmman.cpp:984 kfmtree.cpp:230
 msgid "Add To Bookmarks"
 msgstr "Добавить закладку"
 
 #: kiojob.cpp:119
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
-msgstr "ВНУТРЕННЯЯ ОШИБКА: Вы должны как минимум указать устройство для монтирования"
+msgstr ""
+"ВНУТРЕННЯЯ ОШИБКА: Вы должны как минимум указать устройство для монтирования"
 
 #: kiojob.cpp:222 kiojob.cpp:230 kiojob.cpp:1167 kiojob.cpp:1307
 #, c-format
@@ -1277,7 +1278,7 @@ msgstr "Вы не изменили имя!\n"
 msgid "Password"
 msgstr "Пароль"
 
-#: kfmexec.cpp:135
+#: kfmexec.cpp:136
 msgid "Trying to open"
 msgstr "Пытаюсь открыть"
 
@@ -1390,4 +1391,3 @@ msgid ""
 msgstr ""
 "Синтаксическая Ошибка:\n"
 "kfmexec комманда [URLs ....]\n"
-

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm \n"
-"POT-Creation-Date: 1998-03-09 00:13+0100\n"
+"POT-Creation-Date: 1998-03-19 22:15+0100\n"
 "PO-Revision-Date: 1998-01-29 18:31+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -194,26 +194,26 @@ msgstr "Nie mogê za³adowaæ ikony\n"
 #: kbind.cpp:304 kbind.cpp:376 kbind.cpp:428 kbind.cpp:1492 kbind.cpp:1500
 #: kbind.cpp:1518 kbind.cpp:1535 kbind.cpp:1593 kbind.cpp:1605 kbind.cpp:1632
 #: kbind.cpp:1647 kbind.cpp:1667 kbind.cpp:1679 kbind.cpp:1695 kbind.cpp:1817
-#: kbind.cpp:1829 kbind.cpp:1874 kbind.cpp:1916 kfmexec.cpp:59 kfmexec.cpp:91
+#: kbind.cpp:1829 kbind.cpp:1874 kbind.cpp:1916 kfmexec.cpp:60 kfmexec.cpp:92
 #: kfmexec/main.cpp:47 kfmgui.cpp:568 kfmgui.cpp:696 kfmjob.cpp:181
-#: kfmman.cpp:264 kfmman.cpp:892 kfmman.cpp:1059 kfmman.cpp:1085
+#: kfmman.cpp:264 kfmman.cpp:921 kfmman.cpp:1088 kfmman.cpp:1114
 #: kfmprops.cpp:365 kfmprops.cpp:616 kfmprops.cpp:642 kfmprops.cpp:757
 #: kfmprops.cpp:860 kfmprops.cpp:988 kfmprops.cpp:1112 kfmprops.cpp:1428
 #: kfmprops.cpp:1640 kfmprops.cpp:1816 kfmserver.cpp:39 kfmserver.cpp:157
 #: kfmserver.cpp:237 kfmserver.cpp:284 kfmserver.cpp:293 kfmserver.cpp:301
 #: kfmtree.cpp:163 kfmtree.cpp:286 kfmtree.cpp:317 kfmtree.cpp:323
 #: kfmtree.cpp:329 kfmview.cpp:349 kfmview.cpp:368 kfmview.cpp:374
-#: kfmview.cpp:437 kfmview.cpp:443 kfmview.cpp:449 kfmview.cpp:521
-#: kfmview.cpp:543 kfmview.cpp:561 kfmview.cpp:567 kfmview.cpp:573
+#: kfmview.cpp:437 kfmview.cpp:443 kfmview.cpp:449 kfmview.cpp:524
+#: kfmview.cpp:546 kfmview.cpp:564 kfmview.cpp:570 kfmview.cpp:576
 #: kiojob.cpp:223 kiojob.cpp:231 kiojob.cpp:238 kiojob.cpp:263 kiojob.cpp:282
 #: kiojob.cpp:293 kiojob.cpp:315 kiojob.cpp:334 kiojob.cpp:536 kiojob.cpp:771
 #: kiojob.cpp:802 kiojob.cpp:843 kiojob.cpp:1649 krenamewin.cpp:120
 #: root.cpp:1107 root.cpp:1125 root.cpp:1131 root.cpp:1137 root.cpp:1212
-#: root.cpp:1668 root.cpp:1693
+#: root.cpp:1687 root.cpp:1712
 msgid "KFM Error"
 msgstr "B³±d KFM"
 
-#: kfmexec.cpp:58 kfmgui.cpp:695 kfmman.cpp:891
+#: kfmexec.cpp:59 kfmgui.cpp:695 kfmman.cpp:920
 msgid "Malformed URL\n"
 msgstr "B³êdny URL\n"
 
@@ -230,7 +230,7 @@ msgid "New "
 msgstr "Nowy "
 
 #: kfmgui.cpp:1001 kfmgui.cpp:1161 kfmjob.cpp:32 kfmman.cpp:188
-#: kfmtree.cpp:318 kfmview.cpp:369 kfmview.cpp:438 kfmview.cpp:562
+#: kfmtree.cpp:318 kfmview.cpp:369 kfmview.cpp:438 kfmview.cpp:565
 #: kiojob.cpp:70 root.cpp:1126
 msgid "ERROR: Malformed URL"
 msgstr "B£¡D: B³êdny URL "
@@ -292,11 +292,11 @@ msgid "ERROR: You dropped some URL over itself"
 msgstr "B£¡D: Upu¶ci³e¶ URL na ten sam"
 
 #: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:410
-#: kfmview.cpp:597 krenamewin.cpp:20 root.cpp:1167
+#: kfmview.cpp:600 krenamewin.cpp:20 root.cpp:1167
 msgid "KFM Warning"
 msgstr "Ostrze¿enie KFM"
 
-#: kfmtree.cpp:357 kfmview.cpp:411 kfmview.cpp:598 root.cpp:1168
+#: kfmtree.cpp:357 kfmview.cpp:411 kfmview.cpp:601 root.cpp:1168
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -306,15 +306,15 @@ msgstr ""
 "\n"
 "Nie bêdzie mo¿na ju¿ ich odzyskaæ"
 
-#: kfmtree.cpp:324 kfmview.cpp:444 kfmview.cpp:568 root.cpp:1132
+#: kfmtree.cpp:324 kfmview.cpp:444 kfmview.cpp:571 root.cpp:1132
 msgid "ERROR: You dropped a URL over itself"
 msgstr "B£¡D: Upu¶ci³e¶ URL na ten sam"
 
-#: kfmtree.cpp:330 kfmview.cpp:450 kfmview.cpp:574 root.cpp:1138
+#: kfmtree.cpp:330 kfmview.cpp:450 kfmview.cpp:577 root.cpp:1138
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "B£¡D: Upu¶ci³e¶ katalog na jeden z jego podkatalogów"
 
-#: kfmexec.cpp:233 kfmman.cpp:727 kfmview.cpp:466
+#: kfmexec.cpp:254 kfmman.cpp:753 kfmview.cpp:466
 msgid "Open With:"
 msgstr "Otwórz z:"
 
@@ -322,23 +322,23 @@ msgstr "Otwórz z:"
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "B£¡D: Nie mogê otworzyæ w³a¶ciwo¶ci dla wielu plików naraz"
 
-#: kfmtree.cpp:287 kfmview.cpp:522 root.cpp:1213
+#: kfmtree.cpp:287 kfmview.cpp:525 root.cpp:1213
 msgid "Could not access Trash Bin"
 msgstr "Nie ma dostêpu do ¶mietnika"
 
-#: kfmview.cpp:544 root.cpp:1108
+#: kfmview.cpp:547 root.cpp:1108
 msgid "Can not paste into multiple directories"
 msgstr "Nie mogê wkleiæ do kilku katalogów naraz"
 
-#: kfmview.cpp:630
+#: kfmview.cpp:633
 msgid "ERROR: Can not change to multiple directories"
 msgstr "B£¡D: Nie mogê wej¶æ do kilku katalogów naraz"
 
-#: kfmview.cpp:714
+#: kfmview.cpp:717
 msgid "KFM Security Alert"
 msgstr "KFM alarm ochrony"
 
-#: kfmview.cpp:715
+#: kfmview.cpp:718
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -346,16 +346,16 @@ msgstr ""
 "Ta strona jest niewiarygodna\n"
 "i zawiera odno¶niki do twojego lokalnego systemu plików."
 
-#: kfmview.cpp:799
+#: kfmview.cpp:802
 msgid "Symbolic Link"
 msgstr "Odno¶nik symboliczny"
 
-#: kfmview.cpp:801
+#: kfmview.cpp:804
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (Odno¶nik)"
 
-#: kfmview.cpp:821
+#: kfmview.cpp:824
 msgid "bytes"
 msgstr "bajtów"
 
@@ -493,15 +493,15 @@ msgstr "Usuñ do ¶mietnika"
 msgid "Open with"
 msgstr "Otwórz z"
 
-#: kfmman.cpp:1077 kfmtree.cpp:155 main.cpp:216
+#: kfmman.cpp:1106 kfmtree.cpp:155 main.cpp:216
 msgid "Move"
 msgstr "Przenie¶"
 
-#: kfmman.cpp:1020 kfmtree.cpp:233 main.cpp:217
+#: kfmman.cpp:1049 kfmtree.cpp:233 main.cpp:217
 msgid "Properties"
 msgstr "W³a¶ciwo¶ci"
 
-#: kfmman.cpp:1081 kfmtree.cpp:159 main.cpp:218
+#: kfmman.cpp:1110 kfmtree.cpp:159 main.cpp:218
 msgid "Link"
 msgstr "Odno¶nik"
 
@@ -906,15 +906,15 @@ msgstr "B£¡D: Nie mo¿na odczytaæ katalogu desktopu '%s'"
 msgid "ERROR: Can not accept drop"
 msgstr "B£¡D: Nie mo¿na upu¶ciæ"
 
-#: kfmman.cpp:1060 root.cpp:1669
+#: kfmman.cpp:1089 root.cpp:1688
 msgid "Dont know what to do."
 msgstr "Nie wiem co zrobiæ."
 
-#: kfmman.cpp:1086 kfmtree.cpp:164 root.cpp:1694
+#: kfmman.cpp:1115 kfmtree.cpp:164 root.cpp:1713
 msgid "Dont know what to do"
 msgstr "Nie wiem co zrobiæ"
 
-#: kfmexec.cpp:92 kfmman.cpp:265
+#: kfmexec.cpp:93 kfmman.cpp:265
 msgid "The file does not contain a URL"
 msgstr "Plik nie zawiera adresu URL"
 
@@ -926,7 +926,7 @@ msgstr "Po³±czenie z hostem "
 msgid "Working ..."
 msgstr "Wykonuje ..."
 
-#: kfmman.cpp:955 kfmtree.cpp:230
+#: kfmman.cpp:984 kfmtree.cpp:230
 msgid "Add To Bookmarks"
 msgstr "Dodaj do zak³adek"
 
@@ -1269,7 +1269,7 @@ msgstr "Nazwa nie zosta³a zmieniona!\n"
 msgid "Password"
 msgstr "Has³o"
 
-#: kfmexec.cpp:135
+#: kfmexec.cpp:136
 msgid "Trying to open"
 msgstr "Próbujê otworzyæ"
 

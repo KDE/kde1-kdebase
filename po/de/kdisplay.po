@@ -1,159 +1,103 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-03-09 00:13+0100\n"
+"POT-Creation-Date: 1998-03-19 22:18+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
-#: backgnd.cpp:239 backgnd.cpp:274
-msgid "Desktop"
-msgstr "Desktop"
-
-#: backgnd.cpp:284
-msgid "Rename..."
-msgstr "Umbenennen..."
-
-#: backgnd.cpp:290
-msgid "Color"
-msgstr "Farbe"
-
-#: backgnd.cpp:309
-msgid "&Flat"
-msgstr "&Einfach"
-
-#: backgnd.cpp:313
-msgid "&Gradient"
-msgstr "Verlaufend"
-
-#: backgnd.cpp:327
-msgid "&Portrait"
-msgstr "&Hochformat"
-
-#: backgnd.cpp:331
-msgid "&Landscape"
-msgstr "&Querformat"
-
-#: backgnd.cpp:342
-msgid "Wallpaper"
-msgstr "Hintergrundgrafik"
-
-#: backgnd.cpp:374
-msgid "Ti&led"
-msgstr "F&liesen"
-
-#: backgnd.cpp:378
-msgid "&Centred"
-msgstr "&Zentriert"
-
-#: backgnd.cpp:382
-msgid "&Scaled"
-msgstr "Ver&größert"
-
-#: backgnd.cpp:388
-msgid "&Browse..."
-msgstr "&Auswählen..."
-
-#: backgnd.cpp:549
-msgid "Default"
-msgstr "Standard"
-
-#: backgnd.cpp:888
-msgid "Desktop Title"
-msgstr "Desktop Name"
-
-#: colorscm.cpp:142 colorscm.cpp:143
+#: colorscm.cpp:145 colorscm.cpp:146
 msgid "Inactive window"
 msgstr "Fenster im Hintergrund"
 
-#: colorscm.cpp:158 colorscm.cpp:159
+#: colorscm.cpp:161 colorscm.cpp:162
 msgid "Active window"
 msgstr "Fenster im Vordergrund"
 
-#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:300
+#: colorscm.cpp:197 colorscm.cpp:198 colorscm.cpp:306
 msgid "Window text"
 msgstr "Fenstertext"
 
-#: colorscm.cpp:209
+#: colorscm.cpp:215
 msgid "Disabled"
 msgstr "Abgeschaltet"
 
-#: colorscm.cpp:216 colorscm.cpp:217
+#: colorscm.cpp:222 colorscm.cpp:223
 msgid "Selected"
 msgstr "Ausgewählt"
 
-#: colorscm.cpp:252 colorscm.cpp:264
+#: colorscm.cpp:258 colorscm.cpp:270
 msgid "Color Scheme"
 msgstr "Farbpalette"
 
-#: colorscm.cpp:286
+#: colorscm.cpp:292
 msgid "Widget color"
 msgstr "Widgetfarbe"
 
-#: colorscm.cpp:291
+#: colorscm.cpp:297
 msgid "Inactive title bar"
 msgstr "Inaktive Titelleiste"
 
-#: colorscm.cpp:292
+#: colorscm.cpp:298
 msgid "Inactive title text"
 msgstr "Inaktiver Titeltext"
 
-#: colorscm.cpp:293
+#: colorscm.cpp:299
 msgid "Active title bar"
 msgstr "Aktive Titelleiste"
 
-#: colorscm.cpp:294
+#: colorscm.cpp:300
 msgid "Active title text"
 msgstr "Aktiver Titeltext"
 
-#: colorscm.cpp:295
+#: colorscm.cpp:301
 msgid "Background"
 msgstr "Hintergrund"
 
-#: colorscm.cpp:296
+#: colorscm.cpp:302
 msgid "Text"
 msgstr "Text"
 
-#: colorscm.cpp:297
+#: colorscm.cpp:303
 msgid "Select background"
 msgstr "Aktiver Hintergrund"
 
-#: colorscm.cpp:298
+#: colorscm.cpp:304
 msgid "Select text"
 msgstr "Aktiver Text"
 
-#: colorscm.cpp:299
+#: colorscm.cpp:305
 msgid "Window background"
 msgstr "Fensterhintergrund"
 
-#: colorscm.cpp:311
+#: colorscm.cpp:317
 msgid "Contrast"
 msgstr "Kontrast"
 
-#: colorscm.cpp:324 scrnsave.cpp:224
+#: colorscm.cpp:330 scrnsave.cpp:224
 msgid "Low"
 msgstr "Niedrig"
 
-#: colorscm.cpp:328 scrnsave.cpp:221
+#: colorscm.cpp:334 scrnsave.cpp:221
 msgid "High"
 msgstr "Hoch"
 
-#: colorscm.cpp:343
+#: colorscm.cpp:349
 msgid "Save scheme"
 msgstr "Palette speichern"
 
-#: colorscm.cpp:374 colorscm.cpp:382
+#: colorscm.cpp:380 colorscm.cpp:388
 msgid "You have chosen a name used by a supplied color scheme"
 msgstr "Der gewählte Name existiert schon"
 
-#: colorscm.cpp:467
+#: colorscm.cpp:452
 msgid "KDE Default"
 msgstr "KDE-Standard"
 
-#: colorscm.cpp:695
+#: colorscm.cpp:714
 msgid "Display Setup"
 msgstr "Farbpaletten"
 
-#: colorscm.cpp:696
+#: colorscm.cpp:715
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"
@@ -278,6 +222,48 @@ msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr ""
 "Benutzung: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
-#: main.cpp:112
+#: main.cpp:116
 msgid "Display settings"
 msgstr "Eigenschaften der Umgebung"
+
+#~ msgid "Desktop"
+#~ msgstr "Desktop"
+
+#~ msgid "Rename..."
+#~ msgstr "Umbenennen..."
+
+#~ msgid "Color"
+#~ msgstr "Farbe"
+
+#~ msgid "&Flat"
+#~ msgstr "&Einfach"
+
+#~ msgid "&Gradient"
+#~ msgstr "Verlaufend"
+
+#~ msgid "&Portrait"
+#~ msgstr "&Hochformat"
+
+#~ msgid "&Landscape"
+#~ msgstr "&Querformat"
+
+#~ msgid "Wallpaper"
+#~ msgstr "Hintergrundgrafik"
+
+#~ msgid "Ti&led"
+#~ msgstr "F&liesen"
+
+#~ msgid "&Centred"
+#~ msgstr "&Zentriert"
+
+#~ msgid "&Scaled"
+#~ msgstr "Ver&größert"
+
+#~ msgid "&Browse..."
+#~ msgstr "&Auswählen..."
+
+#~ msgid "Default"
+#~ msgstr "Standard"
+
+#~ msgid "Desktop Title"
+#~ msgstr "Desktop Name"

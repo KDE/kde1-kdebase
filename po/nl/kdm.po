@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-19 22:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,19 +14,19 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kdmshutdown.cpp:153
+#: kdmshutdown.cpp:159
 msgid "Shutdown or restart?"
 msgstr "Afsluiten of herstarten?"
 
-#: kdmshutdown.cpp:169
+#: kdmshutdown.cpp:175
 msgid "Shutdown"
 msgstr "Afsluiten"
 
-#: kdmshutdown.cpp:183
+#: kdmshutdown.cpp:189
 msgid "Shutdown and restart"
 msgstr "Afsluiten en herstarten"
 
-#: kdmshutdown.cpp:192
+#: kdmshutdown.cpp:198
 msgid "Exit kdm"
 msgstr "KDM afsluiten"
 

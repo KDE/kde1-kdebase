@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-09 00:13+0100\n"
+"POT-Creation-Date: 1998-03-19 22:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,163 +14,99 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:239 backgnd.cpp:274
-msgid "Desktop"
-msgstr ""
-
-#: backgnd.cpp:284
-msgid "Rename..."
-msgstr ""
-
-#: backgnd.cpp:290
-msgid "Color"
-msgstr "Colore"
-
-#: backgnd.cpp:309
-#, fuzzy
-msgid "&Flat"
-msgstr "Tinta unita"
-
-#: backgnd.cpp:313
-#, fuzzy
-msgid "&Gradient"
-msgstr "Sfumatura"
-
-#: backgnd.cpp:327
-#, fuzzy
-msgid "&Portrait"
-msgstr "Verticale"
-
-#: backgnd.cpp:331
-#, fuzzy
-msgid "&Landscape"
-msgstr "Orizzontale"
-
-#: backgnd.cpp:342
-msgid "Wallpaper"
-msgstr "Sfondo"
-
-#: backgnd.cpp:374
-#, fuzzy
-msgid "Ti&led"
-msgstr "Ripetuto"
-
-#: backgnd.cpp:378
-#, fuzzy
-msgid "&Centred"
-msgstr "Centrato"
-
-#: backgnd.cpp:382
-#, fuzzy
-msgid "&Scaled"
-msgstr "In scala"
-
-#: backgnd.cpp:388
-#, fuzzy
-msgid "&Browse..."
-msgstr "Sfoglia..."
-
-#: backgnd.cpp:549
-msgid "Default"
-msgstr ""
-
-#: backgnd.cpp:888
-msgid "Desktop Title"
-msgstr ""
-
-#: colorscm.cpp:142 colorscm.cpp:143
+#: colorscm.cpp:145 colorscm.cpp:146
 msgid "Inactive window"
 msgstr "Finestra Inattiva"
 
-#: colorscm.cpp:158 colorscm.cpp:159
+#: colorscm.cpp:161 colorscm.cpp:162
 msgid "Active window"
 msgstr "Finestra Attiva"
 
-#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:300
+#: colorscm.cpp:197 colorscm.cpp:198 colorscm.cpp:306
 msgid "Window text"
 msgstr "Testo finestra"
 
-#: colorscm.cpp:209
+#: colorscm.cpp:215
 msgid "Disabled"
 msgstr "Disabilitato"
 
-#: colorscm.cpp:216 colorscm.cpp:217
+#: colorscm.cpp:222 colorscm.cpp:223
 msgid "Selected"
 msgstr "Selezionato"
 
-#: colorscm.cpp:252 colorscm.cpp:264
+#: colorscm.cpp:258 colorscm.cpp:270
 msgid "Color Scheme"
 msgstr "Schema colori"
 
-#: colorscm.cpp:286
+#: colorscm.cpp:292
 msgid "Widget color"
 msgstr "Colore Widget"
 
-#: colorscm.cpp:291
+#: colorscm.cpp:297
 msgid "Inactive title bar"
 msgstr "Barra Titolo inattiva"
 
-#: colorscm.cpp:292
+#: colorscm.cpp:298
 msgid "Inactive title text"
 msgstr "Testo Titolo inattivo"
 
-#: colorscm.cpp:293
+#: colorscm.cpp:299
 msgid "Active title bar"
 msgstr "Barra Titolo attiva"
 
-#: colorscm.cpp:294
+#: colorscm.cpp:300
 msgid "Active title text"
 msgstr "Testo Titolo attivo"
 
-#: colorscm.cpp:295
+#: colorscm.cpp:301
 msgid "Background"
 msgstr "Sfondo"
 
-#: colorscm.cpp:296
+#: colorscm.cpp:302
 msgid "Text"
 msgstr "Testo"
 
-#: colorscm.cpp:297
+#: colorscm.cpp:303
 msgid "Select background"
 msgstr "Sfondo scelta"
 
-#: colorscm.cpp:298
+#: colorscm.cpp:304
 msgid "Select text"
 msgstr "Testo Scelta"
 
-#: colorscm.cpp:299
+#: colorscm.cpp:305
 msgid "Window background"
 msgstr "Sfondo finestra"
 
-#: colorscm.cpp:311
+#: colorscm.cpp:317
 msgid "Contrast"
 msgstr "Contrasto"
 
-#: colorscm.cpp:324 scrnsave.cpp:224
+#: colorscm.cpp:330 scrnsave.cpp:224
 msgid "Low"
 msgstr "Min"
 
-#: colorscm.cpp:328 scrnsave.cpp:221
+#: colorscm.cpp:334 scrnsave.cpp:221
 msgid "High"
 msgstr "Max"
 
-#: colorscm.cpp:343
+#: colorscm.cpp:349
 msgid "Save scheme"
 msgstr "Salva schema"
 
-#: colorscm.cpp:374 colorscm.cpp:382
+#: colorscm.cpp:380 colorscm.cpp:388
 msgid "You have chosen a name used by a supplied color scheme"
 msgstr "Hai scelto il nome di uno schema di colori predefinito"
 
-#: colorscm.cpp:467
+#: colorscm.cpp:452
 msgid "KDE Default"
 msgstr ""
 
-#: colorscm.cpp:695
+#: colorscm.cpp:714
 msgid "Display Setup"
 msgstr "Configurazione Schermo"
 
-#: colorscm.cpp:696
+#: colorscm.cpp:715
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"
@@ -297,10 +233,48 @@ msgstr ""
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr ""
 
-#: main.cpp:112
+#: main.cpp:116
 #, fuzzy
 msgid "Display settings"
 msgstr "Configurazione Schermo"
+
+#~ msgid "Color"
+#~ msgstr "Colore"
+
+#, fuzzy
+#~ msgid "&Flat"
+#~ msgstr "Tinta unita"
+
+#, fuzzy
+#~ msgid "&Gradient"
+#~ msgstr "Sfumatura"
+
+#, fuzzy
+#~ msgid "&Portrait"
+#~ msgstr "Verticale"
+
+#, fuzzy
+#~ msgid "&Landscape"
+#~ msgstr "Orizzontale"
+
+#~ msgid "Wallpaper"
+#~ msgstr "Sfondo"
+
+#, fuzzy
+#~ msgid "Ti&led"
+#~ msgstr "Ripetuto"
+
+#, fuzzy
+#~ msgid "&Centred"
+#~ msgstr "Centrato"
+
+#, fuzzy
+#~ msgid "&Scaled"
+#~ msgstr "In scala"
+
+#, fuzzy
+#~ msgid "&Browse..."
+#~ msgstr "Sfoglia..."
 
 #~ msgid "Italic"
 #~ msgstr "Italici"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-19 22:16+0100\n"
 "PO-Revision-Date: 1998-01-27 15:40+CET-1\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,91 +26,91 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: fejl under initialiseringen; afbryder\n"
 
-#: main.C:370
+#: main.C:448
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:377
+#: main.C:455
 msgid "Usage: "
 msgstr "Brug: "
 
-#: main.C:388
+#: main.C:466
 msgid "&Maximize"
 msgstr "&Maksimer"
 
-#: main.C:389
+#: main.C:467
 msgid "&Restore"
 msgstr "&Gendan"
 
-#: main.C:390
+#: main.C:468
 msgid "&Iconify"
 msgstr "&Minimer"
 
-#: main.C:391
+#: main.C:469
 msgid "&DeIconify"
 msgstr "&Gendan"
 
-#: main.C:392
+#: main.C:470
 msgid "&Sticky"
 msgstr "&Fastsat"
 
-#: main.C:393
+#: main.C:471
 msgid "&UnSticky"
 msgstr "&Ikke fastsat"
 
-#: main.C:394
+#: main.C:472
 msgid "Mo&ve"
 msgstr "&Flyt"
 
-#: main.C:395
+#: main.C:473
 msgid "Resi&ze"
 msgstr "&Ændr størrelse"
 
-#: main.C:397
+#: main.C:475
 msgid "&To desktop"
 msgstr "&Til Arbejdsplads"
 
-#: main.C:399
+#: main.C:477
 msgid "&Onto current desktop"
 msgstr "Til &aktuel arbejdsplads"
 
-#: main.C:449
+#: main.C:530
 msgid "One"
 msgstr "En"
 
-#: main.C:452
+#: main.C:533
 msgid "Two"
 msgstr "To"
 
-#: main.C:455
+#: main.C:536
 msgid "Three"
 msgstr "Tre"
 
-#: main.C:458
+#: main.C:539
 msgid "Four"
 msgstr "Fire"
 
-#: main.C:461
+#: main.C:542
 msgid "Five"
 msgstr "Fem"
 
-#: main.C:464
+#: main.C:545
 msgid "Six"
 msgstr "Seks"
 
-#: main.C:467
+#: main.C:548
 msgid "Seven"
 msgstr "Syv"
 
-#: main.C:470
+#: main.C:551
 msgid "Eight"
 msgstr "Otte"
 
-#: main.C:744
+#: main.C:866
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Nogle pixmaps er ubrugelige: ShapeMode ikke iværksat\n"
 
-#: main.C:1011
+#: main.C:1175
 msgid "*** No Tasks ***"
 msgstr ""
 

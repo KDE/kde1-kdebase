@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-09 00:13+0100\n"
+"POT-Creation-Date: 1998-03-19 22:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,164 +14,99 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:239 backgnd.cpp:274
-msgid "Desktop"
-msgstr ""
-
-#: backgnd.cpp:284
-msgid "Rename..."
-msgstr ""
-
-#: backgnd.cpp:290
-msgid "Color"
-msgstr "Χρώμα"
-
-#: backgnd.cpp:309
-#, fuzzy
-msgid "&Flat"
-msgstr "Επίπεδο"
-
-#: backgnd.cpp:313
-#, fuzzy
-msgid "&Gradient"
-msgstr "Βαθμοτό"
-
-#: backgnd.cpp:327
-#, fuzzy
-msgid "&Portrait"
-msgstr "Όρθιο"
-
-#: backgnd.cpp:331
-#, fuzzy
-msgid "&Landscape"
-msgstr "Πλαγιαστό"
-
-#: backgnd.cpp:342
-msgid "Wallpaper"
-msgstr "Ταπετσαρία"
-
-#: backgnd.cpp:374
-#, fuzzy
-msgid "Ti&led"
-msgstr "Πλακάκια"
-
-#: backgnd.cpp:378
-#, fuzzy
-msgid "&Centred"
-msgstr "Κεντραρισμένο"
-
-#: backgnd.cpp:382
-#, fuzzy
-msgid "&Scaled"
-msgstr "Υπό κλίμακα"
-
-#: backgnd.cpp:388
-#, fuzzy
-msgid "&Browse..."
-msgstr "Κοίταξε"
-
-#: backgnd.cpp:549
-#, fuzzy
-msgid "Default"
-msgstr "Συνιθισμένο KDE"
-
-#: backgnd.cpp:888
-msgid "Desktop Title"
-msgstr ""
-
-#: colorscm.cpp:142 colorscm.cpp:143
+#: colorscm.cpp:145 colorscm.cpp:146
 msgid "Inactive window"
 msgstr "Ανενεργό παράθυρο"
 
-#: colorscm.cpp:158 colorscm.cpp:159
+#: colorscm.cpp:161 colorscm.cpp:162
 msgid "Active window"
 msgstr "Ενεργό παράθυρο"
 
-#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:300
+#: colorscm.cpp:197 colorscm.cpp:198 colorscm.cpp:306
 msgid "Window text"
 msgstr "Κείμενο παραθύρου"
 
-#: colorscm.cpp:209
+#: colorscm.cpp:215
 msgid "Disabled"
 msgstr "Απενενργοποιημένο"
 
-#: colorscm.cpp:216 colorscm.cpp:217
+#: colorscm.cpp:222 colorscm.cpp:223
 msgid "Selected"
 msgstr "Επιλεγμένο"
 
-#: colorscm.cpp:252 colorscm.cpp:264
+#: colorscm.cpp:258 colorscm.cpp:270
 msgid "Color Scheme"
 msgstr "Ομάδα χρωμάτων"
 
-#: colorscm.cpp:286
+#: colorscm.cpp:292
 msgid "Widget color"
 msgstr "Χρώμα παραθυριδίου"
 
-#: colorscm.cpp:291
+#: colorscm.cpp:297
 msgid "Inactive title bar"
 msgstr "Ανενεργό πεδίο τίτλου"
 
-#: colorscm.cpp:292
+#: colorscm.cpp:298
 msgid "Inactive title text"
 msgstr "Ανενεργό πεδίο τίτλου"
 
-#: colorscm.cpp:293
+#: colorscm.cpp:299
 msgid "Active title bar"
 msgstr "Ενεργό πεδίο τίτλου"
 
-#: colorscm.cpp:294
+#: colorscm.cpp:300
 msgid "Active title text"
 msgstr "Κείμενο ενεργού τίτλου"
 
-#: colorscm.cpp:295
+#: colorscm.cpp:301
 msgid "Background"
 msgstr "Φόντο"
 
-#: colorscm.cpp:296
+#: colorscm.cpp:302
 msgid "Text"
 msgstr "Κείμενο"
 
-#: colorscm.cpp:297
+#: colorscm.cpp:303
 msgid "Select background"
 msgstr "Επιλογή φόντου"
 
-#: colorscm.cpp:298
+#: colorscm.cpp:304
 msgid "Select text"
 msgstr "Επιλογή κειμένου"
 
-#: colorscm.cpp:299
+#: colorscm.cpp:305
 msgid "Window background"
 msgstr "Φόντο παράθυρου"
 
-#: colorscm.cpp:311
+#: colorscm.cpp:317
 msgid "Contrast"
 msgstr "Αντίθεση"
 
-#: colorscm.cpp:324 scrnsave.cpp:224
+#: colorscm.cpp:330 scrnsave.cpp:224
 msgid "Low"
 msgstr "Χαμηλή"
 
-#: colorscm.cpp:328 scrnsave.cpp:221
+#: colorscm.cpp:334 scrnsave.cpp:221
 msgid "High"
 msgstr "Υψηλή"
 
-#: colorscm.cpp:343
+#: colorscm.cpp:349
 msgid "Save scheme"
 msgstr "Σώσιμο ομάδας"
 
-#: colorscm.cpp:374 colorscm.cpp:382
+#: colorscm.cpp:380 colorscm.cpp:388
 msgid "You have chosen a name used by a supplied color scheme"
 msgstr "Επιλέξατε όνομα που χρησιμοποιήται από άλλη ομάδα χρωμάτων"
 
-#: colorscm.cpp:467
+#: colorscm.cpp:452
 msgid "KDE Default"
 msgstr "Συνιθισμένο KDE"
 
-#: colorscm.cpp:695
+#: colorscm.cpp:714
 msgid "Display Setup"
 msgstr "Ρύθμιση οθόνης"
 
-#: colorscm.cpp:696
+#: colorscm.cpp:715
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"
@@ -299,10 +234,52 @@ msgstr ""
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr ""
 
-#: main.cpp:112
+#: main.cpp:116
 #, fuzzy
 msgid "Display settings"
 msgstr "Ρύθμιση οθόνης"
+
+#~ msgid "Color"
+#~ msgstr "Χρώμα"
+
+#, fuzzy
+#~ msgid "&Flat"
+#~ msgstr "Επίπεδο"
+
+#, fuzzy
+#~ msgid "&Gradient"
+#~ msgstr "Βαθμοτό"
+
+#, fuzzy
+#~ msgid "&Portrait"
+#~ msgstr "Όρθιο"
+
+#, fuzzy
+#~ msgid "&Landscape"
+#~ msgstr "Πλαγιαστό"
+
+#~ msgid "Wallpaper"
+#~ msgstr "Ταπετσαρία"
+
+#, fuzzy
+#~ msgid "Ti&led"
+#~ msgstr "Πλακάκια"
+
+#, fuzzy
+#~ msgid "&Centred"
+#~ msgstr "Κεντραρισμένο"
+
+#, fuzzy
+#~ msgid "&Scaled"
+#~ msgstr "Υπό κλίμακα"
+
+#, fuzzy
+#~ msgid "&Browse..."
+#~ msgstr "Κοίταξε"
+
+#, fuzzy
+#~ msgid "Default"
+#~ msgstr "Συνιθισμένο KDE"
 
 #~ msgid "Italic"
 #~ msgstr "Πλαγιαστά"

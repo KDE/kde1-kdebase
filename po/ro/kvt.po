@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-05 15:53+0100\n"
+"POT-Creation-Date: 1998-03-19 22:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ionescu Paul <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -14,119 +14,119 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.C:237
+#: main.C:249
 msgid "choose type of color-mode"
 msgstr "alege tipul de culoare"
 
-#: main.C:240
+#: main.C:252
 msgid "Add characters to word class"
 msgstr "Adaugã caractere la clasa de cuvinte"
 
-#: main.C:243
+#: main.C:255
 msgid "The backspace key will send a"
 msgstr "Tasta 'backspace' va trimite "
 
-#: main.C:384
+#: main.C:399
 msgid "&New Terminal"
 msgstr "Terminal &Nou"
 
-#: main.C:391 main.C:791
+#: main.C:406 main.C:809
 msgid "&Hide"
 msgstr "&Ascunde"
 
-#: main.C:392
+#: main.C:407
 msgid "&Left"
 msgstr "&Stânga"
 
-#: main.C:393
+#: main.C:408
 msgid "&Right"
 msgstr "&Dreapta"
 
-#: main.C:398
+#: main.C:413
 msgid "&Normal"
 msgstr "&Normal"
 
-#: main.C:399
+#: main.C:414
 msgid "&Tiny"
 msgstr "&Puchineþe"
 
-#: main.C:400
+#: main.C:415
 msgid "&Small"
 msgstr "&Mic"
 
-#: main.C:401
+#: main.C:416
 msgid "&Medium"
 msgstr "&Normal"
 
-#: main.C:402
+#: main.C:417
 msgid "&Large"
 msgstr "M&are"
 
-#: main.C:403
+#: main.C:418
 msgid "&Huge"
 msgstr "&Imens (cicã)"
 
-#: main.C:415
+#: main.C:430
 msgid "&black/white"
 msgstr "&negru/alb"
 
-#: main.C:416
+#: main.C:431
 msgid "&white/black"
 msgstr "&alb/negru"
 
-#: main.C:417
+#: main.C:432
 msgid "&green/black"
 msgstr "&verde/negru"
 
-#: main.C:418
+#: main.C:433
 msgid "black/light&yellow"
 msgstr "negru/&galben deschis"
 
-#: main.C:419
+#: main.C:434
 msgid "Linu&x Console"
 msgstr "Consolã de &Linux"
 
-#: main.C:428
+#: main.C:443
 msgid "&Custom Colors"
 msgstr "&Culori utilizator"
 
-#: main.C:435 main.C:737
+#: main.C:450 main.C:755
 msgid "Hide &Menubar"
 msgstr "Ascunde bara de meniu"
 
-#: main.C:437 main.C:601 main.C:729
+#: main.C:452 main.C:619 main.C:747
 msgid "Show &Menubar"
 msgstr "Afiºeazã bara de meniu"
 
-#: main.C:438 main.C:747
+#: main.C:453 main.C:765
 msgid "Secure &keyboard"
 msgstr "Securizeazã tastatura"
 
-#: main.C:440
+#: main.C:455
 msgid "Scroll&bar"
 msgstr "Barã de defilare"
 
-#: main.C:441
+#: main.C:456
 msgid "&Font size"
 msgstr "Mãrimea fontului"
 
-#: main.C:442
+#: main.C:457
 msgid "&Color"
 msgstr "&Culoare"
 
-#: main.C:443
+#: main.C:458
 msgid "&Size"
 msgstr "&Mãrime"
 
-#: main.C:444
+#: main.C:459
 msgid "Terminal..."
 msgstr "Terminal..."
 
-#: main.C:446
+#: main.C:461
 msgid "Save &Options"
 msgstr "Salveazã &Opþiunile"
 
-#: main.C:455
+#: main.C:470
 msgid ""
 "\n"
 "\n"
@@ -144,23 +144,23 @@ msgstr ""
 "Emulator de terminal pentru Mediul de Lucru KDE\n"
 "bazat pe rxvt-2.08-ul lui Robert Nation"
 
-#: main.C:610 main.C:784
+#: main.C:628 main.C:802
 msgid "&Show"
 msgstr "&Aratã"
 
-#: main.C:743
+#: main.C:761
 msgid "Unsecure &keyboard"
 msgstr "Desecurizeazã tastatura"
 
-#: main.C:754
+#: main.C:772
 msgid "Terminal Options"
 msgstr "Opþiunile Terminalului"
 
-#: main.C:896
+#: main.C:914
 msgid "Hint"
 msgstr "Sugestie"
 
-#: main.C:897
+#: main.C:915
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -168,7 +168,8 @@ msgstr ""
 "Noi setãri de culoare vor fi afiºate\n"
 "când tastatura nu este securizatã."
 
-#: main.C:1213
+#: main.C:1148
+#, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -196,7 +197,7 @@ msgid ""
 "-8\t\t\trun in 8 bit mode\n"
 "-ls\t\t\tinitiate kvt's shell as a login shell\n"
 "-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
-"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+"-meta <arg>\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
 "-sl <number>\t\tsave number lines in scroll-back buffer\n"
 "-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
 "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
@@ -235,7 +236,7 @@ msgstr ""
 "-pagedown <keysym>\tfoloseºte combinaþia de taste alt-keysym pentru a defila "
 "în jos prin zona tampon\n"
 
-#: main.C:1244
+#: main.C:1179
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

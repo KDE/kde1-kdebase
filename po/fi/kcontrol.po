@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCONTROL\n"
-"POT-Creation-Date: 1998-03-02 00:16+0100\n"
+"POT-Creation-Date: 1998-03-19 22:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,12 +43,3 @@ msgstr ""
 "\n"
 "Kiitokset:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
-
-#~ msgid "&About KControl..."
-#~ msgstr "&Tietoja ohjauskeskuksesta..."
-
-#~ msgid "&Using KControl"
-#~ msgstr "&Ohjauskeskuksen käytöstä"
-
-#~ msgid "About KControl"
-#~ msgstr "Tietoja ohjauskeskuksesta"

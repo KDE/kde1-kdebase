@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-19 22:16+0100\n"
 "PO-Revision-Date: 1998-02-26 20:46+MET\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -23,92 +23,92 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: hiba inicializálás közben; a futtatás megszakadt\n"
 
-#: main.C:370
+#: main.C:448
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:377
+#: main.C:455
 msgid "Usage: "
 msgstr "Használat: "
 
-#: main.C:388
+#: main.C:466
 msgid "&Maximize"
 msgstr "Ma&ximalizál"
 
-#: main.C:389
+#: main.C:467
 msgid "&Restore"
 msgstr "&Visszaállít"
 
-#: main.C:390
+#: main.C:468
 msgid "&Iconify"
 msgstr "&Ikonizál"
 
-#: main.C:391
+#: main.C:469
 msgid "&DeIconify"
 msgstr "&Nem Ikonizál"
 
-#: main.C:392
+#: main.C:470
 msgid "&Sticky"
 msgstr "&Rajzszög be"
 
-#: main.C:393
+#: main.C:471
 #, fuzzy
 msgid "&UnSticky"
 msgstr "&Rajzszög ki"
 
-#: main.C:394
+#: main.C:472
 msgid "Mo&ve"
 msgstr "&Mozgat"
 
-#: main.C:395
+#: main.C:473
 msgid "Resi&ze"
 msgstr "Mé&retez"
 
-#: main.C:397
+#: main.C:475
 msgid "&To desktop"
 msgstr "&Másik asztalra"
 
-#: main.C:399
+#: main.C:477
 msgid "&Onto current desktop"
 msgstr "A &jelenlegi asztalra"
 
-#: main.C:449
+#: main.C:530
 msgid "One"
 msgstr "Egyes"
 
-#: main.C:452
+#: main.C:533
 msgid "Two"
 msgstr "Kettes"
 
-#: main.C:455
+#: main.C:536
 msgid "Three"
 msgstr "Hármas"
 
-#: main.C:458
+#: main.C:539
 msgid "Four"
 msgstr "Négyes"
 
-#: main.C:461
+#: main.C:542
 msgid "Five"
 msgstr "Ötös"
 
-#: main.C:464
+#: main.C:545
 msgid "Six"
 msgstr "Hatos"
 
-#: main.C:467
+#: main.C:548
 msgid "Seven"
 msgstr "Hetes"
 
-#: main.C:470
+#: main.C:551
 msgid "Eight"
 msgstr "Nyolcas"
 
-#: main.C:744
+#: main.C:866
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr ""
 
-#: main.C:1011
+#: main.C:1175
 msgid "*** No Tasks ***"
 msgstr "*** Nincsenek programok ***"
 

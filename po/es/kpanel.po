@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-05 15:54+0100\n"
+"POT-Creation-Date: 1998-03-19 22:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,168 +14,131 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kpanel.C:211
+#: kpanel.C:213
 msgid "Move"
 msgstr "Mover"
 
-#: kpanel.C:214
+#: kpanel.C:216
 msgid "Properties"
 msgstr "Propiedades"
 
-#: kpanel.C:246
+#: kpanel.C:252
 msgid "Go!"
 msgstr ""
 
-#: kpanel.C:248 tools.C:799
+#: kpanel.C:254 tools.C:797
 msgid "Where do you want to go tomorrow?"
 msgstr ""
 
-#: kpanel.C:321
+#: kpanel.C:327
 msgid "No info available"
 msgstr "No hay información"
 
-#: kpanel.C:360 props.C:217 props.C:218
+#: kpanel.C:366 props.C:151 props.C:152
 msgid "Logout"
 msgstr "Terminar"
 
-#: kpanel.C:368 props.C:216
+#: kpanel.C:374 props.C:150
 #, fuzzy
 msgid "Lock screen"
 msgstr "Bloquear pantalla"
 
-#: kpanel.C:377
+#: kpanel.C:383
 msgid "Hide the panel"
 msgstr ""
 
-#: kpanel.C:387
+#: kpanel.C:393
 msgid "Show the panel"
 msgstr ""
 
-#: kpanel.C:1078 tools.C:615
+#: kpanel.C:1092 tools.C:613
 msgid "No comment available"
 msgstr "No hay comentarios"
 
-#: kpanel.C:1087 tools.C:808
+#: kpanel.C:1101 tools.C:806
 msgid "Windowlist"
 msgstr ""
 
-#: props.C:200
+#: props.C:134
 msgid "Add application"
 msgstr "Añadir aplicación"
 
-#: props.C:202
+#: props.C:136
 msgid "Add an application or a submenu onto the panel"
 msgstr ""
 
-#: props.C:203
+#: props.C:137
 msgid "Add windowlist"
 msgstr ""
 
-#: props.C:205
+#: props.C:139
 msgid "Add a windowlist menu onto the panel"
 msgstr ""
 
-#: events.C:701 props.C:206
+#: events.C:705 props.C:140
 msgid "Configure"
 msgstr "Configurar"
 
-#: props.C:208
+#: props.C:142
 msgid "Configure panel"
 msgstr "Configurar panel"
 
-#: events.C:703 props.C:209
+#: events.C:707 props.C:143
 msgid "Restart"
 msgstr "Reiniciar"
 
-#: props.C:211
+#: props.C:145
 msgid "Restart panel"
 msgstr "Reiniciar panel"
 
-#: props.C:212 props.C:467
+#: props.C:146
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:214
+#: props.C:148
 msgid "Lock Screen"
 msgstr "Bloquear pantalla"
 
-#: props.C:398
-msgid "Location"
-msgstr "Localización"
+#~ msgid "Location"
+#~ msgstr "Localización"
 
-#: props.C:411
-msgid "Taskbar"
-msgstr "Barra de tareas"
+#~ msgid "Taskbar"
+#~ msgstr "Barra de tareas"
 
-#: props.C:412
-msgid "Hidden"
-msgstr "Oculto"
+#~ msgid "Hidden"
+#~ msgstr "Oculto"
 
-#: props.C:421
-msgid "Top/Left"
-msgstr "Arriba/Izquierda"
+#~ msgid "Top/Left"
+#~ msgstr "Arriba/Izquierda"
 
-#: props.C:451
-msgid "Tiny Style"
-msgstr "Aspecto diminuto"
+#~ msgid "Tiny Style"
+#~ msgstr "Aspecto diminuto"
 
-#: props.C:452
 #, fuzzy
-msgid "Normal Style"
-msgstr "Aspecto pequeño"
+#~ msgid "Normal Style"
+#~ msgstr "Aspecto pequeño"
 
-#: props.C:453
-msgid "Large Style"
-msgstr "Aspecto grande"
+#~ msgid "Large Style"
+#~ msgstr "Aspecto grande"
 
-#: props.C:472
-msgid "Menu Tooltips"
-msgstr "Ayuda de menú"
+#~ msgid "Menu Tooltips"
+#~ msgstr "Ayuda de menú"
 
-#: props.C:518
-msgid "Others"
-msgstr ""
-
-#: props.C:520
 #, fuzzy
-msgid "Personal First"
-msgstr "Menú personal"
+#~ msgid "Personal First"
+#~ msgstr "Menú personal"
 
-#: props.C:523
-msgid "Auto Hide Panel"
-msgstr ""
+#~ msgid "Visible"
+#~ msgstr "Visible"
 
-#: props.C:526
-msgid "Auto Hide Taskbar"
-msgstr ""
+#~ msgid "Width"
+#~ msgstr "Ancho"
 
-#: props.C:544
-msgid "Clock"
-msgstr ""
+#~ msgid "Desktops"
+#~ msgstr "Escritorios"
 
-#: props.C:546
-msgid "24h"
-msgstr ""
-
-#: props.C:550
-msgid "12h AM/PM"
-msgstr ""
-
-#: props.C:611
-msgid "Visible"
-msgstr "Visible"
-
-#: props.C:618
-msgid "Width"
-msgstr "Ancho"
-
-#: props.C:623
-msgid "Desktops"
-msgstr "Escritorios"
-
-#: props.C:629
-msgid "KPanel Configuration"
-msgstr "Configuración de KPanel"
+#~ msgid "KPanel Configuration"
+#~ msgstr "Configuración de KPanel"
 
 #~ msgid "Add special"
 #~ msgstr "Añadir especial"

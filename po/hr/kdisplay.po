@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-09 00:13+0100\n"
+"POT-Creation-Date: 1998-03-19 22:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,170 +14,105 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:239 backgnd.cpp:274
-msgid "Desktop"
-msgstr ""
-
-#: backgnd.cpp:284
-msgid "Rename..."
-msgstr ""
-
-#: backgnd.cpp:290
-msgid "Color"
-msgstr "Boja"
-
-#: backgnd.cpp:309
-#, fuzzy
-msgid "&Flat"
-msgstr "Jednakomjerno"
-
-#: backgnd.cpp:313
-#, fuzzy
-msgid "&Gradient"
-msgstr "S prijelazom"
-
-#: backgnd.cpp:327
-#, fuzzy
-msgid "&Portrait"
-msgstr "Uspravno"
-
-#: backgnd.cpp:331
-#, fuzzy
-msgid "&Landscape"
-msgstr "Polo¾eno"
-
-#: backgnd.cpp:342
-msgid "Wallpaper"
-msgstr "Pozadinska slika"
-
-#: backgnd.cpp:374
-#, fuzzy
-msgid "Ti&led"
-msgstr "Ponavljana"
-
-#: backgnd.cpp:378
-#, fuzzy
-msgid "&Centred"
-msgstr "Centrirana"
-
-#: backgnd.cpp:382
-#, fuzzy
-msgid "&Scaled"
-msgstr "Razvuèena"
-
-#: backgnd.cpp:388
-#, fuzzy
-msgid "&Browse..."
-msgstr "Potra¾i..."
-
-#: backgnd.cpp:549
-#, fuzzy
-msgid "Default"
-msgstr "KDE Uobièajeno"
-
-#: backgnd.cpp:888
-msgid "Desktop Title"
-msgstr ""
-
-#: colorscm.cpp:142 colorscm.cpp:143
+#: colorscm.cpp:145 colorscm.cpp:146
 msgid "Inactive window"
 msgstr "Neaktivan prozor"
 
-#: colorscm.cpp:158 colorscm.cpp:159
+#: colorscm.cpp:161 colorscm.cpp:162
 msgid "Active window"
 msgstr "Aktivan prozor"
 
-#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:300
+#: colorscm.cpp:197 colorscm.cpp:198 colorscm.cpp:306
 msgid "Window text"
 msgstr "Tekst u prozoru"
 
-#: colorscm.cpp:209
+#: colorscm.cpp:215
 msgid "Disabled"
-msgstr "Neva¾eæi"
+msgstr "Onemoguæen"
 
-#: colorscm.cpp:216 colorscm.cpp:217
+#: colorscm.cpp:222 colorscm.cpp:223
 msgid "Selected"
 msgstr "Izabran"
 
-#: colorscm.cpp:252 colorscm.cpp:264
+#: colorscm.cpp:258 colorscm.cpp:270
 msgid "Color Scheme"
 msgstr "Raspored boja"
 
-#: colorscm.cpp:286
+#: colorscm.cpp:292
 msgid "Widget color"
 msgstr "Boja widgeta"
 
-#: colorscm.cpp:291
+#: colorscm.cpp:297
 msgid "Inactive title bar"
 msgstr "Naslov neaktivnog prozora"
 
-#: colorscm.cpp:292
+#: colorscm.cpp:298
 msgid "Inactive title text"
 msgstr "Tekst neaktivnog prozora"
 
-#: colorscm.cpp:293
+#: colorscm.cpp:299
 msgid "Active title bar"
 msgstr "Naslov aktivnog prozora"
 
-#: colorscm.cpp:294
+#: colorscm.cpp:300
 msgid "Active title text"
 msgstr "Tekst aktivnog prozora"
 
-#: colorscm.cpp:295
+#: colorscm.cpp:301
 msgid "Background"
 msgstr "Pozadina"
 
-#: colorscm.cpp:296
+#: colorscm.cpp:302
 msgid "Text"
 msgstr "Tekst"
 
-#: colorscm.cpp:297
+#: colorscm.cpp:303
 msgid "Select background"
 msgstr "Boja izabranog"
 
-#: colorscm.cpp:298
+#: colorscm.cpp:304
 msgid "Select text"
-msgstr "Boja teksta izabranog"
+msgstr "Boja oznacenog teksta"
 
-#: colorscm.cpp:299
+#: colorscm.cpp:305
 msgid "Window background"
 msgstr "Boja pozadine prozora"
 
-#: colorscm.cpp:311
+#: colorscm.cpp:317
 msgid "Contrast"
 msgstr "Kontrast"
 
-#: colorscm.cpp:324 scrnsave.cpp:224
+#: colorscm.cpp:330 scrnsave.cpp:224
 msgid "Low"
 msgstr "Nizak"
 
-#: colorscm.cpp:328 scrnsave.cpp:221
+#: colorscm.cpp:334 scrnsave.cpp:221
 msgid "High"
 msgstr "Visok"
 
-#: colorscm.cpp:343
+#: colorscm.cpp:349
 msgid "Save scheme"
-msgstr "Snimi raspored"
+msgstr "Spremi raspored"
 
-#: colorscm.cpp:374 colorscm.cpp:382
+#: colorscm.cpp:380 colorscm.cpp:388
 msgid "You have chosen a name used by a supplied color scheme"
 msgstr "Birali ste ime koje se veæ koristi"
 
-#: colorscm.cpp:467
+#: colorscm.cpp:452
 msgid "KDE Default"
-msgstr "KDE Uobièajeno"
+msgstr "KDE Podrazumjevano"
 
-#: colorscm.cpp:695
+#: colorscm.cpp:714
 msgid "Display Setup"
 msgstr "Pode¹avanje prikaza"
 
-#: colorscm.cpp:696
+#: colorscm.cpp:715
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"
 msgstr ""
 "Nisam na¹ao rasporede boja.\n"
-"®elite li sad instalirati uobièajene rasporede?"
+"®elite li sad instalirati podrazumjevane rasporede?"
 
 #: kwmcom.cpp:78 kwmcom.cpp:105
 msgid "kwmcom: communication with kwm failed\n"
@@ -193,7 +128,7 @@ msgstr "Ignoriraj"
 
 #: scrnsave.cpp:49
 msgid "Lock"
-msgstr "Zakljuèan"
+msgstr "Zakljuèaj"
 
 #: scrnsave.cpp:107 scrnsave.cpp:163
 msgid "Screen Saver"
@@ -209,7 +144,7 @@ msgstr "Isku¹aj"
 
 #: scrnsave.cpp:196
 msgid "Settings"
-msgstr "Pode¹enja"
+msgstr "Odrednice"
 
 #: scrnsave.cpp:199
 msgid "Wait:"
@@ -221,7 +156,7 @@ msgstr "min"
 
 #: scrnsave.cpp:213
 msgid "Requires Password"
-msgstr "Zahtjeva lozinku"
+msgstr "Tra¾i lozinku"
 
 #: scrnsave.cpp:218
 msgid "Priority:"
@@ -229,7 +164,7 @@ msgstr "Prioritet:"
 
 #: general.cpp:61
 msgid "General"
-msgstr "Uobièajen"
+msgstr "Opæenito"
 
 #: general.cpp:65
 msgid "Widget style"
@@ -249,7 +184,7 @@ msgstr "Fontovi"
 
 #: general.cpp:85
 msgid "General font"
-msgstr "Uobièajeni font"
+msgstr "Opæeniti font"
 
 #: general.cpp:110
 msgid "Sample"
@@ -270,7 +205,7 @@ msgstr "Veliki"
 #: general.cpp:173
 #, fuzzy
 msgid "default"
-msgstr "KDE Uobièajeno"
+msgstr "KDE Podrazumjevano"
 
 #: general.cpp:176
 msgid "any"
@@ -299,7 +234,7 @@ msgstr ""
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr ""
 
-#: main.cpp:112
+#: main.cpp:116
 #, fuzzy
 msgid "Display settings"
 msgstr "Pode¹avanje prikaza"
@@ -311,17 +246,44 @@ msgstr "Pode¹avanje prikaza"
 #~ "Usage: %s -init|-setup\n"
 #~ "\n"
 #~ msgstr ""
-#~ "Upotreba: %s -init|-setup\n"
+#~ "Uporaba: %s -init|-setup\n"
 #~ "\n"
 
 #~ msgid "  -init               apply current settings to the display\n"
-#~ msgstr " -init               pridru¾i trenutne  postavke prikazu\n"
+#~ msgstr " -init               pridru¾i trenutne odrednice prikazu\n"
 
 #~ msgid "  -setup              setup the display\n"
 #~ msgstr "  -setup              podesi prikaz\n"
+
+#~ msgid "Flat"
+#~ msgstr "Jednakomjerno"
+
+#~ msgid "Gradient"
+#~ msgstr "S prijelazom"
+
+#~ msgid "Portrait"
+#~ msgstr "Uspravno"
+
+#~ msgid "Landscape"
+#~ msgstr "Polo¾eno"
+
+#~ msgid "Wallpaper"
+#~ msgstr "Pozadinska slika"
+
+#~ msgid "Tiled"
+#~ msgstr "Poploèano"
+
+#~ msgid "Centred"
+#~ msgstr "Centrirana"
+
+#~ msgid "Scaled"
+#~ msgstr "Razvuèena"
+
+#~ msgid "Browse..."
+#~ msgstr "Potra¾i..."
 
 #~ msgid "Remove"
 #~ msgstr "Obri¹i"
 
 #~ msgid "Italic"
-#~ msgstr "Nako¹en"
+#~ msgstr "Kurziv"

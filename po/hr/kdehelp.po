@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-19 22:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr "Otvori URL"
 
 #: helpwin.cpp:453 info.cpp:274
 msgid "Cannot open: "
-msgstr "Ne mogu otvoriti:"
+msgstr "Ne mogu otvoriti: "
 
 #: helpwin.cpp:454 helpwin.cpp:463
 msgid "Oops!"
@@ -32,7 +32,7 @@ msgstr "Ups!"
 
 #: helpwin.cpp:462
 msgid "Unknown format: "
-msgstr "Nepoznat format:"
+msgstr "Nepoznat format: "
 
 #: helpwin.cpp:831
 msgid "Could not start or find KFM"
@@ -66,11 +66,11 @@ msgstr "Ne mogu otvoriti info datoteku: %s"
 
 #: error.cpp:23
 msgid "Fatal Error: "
-msgstr "Nepovratna gre¹ka:"
+msgstr "Nepovratna gre¹ka: "
 
 #: error.cpp:28
 msgid "Warning: "
-msgstr "Upozorenje:"
+msgstr "Upozorenje: "
 
 #: options.cpp:36
 msgid "Font Size"
@@ -152,7 +152,7 @@ msgstr "Podprogrami"
 
 #: man.cpp:461
 msgid "Devices"
-msgstr "Device-i"
+msgstr "Ureðaji"
 
 #: man.cpp:463
 msgid "File Formats"
@@ -180,7 +180,7 @@ msgstr "Online upute - sekcija"
 
 #: man.cpp:835
 msgid "\"man\" system call failed"
-msgstr "\"man\" sistemski poziv fulao"
+msgstr "\"man\" sistemski poziv nije uspio"
 
 #: man.cpp:853
 msgid "Opening temporary file failed"
@@ -237,11 +237,11 @@ msgstr "&Prethodni"
 
 #: mainwidget.cpp:159
 msgid "&Next"
-msgstr "Sli&jedeæi"
+msgstr "Slj&edeæi"
 
 #: mainwidget.cpp:171
 msgid "&General Preferences..."
-msgstr "Osnovno pod&e¹avanje..."
+msgstr "Osnovne odredni&ce..."
 
 #: mainwidget.cpp:174
 msgid "Show &Toolbar"
@@ -257,7 +257,7 @@ msgstr "Poka¾i S&tatus"
 
 #: mainwidget.cpp:180
 msgid "&Save Options"
-msgstr "&Snimi opcije"
+msgstr "&Spremi opcije"
 
 #: mainwidget.cpp:182
 #, fuzzy
@@ -299,19 +299,19 @@ msgstr "Slijedeæi dokument"
 
 #: mainwidget.cpp:232
 msgid "Previous Node"
-msgstr "Prethodni node"
+msgstr "Prethodni èvor"
 
 #: mainwidget.cpp:237
 msgid "Next Node"
-msgstr "Slijedeæi node"
+msgstr "Slijedeæi èvor"
 
 #: mainwidget.cpp:242
 msgid "Up one Node"
-msgstr "Gore jedan node"
+msgstr "Gore jedan èvor"
 
 #: mainwidget.cpp:247
 msgid "Top Node"
-msgstr "Najvi¹i node"
+msgstr "Najvi¹i èvor"
 
 #: mainwidget.cpp:254
 msgid "Help Contents"
@@ -345,9 +345,6 @@ msgstr "O KDE pomoæi"
 msgid "&Add Bookmark"
 msgstr "&Dodaj bookmark"
 
-#~ msgid "&Contents"
-#~ msgstr "&Sadr¾aj"
-
 #~ msgid "Cancel"
 #~ msgstr "Odustani"
 
@@ -370,7 +367,7 @@ msgstr "&Dodaj bookmark"
 #~ msgstr "Naprijed"
 
 #~ msgid "&Print..."
-#~ msgstr "&Ispi¹i..."
+#~ msgstr "Is&pi¹i..."
 
 #~ msgid "&Close"
 #~ msgstr "Zat&vori"
@@ -380,6 +377,9 @@ msgstr "&Dodaj bookmark"
 
 #~ msgid "&Copy"
 #~ msgstr "&Kopiraj"
+
+#~ msgid "&Contents"
+#~ msgstr "&Sadr¾aj"
 
 #~ msgid "&Using KDE Help"
 #~ msgstr "&Upotreba KDE pomoæi"

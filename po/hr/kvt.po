@@ -1,125 +1,126 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-03-05 15:53+0100\n"
+"POT-Creation-Date: 1998-03-19 22:16+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-08-26 14:27:08+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
 "Xgettext-Options: --keyword=translate\n"
 "Files: main.C\n"
 
-#: main.C:237
+#: main.C:249
 msgid "choose type of color-mode"
 msgstr "biraj vrstu obojenosti"
 
-#: main.C:240
+#: main.C:252
 msgid "Add characters to word class"
 msgstr "Dodaj znakove klasi"
 
-#: main.C:243
+#: main.C:255
 msgid "The backspace key will send a"
 msgstr ""
 
-#: main.C:384
+#: main.C:399
 msgid "&New Terminal"
 msgstr "&Novi terminal"
 
-#: main.C:391 main.C:791
+#: main.C:406 main.C:809
 msgid "&Hide"
 msgstr "&Sakrij"
 
-#: main.C:392
+#: main.C:407
 msgid "&Left"
 msgstr "&Lijevo"
 
-#: main.C:393
+#: main.C:408
 msgid "&Right"
 msgstr "&Desno"
 
-#: main.C:398
+#: main.C:413
 msgid "&Normal"
 msgstr "&Normalan"
 
-#: main.C:399
+#: main.C:414
 msgid "&Tiny"
 msgstr "&Minijaturan"
 
-#: main.C:400
+#: main.C:415
 msgid "&Small"
 msgstr "Ma&li"
 
-#: main.C:401
+#: main.C:416
 msgid "&Medium"
 msgstr "&Srednji"
 
-#: main.C:402
+#: main.C:417
 msgid "&Large"
 msgstr "&Veliki"
 
-#: main.C:403
+#: main.C:418
 msgid "&Huge"
 msgstr "&Ogromni"
 
-#: main.C:415
+#: main.C:430
 msgid "&black/white"
 msgstr "&crno/bijelo"
 
-#: main.C:416
+#: main.C:431
 msgid "&white/black"
 msgstr "&bijelo/crno"
 
-#: main.C:417
+#: main.C:432
 msgid "&green/black"
 msgstr "&zeleno/crno"
 
-#: main.C:418
+#: main.C:433
 msgid "black/light&yellow"
 msgstr "c&rno/svijetlo¾uto"
 
-#: main.C:419
+#: main.C:434
 msgid "Linu&x Console"
 msgstr "Linu&x konzola"
 
-#: main.C:428
+#: main.C:443
+#, fuzzy
 msgid "&Custom Colors"
-msgstr ""
+msgstr "&Boja"
 
-#: main.C:435 main.C:737
+#: main.C:450 main.C:755
 msgid "Hide &Menubar"
 msgstr "Sakrij &Izbornik"
 
-#: main.C:437 main.C:601 main.C:729
+#: main.C:452 main.C:619 main.C:747
 msgid "Show &Menubar"
 msgstr "Poka¾i &Izbornik"
 
-#: main.C:438 main.C:747
+#: main.C:453 main.C:765
 msgid "Secure &keyboard"
 msgstr "Osiguraj &tipkovnicu"
 
-#: main.C:440
+#: main.C:455
 msgid "Scroll&bar"
 msgstr "&Kliznik"
 
-#: main.C:441
+#: main.C:456
 msgid "&Font size"
 msgstr "&Velièina fonta"
 
-#: main.C:442
+#: main.C:457
 msgid "&Color"
 msgstr "&Boja"
 
-#: main.C:443
+#: main.C:458
 msgid "&Size"
 msgstr "&Velièina"
 
-#: main.C:444
+#: main.C:459
 msgid "Terminal..."
 msgstr "Terminal..."
 
-#: main.C:446
+#: main.C:461
 msgid "Save &Options"
-msgstr "&Snimi Opcije"
+msgstr "&Spremi Opcije"
 
-#: main.C:455
+#: main.C:470
 msgid ""
 "\n"
 "\n"
@@ -137,23 +138,23 @@ msgstr ""
 "Emulacija terminala za KDE\n"
 "raðena po rxvt-2.08 Roberta Nationa."
 
-#: main.C:610 main.C:784
+#: main.C:628 main.C:802
 msgid "&Show"
 msgstr "Pri&ka¾i"
 
-#: main.C:743
+#: main.C:761
 msgid "Unsecure &keyboard"
 msgstr "Iskljuè&i osiguranje"
 
-#: main.C:754
+#: main.C:772
 msgid "Terminal Options"
 msgstr "Pode¹avanja terminala"
 
-#: main.C:896
+#: main.C:914
 msgid "Hint"
 msgstr "Trik"
 
-#: main.C:897
+#: main.C:915
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -161,7 +162,7 @@ msgstr ""
 "Novi izbor boja bit æe prikazan\n"
 "kad se iskljuèi osiguranje tipkovnice."
 
-#: main.C:1213
+#: main.C:1148
 #, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
@@ -190,7 +191,7 @@ msgid ""
 "-8\t\t\trun in 8 bit mode\n"
 "-ls\t\t\tinitiate kvt's shell as a login shell\n"
 "-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
-"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+"-meta <arg>\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
 "-sl <number>\t\tsave number lines in scroll-back buffer\n"
 "-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
 "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
@@ -225,7 +226,7 @@ msgstr ""
 "-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
 "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
 
-#: main.C:1244
+#: main.C:1179
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-05 15:54+0100\n"
+"POT-Creation-Date: 1998-03-19 22:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,30 +14,38 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: krootwm.C:118 krootwm.C:500
+#: krootwm.C:115 krootwm.C:449
 msgid "Folder"
 msgstr "Folder"
 
-#: krootwm.C:145
+#: krootwm.C:142
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "FEL: Mallen '%s' finns inte"
 
-#: krootwm.C:171
+#: krootwm.C:168
 msgid "Help on desktop"
 msgstr "Hjäp om skrivbordet"
 
-#: krootwm.C:172
+#: krootwm.C:169
 msgid "Execute command"
 msgstr "Kör kommando"
 
-#: krootwm.C:173
+#: krootwm.C:170
 msgid "Display properties"
 msgstr "Omgivningsegenskaper"
 
-#: krootwm.C:174
+#: krootwm.C:171
 msgid "Refresh desktop"
 msgstr "Uppdatera skrivbordet"
+
+#: krootwm.C:173
+msgid "Unclutter windows"
+msgstr ""
+
+#: krootwm.C:174
+msgid "Cascade windows"
+msgstr ""
 
 #: krootwm.C:175
 msgid "Arrange icons"
@@ -51,14 +59,14 @@ msgstr "Lås skärmen"
 msgid "Logout"
 msgstr "Logga ur"
 
-#: krootwm.C:520
+#: krootwm.C:469
 msgid "Could not create folder"
 msgstr "Kunde inte skapa folder"
 
-#: krootwm.C:553
+#: krootwm.C:502
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:557
+#: krootwm.C:506
 msgid "Usage:"
 msgstr "Användning:"

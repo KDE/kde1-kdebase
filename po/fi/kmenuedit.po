@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KMENUEDIT\n"
-"POT-Creation-Date: 1998-03-05 15:54+0100\n"
+"POT-Creation-Date: 1998-03-19 22:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,19 +15,16 @@ msgstr ""
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kmenuedit.cpp:62
-#, fuzzy
 msgid "&Reload"
-msgstr "Uudelleenlataa valikot"
+msgstr "&Uudelleenlataa valikot"
 
 #: kmenuedit.cpp:68
-#, fuzzy
 msgid "Change &Menuname"
-msgstr "Vaihda valikon nimeä"
+msgstr "&Vaihda valikon nimeä"
 
 #: kmenuedit.cpp:69
-#, fuzzy
 msgid "Reload &Filetypes"
-msgstr "Uudelleenlataa tiedostotyypit"
+msgstr "Uudelleenlataa &tiedostotyypit"
 
 #: kmenuedit.cpp:76
 msgid "by"
@@ -38,11 +35,12 @@ msgid "Changes not saved !"
 msgstr "Muutoksia ei talletettu !"
 
 #: kmenuedit.cpp:176 kmenuedit.cpp:201
-#, fuzzy
 msgid ""
 "\n"
 "Do you want to save your changes ?"
-msgstr "Haluatko tallentaa muutokset"
+msgstr ""
+"\n"
+"Haluatko tallentaa muutokset ?"
 
 #: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"
@@ -155,7 +153,7 @@ msgstr "Sovellus"
 
 #: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
 msgid "Swallow"
-msgstr ""
+msgstr "Nielaise"
 
 #: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
 msgid "Link"
@@ -214,18 +212,16 @@ msgid "Binary Pattern:"
 msgstr "Binäärikuvio:"
 
 #: entrydialog.cpp:300
-#, fuzzy
 msgid "Application to swallow:"
-msgstr "Sovellus"
+msgstr "Nielaistava sovellus:"
 
 #: entrydialog.cpp:306
-#, fuzzy
 msgid "Title of application:"
-msgstr "Sovellus"
+msgstr "Sovelluksen otsikko:"
 
 #: entrydialog.cpp:312
 msgid "Application to execute on button press:"
-msgstr ""
+msgstr "Suoritettava sovellus nappia painettaessa:"
 
 #: entrydialog.cpp:342
 msgid "URL:"
@@ -266,21 +262,3 @@ msgstr "Henkilökohtainen:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Oletus:"
-
-#~ msgid ""
-#~ "KMenuedit 0.2.3\n"
-#~ "(C) by Christoph Neerfeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-#~ msgstr ""
-#~ "KMenuedit 0.2.3\n"
-#~ "(C)Christoph Neerfeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-
-#~ msgid "Fvwm Command"
-#~ msgstr "Fvwm komento"
-
-#~ msgid "Fvwm"
-#~ msgstr "Fvwm"
-
-#~ msgid "Fvwm Command:"
-#~ msgstr "Fvwm:n komento:"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-19 22:17+0100\n"
 "PO-Revision-Date: 1998-01-18 05:26+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -14,19 +14,19 @@ msgstr ""
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: kdmshutdown.cpp:153
+#: kdmshutdown.cpp:159
 msgid "Shutdown or restart?"
 msgstr "Выключить или перезагрузить"
 
-#: kdmshutdown.cpp:169
+#: kdmshutdown.cpp:175
 msgid "Shutdown"
 msgstr "Выключить"
 
-#: kdmshutdown.cpp:183
+#: kdmshutdown.cpp:189
 msgid "Shutdown and restart"
 msgstr "Выключить и перезагрузить"
 
-#: kdmshutdown.cpp:192
+#: kdmshutdown.cpp:198
 msgid "Exit kdm"
 msgstr "Выйти из kdm"
 

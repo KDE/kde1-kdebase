@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-19 22:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,99 +28,99 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: probleem tijdens het initialiseren; stoppen\n"
 
-#: main.C:370
+#: main.C:448
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:377
+#: main.C:455
 msgid "Usage: "
 msgstr ""
 
-#: main.C:388
+#: main.C:466
 #, fuzzy
 msgid "&Maximize"
 msgstr "Ma&ximaliseren aan/uit"
 
-#: main.C:389
+#: main.C:467
 #, fuzzy
 msgid "&Restore"
 msgstr "&Grootte veranderen"
 
-#: main.C:390
+#: main.C:468
 msgid "&Iconify"
 msgstr "Mi&nimaliseren"
 
-#: main.C:391
+#: main.C:469
 #, fuzzy
 msgid "&DeIconify"
 msgstr "Mi&nimaliseren"
 
-#: main.C:392
+#: main.C:470
 #, fuzzy
 msgid "&Sticky"
 msgstr "&Kleven aan/uit"
 
-#: main.C:393
+#: main.C:471
 #, fuzzy
 msgid "&UnSticky"
 msgstr "&Kleven aan/uit"
 
-#: main.C:394
+#: main.C:472
 #, fuzzy
 msgid "Mo&ve"
 msgstr "&Verplaatsen"
 
-#: main.C:395
+#: main.C:473
 #, fuzzy
 msgid "Resi&ze"
 msgstr "&Grootte veranderen"
 
-#: main.C:397
+#: main.C:475
 #, fuzzy
 msgid "&To desktop"
 msgstr "Naar &buroblad"
 
-#: main.C:399
+#: main.C:477
 msgid "&Onto current desktop"
 msgstr ""
 
-#: main.C:449
+#: main.C:530
 msgid "One"
 msgstr "Een"
 
-#: main.C:452
+#: main.C:533
 msgid "Two"
 msgstr "Twee"
 
-#: main.C:455
+#: main.C:536
 msgid "Three"
 msgstr "Drie"
 
-#: main.C:458
+#: main.C:539
 msgid "Four"
 msgstr "Vier"
 
-#: main.C:461
+#: main.C:542
 msgid "Five"
 msgstr "Vijf"
 
-#: main.C:464
+#: main.C:545
 msgid "Six"
 msgstr "Zes"
 
-#: main.C:467
+#: main.C:548
 msgid "Seven"
 msgstr "Zeven"
 
-#: main.C:470
+#: main.C:551
 msgid "Eight"
 msgstr "Acht"
 
-#: main.C:744
+#: main.C:866
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr ""
 
-#: main.C:1011
+#: main.C:1175
 msgid "*** No Tasks ***"
 msgstr ""
 

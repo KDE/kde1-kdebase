@@ -44,15 +44,15 @@ msgstr "&Dodaj u arhivu"
 
 #: kfindtop.cpp:143
 msgid "&Properties"
-msgstr "&Vrijednosti"
+msgstr "&Svojstva"
 
 #: kfindtop.cpp:146
 msgid "Open Containing &Folder"
-msgstr "Otvori &direktorij"
+msgstr "Otvori sadr¾ani &direktorij"
 
 #: kfindtop.cpp:149
 msgid "&Save Search"
-msgstr "Sni&mi tra¾eno"
+msgstr "Sni&mi pretra¾ivanje"
 
 #: kfindtop.cpp:161
 msgid "&Cut"
@@ -60,11 +60,11 @@ msgstr "&Izre¾i"
 
 #: kfindtop.cpp:166
 msgid "&Select All"
-msgstr "&Biraj sve"
+msgstr "&Oznaèi sve"
 
 #: kfindtop.cpp:168
 msgid "&Invert Selection"
-msgstr "&Inverzija biranog"
+msgstr "&Inverzija oznaèenog"
 
 #: kfindtop.cpp:179
 msgid "&Preferences ..."
@@ -97,15 +97,15 @@ msgstr "Dodaj u arhivu"
 
 #: kfindtop.cpp:239
 msgid "Properties"
-msgstr "Vrijednosti"
+msgstr "Svojstva"
 
 #: kfindtop.cpp:244
 msgid "Open Containing Folder"
-msgstr "Otvori direktorij"
+msgstr "Otvori sadr¾ani direktorij"
 
 #: kfindtop.cpp:249
 msgid "Save Search Results"
-msgstr "Snimi rezultate pretrage"
+msgstr "Spremi rezultate pretrage"
 
 #: kftabdlg.cpp:48
 msgid "&Named:"
@@ -113,7 +113,7 @@ msgstr "Im&e:"
 
 #: kftabdlg.cpp:51
 msgid "&Look in:"
-msgstr "&Gledaj u:"
+msgstr "Pot&ra¾i u:"
 
 #: kftabdlg.cpp:54
 msgid "&Browse ..."
@@ -165,7 +165,7 @@ msgstr " Datum promjene "
 
 #: kftabdlg.cpp:174
 msgid "Of &type:"
-msgstr "%Tipa:"
+msgstr "&Tipa:"
 
 #: kftabdlg.cpp:176
 msgid "&Containing Text:"
@@ -205,7 +205,7 @@ msgstr "Dan nije ispravan!!"
 
 #: kftabdlg.cpp:430
 msgid "The value in size isn't valid number!!"
-msgstr "Vrijednost  nije ispravna!!"
+msgstr "Vrijednost velièine nije ispravna!!"
 
 #: kfoptions.cpp:54
 msgid "Preferences"
@@ -217,11 +217,11 @@ msgstr "Format datoteke:"
 
 #: kfoptions.cpp:78
 msgid "Save results to file:"
-msgstr "Snimi rezultate u datoteku:"
+msgstr "Spremi rezultate u datoteku:"
 
 #: kfoptions.cpp:81
 msgid "Save results to file ~/.kfind-results.html"
-msgstr "Snimi rezultate u datoteku ~/.kfind-results.html"
+msgstr "Spremi rezultate u datoteku ~/.kfind-results.html"
 
 #: kfoptions.cpp:83
 msgid "Browse"
@@ -262,7 +262,7 @@ msgstr "%d datoteka naðeno"
 
 #: kfwin.cpp:143
 msgid "It wasn't possible to save results!"
-msgstr "Nisam mogao snimiti rezultate!"
+msgstr "Nisam mogao spremiti rezultate!"
 
 #: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
 msgid "KFind Results File"
@@ -329,20 +329,11 @@ msgstr "Ne prepoznajem vrstu arhive!"
 msgid "Error while creating child process!"
 msgstr "Gre¹ka prilikom kreiranja nasljednog procesa!"
 
-#~ msgid "(none)"
-#~ msgstr "(ni¹ta)"
+#~ msgid "&Copy"
+#~ msgstr "&Kopiraj"
 
 #~ msgid "&Delete"
 #~ msgstr "&Bri¹i"
-
-#~ msgid "&Undo"
-#~ msgstr "&Vrati"
-
-#~ msgid "&About"
-#~ msgstr "&O programu"
-
-#~ msgid "&Copy"
-#~ msgstr "&Kopiraj"
 
 #~ msgid "&Edit"
 #~ msgstr "&Urednik"
@@ -358,6 +349,12 @@ msgstr "Gre¹ka prilikom kreiranja nasljednog procesa!"
 
 #~ msgid "&Quit"
 #~ msgstr "&Zavr¹i"
+
+#~ msgid "&Undo"
+#~ msgstr "&Vrati"
+
+#~ msgid "(none)"
+#~ msgstr "(ni¹ta)"
 
 #~ msgid "Cancel"
 #~ msgstr "Odustani"

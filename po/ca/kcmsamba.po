@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmsamba\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-03-19 22:18+0100\n"
 "PO-Revision-Date: 1998-03-12 23:39+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -21,5 +21,3 @@ msgstr "us: kcmsamba [-init | status]\n"
 #: main.cpp:68
 msgid "Samba"
 msgstr "Samba"
-
-

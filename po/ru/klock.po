@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-03-11 15:37+0100\n"
+"POT-Creation-Date: 1998-03-19 22:17+0100\n"
 "PO-Revision-Date: 1998-03-16 02:25+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -28,7 +28,7 @@ msgstr "Цвет:"
 
 #: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
 #: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1021 polygon.cpp:101
-#: rock.cpp:550 slip.cpp:366 space.cpp:581 swarm.cpp:330
+#: rock.cpp:550 slip.cpp:366 space.cpp:587 swarm.cpp:330
 msgid "Speed:"
 msgstr "Скорость:"
 
@@ -184,7 +184,6 @@ msgstr ""
 "\n"
 "Переписано на kscreensave Мартином Джонсом."
 
-
 #: forest.cpp:200
 msgid "Forest"
 msgstr "Лес"
@@ -315,7 +314,6 @@ msgstr ""
 "написан Дирком Станекером, 1997\n"
 "dirk.stanerker@student.uni-tuebingen.de"
 
-
 #: lissie.cpp:234
 msgid "Lissie"
 msgstr "Лиззи"
@@ -395,7 +393,8 @@ msgid ""
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
-"  -corners xxxx     Перемещение курсора в угол производит следующие действия:\n"
+"  -corners xxxx     Перемещение курсора в угол производит следующие "
+"действия:\n"
 "                     x = i  ничего (игнорировать)\n"
 "                     x = s  сохранять экран\n"
 "                     x = l  закрыть экран\n"
@@ -412,7 +411,7 @@ msgstr ""
 "  -setup            Настройка хранителя\n"
 "  -test             Запустить хранитель немедленно\n"
 
-#: morph3d.cpp:839 space.cpp:413
+#: morph3d.cpp:839 space.cpp:419
 msgid "GL can not render with root visual\n"
 msgstr "GL не может рисовать в главном окне\n"
 
@@ -542,11 +541,11 @@ msgstr ""
 "\n"
 "Переписано на kscreensave Мартином Джонсом."
 
-#: saver.cpp:50 saver.cpp:110
+#: saver.cpp:52 saver.cpp:112
 msgid "Enter Password"
 msgstr "Введите Пароль:"
 
-#: saver.cpp:80
+#: saver.cpp:82
 msgid "Failed"
 msgstr "Неверно"
 
@@ -580,23 +579,23 @@ msgstr ""
 "\n"
 "Переписано на kscreensave Эмануэлем Пиркером."
 
-#: space.cpp:485
+#: space.cpp:491
 msgid "Space (GL)"
 msgstr ""
 
-#: space.cpp:575
+#: space.cpp:581
 msgid "Setup KSpace"
 msgstr "Настроить KSpace"
 
-#: space.cpp:591
+#: space.cpp:597
 msgid "Warp Interval:"
 msgstr "Волна:"
 
-#: space.cpp:679
+#: space.cpp:685
 msgid "About KSpace"
 msgstr "О KSpace"
 
-#: space.cpp:681
+#: space.cpp:687
 msgid ""
 "KSpace\n"
 "Copyright (c) 1998\n"
@@ -630,8 +629,7 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
-"Swarm"
-"\n"
+"Swarm\n"
 "Copyright (c) 1991 Патрик Дж. Ноутон\n"
 "\n"
 "Переписано на kscreensave Эмануэлем Пиркером."

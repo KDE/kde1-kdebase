@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-03-02 23:38+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -161,7 +161,7 @@ msgstr "durant el(s) previ(&s) "
 
 #: kftabdlg.cpp:120
 msgid "&during the previous "
-msgstr "&durant el(s) previ(s) " 
+msgstr "&durant el(s) previ(s) "
 
 #: kftabdlg.cpp:168
 msgid " Date Modified "
@@ -195,19 +195,19 @@ msgstr "Com a màxim"
 msgid " Advanced "
 msgstr " A&vançat "
 
-#: kftabdlg.cpp:389
+#: kftabdlg.cpp:390
 msgid "The date is not valid!!"
 msgstr "La data no és vàlida||"
 
-#: kftabdlg.cpp:401
+#: kftabdlg.cpp:402
 msgid "The month(s) value isn't valid!!"
 msgstr "El valor del mes no és vàlid!!"
 
-#: kftabdlg.cpp:412
+#: kftabdlg.cpp:413
 msgid "The day(s) value isn't valid!!"
 msgstr "El valor del dia no és vàlid!!"
 
-#: kftabdlg.cpp:429
+#: kftabdlg.cpp:430
 msgid "The value in size isn't valid number!!"
 msgstr "El valor de la grandària no és un número vàlid!!"
 
@@ -336,4 +336,3 @@ msgstr "No reconec el tipus d'arxiu!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Error al crear el procés fill!"
-

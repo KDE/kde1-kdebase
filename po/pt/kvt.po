@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-03-05 15:53+0100\n"
+"POT-Creation-Date: 1998-03-19 22:16+0100\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-08-26 14:27:08+0200\n"
@@ -8,119 +8,119 @@ msgstr ""
 "Xgettext-Options: --keyword=translate\n"
 "Files: main.C\n"
 
-#: main.C:237
+#: main.C:249
 msgid "choose type of color-mode"
 msgstr "Escolha tipo de modo de cor"
 
-#: main.C:240
+#: main.C:252
 msgid "Add characters to word class"
 msgstr "Adicionar caracteres a classe de palavra"
 
-#: main.C:243
+#: main.C:255
 msgid "The backspace key will send a"
 msgstr "A tecla de backspace gera um"
 
-#: main.C:384
+#: main.C:399
 msgid "&New Terminal"
 msgstr "&Novo Terminal"
 
-#: main.C:391 main.C:791
+#: main.C:406 main.C:809
 msgid "&Hide"
 msgstr "E&sconder"
 
-#: main.C:392
+#: main.C:407
 msgid "&Left"
 msgstr "&Esquerda"
 
-#: main.C:393
+#: main.C:408
 msgid "&Right"
 msgstr "&Direita"
 
-#: main.C:398
+#: main.C:413
 msgid "&Normal"
 msgstr "&Normal"
 
-#: main.C:399
+#: main.C:414
 msgid "&Tiny"
 msgstr "&Minúscula"
 
-#: main.C:400
+#: main.C:415
 msgid "&Small"
 msgstr "&Pequena"
 
-#: main.C:401
+#: main.C:416
 msgid "&Medium"
 msgstr "&Média"
 
-#: main.C:402
+#: main.C:417
 msgid "&Large"
 msgstr "&Grande"
 
-#: main.C:403
+#: main.C:418
 msgid "&Huge"
 msgstr "&Enorme"
 
-#: main.C:415
+#: main.C:430
 msgid "&black/white"
 msgstr "&negro/branco"
 
-#: main.C:416
+#: main.C:431
 msgid "&white/black"
 msgstr "&branco/negro"
 
-#: main.C:417
+#: main.C:432
 msgid "&green/black"
 msgstr "&verde/branco"
 
-#: main.C:418
+#: main.C:433
 msgid "black/light&yellow"
 msgstr "negro/&amarelo claro"
 
-#: main.C:419
+#: main.C:434
 msgid "Linu&x Console"
 msgstr "Consola de Linu&x"
 
-#: main.C:428
+#: main.C:443
 msgid "&Custom Colors"
 msgstr "&Cores Personalizadas"
 
-#: main.C:435 main.C:737
+#: main.C:450 main.C:755
 msgid "Hide &Menubar"
 msgstr "Esconder &Barra de Menu"
 
-#: main.C:437 main.C:601 main.C:729
+#: main.C:452 main.C:619 main.C:747
 msgid "Show &Menubar"
 msgstr "Mostrar &Barra de Menu"
 
-#: main.C:438 main.C:747
+#: main.C:453 main.C:765
 msgid "Secure &keyboard"
 msgstr "Trancar &teclado"
 
-#: main.C:440
+#: main.C:455
 msgid "Scroll&bar"
 msgstr "&Barra de arrasto"
 
-#: main.C:441
+#: main.C:456
 msgid "&Font size"
 msgstr "Tamanho da &fonte"
 
-#: main.C:442
+#: main.C:457
 msgid "&Color"
 msgstr "&Cor"
 
-#: main.C:443
+#: main.C:458
 msgid "&Size"
 msgstr "&Tamanho"
 
-#: main.C:444
+#: main.C:459
 msgid "Terminal..."
 msgstr "Terminal..."
 
-#: main.C:446
+#: main.C:461
 msgid "Save &Options"
 msgstr "Gravar &Opções"
 
-#: main.C:455
+#: main.C:470
 msgid ""
 "\n"
 "\n"
@@ -138,23 +138,23 @@ msgstr ""
 "Emulação de terminal para o KDE Desktop Environment\n"
 "baseado no rvt-2.08 de Robert Nation"
 
-#: main.C:610 main.C:784
+#: main.C:628 main.C:802
 msgid "&Show"
 msgstr "&Mostrar"
 
-#: main.C:743
+#: main.C:761
 msgid "Unsecure &keyboard"
 msgstr "Destrancar &Teclado"
 
-#: main.C:754
+#: main.C:772
 msgid "Terminal Options"
 msgstr "Opções do Terminal"
 
-#: main.C:896
+#: main.C:914
 msgid "Hint"
 msgstr "Dica"
 
-#: main.C:897
+#: main.C:915
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -162,7 +162,8 @@ msgstr ""
 "As novas definições de cor serão mostradas\n"
 "quando o teclado estiver destrancado."
 
-#: main.C:1213
+#: main.C:1148
+#, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -190,7 +191,7 @@ msgid ""
 "-8\t\t\trun in 8 bit mode\n"
 "-ls\t\t\tinitiate kvt's shell as a login shell\n"
 "-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
-"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+"-meta <arg>\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
 "-sl <number>\t\tsave number lines in scroll-back buffer\n"
 "-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
 "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
@@ -228,7 +229,7 @@ msgstr ""
 "-pagedown <keysym>\tutilizar a combinação de teclas alt-keysym para avançar "
 "no buffer\n"
 
-#: main.C:1244
+#: main.C:1179
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

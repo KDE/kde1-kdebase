@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1998-03-05 15:54+0100\n"
+"POT-Creation-Date: 1998-03-19 22:16+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -13,162 +13,143 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kpanel.C:211
+#: kpanel.C:213
 msgid "Move"
 msgstr "Presuò"
 
-#: kpanel.C:214
+#: kpanel.C:216
 msgid "Properties"
 msgstr "Vlastnosti"
 
-#: kpanel.C:246
+#: kpanel.C:252
 msgid "Go!"
 msgstr "Choï"
 
-#: kpanel.C:248 tools.C:799
+#: kpanel.C:254 tools.C:797
 msgid "Where do you want to go tomorrow?"
 msgstr "Kam si prajete ís» zajtra?"
 
-#: kpanel.C:321
+#: kpanel.C:327
 msgid "No info available"
 msgstr "Informácia nie je k dispozícii"
 
-#: kpanel.C:360 props.C:217 props.C:218
+#: kpanel.C:366 props.C:151 props.C:152
 msgid "Logout"
 msgstr "Odhlási»"
 
-#: kpanel.C:368 props.C:216
+#: kpanel.C:374 props.C:150
 msgid "Lock screen"
 msgstr "Zablokova» obrazovku"
 
-#: kpanel.C:377
+#: kpanel.C:383
 msgid "Hide the panel"
 msgstr "Schova» panel"
 
-#: kpanel.C:387
+#: kpanel.C:393
 msgid "Show the panel"
 msgstr "Ukáza» panel"
 
-#: kpanel.C:1078 tools.C:615
+#: kpanel.C:1092 tools.C:613
 msgid "No comment available"
 msgstr "Komentár nie je k dispozícii"
 
-#: kpanel.C:1087 tools.C:808
+#: kpanel.C:1101 tools.C:806
 msgid "Windowlist"
 msgstr "Zoznam okien"
 
-#: props.C:200
+#: props.C:134
 msgid "Add application"
 msgstr "Prida» aplikáciu"
 
-#: props.C:202
+#: props.C:136
 msgid "Add an application or a submenu onto the panel"
 msgstr "Prida» aplikáciu alebo menu na panel"
 
-#: props.C:203
+#: props.C:137
 msgid "Add windowlist"
 msgstr "Prida» zoznam okien"
 
-#: props.C:205
+#: props.C:139
 msgid "Add a windowlist menu onto the panel"
 msgstr "Prida» zoznam okien na panel"
 
-#: events.C:701 props.C:206
+#: events.C:705 props.C:140
 msgid "Configure"
 msgstr "Konfiguruj"
 
-#: props.C:208
+#: props.C:142
 msgid "Configure panel"
 msgstr "Konfiguruj panel"
 
-#: events.C:703 props.C:209
+#: events.C:707 props.C:143
 msgid "Restart"
 msgstr "Spusti» znova"
 
-#: props.C:211
+#: props.C:145
 msgid "Restart panel"
 msgstr "Spusti» panel znova"
 
-#: props.C:212 props.C:467
+#: props.C:146
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:214
+#: props.C:148
 msgid "Lock Screen"
 msgstr "Blokova» obrazovku"
 
-#: props.C:398
-msgid "Location"
-msgstr "Umiestnenie"
+#~ msgid "Location"
+#~ msgstr "Umiestnenie"
 
-#: props.C:411
-msgid "Taskbar"
-msgstr "Taskbar"
+#~ msgid "Taskbar"
+#~ msgstr "Taskbar"
 
-#: props.C:412
-msgid "Hidden"
-msgstr "Skrytý"
+#~ msgid "Hidden"
+#~ msgstr "Skrytý"
 
-#: props.C:421
-msgid "Top/Left"
-msgstr "Hore/Vµavo"
+#~ msgid "Top/Left"
+#~ msgstr "Hore/Vµavo"
 
-#: props.C:451
-msgid "Tiny Style"
-msgstr "Drobný"
+#~ msgid "Tiny Style"
+#~ msgstr "Drobný"
 
-#: props.C:452
-msgid "Normal Style"
-msgstr "Normálny"
+#~ msgid "Normal Style"
+#~ msgstr "Normálny"
 
-#: props.C:453
-msgid "Large Style"
-msgstr "Veµký"
+#~ msgid "Large Style"
+#~ msgstr "Veµký"
 
-#: props.C:472
-msgid "Menu Tooltips"
-msgstr "Nápovedy v menu"
+#~ msgid "Menu Tooltips"
+#~ msgstr "Nápovedy v menu"
 
-#: props.C:518
-msgid "Others"
-msgstr "Ostatné"
+#~ msgid "Others"
+#~ msgstr "Ostatné"
 
-#: props.C:520
-msgid "Personal First"
-msgstr "Osobný prvý"
+#~ msgid "Personal First"
+#~ msgstr "Osobný prvý"
 
-#: props.C:523
-msgid "Auto Hide Panel"
-msgstr "Skrýva» panel"
+#~ msgid "Auto Hide Panel"
+#~ msgstr "Skrýva» panel"
 
-#: props.C:526
-msgid "Auto Hide Taskbar"
-msgstr "Skrýva» pruh úloh"
+#~ msgid "Auto Hide Taskbar"
+#~ msgstr "Skrýva» pruh úloh"
 
-#: props.C:544
-msgid "Clock"
-msgstr "Hodiny"
+#~ msgid "Clock"
+#~ msgstr "Hodiny"
 
-#: props.C:546
-msgid "24h"
-msgstr "24h"
+#~ msgid "24h"
+#~ msgstr "24h"
 
-#: props.C:550
-msgid "12h AM/PM"
-msgstr "12h"
+#~ msgid "12h AM/PM"
+#~ msgstr "12h"
 
-#: props.C:611
-msgid "Visible"
-msgstr "Viditeµné"
+#~ msgid "Visible"
+#~ msgstr "Viditeµné"
 
-#: props.C:618
-msgid "Width"
-msgstr "©írka"
+#~ msgid "Width"
+#~ msgstr "©írka"
 
-#: props.C:623
-msgid "Desktops"
-msgstr "Pracovné plochy"
+#~ msgid "Desktops"
+#~ msgstr "Pracovné plochy"
 
-#: props.C:629
-msgid "KPanel Configuration"
-msgstr "Konfigurácia KPanelu"
+#~ msgid "KPanel Configuration"
+#~ msgstr "Konfigurácia KPanelu"

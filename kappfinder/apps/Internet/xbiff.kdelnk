@@ -7,6 +7,7 @@ Comment=Mail nofication
 Comment[pt]=Notificação de mail
 Comment[it]=Controllo Posta
 Comment[cs]=Upozoròuje na novou po¹tu
+Comment[fi]=Postista ilmoitus
 Exec=kmail
 Icon=mail.xpm
 TerminalOptions=

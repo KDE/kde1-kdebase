@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-01-28 10:06+0100\n"
+"POT-Creation-Date: 1998-03-19 22:16+0100\n"
 "PO-Revision-Date: 1998-02-23 19:44\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN  <LL@li.org>\n"
@@ -14,162 +14,143 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: kpanel.C:210
+#: kpanel.C:213
 msgid "Move"
 msgstr "Moure"
 
-#: kpanel.C:213
+#: kpanel.C:216
 msgid "Properties"
 msgstr "Propietats"
 
-#: kpanel.C:245
+#: kpanel.C:252
 msgid "Go!"
 msgstr "Vinga!"
 
-#: kpanel.C:247 tools.C:805
+#: kpanel.C:254 tools.C:797
 msgid "Where do you want to go tomorrow?"
 msgstr "On vols anar demà?"
 
-#: kpanel.C:320
+#: kpanel.C:327
 msgid "No info available"
 msgstr "No hi ha informació"
 
-#: kpanel.C:359 kpanel.C:779 kpanel.C:780
+#: kpanel.C:366 props.C:151 props.C:152
 msgid "Logout"
 msgstr "Sortida"
 
-#: kpanel.C:367 kpanel.C:778
+#: kpanel.C:374 props.C:150
 msgid "Lock screen"
 msgstr "Bloquejar la pantalla"
 
-#: kpanel.C:376
+#: kpanel.C:383
 msgid "Hide the panel"
 msgstr "Ocultar el panell"
 
-#: kpanel.C:386
+#: kpanel.C:393
 msgid "Show the panel"
 msgstr "Mostrar el panell"
 
-#: kpanel.C:762
-msgid "Add application"
-msgstr "Afegir aplicació"
-
-#: kpanel.C:764
-msgid "Add an application or a submenu onto the panel"
-msgstr "Afegir una aplicació o un submenú al panell"
-
-#: kpanel.C:765
-msgid "Add windowlist"
-msgstr "Afegir llista de finestres"
-
-#: kpanel.C:767
-msgid "Add a windowlist menu onto the panel"
-msgstr "Afegir un menú de llista de finestres al panell"
-
-#: kpanel.C:768
-msgid "Configure"
-msgstr "Configurar"
-
-#: kpanel.C:770
-msgid "Configure panel"
-msgstr "Configurar el panell"
-
-#: kpanel.C:771
-msgid "Restart"
-msgstr "Reengegar"
-
-#: kpanel.C:773
-msgid "Restart panel"
-msgstr "Reengegar el panell"
-
-#: kpanel.C:774 props.C:396
-msgid "Panel"
-msgstr "Panell"
-
-#: kpanel.C:776
-msgid "Lock Screen"
-msgstr "Bloquejar la pantalla"
-
-#: kpanel.C:1143 tools.C:621
+#: kpanel.C:1092 tools.C:613
 msgid "No comment available"
 msgstr "Cap comentari"
 
-#: kpanel.C:1152 tools.C:814
+#: kpanel.C:1101 tools.C:806
 msgid "Windowlist"
 msgstr "Llista de finestres"
 
-#: props.C:327
-msgid "Location"
-msgstr "Posició"
+#: props.C:134
+msgid "Add application"
+msgstr "Afegir aplicació"
 
-#: props.C:340
-msgid "Taskbar"
-msgstr "Barra de tasques"
+#: props.C:136
+msgid "Add an application or a submenu onto the panel"
+msgstr "Afegir una aplicació o un submenú al panell"
 
-#: props.C:341
-msgid "Hidden"
-msgstr "Oculta"
+#: props.C:137
+msgid "Add windowlist"
+msgstr "Afegir llista de finestres"
 
-#: props.C:350
-msgid "Top/Left"
-msgstr "Dalt/Esquerra"
+#: props.C:139
+msgid "Add a windowlist menu onto the panel"
+msgstr "Afegir un menú de llista de finestres al panell"
 
-#: props.C:380
-msgid "Tiny Style"
-msgstr "Estil petit"
+#: events.C:705 props.C:140
+msgid "Configure"
+msgstr "Configurar"
 
-#: props.C:381
-msgid "Normal Style"
-msgstr "Estil normal"
+#: props.C:142
+msgid "Configure panel"
+msgstr "Configurar el panell"
 
-#: props.C:382
-msgid "Large Style"
-msgstr "Estil gran"
+#: events.C:707 props.C:143
+msgid "Restart"
+msgstr "Reengegar"
 
-#: props.C:401
-msgid "Menu Tooltips"
-msgstr "Indicacions de menú"
+#: props.C:145
+msgid "Restart panel"
+msgstr "Reengegar el panell"
 
-#: props.C:447
-msgid "Others"
-msgstr "Altres"
+#: props.C:146
+msgid "Panel"
+msgstr "Panell"
 
-#: props.C:449
-msgid "Personal First"
-msgstr "Personal primer"
+#: props.C:148
+msgid "Lock Screen"
+msgstr "Bloquejar la pantalla"
 
-#: props.C:452
-msgid "Auto Hide Panel"
-msgstr "Auto ocultar panell"
+#~ msgid "Location"
+#~ msgstr "Posició"
 
-#: props.C:455
-msgid "Auto Hide Taskbar"
-msgstr "Auto ocultar barra de tasques"
+#~ msgid "Taskbar"
+#~ msgstr "Barra de tasques"
 
-#: props.C:473
-msgid "Clock"
-msgstr "Rellotge"
+#~ msgid "Hidden"
+#~ msgstr "Oculta"
 
-#: props.C:475
-msgid "24h"
-msgstr "24h"
+#~ msgid "Top/Left"
+#~ msgstr "Dalt/Esquerra"
 
-#: props.C:479
-msgid "12h AM/PM"
-msgstr "12h AM/PM"
+#~ msgid "Tiny Style"
+#~ msgstr "Estil petit"
 
-#: props.C:540
-msgid "Visible"
-msgstr "Visible"
+#~ msgid "Normal Style"
+#~ msgstr "Estil normal"
 
-#: props.C:547
-msgid "Width"
-msgstr "Amplada"
+#~ msgid "Large Style"
+#~ msgstr "Estil gran"
 
-#: props.C:552
-msgid "Desktops"
-msgstr "Escriptoris"
+#~ msgid "Menu Tooltips"
+#~ msgstr "Indicacions de menú"
 
-#: props.C:558
-msgid "KPanel Configuration"
-msgstr "Configuració de KPanel"
+#~ msgid "Others"
+#~ msgstr "Altres"
+
+#~ msgid "Personal First"
+#~ msgstr "Personal primer"
+
+#~ msgid "Auto Hide Panel"
+#~ msgstr "Auto ocultar panell"
+
+#~ msgid "Auto Hide Taskbar"
+#~ msgstr "Auto ocultar barra de tasques"
+
+#~ msgid "Clock"
+#~ msgstr "Rellotge"
+
+#~ msgid "24h"
+#~ msgstr "24h"
+
+#~ msgid "12h AM/PM"
+#~ msgstr "12h AM/PM"
+
+#~ msgid "Visible"
+#~ msgstr "Visible"
+
+#~ msgid "Width"
+#~ msgstr "Amplada"
+
+#~ msgid "Desktops"
+#~ msgstr "Escriptoris"
+
+#~ msgid "KPanel Configuration"
+#~ msgstr "Configuració de KPanel"

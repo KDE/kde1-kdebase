@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-11 15:37+0100\n"
+"POT-Creation-Date: 1998-03-19 22:17+0100\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -19,7 +19,7 @@ msgstr "Cor:"
 
 #: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
 #: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1021 polygon.cpp:101
-#: rock.cpp:550 slip.cpp:366 space.cpp:581 swarm.cpp:330
+#: rock.cpp:550 slip.cpp:366 space.cpp:587 swarm.cpp:330
 msgid "Speed:"
 msgstr "Velocidade:"
 
@@ -401,7 +401,7 @@ msgstr ""
 "  -setup            Configurar protecção de écran\n"
 "  -test             Inicializar a protecção de écran imediatamente\n"
 
-#: morph3d.cpp:839 space.cpp:413
+#: morph3d.cpp:839 space.cpp:419
 msgid "GL can not render with root visual\n"
 msgstr "GL não consegue criar com visual de raiz\n"
 
@@ -531,11 +531,11 @@ msgstr ""
 "\n"
 "Transposto para kscreensave by Martin Jones."
 
-#: saver.cpp:50 saver.cpp:110
+#: saver.cpp:52 saver.cpp:112
 msgid "Enter Password"
 msgstr "Password"
 
-#: saver.cpp:80
+#: saver.cpp:82
 msgid "Failed"
 msgstr "Falhou"
 
@@ -569,25 +569,25 @@ msgstr ""
 "\n"
 "Transposto para kscreensave por Emanuel Pirker."
 
-#: space.cpp:485
+#: space.cpp:491
 msgid "Space (GL)"
 msgstr ""
 
-#: space.cpp:575
+#: space.cpp:581
 #, fuzzy
 msgid "Setup KSpace"
 msgstr "Configurar Slip"
 
-#: space.cpp:591
+#: space.cpp:597
 msgid "Warp Interval:"
 msgstr ""
 
-#: space.cpp:679
+#: space.cpp:685
 #, fuzzy
 msgid "About KSpace"
 msgstr "Acerca do Slip"
 
-#: space.cpp:681
+#: space.cpp:687
 msgid ""
 "KSpace\n"
 "Copyright (c) 1998\n"

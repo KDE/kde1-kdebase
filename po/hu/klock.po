@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock VERSION\n"
-"POT-Creation-Date: 1998-03-11 15:37+0100\n"
+"POT-Creation-Date: 1998-03-19 22:17+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -25,7 +25,7 @@ msgstr "Szín:"
 
 #: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
 #: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1021 polygon.cpp:101
-#: rock.cpp:550 slip.cpp:366 space.cpp:581 swarm.cpp:330
+#: rock.cpp:550 slip.cpp:366 space.cpp:587 swarm.cpp:330
 msgid "Speed:"
 msgstr "Sebesség:"
 
@@ -368,7 +368,7 @@ msgstr ""
 "  -setup            Képernyõvédõ beállítása\n"
 "  -test             A képernyõvédõ azonnali indítása\n"
 
-#: morph3d.cpp:839 space.cpp:413
+#: morph3d.cpp:839 space.cpp:419
 msgid "GL can not render with root visual\n"
 msgstr ""
 
@@ -483,12 +483,12 @@ msgid ""
 "Ported to kscreensave by Martin Jones."
 msgstr ""
 
-#: saver.cpp:50 saver.cpp:110
+#: saver.cpp:52 saver.cpp:112
 #, fuzzy
 msgid "Enter Password"
 msgstr "Shadow password-ök"
 
-#: saver.cpp:80
+#: saver.cpp:82
 #, fuzzy
 msgid "Failed"
 msgstr "Család:"
@@ -519,25 +519,25 @@ msgid ""
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
 
-#: space.cpp:485
+#: space.cpp:491
 msgid "Space (GL)"
 msgstr ""
 
-#: space.cpp:575
+#: space.cpp:581
 #, fuzzy
 msgid "Setup KSpace"
 msgstr "A KFlame beállításai"
 
-#: space.cpp:591
+#: space.cpp:597
 msgid "Warp Interval:"
 msgstr ""
 
-#: space.cpp:679
+#: space.cpp:685
 #, fuzzy
 msgid "About KSpace"
 msgstr "A programról"
 
-#: space.cpp:681
+#: space.cpp:687
 msgid ""
 "KSpace\n"
 "Copyright (c) 1998\n"

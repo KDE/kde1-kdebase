@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
-"POT-Creation-Date: 1998-03-09 00:13+0100\n"
+"POT-Creation-Date: 1998-03-19 22:18+0100\n"
 "PO-Revision-Date: 1997-09-05 02:51+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -13,164 +13,99 @@ msgstr ""
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: backgnd.cpp:239 backgnd.cpp:274
-msgid "Desktop"
-msgstr "Рабочий стол"
-
-#: backgnd.cpp:284
-msgid "Rename..."
-msgstr "Переименовать..."
-
-#: backgnd.cpp:290
-msgid "Color"
-msgstr "Цвет"
-
-#: backgnd.cpp:309
-#
-msgid "&Flat"
-msgstr "&Плоский"
-
-#: backgnd.cpp:313
-#
-msgid "&Gradient"
-msgstr "&Градиент"
-
-#: backgnd.cpp:327
-#
-msgid "&Portrait"
-msgstr "&В длину"
-
-#: backgnd.cpp:331
-#
-msgid "&Landscape"
-msgstr "&В ширину"
-
-#: backgnd.cpp:342
-msgid "Wallpaper"
-msgstr "Обои"
-
-#: backgnd.cpp:374
-#
-msgid "Ti&led"
-msgstr "Черепицей"
-
-#: backgnd.cpp:378
-#
-msgid "&Centred"
-msgstr "В &центре"
-
-#: backgnd.cpp:382
-#
-msgid "&Scaled"
-msgstr "Изменять размер"
-
-#: backgnd.cpp:388
-#
-msgid "&Browse..."
-msgstr "&Просмотреть..."
-
-#
-#: backgnd.cpp:549
-msgid "Default"
-msgstr "По умолчанию"
-
-#: backgnd.cpp:888
-msgid "Desktop Title"
-msgstr "Заголовок стола"
-
-#: colorscm.cpp:142 colorscm.cpp:143
+#: colorscm.cpp:145 colorscm.cpp:146
 msgid "Inactive window"
 msgstr "Неактивное окно"
 
-#: colorscm.cpp:158 colorscm.cpp:159
+#: colorscm.cpp:161 colorscm.cpp:162
 msgid "Active window"
 msgstr "Активное окно"
 
-#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:300
+#: colorscm.cpp:197 colorscm.cpp:198 colorscm.cpp:306
 msgid "Window text"
 msgstr "Текст в окне"
 
-#: colorscm.cpp:209
+#: colorscm.cpp:215
 msgid "Disabled"
 msgstr "Запрещено"
 
-#: colorscm.cpp:216 colorscm.cpp:217
+#: colorscm.cpp:222 colorscm.cpp:223
 msgid "Selected"
 msgstr "Выбрано"
 
-#: colorscm.cpp:252 colorscm.cpp:264
+#: colorscm.cpp:258 colorscm.cpp:270
 msgid "Color Scheme"
 msgstr "Цветовая схема"
 
-#: colorscm.cpp:286
+#: colorscm.cpp:292
 msgid "Widget color"
 msgstr "Цвет управляющего элемента"
 
-#: colorscm.cpp:291
+#: colorscm.cpp:297
 msgid "Inactive title bar"
 msgstr "Неактивный заголовок (фон)"
 
-#: colorscm.cpp:292
+#: colorscm.cpp:298
 msgid "Inactive title text"
 msgstr "Неактивный заголовок"
 
-#: colorscm.cpp:293
+#: colorscm.cpp:299
 msgid "Active title bar"
 msgstr "Активный заголовок (фон)"
 
-#: colorscm.cpp:294
+#: colorscm.cpp:300
 msgid "Active title text"
 msgstr "Активный заголовок"
 
-#: colorscm.cpp:295
+#: colorscm.cpp:301
 msgid "Background"
 msgstr "Фон"
 
-#: colorscm.cpp:296
+#: colorscm.cpp:302
 msgid "Text"
 msgstr "Текст"
 
-#: colorscm.cpp:297
+#: colorscm.cpp:303
 msgid "Select background"
 msgstr "Выбранный фон"
 
-#: colorscm.cpp:298
+#: colorscm.cpp:304
 msgid "Select text"
 msgstr "Выбранный текст"
 
-#: colorscm.cpp:299
+#: colorscm.cpp:305
 msgid "Window background"
 msgstr "Фон окна"
 
-#: colorscm.cpp:311
+#: colorscm.cpp:317
 msgid "Contrast"
 msgstr "Котраст"
 
-#: colorscm.cpp:324 scrnsave.cpp:224
+#: colorscm.cpp:330 scrnsave.cpp:224
 msgid "Low"
 msgstr "Низкий"
 
-#: colorscm.cpp:328 scrnsave.cpp:221
+#: colorscm.cpp:334 scrnsave.cpp:221
 msgid "High"
 msgstr "Высокий"
 
-#: colorscm.cpp:343
+#: colorscm.cpp:349
 msgid "Save scheme"
 msgstr "Сохранить схему"
 
-#: colorscm.cpp:374 colorscm.cpp:382
+#: colorscm.cpp:380 colorscm.cpp:388
 msgid "You have chosen a name used by a supplied color scheme"
 msgstr "Вы выбрали уже используемое имя"
 
-#: colorscm.cpp:467
+#: colorscm.cpp:452
 msgid "KDE Default"
 msgstr "KDE по умолчанию"
 
-#: colorscm.cpp:695
+#: colorscm.cpp:714
 msgid "Display Setup"
 msgstr "Настройка дисплея"
 
-#: colorscm.cpp:696
+#: colorscm.cpp:715
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"
@@ -267,8 +202,8 @@ msgid "Large"
 msgstr "Большой"
 
 #
-#: general.cpp:173
 #
+#: general.cpp:173
 msgid "default"
 msgstr "по умолчанию"
 
@@ -297,10 +232,61 @@ msgstr "Стиль"
 
 #: main.cpp:76
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
-msgstr "использование: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr ""
+"использование: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
 #
-#: main.cpp:112
+#: main.cpp:116
 msgid "Display settings"
 msgstr "Настройка дисплея"
 
+#~ msgid "Desktop"
+#~ msgstr "Рабочий стол"
+
+#~ msgid "Rename..."
+#~ msgstr "Переименовать..."
+
+#~ msgid "Color"
+#~ msgstr "Цвет"
+
+#
+#~ msgid "&Flat"
+#~ msgstr "&Плоский"
+
+#
+#~ msgid "&Gradient"
+#~ msgstr "&Градиент"
+
+#
+#~ msgid "&Portrait"
+#~ msgstr "&В длину"
+
+#
+#~ msgid "&Landscape"
+#~ msgstr "&В ширину"
+
+#~ msgid "Wallpaper"
+#~ msgstr "Обои"
+
+#
+#~ msgid "Ti&led"
+#~ msgstr "Черепицей"
+
+#
+#~ msgid "&Centred"
+#~ msgstr "В &центре"
+
+#
+#~ msgid "&Scaled"
+#~ msgstr "Изменять размер"
+
+#
+#~ msgid "&Browse..."
+#~ msgstr "&Просмотреть..."
+
+#
+#~ msgid "Default"
+#~ msgstr "По умолчанию"
+
+#~ msgid "Desktop Title"
+#~ msgstr "Заголовок стола"
