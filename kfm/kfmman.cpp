@@ -582,9 +582,9 @@ void KFMManager::writeBeginning()
     if ( view->getGUI()->getViewMode() == KfmGui::ICON_VIEW )
     { }
     else if ( view->getGUI()->getViewMode() == KfmGui::LONG_VIEW )
-	view->write( "<table width=100%>" );
+	view->write( "<table width=100% padding=1>" );
     else if ( view->getGUI()->getViewMode() == KfmGui::TEXT_VIEW )
-	view->write( "<table width=100%>" );
+	view->write( "<table width=100% padding=1>" );
     else if ( view->getGUI()->getViewMode() == KfmGui::SHORT_VIEW )
 	;
     

@@ -1302,8 +1302,16 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
     {   
 	selectByURL( 0L, _url, !_isselected );
 	selectedURL = _url;
+    getKHTMLWidget()->setMarker( _url );
 	// ignoreMouseRelease = true;
 	return true;
+    }
+    else if ( _url != 0L && _mouse->button() == LeftButton &&
+	      ( _mouse->state() & ShiftButton ) == ShiftButton )
+    {
+        selectedURL = _url;
+        getKHTMLWidget()->selectFromMarker( _url );
+        return true;
     }
     else if ( _url != 0L && _mouse->button() == LeftButton )
     {
@@ -1436,6 +1444,14 @@ bool KfmView::mouseReleaseHook( QMouseEvent *_mouse )
 	selectedURL = "";
 	return true;
     }
+    else if ( !selectedURL.isEmpty() && _mouse->button() == LeftButton &&
+	 ( _mouse->state() & ShiftButton ) == ShiftButton )
+    {
+	// This is already done, so we jusrt consume this event
+	selectedURL = "";
+	return true;
+    }
+    // The user pressed the mouse over an URL, did no DND and released it
     // The user pressed the mouse over an URL, did no DND and released it
     else if ( !selectedURL.isEmpty() && _mouse->button() == LeftButton )
     {
@@ -1545,7 +1561,7 @@ bool KfmView::dndHook( const char *_url, QPoint &_p )
 	/* KMimeType *typ = KMimeType::findType( l.first() );
 	pixmap = typ->getPixmap( l.first() ); */
     }
-    
+
     // Put all selected files in one line separated with newlines
     char *s;
     QString tmp = "";
