@@ -1,3 +1,9 @@
+kdebase (2:980312-5) unstable; urgency=low
+
+  * remove kwm from /etc/X11/window-managers in postrm
+
+ -- Stephan Kulow <coolo@kde.org>  Fri,  3 Apr 1998 18:42:12 +0200
+
 kdebase (2:980312-4) frozen; urgency=low
 
   * added undocumented man page
