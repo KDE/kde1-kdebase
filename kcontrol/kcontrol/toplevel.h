@@ -78,7 +78,7 @@ public slots:
   void swallowChanged();
     
   void item_selected(int item);
-  void item_highlighted(int item);
+  void item_singleSelected(int item);
 };
 
 #endif

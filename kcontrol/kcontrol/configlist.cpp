@@ -173,7 +173,10 @@ bool KModuleListEntry::execute(QWidget *parent)
       if (isSwallow())
 	{
 	  *process << "-swallow" << swallowTitle;
-	  *process << "-geometry" << "480x480+10000+10000";
+	  //	  *process << "-geometry" << "480x480+10000+10000";
+
+	  // Avoid flickering a la kwm! (ettrich)
+	  KWM::doNotManage(swallowTitle);
 
 	  // connect to KWM events to get notification if window appears
 	  connect(kapp, SIGNAL(windowAdd(Window)), this, SLOT(addWindow(Window)));
@@ -231,6 +234,8 @@ bool KModuleListEntry::execute(QWidget *parent)
 	swallowWidget->raise();
 	swallowWidget->show();
 
+	swallowWidget->setFocus(); //workaround (ettrich)
+
 	KModuleListEntry::visibleWidget = swallowWidget;
       }
 
@@ -245,8 +250,12 @@ void KModuleListEntry::processExit(KProcess *proc)
       delete process;
       process = 0;
 
-      if (visibleWidget && visibleWidget == swallowWidget)
+      if (visibleWidget && visibleWidget == swallowWidget){
+	//Workaround /see kswallow.cpp (ettrich)
+	XSetInputFocus(qt_xdisplay(), visibleWidget->topLevelWidget()->winId(), 
+		       RevertToPointerRoot, CurrentTime);
 	visibleWidget = 0;
+      }
 
       delete swallowWidget;
       swallowWidget = 0;
@@ -272,6 +281,7 @@ void KModuleListEntry::addWindow(Window w)
 	}
 
       swallowWidget->swallowWindow(w);
+      swallowWidget->setFocus(); //workaround (ettrich)
       
       // disconnect from KWM events
       disconnect(kapp, SIGNAL(windowAdd(Window)), this, SLOT(addWindow(Window)));

@@ -40,7 +40,7 @@ public:
   void swallowWindow(Window w);
 
 protected: 
-
+  void focusInEvent( QFocusEvent * );
   void resizeEvent(QResizeEvent *);
 
 private:

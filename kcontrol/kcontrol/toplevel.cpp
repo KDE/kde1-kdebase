@@ -48,7 +48,7 @@ TopLevel::TopLevel (ConfigList *cl)
   mwidget = new mainWidget(panner->child1());
 
   connect(treelist, SIGNAL(selected(int)), this, SLOT(item_selected(int)));
-  connect(treelist, SIGNAL(highlighted(int)), this, SLOT(item_highlighted(int)));
+  connect(treelist, SIGNAL(singleSelected(int)), this, SLOT(item_singleSelected(int)));
   connect(panner, SIGNAL(positionChanged()), this, SLOT(pannerChanged()));
   
   setView(panner);
@@ -142,7 +142,7 @@ void TopLevel::item_selected(int item)
 }
 
 
-void TopLevel::item_highlighted(int item)
+void TopLevel::item_singleSelected(int item)
 {
   KModuleListEntry *listEntry = getListEntry(item);
   QString          hint;
