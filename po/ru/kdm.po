@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm\n"
-"POT-Creation-Date: 1998-11-28 01:12+0100\n"
+"POT-Creation-Date: 1998-12-05 01:14+0100\n"
 "PO-Revision-Date: 1998-11-07 05:26+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -30,47 +30,47 @@ msgstr "Выключить и перезагрузить"
 msgid "Exit kdm"
 msgstr "Выйти из kdm"
 
-#: kgreeter.cpp:246
+#: kgreeter.cpp:222
 msgid "Login:"
 msgstr "Имя:"
 
-#: kgreeter.cpp:258
+#: kgreeter.cpp:234
 msgid "Password:"
 msgstr "Пароль:"
 
-#: kgreeter.cpp:283
+#: kgreeter.cpp:259
 msgid "Login failed!"
 msgstr "Неудачная попытка!"
 
-#: kgreeter.cpp:289
+#: kgreeter.cpp:265
 msgid "Session Type:"
 msgstr "Тип сессии:"
 
-#: kgreeter.cpp:336
+#: kgreeter.cpp:312
 msgid "Go!"
 msgstr "Вперед!"
 
-#: kgreeter.cpp:352
+#: kgreeter.cpp:328
 msgid "Shutdown..."
 msgstr "Выключить..."
 
-#: kgreeter.cpp:594
+#: kgreeter.cpp:570
 msgid "Logins not available right now."
 msgstr "Вход сейчас не разрешен."
 
-#: kgreeter.cpp:635
+#: kgreeter.cpp:611
 msgid "login_getcapstr() failed."
 msgstr "проблемы с login_getcapstr()."
 
-#: kgreeter.cpp:689 kgreeter.cpp:716
+#: kgreeter.cpp:665 kgreeter.cpp:692
 msgid "Sorry -- your account has expired."
 msgstr "Извините, ваш пароль просрочен."
 
-#: kgreeter.cpp:694 kgreeter.cpp:721
+#: kgreeter.cpp:670 kgreeter.cpp:697
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Внимание: ваш пароль будет просрочен %s"
 
-#: kgreeter.cpp:748
+#: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr "Домашний каталог отсутствует"

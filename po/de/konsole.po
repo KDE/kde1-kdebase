@@ -5,136 +5,140 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-01 01:14+0100\n"
+"POT-Creation-Date: 1998-12-05 01:14+0100\n"
 "Last-Translator: Lars Doelle\n"
 
-#: main.C:239
+#: main.C:260
 msgid "&Normal"
 msgstr "&Normal"
 
-#: main.C:242
+#: main.C:263
 msgid "&Small"
 msgstr "&Klein"
 
-#: main.C:243
+#: main.C:264
 msgid "&Medium"
 msgstr "&Mittel"
 
-#: main.C:244
+#: main.C:265
 msgid "&Large"
 msgstr "&Gross"
 
-#: main.C:245
+#: main.C:266
 msgid "&Huge"
 msgstr "&Riesig"
 
-#: main.C:247
+#: main.C:268
 msgid "&Linux"
 msgstr "&Linux"
 
-#: main.C:248
+#: main.C:269
 msgid "Linux (small)"
 msgstr "Linux (klein)"
 
-#: main.C:251
+#: main.C:272
 msgid "&More ..."
 msgstr "&Mehr ..."
 
-#: main.C:257
+#: main.C:278
 msgid "&Hide"
 msgstr "&aus"
 
-#: main.C:258
+#: main.C:279
 msgid "&Left"
 msgstr "&links"
 
-#: main.C:259
+#: main.C:280
 msgid "&Right"
 msgstr "&rechts"
 
-#: main.C:265
+#: main.C:286
 msgid "40x15 (&small)"
 msgstr "40x15 (&klein)"
 
-#: main.C:266
+#: main.C:287
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:267
+#: main.C:288
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:268
+#: main.C:289
 msgid "80x40 (&xterm)"
 msgstr "80x40 (&xterm)"
 
-#: main.C:269
+#: main.C:290
 msgid "80x52 (ibmv&ga)"
 msgstr "80x25 (ibmv&ga)"
 
-#: main.C:278
+#: main.C:299
 msgid "&Menubar"
 msgstr "&Menuleiste"
 
-#: main.C:280
+#: main.C:301
 msgid "&Frame"
 msgstr "&Rahmen"
 
-#: main.C:282
+#: main.C:303
 msgid "Scroll&bar"
 msgstr "&Roll&balken"
 
-#: main.C:284
+#: main.C:305
 msgid "BS sends &DEL"
 msgstr "BS sendet &DEL"
 
-#: main.C:287
+#: main.C:308
 msgid "&Font"
 msgstr "Zeichensatz"
 
-#: main.C:288
+#: main.C:309
 msgid "&Size"
 msgstr "&Größe"
 
-#: main.C:289
+#: main.C:310
 msgid "&Schema"
 msgstr "&Schema"
 
-#: main.C:291
+#: main.C:312
 msgid "&Save options"
 msgstr "&Einstellungen sichern"
 
-#: main.C:295
+#: main.C:316
 msgid "&About ..."
 msgstr "&Über ..."
 
-#: main.C:296
+#: main.C:317
 msgid "&User's Manual ..."
 msgstr "Ben&utzer-Handbuch ..."
 
-#: main.C:297
+#: main.C:318
 msgid "&Technical Reference ..."
 msgstr "&Technische Referenz ..."
 
-#: main.C:308
+#: main.C:322
+msgid "cd"
+msgstr ""
+
+#: main.C:334
 msgid "New"
 msgstr "Neu"
 
-#: main.C:309
+#: main.C:335
 msgid "Sessions"
 msgstr "Sitzungen"
 
-#: main.C:506
+#: main.C:532
 #, c-format
 msgid "(%d columns x %d lines)"
 msgstr "(%d Spalten x %d Zeilen)"
 
-#: main.C:536
+#: main.C:562
 #, c-format
 msgid "About %s"
 msgstr "&Über %s"
 
-#: main.C:538
+#: main.C:564
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -156,7 +160,7 @@ msgstr ""
 "Details finden Sie in der Datei\n"
 "'LICENSE.readme'"
 
-#: main.C:854
+#: main.C:880
 msgid "Welcome to the console"
 msgstr "Willkommen an der Konsole"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-11-28 01:12+0100\n"
+"POT-Creation-Date: 1998-12-05 01:14+0100\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
@@ -21,48 +21,48 @@ msgstr "Desligar e reinicializar"
 msgid "Exit kdm"
 msgstr "Abandonar kdm"
 
-#: kgreeter.cpp:246
+#: kgreeter.cpp:222
 msgid "Login:"
 msgstr "Login:"
 
-#: kgreeter.cpp:258
+#: kgreeter.cpp:234
 msgid "Password:"
 msgstr "Senha:"
 
-#: kgreeter.cpp:283
+#: kgreeter.cpp:259
 msgid "Login failed!"
 msgstr "Login falhou!"
 
-#: kgreeter.cpp:289
+#: kgreeter.cpp:265
 msgid "Session Type:"
 msgstr "Tipo de Sessão:'"
 
-#: kgreeter.cpp:336
+#: kgreeter.cpp:312
 msgid "Go!"
 msgstr "Ir!"
 
-#: kgreeter.cpp:352
+#: kgreeter.cpp:328
 msgid "Shutdown..."
 msgstr "Desligar..."
 
-#: kgreeter.cpp:594
+#: kgreeter.cpp:570
 msgid "Logins not available right now."
 msgstr "Logins não estão disponíveis ainda."
 
-#: kgreeter.cpp:635
+#: kgreeter.cpp:611
 msgid "login_getcapstr() failed."
 msgstr "login_getcapstr() falhou."
 
-#: kgreeter.cpp:689 kgreeter.cpp:716
+#: kgreeter.cpp:665 kgreeter.cpp:692
 msgid "Sorry -- your account has expired."
 msgstr "Desculpe -- sua conta expirou."
 
-#: kgreeter.cpp:694 kgreeter.cpp:721
+#: kgreeter.cpp:670 kgreeter.cpp:697
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Aviso: sua conta expira em %s"
 
-#: kgreeter.cpp:748
+#: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr "Diretório-base não disponível"
 

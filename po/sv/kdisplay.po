@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay\n"
-"POT-Creation-Date: 1998-12-04 01:12+0100\n"
+"POT-Creation-Date: 1998-12-05 01:14+0100\n"
 "PO-Revision-Date: 1998-07-09 15:26+02:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -51,8 +51,8 @@ msgstr "&Anpassa ..."
 msgid "Wallpaper"
 msgstr "Bakgrundsmönster"
 
-#: backgnd.cpp:319 backgnd.cpp:580 backgnd.cpp:594 backgnd.cpp:1205
-#: backgnd.cpp:1365 backgnd.cpp:1903
+#: backgnd.cpp:319 backgnd.cpp:580 backgnd.cpp:594 backgnd.cpp:1204
+#: backgnd.cpp:1358 backgnd.cpp:1896
 msgid "No wallpaper"
 msgstr "Inget mönster"
 
@@ -132,118 +132,118 @@ msgstr ""
 msgid "kb"
 msgstr ""
 
-#: backgnd.cpp:1332
+#: backgnd.cpp:1325
 msgid "Desktop names"
 msgstr "Skrivbordsnamn"
 
-#: backgnd.cpp:1377
+#: backgnd.cpp:1370
 #, fuzzy
 msgid "File error"
 msgstr "Felaktigt namn"
 
-#: backgnd.cpp:1378
+#: backgnd.cpp:1371
 msgid "Can't load image file"
 msgstr ""
 
-#: backgnd.cpp:1401 backgnd.cpp:1873
+#: backgnd.cpp:1394 backgnd.cpp:1866
 msgid "Unsupported URL"
 msgstr ""
 
-#: backgnd.cpp:1402 backgnd.cpp:1874
+#: backgnd.cpp:1395 backgnd.cpp:1867
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 
-#: backgnd.cpp:1433
+#: backgnd.cpp:1426
 msgid "Two color backgrounds"
 msgstr "Tvåfärgade bakgrunder"
 
-#: backgnd.cpp:1470
+#: backgnd.cpp:1463
 msgid "Blend colors from &top to bottom"
 msgstr "Tona färgen &uppifrån och ned"
 
-#: backgnd.cpp:1476
+#: backgnd.cpp:1469
 msgid "Blend colors from &right to left"
 msgstr "Tona färgen från &höger till vänster"
 
-#: backgnd.cpp:1482
+#: backgnd.cpp:1475
 msgid "Use &pattern"
 msgstr "Använd &mönster"
 
-#: backgnd.cpp:1509
+#: backgnd.cpp:1502
 msgid "Preview"
 msgstr "Förhandsvisning"
 
-#: backgnd.cpp:1520
+#: backgnd.cpp:1513
 msgid "Pattern &name"
 msgstr "Mönster&namn"
 
-#: backgnd.cpp:1559
+#: backgnd.cpp:1552
 msgid "Current"
 msgstr "Aktuellt"
 
-#: backgnd.cpp:1619
+#: backgnd.cpp:1612
 msgid "Filled"
 msgstr "Fylld"
 
-#: backgnd.cpp:1622
+#: backgnd.cpp:1615
 msgid "Fish net"
 msgstr "Fisknät"
 
-#: backgnd.cpp:1625
+#: backgnd.cpp:1618
 msgid "Triangles"
 msgstr "Trianglar"
 
-#: backgnd.cpp:1628
+#: backgnd.cpp:1621
 msgid "Flowers"
 msgstr "Blommor"
 
-#: backgnd.cpp:1631
+#: backgnd.cpp:1624
 msgid "Rattan"
 msgstr "Rotting"
 
-#: backgnd.cpp:1634
+#: backgnd.cpp:1627
 msgid "Cobbled Pavement"
 msgstr "Kullersten"
 
-#: backgnd.cpp:1700
+#: backgnd.cpp:1693
 msgid "Random mode setup"
 msgstr ""
 
-#: backgnd.cpp:1706
+#: backgnd.cpp:1699
 msgid "Pick files from &directory"
 msgstr ""
 
-#: backgnd.cpp:1720
+#: backgnd.cpp:1713
 #, fuzzy
 msgid "&Browse ..."
 msgstr "&Bläddra..."
 
-#: backgnd.cpp:1741
+#: backgnd.cpp:1734
 msgid "Timer Delay in seconds :"
 msgstr ""
 
-#: backgnd.cpp:1753
+#: backgnd.cpp:1746
 #, fuzzy
 msgid "In &order"
 msgstr "Ignorera"
 
-#: backgnd.cpp:1770
+#: backgnd.cpp:1763
 #, fuzzy
 msgid "Desktops :"
 msgstr "Skrivbord"
 
-#: backgnd.cpp:1809
+#: backgnd.cpp:1802
 #, fuzzy
 msgid "&Add"
 msgstr "&Lägg till ..."
 
-#: backgnd.cpp:1980
+#: backgnd.cpp:1973
 #, fuzzy
 msgid "Directory error"
 msgstr "Felaktigt namn"
 
-#: backgnd.cpp:1981
+#: backgnd.cpp:1974
 msgid "Selected directory doesn't exists"
 msgstr ""
 

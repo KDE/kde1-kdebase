@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-28 01:12+0100\n"
+"POT-Creation-Date: 1998-12-05 01:14+0100\n"
 "PO-Revision-Date: 1998-08-31 21:10+0200\n"
 "Last-Translator: Anders Bengtsson <d96-abe@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -30,48 +30,48 @@ msgstr "Stäng av och starta om"
 msgid "Exit kdm"
 msgstr "Avsluta kdm"
 
-#: kgreeter.cpp:246
+#: kgreeter.cpp:222
 msgid "Login:"
 msgstr "Namn:"
 
-#: kgreeter.cpp:258
+#: kgreeter.cpp:234
 msgid "Password:"
 msgstr "Lösenord:"
 
-#: kgreeter.cpp:283
+#: kgreeter.cpp:259
 msgid "Login failed!"
 msgstr "Inloggning misslyckades!"
 
-#: kgreeter.cpp:289
+#: kgreeter.cpp:265
 msgid "Session Type:"
 msgstr "Sessionstyp:"
 
-#: kgreeter.cpp:336
+#: kgreeter.cpp:312
 msgid "Go!"
 msgstr "Starta!"
 
-#: kgreeter.cpp:352
+#: kgreeter.cpp:328
 msgid "Shutdown..."
 msgstr "Stäng av..."
 
-#: kgreeter.cpp:594
+#: kgreeter.cpp:570
 msgid "Logins not available right now."
 msgstr ""
 
-#: kgreeter.cpp:635
+#: kgreeter.cpp:611
 msgid "login_getcapstr() failed."
 msgstr ""
 
-#: kgreeter.cpp:689 kgreeter.cpp:716
+#: kgreeter.cpp:665 kgreeter.cpp:692
 msgid "Sorry -- your account has expired."
 msgstr "Tyvärr -- ditt konto har utgått."
 
-#: kgreeter.cpp:694 kgreeter.cpp:721
+#: kgreeter.cpp:670 kgreeter.cpp:697
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Varning: ditt konto utgår %s"
 
-#: kgreeter.cpp:748
+#: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr "Hemkatalogen inte tillgänglig"
 
