@@ -487,6 +487,7 @@ private:
   QPushButton *miniDiskNav;
 
   int clock_timer_id;
+  QTimer* clock_timer;
 
   bool initing;
 

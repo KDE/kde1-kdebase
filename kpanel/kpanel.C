@@ -8,6 +8,7 @@
 #include <qmsgbox.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <time.h>
 #include <stdlib.h>
 #include <math.h>
 #include <kfm.h>
@@ -1971,14 +1972,27 @@ void kPanel::slotUpdateClock() {
 
   // if this is the first time this function is called, install a timer
   if(clock_timer_id == 0) {
-    QTimer *t = new QTimer(this);
-    connect(t, SIGNAL(timeout()),
+    clock_timer = new QTimer(this);
+    connect(clock_timer, SIGNAL(timeout()),
 	    this, SLOT(slotUpdateClock()));
 
-    if( clockBeats == true )
-      clock_timer_id = t->start(86000);
-    else
-      clock_timer_id = t->start(60000);
+    clock_timer_id = clock_timer->start((clockBeats ? 86400 : 60000));
+  }
+  else {
+  // Adjust time intervall in case QTimer is not accurate enough or
+  // time changes (i.e. by ntpdate) on a regular base
+
+    QTime cur_time = QTime::currentTime();
+    
+    if(clockBeats) {
+      struct tm* loctime;
+      time_t curtime = time(0);
+      loctime = gmtime(&curtime);
+      long next_break = 86400-((((loctime->tm_hour*3600 + loctime->tm_min*60 +
+                                  loctime->tm_sec)+3600)*1000)%86400);
+      clock_timer->changeInterval(next_break);
+    } else
+      clock_timer->changeInterval((60 - cur_time.second()) * 1000 - cur_time.msec());
   }
 
 }
