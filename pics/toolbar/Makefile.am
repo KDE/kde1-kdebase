@@ -13,4 +13,4 @@ data_DATA = back.xpm bottom.xpm contents.xpm \
 	viewmag-.xpm viewmag.xpm \
 	viewzoom.xpm stop.xpm
 
-datadir = $(prefix)/share/toolbar
+datadir = $(kde_toolbardir)

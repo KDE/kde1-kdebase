@@ -1,4 +1,4 @@
 
 data_DATA = .directory
+datadir = $(kde_appsdir)/Graphics
 
-datadir = $(prefix)/share/applnk/Graphics

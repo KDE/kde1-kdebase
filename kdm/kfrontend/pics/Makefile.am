@@ -1,5 +1,5 @@
 
-PIXDIR	= $(prefix)/share/apps/kdm/pics
+PIXDIR	= $(kde_datadir)/kdm/pics
 
 install-data-local:
 	$(mkinstalldirs) $(PIXDIR)

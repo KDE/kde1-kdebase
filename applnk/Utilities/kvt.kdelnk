@@ -8,4 +8,5 @@ Comment=Terminal Emulation (kvt)
 Comment[nl]=Terminal emulatie (kvt)
 Comment[pl]=Emulator terminala (kvt)
 Terminal=0
+Name=Terminal
 Name[pl]=Terminal

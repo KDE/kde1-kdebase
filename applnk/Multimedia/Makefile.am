@@ -1,4 +1,5 @@
 
 data_DATA = .directory
 
-datadir = $(prefix)/share/applnk/Multimedia
+datadir = $(kde_appsdir)/Multimedia
+

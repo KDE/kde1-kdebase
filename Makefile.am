@@ -6,6 +6,8 @@ SUBDIRS = kfm kdehelp kdisplay kfontmanager kfind kvt \
 	kmenuedit kaudio kcontrolcenter \
 	pics po mimetypes doc applnk 
 
+# AUTOMAKE_OPTIONS = no-dependencies
+
 install-data-local:
 	@echo ""
 	@echo ""

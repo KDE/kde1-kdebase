@@ -1,4 +1,5 @@
 
 data_DATA = .directory
 
-datadir = $(prefix)/share/applnk/Games
+datadir = $(kde_appsdir)/Games
+

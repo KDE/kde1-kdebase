@@ -88,6 +88,8 @@ if test $dynamic_loading = "no"; then
   fi 
 fi
 AC_SUBST(KCC_MODULES)
+kcc_moduledir="\$(prefix)/lib/kcc/modules"
+AC_SUBST(kcc_moduledir)
 
 dnl for NLS support. Call them in this order!
 dnl WITH_NLS is for the po files

@@ -12,5 +12,5 @@ data_DATA = 3floppy_mount.xpm 3floppy_unmount.xpm 5floppy_mount.xpm \
 	txt.xpm unknown.xpm unzip.xpm video.xpm www.xpm y_src.xpm \
 	zip_mount.xpm zip_unmount.xpm  
 
-datadir = $(prefix)/share/icons
+datadir = $(kde_icondir)
 SUBDIRS = toolbar wallpapers mini

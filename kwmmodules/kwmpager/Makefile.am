@@ -6,7 +6,7 @@ MOC	=	@MOC@
 
 #######	Files
 
-appdir = $(prefix)/share/applnk/System/
+appdir = $(kde_appsdir)/System/
 
 bin_PROGRAMS	= kwmpager
 kwmpager_SOURCES = desktop.cpp pager.cpp 

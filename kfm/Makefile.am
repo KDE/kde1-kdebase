@@ -4,8 +4,8 @@ INCLUDES=	@all_includes@
 LDADD	=	@all_libraries@ -lkhtmlw -lkdeui -lkdecore -lqt -lXext -lX11 @LIBSOCKET@ -ljpeg -lgif -ljscript
 MOC	=	@MOC@
 
-CONFIGDIR = $(prefix)/share/config
-MIMELNKDIR = $(prefix)/share/mimelnk
+CONFIGDIR = $(kde_confdir)
+MIMELNKDIR = $(kde_mimedir)
 
 ####### Files
 
@@ -145,10 +145,12 @@ install-data-local:
 	$(INSTALL_DATA) magic $(MIMELNKDIR)
 
 uninstall-local:
-	rm -f $(bindir)/unpack
-	rm -f $(CONFIGDIR)/kfmrc
-	rm -f $(CONFIGDIR)/desktop
-	rm -f $(MIMELNKDIR)/magic
+	-rm -f $(bindir)/unpack
+	-rm -f $(bindir)/kfmsu
+	-rm -f $(bindir)/kfmsu2
+	-rm -f $(CONFIGDIR)/kfmrc
+	-rm -f $(CONFIGDIR)/desktop
+	-rm -f $(MIMELNKDIR)/magic
 
 IPC:    clientIPC kioIPC
 

@@ -10,7 +10,7 @@ DISTCLEANFILES = main.moc
 bin_PROGRAMS = kvt
 
 data_DATA = kvt.xpm
-datadir = $(prefix)/share/icons
+datadir = $(kde_icondir)
 
 kvt_SOURCES = \
 	command.c screen.c utmp.c \

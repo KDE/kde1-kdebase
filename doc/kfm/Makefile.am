@@ -7,5 +7,5 @@ data_DATA = app.html mime.html app2.html mime2.html \
 	kfm.jpeg        lesson3.jpeg    next.jpeg       previous2.jpeg \
 	lesson1.jpeg    lesson4.jpeg    next2.jpeg
 
-datadir = $(prefix)/share/doc/HTML/kfm
+datadir = $(kde_htmldir)/en/kfm
 
