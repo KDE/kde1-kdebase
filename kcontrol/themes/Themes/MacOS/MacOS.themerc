@@ -1,0 +1,51 @@
+[General]
+name=MacOS
+author=Daniel Mettler
+email=mettlerd@usa.net
+info=MacOS.htm
+description=This is the first Mac OS theme\nfor KDE!\nBy Daniel Mettler <mettlerd@usa.net>
+version=0.50
+[Panel]
+background=panel.xpm
+[Filemanager]
+[Display]
+Wallpaper0=desktop.jpg
+WallpaperMode0=Tiled
+[Colors]
+contrast=7
+foreground=0,0,0
+background=206,206,206
+selectForeground=255,255,255
+selectBackground=49,49,156
+activeBlend=206,206,206
+inactiveBlend=222,222,222
+activeBackground=206,206,206
+inactiveBackground=222,222,222
+activeForeground=0,0,0
+inactiveForeground=107,107,107
+windowForeground=0,0,0
+windowBackground=255,255,255
+[Window Border]
+shapePixmapTop=top.xpm
+shapePixmapBottom=bottom.xpm
+shapePixmapLeft=left.xpm
+shapePixmapRight=right.xpm
+shapePixmapTopLeft=topleft.xpm
+shapePixmapTopRight=topright.xpm
+shapePixmapBottomLeft=bottomleft.xpm
+shapePixmapBottomRight=bottomright.xpm
+[Window Titlebar]
+TitlebarPixmapActive=active.xpm
+TitlebarPixmapInactive=inactive.xpm
+CloseButton=close.xpm
+MinimizeButton=iconify.xpm
+MaximizeButton=maximize.xpm
+MaximizeDownButton=maximizedown.xpm
+StickyButton=pinup.xpm
+StickyDownButton=pindown.xpm
+MenuButton=menu.xpm
+[sounds]
+WindowMaximize=clap.wav
+WindowMaximize=clap.wav
+WindowTransNew=marbles.wav
+

@@ -33,6 +33,7 @@ protected slots:
   virtual void slotCbxClicked();
   virtual void slotDetails();
   virtual void slotInvert();
+  virtual void slotClear();
 
 protected:
   /** Creates a new options line */
@@ -47,10 +48,11 @@ protected:
 protected:
   QCheckBox *mCbxPanel, *mCbxIcons, *mCbxColors, *mCbxWindowBorder;
   QCheckBox *mCbxWindowTitlebar, *mCbxWallpapers, *mCbxSounds;
-  QCheckBox *mCbxCleanupIcons;
+  QCheckBox *mCbxWindowButtonLayout, *mCbxGimmick;
+  QCheckBox *mCbxOverwrite;
   QLabel *mStatPanel, *mStatIcons, *mStatColors, *mStatWindowBorder;
   QLabel *mStatWindowTitlebar, *mStatWallpapers, *mStatSounds;
-  QLabel *mStatCleanupIcons;
+  QLabel *mStatWindowButtonLayout, *mStatGimmick;
   QGridLayout *mGrid;
   bool mGui;
   int mGridRow;

@@ -25,8 +25,10 @@
 # following format:  [configKey][:fileName][!]
 # All parts of this format are optional.
 #
-# If configKey is given then it is the name of the key in the config file. 
-# Otherwise the same key as in the theme is used.
+# If configKey is given then it is the name of the key in the config file.
+# If configKey is '-' then no key is written.  Otherwise the same key as 
+# in the theme is used.
+#
 # If fileName is given it must be preceded with a ':' and is used as
 # a fixed file name. Then the corresponding file of the theme will be renamed
 # upon copy. E.g. Kwm expects it's close button to have the name close.xpm,
@@ -59,8 +61,10 @@
 #
 # * ConfigActivateCmd: These commands are executed after the theme is
 #   installed. Case does matter. Known commands are:
-#   - kwmcom <arg>: Calls kwmcom with <arg> as the argument
+#   - kwmcom <arg>: Calls kwmcom with <arg> as the argument.
+#   - kfmclient <arg>: Calls kfmclient with <arg> as the argument.
 #   - applyColors: Sends a color-scheme-changed signal to all windows.
+#   - restart <app>: Restart application <app>.
 #
 # * ConfigInstallCmd: This command is executed after the current group
 #   is processed and before the next subsequent group is processed.
@@ -74,6 +78,9 @@
 #   - enableSounds: en-/disables system sound events.
 #   - oneDesktopMode: activates oneDesktopMode if exactly one wallpaper
 #     got installed.
+#   - panelBack: rotate panel background -90 degree if panel is left or
+#     right.
+#   - winGimmickMode: activates or deactivates gimmick mode
 #
 #-----------------------------------------------------------------------------
 [Panel]
@@ -81,6 +88,7 @@ ConfigFile=kpanelrc
 ConfigGroup=kpanel
 ConfigAppDir=apps/kpanel/pics
 ConfigActivateCmd=kwmcom kpanel:restart
+ConfigInstallCmd=panelBack
 background=BackgroundTexture
 #
 #-----------------------------------------------------------------------------
@@ -88,6 +96,7 @@ background=BackgroundTexture
 ConfigFile=KDERC
 ConfigGroup=WM
 ConfigNextGroup=Colors-2
+ConfigActivateCmd=applyColors
 activeBlend=!
 inactiveBackground=!
 activeBackground=!
@@ -102,13 +111,20 @@ Contrast=!
 #
 [Colors-3]
 ConfigGroup=General
-ConfigActivateCmd=applyColors
+ConfigNextGroup=Colors-kvt
 foreground=!
 selectForeground=!
 selectBackground=!
 background=!
 windowForeground=!
 windowBackground=!
+#
+[Colors-kvt]
+ConfigFile=kvtrc
+ConfigNextGroup=Colors-konsole
+ConfigGroup=kvt
+terminalForeground=foreground!
+terminalBackground=background!
 #
 #-----------------------------------------------------------------------------
 [Sounds]
@@ -155,21 +171,22 @@ ConfigGroup=General
 ConfigAppDir=apps/kwm/pics
 ConfigNextGroup=Window Titlebar-2
 ConfigInstallCmd=winTitlebar
-CloseButton=:close.xpm
-MaximizeButton=:maximize.xpm
-MaximizeDownButton=:maximizedown.xpm
-MenuButton=:menu.xpm
-MinimizeButton=:iconify.xpm
-StickyButton=:sticky.xpm
-TitlebarPixmapActive=:activetitlebar.xpm
-TitlebarPixmapInactive=:inactivetitlebar.xpm
+ConfigActivateCmd=kwmcom restart
+CloseButton=-:close.xpm
+MaximizeButton=-:maximize.xpm
+MaximizeDownButton=-:maximizedown.xpm
+MenuButton=-:menu.xpm
+MinimizeButton=-:iconify.xpm
+StickyButton=-:pinup.xpm
+StickyDownButton=-:pindown.xpm
+TitlebarPixmapActive=-:activetitlebar.xpm
+TitlebarPixmapInactive=-:inactivetitlebar.xpm
 PixmapUnderTitleText=!
 TitleFrameShaded=!
 TitleAlignment=!
 #
 [Window Titlebar-2]
 ConfigFile=KDERC
-ConfigActivateCmd=kwmcom restart
 ConfigGroup=WM
 TitleFont=!
 #
@@ -180,14 +197,40 @@ ConfigAppDir=apps/kwm/pics
 ConfigFile=kwmrc
 ConfigActivateCmd=kwmcom restart
 ConfigInstallCmd=winShapeMode
-ShapePixmapBottom=:wm_bottom.xpm
-ShapePixmapBottomLeft=:wm_bottomleft.xpm
-ShapePixmapBottomRight=:wm_bottomright.xpm
-ShapePixmapLeft=:wm_left.xpm
-ShapePixmapRight=:wm_right.xpm
-ShapePixmapTop=:wm_top.xpm
-ShapePixmapTopLeft=:wm_topleft.xpm
-ShapePixmapTopRight=:wm_topright.xpm
+ShapePixmapBottom=-:wm_bottom.xpm
+ShapePixmapBottomLeft=-:wm_bottomleft.xpm
+ShapePixmapBottomRight=-:wm_bottomright.xpm
+ShapePixmapLeft=-:wm_left.xpm
+ShapePixmapRight=-:wm_right.xpm
+ShapePixmapTop=-:wm_top.xpm
+ShapePixmapTopLeft=-:wm_topleft.xpm
+ShapePixmapTopRight=-:wm_topright.xpm
+#
+#-----------------------------------------------------------------------------
+[Window Button Layout]
+ConfigGroup=Buttons
+ConfigAppDir=apps/kwm/pics
+ConfigFile=kwmrc
+ConfigActivateCmd=kwmcom configure
+ButtonA=!
+ButtonB=!
+ButtonC=!
+ButtonD=!
+ButtonE=!
+ButtonF=!
+#
+#-----------------------------------------------------------------------------
+[Window Gimmick]
+ConfigFile=kwmrc
+ConfigAppDir=apps/kwm/pics
+ConfigGroup=Gimmick
+ConfigActivateCmd=kwmcom configure
+ConfigInstallCmd=winGimmickMode
+PositionX=GimmickPositionX!
+PositionY=GimmickPositionY!
+OffsetX=GimmickOffsetX!
+OffsetY=GimmickOffsetY!
+Pixmap=
 #
 #-----------------------------------------------------------------------------
 [Display]
@@ -266,7 +309,17 @@ WallpaperMode7=WallpaperMode!
 ConfigFile=kdisplayrc
 ConfigGroup=Desktop Common
 ConfigInstallCmd=oneDesktopMode
-ConfigActivateCom=kbgwm_reconfigure
+ConfigActivateCmd=kwmcom kbgwm_reconfigure
+ConfigNextGroup=Display-root-icons
+#
+[Display-root-icons]
+ConfigFile=kfmrc
+ConfigGroup=KFM Root Icons
+ConfigActivateCmd=kfmclient configure
+RootIconTextStyle=Style!
+RootIconTextForeground=Foreground!
+RootIconTextBackground=Background!
+
 #
 #-----------------------------------------------------------------------------
 # This group is handled special. Here are all the icons that do not match

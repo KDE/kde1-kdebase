@@ -1,3 +1,24 @@
+1998-12-19  Stefan Taferner  <taferner@kde.org> (V0.5.1)
+
+	* Added config options for setting of kvt
+	fore- & background to colors section.
+
+	* Added groups for gimmick and window button layout.
+
+	* Improved icon quality.
+
+	* Added logging of installed files plus backup copies.
+	Now it should never happen that previously installed files
+	are deleted by mistake (happend with sounds before).
+
+	* Panel background is now rotated 90 degrees counter
+	clockwise if panel is right or left. In fact this should
+	be done by kpanel itself ;-)
+
+	* Changed themes to reside in directories in CVS
+
+	* Several bugs fixed
+	
 1998-12-18  Stefan Taferner  <taferner@kde.org> (V0.5)
 
 	* Added icon support. See Template.kthemerc for usage.

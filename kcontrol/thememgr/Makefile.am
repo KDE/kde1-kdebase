@@ -19,7 +19,7 @@ BUILTSOURCES = theme.moc installer.moc colors.moc widgetcanvas.moc \
 DISTCLEANFILES = theme.moc installer.moc colors.moc widgetcanvas.moc \
 	options.moc about.moc groupdetails.moc
 
-install-data-local: 
+install-data-local: install-themes
 	$(mkinstalldirs) $(APPSDIR)
 	$(INSTALL_DATA) kthememgr.kdelnk $(APPSDIR)
 	$(mkinstalldirs) $(kde_icondir)
@@ -28,9 +28,6 @@ install-data-local:
 	$(INSTALL_DATA) mini-kthememgr.xpm $(kde_minidir)/kthememgr.xpm
 	$(mkinstalldirs) $(kde_datadir)/kthememgr
 	$(INSTALL_DATA) theme.mappings $(kde_datadir)/kthememgr
-	$(mkinstalldirs) $(THEMESDIR)
-	$(INSTALL_DATA) Themes/*.tar.gz $(THEMESDIR)
-	$(INSTALL_DATA) Themes/Template.themerc $(THEMESDIR)
 
 uninstall-local:
 	rm -f $(APPSDIR)/kthememgr.kdelnk
@@ -38,6 +35,16 @@ uninstall-local:
 	rm -f $(kde_minidir)/kthememgr.xpm
 	rm -f $(kde_datadir)/kthememgr/theme.mappings
 	rm -f $(THEMESDIR)/Template.themerc
+
+install-themes:
+	$(mkinstalldirs) $(THEMESDIR)
+	$(INSTALL_DATA) Themes/Template.themerc $(THEMESDIR)
+	cd Themes; \
+	for f in *; do \
+	  if [ -d $$f -a $$f != "CVS" ]; then \
+	    tar --exclude CVS -c -f - $$f | gzip -c > $(THEMESDIR)/$$f.tar.gz; \
+	  fi; \
+	done
 
 messages:
 	@XGETTEXT@ -C -ki18n *.cpp -x../../kdelibs/po/kde.pot && \

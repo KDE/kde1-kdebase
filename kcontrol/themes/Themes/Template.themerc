@@ -51,6 +51,11 @@ WallpaperMode6=
 Wallpaper7=
 WallpaperMode7=
 #
+# Color and style of root icon texts (style: 1=transparent, 0=solid)
+RootIconTextStyle=
+RootIconTextForeground=
+RootIconTextBackground=
+#
 #-----------------------------------------------------------------------------
 [Colors]
 contrast=
@@ -66,6 +71,9 @@ selectBackground=
 selectForeground=
 windowBackground=
 windowForeground=
+# Foreground and background of the common Kde terminals (kvt, etc.)
+terminalForeground=
+terminalBackground=
 #
 #-----------------------------------------------------------------------------
 [Window Border]
@@ -86,12 +94,38 @@ MaximizeDownButton=
 MenuButton=
 MinimizeButton=
 StickyButton=
+StickyDownButton=
 TitlebarPixmapActive=
 TitlebarPixmapInactive=
-PixmapUnderTitleText=
-TitleFrameShaded=
-TitleAlignment=
+#PixmapUnderTitleText= yes | no
+#TitleFrameShaded= yes | no
+#TitleAlignment= left | right | middle
 TitleFont=
+#
+#-----------------------------------------------------------------------------
+[Window Button Layout]
+#
+# Layout of window buttons. The buttons A,B,C are on the left side of the
+# titlebar, the buttons D,E,F are on the right side.
+# Valid values are: Off, Maximize, Iconify, Close, Menu, Sticky
+#
+ButtonA=
+ButtonB=
+ButtonC=
+ButtonD=
+ButtonE=
+ButtonF=
+#
+#-----------------------------------------------------------------------------
+[Window Gimmick]
+#
+# An extra icon that is placed relative to the top-left corner of the
+# active window, e.g. a small Linux penguin.
+Pixmap=
+PositionX=
+PositionY=
+OffsetX=
+OffsetY=
 #
 #-----------------------------------------------------------------------------
 [Sounds]

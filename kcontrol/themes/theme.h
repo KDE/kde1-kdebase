@@ -87,7 +87,8 @@ public:
   /** Theme packet installation options */
   bool instPanel, instIcons, instColors, instWindowBorder;
   bool instWindowTitlebar, instWallpapers, instSounds;
-  bool instCleanupIcons;
+  bool instWindowButtonLayout, instWindowGimmick;
+  bool instOverwrite;
 
   /** Clear config contents */
   virtual void clear(void);
@@ -110,8 +111,8 @@ public:
       or ~/.kde if none given. Returns true on success. */
   static bool mkdirhier(const char* dirHier, const char* baseDir=NULL);
 
-  /** Delete installed icons and reinstall backup copies. */
-  virtual void cleanupInstalledIcons(void);
+  /** Uninstall files of last theme installation for given group */
+  virtual void uninstallFiles(const char* groupName);
 
 signals:
   /** This signal is emitted after import() or load() */
@@ -180,6 +181,17 @@ protected:
   virtual void loadSettings(void);
   virtual void saveSettings(void);
 
+  /** Rotate image file by given angle. */
+  virtual void rotateImage(const QString filename, int angle);
+
+  /** Add file to list of installed files. */
+  virtual void addInstFile(const char* filename);
+
+  /** Read list of installled files. */
+  virtual void readInstFileList(const char* groupName);
+
+  /** Write list of installled files. */
+  virtual void writeInstFileList(const char* groupName);
 
 protected:
   QString mName;           // Name of the theme
@@ -193,7 +205,8 @@ protected:
   QString mConfigDir;
   KSimpleConfig* mMappings;
   QStrList mCmdList;
-  QStrList mInstIcons;     // List of installed icons
+  QStrList mInstFiles;     // List of installed files
+  int mInstIcons;          // Number of installed icons
 };
 
 #endif /*THEME_H*/

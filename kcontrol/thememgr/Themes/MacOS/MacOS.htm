@@ -1,0 +1,405 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (X11; I; Linux 2.0.35 i586) [Netscape]">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#AAB3FF" LINK="#0000EF" VLINK="#51188E" ALINK="#FF0000">
+
+<CENTER>
+<H1>
+<A NAME="top"></A>Welcome to the first MacOS-theme for KDE</H1></CENTER>
+
+<CENTER><I>Version 0.50</I></CENTER>
+
+<CENTER>10/1998 by <A HREF="mailto:mettlerd@usa.net?subject=MacOS-theme v0.50">Daniel
+Mettler</A></CENTER>
+
+<CENTER>10/1998 modifications by <A
+HREF="mailto:flemming@themes.org">Robert Flemming</A></CENTER>
+
+<CENTER><B><FONT COLOR="#000000"><FONT SIZE=+1>supported by: <I>(only <A HREF="mailto:mettlerd@usa.net?subject=MacOS-theme v0.50">me
+myself</A> so far ;-)</I></FONT></FONT></B></CENTER>
+
+<CENTER>&nbsp;</CENTER>
+
+<CENTER><B><FONT COLOR="#FF0000"><FONT SIZE=+2>Important notes:</FONT></FONT></B></CENTER>
+
+<CENTER><FONT COLOR="#FF0000"><FONT SIZE=+1>So far this theme does not
+work properly with kwm.</FONT></FONT></CENTER>
+
+<CENTER><FONT COLOR="#FF0000"><FONT SIZE=+1>Nevertheless I expect it to
+work correctly with future versions of kwm.</FONT></FONT></CENTER>
+
+<CENTER><FONT COLOR="#FF0000"><FONT SIZE=+1>UPDATE: 
+This should be fixed now. --Robert</FONT></FONT></CENTER>
+
+<H2>
+
+<HR WIDTH="100%">Contents</H2>
+
+<OL>
+<LI>
+&nbsp;<A HREF="#Overview">Overview</A></LI>
+
+<LI>
+&nbsp;<A HREF="#Screenshots">Screenshots</A></LI>
+
+<LI>
+&nbsp;<A HREF="#Installation">Installation</A></LI>
+
+<LI>
+&nbsp;<A HREF="#General Hints">General Hints</A></LI>
+
+<LI>
+&nbsp;<A HREF="#Deinstallation">Deinstallation</A></LI>
+
+<LI>
+&nbsp;<A HREF="#ToDo/Known Bugs">ToDo/Known Bugs</A></LI>
+
+<LI>
+&nbsp;<A HREF="#Links">Links</A></LI>
+
+<LI>
+&nbsp;<A HREF="#Credits">Credits</A></LI>
+
+<LI>
+&nbsp;<A HREF="#License">License</A></LI>
+</OL>
+
+<HR WIDTH="100%">
+<H2>
+<A NAME="Overview"></A>Overview</H2>
+<B><I>Enjoy the power and stability of Linux without leaving the desktop
+feeling you are used to!</I></B>
+
+<P>"Themes" are some kind of packages of graphical elements to personalize
+the appearance of your KDE/KWM desktop. With this <I>MacOS-theme</I> I
+tried to give KDE/KWM as much as possible of the <I>appearance</I> of a
+MacO$ 8.1.
+
+<P>&nbsp;<A HREF="#top">top</A>
+<H2>
+<A NAME="Screenshots"></A>Screenshots</H2>
+NB: This screenshot shows the desktop as it looks like when the pixmaps
+are <I>not</I> displayed <I>properly</I> by kwm. Expect it to look much
+better with future versions of kwm.
+
+<P><IMG SRC="MacOS_small.jpg" ALT="MacOS_small.jpg" NOSAVE HEIGHT=307 WIDTH=409>
+
+<P>&nbsp;<A HREF="#top">top</A>
+<H2>
+<A NAME="Installation"></A>Installation</H2>
+For the following installation procedures I assume that you have installed
+KDE and that it is working correctly. Thus, you should have set an environment
+variable called KDEDIR pointing to your KDE base directory (usually /opt/kde).
+You can create links instead of copying files.
+<H3>
+Global installation</H3>
+<I>Note: For the following procedure you need to be <B>root</B>. This installation
+method changes the KDE appearance <B>defaults</B> for <B>all</B> users
+on the system.</I>
+
+<P>Follow the instructions in the next subsection, <B><I>User installation</I></B>,
+but replace all occurences of <B><TT>~/.kde</TT></B> by <B>$KDEDIR</B>.
+The system-wide environment variable <B>$KDEDIR</B> points to the KDE base
+directory, usually <B><TT>/opt/kde</TT></B>.
+<H3>
+User installation</H3>
+<I>Note: This method describes how to change KDE's appearance for an individual
+user without changing its appearance for other users.</I>
+<BR>&nbsp;
+<OL>
+<LI>
+Make backup copies (e.g. file extension *.ori) of all files you need to
+replace or edit in the following procedure!</LI>
+
+<LI>
+Extract all files included with this package to a temporary directory.
+In this temporary directory a new folder called <B><TT>MacOS-theme_<I>x.xx</I></TT></B>
+(containing the files in the package) will be created, where <B><I><TT>x.xx</TT></I></B>
+is the version number of this MacOS-theme package.</LI>
+
+<LI>
+If you do not have the following directories yet, create them with <TT><B>mkdir
+&lt;directory></B>:</TT></LI>
+
+<UL>
+<LI>
+<B><TT>~/.kde/share/apps/kwm/pics/</TT></B></LI>
+
+<LI>
+<B><TT>~/.kde/share/apps/kpanel/pics/</TT></B></LI>
+
+<LI>
+<B><TT>~/.kde/share/apps/kdisplay/color-schemes/</TT></B></LI>
+
+<LI>
+<B><TT>~/.kde/share/wallpapers/</TT></B></LI>
+</UL>
+
+<LI>
+The following files need to be copied from the <B><TT>MacOS-theme_<I>x.xx</I></TT></B>
+directory (see above) to the appropriate directories:</LI>
+
+<UL>
+<LI>
+Copy the file <B><TT>MacOS.kcsrc</TT></B> to <B><TT>~/.kde/share/apps/kdisplay/color-schemes/</TT></B></LI>
+
+<LI>
+If it exists, copy the file <B><TT>MacOS.xpm</TT></B> to <B><TT>~/.kde/share/apps/kpanel/pics/</TT></B></LI>
+
+<LI>
+Copy the file <B><TT>MacOS.jpg</TT></B> to <B><TT>~/.kde/share/wallpapers/</TT></B></LI>
+
+<LI>
+Copy all other <B><TT>.xpm</TT></B> files to <B><TT>~/.kde/share/apps/kwm/pics</TT></B></LI>
+</UL>
+
+<LI>
+Edit the file <B><TT>~/.kde/share/config/kwmrc </TT></B>to match the values
+in <B><TT>kwmrc.MacOS</TT></B></LI>
+
+<LI>
+Edit the file <B><TT>~/.kde/share/config/kpanelrc</TT></B> to match the
+values in<B><TT> kpanelrc.MacOS</TT></B> (if it exists)</LI>
+
+<LI>
+Start the <I>KDE Control Center</I> and</LI>
+
+<UL>
+<LI>
+choose <B><TT>~/.kde/share/wallpapers/MacOS.jpg</TT></B> as wallpaper (see
+Desktop..Background).</LI>
+
+<LI>
+choose <B><TT>MacOS</TT></B> as color-scheme (see Desktop..Colors).</LI>
+
+<LI>
+choose a nice font for your desktop, e. g. <I>lucida</I> as general font
+(see Desktop..Fonts etc.)</LI>
+
+<LI>
+enable "Draw widgets in the style of Windows 95" (see Desktop..Fonts etc.)</LI>
+
+<LI>
+customize the appearance &amp; functionality of the titlebar to your needs
+(see Windows..Buttons).</LI>
+</UL>
+
+<LI>
+To get transparent desktop icons open a <I>kfm</I>-window and choose [Options..Configure
+Browser...] in the menubar. Under the tab <I>Other</I> enable "Transparent
+text for Root icons".</LI>
+
+<LI>
+Run krdb and restart KDE.</LI>
+
+<LI>
+If everything works correctly remove the directory <B><TT>MacOS-theme_<I>x.xx</I></TT></B>
+of your temporary directory.</LI>
+</OL>
+&nbsp;<A HREF="#top">top</A>
+<H2>
+<A NAME="General Hints"></A>General Hints</H2>
+Aye, aye, Sir! ;-)
+<UL>
+<LI>
+I recommend to use the color-scheme which is included in this theme package
+as most button pixmaps look ugly otherwise.</LI>
+
+<LI>
+You can activate all titlebar-buttons you already know from your default
+KDE desktop (<B>Menu, Close, Sticky, Iconify, Maximize</B>). E.g. you can
+use a button for the pin-up/down feature (also called "sticky windows")
+which actually does not exist in MacOS. I tried to design these buttons
+in a MacOS-like manner.</LI>
+
+<LI>
+Instead of enabling the <B>menu</B> button for your windows (apple pixmap
+for non-KDE applications) you can <B>right-click on the title bar </B><I>or</I>
+hit <B>ALT-F3</B> to get the same functionality.</LI>
+
+<LI>
+So far there is no implementation of the un/shading feature by clicking
+on a button (as seen on MacOS) in KDE/KWM. In KDE/KWM <B>un/shading</B>
+of windows is done by <B>double-clicking with the left mouse-button on
+the menu bar</B> (similar to MacOS). Nevertheless I included an icon for
+un/shading of windows to be prepared for future implementations.</LI>
+
+<LI>
+You are completely free in choosing another font. "Utopia" simply is a
+nice font for the desktop (authors opinion, sure) and the most MacOS-stylish
+font I found so far.</LI>
+
+<LI>
+Do not forget to mowe the lawn in the background of your MacOS-theme every
+three days ;-) Hmm, actually this is a good idea for a new screensaver.
+If anybody likes to develop such a screensaver I would appreciate to include
+it with this theme. I think there already exists something like this for
+Micro$oft Window$.</LI>
+
+<LI>
+If you are using this MacOS-theme please send me an e-mail message: Daniel
+Mettler, <A HREF="mailto:mettlerd@usa.net?subject=MacOS-theme v0.50">mettlerd@usa.net</A>.
+Please do not send me a 10 KB message, just send me an empty message or
+a few lines of comment. If I get some feedback I will be encouraged to
+improve this theme (or create other themes).</LI>
+</UL>
+
+<H2>
+<A NAME="Deinstallation"></A>Deinstallation</H2>
+
+<H3>
+temporary</H3>
+If you like to switch off the <I>ShapeMode</I> only without deinstalling
+this theme do the following:
+<BLOCKQUOTE>
+<LI>
+&nbsp;Edit the file <B><TT>~/.kde/share/config/kwmrc</TT></B> or <B><TT>$KDEDIR/share/config/kwmrc</TT></B>
+(depending on your installation method): Change the <I>ShapeMode</I> to
+<B><TT>ShapeMode=Off</TT></B></LI>
+</BLOCKQUOTE>
+
+<H3>
+permanent</H3>
+Undo the steps you did under the section <A HREF="#Installation">Installation</A>.
+
+<P>&nbsp;<A HREF="#top">top</A>
+<BR>&nbsp;
+<H2>
+<A NAME="ToDo/Known Bugs"></A>ToDo/Known Bugs</H2>
+
+<UL>
+<LI>
+Until now this theme does not work properly with kwm. E.g. the borders
+and the corners do not match together; some of the pixmaps are not displayed
+correctly. Even if I do not know the reason for these issues I expect them
+to disappear with future versions of kwm.</LI>
+
+<LI>
+The instructions given in this document have not been tested. You do everything
+related to this theme on your own risk.</LI>
+
+<LI>
+Improve the pixmaps for pinup/pindown</LI>
+
+<LI>
+Include a MacOS-like font for X with this theme. Please <A HREF="mailto:mettlerd@usa.net?subject=MacOS-theme v0.50">contact
+me</A> if you have any.</LI>
+
+<LI>
+If there is a demand for it include MacOS-like desktop icons (trash, HDD,
+FDD, CDD, ...) too.</LI>
+
+<LI>
+What about MacOS-like system sounds?</LI>
+
+<LI>
+lawn-mower-screensaver (?)</LI>
+
+<LI>
+Perhaps include MacOS 8.5(tm)-like themes with this theme.</LI>
+
+<LI>
+Set up a (small &amp; humble) homepage for my themes. Hmm...last priority
+as there already exist at least two good sites for KDE-themes (see section
+<A HREF="#Links">Links</A> in this document).</LI>
+
+<BR><I>Note for SysOps/Webmasters: I am always looking for webspace for
+free (not only for a KDE-themes page), preferrably without advertisement
+banners. Please <A HREF="mailto:mettlerd@usa.net?subject=MacOS-theme v0.50">contact
+me</A>, if you have any to offer. These server-space donations (as well
+as all other kinds of useful donations ;-) will be mentioned at least at
+the <A HREF="#top">top of this document</A>. See the <A HREF="#Links">Links</A>
+&amp; <A HREF="#Credits">Credits</A> section.</I>
+<LI>
+For bug-reports, comments, suggestions please drop me a few lines: Daniel
+Mettler, <A HREF="mailto:mettlerd@usa.net?subject=MacOS-theme v0.50">mettlerd@usa.net</A></LI>
+</UL>
+&nbsp;<A HREF="#top">top</A>
+<H2>
+<A NAME="Links"></A>Links</H2>
+<I>So far there are no donations.</I>
+<BR>&nbsp;
+<TABLE COLS=2 WIDTH="100%" NOSAVE >
+<TR>
+<TD><A HREF="http://kde.themes.org">kde.themes.org</A></TD>
+
+<TD>Themes for KDE. WWW site by <A HREF="mailto:flemming@kde.themes.org">Robert
+Flemming</A></TD>
+</TR>
+
+<TR NOSAVE>
+<TD NOSAVE><A HREF="http://home.clara.net/george.russell/kdescreenshots.html">home.clara.net/george.russell/</A></TD>
+
+<TD>Themes for KDE. WWW site by <A HREF="mailto:russell@kde.org">George
+Russell</A></TD>
+</TR>
+
+<TR>
+<TD><A HREF="http://themes.org">themes.org</A>&nbsp;</TD>
+
+<TD>Themes for other window managers. WWW site.</TD>
+</TR>
+
+<TR>
+<TD><A HREF="http://www.kde.org">www.kde.org</A>&nbsp;</TD>
+
+<TD>WWW site of the K Desktop Environment</TD>
+</TR>
+
+<TR>
+<TD><A HREF="ftp://ftp.kde.org">ftp.kde.org</A>&nbsp;</TD>
+
+<TD>FTP site of the K Desktop Environment</TD>
+</TR>
+
+<TR>
+<TD><A HREF="http://buglist.kde.org">buglist.kde.org</A></TD>
+
+<TD>Buglist/Error form of the K Desktop Environment</TD>
+</TR>
+</TABLE>
+&nbsp;
+<BR>&nbsp;<A HREF="#top">top</A>
+<H2>
+<A NAME="Credits"></A>Credits</H2>
+Thanks to
+
+<P>my supporters:
+<UL>
+<LI>
+your name and <A HREF="#Links">link-logo</A>, if you support me.</LI>
+</UL>
+Thanks to
+<UL>
+<LI>
+<A HREF="mailto:flemming@kde.themes.org">Robert Flemming</A> for the tips
+and his brilliant page <A HREF="http://kde.themes.org">kde.themes.org</A></LI>
+
+<LI>
+<A HREF="mailto:russell@kde.org">George Russell</A> for his <A HREF="http://home.clara.net/george.russell/kdescreenshots.html">KDE-themes-page</A></LI>
+
+<LI>
+<A HREF="mailto:ettrich@kde.org">Matthias Ettrich</A> , the developer of
+kwm</LI>
+
+<LI>
+the developers of the <A HREF="http://www.gimp.org">GIMP</A> , which I
+used to design this theme</LI>
+
+<LI>
+all other contributors to Linux, KDE &amp; free software</LI>
+
+<LI>
+all supporters of free software</LI>
+</UL>
+<A HREF="#top">top</A>
+<H2>
+<A NAME="License"></A>License</H2>
+This theme is released under the terms and conditions of the GNU GPL.
+<BR>MacOS is a trademark of Apple Macintosh
+
+<P>&nbsp;<A HREF="#top">top</A>
+</BODY>
+</HTML>

@@ -1,0 +1,118 @@
+MGBreizh Theme
+
+1. What you need to make this theme working
+
+- KDE (hehehehe, really??? :o)
+- Sound support
+
+*********************************************************************************
+
+2. If you don't have any sound card
+
+Don't install the sound directory and the kwmsoundrc file.
+
+*********************************************************************************
+
+3. You have a Sound Blaster but don't know how to install it
+
+That's really easy to do, follow this steps :
+
+3a. Type : pnpdump > pnpstuff
+this will install a file(pnpstuff) into your home directory which has
+all your PnP settings
+
+3b. read carefully the pnpstuff file ($HOME/pnpstuff)
+You'll have to choose the right settings for your card(s)
+
+Mine looks like this :
+
+# (DEBUG)
+(READPORT 0x0203)
+(ISOLATE)
+(IDENTIFY *)
+
+(CONFIGURE CTL009d/78102668 (LD 0
+(INT 0 (IRQ 5 (MODE +E)))
+(DMA 0 (CHANNEL 1))
+(DMA 1 (CHANNEL 5))
+(IO 0 (BASE 0x0220))
+(IO 1 (BASE 0x0330))
+(IO 2 (BASE 0x0388))
+(ACT Y)
+))
+
+(CONFIGURE CTL009d/78102668 (LD 1
+(IO 0 (BASE 0x0200))
+(ACT Y)
+))
+
+You got it ?
+3c. now save this file as isapnp.conf and put it in the /etc/ directory
+
+to check is isapnp.conf is working type :
+isapnp /etc/isapnp.conf
+
+if there's errors, correct them.
+
+3d. Now, type :
+sndconfig --noprobe
+
+choose your SB card, and OK.
+
+then it'll ask you for the IO PORT, if you refer to your isapnp.conf you should see something like (IO 0(BASEx0220)), ok ?
+well that's the IO PORT, so choose 0x220. If this is a different port, choose another one.
+Do the same thing for the IRQ and the DMAs.
+
+After you've settled this and pressed OK, you should hear a sound like "blahblahblah Linux", if you hear this that's perfect !
+now you're done with the sound card !
+
+*************************************************************************************
+
+4. The images
+
+goto ~/MGBreizh/images/
+type mv *.xpm $HOME/.kde/share/apps/kwm/pics
+
+*************************************************************************************
+5. Other images
+
+goto ~/MGBreizh/
+type mv panel.xpm $HOME/.kde/share/apps/kpanel/pics/
+then mv kdegear.xpm $KDEDIR/share/wallpapers/
+
+*************************************************************************************
+
+6. The sounds
+
+goto ~/MGBreizh/sounds/
+to check if you have the sound directory type :
+ls -l $KDEDIR/share/
+if not, type mkdir $KDEDIR/share/sounds
+then type mv *.wav $KDEDIR/share/sounds/
+
+*************************************************************************************
+7. Configuration files
+goto ~/MGBreizh/
+
+7a. MGBreizh.kcsrc
+type mv MGBreizh.kcsrc $HOME/.kde/share/apps/kdisplay/color-schemes/
+
+7b. kwmrc, kwmsoundrc, kpanelrc
+type mv *rc* $HOME/.kde/share/config/
+
+*************************************************************************************
+
+8. Restarting KDE
+Ok, like the sounds won't be loaded with a simple "restart", just logout
+and restart X.
+
+Enjoy !
+
+*************************************************************************************
+9. Contact
+
+Mikael GEORGES
+admin@mgbreizh.com
+http://www.mgbreizh.com/
+
+************************************************************************************
