@@ -22,3 +22,10 @@ kcmsyssound x11 NONE
 kcmlocale x11 Apps/System
 kcmkpanel x11 NONE
 kcontrol x11 Apps/System
+kpager kde Modules
+kikbd x11 Apps/Tools
+konsole x11 XShells
+kcmikbd x11 NONE
+kcmkfm x11 NONE
+kcmkonsole x11 NONE
+kcmkeys x11 NONE

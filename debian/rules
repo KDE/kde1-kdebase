@@ -19,10 +19,10 @@ $(BUILDDIR)/build-stamp:
 	  CXXFLAGS="-O2 -g -Wall -Wno-uninitialized" \
 	  RUN_KAPPFINDER="no" \
 	../configure --with-shadow --without-pam \
-	--enable-debug --with-install-root=`pwd`/debian/tmp \
-	--disable-rpath \
+	--enable-debug --with-install-root=debian/tmp \
+	--disable-rpath ; \
 	fi
-	make
+	make -C $(BUILDDIR)
 	
 	touch $(BUILDDIR)/build-stamp
 
@@ -44,7 +44,7 @@ binary-arch: checkroot build
 	dh_testroot
 	dh_clean -k
 	dh_installdirs
-	make -C $(BUILDDIR) prefix=`pwd`/../debian/tmp/usr RUN_KAPPFINDER="no" install 
+	make -C $(BUILDDIR) install_root=`pwd`/debian/tmp RUN_KAPPFINDER="no" install 
 	dh_movefiles
 	perl -w debian/kderules
 	cp debian/README.kde debian/tmp/usr/doc/kde
