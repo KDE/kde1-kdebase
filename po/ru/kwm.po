@@ -164,4 +164,3 @@ msgstr "Переключиться"
 #: taskmgr.C:119
 msgid "Current session"
 msgstr "Текущая сессия"
-

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm \n"
-"POT-Creation-Date: 1998-01-16 22:07+0100\n"
+"POT-Creation-Date: 1998-01-19 22:47+0100\n"
 "PO-Revision-Date: 1998-01-17 13:54+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -10,7 +10,7 @@ msgstr ""
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:914 kbind.cpp:926 kbind.cpp:936 kfmgui.cpp:268 kfmgui.cpp:931
+#: kbind.cpp:914 kbind.cpp:926 kbind.cpp:936 kfmgui.cpp:268 kfmgui.cpp:939
 msgid "Folder"
 msgstr "Folder"
 
@@ -159,31 +159,36 @@ msgstr "&Znajd¼..."
 msgid "&Add Bookmark"
 msgstr "&Dodaj zak³adkê"
 
-#: kfmgui.cpp:466
+#: kfmgui.cpp:459 kfmgui.cpp:891
+#, fuzzy
+msgid "&Edit Bookmarks..."
+msgstr "&Zak³adki"
+
+#: kfmgui.cpp:470
 msgid "&About..."
 msgstr "&Informacje o kfm..."
 
-#: kfmgui.cpp:476
+#: kfmgui.cpp:480
 msgid "&Bookmarks"
 msgstr "&Zak³adki"
 
-#: kfmgui.cpp:477
+#: kfmgui.cpp:481
 msgid "&Tool"
 msgstr "&Narzêdzia"
 
-#: kfmgui.cpp:478
+#: kfmgui.cpp:482
 msgid "&Cache"
 msgstr "&Bufor"
 
-#: kfmgui.cpp:515
+#: kfmgui.cpp:519
 msgid "Home"
 msgstr "Punkt startowy"
 
-#: kfmgui.cpp:548
+#: kfmgui.cpp:552
 msgid "Stop"
 msgstr "Stop"
 
-#: kfmgui.cpp:572
+#: kfmgui.cpp:576
 msgid "Could not load icon\n"
 msgstr "Nie mogê za³adowaæ ikony\n"
 
@@ -191,7 +196,7 @@ msgstr "Nie mogê za³adowaæ ikony\n"
 #: kbind.cpp:1535 kbind.cpp:1552 kbind.cpp:1613 kbind.cpp:1625 kbind.cpp:1652
 #: kbind.cpp:1667 kbind.cpp:1687 kbind.cpp:1699 kbind.cpp:1715 kbind.cpp:1838
 #: kbind.cpp:1850 kbind.cpp:1895 kbind.cpp:1937 kfmexec.cpp:59 kfmexec.cpp:93
-#: kfmexec/main.cpp:47 kfmgui.cpp:573 kfmgui.cpp:699 kfmjob.cpp:181
+#: kfmexec/main.cpp:47 kfmgui.cpp:577 kfmgui.cpp:703 kfmjob.cpp:181
 #: kfmman.cpp:268 kfmman.cpp:871 kfmman.cpp:1038 kfmman.cpp:1064
 #: kfmprops.cpp:367 kfmprops.cpp:622 kfmprops.cpp:648 kfmprops.cpp:763
 #: kfmprops.cpp:861 kfmprops.cpp:984 kfmprops.cpp:1112 kfmprops.cpp:1422
@@ -204,42 +209,42 @@ msgstr "Nie mogê za³adowaæ ikony\n"
 #: kiojob.cpp:217 kiojob.cpp:225 kiojob.cpp:232 kiojob.cpp:257 kiojob.cpp:276
 #: kiojob.cpp:287 kiojob.cpp:309 kiojob.cpp:328 kiojob.cpp:455 kiojob.cpp:643
 #: kiojob.cpp:659 kiojob.cpp:689 kiojob.cpp:1482 krenamewin.cpp:104
-#: root.cpp:965 root.cpp:983 root.cpp:989 root.cpp:995 root.cpp:1066
-#: root.cpp:1451 root.cpp:1476
+#: root.cpp:966 root.cpp:984 root.cpp:990 root.cpp:996 root.cpp:1067
+#: root.cpp:1452 root.cpp:1477
 msgid "KFM Error"
 msgstr "B³±d KFM"
 
-#: kfmexec.cpp:58 kfmgui.cpp:698 kfmman.cpp:870
+#: kfmexec.cpp:58 kfmgui.cpp:702 kfmman.cpp:870
 msgid "Malformed URL\n"
 msgstr "B³êdny URL\n"
 
-#: kfmgui.cpp:867
+#: kfmgui.cpp:871
 msgid "Select files:"
 msgstr "Wybierz pliki:"
 
-#: kfmgui.cpp:884
+#: kfmgui.cpp:888
 msgid "Add Bookmark"
 msgstr "Dodaj zak³adkê"
 
-#: kfmgui.cpp:923 kfmgui.cpp:930
+#: kfmgui.cpp:931 kfmgui.cpp:938
 msgid "New "
 msgstr "Nowy "
 
-#: kfmgui.cpp:1012 kfmgui.cpp:1172 kfmjob.cpp:32 kfmman.cpp:190
+#: kfmgui.cpp:1030 kfmgui.cpp:1190 kfmjob.cpp:32 kfmman.cpp:190
 #: kfmtree.cpp:314 kfmview.cpp:273 kfmview.cpp:339 kfmview.cpp:462
-#: kiojob.cpp:70 root.cpp:984
+#: kiojob.cpp:70 root.cpp:985
 msgid "ERROR: Malformed URL"
 msgstr "B£¡D: B³êdny URL "
 
-#: kfmgui.cpp:1126 kfmserver.cpp:178
+#: kfmgui.cpp:1144 kfmserver.cpp:178
 msgid "Open Location:"
 msgstr "Otwórz lokacjê:"
 
-#: kfmgui.cpp:1182
+#: kfmgui.cpp:1200
 msgid "KFM Confirm"
 msgstr "KFM potwierdzenie"
 
-#: kfmgui.cpp:1183
+#: kfmgui.cpp:1201
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -247,11 +252,11 @@ msgstr ""
 "Czy na pewno chcesz wyj¶æ?\n"
 "Funkcjonalno¶æ desktopu zostanie ograniczona"
 
-#: kfmgui.cpp:1210
+#: kfmgui.cpp:1228
 msgid "About KFM"
 msgstr "Informacje o KFM"
 
-#: kfmgui.cpp:1211
+#: kfmgui.cpp:1229
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -269,7 +274,7 @@ msgstr ""
 "(C) 1997 Piotr Roszatycki\n"
 "dexter@fnet.com.pl"
 
-#: kfmgui.cpp:1303
+#: kfmgui.cpp:1321
 msgid "Document: Done"
 msgstr "Dokument: Zrobiony"
 
@@ -282,11 +287,11 @@ msgid "ERROR: You dropped some URL over itself"
 msgstr "B£¡D: Upu¶ci³e¶ URL na ten sam"
 
 #: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:351 kfmview.cpp:311
-#: kfmview.cpp:497 krenamewin.cpp:18 root.cpp:1025
+#: kfmview.cpp:497 krenamewin.cpp:18 root.cpp:1026
 msgid "KFM Warning"
 msgstr "Ostrze¿enie KFM"
 
-#: kfmtree.cpp:352 kfmview.cpp:312 kfmview.cpp:498 root.cpp:1026
+#: kfmtree.cpp:352 kfmview.cpp:312 kfmview.cpp:498 root.cpp:1027
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -296,11 +301,11 @@ msgstr ""
 "\n"
 "Nie bêdzie mo¿na ju¿ ich odzyskaæ"
 
-#: kfmtree.cpp:320 kfmview.cpp:345 kfmview.cpp:468 root.cpp:990
+#: kfmtree.cpp:320 kfmview.cpp:345 kfmview.cpp:468 root.cpp:991
 msgid "ERROR: You dropped a URL over itself"
 msgstr "B£¡D: Upu¶ci³e¶ URL na ten sam"
 
-#: kfmtree.cpp:326 kfmview.cpp:351 kfmview.cpp:474 root.cpp:996
+#: kfmtree.cpp:326 kfmview.cpp:351 kfmview.cpp:474 root.cpp:997
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "B£¡D: Upu¶ci³e¶ katalog na jeden z jego podkatalogów"
 
@@ -308,15 +313,15 @@ msgstr "B£¡D: Upu¶ci³e¶ katalog na jeden z jego podkatalogów"
 msgid "Open With:"
 msgstr "Otwórz z:"
 
-#: kfmview.cpp:384 root.cpp:938
+#: kfmview.cpp:384 root.cpp:939
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "B£¡D: Nie mogê otworzyæ w³a¶ciwo¶ci dla wielu plików naraz"
 
-#: kfmtree.cpp:283 kfmview.cpp:422 root.cpp:1067
+#: kfmtree.cpp:283 kfmview.cpp:422 root.cpp:1068
 msgid "Could not access Trash Bin"
 msgstr "Nie ma dostêpu do ¶mietnika"
 
-#: kfmview.cpp:444 root.cpp:966
+#: kfmview.cpp:444 root.cpp:967
 msgid "Can not paste into multiple directories"
 msgstr "Nie mogê wkleiæ do kilku katalogów naraz"
 
@@ -503,7 +508,7 @@ msgstr "Opró¿nij ¶mietnik"
 msgid "Add to Bookmarks"
 msgstr "Dodaj do zak³adek"
 
-#: bookmark.cpp:223
+#: bookmark.cpp:229
 msgid "<!-- Do not edit this file -->"
 msgstr "<!-- Nie edytuj tego pliku -->"
 
@@ -833,15 +838,15 @@ msgstr "B³±d wewnêtrzny: desktopDir jest b³êdny"
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "B£¡D: Nie mo¿na odczytaæ katalogu desktopu '%s'"
 
-#: root.cpp:779
+#: root.cpp:780
 msgid "ERROR: Can not accept drop"
 msgstr "B£¡D: Nie mo¿na upu¶ciæ"
 
-#: kfmman.cpp:1039 root.cpp:1452
+#: kfmman.cpp:1039 root.cpp:1453
 msgid "Dont know what to do."
 msgstr "Nie wiem co zrobiæ."
 
-#: kfmman.cpp:1065 kfmtree.cpp:164 root.cpp:1477
+#: kfmman.cpp:1065 kfmtree.cpp:164 root.cpp:1478
 msgid "Dont know what to do"
 msgstr "Nie wiem co zrobiæ"
 
@@ -1164,7 +1169,7 @@ msgstr "Desktop"
 msgid "Root"
 msgstr "Root"
 
-#: krenamewin.cpp:24
+#: kbookmarkdlg.cpp:35 krenamewin.cpp:24
 msgid "Rename"
 msgstr "Zmieñ zazwê"
 
@@ -1223,6 +1228,31 @@ msgstr "Brak Proxy dla:"
 #: kkfmoptdlg.cpp:39
 msgid "KFM Browser Settings"
 msgstr "Ustawienia przegl±darki"
+
+#: kbookmarkdlg.cpp:19 kbookmarkdlg.cpp:24
+#, fuzzy
+msgid "Edit Bookmarks"
+msgstr "Dodaj do zak³adek"
+
+#: kbookmarkdlg.cpp:36
+#, fuzzy
+msgid "Move up"
+msgstr "Przenie¶"
+
+#: kbookmarkdlg.cpp:37
+#, fuzzy
+msgid "Move down"
+msgstr "Przenie¶"
+
+#: kbookmarkdlg.cpp:176
+#, fuzzy
+msgid "Rename Bookmark"
+msgstr "Dodaj zak³adkê"
+
+#: kbookmarkdlg.cpp:178
+#, fuzzy
+msgid "Rename Bookmark:"
+msgstr "Dodaj zak³adkê"
 
 #: kfmprops.h:73
 msgid "&General"

@@ -83,8 +83,8 @@ msgstr "черно-светло-желтое"
 msgid "Linu&x Console"
 msgstr "Линуксовая консоль"
 
-#: main.C:427
 #
+#: main.C:427
 msgid "&Custom Colors"
 msgstr "&Цвет"
 
@@ -166,8 +166,8 @@ msgstr ""
 "Новые цветовые установки будут отображены,\n"
 "когда клавиатура будет разблокирована."
 
-#: main.C:1084
 #
+#: main.C:1084
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -240,5 +240,3 @@ msgid ""
 msgstr ""
 "-grk9\t\tгреческая клавиатура ELOT 928 (по умолчанию)\n"
 "-grk4\t\tгреческая клавиатура IBM 437\n"
-
-#

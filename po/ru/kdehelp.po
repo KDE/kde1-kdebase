@@ -325,11 +325,10 @@ msgid "&Save Options"
 msgstr "Записать опции"
 
 #
-#: mainwidget.cpp:183
 #
+#: mainwidget.cpp:183
 msgid "KDE Help System\n"
-msgstr ""
-"Система KDE Help\n"
+msgstr "Система KDE Help\n"
 
 #: mainwidget.cpp:184
 msgid "Version "
@@ -430,4 +429,3 @@ msgstr "О KDE Help"
 #: mainwidget.cpp:618
 msgid "&Add Bookmark"
 msgstr "Добавить закладку"
-

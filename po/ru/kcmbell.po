@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.2\n"
-"POT-Creation-Date: 1997-12-14 20:07+0100\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
 "PO-Revision-Date: 1997-12-27 04:12+06:00\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -18,7 +18,11 @@ msgstr ""
 msgid "&Bell"
 msgstr "Сигнал"
 
-#: main.cpp:75
+#: main.cpp:57
+msgid "usage: kcmbell [-init | bell]\n"
+msgstr ""
+
+#: main.cpp:81
 msgid "Bell settings"
 msgstr "Установки сигнала"
 
@@ -42,3 +46,6 @@ msgstr "Гц"
 msgid "ms"
 msgstr "мс"
 
+#: bell.cpp:92
+msgid "Test"
+msgstr ""

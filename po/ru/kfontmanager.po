@@ -66,8 +66,8 @@ msgstr ""
 "Переменная окружения HOME\n"
 "не выставлена\n"
 
-#: kfontmanager.cpp:285
 #
+#: kfontmanager.cpp:285
 msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
@@ -75,8 +75,8 @@ msgstr ""
 "Не могу создать:\n"
 " ~/.kde/share/config/kdefonts\n"
 
-#: kfontmanager.cpp:290
 #
+#: kfontmanager.cpp:290
 msgid ""
 "~/.kde/share/config/kdefonts exists but\n"
 "is not writeable\n"
@@ -97,4 +97,3 @@ msgstr ""
 "Copyright 1997\n"
 "Бернд Йоханнес Вуббен\n"
 "wuebben@math.cornell.edu\n"
-
