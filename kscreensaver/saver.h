@@ -1,12 +1,18 @@
-
 #ifndef __SAVER_H__
-#define __SAVER_H__
+#define __SAVER_H__ "$Id"
 
 #include <qwidget.h>
 #include <qlabel.h>
 #include <qtimer.h>
 #include <kapp.h>
 #include <X11/Xlib.h>
+
+extern "C" {
+  void startScreenSaver( Drawable d );
+  void stopScreenSaver();
+  int setupScreenSaver();
+  const char *getScreenSaverName();
+}
 
 class kScreenSaver : public QObject
 {

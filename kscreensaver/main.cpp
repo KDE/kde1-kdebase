@@ -34,12 +34,14 @@
 
 KLocale *glocale;
 
-extern void startScreenSaver( Drawable d );
-extern void stopScreenSaver();
-extern int  setupScreenSaver();
-extern const char *getScreenSaverName();
-extern void initPasswd();
+extern "C" {
+  extern void startScreenSaver( Drawable d );
+  extern void stopScreenSaver();
+  extern int  setupScreenSaver();
+  extern const char *getScreenSaverName();
+}
 
+extern void initPasswd();
 int mode = MODE_NONE, lock = FALSE, passOk = FALSE;
 bool canGetPasswd = true;
 static int lockOnce = FALSE;
