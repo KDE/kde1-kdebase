@@ -564,11 +564,10 @@ QString KfindTabDialog::createQuery()
 	str += dirBox->currentText();
 
 	QString str1;
-	str1 += " \"(\" -name \"";
+	str1 += " -name \"";
 	//	str1 += nameBox->text(nameBox->currentItem());
 	str1 += nameBox->currentText();
-	str1 += "\" \")\"";
-	str1 += " ";
+	str1 += "\" ";
 	
 	switch(typeBox->currentItem()) {
 	case 0: // all files
