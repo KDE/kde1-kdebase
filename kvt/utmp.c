@@ -8,6 +8,9 @@
  * I didn't touch the Sun part of the code so it should still work.
  *
  * $Log$
+ * Revision 1.4  1997/08/02 12:33:07  kulow
+ * Coolo: some cleanups in kvt.
+ *
  * Revision 1.3  1997/05/27 12:25:09  ettrich
  * Matthias: Small fixes for FreeBSD (Marc van Kempten)
  *
@@ -46,11 +49,6 @@
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
-
-/* Stephan: I didn't know another solution, since this
-   code looks that damn OS depend */
-
-#define BSD
 
 #include <sys/types.h>
 #include <sys/stat.h>
