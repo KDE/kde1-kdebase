@@ -30,7 +30,6 @@ Name[fr]=X FTP
 Name[pt]=X FTP
 Name[pt_BR]=X FTP
 Name[cs]=X FTP
-Name[sk]=X FTP
 Exec=xftp
 Icon=www.xpm
 TerminalOptions=
