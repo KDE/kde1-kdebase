@@ -123,7 +123,7 @@ msgstr "&Teknisk referanse ..."
 
 #: main.C:322
 msgid "cd"
-msgstr ""
+msgstr "bytt katalog"
 
 #: main.C:334
 msgid "New"
