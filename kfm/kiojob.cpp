@@ -371,6 +371,8 @@ void KIOJob::link()
 			config.writeEntry( "Icon", "www.xpm" );
 		    else if ( strcmp( su.protocol(), "info" ) == 0 )
 			config.writeEntry( "Icon", "info.xpm" );
+		    else if ( strcmp( su.protocol(), "mailto" ) == 0 ) // sven:
+			config.writeEntry( "Icon", "kmail.xpm" );      // added mailto: support
 		    else
 			config.writeEntry( "Icon", KMimeType::getDefaultPixmap() );
 		    config.sync();
