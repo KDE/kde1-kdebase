@@ -86,15 +86,23 @@ bool KWarning::eventFilter( QObject *ob, QEvent * e){
   return False;
 }
 
-void KWarning::setText(const char* text){
+void KWarning::setText(const char* text, bool with_button){
   label->setText(text);
   label->adjustSize();
   int w = QMAX(label->width() + 20, 100);
+  int bh = with_button?80:20;
   setGeometry(QApplication::desktop()->width()/2-w/2,
-	      QApplication::desktop()->height()/2-label->height()/2-40,
-	      w, label->height()+80);
+	      (QApplication::desktop()->height()-label->height()-bh)/2,
+	      w, label->height()+bh);
   label->setGeometry(4,10,w-8,label->height());
-  button->setGeometry(w/2-30, label->height()+20, 60, 30);
+  if (with_button){
+    button->setGeometry(w/2-30, label->height()+20, 60, 30);
+    button->show();
+  }
+  else {
+    button->hide();
+  }
+    
   frame->setGeometry(0,0, width(), height());
 }
 
@@ -121,6 +129,12 @@ bool KWarning::do_grabbing(){
 }
 
 void KWarning::ok(){
+  release();
+  manager->refreshScreen();
+}
+
+
+void KWarning::release(){
   XUngrabServer(qt_xdisplay());
   if (mouseGrabber())
     mouseGrabber()->releaseMouse();
@@ -131,7 +145,5 @@ void KWarning::ok(){
     XSetInputFocus (qt_xdisplay(), reactive->window, 
 		    RevertToPointerRoot, CurrentTime);
   }
-  manager->refreshScreen();
 }
-
 

@@ -16,6 +16,7 @@
 #include <sys/wait.h>
 #include <kprocess.h>
 #include "manager.h"
+#include "main.h"
 
 #include "minicli.moc"
 
@@ -192,7 +193,7 @@ void Minicli::return_pressed(){
   history->append("");
   cleanup();
   if (s == "logout")
-    manager->logout();
+    logout();
   else
     execute(s.data());
 }

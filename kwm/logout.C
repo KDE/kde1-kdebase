@@ -243,7 +243,7 @@ bool Klogout::do_grabbing(){
   reactive = manager->current();
   if (reactive)
     reactive->setactive(False);
-  manager->darkenScreen();
+  //  manager->darkenScreen();
   XGrabServer(qt_xdisplay());
   do_not_draw = true;
   show();

@@ -291,12 +291,12 @@ void showMinicli(){
   while (!minicli->do_grabbing());
 }
 
-void showWarning(const char* text){
+void showWarning(const char* text, bool with_button = true){
   XEvent ev;
   if (!kwarning){
     kwarning = new KWarning(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
   }
-  kwarning->setText(text);
+  kwarning->setText(text, with_button);
   manager->timeStamp();
   while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
   myapp->processEvents(); 
@@ -453,13 +453,22 @@ static void grabKey(KeySym keysym, unsigned int mod){
 // Like manager->activateClient but also raises the window and sends a
 // sound event. In addition switchActivateClient also takes care about
 // crappy focus policies: It will show a warning message in such a
-// case.
+// case.  In addition, switchActivateClient takes care that the client
+// window is visible.
 void switchActivateClient(Client* c, bool show_warning){
+  static bool warning_already_showed = false;
+
+  if (!c->geometry.intersects(QApplication::desktop()->rect())){
+    // window not visible => place it again.
+    manager->doPlacement(c);
+    manager->sendConfig(c);
+  }
+
   manager->raiseClient(c);
   if (options.FocusPolicy == CLASSIC_FOCUS_FOLLOWS_MOUSE
       || options.FocusPolicy == CLASSIC_SLOPPY_FOCUS){ 
     
-    if (show_warning){
+    if (show_warning && !warning_already_showed){
       showWarning(
 		  klocale->translate(
 "You want to switch to another window. Unfortunately you have selected \n"
@@ -469,6 +478,7 @@ void switchActivateClient(Client* c, bool show_warning){
 "Anyway, if you prefer modern windowmanagement, please choose one of the \n"
 "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
 ));
+      warning_already_showed =true;
     }
   }
   else {
@@ -478,6 +488,14 @@ void switchActivateClient(Client* c, bool show_warning){
 }
 
 
+void logout(){
+  showWarning(klocale->translate("Preparing session ... "), false); 
+  XSync(qt_xdisplay(), false);
+  kapp->processEvents();
+  manager->processSaveYourself();
+  kwarning->release();
+  showLogout();
+}
 
 MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc, argv, rAppName ){
 
@@ -643,7 +661,6 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
 
   manager = new Manager;
   connect(manager, SIGNAL(reConfigure()), this, SLOT(reConfigure()));
-  connect(manager, SIGNAL(showLogout()), this, SLOT(showLogout()));
   XUngrabServer(qt_xdisplay()); 
   initting = false;
   if (restore_session)
@@ -1184,11 +1201,6 @@ void MyApp::reConfigure(){
   getKApplication()->getConfig()->reparseConfiguration();
   readConfiguration();
   manager->readConfiguration();
-}
-
-// show the modal logout dialog
-void MyApp::showLogout(){
-  ::showLogout();
 }
 
 static void freeKeyboard(bool pass){

@@ -21,6 +21,7 @@
 #include <kwm.h>
 
 #include "manager.h"
+#include "main.h"
 
 extern Manager* manager;
 
@@ -267,7 +268,7 @@ void Ktask::buttonSelect(){
 
 void Ktask::logout(){
   cleanup();
-  manager->logout();
+  ::logout();
 }
 
 void Ktask::listboxSelect(int index){

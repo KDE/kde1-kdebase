@@ -78,7 +78,11 @@ public:
   void leaveNotify(XCrossingEvent *e);
     
 
-  // kwm supports different kinds of window placement:
+  // kwm supports different kinds of window placement. doPlacement
+  // will select the appropriate method.
+  void doPlacement(Client*);
+
+  // some placement policies
   void randomPlacement(Client* c);
   //CT 18jan98
   void smartPlacement(Client* c);
@@ -217,7 +221,7 @@ public:
   // session management with the help of a build in proxy.  After
   // finishing this functions the manager will emit a showLogout()
   // signal.
-  void logout();
+  void processSaveYourself();
 
   // commands from clients which can do session management
   QStrList* getSessionCommands();
@@ -283,14 +287,14 @@ public:
   // rc-file. This is called when the users wants to reconfigure.
   void readConfiguration();
 
+  // kills all modules and launches another window manager
+  void launchOtherWindowManager(const char* other);
+
+
 signals:
   // this signal is emitted if the manager recieves a configure
   // command (for example from "kwmcom configure")
   void reConfigure();
-  // this signal is emitted after finishing the session managers
-  // logout procedure (logout())
-  void showLogout();
-
 
 private:
 

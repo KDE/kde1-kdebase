@@ -506,6 +506,9 @@ void Manager::clientMessage(XEvent*  ev){
       showMinicli();
     else if (com == "taskManager")
       showTask ();
+    else if (com.length()>3 && com.left(3) == "go:"){
+      launchOtherWindowManager(com.right(com.length()-3));
+    }
     else if (com == "configure"){
       emit reConfigure();
       Client::createGimmick();
@@ -1139,6 +1142,20 @@ void Manager::readConfiguration(){
   config->readListEntry("noFocusClasses", no_focus_classes);
 }
 
+  // kwm supports different kinds of window placement. doPlacement
+  // will select the appropriate method.
+void Manager::doPlacement(Client* c){
+  if((options.Placement == SMART_PLACEMENT)  ||
+     (options.Placement == MANUAL_PLACEMENT) ||
+     (options.interactive_trigger >= 0))
+    smartPlacement(c);
+  else if(options.Placement == CASCADE_PLACEMENT)
+    cascadePlacement(c, False);
+  else
+    randomPlacement(c);
+}
+
+
 void Manager::randomPlacement(Client* c){
   static int px = TITLEBAR_HEIGHT + BORDER;
   static int py = 2 * TITLEBAR_HEIGHT + BORDER;
@@ -1751,14 +1768,7 @@ void Manager::manage(Window w, bool mapped){
       // nothing
   }
   else {
-    if((options.Placement == SMART_PLACEMENT)  ||
-       (options.Placement == MANUAL_PLACEMENT) ||
-       (options.interactive_trigger >= 0))
-      smartPlacement(c);
-    else if(options.Placement == CASCADE_PLACEMENT)
-      cascadePlacement(c, False);
-    else
-      randomPlacement(c);
+    doPlacement(c);
   }
 
   if (mapped)
@@ -2857,7 +2867,7 @@ void Manager::darkenScreen(){
 // session management with the help of a build in proxy.  After
 // finishing this functions the manager will emit a showLogout()
 // signal.
-void Manager::logout(){
+void Manager::processSaveYourself(){
   Client* c;
   XEvent ev;
 
@@ -2991,9 +3001,6 @@ void Manager::logout(){
   // release the mouse and the keyboard which we grabbed before
   XAllowEvents(qt_xdisplay(), ReplayPointer, CurrentTime);
   XAllowEvents(qt_xdisplay(), ReplayKeyboard, CurrentTime);
-
-  // emit the showLogout signal to indicate that the session manager has finished.
-  emit showLogout();
 }
 
 // commands from clients which can do session management
@@ -3532,6 +3539,21 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
     }
   }
 }
+
+
+// kills all modules and launches another window manager
+void Manager::launchOtherWindowManager(const char* other){
+  Window* mw;
+  for (mw=modules.first(); mw; mw=modules.next()){
+    XKillClient(qt_xdisplay(), *mw);
+  }
+  cleanup();
+  XSync(qt_xdisplay(), false);
+  execlp(other, NULL);
+}
+
+
+
 
 //// CC: Implementation of the KDE Greyer Widget
 

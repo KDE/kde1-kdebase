@@ -23,10 +23,11 @@ class KWarning : public QDialog{
 public:
   KWarning( QWidget *parent=0, const char *name=0, WFlags f=0);
   bool do_grabbing();
-  void setText(const char* text);
+  void setText(const char* text, bool with_button);
   bool eventFilter( QObject *, QEvent * );
 public slots:
   void ok();
+  void release();
 private:
   QFrame *frame;
   QPushButton* button;

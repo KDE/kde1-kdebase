@@ -11,6 +11,16 @@ influences from my experiences with the former kwm.
 
 In 0.11:
 --------
+patchlevel 11:
+        - switchActivateClient (used by the taskbar or the current
+           session manager) ensures visibility of the window according
+           to the user's current placement policy
+        - focus warning box appears only one time per session now.
+        - visual feedback when preparing the session for logout
+        - new command "go:other" which will kill all modules and 
+           replace kwm with the other process.
+        
+
 patchlevel 10:
         - Warning message for crappy focus policies only occurs with Alt-Tab now.
             The ACTIVATE_WINDOW client message (used by modules such as 
