@@ -106,6 +106,13 @@ int main( int argc, char **argv )
   global_pix_sel2->setDir(&icon_sel_list2);
 
   KMenuEdit edit;
+  if( a.isRestored() )
+    {
+      if( KTopLevelWidget::canBeRestored(1) )
+	{
+	  edit.restore(1);
+	}
+    }
   a.setMainWidget( (QWidget *) &edit );
   a.setRootDropZone( new KDNDDropZone( (QWidget *) &edit, DndNotDnd ) );
   edit.show();

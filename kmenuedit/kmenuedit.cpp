@@ -153,8 +153,8 @@ KMenuEdit::KMenuEdit( const char *name )
   if( height < minimumSize().height() )
     height = minimumSize().height();
   resize(width, height);
-  KWM::setProperties(winId(), config->readEntry("WindowProperties")); 
   changes_to_save = FALSE;
+  setUnsavedData(FALSE);
 }
 
 KMenuEdit::~KMenuEdit()
@@ -176,7 +176,6 @@ KMenuEdit::~KMenuEdit()
   config->writeEntry("Width", width());
   config->writeEntry("Height", height());
   config->writeEntry("ToolBarPos", (int) toolbar->barPos() );
-  config->writeEntry("WindowProperties", KWM::getProperties(winId()) );
   config->sync();
 }
 
@@ -294,6 +293,7 @@ void KMenuEdit::saveMenus()
   QApplication::restoreOverrideCursor();
   KWM::sendKWMCommand("kpanel:restart");
   changes_to_save = FALSE;
+  setUnsavedData(FALSE);
 }
 
 void KMenuEdit::reload()
@@ -313,6 +313,7 @@ Are you sure you want to reload ?", "Yes", "No" ) != 0 )
   pers_menu_data->popupConfig( p_pers, f_move, FALSE );
   glob_menu_data->popupConfig( p_glob, f_move, FALSE );
   changes_to_save = FALSE;
+  setUnsavedData(FALSE);
 }
 
 void KMenuEdit::save()
@@ -379,6 +380,7 @@ void KMenuEdit::changeMenuName()
   if( dialog->exec() )
     {
       changes_to_save = TRUE;
+      setUnsavedData(TRUE);
       pers_menu_name = dialog->getPersonal();
       glob_menu_name = dialog->getDefault();
     }

@@ -47,6 +47,7 @@
 #include "confmenu.h"
 #include "confmenu.moc"
 #include "entrydialog.h"
+#include "kmenuedit.h"
 
 extern KIconLoader *global_pix_loader;
 const short glob_but_height = 24;
@@ -135,6 +136,7 @@ void MenuButton::copyItem()
     }
   global_pmenu_buffer = new PMenuItem( *pmenu_item );
   changes_to_save = TRUE;
+  ((KMenuEdit *) KApplication::getKApplication()->mainWidget())->setUnsavedData(TRUE);
 }
 
 void MenuButton::open()
@@ -172,6 +174,7 @@ void MenuButton::delete_item()
     }
   emit delButton( id );
   changes_to_save = TRUE;
+  ((KMenuEdit *) KApplication::getKApplication()->mainWidget())->setUnsavedData(TRUE);
 }
 
 void MenuButton::change_item()
@@ -360,6 +363,7 @@ void MenuButton::change_accept()
       ((ConfigureMenu *) parentWidget()->parentWidget())->update();
       delete dialog;
       changes_to_save = TRUE;
+      ((KMenuEdit *) KApplication::getKApplication()->mainWidget())->setUnsavedData(TRUE);
       dialog = NULL;
       dialog_open = FALSE;
     }
@@ -846,6 +850,7 @@ void ConfigureMenu::buttonMoved( int but_id, QPoint p )
     }
   pmenu->move(but_id, i);
   changes_to_save = TRUE;
+  ((KMenuEdit *) KApplication::getKApplication()->mainWidget())->setUnsavedData(TRUE);
   //debug
   //for( item = but_list.first(); item != 0; item = but_list.next() )
   //  {
@@ -862,6 +867,7 @@ void ConfigureMenu::newButton( int but_id )
   append(new_it);
   pmenu->add(new_it);
   changes_to_save = TRUE;
+  ((KMenuEdit *) KApplication::getKApplication()->mainWidget())->setUnsavedData(TRUE);
   buttonMoved( but_nr-1, but_list.at(but_id)->button->pos() );
 }
 
@@ -887,6 +893,7 @@ void ConfigureMenu::pasteButton( int but_id )
   append( new_it );
   pmenu->add( new_it );
   changes_to_save = TRUE;
+  ((KMenuEdit *) KApplication::getKApplication()->mainWidget())->setUnsavedData(TRUE);
   buttonMoved( but_nr-1, but_list.at(but_id)->button->pos() );
 }
 
@@ -924,6 +931,7 @@ void ConfigureMenu::urlDroped(KDNDDropZone *zone)
 	  append( new_item );
 	  pmenu->add( new_item );	 
 	  changes_to_save = TRUE;
+	  ((KMenuEdit *) KApplication::getKApplication()->mainWidget())->setUnsavedData(TRUE);
 	}
       return;
     }
@@ -950,6 +958,7 @@ void ConfigureMenu::urlDroped(KDNDDropZone *zone)
 	      append( new_item );
 	      pmenu->add( new_item );
 	      changes_to_save = TRUE;
+	      ((KMenuEdit *) KApplication::getKApplication()->mainWidget())->setUnsavedData(TRUE);
 	      QString file_name = fi.fileName();
 	      QString suffix;
 	      int i = 2;
@@ -970,8 +979,11 @@ void ConfigureMenu::urlDroped(KDNDDropZone *zone)
 	  append( new_item );
 	  pmenu->add( new_item );
 	  changes_to_save = TRUE;
+	  ((KMenuEdit *) KApplication::getKApplication()->mainWidget())->setUnsavedData(TRUE);
 	  //buttonMoved( but_nr-1, but_list.at(but_id)->button->pos() );
 	}
     }
 }
+
+
 
