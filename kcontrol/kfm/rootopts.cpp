@@ -89,7 +89,7 @@ KRootOptions::KRootOptions( QWidget *parent, const char *name )
         lay->addWidget(vspin,ROW_VGRID,3);
         vspin->setRange(0,DEFAULT_GRID_MAX - DEFAULT_GRID_MIN);
  
-        iconstylebox = new QCheckBox(i18n("&Transparent Text for Root Icons."),
+        iconstylebox = new QCheckBox(i18n("&Transparent Text for Desktop Icons."),
                                   this);
         //CT 12Nov1998
         iconstylebox->adjustSize();
