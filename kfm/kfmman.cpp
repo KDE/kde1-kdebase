@@ -1437,6 +1437,7 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
     }
     //------------------------------
     bool isdir = (KIOServer::isDir( _urls ) == 1);
+    KURL viewURL ( view->getActiveView()->getURL() );
     
     if ( KIOServer::isTrash( _urls ) )
     {
@@ -1495,7 +1496,8 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
 	if ( KIOServer::supports( _urls, KIO_Write ) && KfmView::clipboard->count() != 0 )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_PASTE ), 
 					view, SLOT( slotPopupPaste() ) );
-	if ( KIOServer::supports( _urls, KIO_Move ) && !_current_dir )
+	if ( KIOServer::supports( _urls, KIO_Move ) &&
+             !KIOServer::isTrash ( viewURL.directory() ) && !_current_dir )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_MOVE_TO_TRASH ),  
 					view, SLOT( slotPopupTrash() ) );
 	if ( KIOServer::supports( _urls, KIO_Delete ) && !_current_dir )
@@ -1516,7 +1518,8 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
 	if ( KIOServer::supports( _urls, KIO_Read ) )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_COPY ), 
 					view, SLOT( slotPopupCopy() ) );
-	if ( KIOServer::supports( _urls, KIO_Move ) && !_current_dir )
+	if ( KIOServer::supports( _urls, KIO_Move )  &&
+             !KIOServer::isTrash ( viewURL.directory() ) && !_current_dir )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_MOVE_TO_TRASH ),  
 					view, SLOT( slotPopupTrash() ) );
 	if ( KIOServer::supports( _urls, KIO_Delete ) && !_current_dir )
