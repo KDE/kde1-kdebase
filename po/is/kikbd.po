@@ -10,12 +10,10 @@ msgstr ""
 "Last-Translator: Bergur Arnarson <bergura@hi.is>\n"
 "Language-Team: is\n"
 
-# kikbd.cpp:116
 #: kikbd.cpp:116
 msgid "KDE International Keyboard already started on this display."
 msgstr "Alþjóðlega lyklaborðskerfið er nú þegar í gangi á þessum skjá."
 
-# kikbd.cpp:288
 #: kikbd.cpp:288
 #, c-format
 msgid ""
@@ -25,7 +23,6 @@ msgstr ""
 "X-kóðunarskráin \"%s\" er ekki til. \n"
 "Nota sjálfgefna kóða."
 
-# kikbd.cpp:313
 #: kikbd.cpp:313
 #, c-format
 msgid ""
@@ -35,24 +32,20 @@ msgstr ""
 "Hnappatafla \"%s\" er ekki til.\n"
 "Sleppi þessari töflu."
 
-# kikbd.cpp:330
 #: kikbd.cpp:330
 msgid "Setup"
 msgstr "Stillingar"
 
-# kikbd.cpp:345 kikbd.cpp:358
 #: kikbd.cpp:345 kikbd.cpp:358
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
 msgstr "Get ekki tekið %s úr lista áhrifahnappa.\n"
 
-# kikbd.cpp:348
 #: kikbd.cpp:348
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
 msgstr "Get ekki bætt %s við áhrifahnapp númer 3.\n"
 
-# kikbd.cpp:370
 #: kikbd.cpp:370
 #, c-format
 msgid ""
@@ -62,7 +55,6 @@ msgstr ""
 "Get ekki stillt hamskiptarofann sem %s fyrir lyklaborðið %s.\n"
 "Aukatákn gerð óvirk"
 
-# kikbd.cpp:392
 #: kikbd.cpp:392
 msgid ""
 "Cannot remove Caps Lock from Modifiers.\n"
@@ -71,12 +63,10 @@ msgstr ""
 "Get ekki fjarlægt hástafalás úr áhrifahnappalista.\n"
 "Ekki hægt að herma eftir hástafalás"
 
-# kikbd.cpp:1003
 #: kikbd.cpp:1003
 msgid "Exiting International Keyboard"
 msgstr "Loka Alþjóðlega Lyklaborðinu"
 
-# kikbd.cpp:1004
 #: kikbd.cpp:1004
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
@@ -85,12 +75,10 @@ msgstr ""
 "Þú ert að loka \"Alþjóðlega Lyklaborðinu\".\n"
 "Viltu að það fari sjálfkrafa í gang í næstu setu?"
 
-# keymap.cpp:181
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
 msgstr "Gat ekki tekið frá minni"
 
-# keymap.cpp:228
 #: keymap.cpp:228
 #, c-format
 msgid ""
@@ -104,135 +92,109 @@ msgstr ""
 "Þú getur breytt X-kóðanum í \"Frekari stillingar\" hlutanum\n"
 "í stillingarforriti."
 
-# keymap.cpp:233
 #: keymap.cpp:233
 #, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
 msgstr "Finn ekki táknið \"%s\"."
 
-# keymap.cpp:241
 #: keymap.cpp:241
 #, c-format
 msgid "KeyMap: do not understand key code \"%s\"."
 msgstr "Skil ekki hnappakóða \"%s\"."
 
-# keymap.cpp:247
 #: keymap.cpp:247
 #, c-format
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "Hnappakóði \"%s\" fer út fyrir skilgreint svið."
 
-# kikbdconf.cpp:97
 #: kikbdconf.cpp:97
 msgid "Global"
 msgstr "Altækt"
 
-# kikbdconf.cpp:97
 #: kikbdconf.cpp:97
 msgid "Window"
 msgstr "Gluggi"
 
-# kikbdconf.cpp:97
 #: kikbdconf.cpp:97
 msgid "Class"
 msgstr "Klasi"
 
-# kikbdconf.cpp:100 kikbdconf.cpp:112
 #: kikbdconf.cpp:100 kikbdconf.cpp:112
 msgid "(None)"
 msgstr "(ekkert)"
 
-# kikbdconf.cpp:101 kikbdconf.cpp:113
 #: kikbdconf.cpp:101 kikbdconf.cpp:113
 msgid "Right Alt"
 msgstr "Hægri (Alt)"
 
-# kikbdconf.cpp:102 kikbdconf.cpp:114
 #: kikbdconf.cpp:102 kikbdconf.cpp:114
 msgid "Right Control"
 msgstr "Hægri (Ctrl)"
 
-# kikbdconf.cpp:103
 #: kikbdconf.cpp:103
 msgid "Rights (Alt+Shift)"
 msgstr "Hægri (Alt+Shift)"
 
-# kikbdconf.cpp:104
 #: kikbdconf.cpp:104
 msgid "Rights (Ctrl+Alt)"
 msgstr "Hægri (Ctrl+Alt)"
 
-# kikbdconf.cpp:105
 #: kikbdconf.cpp:105
 msgid "Rights (Ctrl+Shift)"
 msgstr "Hægri (Ctrl+Shift)"
 
-# kikbdconf.cpp:106
 #: kikbdconf.cpp:106
 msgid "Lefts  (Alt+Shift)"
 msgstr "Vinstri (Alt+Shift)"
 
-# kikbdconf.cpp:107
 #: kikbdconf.cpp:107
 msgid "Lefts  (Ctrl+Alt)"
 msgstr "Vinstri (Ctrl+Alt)"
 
-# kikbdconf.cpp:108
 #: kikbdconf.cpp:108
 msgid "Lefts  (Ctrl+Shift)"
 msgstr "Vinstri (Ctrl+Shift)"
 
-# kikbdconf.cpp:109
 #: kikbdconf.cpp:109
 msgid "Both Shift's (Shift+Shift)"
 msgstr "Báðir lyftitakkar (Shift+Shift)"
 
-# kikbdconf.cpp:115
 #: kikbdconf.cpp:115
 msgid "Right Meta"
 msgstr "Hægri Meta"
 
-# kikbdconf.cpp:116
 #: kikbdconf.cpp:116
 msgid "Left  Alt"
 msgstr "Vinstri (Alt)"
 
-# kikbdconf.cpp:117
 #: kikbdconf.cpp:117
 msgid "Left  Control"
 msgstr "Vinstri (Ctrl)"
 
-# kikbdconf.cpp:118
 #: kikbdconf.cpp:118
 msgid "Left  Meta"
 msgstr "Vinstri Meta"
 
-# kikbdconf.cpp:121
 #: kikbdconf.cpp:121
 msgid "Top Left"
 msgstr "Efst til vinstri"
 
-# kikbdconf.cpp:122
 #: kikbdconf.cpp:122
 msgid "Top Right"
 msgstr "Efst til hægri"
 
-# kikbdconf.cpp:123
 #: kikbdconf.cpp:123
 msgid "Bottom Left"
 msgstr "Neðst til vinstri"
 
-# kikbdconf.cpp:124
 #: kikbdconf.cpp:124
 msgid "Bottom Right"
 msgstr "Neðst til hægri"
 
-# kikbdconf.cpp:151
 #: kikbdconf.cpp:151
 msgid "X default codes"
 msgstr "Sjálfgefnir X-kóðar"
 
-# kikbdconf.cpp:209
 #: kikbdconf.cpp:209
 #, c-format
 msgid ""
@@ -242,7 +204,6 @@ msgstr ""
 "%s\n"
 "Viltu stilla núna?"
 
-# kikbdconf.cpp:217
 #: kikbdconf.cpp:217
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
@@ -251,102 +212,82 @@ msgstr ""
 "Þú ert núna að nota \"Alþjóðlega Lyklaborðið\" í fyrsta skiptið.\n"
 "Hef sett upp nokkur sjálfgefin gildi."
 
-# kikbdconf.cpp:359
 #: kikbdconf.cpp:359
 msgid "unknown"
 msgstr "óþekkt"
 
-# kikbdconf.cpp:363 kikbdconf.cpp:436
 #: kikbdconf.cpp:363 kikbdconf.cpp:436
 msgid "default"
 msgstr "sjálfgefin"
 
-# kikbdconf.cpp:389
 #: kikbdconf.cpp:389
 msgid "Author:  Not specified"
 msgstr "Höfundur: Ekki skráður"
 
-# kikbdconf.cpp:391
 #: kikbdconf.cpp:391
 msgid "Author"
 msgstr "Höfundur"
 
-# kikbdconf.cpp:397
 #: kikbdconf.cpp:397
 msgid "Description:  "
 msgstr "Lýsing:  "
 
-# kikbdconf.cpp:400
 #: kikbdconf.cpp:400
 msgid "Source:  "
 msgstr "Uppruni:  "
 
-# kikbdconf.cpp:401
 #: kikbdconf.cpp:401
 msgid "no file"
 msgstr "engin skrá"
 
-# kikbdconf.cpp:402
 #: kikbdconf.cpp:402
 msgid "user file"
 msgstr "notendaskrá"
 
-# kikbdconf.cpp:403
 #: kikbdconf.cpp:403
 msgid "system file"
 msgstr "kerfisskrá"
 
-# kikbdconf.cpp:408
 #: kikbdconf.cpp:408
 msgid "Statistic:  "
 msgstr "Tölfræði:  "
 
-# kikbdconf.cpp:411
 #: kikbdconf.cpp:411
 msgid "symbols"
 msgstr "tákn"
 
-# kikbdconf.cpp:414
 #: kikbdconf.cpp:414
 msgid "codes"
 msgstr "kóðar"
 
-# kikbdconf.cpp:417
 #: kikbdconf.cpp:417
 msgid "alternative symbols"
 msgstr "aukatákn"
 
-# kikbdconf.cpp:429
 #: kikbdconf.cpp:429
 msgid "Language"
 msgstr "Tungumál"
 
-# kikbdconf.cpp:433
 #: kikbdconf.cpp:433
 msgid "Charset"
 msgstr "Stafatafla"
 
-# kikbdconf.cpp:479
 #: kikbdconf.cpp:479
 msgid "International keyboard ERROR"
 msgstr " Alþjóðlega lyklaborðið:  Villa"
 
-# kikbdconf.cpp:495
 #: kikbdconf.cpp:495
 msgid "International keyboard warning"
 msgstr " Alþjóðlega lyklaborðið:   Aðvörun"
 
-# kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
 #: kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
 msgid "International keyboard question"
 msgstr " Alþjóðlega lyklaborðið:  Spurning"
 
-# kikbdconf.cpp:509
 #: kikbdconf.cpp:509
 msgid "Configure"
 msgstr "Stilling"
 
-# kikbdconf.cpp:519
 #: kikbdconf.cpp:519
 msgid ""
 "\n"
@@ -355,294 +296,237 @@ msgstr ""
 "\n"
 "Viltu halda áfram?"
 
-# widgets.cpp:107
 #: widgets.cpp:107
 msgid "List of active keyboard maps"
 msgstr "Listi yfir virkar hnappatöflur"
 
-# widgets.cpp:117
 #: widgets.cpp:117
 msgid "&Add"
 msgstr "Bæta við"
 
-# widgets.cpp:118
 #: widgets.cpp:118
 msgid "Adding new keyboard map"
 msgstr "Bæti við nýrri hnappatöflu"
 
-# widgets.cpp:122
 #: widgets.cpp:122
 msgid "Remove selected keyboard map"
 msgstr "Fjarlægja valda hnappatöflu"
 
-# widgets.cpp:127
 #: widgets.cpp:127
 msgid "U&p"
 msgstr "Ofar"
 
-# widgets.cpp:127
 #: widgets.cpp:127
 msgid "Up selected keyboard map"
 msgstr "Færa valda hnappatöflu ofar"
 
-# widgets.cpp:131
 #: widgets.cpp:131
 msgid "D&own"
 msgstr "Neðar"
 
-# widgets.cpp:131
 #: widgets.cpp:131
 msgid "Down selected keyboard map"
 msgstr "Færa valda hnappatöflu neðar"
 
-# widgets.cpp:135
 #: widgets.cpp:135
 msgid "&Info"
 msgstr "Upplýsingar"
 
-# widgets.cpp:136
 #: widgets.cpp:136
 msgid "Display information for selected keyboard map"
 msgstr "Birta upplýsingar um valda hnappatöflu"
 
-# widgets.cpp:145
 #: widgets.cpp:145
 msgid "Use &hot list"
 msgstr "Nota flýtilista"
 
-# widgets.cpp:146
 #: widgets.cpp:146
 msgid ""
 "Use only default and last active keyboard maps to switching from keyboard"
 msgstr ""
 "Nota aðeins sjálfgefin og síðast notaðar hnappatöflur til að skipta á milli"
 
-# widgets.cpp:215
 #: widgets.cpp:215
 msgid "Adding Keyboard"
 msgstr "Bæti við lyklaborði"
 
-# widgets.cpp:216
 #: widgets.cpp:216
 msgid "There is no more keyboard maps"
 msgstr "Það eru ekki fleiri hnappatöflur"
 
-# widgets.cpp:249
 #: widgets.cpp:249
 msgid "Keyboard map information"
 msgstr "Upplýsingar um hnappatöflur"
 
-# widgets.cpp:283
 #: widgets.cpp:283
 msgid "Add Keyboard"
 msgstr "Bæta við lyklaborði"
 
-# widgets.cpp:287
 #: widgets.cpp:287
 msgid "Available keyboard maps"
 msgstr "Nothæfar hnappatöflur"
 
-# widgets.cpp:394
 #: widgets.cpp:394
 msgid "Keyboard maps"
 msgstr "Hnappatöflur"
 
-# widgets.cpp:405
 #: widgets.cpp:405
 msgid "Switch and Alt Switch"
 msgstr "Töfluvals- og aukatáknahnappur"
 
-# widgets.cpp:410
 #: widgets.cpp:410
 msgid "Key(s) to switch between keyboard maps"
 msgstr "Lykill/lyklar til að skipta um hnappatöflur"
 
-# widgets.cpp:416
 #: widgets.cpp:416
 msgid "Key to activate Alternate symbols in current keyboard map"
 msgstr "Lykill til að virkja aukatákn á valdri hnappatöflu"
 
-# widgets.cpp:429
 #: widgets.cpp:429
 msgid "&Beep"
 msgstr "Flauta"
 
-# widgets.cpp:430
 #: widgets.cpp:430
 msgid "Beep when ever keyboard mapping changed"
 msgstr "Flauta þegar skipt er um ham"
 
-# widgets.cpp:433
 #: widgets.cpp:433
 msgid "Ad&vanced"
 msgstr "Frekari stillingar"
 
-# widgets.cpp:433
 #: widgets.cpp:433
 msgid "Advanced options"
 msgstr "Frekari valmöguleikar"
 
-# widgets.cpp:450
 #: widgets.cpp:450
 msgid "Advanced"
 msgstr "Frekari stillingar"
 
-# widgets.cpp:466
 #: widgets.cpp:466
 msgid "&Emulate Caps Lock"
 msgstr "Herma eftir hástafalás"
 
-# widgets.cpp:467
 #: widgets.cpp:467
 msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
 msgstr "Herma eftir hástafalás X-þjóns. Sum tungumál krefjast þess."
 
-# widgets.cpp:473
 #: widgets.cpp:473
 msgid "&World Menu"
 msgstr "Heimsvalmynd"
 
-# widgets.cpp:474
 #: widgets.cpp:474
 msgid "Show menu in any window by holding Switch keys"
 msgstr "Sýna valmynd í hvaða glugga sem er með því að halda niðri rofalykli"
 
-# widgets.cpp:481
 #: widgets.cpp:481
 msgid "&Save Classes"
 msgstr "Vista Klasa"
 
-# widgets.cpp:482
 #: widgets.cpp:482
 msgid "Save relations between window classes and keyboard maps on exit"
 msgstr "Vista vensl milli gluggaklasa og hnappatöflu þegar hætt er"
 
-# widgets.cpp:488
 #: widgets.cpp:488
 msgid "Define X codes"
 msgstr "Skilgreina X-kóða"
 
-# widgets.cpp:491
 #: widgets.cpp:491
 msgid "Input"
 msgstr "Inntak"
 
-# widgets.cpp:495
 #: widgets.cpp:495
 msgid "Standard behavior. Keyboard map active for all windows"
 msgstr "Venjuleg hegðun. Hnappataflan virk í öllum gluggum"
 
-# widgets.cpp:499
 #: widgets.cpp:499
 msgid "Extended behavior. Each windows remember it's own keyboard map"
 msgstr "Bætt hegðun. Hver gluggi man eftir sinni eigin hnappatöflu"
 
-# widgets.cpp:503
 #: widgets.cpp:503
 msgid "Special behavior. Each windows class remember it's own keyboard map"
 msgstr "Sérstök hegðun. Hver gluggaklasi man eftir sinni hnappatöflu"
 
-# widgets.cpp:551
 #: widgets.cpp:551
 msgid "Button Colors"
 msgstr "Litur hnappa"
 
-# widgets.cpp:561
 #: widgets.cpp:561
 msgid "Foreground"
 msgstr "Forgrunnslitur"
 
-# widgets.cpp:562
 #: widgets.cpp:562
 msgid "Color of the text label"
 msgstr "Stafalitur"
 
-# widgets.cpp:566
 #: widgets.cpp:566
 msgid "With Caps Lock"
 msgstr "Með hástafalás"
 
-# widgets.cpp:567
 #: widgets.cpp:567
 msgid "Background when Emulated Caps Lock active"
 msgstr "Bakgrunnur þegar hermt er eftir hástafalás"
 
-# widgets.cpp:573
 #: widgets.cpp:573
 msgid "With Alternate"
 msgstr "Með aukahnapp"
 
-# widgets.cpp:574
 #: widgets.cpp:574
 msgid "Background when Alternate switch is pressed"
 msgstr "Bakgrunnur þegar ýtt er á aukahnapp"
 
-# widgets.cpp:583
 #: widgets.cpp:583
 msgid "Button Font"
 msgstr "Leturgerð takka"
 
-# widgets.cpp:591
 #: widgets.cpp:591
 msgid "&Customize Font"
 msgstr "Sérsmíða leturgerð"
 
-# widgets.cpp:592
 #: widgets.cpp:592
 msgid "Customize Font for text label or use global settings"
 msgstr "Sérsmíða leturgerð fyrir texta eða nota altækar stillingar"
 
-# widgets.cpp:596
 #: widgets.cpp:596
 msgid "C&hange Font"
 msgstr "Breyta Letri"
 
-# widgets.cpp:641
 #: widgets.cpp:641
 msgid "&Autostart"
 msgstr "Sjálfvirk gangsetning"
 
-# widgets.cpp:642
 #: widgets.cpp:642
 msgid "Start up automatically"
 msgstr "Fara sjálfvirkt í gang"
 
-# widgets.cpp:648
 #: widgets.cpp:648
 msgid "&Docked"
 msgstr "Á spjaldið"
 
-# widgets.cpp:649
 #: widgets.cpp:649
 msgid "Dock into special area in the panel"
 msgstr "Festa á ákveðinn stað á spjaldinu"
 
-# widgets.cpp:658
 #: widgets.cpp:658
 msgid "Place"
 msgstr "Staðsetja"
 
-# widgets.cpp:665
 #: widgets.cpp:665
 msgid "Place in selected corner"
 msgstr "Staðsetja í valið horn"
 
-# kcmikbd.cpp:64
 #: kcmikbd.cpp:64
 msgid "&General"
 msgstr "Almennt"
 
-# kcmikbd.cpp:70
 #: kcmikbd.cpp:70
 msgid "&Style"
 msgstr "Útlit"
 
-# kcmikbd.cpp:76
 #: kcmikbd.cpp:76
 msgid "Start&Up"
 msgstr "Gangsetning"
 
-# kcmikbd.cpp:80
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Alþjóðlega lyklaborðið"
+

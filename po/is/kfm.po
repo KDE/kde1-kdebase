@@ -1513,8 +1513,4 @@ msgid ""
 "kfmexec command [URLs ....]\n"
 msgstr ""
 "Notkun:\n"
-"kfmexec skipun [slóðir....]\n"
-
-# FIXME
-#~ msgid "Unknown binding"
-#~ msgstr "Óþekkt binding"
+"kfmexec skipun [slóðir ...]\n"
