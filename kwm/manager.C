@@ -909,7 +909,8 @@ void Manager::withdraw(Client* c){
 		  c->geometry.x() , c->geometry.y());
   XRemoveFromSaveSet(qt_xdisplay(), c->window);
   setWindowState(c, WithdrawnState);
-  
+  XSelectInput(qt_xdisplay(), c->window, NoEventMask);
+  XUngrabButton(qt_xdisplay(), AnyButton, AnyModifier, c->window);
   removeClient(c);
 }
 

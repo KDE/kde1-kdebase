@@ -11,6 +11,10 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 19:
+       - small fixes for swallowing
+       - bugfix for  TitlebarPixmapActive
+
   patchlevel 18:
        - transient windows become iconified if the main window loses
          the focus (and none of its transient gets it instead!)

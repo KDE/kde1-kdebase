@@ -595,7 +595,7 @@ void MyApp::readConfiguration(){
   }
 
   if (options.titlebarPixmapInactive->size() == QSize(0,0))
-    options.titlebarPixmapInactive = options.titlebarPixmapActive;
+    *options.titlebarPixmapInactive = *options.titlebarPixmapActive;
 
   if (options.TitlebarLook == PIXMAP){
     if (options.titlebarPixmapActive->size() == QSize(0,0))
