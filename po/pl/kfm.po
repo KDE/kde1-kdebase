@@ -36,7 +36,6 @@ msgid "&New Window"
 msgstr "Now&e okno"
 
 #: kfmgui.cpp:306
-#, fuzzy
 msgid "&Run..."
 msgstr "&Uruchom..."
 
@@ -45,7 +44,6 @@ msgid "Open &Terminal"
 msgstr "Otwórz &terminal"
 
 #: kfmgui.cpp:311
-#, fuzzy
 msgid "&Open Location..."
 msgstr "&Otwórz lokacjê..."
 
@@ -58,7 +56,6 @@ msgid "&Close"
 msgstr "&Zamknij"
 
 #: kfmgui.cpp:319
-#, fuzzy
 msgid "&Quit..."
 msgstr "&Wyjd¼..."
 
@@ -183,9 +180,8 @@ msgid "Sa&ve Settings"
 msgstr "&Zapisz opcje"
 
 #: kfmgui.cpp:419
-#, fuzzy
 msgid "Configure Browser..."
-msgstr "Konfiguruj &przegl±darkê"
+msgstr "Konfiguruj &przegl±darkê..."
 
 #: kfmgui.cpp:445
 msgid "&Find"
@@ -319,6 +315,8 @@ msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
 msgstr ""
+"Czy na pewno chcesz wyj¶æ?\n"
+"Funkcjonalno¶æ desktopu zostanie ograniczona"
 
 #: kfmgui.cpp:1176
 msgid "About KFM"
@@ -1251,11 +1249,11 @@ msgstr "Próbujê otworzyæ"
 
 #: useragentdlg.cpp:20
 msgid "On server:"
-msgstr "Serwerze:"
+msgstr "Serwer:"
 
 #: useragentdlg.cpp:31
 msgid "login as:"
-msgstr "Loguj jako:"
+msgstr "Loguj siê:"
 
 #: useragentdlg.cpp:42
 msgid "Add"
@@ -1323,13 +1321,7 @@ msgid "KFM Question"
 msgstr "Pytanie KFM"
 
 # Polish translation of KDE kfm
-# Verision 0.3.0
+# Verision 0.3.1
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #~ msgid "Help"
 #~ msgstr "Pomoc"
-
-#~ msgid "&Help..."
-#~ msgstr "Pomo&c"
-
-#~ msgid "Do you really want to quit?"
-#~ msgstr "Czy na pewno chcesz wyj¶æ?"

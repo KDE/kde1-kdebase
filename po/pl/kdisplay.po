@@ -60,16 +60,12 @@ msgstr "Skalowana"
 
 #: backgnd.cpp:345
 msgid "Browse..."
-msgstr "Przegl±daj"
+msgstr "&Przegl±daj"
 
 #: backgnd.cpp:489
-#, fuzzy
 msgid "Default"
-msgstr "KDE Standard"
+msgstr "Domy¶lnie"
 
-# Polish translation of KDE kdisplay
-# Version 0.1.5
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #: backgnd.cpp:821
 msgid "Desktop Title"
 msgstr "Tytu³ desktopu"
@@ -100,7 +96,7 @@ msgstr "Schemat kolorów"
 
 #: colorscm.cpp:278
 msgid "Remove"
-msgstr "Usuñ"
+msgstr "&Usuñ"
 
 #: colorscm.cpp:286
 msgid "Widget color"
@@ -280,7 +276,7 @@ msgstr "&T³o"
 
 #: main.cpp:64
 msgid "&Colors"
-msgstr "&Kolory"
+msgstr "Ko&lory"
 
 #: main.cpp:67
 msgid "&Screensaver"
@@ -291,9 +287,14 @@ msgid "&Style"
 msgstr "&Styl"
 
 #: main.cpp:105
-#, fuzzy
 msgid "Display settings"
 msgstr "Ustawienia wy¶wietlania"
+
+# Polish translation of KDE kdisplay
+# Version 0.2.0
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+#~ msgid "(none)"
+#~ msgstr "(brak)"
 
 #~ msgid "Save"
 #~ msgstr "&Zachowaj"
@@ -303,17 +304,3 @@ msgstr "Ustawienia wy¶wietlania"
 
 #~ msgid "Edit"
 #~ msgstr "Edycja"
-
-#~ msgid "KDE Display Configuration"
-#~ msgstr "KDE W³a¶ciwo¶ci Wy¶wietlania"
-
-#~ msgid ""
-#~ "Usage: %s -init|-setup\n"
-#~ "\n"
-#~ msgstr "Uzycie: %s -init|-setup\n"
-
-#~ msgid "  -init               apply current settings to the display\n"
-#~ msgstr "  -init               zastosowanie biezacych ustawien\n"
-
-#~ msgid "  -setup              setup the display\n"
-#~ msgstr "  -setup              ustawienie nowych wlasciwosci\n"

@@ -14,6 +14,9 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
+# Polish translation of KDE kpanel
+# Version 0.3.0
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #: kpanel.C:206
 msgid "Move"
 msgstr "Prz&esuñ"
@@ -28,7 +31,7 @@ msgstr "&W³a¶ciwo¶ci"
 
 #: kpanel.C:238
 msgid "Go!"
-msgstr ""
+msgstr "Id¼!"
 
 #: kpanel.C:313
 msgid "No info available"
@@ -39,7 +42,6 @@ msgid "Logout"
 msgstr "Wyloguj siê"
 
 #: kpanel.C:357 kpanel.C:758
-#, fuzzy
 msgid "Lock screen"
 msgstr "Zablokuj ekran"
 
@@ -131,21 +133,17 @@ msgstr "Du¿y"
 msgid "Menu Tooltips"
 msgstr "Podpowiedzi"
 
-# Polish translation of KDE kpanel
-# Version 0.2.2
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #: props.C:298
 msgid "Personal First"
 msgstr "Wpierw prywatne"
 
 #: props.C:302
-#, fuzzy
 msgid "Auto Hide Panel"
-msgstr "Ukryj panel"
+msgstr "Ukrywaj panel"
 
 #: props.C:306
 msgid "Auto Hide Taskbar"
-msgstr ""
+msgstr "Ukrywaj listê zadañ"
 
 #: props.C:362
 msgid "Visible"
@@ -162,9 +160,3 @@ msgstr "&Desktopy"
 #: props.C:380
 msgid "KPanel Configuration"
 msgstr "Konfiguracja KPanel"
-
-#~ msgid "System"
-#~ msgstr "System"
-
-#~ msgid "Small Style"
-#~ msgstr "¦redni"

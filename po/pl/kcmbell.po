@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-12-14 20:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+# Polish translation of KDE kcmbell
+# Version 0.1.0
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+#: main.cpp:51
+msgid "&Bell"
+msgstr "&Brzêczyk"
+
+#: main.cpp:75
+msgid "Bell settings"
+msgstr "Ustawienia brzêczyka"
+
+#: bell.cpp:85
+msgid "Volume"
+msgstr "G³o¶no¶æ"
+
+#: bell.cpp:86
+msgid "Pitch"
+msgstr "Wysoko¶æ"
+
+#: bell.cpp:87
+msgid "Duration"
+msgstr "Czas"
+
+#: bell.cpp:89
+msgid "Hz"
+msgstr "Hz"
+
+#: bell.cpp:90
+msgid "ms"
+msgstr "ms"

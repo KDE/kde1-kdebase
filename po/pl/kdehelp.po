@@ -253,7 +253,7 @@ msgstr "&Dalej"
 
 #: mainwidget.cpp:156
 msgid "&Contents"
-msgstr "Spis &tre¶ci"
+msgstr "&Tematy pomocy"
 
 #: mainwidget.cpp:157
 msgid "&Top"
@@ -315,6 +315,8 @@ msgstr ""
 "\n"
 "\n"
 "Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
+"\n"
+"Polskie t³umaczenie (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "\n"
 "Ten program jest licencjonowany przez GNU General Public License (GPL).\n"
 "KDEHelp nie posiada CA£KOWICIE ¯ADNEJ GWARANCJI na dzia³anie tej aplikacji."
@@ -400,7 +402,7 @@ msgid "&Add Bookmark"
 msgstr "&Dodaj zak³adkê"
 
 # Polish translation of KDE kdehelp
-# Version 0.2.0
+# Version 0.2.1
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #~ msgid "Open"
 #~ msgstr "&Otwórz"

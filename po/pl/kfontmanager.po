@@ -1,3 +1,6 @@
+# Polish translation of KDE kfontmanager
+# Version 0.2.0
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #: main.cpp:53
 msgid "KDE Font Manager"
 msgstr "KDE Mened¿er Czcionek"
@@ -20,7 +23,7 @@ msgstr "Dostêpne czcionki X11"
 
 #: kfontmanager.cpp:68
 msgid "Fonts made available to KDE"
-msgstr "Czcionki dostêpne dla KDE"
+msgstr "Dostêpne czcionki KDE"
 
 #: kfontmanager.cpp:74
 msgid "Add"
@@ -97,9 +100,3 @@ msgstr ""
 "\n"
 "Polskie t³umaczenie\n"
 "(C) 1997 Piotr Roszatycki\n"
-
-# Polish translation of KDE kfontmanager
-# Version 0.1.2
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
-#~ msgid "Dolor Ipse"
-#~ msgstr "G¿eg¿ó³ka"

@@ -1,6 +1,3 @@
-# Polish translation of KDE klock
-# Version 0.1.0
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #: banner.cpp:56
 msgid "Banner"
 msgstr "Baner"
@@ -53,7 +50,7 @@ msgstr "Nietoperz"
 
 #: bat.cpp:532
 msgid "Setup KBat"
-msgstr "Ustawienia KBat"
+msgstr "Ustawienia wygaszacza Nietoperz"
 
 #: bat.cpp:548
 msgid "Number of bats:"
@@ -83,7 +80,7 @@ msgstr "Pusty ekran"
 
 #: blankscrn.cpp:63
 msgid "Setup kblankscrn"
-msgstr "Ustawienia kblankscrn"
+msgstr "Ustawienia wygaszacza Pusty ekran"
 
 #: blob.cpp:58
 msgid "Random Linear"
@@ -111,11 +108,11 @@ msgstr "Przykro mi. Ten wygaszasz potrzebuje kolorowego trybu"
 
 #: blob.cpp:444
 msgid "Setup Blob Saver"
-msgstr "Ustawienia wygaszacza Blob"
+msgstr "Ustawienia wygaszacza Bloby"
 
 #: blob.cpp:447
 msgid "Frame Show sec."
-msgstr ""
+msgstr "Pokazuj przez sek."
 
 #: blob.cpp:455
 msgid "Algorithm"
@@ -147,7 +144,7 @@ msgstr "P³omieñ"
 
 #: flame.cpp:390
 msgid "Setup KFlame"
-msgstr "Ustawienia KFlame"
+msgstr "Ustawienia wygaszacza P³omieñ"
 
 #: flame.cpp:406
 msgid "Max Levels:"
@@ -181,7 +178,7 @@ msgstr "Las"
 
 #: forest.cpp:272
 msgid "Setup KForest"
-msgstr "Ustawienia KForest"
+msgstr "Ustawienia wygaszacza Las"
 
 #: forest.cpp:288
 msgid "Num of Trees:"
@@ -211,7 +208,7 @@ msgstr "Hop"
 
 #: hop.cpp:306
 msgid "Setup KHop"
-msgstr "Ustawienia Hop"
+msgstr "Ustawienia wygaszacza Hop"
 
 #: hop.cpp:322
 msgid "Samecolor Pixels:"
@@ -245,7 +242,7 @@ msgstr "Laser"
 
 #: laser.cpp:387
 msgid "Setup KLaser"
-msgstr "Ustawienia KLaser"
+msgstr "Ustawienia wygaszacza Laser"
 
 #: laser.cpp:462
 msgid "About Laser"
@@ -271,7 +268,7 @@ msgstr "Linie"
 
 #: lines.cpp:128
 msgid "Setup klines"
-msgstr "Ustaw klines"
+msgstr "Ustawienia wygaszacza Linie"
 
 #: lines.cpp:130 polygon.cpp:81
 msgid "Length:"
@@ -311,7 +308,7 @@ msgstr "Lissie"
 
 #: lissie.cpp:320
 msgid "Setup KLissie"
-msgstr "Ustawienia KLissie"
+msgstr "Ustawienia wygaszacza Lissie"
 
 #: lissie.cpp:336
 msgid "Num of Lissies:"
@@ -401,7 +398,7 @@ msgstr "Morph3D (GL)"
 
 #: morph3d.cpp:1011
 msgid "Setup KMorph3d"
-msgstr "Ustawienia KMorph3d"
+msgstr "Ustawienia wygaszacza Morph3D"
 
 #: morph3d.cpp:1027
 msgid "Object Type:"
@@ -431,7 +428,7 @@ msgstr "Polygony"
 
 #: polygon.cpp:79
 msgid "Setup kpolygon"
-msgstr "Ustawienia kpolygon"
+msgstr "Ustawienia wygaszacza Polygon"
 
 #: polygon.cpp:91
 msgid "Vertices:"
@@ -442,7 +439,6 @@ msgid "About Polygon"
 msgstr "Informacje"
 
 #: polygon.cpp:210
-#, fuzzy
 msgid ""
 "Polygon Version 0.1\n"
 "\n"
@@ -460,7 +456,7 @@ msgstr "Piro"
 
 #: pyro.cpp:511
 msgid "Setup KPyro"
-msgstr "Ustawienia KPiro"
+msgstr "Ustawienia wygaszacza Piro"
 
 #: pyro.cpp:517 rock.cpp:553
 msgid "Number:"
@@ -494,7 +490,7 @@ msgstr "Ska³a"
 
 #: rock.cpp:537
 msgid "Setup krock"
-msgstr "Ustawienia krock"
+msgstr "Ustawienia wygaszacza Ska³a"
 
 #: rock.cpp:563
 msgid "Move"
@@ -536,11 +532,11 @@ msgstr "Po¶lizg"
 
 #: slip.cpp:360
 msgid "Setup KSlip"
-msgstr "Ustawienia KSlip"
+msgstr "Ustawienia wygaszacza Po¶lizg"
 
 #: slip.cpp:376
 msgid "Batchcount:"
-msgstr ""
+msgstr "Ilo¶æ kroków"
 
 #: slip.cpp:464
 msgid "About Slip"
@@ -566,7 +562,7 @@ msgstr "Rój"
 
 #: swarm.cpp:324
 msgid "Setup KSwarm"
-msgstr "Ustawienia KSwarm"
+msgstr "Ustawienia wygaszacza Rój"
 
 #: swarm.cpp:340
 msgid "Number of Bees:"
@@ -589,3 +585,15 @@ msgstr ""
 "Copyright (c) 1991 Patrick J. Naughton\n"
 "\n"
 "Wersja dla kscreensave od Emanuel Pirker."
+
+# Polish translation of KDE klock
+# Version 0.1.1
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+#~ msgid "(none)"
+#~ msgstr "(brak)"
+
+#~ msgid "Setup kbanner"
+#~ msgstr "Ustawienia wygaszacza Baner"
+
+#~ msgid "About"
+#~ msgstr "Info"

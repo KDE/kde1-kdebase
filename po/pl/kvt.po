@@ -182,6 +182,7 @@ msgstr ""
 "oparta o rxvt-2.08 Roberta Nation'a"
 
 #: main.C:922
+#, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -250,7 +251,7 @@ msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
 msgstr ""
-"-grk9\t\tgreek kbd = ELOT 928 (default)\n"
+"-grk9\t\tgreek kbd = ELOT 928 (domy¶lnie)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
 
 #: main.C:970
@@ -258,19 +259,16 @@ msgid "Terminal Options"
 msgstr "Opcje terminala"
 
 # Polish translation of KDE kvt
-# Version 0.1.4
+# Version 0.2.0
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #~ msgid "The backspace key will send a"
 #~ msgstr "Klawisz backspace <- wysy³a"
 
-#~ msgid "&Contents"
-#~ msgstr "&Spis tre¶ci"
+#~ msgid "&Custom Colors"
+#~ msgstr "&Kolory u¿ytkownika"
 
-#~ msgid "&About Qt..."
-#~ msgstr "Qt - &informacje"
+#~ msgid "&Foreground Color"
+#~ msgstr "Kolor &czcionki"
 
-#~ msgid "About "
-#~ msgstr "Informacje o "
-
-#~ msgid "About KDE"
-#~ msgstr "&Informacje o KDE..."
+#~ msgid "&Background Color"
+#~ msgstr "Kolor &t³a"
