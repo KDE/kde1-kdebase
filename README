@@ -1,9 +1,20 @@
 IMPORTANT: You need to set the environment variable QTDIR to your Qt
 directory, if it is not in a standard place.
 
-You can use --enable-kscreensaver, if you have Linux. On most other 
-systems this app has problems with passwords. So it is disabled by
-default.
+On some systems, kscreensaver can't get passwords. You can use 
+--disable-kscreensaver if you doesn't want to compile this app.
+You can use --enable-debug, if you want to have debug code in your
+KDE apps (for alpha testing).
+
+If you have an older kdebase installed, just copy all your .k*rc files
+from $HOME to $HOME/.kde/config. In the other case, default values are
+used for most apps.
+
+You can use 'make uninstall' if you want to remove the kde from the dirs.
+This feature has not been tested completly. 
+
+Have a look at VERSIONS, if you want to know, what versions of apps are
+included.
 
 Please direct any bug reports to me (coolo@itm.mu-luebeck.de). Discussions
 should go to the KDE mailing list (kde@kde.org).

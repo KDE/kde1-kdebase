@@ -1,6 +1,6 @@
 
 INCDIR  =      @all_includes@
-CXXFLAGS=      @CXXFLAGS@ $(INCDIR) 
+CXXFLAGS=      @CXXFLAGS@ $(INCDIR) -DHAVE_CONFIG_H -I../..
 LDFLAGS =      @LDFLAGS@ @all_libraries@ -lkdecore -lkdeui -lkhtmlw -lqt -lXext -lX11 @LIBSOCKET@ -ljpeg -lgif
 CXX     =      @CXX@
 MOC     =      @MOC@
@@ -18,7 +18,7 @@ TARGET	=	kfmclient
 .SUFFIXES: .cpp
 
 .cpp.o:
-	$(CXX) -c $(CFLAGS) -DSTDC_HEADERS -DHAVE_UNISTD_H $(INCDIR) $<
+	$(CXX) -c $(CXXFLAGS) $(INCDIR) $<
 
 ####### Build rules
 
