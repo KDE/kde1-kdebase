@@ -55,6 +55,8 @@ private:	// Disabled copy constructor and operator=
 
 enum EntryType { empty, separator, submenu, unix_com, prog_com, label, add_but };
 
+#define __cc0 (void*)0
+
 class PMenuItem : public QObject
 {
   Q_OBJECT;
@@ -62,13 +64,13 @@ class PMenuItem : public QObject
   friend PMenu;
 public:
   PMenuItem();
-  PMenuItem( EntryType e, QString t=NULL, QString c=NULL, QString n=NULL, PMenu *menu=NULL,
-	     QObject *receiver=NULL, char *member=NULL, QPopupMenu *cm=NULL, bool ro = FALSE,
-	     QString d=NULL, QString co=NULL );
+  PMenuItem( EntryType e, QString t=QString(), QString c=QString(), QString n=QString(), PMenu *menu=0,
+	     QObject *receiver=0, char *member=0, QPopupMenu *cm=0, bool ro = FALSE,
+	     QString d=QString(), QString co=QString() );
   PMenuItem( PMenuItem &item );
   ~PMenuItem ();
 
-  short     parse( QFileInfo *fi, PMenu *menu = NULL);
+  short     parse( QFileInfo *fi, PMenu *menu = 0L );
   short     parse( QString abs_file_path );
   void      setType( EntryType e) { entry_type = e; }
   EntryType getType() { return entry_type; }

@@ -79,9 +79,9 @@ PMenuItem::PMenuItem()
   id = global_id++;
 }
 
-PMenuItem::PMenuItem( EntryType e, QString t=NULL, QString c=NULL, QString n=NULL, 
-		      PMenu *menu=NULL, QObject *receiver=NULL, char *member=NULL,
-		      QPopupMenu *cm=NULL, bool ro = FALSE, QString d=NULL, QString co = NULL )
+PMenuItem::PMenuItem( EntryType e, QString t, QString c, QString n, 
+		      PMenu *menu, QObject *receiver, char *member,
+		      QPopupMenu *cm, bool ro = FALSE, QString d, QString co )
 {
   initMetaObject();
   entry_type = e;
