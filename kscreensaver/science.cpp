@@ -266,9 +266,9 @@ void KScienceSaver::initialize()
 	signed int ws = (signed int) (width -  diam);
 	signed int hs = (signed int) (height - diam);
 
-	srand( (int) time( (time_t *) NULL ) );
-	x = (double) ( (ws > 0) ? (rand() % ws ) : 0 );
-	y = (double) ( (hs > 0) ? (rand() % hs ) : 0 );
+	srandom( (int) time( (time_t *) NULL ) );
+	x = (double) ( (ws > 0) ? (random() % ws ) : 0 );
+	y = (double) ( (hs > 0) ? (random() % hs ) : 0 );
 
 	xcoord = (int) x;
 	ycoord = (int) y;		

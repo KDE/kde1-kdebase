@@ -251,7 +251,7 @@ kPolygonSaver::kPolygonSaver( Drawable drawable ) : kScreenSaver( drawable )
 
 	readSettings();
 
-	srand((int)time((time_t *)NULL));
+	srandom((int)time((time_t *)0L));
 
 	directions.resize( numVertices );
 	colorContext = QColor::enterAllocContext();
@@ -371,12 +371,12 @@ void kPolygonSaver::initialisePolygons()
 
 	for ( i = 0; i < numVertices; i++ )
 	{
-		poly->vertices[i].x = rand() % width;
-		poly->vertices[i].y = rand() % height;
-		directions[i].x = 16 - (rand() % 8) * 4;
+		poly->vertices[i].x = random() % width;
+		poly->vertices[i].y = random() % height;
+		directions[i].x = 16 - (random() % 8) * 4;
 		if ( directions[i].x == 0 )
 			directions[i].x = 1;
-		directions[i].y = 16 - (rand() % 8) * 4;
+		directions[i].y = 16 - (random() % 8) * 4;
 		if ( directions[i].y == 0 )
 			directions[i].y = 1;
 	}
@@ -396,24 +396,24 @@ void kPolygonSaver::moveVertices()
 		poly->vertices[i].x += directions[i].x;
 		if ( poly->vertices[i].x >= (int)width )
 		{
-			directions[i].x = -(rand() % 4 + 1) * 4;
+			directions[i].x = -(random() % 4 + 1) * 4;
 			poly->vertices[i].x = (int)width;
 		}
 		else if ( poly->vertices[i].x < 0 )
 		{
-			directions[i].x = (rand() % 4 + 1) * 4;
+			directions[i].x = (random() % 4 + 1) * 4;
 			poly->vertices[i].x = 0;
 		}
 
 		poly->vertices[i].y += directions[i].y;
 		if ( poly->vertices[i].y >= (int)height )
 		{
-			directions[i].y = -(rand() % 4 + 1) * 4;
+			directions[i].y = -(random() % 4 + 1) * 4;
 			poly->vertices[i].y = height;
 		}
 		else if ( poly->vertices[i].y < 0 )
 		{
-			directions[i].y = (rand() % 4 + 1) * 4;
+			directions[i].y = (random() % 4 + 1) * 4;
 			poly->vertices[i].y = 0;
 		}
 	}

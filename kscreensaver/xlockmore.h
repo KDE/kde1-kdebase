@@ -260,44 +260,4 @@ extern char *strdup(char *);
 #define FABSF(n) ((float)fabs((double)(n)))
 #endif
 
-/*** random number generator ***/
-/* defaults */
-#if HAVE_RAND48
-#define SRAND srand48
-#define LRAND lrand48
-#define MAXRAND (2147483648.0)
-#else /* HAVE_RAND48 */
-#if HAVE_RANDOM
-#define SRAND srand48
-#define LRAND lrand48
-#define MAXRAND (2147483648.0)
-#else /* HAVE_RANDOM */
-#if HAVE_RAND
-#define SRAND srand48
-#define LRAND lrand48
-#ifdef AIXV3
-#define MAXRAND (2147483648.0)
-#else
-#define MAXRAND (32768.0)
-#endif
-#endif /* HAVE_RAND */
-#endif /* HAVE_RANDOM */
-#endif /* HAVE_RAND48 */
-
-#ifndef SRAND
-extern void SetRNG(long int s);
-
-#define SRAND(X) SetRNG((long) X)
-#endif
-#ifndef LRAND
-extern long LongRNG(void);
-
-#define LRAND() LongRNG()
-#endif
-#ifndef MAXRAND
-#define MAXRAND (2147483648.0)
-#endif
-
-#define NRAND(X) ((int)(LRAND()%(X)))
-
 #endif /* __XLOCK_XLOCK_H__ */

@@ -130,18 +130,18 @@ float Cos(float angle)
 void NewStar(GLint n, GLint d)
 {
 
-    if (rand()%4 == 0) {
+    if (random()%4 == 0) {
 	stars[n].type = CIRCLE;
     } else {
 	stars[n].type = STREAK;
     }
-    stars[n].x[0] = (float)(rand() % MAXPOS - MAXPOS / 2);
-    stars[n].y[0] = (float)(rand() % MAXPOS - MAXPOS / 2);
-    stars[n].z[0] = (float)(rand() % MAXPOS + d);
-    if (rand()%4 == 0 && flag == WEIRD) {
-	stars[n].offsetX = (float)(rand() % 100 - 100 / 2);
-	stars[n].offsetY = (float)(rand() % 100 - 100 / 2);
-	stars[n].offsetR = (float)(rand() % 25 - 25 / 2);
+    stars[n].x[0] = (float)(random() % MAXPOS - MAXPOS / 2);
+    stars[n].y[0] = (float)(random() % MAXPOS - MAXPOS / 2);
+    stars[n].z[0] = (float)(random() % MAXPOS + d);
+    if (random()%4 == 0 && flag == WEIRD) {
+	stars[n].offsetX = (float)(random() % 100 - 100 / 2);
+	stars[n].offsetY = (float)(random() % 100 - 100 / 2);
+	stars[n].offsetR = (float)(random() % 25 - 25 / 2);
     } else {
 	stars[n].offsetX = 0.0;
 	stars[n].offsetY = 0.0;
@@ -250,7 +250,7 @@ static void Init(void)
     float angle;
     GLint n;
 
-    srand((unsigned int)time(NULL));
+    srandom((unsigned int)time(NULL));
 
     for (n = 0; n < MAXSTARS; n++) {
 	NewStar(n, 100);

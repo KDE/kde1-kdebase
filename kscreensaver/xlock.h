@@ -1,3 +1,6 @@
+#ifndef __XLOCK_H__
+#define __XLOCK_H__
+
 /*-
  * @(#)xlock.h	3.3 95/09/24 xlockmore 
  *
@@ -228,23 +231,14 @@ extern int is_ribbon();
 #endif
 
 /*** random number generator ***/
-/* insert your favorite */
-#ifdef __hpux
-#define SRAND(X) srand48(X)
-#define LRAND()  lrand48()
-#endif
-
-/* defaults */
-#ifndef SRAND
-extern void SetRNG( long s );
-#define SRAND(X) SetRNG((long) X)
-#endif
-#ifndef LRAND
-extern long LongRNG();
-#define LRAND() LongRNG()
-#endif
+/* We can always use random and srandom.
+   They are provided by fakes.cpp if they're not present */
+#define SRAND srandom
+#define LRAND random
 #ifndef MAXRAND
 #define MAXRAND (2147483648.0)
 #endif
 
 #define NRAND(X) ((int)(LRAND()%(X)))
+
+#endif /* __XLOCK_H__ */
