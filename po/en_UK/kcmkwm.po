@@ -92,9 +92,8 @@ msgid "Middle"
 msgstr ""
 
 #: titlebar.cpp:967
-#, fuzzy
 msgid "Shaded Vertically"
-msgstr "Maximise vertically"
+msgstr ""
 
 #: titlebar.cpp:973
 msgid "Shaded Horizontally"
