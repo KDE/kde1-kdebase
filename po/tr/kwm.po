@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-11-25 01:11+0100\n"
+"POT-Creation-Date: 1998-12-03 01:16+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -112,15 +112,15 @@ msgstr "Sekiz"
 msgid "Unnamed Desktop"
 msgstr "Ýsimsiz Masa üstü"
 
-#: main.C:991
+#: main.C:1016
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Bazi simgeler geçersiz: ShapeMode kullanýlmýyor\n"
 
-#: main.C:1103
+#: main.C:1128
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Bazý simgeler geçersiz: GimmickMode kullanýlmýyor\n"
 
-#: main.C:1428
+#: main.C:1453
 msgid "*** No Tasks ***"
 msgstr "*** Görev Yok ***"
 

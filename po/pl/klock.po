@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1998-11-23 01:14+0100\n"
+"POT-Creation-Date: 1998-12-02 13:03+0100\n"
 "PO-Revision-Date: 1998-06-20 13:26+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -262,6 +262,11 @@ msgstr ""
 "Copyright (c) 1996 by Jeremie PETIT\n"
 "\n"
 "Wersja dla kscreensave - Cedric Tefft"
+
+#: bsod.cpp:1192
+#, fuzzy
+msgid "Black Screen of Death"
+msgstr "Pusty ekran"
 
 #: flame.cpp:310
 msgid "Flame"

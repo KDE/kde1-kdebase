@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-11-23 01:14+0100\n"
+"POT-Creation-Date: 1998-12-02 13:03+0100\n"
 "PO-Revision-Date: 1998-04-20 22:56+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -249,6 +249,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
+
+#: bsod.cpp:1192
+#, fuzzy
+msgid "Black Screen of Death"
+msgstr "ªÅ¥Õ¿Ã¹õ(Blank Screen)"
 
 #: flame.cpp:310
 msgid "Flame"

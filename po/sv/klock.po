@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-11-23 01:14+0100\n"
+"POT-Creation-Date: 1998-12-02 13:03+0100\n"
 "PO-Revision-Date: 1998-07-09 15:37+02:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -270,6 +270,11 @@ msgstr ""
 "Copyright (c) 1996 av Jeremie PETIT\n"
 "\n"
 "Portad till kscreensave av Cedric Tefft"
+
+#: bsod.cpp:1192
+#, fuzzy
+msgid "Black Screen of Death"
+msgstr "Tom skärm"
 
 #: flame.cpp:310
 msgid "Flame"

@@ -176,4 +176,3 @@ msgstr "Options..."
 #: pfilemenu.C:833
 msgid "Customize Disk Navigator"
 msgstr "Customizar Navegador de Disco"
-

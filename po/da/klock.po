@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-23 01:14+0100\n"
+"POT-Creation-Date: 1998-12-02 13:03+0100\n"
 "PO-Revision-Date: 1998-01-29 17:00+CET-1\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -265,6 +265,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
+
+#: bsod.cpp:1192
+#, fuzzy
+msgid "Black Screen of Death"
+msgstr "Blank skærm"
 
 #: flame.cpp:310
 msgid "Flame"

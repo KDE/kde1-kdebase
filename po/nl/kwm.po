@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-25 01:11+0100\n"
+"POT-Creation-Date: 1998-12-03 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,16 +125,16 @@ msgstr "Acht"
 msgid "Unnamed Desktop"
 msgstr "Buroblad"
 
-#: main.C:991
+#: main.C:1016
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Sommige pixmaps zijn niet geldig: VormModus uitgezet\n"
 
-#: main.C:1103
+#: main.C:1128
 #, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Sommige pixmaps zijn niet geldig: VormModus uitgezet\n"
 
-#: main.C:1428
+#: main.C:1453
 msgid "*** No Tasks ***"
 msgstr "*** Geen Taken ***"
 

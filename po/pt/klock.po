@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-23 01:14+0100\n"
+"POT-Creation-Date: 1998-12-02 13:03+0100\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -261,6 +261,11 @@ msgstr ""
 "Copyright (c) 1996 por Jeremie PETIT\n"
 "\n"
 "Portado para kscreensave por Cedric Tefft"
+
+#: bsod.cpp:1192
+#, fuzzy
+msgid "Black Screen of Death"
+msgstr "Écran Vazio"
 
 #: flame.cpp:310
 msgid "Flame"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/klock\n"
-"POT-Creation-Date: 1998-11-23 01:14+0100\n"
+"POT-Creation-Date: 1998-12-02 13:03+0100\n"
 "PO-Revision-Date: 98-03-23 18:21+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -266,6 +266,11 @@ msgstr ""
 "Copyright (c) 1996 by Jeremie PETIT\n"
 "\n"
 "Portet til kscreensave av Cedric Tefft"
+
+#: bsod.cpp:1192
+#, fuzzy
+msgid "Black Screen of Death"
+msgstr "Blank skjerm"
 
 #: flame.cpp:310
 msgid "Flame"

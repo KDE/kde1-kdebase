@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1998-11-23 01:14+0100\n"
+"POT-Creation-Date: 1998-12-02 13:03+0100\n"
 "PO-Revision-Date: 1998-11-03 13:41+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -268,6 +268,11 @@ msgstr ""
 "Copyright (c) 1996 Jeremie PETIT\n"
 "\n"
 "Pøevedeno pro kscreensaver Cedricem Tefftem"
+
+#: bsod.cpp:1192
+#, fuzzy
+msgid "Black Screen of Death"
+msgstr "Prázdná obrazovka"
 
 #: flame.cpp:310
 msgid "Flame"

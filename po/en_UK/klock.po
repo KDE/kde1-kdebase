@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-11-23 01:14+0100\n"
+"POT-Creation-Date: 1998-12-02 13:03+0100\n"
 "PO-Revision-Date: 1998-04-26 21:22+1000\n"
 "Last-Translator: Martin Jones <mjones@kde.org>\n"
 
@@ -237,6 +237,10 @@ msgid ""
 "Copyright (c) 1996 by Jeremie PETIT\n"
 "\n"
 "Ported to kscreensave by Cedric Tefft"
+msgstr ""
+
+#: bsod.cpp:1192
+msgid "Black Screen of Death"
 msgstr ""
 
 #: flame.cpp:310

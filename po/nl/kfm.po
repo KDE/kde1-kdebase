@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-02 01:14+0100\n"
+"POT-Creation-Date: 1998-12-03 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Case Roole <cjr@xs4all.nl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "KFM"
 msgstr ""
 
-#: kbind.cpp:942 kbind.cpp:954 kbind.cpp:964 kfmgui.cpp:215 kfmgui.cpp:1033
+#: kbind.cpp:942 kbind.cpp:954 kbind.cpp:964 kfmgui.cpp:215 kfmgui.cpp:1048
 msgid "Folder"
 msgstr "Map"
 
@@ -33,6 +33,11 @@ msgstr "Fout: Sjabloon '%s' bestaat niet"
 #: kfmgui.cpp:250
 msgid "&New"
 msgstr "&Nieuw"
+
+#: kfmgui.cpp:252
+#, fuzzy
+msgid "New &Window"
+msgstr "Nieuw &venster"
 
 #: kfmgui.cpp:255
 #, fuzzy
@@ -76,12 +81,12 @@ msgstr ""
 
 #: kfmgui.cpp:295
 #, fuzzy
-msgid "Mime Types"
+msgid "Mime &Types"
 msgstr "Mimetype"
 
 #: kfmgui.cpp:297
 #, fuzzy
-msgid "Applications"
+msgid "App&lications"
 msgstr "Standaard toepassing"
 
 #: kfmgui.cpp:303
@@ -96,7 +101,8 @@ msgstr "Standaard toepassing"
 
 # FIXME
 #: kfmgui.cpp:312
-msgid "Show &Dot Files"
+#, fuzzy
+msgid "Show Hi&dden Files"
 msgstr "&Puntbestanden tonen"
 
 #: kfmgui.cpp:314
@@ -104,8 +110,8 @@ msgid "Show Tr&ee"
 msgstr "&Boomstructuur tonen"
 
 #: kfmgui.cpp:316
-msgid "&Visual Schnauzer"
-msgstr "&Afbeeldingen tonen"
+msgid "Sho&w Thumbnails"
+msgstr ""
 
 #: kfmgui.cpp:318
 msgid "&HTML View"
@@ -138,7 +144,8 @@ msgid "&Reload Document"
 msgstr "&Document verversen"
 
 #: kfmgui.cpp:337
-msgid "Rescan &bindings"
+#, fuzzy
+msgid "Rescan &Bindings"
 msgstr "Bindingen verversen"
 
 #: kfmgui.cpp:340
@@ -156,68 +163,92 @@ msgstr ""
 
 #: kfmgui.cpp:358
 #, fuzzy
-msgid "&Document Encoding"
+msgid "Document Encodin&g"
 msgstr "Document: klaar"
 
-#: kfmgui.cpp:369
+#: kfmgui.cpp:370
+msgid "&Up"
+msgstr ""
+
+#: kfmgui.cpp:372
+#, fuzzy
+msgid "&Back"
+msgstr "Terug"
+
+#: kfmgui.cpp:374
+#, fuzzy
+msgid "&Forward"
+msgstr "Vooruit"
+
+#: kfmgui.cpp:376
+#, fuzzy
+msgid "&Home"
+msgstr "Mijn Home"
+
+#: kfmgui.cpp:384
 msgid "Show History"
 msgstr ""
 
-#: kfmgui.cpp:371
+#: kfmgui.cpp:386
 msgid "Show Cache"
 msgstr "Laat cache zien"
 
-#: kfmgui.cpp:373
+#: kfmgui.cpp:388
 #, fuzzy
 msgid "Clear Cache"
 msgstr "Wis cache"
 
-#: kfmgui.cpp:376
+#: kfmgui.cpp:391
 msgid "Always look in cache"
 msgstr "Kijk altijd in cache"
 
-#: kfmgui.cpp:378
+#: kfmgui.cpp:393
 msgid "Never look in cache"
 msgstr "Kijk nooit in cache"
 
-#: kfmgui.cpp:380
+#: kfmgui.cpp:395
 #, fuzzy
 msgid "Always save cache"
 msgstr "Kijk altijd in cache"
 
-#: kfmgui.cpp:382
+#: kfmgui.cpp:397
 #, fuzzy
 msgid "Never save cache"
 msgstr "Kijk nooit in cache"
 
-#: kfmgui.cpp:393
+#: kfmgui.cpp:408
 #, fuzzy
 msgid "Show &Menubar"
 msgstr "Toon &Menubalk"
 
-#: kfmgui.cpp:395
+#: kfmgui.cpp:410
 msgid "Show &Statusbar"
 msgstr "Toon &Statusbalk"
 
-#: kfmgui.cpp:397
+#: kfmgui.cpp:412
 #, fuzzy
 msgid "Show &Toolbar"
 msgstr "Toon &Hulpmiddelenbalk"
 
-#: kfmgui.cpp:399
+#: kfmgui.cpp:414
 msgid "Show &Location bar"
 msgstr "Toon &Locatiebalk"
 
-#: kfmgui.cpp:402
+#: kfmgui.cpp:417
 #, fuzzy
 msgid "Sa&ve Settings"
 msgstr "&Instellingen opslaan"
 
-#: kfmgui.cpp:408
-msgid "Configure Browser..."
-msgstr "Configureer Browser..."
+#: kfmgui.cpp:419
+#, fuzzy
+msgid "Save Settings for this &URL"
+msgstr "&Instellingen opslaan"
 
-#: kfmgui.cpp:452
+#: kfmgui.cpp:426
+msgid "Set Preferen&ces..."
+msgstr ""
+
+#: kfmgui.cpp:466
 #, fuzzy
 msgid ""
 "Author: Torben Weis\n"
@@ -241,28 +272,32 @@ msgstr ""
 "Proxy Manager door Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de"
 
-#: kfmgui.cpp:465
+#: kfmgui.cpp:479
+msgid "&Go"
+msgstr ""
+
+#: kfmgui.cpp:480
 msgid "&Bookmarks"
 msgstr "B&ladwijzers"
 
-#: kfmgui.cpp:466
+#: kfmgui.cpp:481
 msgid "&Cache"
 msgstr ""
 
-#: kfmgui.cpp:493 main.cpp:239
+#: kfmgui.cpp:508 main.cpp:239
 msgid "Up"
 msgstr ""
 
-#: kfmgui.cpp:503 main.cpp:241
+#: kfmgui.cpp:518 main.cpp:241
 msgid "Forward"
 msgstr "Vooruit"
 
-#: kfmgui.cpp:508
+#: kfmgui.cpp:523
 #, fuzzy
 msgid "Home"
 msgstr "Mijn Home"
 
-#: kfmgui.cpp:565
+#: kfmgui.cpp:580
 #, fuzzy
 msgid "Could not load icon\n"
 msgstr ""
@@ -274,7 +309,7 @@ msgstr ""
 #: kbind.cpp:1636 kbind.cpp:1695 kbind.cpp:1707 kbind.cpp:1734 kbind.cpp:1749
 #: kbind.cpp:1769 kbind.cpp:1781 kbind.cpp:1797 kbind.cpp:1933 kbind.cpp:1945
 #: kbind.cpp:1990 kbind.cpp:2032 kfmexec.cpp:60 kfmexec.cpp:92
-#: kfmexec/main.cpp:47 kfmgui.cpp:566 kfmgui.cpp:725 kfmman.cpp:345
+#: kfmexec/main.cpp:47 kfmgui.cpp:581 kfmgui.cpp:740 kfmman.cpp:345
 #: kfmman.cpp:1105 kfmman.cpp:1317 kfmman.cpp:1343 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
 #: kfmprops.cpp:1141 kfmprops.cpp:1473 kfmprops.cpp:1705 kfmprops.cpp:1890
@@ -292,54 +327,54 @@ msgstr ""
 msgid "KFM Error"
 msgstr "KFM fout"
 
-#: kfmexec.cpp:59 kfmgui.cpp:724 kfmman.cpp:1104
+#: kfmexec.cpp:59 kfmgui.cpp:739 kfmman.cpp:1104
 #, fuzzy
 msgid "Malformed URL\n"
 msgstr ""
 "Misvormde URL\n"
 "%s"
 
-#: kfmgui.cpp:911
+#: kfmgui.cpp:926
 msgid "Select files:"
 msgstr "Bestanden selecteren:"
 
-#: kfmgui.cpp:966
+#: kfmgui.cpp:981
 msgid "Find Complete"
 msgstr ""
 
-#: kfmgui.cpp:967
+#: kfmgui.cpp:982
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: kfmgui.cpp:985
+#: kfmgui.cpp:1000
 #, fuzzy
 msgid "&Edit Bookmarks..."
 msgstr "B&ladwijzers"
 
-#: kfmgui.cpp:995
+#: kfmgui.cpp:1010
 msgid "&Add Bookmark"
 msgstr "Bladwijzer toevoegen"
 
-#: kfmgui.cpp:1025 kfmgui.cpp:1032
+#: kfmgui.cpp:1040 kfmgui.cpp:1047
 msgid "New "
 msgstr "Nieuw "
 
-#: kfmgui.cpp:1122 kfmgui.cpp:1291 kfmjob.cpp:36 kfmman.cpp:228
+#: kfmgui.cpp:1137 kfmgui.cpp:1306 kfmjob.cpp:36 kfmman.cpp:228
 #: kfmtree.cpp:392 kfmview.cpp:426 kfmview.cpp:494 kfmview.cpp:702
 #: kiojob.cpp:87 root.cpp:1171
 msgid "ERROR: Malformed URL"
 msgstr "Fout: Misvormde URL"
 
-#: kfmgui.cpp:1245 kfmserver.cpp:188
+#: kfmgui.cpp:1260 kfmserver.cpp:188
 msgid "Open Location:"
 msgstr "Open locatie:"
 
-#: kfmgui.cpp:1302
+#: kfmgui.cpp:1317
 #, fuzzy
 msgid "KFM Confirm"
 msgstr "KFM Bevestig"
 
-#: kfmgui.cpp:1303
+#: kfmgui.cpp:1318
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -347,7 +382,7 @@ msgstr ""
 "Bent u zeker dat u KFM wilt verlaten?\n"
 "Belangrijke buroblad functionaliteit zal verloren gaan."
 
-#: kfmgui.cpp:1413
+#: kfmgui.cpp:1428
 msgid "Document: Done"
 msgstr "Document: klaar"
 
@@ -1488,7 +1523,8 @@ msgid "&Other"
 msgstr "Anderen lezen"
 
 #: kkfmoptdlg.cpp:117
-msgid "KFM Browser Settings"
+#, fuzzy
+msgid "KFM Preferences Settings"
 msgstr "KFM Browser Instellingen"
 
 #: khttpoptdlg.cpp:39
@@ -1586,6 +1622,12 @@ msgstr ""
 "Syntax fout:\n"
 "kfmexec commando [URLs ....]\n"
 
+#~ msgid "&Visual Schnauzer"
+#~ msgstr "&Afbeeldingen tonen"
+
+#~ msgid "Configure Browser..."
+#~ msgstr "Configureer Browser..."
+
 #~ msgid "Name"
 #~ msgstr "Naam"
 
@@ -1603,9 +1645,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "About KFM"
 #~ msgstr "&Info"
-
-#~ msgid "&New Window"
-#~ msgstr "Nieuw &venster"
 
 #~ msgid "Stop"
 #~ msgstr "Stoppen"
@@ -1721,9 +1760,6 @@ msgstr ""
 
 #~ msgid "&Paste"
 #~ msgstr "&Plakken"
-
-#~ msgid "Back"
-#~ msgstr "Terug"
 
 #~ msgid "Reload"
 #~ msgstr "Ververs"
