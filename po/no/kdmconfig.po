@@ -223,7 +223,7 @@ msgstr "Lagre bilde som standard bilde?"
 
 #: kdm-sess.cpp:50
 msgid "Allow to shutdown:"
-msgstr "Tillat å avslutte Linux:"
+msgstr "Tillat å avslutte Unix:"
 
 #: kdm-sess.cpp:56
 msgid "None"
@@ -247,7 +247,7 @@ msgstr "Kommandoer"
 
 #: kdm-sess.cpp:65
 msgid "Shutdown"
-msgstr "Avslutt Linux"
+msgstr "Avslutt Unix"
 
 #: kdm-sess.cpp:73
 msgid "Restart"
