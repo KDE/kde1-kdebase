@@ -15,6 +15,7 @@ In 0.13:
 --------
 patchlevel 7:
         - small bugfixes
+        - improved (faster) configure request handling
 
 patchlevel 6:
         - dock window handling improved for restart

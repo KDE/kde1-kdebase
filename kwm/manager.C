@@ -276,7 +276,20 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
 
   c = getClient(e->window);
 
+  XEvent ev;
+
   if (c && c->window == e->window) { // client already exists for this window
+
+      // compress configure requests
+      while (XCheckTypedWindowEvent (qt_xdisplay(), c->window,
+				     ConfigureRequest, &ev) ) {
+	  if (ev.xconfigurerequest.value_mask == e->value_mask)
+	      *e = ev.xconfigurerequest;
+	  else {
+	      XPutBackEvent(qt_xdisplay(), &ev);
+	      break;
+	  }
+      }
 
     int x = c->geometry.x();
     int y = c->geometry.y();
@@ -346,7 +359,6 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
     wc.height = e->height;
 
     XConfigureWindow(qt_xdisplay(), e->window, e->value_mask, &wc);
-    sendConfig(c);
 
     // take care about transient windows
     if (e->value_mask & CWStackMode){
@@ -364,6 +376,9 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
  	break;
       }
     }
+	
+    sendConfig(c);
+
   }
   else if (!c) {
     wc.x = e->x;
