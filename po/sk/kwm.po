@@ -19,7 +19,7 @@ msgid ""
 "started\n"
 msgstr ""
 "kwm: zdá sa, ¾e u¾ je spustený iný správca okien.\n"
-"kwm nespustený\n"
+"kwm sa nespustil.\n"
 
 #: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
@@ -43,11 +43,11 @@ msgstr "&Obnovi»"
 
 #: main.C:469
 msgid "&Iconify"
-msgstr "&Ikonifikova»"
+msgstr "&Ikonizova»"
 
 #: main.C:470
 msgid "&DeIconify"
-msgstr "O&dikonifikova»"
+msgstr "O&dikonizova»"
 
 #: main.C:471
 msgid "&Sticky"
@@ -107,11 +107,11 @@ msgstr "Ôsma"
 
 #: main.C:566
 msgid "Unnamed Desktop"
-msgstr "Nepomenovaná"
+msgstr "Nepomenovaná plocha"
 
 #: main.C:875
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Niektoré pixmapy nie sú korektné: ShapeMode vypnutý\n"
+msgstr "Niektoré bodové mapy nie sú korektné: ShapeMode vypnutý\n"
 
 #: main.C:1193
 msgid "*** No Tasks ***"
@@ -156,7 +156,7 @@ msgstr ""
 
 #: taskmgr.C:106
 msgid "Switch to"
-msgstr "Prepni do"
+msgstr "Prepnú» do"
 
 #: taskmgr.C:120
 msgid "Current session"

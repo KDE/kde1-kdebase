@@ -39,7 +39,7 @@ msgstr "Vlastnosti správcu okien"
 
 #: titlebar.cpp:117
 msgid "Minimize"
-msgstr "Ikonifikácia"
+msgstr "Ikonizácia"
 
 #: titlebar.cpp:121
 msgid "Maximize"
@@ -107,7 +107,7 @@ msgstr "Obrázok pre titulok &neaktívneho okna"
 
 #: titlebar.cpp:982
 msgid "Mouse action"
-msgstr "Akcia my¹ky"
+msgstr "Akcia my¹i"
 
 #: titlebar.cpp:984
 msgid ""
@@ -131,7 +131,7 @@ msgstr "Iba pás titulku (zap./vyp.)"
 
 #: titlebar.cpp:991
 msgid "Iconify"
-msgstr "Ikonifikova»"
+msgstr "Ikonizova»"
 
 #: titlebar.cpp:992
 msgid "(Un)Sticky"
@@ -171,7 +171,7 @@ msgstr "Spôsob umiestòovania"
 
 #: windows.cpp:86
 msgid "Smart"
-msgstr "Inteligentne"
+msgstr "Elegantne"
 
 #: windows.cpp:88
 msgid "Cascade"
@@ -222,7 +222,7 @@ msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
 msgstr ""
-"Pauza pred presunutím\n"
+"Oneskorenie pred presunutím\n"
 "okna navrch (<100 vypína)"
 
 #: windows.cpp:123
@@ -235,7 +235,7 @@ msgstr "Aktívne pozadie plochy"
 
 #: desktop.cpp:79
 msgid "Enable active desktop borders"
-msgstr "Povoµ aktívne pozadie plochy"
+msgstr "Povoli» aktívne pozadie plochy"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
@@ -254,15 +254,15 @@ msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Zóna zarovnania\n"
-"pozadia (v bodoch):"
+"Úchytná zóna\n"
+"okrajov (v bodoch):"
 
 #: desktop.cpp:116
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Zóna zarovnania\n"
+"Úchytná zóna\n"
 "okna (v bodoch):"
 
 #~ msgid "Edge Resistance:"

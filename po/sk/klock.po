@@ -529,7 +529,7 @@ msgstr "Poèet:"
 
 #: pyro.cpp:543
 msgid "Cloud"
-msgstr "Zatrie»"
+msgstr "Oblaky"
 
 #: pyro.cpp:629
 msgid "About Pyro"

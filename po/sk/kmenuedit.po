@@ -95,7 +95,7 @@ msgstr "Pozor !"
 
 #: confmenu.cpp:172
 msgid "If you delete this button you will lose all of its submenus"
-msgstr "Zru¹enie tejto polo¾ky zma¾e v¹etky jej submenu"
+msgstr "Zru¹enie tejto polo¾ky zma¾e v¹etky menu pod òou."
 
 #: confmenu.cpp:281
 msgid "Wrong filename"
@@ -111,7 +111,7 @@ msgstr ""
 
 #: confmenu.cpp:301
 msgid "Changing the type of this button will delete all of its submenus"
-msgstr "Zmena typu tejto polo¾ky vyma¾e v¹etky jej submenu"
+msgstr "Zmena typu tejto polo¾ky vyma¾e v¹etky menu pod òou."
 
 #: confmenu.cpp:322 confmenu.cpp:911
 msgid "no command"
@@ -143,7 +143,7 @@ msgstr "Osobná cesta:"
 
 #: entrydialog.cpp:53
 msgid "Submenu"
-msgstr "Submenu"
+msgstr "Podmenu"
 
 #: entrydialog.cpp:54 entrydialog.cpp:167 entrydialog.cpp:536
 #: entrydialog.cpp:541
@@ -188,7 +188,7 @@ msgstr "Vykona»"
 
 #: entrydialog.cpp:192
 msgid "Working Directory:"
-msgstr "V prieèinku"
+msgstr "V pracovnom prieèinku"
 
 #: entrydialog.cpp:205
 msgid "Run in terminal"
@@ -236,7 +236,7 @@ msgstr "Typ FS"
 
 #: entrydialog.cpp:415
 msgid "Unmount Icon:"
-msgstr "Odpoji» (ik)"
+msgstr "Ikona pre odpojenie"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"

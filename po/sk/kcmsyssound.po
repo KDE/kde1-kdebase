@@ -81,11 +81,11 @@ msgstr "Vypnú» tieò"
 
 #: syssound.cpp:163
 msgid "Window Iconify"
-msgstr "Ikonifikácia okna"
+msgstr "Ikonizácia okna"
 
 #: syssound.cpp:164
 msgid "Window DeIconify"
-msgstr "Deikonifikácia okna"
+msgstr "Deikonizácia okna"
 
 #: syssound.cpp:165
 msgid "Window Maximize"
@@ -119,7 +119,7 @@ msgstr "Odhlásenie"
 
 #: syssound.cpp:172
 msgid "Logout Message"
-msgstr "Správa o odhlásení"
+msgstr "Správa pri odhlásení"
 
 #: syssound.cpp:173
 msgid "Window Move Start"

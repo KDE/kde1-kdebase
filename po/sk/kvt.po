@@ -223,15 +223,15 @@ msgstr "-vt_size <veµkos»>        tiny, small, normal large, huge\n"
 
 #: main.C:1152
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr "-linux                    nastav kvt na emuláciu linuxáckej konzoly\n"
+msgstr "-linux                    nastaví kvt na emuláciu linuxáckej konzoly\n"
 
 #: main.C:1153
 msgid "-no_menubar               hide the menubar\n"
-msgstr "-no_menubar               skry riadok s menu\n"
+msgstr "-no_menubar               skryje riadok s menu\n"
 
 #: main.C:1154
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr "-no_scrollbar             skry rolovací pás\n"
+msgstr "-no_scrollbar             skryje rolovací pás\n"
 
 #: main.C:1155
 msgid ""
@@ -239,7 +239,7 @@ msgid ""
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
 "-T <text>                 text v titulku okna \n"
-"                          (Zastaralé. Pou¾i rad¹ej -caption)\n"
+"                          (Zastaralé. Pou¾ite rad¹ej -caption)\n"
 
 #: main.C:1157
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
@@ -247,19 +247,19 @@ msgstr "-tn <TERM>                Typ terminálu. ©tandardne xterm.\n"
 
 #: main.C:1158
 msgid "-C                        Capture system console message\n"
-msgstr "-C                        Odchytávaj správy systémovej konzoly\n"
+msgstr "-C                        Odchytáva správy systémovej konzoly\n"
 
 #: main.C:1159
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr "-n <text>                 názov v ikonke alebo okne ikoniek\n"
+msgstr "-n <text>                 názov v ikone alebo okne ikón\n"
 
 #: main.C:1160
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
-"-7                        spusti v 7-bitovom móde\n"
-"-8                        spusti v 8-bitovom móde\n"
+"-7                        spusti» v 7-bitovom móde\n"
+"-8                        spusti» v 8-bitovom móde\n"
 
 #: main.C:1162
 msgid ""
@@ -267,8 +267,8 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
-"-ls                       spusti shell kvt ako prihlasovací shell\n"
-"-ls-                      nespusti shell kvt ako prihlasovací shell "
+"-ls                       spusti» shell kvt ako prihlasovací shell\n"
+"-ls-                      nespusti» shell kvt ako prihlasovací shell "
 "(¹tand.)\n"
 
 #: main.C:1164
@@ -276,13 +276,13 @@ msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
-"-meta <arg>               spracuj Meta s prefixom ESCAPE, nastaveným 8. "
+"-meta <arg>               spracova» Meta s prefixom ESCAPE, nastaveným 8. "
 "bitom\n"
-"                          alebo ignoruj\n"
+"                          alebo ignorova»\n"
 
 #: main.C:1165
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr "-sl <èíslo>               ulo¾ 'èíslo' riadkov do buffra scrollbaru\n"
+msgstr "-sl <èíslo>               ulo¾i» 'èíslo' riadkov do buffra scrollbaru\n"
 
 #: main.C:1166
 msgid ""

@@ -15,7 +15,7 @@ msgstr ""
 
 #: backgnd.cpp:58
 msgid "Enter new desktop name"
-msgstr "Zadaj nový názov plochy"
+msgstr "Zadajte nový názov plochy"
 
 #: backgnd.cpp:114 backgnd.cpp:149
 msgid "Desktop"
@@ -79,11 +79,11 @@ msgstr "Dvojfarebné pozadia"
 
 #: backgnd.cpp:946
 msgid "Blend colors from &top to bottom"
-msgstr "Vy&tieòuj farby zhora do nadol"
+msgstr "Vy&tieòova» farby zhora do nadol"
 
 #: backgnd.cpp:952
 msgid "Blend colors from &right to left"
-msgstr "Vytieòuj fa&rby zprava doµava"
+msgstr "Vytieòova» fa&rby zprava doµava"
 
 #: backgnd.cpp:958
 msgid "Use &pattern"
@@ -147,7 +147,7 @@ msgstr "Zru¹i»"
 
 #: colorscm.cpp:162
 msgid "&Save changes"
-msgstr "Ulo¾ zmeny"
+msgstr "Ulo¾i» zmeny"
 
 #: colorscm.cpp:176
 msgid "Widget color"
@@ -191,7 +191,7 @@ msgstr "Vyber pozadie"
 
 #: colorscm.cpp:192
 msgid "Select text"
-msgstr "Vyber text"
+msgstr "Výber textu"
 
 #: colorscm.cpp:193
 msgid "Window background"
@@ -238,12 +238,12 @@ msgid ""
 "in the color scheme list."
 msgstr ""
 "Prosím zvoµte jedineèný názov pre novú farebnú\n"
-"schému. To, ktoré ste zadali u¾ vyzerá by» pou¾ité\n"
+"schému. To, ktoré ste zadali sa u¾ vyskytuje\n"
 "v zozname farebných schém."
 
 #: savescm.cpp:18
 msgid "Add a color scheme"
-msgstr "Pridaj farebnú schému"
+msgstr "Prida» farebnú schému"
 
 #: savescm.cpp:32
 msgid ""
@@ -253,7 +253,7 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"Zadaj názov pre novú farebnú schému, ktorá\n"
+"Zadajte názov pre novú farebnú schému, ktorá\n"
 "má by» pridaná do vá¹ho osobného zoznamu.\n"
 "\n"
 "Farby, ktoré sa momentálne pou¾ívajú v náhµade\n"
@@ -261,7 +261,7 @@ msgstr ""
 
 #: scrnsave.cpp:48
 msgid "Ignore"
-msgstr "Ignoruj"
+msgstr "Ignorova»"
 
 #: scrnsave.cpp:49
 msgid "Save Screen"
@@ -321,7 +321,7 @@ msgstr "&Znakové sady"
 
 #: general.cpp:222
 msgid "&Draw widgets in the style of Windows 95"
-msgstr "&Kresli kontrolky v ¹týle Windows 95"
+msgstr "&Kresli» kontrolky v ¹týle Windows 95"
 
 #: general.cpp:236
 msgid "Desktop fonts"
@@ -333,7 +333,7 @@ msgstr "V¹eobecná znaková sada"
 
 #: general.cpp:253
 msgid "Fixed font"
-msgstr "Fixné písmo"
+msgstr "Písmo s fixnou ¹írkou"
 
 #: general.cpp:263
 msgid "Panel button font"

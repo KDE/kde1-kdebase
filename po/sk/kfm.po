@@ -96,15 +96,15 @@ msgstr "Pohµad s &ikonami"
 
 #: kfmgui.cpp:363
 msgid "&Text View"
-msgstr "&Textový pohµad"
+msgstr "&Textový prehµad"
 
 #: kfmgui.cpp:365
 msgid "&Long View"
-msgstr "&Podrobný pohµad"
+msgstr "&Podrobný prehµad"
 
 #: kfmgui.cpp:367
 msgid "&Short View"
-msgstr "&Krátky pohµad"
+msgstr "&Krátky prehµad"
 
 # kfmgui.cpp:???
 #: kfmgui.cpp:373
@@ -229,7 +229,7 @@ msgstr "Chybný formát URL\n"
 
 #: kfmgui.cpp:874
 msgid "Select files:"
-msgstr "Vyber súbory:"
+msgstr "Vyberte súbory:"
 
 #: kfmgui.cpp:891
 msgid "&Edit Bookmarks..."
@@ -237,7 +237,7 @@ msgstr "&Upravi» zálo¾ky"
 
 #: kfmgui.cpp:901
 msgid "&Add Bookmark"
-msgstr "&Pridaj zálo¾ku"
+msgstr "&Prida» zálo¾ku"
 
 #: kfmgui.cpp:931 kfmgui.cpp:938
 msgid "New "
@@ -313,7 +313,7 @@ msgid ""
 "\n"
 "There is no way to restore them."
 msgstr ""
-"Naozaj chcete zmaza» súbor(y)?\n"
+"Naozaj chcete zmaza» vybraný/vybrané súbor(y)?\n"
 "\n"
 "Neexistuje spôsob, ako ich obnovi»!"
 
@@ -327,7 +327,7 @@ msgstr "CHYBA: Pustili ste prieèinok nad niektorým z jeho podprieèinkov"
 
 #: kfmexec.cpp:254 kfmman.cpp:867 kfmview.cpp:468
 msgid "Open With:"
-msgstr "Otvor pomocou:"
+msgstr "Otvori» pomocou:"
 
 #: kfmview.cpp:485 root.cpp:1057
 msgid "ERROR: Can not open properties for multiple files"
@@ -372,7 +372,7 @@ msgstr "bajtov"
 
 #: kbind.cpp:302
 msgid "The mime type config file "
-msgstr "Konfiguraèný súbor mime typov "
+msgstr "Konfiguraèný súbor MIME typov "
 
 #: kbind.cpp:303
 msgid "does not conatain a MimeType=... entry"
@@ -380,11 +380,11 @@ msgstr "neobsahuje polo¾ku MimeType=..."
 
 #: kbind.cpp:377
 msgid "No mime types installed!"
-msgstr "Nie sú nain¹talované ¾iadne mime typy!"
+msgstr "Nie sú nain¹talované ¾iadne MIME typy!"
 
 #: kbind.cpp:425 kbind.cpp:1188
 msgid "Could not find mime type\n"
-msgstr "Nemô¾em nájs» mime typ\n"
+msgstr "Nemô¾em nájs» MIME typ\n"
 
 #: kbind.cpp:697 kbind.cpp:707 kbind.cpp:1890 kbind.cpp:1891 kbind.cpp:1903
 #: kbind.cpp:1905
@@ -462,11 +462,11 @@ msgstr ""
 "Tento súbor neobsahuje \n"
 "polo¾ku Exec=....\n"
 "Pre vyrie¹enie problému \n"
-"uprav vlastnosti."
+"upravte vlastnosti."
 
 #: kbind.cpp:1822
 msgid "ERROR: No Terminal Setting"
-msgstr "Chyba: ®iadne nastavenie terminálu"
+msgstr "Chyba: Terminál nie je nastavený"
 
 #: kbind.cpp:1913
 msgid "No mount point in *.kdelnk file"
@@ -490,7 +490,7 @@ msgstr "In¹talujem ¹ablóny"
 
 #: main.cpp:235
 msgid "Cd"
-msgstr "Choï dnu"
+msgstr "Ís» dnu"
 
 #: main.cpp:236
 msgid "New View"
@@ -502,7 +502,7 @@ msgstr "Presunú» do ko¹a"
 
 #: main.cpp:241
 msgid "Open with"
-msgstr "Otvor pomocou"
+msgstr "Otvori» pomocou"
 
 #: kfmman.cpp:1206 kfmtree.cpp:155 main.cpp:243
 msgid "Move"
@@ -522,7 +522,7 @@ msgstr "Vyprázdni» kô¹"
 
 #: main.cpp:247
 msgid "Add to Bookmarks"
-msgstr "Pøidaj k zálo¾kám"
+msgstr "Prida» k zálo¾kám"
 
 #: htmlopts.cpp:35
 msgid "Font Size"
@@ -562,11 +562,11 @@ msgstr "Farba URL odkazu:"
 
 #: htmlopts.cpp:238
 msgid "Followed Link Color:"
-msgstr "Farba nasled. odkazu:"
+msgstr "Farba sledujúceho odkazu:"
 
 #: htmlopts.cpp:246
 msgid "Change cursor over link."
-msgstr "Zmeò kurzor nad odkazom."
+msgstr "Zmeni» kurzor nad odkazom."
 
 #: htmlopts.cpp:321
 msgid "Horizontal Root Grid Spacing:"
@@ -671,11 +671,11 @@ msgstr "Ostatní"
 
 #: kfmprops.cpp:468
 msgid "Set UID"
-msgstr "Nastav UID"
+msgstr "Nastavi» UID"
 
 #: kfmprops.cpp:469
 msgid "Set GID"
-msgstr "Nastav GID"
+msgstr "Nastavi» GID"
 
 #: kfmprops.cpp:470
 msgid "Sticky"
@@ -696,19 +696,19 @@ msgstr ""
 #: kfmprops.cpp:633
 #, c-format
 msgid " ERROR: No user %s"
-msgstr " Chyba: ®iadny u¾ívateµ menom %s"
+msgstr " Chyba: ®iadny u¾ívateµ s menom %s"
 
 #: kfmprops.cpp:638
 #, c-format
 msgid " ERROR: No group %s"
-msgstr " Chyba: ®iadna skupina s názvom %s"
+msgstr " Chyba: Neexistuje skupina s názvom %s"
 
 #: kfmprops.cpp:644
 msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
 msgstr ""
-"Nemô¾em zmeni» vlastníka/skupinu\n"
+"Nemô¾em zmeni» vlastníka/skupinu.\n"
 "Mo¾no bol odmietnutý prístup."
 
 #: kfmprops.cpp:662
@@ -717,11 +717,11 @@ msgstr "Pripevnenie na panel"
 
 #: kfmprops.cpp:680 kfmprops.cpp:703
 msgid "Execute"
-msgstr "Vykonaj"
+msgstr "Vykona»"
 
 #: kfmprops.cpp:684
 msgid "Browse"
-msgstr "Listuj"
+msgstr "Listova»"
 
 #: kfmprops.cpp:688
 msgid "Working Directory"
@@ -754,7 +754,7 @@ msgstr "URL"
 
 #: kfmprops.cpp:973
 msgid "Apply global"
-msgstr "Aplikuj globálne"
+msgstr "Aplikova» globálne"
 
 #: kfmprops.cpp:1012 kfmprops.cpp:1084 kfmprops.cpp:1141
 msgid "(Default)"
@@ -786,7 +786,7 @@ msgstr "Vzor ( príklad: *.html;*.HTML; )"
 
 #: kfmprops.cpp:1487
 msgid "Mime Type"
-msgstr "Mime typ"
+msgstr "MIME typ"
 
 #: kfmprops.cpp:1498
 msgid "Default Application"
@@ -810,11 +810,11 @@ msgstr "Súborový systém  ( iso9660,msdos,minix,default )"
 
 #: kfmprops.cpp:1680
 msgid "Mounted Icon"
-msgstr "Ikonka pripojeného"
+msgstr "Ikona pripojeného"
 
 #: kfmprops.cpp:1684
 msgid "Unmounted Icon"
-msgstr "Ikonka odpojeného"
+msgstr "Ikona odpojeného"
 
 #: kfmserver.cpp:40
 msgid "Could not create ~/.kde/share/apps/kfm/magic"
@@ -864,7 +864,7 @@ msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
 msgstr ""
-"Niekto sa pokúsil autorizova»\n"
+"Niekto sa pokúsil autentizova»\n"
 "pomocou neplatného hesla"
 
 #: root.cpp:661
@@ -874,7 +874,7 @@ msgid ""
 "off the desktop."
 msgstr ""
 "Nemô¾em vykona» po¾iadavku.\n"
-"Nové rozmery mrie¾ky by presunuli niektoré ikonky\n"
+"Nové rozmery mrie¾ky by presunuli niektoré ikony\n"
 "von z plochy."
 
 #: root.cpp:696
@@ -912,7 +912,7 @@ msgstr "Pracujem ..."
 
 #: kfmman.cpp:1084 kfmtree.cpp:230
 msgid "Add To Bookmarks"
-msgstr "Pridaj do zálo¾iek"
+msgstr "Prida» do zálo¾iek"
 
 #: kiojob.cpp:129
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
@@ -930,7 +930,7 @@ msgstr ""
 
 #: kiojob.cpp:249
 msgid "Can only make links on local file system"
-msgstr "Mô¾em vytvára» len linky na lokálnom systéme súborov"
+msgstr "Mô¾em vytvára» len odkazy na lokálnom systéme súborov"
 
 #: kiojob.cpp:272 kiojob.cpp:291
 #, c-format
@@ -1018,9 +1018,9 @@ msgid ""
 "%s\n"
 "Perhaps access denied"
 msgstr ""
-"Nie je mo¾né zapísa»\n"
+"Nie je mo¾né zapisova»\n"
 "%s\n"
-"Pravdepodobne nemáte prístupové práva."
+"Pravdepodobne bol odmietnutý prístup."
 
 #: kiojob.cpp:1226 kiojob.cpp:1357
 #, c-format
@@ -1078,7 +1078,7 @@ msgid ""
 msgstr ""
 "Nie je mo¾né zmaza»\n"
 "%s\n"
-"URL neexistuje alebo nemáte prístupové práva."
+"URL neexistuje alebo bol odmietnutý prístup."
 
 #: kiojob.cpp:1284 kiojob.cpp:1391
 #, c-format
@@ -1189,11 +1189,11 @@ msgstr "Odpájam %s ..."
 #: kiojob.cpp:1788
 #, c-format
 msgid "Retrieving listing of %s"
-msgstr "Obnovujem výpis %s"
+msgstr "Spracovávam výpis %s"
 
 #: kiojob.cpp:2021
 msgid "Segmentation fault in io subprocess"
-msgstr "Chyba v segmentácií vstupno/výstupného podprocesu"
+msgstr "Chyba v segmentácií vstupno/výstupného subprocesu"
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"
@@ -1241,11 +1241,11 @@ msgstr "Pokú¹ate sa prepísa»"
 
 #: krenamewin.cpp:63
 msgid "already exists. Overwrite with"
-msgstr "u¾ existuje. Prepí¹ súborom"
+msgstr "u¾ existuje. Prepía» súborom"
 
 #: krenamewin.cpp:71
 msgid "Or rename to"
-msgstr "Alebo premenuj na"
+msgstr "Alebo premenova» na"
 
 #: krenamewin.cpp:121
 msgid "You did not change the name!\n"

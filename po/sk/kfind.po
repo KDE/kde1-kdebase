@@ -276,7 +276,7 @@ msgstr "Prida» nový"
 
 #: kfoptions.cpp:179
 msgid "Archivers"
-msgstr "Archivátory"
+msgstr "Archívne programy"
 
 #: kfwin.cpp:110 kfwin.cpp:117 kfwin.cpp:133 kfwin.cpp:160
 #, c-format
@@ -350,7 +350,7 @@ msgstr ""
 
 #: kfwin.cpp:436
 msgid "Couldn't recognize archive type!"
-msgstr "Nemô¾em urcèi» typ archívu!"
+msgstr "Nemô¾em urèi» typ archívu!"
 
 #: kfwin.cpp:495
 msgid "Error while creating child process!"
