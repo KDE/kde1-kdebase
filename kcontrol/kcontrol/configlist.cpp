@@ -180,13 +180,48 @@ bool KModuleListEntry::execute(QWidget *parent)
 	}
 
       // set additional parameters
+      //
+      // Note: KProcess does not parse the arguments, so we have to
+      // do it. This should be integrated into KProcess, and also
+      // should be extended to escapes etc.
+      //
+
+      QString par;
+      while (!params.isEmpty())
+	{
+          if (params[0]==' ')
+          {
+            *process << par;
+            par = "";
+          } 
+          else
+          {
+            if (params[0]=='"')
+            {
+              params.remove(0,1);
+              while (!params.isEmpty() && params[0] != '"')
+              {
+                par += params[0];
+                params.remove(0,1);
+              } 
+            }
+            else
+            {
+              par += params[0];
+            }
+          }
+          params.remove(0,1);
+	}
+      *process << par;
+       
+/*      // set additional parameters
       if (!params.isEmpty())
 	{
 	  // Note: This will only handle 1 parameter correctly! 
 	  *process << params;
 	}
+*/
       QObject::connect(process, SIGNAL(processExited(KProcess *)), this, SLOT(processExit(KProcess *)));
-
 
       // start process
       process->start();
