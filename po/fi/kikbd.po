@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KIKBD\n"
-"POT-Creation-Date: 1998-11-05 01:17+0100\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -532,6 +532,6 @@ msgstr "&Tyyli"
 msgid "Start&Up"
 msgstr "&Käynnistys"
 
-#: kcmikbd.cpp:121
+#: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Kansainvälinen näppäimistö"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-05 01:17+0100\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
 "PO-Revision-Date: 1998-10-23 17:33+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -522,6 +522,6 @@ msgstr "Estilo"
 msgid "Start&Up"
 msgstr "Inicio"
 
-#: kcmikbd.cpp:121
+#: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Teclado internacional"

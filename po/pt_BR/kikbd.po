@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-11-05 01:17+0100\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
 "Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>Xgettext-Options: "
 "-C -ktranslate\n"
 "Content-Type: text/plain; charset=\n"
@@ -530,7 +530,7 @@ msgstr "E&stilo"
 msgid "Start&Up"
 msgstr "&Iniciar"
 
-#: kcmikbd.cpp:121
+#: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Teclado Internacional"
 

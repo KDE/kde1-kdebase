@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-15 01:18+0100\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -247,8 +247,8 @@ msgstr "Icon을 불러 올 수 없음\n"
 #: kfmman.cpp:1046 kfmman.cpp:1249 kfmman.cpp:1275 kfmprops.cpp:379
 #: kfmprops.cpp:630 kfmprops.cpp:656 kfmprops.cpp:883 kfmprops.cpp:1012
 #: kfmprops.cpp:1143 kfmprops.cpp:1475 kfmprops.cpp:1707 kfmprops.cpp:1892
-#: kfmserver.cpp:40 kfmserver.cpp:158 kfmserver.cpp:238 kfmserver.cpp:285
-#: kfmserver.cpp:294 kfmserver.cpp:302 kfmtree.cpp:164 kfmtree.cpp:287
+#: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
+#: kfmserver.cpp:303 kfmserver.cpp:311 kfmtree.cpp:164 kfmtree.cpp:287
 #: kfmtree.cpp:318 kfmtree.cpp:324 kfmtree.cpp:330 kfmview.cpp:357
 #: kfmview.cpp:373 kfmview.cpp:392 kfmview.cpp:398 kfmview.cpp:460
 #: kfmview.cpp:466 kfmview.cpp:472 kfmview.cpp:572 kfmview.cpp:576
@@ -295,7 +295,7 @@ msgstr "새로 만들기"
 msgid "ERROR: Malformed URL"
 msgstr "오류: 형식에 맞지 않는 URL"
 
-#: kfmgui.cpp:1268 kfmserver.cpp:179
+#: kfmgui.cpp:1268 kfmserver.cpp:188
 msgid "Open Location:"
 msgstr "위치 열기:"
 
@@ -566,72 +566,72 @@ msgstr "즐겨찾기에 추가"
 msgid "Save settings for this URL"
 msgstr ""
 
-#: htmlopts.cpp:40
+#: htmlopts.cpp:69
 msgid "Small"
 msgstr ""
 
-#: htmlopts.cpp:44
+#: htmlopts.cpp:78
 msgid "Medium"
 msgstr ""
 
-#: htmlopts.cpp:48
+#: htmlopts.cpp:87
 msgid "Large"
 msgstr ""
 
-#: htmlopts.cpp:52
+#: htmlopts.cpp:102
 msgid "Standard Font"
 msgstr "표준 글꼴"
 
-#: htmlopts.cpp:69
+#: htmlopts.cpp:131
 msgid "Fixed Font"
 msgstr "고정폭 글꼴"
 
-#: htmlopts.cpp:215
+#: htmlopts.cpp:325
 msgid "Background Color:"
 msgstr "배경 색:"
 
-#: htmlopts.cpp:223
+#: htmlopts.cpp:344
 msgid "Normal Text Color:"
 msgstr "일반 문자열 색:"
 
-#: htmlopts.cpp:231
+#: htmlopts.cpp:363
 msgid "URL Link Color:"
 msgstr "URL 연결 색:"
 
-#: htmlopts.cpp:239
+#: htmlopts.cpp:382
 msgid "Followed Link Color:"
 msgstr "방문한 연결 색:"
 
-#: htmlopts.cpp:247
+#: htmlopts.cpp:401
 msgid "Change cursor over link."
 msgstr "연결에서 커서 변경"
 
-#: htmlopts.cpp:253
+#: htmlopts.cpp:412
 msgid "Underline links"
 msgstr ""
 
-#: htmlopts.cpp:356
+#: htmlopts.cpp:529
 msgid "Horizontal Root Grid Spacing:"
 msgstr "아이콘 수평 간격:"
 
-#: htmlopts.cpp:380
+#: htmlopts.cpp:553
 msgid "Vertical Root Grid Spacing:"
 msgstr "아이콘 수직 간격:"
 
-#: htmlopts.cpp:404
+#: htmlopts.cpp:577
 msgid "Allow per-URL settings"
 msgstr ""
 
-#: htmlopts.cpp:412
+#: htmlopts.cpp:585
 msgid "Transparent Text for Root Icons."
 msgstr "아이콘 문자열 배경 투명하게 하기"
 
-#: htmlopts.cpp:426
+#: htmlopts.cpp:599
 #, fuzzy
 msgid "Icon foreground color:"
 msgstr "배경 색:"
 
-#: htmlopts.cpp:438
+#: htmlopts.cpp:611
 #, fuzzy
 msgid "Icon background color:"
 msgstr "배경 색:"
@@ -919,7 +919,7 @@ msgstr "~/.kde/share/apps/kfm/magic에있는 암호를 변경하십시오"
 msgid "Do you really want to rearrange your icons ?"
 msgstr "아이콘을 재정렬하시겠습니까 ?"
 
-#: kfmserver.cpp:235
+#: kfmserver.cpp:244
 #, c-format
 msgid ""
 "The URL\n"
@@ -930,7 +930,7 @@ msgstr ""
 "형식에\n"
 "어긋났읍니다"
 
-#: kfmserver.cpp:286
+#: kfmserver.cpp:295
 #, fuzzy
 msgid ""
 "You dont have the file ~/.kde/share/apps/kfm/magic\n"
@@ -939,7 +939,7 @@ msgstr ""
 "~/.kde/share/apps/kfm/magic 파일이 없읍니다\n"
 "인증 실패"
 
-#: kfmserver.cpp:295
+#: kfmserver.cpp:304
 #, fuzzy
 msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
@@ -948,7 +948,7 @@ msgstr ""
 "~/.kde/share/apps/kfm/magic 파일이 손상되었읍니다\n"
 "인증 실패"
 
-#: kfmserver.cpp:303
+#: kfmserver.cpp:312
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
@@ -1352,66 +1352,66 @@ msgstr ""
 msgid "Trying to open"
 msgstr ""
 
-#: useragentdlg.cpp:20
+#: useragentdlg.cpp:44
 msgid "On server:"
 msgstr ""
 
-#: useragentdlg.cpp:31
+#: useragentdlg.cpp:66
 msgid "login as:"
 msgstr ""
 
-#: useragentdlg.cpp:52
+#: useragentdlg.cpp:110
 #, fuzzy
 msgid "Known bindings:"
 msgstr "알 수 없는 바인딩입니다"
 
-#: kproxydlg.cpp:13
+#: kproxydlg.cpp:46
 msgid "Don't forget to save your settings!"
 msgstr ""
 
-#: kproxydlg.cpp:16
+#: kproxydlg.cpp:54
 #, fuzzy
 msgid "Use proxy"
 msgstr "사용자"
 
-#: kproxydlg.cpp:42
+#: kproxydlg.cpp:132
 msgid "No Proxy for:"
 msgstr ""
 
-#: kkfmoptdlg.cpp:19
+#: kkfmoptdlg.cpp:43
 msgid "&Proxy"
 msgstr ""
 
-#: kkfmoptdlg.cpp:22
+#: kkfmoptdlg.cpp:46
 msgid "&HTTP"
 msgstr ""
 
-#: kkfmoptdlg.cpp:25
+#: kkfmoptdlg.cpp:49
 msgid "User &Agent"
 msgstr ""
 
-#: kkfmoptdlg.cpp:31
+#: kkfmoptdlg.cpp:55
 msgid "&Colors"
 msgstr ""
 
-#: kkfmoptdlg.cpp:34
+#: kkfmoptdlg.cpp:58
 #, fuzzy
 msgid "&Other"
 msgstr "기타"
 
-#: kkfmoptdlg.cpp:54
+#: kkfmoptdlg.cpp:117
 msgid "KFM Browser Settings"
 msgstr ""
 
-#: khttpoptdlg.cpp:13
+#: khttpoptdlg.cpp:39
 msgid "Accept languages:"
 msgstr ""
 
-#: khttpoptdlg.cpp:18
+#: khttpoptdlg.cpp:55
 msgid "Accept character sets:"
 msgstr ""
 
-#: khttpoptdlg.cpp:23
+#: khttpoptdlg.cpp:70
 msgid "Assume HTML"
 msgstr ""
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-11-15 01:18+0100\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -242,8 +242,8 @@ msgstr "无法载入图标\n"
 #: kfmman.cpp:1046 kfmman.cpp:1249 kfmman.cpp:1275 kfmprops.cpp:379
 #: kfmprops.cpp:630 kfmprops.cpp:656 kfmprops.cpp:883 kfmprops.cpp:1012
 #: kfmprops.cpp:1143 kfmprops.cpp:1475 kfmprops.cpp:1707 kfmprops.cpp:1892
-#: kfmserver.cpp:40 kfmserver.cpp:158 kfmserver.cpp:238 kfmserver.cpp:285
-#: kfmserver.cpp:294 kfmserver.cpp:302 kfmtree.cpp:164 kfmtree.cpp:287
+#: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
+#: kfmserver.cpp:303 kfmserver.cpp:311 kfmtree.cpp:164 kfmtree.cpp:287
 #: kfmtree.cpp:318 kfmtree.cpp:324 kfmtree.cpp:330 kfmview.cpp:357
 #: kfmview.cpp:373 kfmview.cpp:392 kfmview.cpp:398 kfmview.cpp:460
 #: kfmview.cpp:466 kfmview.cpp:472 kfmview.cpp:572 kfmview.cpp:576
@@ -290,7 +290,7 @@ msgstr "新 "
 msgid "ERROR: Malformed URL"
 msgstr "错误: 不正确的 URL"
 
-#: kfmgui.cpp:1268 kfmserver.cpp:179
+#: kfmgui.cpp:1268 kfmserver.cpp:188
 msgid "Open Location:"
 msgstr "打开位置:"
 
@@ -561,74 +561,74 @@ msgstr "加在书签中"
 msgid "Save settings for this URL"
 msgstr ""
 
-#: htmlopts.cpp:40
+#: htmlopts.cpp:69
 msgid "Small"
 msgstr "小型"
 
-#: htmlopts.cpp:44
+#: htmlopts.cpp:78
 msgid "Medium"
 msgstr "中型"
 
-#: htmlopts.cpp:48
+#: htmlopts.cpp:87
 msgid "Large"
 msgstr "大型"
 
-#: htmlopts.cpp:52
+#: htmlopts.cpp:102
 msgid "Standard Font"
 msgstr "标准字体"
 
-#: htmlopts.cpp:69
+#: htmlopts.cpp:131
 msgid "Fixed Font"
 msgstr "等宽字体"
 
-#: htmlopts.cpp:215
+#: htmlopts.cpp:325
 msgid "Background Color:"
 msgstr "背景颜色:"
 
-#: htmlopts.cpp:223
+#: htmlopts.cpp:344
 msgid "Normal Text Color:"
 msgstr "一般本文颜色:"
 
-#: htmlopts.cpp:231
+#: htmlopts.cpp:363
 msgid "URL Link Color:"
 msgstr "URL 链接颜色:"
 
-#: htmlopts.cpp:239
+#: htmlopts.cpp:382
 msgid "Followed Link Color:"
 msgstr "访问过的链接颜色:"
 
-#: htmlopts.cpp:247
+#: htmlopts.cpp:401
 msgid "Change cursor over link."
 msgstr "在链接上改变光标."
 
-#: htmlopts.cpp:253
+#: htmlopts.cpp:412
 msgid "Underline links"
 msgstr ""
 
 #
-#: htmlopts.cpp:356
+#: htmlopts.cpp:529
 msgid "Horizontal Root Grid Spacing:"
 msgstr "水平格子间距:"
 
 #
-#: htmlopts.cpp:380
+#: htmlopts.cpp:553
 msgid "Vertical Root Grid Spacing:"
 msgstr "垂直格子间距:"
 
-#: htmlopts.cpp:404
+#: htmlopts.cpp:577
 msgid "Allow per-URL settings"
 msgstr ""
 
-#: htmlopts.cpp:412
+#: htmlopts.cpp:585
 msgid "Transparent Text for Root Icons."
 msgstr "图标用透明的文字."
 
-#: htmlopts.cpp:426
+#: htmlopts.cpp:599
 #, fuzzy
 msgid "Icon foreground color:"
 msgstr "背景颜色:"
 
-#: htmlopts.cpp:438
+#: htmlopts.cpp:611
 #, fuzzy
 msgid "Icon background color:"
 msgstr "背景颜色:"
@@ -919,7 +919,7 @@ msgstr ""
 msgid "Do you really want to rearrange your icons ?"
 msgstr "确信要重新排列图标 ?"
 
-#: kfmserver.cpp:235
+#: kfmserver.cpp:244
 #, c-format
 msgid ""
 "The URL\n"
@@ -930,7 +930,7 @@ msgstr ""
 "%s\n"
 "是不正确的"
 
-#: kfmserver.cpp:286
+#: kfmserver.cpp:295
 msgid ""
 "You dont have the file ~/.kde/share/apps/kfm/magic\n"
 "Authorization failed"
@@ -938,7 +938,7 @@ msgstr ""
 "没有 ~/.kde/share/apps/kfm/magic\n"
 "授权失败"
 
-#: kfmserver.cpp:295
+#: kfmserver.cpp:304
 msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
@@ -946,7 +946,7 @@ msgstr ""
 "~/.kde/share/apps/kfm/magic 损坏\n"
 "授权失败"
 
-#: kfmserver.cpp:303
+#: kfmserver.cpp:312
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
@@ -1350,65 +1350,65 @@ msgstr "密码"
 msgid "Trying to open"
 msgstr "尝试打开"
 
-#: useragentdlg.cpp:20
+#: useragentdlg.cpp:44
 msgid "On server:"
 msgstr "服务器:"
 
-#: useragentdlg.cpp:31
+#: useragentdlg.cpp:66
 msgid "login as:"
 msgstr "登录为:"
 
-#: useragentdlg.cpp:52
+#: useragentdlg.cpp:110
 msgid "Known bindings:"
 msgstr "已知的关联"
 
-#: kproxydlg.cpp:13
+#: kproxydlg.cpp:46
 msgid "Don't forget to save your settings!"
 msgstr "别忘了保存设置!"
 
 #
-#: kproxydlg.cpp:16
+#: kproxydlg.cpp:54
 msgid "Use proxy"
 msgstr "使用代理"
 
-#: kproxydlg.cpp:42
+#: kproxydlg.cpp:132
 msgid "No Proxy for:"
 msgstr "以下不采用代理:"
 
-#: kkfmoptdlg.cpp:19
+#: kkfmoptdlg.cpp:43
 msgid "&Proxy"
 msgstr "代理[&P]"
 
-#: kkfmoptdlg.cpp:22
+#: kkfmoptdlg.cpp:46
 msgid "&HTTP"
 msgstr ""
 
-#: kkfmoptdlg.cpp:25
+#: kkfmoptdlg.cpp:49
 msgid "User &Agent"
 msgstr "用户代理[&A]"
 
-#: kkfmoptdlg.cpp:31
+#: kkfmoptdlg.cpp:55
 msgid "&Colors"
 msgstr "颜色[&C]"
 
 #
-#: kkfmoptdlg.cpp:34
+#: kkfmoptdlg.cpp:58
 msgid "&Other"
 msgstr "其他[&O]"
 
-#: kkfmoptdlg.cpp:54
+#: kkfmoptdlg.cpp:117
 msgid "KFM Browser Settings"
 msgstr "KFM 浏览器设置"
 
-#: khttpoptdlg.cpp:13
+#: khttpoptdlg.cpp:39
 msgid "Accept languages:"
 msgstr ""
 
-#: khttpoptdlg.cpp:18
+#: khttpoptdlg.cpp:55
 msgid "Accept character sets:"
 msgstr ""
 
-#: khttpoptdlg.cpp:23
+#: khttpoptdlg.cpp:70
 msgid "Assume HTML"
 msgstr ""
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-11-05 01:17+0100\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -521,7 +521,7 @@ msgstr "风格[&S]"
 msgid "Start&Up"
 msgstr "启动[&U]"
 
-#: kcmikbd.cpp:121
+#: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "国际键盘"
 

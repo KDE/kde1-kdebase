@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-15 01:18+0100\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,27 +34,27 @@ msgstr "Oops!"
 msgid "Unknown format: "
 msgstr "Tuntematon formaatti: "
 
-#: helpwin.cpp:1093
+#: helpwin.cpp:1117
 msgid "Find Complete"
 msgstr "Etsint‰ valmis"
 
-#: helpwin.cpp:1094
+#: helpwin.cpp:1118
 msgid "Continue search from the top of the page?"
 msgstr "Jatka etsimist‰ sivun alusta?"
 
-#: helpwin.cpp:1311
+#: helpwin.cpp:1335
 msgid "Forward"
 msgstr "Eteenp‰in"
 
-#: helpwin.cpp:1332
+#: helpwin.cpp:1356
 msgid "Open this Link"
 msgstr "Avaa t‰m‰ linkki"
 
-#: helpwin.cpp:1333
+#: helpwin.cpp:1357
 msgid "Add Bookmark"
 msgstr "Lis‰‰ osoitekirjaan"
 
-#: helpwin.cpp:1334
+#: helpwin.cpp:1358
 msgid "Open in new Window"
 msgstr "Avaa uudessa ikkunassa"
 
@@ -126,67 +126,67 @@ msgstr "KDE:n Ohjeen asetukset"
 msgid "Colors"
 msgstr "V‰rit"
 
-#: man.cpp:91 man.cpp:800
+#: man.cpp:55 man.cpp:445
 msgid "Online Manuals"
 msgstr "Online-ohjekirjat"
 
 # , c-format
-#: man.cpp:97
+#: man.cpp:62
 #, c-format
 msgid "Section %s"
 msgstr "Sektio %s"
 
 # , c-format
-#: man.cpp:113
+#: man.cpp:84
 #, c-format
 msgid "Online manual - Section %s"
 msgstr "Online ohjekirja - sektio %s"
 
-#: man.cpp:462
+#: man.cpp:132
 msgid "User Commands"
 msgstr "K‰ytt‰j‰n komennot"
 
-#: man.cpp:464
+#: man.cpp:134
 msgid "System Calls"
 msgstr "Systeemikutsut"
 
-#: man.cpp:466
+#: man.cpp:136
 msgid "Subroutines"
 msgstr "Alirutiinit"
 
-#: man.cpp:468
+#: man.cpp:138
 msgid "Devices"
 msgstr "Laitteet"
 
-#: man.cpp:470
+#: man.cpp:140
 msgid "File Formats"
 msgstr "Tiedostoformaatit"
 
-#: man.cpp:472
+#: man.cpp:142
 msgid "Games"
 msgstr "Pelit"
 
-#: man.cpp:476
+#: man.cpp:146
 msgid "System Administration"
 msgstr "J‰rjestelm‰n yll‰pito"
 
-#: man.cpp:478
+#: man.cpp:148
 msgid "New"
 msgstr "Uusi"
 
-#: man.cpp:592
+#: man.cpp:271
 msgid "Reading Dir: "
 msgstr "Luetaan hakemistoa: "
 
-#: man.cpp:789
+#: man.cpp:435
 msgid "Online Manual - Section"
 msgstr "Online-ohje - sektio"
 
-#: man.cpp:847
+#: man.cpp:498
 msgid "\"man\" system call failed"
 msgstr "\"man\" j‰rjestelm‰kutsu ep‰onnistui"
 
-#: man.cpp:865
+#: man.cpp:516
 msgid "Opening temporary file failed"
 msgstr "Tilap‰istiedoston avaaminen ep‰onnistui"
 

@@ -1,5 +1,5 @@
 msgid ""
-msgstr "POT-Creation-Date: 1998-11-05 01:17+0100\n"
+msgstr "POT-Creation-Date: 1998-11-16 01:20+0100\n"
 
 # kikbd.C:115
 #: kikbd.cpp:116
@@ -558,7 +558,7 @@ msgid "Start&Up"
 msgstr ""
 
 # main.C:45
-#: kcmikbd.cpp:121
+#: kcmikbd.cpp:80
 #, fuzzy
 msgid "International Keyboard"
 msgstr "Internationale Toetsenbord Instellingen"

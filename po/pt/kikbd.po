@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-11-05 01:17+0100\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
 #: kikbd.cpp:116
@@ -518,7 +518,7 @@ msgstr "Estilo"
 msgid "Start&Up"
 msgstr ""
 
-#: kcmikbd.cpp:121
+#: kcmikbd.cpp:80
 #, fuzzy
 msgid "International Keyboard"
 msgstr "Configuração do Teclado International"

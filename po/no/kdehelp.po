@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kdehelp\n"
-"POT-Creation-Date: 1998-11-15 01:18+0100\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
 "PO-Revision-Date:1998-03-16 HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -33,27 +33,27 @@ msgstr "Ops!"
 msgid "Unknown format: "
 msgstr "Ukjent format: "
 
-#: helpwin.cpp:1093
+#: helpwin.cpp:1117
 msgid "Find Complete"
 msgstr "Finn fullført"
 
-#: helpwin.cpp:1094
+#: helpwin.cpp:1118
 msgid "Continue search from the top of the page?"
 msgstr "Fortsett søk fra toppen av siden?"
 
-#: helpwin.cpp:1311
+#: helpwin.cpp:1335
 msgid "Forward"
 msgstr "Fremover"
 
-#: helpwin.cpp:1332
+#: helpwin.cpp:1356
 msgid "Open this Link"
 msgstr "Åpne denne linken"
 
-#: helpwin.cpp:1333
+#: helpwin.cpp:1357
 msgid "Add Bookmark"
 msgstr "Legg til bokmerke"
 
-#: helpwin.cpp:1334
+#: helpwin.cpp:1358
 msgid "Open in new Window"
 msgstr "Åpne i nytt vindu"
 
@@ -123,65 +123,65 @@ msgstr "KDE Hjelp-valg"
 msgid "Colors"
 msgstr "Farger"
 
-#: man.cpp:91 man.cpp:800
+#: man.cpp:55 man.cpp:445
 msgid "Online Manuals"
 msgstr "Online-håndbøker"
 
-#: man.cpp:97
+#: man.cpp:62
 #, c-format
 msgid "Section %s"
 msgstr "Seksjon %s"
 
-#: man.cpp:113
+#: man.cpp:84
 #, c-format
 msgid "Online manual - Section %s"
 msgstr "Online-håndbok - Seksjon %s"
 
-#: man.cpp:462
+#: man.cpp:132
 msgid "User Commands"
 msgstr "Brukerkommando"
 
-#: man.cpp:464
+#: man.cpp:134
 msgid "System Calls"
 msgstr "Systemanrop"
 
-#: man.cpp:466
+#: man.cpp:136
 msgid "Subroutines"
 msgstr "Subrutiner"
 
-#: man.cpp:468
+#: man.cpp:138
 msgid "Devices"
 msgstr "Enheter"
 
-#: man.cpp:470
+#: man.cpp:140
 msgid "File Formats"
 msgstr "Filformater"
 
-#: man.cpp:472
+#: man.cpp:142
 msgid "Games"
 msgstr "Spill"
 
-#: man.cpp:476
+#: man.cpp:146
 msgid "System Administration"
 msgstr "Systemadministrasjon"
 
-#: man.cpp:478
+#: man.cpp:148
 msgid "New"
 msgstr "Ny"
 
-#: man.cpp:592
+#: man.cpp:271
 msgid "Reading Dir: "
 msgstr "Leser mappe: "
 
-#: man.cpp:789
+#: man.cpp:435
 msgid "Online Manual - Section"
 msgstr "Online-håndbok - Seksjon"
 
-#: man.cpp:847
+#: man.cpp:498
 msgid "\"man\" system call failed"
 msgstr "\"man\"-systemanrop feilet"
 
-#: man.cpp:865
+#: man.cpp:516
 msgid "Opening temporary file failed"
 msgstr "Åpning av midlertidig fil feilet"
 

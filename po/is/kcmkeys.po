@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
 "PO-Revision-Date: 1998-10-19 22:00+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
@@ -116,3 +116,99 @@ msgstr ""
 "sem á að bæta við listann þin.\n"
 "Til að byrja með verða stillingarnar á\n"
 "skjánum færðar þar inn."
+
+#: ../../kwm/kwmbindings.cpp:1
+msgid "Task manager"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:2
+msgid "Kill window mode"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:3
+msgid "Execute command"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:4
+msgid "Window operations menu"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:5
+msgid "Pop-up system menu"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:7
+msgid "Window raise"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:8
+msgid "Window lower"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:9
+msgid "Window close"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:10
+msgid "Window iconify"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:11
+msgid "Window resize"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:12
+msgid "Window move"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:13
+msgid "Window toggle sticky"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:15
+msgid "Switch to desktop 1"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:16
+msgid "Switch to desktop 2"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:17
+msgid "Switch to desktop 3"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:18
+msgid "Switch to desktop 4"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:19
+msgid "Switch to desktop 5"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:20
+msgid "Switch to desktop 6"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:21
+msgid "Switch to desktop 7"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:22
+msgid "Switch to desktop 8"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:24
+msgid "Switch one desktop to the right"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:25
+msgid "Switch one desktop to the left"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:26
+msgid "Switch one desktop up"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:27
+msgid "Switch one desktop down"
+msgstr ""

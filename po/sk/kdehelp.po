@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.6\n"
-"POT-Creation-Date: 1998-11-15 01:18+0100\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -33,27 +33,27 @@ msgstr "Hop!"
 msgid "Unknown format: "
 msgstr "Neznámy formát: "
 
-#: helpwin.cpp:1093
+#: helpwin.cpp:1117
 msgid "Find Complete"
 msgstr "Hµadanie kompletné"
 
-#: helpwin.cpp:1094
+#: helpwin.cpp:1118
 msgid "Continue search from the top of the page?"
 msgstr "Pokraèova» v hµadaní od zaèiatku stránky?"
 
-#: helpwin.cpp:1311
+#: helpwin.cpp:1335
 msgid "Forward"
 msgstr "Ïalej"
 
-#: helpwin.cpp:1332
+#: helpwin.cpp:1356
 msgid "Open this Link"
 msgstr "Otvori» tento odkaz"
 
-#: helpwin.cpp:1333
+#: helpwin.cpp:1357
 msgid "Add Bookmark"
 msgstr "Prida» zálo¾ku"
 
-#: helpwin.cpp:1334
+#: helpwin.cpp:1358
 msgid "Open in new Window"
 msgstr "Otvori» v novom okne"
 
@@ -123,65 +123,65 @@ msgstr "Nastavenie pomocníka KDE"
 msgid "Colors"
 msgstr "Farby"
 
-#: man.cpp:91 man.cpp:800
+#: man.cpp:55 man.cpp:445
 msgid "Online Manuals"
 msgstr "Online manuály"
 
-#: man.cpp:97
+#: man.cpp:62
 #, c-format
 msgid "Section %s"
 msgstr "Sekcia %s"
 
-#: man.cpp:113
+#: man.cpp:84
 #, c-format
 msgid "Online manual - Section %s"
 msgstr "Online manuál - sekcia %s"
 
-#: man.cpp:462
+#: man.cpp:132
 msgid "User Commands"
 msgstr "U¾ívateµské príkazy"
 
-#: man.cpp:464
+#: man.cpp:134
 msgid "System Calls"
 msgstr "Systémové volania"
 
-#: man.cpp:466
+#: man.cpp:136
 msgid "Subroutines"
 msgstr "Funkcie"
 
-#: man.cpp:468
+#: man.cpp:138
 msgid "Devices"
 msgstr "Zariadenia"
 
-#: man.cpp:470
+#: man.cpp:140
 msgid "File Formats"
 msgstr "Dátové formáty"
 
-#: man.cpp:472
+#: man.cpp:142
 msgid "Games"
 msgstr "Hry"
 
-#: man.cpp:476
+#: man.cpp:146
 msgid "System Administration"
 msgstr "Administrácia systému"
 
-#: man.cpp:478
+#: man.cpp:148
 msgid "New"
 msgstr "Nová"
 
-#: man.cpp:592
+#: man.cpp:271
 msgid "Reading Dir: "
 msgstr "Èítam prieèinok: "
 
-#: man.cpp:789
+#: man.cpp:435
 msgid "Online Manual - Section"
 msgstr "Online manuál - Sekcie"
 
-#: man.cpp:847
+#: man.cpp:498
 msgid "\"man\" system call failed"
 msgstr "\"man\" systémové volanie neúspe¹né"
 
-#: man.cpp:865
+#: man.cpp:516
 msgid "Opening temporary file failed"
 msgstr "Otváranie pomocného súboru neúspe¹né"
 

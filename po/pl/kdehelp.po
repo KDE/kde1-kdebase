@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-11-15 01:18+0100\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
 "PO-Revision-Date: 1998-06-18 00:06+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -26,28 +26,28 @@ msgstr "Ojej!"
 msgid "Unknown format: "
 msgstr "Nieznany format: "
 
-#: helpwin.cpp:1093
+#: helpwin.cpp:1117
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1094
+#: helpwin.cpp:1118
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1311
+#: helpwin.cpp:1335
 #, fuzzy
 msgid "Forward"
 msgstr "W &przód"
 
-#: helpwin.cpp:1332
+#: helpwin.cpp:1356
 msgid "Open this Link"
 msgstr "Otwórz odno¶nik"
 
-#: helpwin.cpp:1333
+#: helpwin.cpp:1357
 msgid "Add Bookmark"
 msgstr "Dodaj zak³adkê"
 
-#: helpwin.cpp:1334
+#: helpwin.cpp:1358
 msgid "Open in new Window"
 msgstr "Otwórz w nowym oknie"
 
@@ -117,65 +117,65 @@ msgstr "Opcje KDE Pomoc"
 msgid "Colors"
 msgstr "Kolory"
 
-#: man.cpp:91 man.cpp:800
+#: man.cpp:55 man.cpp:445
 msgid "Online Manuals"
 msgstr "Bie¿±ca dokumentacja"
 
-#: man.cpp:97
+#: man.cpp:62
 #, c-format
 msgid "Section %s"
 msgstr "Sekcja %s"
 
-#: man.cpp:113
+#: man.cpp:84
 #, c-format
 msgid "Online manual - Section %s"
 msgstr "Bie¿±ca dokumentacja - Sekcja %s"
 
-#: man.cpp:462
+#: man.cpp:132
 msgid "User Commands"
 msgstr "Polecenia u¿ytkownika"
 
-#: man.cpp:464
+#: man.cpp:134
 msgid "System Calls"
 msgstr "Funkcje systemowe"
 
-#: man.cpp:466
+#: man.cpp:136
 msgid "Subroutines"
 msgstr "Funkcje u¿ytkownika"
 
-#: man.cpp:468
+#: man.cpp:138
 msgid "Devices"
 msgstr "Urz±dzenia"
 
-#: man.cpp:470
+#: man.cpp:140
 msgid "File Formats"
 msgstr "Formaty plików"
 
-#: man.cpp:472
+#: man.cpp:142
 msgid "Games"
 msgstr "Gry"
 
-#: man.cpp:476
+#: man.cpp:146
 msgid "System Administration"
 msgstr "Administracja systemu"
 
-#: man.cpp:478
+#: man.cpp:148
 msgid "New"
 msgstr ""
 
-#: man.cpp:592
+#: man.cpp:271
 msgid "Reading Dir: "
 msgstr "Wczytujê katalog: "
 
-#: man.cpp:789
+#: man.cpp:435
 msgid "Online Manual - Section"
 msgstr "Bie¿±ca dokumentacja - sekcja"
 
-#: man.cpp:847
+#: man.cpp:498
 msgid "\"man\" system call failed"
 msgstr "Wywo³anie \"man\" nie powiod³o siê"
 
-#: man.cpp:865
+#: man.cpp:516
 msgid "Opening temporary file failed"
 msgstr "Otwarcie pliku tymczasowego nie powiod³o siê"
 

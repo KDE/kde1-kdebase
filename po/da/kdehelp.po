@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-15 01:18+0100\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
 "PO-Revision-Date: 1998-01-29 17:00+CET-1\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,28 +33,28 @@ msgstr "Ups!"
 msgid "Unknown format: "
 msgstr "Ukendt format: "
 
-#: helpwin.cpp:1093
+#: helpwin.cpp:1117
 msgid "Find Complete"
 msgstr "Søgning færdig"
 
-#: helpwin.cpp:1094
+#: helpwin.cpp:1118
 msgid "Continue search from the top of the page?"
 msgstr "Fortsæt fra begyndelsen af siden?"
 
-#: helpwin.cpp:1311
+#: helpwin.cpp:1335
 #, fuzzy
 msgid "Forward"
 msgstr "&Frem"
 
-#: helpwin.cpp:1332
+#: helpwin.cpp:1356
 msgid "Open this Link"
 msgstr "Åben dette link"
 
-#: helpwin.cpp:1333
+#: helpwin.cpp:1357
 msgid "Add Bookmark"
 msgstr "Tilføj bogmærke"
 
-#: helpwin.cpp:1334
+#: helpwin.cpp:1358
 msgid "Open in new Window"
 msgstr "Åben i nyt vindue"
 
@@ -124,65 +124,65 @@ msgstr "KDE Hjælp indstillinger"
 msgid "Colors"
 msgstr "Farver"
 
-#: man.cpp:91 man.cpp:800
+#: man.cpp:55 man.cpp:445
 msgid "Online Manuals"
 msgstr "Online manualer"
 
-#: man.cpp:97
+#: man.cpp:62
 #, c-format
 msgid "Section %s"
 msgstr "Sektion %s"
 
-#: man.cpp:113
+#: man.cpp:84
 #, c-format
 msgid "Online manual - Section %s"
 msgstr "Online manual - Sektion %s"
 
-#: man.cpp:462
+#: man.cpp:132
 msgid "User Commands"
 msgstr "Bruger kommandoer"
 
-#: man.cpp:464
+#: man.cpp:134
 msgid "System Calls"
 msgstr "System kald"
 
-#: man.cpp:466
+#: man.cpp:136
 msgid "Subroutines"
 msgstr "Under rutiner"
 
-#: man.cpp:468
+#: man.cpp:138
 msgid "Devices"
 msgstr "Enheder"
 
-#: man.cpp:470
+#: man.cpp:140
 msgid "File Formats"
 msgstr "Filformater"
 
-#: man.cpp:472
+#: man.cpp:142
 msgid "Games"
 msgstr "Spil"
 
-#: man.cpp:476
+#: man.cpp:146
 msgid "System Administration"
 msgstr "System Administration"
 
-#: man.cpp:478
+#: man.cpp:148
 msgid "New"
 msgstr ""
 
-#: man.cpp:592
+#: man.cpp:271
 msgid "Reading Dir: "
 msgstr "Læser folder: "
 
-#: man.cpp:789
+#: man.cpp:435
 msgid "Online Manual - Section"
 msgstr "Online manual - Sektion"
 
-#: man.cpp:847
+#: man.cpp:498
 msgid "\"man\" system call failed"
 msgstr "\"man\" systemkald fejlede"
 
-#: man.cpp:865
+#: man.cpp:516
 msgid "Opening temporary file failed"
 msgstr "Åbning af temporær fil fejlede"
 
