@@ -323,11 +323,12 @@ long KProtocolHTTP::Read(void *buffer, long len)
     
     /*printf("got nbytes: %d\n",nbytes);*/
 
-    if ( nbytes >= 0 )
-	return nbytes;
-
-    Error( KIO_ERROR_CouldNotRead,"Reading from socket failed", errno);
-    return FAIL;
+    if ( ferror(fsocket))
+    {
+        Error( KIO_ERROR_CouldNotRead,"Reading from socket failed", errno);
+        return FAIL;
+    }
+    return nbytes;
 }
 
 int KProtocolHTTP::init_sockaddr(struct sockaddr_in *server_name, const char *hostname, int port)
