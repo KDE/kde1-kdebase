@@ -60,10 +60,6 @@ KKFMOptDlg::~KKFMOptDlg()
   delete prxDlg;
   delete tabDlg;
 
-  // this segfault kfm -- why? Bernd
-  //delete fontDlg;
-  //delete colorDlg;
-  //delete miscDlg;
 }
 
 void KKFMOptDlg::helpShow()
