@@ -14,14 +14,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kpager.cpp:72
-#, fuzzy
 msgid "Toggle Global Desktop"
-msgstr "Skul &globalt skrivebord"
+msgstr "Skru av/på globalt skrivebord"
 
 #: kpager.cpp:74
-#, fuzzy
 msgid "Toggle Menubar"
-msgstr "Skjul &menylinje"
+msgstr "Skru av/på menylinje"
 
 #: kpager.cpp:84 kpager.cpp:188 kpager.cpp:323
 msgid "Hide &Global Desktop"
@@ -37,7 +35,7 @@ msgstr "Skjul &menylinje"
 
 #: kpager.cpp:95 kpager.cpp:337
 msgid "&2 Rows"
-msgstr ""
+msgstr "&2 rader"
 
 #: kpager.cpp:101 kpager.cpp:344
 msgid "Plain"
@@ -83,28 +81,25 @@ msgstr ""
 "den under visse vilkår\n"
 
 #: kpager.cpp:333
-#, fuzzy
 msgid "Show &Menubar"
-msgstr "Skjul &menylinje"
+msgstr "Vis &menylinje"
 
 #: kpager.cpp:388
 msgid "&Maximize"
-msgstr ""
+msgstr "&Maksimer"
 
 #: kpager.cpp:389
-#, fuzzy
 msgid "&Iconify"
-msgstr "Ikon"
+msgstr "&Ikoniser"
 
 #: kpager.cpp:391
 msgid "&UnSticky"
-msgstr ""
+msgstr "&Uklistret"
 
 #: kpager.cpp:393
 msgid "&Sticky"
-msgstr ""
+msgstr "&Klistret"
 
 #: kpager.cpp:395
-#, fuzzy
 msgid "&To Desktop"
-msgstr "Skul &globalt skrivebord"
+msgstr "&Til skribebord"
