@@ -364,11 +364,6 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu )
   }
   // end kpanel
 
-
-
-
-
-
 //   if( pixmap_name.isEmpty() )
 //     {
 //       pixmap_name = "mini-ball.xpm";
@@ -394,6 +389,7 @@ void PMenuItem::writeConfig( QDir dir )
   if( read_only || entry_type == separator )
     return;
   QString file = dir.absPath();
+  dir_path = file.copy();
   file += ( (QString) "/" + real_name ); //+ ".kdelnk" );
   QFile config(file);
   if( !config.open(IO_ReadWrite) ) 
@@ -469,8 +465,6 @@ QPixmap PMenuItem::getBigPixmap()
   }
   return pm;
 }
-
-
 
 PMenu::PMenu()
 {
@@ -815,10 +809,24 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item)
 	}
       else
 	{
-	  if( !item->read_only )
-	    item->writeConfig(base_dir);
-	  if( item->getType() != separator )
+	  if( item->entry_type != separator )
 	    {
+	      if( !item->read_only )
+		{
+		  if( item->real_name.isEmpty() )
+		    {
+		      QString file_name = item->text_name.copy();
+		      QString suffix;
+		      int i = 2;
+		      while( checkFilenames(file_name) )
+			{
+			  file_name = item->text_name.copy() + suffix.setNum(i);
+			  i++;
+			}
+		      item->real_name = file_name;
+		    }
+		  item->writeConfig(base_dir);
+		}
 	      file_list.remove(item->real_name); // + ".kdelnk");
 	    }
 	}
@@ -1113,10 +1121,10 @@ QPoint PMenu::configPos()
 
 bool PMenu::checkFilenames(QString name)
 {
-  PMenuItem *item;
-  for( item = list.first(); item != 0; item = list.next() )
+  QListIterator<PMenuItem> it(list);
+  for( ; it.current(); ++it )
     {
-      if( item->real_name == name )
+      if( it.current()->real_name == name )
 	return TRUE;
     }
   return FALSE;

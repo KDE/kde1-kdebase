@@ -288,23 +288,23 @@ void EditButton::mouseMoveEvent( QMouseEvent * _mouse )
 
 void EditButton::rootDropEvent( int _x, int _y )
 {
-  rootDropEvent();
-  return;  // root drop _DISABLED_
+  //rootDropEvent();
+  //return;  // root drop _DISABLED_
 
   Window root;
   Window parent;
   Window *children;
   unsigned int cchildren;
     
-  printf("Root Window\n");
+  //printf("Root Window\n");
   root = DefaultRootWindow( kapp->getDisplay() );
-  printf("Query root tree\n");
+  //printf("Query root tree\n");
   XQueryTree( kapp->getDisplay(), root, &root, &parent, &children, &cchildren );
     
   for ( uint i = 0; i < cchildren; i++ )
   {
       if ( children[i] == debugWin )
-	  printf("******************** root id = %ld *********************\n",children[i] );
+	; //printf("******************** root id = %ld *********************\n",children[i] );
       else
       {
 	  XEvent Event;
@@ -324,7 +324,7 @@ void EditButton::rootDropEvent( int _x, int _y )
       }
   }
     
-  printf("Done\n");
+  //printf("Done\n");
   
   // Clean up.
   rootDropEvent();
