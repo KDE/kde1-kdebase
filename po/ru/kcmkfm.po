@@ -50,7 +50,8 @@ msgstr "Пиктограммы рабочего стола"
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr ""
-"использование: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+"использование: %s [-init | "
+"{font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
