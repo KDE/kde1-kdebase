@@ -955,7 +955,7 @@ void kPanel::button_pressed(){
       if (button_to_be_modified == kde_button){
 	popup_item->setItemEnabled(0, true);
 	popup_item->setItemEnabled(1, false);
-	popup_item->setItemEnabled(3, false);
+	popup_item->setItemEnabled(3, true);
       }
       if (entries[i].popup == windowlist){
 	popup_item->setItemEnabled(0, true);
@@ -965,7 +965,10 @@ void kPanel::button_pressed(){
 
       switch (show_popup(popup_item, entries[i].button)){
       case 3:
-	if (entries[i].pmi){
+	  if (button_to_be_modified == kde_button) {
+	      editMenus();
+	  }
+	  else if (entries[i].pmi){
 	  KFM* kfm = new KFM;
 	  QString a = entries[i].pmi->getFullPathName().copy();
 	  a.prepend("file:");
@@ -1604,6 +1607,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 	   taskbar_height * numberOfTaskbarRows();
 
    int tbw = taskbar_frame->width();
+   int tbh = taskbar_frame->height();
 
    taskbar_frame_geometry = taskbar_frame->geometry();
 
@@ -1861,7 +1865,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 
    taskbar_frame->setGeometry(taskbar_frame_geometry);
    taskbar->resize(taskbar_frame->width(), taskbar_frame->height());
-   if (taskbar_frame->width() != tbw){
+   if (taskbar_frame->width() != tbw || taskbar_frame->height() != tbh){
      doGeometry();
    }
 }

@@ -33,10 +33,10 @@ void animateMove(QWidget*w, int xn, int yn, int step ){
     in_animation = false;
 }
 
-myFrame::myFrame(bool _autoHide, unsigned int delay, 
+myFrame::myFrame(bool _autoHide, unsigned int delay,
 		 QWidget *parent, const char* name, WFlags f)
   :QFrame(parent, name, f){
-  
+
   hideTimer = new QTimer(this);
   connect( hideTimer, SIGNAL(timeout()),
 	   this, SLOT(hideTimerDone()) );
@@ -86,8 +86,8 @@ void kPanel::showTaskbar(){
   if (in_animation)
       return;
   doGeometry(TRUE);
-  animateMove(taskbar_frame, 
-	      taskbar_frame_geometry.x(), 
+  animateMove(taskbar_frame,
+	      taskbar_frame_geometry.x(),
 	      taskbar_frame_geometry.y(),
 	      taskbar_position == bottom?-autoHideTaskbarSpeed*2:
 	                          autoHideTaskbarSpeed*2);
@@ -99,8 +99,8 @@ void kPanel::hideTaskbar(){
       return;
   raise();
   doGeometry(TRUE);
-  animateMove(taskbar_frame, 
-	      taskbar_frame_geometry.x(), 
+  animateMove(taskbar_frame,
+	      taskbar_frame_geometry.x(),
 	      taskbar_frame_geometry.y(),
 	      taskbar_position == bottom?autoHideTaskbarSpeed:
 	                          -autoHideTaskbarSpeed);
@@ -213,9 +213,9 @@ void kPanel::windowAdd(Window w){
   }
 
   b->virtual_desktop = KWM::desktop(w);
+  layoutTaskbar();
   if (nr != numberOfTaskbarRows())
     doGeometry();
-  layoutTaskbar();
 }
 
 void kPanel::windowRemove(Window w){
@@ -226,9 +226,9 @@ void kPanel::windowRemove(Window w){
   taskbar_buttons.removeRef(b);
   taskbar->remove(b);
   delete b;
+  layoutTaskbar();
   if (nr != numberOfTaskbarRows())
     doGeometry();
-  layoutTaskbar();
 }
 void kPanel::windowChange(Window w){
   myTaskButton* b = taskButtonFromWindow(w);

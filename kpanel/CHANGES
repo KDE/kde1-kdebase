@@ -1,9 +1,20 @@
+
+Forget about the CHANGES file. Since kpanel was in the KDE CVS, it was
+not really updated anyway. Please refer to the cvs log messages
+instead.
+
+Matthias, Tue Dec 8 1998 
+
+
+
+
 In kpanel-0.19:
 
     Patchlevel 11:
 	- fixed setting of window region in combination with autohide
 	- some bugfixes in autohide delay stuff
         - fixed maximize region again when panel is manually hidden
+        - properties on the K-button launches the menu editor
 
     Patchlevel 10:
 	-  fixed crashes when KDiskNavigator is not initialized but accessed.
