@@ -470,6 +470,17 @@ void KfmGui::slotSplitWindow()
     view->getActiveView()->splitWindow();
 }
 
+void KfmGui::slotViewHTML( )
+{
+    bViewHTML = true;
+    viewMode = ICON_VIEW;
+    mview->setItemChecked( mview->idAt( 4 ), true );
+    mview->setItemChecked( mview->idAt( 5 ), false );
+    mview->setItemChecked( mview->idAt( 6 ), false );
+    mview->setItemChecked( mview->idAt( 7 ), false );
+    view->slotUpdateView();
+}
+
 void KfmGui::slotIconView()
 {
     viewMode = ICON_VIEW;
@@ -688,21 +699,10 @@ void KfmGui::slotNewWindow( )
     {
 	QString url;
 	url.sprintf( "file:%s", getenv( "HOME" ) );
-	f = new KfmGui( 0L, 0L, view->getURL() );
+	f = new KfmGui( 0L, 0L, url );
     }
     
     f->show();
-}
-
-void KfmGui::slotViewHTML( )
-{
-    bViewHTML = true;
-    viewMode = ICON_VIEW;
-    mview->setItemChecked( mview->idAt( 4 ), true );
-    mview->setItemChecked( mview->idAt( 5 ), false );
-    mview->setItemChecked( mview->idAt( 6 ), false );
-    mview->setItemChecked( mview->idAt( 7 ), false );
-    view->slotUpdateView();
 }
 
 void KfmGui::slotShowDot()
@@ -952,7 +952,6 @@ KfmGui::~KfmGui()
     
     if ( windowList.isEmpty() )  // the last window closed?
       saveSettings();
-    
 }
 
 #include "kfmgui.moc"

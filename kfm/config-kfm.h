@@ -4,7 +4,7 @@
 #include <config.h>
 #endif
 
-// #define TORBENSDEBUG
-#define COOLOSDEBUG
+#define TORBENSDEBUG
+// #define COOLOSDEBUG
 void debugT( const char *msg , ...);
 void debugC( const char *msg , ...);
