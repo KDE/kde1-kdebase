@@ -28,12 +28,12 @@ msgstr "&Заголовок"
 
 #: main.cpp:68
 msgid "&Desktop"
-msgstr ""
+msgstr "Рабочий Стол"
 
 #: main.cpp:74
 #, fuzzy
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
-msgstr "использование: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+msgstr "использование: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:105
 msgid "Window manager style"
@@ -131,30 +131,30 @@ msgid "Move"
 msgstr ""
 
 #: titlebar.cpp:990
-#, fuzzy
+#
 msgid "(Un)Shade"
 msgstr "Градиент"
 
 #: titlebar.cpp:991
 msgid "Iconify"
-msgstr ""
+msgstr "Минимизировать"
 
 #: titlebar.cpp:992
-#, fuzzy
+#
 msgid "(Un)Sticky"
 msgstr "Приколоть"
 
 #: titlebar.cpp:993
 msgid "Resize"
-msgstr ""
+msgstr "Изменить размер"
 
 #: titlebar.cpp:994
 msgid "Restore"
-msgstr ""
+msgstr "Восстановить"
 
 #: titlebar.cpp:995
 msgid "Operations Menu"
-msgstr ""
+msgstr "Меню операций"
 
 #: windows.cpp:74
 msgid "Window movement"
@@ -174,15 +174,15 @@ msgstr "Анимация изменения размера"
 
 #: windows.cpp:84
 msgid "Placement policy"
-msgstr ""
+msgstr "Правила расположения"
 
 #: windows.cpp:86
 msgid "Smart"
-msgstr ""
+msgstr "Умные"
 
 #: windows.cpp:88
 msgid "Cascade"
-msgstr ""
+msgstr "Каскадом"
 
 #: windows.cpp:90
 msgid "Interactive"
@@ -190,16 +190,16 @@ msgstr ""
 
 #: windows.cpp:92
 msgid "Random"
-msgstr ""
+msgstr "Случайно"
 
 #: windows.cpp:94
-#, fuzzy
+#
 msgid "Manual"
-msgstr "Меню"
+msgstr "Ручное"
 
 #: windows.cpp:101
 msgid "Allowed Overlap:"
-msgstr ""
+msgstr "Возможны перекрытия:"
 
 #: windows.cpp:108
 msgid "Maximize Style"
