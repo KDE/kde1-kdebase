@@ -108,7 +108,10 @@ void KDisplayApplication::apply()
 
 int main(int argc, char **argv)
 {
-  QApplication::setColorSpec( QApplication::ManyColor );
+  //QApplication::setColorSpec( QApplication::ManyColor );
+  // Please don't use this as it prevents users from choosing exactly the
+  // colors they want - Mark Donohoe
+  
   KDisplayApplication app(argc, argv, "kdisplay");
   app.setTitle(klocale->translate("Display settings"));
   

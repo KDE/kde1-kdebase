@@ -75,7 +75,7 @@ class KBPatternDlg : public QDialog
     Q_OBJECT
 
 public:
-    KBPatternDlg( QColor color1, QColor color2, uint p[], 
+    KBPatternDlg( QColor color1, QColor color2, uint p[], int *mode,
 		  QWidget *parent = 0, char *name = 0 );
     
 protected:
@@ -89,10 +89,12 @@ private:
     QLabel *preview;
     QListBox *listBox;
     QList<PatternEntry> list;
+	QCheckBox *orientCB;
 
     bool changed;
     PatternEntry *current;
     uint *pattern;
+	int *orMode;
     
     QColor color1, color2;
 };
@@ -101,6 +103,9 @@ class KBackground : public KDisplayModule
 {
 	Q_OBJECT
 public:
+	
+	enum { Portrait = 1, Landscape };
+
 	KBackground( QWidget *parent, int mode, int desktop = 0 );
 
 	virtual void readSettings( int deskNum = 0 );
@@ -116,12 +121,13 @@ protected slots:
 	void slotBrowse();
 	void slotWallpaper( const char * );
 	void slotWallpaperMode( int );
-	void slotGradientMode( int );
-	void slotOrientMode( int );
+	void slotColorMode( int );
+	void slotStyleMode( int );
 	void slotSwitchDesk( int );
 	void slotRenameDesk();
 	void slotHelp();
-        void slotChangePattern();
+	void slotSetup2Color();
+	void resizeEvent( QResizeEvent * );
 
 protected:
 	void getDeskNameList();
@@ -134,18 +140,20 @@ protected:
 
 protected:
 	enum { Tiled = 1, Centred, Scaled };
-	enum { Flat = 1, Gradient, Pattern };
-	enum { Portrait = 1, Landscape };
+	enum { OneColor = 1, TwoColor };
+	enum { Gradient = 1, Pattern };
+	
 
 	QListBox     *deskListBox;
-	QRadioButton *rbPortrait;
-	QRadioButton *rbLandscape;
+	QRadioButton *rbPattern;
+	QRadioButton *rbGradient;
 	KColorButton *colButton1;
 	KColorButton *colButton2;
-	QButtonGroup *gfGroup;
-	QButtonGroup *orGroup;
+	QButtonGroup *ncGroup;
+	QButtonGroup *stGroup;
 	QButtonGroup *wpGroup;
-        QPushButton  *changeButton;
+	QPushButton  *changeButton;
+	QLabel *monitorLabel;
 	KBGMonitor* monitor;
 	QComboBox *wpCombo;
 	QColor color1;
@@ -155,7 +163,8 @@ protected:
 	QString deskName;
 	QStrList deskNames;
 	int wpMode;
-	int gfMode;
+	int ncMode;
+	int stMode;
 	int orMode;
 	int deskNum;
 	int maxDesks;

@@ -7,7 +7,7 @@ bin_PROGRAMS = kcmdisplay
 
 kcmdisplay_SOURCES = backgnd.cpp jpeg.cpp display.cpp \
                         colorscm.cpp kwmcom.cpp savescm.cpp scrnsave.cpp \
-			general.cpp main.cpp
+			general.cpp main.cpp kpixmap.cpp
 BUILT_SOURCES = backgnd.moc display.moc colorscm.moc savescm.moc kwmcom.moc \
                 scrnsave.moc general.moc
 

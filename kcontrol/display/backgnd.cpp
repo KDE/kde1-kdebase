@@ -18,6 +18,7 @@
 #include <qpixmap.h>
 #include <qfiledlg.h>
 #include <qradiobt.h>
+#include <qchkbox.h>
 #include <qpainter.h>
 #include <qlayout.h>
 #include <kapp.h>
@@ -32,18 +33,20 @@
 
 #include "backgnd.h"
 #include "dither.h"
+#include "kpixmap.h"
 
 #include "backgnd.moc"
 
 #include <kiconloader.h>
 #include <kwm.h>
 #include <ksimpleconfig.h>
+#include <kbuttonbox.h>
 
 #ifdef HAVE_LIBJPEG
 #include "jpeg.h"
 #endif
 
-#define NO_WALLPAPER	klocale->translate("(none)")
+#define NO_WALLPAPER	i18n("(none)")
 
 //----------------------------------------------------------------------------
 
@@ -187,37 +190,47 @@ void GPixmap::flatFill( QColor color )
 KRenameDeskDlg::KRenameDeskDlg( const char *t, QWidget *parent )
     : QDialog( parent, 0, true )
 {
-    QPushButton *ok, *cancel;
-    QVBoxLayout *vlayout = new QVBoxLayout( this, 20 );
+    
+    QVBoxLayout *vlayout = new QVBoxLayout( this, 5 );
+
+	vlayout->addSpacing(10);
+
+	QLabel *label = new QLabel( this );
+	label->setText( i18n( "Enter new desktop name" ) );
+	label->setMinimumSize( label->sizeHint() );
+	vlayout->addWidget( label );
 
     edit = new QLineEdit( this );
     edit->setText( t );
     edit->setFixedHeight( edit->sizeHint().height() );
     edit->setFocus();
     vlayout->addWidget( edit );
+	
+	vlayout->addStretch(10);
+	vlayout->addSpacing(10);
+	
+	QFrame* tmpQFrame;
+	tmpQFrame = new QFrame( this );
+	tmpQFrame->setFrameStyle( QFrame::HLine | QFrame::Sunken );
+	tmpQFrame->setMinimumHeight( tmpQFrame->sizeHint().height() );
+	
+	vlayout->addWidget( tmpQFrame );
+	
+	KButtonBox *bbox = new KButtonBox( this );
+	bbox->addStretch( 10 );
+	
+	QPushButton *ok = bbox->addButton( i18n( "OK" ) );
+	connect( ok, SIGNAL( clicked() ), SLOT( accept() ) );
+	
+	QPushButton *cancel = bbox->addButton( i18n( "Cancel" ) );
+	connect( cancel, SIGNAL( clicked() ), SLOT( reject() ) );
+	
+	bbox->layout();
+	vlayout->addWidget( bbox );
 
-    QHBoxLayout *hlayout = new QHBoxLayout;
-    vlayout->addLayout( hlayout );
-
-    hlayout->addStretch();
-
-    ok = new QPushButton( klocale->translate( "Ok" ), this );
-    ok->setDefault( true );
-    connect( ok, SIGNAL(clicked()), SLOT(accept()) );
-    hlayout->addWidget( ok );
-
-    cancel = new QPushButton( klocale->translate( "Cancel" ), this );
-    connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
-    hlayout->addWidget( cancel );
-
-    QSize btnSize = ok->sizeHint();
-    if ( btnSize.width() < cancel->sizeHint().width() )
-    btnSize = cancel->sizeHint();
-
-    ok->setFixedSize( btnSize );
-    cancel->setFixedSize( btnSize );
-
-    vlayout->freeze();
+    vlayout->activate();
+	
+	resize(150,0);
 }
 
 //----------------------------------------------------------------------------
@@ -236,7 +249,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
     maxDesks = 8;
     deskNum = 0;
 
-    setName( klocale->translate("Desktop") );
+    setName( i18n("Desktop") );
 
     // if we are just initialising we don't need to create setup widget
     if ( mode == Init )
@@ -255,102 +268,179 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 
     readSettings( deskNum );
 
-    QLabel *label;
     QPushButton *button;
     QGroupBox *group;
     QRadioButton *rb;
+	
+	QGridLayout *topLayout = new QGridLayout( this, 4, 4, 10 );
+	
+	topLayout->setRowStretch(0,0);
+	topLayout->setRowStretch(1,10);
+	topLayout->setRowStretch(2,100);
+	topLayout->setRowStretch(3,0);
+	
+	topLayout->setColStretch(0,0);
+	topLayout->setColStretch(1,100);
+	topLayout->setColStretch(2,10);
+	topLayout->setColStretch(3,0);
+	
+	group = new QGroupBox( i18n("Desktop"), this );
 
-    QPixmap p = iconLoader.loadIcon("monitor.xpm");
-
-    label = new QLabel( this );
-    label->setPixmap( p );
-    label->setMinimumSize( label->sizeHint() );
-    label->move( 250, 15 );
-
-    monitor = new KBGMonitor( label );
-    monitor->setGeometry( 20, 10, 157, 111 );
-    monitor->setBackgroundColor( color1 );
-
-    group = new QGroupBox( klocale->translate("Desktop"), this );
-    group->setGeometry( 15, 15, 210, 155 );
+	topLayout->addWidget( group, 1,1 );
+	
+	QBoxLayout *groupLayout = new QVBoxLayout( group, 10 );
 
     deskListBox = new QListBox( group );
-    deskListBox->setGeometry( 20, 25, 120, 75 );
     getDeskNameList();
     deskListBox->setCurrentItem( deskNum );
     connect( deskListBox, SIGNAL( highlighted(int) ),
-	SLOT( slotSwitchDesk(int) ) );
-
-    button = new QPushButton( klocale->translate( "Rename..." ), group );
-    button->setGeometry( 20, 115, 120, 25 );
+							SLOT( slotSwitchDesk(int) ) );
+	
+	groupLayout->addSpacing( 20 );
+	groupLayout->addWidget( deskListBox, 10 );
+	groupLayout->addSpacing( 0 );
+	
+    button = new QPushButton( i18n( "&Rename ..." ), group );
+	button->setFixedHeight( button->sizeHint().height() );
     if ( !KWM::isKWMInitialized() )
 	button->setEnabled( false );
     connect( button, SIGNAL( clicked() ), SLOT( slotRenameDesk() ) );
+	
+	groupLayout->addSpacing( 0 );
+	groupLayout->addWidget( button, 10 );
+	groupLayout->addSpacing( 0 );
 
-    group = new QGroupBox( klocale->translate("Color"), this );
-    
-    group->setGeometry( 15, 190, 210, 130 );
+    QPixmap p = iconLoader.loadIcon("monitor.xpm");
+
+    monitorLabel = new QLabel( this );
+	monitorLabel->setAlignment( AlignCenter );
+    monitorLabel->setPixmap( p );
+    monitorLabel->setMinimumSize( 220, 160 );
+	
+	topLayout->addWidget( monitorLabel, 1, 2 );
+
+    monitor = new KBGMonitor( monitorLabel );
+    monitor->setBackgroundColor( color1 );
+	
+    group = new QGroupBox( i18n( "Colors" ), this );
+	
+	QGridLayout *grid = new QGridLayout( group, 8, 5, 5 );
+	
+	grid->setRowStretch(0,10);
+	grid->setRowStretch(1,10);
+	grid->setRowStretch(2,10);
+	grid->setRowStretch(3,10);
+	grid->setRowStretch(4,10);
+	grid->setRowStretch(5,10);
+	grid->setRowStretch(6,10);
+	grid->setRowStretch(7,0);
+
+	grid->setColStretch(0,0);
+	grid->setColStretch(1,10);
+	grid->setColStretch(2,100);
+	grid->setColStretch(3,100);
+	grid->setColStretch(4,0);
+	
+	ncGroup = new QButtonGroup( this );
+	ncGroup->hide();
+    ncGroup->setExclusive( true );
+
+    rb = new QRadioButton( i18n("&One Color"), group );
+	rb->setFixedHeight( rb->sizeHint().height() );
+    ncGroup->insert( rb, OneColor );
+	
+	grid->addMultiCellWidget( rb, 1, 1, 1, 3 );
 
     colButton1 = new KColorButton( group );
-    colButton1->setGeometry( 15, 25, 75, 30 );
     connect( colButton1, SIGNAL( changed( const QColor & ) ),
 	    SLOT( slotSelectColor1( const QColor & ) ) );
+		
+	grid->addMultiCellWidget( colButton1, 2, 2, 2, 3 );
+
+ 	rb = new QRadioButton( i18n("&Two Color"), group );
+	rb->setFixedHeight( rb->sizeHint().height() );
+    ncGroup->insert( rb, TwoColor );
+    
+	grid->addMultiCellWidget( rb, 3, 3, 1, 3 );
+    
+    connect( ncGroup, SIGNAL( clicked( int ) ), SLOT( slotColorMode( int ) ) );
 
     colButton2 = new KColorButton( group );
-    colButton2->setGeometry( 15, 80, 75, 30 );
     connect( colButton2, SIGNAL( changed( const QColor & ) ),
 	    SLOT( slotSelectColor2( const QColor & ) ) );
+			
+	grid->addMultiCellWidget( colButton2, 4, 4, 2, 3 );
+	
+    stGroup = new QButtonGroup( this );
+    stGroup->hide();
+    stGroup->setExclusive( true );
 
+    rbGradient = new QRadioButton( i18n( "Blen&d" ), group );
+	rbGradient->setFixedHeight( rb->sizeHint().height() );
+    stGroup->insert( rbGradient, Gradient );
+	
+	grid->addWidget( rbGradient, 5, 2 );
+	
+    rbPattern = new QRadioButton( i18n( "&Pattern" ), group );
+	rbPattern->setFixedHeight( rb->sizeHint().height() );
+    stGroup->insert( rbPattern, Pattern );
 
-    gfGroup = new QButtonGroup( this );
-    gfGroup->hide();
-    gfGroup->setExclusive( true );
+	grid->addWidget( rbPattern, 5, 3 );
+	
+    connect( stGroup, SIGNAL( clicked( int ) ), SLOT( slotStyleMode( int ) ) );
 
-    rb = new QRadioButton( klocale->translate("&Flat"), group );
-    rb->setGeometry( 100, 20, 100, 20 );
-    gfGroup->insert( rb, Flat );
+    changeButton = new QPushButton( i18n("Set&up ..."), group );
+	changeButton->setFixedHeight( changeButton->sizeHint().height() );
+	colButton1->setFixedHeight( changeButton->sizeHint().height() );
+	colButton2->setFixedHeight( changeButton->sizeHint().height() );
+    connect(changeButton, SIGNAL(clicked()) , SLOT(slotSetup2Color()) );
+	
+	grid->addMultiCellWidget( changeButton, 6, 6, 2, 3 );
 
-    rb = new QRadioButton( klocale->translate("&Gradient"), group );
-    rb->setGeometry( 100, 40, 100, 20 );
-    gfGroup->insert( rb, Gradient );
-    
-    rb = new QRadioButton( i18n("Pa&ttern"), group );
-    rb->setGeometry( 100, 60, 100, 20);
-    gfGroup->insert( rb, Pattern );
+	topLayout->addWidget( group, 2, 1 );
 
-    connect( gfGroup, SIGNAL( clicked( int ) ), SLOT( slotGradientMode( int ) ) );
+    group = new QGroupBox( i18n("Wallpaper"), this );
 
-    orGroup = new QButtonGroup( this );
-    orGroup->hide();
-    orGroup->setExclusive( true );
+	groupLayout = new QVBoxLayout( group, 10 ); 
+    groupLayout->addSpacing( 10 );
+	groupLayout->addStretch( 5 );
 
-    rbPortrait = new QRadioButton( klocale->translate("&Portrait"), group );
-    rbPortrait->setGeometry( 100, 78, 100, 20 );
-    orGroup->insert( rbPortrait, Portrait );
+    wpGroup = new QButtonGroup( this );
+    wpGroup->hide();
+    wpGroup->setExclusive( true );
 
-    rbLandscape = new QRadioButton( klocale->translate("&Landscape"), group );
-    rbLandscape->setGeometry( 100, 98, 100, 20 );
-    orGroup->insert( rbLandscape, Landscape );
+    rb = new QRadioButton( i18n("Ti&led"), group );
+	rb->setFixedHeight( rb->sizeHint().height() );
+    wpGroup->insert( rb, Tiled );
+	
+	groupLayout->addWidget( rb, 10 );
+	
+    rb = new QRadioButton( i18n("&Centred"), group );
+	rb->setFixedHeight( rb->sizeHint().height() );
+    wpGroup->insert( rb, Centred );
+	
+	groupLayout->addWidget( rb, 10 );
+	
+    rb = new QRadioButton( i18n("&Scaled"), group );
+	rb->setFixedHeight( rb->sizeHint().height() );
+    wpGroup->insert( rb, Scaled );
+	
+	groupLayout->addWidget( rb, 10 );
+	
+    connect( wpGroup, SIGNAL( clicked( int ) ), SLOT( slotWallpaperMode( int ) ) );
 
-    connect( orGroup, SIGNAL( clicked( int ) ), SLOT( slotOrientMode( int ) ) );
-
-    changeButton = new QPushButton( i18n("&Change..."), group );
-    changeButton->setGeometry( 100, 80, 100, 30);
-    changeButton->hide();
-    connect(changeButton, SIGNAL(clicked()) , SLOT(slotChangePattern()) );
-
-    group = new QGroupBox( klocale->translate("Wallpaper"), this );
-    group->setGeometry( 240, 190, 215, 130 );
-
-    QString path = kapp->kde_wallpaperdir().copy();
+	QString path = kapp->kde_wallpaperdir().copy();
     QDir d( path, "*", QDir::Name, QDir::Readable | QDir::Files );
     const QStrList *list = d.entryList();
 
     wpCombo = new QComboBox( group );
-    wpCombo->setGeometry( 15, 20, 190, 25 );
     wpCombo->insertItem( NO_WALLPAPER, 0 );
     wpCombo->setCurrentItem( 0 );
-
+	wpCombo->setFixedHeight( wpCombo->sizeHint().height() );
+	
+	groupLayout->addStretch( 5 );
+	groupLayout->addWidget( wpCombo, 10 );
+	
     QStrListIterator it( *list );
     for ( int i = 1; it.current(); ++it, i++ )
     {
@@ -366,34 +456,23 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
     }
     connect( wpCombo, SIGNAL( activated( const char * ) ),
 		SLOT( slotWallpaper( const char * )  )  );
-
-    wpGroup = new QButtonGroup( this );
-    wpGroup->hide();
-    wpGroup->setExclusive( true );
-
-    rb = new QRadioButton( klocale->translate("Ti&led"), group );
-    rb->setGeometry( 20, 50, 85, 25 );
-    wpGroup->insert( rb, Tiled );
-
-    rb = new QRadioButton( klocale->translate("&Centred"), group );
-    rb->setGeometry( 20, 75, 85, 25 );
-    wpGroup->insert( rb, Centred );
-
-    rb = new QRadioButton( klocale->translate("&Scaled"), group );
-    rb->setGeometry( 20, 100, 85, 25 );
-    wpGroup->insert( rb, Scaled );
-
-    connect( wpGroup, SIGNAL( clicked( int ) ), SLOT( slotWallpaperMode( int ) ) );
-
-    button = new QPushButton( klocale->translate("&Browse..."), group );
-    button->setGeometry( 125, 55, 80, 25 );
+		
+    button = new QPushButton( i18n("&Browse..."), group );
+	button->setFixedHeight( button->sizeHint().height() );
     connect( button, SIGNAL( clicked() ), SLOT( slotBrowse() ) );
 
-    button = new QPushButton( klocale->translate("&Help"), group );
-    button->setGeometry( 125, 90, 80, 25 );
-    connect( button, SIGNAL( clicked() ), SLOT( slotHelp() ) );
+	groupLayout->addWidget( button, 10 );
+
+	topLayout->addWidget( group, 2, 2 );
+	topLayout->activate();
     
     showSettings();
+}
+
+void KBackground::resizeEvent( QResizeEvent * )
+{
+	monitor->setGeometry( (monitorLabel->width()-200)/2+20,
+		(monitorLabel->height()-160)/2+10, 157, 111 );
 }
 
 void KBackground::readSettings( int num )
@@ -418,14 +497,18 @@ void KBackground::readSettings( int num )
     else
 	color2 = gray;
     
-    gfMode=Flat;
+    ncMode=OneColor;
+	stMode=Gradient;
     str = config->readEntry( "ColorMode" );
     if ( !str.isNull() )
 	{
-	    if ( str == "Gradient" )
-		gfMode = Gradient;
-	    else if (str == "Pattern")
-		gfMode = Pattern;
+	    if ( str == "Gradient" ) {
+			ncMode = TwoColor;
+			stMode = Gradient;
+	    } else if (str == "Pattern") {
+			ncMode = TwoColor;
+			stMode = Pattern;
+		}
 	}
 
     QStrList strl;
@@ -460,12 +543,13 @@ void KBackground::readSettings( int num )
 
 void KBackground::writeSettings( int num )
 {
-        if ( !changed )
-	    return;
+        if ( !changed ) {
+			return;
+		}
 
 	char group[80];
 	sprintf( group, "Desktop%d", num + 1 );
-
+	
 	KConfig *config = kapp->getConfig();
 	config->setGroup( group );
 	
@@ -492,19 +576,13 @@ void KBackground::writeSettings( int num )
 			break;
 	}
 	
-	switch ( gfMode )
-	{
-		case Flat:
-			config->writeEntry( "ColorMode", "Flat" );
-			break;
-		case Gradient:
-			config->writeEntry( "ColorMode", "Gradient" );
-			break;
-       	        case Pattern:
-		        config->writeEntry( "ColorMode", "Pattern" );
-			break;
-	    
-	}
+	if ( ncMode == OneColor ) {
+		config->writeEntry( "ColorMode", "Flat" );
+	} else if ( ncMode == TwoColor && stMode == Gradient ) {
+		config->writeEntry( "ColorMode", "Gradient" );		
+	} else if ( ncMode == TwoColor && stMode == Pattern ) {
+		config->writeEntry( "ColorMode", "Pattern" );
+	} else printf("ColorMode not changed\n");
 	
 	QStrList strl( true ); // deep copies
 	for (uint i = 0; i < 8 ; i++) {
@@ -546,7 +624,7 @@ void KBackground::getDeskNameList()
 	    deskListBox->insertItem( KWM::getDesktopName(i+1) );
     }
     else
-       deskListBox->insertItem( klocale->translate( "Default" ) );
+       deskListBox->insertItem( i18n( "Default" ) );
     
     deskListBox->setCurrentItem( current );
     deskListBox->setUpdatesEnabled( true );
@@ -569,21 +647,19 @@ void KBackground::setDesktop( int desk )
 
     readSettings( deskNum );
     showSettings();
-    debug( "Change to desk: %d", deskNum );
 }
 
 void KBackground::showSettings()
 { 
     colButton1->setColor( color1 );
     colButton2->setColor( color2 );
-    ((QRadioButton *)gfGroup->find( Flat ))->setChecked( gfMode == Flat );
-    ((QRadioButton *)gfGroup->find( Gradient ))->setChecked(gfMode == Gradient);
-    ((QRadioButton *)gfGroup->find( Pattern ))->setChecked(gfMode == Pattern);
+    ((QRadioButton *)ncGroup->find( OneColor ))->setChecked( ncMode == OneColor );
+    ((QRadioButton *)ncGroup->find( TwoColor ))->setChecked( ncMode == TwoColor);
 
-    slotGradientMode( gfMode );
+    slotColorMode( ncMode );
 
-    ((QRadioButton *)orGroup->find( Portrait ))->setChecked( orMode==Portrait );
-    ((QRadioButton *)orGroup->find( Landscape ))->setChecked(orMode==Landscape);
+    ((QRadioButton *)stGroup->find( Gradient ))->setChecked( stMode==Gradient );
+    ((QRadioButton *)stGroup->find( Pattern ))->setChecked( stMode==Pattern );
 
     wpCombo->setCurrentItem( 0 );
     for ( int i = 1; i < wpCombo->count(); i++ )
@@ -643,36 +719,32 @@ void KBackground::setMonitor()
     matrix.scale( sx, sy );
 
     
-    if ( wpPixmap.isNull() || wpMode == Centred) {
+    if ( wpPixmap.isNull() || wpMode == Centred || wallpaper == NO_WALLPAPER) {
 
-	GPixmap preview;
+	KPixmap preview;
 	preview.resize( monitor->width()+1, monitor->height()+1 );
 	
-	switch ( gfMode ) {
-	    
-	case Gradient:
-	    
-	    if( orMode == Portrait ) 
-		preview.gradientFill( color2, color1, true, 3 );
+	if ( ncMode == OneColor ) {
+		preview.fill( color1 );
+	} else if ( ncMode == TwoColor && stMode == Gradient ) {
+		
+		if( orMode == Portrait ) 
+			preview.gradientFill( color2, color1, true );
 	    else
-		preview.gradientFill( color2, color1, false, 3 );
-	    
-	    break;
-	    
-	case Flat:
-	    preview.flatFill( color1 );
-	    break;
-	    
-	case Pattern:
-	    preview.patternFill(color1, color2, pattern);
-	    break;
+			preview.gradientFill( color2, color1, false );
+			
+	} else if ( ncMode == TwoColor && stMode == Pattern ) {
+		preview.patternFill(color1, color2, pattern);
 	}
+	
+	if ( wpMode == Centred && wallpaper != NO_WALLPAPER ) {
+		QPixmap tmp = wpPixmap.xForm( matrix );
 
-	QPixmap tmp = wpPixmap.xForm( matrix );
-
-	bitBlt( &preview, (preview.width() - tmp.width())/2,
-		(preview.height() - tmp.height())/2, &tmp,
-		0, 0, tmp.width(), tmp.height() );
+		bitBlt( &preview, (preview.width() - tmp.width())/2,
+			(preview.height() - tmp.height())/2, &tmp,
+			0, 0, tmp.width(), tmp.height() );
+	}
+	
 	monitor->setBackgroundPixmap( preview );
 
     } else if ( !wpPixmap.isNull() ) 
@@ -690,7 +762,7 @@ int KBackground::loadWallpaper( const char *name, bool useContext )
 	static int context = 0;
 	QString filename;
 	int rv = false;
-	QPixmap tmp;
+	KPixmap tmp;
 
 	QApplication::setOverrideCursor( waitCursor );
 
@@ -710,7 +782,7 @@ int KBackground::loadWallpaper( const char *name, bool useContext )
 	else
 	    filename = name;
 	
-	if ( tmp.load( filename ) == true )
+	if ( tmp.load( filename, 0, KPixmap::LowColor ) == true )
 	{
 		int w = QApplication::desktop()->width();
 		int h = QApplication::desktop()->height();
@@ -748,7 +820,7 @@ void KBackground::slotSelectColor1( const QColor &col )
 {
 	color1 = col;
 
-	if ( gfMode == Gradient || wpMode == Centred || wallpaper == NO_WALLPAPER )
+	if ( ncMode == Gradient || wpMode == Centred || wallpaper == NO_WALLPAPER )
 	{
 		// force the background to be made with different background
 		if ( wpMode == Centred )
@@ -763,7 +835,7 @@ void KBackground::slotSelectColor2( const QColor &col )
 {
 	color2 = col;
 
-	if ( gfMode == Gradient || wpMode == Centred || wallpaper == NO_WALLPAPER )
+	if ( ncMode == Gradient || wpMode == Centred || wallpaper == NO_WALLPAPER )
 	{
 		setMonitor();
 	}
@@ -826,34 +898,26 @@ void KBackground::slotWallpaperMode( int m )
 	}
 }
 
-void KBackground::slotGradientMode( int m )
+void KBackground::slotColorMode( int m )
 {
-	gfMode = m;
+	ncMode = m;
 
-	switch ( gfMode ) {
+	switch ( ncMode ) {
 
-	case Flat:
+	case OneColor:
 	    
-	    rbLandscape->hide();
-	    rbPortrait->hide();
-	    colButton2->hide();
-	    changeButton->hide();
+	    rbPattern->setEnabled( False );
+	    rbGradient->setEnabled( False );
+	    colButton2->setEnabled( False );
+	    changeButton->setEnabled( False );
 	    break;
-
-	case Gradient:
+	
+	default:
 	    
-	    rbLandscape->show();
-	    rbPortrait->show();
-	    colButton2->show();
-	    changeButton->hide();
-	    break;
-	    
-	case Pattern:
-	    
-	    rbLandscape->hide();
-	    rbPortrait->hide();
-	    colButton2->show();
-	    changeButton->show();
+	    rbPattern->setEnabled( True );
+	    rbGradient->setEnabled( True );
+	    colButton2->setEnabled( True );
+	    changeButton->setEnabled( True );
 	    break;
 	}
 
@@ -861,18 +925,18 @@ void KBackground::slotGradientMode( int m )
 	changed = true;
 }
 
-void KBackground::slotChangePattern()
+void KBackground::slotSetup2Color()
 {
-    KBPatternDlg dlg(color1, color2, pattern, this);
+    KBPatternDlg dlg(color1, color2, pattern, &orMode, this);
     if (dlg.exec()) {
 	setMonitor();
 	changed = true;
     } 
 }
 
-void KBackground::slotOrientMode( int m )
+void KBackground::slotStyleMode( int m )
 {
-    orMode = m;
+    stMode = m;
     setMonitor();
     changed = true;
 }
@@ -886,7 +950,7 @@ void KBackground::slotRenameDesk()
 {
     KRenameDeskDlg dlg( KWM::getDesktopName( deskNum+1 ), this );
 
-    dlg.setCaption( klocale->translate( "Desktop Title" ) );
+    dlg.setCaption( i18n( "Desktop names" ) );
 
     if ( dlg.exec() == QDialog::Accepted )
     {
@@ -913,14 +977,17 @@ void KBackground::applySettings()
 }
 
 
-KBPatternDlg::KBPatternDlg( QColor col1, QColor col2, uint *p, 
+KBPatternDlg::KBPatternDlg( QColor col1, QColor col2, uint *p, int *mode,
 			    QWidget *parent, char *name)
     : QDialog( parent, name, true)
 {
     int i;
     pattern = p;
+	orMode = mode;
     color1 = col1; 
     color2 = col2;
+	
+	setCaption( i18n( "Two color background setup" ) );
 
     KConfig *config = kapp->getConfig();
     QString group = config->group();
@@ -950,40 +1017,81 @@ KBPatternDlg::KBPatternDlg( QColor col1, QColor col2, uint *p,
 	list.append(entry);
     }
 
-    QVBoxLayout *toplevelHL = new QVBoxLayout(this, 14, 15);
-    QHBoxLayout *topHL = new QHBoxLayout(9);
-    QHBoxLayout *buttonHL = new QHBoxLayout(10);
+    QVBoxLayout *toplevelHL = new QVBoxLayout(this, 10);
+    QGridLayout *grid = new QGridLayout( 4, 4, 5);
     
-    toplevelHL->addLayout(topHL, 3);
-    toplevelHL->addLayout(buttonHL, 0);
+    toplevelHL->addLayout( grid );
+	
+	grid->setRowStretch(0,0);
+	grid->setRowStretch(1,10);
+	grid->setRowStretch(2,10);
+	grid->setRowStretch(3,0);
+	
+	grid->setColStretch(0,0);
+	grid->setColStretch(1,10);
+	grid->setColStretch(2,10);
+	grid->setColStretch(3,0);
     
+	QLabel *label = new QLabel( this );
+	label->setText( i18n( "Pattern name" ) );
+	label->setMinimumSize( label->sizeHint() );
+	
+	grid->addWidget( label, 1, 1 );
+	
+	
+	label = new QLabel( this );
+	label->setText( i18n( "Preview" ) );
+	label->setMinimumSize( label->sizeHint() );
+	
+	grid->addWidget( label, 1, 2 );
+	
     listBox = new QListBox( this );
     connect(listBox, SIGNAL(highlighted(const char*)), 
 	    SLOT(selected(const char*)));
-    topHL->addWidget(listBox);
+    
+	grid->addWidget( listBox, 2, 1);
     
     preview = new QLabel( this );
     preview->adjustSize();
-    preview->setFrameStyle( QFrame::Panel | QFrame::Raised );
-    preview->setFixedSize( 120, 120);
-    topHL->addWidget(preview);
-    listBox->setMaximumHeight(preview->height());
+    preview->setFrameStyle( QFrame::Panel | QFrame::Sunken );
+	preview->setLineWidth( 1 );
+	preview->setMargin( 0 );
+    preview->setFixedSize( 120, 120 );
     
-    QPushButton *okPB = new QPushButton( i18n("OK"), this);
-    connect(okPB, SIGNAL(clicked()), SLOT(accept()));
-    okPB->adjustSize();
-    okPB->setFixedHeight(okPB->height());
-    okPB->setMinimumSize(okPB->size());
+	grid->addWidget( preview, 2, 2 );
     
-    buttonHL->addStretch(3);
-    buttonHL->addWidget(okPB);
-    
-    QPushButton *cancelPB = new QPushButton( i18n("Cancel"), this);
-    cancelPB->adjustSize();
-    cancelPB->setFixedHeight(cancelPB->height());
-    cancelPB->setMinimumSize(cancelPB->size());
-    connect(cancelPB, SIGNAL(clicked()), SLOT(reject()));
-    buttonHL->addWidget(cancelPB);
+	listBox->setMaximumHeight( preview->height() );
+	
+	orientCB = new QCheckBox( i18n("&Blend colors from right to left"), this );
+	orientCB->setFixedHeight( orientCB->sizeHint().height() );
+	if( *orMode == KBackground::Landscape ) {
+		orientCB->setChecked( True );
+	} else {
+		orientCB->setChecked( False );
+	}
+	
+	toplevelHL->addWidget( orientCB );
+   
+   	QFrame* tmpQFrame;
+	tmpQFrame = new QFrame( this );
+	tmpQFrame->setFrameStyle( QFrame::HLine | QFrame::Sunken );
+	tmpQFrame->setMinimumHeight( tmpQFrame->sizeHint().height() );
+	
+	toplevelHL->addWidget( tmpQFrame );
+   
+	KButtonBox *bbox = new KButtonBox( this );
+	bbox->addStretch( 10 );
+	
+	QPushButton* okPB;
+	okPB = bbox->addButton( i18n("OK") );
+	connect( okPB, SIGNAL(clicked()), SLOT( accept()) );
+	
+	QPushButton* cancelPB;
+	cancelPB = bbox->addButton( i18n("Cancel") );
+	connect( cancelPB, SIGNAL(clicked()), SLOT( reject()) );
+	
+	bbox->layout();
+	toplevelHL->addWidget( bbox );
 
     current = new PatternEntry( i18n("Current"), p);
     bool predefined = false;
@@ -1044,8 +1152,8 @@ void KBPatternDlg::selected( const char *selected)
 {
     for ( PatternEntry *item=list.first(); item != 0; item=list.next() )
 	if (*item == selected) {
-	    GPixmap tmp;
-	    tmp.resize(preview->width() + 1, preview->height() + 1);
+	    KPixmap tmp;
+	    tmp.resize(preview->width() + 2, preview->height() + 2);
 	    tmp.patternFill( color1, color2, item->pattern);
 	    preview->setPixmap(tmp);
 	    current = item;
@@ -1056,14 +1164,24 @@ void KBPatternDlg::selected( const char *selected)
 void KBPatternDlg::done( int r ) 
 {
     hide();
-    
-    if (r == Rejected || *current == pattern) {
-	setResult(Rejected);
-	return;
+	
+	int orient;
+	
+	if( orientCB->isChecked() ) {
+		orient = KBackground::Landscape;
+	} else {
+		orient = KBackground::Portrait;
+	}
+	    
+    if ( r == Rejected || ( *current == pattern && *orMode == orient ) ) {
+		setResult(Rejected);
+		return;
     }
+	
+	*orMode = orient;
     
-    for (uint i = 0; i < 8; i++)
-	pattern[i] = current->pattern[i];
+	for (uint i = 0; i < 8; i++)
+		pattern[i] = current->pattern[i];
 
     setResult(Accepted);
     
