@@ -412,7 +412,10 @@ void PMenuItem::writeConfig( QDir dir )
       }
     kconfig.writeEntry("Exec", command_name );
     kconfig.writeEntry("Path", exec_path );
-    kconfig.writeEntry("Terminal", use_term );
+    if( use_term )
+      kconfig.writeEntry("Terminal", 1 );
+    else
+      kconfig.writeEntry("Terminal", 0 );
     kconfig.writeEntry("BinaryPattern", pattern);
     kconfig.writeEntry("Protocols", protocols);
     kconfig.writeEntry("MimeType", extensions);
