@@ -4,225 +4,224 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-04-20 01:17+0200\n"
-"PO-Revision-Date: 1998-12-22 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit\n"    
 
-#: backgnd.cpp:55
+#: backgnd.cpp:54
 msgid "Enter new desktop name"
-msgstr "Unesi ime radne povr¹ine"
+msgstr "Unesite ime radne povr¹ine"
 
-#: backgnd.cpp:111 backgnd.cpp:164
+#: backgnd.cpp:110 backgnd.cpp:162
 msgid "Desktop"
 msgstr "Radna povr¹ina"
 
-#: backgnd.cpp:186
+#: backgnd.cpp:184
 msgid "&Rename ..."
 msgstr "&Promijeni ime ..."
 
-#: backgnd.cpp:197
+#: backgnd.cpp:195
 msgid "&Common Background"
-msgstr "&Ista pozadina svugdje"
+msgstr "&Ista pozadina"
 
-#: backgnd.cpp:225 colorscm.cpp:82
+#: backgnd.cpp:223 colorscm.cpp:82
 msgid "Colors"
-msgstr "Boje"
+msgstr "Boja/e pozadine"
 
-#: backgnd.cpp:252
+#: backgnd.cpp:250
 msgid "&One Color"
 msgstr "&Jedna Boja"
 
-#: backgnd.cpp:269
+#: backgnd.cpp:267
 msgid "&Two Color"
 msgstr "&Dvije Boje"
 
-#: backgnd.cpp:288
+#: backgnd.cpp:286
 msgid "Set&up ..."
 msgstr "&Podesi..."
 
-#: backgnd.cpp:297
+#: backgnd.cpp:295
 msgid "Wallpaper"
 msgstr "Pozadinska slika"
 
-#: backgnd.cpp:328 backgnd.cpp:1213 backgnd.cpp:1378 backgnd.cpp:1917
+#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1218
+#: backgnd.cpp:1372 backgnd.cpp:1910
 msgid "No wallpaper"
 msgstr "Nema pozadinske slike"
 
-#: backgnd.cpp:361
+#: backgnd.cpp:359
 msgid "&Browse..."
 msgstr "Po&tra¾i..."
 
-#: backgnd.cpp:369
+#: backgnd.cpp:367
 msgid "Arrangement:"
 msgstr "Raspored:"
 
-#: backgnd.cpp:376
+#: backgnd.cpp:374
 msgid "Tiled"
-msgstr "Poploèano"
+msgstr "Poploèano s vrha prema dolje"
 
-#: backgnd.cpp:377
+#: backgnd.cpp:375
 msgid "Mirrored"
 msgstr "Zrcaljeno"
 
-#: backgnd.cpp:378
+#: backgnd.cpp:376
 msgid "Center Tiled"
-msgstr "Poploèano od centra"
+msgstr "Poploèano od centra uokolo"
+
+#: backgnd.cpp:377
+msgid "Centred"
+msgstr "Centrirano"
+
+#: backgnd.cpp:378
+msgid "Centred Brick"
+msgstr "Centrirano sa ciglama uokolo"
 
 #: backgnd.cpp:379
-msgid "Centred"
-msgstr "Slika se nalazi u centru"
+msgid "Centred Warp"
+msgstr "Centrirano sa warpom"
 
 #: backgnd.cpp:380
-msgid "Centred Brick"
-msgstr "Slika u centru sa ciglama uokolo"
-
-#: backgnd.cpp:381
-msgid "Centred Warp"
-msgstr "Centrirano / Warp"
-
-#: backgnd.cpp:382
 msgid "Centred Maxpect"
 msgstr "Centrirano uveæano"
 
-#: backgnd.cpp:383
+#: backgnd.cpp:381
 msgid "Symmetrical Tiled"
 msgstr "Simetrièki poploèano"
 
-#: backgnd.cpp:384
+#: backgnd.cpp:382
 msgid "Symmetrical Mirrored"
 msgstr "Simetrièki zrcaljeno"
 
-#: backgnd.cpp:385
+#: backgnd.cpp:383
 msgid "Scaled"
-msgstr "Razvuèeno"
+msgstr "U mjerilu"
 
-#: backgnd.cpp:400
+#: backgnd.cpp:398
 msgid "Ra&ndom"
 msgstr "Nasu&mièno"
 
-#: backgnd.cpp:409
+#: backgnd.cpp:407
 msgid "Setu&p..."
-msgstr "&Postavke..."
+msgstr "Posta&vke..."
 
-#: backgnd.cpp:419
+#: backgnd.cpp:417
 msgid "&Dock into the panel"
 msgstr "P&ristani na ploèu"
 
-#: backgnd.cpp:444
+#: backgnd.cpp:442
 msgid "Cache size (kB):"
 msgstr "Velièina predmemorije (kB):"
 
-#: backgnd.cpp:1345
+#: backgnd.cpp:1339
 msgid "Desktop names"
 msgstr "Imena radnih povr¹ina"
 
-#: backgnd.cpp:1390
+#: backgnd.cpp:1384
 msgid "File error"
 msgstr "Gre¹ka na datoteci"
 
-#: backgnd.cpp:1391
+#: backgnd.cpp:1385
 msgid "Can't load image file"
-msgstr "Ne mogu uèitati sliku"
+msgstr "Ne mogu uèitati datoteku"
 
-#: backgnd.cpp:1414 backgnd.cpp:1887
+#: backgnd.cpp:1408 backgnd.cpp:1880
 msgid "Unsupported URL"
-msgstr "URL nije podr¾an"
+msgstr "Nepodr¾ani URL"
 
-#: backgnd.cpp:1415 backgnd.cpp:1888
+#: backgnd.cpp:1409 backgnd.cpp:1881
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
-"®alim, ova vrsta URLa trenutno nije podr¾ana od strane KDE Display modula"
+"®alim, aova vrsta URLa trenutno nije podr¾ana od strane KDE prikazivaèa"
 
-#: backgnd.cpp:1447
+#: backgnd.cpp:1440
 msgid "Two color backgrounds"
 msgstr "Pozadina sa dvije boje"
 
-#: backgnd.cpp:1484
+#: backgnd.cpp:1477
 msgid "Blend colors from &top to bottom"
-msgstr "Mje¹aj boje s &vrha prema dnu"
+msgstr "Mije¹aj boje s &vrha prema dnu"
 
-#: backgnd.cpp:1490
+#: backgnd.cpp:1483
 msgid "Blend colors from &right to left"
-msgstr "Mje¹aj boje s &desna na lijevo"
+msgstr "Mije¹aj boje s &desna na lijevo"
 
-#: backgnd.cpp:1496
+#: backgnd.cpp:1489
 msgid "Use &pattern"
-msgstr "Koristi &Uzorak"
+msgstr "Koristi &uzorak"
 
-#: backgnd.cpp:1523
+#: backgnd.cpp:1516
 msgid "Preview"
 msgstr "Pregled"
 
-#: backgnd.cpp:1534
+#: backgnd.cpp:1527
 msgid "Pattern &name"
 msgstr "&Ime uzorka"
 
-#: backgnd.cpp:1573
+#: backgnd.cpp:1566
 msgid "Current"
 msgstr "Tekuæi"
 
-#: backgnd.cpp:1633
+#: backgnd.cpp:1626
 msgid "Filled"
 msgstr "Popunjeno"
 
-#: backgnd.cpp:1636
+#: backgnd.cpp:1629
 msgid "Fish net"
 msgstr "Ribarska mre¾a"
 
-#: backgnd.cpp:1639
+#: backgnd.cpp:1632
 msgid "Triangles"
 msgstr "Trokuti"
 
-#: backgnd.cpp:1642
+#: backgnd.cpp:1635
 msgid "Flowers"
 msgstr "Cvijeæe"
 
-#: backgnd.cpp:1645
+#: backgnd.cpp:1638
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1648
+#: backgnd.cpp:1641
 msgid "Cobbled Pavement"
-msgstr "Ploènik"
+msgstr "Pokrpani ploènik"
 
-#: backgnd.cpp:1714
+#: backgnd.cpp:1707
 msgid "Random mode setup"
 msgstr ""
 
-#: backgnd.cpp:1720
+#: backgnd.cpp:1713
 msgid "Pick files from &directory"
 msgstr "Izaberi datoteke iz &direktorija"
 
-#: backgnd.cpp:1734
+#: backgnd.cpp:1727
 msgid "&Browse ..."
 msgstr "Po&tra¾i..."
 
-#: backgnd.cpp:1755
+#: backgnd.cpp:1748
 msgid "Timer Delay in seconds :"
-msgstr "Ka¹njenje alarma u sekundama :"
+msgstr "Vremensko ka¹njenje u sekundama :"
 
-#: backgnd.cpp:1767
+#: backgnd.cpp:1760
 msgid "In &order"
 msgstr "P&oredano"
 
-#: backgnd.cpp:1784
+#: backgnd.cpp:1777
 msgid "Desktops :"
-msgstr "Radne povr¹ine:"
+msgstr "Radne povr¹ine :"
 
-#: backgnd.cpp:1823
+#: backgnd.cpp:1816
 msgid "&Add"
 msgstr "&Dodaj"
 
-#: backgnd.cpp:1995
+#: backgnd.cpp:1987
 msgid "Directory error"
 msgstr "Gre¹ka na direktoriju"
 
-#: backgnd.cpp:1996
+#: backgnd.cpp:1988
 msgid "Selected directory doesn't exists"
 msgstr "Izabrani direktorij ne postoji"
 
@@ -284,7 +283,7 @@ msgstr "Tekst"
 
 #: colorscm.cpp:176
 msgid "Select background"
-msgstr "Boja izabrane pozadine"
+msgstr "Boja izabranog"
 
 #: colorscm.cpp:177
 msgid "Select text"
@@ -308,7 +307,7 @@ msgstr "&Nizak"
 
 #: colorscm.cpp:231
 msgid "High"
-msgstr "Visok"
+msgstr "Visoki"
 
 #: colorscm.cpp:304
 msgid "Error removing"
@@ -321,8 +320,8 @@ msgid ""
 "system where the color scheme is stored."
 msgstr ""
 "Nisam mogao ukloniti ovaj raspored boja.\n"
-"Mo¾da nema¹ privilegije da mijenja¹ datoteèni\n"
-"sustav na kojem je raspored boja spremljen."
+"Mo¾da ne posjedujete privilegije za mijenjanje datoteènog\n"
+"sustava (filesystem) na kojem je raspored boja spremljen."  
 
 #: colorscm.cpp:362
 msgid "Naming error"
@@ -334,9 +333,9 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
-"Molim izaberite jedinstveno ime za novi raspored\n"
-"boja. Ime koje ste unijeli veæ postoji na popisu\n"
-"rasporeda boja."
+"Molim unesite jedinstveno ime za novi raspored\n"
+"boja. Ime koje ste unijeli se nalazi na popisu\n"
+"postojeæih rasporeda boja."
 
 #: savescm.cpp:18
 msgid "Add a color scheme"
@@ -366,13 +365,13 @@ msgstr "Spremi zaslon"
 
 #: scrnsave.cpp:49
 msgid "Lock Screen"
-msgstr "Zakljuèaj zaslon (screen)"
+msgstr "Zakljuèaj zaslon"
 
 #: scrnsave.cpp:112 scrnsave.cpp:181
 msgid "Screen Saver"
 msgstr "Za¹tita zaslona"
 
-#: scrnsave.cpp:188 scrnsave.cpp:382 scrnsave.cpp:623 scrnsave.cpp:744
+#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:605 scrnsave.cpp:726
 msgid "No screensaver"
 msgstr "Nema za¹tite zaslona (screensaver)"
 
@@ -382,7 +381,7 @@ msgstr "&Podesi..."
 
 #: scrnsave.cpp:217
 msgid "&Test"
-msgstr "&Isku¹aj"
+msgstr "&Proba"
 
 #: scrnsave.cpp:230
 msgid "Settings"
@@ -390,7 +389,7 @@ msgstr "Postavke"
 
 #: scrnsave.cpp:250
 msgid "&Wait for"
-msgstr "Èe&kaj "
+msgstr "Èe&kaj za"
 
 #: scrnsave.cpp:260
 msgid "min."
@@ -398,69 +397,73 @@ msgstr "min."
 
 #: scrnsave.cpp:266
 msgid "&Require password"
-msgstr "&Zahtjevaj lozinku"
+msgstr "&Zatra¾i lozinku"
 
 #: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
-msgstr "Dozvoli admin. lozinku za otkljuèavanje"
+msgstr "&Korijenska (root) lozinku otkljuèava"
 
-#: scrnsave.cpp:280
+#: scrnsave.cpp:278
 msgid "Show &password as stars"
 msgstr "Prika¾i &lozinku kao zvjezdice"
 
-#: scrnsave.cpp:288
+#: scrnsave.cpp:286
 msgid "Priority"
-msgstr "Prioritet"
+msgstr "Prioritet:"
 
-#: scrnsave.cpp:301
+#: scrnsave.cpp:299
 msgid "&High"
 msgstr "&Visok"
 
-#: scrnsave.cpp:310
+#: scrnsave.cpp:308
 msgid "Low"
 msgstr "Nizak"
 
-#: general.cpp:221
-msgid "Style"
-msgstr "Stil"
+#: general.cpp:222
+msgid "Fonts etc."
+msgstr "Pisma itd."
 
-#: general.cpp:229
+#: general.cpp:230
 msgid "&Draw widgets in the style of Windows 95"
-msgstr "&Crtaj widgete u stilu Windowsa 95"
+msgstr "&Crtaj widgete u Windows 95 stilu"
 
-#: general.cpp:245
+#: general.cpp:244
+msgid "&Apply style to non-KDE apps"
+msgstr "Primjeni stil na ne-KDE programe"
+
+#: general.cpp:258
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr "&Traka izbornika nalazi se na vrhu u stilu MacOSa"
+msgstr "Stavi &izbornik na vrh zaslona u stilu Macintosha"
 
-#: general.cpp:259
-msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "&Primjeni pisma i boje i na ne-KDE programe"
+#: general.cpp:273
+msgid "Desktop fonts"
+msgstr "Pisma radne povr¹ine"
 
-#: general.cpp:529
+#: general.cpp:285
 msgid "General font"
 msgstr "Opæenito pismo"
 
-#: general.cpp:534
+#: general.cpp:290
 msgid "Fixed font"
 msgstr "Jednoliko pismo"
 
-#: general.cpp:540
+#: general.cpp:296
 msgid "Window title font"
-msgstr "Pismo na naslovu prozora"
+msgstr "Pismo imena prozora"
 
-#: general.cpp:545
+#: general.cpp:301
 msgid "Panel button font"
-msgstr "Pismo gumbi na ploèi"
+msgstr "Pismo za gumbe na ploèi"
 
-#: general.cpp:550
+#: general.cpp:306
 msgid "Panel clock font"
 msgstr "Pismo sata na ploèi"
 
-#: general.cpp:580
+#: general.cpp:336
 msgid "Sample text"
 msgstr "Ogledni tekst"
 
-#: general.cpp:588
+#: general.cpp:344
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
@@ -468,31 +471,29 @@ msgid ""
 msgstr ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
-"0 1 2 3 4 5 6 7 8 9   è æ ¹ È © & * ( )"
+"0 1 2 3 4 5 6 7 8 9  ! \" £ $  æ ¹ ð © è ¾"
 
-#: main.cpp:64
+#: main.cpp:63
 msgid "&Background"
-msgstr "&Pozadina"
+msgstr "Po&zadina"
 
-#: main.cpp:67
+#: main.cpp:66
 msgid "&Screensaver"
 msgstr "&Za¹tita zaslona"
 
-#: main.cpp:71
+#: main.cpp:70
 msgid "&Colors"
 msgstr "&Boje"
 
-#: main.cpp:77
-msgid "&Style"
-msgstr "&Stil"
+#: main.cpp:73
+msgid "&Fonts etc."
+msgstr "P&isma itd."
 
-#: main.cpp:83
-msgid ""
-"usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
-msgstr ""
-"uporaba: kcmdisplay [-init | {pozadina,za¹tita zaslona,boje,pisma,stil}]\n"
+#: main.cpp:79
+msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr "uporaba: kcmdisplay [-init | {pozadina,za¹tita zaslona,boje,stil}]\n"
 
-#: main.cpp:150
+#: main.cpp:140
 msgid "Display settings"
 msgstr "Pode¹avanje prikaza"
 
@@ -502,7 +503,7 @@ msgstr "Neaktivan prozor"
 
 #: widgetcanvas.cpp:132 widgetcanvas.cpp:133
 msgid "Active window"
-msgstr "Aktivan prozor"
+msgstr "Aktivni prozor"
 
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
 msgid "Selected text"
@@ -510,11 +511,11 @@ msgstr "Boja oznaèenog teksta"
 
 #: widgetcanvas.cpp:212
 msgid "New"
-msgstr "Novo"
+msgstr "Novi"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
-msgstr "&Pismo"
+msgstr ""
 
 #: fontchooser.cpp:89
 msgid "&Bold"
@@ -530,7 +531,7 @@ msgstr "&Velièina"
 
 #: fontchooser.cpp:147
 msgid "&Character set"
-msgstr "&Znakovni skup"
+msgstr "Skup &znakova"
 
 #: fontchooser.cpp:262
 msgid "default"

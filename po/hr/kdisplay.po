@@ -101,7 +101,7 @@ msgstr "U mjerilu"
 
 #: backgnd.cpp:398
 msgid "Ra&ndom"
-msgstr "S&luèajno"
+msgstr "Nasu&mièno"
 
 #: backgnd.cpp:407
 msgid "Setu&p..."
@@ -121,7 +121,7 @@ msgstr "Imena radnih povr¹ina"
 
 #: backgnd.cpp:1384
 msgid "File error"
-msgstr ""
+msgstr "Gre¹ka na datoteci"
 
 #: backgnd.cpp:1385
 msgid "Can't load image file"
@@ -219,7 +219,7 @@ msgstr "&Dodaj"
 
 #: backgnd.cpp:1987
 msgid "Directory error"
-msgstr ""
+msgstr "Gre¹ka na direktoriju"
 
 #: backgnd.cpp:1988
 msgid "Selected directory doesn't exists"
@@ -319,6 +319,9 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the color scheme is stored."
 msgstr ""
+"Nisam mogao ukloniti ovaj raspored boja.\n"
+"Mo¾da ne posjedujete privilegije za mijenjanje datoteènog\n"
+"sustava (filesystem) na kojem je raspored boja spremljen."  
 
 #: colorscm.cpp:362
 msgid "Naming error"
@@ -346,6 +349,11 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
+"&Unesite ime novog rasporeda boja\n"
+"koji æe biti spremljen na va¹u osobnu listu.\n"
+"\n"
+"Boje koje se trenutno koriste za pregled biti\n"
+"æe iskopirane u novi raspored boja."
 
 #: scrnsave.cpp:47
 msgid "Ignore"
@@ -353,7 +361,7 @@ msgstr "Ignoriraj"
 
 #: scrnsave.cpp:48
 msgid "Save Screen"
-msgstr ""
+msgstr "Spremi zaslon"
 
 #: scrnsave.cpp:49
 msgid "Lock Screen"
@@ -527,7 +535,7 @@ msgstr "Skup &znakova"
 
 #: fontchooser.cpp:262
 msgid "default"
-msgstr "podrazumjevano"
+msgstr "uobièajeno"
 
 #: fontchooser.cpp:265
 msgid "any"
