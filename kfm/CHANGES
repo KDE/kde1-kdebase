@@ -121,4 +121,9 @@
  - Added dialog for proxy settings.
  - Modified KProtocolHTTP to read its proxy settings from kfmrc.
    The enviroment variable http_proxy is no longer used!
+
+06.01.97 Stephan
  
+ - replaced some << constructs with the new function ksprintf
+ - fixed a bug in the passwd dialog
+
