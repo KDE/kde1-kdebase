@@ -126,18 +126,20 @@ int processDir( const char *dirName, QTextStream &stream )
 		filename += "/";
 		filename += itDir.current();
 
+		stream << "<blockquote>";
 		if ( readEntries( filename, list ) > 0 )
 		{
 			stream << "<h2>" << itDir.current() << "</h2>" << endl;
-			stream << "<dl>" << endl;
+			stream << "<dl>";
 			for ( Entry *entry = list.first(); entry; entry = list.next() )
 				entry->writeHTML( stream );
-			stream << "</dl>" << endl;
+			stream << "</dl>";
 		}
 
 		list.clear();
 
 		processDir( filename, stream );
+		stream << "</blockquote>" << endl;
 	}
 
 	return TRUE;
