@@ -9,6 +9,8 @@ Name[fr]=Poubelle
 Name[it]=Cestino
 Name[cs]=Ko¹
 Name[sk]=Kô¹
+Name[pt]=Lixo
+Name[pt_BR]=Lixo
 Comment=Contains removed files 
 Comment[es]=Contiene los archivos suprimidos
 Comment[fr]=La poubelle contient les fichiers détruits
@@ -19,3 +21,6 @@ Comment[fi]=Sisältää poistetut tiedostot
 Comment[it]=Questa Cartella contiene i file da cancellare
 Comment[cs]=Obsahuje smazané soubory
 Comment[sk]=Obsahuje zmazané súbory
+Comment[pt]=Contém ficheiros apagados
+Comment[pt_BR]=Contém ficheiros apagados
+
