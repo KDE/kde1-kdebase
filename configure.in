@@ -185,6 +185,14 @@ dnl Perform program name transformation
 AC_ARG_PROGRAM
 
 AC_OUTPUT(Makefile \
+	kcontrol/Makefile \
+	kcontrol/sample/Makefile \
+	kcontrol/input/Makefile \
+	kcontrol/display/Makefile \
+	kcontrol/bell/Makefile \
+	kcontrol/kwm/Makefile \
+	kcontrol/samba/Makefile \
+	kcontrol/info/Makefile \
 	kpanel/Makefile \
 	kpanel/pics/Makefile \
 	kpanel/pics/mini/Makefile \
@@ -236,6 +244,12 @@ AC_OUTPUT(Makefile \
 	doc/kvt/Makefile \
 	doc/kmenuedit/Makefile \
 	doc/kcc/Makefile \
+	doc/kcontrol/Makefile \
+ 	doc/kcontrol/kdisplay/Makefile \
+	doc/kcontrol/input/Makefile \
+	doc/kcontrol/bell/Makefile \
+	doc/kcontrol/kwm/Makefile \
+	doc/kcontrol/info/Makefile \
 	applnk/Applications/Makefile \
 	applnk/Games/Makefile \
 	applnk/Graphics/Makefile \
@@ -244,6 +258,13 @@ AC_OUTPUT(Makefile \
 	applnk/System/Makefile \
 	applnk/Utilities/Makefile \
 	applnk/Makefile \
+	applnk/Settings/Makefile \
+	applnk/Settings/Input_Devices/Makefile \
+ 	applnk/Settings/Desktop/Makefile \
+	applnk/Settings/KWM/Makefile \
+ 	applnk/Settings/Sound/Makefile \
+	applnk/Settings/Network/Makefile \
+	applnk/Settings/Information/Makefile \
 	kcontrolcenter/Makefile \
 	kcontrolcenter/kcc/Makefile \
 	kcontrolcenter/kcc/pics/Makefile \
