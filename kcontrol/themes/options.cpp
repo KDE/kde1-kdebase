@@ -71,6 +71,7 @@ Options::Options (QWidget * aParent, const char *aName, bool aInit)
   mCbxWindowButtonLayout = newLine("Window Button Layout", 
 		i18n("Window Button Layout"), &mStatWindowButtonLayout);
   mCbxKfm = newLine("File Manager", i18n("File Manager"), &mStatKfm);
+  mCbxKonsole = newLine("Konsole", i18n("Konsole"), &mStatKonsole);
 
   btn = new QPushButton(i18n("Clear"), this);
   btn->setFixedSize(btn->sizeHint());
@@ -154,6 +155,7 @@ void Options::applySettings()
   mTheme->instIcons = mCbxIcons->isChecked();
   mTheme->instWindowGimmick = mCbxGimmick->isChecked();
   mTheme->instKfm = mCbxKfm->isChecked();
+  mTheme->instKonsole = mCbxKonsole->isChecked();
 #ifdef NO_OVERWRITE
   mTheme->instOverwrite = false;
 #else
@@ -182,6 +184,7 @@ void Options::slotInvert()
   mCbxIcons->setChecked(!mCbxIcons->isChecked());
   mCbxGimmick->setChecked(!mCbxGimmick->isChecked());
   mCbxKfm->setChecked(!mCbxKfm->isChecked());
+  mCbxKonsole->setChecked(!mCbxKonsole->isChecked());
   applySettings();
 }
 
@@ -199,6 +202,7 @@ void Options::slotClear()
   mCbxIcons->setChecked(false);
   mCbxGimmick->setChecked(false);
   mCbxKfm->setChecked(false);
+  mCbxKonsole->setChecked(false);
   applySettings();
 }
 
@@ -264,6 +268,7 @@ void Options::updateStatus(void)
   updateStatus("Icons", mStatIcons);
   updateStatus("Gimmick", mStatGimmick);
   updateStatus("File Manager", mStatKfm);
+  updateStatus("Konsole", mStatKonsole);
 }
 
 
@@ -288,6 +293,7 @@ void Options::writeConfig()
   cfg->writeEntry("wallpapers", mCbxWallpapers->isChecked());
   cfg->writeEntry("sounds", mCbxSounds->isChecked());
   cfg->writeEntry("file-manager", mCbxKfm->isChecked());
+  cfg->writeEntry("konsole", mCbxKonsole->isChecked());
 }
 
 
@@ -311,6 +317,7 @@ void Options::readConfig()
   mCbxWallpapers->setChecked(cfg->readBoolEntry("wallpapers", true));
   mCbxSounds->setChecked(cfg->readBoolEntry("sounds", true));
   mCbxKfm->setChecked(cfg->readBoolEntry("file-manager", true));
+  mCbxKonsole->setChecked(cfg->readBoolEntry("konsole", true));
   applySettings();
 }
 

@@ -1015,6 +1015,7 @@ void Theme::install(void)
   mCmdList.clear();
 
   if (instPanel) installGroup("Panel");
+  if (instKonsole) installGroup("Konsole");
   if (instSounds) installGroup("Sounds");
   if (instWindowBorder) installGroup("Window Border");
   if (instWindowTitlebar) installGroup("Window Titlebar");

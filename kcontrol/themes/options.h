@@ -52,10 +52,10 @@ protected:
   QCheckBox *mCbxPanel, *mCbxIcons, *mCbxColors, *mCbxWindowBorder;
   QCheckBox *mCbxWindowTitlebar, *mCbxWallpapers, *mCbxSounds;
   QCheckBox *mCbxWindowButtonLayout, *mCbxGimmick, *mCbxKfm;
-  QCheckBox *mCbxOverwrite;
+  QCheckBox *mCbxOverwrite, *mCbxKonsole;
   QLabel *mStatPanel, *mStatIcons, *mStatColors, *mStatWindowBorder;
   QLabel *mStatWindowTitlebar, *mStatWallpapers, *mStatSounds;
-  QLabel *mStatWindowButtonLayout, *mStatGimmick, *mStatKfm;
+  QLabel *mStatWindowButtonLayout, *mStatGimmick, *mStatKfm, *mStatKonsole;
   QGridLayout *mGrid;
   bool mGui;
   int mGridRow;

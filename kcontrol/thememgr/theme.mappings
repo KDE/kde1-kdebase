@@ -95,6 +95,17 @@ ConfigActivateCmd=kwmcom kpanel:restart
 background=BackgroundTexture
 #
 #-----------------------------------------------------------------------------
+[Konsole]
+ConfigFile=konsolerc
+ConfigGroup=options
+ConfigAppDir=apps/konsole
+ConfigNextGroup=Konsole-2
+schema=
+[Konsole-2]
+ConfigAppDir=wallpapers
+background=
+#
+#-----------------------------------------------------------------------------
 [Colors]
 ConfigFile=KDERC
 ConfigGroup=WM

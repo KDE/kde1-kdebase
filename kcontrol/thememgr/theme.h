@@ -106,7 +106,7 @@ public:
   bool instPanel, instIcons, instColors, instWindowBorder;
   bool instWindowTitlebar, instWallpapers, instSounds;
   bool instWindowButtonLayout, instWindowGimmick, instKfm;
-  bool instOverwrite;
+  bool instOverwrite, instKonsole;
 
   /** Clear config contents */
   virtual void clear(void);

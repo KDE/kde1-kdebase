@@ -3,7 +3,7 @@
 [General]
 Author=Kurt Granroth
 Homepage=http://kde.themes.org
-Version=0.2
+Version=0.3
 description=This is a combination of the Galaxy and Grex themes
 Email=granroth@kde.org
 #-----------------------------------------------------------------------------
@@ -32,6 +32,10 @@ windowBackground=93,113,96
 #-----------------------------------------------------------------------------
 [Panel]
 background=panel.xpm
+#-----------------------------------------------------------------------------
+[Konsole]
+schema=glax.schema
+background=konsole-glax.jpg
 #-----------------------------------------------------------------------------
 [Window Border]
 shapePixmapTop=wm_top.xpm
