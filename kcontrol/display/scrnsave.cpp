@@ -365,7 +365,7 @@ void KScreenSaver::getSaverNames()
 					*strchr( buffer, '\n' ) = '\0';
 				pclose( fp );
 				name = buffer;
-				config->writeEntry( it.current(), buffer );
+				config->writeEntry( it.current(), buffer, true, false, true );
 			}
 			else
 				name = "";
