@@ -6,6 +6,7 @@ Comment=Hellenic Keyboard (Latin-1 keysyms corresponding to ISO8859-7 indexes)
 Comment[cs]=Øecká klávesnice (Latin-1 klávesové symboly odpovídající ISO8859-7 indexùm)
 Comment[de]=Griechische Tastatur (Latin-1 keysyms corresponding to ISO8859-7 indexes)
 Comment[fr]=Clavier grec (les touches-symboles Latin-1 correspondent aux index ISO8859-7
+Comment[pl]=Grecka Klawiatura (symbole w Latin-1 odpowiadaj±ce indeksom w ISO8859-7
 Comment[pt_BR]=Teclado Helênico (teclas Latin-1 correspondendo a ISO8859-7)
 
 Language=Greek

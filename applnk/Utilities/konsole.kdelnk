@@ -10,6 +10,7 @@ Comment[cs]=Emulátor terminálu
 Comment[de]=Terminal-Emulation
 Comment[fr]=kvt : Emulateur de terminal
 Comment[it]=Emulazione Terminale
+Comment[pl]=Emulator terminala
 Comment[pt_BR]=Emulação de Terminal
 Terminal=0
 Name=Konsole
