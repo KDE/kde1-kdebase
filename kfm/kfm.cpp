@@ -12,6 +12,7 @@
 
 #include <stdlib.h>
 #include <unistd.h> 
+#include <signal.h>
 #include <sys/signal.h>
 
 #ifdef HAVE_PATHS_H
