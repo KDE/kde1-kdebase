@@ -123,7 +123,7 @@ void Pager::readSettings()
     if (position == Costumized) {
       QTextStream s(entry, IO_ReadOnly);
       s >> posx >> posy;
-      entry.sprintf("%d %d",pos, posy);
+      entry.sprintf("%d %d",posx, posy);
     }
     config->writeEntry("Geometry", entry);
     config->sync();
