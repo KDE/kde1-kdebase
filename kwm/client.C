@@ -2507,7 +2507,7 @@ void Client::toggleShade(){
   if (isShaded()){
     manager->raiseSoundEvent("Window Shade Up");
     if (isActive())
-      manager->focusToNull();
+      manager->noFocus();
     XUnmapWindow(qt_xdisplay(), window);
     unmap_events++;
     manager->setWindowState(this, IconicState);
