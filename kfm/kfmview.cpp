@@ -613,7 +613,7 @@ void KfmView::slotURLSelected( const char *_url, int _button, const char *_targe
     
     if ( _target != 0L && _target[0] != 0 && _button == LeftButton )
     {
-	KHTMLView *v = KHTMLView::findView( _target );
+	KHTMLView *v = findView( _target );
 	if ( v )
 	{
 	    // debugT("Found Frame\n");
