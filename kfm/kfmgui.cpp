@@ -951,6 +951,11 @@ void KfmGui::slotShowMenubar()
 {
     showMenubar = !showMenubar;
     moptions->setItemChecked( moptions->idAt( 0 ), showMenubar );
+    if (showMenubar)
+	menu->show();
+    else
+	menu->hide();
+    updateRects();
     // TODO: does not work yet
 }
 
