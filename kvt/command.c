@@ -77,7 +77,9 @@
 #endif
 
 #ifdef HAVE_TERMIO_H
+#ifndef HAVE_TERMIOS_H  /* Prefer new POSIX termios.h */
 #include <termio.h>
+#endif
 #endif
 
 #ifdef HAVE_TERMIOS_H
