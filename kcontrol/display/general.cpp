@@ -207,7 +207,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	useRM = true;
 	macStyle = false;//CT
 
-	debug("KGeneral::KGeneral");
+	//debug("KGeneral::KGeneral");
 	
 	// if we are just initialising we don't need to create setup widget
 	if ( mode == Init )
@@ -504,7 +504,7 @@ KFonts::KFonts( QWidget *parent, int mode, int desktop )
 	int i;
 	changed = false;
 
-	debug("KFonts::KFonts");
+	//debug("KFonts::KFonts");
 	
 	// if we are just initialising we don't need to create setup widget
 	if ( mode == Init )

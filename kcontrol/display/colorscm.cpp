@@ -72,7 +72,7 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	if ( mode == Init )
 		return;
 	
-	debug("KColorScheme::KColorScheme");
+	//debug("KColorScheme::KColorScheme");
 	
 	kde_display = x11Display();
 	KDEChangePalette = XInternAtom( kde_display, "KDEChangePalette", False);

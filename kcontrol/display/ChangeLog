@@ -1,8 +1,14 @@
+1999-03-01 Duncan Haldane <duncan@kde.org>
+	* commented out annoying debug calls in backgnd.cpp, colorscm.cpp
+	* general.cpp, scrnsave.cpp that write to logs in normal
+	* operation.
+	
+
 1999-1-13  Matej Koss  <koss@napri.sk>
 
 	* Moved all defaults to config-kbgndwm.h ( patch from Michael Reiher )
 	* backgnd.cpp: after latest patch user coudn't change display mode when
-		using Random mode. But it's required when we open setup dialog
+	* using Random mode. But it's required when we open setup dialog
 	  
 1999-1-4  Antonio Larrosa  <larrosa@kde.org>
 

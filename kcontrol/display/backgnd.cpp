@@ -93,7 +93,7 @@ KRenameDeskDlg::KRenameDeskDlg( const char *t, QWidget *parent )
 KBackground::KBackground( QWidget *parent, int mode, int desktop )
   : KDisplayModule( parent, mode, desktop )
 {
-  debug("KBackground::KBackground");
+  //debug("KBackground::KBackground");
 
   KIconLoader iconLoader;
       

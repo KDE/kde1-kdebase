@@ -107,7 +107,7 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 
 	readSettings();
 	
-	debug("KScreenSaver::KScreenSaver");
+	//debug("KScreenSaver::KScreenSaver");
 
 	setName(  i18n("Screen Saver") );
 
