@@ -1266,7 +1266,7 @@ int handle_X_event(XEvent event, unsigned char qt_c)
 		case Button4:
 		    MyWinInfo.offset += 3;
 		    
-		    // check to make sure we aren't at the top already
+		    /* check to make sure we aren't at the top already */
 		    if (MyWinInfo.offset > MyWinInfo.sline_top)
 			{
 			    MyWinInfo.offset = MyWinInfo.sline_top;
@@ -1278,7 +1278,7 @@ int handle_X_event(XEvent event, unsigned char qt_c)
 		case Button5:
 		    MyWinInfo.offset -= 3;
 
-		    // check to make sure we aren't at the bottom already
+		    /* check to make sure we aren't at the bottom already */
 		    if (MyWinInfo.offset < 0)
 			{
 			    MyWinInfo.offset = 0;
@@ -1495,7 +1495,7 @@ void process_print_pipe()
   int index = 0;
   FILE *pipe_file=NULL;
 
-  //****************** new part ****************************
+  /* ****************** new part **************************** */
   if(pipe(roura)==-1){
     perror("kvt:pipe");
     return;
@@ -1521,8 +1521,8 @@ void process_print_pipe()
     if((pipe_file=fdopen(roura[1],"w"))==NULL)
       perror("kvt:fdopen");
     }        
-  //********************* end **************************
-      
+  /* ********************* end ************************** */
+
   if (pipe_file == NULL)
     {
     fprintf (stderr, "rxvt: can't open printer pipe!\n");
@@ -1541,11 +1541,11 @@ void process_print_pipe()
     
     if (index == 4) 
       {
-      //*********** some changes ************
+      /* *********** some changes ************ */
 
-      //fflush (pipe_file);   --fclose flushes too
+      /*fflush (pipe_file);   --fclose flushes too */
       fclose (pipe_file);
-      //waitpid(pid,&stat,WUNTRACED);
+      /* waitpid(pid,&stat,WUNTRACED); */
       return ;
       }
 
