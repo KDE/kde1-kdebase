@@ -151,16 +151,15 @@ msgstr "Compartilhado:"
 
 #: pfilemenu.C:744
 msgid "Entries shared among all users"
-msgstr ""
+msgstr "Registros compartilhados por todos os usuários"
 
 #: pfilemenu.C:763
 msgid "Personal:"
 msgstr "Pessoal:"
 
 #: pfilemenu.C:765
-#, fuzzy
 msgid "Personal entries"
-msgstr "Pessoal:"
+msgstr "Registros pessoais"
 
 #: pfilemenu.C:783
 msgid "Recent:"
@@ -168,25 +167,13 @@ msgstr "Recente:"
 
 #: pfilemenu.C:785
 msgid "Recent entries"
-msgstr ""
+msgstr "Registros recentes"
 
 #: pfilemenu.C:831
 msgid "Options..."
 msgstr "Options..."
 
 #: pfilemenu.C:833
-#, fuzzy
 msgid "Customize Disk Navigator"
-msgstr "Navegador de Disco"
+msgstr "Customizar Navegador de Disco"
 
-#~ msgid "Global:"
-#~ msgstr "Global:"
-
-#~ msgid "Local:"
-#~ msgstr "Local:"
-
-#~ msgid "KFM Information"
-#~ msgstr "Informações KFM"
-
-#~ msgid "Creating directory:\n"
-#~ msgstr "Criando diretório:\n"

@@ -109,7 +109,7 @@ msgstr "Cor do Link Visitado:"
 
 #: options.cpp:238
 msgid "Underline links"
-msgstr ""
+msgstr "Sublinhar links"
 
 #: options.cpp:317
 msgid "KDE Help Options"
