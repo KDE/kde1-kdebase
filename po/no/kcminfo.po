@@ -5,13 +5,131 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcminfo\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-12-12 15:11+0100\n"
 "PO-Revision-Date: 1998-03-21 13:14+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: info.cpp:50
+#, c-format
+msgid "screen #%d"
+msgstr "skjerm #%d"
+
+#: info.cpp:52
+#, c-format
+msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
+msgstr "  størrelse               : %dx%d piksler (%dx%d mm)\n"
+
+#: info.cpp:56
+#, c-format
+msgid "  resolution          : %dx%d dots per inch\n"
+msgstr "  oppløsning              : %dx%d punkter pr tomme\n"
+
+#: info.cpp:61
+#, c-format
+msgid "  depths (%d)          : "
+msgstr "  dybde (%d)               : "
+
+#: info.cpp:85
+#, c-format
+msgid "name of display       : %s"
+msgstr "navn på skjerm            : %s"
+
+#: info.cpp:87
+#, c-format
+msgid "version number        : %i.%i"
+msgstr "versjonsnummer            : %i.%i"
+
+#: info.cpp:89
+#, c-format
+msgid "vendor string         : %s"
+msgstr "leverandørstreng          : %s"
+
+#: info.cpp:91
+#, c-format
+msgid "vendor release number : %i"
+msgstr "leverandørutgivelsesnummer: %i"
+
+#: info.cpp:93
+#, c-format
+msgid "default screen number : %i"
+msgstr "Standard skjermnummer     : %i"
+
+#: info.cpp:95
+#, c-format
+msgid "number of screens     : %i"
+msgstr "antall skjermer           : %i"
+
+#: info.cpp:179
+msgid ""
+"No Information available\n"
+" or\n"
+"this system is not yet supported :-("
+msgstr ""
+"Ingen informasjon tilgjengelig\n"
+"eller\n"
+"dette systemet er foreløbig ikke støttet :-("
+
+#: info_fbsd.cpp:73
+#, c-format
+msgid "%s, unknown speed"
+msgstr "%s, ukjent hastighet"
+
+#: info_fbsd.cpp:75
+#, c-format
+msgid "%s running at %s MHz"
+msgstr "%s kjører på %s MHz"
+
+#: info_fbsd.cpp:213
+msgid "Ahh couldn't open fstab!"
+msgstr "Åhh. Kunne ikke åpne fstab!"
+
+#: info_fbsd.cpp:220 info_fbsd.cpp:221
+msgid "Device"
+msgstr "Enhet"
+
+#: info_fbsd.cpp:223 info_fbsd.cpp:224
+msgid "Mount Point"
+msgstr "Monteringsstred"
+
+#: info_fbsd.cpp:226 info_fbsd.cpp:227
+msgid "FS Type"
+msgstr "FS-type"
+
+#: info_fbsd.cpp:229 info_fbsd.cpp:230
+msgid "Mount Options"
+msgstr "Monteringsvalg"
+
+#: info_hpux.cpp:54
+msgid "unknown CPU type"
+msgstr "ukjent CPU-type"
+
+#: info_hpux.cpp:62
+msgid "unavailable"
+msgstr "ikke tilgjengelig"
+
+#: info_hpux.cpp:67
+msgid "Number of active processor(s)= "
+msgstr "Antall aktive prosessorer= "
+
+#: info_linux.cpp:99
+msgid "Value"
+msgstr "Verdi"
+
+#: info_linux.cpp:114
+msgid "DMA-Channel"
+msgstr "DMA-Kanaler"
+
+#: info_linux.cpp:115 info_linux.cpp:128
+msgid "used by"
+msgstr "brukt av"
+
+#: info_linux.cpp:127
+msgid "I/O-Range"
+msgstr "I/O-område"
 
 #: main.cpp:79
 msgid "&Memory"
@@ -101,6 +219,11 @@ msgid "%10ld bytes  = %8.2f MB"
 msgstr "%10ld bytes  = %8.2f MB"
 
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
-#: memory.cpp:105
+#: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
 msgid "Not available"
+msgstr "Ikke tilgjengelig"
+
+#: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
+#: memory_sgi.cpp:30
+msgid "Not Available"
 msgstr "Ikke tilgjengelig"
