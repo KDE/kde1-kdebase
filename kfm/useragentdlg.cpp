@@ -15,7 +15,7 @@
 UserAgentDialog::UserAgentDialog( QWidget * parent, 
 								  const char * name, 
 								  WFlags f ) :
-  QDialog( parent, name, true, f )
+  QWidget( parent, name, f )
 {
   onserverLA = new QLabel( klocale->translate( "On server:" ), this );
   onserverLA->setGeometry( 10, 20, 60, 30 );
@@ -59,6 +59,7 @@ UserAgentDialog::UserAgentDialog( QWidget * parent,
   connect( bindingsLB, SIGNAL( highlighted( const char* ) ),
 		   SLOT( listboxHighlighted( const char* ) ) );
 
+/*-> removed, because no longer used
   okPB = new QPushButton( klocale->translate( "OK" ), this );
   okPB->setGeometry( 10, 310, 100, 30 );
   okPB->setDefault( true );
@@ -71,8 +72,9 @@ UserAgentDialog::UserAgentDialog( QWidget * parent,
   helpPB = new QPushButton( klocale->translate( "Help" ), this );
   helpPB->setGeometry( 230, 310, 100, 30 );
   connect( helpPB, SIGNAL( clicked() ), SLOT( helpClicked() ) );
+*/
 
-  setCaption( klocale->translate( "Set UserAgent" ) );
+//-> was: setCaption( klocale->translate( "Set UserAgent" ) ); 
 }
 
 
@@ -85,9 +87,9 @@ UserAgentDialog::~UserAgentDialog()
   delete addPB;
   delete deletePB;
   delete bindingsLB;
-  delete okPB;
-  delete cancelPB;
-  delete helpPB;
+//->  was: delete okPB; <- It crashes kfm with a nice seg fault !!
+//->  was: delete cancelPB;
+//->  was: delete helpPB;
 }
 
 

@@ -7,13 +7,14 @@
 
 #include <qdialog.h>
 #include <qstring.h>
+#include <qwidget.h>
 
 class QLabel;
 class QLineEdit;
 class QListBox;
 class QPushButton;
 
-class UserAgentDialog : public QDialog
+class UserAgentDialog : public QWidget
 {
   Q_OBJECT
 

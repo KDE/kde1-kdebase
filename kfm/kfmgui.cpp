@@ -29,7 +29,8 @@
 #include "kbind.h"
 #include "config-kfm.h"
 #include "utils.h"
-#include "useragentdlg.h"
+#include "kkfmoptdlg.h"
+//-> was: #include "useragentdlg.h" => moved to kkfmoptdlg.h
 
 #include <klocale.h>
 
@@ -1365,12 +1366,16 @@ void KfmGui::slotSaveSettings()
 
 void KfmGui::slotConfigureBrowser()
 {
-  UserAgentDialog dlg;
+  //-> was:  UserAgentDialog dlg;
+  KKFMOptDlg dlg;
   QStrList strlist( true );
+  QStrList prxStrList ( true );
 
   // read entries from config file
   KConfig* config = kapp->getConfig();
   QString oldgroup = config->group();
+
+  // read entries for UserAgentDlg
   config->setGroup( "Browser Settings/UserAgent" );
   int entries = config->readNumEntry( "EntriesCount", 0 );
   for( int i = 0; i < entries; i++ )
@@ -1384,14 +1389,25 @@ void KfmGui::slotConfigureBrowser()
 	strlist.append( "*:Konqueror/1.0" );
 
   // transmit data to dialog
-  dlg.setData( &strlist );
+  dlg.setUsrAgentData( &strlist );
 
+  // now read data for KProxyDlg
+  config->setGroup("Browser Settings/Proxy");
+  prxStrList.append(config->readEntry("HTTP-URL", ""));
+  prxStrList.append(config->readEntry("HTTP-Port", ""));
+  prxStrList.append(config->readEntry("FTP-URL", ""));
+  prxStrList.append(config->readEntry("FTP-Port", ""));
+  
+  // transmit data to dialog
+  dlg.setProxyData(&prxStrList);
+  
   // show the dialog
   int ret = dlg.exec();
   if( ret == QDialog::Accepted )
 	{
-	  // write back the entries
-	  strlist = dlg.data();
+	  // write back the entries from UserAgent
+          config->setGroup("Browser Settings/UserAgent");
+	  strlist = dlg.dataUsrAgent();
 	  if( strlist.count() )
 		{
 		  config->writeEntry( "EntriesCount", strlist.count() );
@@ -1408,6 +1424,15 @@ void KfmGui::slotConfigureBrowser()
 		  config->writeEntry( "EntriesCount", 1 );
 		  config->writeEntry( "Entry1", "*:Konqueror/1.0" );
 		}
+
+	  // write back the entries from KProxyDlg
+          config->setGroup("Browser Settings/Proxy");
+	  strlist = dlg.dataProxy();
+          // printf("kfmgui: got %d entries from dataProxy\n", strlist.count());
+	  config->writeEntry("HTTP-URL", strlist.first());
+	  config->writeEntry("HTTP-Port", strlist.next());
+	  config->writeEntry("FTP-URL", strlist.next());
+	  config->writeEntry("FTP-Port", strlist.next());
 	}
 
   // restore the group
