@@ -119,6 +119,9 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
 }
 
 void KPanelConfig::location_clicked(int i) {
+    // if I find out, that someone changed this in a C cast, just
+    // because there are weired compilers out there, may just god
+    // help him! :-)
     location = static_cast<Location>(i);
 }
 
