@@ -42,7 +42,8 @@ void debugC( const char *msg , ...);
 
 // root window icon text transparency default -- stefan@space.twc.de
 #define DEFAULT_ROOT_ICONS_STYLE 0
-
+// show hidden files on desktop default
+#define DEFAULT_SHOW_HIDDEN_ROOT_ICONS false
 //CT root icons foreground/background defaults
 #define DEFAULT_ICON_FG white
 #define DEFAULT_ICON_BG black

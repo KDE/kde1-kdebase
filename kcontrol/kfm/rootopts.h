@@ -51,6 +51,7 @@ private:
         QCheckBox *iconstylebox;
         KColorButton *fgColorBtn;
         KColorButton *bgColorBtn;
+        QCheckBox *showHiddenBox;
 
         QColor icon_fg;
         QColor icon_bg;

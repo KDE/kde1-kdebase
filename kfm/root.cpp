@@ -47,6 +47,7 @@ KRootWidget::KRootWidget( QWidget *parent, const char *name ) : QWidget( parent,
     {
          config->setGroup("KFM Root Icons");
 	 iconstyle = config->readNumEntry( "Style", 1 );
+	 showHidden = config->readBoolEntry( "ShowHidden", DEFAULT_SHOW_HIDDEN_ROOT_ICONS );
 	 //CT 12Nov1998
 	 labelColor = config->readColorEntry( "Foreground", &DEFAULT_ICON_FG );
 	 iconBgColor = config->readColorEntry( "Background", &DEFAULT_ICON_BG );
@@ -129,9 +130,20 @@ void KRootWidget::setRootIconColors(QColor &fg, QColor &bg) {
 }
 //CT
 
+void KRootWidget::showHiddenFiles( bool show )
+{
+  if( show != showHidden ){
+    showHidden = show;
+    update(); 
+  }   
+}
+
 /** Reads and applies configuration from config file */
 void KRootWidget::configure(KConfig * config) {
     config->setGroup("KFM Root Icons");
+    bool show = config->readBoolEntry( "ShowHidden", DEFAULT_SHOW_HIDDEN_ROOT_ICONS );
+    showHiddenFiles( show );
+
     setRootIconStyle( config->readNumEntry( "Style", 1 ) );
     QColor labelColor = config->readColorEntry( "Foreground", &DEFAULT_ICON_FG );
     QColor iconBgColor = config->readColorEntry( "Background", &DEFAULT_ICON_BG );
@@ -783,6 +795,11 @@ void KRootWidget::update()
 	    // This icon is missing on the screen, so we have to create it.
 	    if ( icon == 0L )
 	    {
+              KURL u(file);
+              QString tmp = u.filename();
+              //ckeck if hidden files shall be shown
+              if( tmp.left(1) != "." || showHidden ) 
+	      {
 		KRootIcon *icon = 0L;
 		icon = new KRootIcon( file, -200, -200 );
 		
@@ -811,11 +828,19 @@ void KRootWidget::update()
 		
 		icon_list.append( icon );
 		found_icons.append( icon );
+	      }
 	    }	
 	    else  // Icon is already there
 	    {
+              KURL u(file);
+              QString tmp = u.filename();
+	      if( tmp.left(1) != "." || showHidden ) {
 		icon->updatePixmap();
 		found_icons.append( icon );
+              }
+	      else 
+                //remove hidden files if they just got disabled
+		icon_list.removeRef( icon );
 	    }
 	}
     }

@@ -201,6 +201,7 @@ public:
     void setRootGridParameters(int gridwidth ,int gridheight);
     void setRootIconStyle(int newiconstyle);
     void setRootIconColors(QColor &, QColor &);//CT 12Nov1998
+    void showHiddenFiles( bool show );
 
     /**
      * Takes all icons corresponding to the given URLs and moves them.
@@ -446,6 +447,11 @@ protected:
      * selected menu item.
      */
     KNewMenu *menuNew;
+
+    /**
+     * Indicates wether hidden files are shown or not
+     */
+    bool showHidden;
 };
 
 #endif
