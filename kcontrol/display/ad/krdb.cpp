@@ -124,7 +124,6 @@ main( int argc, char ** argv )
 	s.sprintf("#%02x%02x%02x\n", backCol.red(), backCol.green(), backCol.blue());
 	s.prepend( "#define BACKGROUND " );
 	preproc += s;
-	preproc += "*background: BACKGROUND\n";
 
 	col = config->readColorEntry( "selectBackground", &darkBlue);
 	s.sprintf("#%02x%02x%02x\n", col.red(), col.green(), col.blue());
@@ -140,6 +139,7 @@ main( int argc, char ** argv )
 	s.sprintf("#%02x%02x%02x\n", col.red(), col.green(), col.blue());
 	s.prepend( "#define WINDOW_BACKGROUND " );
 	preproc += s;
+	preproc += "*background: WINDOW_BACKGROUND\n";
 
 	col = config->readColorEntry( "windowForeground", &black );
 	s.sprintf("#%02x%02x%02x\n", col.red(), col.green(), col.blue());
