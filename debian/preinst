@@ -4,7 +4,7 @@ set -e
 
 case "$1" in
         upgrade) 
-	if test -n "`/sbin/pidof kdm`"
+	if test -n "`pidof kdm`"
 	then
 	echo "About to upgrade the kdebase package. To do this, kdm must"
 	echo "be stopped. When they are stopped, all X sessions managed by kdm"
