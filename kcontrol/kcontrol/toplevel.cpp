@@ -25,7 +25,6 @@
 #include <qpushbt.h>
 #include <kiconloader.h>
 #include <kmsgbox.h>
-
 #include "toplevel.moc"
 
 
@@ -192,8 +191,14 @@ void TopLevel::ensureSize(int w, int h)
     height = mwidget->height();
 
   width += treelist->width() + 6; // 6 ~= width of QSplitter slider
-  height += menubar->height()+statusbar->height();
-
+  // Markus W. : If we are in macStyle we dont need to add the height of
+  // the menubar
+  KConfig* config = kapp->getConfig();
+  config->setGroup("KDE");
+  if (config->readEntry("macStyle") == "on") 
+     height += statusbar->height();
+  else
+    height += menubar->height()+statusbar->height();
   if (width < this->width())
     width = this->width();
   if (height < this->height())
