@@ -59,13 +59,6 @@ bool isExecutable ( const char *name )
     return found;
 }
 
-// Check for the existance of a local file/directory. (Dawit A.)
-bool isLocalResource ( const char * cmd )
-{
-    struct stat buff;
-    return ( stat( cmd, &buff ) == 0 && ( S_ISREG( buff.st_mode ) || S_ISDIR( buff.st_mode ) ) ) ? true :false;
-}
-
 bool isValidShortURL ( const char * cmd )
 {
     // NOTE : By design, this check disqualifies some valid
@@ -83,24 +76,47 @@ bool isValidShortURL ( const char * cmd )
        return false;
     if ( strstr ( cmd, "||" ) != 0L || strstr ( cmd, "&&" ) != 0L )
        return false;
+    // This will cut down on cmd being incorrectly matched as a valid short URL.
+    // Unless the URL contains at least one '.', the command is disqualified as a
+    // candidate for a short URL. Hence, users need to supply protocol for such cases. (Dawit A.)
+    if ( strchr ( cmd, '.') == 0L && strstr ( cmd, "localhost" ) == 0L )
+       return false;
+
     return true;
 }
 
 void execute( const char* cmd){
   QString tmp;
+  // Quoted all URLs (ONLY URLs) so that none of their parts
+  // can be mis-interpreted as special characters by a shell.
+  // This is an easy way of handling this issue because quotes
+  // within URL's have to be encoded per RFC 1738. (Dawit A.)
 
   // Torben
   // WWW Adress ?
   if ( strnicmp( cmd, "www.", 4 ) == 0 ) {
-      tmp = "kfmclient exec http://";
+      tmp = "kfmclient exec \"http://";
       tmp += cmd;
-      cmd = tmp.data();
+      cmd = tmp.append("\"").data();
+  }
+  // Torben
+  // WWW Adress - Weird but valid per RFC 1736 ?
+  else if ( strnicmp( cmd, "//www.", 6 ) == 0 ) {
+      tmp = "kfmclient exec \"http:";
+      tmp += cmd;
+      cmd = tmp.append("\"").data();
   }
   // FTP Adress ?
   else if ( strnicmp( cmd, "ftp.", 4 ) == 0 ) {
-      tmp = "kfmclient exec ftp://";
+      tmp = "kfmclient exec \"ftp://";
       tmp += cmd;
-      cmd = tmp.data();
+      cmd = tmp.append("\"").data();
+  }
+  // FTP Adress - Weird but valid per RFC 1736 ?
+  else if ( strnicmp( cmd, "//ftp.", 6 ) == 0 ) {
+      tmp = "kfmclient exec \"ftp:";
+      tmp += cmd;
+      cmd = tmp.append("\"").data();
   }
   // Looks like a KDEHelp thing ?
   else if ( strstr( cmd, "man:" ) != 0L || strstr( cmd, "MAN:" ) != 0L || cmd[0] == '#' )
@@ -108,57 +124,64 @@ void execute( const char* cmd){
       tmp = "kdehelp \"";
       if ( cmd[0] == '#' )
       {
-	  tmp += "man:";
-	  tmp += cmd + 1;
+	tmp += "man:";
+	tmp += cmd + 1;
       }
       else
-	  tmp += cmd;
-      tmp += "\"";
-      cmd = tmp.data();
+	tmp += cmd;
+      cmd = tmp.append("\"").data();
   }
-  // Looks like an URL ?
+  // Looks like a valid URL ?
   else if ( strstr( cmd, "://" ) != 0L ||
             strnicmp ( cmd, "news:", 5) == 0 ||
-            strnicmp ( cmd, "mailto:", 7) == 0 )
+            strnicmp ( cmd, "mailto:", 7) == 0 ||
+	     strnicmp( cmd, "file:", 5 ) == 0 )
   {
-      tmp = "kfmclient exec ";
+      tmp = "kfmclient exec \"";
       tmp += cmd;
-      cmd = tmp.data();
+      cmd = tmp.append("\"").data();
   }
-  // Usual file or directory
+  // Local file and directory processing.
   else
   {
+      struct stat buff;
       const char *p = cmd;
+      bool isLocalDir = false;
+      bool isLocalFile = false;
+      bool isLocalExec = false;
       QString tst;
-      if ( strnicmp( p, "file:", 5 ) == 0 )
-	  p = p + 5;
+
       // Replace '~' with the user's home directory.
       if ( *p == '~' )
-      {
         p = tst.append( p ).replace( 0, 1, QDir::homeDirPath() ).data();
-        cmd = p;
-      }
-      bool isLocal = isLocalResource ( p );   // Am I locally available ?
-      bool isExec = isExecutable ( p );       // Am I locally executable ?
-      // Is this a non-executable local resource ?
-      if ( !isExec && isLocal )
+
+      // Determine if URL is a local file or directory
+      if ( stat( p , &buff ) == 0 )
       {
-    	// Tell KFM to open the document
-        tmp += cmd;
-        // Quote the URL in case there is a space in it ; so
-        // one can for example type : ~/Desktop/CD ROM.kdelnk
-        // to mount the CD ROM device. ( Dawit A. )
-        tmp.prepend ( "kfmclient exec \"" );
-        tmp.append ( "\"");
-        cmd = tmp.data();
+        isLocalFile = S_ISREG( buff.st_mode );
+        isLocalDir = S_ISDIR( buff.st_mode );
       }
-      // if URL is not a local resource and does not contain any *nix shell
-      // command characters, append "http://" as the default protocol. (Dawit A.)
-      else if ( !isExec && isValidShortURL ( cmd ) )
+      // If cmd is not a file or a directory, check to see
+      // if it is executable under the user's current PATH.
+      if ( !isLocalDir && !isLocalFile )
+        isLocalExec = isExecutable ( p );
+
+      cmd = p;
+      // Open with kfmclient if cmd is a non-executable resource.
+      if ( isLocalDir || ( isLocalFile && !isLocalExec ) )
+      {
+        tmp += cmd;
+        tmp.prepend ( "kfmclient exec \"" );
+        cmd = tmp.append ( "\"").data();
+      }
+      // If cmd is NOT a local resource, executable or otherwise,
+      // then append "http://" to it as a default protocol.
+      // FIXME: Make this option configurable !! (Dawit A.)
+      else if ( !isLocalExec && isValidShortURL ( cmd ) )
       {
         tmp = cmd;
-        tmp.prepend ("kfmclient exec http://");
-        cmd = tmp.data();
+        tmp.prepend ("kfmclient exec \"http://");
+        cmd = tmp.append("\"").data();
       }
   }
   KShellProcess proc;

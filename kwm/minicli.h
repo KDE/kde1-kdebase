@@ -13,7 +13,6 @@
 
 void execute ( const char* );
 bool isExecutable ( const char* );
-bool isLocalResource ( const char* );
 bool isValidShortURL ( const char * );
 
 class Minicli : public QFrame{
