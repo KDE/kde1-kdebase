@@ -1,0 +1,80 @@
+KDE NOTICE
+==========
+
+There used to be two versions of kde.deb : one made by debian, and 
+one made by the KDE team. Fortunatly this has changed to the better
+and this package is both: the debian package and the kde package.
+
+Andreas Jellinghaus <aj@debian.org> used to maintain the debian part
+and I took over, when he orphaned them. 
+
+Stephan Kulow <coolo@kde.org> Mon, 09 Mar 1998 23:14:46 +0100
+
+---
+HOW TO START KDE
+================
+
+a) if you used xdm, you might want to use kdm (same as xdm, but nice
+	outfit). start /usr/sbin/kdmconfig
+b) edit /etc/X11/window-managers  (the first windowmanager wins !)
+c) use "/usr/X11R6/bin/kde" directly !
+
+INFORMATIONS ABOUT KDE
+======================
+
+Web site 	www.kde.org		(and mirrors)
+ftp site	ftp.kde.org		(and mirrors)
+
+mailing lists 
+   * kde - for general discussion
+   * kde-announce - announcements of new KDE applications
+   * kde-user - users help each other
+   * kde-devel - for developers (read only)
+   * kde-licensing - discussion of licensing issues
+   * kde-look - discussing "look'n'feel issues"
+
+use www.kde.org to subscribe !
+
+
+1. About KDEDIR:
+----------------
+
+The debian KDE package has been modified so you do not need to set the
+KDEDIR environment vairable to use it. You don't need to set QTDIR either.
+
+2. Changes to KDE directory structure:
+-------------------------------------
+
+KDE's paths can mainly be organized independently. For Debian's sake,
+I chose the below paths - following Andreas's settings.
+
+/usr			prefix
+/usr/X11R6/bin		kde binaries (was KDE/bin)
+/usr/X11R6/lib		kde shared libraries (was KDE/lib)
+/usr/include/kde	kde include files (was KDE/include)
+/usr/lib/cgi-bin	kde cgi binaries (was KDE/cgi-bin)
+/usr/doc/kde		kde online documentation (was KDE/share/doc)
+/etc/kde		kde config files (was KDE/share/config)
+/usr/share/applnk	kde applnk files (original)
+/var/lib/applnk		menu applnk files read by kpanel
+/usr/share/mimelnk	kde mimelink files
+/usr/share/icons	kde icons (and mini icons in .../icons/mini)
+/usr/share/toolbar	kde toolbar icons (can also be used by other apps)
+/usr/share/wallpaper	kde wallpaper icons (can also be used by other apps)
+/usr/share/apps/APP	kde per application directory
+/usr/share/locale	locales
+
+3. Kpanel and menus:
+-------------------
+
+If you have the menu package installed, kpanel will display the debian menus 
+of installed programs. Otherwise, you won't get any menus at all, so I do
+recommend you install the menu package.
+
+Instead of adding new .kdelnk files to /var/lib/kde/apps directly, you should
+create debian menu files and run update-menus. See /usr/doc/menu/README for
+details.
+
+Andreas Jellinghaus <aj@debian.org>  Mon, 13 Oct 1997 20:05:57 +0200
+Stephan Kulow <coolo@kde.org> Mon, 10 Mar 1998 23:21:23 +0100
+
