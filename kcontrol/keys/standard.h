@@ -18,8 +18,8 @@
 #include <kcontrol.h>
 
 
-#include "kaccel.h"
-#include "kkeydialog.h"
+#include <kaccel.h>
+#include <kkeydialog.h>
 
 class KStdConfig : public KConfigWidget
 {

@@ -18,8 +18,8 @@
 #include <kcontrol.h>
 
 #include "savescm.h"
-#include "kaccel.h"
-#include "kkeydialog.h"
+#include <kaccel.h>
+#include <kkeydialog.h>
 
 class KGlobalConfig : public KConfigWidget
 {
