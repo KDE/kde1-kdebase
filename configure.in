@@ -122,6 +122,8 @@ AM_KDE_WITH_NLS
 dnl I need to check for libsocket before testing X
 AC_CHECK_LIB(socket, socket, [LIBSOCKET="-lsocket -lnsl"]) dnl for Solaris
 AC_SUBST(LIBSOCKET)
+AC_CHECK_LIB(ucb, killpg, [LIBUCB="-lucb"]) dnl for Solaris2.4
+AC_SUBST(LIBUCB)
 AC_PATH_KDE
 
 AC_CHECK_KDM dnl in kdminclude.m4
