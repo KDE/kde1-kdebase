@@ -360,10 +360,9 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 	}
 	else if ( fullURL.find( "http:" ) >= 0 )
 	{// until http in kdehelp works properly, let kfm handle it.
-		QString cmd = "kfmclient exec ";
-		cmd += fullURL;
-		cmd += " Open";
-		system( cmd );
+		KFM *kfm = new KFM;
+		kfm->openURL( fullURL );
+		delete kfm;
 /*
 		rv = openRemote( fullURL );
 		isRemote = true;
@@ -371,15 +370,15 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 	}
 	else if ( fullURL.find( "ftp:" ) >= 0 )
 	{
-	        QString cmd = "kfmclient exec ";
-		cmd += fullURL;
-		cmd += " Open";
-		system( cmd );
+		KFM *kfm = new KFM;
+		kfm->openURL( fullURL );
+		delete kfm;
 	}
 	else if ( fullURL.find( "mailto:" ) >= 0 )
 	{
-		QMessageBox::message(klocale->translate("KDE Help"),
-				     klocale->translate("Waiting for kmail to be finished..."));
+		KFM *kfm = new KFM;
+		kfm->openURL( fullURL );
+		delete kfm;
 	}
 
 	if ( !rv )
@@ -1524,44 +1523,44 @@ bool KHelpWindow::eventFilter( QObject *obj, QEvent *ev )
 
 bool KHelpWindow::x11Event( XEvent *xevent )
 {
-	switch ( xevent->type )
-	{
-		case SelectionRequest:
-			{
-				if ( view->isTextSelected() )
-				{
-					QString text;
-					view->getSelectedText( text );
-					XSelectionRequestEvent *req = &xevent->xselectionrequest;
-					XEvent evt;
-					evt.xselection.type = SelectionNotify;
-					evt.xselection.display  = req->display;
-					evt.xselection.requestor = req->requestor;
-					evt.xselection.selection = req->selection;
-					evt.xselection.target = req->target;
-					evt.xselection.property = None;
-					evt.xselection.time = req->time;
-					if ( req->target == XA_STRING )
-					{
-						XChangeProperty ( dpy, req->requestor, req->property,
-							XA_STRING, 8, PropModeReplace,
-							(uchar *)text.data(), text.length() );
-						evt.xselection.property = req->property;
-					}
-					XSendEvent( dpy, req->requestor, False, 0, &evt );
-				}
+    switch ( xevent->type )
+    {
+	case SelectionRequest:
+	    {
+		if ( view->isTextSelected() )
+		{
+		    QString text;
+		    view->getSelectedText( text );
+		    XSelectionRequestEvent *req = &xevent->xselectionrequest;
+		    XEvent evt;
+		    evt.xselection.type = SelectionNotify;
+		    evt.xselection.display  = req->display;
+		    evt.xselection.requestor = req->requestor;
+		    evt.xselection.selection = req->selection;
+		    evt.xselection.target = req->target;
+		    evt.xselection.property = None;
+		    evt.xselection.time = req->time;
+		    if ( req->target == XA_STRING )
+		    {
+			XChangeProperty ( qt_xdisplay(), req->requestor,
+				req->property, XA_STRING, 8, PropModeReplace,
+				(uchar *)text.data(), text.length() );
+			evt.xselection.property = req->property;
+		    }
+		    XSendEvent( qt_xdisplay(), req->requestor, False, 0, &evt );
+		}
 
-				return true;
-			}
-			break;
+		return true;
+	    }
+	    break;
 
-		case SelectionClear:
-			// Do we want to clear the selection???
-			view->selectText( 0, 0, 0, 0, 0 );
-			break;
-	}
+	case SelectionClear:
+	    // Do we want to clear the selection???
+	    view->selectText( 0, 0, 0, 0, 0 );
+	    break;
+    }
 
-	return false;
+    return false;
 }
 
 // called as html is parsed

@@ -6,9 +6,9 @@
 #include <iostream.h>
 #include <stdio.h>
 #include <string.h>
-#include <dirent.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <dirent.h>
 #include "mansrch.h"
 
 const char *FindXRef( const char *theText );

@@ -1,6 +1,13 @@
 KDE Help System CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+Version 0.5.6
+-------------
+
+Use kapp->getHelpMenu()
+Use KFM to open http: ftp: mailto:
+Portability changes from various people.
+
 Version 0.5.5
 -------------
 

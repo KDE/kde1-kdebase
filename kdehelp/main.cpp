@@ -200,7 +200,7 @@ int main(int argc, char *argv[])
 	Timer *timer = new Timer;
 
 	// error handler for info and man stuff
-	Error.SetHandler( errorHandler );
+	Error.SetHandler( (void (*)(int, const char *))errorHandler );
 
 	KApplication a( argc, argv, "kdehelp" );
 

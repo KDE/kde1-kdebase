@@ -10,9 +10,9 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <dirent.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <dirent.h>
 #include <kconfig.h>
 #include <kapp.h>
 #include "misc.h"
