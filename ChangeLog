@@ -1,3 +1,7 @@
+1998-04-20  Stephan Kulow  <coolo@kde.org>
+
+	* acinclude.m4.in: fixed the side effects of the PAM test 
+
 1998-04-18  Stephan Kulow  <coolo@kde.org>
 
 	* acinclude.m4.in: hopefully fixed the PAM test (I rewrote it)
