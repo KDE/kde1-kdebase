@@ -540,6 +540,10 @@ void kVt::saveYourself(){
   config->sync();
 }
 
+kVt::~kVt()
+{
+   delete dropZone;
+}
 
 void kVt::saveOptions(KConfig* kvtconfig){
   kvtconfig->setGroup("kvt");

@@ -33,6 +33,8 @@ class kVt : public QWidget
 
 public:
     kVt( KConfig* sessionconfig, QWidget *parent=0, const char *name=0 );
+   ~kVt();
+
   // public because this need to be set from old rxvt-C-code
     QScrollBar* scrollbar;
   void ResizeToVtWindow();

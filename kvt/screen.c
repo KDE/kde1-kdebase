@@ -1689,7 +1689,7 @@ void scr_make_selection(int time)
       if(b == (MyWinInfo.cwidth-1)&& !cScreen->text [tx + MyWinInfo.cwidth])
 	{
 	  ptr--;
-	  while(*ptr == ' ' && ptr >= str)
+	  while(ptr >= str && *ptr == ' ' )
 	    ptr--;
 	  ptr++;
 	  *ptr++ = '\n';
