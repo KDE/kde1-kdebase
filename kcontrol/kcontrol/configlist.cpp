@@ -59,6 +59,7 @@ KModuleListEntry::KModuleListEntry(const QString &fn)
   process = 0;
   swallowWidget = 0;
   swallowParent = 0;
+  swallow = true;
 
   if (!info.isReadable())
     return;
@@ -123,6 +124,9 @@ void KModuleListEntry::parseKdelnkFile(const QString &fn)
   //create a unique swallow title. IGNORE SwallowTitle settings in the kdelnk file (ettrich)
   swallowTitle = "skcm:"; // (s)wallow (k) (c)ontrol (m)odule
   swallowTitle += name;
+
+  // allow modules to override swallowing (mhk)
+  swallow = !config.readBoolEntry("NoSwallow",false);
 }
 
 

@@ -57,7 +57,7 @@ public:
   QString &getSwallowTitle() { return swallowTitle; };
 
   bool    isDirectory()  { return (children != 0) && (children->count() > 0); };
-  bool    isSwallow()    { return swallowingEnabled && !swallowTitle.isEmpty(); };
+  bool    isSwallow()    { return swallowingEnabled && swallow; };
   
   bool    execute(QWidget *parent);
 
@@ -82,6 +82,8 @@ private:
   QString name;
   QString init;
   QString swallowTitle;
+
+  bool swallow;
 
   KProcess       *process;
   KSwallowWidget *swallowWidget;
