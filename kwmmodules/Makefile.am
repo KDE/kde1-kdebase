@@ -1,3 +1,3 @@
 
-SUBDIRS = kwmpager
+SUBDIRS = kwmpager kbgndwm
 
