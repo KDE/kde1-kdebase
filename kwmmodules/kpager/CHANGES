@@ -1,3 +1,7 @@
+* Wed Dic 30 7:50:00 CEST 1998
+
+Fixed a problem with common background changing while it is set.
+
 * Wed Dic 23 7:30:00 CEST 1998
 
 Fixed the last problem (tm) with kbgndwm config readings

@@ -26,7 +26,7 @@
 #include <qpainter.h>
 #include <stdio.h>
 
-//#define DESKTOPDEBUG
+#define DESKTOPDEBUG
 //#define DESKTOPDEBUG2
 //#define ALLOWSELFPICTURE
 
@@ -914,7 +914,7 @@ void Desktop::loadWallpaper(QString wallpaper)
         loadWallpaperBackground(wallpaper);
     else
     {
-        if (commonbigBackgroundPixmap==0L)
+        if ((commonbigBackgroundPixmap==0L)||(id==1))
         {
             loadWallpaperBackground(wallpaper);
             
