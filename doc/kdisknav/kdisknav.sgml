@@ -31,13 +31,13 @@ entries is shown:
 <list>
 <item><bf>Global:</bf> 
   this section lists global entries, shared among all users.
-  Tipical global entries include: / (root dir), CD-ROM, mounted filesystems,
+  Typical global entries include: / (root dir), CD-ROM, mounted filesystems,
   removable disks, etc.
   Global entries can be changed selecting the "Options" menu entry.
   Note: only the superuser can change global entries. 
 
 <item><bf>Local:</bf> this section lists user-specific filesystem entries. 
-  Tipical entries in this section are user's home dir, user's desktop, 
+  Typical entries in this section are user's home dir, user's desktop, 
   frequently accessed directories. Local entries can be changed selecting 
   the "Options" menu entry.
 
@@ -54,7 +54,7 @@ entries is shown:
 
 </list>
 
-The root menu is highly customizablem, as explained in the remaining sections.
+The root menu is highly customizable, as explained in the remaining sections.
 
 <!--################################################################## -->
 <sect>Features & Tips
