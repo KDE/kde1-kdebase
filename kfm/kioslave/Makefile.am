@@ -1,7 +1,7 @@
 
 INCLUDES= $(all_includes) -I$(top_srcdir)/kfm
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
-LDADD   = $(LIB_KIMGIO) $(LIB_KDECORE) 
+LDADD   = $(LIB_KIMGIO) $(LIB_KDECORE) $(LIBVOLMGT)
 CXXFLAGS= $(NOOPT_CXXFLAGS)
 
 ####### Files
