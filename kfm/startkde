@@ -9,8 +9,9 @@ kcontrol -init
 
 # Start the common desktop tools in the background.
 # The sleeps reduce disk usage during startup.
+# kaudioserver will put itself in the background automagically
 
-(sleep 1 && exec kaudioserver) &
+sleep 1 ; kaudioserver
 (sleep 1 && exec kwmsound) &
 
 # Add -ncols 96 after kfm if using a 8-bit display
