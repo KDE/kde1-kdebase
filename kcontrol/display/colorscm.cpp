@@ -642,7 +642,34 @@ void KColorScheme::installSchemes()
 	writeNamedColor( config,"WindowColor","#ffffff");
 	writeNamedColor( config,"SelectTextColor","#ffffff");
 	config->writeEntry("Contrast", 3);
-	
+
+	config->setGroup( "Solaris CDE" );
+  
+        writeNamedColor( config, "BackgroundColor","#aeb2c3");
+        writeNamedColor( config, "SelectColor","#718ba5");
+        writeNamedColor( config, "TextColor","#000000");
+        writeNamedColor( config, "ActiveTitleTextColor","#ffffff");
+        writeNamedColor( config, "InactiveTitleBarColor","#aeb2c3");
+        writeNamedColor( config, "ActiveTitleBarColor","#b24d7a");
+        writeNamedColor( config, "InactiveTitleTextColor","#000000");
+        writeNamedColor( config, "WindowTextColor","#000000");
+        writeNamedColor( config, "WindowColor","#9397a5");
+        writeNamedColor( config, "SelectTextColor","#ffffff");
+        config->writeEntry( "Contrast", 7);
+ 
+        config->setGroup( "Digital CDE" );
+	writeNamedColor( config, "BackgroundColor","#4b7b82");
+        writeNamedColor( config, "SelectColor","#41525c");
+        writeNamedColor( config, "TextColor","#ffffff");
+        writeNamedColor( config, "ActiveTitleTextColor","#ffffff");
+        writeNamedColor( config, "InactiveTitleBarColor","#4b7b82");
+        writeNamedColor( config, "ActiveTitleBarColor","#a47591");
+        writeNamedColor( config, "InactiveTitleTextColor","#ffffff");
+        writeNamedColor( config, "WindowTextColor","#ffffff");
+        writeNamedColor( config, "WindowColor","#374d4e");
+        writeNamedColor( config, "SelectTextColor","#ffffff");
+        config->writeEntry("Contrast", 7);      
+
 	config->sync();
 }
 
@@ -786,17 +813,30 @@ void KColorScheme::writeSettings()
 	KConfig* systemConfig = kapp->getConfig();
 	systemConfig->setGroup( "Color Scheme" );
 
-	systemConfig->writeEntry("BackgroundColor", sampleWidgets->backgroundColor, true, true);
-	systemConfig->writeEntry("SelectColor", sampleWidgets->selectColor, true, true);
-	systemConfig->writeEntry("TextColor", sampleWidgets->textColor, true, true);
-	systemConfig->writeEntry("ActiveTitleTextColor", sampleWidgets->activeTextColor, true, true);
-	systemConfig->writeEntry("InactiveTitleBarColor",sampleWidgets->inactiveTitleColor,  true, true);
-	systemConfig->writeEntry("ActiveTitleBarColor", sampleWidgets->activeTitleColor,  true, true);
-	systemConfig->writeEntry("InactiveTitleTextColor",sampleWidgets->inactiveTextColor , true, true);
-	systemConfig->writeEntry("WindowTextColor", sampleWidgets->windowTextColor, true, true);
-	systemConfig->writeEntry("WindowColor", sampleWidgets->windowColor, true, true);
-	systemConfig->writeEntry("SelectTextColor", sampleWidgets->selectTextColor, true, true);
-	systemConfig->writeEntry("Contrast", sampleWidgets->contrast, true, true);
+	systemConfig->writeEntry("BackgroundColor", 
+				 sampleWidgets->backgroundColor, true, true);
+	systemConfig->writeEntry("SelectColor", 
+				 sampleWidgets->selectColor, true, true);
+	systemConfig->writeEntry("TextColor", 
+				 sampleWidgets->textColor, true, true);
+	systemConfig->writeEntry("ActiveTitleTextColor", 
+				 sampleWidgets->activeTextColor, true, true);
+	systemConfig->writeEntry("InactiveTitleBarColor",
+				 sampleWidgets->inactiveTitleColor,  
+				 true, true);
+	systemConfig->writeEntry("ActiveTitleBarColor", 
+				 sampleWidgets->activeTitleColor,  true, true);
+	systemConfig->writeEntry("InactiveTitleTextColor",
+				 sampleWidgets->inactiveTextColor , 
+				 true, true);
+	systemConfig->writeEntry("WindowTextColor", 
+				 sampleWidgets->windowTextColor, true, true);
+	systemConfig->writeEntry("WindowColor", 
+				 sampleWidgets->windowColor, true, true);
+	systemConfig->writeEntry("SelectTextColor", 
+				 sampleWidgets->selectTextColor, true, true);
+	systemConfig->writeEntry("Contrast", 
+				 sampleWidgets->contrast, true, true);
         systemConfig->sync();
 	
 	systemConfig->setGroup( "ColorScheme" );
