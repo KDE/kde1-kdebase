@@ -11,6 +11,11 @@ influences from my experiences with the former kwm.
 
 In 0.11:
 --------
+patchlevel 12:
+        - new property "ResizeAnimationSpeed". Default value is 1 
+           (former behaviour), possible values range from 1 to 10
+           (maximum speed). Kudos to Christian Tibirna for this.
+
 patchlevel 11:
         - switchActivateClient (used by the taskbar or the current
            session manager) ensures visibility of the window according

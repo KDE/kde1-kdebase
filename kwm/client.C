@@ -195,20 +195,26 @@ bool  animate_size_change(Client* c, QRect before, QRect after, bool decorated, 
   // animation action needs always the same time regardless of the
   // performance of the machine or the X-Server.
 
-  float lf,rf,tf,bf;
+  float lf,rf,tf,bf,step;
   XEvent ev;
 
   if (!options.ResizeAnimation)
     return false;
   
+  //CT 12Jun1998 set animation steps hence speed;
+  //  smaller the step is, faster the anim should be
+  //  so 11 is (max possible value of the ResizeAnimation  + 1)
+  //  step goes form 40 (faster animation) to 400 (Matthias' hardcoded)
+  step = 40. * (11 - options.ResizeAnimationSpeed);
+
   bool transparent = (options.WindowResizeType == TRANSPARENT);
   if (!transparent && !c->isVisible())
     transparent = true;
 
-  lf = (after.left() - before.left())/400.0;
-  rf = (after.right() - before.right())/400.0;
-  tf = (after.top() - before.top())/400.0;
-  bf = (after.bottom() - before.bottom())/400.0;
+  lf = (after.left() - before.left())/step; //400.0; Matthias' hardcoded
+  rf = (after.right() - before.right())/step; //400.0;
+  tf = (after.top() - before.top())/step; //400.0;
+  bf = (after.bottom() - before.bottom())/step; //400.0;
 
 
   QRect area = before;
@@ -265,7 +271,7 @@ bool  animate_size_change(Client* c, QRect before, QRect after, bool decorated, 
 			       area2.height(), 
 			       decorated, o1, o2);
     }
-  } while (tt - ts < 400);
+  } while (tt - ts < step); //CT 400);
   if (area2 == area && transparent){
     draw_animation_rectangle(area2.left(), 
 			     area2.top(), 
