@@ -32,6 +32,8 @@ clean: debian-clean
 debian-clean:
 	dh_testdir
 	-rm -f $(BUILDDIR)/build-stamp
+	-rm -f debian/files
+	-rm -f debian/menu
 
 binary-indep:	checkroot build
 	$(checkdir)
