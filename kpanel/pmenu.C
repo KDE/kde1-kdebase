@@ -253,13 +253,22 @@ short PMenuItem::parse( QString abs_file_path )
   return parse(&fi);
 }
 
+void PMenuItem::addFolderToRecentList()
+{
+  PFileMenu::updateRecentFolders(getDirPath());
+}
 
 
 void PMenuItem::exec()
 {
+  QDir d(getDirPath());
+  QString cpath = d.canonicalPath() + "/" + real_name;
+
+  PFileMenu::updateRecentFiles(cpath);
+
   KFM* kfm = new KFM;
   QString com = "file:";
-  com.append(fullPathName());
+  com.append(cpath);
   kfm->exec(com.data(),0L);
   delete kfm;
 }
@@ -358,6 +367,33 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 		     SLOT(showToolTip(QString)) );
 	  }
 	continue;
+
+      case dirbrowser:
+        item->cmenu->setFont(menu->font());
+        item->sub_menu->createMenu( item->cmenu, panel );
+        menu->insertItem(item->pixmap, item->text_name, item->cmenu, item->getId());
+        ((PFileMenu*)(item->sub_menu))->id = item->getId();
+
+        item->cmenu->id = item->getId();
+
+        ((PFileMenu*)(item->sub_menu))->parentItem = item;
+
+	continue;
+
+      case url:
+	menu->insertItem(item->pixmap, item->text_name, item->getId());
+	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
+		 SLOT(showToolTip(QString)) );
+
+	menu->connectItem(item->getId(), item, SLOT(exec()) );
+
+	// NOTE: only files accessed through DiskNavigator menus update the
+	// recent folders.
+
+	menu->connectItem(item->getId(), item, SLOT(addFolderToRecentList()));
+
+	continue;
+
       case label:
 	menu->insertItem(item->pixmap, item->text_name, item->getId());
 	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
@@ -679,6 +715,27 @@ PMenuItem * PMenu::searchItem(QString name)
   }
   return pmi;
 }
+
+PMenuItem * PMenu::searchItem(int id)
+{
+  PMenuItem *item;
+  for( item = list.first(); item != 0 && item->getId() != id; 
+       item = list.next() );
+
+  return item;
+}
+
+#ifdef DISKNAV_DEBUG
+
+PMenuItem * PMenu::searchItem(PMenu* _item)
+{
+  PMenuItem *item;
+  for( item = list.first(); item != 0 && item->sub_menu != _item; 
+       item = list.next() );
+
+  return item;
+}
+#endif
 
 void PMenu::highlighted( int id )
 {

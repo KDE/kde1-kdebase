@@ -37,6 +37,7 @@
 
 class QDir;
 class PMenu;
+class PFileMenu;
 class kPanel;
 
 class myPopupMenu: public QPopupMenu
@@ -44,25 +45,46 @@ class myPopupMenu: public QPopupMenu
   Q_OBJECT
 public:
   myPopupMenu( QWidget *parent=0, const char *name=0 );
+  myPopupMenu( PFileMenu* _parentMenu );
   ~myPopupMenu() {}
   int height();
   int width();
+  int id;        // if this object is a submenu, the submenu id
+
 private:	// Disabled copy constructor and operator=
   myPopupMenu( const myPopupMenu & ) {}
   myPopupMenu &operator=( const myPopupMenu & ) { return *this; }
+
+  virtual bool x11Event( XEvent * xe);
+  virtual void mousePressEvent ( QMouseEvent * );
+
+public:
+  int maxEntriesOnScreen();
+  int entryHeight();
+  PFileMenu* parentMenu;
+  static int keyStatus;   // ShiftButton | ControlButton | AltButton
 };
 
 
-enum EntryType { empty, separator, submenu, unix_com, prog_com, label, add_but };
+enum EntryType { empty, separator, submenu, unix_com, prog_com, label, add_but, dirbrowser, url };
 
 #define __cc0 (void*)0
+
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
 
 class PMenuItem : public QObject
 {
   Q_OBJECT
   friend QString &operator<<(QString &, PMenuItem &);
   friend PMenu;
+  friend PFileMenu;
 public:
+
+#ifdef DISKNAV_DEBUG
+  virtual void dump();
+#endif
+
   PMenuItem();
   PMenuItem( EntryType e, QString t=QString(), QString c=QString(), QString n=QString(), PMenu *menu=0,
 	     QObject *receiver=0, char *member=0, QPopupMenu *cm=0, bool ro = FALSE,
@@ -86,9 +108,11 @@ public:
   QString   getDirPath(){ return dir_path;}
 
   int getId(){return id;}
+  void setRealName(QString _real_name) { real_name = _real_name; }
 
 public slots:
   void exec();
+  void addFolderToRecentList();
 
 signals:
   void showToolTip(QString);
@@ -127,15 +151,26 @@ public:
   PMenu ( PMenu &menu );
   ~PMenu ();
 
+#ifdef DISKNAV_DEBUG
+  virtual void dump();
+#endif
+
   void       add ( PMenuItem *item);
   void       insert ( PMenuItem *item, int index );
   void       move( short item_id, short new_pos);
   void       remove( short item_id );
   short      parse ( QDir d );
-  void       createMenu( QPopupMenu *menu, kPanel *panel, bool add_button = FALSE );
+  virtual void createMenu( QPopupMenu *menu, kPanel *panel, bool add_button = FALSE );
   void       create_pixmap( QPixmap &buf, PMenuItem *item, QPopupMenu *menu );
   void       set_net_recv( QObject *receiver, char *member );
   PMenuItem *searchItem( QString name );
+
+  PMenuItem *searchItem( int id );
+
+#ifdef DISKNAV_DEBUG
+  PMenuItem *searchItem( PMenu* item );  // DEBUG
+#endif
+
   QPopupMenu *getQPopupMenu() { return cmenu; }
 
   void       setAltSort( bool alternateSort ) { altSort = alternateSort; }
@@ -149,7 +184,7 @@ signals:
 public slots:
 
 protected slots:
-  void highlighted(int id);
+  virtual void highlighted(int id);
 
 protected:
   QList<PMenuItem> list;
@@ -174,5 +209,78 @@ inline void PMenuItem::removeMenu()
     delete sub_menu;
   sub_menu = NULL; 
 }
+
+
+class PFileMenu : public PMenu
+{
+  Q_OBJECT
+public:
+  friend PMenu;
+
+#ifdef DISKNAV_DEBUG
+  virtual void dump();
+#endif
+
+  PFileMenu(bool isRoot = false);
+  PFileMenu(QString& _path);
+  PFileMenu(const char* _path);
+  virtual ~PFileMenu();
+
+  void setId(int _id) { this->id = _id; }
+  int parseDir(QDir d, bool addOpenFolderEntry = true);
+  int parseTail();
+
+  PMenuItem* newDirBrowserItem(const QFileInfo* fi, bool useCurrentPath);
+  PMenuItem* newFileItem(const QFileInfo* fi, bool useCurrentPath);
+  void buildRootMenu();
+
+  static void updateRecentFolders(QString _path);
+  static void updateRecentFiles(QString _path);
+  static void calculateMaxEntriesOnScreen(PMenuItem* menu);
+
+public slots:
+  virtual void aboutToShow();
+  void deactivated(int _id);
+  void optionsDlg();
+  void openFolder();
+  void end() { exit(0); }   // DMALLOC DEBUG
+
+private:
+  void createMenu( QPopupMenu *menu, kPanel *panel, bool add_button = FALSE);
+
+protected:
+
+  static void updateRecentList(EntryType, QString _path, QStrList& recentlist, 
+                               int max_size);
+
+
+  static void insertRecentItem(EntryType type, const char* _path,
+                                const char* fn = 0);
+
+  static void removeLessRecentItem(EntryType type, QStrList& recentlist);
+
+  bool addFile(QFileInfo* fi, bool useDefaultPath = true);
+  bool addFile(QString _path, bool useDefaultPath = true);
+
+  void addTailMenu(QFileInfoListIterator* tail);
+  void copyTailFileInfo(QFileInfoListIterator& it);
+  void fixMenuPosition();
+
+#ifdef DISKNAV_DEBUG
+  void doSelfCheck();
+#endif
+
+private:
+  int id;
+  QFileInfoListIterator* tail;
+  QFileInfoList finfos;
+  QString path;
+  bool isClean;
+  static PFileMenu* root;
+  static int maxEntriesOnScreen;
+  static int entryHeight;
+  PFileMenu* lastActivated;
+  PMenuItem*     parentItem;
+};
 
 #endif // PMENU_H

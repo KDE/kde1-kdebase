@@ -18,9 +18,51 @@
 #include <qkeycode.h>
 #include <qbitmap.h>
 
+int myPopupMenu::keyStatus = 0;
+
+//////////////////////////////////////////////////
+bool myPopupMenu::x11Event( XEvent * xe)
+{
+  if (xe->type == UnmapNotify)
+    if (parentMenu)
+      parentMenu->deactivated(id);
+
+  return QPopupMenu::x11Event(xe);
+}
+
+void myPopupMenu::mousePressEvent ( QMouseEvent *e )
+{
+  myPopupMenu::keyStatus = e->state();
+  QPopupMenu::mousePressEvent(e);
+}
+
+//////////////////////////////////////////////////
+int myPopupMenu::entryHeight() 
+{
+  return cellHeight(0);
+}
+
+//////////////////////////////////////////////////
+int myPopupMenu::maxEntriesOnScreen()
+{
+  QWidget *desktop = QApplication::desktop();
+  int sh = desktop->height();			// screen height
+  
+  int entryh = entryHeight();
+
+  return sh / entryh;
+
+}
+
+//////////////////////////////////////////////////////////////////////////////
 
 myPopupMenu::myPopupMenu( QWidget *parent, const char *name )
-  : QPopupMenu( parent, name ){
+  : QPopupMenu( parent, name ), id(-1), parentMenu(NULL) {
+    setMouseTracking(true);
+}
+
+myPopupMenu::myPopupMenu( PFileMenu* _parentMenu )
+  : QPopupMenu( 0, 0 ), id(-1), parentMenu(_parentMenu) {
     setMouseTracking(true);
 }
 

@@ -8,7 +8,7 @@
 #define KPANEL_H
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>
+#include <config.h>   
 #endif
 #include <qwidget.h>
 #include <qmenubar.h>
@@ -108,7 +108,7 @@ public:
 
 signals:
   void showMe();
-  void hideMe();
+  void hideMe();   
 
 protected:
   void enterEvent( QEvent * );
@@ -392,6 +392,25 @@ private:
 
   int menu_tool_tips;
   bool menu_tool_tips_disabled;
+
+  // kdisknav
+
+  friend class PFileMenu;
+
+  QStrList recent_folders;
+  QStrList recent_files;
+
+  uint max_recent_folders_entries;
+  uint max_recent_files_entries;
+  int head_recent_id;
+  uint max_navigable_folder_entries;
+
+  bool show_dot_files;
+  bool ignore_case;   // ignore case when sorting
+  bool show_global_section;
+  bool show_local_section;
+  bool show_recent_section;
+  bool show_option_entry;
 
   // development
 

@@ -17,7 +17,7 @@ void kPanel::writeOutConfiguration(){
    int i;
    QPushButton* tmp_push_button = 0;
    KConfig *config = KApplication::getKApplication()->getConfig();
-   config->setGroup("kpanelButtons");
+   config->setGroup("kpanelButtons"); 
    QString s;
    QString b;
    float delta;
@@ -83,6 +83,12 @@ void kPanel::writeOutConfiguration(){
 
    config->writeEntry("Buttons", button);
    config->writeEntry("ButtonDelta", buttondelta);
+
+   config->setGroup("kdisknav");
+
+   config->writeEntry("RecentFolders", recent_folders);
+   config->writeEntry("RecentFiles", recent_files);
+
    config->sync();
 };
 
@@ -149,6 +155,16 @@ void kPanel::parseMenus(){
     panel_menu->add( new PMenuItem(prog_com, klocale->translate("Restart"), 0, 0, 0,
 				   this, SLOT(restart()), 0, false, 0,
 				   klocale->translate("Restart panel")) );
+
+    PMenuItem* fileBrowser = 
+      new PMenuItem(submenu, klocale->translate("Disk Navigator"),
+                    0, "kdisknav.xpm", new PFileMenu(true), 0, 0,
+                    new myPopupMenu);
+    
+
+    pmenu->add( fileBrowser );
+
+
     pmenu->add( new PMenuItem(submenu, klocale->translate("Panel"), 0, 0, panel_menu,
 			      0, 0, new myPopupMenu) );
     pmenu->add( new PMenuItem(prog_com, klocale->translate("Lock Screen"), 0, 0, 0,
@@ -158,6 +174,7 @@ void kPanel::parseMenus(){
 			      this, SLOT(ask_logout()), 0, false, 0, klocale->translate("Logout")) );
 
     pmenu->createMenu(new myPopupMenu, this);
+    PFileMenu::calculateMaxEntriesOnScreen(fileBrowser);
 
     int i;
     for (i=0; i<nbuttons && entries[i].button!=kde_button; i++);
@@ -295,6 +312,77 @@ void kPanel::readInConfiguration(){
        tmp = buttondelta.next();
        delta = tmp.isNull()?0:tmp.toFloat();
      }
+   }
+  
+   // kdisknav
+
+   config->setGroup("kdisknav");
+
+   if (config->hasKey("MaxRecentFoldersEntries"))
+     max_recent_folders_entries = 
+       config->readEntry("MaxRecentFoldersEntries").toUInt();
+   else {
+     // config->writeEntry("MaxRecentFoldersEntries", 4);
+     max_recent_folders_entries = 4;
+   }
+
+   if (config->hasKey("MaxRecentFilesEntries"))
+     max_recent_files_entries = 
+       config->readEntry("MaxRecentFilesEntries").toUInt();
+   else {
+     // config->writeEntry("MaxRecentFilesEntries", 4);
+     max_recent_files_entries = 4;
+   }
+
+   if (config->hasKey("MaxNavigableFolderEntries"))
+     max_navigable_folder_entries = 
+       config->readEntry("MaxNavigableFolderEntries").toUInt();
+   else {
+     // config->writeEntry("MaxNavigableFolderEntries", 200);
+     max_navigable_folder_entries = 200;
+   }
+
+   if (config->hasKey("ShowDotFiles"))
+     show_dot_files = (config->readEntry("ShowDotFiles") == "on");
+   else {
+     // config->writeEntry("ShowDotFiles", "off");
+     show_dot_files = false;
+   }
+
+   if (config->hasKey("IgnoreCase"))
+     ignore_case = (config->readEntry("IgnoreCase") == "on");
+   else {
+     // config->writeEntry("IgnoreCase", "off");
+     ignore_case = false;
+   }
+
+   if (config->hasKey("RecentFolders"))
+     config->readListEntry("RecentFolders", recent_folders);
+
+   if (config->hasKey("RecentFiles"))
+     config->readListEntry("RecentFiles", recent_files);
+
+   if (config->hasKey("ShowGlobalSection"))
+     show_global_section = (config->readEntry("ShowGlobalSection") == "on");
+   else
+     show_global_section = true;
+
+   if (config->hasKey("ShowLocalSection"))
+     show_local_section = (config->readEntry("ShowLocalSection") == "on");
+   else {
+     show_local_section = true;
+   }
+
+   if (config->hasKey("ShowRecentSection"))
+     show_recent_section = (config->readEntry("ShowRecentSection") == "on");
+   else {
+     show_recent_section = true;
+   }
+
+   if (config->hasKey("ShowOptionEntry"))
+     show_option_entry = (config->readEntry("ShowOptionEntry") == "on");
+   else {
+     show_option_entry = true;
    }
 
 }
