@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpanel \n"
 "POT-Creation-Date: 1998-06-16 13:54+0200\n"
-"PO-Revision-Date: 1998-03-25 21:41+0100\n"
+"PO-Revision-Date: 1998-06-20 13:36+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -12,7 +12,7 @@ msgstr "Id¼!"
 
 #: kpanel.C:256 tools.C:787
 msgid "Where do you want to go tomorrow?"
-msgstr "Uruchom rozs±dek - systemy otwarte"
+msgstr "A gdzie siê to dzisiaj wybierasz?"
 
 #: kpanel.C:330
 msgid "No info available"
@@ -68,11 +68,11 @@ msgstr "Konfiguruj panel"
 
 #: props.C:145
 msgid "Edit Menus"
-msgstr ""
+msgstr "Konfiguruj menu"
 
 #: props.C:147
 msgid "Add or remove applications in the menu structure "
-msgstr ""
+msgstr "Dodaj lub usuñ aplikacje ze struktury menu "
 
 #: events.C:724 props.C:148
 msgid "Restart"
@@ -92,18 +92,12 @@ msgstr "Zablokuj ekran"
 
 #: props.C:310
 msgid "The menu editor is not installed."
-msgstr ""
+msgstr "Edytor menu jest niezainstalowany."
 
 #: events.C:760 props.C:311
 msgid "Oops!"
-msgstr ""
+msgstr "Ojej!"
 
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"
-msgstr ""
-
-#~ msgid "Move"
-#~ msgstr "Przesuñ"
-
-#~ msgid "Properties"
-#~ msgstr "W³a¶ciwo¶ci"
+msgstr "Nie mo¿na umie¶ciæ tego jako przycisku na panelu!"

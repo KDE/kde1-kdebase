@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo \n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
-"PO-Revision-Date: 1998-03-25 20:35+0100\n"
-"Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
+"PO-Revision-Date: 1998-06-20 13:20+0200\n"
+"Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
 #: main.cpp:50
@@ -53,9 +53,8 @@ msgstr "%10ld bajtów  = %8.2f MB"
 
 #: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
 #: memory.cpp:101
-#, fuzzy
 msgid "Not available"
-msgstr "nie dostêpne"
+msgstr "Nie dostêpne"
 
 #: processor.cpp:29
 msgid "This system is not yet supported :-("

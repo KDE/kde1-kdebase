@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kuser \n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
-"PO-Revision-Date: 1998-03-25 20:47+0100\n"
+"PO-Revision-Date: 1998-06-20 13:21+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -79,13 +79,12 @@ msgid "Titlebar appearance"
 msgstr "Wygl±d paska tytu³owego"
 
 #: titlebar.cpp:928
-#, fuzzy
 msgid "Shaded Vertically"
-msgstr "Maksymalizuj pionowo"
+msgstr "Zwijaj pionowo"
 
 #: titlebar.cpp:930
 msgid "Shaded Horizontally"
-msgstr ""
+msgstr "Zwijaj poziomo"
 
 #: titlebar.cpp:934
 msgid "Plain"
@@ -160,18 +159,16 @@ msgid "Opaque"
 msgstr "Wype³nione"
 
 #: windows.cpp:89
-#, fuzzy
 msgid "Window resize"
-msgstr "&Okna"
+msgstr "Zmiana rozmiaru"
 
 #: windows.cpp:90
-#, fuzzy
 msgid "Animation:"
-msgstr "Przewijanie tytu³u"
+msgstr "Animacja:"
 
 #: windows.cpp:92
 msgid "Fast"
-msgstr ""
+msgstr "Szybka"
 
 #: windows.cpp:98
 msgid "Placement policy"
@@ -226,14 +223,12 @@ msgid "Focus follows mouse"
 msgstr "Myszka uaktywnia okno"
 
 #: windows.cpp:133
-#, fuzzy
 msgid "Classic focus follows mouse"
-msgstr "Myszka uaktywnia okno"
+msgstr "Myszka uaktywnia okno (klasycznie)"
 
 #: windows.cpp:135
-#, fuzzy
 msgid "Classic sloppy focus"
-msgstr "Kliknij by uaktywniæ"
+msgstr "Kliknij by uaktywniæ (klasycznie)"
 
 #: windows.cpp:144
 msgid ""
@@ -282,28 +277,3 @@ msgid ""
 msgstr ""
 "Strefa prze³±czenia okna:\n"
 "       (w pikselach)"
-
-#, fuzzy
-#~ msgid "With animation"
-#~ msgstr "Przewijanie tytu³u"
-
-#~ msgid "Move"
-#~ msgstr "Przesuñ"
-
-#~ msgid "Restore"
-#~ msgstr "Przywróæ"
-
-#~ msgid "Shaded"
-#~ msgstr "Cieniowany"
-
-#~ msgid "Resize Animation"
-#~ msgstr "Animacja zmiany rozmiaru"
-
-#~ msgid "Edge Resistance:"
-#~ msgstr "Tolerancja krawêdzi:"
-
-#~ msgid "Random placement"
-#~ msgstr "Przypadkowe umiejscawianie"
-
-#~ msgid "Smart placement"
-#~ msgstr "Inteligentne umiejscawianie"

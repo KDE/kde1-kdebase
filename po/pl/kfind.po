@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfind \n"
 "POT-Creation-Date: 1998-06-16 15:37+0200\n"
-"PO-Revision-Date: 1998-03-25 21:30+0100\n"
+"PO-Revision-Date: 1998-04-16 18:53+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -15,14 +15,12 @@ msgid "Cannot open or read directory."
 msgstr "Nie mo¿na otworzyæ lub odczytaæ katalogu."
 
 #: kfindtop.cpp:118
-#, fuzzy
 msgid "&Start search"
-msgstr "Zacznij szukanie"
+msgstr "&Rozpocznij szukanie"
 
 #: kfindtop.cpp:120
-#, fuzzy
 msgid "S&top search"
-msgstr "Zatrzymaj szukanie"
+msgstr "&Zatrzymaj szukanie"
 
 #: kfindtop.cpp:125
 msgid "&Open"
@@ -49,9 +47,8 @@ msgid "&Select All"
 msgstr "&Zaznacz wszyskie"
 
 #: kfindtop.cpp:157
-#, fuzzy
 msgid "Unse&lect All"
-msgstr "&Zaznacz wszyskie"
+msgstr "&Odeznacz wszyskie"
 
 #: kfindtop.cpp:159
 msgid "&Invert Selection"
@@ -179,23 +176,23 @@ msgstr "Wszystkie pliki i katalogi"
 
 #: kftabdlg.cpp:234
 msgid "Folders"
-msgstr ""
+msgstr "Katalogi"
 
 #: kftabdlg.cpp:235
 msgid "Symbolic links"
-msgstr ""
+msgstr "Symboliczne odno¶niki"
 
 #: kftabdlg.cpp:236
 msgid "Special files (sockets, device files...)"
-msgstr ""
+msgstr "Pliki specjalne (gniazdka, urz±dzenia...)"
 
 #: kftabdlg.cpp:237
 msgid "Executable files"
-msgstr ""
+msgstr "Pliki wykonywalne"
 
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
-msgstr ""
+msgstr "Pliki wykonywalne SUID"
 
 #: kftabdlg.cpp:247
 msgid "At Least"
@@ -350,15 +347,3 @@ msgstr "Nie mo¿na rozpoznaæ typu arhiwum!"
 #: kfwin.cpp:496
 msgid "Error while creating child process!"
 msgstr "B³±d podczas tworzenia procesu potomnego!"
-
-#~ msgid "&Cut"
-#~ msgstr "&Wytnij"
-
-#~ msgid "Properties"
-#~ msgstr "W³a¶ciwo¶ci"
-
-#~ msgid "Kfind &help"
-#~ msgstr "Pomo&c"
-
-#~ msgid "About &Qt"
-#~ msgstr "Informacje o &Qt..."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kuser \n"
 "POT-Creation-Date: 1998-06-16 13:54+0200\n"
-"PO-Revision-Date: 1998-03-25 21:37+0100\n"
+"PO-Revision-Date: 1998-04-16 18:28+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -24,11 +24,11 @@ msgstr "Konfiguracja KPanel"
 
 #: panel.cpp:59
 msgid "Location"
-msgstr "Lokacja"
+msgstr "Lokalizacja"
 
 #: panel.cpp:60
 msgid "&Top"
-msgstr "&Góra"
+msgstr "Na górz&e"
 
 #: panel.cpp:61
 msgid "&Left"
@@ -36,7 +36,7 @@ msgstr "Po &lewej"
 
 #: panel.cpp:62
 msgid "&Bottom"
-msgstr "&Dó³"
+msgstr "Na d&ole"
 
 #: panel.cpp:74
 msgid "Taskbar"
@@ -84,7 +84,7 @@ msgstr "Podpowiedzi"
 
 #: options.cpp:39
 msgid "Show &Menu Tooltips"
-msgstr "Poka¿ Podpowiedzi"
+msgstr "Poka¿ podpowiedzi"
 
 #: options.cpp:44
 msgid "De&lay:"
@@ -121,9 +121,3 @@ msgstr "&24h"
 #: options.cpp:85
 msgid "&12h AM/PM"
 msgstr "&12h AM/PM"
-
-#~ msgid "Tiny Style"
-#~ msgstr "Ma³y"
-
-#~ msgid "Large Style"
-#~ msgstr "Du¿y"

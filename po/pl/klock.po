@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
 "POT-Creation-Date: 1998-06-17 09:43+0200\n"
-"PO-Revision-Date: 1998-03-25 21:38+0100\n"
+"PO-Revision-Date: 1998-06-20 13:26+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -145,33 +145,29 @@ msgstr "Bloby"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
-msgstr ""
+msgstr "B±belki"
 
 #: bouboule.cpp:1005
-#, fuzzy
 msgid "Setup KBouboule"
-msgstr "Ustawienia wygaszacza P³omieñ"
+msgstr "Ustawienia wygaszacza B±belki"
 
 #: bouboule.cpp:1032
-#, fuzzy
 msgid "Number of points:"
-msgstr "Ilo¶æ nietoperzy:"
+msgstr "Ilo¶æ punktów:"
 
 #: bouboule.cpp:1046
-#, fuzzy
 msgid "Point size:"
-msgstr "Liczba punktów:"
+msgstr "Rozmiar punktu:"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr ""
+msgstr "Czêstotliwo¶æ zmiany koloru:"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
-msgstr ""
+msgstr "Tryb 3D"
 
 #: bouboule.cpp:1223
-#, fuzzy
 msgid "About Bouboule"
 msgstr "Informacje"
 
@@ -183,6 +179,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
+"B±belki v0.1\n"
+"\n"
+"Copyright (c) 1996 by Jeremie PETIT\n"
+"\n"
+"Wersja dla kscreensave - Cedric Tefft"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -582,82 +583,77 @@ msgstr "B³êdne"
 
 #: science.cpp:65
 msgid "Whirl"
-msgstr ""
+msgstr "Wir"
 
 #: science.cpp:68
-#, fuzzy
 msgid "Sphere"
-msgstr "Prêdko¶æ:"
+msgstr "Sfera:"
 
 #: science.cpp:71
 msgid "Exponential"
-msgstr ""
+msgstr "Wyk³adnik"
 
 #: science.cpp:74
 msgid "Contraction"
-msgstr ""
+msgstr "Kontrakcja"
 
 #: science.cpp:77
 msgid "Wave"
-msgstr ""
+msgstr "Fala"
 
 #: science.cpp:80
 msgid "Curvature"
-msgstr ""
+msgstr "Odchylenie"
 
 #: science.cpp:112
-#, fuzzy
 msgid "Science"
-msgstr "Ustawienia wygaszacza Linie"
+msgstr "Nauka"
 
 #: science.cpp:447
 msgid "rendering lens..."
-msgstr ""
+msgstr "renderowanie..."
 
 #: science.cpp:769
 msgid "grabbing screen..."
-msgstr ""
+msgstr "zgrywanie ekraku..."
 
 #: science.cpp:931
-#, fuzzy
 msgid "Setup Science"
-msgstr "Ustawienia wygaszacza Linie"
+msgstr "Ustawienia wygaszacza Nauka"
 
 #: science.cpp:949
-#, fuzzy
 msgid "Mode:"
-msgstr "¦rodkowe:"
+msgstr "Tryb:"
 
 #: science.cpp:964
 msgid "Inverse"
-msgstr ""
+msgstr "Odwrócony"
 
 #: science.cpp:974
 msgid "Gravity"
-msgstr ""
+msgstr "Grawitacja"
 
 #: science.cpp:983
 msgid "Hide Background"
-msgstr ""
+msgstr "Ukryj t³o"
 
 #: science.cpp:1009
 msgid "Intensity:"
-msgstr ""
+msgstr "Intensywno¶æ:"
 
 #: science.cpp:1039
 msgid "Motion:"
-msgstr ""
+msgstr "Ruch:"
 
 #: science.cpp:1260
 msgid "Science Version"
-msgstr ""
+msgstr "Wersja"
 
 #: science.cpp:1261
 msgid "written by"
-msgstr ""
+msgstr "napisa³"
 
 #: science.cpp:1262
-#, fuzzy
 msgid "About Science"
 msgstr "Informacje"
 
@@ -746,6 +742,3 @@ msgstr ""
 "Copyright (c) 1991 Patrick J. Naughton\n"
 "\n"
 "Wersja dla kscreensave od Emanuel Pirker."
-
-#~ msgid "Move"
-#~ msgstr "Ruch"

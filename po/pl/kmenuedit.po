@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit \n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
-"PO-Revision-Date: 1998-03-25 21:39+0100\n"
+"PO-Revision-Date: 1998-06-20 13:35+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -116,7 +116,7 @@ msgstr ""
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
-msgstr "Nie ustawiona jest ¦cie¿ka dla ¶rodowiska KDE"
+msgstr "Nie jest ustawiona ¶cie¿ka dla ¶rodowiska KDE"
 
 #: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"
@@ -242,12 +242,3 @@ msgstr "Prywatne:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Domy¶lne:"
-
-#~ msgid "&Reload"
-#~ msgstr "&Prze³aduj"
-
-#~ msgid "Type:"
-#~ msgstr "Typ:"
-
-#~ msgid "Name:"
-#~ msgstr "Nazwa:"
