@@ -130,7 +130,8 @@ class KObjectConfig: public QObject {
   QList<KConfigObject> entries;
   bool                 deleteConfig;
   bool                 readOnly;
-  int                  configType; 
+  short                configType;
+  float                version;
  protected:
    void                init();
    void                initConfig();
@@ -236,6 +237,13 @@ class KObjectConfig: public QObject {
 			     QWidget* parent=0L);
   QWidget* createComboWidget2(QString& val, const char** list=0L,
 			      const char* name=0L, QWidget* parent=0L);
+  /**
+     This set config file version and enables version control 
+     (disabled by default). Version number follow the standart convension:
+     major number before dot, minor number after dot.
+  */
+  void  setVersion(float v) {version = v;}
+  float getVersion() const {return version;}
 
  signals:
   /** This signal emited when new user rc file created by using UserFromSystemRc
@@ -253,6 +261,14 @@ class KObjectConfig: public QObject {
   /** This signal emited when where is no system Application data file
   */
   void noSystemDataFile(const char*);
+  /** This signal is emited when version control enabled by setVersion and
+      readed file major version older then expected
+  */
+  void olderVersion();
+  /** This signal is emited when version control enabled by setVersion and
+      readed file major version newer then expected
+  */
+  void newerVersion();
 };
 
 #endif

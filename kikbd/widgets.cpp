@@ -346,6 +346,9 @@ void KiKbdGeneralWidget::addMap()
   dialog.resize(440, 340);
 
   //--- load list of maps
+  QString preferedLang;
+  int prefIndex = 0;
+  preferedLang = kapp->getLocale()->language();
   for(i=0; i<mapsToAdd.count(); i++) {
     KiKbdMapConfig *map = kikbdConfig->getMap(mapsToAdd.at(i));
     int width = 400;
@@ -356,22 +359,20 @@ void KiKbdGeneralWidget::addMap()
     p.begin(&pm);
     p.setPen(map->getColor());
     p.drawText(25, 0, width-24, 15, AlignLeft | AlignVCenter,
-	       map->getGoodLabel());
+	       map->getGoodLabel()+" "+map->getComment());
     p.fillRect(0, 0, 23, 15, gray);
-    QPixmap flag(map->getIcon());
-    if(!flag.isNull())
-      p.drawPixmap(1, 1, flag);
-    p.setPen(black);
-    p.drawText(1, 1, 22, 14, AlignCenter, map->getLabel());
+    p.drawPixmap(1, 1, map->getIcon());
     p.end();
     maps->insertItem(pm);
+    if(!prefIndex && preferedLang == map->getLocale())
+      prefIndex = i;
   }
   ok->setFocus();
   connect(maps, SIGNAL(activated(int)), SLOT(setLongComment(int)));
   connect(this, SIGNAL(setLongComment(const char*)), label,
 	  SLOT(setText(const char*)));
-  maps->setCurrentItem(0);
-  setLongComment(0);
+  maps->setCurrentItem(prefIndex);
+  setLongComment(prefIndex);
 
   //--- execute dialog
   if(dialog.exec()) addMap(mapsToAdd.at(maps->currentItem()));

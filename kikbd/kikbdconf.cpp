@@ -23,6 +23,7 @@
 #include <qfileinf.h>
 #include <qdir.h>
 #include <qcolor.h>
+#include <qpainter.h>
 
 #include <kconfig.h>
 #include <kapp.h>
@@ -100,6 +101,7 @@ const QColor mapNoFileColor = darkRed;
 //=========================================================
 KiKbdConfig::KiKbdConfig():KObjectConfig(UserFromSystemRc)
 {
+  setVersion(1.0);
   setGroup(confMainGroup);
   registerBool(confStringHotList    , hotList);
   registerBool(confStringBeep       , keyboardBeep);
@@ -134,16 +136,41 @@ KiKbdConfig::KiKbdConfig():KObjectConfig(UserFromSystemRc)
 					autoStartPlaceLabels,
 					sizeof(autoStartPlaceLabels)
 					/sizeof(*autoStartPlaceLabels)));
-  connect(this, SIGNAL(newUserRcFile()), SLOT(newUserRc()));					  
+  connect(this, SIGNAL(newUserRcFile()), SLOT(newUserRc())); 
+  connect(this, SIGNAL(olderVersion()), SLOT(olderVersion())); 
+  connect(this, SIGNAL(newerVersion()), SLOT(newerVersion())); 
+}
+void ask(const char* msg)
+{
+  KiKbdConfig::message(klocale->translate(msg));
+  if(QString(kapp->argv()[0]).find("kikbd") != -1) {
+    if(KMsgBox::yesNo(0L, "kikbd",
+		      klocale->translate("Do you want to start Configuration?"))
+       == 1) {
+      system("kcmikbd -startkikbd&");
+      ::exit(0);
+    }
+  }
 }
 void KiKbdConfig::newUserRc()
 {
-  message(klocale->translate("Your configuration is empty. Install system default."));
-  if(QString(kapp->argv()[0]).find("kikbd") != -1) {
-    if(KMsgBox::yesNo(0L, "kikbd", 
-		      klocale->translate("Do you want to start Configuration?"))
-       == 1)
-      system("kcmikbd&");
+  ask("Your configuration is empty. Install system default.");
+}
+int doneCheck = FALSE;
+void KiKbdConfig::olderVersion()
+{
+  if(!doneCheck) {
+    ask("Configuration file you have has older format when expected.\n"
+	"Some settings may be incorrect.");
+    doneCheck = TRUE;
+  }
+}
+void KiKbdConfig::newerVersion()
+{
+  if(!doneCheck) {
+    ask("Configuration file you have has newer format when expected.\n"
+	"Some settings may be incorrect.");
+    doneCheck = TRUE;
   }
 }
 int KiKbdConfig::getInput()
@@ -285,7 +312,8 @@ const QString KiKbdMapConfig::getInfo()
   }
   com += "\n\n";
   // description
-  com += klocale->translate("Description:  ") + getGoodLabel();
+  com += klocale->translate("Description:  ") + getGoodLabel()
+    + " " + comment;
   com += "\n\n";
   // source
   com += klocale->translate("Source:  ");
@@ -316,24 +344,30 @@ const QString KiKbdMapConfig::getGoodLabel() const
   label += klocale->translate("language");
   label += ", " + charset + " ";
   label += klocale->translate("charset");
-  label += ". " + comment;
+  label += ".";
   return label;
 }
 const QColor KiKbdMapConfig::getColor() const
 {
   return noFile?mapNoFileColor:(userData?mapUserColor:mapNormalColor);
 }
-KIconLoader *loader = 0L;
-const QPixmap getIcon(const QString& locale)
-{
-  if(loader == 0L) {
-    loader = new KIconLoader();
-    loader->insertDirectory(0, kapp->kde_datadir()+"/kcmlocale/pics/");
-  }
-  return loader->loadIcon(QString("flag_")+locale+".gif", 21, 14);
-}
 const QPixmap KiKbdMapConfig::getIcon() const
 {
-  QPixmap pm(::getIcon(locale));
+  KIconLoader loader;
+  QPixmap pm(21, 14);
+  QPainter p;
+
+  loader.insertDirectory(0, kapp->kde_datadir()+"/kcmlocale/pics/");
+  QPixmap flag(loader.loadIcon(QString("flag_")+locale+".gif", 21, 14));
+
+  pm.fill(white);
+  p.begin(&pm);
+  p.fillRect(0, 0, 20, 13, gray);
+  if(!flag.isNull())
+    p.drawPixmap(0, 0, flag);
+  p.setPen(black);
+  p.drawText(0, 0, 20, 13, AlignCenter, label);
+  p.end();
+
   return pm;
 }

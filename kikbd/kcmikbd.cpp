@@ -42,10 +42,13 @@ public:
 };
 KiKbdConfig *kikbdConfig;
 
+bool startKikbd;
 KiKbdApplication::KiKbdApplication(int &argc, char **argv,
 				   char *name)
   : KControlApplication(argc, argv, name)
 {
+  startKikbd = (QString("-startkikbd")==argv[1])?TRUE:FALSE;
+
   if (runGUI())
     {
       mainWidget()->setIcon(getIconLoader()->loadMiniIcon("kikbd.xpm"));
@@ -97,7 +100,12 @@ void KiKbdApplication::apply()
 {
   general->applySettings();
   kikbdConfig->saveConfig();
-  system("kikbd -reconfig");
+  if(startKikbd) {
+    system("kikbd&");
+    startKikbd = FALSE;
+  }
+  else
+    system("kikbd -reconfig");
 }
 void KiKbdApplication::help()
 {

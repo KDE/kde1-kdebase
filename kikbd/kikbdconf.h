@@ -167,6 +167,8 @@ class KiKbdConfig: public KObjectConfig {
   bool oneKeySwitch();
  public slots:
   void newUserRc();
+  void olderVersion();
+  void newerVersion();
 };
 
 #endif

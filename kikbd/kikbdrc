@@ -1,21 +1,26 @@
 # KDE Config File
 [International Keyboard]
-Map0=us
-Map1=
-ForegroundColor=0,0,128
 AltColor=255,255,0
 CapsLockColor=0,128,128
-Font=helvetica,12,5,1,50,0
-Switch=Control_L+Shift_L
-AltSwitch=Alt_R
+Beep=true
+Font=helvetica,12,5,iso-8859-1,50,0
+EmulateCapsLock=false
+Map0=us
+HotList=false
+Map1=
 Input=Global
-Beep=yes
-EmulateCapsLock=yes
-SaveClasses=yes
-CustomizeFont=yes
-WorldMenu=no
-[Class Input]
+SaveClasses=false
+Switch=Control_R+Shift_R
+ForegroundColor=0,0,0
+CustomizeFont=false
+WorldMenu=false
+AltSwitch=Alt_R
+[KObjectConfig]
+Version=1.00
+[Run Time]
+class0=ROOT,us,us,
+class1=
 [StartUp]
-AutoStart=yes
-Docking=yes
+Docking=true
 AutoStartPlace=
+AutoStart=true

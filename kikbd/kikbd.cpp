@@ -84,7 +84,7 @@ KiKbdApplication::KiKbdApplication(int n, char**v)
   :KApplication(n, v)
 {
   KiKbdReconfig = XInternAtom(display, "KDEiKbdReconfig", False );
-  KiKbdRotate   = XInternAtom(display, "KDEiKbdRotate", False );
+  KiKbdRotate   = XInternAtom(display, "KDEiKbdRotate"  , False );
   KiKbdIdentity = XInternAtom(display, "KDEiKbdIdentity", False );
 
   /**
@@ -298,7 +298,7 @@ void KiKbdApplication::loadConfig()
   unsigned i;for(i=0; i<maps.count(); i++) {
     KiKbdMapConfig *map = kikbdConfig.getMap(maps.at(i));
     keyMaps.append(new KeyMap(*map, globalKeySyms));
-    menu->insertItem(map->getGoodLabel());
+    menu->insertItem(map->getIcon(), map->getGoodLabel());
     /**
        we want to automaticaly adjust kikbd button size
        may be we need this optional in the future

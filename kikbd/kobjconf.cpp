@@ -35,6 +35,9 @@
 #include <kcolorbtn.h>
 
 
+const char *configGroup   = "KObjectConfig";
+const char *configVersion = "Version";
+
 /********************************************************************
  * Configuration objects
  */
@@ -329,6 +332,7 @@ KObjectConfig::KObjectConfig(KConfigBase* config, bool autoDelete)
   config = config;
   configFile = 0L;
   configType = External;
+  version = -1.0;
 }
 KObjectConfig::KObjectConfig(int type, const char* name)
 {
@@ -434,6 +438,12 @@ void KObjectConfig::loadConfig()
 	entries.at(j)->readObject(this);
       }
   }
+  if(version >= 0.0) {
+    config->setGroup(configGroup);
+    double newversion = config->readDoubleNumEntry(configVersion, 0.0);
+    if(int(newversion) > int(version)) emit newerVersion();
+    else if(int(newversion) < int(version)) emit olderVersion();
+  }
 }
 void KObjectConfig::saveConfig()
 {
@@ -448,6 +458,12 @@ void KObjectConfig::saveConfig()
     unsigned j;for(j=0; j<entries.count(); j++)
       if(groups.at(i) == entries.at(j)->group)
 	entries.at(j)->writeObject(this);
+  }
+  if(version >= 0.0) {
+    QString str(6);
+    str.sprintf("%2.2f", version);
+    config->setGroup(configGroup);
+    config->writeEntry(configVersion, str);
   }
   config->sync();
 }
