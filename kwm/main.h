@@ -60,6 +60,23 @@ public:
 
   // the overall functions for the configurable keybindings
   void createKeybindings();
+
+  // possible mouse bindings
+  enum {
+    MouseRaise, MouseLower, MouseOperationsMenu, MouseToggleRaiseAndLower,
+    MouseActivateAndRaise, MouseActivateAndLower, MouseActivate, 
+    MouseActivateRaiseAndPassClick, MouseActivateAndPassClick, 
+    MouseMove, MouseResize, MouseNothing
+  };
+
+  
+  // returns a mouse binding for a given string
+  int mouseBinding(const char*);
+
+  // execute one of the configurable mousebindings. Returns true it the
+  // keyevent does not need to be further processed
+  bool  executeMouseBinding(Client* c, int command);
+
   public slots:
 
   void slotTaskManager();
@@ -121,6 +138,6 @@ void showMinicli();
 void showTask();
 // Like manager->activateClient but also raises the window and sends a
 // sound event. 
-void switchActivateClient(Client*);
+void switchActivateClient(Client*, bool do_not_raise = false);
 
 #endif /* MAIN_H */

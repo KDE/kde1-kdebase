@@ -11,6 +11,8 @@ influences from my experiences with the former kwm.
 
 In 0.12:
 --------
+patchlevel 1:
+        - first attempts of configurable mousebindings
 patchlevel 0:
         - first attempts of configurable keybindings
 

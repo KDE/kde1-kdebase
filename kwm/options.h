@@ -93,6 +93,21 @@ struct kwmOptions {
 
   const char* rstart;
   int titlebar_doubleclick_command;
+  
+  // mouse bindings
+  int CommandActiveTitlebar1;
+  int CommandActiveTitlebar2;
+  int CommandActiveTitlebar3;
+  int CommandInactiveTitlebar1;
+  int CommandInactiveTitlebar2;
+  int CommandInactiveTitlebar3;
+  int CommandWindow1;
+  int CommandWindow2;
+  int CommandWindow3;
+  int CommandAll1;
+  int CommandAll2;
+  int CommandAll3;
+
 
   bool TraverseAll;
 
@@ -117,6 +132,7 @@ struct kwmOptions {
   int GimmickOffsetY;
   QPixmap* gimmickPixmap;
 };
+
 
 extern kwmOptions options;
 

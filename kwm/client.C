@@ -616,31 +616,49 @@ void Client::animateTitlebar(){
 void Client::mousePressEvent( QMouseEvent *ev ){
 
   old_cursor_pos = ev->pos();
-  
-  if (ev->button() == RightButton){
-    if (isActive() || !wantsFocus()){
+  int com = MyApp::MouseNothing;
+
+  if ((ev->state() & AltButton) == AltButton){
+    // one of these "all" events with Alt on the titlebar or frame. Do
+    // the same thing as if the user clicked inside the window
+    if (ev->button() == LeftButton)
+      com = options.CommandAll1;
+    if (ev->button() == MidButton)
+      com = options.CommandAll2;
+    if (ev->button() == RightButton)
+      com = options.CommandAll3;
+    myapp->executeMouseBinding(this, com);
+    return;
+  }
+  else  {
+    // titlebar and frame event
+    if (isActive()){
+      if (ev->button() == LeftButton)
+	com = options.CommandActiveTitlebar1;
+      if (ev->button() == MidButton)
+	com = options.CommandActiveTitlebar2;
+      if (ev->button() == RightButton)
+	com = options.CommandActiveTitlebar3;
+      
+      if (com == MyApp::MouseOperationsMenu){
       generateOperations();
       stopAutoraise();
       myapp->operations->popup(QCursor::pos());
-    }
-    else {
-      if (!isActive()){
-	manager->raiseSoundEvent("Window Activate");
-	manager->activateClient(this);
+      return;
       }
+      myapp->executeMouseBinding(this, com);
     }
-    return;  
-  }
-
-  if ((ev->state() & AltButton) != AltButton){
-    if (!isActive()){
-      manager->raiseSoundEvent("Window Activate");
-      manager->activateClient( this );
+    else { // incactive
+      if (ev->button() == LeftButton)
+	com = options.CommandInactiveTitlebar1;
+      if (ev->button() == MidButton)
+	com = options.CommandInactiveTitlebar2;
+      if (ev->button() == RightButton)
+	com = options.CommandInactiveTitlebar3;
+      myapp->executeMouseBinding(this, com);
     }
-    if (ev->button() == LeftButton)
-      manager->raiseClient( this );
   }
-
+  
   dragging_state = dragging_nope;
 
   // resize on all corners 
@@ -692,9 +710,6 @@ void Client::mousePressEvent( QMouseEvent *ev ){
 
 
   if (do_resize > 0){
-    if ((ev->state() & AltButton) == AltButton){
-      do_resize = 0; // Alt-LMB does only move! (mwm-like)
-    }
     dragging_state = dragging_smooth_wait;
     // set the current cursor
     XChangeActivePointerGrab( qt_xdisplay(), 
@@ -706,11 +721,7 @@ void Client::mousePressEvent( QMouseEvent *ev ){
 
 }  
 
-void Client::mouseReleaseEvent( QMouseEvent* ev){
-  if (ev->button() == MidButton && 
-      !(ev->state() & AltButton))
-    manager->lowerClient(this);
-
+void Client::mouseReleaseEvent( QMouseEvent* /* ev */){
   dragging_state = dragging_nope;
   releaseMouse();
 }

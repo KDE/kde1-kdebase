@@ -429,7 +429,7 @@ static QString rectToString(QRect r){
 
 static void grabKey(KeySym keysym, unsigned int mod){
   static int NumLockMask = 0;
-  if (!XKeysymToKeycode(qt_xdisplay(), keysym)) return; 
+  if (!keysym||!XKeysymToKeycode(qt_xdisplay(), keysym)) return; 
   if (!NumLockMask){
     XModifierKeymap* xmk = XGetModifierMapping(qt_xdisplay());
     int i;
@@ -462,13 +462,14 @@ static void grabKey(KeySym keysym, unsigned int mod){
 
 // Like manager->activateClient but also raises the window and sends a
 // sound event. 
-void switchActivateClient(Client* c){
+void switchActivateClient(Client* c, bool do_not_raise){
   if (!c->geometry.intersects(QApplication::desktop()->rect())){
     // window not visible => place it again.
     manager->doPlacement(c);
     manager->sendConfig(c);
   }
-  manager->raiseClient(c);
+  if (!do_not_raise)
+    manager->raiseClient(c);
   if (!CLASSIC_FOCUS){
     manager->activateClient(c);
     manager->raiseSoundEvent("Window Activate");
@@ -545,26 +546,10 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
   QObject::connect(operations, SIGNAL(activated(int)), this, SLOT(handleOperation(int)));
 
   
-//   grabKey(XK_Escape,ControlMask);
-//   grabKey(XK_Escape,Mod1Mask);
-//   grabKey(XK_Escape,ControlMask | Mod1Mask);
-//   grabKey(XK_F1, Mod1Mask);
-//   grabKey(XK_F2, Mod1Mask);
-//   grabKey(XK_F3, Mod1Mask);
-//   grabKey(XK_F4, Mod1Mask);
   grabKey(XK_Tab, Mod1Mask);
   grabKey(XK_Tab, Mod1Mask | ShiftMask);
   grabKey(XK_Tab, ControlMask);
   grabKey(XK_Tab, ControlMask | ShiftMask);
-
-//   grabKey(XK_F1, ControlMask);
-//   grabKey(XK_F2, ControlMask);
-//   grabKey(XK_F3, ControlMask);
-//   grabKey(XK_F4, ControlMask);
-//   grabKey(XK_F5, ControlMask);
-//   grabKey(XK_F6, ControlMask);
-//   grabKey(XK_F7, ControlMask);
-//   grabKey(XK_F8, ControlMask);
 
   createKeybindings();
 
@@ -1071,7 +1056,21 @@ void MyApp::readConfiguration(){
       }
     }
   }
-      
+
+  config->setGroup( "MouseBindings");
+  options.CommandActiveTitlebar1 = mouseBinding(config->readEntry("CommandActiveTitlebar1","Raise"));
+  options.CommandActiveTitlebar2 = mouseBinding(config->readEntry("CommandActiveTitlebar2","Lower"));
+  options.CommandActiveTitlebar3 = mouseBinding(config->readEntry("CommandActiveTitlebar3","Operations menu"));
+  options.CommandInactiveTitlebar1 = mouseBinding(config->readEntry("CommandInactiveTitlebar1","Activate and raise"));
+  options.CommandInactiveTitlebar2 = mouseBinding(config->readEntry("CommandInactiveTitlebar2","Activate and lower"));
+  options.CommandInactiveTitlebar3 = mouseBinding(config->readEntry("CommandInactiveTitlebar3","Activate"));
+  options.CommandWindow1 = mouseBinding(config->readEntry("CommandWindow1","Activate, raise and pass click"));
+  options.CommandWindow2 = mouseBinding(config->readEntry("CommandWindow2","Activate and pass click"));
+  options.CommandWindow3 = mouseBinding(config->readEntry("CommandWindow3","Activate and pass click"));
+  options.CommandAll1 = mouseBinding(config->readEntry("CommandAll1","Move"));
+  options.CommandAll2 = mouseBinding(config->readEntry("CommandAll2","Toggle raise and lower"));
+  options.CommandAll3 = mouseBinding(config->readEntry("CommandAll3","Resize"));
+							    
 
   config->setGroup( "Buttons");
 
@@ -1086,6 +1085,80 @@ void MyApp::readConfiguration(){
   }
  
   config->sync();
+}
+
+// returns a mouse binding for a given string
+int MyApp::mouseBinding(const char* arg)
+{
+  QString com = arg;
+  if (com == "Raise") return MouseRaise;
+  if (com == "Lower") return MouseLower;
+  if (com == "Operations menu") return MouseOperationsMenu;
+  if (com == "Toggle raise and lower") return MouseToggleRaiseAndLower;
+  if (com == "Activate and raise") return MouseActivateAndRaise;
+  if (com == "Activate and lower") return MouseActivateAndLower;
+  if (com == "Activate") return MouseActivate;
+  if (com == "Activate, raise and pass click") return MouseActivateRaiseAndPassClick;
+  if (com == "Activate and pass click") return MouseActivateAndPassClick;
+  if (com == "Move") return MouseMove;
+  if (com == "Resize") return MouseResize;
+  if (com == "Nothing") return MouseNothing;
+  return MouseNothing;
+}
+
+
+// execute one of the configurable mousebindings. Returns true it the
+// binding was bound to something
+bool  MyApp::executeMouseBinding(Client* c, int command){
+  if (!c)
+    return false;
+  switch (command){
+  case MouseRaise:
+    manager->raiseClient(c);
+    break;
+  case MouseLower:
+    manager->lowerClient(c);
+    break;
+  case MouseOperationsMenu:
+    // must be handled by the client itself since it needs the position of the event!
+    break;
+  case MouseToggleRaiseAndLower:
+    if (c == manager->topClientOnDesktop())
+      manager->lowerClient(c);
+    else
+      manager->raiseClient(c);
+    break;
+  case MouseActivateAndRaise:
+    switchActivateClient(c);
+    break;
+  case MouseActivateAndLower:
+    switchActivateClient(c,true);
+    manager->lowerClient(c);
+    break;
+  case MouseActivate:
+    switchActivateClient(c,true);
+    break;
+  case MouseActivateRaiseAndPassClick:
+    switchActivateClient(c);
+    return false;
+    break;
+  case MouseActivateAndPassClick:
+    switchActivateClient(c,true);
+    return false;
+    break;
+  case MouseMove:
+    c->simple_move();
+    break;
+  case MouseResize:
+    c->simple_resize();
+    break;
+  case MouseNothing:
+    return false;
+    break;
+  default:
+    return false;
+  }
+  return true;
 }
 
 
@@ -1229,31 +1302,6 @@ bool MyApp::handleKeyPress(XKeyEvent key){
   int kc = XKeycodeToKeysym(qt_xdisplay(), key.keycode, 0);
   int km = key.state & (ControlMask | Mod1Mask | ShiftMask);
 
-
-//   // take care about minicli's grabbing 
-//   if (minicli && minicli->isVisible()){
-//       freeKeyboard(False);
-//       if( (kc == XK_F4)  && (km == Mod1Mask) )
-// 	minicli->cleanup();
-//       return False;
-//   }
-//   // take care about klogout's grabbing 
-//   if (klogout && klogout->isVisible()){
-//     freeKeyboard(False);
-//     if( (kc == XK_F4)  && (km == Mod1Mask) )
-//       klogout->cleanup();
-//     return False;
-//   }
-
-//   // take care about ktasks's grabbing 
-//   if (ktask && ktask->isVisible()){
-//     freeKeyboard(False);
-//     if( (kc == XK_F4)  && (km == Mod1Mask) )
-//       ktask->cleanup();
-//     return False;
-//   }
-
-
   if (!control_grab){
 
     if( (kc == XK_Tab)  &&
@@ -1376,104 +1424,6 @@ bool MyApp::handleKeyPress(XKeyEvent key){
     }
     return False;
   }
-
-//   if( (kc == XK_Escape)  && (km == Mod1Mask || km == ControlMask) ){
-//     freeKeyboard(False);
-//     showTask();
-//     return True;
-//   }    
-  
-//   if( (kc == XK_F1)  && (km == Mod1Mask) ){
-//     freeKeyboard(False);
-//     KWM::sendKWMCommand("kpanel:system");
-//     return False;
-//   }    
-
-//   if( (kc == XK_F2)  && (km == Mod1Mask) ){
-//     freeKeyboard(False);
-//     showMinicli();
-//     return False;
-//   }    
-
-
-//   if( (kc == XK_F3)  && (km == Mod1Mask) ){
-//     freeKeyboard(False);
-//     if (manager->current())
-//       manager->current()->showOperations();
-//     return False;
-//   }
-
-//   if( (kc == XK_F4)  && (km == Mod1Mask) ){
-//     freeKeyboard(False);
-//     if (manager->current())
-//       manager->current()->closeClicked();
-//     return False;
-//   }    
-
-//   if( (kc == XK_F1)  && (km == ControlMask) ){
-//     freeKeyboard(False);
-//     manager->switchDesktop(1);
-//     return False;
-//   }
-//   if( (kc == XK_F2)  && (km == ControlMask) ){
-//     freeKeyboard(False);
-//     manager->switchDesktop(2);
-//     return False;
-//   }
-//   if( (kc == XK_F3)  && (km == ControlMask) ){
-//     freeKeyboard(False);
-//     manager->switchDesktop(3);
-//     return False;
-//   }
-//   if( (kc == XK_F4)  && (km == ControlMask) ){
-//     freeKeyboard(False);
-//     manager->switchDesktop(4);
-//     return False;
-//   }
-//   if( (kc == XK_F5)  && (km == ControlMask) ){
-//     freeKeyboard(False);
-//     manager->switchDesktop(5);
-//     return False;
-//   }
-//   if( (kc == XK_F6)  && (km == ControlMask) ){
-//     freeKeyboard(False);
-//     manager->switchDesktop(6);
-//     return False;
-//   }
-//   if( (kc == XK_F7)  && (km == ControlMask) ){
-//     freeKeyboard(False);
-//     manager->switchDesktop(7);
-//     return False;
-//   }
-//   if( (kc == XK_F8)  && (km == ControlMask) ){
-//     freeKeyboard(False);
-//     manager->switchDesktop(8);
-//     return False;
-//   }
-
-
-  
-//   if( (kc == XK_Escape)  && (km == (Mod1Mask | ControlMask)) ){
-//     freeKeyboard(False);
-//     if (!kill_cursor)
-//       kill_cursor = XCreateFontCursor(qt_xdisplay(), XC_pirate);
-//     if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False, 
-// 		     ButtonPressMask | ButtonReleaseMask |
-// 		     PointerMotionMask |
-// 		     EnterWindowMask | LeaveWindowMask,
-// 		     GrabModeAsync, GrabModeAsync, None, 
-// 		     kill_cursor, CurrentTime) == GrabSuccess){ 
-//       XGrabKeyboard(qt_xdisplay(),
-// 		    qt_xrootwin(), False,
-// 		    GrabModeAsync, GrabModeAsync,
-// 		    CurrentTime);
-//       killSelect();
-//       XUngrabKeyboard(qt_xdisplay(), CurrentTime);
-//       XUngrabPointer(qt_xdisplay(), CurrentTime);
-//     }
-//     return False;
-//   }    
-  
   
   freeKeyboard(False);
   return False;
@@ -1670,15 +1620,7 @@ void MyApp::slotSwitchDesktop8(){
 
 
 bool MyApp::eventFilter( QObject *obj, QEvent * ev){
-    static QPoint tmp_point(-10, -10);
 
-    
-    if (ev->type() == Event_MouseButtonPress
-	|| ev->type() == Event_MouseButtonDblClick){
-      if (obj != operations && obj != desktopMenu)
-	tmp_point = QCursor::pos();
-    }
-    
     if (obj == operations || obj == desktopMenu){
       if (ev->type() == Event_MouseButtonRelease){
 	// ignore the popup-close in some cases
@@ -1695,10 +1637,6 @@ bool MyApp::eventFilter( QObject *obj, QEvent * ev){
 	    return True;
 	  }
 	  ignore_release_on_this = 0;
-	}
-	if (QCursor::pos() == tmp_point){
-	  tmp_point = QPoint(-10,-10);
-	  return True;
 	}
       }
     }
@@ -1740,36 +1678,33 @@ bool MyApp::x11EventFilter( XEvent * ev){
     DEBUG_EVENTS("ButtonPress", ev->xbutton.window)
     {
       Client *c = manager->getClient(ev->xbutton.window);
-      bool replay = true;
       if (c)
 	c->stopAutoraise();
-      if (c && ev->xbutton.window == c->window){
-	if ((ev->xbutton.state & Mod1Mask) == Mod1Mask){
-	  replay = false;
-	  if  (ev->xbutton.button == Button1){
-	    c->simple_move();
-	  }
-	  else if (ev->xbutton.button == Button2){
-	    if (c == manager->topClientOnDesktop())
-	      manager->lowerClient(c);
-	    else
-	      manager->raiseClient(c);
-	  }
-	  else c->simple_resize();
 
+      if (c && ev->xbutton.window == c->window){
+	bool no_replay = false;
+	if ((ev->xbutton.state & Mod1Mask) == Mod1Mask){
+	  if  (ev->xbutton.button == Button1)
+	    no_replay = executeMouseBinding(c, options.CommandAll1);
+	  if  (ev->xbutton.button == Button2)
+	    no_replay = executeMouseBinding(c, options.CommandAll2);
+	  if  (ev->xbutton.button == Button3)
+	    no_replay = executeMouseBinding(c, options.CommandAll3);
 	}
 	else if (!c->isActive()){
 	  if  (ev->xbutton.button == Button1)
-	    manager->raiseClient(c);
-	  manager->activateClient(c);
-	  manager->raiseSoundEvent("Window Activate");
+	    no_replay = executeMouseBinding(c, options.CommandWindow1);
+	  if  (ev->xbutton.button == Button2)
+	    no_replay = executeMouseBinding(c, options.CommandWindow2);
+	  if  (ev->xbutton.button == Button3)
+	    no_replay = executeMouseBinding(c, options.CommandWindow3);
 	}
  	// unfreeze the passive grab which is active currently
-	if (replay){
-	  XAllowEvents(qt_xdisplay(), ReplayPointer, ev->xbutton.time);
-	}
-	else
+	if (no_replay)
 	  XAllowEvents(qt_xdisplay(), SyncPointer, ev->xbutton.time);
+	else
+	  XAllowEvents(qt_xdisplay(), ReplayPointer, ev->xbutton.time);
+	XUngrabKeyboard(qt_xdisplay(), CurrentTime);
       }
     }
   break;
