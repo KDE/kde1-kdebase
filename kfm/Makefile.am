@@ -5,6 +5,7 @@ LDADD	=	@all_libraries@ -lkhtmlw -lkdeui -lkdecore -lqt -lXext -lX11 @LIBSOCKET@
 MOC	=	@MOC@
 
 CONFIGDIR = $(prefix)/share/config
+MIMELNKDIR = $(prefix)/share/mimelnk
 
 ####### Files
 
@@ -66,12 +67,17 @@ install-local-exec:
 	$(INSTALL_DATA) ./unpack $(bindir)
 
 install-data-local:
-	(cd pics && $(MAKE) install)
 	$(mkinstalldirs) $(CONFIGDIR)
 	$(INSTALL_DATA) config/kfmrc $(CONFIGDIR)
 	$(INSTALL_DATA) config/desktop $(CONFIGDIR)
-	$(mkinstalldirs) $(KDEDIR)/share
-	$(INSTALL_DATA) magic $(KDEDIR)/share
+	$(mkinstalldirs) $(MIMELNKDIR)
+	$(INSTALL_DATA) magic $(MIMELNKDIR)
+
+uninstall-local:
+	rm -f $(bindir)/unpack
+	rm -f $(CONFIGDIR)/kfmrc
+	rm -f $(CONFIGDIR)/desktop
+	rm -f $(MIMELNKDIR)/magic
 
 IPC:    clientIPC kioIPC
 
