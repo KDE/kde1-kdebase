@@ -46,7 +46,11 @@ kiojob.cpp: kiojob.moc
 root.cpp: root.moc
 kfmview.cpp: kfmview.moc
 kfmtree.cpp: kfmtree.moc
+kmsgwin.cpp: kmsgwin.moc
+krenamewin.cpp: krenamewin.moc
 kfmserver_ipc.cpp: kfmserver_ipc.moc
+kioserver_ipc.cpp: kioserver_ipc.moc
+passworddialog.cpp: passworddialog.moc
 kfmprops.cpp: kfmprops.moc
 kfmman.cpp: kfmman.moc
 htmlcache.cpp: htmlcache.moc
