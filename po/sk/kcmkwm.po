@@ -237,7 +237,7 @@ msgstr "Povoli» aktívne okraje plochy"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr "Presun ukazateµ do stredu po prepnutí"
+msgstr "Presunú» ukazateµ do stredu po prepnutí"
 
 #: desktop.cpp:87
 msgid "Dekstop switch delay:"
@@ -245,7 +245,7 @@ msgstr "Oddialenie prepnutia plochy:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"
-msgstr "Magické pozadie"
+msgstr "Magické okraje"
 
 #: desktop.cpp:126
 msgid ""
@@ -265,11 +265,11 @@ msgstr ""
 
 #: mouse.cpp:54
 msgid "Active"
-msgstr "Aktívna"
+msgstr "Aktívny"
 
 #: mouse.cpp:58
 msgid "Inactive"
-msgstr "Neaktívna"
+msgstr "Neaktívny"
 
 #: mouse.cpp:62
 msgid "Titlebar and frame:"
@@ -333,7 +333,7 @@ msgstr "Niè"
 #: mouse.cpp:142 mouse.cpp:150 mouse.cpp:158 mouse.cpp:169 mouse.cpp:178
 #: mouse.cpp:187
 msgid "Activate and raise"
-msgstr "Aktivova» a zvý¹i»"
+msgstr "Aktivova» a zdvihnú»"
 
 #: mouse.cpp:143 mouse.cpp:151 mouse.cpp:159
 msgid "Activate and lower"
