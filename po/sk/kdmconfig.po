@@ -143,14 +143,12 @@ msgid "Select fonts"
 msgstr "Výber fontu"
 
 #: kdm-font.cpp:50
-#, fuzzy
 msgid "Example"
-msgstr "Uká¾ka:"
+msgstr "Príklad"
 
 #: kdm-font.cpp:52
-#, fuzzy
 msgid "Change font..."
-msgstr "Zmeni» font"
+msgstr "Zmeni» font..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
@@ -166,24 +164,23 @@ msgstr "©tandardné"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr ""
+msgstr "Náhµad"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "Farba"
 
 #: kdm-bgnd.cpp:101
-#, fuzzy
 msgid "Solid Color"
-msgstr "Farba"
+msgstr "Súvislá Farba"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr ""
+msgstr "Horizontálny blend"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr ""
+msgstr "Vertikálny Blend"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
@@ -191,42 +188,39 @@ msgstr "Tapeta"
 
 #: kdm-bgnd.cpp:171 kdm-sess.cpp:56
 msgid "None"
-msgstr ""
+msgstr "®iadne"
 
 #: kdm-bgnd.cpp:176
-#, fuzzy
 msgid "Tile"
 msgstr "Vydlá¾di»"
 
 #: kdm-bgnd.cpp:181
-#, fuzzy
 msgid "Center"
 msgstr "Centrovane"
 
 #: kdm-bgnd.cpp:186
-#, fuzzy
 msgid "Scale"
-msgstr "Zväè¹ené"
+msgstr "Zväè¹ene"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr ""
+msgstr "VµavoHore"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr ""
+msgstr "VpravoHore"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr ""
+msgstr "VµavoDole"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr ""
+msgstr "VpravoDole"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr ""
+msgstr "Vyzdobený"
 
 #: kdm-users.cpp:48
 msgid "All users"

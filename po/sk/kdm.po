@@ -59,7 +59,7 @@ msgstr "Prihlásenia teraz nie sú prístupné."
 
 #: kgreeter.cpp:494
 msgid "bah"
-msgstr ""
+msgstr "bah"
 
 #: kgreeter.cpp:547 kgreeter.cpp:574
 msgid "Sorry -- your account has expired."

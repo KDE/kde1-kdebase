@@ -200,7 +200,7 @@ msgstr "Spustiteµné súbory s efektívnymi právami vlastníka"
 
 #: kftabdlg.cpp:246
 msgid "(none)"
-msgstr ""
+msgstr "(¾iadny)"
 
 #: kftabdlg.cpp:247
 msgid "At Least"

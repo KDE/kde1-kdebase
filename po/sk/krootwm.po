@@ -24,7 +24,7 @@ msgstr "Chyba: ©ablóna neexistuje '%s'"
 
 #: krootwm.C:180 krootwm.C:577 krootwm.C:585
 msgid "New"
-msgstr ""
+msgstr "Vytvori»"
 
 #: krootwm.C:181
 msgid "Bookmarks"

@@ -87,7 +87,7 @@ msgstr "! CHRÁNENÉ tlaèítko !"
 
 #: confmenu.cpp:115
 msgid "New"
-msgstr ""
+msgstr "Nová"
 
 #: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"

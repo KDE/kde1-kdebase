@@ -395,7 +395,7 @@ msgstr "Vybraný text"
 
 #: widgetcanvas.cpp:212
 msgid "New"
-msgstr ""
+msgstr "Nový"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
