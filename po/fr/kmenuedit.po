@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kmenuedit\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-02-25 21:43 CET\n"
-"Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
+"Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; \n"
@@ -23,7 +23,7 @@ msgstr "Changer le nom du &menu"
 
 #: kmenuedit.cpp:69
 msgid "Reload &Filetypes"
-msgstr "Recharger les types de &fichiers"
+msgstr "Recharger les types de &fichier"
 
 #: kmenuedit.cpp:76
 msgid "by"
@@ -31,7 +31,7 @@ msgstr "par"
 
 #: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
-msgstr "Changements non enregistrés !"
+msgstr "Les changements n'ont pas été enregistrés !"
 
 #: kmenuedit.cpp:176 kmenuedit.cpp:201
 msgid ""
@@ -39,7 +39,7 @@ msgid ""
 "Do you want to save your changes ?"
 msgstr ""
 "\n"
-"Voulez-vous enregistrer vos changements ?"
+"Désirez-vous enregistrer vos changements ?"
 
 #: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"
@@ -54,8 +54,8 @@ msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
 msgstr ""
-"Recharger les menus va abandonner tous vos changements.\n"
-"Etes-vous sûrs de vouloir recharger ?"
+"Recharger les menus va provoquer l'abandon de tous vos changements.\n"
+"Désirez-vous vraiment recharger les menus ?"
 
 #: button.cpp:209 main.cpp:77 main.cpp:90
 msgid "KMenuedit"
@@ -66,15 +66,15 @@ msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
 msgstr ""
-"Le répertoire pour votre menu personnel n'existe pas.\n"
-"Voulez-vous le créer maintenant ?"
+"Le répertoire de votre menu personnel n'existe pas.\n"
+"Désirez-vous le créer maintenant ?"
 
 #: main.cpp:91
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
 msgstr ""
-"Impossible de créer le répertoire pour votre menu personnel.\n"
+"Impossible de créer le répertoire de votre menu personnel.\n"
 "Cliquez sur OK pour sortir de KMenuEdit."
 
 #: confmenu.cpp:90 entrydialog.cpp:52
@@ -83,7 +83,7 @@ msgstr "Séparateur"
 
 #: confmenu.cpp:102 confmenu.cpp:317
 msgid "Open/ Close"
-msgstr "Ouvre / Ferme"
+msgstr "Ouvrir / Fermer"
 
 #: confmenu.cpp:110
 msgid "! PROTECTED Button !"
@@ -95,18 +95,18 @@ msgstr "Attention !"
 
 #: confmenu.cpp:172
 msgid "If you delete this button you will lose all of its submenus"
-msgstr "Si vous détruisez ce bouton, vous allez perdre tous ses sous-menus"
+msgstr "Si vous supprimez ce bouton, vous allez perdre tous ses sous-menus"
 
 #: confmenu.cpp:281
 msgid "Wrong filename"
-msgstr "Mauvais nom de fichier"
+msgstr "Nom de fichier incorrect"
 
 #: confmenu.cpp:282
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
 msgstr ""
-"Un fichier .kdelnk avec ce nom existe déjà.\n"
+"Un fichier .kdelnk de ce nom existe déjà.\n"
 "Choisissez un autre nom de fichier."
 
 #: confmenu.cpp:301
@@ -127,7 +127,7 @@ msgstr ""
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
-msgstr "Le chemin pour les entrées du bureau KDE n'est pas positionné<."
+msgstr "Le chemin pour les entrées du bureau de KDE n'a pas été précisé."
 
 #: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"
@@ -139,7 +139,7 @@ msgstr "Chemin :"
 
 #: DesktopPathDialogData.cpp:68
 msgid "PersonalPath:"
-msgstr "Chemin pour le menu personnel :"
+msgstr "Chemin du le menu personnel :"
 
 #: entrydialog.cpp:53
 msgid "Submenu"
@@ -168,7 +168,7 @@ msgstr "Nom de fichier :"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"
-msgstr "Mini icône :"
+msgstr "Mini-icône :"
 
 #: entrydialog.cpp:127
 msgid "Icon:"
@@ -192,7 +192,7 @@ msgstr "Répertoire de travail :"
 
 #: entrydialog.cpp:205
 msgid "Run in terminal"
-msgstr "Fonctionne dans un terminal"
+msgstr "Exécuter dans un terminal"
 
 #: entrydialog.cpp:211
 msgid "Terminal Options:"
@@ -200,11 +200,11 @@ msgstr "Options du terminal :"
 
 #: entrydialog.cpp:292
 msgid "Binary Pattern:"
-msgstr "Echantillon binaire :"
+msgstr "Données binaires :"
 
 #: entrydialog.cpp:300
 msgid "Application to swallow:"
-msgstr "Application à avaler :"
+msgstr "Application à intégrer :"
 
 #: entrydialog.cpp:306
 msgid "Title of application:"
@@ -212,7 +212,7 @@ msgstr "Titre de l'application :"
 
 #: entrydialog.cpp:312
 msgid "Application to execute on button press:"
-msgstr "Application à exécuter sur pression du bouton :"
+msgstr "Application à exécuter sur clic :"
 
 #: entrydialog.cpp:342
 msgid "URL:"
@@ -236,7 +236,7 @@ msgstr "Type de système de fichiers :"
 
 #: entrydialog.cpp:415
 msgid "Unmount Icon:"
-msgstr "Icône démonté"
+msgstr "Icône d'état démonté"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"
@@ -252,7 +252,7 @@ msgstr "Personnel :"
 
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
-msgstr "Défaut :"
+msgstr "Par défaut :"
 
 #~ msgid "Type:"
 #~ msgstr "Type :"

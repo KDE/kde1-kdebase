@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kpanel\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-01-25 18:36 CET\n"
-"Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
+"Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain;\n"
@@ -23,7 +23,7 @@ msgstr "Propriétés"
 
 #: kpanel.C:253
 msgid "Go!"
-msgstr "Go !"
+msgstr "En avant !"
 
 #: kpanel.C:256 tools.C:795
 msgid "Where do you want to go tomorrow?"
@@ -31,15 +31,15 @@ msgstr "Où voulez-vous aller demain ?"
 
 #: kpanel.C:329
 msgid "No info available"
-msgstr "Information inexistante"
+msgstr "Information non disponible"
 
 #: kpanel.C:368 props.C:156 props.C:157
 msgid "Logout"
-msgstr "Quitter"
+msgstr "Déconnexion"
 
 #: kpanel.C:376 props.C:155
 msgid "Lock screen"
-msgstr "Verrouiller l'écran"
+msgstr "Verrouillage de l'écran"
 
 #: kpanel.C:385
 msgid "Hide the panel"
@@ -51,7 +51,7 @@ msgstr "Montrer le panneau"
 
 #: kpanel.C:1093 tools.C:611
 msgid "No comment available"
-msgstr "Commentaire inexistant"
+msgstr "Commentaire non disponible"
 
 #: kpanel.C:1102 tools.C:804
 msgid "Windowlist"
@@ -59,7 +59,7 @@ msgstr "Liste des fenêtres"
 
 #: props.C:136
 msgid "Add application"
-msgstr "Ajouter application"
+msgstr "Ajouter une application"
 
 #: props.C:138
 msgid "Add an application or a submenu onto the panel"
@@ -84,15 +84,15 @@ msgstr "Configurer le panneau"
 
 #: props.C:145
 msgid "Edit Menus"
-msgstr ""
+msgstr "Modifier les menus"
 
 #: props.C:147
 msgid "Add or remove applications in the menu structure "
-msgstr ""
+msgstr "Ajouter ou supprimer des applications dans le menu"
 
 #: events.C:707 props.C:148
 msgid "Restart"
-msgstr "Relancer"
+msgstr "Redémarrer"
 
 #: props.C:150
 msgid "Restart panel"
@@ -108,15 +108,15 @@ msgstr "Verrouiller l'écran"
 
 #: props.C:307
 msgid "The menu editor is not installed."
-msgstr ""
+msgstr "L'éditeur de menus n'est pas installé."
 
 #: events.C:743 props.C:308
 msgid "Oops!"
-msgstr ""
+msgstr "Houlà !"
 
 #: events.C:742
 msgid "Cannot put this as button onto the panel!"
-msgstr ""
+msgstr "Impossible d'ajouter cette application comme bouton sur le panneau !"
 
 #~ msgid "Location"
 #~ msgstr "Emplacement"

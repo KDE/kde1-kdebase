@@ -7,24 +7,23 @@ msgstr ""
 "Project-Id-Version: kvt\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-04-17 02:02+0100\n"
-"Last-Translator: David Faure <David.Faure@insa-lyon.fr>\n"
+"Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; \n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#
 #: main.C:249
 msgid "choose type of color-mode"
-msgstr "Choisir le type de couleur"
+msgstr "Choisir le type de mode couleur"
 
 #: main.C:252
 msgid "Add characters to word class"
-msgstr "Ajouter des caractères à la classe \"mot\""
+msgstr "Ajouter des caractères à la classe word"
 
 #: main.C:255
 msgid "The backspace key will send a"
-msgstr "La touche \"retour arrière\" va envoyer un"
+msgstr "La touche backspace va envoyer un"
 
 #: main.C:399
 msgid "&New Terminal"
@@ -82,7 +81,6 @@ msgstr "&vert/noir"
 msgid "black/light&yellow"
 msgstr "noir/&jaune clair"
 
-#
 #: main.C:434
 msgid "Linu&x Console"
 msgstr "Console Linu&x"
@@ -121,7 +119,7 @@ msgstr "&Taille"
 
 #: main.C:459
 msgid "Terminal..."
-msgstr "Terminal..."
+msgstr "Terminal ..."
 
 #: main.C:461
 msgid "Save &Options"
@@ -166,8 +164,8 @@ msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
-"Les nouvelles couleurs seront activées\n"
-"avec la réactivation du clavier."
+"Les nouvelles couleurs seront affichées\n"
+"lors de la réactivation du clavier."
 
 #: main.C:1151
 msgid ""
@@ -186,27 +184,27 @@ msgstr ""
 
 #: main.C:1155
 msgid "Permitted arguments are:\n"
-msgstr "Les arguments reconnus sont:\n"
+msgstr "Les arguments reconnus sont :\n"
 
 #: main.C:1156
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <commande> <arg> ...   exécute commande avec args - dernier argument "
-"absolument\n"
+"-e <commande> <arg> ...   exécute 'commande' avec les paramètres 'args' - "
+"dernier argument absolument\n"
 
 #: main.C:1157
 msgid "-display <name>           specify the display (server)\n"
-msgstr "-display <name>           spécifie l'écran (serveur)\n"
+msgstr "-display <name>           précise l'écran (serveur)\n"
 
 #: main.C:1158
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr "-vt_geometry <spec>       géométrie initiale de la fenêtre\n"
+msgstr "-vt_geometry <spec>       taille initiale de la fenêtre\n"
 
 #: main.C:1159
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr ""
-"-print-pipe <name>        spécifie la redirection pour imprimante vt100\n"
+"-print-pipe <name>        précise la redirection pour imprimante vt100\n"
 
 #: main.C:1160
 msgid "-vt_bg <colour>           background color\n"
@@ -214,7 +212,7 @@ msgstr "-vt_bg <colour>           couleur d'arrière plan\n"
 
 #: main.C:1161
 msgid "-vt_fg <colour>           foreground color\n"
-msgstr "-vt_fg <colour>           couleur d'avant plan\n"
+msgstr "-vt_fg <colour>           couleur d'avant-plan\n"
 
 #: main.C:1162
 msgid "-vt_font <fontname>       normal font\n"
@@ -247,7 +245,7 @@ msgstr ""
 
 #: main.C:1169
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr "-tn <TERM>                Type de terminal. 'xterm' par défaut.\n"
+msgstr "-tn <TERM>                Type de terminal ('xterm' par défaut).\n"
 
 #: main.C:1170
 msgid "-C                        Capture system console message\n"
@@ -262,8 +260,8 @@ msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
-"-7                        fonctionne en mode 7 bit \n"
-"-8                        fonctionne en mode 8 bit \n"
+"-7                        fonctionne en mode 7 bits\n"
+"-8                        fonctionne en mode 8 bits\n"
 
 #: main.C:1174
 msgid ""
@@ -271,8 +269,8 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
-"-ls                       initialise kvt en shell 'login'\n"
-"-ls-                      initialise kvt en shell 'non-login' (défaut)\n"
+"-ls                       initialise kvt en login shell\n"
+"-ls-                      initialise kvt en non-login shell (par défaut)\n"
 
 #: main.C:1176
 msgid ""

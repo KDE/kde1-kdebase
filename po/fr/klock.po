@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: klock\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-02-25 21:41 CET\n"
-"Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
+"Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; \n"
@@ -15,11 +15,11 @@ msgstr ""
 
 #: banner.cpp:56
 msgid "Banner"
-msgstr "Banière"
+msgstr "Bannière"
 
 #: banner.cpp:78
 msgid "Setup kbanner"
-msgstr "Configure la banière"
+msgstr "Configuration de la bannière"
 
 #: banner.cpp:116 blankscrn.cpp:65
 msgid "Color:"
@@ -53,7 +53,7 @@ msgstr ""
 
 #: banner.cpp:419
 msgid "KDE is great"
-msgstr "KDE est génial"
+msgstr "KDE est splendide"
 
 #: bat.cpp:457
 msgid "Bat"
@@ -61,15 +61,15 @@ msgstr "Bat"
 
 #: bat.cpp:532
 msgid "Setup KBat"
-msgstr "Configure KBat"
+msgstr "Configuration de KBat"
 
 #: bat.cpp:548
 msgid "Number of bats:"
-msgstr "Nombre de chauves souris :"
+msgstr "Nombre de chauve-souris :"
 
 #: bat.cpp:636
 msgid "About Bat"
-msgstr "A sujet de Bat"
+msgstr "A propos de Bat"
 
 #: bat.cpp:637
 msgid ""
@@ -87,15 +87,15 @@ msgstr ""
 
 #: blankscrn.cpp:49
 msgid "Blank Screen"
-msgstr "Écran vide"
+msgstr "Ecran vide"
 
 #: blankscrn.cpp:63
 msgid "Setup kblankscrn"
-msgstr "Configure l'Écran vide"
+msgstr "Configuration de l'écran vide"
 
 #: blob.cpp:53
 msgid "Random Linear"
-msgstr "Aléatoire linéaire"
+msgstr "Linéaire aléatoire"
 
 #: blob.cpp:54
 msgid "Horizonal Sine"
@@ -107,7 +107,7 @@ msgstr "Rebondis circulaires"
 
 #: blob.cpp:56
 msgid "Polar Coordinates"
-msgstr "Coordonées polaires"
+msgstr "Coordonnées polaires"
 
 #: blob.cpp:57
 msgid "Random"
@@ -115,15 +115,15 @@ msgstr "Aléatoire"
 
 #: blob.cpp:73
 msgid "Sorry. This screensaver needs a color display"
-msgstr "Désolé : cette mise en veille nécessite un écran couleur"
+msgstr "Un écran couleur est nécessaire à cette mise en veille"
 
 #: blob.cpp:452
 msgid "Setup Blob Saver"
-msgstr "Configure Blob"
+msgstr "Configuration de Blob"
 
 #: blob.cpp:455
 msgid "Frame Show sec."
-msgstr "Montre nombre d'images"
+msgstr "Nombre d'images par seconde"
 
 #: blob.cpp:463
 msgid "Algorithm"
@@ -131,7 +131,7 @@ msgstr "Algorithme"
 
 #: blob.cpp:543
 msgid "About Blob"
-msgstr "Au sujet de Blob"
+msgstr "A propos de Blob"
 
 #: blob.cpp:544
 msgid ""
@@ -155,11 +155,11 @@ msgstr "Flame"
 
 #: flame.cpp:390
 msgid "Setup KFlame"
-msgstr "Configure KFlame"
+msgstr "Configuration de KFlame"
 
 #: flame.cpp:406
 msgid "Max Levels:"
-msgstr "Niveau max. :"
+msgstr "Nombre de niveaux max :"
 
 #: flame.cpp:416
 msgid "Num Points:"
@@ -167,7 +167,7 @@ msgstr "Nombre de points :"
 
 #: flame.cpp:521
 msgid "About Flame"
-msgstr "Au sujet de Flame"
+msgstr "A propos de Flame"
 
 #: flame.cpp:522
 msgid ""
@@ -179,17 +179,17 @@ msgid ""
 msgstr ""
 "Flame Version 3.3\n"
 "\n"
-"Copyrightéservés (c) 1991 par Patrick J. Naughton\n"
+"Copyright (c) 1991 par Patrick J. Naughton\n"
 "\n"
 "Porté vers kscreensave par Martin Jones."
 
 #: forest.cpp:200
 msgid "Forest"
-msgstr "Forest"
+msgstr "Forêt"
 
 #: forest.cpp:272
 msgid "Setup KForest"
-msgstr "Configure KForest"
+msgstr "Configuration de KForest"
 
 #: forest.cpp:288
 msgid "Num of Trees:"
@@ -197,7 +197,7 @@ msgstr "Nombre d'arbres :"
 
 #: forest.cpp:375
 msgid "About Forest"
-msgstr "Au sujet de Foret"
+msgstr "A propos de Forest"
 
 #: forest.cpp:376
 msgid ""
@@ -209,7 +209,7 @@ msgid ""
 msgstr ""
 "Forest\n"
 "\n"
-"Copyrightéservés (c) 1995 par Pascal Pensa\n"
+"Copyright (c) 1995 par Pascal Pensa\n"
 "\n"
 "Porté vers kscreensave par Emanuel Pirker."
 
@@ -219,7 +219,7 @@ msgstr "Hop"
 
 #: hop.cpp:306
 msgid "Setup KHop"
-msgstr "Configure KHop"
+msgstr "Configuration de KHop"
 
 #: hop.cpp:322
 msgid "Samecolor Pixels:"
@@ -231,7 +231,7 @@ msgstr "Cycles :"
 
 #: hop.cpp:437
 msgid "About Hop"
-msgstr "Au sujet de Hop"
+msgstr "A propos de Hop"
 
 #: hop.cpp:438
 msgid ""
@@ -243,7 +243,7 @@ msgid ""
 msgstr ""
 "Hop Version 3.3\n"
 "\n"
-"Copyright éservés (c) 1991 par Patrick J. Naughton\n"
+"Copyright (c) 1991 par Patrick J. Naughton\n"
 "\n"
 "Porté vers kscreensave par Emanuel Pirker."
 
@@ -253,11 +253,11 @@ msgstr "Laser"
 
 #: laser.cpp:387
 msgid "Setup KLaser"
-msgstr "Configure KLaser"
+msgstr "Configuration de KLaser"
 
 #: laser.cpp:462
 msgid "About Laser"
-msgstr "Au sujet de Laser"
+msgstr "A propos de Laser"
 
 #: laser.cpp:463
 msgid ""
@@ -279,7 +279,7 @@ msgstr "Lines"
 
 #: lines.cpp:128
 msgid "Setup klines"
-msgstr "Configure klines"
+msgstr "Configuration de klines"
 
 #: lines.cpp:130 polygon.cpp:81
 msgid "Length:"
@@ -299,7 +299,7 @@ msgstr "Fin :"
 
 #: lines.cpp:259
 msgid "About Lines"
-msgstr "Au sujet de Lines"
+msgstr "A propos de Lines"
 
 #: lines.cpp:260
 msgid ""
@@ -319,7 +319,7 @@ msgstr "Lissie"
 
 #: lissie.cpp:320
 msgid "Setup KLissie"
-msgstr "Configure KLissie"
+msgstr "Configuration de KLissie"
 
 #: lissie.cpp:336
 msgid "Num of Lissies:"
@@ -327,7 +327,7 @@ msgstr "Nombre de Lissies :"
 
 #: lissie.cpp:451
 msgid "About Lissie"
-msgstr "Au sujet de Lissie"
+msgstr "A propos de Lissie"
 
 #: lissie.cpp:452
 msgid ""
@@ -344,9 +344,9 @@ msgstr ""
 "Porté vers kscreensave by Emanuel Pirker."
 
 #: main.cpp:279
-#, c-format
+#, fuzzy, c-format
 msgid "Option %s is not support on this plattform!"
-msgstr "L'option %s n'est pas supportée sur cette pate-forme !"
+msgstr "L'option %s n'est pas supportée sur cette plateforme !"
 
 #: main.cpp:306
 msgid ""
@@ -355,14 +355,14 @@ msgid ""
 "\n"
 "Tell him, that you need suid for the screensavers!"
 msgstr ""
-"Votre système utilise des mots de passe cachés (shadow passwords) !\n"
+"Votre système utilise des mots de passe cachés !\n"
 "Veuillez contacter votre administrateur système.\n"
 "\n"
-"Dites-lui que vous avez besoin d'avoir les mises en veilles setuid root."
+"Dites-lui que vous avez besoin d'avoir les mises en veille setuid root."
 
 #: main.cpp:311
 msgid "Shadow Passwords"
-msgstr "Mots de passes cachés"
+msgstr "Mots de passe cachés"
 
 #: main.cpp:469
 #, c-format
@@ -396,24 +396,24 @@ msgstr ""
 "                     x = i  aucune action (ignore)\n"
 "                     x = s  sauvegarde le bureau\n"
 "                     x = l  verrouille l'écran\n"
-"                    ordre : haut-gauche, haut-droite, bas-gauche, "
+"                    ordre : haut gauche, haut droite, bas gauche, "
 "bas-droite\n"
 "  -delay num        Nombre de minutes d'inactivité avant l'activation de la\n"
-"                    mise en veille (par défaut 10min)\n"
-"  -desc             Affcihe la description de la mise en veille\n"
+"                    mise en veille (par défaut 10 min)\n"
+"  -desc             Affiche la description de la mise en veille\n"
 "  -install          Installe la mise en veille\n"
-"  -lock             Nécessite un mot de passe pour déverrouiller la \n"
+"  -lock             Requiert un mot de passe pour déverrouiller la \n"
 "                    mise en veille\n"
 "  -nice num         Est lancé avec le niveau de privilèges \"num\"\n"
 "\n"
 "  -preview wid      Est lancé dans la fenêtre spécifiée\n"
 "  -inroot           Est lancé dans la fenêtre racine\n"
-"  -setup            Configure la mise en veille\n"
+"  -setup            Configuration de la mise en veille\n"
 "  -test             Lance la mise en veille immédiatement\n"
 
 #: morph3d.cpp:839 space.cpp:419
 msgid "GL can not render with root visual\n"
-msgstr "GL ne peut pas calculer avec une \"root visual\"\n"
+msgstr "GL ne peut pas calculer sur la fenêtre racine\n"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
@@ -421,7 +421,7 @@ msgstr "Morph3D (GL)"
 
 #: morph3d.cpp:1015
 msgid "Setup KMorph3d"
-msgstr "Configure KMorph3d"
+msgstr "Configuration de KMorph3d"
 
 #: morph3d.cpp:1031
 msgid "Object Type:"
@@ -429,7 +429,7 @@ msgstr "Type d'objet :"
 
 #: morph3d.cpp:1120
 msgid "About Morph3D"
-msgstr "Au sujet de Morph3D"
+msgstr "A propos de Morph3D"
 
 #: morph3d.cpp:1121
 msgid ""
@@ -451,7 +451,7 @@ msgstr "Polygones"
 
 #: polygon.cpp:79
 msgid "Setup kpolygon"
-msgstr "Configure kpolygon"
+msgstr "Configuration de kpolygon"
 
 #: polygon.cpp:91
 msgid "Vertices:"
@@ -459,7 +459,7 @@ msgstr "Vertices :"
 
 #: polygon.cpp:209
 msgid "About Polygon"
-msgstr "Au sujet de Polygon"
+msgstr "A propos de Polygon"
 
 #: polygon.cpp:210
 msgid ""
@@ -470,7 +470,7 @@ msgid ""
 msgstr ""
 "Polygon Version 0.1\n"
 "\n"
-"Écrit par Martin R. Jones 1996\n"
+"Ecrit par Martin R. Jones 1996\n"
 "mjones@kde.org"
 
 #: pyro.cpp:433
@@ -479,7 +479,7 @@ msgstr "Pyro"
 
 #: pyro.cpp:511
 msgid "Setup KPyro"
-msgstr "Configure KPyro"
+msgstr "Configuration de KPyro"
 
 #: pyro.cpp:517 rock.cpp:560
 msgid "Number:"
@@ -491,7 +491,7 @@ msgstr "Nuage"
 
 #: pyro.cpp:608
 msgid "About Pyro"
-msgstr "Au sujet de Pyro"
+msgstr "A propos de Pyro"
 
 #: pyro.cpp:609
 msgid ""
@@ -513,19 +513,19 @@ msgstr "Rock"
 
 #: rock.cpp:544
 msgid "Setup krock"
-msgstr "Configure krock"
+msgstr "Configuration de krock"
 
 #: rock.cpp:570
 msgid "Move"
-msgstr "Déplace"
+msgstr "Déplacer"
 
 #: rock.cpp:575
 msgid "Rotate"
-msgstr "Tourne"
+msgstr "Tourner"
 
 #: rock.cpp:693
 msgid "About Rock"
-msgstr "Au sujet de Rock"
+msgstr "A propos de Rock"
 
 #: rock.cpp:694
 msgid ""
@@ -555,7 +555,7 @@ msgstr "Slip"
 
 #: slip.cpp:360
 msgid "Setup KSlip"
-msgstr "Configure KSlip"
+msgstr "Configuration de KSlip"
 
 #: slip.cpp:376
 msgid "Batchcount:"
@@ -563,7 +563,7 @@ msgstr "Nombre :"
 
 #: slip.cpp:464
 msgid "About Slip"
-msgstr "Au sujet de Slip"
+msgstr "A propos de Slip"
 
 #: slip.cpp:465
 msgid ""
@@ -581,21 +581,21 @@ msgstr ""
 
 #: space.cpp:491
 msgid "Space (GL)"
-msgstr ""
+msgstr "Espace (GL)"
 
 #: space.cpp:581
 #, fuzzy
 msgid "Setup KSpace"
-msgstr "Configure KSlip"
+msgstr "Configuration de KSpace"
 
 #: space.cpp:597
 msgid "Warp Interval:"
-msgstr ""
+msgstr "Intervalle de torsion :"
 
 #: space.cpp:685
 #, fuzzy
 msgid "About KSpace"
-msgstr "Au sujet de Slip"
+msgstr "A propos de KSpace"
 
 #: space.cpp:687
 msgid ""
@@ -603,6 +603,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 msgstr ""
+"KSpace\n"
+"Copyright (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
 
 #: swarm.cpp:252
 msgid "Swarm"
@@ -610,7 +613,7 @@ msgstr "Swarm"
 
 #: swarm.cpp:324
 msgid "Setup KSwarm"
-msgstr "Configure KSwarm"
+msgstr "Configuration de KSwarm"
 
 #: swarm.cpp:340
 msgid "Number of Bees:"
@@ -618,7 +621,7 @@ msgstr "Nombre d'abeilles :"
 
 #: swarm.cpp:427
 msgid "About Swarm"
-msgstr "Au sujet de Swarm"
+msgstr "A propos de Swarm"
 
 #: swarm.cpp:428
 msgid ""
