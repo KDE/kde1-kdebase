@@ -7,8 +7,9 @@ Standards-Version: 2.5.0
 Package: kdebase
 Architecture: any
 Depends: menu (>=1.5-5), ${shlibs:Depends}, kdelibs2g
-Suggests: kdewallpapers, kdm, kdeadmin, kdegames, kdegraphics, kdemultimedia, kdenetwork, kdetoys, kdeutils, khotkeys, korganizer, kdebase-doc, kthememgr
+Suggests: kdewallpapers, kdm, kdeadmin, kdegames, kdegraphics, kdemultimedia, kdenetwork, kdetoys, kdeutils, khotkeys, korganizer, kdebase-doc, kthememgr, kthememgr-themes
 Recommends: kdebase-i18n
+Conflicts: rman
 Description: KDE core applications
  This is a suite of all kde core applications :
  file manager kfm, window manager kwm

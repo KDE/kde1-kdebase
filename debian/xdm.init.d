@@ -9,6 +9,12 @@ PIDFILE=/var/run/xdm.pid
 
 test -x $DAEMON || exit 0
 
+grep -q ^start-xdm /etc/X11/kdm/config || exit 0
+if grep -q ^start-kdm /etc/X11/kdm/config
+then
+  echo "WARNING : can only start xdm or kdm, but not both !"
+fi
+
 if grep -qs ^check-local-xserver /etc/X11/xdm/xdm.options; then
   if head -1 /etc/X11/Xserver 2> /dev/null | grep -q Xsun; then
     # the Xsun X servers do not use XF86Config
@@ -42,11 +48,6 @@ case "$1" in
       else
         echo "done."
       fi
-    fi
-    grep -q ^start-xdm /etc/X11/kdm/config || exit 0
-    if grep -q ^start-kdm /etc/X11/kdm/config
-      then
-        echo "WARNING : can only start xdm or kdm, but not both !"
     fi
     echo -n "Starting X display manager: xdm"
     start-stop-daemon --start --quiet --pid $PIDFILE --exec $DAEMON || echo -n " already running"

@@ -46,24 +46,28 @@ case "$input" in
 	3)	xdmserver=2; kdmserver=2; ;;
 	*)	xdmserver=2; kdmserver=1; ;;
 esac
+echo "# KDM - XDM Startup config thing" >> /etc/X11/kdm/config.new
 
 xdm=0
 test -n "`pidof xdm`" && xdm=1
-if [ $xdmserver = 1 ] ; then
+if [ $xdmserver -eq 1 ] ; then
 	echo "start-xdm" >> /etc/X11/kdm/config.new
-	test $xdm = 0 && start=xdm
+	if [ $xdm -eq 0 ]; then start=xdm; fi
 else
-	test $xdm = 1 && stop=xdm	
+	if [ $xdm -eq 1 ]; then stop=xdm; fi
 fi
 
 kdm=0
 test -n "`pidof kdm`" && kdm=1
-if [ $kdmserver = 1 ] ; then
+if [ $kdmserver -eq 1 ] ; then
 	echo "start-kdm" >> /etc/X11/kdm/config.new
-	test $kdm = 0 && start=kdm
+	if [ $kdm -eq 0 ]; then start=kdm; fi
 else
-	test $kdm = 1 && stop=kdm	
+	if [ $kdm -eq 1 ]; then stop=kdm; fi
 fi
+
+mv /etc/X11/kdm/config.new /etc/X11/kdm/config
+sleep 2
 
 if test -n "$stop" -a -n "$start"
 then
@@ -79,8 +83,6 @@ then
 		y*|Y*)	/etc/init.d/$stop stop 
 			;;
 	esac
-	mv /etc/X11/kdm/config.new /etc/X11/kdm/config
-	sleep 2
 	case $answer in
 		y*|Y*)	/etc/init.d/$start start
 			;;
@@ -98,7 +100,6 @@ then
 		y*|Y*)	/etc/init.d/$stop stop 
 			;;
 	esac
-	mv /etc/X11/kdm/config.new /etc/X11/kdm/config
 elif test -n "$start"
 then
 	echo "i need to start $start"
@@ -108,7 +109,6 @@ then
 	echo -n "Continue ? (y/n) [$default]"
 	read answer
 	test -z "$answer" && answer=$default
-	mv /etc/X11/kdm/config.new /etc/X11/kdm/config
 	case $answer in
 		y*|Y*)	/etc/init.d/$start start
 			;;

@@ -1,2 +1,4 @@
 /etc/init.d/kdm
 /etc/init.d/xdm
+/etc/kde/kdmrc
+/etc/X11/kdm/config
