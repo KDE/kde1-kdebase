@@ -166,6 +166,7 @@ void draw_animation_rectangle(int x, int y, int dx, int dy, bool decorated, int 
 
 
 
+// draw a transparent representation of the specified client
 void drawbound(Client* c){
     int x, y, dx, dy;
 
@@ -190,6 +191,7 @@ void drawbound(Client* c){
 }
 
 
+// an electric border has fired! => switch to the appropriate virtual desktop
 bool electricBorder(Client* c, bool grab_server, int &x, int &y){
   if (options.ElectricBorder < 0)
     return false;
@@ -249,8 +251,11 @@ bool electricBorder(Client* c, bool grab_server, int &x, int &y){
 
 
 
-bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
-	      void (*recalc)( Client *, int, int) ){
+// general function do deal with transparent and opaque interactive
+// movement or resizing. The different behaviour lies in the specified
+// recalc function which is called to recalculate the size and
+// position of the client.
+bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
 	      
     XEvent ev;
     int cx, cy, rx, ry;
@@ -389,6 +394,8 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
 
 
 
+// interactive resizing of a client. The mode argument specifies the
+// corner or edge on which the user drags.
 bool resizedrag(Client *c, int mode){
 
     if (c->size.flags & PResizeInc) {
@@ -403,31 +410,34 @@ bool resizedrag(Client *c, int mode){
 
     switch (mode){
     case 1:
-      return sweepdrag(c,0,resizecalc);
+      return sweepdrag(c,resizecalc);
     case 2:
-      return sweepdrag(c,0,resizecalc_bl);
+      return sweepdrag(c,resizecalc_bl);
     case 3:
-      return sweepdrag(c,0,resizecalc_tl);
+      return sweepdrag(c,resizecalc_tl);
     case 4:
-      return sweepdrag(c,0,resizecalc_tr);
+      return sweepdrag(c,resizecalc_tr);
     case 5:
-      return sweepdrag(c,0,resizecalc_l);
+      return sweepdrag(c,resizecalc_l);
     case 6:
-      return sweepdrag(c,0,resizecalc_r);
+      return sweepdrag(c,resizecalc_r);
     case 7:
-      return sweepdrag(c,0,resizecalc_t);
+      return sweepdrag(c,resizecalc_t);
     case 8:
-      return sweepdrag(c,0,resizecalc_b);
+      return sweepdrag(c,resizecalc_b);
     }
     return false;
 }
 
 
+// interactive moving of a client.
 bool movedrag(Client *c){
-  return sweepdrag(c,0,dragcalc);
+  return sweepdrag(c,dragcalc);
 }
 
 
+// shows a skull and lets the user select a window that will be killed
+// with manager->killWindowAtPosition() later.
 void killSelect(){
 	      
     XEvent ev;

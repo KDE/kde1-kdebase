@@ -66,7 +66,7 @@ class Client;
 
 
 // the Client class encapsulates a window decoration. There´s one
-// instance of Client for eached managed window.
+// instance of Client for each managed window.
 class Client : public QFrame {
 
   Q_OBJECT

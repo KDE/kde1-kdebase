@@ -181,8 +181,17 @@ static QColor shaded_pm_active_color;
 static QColor shaded_pm_inactive_color;
 
 
-
+// animate a size change of a window. This can be either transparent
+// or opaque. Opque only if the window is visible and the
+// options.WindowResizeType is Opqaue. "before" and "after" specify
+// the source resp. target recangle. If the window is decorated (that
+// means it has a titlebar) o1 and o2 specify the left resp. right
+// border of the titelbar rectangle.
 bool  animate_size_change(Client* c, QRect before, QRect after, bool decorated, int o1, int o2){
+
+  // the function is a bit tricky since it will ensure that an
+  // animation action needs always the same time regardless of the
+  // performance of the machine or the X-Server.
 
   float lf,rf,tf,bf;
   XEvent ev;
@@ -280,9 +289,15 @@ bool  animate_size_change(Client* c, QRect before, QRect after, bool decorated, 
   return false;
 }
 
+
+// auxiliary function to put a passive grab over a window. grabButton
+// will add all combinations of the unused modifiers NumLock and Lock
+// to the specified modifiers to allow kwm to work regardless wether
+// these are active or not.
 static void grabButton(int button, Window window, unsigned int mod){
   static int NumLockMask = 0;
   if (!NumLockMask){
+    // try to find out the modifer that handles NumLock
     XModifierKeymap* xmk = XGetModifierMapping(qt_xdisplay());
     int i;
     for (i=0; i<8; i++){
@@ -357,6 +372,8 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     size.flags = 0;
     generateButtons();
 
+    // create the cursor shapes for all the edges and corners of kwm´s
+    // window decoration.
     if (!bottom_right_cursor)
       bottom_right_cursor = XCreateFontCursor(qt_xdisplay(), XC_bottom_right_corner);
     if (!bottom_left_cursor)
@@ -419,11 +436,6 @@ void Client::hideClient(){
 }
 
 
-
-
-
-
-
 static QPixmap* pm_max = 0;
 static QPixmap* pm_max_down = 0;
 static QPixmap* pm_icon = 0;
@@ -432,6 +444,7 @@ static QPixmap* pm_pin_up = 0;
 static QPixmap* pm_pin_down = 0;
 static QPixmap* pm_menu = 0;
 
+// simple encapsulation of the KDE iconloader
 QPixmap* loadIcon(const char* name){
   QPixmap *result = new QPixmap;
   *result = kapp->getIconLoader()->loadIcon(name);
@@ -551,6 +564,8 @@ void Client::layoutButtons(){
     }
 
     if (buttonMenu)
+      // a menu button is always on top to allow the user to perfrom
+      // all actions even if the window became too small
       buttonMenu->raise();
   }   
   
