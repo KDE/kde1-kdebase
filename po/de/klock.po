@@ -11,18 +11,16 @@ msgstr ""
 "Translator: Stephan Kulow <coolo@kde.org>\n"
 
 #: attraction.cpp:716
-#, fuzzy
 msgid "Attraction"
-msgstr "Kontraktion"
+msgstr "Attraction"
 
 #: attraction.cpp:803
-#, fuzzy
 msgid "Setup KAttraction"
-msgstr "Einstellungen Fledermäuse"
+msgstr "Einstellungen Attraction"
 
 #: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
-msgstr "Anzahl"
+msgstr "Anzahl:"
 
 #: attraction.cpp:829 science.cpp:993 slidescreen.cpp:493
 msgid "Mode:"
@@ -49,12 +47,10 @@ msgid "Glow"
 msgstr "Leuchten"
 
 #: attraction.cpp:951
-#, fuzzy
 msgid "About Attraction"
-msgstr "Kontraktion"
+msgstr "Über Attraction"
 
 #: attraction.cpp:952
-#, fuzzy
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -64,11 +60,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Rock Version 3.3\n"
+"Attraction Version 1.0\n"
 "\n"
-"Copyright (c) 1992 Jamie Zawinski\n"
+"Copyright (c) 1992-1997 Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Portiert für KDE von  Martin Jones."
+"Nach KDE portiert von:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> Oktober 1998"
 
 #: banner.cpp:62
 msgid "Banner"
@@ -260,7 +258,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1996 von Jeremie PETIT\n"
 "\n"
-"Zu kscreensave portiert von Cedric Tefft"
+"Nach KDE portiert von Cedric Tefft"
 
 #: bsod.cpp:1192
 msgid "Black Screen of Death"
@@ -768,22 +766,18 @@ msgid "About Science"
 msgstr "Über Wissenschaft"
 
 #: slidescreen.cpp:419
-#, fuzzy
 msgid "SlideScreen"
-msgstr "Leerer Bildschirm"
+msgstr "SlideScreen"
 
 #: slidescreen.cpp:465
-#, fuzzy
 msgid "Setup KSlideScreen"
-msgstr "Wissenschaft einstellen"
+msgstr "Einstellungen SlideScreen"
 
 #: slidescreen.cpp:558
-#, fuzzy
 msgid "About SlideScreen"
-msgstr "Über Wissenschaft"
+msgstr "Über SlideScreen"
 
 #: slidescreen.cpp:559
-#, fuzzy
 msgid ""
 "SlideScreen Version 1.1\n"
 "\n"
@@ -793,11 +787,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Rock Version 3.3\n"
+"SlideScreen Version 1.1\n"
 "\n"
-"Copyright (c) 1992 Jamie Zawinski\n"
+"Copyright (c) 1992-1997 Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Portiert für KDE von  Martin Jones."
+"Nach KDE portiert von:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> Oktober 1998"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -809,7 +805,7 @@ msgstr "KSlip einstellen"
 
 #: slip.cpp:392
 msgid "Batchcount:"
-msgstr "Nr. der Fledermäuse:"
+msgstr "Anzahl der Fetzen:"
 
 #: slip.cpp:488
 msgid "About Slip"
@@ -898,3 +894,5 @@ msgstr ""
 #~ "\n"
 #~ "geschrieben von Rene Beutler 1998\n"
 #~ "rbeutler@g26.ethz.ch"
+
+

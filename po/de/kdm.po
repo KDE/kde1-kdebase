@@ -56,7 +56,7 @@ msgstr "Beenden..."
 
 #: kgreeter.cpp:570
 msgid "Logins not available right now."
-msgstr "Benutzernamen derzeicht nicht verfügbar."
+msgstr "Benutzernamen derzeit nicht verfügbar."
 
 #: kgreeter.cpp:611
 msgid "login_getcapstr() failed."
