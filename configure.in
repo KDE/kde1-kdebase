@@ -80,8 +80,10 @@ dnl Image readers/writers
 AC_FIND_GIF
 AC_FIND_JPEG
 AC_FIND_TIFF
-KIMGIO_LIBS="\$(LIBJPEG) \$(LIBTIFF)"
+KDE_CHECK_KIMGIO dnl this should make the next two lines obsolete
+KIMGIO_LIBS="\$(LIBJPEG) \$(LIBTIFF) \$(LIBPNG)"
 AC_SUBST(KIMGIO_LIBS)
+
 
 AC_HAVE_GL(GL_SAVERS="kmorph3d.kss kspace.kss kpipes.kss",GL_SAVERS="")
 AC_SUBST(GL_SAVERS)
