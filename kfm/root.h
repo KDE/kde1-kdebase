@@ -192,9 +192,14 @@ public:
     void openPopupMenu( QStrList &_urls, const QPoint &_point );
     bool isBindingHardcoded( const char *_txt );
 
+    /** Re-read configuration and apply it */
+    void configure (KConfig * config);
+    /**
+     * Various methods used by configure().
+     */
     void setRootGridParameters(int gridwidth ,int gridheight);
-	void setRootIconStyle(int newiconstyle);
-	void setRootIconColors(QColor &, QColor &);//CT 12Nov1998
+    void setRootIconStyle(int newiconstyle);
+    void setRootIconColors(QColor &, QColor &);//CT 12Nov1998
 
     /**
      * Takes all icons corresponding to the given URLs and moves them.

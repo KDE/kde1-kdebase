@@ -413,7 +413,7 @@ void KfmGui::initMenu()
     else
       moptions->setItemEnabled(moptions->idAt( 6 ), false);
     moptions->insertSeparator();
-    moptions->insertItem( klocale->translate("Set Preferen&ces..."),
+    moptions->insertItem( klocale->translate("&Configure Browser..."),
                           this, SLOT(slotConfigureBrowser()));
     
     moptions->setItemChecked( moptions->idAt( 0 ), showMenubar );
@@ -444,16 +444,12 @@ void KfmGui::initMenu()
     CHECK_PTR( bookmarkMenu );
     connect( bookmarkManager, SIGNAL( changed() ), 
 	     this, SLOT( slotBookmarksChanged() ) );
-
-    // bookmarkMenu->insertItem( klocale->translate("&Edit Bookmarks..."), 
-    // this, SLOT(slotEditBookmarks()) );
-    // fillBookmarkMenu( bookmarkManager->root(), bookmarkMenu );
     slotBookmarksChanged();
     
 
     QString about_text;
     about_text.sprintf("KFM Ver. %s\n\n%s", kfm_getrev(),
-klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin Jones\nmjones@kde.org\n\nProxy Manager by Lars Hoss\nLars.Hoss@munich.netsurf.de\n\nBug reports and patches to David Faure\nfaure@kde.org") );
+klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin Jones\nmjones@kde.org\n\nProxy Manager by Lars Hoss\nLars.Hoss@munich.netsurf.de\n\nCurrent maintainer: David Faure\nfaure@kde.org") );
 
     QPopupMenu *help = kapp->getHelpMenu(false, about_text);
     CHECK_PTR( help );
@@ -1146,7 +1142,7 @@ void KfmGui::slotBookmarkSelected( int _id )
       KURL u( bm->url() );
       if ( u.isMalformed() )
       {
-	warning(klocale->translate("ERROR: Malformed URL"));
+	warning(QString(klocale->translate("ERROR: Malformed URL"))+" : %s",u.path());
 	return;
       }
 	
@@ -1318,7 +1314,7 @@ void KfmGui::slotOpenLocation( )
 	KURL u( url.data() );
 	if ( u.isMalformed() )
 	{
-	    warning(klocale->translate("ERROR: Malformed URL"));
+            warning(QString(klocale->translate("ERROR: Malformed URL"))+" : %s",u.path());
 	    return;
 	}
 	
@@ -1326,7 +1322,7 @@ void KfmGui::slotOpenLocation( )
     }
 }
 
-//Sven: we don't need this any more. Or?
+//Called by the Quit menu item, when un-commented (for testing purposes).
 void KfmGui::slotQuit()
 {
     if ( QMessageBox::warning( 0, klocale->translate("KFM Confirm"), 
@@ -1622,7 +1618,6 @@ void KfmGui::slotConfigureBrowser()
 
 	      if(w->treeView){
 		w->treeView->setColors(coloropts.bg,coloropts.link);
-		//		w->treeView->updateTree(true);
 		w->treeView->repaint();
 	      }
 	      
@@ -1657,6 +1652,57 @@ void KfmGui::slotConfigureBrowser()
   config->setGroup( oldgroup );
 }
 
+/** Static method, to read configuration and apply it to all kfmguis */
+void KfmGui::slotConfigure()
+{
+    KConfig *config = kapp->getConfig();
+    config->reparseConfiguration();
+    // -- Group KFM HTML Defaults -- (Colors, Fonts & HTTP tabs)
+    KfmGui *w;
+    for ( w = windowList->first(); w != 0L; w = windowList->next() )
+    {
+        if (w->view->getKHTMLWidget())
+        {
+            w->view->setHTMLWidgetOptions(); // reads and applies config
+            w->view->slotUpdateView();
+        }
+
+        if(w->treeView){
+            config->setGroup( "KFM HTML Defaults" );	
+            QColor bgColor = config->readColorEntry( "BgColor", &HTML_DEFAULT_BG_COLOR );
+            QColor linkColor = config->readColorEntry( "LinkColor", &HTML_DEFAULT_LNK_COLOR );
+            
+            w->treeView->setColors(bgColor,linkColor);
+            w->treeView->repaint();
+        }
+    }
+    // -- Group KFM Root Icons -- (part of the Misc tab)
+    if ( KRootWidget::getKRootWidget() ){
+        KRootWidget::getKRootWidget()->configure(config); // read and apply configuration
+    }
+
+    // -- Group KFM Misc Defaults -- (rest of the Misc tab)
+    config->setGroup("KFM Misc Defaults");
+    bool urlprops = config->readBoolEntry( "EnablePerURLProps", false );
+    pkfm->setURLProps( urlprops );
+    bool followmode = config->readBoolEntry( "TreeFollowsView", false );
+    pkfm->setTreeViewFollowMode( followmode );
+
+    for ( w = windowList->first(); w != 0L; w = windowList->next() ) {
+        w->moptions->setItemEnabled(w->moptions->idAt( 6 ), urlprops);
+    }
+
+    // -- Group Browser Settings/UserAgent -- (UserAgent tab)
+    // wasn't done after closing the config dialog.
+    // but will need to be done anyway
+
+    // -- Group Browser Settings/Proxy -- (Proxy tab)
+    // wasn't done after closing the config dialog.
+    // but will need to be done anyway
+
+    // -- Group Cache -- this is configureable from the menu, no need for anything here.
+
+}
 
 void KfmGui::slotViewFrameSource()
 {

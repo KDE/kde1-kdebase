@@ -54,7 +54,7 @@ KRootWidget::KRootWidget( QWidget *parent, const char *name ) : QWidget( parent,
 	 if ( labelColor == iconBgColor ) debug("Icon colors identical");
 	 //CT
 
-	 config->setGroup( "KFM Misc Defaults" );	
+	 config->setGroup( "KFM Misc Defaults" ); // Why in that group ? Used for KRootWidget only...
 	 gridwidth = config->readNumEntry( "GridWidth", DEFAULT_GRID_WIDTH );
          gridheight = config->readNumEntry( "GridHeight", DEFAULT_GRID_HEIGHT );
     }
@@ -126,6 +126,22 @@ void KRootWidget::setRootIconColors(QColor &fg, QColor &bg) {
     icon->update();
 }
 //CT
+
+/** Reads and applies configuration from config file */
+void KRootWidget::configure(KConfig * config) {
+    config->setGroup("KFM Root Icons");
+    setRootIconStyle( config->readNumEntry( "Style", 1 ) );
+    QColor labelColor = config->readColorEntry( "Foreground", &DEFAULT_ICON_FG );
+    QColor iconBgColor = config->readColorEntry( "Background", &DEFAULT_ICON_BG );
+
+    setRootIconColors( labelColor, iconBgColor );
+
+    config->setGroup( "KFM Misc Defaults" ); // Why in that group ? Used for KRootWidget only...
+    int gridwidth = config->readNumEntry( "GridWidth", DEFAULT_GRID_WIDTH );
+    int gridheight = config->readNumEntry( "GridHeight", DEFAULT_GRID_HEIGHT );
+
+    setRootGridParameters(gridwidth, gridheight);              
+}
 
 bool KRootWidget::isBindingHardcoded( const char *_txt )
 {

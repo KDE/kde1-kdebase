@@ -465,6 +465,11 @@ public slots:
     void slotSaveSettings();
 
     /**
+     * Reads and applies configuration. Called by "kfmclient configure".
+     */
+    static void slotConfigure();
+    
+    /**
      * Shows menubar. Public because kfmman calls it.(sven)
      */
     void slotShowMenubar();

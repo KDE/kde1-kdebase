@@ -86,9 +86,7 @@ void KFMServer::slotSortDesktop()
 
 void KFMServer::slotConfigure()
 {
-    // OLD CODE FROM showConfigUI. STILL TODO
-  KfmGui *cfg = new KfmGui;
-  cfg->slotConfigureBrowser();
+    KfmGui::slotConfigure();
 }
 
 void KFMServer::slotRefreshDesktop()
