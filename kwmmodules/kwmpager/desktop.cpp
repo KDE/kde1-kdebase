@@ -104,7 +104,6 @@ void Desktop::addWindow(PagerWindow *win)
     win->icony = KWM::isIconified(win->id);
     win->name = KWM::title(win->id);
     calculate(win);
-    //    QToolTip::add(this, win->prect, win->name);
     windows.append(win);
     fillPixmap();
     repaint( false );
@@ -209,17 +208,53 @@ void Desktop::activate(bool flag)
 void Desktop::mousePressEvent( QMouseEvent *e )
 {
     KWM::switchToDesktop(Id);
-    for (PagerWindow *win = windows.last(); win; win = windows.prev()) {
+    PagerWindow *win;
+    for (win = windows.last(); win; win = windows.prev()) {
 	if (!win->icony && win->prect.contains(e->pos())) {
 	    KWM::activate(win->id);
 	    break;
 	}
     }
+    if (!win)
+	return;
+
+    win->mrect = win->prect;
+    dragWindow = win;
+    if (dragWindow)
+	dragStart = e->pos();
+}
+
+void Desktop::mouseReleaseEvent( QMouseEvent * )
+{
+    if (!dragWindow)
+	return;
+
+    
+    int x = dragWindow->prect.x() * root_size.width()  / pixmap_size.width();
+    int y = dragWindow->prect.y() * root_size.height() / pixmap_size.height();
+    
+    QRect rect = KWM::geometry(dragWindow->id); // without frames this time
+    dragWindow->rect = QRect(x,y, rect.width(), rect.height());
+    KWM::setGeometry(dragWindow->id, dragWindow->rect);
+    dragWindow = 0;
 }
 
 void Desktop::mouseDoubleClickEvent ( QMouseEvent *)
 {
     emit doubleClick();
+}
+
+void Desktop::mouseMoveEvent( QMouseEvent *e)
+{
+    if (e->state() != LeftButton || !dragWindow)
+	return;
+
+    QPoint tmp = e->pos() - dragStart;
+    dragWindow->prect = dragWindow->mrect;
+    dragWindow->prect.moveBy(tmp.x(), tmp.y());
+    fillPixmap();
+    repaint(false);
+
 }
 
 void Desktop::calculate(PagerWindow *win) {

@@ -51,6 +51,7 @@ Pager::Pager(KWMModuleApplication *a) : QWidget(NULL,  "kwmpager",
 
     for (int i = 0; i < count; i++) {
         desk = new Desktop(a, i + 1, this);
+	connect(desk, SIGNAL(doubleClick()), SLOT(decorate()));
         desktops.append(desk);
     }
     
@@ -95,21 +96,6 @@ void Pager::receiveCommand(QString command)
 	readSettings();
 	initDesktops();
 	placeIt();
-    }
-    if (command == "pager:change") {
-	hide();
-	if ( style == Undecorated ) {
-	    setWFlags(0);
-	    KWM::setDecoration(winId(), true);
-	    style = Decorated;
-	} else {
-	    setWFlags(WStyle_Customize | 
-		      WStyle_NoBorder | 
-		      WStyle_Tool);
-	    KWM::setDecoration(winId(), false);
-	    style = Undecorated;
-	}
-	show();	
     }
 }
 
@@ -198,7 +184,7 @@ void Pager::resizeEvent ( QResizeEvent * )
 		   (i % 2) ? height() / 2 : 0);
     }
 }
-
+ 
 void Pager::initDesktops()
 {
     Desktop *desk;
@@ -224,7 +210,7 @@ void Pager::changeNumber(int)
     for (int i = 0; i < count; i++) {
 	Desktop *desk = new Desktop(kwmmapp, i + 1, this);
 	desktops.append(desk);
-	connect(desk, SIGNAL(doubleClick()), SLOT(decorate()));
+	connect(desk, SIGNAL(doubleClick()), this, SLOT(decorate()));
 	desk->show();
     }
     
@@ -238,7 +224,21 @@ void Pager::changeNumber(int)
 
 void Pager::decorate()
 {
-    KWM::setDecoration(winId(), true);
+    hide();
+    if ( style == Undecorated ) {
+	KWM::setDecoration(winId(), true);
+	recreate(NULL, 0, pos());
+	style = Decorated;
+    } else {
+	KWM::setDecoration(winId(), false);
+	QPoint p = KWM::geometry(winId(), false).topLeft();
+	recreate(NULL, WStyle_Customize | 
+		 WStyle_NoBorder | 
+		 WStyle_Tool, pos());
+	move(p);
+	style = Undecorated;
+    }
+    show();	
 }
 
 void Pager::addWindow(Window w)

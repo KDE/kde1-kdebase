@@ -1,4 +1,0 @@
-
-#include "pagercfg.moc"
-
-

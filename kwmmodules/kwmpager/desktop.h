@@ -31,11 +31,12 @@
 class Pager;
 
 struct PagerWindow {
-    Window id;
-    QRect rect;
-    QRect prect;
-    bool icony;
-    QString name;
+    Window id; // Window ID for kwm
+    QRect rect; // window geometry
+    QRect prect; // geometry in pager
+    QRect mrect; // geometry while moved
+    bool icony; // flag for icon state
+    QString name; // title
 };
 
 class Desktop : public QFrame {
@@ -59,6 +60,8 @@ protected:
     void fillPixmap();
     void calculate(PagerWindow* win);
     virtual void mousePressEvent ( QMouseEvent * );
+    virtual void mouseReleaseEvent( QMouseEvent * );
+    virtual void mouseMoveEvent( QMouseEvent * );
     virtual void mouseDoubleClickEvent ( QMouseEvent *);
     virtual void drawContents ( QPainter * );
     virtual void resizeEvent ( QResizeEvent * );  
@@ -72,7 +75,9 @@ private:
     QPixmap pixmap;
     QSize root_size;
     QSize pixmap_size;
-    
+    QPoint dragStart;
+    PagerWindow *dragWindow;
+
 signals:
     void activated(int);
     void doubleClick();
