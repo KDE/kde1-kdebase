@@ -398,6 +398,11 @@ msgid ""
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Kan ikke lagre egenskaper fordi\n"
+"denne katalogen er hverken skrivbar eller som et bokmerke.\n"
+"\n"
+" Legg først dette stedet som et bokmerke, eller lag en kdelnk til det på\n"
+"skrivebordet."
 
 #: kfmview.cpp:578
 msgid ""
@@ -406,6 +411,11 @@ msgid ""
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Kan ikke lagre egenskaper fordi\n"
+"denne URLen er hverken som bokmerke eller på skrivebordet.\n"
+"\n"
+" Legg først dette stedet som et bokmerke, eller lag en kdelnk til det på\n"
+"skrivebordet."
 
 # kfmtree.cpp:287 kfmview.cpp:527 root.cpp:1193
 #: kfmtree.cpp:288 kfmview.cpp:617 root.cpp:1264
@@ -636,12 +646,11 @@ msgstr "Legg til bokmerker"
 
 #: main.cpp:237
 msgid "Save settings for this URL"
-msgstr ""
+msgstr "Lagre innstillinger for denne URL"
 
 #: main.cpp:238
-#, fuzzy
 msgid "Show Menubar"
-msgstr "Vis &menylinje"
+msgstr "Vis menylinje"
 
 #: htmlopts.cpp:69
 msgid "Small"
@@ -706,7 +715,7 @@ msgstr "Avstand mellom vertikale bunngitter:"
 
 #: htmlopts.cpp:577
 msgid "Allow per-URL settings"
-msgstr ""
+msgstr "Godta pr-URL-innstillinger"
 
 #: htmlopts.cpp:585
 msgid "Transparent Text for Root Icons."
@@ -730,11 +739,9 @@ msgstr "&Gjennomblaer"
 msgid "Could not write bookmark"
 msgstr "Kunne ikke lagre bokmerke"
 
-# kfmprops.cpp:237
 #: kfmprops.cpp:238
-#, fuzzy
 msgid "File Name"
-msgstr "Fullt navn"
+msgstr "Filnavn"
 
 # kfmprops.cpp:237
 #: kfmprops.cpp:253
@@ -1457,12 +1464,16 @@ msgid ""
 " is not a directory ! Security Alert !\n"
 "Please check it.\n"
 msgstr ""
+" er ikke en katalog! Sikkerhetsadvarsel!\n"
+"Vennligst sjekk det.\n"
 
 #: htmlcache.cpp:368
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Check it before clearing the cache.\n"
 msgstr ""
+" er ikke en katalog! Sikkerhetsadvarsel!\n"
+"Sjekk den før opprensing av mellomlager.\n"
 
 # autostart.cpp:28
 #: autostart.cpp:28

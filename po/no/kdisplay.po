@@ -107,17 +107,16 @@ msgid "Setu&p..."
 msgstr "&Oppsett..."
 
 #: backgnd.cpp:371
-#, fuzzy
 msgid "&Dock into the panel"
-msgstr "&Dokk inn i kpanel"
+msgstr "&Dokk inn i panel"
 
 #: backgnd.cpp:381
 msgid "Cache size"
-msgstr ""
+msgstr "Mellomlagerstørrelse"
 
 #: backgnd.cpp:399
 msgid "kb"
-msgstr ""
+msgstr "kB"
 
 #: backgnd.cpp:1264
 msgid "Desktop names"

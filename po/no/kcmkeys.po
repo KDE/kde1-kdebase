@@ -124,99 +124,96 @@ msgstr ""
 
 #: ../../kwm/kwmbindings.cpp:1
 msgid "Task manager"
-msgstr ""
+msgstr "Oppgavebehandler"
 
 #: ../../kwm/kwmbindings.cpp:2
 msgid "Kill window mode"
-msgstr ""
+msgstr "Drep vindu-modus"
 
 #: ../../kwm/kwmbindings.cpp:3
 msgid "Execute command"
-msgstr ""
+msgstr "Kjør kommando"
 
 #: ../../kwm/kwmbindings.cpp:4
 msgid "Window operations menu"
-msgstr ""
+msgstr "Vinduoperasjon-meny"
 
 #: ../../kwm/kwmbindings.cpp:5
 msgid "Pop-up system menu"
-msgstr ""
+msgstr "Poppopp-systemmeny"
 
 #: ../../kwm/kwmbindings.cpp:7
 msgid "Window raise"
-msgstr ""
+msgstr "Legg vindu øverst"
 
 #: ../../kwm/kwmbindings.cpp:8
 msgid "Window lower"
-msgstr ""
+msgstr "Legg vindu underst"
 
 #: ../../kwm/kwmbindings.cpp:9
 msgid "Window close"
-msgstr ""
+msgstr "Lukk vindu"
 
 #: ../../kwm/kwmbindings.cpp:10
 msgid "Window iconify"
-msgstr ""
+msgstr "Ikoniser vindu"
 
 #: ../../kwm/kwmbindings.cpp:11
 msgid "Window resize"
-msgstr ""
+msgstr "Endre vindusstørrelse"
 
 #: ../../kwm/kwmbindings.cpp:12
 msgid "Window move"
-msgstr ""
+msgstr "Flytt vindu"
 
 #: ../../kwm/kwmbindings.cpp:13
 msgid "Window toggle sticky"
-msgstr ""
+msgstr "Slå av/på fastsatt vindu"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
-msgstr ""
+msgstr "Bytt til skrivebord 1"
 
 #: ../../kwm/kwmbindings.cpp:16
 msgid "Switch to desktop 2"
-msgstr ""
+msgstr "Bytt til skrivebord 2"
 
 #: ../../kwm/kwmbindings.cpp:17
 msgid "Switch to desktop 3"
-msgstr ""
+msgstr "Bytt til skrivebord 3"
 
 #: ../../kwm/kwmbindings.cpp:18
 msgid "Switch to desktop 4"
-msgstr ""
+msgstr "Bytt til skrivebord 4"
 
 #: ../../kwm/kwmbindings.cpp:19
 msgid "Switch to desktop 5"
-msgstr ""
+msgstr "Bytt til skrivebord 5"
 
 #: ../../kwm/kwmbindings.cpp:20
 msgid "Switch to desktop 6"
-msgstr ""
+msgstr "Bytt til skrivebord 6"
 
 #: ../../kwm/kwmbindings.cpp:21
 msgid "Switch to desktop 7"
-msgstr ""
+msgstr "Bytt til skrivebord 7"
 
 #: ../../kwm/kwmbindings.cpp:22
 msgid "Switch to desktop 8"
-msgstr ""
+msgstr "Bytt til skrivebord 8"
 
 #: ../../kwm/kwmbindings.cpp:24
 msgid "Switch one desktop to the right"
-msgstr ""
+msgstr "Bytt ett skrivebord til høyre"
 
 #: ../../kwm/kwmbindings.cpp:25
 msgid "Switch one desktop to the left"
-msgstr ""
+msgstr "Bytt ett skrivebord til venstre"
 
 #: ../../kwm/kwmbindings.cpp:26
 msgid "Switch one desktop up"
-msgstr ""
+msgstr "Bytt ett skrivebord opp"
 
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
-msgstr ""
-
-#~ msgid "Insert"
-#~ msgstr "Insert"
+msgstr "Bytt ett skrivebord ned"
