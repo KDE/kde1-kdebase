@@ -19,6 +19,9 @@ patchlevel 7:
                 tinyDecorationTitles=,
                 noDecorationClasses=,
                 tinyDecorationClasses=,
+	[Focus]
+	noFocusTitles=,
+	noFocusClasses=,
 
             Each property allows you to specify a comma separated list
             of regular expressions. A window whose title or class

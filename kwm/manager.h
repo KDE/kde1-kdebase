@@ -478,6 +478,12 @@ private:
   QStrList tiny_decoration_titles;
   QStrList no_decoration_classes;
   QStrList tiny_decoration_classes;
+  // same for supressing focus 
+  QStrList no_focus_titles;
+  QStrList no_focus_classes;
+
+  // apply the above mentioned global hints
+  void doGlobalDecorationAndFocusHints(Client* c);
 
 
 };

@@ -1121,19 +1121,25 @@ void Manager::raiseElectricBorders(){
 
 
 void Manager::readConfiguration(){
+  KConfig* config = kapp->getConfig();
+
   // decoration tricks to be somewhat compatible with traditional window managers
   no_decoration_titles.clear();
   tiny_decoration_titles.clear();
   no_decoration_classes.clear();
   tiny_decoration_classes.clear();
-
-  KConfig* config = kapp->getConfig();
-
   config->setGroup( "Decoration" );
   config->readListEntry("noDecorationTitles", no_decoration_titles);
   config->readListEntry("tinyDecorationTitles", tiny_decoration_titles);
   config->readListEntry("noDecorationClasses", no_decoration_classes);
   config->readListEntry("tinyDecorationClasses", tiny_decoration_classes);
+
+  // same for supressing focus 
+  no_focus_titles.clear();
+  no_focus_classes.clear();
+  config->setGroup( "Focus" );
+  config->readListEntry("noFocusTitles", no_focus_titles);
+  config->readListEntry("noFocusClasses", no_focus_classes);
 }
 
 void Manager::randomPlacement(Client* c){
@@ -1688,8 +1694,6 @@ void Manager::manage(Window w, bool mapped){
     long dec = KWM::getDecoration(c->window);
     c->decoration = dec & 255;
     c->wants_focus = (dec & KWM::noFocus) == 0;
-    if (!c->wantsFocus())
-      c->hidden_for_modules = true;
   }
 
   XSelectInput(qt_xdisplay(), c->window, ColormapChangeMask | 
@@ -1707,67 +1711,10 @@ void Manager::manage(Window w, bool mapped){
   c->name = getprop(c->window, XA_WM_NAME); 
   c->setLabel();
 
-  // decoration tricks to be somewhat compatible with traditional window managers
-  if (!c->label.isEmpty()){
-    if (c->getDecoration() == KWM::normalDecoration){
-      for (s = no_decoration_titles.first(); s ; s = no_decoration_titles.next()){
-	r = s; 
-	if (r.match(c->label) != -1){
-	  c->decoration = KWM::noDecoration;
-	  break;
-	} 
-      }
-    }
-    if (c->getDecoration() == KWM::normalDecoration){
-      for (s = tiny_decoration_titles.first(); s ; s = tiny_decoration_titles.next()){
-	r = s; 
-	if (r.match(c->label) != -1){
-	  c->decoration = KWM::tinyDecoration;
-	  break;
-	} 
-      }
-    }
-  }
-  if (!c->instance.isEmpty()){
-    if (c->getDecoration() == KWM::normalDecoration){
-      for (s = no_decoration_classes.first(); s ; s = no_decoration_classes.next()){
-	r = s; 
-	if (r.match(c->instance) != -1){
-	  c->decoration = KWM::noDecoration;
-	  break;
-	} 
-      }
-    }
-    if (c->getDecoration() == KWM::normalDecoration){
-      for (s = tiny_decoration_classes.first(); s ; s = tiny_decoration_classes.next()){
-	r = s; 
-	if (r.match(c->instance) != -1){
-	  c->decoration = KWM::tinyDecoration;
-	  break;
-	} 
-      }
-    }
-  }
-  if (!c->klass.isEmpty()){
-    if (c->getDecoration() == KWM::normalDecoration){
-      for (s = no_decoration_classes.first(); s ; s = no_decoration_classes.next()){
-	r = s; 
-	if (r.match(c->klass) != -1){
-	  c->decoration = KWM::noDecoration;
-	  break;
-	} 
-      }
-    }
-    if (c->getDecoration() == KWM::normalDecoration){
-      for (s = tiny_decoration_classes.first(); s ; s = tiny_decoration_classes.next()){
-	r = s; 
-	if (r.match(c->klass) != -1){
-	  c->decoration = KWM::tinyDecoration;
-	  break;
-	} 
-      }
-    }
-  }
+  doGlobalDecorationAndFocusHints(c);
+
+  if (!c->wantsFocus())
+    c->hidden_for_modules = true;
   
 
   // find out the initial state. Several possibilities exist
@@ -3498,6 +3445,103 @@ void Manager::removeDockWindow(Window w){
       if (dock_module != None)
 	sendClientMessage(dock_module, module_dockwin_remove, (long) w);
       break;
+    }
+  }
+}
+
+
+  // decoration tricks to be somewhat compatible with traditional window managers.
+  // same for supressing focus.
+void Manager::doGlobalDecorationAndFocusHints(Client* c){
+  char* s;
+  QRegExp r;
+
+  if (!c->label.isEmpty()){
+    if (c->getDecoration() == KWM::normalDecoration){
+      for (s = no_decoration_titles.first(); s ; s = no_decoration_titles.next()){
+	r = s; 
+	if (r.match(c->label) != -1){
+	  c->decoration = KWM::noDecoration;
+	  break;
+	} 
+      }
+    }
+    if (c->getDecoration() == KWM::normalDecoration){
+      for (s = tiny_decoration_titles.first(); s ; s = tiny_decoration_titles.next()){
+	r = s; 
+	if (r.match(c->label) != -1){
+	  c->decoration = KWM::tinyDecoration;
+	  break;
+	} 
+      }
+    }
+    if (c->wantsFocus()){
+      for (s = no_focus_titles.first(); s ; s = no_focus_titles.next()){
+	r = s; 
+	if (r.match(c->label) != -1){
+	  c->wants_focus = false;
+	  break;
+	} 
+      }
+    }
+  }
+  if (!c->instance.isEmpty()){
+    if (c->getDecoration() == KWM::normalDecoration){
+      for (s = no_decoration_classes.first(); s ; s = no_decoration_classes.next()){
+	r = s; 
+	if (r.match(c->instance) != -1){
+	  c->decoration = KWM::noDecoration;
+	  break;
+	} 
+      }
+    }
+    if (c->getDecoration() == KWM::normalDecoration){
+      for (s = tiny_decoration_classes.first(); s ; s = tiny_decoration_classes.next()){
+	r = s; 
+	if (r.match(c->instance) != -1){
+	  c->decoration = KWM::tinyDecoration;
+	  break;
+	} 
+      }
+    }
+    if (c->wantsFocus()){
+      for (s = no_focus_classes.first(); s ; s = no_focus_classes.next()){
+	r = s; 
+	if (r.match(c->instance) != -1){
+	  c->wants_focus = false;
+	  break;
+	} 
+      }
+    }
+
+  }
+  if (!c->klass.isEmpty()){
+    if (c->getDecoration() == KWM::normalDecoration){
+      for (s = no_decoration_classes.first(); s ; s = no_decoration_classes.next()){
+	r = s; 
+	if (r.match(c->klass) != -1){
+	  c->decoration = KWM::noDecoration;
+	  break;
+	} 
+      }
+    }
+    if (c->getDecoration() == KWM::normalDecoration){
+      for (s = tiny_decoration_classes.first(); s ; s = tiny_decoration_classes.next()){
+	r = s; 
+	if (r.match(c->klass) != -1){
+	  c->decoration = KWM::tinyDecoration;
+	  break;
+	} 
+      }
+    }
+    if (c->wantsFocus()){
+      for (s = no_focus_classes.first(); s ; s = no_focus_classes.next()){
+	r = s; 
+	if (r.match(c->klass) != -1){
+	  c->wants_focus = false;
+	  break;
+	} 
+      }
     }
   }
 }
