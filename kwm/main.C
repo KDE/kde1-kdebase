@@ -415,6 +415,48 @@ QRect &stringToRect(QString s, QRect *q){
   return *q;
 }
 
+static QPixmap stretchPixmap(QPixmap& src, bool stretchVert){
+  QPixmap dest;
+  QBitmap *srcMask, *destMask;
+  int w, h, w2, h2;
+  QPainter p;
+
+  if (src.isNull()) return src;
+
+  w = src.width();
+  h = src.height();
+
+  if (stretchVert){
+    w2 = w;
+    for (h2=h; h2<100; h2=h2<<1)
+      ;
+  }
+  else{
+    h2 = h;
+    for (w2=w; w2<100; w2=w2<<1)
+      ;
+  }
+  if (w2==w && h2==h) return src;
+
+  dest = src;
+  dest.resize(w2, h2);
+
+  p.begin(&dest);
+  p.drawTiledPixmap(0, 0, w2, h2, src);
+  p.end();
+
+  srcMask = (QBitmap*)src.mask();
+  if (srcMask){
+    destMask = (QBitmap*)dest.mask();
+    p.begin(destMask);
+    p.drawTiledPixmap(0, 0, w2, h2, *srcMask);
+    p.end();
+  }
+
+  debug("stretchPixmap %dx%d to %dx%d", w, h, w2, h2);
+  return dest;
+}
+
 static QString rectToString(QRect r){
   QString result;
   QString a;
@@ -1041,6 +1083,11 @@ void MyApp::readConfiguration(){
       options.ShapeMode = false;
     }
     else {
+      *(options.shapePixmapTop) = stretchPixmap(*(options.shapePixmapTop), false);
+      *(options.shapePixmapBottom) = stretchPixmap(*(options.shapePixmapBottom), false);
+      *(options.shapePixmapLeft) = stretchPixmap(*(options.shapePixmapLeft), true);
+      *(options.shapePixmapRight) = stretchPixmap(*(options.shapePixmapRight), true);
+
       if (options.shapePixmapTop->height() > BORDER)
 	BORDER = options.shapePixmapTop->height();
       if (options.shapePixmapBottom->height() > BORDER)
