@@ -339,7 +339,7 @@ void KFMDirTree::openDropMenu( const char *_dest, QStrList &_urls, const QPoint 
     if ( id == -1 )
     {
 	QMessageBox::warning( 0, klocale->translate("KFM Error"),
-			       klocale->translate("Dont know what to do") );
+			       klocale->translate("Dont know what to do.") );
 	return;
     }
 

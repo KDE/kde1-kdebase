@@ -1672,7 +1672,7 @@ void KFMManager::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QP
     if ( id == -1 )
     {
 	QMessageBox::warning( 0, klocale->translate("KFM Error"),
-			       klocale->translate("Dont know what to do") );
+			       klocale->translate("Dont know what to do.") );
 	return;
     }
 
