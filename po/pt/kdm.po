@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm\n"
-"POT-Creation-Date: 1999-04-08 01:20+0200\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1997-09-09 17:23:06+0200\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -11,7 +11,7 @@ msgstr ""
 
 #: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
-msgstr "Desligar ou reinicializar?"
+msgstr "Desligar ou reiniciar?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
@@ -23,53 +23,53 @@ msgstr "Desligar"
 
 #: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
-msgstr "Desligar e reinicializar"
+msgstr "Desligar e reiniciar"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr "Reiniciar o Servidor X"
+msgstr "Reiniciar o servidor X"
+
+#: kgreeter.cpp:222
+msgid "Login:"
+msgstr "Utilizador:"
 
 #: kgreeter.cpp:234
-msgid "Login:"
-msgstr "Login:"
-
-#: kgreeter.cpp:246
 msgid "Password:"
 msgstr "Password:"
 
-#: kgreeter.cpp:271
+#: kgreeter.cpp:259
 msgid "Login failed!"
-msgstr "Login falhou!"
+msgstr "Autenticação falhou!"
 
-#: kgreeter.cpp:277
+#: kgreeter.cpp:265
 msgid "Session Type:"
-msgstr "Tipo de Sessão:'"
+msgstr "Tipo de Sessão:"
 
-#: kgreeter.cpp:324
+#: kgreeter.cpp:312
 msgid "Go!"
-msgstr "Ir!"
+msgstr "OK"
 
-#: kgreeter.cpp:340
+#: kgreeter.cpp:328
 msgid "Shutdown..."
 msgstr "Desligar..."
 
-#: kgreeter.cpp:585
+#: kgreeter.cpp:570
 msgid "Logins not available right now."
-msgstr "Logins não disponíveis."
+msgstr "Serviço indisponível."
 
-#: kgreeter.cpp:626
+#: kgreeter.cpp:611
 msgid "login_getcapstr() failed."
 msgstr "login_getcapstr() falhou."
 
-#: kgreeter.cpp:680 kgreeter.cpp:707
+#: kgreeter.cpp:665 kgreeter.cpp:692
 msgid "Sorry -- your account has expired."
 msgstr "Desculpe -- a sua conta expirou."
 
-#: kgreeter.cpp:685 kgreeter.cpp:712
+#: kgreeter.cpp:670 kgreeter.cpp:697
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Aviso: a sua conta expira em %s"
 
-#: kgreeter.cpp:739
+#: kgreeter.cpp:724
 msgid "Home directory not available"
-msgstr "Directoria pessoal não disponível"
+msgstr "Directoria pessoal indisponível"

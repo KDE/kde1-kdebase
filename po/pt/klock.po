@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1999-04-18 01:18+0200\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -9,47 +9,47 @@ msgstr ""
 "Content-Type:\n"
 "Content-Transfer-Encoding:\n"
 
-#: attraction.cpp:718
+#: attraction.cpp:716
 msgid "Attraction"
 msgstr "Atracção"
 
-#: attraction.cpp:813
+#: attraction.cpp:803
 msgid "Setup KAttraction"
 msgstr "Configurar Atracção"
 
-#: attraction.cpp:825 pyro.cpp:537 rock.cpp:583 slidescreen.cpp:510
+#: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
 msgstr "Numero:"
 
-#: attraction.cpp:839 science.cpp:1006 slidescreen.cpp:524
+#: attraction.cpp:829 science.cpp:993 slidescreen.cpp:493
 msgid "Mode:"
 msgstr "Modo:"
 
-#: attraction.cpp:844 slidescreen.cpp:529
+#: attraction.cpp:834 slidescreen.cpp:498
 msgid "Balls"
 msgstr "Bolas"
 
-#: attraction.cpp:845 lines.cpp:116 slidescreen.cpp:530
+#: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
 msgstr "Linhas"
 
-#: attraction.cpp:846 polygon.cpp:64 slidescreen.cpp:531
+#: attraction.cpp:836 polygon.cpp:64 slidescreen.cpp:500
 msgid "Polygons"
 msgstr "Poligonos"
 
-#: attraction.cpp:847 slidescreen.cpp:532
+#: attraction.cpp:837 slidescreen.cpp:501
 msgid "Tails"
 msgstr "Caudas"
 
-#: attraction.cpp:860 slidescreen.cpp:545
+#: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
 msgstr "Brilho"
 
-#: attraction.cpp:961
+#: attraction.cpp:951
 msgid "About Attraction"
 msgstr "Acerca do Atracção"
 
-#: attraction.cpp:962
+#: attraction.cpp:952
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -71,42 +71,42 @@ msgstr ""
 msgid "Banner"
 msgstr "Mensagem"
 
-#: banner.cpp:92
+#: banner.cpp:84
 msgid "Setup kbanner"
 msgstr "Configurar Mensagem"
 
-#: banner.cpp:103
+#: banner.cpp:95
 msgid "Family:"
 msgstr "Família:"
 
-#: banner.cpp:122 science.cpp:1049
+#: banner.cpp:114 science.cpp:1036
 msgid "Size:"
 msgstr "Tamanho:"
 
-#: banner.cpp:142 blankscrn.cpp:84
+#: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
 msgstr "Cor:"
 
-#: banner.cpp:155
+#: banner.cpp:147
 msgid "Bold"
 msgstr "Negrito"
 
-#: banner.cpp:179 bat.cpp:557 bouboule.cpp:1026 flame.cpp:417 forest.cpp:298
-#: hop.cpp:331 laser.cpp:413 lines.cpp:163 lissie.cpp:347 morph3d.cpp:1029
-#: polygon.cpp:130 rock.cpp:569 science.cpp:1082 slip.cpp:386 space.cpp:595
-#: swarm.cpp:349
+#: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
+#: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1069 slip.cpp:378 space.cpp:587
+#: swarm.cpp:341
 msgid "Speed:"
 msgstr "Velocidade:"
 
-#: banner.cpp:196
+#: banner.cpp:188
 msgid "Message:"
 msgstr "Mensagem:"
 
-#: banner.cpp:365
+#: banner.cpp:357
 msgid "About Banner"
 msgstr "Acerca do Mensagem"
 
-#: banner.cpp:366
+#: banner.cpp:358
 msgid ""
 "Banner Version 0.1\n"
 "\n"
@@ -118,7 +118,7 @@ msgstr ""
 "escrito por Martin R. Jones 1996\n"
 "mjones@kde.org"
 
-#: banner.cpp:469
+#: banner.cpp:461
 msgid "KDE is great"
 msgstr "KDE é espectacular"
 
@@ -126,19 +126,19 @@ msgstr "KDE é espectacular"
 msgid "Bat"
 msgstr "Morcego"
 
-#: bat.cpp:545
+#: bat.cpp:537
 msgid "Setup KBat"
 msgstr "Configurar Morcego"
 
-#: bat.cpp:572
+#: bat.cpp:564
 msgid "Number of bats:"
 msgstr "Numero de morcegos:"
 
-#: bat.cpp:669
+#: bat.cpp:661
 msgid "About Bat"
 msgstr "Acerca de Morcego"
 
-#: bat.cpp:670
+#: bat.cpp:662
 msgid ""
 "Bat\n"
 "\n"
@@ -154,11 +154,11 @@ msgstr ""
 
 #: blankscrn.cpp:53
 msgid "Blank Screen"
-msgstr "Écran Vazio"
+msgstr "Ecrã Vazio"
 
-#: blankscrn.cpp:75
+#: blankscrn.cpp:67
 msgid "Setup kblankscrn"
-msgstr "Configurar Écran Vazio"
+msgstr "Configurar Ecrã Vazio"
 
 #: blob.cpp:57
 msgid "Random Linear"
@@ -182,25 +182,25 @@ msgstr "Aleatório"
 
 #: blob.cpp:77
 msgid "Sorry. This screensaver needs a color display"
-msgstr "Lamento. Este protector de écran necessita de um monitor a cores"
+msgstr "Lamento. Este protector de Ecrã necessita de um monitor a cores"
 
-#: blob.cpp:461
+#: blob.cpp:458
 msgid "Setup Blob Saver"
 msgstr "Configurar Blob"
 
-#: blob.cpp:471
+#: blob.cpp:468
 msgid "Frame Show sec."
 msgstr "Mostrar Frames sec."
 
-#: blob.cpp:483
+#: blob.cpp:480
 msgid "Algorithm"
 msgstr "Algoritmo"
 
-#: blob.cpp:573
+#: blob.cpp:570
 msgid "About Blob"
 msgstr "Acerca do Blob"
 
-#: blob.cpp:574
+#: blob.cpp:571
 msgid ""
 "Blobsaver Version 0.1\n"
 "\n"
@@ -212,7 +212,7 @@ msgstr ""
 "escrito por Tiaan Wessels 1997\n"
 "tiaan@netsys.co.za"
 
-#: blob.cpp:609
+#: blob.cpp:606
 msgid "Blobs"
 msgstr "Blobs"
 
@@ -220,31 +220,31 @@ msgstr "Blobs"
 msgid "Bouboule"
 msgstr "Bouboule"
 
-#: bouboule.cpp:1013
+#: bouboule.cpp:1005
 msgid "Setup KBouboule"
 msgstr "Configurar Bouboule"
 
-#: bouboule.cpp:1040
+#: bouboule.cpp:1032
 msgid "Number of points:"
 msgstr "Numero de pontos:"
 
-#: bouboule.cpp:1054
+#: bouboule.cpp:1046
 msgid "Point size:"
 msgstr "Tamanho dos pontos:"
 
-#: bouboule.cpp:1068
+#: bouboule.cpp:1060
 msgid "Color-change frequency:"
 msgstr "Frequencia de mudança de cor:"
 
-#: bouboule.cpp:1085
+#: bouboule.cpp:1077
 msgid "3D mode"
 msgstr "Modo 3D"
 
-#: bouboule.cpp:1231
+#: bouboule.cpp:1223
 msgid "About Bouboule"
 msgstr "Acerca do Bouboule"
 
-#: bouboule.cpp:1232
+#: bouboule.cpp:1224
 msgid ""
 "Bouboule v0.1 -- a glob of spheres twisting and changing size\n"
 "\n"
@@ -266,23 +266,23 @@ msgstr "Ecrã da Morte"
 msgid "Flame"
 msgstr "Chama"
 
-#: flame.cpp:405
+#: flame.cpp:397
 msgid "Setup KFlame"
 msgstr "Configurar Chama"
 
-#: flame.cpp:431
+#: flame.cpp:423
 msgid "Max Levels:"
 msgstr "Níveis Max:"
 
-#: flame.cpp:446
+#: flame.cpp:438
 msgid "Num Points:"
 msgstr "Num de Pontos:"
 
-#: flame.cpp:559
+#: flame.cpp:551
 msgid "About Flame"
 msgstr "Acerca do Chama"
 
-#: flame.cpp:560
+#: flame.cpp:552
 msgid ""
 "Flame Version 3.3\n"
 "\n"
@@ -300,19 +300,19 @@ msgstr ""
 msgid "Forest"
 msgstr "Floresta"
 
-#: forest.cpp:286
+#: forest.cpp:278
 msgid "Setup KForest"
 msgstr "Configurar Floresta"
 
-#: forest.cpp:312
+#: forest.cpp:304
 msgid "Num of Trees:"
 msgstr "Num de Arvores:"
 
-#: forest.cpp:407
+#: forest.cpp:399
 msgid "About Forest"
 msgstr "Acerca do Floresta"
 
-#: forest.cpp:408
+#: forest.cpp:400
 msgid ""
 "Forest\n"
 "\n"
@@ -330,23 +330,23 @@ msgstr ""
 msgid "Hop"
 msgstr "Hop"
 
-#: hop.cpp:319
+#: hop.cpp:311
 msgid "Setup KHop"
 msgstr "Configurar Hop"
 
-#: hop.cpp:345
+#: hop.cpp:337
 msgid "Samecolor Pixels:"
 msgstr "Pixels iguais:"
 
-#: hop.cpp:359 lissie.cpp:375
+#: hop.cpp:351 lissie.cpp:367
 msgid "Cycles:"
 msgstr "Ciclos:"
 
-#: hop.cpp:472
+#: hop.cpp:464
 msgid "About Hop"
 msgstr "Acerca do Hop"
 
-#: hop.cpp:473
+#: hop.cpp:465
 msgid ""
 "Hop Version 3.3\n"
 "\n"
@@ -364,15 +364,15 @@ msgstr ""
 msgid "Laser"
 msgstr "Laser"
 
-#: laser.cpp:401
+#: laser.cpp:393
 msgid "Setup KLaser"
 msgstr "Configurar Laser"
 
-#: laser.cpp:490
+#: laser.cpp:482
 msgid "About Laser"
 msgstr "Acerca do Laser"
 
-#: laser.cpp:491
+#: laser.cpp:483
 msgid ""
 "Laser Version 3.3\n"
 "\n"
@@ -386,31 +386,31 @@ msgstr ""
 "\n"
 "Transposto para o kscreensave by Martin Jones."
 
-#: lines.cpp:142
+#: lines.cpp:134
 msgid "Setup klines"
 msgstr "Configurar Linhas"
 
-#: lines.cpp:150 polygon.cpp:101
+#: lines.cpp:142 polygon.cpp:93
 msgid "Length:"
 msgstr "Tamanho:"
 
-#: lines.cpp:176
+#: lines.cpp:168
 msgid "Beginning:"
 msgstr "Inicio:"
 
-#: lines.cpp:190
+#: lines.cpp:182
 msgid "Middle:"
 msgstr "Meio:"
 
-#: lines.cpp:203
+#: lines.cpp:195
 msgid "End:"
 msgstr "Fim:"
 
-#: lines.cpp:302
+#: lines.cpp:294
 msgid "About Lines"
 msgstr "Acerca do Lines"
 
-#: lines.cpp:303
+#: lines.cpp:295
 msgid ""
 "Lines Version 0.1.1\n"
 "\n"
@@ -426,19 +426,19 @@ msgstr ""
 msgid "Lissie"
 msgstr "Lissie"
 
-#: lissie.cpp:335
+#: lissie.cpp:327
 msgid "Setup KLissie"
 msgstr "Configurar Lissie"
 
-#: lissie.cpp:361
+#: lissie.cpp:353
 msgid "Num of Lissies:"
 msgstr "Numero de Lissies:"
 
-#: lissie.cpp:488
+#: lissie.cpp:480
 msgid "About Lissie"
 msgstr "Acerca do Lissie"
 
-#: lissie.cpp:489
+#: lissie.cpp:481
 msgid ""
 "Lissie\n"
 "\n"
@@ -452,13 +452,12 @@ msgstr ""
 "\n"
 "Transposto para o kscreensave por Emanuel Pirker."
 
-#: main.cpp:436
+#: main.cpp:384
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "Opção %s não é suportada neste plataforma!"
 
-#: main.cpp:491
-#, fuzzy
+#: main.cpp:422
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -468,15 +467,15 @@ msgid ""
 msgstr ""
 "Aviso: Não irá conseguir trancar o ecrã!\n"
 "\n"
-"Este sistema utiliza shadow passwords!\n"
+"Este sistema utiliza shadow passwords.\n"
 "Por favor contacte o seu administrador de sistema.\n"
 "Diga-lhe que precisa de suid para o kcheckpass!"
 
-#: main.cpp:496
+#: main.cpp:427
 msgid "Shadow Passwords"
 msgstr "Passwords Shadow"
 
-#: main.cpp:546
+#: main.cpp:472
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -487,7 +486,7 @@ msgstr ""
 "por favor não use -test juntamente com -lock.\n"
 "utilize em vez disto klock .\n"
 
-#: main.cpp:664
+#: main.cpp:580
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -496,7 +495,7 @@ msgstr ""
 "Utilização: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num] [-nice num]\n"
 
-#: main.cpp:667
+#: main.cpp:583
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -518,21 +517,21 @@ msgid ""
 msgstr ""
 "  -corners xxxx     Colocar o cursor no canto produz a seguinte acção:\n"
 "                     x = i  nenhuma acção (ignorar)\n"
-"                     x = s  proteger écran\n"
-"                     x = l  bloquear écran\n"
+"                     x = s  proteger ecrã\n"
+"                     x = l  bloquear ecrã\n"
 "                    ordem: topo-esquerdo, topo-direito, fundo-esquerdo, "
 "fundo-direito\n"
 "  -delay num        Quantidade de tempo parado antes de começar a\n"
-"                     protecção do écran  (por omissão 10min)\n"
+"                     protecção do ecrã  (por omissão 10min)\n"
 "  -desc             Imprime a descrição para o stdout\n"
-"  -install          Instalar a protecção de écran\n"
-"  -lock             Requerer a password para parar a protecção de écran\n"
+"  -install          Instalar a protecção de ecrã\n"
+"  -lock             Requerer a password para parar a protecção de ecrã\n"
 "  -nice num         Executar com o valor especificado de nice\n"
 "\n"
 "  -preview wid      Executar na X Window especificada\n"
 "  -inroot           Executar na janela de root\n"
-"  -setup            Configurar protecção de écran\n"
-"  -test             Inicializar a protecção de écran imediatamente\n"
+"  -setup            Configurar protecção de ecrã\n"
+"  -test             Inicializar a protecção de ecrã imediatamente\n"
 
 #: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
 msgid "GL can not render with root visual\n"
@@ -542,19 +541,19 @@ msgstr "GL não consegue criar com visual de raiz\n"
 msgid "Morph3D (GL)"
 msgstr "Morph3D (GL)"
 
-#: morph3d.cpp:1023
+#: morph3d.cpp:1015
 msgid "Setup KMorph3d"
 msgstr "Configurar Morph3d"
 
-#: morph3d.cpp:1039
+#: morph3d.cpp:1031
 msgid "Object Type:"
 msgstr "Tipo de Objecto:"
 
-#: morph3d.cpp:1128
+#: morph3d.cpp:1120
 msgid "About Morph3D"
 msgstr "Acerca do Morph3D"
 
-#: morph3d.cpp:1129
+#: morph3d.cpp:1121
 msgid ""
 "Morph3D\n"
 "\n"
@@ -572,19 +571,19 @@ msgstr ""
 msgid "Pipes (GL)"
 msgstr "Canos (GL)"
 
-#: pipes.cpp:680
+#: pipes.cpp:672
 msgid "Setup KPipes"
 msgstr "Configurar Canos"
 
-#: pipes.cpp:686
+#: pipes.cpp:678
 msgid "Number of Pipes"
 msgstr "Número de Canos"
 
-#: pipes.cpp:751
+#: pipes.cpp:743
 msgid "About KPipes"
 msgstr "Acerca do Canos"
 
-#: pipes.cpp:753
+#: pipes.cpp:745
 msgid ""
 "KPipes\n"
 "Copyright (c) 1998\n"
@@ -594,19 +593,19 @@ msgstr ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 
-#: polygon.cpp:93
+#: polygon.cpp:85
 msgid "Setup kpolygon"
 msgstr "Configurar Poligonos"
 
-#: polygon.cpp:115
+#: polygon.cpp:107
 msgid "Vertices:"
 msgstr "Vertices:"
 
-#: polygon.cpp:246
+#: polygon.cpp:238
 msgid "About Polygon"
 msgstr "Acerca do Poligonos"
 
-#: polygon.cpp:247
+#: polygon.cpp:239
 msgid ""
 "Polygon Version 0.1\n"
 "\n"
@@ -622,19 +621,19 @@ msgstr ""
 msgid "Pyro"
 msgstr "Pyro"
 
-#: pyro.cpp:525
+#: pyro.cpp:517
 msgid "Setup KPyro"
 msgstr "Configurar Pyro"
 
-#: pyro.cpp:551
+#: pyro.cpp:543
 msgid "Cloud"
 msgstr "Nuvem"
 
-#: pyro.cpp:637
+#: pyro.cpp:629
 msgid "About Pyro"
 msgstr "Acerca do Pyro"
 
-#: pyro.cpp:638
+#: pyro.cpp:630
 msgid ""
 "Pyro Version 3.4\n"
 "\n"
@@ -652,23 +651,23 @@ msgstr ""
 msgid "Rock"
 msgstr "Rocha"
 
-#: rock.cpp:557
+#: rock.cpp:549
 msgid "Setup krock"
 msgstr "Configurar Rocha"
 
-#: rock.cpp:597
+#: rock.cpp:589
 msgid "Move"
 msgstr "Mover"
 
-#: rock.cpp:603
+#: rock.cpp:595
 msgid "Rotate"
 msgstr "Rodar"
 
-#: rock.cpp:727
+#: rock.cpp:719
 msgid "About Rock"
 msgstr "Acerca de Rocha"
 
-#: rock.cpp:728
+#: rock.cpp:720
 msgid ""
 "Rock Version 3.3\n"
 "\n"
@@ -682,11 +681,11 @@ msgstr ""
 "\n"
 "Transposto para kscreensave by Martin Jones."
 
-#: saver.cpp:66 saver.cpp:197
+#: saver.cpp:60 saver.cpp:191
 msgid "Enter Password"
 msgstr "Password"
 
-#: saver.cpp:127
+#: saver.cpp:121
 msgid "Failed"
 msgstr "Falhou"
 
@@ -718,63 +717,63 @@ msgstr "Curvatura"
 msgid "Science"
 msgstr "Ciência"
 
-#: science.cpp:504
+#: science.cpp:491
 msgid "rendering lens..."
 msgstr "lentes..."
 
-#: science.cpp:826
+#: science.cpp:813
 msgid "grabbing screen..."
-msgstr "écran de captura..."
+msgstr "captura de ecrã..."
 
-#: science.cpp:988
+#: science.cpp:975
 msgid "Setup Science"
 msgstr "Configurar Ciência"
 
-#: science.cpp:1021
+#: science.cpp:1008
 msgid "Inverse"
 msgstr "Inverso"
 
-#: science.cpp:1031
+#: science.cpp:1018
 msgid "Gravity"
 msgstr "Gravidade"
 
-#: science.cpp:1040
+#: science.cpp:1027
 msgid "Hide Background"
 msgstr "Esconder Fundo"
 
-#: science.cpp:1066
+#: science.cpp:1053
 msgid "Intensity:"
 msgstr "Intensidade:"
 
-#: science.cpp:1096
+#: science.cpp:1083
 msgid "Motion:"
 msgstr "Movimento:"
 
-#: science.cpp:1317
+#: science.cpp:1304
 msgid "Science Version"
 msgstr "Ciência Versão"
 
-#: science.cpp:1318
+#: science.cpp:1305
 msgid "written by"
 msgstr "escrito por"
 
-#: science.cpp:1319
+#: science.cpp:1306
 msgid "About Science"
 msgstr "Acerca do Ciência"
 
-#: slidescreen.cpp:427
+#: slidescreen.cpp:419
 msgid "SlideScreen"
 msgstr "Ecrã Deslizante"
 
-#: slidescreen.cpp:496
+#: slidescreen.cpp:465
 msgid "Setup KSlideScreen"
 msgstr "Configurar Ecrã Deslizante"
 
-#: slidescreen.cpp:589
+#: slidescreen.cpp:558
 msgid "About SlideScreen"
 msgstr "Acerca do Ecrã Deslizante"
 
-#: slidescreen.cpp:590
+#: slidescreen.cpp:559
 msgid ""
 "SlideScreen Version 1.1\n"
 "\n"
@@ -788,7 +787,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1992-1997 por Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Transporto to kscreensaver por:\n"
+"Transporto para o KDE por:\n"
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> outubro 1998"
 
@@ -796,19 +795,19 @@ msgstr ""
 msgid "Slip"
 msgstr "Slip"
 
-#: slip.cpp:374
+#: slip.cpp:366
 msgid "Setup KSlip"
 msgstr "Configurar Slip"
 
-#: slip.cpp:400
+#: slip.cpp:392
 msgid "Batchcount:"
 msgstr "Quantidade:"
 
-#: slip.cpp:496
+#: slip.cpp:488
 msgid "About Slip"
 msgstr "Acerca do Slip"
 
-#: slip.cpp:497
+#: slip.cpp:489
 msgid ""
 "Slip\n"
 "\n"
@@ -826,19 +825,19 @@ msgstr ""
 msgid "Space (GL)"
 msgstr "Espaço (GL)"
 
-#: space.cpp:589
+#: space.cpp:581
 msgid "Setup KSpace"
 msgstr "Configurar Espaço"
 
-#: space.cpp:605
+#: space.cpp:597
 msgid "Warp Interval:"
 msgstr "Intervalo de Wrap:"
 
-#: space.cpp:693
+#: space.cpp:685
 msgid "About KSpace"
 msgstr "Acerca do Espaço"
 
-#: space.cpp:695
+#: space.cpp:687
 msgid ""
 "KSpace\n"
 "Copyright (c) 1998\n"
@@ -852,19 +851,19 @@ msgstr ""
 msgid "Swarm"
 msgstr "Enxame"
 
-#: swarm.cpp:337
+#: swarm.cpp:329
 msgid "Setup KSwarm"
 msgstr "Configurar Enxame"
 
-#: swarm.cpp:363
+#: swarm.cpp:355
 msgid "Number of Bees:"
 msgstr "Abelhas:"
 
-#: swarm.cpp:458
+#: swarm.cpp:450
 msgid "About Swarm"
 msgstr "Acerca do Enxame"
 
-#: swarm.cpp:459
+#: swarm.cpp:451
 msgid ""
 "Swarm\n"
 "\n"

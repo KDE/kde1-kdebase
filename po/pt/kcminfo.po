@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
-"POT-Creation-Date: 1999-03-30 01:17+0200\n"
+"POT-Creation-Date: 1998-12-12 15:11+0100\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -27,17 +27,17 @@ msgstr "  resolução            : %dx%d dpi\n"
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr "  profundidade (%d)     : "
+msgstr "  profundidade cor (%d) : "
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr "nome do ecrã           : %s"
+msgstr "identificador do ecrã  : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr "versão número          : %i.%i"
+msgstr "versão                 : %i.%i"
 
 #: info.cpp:89
 #, c-format
@@ -47,7 +47,7 @@ msgstr "fabricante             : %s"
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr "numero fabricante      : %i"
+msgstr "versão (fabricante)    : %i"
 
 #: info.cpp:93
 #, c-format
@@ -59,15 +59,15 @@ msgstr "número ecrã por omissão: %i"
 msgid "number of screens     : %i"
 msgstr "número de ecrãs        : %i"
 
-#: info.cpp:181
+#: info.cpp:179
 msgid ""
 "No Information available\n"
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
-"Nenhuma Informação disponível\n"
-" ou\n"
-"este sistema ainda não é suportado :-("
+"Nenhuma informação disponível\n"
+"ou\n"
+"este sistema ainda não é suportado"
 
 #: info_fbsd.cpp:73
 #, c-format
@@ -113,7 +113,7 @@ msgstr "Número de processador(es) activo(s)= "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr "Valor"
+msgstr "Conteúdo"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
@@ -121,11 +121,11 @@ msgstr "Canal de DMA"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr "usado por"
+msgstr "Utilizado por"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr "Zona I/O"
+msgstr "Endereços"
 
 #: main.cpp:79
 msgid "&Memory"
@@ -145,7 +145,7 @@ msgstr "C&anais de DMA"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr "Portas de &IO"
+msgstr "Entradas/Saídas"
 
 #: main.cpp:94
 msgid "PCI-&Bus"

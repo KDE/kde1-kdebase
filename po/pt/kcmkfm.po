@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
-"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: 1998-12-28 00:00+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -107,7 +107,7 @@ msgstr "Sublinhar Ligações"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
-msgstr ""
+msgstr "Usar as minhas cores sempre"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
@@ -120,10 +120,6 @@ msgstr "Ár&vore segue a navegação"
 #: miscopts.cpp:43
 msgid "Terminal"
 msgstr "Terminal"
-
-#: miscopts.cpp:57
-msgid "Editor"
-msgstr ""
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
@@ -199,7 +195,7 @@ msgstr "Rejeitar"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
-msgstr "Configurações por domínio"
+msgstr "Configurações/domínio"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
@@ -223,7 +219,7 @@ msgstr "&Texto transparente"
 
 #: rootopts.cpp:106
 msgid "Icon foreground color:"
-msgstr "Cor primeiro plano:"
+msgstr "Cor de primeiro plano:"
 
 #: rootopts.cpp:118
 msgid "Icon background color:"

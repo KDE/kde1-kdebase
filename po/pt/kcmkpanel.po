@@ -99,7 +99,7 @@ msgstr "Tooltips nos Menus"
 
 #: options.cpp:62
 msgid "Show &Menu Tooltips"
-msgstr "Mostrar Tooltips nos &Menus"
+msgstr "Mostrar Ajuda nos &Menus"
 
 #: options.cpp:84
 msgid "De&lay:"
@@ -183,15 +183,15 @@ msgstr "Editar &Partilhado..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr "Máx. pastas recentes:"
+msgstr "Máximo de pastas recentes:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr "Máx. ficheiros recentes:"
+msgstr "Máximo de ficheiros recentes:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr "Máx. de ficheiros numa pasta:"
+msgstr "Máximo de ficheiros numa pasta:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
@@ -219,4 +219,4 @@ msgstr "Mostrar entrada de opções"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr "Aplicação terminal:"
+msgstr "Terminal:"

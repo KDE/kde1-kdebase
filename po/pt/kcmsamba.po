@@ -51,4 +51,4 @@ msgstr "Máquina"
 
 #: ksmbstatus.cpp:164
 msgid "Open Files"
-msgstr "Ficheiros Abertos"
+msgstr "Ficheiros"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1999-04-10 01:21+0200\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -56,119 +56,119 @@ msgstr "Pregar"
 msgid "Menu"
 msgstr "Menu"
 
-#: titlebar.cpp:178 titlebar.cpp:936
+#: titlebar.cpp:178 titlebar.cpp:934
 msgid "Left"
 msgstr "Esquerda"
 
-#: titlebar.cpp:182 titlebar.cpp:946
+#: titlebar.cpp:182 titlebar.cpp:944
 msgid "Right"
 msgstr "Direita"
 
-#: titlebar.cpp:473
+#: titlebar.cpp:471
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "O lado esquerdo da barra de titulo está cheio... desactivando o botão de "
 "maximizar\n"
 
-#: titlebar.cpp:506
+#: titlebar.cpp:504
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "O lado direito da barra de titulo está cheio... desactivando o botão de "
 "maximizar\n"
 
-#: titlebar.cpp:546
+#: titlebar.cpp:544
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "O lado esquerdo da barra de titulo está cheio... desactivando o botão de "
 "minimizar\n"
 
-#: titlebar.cpp:579
+#: titlebar.cpp:577
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "O lado direito da barra de titulo está cheio... desactivando o botão de "
 "minimizar\n"
 
-#: titlebar.cpp:932
+#: titlebar.cpp:930
 msgid "Title Alignment"
 msgstr "Alinhamento do título"
 
-#: titlebar.cpp:941
+#: titlebar.cpp:939
 msgid "Middle"
 msgstr "Centrado"
 
-#: titlebar.cpp:969
+#: titlebar.cpp:967
 msgid "Shaded Vertically"
 msgstr "Sombreada verticalmente"
 
-#: titlebar.cpp:975
+#: titlebar.cpp:973
 msgid "Shaded Horizontally"
 msgstr "Sombreada horizontalmente"
 
-#: titlebar.cpp:984
+#: titlebar.cpp:982
 msgid "Plain"
 msgstr "Normal"
 
-#: titlebar.cpp:992 titlebar.cpp:1017
+#: titlebar.cpp:990 titlebar.cpp:1015
 msgid "Pixmap"
 msgstr "Imagem"
 
-#: titlebar.cpp:1005
+#: titlebar.cpp:1003
 msgid "Active title has shaded frame"
 msgstr "Título activo tem moldura sombreada"
 
-#: titlebar.cpp:1046
+#: titlebar.cpp:1044
 msgid "Active pixmap:"
 msgstr "Imagem activa"
 
-#: titlebar.cpp:1051
+#: titlebar.cpp:1049
 msgid "Inactive pixmap:"
 msgstr "Imagem inactiva"
 
-#: titlebar.cpp:1057
+#: titlebar.cpp:1055
 msgid "No pixmap under text"
 msgstr "Sem imagem debaixo do texto"
 
-#: titlebar.cpp:1068
+#: titlebar.cpp:1066
 msgid "Mouse action"
 msgstr "Acção do rato"
 
-#: titlebar.cpp:1076
+#: titlebar.cpp:1074
 msgid "Left Button double click does:"
 msgstr "Duplo click com botão esquerdo faz:"
 
-#: titlebar.cpp:1086
+#: titlebar.cpp:1084
 msgid "(Un)Maximize"
 msgstr "(Des)Maximizar"
 
-#: titlebar.cpp:1087
+#: titlebar.cpp:1085
 msgid "(Un)Shade"
 msgstr "(Des)Sombrear"
 
-#: titlebar.cpp:1088
+#: titlebar.cpp:1086
 msgid "Iconify"
 msgstr "Iconificar"
 
-#: titlebar.cpp:1089
+#: titlebar.cpp:1087
 msgid "(Un)Sticky"
 msgstr "(Des)Pregar"
 
-#: titlebar.cpp:1109
+#: titlebar.cpp:1107
 msgid "Title animation"
 msgstr "Animação do título"
 
-#: titlebar.cpp:1125
+#: titlebar.cpp:1123
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:1368
+#: titlebar.cpp:1366
 msgid "Window manager setup - ERROR"
 msgstr "Configuração do gestor de janelas - ERRO"
 
-#: titlebar.cpp:1369
+#: titlebar.cpp:1367
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
@@ -273,19 +273,19 @@ msgstr "Atraso (ms)"
 
 #: desktop.cpp:65
 msgid "Active desktop borders"
-msgstr "Margens do ambiente de trabalho activas"
+msgstr "Mudança de ecrã"
 
 #: desktop.cpp:74
 msgid "Enable active desktop borders"
-msgstr "Activar margens do ambiente de trabalho activas"
+msgstr "Mudar de ecrã ao mover rato para os extremos"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr "Mover ponteiro para o centro depois de mudança"
+msgstr "Mover rato para o centro depois de mudar de ecrã"
 
 #: desktop.cpp:87
 msgid "Desktop switch delay:"
-msgstr "Demora de mudança:"
+msgstr "Segundos até mudar:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"
@@ -410,11 +410,11 @@ msgstr "Teclado e Rato"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr "Ctrl-Tab muda de écrã virtual"
+msgstr "Ctrl-Tab muda de ecrã virtual"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr "Alt-Tab está limitado ao écrã actual"
+msgstr "Alt-Tab está limitado ao ecrã actual"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
@@ -458,7 +458,7 @@ msgstr "começam pregadas"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr "estão excluídas as gestão de sessão"
+msgstr "estão excluídas da gestão de sessão"
 
 #: advanced.cpp:116
 msgid "if they match the following:"

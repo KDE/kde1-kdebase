@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
-"POT-Creation-Date: 1999-04-15 01:23+0200\n"
+"POT-Creation-Date: 1999-01-23 01:15+0100\n"
 "PO-Revision-Date: 1998-12-28 00:00+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type:\n"
 "Content-Transfer-Encoding:\n"
 
-#: kstart.C:118
+#: kstart.C:116
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -72,7 +72,7 @@ msgstr ""
 " \n"
 " "
 
-#: kstart.C:160
+#: kstart.C:158
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
