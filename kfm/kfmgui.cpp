@@ -1279,6 +1279,9 @@ void KfmGui::slotQuit()
     KIOJob::deleteAllJobs();
     delete ( KIOServer::getKIOServer() );
 
+    // Delete root widget instance. David.
+    if (KRootWidget::getKRootWidget()) delete KRootWidget::getKRootWidget();
+
     // saveSettings();
 
     exit(0);

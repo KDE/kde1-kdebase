@@ -159,10 +159,7 @@ int main( int argc, char ** argv )
 
     testDir3( KFMPaths::CachePath() );
 
-    //Stephan: This variable is not deleted here, but in the 
-    // slotQuit methode of KFileWindow. I'm not that sure, if
-    // this is the best way! 
-    (void)new KIOServer();
+    (void)new KIOServer(); // Deleted by sig_term_handler and slotQuit
 
     InitStaticMembers();
 
@@ -260,7 +257,7 @@ int main( int argc, char ** argv )
     a.setMainWidget( &kfm );
 
     if ( KfmGui::rooticons )
-	(void)new KRootWidget();
+	(void)new KRootWidget(); // Deleted by sig_term_handler and slotQuit
     
     if ( KfmGui::rooticons == false )
     {
@@ -348,6 +345,10 @@ void sig_term_handler( int )
   // Save cache and stuff and delete the sockets ...
   pkfm->slotSave();
   pkfm->slotShutDown();
+
+  // Delete root widget and kioserver instances. David.
+  if (KRootWidget::getKRootWidget()) delete KRootWidget::getKRootWidget();
+  if (KIOServer::getKIOServer()) delete KIOServer::getKIOServer();
   
   exit(1);
 }
