@@ -29,6 +29,7 @@
 #include <qfont.h>
 #include <qdir.h>
 #include <qpixmap.h>
+#include <qfile.h>
 
 #include <kapp.h>
 #include <kiconloader.h>
@@ -106,6 +107,7 @@ PMenuItem::PMenuItem( PMenuItem &item )
   initMetaObject();
   text_name       = item.text_name;
   real_name       = item.real_name;
+  old_name        = item.old_name;
   comment         = item.comment;
   pixmap_name     = item.pixmap_name;
   pixmap          = item.pixmap;
@@ -251,6 +253,7 @@ short PMenuItem::parse( QString &s, PMenu *menu = NULL)
 short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
 {
   real_name = fi->fileName().copy();
+  old_name = real_name;
   QString type_string;
   int pos = fi->fileName().find(".kdelnk");
   if( pos >= 0 )
@@ -274,6 +277,7 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
 	  text_name = kconfig.readEntry("Name", text_name);
 	  pixmap_name = kconfig.readEntry("MiniIcon");
 	  big_pixmap_name = kconfig.readEntry("Icon");
+	  dir_path        = fi->dirPath(TRUE);
 	  config.close();
 	}
       entry_type  = submenu;
@@ -311,7 +315,7 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
 	      use_term        = kconfig.readNumEntry("Terminal");
 	      pattern         = kconfig.readEntry("BinaryPattern");
 	      protocols       = kconfig.readEntry("Protocols");
-	      extensions      = kconfig.readEntry("Extensions");
+	      extensions      = kconfig.readEntry("MimeType");
 	    }
 	  else if( type_string == "Link" )
 	    {
@@ -407,6 +411,7 @@ void PMenuItem::writeConfig( QDir dir )
   kconfig.writeEntry("Comment", comment );
   kconfig.writeEntry("Icon", big_pixmap_name );
   kconfig.writeEntry("MiniIcon", pixmap_name );
+  kconfig.writeEntry("Name", text_name );
   switch( (int) entry_type ) {
   case (int) fvwm_com:
     kconfig.writeEntry("WmCommand", command_name );
@@ -420,7 +425,7 @@ void PMenuItem::writeConfig( QDir dir )
     kconfig.writeEntry("Terminal", use_term );
     kconfig.writeEntry("BinaryPattern", pattern);
     kconfig.writeEntry("Protocols", protocols);
-    kconfig.writeEntry("Extensions", extensions);
+    kconfig.writeEntry("MimeType", extensions);
     kconfig.writeEntry("Type", "Application");
     break;
   case (int) url:
@@ -772,7 +777,7 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item = NULL )
       return;
     }
   QString name;
-  const QStrList *temp_list = base_dir.entryList("*");
+  const QStrList *temp_list = base_dir.entryList("*", QDir::Files);
   QStrList file_list;
   file_list.setAutoDelete(TRUE);
   QStrListIterator temp_it( *temp_list );
@@ -796,42 +801,44 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item = NULL )
   PMenuItem *item;
   for( item = list.first(); item != 0; item = list.next() )
     {
-      if( item->read_only )
-	continue;
+      //      if( item->read_only )
+      //	continue;
       if( item->entry_type == separator )
 	sort_order += ((QString) "SEPARATOR" + ',');
       else
 	sort_order += (item->real_name + ',');
       if( item->getType() == submenu )
 	{
-	  if( item->read_only )
-	    continue;
-	  QDir sub_dir(base_dir);
-	  if( !sub_dir.cd(item->text_name) )
+	  if( !item->read_only )
 	    {
-	      base_dir.mkdir(item->text_name);
-	      if( !sub_dir.cd(item->text_name) )
-		continue;
+	      QDir sub_dir(base_dir);
+	      if( !sub_dir.cd(item->real_name) )
+		{
+		  base_dir.mkdir(item->real_name);
+		  if( !sub_dir.cd(item->real_name) )
+		    continue;
+		}
+	      item->sub_menu->writeConfig( sub_dir, item );
 	    }
-	  item->sub_menu->writeConfig( sub_dir, item );
-	  dir_list.remove(item->text_name);
+	  dir_list.remove(item->real_name);
 	}
       else
 	{
-	  item->writeConfig(base_dir);
-	  file_list.remove(item->text_name); // + ".kdelnk");
+	  if( !item->read_only )
+	    item->writeConfig(base_dir);
+	  file_list.remove(item->real_name); // + ".kdelnk");
 	}
     }
   // remove files not in pmenu
   for( name = file_list.first(); !name.isEmpty(); name = file_list.next() )
     {
-      //debug("will remove file: %s", (const char *) name );
+      debug("will remove file: %s", (const char *) name );
       base_dir.remove(name);
     }
   // remove dirs not in pmenu
   for( name = dir_list.first(); !name.isEmpty(); name = dir_list.next() )
     {
-      //debug("will remove dir: %s", (const char *) name );
+      debug("will remove dir: %s", (const char *) name );
       QDir sub_dir(base_dir);
       if(sub_dir.cd(name))
 	{
@@ -862,6 +869,97 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item = NULL )
     }
   kconfig.sync();
   config.close();
+}
+
+void PMenu::copyLnkFiles(QDir base_dir)
+{
+  PMenuItem *item;
+  for( item = list.first(); item != 0; item = list.next() )
+    {
+      if( item->entry_type == separator )
+	continue;
+      if( item->entry_type == submenu )
+	{
+	  QDir sub_dir(base_dir);
+	  if( !base_dir.exists( item->old_name ) )
+	    {
+	      base_dir.mkdir(item->old_name);
+	      if( base_dir.exists( item->dir_path + '/' + item->old_name + "/.directory") )
+		copyFiles( item->dir_path + '/' + item->old_name + "/.directory",
+			   base_dir.absPath() + '/' + item->old_name + "/.directory" );
+	    }
+	  if( !sub_dir.cd(item->old_name) )
+	    continue;
+	  item->sub_menu->copyLnkFiles( sub_dir );
+	}
+      else
+	{
+	  if( base_dir.exists( item->old_name ) )
+	    continue;
+	  else
+	    {
+	      if( base_dir.exists( item->dir_path + '/' + item->old_name ) )
+		copyFiles( item->dir_path + '/' + item->old_name,
+			    base_dir.absPath() + '/' + item->old_name );
+	    }
+	}
+    }  
+}
+
+void PMenu::renameLnkFiles(QDir base_dir)
+{
+  PMenuItem *item;
+  for( item = list.first(); item != 0; item = list.next() )
+    {
+      if( item->entry_type == submenu )
+	{
+	  if( item->real_name != item->old_name )
+	    if( base_dir.exists( item->old_name ) )
+	      {
+		base_dir.rename( item->old_name, item->real_name );
+		item->old_name = item->real_name;
+	      }
+	  QDir sub_dir(base_dir);
+	  if( !sub_dir.cd(item->old_name) )
+	    continue;
+	  item->sub_menu->renameLnkFiles( sub_dir );
+	}
+      if( item->real_name == item->old_name || item->entry_type == separator )
+	continue;
+      if( base_dir.exists( item->old_name ) )
+	{
+	  base_dir.rename( item->old_name, item->real_name );
+	  item->old_name = item->real_name;
+	}
+    }  
+}
+
+void PMenu::copyFiles( QString source, QString dest )
+{
+  char data[1024];
+  QFile in(source);
+  QFile out(dest);
+  if( !in.open(IO_ReadOnly) )
+    return;
+  if( !out.open(IO_WriteOnly) )
+    return;
+  int len;
+  while( (len = in.readBlock(data, 1024)) > 0 )
+    {
+      if( out.writeBlock(data,len) < len )
+	{
+	  len = -1;
+	  break;
+	}
+    }
+  out.close();
+  in.close();
+  if( len == -1 )
+    { // abort and remove destination file
+      debug("KMenuedit: copy files not succeded.");
+      QFileInfo fi(dest);
+      fi.dir().remove(dest);
+    }
 }
 
 void PMenu::move(short item_id, short new_pos)

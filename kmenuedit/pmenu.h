@@ -54,6 +54,8 @@ public:
   void      writeConfig( QDir dir );
   void      setText( QString t )       { text_name = t; }
   QString   getText()                  { return text_name; }
+  void      setName( QString t )       { real_name = t; }
+  QString   getName()                  { return real_name; }
   void      setComment( QString t )    { comment = t; }
   QString   getComment()               { return comment; }
   void      setPixmap( QPixmap pix )   { pixmap = pix; }
@@ -105,6 +107,7 @@ protected slots:
 protected:
   QString     text_name;
   QString     real_name;
+  QString     old_name;
   QString     pixmap_name;
   QString     comment;
   QPixmap     pixmap;
@@ -147,6 +150,8 @@ public:
   short      parse ( QDir d );
   void       writeConfig( QTextStream &s );
   void       writeConfig( QDir base_dir, PMenuItem *parent_item = NULL );
+  void       copyLnkFiles(QDir base_dir);
+  void       renameLnkFiles(QDir base_dir);
   PMenuItem *cut( short pos ) { return NULL; }
   PMenuItem *copy( short pos ) { return NULL; }
   void       paste( PMenuItem *item ) { item = NULL; }
@@ -166,6 +171,8 @@ public slots:
   void hideConfig();
 
 protected:
+  void copyFiles( QString source, QString dest );
+
   QList<PMenuItem> list;
   ConfigureMenu   *menu_conf;
 };

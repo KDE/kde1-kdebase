@@ -133,6 +133,7 @@ void MenuButton::copyItem()
       global_pmenu_buffer = NULL;
     }
   global_pmenu_buffer = new PMenuItem( *pmenu_item );
+  changes_to_save = TRUE;
 }
 
 void MenuButton::open()
@@ -169,6 +170,7 @@ void MenuButton::delete_item()
 	{ return; }
     }
   emit delButton( id );
+  changes_to_save = TRUE;
 }
 
 void MenuButton::change_item()
@@ -181,6 +183,7 @@ void MenuButton::change_item()
   dialog->c_type->setCurrentItem( type - 1 );
   dialog->typeActivated( type - 1 );
   dialog->i_name->setText(pmenu_item->getText());
+  dialog->i_fname->setText(pmenu_item->getName());
   dialog->i_pixmap->setText(pmenu_item->getPixmapName());
   dialog->i_comment->setText(pmenu_item->getComment());
   dialog->b_pixmap->setPixmap( pmenu_item->getPixmap() );
@@ -291,6 +294,7 @@ void MenuButton::change_accept()
 	}
       pmenu_item->setType( new_type );
       pmenu_item->setText(dialog->i_name->text());
+      pmenu_item->setName(dialog->i_fname->text());
       setText(pmenu_item->getText());
       pmenu_item->setPixmapName(dialog->i_pixmap->text());
       pmenu_item->setBigPixmapName(dialog->i_big_pixmap->text());
@@ -827,6 +831,7 @@ void ConfigureMenu::buttonMoved( int but_id, QPoint p )
 	}
     }
   pmenu->move(but_id, i);
+  changes_to_save = TRUE;
   //debug
   //for( item = but_list.first(); item != 0; item = but_list.next() )
   //  {
@@ -842,6 +847,7 @@ void ConfigureMenu::newButton( int but_id )
   new_it->setCommand("no command");
   append(new_it);
   pmenu->add(new_it);
+  changes_to_save = TRUE;
   buttonMoved( but_nr-1, but_list.at(but_id)->button->pos() );
 }
 
@@ -866,6 +872,7 @@ void ConfigureMenu::pasteButton( int but_id )
   PMenuItem *new_it = new PMenuItem( *global_pmenu_buffer );
   append( new_it );
   pmenu->add( new_it );
+  changes_to_save = TRUE;
   buttonMoved( but_nr-1, but_list.at(but_id)->button->pos() );
 }
 
@@ -902,6 +909,7 @@ void ConfigureMenu::urlDroped(KDNDDropZone *zone)
 	  new_item = new PMenuItem( *global_drop_buffer );
 	  append( new_item );
 	  pmenu->add( new_item );	 
+	  changes_to_save = TRUE;
 	}
       return;
     }
@@ -926,6 +934,7 @@ void ConfigureMenu::urlDroped(KDNDDropZone *zone)
 	{
 	  append( new_item );
 	  pmenu->add( new_item );
+	  changes_to_save = TRUE;
 	  //buttonMoved( but_nr-1, but_list.at(but_id)->button->pos() );
 	}
     }

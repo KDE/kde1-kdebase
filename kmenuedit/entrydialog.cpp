@@ -64,14 +64,27 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
+  tmpQLabel = new QLabel( this );
+  tmpQLabel->setGeometry( 8, 40, 72, 24 );
+  tmpQLabel->setText( "File Name:" );
+  tmpQLabel->setAlignment( 289 );
+  tmpQLabel->setMargin( -1 );
+  
+  i_fname = new QLineEdit( this );
+  i_fname->setGeometry( 72, 40, 208, 24 );
+  i_fname->setText( "" );
+  i_fname->setMaxLength( 32767 );
+  i_fname->setEchoMode( QLineEdit::Normal );
+  i_fname->setFrame( TRUE );
+
   tmpQLabel = new QLabel( this, "Label_2" );
-  tmpQLabel->setGeometry( 32, 40, 40, 24 );
+  tmpQLabel->setGeometry( 32, 72, 40, 24 );
   tmpQLabel->setText( "Name:" );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
   i_name = new QLineEdit( this, "LineEdit_1" );
-  i_name->setGeometry( 72, 40, 208, 24 );
+  i_name->setGeometry( 72, 72, 208, 24 );
   i_name->setText( "" );
   i_name->setMaxLength( 32767 );
   i_name->setEchoMode( QLineEdit::Normal );
@@ -84,14 +97,14 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   tmpQLabel->setMargin( -1 );
 
   i_big_pixmap = new PLineEdit( this, "LineEdit_3" );
-  i_big_pixmap->setGeometry( 72, 72, 208, 24 );
+  i_big_pixmap->setGeometry( 72, 104, 208, 24 );
   i_big_pixmap->setText( "" );
   i_big_pixmap->setMaxLength( 32767 );
   i_big_pixmap->setEchoMode( QLineEdit::Normal );
   i_big_pixmap->setFrame( TRUE );
   
   b_big_pixmap = new QPushButton( this, "PushButton_4" );
-  b_big_pixmap->setGeometry( 296, 72, 56, 48 );
+  b_big_pixmap->setGeometry( 296, 80, 56, 48 );
   b_big_pixmap->setText( "" );
   b_big_pixmap->setAutoRepeat( FALSE );
   b_big_pixmap->setAutoResize( FALSE );
@@ -110,7 +123,7 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   b_pixmap->setAutoResize( FALSE );
   
   tmpQLabel = new QLabel( this, "Label_4" );
-  tmpQLabel->setGeometry( 40, 72, 32, 24 );
+  tmpQLabel->setGeometry( 40, 104, 32, 24 );
   tmpQLabel->setText( "Icon:" );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );

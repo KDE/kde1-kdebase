@@ -80,6 +80,7 @@ protected:
 
   QComboBox          *c_type;
   QLineEdit          *i_name;
+  QLineEdit          *i_fname;
   PLineEdit          *i_big_pixmap;
   PLineEdit          *i_pixmap;
   QLineEdit          *i_comment;

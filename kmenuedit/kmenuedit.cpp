@@ -4,7 +4,7 @@
 //  kmenuedit
 //
 //  Copyright (C) 1997 Christoph Neerfeld
-//  email:  Christoph.Neerfeld@mail.bonn.netsurf.de
+//  email:  Christoph.Neerfeld@bonn.netsurf.de
 //
 //  This program is free software; you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -249,10 +249,14 @@ void KMenuEdit::saveMenus()
   dir_name = config->readEntry("PersonalPath");
   dir_name = dir_name.stripWhiteSpace();
   QDir dir(dir_name);
+  pers_menu_data->copyLnkFiles(dir);
+  pers_menu_data->renameLnkFiles(dir);
   pers_menu_data->writeConfig(dir);
   dir_name = config->readEntry("Path");
   dir_name = dir_name.stripWhiteSpace();
   dir.setPath(dir_name);
+  glob_menu_data->copyLnkFiles(dir);
+  glob_menu_data->renameLnkFiles(dir);
   glob_menu_data->writeConfig(dir);
   QApplication::restoreOverrideCursor();
   changes_to_save = FALSE;
