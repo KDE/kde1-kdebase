@@ -1,6 +1,7 @@
 
 INCLUDES = @all_includes@
-LDADD =  @all_libraries@ -lmediatool
+# kdecore for usleep fake
+LDADD =  @all_libraries@ -lmediatool -lkdecore
 
 maudio_SOURCES = io_oss.cpp maudio.cpp sample.cpp
 kaudioserver_SOURCES = kaudioserver.cpp
