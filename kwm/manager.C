@@ -416,7 +416,7 @@ void Manager::unmapNotify(XUnmapEvent *e){
     Client *c;
     c = getClient(e->window);
     if (c && c->window == e->window && c->winId() == e->event) {
-      XGrabServer(qt_xdisplay());
+//       XGrabServer(qt_xdisplay());
       XEvent ev;
       Bool reparented;
       XSync(qt_xdisplay(), False);
@@ -426,7 +426,7 @@ void Manager::unmapNotify(XUnmapEvent *e){
 	// if we are reparenting then X will send us a synthetic unmap
 	// notify.
 	reparentNotify(&(ev.xreparent));
-	XUngrabServer(qt_xdisplay());
+// 	XUngrabServer(qt_xdisplay());
 	return;
       }
 
@@ -439,7 +439,7 @@ void Manager::unmapNotify(XUnmapEvent *e){
 	// which have to be ignored. For that reason each client
 	// counts self generated unmap events.
 	c->unmap_events--;
-	XUngrabServer(qt_xdisplay());
+// 	XUngrabServer(qt_xdisplay());
 	return;
       }
       switch (c->state) {
@@ -457,7 +457,7 @@ void Manager::unmapNotify(XUnmapEvent *e){
 	withdraw(c);
 	break;
       }
-      XUngrabServer(qt_xdisplay());
+//       XUngrabServer(qt_xdisplay());
     }
 }
 
@@ -2068,6 +2068,7 @@ void Manager::withdraw(Client* c){
   // window. In withdraw this is dangerous, because somebody else
   // could have taken over the window (swallowing), see below.
   c->hide();
+  
 
   // if we still manage the window, then we should give it free. This
   // means: we have to reparent it to the root window. But maybe
@@ -2078,25 +2079,34 @@ void Manager::withdraw(Client* c){
   // towards applications. Therefore check, wether we _really_ still
   // manage the window before reparenting.
 
+  XEvent ev;
+  if (XCheckTypedWindowEvent (qt_xdisplay(), c->window,
+			      DestroyNotify, &ev) ) {
+      debug("withdraw: have destroy in queue");
+      destroyNotify(&ev.xdestroywindow);
+      return;
+  }
+  
   unsigned int i, nwins;
   Window dw1, dw2, *wins;
   XQueryTree(qt_xdisplay(), c->winId(), &dw1, &dw2, &wins, &nwins);
   for (i = 0; i < nwins; i++) {
-    if (wins[i] == c->window){
-      // we still manage it => do reparenting
-      DEBUG_EVENTS2("widthdraw we still manage => do reparenting", c,c->window)
-      gravitate(c, true);
-      XUnmapWindow(qt_xdisplay(), c->window);
-      XReparentWindow(qt_xdisplay(), c->window, qt_xrootwin(),
-		      c->geometry.x() , c->geometry.y());
-      XRemoveFromSaveSet(qt_xdisplay(), c->window);
-      setWindowState(c, WithdrawnState);
-      break;
-    }
+      if (wins[i] == c->window){
+	  // we still manage it => do reparenting
+	  DEBUG_EVENTS2("widthdraw we still manage => do reparenting", c,c->window)
+	      gravitate(c, true);
+	  XUnmapWindow(qt_xdisplay(), c->window);
+	  XReparentWindow(qt_xdisplay(), c->window, qt_xrootwin(),
+			  c->geometry.x() , c->geometry.y());
+	  XRemoveFromSaveSet(qt_xdisplay(), c->window);
+	  setWindowState(c, WithdrawnState);
+	  break;
+      }
   }
   XFree((void *) wins);
   XSelectInput(qt_xdisplay(), c->window, NoEventMask);
   XUngrabButton(qt_xdisplay(), AnyButton, AnyModifier, c->window);
+  
   removeClient(c);
 }
 
@@ -2480,7 +2490,6 @@ void Manager::updateMenuBars()
 // make the menubars fit to the current desktop region
 void Manager::updateMaximizedWindows()
 {
-    QRect r =  KWM::getWindowRegion(currentDesktop());
     QListIterator<Client> it(clients);
     for (it.toFirst(); it.current(); ++it){
 	if (it.current()->isMaximized() && it.current()->isOnDesktop(currentDesktop())){
