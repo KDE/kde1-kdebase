@@ -247,10 +247,11 @@ short PMenuItem::parse( QString abs_file_path )
 
 void PMenuItem::exec()
 {
-  KFM kfm;
+  KFM* kfm = new KFM;
   QString com = "file:";
   com.append(fullPathName());
-  kfm.exec(com.data(),0L);
+  kfm->exec(com.data(),0L);
+  delete kfm;
 }
 
 QString PMenuItem::getSaveName()

@@ -793,12 +793,13 @@ void kPanel::button_pressed(){
       switch (show_popup(popup_item, entries[i].button)){
       case 3:  
 	if (entries[i].pmi){
-	  KFM kfm;
+	  KFM* kfm = new KFM;
 	  QString a = entries[i].pmi->fullPathName().copy();
 	  a.prepend("file:");
 	  if (entries[i].pmi->getType() == submenu)
 	    a.append("/.directory");
-	  kfm.openProperties(a);
+	  kfm->openProperties(a);
+	  delete kfm;
 	}
 	break;
       case 0: //move

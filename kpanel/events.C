@@ -464,10 +464,11 @@ void kPanel::slotDropEvent( KDNDDropZone *_zone ){
   int i;
   for (i=0;i<nbuttons&&entries[i].drop_zone != _zone;i++);
   if (i<nbuttons && entries[i].pmi){
-    KFM kfm;
+    KFM* kfm = new KFM;
     QString com = entries[i].pmi->fullPathName();
     com.prepend("file:");
-    kfm.exec(com.data(),_zone->getData());
+    kfm->exec(com.data(),_zone->getData());
+    delete kfm;
     return;
   }
 }

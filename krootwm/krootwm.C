@@ -94,9 +94,10 @@ bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
 	  y = e->pos().y();
 	  dx = dy = 0;
 	  if (select_rectangle(x,y,dx,dy)){
-	    KFM kfm;
-	    kfm.selectRootIcons(x, y, dx, dy,
-				(e->state() & ControlButton) == ControlButton);
+	    KFM* kfm = new KFM; 
+	    kfm->selectRootIcons(x, y, dx, dy,
+				 (e->state() & ControlButton) == ControlButton);
+	    delete kfm;
 	  }
 	}
       break;
@@ -121,7 +122,9 @@ void KRootWm::rmb_menu_activated(int item){
     break;
   case RMB_ARRANGE_ICONS:
     {
-      KFM kfm; kfm.sortDesktop();
+      KFM* kfm = new KFM; 
+      kfm->sortDesktop();
+      delete kfm;
     }
   break;
   case RMB_EXECUTE:
@@ -129,8 +132,10 @@ void KRootWm::rmb_menu_activated(int item){
     break;
   case RMB_REFRESH_DESKTOP:
     {
-      KFM kfm; kfm.refreshDesktop();
+      KFM* kfm = new KFM; 
+      kfm->refreshDesktop();
       KWM::refreshScreen();
+      delete kfm;
     }
   break;
   case RMB_HELP:
