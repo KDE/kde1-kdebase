@@ -21,7 +21,7 @@
 #include "cgi.h"
 
 #include "cgi.moc"
-#include <kmisc.h>
+#include <config.h>
 
 #include <klocale.h>
 

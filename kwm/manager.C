@@ -26,7 +26,7 @@
 #include <sysent.h>
 #endif
 
-#include <kmisc.h>
+#include <config.h>
 
 extern bool kwm_error;
 

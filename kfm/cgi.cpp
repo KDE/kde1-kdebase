@@ -17,7 +17,7 @@
 #include <sys/wait.h>
 #include <signal.h>
 #include <kurl.h>
-#include <kmisc.h>
+#include <config.h>
 #include "cgi.h"
 #include <kapp.h>
 #include "config-kfm.h"

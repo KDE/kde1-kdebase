@@ -1,4 +1,4 @@
-#include <kmisc.h>
+#include <config.h>
 #include "cgi.h"
 #include <kapp.h>
 
