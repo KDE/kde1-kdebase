@@ -10,3 +10,7 @@ Use of KProcess instead of popen, and more error checking
 
   David Faure <David.Faure@insa-lyon.fr>
 
+Added Window and Column resizing:
+  
+  Harald Koschinski <Harald.Koschinski@arcormail.de>
+

@@ -8,6 +8,8 @@
 #include <kcontrol.h>
 #include <kprocess.h>
 
+#define SCREEN_XY_OFFSET 20
+
 class KTabListBox;
 
 class NetMon : public KConfigWidget
@@ -40,7 +42,8 @@ private slots:
    void slotReceivedData(KProcess *proc, char *buffer, int buflen);
    
 protected:
-                     
+  virtual void resizeEvent( QResizeEvent * );
+                   
 };
 
 #endif // main_included                        

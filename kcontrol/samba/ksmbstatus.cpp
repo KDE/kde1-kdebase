@@ -58,7 +58,7 @@ void NetMon::processLine(char *bufline, int linelen)
       if ((strncmp(bufline,"No",2) == 0) || (linelen<=1))
       { // "No locked files"
           readingpart=finished;
-          debug("finished");
+          //debug("finished");
       }
       else
           if ((strncmp(bufline,"Pi", 2) !=0) // "Pid DenyMode ..."
@@ -85,7 +85,7 @@ void NetMon::slotReceivedData(KProcess *, char *buffer, int
         len = end-start;
         strncpy(s,start,len);
         s[len] = '\0';
-        debug(s); debug("**");
+        //debug(s); debug("**");
         processLine(s,len); // process each line
         start=end+1;
     }
@@ -109,7 +109,7 @@ void NetMon::update()
             SIGNAL(receivedStdout(KProcess *, char *, int)),
             SLOT(slotReceivedData(KProcess *, char *, int)));
     *process << "smbstatus"; // the command line
-    debug("update");
+    //debug("update");
     if (!process->start(KProcess::Block,KProcess::Stdout)) // run smbstatus
         version->setText(i18n("Error launching smbstatus !"));
     else if (rownumber==0) // empty result
@@ -123,6 +123,7 @@ void NetMon::update()
             list->changeItemPart(tmp,m,5);
         }
     }
+    version->adjustSize();
     delete process;
 }
 
@@ -146,10 +147,8 @@ NetMon::NetMon( QWidget * parent, const char * name )
         : KConfigWidget (parent, name)
 {
 
-    list=new KTabListBox (this,"Hello",6,2);
+    list=new KTabListBox (this,"Hello",6);
     version=new QLabel(this);
-    version->resize(300,30);
-    version->move(20,360);
     list->setGeometry(20,20,430,320);
     list->clearTableFlags(Tbl_hScrollBar);
     list->clearTableFlags(Tbl_autoHScrollBar);
@@ -172,3 +171,12 @@ NetMon::NetMon( QWidget * parent, const char * name )
     update();
 
 }
+
+void NetMon::resizeEvent( QResizeEvent *re )
+{   QSize size = re->size();
+    if (list)
+        list->setGeometry(SCREEN_XY_OFFSET,SCREEN_XY_OFFSET,
+                    size.width() -2*SCREEN_XY_OFFSET,
+                    size.height()-10-version->height()-2*SCREEN_XY_OFFSET);
+    version->move(SCREEN_XY_OFFSET, SCREEN_XY_OFFSET+list->height()+10);
+}                                                                               
