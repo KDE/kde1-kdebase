@@ -30,13 +30,14 @@ messages:
 install-data-local:
 	if [ ! -d $(kdisknavdir) ] ; then \
 		$(mkinstalldirs) $(kdisknavdir) ; \
-		ln -s / $(kdisknavdir)/Root ; \
-		ln -s ${KDEDIR} $(kdisknavdir)/KDE ; \
-		if [ -d /cdrom ] ; then  \
-			ln -s /cdrom $(kdisknavdir)/CD-ROM ; \
-		elif [ -d /mnt/cdrom ] ; then  \
-			ln -s /mnt/cdrom $(kdisknavdir)/CD-ROM ; \
-		fi ; \
+		$(LN_S) / $(kdisknavdir)/Root ; \
+		$(LN_S) ${KDEDIR} $(kdisknavdir)/KDE ; \
+		for dir in /cdrom /mnt/cdrom /CDROM /CD-ROM ; do \
+		  if  test -d $$dir ; then  \
+			$(LN_S) $$dir $(kdisknavdir)/CD-ROM ; \
+			break; \
+		  fi ; \
+		done \
 	fi
 
 # NOTE: $(kdisknavdir) must not be removed by 'make uninstall' because it
