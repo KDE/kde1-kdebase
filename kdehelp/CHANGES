@@ -9,6 +9,7 @@ Apply extensive patches from Christian Czezatke to incorporate Ktoolbar and
 Apply patch from Marco Zuehlke to fix info file locating
 Make rmb popup menu stay visible when button is released.
 Make as many columns in man section lists as possible.
+Add hand cursor from Mark Donohoe.
 
 Version 0.4.11
 --------------

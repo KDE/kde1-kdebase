@@ -31,6 +31,18 @@ static QString QUOTE( "\"" );
 static QString PIXDIR;
 static QString DOCS_PATH;
 
+#define hand_width 16
+#define hand_height 16
+
+static unsigned char hand_bits[] = {
+	0x00,0x00,0xfe,0x01,0x01,0x02,0x7e,0x04,0x08,0x08,0x70,0x08,0x08,0x08,0x70,
+	0x14,0x08,0x22,0x30,0x41,0xc0,0x20,0x40,0x12,0x80,0x08,0x00,0x05,0x00,0x02,
+	0x00,0x00};
+static unsigned char hand_mask_bits[] = {
+	0xfe,0x01,0xff,0x03,0xff,0x07,0xff,0x0f,0xfe,0x1f,0xf8,0x1f,0xfc,0x1f,0xf8,
+	0x3f,0xfc,0x7f,0xf8,0xff,0xf0,0x7f,0xe0,0x3f,0xc0,0x1f,0x80,0x0f,0x00,0x07,
+	0x00,0x02};
+
 //-----------------------------------------------------------------------------
 
 KOpenURLDialog::KOpenURLDialog( QWidget *parent, const char *name )
@@ -131,12 +143,16 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	connect( locationBar, SIGNAL(openURL( const char *, int )),
 						SLOT(slotURLSelected( const char *, int )) );
 
+	QBitmap cb( hand_width, hand_height, hand_bits, TRUE );
+	QBitmap cm( hand_width, hand_height, hand_mask_bits, TRUE );
+	QCursor handCursor( cb, cm, 0, 0 );
+
 	view = new KHTMLWidget( this, NULL, PIXDIR );
 	CHECK_PTR( view );
 	view->setDefaultFontBase( fontBase );
 	view->setStandardFont( standardFont );
 	view->setFixedFont( fixedFont );
-	view->setURLCursor( upArrowCursor );
+	view->setURLCursor( handCursor );
 	view->setFocusPolicy( QWidget::StrongFocus );
 	view->setFocus();
 	view->installEventFilter( this );
@@ -444,7 +460,7 @@ int KHelpWindow::formatInfo( int bodyOnly )
 {
 	QString converted;
 	bool inMenu = FALSE;
-	int rowCount;
+	int rowCount = 100;
 	cNodeLine *curr = info->node.nodeLines.GotoHead();
 
 	if ( !bodyOnly )
@@ -524,7 +540,7 @@ int KHelpWindow::formatInfo( int bodyOnly )
 
 			case INFO_NODEHEADING:
 				{
-					char level;
+					char level = 1;
 					switch ( ((cNodeHeading *)curr)->type )
 					{
 						case INFO_HEADING1:
