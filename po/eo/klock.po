@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock 1.0pre2\n"
-"POT-Creation-Date: 1998-12-02 13:03+0100\n"
+"POT-Creation-Date: 1998-12-12 01:17+0100\n"
 "PO-Revision-Date: 1998-07-16 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -695,11 +695,11 @@ msgstr ""
 "\n"
 "Adaptita al kscreensave de Martin Jones."
 
-#: saver.cpp:60 saver.cpp:180
+#: saver.cpp:59 saver.cpp:190
 msgid "Enter Password"
 msgstr "Tajpu pasvorton"
 
-#: saver.cpp:118
+#: saver.cpp:120
 msgid "Failed"
 msgstr "maløuste"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit 1.0pre2\n"
-"POT-Creation-Date: 1998-12-09 01:12+0100\n"
+"POT-Creation-Date: 1998-12-12 01:17+0100\n"
 "PO-Revision-Date: 1998-07-17 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -34,11 +34,11 @@ msgstr "La fina venko estas proksima!"
 msgid "No info available"
 msgstr "Neniu informo havebla"
 
-#: kpanel.C:430 props.C:176 props.C:177
+#: kpanel.C:430 props.C:193 props.C:194
 msgid "Logout"
 msgstr "Adiaýu"
 
-#: kpanel.C:438 props.C:175
+#: kpanel.C:438 props.C:192
 msgid "Lock screen"
 msgstr "Þlosu l' ekranon"
 
@@ -58,67 +58,67 @@ msgstr "Neniu komento havebla"
 msgid "Windowlist"
 msgstr "Fenestrolisto"
 
-#: props.C:145
+#: props.C:162
 msgid "Add application"
 msgstr "Aldonu aplika¼on"
 
-#: props.C:147
+#: props.C:164
 msgid "Add an application or a submenu onto the panel"
 msgstr "Aldonu aplika¼on aý submenuon sur la panelo"
 
-#: props.C:148
+#: props.C:165
 msgid "Add windowlist"
 msgstr "Aldonu fenestroliston"
 
-#: props.C:150
+#: props.C:167
 msgid "Add a windowlist menu onto the panel"
 msgstr "Aldonu fenestrolistomenuon sur la panelo"
 
-#: events.C:782 props.C:151
+#: events.C:782 props.C:168
 msgid "Configure"
 msgstr "Konfiguru"
 
-#: props.C:153
+#: props.C:170
 msgid "Configure panel"
 msgstr "Konfiguru panelon"
 
-#: props.C:154
+#: props.C:171
 msgid "Edit Menus"
 msgstr "Redaktu menuojn"
 
-#: props.C:156
+#: props.C:173
 msgid "Add or remove applications in the menu structure "
 msgstr "Aldonu aý forigu aplika¼ojn en la menustrukturo"
 
-#: events.C:784 props.C:157
+#: events.C:784 props.C:174
 msgid "Restart"
 msgstr "Relanæu"
 
-#: props.C:159
+#: props.C:176
 msgid "Restart panel"
 msgstr "Relanæu panelon"
 
-#: props.C:162
+#: props.C:179
 msgid "Disk Navigator"
 msgstr ""
 
-#: props.C:165
+#: props.C:182
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
-#: props.C:171
+#: props.C:188
 msgid "Panel"
 msgstr "Panelo"
 
-#: props.C:173
+#: props.C:190
 msgid "Lock Screen"
 msgstr "Þlosu l' ekranon"
 
-#: props.C:402
+#: props.C:419
 msgid "The menu editor is not installed."
 msgstr "La menuredaktilo ne estas instalita."
 
-#: events.C:830 props.C:403
+#: events.C:838 props.C:420
 msgid "Oops!"
 msgstr "Ho ve!"
 
@@ -128,7 +128,7 @@ msgid ""
 "%b %d"
 msgstr ""
 
-#: events.C:829
+#: events.C:837
 msgid "Cannot put this as button onto the panel!"
 msgstr "Ne eblas meti tiun butonon sur la panelon!"
 

@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-10 01:15+0100\n"
+"POT-Creation-Date: 1998-12-12 01:17+0100\n"
 "PO-Revision-Date: 1998-10-26 23:49+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -36,12 +36,12 @@ msgstr ""
 msgid "&Desktop Icons"
 msgstr ""
 
-#: main.cpp:144
+#: main.cpp:83
 #, fuzzy, c-format
-msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,root}]\n"
+msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
 msgstr "notkun: kcmkfm [-init | {font,color}]\n"
 
-#: main.cpp:227
+#: main.cpp:166
 msgid "KFM Configuration"
 msgstr "Stillingar KFM"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KLOCK\n"
-"POT-Creation-Date: 1998-12-02 13:03+0100\n"
+"POT-Creation-Date: 1998-12-12 01:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -693,11 +693,11 @@ msgstr ""
 "\n"
 "Siirt‰nyt kscreensave-ohjelmaan Martin Jones."
 
-#: saver.cpp:60 saver.cpp:180
+#: saver.cpp:59 saver.cpp:190
 msgid "Enter Password"
 msgstr "Anna Salasana"
 
-#: saver.cpp:118
+#: saver.cpp:120
 msgid "Failed"
 msgstr "V‰‰r‰"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/klock\n"
-"POT-Creation-Date: 1998-12-02 13:03+0100\n"
+"POT-Creation-Date: 1998-12-12 01:17+0100\n"
 "PO-Revision-Date: 98-03-23 18:21+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -692,11 +692,11 @@ msgstr ""
 "\n"
 "Portet til kscreensave av Martin Jones."
 
-#: saver.cpp:60 saver.cpp:180
+#: saver.cpp:59 saver.cpp:190
 msgid "Enter Password"
 msgstr "Skriv inn passord"
 
-#: saver.cpp:118
+#: saver.cpp:120
 msgid "Failed"
 msgstr "Slo feil"
 

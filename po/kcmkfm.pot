@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-10 01:15+0100\n"
+"POT-Creation-Date: 1998-12-12 01:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,12 +42,12 @@ msgstr ""
 msgid "&Desktop Icons"
 msgstr ""
 
-#: main.cpp:144
+#: main.cpp:83
 #, c-format
-msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,root}]\n"
+msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
 msgstr ""
 
-#: main.cpp:227
+#: main.cpp:166
 msgid "KFM Configuration"
 msgstr ""
 

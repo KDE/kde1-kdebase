@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-09 01:12+0100\n"
+"POT-Creation-Date: 1998-12-12 01:17+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Radoslav Dejanovic <rdejanov@public.srce.hr>\n"
 "Language-Team: Croatian\n"
@@ -32,11 +32,11 @@ msgstr "Gdje ¾elite iæi sutra?"
 msgid "No info available"
 msgstr "Nema raspolo¾ivih informacija"
 
-#: kpanel.C:430 props.C:176 props.C:177
+#: kpanel.C:430 props.C:193 props.C:194
 msgid "Logout"
 msgstr "Odjava"
 
-#: kpanel.C:438 props.C:175
+#: kpanel.C:438 props.C:192
 msgid "Lock screen"
 msgstr "Zakljuèaj ekran"
 
@@ -56,67 +56,67 @@ msgstr "Nema raspolo¾ivih komentara"
 msgid "Windowlist"
 msgstr "Lista prozora"
 
-#: props.C:145
+#: props.C:162
 msgid "Add application"
 msgstr "Dodaj aplikaciju"
 
-#: props.C:147
+#: props.C:164
 msgid "Add an application or a submenu onto the panel"
 msgstr "Dodaj aplikaciju ili podizbornik na ploèu"
 
-#: props.C:148
+#: props.C:165
 msgid "Add windowlist"
 msgstr "Dodaj listu prozora"
 
-#: props.C:150
+#: props.C:167
 msgid "Add a windowlist menu onto the panel"
 msgstr "Dodaj izbornik liste prozora na ploèu"
 
-#: events.C:782 props.C:151
+#: events.C:782 props.C:168
 msgid "Configure"
 msgstr "Promijeni postavu"
 
-#: props.C:153
+#: props.C:170
 msgid "Configure panel"
 msgstr "Promijeni postavu ploèe"
 
-#: props.C:154
+#: props.C:171
 msgid "Edit Menus"
 msgstr "Uredi menije"
 
-#: props.C:156
+#: props.C:173
 msgid "Add or remove applications in the menu structure "
 msgstr "Dodaj ili ukloni aplikacije u strukturi menija "
 
-#: events.C:784 props.C:157
+#: events.C:784 props.C:174
 msgid "Restart"
 msgstr "Pokreni ponovo"
 
-#: props.C:159
+#: props.C:176
 msgid "Restart panel"
 msgstr "Obnovi ploèu"
 
-#: props.C:162
+#: props.C:179
 msgid "Disk Navigator"
 msgstr "Navigator diska"
 
-#: props.C:165
+#: props.C:182
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
-#: props.C:171
+#: props.C:188
 msgid "Panel"
 msgstr "Ploèa"
 
-#: props.C:173
+#: props.C:190
 msgid "Lock Screen"
 msgstr "Zakljuèaj Ekran"
 
-#: props.C:402
+#: props.C:419
 msgid "The menu editor is not installed."
 msgstr "Ureðivaè menija nije instaliran."
 
-#: events.C:830 props.C:403
+#: events.C:838 props.C:420
 msgid "Oops!"
 msgstr "Oops!"
 
@@ -128,7 +128,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: events.C:829
+#: events.C:837
 msgid "Cannot put this as button onto the panel!"
 msgstr "Ne mogu staviti ovaj gumb na ploèu!"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kpanel\n"
-"POT-Creation-Date: 1998-12-09 01:12+0100\n"
+"POT-Creation-Date: 1998-12-12 01:17+0100\n"
 "PO-Revision-Date: 1998-02-27 12:35+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -33,11 +33,11 @@ msgstr "Hvor vil du dra i morgen?"
 msgid "No info available"
 msgstr "Ingen informasjon tilgjengelig"
 
-#: kpanel.C:430 props.C:176 props.C:177
+#: kpanel.C:430 props.C:193 props.C:194
 msgid "Logout"
 msgstr "Logg ut"
 
-#: kpanel.C:438 props.C:175
+#: kpanel.C:438 props.C:192
 msgid "Lock screen"
 msgstr "Lås skjerm"
 
@@ -57,67 +57,67 @@ msgstr "Ingen kommentar tilgjengelig"
 msgid "Windowlist"
 msgstr "Vindusliste"
 
-#: props.C:145
+#: props.C:162
 msgid "Add application"
 msgstr "Tilføy applikasjon"
 
-#: props.C:147
+#: props.C:164
 msgid "Add an application or a submenu onto the panel"
 msgstr "Tilføy en applikasjon eller en undermeny til panelet"
 
-#: props.C:148
+#: props.C:165
 msgid "Add windowlist"
 msgstr "Tilføy vindusliste"
 
-#: props.C:150
+#: props.C:167
 msgid "Add a windowlist menu onto the panel"
 msgstr "Tilføy en vindusliste meny til panelet"
 
-#: events.C:782 props.C:151
+#: events.C:782 props.C:168
 msgid "Configure"
 msgstr "Konfigurer"
 
-#: props.C:153
+#: props.C:170
 msgid "Configure panel"
 msgstr "Konfigurer panel"
 
-#: props.C:154
+#: props.C:171
 msgid "Edit Menus"
 msgstr "Redigere menyer"
 
-#: props.C:156
+#: props.C:173
 msgid "Add or remove applications in the menu structure "
 msgstr "Legg til eller fjerne applikasjoner i meny-strukturen "
 
-#: events.C:784 props.C:157
+#: events.C:784 props.C:174
 msgid "Restart"
 msgstr "Omstart"
 
-#: props.C:159
+#: props.C:176
 msgid "Restart panel"
 msgstr "Omstart av panel"
 
-#: props.C:162
+#: props.C:179
 msgid "Disk Navigator"
 msgstr "Disknavigator"
 
-#: props.C:165
+#: props.C:182
 msgid "Quickly navigate through the filesystem"
 msgstr "Rask navigering gjennom filsystemet"
 
-#: props.C:171
+#: props.C:188
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:173
+#: props.C:190
 msgid "Lock Screen"
 msgstr "Lås skjerm"
 
-#: props.C:402
+#: props.C:419
 msgid "The menu editor is not installed."
 msgstr "Meny-editoren er ikke installert."
 
-#: events.C:830 props.C:403
+#: events.C:838 props.C:420
 msgid "Oops!"
 msgstr "Ops!"
 
@@ -129,7 +129,7 @@ msgstr ""
 "\n"
 "%d. %b"
 
-#: events.C:829
+#: events.C:837
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kan ikke putte denne knappen på panelet!"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-12-09 01:12+0100\n"
+"POT-Creation-Date: 1998-12-12 01:17+0100\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -34,11 +34,11 @@ msgstr "Ia ghici, ce poate fi ãsta ???"
 msgid "No info available"
 msgstr "Nici o informaþie disponibilã"
 
-#: kpanel.C:430 props.C:176 props.C:177
+#: kpanel.C:430 props.C:193 props.C:194
 msgid "Logout"
 msgstr "Ieºire"
 
-#: kpanel.C:438 props.C:175
+#: kpanel.C:438 props.C:192
 msgid "Lock screen"
 msgstr "Blocheazã ecranul"
 
@@ -58,67 +58,67 @@ msgstr "Nici un comentariu disponibil"
 msgid "Windowlist"
 msgstr "Lista de ferestre"
 
-#: props.C:145
+#: props.C:162
 msgid "Add application"
 msgstr "Adaugã o aplicaþie"
 
-#: props.C:147
+#: props.C:164
 msgid "Add an application or a submenu onto the panel"
 msgstr "Adaugã o aplicaþie sau un submeniu"
 
-#: props.C:148
+#: props.C:165
 msgid "Add windowlist"
 msgstr "Adaugã listã de ferestre"
 
-#: props.C:150
+#: props.C:167
 msgid "Add a windowlist menu onto the panel"
 msgstr "Adaugã un meniu de liste de ferestre la panou"
 
-#: events.C:782 props.C:151
+#: events.C:782 props.C:168
 msgid "Configure"
 msgstr "Configurare"
 
-#: props.C:153
+#: props.C:170
 msgid "Configure panel"
 msgstr "Configurare panou"
 
-#: props.C:154
+#: props.C:171
 msgid "Edit Menus"
 msgstr "Editare Meniuri"
 
-#: props.C:156
+#: props.C:173
 msgid "Add or remove applications in the menu structure "
 msgstr "Adaugã sau ºterge o aplicaþie din structura meniului "
 
-#: events.C:784 props.C:157
+#: events.C:784 props.C:174
 msgid "Restart"
 msgstr "Restartare"
 
-#: props.C:159
+#: props.C:176
 msgid "Restart panel"
 msgstr "Restartare Panou"
 
-#: props.C:162
+#: props.C:179
 msgid "Disk Navigator"
 msgstr ""
 
-#: props.C:165
+#: props.C:182
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
-#: props.C:171
+#: props.C:188
 msgid "Panel"
 msgstr "Panou"
 
-#: props.C:173
+#: props.C:190
 msgid "Lock Screen"
 msgstr "Blocheazã ecranul"
 
-#: props.C:402
+#: props.C:419
 msgid "The menu editor is not installed."
 msgstr "Editorul de meniuri nu este instalat. "
 
-#: events.C:830 props.C:403
+#: events.C:838 props.C:420
 msgid "Oops!"
 msgstr "Hopa !"
 
@@ -128,7 +128,7 @@ msgid ""
 "%b %d"
 msgstr ""
 
-#: events.C:829
+#: events.C:837
 msgid "Cannot put this as button onto the panel!"
 msgstr "Nu pot aºeza asta ca un buton în panou !"
 

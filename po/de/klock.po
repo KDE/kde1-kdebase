@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1998-12-02 13:03+0100\n"
+"POT-Creation-Date: 1998-12-12 01:17+0100\n"
 "PO-Revision-Date: 1998-05-09 00:03+0100\n"
 "Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -692,11 +692,11 @@ msgstr ""
 "\n"
 "Portiert für KDE von  Martin Jones."
 
-#: saver.cpp:60 saver.cpp:180
+#: saver.cpp:59 saver.cpp:190
 msgid "Enter Password"
 msgstr "Paßwort eingeben"
 
-#: saver.cpp:118
+#: saver.cpp:120
 msgid "Failed"
 msgstr "Gescheitert"
 

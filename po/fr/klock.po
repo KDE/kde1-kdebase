@@ -5,14 +5,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-12-02 13:03+0100\n"
+"POT-Creation-Date: 1998-12-12 01:17+0100\n"
 "PO-Revision-Date: 1998-12-08 21:30 CET\n"
-"Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
-"Last-Translator: Francois-Xavier DURANCEAU <Francois-Xavier.Duranceau@loria.fr>\n"
+"Last-Translator: Francois-Xavier DURANCEAU "
+"<Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; \n"
 "Content-Transfer-Encoding: 8bit\n"
+"Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 
 #: attraction.cpp:716
 msgid "Attraction"
@@ -532,7 +533,8 @@ msgstr ""
 "                     x = i  aucune action (ignore)\n"
 "                     x = s  sauvegarde le bureau\n"
 "                     x = l  verrouille l'écran\n"
-"                    ordre : haut gauche, haut droite, bas gauche, bas droite\n"
+"                    ordre : haut gauche, haut droite, bas gauche, bas "
+"droite\n"
 "  -delay num        Nombre de minutes d'inactivité avant l'activation de la\n"
 "                    mise en veille (par défaut 10 min)\n"
 "  -desc             Affiche la description de la mise en veille\n"
@@ -696,11 +698,11 @@ msgstr ""
 "\n"
 "Porté vers kscreensave par Martin Jones."
 
-#: saver.cpp:60 saver.cpp:180
+#: saver.cpp:59 saver.cpp:190
 msgid "Enter Password"
 msgstr "Mot de passe"
 
-#: saver.cpp:118
+#: saver.cpp:120
 msgid "Failed"
 msgstr "Mot de passe incorrect"
 
@@ -891,5 +893,3 @@ msgstr ""
 "Copyright (c) 1991 par Patrick J. Naughton\n"
 "\n"
 "Porté vers kscreensave by Emanuel Pirker."
-
-

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-09 01:12+0100\n"
+"POT-Creation-Date: 1998-12-12 01:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,11 +34,11 @@ msgstr "내일 어디로 가시겠습니까?"
 msgid "No info available"
 msgstr "정보가 없습니다"
 
-#: kpanel.C:430 props.C:176 props.C:177
+#: kpanel.C:430 props.C:193 props.C:194
 msgid "Logout"
 msgstr "로그아웃"
 
-#: kpanel.C:438 props.C:175
+#: kpanel.C:438 props.C:192
 msgid "Lock screen"
 msgstr "화면 잠금"
 
@@ -58,67 +58,67 @@ msgstr "설명이 없습니다"
 msgid "Windowlist"
 msgstr "윈도우목록"
 
-#: props.C:145
+#: props.C:162
 msgid "Add application"
 msgstr "응용프로그램 추가"
 
-#: props.C:147
+#: props.C:164
 msgid "Add an application or a submenu onto the panel"
 msgstr "응용프로그램 또는 하위메뉴 패널에 추가"
 
-#: props.C:148
+#: props.C:165
 msgid "Add windowlist"
 msgstr "윈도우목록 추가"
 
-#: props.C:150
+#: props.C:167
 msgid "Add a windowlist menu onto the panel"
 msgstr "윈도우목록 메뉴 패널에 추가"
 
-#: events.C:782 props.C:151
+#: events.C:782 props.C:168
 msgid "Configure"
 msgstr "설정"
 
-#: props.C:153
+#: props.C:170
 msgid "Configure panel"
 msgstr "패널 설정"
 
-#: props.C:154
+#: props.C:171
 msgid "Edit Menus"
 msgstr "메뉴 편집"
 
-#: props.C:156
+#: props.C:173
 msgid "Add or remove applications in the menu structure "
 msgstr "메뉴 구조의 응용프로그램 추가 또는 삭제 "
 
-#: events.C:784 props.C:157
+#: events.C:784 props.C:174
 msgid "Restart"
 msgstr "다시 시작"
 
-#: props.C:159
+#: props.C:176
 msgid "Restart panel"
 msgstr "패널 다시 시작"
 
-#: props.C:162
+#: props.C:179
 msgid "Disk Navigator"
 msgstr ""
 
-#: props.C:165
+#: props.C:182
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
-#: props.C:171
+#: props.C:188
 msgid "Panel"
 msgstr "패널"
 
-#: props.C:173
+#: props.C:190
 msgid "Lock Screen"
 msgstr "화면 잠금"
 
-#: props.C:402
+#: props.C:419
 msgid "The menu editor is not installed."
 msgstr "메뉴 편집기가 설치되지 않았습니다."
 
-#: events.C:830 props.C:403
+#: events.C:838 props.C:420
 msgid "Oops!"
 msgstr "아!"
 
@@ -128,7 +128,7 @@ msgid ""
 "%b %d"
 msgstr ""
 
-#: events.C:829
+#: events.C:837
 msgid "Cannot put this as button onto the panel!"
 msgstr "패널에 단추로 넣을 수 없습니다!"
 

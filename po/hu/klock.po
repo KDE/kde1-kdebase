@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock VERSION\n"
-"POT-Creation-Date: 1998-12-02 13:03+0100\n"
+"POT-Creation-Date: 1998-12-12 01:17+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -629,12 +629,12 @@ msgid ""
 "Ported to kscreensave by Martin Jones."
 msgstr ""
 
-#: saver.cpp:60 saver.cpp:180
+#: saver.cpp:59 saver.cpp:190
 #, fuzzy
 msgid "Enter Password"
 msgstr "Shadow password-ök"
 
-#: saver.cpp:118
+#: saver.cpp:120
 #, fuzzy
 msgid "Failed"
 msgstr "Család:"
