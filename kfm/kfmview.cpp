@@ -36,6 +36,11 @@
 #include <klocale.h>
 #include <kstring.h>
 
+// constants used when dragging a selection rectange outside the kfm window
+#define AUTOSCROLL_DELAY	150
+#define AUTOSCROLL_STEP		20
+
+
 QStrList *KfmView::clipboard;
 
 KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_parent_view )
@@ -53,6 +58,8 @@ KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_p
 	     htmlCache, SLOT( slotCancelURLRequest( const char * ) ) );
     connect( this, SIGNAL( popupMenu( KHTMLView *, const char *, const QPoint & ) ),
 	     this, SLOT( slotPopupMenu2( KHTMLView *, const char *, const QPoint & ) ) );
+    connect( getKHTMLWidget(), SIGNAL( scrollVert( int ) ),
+	SLOT( slotUpdateSelect(int) ) );
     
     gui = _gui;
  
@@ -910,7 +917,7 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
 	select( 0L, false );
 	rectStart = true;            // Say it is start of drag
 	rectX1 = _mouse->pos().x();   // get start position
-	rectY1 = _mouse->pos().y();
+	rectY1 = _mouse->pos().y() + yOffset();
 	rectX2 = rectX1;
 	rectY2 = rectY1;
 	if ( !dPainter )
@@ -977,17 +984,23 @@ bool KfmView::mouseMoveHook( QMouseEvent *_mouse )
     if ( rectStart )
     {
 	int x = _mouse->pos().x();
-	int y = _mouse->pos().y();
+	int y = _mouse->pos().y() + yOffset();
 	
 	if ( !dPainter )
 	{
 	    // debugT ("KFileView::mouseMoveEvent: no painter\n");
 	    return true;
 	}
-	dPainter->begin( view );
-	dPainter->setRasterOp (NotROP);
-	dPainter->drawRect (rectX1, rectY1, rectX2-rectX1, rectY2-rectY1);
-	dPainter->end();
+
+	if ( !getKHTMLWidget()->isAutoScrollingY() && bandVisible )
+	{
+	    dPainter->begin( view );
+	    dPainter->setRasterOp (NotROP);
+	    dPainter->drawRect(rectX1, rectY1-yOffset(), rectX2-rectX1,
+		 rectY2-rectY1);
+	    dPainter->end();
+	    bandVisible = false;
+	}
 	
 	int x1 = rectX1;
 	int y1 = rectY1;    
@@ -1008,12 +1021,24 @@ bool KfmView::mouseMoveHook( QMouseEvent *_mouse )
 	select( 0L, rect );
 	
 	rectX2 = _mouse->pos().x();
-	rectY2 = _mouse->pos().y();
+	rectY2 = _mouse->pos().y() + yOffset();
 	
-	dPainter->begin( view );
-	dPainter->setRasterOp (NotROP);
-	dPainter->drawRect (rectX1, rectY1, rectX2-rectX1, rectY2-rectY1);
-	dPainter->end();
+	if (_mouse->pos().y() > height() )
+	    getKHTMLWidget()->autoScrollY( AUTOSCROLL_DELAY, AUTOSCROLL_STEP );
+	else if ( _mouse->pos().y() < 0 )
+	    getKHTMLWidget()->autoScrollY( AUTOSCROLL_DELAY, -AUTOSCROLL_STEP );
+	else
+	    getKHTMLWidget()->stopAutoScrollY();
+
+	if ( !getKHTMLWidget()->isAutoScrollingY() )
+	{
+	    dPainter->begin( view );
+	    dPainter->setRasterOp (NotROP);
+	    dPainter->drawRect(rectX1, rectY1-yOffset(), rectX2-rectX1,
+		rectY2-rectY1);
+	    dPainter->end();
+	    bandVisible = true;
+	}
 	
 	return true;
     }
@@ -1028,6 +1053,10 @@ bool KfmView::mouseReleaseHook( QMouseEvent *_mouse )
 	ignoreMouseRelease = false;
 	return true;
     } */
+
+    // make sure autoScroll is off
+    if ( _mouse->button() == LeftButton && rectStart )
+	getKHTMLWidget()->stopAutoScrollY();
 
     if ( !selectedURL.isEmpty() && _mouse->button() == LeftButton &&
 	 ( _mouse->state() & ControlButton ) == ControlButton )
@@ -1063,7 +1092,7 @@ bool KfmView::mouseReleaseHook( QMouseEvent *_mouse )
     if ( rectStart )
     {
 	rectX2 = _mouse->pos().x();
-	rectY2 = _mouse->pos().y();
+	rectY2 = _mouse->pos().y() + yOffset();
 	if ( ( rectX2 == rectX1 ) && ( rectY2 == rectY1 ) )
 	{
 	    select( 0L, false );
@@ -1071,12 +1100,17 @@ bool KfmView::mouseReleaseHook( QMouseEvent *_mouse )
 	}
 	else
 	{
-	    /* ...find out which objects are in(tersected with) rectangle and select
-	       them, but remove rectangle first. */
-	    dPainter->begin( view );
-	    dPainter->setRasterOp (NotROP);
-	    dPainter->drawRect (rectX1, rectY1, rectX2-rectX1, rectY2-rectY1);
-	    dPainter->end();
+	    /* ...find out which objects are in(tersected with) rectangle and
+	       select them, but remove rectangle first. */
+	    if ( bandVisible )
+	    {
+		dPainter->begin( view );
+		dPainter->setRasterOp (NotROP);
+		dPainter->drawRect (rectX1, rectY1-yOffset(), rectX2-rectX1,
+		    rectY2-rectY1);
+		dPainter->end();
+		bandVisible = false;
+	    }
 	    if ( rectX2 < rectX1 )
 	    {
 		int tmp = rectX1;
@@ -1160,6 +1194,41 @@ bool KfmView::dndHook( const char *_url, QPoint &_p )
 		     data.data(), data.length(), DndURL, dx, dy );
     
     return true;
+}
+
+void KfmView::slotUpdateSelect( int )
+{
+    if ( !rectStart )
+	return;
+
+    int x1 = rectX1;
+    int y1 = rectY1;    
+
+    QPoint point = QCursor::pos();
+    point = mapFromGlobal( point );
+    if ( point.y() > height() )
+	point.setY( height() );
+    else if ( point.y() < 0 )
+	point.setY( 0 );
+
+    int x = rectX2 = point.x();
+    int y = rectY2 = point.y() + yOffset();
+
+    if ( x1 > x )
+    {
+	int tmp = x1;
+	x1 = x;
+	x = tmp;
+    }
+    if ( y1 > y )
+    {
+	int tmp = y1;
+	y1 = y;
+	y = tmp;
+    }    
+    
+    QRect rect( x1, y1, x - x1 + 1, y - y1 + 1 );
+    select( 0L, rect );
 }
 
 void KfmView::slotPopupMenu2( KHTMLView *, const char *_url, const QPoint &_point )

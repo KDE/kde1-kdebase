@@ -335,6 +335,7 @@ public slots:
     void setHTMLWidgetOptions();
 
 protected slots:
+    void slotUpdateSelect(int);
     /**
      * Called when the user clicks on an URL.
      */
@@ -412,10 +413,14 @@ protected:
      */
     int rectX2, rectY2;
     /**
-     * This flag is TRUE if we are in the middle of a selection using a rectangular
-     * rubber band.
+     * This flag is TRUE if we are in the middle of a selection using a
+     * rectangular rubber band.
      */
     bool rectStart;
+    /**
+     * This flag is true if the rubber band is currently visible.
+     */
+    bool bandVisible;
     /**
      * Painter used for the rubber band.
      */
