@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay-1.1\n"
-"POT-Creation-Date: 1999-03-21 01:19+0100\n"
+"POT-Creation-Date: 1999-04-20 01:17+0200\n"
 "PO-Revision-Date: 1999-04-15 06:55+0200\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>>\n"
@@ -14,216 +14,216 @@ msgstr ""
 "Content-Type: text/plain; charset=iso8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backgnd.cpp:54
+#: backgnd.cpp:55
 msgid "Enter new desktop name"
 msgstr "Roit anv nevez ar burev"
 
-#: backgnd.cpp:110 backgnd.cpp:163
+#: backgnd.cpp:111 backgnd.cpp:164
 msgid "Desktop"
 msgstr "Burev"
 
-#: backgnd.cpp:185
+#: backgnd.cpp:186
 msgid "&Rename ..."
 msgstr "Ad&envel"
 
-#: backgnd.cpp:196
+#: backgnd.cpp:197
 msgid "&Common Background"
 msgstr "Drekleur &boutin"
 
-#: backgnd.cpp:224 colorscm.cpp:82
+#: backgnd.cpp:225 colorscm.cpp:82
 msgid "Colors"
 msgstr "Livioù"
 
-#: backgnd.cpp:251
+#: backgnd.cpp:252
 msgid "&One Color"
 msgstr "&Ul liv"
 
-#: backgnd.cpp:268
+#: backgnd.cpp:269
 msgid "&Two Color"
 msgstr "&Daou liv"
 
-#: backgnd.cpp:287
+#: backgnd.cpp:288
 msgid "Set&up ..."
 msgstr "Kef&luniañ ..."
 
-#: backgnd.cpp:296
+#: backgnd.cpp:297
 msgid "Wallpaper"
 msgstr "Paper-moger"
 
-#: backgnd.cpp:327 backgnd.cpp:1210 backgnd.cpp:1372 backgnd.cpp:1911
+#: backgnd.cpp:328 backgnd.cpp:1213 backgnd.cpp:1378 backgnd.cpp:1917
 msgid "No wallpaper"
 msgstr "Paper-moger ebet"
 
-#: backgnd.cpp:360
+#: backgnd.cpp:361
 msgid "&Browse..."
 msgstr "&Furchal..."
 
-#: backgnd.cpp:368
+#: backgnd.cpp:369
 msgid "Arrangement:"
 msgstr "Kempennadur :"
 
-#: backgnd.cpp:375
+#: backgnd.cpp:376
 msgid "Tiled"
 msgstr "Teolet"
 
-#: backgnd.cpp:376
+#: backgnd.cpp:377
 msgid "Mirrored"
 msgstr "Melezouret"
 
-#: backgnd.cpp:377
+#: backgnd.cpp:378
 msgid "Center Tiled"
 msgstr "Kreiz Teolet"
 
-#: backgnd.cpp:378
+#: backgnd.cpp:379
 msgid "Centred"
 msgstr "Kreizennet"
 
-#: backgnd.cpp:379
+#: backgnd.cpp:380
 msgid "Centred Brick"
 msgstr "Kreiz Brikenn"
 
-#: backgnd.cpp:380
+#: backgnd.cpp:381
 msgid "Centred Warp"
 msgstr "Kreiz Sterenn"
 
-#: backgnd.cpp:381
+#: backgnd.cpp:382
 msgid "Centred Maxpect"
 msgstr "Kreiz Brasañ"
 
-#: backgnd.cpp:382
+#: backgnd.cpp:383
 msgid "Symmetrical Tiled"
 msgstr "Teolet Kendres"
 
-#: backgnd.cpp:383
+#: backgnd.cpp:384
 msgid "Symmetrical Mirrored"
 msgstr "Melezour Kendres"
 
-#: backgnd.cpp:384
+#: backgnd.cpp:385
 msgid "Scaled"
 msgstr "Skeulaet"
 
-#: backgnd.cpp:399
+#: backgnd.cpp:400
 msgid "Ra&ndom"
 msgstr "Dre &zegouezh"
 
-#: backgnd.cpp:408
+#: backgnd.cpp:409
 msgid "Setu&p..."
 msgstr "&Kefluniañ"
 
-#: backgnd.cpp:418
+#: backgnd.cpp:419
 msgid "&Dock into the panel"
 msgstr "Ensoc'hañ er &banell"
 
-#: backgnd.cpp:443
+#: backgnd.cpp:444
 msgid "Cache size (kB):"
 msgstr "Ment ar grubuilh (kO) :"
 
-#: backgnd.cpp:1339
+#: backgnd.cpp:1345
 msgid "Desktop names"
 msgstr "Anv ar burevioù"
 
-#: backgnd.cpp:1384
+#: backgnd.cpp:1390
 msgid "File error"
 msgstr "Fazi restr"
 
-#: backgnd.cpp:1385
+#: backgnd.cpp:1391
 msgid "Can't load image file"
 msgstr "Na m'eus ket gallet kargañ restr ar skeudenn"
 
-#: backgnd.cpp:1408 backgnd.cpp:1881
+#: backgnd.cpp:1414 backgnd.cpp:1887
 msgid "Unsupported URL"
 msgstr "URL anskoraet"
 
-#: backgnd.cpp:1409 backgnd.cpp:1882
+#: backgnd.cpp:1415 backgnd.cpp:1888
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr "Ho tigarez, ar seurt URL-mañ n'eo ket skoraet gant mollad diskouez KDE"
 
-#: backgnd.cpp:1441
+#: backgnd.cpp:1447
 msgid "Two color backgrounds"
 msgstr "Drekleur daou liv"
 
-#: backgnd.cpp:1478
+#: backgnd.cpp:1484
 msgid "Blend colors from &top to bottom"
 msgstr "Kemmeskit livioù adalek al &laez davet an traoñ"
 
-#: backgnd.cpp:1484
+#: backgnd.cpp:1490
 msgid "Blend colors from &right to left"
 msgstr "Kemmeskit livioù adalek an tu &dehou davet an tu kleiz"
 
-#: backgnd.cpp:1490
+#: backgnd.cpp:1496
 msgid "Use &pattern"
 msgstr "Implijit &patrom"
 
-#: backgnd.cpp:1517
+#: backgnd.cpp:1523
 msgid "Preview"
 msgstr "Rakgwel"
 
-#: backgnd.cpp:1528
+#: backgnd.cpp:1534
 msgid "Pattern &name"
 msgstr "&Anv ar patrom"
 
-#: backgnd.cpp:1567
+#: backgnd.cpp:1573
 msgid "Current"
 msgstr "Hini red"
 
-#: backgnd.cpp:1627
+#: backgnd.cpp:1633
 msgid "Filled"
 msgstr "Leuniet"
 
-#: backgnd.cpp:1630
+#: backgnd.cpp:1636
 msgid "Fish net"
 msgstr "Roued pesketañ"
 
-#: backgnd.cpp:1633
+#: backgnd.cpp:1639
 msgid "Triangles"
 msgstr "Tric'hornioù"
 
-#: backgnd.cpp:1636
+#: backgnd.cpp:1642
 msgid "Flowers"
 msgstr "Bleunioù"
 
-#: backgnd.cpp:1639
+#: backgnd.cpp:1645
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1642
+#: backgnd.cpp:1648
 msgid "Cobbled Pavement"
 msgstr "Pavez"
 
-#: backgnd.cpp:1708
+#: backgnd.cpp:1714
 msgid "Random mode setup"
 msgstr "Kefluniadur dre zegouezh"
 
-#: backgnd.cpp:1714
+#: backgnd.cpp:1720
 msgid "Pick files from &directory"
 msgstr "Pakañ restroù diwar ar &renkell"
 
-#: backgnd.cpp:1728
+#: backgnd.cpp:1734
 msgid "&Browse ..."
 msgstr "&Furchal..."
 
-#: backgnd.cpp:1749
+#: backgnd.cpp:1755
 msgid "Timer Delay in seconds :"
 msgstr "Gedvezh an dilerc'hier e eilenn :"
 
-#: backgnd.cpp:1761
+#: backgnd.cpp:1767
 msgid "In &order"
 msgstr "En &urzh"
 
-#: backgnd.cpp:1778
+#: backgnd.cpp:1784
 msgid "Desktops :"
 msgstr "Burevioù :"
 
-#: backgnd.cpp:1817
+#: backgnd.cpp:1823
 msgid "&Add"
 msgstr "&Ouzhpennañ"
 
-#: backgnd.cpp:1989
+#: backgnd.cpp:1995
 msgid "Directory error"
 msgstr "Fazi renkell"
 
-#: backgnd.cpp:1990
+#: backgnd.cpp:1996
 msgid "Selected directory doesn't exists"
 msgstr "Ar renkell diuzet n'eus ket anezhi"
 

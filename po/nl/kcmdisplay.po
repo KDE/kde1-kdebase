@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-03-21 01:19+0100\n"
+"POT-Creation-Date: 1999-04-20 01:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Case Roole <cjr@xs4all.nl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,243 +14,243 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:54
+#: backgnd.cpp:55
 msgid "Enter new desktop name"
 msgstr "Voer nieuw buroblad naam in"
 
-#: backgnd.cpp:110 backgnd.cpp:163
+#: backgnd.cpp:111 backgnd.cpp:164
 msgid "Desktop"
 msgstr "Buroblad"
 
-#: backgnd.cpp:185
+#: backgnd.cpp:186
 msgid "&Rename ..."
 msgstr "&Hernoem ..."
 
-#: backgnd.cpp:196
+#: backgnd.cpp:197
 #, fuzzy
 msgid "&Common Background"
 msgstr "&Achtergrond"
 
-#: backgnd.cpp:224 colorscm.cpp:82
+#: backgnd.cpp:225 colorscm.cpp:82
 #, fuzzy
 msgid "Colors"
 msgstr "Kleuren"
 
-#: backgnd.cpp:251
+#: backgnd.cpp:252
 #, fuzzy
 msgid "&One Color"
 msgstr "&Een Kleur"
 
-#: backgnd.cpp:268
+#: backgnd.cpp:269
 #, fuzzy
 msgid "&Two Color"
 msgstr "&Twee Kleuren"
 
-#: backgnd.cpp:287
+#: backgnd.cpp:288
 #, fuzzy
 msgid "Set&up ..."
 msgstr "Instellingen..."
 
-#: backgnd.cpp:296
+#: backgnd.cpp:297
 msgid "Wallpaper"
 msgstr "Behang"
 
-#: backgnd.cpp:327 backgnd.cpp:1210 backgnd.cpp:1372 backgnd.cpp:1911
+#: backgnd.cpp:328 backgnd.cpp:1213 backgnd.cpp:1378 backgnd.cpp:1917
 #, fuzzy
 msgid "No wallpaper"
 msgstr "Behang"
 
-#: backgnd.cpp:360
+#: backgnd.cpp:361
 #, fuzzy
 msgid "&Browse..."
 msgstr "&Bladeren..."
 
-#: backgnd.cpp:368
+#: backgnd.cpp:369
 msgid "Arrangement:"
 msgstr ""
 
-#: backgnd.cpp:375
+#: backgnd.cpp:376
 #, fuzzy
 msgid "Tiled"
 msgstr "Naast elkaar"
 
-#: backgnd.cpp:376
+#: backgnd.cpp:377
 msgid "Mirrored"
 msgstr ""
 
-#: backgnd.cpp:377
+#: backgnd.cpp:378
 #, fuzzy
 msgid "Center Tiled"
 msgstr "Ge&centreerd"
 
-#: backgnd.cpp:378
+#: backgnd.cpp:379
 #, fuzzy
 msgid "Centred"
 msgstr "Ge&centreerd"
 
-#: backgnd.cpp:379
+#: backgnd.cpp:380
 #, fuzzy
 msgid "Centred Brick"
 msgstr "Ge&centreerd"
 
-#: backgnd.cpp:380
+#: backgnd.cpp:381
 #, fuzzy
 msgid "Centred Warp"
 msgstr "Ge&centreerd"
 
-#: backgnd.cpp:381
+#: backgnd.cpp:382
 #, fuzzy
 msgid "Centred Maxpect"
 msgstr "Ge&centreerd"
 
-#: backgnd.cpp:382
+#: backgnd.cpp:383
 msgid "Symmetrical Tiled"
 msgstr ""
 
-#: backgnd.cpp:383
+#: backgnd.cpp:384
 msgid "Symmetrical Mirrored"
 msgstr ""
 
-#: backgnd.cpp:384
+#: backgnd.cpp:385
 #, fuzzy
 msgid "Scaled"
 msgstr "&Vergroot"
 
-#: backgnd.cpp:399
+#: backgnd.cpp:400
 msgid "Ra&ndom"
 msgstr ""
 
-#: backgnd.cpp:408
+#: backgnd.cpp:409
 #, fuzzy
 msgid "Setu&p..."
 msgstr "Instellingen..."
 
-#: backgnd.cpp:418
+#: backgnd.cpp:419
 msgid "&Dock into the panel"
 msgstr ""
 
-#: backgnd.cpp:443
+#: backgnd.cpp:444
 msgid "Cache size (kB):"
 msgstr ""
 
-#: backgnd.cpp:1339
+#: backgnd.cpp:1345
 msgid "Desktop names"
 msgstr "Buroblad namen"
 
-#: backgnd.cpp:1384
+#: backgnd.cpp:1390
 #, fuzzy
 msgid "File error"
 msgstr "Naam fout"
 
-#: backgnd.cpp:1385
+#: backgnd.cpp:1391
 msgid "Can't load image file"
 msgstr ""
 
-#: backgnd.cpp:1408 backgnd.cpp:1881
+#: backgnd.cpp:1414 backgnd.cpp:1887
 msgid "Unsupported URL"
 msgstr ""
 
-#: backgnd.cpp:1409 backgnd.cpp:1882
+#: backgnd.cpp:1415 backgnd.cpp:1888
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 
-#: backgnd.cpp:1441
+#: backgnd.cpp:1447
 #, fuzzy
 msgid "Two color backgrounds"
 msgstr "Twee kleuren achtergrond installing"
 
-#: backgnd.cpp:1478
+#: backgnd.cpp:1484
 #, fuzzy
 msgid "Blend colors from &top to bottom"
 msgstr "&Meng kleuren van rechts naar links"
 
-#: backgnd.cpp:1484
+#: backgnd.cpp:1490
 #, fuzzy
 msgid "Blend colors from &right to left"
 msgstr "&Meng kleuren van rechts naar links"
 
-#: backgnd.cpp:1490
+#: backgnd.cpp:1496
 #, fuzzy
 msgid "Use &pattern"
 msgstr "&Patroon"
 
-#: backgnd.cpp:1517
+#: backgnd.cpp:1523
 msgid "Preview"
 msgstr "Vooruitblik"
 
-#: backgnd.cpp:1528
+#: backgnd.cpp:1534
 #, fuzzy
 msgid "Pattern &name"
 msgstr "Patroon naam"
 
-#: backgnd.cpp:1567
+#: backgnd.cpp:1573
 msgid "Current"
 msgstr "Huidig"
 
-#: backgnd.cpp:1627
+#: backgnd.cpp:1633
 #, fuzzy
 msgid "Filled"
 msgstr "Bestand"
 
-#: backgnd.cpp:1630
+#: backgnd.cpp:1636
 msgid "Fish net"
 msgstr "Visnet"
 
-#: backgnd.cpp:1633
+#: backgnd.cpp:1639
 msgid "Triangles"
 msgstr "Driehoeken"
 
-#: backgnd.cpp:1636
+#: backgnd.cpp:1642
 msgid "Flowers"
 msgstr "Bloemen"
 
-#: backgnd.cpp:1639
+#: backgnd.cpp:1645
 msgid "Rattan"
 msgstr "Rotan"
 
-#: backgnd.cpp:1642
+#: backgnd.cpp:1648
 msgid "Cobbled Pavement"
 msgstr "Kinderkopjes"
 
-#: backgnd.cpp:1708
+#: backgnd.cpp:1714
 msgid "Random mode setup"
 msgstr ""
 
-#: backgnd.cpp:1714
+#: backgnd.cpp:1720
 msgid "Pick files from &directory"
 msgstr ""
 
-#: backgnd.cpp:1728
+#: backgnd.cpp:1734
 #, fuzzy
 msgid "&Browse ..."
 msgstr "&Bladeren..."
 
-#: backgnd.cpp:1749
+#: backgnd.cpp:1755
 msgid "Timer Delay in seconds :"
 msgstr ""
 
-#: backgnd.cpp:1761
+#: backgnd.cpp:1767
 #, fuzzy
 msgid "In &order"
 msgstr "Negeren"
 
-#: backgnd.cpp:1778
+#: backgnd.cpp:1784
 #, fuzzy
 msgid "Desktops :"
 msgstr "Buroblad"
 
-#: backgnd.cpp:1817
+#: backgnd.cpp:1823
 #, fuzzy
 msgid "&Add"
 msgstr "&Voeg toe ..."
 
-#: backgnd.cpp:1989
+#: backgnd.cpp:1995
 #, fuzzy
 msgid "Directory error"
 msgstr "Naam fout"
 
-#: backgnd.cpp:1990
+#: backgnd.cpp:1996
 msgid "Selected directory doesn't exists"
 msgstr ""
 

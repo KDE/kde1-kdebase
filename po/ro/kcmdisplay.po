@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-03-21 01:19+0100\n"
+"POT-Creation-Date: 1999-04-20 01:17+0200\n"
 "PO-Revision-Date: Sat Feb 27 1999 19:52:02+0200\n"
 "Last-Translator: Paul Ionescu <ipaul@romsys.ro>\n"
 "Language-Team: Romanian <ro@li.org>\n"
@@ -16,216 +16,216 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KTranslator v 0.4.0\n"
 
-#: backgnd.cpp:54
+#: backgnd.cpp:55
 msgid "Enter new desktop name"
 msgstr "Introduceþi noul nume al ecranului"
 
-#: backgnd.cpp:110 backgnd.cpp:163
+#: backgnd.cpp:111 backgnd.cpp:164
 msgid "Desktop"
 msgstr "Ecran"
 
-#: backgnd.cpp:185
+#: backgnd.cpp:186
 msgid "&Rename ..."
 msgstr "&Redenumeºte"
 
-#: backgnd.cpp:196
+#: backgnd.cpp:197
 msgid "&Common Background"
 msgstr "&Fundal comun"
 
-#: backgnd.cpp:224 colorscm.cpp:82
+#: backgnd.cpp:225 colorscm.cpp:82
 msgid "Colors"
 msgstr "Culori"
 
-#: backgnd.cpp:251
+#: backgnd.cpp:252
 msgid "&One Color"
 msgstr "&O culoare"
 
-#: backgnd.cpp:268
+#: backgnd.cpp:269
 msgid "&Two Color"
 msgstr "&Douã culori"
 
-#: backgnd.cpp:287
+#: backgnd.cpp:288
 msgid "Set&up ..."
 msgstr "Setã&ri ..."
 
-#: backgnd.cpp:296
+#: backgnd.cpp:297
 msgid "Wallpaper"
 msgstr "Imagine de fundal"
 
-#: backgnd.cpp:327 backgnd.cpp:1210 backgnd.cpp:1372 backgnd.cpp:1911
+#: backgnd.cpp:328 backgnd.cpp:1213 backgnd.cpp:1378 backgnd.cpp:1917
 msgid "No wallpaper"
 msgstr "Fãrã fundal"
 
-#: backgnd.cpp:360
+#: backgnd.cpp:361
 msgid "&Browse..."
 msgstr "&Cautã..."
 
-#: backgnd.cpp:368
+#: backgnd.cpp:369
 msgid "Arrangement:"
 msgstr "Aranjament:"
 
-#: backgnd.cpp:375
+#: backgnd.cpp:376
 msgid "Tiled"
 msgstr "Lipite"
 
-#: backgnd.cpp:376
+#: backgnd.cpp:377
 msgid "Mirrored"
 msgstr "În oglindã"
 
-#: backgnd.cpp:377
+#: backgnd.cpp:378
 msgid "Center Tiled"
 msgstr "Lipite din mijloc"
 
-#: backgnd.cpp:378
+#: backgnd.cpp:379
 msgid "Centred"
 msgstr "Centratã"
 
-#: backgnd.cpp:379
+#: backgnd.cpp:380
 msgid "Centred Brick"
 msgstr "Centratã pe zid"
 
-#: backgnd.cpp:380
+#: backgnd.cpp:381
 msgid "Centred Warp"
 msgstr "Centratã pe stea"
 
-#: backgnd.cpp:381
+#: backgnd.cpp:382
 msgid "Centred Maxpect"
 msgstr "Centratã Maxpect"
 
-#: backgnd.cpp:382
+#: backgnd.cpp:383
 msgid "Symmetrical Tiled"
 msgstr "Lipite simetric"
 
-#: backgnd.cpp:383
+#: backgnd.cpp:384
 msgid "Symmetrical Mirrored"
 msgstr "În oglindã simetric"
 
-#: backgnd.cpp:384
+#: backgnd.cpp:385
 msgid "Scaled"
 msgstr "Scalatã"
 
-#: backgnd.cpp:399
+#: backgnd.cpp:400
 msgid "Ra&ndom"
 msgstr "&Aleatoare"
 
-#: backgnd.cpp:408
+#: backgnd.cpp:409
 msgid "Setu&p..."
 msgstr "&Setare..."
 
-#: backgnd.cpp:418
+#: backgnd.cpp:419
 msgid "&Dock into the panel"
 msgstr "Introduce în panou"
 
-#: backgnd.cpp:443
+#: backgnd.cpp:444
 msgid "Cache size (kB):"
 msgstr "Marime cache (kB):"
 
-#: backgnd.cpp:1339
+#: backgnd.cpp:1345
 msgid "Desktop names"
 msgstr "Numele ecranului"
 
-#: backgnd.cpp:1384
+#: backgnd.cpp:1390
 msgid "File error"
 msgstr "Eroare de fiºier"
 
-#: backgnd.cpp:1385
+#: backgnd.cpp:1391
 msgid "Can't load image file"
 msgstr "Nu pot încãrca fiºierul"
 
-#: backgnd.cpp:1408 backgnd.cpp:1881
+#: backgnd.cpp:1414 backgnd.cpp:1887
 msgid "Unsupported URL"
 msgstr "URL neimplementat"
 
-#: backgnd.cpp:1409 backgnd.cpp:1882
+#: backgnd.cpp:1415 backgnd.cpp:1888
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr "Acest tip de URL este nesuportat în prezent "
 
-#: backgnd.cpp:1441
+#: backgnd.cpp:1447
 msgid "Two color backgrounds"
 msgstr "Fundal în douã culori"
 
-#: backgnd.cpp:1478
+#: backgnd.cpp:1484
 msgid "Blend colors from &top to bottom"
 msgstr "Mixeazã culorile de &sus în jos"
 
-#: backgnd.cpp:1484
+#: backgnd.cpp:1490
 msgid "Blend colors from &right to left"
 msgstr "Mixeazã culorile de la &dreapta la stânga"
 
-#: backgnd.cpp:1490
+#: backgnd.cpp:1496
 msgid "Use &pattern"
 msgstr "Cu &model"
 
-#: backgnd.cpp:1517
+#: backgnd.cpp:1523
 msgid "Preview"
 msgstr "Mostrã"
 
-#: backgnd.cpp:1528
+#: backgnd.cpp:1534
 msgid "Pattern &name"
 msgstr "&Nume model"
 
-#: backgnd.cpp:1567
+#: backgnd.cpp:1573
 msgid "Current"
 msgstr "Curent"
 
-#: backgnd.cpp:1627
+#: backgnd.cpp:1633
 msgid "Filled"
 msgstr "Plin"
 
-#: backgnd.cpp:1630
+#: backgnd.cpp:1636
 msgid "Fish net"
 msgstr "Plasã de pescuit"
 
-#: backgnd.cpp:1633
+#: backgnd.cpp:1639
 msgid "Triangles"
 msgstr "Triunghiuri"
 
-#: backgnd.cpp:1636
+#: backgnd.cpp:1642
 msgid "Flowers"
 msgstr "Floricele"
 
-#: backgnd.cpp:1639
+#: backgnd.cpp:1645
 msgid "Rattan"
 msgstr "Plasã de iutã"
 
-#: backgnd.cpp:1642
+#: backgnd.cpp:1648
 msgid "Cobbled Pavement"
 msgstr "Pavaj"
 
-#: backgnd.cpp:1708
+#: backgnd.cpp:1714
 msgid "Random mode setup"
 msgstr "Setare pentru modul aleator"
 
-#: backgnd.cpp:1714
+#: backgnd.cpp:1720
 msgid "Pick files from &directory"
 msgstr "Alege fiºiere din &director"
 
-#: backgnd.cpp:1728
+#: backgnd.cpp:1734
 msgid "&Browse ..."
 msgstr "&Rãsfoire"
 
-#: backgnd.cpp:1749
+#: backgnd.cpp:1755
 msgid "Timer Delay in seconds :"
 msgstr "Duratã (în secunde):"
 
-#: backgnd.cpp:1761
+#: backgnd.cpp:1767
 msgid "In &order"
 msgstr "În &ordine"
 
-#: backgnd.cpp:1778
+#: backgnd.cpp:1784
 msgid "Desktops :"
 msgstr "Ecrane:"
 
-#: backgnd.cpp:1817
+#: backgnd.cpp:1823
 msgid "&Add"
 msgstr "&Adaugã"
 
-#: backgnd.cpp:1989
+#: backgnd.cpp:1995
 msgid "Directory error"
 msgstr "Eroare în director"
 
-#: backgnd.cpp:1990
+#: backgnd.cpp:1996
 msgid "Selected directory doesn't exists"
 msgstr "Directorul selectat nu existã"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
-"POT-Creation-Date: 1999-01-30 01:12+0100\n"
+"POT-Creation-Date: 1999-03-26 01:17+0100\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -114,10 +114,10 @@ msgstr "ERRO: Modelo não existe '%s'"
 msgid "Could not create folder"
 msgstr "Não consegui criar a pasta"
 
-#: krootwm.C:922
+#: krootwm.C:938
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:926
+#: krootwm.C:942
 msgid "Usage:"
 msgstr "Utilização:"

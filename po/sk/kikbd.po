@@ -79,6 +79,7 @@ msgid "KeyMap: can't allocate memory"
 msgstr "KeyMap: nemô¾em alokova» pamä»"
 
 #: keymap.cpp:233
+#, c-format
 msgid ""
 "Can't find symbol \"%s\".\n"
 "Maybe your default X codes do not match.\n"
@@ -91,14 +92,17 @@ msgstr ""
 "konfiguraèného programu."
 
 #: keymap.cpp:238
+#, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
 msgstr "KeyMap: nemô¾em nájs» symbol \"%s\"."
 
 #: keymap.cpp:246
+#, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
 msgstr "KeyMap: nerozumiem kódu klávesy \"%s\"."
 
 #: keymap.cpp:252
+#, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
 msgstr "KeyMap: kód klávesy \"%s\" je mimo rozsahu."
 
@@ -378,7 +382,8 @@ msgstr "Kláves(y) na prepínanie medzi klávesovými mapami"
 
 #: widgets.cpp:425
 msgid "Key for activating Alternate symbols in current keyboard map"
-msgstr "Kláves na aktiváciu alternatívnych symbolov v aktuálnej klávesovej mape"
+msgstr ""
+"Kláves na aktiváciu alternatívnych symbolov v aktuálnej klávesovej mape"
 
 #: widgets.cpp:438
 msgid "&Beep"
@@ -408,7 +413,8 @@ msgstr "&Emulova» CapsLock"
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
-msgstr "Emulova» XServer Caps Lock. Potrebné pre niektoré jazyky v niektorých "
+msgstr ""
+"Emulova» XServer Caps Lock. Potrebné pre niektoré jazyky v niektorých "
 "jazykoch"
 
 #: widgets.cpp:482
@@ -442,12 +448,15 @@ msgstr "©tandardné správanie sa. Kláves. mapy aktívne pre v¹etky okná"
 #: widgets.cpp:509
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Roz¹írené správanie sa. Kláves. mapy sa ukladajú pre ka¾dé okno osobitne"
+msgstr ""
+"Roz¹írené správanie sa. Kláves. mapy sa ukladajú pre ka¾dé okno osobitne"
 
 #: widgets.cpp:513
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "©peciálne správanie sa. Kláves. mapy sa ukladajú pre ka¾dú triedu okien osobitne"
+msgstr ""
+"©peciálne správanie sa. Kláves. mapy sa ukladajú pre ka¾dú triedu okien "
+"osobitne"
 
 #: widgets.cpp:561
 msgid "Button Colors"
