@@ -81,7 +81,7 @@ LogInfo(
     }
 #else
 #  ifdef USE_SYSLOG
-    fsyslog (LOG_INFO, fmt, arg1, arg2, arg3, arg4, arg5, arg6);
+    syslog (LOG_INFO, fmt, arg1, arg2, arg3, arg4, arg5, arg6);
 #  else
     fprintf (stderr, fmt, arg1, arg2, arg3, arg4, arg5, arg6);
 #  endif
@@ -157,7 +157,7 @@ LogPanic (
     }
 #else
 #  ifdef USE_SYSLOG
-    fsyslog (LOG_EMERG, fmt, arg1, arg2, arg3, arg4, arg5, arg6);
+    syslog (LOG_EMERG, fmt, arg1, arg2, arg3, arg4, arg5, arg6);
 #  else
     fprintf (fmt, arg1, arg2, arg3, arg4, arg5, arg6);
 #  endif
