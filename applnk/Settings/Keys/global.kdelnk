@@ -5,3 +5,4 @@ Type=Application
 Comment=Configuration of global keybindings
 Name=Global Keys
 SwallowTitle=Key binding settings
+Init=kcmkeys -init
