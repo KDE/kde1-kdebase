@@ -34,9 +34,11 @@ KCMDISPLAY &  KBGNDWM :
 		Center Tiled, Centered Brick, Centered Warp, Centered Maxpect
 
 6. Use drag and drop from kfm on the monitor widget in settings dialog to
-   quickly change wallpaper
+   quickly change wallpaper in the monitor
 
-7. Images larger than desktop are automatically scaled.
+7. Use drag and drop from kfm on the docked widget to change wallpaper
+
+8. Images larger than desktop are automatically scaled.
 
 
 -----------------------------

@@ -58,26 +58,7 @@ kresourceman.cpp:kresourceman.moc
 kresourceman.moc: kresourceman.h
 	$(MOC) kresourceman.h -o kresourceman.moc
 
-icon_DATA = background.xpm colors.xpm
-icondir = $(kde_icondir)
+EXTRA_DIST = README
 
-pics_DATA = monitor.xpm logo.xpm
-picsdir = $(kde_datadir)/kdisplay/pics
-
-install-data-local: 
-	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-background.xpm $(kde_minidir)/background.xpm
-	$(INSTALL_DATA) mini-colors.xpm $(kde_minidir)/colors.xpm
-	$(INSTALL_DATA) mini-screensaver.xpm $(kde_minidir)/screensaver.xpm
-	$(INSTALL_DATA) mini-style.xpm $(kde_minidir)/style.xpm
-
-EXTRA_DIST = mini-background.xpm mini-colors.xpm mini-screensaver.xpm mini-style.xpm monitor.xpm background.xpm palette.xpm logo.xpm NEWS
-
-uninstall-local:
-	rm -f $(kde_minidir)/background.xpm
-	rm -f $(kde_minidir)/colors.xpm
-	rm -f $(kde_minidir)/screensaver.xpm
-	rm -f $(kde_minidir)/style.xpm
-	
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x ../../../kdelibs/po/kde.pot $(kcmdisplay_SOURCES) && mv messages.po ../../po/kdisplay.pot
