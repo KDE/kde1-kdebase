@@ -1,31 +1,58 @@
-IMPORTANT: most applications need KDEDIR as the directory where KDE is 
-installed. Please set this in your login file.
+In this file:
 
-If configure claims about missing Qt, have a look at http://www.troll.no
-to get a copy of qt-1.3 or higher. 
+* Common Mistakes
+* Debugging
+* Upgrading
+* Removal/Uninstallation
+* More Info
 
-You can use --enable-debug, if you want to have debug code in your
-KDE apps and libs. I recommend to do this, since this is alpha soft-
-ware and you better have the possibility to check, what was wrong.
+Common Mistakes
+---------------
+
+IMPORTANT: most applications need KDEDIR as the directory where KDE is
+installed.  Please set this in your login file.
+
+If you miss XPM support, it may be, that configure has no idea where your
+xpm librariess are.  If so, set XPM_INCLUDE and XPM_LDFLAGS to the paths,
+where configure should look for xpm.  But if you haven't installed xpm or
+it didn't come with your system, that's no problem.  You will only miss a
+few screensavers.  The same thing applies with OPENGL support.  Here you
+have to set GL_INCLUDE and GL_LDFLAGS.
+
+If configure claims Qt cannot be found, have a look at http://www.troll.no
+to get a copy of Qt, version 1.3 or newer.
+
+Debugging
+---------
+
+You can use --enable-debug with the configure script, if you want to have
+debug code in your KDE apps and libs.  I recommend to do this, since this
+is alpha software and this makes debugging things a whole lot easier.
+
+Upgrading
+---------
 
 If you have an older kdebase installed, just copy all your .k*rc files
 from $HOME to $HOME/.kde/config. In the other case, default values are
 used for most apps.
 
+Removal/Uninstallation
+----------------------
+
 You can use 'make uninstall' if you want to remove the kde from the dirs.
-This feature has not been tested completely. 
+This feature has not been tested completely.
 
-Have a look at VERSIONS, if you want to know, what versions of apps are
-included.
+More Info
+---------
 
-If you miss XPM support, it may be, that configure has no idea, where
-your xpm libs are. If so, set XPM_INCLUDE and XPM_LDFLAGS to the paths,
-where configure should look for xpm. But if you haven't xpm, it's no
-problem. You will only miss some screensavers. The same with OPENGL
-support. Here you have to set GL_INCLUDE and GL_LDFLAGS.
+Have a look at the individual subdirectories, if you want to know, what
+versions of apps are included.
 
 Please direct any bug reports to our bug list maintainer 
-David McCanney <9504506m@student.gla.ac.uk>. 
+David McCanney <9504506m@student.gla.ac.uk>.  Or visit
+http://buglist.kde.org.
+
 If you have problems compiling and installing this package, contact
-me (coolo@kde.org). 
-Discussions should go to the KDE mailing list (kde@kde.org).
+me at coolo@kde.org.
+
+Genearl KDE discussions should go to the KDE mailing list (kde@kde.org).
