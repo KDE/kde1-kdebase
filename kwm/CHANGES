@@ -16,6 +16,8 @@ In 0.10:
        - new keybindings Control-F[1..8] for virtual desktop switching
        - new option "ControlTab=[on,off]" to switch off the Control-Tab
          shortcut.
+       - fixed the "last window is iconified and deficonified"-focus-
+         follows-mouse-bug
 
   patchlevel 13:
        - new decoration style (tiny decoration). Useful for floating

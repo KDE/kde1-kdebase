@@ -1010,6 +1010,9 @@ void Manager::noFocus(){
     activateClient(c, False);
     return;
   }
+
+  if (current())
+    current()->setactive(False);
   
   if (w == 0) {
     mask = CWOverrideRedirect;
