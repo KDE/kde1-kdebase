@@ -1796,13 +1796,13 @@ bool MyApp::x11EventFilter( XEvent * ev){
     break;
   case FocusOut:
       {
-	  // experimental code for multi screen displays. Breaks desktop swtiches.
- 	  Client *c = manager->getClient(ev->xfocus.window);
- 	  if (ev->xfocus.mode == NotifyNormal && c && c == manager->current()){
- 	      c->setactive(False); 
- 	  }
+// 	  // experimental code for multi screen displays. Breaks desktop swtiches.
+//  	  Client *c = manager->getClient(ev->xfocus.window);
+//  	  if (ev->xfocus.mode == NotifyNormal && c && c == manager->current()){
+//  	      c->setactive(False);
+//  	  }
       }
-      
+
     break;
   case MappingNotify:
     break;
