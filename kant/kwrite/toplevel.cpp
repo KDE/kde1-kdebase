@@ -246,7 +246,7 @@ void TopLevel::setupMenuBar() {
 */
 
   help = kapp->getHelpMenu(true,
-    "KWrite 0.98\n\nCopyright 1998\nJochen Wilhelmy\ndigisnap@cs.tu-berlin.de");
+    i18n("KWrite 0.98\n\nCopyright 1998\nJochen Wilhelmy\ndigisnap@cs.tu-berlin.de"));
 
 //  help->insertItem (i18n("&Help..."),this,SLOT(helpSelected()));
 //  help->insertSeparator();
