@@ -1,6 +1,7 @@
 In this file:
 
 * Common Mistakes
+* Configuring
 * Debugging
 * Upgrading
 * Removal/Uninstallation
@@ -21,6 +22,76 @@ support.  Here you have to set GL_INCLUDE and GL_LDFLAGS.
 
 If configure claims Qt cannot be found, have a look at http://www.troll.no
 to get a copy of Qt, version 1.3 or newer.
+
+Configuring
+-----------
+
+kdebase's configure script supports all the standard GNU autoconf options
+(you can have the various options listed for you by specifying the --help
+switch), plus the following options are also supported.  Note:  the *non*
+default variation is listed, so if you see --enable-debug, the default is
+--disable debug.
+
+`--x-includes=DIR'
+     X include files are in DIR
+
+`--x-libraries=DIR'
+     X library files are in DIR
+
+`--enable-debug'
+     creates debugging code [default=no]
+
+`--enable-strict'
+     Add strict[er] compiler options (may not work!) to the CFLAGS and
+     CXXFLAGS.  This is GNU CC specific for the time being.
+
+`--with-gnu-ld'
+     assume the C compiler uses GNU ld [default=no]
+
+`--disable-libtool-lock'
+     force libtool not to do file locking
+
+`--disable-nls'
+     do not use Native Language Support
+
+`--with-qt-dir'
+     where the root of qt is installed 
+
+`--with-qt-includes=DIR'
+     Look for the Qt header files in DIR.
+
+`--with-qt-libraries=DIR'
+     Look for the Qt library in DIR.
+
+`--with-extra-includes=DIR'
+     adds non standard include paths
+
+`--with-extra-libs=DIR'
+     adds non standard library paths
+
+`--disable-path-check'
+     don't try to find out, where to install
+ 
+`--with-install-root=DIR'
+     the root, where to install to [default=/]
+
+`--disable-rpath'
+     do not use the rpath feature of ld
+
+`--with-xdmdir'
+     If the xdm config dir can't be found automaticly
+
+`--with-pam[=ARG]'
+     enable support for PAM: ARG=[yes|no|service name]
+
+`--with-shadow'
+    If you want shadow password support 
+
+`--without-gl'
+    disable 3D GL modes
+
+`--without-xpm'
+    disable color pixmap XPM tests
 
 Debugging
 ---------
