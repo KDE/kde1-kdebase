@@ -9,7 +9,7 @@ GMOFILES = kbgndwm.gmo kcmbell.gmo kcmdisplay.gmo kcminfo.gmo kcminput.gmo \
 
 POFILES = $(GMOFILES:.gmo=.po)
 
-LANG = sk
+LANG = et
 
 localedir = $(kde_locale)
 
