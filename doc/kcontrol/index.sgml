@@ -36,17 +36,41 @@ help button.
 
 <itemize>
 <item> <htmlurl url="kcmbell/bell-1.html" name="Bell Configuration">
+
 <item> <htmlurl url="kcminfo/info-1.html" name="Memory Information">
 <item> <htmlurl url="kcminfo/info-2.html" name="Processor Information">
+<item> <htmlurl url="kcminfo/info-3.html" name="IRQ Information">
+<item> <htmlurl url="kcminfo/info-4.html" name="DMA Channel Information">
+<item> <htmlurl url="kcminfo/info-5.html" name="I/O Port Information">
+<item> <htmlurl url="kcminfo/info-6.html" name="PCI Information">
+<item> <htmlurl url="kcminfo/info-7.html" name="Soundcard Information">
+<item> <htmlurl url="kcminfo/info-8.html" name="Device Information">
+<item> <htmlurl url="kcminfo/info-9.html" name="SCSI Information">
+<item> <htmlurl url="kcminfo/info-10.html" name="Partition Information">
+<item> <htmlurl url="kcminfo/info-10.html" name="X-server Information">
+<item> <htmlurl url="kcmsamba/smbstatus-1.html" name="The Samba Status Monitor">
 <item> <htmlurl url="kcminput/input-1.html" name="Keyboard Configuration">
 <item> <htmlurl url="kcminput/input-2.html" name="Mouse Configuration">
+
 <item> <htmlurl url="kcmkeys/keys-1.html" name="Configuration of Key Bindings (Shortcut keys)">
-<item> <htmlurl url="kcmkeys/keys-2.html" name="Configuration of the Standard Key Bindings">
+
 <item> <htmlurl url="kcmkwm/kwm-1.html" name="Titlebar Button Configuration">
 <item> <htmlurl url="kcmkwm/kwm-2.html" name="Titlebar Configuration">
 <item> <htmlurl url="kcmkwm/kwm-3.html" name="Window Configuration">
+
+<item> <htmlurl url="kcmkfm/kfm-1.html" name="File Manager Configuration: Fonts">
+<item> <htmlurl url="kcmkfm/kfm-2.html" name="File Manager Configuration: Color">
+<item> <htmlurl url="kcmkfm/kfm-3.html" name="File Manager Configuration: Other settings">
+<item> <htmlurl url="kcmkfm/kfm-4.html" name="Web Browser Configuration: Proxy Servers">
+<item> <htmlurl url="kcmkfm/kfm-5.html" name="Web Browser Configuration: HTTP Settings">
+<item> <htmlurl url="kcmkfm/kfm-6.html" name="Web Browser Configuration: User Agent String">
+<item> <htmlurl url="kcmkfm/kfm-7.html" name="Web Browser Configuration: Cookies">
+<item> <htmlurl url="kcmkfm/kfm-8.html" name="Configuration of Placement of  Desktop Icons">
+
+
+
 <item> <htmlurl url="kcmlocale/locale-1.html" name="Language Setting">
-<item> <htmlurl url="kcmsamba/smbstatus-1.html" name="The Samba Status Monitor">
+
 <item> <htmlurl url="kcmsyssound/syssound.html" name="System Sound Selection">
 <item> <htmlurl url="kcmkpanel/kpanel.html" name="Panel and Taskbar Configuration">
 <item> <htmlurl url="kcmdisplay/kdisplay-3.html" name="Background Configuration">
@@ -56,3 +80,10 @@ help button.
 </itemize>
 
 </article>
+
+
+
+
+
+
+
