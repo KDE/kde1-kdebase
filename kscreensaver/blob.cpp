@@ -609,3 +609,11 @@ const char *getScreenSaverName()
 	return glocale->translate("Blobs");
 }
 
+
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+        if ( saver )
+        {
+                saver->expose( x, y, width, height );
+        }
+} 

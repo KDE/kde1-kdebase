@@ -36,6 +36,8 @@ public:
 	kSlideScreenSaver( Drawable drawable );
 	virtual ~kSlideScreenSaver();
 
+	virtual void expose(int x, int y, int width, int height);
+
 protected slots:
 	void slotTimeout();
 
@@ -43,8 +45,9 @@ private:
 	void readSettings();
 
 protected:
-	QTimer		timer;
+	QTimer  timer;
 	int		colorContext;
+    bool    restart;
 
 public:
 };

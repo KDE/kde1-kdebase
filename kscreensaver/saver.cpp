@@ -41,6 +41,12 @@ kScreenSaver::~kScreenSaver()
 	XFreeGC( qt_xdisplay(), gc );
 }
 
+void kScreenSaver::expose( int x, int y, int width, int height )
+{
+    XSetForeground(qt_xdisplay(), gc, BlackPixel(qt_xdisplay(), qt_xscreen()));
+    XFillRectangle(qt_xdisplay(), d, gc, x, y, width, height);                  
+}
+
 //-----------------------------------------------------------------------------
 
 KPasswordDlg::KPasswordDlg( QWidget *parent, bool s ) : QWidget( parent )

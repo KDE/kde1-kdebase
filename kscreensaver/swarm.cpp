@@ -257,6 +257,14 @@ const char *getScreenSaverName()
 	return glocale->translate("Swarm");
 }
 
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+        if ( saver )
+        {
+                saver->expose( x, y, width, height );
+        }
+} 
+
 //-----------------------------------------------------------------------------
 
 kSwarmSaver::kSwarmSaver( Drawable drawable ) : kScreenSaver( drawable )

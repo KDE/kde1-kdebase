@@ -206,6 +206,14 @@ const char *getScreenSaverName()
 	return glocale->translate("Forest");
 }
 
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+        if ( saver )
+        {
+                saver->expose( x, y, width, height );
+        }
+} 
+
 //-----------------------------------------------------------------------------
 
 kForestSaver::kForestSaver( Drawable drawable ) : kScreenSaver( drawable )

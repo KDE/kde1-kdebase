@@ -241,6 +241,14 @@ const char *getScreenSaverName()
 	return glocale->translate("Lissie");
 }
 
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+        if ( saver )
+        {
+                saver->expose( x, y, width, height );
+        }
+} 
+
 //-----------------------------------------------------------------------------
 
 kLissieSaver::kLissieSaver( Drawable drawable ) : kScreenSaver( drawable )

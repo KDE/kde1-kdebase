@@ -718,6 +718,14 @@ const char *getScreenSaverName()
 	return glocale->translate("Attraction");
 }
 
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+        if ( saver )
+        {
+                saver->expose( x, y, width, height );
+        }
+} 
+
 //----------------------------------------------------------------------------
 
 kAttractionSaver::kAttractionSaver( Drawable drawable ) : kScreenSaver( drawable )

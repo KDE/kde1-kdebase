@@ -441,6 +441,14 @@ const char *getScreenSaverName()
 	return glocale->translate("Rock");
 }
 
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+	if ( saver )
+	{
+		saver->expose( x, y, width, height );
+	}
+}
+
 kRockSaver::kRockSaver( Drawable drawable ) : kScreenSaver( drawable )
 {
 	readSettings();

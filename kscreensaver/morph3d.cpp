@@ -940,6 +940,14 @@ const char *getScreenSaverName()
 	return glocale->translate("Morph3D (GL)");
 }
 
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+        if ( saver )
+        {
+                saver->expose( x, y, width, height );
+        }
+} 
+
 //-----------------------------------------------------------------------------
 
 kMorph3dSaver::kMorph3dSaver( Drawable drawable ) : kScreenSaver( drawable )

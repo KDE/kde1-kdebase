@@ -17,7 +17,7 @@ class kRockSaver : public kScreenSaver
 {
 	Q_OBJECT
 public:
-	kRockSaver( Drawable drawable );
+	kRockSaver( Drawable d );
 	virtual ~kRockSaver();
 
 	void setSpeed( int spd );

@@ -59,6 +59,8 @@ public:
 	KScienceSaver(Drawable drawable, bool setup=false, bool gP=false);
 	virtual ~KScienceSaver();
 
+    virtual void expose ( int x, int y, int width, int height );
+
 	void do_refresh( const QRect & rect );
 	void setMode        ( int mode );
 	void setMoveX       ( signed int s );

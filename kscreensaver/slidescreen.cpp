@@ -56,19 +56,18 @@ static int grid_w, grid_h;
 static int ssdelay, ssdelay2;
 static GC gc;
 static int max_width, max_height;
+static unsigned long fg, bg;
+static int border;
 
 static XImage *save;
+
+void draw_slide(Display *dpy, Window window);
 
 static void
 init_slide (Display *dpy, Window window, kSlideScreenSaver *kss)
 {
   int i;
-  XGCValues gcv;
   XWindowAttributes xgwa;
-  long gcflags;
-  int border;
-  unsigned long fg, bg;
-  Drawable d;
   Colormap cmap;
   Visual *visual;
 
@@ -188,6 +187,15 @@ init_slide (Display *dpy, Window window, kSlideScreenSaver *kss)
   if (ssdelay2 < 0) ssdelay2 = 0;
   if (pix_inc < 1) pix_inc = 1;
   if (grid_size < 1) grid_size = 1;
+}
+
+void draw_slide(Display *dpy, Window window)
+{
+  XGCValues gcv;
+  XWindowAttributes xgwa;
+  Drawable d;
+  long gcflags;
+  int i;
 
   gcv.foreground = fg;
   gcv.function = GXcopy;
@@ -419,18 +427,28 @@ const char *getScreenSaverName()
 	return glocale->translate("SlideScreen");
 }
 
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+        if ( saver )
+        {
+                saver->expose( x, y, width, height );
+        }
+} 
+
 //----------------------------------------------------------------------------
 
 kSlideScreenSaver::kSlideScreenSaver( Drawable drawable ) : kScreenSaver( drawable )
 {
+    restart = true;
+
 	readSettings();
 
 	colorContext = QColor::enterAllocContext();
 
-	initXLock( this->gc );	// needed by all xlock ports
-        init_slide (dsp, d, this);
+    initXLock( this->gc );	// needed by all xlock ports
+    init_slide (dsp, d, this);
 
-	timer.start( 10, TRUE );		// single shot timer makes smoother animation
+	timer.start( 200, TRUE );		// single shot timer makes smoother animation
 	connect( &timer, SIGNAL( timeout() ), SLOT( slotTimeout() ) );
 }
 
@@ -442,6 +460,14 @@ kSlideScreenSaver::~kSlideScreenSaver()
 	QColor::destroyAllocContext( colorContext );
 }
 
+void kSlideScreenSaver::expose(int x, int y, int width, int height)
+{
+    // This saver needs a complete restart when an area is exposed
+    restart = true;
+    timer.stop();
+    timer.start( 200, TRUE );
+}
+
 void kSlideScreenSaver::readSettings()
 {
 	KConfig *config = KApplication::getKApplication()->getConfig();
@@ -450,7 +476,12 @@ void kSlideScreenSaver::readSettings()
 
 void kSlideScreenSaver::slotTimeout()
 {
-        slide1 (dsp, d);
+    if ( restart )
+    {
+        draw_slide(qt_xdisplay(), d);
+        restart = false;
+    }
+    slide1 (dsp, d);
 	timer.start( ssdelay2/1000, TRUE );
 }
 

@@ -1192,4 +1192,12 @@ const char *getScreenSaverName ()
 	return glocale->translate("Black Screen of Death");
 }
 
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+        if ( saver )
+        {
+                saver->expose( x, y, width, height );
+        }
+} 
+
 #include "bsod.moc"

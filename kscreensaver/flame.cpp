@@ -310,6 +310,14 @@ const char *getScreenSaverName()
 	return glocale->translate("Flame");
 }
 
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+        if ( saver )
+        {
+                saver->expose( x, y, width, height );
+        }
+} 
+
 //-----------------------------------------------------------------------------
 
 kFlameSaver::kFlameSaver( Drawable drawable ) : kScreenSaver( drawable )

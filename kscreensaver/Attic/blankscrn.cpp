@@ -53,6 +53,14 @@ const char *getScreenSaverName()
   return glocale->translate("Blank Screen");
 }
 
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+        if ( saver )
+        {
+                saver->expose( x, y, width, height );
+        }
+} 
+
 //-----------------------------------------------------------------------------
 // dialog to setup screen saver parameters
 //

@@ -26,6 +26,7 @@
 #include <qdialog.h>
 #include <qpushbt.h>
 #include <qbitmap.h>
+#include <qpainter.h>
 
 #include "xautolock.h"
 #include "saver.h"
@@ -40,6 +41,7 @@ extern "C" {
   extern void stopScreenSaver();
   extern int  setupScreenSaver();
   extern const char *getScreenSaverName();
+  extern void exposeScreenSaver( int x, int y, int width, int height );
 }
 
 extern void initPasswd();
@@ -139,8 +141,29 @@ bool ssApp::x11EventFilter( XEvent *event )
 			if ( event->xvisibility.state != VisibilityUnobscured)
 			{
 				if ( !passDlg )
+                {
 					saverWidget->raise();
+                    QApplication::flushX();
+                }
 			}
+		}
+        else if ( event->type == ConfigureNotify )
+        {
+            if ( !passDlg )
+            {
+                saverWidget->raise();
+                QApplication::flushX();
+            }
+        }
+        else if ( event->type == Expose )
+        {
+            if (!passDlg)
+            {
+                exposeScreenSaver( event->xexpose.x,
+                        event->xexpose.y,
+                        event->xexpose.width,
+                        event->xexpose.height );
+            }
 		}
 	}
 
@@ -150,17 +173,23 @@ bool ssApp::x11EventFilter( XEvent *event )
 void ssApp::slotPassOk()
 {
 	passOk = TRUE;
+    passDlg->hide();
+	QApplication::flushX();
 	delete passDlg;
 	passDlg = NULL;
 	qApp->exit_loop();
+	QApplication::flushX();
 }
 
 void ssApp::slotPassCancel()
 {
 	passOk = FALSE;
+    passDlg->hide();
+	QApplication::flushX();
 	delete passDlg;
 	passDlg = NULL;
 	grabInput( saverWidget );
+	QApplication::flushX();
 }
 
 //----------------------------------------------------------------------------
@@ -191,7 +220,7 @@ QWidget *createSaverWindow()
 	QWidget *w;
 
 	// WStyle_Customize sets override_redirect
-	w = new QWidget( NULL, "", WStyle_Customize );
+	w = new QWidget( NULL, "", WStyle_Customize | WStyle_NoBorder );
 
 	/* set NoBackground so that the saver can capture the current
 	 * screen state if neccessary
@@ -200,7 +229,7 @@ QWidget *createSaverWindow()
 
 	XSetWindowAttributes attr;
 	attr.event_mask = KeyPressMask | ButtonPressMask | MotionNotify |
-			 VisibilityChangeMask;
+		 VisibilityChangeMask | ExposureMask; // | StructureNotifyMask;
 	XChangeWindowAttributes(qt_xdisplay(), w->winId(), CWEventMask, &attr);
 
 	QBitmap bm( 1, 1, TRUE );
@@ -433,6 +462,8 @@ int main( int argc, char *argv[] )
 				&xs_prefer_blanking, &xs_allow_exposures );
 		XSetScreenSaver( qt_xdisplay(), 0, xs_interval, xs_prefer_blanking,
 			xs_allow_exposures );
+
+        initAutoLock();
 			
 		while ( 1 )
 		{
@@ -464,6 +495,8 @@ int main( int argc, char *argv[] )
 			if( only1Time ) 
 				break;
 		}
+
+        cleanupAutoLock();
 	}
 	else if ( mode == MODE_TEST )
 	{
@@ -574,8 +607,11 @@ static void cleanup( int id )
 	if ( mode == MODE_INSTALL )
 	{
 		if (id != SIGPIPE)
+        {
 			XSetScreenSaver( qt_xdisplay(), xs_timeout, xs_interval,
 			                 xs_prefer_blanking, xs_allow_exposures );
+            cleanupAutoLock();
+        }
 	}
 	exit(1);
 }

@@ -439,6 +439,14 @@ const char *getScreenSaverName()
 	return glocale->translate("Pyro");
 }
 
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+        if ( saver )
+        {
+                saver->expose( x, y, width, height );
+        }
+} 
+
 //----------------------------------------------------------------------------
 
 kPyroSaver::kPyroSaver( Drawable drawable ) : kScreenSaver( drawable )

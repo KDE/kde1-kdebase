@@ -12,6 +12,7 @@ extern "C" {
   void stopScreenSaver();
   int setupScreenSaver();
   const char *getScreenSaverName();
+  void exposeScreenSaver(int x, int y, int width, int height);
 }
 
 class kScreenSaver : public QObject
@@ -20,6 +21,8 @@ class kScreenSaver : public QObject
 public:
 	kScreenSaver( Drawable drawable );
 	virtual ~kScreenSaver();
+
+	virtual void expose( int x, int y, int width, int height );
 
 protected:
 	Drawable d;
@@ -39,6 +42,8 @@ public:
 	void showStars();
 	int tryPassword();
 	void keyPressed( QKeyEvent * );
+
+    void blank();
 
 signals:
 	void passOk();

@@ -249,7 +249,6 @@ static Void  AddToQueue (Queue queue, Window window)
   queue->tail->next = newq;
 }
 
-
 /*
  *  Function for processing those entries that are old enough
  *  ---------------------------------------------------------
@@ -577,39 +576,30 @@ void forceTimeout()
 	timeoutNow = TRUE;
 }
 
-/*
- *  Main function
- *  -------------
- */
-int waitTimeout( int timeout )
+Queue  windowQueue;
+Window hiddenWin;        /* hidden window    */
+
+void initAutoLock()
 {
   Display*              d;          /* display pointer  */
   Window                r;          /* root window      */
-  Window                win;        /* hidden window    */
   Int                   s;          /* screen index     */
-  Queue                 queue;      /* as it says       */
   XSetWindowAttributes  attribs;    /* for dummy window */
-  int rv;
   int (*oldHandler)(Display *, XErrorEvent *);
-
-  time_limit = timeout;
 
   d = qt_xdisplay();
 
   oldHandler = XSetErrorHandler( catchFalseAlarms );
   XSync (d, 0);
 
-  queue = NewQueue ();
+  windowQueue = NewQueue ();
 
   for (s = -1; ++s < ScreenCount (d); )
   {
-    AddToQueue (queue, r = RootWindowOfScreen (ScreenOfDisplay (d, s)));
+    AddToQueue (windowQueue, r = RootWindowOfScreen (ScreenOfDisplay (d, s)));
     SelectEvents (d, r, True);
   }
 
-  SetTrigger (time_limit);
-  
-  
  /*
   *  Get ourselves a dummy window in order to allow display and/or
   *  session managers etc. to use XKillClient() on us (e.g. xdm when
@@ -620,12 +610,43 @@ int waitTimeout( int timeout )
   *  requires it to be mapped.
   */
   attribs.override_redirect = True;
-  win = XCreateWindow (d, DefaultRootWindow (d), -100, -100, 1, 1, 0,
+  hiddenWin = XCreateWindow (d, DefaultRootWindow (d), -100, -100, 1, 1, 0,
                 CopyFromParent, InputOnly, CopyFromParent, CWOverrideRedirect,
 				&attribs);
 
-  XMapWindow (d, win );
+  XMapWindow (d, hiddenWin );
 
+  XSetErrorHandler( oldHandler );
+}
+
+void cleanupAutoLock()
+{
+  int (*oldHandler)(Display *, XErrorEvent *);
+  oldHandler = XSetErrorHandler( catchFalseAlarms );
+
+  FreeQueue( windowQueue );
+  XDestroyWindow( qt_xdisplay(), hiddenWin );
+  XSetErrorHandler( oldHandler );
+}
+
+
+/*
+ *  Main function
+ *  -------------
+ */
+int waitTimeout( int timeout )
+{
+  Display*              d;          /* display pointer  */
+  int rv;
+  int (*oldHandler)(Display *, XErrorEvent *);
+
+  time_limit = timeout;
+
+  d = qt_xdisplay();
+
+  oldHandler = XSetErrorHandler( catchFalseAlarms );
+
+  SetTrigger (time_limit);
 
  /*
   *  Main event loop.
@@ -640,7 +661,7 @@ int waitTimeout( int timeout )
 		timeoutNow = FALSE;
 		break;
 	}
-    ProcessEvents (d, queue);
+    ProcessEvents (d, windowQueue);
     rv = QueryPointer (d);
 	if ( rv != IGNORE )
 		break;
@@ -663,8 +684,6 @@ int waitTimeout( int timeout )
     sleep (1);
   }
 
-  FreeQueue( queue );
-  XDestroyWindow( d, win );
   XSetErrorHandler( oldHandler );
 
   return rv;

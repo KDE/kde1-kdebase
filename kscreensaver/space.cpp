@@ -491,6 +491,14 @@ const char *getScreenSaverName()
 	return glocale->translate("Space (GL)");
 }
 
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+        if ( saver )
+        {
+                saver->expose( x, y, width, height );
+        }
+} 
+
 //-----------------------------------------------------------------------------
 
 kSpaceSaver::kSpaceSaver( Drawable drawable ) : kScreenSaver( drawable )

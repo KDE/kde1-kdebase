@@ -299,6 +299,14 @@ const char *getScreenSaverName()
   return glocale->translate("Pipes (GL)");
 }
 
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+        if ( saver )
+        {
+                saver->expose( x, y, width, height );
+        }
+} 
+
 // ///////////////////////////////////////////////////////////////////////////
 // GLPipes - quick'n'dirty (tm) remake of a popular screen saver
 // Copyright (c) 1998 by Lars Doelle <lars.doelle@on-line.de>

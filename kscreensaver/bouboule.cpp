@@ -863,6 +863,14 @@ const char *getScreenSaverName()
 	return glocale->translate("Bouboule");
 }
 
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+        if ( saver )
+        {
+                saver->expose( x, y, width, height );
+        }
+} 
+
 //-----------------------------------------------------------------------------
 
 kBoubouleSaver::kBoubouleSaver( Drawable drawable ) : kScreenSaver( drawable )

@@ -293,6 +293,14 @@ const char *getScreenSaverName()
 	return glocale->translate("Slip");
 }
 
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+        if ( saver )
+        {
+                saver->expose( x, y, width, height );
+        }
+} 
+
 //-----------------------------------------------------------------------------
 
 kSlipSaver::kSlipSaver( Drawable drawable ) : kScreenSaver( drawable )

@@ -112,6 +112,14 @@ const char *getScreenSaverName()
 	return i18n( "Science" );
 }
 
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+        if ( saver )
+        {
+                saver->expose( x, y, width, height );
+        }
+} 
+
 //-----------------------------------------------------------------------------
 // Prepare Dialog
 // 
@@ -249,6 +257,11 @@ KScienceSaver::~KScienceSaver()
 		XDestroyImage( xRootWin );
 	if( dlg )
 		delete dlg;
+}
+
+void KScienceSaver::expose( int x, int y, int width, int height )
+{
+    do_refresh( QRect ( x, y, width, height ) );
 }
 
 void KScienceSaver::myAssert( bool term, char *eMsg )

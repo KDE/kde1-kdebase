@@ -333,6 +333,14 @@ const char *getScreenSaverName()
 	return glocale->translate("Laser");
 }
 
+void exposeScreenSaver( int x, int y, int width, int height )
+{
+        if ( saver )
+        {
+                saver->expose( x, y, width, height );
+        }
+} 
+
 //-----------------------------------------------------------------------------
 
 kLaserSaver::kLaserSaver( Drawable drawable ) : kScreenSaver( drawable )
