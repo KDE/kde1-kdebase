@@ -1,16 +1,20 @@
 // File: ftp_proxy.cpp by Martin Zumkley (uc2n@rzstud1.rz.uni-karlsruhe.de)
-//
 // additions to work with KFM Proxy Manager by Lars Hoss ( Lars.Hoss@munich.netsurf.de )
+//
+// $Id$
 
-#include "ftp_proxy.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <qstring.h>
 #include <unistd.h>
-#include "kio_errors.h"
+
+#include <qstring.h>
 #include <qmsgbox.h>
-#include <ksimpleconfig.h>
+
 #include <kapp.h>
+#include <ksimpleconfig.h>
+
+#include "ftp_proxy.h"
+#include "kio_errors.h"
 
 extern char * base64_encode_line(const char*);
 extern char *create_www_auth(const char*, const char*);
