@@ -6,22 +6,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
 "POT-Creation-Date: 1998-12-02 13:03+0100\n"
-"PO-Revision-Date: 1998-02-25 21:41 CET\n"
-"Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
+"PO-Revision-Date: 1998-12-08 21:30 CET\n"
+"Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
+"Last-Translator: Francois-Xavier DURANCEAU <Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; \n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: attraction.cpp:716
-#, fuzzy
 msgid "Attraction"
-msgstr "Contraction"
+msgstr "Attraction"
 
 #: attraction.cpp:803
-#, fuzzy
 msgid "Setup KAttraction"
-msgstr "Configuration de KBat"
+msgstr "Configuration de KAttraction"
 
 #: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
@@ -33,36 +32,34 @@ msgstr "Milieu :"
 
 #: attraction.cpp:834 slidescreen.cpp:498
 msgid "Balls"
-msgstr ""
+msgstr "Balles"
 
 #: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
-msgstr "Lines"
+msgstr "Lignes"
 
 #: attraction.cpp:836 polygon.cpp:64 slidescreen.cpp:500
 msgid "Polygons"
-msgstr "Polygones"
+msgstr "Polygônes"
 
 #: attraction.cpp:837 slidescreen.cpp:501
 msgid "Tails"
-msgstr ""
+msgstr "Traits"
 
 #: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
-msgstr ""
+msgstr "Brillant"
 
 #: attraction.cpp:869 attraction.cpp:956 slidescreen.cpp:534
 #: slidescreen.cpp:563
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
 #: attraction.cpp:951
-#, fuzzy
 msgid "About Attraction"
-msgstr "Contraction"
+msgstr "A propos de Attraction"
 
 #: attraction.cpp:952
-#, fuzzy
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -72,11 +69,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Rock Version 3.3\n"
+"Attraction Version 1.0\n"
 "\n"
-"Copyright (c) 1992 par Jamie Zawinski\n"
+"Copyright (c) 1992-1997 par Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Porté vers kscreensave par Martin Jones."
+"Porté vers kscreensaver par :\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
 #: banner.cpp:62
 msgid "Banner"
@@ -87,9 +86,8 @@ msgid "Setup kbanner"
 msgstr "Configuration de la bannière"
 
 #: banner.cpp:95
-#, fuzzy
 msgid "Family:"
-msgstr "Mot de passe incorrect"
+msgstr "Famille :"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
@@ -238,7 +236,7 @@ msgstr "Configuration de KBouboule"
 
 #: bouboule.cpp:1032
 msgid "Number of points:"
-msgstr "Nombre de points:"
+msgstr "Nombre de points :"
 
 #: bouboule.cpp:1046
 msgid "Point size:"
@@ -246,7 +244,7 @@ msgstr "Taille des points :"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr "Fréquence de changement de couleur"
+msgstr "Fréquence de changement de couleur :"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
@@ -471,7 +469,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "L'option %s n'est pas supportée sur cette plateforme !"
 
 #: main.cpp:382
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -479,6 +476,8 @@ msgid ""
 "Please contact your system administrator,\n"
 "tell him, that you need suid for the screensavers!"
 msgstr ""
+"Attention : Vous ne pourrez pas verrouiller l'écran !\n"
+"\n"
 "Votre système utilise des mots de passe cachés !\n"
 "Veuillez contacter votre administrateur système.\n"
 "\n"
@@ -495,18 +494,21 @@ msgid ""
 "use klock instead.\n"
 "\n"
 msgstr ""
+"\n"
+"N'utilisez pas -test en même temps que -lock.\n"
+"utilisez klock, à la place.\n"
+"\n"
 
 #: main.cpp:540
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
-"utilisation: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+"Utilisation : %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
 #: main.cpp:543
-#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -530,14 +532,15 @@ msgstr ""
 "                     x = i  aucune action (ignore)\n"
 "                     x = s  sauvegarde le bureau\n"
 "                     x = l  verrouille l'écran\n"
-"                    ordre : haut gauche, haut droite, bas gauche, "
-"bas-droite\n"
+"                    ordre : haut gauche, haut droite, bas gauche, bas droite\n"
 "  -delay num        Nombre de minutes d'inactivité avant l'activation de la\n"
 "                    mise en veille (par défaut 10 min)\n"
 "  -desc             Affiche la description de la mise en veille\n"
 "  -install          Installe la mise en veille\n"
 "  -lock             Requiert un mot de passe pour déverrouiller la \n"
 "                    mise en veille\n"
+"  -allow-root       Autorise l'utilisation du mot de passe du root pour\n"
+"                    déverrouiller la mise en veille\n"
 "  -nice num         Est lancé avec le niveau de privilèges \"num\"\n"
 "\n"
 "  -preview wid      Est lancé dans la fenêtre spécifiée\n"
@@ -580,24 +583,20 @@ msgstr ""
 "Porté vers kscreensave by Emanuel Pirker."
 
 #: pipes.cpp:299
-#, fuzzy
 msgid "Pipes (GL)"
-msgstr "Espace (GL)"
+msgstr "Tubes (GL)"
 
 #: pipes.cpp:672
-#, fuzzy
 msgid "Setup KPipes"
-msgstr "Configuration de KSlip"
+msgstr "Configuration de KPipes"
 
 #: pipes.cpp:678
-#, fuzzy
 msgid "Number of Pipes"
-msgstr "Nombre d'abeilles :"
+msgstr "Nombre de tubes :"
 
 #: pipes.cpp:743
-#, fuzzy
 msgid "About KPipes"
-msgstr "A propos de Lines"
+msgstr "A propos de KPipes"
 
 #: pipes.cpp:745
 msgid ""
@@ -605,6 +604,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
+"KPipes\n"
+"Copyright (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
 
 #: polygon.cpp:85
 msgid "Setup kpolygon"
@@ -612,7 +614,7 @@ msgstr "Configuration de kpolygon"
 
 #: polygon.cpp:107
 msgid "Vertices:"
-msgstr "Vertices :"
+msgstr "Sommets :"
 
 #: polygon.cpp:238
 msgid "About Polygon"
@@ -756,7 +758,7 @@ msgstr "Cacher le fond d'écran"
 
 #: science.cpp:1053
 msgid "Intensity:"
-msgstr "Intensité:"
+msgstr "Intensité :"
 
 #: science.cpp:1083
 msgid "Motion:"
@@ -775,22 +777,18 @@ msgid "About Science"
 msgstr "A propos de Science"
 
 #: slidescreen.cpp:419
-#, fuzzy
 msgid "SlideScreen"
-msgstr "Ecran vide"
+msgstr ""
 
 #: slidescreen.cpp:465
-#, fuzzy
 msgid "Setup KSlideScreen"
-msgstr "Configuration de Science"
+msgstr "Configuration de KSlideScreen"
 
 #: slidescreen.cpp:558
-#, fuzzy
 msgid "About SlideScreen"
-msgstr "A propos de Science"
+msgstr "A propos de SlideScreen"
 
 #: slidescreen.cpp:559
-#, fuzzy
 msgid ""
 "SlideScreen Version 1.1\n"
 "\n"
@@ -800,11 +798,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Rock Version 3.3\n"
+"SlideScreen Version 1.1\n"
 "\n"
-"Copyright (c) 1992 par Jamie Zawinski\n"
+"Copyright (c) 1992-1997 par Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Porté vers kscreensave par Martin Jones."
+"Porté vers kscreensaver par:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -864,7 +864,7 @@ msgstr ""
 
 #: swarm.cpp:257
 msgid "Swarm"
-msgstr "Swarm"
+msgstr "Essaim"
 
 #: swarm.cpp:329
 msgid "Setup KSwarm"
@@ -892,13 +892,4 @@ msgstr ""
 "\n"
 "Porté vers kscreensave by Emanuel Pirker."
 
-#~ msgid ""
-#~ "Science Version 0.24.2 beta\n"
-#~ "\n"
-#~ "written by Rene Beutler 1998\n"
-#~ "rbeutler@g26.ethz.ch"
-#~ msgstr ""
-#~ "Science Version 0.2beta\n"
-#~ "\n"
-#~ "écrit par Rene Beutler 1998\n"
-#~ "rbeutler@g26.ethz.ch"
+

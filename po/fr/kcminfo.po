@@ -63,6 +63,9 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
+"utilisation : kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"
@@ -108,6 +111,5 @@ msgstr "Non disponible"
 #~ msgid "This system is not yet supported :-("
 #~ msgstr "Ce système n'est pas encore suppporté :-("
 
-#, fuzzy
 #~ msgid "Not Available"
 #~ msgstr "Non disponible"

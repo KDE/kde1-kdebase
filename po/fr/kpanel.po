@@ -5,23 +5,26 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-12-09 01:12+0100\n"
-"PO-Revision-Date: 1998-01-25 18:36 CET\n"
-"Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
+"POT-Creation-Date: 1998-12-06 01:14+0100\n"
+"PO-Revision-Date: 1998-12-08 21:25 CET\n"
+"Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
+"Last-Translator: Francois-Xavier DURANCEAU <Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain;\n"
 "Content-Transfer-Encoding: 8bits\n"
 
 #: kpanel.C:273
-#, fuzzy
 msgid "&Move"
-msgstr "Déplacer"
+msgstr "&Déplacer"
+
+#: kpanel.C:274
+msgid "&Remove"
+msgstr "&Supprimer"
 
 #: kpanel.C:276
-#, fuzzy
 msgid "&Properties"
-msgstr "Propriétés"
+msgstr "&Propriétés"
 
 #: kpanel.C:313
 msgid "Go!"
@@ -51,11 +54,11 @@ msgstr "Cacher le panneau"
 msgid "Show the panel"
 msgstr "Montrer le panneau"
 
-#: kpanel.C:1203
+#: kpanel.C:1200
 msgid "No comment available"
 msgstr "Commentaire non disponible"
 
-#: kpanel.C:1212 tools.C:841
+#: kpanel.C:1209 tools.C:841
 msgid "Windowlist"
 msgstr "Liste des fenêtres"
 
@@ -102,11 +105,11 @@ msgstr "Relancer le panneau"
 
 #: props.C:162
 msgid "Disk Navigator"
-msgstr ""
+msgstr "Disk Navigator"
 
 #: props.C:165
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Navigation rapide dans l'arborescence"
 
 #: props.C:171
 msgid "Panel"
@@ -129,6 +132,8 @@ msgid ""
 "\n"
 "%b %d"
 msgstr ""
+"\n"
+"%b %d"
 
 #: events.C:829
 msgid "Cannot put this as button onto the panel!"
@@ -156,37 +161,35 @@ msgstr "(illisible)"
 
 #: pfilemenu.C:742
 msgid "Shared:"
-msgstr ""
+msgstr "Partagés :"
 
 #: pfilemenu.C:744
 msgid "Entries shared among all users"
-msgstr ""
+msgstr "Entrées partagées par tous les utilisateurs"
 
 #: pfilemenu.C:763
-#, fuzzy
 msgid "Personal:"
-msgstr "Menu personnel en premier"
+msgstr "Personnels :"
 
 #: pfilemenu.C:765
-#, fuzzy
 msgid "Personal entries"
-msgstr "Menu personnel en premier"
+msgstr "Entrées personnelles"
 
 #: pfilemenu.C:783
 msgid "Recent:"
-msgstr ""
+msgstr "Récents :"
 
 #: pfilemenu.C:785
 msgid "Recent entries"
-msgstr ""
+msgstr "Entrées récentes"
 
 #: pfilemenu.C:831
 msgid "Options..."
-msgstr ""
+msgstr "Options..."
 
 #: pfilemenu.C:833
 msgid "Customize Disk Navigator"
-msgstr ""
+msgstr "Personnaliser Disk Navigator"
 
 #~ msgid "Location"
 #~ msgstr "Emplacement"

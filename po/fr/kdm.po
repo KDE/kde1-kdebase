@@ -59,17 +59,17 @@ msgstr ""
 
 #: kgreeter.cpp:611
 msgid "login_getcapstr() failed."
-msgstr ""
+msgstr "login_getcapstr() a échoué"
 
 #: kgreeter.cpp:665 kgreeter.cpp:692
 msgid "Sorry -- your account has expired."
-msgstr ""
+msgstr "Désolé -- votre compte a expiré."
 
 #: kgreeter.cpp:670 kgreeter.cpp:697
 #, c-format
 msgid "Warning: your account expires on %s"
-msgstr ""
+msgstr "Attention : votre compte expire le %s"
 
 #: kgreeter.cpp:724
 msgid "Home directory not available"
-msgstr ""
+msgstr "Répertoire home non disponible"

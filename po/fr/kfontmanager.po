@@ -6,8 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfontmanager\n"
 "POT-Creation-Date: 1998-10-01 12:21+0200\n"
-"PO-Revision-Date: 1998-01-08 23:55 CET\n"
-"Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
+"PO-Revision-Date: 1998-12-08 22:45 CET\n"
+"Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
+"Last-Translator: Francois-Xavier DURANCEAU <Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; \n"
@@ -97,7 +98,7 @@ msgstr ""
 
 #: kfontexplorer.cpp:126
 msgid "Select Font"
-msgstr ""
+msgstr "Sélectionner une police"
 
 #: kfontexplorer.cpp:130
 msgid "Requested Font"
@@ -109,23 +110,23 @@ msgstr "Police Actuelle"
 
 #: kfontexplorer.cpp:139 kfontexplorer.cpp:143
 msgid "Family:"
-msgstr "Famille:"
+msgstr "Famille :"
 
 #: kfontexplorer.cpp:163 kfontexplorer.cpp:168
 msgid "Size:"
-msgstr "Taille:"
+msgstr "Taille :"
 
 #: kfontexplorer.cpp:177 kfontexplorer.cpp:182
 msgid "Weight:"
-msgstr "Epaisseur:"
+msgstr "Epaisseur :"
 
 #: kfontexplorer.cpp:191 kfontexplorer.cpp:199
 msgid "Style:"
-msgstr "Style:"
+msgstr "Style :"
 
 #: kfontexplorer.cpp:234
 msgid "Charset"
-msgstr ""
+msgstr "Jeu de caractères"
 
 #: kfontexplorer.cpp:246
 msgid "Size"

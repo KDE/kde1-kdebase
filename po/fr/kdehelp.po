@@ -42,7 +42,6 @@ msgid "Continue search from the top of the page?"
 msgstr "Continuer la recherche à partir du haut de la page?"
 
 #: helpwin.cpp:1324
-#, fuzzy
 msgid "Forward"
 msgstr "En a&vant"
 
@@ -118,7 +117,7 @@ msgstr "Couleur d'un lien suivi :"
 
 #: options.cpp:238
 msgid "Underline links"
-msgstr ""
+msgstr "Liens soulignés"
 
 #: options.cpp:317
 msgid "KDE Help Options"
@@ -366,7 +365,7 @@ msgstr "Rechercher:"
 
 #: finddlg.cpp:54
 msgid "Case &sensitive"
-msgstr ""
+msgstr "Respecter la casse"
 
 #: finddlg.cpp:64
 msgid "&Find"
