@@ -1653,8 +1653,8 @@ void KFMManager::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QP
 	    else
 	    {
 		// We did not find some binding to execute
-		QMessageBox::warning( 0, klocale->translate("KFM Error"), 
-				      klocale->translate("Dont know what to do.") );
+              // QMessageBox::warning( 0, klocale->translate("KFM Error"), 
+		              // 		      klocale->translate("Dont know what to do.") );
 		return;
 	    }
 	}
@@ -1699,8 +1699,8 @@ void KFMManager::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QP
 				     this, SLOT( slotDropLink() ) );
     if ( id == -1 )
     {
-	QMessageBox::warning( 0, klocale->translate("KFM Error"),
-			       klocale->translate("Dont know what to do.") );
+      // QMessageBox::warning( 0, klocale->translate("KFM Error"),
+	      // 		       klocale->translate("Dont know what to do.") );
 	return;
     }
 
