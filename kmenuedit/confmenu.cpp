@@ -197,7 +197,6 @@ void MenuButton::change_item()
   QString temp_name = pmenu_item->getBigPixmapName();
   dialog->b_big_pixmap->setPixmap( pmenu_item->getBigPixmap());
   dialog->i_big_pixmap->setText(temp_name);
-
   if( type == unix_com || type == swallow_com )
     {
       if( type == unix_com )
@@ -719,7 +718,6 @@ ConfigureMenu::ConfigureMenu( PMenu *m, QWidget *parent, const char *name )
      //: QFrame( parent, name )
 {
   initMetaObject();
-  //setCaption("KTaskbar Menu");
   setFrameStyle( QFrame::Panel | QFrame::Raised );
   pmenu = m;
   but_list.setAutoDelete(TRUE);

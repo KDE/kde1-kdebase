@@ -252,9 +252,10 @@ short PMenuItem::parse( QString &s, PMenu *menu)
 
 short PMenuItem::parse( QFileInfo *fi, PMenu *menu )
 {
+  QString lang = KApplication::getKApplication()->getLocale()->language();
   real_name = fi->fileName().copy();
   old_name = real_name;
-  QString type_string;
+  QString type_string = "";
   int pos = fi->fileName().find(".kdelnk");
   if( pos >= 0 )
     text_name = fi->fileName().left(pos);
@@ -264,12 +265,12 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu )
     read_only = TRUE;
   if( menu != NULL )
     {
-      QString file = fi->absFilePath();
-      file += "/.directory";
-      QFileInfo fi_config(file);
+      QString file_name = fi->absFilePath();
+      file_name += "/.directory";
+      QFileInfo fi_config(file_name);
       if( fi_config.isReadable() ) 
 	{
-	  KConfig kconfig(file);
+	  KConfig kconfig(file_name);
 	  kconfig.setGroup("KDE Desktop Entry");
 	  comment         = kconfig.readEntry("Comment");
 	  text_name       = kconfig.readEntry("Name", text_name);
@@ -283,6 +284,172 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu )
     }
   else
     {
+      // test if file is a kdelnk file
+      QFile file(fi->absFilePath());
+      if( file.open(IO_ReadOnly) )
+	{
+	  char s[19];
+	  int r = file.readLine(s, 18);
+	  if(r > -1)
+	    {
+	      s[r] = '\0';
+	      if(QString(s).left(17) != "# KDE Config File") 
+		{
+		  file.close();
+		  return -1;
+		}
+	    }
+	}
+      else
+	{
+	  file.close();
+	  return -1;
+	}
+      // parse file
+      file.at(0);
+      QTextStream stream(&file);
+      QString current_line, key, value;
+      QString temp_swallow_title, temp_term_opt, temp_exec_path, temp_text_name;
+      QString temp_use_term, temp_pattern, temp_protocols, temp_extensions, temp_url_name;
+      QString temp_dev_name, temp_mount_point, temp_fs_type, temp_umount_pixmap_name;
+      QString temp_dev_read_only;
+      bool inside_group = FALSE;
+      int equal_pos;
+      comment = "";
+      while(!stream.eof())
+	{
+	  current_line = stream.readLine();
+	  if( current_line[0] == '#' )
+	    continue;
+	  if( !inside_group ) 
+	    {
+	      if( current_line != "[KDE Desktop Entry]" ) 
+		{
+		  continue;
+		}
+	      else
+		{
+		  inside_group = TRUE;
+		  continue;
+		}
+	    }
+	  equal_pos = current_line.find('=');
+	  if( equal_pos == -1 )
+	    continue;
+	  key = current_line.left(equal_pos).stripWhiteSpace();
+	  value = current_line.right(current_line.length() - equal_pos - 1).stripWhiteSpace();
+	  
+	  if( key == "Exec" ) 
+	    { command_name = value; continue; }
+	  else if( key == "SwallowExec" )
+	    { swallow_exec = value; continue; }
+	  else if( key.left(7) == "Comment" )
+	    { 
+	      if( key == "Comment" )
+		{
+		  if( comment.isEmpty() )
+		    comment = value;
+		}
+	      else 
+		{
+		  if( key == "Comment[" + lang + "]" )
+		    comment = value;
+		}
+	      continue; 
+	    }
+	  else if( key.left(4) == "Name" )
+	    { 
+	      if( key == "Name" )
+		{
+		  if( temp_text_name.isEmpty() )
+		    temp_text_name = value;
+		}
+	      else 
+		{
+		  if( key == "Name[" + lang + "]" )
+		    temp_text_name = value;
+		}
+	      continue; 
+	    }
+	  else if( key == "MiniIcon" )
+	    { pixmap_name = value; continue; }
+	  else if( key == "Icon" )
+	    { big_pixmap_name = value; continue; }
+	  else if( key == "Type" )
+	    { type_string = value; continue; }
+	  else if( key == "SwallowTitle" )
+	    { temp_swallow_title = value; continue; }
+	  else if( key == "TerminalOptions" )
+	    { temp_term_opt = value; continue; }
+	  else if( key == "Path" )
+	    { temp_exec_path = value; continue; }
+	  else if( key == "Terminal" )
+	    { temp_use_term = value; continue; }
+	  else if( key == "BinaryPattern" )
+	    { temp_pattern = value; continue; }
+	  else if( key == "Protocols" )
+	    { temp_protocols = value; continue; }
+	  else if( key == "MimeType" )
+	    { temp_extensions = value; continue; }
+	  else if( key == "URL" )
+	    { temp_url_name = value; continue; }
+	  else if( key == "Dev" )
+	    { temp_dev_name = value; continue; }
+	  else if( key == "MountPoint" )
+	    { temp_mount_point = value; continue; }
+	  else if( key == "FSType" )
+	    { temp_fs_type = value; continue; }
+	  else if( key == "UnmountIcon" )
+	    { temp_umount_pixmap_name = value; continue; }
+	  else if( key == "ReadOnly" )
+	    { temp_dev_read_only = value; continue; }
+	}
+      file.close();
+      if( type_string.isEmpty() )
+	return -1;
+      if( !temp_text_name.isEmpty() )
+	text_name = temp_text_name;
+      if( type_string == "Application" ) 
+	{
+	  if( !swallow_exec.isEmpty() )
+	    {
+	      entry_type = swallow_com;
+	      swallow_title = temp_swallow_title;
+	    }
+	  else
+	    {
+	      entry_type = unix_com;
+	      term_opt   = temp_term_opt;
+	    }
+	  exec_path  = temp_exec_path;
+	  dir_path   = fi->dirPath(TRUE);
+	  if( temp_use_term == "0" )
+	    use_term = 0;
+	  else 
+	    use_term = 1;
+	  pattern    = temp_pattern;
+	  protocols  = temp_protocols;
+	  extensions = temp_extensions;
+	}
+      else if( type_string == "Link" )
+	{
+	  entry_type = url;
+	  url_name   = temp_url_name;
+	}
+      else if( type_string == "FSDevice" )
+	{
+	  entry_type  = device;
+	  dev_name    = temp_dev_name;
+	  mount_point = temp_mount_point;
+	  fs_type     = temp_fs_type;
+	  umount_pixmap_name = temp_umount_pixmap_name;
+	  if( temp_dev_read_only == "0" )
+	    dev_read_only = 0;
+	  else
+	    dev_read_only = 1;
+	}
+
+      /*
       if( !fi->isReadable() ) 
 	return -1;
       KConfig kconfig(fi->absFilePath());
@@ -327,6 +494,7 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu )
 	  umount_pixmap_name = kconfig.readEntry("UnmountIcon");
 	  dev_read_only = kconfig.readNumEntry("ReadOnly");
 	}
+      */
     }
   
   // some code from kpanel
@@ -362,23 +530,6 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu )
   }
   // end kpanel
 
-//   if( pixmap_name.isEmpty() )
-//     {
-//       pixmap_name = "mini-ball.xpm";
-//       pixmap = global_pix_loader->loadMiniIcon("mini-ball.xpm", 16, 16);
-//     }
-//   else
-//     {
-//       pixmap = global_pix_loader->loadApplicationMiniIcon(pixmap_name, 16, 16);
-//     }
-
-//   if( big_pixmap_name.isEmpty() )
-//     {
-//       if( entry_type == submenu )
-//  	big_pixmap_name = "folder.xpm";
-//       else if( entry_type == unix_com )
-//  	big_pixmap_name = "exec.xpm";
-//     }
   return 0;
 }
 
@@ -465,7 +616,9 @@ QPixmap PMenuItem::getBigPixmap()
     if( entry_type == submenu )
       pm = global_pix_loader->loadApplicationIcon("folder.xpm");
     else if( entry_type == unix_com )
-      pm = global_pix_loader->loadApplicationIcon("exec.xpm");
+      {
+	pm = global_pix_loader->loadApplicationIcon("exec.xpm");
+      }
   }
   return pm;
 }
@@ -695,8 +848,8 @@ short PMenu::parse( QDir d )
       else
 	{
 	  //if( !fi->extension().contains("kdelnk") )
-	  if( !isKdelnkFile(fi->absFilePath()))
-	    { ++it; continue; }
+	  //if( !isKdelnkFile(fi->absFilePath()))
+	  //  { ++it; continue; }
 	  new_item = new PMenuItem;
 	  new_item->read_only = read_only;
 	  if( new_item->parse(fi) < 0 )

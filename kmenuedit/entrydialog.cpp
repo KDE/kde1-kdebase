@@ -543,9 +543,11 @@ void EntryDialog::typeActivated( int t )
     break;
   case 4:  // url
     tb_app->addTab(f_app_4, klocale->translate("Link"));
+    f_app_4->raise();
     break;
   case 5:  // device
     tb_app->addTab(f_app_5, klocale->translate("Device"));
+    f_app_5->raise();
     break;
   };
   tb_app->show();
