@@ -136,7 +136,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   QGroupBox *group;
   QRadioButton *rb;
 	
-  QGridLayout *topLayout = new QGridLayout( this, 4, 4, 10 );
+  QGridLayout *topLayout = new QGridLayout( this, 4, 4, 5 );
 	
   topLayout->setRowStretch(0,0);
   topLayout->setRowStretch(1,10);
@@ -152,7 +152,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 
   topLayout->addWidget( group, 1,1 );
 	
-  QBoxLayout *groupLayout = new QVBoxLayout( group, 10, 5 );
+  QBoxLayout *groupLayout = new QVBoxLayout( group, 5, 5 );
 
   deskListBox = new QListBox( group );
 
@@ -168,7 +168,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   deskListBox->setEnabled( !oneDesktopMode );
 
   groupLayout->addSpacing( 15 );
-  groupLayout->addWidget( deskListBox, 10 );
+  groupLayout->addWidget( deskListBox, 5 );
 	
   renameButton = new QPushButton( i18n( "&Rename ..." ), group );
   renameButton->adjustSize();
@@ -179,7 +179,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
     renameButton->setEnabled( false );
   connect( renameButton, SIGNAL( clicked() ), SLOT( slotRenameDesk() ) );
 	
-  groupLayout->addWidget( renameButton, 10 );
+  groupLayout->addWidget( renameButton, 5 );
 
   oneDesktopButton = new QCheckBox( i18n("&Common Background"), group );
   oneDesktopButton->adjustSize();
@@ -198,7 +198,6 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   monitorLabel->setPixmap( p );
   monitorLabel->adjustSize();
   monitorLabel->setMinimumSize(monitorLabel->size());
-  // monitorLabel->setMinimumSize( 220, 160 );
 	
   topLayout->addWidget( monitorLabel, 1, 2 );
 
@@ -213,7 +212,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   group = new QGroupBox( i18n( "Colors" ), this );
   topLayout->addWidget( group, 2, 1 );
 
-  QGridLayout *grid = new QGridLayout( group, 9, 4, 10, 5 );
+  QGridLayout *grid = new QGridLayout( group, 9, 4, 5, 5 );
     
   grid->setRowStretch(0,5);
   grid->setRowStretch(1,0);
@@ -230,7 +229,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   grid->setColStretch(2,9);
   grid->setColStretch(3,0);
     
-  grid->addRowSpacing(0,15);
+  grid->addRowSpacing(0,5);
   grid->addRowSpacing(5,1);
     
   ncGroup = new QButtonGroup( this );
@@ -285,7 +284,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   group = new QGroupBox( i18n("Wallpaper"), this );
   topLayout->addWidget( group, 2, 2 );
     
-  groupLayout = new QVBoxLayout( group, 10, 5 ); 
+  groupLayout = new QVBoxLayout( group, 5, 5 );
   groupLayout->addStretch( 5 );
 
   QString path = kapp->kde_wallpaperdir().copy();
@@ -1726,6 +1725,7 @@ KRandomDlg::KRandomDlg(int _desktop, KBackground *_kb, char *name)
   // we do this here to let all items fit in
   listBox->adjustSize();
   listBox->setMinimumSize(listBox->size());
+  listBox->setEnabled( !useDir );
   connect(listBox, SIGNAL(highlighted(int)), 
 	  SLOT(selected(int)));
 	
@@ -1786,6 +1786,7 @@ void KRandomDlg::changeDir()
 
   dirLined->setEnabled( useDir );
   dirPushButton->setEnabled( useDir );
+  listBox->setEnabled( !useDir );
 }
 
 
