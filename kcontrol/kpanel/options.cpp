@@ -171,7 +171,7 @@ KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
     t_lay->addWidget(p_large_label,3,5);
     //CT
 
-    panel_delay_slider = new KSlider(1000, 10000, 1000, 6000,
+    panel_delay_slider = new KSlider(10, 10000, 1000, 6000,
 			 KSlider::Horizontal, vis_group);
     panel_delay_slider->setSteps(1000,1000);
     //CT 19Dec1998 using layouts
@@ -273,7 +273,7 @@ KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
     t_lay->addWidget(t_large_label,3,5);
     //CT
 
-    tbar_delay_slider = new KSlider(1000, 10000, 1000, 6000,
+    tbar_delay_slider = new KSlider(10, 10000, 1000, 6000,
 			 KSlider::Horizontal, vis_group);
     tbar_delay_slider->setSteps(1000,1000);
     //CT 19Dec1998 using layouts
