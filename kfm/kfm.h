@@ -7,17 +7,17 @@
 
 #include <kiconloader.h>
 
-#define pkfm KFM::kfm()
+#define pkfm Kfm::kfm()
 
-class KFM : public QWidget
+class Kfm : public QWidget
 {
     Q_OBJECT
 public:
-  KFM();
-  ~KFM();
+  Kfm();
+  ~Kfm();
     
   KIconLoader *iconLoader() { return pIconLoader; }
-  static KFM* kfm() { return pKfm; }
+  static Kfm* kfm() { return pKfm; }
   static QStrList* history() { return pHistory; }
   static void addToHistory( const char *_url );
   /**
@@ -35,7 +35,7 @@ protected:
   KIconLoader *pIconLoader;
   QTimer timer;
   
-  static KFM *pKfm;
+  static Kfm *pKfm;
   static QStrList *pHistory;
   static bool s_bGoingDown;
 };

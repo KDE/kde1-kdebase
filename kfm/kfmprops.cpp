@@ -26,6 +26,7 @@
 
 #include <kurl.h>
 #include <klocale.h>
+#include <kfiledialog.h>
 
 #include "kfmprops.h"
 #include "kbind.h"
@@ -849,7 +850,7 @@ void ExecPropsPage::applyChanges()
 
 void ExecPropsPage::slotBrowseExec()
 {
-    QString f = QFileDialog::getOpenFileName( 0, 0L, this );
+    QString f = KFileDialog::getOpenFileName( 0, 0L, this );
     if ( f.isNull() )
 	return;
 

@@ -14,13 +14,13 @@
 #include <unistd.h> 
 #include <sys/signal.h>
 
-KFM* KFM::pKfm = 0L;
-QStrList* KFM::pHistory = 0L;
-bool KFM::s_bGoingDown = false;
+Kfm* Kfm::pKfm = 0L;
+QStrList* Kfm::pHistory = 0L;
+bool Kfm::s_bGoingDown = false;
 
 void sig_segv_handler( int signum );
 
-KFM::KFM()
+Kfm::Kfm()
 {
     pKfm = this;
     pHistory = new QStrList;
@@ -79,7 +79,7 @@ KFM::KFM()
     timer.start( 3600000 );
 }
 
-void KFM::slotTouch()
+void Kfm::slotTouch()
 {
   // Prevent the sockets from being removed by the cleanup daemon of some systems.
   QString tmp;
@@ -89,11 +89,11 @@ void KFM::slotTouch()
   system( tmp.data() );
 }
 
-KFM::~KFM()
+Kfm::~Kfm()
 {
 }
     
-void KFM::slotSave()
+void Kfm::slotSave()
 {
   timer.stop();
   
@@ -127,7 +127,7 @@ void KFM::slotSave()
   s_bGoingDown = true;
 }
 
-void KFM::addToHistory( const char *_url )
+void Kfm::addToHistory( const char *_url )
 {
   if ( pHistory->find( _url ) != -1 )
     return;
@@ -138,7 +138,7 @@ void KFM::addToHistory( const char *_url )
   pHistory->append( _url );
 }
 
-bool KFM::saveHTMLHistory( const char *_filename )
+bool Kfm::saveHTMLHistory( const char *_filename )
 {
   FILE *f = fopen( _filename, "w" );
   if ( f == 0L )
@@ -160,7 +160,7 @@ bool KFM::saveHTMLHistory( const char *_filename )
   return true;
 }
 
-void KFM::slotInstallSegfaultHandler()
+void Kfm::slotInstallSegfaultHandler()
 {
   printf("+++++++++++++++++++++ INSTALLING SIGSEGV handler +++++++++++++++++\n");
   

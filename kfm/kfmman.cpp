@@ -190,7 +190,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     nextXOffset = _xoffset;
     nextYOffset = _yoffset;
 
-    KFM::addToHistory( _url );
+    Kfm::addToHistory( _url );
     
     // By Default we display everything at the moment we
     // get it => now buffering of HTML code

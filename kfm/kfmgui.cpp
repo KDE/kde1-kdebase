@@ -669,7 +669,7 @@ void KfmGui::slotShowHistory()
 {
   QString s = KFMPaths::CachePath().data();
   s += "/history.html";
-  KFM::saveHTMLHistory( s );
+  Kfm::saveHTMLHistory( s );
 
   QString tmp( "file:" );
   tmp += s;

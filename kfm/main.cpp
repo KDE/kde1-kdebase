@@ -267,7 +267,7 @@ int main( int argc, char ** argv )
     
     debugT("3. Init Root widget\n");
 
-    KFM kfm;
+    Kfm kfm;
     a.setMainWidget( &kfm );
 
     if ( KfmGui::rooticons )

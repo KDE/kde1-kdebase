@@ -1299,7 +1299,7 @@ void KfmView::slotPopupMenu2( KHTMLView *, const char *_url, const QPoint &_poin
 
 bool KfmView::URLVisited( const char *_url )
 {
-  QStrList *list = KFM::history();
+  QStrList *list = Kfm::history();
   if ( list->find( _url ) != -1 )
     return true;
   
