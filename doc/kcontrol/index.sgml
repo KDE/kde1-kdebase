@@ -1,0 +1,54 @@
+<!doctype linuxdoc system>
+
+<article>
+
+<!-- Title information -->
+
+<title>KDE Control Center - Framework
+<author>Matthias H&ouml;lzer
+<date>v1.0, 1. March 1998
+
+<!-- Table of contents -->
+<toc>
+
+<!-- Begin the document -->
+
+<sect>The KDE Control Center
+<p>
+
+The KDE Control Center provides a convenient way to access all the
+configuration modules. In principle, the configuration modules are
+independent programs. The can be executed either by using the Settings menu,
+the command line, or the Control Center.
+<p>
+The Control Center has the advantage that all possible modules are displayed
+in a list, so it is easier to find the right configuration module.
+
+<sect> The configuration modules
+<p>
+
+This is a list of the <it>standard</it> configuration modules provided by the
+KDE base packages. Please note that there might be many more on your system
+if you install additional software. You can access the help for all modules
+by first selecting the module in the control center and the pressing the
+help button.
+<p>
+
+<itemize>
+<item> <htmlurl url="bell/bell-1.html" name="Bell configuration">
+<item> <htmlurl url="info/info-1.html" name="Memory inforation">
+<item> <htmlurl url="info/info-2.html" name="Processor information">
+<item> <htmlurl url="input/input-1.html" name="Keyboard configuration">
+<item> <htmlurl url="input/input-2.html" name="Mouse configuration">
+<item> <htmlurl url="kwm/kwm-1.html" name="Titlebar button configuration">
+<item> <htmlurl url="kwm/kwm-2.html" name="Titlebar configuration">
+<item> <htmlurl url="kwm/kwm-3.html" name="Window configuration">
+<item> <htmlurl url="locale/locale-1.html" name="Language setting">
+<item> <htmlurl url="syssound/index.html" name="System sound selection">
+<item> <htmlurl url="kdisplay/kdisplay-3.html" name="Background configuration">
+<item> <htmlurl url="kdisplay/kdisplay-4.html" name="Screen Saver configuration">
+<item> <htmlurl url="kdisplay/kdisplay-5.html" name="Color Scheme configuration">
+<item> <htmlurl url="kdisplay/kdisplay-6.html" name="Style configuration">
+</itemize>
+
+</article>
