@@ -491,7 +491,7 @@ msgstr "&Giz"
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr ""
-"arveriadur : kcmdisplay [-init | {background,screensaver,colors,fonts,style}]"
+"arveriadur : kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
