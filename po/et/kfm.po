@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-03-27 01:17+0100\n"
+"POT-Creation-Date: 1999-03-29 01:16+0200\n"
 "PO-Revision-Date: 1999-02-05 20:15+0200\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: Estonian <heathcliff@iname.com>\n"
@@ -13,191 +13,191 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kfmgui.cpp:203
+#: kfmgui.cpp:204
 msgid "KFM"
 msgstr "KFM"
 
-#: kfmgui.cpp:221
+#: kfmgui.cpp:222
 msgid "New &Window"
 msgstr "Uus ak&en"
 
-#: kfmgui.cpp:224
+#: kfmgui.cpp:225
 msgid "&Run..."
 msgstr "&Käivita..."
 
-#: kfmgui.cpp:226
+#: kfmgui.cpp:227
 msgid "Open &Terminal"
 msgstr "Ava &terminal"
 
-#: kfmgui.cpp:229
+#: kfmgui.cpp:230
 msgid "&Open Location..."
 msgstr "&Ava asukoht..."
 
-#: finddlg.cpp:66 kfmgui.cpp:231
+#: finddlg.cpp:66 kfmgui.cpp:232
 msgid "&Find"
 msgstr "&Leia"
 
-#: kfmgui.cpp:252
+#: kfmgui.cpp:253
 msgid "&Move to Trash"
 msgstr "&Liiguta prügikasti"
 
-#: kfmgui.cpp:259
+#: kfmgui.cpp:260
 msgid "&Select"
 msgstr "&Vali"
 
-#: kfmgui.cpp:261
+#: kfmgui.cpp:262
 msgid "Select &all"
 msgstr "Vali &kõik"
 
-#: kfmgui.cpp:264
+#: kfmgui.cpp:265
 msgid "&Find in page..."
 msgstr "&Leia leheküljel..."
 
-#: kfmgui.cpp:266
+#: kfmgui.cpp:267
 msgid "Find &next"
 msgstr "Leia &järgmine"
 
-#: kfmgui.cpp:269
+#: kfmgui.cpp:270
 msgid "Show History"
 msgstr "Näita ajalugu"
 
-#: kfmgui.cpp:271
+#: kfmgui.cpp:272
 msgid "Show Cache"
 msgstr "Näita vahemälu"
 
-#: kfmgui.cpp:273
+#: kfmgui.cpp:274
 msgid "Mime &Types"
 msgstr "Mime &tüübid"
 
-#: kfmgui.cpp:275
+#: kfmgui.cpp:276
 msgid "App&lications"
 msgstr "&Rakendused"
 
-#: kfmgui.cpp:281
+#: kfmgui.cpp:282
 msgid "Global Mime Types"
 msgstr "Globaalsed mime tüübid"
 
-#: kfmgui.cpp:283
+#: kfmgui.cpp:284
 msgid "Global Applications"
 msgstr "Globaalsed rakendused"
 
-#: kfmgui.cpp:291
+#: kfmgui.cpp:292
 msgid "Show Hi&dden Files"
 msgstr "Näita &peidetud faile"
 
-#: kfmgui.cpp:293
+#: kfmgui.cpp:294
 msgid "Show Tr&ee"
 msgstr "Näita p&uud"
 
-#: kfmgui.cpp:295
+#: kfmgui.cpp:296
 msgid "Sho&w Thumbnails"
 msgstr "Näita p&isipilte"
 
-#: kfmgui.cpp:297
+#: kfmgui.cpp:298
 msgid "&HTML View"
 msgstr "&HTML vaade"
 
-#: kfmgui.cpp:300
+#: kfmgui.cpp:301
 msgid "&Icon View"
 msgstr "&Ikoonidega vaade"
 
-#: kfmgui.cpp:302
+#: kfmgui.cpp:303
 msgid "&Text View"
 msgstr "&Tekstiga vaade"
 
-#: kfmgui.cpp:304
+#: kfmgui.cpp:305
 msgid "&Long View"
 msgstr "&Pikk vaade"
 
-#: kfmgui.cpp:306
+#: kfmgui.cpp:307
 msgid "&Short View"
 msgstr "&Lühike vaade"
 
-#: kfmgui.cpp:312
+#: kfmgui.cpp:313
 msgid "Rel&oad Tree"
 msgstr "Laa&di puu uuesti"
 
-#: kfmgui.cpp:314
+#: kfmgui.cpp:315
 msgid "&Reload Document"
 msgstr "Laadi dokument uue&sti"
 
-#: kfmgui.cpp:316
+#: kfmgui.cpp:317
 msgid "Rescan &Bindings"
 msgstr "Laadi seose&d uuesti"
 
-#: kfmgui.cpp:319
+#: kfmgui.cpp:320
 msgid "&View Frame Source"
 msgstr "&Vaata raami lähteteksti"
 
-#: kfmgui.cpp:321
+#: kfmgui.cpp:322
 msgid "View Docu&ment Source"
 msgstr "Vaata doku&mendi lähteteksti"
 
-#: kfmgui.cpp:329
+#: kfmgui.cpp:330
 msgid "Auto"
 msgstr "Automaatne"
 
-#: kfmgui.cpp:337
+#: kfmgui.cpp:338
 msgid "Document Encodin&g"
 msgstr "Dokumendi kodeerin&g"
 
-#: kfmgui.cpp:352
+#: kfmgui.cpp:353
 msgid "Clear Cache"
 msgstr "Puhasta vahemälu"
 
-#: kfmgui.cpp:355
+#: kfmgui.cpp:356
 msgid "Always look in cache"
 msgstr "Vaata alati vahemälu"
 
-#: kfmgui.cpp:357
+#: kfmgui.cpp:358
 msgid "Never look in cache"
 msgstr "Ära vaata kunagi vahemälu"
 
-#: kfmgui.cpp:359
+#: kfmgui.cpp:360
 msgid "Always save cache"
 msgstr "Salvesta alati vahemälu"
 
-#: kfmgui.cpp:361
+#: kfmgui.cpp:362
 msgid "Never save cache"
 msgstr "Ära salvesta kunagi vahemälu"
 
-#: kfmgui.cpp:372
+#: kfmgui.cpp:373
 msgid "Show &Menubar"
 msgstr "Näita &menüüriba"
 
-#: kfmgui.cpp:374
+#: kfmgui.cpp:375
 msgid "Show &Statusbar"
 msgstr "Näita &olekuriba"
 
-#: kfmgui.cpp:376
+#: kfmgui.cpp:377
 msgid "Show &Toolbar"
 msgstr "Näita &tööriistariba"
 
-#: kfmgui.cpp:378
+#: kfmgui.cpp:379
 msgid "Show &Location bar"
 msgstr "Näita &asukohariba"
 
-#: kfmgui.cpp:381
+#: kfmgui.cpp:382
 msgid "Sa&ve Settings"
 msgstr "Sal&vesta seadistused"
 
-#: kfmgui.cpp:383
+#: kfmgui.cpp:384
 msgid "Save Settings for this &URL"
 msgstr "Salvesta seadistused selle &URL'i jaoks"
 
-#: kfmgui.cpp:391
+#: kfmgui.cpp:392
 msgid "&Cache"
 msgstr "Vahemäl&u"
 
-#: kfmgui.cpp:392
+#: kfmgui.cpp:393
 msgid "&Configure File Manager..."
 msgstr "&Konfigureeri failihaldurit..."
 
-#: kfmgui.cpp:394
+#: kfmgui.cpp:395
 msgid "Configure &Browser..."
 msgstr "Konfigureeri &brauserit..."
 
-#: kfmgui.cpp:430
+#: kfmgui.cpp:431
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -223,33 +223,33 @@ msgstr ""
 "Praegune hooldaja: David Faure\n"
 "faure@kde.org"
 
-#: kfmgui.cpp:433
+#: kfmgui.cpp:434
 msgid ""
 "\n"
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
 msgstr ""
 
-#: kfmgui.cpp:446
+#: kfmgui.cpp:447
 msgid "&Go"
 msgstr "&Mine"
 
-#: kfmgui.cpp:447
+#: kfmgui.cpp:448
 msgid "&Bookmarks"
 msgstr "&Järjehoidjad"
 
-#: kfmgui.cpp:477 main.cpp:296
+#: kfmgui.cpp:478 main.cpp:296
 msgid "Up"
 msgstr "Üles"
 
-#: kfmgui.cpp:487 main.cpp:298
+#: kfmgui.cpp:488 main.cpp:298
 msgid "Forward"
 msgstr "Edasi"
 
-#: kfmgui.cpp:492
+#: kfmgui.cpp:493
 msgid "Home"
 msgstr "Kodu"
 
-#: kfmgui.cpp:549
+#: kfmgui.cpp:550
 msgid "Could not load icon\n"
 msgstr "Ei suuda ikooni laadida\n"
 
@@ -258,16 +258,16 @@ msgstr "Ei suuda ikooni laadida\n"
 #: kbind.cpp:1651 kbind.cpp:1710 kbind.cpp:1722 kbind.cpp:1749 kbind.cpp:1770
 #: kbind.cpp:1790 kbind.cpp:1802 kbind.cpp:1818 kbind.cpp:1953 kbind.cpp:1965
 #: kbind.cpp:2010 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
-#: kfmgui.cpp:550 kfmgui.cpp:791 kfmman.cpp:370 kfmman.cpp:1429
+#: kfmgui.cpp:551 kfmgui.cpp:792 kfmman.cpp:370 kfmman.cpp:1429
 #: kfmman.cpp:1656 kfmman.cpp:1702 kfmprops.cpp:380 kfmprops.cpp:649
 #: kfmprops.cpp:656 kfmprops.cpp:950 kfmprops.cpp:1089 kfmprops.cpp:1218
 #: kfmprops.cpp:1722 kfmprops.cpp:2083 kfmprops.cpp:2265 kfmserver.cpp:46
 #: kfmserver.cpp:214 kfmserver.cpp:294 kfmserver.cpp:313 kfmserver.cpp:360
 #: kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:339 kfmtree.cpp:466
-#: kfmtree.cpp:497 kfmtree.cpp:503 kfmtree.cpp:509 kfmview.cpp:441
-#: kfmview.cpp:475 kfmview.cpp:494 kfmview.cpp:576 kfmview.cpp:582
-#: kfmview.cpp:588 kfmview.cpp:713 kfmview.cpp:717 kfmview.cpp:756
-#: kfmview.cpp:783 kfmview.cpp:804 kfmview.cpp:812 kfmview.cpp:820
+#: kfmtree.cpp:497 kfmtree.cpp:503 kfmtree.cpp:509 kfmview.cpp:442
+#: kfmview.cpp:476 kfmview.cpp:495 kfmview.cpp:577 kfmview.cpp:583
+#: kfmview.cpp:589 kfmview.cpp:714 kfmview.cpp:718 kfmview.cpp:757
+#: kfmview.cpp:784 kfmview.cpp:805 kfmview.cpp:813 kfmview.cpp:821
 #: kiojob.cpp:239 kiojob.cpp:247 kiojob.cpp:254 kiojob.cpp:279 kiojob.cpp:298
 #: kiojob.cpp:309 kiojob.cpp:333 kiojob.cpp:352 kiojob.cpp:569 kiojob.cpp:587
 #: kiojob.cpp:892 kiojob.cpp:905 kiojob.cpp:922 kiojob.cpp:953 kiojob.cpp:1001
@@ -277,69 +277,69 @@ msgstr "Ei suuda ikooni laadida\n"
 msgid "KFM Error"
 msgstr "KFM viga"
 
-#: kfmgui.cpp:563
+#: kfmgui.cpp:564
 msgid "Location:"
 msgstr "Asukoht:"
 
-#: kfmexec.cpp:62 kfmgui.cpp:790 kfmman.cpp:1428
+#: kfmexec.cpp:62 kfmgui.cpp:791 kfmman.cpp:1428
 msgid "Malformed URL\n"
 msgstr "Vigane URL\n"
 
-#: kfmgui.cpp:976
+#: kfmgui.cpp:977
 msgid "Select files:"
 msgstr "Vali failid:"
 
-#: kfmgui.cpp:1043
+#: kfmgui.cpp:1044
 msgid "Find Complete"
 msgstr "Leitud"
 
-#: kfmgui.cpp:1044
+#: kfmgui.cpp:1045
 msgid "Continue search from the top of the page?"
 msgstr "Kas jätkata otsingut lehekülje algusest? "
 
-#: kfmgui.cpp:1062
+#: kfmgui.cpp:1063
 msgid "&Edit Bookmarks..."
 msgstr "R&edigeeri järjehoidjaid..."
 
-#: kfmgui.cpp:1074
+#: kfmgui.cpp:1075
 msgid "&Add Bookmark"
 msgstr "&Lisa järjehoidja"
 
-#: kfmgui.cpp:1110 kfmman.cpp:1469 kfmtree.cpp:387 root.cpp:286
+#: kfmgui.cpp:1111 kfmman.cpp:1469 kfmtree.cpp:387 root.cpp:286
 msgid "&New"
 msgstr "&Uus"
 
-#: kfmgui.cpp:1183
+#: kfmgui.cpp:1184
 msgid "&Up"
 msgstr "Ü&les"
 
-#: kfmgui.cpp:1185
+#: kfmgui.cpp:1186
 msgid "&Back"
 msgstr "&Tagasi"
 
-#: kfmgui.cpp:1187
+#: kfmgui.cpp:1188
 msgid "&Forward"
 msgstr "&Edasi"
 
-#: kfmgui.cpp:1189
+#: kfmgui.cpp:1190
 msgid "&Home"
 msgstr "&Kodu"
 
-#: kfmgui.cpp:1258 kfmgui.cpp:1424 kfmjob.cpp:36 kfmman.cpp:252
-#: kfmtree.cpp:498 kfmview.cpp:495 kfmview.cpp:577 kfmview.cpp:805
+#: kfmgui.cpp:1259 kfmgui.cpp:1425 kfmjob.cpp:36 kfmman.cpp:252
+#: kfmtree.cpp:498 kfmview.cpp:496 kfmview.cpp:578 kfmview.cpp:806
 #: kiojob.cpp:88 root.cpp:1247
 msgid "ERROR: Malformed URL"
 msgstr "VIGA: vigane URL"
 
-#: kfmgui.cpp:1378 kfmserver.cpp:241
+#: kfmgui.cpp:1379 kfmserver.cpp:241
 msgid "Open Location:"
 msgstr "Ava asukoht:"
 
-#: kfmgui.cpp:1435
+#: kfmgui.cpp:1436
 msgid "KFM Confirm"
 msgstr "KFM Kinnitus"
 
-#: kfmgui.cpp:1436
+#: kfmgui.cpp:1437
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -347,24 +347,24 @@ msgstr ""
 "Soovid sa tõesti katkestada?\n"
 "Oluline töölaua funktsionaalsus läheb kaotsi"
 
-#: kfmgui.cpp:1569
+#: kfmgui.cpp:1570
 msgid "Document: Done"
 msgstr "Dokument: tehtud"
 
-#: kfmview.cpp:442 root.cpp:944
+#: kfmview.cpp:443 root.cpp:944
 msgid "ERROR: You may only drop URLs"
 msgstr "VIGA: Sa võid URL'e vaid kukutada"
 
-#: kfmview.cpp:476
+#: kfmview.cpp:477
 msgid "ERROR: Drop over malformed URL"
 msgstr "VIGA: Kukutatud vigase URL'i peale"
 
-#: kfmserver.cpp:129 kfmtree.cpp:536 kfmview.cpp:548 kfmview.cpp:848
+#: kfmserver.cpp:129 kfmtree.cpp:536 kfmview.cpp:549 kfmview.cpp:849
 #: kiojob.cpp:665 kiojob.cpp:1075 krenamewin.cpp:24 root.cpp:1290
 msgid "KFM Warning"
 msgstr "KFM hoiatus"
 
-#: kfmtree.cpp:537 kfmview.cpp:549 kfmview.cpp:849 root.cpp:1291
+#: kfmtree.cpp:537 kfmview.cpp:550 kfmview.cpp:850 root.cpp:1291
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -374,23 +374,23 @@ msgstr ""
 "\n"
 "Pole mingit võimalust neid taastada."
 
-#: kfmtree.cpp:504 kfmview.cpp:583 kfmview.cpp:813 root.cpp:1253
+#: kfmtree.cpp:504 kfmview.cpp:584 kfmview.cpp:814 root.cpp:1253
 msgid "ERROR: You dropped a URL over itself"
 msgstr "VIGA: Sa kukutasid aadressi selle enda peale"
 
-#: kfmtree.cpp:510 kfmview.cpp:589 kfmview.cpp:821 root.cpp:1259
+#: kfmtree.cpp:510 kfmview.cpp:590 kfmview.cpp:822 root.cpp:1259
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "VIGA: Sa kukutasid kataloogi ühe selle alamkataloogi peale"
 
-#: kfmexec.cpp:300 kfmman.cpp:1214 kfmview.cpp:605 root.cpp:1134
+#: kfmexec.cpp:300 kfmman.cpp:1214 kfmview.cpp:606 root.cpp:1134
 msgid "Open With:"
 msgstr "Ava kasutades:"
 
-#: kfmview.cpp:641 root.cpp:1190
+#: kfmview.cpp:642 root.cpp:1190
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "VIGA: Pole võimalik avada mitme faili omadusi"
 
-#: kfmview.cpp:714
+#: kfmview.cpp:715
 msgid ""
 "Can not save properties because\n"
 "this directory is neither writable nor bookmarked.\n"
@@ -402,7 +402,7 @@ msgstr ""
 "\n"
 "Kõigepealt pane see järjehoidjatesse või tee kdelnk töölauale."
 
-#: kfmview.cpp:718
+#: kfmview.cpp:719
 msgid ""
 "Can not save properties because\n"
 "this URL is neither bookmarked nor on desktop.\n"
@@ -414,23 +414,23 @@ msgstr ""
 "\n"
 "Kõigepealt pane see järjehoidjatesse või tee kdelnk töölauale."
 
-#: kfmtree.cpp:467 kfmview.cpp:757 root.cpp:1340
+#: kfmtree.cpp:467 kfmview.cpp:758 root.cpp:1340
 msgid "Could not access Trash Bin"
 msgstr "Prügikast pole ligipääsetav"
 
-#: kfmview.cpp:784 root.cpp:1229
+#: kfmview.cpp:785 root.cpp:1229
 msgid "Can not paste into multiple directories"
 msgstr "Mitmesse kataloogi pole võimalik asetada"
 
-#: kfmview.cpp:881
+#: kfmview.cpp:882
 msgid "ERROR: Can not change to multiple directories"
 msgstr "VIGA: Mitmessse kataloogi pole võimalik siseneda"
 
-#: kfmview.cpp:1152
+#: kfmview.cpp:1153
 msgid "KFM Security Alert"
 msgstr "KFM turvalisuse hoiatus"
 
-#: kfmview.cpp:1153
+#: kfmview.cpp:1154
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -438,16 +438,16 @@ msgstr ""
 "See lehekülg ei ole usaldusväärne\n"
 "kuid see sisaldab linki sinu lokaalsese failisüsteemi."
 
-#: kfmview.cpp:1245
+#: kfmview.cpp:1246
 msgid "Symbolic Link"
 msgstr "Sümboolne link"
 
-#: kfmview.cpp:1247
+#: kfmview.cpp:1248
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (Link)"
 
-#: kfmview.cpp:1267
+#: kfmview.cpp:1268
 msgid "bytes"
 msgstr "baiti"
 

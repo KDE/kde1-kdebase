@@ -3,12 +3,12 @@ msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1999-01-14 01:18+0100\n"
 "PO-Revision-Date: 1999-03-27 21:30+MET\n"
-"Translator: Stephan Kulow <coolo@kde.org>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
 
 #: kmenuedit.cpp:69
 msgid "Change &Menuname"

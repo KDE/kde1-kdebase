@@ -7,11 +7,11 @@ msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1999-03-28 18:00+0800\n"
+"Last-Translator: Wang Jian <larkw@263.net>\n"
 "Language-Team: zh_CN.GB2312 \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=GB2312-80\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Wang Jian <larkw@263.net>\n"
 
 #: main.cpp:72
 msgid "&Standard shortcuts"

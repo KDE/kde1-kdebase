@@ -1,124 +1,124 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-26 01:17+0100\n"
 "PO-Revision-Date: 1999-03-28 16:05+MET\n"
-"Translator: Stephan Kulow <coolo@kde.org>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
 
-#: krootwm.C:223 krootwm.C:270
+#: krootwm.C:234 krootwm.C:281
 msgid "Execute command"
 msgstr "Befehl ausführen"
 
-#: krootwm.C:225 krootwm.C:294
+#: krootwm.C:236 krootwm.C:305
 msgid "Lock screen"
 msgstr "Bildschirm sperren"
 
-#: krootwm.C:226 krootwm.C:295
+#: krootwm.C:237 krootwm.C:306
 msgid "Logout"
 msgstr "Abmelden"
 
-#: krootwm.C:234 krootwm.C:272
+#: krootwm.C:245 krootwm.C:283
 msgid "Refresh desktop"
 msgstr "Arbeitsfläche auffrischen"
 
-#: krootwm.C:235 krootwm.C:274
+#: krootwm.C:246 krootwm.C:285
 msgid "Unclutter windows"
 msgstr "Fenster anordnen"
 
-#: krootwm.C:236 krootwm.C:275
+#: krootwm.C:247 krootwm.C:286
 msgid "Cascade windows"
 msgstr "Fenster überlappend"
 
-#: krootwm.C:237 krootwm.C:276
+#: krootwm.C:248 krootwm.C:287
 msgid "Arrange icons"
 msgstr "Symbole anordnen"
 
-#: krootwm.C:238 krootwm.C:271
+#: krootwm.C:249 krootwm.C:282
 msgid "Display properties"
 msgstr "Eigenschaften der Bildschirmanzeige"
 
-#: krootwm.C:246 krootwm.C:269
+#: krootwm.C:257 krootwm.C:280
 msgid "Help on desktop"
 msgstr "Hilfe zur Arbeitsfläche"
 
-#: krootwm.C:247
+#: krootwm.C:258
 msgid "About KDE..."
 msgstr "Über KDE..."
 
-#: krootwm.C:265 krootwm.C:304 krootwm.C:812 krootwm.C:820
+#: krootwm.C:276 krootwm.C:315 krootwm.C:823 krootwm.C:831
 msgid "New"
 msgstr "Neu"
 
-#: krootwm.C:266 krootwm.C:305
+#: krootwm.C:277 krootwm.C:316
 msgid "Bookmarks"
 msgstr "Lesezeichen"
 
-#: krootwm.C:280
+#: krootwm.C:291
 msgid "Arrange Window Maker icons"
 msgstr "Symbole von Window Maker anordnen"
 
-#: krootwm.C:281
+#: krootwm.C:292
 msgid "Show all"
 msgstr "Alle anzeigen"
 
-#: krootwm.C:282
+#: krootwm.C:293
 msgid "Hide other"
 msgstr "Andere ausblenden"
 
-#: krootwm.C:284
+#: krootwm.C:295
 msgid "Show info panel"
 msgstr "Infofeld anzeigen"
 
-#: krootwm.C:285
+#: krootwm.C:296
 msgid "Show legal panel"
 msgstr "Rechtliche Info anzeigen"
 
-#: krootwm.C:286
+#: krootwm.C:297
 msgid "Restart"
 msgstr "Neu starten"
 
-#: krootwm.C:288
+#: krootwm.C:299
 msgid "Exit"
 msgstr "Verlassen"
 
-#: krootwm.C:289
+#: krootwm.C:300
 msgid "Window Maker"
 msgstr "Window Maker"
 
-#: krootwm.C:306
+#: krootwm.C:317
 msgid "Desk"
 msgstr "Arbeitsbereich"
 
-#: krootwm.C:307
+#: krootwm.C:318
 msgid "Windows"
 msgstr "Fenster"
 
-#: krootwm.C:370
+#: krootwm.C:381
 msgid "Edit Bookmarks"
 msgstr "Lesezeichen bearbeiten"
 
-#: krootwm.C:384 krootwm.C:822
+#: krootwm.C:395 krootwm.C:833
 msgid "Folder"
 msgstr "Verzeichnis"
 
-#: krootwm.C:388
+#: krootwm.C:399
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "FEHLER: Vorlage existiert nicht '%s'"
 
-#: krootwm.C:843
+#: krootwm.C:854
 msgid "Could not create folder"
 msgstr "Konnte Verzeichnis nicht erstellen"
 
-#: krootwm.C:911
+#: krootwm.C:938
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:915
+#: krootwm.C:942
 msgid "Usage:"
 msgstr "Benutzung:"

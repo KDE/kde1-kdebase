@@ -101,8 +101,8 @@ msgstr "安装选项"
 msgid "unknown CPU type"
 msgstr "未知的CPU类型"
 
-#: info_hpux.cpp:62
 #
+#: info_hpux.cpp:62
 msgid "unavailable"
 msgstr "未知"
 

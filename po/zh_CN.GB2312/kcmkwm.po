@@ -64,26 +64,22 @@ msgstr "右"
 #: titlebar.cpp:471
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr ""
-"标题行左边空间已满...请移去 '最大化' 按钮\n"
+msgstr "标题行左边空间已满...请移去 '最大化' 按钮\n"
 
 #: titlebar.cpp:504
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr ""
-"标题行右边空间已满...请移去 '最大化' 按钮\n"
+msgstr "标题行右边空间已满...请移去 '最大化' 按钮\n"
 
 #: titlebar.cpp:544
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr ""
-"标题行左边空间已满...请移去 '最小化' 按钮\n"
+msgstr "标题行左边空间已满...请移去 '最小化' 按钮\n"
 
 #: titlebar.cpp:577
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr ""
-"标题行右边空间已满...请移去 '最小化' 按钮\n"
+msgstr "标题行右边空间已满...请移去 '最小化' 按钮\n"
 
 #: titlebar.cpp:930
 msgid "Title Alignment"

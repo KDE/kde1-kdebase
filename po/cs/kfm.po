@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1999-03-27 01:17+0100\n"
+"POT-Creation-Date: 1999-03-29 01:16+0200\n"
 "PO-Revision-Date: 1999-02-23 10:12+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -9,191 +9,191 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kfmgui.cpp:203
+#: kfmgui.cpp:204
 msgid "KFM"
 msgstr "KFM"
 
-#: kfmgui.cpp:221
+#: kfmgui.cpp:222
 msgid "New &Window"
 msgstr "Nové &okno"
 
-#: kfmgui.cpp:224
+#: kfmgui.cpp:225
 msgid "&Run..."
 msgstr "&Vykonat pøíkaz ..."
 
-#: kfmgui.cpp:226
+#: kfmgui.cpp:227
 msgid "Open &Terminal"
 msgstr "Otevøít t&erminál"
 
-#: kfmgui.cpp:229
+#: kfmgui.cpp:230
 msgid "&Open Location..."
 msgstr "Otevøít UR&L ..."
 
-#: finddlg.cpp:66 kfmgui.cpp:231
+#: finddlg.cpp:66 kfmgui.cpp:232
 msgid "&Find"
 msgstr "&Hledej"
 
-#: kfmgui.cpp:252
+#: kfmgui.cpp:253
 msgid "&Move to Trash"
 msgstr "&Pøesunout do ko¹e"
 
-#: kfmgui.cpp:259
+#: kfmgui.cpp:260
 msgid "&Select"
 msgstr "Vy&ber"
 
-#: kfmgui.cpp:261
+#: kfmgui.cpp:262
 msgid "Select &all"
 msgstr "V&ybrat v¹e"
 
-#: kfmgui.cpp:264
+#: kfmgui.cpp:265
 msgid "&Find in page..."
 msgstr "&Nalézt ve stránce ..."
 
-#: kfmgui.cpp:266
+#: kfmgui.cpp:267
 msgid "Find &next"
 msgstr "N&alézt následující"
 
-#: kfmgui.cpp:269
+#: kfmgui.cpp:270
 msgid "Show History"
 msgstr "Zobrazit historii"
 
-#: kfmgui.cpp:271
+#: kfmgui.cpp:272
 msgid "Show Cache"
 msgstr "Ukázat cache"
 
-#: kfmgui.cpp:273
+#: kfmgui.cpp:274
 msgid "Mime &Types"
 msgstr "Mime &typy"
 
-#: kfmgui.cpp:275
+#: kfmgui.cpp:276
 msgid "App&lications"
 msgstr "Ap&likace"
 
-#: kfmgui.cpp:281
+#: kfmgui.cpp:282
 msgid "Global Mime Types"
 msgstr "Globální Mime typ"
 
-#: kfmgui.cpp:283
+#: kfmgui.cpp:284
 msgid "Global Applications"
 msgstr "Globální aplikace"
 
-#: kfmgui.cpp:291
+#: kfmgui.cpp:292
 msgid "Show Hi&dden Files"
 msgstr "&Ukázat skryté soubory"
 
-#: kfmgui.cpp:293
+#: kfmgui.cpp:294
 msgid "Show Tr&ee"
 msgstr "Ukázat &strom"
 
-#: kfmgui.cpp:295
+#: kfmgui.cpp:296
 msgid "Sho&w Thumbnails"
 msgstr "Ukazovat mi&niatury"
 
-#: kfmgui.cpp:297
+#: kfmgui.cpp:298
 msgid "&HTML View"
 msgstr "&HTML Pohled"
 
-#: kfmgui.cpp:300
+#: kfmgui.cpp:301
 msgid "&Icon View"
 msgstr "Pohled s &Ikonami"
 
-#: kfmgui.cpp:302
+#: kfmgui.cpp:303
 msgid "&Text View"
 msgstr "&Textový pohled"
 
-#: kfmgui.cpp:304
+#: kfmgui.cpp:305
 msgid "&Long View"
 msgstr "&Podrobný podled"
 
-#: kfmgui.cpp:306
+#: kfmgui.cpp:307
 msgid "&Short View"
 msgstr "&Jednoduchý pohled"
 
-#: kfmgui.cpp:312
+#: kfmgui.cpp:313
 msgid "Rel&oad Tree"
 msgstr "O&bnov Strom"
 
-#: kfmgui.cpp:314
+#: kfmgui.cpp:315
 msgid "&Reload Document"
 msgstr "&Obnov dokument"
 
-#: kfmgui.cpp:316
+#: kfmgui.cpp:317
 msgid "Rescan &Bindings"
 msgstr "Znovu naèíst &vazby"
 
-#: kfmgui.cpp:319
+#: kfmgui.cpp:320
 msgid "&View Frame Source"
 msgstr "&Zobraz zdroj rámce"
 
-#: kfmgui.cpp:321
+#: kfmgui.cpp:322
 msgid "View Docu&ment Source"
 msgstr "Zobraz zdroj doku&mentu"
 
-#: kfmgui.cpp:329
+#: kfmgui.cpp:330
 msgid "Auto"
 msgstr "Automatické"
 
-#: kfmgui.cpp:337
+#: kfmgui.cpp:338
 msgid "Document Encodin&g"
 msgstr "&Kódování dokumentu"
 
-#: kfmgui.cpp:352
+#: kfmgui.cpp:353
 msgid "Clear Cache"
 msgstr "Vyprázdnit cache"
 
-#: kfmgui.cpp:355
+#: kfmgui.cpp:356
 msgid "Always look in cache"
 msgstr "V¾dy pou¾ívat cache"
 
-#: kfmgui.cpp:357
+#: kfmgui.cpp:358
 msgid "Never look in cache"
 msgstr "Nikdy nepou¾ívat cache"
 
-#: kfmgui.cpp:359
+#: kfmgui.cpp:360
 msgid "Always save cache"
 msgstr "V¾dy ukládat cache"
 
-#: kfmgui.cpp:361
+#: kfmgui.cpp:362
 msgid "Never save cache"
 msgstr "Nikdy neukládat cache"
 
-#: kfmgui.cpp:372
+#: kfmgui.cpp:373
 msgid "Show &Menubar"
 msgstr "Zobrazovat &menu"
 
-#: kfmgui.cpp:374
+#: kfmgui.cpp:375
 msgid "Show &Statusbar"
 msgstr "Zobrazovat &statusbar"
 
-#: kfmgui.cpp:376
+#: kfmgui.cpp:377
 msgid "Show &Toolbar"
 msgstr "Zobrazovat Nás&trojovou li¹tu"
 
-#: kfmgui.cpp:378
+#: kfmgui.cpp:379
 msgid "Show &Location bar"
 msgstr "Zobrazovat UR&L"
 
-#: kfmgui.cpp:381
+#: kfmgui.cpp:382
 msgid "Sa&ve Settings"
 msgstr "&Ulo¾it nastavení"
 
-#: kfmgui.cpp:383
+#: kfmgui.cpp:384
 msgid "Save Settings for this &URL"
 msgstr "Ulo¾it nastavení tohoto U&RL"
 
-#: kfmgui.cpp:391
+#: kfmgui.cpp:392
 msgid "&Cache"
 msgstr "&Cache"
 
-#: kfmgui.cpp:392
+#: kfmgui.cpp:393
 msgid "&Configure File Manager..."
 msgstr "K&onfigurovat správce souborù ..."
 
-#: kfmgui.cpp:394
+#: kfmgui.cpp:395
 msgid "Configure &Browser..."
 msgstr "&Konfigurovat prohlí¾eè ..."
 
-#: kfmgui.cpp:430
+#: kfmgui.cpp:431
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -219,33 +219,33 @@ msgstr ""
 "V souèasné dobì program udr¾uje: \n"
 "David Farem faure@kde.org"
 
-#: kfmgui.cpp:433
+#: kfmgui.cpp:434
 msgid ""
 "\n"
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
 msgstr ""
 
-#: kfmgui.cpp:446
+#: kfmgui.cpp:447
 msgid "&Go"
 msgstr "Pøe&jít"
 
-#: kfmgui.cpp:447
+#: kfmgui.cpp:448
 msgid "&Bookmarks"
 msgstr "&Zálo¾ky"
 
-#: kfmgui.cpp:477 main.cpp:296
+#: kfmgui.cpp:478 main.cpp:296
 msgid "Up"
 msgstr "Nahoru"
 
-#: kfmgui.cpp:487 main.cpp:298
+#: kfmgui.cpp:488 main.cpp:298
 msgid "Forward"
 msgstr "Vpøed"
 
-#: kfmgui.cpp:492
+#: kfmgui.cpp:493
 msgid "Home"
 msgstr "Domù"
 
-#: kfmgui.cpp:549
+#: kfmgui.cpp:550
 msgid "Could not load icon\n"
 msgstr "Není mo¾né nahrát ikonu\n"
 
@@ -254,16 +254,16 @@ msgstr "Není mo¾né nahrát ikonu\n"
 #: kbind.cpp:1651 kbind.cpp:1710 kbind.cpp:1722 kbind.cpp:1749 kbind.cpp:1770
 #: kbind.cpp:1790 kbind.cpp:1802 kbind.cpp:1818 kbind.cpp:1953 kbind.cpp:1965
 #: kbind.cpp:2010 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
-#: kfmgui.cpp:550 kfmgui.cpp:791 kfmman.cpp:370 kfmman.cpp:1429
+#: kfmgui.cpp:551 kfmgui.cpp:792 kfmman.cpp:370 kfmman.cpp:1429
 #: kfmman.cpp:1656 kfmman.cpp:1702 kfmprops.cpp:380 kfmprops.cpp:649
 #: kfmprops.cpp:656 kfmprops.cpp:950 kfmprops.cpp:1089 kfmprops.cpp:1218
 #: kfmprops.cpp:1722 kfmprops.cpp:2083 kfmprops.cpp:2265 kfmserver.cpp:46
 #: kfmserver.cpp:214 kfmserver.cpp:294 kfmserver.cpp:313 kfmserver.cpp:360
 #: kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:339 kfmtree.cpp:466
-#: kfmtree.cpp:497 kfmtree.cpp:503 kfmtree.cpp:509 kfmview.cpp:441
-#: kfmview.cpp:475 kfmview.cpp:494 kfmview.cpp:576 kfmview.cpp:582
-#: kfmview.cpp:588 kfmview.cpp:713 kfmview.cpp:717 kfmview.cpp:756
-#: kfmview.cpp:783 kfmview.cpp:804 kfmview.cpp:812 kfmview.cpp:820
+#: kfmtree.cpp:497 kfmtree.cpp:503 kfmtree.cpp:509 kfmview.cpp:442
+#: kfmview.cpp:476 kfmview.cpp:495 kfmview.cpp:577 kfmview.cpp:583
+#: kfmview.cpp:589 kfmview.cpp:714 kfmview.cpp:718 kfmview.cpp:757
+#: kfmview.cpp:784 kfmview.cpp:805 kfmview.cpp:813 kfmview.cpp:821
 #: kiojob.cpp:239 kiojob.cpp:247 kiojob.cpp:254 kiojob.cpp:279 kiojob.cpp:298
 #: kiojob.cpp:309 kiojob.cpp:333 kiojob.cpp:352 kiojob.cpp:569 kiojob.cpp:587
 #: kiojob.cpp:892 kiojob.cpp:905 kiojob.cpp:922 kiojob.cpp:953 kiojob.cpp:1001
@@ -273,69 +273,69 @@ msgstr "Není mo¾né nahrát ikonu\n"
 msgid "KFM Error"
 msgstr "Chyba KFM"
 
-#: kfmgui.cpp:563
+#: kfmgui.cpp:564
 msgid "Location:"
 msgstr "Místo:"
 
-#: kfmexec.cpp:62 kfmgui.cpp:790 kfmman.cpp:1428
+#: kfmexec.cpp:62 kfmgui.cpp:791 kfmman.cpp:1428
 msgid "Malformed URL\n"
 msgstr "Chybný formát URL\n"
 
-#: kfmgui.cpp:976
+#: kfmgui.cpp:977
 msgid "Select files:"
 msgstr "Vyber soubory:"
 
-#: kfmgui.cpp:1043
+#: kfmgui.cpp:1044
 msgid "Find Complete"
 msgstr "Hledání dokonèeno"
 
-#: kfmgui.cpp:1044
+#: kfmgui.cpp:1045
 msgid "Continue search from the top of the page?"
 msgstr "Pokraèovat v hledání od vrchu stránky?"
 
-#: kfmgui.cpp:1062
+#: kfmgui.cpp:1063
 msgid "&Edit Bookmarks..."
 msgstr "&Upravit zálo¾ky"
 
-#: kfmgui.cpp:1074
+#: kfmgui.cpp:1075
 msgid "&Add Bookmark"
 msgstr "&Pøidej zálo¾ku"
 
-#: kfmgui.cpp:1110 kfmman.cpp:1469 kfmtree.cpp:387 root.cpp:286
+#: kfmgui.cpp:1111 kfmman.cpp:1469 kfmtree.cpp:387 root.cpp:286
 msgid "&New"
 msgstr "&Nový "
 
-#: kfmgui.cpp:1183
+#: kfmgui.cpp:1184
 msgid "&Up"
 msgstr "&Nahoru"
 
-#: kfmgui.cpp:1185
+#: kfmgui.cpp:1186
 msgid "&Back"
 msgstr "&Zpìt"
 
-#: kfmgui.cpp:1187
+#: kfmgui.cpp:1188
 msgid "&Forward"
 msgstr "&Vpøed"
 
-#: kfmgui.cpp:1189
+#: kfmgui.cpp:1190
 msgid "&Home"
 msgstr "&Domù"
 
-#: kfmgui.cpp:1258 kfmgui.cpp:1424 kfmjob.cpp:36 kfmman.cpp:252
-#: kfmtree.cpp:498 kfmview.cpp:495 kfmview.cpp:577 kfmview.cpp:805
+#: kfmgui.cpp:1259 kfmgui.cpp:1425 kfmjob.cpp:36 kfmman.cpp:252
+#: kfmtree.cpp:498 kfmview.cpp:496 kfmview.cpp:578 kfmview.cpp:806
 #: kiojob.cpp:88 root.cpp:1247
 msgid "ERROR: Malformed URL"
 msgstr "Chyba: Chybný formát URL"
 
-#: kfmgui.cpp:1378 kfmserver.cpp:241
+#: kfmgui.cpp:1379 kfmserver.cpp:241
 msgid "Open Location:"
 msgstr "Otevøít URL:"
 
-#: kfmgui.cpp:1435
+#: kfmgui.cpp:1436
 msgid "KFM Confirm"
 msgstr "Potvrzení KFM"
 
-#: kfmgui.cpp:1436
+#: kfmgui.cpp:1437
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -344,24 +344,24 @@ msgstr ""
 "Bubou ztraceny dùle¾ité vlastnosti \n"
 "pracovní plochy."
 
-#: kfmgui.cpp:1569
+#: kfmgui.cpp:1570
 msgid "Document: Done"
 msgstr "Dokument: Hotov"
 
-#: kfmview.cpp:442 root.cpp:944
+#: kfmview.cpp:443 root.cpp:944
 msgid "ERROR: You may only drop URLs"
 msgstr "CHYBA: Je mo¾né upustit pouze URL"
 
-#: kfmview.cpp:476
+#: kfmview.cpp:477
 msgid "ERROR: Drop over malformed URL"
 msgstr "Chyba: Upu¹tìní nad chybnì daným URL"
 
-#: kfmserver.cpp:129 kfmtree.cpp:536 kfmview.cpp:548 kfmview.cpp:848
+#: kfmserver.cpp:129 kfmtree.cpp:536 kfmview.cpp:549 kfmview.cpp:849
 #: kiojob.cpp:665 kiojob.cpp:1075 krenamewin.cpp:24 root.cpp:1290
 msgid "KFM Warning"
 msgstr "Varování KFM"
 
-#: kfmtree.cpp:537 kfmview.cpp:549 kfmview.cpp:849 root.cpp:1291
+#: kfmtree.cpp:537 kfmview.cpp:550 kfmview.cpp:850 root.cpp:1291
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -371,23 +371,23 @@ msgstr ""
 "\n"
 "Neexistuje zpùsob jak je obnovit!"
 
-#: kfmtree.cpp:504 kfmview.cpp:583 kfmview.cpp:813 root.cpp:1253
+#: kfmtree.cpp:504 kfmview.cpp:584 kfmview.cpp:814 root.cpp:1253
 msgid "ERROR: You dropped a URL over itself"
 msgstr "CHYBA: Upustil jste URL nad sebou samým"
 
-#: kfmtree.cpp:510 kfmview.cpp:589 kfmview.cpp:821 root.cpp:1259
+#: kfmtree.cpp:510 kfmview.cpp:590 kfmview.cpp:822 root.cpp:1259
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "CHYBA: Upustil jste adresáø nad nìkterým z jeho podadresáøù"
 
-#: kfmexec.cpp:300 kfmman.cpp:1214 kfmview.cpp:605 root.cpp:1134
+#: kfmexec.cpp:300 kfmman.cpp:1214 kfmview.cpp:606 root.cpp:1134
 msgid "Open With:"
 msgstr "Otevøi pomocí:"
 
-#: kfmview.cpp:641 root.cpp:1190
+#: kfmview.cpp:642 root.cpp:1190
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "Chyba: Nemohu otevøít vlastnosti pro nìkolik souborù"
 
-#: kfmview.cpp:714
+#: kfmview.cpp:715
 msgid ""
 "Can not save properties because\n"
 "this directory is neither writable nor bookmarked.\n"
@@ -399,7 +399,7 @@ msgstr ""
 "\n"
 "Pøidejte nejprve toto místo do zálo¾ek, nebo vytvo¾te odkaz na plo¹e."
 
-#: kfmview.cpp:718
+#: kfmview.cpp:719
 msgid ""
 "Can not save properties because\n"
 "this URL is neither bookmarked nor on desktop.\n"
@@ -411,23 +411,23 @@ msgstr ""
 "\n"
 "Pøidejte nejprve toto místo do zálo¾ek, nebo vytvo¾te odkaz na plo¹e."
 
-#: kfmtree.cpp:467 kfmview.cpp:757 root.cpp:1340
+#: kfmtree.cpp:467 kfmview.cpp:758 root.cpp:1340
 msgid "Could not access Trash Bin"
 msgstr "Nemohu pøistoupit ke ko¹i"
 
-#: kfmview.cpp:784 root.cpp:1229
+#: kfmview.cpp:785 root.cpp:1229
 msgid "Can not paste into multiple directories"
 msgstr "Nemohu vkládat do nìkolika adresáøù"
 
-#: kfmview.cpp:881
+#: kfmview.cpp:882
 msgid "ERROR: Can not change to multiple directories"
 msgstr "Chyba: Nemohu jít do nìkolika adresáøù"
 
-#: kfmview.cpp:1152
+#: kfmview.cpp:1153
 msgid "KFM Security Alert"
 msgstr "Bezpeènostní výstraha KFM"
 
-#: kfmview.cpp:1153
+#: kfmview.cpp:1154
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -435,16 +435,16 @@ msgstr ""
 "Tato stránka není dùvìryhodná, ale obsahuje\n"
 "odkaz na lokální souborový systém."
 
-#: kfmview.cpp:1245
+#: kfmview.cpp:1246
 msgid "Symbolic Link"
 msgstr "Symbolický link"
 
-#: kfmview.cpp:1247
+#: kfmview.cpp:1248
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (link)"
 
-#: kfmview.cpp:1267
+#: kfmview.cpp:1268
 msgid "bytes"
 msgstr "bytù"
 
