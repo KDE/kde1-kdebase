@@ -384,18 +384,18 @@ MyApp::MyApp(int &argc = 0, char **argv = 0, const QString& rAppName = 0):KAppli
   XSetErrorHandler(handler);
 
   // these should be internationalized!
-  setStringProperty("KWM_STRING_MAXIMIZE",   klocale->translate("Maximize"));
-  setStringProperty("KWM_STRING_UNMAXIMIZE", klocale->translate("Restore"));
-  setStringProperty("KWM_STRING_ICONIFY",    klocale->translate("Iconify"));
-  setStringProperty("KWM_STRING_UNICONIFY",  klocale->translate("DeIconify"));
-  setStringProperty("KWM_STRING_STICKY",     klocale->translate("Sticky"));
-  setStringProperty("KWM_STRING_UNSTICKY",   klocale->translate("UnSticky"));
-  setStringProperty("KWM_STRING_MOVE",       klocale->translate("Move"));
-  setStringProperty("KWM_STRING_RESIZE",     klocale->translate("Resize"));
-  setStringProperty("KWM_STRING_CLOSE",      klocale->translate("Close"));
-  setStringProperty("KWM_STRING_TODESKTOP",  klocale->translate("To desktop"));
+  setStringProperty("KWM_STRING_MAXIMIZE",   klocale->translate("&Maximize"));
+  setStringProperty("KWM_STRING_UNMAXIMIZE", klocale->translate("&Restore"));
+  setStringProperty("KWM_STRING_ICONIFY",    klocale->translate("&Iconify"));
+  setStringProperty("KWM_STRING_UNICONIFY",  klocale->translate("&DeIconify"));
+  setStringProperty("KWM_STRING_STICKY",     klocale->translate("&Sticky"));
+  setStringProperty("KWM_STRING_UNSTICKY",   klocale->translate("&UnSticky"));
+  setStringProperty("KWM_STRING_MOVE",       klocale->translate("Mo&ve"));
+  setStringProperty("KWM_STRING_RESIZE",     klocale->translate("Resi&ze"));
+  setStringProperty("KWM_STRING_CLOSE",      klocale->translate("&Close"));
+  setStringProperty("KWM_STRING_TODESKTOP",  klocale->translate("&To desktop"));
   setStringProperty("KWM_STRING_ONTOCURRENTDESKTOP", 
-		    klocale->translate("Onto current desktop"));
+		    klocale->translate("&Onto current desktop"));
 
   desktopMenu = new QPopupMenu; 
   desktopMenu->installEventFilter(this);
