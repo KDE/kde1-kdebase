@@ -6,5 +6,13 @@ echo "Allowing ALL (!) local users to use this display"
 xhost +local:
 echo ""
 echo "Logging in as super user"
-su - root -c "DISPLAY=$DISPLAY; export DISPLAY; @kde_bindir@/kfm -sw >/dev/null"
+
+# Test KDEDIR first, otherwise use hardcoded path (allows to move the KDE dir)
+if test -f $KDEDIR/bin/kfm ; then
+ kfm=$KDEDIR/bin/kfm
+else
+ kfm=@kde_bindir@/kfm
+fi
+su - root -c "DISPLAY=$DISPLAY; export DISPLAY; $kfm -sw >/dev/null"
 xhost -local:
+
