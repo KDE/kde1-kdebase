@@ -19,8 +19,7 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: zgleda, da je nek okenski vmesnik ¾e nalo¾en. kwm se ne more"
-"zagnati\n"
+"kwm: zgleda, da je nek okenski vmesnik ¾e nalo¾en. kwm se ne morezagnati\n"
 
 #: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
@@ -149,8 +148,8 @@ msgid ""
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
 "Naslednji programi se ne zavedajo okolja X11 in jih zato ne morem obnoviti\n"
-"v naslednji seansi. Preverite, èe mogoèe ne vsebujejo pomembnih "
-"neshranjenih informacij."
+"v naslednji seansi. Preverite, èe mogoèe ne vsebujejo pomembnih neshranjenih "
+"informacij."
 
 #: taskmgr.C:106
 msgid "Switch to"
