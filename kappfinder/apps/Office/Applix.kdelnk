@@ -1,0 +1,17 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=Applix
+MiniIcon=
+Protocols=
+MimeType=
+Comment=Applix
+Exec=applix
+Icon=applix.xpm
+TerminalOptions=
+Path=
+DocPath=
+Type=Application
+Terminal=0
+Info=ApplixWare Office Suite
