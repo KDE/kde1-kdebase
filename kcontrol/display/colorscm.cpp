@@ -371,6 +371,11 @@ void KColorScheme::slotAdd()
 	
 	QString kcsPath( getenv( "HOME" ) );
 	kcsPath += "/.kde/share/apps/kdisplay/";
+	
+	QDir d( kcsPath.data() );
+	if ( !d.exists() )
+		d.mkdir( kcsPath.data() );
+	
 	sFile.prepend( kcsPath );
 	sFile += ".kcsrc";
 	sFileList->append( sFile.data() );
@@ -513,6 +518,8 @@ KColorScheme::~KColorScheme()
 
 void KColorScheme::readScheme( int index )
 {
+	KConfigBase* config;
+	
 	if( index == 1 ) {
 		cs->back = lightGray;
 		cs->txt = black;
@@ -530,93 +537,52 @@ void KColorScheme::readScheme( int index )
 		
 		return;
 	} if ( index == 0 ) {
-		KConfig* config  = kapp->getConfig();
-		
-		config->setGroup( "Color Scheme" );
-		
-		cs->iaTitle = 
-		config->readColorEntry( "InactiveTitleBarColor", &darkGray);
-
-		cs->iaTxt = 
-		config->readColorEntry( "InactiveTitleTextColor", &lightGray );
-		
-		cs->iaBlend = 
-		config->readColorEntry( "InactiveTitleBlendColor", &lightGray );
-
-		cs->aTitle =
-		config->readColorEntry( "ActiveTitleBarColor", &darkBlue );
-
-		cs->aTxt = 
-		config->readColorEntry( "ActiveTitleTextColor", &white );
-		
-		cs->aBlend = 
-		config->readColorEntry( "ActiveTitleBlendColor", &black );
-
-		cs->txt = 
-		config->readColorEntry( "TextColor", &black );
-
-		cs->back = 
-		config->readColorEntry( "BackgroundColor", &lightGray );
-
-		cs->select =
-		config->readColorEntry( "SelectColor", &darkBlue);
-
-		cs->selectTxt =
-		config->readColorEntry( "SelectTextColor", &white );
-
-		cs->window =
-		config->readColorEntry( "WindowColor", &white );
-
-		cs->windowTxt =
-		config->readColorEntry( "WindowTextColor", &black );
-
-		cs->contrast = 
-		config->readNumEntry( "Contrast", 7 );
-		
+		config  = kapp->getConfig();
 	} else {
-		KSimpleConfig *config = 
+		config = 
 			new KSimpleConfig( sFileList->at( index ), true );
-		config->setGroup( "Color Scheme" );
-		
-		cs->iaTitle = 
-		config->readColorEntry( "InactiveTitleBarColor", &darkGray);
-
-		cs->iaTxt = 
-		config->readColorEntry( "InactiveTitleTextColor", &lightGray );
-		
-		cs->iaBlend = 
-		config->readColorEntry( "InactiveTitleBlendColor", &lightGray );
-
-		cs->aTitle =
-		config->readColorEntry( "ActiveTitleBarColor", &darkBlue );
-
-		cs->aTxt = 
-		config->readColorEntry( "ActiveTitleTextColor", &white );
-		
-		cs->aBlend = 
-		config->readColorEntry( "ActiveTitleBlendColor", &black );
-
-		cs->txt = 
-		config->readColorEntry( "TextColor", &black );
-
-		cs->back = 
-		config->readColorEntry( "BackgroundColor", &lightGray );
-
-		cs->select =
-		config->readColorEntry( "SelectColor", &darkBlue);
-
-		cs->selectTxt =
-		config->readColorEntry( "SelectTextColor", &white );
-
-		cs->window =
-		config->readColorEntry( "WindowColor", &white );
-
-		cs->windowTxt =
-		config->readColorEntry( "WindowTextColor", &black );
-
-		cs->contrast = 
-		config->readNumEntry( "Contrast", 7 );
 	}
+	
+	config->setGroup( "Color Scheme" );
+		
+	cs->iaTitle = 
+	config->readColorEntry( "InactiveTitleBarColor", &darkGray);
+
+	cs->iaTxt = 
+	config->readColorEntry( "InactiveTitleTextColor", &lightGray );
+
+	cs->iaBlend = 
+	config->readColorEntry( "InactiveTitleBlendColor", &lightGray );
+
+	cs->aTitle =
+	config->readColorEntry( "ActiveTitleBarColor", &darkBlue );
+
+	cs->aTxt = 
+	config->readColorEntry( "ActiveTitleTextColor", &white );
+
+	cs->aBlend = 
+	config->readColorEntry( "ActiveTitleBlendColor", &black );
+
+	cs->txt = 
+	config->readColorEntry( "TextColor", &black );
+
+	cs->back = 
+	config->readColorEntry( "BackgroundColor", &lightGray );
+
+	cs->select =
+	config->readColorEntry( "SelectColor", &darkBlue);
+
+	cs->selectTxt =
+	config->readColorEntry( "SelectTextColor", &white );
+
+	cs->window =
+	config->readColorEntry( "WindowColor", &white );
+
+	cs->windowTxt =
+	config->readColorEntry( "WindowTextColor", &black );
+
+	cs->contrast = 
+	config->readNumEntry( "Contrast", 7 );
 }
 
 void KColorScheme::readSchemeNames( )
@@ -630,31 +596,32 @@ void KColorScheme::readSchemeNames( )
 	d.setSorting( QDir::Name );
 	d.setNameFilter("*.kcsrc");
 	
-	const QFileInfoList *sysList = d.entryInfoList();
-	QFileInfoListIterator sysIt( *sysList );
-	QFileInfo *fi;
-	
-	// Always a current and a default scheme 
-	nSysSchemes = 2;
-	
-	QString str;
-	
-	// This for system files
-	debug("System supplied schemes");
-	while ( ( fi = sysIt.current() ) ) {           // for each file...
-    	
-		KSimpleConfig *config = new KSimpleConfig( fi->filePath(), true );
-		config->setGroup( "Color Scheme" );
-		str = config->readEntry( "Name" );
-		debug("%s", str.data() );
-		
-		sList->insertItem( str.data() );
-		sFileList->append( fi->filePath() );
-		
-		++sysIt;
-		nSysSchemes++;
-		
-		delete config;
+	if ( const QFileInfoList *sysList = d.entryInfoList() ) {
+		QFileInfoListIterator sysIt( *sysList );
+		QFileInfo *fi;
+
+		// Always a current and a default scheme 
+		nSysSchemes = 2;
+
+		QString str;
+
+		// This for system files
+		debug("System supplied schemes");
+		while ( ( fi = sysIt.current() ) ) {           // for each file...
+
+			KSimpleConfig *config = new KSimpleConfig( fi->filePath(), true );
+			config->setGroup( "Color Scheme" );
+			str = config->readEntry( "Name" );
+			debug("%s", str.data() );
+
+			sList->insertItem( str.data() );
+			sFileList->append( fi->filePath() );
+
+			++sysIt;
+			nSysSchemes++;
+
+			delete config;
+		}
 	}
 	
 	kcsPath.sprintf( getenv( "HOME" ) );
@@ -665,22 +632,25 @@ void KColorScheme::readSchemeNames( )
 	d.setSorting( QDir::Name );
 	d.setNameFilter("*.kcsrc");
 	
-	const QFileInfoList *userList = d.entryInfoList();
-	QFileInfoListIterator userIt( *userList );
-	
-	// This for users files
-	debug("User schemes");
-	while ( ( fi = userIt.current() ) ) {
+	if ( const QFileInfoList *userList = d.entryInfoList() ) {
+		QFileInfoListIterator userIt( *userList );
+		QFileInfo *fi;
+		QString str;
 
-		KSimpleConfig config( fi->filePath(), true );
-		config.setGroup( "Color Scheme" );
-		str = config.readEntry( "Name" );
-		debug("%s", str.data() );
-		
-		sList->insertItem( str.data() );
-		sFileList->append( fi->filePath() );
-		
-		++userIt;
+		// This for users files
+		debug("User schemes");
+		while ( ( fi = userIt.current() ) ) {
+
+			KSimpleConfig config( fi->filePath(), true );
+			config.setGroup( "Color Scheme" );
+			str = config.readEntry( "Name" );
+			debug("%s", str.data() );
+
+			sList->insertItem( str.data() );
+			sFileList->append( fi->filePath() );
+
+			++userIt;
+		}
 	}
 		
 }
@@ -693,7 +663,7 @@ void KColorScheme::writeSettings()
 	QString str;
 	
 	KConfig* sys = kapp->getConfig();
-	sys->setGroup( "Color Scheme" );
+	sys->setGroup( "Desktop Colors" );
 
 	sys->writeEntry("BackgroundColor", cs->back, true, true);
 	sys->writeEntry("SelectColor", cs->select, true, true);

@@ -20,7 +20,8 @@
 
 #include "kpixmap.h"
 
-#define MAX_HOTSPOTS   13
+#define MAX_HOTSPOTS   19
+#define SCROLLBAR_SIZE 16
 
 class HotSpot
 {

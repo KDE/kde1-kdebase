@@ -156,7 +156,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
     connect( deskListBox, SIGNAL( highlighted(int) ),
 							SLOT( slotSwitchDesk(int) ) );
 	
-	groupLayout->addSpacing( 20 );
+	groupLayout->addSpacing( 15 );
 	groupLayout->addWidget( deskListBox, 10 );
 	
     button = new QPushButton( i18n( "&Rename ..." ), group );
@@ -177,6 +177,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 	topLayout->addWidget( monitorLabel, 1, 2 );
 
     monitor = new KBGMonitor( monitorLabel );
+	monitor->resize( 157, 111 );
     monitor->setBackgroundColor( color1 );
 	
     group = new QGroupBox( i18n( "Colors" ), this );
@@ -197,6 +198,8 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 	grid->setColStretch(2,100);
 	grid->setColStretch(3,100);
 	grid->setColStretch(4,0);
+	
+	//grid->setRowSpacing(0,15);
 	
 	ncGroup = new QButtonGroup( this );
 	ncGroup->hide();
@@ -322,6 +325,8 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 
 	topLayout->addWidget( group, 2, 2 );
 	topLayout->activate();
+	
+	resize(600,600);
     
     showSettings();
 }

@@ -8,8 +8,6 @@
 #include "widgetcanvas.h"
 #include "widgetcanvas.moc"
 
-#define SCROLLBAR_SIZE 16
-
 WidgetCanvas::WidgetCanvas( QWidget *parent, const char *name )
 	: QWidget( parent, name )
 {
@@ -17,7 +15,7 @@ WidgetCanvas::WidgetCanvas( QWidget *parent, const char *name )
 
 void WidgetCanvas::paintEvent(QPaintEvent *)
 {
-	bitBlt( this, 0,0, &smplw ); 
+	bitBlt( this, 0, 0, &smplw ); 
 }
 
 void WidgetCanvas::mousePressEvent( QMouseEvent *me )
@@ -108,8 +106,16 @@ void WidgetCanvas::drawSampleWidgets()
     paint.drawText( 25, 25, i18n("Inactive window") );
 	textLen = paint.fontMetrics().width(  i18n("Inactive window") );
     
-	hotspots[0] = HotSpot( QRect( (width()-25)/2-40, 8, textLen, 14 ), 1 ); // inactive text
-	hotspots[1] = HotSpot( QRect( 5, 5, width()-30, 20 ), 0 ); // inactive title
+	int spot = 0;
+	hotspots[ spot++ ] =
+	HotSpot( QRect( 25, 25-14, textLen, 14 ), 1 ); // inactive text
+	
+	hotspots[ spot++ ] =
+	HotSpot( QRect( 20, 10, (width()-60)/2, 20 ), 0 ); // inactive title
+	
+	hotspots[ spot++ ] =
+	HotSpot( QRect( 20+(width()-60)/2, 10,
+			(width()-60)/2, 20 ), 2 ); // inactive blend
 
     // Active window
     
@@ -125,11 +131,16 @@ void WidgetCanvas::drawSampleWidgets()
     
     paint.setFont( fnt );
     paint.setPen( aTxt );
-    paint.drawText( 30+5+5, 45+5,  i18n("Active window") );
+    paint.drawText( 35, 50,  i18n("Active window") );
 	textLen = paint.fontMetrics().width(  i18n("Active window" ));
     
-	hotspots[2] = HotSpot( QRect( 30+5+width()-32-(width()-32)/2-50, 38, textLen, 14 ), 3 ); // Active text
-	hotspots[3] = HotSpot( QRect( 25, 35, width()-32, 20 ), 2 ); // Active title
+	hotspots[ spot++ ] =
+	HotSpot( QRect( 35, 50-14, textLen, 14 ), 4 ); // Active text
+	hotspots[ spot ++] =
+	HotSpot( QRect( 25, 35, (width()-52)/2, 20 ), 3 ); // Active title
+	hotspots[ spot ++] =
+	HotSpot( QRect( 25+(width()-52)/2, 35,
+			(width()-52)/2, 20 ), 5 ); // Active title
 
     // Menu bar
   
@@ -139,18 +150,20 @@ void WidgetCanvas::drawSampleWidgets()
     paint.setFont( fnt );
     paint.setPen(txt );
     textLen = paint.fontMetrics().width( i18n("File") );
-    qDrawShadePanel ( &paint, 30, 52+5+2, textLen + 10, 21, cg, FALSE, 2, &brush);
-    paint.drawText( 35, 69+5, i18n("File") );
+    qDrawShadePanel ( &paint, 30, 59, textLen + 10, 21, cg, FALSE, 2, &brush);
+    paint.drawText( 35, 74, i18n("File") );
 
-    hotspots[4] = HotSpot( QRect( 35, 62, textLen, 14 ), 5 ); 
-    hotspots[5] = HotSpot( QRect( 27, 52+5, 33, 21 ), 4 ); 
+    hotspots[ spot++ ] =
+	HotSpot( QRect( 35, 62, textLen, 14 ), 7 ); 
+    hotspots[ spot++ ] =
+	HotSpot( QRect( 27, 57, 33, 21 ), 6 ); 
     
     paint.setFont( fnt );
     paint.setPen( txt );
     paint.drawText( 35 + textLen + 20, 69+5, i18n("Edit") );
     textLen = paint.fontMetrics().width( i18n("Edit") );
 
-    hotspots[6] = HotSpot( QRect( 65, 62, textLen, 14 ), 5 ); // text
+    hotspots[ spot++ ] = HotSpot( QRect( 65, 62, textLen, 14 ), 7 ); // text
 
     // Frame and window contents
     
@@ -164,8 +177,9 @@ void WidgetCanvas::drawSampleWidgets()
     paint.drawText( 200, 127-20, i18n( "Window text") );
     textLen = paint.fontMetrics().width( i18n("Window text") );
 
-    hotspots[7] = HotSpot( QRect( 200, 113-20, textLen, 14 ), 9 ); // window text
-    hotspots[8] = HotSpot( QRect( 116, 87, width()-138, height()-82-5 ), 8 ); // window bg
+    hotspots[ spot++ ] =
+	HotSpot( QRect( 200, 113-20, textLen, 14 ), 11 ); // window text
+   
     
 	brush.setColor( select );paint.setPen( select );
     paint.drawRect ( 120, 115, width()-175, 
@@ -176,6 +190,14 @@ void WidgetCanvas::drawSampleWidgets()
     paint.setPen( selectTxt );
     paint.drawText( 200, 135, i18n( "Selected text") );
     textLen = paint.fontMetrics().width( i18n("Selected text") );
+	
+	hotspots[ spot++ ] =
+	HotSpot( QRect( 200, 121, textLen, 14 ), 9 ); // select text
+    hotspots[ spot++ ] =
+	HotSpot( QRect( 120, 115, width()-175, height() ), 8 ); // select bg
+	
+	 hotspots[ spot++ ] =
+	HotSpot( QRect( 116, 87, width()-138, height()-82-5 ), 10 ); // window bg
 	
     // Scrollbar
     
@@ -190,6 +212,11 @@ void WidgetCanvas::drawSampleWidgets()
     paint.setFont( fnt );
     paint.setPen( txt );
     paint.drawText( 38, 97, i18n("New") );
+	
+	hotspots[ spot++ ] =
+	HotSpot( QRect( 38, 83, textLen, 14 ), 7 ); 
+    //hotspots[ spot++ ] =
+	//HotSpot( QRect( 28, 97, 78, 21 ), 6 ); 
     
     //qDrawShadePanel ( &paint, 32, 101, 80, 25, cg, FALSE, 2,
     //&brush);
@@ -198,13 +225,17 @@ void WidgetCanvas::drawSampleWidgets()
     paint.drawText( 38, 119, i18n("Open") );
     textLen = paint.fontMetrics().width( i18n("Open") );
 	
+	hotspots[ spot++ ] =
+	HotSpot( QRect( 38, 105, textLen, 14 ), 7 ); 
+    hotspots[ spot++ ] =
+	HotSpot( QRect( 28, 101, 78, 21 ), 6 ); 
+	
 	paint.setFont( fnt );
     paint.setPen( lightGray.dark() );
     paint.drawText( 38, 141, i18n("Save") );
     textLen = paint.fontMetrics().width( i18n("Save") );
 
-    hotspots[10] = HotSpot( QRect( 38, 105, textLen, 14 ), 5 ); 
-    hotspots[11] = HotSpot( QRect( 28, 101, 78, 21 ), 4 ); 
+    
     
     // Valance
 
@@ -218,7 +249,8 @@ void WidgetCanvas::drawSampleWidgets()
 	
 	// Stop the painting
 	
-	hotspots[12] = HotSpot( QRect( 0, 0, width(), height() ), 4 );
+	hotspots[ spot++ ]
+	= HotSpot( QRect( 0, 0, width(), height() ), 6 );
 	
 	repaint( FALSE );          
 }

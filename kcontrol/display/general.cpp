@@ -28,6 +28,9 @@
 #include <qlayout.h>
 #include <kapp.h>
 #include <kcharsets.h>
+#include <kconfigbase.h>
+#include <ksimpleconfig.h>
+
 #include <X11/Xlib.h>
 #include <X11/X.h>
 #include <X11/Xlib.h>
@@ -43,6 +46,62 @@
 #include "general.moc"
 
 extern int dropError(Display *, XErrorEvent *);
+
+
+FontUseItem::FontUseItem( const char *n, QFont default_fnt, bool f = false )
+	: selected(0)
+{
+	_text = n;
+	_font = default_fnt;
+	fixed = f;
+}
+
+void FontUseItem::setRC( const char *group, const char *key, const char *rc )
+{
+	_rcgroup = group;
+	_rckey = key;
+	if ( rc ) _rcfile = rc;
+}
+
+void FontUseItem::readFont()
+{
+	KConfigBase *config;
+	if ( _rcfile.isEmpty() ) {
+		config  = kapp->getConfig();
+	} else {
+		QString s( KApplication::localconfigdir() );
+		s += "/";
+		s += _rcfile;
+		config = new KSimpleConfig( s.data(), true );
+	}
+	
+	config->setGroup( _rcgroup.data() );
+	_font = config->readFontEntry( _rckey.data(), new QFont( _font ) );
+	debug("Reading font %s", _rckey.data() );
+}
+
+void FontUseItem::writeFont()
+{
+	KConfigBase *config;
+	if ( _rcfile.isEmpty() ) {
+		config  = kapp->getConfig();
+	} else {
+		QString s( KApplication::localconfigdir() );
+		s += "/";
+		s += _rcfile;
+		debug("Open resource file : %s", s.data() );
+		config = new KSimpleConfig( s.data() );
+	}
+	
+	config->setGroup( _rcgroup.data() );
+	if ( _rcfile.isEmpty() )
+		 config->writeEntry( _rckey.data(), _font, true, true );
+	else {
+		config->writeEntry( _rckey.data(), _font );
+		config->sync();
+	}
+	debug("Writing font %s", _rckey.data() );
+}
 
 KFontChooser::KFontChooser( QWidget *parent, const char *name )
 	: QWidget( parent, name )
@@ -62,10 +121,10 @@ KFontChooser::KFontChooser( QWidget *parent, const char *name )
 	cmbFont = new QComboBox( false, this );
 	cmbFont->setFixedHeight( cmbFont->sizeHint().height() );
 	
-	getFontList( fontList, true );
+	getFontList( fixedList, true );
+	getFontList( fontList );
+	
 	cmbFont->insertStrList( &fontList );
-	
-	
 	QStrListIterator it( fontList );
 	for ( i = 0; it.current(); ++it, i++ ) {
 		if ( !strcmp( fnt.family(), it.current() ) )
@@ -143,6 +202,35 @@ KFontChooser::KFontChooser( QWidget *parent, const char *name )
 	stackLayout->addWidget( cmbCharset );
 
 	topLayout->activate();
+}
+
+void KFontChooser::setFont( QFont start_fnt, bool fixed )
+{
+	fnt = start_fnt;
+	
+	cmbFont->clear();
+	if( fixed )
+		cmbFont->insertStrList( &fixedList );
+	else 
+		cmbFont->insertStrList( &fontList );
+	
+	QStrListIterator it( fixed ? fixedList : fontList );
+	for ( int i = 0; it.current(); ++it, i++ ) {
+		if ( !strcmp( fnt.family(), it.current() ) )
+			cmbFont->setCurrentItem( i );
+	}
+	
+	sbSize->setValue( fnt.pointSize() );
+	
+	if ( fnt.bold() )
+		cbBold->setChecked( true );
+	else
+		cbBold->setChecked( false );
+		
+	if ( fnt.italic() )
+		cbItalic->setChecked( true );
+	else
+		cbItalic->setChecked( false );
 }
 
 void KFontChooser::getFontList( QStrList &list, const char *pattern )
@@ -254,7 +342,7 @@ void KFontChooser::slotCharset(const char *name)
 
 void KFontChooser::slotSelectFont( const char *fname )
 {
-//	if( fontTypeList->currentItem() == 0 )
+//	if( lbFonts->currentItem() == 0 )
 	fnt.setFamily( fname );
 		
 	//fillCharsetCombo();	
@@ -267,7 +355,7 @@ void KFontChooser::slotFontSize( )
 {
 	//const int sizes[] = { 10, 12, 14 };
 
-//	if( fontTypeList->currentItem() == 0 )
+//	if( lbFonts->currentItem() == 0 )
 	int s = sbSize->getValue();
 		fnt.setPointSize( s );
 	
@@ -279,7 +367,7 @@ void KFontChooser::slotFontSize( )
 
 void KFontChooser::slotFontBold( bool b )
 {
-//	if( fontTypeList->currentItem() == 0 )
+//	if( lbFonts->currentItem() == 0 )
 		fnt.setBold( b );
 	
 	//slotPreviewFont(0);
@@ -290,7 +378,7 @@ void KFontChooser::slotFontBold( bool b )
 
 void KFontChooser::slotFontItalic( bool i )
 {
-//	if( fontTypeList->currentItem() == 0 )
+//	if( lbFonts->currentItem() == 0 )
 		fnt.setItalic( i );
 	
 	//slotPreviewFont(0);
@@ -317,7 +405,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	screen = DefaultScreen(kde_display);
 	root = RootWindow(kde_display, screen);
 
-	setName( i18n("General") );
+	setName( i18n("Fonts etc.") );
 
 	readSettings();
 	
@@ -370,22 +458,54 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	groupLayout->setColStretch(2,10);
 	groupLayout->setColStretch(3,0);*/
 	
-	fontTypeList = new QListBox( group );
-	fontTypeList->insertItem( i18n("General font") );
-	fontTypeList->insertItem( i18n("Fixed font") );
-	fontTypeList->insertItem( i18n("Window title font") );
-	fontTypeList->insertItem( i18n("Panel button font") );
-	fontTypeList->insertItem( i18n("Panel clock font") );
-	fontTypeList->setCurrentItem( 0 );
-	connect( fontTypeList, SIGNAL( highlighted( int ) ),
+	FontUseItem *item = new FontUseItem( i18n("General font"),
+				QFont( "helvetica", 12 ) );
+	item->setRC( "Desktop Fonts", "GeneralFont" );
+	fontUseList.append( item );
+	
+	item = new FontUseItem( i18n("Fixed font"),
+				QFont( "fixed", 10 ), true );
+	item->setRC( "Desktop Fonts", "FixedFont" );
+	fontUseList.append( item );
+	
+	item = new FontUseItem( i18n("Window title font"),
+				QFont( "helvetica", 12, QFont::Bold ) );
+	item->setRC( "Desktop Fonts", "WindowTitleFont" );
+	fontUseList.append( item );
+				
+	item = new FontUseItem( i18n("Panel button font"),
+				QFont( "helvetica", 12 )  );
+	item->setRC( "Fonts", "DesktopButtonFont", "kpanelrc" );
+	fontUseList.append( item );
+	
+	item = new FontUseItem( i18n("Panel clock font"),
+				QFont( "times", 14, QFont::Normal, true ) );
+	item->setRC( "Fonts", "DateFont", "kpanelrc" );
+	fontUseList.append( item );
+	
+	for ( i=0; i<fontUseList.count(); i++ )
+		fontUseList.at( i )->readFont();
+	
+	lbFonts = new QListBox( group );
+	for ( i=0; i<fontUseList.count(); i++ )
+		lbFonts->insertItem( fontUseList.at( i )->text() );
+	
+	/*lbFonts->insertItem( i18n("General font") );
+	lbFonts->insertItem( i18n("Fixed font") );
+	lbFonts->insertItem( i18n("Window title font") );
+	lbFonts->insertItem( i18n("Panel button font") );
+	lbFonts->insertItem( i18n("Panel clock font") );*/
+	
+	lbFonts->setCurrentItem( 0 );
+	connect( lbFonts, SIGNAL( highlighted( int ) ),
 			SLOT( slotPreviewFont( int ) ) );
 			
-	pushLayout->addWidget( fontTypeList );
+	pushLayout->addWidget( lbFonts );
 	
 	fntChooser = new KFontChooser( group );
 	
 	connect( fntChooser, SIGNAL( fontChanged( QFont ) ), this,
-		SLOT( slotPreviewFont( QFont ) ) );
+		SLOT( slotSetFont( QFont ) ) );
 	
 	pushLayout->addWidget( fntChooser );
 	
@@ -431,63 +551,20 @@ KGeneral::~KGeneral()
 
 
 void KGeneral::readSettings( int )
-{
-
+{		
 	QString str;
-	
-	generalFont = QFont( "helvetica", 12, QFont::Normal );
 
 	KConfig config;
-	config.setGroup( "General Font" );
+	config.setGroup( "Desktop General Settings" );
 
-        KCharsets *charsets=kapp->getCharsets();
-	
-	str = config.readEntry( "Charset",0 );
-	if ( !str.isNull() && str!="default" && KCharset(str).ok() ){
-		charsets->setQFont(generalFont);
-		defaultCharset=FALSE;
-	}	
-	else{
-		charsets->setQFont(generalFont,klocale->charset());
-		defaultCharset=TRUE;
-	}	
-
-	str = config.readEntry( "Family" );
-	if ( !str.isNull() )
-		generalFont.setFamily(str.data());
-		
-		
-	str = config.readEntry( "Point Size" );
-		if ( !str.isNull() )
-		generalFont.setPointSize(atoi(str.data()));
-		
-	
-	str = config.readEntry( "Weight" );
-		if ( !str.isNull() )
-	generalFont.setWeight(atoi(str.data()));
-		
-	
-	str = config.readEntry( "Italic" );
-		if ( !str.isNull() )
-			if ( atoi(str.data()) != 0 )
-				generalFont.setItalic(True);
-	
-		
-	config.setGroup( "GUI Style" );
-
-	str = config.readEntry( "Style" );
-	if ( !str.isNull() )
-	{
-		if( str == "Windows 95" ) {
+	str = config.readEntry( "WidgetStyle" );
+	if ( !str.isNull() ) {
+		if ( str == "Windows 95" )
 			applicationStyle = WindowsStyle;
-		}
-		else {
+		else
 			applicationStyle = MotifStyle;
-		}
-	} else {
+	} else
 		applicationStyle = MotifStyle;
-	}
-
 }
 
 void KGeneral::writeSettings()
@@ -495,45 +572,21 @@ void KGeneral::writeSettings()
 	if ( !changed )
 		return;
 		
-	KConfig *systemConfig = kapp->getConfig();
+	for ( int i=0; i<fontUseList.count(); i++ )
+		fontUseList.at( i )->writeFont();	
 	
-	systemConfig->setGroup( "General Font" );
-
-
-	systemConfig->writeEntry("Family", generalFont.family(), true, true);
+	debug("Written fonts");
 	
-	QString pointSizeStr(10);
-	pointSizeStr.sprintf("%d", generalFont.pointSize() );
-	systemConfig->writeEntry("Point Size", pointSizeStr, true, true);
-
-	KCharsets *charsets=kapp->getCharsets();
-	if (!defaultCharset)
-	    systemConfig->writeEntry("Charset",
-	               charsets->name(generalFont), true, true);
-	else	       
-	    systemConfig->writeEntry("Charset","default", true, true);
-	
-	QString weightStr(10);
-	weightStr.sprintf("%d", generalFont.weight() );
-	systemConfig->writeEntry("Weight", weightStr, true, true);
-	
-	QString italicStr(10);
-	italicStr.sprintf("%d", (int)generalFont.italic() );
-	systemConfig->writeEntry("Italic", italicStr, true, true);
-
-
-	systemConfig->setGroup( "GUI Style" );
+	KConfig *config = kapp->getConfig();
+	config->setGroup( "Desktop General Settings" );
 
 	QString str;
 	if( applicationStyle == WindowsStyle )
 		str.sprintf("Windows 95" );
 	else
 		str.sprintf("Motif" );
-	systemConfig->writeEntry("Style", str, true, true);
-	systemConfig->sync();
-	
-	//For writing to kpanel
-	//config = new KSimpleConfig(KApplication::localconfigdir() + "/kpanelrc");
+	config->writeEntry("WidgetStyle", str, true, true);
+	config->sync();
 }
 
 void KGeneral::slotApply()
@@ -609,12 +662,19 @@ void KGeneral::apply( bool  )
 	changed=FALSE;
 }
 
-
-void KGeneral::slotPreviewFont( QFont fnt )
+void KGeneral::slotSetFont( QFont fnt )
 {
-	//if ( indx == 0 )
-	//	example_label->setFont( generalFont );
+	fontUseList.current()->setFont( fnt );
 	lSample->setFont( fnt );
+	changed = true;
+}
+
+
+void KGeneral::slotPreviewFont( int index )
+{
+	fntChooser->setFont( fontUseList.at( index )->font(),  
+			fontUseList.at( index )->spacing() );
+	lSample->setFont( fontUseList.at( index )->font() );
 }
 
 void KGeneral::slotHelp()
@@ -634,7 +694,7 @@ void KGeneral::loadSettings()
 	else
 		stCombo->setCurrentItem(0);
 
-	fontTypeList->setCurrentItem( 0 );
+	lbFonts->setCurrentItem( 0 );
 
 	/*QStrListIterator it( fontList );
 	for (i = 0; it.current(); ++it, i++ )
