@@ -342,13 +342,13 @@ void KMimeType::init()
 	    errorMissingMimeType( "application/x-kdelnk", &kdelnkType );
     }
     
+    // Read the application bindings in the global directories
+    path = kapp->kde_appsdir().copy();
+    KMimeBind::initApplications( path.data() );
+
     // Read the application bindings in the local directories
     path = kapp->localkdedir().copy();
     path += "/share/applnk";
-    KMimeBind::initApplications( path.data() );
-
-    // Read the application bindings in the global directories
-    path = kapp->kde_appsdir().copy();
     KMimeBind::initApplications( path.data() );
 }
 
@@ -1115,6 +1115,38 @@ void KMimeBind::initApplications( const char * _path )
     			}
     		    } 
 		  
+                  if (!name.isEmpty()) 
+                  {
+                      // Remove existing bindings using this application
+                      // (there might be, if we're parsing the local directory
+                      // after the global one)
+                      KMimeBind * existingBind = findByName(name.data());
+                      if (existingBind)
+                      {
+                          //debug("*** binding %s exists", existingBind->getName());
+                          KMimeType *typ;
+                          for ( typ = types->first(); typ != 0L; typ = types->next() )
+                          {
+                              //debug("checking mimetype %s",typ->getMimeType());
+                              KMimeBind *_bind;
+                              for ( _bind = typ->firstBinding(); _bind != 0L; )
+                              {
+                                  //debug("  has binding %s",_bind->getName());
+                                  if (!strcmp(_bind->getName(), name.data()))
+                                  {
+                                      //debug("---> Removing %s from %s",_bind->getName(), typ->getMimeType());
+                                      typ->remove( _bind );
+                                      s_lstBindings->removeRef( _bind );
+                                      delete _bind;
+                                      _bind = 0L; // exit loop
+                                  } else
+                                      _bind = typ->nextBinding();
+                              }
+                          }
+                      }
+                  }
+                  
+                  
 		  // To which mime types is the application bound ?
 		  int pos2 = 0;
 		  int old_pos2 = 0;
