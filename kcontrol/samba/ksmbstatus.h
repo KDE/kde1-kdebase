@@ -4,6 +4,7 @@
 #include <ktablistbox.h>
 #include <kpopmenu.h>
 #include <qtimer.h>
+#include <qlabel.h>
 #include <kcontrol.h>
 
 class NetMon : public KConfigWidget
