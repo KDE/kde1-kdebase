@@ -393,6 +393,10 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     }
     else
 	view->getGUI()->slotSetStatusBar( klocale->translate( "Working ..." ) );
+
+    // New URL displayed : reset the current key sequence
+    view->getKHTMLWidget()->resetCurrentKeySeq();
+
     return true;
 }
 
@@ -1092,15 +1096,15 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
         */
 
 	id = popupMenu->insertItem(klocale->getAlias(ID_STRING_UP), view, SLOT( slotUp() ), 100 );
-	popupMenu->setAccel( ALT + Key_Left, 100 );
+	// popupMenu->setAccel( ALT + Key_Left /* Up !!*/, 100 ); // done by khtmlw. DF.
 	if ( !view->hasUpHistory() )
 	  popupMenu->setItemEnabled( id, false );
 	id = popupMenu->insertItem(klocale->getAlias(ID_STRING_BACK), view, SLOT( slotBack() ), 101 );
-	popupMenu->setAccel( ALT + Key_Left, 101 );
+	// popupMenu->setAccel( ALT + Key_Left, 101 ); // done by khtmlw. DF.
 	if ( !view->hasBackHistory() )
 	  popupMenu->setItemEnabled( id, false );
 	id = popupMenu->insertItem(klocale->getAlias(ID_STRING_FORWARD), view, SLOT( slotForward() ), 102 );
-	popupMenu->setAccel( ALT + Key_Right, 102 );
+	// popupMenu->setAccel( ALT + Key_Right, 102 ); // done by khtmlw. DF.
 	if ( !view->hasForwardHistory() )
 	  popupMenu->setItemEnabled( id, false );
 	
