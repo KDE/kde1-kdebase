@@ -461,15 +461,15 @@ msgstr "Frente"
 
 #: widgets.cpp:572
 msgid "Text label foreground color"
-msgstr ""
+msgstr "Cor do texto"
 
 #: widgets.cpp:576
 msgid "Background"
-msgstr ""
+msgstr "Fundo"
 
 #: widgets.cpp:577
 msgid "Text label background color"
-msgstr ""
+msgstr "Cor do fundo do texto"
 
 #: widgets.cpp:581
 msgid "With Caps Lock"
