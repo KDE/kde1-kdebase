@@ -3,6 +3,7 @@
 //     weis@stud.uni-frankfurt.de
 
 #include "kioserver_ipc.h"
+#include <errno.h>
 
 KIOSlaveIPCServer::KIOSlaveIPCServer()
 {

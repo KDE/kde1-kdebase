@@ -3,6 +3,7 @@
 //     weis@stud.uni-frankfurt.de
 
 #include "kfmserver_ipc.h"
+#include <errno.h>
 
 KfmIpcServer::KfmIpcServer()
 {
