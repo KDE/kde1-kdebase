@@ -1666,7 +1666,7 @@ void KFMManager::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QP
       char *s;
       bool attachment = false;
       for ( s = _zone->getURLList().first(); s != 0L; s = _zone->getURLList().next() )
-	if (strstr (s, "file:/tmp/kmail") != 0 )
+	if (strstr (s, "file:/") != 0 && strstr(s, "tmp/kmail") != 0 )
 	  attachment = true;
       if (attachment)
       {

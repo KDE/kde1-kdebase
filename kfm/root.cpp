@@ -978,7 +978,7 @@ void KRootWidget::slotDropEvent( KDNDDropZone *_zone )
       char *s;
       bool attachment = false;
       for ( s = _zone->getURLList().first(); s != 0L; s = _zone->getURLList().next() )
-	if (strstr (s, "file:/tmp/kmail") != 0 )
+	if (strstr (s, "file:/") != 0 && strstr(s, "tmp/kmail") != 0 )
 	  attachment = true;
       if (attachment)
       {
