@@ -89,26 +89,26 @@ class KConfigNumberedKeysObject: public KConfigObject {
 			    QStrList& list);
 };
 
-/**
-  * Boolean Config Object
-  */
+/** Boolean Config Object
+ */
 class KConfigBoolObject: public KConfigObject {
   Q_OBJECT
  protected:
-  /**
-     KConfigObject reimplemented read data method
+  /** KConfigObject reimplemented read data method
   */
-  void readObject(KObjectConfig*);
-  /**
-     KConfigObject reimplemented write data method
+  virtual void readObject(KObjectConfig*);
+  /** KConfigObject reimplemented write data method
   */
-  void writeObject(KObjectConfig*);
+  virtual void writeObject(KObjectConfig*);
+  virtual void setWidget(QWidget*);
  public:
   KConfigBoolObject(const char* key, bool& val)
     :KConfigObject(&val, FALSE, key){}
   /** Create QCheckBox with locale translated label
    */
   virtual QWidget* createWidget(QWidget* parent=0L, const char* label=0L);
+ public slots:
+  void setData(bool);
 };
 
 /**
@@ -173,22 +173,21 @@ public:
 */
 class KConfigComboObject: public KConfigObject {
   Q_OBJECT
-protected:
+ protected:
   QString     *pstring;
   int         *pindex;
   const char **list, **labels;
   unsigned     num;
   short        type;
-  /**
-     KConfigObject reimplemented write data method
+  /** KConfigObject reimplemented write data method
   */
-  void readObject(KObjectConfig*);
-  /**
-     KConfigObject reimplemented write data method
+  virtual void readObject(KObjectConfig*);
+  /** KConfigObject reimplemented write data method
   */
-  void writeObject(KObjectConfig*);
+  virtual void writeObject(KObjectConfig*);
+  virtual void setWidget(QWidget*);
   int getIndex(const QString&) const;
-public:
+ public:
   enum {Combo, ButtonGroup};
   /**
      Construct new object with list of available values given by array
@@ -221,73 +220,62 @@ public:
      @param name optional name of button group.
   */
   virtual QWidget* createWidget(QWidget* parent=0L, const char* name=0L);
-  int getIndex() const {return pindex?*pindex:getIndex(*pstring);}
-  void setIndex(int i) {if(pstring) *pstring = list[i]; else *pindex = i;}
+  int  getIndex() const {return pindex?*pindex:getIndex(*pstring);}
+  void setIndex(int i)  {if(pstring) *pstring = list[i]; else *pindex = i;}
   QString getString() const {
     return QString(pindex?list[*pindex]:(const char*)*pstring);
   }
-  friend class KConfigComboWidget;
+ public slots:
+  void setData(int);
 };
 
-
-
-
-/**
-   OColor Object
+/** OColor Object
  */
 class KConfigColorObject: public KConfigObject {
   Q_OBJECT
 protected:
-  /**
-     KConfigObject reimplemented write data method
+  /** KConfigObject reimplemented write data method
   */
-  void readObject(KObjectConfig*);
-  /**
-     KConfigObject reimplemented write data method
+  virtual void readObject(KObjectConfig*);
+  /** KConfigObject reimplemented write data method
   */
-  void writeObject(KObjectConfig*);
+  virtual void writeObject(KObjectConfig*);
+  virtual void setWidget(QWidget*);
 public:
-  /**
-     Construct new Color object.
+  /** Construct new Color object.
   */
   KConfigColorObject(const char* key, QColor& val)
     :KConfigObject(&val, FALSE, key){}
-  /**
-     Create colored button connected to KColorDialog.
-     Parameter label ignored.
+  /** Create colored button connected to KColorDialog.
+      Parameter label ignored.
   */
   virtual QWidget* createWidget(QWidget* parent=0L, const char*label=0L);
 public slots:
-  void changed(const QColor&);
+  void setData(const QColor&);
 };
 
-
-
-
-/**
-  * QFont object
-  */
+/** QFont object
+ */
 class KConfigFontObject: public KConfigObject {
   Q_OBJECT
-protected:
-  /**
-     KConfigObject reimplemented write data method
+ protected:
+  /** KConfigObject reimplemented write data method
   */
-  void readObject(KObjectConfig*);
-  /**
-     KConfigObject reimplemented write data method
+  virtual void readObject(KObjectConfig*);
+  /** KConfigObject reimplemented write data method
   */
-  void writeObject(KObjectConfig*);
-public:
-  /**
-     Construct new Font object.
+  virtual void writeObject(KObjectConfig*);
+  virtual void setWidget(QWidget*);
+ public:
+  /** Construct new Font object.
   */
   KConfigFontObject(const char* key, QFont& val)
     :KConfigObject(&val, FALSE, key){}
-  /**
-     Create labeled QPushButton connected to KFontDialog.
+  /** Create labeled QPushButton connected to KFontDialog.
   */
   virtual QWidget* createWidget(QWidget* parent=0L, const char* label=0L);
+ public slots:
+  void activated();
 };
 
 #endif

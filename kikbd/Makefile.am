@@ -21,7 +21,7 @@ SUBDIRS = doc maps
 ####### This part is very kless specific
 # you can add here more. This one gets installed 
 bin_PROGRAMS = 	kikbd kcmikbd
-BUILT_SOURCES = kconfobjs.moc.h  kconfobjsw.moc.h kobjconf.moc.h \
+BUILT_SOURCES = kconfobjs.moc.h  kobjconf.moc.h \
 	widgets.moc.h keymap.moc.h kikbd.moc.h kikbdconf.moc.h
 
 kikbd_SOURCES = kikbd.cpp keytrans.cpp keymap.cpp kikbdconf.cpp \
@@ -65,8 +65,6 @@ uninstall-local:
 	-rm -f $(kde_icondir)/kikbd.xpm
 	-rm -f $(kde_minidir)/kikbd.xpm
 
-kconfobjsw.moc.h: kconfobjsw.h
-	$(MOC) -o $@ $<
 kconfobjs.moc.h: kconfobjs.h
 	$(MOC) -o $@ $<
 kobjconf.moc.h: kobjconf.h

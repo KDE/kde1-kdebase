@@ -92,13 +92,10 @@ QPixmap mapLine(KiKbdMapConfig* map) {
 // widgets for configure list of maps
 //=====================================================
 KiKbdMapsWidget::KiKbdMapsWidget(QWidget* parent)
-  :KConfigObjectWidget(parent, new KConfigObject()),
-   mapsStr(kikbdConfig->getMaps())
+  :QWidget(parent), mapsStr(kikbdConfig->getMaps())
 {
-  *kikbdConfig << object;
-
-  QVBoxLayout *mbox  = new QVBoxLayout(parent, 20);
-  QAccel      *accel = new QAccel(parent);
+  QVBoxLayout *mbox  = new QVBoxLayout(this);
+  QAccel      *accel = new QAccel(this);
   QBoxLayout  *hbox, *vbox;
   QWidget     *wid;
   
@@ -106,43 +103,45 @@ KiKbdMapsWidget::KiKbdMapsWidget(QWidget* parent)
   hbox = new QHBoxLayout();
   mbox->addLayout(hbox, 20);
 
-  addToolTip(mapsList=new QListBox(parent), 
+  addToolTip(mapsList=new QListBox(this), 
 	     gettext("List of active keyboard maps"));
   hbox->addWidget(mapsList, 20);
   connect(mapsList, SIGNAL(highlighted(int)), SLOT(highlighted(int)));
   connect(mapsList, SIGNAL(selected(int)), SLOT(selected(int)));
 
   vbox = new QVBoxLayout(5);
+  hbox->addSpacing(14);
   hbox->addLayout(vbox);
 
   // add
-  wid = mkButton(parent, vbox, SLOT(addMap()), this, gettext("&Add"),
+  wid = mkButton(this, vbox, SLOT(addMap()), this, gettext("&Add"),
 		 gettext("Adding new keyboard map"));
   accel->connectItem(accel->insertItem(Key_Insert), wid, SLOT(animateClick()));
   // delete
-  wid = mkButton(parent, vbox, SLOT(deleteMap()), this,
+  wid = mkButton(this, vbox, SLOT(deleteMap()), this,
 		 gettext("&Delete"), gettext("Remove selected keyboard map"));
   connect(this, SIGNAL(activateDelete(bool)), wid, SLOT(setEnabled(bool)));
   accel->connectItem(accel->insertItem(Key_Delete), wid, SLOT(animateClick()));
   // up
-  wid = mkButton(parent, vbox, SLOT(upMap()), this,
-		 gettext("&Up"), gettext("Up selected keyboard map"));
+  wid = mkButton(this, vbox, SLOT(upMap()), this,
+		 gettext("U&p"), gettext("Up selected keyboard map"));
   connect(this, SIGNAL(activateUp(bool)), wid, SLOT(setEnabled(bool)));
   // down
-  wid = mkButton(parent, vbox, SLOT(downMap()), this,
-		 gettext("Do&wn"), gettext("Down selected keyboard map"));
+  wid = mkButton(this, vbox, SLOT(downMap()), this,
+		 gettext("D&own"), gettext("Down selected keyboard map"));
   connect(this, SIGNAL(activateDown(bool)), wid, SLOT(setEnabled(bool)));
   // info
-  wid = mkButton(parent, vbox, SLOT(infoMap()), this,
+  wid = mkButton(this, vbox, SLOT(infoMap()), this,
 		 gettext("&Info"), 
 		 gettext("Display information for selected keyboard map"));
   connect(this, SIGNAL(infoClick()), wid, SLOT(animateClick())); 
   connect(this, SIGNAL(activateInfo(bool)), wid, SLOT(setEnabled(bool)));
 
   vbox->addStretch(5);
+  mbox->addSpacing(7);
   mbox->
     addWidget(wid=kikbdConfig->
-	      createWidget(&kikbdConfig->getHotList(), parent,
+	      createWidget(&kikbdConfig->getHotList(), this,
 			   gettext("Use \"&hotlist\""),
 			   gettext("Use only default and last active "
 				   "keyboard maps to switching from keyboard")));
@@ -151,17 +150,27 @@ KiKbdMapsWidget::KiKbdMapsWidget(QWidget* parent)
   accel->connectItem(accel->insertItem(Key_Up), this, SLOT(selectionUp()));
   accel->connectItem(accel->insertItem(Key_Down), this, 
 		     SLOT(selectionDown()));
+  connect(kikbdConfig->find(&mapsStr), SIGNAL(dataChanged()),
+	  SLOT(dataChanged()));
+  stopFlag = 0;
   dataChanged();
 }
-void KiKbdMapsWidget::dataChanged()
+void KiKbdMapsWidget::changeData()  // called when we change mapsStr
 {
+  chkActive();
+  stopFlag++;
+  kikbdConfig->find(&mapsStr)->markDataChanged();
+  stopFlag--;
+}
+void KiKbdMapsWidget::dataChanged() // called when mapsStr changed
+{
+  if(stopFlag) return;
   QStrList list = mapsStr;
   mapsStr.clear();
   mapsList->clear();
-  unsigned i;for(i=0; i<list.count(); addMap(list.at(i++)));
-  if(list.count() > 0) mapsList->setCurrentItem(0);
-  chkActivate();
-  emit listChanged();
+  for(unsigned i=0; i<list.count(); addMap(list.at(i++)));
+  if(mapsList->count()) mapsList->setCurrentItem(0);
+  else chkActive();
 }
 void KiKbdMapsWidget::selectionUp()
 {
@@ -173,7 +182,7 @@ void KiKbdMapsWidget::selectionDown()
   int current = mapsList->currentItem();
   if(current < (int)mapsList->count()-1) mapsList->setCurrentItem(current+1);
 }
-void KiKbdMapsWidget::chkActivate()
+void KiKbdMapsWidget::chkActive()
 {
   int current = mapsList->currentItem(), count = mapsList->count();
   emit activateDelete(current >= 0);
@@ -190,8 +199,7 @@ void KiKbdMapsWidget::addMap(const char* name)
   mapsStr.insert(current==-1?0:current+1, name);
   mapsList->setCurrentItem(current==-1?0:current+1);
 
-  chkActivate();
-  emit listChanged();
+  changeData();
 }
 void KiKbdMapsWidget::addMap()
 {
@@ -219,8 +227,7 @@ void KiKbdMapsWidget::deleteMap()
   mapsList->removeItem(current);
   if(mapsList->count() > 0)
     mapsList->setCurrentItem(current==0?current:current-1);
-  chkActivate();
-  emit listChanged();
+  changeData();
 }
 void KiKbdMapsWidget::changeMap(int dif)
 {
@@ -234,7 +241,7 @@ void KiKbdMapsWidget::changeMap(int dif)
   mapsList->changeItem(*mapsList->pixmap(i2), i1);
   mapsList->changeItem(pixmap, i2);
   mapsList->setCurrentItem(i1);
-  chkActivate();
+  changeData();
 }
 void KiKbdMapsWidget::infoMap()
 {
@@ -371,26 +378,25 @@ KiKbdGeneralWidget::KiKbdGeneralWidget(QWidget* parent)
   QBoxLayout  *hbox;
   QWidget     *wid;
   
-  //--- keyboards group
   topLayout->addWidget(group, 10);
-  KiKbdMapsWidget *maps = new KiKbdMapsWidget(group);
-  mbox->addWidget(maps);
-  connect(maps, SIGNAL(listChanged()), SLOT(listChanged()));
+
+  //--- keyboards group
+  mbox->addWidget(new KiKbdMapsWidget(group));
 
   //--- switches group
   group = new QGroupBox(i18n("Switch and Alt Switch"), this);
   hbox  = new QHBoxLayout(group, 20);
 
   hbox->addWidget(wid=kikbdConfig->
-		  switchWidget(group,
+		  createWidget(&kikbdConfig->getSwitchRef(), group, 0L,
 			       gettext("Key(s) to switch beetwing "
 				       "keyboard maps")));
   connect(wid, SIGNAL(activated(const char*)),  SLOT(newSwitch(const char*)));
 
   hbox->addWidget(wid=kikbdConfig->
-		  altSwitchWidget(group, 
-				  gettext("Key to activate Alternate "
-					  "symbols in current keyboard map")));
+		  createWidget(&kikbdConfig->getAltSwitchRef(), group, 0L,
+			       gettext("Key to activate Alternate "
+				       "symbols in current keyboard map")));
   connect(this, SIGNAL(activateAltSwitch(bool)), wid, SLOT(setEnabled(bool)));
   group->setMinimumHeight(2*wid->height());
 
@@ -410,7 +416,9 @@ KiKbdGeneralWidget::KiKbdGeneralWidget(QWidget* parent)
   group->setMinimumHeight(2*wid->height());
   topLayout->addWidget(group);
 
-  newSwitch(0L);
+  newSwitch();
+  connect(kikbdConfig->find(&kikbdConfig->getMaps()), SIGNAL(dataChanged()),
+	  SLOT(listChanged()));
 }
 void KiKbdGeneralWidget::newSwitch(const char*)
 {
@@ -437,14 +445,14 @@ void KiKbdGeneralWidget::advanced()
   // emulate capslock
   hbox->addWidget(wid=kikbdConfig->
 		  createWidget(&kikbdConfig->getEmuCapsLock(), group,
-			       gettext("Emulate &CapsLock"), 
+			       gettext("&Emulate CapsLock"), 
 			       gettext("Emulate XServer "
 				       "CapsLock. Needed for some languages"
 				       "to be correct")));
   // auto menu
   hbox->addWidget(kikbdConfig->
 		  createWidget(&kikbdConfig->getAutoMenu(), group,
-			       gettext("World &Menu"), 
+			       gettext("&World Menu"), 
 			       gettext("Show menu in any window "
 				       "by holding Switch keys")));
   // save classes
@@ -557,7 +565,7 @@ KiKbdStyleWidget::KiKbdStyleWidget(QWidget* parent):QWidget(parent)
 
   QWidget *but2 = kikbdConfig->
     createWidget(&kikbdConfig->getCustFont(), group, 
-		 gettext("C&ustomize Font"),
+		 gettext("&Customize Font"),
 		 gettext("Customize Font for text label or use global "
 			 "settings"));
   hbox->addWidget(but2, 2);
@@ -570,8 +578,18 @@ KiKbdStyleWidget::KiKbdStyleWidget(QWidget* parent):QWidget(parent)
   group->setMinimumHeight(3*but->height());
   connect(but2, SIGNAL(toggled(bool)), but, SLOT(setEnabled(bool)));
   but->setEnabled(kikbdConfig->getCustFont());
+
+  /** We whant to disable caps color and alt color depending
+      on altswitch, switch and emucapslock
+  */
+  connect(kikbdConfig->find(&kikbdConfig->getSwitchRef()), 
+	  SIGNAL(dataChanged()), SLOT(checkShow()));
+  connect(kikbdConfig->find(&kikbdConfig->getAltSwitchRef()), 
+	  SIGNAL(dataChanged()), SLOT(checkShow()));
+  connect(kikbdConfig->find(&kikbdConfig->getEmuCapsLock()), 
+	  SIGNAL(dataChanged()), SLOT(checkShow()));
 }
-void KiKbdStyleWidget::aboutToShow(const char* page)
+void KiKbdStyleWidget::checkShow()
 {
   emit enableCaps(kikbdConfig->getEmuCapsLock());
   emit enableAlternate(!kikbdConfig->oneKeySwitch() 

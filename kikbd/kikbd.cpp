@@ -51,7 +51,6 @@ const char* confClassBase    = "class";
 
 const int configDelay     = 50;
 const int autoMenuDelay   = 250;
-const int menuTimerDelay  = 4000;
 const int altSwitchDelay  = 200;
 
 //=========================================================
@@ -114,12 +113,7 @@ KiKbdApplication::KiKbdApplication(int n, char**v)
   /**
      construct main widget
   */
-  QWidget *wid = new QFrame();
-  QVBoxLayout *lay = new QVBoxLayout(wid);
-  button = new KiKbdButton(wid);
-  lay->addWidget(button);
-  wid->resize(4, 4);
-  setMainWidget(wid);
+  setMainWidget(button = new KiKbdButton());
   
   /**
      create menu and connect signals
@@ -151,7 +145,8 @@ KiKbdApplication::KiKbdApplication(int n, char**v)
   signal(SIGUSR1, emptyHandler);
   signal(SIGUSR2, emptyHandler);
   oldXerrorHandler = XSetErrorHandler(xerrorHandler);
-
+  /** sheduling configuration load
+   */
   QTimer::singleShot(configDelay, this, SLOT(loadConfig()));
 }
 KiKbdApplication::~KiKbdApplication()
@@ -192,12 +187,11 @@ void KiKbdApplication::atExit()
   */
   save();
 }
+/**
+   Save relations: window classes to keyboard maps
+*/
 void KiKbdApplication::save()
 {
-  KiKbdConfig kikbdConfig;
-  kikbdConfig.loadConfig();
-  kikbdConfig.setGroup(confRunTimeGroup);
-
   QStrList list;
   if(!saveClasses || input != KiKbdConfig::Input_Class) {
     list.append(QString("ROOT,")+keyMaps.current()->getName()+","
@@ -211,12 +205,18 @@ void KiKbdApplication::save()
 			     ?entry.hotmap:0)->getName() + ",");
     }
   }
-  kikbdConfig.registerObject(new KConfigNumberedKeysObject(confClassBase, 
-							   0, list.count(),
-							   list));
+  KiKbdConfig kikbdConfig;
+  kikbdConfig.loadConfig();
+  kikbdConfig << kikbdConfig.setGroup(confRunTimeGroup)
+	      << new KConfigNumberedKeysObject(confClassBase, 0, 
+					      list.count(), list);
   kikbdConfig.saveConfig();
 }
 
+QPalette mkPalette(const QColor& fg, const QColor& bg) {
+  QColorGroup cg(fg, bg, fg, fg, fg, fg, fg);
+  return QPalette(cg, cg, cg);
+}
 /**
    In this function kikbd load it configuration from file
    This operation is dangaraus becouse a lot of delete, new
@@ -242,28 +242,22 @@ void KiKbdApplication::loadConfig()
      adding class input
   */
   QStrList classInput;
-  kikbdConfig.setGroup(confRunTimeGroup);
-  kikbdConfig.registerObject(new KConfigNumberedKeysObject(confClassBase, 
-							   0, 100,
-							   classInput));
+  kikbdConfig << kikbdConfig.setGroup(confRunTimeGroup)
+	      << new KConfigNumberedKeysObject(confClassBase, 0, 100,
+					       classInput);
   kikbdConfig.loadConfig();
 
   /**
      set three palette: normal, with capslock, with alt
   */
-  QColorGroup cgroup = button->colorGroup();
-  QColor light = cgroup.light();
-  QColor dark  = cgroup.dark();
-  QColor mid   = cgroup.mid();
-  QColor base  = cgroup.base();
-  QColor forc  = kikbdConfig.getForColor();
-  normalPalette = mainWidget()->palette();
-  QColorGroup ncgroup = QColorGroup(forc, kikbdConfig.getCapsColor(),
-				    light, dark, mid, forc, base);
-  capsPalette = QPalette(ncgroup, ncgroup, ncgroup);
-  ncgroup = QColorGroup(forc, kikbdConfig.getAltColor(), light, dark, 
-			mid, forc, base);
-  altPalette = QPalette(ncgroup, ncgroup, ncgroup);
+  normalPalette = button->palette();
+  capsPalette   = mkPalette(normalPalette.normal().foreground(),
+			    kikbdConfig.getCapsColor());
+  altPalette    = mkPalette(normalPalette.normal().foreground(),
+			    kikbdConfig.getAltColor());
+  normalPalette = mkPalette(kikbdConfig.getForColor(),
+			    normalPalette.normal().background());
+  button->setPalette(normalPalette);
 
   /**
      read some settings
@@ -277,10 +271,7 @@ void KiKbdApplication::loadConfig()
   /**
      set font
   */
-  if(kikbdConfig.getCustFont())
-    button->setFont(kikbdConfig.getFont());
-  else
-    button->setFont(generalFont);
+  button->setFont(kikbdConfig.getCustFont()?kikbdConfig.getFont():generalFont);
 
   /**
      configuration take a lot of time
@@ -312,7 +303,7 @@ void KiKbdApplication::loadConfig()
   mainWidget()->resize(button->minimumSize());
   menu->insertSeparator();
   menu->insertItem(i18n("Setup"));
-  menu->insertItem(i18n("Exit"));
+  menu->insertItem(i18n("Quit"));
   //processEvents();
 
   /**
@@ -442,7 +433,7 @@ void KiKbdApplication::loadConfig()
     setTopWidget(topWidget);
     enableSessionManagement(TRUE);
     setWmCommand("");
-    KWM::setUnsavedDataHint(topWidget->winId(), True);
+    KWM::setUnsavedDataHint(topWidget->winId(), TRUE);
     /**
        Take events from desktop
     */
@@ -585,6 +576,7 @@ bool KiKbdApplication::x11EventFilter(XEvent *e)
     */
     if(inConfig) {return TRUE;}
     switch(e->type) {
+      //case(UnmapNotify):
     case(MapNotify):
       /**
 	 work around screen savers problem
@@ -671,7 +663,7 @@ bool KiKbdApplication::x11EventFilter(XEvent *e)
 	break;
       }
       break;
-      //case(FocusOut): cout << "fout" << endl;
+      //case(FocusOut): 
     }
     return TRUE;
   }
@@ -743,7 +735,8 @@ void KiKbdApplication::selectWindowInput(Window win)
   /**
      clean any events for foreign windows
   */
-  if(!QWidget::find(win)) XSelectInput(display, win, 0);
+  //if(!QWidget::find(win)) 
+  XSelectInput(display, win, 0);
 
   XWindowAttributes wa;
   if(!XGetWindowAttributes(display, win, &wa)) return; // unknown error
@@ -944,9 +937,16 @@ void KiKbdApplication::altSwitchTimer()
 }
 void KiKbdApplication::setPalette()
 {
-  normalPalette = mainWidget()->palette();
+  QPalette palette = mainWidget()->palette();
+  normalPalette = mkPalette(normalPalette.normal().foreground(),
+			    palette.normal().background());
+  capsPalette   = mkPalette(palette.normal().foreground(),
+			    capsPalette.normal().background());
+  altPalette    = mkPalette(palette.normal().foreground(),
+			    altPalette.normal().background());
   if((isToggleAlt)) button->setPalette(altPalette);
   else if(isToggleCaps) button->setPalette(capsPalette);
+  else button->setPalette(normalPalette);
 }
 /**
    show poopum menu

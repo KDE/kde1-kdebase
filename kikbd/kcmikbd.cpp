@@ -68,8 +68,6 @@ KiKbdApplication::KiKbdApplication(int &argc, char **argv)
       */
 	style = new KiKbdStyleWidget(dialog);
 	addPage(style, i18n("&Style"), "");
-	connect(dialog, SIGNAL(selected(const char*)), style, 
-		SLOT(aboutToShow(const char*)));
 
       /**
 	 StartUp
@@ -98,8 +96,6 @@ void KiKbdApplication::apply()
 void KiKbdApplication::defaultValues()
 {
   kikbdConfig->setDefaults();
-  kikbdConfig->dataChanged();
-  style->aboutToShow(0L);
 }
 void KiKbdApplication::help()
 {

@@ -29,7 +29,10 @@ class QWidget;
 class QString;
 class KConfigBase;
 class KObjectConfig;
+//class KConfigObjectHelper;
+
 //@Include: kconfobjs.h
+
 /**
    This is abstract base class for using with KObjectConfig.
 */
@@ -38,8 +41,16 @@ class KConfigObject: public QObject {
  protected:
   bool         deleteData, persistent, global, NLS;
   QStrList     keys;
+  QList<QWidget> *widgets;
   const char*  group;
   void*        data;
+ public slots:
+  /** For internal use
+   */
+  void deleteWidget();
+ /** Set all widgets
+  */
+  void setWidgets();
  protected:
   /**
      Reading object from configuration file. Must be reimplemented
@@ -53,6 +64,16 @@ class KConfigObject: public QObject {
      @param config The pointer to parent KObjectConfig class
   */
   virtual void writeObject(KObjectConfig*){}
+  /** Create widget to interactivaly change value. Sutable for writing
+      configuration programs. Each call to function return new widget.
+  */
+  virtual QWidget* createWidget(QWidget* parent, const char* label=0L);
+  /* Set widget
+   */
+  virtual void setWidget(QWidget*){}
+  /* Add widget for control
+   */
+  void controlWidget(QWidget*);
   friend class KObjectConfig;
  public:
   /** Constructor of abstract object
@@ -72,47 +93,22 @@ class KConfigObject: public QObject {
   /** Return data reference
    */
   void* getData() const {return data;}
-  /**
-     Set DeleteData parameter.
+  /** Delete referenced data in destructor if f is TRUE.
   */
   void  setDeleteData(bool f){deleteData = f;}
   /** Configure writing parameters.
       @see KConfigBase::writeEntry KConfigBase class
   */
   void  configure(bool bPersistent = TRUE, bool bGlobal = FALSE,
-		  bool bNLS = FALSE) {
-    persistent = bPersistent;
-    global = bGlobal;
-    NLS = bNLS;
-  }
-  /** Create widget to interactivaly change value. Sutable for writing
-      configuration programs. Each call to function return new widget.
-  */
-  virtual QWidget* createWidget(QWidget* parent, const char* label=0L) {
-    return 0L;
-  }
+		  bool bNLS = FALSE);
+  /** Called by external object who change data.
+   */
+  void markDataChanged();
  signals:
-  /** Usualy this emited to update widget created by createWidget.
+  /** Should be connected to object who whants to know about data
+      changes.
   */
-  void updateWidgets();
-};
-
-
-/**
-   This is abstract base class for creating widget for any KConfigObject.
-*/
-class KConfigObjectWidget: public QWidget {
-  Q_OBJECT
- protected:
-  QWidget       *widget;
-  KConfigObject *object;
- protected:
-  KConfigObjectWidget(QWidget* parent, KConfigObject* obj);
- public:
-  QWidget* getWidget() const {return widget;}
- public slots:
-  virtual void dataChanged() {}
-  virtual void changeData () {}
+  void dataChanged();
 };
 
 /**
@@ -239,9 +235,10 @@ class KObjectConfig: public QObject {
   }
   static QStrList separate(const QString&, char sep=',');
  public slots:
+  void objectChanged();
   /** Usualy this called to update widgets of all objects.
   */
-  virtual void dataChanged();
+  void markDataChanged();
  signals:
   /** This signal emited when new user rc file created by using UserFromSystemRc
   */
@@ -268,6 +265,10 @@ class KObjectConfig: public QObject {
       @param fileVersion version of readed configuration
   */
   void newerVersion(float fileVersion);
+  /** Object who whants to know about configuration changes should
+      connect to this signal
+  */
+  void dataChanged();
 };
 
 #endif

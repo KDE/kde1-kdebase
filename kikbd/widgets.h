@@ -45,18 +45,19 @@ class KiKbdMapInfoWidget: public QLabel {
   void changeMap(const char*);
 };
 
-class KiKbdMapsWidget: public KConfigObjectWidget {
+class KiKbdMapsWidget: public QWidget {
   Q_OBJECT
  protected:
   QListBox  *mapsList;
   QStrList  &mapsStr;  
+  int        stopFlag;
  protected:
   void   addMap(const char*);
-  void   chkActivate();
   void   changeMap(int);
+  void   chkActive ();
+  void   changeData();
  public:
   KiKbdMapsWidget(QWidget* parent=0L);
-  virtual void dataChanged();
  public slots:
   void addMap   ();
   void upMap    (){changeMap(-1);}
@@ -64,17 +65,17 @@ class KiKbdMapsWidget: public KConfigObjectWidget {
   void infoMap  ();
   void deleteMap();
   void selected   (int){emit infoClick();}
-  void highlighted(int){chkActivate();}
+  void highlighted(int){chkActive();}
   void selectionUp  ();
   void selectionDown();
+  void dataChanged  ();
  signals:
   void activateDelete(bool);
-  void activateUp(bool);
-  void activateDown(bool);
-  void activateInfo(bool);
-  void activateHot(bool);
+  void activateUp    (bool);
+  void activateDown  (bool);
+  void activateInfo  (bool);
+  void activateHot   (bool);
   void infoClick();
-  void listChanged();
 };
 
 class KiKbdAddDialog: public QDialog {
@@ -100,8 +101,8 @@ class KiKbdGeneralWidget: public QWidget {
   KiKbdGeneralWidget(QWidget*);
  public slots:
   void advanced();
-  void newSwitch(const char*);
-  void listChanged() {newSwitch(0L);}
+  void newSwitch(const char*p=0L);
+  void listChanged() {newSwitch();}
  signals:
   void activateAltSwitch(bool);
 };
@@ -111,7 +112,7 @@ class KiKbdStyleWidget: public QWidget {
  public:
   KiKbdStyleWidget(QWidget*);
  public slots:
-  void aboutToShow(const char*);
+  void checkShow();
  signals:
   void enableAlternate(bool);
   void enableCaps(bool);

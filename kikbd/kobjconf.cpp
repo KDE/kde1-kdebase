@@ -37,29 +37,53 @@ const char *configVersion = "Version";
  */
 KConfigObject::KConfigObject(void* pData, bool pDeleteData, const char* key)
 {
-  group = 0L;  data  = pData;
+  widgets = 0L;
+  group   = 0L;
+  data    = pData;
   deleteData = pDeleteData;
   keys.setAutoDelete(TRUE);
   if(key) keys.append(key);
   configure();
+  connect(this, SIGNAL(dataChanged()), SLOT(setWidgets()));
 }
 KConfigObject::~KConfigObject()
 {
   if(deleteData) delete data;
+  if(widgets) delete widgets;
 }
-
-/********************************************************************
- * Configuration objects widget
- */
-KConfigObjectWidget::KConfigObjectWidget(QWidget* parent, KConfigObject* obj) 
-  :QWidget(parent) 
+void KConfigObject::configure(bool bPersistent, bool bGlobal, bool bNLS) 
 {
-  widget = 0L;
-  object = obj;
-  connect(object, SIGNAL(updateWidgets()), SLOT(dataChanged()));
-  hide();
+  persistent = bPersistent;
+  global = bGlobal;
+  NLS = bNLS;
 }
-
+void KConfigObject::controlWidget(QWidget* wid)
+{
+  if(!widgets) widgets = new QList<QWidget>();
+  widgets->append(wid);
+  connect(wid, SIGNAL(destroyed()), SLOT(deleteWidget()));
+  setWidget(wid);
+}
+void KConfigObject::deleteWidget()
+{
+  if(sender()) widgets->remove((QWidget*)sender());
+}
+void KConfigObject::setWidgets()
+{
+  for(unsigned i=0; widgets && i<widgets->count(); i++)
+    setWidget(widgets->at(i));
+}
+void KConfigObject::markDataChanged() {
+  static int flag = 0;
+  if(flag) return;
+  flag++;
+  emit dataChanged();
+  flag--;
+}
+QWidget* KConfigObject::createWidget(QWidget* parent, const char* label=0L) 
+{
+  return 0L;
+}
 /*************************************************************************
    Object Configuration 
    
@@ -236,8 +260,12 @@ QWidget* KObjectConfig::createWidget(const void* data, QWidget* parent,
   }
   return 0L;
 }
-void KObjectConfig::dataChanged()
+void KObjectConfig::markDataChanged()
 {
   unsigned i;for(i=0; i<entries.count(); i++)
-    emit entries.at(i)->updateWidgets();
+    emit entries.at(i)->dataChanged();
+  emit dataChanged();
+}
+void KObjectConfig::objectChanged()
+{
 }

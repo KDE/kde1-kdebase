@@ -98,6 +98,8 @@ class KiKbdConfig: public KObjectConfig {
   const QColor&  getForColor    () const {return forColor;     }
   const QFont&   getFont        () const {return font;         }
   const int& getAutoStartPlace  () const {return autoStartPlace;}
+  const QString& getSwitchRef   () const {return switchComb;}
+  const QString& getAltSwitchRef() const {return altSwitchComb;}
   QStrList& getMaps() {return maps;}
   /*--- switches ---*/
   QStrList getSwitch()    const {
@@ -105,13 +107,6 @@ class KiKbdConfig: public KObjectConfig {
   }
   QStrList getAltSwitch() const {
     return KObjectConfig::separate(altSwitchComb, '+');
-  }
-  /*--- combo values ---*/
-  QWidget* switchWidget(QWidget* parent, const char* tip) {
-    return createWidget(&switchComb, parent, 0L, tip);
-  }
-  QWidget* altSwitchWidget(QWidget* parent, const char* tip) {
-    return createWidget(&altSwitchComb, parent, 0L, tip);
   }
   KiKbdMapConfig* getMap(const char* name);
   bool            hasAltKeys();

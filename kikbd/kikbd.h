@@ -38,7 +38,7 @@ class KiKbdButton: public QLabel {
  protected:
   void mousePressEvent(QMouseEvent*);
  public:
-  KiKbdButton(QWidget*);
+  KiKbdButton(QWidget *wid=0L);
  signals:
   void showMenu();
   void clicked();
@@ -110,11 +110,10 @@ class KiKbdApplication: public KApplication {
   /**
      configurations variables
   */
-  QPalette normalPalette, capsPalette, altPalette, forPelette;
+  QPalette normalPalette, capsPalette, altPalette;
   bool     keyboardBeep, autoMenu, saveClasses, docked;
   int      input;
-  KeySym   firstKey, secondKey, capsKey;
-  KeySym   altKey;
+  KeySym   firstKey, secondKey, capsKey, altKey;
   Atom     KiKbdReconfig, KiKbdRotate, KiKbdIdentity;
  protected:
   virtual bool x11EventFilter(XEvent *);

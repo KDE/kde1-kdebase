@@ -34,9 +34,7 @@
 
 #include "kobjconf.h"
 #include "kconfobjs.h"
-#include "kconfobjsw.h"
 #include "kconfobjs.moc.h"
-#include "kconfobjsw.moc.h"
 
 /*********************************************************************
  * regexp matched keys Config Object
@@ -119,25 +117,19 @@ void KConfigBoolObject::writeObject(KObjectConfig* config)
 QWidget* KConfigBoolObject::createWidget(QWidget* parent,
 					 const char* label) 
 {
-  return (new KConfigBoolWidget(this, label, parent))->getWidget();
+  QWidget *wid = new QCheckBox(i18n(label), parent);
+  wid->setMinimumSize(wid->sizeHint());
+  connect(wid, SIGNAL(toggled(bool)), SLOT(setData(bool)));
+  return controlWidget(wid), wid;
 }
-// widget
-KConfigBoolWidget::KConfigBoolWidget(KConfigBoolObject* obj, const char* label,
-				     QWidget* parent=0L)
-  :KConfigObjectWidget(parent, obj)
+void KConfigBoolObject::setWidget(QWidget* wid)
 {
-  widget = new QCheckBox(i18n(label), parent);
-  widget->setMinimumSize(widget->sizeHint());
-  connect(widget, SIGNAL(clicked()), SLOT(changeData()));
-  dataChanged();
+  ((QCheckBox*)wid)->setChecked(*(bool*)data);  
 }
-void KConfigBoolWidget::dataChanged()
+void KConfigBoolObject::setData(bool f) 
 {
-  ((QCheckBox*)widget)->setChecked(*(bool*)(object->getData()));
-}
-void KConfigBoolWidget::changeData()
-{
-  *(bool*)(object->getData()) = ((QCheckBox*)widget)->isChecked();
+  *(bool*)data = f;
+  emit dataChanged();
 }
 
 /***************************************************************************
@@ -224,71 +216,48 @@ void KConfigComboObject::writeObject(KObjectConfig* config)
 QWidget* KConfigComboObject::createWidget(QWidget* parent, 
 					  const char* name) 
 {
-  return (new KConfigComboWidget(this, name, parent))->getWidget();
-}
-// widget
-KConfigComboWidget::KConfigComboWidget(KConfigComboObject* obj,
-				       const char* name,
-				       QWidget* parent=0L)
-  :KConfigObjectWidget(parent, obj)
-{
-  KConfigComboObject* o = (KConfigComboObject*)object;
-  switch(o->type) {
-  case KConfigComboObject::Combo : 
-    {
-      QComboBox* box = new QComboBox(parent);
-      unsigned i;for(i=0; i<o->num; i++)
-	box->insertItem(i18n(o->labels&&o->labels[i]
-			     ?o->labels[i]:o->list[i]));
-      box->setMinimumSize(box->sizeHint());
-      connect(box, SIGNAL(activated(int)), SLOT(changeData(int)));
-      widget = box;
+  QWidget *wid = 0L;
+  unsigned i;
+  switch(type) {
+  case Combo : 
+    wid = new QComboBox(parent);
+    for(i=0; i<num; i++)
+      ((QComboBox*)wid)->
+	insertItem(i18n(labels&&labels[i]?labels[i]:list[i]));
+    wid->setMinimumSize(wid->sizeHint());
+    connect(wid, SIGNAL(activated(int)), SLOT(setData(int)));
+    break;
+  case ButtonGroup :
+    wid = new QButtonGroup(i18n(name), parent);
+    int height = 0;
+    unsigned i;for(i=0; i<num; i++) {
+      QRadioButton *but = 
+	new QRadioButton(i18n(labels&&labels[i]?labels[i]:list[i]),
+			 (QButtonGroup*)wid);
+      but->setMinimumSize(but->sizeHint());
+      height = but->height();
     }
-    break;
-  case KConfigComboObject::ButtonGroup :
-    {
-      QButtonGroup* box = new QButtonGroup(i18n(name), parent);
-      int height = 0;
-      unsigned i;for(i=0; i<o->num; i++) {
-	QRadioButton *but = 
-	  new QRadioButton(i18n(o->labels&&o->labels[i]?o->labels[i]
-				:o->list[i]), box);
-	but->setMinimumSize(but->sizeHint());
-	height = but->height();
-      }
-      box->setMinimumHeight(2*height);
-      connect(box, SIGNAL(clicked(int)), SLOT(changeData(int)));
-      widget = box;
-    }
+    wid->setMinimumHeight(2*height);
+    connect(wid, SIGNAL(clicked(int)), SLOT(setData(int)));
     break;
   }
-  dataChanged();
+  return controlWidget(wid), wid;
 }
-void KConfigComboWidget::dataChanged()
+void KConfigComboObject::setWidget(QWidget* wid)
 {
-  KConfigComboObject* o = (KConfigComboObject*)object;
-  switch(o->type) {
-  case KConfigComboObject::Combo : 
-    ((QComboBox*)widget)->setCurrentItem(o->getIndex());
+  switch(type) {
+  case Combo : 
+    ((QComboBox*)wid)->setCurrentItem(getIndex());
     break;
-  case KConfigComboObject::ButtonGroup :
-    ((QButtonGroup*)widget)->setButton(o->getIndex());
+  case ButtonGroup :
+    ((QButtonGroup*)wid)->setButton(getIndex());
     break;
   }
 }
-void KConfigComboWidget::changeData()
+void KConfigComboObject::setData(int i)
 {
-  int i = 0;
-  switch(((KConfigComboObject*)object)->type) {
-  case KConfigComboObject::Combo : 
-    i = ((QComboBox*)widget)->currentItem();
-    break;
-  case KConfigComboObject::ButtonGroup :
-    for(i=0; ((QButtonGroup*)widget)->find(i)
-	  && !((QButtonGroup*)widget)->find(i)->isOn(); i++);
-    break;
-  }
-  ((KConfigComboObject*)object)->setIndex(i);
+  setIndex(i);
+  emit dataChanged();
 }
 
 /***********************************************************************
@@ -305,29 +274,19 @@ void KConfigColorObject::writeObject(KObjectConfig* config)
 }
 QWidget* KConfigColorObject::createWidget(QWidget* parent, const char*)
 {
-  return (new KConfigColorWidget(this, parent))->getWidget();
+  QWidget *wid = new KColorButton(parent);
+  connect(wid, SIGNAL(changed(const QColor&)),
+	  SLOT(setData(const QColor&)));
+  return controlWidget(wid), wid;
 }
-void KConfigColorObject::changed(const QColor& newColor)
+void KConfigColorObject::setWidget(QWidget* wid)
 {
-  *((QColor*)data) = newColor;
+  ((KColorButton*)wid)->setColor(*(QColor*)data);
 }
-// widget
-KConfigColorWidget::KConfigColorWidget(KConfigColorObject* obj,
-				       QWidget* parent=0L)
-  :KConfigObjectWidget(parent, obj)
+void KConfigColorObject::setData(const QColor& color)
 {
-  widget = new KColorButton(parent);
-  connect(widget, SIGNAL(changed(const QColor&)),
-	  SLOT(changeData(const QColor&)));
-  dataChanged();
-}
-void KConfigColorWidget::dataChanged()
-{
-  ((KColorButton*)widget)->setColor(*(QColor*)object->getData());
-}
-void KConfigColorWidget::changeData()
-{
-  *(QColor*)object->getData() = ((KColorButton*)widget)->color();
+  *((QColor*)data) = color;
+  emit dataChanged();
 }
 
 /*************************************************************************
@@ -345,32 +304,20 @@ void KConfigFontObject::writeObject(KObjectConfig* config)
 QWidget* KConfigFontObject::createWidget(QWidget* parent, 
 					 const char* label) 
 {
-  return (new KConfigFontWidget(this, label, parent))->getWidget();
+  QWidget *wid = new QPushButton(i18n(label), parent);
+  connect(wid, SIGNAL(clicked()), SLOT(activated()));
+  return controlWidget(wid), wid;
 }
-// widget
-KConfigFontWidget::KConfigFontWidget(KConfigFontObject* obj,
-				     const char* label,
-				     QWidget* parent=0L)
-  :KConfigObjectWidget(parent, obj)
+void KConfigFontObject::activated()
 {
-  widget = new QPushButton(i18n(label), parent);
-  connect(widget, SIGNAL(clicked()), SLOT(activated()));
-  dataChanged();
-}
-void KConfigFontWidget::dataChanged()
-{
-  widget->setFont(*((QFont*)object->getData()));
-}
-void KConfigFontWidget::changeData()
-{
-  *((QFont*)object->getData()) = widget->font();
-}
-void KConfigFontWidget::activated()
-{
-  QFont font = *((QFont*)object->getData());
+  QFont font = *(QFont*)data;
   if(KFontDialog::getFont(font)) {
-    widget->setFont(font);
-    changeData();
+    *(QFont*)data = font;
+    emit dataChanged();
   }
 }
-
+void KConfigFontObject::setWidget(QWidget* wid)
+{
+  wid->setFont(*(QFont*)data);
+  wid->setMinimumSize(wid->sizeHint());
+}

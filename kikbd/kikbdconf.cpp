@@ -223,6 +223,7 @@ void KiKbdConfig::setDefaults()
   forColor  = black;
   font      = QFont("Helvetica");
   maps.clear(); maps.append("en");
+  markDataChanged();
 }
 bool KiKbdConfig::oneKeySwitch() const
 {
@@ -397,7 +398,7 @@ const QPixmap KiKbdMapConfig::getIcon() const
 void KiKbdMsgBox::error(const char* form, const char* s1, const char *s2)
 {
   QString msg(128);
-  msg.sprintf(form, i18n(s1), i18n(s2));
+  msg.sprintf(i18n(form), i18n(s1), i18n(s2));
   KMsgBox::message(0, i18n("International keyboard ERROR"), msg,
 		   KMsgBox::STOP);
   ::exit(1);
@@ -409,13 +410,13 @@ void KiKbdMsgBox::warning(const char* form, const char* s1,
 			  const char *s2)
 {
   QString msg(128);
-  msg.sprintf(form, i18n(s1), i18n(s2));
+  msg.sprintf(i18n(form), i18n(s1), i18n(s2));
   KMsgBox::message(0, i18n("International keyboard warning"), msg);
 }
 
 int KiKbdMsgBox::yesNo(const char* form, const char* s1, const char *s2)
 {
   QString msg(128);
-  msg.sprintf(form, i18n(s1), i18n(s2));
+  msg.sprintf(i18n(form), i18n(s1), i18n(s2));
   return KMsgBox::yesNo(0, i18n("International keyboard question"), msg) == 1;
 }
