@@ -117,7 +117,7 @@ msgstr "Farge på fulgte lenker:"
 
 #: options.cpp:238
 msgid "Underline links"
-msgstr ""
+msgstr "Understrek lenker"
 
 #: options.cpp:317
 msgid "KDE Help Options"

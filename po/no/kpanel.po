@@ -159,16 +159,15 @@ msgstr "Delte:"
 
 #: pfilemenu.C:744
 msgid "Entries shared among all users"
-msgstr ""
+msgstr "Oppføringer delt mellom brukere"
 
 #: pfilemenu.C:763
 msgid "Personal:"
 msgstr "Personlige:"
 
 #: pfilemenu.C:765
-#, fuzzy
 msgid "Personal entries"
-msgstr "Personlige:"
+msgstr "Personlige oppføringer:"
 
 #: pfilemenu.C:783
 msgid "Recent:"
@@ -176,19 +175,12 @@ msgstr "Nylig:"
 
 #: pfilemenu.C:785
 msgid "Recent entries"
-msgstr ""
+msgstr "Nylige oppføringer"
 
 #: pfilemenu.C:831
 msgid "Options..."
 msgstr "Valg..."
 
 #: pfilemenu.C:833
-#, fuzzy
 msgid "Customize Disk Navigator"
-msgstr "Disknavigator"
-
-#~ msgid "Global:"
-#~ msgstr "Global:"
-
-#~ msgid "Local:"
-#~ msgstr "Lokal:"
+msgstr "Egendefiner Disknavigator"
