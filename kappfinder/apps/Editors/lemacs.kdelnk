@@ -1,21 +1,21 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=LEmacs
-Name[fr]=Lucid Emacs
 Name[cs]=Lucid Emacs
+Name[fr]=Lucid Emacs
 Name[pt]=Lucid Emacs
-Name[sk]=Lucid Emacs
 Name[pt_BR]=Lucid Emacs
+Name[sk]=Lucid Emacs
 Comment=Lucid Emacs
-Comment[fr]=Editeur Lucid Emacs
 Comment[cs]=Editor Lucid Emacs
 Comment[es]=Editor Lucid Emacs
-Comment[ru]=Редактор Emacs c Lucid
 Comment[fi]=Lucid Emacs editori
+Comment[fr]=Editeur Lucid Emacs
 Comment[it]=Editor Lucid Emacs
 Comment[pt]=Editor Lucid Emacs
-Comment[sk]=Editor Lucid Emacs
 Comment[pt_BR]=Editor Lucid Emacs
+Comment[ru]=Редактор Emacs c Lucid
+Comment[sk]=Editor Lucid Emacs
 BinaryPattern=
 MimeType=
 Exec=lemacs %f

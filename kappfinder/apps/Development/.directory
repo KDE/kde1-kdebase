@@ -1,20 +1,20 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Development
-Name[de]=Entwicklung
-Name[fr]=Développement
-Name[cs]=Vıvojové nástroje
-Name[sv]=Utveckling
-Name[es]=Desarrollo
-Name[ru]=òÁÚÒÁÂÏÔËÁ
-Name[fi]=Kehitystyökalut
-Name[it]=Sviluppo
-Name[pt]=Desenvolvimento
-Name[pl]=Narzêdzia programistów
-Name[no]=Utvikling
-Name[sk]=Vıvojové nástroje
 Name[ca]=Desenvolupament
-Name[pt_BR]=Desenvolvimento
+Name[cs]=Vıvojové nástroje
+Name[de]=Entwicklung
+Name[es]=Desarrollo
+Name[fi]=Kehitystyökalut
+Name[fr]=Développement
 Name[is]=Şróun
+Name[it]=Sviluppo
+Name[no]=Utvikling
+Name[pl]=Narzêdzia programistów
+Name[pt]=Desenvolvimento
+Name[pt_BR]=Desenvolvimento
+Name[ru]=òÁÚÒÁÂÏÔËÁ
+Name[sk]=Vıvojové nástroje
+Name[sv]=Utveckling
 SortOrder=dlgedit.kdelnk
 Icon=package.xpm

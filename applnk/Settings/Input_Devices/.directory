@@ -1,25 +1,25 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Input Devices
-Name[de]=Eingabe-Geräte
-Name[fr]=Périphériques d'entrée
-Name[cs]=Vstupní zaøízení
-Name[sv]=Inmatningsenheter
-Name[es]=Dispositivos de Entrada
-Name[ru]=õÓÔÒÏÊÓÔ×Á ××ÏÄÁ
-Name[hu]=Beviteli eszközök
-Name[da]=Inputenheder
-Name[fi]=Syöttölaitteet
-Name[it]=Dispositivi Input
-Name[pt]=Dispositivos de Entrada
-Name[pl]=Urz±dzenia wej¶ciowe
-Name[ro]=Dispozitive de Intrare
-Name[no]=Innenheter
-Name[sk]=Vstupné zariadenia
 Name[ca]=Dispositius d'entrada
-Name[pt_BR]=Dispositivos de Entrada
+Name[cs]=Vstupní zaøízení
+Name[da]=Inputenheder
+Name[de]=Eingabe-Geräte
 Name[eo]=Enigaparatoj
+Name[es]=Dispositivos de Entrada
+Name[fi]=Syöttölaitteet
+Name[fr]=Périphériques d'entrée
+Name[hu]=Beviteli eszközök
 Name[is]=Inntakstæki
+Name[it]=Dispositivi Input
+Name[no]=Innenheter
+Name[pl]=Urz±dzenia wej¶ciowe
+Name[pt]=Dispositivos de Entrada
+Name[pt_BR]=Dispositivos de Entrada
+Name[ro]=Dispozitive de Intrare
+Name[ru]=õÓÔÒÏÊÓÔ×Á ××ÏÄÁ
+Name[sk]=Vstupné zariadenia
+Name[sv]=Inmatningsenheter
 SortOrder=keyboard.kdelnk,mouse.kdelnk
 Icon=input_devices_settings.xpm
 

@@ -2,16 +2,16 @@
 [KDE Desktop Entry]
 Name=Emacs
 Comment=Emacs
-Comment[fr]=Editeur Emacs
 Comment[cs]=Editor Emacs
 Comment[es]=Editor Emacs
-Comment[ru]=Редактор Emacs
 Comment[fi]=Emacs editori
+Comment[fr]=Editeur Emacs
 Comment[it]=Editor Emacs
-Comment[pt]=Editor Emacs
 Comment[no]=Emacs-tekstredigerer
-Comment[sk]=Editor Emacs
+Comment[pt]=Editor Emacs
 Comment[pt_BR]=Editor Emacs
+Comment[ru]=Редактор Emacs
+Comment[sk]=Editor Emacs
 WmCommand=
 BinaryPattern=
 MiniIcon=

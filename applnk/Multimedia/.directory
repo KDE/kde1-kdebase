@@ -1,13 +1,13 @@
 [KDE Desktop Entry]
 Name=Multimedia
-Name[fr]=Multimédia
-Name[cs]=Multimédia
-Name[ru]=íÕÌØÔÉÍÅÄÉÁ
-Name[hu]=Multimédia
-Name[pt]=Multimédia
-Name[sk]=Multimédiá
 Name[ca]=Multimèdia
-Name[pt_BR]=Multimídia
+Name[cs]=Multimédia
 Name[eo]=Sonoro
+Name[fr]=Multimédia
+Name[hu]=Multimédia
 Name[is]=Margmiğlun
+Name[pt]=Multimédia
+Name[pt_BR]=Multimídia
+Name[ru]=íÕÌØÔÉÍÅÄÉÁ
+Name[sk]=Multimédiá
 Icon=multimedia_package.xpm

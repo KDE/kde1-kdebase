@@ -3,40 +3,39 @@
 Type=Application
 DocPath=kcontrol/kcmkpanel/kpanel-1.html
 Name=Panel
-Name[fr]=Panneau
+Name[ca]=Panell
 Name[cs]=name[cs]=Panel
-Name[ru]=ğÁÎÅÌØ
+Name[eo]=Panelo
 Name[fi]=Paneeli
+Name[fr]=Panneau
+Name[hr]=Ploèa
+Name[is]=Spjaldiğ name[is_IS]=Spjaldiğ
 Name[it]=Pannello
 Name[pt]=Painel
-Name[hr]=Ploèa
-Name[ro]=Panou
-Name[zh_CN.GB2312]=Ãæ°å
-Name[ca]=Panell
 Name[pt_BR]=Painel
-Name[eo]=Panelo
-Name[is]=Spjaldiğ name[is_IS]=Spjaldiğ
+Name[ro]=Panou
+Name[ru]=ğÁÎÅÌØ
+Name[zh_CN.GB2312]=Ãæ°å
 name[cs]=Panel
 name[is_IS]=Spjaldiğ
-Name[sv]=Panelen
 Comment=You can configure here, how the panel should look like
-Comment[de]=Sie können hier einstellen, wie das Panel aussehen soll
-Comment[fr]=Ici vous pouvez modifier la façon dont le panneau est affiché
-Comment[cs]=Zde mù¾ete nastavit vzhled a chování panelu KDE
-Comment[sv]=Här kan du ställa in hur panelen ska se ut
-Comment[es]=Configuración del panel
-Comment[ru]=÷Ù ÍÏÖÅÔÅ ÓËÏÎÆÉÇÕÒÉÒÏ×ÁÔØ, ËÁË ÂÕÄÅÔ ×ÙÇÌÑÄÅÔØ ĞÁÎÅÌØ
-Comment[fi]=Voit asettaa paneelin ulkonäköä
-Comment[pt]=Configuração do painel
-Comment[pl]=Konfiguracja panelu
-Comment[ro]=Aici poşi configura cum sã arate panoul.
-Comment[no]=Her kan du konfigurrere hvordan panelet skal se ut
-Comment[zh_CN.GB2312]=Ê¹ÓÃ´ËÅäÖÃÀ´¿ØÖÆÃæ°åµÄÍâ¹Û
-Comment[sk]=Nastavenie vzhµadu a správania sa panelu KDE
 Comment[ca]=Aquí podeu configurar quin aspecte ha de tenir el panell
-Comment[pt_BR]=Configuração do painel
+Comment[cs]=Zde mù¾ete nastavit vzhled a chování panelu KDE
+Comment[de]=Sie können hier einstellen, wie das Panel aussehen soll
 Comment[eo]=Konfigura¼o de la panelo
+Comment[es]=Configuración del panel
+Comment[fi]=Voit asettaa paneelin ulkonäköä
+Comment[fr]=Ici vous pouvez modifier la façon dont le panneau est affiché
 Comment[is]=Hér getur şú stillt hvernig spjaldiğ lítur út
+Comment[no]=Her kan du konfigurrere hvordan panelet skal se ut
+Comment[pl]=Konfiguracja panelu
+Comment[pt]=Configuração do painel
+Comment[pt_BR]=Configuração do painel
+Comment[ro]=Aici poşi configura cum sã arate panoul.
+Comment[ru]=÷Ù ÍÏÖÅÔÅ ÓËÏÎÆÉÇÕÒÉÒÏ×ÁÔØ, ËÁË ÂÕÄÅÔ ×ÙÇÌÑÄÅÔØ ĞÁÎÅÌØ
+Comment[sk]=Nastavenie vzhµadu a správania sa panelu KDE
+Comment[sv]=Här kan du ställa in hur panelen ska se ut
+Comment[zh_CN.GB2312]=Ê¹ÓÃ´ËÅäÖÃÀ´¿ØÖÆÃæ°åµÄÍâ¹Û
 Exec=kcmkpanel 
 
 

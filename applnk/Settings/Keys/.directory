@@ -2,13 +2,13 @@
 [KDE Desktop Entry]
 Icon=keyboard.xpm
 Name=Keys
-Name[de]=Tastenbelegungen
+Name[ca]=Tecles
 Name[cs]=Klávesy
+Name[de]=Tastenbelegungen
 Name[es]=Teclas
-Name[ru]=ëÌÁ×ÉÛÉ
 Name[fi]=Näppäimet
 Name[no]=Taster
-Name[sk]=Klávesy
-Name[ca]=Tecles
 Name[pt_BR]=Teclas
+Name[ru]=ëÌÁ×ÉÛÉ
+Name[sk]=Klávesy
 SortOrder=standard.kdelnk,global.kdelnk

@@ -1,19 +1,19 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Editors
-Name[de]=Editoren
-Name[fr]=Editeurs de texte
 Name[cs]=Editory
-Name[sv]=Editorer
+Name[de]=Editoren
 Name[es]=Editores
-Name[ru]=Редакторы
 Name[fi]=Editorit
-Name[pt]=Editores
-Name[pl]=Edytory
-Name[no]=Tekstredigerere
-Name[sk]=Editory
-Name[pt_BR]=Editores
+Name[fr]=Editeurs de texte
 Name[is]=Ritlar
+Name[no]=Tekstredigerere
+Name[pl]=Edytory
+Name[pt]=Editores
+Name[pt_BR]=Editores
+Name[ru]=Редакторы
+Name[sk]=Editory
+Name[sv]=Editorer
 MiniIcon=
 SortOrder=emacs.kdelnk,xedit.kdelnk,xemacs.kdelnk
 Icon=kedit.xpm

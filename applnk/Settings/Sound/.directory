@@ -1,13 +1,13 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Sound
+Name[ca]=So
 Name[cs]=Zvuk
 Name[es]=Sonido
 Name[fi]=Ääni
-Name[no]=Lyd
-Name[sk]=Zvuk
-Name[ca]=So
-Name[pt_BR]=Som
 Name[is]=Hljóð
+Name[no]=Lyd
+Name[pt_BR]=Som
+Name[sk]=Zvuk
 SortOrder=bell.kdelnk
 Icon=sound_settings.xpm

@@ -2,17 +2,17 @@
 [KDE Desktop Entry]
 BinaryPattern=
 Name=Desktop Pager
-Name[fr]=Gestionnaire de bureaux virtuels
 Name[es]=Mapa del escritorio
-Name[ru]=Переключатель рабочих столов
 Name[fi]=TyЖpЖydДnvaihtaja
-Name[pt]=Mapa da аrea de Trabalho
-Name[pl]=KWM Pager
-Name[ro]=Harta ecranului
-Name[no]=Skrivebordveksler
-Name[sk]=Mapa pracovnej plochy
-Name[pt_BR]=Mapa da аrea de Trabalho
+Name[fr]=Gestionnaire de bureaux virtuels
 Name[is]=SkjАborП ( yfirlit )
+Name[no]=Skrivebordveksler
+Name[pl]=KWM Pager
+Name[pt]=Mapa da аrea de Trabalho
+Name[pt_BR]=Mapa da аrea de Trabalho
+Name[ro]=Harta ecranului
+Name[ru]=Переключатель рабочих столов
+Name[sk]=Mapa pracovnej plochy
 Protocols=
 MimeType=
 Comment=Manage your windows

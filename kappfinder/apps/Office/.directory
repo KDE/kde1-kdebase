@@ -1,15 +1,15 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Office
-Name[fr]=Applications pour la bureautique
+Name[ca]=Oficina
 Name[cs]=Kanceláø
 Name[es]=Oficina
-Name[ru]=ïÆÉÓ
+Name[fr]=Applications pour la bureautique
 Name[it]=Ufficio
-Name[pt]=Escritório
-Name[pl]=Biuro
 Name[no]=Kontor
-Name[sk]=Kancelária
-Name[ca]=Oficina
+Name[pl]=Biuro
+Name[pt]=Escritório
 Name[pt_BR]=Escritório
+Name[ru]=ïÆÉÓ
+Name[sk]=Kancelária
 Icon=package.xpm
