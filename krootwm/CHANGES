@@ -1,0 +1,12 @@
+
+       Changes file for krootwm, the KDE root window manager
+       =====================================================
+ Developed and maintained by Matthias Ettrich (ettrich@kde.org)
+
+
+In 0.1:
+-------
+
+patchlevel 1:
+    
+     - adaption to the current libkfm interface

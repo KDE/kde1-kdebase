@@ -1,0 +1,39 @@
+
+       README file for krootwm, the KDE root window manager
+       =====================================================
+ Developed and maintained by Matthias Ettrich (ettrich@kde.org)
+
+
+krootwm is a tiny kwm module that handles mouse events on the root
+window: root icon selection on the left mouse button, a windowlist on
+the middle mouse button and a desktop context menu on the right mouse
+button.
+
+It is separated from the KDE window manger (kwm) to allow the users of
+other windowmanger to get the full power of kfm. The only thing these
+have to do is to comment out the ButtonPressMask and ButtonReleaseMask
+in the XSelectInput call for the root window in the sources of their
+favorite window manager. Then recompile, restart and start krootwm.
+
+To be more detailed:
+
+kwm for example contains the following code:
+
+  XSelectInput(qt_xdisplay(), qt_xrootwin(), 
+	       KeyPressMask |
+	       // 		 ButtonPressMask | ButtonReleaseMask |
+	       PropertyChangeMask |
+	       ColormapChangeMask |
+	       SubstructureRedirectMask |
+	       SubstructureNotifyMask 
+	       );
+
+As you see, it does not select button events on the root window.  In
+X11 only one client can select button events of a certain window. This
+is natural, since a button press implies a pointer grab.
+
+
+I will not support anybody in patching their windowmangers, since I
+have enough to do with kwm. Anyway good luck :-)
+
+   Matthias

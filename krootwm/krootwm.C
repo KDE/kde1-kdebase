@@ -149,7 +149,7 @@ void KRootWm::rmb_menu_activated(int item){
   break;
   case RMB_REFRESH_DESKTOP:
     {
-      KFM kfm; kfm.exec("refreshDesktop", 0L);
+      KFM kfm; kfm.refreshDesktop();
       execute ("kdisplay -init ");
       KWM::refreshScreen();
     }
