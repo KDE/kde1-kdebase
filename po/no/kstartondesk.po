@@ -2,8 +2,6 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Hans Petter Bieker <zerium@webindex.no>, 1998.
 #
-# $Id$
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kstartondesk\n"

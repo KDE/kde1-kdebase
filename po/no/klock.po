@@ -2,8 +2,6 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Hans Petter Bieker <zerium@webindex.no>, 1998.
 #
-# $Id$
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/klock\n"
@@ -24,13 +22,12 @@ msgid "Setup kbanner"
 msgstr "KBanner-oppsett"
 
 #: banner.cpp:95
-#, fuzzy
 msgid "Family:"
-msgstr "Slo feil"
+msgstr "Familie:"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
-msgstr ""
+msgstr "Størrelse:"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -38,7 +35,7 @@ msgstr "Farge:"
 
 #: banner.cpp:147
 msgid "Bold"
-msgstr ""
+msgstr "Uthevet"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
@@ -407,7 +404,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Valg %s har ikke støtte på denne plattform!"
 
 #: main.cpp:378
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -415,9 +411,10 @@ msgid ""
 "Please contact your system administrator,\n"
 "tell him, that you need suid for the screensavers!"
 msgstr ""
+"Varsel: du vil ikke kunne låse sjermen!\n"
+"\n"
 "Ditt system bruker skyggepassord!\n"
 "Vennligst kontakt din systemadministrator.\n"
-"\n"
 "Fortell ham at du trenger suid for skjermsparerne!"
 
 #: main.cpp:383
@@ -431,18 +428,21 @@ msgid ""
 "use klock instead.\n"
 "\n"
 msgstr ""
+"\n"
+"vennligst ikke bruk -test sammen med -lock.\n"
+"bruk klock isteden.\n"
+"\n"
 
 #: main.cpp:536
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "Bruk: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+"       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
 #: main.cpp:539
-#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -473,6 +473,7 @@ msgstr ""
 "  -desc             Skriv skjermsparerens beskrivelse til stdout\n"
 "  -install          Installer skjermsparer\n"
 "  -lock             Krever passord for å stoppe skjermsparer\n"
+"  -allow-root       Akseptere root-passord for å låse opp\n"
 "  -nice num         Kjør med spesifisert fin verdi\n"
 "\n"
 "  -preview wid      Kjør i det spesifiserte XWindow\n"
@@ -515,24 +516,20 @@ msgstr ""
 "Portet til kscreensave av Emanuel Pirker."
 
 #: pipes.cpp:299
-#, fuzzy
 msgid "Pipes (GL)"
-msgstr "Rom (GL)"
+msgstr "Rør (GL)"
 
 #: pipes.cpp:672
-#, fuzzy
 msgid "Setup KPipes"
-msgstr "KSlip-oppsett"
+msgstr "KPipes-oppsett"
 
 #: pipes.cpp:678
-#, fuzzy
 msgid "Number of Pipes"
-msgstr "Antall bier"
+msgstr "Antall piper"
 
 #: pipes.cpp:743
-#, fuzzy
 msgid "About KPipes"
-msgstr "Om Lines"
+msgstr "Om KPipes"
 
 #: pipes.cpp:745
 msgid ""
@@ -540,6 +537,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
+"KPipes\n"
+"Kopibeskyttet (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
 
 #: polygon.cpp:64
 msgid "Polygons"
@@ -599,7 +599,7 @@ msgid ""
 msgstr ""
 "Pyro versjon 3.4\n"
 "\n"
-"Copyright (c) 1991 by Patrick J. Naughton\n"
+"Kopibeskyttet (c) 1991 av Patrick J. Naughton\n"
 "\n"
 "Portet til kscreensave av Martin Jones."
 
@@ -629,7 +629,7 @@ msgid ""
 msgstr ""
 "Rock versjon 3.3\n"
 "\n"
-"Copyright (c) 1992 by Jamie Zawinski\n"
+"Kopibeskyttet (c) 1992 av Jamie Zawinski\n"
 "\n"
 "Portet til kscreensave av Martin Jones."
 
@@ -743,7 +743,7 @@ msgid ""
 msgstr ""
 "Slip\n"
 "\n"
-"Copyright (c) 1991 by Scott Draves\n"
+"Kopibeskyttet (c) 1991 av Scott Draves\n"
 "\n"
 "Portet til kscreensave av Emanuel Pirker."
 
@@ -770,7 +770,7 @@ msgid ""
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 msgstr ""
 "KSpace\n"
-"Copyright (c) 1998\n"
+"Kopibeskyttet (c) 1998\n"
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 
 #: swarm.cpp:257
@@ -799,6 +799,6 @@ msgid ""
 msgstr ""
 "Swarm\n"
 "\n"
-"Copyright (c) 1991 by Patrick J. Naughton\n"
+"Kopibeskyttet (c) 1991 av Patrick J. Naughton\n"
 "\n"
 "Portet til kscreensave av Emanuel Pirker."

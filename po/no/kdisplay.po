@@ -2,8 +2,6 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Hans Petter Bieker <zerium@webindex.no>, 1998.
 #
-# $Id$
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kdisplay\n"
@@ -25,7 +23,7 @@ msgstr "Skrivebord"
 
 #: backgnd.cpp:167
 msgid "&Rename ..."
-msgstr "Gi nytt navn..."
+msgstr "&Gi nytt navn..."
 
 #: backgnd.cpp:193 colorscm.cpp:94
 msgid "Colors"
@@ -298,7 +296,7 @@ msgstr "&Krever passord"
 
 #: scrnsave.cpp:273
 msgid "&Accept root password to unlock"
-msgstr ""
+msgstr "&Aksepter root-passord for å låse opp"
 
 #: scrnsave.cpp:279
 msgid "Show &password as stars"

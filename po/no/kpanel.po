@@ -2,8 +2,6 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Hans Petter Bieker <zerium@webindex.no>, 1998.
 #
-# $Id$
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kpanel\n"
@@ -93,7 +91,7 @@ msgstr "Omstart av panel"
 
 #: props.C:160
 msgid "Disk Navigator"
-msgstr ""
+msgstr "Disknavigator"
 
 #: props.C:168
 msgid "Panel"
@@ -117,28 +115,28 @@ msgstr "Kan ikke putte denne knappen på panelet!"
 
 #: pfilemenu.C:111
 msgid "KFM Information"
-msgstr ""
+msgstr "KFM Informasjon"
 
 #: pfilemenu.C:112
 msgid "Creating directory:\n"
-msgstr ""
+msgstr "Lager katalog:\n"
 
 #: pfilemenu.C:340
 msgid "(empty folder)"
-msgstr ""
+msgstr "(tom mappe)"
 
 #: pfilemenu.C:397
 msgid "(Too Many Files)"
-msgstr ""
+msgstr "(For mange filer)"
 
 #: pfilemenu.C:406
 msgid "(Access Denied)"
-msgstr ""
+msgstr "(Tilgang nektet)"
 
 #: pfilemenu.C:409
 msgid "(Unreadable)"
-msgstr ""
+msgstr "(Uleslig)"
 
 #: pfilemenu.C:416
 msgid "Open Folder"
-msgstr ""
+msgstr "Åpne mappe"

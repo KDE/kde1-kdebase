@@ -2,8 +2,6 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Hans Petter Bieker <zerium@webindex.no>, 1998.
 #
-# $Id$
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfm\n"
@@ -63,9 +61,8 @@ msgstr "Mer&k"
 
 # kfmgui.cpp:331
 #: kfmgui.cpp:341
-#, fuzzy
 msgid "Select &all"
-msgstr "Mer&k"
+msgstr "Mer&k alle"
 
 # kfmgui.cpp:335
 #: kfmgui.cpp:344
@@ -254,9 +251,8 @@ msgstr "Opp"
 
 # kfmtree.cpp:396
 #: kfmgui.cpp:538
-#, fuzzy
 msgid "Home"
-msgstr "Mitt hjem"
+msgstr "Hjem"
 
 # kfmgui.cpp:569
 #: kfmgui.cpp:595
@@ -283,7 +279,7 @@ msgstr "Kunne ikke laste ikon\n"
 #: root.cpp:874 root.cpp:1135 root.cpp:1153 root.cpp:1159 root.cpp:1165
 #: root.cpp:1246 root.cpp:1757 root.cpp:1782
 msgid "KFM Error"
-msgstr ""
+msgstr "KFM Feil"
 
 # kfmexec.cpp:59 kfmgui.cpp:709 kfmman.cpp:1043
 #: kfmexec.cpp:59 kfmgui.cpp:751 kfmman.cpp:1041
@@ -345,9 +341,8 @@ msgstr "Dokument: Ferdig"
 
 # kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1112
 #: kfmview.cpp:350 root.cpp:875
-#, fuzzy
 msgid "ERROR: You may only drop URLs"
-msgstr "FEIL: Du droppet en URL over seg selv"
+msgstr "FEIL: Du kan bare droppe URLer"
 
 # kfmview.cpp:352
 #: kfmview.cpp:366
@@ -550,8 +545,8 @@ msgid ""
 "to solve the problem"
 msgstr ""
 "Denne filen inneholder ikke noe\n"
-"Exec=....\n"
-"innslag. Rediger egenskaper\n"
+"Exec=....-innslag.\n"
+"Rediger egenskaper\n"
 "for å løse problemet"
 
 # kbind.cpp:1822
@@ -670,9 +665,8 @@ msgstr "Gjennomsiktig tekst for bunnikoner"
 
 # kfmprops.cpp:676
 #: kfmdlg.cpp:114
-#, fuzzy
 msgid "&Browser"
-msgstr "Bla gjennom"
+msgstr "&Gjennomblaer"
 
 # bookmark.cpp:259
 #: bookmark.cpp:296
@@ -681,9 +675,8 @@ msgstr "Kunne ikke lagre bokmerke"
 
 # kfmprops.cpp:237
 #: kfmprops.cpp:234
-#, fuzzy
 msgid "Name"
-msgstr "Fullt navn"
+msgstr "Navn"
 
 # kfmprops.cpp:237
 #: kfmprops.cpp:251
@@ -789,7 +782,7 @@ msgstr "Bruker"
 
 #: kfmprops.cpp:460 kfmprops.cpp:559
 msgid "Group"
-msgstr ""
+msgstr "Gruppe"
 
 # kfmprops.cpp:447
 #: kfmprops.cpp:465
@@ -818,9 +811,8 @@ msgstr "Eierskap"
 
 # kfmprops.cpp:480
 #: kfmprops.cpp:504
-#, fuzzy
 msgid "Owner"
-msgstr "Eierskap"
+msgstr "Eier"
 
 # kfmprops.cpp:610
 #: kfmprops.cpp:628
@@ -1555,7 +1547,7 @@ msgstr "Anta HTML"
 
 #: open-with.cpp:132
 msgid "This group is empty!"
-msgstr ""
+msgstr "Denne gruppen er tom!"
 
 # kfmprops.h:73
 #: kfmprops.h:73
@@ -1634,15 +1626,3 @@ msgid ""
 msgstr ""
 "Syntaksfeil:\n"
 "kfmexec kommando [URLer ....]\n"
-
-# kfmgui.cpp:317
-#~ msgid "&Quit..."
-#~ msgstr "Avslutt"
-
-# kfmgui.cpp:464
-#~ msgid "&About..."
-#~ msgstr "&Om..."
-
-# kfmgui.cpp:1226
-#~ msgid "About KFM"
-#~ msgstr "Om KFM"

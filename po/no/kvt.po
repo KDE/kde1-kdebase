@@ -2,8 +2,6 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Hans Petter Bieker <zerium@webindex.no>, 1998.
 #
-# $Id$
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kvt\n"
@@ -136,7 +134,6 @@ msgid "Save &Options"
 msgstr "Lagre &valg"
 
 #: main.C:678
-#, fuzzy
 msgid ""
 "\n"
 "\n"
@@ -151,9 +148,10 @@ msgstr ""
 "\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
 "\n"
-"Terminal emulering for KDE Desktop Environment\n"
-"basert på Robert Nation's rxvt-2.08"
+"Terminalemulering for KDE Desktop Environment\n"
+"basert på Robert Nations rxvt-2.08"
 
 #: main.C:852 main.C:980
 msgid "&Show"
@@ -230,7 +228,7 @@ msgstr "-vt_font <skrifttype>     vanlig skrifttype\n"
 #: main.C:1406
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
 msgstr ""
-"-no_font_hack             skru av koden som gåt utenom Qt-skrifttypefeilen\n"
+"-no_font_hack             skru av koden som går utenom Qt-skrifttypefeilen\n"
 
 #: main.C:1407
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
@@ -254,7 +252,7 @@ msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
-"-T <tekst>                tekst i tittellinjen til vinduet\n"
+"-T <tekst>                tekst i tittellinjen til vinduet \n"
 "                          (Foreldret. Bruk -caption isteden)\n"
 
 #: main.C:1413
