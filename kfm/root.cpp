@@ -1151,7 +1151,7 @@ void KRootIcon::initFilename()
 	return;
     f.close();
     
-    KSimpleConfig sc(n);
+    KConfig sc(n);
     sc.setGroup("KDE Desktop Entry");
     file = sc.readEntry("Name", file);
 }
