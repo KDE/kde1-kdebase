@@ -26,7 +26,7 @@ msgstr ""
 "Bruker standard X-koder."
 
 #: kikbd.cpp:313
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
@@ -88,12 +88,12 @@ msgid "KeyMap: can not find symbol \"%s\"."
 msgstr "Tastaturkart: kan ikke finne symbol \"%s\"."
 
 #: keymap.cpp:241
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: do not understand key code \"%s\"."
 msgstr "Tastaturkart: kan ikke forstå tastkode \"%s\"."
 
 #: keymap.cpp:247
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "Tastaturkart: tastkode \"%s\" går utenfor gyldig område."
 
@@ -331,9 +331,8 @@ msgid "Display information for selected keyboard map"
 msgstr "Vis informasjon for valgt tastaturkart"
 
 #: widgets.cpp:145
-#, fuzzy
 msgid "Use &hot list"
-msgstr "Bruk \"&hotlist\""
+msgstr "Bruk &hotlist"
 
 #: widgets.cpp:146
 msgid ""
@@ -369,7 +368,6 @@ msgid "Switch and Alt Switch"
 msgstr "Bryter og Alt bryter"
 
 #: widgets.cpp:410
-#, fuzzy
 msgid "Key(s) to switch between keyboard maps"
 msgstr "Tast(er) for å skifte mellom tastaturkart"
 
@@ -398,15 +396,13 @@ msgid "Advanced"
 msgstr "Avansert"
 
 #: widgets.cpp:466
-#, fuzzy
 msgid "&Emulate Caps Lock"
 msgstr "&Emuler CapsLock"
 
 #: widgets.cpp:467
-#, fuzzy
 msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
 msgstr ""
-"Emuler XServer-CapsLock. Trengs til noen språk for at de skal være korrekt"
+"Emuler XServer-CapsLock. Trengs til noen språk for at de skal være korrekte"
 
 #: widgets.cpp:473
 msgid "&World Menu"
@@ -453,17 +449,14 @@ msgid "Foreground"
 msgstr "Forgrunn"
 
 #: widgets.cpp:562
-#, fuzzy
 msgid "Color of the text label"
 msgstr "Farge på tekst merkelapper"
 
 #: widgets.cpp:566
-#, fuzzy
 msgid "With Caps Lock"
-msgstr "Med CapsLock:"
+msgstr "Med CapsLock"
 
 #: widgets.cpp:567
-#, fuzzy
 msgid "Background when Emulated Caps Lock active"
 msgstr "Bakgrunn når emulert CapsLock er aktiv"
 
@@ -497,9 +490,8 @@ msgid "&Autostart"
 msgstr "&Autostart"
 
 #: widgets.cpp:642
-#, fuzzy
 msgid "Start up automatically"
-msgstr "Automatisk oppstart"
+msgstr "Start opp automatisk"
 
 #: widgets.cpp:648
 msgid "&Docked"

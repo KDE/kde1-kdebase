@@ -175,7 +175,7 @@ msgstr "Historie"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr ""
+msgstr "Rediger oppføringer: (dra en mappe og lag en lenke)"
 
 #: disknav.cpp:64
 msgid "Edit &Local..."
@@ -187,41 +187,40 @@ msgstr "Rediger &global..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr ""
+msgstr "Maks nylige mappe-oppføringer:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr ""
+msgstr "Maks nylige fil-oppføringer:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr ""
+msgstr "Maks filer i en enkelt mappe:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr ""
+msgstr "Vis dott-filer"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr ""
+msgstr "Ignorer bokstavstørrelse ved sortering"
 
 #: disknav.cpp:173
 msgid "Show Global section"
-msgstr ""
+msgstr "Vis global-seksjon"
 
 #: disknav.cpp:180
-#, fuzzy
 msgid "Show Local section"
-msgstr "Plassering"
+msgstr "Vis lokal-seksjon"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr ""
+msgstr "Vis nylig-seksjon"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr ""
+msgstr "Vis valg-oppføring"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr ""
+msgstr "Terminal-applikasjoner:"

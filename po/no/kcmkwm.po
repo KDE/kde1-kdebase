@@ -142,15 +142,16 @@ msgid "ms"
 msgstr "ms"
 
 #: titlebar.cpp:1252
-#, fuzzy
 msgid "Window manager setup - ERROR"
-msgstr "Vindusbehandlerstil"
+msgstr "Vindusbehandler-oppsett - FEIL"
 
 #: titlebar.cpp:1253
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
+"Det oppstod en feil under lagring\n"
+"av tittel-pixmapene! Vennligst sjekk tilgang."
 
 #: windows.cpp:66
 msgid "Windows"
