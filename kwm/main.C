@@ -853,10 +853,10 @@ void MyApp::readConfiguration(){
   if (config->hasKey("ElectricBorder")){
     options.ElectricBorder = config->readNumEntry("ElectricBorder");
     if (options.ElectricBorder < -1)
-      options.ElectricBorder = 1000;
+      options.ElectricBorder = -1;
   }
   else{
-    options.ElectricBorder = 1000;
+    options.ElectricBorder = -1;
     config->writeEntry("ElectricBorder", options.ElectricBorder);
   }
 
