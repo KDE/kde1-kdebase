@@ -17,7 +17,7 @@ lnkdir = $(kde_appsdir)/Applications
 lnk_DATA = kwrite.kdelnk
 
 icondir = $(kde_icondir)
-icon_DATA = kwrite.xpm
+icon_DATA = kwrite.xpm undo.xpm redo.xpm
 
 EXTRA_DIST = $(lnk_DATA) $(icon_DATA) mini-kwrite.xpm
 

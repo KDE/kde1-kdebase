@@ -1902,7 +1902,7 @@ DefaultsDialog::DefaultsDialog(HlManager *hlManager, ItemStyleList *styleList,
   connect(styleCombo,SIGNAL(activated(int)),this,SLOT(changed(int)));
 
   for (z = 0; z < hlManager->defaultStyles(); z++) {
-    styleCombo->insertItem(hlManager->defaultStyleName(z));
+    styleCombo->insertItem(i18n(hlManager->defaultStyleName(z)));
   }
 //  for (defStyle = defStyleList->first(); defStyle != 0L;
 //    defStyle = defStyleList->next()) {
@@ -2034,7 +2034,7 @@ void HighlightDialog::hlChanged(int z) {
   itemCombo->clear();
   for (itemData = hlData->itemDataList.first(); itemData != 0L;
     itemData = hlData->itemDataList.next()) {
-    itemCombo->insertItem(itemData->name);
+    itemCombo->insertItem(i18n(itemData->name));
   }
 
   itemChanged(0);

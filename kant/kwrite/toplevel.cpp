@@ -314,11 +314,11 @@ void TopLevel::setupToolBar(){
 
   toolbar->insertSeparator();
 
-  pixmap = loader->loadIcon("back.xpm");
+  pixmap = loader->loadIcon("undo.xpm");
   toolbar->insertButton(pixmap,toolUndo,SIGNAL(clicked()),
     kWrite,SLOT(undo()),TRUE,i18n("Undo"));
 
-  pixmap = loader->loadIcon("forward.xpm");
+  pixmap = loader->loadIcon("redo.xpm");
   toolbar->insertButton(pixmap,toolRedo,SIGNAL(clicked()),
     kWrite,SLOT(redo()),TRUE,i18n("Redo"));
 /*
