@@ -1028,7 +1028,7 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
     iconBox->setIcon( iconStr );
 
     // Load all wallpapers in the combobox
-    tmp = kapp->kdedir();
+    tmp = kapp->kdedir().copy();
     tmp += "/share/wallpapers";
     QDir d2( tmp.data() );
     const QFileInfoList *list = d2.entryInfoList();  
@@ -1171,7 +1171,7 @@ void DirPropsPage::drawWallPaper()
 	return;
     }
 
-    QString file = kapp->kdedir();
+    QString file = kapp->kdedir().copy();
     file += "/share/wallpapers/";
     file += text;
     
