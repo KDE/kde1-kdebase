@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 0.2POT-Creation-Date: 1998-02-19 22:49+0100\n"
-"POT-Creation-Date: 1998-05-18 18:03+0200\n"
+"POT-Creation-Date: 1998-06-11 00:07+0200\n"
 "PO-Revision-Date: 1998-01-20 11:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -14,185 +14,195 @@ msgstr ""
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: kfmgui.cpp:250
+#: kfmgui.cpp:257
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:933 kbind.cpp:945 kbind.cpp:955 kfmgui.cpp:262 kfmgui.cpp:939
+#: kbind.cpp:933 kbind.cpp:945 kbind.cpp:955 kfmgui.cpp:269 kfmgui.cpp:969
 msgid "Folder"
 msgstr "Папка"
 
-#: kfmgui.cpp:273
+#: kfmgui.cpp:280
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ОШИБКА: Шаблон '%s' не найден"
 
-#: kfmgui.cpp:299
+#: kfmgui.cpp:306
 msgid "&New Window"
 msgstr "Новое окно"
 
-#: kfmgui.cpp:302
+#: kfmgui.cpp:309
 msgid "&Run..."
 msgstr "Запустить..."
 
-#: kfmgui.cpp:304
+#: kfmgui.cpp:311
 msgid "Open &Terminal"
 msgstr "Открыть Терминал"
 
-#: kfmgui.cpp:307
+#: kfmgui.cpp:314
 msgid "&Open Location..."
 msgstr "Открыть Местоположение..."
 
-#: kfmgui.cpp:309
+#: kfmgui.cpp:316
 msgid "&Find"
 msgstr "Поиск"
 
-#: kfmgui.cpp:317
+#: kfmgui.cpp:324
 msgid "&Quit..."
 msgstr "Выход..."
 
-#: kfmgui.cpp:326
+#: kfmgui.cpp:333
 msgid "&Move to Trash"
 msgstr "Переместить в Корзину"
 
-#: kfmgui.cpp:331
+#: kfmgui.cpp:338
 msgid "&Select"
 msgstr "Выделить"
 
-#: kfmgui.cpp:335
+#: kfmgui.cpp:342
 msgid "Mime Types"
 msgstr "Типы MIME"
 
-#: kfmgui.cpp:337
+#: kfmgui.cpp:344
 msgid "Applications"
 msgstr "Приложения"
 
-#: kfmgui.cpp:343
+#: kfmgui.cpp:350
 msgid "Global Mime Types"
 msgstr "Глобальные Типы MIME"
 
-#: kfmgui.cpp:345
+#: kfmgui.cpp:352
 msgid "Global Applications"
 msgstr "Глобальные Приложения"
 
-#: kfmgui.cpp:352
+#: kfmgui.cpp:359
 msgid "Show &Dot Files"
 msgstr "Показывать скрытые файлы"
 
-#: kfmgui.cpp:354
+#: kfmgui.cpp:361
 msgid "Show Tr&ee"
 msgstr "Показывать дерево"
 
-#: kfmgui.cpp:356
+#: kfmgui.cpp:363
 msgid "&Visual Schnauzer"
 msgstr ""
 
-#: kfmgui.cpp:358
+#: kfmgui.cpp:365
 msgid "&HTML View"
 msgstr "HTML вид"
 
-#: kfmgui.cpp:361
+#: kfmgui.cpp:368
 msgid "&Icon View"
 msgstr ""
 
-#: kfmgui.cpp:363
+#: kfmgui.cpp:370
 msgid "&Text View"
 msgstr "Текстовый вид"
 
-#: kfmgui.cpp:365
+#: kfmgui.cpp:372
 msgid "&Long View"
 msgstr ""
 
-#: kfmgui.cpp:367
+#: kfmgui.cpp:374
 #, fuzzy
 msgid "&Short View"
 msgstr "Текстовый вид"
 
-#: kfmgui.cpp:373
+#: kfmgui.cpp:380
 msgid "Rel&oad Tree"
 msgstr "Перегрузить дерево"
 
-#: kfmgui.cpp:375
+#: kfmgui.cpp:382
 msgid "&Reload Document"
 msgstr "Перегрузить Документ"
 
-#: kfmgui.cpp:377
+#: kfmgui.cpp:384
 msgid "Rescan &bindings"
 msgstr ""
 
-#: kfmgui.cpp:380
+#: kfmgui.cpp:387
 msgid "&View Frame Source"
 msgstr "Посмотреть Текст Frame'а"
 
-#: kfmgui.cpp:382
+#: kfmgui.cpp:389
 msgid "View Docu&ment Source"
 msgstr "Посмотреть Текст Документа"
 
-#: kfmgui.cpp:393
+#: kfmgui.cpp:400
 msgid "Show History"
 msgstr ""
 
-#: kfmgui.cpp:395
+#: kfmgui.cpp:402
 msgid "Show Cache"
 msgstr "Показать Буфер"
 
-#: kfmgui.cpp:397
+#: kfmgui.cpp:404
 msgid "Clear Cache"
 msgstr "Очистить Буфер"
 
-#: kfmgui.cpp:400
+#: kfmgui.cpp:407
 msgid "Always look in cache"
 msgstr "Всегда искать в Буфере"
 
-#: kfmgui.cpp:402
+#: kfmgui.cpp:409
 msgid "Never look in cache"
 msgstr "Не искать в Буфере"
 
-#: kfmgui.cpp:410
+#: kfmgui.cpp:411
+#, fuzzy
+msgid "Always save cache"
+msgstr "Всегда искать в Буфере"
+
+#: kfmgui.cpp:413
+#, fuzzy
+msgid "Never save cache"
+msgstr "Не искать в Буфере"
+
+#: kfmgui.cpp:424
 msgid "Show &Menubar"
 msgstr "Показать меню"
 
-#: kfmgui.cpp:412
+#: kfmgui.cpp:426
 msgid "Show &Statusbar"
 msgstr "Показать Строку состояния"
 
-#: kfmgui.cpp:414
+#: kfmgui.cpp:428
 msgid "Show &Toolbar"
 msgstr "Показать Инструменты"
 
-#: kfmgui.cpp:416
+#: kfmgui.cpp:430
 msgid "Show &Location bar"
 msgstr "Показать Строку местоположения"
 
-#: kfmgui.cpp:419
+#: kfmgui.cpp:433
 msgid "Sa&ve Settings"
 msgstr "Записать установки"
 
-#: kfmgui.cpp:421
+#: kfmgui.cpp:435
 msgid "Configure Browser..."
 msgstr "Настроить Броузер..."
 
-#: kfmgui.cpp:464
+#: kfmgui.cpp:478
 msgid "&About..."
 msgstr "О программе..."
 
-#: kfmgui.cpp:474
+#: kfmgui.cpp:488
 msgid "&Bookmarks"
 msgstr "Закладки"
 
-#: kfmgui.cpp:475
+#: kfmgui.cpp:489
 msgid "&Cache"
 msgstr "Cache"
 
-#: kfmgui.cpp:502
+#: kfmgui.cpp:516
 msgid "Up"
 msgstr ""
 
-#: kfmgui.cpp:550
+#: kfmgui.cpp:564
 msgid "Stop"
 msgstr "Стоп"
 
-#: kfmgui.cpp:574
+#: kfmgui.cpp:588
 msgid "Could not load icon\n"
 msgstr "Не могу загрузить пиктограмму\n"
 
@@ -200,7 +210,7 @@ msgstr "Не могу загрузить пиктограмму\n"
 #: kbind.cpp:1537 kbind.cpp:1555 kbind.cpp:1572 kbind.cpp:1630 kbind.cpp:1642
 #: kbind.cpp:1669 kbind.cpp:1684 kbind.cpp:1704 kbind.cpp:1716 kbind.cpp:1733
 #: kbind.cpp:1855 kbind.cpp:1867 kbind.cpp:1912 kbind.cpp:1954 kfmexec.cpp:60
-#: kfmexec.cpp:92 kfmexec/main.cpp:47 kfmgui.cpp:575 kfmgui.cpp:715
+#: kfmexec.cpp:92 kfmexec/main.cpp:47 kfmgui.cpp:589 kfmgui.cpp:745
 #: kfmman.cpp:295 kfmman.cpp:1021 kfmman.cpp:1188 kfmman.cpp:1214
 #: kfmprops.cpp:366 kfmprops.cpp:617 kfmprops.cpp:643 kfmprops.cpp:823
 #: kfmprops.cpp:945 kfmprops.cpp:1072 kfmprops.cpp:1388 kfmprops.cpp:1600
@@ -209,50 +219,50 @@ msgstr "Не могу загрузить пиктограмму\n"
 #: kfmtree.cpp:286 kfmtree.cpp:317 kfmtree.cpp:323 kfmtree.cpp:329
 #: kfmview.cpp:351 kfmview.cpp:370 kfmview.cpp:376 kfmview.cpp:439
 #: kfmview.cpp:445 kfmview.cpp:451 kfmview.cpp:526 kfmview.cpp:552
-#: kfmview.cpp:570 kfmview.cpp:576 kfmview.cpp:582 kiojob.cpp:233
-#: kiojob.cpp:241 kiojob.cpp:248 kiojob.cpp:273 kiojob.cpp:292 kiojob.cpp:303
-#: kiojob.cpp:325 kiojob.cpp:344 kiojob.cpp:548 kiojob.cpp:788 kiojob.cpp:819
-#: kiojob.cpp:860 kiojob.cpp:1669 krenamewin.cpp:120 root.cpp:1098
+#: kfmview.cpp:570 kfmview.cpp:576 kfmview.cpp:582 kiojob.cpp:234
+#: kiojob.cpp:242 kiojob.cpp:249 kiojob.cpp:274 kiojob.cpp:293 kiojob.cpp:304
+#: kiojob.cpp:326 kiojob.cpp:345 kiojob.cpp:551 kiojob.cpp:791 kiojob.cpp:822
+#: kiojob.cpp:863 kiojob.cpp:1677 krenamewin.cpp:120 root.cpp:1098
 #: root.cpp:1116 root.cpp:1122 root.cpp:1128 root.cpp:1203 root.cpp:1710
 #: root.cpp:1735
 msgid "KFM Error"
 msgstr "Ошибка KFM"
 
-#: kfmexec.cpp:59 kfmgui.cpp:714 kfmman.cpp:1020
+#: kfmexec.cpp:59 kfmgui.cpp:744 kfmman.cpp:1020
 msgid "Malformed URL\n"
 msgstr "Некорретный URL\n"
 
-#: kfmgui.cpp:874
+#: kfmgui.cpp:904
 msgid "Select files:"
 msgstr "Выберите файлы:"
 
-#: kfmgui.cpp:891
+#: kfmgui.cpp:921
 msgid "&Edit Bookmarks..."
 msgstr "Редактировать Закладки"
 
-#: kfmgui.cpp:901
+#: kfmgui.cpp:931
 msgid "&Add Bookmark"
 msgstr "Добавить Закладку"
 
-#: kfmgui.cpp:931 kfmgui.cpp:938
+#: kfmgui.cpp:961 kfmgui.cpp:968
 msgid "New "
 msgstr "Новый "
 
-#: kfmgui.cpp:1028 kfmgui.cpp:1190 kfmjob.cpp:33 kfmman.cpp:218
+#: kfmgui.cpp:1058 kfmgui.cpp:1220 kfmjob.cpp:33 kfmman.cpp:218
 #: kfmtree.cpp:318 kfmview.cpp:371 kfmview.cpp:440 kfmview.cpp:571
-#: kiojob.cpp:82 root.cpp:1117
+#: kiojob.cpp:83 root.cpp:1117
 msgid "ERROR: Malformed URL"
 msgstr "ОШИБКА: Некорретный URL"
 
-#: kfmgui.cpp:1144 kfmserver.cpp:178
+#: kfmgui.cpp:1174 kfmserver.cpp:178
 msgid "Open Location:"
 msgstr "Открыть Местоположение:"
 
-#: kfmgui.cpp:1200
+#: kfmgui.cpp:1230
 msgid "KFM Confirm"
 msgstr ""
 
-#: kfmgui.cpp:1201
+#: kfmgui.cpp:1231
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -260,11 +270,11 @@ msgstr ""
 "Вы действительно хотите выйти?\n"
 "Большая часть функционала рабочего стола будет утеряна"
 
-#: kfmgui.cpp:1231
+#: kfmgui.cpp:1261
 msgid "About KFM"
 msgstr "О KFM"
 
-#: kfmgui.cpp:1232
+#: kfmgui.cpp:1262
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -284,7 +294,7 @@ msgstr ""
 "Прокси Менеджер Ларса Носса\n"
 "Lars.Hoss@munich.netsurf.de"
 
-#: kfmgui.cpp:1325
+#: kfmgui.cpp:1355
 msgid "Document: Done"
 msgstr "Документ: Сделано"
 
@@ -913,12 +923,12 @@ msgstr "Работаю..."
 msgid "Add To Bookmarks"
 msgstr "Добавить закладку"
 
-#: kiojob.cpp:129
+#: kiojob.cpp:130
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr ""
 "ВНУТРЕННЯЯ ОШИБКА: Вы должны как минимум указать устройство для монтирования"
 
-#: kiojob.cpp:232 kiojob.cpp:240 kiojob.cpp:1201 kiojob.cpp:1341
+#: kiojob.cpp:233 kiojob.cpp:241 kiojob.cpp:1204 kiojob.cpp:1344
 #, c-format
 msgid ""
 "Malformed URL\n"
@@ -927,11 +937,11 @@ msgstr ""
 "Некорректный URL\n"
 "%s"
 
-#: kiojob.cpp:249
+#: kiojob.cpp:250
 msgid "Can only make links on local file system"
 msgstr "Могу делать ссылки только на локальной файловой системе"
 
-#: kiojob.cpp:272 kiojob.cpp:291
+#: kiojob.cpp:273 kiojob.cpp:292
 #, c-format
 msgid ""
 "Could not overwrite\n"
@@ -940,7 +950,7 @@ msgstr ""
 "Не могу переписать\n"
 "%s"
 
-#: kiojob.cpp:301 kiojob.cpp:324 kiojob.cpp:343
+#: kiojob.cpp:302 kiojob.cpp:325 kiojob.cpp:344
 #, c-format
 msgid ""
 "Could not make symlink to\n"
@@ -949,12 +959,12 @@ msgstr ""
 "Не могу сделать ссылку на\n"
 "%s"
 
-#: kiojob.cpp:377
+#: kiojob.cpp:378
 #, c-format
 msgid " ERROR: Could not write to %s"
 msgstr " ОШИБКА: Не могу записать в %s"
 
-#: kiojob.cpp:547 kiojob.cpp:787 kiojob.cpp:1258
+#: kiojob.cpp:550 kiojob.cpp:790 kiojob.cpp:1261
 #, c-format
 msgid ""
 "Could not make directory\n"
@@ -963,12 +973,12 @@ msgstr ""
 "Не могу создать подкаталог\n"
 "%s"
 
-#: kiojob.cpp:560 kiojob.cpp:1006
+#: kiojob.cpp:563 kiojob.cpp:1009
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
 msgstr "ОШИБКА: Не могу получить доступ к подкаталогу '%s'"
 
-#: kiojob.cpp:818
+#: kiojob.cpp:821
 #, c-format
 msgid ""
 "Could not access directory\n"
@@ -977,7 +987,7 @@ msgstr ""
 "Не могу получить доступ к подкаталогу\n"
 "%s"
 
-#: kiojob.cpp:859
+#: kiojob.cpp:862
 #, c-format
 msgid ""
 "Could not move directory\n"
@@ -990,16 +1000,16 @@ msgstr ""
 "в %s\n"
 "Возможно доступ запрещен."
 
-#: kiojob.cpp:1205 kiojob.cpp:1213 kiojob.cpp:1222 kiojob.cpp:1230
-#: kiojob.cpp:1238 kiojob.cpp:1246 kiojob.cpp:1254 kiojob.cpp:1262
-#: kiojob.cpp:1278 kiojob.cpp:1296 kiojob.cpp:1304 kiojob.cpp:1311
-#: kiojob.cpp:1322 kiojob.cpp:1337 kiojob.cpp:1345 kiojob.cpp:1353
-#: kiojob.cpp:1361 kiojob.cpp:1369 kiojob.cpp:1377 kiojob.cpp:1385
-#: kiojob.cpp:1403 kiojob.cpp:1411 kiojob.cpp:1419
+#: kiojob.cpp:1208 kiojob.cpp:1216 kiojob.cpp:1225 kiojob.cpp:1233
+#: kiojob.cpp:1241 kiojob.cpp:1249 kiojob.cpp:1257 kiojob.cpp:1265
+#: kiojob.cpp:1281 kiojob.cpp:1299 kiojob.cpp:1307 kiojob.cpp:1314
+#: kiojob.cpp:1325 kiojob.cpp:1340 kiojob.cpp:1348 kiojob.cpp:1356
+#: kiojob.cpp:1364 kiojob.cpp:1372 kiojob.cpp:1380 kiojob.cpp:1388
+#: kiojob.cpp:1406 kiojob.cpp:1414 kiojob.cpp:1422
 msgid "Continue"
 msgstr "Продолжить"
 
-#: kiojob.cpp:1209 kiojob.cpp:1349
+#: kiojob.cpp:1212 kiojob.cpp:1352
 #, c-format
 msgid ""
 "Could not read\n"
@@ -1010,7 +1020,7 @@ msgstr ""
 "%s\n"
 "Файл не существует или доступ запрещен"
 
-#: kiojob.cpp:1217
+#: kiojob.cpp:1220
 #, c-format
 msgid ""
 "Could not write\n"
@@ -1021,7 +1031,7 @@ msgstr ""
 "%s\n"
 "Возможно доступ запрещен"
 
-#: kiojob.cpp:1226 kiojob.cpp:1357
+#: kiojob.cpp:1229 kiojob.cpp:1360
 #, c-format
 msgid ""
 "Could not create Socket for\n"
@@ -1030,7 +1040,7 @@ msgstr ""
 "Не могу создать Socket для\n"
 "%s"
 
-#: kiojob.cpp:1234 kiojob.cpp:1365
+#: kiojob.cpp:1237 kiojob.cpp:1368
 #, fuzzy, c-format
 msgid ""
 "Unknown host in\n"
@@ -1039,7 +1049,7 @@ msgstr ""
 "Неизвестный компьютер в\n"
 "%s"
 
-#: kiojob.cpp:1242 kiojob.cpp:1373
+#: kiojob.cpp:1245 kiojob.cpp:1376
 #, c-format
 msgid ""
 "Could not connect to\n"
@@ -1048,7 +1058,7 @@ msgstr ""
 "Не могу связаться с\n"
 "%s"
 
-#: kiojob.cpp:1250 kiojob.cpp:1381
+#: kiojob.cpp:1253 kiojob.cpp:1384
 #, c-format
 msgid ""
 "The requested action\n"
@@ -1059,7 +1069,7 @@ msgstr ""
 "%s\n"
 "еще не реализовано."
 
-#: kiojob.cpp:1266
+#: kiojob.cpp:1269
 #, c-format
 msgid ""
 "Could not list directory contents\n"
@@ -1068,7 +1078,7 @@ msgstr ""
 "Не могу получить содержимое подкаталога\n"
 "%s"
 
-#: kiojob.cpp:1274
+#: kiojob.cpp:1277
 #, c-format
 msgid ""
 "Could not delete\n"
@@ -1079,7 +1089,7 @@ msgstr ""
 "%s\n"
 "URL не существует или доступ запрещен"
 
-#: kiojob.cpp:1284 kiojob.cpp:1391
+#: kiojob.cpp:1287 kiojob.cpp:1394
 #, c-format
 msgid ""
 "Could not login for\n"
@@ -1090,7 +1100,7 @@ msgstr ""
 "%s\n"
 "Возможно неверный пароль"
 
-#: kiojob.cpp:1300 kiojob.cpp:1407
+#: kiojob.cpp:1303 kiojob.cpp:1410
 #, c-format
 msgid ""
 "Tar reproted an error\n"
@@ -1099,7 +1109,7 @@ msgstr ""
 "Tar выдал ошибку\n"
 "%s"
 
-#: kiojob.cpp:1308
+#: kiojob.cpp:1311
 #, c-format
 msgid ""
 "Gzip reproted an error for\n"
@@ -1108,7 +1118,7 @@ msgstr ""
 "Gzip выдал ошибку для\n"
 "%s"
 
-#: kiojob.cpp:1318 kiojob.cpp:1333
+#: kiojob.cpp:1321 kiojob.cpp:1336
 #, c-format
 msgid ""
 "File %s\n"
@@ -1117,7 +1127,7 @@ msgstr ""
 "Файл %s\n"
 "не существует"
 
-#: kiojob.cpp:1415
+#: kiojob.cpp:1418
 #, c-format
 msgid ""
 "Gzip reproted an error\n"
@@ -1126,7 +1136,7 @@ msgstr ""
 "Gzip выдал ошибку\n"
 "%s"
 
-#: kiojob.cpp:1423
+#: kiojob.cpp:1426
 #, c-format
 msgid ""
 "Could not mount\n"
@@ -1139,7 +1149,7 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1429
+#: kiojob.cpp:1432
 #, c-format
 msgid ""
 "Could not unmount\n"
@@ -1152,21 +1162,21 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1520
+#: kiojob.cpp:1523
 msgid "Making directory"
 msgstr "Создаю подкаталог"
 
-#: kiojob.cpp:1634 kiojob.cpp:1688 kiojob.cpp:1730
+#: kiojob.cpp:1642 kiojob.cpp:1696 kiojob.cpp:1738
 #, c-format
 msgid "File %i/%i"
 msgstr "Файл %i/%i"
 
-#: kiojob.cpp:1637 kiojob.cpp:1692
+#: kiojob.cpp:1645 kiojob.cpp:1700
 #, c-format
 msgid "to %s"
 msgstr "в %s"
 
-#: kiojob.cpp:1668
+#: kiojob.cpp:1676
 #, c-format
 msgid ""
 "Could not delete directory\n"
@@ -1175,22 +1185,22 @@ msgstr ""
 "Не могу удалить подкаталог\n"
 "%s"
 
-#: kiojob.cpp:1758
+#: kiojob.cpp:1766
 #, c-format
 msgid "Mounting %s ..."
 msgstr "Монтирую %s ..."
 
-#: kiojob.cpp:1760
+#: kiojob.cpp:1768
 #, c-format
 msgid "Unmounting %s ..."
 msgstr "Размонтирую %s ..."
 
-#: kiojob.cpp:1788
+#: kiojob.cpp:1796
 #, c-format
 msgid "Retrieving listing of %s"
 msgstr "Восстанавливаю список %s"
 
-#: kiojob.cpp:2021
+#: kiojob.cpp:2029
 msgid "Segmentation fault in io subprocess"
 msgstr "Ошибка сегментации в IO подпроцессе"
 

@@ -221,7 +221,8 @@ msgstr "-vt_size <størrelse>      tiny, small, normal, large, huge\n"
 
 #: main.C:1169
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr "-linux                    sett opp kvt til å etterligne linux-konsolet\n"
+msgstr ""
+"-linux                    sett opp kvt til å etterligne linux-konsolet\n"
 
 #: main.C:1170
 msgid "-no_menubar               hide the menubar\n"
@@ -266,8 +267,8 @@ msgid ""
 "(default)\n"
 msgstr ""
 "-ls                       initsialiser kvts skall som et logginnskall\n"
-"-ls-                      initsialiser kvts skall som et "
-"                          ikke-logginnskall (standard)\n"
+"-ls-                      initsialiser kvts skall som et                     "
+"      ikke-logginnskall (standard)\n"
 
 #: main.C:1181
 msgid ""
@@ -289,8 +290,7 @@ msgid ""
 "buffer\n"
 msgstr ""
 "-pageup <tastsym>         bruk hurtigtast alt-tastsym for å rulle opp "
-"buffer"
-"buffer\n"
+"bufferbuffer\n"
 "-pagedown <keysym>        bruk hurtigtast alt-tastsym for å rulle ned "
 "buffer\n"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.10\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-11 00:07+0200\n"
 "PO-Revision-Date: 1998-01-18 05:15+06:00\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: ru <ru@li.org>\n"
@@ -24,7 +24,7 @@ msgstr "kwm: оконный менеджер уже работает. kwm не запущен.\n"
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: ошибка инициализации; прерывание\n"
 
-#: main.C:464
+#: main.C:474
 msgid ""
 "You want to switch to another window. Unfortunately you have selected \n"
 "one of the classic focus policies which do not allow this.  These policies "
@@ -37,112 +37,116 @@ msgid ""
 "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
 msgstr ""
 
-#: main.C:491
+#: main.C:492
+msgid "Preparing session ... "
+msgstr ""
+
+#: main.C:511
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Маттиас Эттрих (ettrich@kde.org)\n"
 
-#: main.C:498
+#: main.C:518
 msgid "Usage: "
 msgstr "Использование:"
 
 #
-#: main.C:509
+#: main.C:529
 msgid "&Maximize"
 msgstr "Максимизировать"
 
 #
-#: main.C:510
+#: main.C:530
 msgid "&Restore"
 msgstr "Восстановить"
 
-#: main.C:511
+#: main.C:531
 msgid "&Iconify"
 msgstr "Минимизировать"
 
 #
-#: main.C:512
+#: main.C:532
 msgid "&DeIconify"
 msgstr "Максимизировать"
 
 #
-#: main.C:513
+#: main.C:533
 msgid "&Sticky"
 msgstr "Прищемить"
 
 #
-#: main.C:514
+#: main.C:534
 msgid "&UnSticky"
 msgstr "Отщемить"
 
 #
-#: main.C:515
+#: main.C:535
 msgid "Mo&ve"
 msgstr "Переместить"
 
 #
-#: main.C:516
+#: main.C:536
 msgid "Resi&ze"
 msgstr "Изменить размер"
 
 #
-#: main.C:518
+#: main.C:538
 msgid "&To desktop"
 msgstr "На рабочий стол"
 
-#: main.C:520
+#: main.C:540
 msgid "&Onto current desktop"
 msgstr "На текуший рабочий стол"
 
-#: main.C:573
+#: main.C:593
 msgid "One"
 msgstr "Один"
 
-#: main.C:576
+#: main.C:596
 msgid "Two"
 msgstr "Два"
 
-#: main.C:579
+#: main.C:599
 msgid "Three"
 msgstr "Три"
 
-#: main.C:582
+#: main.C:602
 msgid "Four"
 msgstr "Четыре"
 
-#: main.C:585
+#: main.C:605
 msgid "Five"
 msgstr "Пять"
 
-#: main.C:588
+#: main.C:608
 msgid "Six"
 msgstr "Шесть"
 
-#: main.C:591
+#: main.C:611
 msgid "Seven"
 msgstr "Семь"
 
-#: main.C:594
+#: main.C:614
 msgid "Eight"
 msgstr "Восемь"
 
-#: main.C:608
+#: main.C:628
 msgid "Unnamed Desktop"
 msgstr ""
 
-#: main.C:931
+#: main.C:950
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Некоторые пиктограммы некорректны: ShapeMode отключено\n"
 
-#: main.C:1043
+#: main.C:1062
 #, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Некоторые пиктограммы некорректны: ShapeMode отключено\n"
 
-#: main.C:1281
+#: main.C:1295
 msgid "*** No Tasks ***"
 msgstr "*** Задач нет ***"
 
-#: minicli.C:115
+#: minicli.C:116
 msgid "Command:"
 msgstr "Команда:"
 
@@ -151,7 +155,7 @@ msgid "Ooops!"
 msgstr ""
 
 #
-#: logout.C:36 taskmgr.C:107
+#: logout.C:36 taskmgr.C:108
 msgid "Logout"
 msgstr "Выйти"
 
@@ -183,10 +187,10 @@ msgstr ""
 "Эти приложения не X11 и поэтому не могут быть восстановлены в следуюющей\n"
 "сессии. Убедитесь, что они не содержат важных данных"
 
-#: taskmgr.C:106
+#: taskmgr.C:107
 msgid "Switch to"
 msgstr "Переключиться"
 
-#: taskmgr.C:120
+#: taskmgr.C:121
 msgid "Current session"
 msgstr "Текущая сессия"

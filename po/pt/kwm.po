@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-11 00:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -16,7 +16,7 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: ocorreu uma falha durante a inicialização; a abortar\n"
 
-#: main.C:464
+#: main.C:474
 msgid ""
 "You want to switch to another window. Unfortunately you have selected \n"
 "one of the classic focus policies which do not allow this.  These policies "
@@ -36,103 +36,107 @@ msgstr ""
 "De qualquer modo, se prefere gestão de janelas mais moderna, selecione uma \n"
 "política de foco como \"Cliquar para obter Foco\" ou \"Foco segue o rato\"."
 
-#: main.C:491
+#: main.C:492
+msgid "Preparing session ... "
+msgstr ""
+
+#: main.C:511
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:498
+#: main.C:518
 msgid "Usage: "
 msgstr "Utilização: "
 
-#: main.C:509
+#: main.C:529
 msgid "&Maximize"
 msgstr "&Maximizar"
 
-#: main.C:510
+#: main.C:530
 msgid "&Restore"
 msgstr "&Restaurar"
 
-#: main.C:511
+#: main.C:531
 msgid "&Iconify"
 msgstr "&Iconificar"
 
-#: main.C:512
+#: main.C:532
 msgid "&DeIconify"
 msgstr "Des&Iconificar"
 
-#: main.C:513
+#: main.C:533
 msgid "&Sticky"
 msgstr "&Pregar"
 
-#: main.C:514
+#: main.C:534
 msgid "&UnSticky"
 msgstr "Des&Pregar"
 
-#: main.C:515
+#: main.C:535
 msgid "Mo&ve"
 msgstr "Mo&ver"
 
-#: main.C:516
+#: main.C:536
 msgid "Resi&ze"
 msgstr "Alterar &Tamanho"
 
-#: main.C:518
+#: main.C:538
 msgid "&To desktop"
 msgstr "Para o &ambiente de trabalho"
 
-#: main.C:520
+#: main.C:540
 msgid "&Onto current desktop"
 msgstr "Para &o ambiente de trabalho actual"
 
-#: main.C:573
+#: main.C:593
 msgid "One"
 msgstr "Um"
 
-#: main.C:576
+#: main.C:596
 msgid "Two"
 msgstr "Dois"
 
-#: main.C:579
+#: main.C:599
 msgid "Three"
 msgstr "Três"
 
-#: main.C:582
+#: main.C:602
 msgid "Four"
 msgstr "Quatro"
 
-#: main.C:585
+#: main.C:605
 msgid "Five"
 msgstr "Cinco"
 
-#: main.C:588
+#: main.C:608
 msgid "Six"
 msgstr "Seis"
 
-#: main.C:591
+#: main.C:611
 msgid "Seven"
 msgstr "Sete"
 
-#: main.C:594
+#: main.C:614
 msgid "Eight"
 msgstr "Oito"
 
-#: main.C:608
+#: main.C:628
 msgid "Unnamed Desktop"
 msgstr "Sem Nome"
 
-#: main.C:931
+#: main.C:950
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Algumas imagens não são válidas: ShapeMode desactivado\n"
 
-#: main.C:1043
+#: main.C:1062
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Algumas imagens não são válidas: GimmickMode desactivado\n"
 
-#: main.C:1281
+#: main.C:1295
 msgid "*** No Tasks ***"
 msgstr "*** Nenhuma Tarefa ***"
 
-#: minicli.C:115
+#: minicli.C:116
 msgid "Command:"
 msgstr "Comando:"
 
@@ -140,7 +144,7 @@ msgstr "Comando:"
 msgid "Ooops!"
 msgstr "Ooops!"
 
-#: logout.C:36 taskmgr.C:107
+#: logout.C:36 taskmgr.C:108
 msgid "Logout"
 msgstr "Sair"
 
@@ -175,10 +179,10 @@ msgstr ""
 "na sua próxima sessão. Certifique-se de que não contêm dados importantes por "
 "gravar."
 
-#: taskmgr.C:106
+#: taskmgr.C:107
 msgid "Switch to"
 msgstr "Mudar para"
 
-#: taskmgr.C:120
+#: taskmgr.C:121
 msgid "Current session"
 msgstr "Sessão actual"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-11 00:07+0200\n"
 "PO-Revision-Date: 1998-01-18 00:14 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: erreur pendant l'initialisation ; abandon\n"
 
-#: main.C:464
+#: main.C:474
 msgid ""
 "You want to switch to another window. Unfortunately you have selected \n"
 "one of the classic focus policies which do not allow this.  These policies "
@@ -38,104 +38,108 @@ msgid ""
 "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
 msgstr ""
 
-#: main.C:491
+#: main.C:492
+msgid "Preparing session ... "
+msgstr ""
+
+#: main.C:511
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:498
+#: main.C:518
 msgid "Usage: "
 msgstr "Utilisation : "
 
-#: main.C:509
+#: main.C:529
 msgid "&Maximize"
 msgstr "&Maximiser"
 
-#: main.C:510
+#: main.C:530
 msgid "&Restore"
 msgstr "&Restaurer"
 
-#: main.C:511
+#: main.C:531
 msgid "&Iconify"
 msgstr "&Icônifier"
 
-#: main.C:512
+#: main.C:532
 msgid "&DeIconify"
 msgstr "&Déicônifier"
 
-#: main.C:513
+#: main.C:533
 msgid "&Sticky"
 msgstr "&Clouer"
 
-#: main.C:514
+#: main.C:534
 msgid "&UnSticky"
 msgstr "Déc&louer"
 
-#: main.C:515
+#: main.C:535
 msgid "Mo&ve"
 msgstr "Dé&placer"
 
-#: main.C:516
+#: main.C:536
 msgid "Resi&ze"
 msgstr "Redi&mensionner"
 
-#: main.C:518
+#: main.C:538
 msgid "&To desktop"
 msgstr "&Vers le bureau"
 
-#: main.C:520
+#: main.C:540
 msgid "&Onto current desktop"
 msgstr "&Sur le bureau actuel"
 
-#: main.C:573
+#: main.C:593
 msgid "One"
 msgstr "Premier"
 
-#: main.C:576
+#: main.C:596
 msgid "Two"
 msgstr "Second"
 
-#: main.C:579
+#: main.C:599
 msgid "Three"
 msgstr "Troisième"
 
-#: main.C:582
+#: main.C:602
 msgid "Four"
 msgstr "Quatrième"
 
-#: main.C:585
+#: main.C:605
 msgid "Five"
 msgstr "Cinquième"
 
-#: main.C:588
+#: main.C:608
 msgid "Six"
 msgstr "Sixième"
 
-#: main.C:591
+#: main.C:611
 msgid "Seven"
 msgstr "Septième"
 
-#: main.C:594
+#: main.C:614
 msgid "Eight"
 msgstr "Huitième"
 
-#: main.C:608
+#: main.C:628
 msgid "Unnamed Desktop"
 msgstr "Bureau sans nom"
 
-#: main.C:931
+#: main.C:950
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Quelques pixmaps ne sont pas valides: ShapeMode désactivé\n"
 
-#: main.C:1043
+#: main.C:1062
 #, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Quelques pixmaps ne sont pas valides: ShapeMode désactivé\n"
 
-#: main.C:1281
+#: main.C:1295
 msgid "*** No Tasks ***"
 msgstr "*** Aucune tâche ***"
 
-#: minicli.C:115
+#: minicli.C:116
 msgid "Command:"
 msgstr "Commande : "
 
@@ -143,7 +147,7 @@ msgstr "Commande : "
 msgid "Ooops!"
 msgstr ""
 
-#: logout.C:36 taskmgr.C:107
+#: logout.C:36 taskmgr.C:108
 msgid "Logout"
 msgstr "Quitter KDE"
 
@@ -177,10 +181,10 @@ msgstr ""
 "être restaurées lors de votre prochaine session. Assurez-vous qu'elles ne\n"
 "contiennent pas de données importantes non enregistrées."
 
-#: taskmgr.C:106
+#: taskmgr.C:107
 msgid "Switch to"
 msgstr "Aller vers"
 
-#: taskmgr.C:120
+#: taskmgr.C:121
 msgid "Current session"
 msgstr "Session courante"

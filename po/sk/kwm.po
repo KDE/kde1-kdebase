@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm 0.10.23\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-11 00:07+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: zlyhanie behom inicializácie; ukonèujem\n"
 
-#: main.C:464
+#: main.C:474
 msgid ""
 "You want to switch to another window. Unfortunately you have selected \n"
 "one of the classic focus policies which do not allow this.  These policies "
@@ -45,103 +45,107 @@ msgstr ""
 "Ak si teda prajete modernej¹iu správu okien, zvoµte si jednu z odporúèaných\n"
 "metód ako napr. kliknú» pre aktiváciu alebo okno pod my¹kou je aktívne."
 
-#: main.C:491
+#: main.C:492
+msgid "Preparing session ... "
+msgstr ""
+
+#: main.C:511
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:498
+#: main.C:518
 msgid "Usage: "
 msgstr "Pou¾itie:"
 
-#: main.C:509
+#: main.C:529
 msgid "&Maximize"
 msgstr "&Maximalizova»"
 
-#: main.C:510
+#: main.C:530
 msgid "&Restore"
 msgstr "&Obnovi»"
 
-#: main.C:511
+#: main.C:531
 msgid "&Iconify"
 msgstr "&Ikonizova»"
 
-#: main.C:512
+#: main.C:532
 msgid "&DeIconify"
 msgstr "O&dikonizova»"
 
-#: main.C:513
+#: main.C:533
 msgid "&Sticky"
 msgstr "&Prilepi»"
 
-#: main.C:514
+#: main.C:534
 msgid "&UnSticky"
 msgstr "Od&lepi»"
 
-#: main.C:515
+#: main.C:535
 msgid "Mo&ve"
 msgstr "Pre&sunú»"
 
-#: main.C:516
+#: main.C:536
 msgid "Resi&ze"
 msgstr "Zmeni» &veµkos»"
 
-#: main.C:518
+#: main.C:538
 msgid "&To desktop"
 msgstr "&Na pracovnú plochu"
 
-#: main.C:520
+#: main.C:540
 msgid "&Onto current desktop"
 msgstr "Na &súèasnú pracovnú plochu"
 
-#: main.C:573
+#: main.C:593
 msgid "One"
 msgstr "Prvá"
 
-#: main.C:576
+#: main.C:596
 msgid "Two"
 msgstr "Druhá"
 
-#: main.C:579
+#: main.C:599
 msgid "Three"
 msgstr "Tretia"
 
-#: main.C:582
+#: main.C:602
 msgid "Four"
 msgstr "©tvrtá"
 
-#: main.C:585
+#: main.C:605
 msgid "Five"
 msgstr "Piata"
 
-#: main.C:588
+#: main.C:608
 msgid "Six"
 msgstr "©iesta"
 
-#: main.C:591
+#: main.C:611
 msgid "Seven"
 msgstr "Siedma"
 
-#: main.C:594
+#: main.C:614
 msgid "Eight"
 msgstr "Ôsma"
 
-#: main.C:608
+#: main.C:628
 msgid "Unnamed Desktop"
 msgstr "Nepomenovaná plocha"
 
-#: main.C:931
+#: main.C:950
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Niektoré bodové mapy nie sú korektné: ShapeMode vypnutý\n"
 
-#: main.C:1043
+#: main.C:1062
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Niektoré bodové mapy nie sú korektné: GimmickMode vypnutý\n"
 
-#: main.C:1281
+#: main.C:1295
 msgid "*** No Tasks ***"
 msgstr "*** ®iadne úlohy ***"
 
-#: minicli.C:115
+#: minicli.C:116
 msgid "Command:"
 msgstr "Príkaz:"
 
@@ -149,7 +153,7 @@ msgstr "Príkaz:"
 msgid "Ooops!"
 msgstr "Ooops!"
 
-#: logout.C:36 taskmgr.C:107
+#: logout.C:36 taskmgr.C:108
 msgid "Logout"
 msgstr "Odhlásenie"
 
@@ -182,10 +186,10 @@ msgstr ""
 "by» obnovené vo va¹om nasledujúcom sedení. Uistite sa, ¾e neobsahujú\n"
 "dôle¾ité neulo¾ené dáta."
 
-#: taskmgr.C:106
+#: taskmgr.C:107
 msgid "Switch to"
 msgstr "Prepnú» do"
 
-#: taskmgr.C:120
+#: taskmgr.C:121
 msgid "Current session"
 msgstr "Súèasné sedenie"

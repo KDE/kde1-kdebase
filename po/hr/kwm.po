@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-11 00:07+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -22,7 +22,7 @@ msgstr "kwm: veæ postoji jedan window manager. kwm nije pokrenut\n"
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: gre¹ka prilikom inicijalizacije; odustajem\n"
 
-#: main.C:464
+#: main.C:474
 msgid ""
 "You want to switch to another window. Unfortunately you have selected \n"
 "one of the classic focus policies which do not allow this.  These policies "
@@ -35,103 +35,107 @@ msgid ""
 "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
 msgstr ""
 
-#: main.C:491
+#: main.C:492
+msgid "Preparing session ... "
+msgstr ""
+
+#: main.C:511
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:498
+#: main.C:518
 msgid "Usage: "
 msgstr "Uporaba: "
 
-#: main.C:509
+#: main.C:529
 msgid "&Maximize"
 msgstr "&Poveæaj"
 
-#: main.C:510
+#: main.C:530
 msgid "&Restore"
 msgstr "&Vrati"
 
-#: main.C:511
+#: main.C:531
 msgid "&Iconify"
 msgstr "Napravi ga &ikonom"
 
-#: main.C:512
+#: main.C:532
 msgid "&DeIconify"
 msgstr "&Aktiviraj ikonu"
 
-#: main.C:513
+#: main.C:533
 msgid "&Sticky"
 msgstr "Na&lijepi"
 
-#: main.C:514
+#: main.C:534
 msgid "&UnSticky"
 msgstr "&Odlijepi"
 
-#: main.C:515
+#: main.C:535
 msgid "Mo&ve"
 msgstr "Po&makni"
 
-#: main.C:516
+#: main.C:536
 msgid "Resi&ze"
 msgstr "Promjeni velièinu"
 
-#: main.C:518
+#: main.C:538
 msgid "&To desktop"
 msgstr "&Na radnu povr¹inu"
 
-#: main.C:520
+#: main.C:540
 msgid "&Onto current desktop"
 msgstr "Na &tekuæu radnu povr¹inu"
 
-#: main.C:573
+#: main.C:593
 msgid "One"
 msgstr "Jedan"
 
-#: main.C:576
+#: main.C:596
 msgid "Two"
 msgstr "Dva"
 
-#: main.C:579
+#: main.C:599
 msgid "Three"
 msgstr "Tri"
 
-#: main.C:582
+#: main.C:602
 msgid "Four"
 msgstr "Èetiri"
 
-#: main.C:585
+#: main.C:605
 msgid "Five"
 msgstr "Pet"
 
-#: main.C:588
+#: main.C:608
 msgid "Six"
 msgstr "Sest"
 
-#: main.C:591
+#: main.C:611
 msgid "Seven"
 msgstr "Sedam"
 
-#: main.C:594
+#: main.C:614
 msgid "Eight"
 msgstr "Osam"
 
-#: main.C:608
+#: main.C:628
 msgid "Unnamed Desktop"
 msgstr "Neimenovana radna povr¹ina"
 
-#: main.C:931
+#: main.C:950
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Neke pixmape nisu va¾eæe: ShapeMode uga¹en\n"
 
-#: main.C:1043
+#: main.C:1062
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Neke pixmape nisu va¾eæe: GimmickMode uga¹en\n"
 
-#: main.C:1281
+#: main.C:1295
 msgid "*** No Tasks ***"
 msgstr "*** Nema Zadaæa ***"
 
-#: minicli.C:115
+#: minicli.C:116
 msgid "Command:"
 msgstr "Naredba:"
 
@@ -139,7 +143,7 @@ msgstr "Naredba:"
 msgid "Ooops!"
 msgstr "Joj!"
 
-#: logout.C:36 taskmgr.C:107
+#: logout.C:36 taskmgr.C:108
 msgid "Logout"
 msgstr "Odjavi"
 
@@ -171,10 +175,10 @@ msgstr ""
 "Slijedeæi programi nisu X11-svjesni te se ne mogu vratiti u va¹oj\n"
 "slijedeæoj sesiji. Spremite sve va¾ne podatke."
 
-#: taskmgr.C:106
+#: taskmgr.C:107
 msgid "Switch to"
 msgstr "Premjesti na"
 
-#: taskmgr.C:120
+#: taskmgr.C:121
 msgid "Current session"
 msgstr "Tekuæa sesija"

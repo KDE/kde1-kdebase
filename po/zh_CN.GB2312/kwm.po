@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-11 00:07+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -16,7 +16,7 @@ msgstr "kwm: 已经有一个窗口管理器在运行. kwm 没有启动\n"
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: 初始化发生错误; 中止\n"
 
-#: main.C:464
+#: main.C:474
 msgid ""
 "You want to switch to another window. Unfortunately you have selected \n"
 "one of the classic focus policies which do not allow this.  These policies "
@@ -29,104 +29,108 @@ msgid ""
 "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
 msgstr ""
 
-#: main.C:491
+#: main.C:492
+msgid "Preparing session ... "
+msgstr ""
+
+#: main.C:511
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:498
+#: main.C:518
 msgid "Usage: "
 msgstr "用法: "
 
-#: main.C:509
+#: main.C:529
 msgid "&Maximize"
 msgstr "最大化[&M]"
 
-#: main.C:510
+#: main.C:530
 msgid "&Restore"
 msgstr "还原[&R]"
 
-#: main.C:511
+#: main.C:531
 msgid "&Iconify"
 msgstr "图标化[&I]"
 
-#: main.C:512
+#: main.C:532
 msgid "&DeIconify"
 msgstr "还原[&D]"
 
-#: main.C:513
+#: main.C:533
 msgid "&Sticky"
 msgstr "粘附[&S]"
 
-#: main.C:514
+#: main.C:534
 msgid "&UnSticky"
 msgstr "取消粘附[&U]"
 
-#: main.C:515
+#: main.C:535
 msgid "Mo&ve"
 msgstr "移动[&V]"
 
-#: main.C:516
+#: main.C:536
 msgid "Resi&ze"
 msgstr "改变窗口大小[&Z]"
 
-#: main.C:518
+#: main.C:538
 msgid "&To desktop"
 msgstr "移至桌面[&T]"
 
-#: main.C:520
+#: main.C:540
 msgid "&Onto current desktop"
 msgstr "移至当前桌面[&O]"
 
-#: main.C:573
+#: main.C:593
 msgid "One"
 msgstr "一"
 
-#: main.C:576
+#: main.C:596
 msgid "Two"
 msgstr "二"
 
-#: main.C:579
+#: main.C:599
 msgid "Three"
 msgstr "三"
 
-#: main.C:582
+#: main.C:602
 msgid "Four"
 msgstr "四"
 
-#: main.C:585
+#: main.C:605
 msgid "Five"
 msgstr "五"
 
-#: main.C:588
+#: main.C:608
 msgid "Six"
 msgstr "六"
 
-#: main.C:591
+#: main.C:611
 msgid "Seven"
 msgstr "七"
 
-#: main.C:594
+#: main.C:614
 msgid "Eight"
 msgstr "八"
 
-#: main.C:608
+#: main.C:628
 msgid "Unnamed Desktop"
 msgstr "无名桌面"
 
-#: main.C:931
+#: main.C:950
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "一些位图是不对的: ShapMode 取消\n"
 
-#: main.C:1043
+#: main.C:1062
 #, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "一些位图是不对的: ShapMode 取消\n"
 
-#: main.C:1281
+#: main.C:1295
 msgid "*** No Tasks ***"
 msgstr "*** 没有任务 ***"
 
-#: minicli.C:115
+#: minicli.C:116
 msgid "Command:"
 msgstr "命令:"
 
@@ -134,7 +138,7 @@ msgstr "命令:"
 msgid "Ooops!"
 msgstr ""
 
-#: logout.C:36 taskmgr.C:107
+#: logout.C:36 taskmgr.C:108
 msgid "Logout"
 msgstr "离线"
 
@@ -166,10 +170,10 @@ msgstr ""
 "下面列出的应用程序不是 X11 所知的, 下次进入时不能还原到当前状态.\n"
 "请确定它们没有包含未保存的重要数据."
 
-#: taskmgr.C:106
+#: taskmgr.C:107
 msgid "Switch to"
 msgstr "切换至"
 
-#: taskmgr.C:120
+#: taskmgr.C:121
 msgid "Current session"
 msgstr "当前会话"
