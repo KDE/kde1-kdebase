@@ -557,26 +557,31 @@ QPixmap kPanel::load_pixmap(const char* name, bool is_folder){
 void kPanel::set_label_date(){
 
   struct tm *loctime;
-  char buf[256];
-  char buf2[256];
+  char dayline[256];
+  char timeline[256];
+  char dateline[256];
   time_t curtime;
 
   curtime=time(0);
   loctime=localtime(&curtime);
   
-  if (!clockAmPm)
-    strftime(buf,256,"%H:%M",loctime);
-  else 
-    strftime(buf,256,"%I:%M%p",loctime);
-  
-  strftime(buf2,256,"\n%b %d",loctime);
-  
-  QToolTip::add(label_date, QString(buf)+QString(buf2));
+  strftime(dayline,256,"%a\n",loctime);
 
-  if (label_date->fontMetrics().height() * 2 > label_date->height())
-    label_date->setText(buf);
+  if (!clockAmPm)
+    strftime(timeline,256,"%H:%M",loctime);
+  else 
+    strftime(timeline,256,"%I:%M%p",loctime);
+  
+  strftime(dateline,256,"\n%b %d",loctime);
+  
+  QToolTip::add(label_date, QString(dayline)+QString(timeline)+QString(dateline));
+
+  if (label_date->fontMetrics().lineSpacing() * 3 <= label_date->height())
+    label_date->setText(QString(dayline)+QString(timeline)+QString(dateline));
+  else if (label_date->fontMetrics().lineSpacing() * 2 <= label_date->height())
+    label_date->setText(QString(timeline)+QString(dateline));
   else
-    label_date->setText(QString(buf)+QString(buf2));
+    label_date->setText(timeline);
 
   if ( !mBackTexture.isNull() )
     label_date->setBackgroundPixmap( mBackTexture );

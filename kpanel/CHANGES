@@ -2,6 +2,8 @@ In kpanel-0.19:
 
     Patchlevel 2:
        - fixed the K-menu when not placed at the first position.
+       - "weekday" line above date in large-enough kpanel mode (Warwick Allison)
+
 
     Patchlevel 1:
        - user interface active during the loading of the k-menu
