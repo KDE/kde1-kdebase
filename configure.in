@@ -270,6 +270,7 @@ AC_OUTPUT(Makefile \
 	kfontmanager/Makefile \
 	kikbd/Makefile \
 	kikbd/kcmikbd/Makefile \
+	kikbd/maps/Makefile \
 	kikbd/doc/Makefile \
 	kikbd/doc/en/Makefile \
 	kikbd/doc/ru/Makefile \
