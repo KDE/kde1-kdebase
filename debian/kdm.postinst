@@ -14,6 +14,12 @@ else
 fi
 
 echo -n "Verifying kdm links: ";
+if test /usr/X11R6/lib/X11/kdm; then
+  echo -n "...";
+else 
+  mkdir /usr/x11R6/lib/X11/kdm > /dev/null 2>&1
+  echo -n "...";
+fi
 cd /usr/X11R6/lib/X11/kdm 
 rm -f *
 ln -s /etc/X11/kdm/kdm-config xdm-config > /dev/null 2>&1
@@ -81,8 +87,8 @@ for user in `sed -e 's#^\([^:]*\):.*:\([0-9]*\):.*$#\2-\1#' /etc/passwd`; do
     fi
 done
 echo "" >> $TMPFILE
-echo -n "SessionTypes=default;kde;failsafe;" >> $TMPFILE
-for session in `grep -v "^#" /etc/X11/window-managers | sed -e 's#^.*/\([^/]*\)$#\1#' | sort -u | grep -v kde`; do
+echo -n "SessionTypes=default;failsafe;" >> $TMPFILE
+for session in `grep -v "^#" /etc/X11/window-managers | sed -e 's#^.*/\([^/]*\)$#\1#' | sort -u`; do
     echo -n "$session;" >> $TMPFILE
 done
 mv $TMPFILE /etc/kde/kdmrc
