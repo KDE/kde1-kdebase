@@ -6,5 +6,7 @@ Type=Application
 DocPath=kcontrol/info/memory.html
 Comment=Memory information
 Comment[de]=Infomrationen zum Speicher
+Comment[cs]=Informace o pamìti
 Name=memory
 Name[de]=Speicher
+Name[cs]=Pamì»

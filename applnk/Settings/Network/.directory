@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Name=Network
 Name[pl]=Sieæ
+Name[cs]=Sí»
 MiniIcon=html.xpm
 SortOrder=smbstatus.kdelnk,memory.kdelnk,processor.kdelnk
 Icon=network.xpm

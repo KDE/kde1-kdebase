@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Name=Information
 Name[pl]=Informacje
+Name[cs]=Informace
 MiniIcon=readme.xpm
 SortOrder=memory.kdelnk,processor.kdelnk
 Icon=information.xpm
