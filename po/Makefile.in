@@ -9,8 +9,11 @@ CZ_GMFILES = cz_kfind.gmo
 ES_POFILES = es_kdehelp.po
 ES_GMFILES = es_kdehelp.gmo
 
-POFILES = $(DE_POFILES) $(CZ_POFILES) $(ES_POFILES)
-GMOFILES= $(DE_GMFILES) $(CZ_GMFILES) $(ES_GMFILES)
+SV_POFILES = sv_kdehelp.po  sv_kdisplay.po
+SV_GMFILES = sv_kdehelp.gmo sv_kdisplay.gmo
+
+POFILES = $(DE_POFILES) $(CZ_POFILES) $(ES_POFILES) $(SV_POFILES)
+GMOFILES= $(DE_GMFILES) $(CZ_GMFILES) $(ES_GMFILES) $(SV_GMFILES)
 
 # more general options
 srcdir = @srcdir@
