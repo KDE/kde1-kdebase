@@ -6,14 +6,12 @@ msgstr ""
 "Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 
 #: attraction.cpp:716
-#, fuzzy
 msgid "Attraction"
-msgstr "Contração"
+msgstr "Atração"
 
 #: attraction.cpp:803
-#, fuzzy
 msgid "Setup KAttraction"
-msgstr "Configurar KBat"
+msgstr "Configurar KAttraction"
 
 #: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
@@ -25,7 +23,7 @@ msgstr "Modo:"
 
 #: attraction.cpp:834 slidescreen.cpp:498
 msgid "Balls"
-msgstr ""
+msgstr "Bolas"
 
 #: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
@@ -37,24 +35,22 @@ msgstr "Polígonos"
 
 #: attraction.cpp:837 slidescreen.cpp:501
 msgid "Tails"
-msgstr ""
+msgstr "Rabos"
 
 #: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
-msgstr ""
+msgstr "Brasa"
 
 #: attraction.cpp:869 attraction.cpp:956 slidescreen.cpp:534
 #: slidescreen.cpp:563
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
 #: attraction.cpp:951
-#, fuzzy
 msgid "About Attraction"
-msgstr "Contração"
+msgstr "Sobre KAttraction"
 
 #: attraction.cpp:952
-#, fuzzy
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -64,11 +60,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Rocha Versão 3.3\n"
+"Attraction Versão 1.0\n"
 "\n"
-"Copyright (c) 1992 por Jamie Zawinski\n"
+"Copyright (c) 1992-1997 Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Portado para kscreensave by Martin Jones."
+"Portado para kscreensaver por\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> out 1998"
 
 #: banner.cpp:62
 msgid "Banner"
@@ -761,22 +759,18 @@ msgid "About Science"
 msgstr "Sobre o Ciência"
 
 #: slidescreen.cpp:419
-#, fuzzy
 msgid "SlideScreen"
-msgstr "Tela Vazia"
+msgstr "SlideScreen"
 
 #: slidescreen.cpp:465
-#, fuzzy
 msgid "Setup KSlideScreen"
-msgstr "Configurar Ciência"
+msgstr "Configurar KSlideScreen" 
 
 #: slidescreen.cpp:558
-#, fuzzy
 msgid "About SlideScreen"
-msgstr "Sobre o Ciência"
+msgstr "Sobre SlideScreen"
 
 #: slidescreen.cpp:559
-#, fuzzy
 msgid ""
 "SlideScreen Version 1.1\n"
 "\n"
@@ -786,11 +780,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Rocha Versão 3.3\n"
+"SlideScreen Versão 1.1\n"
 "\n"
-"Copyright (c) 1992 por Jamie Zawinski\n"
+"Copyright (c) 1992-1997 Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Portado para kscreensave by Martin Jones."
+"Portado para kscreensaver por:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> out 1998"
 
 #: slip.cpp:293
 msgid "Slip"

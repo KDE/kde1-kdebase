@@ -95,7 +95,7 @@ msgstr "Navegador de Disco"
 
 #: props.C:164
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Navegar rapidamente pelo sistema de arquivos"
 
 #: props.C:170
 msgid "Panel"
@@ -147,11 +147,11 @@ msgstr "(Ilegível)"
 
 #: pfilemenu.C:742
 msgid "Shared:"
-msgstr ""
+msgstr "Compartilhado:"
 
 #: pfilemenu.C:763
 msgid "Personal:"
-msgstr ""
+msgstr "Pessoal:"
 
 #: pfilemenu.C:783
 msgid "Recent:"

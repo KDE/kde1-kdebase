@@ -125,96 +125,96 @@ msgstr ""
 
 #: ../../kwm/kwmbindings.cpp:1
 msgid "Task manager"
-msgstr ""
+msgstr "Gerenciador de tarefas"
 
 #: ../../kwm/kwmbindings.cpp:2
 msgid "Kill window mode"
-msgstr ""
+msgstr "Modo de destruição de janela"
 
 #: ../../kwm/kwmbindings.cpp:3
 msgid "Execute command"
-msgstr ""
+msgstr "Executar comando"
 
 #: ../../kwm/kwmbindings.cpp:4
 msgid "Window operations menu"
-msgstr ""
+msgstr "Menu de operações de janela"
 
 #: ../../kwm/kwmbindings.cpp:5
 msgid "Pop-up system menu"
-msgstr ""
+msgstr "Menu de contexto do sistema"
 
 #: ../../kwm/kwmbindings.cpp:7
 msgid "Window raise"
-msgstr ""
+msgstr "Trazer janela à frente"
 
 #: ../../kwm/kwmbindings.cpp:8
 msgid "Window lower"
-msgstr ""
+msgstr "Mandar janela para trás"
 
 #: ../../kwm/kwmbindings.cpp:9
 msgid "Window close"
-msgstr ""
+msgstr "Fechar janela"
 
 #: ../../kwm/kwmbindings.cpp:10
 msgid "Window iconify"
-msgstr ""
+msgstr "Minimizar janela"
 
 #: ../../kwm/kwmbindings.cpp:11
 msgid "Window resize"
-msgstr ""
+msgstr "Redimensionar janela"
 
 #: ../../kwm/kwmbindings.cpp:12
 msgid "Window move"
-msgstr ""
+msgstr "Mover janela"
 
 #: ../../kwm/kwmbindings.cpp:13
 msgid "Window toggle sticky"
-msgstr ""
+msgstr "Comutar botão Pregar da janela"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
-msgstr ""
+msgstr "Mudar para ambiente 1"
 
 #: ../../kwm/kwmbindings.cpp:16
 msgid "Switch to desktop 2"
-msgstr ""
+msgstr "Mudar para ambiente 2"
 
 #: ../../kwm/kwmbindings.cpp:17
 msgid "Switch to desktop 3"
-msgstr ""
+msgstr "Mudar para ambiente 3"
 
 #: ../../kwm/kwmbindings.cpp:18
 msgid "Switch to desktop 4"
-msgstr ""
+msgstr "Mudar para ambiente 4"
 
 #: ../../kwm/kwmbindings.cpp:19
 msgid "Switch to desktop 5"
-msgstr ""
+msgstr "Mudar para ambiente 5"
 
 #: ../../kwm/kwmbindings.cpp:20
 msgid "Switch to desktop 6"
-msgstr ""
+msgstr "Mudar para ambiente 6"
 
 #: ../../kwm/kwmbindings.cpp:21
 msgid "Switch to desktop 7"
-msgstr ""
+msgstr "Mudar para ambiente 7"
 
 #: ../../kwm/kwmbindings.cpp:22
 msgid "Switch to desktop 8"
-msgstr ""
+msgstr "Mudar para ambiente 8"
 
 #: ../../kwm/kwmbindings.cpp:24
 msgid "Switch one desktop to the right"
-msgstr ""
+msgstr "Mudar para o ambiente da direita"
 
 #: ../../kwm/kwmbindings.cpp:25
 msgid "Switch one desktop to the left"
-msgstr ""
+msgstr "Mudar para o ambiente da esquerda"
 
 #: ../../kwm/kwmbindings.cpp:26
 msgid "Switch one desktop up"
-msgstr ""
+msgstr "Mudar para o ambiente acima"
 
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
-msgstr ""
+msgstr "Mudar para o ambiente abaixo"

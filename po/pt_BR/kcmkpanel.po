@@ -170,14 +170,12 @@ msgid "Edit entries: (drag a folder and create a link)"
 msgstr "Editar itens: (arraste um diretório e crie uma ligação)"
 
 #: disknav.cpp:64
-#, fuzzy
 msgid "Edit &Personal..."
-msgstr "Editar &Local..."
+msgstr "Editar &Pessoal..."
 
 #: disknav.cpp:74
-#, fuzzy
 msgid "Edit &Shared..."
-msgstr "Editar &Local..."
+msgstr "Editar &Compartilhado..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
@@ -200,14 +198,12 @@ msgid "Ignore case when sorting"
 msgstr "Ignorar maiúsculas/minúsculas na ordenação"
 
 #: disknav.cpp:173
-#, fuzzy
 msgid "Show Shared section"
-msgstr "Mostrar seção local"
+msgstr "Mostrar seção compartilhada"
 
 #: disknav.cpp:180
-#, fuzzy
 msgid "Show Personal section"
-msgstr "Mostrar seção local"
+msgstr "Mostrar seção pessoal"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
