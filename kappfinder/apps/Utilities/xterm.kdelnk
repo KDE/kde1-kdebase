@@ -6,6 +6,7 @@ MiniIcon=
 Protocols=
 MimeType=
 Comment=X Terminal
+Comment[no]=X-terminal
 Comment[pl]=X Terminal
 Comment[fr]=Emulateur de terminal xterm
 Comment[fi]=X Terminaali

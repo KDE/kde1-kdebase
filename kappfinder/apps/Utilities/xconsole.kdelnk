@@ -8,6 +8,7 @@ Protocols=
 MimeType=
 Comment=X Console viewer
 Comment[de]=X Konsole
+Comment[no]=X-konsoll
 Comment[fr]=Affichage de la console sous X
 Comment[pl]=X Konsola
 Comment[fi]=X Konsoli

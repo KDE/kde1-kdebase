@@ -6,6 +6,7 @@ Type=Application
 Name=XFMail
 Comment=XFMail Mailer
 Comment[de]=XFMail Mailprogramm
+Comment[no]=XFMail-epostprogrammet
 Comment[fr]=Programme de messagerie XFMail 
 Comment[pl]=Program pocztowy XFMail
 Comment[fi]=XFMail postiohjelma

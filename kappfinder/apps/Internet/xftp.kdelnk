@@ -9,6 +9,7 @@ MimeType=
 Comment=X FTP Client
 Comment[fr]=Programme de transfert de fichiers xftp
 Comment[de]=X FTP Klient
+Comment[no]=X FTP-klient
 Comment[pl]=X Klient FTP
 Comment[fi]=X FTP asiakasohjelma
 Comment[sv]=X FTP klient

@@ -8,6 +8,7 @@ Protocols=
 MimeType=
 Comment=Qt Dialog Editor
 Comment[de]=Qt Dialog Editor
+Comment[no]=Qt-dialogredigerer
 Comment[pl]=Qt Dialog Editor
 Comment[fi]=Qt:n Dialogieditori
 Comment[sv]=Dialogredigerare för Qt

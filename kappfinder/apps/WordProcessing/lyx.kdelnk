@@ -7,6 +7,7 @@ MiniIcon=
 Protocols=
 MimeType=
 Comment[de]=Das LyX Textprogramm
+Comment[no]=LyX-tekstbehandleren
 Comment[pl]=Edytor tekstu lyx
 Comment[fr]=Editeur de textes LyX (basé sur LaTeX)
 Comment[fi]=Lyx tekstinkäsittelyohjelma

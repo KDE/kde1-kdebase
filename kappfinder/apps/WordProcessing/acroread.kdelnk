@@ -8,6 +8,7 @@ Protocols=
 MimeType=
 Comment=Reader for Acrobat documents
 Comment[de]=Betrachter für Adobe Acrobat-PDF-Dateien
+Comment[no]=Adobe Acrobat-PDF-dokumentfremviser
 Comment[pl]=Przegl±darka plików Adobe Portable Document Format
 Comment[fi]=Adobe Acrobat PDF dokumenttien näyttäjä
 Comment[fr]=Visualiseur de documents Adobe Acrobat (PDF)

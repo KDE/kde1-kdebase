@@ -8,6 +8,7 @@ Name=Pine
 Comment=PINE is not ELM
 Comment[fr]=Client de messagerie \"Pine Is Not Elm\" (Pine n'est pas Elm)
 Comment[de]=PINE Mailprogramm
+Comment[no]=PINE-epostprogram
 Comment[sv]=PINE mailprogram
 Comment[pl]=Program pocztowy PINE
 Comment[fi]=PINE postiohjelma

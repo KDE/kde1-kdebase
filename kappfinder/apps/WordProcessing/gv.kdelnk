@@ -8,6 +8,7 @@ Protocols=
 MimeType=
 Comment=Postscript Viewer
 Comment[de]=Postscript Betrachter
+Comment[no]=Postscript-fremviser
 Comment[fr]=Visualiseur de documents Postscript
 Comment[pl]=Przegl±darka Postscript gv
 Comment[fi]=Postscript näyttäjä

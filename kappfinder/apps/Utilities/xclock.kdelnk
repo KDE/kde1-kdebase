@@ -13,6 +13,7 @@ Type=Application
 Comment=The X clock
 Comment[fr]=L'horloge xclock
 Comment[de]=Die X Uhr
+Comment[no]=X-klokken
 Comment[pl]=X Zegar
 Comment[fi]=X Kello
 Comment[sv]=X Klocka
