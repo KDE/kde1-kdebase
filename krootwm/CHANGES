@@ -6,6 +6,8 @@
 
 In 0.1:
 -------
+patchlevel 9:
+	- "Unclutter windows" and "Cascade windows" added to the rmb menu (CT)
 patchlevel 8:
        - hopefully fixed the ocassional freezes bug
        - hopefully fixed the ocassional freezes bug

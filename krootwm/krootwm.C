@@ -169,6 +169,9 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     rmb->insertItem(klocale->translate("Execute command"), RMB_EXECUTE);
     rmb->insertItem(klocale->translate("Display properties"), RMB_DISPLAY_PROPERTIES);
     rmb->insertItem(klocale->translate("Refresh desktop"), RMB_REFRESH_DESKTOP);
+    //CT 13mar98 deskUnclutter and deskCascade
+    rmb->insertItem(klocale->translate("Unclutter windows"), RMB_UNCLUTTER_WINDOWS);
+    rmb->insertItem(klocale->translate("Cascade windows"), RMB_CASCADE_WINDOWS);
     rmb->insertItem(klocale->translate("Arrange icons"), RMB_ARRANGE_ICONS);
     rmb->insertSeparator();
     rmb->insertItem(klocale->translate("Lock screen"), RMB_LOCK_SCREEN);
@@ -257,6 +260,13 @@ void KRootWm::rmb_menu_activated(int item){
       delete kfm;
     }
   break;
+  //CT 13mar98 - deskUnclutter and deskCascade
+  case RMB_UNCLUTTER_WINDOWS:
+    KWM::sendKWMCommand("deskUnclutter");
+    break;
+  case RMB_CASCADE_WINDOWS:
+    KWM::sendKWMCommand("deskCascade");
+    break;
   case RMB_HELP:
     execute ("kdehelp");
     break;
