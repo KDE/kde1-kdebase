@@ -12,10 +12,12 @@
 #include <qfileinf.h>
 #include <qfile.h>
 #include <qdir.h>
-
+#include <qprinter.h>
+#include <qprintdialog.h>
+#include <qpaintdevicemetrics.h>
 #include <kapp.h>
-#include <kfiledialog.h>
 
+#include <kfiledialog.h>
 #include <kdir.h>
 
 #include <X11/Xlib.h> //used to have XSetTransientForHint()
@@ -776,7 +778,9 @@ X      : cut
             cursorDown(c);
             break;
         case Key_Backspace:
-            kWriteDoc->backspace(this,c);
+            if ((c.flags & cfDelOnInput) && kWriteDoc->hasMarkedText())
+              kWriteDoc->delMarkedText(this,c);
+            else kWriteDoc->backspace(this,c);
             break;
         case Key_Home:
             home(c);
@@ -798,6 +802,8 @@ X      : cut
             break;
         case Key_Enter:
         case Key_Return:
+            if ((c.flags & cfDelOnInput) && kWriteDoc->hasMarkedText())
+              kWriteDoc->delMarkedText(this,c);
             kWriteDoc->newLine(this,c);
             //emit returnPressed();
             //e->ignore();
@@ -838,9 +844,18 @@ void KWriteView::mousePressEvent(QMouseEvent *e) {
     placeCursor(e->x(),e->y(),0);
     kWrite->paste();
   }
-//if (e->button() == RightButton) printf("word %s\n", kWrite->word(e->x(), e->y()).data());
   if (kWrite->popup && e->button() == RightButton) {
     kWrite->popup->popup(mapToGlobal(e->pos()));
+  }
+  kWrite->mousePressEvent(e);
+}
+
+void KWriteView::mouseDoubleClickEvent(QMouseEvent *e) {
+  if (e->button() == LeftButton) {
+    VConfig c;
+    getVConfig(c);
+    kWriteDoc->selectWord(c.cursor, c.flags);
+    kWriteDoc->updateViews();
   }
 }
 
@@ -981,7 +996,9 @@ void KWrite::setCursorPosition(int line, int col) {
   cursor.y = line;
   kWriteView->updateCursor(cursor);
   kWriteDoc->unmarkFound();
-  kWriteDoc->updateViews();
+  kWriteView->updateView(ufPos, 0, line*kWriteDoc->fontHeight - height()/2);
+  kWriteDoc->updateViews(kWriteView); //uptade all other views except this one
+//  kWriteDoc->updateViews();
 }
 
 int KWrite::config() {
@@ -1070,7 +1087,7 @@ QString KWrite::markedText() {
 }
 
 QString KWrite::currentWord() {
-  return kWriteDoc->currentWord(kWriteView->cursor);
+  return kWriteDoc->getWord(kWriteView->cursor);
 }
 
 QString KWrite::word(int x, int y) {
@@ -1078,7 +1095,7 @@ QString KWrite::word(int x, int y) {
   cursor.y = (kWriteView->yPos + y)/kWriteDoc->fontHeight;
   if (cursor.y < 0 || cursor.y > kWriteDoc->lastLine()) return QString();
   cursor.x = kWriteDoc->textPos(kWriteDoc->textLine(cursor.y), kWriteView->xPos-2 + x);
-  return kWriteDoc->currentWord(cursor);
+  return kWriteDoc->getWord(cursor);
 }
 
 void KWrite::setText(const char *s) {
@@ -1263,7 +1280,7 @@ void KWrite::loadURL(const char *url, int flags) {
     }
 
     kfmURL = u.url();
-    kfmFile.sprintf(_PATH_TMP"kwrite%i",time(0L));
+    kfmFile.sprintf(_PATH_TMP"/kwrite%i",time(0L));
     kfmAction = KWrite::GET;
     kfmFlags = flags;
 
@@ -1307,7 +1324,7 @@ void KWrite::writeURL(const char *url, int flags) {
     emit statusMsg(i18n("Waiting for KFM..."));
 
     kfmURL = url;
-    kfmFile.sprintf(_PATH_TMP"kwrite%i",time(0L));
+    kfmFile.sprintf(_PATH_TMP"/kwrite%i",time(0L));
     kfmAction = KWrite::PUT;
     kfmFlags = flags;
     if (!writeFile(kfmFile)) return;
@@ -1335,7 +1352,7 @@ void KWrite::writeURL(const char *url, int flags) {
 
 void KWrite::kfmFinished() {
 //  QString string;
-//  string.sprintf(klocale->translate("Finished '%s'"),tmpFile.data());
+//  string.sprintf(i18n("Finished '%s'"),tmpFile.data());
 //  setGeneralStatusField(string);
 
   if (kfmAction == GET ) {
@@ -1378,6 +1395,10 @@ void KWrite::kfmError(int e, const char *s) {
   printf("error %d = %s\n",e,s);
 }
 
+
+bool KWrite::hasFileName() {
+  return kWriteDoc->hasFileName();
+}
 
 const char *KWrite::fileName() {
   return kWriteDoc->fileName();
@@ -1431,7 +1452,7 @@ void KWrite::open() {
 //  if (kWriteDoc->hasFileName()) s = QFileInfo(kWriteDoc->fileName()).dirPath();
 //    else s = QDir::currentDirPath();
 
-  url = KFileDialog::getOpenFileURL(kWriteDoc->fileName(),"*",topLevelWidget());
+  url = KFileDialog::getOpenFileURL(kWriteDoc->fileName(),"*",this);
   if (url.isEmpty()) return;
 //  kapp->processEvents();
   loadURL(url);
@@ -1440,7 +1461,7 @@ void KWrite::open() {
 void KWrite::insertFile() {
   QString url;
 
-  url = KFileDialog::getOpenFileURL(kWriteDoc->fileName(),"*",topLevelWidget());
+  url = KFileDialog::getOpenFileURL(kWriteDoc->fileName(),"*",this);
   if (url.isEmpty()) return;
 //  kapp->processEvents();
   loadURL(url,lfInsert);
@@ -1488,7 +1509,7 @@ void KWrite::saveAs() {
 
 void KWrite::clear() {
   kWriteDoc->clear();
-  kWriteDoc->setFileName(0);
+  kWriteDoc->clearFileName();
   kWriteDoc->updateViews();
 }
 
@@ -1549,19 +1570,23 @@ void KWrite::invertSelection() {
   kWriteDoc->updateViews();
 }
 
-
+void addToStrList(QStrList &list, const char *str) {
+  if (list.find(str) != -1) list.remove();
+  if (list.count() >= 16) list.removeLast();
+  list.insert(0, str);
+}
 
 void KWrite::search() {
   SearchDialog *searchDialog;
 
-  searchDialog = new SearchDialog(searchFor,0L,
+  searchDialog = new SearchDialog(&searchForList, 0L,
     searchFlags & ~sfReplace,topLevelWidget());
 
   kWriteView->focusOutEvent(0L);// QT bug ?
   if (searchDialog->exec() == QDialog::Accepted) {
-    searchFor = searchDialog->getSearchFor();
+    addToStrList(searchForList, searchDialog->getSearchFor());
     searchFlags = searchDialog->getFlags() | (searchFlags & sfPrompt);
-    initSearch(s,searchFlags);
+    initSearch(s, searchFlags);
     searchAgain(s);
   }
   delete searchDialog;
@@ -1570,15 +1595,15 @@ void KWrite::search() {
 void KWrite::replace() {
   SearchDialog *searchDialog;
 
-  searchDialog = new SearchDialog(searchFor,replaceWith,
+  searchDialog = new SearchDialog(&searchForList, &replaceWithList,
     searchFlags | sfReplace,topLevelWidget());
 
   kWriteView->focusOutEvent(0L);// QT bug ?
   if (searchDialog->exec() == QDialog::Accepted) {
-    searchFor = searchDialog->getSearchFor();
-    replaceWith = searchDialog->getReplaceWith();
+    addToStrList(searchForList, searchDialog->getSearchFor());
+    addToStrList(replaceWithList, searchDialog->getReplaceWith());
     searchFlags = searchDialog->getFlags();
-    initSearch(s,searchFlags);
+    initSearch(s, searchFlags);
     replaceAgain();
   }
   delete searchDialog;
@@ -1607,14 +1632,16 @@ void KWrite::gotoLine() {
     cursor.x = 0;
     cursor.y = dlg->getLine() - 1;
     kWriteView->updateCursor(cursor);
+    kWriteDoc->unmarkFound();
     kWriteView->updateView(ufUpdateOnScroll);
+    kWriteDoc->updateViews(kWriteView); //uptade all other views except this one
   }
   delete dlg;
 }
 
 
 void KWrite::initSearch(SConfig &s, int flags) {
-
+ const char *searchFor = searchForList.getFirst();
   s.flags = flags;
   if (s.flags & sfFromCursor) {
     s.cursor = kWriteView->cursor;
@@ -1631,7 +1658,7 @@ void KWrite::initSearch(SConfig &s, int flags) {
   if (!(s.flags & sfBackward)) {
     if (!(s.cursor.x || s.cursor.y)) s.flags |= sfFinished;
   } else {
-    s.startCursor.x -= searchFor.length();
+    s.startCursor.x -= strlen(searchFor);//.length();
   }
   s.startCursor = s.cursor;
 }
@@ -1655,19 +1682,15 @@ void KWrite::searchAgain(SConfig &s) {
   int slen;
   QString str;
 
-//  cursor = kWriteView->cursor;//getVConfig(c);
-//  if (!(cursor.x || cursor.y || flags & sfBackward)) flags &= ~sfFromCursor;
+ const char *searchFor = searchForList.getFirst();
 
-  slen = searchFor.length();
+  slen = strlen(searchFor);//.length();
   do {
     query = 1;
     if (kWriteDoc->doSearch(s,searchFor)) {
-//    if (kWriteDoc->doSearch(cursor,searchFor,flags)) {
-      //kWriteDoc->markFound(cursor,slen);
       cursor = s.cursor;
       if (!(s.flags & sfBackward)) s.cursor.x += slen;
       kWriteView->updateCursor(s.cursor);
-      //kWriteDoc->updateViews(((flags & sfAgain) ? 0 : ufUpdateOnScroll) | ufCenter);
       exposeFound(cursor,slen,(s.flags & sfAgain) ? 0 : ufUpdateOnScroll,false);
     } else {
       if (!(s.flags & sfFinished)) {
@@ -1727,8 +1750,10 @@ void KWrite::doReplaceAction(int result, bool found) {
   PointStruc cursor;
   bool started;
 
-  slen = searchFor.length();
-  rlen = replaceWith.length();
+  const char *searchFor = searchForList.getFirst();
+  const char *replaceWith = replaceWithList.getFirst();
+  slen = strlen(searchFor);//.length();
+  rlen = strlen(replaceWith);//replaceWith.length();
 
   switch (result) {
     case srYes: //yes
@@ -1957,15 +1982,15 @@ void KWrite::addBookmark() {
 
 void KWrite::gotoBookmark(int n) {
   KWBookmark *b;
-//  printf("KWrite::gotoBookmark %d\n",n);
 
   if (n < 0 || n >= (int) bookmarks.count()) return;
   b = bookmarks.at(n);
   if (b->cursor.y == -1) return;
   kWriteView->updateCursor(b->cursor);
   kWriteDoc->unmarkFound();
-  kWriteView->updateView(ufPos,b->xPos,b->yPos);
-  kWriteDoc->updateViews(kWriteView);
+  kWriteView->updateView(ufPos, b->xPos, b->yPos);
+//  kWriteView->updateView(ufPos, 0, b->cursor.y*kWriteDoc->fontHeight - height()/2);
+  kWriteDoc->updateViews(kWriteView); //uptade all other views except this one
 }
 
 void KWrite::clearBookmarks() {
@@ -2193,9 +2218,56 @@ void KWrite::hlDlg() {
   delete dlg;
 }
 
+int KWrite::getHl() {
+  return kWriteDoc->getHighlight();
+}
+
 void KWrite::setHl(int n) {
   kWriteDoc->setHighlight(n);
   kWriteDoc->updateViews();
+}
+
+int KWrite::getEol() {
+  return kWriteDoc->eolMode;
+}
+
+void KWrite::setEol(int eol) {
+  kWriteDoc->eolMode = eol;
+  kWriteDoc->setModified(true);
+}
+
+void KWrite::print() {
+  int fontHeight;
+  int lines, pages;
+  int line, c, p, l, y;
+  QPrinter prt;
+
+  if (prt.setup()) {
+    QPaintDeviceMetrics pdm(&prt);
+    QPainter paint;
+
+    paint.begin(&prt);
+    fontHeight = kWriteDoc->fontHeight;
+    lines = pdm.height()/fontHeight;
+    pages = (kWriteDoc->lastLine() +1)/lines;
+    for (c = 1; c <= prt.numCopies(); c++) {
+      line = 0;
+      for (p = 0; p <= pages; p++) {
+        y = 0;
+        if (prt.pageOrder() == QPrinter::LastPageFirst) line = (pages - p)*lines;
+        for (l = 0; l < lines; l++) {
+          kWriteDoc->printTextLine(paint, line, pdm.width(), y);
+          line++;
+          y += fontHeight;
+        }
+        if (p < pages || c < prt.numCopies()) {
+          if (!prt.newPage()) goto abort;
+        }
+      }
+    }
+    abort:
+    paint.end();
+  }
 }
 
 void KWrite::keyPressEvent(QKeyEvent *e) {
