@@ -1,0 +1,301 @@
+<!doctype linuxdoc system>
+
+<!-- KDE Disk Navigator.
+ -->
+
+<article>
+
+<!-- Title information -->
+
+<title>KDE Disk Navigator
+<author>Pietro Iglio
+(<htmlurl url="mailto:iglio@kde.org" name="iglio@kde.org">)
+<date>v. 0.2 (beta), Aug 06 10:40:20 1998
+
+<!-- Table of contents -->
+<toc>
+
+<!-- Begin the document -->
+
+<!--################################################################## -->
+<sect>Introduction
+<!--################################################################## -->
+<p>
+
+Disk Navigator is a simple utility to navigate through the filesystem starting
+from the KPanel menu. It is activated when the "Disk Navigator" entry from
+the KPanel menu is selected. In this case, a root menu with the following 
+entries is shown:
+
+
+<list>
+<item><bf>Global:</bf> 
+  this section lists global entries, shared among all users.
+  Typical global entries include: / (root dir), CD-ROM, mounted filesystems,
+  removable disks, etc.
+  Global entries can be changed selecting the "Options" menu entry.
+  Note: only the superuser can change global entries. 
+
+<item><bf>Local:</bf> this section lists user-specific filesystem entries. 
+  Typical entries in this section are user's home dir, user's desktop, 
+  frequently accessed directories. Local entries can be changed selecting 
+  the "Options" menu entry.
+
+<item><bf>Recent:</bf>
+  this section lists recently accessed documents, applications
+  and folders.  When a document or application is accessed, it goes in the
+  "Recent" section along with its parent folder. The number of folders and
+  files that are kept in this section can be set selecting the "Options" menu
+  entry.
+
+<item><bf>Options:</bf>
+  shows a configuration dialog that can be used to specify some settings.
+  For a description of available settings, see the "Options" Section.
+
+</list>
+
+The root menu is highly customizable, as explained in the remaining sections.
+
+<!--################################################################## -->
+<sect>Features & Tips
+<!--################################################################## -->
+<p>
+
+<list>
+
+<item>
+Disk Navigator can be used to quickly access files in any mounted filesystem,
+including local files, remote files (eg. NFS mounts), removable media
+(CD-ROM, Iomega Zip, floppy drive), etc.
+When a file is selected, the action performed is exactly the same performed
+when the file is selected in a KFM window.
+
+<item>
+On the top of each menu (except the first one) there is an entry "Open Folder".
+when this entry is selected, a KFM window is launched using the current
+folder as URL. If you hold the Shift key when selecting this entry, Disk
+Navigator opens a terminal in the current folder.
+
+<item>
+Slow devices: accessing a folder on a slow device can stop Disk Navigator
+for a while (eg. entering a folder with a large number of files on a slow
+CD-ROM reader). Since you may want to place entry points to slow devices on
+the root menu, you might accidentally enter such slow entries.
+To avoid this problem, you can add a "Removable Media" folder to the 
+Global/Local sections, and place links to slow devices in this folder.
+See the "Options" section to see how to customize the Global/Local sections.
+
+<item>
+Copying <tt>~/.kde</tt> and $KDEDIR: the current version of Disk
+Navigator uses symbolic links to define entry points in the
+Global/Local sections. Symbolic links are stored in
+<tt>$KDEDIR/share/disknav</tt> (Global) and
+<tt>~/.kde/share/disknav</tt> (Local). Therefore, if you want to copy
+a KDE directories (for instance ~/.kde to create a backup copy of your
+KDE settings), you should use <tt>cp</tt> with the <tt>-d</tt>
+option. This way, symbolic links are copied as symbolic links. If, for
+instance, you use: "<tt>cp -r ~/.kde kde-backup</tt>" (without the -d option)
+<tt>cp</tt> will follow symbolic links in the
+<tt>disknav</tt> directory.
+
+</list>
+
+<!--################################################################## -->
+<sect>Options
+<!--################################################################## -->
+<p>
+
+The option dialog box is activated selecting "Disk Navigator" -> "Options" from
+the KPanel menu. It is possible to set the following options:
+
+  <list>
+
+  <item><bf>"Edit Local..."</bf>, <bf>"Edit Global..."</bf> these
+  buttons allow to change entries in the Local and Global Sections
+  (note: only superusers can change global settings).  In both cases,
+  a kfm window is displayed. Use normal dragging operations to create
+  symbolic links and folders in the local
+  (<tt>~/.kde/share/disknav</tt>) and global
+  (<tt>$KDEDIR/share/disknav</tt>) directories. When either the
+  "Apply" or the "OK" button in the Options dialog is selected, these
+  directories are parsed again and the "Disk Navigator" menu is
+  updated.  Alternatively, it is possible to change local and global
+  directory contents from the command line (e.g. using a shell
+  script). In such case, the panel must be restarted ("Panel" ->
+  "Restart" from the KPanel menu) to re-parse these directories.
+
+  <item><bf>"Max recent folder entries":</bf>
+  how many folders are stored in the "Recent" section.
+
+  <item><bf>"Max recent file entries":</bf>
+  how many files (applications or documents) are
+  stored in the "Recent" section.
+
+  <item><bf>"Max files in a single folder":</bf>
+  if the number of files in a folder exceeds 
+  this limit, the folder content is not displayed (and a "Too Many Files"
+  icon is displayed). It is suggested that this limit is kept not too high
+  for slow systems. Future version of Disk Navigator will probably get rid
+  of this problem (see the "Limitations" section).
+
+  <item><bf>"Show dot files"</bf>
+   sets if hidden files should be displayed in "Disk Navigator" menus.
+
+  <item><bf>"Ignore case when sorting":</bf>
+  if set, uses the order "A", "a", "B", "b" when
+  sorting rather than "A", "B", "a", "b".
+
+  <item><bf>"Show Global section":</bf>
+  if set, the Global section is shown.
+
+  <item><bf>"Show Local section":</bf>
+  if set, the Local section is shown.
+
+  <item><bf>"Show Recent section":</bf>
+  if set, the Recent section is shown.
+  Note that when this option is turned off,
+  the list of recently accessed folder/files is not updated (some
+  users might turn this option off for `privacy' reasons).
+
+  <item><bf>"Show Option entry":</bf>
+  if set, the Option entry is shown. Note that the Option dialog box can be
+		accessed from the KPanel configuration dialog. The "Option" entry 
+		here is just a shortcut for those who change frequently Disk
+		Navigator options.
+
+  <item><bf>"Terminal application":</bf>
+  Application that must be run when "Open Folder" is selected holding the
+  Shift key.
+
+</list>
+
+
+<!--################################################################## -->
+<sect>Notes
+<!--################################################################## -->
+<p>
+
+<list>
+
+<item>
+Disk Navigator menus are updated automatically when directory
+contents change, except the first menu, that is updated through the
+Options dialog.
+
+<item>
+The contents of the "Recent" section are saved in the
+~/.kde/share/config/kpanelrc configuration file. If you want to clear this
+section, you can clear the <tt>RecentFolders</tt> and <tt>RecentFiles</tt>
+entries in this file after logging out from KDE.
+
+<item>
+Documents and applications not accessed through the KPanel are not added 
+to the "Recent" section. This limitation is going to disappear in future
+versions of Disk Navigator.
+
+<item>
+Due to efficiency reasons, most files are not displayed with the same icon
+you would see in a file manager window. With the current version, only
+<tt>.kdelnk</tt> files have the corresponding icon displayed. Other files
+are displayed with two different icons to distinguish between data files
+and executables.
+
+</list>
+
+<!--################################################################## -->
+<sect>Configuration File (<em>advanced topic</em>)
+<!--################################################################## -->
+<p>
+
+Configuration information for Disk Navigator are stored in the
+<tt>~/.kde/share/config/kpanelrc</tt> configuration file. The group
+is <tt>[kdisknav]</tt>.
+
+Usually you don't need to edit this file manually, as this can be done through
+the Options dialog box. This section documents entries related to 
+Disk Navigator. If the option is missing in the configuration file, its
+default value is assumed. Note that a broken [kdisknav] group can be repaired
+simply removing all the entries listed here (their default value will be
+assumed).
+
+<list>
+
+<item>
+<bf>MaxNavigableFolderEntries</bf>=<em>n</em> : if a folder contains more than <em>n</em> entries, 
+a "Too many files" message is displayed.
+
+Default: 200
+
+<item>
+<bf>MaxRecentFoldersEntries</bf>=<em>n</em> : the "Recent" menu section will contain the last
+<em>n</em> folders open through Disk Navigator.
+
+Default: 4
+
+<item>
+<bf>MaxRecentFilesEntries</bf>=<em>n</em> : the "Recent" menu section will contain the last
+<em>n</em> files open through Disk Navigator.
+
+Default: 4
+
+<item>
+<bf>ShowDotFiles</bf>=on/off : should dot (hidden) files be showed in the Disk Navigator?
+
+Default: off
+
+<item>
+<bf>RecentFiles</bf>=<em>path1,path2,path3...</em> : list of recently opened files.
+
+<item>
+<bf>RecentFolders</bf>=<em>path1,path2,path3...</em>: list of recently opened folders.
+
+<item>
+<bf>IgnoreCase</bf>=on/off : should Disk Navigator sort files in case-sensitive mode?
+
+Default: off
+
+<item>
+<bf>Terminal</bf>=<em>app</em> : use this application to launch a terminal when the user holds
+the Shift key clicking on "Open Folder".
+Command-line options can be added here.
+
+Default: kvt
+
+<item>
+<bf>ShowGlobalSection</bf>=on/off : should the Global section be part of the Disk 
+        Navigator main menu?
+
+Default: on
+
+<item>
+<bf>ShowLocalSection</bf>=on/off : should the Local section be part of the Disk 
+        Navigator main menu?
+
+Default: on
+
+<item>
+<bf>ShowRecentSection</bf>=on/off : should the Recent section be part of the Disk 
+        Navigator main menu?
+
+Default: on
+
+<item>
+<bf>ShowOptionEntry</bf>=on/off : should the Option entry be in the
+	 	Disk Navigator main menu? 
+
+Default: on
+
+</list>
+
+<!--################################################################## -->
+<sect>Feedback
+<!--################################################################## -->
+<p>
+
+Bugs can be reported filling the form available 
+<htmlurl url="http://www.geocities.com/SiliconValley/Haven/2776/disk-navigator-bugs.html" name="here">.
+
+Comments and suggestions can be sent directly to the author (<htmlurl url="mailto:iglio@kde.org" name="Pietro Iglio">).
+
+</article>
+
