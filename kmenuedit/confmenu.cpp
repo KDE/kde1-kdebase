@@ -718,7 +718,7 @@ void MenuButton::paint( QPainter *painter )
   if( pmenu_item->getType() == submenu )
     {
       qDrawArrow( painter, RightArrow, style(), submenu_open,
-		  width() - 10,  height()/2-2,
+		  width() - 10,  height()/2-4,
 		  8, 8, g );
     }
 }

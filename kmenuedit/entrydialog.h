@@ -35,6 +35,7 @@ class QCheckBox;
 class QComboBox;
 class QLabel;
 class QListBox;
+class QVBoxLayout;
 
 class MenuButton;
 
@@ -72,6 +73,7 @@ protected slots:
   void removeFileType();
 
 protected:
+  QVBoxLayout        *f_sub_layout;
   QFrame             *f_app_1;
   QFrame             *f_app_2;
   QFrame             *f_app_3;
