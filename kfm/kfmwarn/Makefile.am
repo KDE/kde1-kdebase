@@ -1,6 +1,7 @@
 
 INCLUDES=       $(all_includes)
-LDADD 	=       $(all_libraries) -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_RPATH)
+LDFLAGS = $(all_libraries) $(KDE_RPATH)
+LDADD 	=       -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) 
 
 bin_PROGRAMS = kfmwarn
 

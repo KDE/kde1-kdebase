@@ -1,7 +1,8 @@
 ## Makefile.am for kdebase/kdehelp/index
 
 INCLUDES =  $(all_includes)
-LDADD = $(all_libraries) -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(LIBCOMPAT) $(KDE_RPATH)
+LDFLAGS = $(all_libraries) $(KDE_RPATH)
+LDADD = $(LIB_KDECORE) $(LIBCOMPAT) 
 bindir = $(kde_cgidir)
 
 bin_PROGRAMS = helpindex

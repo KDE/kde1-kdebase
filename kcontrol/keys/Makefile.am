@@ -6,8 +6,8 @@ INCLUDES= $(all_includes)
 bin_PROGRAMS = 	kcmkeys
 kcmkeys_SOURCES = main.cpp standard.cpp global.cpp savescm.cpp 
 noinst_HEADERS =  standard.h global.h savescm.h
-kcmkeys_LDADD = $(all_libraries) -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET)
-kcmkeys_LDFLAGS = $(LDFLAGS) $(KDE_RPATH)
+kcmkeys_LDADD = -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET)
+kcmkeys_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
 BUILTSOURCES = standard.moc savescm.moc global.moc 
 DISTCLEANFILES = standard.moc global.moc

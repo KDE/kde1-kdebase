@@ -1,6 +1,7 @@
 
 INCLUDES=       $(all_includes) -I..
-LDADD   =       $(all_libraries) -lkdecore -lqt -lXext -lX11 $(LIB_KIMGIO) $(LIBSOCKET) $(KDE_RPATH)
+LDFLAGS = $(all_libraries) $(KDE_RPATH
+LDADD   =       -lkdecore -lqt -lXext -lX11 $(LIB_KIMGIO) $(LIBSOCKET) 
 CXXFLAGS= @NOOPT_CXXFLAGS@
 
 ####### Files

@@ -1,6 +1,7 @@
 
 INCLUDES =  $(all_includes)
-LDADD = $(all_libraries) -lkfile -lkfm $(LIB_KHTMLW) -lkdeui -lkdecore -lqt -lXext -lX11 -lstdc++ $(LIBSOCKET) $(LIBCOMPAT) $(KDE_RPATH)
+LDFLAGS = $(all_libraries) $(KDE_RPATH)
+LDADD = -lkfile -lkfm $(LIB_KHTMLW) -lkdeui -lkdecore -lqt -lXext -lX11 -lstdc++ $(LIBSOCKET) $(LIBCOMPAT)
 SUBDIRS = search index
 
 ########## Files ##########
