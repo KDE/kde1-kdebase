@@ -33,17 +33,19 @@ msgstr "&Sedenia"
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
+"pou¾itie: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 
 #: main.cpp:145
 msgid "KDM Configuration"
 msgstr "Nastavenie KDM"
 
 #: main.cpp:155
-#, fuzzy
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
-msgstr "Je mi µúto, ale nemáte prístupové\n"
+msgstr 
+"Je mi µúto, ale nemáte práva na\n"
+"èítanie a zápis KDM setup súboru."
 
 #: main.cpp:157
 msgid "Missing privileges"
@@ -75,11 +77,11 @@ msgstr "Windows"
 
 #: kdm-appear.cpp:128
 msgid "Language"
-msgstr ""
+msgstr "Jazyk"
 
 #: kdm-appear.cpp:131
 msgid "Language:"
-msgstr ""
+msgstr "Jazyk:"
 
 #: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
@@ -225,7 +227,6 @@ msgid "Save image as default image?"
 msgstr "Ulo¾i» obrázok ako ¹tandardný?"
 
 #: kdm-sess.cpp:50
-#, fuzzy
 msgid "Allow to shutdown"
 msgstr "Povoli» ukonèenie:"
 
@@ -267,34 +268,5 @@ msgstr "Dostupné typy"
 
 #: klangcombo.cpp:133
 msgid "without name!"
-msgstr ""
+msgstr "bez mena!"
 
-#~ msgid "Appearance"
-#~ msgstr "Vzhµad"
-
-#~ msgid "Browse..."
-#~ msgstr "Listova»..."
-
-#~ msgid "None"
-#~ msgstr "Nikomu"
-
-#~ msgid "Remove"
-#~ msgstr "Odstráni»"
-
-#~ msgid "Add"
-#~ msgstr "Prida»"
-
-#~ msgid "permission to the KDM setup file."
-#~ msgstr "práva k èítaniu/zápisu konfig. súboru"
-
-#~ msgid "Apply"
-#~ msgstr "Pou¾i»"
-
-#~ msgid "Cancel"
-#~ msgstr "Zru¹i»"
-
-#~ msgid "Help"
-#~ msgstr "Pomocník"
-
-#~ msgid "&Fonts"
-#~ msgstr "&Fonty"

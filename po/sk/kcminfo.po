@@ -69,24 +69,23 @@ msgstr "Tento systém e¹te nie je podporovaný :-("
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
-#, fuzzy
 msgid "Not Available"
-msgstr "nie je prístupná"
+msgstr "Neprístupná"
 
 #: processor_linux.cpp:19
 msgid "File Error!"
-msgstr ""
+msgstr "Chyba súboru!"
 
 #: processor_linux.cpp:20
 msgid "Cannot read /proc/cpuinfo"
-msgstr ""
+msgstr "Nemô¾em èíta» /proc/cpuinfo"
 
 #: processor_fbsd.cpp:47
 #, c-format
 msgid "%s, unknown speed"
-msgstr ""
+msgstr "%s, neznáma rýchlos»"
 
 #: processor_fbsd.cpp:49
 #, c-format
 msgid "%s running at %s MHz"
-msgstr ""
+msgstr "%s be¾í na %s MHz"

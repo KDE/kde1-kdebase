@@ -23,12 +23,11 @@ msgstr "P&racovné plochy"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr ""
+msgstr "&Navigátor disku"
 
 #: main.cpp:109
-#, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
-msgstr "Pou¾itie: kcmkpanel [-init | {panel,desktops}]\n"
+msgstr "Pou¾itie: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
 #: main.cpp:142
 msgid "KPanel Configuration"
@@ -52,7 +51,7 @@ msgstr "&Dole"
 
 #: panel.cpp:63
 msgid "&Right"
-msgstr ""
+msgstr "&Vpravo"
 
 #: panel.cpp:75
 msgid "Taskbar"
@@ -76,7 +75,7 @@ msgstr "Hor&e/vµavo"
 
 #: panel.cpp:95
 msgid "Style"
-msgstr ""
+msgstr "©týl"
 
 #: panel.cpp:97
 msgid "T&iny"
@@ -96,7 +95,7 @@ msgstr "&Viditeµné"
 
 #: desktops.cpp:82
 msgid "&Width"
-msgstr "©írka"
+msgstr "©í&rka"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
@@ -104,7 +103,7 @@ msgstr "Pomocník v menu"
 
 #: options.cpp:39
 msgid "Show &Menu Tooltips"
-msgstr "Ukazova» pomocníka v menu"
+msgstr "Ukazova» pomocníka v &menu"
 
 #: options.cpp:44
 msgid "De&lay:"
@@ -144,8 +143,8 @@ msgstr "&12h AM/PM"
 
 #: disknav.cpp:43
 msgid "Edit &Global..."
-msgstr ""
+msgstr "Editova» &globálne..."
 
 #: disknav.cpp:46
 msgid "Edit &Local..."
-msgstr ""
+msgstr "Editova» &lokálne..."
