@@ -5,6 +5,9 @@ LDADD	=	$(all_libraries) -lkhtmlw -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKE
 CONFIGDIR = $(kde_confdir)
 MIMELNKDIR = $(kde_mimedir)
 
+data_DATA = kfm.xpm
+datadir = $(kde_icondir)
+
 ####### Files
 
 bin_PROGRAMS = kfm
