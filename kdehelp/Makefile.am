@@ -24,10 +24,12 @@ kde_icon_DATA = kdehelp.xpm
 
 install-data-local:
 	$(mkinstalldirs) $(kde_minidir)
+	$(mkinstalldirs) $(kde_icondir)/large
 	$(INSTALL_DATA) $(srcdir)/mini-kdehelp.xpm $(kde_minidir)/kdehelp.xpm
-	$(INSTALL_DATA) $(srcdir)/large-kdehelp.xpm $(kde_minidir)/../large/kdehelp.xpm
+	$(INSTALL_DATA) $(srcdir)/large-kdehelp.xpm $(kde_icondir)/large/kdehelp.xpm
 
 uninstall-local:
+	rm -f $(kde_icondir)/large/kdehelp.xpm
 	rm -f $(kde_minidir)/kdehelp.xpm
 
 messages:
