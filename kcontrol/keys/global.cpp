@@ -142,7 +142,7 @@ KGlobalConfig::KGlobalConfig( QWidget *parent, const char *name )
 	
 	debug("got key dict");
 	
-	kc =  new KKeyChooser( &dict, this );
+	kc =  new KKeyChooser( &dict, this, true );
 	connect( kc, SIGNAL( keyChange() ), this, SLOT( slotChanged() ) );
 	
 	debug("Make key chooser global");
@@ -159,6 +159,7 @@ KGlobalConfig::KGlobalConfig( QWidget *parent, const char *name )
 }
 
 KGlobalConfig::~KGlobalConfig (){
+  debug("KGlobalConfig destructor");
   delete keys;
 }
 
@@ -465,6 +466,7 @@ void KGlobalConfig::applySettings()
 	keys->setKeyDict( dict );
 	debug("set key dict");
 	keys->writeSettings();
+	debug("done");
 }
 void KGlobalConfig::defaultSettings()
 {

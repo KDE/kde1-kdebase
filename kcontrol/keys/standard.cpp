@@ -110,6 +110,7 @@ KStdConfig::KStdConfig( QWidget *parent, const char *name )
 }
 
 KStdConfig::~KStdConfig (){
+  debug("KStdConfig destructor");
   delete keys;
 }
 
@@ -123,6 +124,7 @@ void KStdConfig::applySettings()
 	keys->setKeyDict( dict );
 	debug("set key dict");
 	keys->writeSettings();
+	debug("done");
 }
 void KStdConfig::defaultSettings(  )
 {

@@ -57,12 +57,12 @@ KDisplayApplication::KDisplayApplication(int &argc, char **argv, const char *nam
       if (!pages || pages->contains("standard")){
 	printf("create standard\n");
 	addPage(standard = new KStdConfig(dialog), 
-		klocale->translate("&Standard shortcuts"), "kdisplay-3.html");
+		klocale->translate("&Standard shortcuts"), "kcmkeys-1.html");
       }
       if (!pages || pages->contains("global")){
 	printf("create global\n");
 	addPage(global = new KGlobalConfig(dialog), 
-		klocale->translate("&Global shortcuts"), "kdisplay-3.html");
+		klocale->translate("&Global shortcuts"), "kcmkey-2.html");
       }
       
       if (standard || global)
@@ -79,8 +79,12 @@ KDisplayApplication::KDisplayApplication(int &argc, char **argv, const char *nam
 
 void KDisplayApplication::init()
 {
-  delete (new KStdConfig(0));
-  delete (new KGlobalConfig(0));
+  KStdConfig *standard=new KStdConfig(0);
+  standard->keys->writeSettings();
+  delete standard;
+  KGlobalConfig *global = new KGlobalConfig(0);
+  global->keys->writeSettings();
+  delete global;
 }
 
 
