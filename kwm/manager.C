@@ -1718,7 +1718,7 @@ void Manager::manage(Window w, bool mapped){
   Client* c = getClient(w);
   if (!c){
       // create a very new client
-      long d;
+      long d = 0;
       getSimpleProperty(w, qt_sizegrip, d);
       c = new Client(w, d);
 

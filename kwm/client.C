@@ -415,7 +415,7 @@ Client::Client(Window w, Window _sizegrip, QWidget *parent, const char *name_for
     hidden_for_modules = false;
     autoraised_stopped = false;
 
-    if (sizegrip != None)
+    if (sizegrip != 0)
 	XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, sizegrip, True,
 		    ButtonPressMask, GrabModeSync, GrabModeAsync,
 		    None, bottom_right_cursor );
