@@ -136,3 +136,9 @@ int unsetenv(const char *name);
 #define seteuid(_eu) setresuid(-1, _eu, -1)
 #endif
 
+#ifndef HAVE_RANDOM
+#define HAVE_RANDOM
+long int random(void); // defined in fakes.cpp
+void srandom(unsigned int seed);
+#endif
+
