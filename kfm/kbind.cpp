@@ -727,7 +727,7 @@ void KMimeType::errorMissingMimeType( const char *_type )
     QString tmp = klocale->translate( "Could not find mime type\r\n" );
     tmp += _type;
     
-    QMessageBox::message( klocale->translate( "KFM Error" ), _type );
+    QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
     exit(1);
 }
     
