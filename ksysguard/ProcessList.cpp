@@ -373,6 +373,19 @@ ProcessList::load()
 {
 	pl.clear();
 
+	/*
+	 * This piece of code tries to work around the QListView auto-shrink
+	 * bug. The column width is always reset to the size required for the
+	 * header. If any column entry needs more space QListView will resize
+	 * the column again. Unfortunately this causes heave flickering! I hope
+	 * Qt 2.0 does not have this limitation anymore.
+	 */
+	QFontMetrics fm = fontMetrics();
+	int col = 0;
+	for (int i = 0; i < MaxCols; i++)
+		if (TabCol[i].visible && TabCol[i].supported)
+			setColumnWidth(col++, fm.width(TabCol[i].trHeader) + 10);
+
 	// request current list of processes
 	if (!pl.update())
 	{

@@ -22,23 +22,68 @@
 
 <P>
 <P>After you have started the Task Manager you will see a dialog box with
-three pages. You can change to other pages by clicking on the handle
-of the pages. The start-up page can be configured in the options
-dialog available from the menu.
+two pages. You can change to other pages by clicking on the handle
+of the pages.
 <P>
-<H3><A NAME="ss3.1">3.1 The Process List Page</A>
+<H3><A NAME="ss3.1">3.1 The Main Menu </A>
+</H3>
+
+<P>
+<P>
+<H4>The File Menu </H4>
+
+<P>
+<P>This menu just contains on item. If you select it KTop will
+terminate. On termination all settings are save automatically and
+restored the next time KTop is invoked.
+<P>
+<H4>The Refresh Rate Menu</H4>
+
+<P>
+<P>The refresh rate determines how often the process list will be
+updated. This is particularly important for the calculation of the
+processor load of each process. The load is averaged over the whole
+time between updates. A slow, a medium and a fast update rate is
+available. For most purposes the medium rate is a good
+compromise. This menu is only available when the Process List page is
+visible.
+<P>
+<H4>The Process Menu</H4>
+
+<P>
+<P>This menu allows you to send certain signals to this process or change
+it's scheduling priority. The latter is not available on all operating
+systems. Changing the priority will affect the amount of CPU time the
+process will receive to do it's job. As a normal user you can usually
+only increase the value which will decrease the priority. The higher
+the value the less likely the process will get CPU time. This can be
+used on systems that are shared by many people. Longer running jobs
+(batch jobs) should be "reniced" to preserve a short response time for
+interactive processes.
+<P>
+<H3><A NAME="ss3.2">3.2 The Process List Page</A>
 </H3>
 
 <P>
 <P>The Process List Page gives you a list of processes on your
 system. The list can be sorted by each column. Just press the left
-mouse button over the head of the column. 
-<P>The list shows the following information about each process. Please note that not all properties are available on every operating system.
+mouse button over the head of the column. Another mouse click on the
+same column will revert the sorting direction.
+<P>
+<FIGURE>
+<EPS FILE="ProcessList.eps">
+<IMG SRC="ProcessList.gif">
+</FIGURE>
+<P>Due to a bug in the underlying Qt widget the columns only expand
+automatically, but do not shrink. This will hopefully be fixed in the
+next release.
+<P>The list shows the following information about each process. Please
+note that not all properties are available on every operating system.
 <P>
 <UL>
-<LI> <B>PID</B> The process ID. A unique number for each process.
-</LI>
 <LI> <B>Name</B> The name of the executable that started the process.
+</LI>
+<LI> <B>PID</B> The process ID. A unique number for each process.
 </LI>
 <LI> <B>User ID</B> The login name of the user that started the process.
 </LI>
@@ -59,18 +104,24 @@ process uses.
 <LI> <B>Shared</B> The amount of memory (in kBytes) the process shares
 with other processes.
 </LI>
+<LI> <B>Commandline</B> The command that was used to invoke this process.
+</LI>
 </UL>
 <P>Underneath the table you find four buttons which will be described now
 from left to right.
 <P>
-<H4>The Refresh Rate </H4>
+<H4>The Show Tree Button</H4>
 
 <P>
-<P>The refresh rate determines how often the process list will be
-updated. This is particularly important for the calculation of the
-processor load of each process. The load is averaged over the whole
-time between updates. A slow, a medium and a fast update rate is
-available. For most purposes the medium rate is a good compromise.
+<P>This button is used to toggle between list and tree mode. In tree mode
+the processes are displayed in a tree form to show their caller/callee
+relationship. A tree is an elegant way to show this parent-child
+relationship. The <I>init</I> process is the ancester of all processes.
+<P>
+<FIGURE>
+<EPS FILE="ProcessTree.eps">
+<IMG SRC="ProcessTree.gif">
+</FIGURE>
 <P>
 <H4>The Process Filter </H4>
 
@@ -91,76 +142,29 @@ processes only, user processes only or your processes only.
 <P>If you want to terminate a process you can send a kill signal to the
 selected process by pressing this button.
 <P>
-<H3><A NAME="ss3.2">3.2 The Process Tree Page</A>
-</H3>
-
-<P>
-<P>The Process Tree Page has been designed to show the relationships
-between the running processes. A process that is started by another
-process is called the child of that process. A tree is an elegant way
-to show this parent-child relationship. The <I>init</I> process is the
-ancester of all processes.
-<P>If you are not interested in the children of a particular process you
-can click on the little box to the left of the parent and the subtree
-will collapse. Another click on that box will unfold the subtree
-again.
-<P>This page features four buttons to modifiy the tree. The buttons are described from left to right.
-<P>
-<H4>The Sort Button </H4>
-
-<P>
-<P>This button determines the sorting order of the children in the tree.
-<P>
-<H4>The Refresh Now Button </H4>
-
-<P>
-<P>The Refresh Now Button must be used to update the tree with the
-current processes.
-<P>
-<H4>The Change Root Button </H4>
-
-<P>
-<P>If you are only interested in a certain subtree you can selected the
-parent of the subtree and push this button to make the selected
-process the new root of the tree. Pressing this button when no process
-is selected will restore the initial setting.
-<P>
-<H4>The Kill Button </H4>
-
-<P>
-<P>If you want to terminate a process you can send a kill signal to the
-selected process by pressing this button.
-<P>
 <H3><A NAME="ss3.3">3.3 The Performance Meter Page </A>
 </H3>
 
 <P>
 <P>The Performance Meter Page provides two meters that show the overall
-processor load and the total memory used by the system. The red line
-in the memory history is the separation between physical memory (RAM)
-and swap space memory. Most Unixes try to minimize the accesses to the
-hard disk by caching files in memory. Therefore it is normal to always
-have almost the whole physical memory in use. This is not necessarily
-a sign of excessive memory use by certain programs but a sign of good
-caching strategies. Due to the very misleading nature of this meter I
-am planning to change it in one of the next versions to be more
-meaningful.
+processor load and the total memory used by the system. Most Unixes
+try to minimize the accesses to the hard disk by caching files in
+memory. Therefore it is normal to always have almost the whole
+physical memory in use. This is not necessarily a sign of excessive
+memory use by certain programs but a sign of good caching strategies.
 <P>
-<H3><A NAME="ss3.4">3.4 Pop-up Menus</A>
-</H3>
-
-<P>
-<P>Clicking with the right mouse button on a process in the process list
-or process tree will pop-up a little menu that allows you to send
-certain signals to this process or change it's scheduling
-priority. The latter is not available on all operating
-systems. Changing the priority will affect the amount of CPU time the
-process will receive to do it's job. As a normal user you can usually
-only increase the value which will decrease the priority. The higher
-the value the less likely the process will get CPU time. This can be
-used on systems that are shared by many people. Longer running jobs
-(batch jobs) should be "reniced" to preserve a short response time for
-interactive processes.
+<FIGURE>
+<EPS FILE="Perfmeter.eps">
+<IMG SRC="Perfmeter.gif">
+</FIGURE>
+<P>Physical memory that is used for buffers or data caching is displayed
+in green and yellow. The red part is swapped-out memory. That is data
+from your main memory that was temperarily swapped to the hard disk to
+make room for more important data in memory.
+<P>On SMP systems you will get additional meters for each processor.
+<P>If the KTop window is large enough not only the load/memory history is
+shown but also digital meters for each value. If you don't see them
+just increase the size of the KTop window.
 <P>
 <P ALIGN="RIGHT">
 
