@@ -89,7 +89,7 @@ msgstr "Fonte Fixa"
 
 #: options.cpp:207
 msgid "Background Color:"
-msgstr "Cor do Fundo:"
+msgstr "Cor de Fundo:"
 
 #: options.cpp:215
 msgid "Normal Text Color:"
@@ -276,9 +276,11 @@ msgstr ""
 "\n"
 "Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
 "\n"
-"Este programa está licenciado sobre a Licença Geral Pública GNU (GPL).\n"
-"KDEHelp não tem ABSOLUTAMENTE NENHUMA GARANTIA até ao permitido pela lei "
-"aplicável."
+"Este programa está licenciado sobre a\n"
+"Licença Geral Pública GNU (GPL).\n"
+"KDEHelp não tem\n"
+"ABSOLUTAMENTE NENHUMA GARANTIA\n"
+"até ao permitido pela lei aplicável."
 
 #: mainwidget.cpp:202
 msgid "&Goto"

@@ -10,7 +10,8 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: ao que parece já está a correr um window manager. kwm não arrancou\n"
+"kwm: ao que parece já está a correr um window manager. kwm não "
+"arrancou\n"
 
 #: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
@@ -38,7 +39,7 @@ msgstr "&Iconificar"
 
 #: main.C:391
 msgid "&DeIconify"
-msgstr "&DesIconificar"
+msgstr "Des&Iconificar"
 
 #: main.C:392
 msgid "&Sticky"
@@ -46,7 +47,7 @@ msgstr "&Pregar"
 
 #: main.C:393
 msgid "&UnSticky"
-msgstr "D&esPregar"
+msgstr "Des&Pregar"
 
 #: main.C:394
 msgid "Mo&ve"
@@ -122,7 +123,7 @@ msgid ""
 "will be lost in your next session."
 msgstr ""
 "As seguintes aplicações contêm dados que não foram gravados e que\n"
-"serão perdidos na sua próxima sessão."
+"não serão recuperados na sua próxima sessão."
 
 #: logout.C:62
 msgid ""
@@ -140,8 +141,8 @@ msgid ""
 msgstr ""
 "As seguintes aplicações não reconhecem o X11 e por isso não podem ser "
 "restauradas\n"
-"na sua próxima sessão. Certifique-se de que não contêm dados importantes por "
-"gravar."
+"na sua próxima sessão. Certifique-se de que não contêm dados importantes "
+"por gravar."
 
 #: taskmgr.C:105
 msgid "Switch to"

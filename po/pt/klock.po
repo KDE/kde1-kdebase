@@ -7,11 +7,11 @@ msgstr ""
 
 #: banner.cpp:56
 msgid "Banner"
-msgstr "Faixa"
+msgstr "Mensagem"
 
 #: banner.cpp:78
 msgid "Setup kbanner"
-msgstr "Configurar kbanner"
+msgstr "Configurar Mensagem"
 
 #: banner.cpp:116 blankscrn.cpp:65
 msgid "Color:"
@@ -29,7 +29,7 @@ msgstr "Mensagem:"
 
 #: banner.cpp:315
 msgid "About Banner"
-msgstr "Acerca do Banner"
+msgstr "Acerca do Mensagem"
 
 #: banner.cpp:316
 msgid ""
@@ -38,7 +38,7 @@ msgid ""
 "written by Martin R. Jones 1996\n"
 "mjones@kde.org"
 msgstr ""
-"Banner Versão 0.1\n"
+"Mensagem Versão 0.1\n"
 "\n"
 "escrito por Martin R. Jones 1996\n"
 "mjones@kde.org"
@@ -53,7 +53,7 @@ msgstr "Morcego"
 
 #: bat.cpp:532
 msgid "Setup KBat"
-msgstr "Configurar KBat"
+msgstr "Configurar Morcego"
 
 #: bat.cpp:548
 msgid "Number of bats:"
@@ -79,11 +79,11 @@ msgstr ""
 
 #: blankscrn.cpp:49
 msgid "Blank Screen"
-msgstr "Écran Limpo"
+msgstr "Écran Vazio"
 
 #: blankscrn.cpp:63
 msgid "Setup kblankscrn"
-msgstr "Configurar kblankscrn"
+msgstr "Configurar Écran Vazio"
 
 #: blob.cpp:53
 msgid "Random Linear"
@@ -111,7 +111,7 @@ msgstr "Lamento. Este protector de écran necessita de um monitor a cores"
 
 #: blob.cpp:452
 msgid "Setup Blob Saver"
-msgstr "Configurar Blob Saver"
+msgstr "Configurar Blob"
 
 #: blob.cpp:455
 msgid "Frame Show sec."
@@ -147,7 +147,7 @@ msgstr "Chama"
 
 #: flame.cpp:390
 msgid "Setup KFlame"
-msgstr "Configurar KFlame"
+msgstr "Configurar Chama"
 
 #: flame.cpp:406
 msgid "Max Levels:"
@@ -171,7 +171,7 @@ msgid ""
 msgstr ""
 "Chama Versão 3.3\n"
 "\n"
-"Copyright (c) 1991 by Patrick J. Naughton\n"
+"Copyright (c) 1991 por Patrick J. Naughton\n"
 "\n"
 "Transposto para o kscreensave por Martin Jones."
 
@@ -181,7 +181,7 @@ msgstr "Floresta"
 
 #: forest.cpp:272
 msgid "Setup KForest"
-msgstr "Configurar KForest"
+msgstr "Configurar Floresta"
 
 #: forest.cpp:288
 msgid "Num of Trees:"
@@ -211,11 +211,11 @@ msgstr "Hop"
 
 #: hop.cpp:306
 msgid "Setup KHop"
-msgstr "Configurar KHop"
+msgstr "Configurar Hop"
 
 #: hop.cpp:322
 msgid "Samecolor Pixels:"
-msgstr "Pixels com a mesma cor:"
+msgstr "Pixels iguais:"
 
 #: hop.cpp:332 lissie.cpp:346
 msgid "Cycles:"
@@ -237,7 +237,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Ported para o kscreensave por Emanuel Pirker."
+"Transpost para o kscreensave por Emanuel Pirker."
 
 #: laser.cpp:327
 msgid "Laser"
@@ -245,7 +245,7 @@ msgstr "Laser"
 
 #: laser.cpp:387
 msgid "Setup KLaser"
-msgstr "Configurar KLaser"
+msgstr "Configurar Laser"
 
 #: laser.cpp:462
 msgid "About Laser"
@@ -271,7 +271,7 @@ msgstr "Linhas"
 
 #: lines.cpp:128
 msgid "Setup klines"
-msgstr "Configurar klines"
+msgstr "Configurar Linhas"
 
 #: lines.cpp:130 polygon.cpp:81
 msgid "Length:"
@@ -311,7 +311,7 @@ msgstr "Lissie"
 
 #: lissie.cpp:320
 msgid "Setup KLissie"
-msgstr "Configurar KLissie"
+msgstr "Configurar Lissie"
 
 #: lissie.cpp:336
 msgid "Num of Lissies:"
@@ -343,7 +343,8 @@ msgid ""
 "Tell him, that you need suid for the screensavers!"
 msgstr ""
 "Este sistema utiliza shadow passwords!\n"
-"Por favor contacte o seu administrador de sistema.\n"
+"Por favor contacte o seu administrador de sistema."
+"\n"
 "Diga-lhe que precisa de suid para os screensavers!"
 
 #: main.cpp:301
@@ -406,7 +407,7 @@ msgstr "Morph3D (GL)"
 
 #: morph3d.cpp:1015
 msgid "Setup KMorph3d"
-msgstr "Configurar KMorph3d"
+msgstr "Configurar Morph3d"
 
 #: morph3d.cpp:1031
 msgid "Object Type:"
@@ -436,7 +437,7 @@ msgstr "Poligonos"
 
 #: polygon.cpp:79
 msgid "Setup kpolygon"
-msgstr "Configurar kpolygon"
+msgstr "Configurar Poligonos"
 
 #: polygon.cpp:91
 msgid "Vertices:"
@@ -464,7 +465,7 @@ msgstr "Pyro"
 
 #: pyro.cpp:511
 msgid "Setup KPyro"
-msgstr "Configurar KPyro"
+msgstr "Configurar Pyro"
 
 #: pyro.cpp:517 rock.cpp:560
 msgid "Number:"
@@ -498,7 +499,7 @@ msgstr "Rocha"
 
 #: rock.cpp:544
 msgid "Setup krock"
-msgstr "Configurar krock"
+msgstr "Configurar Rocha"
 
 #: rock.cpp:570
 msgid "Move"
@@ -520,7 +521,7 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-"Rock Versão 3.3\n"
+"Rocha Versão 3.3\n"
 "\n"
 "Copyright (c) 1992 por Jamie Zawinski\n"
 "\n"
@@ -528,7 +529,7 @@ msgstr ""
 
 #: saver.cpp:50 saver.cpp:110
 msgid "Enter Password"
-msgstr "Introduza a Password"
+msgstr "Password"
 
 #: saver.cpp:80
 msgid "Failed"
@@ -540,11 +541,11 @@ msgstr "Slip"
 
 #: slip.cpp:360
 msgid "Setup KSlip"
-msgstr "Configurar KSlip"
+msgstr "Configurar Slip"
 
 #: slip.cpp:376
 msgid "Batchcount:"
-msgstr "Contagem:"
+msgstr "Quantidade:"
 
 #: slip.cpp:464
 msgid "About Slip"
@@ -570,11 +571,11 @@ msgstr "Enxame"
 
 #: swarm.cpp:324
 msgid "Setup KSwarm"
-msgstr "Configurar KSwarm"
+msgstr "Configurar Enxame"
 
 #: swarm.cpp:340
 msgid "Number of Bees:"
-msgstr "Numero de Abelhas:"
+msgstr "Abelhas:"
 
 #: swarm.cpp:427
 msgid "About Swarm"
@@ -588,7 +589,7 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
-"Swarm\n"
+"Enxame\n"
 "\n"
 "Copyright (c) 1991 por Patrick J. Naughton\n"
 "\n"

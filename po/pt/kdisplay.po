@@ -75,7 +75,7 @@ msgstr "Desactivado"
 
 #: colorscm.cpp:216 colorscm.cpp:217
 msgid "Selected"
-msgstr "Seleccionado"
+msgstr "Escolhido"
 
 #: colorscm.cpp:252 colorscm.cpp:264
 msgid "Color Scheme"
@@ -127,11 +127,11 @@ msgstr "Contraste"
 
 #: colorscm.cpp:324 scrnsave.cpp:224
 msgid "Low"
-msgstr "Baixa"
+msgstr "Baixo"
 
 #: colorscm.cpp:328 scrnsave.cpp:221
 msgid "High"
-msgstr "Alta"
+msgstr "Alto"
 
 #: colorscm.cpp:343
 msgid "Save scheme"
@@ -200,7 +200,7 @@ msgstr "min"
 
 #: scrnsave.cpp:213
 msgid "Requires Password"
-msgstr "Necessita de Password"
+msgstr "Necessita Password"
 
 #: scrnsave.cpp:218
 msgid "Priority:"
@@ -272,8 +272,7 @@ msgstr "E&stilo"
 
 #: main.cpp:76
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
-msgstr ""
-"utilização: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr "utilização: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
 #: main.cpp:112
 msgid "Display settings"

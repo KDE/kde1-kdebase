@@ -31,7 +31,7 @@ msgstr "Fontes disponibilizadas ao KDE"
 
 #: kfontmanager.cpp:86
 msgid "The KDE Font Manager Example String"
-msgstr "Frase de Exemplo do KDE Font Manager"
+msgstr "Frase de Exemplo do Gestor de Fontes do KDE"
 
 #: kfontlist.cpp:63 kfontmanager.cpp:108
 msgid "About kfontmanager"

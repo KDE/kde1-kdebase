@@ -90,8 +90,8 @@ msgid ""
 "Sorry, this type of URL is currently unsupported by the KDE System Sound "
 "Module"
 msgstr ""
-"Desculpe, este tipo de URL não é suportada actualmente pelo Módulo KDE "
-"System Sound"
+"Desculpe, este tipo de URL não é suportada actualmente "
+"pelo Módulo KDE System Sound"
 
 #: syssound.cpp:328
 #, c-format

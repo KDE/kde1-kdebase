@@ -24,7 +24,7 @@ msgstr "Executar comando"
 
 #: krootwm.C:164
 msgid "Display properties"
-msgstr "Propriedades do monitor"
+msgstr "Propriedades do écran"
 
 #: krootwm.C:165
 msgid "Refresh desktop"

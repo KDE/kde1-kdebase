@@ -14,7 +14,6 @@ msgid "Cannot open or read directory."
 msgstr "Não foi possível abrir ou ler a directoria."
 
 #: kfindtop.cpp:118
-#, c-format
 msgid ""
 "KFind %s\n"
 "Frontend to find utility\n"
@@ -25,7 +24,8 @@ msgid ""
 msgstr ""
 "KFind %s\n"
 "Interface para o programa find\n"
-"Miroslav Flødr <flidr@kky.zcu.cz>\n"
+"Miroslav Flødr <flidr@kky.zcu.cz>"
+"\n"
 "Agradecimentos a Stephan Kulow\n"
 "<coolo@kde.org>"
 
@@ -63,7 +63,7 @@ msgstr "&Inverter Selecção"
 
 #: kfindtop.cpp:179
 msgid "&Preferences ..."
-msgstr "&Preferencias ..."
+msgstr "&Preferências ..."
 
 #: kfindtop.cpp:183
 msgid "Kfind &help"
@@ -223,11 +223,11 @@ msgstr "Examinar"
 
 #: kfoptions.cpp:96
 msgid "Plain Text"
-msgstr "Texto Simples"
+msgstr "Texto"
 
 #: kfoptions.cpp:125
 msgid "Saving"
-msgstr "A Gravar"
+msgstr "Gravar"
 
 #: kfoptions.cpp:132
 msgid "Create Archive:"
@@ -235,7 +235,7 @@ msgstr "Criar Arquivo:"
 
 #: kfoptions.cpp:134
 msgid "Add to Archive:"
-msgstr "Adicionar ao Arquivo:"
+msgstr "Adicionar:"
 
 #: kfoptions.cpp:138
 msgid "Patterns:"
