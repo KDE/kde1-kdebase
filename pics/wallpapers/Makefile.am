@@ -12,7 +12,6 @@ data_DATA = marble01.jpg ocean01.jpg paper01.jpg water01.jpg \
 	ancient_glyphs.jpg \
 	aqua_ravines.jpg \
 	banana_squishie.jpg \
-	big_leaves.jpg \
 	boiling_centrifuge.jpg \
 	brass_trails.jpg \
 	brass_wiring.jpg \
