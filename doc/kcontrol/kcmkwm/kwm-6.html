@@ -31,16 +31,39 @@ If <B>Alt-Tab is limited to current desktop</B> is selected,
 only the open windows in the current desktop will be
 cycled through.   Using the <B>Alt-Tab mode</B>
 list box, the action of the Alt-Tab key can be chosen to
-be in the graphical KDE style, or the "Classic" CDE style.
+be in the graphical KDE style, or the "Classic" CDE style. 
+The KDE-style Alt-Tab mode assures that using successive isolated Alt-Tab
+key combination will permit to switch between two alternate windows.
+Keeping the Alt key pressed and consecutively pressing Tab will allow
+to browse the list of available windows. The CDE-style Alt-Tab mode
+is different in the way isolated Alt-Tab presses act. Windows are always
+browsed successively.
 </LI>
-<LI> The <B>Grab the Right Mouse Button</B> setting
-(NEEDS DOCUMENTATION)
+<LI> The <B>Grab the Right Mouse Button</B> setting is <B>on</B>
+by default. This option was introduced because a number of non-KDE X Window
+applications need to have complete control on the use of the right mouse
+button (for example Gimp).  Deselect this option to allow non-KDE
+X Window applications to control the right mouse button.
 </LI>
 </UL>
-<P>The <B>Filters</B> settings 
-(NEED DOCUMENTATION)
-<P>
-<P>
+<P>The <B>Filters</B> settings offer the ability to allow windows 
+with particular window titles or X class names to be configured
+differently from the default window configuration.
+<P>Windows with Titles
+or X class name that match a list item can have one of these special
+properties: they can be configured so they
+<UL>
+<LI>get only tiny decorations</LI>
+<LI>get no decorations</LI>
+<LI>never get focus</LI>
+<LI>start as Sticky</LI>
+<LI>are excluded from session management</LI>
+</UL>
+<P>To make an entry in the list, enter a Title or Class  in the appropriate
+box, and click on the "+" button.
+Then click on it to highlight it, and select a special property.
+<P>To remove an entry, double-click on it to select it,
+then press the "-" button.
 <P>
 <P ALIGN="RIGHT">
 
