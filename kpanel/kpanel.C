@@ -1359,27 +1359,31 @@ void kPanel::hidePanelLeft(){
     if(hide_show_animation) {
       in_animation = true;
       if (orientation == vertical) {
-	for (int i = 0; i<geom.height(); i+=PANEL_SPEED(i,geom.height())){
+	for (int i = 0; i < geom.height() - panel_button_frame_standalone->height();
+	     i+=PANEL_SPEED(i,geom.height())){
 	  move(geom.x(), geom.y()-i);
 	  qApp->syncX();
 	  qApp->processEvents();
 	}
       } else {
-	for (int i = 0; i<geom.width(); i+=PANEL_SPEED(i,geom.width())){
+	for (int i = 0; i < geom.width() - panel_button_frame_standalone->width();
+	     i += PANEL_SPEED(i,geom.width())){
 	  move(geom.x()-i, geom.y());
 	  qApp->syncX();
 	  qApp->processEvents();
 	}
       }
     }
+    panel_button_frame_standalone->show();
+    panel_button_frame_standalone->raise();
     QFrame::hide();
     move(geom.x(), geom.y());
     in_animation = false;
 
 
     showMiniPanel();
-    panel_button_frame_standalone->show();
-    panel_button_frame_standalone->raise();
+    //panel_button_frame_standalone->show();
+    //panel_button_frame_standalone->raise();
 
 
     doGeometry();
@@ -1451,27 +1455,31 @@ void kPanel::hidePanelRight(){
       in_animation = true;
 
       if (orientation == vertical) {
-	for (int i = 0; i<geom.height(); i+=PANEL_SPEED(i,geom.height())){
+	for (int i = 0; i < geom.height() - panel_button_frame_standalone2->height(); 
+	     i += PANEL_SPEED(i,geom.height())){
 	  move(geom.x(), geom.y()+i);
 	  qApp->syncX();
 	  qApp->processEvents();
 	}
       } else {
-	for (int i = 0; i<geom.width(); i+=PANEL_SPEED(i,geom.width())){
+	for (int i = 0; i < geom.width() - panel_button_frame_standalone2->width();
+	     i += PANEL_SPEED(i,geom.width())){
 	  move(geom.x()+i, geom.y());
 	  qApp->syncX();
 	  qApp->processEvents();
 	}
       }
     }
+    panel_button_frame_standalone2->show();
+    panel_button_frame_standalone2->raise();
     QFrame::hide();
     move(geom.x(), geom.y());
     in_animation = false;
 
 
     showMiniPanel();
-    panel_button_frame_standalone2->show();
-    panel_button_frame_standalone2->raise();
+    //panel_button_frame_standalone2->show();
+    //panel_button_frame_standalone2->raise();
 
 
     doGeometry();

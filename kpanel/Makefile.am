@@ -45,6 +45,8 @@ install-data-local:
 	$(mkinstalldirs) $(kde_datadir)/kpanel
 	$(mkinstalldirs) $(kde_datadir)/kpanel/default
 	$(INSTALL_DATA) personal.kdelnk $(kde_datadir)/kpanel/default/personal_directory
+	$(INSTALL_DATA) Home.kdelnk $(kde_datadir)/kpanel/default/Home.kdelnk
+	$(INSTALL_DATA) Desktop.kdelnk $(kde_datadir)/kpanel/default/Desktop.kdelnk
 
 # NOTE: $(kdisknavdir) must not be removed by 'make uninstall' because it
 #       might contain files and links created by the system administrator.

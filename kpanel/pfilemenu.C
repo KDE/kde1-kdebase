@@ -85,6 +85,8 @@ PFileMenu* PFileMenu::root = 0L;
 int PFileMenu::maxEntriesOnScreen = 256;
 int PFileMenu::entryHeight = 0;
 
+extern void copyFiles(QString, QString);
+
 //////////////////////////////////////////////////////////////////////////////
 
 // TEMPORARY SECTION BEGIN
@@ -192,6 +194,12 @@ PFileMenu::PFileMenu(bool isRoot)
 #else  // NEW STYLE (URL files)
     QString kdisknav_personaldir = QDir::homeDirPath() +KDISKNAV_PERSONAL_DIR;
 
+    copyFiles(KApplication::kde_datadir() + "/kpanel/default/Home.kdelnk",
+	      kdisknav_personaldir + "/Home.kdelnk");
+    copyFiles(KApplication::kde_datadir() + "/kpanel/default/Desktop.kdelnk",
+	      kdisknav_personaldir + "/Desktop.kdelnk");
+
+    /*
     FILE* fout = ::fopen(kdisknav_personaldir + "/Home.kdelnk", "w");
 
     if (fout != 0L) {
@@ -217,6 +225,7 @@ PFileMenu::PFileMenu(bool isRoot)
       ::fprintf(fout, "Type=Link\n");
       ::fclose(fout);
     }
+    */
 
 #endif
   }
