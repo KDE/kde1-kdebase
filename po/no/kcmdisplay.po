@@ -449,7 +449,7 @@ msgstr "Skrifttype for vindustittel"
 
 #: general.cpp:546
 msgid "Panel button font"
-msgstr "Skryfttype på panelknapp"
+msgstr "Skrifttype på panelknapp"
 
 #: general.cpp:551
 msgid "Panel clock font"

@@ -187,7 +187,7 @@ msgstr "Personlige:"
 
 #: pfilemenu.C:775
 msgid "Personal entries"
-msgstr "Personlige oppføringer:"
+msgstr "Personlige oppføringer"
 
 #: pfilemenu.C:793
 msgid "Recent:"

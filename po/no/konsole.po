@@ -87,7 +87,7 @@ msgstr "&Ramme"
 
 #: main.C:327
 msgid "Scroll&bar"
-msgstr "&Rullelinje"
+msgstr "R&ullelinje"
 
 #: main.C:329
 msgid "BS sends &DEL"
@@ -99,11 +99,11 @@ msgstr "&Skrifttype"
 
 #: main.C:333
 msgid "&Size"
-msgstr "&Størrelse"
+msgstr "S&tørrelse"
 
 #: main.C:334
 msgid "&Schema"
-msgstr "&Schema"
+msgstr "S&kjema"
 
 #: main.C:336
 msgid "&Save options"
@@ -175,7 +175,7 @@ msgid ""
 "Return code = "
 msgstr ""
 "\n"
-"Avsluttningskode = "
+"Avslutningskode = "
 
 #: main.C:928
 msgid "Welcome to the console"

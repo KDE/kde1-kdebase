@@ -79,7 +79,7 @@ msgstr "Vis &skjulte filer"
 
 #: kfmgui.cpp:289
 msgid "Show Tr&ee"
-msgstr "Vis tre"
+msgstr "Vis tr&e"
 
 #: kfmgui.cpp:291
 msgid "Sho&w Thumbnails"
