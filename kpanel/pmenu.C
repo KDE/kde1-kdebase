@@ -243,25 +243,6 @@ short PMenuItem::parse( QString abs_file_path )
   return parse(&fi);
 }
 
-void PMenuItem::writeConfig( QDir dir )
-{
-  if( read_only || entry_type == separator )
-    return;
-  QString name = dir.absPath() + "/"+ real_name;
-  QFile config(name);
-  if( !config.open(IO_ReadWrite) ) 
-    return;
-  config.close(); // kalle
-  // kalle  QTextStream st( (QIODevice *) &config);
-  KConfig kconfig(name); // kalle
-  kconfig.setGroup("KDE Desktop Entry");
-  kconfig.writeEntry("Exec", command_name );
-  kconfig.writeEntry("MiniIcon", pixmap_name );
-  kconfig.sync();
-  config.close();
-}
-
-
 
 
 void PMenuItem::exec()
@@ -505,10 +486,10 @@ short PMenu::parse( QDir d )
 	    {
 	      delete new_menu;
 	      delete new_item;
+	      new_item = NULL;
 	      ++it;
 	      continue;
 	    }
-	  item_list.append(new_item);
 	}
       else
 	{
@@ -516,11 +497,21 @@ short PMenu::parse( QDir d )
 	    { ++it; continue; }
 	  new_item = new PMenuItem;
 	  new_item->read_only = read_only;
-	  if( new_item->parse(fi) < 0 )
+	  if( new_item->parse(fi) < 0 ){
 	    delete new_item;
-	  else
-	    item_list.append(new_item);
+	    new_item = NULL;
+	  }
 	}
+      if (new_item){
+	PMenuItem *tmp;
+	for (tmp=item_list.first();
+	     tmp && tmp->text_name <= new_item->text_name.data();
+	     tmp=item_list.next());
+	if (!tmp)
+	  item_list.append(new_item);
+	else 
+	  item_list.insert(item_list.at(), new_item);
+      }
       ++it;
     }
   // sort items
@@ -530,7 +521,7 @@ short PMenu::parse( QDir d )
     {
       for( item = item_list.first(); item != NULL; item = item_list.next() )
 	{
-	  if( item->text_name == item_name )
+	  if( item->real_name == item_name )
 	    {
 	      add(item);
 	      item_list.removeRef(item);
@@ -557,104 +548,6 @@ short PMenu::parse( QDir d )
   return 0;
 }
 
-void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item = NULL )
-{
-  if( parent_item )
-    if( parent_item->read_only )
-      return;
-  if( !base_dir.exists() )
-    {
-      return;
-    }
-  QString name;
-  const QStrList *temp_list = base_dir.entryList("*.kdelnk");
-  QStrList file_list;
-  file_list.setAutoDelete(TRUE);
-  QStrListIterator temp_it( *temp_list );
-  while( name = temp_it.current() )
-    {
-      file_list.append(name);
-      ++temp_it;
-    }
-  temp_list = base_dir.entryList("*", QDir::Dirs);
-  QStrList dir_list;
-  dir_list.setAutoDelete(TRUE);
-  temp_it.toFirst();
-  while( name = temp_it.current() )
-    {
-      if(name != "." && name != "..")
-	dir_list.append(name);
-      ++temp_it;
-    }
-
-  QString sort_order;
-  PMenuItem *item;
-  for( item = list.first(); item != 0; item = list.next() )
-    {
-      if( item->read_only )
-	continue;
-      if( item->entry_type == separator )
-	sort_order += ((QString) "SEPARATOR" + ',');
-      else
-	sort_order += (item->text_name + ',');
-      if( item->getType() == submenu )
-	{
-	  if( item->read_only )
-	    continue;
-	  QDir sub_dir(base_dir);
-	  if( !sub_dir.cd(item->text_name) )
-	    {
-	      base_dir.mkdir(item->text_name);
-	      if( !sub_dir.cd(item->text_name) )
-		continue;
-	    }
-	  item->sub_menu->writeConfig( sub_dir, item );
-	  dir_list.remove(item->text_name);
-	}
-      else
-	{
-	  item->writeConfig(base_dir);
-	  file_list.remove(item->text_name + ".kdelnk");
-	}
-    }
-  // remove files not in pmenu
-  for( name = file_list.first(); !name.isEmpty(); name = file_list.next() )
-    {
-      //debug("will remove file: %s", (const char *) name );
-      base_dir.remove(name);
-    }
-  // remove dirs not in pmenu
-  for( name = dir_list.first(); !name.isEmpty(); name = dir_list.next() )
-    {
-      //debug("will remove dir: %s", (const char *) name );
-      QDir sub_dir(base_dir);
-      if(sub_dir.cd(name))
-	{
-	  PMenu *new_menu = new PMenu;
-	  new_menu->writeConfig(sub_dir);
-	  delete new_menu;
-	  sub_dir.remove(".directory");	  
-	}
-      base_dir.rmdir(name);
-    }
-  sort_order.truncate(sort_order.length()-1);
-  QString file = base_dir.absPath();
-  file += "/.directory";
-  QFile config(file);
-  if( !config.open(IO_ReadWrite) ) 
-    return;
-  config.close(); // kalle
-  // kalle  QTextStream st( (QIODevice *) &config);
-  KConfig kconfig(file); // kalle
-  kconfig.setGroup("KDE Desktop Entry");
-  kconfig.writeEntry("SortOrder", sort_order);
-  if( parent_item )
-    {
-      kconfig.writeEntry("MiniIcon", parent_item->pixmap_name );
-    }
-  kconfig.sync();
-  config.close();
-}
 
 void PMenu::move(short item_id, short new_pos)
 {

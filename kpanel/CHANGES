@@ -1,5 +1,12 @@
 In kpanel-0.17:
  
+    Patchlevel 5:
+       - Changed pmenu to sort the items in the order of the text_names
+         instead of the filenames as default.
+         Also pmenu expects a sorted list of the real filenames in the
+         "SortOrder" entry of the ".directory" file now for a user
+         defined sort order.
+	 This requires some changes to kmenuedit.
     Patchlevel 4:
        - paints scaled minicions everywhere, even in the system menu.
          I thought this looks ugly, but Torben requested this feature :-)

@@ -860,7 +860,7 @@ void kPanel::taskbarPressed(int item){
   QPopupMenu pop;
   pop.setMouseTracking(TRUE);
 
-  if (KWM::isMaximized(b->win))
+  if (KWM::isMaximized(b->win) && !KWM::fixedSize(b->win))
     pop.insertItem(KWM::getUnMaximizeString(), 
 		   OP_RESTORE);
   else

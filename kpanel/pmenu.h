@@ -70,7 +70,6 @@ public:
 
   short     parse( QFileInfo *fi, PMenu *menu = NULL);
   short     parse( QString abs_file_path );
-  void      writeConfig( QDir dir );
   void      setType( EntryType e) { entry_type = e; }
   EntryType getType() { return entry_type; }
   void      setMenu( PMenu *menu );
@@ -135,7 +134,6 @@ public:
   void       move( short item_id, short new_pos);
   void       remove( short item_id );
   short      parse ( QDir d );
-  void       writeConfig( QDir base_dir, PMenuItem *parent_item = NULL );
   void       createMenu( QPopupMenu *menu, kPanel *panel, bool add_button = FALSE );
   void       create_pixmap( QPixmap &buf, PMenuItem *item, QPopupMenu *menu );
   void       set_net_recv( QObject *receiver, char *member );
