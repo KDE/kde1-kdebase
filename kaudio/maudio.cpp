@@ -15,7 +15,7 @@ extern "C" {
 #include "sample.h"
 
 
-#define USLEEP_DELAY	10000
+#define USLEEP_DELAY	1000
 
 
 uint32          *StatStatPtr=NULL;
@@ -28,6 +28,7 @@ char		IsSlave=0,SoftStop=0;
 AudioSample	*ASample;
 AudioDev	*ADev;
 
+int		BUFFSIZE;
 
 /* If you encounter looped output when pausing, it is a bug
  * in OSS. Call maudio with "-oss_bugs 1" then.

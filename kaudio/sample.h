@@ -8,7 +8,7 @@
 
 
 #define MAUDIO_MAX_FRAGS 32
-#define BUFFSIZE	256
+#define BUFFER_MAX       4096
 
 class AudioSample
 {
@@ -35,7 +35,7 @@ public:
   uint32	bytes;
 
   uint32	BuferValidLength;
-  char		Buffer[BUFFSIZE];
+  char		Buffer[BUFFER_MAX];    // !!! Will never user bigger buffers
 
 private:
 

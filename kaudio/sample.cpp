@@ -44,7 +44,7 @@ typedef  struct
 	uint16    wBitsPerSample ;
 } WAVEFORMAT ;
 
-
+extern int          BUFFSIZE;   // Crap! Must be out into AudioSample class
 
 AudioSample::AudioSample()
 {
@@ -190,6 +190,10 @@ int AudioSample::setFilename(char* fname)
     return  WR_BADFORMATDATA ;
   }
 
+  if (bit_p_spl==8)
+    BUFFSIZE = 256;
+  else
+    BUFFSIZE = 512;
   Duration    = MediaLength/bytes_per_s;
 
   BuferValidLength = 0;
@@ -269,8 +273,17 @@ int AudioSample::readData()
     }
 
   // Always pad with ZeroData!!!
-  for (int i=len; i<BUFFSIZE; i++)
-    Buffer[i]=0x80;
+  if (bit_p_spl == 8)
+    for (int i=len; i<BUFFSIZE; i++)
+    {
+	Buffer[i]=0x80;
+    }
+  else
+    for (int i=len; i<BUFFSIZE; i++)
+    {
+	Buffer[i]=0x00;
+    }
+        
 
 #ifdef DEBUG
   cerr << len << '\n';

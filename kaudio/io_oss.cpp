@@ -17,6 +17,7 @@
 #include "sample.h"
 #include "io_oss.h"
 
+extern int          BUFFSIZE;   // Crap! Must be out into AudioSample class
 
 AudioDev::AudioDev(char *dev, int mode, int options)
 {
@@ -28,9 +29,9 @@ AudioDev::AudioDev(char *dev, int mode, int options)
 
   // Adding a quick hack. Trying out what happens if I feed OSS with
   // Zero-Data when idle. Is OSS perhaps happy then?!?
-  silence8 = new char[BUFFSIZE];
-  silence16= new char[BUFFSIZE];
-  for (int i=0; i<BUFFSIZE; i++) {
+  silence8 = new char[BUFFER_MAX];
+  silence16= new char[BUFFER_MAX];
+  for (int i=0; i<BUFFER_MAX; i++) {
     silence8[i]=0x80;
     silence16[i]=0x00;
   }
@@ -71,11 +72,27 @@ bool AudioDev::grab()
 #ifdef OSS_AUDIO
        
        // Set fragments
-       int arg = 0x00080008; // 0xMMMMSSSS;
+       int arg;
+       if (bit_p_spl==8)
+	 arg = 0x00100000; // 0xMMMMSSSS;
+       else
+	 arg = 0x00200000; //
+
+       // now calc count=ld(BUFFSIZE);
+       int tmp   = BUFFSIZE;
+       int count = 0;
+       while (tmp>1) {
+	 tmp /=2;
+	 count++;
+       }
+       arg |= count;
+       cerr << "Count=" << count <<'\n';
+
        if (ioctl(audiodev, SNDCTL_DSP_SETFRAGMENT, &arg)) {
 	 release();
 	 return false;
        }
+       
        Param= bit_p_spl ; ioctl(audiodev, SNDCTL_DSP_SAMPLESIZE , &Param);
        Param= stereo    ; ioctl(audiodev, SNDCTL_DSP_STEREO     , &Param);
        Param= frequency ; ioctl(audiodev, SNDCTL_DSP_SPEED      , &Param);
@@ -110,7 +127,7 @@ bool AudioDev::reset()
 #endif
 
 #ifdef OSS_AUDIO
-      sync(); // OSS is so buggy, I must sync before reset :-(
+      sync();
       return( ioctl(audiodev, SNDCTL_DSP_RESET, 0) );
 #else
       return(true);
