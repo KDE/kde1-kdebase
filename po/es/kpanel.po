@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-06 01:14+0100\n"
+"POT-Creation-Date: 1998-12-09 01:12+0100\n"
 "PO-Revision-Date: 1998-11-27 19:54+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -42,11 +42,11 @@ msgstr "Esconder el panel"
 msgid "Show the panel"
 msgstr "Mostrar el panel"
 
-#: kpanel.C:1200
+#: kpanel.C:1203
 msgid "No comment available"
 msgstr "No hay comentario disponible"
 
-#: kpanel.C:1209 tools.C:841
+#: kpanel.C:1212 tools.C:841
 msgid "Windowlist"
 msgstr "Lista de ventanas"
 

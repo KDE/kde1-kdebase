@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KPANEL\n"
-"POT-Creation-Date: 1998-12-06 01:14+0100\n"
+"POT-Creation-Date: 1998-12-09 01:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,11 +49,11 @@ msgstr "Piilota paneeli"
 msgid "Show the panel"
 msgstr "Näytä paneeli"
 
-#: kpanel.C:1200
+#: kpanel.C:1203
 msgid "No comment available"
 msgstr "Tietoa ei ole saatavilla"
 
-#: kpanel.C:1209 tools.C:841
+#: kpanel.C:1212 tools.C:841
 msgid "Windowlist"
 msgstr "Ikkunalista"
 

@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-06 01:14+0100\n"
+"POT-Creation-Date: 1998-12-09 01:12+0100\n"
 "PO-Revision-Date: 1998-10-05 01:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -44,11 +44,11 @@ msgstr "Fela spjaldið"
 msgid "Show the panel"
 msgstr "Sýna spjaldið"
 
-#: kpanel.C:1200
+#: kpanel.C:1203
 msgid "No comment available"
 msgstr "Engin athugasemd"
 
-#: kpanel.C:1209 tools.C:841
+#: kpanel.C:1212 tools.C:841
 msgid "Windowlist"
 msgstr "Gluggalisti"
 

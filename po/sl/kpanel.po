@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-12-06 01:14+0100\n"
+"POT-Creation-Date: 1998-12-09 01:12+0100\n"
 "PO-Revision-Date: 1998-07-18 15:00+0100\n"
 "Last-Translator: luka steger <luka_steger@hotmail.com>\n"
 "Language-Team: slovene <LL@li.org>\n"
@@ -52,11 +52,11 @@ msgstr "Skrij pult"
 msgid "Show the panel"
 msgstr "Prika¾i pult"
 
-#: kpanel.C:1200
+#: kpanel.C:1203
 msgid "No comment available"
 msgstr "Komentar ni na voljo"
 
-#: kpanel.C:1209 tools.C:841
+#: kpanel.C:1212 tools.C:841
 msgid "Windowlist"
 msgstr "Seznam oken"
 

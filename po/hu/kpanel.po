@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.2\n"
-"POT-Creation-Date: 1998-12-06 01:14+0100\n"
+"POT-Creation-Date: 1998-12-09 01:12+0100\n"
 "PO-Revision-Date: 1997-09-21 19:39+MET\n"
 "Last-Translator: Nagy Balazs <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -52,11 +52,11 @@ msgstr "Panel rejtése"
 msgid "Show the panel"
 msgstr "Panel megjelenítése"
 
-#: kpanel.C:1200
+#: kpanel.C:1203
 msgid "No comment available"
 msgstr "Nincs róla info"
 
-#: kpanel.C:1209 tools.C:841
+#: kpanel.C:1212 tools.C:841
 msgid "Windowlist"
 msgstr "Ablaklista"
 
