@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:48:52 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Thu Mar 26 17:26:40 1998
-// Update Count     : 111
+// Last Modified On : Thu Apr  2 15:40:05 1998
+// Update Count     : 135
 // Status           : Unknown, Use with caution!
 // 
 
@@ -125,15 +125,17 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      }
 
      pixLabel = new QLabel( this);
+     pixLabel->setFrameStyle( QFrame::Panel| QFrame::Sunken);
+     pixLabel->setAutoResize( true);
+     pixLabel->setMargin( 0);
      QPixmap pixmap;
      if( QFile::exists( kdmcfg->logo()->data()))
 	  pixmap.load( kdmcfg->logo()->data());
      else
 	  pixmap.resize( 100,100);
      pixLabel->setPixmap( pixmap);
-     pixLabel->setFixedSize( pixmap.width(), pixmap.height());
-     //pixLabel->setFrameStyle( QFrame::Panel| QFrame::Sunken);
-     
+     pixLabel->setFixedSize( pixLabel->width(), pixLabel->height());
+
      loginLabel = new QLabel( klocale->translate("Login:"), this);
      set_min( loginLabel);
      loginEdit = new QLineEdit( this);
@@ -142,7 +144,7 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      // a resonal height that observes a proportional aspect.
      // -- Bernd
      int leheight;
-     leheight = QMAX( 32,loginEdit->sizeHint().height());
+     leheight = QMAX( 24,loginEdit->sizeHint().height());
      loginEdit->setFixedHeight( leheight);
      loginEdit->setFocus();
 
@@ -151,7 +153,7 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      passwdEdit = new QLineEdit( this);
 
      int pweheight;
-     pweheight = QMAX( 32,passwdEdit->sizeHint().height());
+     pweheight = QMAX( 24,passwdEdit->sizeHint().height());
      passwdEdit->setFixedHeight( pweheight);
 
      passwdEdit->setEchoMode( QLineEdit::NoEcho);
@@ -177,11 +179,12 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      
      QFrame* sepFrame = new QFrame( this);
      sepFrame->setFrameStyle( QFrame::HLine| QFrame::Sunken);
+     sepFrame->setFixedHeight( sepFrame->sizeHint().height());
 
-     grid->addWidget( loginLabel , 1, 0);
-     grid->addWidget( loginEdit  , 1, 1);
-     grid->addWidget( passwdLabel, 2, 0);
-     grid->addWidget( passwdEdit , 2, 1);
+     grid->addWidget( loginLabel , 0, 0);
+     grid->addWidget( loginEdit  , 0, 1);
+     grid->addWidget( passwdLabel, 1, 0);
+     grid->addWidget( passwdEdit , 1, 1);
      grid->addMultiCellWidget( sepFrame, 3, 3, 0, 1);
      grid->setColStretch( 1, 4);
 
@@ -229,28 +232,27 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
 		   SLOT(shutdown_button_clicked()));
 	  set_fixed( shutdownButton);
 	  hbox2->addWidget( shutdownButton, AlignBottom);
-	  sbw = shutdownButton->width() + 100;
+	  sbw = shutdownButton->width() /*+ 100*/;
      } else
 #endif
-	  sbw = 80;
+	  sbw = /*80*/ 0;
+     vbox->activate();
      int w = QMAX( 
 	  QMAX( 
 	       QMAX( loginLabel->width(), passwdLabel->width()) + 
-	       2*QMAX( loginEdit->width(), passwdEdit->width()) + 
-	       pixLabel->width() + 60, welcomeLabel->width() + 40), 
+	       /*2*QMAX( loginEdit->width(), passwdEdit->width()) + */
+	       pixLabel->width() /*+ 60*/, welcomeLabel->width() /*+ 40*/), 
 	  failedLabel->width() + sessionargLabel->width() 
 	  + sessionargBox->width() + goButton->width() + 
 	  cancelButton->width() + sbw);
-     vbox->activate();
      if( user_view) {
 	  int tmp = user_view->sizeHintHeight( w);
 	  tmp = QMIN( tmp, winFrame->minimumSize().height());
-	  //tmp = QMAX( tmp, user_view->absMinHeight());
 	  user_view->setMinimumSize( w, tmp);
      }
      vbox->activate();
      setMinimumSize( winFrame->minimumSize());
-     startTimer(500);
+     //startTimer(500);
      timer = new QTimer( this );
      // Signals/Slots
      connect( timer, SIGNAL(timeout()),
@@ -259,6 +261,9 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
 	  connect( user_view, SIGNAL(selected(int)), 
 		   this, SLOT(slot_user_name( int)));
      adjustSize();
+     // Center on screen:
+     move( QApplication::desktop()->width()/2  - width()/2,
+	   QApplication::desktop()->height()/2 - height()/2 );  
 }
 
 void 
@@ -318,15 +323,10 @@ KGreeter::go_button_clicked(){
      greet->password = qstrdup(passwdEdit->text());
      
      if (!Verify (d, greet, verify)){
-	  //passwdEdit->setEnabled( false);
-	  //loginEdit->setEnabled( false);
-	  //cancelButton->hide();
-	  //goButton->hide();
 	  failedLabel->show();
 	  goButton->setEnabled( false);
 	  cancel_button_clicked();
 	  timer->start( 2000, true );
-	  //cancelButton->setFocus();
 	  return;
      }
      // Set session argument:
