@@ -32,9 +32,9 @@ PagerGUI2::PagerGUI2() : QFrame(NULL, "kwmpager", WStyle_Customize |
     id = 2;
 }
 
-PagerGUI *PagerGUI::getStyle(int id)
+PagerGUI *PagerGUI::getStyle(int _id)
 {
-    if (id == 1)
+    if (_id == 1)
 	return new PagerGUI1();
     else
 	return new PagerGUI2();

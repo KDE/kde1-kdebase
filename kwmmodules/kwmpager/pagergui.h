@@ -26,7 +26,7 @@
 class PagerGUI: public QObject
 {
 public:
-    PagerGUI *getStyle(int id);
+    PagerGUI *getStyle(int _id);
 
 protected:
     int id;
@@ -35,10 +35,14 @@ protected:
 
 class PagerGUI1 : public PagerGUI, public QWidget
 {
+public:
+    PagerGUI1();
 };
 
 class PagerGUI2 : public PagerGUI, public QFrame
 {
+public:
+    PagerGUI2();
 };
 
 #endif
