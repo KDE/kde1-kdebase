@@ -49,21 +49,7 @@ KMimeType *SocketType;
 KMimeType *CDevType;
 KMimeType *BDevType;   
 
-// Holds the path of global icons, but it is not a URL.
-QString *globalIconPath = 0L;
-// Holds the path of local icons, but it is not a URL.
-QString *localIconPath = 0L;
-// Holds the full qualified path and name of the default icon,
-// but this is NOT a URL
-QString *defaultIcon = 0L;
-// Holds the full qualified path and name of the default mini icon,
-// but this is NOT a URL
-QString *defaultMiniIcon = 0L;
-
 QList<KMimeBind> *KMimeBind::s_lstBindings;
-
-QDict<QString>* KMimeType::iconDict = 0L;
-QDict<QString>* KMimeType::miniIconDict = 0L;
 
 QPixmap* emptyPixmap = 0L;
 
@@ -80,31 +66,6 @@ void KMimeType::InitStatic()
 	emptyPixmap = new QPixmap();
     if ( pixmapCache == 0L )
 	pixmapCache = new QPixmapCache;
-    if ( globalIconPath == 0L )
-    {
-	globalIconPath = new QString( kapp->kde_icondir().copy() );
-    }
-    if ( localIconPath == 0L )
-    {
-	localIconPath = new QString( kapp->localkdedir().data() );
-	*localIconPath += "/share/icons";
-    }    
-    if ( defaultIcon == 0L )
-    {
-	defaultIcon = new QString( globalIconPath->data() );
-	*defaultIcon += "/";
-	*defaultIcon += getDefaultPixmap();
-    }
-    if ( defaultMiniIcon == 0L )
-    {
-	defaultMiniIcon = new QString( globalIconPath->data() );
-	*defaultMiniIcon += "/mini/";
-	*defaultMiniIcon += getDefaultPixmap();
-    }
-    if ( iconDict == 0L )
-	iconDict = new QDict<QString>;
-    if ( miniIconDict == 0L )
-	miniIconDict = new QDict<QString>;
 }    
 
 /***************************************************************
@@ -126,60 +87,15 @@ KMimeType::KMimeType( const char *_mime_type, const char *_pixmap )
     pixmap = 0L;
 }
 
-const char* KMimeType::getIconPath( const char *_icon, bool _mini )
+QString KMimeType::getIconPath( const char *_icon, bool _mini )
 {
-    QString *res;
-    if ( _mini && ( res = (*miniIconDict)[_icon] ) != 0L )
-	return res->data();
-    else if ( !_mini && ( res = (*iconDict)[_icon] ) != 0L )
-	return res->data();
-
-    QString *s = new QString; // We must create a new one each time, because its
-                              // address is stored in the QDict instances
-    
-    *s = localIconPath->data();
-
+    QString s;
     if ( _mini )
-	*s += "/mini/";
+	s = QString("mini/") + _icon;
     else
-	*s += "/";
-    *s += _icon;
-    
-    FILE *f = fopen( s->data(), "r" );
-    if ( f != 0L )
-    {
-	fclose( f );
-	if ( _mini )
-	    miniIconDict->insert( _icon, s );
-	else
-	    iconDict->insert( _icon, s );
-	return s->data();
-    }
+        s = _icon;
 
-    *s = globalIconPath->data();
-    if ( _mini )
-	*s += "/mini/";
-    else
-	*s += "/";
-    *s += _icon;
-    
-    f = fopen( s->data(), "r" );
-    if ( f != 0L )
-    {
-	fclose( f );
-	if ( _mini )
-	    miniIconDict->insert( _icon, s );
-	else
-	    iconDict->insert( _icon, s );
-	return s->data();
-    }
-
-    delete s;
-
-    if ( _mini )
-	return defaultMiniIcon->data();
-    else
-	return defaultIcon->data();
+    return kapp->getIconLoader()->getIconPath(s, true);
 }
     
 // We dont have a look at the URL ( the 1. parameter )
@@ -188,12 +104,13 @@ QPixmap* KMimeType::getPixmap( const char *, bool _mini )
     if ( pixmap )
 	return pixmap;
 
-    pixmap = pixmapCache->find( getPixmapFile( _mini ) );
+    const char * pixFile = getPixmapFile( _mini );
+    pixmap = pixmapCache->find( pixFile );
     if ( pixmap == 0L )
     {
 	pixmap = new QPixmap;
-	pixmap->load( getPixmapFile( _mini ) );
-	pixmapCache->insert( getPixmapFile( _mini ), pixmap );
+	pixmap->load( pixFile );
+	pixmapCache->insert( pixFile, pixmap );
     }
     
     return pixmap;

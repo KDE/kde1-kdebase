@@ -9,7 +9,6 @@ class KMimeBind;
 #include <qstrlist.h>
 #include <qfile.h>
 #include <qpmcache.h>
-#include <qdict.h>
 
 #include <kurl.h>
 #include <kapp.h>
@@ -460,10 +459,8 @@ public:
 
     /**
      * @return the path for the specific icon.
-     *         First the local path is tried, if that has no success, we try
-     *         the global path.
      */
-    static const char* getIconPath( const char *_icon, bool _mini = false );
+    static QString getIconPath( const char *_icon, bool _mini = false );
 
     static const char* getDefaultPixmap() { return "unknown.xpm"; }
 
@@ -570,8 +567,6 @@ protected:
     bool bApplicationPattern;
 
     static KMimeMagic *magic;
-    static QDict<QString>* iconDict;
-    static QDict<QString>* miniIconDict;
 };
 
 /**
