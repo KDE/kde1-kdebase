@@ -27,6 +27,7 @@
 
 // $Id$
 
+#include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
 #include <signal.h>
@@ -64,6 +65,7 @@ typedef struct
 extern KApplication* Kapp;
 
 static const char* intKey(const char* text);
+static const char* byteKey(const char* text);
 static const char* timeKey(const char* text);
 static const char* percentKey(const char* text);
 
@@ -86,9 +88,9 @@ static TABCOLUMN TabCol[] =
 	{ "Time",        0, true, false, true,  2, timeKey },
 	{ "Nice",        0, true, false, true,  2, intKey },
 	{ "Status",      0, true, false, true,  1, 0 },
-	{ "Memory",      0, true, false, true,  2, intKey },
-	{ "Resident",    0, true, false, true,  2, intKey },
-	{ "Shared",      0, true, false, true,  2, intKey },
+	{ "Memory",      0, true, false, true,  2, byteKey },
+	{ "Resident",    0, true, false, true,  2, byteKey },
+	{ "Shared",      0, true, false, true,  2, byteKey },
 	{ "Commandline", 0, true, false, true,  1, 0 }
 };
 
@@ -111,6 +113,18 @@ intKey(const char* text)
 	sscanf(text, "%d", &val);
 	static char key[16];
 	sprintf(key, "%010d", val);
+
+	return (key);
+}
+
+static const char*
+byteKey(const char* text)
+{
+	int val;
+	char unit;
+	sscanf(text, "%d%c", &val, &unit);
+	static char key[16];
+	sprintf(key, "%010d", val * (unit == 'M' ? 1024 : 1));
 
 	return (key);
 }
@@ -187,6 +201,17 @@ ProcessList::ProcessList(QWidget *parent, const char* name)
 	 */
 	connect(MainMenuBar, SIGNAL(requestUpdate(void)),
 			this, SLOT(update(void)));
+
+	/* As long as the scrollbar sliders are pressed and hold the process
+	 * list is frozen. */
+	connect(verticalScrollBar(), SIGNAL(sliderPressed(void)),
+			this, SLOT(timerOff()));
+	connect(verticalScrollBar(), SIGNAL(sliderReleased(void)),
+			this, SLOT(timerOn()));
+	connect(horizontalScrollBar(), SIGNAL(sliderPressed(void)),
+			this, SLOT(timerOff()));
+	connect(horizontalScrollBar(), SIGNAL(sliderReleased(void)),
+			this, SLOT(timerOn()));
 
 	// no timer started yet
 	timerId = NONE;
@@ -386,6 +411,9 @@ ProcessList::load()
 		if (TabCol[i].visible && TabCol[i].supported)
 			setColumnWidth(col++, fm.width(TabCol[i].trHeader) + 10);
 
+	int vpos = verticalScrollBar()->value();
+	int hpos = horizontalScrollBar()->value();
+
 	// request current list of processes
 	if (!pl.update())
 	{
@@ -405,18 +433,18 @@ ProcessList::load()
 		buildList(selectedProcess);
 
 	if (newSelection)
-	{
 		setSelected(newSelection, TRUE);
-		ensureItemVisible(newSelection);
-	}
 
-	/*
-	 * This is necessary because the selected process may has disappeared
-	 * without ktop's interaction. Since there are widgets that always need
-	 * to know the currently selected process we send out a processSelected
-	 * signal.
-	 */
+	/* This is necessary because the selected process may has
+	 * disappeared without ktop's interaction. Since there are widgets
+	 * that always need to know the currently selected process we send
+	 * out a processSelected signal. */
 	emit(processSelected(selectedPid()));
+
+	updateContents();
+
+	verticalScrollBar()->setValue(vpos);
+	horizontalScrollBar()->setValue(hpos);
 }
 
 bool
@@ -578,6 +606,8 @@ ProcessList::extendTree(OSProcessList* pl, ProcessLVI* parent, int ppid,
 void
 ProcessList::addProcess(OSProcess* p, ProcessLVI* pli)
 {
+	unsigned int	memsize;
+
 	/*
 	 * Get icon from icon list that might be appropriate for a process
 	 * with this name.
@@ -643,17 +673,35 @@ ProcessList::addProcess(OSProcess* p, ProcessLVI* pli)
 
 	// VM size (total memory in kBytes)
 	if (tc->visible && tc->supported)
-		pli->setText(col++, s.setNum(p->getVm_size() / 1024));
+		/*
+		 *  show size in M rather than K if > 10M
+		 */
+		if( (memsize = p->getVm_size()) > 10 * 1024 * 1024 )
+			pli->setText(col++, s.setNum( memsize / (1024 * 1024) ) + "M" );
+		else
+			pli->setText(col++, s.setNum( memsize / 1024 ) + "K" );
 	tc++;
 
 	// VM RSS (Resident memory in kBytes)
 	if (tc->visible && tc->supported)
-		pli->setText(col++, s.setNum(p->getVm_rss() / 1024));
+		/*
+		 *  show size in M rather than K if > 10M
+		 */
+		if( (memsize = p->getVm_rss()) > 10 * 1024 * 1024 )
+			pli->setText(col++, s.setNum( memsize / (1024 * 1024) ) + "M" );
+		else
+			pli->setText(col++, s.setNum( memsize / 1024 ) + "K" );
 	tc++;
 
 	// VM LIB (Shared memory in kBytes)
 	if (tc->visible && tc->supported)
-		pli->setText(col++, s.setNum(p->getVm_lib() / 1024));
+		/*
+		 *  show size in M rather than K if > 10M
+		 */
+		if( (memsize = p->getVm_lib()) > 10 * 1024 * 1024 )
+			pli->setText(col++, s.setNum( memsize / (1024 * 1024) ) + "M" );
+		else
+			pli->setText(col++, s.setNum( memsize / 1024 ) + "K" );
 	tc++;
 
 	// Commandline

@@ -239,31 +239,6 @@ private:
 	void addProcess(OSProcess* p, ProcessLVI* pli);
 
 	/**
-	 * This functions stops the timer that triggers automatic refreshed of the
-	 * process list.
-	 */
-	void timerOff()
-	{
-		if (timerId != NONE)
-		{
-			killTimer(timerId);
-			timerId = NONE;
-		} 
-	}
-
-	/**
-	 * This function starts the timer that triggers the automatic refreshes
-	 * of the process list. It reads the interval from the member object
-	 * timerInterval. To change the interval the timer must be stoped first
-	 * with timerOff() and than started again with timeOn().
-	 */
-	void timerOn()
-	{
-		if (timerId == NONE)
-			timerId = startTimer(timerInterval);
-	}
-
-	/**
 	 * This function is automatically triggered by timer events. It refreshes
 	 * the displayed process list.
 	 */
@@ -290,6 +265,31 @@ private slots:
 	{
 		QString pidStr = lvi->text(1);
 		emit(processSelected(pidStr.toInt()));
+	}
+
+	/**
+	 * This functions stops the timer that triggers automatic refreshed of the
+	 * process list.
+	 */
+	void timerOff()
+	{
+		if (timerId != NONE)
+		{
+			killTimer(timerId);
+			timerId = NONE;
+		} 
+	}
+
+	/**
+	 * This function starts the timer that triggers the automatic refreshes
+	 * of the process list. It reads the interval from the member object
+	 * timerInterval. To change the interval the timer must be stoped first
+	 * with timerOff() and than started again with timeOn().
+	 */
+	void timerOn()
+	{
+		if (timerId == NONE)
+			timerId = startTimer(timerInterval);
 	}
 
 private:
