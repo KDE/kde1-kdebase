@@ -19,6 +19,8 @@
 #include "htmlopts.moc"
 #include <klocale.h>
 
+#include "root.h" // for the gridsize definitions
+
 //-----------------------------------------------------------------------------
 
 KFontOptions::KFontOptions( QWidget *parent, const char *name )
@@ -301,4 +303,70 @@ void KColorOptions::getColorOpts(struct coloroptions& coloropts){
 
   coloropts.changeCursoroverLink = cursorbox->isChecked();
   coloropts.changed = changed;
+}
+
+/************************************************************************/
+
+
+KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
+    : QWidget( parent, name )
+{
+  	readOptions();
+
+
+	QLabel *label;
+
+	label = new QLabel( klocale->translate(
+			    "Horizontal Root Grid Spacing:"), this );
+
+	label->setGeometry( 35, 20, 180, 25 );
+
+	hspin  = new KNumericSpinBox(this);
+	hspin ->setGeometry(225, 20, 40, 25 );
+	hspin->setRange(0,DEFAULT_GRID_MAX - DEFAULT_GRID_MIN);
+
+	
+	if(gridwidth - DEFAULT_GRID_MIN < 0 )
+	  gridwidth = DEFAULT_GRID_MIN;
+	hspin->setValue(gridwidth - DEFAULT_GRID_MIN);
+
+	label = new QLabel( klocale->translate(
+			    "Vertical Root Grid Spacing:"), this );
+
+	label->setGeometry( 35, 60, 180, 25 );
+
+	vspin  = new KNumericSpinBox(this);
+	vspin ->setGeometry(225, 60, 40, 25 );
+
+	vspin->setRange(0,DEFAULT_GRID_MAX - DEFAULT_GRID_MIN);
+
+	if(gridheight - DEFAULT_GRID_MIN < 0 )
+	  gridheight = DEFAULT_GRID_MIN;
+
+	vspin->setValue(gridheight - DEFAULT_GRID_MIN);
+
+}
+
+void KMiscOptions::readOptions()
+{
+	KConfig *config = KApplication::getKApplication()->getConfig();
+	config->setGroup( "KFM Misc Defaults" );	
+	gridwidth = config->readNumEntry( "GridWidth", DEFAULT_GRID_WIDTH );
+	gridheight = config->readNumEntry( "GridHeight", DEFAULT_GRID_HEIGHT );
+
+	changed = false;
+}
+
+
+
+void KMiscOptions::getMiscOpts(struct rootoptions& rootopts){
+
+
+  if(gridwidth != (hspin->getValue()  - DEFAULT_GRID_MIN) || 
+     gridheight != (vspin->getValue() - DEFAULT_GRID_MIN) )
+    changed = true;
+
+  rootopts.gridwidth = hspin->getValue()+DEFAULT_GRID_MIN;
+  rootopts.gridheight = vspin->getValue()+DEFAULT_GRID_MIN;
+  rootopts.changed = changed;
 }

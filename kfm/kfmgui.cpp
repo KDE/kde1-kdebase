@@ -1466,8 +1466,11 @@ void KfmGui::slotConfigureBrowser()
 
 	  struct coloroptions coloropts;
 	  struct fontoptions  fontopts;
+	  struct rootoptions  rootopts;
+
 	  dlg.fontData(fontopts);
 	  dlg.colorData(coloropts);
+	  dlg.miscData(rootopts);
 
 	  if(fontopts.changed){
 
@@ -1489,6 +1492,15 @@ void KfmGui::slotConfigureBrowser()
 	    config->writeEntry( "ChangeCursor", coloropts.changeCursoroverLink);
 
 	  }
+
+
+	  if(rootopts.changed){
+	    config->setGroup( "KFM Misc Defaults" );			
+	    config->writeEntry( "GridWidth", rootopts.gridwidth);
+	    config->writeEntry( "GridHeight", rootopts.gridheight);
+	  }
+
+	  
 
 	  if(coloropts.changed || fontopts.changed){
 
@@ -1518,6 +1530,16 @@ void KfmGui::slotConfigureBrowser()
 
 	      w->updateView();
 
+	    }
+
+	  }
+
+	  if(rootopts.changed){
+	    if ( KRootWidget::getKRootWidget() ){
+	      KRootWidget::getKRootWidget()->setRootGridParameters(
+								   rootopts.gridwidth ,
+								   rootopts.gridheight
+								   );
 	    }
 
 	  }

@@ -6,6 +6,8 @@
 #include <errno.h>
 #include <math.h>
 
+#include <iostream.h>
+
 #include <qdir.h>
 #include <qtooltip.h>
 #include <qrect.h>
@@ -33,6 +35,10 @@ KRootWidget* KRootWidget::pKRootWidget = 0L;
 
 KRootWidget::KRootWidget( QWidget *parent, const char *name ) : QWidget( parent, name )
 {
+
+    gridwidth  = (oldgridwidth = DEFAULT_GRID_WIDTH);
+    gridheight = (oldgridheight = DEFAULT_GRID_HEIGHT);
+
     KConfig *config = KApplication::getKApplication()->getConfig();
 
     if ( config )
@@ -47,6 +53,11 @@ KRootWidget::KRootWidget( QWidget *parent, const char *name ) : QWidget( parent,
 	 if ( fg.isNull() )
 	   fg = "white";
          labelColor.setNamedColor( fg.data() );
+
+	config->setGroup( "KFM Misc Defaults" );	
+	gridwidth = config->readNumEntry( "GridWidth", DEFAULT_GRID_WIDTH );
+	gridheight = config->readNumEntry( "GridHeight", DEFAULT_GRID_HEIGHT );
+
     }
 
     rootDropZone = new KDNDDropZone( this , DndURL );
@@ -55,7 +66,8 @@ KRootWidget::KRootWidget( QWidget *parent, const char *name ) : QWidget( parent,
     KApplication::getKApplication()->setRootDropZone( rootDropZone );
 
     popupMenu = new QPopupMenu();
-    connect( popupMenu, SIGNAL( activated( int )), this, SLOT( slotPopupActivated( int )) );
+    connect( popupMenu, SIGNAL( activated( int )), 
+	     this, SLOT( slotPopupActivated( int )) );
     
     noUpdate = false;
     
@@ -74,6 +86,25 @@ KRootWidget::KRootWidget( QWidget *parent, const char *name ) : QWidget( parent,
     layoutList.setAutoDelete( true );
 
     update();
+}
+
+void KRootWidget::setRootGridParameters(int _gridwidth ,int _gridheight){
+
+
+  oldgridwidth  = gridwidth;
+  oldgridheight = gridheight;
+
+  // better do some sanity checking ... -- Bernd
+  if(_gridwidth < 0  || _gridwidth > DEFAULT_GRID_MAX)
+    _gridwidth = DEFAULT_GRID_WIDTH;
+  if(_gridheight < 0  || gridheight > DEFAULT_GRID_MAX)
+    gridwidth = DEFAULT_GRID_HEIGHT;
+
+  gridwidth     = _gridwidth;
+  gridheight    = _gridheight;
+
+  rearrangeIcons();
+
 }
 
 bool KRootWidget::isBindingHardcoded( const char *_txt )
@@ -287,8 +318,8 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
     
     QRect area = KWM::getWindowRegion(KWM::currentDesktop());
     
-    int gx = area.width() / GRID_WIDTH;
-    int gy = area.height() / GRID_HEIGHT;
+    int gx = area.width() / gridwidth;
+    int gy = area.height() / gridheight;
     
     int dx = (p.x() - dndStartPos.x());
     int dy = (p.y() - dndStartPos.y());
@@ -298,17 +329,17 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
     // Without this change the previous calculations made the
     // icon movement *shamefully* broken! That little math......
     if (dx < 0)
-        dx -= GRID_WIDTH / 2;
+        dx -= gridwidth / 2;
     else
-        dx += GRID_WIDTH / 2;
+        dx += gridwidth / 2;
     
     if (dy < 0)
-        dy -= GRID_HEIGHT / 2;
+        dy -= gridheight / 2;
     else
-        dy += GRID_HEIGHT / 2;
+        dy += gridheight / 2;
            
-    dx /= GRID_WIDTH;
-    dy /= GRID_HEIGHT;
+    dx /= gridwidth;
+    dy /= gridheight;
     
     // Check if there are some previously selected icons there.
     bool selected_icons = false;
@@ -370,8 +401,8 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
 	    }
 	    icon->setGridX( ix );
 	    icon->setGridY( iy );
-	    icon->move( area.x() + GRID_WIDTH * ix + ( GRID_WIDTH - icon->QWidget::width() ) / 2,
-			area.y() + GRID_HEIGHT * iy + ( GRID_HEIGHT - icon->QWidget::height() ) );
+	    icon->move( area.x() + gridwidth * ix + ( gridwidth - icon->QWidget::width() ) / 2,
+			area.y() + gridheight * iy + ( gridheight - icon->QWidget::height() ) );
 	}
     }
     
@@ -470,8 +501,8 @@ QPoint KRootWidget::findFreePlace()
     // use the window area to layout the icons
     QRect area = KWM::getWindowRegion(KWM::currentDesktop());
 
-    int gx = area.width() / GRID_WIDTH;
-    int gy = area.height() / GRID_HEIGHT;
+    int gx = area.width() / gridwidth;
+    int gy = area.height() / gridheight;
     
     bool ok = false;
     int x = 0, y = 0;
@@ -502,8 +533,8 @@ QPoint KRootWidget::findFreePlace( int x, int y )
     // use the window area to layout the icons
     QRect area = KWM::getWindowRegion(KWM::currentDesktop());
 
-    int gx = area.width() / GRID_WIDTH;
-    int gy = area.height() / GRID_HEIGHT;
+    int gx = area.width() / gridwidth;
+    int gy = area.height() / gridheight;
     
     int offset;
     for ( offset = 1; offset < gx; offset++ )
@@ -540,22 +571,23 @@ bool KRootWidget::isPlaceUsed( int x, int y )
     return false;
 }
 
-void KRootWidget::arrangeIcons()
-{
+void KRootWidget::arrangeIcons(){
+
+  rearrangeIcons();
+
+  // the code below is dubious and should be deleted sometime -- Bernd
+
+  /*
+
     // Matthias
     // use the free window area  ( no panel ) to layout the icons
     QRect area = KWM::getWindowRegion(KWM::currentDesktop());
 
     int max_icons = icon_list.count();
-    int my = area.height() / GRID_HEIGHT;
+    int my = area.height() / gridheight;
     int gx = max_icons / my;
     int gy = max_icons % my;
     
-    /**
-     * Find first not used position from left to right and top
-     * to bottom and move the right/bottom most icon to this
-     * position.
-     */
 
     int x, y;
     for ( x = 0; x <= gx; x++ )
@@ -597,12 +629,95 @@ void KRootWidget::arrangeIcons()
 		{
 		    icon->setGridX( x );
 		    icon->setGridY( y );
-		    icon->move( area.x() + GRID_WIDTH * x + ( GRID_WIDTH - icon->QWidget::width() ) / 2,
-				area.y() + GRID_HEIGHT * y + ( GRID_HEIGHT - icon->QWidget::height() ) );
+		    icon->move( area.x() + gridwidth * x + ( gridwidth - icon->QWidget::width() ) / 2,
+				area.y() + gridheight * y + ( gridheight - icon->QWidget::height() ) );
 		}
 	    }
 	}
     }
+
+    saveLayout();
+    */
+}
+
+
+void KRootWidget::rearrangeIcons()
+{
+  // Call this method after a gridwidth gridheight change
+  // The algorithm is O(n) rather then the optimal O(n*log(n))
+  // but I don't think anyone has a 1000 desktop icons and
+  // it's better to be simple so that anyone can easily make 
+  // modifications.
+  // -- Bernd
+
+    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
+
+    //    int max_icons = icon_list.count();
+    int my = area.height() / oldgridheight;
+    int mx = area.width() / oldgridwidth;
+
+    QList<KRootIcon> new_icon_list;
+    new_icon_list.setAutoDelete(false);
+
+    KRootIcon *icon = 0;
+
+    int x, y;
+    for ( x = 0; x <= mx; x++ )
+    {
+	for ( y = 0; y <= my; y++ )
+	{
+	  for (icon_list.first() ; (icon = icon_list.current()) ; icon_list.next() )
+	    if ( icon->gridX() == x && icon->gridY() == y ){
+	      new_icon_list.append(icon);
+	    }
+	}
+    }
+
+    int ny = area.height() / gridheight;
+    int nx = area.width() / gridwidth;
+
+    int k = icon_list.count();
+
+    // Let's check whether we would enter a valid state ...
+
+    if( ( k/ny)  >=  nx){
+
+      // No good ..
+      // The new grid dimension would move some icons off the current
+      // visible desktop  --- let's recover.
+
+      gridwidth = oldgridwidth;
+      gridheight = oldgridheight;
+
+      KConfig *config = KApplication::getKApplication()->getConfig();
+
+      config->setGroup( "KFM Misc Defaults" );	
+      config->writeEntry( "GridWidth", gridwidth );
+      config->writeEntry( "GridHeight", gridheight );
+      QMessageBox::warning( 0, klocale->translate( "Error"),
+			    klocale->translate("Cannot execute request.\n"\
+			     "New root grid dimensions would move some icons\n"\
+			     "off the desktop.")
+			    );
+      return;
+    }
+
+    int i;
+    for(icon = new_icon_list.first(),i = 0; icon; icon = new_icon_list.next(),i++){
+
+      y = i % ny;
+      x = i / ny;
+
+      icon->setGridX( x );
+      icon->setGridY( y );
+      icon->move( area.x() + gridwidth * x + 
+		  ( gridwidth - icon->QWidget::width() ) / 2,
+		  area.y() + gridheight * y + 
+		  ( gridheight - icon->QWidget::height() ) );
+
+    }
+	
+
 
     saveLayout();
 }
@@ -678,8 +793,8 @@ void KRootWidget::update()
 		    
 		    icon->setGridX( x );
 		    icon->setGridY( y );
-		    icon->move( area.x() + GRID_WIDTH * x + ( GRID_WIDTH - icon->QWidget::width() ) / 2,
-				area.y() + GRID_HEIGHT * y + ( GRID_HEIGHT - icon->QWidget::height() ) );
+		    icon->move( area.x() + gridwidth * x + ( gridwidth - icon->QWidget::width() ) / 2,
+				area.y() + gridheight * y + ( gridheight - icon->QWidget::height() ) );
 		    // This information is no longer needed
 		    layoutList.remove( lay );
 		}
@@ -732,8 +847,8 @@ void KRootWidget::update()
 		{
 		    icon->setGridX( x );
 		    icon->setGridY( y );
-		    icon->move( area.x() + GRID_WIDTH * x + ( GRID_WIDTH - icon->QWidget::width() ) / 2,
-				area.y() + GRID_HEIGHT * y + ( GRID_HEIGHT - icon->QWidget::height() ) );
+		    icon->move( area.x() + gridwidth * x + ( gridwidth - icon->QWidget::width() ) / 2,
+				area.y() + gridheight * y + ( gridheight - icon->QWidget::height() ) );
 		}
 	    }
 	}
@@ -761,14 +876,14 @@ void KRootWidget::update()
     for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
     {
 	// Is the icon misplaced ?
-	if ( icon->gridX() == -1 || icon->gridY() == -1 || icon->gridX() * GRID_WIDTH + icon->QWidget::width() > area.width() ||
-	     icon->gridY() * GRID_HEIGHT + icon->QWidget::height() > area.height() )
+	if ( icon->gridX() == -1 || icon->gridY() == -1 || icon->gridX() * gridwidth + icon->QWidget::width() > area.width() ||
+	     icon->gridY() * gridheight + icon->QWidget::height() > area.height() )
 	{
 	    QPoint p = findFreePlace();
 	    icon->setGridX( p.x() );
 	    icon->setGridY( p.y() );
-	    icon->move( area.x() + GRID_WIDTH * p.x() + ( GRID_WIDTH - icon->QWidget::width() ) / 2,
-			area.y() + GRID_HEIGHT * p.y() + ( GRID_HEIGHT - icon->QWidget::height() ) );
+	    icon->move( area.x() + gridwidth * p.x() + ( gridwidth - icon->QWidget::width() ) / 2,
+			area.y() + gridheight * p.y() + ( gridheight - icon->QWidget::height() ) );
 	}
     }
 
@@ -832,8 +947,8 @@ void KRootWidget::slotDropCopy()
 {
     // Calculate grid position for files
     QRect area = KWM::getWindowRegion(KWM::currentDesktop());
-    int x = ( dropFileX - area.x() ) / GRID_WIDTH;
-    int y = ( dropFileY - area.y() ) / GRID_HEIGHT;
+    int x = ( dropFileX - area.x() ) / gridwidth;
+    int y = ( dropFileY - area.y() ) / gridheight;
 
     // Create a job
     KIOJob * job = new KIOJob();
@@ -855,8 +970,8 @@ void KRootWidget::slotDropMove()
 {
     // Calculate grid position for files
     QRect area = KWM::getWindowRegion(KWM::currentDesktop());
-    int x = ( dropFileX - area.x() ) / GRID_WIDTH;
-    int y = ( dropFileY - area.y() ) / GRID_HEIGHT;
+    int x = ( dropFileX - area.x() ) / gridwidth;
+    int y = ( dropFileY - area.y() ) / gridheight;
 
     // Create a job
     KIOJob * job = new KIOJob();
@@ -878,8 +993,8 @@ void KRootWidget::slotDropLink()
 {
     // Calculate grid position for files
     QRect area = KWM::getWindowRegion(KWM::currentDesktop());
-    int x = ( dropFileX - area.x() ) / GRID_WIDTH;
-    int y = ( dropFileY - area.y() ) / GRID_HEIGHT;
+    int x = ( dropFileX - area.x() ) / gridwidth;
+    int y = ( dropFileY - area.y() ) / gridheight;
 
     // Create a job
     KIOJob * job = new KIOJob();

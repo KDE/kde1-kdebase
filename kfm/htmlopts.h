@@ -12,13 +12,23 @@
 #include <qcombo.h>
 #include <qstrlist.h>
 #include <qchkbox.h>
+#include <kspinbox.h>
 #include <kconfig.h>
+
 
 struct fontoptions{
 
   int     fontsize;
   QString standardfont;
   QString fixedfont;
+  bool    changed;
+
+};
+
+struct rootoptions{
+
+  int     gridwidth;
+  int     gridheight;
   bool    changed;
 
 };
@@ -95,6 +105,31 @@ private:
 	bool   changed;
 	struct coloroptions coloropts;
 };
+
+//-----------------------------------------------------------------------------
+
+class KMiscOptions : public QWidget
+{
+	Q_OBJECT
+public:
+	KMiscOptions( QWidget *parent = NULL, const char *name = NULL );
+	void getMiscOpts(struct rootoptions& rootopts);
+
+private:
+	void	readOptions();
+
+private:
+	QCheckBox *cursorbox;
+	KNumericSpinBox *hspin;
+	KNumericSpinBox *vspin;
+	int    gridwidth;
+        int    gridheight;
+	bool   changeCursor;
+	bool   changed;
+	struct rootoptions rootopts;
+};
+
+
 
 
 #endif		// __HTML_OPTIONS_H__

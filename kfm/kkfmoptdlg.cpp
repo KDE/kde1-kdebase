@@ -26,6 +26,9 @@ KKFMOptDlg::KKFMOptDlg(QWidget *parent, const char *name, WFlags f)
   colorDlg = new KColorOptions(tabDlg);
   tabDlg->addTab(colorDlg, "Colors");
 
+  miscDlg = new KMiscOptions(tabDlg);
+  tabDlg->addTab(miscDlg, "Other");
+
 
   // help button
   help = new QPushButton(klocale->translate("Help"), this);
@@ -60,6 +63,7 @@ KKFMOptDlg::~KKFMOptDlg()
   // this segfault kfm -- why? Bernd
   //delete fontDlg;
   //delete colorDlg;
+  //delete miscDlg;
 }
 
 void KKFMOptDlg::helpShow()
@@ -98,6 +102,12 @@ void KKFMOptDlg::fontData(struct fontoptions& fntopts){
 void KKFMOptDlg::colorData(struct coloroptions& coloropts){
 
   colorDlg->getColorOpts(coloropts);
+
+}
+
+void KKFMOptDlg::miscData(struct rootoptions& miscopts){
+
+  miscDlg->getMiscOpts(miscopts);
 
 }
 

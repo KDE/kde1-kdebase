@@ -17,8 +17,10 @@
 #include "kstrlist.h"
 #include "kiojob.h"
 
-#define GRID_WIDTH 80
-#define GRID_HEIGHT 80
+#define DEFAULT_GRID_WIDTH 75
+#define DEFAULT_GRID_HEIGHT 75
+#define DEFAULT_GRID_MAX 150
+#define DEFAULT_GRID_MIN 50
 
 class KRootWidget;
 
@@ -33,6 +35,7 @@ class KRootLayout
 protected:
     int x,y;
     QString url;
+
 
 public:
     KRootLayout( const char *_url, int _x, int _y ) { url = _url; x = _x; y = _y; }
@@ -171,6 +174,8 @@ public:
     void openURL( const char *_url );
     void openPopupMenu( QStrList &_urls, const QPoint &_point );
     bool isBindingHardcoded( const char *_txt );
+
+    void setRootGridParameters(int gridwidth ,int gridheight);
     
     /**
      * Takes all icons corresponding to the given URLs and moves them.
@@ -215,6 +220,7 @@ public:
      * in a certain grid. Starting in the upper left corner of the screen.
      */
     void arrangeIcons();
+    void rearrangeIcons();
     
     /**
      * color of the icon label text
@@ -397,6 +403,11 @@ protected:
      * The start of am icon-drag in global coordinates
      */
     QPoint dndStartPos;
+    /** 
+      *  Hold the rood window icon grid parameters.
+      */
+    int gridwidth, gridheight;
+    int oldgridwidth, oldgridheight;
 };
 
 #endif

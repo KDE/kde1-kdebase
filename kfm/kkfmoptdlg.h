@@ -22,7 +22,8 @@ class KKFMOptDlg : public QDialog
     QStrList dataProxy() const;
     void fontData(struct fontoptions& fontopts);
     void colorData(struct coloroptions& coloropts);
-    
+    void miscData(struct rootoptions& miscopts);
+
   private:
     QPushButton *help;
     QPushButton *ok;
@@ -31,6 +32,7 @@ class KKFMOptDlg : public QDialog
     KProxyDlg   *prxDlg;
     KFontOptions   *fontDlg;
     KColorOptions   *colorDlg;
+    KMiscOptions   *miscDlg;
     UserAgentDialog *usrDlg;
     
   public slots:

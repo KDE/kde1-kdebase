@@ -205,3 +205,7 @@
   - Stephan please have a look at around line 70 in kkfmoptdlg.cpp
     I had to comment out two delete statements and can't say I understand
     precicely why.
+
+03/05/98 Bernd
+  - variable root grid sizes
+  
