@@ -153,6 +153,7 @@ public:
 public slots:
     /// Called when the user presses 'Ok'.
     void slotApply();
+    void slotCancel();
 
 signals:
     /// Notify about changes in properties and rnameings.
@@ -165,6 +166,7 @@ signals:
      If the name did not change, _name is 0L.
      */
     void propertiesChanged( const char *_url, const char *_new_name );
+    void propertiesCancel();
     
 protected:
     /// Inserts all pages in the dialog.

@@ -70,9 +70,11 @@ Properties::Properties( const char *_url ) : QObject()
     tab->setCancelButton(klocale->translate("Cancel"));
 
     connect( tab, SIGNAL( applyButtonPressed() ), this, SLOT( slotApply() ) );
+    connect( tab, SIGNAL( cancelButtonPressed() ), this, SLOT( slotCancel() ) );
     
     tab->show();
 }
+
 
 Properties::~Properties()
 {
@@ -107,6 +109,14 @@ void Properties::slotApply()
     }
     
     KIOServer::sendNotify( s.data() );
+
+    // make sure the desktop icon get's unselected
+    emit  propertiesCancel();
+}
+
+void Properties::slotCancel(){
+   
+  emit  propertiesCancel();
 }
 
 void Properties::insertPages()

@@ -29,6 +29,7 @@
 #include "kfmexec.h"
 #include "utils.h"
 #include "kfm.h"
+#include "root.h"
 
 // enable this to show a readonly indicator over the icon.
 //#define OVERLAY_READONLY
@@ -1231,18 +1232,24 @@ void KFMManager::slotDropCopy()
 {
     KIOJob * job = new KIOJob;
     job->copy( dropZone->getURLList(), dropDestination.data() );
+    if(KRootWidget::pKRootWidget)
+      KRootWidget::pKRootWidget->unselectAllIcons();
 }
 
 void KFMManager::slotDropMove()
 {
     KIOJob * job = new KIOJob;
     job->move( dropZone->getURLList(), dropDestination.data() );
+    if(KRootWidget::pKRootWidget)
+      KRootWidget::pKRootWidget->unselectAllIcons();
 }
 
 void KFMManager::slotDropLink()
 {
     KIOJob * job = new KIOJob;
     job->link( dropZone->getURLList(), dropDestination.data() );
+    if(KRootWidget::pKRootWidget)
+      KRootWidget::pKRootWidget->unselectAllIcons();
 }
 
 QString KFMManager::getVisualSchnauzerIconTag( const char *_url )

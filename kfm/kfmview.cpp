@@ -34,6 +34,7 @@
 #include "utils.h"
 #include "kfm.h"
 #include "kfmexec.h"
+#include "root.h"
 
 #include <klocale.h>
 #include <kstring.h>
@@ -42,6 +43,7 @@
 #define AUTOSCROLL_DELAY	150
 #define AUTOSCROLL_STEP		20
 
+//extern KRootWidget* KRootWidget::pKRootWidget;
 
 QStrList *KfmView::clipboard;
 
@@ -436,6 +438,7 @@ void KfmView::slotPaste()
     // Check wether we drop a directory on itself or one of its children
     int nested = 0;
     char *s;
+
     for ( s = clipboard->first(); s != 0L; s = clipboard->next() )
     {
 	int j;
@@ -562,14 +565,22 @@ void KfmView::slotPopupCopy()
     // DEBUG
     for( s = clipboard->first(); s != 0L; s = clipboard->next() )
       printf("CLIPBOARD: %s\n",s);
+
+
 }
 
 void KfmView::slotPopupPaste()
 {
+
+
+
     if ( popupFiles.count() != 1 )
     {
 	QMessageBox::warning( 0, klocale->translate("KFM Error"), 
 			      klocale->translate("Can not paste into multiple directories") );
+	if(KRootWidget::pKRootWidget)
+	  KRootWidget::pKRootWidget->unselectAllIcons();
+
 	return;
     }
     
@@ -588,23 +599,31 @@ void KfmView::slotPopupPaste()
     {
 	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
 			      klocale->translate("ERROR: Malformed URL") );
+	if(KRootWidget::pKRootWidget)
+	  KRootWidget::pKRootWidget->unselectAllIcons();
 	return;
     }
     if ( nested == 2 )
     {
 	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
 			      klocale->translate("ERROR: You dropped a URL over itself") );
+	if(KRootWidget::pKRootWidget)
+	  KRootWidget::pKRootWidget->unselectAllIcons();
 	return;
     }
     if ( nested == 1 )
     {
 	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
 			      klocale->translate("ERROR: You dropped a directory over one of its children") );
+	if(KRootWidget::pKRootWidget)
+	  KRootWidget::pKRootWidget->unselectAllIcons();
 	return;
     }
 
     KIOJob * job = new KIOJob;
     job->copy( (*clipboard), popupFiles.first() );
+    if(KRootWidget::pKRootWidget)
+      KRootWidget::pKRootWidget->unselectAllIcons();
 }
 
 void KfmView::slotPopupTrash()

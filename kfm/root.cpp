@@ -180,19 +180,24 @@ void KRootWidget::slotPopupActivated( int _id )
 	// Run the action 'txt' on every single file
 	KMimeBind::runBinding( s, txt );    
     }
+    unselectAllIcons();
 }
 
 void KRootWidget::openPopupMenu( QStrList &_urls, const QPoint &_point )
 {
-    if ( _urls.count() == 0 )
-	return;
+  if ( _urls.count() == 0 ){
+    unselectAllIcons();
+    return;
+  }
     
     char *s;
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
     {
 	KURL u( s );
-	if ( u.isMalformed() )
-	    return;
+	if ( u.isMalformed() ){
+	  unselectAllIcons();
+	  return;
+	}
     }
     
     popupMenu->clear();
@@ -448,6 +453,7 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
     }
     
     saveLayout();
+    unselectAllIcons();
 }
 
 void KRootWidget::selectIcons( QRect &_rect )
@@ -988,6 +994,7 @@ void KRootWidget::slotDropLink()
     }
     
     job->link( dropZone->getURLList(), desktopDir.data() );
+    unselectAllIcons();
 }
 
 void KRootWidget::slotFilesChanged( const char *_url )
@@ -1041,15 +1048,19 @@ void KRootWidget::slotPopupOpenWith()
 	const char *s;
 	for( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
 	  bind->runBinding( s );
+	unselectAllIcons();
 	return;
       }
 
       QString pattern = l.getText();
       if ( pattern.length() == 0 )
+	unselectAllIcons();
 	return;
     }
-    else
+    else{
+	unselectAllIcons();
 	return;
+    }
     
     QString cmd;
     cmd = l.getText();
@@ -1076,6 +1087,7 @@ void KRootWidget::slotPopupOpenWith()
     }
     
     KMimeBind::runCmd( cmd.data() );
+    unselectAllIcons();
 }              
 
 void KRootWidget::slotPopupProperties()
@@ -1089,11 +1101,21 @@ void KRootWidget::slotPopupProperties()
     Properties *p = new Properties( popupFiles.first() );
     connect( p, SIGNAL( propertiesChanged( const char *, const char * ) ), this,
 	     SLOT( slotPropertiesChanged( const char *, const char* ) ) );
+
+    connect( p, SIGNAL( propertiesCancel() ), this,
+	     SLOT( slotPropertiesCancel() ) );
+
     saveLayout();
+}
+
+void KRootWidget::slotPropertiesCancel(){
+
+    unselectAllIcons();
 }
 
 void KRootWidget::slotPropertiesChanged( const char *_url, const char *_new_name )
 { 
+    unselectAllIcons();
     // Check for renamings.
     if ( _new_name != 0L )
     {
@@ -1155,6 +1177,7 @@ void KRootWidget::slotPopupCopy()
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
 	KfmView::clipboard->append( s );
+
 }
 
 void KRootWidget::slotPopupTrash()
@@ -1164,6 +1187,7 @@ void KRootWidget::slotPopupTrash()
     QString dest = "file:" + KFMPaths::TrashPath();
     job->setOverWriteExistingFiles( true );
     job->move( popupFiles, dest );
+
 }
 
 void KRootWidget::slotPopupDelete()
@@ -1177,6 +1201,7 @@ void KRootWidget::slotPopupDelete()
     
     if ( ok )
 	job->del( popupFiles );
+
 }
 
 void KRootWidget::slotPopupNewView()
@@ -1187,6 +1212,7 @@ void KRootWidget::slotPopupNewView()
 	KfmGui *m = new KfmGui( 0L, 0L, s );
 	m->show();
     }
+    unselectAllIcons();
 }
 
 void KRootWidget::slotPopupEmptyTrash()
@@ -1196,6 +1222,8 @@ void KRootWidget::slotPopupEmptyTrash()
     
     DIR *dp;
     struct dirent *ep;
+    unselectAllIcons();
+
     dp = opendir( d );
     if ( dp )
     {
@@ -1257,6 +1285,7 @@ KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
     // connect( drop_zone, SIGNAL( dropEnter( KDNDDropZone *) ), this, SLOT( slotDropEnterEvent( KDNDDropZone *) ) );
     // connect( drop_zone, SIGNAL( dropLeave( KDNDDropZone *) ), this, SLOT( slotDropLeaveEvent( KDNDDropZone *) ) );
 
+    
     setGeometry( _x - pixmapXOffset, _y, width, height );
     show();
     lower();
@@ -1491,6 +1520,8 @@ void KRootIcon::paintEvent( QPaintEvent * )
 
 void KRootIcon::mousePressEvent( QMouseEvent *_mouse )
 {
+
+
     // Does the user want to select the icon ?
     if ( _mouse->button() == LeftButton && ( _mouse->state() & ControlButton ) == ControlButton )
     {
@@ -1504,6 +1535,9 @@ void KRootIcon::mousePressEvent( QMouseEvent *_mouse )
 	press_x = _mouse->pos().x();
 	press_y = _mouse->pos().y();    
 	root->dndStartPos = mapToGlobal( QPoint( press_x, press_y ) );
+
+	select(true);
+
     }
     else if ( _mouse->button() == RightButton )
     {
@@ -1511,17 +1545,21 @@ void KRootIcon::mousePressEvent( QMouseEvent *_mouse )
 
         if ( !bSelected )
         {    
-	  root->unselectAllIcons();
 	  list.append( url.data() );
+	  select( true );
 	}
 	else
         {
 	  root->getSelectedURLs( list );
 	}
-	
+
 	QPoint p = mapToGlobal( _mouse->pos() );
 	root->openPopupMenu( list, p );
     }
+    else if ( _mouse->button() == MidButton ){
+	root->unselectAllIcons();	
+    }
+
 }
 
 void KRootIcon::mouseDoubleClickEvent( QMouseEvent * )
@@ -1542,25 +1580,13 @@ void KRootIcon::dragEndEvent()
 
 void KRootIcon::dndMouseReleaseEvent( QMouseEvent *_mouse )
 {
+
     if (pressed == false)
       return;
 
     if ( _mouse->button() != LeftButton || ( _mouse->state() & ControlButton ) == ControlButton )
       return;
 
-    // If there where some selected buttons, don't start the link action.
-    // This prevent's us from a situation, where a snigle user action
-    // (the mouse click) issues two unrelated reactions (which is a BAD thing):
-    // 1. Unselecting the currently selected URLs.
-    // 2. Taking the action associated with the URL the user clicked on.
-    for ( KRootIcon * icon = root->icon_list.first(); 
-         icon != 0L; 
-         icon = root->icon_list.next() )
-      if ( icon->isSelected()) {
-        root->unselectAllIcons();
-        
-               return;
-      }
     root->unselectAllIcons();
 
     // Use the destination of the link. This looks better
@@ -1577,14 +1603,18 @@ void KRootIcon::dndMouseReleaseEvent( QMouseEvent *_mouse )
 	u2 += buffer;
 	root->openURL( u2 );
 	pressed = false;
+	repaint();
 	return;
       }
     }
     
     root->openURL( url );                          
-
     pressed = false;
+    repaint();
+
 }
+
+
 
 void KRootIcon::dndMouseMoveEvent( QMouseEvent *_mouse )
 {
@@ -1699,6 +1729,8 @@ void KRootIcon::update()
 
 void KRootIcon::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QPoint *_p )
 {
+printf("dropPopupMenu\n");
+ 
     dropDestination = _dest;
     dropDestination.detach();
     
@@ -1760,18 +1792,21 @@ void KRootIcon::slotDropCopy()
 {
     KIOJob * job = new KIOJob;
     job->copy( dropZone->getURLList(), dropDestination.data() );
+    root->unselectAllIcons();
 }
 
 void KRootIcon::slotDropMove()
 {
     KIOJob * job = new KIOJob;
     job->move( dropZone->getURLList(), dropDestination.data() );
+    root->unselectAllIcons();
 }
 
 void KRootIcon::slotDropLink()
 {
     KIOJob * job = new KIOJob;
     job->link( dropZone->getURLList(), dropDestination.data() );
+    root->unselectAllIcons();
 }
 
 void KRootIcon::slotFontChanged()

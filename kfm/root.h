@@ -20,7 +20,7 @@
 #include "config-kfm.h"
 
 class KRootWidget;
-
+class KFMManger;
 /**
  * This class is used to store the position of files, which are not on the
  * file system yet. For example if a file is dropped on the desktop, you know
@@ -99,7 +99,7 @@ public slots:
     void slotDropLink();
 
     void slotFontChanged();
-    
+
 protected:
     virtual void resizeEvent( QResizeEvent * );
     virtual void paintEvent( QPaintEvent *_event );
@@ -180,6 +180,8 @@ protected:
 class KRootWidget : public QWidget
 {
     friend KRootIcon;
+    friend KfmView;
+    friend KFMManager;
     
     Q_OBJECT
 public:
@@ -303,6 +305,7 @@ public slots:
       position on the screen.
       */
     void slotPropertiesChanged( const char *_url, const char *_new_name );
+    void slotPropertiesCancel();
 
 protected:
     /**
