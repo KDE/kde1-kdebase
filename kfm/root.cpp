@@ -1142,9 +1142,10 @@ void KRootWidget::slotPopupOpenWith()
       }
 
       QString pattern = l.getText();
-      if ( pattern.length() == 0 )
+      if ( pattern.length() == 0 ) {
 	unselectAllIcons();
 	return;
+      }
     }
     else{
 	unselectAllIcons();
