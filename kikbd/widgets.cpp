@@ -142,7 +142,7 @@ KiKbdMapsWidget::KiKbdMapsWidget(QWidget* parent)
   mbox->
     addWidget(wid=kikbdConfig->
 	      createWidget(&kikbdConfig->getHotList(), this,
-			   gettext("Use \"&hot list\""),
+			   gettext("Use &hot list"),
 			   gettext("Use only default and last active "
 				   "keyboard maps to switching from keyboard")));
   connect(this, SIGNAL(activateHot(bool)), wid, SLOT(setEnabled(bool)));
@@ -617,7 +617,7 @@ void KiKbdStyleWidget::checkShow()
   emit enableCaps(kikbdConfig->getEmuCapsLock());
   emit enableAlternate(!kikbdConfig->oneKeySwitch() 
 		       && kikbdConfig->hasAltKeys()
-		       && strcmp(kikbdConfig->getAltSwitch().at(0), "None"));
+		       && strcmp(kikbdConfig->getAltSwitchRef(), "None"));
 }
 
 //=========================================================

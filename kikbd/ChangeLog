@@ -1,7 +1,12 @@
+04 November 1998
+	* Change help page from kcmikbd to kikbd-4.html
+	* Remove support for multiple keys from AltSwitch
+	* Do not expand codes to 4 symbols if alternate symbols not used
+	
 30 October 1998
-	* using base color instead of white for drawing label in widgets.cpp
-	* adding readOnly parameter for KObjectConfig anf KiKbdConfig
-	* fix bug in KeyMap:expandCodes
+	* Using base color instead of white for drawing label in widgets.cpp
+	* Adding readOnly parameter for KObjectConfig anf KiKbdConfig
+	* Fix bug in KeyMap:expandCodes
 
 19 October 1998
         * us.kimap removed, use en.kimap

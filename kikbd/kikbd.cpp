@@ -134,7 +134,6 @@ KiKbdApplication::KiKbdApplication(int n, char**v)
      read keyboard mapping and modifiers at startup
   */
   globalKeySyms.read();
-  globalKeySyms.expandCodes(4);
   modifs = XGetModifierMapping(display);
   /**
      set handlers
@@ -293,6 +292,13 @@ void KiKbdApplication::loadConfig()
     }
     else initSyms = kikbdConfig.getMap(kikbdConfig.getCodes());
   else initSyms = globalKeySyms;
+
+  /** Expand to 4 symbols if has Alt keys and AltSwitch not equal "None"
+      or to 2 symbols
+   */
+  if(kikbdConfig.hasAltKeys() && kikbdConfig.getAltSwitchRef() != "None")
+    initSyms.expandCodes(4);
+  else initSyms.expandCodes(2);
   /**
      here we are loading all used symbols in all maps
      also we are create popup menu and necasary connections
@@ -343,28 +349,28 @@ void KiKbdApplication::loadConfig()
 			   switchKeys.at(0));    
   }
   if((!kikbdConfig.oneKeySwitch()) && kikbdConfig.hasAltKeys()) {
-    QStrList altSwitchKeys = kikbdConfig.getAltSwitch();
-    if(KeyTranslate::stringToSym(altSwitchKeys.at(0)) != NoSymbol) {
+    QString altSwitchKey = kikbdConfig.getAltSwitchRef();
+    if(KeyTranslate::stringToSym(altSwitchKey) != NoSymbol) {
       /**
 	 try to remove this key from modifier
       */
-      if(!removeModifier(KeyTranslate::stringToSym(altSwitchKeys.at(0))))
+      if(!removeModifier(KeyTranslate::stringToSym(altSwitchKey)))
 	KiKbdMsgBox::warning(gettext("Can not remove %s from Modifiers.\n"),
-			       altSwitchKeys.at(0));
+			       altSwitchKey);
       /**
 	 try to add this key to mod3
       */
       altKey = KeyTranslate::stringToSym("Mode_switch");
       for(i=0; i < keyMaps.count(); i++) {
 	if(keyMaps.at(i)->hasAltKeys()) {
-	  keyMaps.current()->changeKeySym(altSwitchKeys.at(0),
+	  keyMaps.current()->changeKeySym(altSwitchKey,
 					  "Mode_switch", 1);
-	  if(!keyMaps.current()->changeKeySym(altSwitchKeys.at(0),
+	  if(!keyMaps.current()->changeKeySym(altSwitchKey,
 					      "Mode_switch", 0)) {
 	    KiKbdMsgBox::warning(gettext("Can not set Mode Switch as %s"
 					 " for keyboard %s.\nAlt symbols "
 					 "disabled"),
-		    altSwitchKeys.at(0), keyMaps.current()->getLabel());
+		    altSwitchKey, keyMaps.current()->getLabel());
 	    altKey = NoSymbol;
 	    break;
 	  }

@@ -54,6 +54,7 @@ KeyMap::KeyMap(KiKbdMapConfig& config, KeySyms& initSyms)
   /**
      load symbols from symbols(k==0) and codes(k==1)
   */
+  unsigned count = keySyms.kcodes + 1;
   unsigned i;
   for(unsigned k=0; k<2; k++) {
     QList<QStrList> &symmap = k==0?config.getKeysyms():config.getKeycodes();
@@ -71,7 +72,7 @@ KeyMap::KeyMap(KiKbdMapConfig& config, KeySyms& initSyms)
 	:initSyms.findCode(list.at(0));
       if(index == -1)  continue;
       
-      unsigned j;for(j=list.count()<=5?list.count():5; j-->1;)
+      unsigned j;for(j=list.count()<=count?list.count():count; j-->1;)
 	keySyms.change(index, list.at(j), j-1);
     }
   }
@@ -98,10 +99,12 @@ KeyMap::KeyMap(KiKbdMapConfig& config, KeySyms& initSyms)
 	  capsKeySyms.syms[j]   = keySyms.syms[j+1];
 	  capsKeySyms.syms[j+1] = keySyms.syms[j];
 	}
-	if(KeyTranslate::tolower(keySyms.syms[j+2]) 
-	   == KeyTranslate::tolower(test)) {
-	  capsKeySyms.syms[j+2] = keySyms.syms[j+3];
-	  capsKeySyms.syms[j+3] = keySyms.syms[j+2];
+	if(capsKeySyms.kcodes >=4) {
+	  if(KeyTranslate::tolower(keySyms.syms[j+2]) 
+	     == KeyTranslate::tolower(test)) {
+	    capsKeySyms.syms[j+2] = keySyms.syms[j+3];
+	    capsKeySyms.syms[j+3] = keySyms.syms[j+2];
+	  }
 	}
       }
     }
@@ -116,10 +119,12 @@ KeyMap::KeyMap(KiKbdMapConfig& config, KeySyms& initSyms)
 	capsKeySyms.syms[i]   = keySyms.syms[i+1];
 	capsKeySyms.syms[i+1] = keySyms.syms[i];
       }
-      if(KeyTranslate::tolower(keySyms.syms[i+2]) >= 'a' 
-	 && KeyTranslate::tolower(initSyms.syms[i+2]) <= 'z') {
-	capsKeySyms.syms[i+2] = keySyms.syms[i+3];
-	capsKeySyms.syms[i+3] = keySyms.syms[i+2];
+      if(capsKeySyms.kcodes >=4) {
+	if(KeyTranslate::tolower(keySyms.syms[i+2]) >= 'a' 
+	   && KeyTranslate::tolower(initSyms.syms[i+2]) <= 'z') {
+	  capsKeySyms.syms[i+2] = keySyms.syms[i+3];
+	  capsKeySyms.syms[i+3] = keySyms.syms[i+2];
+	}
       }
     }
   }
@@ -274,7 +279,7 @@ KeySyms& KeySyms::operator=(KiKbdMapConfig* map)
     if(max < keycode) max = keycode;
   }
   // allocate space
-  allocSyms(min, max, ncodes<4?4:ncodes);
+  allocSyms(min, max, ncodes);
   // set
   for(unsigned i = 0; i < codes.count(); i++) {
     QStrList code = *codes.at(i);

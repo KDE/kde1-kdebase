@@ -99,7 +99,7 @@ void KiKbdApplication::defaultValues()
 }
 void KiKbdApplication::help()
 {
-  kapp->invokeHTMLHelp("kikbd/kikbd.html","");
+  kapp->invokeHTMLHelp("kikbd/kikbd-4.html","");
 }
 
 void msgHandler(QtMsgType type, const char* msg)

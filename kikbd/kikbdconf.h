@@ -102,14 +102,10 @@ class KiKbdConfig: public KObjectConfig {
   const QString& getCodes       () const {return codes;}
   const QString& getSwitchRef   () const {return switchComb;}
   const QString& getAltSwitchRef() const {return altSwitchComb;}
-  QStrList& getMaps() {return maps;}
-  /*--- switches ---*/
-  QStrList getSwitch()    const {
+  QStrList getSwitch() const {
     return KObjectConfig::separate(switchComb, '+');
   }
-  QStrList getAltSwitch() const {
-    return KObjectConfig::separate(altSwitchComb, '+');
-  }
+  QStrList& getMaps() {return maps;}
   KiKbdMapConfig* getMap(const char* name);
   bool            hasAltKeys();
   bool            oneKeySwitch() const;
