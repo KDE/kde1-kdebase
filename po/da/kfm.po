@@ -191,7 +191,7 @@ msgstr "&Cache"
 
 #: kfmgui.cpp:393
 msgid "&Configure File Manager..."
-msgstr "Indstil filstyring..."
+msgstr "&Indstil filstyring..."
 
 #: kfmgui.cpp:395
 msgid "Configure &Browser..."
@@ -736,7 +736,7 @@ msgstr "Sæt GID"
 
 #: kfmprops.cpp:489
 msgid "Sticky"
-msgstr "Fastsat"
+msgstr "Fast"
 
 #: kfmprops.cpp:507
 msgid "Ownership"
@@ -1525,6 +1525,3 @@ msgid ""
 msgstr ""
 "Syntaks fejl [URLs ....]\n"
 "kfmexec kommando [URLer ....]\n"
-
-#~ msgid "Unknown binding"
-#~ msgstr "Ukendt tildeling"

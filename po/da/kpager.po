@@ -118,11 +118,11 @@ msgstr "M&inimér"
 
 #: kpager.cpp:449
 msgid "&UnSticky"
-msgstr "&Fastsat"
+msgstr "&Frit"
 
 #: kpager.cpp:451
 msgid "&Sticky"
-msgstr "&Frigjort"
+msgstr "&Fast"
 
 #: kpager.cpp:453
 msgid "&To Desktop"

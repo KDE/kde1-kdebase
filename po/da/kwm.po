@@ -55,11 +55,11 @@ msgstr "&Gendan"
 
 #: main.C:573
 msgid "&Sticky"
-msgstr "Fast&sat"
+msgstr "Fa&st"
 
 #: main.C:574
 msgid "&UnSticky"
-msgstr "Fri&giv"
+msgstr "Fri&t"
 
 #: main.C:575
 msgid "Mo&ve"

@@ -140,7 +140,7 @@ msgstr ""
 
 #: kdm-font.cpp:48
 msgid "Select fonts"
-msgstr "Vælg skrifttype"
+msgstr "Vælg skrifttyper"
 
 #: kdm-font.cpp:50
 msgid "Example"

@@ -9,7 +9,7 @@ msgstr ""
 "POT-Creation-Date: 1999-04-10 01:21+0200\n"
 "PO-Revision-Date: 1999-02-16 13:23\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
-"Language-Team: <da@li.org>\n"
+"Language-Team: da <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -53,7 +53,7 @@ msgstr "Maksimér"
 
 #: titlebar.cpp:133
 msgid "Sticky"
-msgstr "Fastsat"
+msgstr "Fast"
 
 #: titlebar.cpp:141
 msgid "Menu"
@@ -457,7 +457,7 @@ msgstr "aldrig få fokus"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr "starte fastsat"
+msgstr "start fastsat"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"

@@ -70,6 +70,3 @@ msgstr "Version: "
 #: mainwidget.cpp:88
 msgid "Machine: "
 msgstr "Maskine: "
-
-#~ msgid "System:"
-#~ msgstr "System:"

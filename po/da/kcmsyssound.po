@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmsyssound\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1999-05-28 15:33+0100\n"
+"PO-Revision-Date: 1999-07-09 15:33+0100\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: <da@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -99,11 +99,11 @@ msgstr "Gendan vindue"
 
 #: syssound.cpp:167
 msgid "Window Sticky"
-msgstr "Vindue fastsat"
+msgstr "Vindue fast"
 
 #: syssound.cpp:168
 msgid "Window UnSticky"
-msgstr "Vindue frigjort"
+msgstr "Vindue frit"
 
 #: syssound.cpp:169
 msgid "Window Trans New"

@@ -196,9 +196,3 @@ msgstr "Indstillinger..."
 #: pfilemenu.C:843
 msgid "Customize Disk Navigator"
 msgstr "Indstil Disk Navigator"
-
-#~ msgid "Where do you want to go tomorrow?"
-#~ msgstr "Hvor vil du gerne hen imorgen?"
-
-#~ msgid "No comment available"
-#~ msgstr "Ingen tilgængelig kommentar"
