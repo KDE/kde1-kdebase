@@ -4,6 +4,10 @@
  * Copyright (C) 1997 Matthias Ettrich
  *
  * DlgLineEntry (c) 1997 Torben Weis, weis@kde.org
+ *
+ * Sun Mar  1 16:47:37 MET 1998, Marcin Dalecki
+ *     Inserted XSyncs before new KFM calls to prevent interferrence with
+ *     qt's socket notifier aparatus.
  */
 
 #include <qdir.h>
@@ -248,6 +252,7 @@ void KRootWm::rmb_menu_activated(int item){
     break;
   case RMB_ARRANGE_ICONS:
     {
+      XSync(qt_xdisplay(), false);
       KFM* kfm = new KFM; 
       kfm->sortDesktop();
       delete kfm;
@@ -258,6 +263,7 @@ void KRootWm::rmb_menu_activated(int item){
     break;
   case RMB_REFRESH_DESKTOP:
     {
+      XSync(qt_xdisplay(), false);
       KFM* kfm = new KFM; 
       kfm->refreshDesktop();
       KWM::refreshScreen();
@@ -301,6 +307,7 @@ void KRootWm::draw_selection_rectangle(int x, int y, int dx, int dy){
 
 
 bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
+  static int grab_count = 0;
   int cx, cy, rx, ry;
   int ox, oy;
   XEvent ev;
@@ -361,7 +368,10 @@ bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
   
   draw_selection_rectangle(x, y, dx, dy);
   XFlush(qt_xdisplay());
-  XUngrabServer(qt_xdisplay());
+  if (grab_count) 
+    XUngrabServer(qt_xdisplay());
+  --grab_count;
+  
   return True;
 }
 // bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){

@@ -2482,6 +2482,12 @@ void Manager::stickyTransientOf(Client* c, bool sticky){
 }
 
 void Manager::iconifyFloatingOf(Client* c){
+  // DON'T automatically iconify floating menues if the focus policy is
+  // focus follows mouse, since otherwise it will be exceptionally hard
+  // to get control over them back! (Marcin Dalecki)
+  if (options.FocusPolicy == FOCUS_FOLLOW_MOUSE)
+    return;
+    
   QListIterator<Client> it(clients);
   for (it.toFirst(); it.current(); ++it){
     if (it.current() != c && it.current()->trans == c->window){

@@ -577,12 +577,14 @@ void KColorScheme::installSchemes()
 	
 	config->setGroup( "ColorSchemeInfo" );
 
-	config->writeEntry( "Number", "5" );
+	config->writeEntry( "Number", "7" );
 	config->writeEntry( "Scheme1", "Atlas Green" );
 	config->writeEntry( "Scheme2", "Blue Slate" );
 	config->writeEntry( "Scheme3", "Windows 95" );
 	config->writeEntry( "Scheme4", "CDE" );
 	config->writeEntry( "Scheme5", "Pale Gray" );
+	config->writeEntry( "Scheme6", "Solaris CDE" );
+	config->writeEntry( "Scheme7", "Digital CDE" );
 	
 	config->setGroup( "ColorScheme" );
 

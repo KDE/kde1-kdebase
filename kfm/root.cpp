@@ -287,46 +287,86 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
     
     QRect area = KWM::getWindowRegion(KWM::currentDesktop());
     
-    // Calculate offset in grid units
-    int x = ( p.x() - dndStartPos.x() ) / GRID_WIDTH;
-    int y = ( p.y() - dndStartPos.y() ) / GRID_HEIGHT;
-    // Do we have to round up/down ?
-    int hx = p.x() - dndStartPos.x();
-    if ( hx < 0 ) hx *= -1;
-    int hy = p.y() - dndStartPos.y();
-    if ( hy < 0 ) hy *= -1;
-    if ( hx % GRID_WIDTH > GRID_WIDTH/2 )
-    {
-	if ( p.x() - dndStartPos.x() < 0 )
-	    x--;
-	else
-	    x++;
-    }
-    if ( hy % GRID_HEIGHT > GRID_HEIGHT/2 )
-    {
-	if ( p.y() - dndStartPos.y() < 0 )
-	    y--;
-	else
-	    y++;
-    }
+    int gx = area.width() / GRID_WIDTH;
+    int gy = area.height() / GRID_HEIGHT;
     
-    // !!! A check for x>x_max and y>y_max should be added,too
-    if (x<0) x = 0;
-    if (y<0) y = 0;        
-
-    char *s;
-    for ( s = _urls.first(); s != 0L; s = _urls.next() )
+    int dx = (p.x() - dndStartPos.x());
+    int dy = (p.y() - dndStartPos.y());
+    
+    // This bit of direction magnification makes the whole
+    // procedure work more desirable. (Marcin Dalecki)
+    // Without this change the previous calculations made the
+    // icon movement *shamefully* broken! That little math......
+    if (dx < 0)
+        dx -= GRID_WIDTH / 2;
+    else
+        dx += GRID_WIDTH / 2;
+    
+    if (dy < 0)
+        dy -= GRID_HEIGHT / 2;
+    else
+        dy += GRID_HEIGHT / 2;
+           
+    dx /= GRID_WIDTH;
+    dy /= GRID_HEIGHT;
+    
+    // Check if there are some previously selected icons there.
+    bool selected_icons = false;
+    for (char *s = _urls.first(); s; s = _urls.next()) {
+       KRootIcon* icon = findIcon(s);
+       if (icon && icon->isSelected()) {
+           selected_icons = true;
+           break;
+       }
+    }
+    if (selected_icons) {
+       // Proceed with the dragging operation only if the icon in which
+       // the drag started was selected too.
+       bool klicked = false;
+       for (char* s = _urls.first(); s; s = _urls.next()) {
+           KRootIcon* icon = findIcon(s);
+           if (icon->isSelected() && (icon->x() <= dndStartPos.x()) && (dndStartPos.x() < icon->x() + icon->QWidget::width()) &&
+               (icon->y() <= dndStartPos.y()) && (dndStartPos.y() < icon->y() + icon->QWidget::height())) {
+               klicked = true;
+               break;
+           }
+       }
+       if (!klicked)
+           return;
+    }
+       
+    for ( char *s = _urls.first(); s != 0L; s = _urls.next() )
     {
 	KRootIcon* icon = findIcon( s );
-	if ( icon != 0L )
+       if (icon)
 	{
-	    int ix = icon->gridX() + x;
-	    int iy = icon->gridY() + y;
-	    if ( isPlaceUsed( ix, iy ) )
+           int ix = icon->gridX() + dx;
+           if (ix < 0)
+               ix = 0;
+           if (ix > gx)
+               ix = gx;
+               
+           int iy = icon->gridY() + dy;
+           if (iy < 0)
+               iy = 0;
+           if (iy > gy)
+               iy = gy;
+               
+           if ( isPlaceUsed( ix, iy ) && (dx || dy) )
 	    {
 		QPoint p = findFreePlace( ix, iy );
-		ix = p.x();
-		iy = p.y();
+               
+               // Take this free place only, when it's really
+               // more adjacent to our desired position.
+               if ( (abs(icon->gridX() - ix) + abs(icon->gridY() - iy)) >
+                    (abs(p.x() - ix) + abs(p.y() - iy)) ) {
+                   ix = p.x(); 
+                   iy = p.y();
+               } else {
+                   ix = icon->gridX();
+                   iy = icon->gridY();
+               }
+               
 	    }
 	    icon->setGridX( ix );
 	    icon->setGridY( iy );
