@@ -14,7 +14,7 @@ class NetMon : public KConfigWidget
 {
 Q_OBJECT
 public:
-   NetMon::NetMon(QWidget *parent, const char * name=NULL);
+   NetMon(QWidget *parent, const char * name=NULL);
 
    void applySettings() {};
    void loadSettings() {};    

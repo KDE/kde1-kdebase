@@ -57,7 +57,7 @@ public:
 	/**
 	 * Creates a KFontChooser widget with a parent and a name.
 	 */
-	KFontChooser::KFontChooser( QWidget *parent = 0, const char *name = 0 );
+	KFontChooser( QWidget *parent = 0, const char *name = 0 );
 	
 	/**
 	 * Detroys the KFontChooser.

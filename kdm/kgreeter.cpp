@@ -703,7 +703,7 @@ KGreeter::restrict_expired(){
 
      return false;
 }
-#else */!USESHADOW*/
+#else /*!USESHADOW*/
 bool
 KGreeter::restrict_expired()
 {

@@ -1,7 +1,7 @@
+#include <string.h>
 #include <qmsgbox.h>       
 #include <signal.h>
 #include <stdlib.h>
-#include <string.h>
 #include <kapp.h>
 #include <qpushbt.h>
 #include <qfont.h>

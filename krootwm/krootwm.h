@@ -49,7 +49,7 @@ enum {
   RMB_WMAKER_SHOW_ALL,
   RMB_WMAKER_HIDE_OTHER,
   RMB_WMAKER_RESTART,
-  RMB_WMAKER_EXIT,
+  RMB_WMAKER_EXIT
 };
 
 class KRootWm: public QObject {
