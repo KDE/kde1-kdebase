@@ -191,7 +191,10 @@ void KFMServer::slotExec( const char* _url, const char * _binding )
 {
     // Attention this is a little hack by me (Matthias)
     QStrList sl;
-    sl.append(_binding);   
+    if (_binding != 0L && QString(_binding).contains("/")){
+      sl.append(_binding);
+      _binding = "Open";
+    }
 
     if ( _binding == 0L )
 	KFileType::runBinding( _url );

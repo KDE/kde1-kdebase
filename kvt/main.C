@@ -123,6 +123,9 @@ bool MyApp::x11EventFilter( XEvent * ev){
 
   static Bool motion_allowed = FALSE ;
 
+  if (KApplication::x11EventFilter(ev))
+    return TRUE;
+
   if (ev->xany.type == KeyPress || ev->xany.type == KeyRelease){
     stored_xevent_for_keys.xkey = ev->xkey;
     return False;
