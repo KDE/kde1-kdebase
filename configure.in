@@ -85,25 +85,30 @@ EOF
 	    dnl Here we must do something else
 	    dnl Maybe look for xdm-config in standard places, and
 	    dnl if that fails use a fresh copy in $KDEDIR/config/kdm/
-	    if test "${prefix}" = NONE; then
-		ac_xdmdir=$ac_default_prefix/config/kdm
-	    else
-		ac_xdmdir=$prefix/config/kdm
+	    AC_FIND_FILE(xdm-config,/etc/X11/xdm /var/X11/xdm /usr/openwin/xdm /usr/X11R6/lib/X11/xdm,ac_xdmdir)
+	    if test -f $ac_xdmdir/xdm-config; then
+                AC_MSG_RESULT($ac_xdmdir)
+            else                                 
+		if test "${prefix}" = NONE; then
+			ac_xdmdir=$ac_default_prefix/config/kdm
+		else
+			ac_xdmdir=$prefix/config/kdm
+		fi
+		AC_MSG_RESULT([xdm config dir not found, installing defaults in $ac_xdmdir])
+		xdmconfigsubdir=xdmconfig
+		AC_SUBST(xdmconfigsubdir)
 	    fi
-	    AC_MSG_RESULT([xdm config dir not found, installing defaults in $ac_xdmdir])
-	    xdmconfigsubdir=xdmconfig
-	    AC_SUBST(xdmconfigsubdir)
 	fi
     fi
 else
     if test -f $ac_xdmdir/xdm-config; then
 	AC_MSG_RESULT($ac_xdmdir)
     else
-        AC_MSG_RESULT([xdm config dir not found, installing defaults in $ac_xdmdir])
+
+	AC_MSG_RESULT([xdm config dir not found, installing defaults in $ac_xdmdir])
 	xdmconfigsubdir=xdmconfig
 	AC_SUBST(xdmconfigsubdir)
     fi
-
 fi
 AC_DEFINE_UNQUOTED(XDMDIR,"$ac_xdmdir")
 AC_SUBST(ac_xdmdir)
