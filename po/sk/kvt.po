@@ -128,7 +128,7 @@ msgstr "&Terminál..."
 
 #: main.C:520
 msgid "Font..."
-msgstr ""
+msgstr "Písmo..."
 
 #: main.C:522
 msgid "Save &Options"
