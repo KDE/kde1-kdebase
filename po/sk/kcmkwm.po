@@ -410,48 +410,45 @@ msgid "CDE"
 msgstr ""
 
 #: advanced.cpp:69
-#, fuzzy
 msgid "Grab the Right Mouse Button"
-msgstr "ALT + Pravé tlaèítko"
+msgstr "Odchytáva» pravé tlaèítko my¹i"
 
 #: advanced.cpp:78
 msgid "Filters"
-msgstr ""
+msgstr "Filtre"
 
 #: advanced.cpp:98
-#, fuzzy
 msgid "Windows will:"
-msgstr "Okná"
+msgstr "Okná budú:"
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr ""
+msgstr "ma» málo dekorácií"
 
 #: advanced.cpp:105
 msgid "have no decorations"
-msgstr ""
+msgstr "bez dekorácií"
 
 #: advanced.cpp:106
 msgid "never gain focus"
-msgstr ""
+msgstr "nikdy sa nezvolia"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr ""
+msgstr "spustia sa ako Prilepené"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr ""
+msgstr "vyòaté zo správy sedení"
 
 #: advanced.cpp:116
 msgid "if they match the following:"
-msgstr ""
+msgstr "ak sa budú zhodova» s týmto:"
 
 #: advanced.cpp:121
-#, fuzzy
 msgid "Titles"
-msgstr "&Titulok"
+msgstr "Titulky"
 
 #: advanced.cpp:126
 msgid "Classes"
-msgstr ""
+msgstr "Triedy"
