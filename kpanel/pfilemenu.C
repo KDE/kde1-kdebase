@@ -693,6 +693,8 @@ void PFileMenu::updateRecentList(EntryType type, QString _path,
     QFileInfo fi(_path);
     insertRecentItem(url, fi.dirPath(), fi.fileName());
   }
+
+  the_panel->writeOutRecentList(true);
 }
 
 //////////////////////////////////////////////////////////////////////////////

@@ -478,6 +478,7 @@ private:
 
 
   void writeOutConfiguration();
+  void writeOutRecentList(bool sync = false);
   void readInConfiguration();
 
   void showMiniPanel(); // sven

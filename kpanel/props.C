@@ -89,14 +89,23 @@ void kPanel::writeOutConfiguration(){
    config->writeEntry("Buttons", button);
    config->writeEntry("ButtonDelta", buttondelta);
 
+   writeOutRecentList();
+
+   config->sync();
+};
+
+//////////////////////////////////////////////////////////////////////////////
+void kPanel::writeOutRecentList(bool sync)
+{
+  KConfig *config = KApplication::getKApplication()->getConfig();
    config->setGroup("kdisknav");
 
    config->writeEntry("RecentFolders", recent_folders);
    config->writeEntry("RecentFiles", recent_files);
 
-   config->sync();
-};
-
+   if (sync)
+     config->sync();
+}
 
 
 void kPanel::parseMenus(){
