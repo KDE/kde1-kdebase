@@ -3,6 +3,7 @@
 Name=Input Devices
 Name[pl]=Urz±dzenia wej¶ciowe
 Name[cs]=Vstupní zaøízení
+Name[fi]=Syöttölaitteet
 MiniIcon=mini-lower.xpm
 SortOrder=keyboard.kdelnk,mouse.kdelnk
 Icon=Input_Devices.xpm
