@@ -1,16 +1,14 @@
 /* XPM */
-/* Drawn for the K Desktop Environment */
-/* See http://www.kde.org */
 static char*wabi[]={
 "16 16 9 1",
+"b c #808080",
+"# c #000000",
 "e c #0000c0",
+"f c #ffff00",
 ". c None",
 "c c #ffffc0",
-"g c #585858",
-"# c #000000",
-"b c #808080",
-"f c #ffff00",
 "d c #0000ff",
+"g c #585858",
 "a c #ffffff",
 "..........####..",
 "......####aaa#..",

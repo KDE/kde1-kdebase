@@ -1,18 +1,15 @@
 /* XPM */
-/* Drawn for the K Desktop Environment */
-/* See http://www.kde.org */
 static char*wabi[]={
-"32 32 11 1",
-"i c #000000",
+"32 32 10 1",
+"b c #808080",
+"c c #c0c0c0",
+"# c #000000",
 "g c #0000c0",
+"h c #ffff00",
 ". c None",
 "d c #ffffc0",
-"c c #c0c0c0",
-"e c #585858",
-"# c #000000",
-"b c #808080",
-"h c #ffff00",
 "f c #0000ff",
+"e c #585858",
 "a c #ffffff",
 "................................",
 "................................",
@@ -40,7 +37,7 @@ static char*wabi[]={
 "...#eddhdhdhdddebdhdhhhhhhhd#...",
 "...#edhdhdhdhdhebdddhdhhhddh#...",
 "...#edhdhhdhdhdebdhdhhhhhhhd#...",
-"...#ehdhddddhdhebddhdhhhi###....",
+"...#ehdhddddhdhebddhdhhh####....",
 "...#eddhhhhhhhhebdhh####........",
 "...#ehhdhhhhhhhe####............",
 "...#edhhhhhh####................",

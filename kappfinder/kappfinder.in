@@ -25,6 +25,7 @@ if test $# -ne 1 ; then
   kde_appsdir=$INSTPATH/share/applnk
   kde_icondir=$INSTPATH/share/icons
   kde_minidir=$INSTPATH/share/icons/mini
+  kde_largedir=$INSTPATH/share/icons/large
   if test ! -d $kde_minidir; then
      mkdir -m 755 -p $kde_minidir
   fi
@@ -33,6 +34,7 @@ else
   kde_icondir=`echo '@kde_icondir@' | sed -e 's#\$(prefix)#@prefix@#'`
   kde_appsdir=`echo '@kde_appsdir@' | sed -e 's#\$(prefix)#@prefix@#'`
   kde_minidir=`echo '@kde_minidir@' | sed -e 's#\$(prefix)#@prefix@#'`
+  kde_largedir=`echo '@kde_icondir@' | sed -e 's#\$(prefix)#@prefix@#'`
 fi
 
 
@@ -82,12 +84,22 @@ do
 
     # copy the mini icon file
     minipic=`grep "^MiniIcon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
-    if test ! "$minifile" ; then
+    if test ! "$minipic" ; then
       minipic=$picname
     fi
     if test -f "pics/mini/$minipic" ; then
       cp pics/mini/$minipic $kde_minidir
     fi
+
+    # copy the large icon file
+    minipic=`grep "^Icon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
+    if test ! "$minipic" ; then
+      minipic=$picname
+    fi
+    if test -f "pics/large/$minipic" ; then
+      cp pics/large/$minipic $kde_icondir/large
+    fi                                                                                  
+
 
   else  
     echo "Looking for $filename: not found"
@@ -115,12 +127,21 @@ do
 
   # copy the mini icon file
   minipic=`grep "^MiniIcon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
-  if test ! "$minifile" ; then
+  if test ! "$minipic" ; then
     minipic=$picname
   fi
   if test -f "pics/mini/$minipic"; then
     cp pics/mini/$minipic $kde_minidir
   fi
+
+  # copy the large icon file
+  minipic=`grep "^Icon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
+  if test ! "$minipic" ; then
+    minipic=$picname
+  fi
+  if test -f "pics/large/$minipic"; then
+    cp pics/large/$minipic $kde_icondir/large
+  fi                                                                                    
 
 done
 
