@@ -5,13 +5,17 @@
 
 #include "highlight.h"
 
-
+char *cTypes[] = {
+  "char","double","float","int","long","short","signed","unsigned","void",0L};
 char *cKeywords[] = {
-  "break","case","continue","default","do","else","for","goto","if","return",
-  "static","struct","switch","while","void","volatile",0L};
+  "break","case","continue","default","do","else","enum","extern","for",
+  "goto","if","interrupt","register","return","static","struct","switch",
+  "typedef","union","volatile","while",0L};
+char *cppTypes[] = {
+  "bool",0L};
 char *cppKeywords[] = {
-  "class","const","delete","inline","new","private","protected","public",
-  "virtual",0L};
+  "class","const","delete","friend","inline","new","private","protected",
+  "public","this","virtual",0L};
 char *bashKeywords[] = {
   "break","case","done","do","elif","else","esac","exit","export","fi","for",
   "function","if","in","return","select","then","until","while",".",0L};
@@ -94,6 +98,14 @@ void HlKeyword::addWord(const char *s) {
   KeywordData *word;
   word = new KeywordData(s);
   words.append(word);
+}
+
+void HlKeyword::addList(char **list) {
+
+  while (*list) {
+    addWord(*list);
+    list++;
+  }
 }
 
 const char *HlKeyword::checkHgl(const char *s) {
@@ -281,8 +293,8 @@ const char *HlCChar::checkHgl(const char *str) {
   const char *s;
 
   if (str[0] == '\'' && str[1] != 0) {
-    s = checkCStringChar(&str[1]);
-    if (!s) s = &str[2];
+    s = checkCStringChar(&str[1]); //try to match escaped char
+    if (!s) s = &str[2];           //match single non-escaped char
     if (*s == '\'') return s + 1;
   }
   return 0L;
@@ -421,59 +433,43 @@ bool Highlight::isInWord(char ch) {
   return data[ch >> 3] & (1 << (ch & 7));
 }
 
-void Highlight::doHighlight(KWriteDoc &doc, int startLine, int endLine) {
-  int line, lastLine;
-  TextLine *textLine;
-  int ctxNum;
+void Highlight::doHighlight(int ctxNum, TextLine *textLine) {
   HlContext *context;
   const char *str, *s1, *s2;
   char lastChar;
-  int endCtx;
   HlItem *item;
 
-  line = startLine;
-  lastLine = doc.lastLine();
-  ctxNum = 0;
-  if (line > 0) ctxNum = doc.textLine(line - 1)->getContext();
+  context = contextList[ctxNum];
 
-  do {
-    context = contextList[ctxNum];
+  str = textLine->getString();
+  lastChar = 0;
 
-    textLine = doc.textLine(line);
-    str = textLine->getString();
-    lastChar = 0;
-
-    s1 = str;
-    while (*s1) {
-      for (item = context->items.first(); item != 0L; item = context->items.next()) {
-        if (item->startEnable(lastChar)) {
-          s2 = item->checkHgl(s1);
-          if (s2 > s1) {
-            if (item->endEnable(*s2)) {
-              textLine->setAttribs(item->attr,s1 - str,s2 - str);
-              ctxNum = item->ctx;
-              context = contextList[ctxNum];
-              s1 = s2 - 1;
-              goto found;
-            }
+  s1 = str;
+  while (*s1) {
+    for (item = context->items.first(); item != 0L; item = context->items.next()) {
+      if (item->startEnable(lastChar)) {
+        s2 = item->checkHgl(s1);
+        if (s2 > s1) {
+          if (item->endEnable(*s2)) {
+            textLine->setAttribs(item->attr,s1 - str,s2 - str);
+            ctxNum = item->ctx;
+            context = contextList[ctxNum];
+            s1 = s2 - 1;
+            goto found;
           }
         }
       }
-      // nothing found: set attribute of one char
-      textLine->setAttribs(context->attr,s1 - str,s1 - str + 1);
-
-      found:
-      lastChar = *s1;
-      s1++;
     }
-    textLine->setAttr(context->attr);
-    //get new context number at end of line
-    ctxNum = context->ctx;
-    endCtx = textLine->getContext();
-    textLine->setContext(ctxNum);
-    line++;
-  } while (line <= lastLine && (line <= endLine || endCtx != ctxNum));
-  doc.tagLines(startLine,line - 1);
+    // nothing found: set attribute of one char
+    textLine->setAttribs(context->attr,s1 - str,s1 - str + 1);
+
+    found:
+    lastChar = *s1;
+    s1++;
+  }
+  //set "end of line"-properties of actual context
+  textLine->setAttr(context->attr);
+  textLine->setContext(context->ctx);
 }
 
 void Highlight::readConfig() {
@@ -521,16 +517,10 @@ NoHighlight::NoHighlight(const char *hName) : Highlight(hName) {
 NoHighlight::~NoHighlight() {
 }
 
-void NoHighlight::doHighlight(KWriteDoc &doc, int startLine, int endLine) {
-  int line;
-  TextLine *textLine;
+void NoHighlight::doHighlight(int, TextLine *textLine) {
 
-  for (line = startLine; line <= endLine; line++) {
-    textLine = doc.textLine(line);
     textLine->setAttribs(0,0,textLine->length());
     textLine->setAttr(0);
-  }
-  doc.tagLines(startLine,endLine);
 }
 
 void NoHighlight::makeDefAttribs() {
@@ -607,13 +597,9 @@ void CHighlight::makeContextList() {
 }
 
 void CHighlight::setKeywords(HlKeyword *keyword) {
-  char **w;
 
-  w = cKeywords;
-  while (*w) {
-    keyword->addWord(*w);
-    w++;
-  }
+//  keyword->addList(cTypes);
+  keyword->addList(cKeywords);
 }
 
 CppHighlight::CppHighlight(const char *hName) : CHighlight(hName) {
@@ -623,18 +609,11 @@ CppHighlight::~CppHighlight() {
 }
 
 void CppHighlight::setKeywords(HlKeyword *keyword) {
-  char **w;
 
-  w = cKeywords;
-  while (*w) {
-    keyword->addWord(*w);
-    w++;
-  }
-  w = cppKeywords;
-  while (*w) {
-    keyword->addWord(*w);
-    w++;
-  }
+//  keyword->addList(cTypes);
+//  keyword->addList(cppTypes);
+  keyword->addList(cKeywords);
+  keyword->addList(cppKeywords);
 }
 
 HtmlHighlight::HtmlHighlight(const char *hName) : Highlight(hName) {

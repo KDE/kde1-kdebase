@@ -126,6 +126,7 @@ class KWriteDoc : QObject {
 
     int lastLine() const;
     TextLine *textLine(int line);
+    int textLength(int line);
     void tagLines(int start, int end);
     void tagAll();
     void readSessionConfig(KConfig *);
@@ -159,9 +160,8 @@ class KWriteDoc : QObject {
     void updateLines(int flags, int startLine, int endLine);
     void updateMaxLength(TextLine *);
 //    void updateCursors(PointStruc &start, PointStruc &end, bool insert = true);
-    void updateViews(int flags = 0);
+    void updateViews(KWriteView *exclude = 0L);
 
-    int textLength(int line);
     int textWidth(TextLine *, int cursorX);
     int textWidth(PointStruc &cursor);
     int textWidth(bool wrapCursor, PointStruc &cursor, int xPos);
@@ -195,7 +195,7 @@ class KWriteDoc : QObject {
     bool hasFileName();
     const char *fileName();
 
-    bool doSearch(PointStruc &cursor, const char *searchFor, int flags);
+    bool doSearch(SConfig &s, const char *searchFor);
     void unmarkFound();
     void markFound(PointStruc &cursor, int len);
 
@@ -218,22 +218,24 @@ class KWriteDoc : QObject {
     void recordReplace(PointStruc &, int len, const
       char *text = 0L, int textLen = 0);
     void recordEnd(KWriteView *, VConfig &);
+    void recordEnd(KWriteView *, PointStruc &, int flags);
     void doActionGroup(KWActionGroup *, int flags);
     void undo(KWriteView *, int flags);
     void redo(KWriteView *, int flags);
 
+    void setPseudoModal(QWidget *);
+
     QList<TextLine> contents;
-    Attribute **attribs;//[nAttribs];
-    int fontHeight;
-    int fontAscent;
     QColor selCols[4];
-
-    QList<KWriteView> views;
-
+    Highlight *highlight;
+    Attribute **attribs;//[nAttribs];
     int tabChars;
     int tabWidth;
+    int fontHeight;
+    int fontAscent;
 
-//    TextLine *bufferLine;
+    QList<KWriteView> views;
+    bool newDocGeometry;
 
     TextLine *longestLine;
     int maxLength;
@@ -248,13 +250,13 @@ class KWriteDoc : QObject {
 
     int foundLine;
 
-    Highlight *highlight;
-
     QList<KWActionGroup> undoList;
     int currentUndo;
     int undoState;
     int tagStart;
     int tagEnd;
+
+    QWidget *pseudoModal;
 };
 
 #endif //KWDOC_H

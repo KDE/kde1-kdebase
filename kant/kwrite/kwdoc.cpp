@@ -430,6 +430,48 @@ void Attribute::setFont(const QFont &f) {
   fm = QFontMetrics(f);
 }
 
+
+KWAction::KWAction(Action a, PointStruc &aCursor)
+  : action(a), cursor(aCursor), len(0), text(0L), textLen(0) {
+}
+
+KWAction::~KWAction() {
+  delete text;
+}
+
+void KWAction ::setData(int aLen, const char *aText, int aTextLen) {
+
+  len = aLen;
+  if (aTextLen > 0) {
+    text = new char[aTextLen];
+    memcpy((char *) text,aText,aTextLen);
+    textLen = aTextLen;
+  } else {
+    text = 0L;
+    textLen = 0;
+  }
+}
+
+KWActionGroup::KWActionGroup(PointStruc &aStart) : start(aStart), action(0L) {
+}
+
+KWActionGroup::~KWActionGroup() {
+  KWAction *current, *next;
+
+  current = action;
+  while (current) {
+    next = current->next;
+    delete current;
+    current = next;
+  }
+}
+
+void KWActionGroup::insertAction(KWAction *a) {
+  a->next = action;
+  action = a;
+}
+
+
 KWriteDoc::KWriteDoc() : QObject(0L) {
 
   contents.setAutoDelete(true);
@@ -445,11 +487,14 @@ KWriteDoc::KWriteDoc() : QObject(0L) {
   tabChars = 8;
   updateFontData();
 
+  newDocGeometry = false;
+
   modified = false;
 
   undoList.setAutoDelete(true);
   undoState = 0;
 
+  pseudoModal = 0L;
   clear();
 }
 
@@ -470,6 +515,10 @@ TextLine *KWriteDoc::textLine(int line) {
 
   return textLine->getString();
 */
+}
+
+int KWriteDoc::textLength(int line) {
+  return contents.at(line)->length();
 }
 
 void KWriteDoc::tagLines(int start, int end) {
@@ -576,7 +625,6 @@ void KWriteDoc::insertFile(KWriteView *view, VConfig &c, QIODevice &dev) {
   char b[256];
   int pos;
   char *s;
-
 
   recordStart(c.cursor);
   pos = 0;
@@ -867,7 +915,8 @@ void KWriteDoc::setHighlight(Highlight *hl) {
   highlight = hl;
   attribs = hl->attrList();
   updateFontData();
-  hl->doHighlight(*this,0,(int) contents.count() -1);
+//  hl->doHighlight(*this,0,(int) contents.count() -1);
+  updateLines(0,0,(int) contents.count() -1);
 }
 
 void KWriteDoc::setTabWidth(int chars) {
@@ -914,17 +963,31 @@ void KWriteDoc::update(VConfig &c) {
 */
 
 void KWriteDoc::updateLines(int flags, int startLine, int endLine) {
-  int line;
   TextLine *textLine;
+  int line, lastLine;
+  int ctxNum, endCtx;
 
-  if (endLine >= (int) contents.count()) endLine = (int) contents.count() -1;
+  lastLine = (int) contents.count() -1;
+  if (endLine >= lastLine) endLine = lastLine;
+
+  line = startLine;
+  ctxNum = 0;
+  if (line > 0) ctxNum = contents.at(line - 1)->getContext();
+  do {
+    textLine = contents.at(line);
+    endCtx = textLine->getContext();
+    highlight->doHighlight(ctxNum,textLine);
+    ctxNum = textLine->getContext();
+    line++;
+  } while (line <= lastLine && (line <= endLine || endCtx != ctxNum));
+  tagLines(startLine,line - 1);
+
   for (line = startLine; line <= endLine; line++) {
     textLine = contents.at(line);
     updateMaxLength(textLine);
     if (flags & cfRemoveSpaces) textLine->removeSpaces();
   }
-  highlight->doHighlight(*this,startLine,endLine);
-//  setModified(true);  //??
+
 }
 
 
@@ -936,6 +999,7 @@ void KWriteDoc::updateMaxLength(TextLine *textLine) {
   if (len > maxLength) {
     longestLine = textLine;
     maxLength = len;
+    newDocGeometry = true;
   } else {
     if (!longestLine || (textLine == longestLine && len <= maxLength*3/4)) {
       maxLength = -1;
@@ -946,6 +1010,7 @@ void KWriteDoc::updateMaxLength(TextLine *textLine) {
           longestLine = textLine;
         }
       }
+      newDocGeometry = true;
     }
   }
 }
@@ -960,18 +1025,17 @@ void KWriteDoc::updateCursors(PointStruc &start, PointStruc &end, bool insert) {
 }
 */
 
-void KWriteDoc::updateViews(int flags) {
-  int z;
+void KWriteDoc::updateViews(KWriteView *exclude) {
+  KWriteView *view;
+  int flags;
 
-  for (z = 0; z < (int) views.count(); z++) {
-    views.at(z)->updateView(flags);
+  flags = (newDocGeometry) ? ufDocGeometry : 0;
+  for (view = views.first(); view != 0L; view = views.next()) {
+    if (view != exclude) view->updateView(flags);
   }
+  newDocGeometry = false;
 }
 
-
-int KWriteDoc::textLength(int line) {
-  return contents.at(line)->length();
-}
 
 int KWriteDoc::textWidth(TextLine *textLine, int cursorX) {
   int x;
@@ -1083,16 +1147,9 @@ void KWriteDoc::toggleRect(int x1, int y1, int x2, int y2) {
   if (t) {
     y2--;
     tagLines(y1,y2);
-//    if (selectEnd < selectStart || y1 < selectStart) selectStart = y1;
-//    if (y2 > selectEnd) selectEnd = y2;
-  
-    if (selectEnd < selectStart) {
-      selectStart = y1;
-      selectEnd = y2;
-    } else {   
-      if (y1 < selectStart) selectStart = y1;
-      if (y2 > selectEnd) selectEnd = y2;
-    }  
+
+    if (y1 < selectStart) selectStart = y1;
+    if (y2 > selectEnd) selectEnd = y2;
   }
 }
 
@@ -1126,13 +1183,13 @@ void KWriteDoc::selectTo(PointStruc &start, PointStruc &end, int flags) {
     }
     tagLines(y,ye);
 
-    if (selectEnd < selectStart) {
+/*    if (selectEnd < selectStart) {
       selectStart = y;
       selectEnd = ye;
-    } else {   
+    } else {   */
       if (y < selectStart) selectStart = y;
       if (ye > selectEnd) selectEnd = ye;
-    }  
+//    }
 
     textLine = contents.at(y);
 //    bufferLine->copy(textLine);
@@ -1200,6 +1257,7 @@ void KWriteDoc::clear() {
   PointStruc cursor;
   KWriteView *view;
 
+  setPseudoModal(0L);
   cursor.x = cursor.y = 0;
   for (view = views.first(); view != 0L; view = views.next()) {
     view->updateCursor(cursor);
@@ -1213,8 +1271,10 @@ void KWriteDoc::clear() {
 
   select.x = -1;
 
-  selectStart = 0;
-  selectEnd = -1;
+  selectStart = 0xffffff;
+  selectEnd = 0;
+//  selectStart = 0;
+//  selectEnd = -1;
 
   foundLine = -1;
 
@@ -1354,17 +1414,6 @@ QString KWriteDoc::markedText(int flags) {
     s[len] = '\0';
     return s;
   } else {
-/*    
-    while (selectStart <= selectEnd) {
-      textLine = contents.at(selectStart);
-      if (textLine->isSelected() || textLine->numSelected() > 0) break;
-      selectStart++;
-    }
-    while (selectEnd >= selectStart) {
-      textLine = contents.at(selectEnd);
-      if (textLine->numSelected() > 0) break;
-      selectEnd--;
-    }*/
     for (z = selectStart; z <= selectEnd; z++) {
       textLine = contents.at(z);
       len += textLine->numSelected() + 1;
@@ -1636,7 +1685,7 @@ void downcase(char *s, int len) {
   }
 }
 
-bool KWriteDoc::doSearch(PointStruc &cursor, const char *searchFor, int flags) {
+bool KWriteDoc::doSearch(SConfig &sc, const char *searchFor) {
   int line, col;
   int searchEnd;
   int slen, blen, tlen;
@@ -1648,29 +1697,24 @@ bool KWriteDoc::doSearch(PointStruc &cursor, const char *searchFor, int flags) {
   if (slen == 0) return 0;
   s = new char[slen];
   memcpy(s,searchFor,slen);
-  if (!(flags & sfCaseSensitive)) downcase(s,slen);
+  if (!(sc.flags & sfCaseSensitive)) downcase(s,slen);
 
   blen = -2;
   b = 0;
   t = 0;
 
-  if (!(flags & sfBackward)) {
+  line = sc.cursor.y;
+  col = sc.cursor.x;
+  if (!(sc.flags & sfBackward)) {
     //forward search
-    if (flags & sfFromCursor) {
-      line = cursor.y;
-      col = cursor.x;
-    } else {
-      line = 0;
-      col = 0;
-    }
 
-    if (flags & sfSelected) {
+    if (sc.flags & sfSelected) {
       if (line < selectStart) {
         line = selectStart;
         col = 0;
       }
       searchEnd = selectEnd;
-    } else searchEnd = (int) contents.count() -1;
+    } else searchEnd = lastLine();
 
     while (line <= searchEnd) {
       textLine = contents.at(line);
@@ -1685,7 +1729,7 @@ bool KWriteDoc::doSearch(PointStruc &cursor, const char *searchFor, int flags) {
       }
       memcpy(t,textLine->getText(),tlen);
       t[tlen] = 0;
-      if (flags & sfSelected) {
+      if (sc.flags & sfSelected) {
         pos = 0;
         do {
           pos = textLine->findSelected(pos);
@@ -1694,10 +1738,10 @@ bool KWriteDoc::doSearch(PointStruc &cursor, const char *searchFor, int flags) {
           pos = newPos;
         } while (pos < tlen);
       }
-      if (!(flags & sfCaseSensitive)) downcase(t,tlen);
+      if (!(sc.flags & sfCaseSensitive)) downcase(t,tlen);
 
       tlen -= slen;
-      if (flags & sfWholeWords) {
+      if (sc.flags & sfWholeWords) {
         while (col <= tlen) {
           if (!highlight->isInWord(t[col-1]) && !highlight->isInWord(t[col+slen])) {
             if (memcmp(&t[col],s,slen) == 0) goto found;
@@ -1715,21 +1759,14 @@ bool KWriteDoc::doSearch(PointStruc &cursor, const char *searchFor, int flags) {
     }
   } else {
     // backward search
-    if (flags & sfFromCursor) {
-      line = cursor.y;
-      col = cursor.x;
-    } else {
-      line = (int) contents.count() -1;
-      col = -1;
-    }
 
-    if (flags & sfSelected) {
+    if (sc.flags & sfSelected) {
       if (line > selectEnd) {
         line = selectEnd;
         col = -1;
       }
       searchEnd = selectStart;
-    } else searchEnd = 0;
+    } else searchEnd = 0;;
 
     while (line >= searchEnd) {
       textLine = contents.at(line);
@@ -1744,7 +1781,7 @@ bool KWriteDoc::doSearch(PointStruc &cursor, const char *searchFor, int flags) {
       }
       memcpy(t,textLine->getText(),tlen);
       t[tlen] = 0;
-      if (flags & sfSelected) {
+      if (sc.flags & sfSelected) {
         pos = 0;
         do {
           pos = textLine->findSelected(pos);
@@ -1753,11 +1790,11 @@ bool KWriteDoc::doSearch(PointStruc &cursor, const char *searchFor, int flags) {
           pos = newPos;
         } while (pos < tlen);
       }
-      if (!(flags & sfCaseSensitive)) downcase(t,tlen);
+      if (!(sc.flags & sfCaseSensitive)) downcase(t,tlen);
 
       if (col < 0 || col > tlen) col = tlen;
       col -= slen;
-      if (flags & sfWholeWords) {
+      if (sc.flags & sfWholeWords) {
         while (col >= 0) {
           if (!highlight->isInWord(t[col-1]) && !highlight->isInWord(t[col+slen])) {
             if (memcmp(&t[col],s,slen) == 0) goto found;
@@ -1773,22 +1810,20 @@ bool KWriteDoc::doSearch(PointStruc &cursor, const char *searchFor, int flags) {
       line--;
     }
   }
-  delete s;
-  delete b;
+  sc.flags |= sfWrapped;
   return false;
-
 found:
-  delete s;
-  delete b;
-
-
-//  if (!(flags & sfBackward)) col += slen;
-  cursor.x = col;
-  cursor.y = line;
+  if (sc.flags & sfWrapped) {
+    if ((line > sc.startCursor.y || (line == sc.startCursor.y && col >= sc.startCursor.x))
+      ^ ((sc.flags & sfBackward) != 0)) return false;
+  }
+  sc.cursor.x = col;
+  sc.cursor.y = line;
   return true;
 }
 
 void KWriteDoc::unmarkFound() {
+  if (pseudoModal) return;
   if (foundLine != -1) {
     contents.at(foundLine)->unmarkFound();
     tagLines(foundLine,foundLine);
@@ -1797,7 +1832,11 @@ void KWriteDoc::unmarkFound() {
 }
 
 void KWriteDoc::markFound(PointStruc &cursor, int len) {
-  unmarkFound();
+//  unmarkFound();
+  if (foundLine != -1) {
+    contents.at(foundLine)->unmarkFound();
+    tagLines(foundLine,foundLine);
+  }
   contents.at(cursor.y)->markFound(cursor.x,len);
   foundLine = cursor.y;
   tagLines(foundLine,foundLine);
@@ -1818,8 +1857,7 @@ void KWriteDoc::insLine(int line) {
   if (tagStart >= line) tagStart++;
   if (tagEnd >= line) tagEnd++;
 
-  //bookmarks
-  
+  newDocGeometry = true;
   for (view = views.first(); view != 0L; view = views.next()) {
     view->insLine(line);
   }
@@ -1833,8 +1871,7 @@ void KWriteDoc::delLine(int line) {
   if (tagStart >= line && tagStart > 0) tagStart--;
   if (tagEnd >= line) tagEnd--;
   
-  //bookmarks
-  
+  newDocGeometry = true;
   for (view = views.first(); view != 0L; view = views.next()) {
     view->delLine(line);
   }
@@ -1855,6 +1892,10 @@ void KWriteDoc::optimizeSelection() {
     selectEnd--;
   }
 //  printf("selectStart %d, selectEnd %d\n",selectStart,selectEnd);
+  if (selectStart > selectEnd) {
+    selectStart = 0xffffff;
+    selectEnd = 0;
+  }
 }
 
 void KWriteDoc::doAction(KWAction *a) {
@@ -2014,6 +2055,7 @@ void KWriteDoc::newUndo() {
 void KWriteDoc::recordStart(PointStruc &cursor) {
   KWActionGroup *g;
 
+  setPseudoModal(0L);
   while ((int) undoList.count() > currentUndo) undoList.removeLast();
   if (undoList.count() > 50) {
     undoList.removeFirst();
@@ -2049,14 +2091,18 @@ void KWriteDoc::recordReplace(PointStruc &cursor,
 }
 
 void KWriteDoc::recordEnd(KWriteView *view, VConfig &c) {
+  recordEnd(view,c.cursor,c.flags);
+}
 
-  if (!(c.flags & cfPersistent)) deselectAll();
+void KWriteDoc::recordEnd(KWriteView *view, PointStruc &cursor, int flags) {
 
-  undoList.getLast()->end = c.cursor;
-  view->updateCursor(c.cursor);
+  if (!(flags & cfPersistent)) deselectAll();
+
+  undoList.getLast()->end = cursor;
+  view->updateCursor(cursor);
 
   optimizeSelection();
-  if (tagStart <= tagEnd) updateLines(c.flags,tagStart,tagEnd);
+  if (tagStart <= tagEnd) updateLines(flags,tagStart,tagEnd);
   setModified(true);
   newUndo();
 }
@@ -2078,6 +2124,7 @@ void KWriteDoc::recordDel(PointStruc &cursor, TextLine *textLine, int l) {
 void KWriteDoc::doActionGroup(KWActionGroup *g, int flags) {
   KWAction *a, *next;
 
+  setPseudoModal(0L);
   if (!(flags & cfPersistent)) deselectAll();
   unmarkFound();
   tagEnd = 0;
@@ -2118,43 +2165,7 @@ void KWriteDoc::redo(KWriteView *view, int flags) {
   view->updateCursor(g->end);
 }
 
-KWAction::KWAction(Action a, PointStruc &aCursor)
-  : action(a), cursor(aCursor), len(0), text(0L), textLen(0) {
-}
-
-KWAction::~KWAction() {
-  delete text;
-}
-
-void KWAction ::setData(int aLen, const char *aText, int aTextLen) {
-
-  len = aLen;
-  if (aTextLen > 0) {
-    text = new char[aTextLen];
-    memcpy((char *) text,aText,aTextLen);
-    textLen = aTextLen;
-  } else {
-    text = 0L;
-    textLen = 0;
-  }
-}
-
-KWActionGroup::KWActionGroup(PointStruc &aStart) : start(aStart), action(0L) {
-
-}
-
-KWActionGroup::~KWActionGroup() {
-  KWAction *current, *next;
-
-  current = action;
-  while (current) {
-    next = current->next;
-    delete current;
-    current = next;
-  }
-}
-
-void KWActionGroup::insertAction(KWAction *a) {
-  a->next = action;
-  action = a;
+void KWriteDoc::setPseudoModal(QWidget *w) {
+  delete pseudoModal;
+  pseudoModal = w;
 }

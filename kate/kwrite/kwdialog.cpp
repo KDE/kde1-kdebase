@@ -131,8 +131,8 @@ void SearchDialog::okSlot() {
   if (text && *text) accept();//emit search();
 }
 
-ReplacePrompt::ReplacePrompt(QWidget *parent,const char *name)
-  : QDialog(parent,name,true) {
+ReplacePrompt::ReplacePrompt(QWidget *parent, const char *name)
+  : QDialog(0L,name,false) {
 
   QLabel *label;
   QPushButton *button;
@@ -166,23 +166,39 @@ ReplacePrompt::ReplacePrompt(QWidget *parent,const char *name)
   connect(button,SIGNAL(clicked()),this,SLOT(reject()));
 
   setFixedSize(r.right() + 10,r.bottom() + 10);
+
+  if (parent) {
+    QWidget *w;
+    QPoint p(0,0);
+
+    w = parent;//->topLevelWidget();
+    p = w->mapToGlobal(p);
+    move(p.x() + (w->width() - width())/2,
+         p.y() + w->height() - height() - 48);
+  }
+
 }
 
-void qt_leave_modal(QWidget *);
+//void qt_leave_modal(QWidget *);
 
 void ReplacePrompt::no() {
-  done(2);
+  done(srNo);
 }
 
 void ReplacePrompt::all() {
-  done(3);
+  done(srAll);
 }
 
 
 void ReplacePrompt::done(int r) {
   setResult(r);
-  qt_leave_modal(this);
-  kapp->exit_loop();
+  emit clicked();
+//  qt_leave_modal(this);
+//  kapp->exit_loop();
+}
+
+void ReplacePrompt::closeEvent(QCloseEvent *) {
+  reject();
 }
 
 GotoLineDialog::GotoLineDialog(int line, QWidget *parent, const char *name)

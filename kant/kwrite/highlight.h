@@ -2,6 +2,7 @@
 #define HIGHLIGHT_H
 
 #include <qlist.h>
+#include <qlistbox.h>
 
 #include <kcolorbtn.h>
 
@@ -68,6 +69,7 @@ class HlKeyword : public HlItemWw {
     HlKeyword(int attribute, int context);
     virtual ~HlKeyword();
     void addWord(const char *);
+    void addList(char **);
     virtual const char *checkHgl(const char *);
   protected:
     QList<KeywordData> words;
@@ -178,7 +180,7 @@ class Highlight {
     Attribute **attrList();
     virtual void getItemList(QStrList &);
     virtual bool isInWord(char);
-    virtual void doHighlight(KWriteDoc &, int startLine, int endLine);
+    virtual void doHighlight(int ctxNum, TextLine *);
     virtual void readConfig();
     virtual void writeConfig();
   protected:
@@ -194,7 +196,7 @@ class NoHighlight : public Highlight {
   public:
     NoHighlight(const char *hName);
     virtual ~NoHighlight();
-    virtual void doHighlight(KWriteDoc &, int startLine, int endLine);
+    virtual void doHighlight(int ctxNum, TextLine *);
   protected:
     virtual void makeDefAttribs();
     virtual void makeContextList();

@@ -32,19 +32,20 @@ class TopLevel : public KTMainWindow {
 
     TopLevel(KWriteDoc * = 0);
     ~TopLevel();
+    void init(); //initialize caption, status and show
 
     virtual void closeEvent(QCloseEvent *e);
     virtual bool queryExit();
 
     void loadURL(const char *url);
   protected:
-    void setupEditWidget();
+    void setupEditWidget(KWriteDoc *);
     void setupMenuBar();
     void setupToolBar();
     void setupStatusBar();
 
     KWrite *kWrite;
-    KWriteDoc *kWriteDoc;
+//    KWriteDoc *kWriteDoc;
     int menuUndo, menuRedo;
     int menuVertical, menuShowTB, menuShowSB;
 //    int statusID, toolID, verticalID, indentID;

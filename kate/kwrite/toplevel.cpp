@@ -51,13 +51,14 @@ TopLevel::TopLevel (KWriteDoc *doc) : KTMainWindow ("KWrite") {
 
 //  connect(mykapp,SIGNAL(kdisplayPaletteChanged()),this,SLOT(set_colors()));
 
+/*
   if (!doc) {
     doc = new KWriteDoc();
     docList.append(doc);
   }
   kWriteDoc = doc;
-
-  setupEditWidget();
+*/
+  setupEditWidget(doc);
   setupMenuBar();
   setupToolBar();
   setupStatusBar();
@@ -70,15 +71,6 @@ TopLevel::TopLevel (KWriteDoc *doc) : KTMainWindow ("KWrite") {
   }
 
 //  set_colors();
-
-  hideToolBar = !hideToolBar;
-  toggleToolBar();
-  hideStatusBar = !hideStatusBar;
-  toggleStatusBar();
-  newCurPos();
-  newStatus();
-  newCaption();
-  newUndo();
 
   KDNDDropZone *dropZone = new KDNDDropZone(this,DndURL);
   connect(dropZone,SIGNAL(dropAction(KDNDDropZone *)),
@@ -94,6 +86,20 @@ TopLevel::~TopLevel() {
 //  delete recentpopup;
 //  delete toolbar;
   if (kWrite->isLastView()) docList.remove(kWrite->doc());
+}
+
+void TopLevel::init() {
+
+  hideToolBar = !hideToolBar;
+  toggleToolBar();
+  hideStatusBar = !hideStatusBar;
+  toggleStatusBar();
+  newCurPos();
+  newStatus();
+  newCaption();
+  newUndo();
+
+  show();
 }
 
 void TopLevel::closeEvent(QCloseEvent *) {
@@ -133,11 +139,14 @@ void TopLevel::loadURL(const char *url) {
 }
 
 
-void TopLevel::setupEditWidget() {
+void TopLevel::setupEditWidget(KWriteDoc *doc) {
 
+  if (!doc) {
+    doc = new KWriteDoc();
+    docList.append(doc);
+  }
 
-//  kWriteDoc = new KWriteDoc();
-  kWrite = new KWrite(kWriteDoc, this);
+  kWrite = new KWrite(doc,this);
 
   connect(kWrite,SIGNAL(newCurPos()),this,SLOT(newCurPos()));
   connect(kWrite,SIGNAL(newStatus()),this,SLOT(newStatus()));
@@ -232,21 +241,41 @@ void TopLevel::setupMenuBar() {
 */
 
   help = kapp->getHelpMenu(true,
-    "KWrite 0.92\n\nCopyright 1998\nJochen Wilhelmy\ndigisnap@cs.tu-berlin.de");
+    "KWrite 0.93\n\nCopyright 1998\nJochen Wilhelmy\ndigisnap@cs.tu-berlin.de");
 
 //  help->insertItem (i18n("&Help..."),this,SLOT(helpSelected()));
 //  help->insertSeparator();
 //  help->insertItem (i18n("&About..."),this,SLOT(about()));
 
 
+//  setMenu(menubar);
+
+  QPopupMenu *popup;
+  popup = new QPopupMenu();
+  popup->insertItem(i18n("&Open..."),kWrite,SLOT(open()),CTRL+Key_O);
+  popup->insertItem(i18n("&Save"),kWrite,SLOT(save()),CTRL+Key_S);
+  popup->insertItem(i18n("S&ave as..."),kWrite,SLOT(saveAs()));
+  popup->insertSeparator();
+  popup->insertItem(i18n("C&ut"),kWrite,SLOT(cut()),CTRL+Key_X);
+  popup->insertItem(i18n("&Copy"),kWrite,SLOT(copy()),CTRL+Key_C);
+  popup->insertItem(i18n("&Paste"),kWrite,SLOT(paste()),CTRL+Key_V);
+  kWrite->installRBPopup(popup);
+
+  KWBookPopup *bookPopup;
+  bookPopup = new KWBookPopup();
+//  bookPopup->insertItem(i18n("Set &Bookmark..."),kWrite,SLOT(setBookmark()),ALT+Key_B);
+  bookPopup->insertItem(i18n("&Add Bookmark"),kWrite,SLOT(addBookmark()));
+  bookPopup->insertItem(i18n("&Clear Bookmarks"),kWrite,SLOT(clearBookmarks()),ALT+Key_C);
+  kWrite->installBMPopup(bookPopup);
+
   menubar = menuBar();//new KMenuBar(this,"menubar");
   menubar->insertItem(i18n("&File"),file);
   menubar->insertItem(i18n("&Edit"),edit);
+  menubar->insertItem(i18n("&Bookmarks"),bookPopup);
   menubar->insertItem(i18n("&Options"),options);
   menubar->insertSeparator();
   menubar->insertItem(i18n("&Help"),help);
 
-//  setMenu(menubar);
 }
 
 
@@ -337,13 +366,16 @@ void TopLevel::setupStatusBar(){
 void TopLevel::newWindow() {
 
   TopLevel *t = new TopLevel();
-  t->show();
+  t->init();
+//  t->show();
 }
 
 void TopLevel::newView() {
 
-  TopLevel *t = new TopLevel(kWriteDoc);
-  t->show();
+  TopLevel *t = new TopLevel(kWrite->doc());
+  t->kWrite->copySettings(kWrite);
+  t->init();
+//  t->show();
 }
 
 
@@ -484,7 +516,8 @@ void TopLevel::dropAction(KDNDDropZone *dropZone) {
 //       QString n = s;
       t->loadURL(s);
 //      setGeneralStatusField(klocale->translate("Load Command Done"));
-      t->show ();
+      t->init();
+//      t->show();
     }
   }
 }
@@ -535,7 +568,8 @@ void TopLevel::restore(KConfig *config, int n) {
     if (url && *url) loadURL(url);
   }
   readPropertiesInternal(config,n);
-  show();
+  init();
+//  show();
 }
 
 void restore() {
@@ -609,7 +643,8 @@ int main(int argc, char** argv) {
   } else {
     TopLevel *t = new TopLevel();
     if (argc > 1) t->loadURL(argv[1]);
-    t->show();
+    t->init();
+//    t->show();
   }
   return a.exec();
 }

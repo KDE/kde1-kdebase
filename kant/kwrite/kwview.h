@@ -3,11 +3,12 @@
 
 #include <qscrbar.h>
 #include <qiodev.h>
+#include <qpopmenu.h>
 
 #include <kfm.h>
 #include <kconfig.h>
 
-#include "search.h"
+#include "kwdialog.h"
 
 class KWriteDoc;
 class Highlight;
@@ -21,6 +22,12 @@ const sfSelected        = 16;
 const sfPrompt          = 32;
 const sfReplace         = 64;
 const sfAgain           = 128;
+const sfWrapped         = 256;
+const sfFinished        = 512;
+const srYes             = QDialog::Accepted;
+const srNo              = 10;
+const srAll             = 11;
+const srCancel          = QDialog::Rejected;
 
 //config flags
 const cfAutoIndent      = 1;
@@ -41,9 +48,11 @@ const cfOvr             = 4096;
 const cfMark            = 8192;
 
 //update flags
-const ufNoScroll        = 1;
+const ufDocGeometry     = 1;
+//const ufNoScroll        = 1;
 const ufUpdateOnScroll  = 2;
-const ufCenter          = 4;
+//const ufCenter          = 4;
+const ufPos             = 4;
 
 void resizeBuffer(void *user, int w, int h);
 
@@ -54,9 +63,14 @@ struct PointStruc {
 
 struct VConfig {
   PointStruc cursor;
-//  PointStruc startCursor;
   int flags;
   int wrapAt;
+};
+
+struct SConfig {
+  PointStruc cursor;
+  PointStruc startCursor;
+  int flags;
 };
 
 class KWrite;
@@ -91,7 +105,7 @@ class KWriteView : public QWidget {
     void insLine(int line);
     void delLine(int line);
     void updateCursor(PointStruc &newCursor);
-    void updateView(int flags);
+    void updateView(int flags, int newXPos = 0, int newYPos = 0);
 //  void scroll2(int, int);
     void tagLines(int start, int end);
     void tagAll();
@@ -130,7 +144,7 @@ class KWriteView : public QWidget {
     int cursorTimer;
     int cXPos;
     int cOldXPos;
-    bool cursorMoved;
+    bool exposeCursor;//cursorMoved;
 
     int startLine;
     int endLine;
@@ -138,6 +152,24 @@ class KWriteView : public QWidget {
     int updateLines[2];
 
     QPixmap *drawBuffer;
+};
+
+class KWBookmark {
+  public:
+    KWBookmark();
+    int xPos;
+    int yPos;
+    PointStruc cursor;
+    QString Name;
+};
+
+class KWBookPopup : public QPopupMenu {
+    Q_OBJECT
+  public:
+    KWBookPopup();
+    virtual void show();
+  signals:
+    void exposed();
 };
 
 class KWrite : public QWidget {
@@ -159,6 +191,7 @@ class KWrite : public QWidget {
     bool isLastView();
     KWriteDoc *doc();
     int undoState();
+    void copySettings(KWrite *);
   public slots:
     void optDlg();
     void toggleVertical();
@@ -169,6 +202,10 @@ class KWrite : public QWidget {
     void statusMsg(const char *);
     void newCaption();
     void newUndo();
+  protected:
+    int configFlags;
+    int wrapAt;
+
 //url aware file functions
   public:
     enum action{GET, PUT}; //tells us what kind of job kwrite is waiting for
@@ -207,22 +244,53 @@ class KWrite : public QWidget {
     void selectAll();
     void deselectAll();
     void invertSelection();
-
     void undo();
     void redo();
+
 //search functions
   public slots:
     void search();
     void replace();
     void searchAgain();
     void gotoLine();
-
   protected:
-    void searchAgain(int flags);
-    void replaceAgain(int flags);
+    void initSearch(SConfig &, int flags);
+    void continueSearch(SConfig &);
+    void searchAgain(SConfig &);
+    void replaceAgain();
+    void doReplaceAction(int result, bool found = false);
+    void exposeFound(PointStruc &cursor, int slen, int flags, bool replace);
+    void deleteReplacePrompt();
+    bool askReplaceEnd();
+  protected slots:
+    void replaceSlot();
+  protected:
     QString searchFor;
     QString replaceWith;
     int searchFlags;
+    int replaces;
+    SConfig s;
+    QDialog *replacePrompt;
+//right mouse button popup menu
+  public:
+    void installRBPopup(QPopupMenu *);
+  protected:
+    QPopupMenu *popup;
+
+//bookmarks
+  public:
+    void installBMPopup(KWBookPopup *);
+    void setBookmark(int n);
+  public slots:
+    void setBookmark();
+    void addBookmark();
+    void clearBookmarks();
+    void gotoBookmark(int n);
+  protected slots:
+    void updateBMPopup();
+  protected:
+    QList<KWBookmark> bookmarks;
+//    KWBookPopup *bookPopup;
 
 //config file / session management functions
   public:
@@ -234,14 +302,12 @@ class KWrite : public QWidget {
 
 //internal
   protected:
+    virtual void keyPressEvent(QKeyEvent *e);
     virtual void paintEvent(QPaintEvent *);
     virtual void resizeEvent(QResizeEvent *);
 
     KWriteView *kWriteView;
     KWriteDoc *kWriteDoc;
-
-    int configFlags;
-    int wrapAt;
 };
 
 
