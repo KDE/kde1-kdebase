@@ -29,7 +29,7 @@
 
 class KDMAppearanceWidget : public KConfigWidget
 {
-	Q_OBJECT;
+	Q_OBJECT
 
 public:
 	KDMAppearanceWidget(QWidget *parent, const char *name, bool init = false);

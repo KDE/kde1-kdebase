@@ -27,7 +27,8 @@
 
 
 class KDMSessionsWidget : public KConfigWidget
-{	Q_OBJECT;
+{
+	Q_OBJECT
 
 public:
 	KDMSessionsWidget(QWidget *parent, const char *name, bool init = false);

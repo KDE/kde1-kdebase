@@ -36,7 +36,8 @@
 #include <pwd.h>
 
 class KDMUsersWidget : public KConfigWidget
-{	Q_OBJECT;
+{
+	Q_OBJECT
 
 public:
 	KDMUsersWidget(QWidget *parent, const char *name, bool init = false);

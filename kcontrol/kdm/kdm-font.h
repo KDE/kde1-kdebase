@@ -25,7 +25,7 @@
 
 class KDMFontWidget : public KConfigWidget
 {
-	Q_OBJECT;
+	Q_OBJECT
 
 public:
 	KDMFontWidget(QWidget *parent, const char *name, bool init = false);

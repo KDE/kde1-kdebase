@@ -39,7 +39,7 @@ public:
 
 class KDMBackgroundWidget : public KConfigWidget
 {
-	Q_OBJECT;
+	Q_OBJECT
 
 public:
 	KDMBackgroundWidget(QWidget *parent, const char *name, bool init = false);
