@@ -1,3 +1,8 @@
+1998-11-20  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
+
+	* advanced.[cpp,h]: fixed bugs. Mostly a disgusting one: 
+		no lists saving for the special options (Decor, Focus a.o.)
+
 1998-11-09  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
 
 	* advanced.[cpp,h] : new tab for some of the last of the

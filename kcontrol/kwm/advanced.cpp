@@ -237,6 +237,10 @@ void KAdvancedConfig::saveSettings() {
   config->writeEntry(B3GRAB,getB3Grab()?"on":"off");
   config->writeEntry(AT_MODE,(getATMode() == ATM_KDE)?"KDE":"CDE");
 
+  //CT save lists
+  filterSelected(opCombo->currentItem());
+  //CT
+
   config->setGroup( "Decoration" );
 
   config->writeEntry(TDECORTTL,lists[L_TDECTTL]);
@@ -252,7 +256,7 @@ void KAdvancedConfig::saveSettings() {
   config->setGroup( "Sticky" );
 
   config->writeEntry(STICKYTTL,lists[L_STICTTL]);
-  config->writeEntry(NFOCUSCLS,lists[L_STICCLS]);
+  config->writeEntry(STICKYCLS,lists[L_STICCLS]);
 
   config->setGroup( "Session" );
 
@@ -271,6 +275,8 @@ myListBrowser::~myListBrowser() {
 
 myListBrowser::myListBrowser(const char *title, QWidget *parent, const char *name)
  : QWidget(parent,name) {
+
+  victimList = new QStrList; //CT this is the pointer to the edited list
 
   QBoxLayout *genLay = new QVBoxLayout(this,5);
 
@@ -348,11 +354,17 @@ void myListBrowser::setEnabled(bool a) {
   }
 }
 
-void myListBrowser::feedList(const QStrList *thisList) {
+void myListBrowser::feedList(QStrList *thisList) {
 
+  victimList->clear();
+  for(unsigned int i = 0; i < bList->count(); i++) 
+    victimList->insert(i, bList->text(i));
+    
   bList->clear();
 
   bList->insertStrList(thisList);
+
+  victimList = thisList;
 }
 
 void myListBrowser::bEditChanged(const char *a) {
@@ -365,6 +377,7 @@ void myListBrowser::addIt() {
   bAdd->setEnabled(FALSE);
   bDel->setEnabled(FALSE);
   bList->insertItem((const char *)(bEdit->text()));
+  bEdit->setText("");
   bList->clearSelection();
 }
 

@@ -82,7 +82,7 @@ class myListBrowser : public QWidget {
   myListBrowser(const char *, QWidget *, const char *);
   ~myListBrowser();
 
-  void feedList(const QStrList *);
+  void feedList(QStrList *);
 
   virtual void setEnabled(bool);
 
@@ -96,6 +96,8 @@ class myListBrowser : public QWidget {
   void itemHilited();
 
  private:
+
+  QStrList *victimList;
 
   QGroupBox *browserBox;
   QPushButton *bAdd, *bDel;
