@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1998-05-30 17:26+0200\n"
+"POT-Creation-Date: 1998-06-11 18:35+0200\n"
 "PO-Revision-Date: 1998-03-25 21:38+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -20,8 +20,7 @@ msgstr "Kolor:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 science.cpp:646 slip.cpp:378 space.cpp:587
-#: swarm.cpp:341
+#: polygon.cpp:122 rock.cpp:561 slip.cpp:378 space.cpp:587 swarm.cpp:341
 msgid "Speed:"
 msgstr "Prêdko¶æ:"
 
@@ -584,58 +583,6 @@ msgstr "Wprowad¼ has³o"
 msgid "Failed"
 msgstr "B³êdne"
 
-#: science.cpp:74
-msgid "Science"
-msgstr ""
-
-#: science.cpp:562
-#, fuzzy
-msgid "Setup Science"
-msgstr "Ustawienia wygaszacza Linie"
-
-#: science.cpp:580
-#, fuzzy
-msgid "Mode:"
-msgstr "¦rodkowe:"
-
-#: science.cpp:585
-msgid "Whirl"
-msgstr ""
-
-#: science.cpp:586
-#, fuzzy
-msgid "Sphere"
-msgstr "Prêdko¶æ:"
-
-#: science.cpp:598
-msgid "Inverse"
-msgstr ""
-
-#: science.cpp:607
-msgid "Gravity"
-msgstr ""
-
-#: science.cpp:632
-msgid "Intensity:"
-msgstr ""
-
-#: science.cpp:660
-msgid "Motion:"
-msgstr ""
-
-#: science.cpp:845
-#, fuzzy
-msgid "About Science"
-msgstr "Informacje"
-
-#: science.cpp:846
-msgid ""
-"Science Version 0.24.2 beta\n"
-"\n"
-"written by Rene Beutler 1998\n"
-"rbeutler@g26.ethz.ch"
-msgstr ""
-
 #: slip.cpp:293
 msgid "Slip"
 msgstr "Po¶lizg"
@@ -721,3 +668,19 @@ msgstr ""
 "Copyright (c) 1991 Patrick J. Naughton\n"
 "\n"
 "Wersja dla kscreensave od Emanuel Pirker."
+
+#, fuzzy
+#~ msgid "Setup Science"
+#~ msgstr "Ustawienia wygaszacza Linie"
+
+#, fuzzy
+#~ msgid "Mode:"
+#~ msgstr "¦rodkowe:"
+
+#, fuzzy
+#~ msgid "Sphere"
+#~ msgstr "Prêdko¶æ:"
+
+#, fuzzy
+#~ msgid "About Science"
+#~ msgstr "Informacje"

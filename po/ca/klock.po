@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-05-30 17:26+0200\n"
+"POT-Creation-Date: 1998-06-11 18:35+0200\n"
 "PO-Revision-Date: 1998-06-08 23:45+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -27,8 +27,7 @@ msgstr "Color:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 science.cpp:646 slip.cpp:378 space.cpp:587
-#: swarm.cpp:341
+#: polygon.cpp:122 rock.cpp:561 slip.cpp:378 space.cpp:587 swarm.cpp:341
 msgid "Speed:"
 msgstr "Velocitat:"
 
@@ -590,61 +589,6 @@ msgstr "Paraula de pas"
 msgid "Failed"
 msgstr "Fallat"
 
-#: science.cpp:74
-msgid "Science"
-msgstr "Ciència"
-
-#: science.cpp:562
-msgid "Setup Science"
-msgstr "Valors Ciència"
-
-#: science.cpp:580
-#, fuzzy
-msgid "Mode:"
-msgstr "Meitat:"
-
-#: science.cpp:585
-msgid "Whirl"
-msgstr ""
-
-#: science.cpp:586
-#, fuzzy
-msgid "Sphere"
-msgstr "Velocitat:"
-
-#: science.cpp:598
-msgid "Inverse"
-msgstr ""
-
-#: science.cpp:607
-msgid "Gravity"
-msgstr ""
-
-#: science.cpp:632
-msgid "Intensity:"
-msgstr "Intensitat:"
-
-#: science.cpp:660
-msgid "Motion:"
-msgstr ""
-
-#: science.cpp:845
-msgid "About Science"
-msgstr "Quant a Ciència"
-
-#: science.cpp:846
-#, fuzzy
-msgid ""
-"Science Version 0.24.2 beta\n"
-"\n"
-"written by Rene Beutler 1998\n"
-"rbeutler@g26.ethz.ch"
-msgstr ""
-"Ciència Versió 0.2beta\n"
-"\n"
-"escrit per Rene Beutler 1998\n"
-"rbeutler@g26.ethz.ch"
-
 #: slip.cpp:293
 msgid "Slip"
 msgstr "Slip"
@@ -730,3 +674,35 @@ msgstr ""
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
 "Portat a kscreensave per Emanuel Pirker."
+
+#~ msgid "Science"
+#~ msgstr "Ciència"
+
+#~ msgid "Setup Science"
+#~ msgstr "Valors Ciència"
+
+#, fuzzy
+#~ msgid "Mode:"
+#~ msgstr "Meitat:"
+
+#, fuzzy
+#~ msgid "Sphere"
+#~ msgstr "Velocitat:"
+
+#~ msgid "Intensity:"
+#~ msgstr "Intensitat:"
+
+#~ msgid "About Science"
+#~ msgstr "Quant a Ciència"
+
+#, fuzzy
+#~ msgid ""
+#~ "Science Version 0.24.2 beta\n"
+#~ "\n"
+#~ "written by Rene Beutler 1998\n"
+#~ "rbeutler@g26.ethz.ch"
+#~ msgstr ""
+#~ "Ciència Versió 0.2beta\n"
+#~ "\n"
+#~ "escrit per Rene Beutler 1998\n"
+#~ "rbeutler@g26.ethz.ch"

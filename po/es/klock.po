@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-05-30 17:26+0200\n"
+"POT-Creation-Date: 1998-06-11 18:35+0200\n"
 "PO-Revision-Date: 1998-06-03 18:51+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
@@ -19,8 +19,7 @@ msgstr "Color:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 science.cpp:646 slip.cpp:378 space.cpp:587
-#: swarm.cpp:341
+#: polygon.cpp:122 rock.cpp:561 slip.cpp:378 space.cpp:587 swarm.cpp:341
 msgid "Speed:"
 msgstr "Velocidad:"
 
@@ -581,58 +580,6 @@ msgstr "Contraseña"
 msgid "Failed"
 msgstr "Error"
 
-#: science.cpp:74
-msgid "Science"
-msgstr "Ciencia"
-
-#: science.cpp:562
-msgid "Setup Science"
-msgstr "Configurar Ciencia"
-
-#: science.cpp:580
-msgid "Mode:"
-msgstr "Modo:"
-
-#: science.cpp:585
-msgid "Whirl"
-msgstr "Remolino"
-
-#: science.cpp:586
-msgid "Sphere"
-msgstr "Esfera"
-
-#: science.cpp:598
-msgid "Inverse"
-msgstr "Inverso"
-
-#: science.cpp:607
-msgid "Gravity"
-msgstr "Gravedad"
-
-#: science.cpp:632
-msgid "Intensity:"
-msgstr "Intensidad:"
-
-#: science.cpp:660
-msgid "Motion:"
-msgstr "Movimiento:"
-
-#: science.cpp:845
-msgid "About Science"
-msgstr "Acerca de Ciencia"
-
-#: science.cpp:846
-msgid ""
-"Science Version 0.24.2 beta\n"
-"\n"
-"written by Rene Beutler 1998\n"
-"rbeutler@g26.ethz.ch"
-msgstr ""
-"Science Version 0.24.2 beta\n"
-"\n"
-"escrito por Rene Beutler 1998\n"
-"rbeutler@g26.ethz.ch"
-
 #: slip.cpp:293
 msgid "Slip"
 msgstr "Slip"
@@ -718,3 +665,44 @@ msgstr ""
 "Copyright (c) 1991 por Patrick J. Naughton\n"
 "\n"
 "Adaptado a kscreensave por Emanuel Pirker."
+
+#~ msgid "Science"
+#~ msgstr "Ciencia"
+
+#~ msgid "Setup Science"
+#~ msgstr "Configurar Ciencia"
+
+#~ msgid "Mode:"
+#~ msgstr "Modo:"
+
+#~ msgid "Whirl"
+#~ msgstr "Remolino"
+
+#~ msgid "Sphere"
+#~ msgstr "Esfera"
+
+#~ msgid "Inverse"
+#~ msgstr "Inverso"
+
+#~ msgid "Gravity"
+#~ msgstr "Gravedad"
+
+#~ msgid "Intensity:"
+#~ msgstr "Intensidad:"
+
+#~ msgid "Motion:"
+#~ msgstr "Movimiento:"
+
+#~ msgid "About Science"
+#~ msgstr "Acerca de Ciencia"
+
+#~ msgid ""
+#~ "Science Version 0.24.2 beta\n"
+#~ "\n"
+#~ "written by Rene Beutler 1998\n"
+#~ "rbeutler@g26.ethz.ch"
+#~ msgstr ""
+#~ "Science Version 0.24.2 beta\n"
+#~ "\n"
+#~ "escrito por Rene Beutler 1998\n"
+#~ "rbeutler@g26.ethz.ch"

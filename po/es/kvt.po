@@ -1,123 +1,127 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-05-30 17:26+0200\n"
+"POT-Creation-Date: 1998-06-11 18:35+0200\n"
 "PO-Revision-Date: 1998-04-21 17:48+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
-#: main.C:250
+#: main.C:293
 msgid "choose type of color-mode"
 msgstr "Elija el modo de color"
 
-#: main.C:256
+#: main.C:299
 msgid "Add characters to word class"
 msgstr "Agregue caracteres a la clase palabra"
 
-#: main.C:262
+#: main.C:305
 msgid "The backspace key will send a"
 msgstr "La tecla retroceder produce un"
 
-#: main.C:416
+#: main.C:459
 msgid "&New Terminal"
 msgstr "&Nuevo terminal"
 
-#: main.C:423 main.C:771
+#: main.C:466 main.C:838
 msgid "&Hide"
 msgstr "&Ocultar"
 
-#: main.C:424
+#: main.C:467
 msgid "&Left"
 msgstr "&Izquierda"
 
-#: main.C:425
+#: main.C:468
 msgid "&Right"
 msgstr "&Derecha"
 
-#: main.C:430
+#: main.C:473
 msgid "&Normal"
 msgstr "&Normal"
 
-#: main.C:431
+#: main.C:474
 msgid "&Tiny"
 msgstr "M&uy pequeña"
 
-#: main.C:432
+#: main.C:475
 msgid "&Small"
 msgstr "&Pequeña"
 
-#: main.C:433
+#: main.C:476
 msgid "&Medium"
 msgstr "&Mediana"
 
-#: main.C:434
+#: main.C:477
 msgid "&Large"
 msgstr "&Grande"
 
-#: main.C:435
+#: main.C:478
 msgid "&Huge"
 msgstr "&Enorme"
 
-#: main.C:447
+#: main.C:490
 msgid "&black/white"
 msgstr "&Negro sobre blanco"
 
-#: main.C:448
+#: main.C:491
 msgid "&white/black"
 msgstr "&Blanco sobre negro"
 
-#: main.C:449
+#: main.C:492
 msgid "&green/black"
 msgstr "&Verde sobre negro"
 
-#: main.C:450
+#: main.C:493
 msgid "black/light&yellow"
 msgstr "Negro sobre &amarillo claro"
 
-#: main.C:451
+#: main.C:494
 msgid "Linu&x Console"
 msgstr "&Consola Linux"
 
-#: main.C:460
+#: main.C:503
 msgid "&Custom Colors"
 msgstr "Colores &propios"
 
-#: main.C:467 main.C:717
+#: main.C:510 main.C:774
 msgid "Hide &Menubar"
 msgstr "&Ocultar barra de menú"
 
-#: main.C:469 main.C:639 main.C:709
+#: main.C:512 main.C:696 main.C:766
 msgid "Show &Menubar"
 msgstr "&Mostrar barra de menú"
 
-#: main.C:470 main.C:727
+#: main.C:513 main.C:784
 msgid "Secure &keyboard"
 msgstr "&Asegurar teclado"
 
-#: main.C:472
+#: main.C:515
 msgid "Scroll&bar"
 msgstr "&Barra de scroll"
 
-#: main.C:473
+#: main.C:516
 msgid "&Font size"
 msgstr "Tamaño de &fuente"
 
-#: main.C:474
+#: main.C:517
 msgid "&Color"
 msgstr "&Color"
 
-#: main.C:475
+#: main.C:518
 msgid "&Size"
 msgstr "&Tamaño"
 
-#: main.C:476
+#: main.C:519
 msgid "Terminal..."
 msgstr "T&erminal..."
 
-#: main.C:478
+#: main.C:520
+msgid "Font..."
+msgstr ""
+
+#: main.C:522
 msgid "Save &Options"
 msgstr "&Guardar opciones"
 
-#: main.C:487
+#: main.C:531
 msgid ""
 "\n"
 "\n"
@@ -135,23 +139,23 @@ msgstr ""
 "Emulador de terminal para el K Desktop Environment\n"
 "basado en rxvt-2.08 por Robert Nation"
 
-#: main.C:648 main.C:764
+#: main.C:705 main.C:831
 msgid "&Show"
 msgstr "&Mostrar"
 
-#: main.C:723
+#: main.C:780
 msgid "Unsecure &keyboard"
 msgstr "&Remover seguridad del teclado"
 
-#: main.C:734
+#: main.C:791
 msgid "Terminal Options"
 msgstr "Opciones del terminal"
 
-#: main.C:876
+#: main.C:943
 msgid "Hint"
 msgstr "Pista"
 
-#: main.C:877
+#: main.C:944
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -159,7 +163,7 @@ msgstr ""
 "Las nuevas opciones de color tomarán efecto\n"
 "cuando el seguro del teclado sea removido."
 
-#: main.C:1156
+#: main.C:1237
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -172,59 +176,59 @@ msgstr ""
 "Emulador de terminal para el K Desktop Environment\n"
 "basado en rxvt-2.08 por Robert Nation\n"
 
-#: main.C:1160
+#: main.C:1241
 msgid "Permitted arguments are:\n"
 msgstr "Los parámetros permitidos son:\n"
 
-#: main.C:1161
+#: main.C:1242
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 "-e <comando> <arg> ...    ejecutar comando con parámetro - tiene que ser el "
 "último parámetro\n"
 
-#: main.C:1162
+#: main.C:1243
 msgid "-display <name>           specify the display (server)\n"
 msgstr "-display <name>           especificar la pantalla (servidor)\n"
 
-#: main.C:1163
+#: main.C:1244
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr "-vt_geometry <spec>       la geometría inicial del terminal\n"
 
-#: main.C:1164
+#: main.C:1245
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr "-print-pipe <name>        especifica pipa para impresora vt100\n"
 
-#: main.C:1165
+#: main.C:1246
 msgid "-vt_bg <colour>           background color\n"
 msgstr "-vt_bg <colour>           color del fondo\n"
 
-#: main.C:1166
+#: main.C:1247
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr "-vt_fg <colour>           color del texto\n"
 
-#: main.C:1167
+#: main.C:1248
 msgid "-vt_font <fontname>       normal font\n"
 msgstr "-vt_font <fontname>       fuente normal\n"
 
-#: main.C:1168
+#: main.C:1249
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr ""
 "-vt_size <size>           muy pequeña, pequeña, mediana, grande, enorme\n"
 
-#: main.C:1169
+#: main.C:1250
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr "-linux                    imita la consola linux\n"
 
-#: main.C:1170
+#: main.C:1251
 msgid "-no_menubar               hide the menubar\n"
 msgstr "-no_menubar               esconder la barra de menú\n"
 
-#: main.C:1171
+#: main.C:1252
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr "-no_scrollbar             esconder la barra de scroll\n"
 
-#: main.C:1172
+#: main.C:1253
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
@@ -232,20 +236,20 @@ msgstr ""
 "-T <text>                 texto en la barra de título de la ventana\n"
 "                          (Obsoleto. Mejor use -caption)\n"
 
-#: main.C:1174
+#: main.C:1255
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr "-tn <TERM>                tipo de terminal (xterm por defecto).\n"
 
-#: main.C:1175
+#: main.C:1256
 msgid "-C                        Capture system console message\n"
 msgstr ""
 "-C                        capturar mensajes de la consola del sistema\n"
 
-#: main.C:1176
+#: main.C:1257
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr "-n <text>                 nombre del ícono o ventana del ícono\n"
 
-#: main.C:1177
+#: main.C:1258
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
@@ -253,7 +257,7 @@ msgstr ""
 "-7                        usar modo de 7 bits\n"
 "-8                        usar modo de 8 bits\n"
 
-#: main.C:1179
+#: main.C:1260
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
@@ -262,17 +266,17 @@ msgstr ""
 "-ls                       iniciar kvt con shell de login\n"
 "-ls-                      iniciar kvt con shell sin login (por defecto)\n"
 
-#: main.C:1181
+#: main.C:1262
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr "-meta <arg>               tratar Meta como ESCAPE, 8THBIT o ignorar\n"
 
-#: main.C:1182
+#: main.C:1263
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr "-sl <número>              guardar número de líneas pasadas\n"
 
-#: main.C:1183
+#: main.C:1264
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
@@ -282,7 +286,7 @@ msgstr ""
 "-pageup <keysym>          usar tecla alt-keysym para moverse hacia atrás\n"
 "-pagedown <keysym>        usar tecla alt-keysym para moverse haca adelante\n"
 
-#: main.C:1187
+#: main.C:1268
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

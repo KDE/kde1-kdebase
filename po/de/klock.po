@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1998-05-30 17:26+0200\n"
+"POT-Creation-Date: 1998-06-11 18:35+0200\n"
 "PO-Revision-Date: 1998-05-09 00:03+0100\n"
 "Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -24,8 +24,7 @@ msgstr "Farbe:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 science.cpp:646 slip.cpp:378 space.cpp:587
-#: swarm.cpp:341
+#: polygon.cpp:122 rock.cpp:561 slip.cpp:378 space.cpp:587 swarm.cpp:341
 msgid "Speed:"
 msgstr "Geschwindigkeit:"
 
@@ -588,58 +587,6 @@ msgstr "Paßwort eingeben"
 msgid "Failed"
 msgstr "Gescheitert"
 
-#: science.cpp:74
-msgid "Science"
-msgstr "Wissenschaft"
-
-#: science.cpp:562
-msgid "Setup Science"
-msgstr "Wissenschaft einstellen"
-
-#: science.cpp:580
-msgid "Mode:"
-msgstr "Modus:"
-
-#: science.cpp:585
-msgid "Whirl"
-msgstr "Kreisel"
-
-#: science.cpp:586
-msgid "Sphere"
-msgstr "Kugel"
-
-#: science.cpp:598
-msgid "Inverse"
-msgstr "Invertiert"
-
-#: science.cpp:607
-msgid "Gravity"
-msgstr "Erdanziehung"
-
-#: science.cpp:632
-msgid "Intensity:"
-msgstr "Intensität:"
-
-#: science.cpp:660
-msgid "Motion:"
-msgstr "Bewegung:"
-
-#: science.cpp:845
-msgid "About Science"
-msgstr "Über Wissenschaft"
-
-#: science.cpp:846
-msgid ""
-"Science Version 0.24.2 beta\n"
-"\n"
-"written by Rene Beutler 1998\n"
-"rbeutler@g26.ethz.ch"
-msgstr ""
-"Wissenschaft - Version 0.24.2 beta\n"
-"\n"
-"geschrieben von Rene Beutler 1998\n"
-"rbeutler@g26.ethz.ch"
-
 #: slip.cpp:293
 msgid "Slip"
 msgstr "Fetzen"
@@ -725,3 +672,44 @@ msgstr ""
 "Copyright (c) 1991 Patrick J. Naughton\n"
 "\n"
 "Portiert für KDE von Emanuel Pirker."
+
+#~ msgid "Science"
+#~ msgstr "Wissenschaft"
+
+#~ msgid "Setup Science"
+#~ msgstr "Wissenschaft einstellen"
+
+#~ msgid "Mode:"
+#~ msgstr "Modus:"
+
+#~ msgid "Whirl"
+#~ msgstr "Kreisel"
+
+#~ msgid "Sphere"
+#~ msgstr "Kugel"
+
+#~ msgid "Inverse"
+#~ msgstr "Invertiert"
+
+#~ msgid "Gravity"
+#~ msgstr "Erdanziehung"
+
+#~ msgid "Intensity:"
+#~ msgstr "Intensität:"
+
+#~ msgid "Motion:"
+#~ msgstr "Bewegung:"
+
+#~ msgid "About Science"
+#~ msgstr "Über Wissenschaft"
+
+#~ msgid ""
+#~ "Science Version 0.24.2 beta\n"
+#~ "\n"
+#~ "written by Rene Beutler 1998\n"
+#~ "rbeutler@g26.ethz.ch"
+#~ msgstr ""
+#~ "Wissenschaft - Version 0.24.2 beta\n"
+#~ "\n"
+#~ "geschrieben von Rene Beutler 1998\n"
+#~ "rbeutler@g26.ethz.ch"

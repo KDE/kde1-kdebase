@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-30 17:26+0200\n"
+"POT-Creation-Date: 1998-06-11 18:35+0200\n"
 "PO-Revision-Date: 98-03-23 18:21+0100\n"
 "Last-Translator: Svein Olav Aasen <svein.aasen@caa.no / soaasen@online.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -27,8 +27,7 @@ msgstr "Farge:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 science.cpp:646 slip.cpp:378 space.cpp:587
-#: swarm.cpp:341
+#: polygon.cpp:122 rock.cpp:561 slip.cpp:378 space.cpp:587 swarm.cpp:341
 msgid "Speed:"
 msgstr "Hastighet"
 
@@ -591,58 +590,6 @@ msgstr "Skriv inn passord"
 msgid "Failed"
 msgstr "Slo feil"
 
-#: science.cpp:74
-msgid "Science"
-msgstr "Vitenskap"
-
-#: science.cpp:562
-msgid "Setup Science"
-msgstr "Vitenskap-oppsett"
-
-#: science.cpp:580
-msgid "Mode:"
-msgstr "Modus:"
-
-#: science.cpp:585
-msgid "Whirl"
-msgstr "Virvel"
-
-#: science.cpp:586
-msgid "Sphere"
-msgstr "Kule"
-
-#: science.cpp:598
-msgid "Inverse"
-msgstr "Omvendt"
-
-#: science.cpp:607
-msgid "Gravity"
-msgstr "Gravitasjon"
-
-#: science.cpp:632
-msgid "Intensity:"
-msgstr "Intensitet:"
-
-#: science.cpp:660
-msgid "Motion:"
-msgstr "Bevegelse:"
-
-#: science.cpp:845
-msgid "About Science"
-msgstr "Om Vitenskap"
-
-#: science.cpp:846
-msgid ""
-"Science Version 0.24.2 beta\n"
-"\n"
-"written by Rene Beutler 1998\n"
-"rbeutler@g26.ethz.ch"
-msgstr ""
-"Vitenskap versjon 0.24.2 beta\n"
-"\n"
-"skrevet av Rene Beutler 1998\n"
-"rbeutler@g26.ethz.ch"
-
 #: slip.cpp:293
 msgid "Slip"
 msgstr "Slip"
@@ -728,3 +675,44 @@ msgstr ""
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
 "Portet til kscreensave av Emanuel Pirker."
+
+#~ msgid "Science"
+#~ msgstr "Vitenskap"
+
+#~ msgid "Setup Science"
+#~ msgstr "Vitenskap-oppsett"
+
+#~ msgid "Mode:"
+#~ msgstr "Modus:"
+
+#~ msgid "Whirl"
+#~ msgstr "Virvel"
+
+#~ msgid "Sphere"
+#~ msgstr "Kule"
+
+#~ msgid "Inverse"
+#~ msgstr "Omvendt"
+
+#~ msgid "Gravity"
+#~ msgstr "Gravitasjon"
+
+#~ msgid "Intensity:"
+#~ msgstr "Intensitet:"
+
+#~ msgid "Motion:"
+#~ msgstr "Bevegelse:"
+
+#~ msgid "About Science"
+#~ msgstr "Om Vitenskap"
+
+#~ msgid ""
+#~ "Science Version 0.24.2 beta\n"
+#~ "\n"
+#~ "written by Rene Beutler 1998\n"
+#~ "rbeutler@g26.ethz.ch"
+#~ msgstr ""
+#~ "Vitenskap versjon 0.24.2 beta\n"
+#~ "\n"
+#~ "skrevet av Rene Beutler 1998\n"
+#~ "rbeutler@g26.ethz.ch"

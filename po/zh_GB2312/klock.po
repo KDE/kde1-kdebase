@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-05-30 17:26+0200\n"
+"POT-Creation-Date: 1998-06-11 18:35+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -20,8 +20,7 @@ msgstr "颜色:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 science.cpp:646 slip.cpp:378 space.cpp:587
-#: swarm.cpp:341
+#: polygon.cpp:122 rock.cpp:561 slip.cpp:378 space.cpp:587 swarm.cpp:341
 msgid "Speed:"
 msgstr "速度"
 
@@ -589,63 +588,6 @@ msgstr "输入密码"
 msgid "Failed"
 msgstr "失败"
 
-#: science.cpp:74
-msgid "Science"
-msgstr "Science"
-
-#
-#: science.cpp:562
-msgid "Setup Science"
-msgstr "设置 Science"
-
-#: science.cpp:580
-#, fuzzy
-msgid "Mode:"
-msgstr "中间:"
-
-#: science.cpp:585
-msgid "Whirl"
-msgstr ""
-
-#: science.cpp:586
-#, fuzzy
-msgid "Sphere"
-msgstr "速度"
-
-#: science.cpp:598
-msgid "Inverse"
-msgstr ""
-
-#: science.cpp:607
-msgid "Gravity"
-msgstr ""
-
-#: science.cpp:632
-msgid "Intensity:"
-msgstr "张力:"
-
-#: science.cpp:660
-msgid "Motion:"
-msgstr ""
-
-#
-#: science.cpp:845
-msgid "About Science"
-msgstr "关于 Science"
-
-#: science.cpp:846
-#, fuzzy
-msgid ""
-"Science Version 0.24.2 beta\n"
-"\n"
-"written by Rene Beutler 1998\n"
-"rbeutler@g26.ethz.ch"
-msgstr ""
-"Science 版本 0.2beta\n"
-"\n"
-"由 Rene Beutler 编写, 1998\n"
-"rbeutler@g26.ethz.ch"
-
 #: slip.cpp:293
 msgid "Slip"
 msgstr "滑动(Slip)"
@@ -733,3 +675,37 @@ msgstr ""
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
 "由 Emanuel Pirker 移植到 kscreensave."
+
+#~ msgid "Science"
+#~ msgstr "Science"
+
+#
+#~ msgid "Setup Science"
+#~ msgstr "设置 Science"
+
+#, fuzzy
+#~ msgid "Mode:"
+#~ msgstr "中间:"
+
+#, fuzzy
+#~ msgid "Sphere"
+#~ msgstr "速度"
+
+#~ msgid "Intensity:"
+#~ msgstr "张力:"
+
+#
+#~ msgid "About Science"
+#~ msgstr "关于 Science"
+
+#, fuzzy
+#~ msgid ""
+#~ "Science Version 0.24.2 beta\n"
+#~ "\n"
+#~ "written by Rene Beutler 1998\n"
+#~ "rbeutler@g26.ethz.ch"
+#~ msgstr ""
+#~ "Science 版本 0.2beta\n"
+#~ "\n"
+#~ "由 Rene Beutler 编写, 1998\n"
+#~ "rbeutler@g26.ethz.ch"
