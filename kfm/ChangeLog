@@ -1,3 +1,7 @@
+1998-12-03  David Faure  <faure@kde.org>
+
+	* kfmgui.cpp : Added Go menu, with up/back/forward/home and the last 10 history URLs.
+
 1998-12-01  Waldo Bastian <bastian@kde.org>
     
         * Added HTTP-cookies. They don't get saved and they are always on 

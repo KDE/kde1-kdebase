@@ -365,19 +365,8 @@ void KfmGui::initMenu()
 
     mgo = new QPopupMenu;
     CHECK_PTR( mgo );
-    // The go menu, with items in the same order as the toolbar. Is this a good 
-    // idea ? DF.
-    mgo->insertItem( klocale->translate( "&Up" ),
-			this, SLOT( slotUp() ) );
-    mgo->insertItem( klocale->translate( "&Back" ),
-			this, SLOT( slotBack() ) );
-    mgo->insertItem( klocale->translate( "&Forward" ),
-			this, SLOT( slotForward() ) );
-    mgo->insertItem( klocale->translate( "&Home" ),
-			this, SLOT( slotHome() ) );
-    mgo->insertSeparator();
-    // ... to be continued with history menu items, calling slotGoHistory
-
+    slotUpdateHistory(false,false);
+    
     mcache = new QPopupMenu;
     CHECK_PTR( mcache );
     mcache->setCheckable(true);
@@ -1090,6 +1079,28 @@ void KfmGui::slotUpdateHistory( bool _back, bool _forward )
 {
     enableToolbarButton( 1, _back );
     enableToolbarButton( 2, _forward );
+    mgo->clear();
+    mgo->disconnect( this );
+    // The go menu, with items in the same order as the toolbar. Is this a good idea ? DF.
+    mgo->insertItem( klocale->translate( "&Up" ),
+			this, SLOT( slotUp() ) );
+    mgo->insertItem( klocale->translate( "&Back" ),
+			this, SLOT( slotBack() ) );
+    mgo->insertItem( klocale->translate( "&Forward" ),
+			this, SLOT( slotForward() ) );
+    mgo->insertItem( klocale->translate( "&Home" ),
+			this, SLOT( slotHome() ) );
+    mgo->insertSeparator();
+
+    connect( mgo, SIGNAL( activated( int ) ),
+	     SLOT( slotGoHistory( int ) ) );
+
+    QStrList * hlist = Kfm::history();
+    char * s;
+    int id;
+    for (id = 0, s = hlist->last(); (id<10) && (s != 0L); id++, s = hlist->prev()) {
+        mgo->insertItem ( s, id );
+    }
 }
 
 void KfmGui::slotHome()
@@ -1701,7 +1712,9 @@ void KfmGui::slotForward( )
 
 void KfmGui::slotGoHistory( int id )
 {  
-    // TODO
+    printf("id = %d\n",id);
+    QStrList * hlist = Kfm::history();
+    view->openURL(hlist->at(id));
 }
 
 //-------------------------------------------------------------------------
