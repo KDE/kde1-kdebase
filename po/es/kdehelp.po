@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-10-10 10:32+0200\n"
+"PO-Revision-Date: 1998-10-23 17:16+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
@@ -35,9 +35,8 @@ msgid "Continue search from the top of the page?"
 msgstr "Continuar búsqueda desde el principio de la página?"
 
 #: helpwin.cpp:1309
-#, fuzzy
 msgid "Forward"
-msgstr "A&delante"
+msgstr "Adelante"
 
 #: helpwin.cpp:1330
 msgid "Open this Link"
@@ -75,15 +74,15 @@ msgstr "Advertencia: "
 
 #: options.cpp:40
 msgid "Small"
-msgstr ""
+msgstr "Pequeño"
 
 #: options.cpp:44
 msgid "Medium"
-msgstr ""
+msgstr "Mediano"
 
 #: options.cpp:48
 msgid "Large"
-msgstr ""
+msgstr "Grande"
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -161,7 +160,7 @@ msgstr "Administración del sistema"
 
 #: man.cpp:478
 msgid "New"
-msgstr ""
+msgstr "Nuevo"
 
 #: man.cpp:592
 msgid "Reading Dir: "
@@ -229,13 +228,12 @@ msgid "&Up"
 msgstr "A&rriba"
 
 #: mainwidget.cpp:160
-#, fuzzy
 msgid "&Previous"
-msgstr "Nodo previo"
+msgstr "Anterior"
 
 #: mainwidget.cpp:161
 msgid "&Next"
-msgstr ""
+msgstr "Siguiente"
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -356,6 +354,3 @@ msgstr "Distinguir mayúsculas"
 #: finddlg.cpp:66
 msgid "&Find"
 msgstr "&Buscar"
-
-#~ msgid "&Contents"
-#~ msgstr "&Contenido"

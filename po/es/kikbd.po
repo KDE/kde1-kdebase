@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-10-01 12:22+0200\n"
-"PO-Revision-Date: 1998-10-10 20:58+0200\n"
+"PO-Revision-Date: 1998-10-23 17:33+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
@@ -167,12 +167,16 @@ msgid ""
 "Configuration file you have has older format when expected.\n"
 "Some settings may be incorrect."
 msgstr ""
+"El archivo de configuración tiene un formato anticuado.\n"
+"La configuración puede ser incorrecta."
 
 #: kikbdconf.cpp:196
 msgid ""
 "Configuration file you have has newer format when expected.\n"
 "Some settings may be incorrect."
 msgstr ""
+"El archivo de configuración tiene un formato mas reciente al previsto.\n"
+"La configuración puede ser incorrecta."
 
 #: kikbdconf.cpp:298
 msgid "unknown"
@@ -180,7 +184,7 @@ msgstr "desconocido"
 
 #: kikbdconf.cpp:302
 msgid "default"
-msgstr ""
+msgstr "por defecto"
 
 #: kikbdconf.cpp:328
 msgid "Author:  Not specified"
@@ -196,7 +200,7 @@ msgstr "Descripción: "
 
 #: kikbdconf.cpp:339
 msgid "Source:  "
-msgstr ""
+msgstr "Fuente:  "
 
 #: kikbdconf.cpp:340
 msgid "no file"
@@ -268,7 +272,7 @@ msgstr "Arriba"
 
 #: widgets.cpp:127
 msgid "Up selected keyboard map"
-msgstr ""
+msgstr "Arriba un mapa seleccionado"
 
 #: widgets.cpp:131
 msgid "D&own"
@@ -276,7 +280,7 @@ msgstr "Abajo"
 
 #: widgets.cpp:131
 msgid "Down selected keyboard map"
-msgstr ""
+msgstr "Abajo un mapa seleccionado"
 
 #: widgets.cpp:135
 msgid "&Info"
@@ -284,16 +288,17 @@ msgstr "Información"
 
 #: widgets.cpp:136
 msgid "Display information for selected keyboard map"
-msgstr ""
+msgstr "Mostrar información del mapa seleccionado"
 
 #: widgets.cpp:145
 msgid "Use \"&hotlist\""
-msgstr ""
+msgstr "Usar \"&hotlist\""
 
 #: widgets.cpp:146
 msgid ""
 "Use only default and last active keyboard maps to switching from keyboard"
 msgstr ""
+"Usar solo teclado por defecto y últimos mapas activos para cabiar"
 
 #: widgets.cpp:214
 msgid "Adding Keyboard"
@@ -329,7 +334,7 @@ msgstr "Tecla(s) para cambiar entre mapas de teclado"
 
 #: widgets.cpp:400
 msgid "Key to activate Alternate symbols in current keyboard map"
-msgstr ""
+msgstr "Teclas para activar símbolos alternativos en el mapa activo"
 
 #: widgets.cpp:413
 msgid "&Beep"
@@ -337,7 +342,7 @@ msgstr "&Beep"
 
 #: widgets.cpp:414
 msgid "Beep when ever keyboard mapping changed"
-msgstr ""
+msgstr "Emitit sonido siempre que cambie el mapa de teclado"
 
 #: widgets.cpp:417
 msgid "Ad&vanced"
@@ -357,15 +362,15 @@ msgstr "&Emular BloqMayús"
 
 #: widgets.cpp:451
 msgid "Emulate XServer CapsLock. Needed for some languagesto be correct"
-msgstr ""
+msgstr "Emular BloqMayús del Servidos X. Necesario para ciertos idiomas"
 
 #: widgets.cpp:457
 msgid "&World Menu"
-msgstr "Menú Universal"
+msgstr "Menú global"
 
 #: widgets.cpp:458
 msgid "Show menu in any window by holding Switch keys"
-msgstr ""
+msgstr "Mostrar menú en cualquier ventana al presionar teclas de cambio"
 
 #: widgets.cpp:465
 msgid "&Save Classes"
@@ -373,7 +378,7 @@ msgstr "&Guardar Clases"
 
 #: widgets.cpp:466
 msgid "Save relations between window classes and keyboard maps on exit"
-msgstr ""
+msgstr "Guardar relaciones entre ventanas y mapas de teclado al salir"
 
 #: widgets.cpp:470
 msgid "Input"
@@ -381,15 +386,15 @@ msgstr "Entrada"
 
 #: widgets.cpp:474
 msgid "Standard behavior. Keyboard map active for all windows"
-msgstr ""
+msgstr "Comportamiento normal. Mapa activo para todas las ventanas"
 
 #: widgets.cpp:478
 msgid "Extended behavior. Each windows remember it's own keyboard map"
-msgstr ""
+msgstr "Comportamiento extendido. Cada ventana recuerda su mapa"
 
 #: widgets.cpp:482
 msgid "Special behavior. Each windows class remember it's own keyboard map"
-msgstr ""
+msgstr "Comportamiento especial. Cada clase de ventanas recuerda su mapa"
 
 #: widgets.cpp:530
 msgid "Button Colors"
@@ -401,7 +406,7 @@ msgstr "Primer plano"
 
 #: widgets.cpp:541
 msgid "Color of the Text Label"
-msgstr ""
+msgstr "Color del Texto"
 
 #: widgets.cpp:545
 msgid "With CapsLock"
@@ -409,7 +414,7 @@ msgstr "Con BloqMayús"
 
 #: widgets.cpp:546
 msgid "Background when Emulated CapsLock active"
-msgstr ""
+msgstr "Fondo cuando BloqMayús emulado esta activado"
 
 #: widgets.cpp:552
 msgid "With Alternate"
@@ -417,7 +422,7 @@ msgstr "Con Alt"
 
 #: widgets.cpp:553
 msgid "Background when Alternate switch is pressed"
-msgstr ""
+msgstr "Fondo al presionar cambio alternativo"
 
 #: widgets.cpp:562
 msgid "Button Font"
@@ -429,7 +434,7 @@ msgstr "Personalizar Fuente"
 
 #: widgets.cpp:571
 msgid "Customize Font for text label or use global settings"
-msgstr ""
+msgstr "Personalizar fuente para el texto o usar opciones globales"
 
 #: widgets.cpp:575
 msgid "C&hange Font"
@@ -437,7 +442,7 @@ msgstr "Cambiar Fuente"
 
 #: widgets.cpp:620
 msgid "&Autostart"
-msgstr ""
+msgstr "&Autoinicio"
 
 #: widgets.cpp:621
 msgid "Start up automaticaly"
@@ -445,11 +450,11 @@ msgstr "Iniciar automáticamente"
 
 #: widgets.cpp:627
 msgid "&Docked"
-msgstr ""
+msgstr "Empotrado"
 
 #: widgets.cpp:628
 msgid "Dock into special area in kpanel"
-msgstr ""
+msgstr "Empotrar en area especial del panel"
 
 #: widgets.cpp:637
 msgid "Place"
@@ -469,7 +474,7 @@ msgstr "Estilo"
 
 #: kcmikbd.cpp:76
 msgid "Start&Up"
-msgstr ""
+msgstr "Inicio"
 
 #: kcmikbd.cpp:121
 msgid "International Keyboard"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-10-10 20:36+0200\n"
+"PO-Revision-Date: 1998-10-23 17:19+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
@@ -24,7 +24,7 @@ msgstr "Colores"
 
 #: backgnd.cpp:220
 msgid "&One Color"
-msgstr "Un color"
+msgstr "&Un color"
 
 #: backgnd.cpp:237
 msgid "&Two Color"
@@ -389,7 +389,7 @@ msgstr "Texto marcado"
 
 #: widgetcanvas.cpp:212
 msgid "New"
-msgstr ""
+msgstr "Nuevo"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"

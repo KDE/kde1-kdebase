@@ -23,39 +23,39 @@ msgstr "&Processeur"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr ""
+msgstr "&Interruptions"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr ""
+msgstr "Canal DMA"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr ""
+msgstr "Ports d'entrée sortie"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr ""
+msgstr "&Bus-PCI"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr ""
+msgstr "S&on"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr ""
+msgstr "&Périphériques"
 
 #: main.cpp:103
 msgid "S&CSI"
-msgstr ""
+msgstr "S&CSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr ""
+msgstr "P&artitions"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr ""
+msgstr "Serveur X"
 
 #: main.cpp:120
 msgid ""
@@ -63,7 +63,7 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
-
+ 
 #: main.cpp:148
 msgid "System Information"
 msgstr "Informations système"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-10-12 11:35+0000\n"
-"PO-Revision-Date: 1998-10-10 20:48+0200\n"
+"PO-Revision-Date: 1998-10-23 17:30+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
@@ -20,9 +20,8 @@ msgid "ERROR: Template does not exist '%s'"
 msgstr "Error: La plantilla no existe '%s'"
 
 #: kfmgui.cpp:304
-#, fuzzy
 msgid "&New"
-msgstr "Nuevo "
+msgstr "&Nuevo"
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -206,7 +205,7 @@ msgstr "Arriba"
 
 #: kfmgui.cpp:533 kfmman.cpp:1079
 msgid "Forward"
-msgstr ""
+msgstr "Adelante"
 
 #: kfmgui.cpp:538
 msgid "Home"
@@ -500,7 +499,7 @@ msgstr "Abrir con"
 
 #: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
 msgid "Move"
-msgstr ""
+msgstr "Mover"
 
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
@@ -516,15 +515,15 @@ msgstr "Añadir a marcadores"
 
 #: htmlopts.cpp:39
 msgid "Small"
-msgstr ""
+msgstr "Pequeño"
 
 #: htmlopts.cpp:43
 msgid "Medium"
-msgstr ""
+msgstr "Mediano"
 
 #: htmlopts.cpp:47
 msgid "Large"
-msgstr ""
+msgstr "Grande"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"

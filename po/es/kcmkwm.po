@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-10-10 20:14+0200\n"
+"PO-Revision-Date: 1998-10-23 17:09+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
@@ -141,7 +141,7 @@ msgstr "(Des)Maximizar"
 
 #: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
 msgid "Move"
-msgstr ""
+msgstr "Mover"
 
 #: titlebar.cpp:991
 msgid "(Un)Shade"
@@ -185,7 +185,7 @@ msgstr "Movimiento:"
 
 #: windows.cpp:91
 msgid "None"
-msgstr ""
+msgstr "Ninguno"
 
 #: windows.cpp:92
 msgid "Fast"
@@ -288,7 +288,9 @@ msgstr "Bórdes mágicos"
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
-msgstr "Zona de adhesión en bórdes:       (pixels)"
+msgstr ""
+"Zona de adhesión en bórdes:\n"
+"       (pixels)"
 
 #: desktop.cpp:116
 msgid ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-10-10 21:20+0200\n"
+"PO-Revision-Date: 1998-10-23 18:00+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
@@ -603,9 +603,8 @@ msgid "Setup krock"
 msgstr "Configurar Roca"
 
 #: rock.cpp:589
-#, fuzzy
 msgid "Move"
-msgstr "Modo:"
+msgstr "Mover"
 
 #: rock.cpp:595
 msgid "Rotate"

@@ -35,11 +35,11 @@ msgstr "Format inconnu :"
 
 #: helpwin.cpp:1091
 msgid "Find Complete"
-msgstr ""
+msgstr "Recherche terminée"
 
 #: helpwin.cpp:1092
 msgid "Continue search from the top of the page?"
-msgstr ""
+msgstr "Continuer la recherche à partir du haut de la page?"
 
 #: helpwin.cpp:1309
 #, fuzzy
@@ -168,7 +168,7 @@ msgstr "Administration système"
 
 #: man.cpp:478
 msgid "New"
-msgstr ""
+msgstr "Nouveau"
 
 #: man.cpp:592
 msgid "Reading Dir: "
@@ -213,11 +213,11 @@ msgstr "Re&chercher"
 
 #: mainwidget.cpp:149
 msgid "&Find..."
-msgstr ""
+msgstr "&Rechercher..."
 
 #: mainwidget.cpp:150
 msgid "Find &next"
-msgstr ""
+msgstr "Prochaine recherche"
 
 #: mainwidget.cpp:154
 msgid "&Back"
@@ -358,7 +358,7 @@ msgstr "&Ajouter un signet"
 
 #: finddlg.cpp:41
 msgid "Find:"
-msgstr ""
+msgstr "Rechercher:"
 
 #: finddlg.cpp:56
 msgid "Case &sensitive"
@@ -366,7 +366,7 @@ msgstr ""
 
 #: finddlg.cpp:66
 msgid "&Find"
-msgstr ""
+msgstr "&Rechercher"
 
 #~ msgid "&Contents"
 #~ msgstr "&Contenu"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-10-10 20:44+0200\n"
+"PO-Revision-Date: 1998-10-23 17:22+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
@@ -26,6 +26,7 @@ msgstr "&Sesiones"
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
+"Modo de uso: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 
 #: main.cpp:145
 msgid "KDM Configuration"
@@ -138,14 +139,12 @@ msgid "Select fonts"
 msgstr "Eligir fuentes"
 
 #: kdm-font.cpp:50
-#, fuzzy
 msgid "Example"
-msgstr "Ejemplo:"
+msgstr "Ejemplo"
 
 #: kdm-font.cpp:52
-#, fuzzy
 msgid "Change font..."
-msgstr "Cambiar fuente"
+msgstr "Cambiar fuente..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
@@ -161,24 +160,23 @@ msgstr "Estándar"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr ""
+msgstr "Mostrar"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "Color"
 
 #: kdm-bgnd.cpp:101
-#, fuzzy
 msgid "Solid Color"
-msgstr "Color"
+msgstr "Color sólido"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr ""
+msgstr "Gradiente horizontal"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr ""
+msgstr "Gradiente vertical"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
@@ -186,38 +184,35 @@ msgstr "Papel tapíz"
 
 #: kdm-bgnd.cpp:171 kdm-sess.cpp:56
 msgid "None"
-msgstr ""
+msgstr "Ninguno"
 
 #: kdm-bgnd.cpp:176
-#, fuzzy
 msgid "Tile"
 msgstr "Repetido"
 
 #: kdm-bgnd.cpp:181
-#, fuzzy
 msgid "Center"
 msgstr "Centrado"
 
 #: kdm-bgnd.cpp:186
-#, fuzzy
 msgid "Scale"
 msgstr "Escalado"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr ""
+msgstr "IzquierdaArriba"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr ""
+msgstr "DerechaArriba"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr ""
+msgstr "IzquierdaAbajo"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr ""
+msgstr "DerechaAbajo"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"

@@ -28,7 +28,7 @@ msgstr "Mot de passe incorrect"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
-msgstr ""
+msgstr "Taille:"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -36,7 +36,7 @@ msgstr "Couleur :"
 
 #: banner.cpp:147
 msgid "Bold"
-msgstr ""
+msgstr "Gras"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021

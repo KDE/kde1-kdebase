@@ -101,27 +101,27 @@ msgstr ""
 
 #: kfontexplorer.cpp:130
 msgid "Requested Font"
-msgstr ""
+msgstr "Police requise"
 
 #: kfontexplorer.cpp:135
 msgid "Actual Font"
-msgstr ""
+msgstr "Police Actuelle"
 
 #: kfontexplorer.cpp:139 kfontexplorer.cpp:143
 msgid "Family:"
-msgstr ""
+msgstr "Famille:"
 
 #: kfontexplorer.cpp:163 kfontexplorer.cpp:168
 msgid "Size:"
-msgstr ""
+msgstr "Taille:"
 
 #: kfontexplorer.cpp:177 kfontexplorer.cpp:182
 msgid "Weight:"
-msgstr ""
+msgstr "Epaisseur:"
 
 #: kfontexplorer.cpp:191 kfontexplorer.cpp:199
 msgid "Style:"
-msgstr ""
+msgstr "Style:"
 
 #: kfontexplorer.cpp:234
 msgid "Charset"
@@ -129,31 +129,31 @@ msgstr ""
 
 #: kfontexplorer.cpp:246
 msgid "Size"
-msgstr ""
+msgstr "Taille"
 
 #: kfontexplorer.cpp:285
 msgid "Weight"
-msgstr ""
+msgstr "Epaisseur"
 
 #: kfontexplorer.cpp:286 kfontexplorer.cpp:394
 msgid "normal"
-msgstr ""
+msgstr "normal"
 
 #: kfontexplorer.cpp:287 kfontexplorer.cpp:396
 msgid "bold"
-msgstr ""
+msgstr "gras"
 
 #: kfontexplorer.cpp:296
 msgid "Style"
-msgstr ""
+msgstr "Style"
 
 #: kfontexplorer.cpp:297 kfontexplorer.cpp:407 kfontexplorer.cpp:437
 msgid "roman"
-msgstr ""
+msgstr "roman"
 
 #: kfontexplorer.cpp:298 kfontexplorer.cpp:409 kfontexplorer.cpp:435
 msgid "italic"
-msgstr ""
+msgstr "italique"
 
 #: kfontexplorer.cpp:326
 msgid "Dolor Ipse"
@@ -161,8 +161,8 @@ msgstr ""
 
 #: kfontexplorer.cpp:430
 msgid "Bold"
-msgstr ""
+msgstr "Gras"
 
 #: kfontexplorer.cpp:432
 msgid "Normal"
-msgstr ""
+msgstr "Normal"

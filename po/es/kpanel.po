@@ -2,13 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-10-13 13:29+0200\n"
-"PO-Revision-Date: 1998-10-10 21:31+0200\n"
+"PO-Revision-Date: 1998-10-23 18:00+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
 #: kpanel.C:232
 msgid "Move"
-msgstr ""
+msgstr "Mover"
 
 #: kpanel.C:272
 msgid "Go!"
@@ -129,9 +129,3 @@ msgstr "(Ilegíble)"
 #: pfilemenu.C:427
 msgid "Open Folder"
 msgstr "Abrir folder"
-
-#~ msgid "KFM Information"
-#~ msgstr "Información del KFM"
-
-#~ msgid "Creating directory:\n"
-#~ msgstr "Creando directorio:\n"

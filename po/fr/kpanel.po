@@ -120,23 +120,23 @@ msgstr "Impossible d'ajouter cette application comme bouton sur le panneau !"
 
 #: pfilemenu.C:351
 msgid "(empty folder)"
-msgstr ""
+msgstr "(répertoire vide)"
 
 #: pfilemenu.C:408
 msgid "(Too Many Files)"
-msgstr ""
+msgstr "(trop de fichiers)"
 
 #: pfilemenu.C:417
 msgid "(Access Denied)"
-msgstr ""
+msgstr "Accès refusé"
 
 #: pfilemenu.C:420
 msgid "(Unreadable)"
-msgstr ""
+msgstr "(illisible)"
 
 #: pfilemenu.C:427
 msgid "Open Folder"
-msgstr ""
+msgstr "Ouvrir le répertoire"
 
 #~ msgid "Properties"
 #~ msgstr "Propriétés"

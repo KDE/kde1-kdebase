@@ -33,7 +33,7 @@ msgstr "Bords magiques"
 
 #: main.cpp:73
 msgid "&Mouse"
-msgstr ""
+msgstr "&Souris"
 
 #: main.cpp:79
 #, fuzzy
@@ -62,11 +62,11 @@ msgstr "Menu"
 
 #: titlebar.cpp:169
 msgid "Left"
-msgstr ""
+msgstr "Gauche"
 
 #: titlebar.cpp:173
 msgid "Right"
-msgstr ""
+msgstr "Droite"
 
 #: titlebar.cpp:462
 msgid ""
@@ -194,7 +194,7 @@ msgstr "Animation :"
 
 #: windows.cpp:91
 msgid "None"
-msgstr ""
+msgstr "Aucun"
 
 #: windows.cpp:92
 msgid "Fast"
@@ -310,7 +310,7 @@ msgstr ""
 
 #: mouse.cpp:54
 msgid "Active"
-msgstr ""
+msgstr "Active"
 
 #: mouse.cpp:58
 #, fuzzy
@@ -333,37 +333,37 @@ msgstr ""
 #: mouse.cpp:74 mouse.cpp:86
 #, fuzzy
 msgid "Left Button"
-msgstr "&Boutons"
+msgstr "&Bouton gauche"
 
 #: mouse.cpp:78 mouse.cpp:90
 msgid "Middle Button"
-msgstr ""
+msgstr "Bouton du milieu"
 
 #: mouse.cpp:82 mouse.cpp:94
 msgid "Right Button"
-msgstr ""
+msgstr "Bouton droit"
 
 #: mouse.cpp:98
 msgid "ALT + Left Button"
-msgstr ""
+msgstr "ALT + Bouton gauche"
 
 #: mouse.cpp:102
 msgid "ALT + Middle Button"
-msgstr ""
+msgstr "ALT + Bouton du milieu"
 
 #: mouse.cpp:106
 msgid "ALT + Right Button"
-msgstr ""
+msgstr "ALT + Bouton droit"
 
 #: mouse.cpp:113 mouse.cpp:122 mouse.cpp:132 mouse.cpp:196 mouse.cpp:207
 #: mouse.cpp:218
 msgid "Raise"
-msgstr ""
+msgstr "Agrandir"
 
 #: mouse.cpp:114 mouse.cpp:123 mouse.cpp:133 mouse.cpp:197 mouse.cpp:208
 #: mouse.cpp:219
 msgid "Lower"
-msgstr ""
+msgstr "Reduire"
 
 #: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
 #, fuzzy
@@ -377,21 +377,21 @@ msgstr ""
 
 #: mouse.cpp:126 mouse.cpp:136 mouse.cpp:198 mouse.cpp:209 mouse.cpp:220
 msgid "Nothing"
-msgstr ""
+msgstr "Pas d'action"
 
 #: mouse.cpp:142 mouse.cpp:150 mouse.cpp:158 mouse.cpp:169 mouse.cpp:178
 #: mouse.cpp:187
 msgid "Activate and raise"
-msgstr ""
+msgstr "Activer et agrandir"
 
 #: mouse.cpp:143 mouse.cpp:151 mouse.cpp:159
 msgid "Activate and lower"
-msgstr ""
+msgstr "Activer et reduire"
 
 #: mouse.cpp:144 mouse.cpp:152 mouse.cpp:160 mouse.cpp:168 mouse.cpp:177
 #: mouse.cpp:186
 msgid "Activate"
-msgstr ""
+msgstr "Activer"
 
 #: mouse.cpp:166 mouse.cpp:175 mouse.cpp:184
 msgid "Activate, raise and pass click"

@@ -2,10 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-05-21 10:58+0200\n"
+"PO-Revision-Date: 1998-10-23 17:12+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
-"First-Translator: Santiago Fernández and Jorge Valencia\n"
-"First-Translator: <jorgev@est.unileon.es>\n"
+"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
 #: main.cpp:53
 msgid "&Sound"
@@ -17,7 +16,7 @@ msgstr "Sonidos del Sistema"
 
 #: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
 msgid "(none)"
-msgstr ""
+msgstr "(ninguno)"
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"
