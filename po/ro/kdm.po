@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1998-11-17 10:15+0100\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -54,23 +54,23 @@ msgstr "Porneºte !"
 msgid "Shutdown..."
 msgstr "Închide..."
 
-#: kgreeter.cpp:503
+#: kgreeter.cpp:517
 msgid "Logins not available right now."
 msgstr ""
 
-#: kgreeter.cpp:544
+#: kgreeter.cpp:558
 msgid "login_getcapstr() failed."
 msgstr ""
 
-#: kgreeter.cpp:598 kgreeter.cpp:625
+#: kgreeter.cpp:612 kgreeter.cpp:639
 msgid "Sorry -- your account has expired."
 msgstr ""
 
-#: kgreeter.cpp:603 kgreeter.cpp:630
+#: kgreeter.cpp:617 kgreeter.cpp:644
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr ""
 
-#: kgreeter.cpp:657
+#: kgreeter.cpp:671
 msgid "Home directory not available"
 msgstr ""

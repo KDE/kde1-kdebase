@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1998-11-17 10:15+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -247,9 +247,9 @@ msgstr "Nie je mo¾né naèíta» ikonu\n"
 #: kbind.cpp:1720 kbind.cpp:1732 kbind.cpp:1748 kbind.cpp:1880 kbind.cpp:1892
 #: kbind.cpp:1937 kbind.cpp:1979 kfmexec.cpp:60 kfmexec.cpp:92
 #: kfmexec/main.cpp:47 kfmgui.cpp:620 kfmgui.cpp:776 kfmman.cpp:333
-#: kfmman.cpp:1046 kfmman.cpp:1249 kfmman.cpp:1275 kfmprops.cpp:379
-#: kfmprops.cpp:630 kfmprops.cpp:656 kfmprops.cpp:883 kfmprops.cpp:1012
-#: kfmprops.cpp:1143 kfmprops.cpp:1475 kfmprops.cpp:1707 kfmprops.cpp:1892
+#: kfmman.cpp:1046 kfmman.cpp:1249 kfmman.cpp:1275 kfmprops.cpp:375
+#: kfmprops.cpp:626 kfmprops.cpp:652 kfmprops.cpp:879 kfmprops.cpp:1008
+#: kfmprops.cpp:1139 kfmprops.cpp:1471 kfmprops.cpp:1703 kfmprops.cpp:1888
 #: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
 #: kfmserver.cpp:303 kfmserver.cpp:311 kfmtree.cpp:164 kfmtree.cpp:287
 #: kfmtree.cpp:318 kfmtree.cpp:324 kfmtree.cpp:330 kfmview.cpp:357
@@ -647,40 +647,41 @@ msgstr "&Prehliadaè"
 msgid "Could not write bookmark"
 msgstr "Nemô¾em zapísa» zálo¾ku"
 
-#: kfmprops.cpp:237
-msgid "Name"
-msgstr "Meno"
+#: kfmprops.cpp:236
+#, fuzzy
+msgid "File Name"
+msgstr "Plné meno"
 
-#: kfmprops.cpp:254
+#: kfmprops.cpp:251
 msgid "Full Name"
 msgstr "Plné meno"
 
-#: kfmprops.cpp:272
+#: kfmprops.cpp:268
 msgid "Is the Trash Bin"
 msgstr "Je kô¹"
 
-#: kfmprops.cpp:279
+#: kfmprops.cpp:275
 msgid "Is a Directory"
 msgstr "Je prieèinok"
 
-#: kfmprops.cpp:286
+#: kfmprops.cpp:282
 msgid "Points to"
 msgstr "Ukazuje na"
 
-#: kfmprops.cpp:311
+#: kfmprops.cpp:307
 #, c-format
 msgid "Size: %i"
 msgstr "Veµkos»: %i"
 
-#: kfmprops.cpp:321
+#: kfmprops.cpp:317
 msgid "Last Access"
 msgstr "Posledný prístup"
 
-#: kfmprops.cpp:331
+#: kfmprops.cpp:327
 msgid "Last Modified"
 msgstr "Posledná modifikácia"
 
-#: kfmprops.cpp:380
+#: kfmprops.cpp:376
 msgid ""
 "Could not rename the file or directory\n"
 "The destination seems to already exist\n"
@@ -688,11 +689,11 @@ msgstr ""
 "Nie je mo¾né premenova» súbor alebo prieèinok\n"
 "Zdá sa, ¾e cieµový súbor u¾ existuje\n"
 
-#: kfmprops.cpp:428
+#: kfmprops.cpp:424
 msgid "Access permissions"
 msgstr "Prístupové práva"
 
-#: kfmprops.cpp:434
+#: kfmprops.cpp:430
 msgid ""
 "Show\n"
 "Entries"
@@ -700,11 +701,11 @@ msgstr ""
 "Zobrazi»\n"
 "súbory"
 
-#: kfmprops.cpp:436
+#: kfmprops.cpp:432
 msgid "Read"
 msgstr "Èítanie"
 
-#: kfmprops.cpp:441
+#: kfmprops.cpp:437
 msgid ""
 "Write\n"
 "Entries"
@@ -712,11 +713,11 @@ msgstr ""
 "Vytvori»\n"
 "súbory"
 
-#: kfmprops.cpp:443
+#: kfmprops.cpp:439
 msgid "Write"
 msgstr "Zápis"
 
-#: kfmprops.cpp:448
+#: kfmprops.cpp:444
 msgid ""
 "Change\n"
 "Into"
@@ -724,47 +725,47 @@ msgstr ""
 "Vstup do\n"
 "prieèinku"
 
-#: kfmprops.cpp:450
+#: kfmprops.cpp:446
 msgid "Exec"
 msgstr "Vykonanie"
 
-#: kfmprops.cpp:454
+#: kfmprops.cpp:450
 msgid "Special"
 msgstr "©peciálne"
 
-#: kfmprops.cpp:458
+#: kfmprops.cpp:454
 msgid "User"
 msgstr "U¾ívateµ"
 
-#: kfmprops.cpp:463 kfmprops.cpp:562
+#: kfmprops.cpp:459 kfmprops.cpp:558
 msgid "Group"
 msgstr "Skupina"
 
-#: kfmprops.cpp:468
+#: kfmprops.cpp:464
 msgid "Others"
 msgstr "Ostatní"
 
-#: kfmprops.cpp:481
+#: kfmprops.cpp:477
 msgid "Set UID"
 msgstr "Nastavi» UID"
 
-#: kfmprops.cpp:482
+#: kfmprops.cpp:478
 msgid "Set GID"
 msgstr "Nastavi» GID"
 
-#: kfmprops.cpp:483
+#: kfmprops.cpp:479
 msgid "Sticky"
 msgstr "Sticky"
 
-#: kfmprops.cpp:501
+#: kfmprops.cpp:497
 msgid "Ownership"
 msgstr "Vlastníctvo"
 
-#: kfmprops.cpp:507
+#: kfmprops.cpp:503
 msgid "Owner"
 msgstr "Vlastník"
 
-#: kfmprops.cpp:631
+#: kfmprops.cpp:627
 msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
@@ -772,17 +773,17 @@ msgstr ""
 "Nie je mo¾né zmeni» prístupové práva\n"
 "Mo¾no bol odmietnutý prístup."
 
-#: kfmprops.cpp:646
+#: kfmprops.cpp:642
 #, c-format
 msgid " ERROR: No user %s"
 msgstr " Chyba: ®iadny u¾ívateµ s menom %s"
 
-#: kfmprops.cpp:651
+#: kfmprops.cpp:647
 #, c-format
 msgid " ERROR: No group %s"
 msgstr " Chyba: Neexistuje skupina s názvom %s"
 
-#: kfmprops.cpp:657
+#: kfmprops.cpp:653
 msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
@@ -790,37 +791,37 @@ msgstr ""
 "Nemô¾em zmeni» vlastníka/skupinu.\n"
 "Mo¾no bol odmietnutý prístup."
 
-#: kfmprops.cpp:669 kfmprops.cpp:728
+#: kfmprops.cpp:665 kfmprops.cpp:724
 msgid "Execute"
 msgstr "Vykona»"
 
-#: kfmprops.cpp:685
+#: kfmprops.cpp:681
 #, fuzzy
 msgid "&Browse..."
 msgstr "&Prehliadaè"
 
-#: kfmprops.cpp:697
+#: kfmprops.cpp:693
 msgid "Working Directory"
 msgstr "V prieèinku"
 
-#: kfmprops.cpp:715
+#: kfmprops.cpp:711
 msgid "Swallowing on panel"
 msgstr "Pripevnenie na panel"
 
-#: kfmprops.cpp:742
+#: kfmprops.cpp:738
 msgid "Window Title"
 msgstr "Titulok okna"
 
-#: kfmprops.cpp:762
+#: kfmprops.cpp:758
 msgid "Run in terminal"
 msgstr "Spusti» v termináli"
 
-#: kfmprops.cpp:770
+#: kfmprops.cpp:766
 msgid "Terminal Options"
 msgstr "Parametre term."
 
-#: kfmprops.cpp:884 kfmprops.cpp:1013 kfmprops.cpp:1476 kfmprops.cpp:1708
-#: kfmprops.cpp:1893
+#: kfmprops.cpp:880 kfmprops.cpp:1009 kfmprops.cpp:1472 kfmprops.cpp:1704
+#: kfmprops.cpp:1889
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -828,80 +829,80 @@ msgstr ""
 "Nie je mo¾né ulo¾i» vlastnosti\n"
 "Pravdepodobne bol odmietnutý prístup."
 
-#: kfmprops.cpp:938
+#: kfmprops.cpp:934
 msgid "URL"
 msgstr "URL"
 
-#: kfmprops.cpp:1035
+#: kfmprops.cpp:1031
 #, fuzzy
 msgid "Background"
 msgstr "Farba pozadia:"
 
-#: kfmprops.cpp:1045
+#: kfmprops.cpp:1041
 msgid "Apply global"
 msgstr "Aplikova» globálne"
 
-#: kfmprops.cpp:1083 kfmprops.cpp:1155 kfmprops.cpp:1212
+#: kfmprops.cpp:1079 kfmprops.cpp:1151 kfmprops.cpp:1208
 msgid "(Default)"
 msgstr "(©tandardný)"
 
-#: kfmprops.cpp:1144
+#: kfmprops.cpp:1140
 msgid "Could not write to\n"
 msgstr "Nemô¾em zapísa» do\n"
 
-#: kfmprops.cpp:1273
+#: kfmprops.cpp:1269
 msgid "(None)"
 msgstr "(®iadny)"
 
-#: kfmprops.cpp:1319
+#: kfmprops.cpp:1315
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr "Binárny vzor (netscape;Netscape;)"
 
-#: kfmprops.cpp:1326 kfmprops.cpp:1577
+#: kfmprops.cpp:1322 kfmprops.cpp:1573
 msgid "Comment"
 msgstr "Komentár"
 
-#: kfmprops.cpp:1337
+#: kfmprops.cpp:1333
 msgid "Name ( in your language )"
 msgstr "Meno (vo va¹om jazyku)"
 
-#: kfmprops.cpp:1554
+#: kfmprops.cpp:1550
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "Vzor ( príklad: *.html;*.HTML; )"
 
-#: kfmprops.cpp:1566
+#: kfmprops.cpp:1562
 msgid "Mime Type"
 msgstr "MIME typ"
 
-#: kfmprops.cpp:1595
+#: kfmprops.cpp:1591
 msgid "Default Application"
 msgstr "©tandardná aplikácia"
 
-#: kfmprops.cpp:1635
+#: kfmprops.cpp:1631
 msgid "<none>"
 msgstr ""
 
-#: kfmprops.cpp:1757
+#: kfmprops.cpp:1753
 msgid "Device ( /dev/fd0 )"
 msgstr "Zariadenie ( /dev/fd0 )"
 
-#: kfmprops.cpp:1766
+#: kfmprops.cpp:1762
 msgid "Mount Point ( /floppy )"
 msgstr "Miesto pripojenia ( /floppy )"
 
-#: kfmprops.cpp:1777
+#: kfmprops.cpp:1773
 msgid "Readonly"
 msgstr "Len pre èítanie"
 
-#: kfmprops.cpp:1783
+#: kfmprops.cpp:1779
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Súborový systém  ( iso9660,msdos,minix,default )"
 
-#: kfmprops.cpp:1794
+#: kfmprops.cpp:1790
 msgid "Mounted Icon"
 msgstr "Ikona pripojeného"
 
-#: kfmprops.cpp:1799
+#: kfmprops.cpp:1795
 msgid "Unmounted Icon"
 msgstr "Ikona odpojeného"
 
@@ -1428,31 +1429,31 @@ msgstr ""
 msgid "&General"
 msgstr "&V¹eobecné"
 
-#: kfmprops.h:108
+#: kfmprops.h:107
 msgid "&Permissions"
 msgstr "&Prístupové práva"
 
-#: kfmprops.h:200
+#: kfmprops.h:199
 msgid "E&xecute"
 msgstr "Vy&kona» príkaz"
 
-#: kfmprops.h:246
+#: kfmprops.h:245
 msgid "U&RL"
 msgstr "U&RL"
 
-#: kfmprops.h:270
+#: kfmprops.h:269
 msgid "&Dir"
 msgstr "&Prieèinok"
 
-#: kfmprops.h:314
+#: kfmprops.h:313
 msgid "&Application"
 msgstr "&Aplikácia"
 
-#: kfmprops.h:356
+#: kfmprops.h:355
 msgid "&Binding"
 msgstr "Väz&ba"
 
-#: kfmprops.h:386
+#: kfmprops.h:385
 msgid "De&vice"
 msgstr "&Zariadenie"
 
@@ -1489,6 +1490,9 @@ msgid ""
 msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
+
+#~ msgid "Name"
+#~ msgstr "Meno"
 
 #~ msgid "Browse"
 #~ msgstr "Listova»"

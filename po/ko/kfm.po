@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1998-11-17 10:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -244,9 +244,9 @@ msgstr "Icon을 불러 올 수 없음\n"
 #: kbind.cpp:1720 kbind.cpp:1732 kbind.cpp:1748 kbind.cpp:1880 kbind.cpp:1892
 #: kbind.cpp:1937 kbind.cpp:1979 kfmexec.cpp:60 kfmexec.cpp:92
 #: kfmexec/main.cpp:47 kfmgui.cpp:620 kfmgui.cpp:776 kfmman.cpp:333
-#: kfmman.cpp:1046 kfmman.cpp:1249 kfmman.cpp:1275 kfmprops.cpp:379
-#: kfmprops.cpp:630 kfmprops.cpp:656 kfmprops.cpp:883 kfmprops.cpp:1012
-#: kfmprops.cpp:1143 kfmprops.cpp:1475 kfmprops.cpp:1707 kfmprops.cpp:1892
+#: kfmman.cpp:1046 kfmman.cpp:1249 kfmman.cpp:1275 kfmprops.cpp:375
+#: kfmprops.cpp:626 kfmprops.cpp:652 kfmprops.cpp:879 kfmprops.cpp:1008
+#: kfmprops.cpp:1139 kfmprops.cpp:1471 kfmprops.cpp:1703 kfmprops.cpp:1888
 #: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
 #: kfmserver.cpp:303 kfmserver.cpp:311 kfmtree.cpp:164 kfmtree.cpp:287
 #: kfmtree.cpp:318 kfmtree.cpp:324 kfmtree.cpp:330 kfmview.cpp:357
@@ -645,41 +645,41 @@ msgstr "찾아보기"
 msgid "Could not write bookmark"
 msgstr "즐겨찾기에 쓸 수 없습니다"
 
-#: kfmprops.cpp:237
+#: kfmprops.cpp:236
 #, fuzzy
-msgid "Name"
+msgid "File Name"
 msgstr "전체 경로"
 
-#: kfmprops.cpp:254
+#: kfmprops.cpp:251
 msgid "Full Name"
 msgstr "전체 경로"
 
-#: kfmprops.cpp:272
+#: kfmprops.cpp:268
 msgid "Is the Trash Bin"
 msgstr "휴지통"
 
-#: kfmprops.cpp:279
+#: kfmprops.cpp:275
 msgid "Is a Directory"
 msgstr "디렉토리"
 
-#: kfmprops.cpp:286
+#: kfmprops.cpp:282
 msgid "Points to"
 msgstr "연결된 곳"
 
-#: kfmprops.cpp:311
+#: kfmprops.cpp:307
 #, c-format
 msgid "Size: %i"
 msgstr "크기: %i"
 
-#: kfmprops.cpp:321
+#: kfmprops.cpp:317
 msgid "Last Access"
 msgstr "최근 접근"
 
-#: kfmprops.cpp:331
+#: kfmprops.cpp:327
 msgid "Last Modified"
 msgstr "최근 수정"
 
-#: kfmprops.cpp:380
+#: kfmprops.cpp:376
 msgid ""
 "Could not rename the file or directory\n"
 "The destination seems to already exist\n"
@@ -687,11 +687,11 @@ msgstr ""
 "파일, 디렉토리 이름을 변경할 수 없습니다\n"
 "이미 있는 이름일 가능성이 있습니다.\n"
 
-#: kfmprops.cpp:428
+#: kfmprops.cpp:424
 msgid "Access permissions"
 msgstr "접근 권한"
 
-#: kfmprops.cpp:434
+#: kfmprops.cpp:430
 msgid ""
 "Show\n"
 "Entries"
@@ -699,11 +699,11 @@ msgstr ""
 "항목\n"
 "보기"
 
-#: kfmprops.cpp:436
+#: kfmprops.cpp:432
 msgid "Read"
 msgstr "읽기"
 
-#: kfmprops.cpp:441
+#: kfmprops.cpp:437
 msgid ""
 "Write\n"
 "Entries"
@@ -711,11 +711,11 @@ msgstr ""
 "쓰기\n"
 "항목"
 
-#: kfmprops.cpp:443
+#: kfmprops.cpp:439
 msgid "Write"
 msgstr "쓰기"
 
-#: kfmprops.cpp:448
+#: kfmprops.cpp:444
 msgid ""
 "Change\n"
 "Into"
@@ -723,48 +723,48 @@ msgstr ""
 "으로\n"
 "바꾸기"
 
-#: kfmprops.cpp:450
+#: kfmprops.cpp:446
 msgid "Exec"
 msgstr "실행"
 
-#: kfmprops.cpp:454
+#: kfmprops.cpp:450
 msgid "Special"
 msgstr "특정"
 
-#: kfmprops.cpp:458
+#: kfmprops.cpp:454
 msgid "User"
 msgstr "사용자"
 
-#: kfmprops.cpp:463 kfmprops.cpp:562
+#: kfmprops.cpp:459 kfmprops.cpp:558
 msgid "Group"
 msgstr ""
 
-#: kfmprops.cpp:468
+#: kfmprops.cpp:464
 msgid "Others"
 msgstr "기타"
 
-#: kfmprops.cpp:481
+#: kfmprops.cpp:477
 msgid "Set UID"
 msgstr "UID 설정"
 
-#: kfmprops.cpp:482
+#: kfmprops.cpp:478
 msgid "Set GID"
 msgstr "GID 설정"
 
-#: kfmprops.cpp:483
+#: kfmprops.cpp:479
 msgid "Sticky"
 msgstr "스티키"
 
-#: kfmprops.cpp:501
+#: kfmprops.cpp:497
 msgid "Ownership"
 msgstr "소유권"
 
-#: kfmprops.cpp:507
+#: kfmprops.cpp:503
 #, fuzzy
 msgid "Owner"
 msgstr "소유권"
 
-#: kfmprops.cpp:631
+#: kfmprops.cpp:627
 msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
@@ -772,17 +772,17 @@ msgstr ""
 "권한을 변경할 수 없습니다\n"
 "허가가 거부되었습니다"
 
-#: kfmprops.cpp:646
+#: kfmprops.cpp:642
 #, c-format
 msgid " ERROR: No user %s"
 msgstr " 오류: %s 사용자가 없습니다"
 
-#: kfmprops.cpp:651
+#: kfmprops.cpp:647
 #, c-format
 msgid " ERROR: No group %s"
 msgstr " 오류: %s 그룹이 없습니다"
 
-#: kfmprops.cpp:657
+#: kfmprops.cpp:653
 msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
@@ -790,37 +790,37 @@ msgstr ""
 "소유자/그룹을 변경할 수 없습니다\n"
 "허가가 거부되었습니다"
 
-#: kfmprops.cpp:669 kfmprops.cpp:728
+#: kfmprops.cpp:665 kfmprops.cpp:724
 msgid "Execute"
 msgstr "실행파일"
 
-#: kfmprops.cpp:685
+#: kfmprops.cpp:681
 #, fuzzy
 msgid "&Browse..."
 msgstr "찾아보기"
 
-#: kfmprops.cpp:697
+#: kfmprops.cpp:693
 msgid "Working Directory"
 msgstr "작업 디렉토리"
 
-#: kfmprops.cpp:715
+#: kfmprops.cpp:711
 msgid "Swallowing on panel"
 msgstr "Swallowing on panel"
 
-#: kfmprops.cpp:742
+#: kfmprops.cpp:738
 msgid "Window Title"
 msgstr "창 제목"
 
-#: kfmprops.cpp:762
+#: kfmprops.cpp:758
 msgid "Run in terminal"
 msgstr "터미널에서 실행"
 
-#: kfmprops.cpp:770
+#: kfmprops.cpp:766
 msgid "Terminal Options"
 msgstr "터미널 선택사항"
 
-#: kfmprops.cpp:884 kfmprops.cpp:1013 kfmprops.cpp:1476 kfmprops.cpp:1708
-#: kfmprops.cpp:1893
+#: kfmprops.cpp:880 kfmprops.cpp:1009 kfmprops.cpp:1472 kfmprops.cpp:1704
+#: kfmprops.cpp:1889
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -828,80 +828,80 @@ msgstr ""
 "등록정보를 저장할 수 없습니다\n"
 "허가가 거부되었습니다"
 
-#: kfmprops.cpp:938
+#: kfmprops.cpp:934
 msgid "URL"
 msgstr "URL"
 
-#: kfmprops.cpp:1035
+#: kfmprops.cpp:1031
 #, fuzzy
 msgid "Background"
 msgstr "배경 색:"
 
-#: kfmprops.cpp:1045
+#: kfmprops.cpp:1041
 msgid "Apply global"
 msgstr "모두 적용"
 
-#: kfmprops.cpp:1083 kfmprops.cpp:1155 kfmprops.cpp:1212
+#: kfmprops.cpp:1079 kfmprops.cpp:1151 kfmprops.cpp:1208
 msgid "(Default)"
 msgstr "(기본값)"
 
-#: kfmprops.cpp:1144
+#: kfmprops.cpp:1140
 msgid "Could not write to\n"
 msgstr "Could not write to\n"
 
-#: kfmprops.cpp:1273
+#: kfmprops.cpp:1269
 msgid "(None)"
 msgstr "(없음)"
 
-#: kfmprops.cpp:1319
+#: kfmprops.cpp:1315
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr "이진 패턴 (netscape;Netscape;)"
 
-#: kfmprops.cpp:1326 kfmprops.cpp:1577
+#: kfmprops.cpp:1322 kfmprops.cpp:1573
 msgid "Comment"
 msgstr "설명"
 
-#: kfmprops.cpp:1337
+#: kfmprops.cpp:1333
 msgid "Name ( in your language )"
 msgstr "이름"
 
-#: kfmprops.cpp:1554
+#: kfmprops.cpp:1550
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "패턴 (예: *.html;*.HTML; )"
 
-#: kfmprops.cpp:1566
+#: kfmprops.cpp:1562
 msgid "Mime Type"
 msgstr "Mime 형식"
 
-#: kfmprops.cpp:1595
+#: kfmprops.cpp:1591
 msgid "Default Application"
 msgstr "기본 응용프로그램"
 
-#: kfmprops.cpp:1635
+#: kfmprops.cpp:1631
 msgid "<none>"
 msgstr ""
 
-#: kfmprops.cpp:1757
+#: kfmprops.cpp:1753
 msgid "Device ( /dev/fd0 )"
 msgstr "장치 ( /dev/fd0 )"
 
-#: kfmprops.cpp:1766
+#: kfmprops.cpp:1762
 msgid "Mount Point ( /floppy )"
 msgstr "파일시스템을 연결할 지점 ( /floppy )"
 
-#: kfmprops.cpp:1777
+#: kfmprops.cpp:1773
 msgid "Readonly"
 msgstr "읽기전용"
 
-#: kfmprops.cpp:1783
+#: kfmprops.cpp:1779
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "파일시스템 ( iso9660,msdos,minix,default )"
 
-#: kfmprops.cpp:1794
+#: kfmprops.cpp:1790
 msgid "Mounted Icon"
 msgstr "파일시스템 연결을 표시하는 아이콘"
 
-#: kfmprops.cpp:1799
+#: kfmprops.cpp:1795
 msgid "Unmounted Icon"
 msgstr "파일시스템 연결 끊기를 표시하는 아이콘"
 
@@ -1432,35 +1432,35 @@ msgstr ""
 msgid "&General"
 msgstr ""
 
-#: kfmprops.h:108
+#: kfmprops.h:107
 #, fuzzy
 msgid "&Permissions"
 msgstr "접근 권한"
 
-#: kfmprops.h:200
+#: kfmprops.h:199
 #, fuzzy
 msgid "E&xecute"
 msgstr "실행파일"
 
-#: kfmprops.h:246
+#: kfmprops.h:245
 #, fuzzy
 msgid "U&RL"
 msgstr "URL"
 
-#: kfmprops.h:270
+#: kfmprops.h:269
 msgid "&Dir"
 msgstr ""
 
-#: kfmprops.h:314
+#: kfmprops.h:313
 #, fuzzy
 msgid "&Application"
 msgstr "응용프로그램"
 
-#: kfmprops.h:356
+#: kfmprops.h:355
 msgid "&Binding"
 msgstr "바인딩(&B)"
 
-#: kfmprops.h:386
+#: kfmprops.h:385
 msgid "De&vice"
 msgstr "장치(&v)"
 
@@ -1497,6 +1497,10 @@ msgid ""
 msgstr ""
 "문법 오류:\n"
 "kfmexec 명령 [URL ....]\n"
+
+#, fuzzy
+#~ msgid "Name"
+#~ msgstr "전체 경로"
 
 #~ msgid "Browse"
 #~ msgstr "찾아보기"
