@@ -34,6 +34,7 @@
 #include "utils.h"
 
 #include <klocale.h>
+#include <kstring.h>
 
 QStrList *KfmView::clipboard;
 
@@ -176,7 +177,7 @@ void KfmView::slotTerminal()
 	dir = u.path();
     
     QString cmd;
-    cmd.sprintf( "cd %s; %s &", dir.data(), term.data() );
+    cmd << "cd " << dir << " ; " << term << "&";
     system( cmd.data() );
 }
 
@@ -1000,7 +1001,7 @@ bool KfmView::dndHook( const char *_url, QPoint &_p )
     else
     {
 	// pixmap.load( KMimeType::getPixmapFileStatic( l.first() ) );
-	QString dir = kapp->kdedir();
+	QString dir = kapp->kdedir().copy();
 	dir += "/share/apps/kfm/pics/kmultiple.xpm";
 	pixmap.load( dir );
 	// TODO  Nice icon for multiple files

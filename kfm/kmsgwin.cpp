@@ -16,7 +16,7 @@ KMsgWin::KMsgWin(QWidget *parent, const char *caption, const char *message, int 
     if( !icons_initialized )
     {
 	
-        QString ipath = kapp->kdedir();
+        QString ipath = kapp->kdedir().copy();
 	ipath.detach();
 	ipath += "/share/kfm/pics/";
         icons[0].load(ipath + "info.xpm");

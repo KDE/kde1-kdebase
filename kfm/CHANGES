@@ -91,3 +91,27 @@
  - applied patch by Piotr Roszatycki, that added klocale support and 
    accelerators to the property pages
 
+04.01.97 Torben
+
+ - Fixed bug in mounting. Please mention: NEVER put symlinks in fstab.
+   This is a correct line:
+     /dev/scd0       /cdrom  iso9660 ro,noauto,user,exec     0       0    
+   but this one
+     /dev/cdrom       /cdrom  iso9660 ro,noauto,user,exec     0       0    
+   causes mount to fail on
+     mount /dev/cdrom
+   since it follows the symlink and can not find /dev/sdc0 in fstab.
+   You may never the less enter /dev/cdrom in the KFM properties dialog.
+ - Fixed bin in Device.kdelnk. Menu should now only contain one entry
+   for mounting.
+ - Fixed sprintf bug hopefully anywhere, to allow handling of URLs of any size.
+   But not too well tested right now.
+ - Applied patch for KURL Completion
+ - Fixed bug in mounting dialog. The error message sometimes disappeared.
+   Plese notice that some mount implementations are buggy. The do sometimes
+   output error messages to stdout instead of stderr, which means that we do
+   not catch this error messages.
+ - Many small bug fixes
+ - Patched KFM for "QString kdedir()". If I get the guy who did this .... grrrrr!!!
+   Dragging multiple files to the tree view odes not crash KFM on my system now,
+   since this dialog box does no longer appear while a drag is initialized.

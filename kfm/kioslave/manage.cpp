@@ -7,6 +7,9 @@
 #include "cgi.h"
 #include "gzip.h"
 #include "icon.h"
+#include "ftp_proxy.h"
+
+extern int revmatch(const char *host, const char *nplist);
 
 int ProtocolSupported(const char *url)
 {
@@ -55,14 +58,34 @@ KProtocol *CreateProtocol(const char *url)
     KURL u( url );
     if ( u.isMalformed() )
 	return NULL;
+
+    bool do_proxy = false;
+    QString ftp_proxy = getenv("ftp_proxy");
+    if ( ftp_proxy.isEmpty() )
+	ftp_proxy = getenv("FTP_PROXY");
+    if ( !ftp_proxy.isEmpty() )
+	do_proxy = true;
     
     QString lasturl( u.nestedURL() );
+
+    char *no_proxy = getenv("no_proxy");
+    if ( no_proxy != 0L && do_proxy )
+    {
+	do_proxy = !revmatch( u.host(), no_proxy );
+    }
 
     // A Hack. Does allow only one subprotocol.
     if( lasturl[0] == '/' ) return(new KProtocolFILE);
     if( strncmp( lasturl, "file:", 5 ) == 0 ) return( new KProtocolFILE );
     if( strncmp( lasturl, "http:", 5 ) == 0 ) return( new KProtocolHTTP );
-    if( strncmp( lasturl, "ftp:", 4 ) == 0 ) return( new KProtocolFTP );
+    // if( strncmp( lasturl, "ftp:", 4 ) == 0 ) return( new KProtocolFTP );
+    if( strncmp( lasturl, "ftp:", 4 ) == 0 )
+    {
+	if ( do_proxy )
+	    return( new KProtocolProxyFTP );
+	else
+	    return( new KProtocolFTP );
+    }     
     if( strncmp( lasturl, "cgi:", 4 ) == 0 ) return( new KProtocolCGI );
     if( strncmp( lasturl, "icon:", 4 ) == 0 ) return( new KProtocolICON );
     if( strncmp( lasturl, "gzip:", 5 ) == 0 )

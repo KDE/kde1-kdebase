@@ -18,6 +18,7 @@
 #include <qmsgbox.h>
 #include <kconfig.h>
 #include <klocale.h>
+#include <kstring.h>
 
 #include "kfmman.h"
 #include "xview.h"
@@ -198,7 +199,7 @@ bool KFMManager::openURL( const char *_url, bool _reload )
 	if ( ( i = to.find( '?' ) ) != -1 )
 	    to = to.left( i ).data();
 	QString cmd;
-	cmd.sprintf( "kmail to \"%s\" subject \"%s\"", to.data(), subject.data() );
+	cmd << "kmail to \"" << to << "\" subject \"" << subject << "\"";
 	KMimeBind::runCmd( cmd );
 	return false;
     }
@@ -316,7 +317,7 @@ bool KFMManager::openURL( const char *_url, bool _reload )
     QString tmp;
     if ( u.host() != 0L && u.host()[0] != 0 )
     {
-	tmp.sprintf( klocale->translate("Contacting host %s"), u.host() );
+	tmp << klocale->translate("Contacting host ") << u.host();
 	view->getGUI()->slotSetStatusBar( tmp );
     }
     else
@@ -866,7 +867,7 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
 	if ( u.isMalformed() )
 	{
 	    QString tmp;
-	    tmp.sprintf(klocale->translate("Malformed URL\n%s"), s );
+	    tmp << klocale->translate("Malformed URL\n") << s;
 	    QMessageBox::warning( 0, klocale->translate("KFM Error"), tmp );
 	    return;
 	}

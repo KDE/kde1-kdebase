@@ -59,8 +59,10 @@ void KURLCompletion::make_completion ()
 	else 
 		match = dir;
 	
-	if (possibilityList.count() != 1)
+	if (possibilityList.count() != 1) {
+		completed_dir = false;
 		QApplication::beep();
+	}
 	else
 		completed_dir = CompleteDir (match);
 	
@@ -104,7 +106,8 @@ void KURLCompletion::make_rotation ()
 	}
 	
 	completed_dir = CompleteDir (match);
-	new_guess = false;
+	// if there is only one possible dir -> behave like complete
+	new_guess = completed_dir && (possibilityList.count() == 1);
 	if (!ambigous || !possibilityList.isEmpty()) {
 		match.prepend ("file:");  // set to file-protocol
 		self_update = true;
@@ -125,6 +128,8 @@ void KURLCompletion::GetList (QString dir, QString & match)
 	if (qual_dir == "")
 		qual_dir = "/";
 	guess = dir.right (dir.length() - pos - 1);
+
+	possibilityList.clear();
 	
 	dp = opendir( qual_dir.data() );
 	if ( dp == NULL )
@@ -138,7 +143,6 @@ void KURLCompletion::GetList (QString dir, QString & match)
 	bool multiple = false;
 	bool anymatch = false;
 	QString max;
-	possibilityList.clear();
 	
 	// Loop thru all directory entries
 	while ( ( ep = readdir( dp ) ) != 0L ) {
@@ -214,7 +218,8 @@ bool KURLCompletion::CompleteDir (QString &dir)
 	struct stat sbuff;
 	if (stat ( dir.data(), &sbuff) == 0 &&
 	    S_ISDIR (sbuff.st_mode)) {
-		dir += "/";
+		if (dir.right(1) != "/")
+			dir += "/";
 		return true;
 	}
 	return false;

@@ -33,6 +33,7 @@
 //-> was: #include "useragentdlg.h" => moved to kkfmoptdlg.h
 
 #include <klocale.h>
+#include <kstring.h>
 
 bool KfmGui::sumode = false;
 bool KfmGui::rooticons = true;
@@ -553,7 +554,7 @@ void KfmGui::initToolBar()
     toolbarButtons->insertButton(pixmap, 8, SIGNAL( clicked() ), this, 
 			  SLOT( slotNewWindow() ), false );
     toolbarButtons->setItemEnabled( 8, true );
-	toolbarButtons->alignItemRight( 8, true );
+    toolbarButtons->alignItemRight( 8, true );
     
     // Load animated logo
     if ( animatedLogo->count() == 0 )
@@ -568,7 +569,7 @@ void KfmGui::initToolBar()
 	    if ( p->isNull() )
 	    {
 		QString e;
-		e.sprintf( klocale->translate( "Could not load icon\n%s" ), n.data() );
+		e << klocale->translate( "Could not load icon\n" ) << n.data();
 		QMessageBox::warning( this, klocale->translate( "KFM Error" ), e.data() );
 	    }
 	    animatedLogo->append( p );
@@ -670,7 +671,39 @@ void KfmGui::slotCacheOff()
 void KfmGui::slotURLEntered()
 {
     if ( view->getActiveView() )
-	view->openURL( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );
+    {
+	QString url = toolbarURL->getLinedText( TOOLBAR_URL_ID );
+
+	// Exit if the user did not enter an URL
+	if ( url.data()[0] == 0 )
+	    return;
+	// Root directory?
+	if ( url.data()[0] == '/' )
+	{
+	    url = "file:";
+	    url += toolbarURL->getLinedText( TOOLBAR_URL_ID );
+	}
+	// Home directory?
+        else if ( url.data()[0] == '~' )
+        {
+	    url = "file:";
+	    url += QDir::homeDirPath().data();
+	    url += toolbarURL->getLinedText( TOOLBAR_URL_ID ) + 1;
+         }
+
+	KURL u( url.data() );
+	if ( u.isMalformed() )
+	{
+	    QString tmp;
+	    tmp << klocale->translate("Malformed URL\n") << toolbarURL->getLinedText( TOOLBAR_URL_ID );
+	    QMessageBox::critical( (QWidget*)0L, klocale->translate( "KFM Error" ),
+				   tmp );
+	    return;
+	}
+	
+	view->openURL( url.data() );             
+    }
+    // view->openURL( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );
 }
 
 void KfmGui::setToolbarURL( const char *_url )
@@ -722,14 +755,14 @@ void KfmGui::slotOpenURL( const char *_url )
 
 void KfmGui::slotEditSUMimeTypes()
 {
-    QString tmp( kapp->kdedir() );
+    QString tmp( kapp->kdedir().data() );
     tmp += "/share/mimelnk";
     view->openURL( tmp );
 }
 
 void KfmGui::slotEditSUApplications()
 {
-    QString tmp( kapp->kdedir() );
+    QString tmp( kapp->kdedir().data() );
     tmp += "/share/applnk";
     view->openURL( tmp );
 }
@@ -1446,16 +1479,14 @@ void KfmGui::slotViewFrameSource()
 	return;
     
     QString cmd;
-    cmd.sprintf("kedit \"%s\"", view->getActiveView()->getURL() );
-    // debugT("RUNNING '%s'\n",cmd.data());
+    cmd << "kedit \"" << view->getActiveView()->getURL() << "\"";
     KMimeBind::runCmd( cmd );
 }
 
 void KfmGui::slotViewDocumentSource()
 {
     QString cmd;
-    cmd.sprintf("kedit \"%s\"", view->getURL() );
-    // debugT("RUNNING '%s'\n",cmd.data());
+    cmd << "kedit \"" << view->getURL() << "\"";
     KMimeBind::runCmd( cmd );
 }
     

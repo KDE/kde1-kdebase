@@ -246,7 +246,7 @@ void KIOSlave::mount( bool _ro, const char *_fstype, const char* _dev, const cha
     else if ( _ro )
 	sprintf( buffer, "mount -rt %s %s %s 2>/tmp/mnt%i",_fstype, _dev, _point, t );
     else
-	sprintf( buffer, "mount -rt %s %s %s 2>/tmp/mnt%i",_fstype, _dev, _point, t );
+	sprintf( buffer, "mount -t %s %s %s 2>/tmp/mnt%i",_fstype, _dev, _point, t );
 		
     system( buffer );
 

@@ -14,6 +14,7 @@
 #include "utils.h"
 
 #include <klocale.h>
+#include <kstring.h>
 
 /***************************************************************************
  *
@@ -54,7 +55,7 @@ void KFMExec::openURL( const char *_url  )
     if ( u.isMalformed() )
     {
 	QString tmp;
-	tmp.sprintf(klocale->translate("Malformed URL\n%s"), _url );
+	tmp << klocale->translate("Malformed URL\n") << _url;
 	QMessageBox::warning( 0, klocale->translate("KFM Error"), tmp );
 	// We are a zombie now
 	prepareToDie();

@@ -16,6 +16,7 @@
 #include <config-kfm.h>
 
 #include <klocale.h>
+#include <kstring.h>
 
 #include <qmsgbox.h>
 
@@ -151,7 +152,7 @@ void KFMServer::slotOpenURL( const char* _url )
 	if ( u.isMalformed() )
 	{
 	    QString tmp;
-	    tmp.sprintf( "%s\n%s", klocale->translate( "Malformed URL" ), url.data() );
+	    tmp << klocale->translate( "Malformed URL" ) << "\n" << url.data();
 	    QMessageBox::warning( (QWidget*)0L, klocale->translate( "KFM Error" ), tmp );
 	    return;
 	}
@@ -229,7 +230,7 @@ void KFMServer::slotExec( const char* _url, const char * _documents )
     if ( u.isMalformed() )
     {
 	QString msg;
-	msg.sprintf(klocale->translate("The URL\n%s\nis malformed\n"), _url);
+	msg << klocale->translate( "The URL" ) << "\n" << _url << klocale->translate( "is malformed\n" );
 	QMessageBox::warning( (QWidget*)0, klocale->translate( "KFM Error" ), msg );
 	return;
     }

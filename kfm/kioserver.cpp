@@ -10,6 +10,12 @@
 #include <dirent.h>
 #include <sys/stat.h>
 
+#ifdef __FreeBSD__
+#include <sys/param.h>
+#include <sys/ucred.h>
+#include <sys/mount.h>
+#endif      
+
 #include <kconfig.h>
 
 #include "kioserver_ipc.h"
@@ -395,8 +401,35 @@ void KIOServer::sendMountNotify2()
 
 QString KIOServer::findDeviceMountPoint( const char *_device, const char *_file )
 {
-    debugT("Finding mount point of %s\n",_device );
+#ifdef __FreeBSD__
+    if( !strcmp( "/etc/mtab", _file))
+    {
+	struct statfs *buf;
+	long fsno;
+	int flags = MNT_WAIT;
+	
+	fsno = getfsstat( NULL, 0, flags );
+	buf = (struct statfs *)malloc(fsno * sizeof( struct statfs ) );
+	if( getfsstat(buf, fsno*sizeof( struct statfs ), flags) == -1 )
+	{
+	    free(buf);
+	    return QString(NULL);
+	}
+	else
+	{
+	    int i;
+	    for( i = 0; i < fsno; i++ )
+		if( !strcmp(buf[i].f_mntfromname, _device ) )
+		{
+		    QString tmpstr((const char *)buf[i].f_mntonname);
+		    free(buf);
+		    return tmpstr;
+		}
+	}
+    }
     
+#endif /* __FreeBSD__ */             
+
     // Get the real device name, not some link.
     char buffer[1024];
     QString tmp;
@@ -404,6 +437,9 @@ QString KIOServer::findDeviceMountPoint( const char *_device, const char *_file 
     struct stat lbuff;
     lstat( _device, &lbuff );
 
+    // Perhaps '_device' is just a link ?
+    const char *device2 = _device;
+    
     if ( S_ISLNK( lbuff.st_mode ) )
     {
 	int n = readlink( _device, buffer, 1022 );
@@ -411,12 +447,12 @@ QString KIOServer::findDeviceMountPoint( const char *_device, const char *_file 
 	{
 	    buffer[ n ] = 0;
 	    if ( buffer[0] == '/' )
-		_device = buffer;
+		device2 = buffer;
 	    else
 	    {
 		tmp = "/dev/";
 		tmp += buffer;
-		_device = tmp.data();
+		device2 = tmp.data();
 	    }
 	}
     }
@@ -424,6 +460,8 @@ QString KIOServer::findDeviceMountPoint( const char *_device, const char *_file 
     debugT("Now Finding mount point of %s\n",_device );
 
     int len = strlen( _device );
+    int len2 = strlen( device2 );
+    
     
     FILE *f;
     f = fopen( _file, "rb" );
@@ -437,23 +475,34 @@ QString KIOServer::findDeviceMountPoint( const char *_device, const char *_file 
 	    // Read a line
 	    fgets( buff, 1023, f );
 	    // Is it the device we are searching for ?
-	    if ( strncmp( buff, _device, len ) == 0 )
-		// Is a space following ?
-		if ( buff[ len ] == ' ' )
-		{
-		    // Skip all spaces
-		    while( buff[ len ] == ' ' || buff[ len ] == '\t' )
+	    if ( strncmp( buff, _device, len ) == 0 && ( buff[len] == ' ' || buff[len] == '\t' ) )
+            {
+	      // Skip all spaces
+	      while( buff[ len ] == ' ' || buff[ len ] == '\t' )
 			len++;
 		    
-		    char *p = strchr( buff + len, ' ' );
-		    if ( p != 0L )
-		    {
-			*p = 0;
-			fclose( f );
-			debugT("MP=%s\n", buff + len );
-			return QString( buff + len );
-		    }
-		}
+	      char *p = strchr( buff + len, ' ' );
+	      if ( p != 0L )
+              {
+		*p = 0;
+		fclose( f );
+		return QString( buff + len );
+	      }
+	    }
+	    else if ( strncmp( buff, device2, len2 ) == 0 && ( buff[len2] == ' ' || buff[len2] == '\t' ) )
+            {
+	      // Skip all spaces
+	      while( buff[ len2 ] == ' ' || buff[ len2 ] == '\t' )
+			len2++;
+		    
+	      char *p = strchr( buff + len2, ' ' );
+	      if ( p != 0L )
+              {
+		*p = 0;
+		fclose( f );
+		return QString( buff + len2 );
+	      }	      
+	    }
 	}
 	
 	fclose( f );
@@ -656,7 +705,7 @@ void KIOServer::getSlave( KIOJob *_job )
 
 void KIOServer::runNewSlave()
 {
-    QString ipath = kapp->kdedir();
+    QString ipath = kapp->kdedir().copy();
     ipath.detach();
     ipath += "/bin/kioslave";
 

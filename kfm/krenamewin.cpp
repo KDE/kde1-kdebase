@@ -5,6 +5,7 @@
 #include <klocale.h>
 #include <kapp.h>
 #include <qmsgbox.h>
+#include <kstring.h>
 
 KRenameWin::KRenameWin(QWidget *parent, const char *_src, const char *_dest, bool _modal ) :
     QDialog ( parent, "" , _modal )
@@ -48,7 +49,7 @@ KRenameWin::KRenameWin(QWidget *parent, const char *_src, const char *_dest, boo
     lb->setGeometry( 10, 40, 350, 20 );
 
     QString str;
-    str.sprintf( "%s ?", dest.data() );
+    str << dest << " ?";
     lb = new QLabel( str.data(), this );
     lb->setGeometry( 10, 70, 350, 20 );
     

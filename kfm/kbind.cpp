@@ -12,6 +12,7 @@
 
 #include <kurl.h>
 #include <klocale.h>
+#include <kstring.h>
 
 #include "kbind.h"
 #include "kfmpaths.h"
@@ -505,7 +506,9 @@ KMimeType* KMimeType::findType( const char *_url )
 	// File on the local hard disk ?
 	if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
 	{   
-	    if ( access( u.path(), R_OK|X_OK ) < 0 )
+	    QString path = u.path();
+	    KURL::decodeURL( path );   
+	    if ( access( path, R_OK|X_OK ) < 0 )
 		return lockedfolderType;
 	}
 	else
@@ -1211,8 +1214,8 @@ bool KMimeBind::runBinding( const char *_url )
     QString ur;
     QString n = "";
     QString d = "";
-    f.sprintf( "\"%s\"", quote1.data() );
-    ur.sprintf( "\"%s\"", quote2.data() );
+    f << "\"" << quote1 << "\"";
+    ur << "\"" << quote2 << "\"";
     QString tmp = quote1.data();
     // Is it a directory ? Then strip the "/"
     if ( tmp.right(1) == "/" )
@@ -1530,7 +1533,7 @@ bool ExecutableMimeType::run( const char *_url )
     }
 			     
     QString cmd;
-    cmd.sprintf( "\"%s\"",  KIOServer::shellQuote( u.path() ).data() );
+    cmd << "\"" << KIOServer::shellQuote( u.path() ) << "\"";
     KMimeBind::runCmd( cmd );
 
     return TRUE;
@@ -1613,7 +1616,7 @@ bool KDELnkMimeType::run( const char *_url )
     if ( config == 0L )
     {
 	QString tmp;
-	tmp.sprintf( "%s\n%s", klocale->translate( "Could not access" ), _url );
+	tmp <<  klocale->translate( "Could not access" ) << "\n" << _url;
 	QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)

@@ -197,6 +197,15 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 	 tmp == KFMPaths::TrashPath())
            isTrash = true;
     
+    /* directories may not have a slash at the end if
+     * we want to stat() them; it requires that we
+     * change into it .. which may not be allowed
+     * stat("/is/unaccessible")  -> rwx------
+     * stat("/is/unaccessible/") -> EPERM            H.Z.
+     */
+    if ( path.length() > 1 && path.right(1) == "/" )
+	path = path.left( path.length() - 1 );             
+
     struct stat buff;
     stat( path, &buff );
 
@@ -368,6 +377,10 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
     KURL::decodeURL( path );
     QString fname = properties->getKURL()->filename();
     KURL::decodeURL( fname );
+
+    /* remove appended '/' .. see comment in FilePropsPage */
+    if ( path.length() > 1 && path.right( 1 ) == "/" )
+	path = path.left ( path.length() - 1 );          
 
     struct stat buff;
     stat( path, &buff );

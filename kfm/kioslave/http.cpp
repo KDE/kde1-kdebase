@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include "kio_errors.h"
 #include <qmsgbox.h>
+#include <kstring.h>
 
 /************************** Authorization stuff: copied from wget-source *****/
 
@@ -85,6 +86,8 @@ KProtocolHTTP::KProtocolHTTP()
     int port = 80;
     
     QString tmp = getenv("http_proxy");
+    if ( tmp.isEmpty() )
+	tmp = getenv("HTTP_PROXY");
     if ( !tmp.isEmpty() )
     {
 	KURL u( tmp );
@@ -287,17 +290,18 @@ int KProtocolHTTP::Open(KURL *_url, int mode)
 	    return(FAIL);
 	}
 
-	QString command;
+	QString command( "GET " );
 
 	if(do_proxy)
 	{
-		/** add hostname when using proxy **/
 		int port = _url->port();
-		if (! port )  // use default one
+		if ( !port )  // use default one
 			port = 80;
-                command.sprintf("GET http://%s:%d", _url->host(), port);
-
-	} else {
+		command += "http://";
+		command << _url->host() << ":" << port;
+	}
+	else
+        {
 		command = "GET ";
 	}
 
