@@ -187,8 +187,7 @@ msgstr ""
 "Kopirajto (C) 1996, 1997 Matthias Ettrich\n"
 "Kopirajto (C) 1997 M.B. Berberich\n"
 "Terminalimita¼o por KDE-LAbortabula-Medio\n"
-"bazita sur rxvt-2.08 de Robert nation"
-"\n"
+"bazita sur rxvt-2.08 de Robert nation\n"
 
 #: main.C:1326
 msgid "Permitted arguments are:\n"
@@ -198,7 +197,8 @@ msgstr "Eblaj argumentoj estas:\n"
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <komando> <arg> ...    lanæu komandon kun arg-oj, devas esti lasta argumento\n"
+"-e <komando> <arg> ...    lanæu komandon kun arg-oj, devas esti lasta "
+"argumento\n"
 
 #: main.C:1328
 msgid "-display <name>           specify the display (server)\n"
@@ -234,7 +234,8 @@ msgstr "-vt_size <grand>         tiny, small, normal, large, huge\n"
 
 #: main.C:1336
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr "-linux                   konfiguru Kvt-on por imiti Linuksan terminalon\n"
+msgstr ""
+"-linux                   konfiguru Kvt-on por imiti Linuksan terminalon\n"
 
 #: main.C:1337
 msgid "-no_menubar               hide the menubar\n"
@@ -286,8 +287,8 @@ msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
-"-meta <arg>               traktu Meta-klavon kun ESCAPE-prefikso, 8a bito "
-"aý ignoru\n"
+"-meta <arg>               traktu Meta-klavon kun ESCAPE-prefikso, 8a bito aý "
+"ignoru\n"
 
 #: main.C:1349
 msgid "-sl <number>              save number lines in scroll-back buffer\n"

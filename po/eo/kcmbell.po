@@ -49,5 +49,3 @@ msgstr "ms"
 #: bell.cpp:92
 msgid "Test"
 msgstr "Testo"
-
-

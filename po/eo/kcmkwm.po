@@ -246,7 +246,6 @@ msgstr ""
 "Aýtomata malfonigo\n"
 "post: (<100 elþaltas)"
 
-
 #: windows.cpp:147
 msgid "miliseconds"
 msgstr "milisekundoj"
@@ -286,9 +285,3 @@ msgid ""
 msgstr ""
 "Kaptdistanco de fenestroj:\n"
 "       (bildpunktoj)"
-
-
-
-
-
-

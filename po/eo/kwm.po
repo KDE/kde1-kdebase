@@ -18,9 +18,7 @@ msgstr ""
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
-msgstr ""
-"kwm: Þajnas ke jam fenestroregilo estas aktiva. Kwm ne lanæita\n"
-
+msgstr "kwm: Þajnas ke jam fenestroregilo estas aktiva. Kwm ne lanæita\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"

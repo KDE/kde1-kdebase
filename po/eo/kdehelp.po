@@ -333,10 +333,3 @@ msgstr "&Aldonu legosignon"
 
 #~ msgid "Stop"
 #~ msgstr "Stop!"
-
-
-
-
-
-
-

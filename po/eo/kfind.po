@@ -352,4 +352,3 @@ msgstr "Ne eblis rekoni la tipon de la ar¶ivo!"
 #: kfwin.cpp:496
 msgid "Error while creating child process!"
 msgstr "Okazis eraro dum kreo de procezido!"
-

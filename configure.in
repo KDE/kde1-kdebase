@@ -300,6 +300,7 @@ AC_OUTPUT(Makefile \
 	po/da/Makefile \
 	po/de/Makefile \
 	po/el/Makefile \
+	po/eo/Makefile \
 	po/es/Makefile \
 	po/fi/Makefile \
 	po/fr/Makefile \

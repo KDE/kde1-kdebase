@@ -57,7 +57,3 @@ msgid ""
 msgstr ""
 "La þanøitaj lingvoj aplikiøas nur al lanæotaj aplika¼oj.\n"
 "Por þanøi la lingvon de æiuj programoj, vi devas unue adiaýi."
-
-
-
-

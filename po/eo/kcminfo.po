@@ -67,5 +67,3 @@ msgstr "Ne disponebla"
 #: processor.cpp:29
 msgid "This system is not yet supported :-("
 msgstr "Tiu æi sistemo estas ankoraý ne subtenata :-("
-
-

@@ -43,6 +43,3 @@ msgstr ""
 "\n"
 "Dankon al:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
-
-
-

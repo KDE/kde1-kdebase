@@ -417,6 +417,3 @@ msgstr "implicita"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "iu"
-
-
-

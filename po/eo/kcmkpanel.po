@@ -129,5 +129,3 @@ msgstr "&24h"
 #: options.cpp:85
 msgid "&12h AM/PM"
 msgstr "&12h am/pm"
-
-
