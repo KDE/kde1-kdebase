@@ -31,7 +31,7 @@ If the "-activate"-switch is set then kwm will jump to the specified
 virtual desktop and give the focus to the new window.
 
 
-kstartondesk depends the kwm windowmanager.
+kstartondesk depends on the kwm windowmanager.
 
 
    Matthias
