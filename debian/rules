@@ -65,8 +65,8 @@ binary-arch:	checkroot build
 	dh_strip
 	dh_compress
 	dh_fixperms
-	chown root.shadow debian/tmp/usr/X11R6/bin/*kss
-	chmod 2755 debian/tmp/usr/X11R6/bin/*kss
+	chown root.shadow debian/tmp/usr/X11R6/bin/kcheckpass
+	chmod 2755 debian/tmp/usr/X11R6/bin/kcheckpass
 	chmod 4755 debian/tmp/usr/X11R6/bin/kvt
 	dh_suidregister
 	dh_installdeb
