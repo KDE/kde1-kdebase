@@ -35,16 +35,16 @@ help button.
 <p>
 
 <itemize>
-<item> <htmlurl url="kcmbell/bell-1.html" name="Bell configuration">
-<item> <htmlurl url="kcminfo/info-1.html" name="Memory inforation">
-<item> <htmlurl url="kcminfo/info-2.html" name="Processor information">
-<item> <htmlurl url="kcminput/input-1.html" name="Keyboard configuration">
-<item> <htmlurl url="kcminput/input-2.html" name="Mouse configuration">
-<item> <htmlurl url="kcmkwm/kwm-1.html" name="Titlebar button configuration">
-<item> <htmlurl url="kcmkwm/kwm-2.html" name="Titlebar configuration">
-<item> <htmlurl url="kcmkwm/kwm-3.html" name="Window configuration">
-<item> <htmlurl url="kcmlocale/locale-1.html" name="Language setting">
-<item> <htmlurl url="kcmsyssound/syssound.html" name="System sound selection">
+<item> <htmlurl url="bell/bell-1.html" name="Bell configuration">
+<item> <htmlurl url="info/info-1.html" name="Memory inforation">
+<item> <htmlurl url="info/info-2.html" name="Processor information">
+<item> <htmlurl url="input/input-1.html" name="Keyboard configuration">
+<item> <htmlurl url="input/input-2.html" name="Mouse configuration">
+<item> <htmlurl url="kwm/kwm-1.html" name="Titlebar button configuration">
+<item> <htmlurl url="kwm/kwm-2.html" name="Titlebar configuration">
+<item> <htmlurl url="kwm/kwm-3.html" name="Window configuration">
+<item> <htmlurl url="locale/locale-1.html" name="Language setting">
+<item> <htmlurl url="syssound/syssound.html" name="System sound selection">
 <item> <htmlurl url="kdisplay/kdisplay-3.html" name="Background configuration">
 <item> <htmlurl url="kdisplay/kdisplay-4.html" name="Screen Saver configuration">
 <item> <htmlurl url="kdisplay/kdisplay-5.html" name="Color Scheme configuration">
