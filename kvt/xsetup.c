@@ -134,7 +134,7 @@ char *print_pipe = "lpr";
 #endif
 
 char *reg_fonts[NUM_FONTS]=
-{"5x7", "6x10", "7x13", "9x15", "10x20"};
+{"6x13", "5x7", "6x10", "7x13", "9x15", "10x20"};
 
 int font_num = DEFAULT_FONT;
 
@@ -153,7 +153,8 @@ int map_alert = 0 ;
 #endif
 
 static void create_window(int,char **);
-static void extract_colors_and_fonts(char *,char *, char *, char *);
+static void extract_fonts_and_geometry(char *,char *);
+void extract_colors(char *, char *);
 void extract_resources(void);
 
 XErrorHandler RxvtErrorHandler(Display *, XErrorEvent *);
@@ -370,9 +371,8 @@ void init_display(int argc,char **argv)
   rvgc = 0;
 
   /* changed DEFAULT_FONT to font_num. (Matthias) */ 
-  extract_colors_and_fonts(reg_fonts[font_num],
-			   fg_string, bg_string, geom_string);
-
+  extract_fonts_and_geometry(reg_fonts[font_num], geom_string);
+  extract_colors(fg_string, bg_string);
 
   create_window(argc,argv);
   
@@ -479,9 +479,7 @@ void extract_colors( char *fg_string, char *bg_string){
 
 
 
-static void extract_colors_and_fonts(char *font_string,
-				     char *fg_string, char *bg_string,
-				     char *geom_string)
+static void extract_fonts_and_geometry(char *font_string, char *geom_string)
 {
   int x, y, width, height;
   int flags;
@@ -554,8 +552,6 @@ static void extract_colors_and_fonts(char *font_string,
       sizehints.y = y;
       sizehints.flags |= USPosition;
     }
-
-  extract_colors(fg_string, bg_string);
 }
 
 

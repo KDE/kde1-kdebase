@@ -16,8 +16,8 @@
 
 #define BIGGER 1
 #define SMALLER 2
-#define NUM_FONTS 5
-#define DEFAULT_FONT 2
+#define NUM_FONTS 6
+#define DEFAULT_FONT 0
 
 void init_display(int, char **);
 void resize_window(int, int);

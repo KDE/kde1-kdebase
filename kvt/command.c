@@ -1178,8 +1178,8 @@ void handle_X_event(XEvent event)
     case MotionNotify :
 
       if (event.xany.window == vt_win && 
-	  ((event.xbutton.state == Button1Mask)
-	   ||(event.xbutton.state == Button3Mask)))
+	  ((event.xbutton.state & Button1Mask) == Button1Mask)
+	   && !(event.xbutton.state & Button2Mask))
 	{
 	  while(XCheckTypedWindowEvent(display, vt_win, MotionNotify, &event));
 	  XQueryPointer(display,vt_win,&root,&child,

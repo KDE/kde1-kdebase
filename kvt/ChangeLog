@@ -1,4 +1,7 @@
-  
+
+  - various sizes (M G Berberich) 
+  - selection works with all keymasks now
+ 
   - drag'n'drop (Christian Esken)
 
   - small fixes for FreeBSD (Marc van Kempen)

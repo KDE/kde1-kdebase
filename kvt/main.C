@@ -27,7 +27,6 @@
 
 #include "kvt_version.h"
 
-
 #include "main.h"
 
 extern "C" {
@@ -79,8 +78,15 @@ static int high = 0;
 
 static XEvent stored_xevent_for_keys;
 
-static const char* kvt_sizes[5] = {"tiny", "small", "medium", "large", "huge"};
-
+static const char* kvt_sizes[] = {"normal", "tiny", "small", "medium", "large", "huge"};
+static Kvt_Dimen kvt_dimens[] = {
+  { "80x24", 80, 24 },
+  { "80x52", 80, 52 },
+  { "96x24", 96, 24 },
+  { "96x52", 96, 52 },
+  { 0, 0, 0 }
+};
+static int kvt_dimen;
 
 
 int o_argc;
@@ -94,18 +100,31 @@ void kvt_set_fontnum(char *s_arg){
       font_num = i;
   }
 }
+
+void kvt_set_dimension(char *s_arg){
+  int i;
+  QString s = s_arg;
+  for (i=0; kvt_dimens[i].text; i++){
+    if (s == kvt_dimens[i].text) {
+      MyWinInfo.cwidth = kvt_dimens[i].x;
+      MyWinInfo.cwidth = kvt_dimens[i].y;
+      kvt_dimen = i;
+      break;
+    }
+  }
+}
+
 void kvt_set_menubar(int b){
     kvt->setMenubar((b!=0));
 }
+
 void kvt_set_scrollbar(int b){
     kvt->setScrollbar((b!=0));
 }
 
-
 void kvt_set_size_increment(int dx, int dy){
     kvt->setSizeIncrement(QSize(dx, dy));
 }
-
 
 class MyApp:public KApplication {
 public:
@@ -210,6 +229,11 @@ kVt::kVt( QWidget *parent, const char *name )
       kvt_size = (KvtSize) font_num;
     }
 
+    entry = kvtconfig->readEntry("dimension");
+    if (entry) {
+      kvt_set_dimension(entry.data());
+    }
+
     entry = kvtconfig->readEntry("foreground");
     if (entry)
       fg_string = qstrdup(entry);
@@ -235,13 +259,20 @@ kVt::kVt( QWidget *parent, const char *name )
 
     m_size = new QPopupMenu;
     CHECK_PTR( m_size );
+    m_size->insertItem( "Normal");
     m_size->insertItem( "Tiny");
     m_size->insertItem( "Small");
     m_size->insertItem( "Medium");
     m_size->insertItem( "Large");
     m_size->insertItem( "Huge");
     connect(m_size, SIGNAL(activated(int)), SLOT(size_menu_activated(int)));
-    
+
+    m_dimen = new QPopupMenu;
+    CHECK_PTR( m_size );
+    for (int i=0; kvt_dimens[i].text; i++) {
+      m_dimen->insertItem(kvt_dimens[i].text);
+    }
+    connect(m_dimen, SIGNAL(activated(int)), SLOT(dimen_menu_activated(int)));
     
     m_color = new QPopupMenu;
     CHECK_PTR( m_color );
@@ -261,8 +292,9 @@ kVt::kVt( QWidget *parent, const char *name )
     m_options->insertItem( "Secure keyboard");
     m_options->insertSeparator();
     m_options->insertItem( "Scrollbar" , m_scrollbar);
-    m_options->insertItem( "Size" , m_size);
+    m_options->insertItem( "FontSize" , m_size);
     m_options->insertItem( "Color", m_color);
+    m_options->insertItem( "Size", m_dimen);
     m_options->insertSeparator();
     m_options->insertItem( "Save Options");
 
@@ -287,7 +319,6 @@ kVt::kVt( QWidget *parent, const char *name )
     if (!menubar_visible)
       menubar->hide();
     
-
     frame = new QFrame( this );
     frame ->setFrameStyle( QFrame::WinPanel | QFrame::Sunken);
 
@@ -330,6 +361,20 @@ void kVt::application_signal(){
   get_token();
 }
 
+void kVt::ResizeToDimen(int width, int height)
+{
+  MyWinInfo.cwidth = sizehints.width = width;
+  MyWinInfo.cheight = sizehints.height = height;
+  MyWinInfo.pwidth = MyWinInfo.cwidth*MyWinInfo.fwidth;
+  MyWinInfo.pheight = MyWinInfo.cheight*MyWinInfo.fheight;
+  sizehints.width = sizehints.width*sizehints.width_inc+sizehints.base_width;
+  sizehints.height = sizehints.height*sizehints.height_inc+
+  sizehints.base_height;
+  scr_reset();
+  kvt->ResizeToVtWindow();
+  
+}
+
 void kVt::ResizeToVtWindow(){
   setting_to_vt_window = TRUE;
   int menubar_height = menubar->height();
@@ -356,7 +401,6 @@ void kVt::ResizeToVtWindow(){
 
 void kVt::resizeEvent( QResizeEvent * ev)
 {
-
   if (menubar_visible){
     frame->setGeometry(0, menubar->height(), width(), height()-menubar->height());
   }
@@ -443,7 +487,7 @@ void kVt::options_menu_activated( int item){
     scr_secure(); // also calls XClearwindow and scr_refresh
     break;
     
-  case 7:
+  case 8:
     // save options
     {
       if (menubar_visible)
@@ -461,6 +505,8 @@ void kVt::options_menu_activated( int item){
 	kvtconfig->writeEntry("scrollbar", "hidden");
 
       kvtconfig->writeEntry("size", kvt_sizes[kvt_size]);
+      
+      kvtconfig->writeEntry("dimension", kvt_dimens[kvt_dimen].text);
 
       kvtconfig->writeEntry("foreground", fg_string);
       kvtconfig->writeEntry("background", bg_string);
@@ -518,7 +564,13 @@ void kVt::size_menu_activated( int item){
   kvt_size = (KvtSize) item;
   LoadNewFont();
   ResizeToVtWindow();
+}
 
+void kVt::dimen_menu_activated( int item){
+  if ( item == kvt_dimen)
+    return;
+  kvt_dimen = item;
+  kvt->ResizeToDimen(kvt_dimens[kvt_dimen].x, kvt_dimens[kvt_dimen].y);
 }
 
 void kVt::color_menu_activated( int item){
@@ -669,12 +721,16 @@ int main(int argc, char **argv){
   display = qt_xdisplay();
 
   rxvt_main(r_argc,r_argv);
-   
+
   QSocketNotifier sn( comm_fd, QSocketNotifier::Read );
   QObject::connect( &sn, SIGNAL(activated(int)),
 		    kvt, SLOT(application_signal()) );
 
-  kvt->ResizeToVtWindow();
+  kvt->ResizeToDimen(kvt_dimens[kvt_dimen].x, kvt_dimens[kvt_dimen].y);
+  // kvt->resize(kvt_dimens[kvt_dimen].x*MyWinInfo.fwidth, 
+  //      kvt_dimens[kvt_dimen].y*MyWinInfo.fheight);
+
+
   kvt->show();
 
   return a.exec();

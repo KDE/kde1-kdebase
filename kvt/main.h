@@ -19,6 +19,10 @@
 
 enum KvtScrollbar{kvt_right, kvt_left};
 enum KvtSize{kvt_tiny, kvt_small, kvt_medium, kvt_large, kvt_huge};
+typedef struct {
+  char *text;
+  int x, y;
+} Kvt_Dimen;
 
 class kVt : public QWidget
 {
@@ -31,12 +35,14 @@ public:
   void ResizeToVtWindow();
   void setMenubar(bool);
   void setScrollbar(bool);
+  void ResizeToDimen(int width, int height);
 
 public slots:
-    void    application_signal();
+    void application_signal();
     void options_menu_activated( int );
     void scrollbar_menu_activated( int );
     void size_menu_activated( int );
+    void dimen_menu_activated(int);
     void color_menu_activated( int );
     void file_menu_activated(int);
     void help_menu_activated(int);
@@ -55,6 +61,7 @@ private:
     QPopupMenu *m_options;
     QPopupMenu *m_scrollbar;
     QPopupMenu *m_size;
+    QPopupMenu *m_dimen;
     QPopupMenu *m_color;
     QPopupMenu *m_help;
     QWidget *rxvt;
@@ -71,7 +78,7 @@ private:
   Bool scrollbar_visible;
   KvtScrollbar kvt_scrollbar;
   KvtSize kvt_size;
-
+  int kvt_dimen;
   KDNDDropZone    *dropZone;
 };
 
