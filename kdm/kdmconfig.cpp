@@ -1,15 +1,15 @@
-//                              -*- Mode: C++ -*- 
+//                              -*- Mode: C++ -*-
 // Title            : kdmconfig.cpp
-// 
+//
 // Description      : Config for kdm
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:53:49 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Sun Oct 12 16:05:54 1997
-// Update Count     : 52
+// Last Modified On : Wed Nov 26 03:45:27 1997
+// Update Count     : 53
 // Status           : Unknown, Use with caution!
-// 
-
+//
+ 
 #include "kdmconfig.h"
 #include "kdmview.h"
 #include <qpixmap.h>
@@ -24,15 +24,15 @@ static void semsplit( const QString& str, QStrList& result)
      //QStrList result;
      int i1 = 0, i2 = 0;
      while( ( i2 = str.find( ';', i1)) != -1) {
-	  result.append( str.mid(i1,i2-i1));
-	  i1 = i2 + 1;
+          result.append( str.mid(i1,i2-i1));
+          i1 = i2 + 1;
      }
      if( i1 != (int)str.length()) {
-	  result.append(str.mid(i1,str.length()));
+          result.append(str.mid(i1,str.length()));
      }
      //return result;
-}     
-     
+}
+
 KDMConfig::KDMConfig( const char* rc)
 {
      kdedir = rc;
@@ -46,47 +46,49 @@ KDMConfig::getUsers( QString s, bool sorted)
      KVItemList* result = new KVItemList;
      QPixmap default_pix( user_pix_dir + "default.xpm");
      if( default_pix.isNull())
-	  printf("Cant get default pixmap from \"%s\"\n", 
-		 QString(user_pix_dir + "default.xpm").data());
-     if( s.isNull()) {
-	  QString  nu = kc->readEntry( "NoUsers");
-	  QStrList no_users;
-	  semsplit( nu, no_users);	  
-	  struct passwd *ps;
+          printf("Cant get default pixmap from \"%s\"\n",
+                 QString(user_pix_dir + "default.xpm").data());
+     if( s.isNull()) {  // isEmpty()?  Th.
+          QString  nu = kc->readEntry( "NoUsers");
+          QStrList no_users;
+          semsplit( nu, no_users);
+          struct passwd *ps;
 #define CHECK_STRING( x) (x != 0 && x[0] != 0)
-	  setpwent();
-	  for( ps = getpwent(); ps ; ) {
-	       if( CHECK_STRING(ps->pw_dir) &&
-		   CHECK_STRING(ps->pw_shell) &&
-		   CHECK_STRING(ps->pw_gecos) &&
-		   ( no_users.contains( ps->pw_name) == 0)){
-		    // we might have a real user, insert him/her
-		    QPixmap p( user_pix_dir + QString(ps->pw_name) + ".xpm");
-		    if( p.isNull())
-			 p = default_pix;
-		    if( sorted) 
-			 result->inSort( new KDMViewItem( ps->pw_name, p));
-		    else
-			 result->append( new KDMViewItem( ps->pw_name, p));
-	       }
-	       ps = getpwent();
-	  }
-	  endpwent();
+          setpwent();
+          for( ps = getpwent(); ps ; ) {
+               if( CHECK_STRING(ps->pw_dir) &&
+                   CHECK_STRING(ps->pw_shell) &&
+                   CHECK_STRING(ps->pw_gecos) &&
+                   ( no_users.contains( ps->pw_name) == 0)){
+                    // we might have a real user, insert him/her
+                    QPixmap p( user_pix_dir + QString(ps->pw_name) + ".xpm");
+                    if( p.isNull())
+                         p = default_pix;
+                    if( sorted)
+                         result->inSort( new KDMViewItem( ps->pw_name,
+p));
+                    else
+                         result->append( new KDMViewItem( ps->pw_name,
+p));
+               }
+               ps = getpwent();
+          }
+          endpwent();
 #undef CHECK_STRING
      } else {
-	  QStrList sl;
-	  semsplit( s, sl);
-	  sl.setAutoDelete( true);
-	  QStrListIterator it( sl);
-	  for( ; it.current(); ++it) {
-	       QPixmap p( user_pix_dir + it.current() + ".xpm");
-	       if( p.isNull())
-		    p = default_pix;
-	       if( sorted) 
-		    result->inSort( new KDMViewItem( it.current(),p));
-	       else
-		    result->append( new KDMViewItem( it.current(),p));
-	  }
+          QStrList sl;
+          semsplit( s, sl);
+          sl.setAutoDelete( true);
+          QStrListIterator it( sl);
+          for( ; it.current(); ++it) {
+               QPixmap p( user_pix_dir + it.current() + ".xpm");
+               if( p.isNull())
+                    p = default_pix;
+               if( sorted)
+                    result->inSort( new KDMViewItem( it.current(),p));
+               else
+                    result->append( new KDMViewItem( it.current(),p));
+          }
      }
      return result;
 }
@@ -107,61 +109,63 @@ KDMConfig::getConfig()
      QString session_string = kc->readEntry(            "SessionTypes");
      QString logo_string    = kc->readEntry(              "LogoPixmap");
      if( kc->hasKey("ShutdownButton")) {
-	  QString tmp       = kc->readEntry(       "ShutdownButton");
-	  if( tmp == "All")
-	       _shutdownButton = All;
-	  else if( tmp == "RootOnly")
-	       _shutdownButton = RootOnly;
-	  else if( tmp == "ConsoleOnly")
-	       _shutdownButton = ConsoleOnly;
-	  else
-	       _shutdownButton = KNone;
-	  _shutdown         = new QString( kc->readEntry(   "Shutdown"));
-	  if( _shutdown->isNull())
-	       *_shutdown = "/sbin/halt";
-	  _restart          = new QString( kc->readEntry(   "Restart"));
-	  if( _restart->isNull())
-	       *_restart = "/sbin/reboot";
+          QString tmp       = kc->readEntry(       "ShutdownButton");
+          if( tmp == "All")
+               _shutdownButton = All;
+          else if( tmp == "RootOnly")
+               _shutdownButton = RootOnly;
+          else if( tmp == "ConsoleOnly")
+               _shutdownButton = ConsoleOnly;
+          else
+               _shutdownButton = KNone;
+          _shutdown         = new QString( kc->readEntry(  "Shutdown"));
+          if( _shutdown->isNull())
+               *_shutdown = "/sbin/halt";
+          _restart          = new QString( kc->readEntry(   "Restart"));
+          if( _restart->isNull())
+               *_restart = "/sbin/reboot";
      } else
-	  _shutdownButton   = KNone;
+          _shutdownButton   = KNone;
      if( kc->hasKey( "GUIStyle")) {
-	  if( kc->readEntry( "GUIStyle") == "Windows")
-	       _style = WindowsStyle;
+          if( kc->readEntry( "GUIStyle") == "Windows")
+               _style = WindowsStyle;
+          else                        // Added this cause else users couldn't
+               _style = MotifStyle;   // explicitly ask for motif-style. Th.
      } else {
-	  _style = MotifStyle;
+          _style = MotifStyle;
      }
-     
+
      // Logo
-     if( logo_string.isNull())
-	  _logo = new QString( kdedir+KDMLOGO);
+     if( logo_string.isNull()) // isEmpty() ?
+          _logo = new QString( kdedir+KDMLOGO);
      else
-	  _logo = new QString( logo_string);
+          _logo = new QString( logo_string);
 
      // Table of users
      bool sorted = kc->readNumEntry( "SortUsers", 1);
      if( kc->hasKey( "UserView") && kc->readNumEntry( "UserView")) {
-	  if( kc->hasKey( "Users")) {
-	       QString users = kc->readEntry( "Users");
-	       /* make list of users from kdmrc */
-	       _users = getUsers( users, sorted);
-	  } else  {
-	       _users = getUsers( QString(), sorted);
-	  }
+          if( kc->hasKey( "Users")) {
+               QString users = kc->readEntry( "Users");
+               /* make list of users from kdmrc */
+               _users = getUsers( users, sorted);
+          } else  {
+               _users = getUsers( QString(), sorted);
+          }
      } else {
-	  /* no user view */
-	  _users = NULL;
+          /* no user view */
+          _users = NULL;
      }
 
      // Session Arguments:
      _sessionTypes = new QStrList;
      int i1 = 0, i2 = 0;
      while( ( i2 = session_string.find( ';', i1)) != -1) {
-          _sessionTypes->append( 
-	       qstrdup( session_string.mid( i1, i2-i1).data()));
+          _sessionTypes->append(
+               qstrdup( session_string.mid( i1, i2-i1).data()));
           i1 = i2 + 1;
      }
      if( i1 != (int)session_string.length())
-          _sessionTypes->append( 
+          _sessionTypes->append(
                qstrdup( session_string.mid( i1, session_string.length())));
      if( _sessionTypes->count() == 0) {
           _sessionTypes->append( "kde");
@@ -178,34 +182,50 @@ KDMConfig::getConfig()
      if( dot != -1) hostname = longhostname.left( dot);
      else hostname = longhostname;
 
-     if( !normal_font.isNull()) {
-	  _normalFont = new QFont( normal_font.data());
-	  _normalFont->setRawMode( true);
-     } else 
-	  _normalFont = new QFont;
+     if( !normal_font.isEmpty()) { // Rettet til isEmpty. Strengen kan godt være 0-længde
+                                   // selvom isNull() giver false.
+          if(normal_font.contains(',')) {                           //Th.
+            _normalFont = new QFont(kc->readFontEntry( "StdFont")); //Th.
+          }
+          else {
+            _normalFont = new QFont( normal_font.data());
+            _normalFont->setRawMode( true);
+          }
+     } else
+          _normalFont = new QFont;
 
-     if( !fail_font.isNull()) {
-       	  _failFont = new QFont( fail_font.data());
-	  _failFont->setRawMode( true);
+     if( !fail_font.isEmpty()) {
+          if(fail_font.contains(',')) {                             //Th.
+            _failFont = new QFont(kc->readFontEntry( "FailFont"));  //Th.
+          }
+          else {
+            _failFont = new QFont( fail_font.data());
+            _failFont->setRawMode( true);
+          }
      } else {
           _failFont = new QFont( *_normalFont);
-	  _failFont->setBold( true);
+          _failFont->setBold( true);
      }
 
-     if( !greet_font.isNull()) {
-	  _greetFont = new QFont( greet_font.data());
-	  _greetFont->setRawMode( true);
-     } else 
+     if( !greet_font.isEmpty()) {
+          if(greet_font.contains(',')) {                             //Th.
+            _greetFont = new QFont(kc->readFontEntry( "GreetFont")); //Th.
+          }
+          else {
+            _greetFont = new QFont( greet_font.data());
+            _greetFont->setRawMode( true);
+          }
+     } else
           _greetFont = new QFont( "times", 24, QFont::Black);
-      
-     if( greet_string.isNull())
+
+     if( greet_string.isEmpty())
           _greetString = new QString( hostname);
      else {
           QRegExp rx( "HOSTNAME");
           greet_string.replace( rx, hostname.data());
           _greetString = new QString( greet_string);
      }
-} 
+}
 
 KDMConfig::~KDMConfig()
 {
