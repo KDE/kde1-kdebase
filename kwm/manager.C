@@ -1489,7 +1489,9 @@ void Manager::deskCascade() {
   cascadePlacement(cl,True);
   sendConfig(cl, false);
   for(cl = clients.next(); cl; cl = clients.next()) {
-    if((!cl->isOnDesktop(currentDesktop())) || (cl->isIconified()) )
+    if((!cl->isOnDesktop(currentDesktop())) || 
+       (cl->isIconified())                  ||
+       (cl->isSticky()))
       continue;
     cascadePlacement(cl,False);
     sendConfig(cl, false);
