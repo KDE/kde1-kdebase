@@ -1,0 +1,212 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:72
+msgid "&Standard shortcuts"
+msgstr "&Scorciatoie standard"
+
+#: main.cpp:80
+msgid "&Global shortcuts"
+msgstr "Scorciatoie &globali"
+
+#: main.cpp:88
+msgid "usage: kcmkeys [-init | {standard,global}]\n"
+msgstr "utilizzo: kcmkeys [-init | {standard,global}]\n"
+
+#: main.cpp:132
+msgid "Key binding settings"
+msgstr "Impostazioni tasti"
+
+#: keyconfig.cpp:106
+msgid "Current scheme"
+msgstr "Schema attuale"
+
+#: keyconfig.cpp:108
+msgid "KDE default"
+msgstr "Predefiniti di KDE"
+
+#: keyconfig.cpp:115
+msgid "&Key scheme"
+msgstr "&Schema tasti"
+
+#: keyconfig.cpp:126
+msgid "&Add ..."
+msgstr "&Aggiungi ..."
+
+#: keyconfig.cpp:148
+msgid "&Save changes"
+msgstr "&Salva modifiche"
+
+#: keyconfig.cpp:211
+msgid "Error removing scheme"
+msgstr "Errore nella rimozione dello schema"
+
+#: keyconfig.cpp:212
+msgid ""
+"This key scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the key scheme is stored."
+msgstr ""
+"Questo schema non puo' essere rimosso.\n"
+"Puo darsi che tu non abbia i permessi per modificare il file\n"
+"system nel quale e' situato lo schema dei tasti."
+
+#: keyconfig.cpp:343
+msgid "Naming conflict"
+msgstr "Conflitto nome"
+
+#: keyconfig.cpp:344
+msgid ""
+"Please choose a unique name for the new key\n"
+"scheme. The one you entered already appears\n"
+"in the key scheme list."
+msgstr ""
+"Per favore scegli un nome unico per il nuovo schema\n"
+"di tasti. Quello che hai inserito compare gia' nella\n"
+"lista degli schemi."
+
+#: savescm.cpp:18
+msgid "Add a key scheme"
+msgstr "Aggiunfi uno schema"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new key scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The keys currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"&Inserisci un nome per il nuovo schema\n"
+"da aggiungere nella tua lista personale.\n"
+"\n"
+"I tasti attualmente in uso nell'anteprima\n"
+"saranno copiati in questo schema."
+
+#: ../../kwm/kwmbindings.cpp:1
+msgid "Task manager"
+msgstr "Gestione Task"
+
+#: ../../kwm/kwmbindings.cpp:2
+msgid "Kill window mode"
+msgstr "Modalita' uccisione finestra"
+
+#: ../../kwm/kwmbindings.cpp:3
+msgid "Execute command"
+msgstr "Esegui comando"
+
+#: ../../kwm/kwmbindings.cpp:4
+msgid "Window operations menu"
+msgstr "Menu operazioni della finestra"
+
+#: ../../kwm/kwmbindings.cpp:5
+msgid "Pop-up system menu"
+msgstr "Menu di sistema"
+
+#: ../../kwm/kwmbindings.cpp:7
+msgid "Window raise"
+msgstr "Alza finestra"
+
+#: ../../kwm/kwmbindings.cpp:8
+msgid "Window lower"
+msgstr "Abbassa finestra"
+
+#: ../../kwm/kwmbindings.cpp:9
+msgid "Window close"
+msgstr "Chiudi finestra"
+
+#: ../../kwm/kwmbindings.cpp:10
+msgid "Window iconify"
+msgstr "Iconifica finestra"
+
+#: ../../kwm/kwmbindings.cpp:11
+msgid "Window resize"
+msgstr "Ridimensiona finestra"
+
+#: ../../kwm/kwmbindings.cpp:12
+msgid "Window move"
+msgstr "Sposta finestra"
+
+#: ../../kwm/kwmbindings.cpp:13
+msgid "Window toggle sticky"
+msgstr "(Dis)attiva finestra appicicata"
+
+#: ../../kwm/kwmbindings.cpp:15
+msgid "Switch to desktop 1"
+msgstr "Vai al desktop 1"
+
+#: ../../kwm/kwmbindings.cpp:16
+msgid "Switch to desktop 2"
+msgstr "Vai al desktop 2"
+
+#: ../../kwm/kwmbindings.cpp:17
+msgid "Switch to desktop 3"
+msgstr "Vai al desktop 3"
+
+#: ../../kwm/kwmbindings.cpp:18
+msgid "Switch to desktop 4"
+msgstr "Vai al desktop 4"
+
+#: ../../kwm/kwmbindings.cpp:19
+msgid "Switch to desktop 5"
+msgstr "Vai al desktop 5"
+
+#: ../../kwm/kwmbindings.cpp:20
+msgid "Switch to desktop 6"
+msgstr "Vai al desktop 6"
+
+#: ../../kwm/kwmbindings.cpp:21
+msgid "Switch to desktop 7"
+msgstr "Vai al desktop 7"
+
+#: ../../kwm/kwmbindings.cpp:22
+msgid "Switch to desktop 8"
+msgstr "Vai al desktop 8"
+
+#: ../../kwm/kwmbindings.cpp:24
+msgid "Switch one desktop to the right"
+msgstr "Vai nel desktop a destra"
+
+#: ../../kwm/kwmbindings.cpp:25
+msgid "Switch one desktop to the left"
+msgstr "Vai nel desktop a sinistra"
+
+#: ../../kwm/kwmbindings.cpp:26
+msgid "Switch one desktop up"
+msgstr "Vai nel desktop sopra"
+
+#: ../../kwm/kwmbindings.cpp:27
+msgid "Switch one desktop down"
+msgstr "Vai nel desktop sotto"
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Nuovo"
+
+#: stdbindings.cpp:7
+msgid "Next"
+msgstr "Successivo"
+
+#: stdbindings.cpp:8
+msgid "Prior"
+msgstr "Precedente"
+
+#: stdbindings.cpp:13
+msgid "Find"
+msgstr "Trova"
+
+#: stdbindings.cpp:16
+msgid "Home"
+msgstr "Home"
+
+#: stdbindings.cpp:17
+msgid "End"
+msgstr "Fine"

@@ -1,0 +1,166 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.C:284
+msgid "&Normal"
+msgstr "&Normale"
+
+#: main.C:287
+msgid "&Small"
+msgstr ""
+
+#: main.C:288
+msgid "&Medium"
+msgstr ""
+
+#: main.C:289
+msgid "&Large"
+msgstr ""
+
+#: main.C:290
+msgid "&Huge"
+msgstr ""
+
+#: main.C:292
+msgid "&Linux"
+msgstr ""
+
+#: main.C:293
+msgid "Linux (small)"
+msgstr ""
+
+#: main.C:296
+msgid "&More ..."
+msgstr ""
+
+#: main.C:302
+msgid "&Hide"
+msgstr ""
+
+#: main.C:303
+msgid "&Left"
+msgstr ""
+
+#: main.C:304
+msgid "&Right"
+msgstr ""
+
+#: main.C:310
+msgid "40x15 (&small)"
+msgstr ""
+
+#: main.C:311
+msgid "80x24 (&vt100)"
+msgstr ""
+
+#: main.C:312
+msgid "80x25 (&ibmpc)"
+msgstr ""
+
+#: main.C:313
+msgid "80x40 (&xterm)"
+msgstr ""
+
+#: main.C:314
+msgid "80x52 (ibmv&ga)"
+msgstr ""
+
+#: main.C:323
+msgid "&Menubar"
+msgstr ""
+
+#: main.C:325
+msgid "&Frame"
+msgstr ""
+
+#: main.C:327
+msgid "Scroll&bar"
+msgstr ""
+
+#: main.C:329
+msgid "BS sends &DEL"
+msgstr ""
+
+#: main.C:332
+msgid "&Font"
+msgstr ""
+
+#: main.C:333
+msgid "&Size"
+msgstr ""
+
+#: main.C:334
+msgid "&Schema"
+msgstr ""
+
+#: main.C:336
+msgid "&Save options"
+msgstr ""
+
+#: main.C:340
+msgid "&About ..."
+msgstr ""
+
+#: main.C:341
+msgid "&User's Manual ..."
+msgstr ""
+
+#: main.C:342
+msgid "&Technical Reference ..."
+msgstr ""
+
+#: main.C:346
+msgid "cd"
+msgstr ""
+
+#: main.C:359
+msgid "Sessions"
+msgstr ""
+
+#: main.C:502
+#, c-format
+msgid ""
+"Font `%s' not found.\n"
+"Check README.linux.console for help."
+msgstr ""
+
+#: main.C:607
+#, c-format
+msgid "About %s"
+msgstr ""
+
+#: main.C:609
+#, c-format
+msgid ""
+"%s version %s - an X terminal\n"
+"\n"
+"Copyright (c) 1998 by Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"This program is free software under the\n"
+"terms of the Artistic License and comes\n"
+"WITHOUT ANY WARRANTY.\n"
+"See `LICENSE.readme´ for details."
+msgstr ""
+
+#: main.C:732
+#, c-format
+msgid "`%s' terminated abnormally."
+msgstr ""
+
+#: main.C:735
+msgid ""
+"\n"
+"Return code = "
+msgstr ""
+
+#: main.C:928
+msgid "Welcome to the console"
+msgstr ""

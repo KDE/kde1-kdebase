@@ -8,7 +8,7 @@ msgstr ""
 #         
 #: attraction.cpp:716
 msgid "Attraction"
-msgstr "Attrzione"
+msgstr "Attrazione"
 
 #           
 #: attraction.cpp:803
@@ -25,7 +25,7 @@ msgstr "Modo:"
 
 #: attraction.cpp:834 slidescreen.cpp:498
 msgid "Balls"
-msgstr ""
+msgstr "Palle"
 
 #: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
@@ -37,7 +37,7 @@ msgstr "Poligoni"
 
 #: attraction.cpp:837 slidescreen.cpp:501
 msgid "Tails"
-msgstr ""
+msgstr "Code"
 
 #: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
@@ -45,7 +45,7 @@ msgstr ""
 
 #: attraction.cpp:951
 msgid "About Attraction"
-msgstr "Attrazione"
+msgstr "Informazioni su Attrazione"
 
 #        
 #: attraction.cpp:952
@@ -81,7 +81,7 @@ msgstr "Famiglia:"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
-msgstr ""
+msgstr "Dimensione:"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -89,7 +89,7 @@ msgstr "Colore:"
 
 #: banner.cpp:147
 msgid "Bold"
-msgstr ""
+msgstr "Grassetto"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
@@ -459,7 +459,7 @@ msgid "Option %s is not support on this plattform!"
 msgstr "L'opzione %s non è supportata su questa piattaforma!"
 
 #: main.cpp:422
-#, fuzzy
+#,
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -467,10 +467,12 @@ msgid ""
 "Please contact your system administrator,\n"
 "tell him, that you need suid for the kcheckpass!"
 msgstr ""
-"Questo sistema usa le shadow passwords!\n"
-"Contattate l'amministratore di sistema.\n"
+"Attenzione: non sarai in grado di sbloccare lo schermo!\n"
 "\n"
-"Abbisognate dei permessi di suid per il salvaschermo!"
+"Questo sistema usa le shadow passwords.\n"
+"Contattate l'amministratore di sistema,\n"
+"e ditegli che necessitate del suid per kcheckpass!"
+
 
 #: main.cpp:427
 msgid "Shadow Passwords"
@@ -483,6 +485,11 @@ msgid ""
 "use klock instead.\n"
 "\n"
 msgstr ""
+"\n"
+" non usare -test insieme a -lock.\n"
+"si prega di usare invece klock .\n"
+"\n"
+
 
 #: main.cpp:580
 #, c-format
@@ -494,7 +501,7 @@ msgstr ""
 "       [-corners xxxx] [-delay num] [-lock] [-alloe-root] [-nice num]\n"
 
 #: main.cpp:583
-#, fuzzy
+#, 
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -526,11 +533,11 @@ msgstr ""
 "  -desc             Mostra a video la descrizione del salvaschermo\n"
 "  -install          Installa salvaschermo\n"
 "  -lock             Richiede la password per uscire dal salvaschermo\n"
+"  -allow-root       Accetta la password di root per sbloccare\n"
 "  -nice num         Esegue il salvaschermo con priorita` (num)\n"
 "\n"
 "  -preview wid      Esegue il salvaschermo in finestra\n"
-"  -inroot           Esegue il salvaschermo sulla finestra "
-"principale(sfondo)\n"
+"  -inroot           Esegue il salvaschermo sullo sfondo\n"
 "  -setup            Configura il salvaschermo\n"
 "  -test             Esegue il salvaschermo immediatamente\n"
 
@@ -590,6 +597,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
+"KPipes\n"
+"Copyright (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
 
 #: polygon.cpp:85
 msgid "Setup kpolygon"
@@ -761,7 +771,7 @@ msgstr "Info su Scienza"
 
 #: slidescreen.cpp:419
 msgid "SlideScreen"
-msgstr ""
+msgstr "Schermo scorrevole"
 
 #: slidescreen.cpp:465
 msgid "Setup KSlideScreen"
@@ -772,7 +782,7 @@ msgid "About SlideScreen"
 msgstr "Info su SlideScreen"
 
 #: slidescreen.cpp:559
-#, fuzzy
+#, 
 msgid ""
 "SlideScreen Version 1.1\n"
 "\n"
@@ -782,11 +792,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Asteroidi Versione 3.3\n"
+"SlideScreen Versione 1.1\n"
 "\n"
-"Copyright (c) 1992 Jamie Zawinski\n"
+"Copyright (c) 1992-1997 di Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Porting su KDE di  Martin Jones."
+"Portato a kscreensaver da:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> ott 1998"
 
 #: slip.cpp:293
 msgid "Slip"
