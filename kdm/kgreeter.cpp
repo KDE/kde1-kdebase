@@ -32,6 +32,10 @@
 #include <sys/types.h>
 #include <unistd.h>
 
+#if defined( HAVE_INITGROUPS) && defined( HAVE_GETGROUPS) && defined( HAVE_SETGROUPS)
+#  include <grp.h>
+#endif
+
 #include <qbitmap.h>
 #include <qmsgbox.h>
 #include <kstring.h>
@@ -361,8 +365,6 @@ KGreeter::shutdown_button_clicked()
 // or 0 if an error occurs
 #if defined( HAVE_INITGROUPS) && defined( HAVE_GETGROUPS) && defined( HAVE_SETGROUPS)
 
-#include <grp.h>
-
 static inline gid_t* switch_to_user( int *gidset_size, 
 				     const struct passwd *pwd)
 {
@@ -374,7 +376,7 @@ static inline gid_t* switch_to_user( int *gidset_size,
 	  // Error, back out
 	  seteuid(0);
 	  setgroups( *gidset_size, gidset);
-	  delete gidset;
+	  delete[] gidset;
 	  return 0;
      }
      return gidset;
@@ -385,6 +387,7 @@ static inline void switch_to_root( int gidset_size, gid_t *gidset)
 {
      seteuid(0);
      setgroups( gidset_size, gidset);
+     delete[] gidset;
 }
 
 void
