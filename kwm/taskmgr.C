@@ -17,6 +17,7 @@
 #include <signal.h>
 
 #include <kapp.h>
+#include <kcharsets.h>
 #include <kwm.h>
 
 #include "manager.h"
@@ -133,7 +134,9 @@ void Ktask::prepareToShow(QStrList* strlist, int active){
   int w = 360;
   int h = 0;
 
-  label->setFont(QFont("Helvetica", 14, QFont::Bold));
+  QFont fnt("Helvetica", 14, QFont::Bold);
+  KApplication::getKApplication()->getCharsets()->setQFont(fnt);
+  label->setFont(fnt);
   label->adjustSize();
   
   listbox->clear();
