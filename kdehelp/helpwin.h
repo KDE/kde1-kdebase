@@ -3,8 +3,8 @@
 // KDE Help Viewer
 //
 
-#ifndef __HELP_H__
-#define __HELP_H__
+#ifndef __HELPWIN_H__
+#define __HELPWIN_H__
 
 #include <unistd.h>
 
@@ -34,7 +34,7 @@
 #define QUIT			102
 #define COPY			200
 
-#define KDEHELP_VERSION		"0.4.11"
+#define KDEHELP_VERSION		"0.4.12"
 
 #define STATUSBAR_HEIGHT	20
 #define SCROLLBAR_WIDTH		16
@@ -109,18 +109,36 @@ class KHelpWindow : public QWidget
 {
 	Q_OBJECT
 public:
+	// List of all for the HelpWindow that can currently be 
+	// triggered off externally
+	enum AllowedActions { GoBack, GoForward, GoPrevious,  GoNext,
+			      GoUp, GoTop, Stop };
+
 	KHelpWindow(QWidget *parent=NULL, const char *name=NULL);
 	virtual ~KHelpWindow();
 
 	int 	openURL( const char *URL, bool withHistory = true );
-	void	openNewWindow( const char *url );
+	void    setLocationBar(bool enabled);
+
+	bool    canCurrentlyDo(AllowedActions action);
+	const char *getCurrentURL();
+
+signals:
+	void enableMenuItems();
+	void openNewWindow(const char *newURL);
+
+	void setURL( const char *url);
+	// the name of the url being displayed has changed to "url"
+	     
+	void bookmarkChanged(KBookmark *);
+
+	void setTitle(const char *_title);
 
 public slots:
-	void	slotNewWindow();
 	void	slotOpenFile();
 	void	slotOpenURL();
 	void	slotSearch();
-	void	slotClose();
+
 	void	slotCopy();
 	void	slotBack();
 	void	slotForward();
@@ -134,13 +152,6 @@ public slots:
 	void	slotBookmarkHighlighted( int id );
 	void	slotBookmarkChanged();
 	void	slotStopProcessing();
-	void	slotOptionsGeneral();
-	void	slotOptionsToolbar();
-	void	slotOptionsStatusbar();
-	void	slotOptionsLocation();
-	void	slotOptionsSave();
-	void	slotUsingHelp();
-	void	slotAbout();
 	void	slotSetTitle( const char * );
 	void	slotURLSelected( const char *, int );
 	void	slotOnURL( const char * );
@@ -164,8 +175,8 @@ public slots:
 	void	slotDocumentDone();
 
 protected:
-	void	resizeEvent( QResizeEvent * );
-	void	closeEvent( QCloseEvent * );
+	virtual void resizeEvent( QResizeEvent * );
+	virtual bool eventFilter( QObject *, QEvent * );
 
 private:
 	enum FileType { UnknownFile, HTMLFile, InfoFile, ManFile, CannotOpenFile };
@@ -179,27 +190,19 @@ private:
 	int		runCGI( const char *_url );
 	FileType detectFileType( const QString &filename );
 	void	convertSpecial( const char *buffer, QString &converted );
-	void	enableMenuItems();
 	void	enableToolbarButton( int id, bool enable );
 	void	createMenu();
-	void	createToolbar();
-	void	fillBookmarkMenu( KBookmark *parent, QPopupMenu *menu, int &id );
 	QString	getPrefix();
 	QString	getLocation();
 	void	addBookmark( const char *_title, const char *url );
 	void	layout();
 
 private:
-	QMenuBar *menu;
-	QButtonGroup *toolbar;
-	QPopupMenu *fileMenu;
-	QPopupMenu *gotoMenu;
-	QPopupMenu *bookmarkMenu;
-	QPopupMenu *optionsMenu;
 	QScrollBar *vert;
 	QScrollBar *horz;
 	QLabel *statusBar;
 	KLocationBar *locationBar;
+	QPopupMenu *rmbPopup;
 	QAccel *accel;
 	KHTMLWidget *view;
 	KDNDDropZone *dropZone;
@@ -220,12 +223,6 @@ private:
 	static QString standardFont;
 	static QString fixedFont;
 
-	// bars showing
-	bool   showToolBar;
-	bool   showStatusBar;
-	bool   showLocationBar;
-
-	QPixmap toolbarPixmaps[16];
 	QString fullURL;
 	QString currentURL;
 	QString currentInfo;
@@ -237,17 +234,6 @@ private:
 
 	// scroll to here when parsed
 	int scrollTo;
-
-	// menu ids
-	int idClose;
-	int idCopy;
-	int idBack;
-	int idForward;
-	int idDir;
-	int idTop;
-	int idUp;
-	int idPrev;
-	int idNext;
 
 	// busy parsing
 	bool busy;

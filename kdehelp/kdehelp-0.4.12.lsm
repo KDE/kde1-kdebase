@@ -1,14 +1,14 @@
 Begin3
 Title:		kdehelp
-Version:	0.4.11
-Entered-date:	2/5/97
+Version:	0.4.12
+Entered-date:	16/5/97
 Description:	help system for the KDE supporting HTML/info/man
 Keywords:	help info man HTML linux X11 Qt KDE
 Author:		mjones@kde.org (Martin Jones)
 Maintained-by:	mjones@kde.org (Martin Jones)
 Primary-site:	
 Alternate-site:	ftp://fiwi02.wiwi.uni-tuebingen.de/pub/kde/apps/help
-		87kB kdehelp-0.4.11.tar.gz
+		90kB kdehelp-0.4.12.tar.gz
 Original-site:	
 Platform:	Linux with Qt GUI library and KDE libraries
 Copying-policy:	GPL

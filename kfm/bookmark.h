@@ -48,6 +48,9 @@ class KBookmarkManager : public QObject
 public:
 	KBookmarkManager();
 
+	void setTitle( const char *t )
+       {   title = t; }
+
 	void read( const char *filename );
 	void write( const char *filename );
 

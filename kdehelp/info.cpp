@@ -797,7 +797,7 @@ void cNodeLineList::AddLongText(char *buffer, int &pos, int indentSize)
 
 	while (ptr)
 	{
-		if (pos+strlen(ptr) > 80 - indentSize)
+		if (pos+(int)strlen(ptr) > 80 - indentSize)
 		{
 			AddText(line);
 			line[0] = '\0';
@@ -1331,6 +1331,7 @@ int cInfo::FindFile(const char *theFilename)
 	{
 		if (!access(workFile, R_OK))
 		{
+			strcpy( fullPath, workFile );
 			if (!strcmp(workFile+strlen(workFile)-strlen(compressExtn),
 					compressExtn))
 			{
@@ -1377,7 +1378,7 @@ NOTCOMPRESSED:
 	strcpy(infoFile, theFilename);
 
 	// save the full path of this file
-	strcpy( currentPath, workFile );
+	strcpy( currentPath, fullPath );
 	ptr = strrchr( currentPath, '/' );
 	if ( ptr )
 		*ptr = '\0';
@@ -1393,7 +1394,7 @@ COMPRESSED:
 	strcpy(infoFile, theFilename);
 
 	// save the full path of this file
-	strcpy( currentPath, workFile );
+	strcpy( currentPath, fullPath );
 	ptr = strrchr( currentPath, '/' );
 	if ( ptr )
 		*ptr = '\0';

@@ -10,7 +10,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <sys/types.h>
 #include <dirent.h>
 #include <unistd.h>
 #include <sys/wait.h>
@@ -19,6 +18,7 @@
 #include "misc.h"
 #include "man.h"
 #include "error.h"
+#include <errno.h>
 
 #include "dbnew.h"
 
@@ -535,6 +535,10 @@ void cManSection::ReadSection()
 	{
 		dir = opendir(searchPath[i]);
 
+		if (dir == NULL)
+		  warning("%s: %s",searchPath[i], strerror(errno));
+
+		else {
 		while ((dirEntry = readdir(dir))) // check for matching cat and man dir
 		{
 			if (!strncmp(dirEntry->d_name, "man", 3))
@@ -556,6 +560,7 @@ void cManSection::ReadSection()
 		}
 
 		closedir(dir);
+};
 	}
 }
 

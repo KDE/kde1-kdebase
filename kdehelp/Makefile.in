@@ -7,8 +7,8 @@
 CXX = @CXX@
 MOC = @MOC@
 INCFLAGS = -I. @all_includes@ -I../kfm/libkfm -I.. -I../..
-CXXFLAGS = -Wall 
-LDFLAGS = @all_libraries@ -L../kfm/libkfm -lkfm -lkhtmlw -lkdeui -lkdecore -lqt -lXext -lX11 @LIBSOCKET@ @LIBCOMPAT@ -lgif -ljpeg
+CXXFLAGS = @CXXFLAGS@ 
+LDFLAGS = @LDFLAGS@ @all_libraries@ -L../kfm/libkfm -lkfm -lkhtmlw -lkdeui -lkdecore -lqt -lXext -lX11 @LIBSOCKET@ @LIBCOMPAT@ -lgif -ljpeg
 DEFS = -DHAVE_CONFIG_H
 
 ############# Install ##############
@@ -32,13 +32,13 @@ DOCSDIR = $(prefix)/doc/HTML
 
 ########## Files ##########
 
-SRCS = main.cpp help.cpp info.cpp error.cpp misc.cpp options.cpp\
-		man.cpp bookmark.cpp cgi.cpp
-SRCMETA = help.moc options.moc bookmark.moc cgi.moc
-HDRS = help.h info.h error.h misc.h man.h options.h\
-		bookmark.h dbnew.cpp cgi.h
-OBJS = help.o main.o info.o error.o misc.o man.o options.o\
-		bookmark.o dbnew.o cgi.o
+SRCS = main.cpp helpwin.cpp info.cpp error.cpp misc.cpp options.cpp\
+		man.cpp bookmark.cpp cgi.cpp mainwidget.cpp
+SRCMETA = helpwin.moc options.moc bookmark.moc cgi.moc mainwidget.moc
+HDRS = helpwin.h info.h error.h misc.h man.h options.h\
+		bookmark.h dbnew.cpp cgi.h mainwidget.h
+OBJS = helpwin.o main.o info.o error.o misc.o man.o options.o\
+		bookmark.o dbnew.o cgi.o mainwidget.o
 
 TARGET = kdehelp
 

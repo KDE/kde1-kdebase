@@ -17,7 +17,7 @@
 #include <sys/wait.h>
 #include <signal.h>
 #include <kurl.h>
-#include <kmisc.h>
+#include <kapp.h>
 #include "cgi.h"
 
 #include "cgi.moc"
@@ -66,11 +66,11 @@ bool KCGI::get( const char *_url, const char *_dest, const char *_method )
 		pathInfo = script.right( script.length() - pathPos - 1 );
 		script.truncate( pathPos );
 	}
-
+/*
 	printf( "Script: %s\n", script.data() );
 	printf( "Query: %s\n", query.data() );
 	printf( "Path Info: %s\n", pathInfo.data() );
-
+*/
 	KURL url( _dest );
 
 	if ( url.isMalformed() )
@@ -86,13 +86,7 @@ bool KCGI::get( const char *_url, const char *_dest, const char *_method )
 
 bool KCGI::runScript()
 {
-	char *kdePath = getenv( "KDEDIR" );
-
-	if ( !kdePath )
-	{
-		printf( "KDEDIR not set\n" );
-		return false;
-	}
+	QString kdePath = kapp->kdedir();
 
 	QString command = kdePath + script;
 	command += " > " + destFile;
@@ -105,7 +99,7 @@ bool KCGI::runScript()
 			setenv( "QUERY_STRING", query.data(), TRUE );
 		setenv( "PATH_INFO", pathInfo.data(), TRUE );
 
-		printf( "Running: %s\n", command.data() );
+//		printf( "Running: %s\n", command.data() );
 
 		FILE *fp = popen( command, "w" );
 
@@ -130,7 +124,7 @@ bool KCGI::runScript()
 		exit(0);
 	}
 
-	timer.start( 0 );
+	timer.start( 250 );
 
 	return true;
 }
@@ -139,7 +133,7 @@ void KCGI::checkScript()
 {
 	int status;
 
-	if ( waitpid( scriptPID, &status, WNOHANG ) > 0 )
+	if ( waitpid( scriptPID, &status, WNOHANG ) != 0 )
 	{
 		timer.stop();
 		scriptPID = 0;

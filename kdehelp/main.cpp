@@ -5,7 +5,7 @@
 // (c) Martin R. Jones 1996
 //
 
-#include "help.h"
+#include "helpwin.h"
 #include <signal.h>
 #include <sys/stat.h>
 #include <qmsgbox.h>
@@ -13,6 +13,7 @@
 #include <drag.h>
 #include "error.h"
 #include "khelp.h"
+#include "mainwidget.h"
 
 #ifdef __FreeBSD__
 #include <floatingpoint.h>
@@ -42,7 +43,7 @@ protected:
 void Timer::timerEvent( QTimerEvent * )
 {
 	KHelpMsg buf, retbuf;
-	KHelpWindow *helpWin;
+	KHelpMain *helpWin;
 
 	if ( buf.recv( msgqid, 1L ) != -1 )
 	{
@@ -51,7 +52,7 @@ void Timer::timerEvent( QTimerEvent * )
 		retbuf.setType( 2L );
 		retbuf.send( msgqid );
 
-		helpWin = new KHelpWindow;
+		helpWin = new KHelpMain;
 
 		QString url = buf.getMsg();
 
@@ -189,7 +190,7 @@ int main(int argc, char *argv[])
 
 	KApplication a( argc, argv, "kdehelp" );
 
-	KHelpWindow *helpWin = new KHelpWindow;
+	KHelpMain *helpWin = new KHelpMain;
 
 	if ( !helpWin->openURL( url ) )
 	{

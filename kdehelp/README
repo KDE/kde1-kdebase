@@ -10,9 +10,8 @@ BUILDING:
 
 1. You will require:
       Qt-1.2          (or greater)
-      kdelibs-0.8.06  (or greater)
-      ktoolpics-0.2   (or greater)
-      khtml-0.5.4     (or greater)
+      kdelibs-0.9.02  (or greater)
+      khtml-0.5.5     (or greater)
 2. Make sure you have QTDIR and KDEDIR environment variables
 3. Check install paths in Makefile
 4. type make
