@@ -831,15 +831,15 @@ void KColorScheme::writeSettings()
 	systemConfig->writeEntry("Contrast", str, true, true);
         systemConfig->sync();
 	
-        KConfig *config = kapp->getConfig();
-	config->setGroup( "ColorScheme" );
+	systemConfig->setGroup( "ColorScheme" );
 	if( schemeFile != NULL )
-		config->writeEntry( "Scheme", schemeFile );
+		systemConfig->writeEntry( "Scheme", schemeFile );
 	else {
 		schemeFile.sprintf("KDE Default");
-		config->writeEntry( "Scheme", schemeFile );
+		systemConfig->writeEntry( "Scheme", schemeFile );
 		schemeFile = NULL;
 	}
+        systemConfig->sync();
 }
 
 void KColorScheme::slotApply()
