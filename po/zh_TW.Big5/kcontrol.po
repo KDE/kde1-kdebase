@@ -42,4 +42,3 @@ msgstr ""
 "\n"
 "·PÁÂ :\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
-

@@ -170,8 +170,7 @@ msgstr ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
 "Emulador de terminal para el K Desktop Environment\n"
-"basado en rxvt-2.08 por Robert Nation"
-"\n"
+"basado en rxvt-2.08 por Robert Nation\n"
 
 #: main.C:1155
 msgid "Permitted arguments are:\n"
@@ -181,7 +180,8 @@ msgstr "Los parámetros permitidos son:\n"
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <comando> <arg> ...    ejecutar comando con parámetro - tiene que ser el último parámetro\n"
+"-e <comando> <arg> ...    ejecutar comando con parámetro - tiene que ser el "
+"último parámetro\n"
 
 #: main.C:1157
 msgid "-display <name>           specify the display (server)\n"
@@ -209,7 +209,8 @@ msgstr "-vt_font <fontname>       fuente normal\n"
 
 #: main.C:1163
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
-msgstr "-vt_size <size>           muy pequeña, pequeña, normal, grande, gigante\n"
+msgstr ""
+"-vt_size <size>           muy pequeña, pequeña, normal, grande, gigante\n"
 
 #: main.C:1164
 msgid "-linux                    set up kvt to mimic linux-console\n"
@@ -237,7 +238,8 @@ msgstr "-tn <TERM>                tipo de terminal (xterm por defecto).\n"
 
 #: main.C:1170
 msgid "-C                        Capture system console message\n"
-msgstr "-C                        capturar mensajes de la consola del sistema\n"
+msgstr ""
+"-C                        capturar mensajes de la consola del sistema\n"
 
 #: main.C:1171
 msgid "-n <text>                 name in icon or icon window\n"
@@ -258,15 +260,13 @@ msgid ""
 "(default)\n"
 msgstr ""
 "-ls                       iniciar kvt con login shell\n"
-"-ls-                      iniciar kvt con non-login shell "
-"(por defecto)\n"
+"-ls-                      iniciar kvt con non-login shell (por defecto)\n"
 
 #: main.C:1176
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
-msgstr ""
-"-meta <arg>               tratar Meta como ESCAPE, 8THBIT o ignorar\n"
+msgstr "-meta <arg>               tratar Meta como ESCAPE, 8THBIT o ignorar\n"
 
 #: main.C:1177
 msgid "-sl <number>              save number lines in scroll-back buffer\n"

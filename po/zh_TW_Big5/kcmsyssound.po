@@ -161,8 +161,7 @@ msgstr "不支援的 URL"
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
-msgstr ""
-"抱歉, 目前 KDE 音效系統模組不支援這種類型的 URL "
+msgstr "抱歉, 目前 KDE 音效系統模組不支援這種類型的 URL "
 
 #: syssound.cpp:465
 #, c-format

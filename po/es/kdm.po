@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-04-18 01:36+0200\n"
-"First-Translator: Steffen Hansen\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"First-Translator: Steffen Hansen\n"
 
 #: kdmshutdown.cpp:159
 msgid "Shutdown or restart?"

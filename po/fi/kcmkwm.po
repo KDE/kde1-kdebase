@@ -265,4 +265,3 @@ msgid ""
 msgstr ""
 "Ikkunan vaihtoalue:\n"
 "       (pisteitä)"
-

@@ -1347,4 +1347,3 @@ msgid ""
 msgstr ""
 "¤åªk¿ù»~:\n"
 "kfmexec ©R¥O [URLs ....]\n"
-

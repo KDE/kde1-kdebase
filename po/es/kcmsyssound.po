@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-04-18 00:01+0200\n"
 "PO-Revision-Date: 1998-04-18 01:32+0200\n"
-"First-Translator: Santiago Fernández and Jorge Valencia <jorgev@est.unileon.es>\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"First-Translator: Santiago Fernández and Jorge Valencia "
+"<jorgev@est.unileon.es>\n"
 
 #: main.cpp:53
 msgid "&Sound"
@@ -155,15 +156,15 @@ msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Lo sentimos, este tipo de URL no esta actualmente soportada por el módulo "
-"de sonido del sistema de KDE"
+"Lo sentimos, este tipo de URL no esta actualmente soportada por el módulo de "
+"sonido del sistema de KDE"
 
 #: syssound.cpp:465
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"
-"does not seemto be a WAV--file."
+"does not seem to be a WAV--file."
 msgstr ""
 "Lo sentimos, pero \n"
 "%s\n"
@@ -184,6 +185,6 @@ msgstr ""
 "%s\n"
 "ya esta en la lista"
 
-#: syssound.cpp:481
+#: syssound.cpp:483
 msgid "File Already in List"
 msgstr "El archivo ya esta en lista"

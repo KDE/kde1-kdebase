@@ -117,4 +117,3 @@ msgstr "ÁV¿|"
 #: events.C:742
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
-

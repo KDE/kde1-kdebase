@@ -311,4 +311,3 @@ msgstr "無法辨識壓縮檔格式!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "造出子程序時發生錯誤!"
-

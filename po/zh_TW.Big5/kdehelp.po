@@ -336,4 +336,3 @@ msgstr "有關 KDE 求助"
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "加入書籤[&A]"
-

@@ -255,7 +255,7 @@ msgid ""
 "in the color scheme list."
 msgstr ""
 "請為這新的色彩主題選擇一個唯一的名稱.\n"
-"您目前輸入的名稱已經存在於色彩主題列表中.\n"
+"您目前輸入的名稱已經存在於色彩主題列表中."
 
 #: savescm.cpp:18
 #, fuzzy
@@ -427,4 +427,3 @@ msgstr "預設"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "任何"
-

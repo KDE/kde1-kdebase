@@ -3,8 +3,9 @@ msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-04-18 01:26+0200\n"
-"First-Translator: Santiago Fernández and Jorge Valencia <jorgev@est.unileon.es>\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"First-Translator: Santiago Fernández and Jorge Valencia "
+"<jorgev@est.unileon.es>\n"
 
 #: main.cpp:62
 msgid "&Panel"

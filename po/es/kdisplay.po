@@ -357,7 +357,8 @@ msgstr "&Colores"
 
 #: main.cpp:77
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
-msgstr "modo de uso: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr ""
+"modo de uso: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
 #: main.cpp:117
 msgid "Display settings"
@@ -390,4 +391,3 @@ msgstr "KDE por defecto"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "cualquiera"
-

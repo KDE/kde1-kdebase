@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-03-20 00:05+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-08-26 14:27:08+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
@@ -172,8 +172,7 @@ msgstr ""
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
 "Emulacija terminala za KDE\n"
-"raðena po rxvt-2.08 Roberta Nationa."
-"\n"
+"raðena po rxvt-2.08 Roberta Nationa.\n"
 
 #: main.C:1155
 msgid "Permitted arguments are:\n"
@@ -183,47 +182,48 @@ msgstr "Dozvoljeni argumenti su:\n"
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <command> <arg> ...    izvedi naredbu uz ars - mora biti posljednji argument\n"
+"-e <command> <arg> ...    izvedi naredbu uz ars - mora biti posljednji "
+"argument\n"
 
 #: main.C:1157
 msgid "-display <name>           specify the display (server)\n"
-msgstr "-display <ime>		  navedi ime prikaza (poslu¾itelja)\n"
+msgstr "-display <ime>\t\t  navedi ime prikaza (poslu¾itelja)\n"
 
 #: main.C:1158
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr "-vt_geometry <spec>	  poèetna geometrija vt prozora\n"
+msgstr "-vt_geometry <spec>\t  poèetna geometrija vt prozora\n"
 
 #: main.C:1159
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr "-print-pipe <ime>	  navedi pipe za vt100 pisaè\n"
+msgstr "-print-pipe <ime>\t  navedi pipe za vt100 pisaè\n"
 
 #: main.C:1160
 msgid "-vt_bg <colour>           background color\n"
-msgstr "-vt_bg <boja>		  boja pozadine\n"
+msgstr "-vt_bg <boja>\t\t  boja pozadine\n"
 
 #: main.C:1161
 msgid "-vt_fg <colour>           foreground color\n"
-msgstr "-vt_fg <boja>		  boja prvog plana\n"
+msgstr "-vt_fg <boja>\t\t  boja prvog plana\n"
 
 #: main.C:1162
 msgid "-vt_font <fontname>       normal font\n"
-msgstr "-vt_font <ime pisma>	  normalno pismo\n"
+msgstr "-vt_font <ime pisma>\t  normalno pismo\n"
 
 #: main.C:1163
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
-msgstr "-vt_size <velièina>	  minijaturno, malo, normalno, veliko, ogromno\n"
+msgstr "-vt_size <velièina>\t  minijaturno, malo, normalno, veliko, ogromno\n"
 
 #: main.C:1164
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr "-linux			  postavi kvt da imitira linux-konzolu\n"
+msgstr "-linux\t\t\t  postavi kvt da imitira linux-konzolu\n"
 
 #: main.C:1165
 msgid "-no_menubar               hide the menubar\n"
-msgstr "-no_menubar		  sakrij traku izbornika\n"
+msgstr "-no_menubar\t\t  sakrij traku izbornika\n"
 
 #: main.C:1166
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr "-no_scrollbar 		  sakrij traku za odmatanje\n"
+msgstr "-no_scrollbar \t\t  sakrij traku za odmatanje\n"
 
 #: main.C:1167
 msgid ""
@@ -233,18 +233,17 @@ msgstr ""
 "-T <tekst>                 tekst na naslovnoj traci prozora \n"
 "                          (Vi¹e se ne koristi. Koristi -caption)\n"
 
-
 #: main.C:1169
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr "-tn <TERM>		  Tip terminala. Podrazumijevani je xterm.\n"
+msgstr "-tn <TERM>\t\t  Tip terminala. Podrazumijevani je xterm.\n"
 
 #: main.C:1170
 msgid "-C                        Capture system console message\n"
-msgstr "-C 			  Uhvati poruke na sistemskoj konzoli\n"
+msgstr "-C \t\t\t  Uhvati poruke na sistemskoj konzoli\n"
 
 #: main.C:1171
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr "-n <tekst>		  ime u ikoni ili prozoru ikone\n"
+msgstr "-n <tekst>\t\t  ime u ikoni ili prozoru ikone\n"
 
 #: main.C:1172
 msgid ""
@@ -261,9 +260,9 @@ msgid ""
 "(default)\n"
 msgstr ""
 "-ls                       poèni kvtovu ljusku kao prijavnu (login) ljusku\n"
-"-ls-                      poèni kvtovu ljusku kao normalnu (non-login) ljusku\n"
+"-ls-                      poèni kvtovu ljusku kao normalnu (non-login) "
+"ljusku\n"
 "(podrazumijevano)\n"
-
 
 #: main.C:1176
 msgid ""
@@ -275,7 +274,7 @@ msgstr ""
 
 #: main.C:1177
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr "-sl <broj>		  spremi broj zadnji linija u meðumemoriju\n"
+msgstr "-sl <broj>\t\t  spremi broj zadnji linija u meðumemoriju\n"
 
 #: main.C:1178
 msgid ""
