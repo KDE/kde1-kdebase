@@ -3,8 +3,8 @@
 <HEAD>
 <TITLE>Display Setup Handbook: Background</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
-<META NAME="keywords" CONTENT="kde kcontrol kdisplay">
-<META NAME="description" CONTENT="kcmkdisplay help doc">
+<META NAME="keywords" CONTENT="KDE display configuration">
+<META NAME="description" CONTENT="kcmdisplay help docs">
 </HEAD>
 <BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
 <FONT FACE="Helvetica">
@@ -24,36 +24,34 @@
 <P>The Background setup dialog is comprised of four sections:
 <P>
 <OL>
-<LI>Desktop selection and <B>Name</B>.</LI>
+<LI>Selection of the <B>Desktop</B> to configure.</LI>
 <LI>The background <B>Preview Monitor</B>.</LI>
 <LI>The background <B>Color</B>.</LI>
 <LI>The background <B>Wallpaper</B>.</LI>
 </OL>
 <P>At the bottom of the screen the
-selection <B>Dock into the panel</B>
+option <B>Dock into the panel</B>
 allows you to select whether an icon for
 the Background  Display Setting dialog is docked into the Panel
 (this provides quick access to the Display Settings menu,
 and also allows stepping through changing background
-sequences  when the "<B>Random</B>" background mode
+sequences  when the ``<B>Random</B>'' background mode option
 is selected).
 <P>Also at the bottom of the screen is a slider
 allowing the  memory <B>Cache size</B> used by the display to
 be adjusted.
 <P>
 <P>
-<H3><A NAME="ss3.1">3.1 Name</A>
+<H3><A NAME="ss3.1">3.1 Selection of the Desktop to configure.</A>
 </H3>
 
 <P>The top left <B>Desktop</B> box lists the 
 currently-configured desktops by their assigned names.
 Click on a name to select the corresponding desktop to
-be configured.   Click on <B>Rename</B> to change
-the assigned name which appears on the Panel's desktop
-selection buttons.
+be configured.   
 <P>If you wish to configure a common background for
-all Desktops, make  the <B>Common Background</B>
-selection.
+all Desktops, check  the <B>Common Background</B>
+box.
 <P>
 <H3><A NAME="ss3.2">3.2 Preview Monitor</A>
 </H3>
@@ -76,21 +74,16 @@ current settings.  To apply these settings to your display, press the
 gradient.
 <P>
 <P>
-<P>Click the <B>One Color</B> button to fill the background with a single color.
+<P>
+<UL>
+<LI>Select ``<B>One Color</B>'' to fill the background with a single color.
 The background color can be changed by clicking on the colored box which
 shows the currently-selected color.
 This will display a color selection dialog from which
-you may select a new background color.
-<P>
-<P>
-<P>When you are happy with your color selection, press <B>Ok</B> in the color
-selection dialog.  The color will be updated in the colored
-box (and in the Preview
-Monitor,  provided no Wallpaper is selected).
-<P>
-<P>To fill the background with a color gradient or pattern,
-click the <B>Two Color</B>
-button. A second colored box will appear. 
+you may select a new background color.</LI>
+<LI>Select ``<B>Two Color</B>''
+to fill the background with a color gradient or pattern,
+A second colored box will appear. 
 Click on this box to select the second color.
 Now click on the <B>Setup</B> button to choose how to
 blend the two colors. A dialog and Preview box will appear.
@@ -99,7 +92,15 @@ You may choose to progressively blend the colors from
 or in a <B>pattern</B> selected
 from the list shown.   You will see a preview of the choice you make
 before you apply it. Click <B>OK</B> or <B>Cancel</B> to leave
-this dialog.
+this dialog.</LI>
+</UL>
+<P>
+<P>When you are happy with your color selection, press <B>Ok</B> in the color
+selection dialog.  The colors will be updated in the colored
+boxes (and in the Preview
+Monitor,  provided no Wallpaper is selected).
+<P>
+<P>
 <P>
 <P>A blend of the two colors uses only 8 colors, leaving plenty free for other
 applications. However, it requires an image the size of your display to be
@@ -119,35 +120,43 @@ wallpaper image is applied to the desktop: various tiling, mirroring, or
 scaling schemes are possible, and their effects may be seen in 
 the Preview box.
 <P>
-<P>You may also select <B>Random</B> which causes a random sequence
+<P>You may also select the  <B>Random</B> option
+which causes a random sequence
 of backgrounds to be displayed, changing after a specified time
-interval.  Click on the <B>Setup</B> button to select 
-the sequence of backgrounds that are chosen from.  The sequence
-will be sampled randomly, unless you make the selection
-that the sequence is sampled <B>in order</B>.
-The <B>Timer Delay</B> box allows you to set
-the interval in seconds between changes.  If the icon for the
-background display settings is docked in the Panel, and <B>Random</B> is
-selected, you can click on the icon to cause the next scheduled background
-change to occur immediately.
-<P>
-<P>If the option <B>Pick files from directory</B> is
+interval, or when you click on the  Display icon docked in the panel.
+<P>To configure the random sequence of backgrounds:
+<UL>
+<LI> 
+Click on the <B>Setup</B> button to open the
+<B>Random mode setup</B> dialog, which allows you to select 
+the sequence of backgrounds which is sampled.</LI>
+<LI>If the option <B>Pick files from directory</B> is
 selected, the backgrounds wil be
 chosen from the set of wallpaper files in the selected directory
 entered in the box that opens.
 If this option is <B>not</B> selected, they will
-be chosen from a <B>user-created sequence</B>  of backgrounds listed in
-the main box.
-<P>
+be chosen from a list of backgrounds that can be specified in
+the ``<B>Desktops</B>''  box below.</LI>
+<LI>The <B>Timer Delay in seconds </B> box allows you to set
+the time interval  between background changes.  
+</LI>
+<LI>The sequence
+will be sampled randomly, unless you check the
+``<B>in order</B>'' box, in which case the sequence
+will be displayed in order.</LI>
+<LI> The ``<B>Desktops</B>'' box contains the user-specified
+sequence of  backgrounds that will be sampled if   ``<B>pick files
+from directory</B>'' is <I>not</I> checked.
 <UL>
-<LI>To add an entry to this <B>user-created sequence</B>, 
+<LI>To add an entry to this sequence, 
 click on <B>Add</B>; this will add
 a highlighted  <CODE>No Wallpaper</CODE> entry for the 
 currently-selected Color background 
-from the main Background <B>Display settings</B> screen to the sequence.
-Click on an item in the sequence to highlight it.
-To replace  this
-highlighted entry, go back to the main Background
+from the main Background <B>Display settings</B> screen to the sequence.</LI>
+<LI>To replace  an
+entry, first click on it to select it
+(the selected item is highlighted).
+Now go back to the main Background
 <B>Display settings</B> screen 
 (without closing the <B>Random mode setup</B> screen)
 and deselect <B>Random</B>.
@@ -157,18 +166,18 @@ entry in the Random Mode background sequence.
 Click on <B>Delete</B> to remove the highlighted
 item from the Random Mode backgrounds sequence.
 In this way, you can construct any sequence of backgrounds
-you wish.  Click on <B>OK</B> when you are satisfied with it.
-Don't forget to reselect <B>Random</B> in the main Background
+you wish.  Click on <B>OK</B> when you are satisfied with it.</LI>
+<LI>Don't forget to reselect <B>Random</B> in the main Background
 Display Setting screen to activate your Random Mode backgrounds.</LI>
 </UL>
+</LI>
+</UL>
+<P>
 <P>
 <P>Displaying wallpaper requires that the image be kept in memory.  If you are low
 on memory, using a small, tiled image or none at all is recommended. Note
 that scaling or centering a small image still requires an image the size of
 your display to be maintained in memory.
-<P>
-<P>
-<P>
 <P>
 <P>
 <P>

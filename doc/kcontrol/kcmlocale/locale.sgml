@@ -5,8 +5,8 @@
 <!-- Title information -->
 
 <title>KDE Control Center - Locale
-<author>Matthias H&ouml;lzer
-<date>v1.0, 18. January 1998
+<author>Matthias H&ouml;lzer updated by Duncan
+<date>v1.01, 22 August 1999
 
 <!-- Begin the document -->
 
@@ -14,28 +14,38 @@
 <p>
 
 With this dialog, you can set the language that is used by KDE. You can
-choose up to three languages. If you start a programm, KDE tries to find a
-translation of the program's texts into the first language. If this fails,
+choose up to three languages. If you start a program, KDE tries to find a
+translation of the program's dialogs and messages into the first language. 
+If this fails,
 it looks for the second language, then the third. If it cannot find any of
 the three, the default language is used (usually English.)
 <p>
 
-The search for up to three languages allows to set preferences. You might
-want to have the output in Spanish, but if this fails, you might prefer
-French to German or English, so you can set the 
-
+The search for up to three languages allows you to set preferences. You might
+want to see the messages in Spanish, but if this is not available, 
+you might prefer
+French and, if that is not available,   German , rather than English.
+In this case, choose
 <itemize>
-<item>First language to <tt/Spanish/
-<item>Second language to <tt/French/
-<item>Third language to <tt/German/
+<item><bf>First</bf> language: <tt/Spanish/
+<item><bf>Second</bf> language: <tt/French/
+<item><bf>Third</bf> language: <tt/German/
 </itemize>
 
-In an ideal world, all programs would be translated to all languages, but in
-reality this will take some more time :-(
+There is a substantial ``internationalization'' effort 
+to translate messages from
+KDE programs into many languages.
+If translations into your language are not yet available, or are
+incorrect, please consider volunteering to help the KDE
+translation team! 
+
 <p>
 Setting or changing the languages will not affect the programs that are
 already running. Only programs started after the change will be translated
-accordingly. To change the language for all programs on the screen, you will
-have to log out first, then log in again.
+according to your new preferences. 
+To change the language for all programs on the screen, you will
+have to  exit KDE and restart it.
 
 </article>
+
+

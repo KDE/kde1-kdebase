@@ -3,8 +3,8 @@
 <HEAD>
 <TITLE>Display Setup Handbook: Style</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
-<META NAME="keywords" CONTENT="kde kcontrol kdisplay">
-<META NAME="description" CONTENT="kcmkdisplay help doc">
+<META NAME="keywords" CONTENT="KDE display configuration">
+<META NAME="description" CONTENT="kcmdisplay help docs">
 </HEAD>
 <BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
 <FONT FACE="Helvetica">
@@ -21,7 +21,8 @@
 <H3><A NAME="s7">7. Style</A></H3>
 
 <P>
-<P>The Style dialog allows three Desktop style choices to be made:
+<P>The Style dialog allows three Desktop style choices to be made, and
+the icon style (``normal'' or ``large'') to be selected.
 <P>
 <UL>
 <LI> <B>Draw widgets in the  style of Windows 95</B>.  This allows 
@@ -38,18 +39,25 @@ the currently-active application at the top of the screen.
 <LI> <B>Apply fonts and colors to non-KDE apps</B>.
 Selecting this option allows the "look and feel"
 of KDE applications (mainly fonts and colors) to also be applied to 
-certain non-KDE X11 applications such as Emacs and XEmacs.  
-This feature uses <CODE>krdb</CODE>, KDE's
+certain non-KDE X11 applications such as Emacs and XEmacs.  </LI>
+</UL>
+<P>
+<P>Note: The ``<B>Apply fonts and colors to non-KDE apps</B>'' 
+feature uses <CODE>krdb</CODE>, KDE's
 interface to <CODE>xrdb</CODE>, the X-resources database.  If this
 causes you to experience problems with your non-KDE applications, 
-you should make sure that the Desktop
-Font settings (especially the Fixed font for emacs) are correctly set
-(you may need to change these settings at least once so entries in your
-<CODE>~/.kderc</CODE> file are generated).   Changes you make, including
-de-activating this selection, may not take effect until KDE is
+you may wish to deactivate this feature.
+A change of this selection  may not take effect until KDE is
 restarted.
-</LI>
-</UL>
+<P>
+<P>The <B>Icon style</B> section allows you to
+choose between ``<B>normal</B>'' and ``<B>large</B>'' style
+icons.  You may make this choice separately for icons
+used in the <B>Panel</B>,
+<B>File manager and desktop icons</B>,
+and <B>Other</B> icons.
+<P>
+<P>
 <P>
 <P>To restore the KDE default configuration, click on the <B>Default</B>
 button at the bottom of the screen.  Click on <B>Apply</B> or

@@ -3,8 +3,8 @@
 <HEAD>
 <TITLE>Display Setup Handbook: Color Scheme</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
-<META NAME="keywords" CONTENT="kde kcontrol kdisplay">
-<META NAME="description" CONTENT="kcmkdisplay help doc">
+<META NAME="keywords" CONTENT="KDE display configuration">
+<META NAME="description" CONTENT="kcmdisplay help docs">
 </HEAD>
 <BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
 <FONT FACE="Helvetica">
@@ -25,37 +25,36 @@
 <P>
 <OL>
 <LI>The color scheme <B>Preview</B>.</LI>
-<LI>The current <B>Widget Color</B>.</LI>
 <LI>The available <B>Color Schemes</B>.</LI>
+<LI>The choice of <B>Widget Color</B>.</LI>
 </OL>
-<P>(A "<B>Widget</B>" is a commonly-used programmer's term for referring to
-User Interface elements such as buttons, menus, and scroll bars )
+<P>(The term "<B>Widget</B>" 
+means an element of the
+User Interface such as a button, menu, scroll bar, etc. )
 <P>
 <H3><A NAME="ss5.1">5.1 Preview</A>
 </H3>
 
 <P>
 <P>This section of the dialog demonstrates how a color scheme applies to a
-sample selection of widgets. A color scheme consists of a set of ten
-colors. These colors apply to the :-
+sample selection of widgets. A color scheme consists of a set of twelve
+colors. These colors apply to the  following elements:
 <P>
-<OL>
-<LI>Inactive title bar background</LI>
-<LI>Inactive title bar text</LI>
-<LI>Active title bar background</LI>
-<LI>Active title bar text</LI>
-<LI>General background</LI>
-<LI>General foreground</LI>
-<LI>Selection background</LI>
-<LI>Selection text</LI>
-<LI>Window background</LI>
-<LI>Window text</LI>
-</OL>
-<P>Labels on the sample widgets will help you identify where these colors apply.
+<UL>
+<LI><B>Inactive window</B>: title bar text, background and blend.</LI>
+<LI><B>Active window</B>: title bar text, background and blend</LI>
+<LI><B>General</B>: text and background</LI>
+<LI><B>Selected</B>: text and background</LI>
+<LI><B>Window</B>: text and background</LI>
+</UL>
+<P>Labels on the sample widgets identify most of these 
+locations. If you click on any object in the preview
+box, the corresponding color scheme element will be
+named  in the  box in the <B>Widget color</B> section.
 <P>
 <P>
-<P>The colors are grouped into 5 foreground / background pairs. Thus, good
-contrast between the foreground and background colors of widgets can be
+<P>The colors are grouped into 5 text/background pairs. Thus, good
+contrast between the text and background colors of widgets can be
 ensured at all times.
 <P>
 <P>
@@ -65,44 +64,14 @@ will be written to the desktop configuration.
 <P><EM>Note:</EM> Pressing <B>Ok</B> or <B>Apply</B> applies changes made in
 <EM>all</EM> of the display setup modules.
 <P>
-<P>There are some problems in
-the Qt toolkit when changing the colors in a running application, particularly
-with lists and combo boxes.  These elements will not be displayed properly
-until the applications are restarted.  Hopefully these problems will be
-fixed in a future release of Qt.
 <P>
-<P>
-<P>
-<P>
-<H3><A NAME="ss5.2">5.2 Widget Color</A>
+<H3><A NAME="ss5.2">5.2 Color schemes</A>
 </H3>
 
 <P>
-<P>The currently selected member of the color scheme is shown in the combo box
-of the <B>Widget Color</B> group. This can be changed by clicking on the
-colored box. A color selection dialog will then appear, from which you may
-select a new color.
-You may select any member of the color scheme from the 
-color combination box.
-<P>
-<P>When you are happy with your color selection, press <B>Ok</B> in the color
-selection dialog.  The color will be updated in the <B>Preview</B>.
-<P>
-<P>
-<P>The <B>Contrast</B> slider allows you to change the contrast bewteen
-different shadings of the selected colors.
-<P>
-<P>
-<P>
-<P>
-<P>
-<H3><A NAME="ss5.3">5.3 Color schemes</A>
-</H3>
-
-<P>
-<P>Various color schemes are supplied with KDisplay. These include:
-KDE default, 
-Atlas green
+<P>Various color schemes are supplied with KDE. These include:
+<I>KDE default, 
+Atlas green,
 BeOS,
 Blue slate,
 CDE,
@@ -111,8 +80,8 @@ Digital CDE,
 Pale gray,
 Pumpkin,
 Solaris CDE,
-Storm,
-and Windows 95.
+Storm,</I>
+and <I>Windows 95</I>.
 To preview a scheme click on its name in the list box. 
 <P>
 <P>You can use the
@@ -126,6 +95,25 @@ with the <B>Save Changes</B> button; it can also be
 deleted with the 
 <B>Remove</B> button.
 <P>The KDE-supplied Schemes themselves cannot be changed or deleted.
+<P>
+<P>
+<H3><A NAME="ss5.3">5.3 Widget Color</A>
+</H3>
+
+<P>
+<P>The currently selected element of the color scheme is shown in 
+the <B>Widget Color</B> group. The color can be changed by clicking on 
+the
+colored box. A color selection dialog will then appear, from which you may
+select any desired color.
+<P>
+<P>When you are happy with your color selection, press <B>Ok</B> in the color
+selection dialog.  The color will be updated in the <B>Preview</B>.
+<P>
+<P>
+<P>The <B>Contrast</B> slider allows you to change the contrast between
+different shadings of the selected colors.
+<P>
 <P>
 <P>
 <P ALIGN="RIGHT">
