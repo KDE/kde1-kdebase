@@ -1106,10 +1106,7 @@ void handle_X_event(XEvent event)
 			 event.xselection.property,True);
       return;
     case SelectionRequest:
-      scr_send_selection(event.xselectionrequest.time,
-			 event.xselectionrequest.requestor,
-			 event.xselectionrequest.target,
-			 event.xselectionrequest.property);
+      scr_send_selection(&(event.xselectionrequest)); /* Matthias */ 
       return;
     case ButtonPress:
       if (event.xany.window == vt_win)

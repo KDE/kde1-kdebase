@@ -564,7 +564,7 @@ void kVt::file_menu_activated(int item){
 void kVt::help_menu_activated(int item){
   switch (item){
   case 0:
-    QMessageBox::message( "About kvt", "kvt-0.12\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n\nTerminal emulation for the KDE Desktop Environment\nbased on Robert Nation's rxvt-2.08");
+    QMessageBox::message( "About kvt", "kvt-0.13\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n\nTerminal emulation for the KDE Desktop Environment\nbased on Robert Nation's rxvt-2.08");
     break;
   case 1:
     kapp->invokeHTMLHelp("kvt.html","");

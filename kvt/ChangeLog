@@ -1,3 +1,8 @@
+since kvt-0.12
+  - hopefully fixed kvt's pasting speed to Motif applications	
+  - kvt can now handle multiline selections without breaking them into
+    multiple lines
+
 since kvt-0.11
    - kvt should work ok with TERM=xterm-color now!
 

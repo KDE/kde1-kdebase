@@ -283,7 +283,7 @@ void init_display(int argc,char **argv)
 	}
       else 
 	{
-	  fprintf(stderr,"kvt Version 0.12\n\n");
+	  fprintf(stderr,"kvt Version 0.13\n\n");
 	  fprintf(stderr,"Copyright(C) 1996, 1997 Matthias Ettrich\n");
 	  fprintf(stderr,"Terminal emulation for the KDE Desktop Environment\n");
 	  fprintf(stderr, "based on Robert Nation's rxvt-2.08\n\n");

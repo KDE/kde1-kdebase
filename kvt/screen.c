@@ -123,7 +123,7 @@ char *nicer_color_names[10] =
 };
 
 
-
+static paste_internal_selection = 0; /* Matthias */ 
 
 char colors_loaded[10] = {1,1,0,0,0,0,0,0,0,0};
 unsigned long pixel_colors[10];
@@ -392,8 +392,11 @@ void scr_backspace(void)
       cScreen->row--;
       cScreen->col = MyWinInfo.cwidth - 1;
     }
-  else if (cScreen->wrap_next )
+  else if (cScreen->wrap_next ){
+    cScreen->text[(cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1)
+		 + cScreen->col] = '\0'; /* Matthias */ 
     cScreen->wrap_next = 0;
+  }
   else
     scr_move(-1,0,COL_RELATIVE|ROW_RELATIVE);
 }
@@ -582,7 +585,7 @@ void scr_secure(void)
 void scr_add_lines(unsigned char *c,int nl_count,int n)
 {
   int i,nl,x;
-
+  char c_tmp; /* Matthias */ 
 #ifdef DEBUG
   check_text("add_lines");
 #endif
@@ -620,25 +623,34 @@ void scr_add_lines(unsigned char *c,int nl_count,int n)
        ***********************************************************************/
 
       MyWinInfo.offset = 0;
-      switch (c[i])
+      /* a little hack for internal selection pasting. (Matthias) */ 
+      c_tmp = c[i];
+      if (paste_internal_selection && c_tmp == '\n')
+	c_tmp = '\r';
+      switch (c_tmp)
 	{
 	case 127:
 	  break;
 	case '\n':
+	  /* 2 lines Matthias */ 
+ 	  x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) +MyWinInfo.cwidth;
+ 	  cScreen->text[x] = '\0'; 
+
+	  cScreen->wrap_next = 0;
 	  if (cScreen->row == cScreen->bmargin)
 	    scroll(cScreen->tmargin,cScreen->bmargin,1);
 	  else if (cScreen->row < MyWinInfo.cheight - 1)
 	    cScreen->row++;
-	  cScreen->wrap_next = 0;
 	  x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) +
 	    (cScreen->col);
 	  break;
 	case '\r':
 	  cScreen->col = 0;
 	  cScreen->wrap_next = 0;
+ 	  x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) +MyWinInfo.cwidth;
+	  cScreen->text[x] = '\0'; /* Matthias */ 
 	  x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) +
 	    (cScreen->col);
-
 	  break;
 	case '\t':
 	  if (cScreen->col < MyWinInfo.cwidth - 1) 
@@ -654,6 +666,10 @@ void scr_add_lines(unsigned char *c,int nl_count,int n)
 	default:
 	  if (cScreen->wrap_next) 
 	    {
+	      /* 2 lines Matthias */ 
+	      x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) +MyWinInfo.cwidth;
+	      cScreen->text[x] = '\n'; 
+	      
 	      if (cScreen->row == cScreen->bmargin)
 		scroll(cScreen->tmargin,cScreen->bmargin,1);
 	      else if (cScreen->row < MyWinInfo.cheight - 1)
@@ -841,7 +857,15 @@ void scr_move(int x,int y,int relative)
     cScreen->col = 0;
   if (cScreen->col >= MyWinInfo.cwidth)
     cScreen->col = MyWinInfo.cwidth - 1;
-  
+
+  /* Matthias */ 
+  if (cScreen->wrap_next){
+    x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) + (cScreen->col);
+    cScreen->text[x] = '\0';
+    cScreen->wrap_next = 0;
+  }
+
+
   if (relative & ROW_RELATIVE) 
     {
       if (y > 0) 
@@ -889,6 +913,15 @@ void scr_index(int direction)
 #ifdef DEBUG
   check_text("index");
 #endif
+
+  /* Matthias */ 
+  if (cScreen->wrap_next){
+    int x;
+    x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) + (cScreen->col);
+    cScreen->text[x] = '\0';
+    cScreen->wrap_next = 0;
+  }
+
   if ((cScreen->row == cScreen->bmargin)&&(direction == 1))
     {
       scroll(cScreen->tmargin,cScreen->bmargin,1);
@@ -945,6 +978,15 @@ void scr_erase_line(int mode)
 			     (MyWinInfo.cwidth+1)];
   startrend = &cScreen->rendition[(cScreen->row+MyWinInfo.saved_lines)*
 				  (MyWinInfo.cwidth+1)];
+
+  /* Matthias */ 
+  if (cScreen->wrap_next){
+    int x;
+    x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) + (cScreen->col);
+    cScreen->text[x] = '\0';
+    cScreen->wrap_next = 0;
+  }
+
   switch (mode) 
     {
     case START :
@@ -1086,6 +1128,14 @@ void scr_insert_delete_lines(int count, int insdel)
   if((insdel==INSERT)&&(count > cScreen->bmargin - cScreen->row + 1))
     count = cScreen->bmargin - cScreen->row + 1;  
 
+  /* Matthias */ 
+  if (cScreen->wrap_next){
+    int x;
+    x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) + (cScreen->col);
+    cScreen->text[x] = '\0';
+    cScreen->wrap_next = 0;
+  }
+
   MyWinInfo.offset = 0;
   scroll(cScreen->row,cScreen->bmargin,insdel*count);
   cScreen->wrap_next = 0;
@@ -1117,6 +1167,15 @@ void scr_insert_delete_characters(int count, int insdel)
 			     (MyWinInfo.cwidth+1) + (cScreen->col)];
   startrend = &cScreen->rendition[(cScreen->row+MyWinInfo.saved_lines)*
 				  (MyWinInfo.cwidth+1) + (cScreen->col)];
+
+  /* Matthias */ 
+  {
+    int x;
+    x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) + (cScreen->col);
+    cScreen->text[x] = '\0';
+    cScreen->wrap_next = 0;
+  }
+  
 
   if(insdel == DELETE)
     {
@@ -1330,7 +1389,8 @@ void scr_make_selection(int time)
 	{
 	  *ptr++ =  cScreen->text[tx+i];
 	}
-      if(b == (MyWinInfo.cwidth-1))
+      /* some modifications by me  Matthias */ 
+      if(b == (MyWinInfo.cwidth-1)&& !cScreen->text [tx + MyWinInfo.cwidth])
 	{
 	  ptr--;
 	  while(*ptr == ' ' && ptr >= str)
@@ -1360,26 +1420,26 @@ void scr_make_selection(int time)
 /***************************************************************************
  *  respond to a request for our current selection.
  ****************************************************************************/
-void scr_send_selection(int time,int requestor,int target,int property)
-{
-  XEvent event;
+void scr_send_selection (XSelectionRequestEvent *rq){
+  /* updated the complete function similar to rxvt-2.18. (Matthias) */ 
+  XEvent ev;
   
-  event.xselection.type = SelectionNotify;
-  event.xselection.selection = XA_PRIMARY;
-  event.xselection.target = XA_STRING;
-  event.xselection.requestor = requestor;
-  event.xselection.time = time;
-  if (target == XA_STRING)
+  ev.xselection.type      = SelectionNotify;
+  ev.xselection.property  = None;
+  ev.xselection.display   = rq->display;
+  ev.xselection.requestor = rq->requestor;
+  ev.xselection.selection = rq->selection;
+  ev.xselection.target	   = rq->target;
+  ev.xselection.time      = rq->time;
+  
+  if (rq->target == XA_STRING)
     {
-      XChangeProperty(display,requestor,property,XA_STRING,8,PropModeReplace,
-		      selection_text,selection_length);
-      event.xselection.property = property;
+      XChangeProperty (display, rq->requestor, rq->property,
+		       XA_STRING, 8, PropModeReplace,
+		       selection_text, selection_length);
+      ev.xselection.property = rq->property;
     }
-  else
-    {
-      event.xselection.property = None;
-    }
-  XSendEvent(display,requestor,False,0,&event);
+  XSendEvent (display, rq->requestor, False, 0, &ev);
 }
 
 /***************************************************************************
@@ -1397,7 +1457,10 @@ void scr_request_selection(int time,int x,int y)
     {
       /* The selection is internal
        */
+
+      paste_internal_selection = 1;      /* Matthias */
       send_string(selection_text,selection_length);
+      paste_internal_selection = 0; /* Matthias */ 
       return;
     }
   

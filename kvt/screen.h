@@ -139,7 +139,7 @@ void scr_set_insert(int);
 void scr_move_to(int);
 void scr_move_up_down(int);
 void scr_make_selection(int);
-void scr_send_selection(int,int,int,int);
+void scr_send_selection (XSelectionRequestEvent *); /* argument changed. Matthias */ 
 void scr_request_selection(int,int,int);
 void scr_paste_primary(int,int,int);
 void scr_clear_selection(void);
