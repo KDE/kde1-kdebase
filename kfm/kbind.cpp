@@ -2,7 +2,11 @@
 
 #include <unistd.h>
 #include <sys/types.h>
+
+#ifdef __FreeBSD__ 
 #include <sys/syslimits.h>
+#endif
+
 #include <stddef.h>
 #include <dirent.h>
 #include <sys/stat.h>
