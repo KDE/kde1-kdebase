@@ -138,6 +138,8 @@ msgid ""
 "\n"
 "%b %d"
 msgstr ""
+"\n"
+"%b %d"
 
 #: tools.C:908
 msgid "KDiskNavigator"

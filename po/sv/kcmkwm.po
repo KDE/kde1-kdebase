@@ -235,6 +235,8 @@ msgid ""
 "  Allowed overlap:\n"
 "(% of desktop space)"
 msgstr ""
+"  Tillåt överlappning:\n"
+"(% av skrivbordets storlek)"
 
 #: windows.cpp:175
 msgid "Focus policy"

@@ -123,7 +123,7 @@ msgstr "&Teknisk referensmanual ..."
 
 #: main.C:346
 msgid "cd"
-msgstr ""
+msgstr "cd"
 
 #: main.C:359
 msgid "Sessions"
@@ -180,9 +180,3 @@ msgstr ""
 #: main.C:928
 msgid "Welcome to the console"
 msgstr "Välkommen till konsolen"
-
-#~ msgid "New"
-#~ msgstr "Ny"
-
-#~ msgid "(%d columns x %d lines)"
-#~ msgstr "(%d kolumner x %d rader)"
