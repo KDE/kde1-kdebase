@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-06-16 16:37+0200\n"
-"PO-Revision-Date: 1998-06-12 08:22 MET DST\n"
+"PO-Revision-Date: 1998-06-18 09:20 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1237,7 +1237,7 @@ msgstr "&Proxy"
 
 #: kkfmoptdlg.cpp:22
 msgid "&HTTP"
-msgstr ""
+msgstr "&HTTP"
 
 #: kkfmoptdlg.cpp:25
 msgid "User &Agent"
@@ -1257,15 +1257,15 @@ msgstr "Nastavení KFM prohlí¾eèe"
 
 #: khttpoptdlg.cpp:13
 msgid "Accept languages:"
-msgstr ""
+msgstr "Akceptovat jazyky:"
 
 #: khttpoptdlg.cpp:18
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Akceptovat znakové sady:"
 
 #: khttpoptdlg.cpp:23
 msgid "Assume HTML"
-msgstr ""
+msgstr "Pøedpokládat HTML"
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1332,36 +1332,3 @@ msgid ""
 msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
-
-#~ msgid "&New Window"
-#~ msgstr "Nové &okno"
-
-#~ msgid "Stop"
-#~ msgstr "Stop"
-
-#~ msgid "KFM Error"
-#~ msgstr "Chyba KFM"
-
-#~ msgid "Move"
-#~ msgstr "Pøesunout"
-
-#~ msgid "Properties"
-#~ msgstr "Vlastnosti"
-
-#~ msgid "Font Size"
-#~ msgstr "Velikost fontu"
-
-#~ msgid "Small"
-#~ msgstr "Malý"
-
-#~ msgid "Medium"
-#~ msgstr "Støední"
-
-#~ msgid "Large"
-#~ msgstr "Velký"
-
-#~ msgid "Continue"
-#~ msgstr "Pokraèuj"
-
-#~ msgid "&Fonts"
-#~ msgstr "&Fonty"

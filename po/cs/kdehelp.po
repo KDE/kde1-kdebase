@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.6\n"
 "POT-Creation-Date: 1998-06-16 13:54+0200\n"
-"PO-Revision-Date: 1998-04-17 15:23 MET DST\n"
+"PO-Revision-Date: 1998-06-18 09:16 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -304,33 +304,3 @@ msgstr "O KDE nápovìdì"
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Pøidej zálo¾ku"
-
-#~ msgid "Font Size"
-#~ msgstr "Velikost fontu"
-
-#~ msgid "Small"
-#~ msgstr "Malý"
-
-#~ msgid "Medium"
-#~ msgstr "Støední"
-
-#~ msgid "Large"
-#~ msgstr "Velký"
-
-#~ msgid "Fonts"
-#~ msgstr "Fonty"
-
-#~ msgid "Miscellaneous"
-#~ msgstr "Rùzné"
-
-#~ msgid "&Reload"
-#~ msgstr "O&bnov"
-
-#~ msgid "&Previous"
-#~ msgstr "&Pøede¹lý uzel"
-
-#~ msgid "&Next"
-#~ msgstr "&Následující uzel"
-
-#~ msgid "Stop"
-#~ msgstr "Stop"

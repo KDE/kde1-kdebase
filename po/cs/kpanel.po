@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
 "POT-Creation-Date: 1998-06-16 13:54+0200\n"
-"PO-Revision-Date: 1998-04-17 15:14 MET DST\n"
+"PO-Revision-Date: 1998-06-18 09:26 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -108,9 +108,3 @@ msgstr "Ouha!"
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"
 msgstr "Toto není mo¾né dát na panel jako tlaèítko!"
-
-#~ msgid "Move"
-#~ msgstr "Pøesuò"
-
-#~ msgid "Properties"
-#~ msgstr "Vlastnosti"

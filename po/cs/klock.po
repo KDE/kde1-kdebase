@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
 "POT-Creation-Date: 1998-06-17 09:43+0200\n"
-"PO-Revision-Date: 1998-06-01 09:01 MET DST\n"
+"PO-Revision-Date: 1998-06-18 09:25 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -597,19 +597,19 @@ msgstr "Sféra"
 
 #: science.cpp:71
 msgid "Exponential"
-msgstr ""
+msgstr "Exponencální"
 
 #: science.cpp:74
 msgid "Contraction"
-msgstr ""
+msgstr "Kontrakce"
 
 #: science.cpp:77
 msgid "Wave"
-msgstr ""
+msgstr "Vlna"
 
 #: science.cpp:80
 msgid "Curvature"
-msgstr ""
+msgstr "Zakøivení"
 
 #: science.cpp:112
 msgid "Science"
@@ -617,11 +617,11 @@ msgstr "Science"
 
 #: science.cpp:447
 msgid "rendering lens..."
-msgstr ""
+msgstr "pøíprava èoèky ..."
 
 #: science.cpp:769
 msgid "grabbing screen..."
-msgstr ""
+msgstr "sejmutí obrazovky ..."
 
 #: science.cpp:931
 msgid "Setup Science"
@@ -641,7 +641,7 @@ msgstr "Tí¾e"
 
 #: science.cpp:983
 msgid "Hide Background"
-msgstr ""
+msgstr "Skrýt pozadí"
 
 #: science.cpp:1009
 msgid "Intensity:"
@@ -652,13 +652,12 @@ msgid "Motion:"
 msgstr "Pohyb:"
 
 #: science.cpp:1260
-#, fuzzy
 msgid "Science Version"
-msgstr "Science"
+msgstr "Science verze"
 
 #: science.cpp:1261
 msgid "written by"
-msgstr ""
+msgstr "napsal"
 
 #: science.cpp:1262
 msgid "About Science"
@@ -749,17 +748,3 @@ msgstr ""
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
 "Pøevedeno pro kscreensaver Emanuelem Pirkerem"
-
-#~ msgid "Move"
-#~ msgstr "Pohybovat"
-
-#~ msgid ""
-#~ "Science Version 0.24.2 beta\n"
-#~ "\n"
-#~ "written by Rene Beutler 1998\n"
-#~ "rbeutler@g26.ethz.ch"
-#~ msgstr ""
-#~ "Science - verze 0.24.2 beta\n"
-#~ "\n"
-#~ "napsal Rene Beutler 1998\n"
-#~ "rbeutler@g26.ethz.ch"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kvt 0.18.1\n"
 "POT-Creation-Date: 1998-06-16 13:54+0200\n"
-"PO-Revision-Date: 1998-06-12 08:24 MET DST\n"
+"PO-Revision-Date: 1998-06-18 09:26 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "Backspace bude posílán jako"
 
 #: main.C:365
 msgid "Cursor key set"
-msgstr ""
+msgstr "Sada kurzorových kláves"
 
 #: main.C:532
 msgid "&New Terminal"
@@ -227,7 +227,7 @@ msgstr "vt_font <fontname>        normalní font\n"
 
 #: main.C:1334
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr ""
+msgstr "-no_font_hack             vypnout záplatu chyby výbìru fontu v QT\n"
 
 #: main.C:1335
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
