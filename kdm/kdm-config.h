@@ -39,6 +39,11 @@
 #define DEF_XDM_CONFIG XDMDIR##"/xdm-config"
 #define DEF_AUTH_DIR XDMDIR##"/authdir"
 
+/* If this isn't defined, we crash boxes with S3 cards.
+ * See genauth.c 
+ */
+#define FRAGILE_DEV_MEM 1
+
 /* Authorization stuff */
 /* How do we check for HASXDMAUTH? Use Imake ?? */
 #if defined(HAVE_KRB5_KRB5_H)
