@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-10-12 11:35+0000\n"
 "PO-Revision-Date: 1998-01-25 18:31 CET\n"
 "Last-Translator: David Faure <David.Faure@insa-lyon.fr>\n"
 "Language-Team: Français\n"
@@ -26,6 +26,10 @@ msgstr "Dossier"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ERREUR : Ce modèle n'existe pas '%s'"
+
+#: kfmgui.cpp:304
+msgid "&New"
+msgstr "&Nouveau "
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -52,9 +56,8 @@ msgid "&Select"
 msgstr "&Sélectionner"
 
 #: kfmgui.cpp:341
-#, fuzzy
 msgid "Select &all"
-msgstr "&Sélectionner"
+msgstr "Sélectionner &tout"
 
 #: kfmgui.cpp:344
 msgid "Mime Types"
@@ -208,6 +211,10 @@ msgstr "&Cache"
 msgid "Up"
 msgstr "Répertoire parent"
 
+#: kfmgui.cpp:533 kfmman.cpp:1079
+msgid "Forward"
+msgstr ""
+
 #: kfmgui.cpp:538
 msgid "Home"
 msgstr "A la maison ;-)"
@@ -285,9 +292,8 @@ msgid "Document: Done"
 msgstr "Document : terminé"
 
 #: kfmview.cpp:350 root.cpp:875
-#, fuzzy
 msgid "ERROR: You may only drop URLs"
-msgstr "ERREUR : vous avez déposé un fichier URL sur lui-même"
+msgstr "ERREUR : vous ne pouvez déposer que des URLs"
 
 #: kfmview.cpp:366
 msgid "ERROR: Drop over malformed URL"
@@ -499,6 +505,10 @@ msgstr "Envoyer à la corbeille"
 msgid "Open with"
 msgstr "Ouvrir avec"
 
+#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+msgid "Move"
+msgstr "Déplacer"
+
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
 msgstr "Lier"
@@ -510,6 +520,18 @@ msgstr "Vider la corbeille"
 #: main.cpp:241
 msgid "Add to Bookmarks"
 msgstr "Ajouter un signet"
+
+#: htmlopts.cpp:39
+msgid "Small"
+msgstr "Petite"
+
+#: htmlopts.cpp:43
+msgid "Medium"
+msgstr "Moyenne"
+
+#: htmlopts.cpp:47
+msgid "Large"
+msgstr "Grosse"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
@@ -552,9 +574,8 @@ msgid "Transparent Text for Root Icons."
 msgstr "Texte transparent pour les icônes du bureau"
 
 #: kfmdlg.cpp:114
-#, fuzzy
 msgid "&Browser"
-msgstr "Parcourir"
+msgstr "&Parcourir"
 
 #: bookmark.cpp:296
 msgid "Could not write bookmark"
@@ -1385,23 +1406,11 @@ msgstr ""
 #~ msgid "Stop"
 #~ msgstr "Stop"
 
-#~ msgid "Move"
-#~ msgstr "Déplacer"
-
 #~ msgid "Properties"
 #~ msgstr "Propriétés"
 
 #~ msgid "Font Size"
 #~ msgstr "Taille de la police"
-
-#~ msgid "Small"
-#~ msgstr "Petite"
-
-#~ msgid "Medium"
-#~ msgstr "Moyenne"
-
-#~ msgid "Large"
-#~ msgstr "Grosse"
 
 #~ msgid "Continue"
 #~ msgstr "Continuer"
