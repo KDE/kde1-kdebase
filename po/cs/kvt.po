@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kvt 0.18.1\n"
 "POT-Creation-Date: 1998-03-20 00:05+0100\n"
-"PO-Revision-Date: 1998-01-20 10:54 MET\n"
+"PO-Revision-Date: 1998-03-28 22:41 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -169,7 +169,6 @@ msgstr ""
 "po vypnutí zabezpeèení klávesnice."
 
 #: main.C:1151
-#, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -177,86 +176,88 @@ msgid ""
 "based on Robert Nation's rxvt-2.08\n"
 "\n"
 msgstr ""
-"\n"
-"\n"
-"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
-"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
-"\n"
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
 "Emulace terminálu pro KDE Desktop Environment\n"
-"zalo¾eno na  rxvt-2.08 Roberta Nationa"
+"zalo¾eno na  rxvt-2.08 Roberta Nationa\n"
+"\n"
 
 #: main.C:1155
 msgid "Permitted arguments are:\n"
-msgstr ""
+msgstr "Povolené parametry jsou:\n"
 
 #: main.C:1156
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
-msgstr ""
+msgstr "-e <pøíkaz> <param> ...   Vykonat pøíkaz s parametry - musí být posledním parametrem\n"
 
 #: main.C:1157
 msgid "-display <name>           specify the display (server)\n"
-msgstr ""
+msgstr "-display <jméno>          specifikace obrazovky (serveru)\n"
 
 #: main.C:1158
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr ""
+msgstr "-vt_geometry <spec>       poèáteèní geometrie okna terminálu\n"
 
 #: main.C:1159
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr ""
+msgstr "-print-pipe <name>        specifikuje pipe pro vt100 tiskárnu\n"
 
 #: main.C:1160
 msgid "-vt_bg <colour>           background color\n"
-msgstr ""
+msgstr "-vt_bg <colour>           barva pozadí\n"
 
 #: main.C:1161
 msgid "-vt_fg <colour>           foreground color\n"
-msgstr ""
+msgstr "-vt_fg <colour>           barva textu\n"
 
 #: main.C:1162
 msgid "-vt_font <fontname>       normal font\n"
-msgstr ""
+msgstr "vt_font <fontname>        normalní font\n"
 
 #: main.C:1163
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
-msgstr ""
+msgstr "-vt_size <size>           tiny, small, normal, large, huge\n"
 
 #: main.C:1164
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr ""
+msgstr "-linux                    nastaví kvt, aby imitoval linux konsoli\n"
 
 #: main.C:1165
 msgid "-no_menubar               hide the menubar\n"
-msgstr ""
+msgstr "-no_menubar               skryje menu\n"
 
 #: main.C:1166
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr ""
+msgstr "-no_scrollbar             skryje pusunovací li¹tu\n"
 
 #: main.C:1167
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
+"-T <text>                 text v titulku okna\n"
+"                          (Zastaralé. Pou¾ívejte místo nìj -caption)\n"
 
 #: main.C:1169
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr ""
+msgstr "-tn <TERM>                Typ terminálu. Implicitní je xterm.\n"
 
 #: main.C:1170
 msgid "-C                        Capture system console message\n"
-msgstr ""
+msgstr "-C                        Zachycovat zprávy systémové konzole\n"
 
 #: main.C:1171
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr ""
+msgstr "-n <text>                 jméno v ikonì nebo oknì ikony\n"
 
 #: main.C:1172
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
+"-7                        pracovat v 7 bitovém módu\n"
+"-8                        pracovat v á bitovém módu\n"
 
 #: main.C:1174
 msgid ""
@@ -264,16 +265,19 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
+"-ls                       inicializovat shell kvt jako login shell\n"
+"-ls-                      neinicializovat shell kvt jako login shell (implicictì)\n"
 
 #: main.C:1176
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
+"-meta                     obsluhovat Meta s ESCAPE prefixem, 8THBIT nastaveno, nebo ignorovat\n"
 
 #: main.C:1177
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr ""
+msgstr "-sl <number>              ukládá <number> øádkù do vyrovnávací pamìti pro zpìtné posunování li¹ty\n"
 
 #: main.C:1178
 msgid ""
@@ -282,6 +286,8 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
+"-pageup <keysym>          pou¾ívat klávesovou zkratku ALT-<keysym> k posunování li¹ty nahoru vyrovnávací pamìtí\n"
+"-pagedown <keysym>        pou¾ívat klávesovou zkratku ALT-<keysym> k posunování\n"
 
 #: main.C:1182
 msgid ""
@@ -290,71 +296,3 @@ msgid ""
 msgstr ""
 "-grk9\\t\\tgreek kbd = ELOT 928 (implicitní)\n"
 "-grk4\\t\\tgreek kbd = IBM 437\n"
-
-#, fuzzy
-#~ msgid ""
-#~ "Copyright(C) 1996, 1997 Matthias Ettrich\n"
-#~ "Copyright(C) 1997 M G Berberich\n"
-#~ "Terminal emulation for the KDE Desktop Environment\n"
-#~ "based on Robert Nation's rxvt-2.08\n"
-#~ "\n"
-#~ "Permitted arguments are:\n"
-#~ "-e <command> <arg> ...\texecute command with ars - must be last argument\n"
-#~ "-display <name>\tspecify the display (server)\n"
-#~ "-vt_geometry <spec>\tthe initial vt window geometry\n"
-#~ "-print-pipe <name>\tspecify pipe for vt100 printer\n"
-#~ "-vt_bg <colour>\t\tbackground color\n"
-#~ "-vt_fg <colour>\t\tforeground color\n"
-#~ "-vt_font <fontname>\tnormal font\n"
-#~ "-vt_size <size>     \ttiny, small, normal, large, huge\n"
-#~ "-linux\t\t\tset up kvt to mimic linux-console\n"
-#~ "-no_menubar\t\thide the menubar\n"
-#~ "-no_scrollbar\t\thide the scrollbar\n"
-#~ "-T <text>\t\ttext in window titlebar \n"
-#~ "                   (Obsolete. Use -caption instead)\n"
-#~ "-tn <TERM>\t\tTerminal type. Default is xterm.\n"
-#~ "-C\t\t\tCapture system console message\n"
-#~ "-n <text>\t\tname in icon or icon window\n"
-#~ "-7\t\t        run in 7 bit mode\n"
-#~ "-8\t\t\trun in 8 bit mode\n"
-#~ "-ls\t\t\tinitiate kvt's shell as a login shell\n"
-#~ "-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
-#~ "-meta <arg>\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
-#~ "-sl <number>\t\tsave number lines in scroll-back buffer\n"
-#~ "-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
-#~ "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
-#~ msgstr ""
-#~ "Copyright(C) 1996, 1997 Matthias Ettrich\n"
-#~ "Copyright(C) 1997 M G Berberich\n"
-#~ "Terminálová emulace pro KDE \n"
-#~ "zalo¾eno na rxvt-2.08 Roberta Nationa \n"
-#~ "\n"
-#~ "Povolenými argumenty jsou:\n"
-#~ "-e <command> <arg> ...\tvykonej pøíkaz s parametry <arg> \n"
-#~ "\t\t\t- musí být posledním parametrem\n"
-#~ "-display <name>\t\tspecifikuje obrazovku (server)\n"
-#~ "-vt_geometry <spec>\tpoèáteèní geometrie okna terminálu\n"
-#~ "-print-pipe <name>\tspecifikuje pipe pro vt100 tiskárnu\n"
-#~ "-vt_bg <colour>\t\tbarva pozadí\n"
-#~ "-vt_fg <colour>\t\tbarva textu\n"
-#~ "-vt_font <fontname>\tnormalní font\n"
-#~ "-vt_size <size>     \ttiny, small, normal, large, huge\n"
-#~ "-linux\t\t\tnastaví kvt, aby imitoval linux konsoli\n"
-#~ "-no_menubar\t\tskryje menu\n"
-#~ "-no_scrollbar\t\tskryje pusunovací li¹tu\n"
-#~ "-T <text>\t\ttext v titulku okna \n"
-#~ "                   \t(Zastaralé. Pou¾ívejte místo nìj -caption)\n"
-#~ "-tn <TERM>\t\tTyp terminálu. Implicitní jexterm.\n"
-#~ "-C\t\t\tZachycovat zprávy systémové konzole\n"
-#~ "-n <text>\t\tjméno v ikonì nebo oknì ikony\n"
-#~ "-7\t\t        pracovat v 7 bitovém módu\n"
-#~ "-8\t\t\tpracovat v á bitovém módu\n"
-#~ "-ls\t\t\tinicializovat shell kvt jako login shell\n"
-#~ "-ls-\t\t\tneinicializovat shell kvt jako login shell (implicictì)\n"
-#~ "-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
-#~ "-sl <number>\t\tukládá <number> øádkù do vyrovnávací pamìti pro zpìtné\n"
-#~ "\t\t\tposunování li¹ty\n"
-#~ "-pageup <keysym>\tpou¾ívat klávesovou zkratku ALT-<keysym> k posunování \n"
-#~ "\t\t\tli¹ty nahoru vyrovnávací pamìtí\n"
-#~ "-pagedown <keysym>\tpou¾ívat klávesovou zkratku ALT-<keysym> k posunování \n"
-#~ "\t\t\tli¹ty dolù vyrovnávací pamìtí\n"

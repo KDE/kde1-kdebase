@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
 "POT-Creation-Date: 1998-03-19 22:16+0100\n"
-"PO-Revision-Date: 1998-01-27 13:55 MET\n"
+"PO-Revision-Date: 1998-03-28 22:18 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -96,60 +96,3 @@ msgstr "Panel"
 #: props.C:148
 msgid "Lock Screen"
 msgstr "Blokovat obrazovku"
-
-#~ msgid "Location"
-#~ msgstr "Umístìní"
-
-#~ msgid "Taskbar"
-#~ msgstr "Taskbar"
-
-#~ msgid "Hidden"
-#~ msgstr "Skrytý"
-
-#~ msgid "Top/Left"
-#~ msgstr "Nahoøe/Vlevo"
-
-#~ msgid "Tiny Style"
-#~ msgstr "Drobný"
-
-#~ msgid "Normal Style"
-#~ msgstr "Normální"
-
-#~ msgid "Large Style"
-#~ msgstr "Velký"
-
-#~ msgid "Menu Tooltips"
-#~ msgstr "Nápovìdy v menu"
-
-#~ msgid "Others"
-#~ msgstr "Ostatní"
-
-#~ msgid "Personal First"
-#~ msgstr "Osobní první"
-
-#~ msgid "Auto Hide Panel"
-#~ msgstr "Skrývat panel"
-
-#~ msgid "Auto Hide Taskbar"
-#~ msgstr "Skrývat pruh úloh"
-
-#~ msgid "Clock"
-#~ msgstr "Hodiny"
-
-#~ msgid "24h"
-#~ msgstr "24h"
-
-#~ msgid "12h AM/PM"
-#~ msgstr "12h"
-
-#~ msgid "Visible"
-#~ msgstr "Viditelný"
-
-#~ msgid "Width"
-#~ msgstr "©íøka"
-
-#~ msgid "Desktops"
-#~ msgstr "Pracovní plochy"
-
-#~ msgid "KPanel Configuration"
-#~ msgstr "Konfigurace KPanelu"

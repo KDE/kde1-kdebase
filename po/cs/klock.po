@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
 "POT-Creation-Date: 1998-03-19 22:17+0100\n"
-"PO-Revision-Date: 1998-03-13 08:15 MET\n"
+"PO-Revision-Date: 1998-03-28 22:18 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -580,7 +580,7 @@ msgstr ""
 
 #: space.cpp:491
 msgid "Space (GL)"
-msgstr ""
+msgstr "Vesmír (GL)"
 
 #: space.cpp:581
 msgid "Setup KSpace"

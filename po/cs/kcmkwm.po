@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1998-03-19 22:18+0100\n"
-"PO-Revision-Date: 1998-03-12 12:00 MET\n"
+"PO-Revision-Date: 1998-03-28 22:13 MET\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,12 +27,11 @@ msgstr "&Titulek"
 
 #: main.cpp:68
 msgid "&Desktop"
-msgstr ""
+msgstr "&Pracovní plocha"
 
 #: main.cpp:74
-#, fuzzy
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
-msgstr "Pou¾ití: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+msgstr "Pou¾ití: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:105
 msgid "Window manager style"
@@ -172,28 +171,27 @@ msgstr "Zpùsob umís»ování"
 
 #: windows.cpp:86
 msgid "Smart"
-msgstr ""
+msgstr "Inteligentní"
 
 #: windows.cpp:88
 msgid "Cascade"
-msgstr ""
+msgstr "Kaskáda"
 
 #: windows.cpp:90
 msgid "Interactive"
-msgstr ""
+msgstr "Interaktivní"
 
 #: windows.cpp:92
 msgid "Random"
-msgstr ""
+msgstr "Náhodné"
 
 #: windows.cpp:94
-#, fuzzy
 msgid "Manual"
-msgstr "Menu"
+msgstr "Ruèní"
 
 #: windows.cpp:101
 msgid "Allowed Overlap:"
-msgstr ""
+msgstr "Pøípustné pøekrytí:"
 
 #: windows.cpp:108
 msgid "Maximize Style"
@@ -233,27 +231,27 @@ msgstr "milisekund"
 
 #: desktop.cpp:79
 msgid "Active desktop borders"
-msgstr ""
+msgstr "Aktivní hranice pracovní plochy"
 
 #: desktop.cpp:81
 msgid "Enable active desktop borders"
-msgstr ""
+msgstr "Umo¾nit aktivní hranice pracovní plochy"
 
 #: desktop.cpp:83
 msgid "Move pointer towards center after switch"
-msgstr ""
+msgstr "Pøesunout ukazatel ke støedu po pøepnutí"
 
 #: desktop.cpp:89
 msgid "Dekstop switch delay:"
-msgstr ""
+msgstr "Prodleva pøed pøepnutím pracovní plochy"
 
 #: desktop.cpp:102
 msgid "Magic Borders"
-msgstr ""
+msgstr "Magické hranice"
 
 #: desktop.cpp:104
 msgid "Edge Resistance:"
-msgstr ""
+msgstr "Odpor na okraji:"
 
 #: desktop.cpp:118
 msgid ""

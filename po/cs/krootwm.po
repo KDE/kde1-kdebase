@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
 "POT-Creation-Date: 1998-03-19 22:17+0100\n"
-"PO-Revision-Date: 1998-01-20 10:35 MET\n"
+"PO-Revision-Date: 1998-03-28 22:20 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -40,11 +40,11 @@ msgstr "Obnov pracovní plochu"
 
 #: krootwm.C:173
 msgid "Unclutter windows"
-msgstr ""
+msgstr "Uspoøádat okna pøehlednì"
 
 #: krootwm.C:174
 msgid "Cascade windows"
-msgstr ""
+msgstr "Uspoøádat okna do kaskády"
 
 #: krootwm.C:175
 msgid "Arrange icons"
