@@ -29,10 +29,10 @@ Since a maximum of three (3) buttons are allowed on each side of the
 titlebar, trying to place a fourth button on either side will cause the
 innermost one to be switched off.
 
-<sect>Configuring the titlebar appearance
+<sect>Configuring the titlebar appearance and action
 <p>
 
-With this dialog, you can change the visual appearance of the titlebar.
+With this dialog, you can change the visual appearance of the titlebar and partially choose how it acts..
 <p>
 There are three options for the titlebar coloring:
 
@@ -49,6 +49,12 @@ option does not show up in the titlebar preview, so you have to
 select Apply to see it. Sorry :-)
 
 <p>
+The mouse action section lets you choose what happens when you doubleclick
+on the titlebar of a window with the left mouse button. The most convenient
+actions to choose should be (Un)Maximize and (Un)Shade. The default is set
+to (Un)Maximize.
+ 
+<p>
 Enabling "title animation" tells kwm to cause long window titles (too
 long to fit in the colored area of the titlebar) to slide back and forth
 in order to be visible. 
@@ -60,6 +66,7 @@ features:
 
 <itemize>window moving: transparent or opaque
 <item>window resizing: animated or instant
+<item>window placement policy: smart or cascade or random
 <item>window maximizing: expand to full screen or just expand vertically
 <item>focus policy: click or follow mouse
 <item>auto raise: window will be raised automatically
@@ -73,6 +80,17 @@ of the window remain visible while it is being moved.
 <p>
 The resizing animation looks really cool. Try it.
 
+<p>
+The "random" placement of windows on the desktop at their creation is
+the default. The "cascade" placement acts somewhat similar to the 
+"random" placement, but it is more consequent in the choice of the 
+window position and keeps track of available "cascaded" positions for
+each desktop separately. The "smart" placement policy allows a minimal
+cluttering of the desktop. It's also acting independently on each desk.
+Try it. You'll be amazed how fast the brain will learn to anticipate
+the position of the new window to be created. You'll become able
+to place the mouse pointer in that region before the window to appear :-)
+ 
 <p>
 The window that is "in focus" receives keyboard input and has the
 active titlebar appearance (usually colored instead of gray). The
