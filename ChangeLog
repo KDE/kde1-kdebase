@@ -1,3 +1,8 @@
+Tue Feb 24 22:04:59 1998  Stephan Kulow  <coolo@kde.org>
+
+	* acinclude.m4.in: added kde_sounddir and set kde_minidir to
+	kde_icondir/mini to break not too much
+
 Sun Feb 15 18:25:50 1998  Stephan Kulow  <coolo@kde.org>
 
 	* configure.in: added bugfix by Bob Miller <kbob@engr.sgi.com>
