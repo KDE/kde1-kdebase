@@ -118,7 +118,7 @@ void KURLCompletion::make_rotation ()
 	// if there is only one possible dir -> behave like complete
 	new_guess = completed_dir && (possibilityList.count() == 1);
 	if (!ambigous || !possibilityList.isEmpty()) {
-		match.prepend ("file:");  // set to file-protocol
+	  // match.prepend ("file:");  // set to file-protocol
 		self_update = true;
 		emit setText (match);
 		self_update = false;

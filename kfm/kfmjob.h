@@ -79,6 +79,11 @@ protected:
     QString url;
     int bytesRead;
     QString dataBuffer;
+    /**
+     * This flag is set if we detected a fatal error. This keeps
+     * slotFinshed away from emitting the signal @ref #finished.
+     */
+    bool bError;
 };
 
 #endif

@@ -9,6 +9,8 @@
 #include <sys/types.h>
 #include <dirent.h>
 #include <sys/stat.h>
+#include <time.h>
+#include <sys/wait.h>
 
 #ifdef __FreeBSD__
 #include <sys/param.h>
@@ -118,6 +120,9 @@ KIOServer::KIOServer() : KIOSlaveIPCServer()
     freeSlaves.setAutoDelete( false );
     waitingJobs.setAutoDelete( false );
 
+    connect( &m_timer, SIGNAL( timeout() ), this, SLOT( slotTimer() ) );
+    m_timer.start( 10000 );
+    
     connect( this, SIGNAL( newClient( KIOSlaveIPC* ) ), this, SLOT( newSlave( KIOSlaveIPC* ) ) );
 }
 
@@ -684,6 +689,7 @@ void KIOServer::newSlave2( KIOSlaveIPC * _slave )
     if ( waitingJobs.count() == 0 )
     {
 	freeSlaves.append( _slave );
+	_slave->m_time = time( 0L );
 	return;
     }
     
@@ -779,6 +785,33 @@ QString KIOServer::canonicalURL( const char *_url )
 	return QString( _url );
     
     return u.path();
+}
+
+void KIOServer::slotTimer()
+{
+  printf("============================== void KIOServer::slotTimer() ==============\n");
+  
+  if ( KIOJob::jobList->count() > 0 )
+    printf("====================== ATTENTION: KIOJob memory lack %i ===============\n", KIOJob::jobList->count());
+    
+  QList<KIOSlaveIPC> list = freeSlaves;
+ 
+  time_t t = time( 0L );
+  
+  KIOSlaveIPC *p;
+  for ( p = list.first(); p != 0L; p = list.next() )
+  {
+    if ( t - p->m_time > 10 )
+    {
+      printf("!!!!!!!!!!!!!!!!!!!!!!!!! KIOSLAVE TIMEOUT !!!!!!!!!!!!!!!!!!\n");
+      pid_t pid = (pid_t)p->pid;    
+      freeSlaves.removeRef( p );
+      delete p;
+      kill( pid, SIGTERM );
+      int status;
+      waitpid( pid, &status, 0 );
+    }
+  }
 }
 
 #include "kioserver.moc"

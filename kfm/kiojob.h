@@ -415,11 +415,13 @@ protected:
      */
     bool bDisplay;
 
+public:
     /**
      * List of all running jobs.
      */
     static QList<KIOJob> *jobList;
 
+protected:
     /**
      * This flag is set to TRUE if existing files should be overwritten by copy/move jobs.
      */

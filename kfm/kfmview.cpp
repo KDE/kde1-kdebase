@@ -678,6 +678,24 @@ void KfmView::pushURLToHistory()
     emit historyUpdate( true, false );
 }
 
+void KfmView::setUpURL( const char *_url )
+{
+  m_strUpURL = _url;
+
+  if ( m_strUpURL.isEmpty() )
+    gui->enableToolbarButton( 0, false );
+  else
+    gui->enableToolbarButton( 0, true );
+}
+
+void KfmView::slotUp()
+{
+  if ( m_strUpURL.isEmpty() )
+    return;
+  
+  openURL( m_strUpURL, false );
+}
+
 void KfmView::slotForward()
 {
     if ( forwardStack.isEmpty() )

@@ -13,6 +13,7 @@
 #include <dirent.h>
 #include <sys/stat.h>
 #include <errno.h>
+#include <sys/wait.h>  
 
 #include "kioserver_ipc.h"
 #include "kiojob.h"
@@ -51,7 +52,17 @@ KIOJob::KIOJob( int _id )
 
 KIOJob::~KIOJob()
 {
-    jobList->removeRef( this );
+  if ( slave != 0L )
+  {
+    printf("################# WARNING: KIOJOB destructor has still kioslave ################\n");
+    disconnect( server, 0, this, 0 );
+    disconnect( slave, 0, this, 0 );
+    server->freeSlave( slave );
+    slave = 0L;
+  }
+
+  server->removeJob( this );
+  jobList->removeRef( this );
 }
 
 void KIOJob::setOverWriteExistingFiles( bool _o )
@@ -94,7 +105,6 @@ void KIOJob::list( const char *_url, bool _reload, bool _bHTML )
     lstURL = u.url().data();
     if ( lstURL.right(1) != "/" && u.hasPath() )
 	lstURL += "/";
-    printf("######## (1) lstURL = '%s'\n",lstURL.data());
     
     KIODirectory *dir = 0L;
     if ( !_reload )
@@ -102,7 +112,6 @@ void KIOJob::list( const char *_url, bool _reload, bool _bHTML )
     
     if ( dir != 0L )
     {
-	printf("GOT Cached information\n");
 	KIODirectoryEntry *e;
 	for ( e = dir->first(); e != 0L; e = dir->next() )
 	    emit newDirEntry( id, e );
@@ -1120,8 +1129,10 @@ void KIOJob::msgResult( QWidget * _win, int _button )
     
     switch( action )
     {
-    case KIOJob::JOB_COPY:
     case KIOJob::JOB_LIST:
+      done();
+      return;
+    case KIOJob::JOB_COPY:
     case KIOJob::JOB_MKDIR:
     case KIOJob::JOB_DELETE:
     case KIOJob::JOB_MOVE:
@@ -1256,7 +1267,7 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
 	    if ( bDisplay )
 		m = new KMsgWin( 0L, i18n("Error"), 
 				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
+				 // i18n("Continue"), 
 				 i18n("Cancel") );
 	    break;
 	case KIO_ERROR_CouldNotDelete:
@@ -1864,6 +1875,8 @@ void KIOJob::slotInfo( const char *_text )
 
 void KIOJob::cancel()
 {
+    server->removeJob( this );
+
     printf("**********A\n");
     if ( slave )
     {
@@ -1873,6 +1886,8 @@ void KIOJob::cancel()
 	pid_t p = (pid_t)s->pid;    
 	delete s;
 	kill( p, SIGTERM );
+	int status;
+	waitpid( p, &status, 0 );
     }
     
     slave = 0L;
@@ -1883,6 +1898,8 @@ void KIOJob::cancel()
 void KIOJob::done()
 {
     printf("Done\n");
+
+    server->removeJob( this );
     
     if ( slave != 0L )
     {

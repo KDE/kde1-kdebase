@@ -105,7 +105,8 @@ protected:
     void writeBodyTag();
     void writeBeginning();
     void writeEntry( KIODirectoryEntry *_e );
-    
+    void writeEnd();
+  
     /**
      * This fucntion is used to distinguish hard coded bindings and bindings belonging
      * to applications. The only thing we know is the bindings name '_txt'.
@@ -260,7 +261,7 @@ protected:
     QString link_color;
     QString bg_color;
     QString vlink_color;
-
+  
     // link and readonly overlay images
     static QString *link_overlay;
     static QString *ro_overlay;

@@ -98,6 +98,12 @@ protected:
    int cBody;
    int bodyLen;
 
+public:
+   /**
+    * MODIFIED
+    */
+   time_t m_time;
+  
 signals:
    /**
     * MODIFIED

@@ -8,6 +8,7 @@
 #include <qlist.h>
 #include <qdict.h>
 #include <qstring.h>
+#include <qtimer.h>
 
 #include <kurl.h>
 
@@ -93,16 +94,17 @@ public:
     KIOServer();
     ~KIOServer();
     
-    /// A Job is waiting for a slave
     /**
-      If a job needs a slave, it calls this function. If a 
-      slave is available ( after this call has returned ), the
-      job will be told so.
-      */
+     * If a job needs a slave, it calls this function. If a 
+     * slave is available ( after this call has returned ), the
+     * job will be told so.
+     */
     void getSlave( KIOJob * _job );
     /// A Job does not need a slave any more.
     void freeSlave( KIOSlaveIPC * _slave );
 
+    void removeJob( KIOJob* _job ) { waitingJobs.removeRef( _job ); }
+  
     /**
      * Get information about a cached directory.
      *
@@ -214,11 +216,11 @@ public:
     static QString canonicalURL( const char *_url );
     
 public slots:
-    /// If a new slave is created, this slot is called.
     /**
-      This function connects 'slotDirEntry' and 'slotFlushDir' to the new slave
-      and calls 'newSlave2' to do the rest.
-      */
+     * If a new slave is created, this slot is called.
+     * This function connects 'slotDirEntry' and 'slotFlushDir' to the new slave
+     * and calls 'newSlave2' to do the rest.
+     */
     void newSlave( KIOSlaveIPC * );
     void slotDirEntry( const char *_url, const char *_name, bool _isDir, int _size,
 		   const char * creationDate, const char * _access,
@@ -226,6 +228,11 @@ public slots:
     void slotFlushDir( const char *_url );
     void slotSlaveClosed( KIOSlaveIPC* );
     
+    /**
+     * This function cleansup old kioslaves.
+     */
+    void slotTimer();
+  
 signals:
     /// This notify is emitted each time a URL changed.
     /**
@@ -262,6 +269,11 @@ protected:
     /// List of all cached directories
     QDict<KIODirectory> dirList;
 
+    /**
+     * This timer calls @ref #slotTimer.
+     */
+    QTimer m_timer;
+  
     /// A pointer to the running server
     /**
       Sometimes needed by static functions.

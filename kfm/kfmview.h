@@ -147,7 +147,13 @@ public:
      * URL on the stack.
      */
     void pushURLToHistory();
-    
+
+    /**
+     * Set the URL the is goind to be displayed if the user presses
+     * the 'up' button.
+     */
+    void setUpURL( const char *_url );
+  
     /**
      * hack to get static classes up and running even with C++-Compilers/
      * Systems where a constructor of a class element declared static
@@ -185,7 +191,11 @@ public slots:
      * Called for example from the toolbars "Back" button
      */
     void slotBack();
-    
+    /**
+     * Called for example from the toolbars "Up" button
+     */
+    void slotUp();
+  
     /**
      * Start an new terminal. Usually called from the menu.
      */
@@ -459,6 +469,11 @@ protected:
      * @ref #mousePressedHook
      */
     QString selectedURL;
+
+    /**
+     * @see #setUpURL
+     */
+    QString m_strUpURL;
 };
 
 #endif

@@ -176,7 +176,7 @@ int KProtocolFILE::OpenDir( KURL *url )
     dp = opendir( tmp );
     if ( dp == 0L )
     {
-	Error(KIO_ERROR_CouldNotRead,"Could not enter directory",errno);
+	Error(KIO_ERROR_CouldNotList,"Could not enter directory",errno);
 	return FAIL;
     }
     
@@ -361,12 +361,12 @@ bool KProtocolFILE::OpenKdeHtml( KIOSlaveIPC *_ipc )
     prot.AllowHTML( FALSE );
     if ( prot.OpenDir( &u ) == KProtocol::FAIL )
     {
-	int kerror;
-	QString msg;
-	int syserror;
-	prot.GetLastError( kerror, msg, syserror );
-	Error( kerror, msg, syserror );
-	return FAIL;
+      int kerror;
+      QString msg;
+      int syserror;
+      prot.GetLastError( kerror, msg, syserror );
+      Error( kerror, msg, syserror );
+      return FAIL;
     }
 
     // Read every directory entry

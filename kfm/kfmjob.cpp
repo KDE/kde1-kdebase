@@ -22,6 +22,7 @@ KFMJob::KFMJob( )
 {
     job = 0L;    
     bRunning = FALSE; 
+    bError = false;
 }
 
 bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_currentURL, QList<KIODirectoryEntry> *_list )
@@ -174,6 +175,8 @@ void KFMJob::slotError( int _kioerror, const char *_text, int _errno )
 	}
     }
 
+    bError = true;
+    
     // Allow the job to print an error message.
     job->display( true );
     // Process the error
@@ -241,7 +244,7 @@ void KFMJob::slotFinished( int )
     bFinished = TRUE;
     
     // Did we only try to load the URL as directory and did we get 0 entries ?
-    if ( !bFileLoad && !isDir )
+    /* if ( !bFileLoad && !isDir )
     {
 	disconnect( job, 0, this, 0 );
 	job->setAutoDelete( TRUE );
@@ -249,10 +252,10 @@ void KFMJob::slotFinished( int )
 	// Try to open as file
 	openFile();
 	return;
-    }
+    } */
 
     // Are we loading a file ?
-    if ( bFileLoad )
+    if ( bFileLoad && !bError )
     {
 	// Did we check for the mime type already ?
 	if ( !bCheckedMimeType )
@@ -268,7 +271,8 @@ void KFMJob::slotFinished( int )
       job->setAutoDelete( TRUE );
     job = 0L;
 
-    emit finished();
+    if ( !bError )
+      emit finished();
 
     bRunning = FALSE;
 }

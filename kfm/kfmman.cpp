@@ -192,8 +192,6 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 
     KFM::addToHistory( _url );
     
-    printf("Scroll: %i %i\n",_xoffset,_yoffset );
-    
     // By Default we display everything at the moment we
     // get it => now buffering of HTML code
     bBufferPage = FALSE;
@@ -258,6 +256,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 	    view->pushURLToHistory();
 
 	    url = _url;
+	    view->setUpURL( "" );
 	    view->begin( _url, nextXOffset, nextYOffset );
 	    view->write( page );
 	    view->parse();
@@ -271,7 +270,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     
     // A link to the web in form of a *.kdelnk file ?
     QString path = u.path();
-    if ( !u.hasSubProtocol() && strcmp( u.protocol(), "file" ) == 0 && path.right(7) == ".kdelnk" )
+    if ( u.isLocalFile() && path.right(7) == ".kdelnk" )
     {
 	// Try tp open the *.kdelnk file
 	QFile file( path );
@@ -316,7 +315,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     // Do we know that it is !really! a file ?
     // Then we can determine the mime type for shure and run
     // the best matching binding
-    if ( KIOServer::isDir( _url ) == 0 && strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
+    if ( KIOServer::isDir( _url ) == 0 && u.isLocalFile() )
     {    
 	tryURL = KFMExec::openLocalURL( _url );
 	if ( tryURL.isEmpty() )
@@ -355,6 +354,8 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 
 void KFMManager::slotError( int, const char * )
 {
+    bFinished = TRUE;
+
     view->getGUI()->slotRemoveWaitingWidget( view );
 }
 
@@ -505,40 +506,26 @@ void KFMManager::writeBeginning()
 	QString s = u2.url();
 	if ( s.right( 1 ) != "/" )
 	    s += "/";
-	
-	if ( view->getGUI()->getViewMode() == KfmGui::ICON_VIEW )
-	{
-	    view->write( "<a href=\"");
-	    view->write( s.data() );
-	    view->write( "\"><cell><center><img border=0 src=\"file:" );
-	    view->write( KMimeType::getPixmapFileStatic( s.data() ) );
-	    view->write( "\"><br>..</center><br></cell></a>" );
-	}
-	else if ( view->getGUI()->getViewMode() == KfmGui::LONG_VIEW )
-	{
-	    view->write( "<tr><td><a href=\"" );
-	    view->write( s.data() );
-	    view->write( "\"><img border=0 width=16 height=16 src=\"file:" );
-	    view->write( KMimeType::getPixmapFileStatic( s.data(), TRUE ) );
-	    view->write( "\"></td><td>..</a></td>" );
-	    view->write( "<td></td><td></td><td></td><td></td><td></td></tr>" );
-	}
-	else if ( view->getGUI()->getViewMode() == KfmGui::TEXT_VIEW )
-	{
-	    view->write( "<tr><td><a href=\"" );
-	    view->write( s.data() );
-	    view->write( "\">../</td><td></a></td>" );
-	    view->write( "<td></td><td></td><td></td><td></td></tr>" );
-	}
-	else if ( view->getGUI()->getViewMode() == KfmGui::SHORT_VIEW )
-	{
-	    view->write( "<a href=\"" );
-	    view->write( s.data() );
-	    view->write( "\"><cell width=180><img border=0 width=16 height=16 src=\"file:" );
-	    view->write( KMimeType::getPixmapFileStatic( s.data(), TRUE ) );
-	    view->write( "\">..</cell></a>" );
-	}
+
+	view->setUpURL( s );	
     }
+    else
+      view->setUpURL( "" );
+}
+
+void KFMManager::writeEnd()
+{
+    // Write the end of the HTML stuff
+    if ( view->getGUI()->getViewMode() == KfmGui::ICON_VIEW )
+	view->write( "</body></html>" );
+    else if ( view->getGUI()->getViewMode() == KfmGui::LONG_VIEW )
+	view->write( "</table></body></html>" );
+    else if ( view->getGUI()->getViewMode() == KfmGui::TEXT_VIEW )
+	view->write( "</table></body></html>" );
+    else if ( view->getGUI()->getViewMode() == KfmGui::SHORT_VIEW )
+	view->write( "</body></html>" );
+    
+    view->end();
 }
 
 void KFMManager::writeEntry( KIODirectoryEntry *s )
@@ -931,6 +918,7 @@ void KFMManager::slotMimeType( const char *_type )
 	{
 	    bBufferPage = FALSE;
 	    // view->begin( u2 );
+	    view->setUpURL( "" );
 	    view->begin( url, nextXOffset, nextYOffset );
 	    if ( aCharset != 0 )
 	      view->setCharset(aCharset);
@@ -974,6 +962,7 @@ void KFMManager::slotFinished()
 	{
 	    // Display it now
 	    // QString u2 = u.directoryURL();
+	    view->setUpURL( "" );
 	    view->begin( url, nextXOffset, nextYOffset );
 	    view->write( pageBuffer );
 	    view->parse();
@@ -992,18 +981,9 @@ void KFMManager::slotFinished()
     
     if ( files.count() == 0 )
 	writeBeginning();
-		
-    // Write the end of the HTML stuff
-    if ( view->getGUI()->getViewMode() == KfmGui::ICON_VIEW )
-	view->write( "</body></html>" );
-    else if ( view->getGUI()->getViewMode() == KfmGui::LONG_VIEW )
-	view->write( "</table></body></html>" );
-    else if ( view->getGUI()->getViewMode() == KfmGui::TEXT_VIEW )
-	view->write( "</table></body></html>" );
-    else if ( view->getGUI()->getViewMode() == KfmGui::SHORT_VIEW )
-	view->write( "</body></html>" );
-    
-    view->end();
+
+    writeEnd();
+    // view->getGUI()->slotRemoveWaitingWidget( view );
 }
 
 void KFMManager::slotPopupActivated( int _id )
@@ -1022,7 +1002,6 @@ void KFMManager::slotPopupActivated( int _id )
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
     {
-	// debugT("Exec '%s'\n", s );
 	// Run the action 'txt' on every single file
 	KMimeBind::runBinding( s, txt );    
     }
@@ -1034,8 +1013,6 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
     char *s;
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
     {
-	// debugT("Opening for '%s'\n",s);
-	
 	KURL u( s );
 	if ( u.isMalformed() )
 	{

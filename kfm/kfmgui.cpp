@@ -495,52 +495,57 @@ void KfmGui::initToolBar()
     QPixmap pixmap;
     toolbarButtons = new KToolBar(this, "kfmwin-toolbar");
     path = kapp->kde_toolbardir() + "/";
+
+    pixmap.load(path + "up.xpm");
+    toolbarButtons->insertButton(pixmap, 0, SIGNAL( clicked() ), view, 
+			  SLOT( slotUp() ), false, 
+			  klocale->translate("Up"));
     
     pixmap.load(path + "back.xpm");
-    toolbarButtons->insertButton(pixmap, 0, SIGNAL( clicked() ), view, 
+    toolbarButtons->insertButton(pixmap, 1, SIGNAL( clicked() ), view, 
 			  SLOT( slotBack() ), false, 
 			  klocale->translate("Back"));
     
     pixmap.load(path + "forward.xpm");
-    toolbarButtons->insertButton(pixmap, 1, SIGNAL( clicked() ), view, 
+    toolbarButtons->insertButton(pixmap, 2, SIGNAL( clicked() ), view, 
 			  SLOT( slotForward() ), false, 
 			  klocale->translate("Forward"));
     
     pixmap.load(path + "home.xpm");
-    toolbarButtons->insertButton(pixmap, 2, SIGNAL( clicked() ), this, 
+    toolbarButtons->insertButton(pixmap, 3, SIGNAL( clicked() ), this, 
 			  SLOT( slotHome() ), true, 
 			  klocale->translate("Home") );
     
     toolbarButtons->insertSeparator();
     
     pixmap.load(path + "reload.xpm");
-    toolbarButtons->insertButton(pixmap, 3, SIGNAL( clicked() ), view, 
+    toolbarButtons->insertButton(pixmap, 4, SIGNAL( clicked() ), view, 
 			  SLOT( slotReload() ), true, 
 			  klocale->translate("Reload") );
 
     toolbarButtons->insertSeparator();
     
     pixmap.load(path + "editcopy.xpm");
-    toolbarButtons->insertButton(pixmap, 4, SIGNAL( clicked() ), this, 
+    toolbarButtons->insertButton(pixmap, 5, SIGNAL( clicked() ), this, 
 			  SLOT( slotCopy() ), true, 
 			  klocale->translate("Copy") );
     
     pixmap.load(path + "editpaste.xpm");
-    toolbarButtons->insertButton(pixmap, 5, SIGNAL( clicked() ), this, 
+    toolbarButtons->insertButton(pixmap, 6, SIGNAL( clicked() ), this, 
 			  SLOT( slotPaste() ), true, 
 			  klocale->translate("Paste") );
     
     toolbarButtons->insertSeparator();
     
     pixmap.load(path + "help.xpm");
-    toolbarButtons->insertButton(pixmap, 6, SIGNAL( clicked() ), this, 
+    toolbarButtons->insertButton(pixmap, 7, SIGNAL( clicked() ), this, 
 			  SLOT( slotHelp() ), true, 
 			  klocale->translate("Help"));
     
     toolbarButtons->insertSeparator();
     
     pixmap.load(path + "stop.xpm");
-    toolbarButtons->insertButton(pixmap, 7, SIGNAL( clicked() ), this, 
+    toolbarButtons->insertButton(pixmap, 8, SIGNAL( clicked() ), this, 
 			  SLOT( slotStop() ), false, 
 			  klocale->translate("Stop"));
 
@@ -548,10 +553,10 @@ void KfmGui::initToolBar()
 
     pixmap.load( path + "/kde1.xpm" );
     
-    toolbarButtons->insertButton(pixmap, 8, SIGNAL( clicked() ), this, 
+    toolbarButtons->insertButton(pixmap, 9, SIGNAL( clicked() ), this, 
 			  SLOT( slotNewWindow() ), false );
-    toolbarButtons->setItemEnabled( 8, true );
-    toolbarButtons->alignItemRight( 8, true );
+    toolbarButtons->setItemEnabled( 9, true );
+    toolbarButtons->alignItemRight( 9, true );
     
     // Load animated logo
     if ( animatedLogo->count() == 0 )
@@ -974,8 +979,8 @@ void KfmGui::slotStop()
 
 void KfmGui::slotUpdateHistory( bool _back, bool _forward )
 {
-    enableToolbarButton( 0, _back );
-    enableToolbarButton( 1, _forward );
+    enableToolbarButton( 1, _back );
+    enableToolbarButton( 2, _forward );
 }
 
 void KfmGui::slotHome()
@@ -993,7 +998,7 @@ void KfmGui::addBookmark( const char *_title, const char *_url )
 
     KBookmark *root = bookmarkManager->root();
    
-    new KBookmark( bookmarkManager, root, _title, _url );
+    (void)new KBookmark( bookmarkManager, root, _title, _url );
 }
 
 void KfmGui::slotEditBookmarks()
@@ -1013,7 +1018,7 @@ void KfmGui::slotBookmarkSelected( int _id )
     {
       if ( bm->type() == KBookmark::Folder )
       {
-	new KBookmark( bookmarkManager, bm, title.data(), view->getURL() );
+	(void)new KBookmark( bookmarkManager, bm, title.data(), view->getURL() );
 	return;
       }
 
@@ -1292,7 +1297,7 @@ void KfmGui::slotAnimatedLogoTimeout()
     animatedLogoCounter++;
     if ( animatedLogoCounter == animatedLogo->count() )
 	animatedLogoCounter = 0;
-    toolbarButtons->setButtonPixmap( 8, *( animatedLogo->at( animatedLogoCounter ) ) );
+    toolbarButtons->setButtonPixmap( 9, *( animatedLogo->at( animatedLogoCounter ) ) );
 }
 
 void KfmGui::slotAddWaitingWidget( KHTMLView *_w )
@@ -1304,7 +1309,7 @@ void KfmGui::slotAddWaitingWidget( KHTMLView *_w )
     if ( !animatedLogoTimer->isActive() )
     {
 	animatedLogoTimer->start( 50 );
-	toolbarButtons->setItemEnabled( 7, true );
+	toolbarButtons->setItemEnabled( 8, true );
     }
 }
 
@@ -1315,8 +1320,8 @@ void KfmGui::slotRemoveWaitingWidget( KHTMLView *_w )
     if ( waitingWidgetList.count() == 0 )
     {
 	animatedLogoTimer->stop();
-	toolbarButtons->setButtonPixmap( 8, *( animatedLogo->at( 0 ) ) );
-	toolbarButtons->setItemEnabled( 7, false );
+	toolbarButtons->setButtonPixmap( 9, *( animatedLogo->at( 0 ) ) );
+	toolbarButtons->setItemEnabled( 8, false );
 	slotSetStatusBar( klocale->translate("Document: Done") );
     }
 
