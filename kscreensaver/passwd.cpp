@@ -36,14 +36,6 @@ static const char sccsid[] = "@(#)passwd.c	4.02 97/04/01 xlockmore";
 #include <config.h>
 #endif
 
-#ifdef VMS
-#include <str$routines.h>
-#include <starlet.h>
-#define ROOT "SYSTEM"
-#else
-#define ROOT "root"
-#endif
-
 #ifdef HAVE_CRYPT_H
 #include <crypt.h>
 #endif
@@ -55,7 +47,9 @@ extern Bool inwindow;
 extern Bool grabmouse;
 extern Bool nolock;
 
-#if !defined( VMS ) && !defined( SUNOS_ADJUNCT_PASSWD )
+#define ROOT "root"
+
+#if !defined( SUNOS_ADJUNCT_PASSWD )
 #include <pwd.h>
 #endif
 
@@ -200,32 +194,6 @@ struct passwd {
 
 #endif /* defined( SYSV ) || defined( SVR4 ) */
 
-#ifdef VMS
-#include <uaidef.h>
-#define VMS_PASSLENGTH 9
-static short uai_salt, root_salt;
-static char hash_password[VMS_PASSLENGTH], hash_system[VMS_PASSLENGTH];
-static char root_password[VMS_PASSLENGTH], root_system[VMS_PASSLENGTH];
-static char uai_encrypt, root_encrypt;
-
-struct ascid {
-	short       len;
-	char        dtype;
-	char        c_class;
-	char       *addr;
-};
-
-static struct ascid username, rootuser;
-
-struct itmlst {
-	short       buflen;
-	short       code;
-	long        addr;
-	long        retadr;
-};
-
-#endif /* VMS */
-
 #ifdef HP_PASSWDETC		/* HAVE_SYS_WAIT_H */
 #include <sys/wait.h>
 #endif /* HP_PASSWDETC */
@@ -241,10 +209,6 @@ char        user[PASSLENGTH];
 static char userpass[PASSLENGTH];
 static char rootpass[PASSLENGTH];
 
-#ifdef VMS
-static char root[] = ROOT;
-
-#endif
 #endif /* !ultrix */
 
 #ifdef DCE_PASSWD
@@ -264,7 +228,7 @@ static int  krb_check_password(struct passwd *, char *);
 
 #endif
 
-#if (defined( USE_XLOCKRC ) || (!defined( OSF1_ENH_SEC ) &&  !defined( HP_PASSWDETC ) && !defined( VMS )))
+#if ((!defined( OSF1_ENH_SEC ) &&  !defined( HP_PASSWDETC )))
 static struct passwd *
 my_passwd_entry(void)
 {
@@ -330,9 +294,6 @@ static void
 getUserName(void)
 {
 
-#ifdef VMS
-	(void) strcpy(user, cuserid(NULL));
-#else /* !VMS */
 #ifdef HP_PASSWDETC
 
 /* 
@@ -400,10 +361,9 @@ getUserName(void)
 
 #endif /* !OSF1_ENH_SEC */
 #endif /* !HP_PASSWDETC */
-#endif /* !VMS */
 }
 
-#if defined( HAVE_SHADOW ) && !defined( USE_XLOCKRC )
+#if defined( HAVE_SHADOW )
 static int
 passwd_invalid(char *passwd)
 {
@@ -414,39 +374,11 @@ passwd_invalid(char *passwd)
 #endif
 
 #if !defined( ultrix ) && !defined( DCE_PASSWD ) && !defined( BSD_AUTH )
-#ifndef USE_XLOCKRC
 /* This routine is not needed if HAVE_FCNTL_H and USE_MULTIPLE_ROOT */
 static void
 getCryptedUserPasswd(void)
 {
 
-#ifdef VMS
-	struct itmlst il[4];
-
-	il[0].buflen = 2;
-	il[0].code = UAI$_SALT;
-	il[0].addr = (long) &uai_salt;
-	il[0].retadr = 0;
-	il[1].buflen = 8;
-	il[1].code = UAI$_PWD;
-	il[1].addr = (long) &hash_password;
-	il[1].retadr = 0;
-	il[2].buflen = 1;
-	il[2].code = UAI$_ENCRYPT;
-	il[2].addr = (long) &uai_encrypt;
-	il[2].retadr = 0;
-	il[3].buflen = 0;
-	il[3].code = 0;
-	il[3].addr = 0;
-	il[3].retadr = 0;
-
-	username.len = strlen(user);
-	username.dtype = 0;
-	username.c_class = 0;
-	username.addr = user;
-
-	sys$getuai(0, 0, &username, &il, 0, 0, 0);
-#else /* !VMS */
 #ifdef HP_PASSWDETC
 
 /* 
@@ -508,42 +440,12 @@ getCryptedUserPasswd(void)
 
 #endif /* !OSF1_ENH_SEC */
 #endif /* !HP_PASSWDETC */
-#endif /* !VMS */
 }
-
-#endif /* !USE_XLOCKRC */
 
 static void
 getCryptedRootPasswd(void)
 {
 
-#ifdef VMS
-	struct itmlst il[4];
-
-	il[0].buflen = 2;
-	il[0].code = UAI$_SALT;
-	il[0].addr = (long) &root_salt;
-	il[0].retadr = 0;
-	il[1].buflen = 8;
-	il[1].code = UAI$_PWD;
-	il[1].addr = (long) &root_password;
-	il[1].retadr = 0;
-	il[2].buflen = 1;
-	il[2].code = UAI$_ENCRYPT;
-	il[2].addr = (long) &root_encrypt;
-	il[2].retadr = 0;
-	il[3].buflen = 0;
-	il[3].code = 0;
-	il[3].addr = 0;
-	il[3].retadr = 0;
-
-	rootuser.len = strlen(root);
-	rootuser.dtype = 0;
-	rootuser.c_class = 0;
-	rootuser.addr = root;
-
-	sys$getuai(0, 0, &rootuser, &il, 0, 0, 0);
-#else /* !VMS */
 #ifdef HP_PASSWDETC
 
 /* 
@@ -620,7 +522,6 @@ getCryptedRootPasswd(void)
 
 #endif /* !OSF1_ENH_SEC */
 #endif /* !HP_PASSWDETC */
-#endif /* !VMS */
 }
 
 #endif /* !ultrix && !DCE_PASSWD && !BSD_AUTH */
@@ -1154,13 +1055,11 @@ krb_check_password(struct passwd *pwd, char *pass)
 }
 #endif /* HAVE_KRB5 */
 
-#ifndef VMS
 #undef passwd
 #undef pw_name
 #undef pw_passwd
 #ifndef SUNOS_ADJUNCT_PASSWD
 #include <pwd.h>
-#endif
 #endif
 
 #if ( HAVE_FCNTL_H && defined( USE_MULTIPLE_ROOT ))
@@ -1420,13 +1319,9 @@ initPasswd(void)
                 if (allowroot && (pwd = getpwnam(ROOT)) != NULL)
                         rlc = login_getclass(pwd->pw_class);
 #else /* !BSD_AUTH */
-#ifdef USE_XLOCKRC
-                gpass();
-#else
                 getCryptedUserPasswd();
-#endif
                 if (allowroot)
-                        getCryptedRootPasswd();
+		    getCryptedRootPasswd();
 #endif /* !BSD_AUTH */
         }
 #endif /* !ultrix && !DCE_PASSWD */
@@ -1435,82 +1330,4 @@ initPasswd(void)
 #endif
 }
 
-#ifdef USE_XLOCKRC
-
-static void
-gpass(void)
-{
-#include <sys/param.h>
-#include <sys/stat.h>
-#define CPASSLENGTH 14
-#define CPASSCHARS 64
-	extern char *cpasswd;
-	static char saltchars[CPASSCHARS + 1] =
-	"abcdefghijklmnopwrstuvwxyzABCDEFGHIJKLMNOPWRSTUVWXYZ1234567890./";
-	char        xlockrc[MAXPATHLEN], *home, *getpass();
-	FILE       *fp;
-
-	if (cpasswd[0] == '\0') {
-		/*
-		 * No password given on command line or from database, get from
-		 * $HOME/.xlockrc instead.
-		 */
-		if ((home = getenv("HOME")) == 0) {
-			/* struct passwd *p = getpwuid(getuid()); */
-			struct passwd *p = my_passwd_entry();
-
-			if (p == 0) {
-				error("%s: Who are you?\n");
-				exit(1);
-			}
-			home = p->pw_dir;
-		}
-		(void) strncpy(xlockrc, home, MAXPATHLEN);
-		(void) strncat(xlockrc, "/.xlockrc", MAXPATHLEN);
-		if ((fp = fopen(xlockrc, "r")) == NULL) {
-			char        pw[9], salt[2], *pw2;
-
-			if ((fp = fopen(xlockrc, "w")) != NULL)
-				(void) fchmod(fileno(fp), 0600);
-			while (1) {
-				(void) strncpy(pw, getpass("Key: "), sizeof pw);
-				pw2 = getpass("Again:");
-				if (strcmp(pw, pw2) != 0)
-					error("%s: Mismatch, try again\n");
-				else
-					break;
-			}
-			/* grab a random printable character that isn't a colon */
-			salt[0] = saltchars[LRAND() & (CPASSCHARS - 1)];
-			salt[1] = saltchars[LRAND() & (CPASSCHARS - 1)];
-			(void) strncpy(userpass, (char *) crypt(pw, salt), CPASSLENGTH);
-			if (fp)
-				(void) fprintf(fp, "%s\n", userpass);
-		} else {
-			char        buf[BUFSIZ];
-
-			(void) fchmod(fileno(fp), 0600);
-			buf[0] = '\0';
-			if ((fgets(buf, sizeof buf, fp) == NULL) ||
-			    (!(strlen(buf) == CPASSLENGTH - 1 ||
-			       (strlen(buf) == CPASSLENGTH && buf[CPASSLENGTH - 1] == '\n')))) {
-				(void) fprintf(stderr, "%s: %s crypted password %s\n", xlockrc,
-				       buf[0] == '\0' ? "null" : "bad", buf);
-				exit(1);
-			}
-			buf[CPASSLENGTH - 1] = '\0';
-			(void) strncpy(userpass, buf, CPASSLENGTH);
-		}
-		if (fp)
-			(void) fclose(fp);
-	} else {
-		if (strlen(cpasswd) != CPASSLENGTH - 1) {
-			error("%s: bad crypted password %s\n", cpasswd);
-			exit(1);
-		} else
-			(void) strncpy(userpass, cpasswd, CPASSLENGTH);
-	}
-}
-
-#endif /* USE_XLOCKRC */
 

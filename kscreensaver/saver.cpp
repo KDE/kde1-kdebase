@@ -99,82 +99,19 @@ void KPasswordDlg::keyPressed( QKeyEvent *e )
 
 int KPasswordDlg::tryPassword()
 {
-/*
-	FILE *fp;
-	passwd *pass;
-	char salt[3];
-
-#ifdef __FreeBSD__
-      pass = getpwuid(getuid());
- 
-       if ( !strcmp( crypt( password, pass->pw_passwd), pass->pw_passwd )) {
-         return(TRUE);
-       } else {
-         return(FALSE);
-       }
-#else
-	if ( ( fp = fopen( "/etc/passwd", "r" ) ) != NULL )
-	{
-		do
-		{
-			pass = fgetpwent( fp );
-		}
-		while ( pass && pass->pw_uid != getuid() );
-
-		fclose( fp );
-		
-		if ( pass )
-		{
-			// check if you have a shadow password system
-			// 1. does /etc/shadow exist and
-			fp = fopen( "/etc/shadow", "r" );
-			// 2. is password entry in /etc/passwd == "x"
-
-			if ( ( strcmp( pass->pw_passwd, "x" ) == 0 ) && ( fp != NULL ) )
-			{
-				// shadow password system
-				char *u_name = new char[ strlen(pass->pw_name)+1 ];
-				strcpy( u_name, pass->pw_name );
-
-				do
-				{
-					pass = fgetpwent( fp );
-				}
-				while ( pass && strcmp( pass->pw_name, u_name ) != 0 );
-
-				delete [] u_name;
-			}
-
-			if ( fp )
-				fclose( fp );
-
-			salt[0] = pass->pw_passwd[0];
-			salt[1] = pass->pw_passwd[1];
-			salt[2] = '\0';
-
-			if ( !strcmp( crypt( password, salt ), pass->pw_passwd ) )
-			{
-				return TRUE;
-			}
-		}
-	}
-
-	return FALSE;
-#endif
-*/
-  int e = checkPasswd(password.data());
-  return e;
+    int e = checkPasswd(password.data());
+    return e;
 }
 
 void KPasswordDlg::timeout()
 {
-	if ( timerMode )
+    if ( timerMode )
 	{
-		label->setText( glocale->translate("Enter Password") );
-		timerMode = 0;
-		timer.start( 5000, TRUE );
+	    label->setText( glocale->translate("Enter Password") );
+	    timerMode = 0;
+	    timer.start( 5000, TRUE );
 	}
-	else
-		emit passCancel();
+    else
+	emit passCancel();
 }
 

@@ -46,6 +46,7 @@ static QString pidFile;
 static KPasswordDlg *passDlg = NULL;
 static QWidget *saverWidget = NULL;
 extern char *ProgramName;
+extern Bool allowroot;
 
 void grabInput( QWidget *w );
 void releaseInput();
@@ -209,68 +210,97 @@ int main( int argc, char *argv[] )
 	int timeout = 600;
 	ProgramName = argv[0];
 	ssApp a( argc, argv );
-	initPasswd();
 
 	glocale = new KLocale("klock");
 
 	if ( argc == 1 )
-		usage( argv[0] );
+	    usage( argv[0] );
 
-	for ( int i = 0; i < argc; i++ )
-	{
-		if ( !strcmp( argv[i], "-install" ) )
-			mode = MODE_INSTALL;
-		else if ( !strcmp( argv[i], "-setup" ) )
-			mode = MODE_SETUP;
-		else if ( !strcmp( argv[i], "-preview" ) )
-		{
-			mode = MODE_PREVIEW;
-			saveWin = atol( argv[++i] );
+	enum parameter_code { 
+	    install, setup, preview, inroot, test, delay, 
+	    arg_lock, corners, descr, arg_nice, help, allow_root, 
+	    unknown
+	} parameter;
+	
+	char *strings[] = { 
+	    "-install", "-setup", "-preview", "-inroot", "-test", "-delay", 
+	    "-lock", "-corners", "-desc", "-nice", "--help", "-allow-root", 
+	    0
+	};
+
+	int i = 1;
+	while ( i < argc) {
+	    parameter = unknown;
+
+	    for ( int p = 0 ; strings[p]; p++)
+		if ( !strcmp( argv[i], strings[p]) ) {
+		    parameter = static_cast<parameter_code>(p);
+		    break;
 		}
-		else if ( !strcmp( argv[i], "-inroot" ) )
+
+	    switch (parameter) 
 		{
-			mode = MODE_PREVIEW;
-			saveWin = kapp->desktop()->winId();
+		case install:
+		    mode = MODE_INSTALL;
+		    break;
+		case setup:
+		    mode = MODE_SETUP;
+		    break;
+		case preview:
+		    mode = MODE_PREVIEW;
+		    saveWin = atol( argv[++i] );
+		    break;
+		case inroot:
+		    mode = MODE_PREVIEW;
+		    saveWin = kapp->desktop()->winId();
+		    break;
+		case test:
+		    mode = MODE_TEST;
+		    break;
+		case delay:
+		    timeout = atoi( argv[++i] ) * 60;
+		    if ( timeout < 60 )
+			timeout = 60;
+		    break;
+		case arg_lock:
+		    lock = TRUE;
+		    break;
+		case corners:
+		    setCorners( argv[++i] );
+		    break;
+		case descr:
+		    printf( "%s\n", getScreenSaverName() );
+		    exit( 0 );
+		case arg_nice:
+		    nice( atoi( argv[++i] ) );
+		    break;
+		case allow_root:
+		    allowroot = 1;
+		    break;
+		case help:
+		    usage( argv[0] );
+		    break;
+		default: // unknown
+		    debug("unknown parameter");
+		    break;
 		}
-		else if ( !strcmp( argv[i], "-test" ) )
-		{
-			mode = MODE_TEST;
-		}
-		else if ( !strcmp( argv[i], "-delay" ) )
-		{
-			timeout = atoi( argv[++i] ) * 60;
-			if ( timeout < 60 )
-				timeout = 60;
-		}
-		else if ( !strcmp( argv[i], "-lock" ) )
-		{
-			lock = TRUE;
-		}
-		else if ( !strcmp( argv[i], "-corners" ) )
-		{
-			setCorners( argv[++i] );
-		}
-		else if ( !strcmp( argv[i], "-desc" ) )
-		{
-			printf( "%s\n", getScreenSaverName() );
-			exit( 0 );
-		}
-		else if ( !strcmp( argv[i], "-nice" ) )
-		{
-			nice( atoi( argv[++i] ) );
-		}
-		else if ( !strcmp( argv[i], "--help" ) )
-			usage( argv[0] );
+	    i++;
 	}
+
+	initPasswd();
 
 	if ( mode == MODE_INSTALL )
 	{
 	 if (!canGetPasswd) {
-	   KMsgBox::message(NULL, 
-			    glocale->translate("Shadow Passwords"), 
-			    glocale->translate("Your system uses shadow passwords!\n"\
-					      "Please contact your system administrator."));
-	 };
+
+	     QString tmp = glocale->translate("Your system uses shadow passwords!\n"
+			     "Please contact your system administrator.\n\n"
+			     "Tell him, that you need suid for the screensavers!");
+	     
+	     KMsgBox::message(NULL, 
+			      glocale->translate("Shadow Passwords"), 
+			      tmp);
+	 }
 	 pidFile = getenv( "HOME" );
 		pidFile += "/.kss.pid";
 		FILE *fp;
