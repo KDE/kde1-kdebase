@@ -27,16 +27,15 @@ msgstr "&Naslovna traka"
 
 #: main.cpp:68
 msgid "&Desktop"
-msgstr ""
+msgstr "&Radne povr¹ine"
 
 #: main.cpp:74
-#, fuzzy
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
-msgstr "uporaba: kcmkwm [-init | {prozori,gumbovi,naslovna traka}]\n"
+msgstr "uporaba: kcmkwm [-init | {prozori,gumbi,naslovna traka,radne povr¹ine}]\n"
 
 #: main.cpp:105
 msgid "Window manager style"
-msgstr "Stil prozor upravljaèa"
+msgstr "Stil prozora upravljaèa"
 
 #: titlebar.cpp:117
 msgid "Minimize"
@@ -57,17 +56,20 @@ msgstr "Izbornik"
 #: titlebar.cpp:463
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "Lijeva strana naslovne trake je puna... onemoguæujem 'Poveæaj' gumb\n"
+msgstr ""
+"Lijeva strana naslovne trake je puna... onemoguæujem 'Poveæaj' gumb\n"
 
 #: titlebar.cpp:496
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "Desna strana naslovne trake je puna... onemoguæujem 'Poveæaj' gumb\n"
+msgstr ""
+"Desna strana naslovne trake je puna... onemoguæujem 'Poveæaj' gumb\n"
 
 #: titlebar.cpp:536
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "Lijeva strana naslovne trake je puna... onemoguæujem 'Smanji' gumb\n"
+msgstr ""
+"Lijeva strana naslovne trake je puna... onemoguæujem 'Smanji' gumb\n"
 
 #: titlebar.cpp:569
 msgid ""
@@ -108,22 +110,23 @@ msgstr "N&eaktivna pixmapa"
 
 #: titlebar.cpp:982
 msgid "Mouse action"
-msgstr ""
+msgstr "Akcija mi¹a"
 
 #: titlebar.cpp:984
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
+"Dvostruki pritisak na lijevi gumb mi¹a\n"
+"   na naslovnoj traci èini :"
 
 #: titlebar.cpp:988
-#, fuzzy
 msgid "(Un)Maximize"
 msgstr "Poveæaj"
 
 #: titlebar.cpp:989
 msgid "Move"
-msgstr ""
+msgstr "Premjesti"
 
 #: titlebar.cpp:990
 #, fuzzy
@@ -132,7 +135,7 @@ msgstr "Zasjenjeno"
 
 #: titlebar.cpp:991
 msgid "Iconify"
-msgstr ""
+msgstr "Napravi ga ikonom"
 
 #: titlebar.cpp:992
 #, fuzzy
@@ -141,15 +144,15 @@ msgstr "Zalijepi"
 
 #: titlebar.cpp:993
 msgid "Resize"
-msgstr ""
+msgstr "Promijeni velièinu"
 
 #: titlebar.cpp:994
 msgid "Restore"
-msgstr ""
+msgstr "Vrati"
 
 #: titlebar.cpp:995
 msgid "Operations Menu"
-msgstr ""
+msgstr "Izbornik operacija"
 
 #: windows.cpp:74
 msgid "Window movement"
@@ -173,27 +176,27 @@ msgstr "Smjer smje¹tanja"
 
 #: windows.cpp:86
 msgid "Smart"
-msgstr ""
+msgstr "Pametno"
 
 #: windows.cpp:88
 msgid "Cascade"
-msgstr ""
+msgstr "Kaskadno"
 
 #: windows.cpp:90
 msgid "Interactive"
-msgstr ""
+msgstr "Interaktivno"
 
 #: windows.cpp:92
 msgid "Random"
-msgstr ""
+msgstr "Sluèajno"
 
 #: windows.cpp:94
 msgid "Manual"
-msgstr ""
+msgstr "Ruèno"
 
 #: windows.cpp:101
 msgid "Allowed Overlap:"
-msgstr ""
+msgstr "Dozvoljeno preklapanje"
 
 #: windows.cpp:108
 msgid "Maximize Style"
@@ -233,42 +236,40 @@ msgstr "milisekundi"
 
 #: desktop.cpp:79
 msgid "Active desktop borders"
-msgstr ""
+msgstr "Aktivni rubovi radne povr¹ine"
 
 #: desktop.cpp:81
 msgid "Enable active desktop borders"
-msgstr ""
+msgstr "Omoguæi aktivne rubove radne povr¹ine" 
 
 #: desktop.cpp:83
 msgid "Move pointer towards center after switch"
-msgstr ""
+msgstr "Premjesti pokazivaè prema centru nakon promjene"
 
 #: desktop.cpp:89
 msgid "Dekstop switch delay:"
-msgstr ""
+msgstr "Ka¹njenje prilikom promjene radne povr¹ine:"
 
 #: desktop.cpp:102
 msgid "Magic Borders"
-msgstr ""
+msgstr "Magièni rubovi"
 
 #: desktop.cpp:104
 msgid "Edge Resistance:"
-msgstr ""
+msgstr "Otpor ivice:"
 
 #: desktop.cpp:118
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Border Snap Zone:\n"
+"       (pikseli)"
 
 #: desktop.cpp:132
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-
-#~ msgid "Random placement"
-#~ msgstr "Sluèajno smje¹tanje"
-
-#~ msgid "Smart placement"
-#~ msgstr "Pametno smje¹tanje"
+"Window Snap Zone:\n"
+"       (pikseli)"

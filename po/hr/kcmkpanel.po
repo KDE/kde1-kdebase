@@ -15,19 +15,19 @@ msgstr ""
 
 #: main.cpp:62
 msgid "&Panel"
-msgstr ""
+msgstr "&Ploèa"
 
 #: main.cpp:68
 msgid "&Desktops"
-msgstr ""
+msgstr "&Radne povr¹ine"
 
 #: main.cpp:97
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
-msgstr ""
+msgstr "uporaba: kcmkpanel [-init | {ploèa,opcije,radne povr¹ine}]\n"
 
 #: main.cpp:127
 msgid "KPanel Configuration"
-msgstr ""
+msgstr "KPanel Postava"
 
 #: panel.cpp:59
 msgid "Location"
@@ -35,56 +35,51 @@ msgstr "Mjesto"
 
 #: panel.cpp:60
 msgid "&Top"
-msgstr ""
+msgstr "&Vrh"
 
 #: panel.cpp:61
-#, fuzzy
 msgid "&Left"
-msgstr "Vrh/Lijevo"
+msgstr "&Lijevo"
 
 #: panel.cpp:62
 msgid "&Bottom"
-msgstr ""
+msgstr "&Dno"
 
 #: panel.cpp:74
 msgid "Taskbar"
 msgstr "Traka sa zadacima"
 
 #: panel.cpp:75
-#, fuzzy
 msgid "&Hidden"
-msgstr "Skriveno"
+msgstr "&Skriveno"
 
 #: panel.cpp:77
 msgid "T&op"
-msgstr ""
+msgstr "V&rh"
 
 #: panel.cpp:79
 msgid "Botto&m"
-msgstr ""
+msgstr "D&no"
 
 #: panel.cpp:81
-#, fuzzy
 msgid "Top/Le&ft"
-msgstr "Vrh/Lijevo"
+msgstr "Vrh/L&ijevo"
 
 #: panel.cpp:96
 msgid "T&iny"
-msgstr ""
+msgstr "Ma&leno"
 
 #: panel.cpp:98
-#, fuzzy
 msgid "&Normal"
-msgstr "Normalni stil"
+msgstr "&Normalno"
 
 #: panel.cpp:100
 msgid "L&arge"
-msgstr ""
+msgstr "Veli&ko"
 
 #: desktops.cpp:73
-#, fuzzy
 msgid "&Visible"
-msgstr "Vidljivo"
+msgstr "&Vidljivo"
 
 #: desktops.cpp:82
 #, fuzzy
@@ -102,15 +97,15 @@ msgstr "Savjet u izborniku"
 
 #: options.cpp:44
 msgid "De&lay:"
-msgstr ""
+msgstr "&ka¹njenje "
 
 #: options.cpp:56
 msgid "ms"
-msgstr ""
+msgstr "ms"
 
 #: options.cpp:68
 msgid "Others"
-msgstr ""
+msgstr "Drugi"
 
 #: options.cpp:69
 #, fuzzy
@@ -129,18 +124,12 @@ msgstr "Auto. Sakrij Traku Sa Zadacima"
 
 #: options.cpp:81
 msgid "Clock"
-msgstr ""
+msgstr "Sat"
 
 #: options.cpp:83
 msgid "&24h"
-msgstr ""
+msgstr "&24satni"
 
 #: options.cpp:85
 msgid "&12h AM/PM"
-msgstr ""
-
-#~ msgid "Tiny Style"
-#~ msgstr "Maleni stil"
-
-#~ msgid "Large Style"
-#~ msgstr "Veliki stil"
+msgstr "&12satni AM/PM"
