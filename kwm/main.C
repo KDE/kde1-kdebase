@@ -730,7 +730,7 @@ void MyApp::changeToClient(QString label){
       c->unIconify();
     else {
       manager->raiseClient(c);
-      manager->activateClient(c);
+      manager->activateClient(c, true);
     }
   }
 }
@@ -1015,7 +1015,7 @@ void MyApp::handleKeyRelease(XKeyEvent key){
 	if (infoBoxClient){
 	  if (infoBoxClient->state == NormalState){
 	    manager->raiseClient(infoBoxClient);
-	    manager->activateClient(infoBoxClient);
+	    manager->activateClient(infoBoxClient, true);
 	  }
 	  else{ // IconicState
 	    infoBoxClient->unIconify();
@@ -1184,6 +1184,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
     return TRUE; //do not confuse Qt with these events...
     break;
   case MotionNotify:
+    manager->motionNotify(&ev->xmotion);
     break;
   case ConfigureNotify:
     // this is because Qt cannot handle (usually does not need to)

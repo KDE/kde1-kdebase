@@ -1456,19 +1456,37 @@ void Client::autoRaise(){
     return;
 
   if (isActive()){
-    Window tmpwin;
-    int tmp;
-    XGetInputFocus(qt_xdisplay(), &tmpwin, &tmp);
-    if (manager->getClient(tmpwin) == this)
-      manager->raiseClient( this );
+     if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False, 
+ 		     ButtonPressMask | ButtonReleaseMask |
+ 		     PointerMotionMask |
+ 		     EnterWindowMask | LeaveWindowMask,
+		      GrabModeAsync, GrabModeAsync, None, 
+		      None , CurrentTime) == GrabSuccess){ 
+       XUngrabPointer(qt_xdisplay(), CurrentTime);
+       XSync(qt_xdisplay(), FALSE);
+//        // for FocusFollowMouse: discard all enter/leave events
+//        XEvent ev;
+//        while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
+       manager->raiseClient( this );
+     }
+     else {
+       if ( options.FocusPolicy == FOCUS_FOLLOW_MOUSE
+	    && options.AutoRaise > 0){
+	 QTimer::singleShot(options.AutoRaise, this, SLOT(autoRaise()));
+	 autoraised_stopped = FALSE;
+       }
+     }
   }
 }
 
 void Client::stopAutoraise(){
   if (!autoraised_stopped
+      && isActive()
+      && !do_not_draw
       && options.FocusPolicy == FOCUS_FOLLOW_MOUSE
-      && options.AutoRaise > 0)
-    autoRaise();
+      && options.AutoRaise > 0){
+    manager->raiseClient( this );
+  }
   autoraised_stopped = TRUE;
 }
 

@@ -148,6 +148,9 @@ Manager::Manager(): QObject(){
     XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_running, kwm_running, 8,
 		    PropModeAppend, (unsigned char*) &data, 1);
   }
+
+  delayed_focus_follow_mouse_client = NULL;
+  enable_focus_follow_mouse_activation = false;
 }
 
 
@@ -553,12 +556,29 @@ void Manager::shapeNotify(XShapeEvent *e){
       setShape(c);
 }
 
+
+void Manager::motionNotify(XMotionEvent* e){
+  Client *c;
+  enable_focus_follow_mouse_activation = true;
+  if (options.FocusPolicy == FOCUS_FOLLOW_MOUSE){ 
+    c = getClient(e->window);
+    if (c && c == delayed_focus_follow_mouse_client && c != current()
+	&& c->state != WithdrawnState)
+      activateClient(c);
+    delayed_focus_follow_mouse_client = NULL;
+  }
+}
+
 void Manager::enterNotify(XCrossingEvent *e){
   Client *c;
   if (options.FocusPolicy == FOCUS_FOLLOW_MOUSE){ 
+    delayed_focus_follow_mouse_client = NULL;
     c = getClient(e->window);
-    if (c != 0 && c != current() && c->state != WithdrawnState) {
-      activateClient(c);
+    if (c != 0 && c != current() && c->state != WithdrawnState){
+      if (enable_focus_follow_mouse_activation)
+	activateClient(c);
+      else
+	delayed_focus_follow_mouse_client = c;
     }
   }
 }
@@ -913,8 +933,9 @@ void Manager::addClient(Client* c){
 }
 
 
-void Manager::activateClient(Client* c, bool set_revert){
+void Manager::activateClient(Client* c, bool discard_enter, bool set_revert){
   Client* cc = current();
+  enable_focus_follow_mouse_activation = false;
   if (focus_grabbed())
     return;
   if (c == cc)
@@ -925,11 +946,14 @@ void Manager::activateClient(Client* c, bool set_revert){
   c->setactive( TRUE );
   
   XSetInputFocus(qt_xdisplay(), c->window, RevertToPointerRoot, timeStamp());
-  
-  // for FocusFollowMouse: discard all enter/leave events
-  XEvent ev;
-  while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
 
+//    // for FocusFollowMouse: discard all enter/leave events
+//   if ( options.FocusPolicy == FOCUS_FOLLOW_MOUSE && discard_enter){
+//     XEvent ev;
+//     while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
+//   }
+
+  
   if (c->Ptakefocus)
     sendClientMessage(c->window, wm_protocols, wm_take_focus);
   colormapFocus(c);
@@ -1052,7 +1076,7 @@ void Manager::noFocus(){
        c && (c->isActive() || c->state != NormalState); 
        c = clients_traversing.prev());
   if (c && c->state == NormalState) {
-    activateClient(c, False);
+    activateClient(c, true, false);
     return;
   }
 

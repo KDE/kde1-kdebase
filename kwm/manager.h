@@ -50,6 +50,7 @@ public:
   void colormapNotify(XColormapEvent *e);
   void propertyNotify(XPropertyEvent *e);
   void shapeNotify(XShapeEvent *e);
+  void motionNotify(XMotionEvent* e);
   void enterNotify(XCrossingEvent *e);
     
   void randomPlacement(Client* c);
@@ -62,7 +63,8 @@ public:
   Client* current();
 
   void addClient(Client* c);
-  void activateClient(Client* c, bool set_revert = TRUE);
+  void activateClient(Client* c, bool discard_enter = false, 
+		      bool set_revert = true);
   void removeClient(Client* c);
   void raiseClient(Client* c);
   void lowerClient(Client* c);
@@ -224,10 +226,9 @@ private:
   Atom module_dockwin_add;
   Atom module_dockwin_remove;
 
-  
-  
-
-
+  bool enable_focus_follow_mouse_activation;
+  Client* delayed_focus_follow_mouse_client;
+ 
 };
 
 #endif // MANAGER_H

@@ -41,19 +41,6 @@ void resizecalc_t(Client *c, int x, int y);
 void resizecalc_b(Client *c, int x, int y); 
 
 
-void getmouse(int *x, int *y){
-    Window dw1, dw2;
-    int t1, t2;
-    unsigned int t3;
-
-    XQueryPointer(dpy, root, &dw1, &dw2, x, y, &t1, &t2, &t3);
-}
-
-void setmouse(int x, int y){
-    XWarpPointer(dpy, None, root, None, None, None, None, x, y);
-}
-
-
 
 void resizecalc(Client *c, int x, int y){
   x+=1;
@@ -205,12 +192,10 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
     XEvent ev;
     int cx, cy, rx, ry;
     QRect other;
-
+    
+    cx = rx = c->geometry.x() + c->old_cursor_pos.x();
+    cy = ry = c->geometry.y() + c->old_cursor_pos.y();
     bool return_pressed = false;
-    bool do_again = false;
-
-    getmouse(&cx, &cy);
-    recalc (c, cx, cy);
 
     // set the focus policy to ClickToFocus to avoid flickering
     FOCUS_POLICY oldFocusPolicy = options.FocusPolicy;
@@ -222,9 +207,8 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
     }
     
     while (c->dragging_is_running() && !return_pressed){
-      if (!do_again)
-	XMaskEvent(dpy, ButtonMask|KeyPressMask|PointerMotionMask, &ev);
-      do_again = false;
+      
+      XMaskEvent(dpy, ButtonMask|KeyPressMask|PointerMotionMask, &ev);
       return_pressed = ev.type == ButtonRelease;
       if (ev.type == KeyPress){
 	int kc = XKeycodeToKeysym(dpy, ev.xkey.keycode, 0);
@@ -240,10 +224,13 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
 	  mx /= 10;
 	  my /= 10;
 	}
-	setmouse(cx + mx, cy + my);
+	QCursor::setPos(QCursor::pos()+QPoint(mx, my));
+	continue;
       }
-      XSync(dpy, False);
-      getmouse(&rx, &ry);
+      else if (ev.type == MotionNotify){
+	rx = ev.xmotion.x_root;
+	ry = ev.xmotion.y_root;
+      }
       if (rx == cx && ry == cy)
 	continue;
       cx = rx;
@@ -268,9 +255,6 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
 	c = manager->getClient(w);
 	if (!c)
 	  return true;
-	XSync(qt_xdisplay(), False);
-	getmouse(&rx, &ry);
-	do_again = (rx != cx || ry != cy);
       }
       XFlush(dpy);
       continue;
@@ -348,13 +332,9 @@ bool movedrag(Client *c){
 void killSelect(){
 	      
     XEvent ev;
-    int cx, cy, rx, ry;
-
     int return_pressed = 0;
     int escape_pressed = 0;
     int button_1_released = 0;
-
-    getmouse(&cx, &cy);
 
     XGrabServer(dpy);
 
@@ -377,22 +357,16 @@ void killSelect(){
 	  mx /= 10;
 	  my /= 10;
 	}
-	setmouse(cx + mx, cy + my);
+	QCursor::setPos(QCursor::pos()+QPoint(mx, my));
       }
       if (ev.type == ButtonRelease){
 	button_1_released = (ev.xbutton.button == Button1);
+	manager->killWindowAtPosition(ev.xbutton.x_root, ev.xbutton.y_root);
       }
-      
-      getmouse(&rx, &ry);
-      if (rx == cx && ry == cy)
-	continue;
-      cx = rx;
-      cy = ry;
-      XFlush(dpy);
       continue;
     }
-    if (!escape_pressed){
-      manager->killWindowAtPosition(cx, cy);
+    if (return_pressed){
+      manager->killWindowAtPosition(QCursor::pos().x(), QCursor::pos().y());
     }
 
     XUngrabServer(dpy);
