@@ -167,12 +167,18 @@ void KFMServer::slotOpenURL( const char* _url )
 	if ( url == "trash:/" )
 	    url = "file:" + KFMPaths::TrashPath();
 	
+/*
+   // Looks for another window showing the same URL
+   // Commented out by David because the window can be on another
+   // desktop and it's very annoying if a bookmark from krootwm doesn't work
+   // because of this.
 	KfmGui *w = KfmGui::findWindow( url.data() );
 	if ( w != 0L )
 	{
 	    w->show();
 	    return;
 	}
+*/
 
 	KFMExec* exec = new KFMExec;
 	exec->openURL( url );
