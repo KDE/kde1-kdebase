@@ -212,41 +212,41 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 	QLabel *label;
 
 	label = new QLabel( klocale->translate("Background Color:"), this );
-	label->setGeometry( 35, 20, 150, 25 );
+	label->setGeometry( 35, 20, 165, 25 );
 
 	colorBtn = new KColorButton( bgColor, this );
-	colorBtn->setGeometry( 185, 20, 80, 30 );
+	colorBtn->setGeometry( 200, 20, 80, 30 );
 	connect( colorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotBgColorChanged( const QColor & ) ) );
 
 	label = new QLabel( klocale->translate("Normal Text Color:"), this );
-	label->setGeometry( 35, 60, 150, 25 );
+	label->setGeometry( 35, 60, 165, 25 );
 
 	colorBtn = new KColorButton( textColor, this );
-	colorBtn->setGeometry( 185, 60, 80, 30 );
+	colorBtn->setGeometry( 200, 60, 80, 30 );
 	connect( colorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotTextColorChanged( const QColor & ) ) );
 
 	label = new QLabel( klocale->translate("URL Link Color:"), this );
-	label->setGeometry( 35, 100, 150, 25 );
+	label->setGeometry( 35, 100, 165, 25 );
 
 	colorBtn = new KColorButton( linkColor, this );
-	colorBtn->setGeometry( 185, 100, 80, 30 );
+	colorBtn->setGeometry( 200, 100, 80, 30 );
 	connect( colorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotLinkColorChanged( const QColor & ) ) );
 
 	label = new QLabel( klocale->translate("Followed Link Color:"), this );
-	label->setGeometry( 35, 140, 150, 25 );
+	label->setGeometry( 35, 140, 165, 25 );
 
 	colorBtn = new KColorButton( vLinkColor, this );
-	colorBtn->setGeometry( 185, 140, 80, 30 );
+	colorBtn->setGeometry( 200, 140, 80, 30 );
 	connect( colorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotVLinkColorChanged( const QColor & ) ) );
 
 	cursorbox = new QCheckBox(klocale->translate("Change cursor over link."),
 				  this);
 
-	cursorbox->setGeometry(35,180,180,28);
+	cursorbox->setGeometry(35,180,250,28);
 	cursorbox->setChecked(changeCursor);
 }
 
