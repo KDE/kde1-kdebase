@@ -140,7 +140,7 @@ EOM
   exit 0
   ;;
 
-  --disable-shared) enable_shared=no ;;
+  --disable-shared) enable_shared=no ; can_build_shared=no;;
 
   --disable-static) enable_static=no ;;
 
@@ -1124,8 +1124,13 @@ amigaos*)
   ;;
 
 freebsd2* | freebsd3*)
-  version_type=sunos
-  library_names_spec='${libname}${release}.so.$versuffix'
+  version_type=freebsd
+  if [ "$PORTOBJFORMAT" = elf ]; then
+    library_names_spec='${libname}${release}.so.$major $libname.so'
+  else
+    library_names_spec='${libname}${release}.so.$versuffix'
+  fi
+
   finish_cmds='PATH="$PATH:/sbin" ldconfig -m $libdir'
   shlibpath_var=LD_LIBRARY_PATH
   ;;
