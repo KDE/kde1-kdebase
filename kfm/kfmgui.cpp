@@ -453,7 +453,8 @@ void KfmGui::enableToolbarButton( int id, bool enable )
 	return;
     
     toolbarButtons->setItemEnabled( id, enable );
-    if (id == 0) mgo->setItemEnabled(mgo->idAt( 0 ), enable );
+    // apply this to the related menu item, for Up, Back and Forward
+    if (id <= 2) mgo->setItemEnabled(mgo->idAt( id ), enable );
 
 }
 
@@ -576,6 +577,9 @@ void KfmGui::initToolBar()
     //toolbarURL->show();                
     if ( !showLocationBar )
 	toolbarURL->enable( KToolBar::Hide );
+    enableToolbarButton(0,false);
+    enableToolbarButton(1,false);
+    enableToolbarButton(2,false);
 }
 
 void KfmGui::initView()
@@ -1063,8 +1067,6 @@ void KfmGui::slotStop()
 
 void KfmGui::slotUpdateHistory( bool _back, bool _forward )
 {
-    enableToolbarButton( 1, _back );
-    enableToolbarButton( 2, _forward );
     mgo->clear();
     mgo->disconnect( this );
     // The go menu, with items in the same order as the toolbar.
@@ -1089,6 +1091,9 @@ void KfmGui::slotUpdateHistory( bool _back, bool _forward )
         KURL::decodeURL(url); // we don't want encoded URLs in the menu
         mgo->insertItem ( url, id );
     }
+    // this enables/disables the related menu items so it has to be done after
+    enableToolbarButton( 1, _back );
+    enableToolbarButton( 2, _forward );
 }
 
 void KfmGui::slotHome()
