@@ -1,0 +1,220 @@
+# Esperantaj mesa-Aøoj-C por "kcmkeys"
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkeys\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"PO-Revision-Date: 1998-12-1 18:40+0100\n"
+"Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
+"Language-Team: Esperanto <eo@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:64
+msgid "&Standard shortcuts"
+msgstr "&Originaj klavkombinoj"
+
+#: main.cpp:69
+msgid "&Global shortcuts"
+msgstr "&KDE-vastaj klavkombinoj"
+
+#: main.cpp:76
+msgid "usage: kcmkeys [-init | {standard,global}]\n"
+msgstr "uzo: kcmkeys [-init | [standard,global}]\n"
+
+#: main.cpp:118
+msgid "Key binding settings"
+msgstr "Konfigura¼o de klavkombinoj"
+
+#: standard.cpp:53
+msgid "New"
+msgstr "Nova"
+
+#: standard.cpp:57
+msgid "Next"
+msgstr "Sekva"
+
+#: standard.cpp:58
+msgid "Prior"
+msgstr "Antaýa"
+
+#: standard.cpp:63
+msgid "Find"
+msgstr "Trovu"
+
+#: standard.cpp:66
+msgid "Home"
+msgstr "Supren"
+
+#: standard.cpp:67
+msgid "End"
+msgstr "Malsupren"
+
+#: global.cpp:81 standard.cpp:83
+msgid "Current scheme"
+msgstr "Aktuala skemo"
+
+#: global.cpp:83 standard.cpp:84
+msgid "KDE default"
+msgstr "KDE-origina"
+
+#: standard.cpp:85
+msgid "KDE lite"
+msgstr "KDE-eta"
+
+#: global.cpp:90 standard.cpp:90
+msgid "&Key scheme"
+msgstr "&Klavoskemo"
+
+#: global.cpp:101
+msgid "&Add ..."
+msgstr "&Aldonu..."
+
+#: global.cpp:123
+msgid "&Save changes"
+msgstr "&Sekurigu þanøojn"
+
+#: global.cpp:182
+msgid "Error removing scheme"
+msgstr "Eraro dum forigo de skemo"
+
+#: global.cpp:183
+msgid ""
+"This key scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the key scheme is stored."
+msgstr ""
+"Ne eblis forigi tiun æi skemon.\n"
+"Verþajne vi ne havas permeson þanøi la dosieraron\n"
+"en kiu la klavoskemo rezidas."
+
+#: global.cpp:314
+msgid "Naming conflict"
+msgstr "Nomkonflikto"
+
+#: global.cpp:315
+msgid ""
+"Please choose a unique name for the new key\n"
+"scheme. The one you entered already appears\n"
+"in the key scheme list."
+msgstr ""
+"Bonvolu elekti unikan nomon por la nova klavoskemo.\n"
+"Tiun, kiun vi tajpis jam troviøas en la skemolisto."
+
+#: savescm.cpp:18
+msgid "Add a key scheme"
+msgstr "Aldonu klavoskemon"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new key scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The keys currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"&Tajpu nomon por la nova klavoskemo\n"
+"aldonota al via persona listo.\n"
+"\n"
+"La klavoj, kiuj estas uzataj en la antaývida¼o\n"
+"servos kiel inicialaj kombinoj en la skemo."
+
+#: ../../kwm/kwmbindings.cpp:1
+msgid "Task manager"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:2
+msgid "Kill window mode"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:3
+msgid "Execute command"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:4
+msgid "Window operations menu"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:5
+msgid "Pop-up system menu"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:7
+msgid "Window raise"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:8
+msgid "Window lower"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:9
+msgid "Window close"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:10
+msgid "Window iconify"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:11
+msgid "Window resize"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:12
+msgid "Window move"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:13
+msgid "Window toggle sticky"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:15
+msgid "Switch to desktop 1"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:16
+msgid "Switch to desktop 2"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:17
+msgid "Switch to desktop 3"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:18
+msgid "Switch to desktop 4"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:19
+msgid "Switch to desktop 5"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:20
+msgid "Switch to desktop 6"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:21
+msgid "Switch to desktop 7"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:22
+msgid "Switch to desktop 8"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:24
+msgid "Switch one desktop to the right"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:25
+msgid "Switch one desktop to the left"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:26
+msgid "Switch one desktop up"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:27
+msgid "Switch one desktop down"
+msgstr ""

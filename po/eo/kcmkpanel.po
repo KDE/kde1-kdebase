@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel 1.0pre2\n"
-"POT-Creation-Date: 1998-12-20 03:02+0600\n"
-"PO-Revision-Date: 1998-07-15 18:00+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"PO-Revision-Date: 1998-12-01 15:50+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr "&Labortabuloj"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr ""
+msgstr "Disk&navigilo"
 
 #: main.cpp:79
 #, fuzzy
@@ -53,7 +53,7 @@ msgstr "Malsupre"
 
 #: panel.cpp:63
 msgid "&Right"
-msgstr ""
+msgstr "&Dekstre"
 
 #: panel.cpp:75
 msgid "Taskbar"
@@ -77,7 +77,7 @@ msgstr "Supr./Maldeks."
 
 #: panel.cpp:95
 msgid "Style"
-msgstr ""
+msgstr "Stilo"
 
 #: panel.cpp:97
 msgid "T&iny"
@@ -103,144 +103,127 @@ msgstr "&Larøeco"
 msgid "Menu Tooltips"
 msgstr "Menuindiketoj"
 
-#: options.cpp:62
+#: options.cpp:39
 msgid "Show &Menu Tooltips"
 msgstr "&Montru menuindiketojn"
 
-#: options.cpp:84
+#: options.cpp:44
 msgid "De&lay:"
 msgstr "Prokrasto:"
 
-#: options.cpp:91 options.cpp:160 options.cpp:262
+#: options.cpp:50 options.cpp:68 options.cpp:86
 msgid "Small"
-msgstr ""
+msgstr "Malgranda"
 
-#: options.cpp:98 options.cpp:167 options.cpp:269
-#, fuzzy
+#: options.cpp:51 options.cpp:69 options.cpp:87
 msgid "Large"
-msgstr "Larøa"
+msgstr "Granda"
 
-#: options.cpp:110
+#: options.cpp:62
 msgid "Visuals"
-msgstr ""
+msgstr "Vida¼o"
 
-#: options.cpp:144
+#: options.cpp:64
 msgid "Auto &Hide Panel"
 msgstr "Aýtomate kaþu la panelon"
 
-#: options.cpp:153 options.cpp:255
-#, fuzzy
+#: options.cpp:67 options.cpp:85
 msgid "Delay:"
 msgstr "Prokrasto:"
 
-#: options.cpp:184 options.cpp:286 options.cpp:349
+#: options.cpp:74 options.cpp:93
 msgid "Speed:"
-msgstr ""
+msgstr "Rapideco:"
 
-#: options.cpp:191 options.cpp:293 options.cpp:356
+#: options.cpp:75 options.cpp:94 options.cpp:103
 msgid "Slow"
-msgstr ""
+msgstr "Malrapida"
 
-#: options.cpp:198 options.cpp:300 options.cpp:363
+#: options.cpp:76 options.cpp:95 options.cpp:104
 msgid "Fast"
-msgstr ""
+msgstr "Rapida"
 
-#: options.cpp:246
+#: options.cpp:82
 msgid "Auto Hide &Taskbar"
 msgstr "Aýtomate kaþu la taskolistelon"
 
-#: options.cpp:341
+#: options.cpp:100
 msgid "Animate Show/Hide"
-msgstr ""
+msgstr "Animu (mal)montron"
 
-#: options.cpp:395
+#: options.cpp:102
+msgid "Speed"
+msgstr "Rapideco"
+
+#: options.cpp:117
 msgid "Others"
 msgstr "Aliaj"
 
-#: options.cpp:408
-#, fuzzy
-msgid "Personal Menu Entries &First"
+#: options.cpp:118
+msgid "Personal &First"
 msgstr "&Persona menuo unue"
 
-#: options.cpp:416
+#: options.cpp:120
 #, fuzzy
-msgid "Menu F&olders First"
+msgid "F&olders First"
 msgstr "&Persona menuo unue"
 
-#: options.cpp:424
+#: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
-msgstr ""
-
-#: options.cpp:432
-msgid "Clock shows time in &Internet beats"
-msgstr ""
+msgstr "&Horloøo montras tempon en PM/AM-formo"
 
 #: disknav.cpp:38
 msgid "History"
-msgstr ""
+msgstr "Historio"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr ""
+msgstr "Readktu erojn: (almovu dosierujon kaj kreu ligon)"
 
 #: disknav.cpp:64
 msgid "Edit &Personal..."
-msgstr ""
+msgstr "Readktu &proprajn..."
 
 #: disknav.cpp:74
 msgid "Edit &Shared..."
-msgstr ""
+msgstr "Redaktu &komunajn..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr ""
+msgstr "Maksimumo de \"vizititaj dosierujoj\""
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr ""
+msgstr "MAksimumo de \"lastaj dosieroj\""
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr ""
+msgstr "Maksimumo de dosieroj en unu ujo:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr ""
+msgstr "Montru kaþitajn dosierojn"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr ""
+msgstr "Ignoru usklecon æe ordigo"
 
 #: disknav.cpp:173
-#, fuzzy
 msgid "Show Shared section"
-msgstr "Situo"
+msgstr "Montru komunan parton"
 
 #: disknav.cpp:180
-#, fuzzy
 msgid "Show Personal section"
-msgstr "Situo"
+msgstr "Montru propran parton"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr ""
+msgstr "Montru historio-parton"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr ""
+msgstr "Montru eron \"Opcioj\""
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr ""
-
-#~ msgid "ms"
-#~ msgstr "ms"
-
-#~ msgid "Clock"
-#~ msgstr "Horloøo"
-
-#~ msgid "&24h"
-#~ msgstr "&24h"
-
-#~ msgid "&12h AM/PM"
-#~ msgstr "&12h am/pm"
+msgstr "Terminal-programo:"

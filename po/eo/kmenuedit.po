@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit 1.0pre2\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-11-24 01:15+0100\n"
 "PO-Revision-Date: 1998-07-17 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -74,31 +74,35 @@ msgstr ""
 "Ne eblis krei dosierujon por via persona menuo.\n"
 " Premu \"Konfirmu\" por forlasi KMenuedit."
 
-#: confmenu.cpp:91 entrydialog.cpp:52
+#: confmenu.cpp:90 entrydialog.cpp:52
 msgid "Separator"
 msgstr "Dividilo"
 
-#: confmenu.cpp:103 confmenu.cpp:333
+#: confmenu.cpp:102 confmenu.cpp:333
 msgid "Open/ Close"
 msgstr "Malfermu/Fermu"
 
-#: confmenu.cpp:117
+#: confmenu.cpp:110
+msgid "! PROTECTED Button !"
+msgstr "! PROTEKTITA butono !"
+
+#: confmenu.cpp:116
 msgid "Select item for moving"
 msgstr ""
 
-#: confmenu.cpp:118
+#: confmenu.cpp:117
 msgid "Select menu for moving"
 msgstr ""
 
-#: confmenu.cpp:120
+#: confmenu.cpp:119
 msgid "New"
 msgstr ""
 
-#: confmenu.cpp:177 confmenu.cpp:316
+#: confmenu.cpp:176 confmenu.cpp:316
 msgid "Warning !"
 msgstr "Averto!"
 
-#: confmenu.cpp:178
+#: confmenu.cpp:177
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Se vi forigas tiun butonon vi perdos æiujn viajn submenuojn"
 
@@ -268,6 +272,3 @@ msgstr "Persona:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Implicita:"
-
-#~ msgid "! PROTECTED Button !"
-#~ msgstr "! PROTEKTITA butono !"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig 1.0pre2\n"
 "POT-Creation-Date: 1998-10-29 14:31+0100\n"
-"PO-Revision-Date: 1998-07-15 21:00+0100\n"
+"PO-Revision-Date: 1998-12-02 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,7 @@ msgstr "uzo: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 
 #: main.cpp:142
 msgid "KDM Configuration"
-msgstr "KDM-konfigura¼o"
+msgstr "KDM-agorda¼o"
 
 #: main.cpp:152
 msgid ""
@@ -45,7 +45,7 @@ msgid ""
 "permission to the KDM setup file."
 msgstr ""
 "Pardonu, sed vi ne havas lego/skribo-\n"
-"permesojn por la KDM-konfiguraa¼odosiero."
+"permesojn por la KDM-agorda¼odosiero."
 
 #: main.cpp:154
 msgid "Missing privileges"
@@ -168,24 +168,23 @@ msgstr "Normala"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr ""
+msgstr "Antaýrigardo"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "Koloro"
 
 #: kdm-bgnd.cpp:101
-#, fuzzy
 msgid "Solid Color"
-msgstr "Koloro"
+msgstr "Plenkolora"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr ""
+msgstr "Horizontala koloþanøo"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr ""
+msgstr "Vertikala kolorþanøo"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
@@ -193,42 +192,39 @@ msgstr "Tapeto"
 
 #: kdm-bgnd.cpp:171 kdm-sess.cpp:56
 msgid "None"
-msgstr ""
+msgstr "Neniu"
 
 #: kdm-bgnd.cpp:176
-#, fuzzy
 msgid "Tile"
 msgstr "Kahele"
 
 #: kdm-bgnd.cpp:181
-#, fuzzy
 msgid "Center"
 msgstr "Centrigite"
 
 #: kdm-bgnd.cpp:186
-#, fuzzy
 msgid "Scale"
 msgstr "Etendite"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr ""
+msgstr "Supre mldeks."
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr ""
+msgstr "Supre deks."
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr ""
+msgstr "Mlsupr. Mldeks."
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr ""
+msgstr "Mlsupr. Deks."
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr ""
+msgstr "Arta"
 
 #: kdm-users.cpp:48
 msgid "All users"
@@ -276,7 +272,7 @@ msgstr "Sekurigi bildon kiel implicitan?"
 
 #: kdm-sess.cpp:52
 msgid "Allow to shutdown"
-msgstr ""
+msgstr "Permesu operaciumofermon"
 
 #: kdm-sess.cpp:57
 msgid "All"
@@ -296,7 +292,7 @@ msgstr "Komandoj"
 
 #: kdm-sess.cpp:64
 msgid "Shutdown"
-msgstr "Operaciumofino"
+msgstr "Operaciumofermo"
 
 #: kdm-sess.cpp:70
 msgid "Restart"

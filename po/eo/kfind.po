@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind 1.0pre2\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
-"PO-Revision-Date: 1998-07-13 21:00+0100\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"PO-Revision-Date: 1998-12-02 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,51 +22,51 @@ msgstr "Dosierujoj:"
 msgid "Cannot open or read directory."
 msgstr "Ne eblis malfermi aý legi la dosierujon."
 
-#: kfindtop.cpp:121
+#: kfindtop.cpp:118
 msgid "&Start search"
 msgstr "Ek&seræu"
 
-#: kfindtop.cpp:123
+#: kfindtop.cpp:120
 msgid "S&top search"
 msgstr "Æ&esu seræi"
 
-#: kfindtop.cpp:128
+#: kfindtop.cpp:125
 msgid "&Open"
 msgstr "&Malfermu"
 
-#: kfindtop.cpp:130
+#: kfindtop.cpp:127
 msgid "&Add to archive"
 msgstr "&Aldonu al ar¶ivo"
 
-#: kfindtop.cpp:135
+#: kfindtop.cpp:132
 msgid "&Properties"
 msgstr "&Ecoj"
 
-#: kfindtop.cpp:138
+#: kfindtop.cpp:135
 msgid "Open Containing &Folder"
 msgstr "Malfermu koncernajn &dosierujojn"
 
-#: kfindtop.cpp:141
+#: kfindtop.cpp:138
 msgid "&Save Search"
 msgstr "&Sekurigu la seræopciojn"
 
-#: kfindtop.cpp:158
+#: kfindtop.cpp:155
 msgid "&Select All"
 msgstr "&Elektu æion"
 
-#: kfindtop.cpp:160
+#: kfindtop.cpp:157
 msgid "Unse&lect All"
 msgstr "M&alelektu æion"
 
-#: kfindtop.cpp:162
+#: kfindtop.cpp:159
 msgid "&Invert Selection"
 msgstr "&Inversigu elekton"
 
-#: kfindtop.cpp:174
+#: kfindtop.cpp:171
 msgid "&Preferences ..."
 msgstr "&Preferoj ..."
 
-#: kfindtop.cpp:179
+#: kfindtop.cpp:176
 #, c-format
 msgid ""
 "KFind %s\n"
@@ -83,27 +83,27 @@ msgstr ""
 "Apartan dankon al Stephan Kulow\n"
 "ycoolo@kde.org>"
 
-#: kfindtop.cpp:199
+#: kfindtop.cpp:196
 msgid "Start Search"
 msgstr "Ekseræu"
 
-#: kfindtop.cpp:204
+#: kfindtop.cpp:201
 msgid "New Search"
 msgstr "Nova seræo"
 
-#: kfindtop.cpp:209
+#: kfindtop.cpp:206
 msgid "Stop Search"
 msgstr "Æesu seræi"
 
-#: kfindtop.cpp:222
+#: kfindtop.cpp:219
 msgid "Add to archive"
 msgstr "Aldonu al ar¶ivo"
 
-#: kfindtop.cpp:237
+#: kfindtop.cpp:234
 msgid "Open Containing Folder"
 msgstr "Malfermu la dosierujon, kiu enhavas øin"
 
-#: kfindtop.cpp:242
+#: kfindtop.cpp:239
 msgid "Save Search Results"
 msgstr "Sekurigu la serærezulton"
 
@@ -123,111 +123,111 @@ msgstr "&Rigardu ..."
 msgid "Include &subfolders"
 msgstr "Trarigardu ankaý &subdosierujon"
 
-#: kftabdlg.cpp:117
+#: kftabdlg.cpp:114
 msgid " Name& Location "
 msgstr " Nomo k. &Situo "
 
-#: kftabdlg.cpp:129
+#: kftabdlg.cpp:126
 msgid "and"
 msgstr "kaj"
 
-#: kftabdlg.cpp:130
+#: kftabdlg.cpp:127
 msgid "month(s)"
 msgstr "monato(j)"
 
-#: kftabdlg.cpp:131
+#: kftabdlg.cpp:128
 msgid "day(s)"
 msgstr "tago(j)"
 
-#: kftabdlg.cpp:146
+#: kftabdlg.cpp:143
 msgid "&All files"
 msgstr "Æiujn &dosierojn"
 
-#: kftabdlg.cpp:147
+#: kftabdlg.cpp:144
 msgid "Find all files created or &modified:"
 msgstr "Trovu æiujn dosierojn &kreitajn aý þanøitajn:"
 
-#: kftabdlg.cpp:148
+#: kftabdlg.cpp:145
 msgid "&between"
 msgstr "&inter"
 
-#: kftabdlg.cpp:149
+#: kftabdlg.cpp:146
 msgid "during the previou&s "
 msgstr "du&m la pasintaj "
 
-#: kftabdlg.cpp:150
+#: kftabdlg.cpp:147
 msgid "&during the previous "
 msgstr "dum la pasin&taj"
 
-#: kftabdlg.cpp:198
+#: kftabdlg.cpp:195
 msgid " Date Modified "
 msgstr " Þanøodato "
 
-#: kftabdlg.cpp:205
+#: kftabdlg.cpp:202
 msgid "Of &type:"
 msgstr "Dosier&tipo:"
 
-#: kftabdlg.cpp:207
+#: kftabdlg.cpp:204
 msgid "&Containing Text:"
 msgstr "&Enhavita teksto:"
 
-#: kftabdlg.cpp:212
+#: kftabdlg.cpp:209
 msgid "&Size is:"
 msgstr "&Grandeco:"
 
-#: kftabdlg.cpp:235
+#: kftabdlg.cpp:232
 msgid "All Files and Folders"
 msgstr "Æiuj dosieroj kaj dosierujoj"
 
-#: kftabdlg.cpp:237
+#: kftabdlg.cpp:234
 msgid "Folders"
 msgstr "Dosierujoj"
 
-#: kftabdlg.cpp:238
+#: kftabdlg.cpp:235
 msgid "Symbolic links"
 msgstr "Simbolaj ligoj"
 
-#: kftabdlg.cpp:239
+#: kftabdlg.cpp:236
 msgid "Special files (sockets, device files...)"
 msgstr "Specialaj dosieroj (konektiloj, aparatdosieroj...)"
 
-#: kftabdlg.cpp:240
+#: kftabdlg.cpp:237
 msgid "Executable files"
 msgstr "Ruleblaj dosieroj"
 
-#: kftabdlg.cpp:241
+#: kftabdlg.cpp:238
 msgid "SUID executable files"
 msgstr "Dosieroj, ruleblaj kun posedantorajto (SUID)"
 
-#: kftabdlg.cpp:249
+#: kftabdlg.cpp:246
 msgid "(none)"
-msgstr ""
+msgstr "(neniu)"
 
-#: kftabdlg.cpp:250
+#: kftabdlg.cpp:247
 msgid "At Least"
 msgstr "almenaý"
 
-#: kftabdlg.cpp:251
+#: kftabdlg.cpp:248
 msgid "At Most"
 msgstr "maksimume"
 
-#: kftabdlg.cpp:262
+#: kftabdlg.cpp:259
 msgid " Advanced "
 msgstr " Specialaj opcioj"
 
-#: kftabdlg.cpp:500
+#: kftabdlg.cpp:494
 msgid "The date is not valid!!"
 msgstr "La dato ne estas valida!!"
 
-#: kftabdlg.cpp:512
+#: kftabdlg.cpp:506
 msgid "The month(s) value isn't valid!!"
 msgstr "La monatnumero(j) ne estas valida(j)!!"
 
-#: kftabdlg.cpp:523
+#: kftabdlg.cpp:517
 msgid "The day(s) value isn't valid!!"
 msgstr "La tagnumero(j) ne estas valida(j)!!"
 
-#: kftabdlg.cpp:540
+#: kftabdlg.cpp:534
 msgid "The value in size isn't valid number!!"
 msgstr "La grandecovaloro ne estas valida nombro!!"
 

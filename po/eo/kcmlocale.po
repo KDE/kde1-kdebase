@@ -48,7 +48,7 @@ msgstr "sen nomo!"
 
 #: locale.cpp:181
 msgid "Applying language settings"
-msgstr "Apliko de la lingvokonfigura¼o"
+msgstr "Apliko de la lingvoagorda¼o"
 
 #: locale.cpp:182
 msgid ""

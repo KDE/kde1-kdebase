@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfontmanager 1.0pre2\n"
-"POT-Creation-Date: 1998-12-14 01:17+0100\n"
-"PO-Revision-Date: 1998-07-16 21:00+0100\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"PO-Revision-Date: 1998-12-02 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -38,17 +38,15 @@ msgstr "Disponeblaj X11-tiparoj"
 msgid "Fonts made available to KDE"
 msgstr "Tiparoj disponebligitaj por KDE"
 
-#: kfontmanager.cpp:89
-msgid ""
-"The Quick Brown Fox Jumps Over The Lazy Dog\n"
-"AaBbCc123"
-msgstr ""
+#: kfontmanager.cpp:87
+msgid "The KDE Font Manager Example String"
+msgstr "a b c æ d e f g ø h ¶ i j ¼ k l m n o p r s þ t u ý v z"
 
-#: kfontlist.cpp:62 kfontmanager.cpp:112
+#: kfontlist.cpp:62 kfontmanager.cpp:109
 msgid "About kfontmanager"
 msgstr "Pri Kfontmanager"
 
-#: kfontmanager.cpp:112
+#: kfontmanager.cpp:109
 msgid ""
 "kfontmanager Version 0.2\n"
 "Copyright 1997\n"
@@ -60,7 +58,7 @@ msgstr ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 
-#: kfontmanager.cpp:215
+#: kfontmanager.cpp:212
 msgid ""
 "The environment variable HOME\n"
 "is not set\n"
@@ -68,7 +66,7 @@ msgstr ""
 "La mediovariablo HOME\n"
 "ne estas difinita\n"
 
-#: kfontmanager.cpp:292
+#: kfontmanager.cpp:289
 msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
@@ -76,7 +74,7 @@ msgstr ""
 "Ne eblis krei:\n"
 " ~/.kde/share/config/kdefonts\n"
 
-#: kfontmanager.cpp:297
+#: kfontmanager.cpp:294
 msgid ""
 "~/.kde/share/config/kdefonts exists but\n"
 "is not writeable\n"
@@ -100,75 +98,72 @@ msgstr ""
 
 #: kfontexplorer.cpp:126
 msgid "Select Font"
-msgstr ""
+msgstr "Elektu tiparon"
 
 #: kfontexplorer.cpp:130
 msgid "Requested Font"
-msgstr ""
+msgstr "Dezirita tiparo"
 
 #: kfontexplorer.cpp:135
 msgid "Actual Font"
-msgstr ""
+msgstr "Fakta tiparo"
 
 #: kfontexplorer.cpp:139 kfontexplorer.cpp:143
 msgid "Family:"
-msgstr ""
+msgstr "Familio:"
 
 #: kfontexplorer.cpp:163 kfontexplorer.cpp:168
 msgid "Size:"
-msgstr ""
+msgstr "Grandeco:"
 
 #: kfontexplorer.cpp:177 kfontexplorer.cpp:182
 msgid "Weight:"
-msgstr ""
+msgstr "Graseco:"
 
 #: kfontexplorer.cpp:191 kfontexplorer.cpp:199
 msgid "Style:"
-msgstr ""
+msgstr "Stilo:"
 
 #: kfontexplorer.cpp:234
 msgid "Charset"
-msgstr ""
+msgstr "Signaro:"
 
 #: kfontexplorer.cpp:246
 msgid "Size"
-msgstr ""
+msgstr "Grandeco"
 
 #: kfontexplorer.cpp:285
 msgid "Weight"
-msgstr ""
+msgstr "Graseco"
 
 #: kfontexplorer.cpp:286 kfontexplorer.cpp:394
 msgid "normal"
-msgstr ""
+msgstr "normala"
 
 #: kfontexplorer.cpp:287 kfontexplorer.cpp:396
 msgid "bold"
-msgstr ""
+msgstr "grasa"
 
 #: kfontexplorer.cpp:296
 msgid "Style"
-msgstr ""
+msgstr "Stilo"
 
 #: kfontexplorer.cpp:297 kfontexplorer.cpp:407 kfontexplorer.cpp:437
 msgid "roman"
-msgstr ""
+msgstr "rekta"
 
 #: kfontexplorer.cpp:298 kfontexplorer.cpp:409 kfontexplorer.cpp:435
 msgid "italic"
-msgstr ""
+msgstr "kursiva"
 
 #: kfontexplorer.cpp:326
 msgid "Dolor Ipse"
-msgstr ""
+msgstr "E¶oþanøo æiu¼aýde"
 
 #: kfontexplorer.cpp:430
 msgid "Bold"
-msgstr ""
+msgstr "Grasa"
 
 #: kfontexplorer.cpp:432
 msgid "Normal"
-msgstr ""
-
-#~ msgid "The KDE Font Manager Example String"
-#~ msgstr "a b c æ d e f g ø h ¶ i j ¼ k l m n o p r s þ t u ý v z"
+msgstr "Normala"

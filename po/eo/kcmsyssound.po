@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmsyssound 1.0pre2\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-07-15 20:00+0100\n"
+"PO-Revision-Date: 1998-12-02 20:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr "Labormediaj sonoj"
 
 #: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
 msgid "(none)"
-msgstr ""
+msgstr "(neniu)"
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"

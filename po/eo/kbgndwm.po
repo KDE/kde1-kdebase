@@ -1,0 +1,75 @@
+# Esperantaj mesaøoj por "kbgndwm"
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kbgndwm\n"
+"POT-Creation-Date: 1998-11-28 01:10+0100\n"
+"PO-Revision-Date: 1998-11-30 14:00+0100\n"
+"Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
+"Language-Team: Esperanto <eo@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: kbgndwm.cpp:45
+msgid "Display Settings"
+msgstr "Ekranagorda¼o"
+
+#: kbgndwm.cpp:46
+msgid "Background Settings"
+msgstr "Fonagorda¼o"
+
+#: kbgndwm.cpp:48
+msgid "Common Background"
+msgstr "Komuna fono"
+
+#: kbgndwm.cpp:50
+msgid "Undock"
+msgstr "Malfiksu"
+
+#: kbgndwm.cpp:58
+msgid "Tiled"
+msgstr "Kaheloj"
+
+#: kbgndwm.cpp:59
+msgid "Mirrored"
+msgstr "Spegulite"
+
+#: kbgndwm.cpp:60
+msgid "CenterTiled"
+msgstr "Kaheloj centraj"
+
+#: kbgndwm.cpp:61
+msgid "Centred"
+msgstr "Centre"
+
+#: kbgndwm.cpp:62
+msgid "CentredBrick"
+msgstr "Centre kun muro"
+
+#: kbgndwm.cpp:63
+msgid "CentredWarp"
+msgstr "Centre kun radioj"
+
+#: kbgndwm.cpp:64
+msgid "CentredMaxpect"
+msgstr "Centre etendite"
+
+#: kbgndwm.cpp:65
+msgid "SymmetricalTiled"
+msgstr "Simetriaj Kaheloj"
+
+#: kbgndwm.cpp:66
+msgid "SymmetricalMirrored"
+msgstr "Simetrie Spegulite"
+
+#: kbgndwm.cpp:67
+msgid "Scaled"
+msgstr "Etendite"
+
+#: bg.cpp:235 bg.cpp:238
+msgid "No wallpaper"
+msgstr "Sen tapeto"

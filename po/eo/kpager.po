@@ -1,0 +1,69 @@
+# Esperantaj mesaøoj por "kpager"
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kpager 0.6\n"
+"POT-Creation-Date: 1998-09-30 07:19:56+0000\n"
+"PO-Revision-Date: 1998-12-02 20:00+0100\n"
+"Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
+"Language-Team: Esperanto <eo@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: kpager.cpp:77 kpager.cpp:156
+msgid "Hide &Global Desktop"
+msgstr "Kaþu &Superrigardon"
+
+#: kpager.cpp:79 kpager.cpp:149
+msgid "Show &Global Desktop"
+msgstr "Montru &Superrigardon"
+
+#: kpager.cpp:81
+msgid "Hide &Menubar"
+msgstr "Kaþu &Menulistelon"
+
+#: kpager.cpp:85
+msgid "Plain"
+msgstr "Unukolora"
+
+#: kpager.cpp:88
+msgid "Icon"
+msgstr "Piktograma"
+
+#: kpager.cpp:91
+msgid "Pixmap"
+msgstr "Rastruma"
+
+#: kpager.cpp:95
+msgid "Draw Mode"
+msgstr "Aspekto"
+
+#: kpager.cpp:99
+msgid ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"KPager's homepage is at : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n"
+"This is free software, and you are welcome to redistribute it\n"
+"under certain conditions\n"
+msgstr ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Hispanio)\n"
+"\n"
+"La TTT-paøo de KPager estas http://www.arrakis.es/~rlarrosa/kapger.html\n"
+"\n"
+"KPager estas disponigita sen IU AJN GARANTIO; por detaloj legu la dosieron\n"
+"COPYING. Tiu æi estas libera softvaro. Vi rajtas redsitribui øin laý\n"
+"certaj kondiæoj.\n"

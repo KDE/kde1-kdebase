@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kvt 1.0pre2\n"
+"Project-Id-Version: kvt\n"
 "POT-Creation-Date: 1998-11-12 01:17+0100\n"
-"PO-Revision-Date: 1998-07-17 21:00+0100\n"
+"PO-Revision-Date: 1998-12-02 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -139,7 +139,6 @@ msgid "Save &Options"
 msgstr "Sekurigu &opciojn"
 
 #: main.C:686
-#, fuzzy
 msgid ""
 "\n"
 "\n"
@@ -154,6 +153,7 @@ msgstr ""
 "\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M. G. Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
 "\n"
 "Terminalimita¼o por KDE-Labortabula Medio\n"
 "bazita sur rxvt-2.08 de Robert Nation"
@@ -179,7 +179,7 @@ msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
-"Nova kolorkonfigura¼o estos montrata\n"
+"Nova koloragorda¼o estos montrata\n"
 "kiam la klavaro estos malsekurigata."
 
 #: main.C:1435
@@ -240,7 +240,7 @@ msgstr "-vt_size <grand>         tiny, small, normal, large, huge\n"
 
 #: main.C:1449
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr "-linux                   konfiguru Kvt-on por imiti linuksan ekranon\n"
+msgstr "-linux                   agordu Kvt-on por imiti linuksan ekranon\n"
 
 #: main.C:1450
 msgid "-no_menubar               hide the menubar\n"

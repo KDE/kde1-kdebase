@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm 1.0pre2\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
-"PO-Revision-Date: 1998-07-13 20:00+0100\n"
+"POT-Creation-Date: 1998-11-29 01:12+0100\n"
+"PO-Revision-Date: 1998-12-02 20:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,194 +18,184 @@ msgstr ""
 msgid "KFM"
 msgstr "KFM"
 
-#: kfmgui.cpp:221
-#, fuzzy
-msgid "New &Window"
-msgstr "Nova rigardo"
+#: kbind.cpp:934 kbind.cpp:946 kbind.cpp:956 kfmgui.cpp:215 kfmgui.cpp:1033
+msgid "Folder"
+msgstr "Dosierujo"
 
-#: kfmgui.cpp:224
+#: kfmgui.cpp:226
+#, c-format
+msgid "ERROR: Template does not exist '%s'"
+msgstr "ERARO: Þablono ne ekzistas '%s'"
+
+#: kfmgui.cpp:250
+msgid "&New"
+msgstr "&Nova"
+
+#: kfmgui.cpp:255
 msgid "&Run..."
 msgstr "&Lanæu..."
 
-#: kfmgui.cpp:226
+#: kfmgui.cpp:257
 msgid "Open &Terminal"
 msgstr "Malfermu &terminalon"
 
-#: kfmgui.cpp:229
+#: kfmgui.cpp:260
 msgid "&Open Location..."
 msgstr "&Malfermu situon..."
 
-#: finddlg.cpp:66 kfmgui.cpp:231
+#: finddlg.cpp:66 kfmgui.cpp:262
 msgid "&Find"
 msgstr "&Trovu"
 
-#: kfmgui.cpp:252
+#: kfmgui.cpp:280
 msgid "&Move to Trash"
 msgstr "En la &rubujon"
 
-#: kfmgui.cpp:261
+#: kfmgui.cpp:285
 msgid "&Select"
 msgstr "&Elektu"
 
-#: kfmgui.cpp:263
-#, fuzzy
+#: kfmgui.cpp:287
 msgid "Select &all"
-msgstr "&Elektu"
+msgstr "Elektu æ&ion"
 
-#: kfmgui.cpp:266
+#: kfmgui.cpp:290
 msgid "&Find in page..."
-msgstr ""
+msgstr "&Trovu en la paøo..."
 
-#: kfmgui.cpp:268
+#: kfmgui.cpp:292
 msgid "Find &next"
-msgstr ""
+msgstr "Trovu &sekvan"
 
-#: kfmgui.cpp:271
-#, fuzzy
-msgid "Mime &Types"
+#: kfmgui.cpp:295
+msgid "Mime Types"
 msgstr "MIME-tipoj"
 
-#: kfmgui.cpp:273
-#, fuzzy
-msgid "App&lications"
+#: kfmgui.cpp:297
+msgid "Applications"
 msgstr "Aplika¼oj"
 
-#: kfmgui.cpp:279
+#: kfmgui.cpp:303
 msgid "Global Mime Types"
 msgstr "Mallokaj MIME-tipoj"
 
-#: kfmgui.cpp:281
+#: kfmgui.cpp:305
 msgid "Global Applications"
 msgstr "Mallokaj Aplika¼oj"
 
-#: kfmgui.cpp:288
-#, fuzzy
-msgid "Show Hi&dden Files"
+#: kfmgui.cpp:312
+msgid "Show &Dot Files"
 msgstr "Montru &kaþitajn dosierojn"
 
-#: kfmgui.cpp:290
+#: kfmgui.cpp:314
 msgid "Show Tr&ee"
 msgstr "Montru &arbon"
 
-#: kfmgui.cpp:292
-msgid "Sho&w Thumbnails"
-msgstr ""
+#: kfmgui.cpp:316
+msgid "&Visual Schnauzer"
+msgstr "Antaýrigardo de &bildoj"
 
-#: kfmgui.cpp:294
+#: kfmgui.cpp:318
 msgid "&HTML View"
 msgstr "&HTMLa aspekto"
 
-#: kfmgui.cpp:297
+#: kfmgui.cpp:321
 msgid "&Icon View"
 msgstr "&Piktograma aspekto"
 
-#: kfmgui.cpp:299
+#: kfmgui.cpp:323
 msgid "&Text View"
 msgstr "&Teksta aspekto"
 
-#: kfmgui.cpp:301
+#: kfmgui.cpp:325
 msgid "&Long View"
 msgstr "&Ampleksa aspekto"
 
-#: kfmgui.cpp:303
+#: kfmgui.cpp:327
 msgid "&Short View"
 msgstr "&Konciza aspekto"
 
-#: kfmgui.cpp:309
+#: kfmgui.cpp:333
 msgid "Rel&oad Tree"
 msgstr "Relegu la &arbon"
 
-#: kfmgui.cpp:311
+#: kfmgui.cpp:335
 msgid "&Reload Document"
 msgstr "Relegu la &dokumenton"
 
-#: kfmgui.cpp:313
-#, fuzzy
-msgid "Rescan &Bindings"
+#: kfmgui.cpp:337
+msgid "Rescan &bindings"
 msgstr "Relegu la al&ordigojn"
 
-#: kfmgui.cpp:316
+#: kfmgui.cpp:340
 msgid "&View Frame Source"
 msgstr "&HTML-kodo de la &kadro"
 
-#: kfmgui.cpp:318
+#: kfmgui.cpp:342
 msgid "View Docu&ment Source"
 msgstr "HTML-kodo de la &dokumento"
 
-#: kfmgui.cpp:326
+#: kfmgui.cpp:350
 msgid "Auto"
-msgstr ""
+msgstr "Aýtomate"
 
-#: kfmgui.cpp:334
-#, fuzzy
-msgid "Document Encodin&g"
-msgstr "Dokumento: preta"
+#: kfmgui.cpp:358
+msgid "&Document Encoding"
+msgstr "Kodo de la dokumento"
 
-#: kfmgui.cpp:349
+#: kfmgui.cpp:369
 msgid "Show History"
 msgstr "Montru la historion"
 
-#: kfmgui.cpp:351
+#: kfmgui.cpp:371
 msgid "Show Cache"
 msgstr "Montru la tenejon"
 
-#: kfmgui.cpp:353
+#: kfmgui.cpp:373
 msgid "Clear Cache"
 msgstr "Malplenigu la tenejon"
 
-#: kfmgui.cpp:356
+#: kfmgui.cpp:376
 msgid "Always look in cache"
 msgstr "Æiam rigardu en la tenejon"
 
-#: kfmgui.cpp:358
+#: kfmgui.cpp:378
 msgid "Never look in cache"
 msgstr "Neniam rigardu en la tenejon"
 
-#: kfmgui.cpp:360
+#: kfmgui.cpp:380
 msgid "Always save cache"
 msgstr "Æiam sekurigu la tenejon"
 
-#: kfmgui.cpp:362
+#: kfmgui.cpp:382
 msgid "Never save cache"
 msgstr "Neniam sekurigu la tenejon"
 
-#: kfmgui.cpp:373
+#: kfmgui.cpp:393
 msgid "Show &Menubar"
 msgstr "Montru la &menulistelon"
 
-#: kfmgui.cpp:375
+#: kfmgui.cpp:395
 msgid "Show &Statusbar"
 msgstr "Montru la &statolistelon"
 
-#: kfmgui.cpp:377
+#: kfmgui.cpp:397
 msgid "Show &Toolbar"
 msgstr "Montru la &illistelon"
 
-#: kfmgui.cpp:379
+#: kfmgui.cpp:399
 msgid "Show &Location bar"
 msgstr "Montru la &situolistelon"
 
-#: kfmgui.cpp:382
+#: kfmgui.cpp:402
 msgid "Sa&ve Settings"
-msgstr "&Sekurigu la konfigura¼on"
+msgstr "&Sekurigu la agorda¼on"
 
-#: kfmgui.cpp:384
-#, fuzzy
-msgid "Save Settings for this &URL"
-msgstr "&Sekurigu la konfigura¼on"
+#: kfmgui.cpp:408
+msgid "Configure Browser..."
+msgstr "Agordu la krozilon..."
 
-#: kfmgui.cpp:391
-#, fuzzy
-msgid "&Configure File Manager..."
-msgstr "Konfiguru la krozilon..."
-
-#: kfmgui.cpp:393
-#, fuzzy
-msgid "Configure &Browser..."
-msgstr "Konfiguru la krozilon..."
-
-#: kfmgui.cpp:429
-#, fuzzy
+#: kfmgui.cpp:452
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -216,7 +206,7 @@ msgid ""
 "Proxy Manager by Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de\n"
 "\n"
-"Current maintainer: David Faure\n"
+"Bug reports and patches to David Faure\n"
 "faure@kde.org"
 msgstr ""
 "Aýtoro: Torben Weis\n"
@@ -226,128 +216,100 @@ msgstr ""
 "mjones@kde.org\n"
 "\n"
 "Prokuro-administrilo de Lars Hoss\n"
-"Lars.Hoss@munich.netsurf.de"
+"Lars.Hoss@munich.netsurf.de\n"
+"Eraroraportoj kaj korektoj al David Faure\n"
+"faure@kde.org"
 
-#: kfmgui.cpp:442
-msgid "&Go"
-msgstr ""
-
-#: kfmgui.cpp:443
+#: kfmgui.cpp:465
 msgid "&Bookmarks"
 msgstr "&Legosignoj"
 
-#: kfmgui.cpp:444
+#: kfmgui.cpp:466
 msgid "&Cache"
 msgstr "&Tenejo"
 
-#: kfmgui.cpp:474 main.cpp:281
+#: kfmgui.cpp:493 main.cpp:239
 msgid "Up"
 msgstr "Supren"
 
-#: kfmgui.cpp:484 main.cpp:283
+#: kfmgui.cpp:503 main.cpp:241
 msgid "Forward"
-msgstr ""
+msgstr "Antaýen"
 
-#: kfmgui.cpp:489
-#, fuzzy
+#: kfmgui.cpp:508
 msgid "Home"
 msgstr "Mia hejmo"
 
-#: kfmgui.cpp:546
+#: kfmgui.cpp:565
 msgid "Could not load icon\n"
 msgstr "Ne eblis enlegi la piktogramon\n"
 
-#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:305
-#: kbind.cpp:391 kbind.cpp:443 kbind.cpp:1591 kbind.cpp:1599 kbind.cpp:1617
-#: kbind.cpp:1636 kbind.cpp:1695 kbind.cpp:1707 kbind.cpp:1734 kbind.cpp:1749
-#: kbind.cpp:1769 kbind.cpp:1781 kbind.cpp:1797 kbind.cpp:1932 kbind.cpp:1944
-#: kbind.cpp:1989 kbind.cpp:2031 kfmexec.cpp:60 kfmexec.cpp:112
-#: kfmexec/main.cpp:47 kfmgui.cpp:547 kfmgui.cpp:747 kfmman.cpp:361
-#: kfmman.cpp:1388 kfmman.cpp:1616 kfmman.cpp:1642 kfmprops.cpp:377
-#: kfmprops.cpp:645 kfmprops.cpp:656 kfmprops.cpp:945 kfmprops.cpp:1077
-#: kfmprops.cpp:1208 kfmprops.cpp:1682 kfmprops.cpp:2043 kfmprops.cpp:2225
-#: kfmserver.cpp:40 kfmserver.cpp:163 kfmserver.cpp:237 kfmserver.cpp:252
-#: kfmserver.cpp:299 kfmserver.cpp:308 kfmserver.cpp:316 kfmtree.cpp:279
-#: kfmtree.cpp:406 kfmtree.cpp:437 kfmtree.cpp:443 kfmtree.cpp:449
-#: kfmview.cpp:438 kfmview.cpp:588 kfmview.cpp:607 kfmview.cpp:676
-#: kfmview.cpp:682 kfmview.cpp:688 kfmview.cpp:794 kfmview.cpp:798
-#: kfmview.cpp:837 kfmview.cpp:863 kfmview.cpp:884 kfmview.cpp:892
-#: kfmview.cpp:900 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
-#: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:559
-#: kiojob.cpp:799 kiojob.cpp:830 kiojob.cpp:871 kiojob.cpp:1318
-#: kiojob.cpp:1326 kiojob.cpp:1554 krenamewin.cpp:120 popup.cpp:102
-#: root.cpp:908 root.cpp:1169 root.cpp:1187 root.cpp:1193 root.cpp:1199
-#: root.cpp:1280 root.cpp:1805 root.cpp:1830
+#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:304
+#: kbind.cpp:376 kbind.cpp:428 kbind.cpp:1583 kbind.cpp:1591 kbind.cpp:1609
+#: kbind.cpp:1628 kbind.cpp:1687 kbind.cpp:1699 kbind.cpp:1726 kbind.cpp:1741
+#: kbind.cpp:1761 kbind.cpp:1773 kbind.cpp:1789 kbind.cpp:1925 kbind.cpp:1937
+#: kbind.cpp:1982 kbind.cpp:2024 kfmexec.cpp:60 kfmexec.cpp:92
+#: kfmexec/main.cpp:47 kfmgui.cpp:566 kfmgui.cpp:725 kfmman.cpp:341
+#: kfmman.cpp:1058 kfmman.cpp:1270 kfmman.cpp:1296 kfmprops.cpp:377
+#: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
+#: kfmprops.cpp:1141 kfmprops.cpp:1473 kfmprops.cpp:1705 kfmprops.cpp:1890
+#: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
+#: kfmserver.cpp:303 kfmserver.cpp:311 kfmtree.cpp:234 kfmtree.cpp:357
+#: kfmtree.cpp:388 kfmtree.cpp:394 kfmtree.cpp:400 kfmview.cpp:390
+#: kfmview.cpp:406 kfmview.cpp:425 kfmview.cpp:431 kfmview.cpp:493
+#: kfmview.cpp:499 kfmview.cpp:505 kfmview.cpp:611 kfmview.cpp:615
+#: kfmview.cpp:654 kfmview.cpp:680 kfmview.cpp:701 kfmview.cpp:709
+#: kfmview.cpp:717 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
+#: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:556
+#: kiojob.cpp:796 kiojob.cpp:827 kiojob.cpp:868 kiojob.cpp:1682
+#: krenamewin.cpp:120 root.cpp:891 root.cpp:1152 root.cpp:1170 root.cpp:1176
+#: root.cpp:1182 root.cpp:1263 root.cpp:1774 root.cpp:1799
 msgid "KFM Error"
-msgstr ""
+msgstr "KFM-Eraro"
 
-#: kfmgui.cpp:560
-#, fuzzy
-msgid "Location:"
-msgstr "Malfermu situon:"
-
-#: kfmexec.cpp:59 kfmgui.cpp:746 kfmman.cpp:1387
+#: kfmexec.cpp:59 kfmgui.cpp:724 kfmman.cpp:1057
 msgid "Malformed URL\n"
 msgstr "Misformita URL\n"
 
-#: kfmgui.cpp:931
+#: kfmgui.cpp:911
 msgid "Select files:"
 msgstr "Elektu dosierojn:"
 
-#: kfmgui.cpp:997
+#: kfmgui.cpp:966
 msgid "Find Complete"
-msgstr ""
+msgstr "Trovis æiujn"
 
-#: kfmgui.cpp:998
+#: kfmgui.cpp:967
 msgid "Continue search from the top of the page?"
-msgstr ""
+msgstr "Daýrigu seræadon de la paøosupro?"
 
-#: kfmgui.cpp:1016
+#: kfmgui.cpp:985
 msgid "&Edit Bookmarks..."
 msgstr "&Redaktu la legosignojn..."
 
-#: kfmgui.cpp:1026
+#: kfmgui.cpp:995
 msgid "&Add Bookmark"
 msgstr "&Aldonu legosignon"
 
-#: kfmgui.cpp:1060 kfmman.cpp:1427 kfmtree.cpp:327 root.cpp:263
-#, fuzzy
-msgid "&New"
+#: kfmgui.cpp:1025 kfmgui.cpp:1032
+msgid "New "
 msgstr "Nova "
 
-#: kfmgui.cpp:1076
-#, fuzzy
-msgid "&Up"
-msgstr "Supren"
-
-#: kfmgui.cpp:1078
-msgid "&Back"
-msgstr ""
-
-#: kfmgui.cpp:1080
-msgid "&Forward"
-msgstr ""
-
-#: kfmgui.cpp:1082
-#, fuzzy
-msgid "&Home"
-msgstr "Mia hejmo"
-
-#: kfmgui.cpp:1144 kfmgui.cpp:1316 kfmjob.cpp:36 kfmman.cpp:244
-#: kfmtree.cpp:438 kfmview.cpp:608 kfmview.cpp:677 kfmview.cpp:885
-#: kiojob.cpp:87 root.cpp:1188
+#: kfmgui.cpp:1122 kfmgui.cpp:1291 kfmjob.cpp:35 kfmman.cpp:224
+#: kfmtree.cpp:389 kfmview.cpp:426 kfmview.cpp:494 kfmview.cpp:702
+#: kiojob.cpp:87 root.cpp:1171
 msgid "ERROR: Malformed URL"
 msgstr "ERARO: Misformita URL"
 
-#: kfmgui.cpp:1270 kfmserver.cpp:184
+#: kfmgui.cpp:1245 kfmserver.cpp:188
 msgid "Open Location:"
 msgstr "Malfermu situon:"
 
-#: kfmgui.cpp:1327
+#: kfmgui.cpp:1302
 msgid "KFM Confirm"
 msgstr "KFM Konfirmo"
 
-#: kfmgui.cpp:1328
+#: kfmgui.cpp:1303
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -355,25 +317,28 @@ msgstr ""
 "Æu vi vere volas fini?\n"
 "Gravaj labortabulaj funkcioj perdiøos"
 
-#: kfmgui.cpp:1441
+#: kfmgui.cpp:1413
 msgid "Document: Done"
 msgstr "Dokumento: preta"
 
-#: kfmview.cpp:439 root.cpp:909
-#, fuzzy
+#: kfmview.cpp:391 root.cpp:892
 msgid "ERROR: You may only drop URLs"
-msgstr "ERARO: Vi faligis URLon super si mem"
+msgstr "ERARO: Vi rajtas alþovi nur URLon"
 
-#: kfmview.cpp:589
+#: kfmview.cpp:407
 msgid "ERROR: Drop over malformed URL"
 msgstr "ERARO: Faligo super misformita URL"
 
-#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:476 kfmview.cpp:648
-#: kfmview.cpp:928 krenamewin.cpp:20 root.cpp:1231
+#: kfmview.cpp:432
+msgid "ERROR: You dropped some URL over itself"
+msgstr "ERARO: Vi faligis iun URLon super si mem"
+
+#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:427 kfmview.cpp:465
+#: kfmview.cpp:745 krenamewin.cpp:20 root.cpp:1214
 msgid "KFM Warning"
 msgstr "KFM-averto"
 
-#: kfmtree.cpp:477 kfmview.cpp:649 kfmview.cpp:929 root.cpp:1232
+#: kfmtree.cpp:428 kfmview.cpp:466 kfmview.cpp:746 root.cpp:1215
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -383,55 +348,63 @@ msgstr ""
 "\n"
 "Ne ekzistas ebleco rekrei ilin."
 
-#: kfmtree.cpp:444 kfmview.cpp:683 kfmview.cpp:893 root.cpp:1194
+#: kfmtree.cpp:395 kfmview.cpp:500 kfmview.cpp:710 root.cpp:1177
 msgid "ERROR: You dropped a URL over itself"
 msgstr "ERARO: Vi faligis URLon super si mem"
 
-#: kfmtree.cpp:450 kfmview.cpp:689 kfmview.cpp:901 root.cpp:1200
+#: kfmtree.cpp:401 kfmview.cpp:506 kfmview.cpp:718 root.cpp:1183
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "ERARO: Vi faligis dosierujon super unu el øiaj idoj"
 
-#: kfmexec.cpp:286 kfmman.cpp:1180 kfmview.cpp:705
+#: kfmexec.cpp:265 kfmman.cpp:911 kfmview.cpp:522
 msgid "Open With:"
 msgstr "Malfermu kun:"
 
-#: kfmview.cpp:736 root.cpp:1131
+#: kfmview.cpp:553 root.cpp:1114
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "ERARO: Ne eblas rigardi la ecojn de pluraj dosieroj samtempe"
 
-#: kfmview.cpp:795
+#: kfmview.cpp:612
 msgid ""
 "Can not save properties because\n"
 "this directory is neither writable nor bookmarked.\n"
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Ne eblis sekurigi la ecojn æar\n"
+"la dosierujo ne estas skribebla nek legmarkita.\n"
+"\n"
+"Legmarku tiun situon unue, aý faru kdelnk-ligon de øi sur la labortabulo."
 
-#: kfmview.cpp:799
+#: kfmview.cpp:616
 msgid ""
 "Can not save properties because\n"
 "this URL is neither bookmarked nor on desktop.\n"
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Ne eblis sekurigi la ecojn æar\n"
+"tiu URL nek estas legmarkita nek sur labortabulo.\n"
+"\n"
+"Legmarku la situon unue aý kreu kdelnk-ligon al øi sur la labortabulo."
 
-#: kfmtree.cpp:407 kfmview.cpp:838 root.cpp:1281
+#: kfmtree.cpp:358 kfmview.cpp:655 root.cpp:1264
 msgid "Could not access Trash Bin"
 msgstr "Ne povis aliri la rubujon"
 
-#: kfmview.cpp:864 root.cpp:1170
+#: kfmview.cpp:681 root.cpp:1153
 msgid "Can not paste into multiple directories"
 msgstr "Ne eblas ion meti en plurajn dosierujojn"
 
-#: kfmview.cpp:961
+#: kfmview.cpp:778
 msgid "ERROR: Can not change to multiple directories"
 msgstr "ERARO: Ne eblis þanøi al pluraj dosierujoj"
 
-#: kfmview.cpp:1227
+#: kfmview.cpp:1042
 msgid "KFM Security Alert"
 msgstr "KFM-sekurec-alarmo"
 
-#: kfmview.cpp:1228
+#: kfmview.cpp:1043
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -439,65 +412,61 @@ msgstr ""
 "Tiu paøo ne estas fidinda\n"
 "sed øi enhavas ligon al via loka dosieraro."
 
-#: kfmview.cpp:1332
+#: kfmview.cpp:1129
 msgid "Symbolic Link"
 msgstr "Simbola ligo"
 
-#: kfmview.cpp:1334
+#: kfmview.cpp:1131
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (ligo)"
 
-#: kfmview.cpp:1354
+#: kfmview.cpp:1151
 msgid "bytes"
 msgstr "bitokoj"
 
-#: kbind.cpp:303
+#: kbind.cpp:302
 msgid "The mime type config file "
-msgstr "La konfigurdosiero pri MIME-tipoj"
+msgstr "La agordodosiero pri MIME-tipoj"
 
-#: kbind.cpp:304
+#: kbind.cpp:303
 msgid "does not conatain a MimeType=... entry"
 msgstr "ne enhavas iun eron MimeType=..."
 
-#: kbind.cpp:392
+#: kbind.cpp:377
 msgid "No mime types installed!"
 msgstr "Neniu MIME-tipo estas instalita!"
 
-#: kbind.cpp:440 kbind.cpp:1208
+#: kbind.cpp:425 kbind.cpp:1207
 msgid "Could not find mime type\n"
 msgstr "Ne eblis trovi la MIME-tipon\n"
 
-#: kbind.cpp:710 kbind.cpp:720 kbind.cpp:1967 kbind.cpp:1968 kbind.cpp:1980
-#: kbind.cpp:1982
+#: kbind.cpp:696 kbind.cpp:706 kbind.cpp:1960 kbind.cpp:1961 kbind.cpp:1973
+#: kbind.cpp:1975
 msgid "Mount"
 msgstr "Muntu"
 
-#: kbind.cpp:726 kbind.cpp:1958
+#: kbind.cpp:712 kbind.cpp:1951
 msgid "Unmount"
 msgstr "Malmuntu"
 
-#: kbind.cpp:950 kbind.cpp:962 kbind.cpp:972 popup.cpp:45 popup.cpp:122
-msgid "Folder"
-msgstr "Dosierujo"
-
-#: kbind.cpp:1207
+#: kbind.cpp:1206
 msgid "ERROR"
 msgstr "ERARO"
 
-#: kbind.cpp:1208
+#: kbind.cpp:1207
 msgid "in "
 msgstr "en "
 
-#: kbind.cpp:1381 kbind.cpp:1474
+#: kbind.cpp:1373 kbind.cpp:1466
 msgid "Could not execute program\n"
 msgstr "Ne eblis ruli la programon\n"
 
-#: kbind.cpp:1590
+#: kbind.cpp:1582
 msgid "Could not find binding"
 msgstr "Ne eblis trovi binda¼on"
 
-#: kbind.cpp:1600
+#: kbind.cpp:1592
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -505,11 +474,11 @@ msgstr ""
 "Tio æi estas dokumento!\n"
 "Øi ne estas aplika¼o"
 
-#: kbind.cpp:1618 kbind.cpp:1637
+#: kbind.cpp:1610 kbind.cpp:1629
 msgid "Can only start executables on local disks\n"
 msgstr "Programoj estas lanæeblaj nur de loka disko\n"
 
-#: kbind.cpp:1696 kbind.cpp:1770 kbind.cpp:1933
+#: kbind.cpp:1688 kbind.cpp:1762 kbind.cpp:1926
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -517,7 +486,7 @@ msgstr ""
 "Eblas labori per *.kdelnk-dosieroj nur\n"
 "sur loka malmola disko"
 
-#: kbind.cpp:1706
+#: kbind.cpp:1698
 #, c-format
 msgid ""
 "Could not access\n"
@@ -526,19 +495,19 @@ msgstr ""
 "Ne eblis aliri\n"
 "%s"
 
-#: kbind.cpp:1735
+#: kbind.cpp:1727
 msgid "The \"Link=....\" entry is empty"
 msgstr "La ero \"Link=....\" estas malplena"
 
-#: kbind.cpp:1750
+#: kbind.cpp:1742
 msgid "The config file has no \"Type=...\" line"
-msgstr "La konfigurdosiero ne enhavas linion \"Type=...\""
+msgstr "La agordodosiero ne enhavas linion \"Type=...\""
 
-#: kbind.cpp:1780 kbind.cpp:1943
+#: kbind.cpp:1772 kbind.cpp:1936
 msgid "Could not access"
 msgstr "Ne eblis aliri"
 
-#: kbind.cpp:1798
+#: kbind.cpp:1790
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -549,88 +518,157 @@ msgstr ""
 "\"Exec=....\"\n"
 "Redaktu la ecojn por solvi la problemon."
 
-#: kbind.cpp:1895
+#: kbind.cpp:1888
 msgid "ERROR: No Terminal Setting"
-msgstr "ERARO: Neniu terminal-konfigura¼o"
+msgstr "ERARO: Neniu terminal-agorda¼o"
 
-#: kbind.cpp:1990
+#: kbind.cpp:1983
 msgid "No mount point in *.kdelnk file"
 msgstr "Neniu muntejo en *.kdelnk file"
 
-#: kbind.cpp:2030
+#: kbind.cpp:2023
 msgid "Unknown binding"
 msgstr "Nekonata binda¼o"
 
-#: main.cpp:89 main.cpp:228
+#: main.cpp:87 main.cpp:191
 msgid "KFM Information"
 msgstr "KFM-informo"
 
-#: main.cpp:90
+#: main.cpp:88
 msgid "Creating directory:\n"
 msgstr "Kreante la dosierujon:\n"
 
-#: main.cpp:229
-msgid ""
-"A new KDE version has been installed.\n"
-"The Template files may have changed.\n"
-"\n"
-"Would you like to install the new ones?"
-msgstr ""
+#: main.cpp:192
+msgid "Installing Templates"
+msgstr "Instalante þablonojn"
 
-#: main.cpp:266
+#: main.cpp:224
 msgid "Cd"
 msgstr "Þanøu ujon"
 
-#: main.cpp:267
+#: main.cpp:225
 msgid "New View"
 msgstr "Nova rigardo"
 
-#: kfmtree.cpp:342 main.cpp:270
+#: kfmtree.cpp:294 main.cpp:228
 msgid "Move to Trash"
 msgstr "Movu al rubujo"
 
-#: main.cpp:272
+#: main.cpp:230
 msgid "Open with"
 msgstr "Malfermu kun"
 
-#: kfmman.cpp:1634 kfmtree.cpp:271 main.cpp:274
+#: kfmman.cpp:1288 kfmtree.cpp:226 main.cpp:232
 msgid "Move"
-msgstr ""
+msgstr "Movu"
 
-#: kfmman.cpp:1638 kfmtree.cpp:275 main.cpp:276
+#: kfmman.cpp:1292 kfmtree.cpp:230 main.cpp:234
 msgid "Link"
 msgstr "Ligo"
 
-#: main.cpp:277
+#: main.cpp:235
 msgid "Empty Trash Bin"
 msgstr "Malplena rubujo"
 
-#: main.cpp:278
+#: main.cpp:236
 msgid "Add to Bookmarks"
 msgstr "Aldonu legosignon"
 
-#: main.cpp:279
+#: main.cpp:237
 msgid "Save settings for this URL"
-msgstr ""
+msgstr "Sekurigu agorda¼on sub URL"
 
-#: main.cpp:280
-#, fuzzy
+#: main.cpp:238
 msgid "Show Menubar"
-msgstr "Montru la &menulistelon"
+msgstr "Montru la menulistelon"
 
-#: kfmdlg.cpp:117
-#, fuzzy
+#: htmlopts.cpp:70
+msgid "Small"
+msgstr "Malgranda"
+
+#: htmlopts.cpp:79
+msgid "Medium"
+msgstr "Mezgranda"
+
+#: htmlopts.cpp:88
+msgid "Large"
+msgstr "Granda"
+
+#: htmlopts.cpp:103
+msgid "Standard Font"
+msgstr "Normala tiparo"
+
+#: htmlopts.cpp:132
+msgid "Fixed Font"
+msgstr "Egallarøa tiparo"
+
+#: htmlopts.cpp:161
+msgid "Default Charset"
+msgstr "Implicita signokodo"
+
+#: htmlopts.cpp:169
+msgid "Use language charset"
+msgstr "Uzu signokodon laý la lingvo"
+
+#: htmlopts.cpp:361
+msgid "Background Color:"
+msgstr "Fona koloro:"
+
+#: htmlopts.cpp:380
+msgid "Normal Text Color:"
+msgstr "Koloro de normala teksto:"
+
+#: htmlopts.cpp:399
+msgid "URL Link Color:"
+msgstr "Koloro de URL-ligo:"
+
+#: htmlopts.cpp:418
+msgid "Followed Link Color:"
+msgstr "Koloro de vizitita ligo:"
+
+#: htmlopts.cpp:437
+msgid "Change cursor over link."
+msgstr "Þanøu la montrilon super ligoj."
+
+#: htmlopts.cpp:448
+msgid "Underline links"
+msgstr "Substreku ligojn"
+
+#: htmlopts.cpp:565
+msgid "Horizontal Root Grid Spacing:"
+msgstr "Horiz. kradodist. de la labortabulo:"
+
+#: htmlopts.cpp:589
+msgid "Vertical Root Grid Spacing:"
+msgstr "Vert. kradodist. de la labortabulo:"
+
+#: htmlopts.cpp:613
+msgid "Allow per-URL settings"
+msgstr "Ebligu URLopan agordon"
+
+#: htmlopts.cpp:621
+msgid "Transparent Text for Root Icons."
+msgstr "Travidebla teksto por la piktogramoj labortabulaj."
+
+#: htmlopts.cpp:635
+msgid "Icon foreground color:"
+msgstr "Koloro de piktogramoj:"
+
+#: htmlopts.cpp:647
+msgid "Icon background color:"
+msgstr "Fonkoloro de piktogramoj:"
+
+#: kfmdlg.cpp:113
 msgid "&Browser"
-msgstr "Rigardu"
+msgstr "&TTT-legilo"
 
 #: bookmark.cpp:296
 msgid "Could not write bookmark"
 msgstr "Ne eblis skribi la legomarkilon"
 
 #: kfmprops.cpp:238
-#, fuzzy
 msgid "File Name"
-msgstr "Plena nomo"
+msgstr "Dosiernomo"
 
 #: kfmprops.cpp:253
 msgid "Full Name"
@@ -719,7 +757,7 @@ msgstr "Uzanto"
 
 #: kfmprops.cpp:461 kfmprops.cpp:560
 msgid "Group"
-msgstr ""
+msgstr "Grupo"
 
 #: kfmprops.cpp:466
 msgid "Others"
@@ -742,29 +780,10 @@ msgid "Ownership"
 msgstr "Posedo"
 
 #: kfmprops.cpp:505
-#, fuzzy
 msgid "Owner"
-msgstr "Posedo"
+msgstr "Posedanto"
 
-#: kfmprops.cpp:635
-#, c-format
-msgid " ERROR: No user %s"
-msgstr " ERARO: Ne ekzistas uzanto %s"
-
-#: kfmprops.cpp:640
-#, c-format
-msgid " ERROR: No group %s"
-msgstr " ERARO: Ne ekzistas grupo %s"
-
-#: kfmprops.cpp:646
-msgid ""
-"Could not change owner/group\n"
-"Perhaps access denied."
-msgstr ""
-"Ne eblis þanøi ls posedanton/grupon\n"
-"Verþajne aliro estas malpermesita."
-
-#: kfmprops.cpp:657
+#: kfmprops.cpp:629
 msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
@@ -772,37 +791,54 @@ msgstr ""
 "Ne ebli þanøi la permesojn\n"
 "Verþajne aliro estas malpermesita."
 
-#: kfmprops.cpp:670 kfmprops.cpp:729
+#: kfmprops.cpp:644
+#, c-format
+msgid " ERROR: No user %s"
+msgstr " ERARO: Ne ekzistas uzanto %s"
+
+#: kfmprops.cpp:649
+#, c-format
+msgid " ERROR: No group %s"
+msgstr " ERARO: Ne ekzistas grupo %s"
+
+#: kfmprops.cpp:655
+msgid ""
+"Could not change owner/group\n"
+"Perhaps access denied."
+msgstr ""
+"Ne eblis þanøi ls posedanton/grupon\n"
+"Verþajne aliro estas malpermesita."
+
+#: kfmprops.cpp:667 kfmprops.cpp:726
 msgid "Execute"
 msgstr "Lanæu"
 
-#: kfmprops.cpp:686
-#, fuzzy
+#: kfmprops.cpp:683
 msgid "&Browse..."
-msgstr "Rigardu"
+msgstr "&Rigardu..."
 
-#: kfmprops.cpp:698
+#: kfmprops.cpp:695
 msgid "Working Directory"
 msgstr "Labordosierujo"
 
-#: kfmprops.cpp:716
+#: kfmprops.cpp:713
 msgid "Swallowing on panel"
 msgstr "Hirunde sur la panelo"
 
-#: kfmprops.cpp:743
+#: kfmprops.cpp:740
 msgid "Window Title"
 msgstr "Fenestrotitolo"
 
-#: kfmprops.cpp:763
+#: kfmprops.cpp:760
 msgid "Run in terminal"
 msgstr "Rulu en terminalo"
 
-#: kfmprops.cpp:771
+#: kfmprops.cpp:768
 msgid "Terminal Options"
 msgstr "Terminala opcioj"
 
-#: kfmprops.cpp:946 kfmprops.cpp:1078 kfmprops.cpp:1683 kfmprops.cpp:2044
-#: kfmprops.cpp:2226
+#: kfmprops.cpp:882 kfmprops.cpp:1011 kfmprops.cpp:1474 kfmprops.cpp:1706
+#: kfmprops.cpp:1891
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -810,80 +846,79 @@ msgstr ""
 "Ne eblis sekurigi la ecojn\n"
 "Verþajne mankas permeso"
 
-#: kfmprops.cpp:1003
+#: kfmprops.cpp:936
 msgid "URL"
 msgstr "URL"
 
-#: kfmprops.cpp:1100
-#, fuzzy
+#: kfmprops.cpp:1033
 msgid "Background"
 msgstr "Fona koloro:"
 
-#: kfmprops.cpp:1110
+#: kfmprops.cpp:1043
 msgid "Apply global"
 msgstr "Apliku malloke"
 
-#: kfmprops.cpp:1148 kfmprops.cpp:1220 kfmprops.cpp:1278
+#: kfmprops.cpp:1081 kfmprops.cpp:1153 kfmprops.cpp:1210
 msgid "(Default)"
 msgstr "(implice)"
 
-#: kfmprops.cpp:1209
+#: kfmprops.cpp:1142
 msgid "Could not write to\n"
 msgstr "Ne eblis skribi al\n"
 
-#: kfmprops.cpp:1339
+#: kfmprops.cpp:1271
 msgid "(None)"
-msgstr "(nenio)"
+msgstr "(neniu)"
 
-#: kfmprops.cpp:1385
+#: kfmprops.cpp:1317
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr "Duuma þablono (netscape;Netscape;)"
 
-#: kfmprops.cpp:1392 kfmprops.cpp:1787
+#: kfmprops.cpp:1324 kfmprops.cpp:1575
 msgid "Comment"
 msgstr "Komento"
 
-#: kfmprops.cpp:1403
+#: kfmprops.cpp:1335
 msgid "Name ( in your language )"
 msgstr "Nomo (en via lingvo)"
 
-#: kfmprops.cpp:1764
+#: kfmprops.cpp:1552
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "Þablono (ekzemple: *.html;*.HTML;)"
 
-#: kfmprops.cpp:1776
+#: kfmprops.cpp:1564
 msgid "Mime Type"
 msgstr "MIME-tipo"
 
-#: kfmprops.cpp:1805
+#: kfmprops.cpp:1593
 msgid "Default Application"
 msgstr "Implicita aplika¼o"
 
-#: kfmprops.cpp:1845
+#: kfmprops.cpp:1633
 msgid "<none>"
-msgstr ""
+msgstr "<neniu>"
 
-#: kfmprops.cpp:2090
+#: kfmprops.cpp:1755
 msgid "Device ( /dev/fd0 )"
 msgstr "Aparato (/dev/fd0)"
 
-#: kfmprops.cpp:2099
+#: kfmprops.cpp:1764
 msgid "Mount Point ( /floppy )"
 msgstr "Muntejo (/floppy)"
 
-#: kfmprops.cpp:2110
+#: kfmprops.cpp:1775
 msgid "Readonly"
 msgstr "Nurlege"
 
-#: kfmprops.cpp:2116
+#: kfmprops.cpp:1781
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Dosierartipo (iso9660,msdos,minix,implicita)"
 
-#: kfmprops.cpp:2127
+#: kfmprops.cpp:1792
 msgid "Mounted Icon"
 msgstr "Munt-piktogramo"
 
-#: kfmprops.cpp:2132
+#: kfmprops.cpp:1797
 msgid "Unmounted Icon"
 msgstr "Malmunt-piktogramo"
 
@@ -903,7 +938,7 @@ msgstr ""
 msgid "Do you really want to rearrange your icons ?"
 msgstr "Æu vi vere volas rearanøi viajn piktogramojn?"
 
-#: kfmserver.cpp:249
+#: kfmserver.cpp:244
 #, c-format
 msgid ""
 "The URL\n"
@@ -914,7 +949,7 @@ msgstr ""
 "%s\n"
 "estas misformita"
 
-#: kfmserver.cpp:300
+#: kfmserver.cpp:295
 msgid ""
 "You dont have the file ~/.kde/share/apps/kfm/magic\n"
 "Authorization failed"
@@ -922,7 +957,7 @@ msgstr ""
 "Vi ne havas la dosieron ~/.kde/share/apps/kfm/magic\n"
 "Legitimigo malsukcesis"
 
-#: kfmserver.cpp:309
+#: kfmserver.cpp:304
 msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
@@ -930,7 +965,7 @@ msgstr ""
 "La dosiero ~/.kde/share/apps/kfm/magic estas difektita\n"
 "Legitimigo malsukcesis"
 
-#: kfmserver.cpp:317
+#: kfmserver.cpp:312
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
@@ -938,7 +973,7 @@ msgstr ""
 "Iu provis legitimigi sin\n"
 "per maløusta pasvorto"
 
-#: root.cpp:712
+#: root.cpp:695
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -948,36 +983,36 @@ msgstr ""
 "La deziritaj dimensioj de la krado movus kelkajn\n"
 "piktogramojn ekster la labortabulon."
 
-#: root.cpp:747
+#: root.cpp:730
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Interna eraro: desktopDir estas misformita"
 
-#: root.cpp:758
+#: root.cpp:741
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "ERARO: Ne eblis legi la labortabulan dosierujon '%s'"
 
-#: root.cpp:957
+#: root.cpp:940
 msgid "ERROR: Can not accept drop"
 msgstr "ERARO: Ne eblis akcepti la faligon"
 
-#: kfmman.cpp:1617 root.cpp:1806
+#: kfmman.cpp:1271 root.cpp:1775
 msgid "Dont know what to do."
 msgstr "Ne scias, kion fari."
 
-#: kfmman.cpp:1643 kfmtree.cpp:280 root.cpp:1831
+#: kfmman.cpp:1297 kfmtree.cpp:235 root.cpp:1800
 msgid "Dont know what to do"
 msgstr "Ne scias, kion fari."
 
-#: kfmexec.cpp:113 kfmman.cpp:362
+#: kfmexec.cpp:93 kfmman.cpp:342
 msgid "The file does not contain a URL"
 msgstr "La dosiero ne enhavas URLon."
 
-#: kfmman.cpp:510
+#: kfmman.cpp:391
 msgid "Contacting host "
 msgstr "Kontaktante la komputilon "
 
-#: kfmman.cpp:514
+#: kfmman.cpp:395
 msgid "Working ..."
 msgstr "Agante ..."
 
@@ -985,7 +1020,7 @@ msgstr "Agante ..."
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr "INTERNA ERARO: Vi devas indiki almenaý unu aparaton por munto"
 
-#: kiojob.cpp:237 kiojob.cpp:245 kiojob.cpp:1184 kiojob.cpp:1250
+#: kiojob.cpp:237 kiojob.cpp:245 kiojob.cpp:1209 kiojob.cpp:1349
 #, c-format
 msgid ""
 "Malformed URL\n"
@@ -1016,12 +1051,12 @@ msgstr ""
 "Ne eblis krei simbolan ligon al\n"
 "%s"
 
-#: kiojob.cpp:384
+#: kiojob.cpp:382
 #, c-format
 msgid " ERROR: Could not write to %s"
 msgstr " ERARO: Ne eblis skribi al %s"
 
-#: kiojob.cpp:558 kiojob.cpp:798 kiojob.cpp:1206
+#: kiojob.cpp:555 kiojob.cpp:795 kiojob.cpp:1266
 #, c-format
 msgid ""
 "Could not make directory\n"
@@ -1030,12 +1065,12 @@ msgstr ""
 "Ne eblis krei dosierujon\n"
 "%s"
 
-#: kiojob.cpp:571 kiojob.cpp:1017
+#: kiojob.cpp:568 kiojob.cpp:1014
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
 msgstr "ERARO: Ne eblis aliri la dosierujon '%s'"
 
-#: kiojob.cpp:829
+#: kiojob.cpp:826
 #, c-format
 msgid ""
 "Could not access directory\n"
@@ -1044,7 +1079,7 @@ msgstr ""
 "Ne eblis aliri la dosierujon\n"
 "%s"
 
-#: kiojob.cpp:870
+#: kiojob.cpp:867
 #, c-format
 msgid ""
 "Could not move directory\n"
@@ -1057,7 +1092,7 @@ msgstr ""
 "al %s\n"
 "Verþajne aliro estas malpermesita"
 
-#: kiojob.cpp:1187 kiojob.cpp:1254
+#: kiojob.cpp:1217 kiojob.cpp:1357
 #, c-format
 msgid ""
 "Could not read\n"
@@ -1068,7 +1103,7 @@ msgstr ""
 "%s\n"
 "La dosiero ne ekzistas aý la aliro estas malpermesita"
 
-#: kiojob.cpp:1190
+#: kiojob.cpp:1225
 #, c-format
 msgid ""
 "Could not write\n"
@@ -1079,7 +1114,7 @@ msgstr ""
 "%s\n"
 "Verþajne la aliro estas malpermesita"
 
-#: kiojob.cpp:1194 kiojob.cpp:1258
+#: kiojob.cpp:1234 kiojob.cpp:1365
 #, c-format
 msgid ""
 "Could not create Socket for\n"
@@ -1088,7 +1123,7 @@ msgstr ""
 "Ne eblis krei konektilon por\n"
 "%s"
 
-#: kiojob.cpp:1197 kiojob.cpp:1262
+#: kiojob.cpp:1242 kiojob.cpp:1373
 #, c-format
 msgid ""
 "Unknown host in\n"
@@ -1097,7 +1132,7 @@ msgstr ""
 "Nekonata komputilo en\n"
 "%s"
 
-#: kiojob.cpp:1200 kiojob.cpp:1266
+#: kiojob.cpp:1250 kiojob.cpp:1381
 #, c-format
 msgid ""
 "Could not connect to\n"
@@ -1106,7 +1141,7 @@ msgstr ""
 "Ne eblis konektiøi al\n"
 "%s"
 
-#: kiojob.cpp:1203 kiojob.cpp:1270
+#: kiojob.cpp:1258 kiojob.cpp:1389
 #, c-format
 msgid ""
 "The requested action\n"
@@ -1117,7 +1152,7 @@ msgstr ""
 "%s\n"
 "estas ankoraý ne realigita."
 
-#: kiojob.cpp:1209
+#: kiojob.cpp:1274
 #, c-format
 msgid ""
 "Could not list directory contents\n"
@@ -1126,7 +1161,7 @@ msgstr ""
 "Ne eblis listigi la enhavon de la dosierujo\n"
 "%s"
 
-#: kiojob.cpp:1213
+#: kiojob.cpp:1282
 #, c-format
 msgid ""
 "Could not delete\n"
@@ -1137,7 +1172,7 @@ msgstr ""
 "%s\n"
 "URL ne ekzistas aý estas malpermesita"
 
-#: kiojob.cpp:1217 kiojob.cpp:1275
+#: kiojob.cpp:1292 kiojob.cpp:1399
 #, c-format
 msgid ""
 "Could not login for\n"
@@ -1148,7 +1183,7 @@ msgstr ""
 "%s\n"
 "Verþajne la pasvorto estas maløusta"
 
-#: kiojob.cpp:1228
+#: kiojob.cpp:1308 kiojob.cpp:1415
 #, c-format
 msgid ""
 "Tar reproted an error\n"
@@ -1157,7 +1192,7 @@ msgstr ""
 "Tar komunikis eraron\n"
 "%s"
 
-#: kiojob.cpp:1231
+#: kiojob.cpp:1316
 #, c-format
 msgid ""
 "Gzip reproted an error for\n"
@@ -1166,7 +1201,7 @@ msgstr ""
 "Gzip komunikis eraron por\n"
 "%s"
 
-#: kiojob.cpp:1237 kiojob.cpp:1246
+#: kiojob.cpp:1326 kiojob.cpp:1341
 #, c-format
 msgid ""
 "File %s\n"
@@ -1175,25 +1210,16 @@ msgstr ""
 "Dosiero %s\n"
 "ne ekzistas"
 
-#: kiojob.cpp:1287
-#, fuzzy, c-format
+#: kiojob.cpp:1423
+#, c-format
 msgid ""
-"Tar reported a fatal error\n"
-"%s"
-msgstr ""
-"Tar komunikis eraron\n"
-"%s"
-
-#: kiojob.cpp:1291
-#, fuzzy, c-format
-msgid ""
-"Gzip reported a fatal error\n"
+"Gzip reproted an error\n"
 "%s"
 msgstr ""
 "Gzip komunikis eraron\n"
 "%s"
 
-#: kiojob.cpp:1295
+#: kiojob.cpp:1431
 #, c-format
 msgid ""
 "Could not mount\n"
@@ -1206,7 +1232,7 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1299
+#: kiojob.cpp:1437
 #, c-format
 msgid ""
 "Could not unmount\n"
@@ -1219,21 +1245,21 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1403
+#: kiojob.cpp:1528
 msgid "Making directory"
 msgstr "Kreante dosierujon"
 
-#: kiojob.cpp:1519 kiojob.cpp:1573 kiojob.cpp:1615
+#: kiojob.cpp:1647 kiojob.cpp:1701 kiojob.cpp:1743
 #, c-format
 msgid "File %i/%i"
 msgstr "Dosiero %i/%i"
 
-#: kiojob.cpp:1522 kiojob.cpp:1577
+#: kiojob.cpp:1650 kiojob.cpp:1705
 #, c-format
 msgid "to %s"
 msgstr "al %s"
 
-#: kiojob.cpp:1553
+#: kiojob.cpp:1681
 #, c-format
 msgid ""
 "Could not delete directory\n"
@@ -1242,22 +1268,22 @@ msgstr ""
 "Ne eblis forigi la dosierujon\n"
 "%s"
 
-#: kiojob.cpp:1643
+#: kiojob.cpp:1771
 #, c-format
 msgid "Mounting %s ..."
 msgstr "Muntante %s ..."
 
-#: kiojob.cpp:1645
+#: kiojob.cpp:1773
 #, c-format
 msgid "Unmounting %s ..."
 msgstr "Malmuntante %s ..."
 
-#: kiojob.cpp:1673
+#: kiojob.cpp:1801
 #, c-format
 msgid "Retrieving listing of %s"
 msgstr "Retrovante listigon de %s"
 
-#: kiojob.cpp:1911
+#: kiojob.cpp:2034
 msgid "Segmentation fault in io subprocess"
 msgstr "Segmenteraro en en/el-iga subprocezo"
 
@@ -1266,12 +1292,16 @@ msgid ""
 " is not a directory ! Security Alert !\n"
 "Please check it.\n"
 msgstr ""
+" ne estas dosierujo! Sekurecaverto!\n"
+"Bonvolu kontroli tion.\n"
 
 #: htmlcache.cpp:368
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Check it before clearing the cache.\n"
 msgstr ""
+" ne estas dosierujo! Sekurecaverto!\n"
+"Kontrolu antaý malplenigo de la tenejo.\n"
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"
@@ -1285,19 +1315,19 @@ msgstr "La dosierujo "
 msgid " does not exist\n"
 msgstr " ne ekzistas\n"
 
-#: kfmtree.cpp:349
+#: kfmtree.cpp:301
 msgid "Add To Bookmarks"
 msgstr "Aldonu al la legosignoj"
 
-#: kfmtree.cpp:516
+#: kfmtree.cpp:467
 msgid "My Home"
 msgstr "Mia hejmo"
 
-#: kfmtree.cpp:518
+#: kfmtree.cpp:469
 msgid "Desktop"
 msgstr "Labortabulo"
 
-#: kfmtree.cpp:520
+#: kfmtree.cpp:471
 msgid "Root"
 msgstr "Radiko"
 
@@ -1337,66 +1367,81 @@ msgstr "Hej, vi ne þanøis la nomon!\n"
 msgid "Password"
 msgstr "Pasvorto"
 
-#: kfmexec.cpp:162
+#: kfmexec.cpp:141
 msgid "Trying to open"
 msgstr "Provante malfermi"
 
+#: useragentdlg.cpp:44
+msgid "On server:"
+msgstr "Æe servilo:"
+
+#: useragentdlg.cpp:66
+msgid "login as:"
+msgstr "salutu kiel:"
+
+#: useragentdlg.cpp:110
+msgid "Known bindings:"
+msgstr "Konataj alordigoj:"
+
+#: kproxydlg.cpp:46
+msgid "Don't forget to save your settings!"
+msgstr "Ne forgesu sekurigi vian agorda¼on!"
+
+#: kproxydlg.cpp:54
+msgid "Use proxy"
+msgstr "Uzu prokuran servilon"
+
+#: kproxydlg.cpp:132
+msgid "No Proxy for:"
+msgstr "Ne uzu por:"
+
+#: kkfmoptdlg.cpp:43
+msgid "&Proxy"
+msgstr "&Prokuro"
+
+#: kkfmoptdlg.cpp:46
+msgid "&HTTP"
+msgstr "&HTTP"
+
+#: kkfmoptdlg.cpp:49
+msgid "User &Agent"
+msgstr "Uzanto-&agento"
+
+#: kkfmoptdlg.cpp:55
+msgid "&Colors"
+msgstr "&Koloroj"
+
+#: kkfmoptdlg.cpp:58
+msgid "&Other"
+msgstr "&Aliaj"
+
+#: kkfmoptdlg.cpp:117
+msgid "KFM Browser Settings"
+msgstr "KFM-Krozilo-agorda¼o"
+
+#: khttpoptdlg.cpp:39
+msgid "Accept languages:"
+msgstr "Akceptu la lingvojn:"
+
+#: khttpoptdlg.cpp:55
+msgid "Accept character sets:"
+msgstr "Akceptu la signarojn:"
+
+#: khttpoptdlg.cpp:70
+msgid "Assume HTML"
+msgstr "Supozu HTMLon"
+
 #: open-with.cpp:132
 msgid "This group is empty!"
-msgstr ""
+msgstr "Tiu grupo estas malplena!"
 
 #: finddlg.cpp:41
-#, fuzzy
 msgid "Find:"
-msgstr "&Trovu"
+msgstr "Trovu:"
 
 #: finddlg.cpp:56
 msgid "Case &sensitive"
-msgstr ""
-
-#: kcookiewin.cpp:58
-msgid "Cookie Alert!"
-msgstr ""
-
-#: kcookiewin.cpp:76
-msgid "You received a cookie from host:"
-msgstr ""
-
-#: kcookiewin.cpp:89
-msgid "Do you want to accept or reject this cookie?"
-msgstr ""
-
-#: kcookiewin.cpp:120
-#, fuzzy
-msgid "Apply to "
-msgstr "Apliku malloke"
-
-#: kcookiewin.cpp:125
-msgid "&This cookie only"
-msgstr ""
-
-#: kcookiewin.cpp:133
-msgid "All cookies from this &domain"
-msgstr ""
-
-#: kcookiewin.cpp:140
-msgid "All &cookies"
-msgstr ""
-
-#: popup.cpp:69
-#, c-format
-msgid "ERROR: Template does not exist '%s'"
-msgstr "ERARO: Þablono ne ekzistas '%s'"
-
-#: popup.cpp:103
-msgid ""
-"Source file doesn't exist anymore ! \n"
-"Use \"Rescan Bindings\" in View menu to update the menu"
-msgstr ""
-
-#: popup.cpp:114 popup.cpp:121
-msgid "New "
-msgstr "Nova "
+msgstr "Atentu &usklecon"
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1422,11 +1467,11 @@ msgstr "&Dosierujo"
 msgid "&Application"
 msgstr "&Aplika¼o"
 
-#: kfmprops.h:359
+#: kfmprops.h:357
 msgid "&Binding"
 msgstr "&Binda¼oj"
 
-#: kfmprops.h:384
+#: kfmprops.h:387
 msgid "De&vice"
 msgstr "A&parato"
 
@@ -1463,113 +1508,3 @@ msgid ""
 msgstr ""
 "Sintaksa eraro:\n"
 "kfmexec command [URLoj ....]\n"
-
-#~ msgid "Installing Templates"
-#~ msgstr "Instalante þablonojn"
-
-#~ msgid "Standard Font"
-#~ msgstr "Normala tiparo"
-
-#~ msgid "Fixed Font"
-#~ msgstr "Egallarøa tiparo"
-
-#~ msgid "Background Color:"
-#~ msgstr "Fona koloro:"
-
-#~ msgid "Normal Text Color:"
-#~ msgstr "Koloro de normala teksto:"
-
-#~ msgid "URL Link Color:"
-#~ msgstr "Koloro de URL-ligo:"
-
-#~ msgid "Followed Link Color:"
-#~ msgstr "Koloro de vizitita ligo:"
-
-#~ msgid "Change cursor over link."
-#~ msgstr "Þanøu la montrilon super ligoj."
-
-#~ msgid "Horizontal Root Grid Spacing:"
-#~ msgstr "Horiz. kradodist. de la labortabulo:"
-
-#~ msgid "Vertical Root Grid Spacing:"
-#~ msgstr "Vert. kradodist. de la labortabulo:"
-
-#, fuzzy
-#~ msgid "&Transparent Text for Root Icons."
-#~ msgstr "Travidebla teksto por la piktogramoj labortabulaj."
-
-#, fuzzy
-#~ msgid "Icon foreground color:"
-#~ msgstr "Fona koloro:"
-
-#, fuzzy
-#~ msgid "Icon background color:"
-#~ msgstr "Fona koloro:"
-
-#~ msgid "On server:"
-#~ msgstr "Æe servilo:"
-
-#~ msgid "login as:"
-#~ msgstr "salutu kiel:"
-
-#~ msgid "Known bindings:"
-#~ msgstr "Konataj alordigoj:"
-
-#~ msgid "Don't forget to save your settings!"
-#~ msgstr "Ne forgesu sekurigi vian konfigura¼on!"
-
-#~ msgid "Use proxy"
-#~ msgstr "Uzu prokuran servilon"
-
-#~ msgid "No Proxy for:"
-#~ msgstr "Ne uzu por:"
-
-#~ msgid "&Proxy"
-#~ msgstr "&Prokuo"
-
-#~ msgid "&HTTP"
-#~ msgstr "&HTTP"
-
-#~ msgid "User &Agent"
-#~ msgstr "Uzanto-&agento"
-
-#~ msgid "&Colors"
-#~ msgstr "&Koloroj"
-
-#~ msgid "&Other"
-#~ msgstr "&Aliaj"
-
-#, fuzzy
-#~ msgid "KFM Preferences Settings"
-#~ msgstr "KFM-Krozilo-konfigura¼o"
-
-#~ msgid "Accept languages:"
-#~ msgstr "Akceptu la lingvojn:"
-
-#~ msgid "Accept character sets:"
-#~ msgstr "Akceptu la signarojn:"
-
-#~ msgid "Assume HTML"
-#~ msgstr "Supozu HTMLon"
-
-#~ msgid "ERROR: You dropped some URL over itself"
-#~ msgstr "ERARO: Vi faligis iun URLon super si mem"
-
-#~ msgid "&Visual Schnauzer"
-#~ msgstr "Antaýrigardo de &bildoj"
-
-#, fuzzy
-#~ msgid "Name"
-#~ msgstr "Plena nomo"
-
-#~ msgid "Browse"
-#~ msgstr "Rigardu"
-
-#~ msgid "&Quit..."
-#~ msgstr "&Finu..."
-
-#~ msgid "&About..."
-#~ msgstr "&Pri..."
-
-#~ msgid "About KFM"
-#~ msgstr "Pri KFM"

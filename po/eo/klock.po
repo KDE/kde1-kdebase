@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock 1.0pre2\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
-"PO-Revision-Date: 1998-07-16 21:00+0100\n"
+"POT-Creation-Date: 1998-11-23 01:14+0100\n"
+"PO-Revision-Date: 1998-12-02 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,14 +15,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: attraction.cpp:716
-#, fuzzy
 msgid "Attraction"
-msgstr "Kontraho"
+msgstr "Altirfortoj"
 
 #: attraction.cpp:803
-#, fuzzy
 msgid "Setup KAttraction"
-msgstr "Konfiguri Vesperton"
+msgstr "Konfiguri Altirfortojn"
 
 #: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
@@ -34,7 +32,7 @@ msgstr "Modo:"
 
 #: attraction.cpp:834 slidescreen.cpp:498
 msgid "Balls"
-msgstr ""
+msgstr "Diskoj"
 
 #: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
@@ -46,19 +44,22 @@ msgstr "Poligonoj"
 
 #: attraction.cpp:837 slidescreen.cpp:501
 msgid "Tails"
-msgstr ""
+msgstr "Vostoj"
 
 #: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
-msgstr ""
+msgstr "Lumante"
+
+#: attraction.cpp:869 attraction.cpp:956 slidescreen.cpp:534
+#: slidescreen.cpp:563
+msgid "Ok"
+msgstr "Konfirmu"
 
 #: attraction.cpp:951
-#, fuzzy
 msgid "About Attraction"
-msgstr "Kontraho"
+msgstr "Pri Altirfortoj"
 
 #: attraction.cpp:952
-#, fuzzy
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -68,11 +69,11 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Rock versio 3.3\n"
+"Altirfortoj versio 1.0\n"
 "\n"
-"Kopirajto (c) 1992 æe Jamie Zawinski\n"
+"Kopirajto (c) 1992-1997 æe Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Adaptita al kscreensave de Martin Jones."
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> okt. 1998"
 
 #: banner.cpp:62
 msgid "Banner"
@@ -83,13 +84,12 @@ msgid "Setup kbanner"
 msgstr "Konfiguri Standardon"
 
 #: banner.cpp:95
-#, fuzzy
 msgid "Family:"
-msgstr "maløuste"
+msgstr "Familio:"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
-msgstr ""
+msgstr "Grandeco:"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -97,7 +97,7 @@ msgstr "Koloro:"
 
 #: banner.cpp:147
 msgid "Bold"
-msgstr ""
+msgstr "Grasa"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
@@ -266,11 +266,6 @@ msgstr ""
 "Kopirajto (c) 1996 æe Jeremie PETIT\n"
 "\n"
 "Adaptita al kscreensave de Cedric Tefft"
-
-#: bsod.cpp:1192
-#, fuzzy
-msgid "Black Screen of Death"
-msgstr "Nigra Ekrano"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -462,30 +457,31 @@ msgstr ""
 "\n"
 "Adaptita al kscreensave de Emanuel Pirker."
 
-#: main.cpp:384
+#: main.cpp:353
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "Opcio %s ne estas subtenata sur tiu æi sistemo!"
 
-#: main.cpp:422
+#: main.cpp:382
 #, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
 "Your system uses shadow passwords.\n"
 "Please contact your system administrator,\n"
-"tell him, that you need suid for the kcheckpass!"
+"tell him, that you need suid for the screensavers!"
 msgstr ""
-"Via operaciumo uzas ombro-pasvortojn!\n"
-"Bonvolu kontakti vian sistemadministranton.\n"
+"Averto: Vi ne povos þlosi la ekraonon!\n"
 "\n"
-"Diru al li, ke vi bezonas \"suid\" por la ekrananima¼oj!"
+"Via sistemo uzas ombropasvortojn.\n"
+"Bonvolu kontakti vian sistemadministranton,\n"
+"diru al li, ke vi bezonas \"suid\" por la ekrananima¼oj!"
 
-#: main.cpp:427
+#: main.cpp:387
 msgid "Shadow Passwords"
 msgstr "Ombro-pasvortoj"
 
-#: main.cpp:472
+#: main.cpp:432
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -493,17 +489,16 @@ msgid ""
 "\n"
 msgstr ""
 
-#: main.cpp:580
-#, fuzzy, c-format
+#: main.cpp:540
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "uzo: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"       [-corners xxxxx] [-delay num] [-lock] [-nice num]\n"
+"       [-corners xxxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
-#: main.cpp:583
-#, fuzzy
+#: main.cpp:543
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -533,6 +528,7 @@ msgstr ""
 "  -desc             Skribu la priskribon de la ekrananima¼o al 'stdout'\n"
 "  -install          Instalu ekrananima¼on\n"
 "  -lock             Postulu pasvorton por haltigi ekrananima¼on\n"
+"  -allow-root       Akceptu pasvorton de radiko por malþloso\n"
 "  -nice num         Startu kun indikita prioritato\n"
 "\n"
 "  -preview wid      Startu en indikita fenestro\n"
@@ -575,24 +571,20 @@ msgstr ""
 "Adaptita al kscreensave de Emanuel Pirker."
 
 #: pipes.cpp:299
-#, fuzzy
 msgid "Pipes (GL)"
-msgstr "Universo (graf. bibl.)"
+msgstr "Tuboj (graf. bibl.)"
 
 #: pipes.cpp:672
-#, fuzzy
 msgid "Setup KPipes"
-msgstr "Konfiguri Æifonojn"
+msgstr "Konfiguri Tubojn"
 
 #: pipes.cpp:678
-#, fuzzy
 msgid "Number of Pipes"
-msgstr "Abelnombro:"
+msgstr "Tubnombro"
 
 #: pipes.cpp:743
-#, fuzzy
 msgid "About KPipes"
-msgstr "Pri Linioj"
+msgstr "Pri Tuboj"
 
 #: pipes.cpp:745
 msgid ""
@@ -600,6 +592,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
+"KPipes\n"
+"Kopirajto (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
 
 #: polygon.cpp:85
 msgid "Setup kpolygon"
@@ -664,9 +659,8 @@ msgid "Setup krock"
 msgstr "Konfiguri Asteroidojn"
 
 #: rock.cpp:589
-#, fuzzy
 msgid "Move"
-msgstr "Modo:"
+msgstr "Movu"
 
 #: rock.cpp:595
 msgid "Rotate"
@@ -690,11 +684,11 @@ msgstr ""
 "\n"
 "Adaptita al kscreensave de Martin Jones."
 
-#: saver.cpp:60 saver.cpp:191
+#: saver.cpp:60 saver.cpp:180
 msgid "Enter Password"
 msgstr "Tajpu pasvorton"
 
-#: saver.cpp:121
+#: saver.cpp:118
 msgid "Failed"
 msgstr "maløuste"
 
@@ -771,22 +765,18 @@ msgid "About Science"
 msgstr "Pri Scienco"
 
 #: slidescreen.cpp:419
-#, fuzzy
 msgid "SlideScreen"
-msgstr "Nigra Ekrano"
+msgstr "Puzleroj"
 
 #: slidescreen.cpp:465
-#, fuzzy
 msgid "Setup KSlideScreen"
-msgstr "Konfiguri Sciencon"
+msgstr "Konfiguri Puzlerojn"
 
 #: slidescreen.cpp:558
-#, fuzzy
 msgid "About SlideScreen"
-msgstr "Pri Scienco"
+msgstr "Pri Puzleroj"
 
 #: slidescreen.cpp:559
-#, fuzzy
 msgid ""
 "SlideScreen Version 1.1\n"
 "\n"
@@ -796,11 +786,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Rock versio 3.3\n"
+"SlideScreen versio 1.1\n"
 "\n"
-"Kopirajto (c) 1992 æe Jamie Zawinski\n"
+"Kopirajto (c) 1992-1997 æe Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Adaptita al kscreensave de Martin Jones."
+"Adaptita al kscreensaver de:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> okt 1998"
 
 #: slip.cpp:293
 msgid "Slip"
