@@ -98,8 +98,7 @@ set_fixed( QWidget* w)
 }
 
 KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0) 
-  : QDialog( parent, t, false, 
-	     WStyle_Customize | WStyle_NoBorder | WStyle_Tool)
+  : QWidget( parent, t, WStyle_Customize | WStyle_NoBorder | WStyle_Tool)
 {
      QFrame* winFrame = new QFrame( this);
      winFrame->setFrameStyle(QFrame::WinPanel| QFrame::Raised);

@@ -44,7 +44,8 @@ typedef unsigned int    UINT32;                 // 32 bit unsigned
 #include "kdmshutdown.h"
 #include "kdmconfig.h"
 
-class KGreeter : public QDialog {
+//class KGreeter : public QDialog {
+class KGreeter : public QWidget {
      Q_OBJECT
 public:
      KGreeter(QWidget *parent, const char *t);
