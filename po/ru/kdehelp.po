@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.0\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-01-06 01:13+0100\n"
 "PO-Revision-Date: 1998-12-10 02:21+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -24,45 +24,45 @@ msgid "Open URL"
 msgstr "Открываю URL"
 
 #
-#: helpwin.cpp:456 info.cpp:285
+#: helpwin.cpp:459 info.cpp:285
 msgid "Cannot open: "
 msgstr "Невозможно открыть: "
 
 #
-#: helpwin.cpp:457 helpwin.cpp:466
+#: helpwin.cpp:460 helpwin.cpp:469
 msgid "Oops!"
 msgstr "Оопс!"
 
 #
-#: helpwin.cpp:465
+#: helpwin.cpp:468
 msgid "Unknown format: "
 msgstr "Неизвестный формат: "
 
-#: helpwin.cpp:1107
+#: helpwin.cpp:1110
 msgid "Find Complete"
 msgstr "Поиск закончен"
 
-#: helpwin.cpp:1108
+#: helpwin.cpp:1111
 msgid "Continue search from the top of the page?"
 msgstr "Продолжить поиск с начала страницы?"
 
 #
-#: helpwin.cpp:1325
+#: helpwin.cpp:1328
 msgid "Forward"
 msgstr "Вперед"
 
 #
-#: helpwin.cpp:1346
+#: helpwin.cpp:1349
 msgid "Open this Link"
 msgstr "Открыть ссылку"
 
 #
-#: helpwin.cpp:1347
+#: helpwin.cpp:1350
 msgid "Add Bookmark"
 msgstr "Добавить закладку"
 
 #
-#: helpwin.cpp:1348
+#: helpwin.cpp:1351
 msgid "Open in new Window"
 msgstr "Открыть новое окно"
 
@@ -142,13 +142,17 @@ msgstr "Цвет пройденных ссылок:"
 msgid "Underline links"
 msgstr "Подчеркивать ссылки"
 
+#: options.cpp:246
+msgid "Always use my colors"
+msgstr ""
+
 #
-#: options.cpp:317
+#: options.cpp:334
 msgid "KDE Help Options"
 msgstr "Опции KDE Help"
 
 #
-#: options.cpp:330 options.cpp:331
+#: options.cpp:347 options.cpp:348
 msgid "Colors"
 msgstr "Цвета"
 

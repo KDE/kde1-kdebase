@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.6\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-01-06 01:13+0100\n"
 "PO-Revision-Date: 1998-12-23 14:01 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -21,39 +21,39 @@ msgstr "KDE nápovìda: Otevøi URL"
 msgid "Open URL"
 msgstr "Otevøi URL"
 
-#: helpwin.cpp:456 info.cpp:285
+#: helpwin.cpp:459 info.cpp:285
 msgid "Cannot open: "
 msgstr "Nemohu otevøít: "
 
-#: helpwin.cpp:457 helpwin.cpp:466
+#: helpwin.cpp:460 helpwin.cpp:469
 msgid "Oops!"
 msgstr "Oops!"
 
-#: helpwin.cpp:465
+#: helpwin.cpp:468
 msgid "Unknown format: "
 msgstr "Neznámý formát: "
 
-#: helpwin.cpp:1107
+#: helpwin.cpp:1110
 msgid "Find Complete"
 msgstr "Hledání dokonèeno"
 
-#: helpwin.cpp:1108
+#: helpwin.cpp:1111
 msgid "Continue search from the top of the page?"
 msgstr "Pokraèovat s hledáním od zaèátku strany?"
 
-#: helpwin.cpp:1325
+#: helpwin.cpp:1328
 msgid "Forward"
 msgstr "Vpøed"
 
-#: helpwin.cpp:1346
+#: helpwin.cpp:1349
 msgid "Open this Link"
 msgstr "Otevøi tento odkaz"
 
-#: helpwin.cpp:1347
+#: helpwin.cpp:1350
 msgid "Add Bookmark"
 msgstr "Pøidej zálo¾ku"
 
-#: helpwin.cpp:1348
+#: helpwin.cpp:1351
 msgid "Open in new Window"
 msgstr "Otevøi v novém oknì"
 
@@ -119,11 +119,15 @@ msgstr "Barva pou¾itého odkazu:"
 msgid "Underline links"
 msgstr "Podtrhávat odkazy"
 
-#: options.cpp:317
+#: options.cpp:246
+msgid "Always use my colors"
+msgstr ""
+
+#: options.cpp:334
 msgid "KDE Help Options"
 msgstr "Nastavení KDE nápovìdy"
 
-#: options.cpp:330 options.cpp:331
+#: options.cpp:347 options.cpp:348
 msgid "Colors"
 msgstr "Barvy"
 

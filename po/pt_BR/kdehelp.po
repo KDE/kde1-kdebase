@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-01-06 01:13+0100\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
@@ -13,39 +13,39 @@ msgstr "KDE Help: Abrir URL"
 msgid "Open URL"
 msgstr "Abrir URL"
 
-#: helpwin.cpp:456 info.cpp:285
+#: helpwin.cpp:459 info.cpp:285
 msgid "Cannot open: "
 msgstr "Não é possível abrir: "
 
-#: helpwin.cpp:457 helpwin.cpp:466
+#: helpwin.cpp:460 helpwin.cpp:469
 msgid "Oops!"
 msgstr "Ooops!"
 
-#: helpwin.cpp:465
+#: helpwin.cpp:468
 msgid "Unknown format: "
 msgstr "Formato desconhecido: "
 
-#: helpwin.cpp:1107
+#: helpwin.cpp:1110
 msgid "Find Complete"
 msgstr "Encontrar Completo"
 
-#: helpwin.cpp:1108
+#: helpwin.cpp:1111
 msgid "Continue search from the top of the page?"
 msgstr "Continuar busca do topo da página ?"
 
-#: helpwin.cpp:1325
+#: helpwin.cpp:1328
 msgid "Forward"
 msgstr "Adiante"
 
-#: helpwin.cpp:1346
+#: helpwin.cpp:1349
 msgid "Open this Link"
 msgstr "Abrir este Link"
 
-#: helpwin.cpp:1347
+#: helpwin.cpp:1350
 msgid "Add Bookmark"
 msgstr "Adicionar Favorito"
 
-#: helpwin.cpp:1348
+#: helpwin.cpp:1351
 msgid "Open in new Window"
 msgstr "Abrir numa nova Janela"
 
@@ -111,11 +111,15 @@ msgstr "Cor do Link Visitado:"
 msgid "Underline links"
 msgstr "Sublinhar links"
 
-#: options.cpp:317
+#: options.cpp:246
+msgid "Always use my colors"
+msgstr ""
+
+#: options.cpp:334
 msgid "KDE Help Options"
 msgstr "Opções da Ajuda do KDE"
 
-#: options.cpp:330 options.cpp:331
+#: options.cpp:347 options.cpp:348
 msgid "Colors"
 msgstr "Cores"
 

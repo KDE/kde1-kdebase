@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-01-06 01:13+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -14,40 +14,40 @@ msgstr "KDE 帮助: 打开 URL"
 msgid "Open URL"
 msgstr "打开 URL"
 
-#: helpwin.cpp:456 info.cpp:285
+#: helpwin.cpp:459 info.cpp:285
 msgid "Cannot open: "
 msgstr "无法打开: "
 
-#: helpwin.cpp:457 helpwin.cpp:466
+#: helpwin.cpp:460 helpwin.cpp:469
 msgid "Oops!"
 msgstr "错误!"
 
-#: helpwin.cpp:465
+#: helpwin.cpp:468
 msgid "Unknown format: "
 msgstr "未知的格式: "
 
-#: helpwin.cpp:1107
+#: helpwin.cpp:1110
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1108
+#: helpwin.cpp:1111
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1325
+#: helpwin.cpp:1328
 #, fuzzy
 msgid "Forward"
 msgstr "向前[&F]"
 
-#: helpwin.cpp:1346
+#: helpwin.cpp:1349
 msgid "Open this Link"
 msgstr "打开这个链接"
 
-#: helpwin.cpp:1347
+#: helpwin.cpp:1350
 msgid "Add Bookmark"
 msgstr "加入书签"
 
-#: helpwin.cpp:1348
+#: helpwin.cpp:1351
 msgid "Open in new Window"
 msgstr "在新窗口中打开"
 
@@ -113,11 +113,15 @@ msgstr "访问过的链接颜色:"
 msgid "Underline links"
 msgstr ""
 
-#: options.cpp:317
+#: options.cpp:246
+msgid "Always use my colors"
+msgstr ""
+
+#: options.cpp:334
 msgid "KDE Help Options"
 msgstr "KDE 帮助选项"
 
-#: options.cpp:330 options.cpp:331
+#: options.cpp:347 options.cpp:348
 msgid "Colors"
 msgstr "颜色"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kdehelp\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-01-06 01:13+0100\n"
 "PO-Revision-Date:1998-03-16 HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -21,39 +21,39 @@ msgstr "KDE hjelp: Åpen URL"
 msgid "Open URL"
 msgstr "Åpen URL"
 
-#: helpwin.cpp:456 info.cpp:285
+#: helpwin.cpp:459 info.cpp:285
 msgid "Cannot open: "
 msgstr "Kan ikke åpne: "
 
-#: helpwin.cpp:457 helpwin.cpp:466
+#: helpwin.cpp:460 helpwin.cpp:469
 msgid "Oops!"
 msgstr "Ops!"
 
-#: helpwin.cpp:465
+#: helpwin.cpp:468
 msgid "Unknown format: "
 msgstr "Ukjent format: "
 
-#: helpwin.cpp:1107
+#: helpwin.cpp:1110
 msgid "Find Complete"
 msgstr "Finn fullført"
 
-#: helpwin.cpp:1108
+#: helpwin.cpp:1111
 msgid "Continue search from the top of the page?"
 msgstr "Fortsett søk fra toppen av siden?"
 
-#: helpwin.cpp:1325
+#: helpwin.cpp:1328
 msgid "Forward"
 msgstr "Fremover"
 
-#: helpwin.cpp:1346
+#: helpwin.cpp:1349
 msgid "Open this Link"
 msgstr "Åpne denne linken"
 
-#: helpwin.cpp:1347
+#: helpwin.cpp:1350
 msgid "Add Bookmark"
 msgstr "Legg til bokmerke"
 
-#: helpwin.cpp:1348
+#: helpwin.cpp:1351
 msgid "Open in new Window"
 msgstr "Åpne i nytt vindu"
 
@@ -119,11 +119,15 @@ msgstr "Farge på fulgte lenker:"
 msgid "Underline links"
 msgstr "Understrek lenker"
 
-#: options.cpp:317
+#: options.cpp:246
+msgid "Always use my colors"
+msgstr ""
+
+#: options.cpp:334
 msgid "KDE Help Options"
 msgstr "KDE Hjelp-valg"
 
-#: options.cpp:330 options.cpp:331
+#: options.cpp:347 options.cpp:348
 msgid "Colors"
 msgstr "Farger"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-01-06 01:13+0100\n"
 "PO-Revision-Date: 1998-09-24 18:27+0100\n"
 "Last-Translator: luka steger <luka.steger@siol.net>\n"
 "Language-Team: Slovenian\n"
@@ -25,46 +25,46 @@ msgid "Open URL"
 msgstr "Odpri URL"
 
 # helpwin.cpp:454 info.cpp:274
-#: helpwin.cpp:456 info.cpp:285
+#: helpwin.cpp:459 info.cpp:285
 msgid "Cannot open: "
 msgstr "Ne morem odpreti: "
 
 # helpwin.cpp:455 helpwin.cpp:464
-#: helpwin.cpp:457 helpwin.cpp:466
+#: helpwin.cpp:460 helpwin.cpp:469
 msgid "Oops!"
 msgstr "Ups!"
 
 # helpwin.cpp:463
-#: helpwin.cpp:465
+#: helpwin.cpp:468
 msgid "Unknown format: "
 msgstr "Neznana oblika: "
 
-#: helpwin.cpp:1107
+#: helpwin.cpp:1110
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1108
+#: helpwin.cpp:1111
 msgid "Continue search from the top of the page?"
 msgstr ""
 
 # mainwidget.cpp:153
-#: helpwin.cpp:1325
+#: helpwin.cpp:1328
 #, fuzzy
 msgid "Forward"
 msgstr "Nap&rej"
 
 # helpwin.cpp:1322
-#: helpwin.cpp:1346
+#: helpwin.cpp:1349
 msgid "Open this Link"
 msgstr "Odpri to povezavo"
 
 # helpwin.cpp:1323
-#: helpwin.cpp:1347
+#: helpwin.cpp:1350
 msgid "Add Bookmark"
 msgstr "Dodaj v kazalo"
 
 # helpwin.cpp:1324
-#: helpwin.cpp:1348
+#: helpwin.cpp:1351
 msgid "Open in new Window"
 msgstr "Odpri v novem oknu"
 
@@ -141,13 +141,17 @@ msgstr "Barva obiskanih URL povezav:"
 msgid "Underline links"
 msgstr ""
 
+#: options.cpp:246
+msgid "Always use my colors"
+msgstr ""
+
 # options.cpp:303
-#: options.cpp:317
+#: options.cpp:334
 msgid "KDE Help Options"
 msgstr "Nastavitve KDE pomoèi"
 
 # options.cpp:316 options.cpp:317
-#: options.cpp:330 options.cpp:331
+#: options.cpp:347 options.cpp:348
 msgid "Colors"
 msgstr "Barve"
 

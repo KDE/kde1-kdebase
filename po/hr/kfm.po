@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KFM\n"
-"POT-Creation-Date: 1999-01-05 01:13+0100\n"
+"POT-Creation-Date: 1999-01-06 01:13+0100\n"
 "PO-Revision-Date: 1998-11-23 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -265,10 +265,10 @@ msgstr "Nisam mogao naæi ikonu\n"
 #: kfmserver.cpp:45 kfmserver.cpp:218 kfmserver.cpp:298 kfmserver.cpp:313
 #: kfmserver.cpp:360 kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:341
 #: kfmtree.cpp:468 kfmtree.cpp:499 kfmtree.cpp:505 kfmtree.cpp:511
-#: kfmview.cpp:438 kfmview.cpp:588 kfmview.cpp:607 kfmview.cpp:676
-#: kfmview.cpp:682 kfmview.cpp:688 kfmview.cpp:794 kfmview.cpp:798
-#: kfmview.cpp:837 kfmview.cpp:863 kfmview.cpp:884 kfmview.cpp:892
-#: kfmview.cpp:900 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
+#: kfmview.cpp:441 kfmview.cpp:591 kfmview.cpp:610 kfmview.cpp:679
+#: kfmview.cpp:685 kfmview.cpp:691 kfmview.cpp:797 kfmview.cpp:801
+#: kfmview.cpp:840 kfmview.cpp:866 kfmview.cpp:887 kfmview.cpp:895
+#: kfmview.cpp:903 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
 #: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:332 kiojob.cpp:351 kiojob.cpp:561
 #: kiojob.cpp:801 kiojob.cpp:832 kiojob.cpp:873 kiojob.cpp:1331
 #: kiojob.cpp:1339 kiojob.cpp:1567 krenamewin.cpp:120 popup.cpp:102
@@ -330,7 +330,7 @@ msgid "&Home"
 msgstr "Poèetak"
 
 #: kfmgui.cpp:1163 kfmgui.cpp:1322 kfmjob.cpp:36 kfmman.cpp:244
-#: kfmtree.cpp:500 kfmview.cpp:608 kfmview.cpp:677 kfmview.cpp:885
+#: kfmtree.cpp:500 kfmview.cpp:611 kfmview.cpp:680 kfmview.cpp:888
 #: kiojob.cpp:87 root.cpp:1223
 msgid "ERROR: Malformed URL"
 msgstr "GRE©KA: Neispravan URL"
@@ -355,20 +355,20 @@ msgstr ""
 msgid "Document: Done"
 msgstr "Dokument: Gotov"
 
-#: kfmview.cpp:439 root.cpp:944
+#: kfmview.cpp:442 root.cpp:944
 msgid "ERROR: You may only drop URLs"
 msgstr "GRE©KA: Mo¾ete samo ispustiti URLove"
 
-#: kfmview.cpp:589
+#: kfmview.cpp:592
 msgid "ERROR: Drop over malformed URL"
 msgstr "GRE©KA: Ispu¹teno na neispravan URL"
 
-#: kfmserver.cpp:133 kfmtree.cpp:538 kfmview.cpp:648 kfmview.cpp:928
+#: kfmserver.cpp:133 kfmtree.cpp:538 kfmview.cpp:651 kfmview.cpp:931
 #: krenamewin.cpp:20 root.cpp:1266
 msgid "KFM Warning"
 msgstr "KFM Upozorenje"
 
-#: kfmtree.cpp:539 kfmview.cpp:649 kfmview.cpp:929 root.cpp:1267
+#: kfmtree.cpp:539 kfmview.cpp:652 kfmview.cpp:932 root.cpp:1267
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -378,23 +378,23 @@ msgstr ""
 "\n"
 "Ne postoji naèin da ih zatim vratite."
 
-#: kfmtree.cpp:506 kfmview.cpp:683 kfmview.cpp:893 root.cpp:1229
+#: kfmtree.cpp:506 kfmview.cpp:686 kfmview.cpp:896 root.cpp:1229
 msgid "ERROR: You dropped a URL over itself"
 msgstr "GRE©KA: Ispustili ste URL na njega samog"
 
-#: kfmtree.cpp:512 kfmview.cpp:689 kfmview.cpp:901 root.cpp:1235
+#: kfmtree.cpp:512 kfmview.cpp:692 kfmview.cpp:904 root.cpp:1235
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "GRE©KA: Ispustili ste direktorij na jedan od njegovih podirektorija"
 
-#: kfmexec.cpp:286 kfmman.cpp:1180 kfmview.cpp:705
+#: kfmexec.cpp:286 kfmman.cpp:1180 kfmview.cpp:708
 msgid "Open With:"
 msgstr "Otvori s:"
 
-#: kfmview.cpp:736 root.cpp:1166
+#: kfmview.cpp:739 root.cpp:1166
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "GRE©KA: Ne mogu otvoriti vrijednosti za vi¹estruke datoteke"
 
-#: kfmview.cpp:795
+#: kfmview.cpp:798
 msgid ""
 "Can not save properties because\n"
 "this directory is neither writable nor bookmarked.\n"
@@ -402,7 +402,7 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmview.cpp:799
+#: kfmview.cpp:802
 msgid ""
 "Can not save properties because\n"
 "this URL is neither bookmarked nor on desktop.\n"
@@ -410,23 +410,23 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmtree.cpp:469 kfmview.cpp:838 root.cpp:1316
+#: kfmtree.cpp:469 kfmview.cpp:841 root.cpp:1316
 msgid "Could not access Trash Bin"
 msgstr "Ne mogu pristupiti Kanti za Smeæe"
 
-#: kfmview.cpp:864 root.cpp:1205
+#: kfmview.cpp:867 root.cpp:1205
 msgid "Can not paste into multiple directories"
 msgstr "Ne mogu umetnuti u vi¹estruke direktorije"
 
-#: kfmview.cpp:961
+#: kfmview.cpp:964
 msgid "ERROR: Can not change to multiple directories"
 msgstr "GRE©KA: Ne mogu otiæi u vi¹estruke direktorije"
 
-#: kfmview.cpp:1227
+#: kfmview.cpp:1230
 msgid "KFM Security Alert"
 msgstr "KFM Sigurnosno Upozorenje"
 
-#: kfmview.cpp:1228
+#: kfmview.cpp:1231
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -434,16 +434,16 @@ msgstr ""
 "Ova stranica nije provjerena\n"
 "meðjutim sadr¾i vezu na va¹ lokalni datoteèni sustav."
 
-#: kfmview.cpp:1332
+#: kfmview.cpp:1335
 msgid "Symbolic Link"
 msgstr "Dvojnik"
 
-#: kfmview.cpp:1334
+#: kfmview.cpp:1337
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (dvojnik)"
 
-#: kfmview.cpp:1354
+#: kfmview.cpp:1357
 msgid "bytes"
 msgstr "bajtova"
 
