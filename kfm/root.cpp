@@ -1006,10 +1006,10 @@ void KRootWidget::slotPopupDelete()
 {
     KIOJob * job = new KIOJob;
  
-    bool ok = QMessageBox::warning( 0, klocale->translate("KFM Warning"), 
+    bool ok = !QMessageBox::warning( 0, klocale->translate("KFM Warning"), 
 				  klocale->translate("Do you really want to delete the selected file(s)?\n\nThere is no way to restore them."), 
-				  klocale->translate("No"), 
-				  klocale->translate("Yes") );
+				  klocale->translate("Yes"), 
+				  klocale->translate("No") );
     
     if ( ok )
 	job->del( popupFiles );

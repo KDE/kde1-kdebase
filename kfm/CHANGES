@@ -67,3 +67,16 @@
  - You can enter directories in minicli now and KFM will open it
  - if untrusted pages ( http etc. ) contain links to the local file system,
    then a warning is displayed and the action is rejected.
+
+
+15/12/97 David McCanney
+
+A few small changes to kfm
+
+ - Changed 'exit.xpm' to 'stop.xpm' in the menubar.  This was confusing some people
+   (like me...)
+ - Changed Help->Help... to Help->Help
+ - Altered the Quit and Delete dialogs so the buttons go [Yes] [No] rather than
+
+   [No] [Yes]  Everyone can stop moaning now :-p
+

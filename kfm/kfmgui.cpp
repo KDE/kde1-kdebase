@@ -303,12 +303,12 @@ void KfmGui::initMenu()
     file->insertItem( klocale->translate("&New Window"), 
 		      this, SLOT(slotNewWindow()) );
     file->insertSeparator();
-    file->insertItem( klocale->translate("&Run"), 
+    file->insertItem( klocale->translate("&Run..."), 
 		      this, SLOT(slotRun()) );
     file->insertItem( klocale->translate("Open &Terminal"), 
 		      this, SLOT(slotTerminal()), CTRL+Key_T );
     file->insertSeparator();
-    file->insertItem( klocale->translate("&Open Location"),
+    file->insertItem( klocale->translate("&Open Location..."),
 		      this, SLOT(slotOpenLocation()), CTRL+Key_L );
     file->insertSeparator();
     file->insertItem( klocale->translate("&Print..."), 
@@ -316,7 +316,7 @@ void KfmGui::initMenu()
     file->insertSeparator();        
     file->insertItem( klocale->translate("&Close"), 
 		      this, SLOT(slotClose()), CTRL+Key_W );
-    file->insertItem( klocale->translate("&Quit"),  
+    file->insertItem( klocale->translate("&Quit..."),  
 		      this, SLOT(slotQuit()), CTRL+Key_Q );
 
     QPopupMenu *edit = new QPopupMenu;
@@ -416,7 +416,7 @@ void KfmGui::initMenu()
     moptions->insertSeparator();
     moptions->insertItem( klocale->translate("Sa&ve Settings"),
 			  this, SLOT(slotSaveSettings()) );
-	moptions->insertItem( klocale->translate("Configure Browser"),
+	moptions->insertItem( klocale->translate("Configure Browser..."),
 						  this, SLOT(slotConfigureBrowser()));
 
     moptions->setItemChecked( moptions->idAt( 0 ), showMenubar );
@@ -458,7 +458,7 @@ void KfmGui::initMenu()
     QPopupMenu *help = new QPopupMenu;
     CHECK_PTR( help );
     // help->insertItem( "About &Qt...", this, SLOT(slotAboutQt()) );
-    help->insertItem( klocale->translate("&Help..."), 
+    help->insertItem( klocale->translate("&Help"), 
 		      this, SLOT(slotHelp()) );
     help->insertSeparator();
     help->insertItem( klocale->translate("&About..."), this, SLOT(slotAbout()) );
@@ -540,7 +540,7 @@ void KfmGui::initToolBar()
     
     toolbarButtons->insertSeparator();
     
-    pixmap.load(path + "exit.xpm");
+    pixmap.load(path + "stop.xpm");
     toolbarButtons->insertButton(pixmap, 7, SIGNAL( clicked() ), this, 
 			  SLOT( slotStop() ), false, 
 			  klocale->translate("Stop"));
@@ -1143,10 +1143,10 @@ void KfmGui::slotOpenLocation( )
 
 void KfmGui::slotQuit()
 {
-    if ( !QMessageBox::warning( 0, klocale->translate("KFM Confirm"), 
-			      klocale->translate("Do you really want to quit?"),
-			      klocale->translate("No"),
-			      klocale->translate("Yes") ) )
+    if ( QMessageBox::warning( 0, klocale->translate("KFM Confirm"), 
+			      klocale->translate("Do you really want to quit?\nImportant desktop functionality will be lost"),
+			      klocale->translate("Yes"),
+			      klocale->translate("No") ) )
 	return;
     
     QString file = QDir::homeDirPath();

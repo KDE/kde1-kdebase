@@ -308,10 +308,10 @@ void KfmView::slotDelete()
     view->getSelected( marked );
 
     KIOJob * job = new KIOJob;
-    bool ok = QMessageBox::information( this, klocale->translate("KFM Warning"), 
+    bool ok = !QMessageBox::information( this, klocale->translate("KFM Warning"), 
 				   klocale->translate("Do you really want to delete the selected file(s)?\n\nThere is no way to restore them."), 
-				    klocale->translate("No"), 
-				    klocale->translate("Yes") );
+				    klocale->translate("Yes"), 
+				    klocale->translate("No") );
     
     if ( ok )
 	job->del( marked );
@@ -491,10 +491,10 @@ void KfmView::slotPopupTrash()
 void KfmView::slotPopupDelete()
 {
     // Is the user really sure ?
-    bool ok = QMessageBox::warning( 0, klocale->translate("KFM Warning"), 
+    bool ok = !QMessageBox::warning( 0, klocale->translate("KFM Warning"), 
 				  klocale->translate("Do you really want to delete the selected file(s)?\n\nThere is no way to restore them."), 
-				  klocale->translate("No"), 
-				  klocale->translate("Yes") );
+				  klocale->translate("Yes"), 
+				  klocale->translate("No") );
     if ( ok )
     {
 	// Store the decoded URLs here.
