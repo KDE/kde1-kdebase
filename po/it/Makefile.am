@@ -1,12 +1,12 @@
 
 # This has to be set. The rest should be reusable
-GMFILES = kfm.gmo kdisplay.gmo kwm.gmo kfind.gmo kdehelp.gmo \
+GMOFILES = kfm.gmo kdisplay.gmo kwm.gmo kfind.gmo kdehelp.gmo \
 	kdm.gmo kfontmanager.gmo kpanel.gmo kvt.gmo \
 	kcmkpanel.gmo kcontrol.gmo kcmlocale.gmo kcmbell.gmo \
 	kcminfo.gmo kcminput.gmo krootwm.gmo kcmsamba.gmo kcmkwm.gmo \
 	kcmsyssound.gmo kmenuedit.gmo kdmconfig.gmo klock.gmo
 
-POFILES = $(GMFILES:.gmo=.po)
+POFILES = $(GMOFILES:.gmo=.po)
 
 LANG = it
 
@@ -26,11 +26,11 @@ SUFFIXES = .po .gmo
 	file=$(srcdir)/`echo $* | sed 's,.*/,,'`.gmo \
 	&& rm -f $$file && $(GMSGFMT) -o $$file $< 
 
-all-yes: $(GMFILES)
+all-yes: $(GMOFILES)
 all-no:
 
 install-yes: all
-	@catalogs='$(GMFILES)'; \
+	@catalogs='$(GMOFILES)'; \
 	for cat in $$catalogs; do \
 	destdir=$(localedir); \
 	name=`echo $$cat | sed -e 's/\.gmo/\.mo/'` \
@@ -43,7 +43,7 @@ install-yes: all
 install-no:
 
 uninstall-local:
-	@catalogs='$(GMFILES)'; \
+	@catalogs='$(GMOFILES)'; \
 	for cat in $$catalogs; do \
 	destdir=$(localedir); \
 	name=`echo $$cat | sed -e 's/\.gmo/\.mo/'` \
