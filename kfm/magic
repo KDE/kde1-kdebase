@@ -505,6 +505,7 @@
 >>16    leshort         1               application/x-object
 >>16    leshort         2               application/x-executable
 >>16    leshort         3               application/x-sharedlib
+>>16    leshort         4               application/x-coredump
 #
 # DOS
 0		string			MZ				application/x-dosexec
