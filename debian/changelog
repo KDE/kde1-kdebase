@@ -1,3 +1,10 @@
+kdebase (4:1.1.1-19990612-1) unstable; urgency=low
+
+  * New CVS upstream version
+  * kthememgr is now a part of kdebase
+
+ -- Ivan E. Moore II <rkrusty@debian.org>  Sat, 12 Jun 1999 03:30:55 -0400
+
 kdebase (4:1.1.1-19990529-2) unstable; urgency=low
 
   * Fixing some pam stuff which includes a /etc/pam.d/kde file, making
