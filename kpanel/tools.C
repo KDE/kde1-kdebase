@@ -278,7 +278,7 @@ void myTaskButton::setActive(bool value){
 }
 
 
-static void myTaskButton::setNoActive()
+void myTaskButton::setNoActive()
 {
     active = 0;
 }
@@ -342,7 +342,6 @@ void kPanel::init_popup(QPopupMenu* popup){
 //   popup->hide();
 }
 
-
 void kPanel::generateWindowlist(QPopupMenu* p){
   Window *w;
   int i = 0;
@@ -368,8 +367,9 @@ void kPanel::generateWindowlist(QPopupMenu* p){
 	    ||
 	    (d == cd && KWM::isSticky(callbacklist[i]))
 	    ){
-	  p->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
-			QString("   ")+KWM::titleWithState(callbacklist[i]),i);
+	    QPixmap pm = KWM::miniIcon(callbacklist[i], 16, 16);
+	    p->insertItem(pm.isNull()?defaultPixmap:pm,
+			  QString("   ")+KWM::titleWithState(callbacklist[i]),i);
 	  if (callbacklist[i] == active_window)
 	    p->setItemChecked(i, true);
 	}
@@ -387,10 +387,11 @@ void kPanel::generateWindowlist(QPopupMenu* p){
 	  ||
 	  (d == cd && KWM::isSticky(callbacklist[i]))
 	  ){
-	p->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
-		      KWM::titleWithState(callbacklist[i]),i);
-	if (callbacklist[i] == active_window)
-	  p->setItemChecked(i, true);
+	    QPixmap pm = KWM::miniIcon(callbacklist[i], 16, 16);
+	    p->insertItem(pm.isNull()?defaultPixmap:pm,
+			  KWM::titleWithState(callbacklist[i]),i);
+	    if (callbacklist[i] == active_window)
+		p->setItemChecked(i, true);
       }
     }
   }
@@ -617,7 +618,7 @@ void kPanel::set_label_date(){
   time_t curtime;
 
   curtime=time(0);
-  
+
   if( clockBeats )
     loctime=gmtime(&curtime);
   else
@@ -627,15 +628,15 @@ void kPanel::set_label_date(){
 
   if (clockBeats) {
     long iTime = (((loctime->tm_hour*3600 + loctime->tm_min*60 + loctime->tm_sec)+3600)*1000)/86400;
-    
+
     if( iTime >= 1000 )
       iTime -= 1000;
     else if( iTime < 0 )
       iTime += 1000;
-  
+
     sprintf(timeline,"@%.3d", (int)iTime );
   }
-  else if( clockAmPm ) 
+  else if( clockAmPm )
     strftime(timeline,256,"%I:%M%p",loctime);
   else
     strftime(timeline,256,"%H:%M",loctime);

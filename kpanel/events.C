@@ -116,7 +116,6 @@ void kPanel::kwmInit(){
 
 
 void kPanel::windowAdd(Window w){
-  static QPixmap* defaultpm = 0;
 
   {
     // ignore transient windows
@@ -139,16 +138,11 @@ void kPanel::windowAdd(Window w){
     id++;
   taskbar->insert(b, id);
 
-  if (!defaultpm){
-    defaultpm = new QPixmap;
-    *defaultpm = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon("mini-default.xpm", 16, 16);
-  }
-
   QPixmap pm = KWM::miniIcon(w, 16, 16);
   if (!pm.isNull())
     b->setPixmap(pm);
   else
-     b->setPixmap(*defaultpm);
+     b->setPixmap(defaultPixmap);
 
   QString t = KWM::titleWithState(w);
   b->setText(t);

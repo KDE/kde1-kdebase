@@ -59,7 +59,9 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     position = bottom_right;
 
     currentDesktop = KWM::currentDesktop();
-
+ 
+    defaultPixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon("mini-default.xpm", 16, 16);
+ 
 
     box_width = 47;
     box_height = 47;

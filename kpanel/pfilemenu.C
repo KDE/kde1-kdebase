@@ -255,7 +255,7 @@ PFileMenu::~PFileMenu()
 
 void PFileMenu::calculateMaxEntriesOnScreen(PMenuItem* menu)
 {
-  PFileMenu::maxEntriesOnScreen = menu->cmenu->maxEntriesOnScreen() -2;
+  PFileMenu::maxEntriesOnScreen = menu->cmenu->maxEntriesOnScreen() -3;
   PFileMenu::entryHeight = menu->cmenu->entryHeight();
 }
 

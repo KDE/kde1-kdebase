@@ -355,7 +355,7 @@ private:
 
   bool clockAmPm;
   bool clockBeats;
-   
+
   int hide_show_animation;
 
   // tools
@@ -473,6 +473,8 @@ private:
   QStrList swallowed_applications;
 
   QRect taskbar_frame_geometry;
+
+  QPixmap defaultPixmap;
 
 };
 
