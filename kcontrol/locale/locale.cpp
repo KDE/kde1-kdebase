@@ -32,36 +32,57 @@
 
 #include "locale.h"
 #include "locale.moc"
-
+#include <qlayout.h>
 
 KLocaleConfig::KLocaleConfig(QWidget *parent, const char *name)
   : KConfigWidget (parent, name)
 {
+  QVBoxLayout *tl = new QVBoxLayout(this, 10, 10);
+  QGridLayout *tl1 = new QGridLayout(5, 4, 5);
+  tl->addLayout(tl1);
+  tl->addStretch(1);
+
   gbox = new QGroupBox(klocale->translate("Language"), this);
-  gbox->setGeometry(16,16,432,116);
+  tl1->addMultiCellWidget(gbox, 0, 4, 0, 3);
+  tl1->addRowSpacing(0, 10);
+  tl1->addRowSpacing(4, 15);
+  tl1->addColSpacing(0, 10);
+  tl1->addColSpacing(3, 10);
+  tl1->setColStretch(2, 1);
 
   changedFlag = FALSE;
  
   QLabel *label = new QLabel(klocale->translate("First"), gbox);
-  label->adjustSize(); label->move(14,22);
+  label->setMinimumSize(label->sizeHint());
   combo1 = new KLanguageCombo(gbox);
-  combo1->setGeometry(94,18,300,24);
+  combo1->setMinimumWidth(combo1->sizeHint().width());
+  combo1->setFixedHeight(combo1->sizeHint().height());
   label->setBuddy(combo1);
   connect(combo1,SIGNAL(highlighted(int)),this,SLOT(changed(int)));
+  tl1->addWidget(label, 1, 1);
+  tl1->addWidget(combo1, 1, 2);
 
   label = new QLabel(klocale->translate("Second"), gbox);
-  label->adjustSize(); label->move(14,52);
+  label->setMinimumSize(label->sizeHint());
   combo2 = new KLanguageCombo(gbox);
-  combo2->setGeometry(94,48,300,24);
+  combo2->setMinimumWidth(combo2->sizeHint().width());
+  combo2->setFixedHeight(combo2->sizeHint().height());
   label->setBuddy(combo2);
   connect(combo2,SIGNAL(highlighted(int)),this,SLOT(changed(int)));
+  tl1->addWidget(label, 2, 1);
+  tl1->addWidget(combo2, 2, 2);
 
   label = new QLabel(klocale->translate("Third"), gbox);
-  label->adjustSize(); label->move(14,82);
+  label->setMinimumSize(label->sizeHint());
   combo3 = new KLanguageCombo(gbox);
-  combo3->setGeometry(94,78,300,24);
+  combo3->setMinimumWidth(combo3->sizeHint().width());
+  combo3->setFixedHeight(combo3->sizeHint().height());
   label->setBuddy(combo3);
   connect(combo3,SIGNAL(highlighted(int)),this,SLOT(changed(int)));
+  tl1->addWidget(label, 3, 1);
+  tl1->addWidget(combo3, 3, 2);
+
+  tl->activate();
 
   loadSettings();
 }
@@ -78,7 +99,7 @@ void KLocaleConfig::loadLanguageList(KLanguageCombo *combo)
   QString name;
 
   combo->clear();
-  languages.clear();
+  languages.clear();  
   tags.clear();
 
   config->setGroup("KCM Locale");

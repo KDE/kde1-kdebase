@@ -24,6 +24,7 @@
 
 #include <qpainter.h>
 #include <qpixmap.h>
+#include <qbitmap.h>
 #include <kiconloader.h>
 #include <kapp.h>
 #include <klocale.h>
@@ -63,7 +64,7 @@ void KLanguageCombo::insertLanguage(const char *lang)
   if (!flag.isNull())
     p.drawPixmap(1,1,flag);
   p.end();
- 
+
   insertItem(pm);
 }
 
