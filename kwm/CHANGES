@@ -14,6 +14,7 @@ In 0.13:
 --------
 patchlevel 5:
         - animation of shaded windows improved
+         - "restart" command in addition to "go:" and "configure"
 
 patchlevel 4:
         - improved handling for floating menubars

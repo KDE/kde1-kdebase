@@ -529,6 +529,11 @@ void Manager::clientMessage(XEvent*  ev){
       for (t = clients_sorted.first(); t; t=clients_sorted.next())
 	t->reconfigure();
     }
+    else if (com == "restart"){
+	XSync(qt_xdisplay(), false);
+	execlp("kwm", NULL);
+	exit(1);
+    }
     else if (Client::operationFromCommand(com) > -1){
       if (current())
 	current()->handleOperation(Client::operationFromCommand(com));
@@ -800,16 +805,20 @@ void Manager::propertyNotify(XPropertyEvent *e){
   }
   else if (a == kwm_maximize_window ){
       if (KWM::isDoMaximize(c->window)) {
+	  if (!c->isOnDesktop( current_desktop) )
+	      switchDesktop(c->desktop);
 	  c->maximize(0, false);
 	  KWM::doMaximize(c->window, false);
       }
   }
   else if (a == kwm_win_maximized ){
     if (c->isMaximized() != KWM::isMaximized(c->window)){
-      if (c->isMaximized())
-	c->unMaximize();
-      else
-	c->maximize();
+	if (!c->isOnDesktop( current_desktop) )
+	    switchDesktop(c->desktop);
+	if (c->isMaximized())
+	    c->unMaximize();
+	else
+	    c->maximize();
     }
   }
   else if (a == kwm_win_sticky){
