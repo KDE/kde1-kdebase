@@ -1,0 +1,44 @@
+<!doctype linuxdoc system>
+
+<article>
+
+<!-- Title information -->
+
+<title>KDE Control Center - KFM 
+<author> none so far.
+<date>v0.0. 18 December 1998
+
+<!-- Table of contents -->
+<toc>
+
+<!-- Begin the document -->
+
+<sect> KFM Configuration: Fonts
+<p>
+FIXME: doumentation needed
+
+<sect> KFM Configuration: Color
+<p>
+FIXME: documentation needed
+
+<sect> KFM Configuration: Other
+<p>
+FIXME: documentation needed
+
+<sect> KFM Configuration: Proxy
+<p>
+FIXME: documentation needed
+
+<sect> KFM Configuration: HTTP
+<p>
+FIXME: documentation needed
+
+<sect> KFM Configuration: User Agent
+<p>
+FIXME: documentation needed
+
+<sect> KFM Configuration: Desktop Icons
+<p>
+FIXME: documentation needed
+
+</article>
