@@ -1,3 +1,10 @@
+1999-01-17  Stefan Taferner  <taferner@kde.org> (V0.7.3)
+
+	* Removed automatic stretching of window borders.
+	Reason: kwm crashes if pixmap has no color 'None', and
+	Qt's pixmap saving code does not ensure that one is
+	generated.
+
 1999-01-16  Stefan Taferner  <taferner@kde.org>
 
 	* Fixed syntax error in name of Sounds group.

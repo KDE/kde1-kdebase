@@ -33,6 +33,7 @@
 #include <string.h>
 #include <errno.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <kwm.h>
 #include <kmsgbox.h>
@@ -584,7 +585,6 @@ void Theme::preInstallCmd(KSimpleConfig* aCfg, const QString& aCmd)
 {
   QString grp = aCfg->group();
   QString value, cmd;
-  bool flag;
 
   cmd = aCmd.stripWhiteSpace();
 

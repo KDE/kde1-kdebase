@@ -190,7 +190,8 @@ protected:
   /** Convert icon to mini icon */
   void iconToMiniIcon(const QString icon, const QString miniIcon);
 
-  /** Stretch pixmap */
+  /** Stretch pixmap. Drops "None" color when there is no pixel
+    using it. This crashes kwm. */
   void stretchPixmap(const QString filename, bool verticalStretch);
 
   /** Add file to list of installed files. */
