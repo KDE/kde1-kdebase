@@ -38,7 +38,6 @@
 #include <X11/Xutil.h>
 
 #include <klocale.h>
-#define i18n(X) klocale->translate(X)
 
 extern char DOCS_PATH[256];
 extern char PICS_PATH[256];

@@ -38,7 +38,6 @@
 #include <kfontdialog.h>
 #include "version.h"
 #include <klocale.h>
-#define i18n(X) klocale->translate(X)
 
 char DOCS_PATH[256];
 char PICS_PATH[256];
