@@ -1558,8 +1558,6 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     else
 	index = 0;
     appBox->setCurrentItem( index );
-    
-    connect( iconBox, SIGNAL( activated( int ) ), this, SLOT( slotIconChanged( int ) ) );
 }
 
 bool BindingPropsPage::supports( KURL *_kurl )
