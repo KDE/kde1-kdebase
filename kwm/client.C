@@ -174,11 +174,13 @@ void myPushButton::mouseMoveEvent( QMouseEvent *e ){
     }
   }
 }
-  
-static QPixmap *shaded_pm_active = 0;
-static QPixmap *shaded_pm_inactive = 0;
-static QColor shaded_pm_active_color;
-static QColor shaded_pm_inactive_color;
+
+// used for  the old vertical shading code
+
+// static QPixmap *shaded_pm_active = 0;
+// static QPixmap *shaded_pm_inactive = 0;
+// static QColor shaded_pm_active_color;
+// static QColor shaded_pm_inactive_color;
 
 
 // animate a size change of a window. This can be either transparent
@@ -572,8 +574,7 @@ void Client::layoutButtons(){
   title_rect.setRect(trX,trY,trW,trH);
 }
 
-// the global options have changed => update the titlebar button
-// settings.
+// the global options have changed => update the titlebar settings.
 void Client::reconfigure(){
    int i;
    for (i=0;i<6;i++){
@@ -1395,7 +1396,7 @@ void Client::setactive(bool on){
 // only in the look of the titlebar. If only_label is true then only
 // the label string is repainted. This is used for the titlebar
 // animation.
-void Client::paintState(bool only_label){
+void Client::paintState(bool only_label, bool colors_have_changed){
   QRect r = title_rect;
 
   if (r.width() <= 0 || r.height() <= 0 
@@ -1403,44 +1404,47 @@ void Client::paintState(bool only_label){
     return;
   int x;
 
-  if (options.TitlebarLook == SHADED){
-    if (is_active && shaded_pm_active && shaded_pm_active_color != myapp->activeTitleColor){
-      delete shaded_pm_active;
-      shaded_pm_active = 0;
-    }
-    if (is_active && shaded_pm_inactive && shaded_pm_inactive_color != myapp->inactiveTitleColor){
-      delete shaded_pm_inactive;
-      shaded_pm_inactive = 0;
-    }
-  }
 
-  if (options.TitlebarLook == SHADED
-      && 
-      (is_active && (!shaded_pm_active)
-       || (!is_active && !shaded_pm_inactive))
-      ){
-    int i,y; 
-    QImage image (50, TITLEBAR_HEIGHT, 8, TITLEBAR_HEIGHT);
-    QColor col = is_active ? myapp->activeTitleColor : myapp->inactiveTitleColor;
-    for ( i=0; i<TITLEBAR_HEIGHT; i++ ){
-      image.setColor( i, col.light(100+(i-TITLEBAR_HEIGHT/2)*3).rgb());
-    }
-    for (y=0; y<TITLEBAR_HEIGHT; y++ ) {
-      uchar *pix = image.scanLine(y);
-      for (x=0; x<50; x++)
-        *pix++ = is_active ? TITLEBAR_HEIGHT-1-y : y;
-    }
-    if (is_active){
-      shaded_pm_active = new QPixmap;
-      *shaded_pm_active = image;
-      shaded_pm_active_color = myapp->activeTitleColor;
-    }
-    else{
-      shaded_pm_inactive = new QPixmap;
-      *shaded_pm_inactive = image;
-      shaded_pm_inactive_color = myapp->inactiveTitleColor;
-    }
-  }
+  // the following is the old/handmade vertical shading code
+
+//   if (options.TitlebarLook == SHADED){
+//     if (is_active && shaded_pm_active && shaded_pm_active_color != myapp->activeTitleColor){
+//       delete shaded_pm_active;
+//       shaded_pm_active = 0;
+//     }
+//     if (is_active && shaded_pm_inactive && shaded_pm_inactive_color != myapp->inactiveTitleColor){
+//       delete shaded_pm_inactive;
+//       shaded_pm_inactive = 0;
+//     }
+//   }
+
+//   if (options.TitlebarLook == SHADED
+//       && 
+//       (is_active && (!shaded_pm_active)
+//        || (!is_active && !shaded_pm_inactive))
+//       ){
+//     int i,y; 
+//     QImage image (50, TITLEBAR_HEIGHT, 8, TITLEBAR_HEIGHT);
+//     QColor col = is_active ? myapp->activeTitleColor : myapp->inactiveTitleColor;
+//     for ( i=0; i<TITLEBAR_HEIGHT; i++ ){
+//       image.setColor( i, col.light(100+(i-TITLEBAR_HEIGHT/2)*3).rgb());
+//     }
+//     for (y=0; y<TITLEBAR_HEIGHT; y++ ) {
+//       uchar *pix = image.scanLine(y);
+//       for (x=0; x<50; x++)
+//         *pix++ = is_active ? TITLEBAR_HEIGHT-1-y : y;
+//     }
+//     if (is_active){
+//       shaded_pm_active = new QPixmap;
+//       *shaded_pm_active = image;
+//       shaded_pm_active_color = myapp->activeTitleColor;
+//     }
+//     else{
+//       shaded_pm_inactive = new QPixmap;
+//       *shaded_pm_inactive = image;
+//       shaded_pm_inactive_color = myapp->inactiveTitleColor;
+//     }
+//   }
     
   if (only_label){
     titlestring_offset += titlestring_offset_delta;
@@ -1463,11 +1467,16 @@ void Client::paintState(bool only_label){
   QPixmap *pm;
   p.setClipRect(r);
   p.setClipping(True);
-  if (options.TitlebarLook == SHADED || options.TitlebarLook == PIXMAP){
+
+  // old handmade vertical shading code
+
+//   if (options.TitlebarLook == SHADED || options.TitlebarLook == PIXMAP){
     
-    if (options.TitlebarLook == SHADED)
-      pm = is_active ? shaded_pm_active : shaded_pm_inactive;
-    else
+//     if (options.TitlebarLook == SHADED)
+//       pm = is_active ? shaded_pm_active : shaded_pm_inactive;
+//     else
+
+  if (options.TitlebarLook == PIXMAP){
       pm = is_active ? options.titlebarPixmapActive: options.titlebarPixmapInactive;    
     if (only_label){
       x = r.x()-(pm->width()-10);
@@ -1478,6 +1487,27 @@ void Client::paintState(bool only_label){
     else {
       for (x = r.x(); x < r.x() + r.width(); x+=pm->width())
 	p.drawPixmap(x, r.y(), *pm);
+    }
+  }
+  else if (options.TitlebarLook == SHADED){
+    // the new horizontal shading code
+    if (colors_have_changed){
+      aShadepm.resize(0,0);
+      iaShadepm.resize(0,0);
+    }
+    if (is_active){
+      if (aShadepm.size() != r.size()){
+	aShadepm.resize(r.width(), r.height());
+	aShadepm.gradientFill( myapp->activeTitleColor, myapp->activeTitleBlend, FALSE );
+      }
+      p.drawPixmap( r.x(), r.y(), aShadepm ); 
+    }
+    else {
+      if (iaShadepm.size() != r.size()){
+	iaShadepm.resize(r.width(), r.height());
+	iaShadepm.gradientFill( myapp->inactiveTitleColor, myapp->inactiveTitleBlend, FALSE );
+      }
+      p.drawPixmap( r.x(), r.y(), iaShadepm ); 
     }
   }
   else { // TitlebarLook == TITLEBAR_PLAIN

@@ -11,6 +11,9 @@ influences from my experiences with the former kwm.
 
 In 0.11:
 --------
+patchlevel 6:
+        - horizontal shading (blending) a la kpixmap
+ 
 patchlevel 5:
         - no more harecoded "Helvetica" font. kwm uses the generalFont instead.
         - two new focus policies: CLASSIC_FOCUS_FOLLOWS_MOUSE and

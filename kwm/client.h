@@ -16,6 +16,7 @@
 #include <qpoint.h>
 #include <qpopmenu.h>
 #include <qtimer.h>
+#include <kpixmap.h>
 
 #include "options.h"
 
@@ -232,7 +233,7 @@ public:
   // only in the look of the titlebar. If only_label is true then only
   // the label string is repainted. This is used for the titlebar
   // animation.
-  void paintState(bool only_label = FALSE);
+  void paintState(bool only_label = FALSE, bool colors_have_changed = FALSE);
 
   // generates a sensefull label property from the name, icon, klass
   // and instance. Also ensures that the label is unique by adding a
@@ -263,8 +264,7 @@ public:
   // set up everything to handle a resize (used from Alt-RMB)
   void simple_resize();
 
-  // the global options have changed => update the titlebar button
-  // settings.
+  // the global options have changed => update the titlebar settings.
   void reconfigure();
 
   // if the titlestring is too large kwm can move it around (titlebar
@@ -387,6 +387,10 @@ private:
   // grab! IMO this is a qt problem. Anyway this function solves it:
   // it will wait until we _really_ have the pointer grab.
   void ensurePointerGrab();
+
+  // a buffer for the vertical shading
+  KPixmap aShadepm;
+  KPixmap iaShadepm;
 
 private slots:
   // this slot is connect with a singleshot timer when we are doing

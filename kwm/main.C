@@ -564,7 +564,7 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
   readConfiguration();
 
   KConfig* config = getKApplication()->getConfig();
-  
+
   config->setGroup( "Desktops");
   if (!config->hasKey("NumberOfDesktops"))
     config->writeEntry("NumberOfDesktops", 4);
@@ -681,6 +681,12 @@ void MyApp::readConfiguration(){
   killTimers();
 
   config = getKApplication()->getConfig();
+
+  // this belongs in kapp....
+  config->setGroup("WM");
+  activeTitleBlend = config->readColorEntry( "activeBlend", &black );
+  inactiveTitleBlend = config->readColorEntry( "inactiveBlend", &backgroundColor);
+
   config->setGroup( "General" );
 
   BORDER = 4;
@@ -1473,6 +1479,8 @@ bool MyApp::x11EventFilter( XEvent * ev){
     if (ev->xclient.message_type == KDEChangePalette
 	|| ev->xclient.message_type == KDEChangeGeneral){
       KApplication::x11EventFilter(ev);
+      // TODO this is only due to missing blending handling in kapp:
+      reConfigure();
       manager->repaintAll();
       return true;
     }

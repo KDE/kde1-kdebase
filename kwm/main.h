@@ -10,6 +10,7 @@
 #include <qapp.h>
 #include <qpopmenu.h>
 #include <kapp.h>
+#include <qcolor.h>
 #include "client.h"
 
 
@@ -18,6 +19,10 @@ class MyApp:public KApplication {
 public:
   MyApp( int &argc, char **argv, const QString& rAppName );
   virtual bool x11EventFilter( XEvent * );
+
+  // extend KApp (this should move to kapp some day in the future...
+  QColor activeTitleBlend;
+  QColor inactiveTitleBlend;
 
   // store the session in the kwm configuration file
   void saveSession();

@@ -2337,7 +2337,7 @@ void Manager::cleanup(){
 void Manager::repaintAll(){
   Client* c;
   for (c=clients_sorted.last(); c; c = clients_sorted.prev())
-    c->paintState();
+    c->paintState(false, true);
 }
 
 
