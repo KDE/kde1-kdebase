@@ -6,7 +6,7 @@ if [ "$1" = "configure" ]; then
   update-rc.d kdm defaults 99 01 >/dev/null
 fi  
 
-window_manager_entry='/usr/X11R6/bin/kde'
+window_manager_entry='/usr/bin/kde'
 if ! grep -q "^$window_manager_entry$" /etc/X11/window-managers 
 then
 	echo $window_manager_entry >> /etc/X11/window-managers 

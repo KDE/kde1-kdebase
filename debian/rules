@@ -53,9 +53,9 @@ binary-arch: checkroot build
 	cp debian/README.kde debian/tmp/usr/doc/kde
 	install -d debian/tmp/etc/init.d
 	cp debian/kdm.init.d debian/tmp/etc/init.d/kdm
-	install -d debian/tmp/usr/X11R6/bin
-	mv debian/tmp/usr/X11R6/bin/startkde debian/tmp/usr/X11R6/bin/kde
-	ln -s debian/tmp/usr/X11R6/bin/kde debian/tmp/usr/X11R6/bin/startkde
+	install -d debian/tmp/usr/bin
+	mv debian/tmp/usr/bin/startkde debian/tmp/usr/bin/kde
+	ln -s kde debian/tmp/usr/bin/startkde
 	install -d debian/tmp/usr/sbin
 	cp debian/switchdm debian/tmp/usr/sbin
 	install -d debian/tmp/etc/X11
@@ -71,10 +71,10 @@ binary-arch: checkroot build
 	dh_strip
 	dh_compress
 	dh_fixperms
-	chown root.shadow debian/tmp/usr/X11R6/bin/kcheckpass
-	chmod 2755 debian/tmp/usr/X11R6/bin/kcheckpass
-	chmod 4755 debian/tmp/usr/X11R6/bin/kvt
-	chmod 4755 debian/tmp/usr/X11R6/bin/konsole
+	chown root.shadow debian/tmp/usr/bin/kcheckpass
+	chmod 2755 debian/tmp/usr/bin/kcheckpass
+	chmod 4755 debian/tmp/usr/bin/kvt
+	chmod 4755 debian/tmp/usr/bin/konsole
 	dh_suidregister
 	dh_installdeb
 	dh_shlibdeps
