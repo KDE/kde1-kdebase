@@ -8,6 +8,8 @@ class KFMManager;
 #include "cgi.h"
 #include "kfmjob.h"
 
+#include "popup.h"
+
 class QFontMetrics;
 
 class KFMManager : public QObject
@@ -270,18 +272,8 @@ protected:
      * we need a pointer to this menu to get information about the
      * selected menu item.
      */
-    QPopupMenu *menuNew;
+    KNewMenu *menuNew;
 
-    /**
-     * List of all template files. It is important that they are in
-     * the same order as the 'New' menu.
-     */
-    QStrList templatesList;
-protected slots:
-    /**
-     * Popup Menu "New->*"
-     */
-    void slotNewFile( int _id );
 };
 
 #endif

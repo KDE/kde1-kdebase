@@ -9,6 +9,7 @@ class KfmGui;
 
 #include "kfinder.h"
 #include "kstrlist.h"
+#include "popup.h"
 
 class KFMDirTree : public KFinder
 {
@@ -17,6 +18,7 @@ class KFMDirTree : public KFinder
     Q_OBJECT
 public:
     KFMDirTree( QWidget *_parent, KfmGui *_gui );
+    ~KFMDirTree();
 
     void fill();
     void update();
@@ -65,18 +67,7 @@ protected:
      * we need a pointer to this menu to get information about the
      * selected menu item.
      */
-    QPopupMenu *menuNew;
-
-    /**
-     * List of all template files. It is important that they are in
-     * the same order as the 'New' menu.
-     */
-    QStrList templatesList;
-protected slots:
-    /**
-     * Popup Menu "New->*"
-     */
-    void slotNewFile( int _id );
+    KNewMenu *menuNew;
 };
 
 class KFMDirTreeItem : public KFinderItem

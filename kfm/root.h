@@ -16,11 +16,12 @@
 #include "kioserver.h"
 #include "kstrlist.h"
 #include "kiojob.h"
+#include "popup.h"
 
 #include "config-kfm.h"
 
 class KRootWidget;
-class KFMManger;
+class KFMManager;
 /**
  * This class is used to store the position of files, which are not on the
  * file system yet. For example if a file is dropped on the desktop, you know
@@ -439,18 +440,7 @@ protected:
      * we need a pointer to this menu to get information about the
      * selected menu item.
      */
-    QPopupMenu *menuNew;
-
-    /**
-     * List of all template files. It is important that they are in
-     * the same order as the 'New' menu.
-     */
-    QStrList templatesList;
-protected slots:
-    /**
-     * Popup Menu "New->*"
-     */
-    void slotNewFile( int _id );
+    KNewMenu *menuNew;
 };
 
 #endif

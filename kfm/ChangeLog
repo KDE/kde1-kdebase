@@ -1,3 +1,10 @@
+1998-12-12  David Faure  <faure@kde.org>
+
+	* popup.cpp, popup.h : Created for the KNewMenu class. Moved code
+	from kfmgui.cpp, root.cpp, kfmtree.cpp, kfmman.cpp
+	This improves maintenance (code in one place), binary size (again), and fixes
+	the "new templates not being shown" bug, reported by Jason Boxman <benefits@cybertechs.com>
+
 1998-12-09  David Faure  <faure@kde.org>
 
 	* Removed all the files containing the old 'configure browser'

@@ -26,6 +26,7 @@ class KfmGui;
 #include "kURLcompletion.h"
 #include "config-kfm.h"
 #include "finddlg.h"
+#include "popup.h"
 
 class KfmGui : public KTopLevelWidget
 {
@@ -196,10 +197,6 @@ public slots:
      * Menu "File->Open Location"
      */
     void slotOpenLocation( );
-    /**
-     * Menu "File->New->*"
-     */
-    void slotNewFile( int _id );
     /**
      * Menu "File->Run"
      */
@@ -620,7 +617,7 @@ protected:
      * we need a pointer to this menu to get information about the
      * selected menu item.
      */
-    QPopupMenu *menuNew;
+    KNewMenu *menuNew;
 
     /**
      * menu for selecting the charset, used for displaying the document
