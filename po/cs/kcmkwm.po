@@ -4,13 +4,12 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
-"PO-Revision-Date: 1998-10-24 17:47 CEST\n"
-"Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
+"Project-Id-Version: kcmkpanel\n"
+"PO-Revision-Date: 1998-11-03 14:25+01:00\n"
+"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=iso8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:64
@@ -22,18 +21,16 @@ msgid "&Titlebar"
 msgstr "&Titulek"
 
 #: main.cpp:70
-#, fuzzy
 msgid "Bo&rders"
 msgstr "&Hranice"
 
 #: main.cpp:73
 msgid "&Mouse"
-msgstr "&My¹"
+msgstr "M&y¹"
 
 #: main.cpp:79
-#, fuzzy
 msgid "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
-msgstr "Pou¾ití: kcmkwm [-init | {windows,buttons,titlebar,borders,mouse}]\n"
+msgstr "Pou¾ití: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
 
 #: main.cpp:114
 msgid "Window manager style"
@@ -100,21 +97,22 @@ msgid "Pixmap"
 msgstr "Obrázek"
 
 #: titlebar.cpp:991
-#, fuzzy
 msgid "Active pixmap:"
-msgstr "Obrázek pro titulek &aktivního okna"
+msgstr ""
+"Obrázek pro titulek \n"
+"aktivního okna:"
 
 #: titlebar.cpp:996
-#, fuzzy
 msgid "Inactive pixmap:"
-msgstr "Obrázek pro titulek &neaktivního okna"
+msgstr ""
+"Obrázek pro titulek\n"
+"neaktivního okna:"
 
 #: titlebar.cpp:1006
 msgid "Mouse action"
 msgstr "Èinnost my¹i"
 
 #: titlebar.cpp:1014
-#, fuzzy
 msgid "Left Button double click does:"
 msgstr ""
 "Dvojité kliknutí levým tlaèítkem\n"
@@ -137,7 +135,6 @@ msgid "(Un)Sticky"
 msgstr "Pøilepení/Odlepení"
 
 #: titlebar.cpp:1047
-#, fuzzy
 msgid "Title animation"
 msgstr "Animace titulku"
 
@@ -146,37 +143,36 @@ msgid "ms"
 msgstr "ms"
 
 #: titlebar.cpp:1252
-#, fuzzy
 msgid "Window manager setup - ERROR"
-msgstr "Vlastnosti správce oken"
+msgstr "Nastavení správce oken - CHYBA"
 
 #: titlebar.cpp:1253
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
+"Nastala chyba pøi ukládání obrázkù pro titulek! \n"
+"Prosím zkontrolujte pøístupová práva."
 
 #: windows.cpp:66
-#, fuzzy
 msgid "Windows"
-msgstr "&Vlastnosti okna"
+msgstr "Okna"
 
 #: windows.cpp:80
 msgid "Vertical maximization only by default"
-msgstr ""
+msgstr "Implicitnì pouze Vertikální maximalizace"
 
 #: windows.cpp:85
 msgid "Display content in moving windows"
-msgstr ""
+msgstr "Zobrazovat obsah okna pøi jeho pøesunu"
 
 #: windows.cpp:90
 msgid "Display content in resizing windows"
-msgstr ""
+msgstr "Zobrazovat obsah okna pøi zmìnì jeho velikosti"
 
 #: windows.cpp:96
-#, fuzzy
 msgid "Resize animation:"
-msgstr "Animace titulku"
+msgstr "Animace zmìny velikosti:"
 
 #: windows.cpp:109
 msgid "None"
@@ -216,9 +212,10 @@ msgid ""
 "  Allowed overlap:\n"
 "(% of desktop space)"
 msgstr ""
+" Povolený pøesah:\n"
+"(% pracovní plochy)"
 
 #: windows.cpp:170
-#, fuzzy
 msgid "Focus policy"
 msgstr "Zpùsob zaktivnìní okna"
 
@@ -239,13 +236,12 @@ msgid "Classic sloppy focus"
 msgstr "Aktivace kliknutím (klasická)"
 
 #: windows.cpp:197
-#, fuzzy
 msgid "Auto Raise"
-msgstr "Dát do popøedí"
+msgstr "Automaticky dávat do popøedí"
 
 #: windows.cpp:204
 msgid "Delay (ms)"
-msgstr ""
+msgstr "Prodleva (ms)"
 
 #: desktop.cpp:65
 msgid "Active desktop borders"
@@ -379,46 +375,3 @@ msgstr "Pøesunout"
 #: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
 msgid "Resize"
 msgstr "Zmìnit velikost"
-
-#~ msgid "Titlebar appearance"
-#~ msgstr "Vzhled titulku"
-
-#~ msgid "Operations Menu"
-#~ msgstr "Menu s operacemi"
-
-#~ msgid "Window movement"
-#~ msgstr "Pohyb okna"
-
-#~ msgid "Transparent"
-#~ msgstr "Transparentnì"
-
-#~ msgid "Opaque"
-#~ msgstr "Neprùhlednì"
-
-#~ msgid "Window resize"
-#~ msgstr "Zmìna velikosti okna"
-
-#~ msgid "Animation:"
-#~ msgstr "Animace:"
-
-#~ msgid "Allowed Overlap:"
-#~ msgstr "Pøípustné pøekrytí:"
-
-#~ msgid "Maximize Style"
-#~ msgstr "Styl maximalizace"
-
-#~ msgid "Maximize fully"
-#~ msgstr "Plnì maximalizuj"
-
-#~ msgid "Maximize vertically"
-#~ msgstr "Maximalizuj vertikálnì"
-
-#~ msgid ""
-#~ "Auto raise delay\n"
-#~ "(<100 disables)"
-#~ msgstr ""
-#~ "Prodleva pøed pøesunutím\n"
-#~ "okna navrch (<100 vypíná)"
-
-#~ msgid "miliseconds"
-#~ msgstr "milisekund"
