@@ -149,8 +149,8 @@ void KFMJob::openFile(bool _reload)
     // But dont delete the root '/', since for example "file:" is considered
     // malformed.
     if (  ( (url.left(4) == "file") || (url.left(3) == "ftp") )
-          && url.right(1) == "/" && url.right(2) != ":/" ) { debug("truncating");
-	url = url.left( url.length() - 1 ); }
+          && url.right(1) == "/" && url.right(2) != ":/" )
+	url = url.left( url.length() - 1 );
     
     if (cookiejar)
     {
@@ -234,7 +234,8 @@ void KFMJob::slotError( int _kioerror, const char *_text, int _errno )
     // Allow the job to print an error message.
     job->display( true );
     // Process the error
-    job->processError( _kioerror, _text, _errno );
+    // job->processError( _kioerror, _text, _errno );
+    // Not necessary. The kiojob will do it by itself.
     
     // Tell our client about it
     emit error( _kioerror, _text );

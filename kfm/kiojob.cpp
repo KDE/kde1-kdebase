@@ -1298,10 +1298,12 @@ void KIOJob::fatalError( int _kioerror, const char* _error, int _errno )
   // Allow others to see and process the error
   emit errorFilter( _kioerror, _error, _errno );
   
-  // Is the error already process ?
+  // Is the error already process ? (should NEVER be now)
   if ( bProcessError )
+  {
     // We process the error.
     processError( _kioerror, _error, _errno );
+  }
 }
 
 void KIOJob::processError( int _kioerror, const char* _error, int )
