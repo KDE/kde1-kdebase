@@ -825,7 +825,7 @@ msgstr "Application par défaut"
 
 #: kfmprops.cpp:1541
 msgid "<none>"
-msgstr "<aucun>"
+msgstr "<aucune>"
 
 #: kfmprops.cpp:1663
 msgid "Device ( /dev/fd0 )"
