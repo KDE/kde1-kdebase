@@ -200,9 +200,6 @@ AC_OUTPUT(Makefile \
 	doc/kcontrol/kcmlocale/Makefile \
 	doc/kcontrol/kcmsamba/Makefile \
 	doc/kcontrol/kcmsyssound/Makefile \
-	doc/kcontrol/kcmsyssound/de/Makefile \
-	doc/kcontrol/kcmsyssound/no/Makefile \
-	doc/kcontrol/kcmsyssound/en/Makefile \
 	doc/kcontrol/kcmkpanel/Makefile \
 	doc/kdehelp/Makefile \
 	doc/kdehelp/kwm/Makefile \
@@ -368,6 +365,8 @@ if test -r kappfinder/kappfinder; then
    chmod +x kappfinder/kappfinder
 fi
 )
+
+
 
 
 
