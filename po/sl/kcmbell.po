@@ -20,7 +20,7 @@ msgstr "&Zvonec"
 
 #: main.cpp:58
 msgid "usage: kcmbell [-init | bell]\n"
-msgstr "uporaba: kcmbell [-init | bell]\n"
+msgstr "Uporaba: kcmbell [-init | bell]\n"
 
 #: main.cpp:89
 msgid "Bell settings"

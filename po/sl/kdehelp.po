@@ -1,0 +1,412 @@
+# KDE-Help, Slovenian version.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Luka Steger <luka.steger@siol.net>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kdehelp\n"
+"POT-Creation-Date: 1998-06-18 22:20+0200\n"
+"PO-Revision-Date: 1998-08-04 16:52+0100\n"
+"Last-Translator: luka steger <luka.steger@siol.net>\n"
+"Language-Team: Slovenian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: iso8859-2\n"
+
+# helpwin.cpp:58
+#: helpwin.cpp:58
+msgid "KDE Help: Open URL"
+msgstr "KDE Pomoè: Odpri URL"
+
+# helpwin.cpp:60
+#: helpwin.cpp:60
+msgid "Open URL"
+msgstr "Odpri URL"
+
+# helpwin.cpp:454 info.cpp:274
+#: helpwin.cpp:453 info.cpp:274
+msgid "Cannot open: "
+msgstr "Ne morem odpreti: "
+
+# helpwin.cpp:455 helpwin.cpp:464
+#: helpwin.cpp:454 helpwin.cpp:463
+msgid "Oops!"
+msgstr "Ups!"
+
+# helpwin.cpp:463
+#: helpwin.cpp:462
+msgid "Unknown format: "
+msgstr "Neznana oblika: "
+
+# helpwin.cpp:833
+#: helpwin.cpp:832
+msgid "Could not start or find KFM"
+msgstr "Ne morem zagnati ali najti KFM"
+
+# helpwin.cpp:1322
+#: helpwin.cpp:1320
+msgid "Open this Link"
+msgstr "Odpri to povezavo"
+
+# helpwin.cpp:1323
+#: helpwin.cpp:1321
+msgid "Add Bookmark"
+msgstr "Dodaj v kazalo"
+
+# helpwin.cpp:1324
+#: helpwin.cpp:1322
+msgid "Open in new Window"
+msgstr "Odpri v novem oknu"
+
+# info.cpp:86 info.cpp:601
+#: info.cpp:86 info.cpp:601
+msgid "Error in info file"
+msgstr "Napaka v info datoteki"
+
+# info.cpp:1230
+#: info.cpp:1230
+#, c-format
+msgid "Node not found: %s"
+msgstr "Ne najdem poglavja: %s"
+
+# info.cpp:1375
+#: info.cpp:1375
+#, c-format
+msgid "Cannot open info file: %s"
+msgstr "Ne morem odpreti info datoteke: %s"
+
+# error.cpp:23
+#: error.cpp:23
+msgid "Fatal Error: "
+msgstr "Usodna napaka: "
+
+# error.cpp:28
+#: error.cpp:28
+msgid "Warning: "
+msgstr "Pozor: "
+
+# options.cpp:52
+#: options.cpp:52
+msgid "Standard Font"
+msgstr "Obièajna pisava"
+
+# options.cpp:69
+#: options.cpp:69
+msgid "Fixed Font"
+msgstr "Fiksna pisava"
+
+# options.cpp:208
+#: options.cpp:208
+msgid "Background Color:"
+msgstr "Barva ozadja:"
+
+# options.cpp:216
+#: options.cpp:216
+msgid "Normal Text Color:"
+msgstr "Barva navadne pisave:"
+
+# options.cpp:224
+#: options.cpp:224
+msgid "URL Link Color:"
+msgstr "Barva URL povezav:"
+
+# options.cpp:232
+#: options.cpp:232
+msgid "Followed Link Color:"
+msgstr "Barva obiskanih URL povezav:"
+
+# options.cpp:303
+#: options.cpp:303
+msgid "KDE Help Options"
+msgstr "Nastavitve KDE pomoèi"
+
+# options.cpp:316 options.cpp:317
+#: options.cpp:316 options.cpp:317
+msgid "Colors"
+msgstr "Barve"
+
+# man.cpp:84 man.cpp:788
+#: man.cpp:84 man.cpp:788
+msgid "Online Manuals"
+msgstr "Priroèniki"
+
+# man.cpp:90
+#: man.cpp:90
+#, c-format
+msgid "Section %s"
+msgstr "Poglavje %s"
+
+# man.cpp:106
+#: man.cpp:106
+#, c-format
+msgid "Online manual - Section %s"
+msgstr "Priroènik - Poglavje %s"
+
+# man.cpp:455
+#: man.cpp:455
+msgid "User Commands"
+msgstr "Ukazi"
+
+# man.cpp:457
+#: man.cpp:457
+msgid "System Calls"
+msgstr "Sistemski klici"
+
+# man.cpp:459
+#: man.cpp:459
+msgid "Subroutines"
+msgstr "Podprogrami"
+
+# man.cpp:461
+#: man.cpp:461
+msgid "Devices"
+msgstr "Naprave"
+
+# man.cpp:463
+#: man.cpp:463
+msgid "File Formats"
+msgstr "Oblike datotek"
+
+# man.cpp:465
+#: man.cpp:465
+msgid "Games"
+msgstr "Igre"
+
+# man.cpp:469
+#: man.cpp:469
+msgid "System Administration"
+msgstr "Upravljanje sistema "
+
+# man.cpp:580
+#: man.cpp:580
+msgid "Reading Dir: "
+msgstr "Berem imenik:"
+
+# man.cpp:777
+#: man.cpp:777
+msgid "Online Manual - Section"
+msgstr "Priroènik - Poglavje"
+
+# man.cpp:835
+#: man.cpp:835
+msgid "\"man\" system call failed"
+msgstr "\"man\" sistemski klic neuspe¹en"
+
+# man.cpp:853
+#: man.cpp:853
+msgid "Opening temporary file failed"
+msgstr "Ni mi uspelo odpreti zaèasne datoteke"
+
+# cgi.cpp:80
+#: cgi.cpp:80
+#, c-format
+msgid "CGI: Destination URL malformed: %s\n"
+msgstr "CGI: URL je bil napaèno vtipkan: %s\n"
+
+# mainwidget.cpp:132
+#: mainwidget.cpp:132
+msgid "&New Help Window"
+msgstr "&Novo okno pomoèi"
+
+# mainwidget.cpp:135
+#: mainwidget.cpp:135
+msgid "&Open File..."
+msgstr "&Odpri datoteko..."
+
+# mainwidget.cpp:136
+#: mainwidget.cpp:136
+msgid "Open UR&L..."
+msgstr "Odpri UR&L..."
+
+# mainwidget.cpp:139
+#: mainwidget.cpp:139
+msgid "&Search"
+msgstr "&I¹èi"
+
+# mainwidget.cpp:152
+#: mainwidget.cpp:152
+msgid "&Back"
+msgstr "Na&zaj"
+
+# mainwidget.cpp:153
+#: mainwidget.cpp:153
+msgid "&Forward"
+msgstr "Nap&rej"
+
+# mainwidget.cpp:156
+#: mainwidget.cpp:156
+msgid "&Top"
+msgstr "N&a vrh"
+
+# mainwidget.cpp:157
+#: mainwidget.cpp:157
+msgid "&Up"
+msgstr "&Gor"
+
+# mainwidget.cpp:171
+#: mainwidget.cpp:171
+msgid "&General Preferences..."
+msgstr "&Splo¹ne nastavitve..."
+
+# mainwidget.cpp:174
+#: mainwidget.cpp:174
+msgid "Show &Toolbar"
+msgstr "Prika¾i &orodjarno"
+
+# mainwidget.cpp:176
+#: mainwidget.cpp:176
+msgid "Show &Location"
+msgstr "Prika¾i &lokacijo"
+
+# mainwidget.cpp:177
+#: mainwidget.cpp:177
+msgid "Show Status&bar"
+msgstr "Prika¾i statusno &vrstico"
+
+# mainwidget.cpp:180
+#: mainwidget.cpp:180
+msgid "&Save Options"
+msgstr "&Shrani nastavitve"
+
+# mainwidget.cpp:182
+#: mainwidget.cpp:182
+msgid "KDE Help System\n"
+msgstr "KDE sistem pomoèi\n"
+
+# mainwidget.cpp:183
+#: mainwidget.cpp:183
+msgid "Version "
+msgstr "Verzija"
+
+# mainwidget.cpp:185
+#: mainwidget.cpp:185
+msgid ""
+"\n"
+"\n"
+"Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
+"\n"
+"This program is licensed under the GNU General Public License (GPL).\n"
+"KDEHelp comes with ABSOLUTELY NO WARRANY to the extent permitted by "
+"applicable law."
+msgstr ""
+"\n"
+"\n"
+"Avtorske pravice (c) 1997 Martin Jones <mjones@kde.org>\n"
+"\n"
+"Program je pod licenco GNU (GPL).\n"
+"KDE Pomoè uporabljate na lastno odgovornost."
+
+# mainwidget.cpp:201
+#: mainwidget.cpp:201
+msgid "&Goto"
+msgstr "Po&jdi"
+
+# mainwidget.cpp:202
+#: mainwidget.cpp:202
+msgid "&Bookmarks"
+msgstr "&Kazalo"
+
+# mainwidget.cpp:220
+#: mainwidget.cpp:220
+msgid "Previous Document"
+msgstr "&Prej¹nji dokument"
+
+# mainwidget.cpp:225
+#: mainwidget.cpp:225
+msgid "Next Document"
+msgstr "&Naslednji dokument"
+
+# mainwidget.cpp:232
+#: mainwidget.cpp:232
+msgid "Previous Node"
+msgstr "Prej¹nje poglavje"
+
+# mainwidget.cpp:237
+#: mainwidget.cpp:237
+msgid "Next Node"
+msgstr "Naslednje poglavje"
+
+# mainwidget.cpp:242
+#: mainwidget.cpp:242
+msgid "Up one Node"
+msgstr "Eno poglavje gor"
+
+# mainwidget.cpp:247
+#: mainwidget.cpp:247
+msgid "Top Node"
+msgstr "Zaèetno poglavje"
+
+# mainwidget.cpp:254
+#: mainwidget.cpp:254
+msgid "Help Contents"
+msgstr "Vsebina pomoèi"
+
+# mainwidget.cpp:259
+#: mainwidget.cpp:259
+msgid "Reload current document"
+msgstr "Ponovno nalo¾i dokument"
+
+# mainwidget.cpp:288
+#: mainwidget.cpp:288
+msgid "In the Constructor!"
+msgstr "V izgradnji!"
+
+# mainwidget.cpp:582
+#: mainwidget.cpp:582
+msgid ""
+"KDE Help System\n"
+"Version "
+msgstr ""
+"Sistem KDE pomoèi\n"
+"Verzija "
+
+# mainwidget.cpp:584
+#: mainwidget.cpp:584
+msgid "About KDE Help"
+msgstr "O KDE pomoèi"
+
+# mainwidget.cpp:617
+#: mainwidget.cpp:617
+msgid "&Add Bookmark"
+msgstr "Dodaj v k&azalo"
+
+# options.cpp:36
+#~ msgid "Font Size"
+#~ msgstr "Velikost pisave"
+
+# options.cpp:40
+#~ msgid "Small"
+#~ msgstr "Majhna"
+
+# options.cpp:44
+#~ msgid "Medium"
+#~ msgstr "Srednja"
+
+# options.cpp:48
+#~ msgid "Large"
+#~ msgstr "Velika"
+
+# options.cpp:311 options.cpp:312
+#~ msgid "Fonts"
+#~ msgstr "Pisave"
+
+# man.cpp:467
+#~ msgid "Miscellaneous"
+#~ msgstr "Razno"
+
+# mainwidget.cpp:137
+#~ msgid "&Reload"
+#~ msgstr "Os&ve¾i"
+
+# mainwidget.cpp:158
+#~ msgid "&Previous"
+#~ msgstr "&Prej¹nji"
+
+# mainwidget.cpp:159
+#~ msgid "&Next"
+#~ msgstr "&Naslednji"
+
+# mainwidget.cpp:264
+#~ msgid "Stop"
+#~ msgstr "Ustavi"

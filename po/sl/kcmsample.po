@@ -1,0 +1,19 @@
+# Translation to Slovene language
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# luka steger, luka_steger@hotmail.com, 1998
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmsample\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
+"PO-Revision-Date: 1998-07-17 20:00+0100\n"
+"Last-Translator: luka steger, luka_steger@hotmail.com,\n"
+"Language-Team: slovene <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: iso8859-2\n"
+
+#: main.cpp:29
+msgid "KDE Control Application Sample"
+msgstr "Vzorec KDE nadzornega programa"

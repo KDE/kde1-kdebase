@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
 "POT-Creation-Date: 1998-06-18 22:21+0200\n"
-"PO-Revision-Date: 1998-04-30 11:38+0100\n"
+"PO-Revision-Date: 1998-05-10 20:17+0100\n"
 "Last-Translator: Bla¾ Zupanèiè <Blaz.Zupancic@guest.arnes.si>\n"
 "Language-Team: Slovenian\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: zgleda, da je nek okenski vmesnik ¾e nalo¾en. kwm se ne morezagnati\n"
+"kwm: zgleda, da je neki okenski vmesnik ¾e nalo¾en. kwm se ne morezagnati\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
@@ -27,11 +27,11 @@ msgstr "kwm: napaka med inicializacijo; konèujem\n"
 
 #: main.C:470
 msgid "Preparing session ... "
-msgstr ""
+msgstr "Pripravljam seanso..."
 
 #: main.C:489
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Avtorske pravice (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:496
 msgid "Usage: "
@@ -91,7 +91,7 @@ msgstr "Tri"
 
 #: main.C:580
 msgid "Four"
-msgstr "©t&iri"
+msgstr "©tiri"
 
 #: main.C:583
 msgid "Five"
@@ -99,7 +99,7 @@ msgstr "Pet"
 
 #: main.C:586
 msgid "Six"
-msgstr "©&est"
+msgstr "©est"
 
 #: main.C:589
 msgid "Seven"
@@ -111,20 +111,19 @@ msgstr "Osem"
 
 #: main.C:606
 msgid "Unnamed Desktop"
-msgstr ""
+msgstr "Namizje brez imena"
 
 #: main.C:942
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Nekatere slike niso veljavne: ShapeMode je onesposobljen\n"
+msgstr "Nekatere slike niso veljavne: ShapeMode je izklopljen\n"
 
 #: main.C:1054
-#, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Nekatere slike niso veljavne: ShapeMode je onesposobljen\n"
+msgstr "Nekatere slike niso veljavne: GimmickMode je izklopljen\n"
 
 #: main.C:1311
 msgid "*** No Tasks ***"
-msgstr " Brezdelje "
+msgstr " Zzzzz... Zzzzz... "
 
 #: minicli.C:116
 msgid "Command:"
@@ -132,15 +131,15 @@ msgstr "Ukaz:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr ""
+msgstr "Ups!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
-msgstr "Odjavi me"
+msgstr "Izhod"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Vse je pripravljeno za odjavo"
+msgstr "Vse je pripravljeno za izhod"
 
 #: logout.C:52
 msgid ""
@@ -157,16 +156,16 @@ msgid ""
 msgstr ""
 "Naslednji programi ne morejo biti obnovljeni v naslednji seansi,\n"
 "lahko jih le ponovno za¾enem.\n"
-"Preverite, èe mogoèe ne vsebujejo pomembnih neshranjenih informacij."
+"Poskrbite, da ne bodo vsebovali pomembnih, neshranjenih podatkov."
 
 #: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Naslednji programi se ne zavedajo okolja X11 in jih zato ne morem obnoviti\n"
-"v naslednji seansi. Preverite, èe mogoèe ne vsebujejo pomembnih neshranjenih "
-"informacij."
+"Naslednji programi niso predvideni za okolje X11 in jih zato ne morem\n"
+"obnoviti v naslednji seansi. Poskrbite, da ne bodo vsebovali pomembnih,\n"
+"neshranjenih podatkov."
 
 #: taskmgr.C:107
 msgid "Switch to"
@@ -175,3 +174,20 @@ msgstr "Preklopi v"
 #: taskmgr.C:121
 msgid "Current session"
 msgstr "Sedanja seansa"
+
+#~ msgid ""
+#~ "You want to switch to another window. Unfortunately you have selected \n"
+#~ "one of the classic focus policies which do not allow this.  These policies "
+#~ "are \n"
+#~ "included not because they make sense, but for compatibility reasons. Well, \n"
+#~ "even old hand unix users should feel comfortable with the K Desktop "
+#~ "Environment ;-)\n"
+#~ "\n"
+#~ "Anyway, if you prefer modern windowmanagement, please choose one of the \n"
+#~ "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
+#~ msgstr ""
+#~ "®eleli ste preklopiti v drugo okno. Na ¾alost vam nastavitve tega\n"
+#~ "ne dovoljujejo. Te niso vkljuèene, ker bi bile smiselne,\n"
+#~ "ampak zaradi zdru¾ljivosti.\n"
+#~ "Èe pa ¾elite sodobno upravljanje z okni, izberite raje\n"
+#~ "KlikniZaFokus ali pa FokusZasledujeMi¹ko."

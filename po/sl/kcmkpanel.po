@@ -1,0 +1,131 @@
+# kcmpanel translation to slovene language
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# luka steger, <luka_steger@hotmail.com>, 1998
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmpanel\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"PO-Revision-Date: 1998-07-20  19:15+0100\n"
+"Last-Translator: luka steger, <luka_steger@hotmail.com>\n"
+"Language-Team: slovene\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: iso8859-2\n"
+
+#: main.cpp:62
+msgid "&Panel"
+msgstr "&Pult"
+
+#: main.cpp:68
+msgid "&Desktops"
+msgstr "&Namizja"
+
+#: main.cpp:97
+msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
+msgstr "Uporaba: kcmkpanel [-init | {panel,options,desktops}]\n"
+
+#: main.cpp:128
+msgid "KPanel Configuration"
+msgstr "Nastavitve KPulta"
+
+#: panel.cpp:59
+msgid "Location"
+msgstr "Lega"
+
+#: panel.cpp:60
+msgid "&Top"
+msgstr "&Zgoraj"
+
+#: panel.cpp:61
+msgid "&Left"
+msgstr "&Levo"
+
+#: panel.cpp:62
+msgid "&Bottom"
+msgstr "&Spodaj"
+
+#: panel.cpp:74
+msgid "Taskbar"
+msgstr "Opravilna vrstica"
+
+#: panel.cpp:75
+msgid "&Hidden"
+msgstr "S&krita"
+
+#: panel.cpp:77
+msgid "T&op"
+msgstr "Z&goraj"
+
+#: panel.cpp:79
+msgid "Botto&m"
+msgstr "S&podaj"
+
+#: panel.cpp:81
+msgid "Top/Le&ft"
+msgstr "L&evo-zgoraj"
+
+#: panel.cpp:96
+msgid "T&iny"
+msgstr "&Majhen"
+
+#: panel.cpp:98
+msgid "&Normal"
+msgstr "&Normalen"
+
+#: panel.cpp:100
+msgid "L&arge"
+msgstr "&Velik"
+
+#: desktops.cpp:73
+msgid "&Visible"
+msgstr "&Vidna"
+
+#: desktops.cpp:82
+msgid "&Width"
+msgstr "©i&rina"
+
+#: options.cpp:38
+msgid "Menu Tooltips"
+msgstr "Namigi"
+
+#: options.cpp:39
+msgid "Show &Menu Tooltips"
+msgstr "Po&ka¾i namige"
+
+#: options.cpp:44
+msgid "De&lay:"
+msgstr "&Zakasnitev"
+
+#: options.cpp:56
+msgid "ms"
+msgstr "ms"
+
+#: options.cpp:68
+msgid "Others"
+msgstr "Ostalo"
+
+#: options.cpp:69
+msgid "Personal &First"
+msgstr "&Najprej uporabni¹ki meni"
+
+#: options.cpp:71
+msgid "Auto &Hide Panel"
+msgstr "Samodejno skrij &pult"
+
+#: options.cpp:73
+msgid "Auto Hide &Taskbar"
+msgstr "Samodejno skrij &opravilno vrstico"
+
+#: options.cpp:81
+msgid "Clock"
+msgstr "Ura"
+
+#: options.cpp:83
+msgid "&24h"
+msgstr "&24h"
+
+#: options.cpp:85
+msgid "&12h AM/PM"
+msgstr "&12h AM/PM"
