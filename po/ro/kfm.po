@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
 "POT-Creation-Date: 1999-04-17 01:15+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
-"Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
+"Last-Translator: Paul Ionescu <ipaul@romsys.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -19,13 +19,12 @@ msgid "KFM"
 msgstr "KFM"
 
 #: kfmgui.cpp:222
-#, fuzzy
 msgid "New &Window"
 msgstr "Ferea&strã nouã"
 
 #: kfmgui.cpp:225
 msgid "&Run..."
-msgstr "&Executã"
+msgstr "&Executã..."
 
 #: kfmgui.cpp:227
 msgid "Open &Terminal"
@@ -41,63 +40,59 @@ msgstr "&Cautã"
 
 #: kfmgui.cpp:253
 msgid "&Move to Trash"
-msgstr "Mutã la Gunoi"
+msgstr "&Mutã în gunoi"
 
 #: kfmgui.cpp:260
 msgid "&Select"
 msgstr "&Selecteazã"
 
 #: kfmgui.cpp:262
-#, fuzzy
 msgid "Select &all"
-msgstr "&Selecteazã"
+msgstr "&Selecteazã tot"
 
 #: kfmgui.cpp:265
 msgid "&Find in page..."
-msgstr ""
+msgstr "Cautã în paginã..."
 
 #: kfmgui.cpp:267
 msgid "Find &next"
-msgstr ""
+msgstr "Cautã urmãtoarea apariþie"
 
 #: kfmgui.cpp:270
 msgid "Show History"
-msgstr "Aratã Istoria"
+msgstr "Afiºeazã istoricul"
 
 #: kfmgui.cpp:272
 msgid "Show Cache"
-msgstr "Afiºare Cache"
+msgstr "Afiºeazã Cache-ul"
 
 #: kfmgui.cpp:274
-#, fuzzy
 msgid "Mime &Types"
-msgstr "Tipuri de 'MIME'"
+msgstr "Tipuri de fiºiere (MIME)"
 
 #: kfmgui.cpp:276
-#, fuzzy
 msgid "App&lications"
 msgstr "Aplicaþii"
 
 #: kfmgui.cpp:282
 msgid "Global Mime Types"
-msgstr "Tipuri 'MIME' globale"
+msgstr "Tipuri globale de fiºiere (MIME)"
 
 #: kfmgui.cpp:284
 msgid "Global Applications"
 msgstr "Aplicaþii Globale"
 
 #: kfmgui.cpp:292
-#, fuzzy
 msgid "Show Hi&dden Files"
-msgstr "Afiºeazã fiºierele .* "
+msgstr "Afiºeazã fiºierele ascunse "
 
 #: kfmgui.cpp:294
 msgid "Show Tr&ee"
-msgstr "+ vizualizare arborescentã"
+msgstr "Vizualizare arborescentã"
 
 #: kfmgui.cpp:296
 msgid "Sho&w Thumbnails"
-msgstr ""
+msgstr "Vizualizeazã imaginile"
 
 #: kfmgui.cpp:298
 msgid "&HTML View"
@@ -117,7 +112,7 @@ msgstr "Vizualizare &Detaliatã"
 
 #: kfmgui.cpp:307
 msgid "&Short View"
-msgstr "Vizualizare &pe scurt"
+msgstr "Vizualizare compactã"
 
 #: kfmgui.cpp:313
 msgid "Rel&oad Tree"
@@ -128,30 +123,28 @@ msgid "&Reload Document"
 msgstr "&Reîncarcã Documentul"
 
 #: kfmgui.cpp:317
-#, fuzzy
 msgid "Rescan &Bindings"
-msgstr "Rescaneazã atribuirile"
+msgstr "Rescaneazã legãturile (Bindings)"
 
 #: kfmgui.cpp:320
 msgid "&View Frame Source"
-msgstr "&Afiºarea Sursei Porþiunii"
+msgstr "&Afiºeazã sursa Frame-ului"
 
 #: kfmgui.cpp:322
 msgid "View Docu&ment Source"
-msgstr "Afiºarea Sursei Docu&mentului"
+msgstr "Afiºeazã sursa documentului"
 
 #: kfmgui.cpp:330
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 #: kfmgui.cpp:338
-#, fuzzy
 msgid "Document Encodin&g"
-msgstr "Document: încãrcat"
+msgstr "Codarea documentului"
 
 #: kfmgui.cpp:353
 msgid "Clear Cache"
-msgstr "ªterge Cache"
+msgstr "ªterge Cache-ul"
 
 #: kfmgui.cpp:356
 msgid "Always look in cache"
@@ -163,53 +156,49 @@ msgstr "Niciodatã nu încerci în cache"
 
 #: kfmgui.cpp:360
 msgid "Always save cache"
-msgstr "Totdeauna salveazã cache"
+msgstr "Totdeauna salveazã cache-ul"
 
 #: kfmgui.cpp:362
 msgid "Never save cache"
-msgstr "Niciodatã nu salvezi cache"
+msgstr "Niciodatã nu salvezi cache-ul"
 
 #: kfmgui.cpp:373
 msgid "Show &Menubar"
-msgstr "Afiºeazã Bara de &Meniu"
+msgstr "Afiºeazã zona de &Meniu"
 
 #: kfmgui.cpp:375
 msgid "Show &Statusbar"
-msgstr "Afiºeazã Bara de &Info"
+msgstr "Afiºeazã zona de &Info"
 
 #: kfmgui.cpp:377
 msgid "Show &Toolbar"
-msgstr "Afiºeazã Bara de &Scule"
+msgstr "Afiºeazã zona de &Scule"
 
 #: kfmgui.cpp:379
 msgid "Show &Location bar"
-msgstr "Afiºeazã Bara de &Locaþie"
+msgstr "Afiºeazã zona de &Locaþie"
 
 #: kfmgui.cpp:382
 msgid "Sa&ve Settings"
 msgstr "Sal&veazã Setãrile"
 
 #: kfmgui.cpp:384
-#, fuzzy
 msgid "Save Settings for this &URL"
-msgstr "Sal&veazã Setãrile"
+msgstr "Sal&veazã Setãrile pentru acest URL"
 
 #: kfmgui.cpp:392
 msgid "&Cache"
 msgstr "&Cache"
 
 #: kfmgui.cpp:393
-#, fuzzy
 msgid "&Configure File Manager..."
-msgstr "Configurare Navigator..."
+msgstr "Configurare Gestionar de Fiºiere..."
 
 #: kfmgui.cpp:395
-#, fuzzy
 msgid "Configure &Browser..."
 msgstr "Configurare Navigator..."
 
 #: kfmgui.cpp:431
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -222,6 +211,7 @@ msgid ""
 "\n"
 "Current maintainer: David Faure\n"
 "faure@kde.org"
+
 msgstr ""
 "Autor: Torben Weis\n"
 "weis@kde.org\n"
@@ -230,17 +220,22 @@ msgstr ""
 "mjones@kde.org\n"
 "\n"
 "Rutine Proxy de Lars Hoss\n"
-"Lars.Hoss@munich.netsurf.de"
+"Lars.Hoss@munich.netsurf.de\n"
+"Dezvoltator actual: David Faure <faure@kde.org>\n"
+"\n"
+"Traducere în limba românã: Paul Ionescu <ipaul@romsys.ro>"
 
 #: kfmgui.cpp:434
 msgid ""
 "\n"
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
 msgstr ""
-
+"\n"
+"Vã rugãm sã trimiteþi problemele si dorinþele la http://bugs.kde.org"
 #: kfmgui.cpp:450
+
 msgid "&Go"
-msgstr ""
+msgstr "&Deplasare"
 
 #: kfmgui.cpp:451
 msgid "&Bookmarks"
@@ -252,10 +247,9 @@ msgstr "Sus"
 
 #: kfmgui.cpp:496 main.cpp:298
 msgid "Forward"
-msgstr ""
+msgstr "Înainte"
 
 #: kfmgui.cpp:501
-#, fuzzy
 msgid "Home"
 msgstr "Acasã"
 
@@ -285,12 +279,11 @@ msgstr "Nu pot încãrca icoana\n"
 #: popup.cpp:109 root.cpp:943 root.cpp:1228 root.cpp:1246 root.cpp:1252
 #: root.cpp:1258 root.cpp:1339 root.cpp:1864 root.cpp:1889
 msgid "KFM Error"
-msgstr ""
+msgstr "Eroare KFM"
 
 #: kfmgui.cpp:572
-#, fuzzy
 msgid "Location:"
-msgstr "Deschide Locaþia:"
+msgstr "Locaþie:"
 
 #: kfmexec.cpp:63 kfmgui.cpp:799 kfmman.cpp:1428
 msgid "Malformed URL\n"
@@ -302,11 +295,11 @@ msgstr "Selecteazã fiºierele:"
 
 #: kfmgui.cpp:1052
 msgid "Find Complete"
-msgstr ""
+msgstr "Cautã complet"
 
 #: kfmgui.cpp:1053
 msgid "Continue search from the top of the page?"
-msgstr ""
+msgstr "Continui cautarea de la inceputul paginii ?"
 
 #: kfmgui.cpp:1071
 msgid "&Edit Bookmarks..."
@@ -317,27 +310,24 @@ msgid "&Add Bookmark"
 msgstr "&Adaugã semn de carte"
 
 #: kfmgui.cpp:1119 kfmman.cpp:1469 kfmtree.cpp:387 root.cpp:286
-#, fuzzy
 msgid "&New"
-msgstr "Nou"
+msgstr "&Nou"
 
 #: kfmgui.cpp:1192
-#, fuzzy
 msgid "&Up"
-msgstr "Sus"
+msgstr "&Sus"
 
 #: kfmgui.cpp:1194
 msgid "&Back"
-msgstr ""
+msgstr "Îna&poi"
 
 #: kfmgui.cpp:1196
 msgid "&Forward"
-msgstr ""
+msgstr "Îna&inte"
 
 #: kfmgui.cpp:1198
-#, fuzzy
 msgid "&Home"
-msgstr "Acasã"
+msgstr "&Acasã"
 
 #: kfmgui.cpp:1267 kfmgui.cpp:1433 kfmjob.cpp:36 kfmman.cpp:252
 #: kfmtree.cpp:498 kfmview.cpp:496 kfmview.cpp:578 kfmview.cpp:806
@@ -359,16 +349,15 @@ msgid ""
 "Important desktop functionality will be lost"
 msgstr ""
 "Chiar vrei sã renunþi?\n"
-"Funcþionalitãþi importante ale mediului vor fi inactive"
+"Funcþionalitãþi importante ale mediului vor fi dezactivate"
 
 #: kfmgui.cpp:1578
 msgid "Document: Done"
 msgstr "Document: încãrcat"
 
 #: kfmview.cpp:443 root.cpp:944
-#, fuzzy
 msgid "ERROR: You may only drop URLs"
-msgstr "Eroare: Ai scãpat un URL peste el însuºi"
+msgstr "Eroare: Poþi sã pui doar URL-uri"
 
 #: kfmview.cpp:477
 msgid "ERROR: Drop over malformed URL"
@@ -385,7 +374,7 @@ msgid ""
 "\n"
 "There is no way to restore them."
 msgstr ""
-"Chiar vrei sã ºtergi fiºierul(ele) selectate ?\n"
+"Chiar vrei sã ºtergi fiºierul(ele) selectat(e) ?\n"
 "\n"
 "Nu mai este nici o speranþã de recuperare."
 
@@ -412,6 +401,11 @@ msgid ""
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Nu pot salva proprietãþile pentru cã\n"
+"în acest director nu ai voie sã scrii.\n"
+"\n"
+" "
+
 
 #: kfmview.cpp:719
 msgid ""
@@ -423,7 +417,7 @@ msgstr ""
 
 #: kfmtree.cpp:467 kfmview.cpp:758 root.cpp:1340
 msgid "Could not access Trash Bin"
-msgstr "Nu pot accesa Gunoiul"
+msgstr "Nu pot accesa coºul de gunoi"
 
 #: kfmview.cpp:785 root.cpp:1229
 msgid "Can not paste into multiple directories"
@@ -431,7 +425,7 @@ msgstr "Nu pot sã fac 'paste' în directoare multiple"
 
 #: kfmview.cpp:882
 msgid "ERROR: Can not change to multiple directories"
-msgstr "Eroare: Nu pot sã merg în directoare multiple"
+msgstr "Eroare: Nu pot sã intru în directoare multiple"
 
 #: kfmview.cpp:1153
 msgid "KFM Security Alert"
@@ -442,8 +436,8 @@ msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
 msgstr ""
-"Aceastã paginã este nepermisã\n"
-"dar conþine o legãturã în local file system."
+"Aceastã paginã este nesigurã\n"
+"dar conþine o legãturã în sistemul local de fiºiere."
 
 #: kfmview.cpp:1246
 msgid "Symbolic Link"
@@ -460,20 +454,19 @@ msgstr "octeþi"
 
 #: kbind.cpp:227
 msgid "The mime type config file "
-msgstr "Tipul lui mime"
+msgstr "Fiºier de configurare pentru tipuri de fiºiere (MIME)"
 
 #: kbind.cpp:228
-#, fuzzy
 msgid "does not contain a MimeType=... entry"
-msgstr "nu conþine un MimeType=... intrare"
+msgstr "nu conþine o intrare MimeType=... "
 
 #: kbind.cpp:309
 msgid "No mime types installed!"
-msgstr "Tipure de Mime neinstalate "
+msgstr "Tipurire de fiºiere (MIME) nu sunt instalate !"
 
 #: kbind.cpp:357 kbind.cpp:1177
 msgid "Could not find mime type\n"
-msgstr "Nu pot gãsi tipuri de mime\n"
+msgstr "Nu pot gãsi tipul de fiºier (MIME)\n"
 
 #: kbind.cpp:627 kbind.cpp:637 kbind.cpp:1942 kbind.cpp:1943 kbind.cpp:1955
 #: kbind.cpp:1957
@@ -498,7 +491,7 @@ msgstr "în"
 
 #: kbind.cpp:1312 kbind.cpp:1870
 msgid "ERROR: No Terminal Setting"
-msgstr "EROARE:Nu exista setãrile ptr. Terminal"
+msgstr "EROARE: Nu existã setãrile ptr. Terminal"
 
 #: kbind.cpp:1387
 msgid "Could not execute program\n"
@@ -506,7 +499,7 @@ msgstr "Nu pot executa programul\n"
 
 #: kbind.cpp:1559
 msgid "Could not find binding"
-msgstr "Nu pot gãsi legãturi"
+msgstr "Nu pot gãsi legãtura"
 
 #: kbind.cpp:1569
 msgid ""
@@ -518,15 +511,15 @@ msgstr ""
 
 #: kbind.cpp:1587 kbind.cpp:1606
 msgid "Can only start executables on local disks\n"
-msgstr "Nu pot sã rulez decît executabile de pe discuri locale\n"
+msgstr "Nu pot sã rulez decât aplicaþii de pe discurile locale\n"
 
 #: kbind.cpp:1665 kbind.cpp:1745 kbind.cpp:1908
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
 msgstr ""
-"Pot sã lucrez decît cu fiºiere *.kdelnk\n"
-"de pe local hard disk"
+"Nu pot sã lucrez decât cu fiºiere *.kdelnk\n"
+"de pe discul local"
 
 #: kbind.cpp:1675
 #, c-format
@@ -539,7 +532,7 @@ msgstr ""
 
 #: kbind.cpp:1704
 msgid "The \"Link=....\" entry is empty"
-msgstr " \"Link=.....\" este goalã"
+msgstr "Intrarea \"Link=.....\" este goalã"
 
 #: kbind.cpp:1725
 msgid "The config file has no \"Type=...\" line"
@@ -547,7 +540,7 @@ msgstr "Fiºierul de configurare nu are linia \"Type=...\""
 
 #: kbind.cpp:1755 kbind.cpp:1918
 msgid "Could not access"
-msgstr "Nu am acces"
+msgstr "Nu pot accesa"
 
 #: kbind.cpp:1773
 msgid ""
@@ -556,22 +549,22 @@ msgid ""
 "entry. Edit the Properties\n"
 "to solve the problem"
 msgstr ""
-"Acest fiºier nu conþine\n"
+"Acest fiºier nu conþine o intrare\n"
 "Exec=....\n"
-"parametrii.Editeazã Proprietãþile ca\n"
+"Editeazã Proprietãþile ca\n"
 "sã rezolvi problema"
 
 #: kbind.cpp:1965
 msgid "No mount point in *.kdelnk file"
-msgstr "În fiºierul *.kdelnk nu existã punctul de montaj"
+msgstr "În fiºierul *.kdelnk nu existã punctul de montare"
 
 #: main.cpp:90 main.cpp:243
 msgid "KFM Information"
-msgstr "Informaþii KFM"
+msgstr "Informaþie KFM"
 
 #: main.cpp:91
 msgid "Creating directory:\n"
-msgstr "Creazã director:\n"
+msgstr "Creazã directorul:\n"
 
 #: main.cpp:244
 msgid ""
@@ -591,7 +584,7 @@ msgstr "Ferea&strã nouã"
 
 #: kfmtree.cpp:402 main.cpp:285
 msgid "Move to Trash"
-msgstr "Mutã în Gunoi"
+msgstr "Mutã în gunoi"
 
 #: main.cpp:287
 msgid "Open with"
@@ -599,7 +592,7 @@ msgstr "Deschide cu"
 
 #: kfmman.cpp:1694 kfmtree.cpp:331 main.cpp:289
 msgid "Move"
-msgstr ""
+msgstr "Mutã"
 
 #: kfmman.cpp:1698 kfmtree.cpp:335 main.cpp:291
 msgid "Link"
@@ -615,17 +608,15 @@ msgstr "Adaugã la semne de carte"
 
 #: main.cpp:294
 msgid "Save settings for this URL"
-msgstr ""
+msgstr "Salveazã setãrile pentru acest URL"
 
 #: main.cpp:295
-#, fuzzy
 msgid "Show Menubar"
-msgstr "Afiºeazã Bara de &Meniu"
+msgstr "Afiºeazã zona de &Meniu"
 
 #: kfmdlg.cpp:118
-#, fuzzy
 msgid "&Browser"
-msgstr "Navigheazã"
+msgstr "Navigator"
 
 #: kfmdlg.cpp:130 kfmprops.cpp:771
 msgid "Run in terminal"
@@ -636,9 +627,8 @@ msgid "Could not write bookmark"
 msgstr "Nu pot sã scriu însemnãrile"
 
 #: kfmprops.cpp:239
-#, fuzzy
 msgid "File Name"
-msgstr "Numele întreg"
+msgstr "Nume Fiºier"
 
 #: kfmprops.cpp:254
 msgid "Full Name"
@@ -670,13 +660,12 @@ msgid "Last Modified"
 msgstr "Ultima Modificare"
 
 #: kfmprops.cpp:383
-#, fuzzy, c-format
 msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
 msgstr ""
-"Nu pot ºterge directorul\n"
-"%s"
+"Nu pot redenumi fiºierul sau directorul\n"
+"%s\n"
 
 #: kfmprops.cpp:434
 msgid "Access permissions"
@@ -688,7 +677,7 @@ msgid ""
 "Entries"
 msgstr ""
 "Citire\n"
-"Intrãri"
+"Fiºiere"
 
 #: kfmprops.cpp:442
 msgid "Read"
@@ -700,7 +689,7 @@ msgid ""
 "Entries"
 msgstr ""
 "Scriere\n"
-"Intrãri"
+"Fiºiere"
 
 #: kfmprops.cpp:449
 msgid "Write"
@@ -710,8 +699,9 @@ msgstr "Scriere"
 msgid ""
 "Change\n"
 "Into"
-msgstr "Schimbã"
-
+msgstr ""
+"Schimbã\n"
+"În"
 #: kfmprops.cpp:456
 msgid "Exec"
 msgstr "Execuþie"
@@ -726,7 +716,7 @@ msgstr "Utilizator"
 
 #: kfmprops.cpp:469 kfmprops.cpp:568
 msgid "Group"
-msgstr ""
+msgstr "Grup"
 
 #: kfmprops.cpp:474
 msgid "Others"
@@ -749,7 +739,6 @@ msgid "Ownership"
 msgstr "Proprietar"
 
 #: kfmprops.cpp:513
-#, fuzzy
 msgid "Owner"
 msgstr "Proprietar"
 
@@ -761,14 +750,14 @@ msgstr "EROARE: Nici un utilizator %s"
 #: kfmprops.cpp:648
 #, c-format
 msgid " ERROR: No group %s"
-msgstr "EROARE: Nici o grupã %s"
+msgstr "EROARE: Nici un grup %s"
 
 #: kfmprops.cpp:654
 msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
 msgstr ""
-"Nu am voie sã schimb patronul/grupul\n"
+"Nu am voie sã schimb proprietarul/grupul\n"
 "Acces interzis."
 
 #: kfmprops.cpp:661
@@ -784,13 +773,12 @@ msgid "Execute"
 msgstr "Executã"
 
 #: kfmprops.cpp:690 kfmprops.cpp:1177
-#, fuzzy
 msgid "&Browse..."
-msgstr "Navigheazã"
+msgstr "Navigheazã..."
 
 #: kfmprops.cpp:724
 msgid "Swallowing on panel"
-msgstr "Swallowing on panel"
+msgstr "Afiºeazã în panou"
 
 #: kfmprops.cpp:751
 msgid "Window Title"
@@ -814,7 +802,6 @@ msgid "URL"
 msgstr "URL"
 
 #: kfmprops.cpp:1116
-#, fuzzy
 msgid "Background"
 msgstr "Culoarea de fond:"
 
@@ -836,7 +823,7 @@ msgstr "(Nimic)"
 
 #: kfmprops.cpp:1429
 msgid "Binary Pattern (netscape;Netscape;)"
-msgstr "Binaru Pattern (netscape;Netscape;)"
+msgstr "Pattern binar (netscape;Netscape;)"
 
 #: kfmprops.cpp:1436 kfmprops.cpp:1831
 msgid "Comment"
@@ -852,7 +839,7 @@ msgstr "Pattern (exemplu: *.html;*.HTML; )"
 
 #: kfmprops.cpp:1820
 msgid "Mime Type"
-msgstr "Tip de MIME"
+msgstr "Tip de fiºier (MIME)"
 
 #: kfmprops.cpp:1849
 msgid "Default Application"
@@ -860,7 +847,7 @@ msgstr "Aplicaþia implicitã"
 
 #: kfmprops.cpp:1889
 msgid "<none>"
-msgstr ""
+msgstr "<nimic>"
 
 #: kfmprops.cpp:2134
 msgid "Device ( /dev/fd0 )"
@@ -872,7 +859,7 @@ msgstr "Locul de montare ( /disc )"
 
 #: kfmprops.cpp:2154
 msgid "Readonly"
-msgstr "Numai de citit"
+msgstr "Numai pentru citire"
 
 #: kfmprops.cpp:2160
 msgid "Filesystems ( iso9660,msdos,minix,default )"
@@ -911,7 +898,7 @@ msgid ""
 "Authorization failed"
 msgstr ""
 "Nu aveþi fiºierul ~/.kde/share/apps/kfm/magic\n"
-"Nu se poate stabili Autorizaþia"
+"Autorizare respinsã"
 
 #: kfmserver.cpp:370
 msgid ""
@@ -919,14 +906,14 @@ msgid ""
 "Authorization failed"
 msgstr ""
 "Fiºierul ~/.kde/share/apps/kfm/magic este corupt\n"
-"Nu se poate stabili Autorizaþia"
+"Autorizare respinsã"
 
 #: kfmserver.cpp:378
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
 msgstr ""
-"Cineva încearcã sã se autorizeze\n"
+"Cineva a încercat sã se autorizeze\n"
 "utilizînd o parolã greºitã"
 
 #: root.cpp:734
@@ -970,7 +957,7 @@ msgstr "Lucrez ..."
 
 #: kiojob.cpp:140
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
-msgstr "Eroare internã: Trebuie sã specificaþi deviza pentru montare"
+msgstr "Eroare internã: Trebuie sã specificaþi dispozitivul pentru montare"
 
 #: kiojob.cpp:243 kiojob.cpp:251 kiojob.cpp:1340 kiojob.cpp:1419
 #, c-format
@@ -983,7 +970,7 @@ msgstr ""
 
 #: kiojob.cpp:260
 msgid "Can only make links on local file system"
-msgstr "Nu pot sã fac legãturi decît cu sistemul de fiºiere local"
+msgstr "Nu pot sã fac legãturi decît în sistemul de fiºiere local"
 
 #: kiojob.cpp:283 kiojob.cpp:302
 #, c-format
@@ -991,7 +978,7 @@ msgid ""
 "Could not overwrite\n"
 "%s"
 msgstr ""
-"Nu trebuie sã il scriu\n"
+"Nu pot sã suprascriu\n"
 "%s"
 
 #: kiojob.cpp:312 kiojob.cpp:337 kiojob.cpp:356
@@ -1000,21 +987,20 @@ msgid ""
 "Could not make symlink to\n"
 "%s"
 msgstr ""
-"Nu trebuie sã fac legãturã simbolicã la\n"
+"Nu pot sã fac legãturã simbolicã la\n"
 "%s"
 
 #: kiojob.cpp:392
 #, c-format
 msgid " ERROR: Could not write to %s"
-msgstr "EROARE: Nu pot scrie la %s"
+msgstr "EROARE: Nu pot scrie în %s"
 
 #: kiojob.cpp:573 kiojob.cpp:896
-#, fuzzy, c-format
 msgid ""
 "Could not make symbolic link\n"
 "%s"
 msgstr ""
-"Nu trebuie sã fac legãturã simbolicã la\n"
+"Nu pot face legãturã simbolicã la\n"
 "%s"
 
 #: kiojob.cpp:591 kiojob.cpp:926 kiojob.cpp:1366
@@ -1036,30 +1022,32 @@ msgstr "EROARE: Nu pot accesa directorul '%s'"
 msgid ""
 "Special file will not be copied\n"
 "%s"
-msgstr ""
+msgstr "Fiºierul special nu va fi copiat\n"
+"%s"
 
 #: kiojob.cpp:669
 #, c-format
 msgid "%d special files will not be copied."
-msgstr ""
+msgstr "%d fiºiere speciale nu vor fi copiate."
 
 #: kiojob.cpp:674
 msgid ""
 "Recurse copying from file with sub-protocol\n"
 "(for instance, tar files)"
 msgstr ""
+"Copiere recursivã dintr-un fiºier cu sub-protocol\n"
+"(de exemplu, fisiere tar)"
 
 #: kiojob.cpp:679
 msgid "Recurse copying from/to distant locations"
-msgstr ""
+msgstr "Copiere recursivã la/din o locaþie la distanþã"
 
 #: kiojob.cpp:909
-#, fuzzy, c-format
 msgid ""
 "Could not remove symbolic link\n"
 "%s"
 msgstr ""
-"Nu trebuie sã fac legãturã simbolicã la\n"
+"Nu pot ºterge legãtura simbolicã la\n"
 "%s"
 
 #: kiojob.cpp:957
@@ -1090,11 +1078,13 @@ msgid ""
 "Special file will not be moved\n"
 "%s"
 msgstr ""
+"Fiºierul special nu va fi mutat\n"
+"%s"
 
 #: kiojob.cpp:1079
 #, c-format
 msgid "%d special files will not be moved."
-msgstr ""
+msgstr "%d fiºiere speciale nu vor fi mutate."
 
 #: kiojob.cpp:1343 kiojob.cpp:1423
 #, c-format
@@ -1124,7 +1114,7 @@ msgid ""
 "Could not create Socket for\n"
 "%s"
 msgstr ""
-"Nu pot crea Socket pentru\n"
+"Nu pot crea un Socket pentru\n"
 "%s"
 
 #: kiojob.cpp:1354 kiojob.cpp:1431
@@ -1142,7 +1132,7 @@ msgid ""
 "Could not connect to\n"
 "%s"
 msgstr ""
-"Nu pot conecta la\n"
+"Nu mã pot conecta la\n"
 "%s"
 
 #: kiojob.cpp:1362 kiojob.cpp:1439
@@ -1152,7 +1142,7 @@ msgid ""
 "%s\n"
 "is not implemented yet."
 msgstr ""
-"Cererea acþiunii\n"
+"Acþiunea\n"
 "%s\n"
 "încã nu este implementatã."
 
@@ -1188,26 +1178,24 @@ msgstr ""
 "Accesul interzis (parola greºitã)"
 
 #: kiojob.cpp:1390
-#, fuzzy, c-format
 msgid ""
 "Tar reported an error\n"
 "%s"
 msgstr ""
-"Tar raporteazã eroare\n"
+"Tar-ul a raportat o eroare\n"
 "%s"
 
 #: kiojob.cpp:1393
-#, fuzzy, c-format
 msgid ""
 "Gzip reported an error for\n"
 "%s"
 msgstr ""
-"Gzip raporteazã greºealã pentru\n"
+"Gzip-ul a raportat o eroare pentru\n"
 "%s"
 
 #: kiojob.cpp:1399
 msgid "Operation technically impossible"
-msgstr ""
+msgstr "Operaþia este tehnic imposibilã"
 
 #: kiojob.cpp:1402 kiojob.cpp:1415
 #, c-format
@@ -1219,7 +1207,6 @@ msgstr ""
 "nu existã"
 
 #: kiojob.cpp:1405
-#, fuzzy, c-format
 msgid ""
 "Could not write\n"
 "%s\n"
@@ -1227,24 +1214,22 @@ msgid ""
 msgstr ""
 "Nu pot scrie\n"
 "%s\n"
-"Accesul Interzis"
+"Poate discul este plin"
 
 #: kiojob.cpp:1456
-#, fuzzy, c-format
 msgid ""
 "Tar reported a fatal error\n"
 "%s"
 msgstr ""
-"Tar raporteazã eroare\n"
+"Tar-ul a raportat o eroare fatalã\n"
 "%s"
 
 #: kiojob.cpp:1460
-#, fuzzy, c-format
 msgid ""
 "Gzip reported a fatal error\n"
 "%s"
 msgstr ""
-"Gzip raporteazã o eroare\n"
+"Gzip-ul a raportat o eroare fatalã\n"
 "%s"
 
 #: kiojob.cpp:1464
@@ -1307,11 +1292,11 @@ msgstr "Demontez %s ..."
 #: kiojob.cpp:1872
 #, c-format
 msgid "Retrieving listing of %s"
-msgstr "Retrieving listing of %s"
+msgstr "Preia listing-ul de la %s"
 
 #: kiojob.cpp:2113
 msgid "Segmentation fault in io subprocess"
-msgstr "În io subproces Segmentation fault"
+msgstr "Eroare de segmentare în subprocesul de IO"
 
 #: htmlcache.cpp:364
 msgid ""
@@ -1383,7 +1368,7 @@ msgstr "Sau redenumesc în"
 
 #: krenamewin.cpp:125
 msgid "You did not change the name!\n"
-msgstr "Nu vreþi sã schimbaþi numele!\n"
+msgstr "Nu aþi schimbat numele!\n"
 
 #: passworddialog.cpp:50 passworddialog.cpp:113
 msgid "Password"
@@ -1395,54 +1380,51 @@ msgstr "Încearc sã deschid"
 
 #: open-with.cpp:132
 msgid "This group is empty!"
-msgstr ""
+msgstr "Acest grup este gol !"
 
 #: finddlg.cpp:41
-#, fuzzy
 msgid "Find:"
-msgstr "&Cautã"
+msgstr "Cautã:"
 
 #: finddlg.cpp:56
 msgid "Case &sensitive"
-msgstr ""
+msgstr "Senzitiv la majuscule"
 
 #: kcookiewin.cpp:58
 msgid "Cookie Alert!"
-msgstr ""
+msgstr "Alertã COOKIE !"
 
 #: kcookiewin.cpp:76
 msgid "You received a cookie from host:"
-msgstr ""
+msgstr "Aþi recepþionat un COOKIE de la adresa:"
 
 #: kcookiewin.cpp:89
 msgid "Do you want to accept or reject this cookie?"
-msgstr ""
+msgstr "Vreþi sã primiþi sau sã respingeþi acest COOKIE ?"
 
 #: kcookiewin.cpp:120
-#, fuzzy
 msgid "Apply to "
-msgstr "Aplicã global"
+msgstr "Aplicã la "
 
 #: kcookiewin.cpp:125
 msgid "&This cookie only"
-msgstr ""
+msgstr "Doar acest cookie"
 
 #: kcookiewin.cpp:133
 msgid "All cookies from this &domain"
-msgstr ""
+msgstr "Toate cookies-urile din acest &domeniu"
 
 #: kcookiewin.cpp:140
 msgid "All &cookies"
-msgstr ""
+msgstr "Toate &cookies-urile"
 
 #: kcookiewin.cpp:161
 msgid "&Accept"
-msgstr ""
+msgstr "&Acceptã"
 
 #: kcookiewin.cpp:166
-#, fuzzy
 msgid "&Reject"
-msgstr "&Selecteazã"
+msgstr "&Respinge"
 
 #: popup.cpp:73
 #, c-format
@@ -1485,7 +1467,7 @@ msgstr "&Aplicaþie"
 
 #: kfmprops.h:361
 msgid "&Binding"
-msgstr "&Binduialã"
+msgstr "&Legãturã (Binding)"
 
 #: kfmprops.h:386
 msgid "De&vice"
@@ -1515,7 +1497,7 @@ msgstr ""
 
 #: kfmexec/main.cpp:136
 msgid "KFM Question"
-msgstr "KFM Întrebare"
+msgstr "Întrebare KFM"
 
 #: kfmexec/main.cpp:202
 msgid ""
@@ -1525,136 +1507,3 @@ msgstr ""
 "Eroare de sintaxã:\n"
 "kfmexec command [URLs ...]\n"
 
-#~ msgid "Unknown binding"
-#~ msgstr "Legãtura necunoscutã"
-
-#~ msgid "Dont know what to do"
-#~ msgstr "Nu ºtiu ce sã fac."
-
-#, fuzzy
-#~ msgid "Link here"
-#~ msgstr "Legãturã"
-
-#~ msgid "Working Directory"
-#~ msgstr "Directorul de lucru"
-
-#~ msgid ""
-#~ "Please change the password in\n"
-#~ "~/.kde/share/apps/kfm/magic"
-#~ msgstr ""
-#~ "Vã rugãm schimbaþi parola în\n"
-#~ "~/.kde/share/apps/kfm/magic"
-
-#~ msgid ""
-#~ "Could not rename the file or directory\n"
-#~ "The destination seems to already exist\n"
-#~ msgstr ""
-#~ "Nu pot sã redenumesc fiºierul sau directorul\n"
-#~ "Destinaþia existã deja\n"
-
-#~ msgid "Installing Templates"
-#~ msgstr "Instaleazã Templates"
-
-#~ msgid "Standard Font"
-#~ msgstr "Standard"
-
-#~ msgid "Fixed Font"
-#~ msgstr "Font fix"
-
-#~ msgid "Background Color:"
-#~ msgstr "Culoarea de fond:"
-
-#~ msgid "Normal Text Color:"
-#~ msgstr "Culoarea textului:"
-
-#~ msgid "URL Link Color:"
-#~ msgstr "Culoarea legãturilor URL:"
-
-#~ msgid "Followed Link Color:"
-#~ msgstr "Culoarea legãturii urmate:"
-
-#~ msgid "Change cursor over link."
-#~ msgstr "Schimbã cursorul dupã legãturã."
-
-#~ msgid "Horizontal Root Grid Spacing:"
-#~ msgstr "Horizontal Root Grid Spacing:"
-
-#~ msgid "Vertical Root Grid Spacing:"
-#~ msgstr "Vertical Root Grid Spacing:"
-
-#, fuzzy
-#~ msgid "&Transparent Text for Root Icons."
-#~ msgstr "Text transparent pentru icoanele rãdãcinã"
-
-#, fuzzy
-#~ msgid "Icon foreground color:"
-#~ msgstr "Culoarea de fond:"
-
-#, fuzzy
-#~ msgid "Icon background color:"
-#~ msgstr "Culoarea de fond:"
-
-#~ msgid "On server:"
-#~ msgstr "Pe serverul:"
-
-#~ msgid "login as:"
-#~ msgstr "login ca:"
-
-#~ msgid "Known bindings:"
-#~ msgstr "Legãturi cunoscute:"
-
-#~ msgid "Don't forget to save your settings!"
-#~ msgstr "Nu uitaþi sã vã salvaþi setãrile!"
-
-#~ msgid "Use proxy"
-#~ msgstr "Foloseºte proxy"
-
-#~ msgid "No Proxy for:"
-#~ msgstr "Fãrã Proxy ptr. :"
-
-#~ msgid "&Proxy"
-#~ msgstr "&Proxy"
-
-#~ msgid "User &Agent"
-#~ msgstr "&Agent Utilizator"
-
-#~ msgid "&Colors"
-#~ msgstr "&Culori"
-
-#~ msgid "&Other"
-#~ msgstr "&Diverse"
-
-#, fuzzy
-#~ msgid "KFM Preferences Settings"
-#~ msgstr "Setãri navigator KFM"
-
-#~ msgid "Accept languages:"
-#~ msgstr "Acceptã limbajele:"
-
-#~ msgid "Accept character sets:"
-#~ msgstr "Acceptã seturile de caractere:"
-
-#~ msgid "Assume HTML"
-#~ msgstr "Subînþelege HTML"
-
-#~ msgid "ERROR: You dropped some URL over itself"
-#~ msgstr "Eroare: Ai scãpat un URL peste el însuºi"
-
-#~ msgid "&Visual Schnauzer"
-#~ msgstr "Schnauzer &Vizual"
-
-#, fuzzy
-#~ msgid "Name"
-#~ msgstr "Numele întreg"
-
-#~ msgid "Browse"
-#~ msgstr "Navigheazã"
-
-#~ msgid "&Quit..."
-#~ msgstr "&Ieºire..."
-
-#~ msgid "&About..."
-#~ msgstr "&Despre..."
-
-#~ msgid "About KFM"
-#~ msgstr "Despre KFM"
