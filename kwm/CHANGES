@@ -12,6 +12,10 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 2:
+       - fixed the frames-are-dissappearing-and-qt-focus-not-working
+         bug I introduced in patchlevel 1 :-(
+       - tiny fixes / improvements for KWMModuleApplication
 
   patchlevel 1:
        - "-version" command line argument

@@ -14,7 +14,7 @@
 #include "kwm.h"
 
 extern bool kwm_error;
-
+extern QList<Window> own_toplevel_windows;
 
 extern Manager* manager;
 
@@ -121,11 +121,17 @@ void Manager::createNotify(XCreateWindowEvent *e){
     ignore_badwindow = TRUE;
     if (KWM::isKWMModule(e->window))
       addModule(e->window);
+    if (!getClient(e->window)){
+      Window *wp;
+      for (wp = own_toplevel_windows.first(); 
+	   wp && *wp != e->window; 
+	   wp = own_toplevel_windows.next());
+      if (!wp)
+	XSelectInput(qt_xdisplay(), e->window, PropertyChangeMask);
+    }
     /* flush any errors */
     XSync(qt_xdisplay(), False);
     ignore_badwindow = FALSE;
-    if (!getClient(e->window))
-      XSelectInput(qt_xdisplay(), e->window, PropertyChangeMask);
   }
 }
 
@@ -390,7 +396,7 @@ void Manager::propertyNotify(XPropertyEvent *e){
       QString tmp = c->label;
       c->setLabel();
       if (tmp != c->label)
-	sendToModules(module_win_change, c->window);
+	changedClient(c);
     }
     return;
   case XA_WM_TRANSIENT_FOR:
@@ -1010,7 +1016,9 @@ void Manager::sendConfig(Client* c){
   ce.above = None;
   ce.override_redirect = 0;
   XSendEvent(qt_xdisplay(), c->window, False, StructureNotifyMask, (XEvent*)&ce);
+  changedClient(c);
 }
+
 
 
 void Manager::cleanup(){
@@ -1064,8 +1072,10 @@ void Manager::scanWins(){
   
   XQueryTree(qt_xdisplay(), qt_xrootwin(), &dw1, &dw2, &wins, &nwins);
   for (i = 0; i < nwins; i++) {
-    if (KWM::isKWMModule(wins[i]))
+    if (KWM::isKWMModule(wins[i])){
+      XSelectInput(qt_xdisplay(), wins[i], PropertyChangeMask);
       addModule(wins[i]);
+    }
     XGetWindowAttributes(qt_xdisplay(), wins[i], &attr);
     if (attr.override_redirect )
       continue;

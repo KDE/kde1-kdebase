@@ -5,6 +5,9 @@
  *
  */
 
+#ifndef KWM_H
+#define KWM_H
+
 #include <qstring.h>
 #include <qapp.h>
 #include <qpixmap.h>
@@ -147,14 +150,16 @@ public:
    */
   static void setIcon(Window w, const QPixmap &pm);
 
-  /* This declares a window to be a docking window. If a KWMDockModule
+  /* This declares a toplevel window to be a docking window. If a KWMDockModule
    * is running (for example kpanel), it will swallow the window on
    * its docking area when it is mapped.
    *
-   * For docking call setDockWindow() on a new _unmapped_ window. If
-   * this window will be mapped (show), it will appear on the docking
-   * area, if you unmap it again (hide) it will disappear from the
-   * docking area again.
+   * For docking call setDockWindow() on a new _unmapped_ toplevel
+   * window. If this window will be mapped (show), it will appear on
+   * the docking area, if you unmap it again (hide) it will disappear
+   * from the docking area again. Docking windows MUST be toplevel
+   * windows. If you create them with Qt (new QWidget()->winId()) be
+   * sure not to pass any parent.
    *
    * Note: May have no effect with other window mangers 
    */
@@ -219,10 +224,13 @@ public:
    ************************************************************************* 
    */
 
-  /* Declare a window to be used for module communication. This window does
-   * not need to be mapped, although it can be mapped of course.
-   * Modules get the following client messages from kwm. Argument is either
-   * a window ((Window) XClientMessageEvent.data.l[0]) or nothing.
+  /* Declare a toplevel window to be used for module
+   * communication. This window does not need to be mapped, although
+   * it can be mapped of course.  Module windows MUST be toplevel
+   * windows. If you create them with Qt (new QWidget()->winId()) be
+   * sure not to pass any parent. Modules get the following client
+   * messages from kwm. Argument is either a window ((Window)
+   * XClientMessageEvent.data.l[0]) or nothing.
    *
    * KWM_MODULE_INIT             - initinalization
    * KWM_MODULE_DESKTOP_CHANGE   - new current virtual desktop
@@ -235,7 +243,7 @@ public:
    *
    * Please check out the KWMModuleApplication class which gives you easy
    * access to all these messages via Qt signals and slots. It also keeps
-   * automatically a list of windows in both stacking and creation order.
+   * automatically a list of windows in both stacking and creation order.  
    */
   static void setKWMModule(Window w);
   static bool isKWMModule(Window w);
@@ -338,9 +346,26 @@ public:
   static void setMaximize(Window w, bool value);
   static void setIconify(Window w, bool value);
   static void setSticky(Window w, bool value);
+
+  /* close will send a WM_DELETE_WINDOW message to the window, if this window
+   * requested for this protocol. Otherwise it will simply be destroyed.
+   */
   static void close(Window w);
+
+  /* activate will deiconify the window, if is is iconified, or switch to
+   * another desktop, if the window is there. Then the window is raised
+   * and activated with activateInteral (see below)
+   */
   static void activate(Window w);
+
+  /* activateInternal will simply activate the window. Be carefull: you might 
+   * run into trouble if the window is iconified or on another desktop!
+   * You probably prefer activate (see above).
+   */
   static void activateInternal(Window w);
+
+  /* raise or lower a window. Should work with any windowmanager
+   */
   static void raise(Window w);
   static void lower(Window w);
 
@@ -384,8 +409,7 @@ public:
 
 };
 
-
-
+#endif // KWM_H
 
 
 

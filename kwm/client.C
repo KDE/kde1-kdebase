@@ -1209,12 +1209,12 @@ void Client::maximize(){
 			isDecorated(),
 			title_rect.x(), 
 			width()-title_rect.right());
-  manager->sendConfig(this);
-  layoutButtons();
   KWM::setMaximize(window, maximized);
-  manager->changedClient(this);
   if (!buttonMaximize->isOn())
     buttonMaximize->toggle();
+  
+  manager->sendConfig(this);
+  layoutButtons();
 }
 
 void Client::unMaximize(){
@@ -1227,12 +1227,12 @@ void Client::unMaximize(){
 			title_rect.x(), 
 			width()-title_rect.right());
   geometry = geometry_restore;
-  manager->sendConfig(this);
-  layoutButtons();
   KWM::setMaximize(window, maximized);
-  manager->changedClient(this);
   if (buttonMaximize->isOn())
     buttonMaximize->toggle();
+
+  manager->sendConfig(this);
+  layoutButtons();
 }
 
 void Client::maximizeToggled(bool depressed){

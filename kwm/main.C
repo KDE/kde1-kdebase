@@ -80,7 +80,7 @@ int handler(Display *d, XErrorEvent *e){
     return 0;
 }
 
-
+QList<Window> own_toplevel_windows;
 
 static Minicli* minicli = NULL;
 static Klogout* klogout = NULL;
@@ -104,6 +104,9 @@ static void setInfoBoxText(QString text, Window w){
   if (!infoFrame){
     infoFrame = new QFrame(0, 0, 
 			   WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
+    Window* wp = new Window;
+    *wp = infoFrame->winId();
+    own_toplevel_windows.append(wp);
     infoFrame->setFrameStyle( QFrame::WinPanel | QFrame::Raised );
     infoFrameInner = new QFrame(infoFrame);
     infoFrameInner->setFrameStyle( QFrame::Panel | QFrame::Sunken );
@@ -200,6 +203,9 @@ static void setStringProperty(const char* atomname, const char* value){
 static void showLogout(){
   if (!klogout){
     klogout = new Klogout(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
+    Window* wp = new Window;
+    *wp = klogout->winId();
+    own_toplevel_windows.append(wp);
     // next is a dirty hack to fix a qt-1.2 bug 
     // (should be unnecessary with 1.3)
     unsigned long data[2];
@@ -224,6 +230,9 @@ static void showLogout(){
 static void showTask(){
   if (!ktask){
     ktask = new Ktask(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
+    Window* wp = new Window;
+    *wp = ktask->winId();
+    own_toplevel_windows.append(wp);
     // next is a dirty hack to fix a qt-1.2 bug 
     // (should be unnecessary with 1.3)
     unsigned long data[2];
@@ -905,8 +914,12 @@ bool MyApp::handleKeyPress(XKeyEvent key){
   
   if( (kc == XK_F2)  && (km == Mod1Mask) ){
     freeKeyboard(False);
-    if (!minicli)
+    if (!minicli){
       minicli = new Minicli(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
+      Window* wp = new Window;
+      *wp = minicli->winId();
+      own_toplevel_windows.append(wp);
+    }
     while (!minicli->do_grabbing());
     return False;
   }    
