@@ -69,9 +69,9 @@ KHelpMain::KHelpMain(const char *name)
 			helpwin, SLOT(slotFixedFont( const char * )) );
 		connect( optionsDialog->colorOptions,
 			SIGNAL(colorsChanged(const QColor&, const QColor&,
-			const QColor&, const QColor&, const bool )),
-			helpwin, SLOT(slotColorsChanged(const QColor&,
-			const QColor&, const QColor&, const QColor&, const bool)) );
+			const QColor&, const QColor&, const bool, const bool )),
+			helpwin, SLOT(slotColorsChanged(const QColor&, const QColor&,
+            const QColor&, const QColor&, const bool, const bool)) );
 	}
 
 	setMinimumSize( 200, 100 );
@@ -522,9 +522,9 @@ void KHelpMain::slotOptionsGeneral()
 			w->helpwin, SLOT(slotFixedFont( const char * )) );
 		    connect( optionsDialog->colorOptions,
 			SIGNAL(colorsChanged(const QColor&, const QColor&,
-			const QColor&, const QColor&, const bool)),
-			w->helpwin, SLOT(slotColorsChanged(const QColor&,
-			const QColor&, const QColor&, const QColor&, const bool)) );
+			const QColor&, const QColor&, const bool, const bool)),
+			w->helpwin, SLOT(slotColorsChanged(const QColor&, const QColor&,
+            const QColor&, const QColor&, const bool, const bool)) );
 		}
 	}
 

@@ -1,6 +1,11 @@
 KDE Help System CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+Version 0.7
+-----------
+
+Use rman to parse man pages.
+
 Version 0.6
 -------------
 

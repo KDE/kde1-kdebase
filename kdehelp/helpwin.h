@@ -177,7 +177,7 @@ public slots:
 	void	slotStandardFont( const char * );
 	void	slotFixedFont( const char * );
 	void	slotColorsChanged( const QColor&, const QColor&, const QColor&,
-		    const QColor&, const bool );
+		    const QColor&, const bool, const bool );
 	void	slotPopupOpenURL();
 	void	slotPopupAddBookmark();
 	void	slotPopupOpenNew();

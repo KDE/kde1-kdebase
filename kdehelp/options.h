@@ -57,7 +57,8 @@ public:
 
 signals:
 	void	colorsChanged( const QColor &bg, const QColor &text,
-			    const QColor &link, const QColor &vlink, const bool underline );
+			    const QColor &link, const QColor &vlink, const bool underline,
+                const bool forceDefaults );
 
 protected slots:
 	void	slotApplyPressed();
@@ -65,7 +66,8 @@ protected slots:
 	void	slotTextColorChanged( const QColor &col );
 	void	slotLinkColorChanged( const QColor &col );
 	void	slotVLinkColorChanged( const QColor &col );
-	void  slotUnderlineLinksChanged( bool uline );
+	void    slotUnderlineLinksChanged( bool uline );
+	void    slotForceDefaultChanged( bool force );
 
 private:
 	void	readOptions();
@@ -76,6 +78,7 @@ private:
 	QColor linkColor;
 	QColor vLinkColor;
 	bool   underlineLinks;
+    bool   forceDefault;
 	bool   changed;
 };
 

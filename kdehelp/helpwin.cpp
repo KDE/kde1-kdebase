@@ -1424,8 +1424,9 @@ void KHelpWindow::slotFixedFont( const char *n )
 
 
 void KHelpWindow::slotColorsChanged( const QColor &bg, const QColor &text,
-	const QColor &link, const QColor &vlink, const bool uline )
+	const QColor &link, const QColor &vlink, const bool uline, const bool force)
 {
+    view->setForceDefault( force );
 	view->setDefaultBGColor( bg );
 	view->setDefaultTextColors( text, link, vlink );
 	view->setUnderlineLinks(uline);

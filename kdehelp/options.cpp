@@ -241,6 +241,13 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 	underlineBox->setChecked(underlineLinks);
 	connect( underlineBox, SIGNAL( toggled( bool ) ),
 		SLOT( slotUnderlineLinksChanged( bool ) ) );
+
+	QCheckBox *forceDefaultBox = new QCheckBox(
+                    klocale->translate("Always use my colors"), this);
+	forceDefaultBox->setGeometry(35, 210, 250, 30 );
+	forceDefaultBox->setChecked(forceDefault);
+	connect( forceDefaultBox, SIGNAL( toggled( bool ) ),
+		SLOT( slotForceDefaultChanged( bool ) ) );
 }
 
 void KColorOptions::readOptions()
@@ -253,6 +260,7 @@ void KColorOptions::readOptions()
 	linkColor = config->readColorEntry( "LinkColor", &blue );
 	vLinkColor = config->readColorEntry( "VLinkColor", &magenta );
 	underlineLinks = config->readBoolEntry( "UnderlineLinks", TRUE );
+	forceDefault = config->readBoolEntry( "ForceDefaultColors", false );
 
 	changed = false;
 }
@@ -267,9 +275,11 @@ void KColorOptions::slotApplyPressed()
 	config->writeEntry( "LinkColor", linkColor );
 	config->writeEntry( "VLinkColor", vLinkColor );
 	config->writeEntry( "UnderlineLinks", underlineLinks );
+	config->writeEntry( "ForceDefaultColors", forceDefault );
 
 	if ( changed )
-	    emit colorsChanged( bgColor, textColor, linkColor, vLinkColor, underlineLinks );
+	    emit colorsChanged( bgColor, textColor, linkColor, vLinkColor,
+                underlineLinks, forceDefault );
 
 	config->sync();
 }
@@ -309,6 +319,13 @@ void KColorOptions::slotUnderlineLinksChanged( bool ulinks )
 	underlineLinks = ulinks;
 }
 
+void KColorOptions::slotForceDefaultChanged( bool force )
+{
+	if ( forceDefault != force )
+    	    changed = true;
+	forceDefault = force;
+}
+
 //-----------------------------------------------------------------------------
 
 KHelpOptionsDialog::KHelpOptionsDialog( QWidget *parent, const char *name )
@@ -316,7 +333,7 @@ KHelpOptionsDialog::KHelpOptionsDialog( QWidget *parent, const char *name )
 {
 	setCaption( klocale->translate("KDE Help Options") );
 
-	resize( 350, 300 );
+	resize( 350, 330 );
 
         setOKButton( klocale->translate("OK") );
         setCancelButton( klocale->translate("Cancel") );
