@@ -1,6 +1,6 @@
 Begin2
 Title        = kvt
-Version      = 0.12 (18.04.1997)
+Version      = 0.14 (23.04.1997)
 Desc1        = An xterm substitute. Performs vt100 emulation for X windows
 Desc2        = Supports ANSI color, scroll back buffer
 Desc3        = based on Robert Nation's rxvt-2.08

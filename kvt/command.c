@@ -939,7 +939,7 @@ static unsigned char  get_com_char(int flags)
        /* Nothing to do! */ 
        FD_ZERO(&in_fdset); 
        FD_SET(comm_fd,&in_fdset); 
-       FD_SET(x_fd,&in_fdset); 
+/*        FD_SET(x_fd,&in_fdset);  */
 
        /* select handling slightly changed. Yet the "main" select (with blocking)
 	  is inside the Qt event loop. Important. Matthias */

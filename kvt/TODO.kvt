@@ -20,8 +20,6 @@ Better yet, still not perfect.
 Better yet, still not perfect.
 
 - integration into KDE autoconf
-Done the first step, added Makefile.in. Removed UTMP-SUPPORT since not supported on
-every plattform.
 
 - Adding the kconfig stuff. 
 Done
@@ -107,7 +105,7 @@ kvt :-)
 Also a sunken frame around the vt_win may look very nice.
 
 Last but not least there are some problems with rxvt (I read the
-ReadmE.original too late to check out the very original xvt sources :-( ).
+README.original too late to check out the very original xvt sources :-( ).
 Mainly the selection of words with dbl-click and of lines with trpl-click
 are not supported, same with selections that are larger than the visible
 screen. Well, usually these features are not really needed, but it would be

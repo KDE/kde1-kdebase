@@ -444,23 +444,23 @@ void kVt::options_menu_activated( int item){
     // save options
     {
       if (menubar_visible)
-	kvtconfig->writeEntry("menubar", QString("visible"));
+	kvtconfig->writeEntry("menubar", "visible");
       else
-	kvtconfig->writeEntry("menubar", QString("invisible"));
+	kvtconfig->writeEntry("menubar", "invisible");
 
       if (scrollbar_visible){
 	if (kvt_scrollbar == kvt_left)
-	  kvtconfig->writeEntry("scrollbar", QString("left"));
+	  kvtconfig->writeEntry("scrollbar", "left");
 	else
-	  kvtconfig->writeEntry("scrollbar", QString("right"));
+	  kvtconfig->writeEntry("scrollbar", "right");
       }
       else
-	kvtconfig->writeEntry("scrollbar", QString("hidden"));
+	kvtconfig->writeEntry("scrollbar", "hidden");
 
-      kvtconfig->writeEntry("size", QString(kvt_sizes[kvt_size]));
+      kvtconfig->writeEntry("size", kvt_sizes[kvt_size]);
 
-      kvtconfig->writeEntry("foreground", QString(fg_string));
-      kvtconfig->writeEntry("background", QString(bg_string));
+      kvtconfig->writeEntry("foreground", fg_string);
+      kvtconfig->writeEntry("background", bg_string);
       
       kvtconfig->sync();
     }
@@ -534,7 +534,7 @@ void kVt::color_menu_activated( int item){
     break;
   case 3: 
     fg_string = "black";
-    bg_string = "#ffffe0";
+    bg_string = "lightyellow";
     break;
   }
   if (!keyboard_secured){
@@ -561,13 +561,31 @@ void kVt::file_menu_activated(int item){
 }
 
 
+void _invokeHtmlHelp(const char* filename){
+  if ( fork	() == 0 )	
+    {		
+      QString path = "";
+      char* kdedir = getenv("KDEDIR");
+      if (kdedir)
+	path.append(kdedir);
+      else
+	path.append("/usr/local/kde");
+      path.append("/doc/HTML/");
+      path.append(filename);
+      execlp( "kdehelp", "kdehelp", path.data(), 0 );
+      exit( 1 );
+    }
+}
+
+
+
 void kVt::help_menu_activated(int item){
   switch (item){
   case 0:
     QMessageBox::message( "About kvt", "kvt-0.13\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n\nTerminal emulation for the KDE Desktop Environment\nbased on Robert Nation's rxvt-2.08");
     break;
   case 1:
-    kapp->invokeHTMLHelp("kvt.html","");
+    _invokeHtmlHelp("kvt.html");
     break;
   }
 }
@@ -605,7 +623,7 @@ bool kVt::eventFilter( QObject *obj, QEvent * ev){
       {
 	// well... aehh... but this works ;-)
 	handle_X_event(stored_xevent_for_keys);
-	get_token();
+// 	get_token();
       }
     }
   }
@@ -617,7 +635,7 @@ bool kVt::eventFilter( QObject *obj, QEvent * ev){
 #include "main.moc"
 
 
-int main(int argc, char **argv){
+void main(int argc, char **argv){
 
   // first make an argument copy for a new kvt
   o_argc = argc;
@@ -670,7 +688,7 @@ int main(int argc, char **argv){
 
   kvt->ResizeToVtWindow();
   kvt->show();
-  return a.exec();
+  a.exec();
 
 }
 

@@ -393,8 +393,8 @@ void scr_backspace(void)
       cScreen->col = MyWinInfo.cwidth - 1;
     }
   else if (cScreen->wrap_next ){
-    cScreen->text[(cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1)
-		 + cScreen->col] = '\0'; /* Matthias */ 
+    /* Matthias */ 
+    cScreen->text[(cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1)];
     cScreen->wrap_next = 0;
   }
   else
@@ -634,7 +634,7 @@ void scr_add_lines(unsigned char *c,int nl_count,int n)
 	case '\n':
 	  /* 2 lines Matthias */ 
  	  x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) +MyWinInfo.cwidth;
- 	  cScreen->text[x] = '\0'; 
+  	  cScreen->text[x] = '\0';
 
 	  cScreen->wrap_next = 0;
 	  if (cScreen->row == cScreen->bmargin)
@@ -648,7 +648,7 @@ void scr_add_lines(unsigned char *c,int nl_count,int n)
 	  cScreen->col = 0;
 	  cScreen->wrap_next = 0;
  	  x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) +MyWinInfo.cwidth;
-	  cScreen->text[x] = '\0'; /* Matthias */ 
+ 	  cScreen->text[x] = '\0'; /* Matthias */ 
 	  x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) +
 	    (cScreen->col);
 	  break;
@@ -668,7 +668,7 @@ void scr_add_lines(unsigned char *c,int nl_count,int n)
 	    {
 	      /* 2 lines Matthias */ 
 	      x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) +MyWinInfo.cwidth;
-	      cScreen->text[x] = '\n'; 
+ 	      cScreen->text[x] = '\n';  
 	      
 	      if (cScreen->row == cScreen->bmargin)
 		scroll(cScreen->tmargin,cScreen->bmargin,1);
@@ -860,8 +860,8 @@ void scr_move(int x,int y,int relative)
 
   /* Matthias */ 
   if (cScreen->wrap_next){
-    x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) + (cScreen->col);
-    cScreen->text[x] = '\0';
+    x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) + MyWinInfo.cwidth;
+    cScreen->text[x] = '\0'; 
     cScreen->wrap_next = 0;
   }
 
@@ -917,7 +917,7 @@ void scr_index(int direction)
   /* Matthias */ 
   if (cScreen->wrap_next){
     int x;
-    x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) + (cScreen->col);
+    x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) + MyWinInfo.cwidth;
     cScreen->text[x] = '\0';
     cScreen->wrap_next = 0;
   }
@@ -982,7 +982,7 @@ void scr_erase_line(int mode)
   /* Matthias */ 
   if (cScreen->wrap_next){
     int x;
-    x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) + (cScreen->col);
+    x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) + MyWinInfo.cwidth;
     cScreen->text[x] = '\0';
     cScreen->wrap_next = 0;
   }
@@ -1131,7 +1131,7 @@ void scr_insert_delete_lines(int count, int insdel)
   /* Matthias */ 
   if (cScreen->wrap_next){
     int x;
-    x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) + (cScreen->col);
+    x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) + MyWinInfo.cwidth;
     cScreen->text[x] = '\0';
     cScreen->wrap_next = 0;
   }

@@ -1,3 +1,11 @@
+since kvt-0.13:
+  - fixed all the bugs introduced by the multiline selection
+    patch
+  - fixed a very deep bug which was there since the early times
+    of kvt. In fact the hand-in-hand working between the old
+    rxvt main loop and Qt's main loop was broken. This bug was
+    reponsible for occasional missunderstandings of terminal-sequences.
+	
 since kvt-0.12
   - hopefully fixed kvt's pasting speed to Motif applications	
   - kvt can now handle multiline selections without breaking them into
