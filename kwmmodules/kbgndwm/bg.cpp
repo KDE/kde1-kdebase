@@ -162,6 +162,13 @@ void KBackground::readSettings( int num, bool one, int onedesk )
       randomDesk = DEFAULT_DESKTOP;
     }
   }
+  else {
+    if(timerRandom) {
+      delete timerRandom;
+      timerRandom = 0;
+    }
+    randomDesk = DEFAULT_DESKTOP;
+  }
 
   // this is mainly for kpager, so that we can at anytime find out how desktop
   //          really looks
@@ -223,7 +230,7 @@ void KBackground::readSettings( int num, bool one, int onedesk )
     wpMode = Scaled;
 
   wallpaper = DEFAULT_WALLPAPER;
-  bUseWallpaper = config.readBoolEntry( "UseWallpaper", DEFAULT_WALLPAPER_MODE );
+  bUseWallpaper = config.readBoolEntry( "UseWallpaper", DEFAULT_USE_WALLPAPER );
   if ( bUseWallpaper )
     wallpaper = config.readEntry( "Wallpaper", DEFAULT_WALLPAPER );
 
