@@ -13,6 +13,8 @@ In 0.11:
 --------
 patchlevel 6:
         - horizontal shading (blending) a la kpixmap
+        - fixed motif decoration hint handling. Useful for the fullscreen view
+           of the acrobat reader.
  
 patchlevel 5:
         - no more harecoded "Helvetica" font. kwm uses the generalFont instead.

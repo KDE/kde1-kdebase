@@ -2584,15 +2584,27 @@ void Manager::getMwmHints(Client  *c){
 	  // are only interested in suppressing decorations. This is
 	  // important for StarOffice-3.1´s floating toolbars which
 	  // would be shown within a strange floatwinshell otherwise.
-  	  if (c->getDecoration() == KWM::normalDecoration){
-  	    if (!mwm_hints->decorations)
-	      c->decoration = 0;
-	    KWM::setDecoration(c->window, c->getDecoration());
-	  }
+	  c->decoration = mwm_hints->decorations?KWM::normalDecoration:0;
+	  KWM::setDecoration(c->window, c->getDecoration());
 	}
       XFree((char *)mwm_hints);
     }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
