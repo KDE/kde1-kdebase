@@ -82,13 +82,13 @@ extern	void	endspent();*/
 
 extern	int	PingServer();
 extern	int	SessionPingFailed();
-extern	int	Debug();
+extern	int	Debug(char *, ...);
 extern	int	RegisterCloseOnFork();
 extern	void	SecureDisplay();
 extern	void	UnsecureDisplay();
 extern	int	ClearCloseOnFork();
 extern	int	SetupDisplay();
-extern	int	LogError();
+extern	int	LogError(char *, ...);
 extern	void	SessionExit();
 extern	void	DeleteXloginResources();
 extern	int	source();
@@ -98,7 +98,7 @@ extern	char	**putEnv();
 extern	char	**parseArgs();
 extern	int	printEnv();
 extern	char	**systemEnv();
-extern	int	LogOutOfMem();
+extern	int	LogOutOfMem(char *, ...);
 /*extern	void	setgrent();
 extern	struct group	*getgrent();
 extern	void	endgrent();
