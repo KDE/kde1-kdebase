@@ -1,7 +1,8 @@
-As of 07Jan1999:
+As of 20Jan1999:
 
+DONE - add confirmation to the Quit command
+- add keyboard shortcuts to the menu
 - make kcmikbd start a kikbd process if "AutoStart" selected and no
 	process exists
-
 - cleanup and simplification of the loadConfig() routines
 

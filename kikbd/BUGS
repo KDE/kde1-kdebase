@@ -1,11 +1,16 @@
-As of 17Jan1999:
+As of 20Jan1999:
+
+FIXED - kpanel -> panel (reported by Harri Porten)
+
+FIXED - starts at 0,0 and is visible there until the panel swallows it.
+
 FIXED - incorrect fr.kimap (reported and fixed by 
 	binois stephane <binois@normandnet.fr>
 
 - illisible/ugly flag icons + wrong highlighting colors in the keyboard 
 	selection widget (reported by Torsten Rahn)
 
-- fscked up startup (segfaults and all)
+FIXED - fscked up startup (segfaults and all)
 
 - conflict with vnc (???) (reported by Alex Zepeda)
 

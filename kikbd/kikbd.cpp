@@ -998,12 +998,28 @@ void KiKbdApplication::autoMenuRequest()
 void KiKbdApplication::activateMenu(int i)
 {
   if(i == (int)menu->count()-1) {
-    exit();
+    //CT 20Jan1999 - added confirmation box
+    bool autoStart = FALSE;
+    switch (KMsgBox::yesNoCancel(0, i18n("Exiting International Keyboard"),
+			      i18n("You're about to quit the \"International "
+				   "Keyboard\" tool.\n Do you want to have it"
+				   " autostarted at your next login?"),
+			      KMsgBox::QUESTION, i18n("Yes"),
+			      i18n("No"), i18n("Cancel"))) {
+    case 3: return;
+    case 1: autoStart = TRUE;  break;
+    case 2: autoStart = FALSE; break;
+    }
+    KConfig config(kapp->localconfigdir() + "/" + kapp->appName() + "rc");
+    config.setGroup("StartUp");
+    config.writeEntry("AutoStart", autoStart);
+    config.sync();
+    //CT
+    ::exit(0);
   } else if(i == (int)menu->count()-2) {
     KiKbdConfig::startConfigProgram();
   } else setKeyMapTo(i);
 }
-
 /**
    button class
 */

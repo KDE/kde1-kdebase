@@ -1,3 +1,12 @@
+1999-01-20  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
+
+	* reverted the modifs for the disabling of kikdb autostart
+		(this was wrong and un-called)
+	* set AutoStart=false in the master kikbdrc file.
+	* fixed the installation of the kikbdrc master file
+	* added confirmation dialog on menu-triggered exit, with
+		choice for disabling autoStart.
+
 1999-01-18  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
 
 	* FINALLY!!! Fixed the extremely screwy startup

@@ -52,7 +52,7 @@ icon_DATA = kikbd.xpm
 icondir = $(kde_icondir)
 
 config_DATA = kikbdrc
-configdir = $(kde_datadir)/kikbd
+configdir = $(kde_confdir)
 
 install-data-local:
 	$(mkinstalldirs) $(kde_minidir)

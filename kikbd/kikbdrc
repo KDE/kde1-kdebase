@@ -23,4 +23,4 @@ class1=
 [StartUp]
 Docking=true
 AutoStartPlace=
-AutoStart=true
+AutoStart=false

@@ -247,7 +247,9 @@ bool KiKbdConfig::hasAltKeys()
 }
 void KiKbdConfig::setDefaults()
 {
-  keyboardBeep = hotList     = autoStart = docking     = TRUE;
+  //CT setting autoStart to false by default
+  autoStart = FALSE;
+  keyboardBeep = hotList     = /*CT autoStart = */docking     = TRUE;
   autoMenu     = emuCapsLock = custFont  = saveClasses = FALSE;
   switchComb     = "Control_R+Shift_R";
   altSwitchComb  = "Alt_R";

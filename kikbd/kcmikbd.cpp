@@ -85,8 +85,7 @@ KiKbdApplication::KiKbdApplication(int &argc, char **argv)
 }
 void KiKbdApplication::init()
 {
-  //CT 17Jan1999 - took out the startup init (100% votes on kde-devel)
-  //  if(KiKbdConfig::readAutoStart()) system("kikbd &");
+  if(KiKbdConfig::readAutoStart()) system("kikbd &");
 }
 void KiKbdApplication::apply()
 {
