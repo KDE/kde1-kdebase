@@ -4,7 +4,7 @@
 SUBDIRS = kfm mimetypes kdehelp kfontmanager kfind kvt \
 	kwm kpanel kwmcom kwmmodules krootwm kdm kscreensaver \
 	kmenuedit kaudio kcontrol kappfinder pics applnk doc po  \
-	config kstart kikbd
+	config kstart kikbd konsole
 
 AUTOMAKE_OPTIONS = foreign
 

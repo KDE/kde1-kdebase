@@ -289,6 +289,13 @@ AC_OUTPUT(Makefile \
 	kikbd/maps/codes/Makefile \
 	kmenuedit/Makefile \
 	kmenuedit/icons/Makefile \
+  konsole/Makefile \
+  konsole/doc/sgml/Makefile \
+  konsole/doc/Makefile \
+  konsole/doc/VT100/Makefile \
+  konsole/include/Makefile \
+  konsole/other/Makefile \
+  konsole/src/Makefile \
 	kpanel/Makefile \
 	kpanel/pics/Makefile \
 	kpanel/pics/mini/Makefile \
