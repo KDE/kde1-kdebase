@@ -6,7 +6,7 @@ LDADD   = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) -lgi
 #######	Files
 
 bin_PROGRAMS	= kbgndwm
-kbgndwm_SOURCES = main.cpp kbgndwm.cpp bg.cpp gif.cpp jpeg.cpp
+kbgndwm_SOURCES = main.cpp kbgndwm.cpp bg.cpp jpeg.cpp
 BUILTSOURCES =	kbgndwm.moc
 DISTCLEANFILES = $(BUILTSOURCES)
 
