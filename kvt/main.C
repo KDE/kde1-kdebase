@@ -246,43 +246,60 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
 {
   setCaption(name);
   QLabel *label_color, *label_class, *label_backspace;
+
   label_color = new QLabel(i18n("choose type of color-mode"), this);
+  label_color->setMinimumSize(label_color->sizeHint());
   colormode = new QComboBox(this);
+  colormode->setMinimumSize(colormode->sizeHint());
+  colormode->setFixedHeight(colormode->sizeHint().height());
 
   label_class = new QLabel(i18n("Add characters to word class"), this);
+  label_class->setMinimumSize(label_class->sizeHint());
   chars = new QLineEdit(this);
+  chars->setMinimumSize(chars->sizeHint());
+  chars->setFixedHeight(chars->sizeHint().height());
 
   label_backspace = new QLabel(i18n("The backspace key will send a"), this);
+  label_backspace->setMinimumSize(label_backspace->sizeHint());
   backspace = new QComboBox(this);
+  backspace->setMinimumSize(backspace->sizeHint());
+  backspace->setFixedHeight(backspace->sizeHint().height());
   
   QPushButton *ok, *cancel;
+
   ok = new QPushButton( i18n("Ok"), this );
+  ok->setMinimumSize(ok->sizeHint());
+  ok->setFixedHeight(ok->sizeHint().height());
+  ok->setDefault(true);
   connect( ok, SIGNAL(clicked()), SLOT(accept()) );
+
   cancel = new QPushButton( i18n("Cancel"), this );
+  cancel->setMinimumSize(cancel->sizeHint());
+  cancel->setFixedHeight(cancel->sizeHint().height());
   connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
 
-  QBoxLayout *geom1, *geom3;
+  QVBoxLayout *geom1;
   QGridLayout *geom2;
-  geom1 = new QBoxLayout(this, QBoxLayout::TopToBottom, 4);
+  QHBoxLayout *geom3;
+  geom1 = new QVBoxLayout(this, 4);
   geom2 = new QGridLayout(3, 2); 
   geom1->addLayout(geom2, 3);
-  geom2->setColStretch(0,2);
-  geom2->setColStretch(1,1);
+  geom2->setColStretch(1,10);
   geom2->addWidget(label_color, 0, 0);
   geom2->addWidget(colormode, 0, 1);
   geom2->addWidget(label_class, 1, 0);
   geom2->addWidget(chars, 1, 1);
   geom2->addWidget(label_backspace, 2, 0);
   geom2->addWidget(backspace, 2, 1);
-  geom3 = new QBoxLayout(QBoxLayout::LeftToRight, 4);
-  geom1->addLayout(geom3, 1);
+  geom3 = new QHBoxLayout();
+  geom1->addLayout(geom3);
   geom3->addStretch();
   geom3->addWidget(ok);
-  ok->setDefault(true);
   geom3->addStretch();
   geom3->addWidget(cancel);
-  geom3->addStretch();
-  resize(400, 120);
+  geom3->addStretch(); 
+  resize(10, 10);
+  geom1->activate();
 
   int i;
   for (i=0; color_mode_name[i]; i++) {

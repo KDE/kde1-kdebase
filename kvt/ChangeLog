@@ -1,3 +1,6 @@
+since kvt-0.18.5
+ - changed the layouting of the terminal-dialog. 
+
 since kvt-0.18.4
  - added a hack for stupid clients like pine who cannot handle "\n"
     in selections but need "\r"   (Matthias)
