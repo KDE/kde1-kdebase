@@ -63,15 +63,15 @@ KKWMApplication::KKWMApplication(int &argc, char **argv, const char *name)
       if (!pages || pages->contains("titlebar"))
 	addPage(appearance = new KTitlebarAppearance(dialog, "titlebar"), 
 		klocale->translate("&Titlebar"), "kwm-2.html");
-      if (!pages || pages->contains("desktop"))
-	addPage(desktop = new KDesktopConfig(dialog, "desktop"), 
-		klocale->translate("&Desktop"), "kwm-3.html");
+      if (!pages || pages->contains("borders"))
+	addPage(desktop = new KDesktopConfig(dialog, "borders"), 
+		klocale->translate("&Borders"), "kwm-3.html");
 
       if (windows || buttons || appearance || desktop)
         dialog->show();
       else
         {
-          fprintf(stderr, klocale->translate("usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"));
+          fprintf(stderr, klocale->translate("usage: kcmkwm [-init | {windows,buttons,titlebar,borders}]\n"));
           justInit = TRUE;
         }
 
