@@ -8,6 +8,9 @@
  * I didn't touch the Sun part of the code so it should still work.
  *
  * $Log$
+ * Revision 1.7.4.1  1999/02/11 16:10:42  leonw
+ * Some bugfixes include 1) cleaning tty permissions when killed. 2) MacOS style menubar does not resize kvt anymore 3) Testing for the fixed font when no other font can be found.
+ *
  * Revision 1.7  1998/10/24 20:17:41  bieker
  * Use the test for sys/param.h
  *
@@ -61,7 +64,6 @@
 #include <config.h>
 #endif
 
-#include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/time.h>
 
@@ -218,15 +220,20 @@ void makeutent(char *ttyname)
   struct passwd *pwent;
   struct utmp u;
   
-
   struct timeval tp;
   struct timezone tzp;
   int l,l2;
   extern char *display_name;
   
   pwent=getpwuid(getuid());
+  /* Prevent crashing when password file is readonly :) */
+  if (pwent == NULL) {
+	fprintf( stderr, "Could not read password file entry.\n" );
+	clean_exit(1);     
+  }
   memset((char *)&u, 0, sizeof(u));
   /* memset? never heard of it :-) thanks Brian */
+
 
 #ifndef SVR4
   l = sizeof(u.ut_host);
@@ -300,6 +307,11 @@ void makeutent(char *ttyname)
   struct utmp u;
   
   pwent=getpwuid(getuid());
+  /* Prevent crashing when password file is readonly :) */
+  if (pwent == NULL) {
+	fprintf( stderr, "Could not read password file entry.\n" );
+	clean_exit(1);
+  }
   memset((char *)&u, 0, sizeof(u));
   /* memset? never heard of it :-) thanks Brian */
 
