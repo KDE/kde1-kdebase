@@ -23,13 +23,13 @@
 
 #include <qfile.h>
 #include <qdir.h>
-#include <qfiledlg.h>
 #include <qmsgbox.h>
 #include <qlist.h>
 #include <qstrlist.h>
 
 #include <kurl.h>
 #include <klocale.h>
+#include <kfiledialog.h>
 
 #include "kfmprops.h"
 #include "kbind.h"
@@ -988,7 +988,7 @@ void ExecPropsPage::slotBrowseExec()
        having it being opened by a different process (a kfiledialog server) ? I
        don't know, but probably. DF. */
     
-    QString f = QFileDialog::getOpenFileName( 0, 0L, this );
+    QString f = KFileDialog::getOpenFileName( 0, 0L, this );
     if ( f.isNull() )
 	return;
 
@@ -1162,27 +1162,20 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
 
     wallBox->insertItem(  klocale->translate("(Default)"), 0 );
     
-    int index = 0;
-    int i = 1;  
     while ( ( fi = it2.current() ) )
     {
 	if ( fi->fileName() != ".." && fi->fileName() != "." )
 	{
-	    // Is this the currently selected wallpaper ?
-	    if ( wallStr == fi->fileName() )
-		index = i;
-	    wallBox->insertItem( fi->fileName().data(), i );
-	    i++;
+	    wallBox->insertItem( fi->fileName().data() );
 	}
 	++it2;                               // goto next list element
     }
-    if (index)
-      // Select the current icon
-      wallBox->setCurrentItem( index );
-    else {
-      wallBox->insertItem( wallStr );
-      wallBox->setCurrentItem( wallBox->count()-1 ); 
-    }
+    
+    showSettings( wallStr );
+
+    browseButton = new QPushButton( i18n("&Browse..."), this );
+    browseButton->adjustSize();
+    connect( browseButton, SIGNAL( clicked() ), SLOT( slotBrowse() ) );
 
     drawWallPaper();
 
@@ -1274,6 +1267,32 @@ void DirPropsPage::applyChanges()
     KIOServer::sendNotify( tmp.data() );
 }
 
+void DirPropsPage::showSettings( QString filename )
+{
+  wallBox->setCurrentItem( 0 );
+  for ( int i = 1; i < wallBox->count(); i++ )
+    {
+      if ( filename == wallBox->text( i ) )
+        {
+          wallBox->setCurrentItem( i );
+          return;
+        }
+    }
+ 
+  if ( !filename.isEmpty() )
+    {
+      wallBox->insertItem( filename );
+      wallBox->setCurrentItem( wallBox->count()-1 );
+    }
+}
+
+void DirPropsPage::slotBrowse( )
+{
+    QString filename = KFileDialog::getOpenFileName( kapp->kde_wallpaperdir().copy() );
+    showSettings( filename );
+    drawWallPaper( );
+}
+
 void DirPropsPage::slotWallPaperChanged( int )
 {
     drawWallPaper();
@@ -1338,6 +1357,7 @@ void DirPropsPage::resizeEvent ( QResizeEvent *)
 
     iconBox->setGeometry( 10, 20, 50, 50 );
     wallBox->setGeometry( 10, imageY, imageX-20, 30 );
+    browseButton->move( 10, wallBox->y()+wallBox->height()+SEPARATION );
     applyButton->move( 10, imageY+imageH+SEPARATION );
     globalButton->move( applyButton->x() + applyButton->width() + SEPARATION, applyButton->y() );
     

@@ -275,16 +275,19 @@ public:
 
 public slots:
     void slotWallPaperChanged( int );
+    void slotBrowse(); 
     void slotApply();
     void slotApplyGlobal();
     
 protected:
+    void showSettings(QString filename);
     void drawWallPaper();
     virtual void paintEvent ( QPaintEvent *);
     virtual void resizeEvent ( QResizeEvent *);
     
     QPushButton *applyButton;
     QPushButton *globalButton;
+    QPushButton *browseButton;
     
     KIconLoaderButton *iconBox;
     QComboBox *wallBox;
