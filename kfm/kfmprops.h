@@ -205,19 +205,16 @@ public slots:
     
 private slots:
     void enableCheckedEdit();
-    void disableAllEdit();
     
 protected:
     
     QLineEdit *execEdit;
     QLineEdit *pathEdit;
     KIconLoaderButton *iconBox;
-    QRadioButton *normalCheck;
-    QRadioButton *swallowCheck;
-    QRadioButton *terminalCheck;
-    QLineEdit *swallowTitleEdit;
-    QButtonGroup *bg;
+    QCheckBox *terminalCheck;
     QLineEdit *terminalEdit;
+    QLineEdit *swallowExecEdit;
+    QLineEdit *swallowTitleEdit;
     QButton *execBrowse;
 
     QString execStr;

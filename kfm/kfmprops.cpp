@@ -643,24 +643,23 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     pathEdit = new QLineEdit( this, "LineEdit_2" );
     iconBox = new KIconLoaderButton( pkfm->iconLoader(), this );
 
-    normalCheck = new QRadioButton( this, "RadioButton_1" );
-    swallowTitleEdit = new QLineEdit( this, "LineEdit_5" );
-    swallowCheck = new QRadioButton( this, "RadioButton_2");
-    terminalCheck = new QRadioButton( this, "RadioButton_3" );
-    terminalEdit = new QLineEdit( this, "LineEdit_4" );
-    bg = new QButtonGroup();
+    swallowExecEdit = new QLineEdit( this, "LineEdit_3" );
+    swallowTitleEdit = new QLineEdit( this, "LineEdit_4" );
+
+    terminalCheck = new QCheckBox( this, "RadioButton_3" );
+    terminalEdit = new QLineEdit( this, "LineEdit_5" );
     execBrowse = new QPushButton( this, "Button_1" );
     
     QGroupBox* tmpQGroupBox;
-    tmpQGroupBox = new QGroupBox( this, "GroupBox_1" );
-    tmpQGroupBox->setGeometry( 10, 141, 320, 178 );
+    tmpQGroupBox = new QGroupBox( klocale->translate("Swallowing on panel"), this, "GroupBox_1" );
+    tmpQGroupBox->setGeometry( 10, 141, 320, 110 );
     tmpQGroupBox->setFrameStyle( 49 );
     tmpQGroupBox->setAlignment( 1 );
  
-    tmpQGroupBox = new QGroupBox( this, "GroupBox_2" );
-    tmpQGroupBox->setGeometry( 10, 177, 320, 71 );
-    tmpQGroupBox->setFrameStyle( 49 );
-    tmpQGroupBox->setAlignment( 1 );
+     tmpQGroupBox = new QGroupBox( this, "GroupBox_2" );
+     tmpQGroupBox->setGeometry( 10, 245, 320, 70 );
+     tmpQGroupBox->setFrameStyle( 49 );
+     tmpQGroupBox->setAlignment( 1 );
 
     execEdit->raise();
     execEdit->setGeometry( 10, 30, 210, 30 );
@@ -687,27 +686,21 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     pathEdit->setGeometry( 10, 90, 210, 30 );
     pathEdit->setMaxLength( 256 );
     
-    bg->insert(normalCheck);
-    bg->insert(swallowCheck);
-    bg->insert(terminalCheck);
-    bg->setExclusive(TRUE);
+    swallowExecEdit->raise();
+    swallowExecEdit->setGeometry( 140, 160, 180, 30 );
+    swallowExecEdit->setText( "" );
 
-    normalCheck->raise();
-    normalCheck->setGeometry( 20, 145, 150, 30 );
-    normalCheck->setText( klocale->translate( "Run normally" ) );
-
-    swallowCheck->raise();
-    swallowCheck->setGeometry( 20, 180, 280, 30 );
-    swallowCheck->setText( klocale->translate("Run in Panel (drag onto Panel to execute)") );
-
-    tmpQLabel = new QLabel( this, "Label_7" );
-    tmpQLabel->setGeometry( 20, 210, 110, 30 );
-    tmpQLabel->setText( klocale->translate("Title of Application") );
+    tmpQLabel = new QLabel( this, "Label_6" );
+    tmpQLabel->setGeometry( 20, 160, 110, 30 );
+    tmpQLabel->setText( klocale->translate("Execute") );
 
     swallowTitleEdit->raise();
-    swallowTitleEdit->setGeometry( 140, 210, 180, 30 );
+    swallowTitleEdit->setGeometry( 140, 195, 180, 30 );
     swallowTitleEdit->setText( "" );
-    QToolTip::add( swallowTitleEdit, klocale->translate( "enter the exact title, as normally shown in the window titlebar" ) );
+
+    tmpQLabel = new QLabel( this, "Label_7" );
+    tmpQLabel->setGeometry( 20, 195, 110, 30 );
+    tmpQLabel->setText( klocale->translate("Window Title") );
 
     terminalCheck->raise();
     terminalCheck->setGeometry( 20, 250, 150, 30 );
@@ -736,41 +729,28 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     termStr = config.readEntry( "Terminal" );
     termOptionsStr = config.readEntry( "TerminalOptions" );
 
+    if ( !swallowExecStr.isNull() )
+	swallowExecEdit->setText( swallowExecStr.data() );
+    if ( !swallowTitleStr.isNull() )
+	swallowTitleEdit->setText( swallowTitleStr.data() );
+
     if ( !pathStr.isNull() )
 	pathEdit->setText( pathStr.data() );
     if ( !execStr.isNull() )
 	execEdit->setText( execStr.data() );
-    if ( !swallowTitleStr.isNull() )
-        swallowTitleEdit->setText( swallowTitleStr.data() );
     if ( !termOptionsStr.isNull() )
         terminalEdit->setText( termOptionsStr.data() );
 
-    if ( ( swallowExecStr == execStr ) && ( termStr == "1" ) )
-    {
-        QMessageBox::warning( 0, klocale->translate("KFM Error"),
-              klocale->translate("You can run this program either\nin the Panel or in a Terminal, \nbut not both!"));
-	normalCheck->setChecked( true );
-        termStr = "0";
-	disableAllEdit();
-    }
-    else
-    {
-       if ( swallowExecStr == execStr )
-          swallowCheck->setChecked( true );
-       if ( !termStr.isNull() )
-          terminalCheck->setChecked( termStr == "1" );
-       if ( ( swallowExecStr == "" || swallowExecStr.isNull() ) && ( termStr == "0" ) )
-           normalCheck->setChecked( true );
-       enableCheckedEdit();
-    }
+    if ( !termStr.isNull() )
+      terminalCheck->setChecked( termStr == "1" );
+    enableCheckedEdit();
+
     if ( iconStr.isNull() )
 	iconStr = KMimeType::getDefaultPixmap();
     
     iconBox->setIcon( iconStr ); 
 
-    connect( execBrowse, SIGNAL( pressed() ), this, SLOT( slotBrowseExec() ) );
-    connect( normalCheck, SIGNAL( clicked() ), this, SLOT( disableAllEdit() ) );
-    connect( swallowCheck, SIGNAL( clicked() ), this,  SLOT( enableCheckedEdit() ) );
+    connect( execBrowse, SIGNAL( clicked() ), this, SLOT( slotBrowseExec() ) );
     connect( terminalCheck, SIGNAL( clicked() ), this,  SLOT( enableCheckedEdit() ) );
 
 }
@@ -778,25 +758,7 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
 
 void ExecPropsPage::enableCheckedEdit()
 {
-    if ( normalCheck->isChecked() )
-       disableAllEdit();
-    if ( swallowCheck->isChecked() )
-    {
-       swallowTitleEdit->setEnabled( TRUE );
-       terminalEdit->setEnabled( FALSE );
-    }
-    if ( terminalCheck->isChecked() )
-    {
-       swallowTitleEdit->setEnabled( FALSE );
-       terminalEdit->setEnabled( TRUE );
-    }
-}
-
-
-void ExecPropsPage::disableAllEdit()
-{
-    terminalEdit->setEnabled(FALSE);
-    swallowTitleEdit->setEnabled(FALSE);
+  terminalEdit->setEnabled(terminalCheck->isChecked());
 }
 
 
@@ -862,19 +824,13 @@ void ExecPropsPage::applyChanges()
     config.writeEntry( "Exec", execEdit->text() );
     config.writeEntry( "Path", pathEdit->text() );
     config.writeEntry( "Icon", iconBox->icon() );
+    config.writeEntry( "SwallowExec", swallowExecEdit->text() );
+    config.writeEntry( "SwallowTitle", swallowTitleEdit->text() );
 
-    if ( swallowCheck->isChecked() )
-    {
-        config.writeEntry( "SwallowExec", execEdit->text() );
-        config.writeEntry( "SwallowTitle", swallowTitleEdit->text() );
-    }
-    else
-        config.writeEntry( "SwallowExec", "" );
     if ( terminalCheck->isChecked() )
     {
         config.writeEntry( "Terminal", "1" );
         config.writeEntry( "TerminalOptions", terminalEdit->text() );
-        config.writeEntry( "SwallowExec", "" );
     }
     else
         config.writeEntry( "Terminal", "0" );
