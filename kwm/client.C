@@ -1137,7 +1137,7 @@ void Client::setLabel(){
   label = rawlabel;
 
   if (oldlabel != label){
-    if (isVisible)
+    if (isVisible())
       repaint();
     XChangeProperty(qt_xdisplay(), window, a, XA_STRING, 8,
 		    PropModeReplace, (unsigned char *)(label.data()), 
