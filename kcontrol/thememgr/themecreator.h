@@ -33,6 +33,7 @@
 #define ThemeCreatorInherited Theme
 class ThemeCreator: public Theme
 {
+  Q_OBJECT
 public:
   /** Construct a theme-creator object */
   ThemeCreator();
