@@ -6,14 +6,15 @@ build:
 	dh_testdir
 ## prefix is useless and leads to problems, since configure looks for
 ## $prefix/include only, if it's given
-	( CFLAGS="-O2 -g -Wall -DUTMP_SUPPORT -DUTMP='\"/var/run/utmp\"'" \
-	  CXXFLAGS="-O2 -g -Wall" \
+	( CFLAGS="-O2 -g -Wall -Wno-uninitialized -DUTMP_SUPPORT -DUTMP='\"/var/run/utmp\"'" \
+	  CXXFLAGS="-O2 -g -Wall -Wno-uninitialized" \
 	  RUN_KAPPFINDER="no" \
 	./configure --with-shadow --without-pam \
 	--enable-debug --with-install-root=`pwd`/debian/tmp \
 	--disable-rpath )
 
-	make
+	( CFLAGS="-O2 -g -Wall -Wno-uninitialized -DUTMP_SUPPORT -DUTMP='\"/var/run/utmp\"'" \
+	  CXXFLAGS="-O2 -g -Wall -Wno-uninitialized" make )
 
 	touch build
 
