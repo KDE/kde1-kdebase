@@ -559,7 +559,7 @@ void Client::layoutButtons(){
       trX += BUTTON_SIZE;
       trW -= BUTTON_SIZE;
     }
-    
+
     if (!trans){
       if( buttons[1] ){
 	buttons[1]->setGeometry(trX,
@@ -582,7 +582,7 @@ void Client::layoutButtons(){
 				button_y,
 				BUTTON_SIZE, BUTTON_SIZE);
     }
-      
+
     if (!trans) {
       if( buttons[4] ){
 	trW -= BUTTON_SIZE;
@@ -1836,14 +1836,14 @@ void Client::iconifySlot(){
 void Client::iconify(bool animation){
   if (isIconified())
     return;
-  
-  if (animation == TRUE ) { 
+
+  if (animation == TRUE ) {
       if ( isDialog() ) { // transient windows or dialogs cannot be iconified, iconify everything
 	  mainClient()->iconify();
 	  return;
       }
   }
-  
+
   if (manager->current() &&
       this != manager->current()
       && (manager->current()->trans == window || manager->current()->leader == window) )
@@ -1954,7 +1954,7 @@ void Client::ontoDesktop(int new_desktop){
 void Client::maximize(int mode, bool animate){
   if (isMaximized())
     return;
-  
+
   if (isShaded())
       toggleShade();
   maximized = true;
@@ -2036,7 +2036,7 @@ void Client::unMaximize(){
 void Client::maximizeToggled(bool depressed){
 
   bool do_not_activate = depressed == isMaximized();
-  
+
   if (!do_not_activate){
     if ( depressed){
       switch (buttonMaximize->last_button){
@@ -2075,14 +2075,14 @@ void Client::stickyToggled(bool depressed){
 
   if (depressed == isSticky())
     return;
-  
+
   if ( isDialog() && mainClient()->isSticky() != depressed) {
        // transient windows or dialogs cannot be made sticky alone, sticky everything instead
       buttonSticky->toggle();
       mainClient()->buttonSticky->toggle();
       return;
   }
-  
+
 
   KWM::setSticky(window, depressed);
   sticky = depressed;
@@ -2119,6 +2119,12 @@ void Client::menuPressed(){
   // the menu button is somewhat special since it does not only show a
   // popup menu but also reacts on doubleclicks.
   static QTime click_time;
+  static bool click_time_initialized = FALSE;
+  if (!click_time_initialized) {
+      click_time = QTime::currentTime();
+      click_time_initialized = TRUE;
+      return;
+  }
   if (!isActive()){
     myapp->operations->hide();
     manager->raiseClient(this);
