@@ -41,7 +41,7 @@ KFindTextDialog::KFindTextDialog( QWidget *parent, const char *name )
     QLabel *label = new QLabel( i18n( "Find:" ), this );
     label->setFixedSize( label->sizeHint() );
 
-    QLineEdit *edit = new QLineEdit( this );
+    edit = new QLineEdit( this );
     edit->setFixedHeight( edit->sizeHint().height() );
     edit->setFocus();
     connect( edit, SIGNAL( textChanged( const char * ) ),
@@ -99,5 +99,11 @@ void KFindTextDialog::slotClose()
 void KFindTextDialog::slotFind()
 {
     emit find( rExp );
+}
+
+void KFindTextDialog::show()
+{
+    edit->selectAll();
+    QDialog::show();
 }
 
