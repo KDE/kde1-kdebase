@@ -221,6 +221,7 @@ AC_OUTPUT(Makefile \
 	kdehelp/search/Makefile \
 	kfm/Makefile \
 	kfm/Desktop/Makefile \
+	kfm/Desktop/Templates/Makefile \
 	kfm/client/Makefile \
 	kfm/kioslave/Makefile \
 	kfm/pics/Makefile \
