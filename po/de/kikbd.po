@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-11-01 14:35+0100\n"
 "Last-Translator: Harri Porten <porten@kde.org>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -62,8 +62,9 @@ msgstr ""
 "Alt-Symbole deaktiviert"
 
 #: kikbd.cpp:392
+#, fuzzy
 msgid ""
-"Can not remove Caps Lock from Modifiers.\n"
+"Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
 "Kann CapsLock nicht von den Modifikatoren entfernen.\n"
@@ -193,16 +194,18 @@ msgid "Your configuration is empty. Install system default."
 msgstr "Ihre Konfiguration ist leer. Installiere Voreinstellung"
 
 #: kikbdconf.cpp:218
+#, fuzzy
 msgid ""
-"Configuration file you have has older format when expected.\n"
+"Configuration file you have has older format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 "Ihre Konfigurationsdatei hat ein älteres Format als erwartet.\n"
 "Einige Einstellungen können fehlerhaft sein."
 
 #: kikbdconf.cpp:226
+#, fuzzy
 msgid ""
-"Configuration file you have has newer format when expected.\n"
+"Configuration file you have has newer format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 "Ihre Konfigurationsdatei hat ein neueres Format als erwartet.\n"

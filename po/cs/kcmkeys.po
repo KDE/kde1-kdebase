@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkeys\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-12-18 09:59+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -195,22 +195,22 @@ msgstr "Pøepnutí o jednu plochu dolù"
 msgid "New"
 msgstr "Nový"
 
-#: stdbindings.cpp:7
+#: stdbindings.cpp:8
 msgid "Next"
 msgstr "Dal¹í"
 
-#: stdbindings.cpp:8
+#: stdbindings.cpp:9
 msgid "Prior"
 msgstr "Pøede¹lý"
 
-#: stdbindings.cpp:13
+#: stdbindings.cpp:14
 msgid "Find"
 msgstr "Nalézt"
 
-#: stdbindings.cpp:16
+#: stdbindings.cpp:17
 msgid "Home"
 msgstr "Domù"
 
-#: stdbindings.cpp:17
+#: stdbindings.cpp:18
 msgid "End"
 msgstr "Konec"

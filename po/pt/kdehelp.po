@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1999-01-06 01:13+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-01-26 14:00+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -17,7 +17,7 @@ msgstr "KDE Help: Abrir URL"
 msgid "Open URL"
 msgstr "Abrir URL"
 
-#: helpwin.cpp:459 info.cpp:285
+#: helpwin.cpp:459 info.cpp:288
 msgid "Cannot open: "
 msgstr "Não é possível abrir: "
 
@@ -53,16 +53,16 @@ msgstr "Adicionar Favorito"
 msgid "Open in new Window"
 msgstr "Abrir numa nova Janela"
 
-#: info.cpp:97 info.cpp:612
+#: info.cpp:97 info.cpp:615
 msgid "Error in info file"
 msgstr "Erro no ficheiro info"
 
-#: info.cpp:1255
+#: info.cpp:1258
 #, c-format
 msgid "Node not found: %s"
 msgstr "Nodo não encontrado: %s"
 
-#: info.cpp:1400
+#: info.cpp:1403
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Não foi possível abrir ficheiro info: %s"

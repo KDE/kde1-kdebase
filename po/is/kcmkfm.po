@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-12-01 21:00+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -102,6 +102,10 @@ msgstr "Breyta bendi yfir tenlum."
 #: htmlopts.cpp:383
 msgid "Underline links"
 msgstr "Undirstrika tengla"
+
+#: htmlopts.cpp:390
+msgid "Always use my colors"
+msgstr ""
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"

@@ -1,5 +1,5 @@
 msgid ""
-msgstr "POT-Creation-Date: 1998-11-16 01:20+0100\n"
+msgstr "POT-Creation-Date: 1999-01-08 01:16+0100\n"
 
 # kikbd.C:115
 #: kikbd.cpp:116
@@ -47,12 +47,13 @@ msgstr ""
 "Kan geen Mode Switch niet %s zetten voor toetsenbord %s.\n"
 " "
 
-# kikbd.C:353
+# kikbd.C:323
 #: kikbd.cpp:392
+#, fuzzy
 msgid ""
-"Can not remove Caps Lock from Modifiers.\n"
+"Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
-msgstr ""
+msgstr "Kan %s niet verwijderen van Modifiers.\n"
 
 # keymap.C:218
 #: keymap.cpp:181
@@ -183,13 +184,13 @@ msgstr "Je configuratie is leeg. Installeer standaard"
 
 #: kikbdconf.cpp:218
 msgid ""
-"Configuration file you have has older format when expected.\n"
+"Configuration file you have has older format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 
 #: kikbdconf.cpp:226
 msgid ""
-"Configuration file you have has newer format when expected.\n"
+"Configuration file you have has newer format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 

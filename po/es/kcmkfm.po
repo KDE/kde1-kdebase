@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-12-28 9:30+0100\n"
 "Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -105,6 +105,10 @@ msgstr "Cambiar cursor sobre enlace."
 #: htmlopts.cpp:383
 msgid "Underline links"
 msgstr "Subrayar enlaces"
+
+#: htmlopts.cpp:390
+msgid "Always use my colors"
+msgstr ""
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"

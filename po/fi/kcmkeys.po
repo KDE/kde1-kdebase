@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMKEYS\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -195,23 +195,23 @@ msgstr "Siirrä työpöytä alas"
 msgid "New"
 msgstr "Uusi"
 
-#: stdbindings.cpp:7
+#: stdbindings.cpp:8
 msgid "Next"
 msgstr "Seuraava"
 
-#: stdbindings.cpp:8
+#: stdbindings.cpp:9
 msgid "Prior"
 msgstr "Edellinen"
 
-#: stdbindings.cpp:13
+#: stdbindings.cpp:14
 msgid "Find"
 msgstr "Etsi"
 
-#: stdbindings.cpp:16
+#: stdbindings.cpp:17
 msgid "Home"
 msgstr "Alku"
 
-#: stdbindings.cpp:17
+#: stdbindings.cpp:18
 msgid "End"
 msgstr "Loppu"
 

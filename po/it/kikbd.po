@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,8 +53,9 @@ msgid ""
 msgstr ""
 
 #: kikbd.cpp:392
+#, fuzzy
 msgid ""
-"Can not remove Caps Lock from Modifiers.\n"
+"Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
 "Impossibile rimuovere Caps Lock dai modificatori.\n"
@@ -186,18 +187,22 @@ msgid "Your configuration is empty. Install system default."
 msgstr "La tua configurazione risulta vuota. Installo valori predefiniti."
 
 #: kikbdconf.cpp:218
+#, fuzzy
 msgid ""
-"Configuration file you have has older format when expected.\n"
+"Configuration file you have has older format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 "I tuoi file di configurazione hanno un formato vecchio.\n"
 "Alcune impostazioni potranno essere scorrette."
 
 #: kikbdconf.cpp:226
+#, fuzzy
 msgid ""
-"Configuration file you have has newer format when expected.\n"
+"Configuration file you have has newer format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
+"I tuoi file di configurazione hanno un formato vecchio.\n"
+"Alcune impostazioni potranno essere scorrette."
 
 #: kikbdconf.cpp:353
 msgid "unknown"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-12-17 12:18+0100\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -107,6 +107,10 @@ msgstr "Vátozzon meg a kurzor a link fölött."
 #: htmlopts.cpp:383
 msgid "Underline links"
 msgstr "Húzza alá a linkeket"
+
+#: htmlopts.cpp:390
+msgid "Always use my colors"
+msgstr ""
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"

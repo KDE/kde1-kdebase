@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -55,8 +55,9 @@ msgstr ""
 "Alt symboly zakázané"
 
 #: kikbd.cpp:392
+#, fuzzy
 msgid ""
-"Can not remove Caps Lock from Modifiers.\n"
+"Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
 "Nemô¾em zru¹i» Caps Lock z modifikátorov.\n"
@@ -189,16 +190,18 @@ msgid "Your configuration is empty. Install system default."
 msgstr "Va¹a konfigurácia je prázdna. Nain¹talujte ¹tandard. nastavenie."
 
 #: kikbdconf.cpp:218
+#, fuzzy
 msgid ""
-"Configuration file you have has older format when expected.\n"
+"Configuration file you have has older format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 "Konfiguraèný súbor má star¹iu formu, ako je oèakávaná.\n"
 "Niektoré nastavenia nemusia by» správne."
 
 #: kikbdconf.cpp:226
+#, fuzzy
 msgid ""
-"Configuration file you have has newer format when expected.\n"
+"Configuration file you have has newer format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 "Konfiguraèný súbor má nov¹iu formu, ako je oèakávaná.\n"

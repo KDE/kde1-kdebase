@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkeys\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-12-1 18:40+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -195,23 +195,23 @@ msgstr ""
 msgid "New"
 msgstr "Nova"
 
-#: stdbindings.cpp:7
+#: stdbindings.cpp:8
 msgid "Next"
 msgstr "Sekva"
 
-#: stdbindings.cpp:8
+#: stdbindings.cpp:9
 msgid "Prior"
 msgstr "Antaýa"
 
-#: stdbindings.cpp:13
+#: stdbindings.cpp:14
 msgid "Find"
 msgstr "Trovu"
 
-#: stdbindings.cpp:16
+#: stdbindings.cpp:17
 msgid "Home"
 msgstr "Supren"
 
-#: stdbindings.cpp:17
+#: stdbindings.cpp:18
 msgid "End"
 msgstr "Malsupren"
 

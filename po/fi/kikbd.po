@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KIKBD\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,8 +60,9 @@ msgstr ""
 "Alt symbolit estetty"
 
 #: kikbd.cpp:392
+#, fuzzy
 msgid ""
-"Can not remove Caps Lock from Modifiers.\n"
+"Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
 "En saanut poistettua Caps Lock:a Modifier:sta.\n"
@@ -193,16 +194,18 @@ msgid "Your configuration is empty. Install system default."
 msgstr "Asetuksesi ovat tyhj‰t. Asenna systeemin oletus."
 
 #: kikbdconf.cpp:218
+#, fuzzy
 msgid ""
-"Configuration file you have has older format when expected.\n"
+"Configuration file you have has older format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 "Asetustiedostossasi on oletettua vahnempi muoto.\n"
 "Jotkin asetuksista voivat olla v‰‰ri‰."
 
 #: kikbdconf.cpp:226
+#, fuzzy
 msgid ""
-"Configuration file you have has newer format when expected.\n"
+"Configuration file you have has newer format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 "Asetustiedostossasi on oletettua uudempi muoto.\n"

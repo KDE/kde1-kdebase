@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-12-10 12:57+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
@@ -188,23 +188,23 @@ msgstr "Skipta á skjáborð fyrir neðan"
 msgid "New"
 msgstr "Nýtt"
 
-#: stdbindings.cpp:7
+#: stdbindings.cpp:8
 msgid "Next"
 msgstr "Næsta"
 
-#: stdbindings.cpp:8
+#: stdbindings.cpp:9
 msgid "Prior"
 msgstr "Fyrra"
 
-#: stdbindings.cpp:13
+#: stdbindings.cpp:14
 msgid "Find"
 msgstr "Finna"
 
-#: stdbindings.cpp:16
+#: stdbindings.cpp:17
 msgid "Home"
 msgstr "Heim"
 
-#: stdbindings.cpp:17
+#: stdbindings.cpp:18
 msgid "End"
 msgstr "Enda"
 

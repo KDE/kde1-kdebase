@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmfm \n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-12-10 22:45+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -99,6 +99,10 @@ msgstr "Cursor über Links ändern."
 #: htmlopts.cpp:383
 msgid "Underline links"
 msgstr "Unterstreiche Links"
+
+#: htmlopts.cpp:390
+msgid "Always use my colors"
+msgstr ""
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"

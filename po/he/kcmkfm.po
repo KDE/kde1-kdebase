@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-12-01 HO:MI+ZONE\n"
 "Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -106,6 +106,10 @@ msgstr ""
 
 #: htmlopts.cpp:383
 msgid "Underline links"
+msgstr ""
+
+#: htmlopts.cpp:390
+msgid "Always use my colors"
 msgstr ""
 
 #: miscopts.cpp:25

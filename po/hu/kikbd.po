@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-12-17 14:15+0100\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -60,8 +60,9 @@ msgstr ""
 "Alt szimbólumok kikapcsolva."
 
 #: kikbd.cpp:392
+#, fuzzy
 msgid ""
-"Can not remove Caps Lock from Modifiers.\n"
+"Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
 "A Caps Lock nem távolítható el a Módosítók közül.\n"
@@ -193,16 +194,18 @@ msgid "Your configuration is empty. Install system default."
 msgstr "Az ön konfigurációja üres. Alapértelmezést telepítem."
 
 #: kikbdconf.cpp:218
+#, fuzzy
 msgid ""
-"Configuration file you have has older format when expected.\n"
+"Configuration file you have has older format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 "Az ön konfigurációs állománya régebbi mint gondolná. :)\n"
 "Néhány beállítás esetleg rossz lehet."
 
 #: kikbdconf.cpp:226
+#, fuzzy
 msgid ""
-"Configuration file you have has newer format when expected.\n"
+"Configuration file you have has newer format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 "Az ön konfigurációs állománya újabb mint gondolná. :)\n"

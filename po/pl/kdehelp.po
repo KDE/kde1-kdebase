@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1999-01-06 01:13+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-12-28 23:10+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -14,7 +14,7 @@ msgstr "KDE Pomoc: Otwórz URL"
 msgid "Open URL"
 msgstr "Otwórz URL"
 
-#: helpwin.cpp:459 info.cpp:285
+#: helpwin.cpp:459 info.cpp:288
 msgid "Cannot open: "
 msgstr "Nie mo¿na otworzyæ: "
 
@@ -50,16 +50,16 @@ msgstr "Dodaj zak³adkê"
 msgid "Open in new Window"
 msgstr "Otwórz w nowym oknie"
 
-#: info.cpp:97 info.cpp:612
+#: info.cpp:97 info.cpp:615
 msgid "Error in info file"
 msgstr "B³±d w pliku informacyjnym"
 
-#: info.cpp:1255
+#: info.cpp:1258
 #, c-format
 msgid "Node not found: %s"
 msgstr "Poziom nie znaleziony: %s"
 
-#: info.cpp:1400
+#: info.cpp:1403
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Nie mo¿a otworzyæ pliku informacyjnego: %s"

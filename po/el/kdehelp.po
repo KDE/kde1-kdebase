@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-06 01:13+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr "Βοήθεια KDE: ’νοιγμα URL"
 msgid "Open URL"
 msgstr "’νοιγμα URL"
 
-#: helpwin.cpp:459 info.cpp:285
+#: helpwin.cpp:459 info.cpp:288
 msgid "Cannot open: "
 msgstr "Δεν μπορώ να ανοίξω:"
 
@@ -58,16 +58,16 @@ msgstr "Προσθήκη σελιδοδείκτη"
 msgid "Open in new Window"
 msgstr "’νοιγμα σε νέο παράθυρο"
 
-#: info.cpp:97 info.cpp:612
+#: info.cpp:97 info.cpp:615
 msgid "Error in info file"
 msgstr "Σφάλμα στο αρχείο πληροφοριών (info file)"
 
-#: info.cpp:1255
+#: info.cpp:1258
 #, c-format
 msgid "Node not found: %s"
 msgstr "Ο κόμβος δεν βρέθηκε: %s"
 
-#: info.cpp:1400
+#: info.cpp:1403
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Δεν μπορώ να ανοίξω το αρχείο πληροφοριών (info file): %s"

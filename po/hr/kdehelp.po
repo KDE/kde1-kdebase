@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-01-06 01:13+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -20,7 +20,7 @@ msgstr "KDE pomoæ: OtvoriURL"
 msgid "Open URL"
 msgstr "Otvori URL"
 
-#: helpwin.cpp:459 info.cpp:285
+#: helpwin.cpp:459 info.cpp:288
 msgid "Cannot open: "
 msgstr "Ne mogu otvoriti: "
 
@@ -56,16 +56,16 @@ msgstr "Dodaj oznaku"
 msgid "Open in new Window"
 msgstr "Otvori u novom prozoru"
 
-#: info.cpp:97 info.cpp:612
+#: info.cpp:97 info.cpp:615
 msgid "Error in info file"
 msgstr "Gre¹ka u info datoteci"
 
-#: info.cpp:1255
+#: info.cpp:1258
 #, c-format
 msgid "Node not found: %s"
 msgstr "Èvor nije pronaðen: %s"
 
-#: info.cpp:1400
+#: info.cpp:1403
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Ne mogu otvoriti info datoteku: %s"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs \n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-12-29 14:52+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -52,8 +52,9 @@ msgstr ""
 "Symbole Alt wy³±czone"
 
 #: kikbd.cpp:392
+#, fuzzy
 msgid ""
-"Can not remove Caps Lock from Modifiers.\n"
+"Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
 "Nie mogê usun±æ Caps Lock spo¶ród modyfikatorów\n"
@@ -184,8 +185,9 @@ msgid "Your configuration is empty. Install system default."
 msgstr "Brak plików konfiguracyjnych. Zainstaluj domy¶lne pliki konfiguracyjne"
 
 #: kikbdconf.cpp:218
+#, fuzzy
 msgid ""
-"Configuration file you have has older format when expected.\n"
+"Configuration file you have has older format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 "Twój plik konfiguracyjny jest starszego formatu ni¿ oczekiwany przez "
@@ -193,8 +195,9 @@ msgstr ""
 "Niektóre ustawienia mog± byæ nieprawid³owe."
 
 #: kikbdconf.cpp:226
+#, fuzzy
 msgid ""
-"Configuration file you have has newer format when expected.\n"
+"Configuration file you have has newer format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 "Twój plik konfiguracyjny jest nowszego formatu ni¿ oczekiwany przez "

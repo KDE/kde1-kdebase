@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1999-01-06 01:13+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-04-20 22:02+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr "KDE 求助: 開啟 URL"
 msgid "Open URL"
 msgstr "開啟 URL"
 
-#: helpwin.cpp:459 info.cpp:285
+#: helpwin.cpp:459 info.cpp:288
 msgid "Cannot open: "
 msgstr "無法開啟: "
 
@@ -58,16 +58,16 @@ msgstr "加入書籤"
 msgid "Open in new Window"
 msgstr "在新視窗中開啟"
 
-#: info.cpp:97 info.cpp:612
+#: info.cpp:97 info.cpp:615
 msgid "Error in info file"
 msgstr "info 檔案有錯誤"
 
-#: info.cpp:1255
+#: info.cpp:1258
 #, c-format
 msgid "Node not found: %s"
 msgstr "找不到節點: %s"
 
-#: info.cpp:1400
+#: info.cpp:1403
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "無法開啟 info 檔案: %s"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-10-30 14:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -106,6 +106,10 @@ msgstr ""
 
 #: htmlopts.cpp:383
 msgid "Underline links"
+msgstr ""
+
+#: htmlopts.cpp:390
+msgid "Always use my colors"
 msgstr ""
 
 #: miscopts.cpp:25
