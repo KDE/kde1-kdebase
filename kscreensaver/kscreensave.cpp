@@ -13,7 +13,7 @@
 
 void kForceLocker()
 {
-	char *p, buffer[256];
+	char buffer[256];
 
 	strcpy( buffer, getenv( "HOME" ) );
 	strcat( buffer, "/.kss.pid" );
@@ -43,7 +43,7 @@ void kForceLocker()
 		    
 				// uh oh - failed
 		    fprintf( stderr, "Could not invoke kblankscrn.kss in $PATH or"
-			     " %s/bin\n" , p);
+			     " %s/bin\n" , (const char *)KApplication::kde_bindir());
 		    exit( 1 );
 		}
 	}

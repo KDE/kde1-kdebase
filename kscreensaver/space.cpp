@@ -105,7 +105,7 @@ typedef struct _starRec {
 GLenum doubleBuffer, directRender;
 GLint windW, windH;
 
-GLenum flag = (enum GLenum)NORMAL;
+GLenum flag = NORMAL;
 GLint starCount = MAXSTARS / 2;
 float speed = 1.0;
 float warpinterval = 30000.0;
