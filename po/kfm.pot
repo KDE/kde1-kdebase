@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-26 01:12+0100\n"
+"POT-Creation-Date: 1999-01-27 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -237,27 +237,27 @@ msgstr ""
 msgid "Could not load icon\n"
 msgstr ""
 
-#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:306
-#: kbind.cpp:392 kbind.cpp:444 kbind.cpp:1628 kbind.cpp:1636 kbind.cpp:1654
-#: kbind.cpp:1673 kbind.cpp:1732 kbind.cpp:1744 kbind.cpp:1771 kbind.cpp:1792
-#: kbind.cpp:1812 kbind.cpp:1824 kbind.cpp:1840 kbind.cpp:1975 kbind.cpp:1987
-#: kbind.cpp:2032 kbind.cpp:2074 kfmexec.cpp:63 kfmexec.cpp:115
-#: kfmexec/main.cpp:47 kfmgui.cpp:547 kfmgui.cpp:757 kfmman.cpp:370
-#: kfmman.cpp:1425 kfmman.cpp:1653 kfmman.cpp:1699 kfmprops.cpp:380
-#: kfmprops.cpp:648 kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092
-#: kfmprops.cpp:1223 kfmprops.cpp:1697 kfmprops.cpp:2058 kfmprops.cpp:2240
-#: kfmserver.cpp:45 kfmserver.cpp:218 kfmserver.cpp:298 kfmserver.cpp:313
-#: kfmserver.cpp:360 kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:341
-#: kfmtree.cpp:468 kfmtree.cpp:499 kfmtree.cpp:505 kfmtree.cpp:511
-#: kfmview.cpp:436 kfmview.cpp:470 kfmview.cpp:489 kfmview.cpp:558
-#: kfmview.cpp:564 kfmview.cpp:570 kfmview.cpp:695 kfmview.cpp:699
-#: kfmview.cpp:738 kfmview.cpp:764 kfmview.cpp:785 kfmview.cpp:793
-#: kfmview.cpp:801 kiojob.cpp:239 kiojob.cpp:247 kiojob.cpp:254 kiojob.cpp:279
-#: kiojob.cpp:298 kiojob.cpp:309 kiojob.cpp:333 kiojob.cpp:352 kiojob.cpp:569
-#: kiojob.cpp:587 kiojob.cpp:874 kiojob.cpp:895 kiojob.cpp:926 kiojob.cpp:974
-#: kiojob.cpp:1450 kiojob.cpp:1458 kiojob.cpp:1686 krenamewin.cpp:120
-#: popup.cpp:105 root.cpp:943 root.cpp:1224 root.cpp:1242 root.cpp:1248
-#: root.cpp:1254 root.cpp:1335 root.cpp:1860 root.cpp:1885
+#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:311
+#: kbind.cpp:390 kbind.cpp:442 kbind.cpp:1652 kbind.cpp:1660 kbind.cpp:1678
+#: kbind.cpp:1697 kbind.cpp:1756 kbind.cpp:1768 kbind.cpp:1795 kbind.cpp:1816
+#: kbind.cpp:1836 kbind.cpp:1848 kbind.cpp:1864 kbind.cpp:1999 kbind.cpp:2011
+#: kbind.cpp:2056 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
+#: kfmgui.cpp:547 kfmgui.cpp:757 kfmman.cpp:370 kfmman.cpp:1425
+#: kfmman.cpp:1653 kfmman.cpp:1699 kfmprops.cpp:380 kfmprops.cpp:648
+#: kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092 kfmprops.cpp:1223
+#: kfmprops.cpp:1697 kfmprops.cpp:2058 kfmprops.cpp:2240 kfmserver.cpp:45
+#: kfmserver.cpp:218 kfmserver.cpp:298 kfmserver.cpp:313 kfmserver.cpp:360
+#: kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:341 kfmtree.cpp:468
+#: kfmtree.cpp:499 kfmtree.cpp:505 kfmtree.cpp:511 kfmview.cpp:436
+#: kfmview.cpp:470 kfmview.cpp:489 kfmview.cpp:558 kfmview.cpp:564
+#: kfmview.cpp:570 kfmview.cpp:695 kfmview.cpp:699 kfmview.cpp:738
+#: kfmview.cpp:764 kfmview.cpp:785 kfmview.cpp:793 kfmview.cpp:801
+#: kiojob.cpp:239 kiojob.cpp:247 kiojob.cpp:254 kiojob.cpp:279 kiojob.cpp:298
+#: kiojob.cpp:309 kiojob.cpp:333 kiojob.cpp:352 kiojob.cpp:569 kiojob.cpp:587
+#: kiojob.cpp:874 kiojob.cpp:895 kiojob.cpp:926 kiojob.cpp:974 kiojob.cpp:1450
+#: kiojob.cpp:1458 kiojob.cpp:1686 krenamewin.cpp:120 popup.cpp:105
+#: root.cpp:943 root.cpp:1225 root.cpp:1243 root.cpp:1249 root.cpp:1255
+#: root.cpp:1336 root.cpp:1861 root.cpp:1886
 msgid "KFM Error"
 msgstr ""
 
@@ -311,7 +311,7 @@ msgstr ""
 
 #: kfmgui.cpp:1171 kfmgui.cpp:1339 kfmjob.cpp:36 kfmman.cpp:252
 #: kfmtree.cpp:500 kfmview.cpp:490 kfmview.cpp:559 kfmview.cpp:786
-#: kiojob.cpp:88 root.cpp:1243
+#: kiojob.cpp:88 root.cpp:1244
 msgid "ERROR: Malformed URL"
 msgstr ""
 
@@ -342,30 +342,30 @@ msgid "ERROR: Drop over malformed URL"
 msgstr ""
 
 #: kfmserver.cpp:133 kfmtree.cpp:538 kfmview.cpp:530 kfmview.cpp:829
-#: kiojob.cpp:665 kiojob.cpp:1048 krenamewin.cpp:20 root.cpp:1286
+#: kiojob.cpp:665 kiojob.cpp:1048 krenamewin.cpp:20 root.cpp:1287
 msgid "KFM Warning"
 msgstr ""
 
-#: kfmtree.cpp:539 kfmview.cpp:531 kfmview.cpp:830 root.cpp:1287
+#: kfmtree.cpp:539 kfmview.cpp:531 kfmview.cpp:830 root.cpp:1288
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
 "There is no way to restore them."
 msgstr ""
 
-#: kfmtree.cpp:506 kfmview.cpp:565 kfmview.cpp:794 root.cpp:1249
+#: kfmtree.cpp:506 kfmview.cpp:565 kfmview.cpp:794 root.cpp:1250
 msgid "ERROR: You dropped a URL over itself"
 msgstr ""
 
-#: kfmtree.cpp:512 kfmview.cpp:571 kfmview.cpp:802 root.cpp:1255
+#: kfmtree.cpp:512 kfmview.cpp:571 kfmview.cpp:802 root.cpp:1256
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr ""
 
-#: kfmexec.cpp:298 kfmman.cpp:1212 kfmview.cpp:587 root.cpp:1131
+#: kfmexec.cpp:300 kfmman.cpp:1212 kfmview.cpp:587 root.cpp:1131
 msgid "Open With:"
 msgstr ""
 
-#: kfmview.cpp:623 root.cpp:1186
+#: kfmview.cpp:623 root.cpp:1187
 msgid "ERROR: Can not open properties for multiple files"
 msgstr ""
 
@@ -385,11 +385,11 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmtree.cpp:469 kfmview.cpp:739 root.cpp:1336
+#: kfmtree.cpp:469 kfmview.cpp:739 root.cpp:1337
 msgid "Could not access Trash Bin"
 msgstr ""
 
-#: kfmview.cpp:765 root.cpp:1225
+#: kfmview.cpp:765 root.cpp:1226
 msgid "Can not paste into multiple directories"
 msgstr ""
 
@@ -420,91 +420,91 @@ msgstr ""
 msgid "bytes"
 msgstr ""
 
-#: kbind.cpp:304
+#: kbind.cpp:309
 msgid "The mime type config file "
 msgstr ""
 
-#: kbind.cpp:305
+#: kbind.cpp:310
 msgid "does not contain a MimeType=... entry"
 msgstr ""
 
-#: kbind.cpp:393
+#: kbind.cpp:391
 msgid "No mime types installed!"
 msgstr ""
 
-#: kbind.cpp:441 kbind.cpp:1223
+#: kbind.cpp:439 kbind.cpp:1227
 msgid "Could not find mime type\n"
 msgstr ""
 
-#: kbind.cpp:711 kbind.cpp:721 kbind.cpp:2010 kbind.cpp:2011 kbind.cpp:2023
-#: kbind.cpp:2025
+#: kbind.cpp:709 kbind.cpp:719 kbind.cpp:2034 kbind.cpp:2035 kbind.cpp:2047
+#: kbind.cpp:2049
 msgid "Mount"
 msgstr ""
 
-#: kbind.cpp:727 kbind.cpp:2001
+#: kbind.cpp:725 kbind.cpp:2025
 msgid "Unmount"
 msgstr ""
 
-#: kbind.cpp:959 kbind.cpp:971 kbind.cpp:981 popup.cpp:48 popup.cpp:125
+#: kbind.cpp:957 kbind.cpp:969 kbind.cpp:979 popup.cpp:48 popup.cpp:125
 msgid "Folder"
 msgstr ""
 
-#: kbind.cpp:1222
+#: kbind.cpp:1226
 msgid "ERROR"
 msgstr ""
 
-#: kbind.cpp:1223
+#: kbind.cpp:1227
 msgid "in "
 msgstr ""
 
-#: kbind.cpp:1364 kbind.cpp:1938
+#: kbind.cpp:1362 kbind.cpp:1962
 msgid "ERROR: No Terminal Setting"
 msgstr ""
 
-#: kbind.cpp:1418 kbind.cpp:1511
+#: kbind.cpp:1429 kbind.cpp:1535
 msgid "Could not execute program\n"
 msgstr ""
 
-#: kbind.cpp:1627
+#: kbind.cpp:1651
 msgid "Could not find binding"
 msgstr ""
 
-#: kbind.cpp:1637
+#: kbind.cpp:1661
 msgid ""
 "This is a document!\n"
 "Not an application"
 msgstr ""
 
-#: kbind.cpp:1655 kbind.cpp:1674
+#: kbind.cpp:1679 kbind.cpp:1698
 msgid "Can only start executables on local disks\n"
 msgstr ""
 
-#: kbind.cpp:1733 kbind.cpp:1813 kbind.cpp:1976
+#: kbind.cpp:1757 kbind.cpp:1837 kbind.cpp:2000
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
 msgstr ""
 
-#: kbind.cpp:1743
+#: kbind.cpp:1767
 #, c-format
 msgid ""
 "Could not access\n"
 "%s"
 msgstr ""
 
-#: kbind.cpp:1772
+#: kbind.cpp:1796
 msgid "The \"Link=....\" entry is empty"
 msgstr ""
 
-#: kbind.cpp:1793
+#: kbind.cpp:1817
 msgid "The config file has no \"Type=...\" line"
 msgstr ""
 
-#: kbind.cpp:1823 kbind.cpp:1986
+#: kbind.cpp:1847 kbind.cpp:2010
 msgid "Could not access"
 msgstr ""
 
-#: kbind.cpp:1841
+#: kbind.cpp:1865
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -512,12 +512,8 @@ msgid ""
 "to solve the problem"
 msgstr ""
 
-#: kbind.cpp:2033
+#: kbind.cpp:2057
 msgid "No mount point in *.kdelnk file"
-msgstr ""
-
-#: kbind.cpp:2073
-msgid "Unknown binding"
 msgstr ""
 
 #: main.cpp:89 main.cpp:229
@@ -877,7 +873,7 @@ msgstr ""
 msgid "ERROR: Can not accept drop"
 msgstr ""
 
-#: kfmman.cpp:1654 kfmman.cpp:1700 kfmtree.cpp:342 root.cpp:1861 root.cpp:1886
+#: kfmman.cpp:1654 kfmman.cpp:1700 kfmtree.cpp:342 root.cpp:1862 root.cpp:1887
 msgid "Dont know what to do."
 msgstr ""
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-01-27 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,135 +14,135 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.C:284
+#: main.C:288
 msgid "&Normal"
 msgstr ""
 
-#: main.C:287
+#: main.C:291
 msgid "&Small"
 msgstr ""
 
-#: main.C:288
+#: main.C:292
 msgid "&Medium"
 msgstr ""
 
-#: main.C:289
+#: main.C:293
 msgid "&Large"
 msgstr ""
 
-#: main.C:290
+#: main.C:294
 msgid "&Huge"
 msgstr ""
 
-#: main.C:292
+#: main.C:296
 msgid "&Linux"
 msgstr ""
 
-#: main.C:293
+#: main.C:297
 msgid "Linux (small)"
 msgstr ""
 
-#: main.C:296
+#: main.C:300
 msgid "&More ..."
 msgstr ""
 
-#: main.C:302
+#: main.C:306
 msgid "&Hide"
 msgstr ""
 
-#: main.C:303
+#: main.C:307
 msgid "&Left"
 msgstr ""
 
-#: main.C:304
+#: main.C:308
 msgid "&Right"
 msgstr ""
 
-#: main.C:310
+#: main.C:314
 msgid "40x15 (&small)"
 msgstr ""
 
-#: main.C:311
+#: main.C:315
 msgid "80x24 (&vt100)"
 msgstr ""
 
-#: main.C:312
+#: main.C:316
 msgid "80x25 (&ibmpc)"
 msgstr ""
 
-#: main.C:313
+#: main.C:317
 msgid "80x40 (&xterm)"
 msgstr ""
 
-#: main.C:314
+#: main.C:318
 msgid "80x52 (ibmv&ga)"
 msgstr ""
 
-#: main.C:323
+#: main.C:327
 msgid "&Menubar"
 msgstr ""
 
-#: main.C:325
+#: main.C:329
 msgid "&Frame"
 msgstr ""
 
-#: main.C:327
+#: main.C:331
 msgid "Scroll&bar"
 msgstr ""
 
-#: main.C:329
+#: main.C:333
 msgid "BS sends &DEL"
 msgstr ""
 
-#: main.C:332
+#: main.C:336
 msgid "&Font"
 msgstr ""
 
-#: main.C:333
+#: main.C:337
 msgid "&Size"
 msgstr ""
 
-#: main.C:334
+#: main.C:338
 msgid "&Schema"
 msgstr ""
 
-#: main.C:336
+#: main.C:340
 msgid "&Save options"
 msgstr ""
 
-#: main.C:340
+#: main.C:344
 msgid "&About ..."
 msgstr ""
 
-#: main.C:341
+#: main.C:345
 msgid "&User's Manual ..."
 msgstr ""
 
-#: main.C:342
+#: main.C:346
 msgid "&Technical Reference ..."
 msgstr ""
 
-#: main.C:346
+#: main.C:350
 msgid "cd"
 msgstr ""
 
-#: main.C:359
+#: main.C:363
 msgid "Sessions"
 msgstr ""
 
-#: main.C:502
+#: main.C:498
 #, c-format
 msgid ""
 "Font `%s' not found.\n"
 "Check README.linux.console for help."
 msgstr ""
 
-#: main.C:607
+#: main.C:603
 #, c-format
 msgid "About %s"
 msgstr ""
 
-#: main.C:609
+#: main.C:605
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -155,17 +155,17 @@ msgid ""
 "See `LICENSE.readme´ for details."
 msgstr ""
 
-#: main.C:732
+#: main.C:728
 #, c-format
 msgid "`%s' terminated abnormally."
 msgstr ""
 
-#: main.C:735
+#: main.C:731
 msgid ""
 "\n"
 "Return code = "
 msgstr ""
 
-#: main.C:928
+#: main.C:924
 msgid "Welcome to the console"
 msgstr ""
