@@ -998,11 +998,17 @@ mget(union VALUETYPE *p, unsigned char *s, struct magic *m,
      int nbytes)
 {
 	long offset = m->offset;
+// The file length might be < sizeof(union VALUETYPE) (David)
+// -> pad with zeros (the 'file' command does it this way)
+// Thanks to Stan Covington <stan@calderasystems.com> for detailed report
 	if (offset + (int)sizeof(union VALUETYPE) > nbytes)
-		 return 0;
-
-
-	memcpy(p, s + offset, sizeof(union VALUETYPE));
+	{
+	  int have = nbytes - offset;
+	  memset(p, 0, sizeof(union VALUETYPE));
+	  if (have > 0)
+	    memcpy(p, s + offset, have); 
+	} else
+	  memcpy(p, s + offset, sizeof(union VALUETYPE));
 
 	if (!mconvert(p, m))
 		return 0;
