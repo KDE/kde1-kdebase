@@ -203,7 +203,7 @@ void KFontOptions::slotCharset( const char *n )
 void KFontOptions::loadSettings()
 {
     g_pConfig->setGroup( "KFM HTML Defaults" );		
-    QString fs = g_pConfig->readEntry( "BaseFontSize" );
+    QString fs = g_pConfig->readEntry( "BaseFontSize" );  
     if ( !fs.isEmpty() )
     {
         fSize = fs.toInt();
@@ -214,19 +214,32 @@ void KFontOptions::loadSettings()
     }
     else
         fSize = 3;
-  
-    stdName = g_pConfig->readEntry( "StandardFont" );
-    if ( stdName.isEmpty() )
-        stdName = DEFAULT_VIEW_FONT;
-  
-    fixedName = g_pConfig->readEntry( "FixedFont" );
-    if ( fixedName.isEmpty() )
-        fixedName = DEFAULT_VIEW_FIXED_FONT;  
 
+    stdName = g_pConfig->readEntry( "StandardFont" );
+    fixedName = g_pConfig->readEntry( "FixedFont" );
     charsetName = g_pConfig->readEntry( "DefaultCharset" );
 
-    // Update the GUI
+    updateGUI();
+}
 
+void KFontOptions::defaultSettings()
+{
+    g_pConfig->setGroup( "KFM HTML Defaults" );			
+    fSize=4;
+    stdName = DEFAULT_VIEW_FONT;
+    fixedName = DEFAULT_VIEW_FIXED_FONT;
+    charsetName = "";
+
+    updateGUI();
+}
+
+void KFontOptions::updateGUI()
+{
+    if ( stdName.isEmpty() )
+        stdName = DEFAULT_VIEW_FONT;
+    if ( fixedName.isEmpty() )
+        fixedName = DEFAULT_VIEW_FIXED_FONT;  
+    
     QStrListIterator sit( standardFonts );
     int i;
     for ( i = 0; sit.current(); ++sit, i++ )
@@ -265,18 +278,6 @@ void KFontOptions::saveSettings()
         charsetName = "";
     g_pConfig->writeEntry( "DefaultCharset", charsetName );
     g_pConfig->sync();
-}
-
-void KFontOptions::defaultSettings()
-{
-    g_pConfig->setGroup( "KFM HTML Defaults" );			
-    g_pConfig->writeEntry( "BaseFontSize", 4 );
-    g_pConfig->writeEntry( "StandardFont", DEFAULT_VIEW_FONT );
-    g_pConfig->writeEntry( "FixedFont", DEFAULT_VIEW_FIXED_FONT );
-    g_pConfig->writeEntry( "DefaultCharset", "" );
-    g_pConfig->sync();
-
-    loadSettings();
 }
 
 void KFontOptions::applySettings()
@@ -436,16 +437,17 @@ void KColorOptions::loadSettings()
 
 void KColorOptions::defaultSettings()
 {
-    g_pConfig->setGroup( "KFM HTML Defaults" );			
-    g_pConfig->writeEntry( "BgColor", HTML_DEFAULT_BG_COLOR );
-    g_pConfig->writeEntry( "TextColor", HTML_DEFAULT_TXT_COLOR );
-    g_pConfig->writeEntry( "LinkColor", HTML_DEFAULT_LNK_COLOR );
-    g_pConfig->writeEntry( "VLinkColor", HTML_DEFAULT_VLNK_COLOR) ;
-    g_pConfig->writeEntry( "ChangeCursor", false );
-    g_pConfig->writeEntry( "UnderlineLinks", true );
-    g_pConfig->sync();
+    bgColor = HTML_DEFAULT_BG_COLOR;
+    textColor = HTML_DEFAULT_TXT_COLOR;
+    linkColor = HTML_DEFAULT_LNK_COLOR;
+    vLinkColor = HTML_DEFAULT_VLNK_COLOR;
 
-    loadSettings();
+    m_pBg->setColor( bgColor );
+    m_pText->setColor( textColor );
+    m_pLink->setColor( linkColor );
+    m_pVLink->setColor( vLinkColor );
+    cursorbox->setChecked( false );
+    underlinebox->setChecked( false );
 }
 
 void KColorOptions::saveSettings()

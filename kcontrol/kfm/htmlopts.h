@@ -46,6 +46,7 @@ public slots:
 private:
   void getFontList( QStrList &list, const char *pattern );
   void addFont( QStrList &list, const char *xfont );
+  void updateGUI();
 
 private:
   QRadioButton* m_pSmall;
