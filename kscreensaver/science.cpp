@@ -283,28 +283,6 @@ void KScienceSaver::initialize()
 	}
 }
 
-#define INIT_LENS_INTRO                                                         \
-	for(int y = side-1; y >= 0; y--)                                        \
-	{                                                                       \
-		dy = y - origin;                                                \
-		off = offset[y] = (T32bit *) malloc(sizeof(T32bit) * side);     \
-		myAssert( off != 0, "too few memory" );                         \
-		for(int x = side-1; x >= 0; x--)                                \
-		{                                                               \
-			dx = x - origin;                                        \
-			r = sqrt( dx*dx + dy*dy );
-
-#define INIT_LENS_HANDLE_BG                                                     \
-	if( hideBG[mode] )                                                      \
-		off[x] = (border-y)*imgnext + (border-x)*bpp;                   \
-	else                                                                    \
-		off[x] = 0;
-
-#define INIT_LENS_CALC_OFFSET                                                   \
-			xo = (T32bit) ( origin + f*dx - x );                    \
-			yo = (T32bit) ( origin + f*dy - y );                    \
-			off[x] = xo*bpp + yo*imgnext;			
-
 void KScienceSaver::initWhirlLens()
 {
 	double dx, dy, r, phi, intens;
@@ -315,20 +293,32 @@ void KScienceSaver::initWhirlLens()
 	if( inverse[mode] ) 
 		intens = -intens;
 
-	INIT_LENS_INTRO
-		if( r < radius )
+	for(int y = side-1; y >= 0; y--)
+	{
+		dy = y - origin;
+		off = offset[y] = (T32bit *) malloc(sizeof(T32bit) * side);
+		myAssert( off != 0, "too few memory" );
+		for(int x = side-1; x >= 0; x--)
 		{
-			if ( dx == 0.0 )
-				phi = (dy > 0.0) ? M_PI_2 :-(M_PI_2);
+		    dx = x - origin;
+		    r = sqrt( dx*dx + dy*dy );
+
+		    if( r < radius )
+		    {
+			    if ( dx == 0.0 )
+				    phi = (dy > 0.0) ? M_PI_2 :-(M_PI_2);
+			    else
+				    phi = atan2( dy, dx );
+			    phi +=  intens * ( radius - r ) / ( r+7.0 );
+			    xo = (T32bit) ( origin + r*cos( phi ) - x );
+			    yo = (T32bit) ( origin + r*sin( phi ) - y );
+			    off[x] = xo*bpp + yo*imgnext;				
+		    } 		 			
+		    else
+			if( hideBG[mode] )
+				off[x] = (border-y)*imgnext + (border-x)*bpp;
 			else
-				phi = atan2( dy, dx );
-			phi +=  intens * ( radius - r ) / ( r+7.0 );
-			xo = (T32bit) ( origin + r*cos( phi ) - x );
-			yo = (T32bit) ( origin + r*sin( phi ) - y );
-			off[x] = xo*bpp + yo*imgnext;				
-		} 		 			
-		else
-			INIT_LENS_HANDLE_BG
+				off[x] = 0;
 		}
         }
 }
@@ -344,7 +334,16 @@ void KScienceSaver::initSphereLens()
 	if( inverse[mode] )
 		intens = -intens;
 
-	INIT_LENS_INTRO
+	for(int y = side-1; y >= 0; y--)
+	{
+		dy = y - origin;
+		off = offset[y] = (T32bit *) malloc(sizeof(T32bit) * side);
+		myAssert( off != 0, "too few memory" );
+		for(int x = side-1; x >= 0; x--)
+		{
+		    dx = x - origin;
+		    r = sqrt( dx*dx + dy*dy );
+
 		if( r < radius )
 		{
 			xr = (double) radius*cos(asin(dy/radius));
@@ -356,7 +355,10 @@ void KScienceSaver::initSphereLens()
 			off[x] = xo*bpp + yo*imgnext;
 		} 		 			
 		else 
-			INIT_LENS_HANDLE_BG
+			if( hideBG[mode] )
+				off[x] = (border-y)*imgnext + (border-x)*bpp;
+			else
+				off[x] = 0;
 		}
         }
 }
@@ -372,20 +374,34 @@ void KScienceSaver::initExponentialLens()
 	else
 		intens = 0.9 - 0.8 * double( intensity[mode] ) / 10.0;
 
-	INIT_LENS_INTRO
-		if( r < radius )
+	for(int y = side-1; y >= 0; y--)
+	{
+		dy = y - origin;
+		off = offset[y] = (T32bit *) malloc(sizeof(T32bit) * side);
+		myAssert( off != 0, "too few memory" );
+		for(int x = side-1; x >= 0; x--)
 		{
-			if( r == 0.0 )
-				f = 0.0;
+		    dx = x - origin;
+		    r = sqrt( dx*dx + dy*dy );
+
+		    if( r < radius )
+		    {
+			    if( r == 0.0 )
+				    f = 0.0;
+			    else
+			    {
+				    rnew = radius*(pow(r, intens) /  pow(radius, intens));
+				    f = double ((int)rnew % radius) / r;
+			    }
+			    xo = (T32bit) ( origin + f*dx - x );
+			    yo = (T32bit) ( origin + f*dy - y );
+			    off[x] = xo*bpp + yo*imgnext;			
+		    }
+		    else
+			if( hideBG[mode] )
+				off[x] = (border-y)*imgnext + (border-x)*bpp;
 			else
-			{
-	 			rnew = radius*(pow(r, intens) /  pow(radius, intens));
-				f = double ((int)rnew % radius) / r;
-			}
-			INIT_LENS_CALC_OFFSET
-		}
-		else
-			INIT_LENS_HANDLE_BG
+				off[x] = 0;
 		}
         }
 }
@@ -399,17 +415,31 @@ void KScienceSaver::initCurvatureLens()
 	intens = (double) radius*intensity[mode] / 20.0; 
 	if( inverse[mode] ) intens = -intens;
   
-	INIT_LENS_INTRO
-		if( r < radius ) 
-		{ 
-			if( r == 0.0 )
-				f = 0.0;
+	for(int y = side-1; y >= 0; y--)
+	{
+		dy = y - origin;
+		off = offset[y] = (T32bit *) malloc(sizeof(T32bit) * side);
+		myAssert( off != 0, "too few memory" );
+		for(int x = side-1; x >= 0; x--)
+		{
+		    dx = x - origin;
+		    r = sqrt( dx*dx + dy*dy );
+
+		    if( r < radius ) 
+		    { 
+			    if( r == 0.0 )
+				    f = 0.0;
+			    else
+				    f = (r - intens * sin(M_PI * r/(double)radius)) / r;
+			    xo = (T32bit) ( origin + f*dx - x );
+			    yo = (T32bit) ( origin + f*dy - y );
+			    off[x] = xo*bpp + yo*imgnext;			
+		    } 
+		    else
+			if( hideBG[mode] )
+				off[x] = (border-y)*imgnext + (border-x)*bpp;
 			else
-	 			f = (r - intens * sin(M_PI * r/(double)radius)) / r;
-			INIT_LENS_CALC_OFFSET
-		} 
-		else
-			INIT_LENS_HANDLE_BG
+				off[x] = 0;
 		} 
 	} 
 } 
@@ -423,20 +453,34 @@ void KScienceSaver::initWaveLens()
 	intens = (double) intensity[mode] + 1.0; 
 	k = (intensity[mode] % 2) ? -12.0 : 12.0;
  
-	INIT_LENS_INTRO
-		if( r < radius ) 
-		{ 
-			if( r == 0.0 )
-				f = 0.0;
+	for(int y = side-1; y >= 0; y--)
+	{
+		dy = y - origin;
+		off = offset[y] = (T32bit *) malloc(sizeof(T32bit) * side);
+		myAssert( off != 0, "too few memory" );
+		for(int x = side-1; x >= 0; x--)
+		{
+		    dx = x - origin;
+		    r = sqrt( dx*dx + dy*dy );
+
+		    if( r < radius ) 
+		    { 
+			    if( r == 0.0 )
+				    f = 0.0;
+			    else
+			    {
+				    rnew = r - k * sin( M_PI * intens * r/(double)radius);
+				    f = double ((int)rnew % radius) / r;
+			    }
+			    xo = (T32bit) ( origin + f*dx - x );
+			    yo = (T32bit) ( origin + f*dy - y );
+			    off[x] = xo*bpp + yo*imgnext;			
+		    } 
+		    else
+			if( hideBG[mode] )
+				off[x] = (border-y)*imgnext + (border-x)*bpp;
 			else
-			{
-				rnew = r - k * sin( M_PI * intens * r/(double)radius);
-				f = double ((int)rnew % radius) / r;
-			}
-			INIT_LENS_CALC_OFFSET
-		} 
-		else
-			INIT_LENS_HANDLE_BG
+				off[x] = 0;
 		} 
 	} 
 } 
