@@ -136,3 +136,9 @@
  - Deleting multiple files at once caused multiple updates of one directory.
  - Fixed geometry problem in user dialog
 
+09.01.98 Stephan
+  
+  - use the Name field out of .kdelnk files or .directory files for entries
+    on the desktop
+  - copy a .directory file in the created Desktop directories
+
