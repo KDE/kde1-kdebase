@@ -50,6 +50,10 @@ from the X Consortium.
 typedef long Fmtarg_t;
 #endif
 
+#if NeedVarargsPrototypes && !HAVE_VSYSLOG
+#undef USE_SYSLOG
+#endif
+
 #ifdef HAVE_SYSLOG_H
 #include <syslog.h>
 #endif
@@ -150,9 +154,9 @@ LogPanic (
 	va_start(args, fmt);
 #  ifdef USE_SYSLOG
 	vsyslog (LOG_EMERG, fmt, args);
-#else
+#  else
 	vfprintf (stderr, fmt, args);
-#endif
+#  endif
 	va_end(args);
     }
 #else
