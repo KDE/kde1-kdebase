@@ -12,6 +12,10 @@
  * Additional modification by Garrett D'Amore (garrett@netcom.com) to
  * allow vt100 printing.  No additional restrictions are applied.
  *
+ * atp	22/4/98	  bugfix to allow proper handling of a null character,
+ * 		  which made kvt unusable with VMS. get_com_char needs
+ * 		  to return an int, or else null will trigger end of buffer.
+ * 
  * As usual, the author accepts no responsibility for anything, nor does
  * he guarantee anything whatsoever.
  */
@@ -220,13 +224,13 @@ static struct termios ttmode;
  */
 static unsigned char com_buf[COM_BUF_SIZE];
 static unsigned char *com_buf_next, *com_buf_top;
-unsigned char mask = 0xff;
+unsigned int mask = 0x00ff;
 
 static void catch_child(int);
 static void catch_sig(int);
 int run_command(unsigned char *,unsigned char **);
 static unsigned char *lookup_key(XEvent *,int *, unsigned char);
-static unsigned char get_com_char(int);
+static unsigned int get_com_char(int);
 /* get to handle.   Matthias */ 
 void handle_X_event(XEvent event, unsigned char);
 void process_string(int);
@@ -957,13 +961,15 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount, unsigned char qt_c)
 /*  Return the next input character after first passing any keyboard input
  *  to the command.  If flags & BUF_ONLY is true then only buffered 
  *  characters are returned and once the buffer is empty the special value 
- *  GCC_NULL is returned.  
+ *  GCC_NULL is returned.  GCC_NULL is defined as 0x100, so the return value
+ *  has to be int. Otherwise NUL will falsely trigger the end of buffer 
+ *  condition, and stop output. (VMS does this).
  */
 
 /* made this global since we use it in handle_X_event, too. Matthias */ 
 static int refreshed = 0;
 
-static unsigned char  get_com_char(int flags)
+static unsigned int get_com_char(int flags)
 {
   fd_set in_fdset;
   int count,retval;
@@ -991,7 +997,7 @@ static unsigned char  get_com_char(int flags)
   if (com_buf_next < com_buf_top)
     {
       refreshed = 0;
-      return(*com_buf_next++ & mask);
+      return((unsigned int) (*com_buf_next++ & mask) );
     }
   /* Nothing to read, either return now or continue and wait */
 
@@ -1005,7 +1011,7 @@ static unsigned char  get_com_char(int flags)
     /*	  sbar_show(MyWinInfo.cheight+MyWinInfo.sline_top-1,MyWinInfo.offset,
 	  MyWinInfo.offset + MyWinInfo.cheight -1); */
     XFlush(display);
-    return ((unsigned char) GCC_NULL); 
+    return ((unsigned int) GCC_NULL); 
   }
 
 /*   for (;;)  */
@@ -1072,7 +1078,7 @@ static unsigned char  get_com_char(int flags)
 	    {
 	      val = *com_buf_next++;
 	      refreshed = 0;
-	      return(val & mask);	  
+	      return((unsigned int) (val & mask));	  
 	    }
 	}
       /* If the select statement timed out, we better update the screen */
@@ -1089,7 +1095,7 @@ static unsigned char  get_com_char(int flags)
 	  XFlush(display);
 	}
 
-      return (unsigned char) GCC_NULL;
+      return (unsigned int) GCC_NULL;
 }
 
 /****************************************************************************
@@ -1354,7 +1360,7 @@ void read_string()
  ***************************************************************************/
 void get_token()
 {
-   unsigned char c; 
+   unsigned int c;	/* magic token GCC_NULL is 0x100 so need an int*/ 
 
 
    /* somewhat changed. Matthias */ 
@@ -1403,7 +1409,7 @@ void get_token()
 	    }
 	}
       c = get_com_char(1);
-   }while(c != (unsigned char) GCC_NULL);
+   }while(c != (unsigned int) GCC_NULL);
 }
 
 

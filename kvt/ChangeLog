@@ -1,6 +1,7 @@
 since kvt-0.18.4
  - added a hack for stupid clients like pine who cannot handle "\n"
     in selections but need "\r"   (Matthias)
+ - fixes for VMS (Andrew Phillips)
 
 since kvt-0.18.3
   - fixed a bug that made it impossible to resize the window with the
