@@ -79,7 +79,10 @@ apps:
            || case "$(MFLAGS)" in *k*) fail=yes;; *) exit 1;; esac; \
         done && test -z "$$fail"
 
-install:
+srchapps: 
+	./searchapps
+	
+install: srchapps
 	$(mkinstalldirs) $(incdir)
 	@INSTALL_DATA@ config.h $(incdir)
 	@for subdir in $(SUBDIRS); do \

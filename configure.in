@@ -27,8 +27,6 @@ AC_PROG_CC
 AC_PROG_CPP
 AC_PROG_CXX
 AC_PROG_LN_S
-AC_PROG_MAKE_SET
-AC_PROG_INSTALL
 AC_PROG_RANLIB dnl for libkfm
 
 dnl Checks for supported features
@@ -84,5 +82,6 @@ AC_SUBST(LIBCOMPAT)
 AC_SUBST(LIBCRYPT)
 
 ac_output=`find . -name Makefile.in -print | sed -e 's/.in$//;' | sort`
-AC_OUTPUT($ac_output)
+AC_OUTPUT($ac_output searchapps)
+chmod 755 searchapps
 
