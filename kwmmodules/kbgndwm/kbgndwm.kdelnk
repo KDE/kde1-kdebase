@@ -3,6 +3,7 @@
 BinaryPattern=
 Name=Background module
 Name[de]=Hintergrundmodul
+Name[no]=Bakgrunnsmodul
 Name[pl]=KWM T³o
 Name[fi]=KWM -taustamoduli
 Name[fr]=Module de fond d'écran
@@ -16,6 +17,7 @@ Protocols=
 MimeType=
 Comment=Manages the background texture
 Comment[de]=Manages den Desktophintergrund 
+Comment[no]=Behandler bakgrunnen på skribebordet
 Comment[pl]=Zarz±dza wy¶wietlaniem t³a
 Comment[fi]=Hallitsee taustakuvaa
 Comment[fr]=Gère la texture de fond d'écran

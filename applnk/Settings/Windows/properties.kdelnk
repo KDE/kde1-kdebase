@@ -49,6 +49,7 @@ Name[ro]=Proprietãþi
 Name[ru]=ó×ÏÊÓÔ×Á
 Name[ca]=Propietats
 SwallowTitle=Window properties
+SwallowTitle[no]=Vindu-egenskaper
 SwallowTitle[es]=Propiedades de ventana
 SwallowTitle[pl]=W³a¶ciwo¶ci okna
 SwallowTitle[sv]=Fönsteregenskaper

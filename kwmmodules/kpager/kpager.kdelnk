@@ -16,6 +16,7 @@ Name[fi]=Työpöydänvaihtaja
 Protocols=
 MimeType=
 Comment=Manage your windows
+Comment[no]=Styr dine vinduer
 Comment[es]=Administra tus ventanas
 Exec=kpager
 Icon=kwm.xpm
