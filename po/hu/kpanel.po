@@ -1,0 +1,140 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1997 Free Software Foundation, Inc.
+# Nagy Balazs <julian7@kva.hu>, 1997.
+#
+
+msgid ""
+msgstr ""
+"Project-Id-Version: kdehelp 0.5.2\n"
+"POT-Creation-Date: 1997-08-21 23:23-0500\n"
+"PO-Revision-Date: 1997-09-21 19:39+MET\n"
+"Last-Translator: Nagy Balazs <julian7@kva.hu>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Latin2\n"
+"Content-Transfer-Encoding: iso-8859-2\n"
+
+#: kpanel.C:172
+msgid "Personal menu"
+msgstr "Személyes menü"
+
+#: kpanel.C:180
+msgid "Add application"
+msgstr "Program hozzáadása"
+
+#: kpanel.C:182
+msgid "Add special"
+msgstr "Speciális elem hozzáadása"
+
+#: kpanel.C:183
+msgid "Configure"
+msgstr "Konfigurálás"
+
+#: kpanel.C:185
+msgid "Configure panel"
+msgstr "Panel konfigurálása"
+
+#: kpanel.C:186
+msgid "Restart"
+msgstr "Újraindítás"
+
+#: kpanel.C:188
+msgid "Panel"
+msgstr ""
+
+#: kpanel.C:190
+msgid "Lock Screen"
+msgstr "Képernyõzár"
+
+#: kpanel.C:192
+msgid "Logout"
+msgstr "Kilép"
+
+#: kpanel.C:201
+msgid "Move"
+msgstr "Áthelyez"
+
+#: kpanel.C:202
+msgid "Remove"
+msgstr "Töröl"
+
+#: kpanel.C:204
+msgid "Properties"
+msgstr "Tulajdonságok"
+
+#: kpanel.C:239
+msgid "System"
+msgstr "Rendszer"
+
+#: kpanel.C:316
+msgid "Desktop"
+msgstr "Asztal"
+
+#: kpanel.C:348
+msgid "No info available"
+msgstr "Nincs róla info"
+
+#: kpanel.C:435 kpanel.C:451
+msgid "Destroy"
+msgstr "Megszüntet"
+
+#: kpanel.C:438 kpanel.C:448
+msgid "(Un) Sticky"
+msgstr "Ragadás be/ki"
+
+#: kpanel.C:439 kpanel.C:447
+msgid "(Un) Iconify"
+msgstr "Ikonizálás be/ki"
+
+#: kpanel.C:440 kpanel.C:446
+msgid "(Un) Maximize"
+msgstr "Teljes képernyõ be/ki"
+
+#: kpanel.C:441 kpanel.C:445
+msgid "On this desktop"
+msgstr "Ezen az asztalon"
+
+#: props.C:263
+msgid "Location"
+msgstr "Hely"
+
+#: props.C:283
+msgid "Taskbar"
+msgstr "Táskabár"
+
+#: props.C:284
+msgid "Hidden"
+msgstr "Rejtett"
+
+#: props.C:296
+msgid "Top/Left"
+msgstr "Balra fent"
+
+#: props.C:307
+msgid "Tiny Style"
+msgstr "Apró stílus"
+
+#: props.C:308
+msgid "Small Style"
+msgstr "Kicsi stílus"
+
+#: props.C:309
+msgid "Large Style"
+msgstr "Nagy stílus"
+
+#: props.C:321
+msgid "Menu Tooltips"
+msgstr "Menü tippek"
+
+#: props.C:397
+msgid "Visible"
+msgstr "Látható"
+
+#: props.C:404
+msgid "Width"
+msgstr "Szélesség"
+
+#: props.C:415
+msgid "KPanel Configuration"
+msgstr "KPanel beállítások"
+
