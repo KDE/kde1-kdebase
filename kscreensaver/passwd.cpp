@@ -29,7 +29,7 @@ static const char sccsid[] = "@(#)passwd.c	4.02 97/04/01 xlockmore";
  */
 
 #include <kmsgbox.h>
-#include "main.h" // for MODE_TEST
+#include "main.h" // for MODE_PREVIEW
 #include "xlockmore.h"
 
 #ifdef HAVE_CONFIG_H
@@ -1310,7 +1310,7 @@ initPasswd(void)
 {
         getUserName();
 #if !defined( ultrix ) && !defined( DCE_PASSWD )
-	if ( mode != MODE_TEST && mode != MODE_PREVIEW ) {
+	if ( mode != MODE_PREVIEW ) {
 #ifdef        BSD_AUTH
                 struct passwd *pwd = getpwnam(user);
  
@@ -1327,6 +1327,7 @@ initPasswd(void)
 #ifdef DCE_PASSWD
         initDCE();
 #endif
+
 }
 
 

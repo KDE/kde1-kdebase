@@ -634,7 +634,9 @@ int waitTimeout( int timeout )
   {
     if ( timeoutNow )
 	{
-		rv = FORCE_LOCK;
+	    // this happens, when you send the screensaver a SIGUSR1
+	    // this emits, that you want to lock the screen!
+	     rv = FORCE_LOCK;
 		timeoutNow = FALSE;
 		break;
 	}

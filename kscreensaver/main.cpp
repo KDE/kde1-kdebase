@@ -107,7 +107,7 @@ bool ssApp::x11EventFilter( XEvent *event )
 			|| event->type == ButtonPress
 			|| event->type == MotionNotify ) && !passDlg )
 		{
-			if ( !lock && !lockOnce )
+			if ( !canGetPasswd || (!lock && !lockOnce) )
 				qApp->exit_loop();
 			else
 			{
@@ -327,7 +327,8 @@ int main( int argc, char *argv[] )
 		}
 		if ( (fp = fopen( pidFile, "w" ) ) != NULL )
 		{
-			fprintf( fp, "%ld\n", getpid() );
+		    // on some systems, it's long one some in, so a cast may help
+			fprintf( fp, "%ld\n", static_cast<long>(getpid()) );
 			fclose( fp );
 		}
 
