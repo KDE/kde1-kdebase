@@ -84,8 +84,10 @@ static const char* swConfigAltString[] = {
   "None",
   "Alt_R",
   "Control_R",
+  "Meta_R",
   "Alt_L",
-  "Control_L"
+  "Control_L",
+  "Meta_L"
 };
 static const char* inpConfigString[] = {
   "Global", "Window", "Class"
@@ -110,8 +112,10 @@ static const char* altSwitchLabels[] = {
   gettext("(None)"),
   gettext("Right Alt"),
   gettext("Right Control"),
+  gettext("Right Meta"),
   gettext("Left  Alt"),
   gettext("Left  Control"),
+  gettext("Left  Meta"),
 };
 static const char* autoStartPlaceLabels[] = {
   gettext("Top Left"),
@@ -308,7 +312,7 @@ void KiKbdConfig::startConfigProgram(int opt)
   switch(opt) {
   case Config_Normal: 
     if(!fork()) {
-      execlp("kcmikbd", 0L);
+      execlp("kcmikbd", "kcmikbd", 0L);
       ::exit(1);
     }
     break;
