@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"PO-Revision-Date: 1998-10-23 23:14+0100\n"
+"Last-Translator: Karl Backström <backstrom@kde.org>\n"
+"Language-Team: Sv <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:64
+msgid "&Standard shortcuts"
+msgstr "&Standardgenvägar"
+
+#: main.cpp:69
+msgid "&Global shortcuts"
+msgstr "&Globala genvägar"
+
+#: main.cpp:76
+msgid "usage: kcmkeys [-init | {standard,global}]\n"
+msgstr "användning: kcmkeys [-init | {standard,global}]\n"
+
+#: main.cpp:118
+msgid "Key binding settings"
+msgstr "Tangentbindningar"
+
+#: standard.cpp:53
+msgid "New"
+msgstr "Ny"
+
+#: standard.cpp:57
+msgid "Next"
+msgstr "Nästa"
+
+#: standard.cpp:58
+msgid "Prior"
+msgstr "Föregående"
+
+#: standard.cpp:63
+msgid "Find"
+msgstr "Sök"
+
+#: standard.cpp:66
+msgid "Home"
+msgstr "Hem"
+
+#: standard.cpp:67
+msgid "End"
+msgstr "Slut"
+
+#: global.cpp:81 standard.cpp:83
+msgid "Current scheme"
+msgstr "Nuvarande bindningar"
+
+#: global.cpp:83 standard.cpp:84
+msgid "KDE default"
+msgstr "Kde standard"
+
+#: standard.cpp:85
+msgid "KDE lite"
+msgstr "Kde lätt"
+
+#: global.cpp:90 standard.cpp:90
+msgid "&Key scheme"
+msgstr "&Tangentbindningar"
+
+#: global.cpp:101
+msgid "&Add ..."
+msgstr "&Lägg till..."
+
+#: global.cpp:123
+msgid "&Save changes"
+msgstr "&Spara ändringarna"
+
+#: global.cpp:182
+msgid "Error removing scheme"
+msgstr "Fel vid bortagandet av bindningarna"
+
+#: global.cpp:183
+msgid ""
+"This key scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the key scheme is stored."
+msgstr ""
+"Den här tangentbindningen kunde inte tas bort.\n"
+"Du har kanske inte har rättigheter att ändra den del\n"
+"av filsystemet som tangentbindnings filen är lagrad på." 
+
+#: global.cpp:314
+msgid "Naming conflict"
+msgstr "Namnkonflikt"
+
+#: global.cpp:315
+msgid ""
+"Please choose a unique name for the new key\n"
+"scheme. The one you entered already appears\n"
+"in the key scheme list."
+msgstr ""
+"Vargod ange ett unikt namn för den nya\n"
+"tangentbindningarna. Det namn du använde på\n"
+"tangentbindningarna används redan."
+
+#: savescm.cpp:18
+msgid "Add a key scheme"
+msgstr "Lägg till tangentbindningar"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new key scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The keys currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"&Skriv in ett namn på tangentbindningarna\n"
+"som kan läggas till din personliga lista.\n"
+"\n"
+"Tangentbindningarna som du nu använder kommer\n"
+"att kopieras in som en start."

@@ -1,0 +1,31 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"PO-Revision-Date: 1998-10-23 23:00+0100\n"
+"Last-Translator: Karl Backström <backstrom@kde.org>\n"
+"Language-Team: Sv <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:34
+msgid "&Font"
+msgstr "&Teckensnitt"
+
+#: main.cpp:36
+msgid "&Color"
+msgstr "&Färg"
+
+#: main.cpp:63
+msgid "usage: kcmkfm [-init | {font,color}]\n"
+msgstr "användning: kcmkfm [-init | {teckensnitt,färg}]\n"
+
+#: main.cpp:104
+msgid "KFM Configuration"
+msgstr "KFM Konfiguration"

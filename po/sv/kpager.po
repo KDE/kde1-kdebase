@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Date: 1998-09-30 07:19:56+0000\n"
+"From: antonio <antonio@jupiter.arrakis.es>\n"
+"Content-Type: text/plain; charset=\n"
+"PO-Revision-Date: 1998-10-23 23:00+0100\n"
+"Last-Translator: Karl Backström <backstrom@kde.org>\n"
+"Language-Team: Sv <LL@li.org>\n" 
+"Xgettext-Options: -C -ki18n -x /opt/kde/include/kde.pot\n"
+"Files: jpeg.cpp windowdrag.cpp ktrianglebutton.cpp desktop.cpp kpagerclient.cpp kpager.cpp main.cpp\n"
+
+#: kpager.cpp:77 kpager.cpp:156
+msgid "Hide &Global Desktop"
+msgstr "Göm &globala skrivbordet"
+
+#: kpager.cpp:79 kpager.cpp:149
+msgid "Show &Global Desktop"
+msgstr "Visa &globala skrivbordet"
+
+#: kpager.cpp:81
+msgid "Hide &Menubar"
+msgstr "Göm &menyraden"
+
+#: kpager.cpp:85
+msgid "Plain"
+msgstr "Vanlig"
+
+#: kpager.cpp:88
+msgid "Icon"
+msgstr "Ikon"
+
+#: kpager.cpp:91
+msgid "Pixmap"
+msgstr "Bild"
+
+#: kpager.cpp:95
+msgid "Draw Mode"
+msgstr "Ritningsläge"
+
+#: kpager.cpp:99
+msgid ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"KPager's homepage is at : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n"
+"This is free software, and you are welcome to redistribute it\n"
+"under certain conditions\n"
+msgstr ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spaniem)\n"
+"\n"
+"KPagers hemsida: http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager kommer UTAN NÅGON SOM HELST GARANTI; läs filen COPYING för detaljer\n"
+"Detta är en fri mjukvara, och du är välkommen att skicka den vidare\n"
+"under vissa förutsättningar\n" 
