@@ -1,0 +1,8 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcmkwm borders
+Icon=desktop_settings.xpm
+Type=Application
+Comment=Desktop Border Options
+Name=Borders
+
