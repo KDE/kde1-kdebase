@@ -209,6 +209,7 @@ const char* HTMLCache::isCached( const char *_url )
 
 HTMLCache::~HTMLCache()
 {
+    quit(); // Let's delete all running jobs ! David.
     instanceList->removeRef( this );
 }
 
