@@ -197,7 +197,7 @@ bool KFMManager::openURL( const char *_url, bool _reload )
 	if ( ( i = to.find( '?' ) ) != -1 )
 	    to = to.left( i ).data();
 	QString cmd;
-	cmd << "kmail to \"" << to << "\" subject \"" << subject << "\"";
+	cmd << "kmail -s \"" << subject << "\" \"" << to << "\"";
 	KMimeBind::runCmd( cmd );
 	return false;
     }
