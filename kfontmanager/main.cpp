@@ -42,8 +42,6 @@
 char DOCS_PATH[256];
 char PICS_PATH[256];
 
-KLocale local("kfontmanager");
-
 void setup(){
 
 
