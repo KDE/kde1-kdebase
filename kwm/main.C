@@ -94,6 +94,8 @@ static myPushButton* infoIcon = 0;
 static QFrame* infoFrame = 0;
 static QFrame* infoFrameInner = 0;
 static QFrame* infoFrameSeparator = 0;
+
+static Client* top_client_before_button_press = 0;
 extern bool do_not_draw;
 
 Manager* manager;
@@ -838,7 +840,7 @@ void MyApp::readConfiguration(){
   }
   //CT
 
-    
+
   //CT 23Sep1998 - fixed the name of the titlebar pixmaps to become
   //   consistent with the buttons pixmaps definition technique
   if (options.TitlebarLook == PIXMAP) {
@@ -1197,7 +1199,7 @@ bool  MyApp::executeMouseBinding(Client* c, int command){
     // must be handled by the client itself since it needs the position of the event!
     break;
   case MouseToggleRaiseAndLower:
-    if (c == manager->topClientOnDesktop())
+    if (c == top_client_before_button_press)
       manager->lowerClient(c);
     else
       manager->raiseClient(c);
@@ -1722,6 +1724,7 @@ bool MyApp::eventFilter( QObject *obj, QEvent * ev){
 bool MyApp::buttonPressEventFilter( XEvent * ev)
 {
 
+    top_client_before_button_press = manager->topClientOnDesktop();
     Client *c = manager->getClient(ev->xbutton.window);
     if (c) {
 	c->stopAutoraise();

@@ -1834,7 +1834,7 @@ void Manager::manage(Window w, bool mapped){
     XFree(hints);
 
   getWMNormalHints(c);
-  
+
   if (c->size.flags & PPosition) {
       // some obsolete hints, some old apps may still use them
       if (c->size.x != 0 && c->geometry.x() == 0 )
@@ -1842,7 +1842,7 @@ void Manager::manage(Window w, bool mapped){
       if (c->size.y != 0 && c->geometry.y() == 0 )
 	  c->geometry.moveTopLeft(QPoint(c->geometry.x(), c->size.y));
   }
-  
+
       // be a bit clever
   {
 	  QRect maxRect = KWM::getWindowRegion(currentDesktop());
@@ -1853,10 +1853,10 @@ void Manager::manage(Window w, bool mapped){
 	      c->geometry.moveTopLeft(QPoint(maxRect.x(), c->geometry.y()));
 	  if (c->geometry.y() < maxRect.y() )
 	      c->geometry.moveTopLeft(QPoint(c->geometry.x(), maxRect.y()));
-	      
+	
   }
-  
-  
+
+
   getColormaps(c);
   getWindowTrans(c);
   getMwmHints(c);
@@ -1897,7 +1897,7 @@ void Manager::manage(Window w, bool mapped){
   if (c->size.flags & PSize) {
   }
 
-  
+
   if (mapped || c->trans != None
       ||c->size.flags & PPosition
       ||c->size.flags & USPosition
@@ -2458,7 +2458,7 @@ void Manager::switchDesktop(int new_desktop){
 }
 
 
-// make the menubars fit to the current desktop region  
+// make the menubars fit to the current desktop region
 void Manager::updateMenuBars()
 {
  myapp->resetSystemMenuBar();
@@ -2476,8 +2476,8 @@ void Manager::updateMenuBars()
  }
 }
 
-// make the maximized windows fit to the current desktop region  
-// make the menubars fit to the current desktop region  
+// make the maximized windows fit to the current desktop region
+// make the menubars fit to the current desktop region
 void Manager::updateMaximizedWindows()
 {
     QRect r =  KWM::getWindowRegion(currentDesktop());
@@ -2799,7 +2799,7 @@ Client* Manager::previousStaticClient(Client* c){
 Client* Manager::topClientOnDesktop(){
   Client* result;
   for (result = clients_sorted.last(); result; result = clients_sorted.prev()){
-    if (result->isOnDesktop(current_desktop))
+    if (result->isOnDesktop(current_desktop) && !result->isMenuBar())
       return result;
   }
   return 0;
