@@ -1,7 +1,7 @@
 ####### Fiddle here
 
-INCLUDES = @all_includes@ 
-LDADD   = @all_libraries@ -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 @LIBSOCKET@
+INCLUDES = $(all_includes)
+LDADD   = $(all_libraries) -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_RPATH)
 
 #######	Files
 

@@ -1,13 +1,10 @@
 
-SUBDIRS		= config pics @xdmconfigsubdir@
-
-# System depended vars:
-MOC	 = @MOC@
+SUBDIRS	= config pics $(xdmconfigsubdir)
 
 # Extra lib. Might be -lpam -dl or -lshadow or nonthing
-PASSWDLIB=@PASSWDLIB@ @PAMLIBS@
+PASSLIB= $(PASSWDLIB) $(PAMLIBS)
 
-INCLUDES = -I.. @all_includes@
+INCLUDES = $(all_includes)
 
 #CFLAGS   = -Wall -Wno-implicit -Wno-return-type
 CFLAGS   += -Wno-implicit -Wno-return-type 
@@ -16,15 +13,12 @@ CXXFLAGS += -DHAVE_CONFIG_H
 bin_PROGRAMS = kdm kdmdesktop
 
 # Libraries:
-LDADD  = @all_libraries@ -lkdecore -lqt -lXext\
-           -lX11 -lXau -lXdmcp -lm $(PASSWDLIB) @LIBSOCKET@ @LIBCRYPT@
+LDADD  = $(all_libraries) -lkdecore -lqt -lXext\
+           -lX11 -lXau -lXdmcp -lm $(PASSLIB) $(LIBSOCKET) $(LIBCRYPT) $(KDE_RPATH)
 
 # For kdmdesktop
-kdmdesktop_LDADD = @all_libraries@ -lkdecore -lqt -lm -lgif @LIBJPEG@ -lXext\
+kdmdesktop_LDADD = $(all_libraries) -lkdecore -lqt -lm -lgif $(LIBJPEG) -lXext\
 		   -lX11 
-
-.h.moc:
-	$(MOC) -o $@ $<
 
 # Sources for xdm (both C and C++):
 kdmlib_source = access.c \

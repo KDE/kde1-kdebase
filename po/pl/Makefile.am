@@ -9,8 +9,6 @@ LANG = pl
 
 localedir = $(kde_locale)
 
-GMSGFMT = @GMSGFMT@
-MSGFMT = @MSGFMT@
 DISTFILES = Makefile.am Makefile.in $(POFILES) $(GMOFILES)
 
 all: all-@USE_NLS@

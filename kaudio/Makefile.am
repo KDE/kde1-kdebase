@@ -1,7 +1,7 @@
 
-INCLUDES = @all_includes@
+INCLUDES = $(all_includes)
 # kdecore for usleep fake
-LDADD =  @all_libraries@ -lmediatool -lkdecore
+LDADD =  $(all_libraries) -lmediatool -lkdecore $(KDE_RPATH)
 
 maudio_SOURCES = io_oss.cpp maudio.cpp sample.cpp
 kaudioserver_SOURCES = kaudioserver.cpp

@@ -3,10 +3,9 @@
 ##
 
 bin_PROGRAMS 	= kwm
-INCLUDES	=  @all_includes@ 
+INCLUDES	=  $(all_includes)
 DEFS		+= -DSHAPE 
-kwm_LDADD 	= @all_libraries@ -lkfm -lkdecore -lqt -lXext -lX11 @LIBSOCKET@
-MOC		= @MOC@
+kwm_LDADD 	= $(all_libraries) -lkfm -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_RPATH)
 CLEANFILES	= $(BUILT_SOURCES)
 SUBDIRS 	= pics
 
@@ -40,4 +39,5 @@ task.moc: task.h
 	$(MOC) task.h -o task.moc
 
 messages:
-	@XGETTEXT@ -C -ktranslate -x ../../kdelibs/po/kde.pot $(kwm_SOURCES) 
+	$(XGETTEXT) -C -ktranslate -x ../../kdelibs/po/kde.pot $(kwm_SOURCES) 
+

@@ -1,9 +1,7 @@
 ## Makefile.am of kdebase/kfm
 
-INCLUDES=	@all_includes@  
-LDADD	=	@all_libraries@ -lkhtmlw -lkdeui -lkdecore -lqt -lXext -lX11 @LIBSOCKET@ -ljpeg -lgif -ljscript
-MOC	=	@MOC@
-
+INCLUDES=	$(all_includes)
+LDADD	=	$(all_libraries) -lkhtmlw -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) -ljpeg -lgif -ljscript $(KDE_RPATH)
 CONFIGDIR = $(kde_confdir)
 MIMELNKDIR = $(kde_mimedir)
 
@@ -170,7 +168,5 @@ kioIPC: ./ipcc/kio.ipc
 	cd ipcc ; ./ipcc.pl kio.ipc kioserver_ipc kioslave_ipc ; cp kioserver_ipc* ../ ; cp kioslave_ipc* ../kioslave ; cd ..
 
 messages:
-	@XGETTEXT@ -C -ktranslate -kaliasLocale -x ../../kdelibs/po/kde.pot $(kfm_SOURCES) kfmexec/main.cpp && mv messages.po ../po/kfm.po
-
-
+	$(XGETTEXT) -C -ktranslate -kaliasLocale -x ../../kdelibs/po/kde.pot $(kfm_SOURCES) kfmexec/main.cpp && mv messages.po ../po/kfm.po
 

@@ -119,8 +119,6 @@ AC_CHECK_LIB(compat, main, [LIBCOMPAT="-lcompat"]) dnl for FreeBSD
 AC_SUBST(LIBCOMPAT)
 AC_CHECK_LIB(crypt, main, [LIBCRYPT="-lcrypt"]) dnl for BSD
 AC_SUBST(LIBCRYPT)
-LIBKHTMLW="-lkhtmlw -ljscript" dnl this is somewhat historical, since jscript is ways needed
-AC_SUBST(LIBKHTMLW)
 
 AC_FIND_GIF
 AC_FIND_JPEG
@@ -155,11 +153,11 @@ dnl output files
 topdir=`pwd`
 AC_SUBST(topdir)
 
-
-LDFLAGS="$LDFLAGS -rpath \$(kde_libraries)"
+KDE_RPATH="-rpath \$(kde_libraries)"
 if test -n "$qt_libraries"; then
- LDFLAGS="$LDFLAGS -rpath \$(qt_libraries)"
+ KDE_RPATH="$KDE_RPATH -rpath \$(qt_libraries)"
 fi
+AC_SUBST(KDE_RPATH)
 
 dnl Perform program name transformation
 AC_ARG_PROGRAM

@@ -2,9 +2,8 @@
 
 ###################################################################
 
-LDADD   =	@all_libraries@ -lkdecore -lqt -lm -lXext -lX11
-INCLUDES=	@all_includes@
-MOC	=	@MOC@
+LDADD   =	$(all_libraries) -lkdecore -lqt -lm -lXext -lX11 $(KDE_RPATH)
+INCLUDES=	$(all_includes)
 
 ####### Files
 bin_PROGRAMS = kfontmanager

@@ -1,7 +1,6 @@
 
-INCLUDES=       @all_includes@ -I..
-LDADD   =       @all_libraries@ -lkdecore -lqt -lXext -lX11 @LIBJPEG@ @LIBSOCKET@
-MOC     =       @MOC@
+INCLUDES=       $(all_includes) -I..
+LDADD   =       $(all_libraries) -lkdecore -lqt -lXext -lX11 $(LIBJPEG) $(LIBSOCKET)
 
 ####### Files
 

@@ -2,12 +2,11 @@
 ## written by Stephan Kulow using the old Makefile by Matthias Ettrich
 ##
 
-MOC	= 	@MOC@
-INCLUDES=	@all_includes@ 
-CLEANFILES = 	$(BUILT_SOURCES)
+INCLUDES	= $(all_includes)
+DISTCLEANFILES 	= $(BUILT_SOURCES)
 
 bin_PROGRAMS = kpanel
-kpanel_LDADD =	@all_libraries@ -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 @LIBSOCKET@
+kpanel_LDADD =	$(all_libraries) -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_RPATH)
 kpanel_SOURCES = kpanel.C props.C layout.C tools.C main.C events.C pmenu.C
 noinst_HEADERS = kpanel.h pmenu.h
 BUILT_SOURCES = kpanel.moc pmenu.moc
@@ -22,4 +21,4 @@ pmenu.moc: pmenu.h
 	$(MOC) pmenu.h -o pmenu.moc
 
 messages:
-	@XGETTEXT@ -C --keyword=translate -x ../../kdelibs/po/kde.pot $(kpanel_SOURCES)
+	$(XGETTEXT) -C --keyword=translate -x ../../kdelibs/po/kde.pot $(kpanel_SOURCES)

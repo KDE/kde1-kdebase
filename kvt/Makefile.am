@@ -2,9 +2,8 @@
 ## written by Stephan Kulow using the old Makefile.in, that I wrote too :-)
 ##
 
-INCLUDES= @all_includes@ 
-LDADD	= @all_libraries@ -lkdecore -lkdeui -lqt -lXext -lX11
-MOC	= @MOC@
+INCLUDES= $(all_includes)
+LDADD	= $(all_libraries) -lkdecore -lkdeui -lqt -lXext -lX11 $(KDE_RPATH)
 DISTCLEANFILES = main.moc
 
 bin_PROGRAMS = kvt

@@ -2,10 +2,9 @@
 # Makefile.am for kscreensave.   Good Luck
 #
 
-MOC = @MOC@
-INCLUDES = @all_includes@
-LDADD = @all_libraries@ -lkdeui -lkdecore -lqt -lXext -lX11 @LIBCRYPT@
-CLEANFILES = $(BUILT_SOURCES)
+INCLUDES = $(all_includes)
+LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBCRYPT) $(KDE_RPATH)
+DISTCLEANFILES = $(BUILT_SOURCES)
 
 # for shadow passwords override the value
 INSTALL = @INSTALL@ $(SETUIDFLAGS)
@@ -37,7 +36,7 @@ kblankscrn_kss_SOURCES = $(BASE_SRCS) blankscrn.cpp
 blankscrn.cpp: blankscrn.moc
 
 kbat_kss_SOURCES = $(BASE_SRCS) bat.cpp
-kbat_kss_LDADD = $(LDADD) @XPMLIB@
+kbat_kss_LDADD = $(LDADD) $(XPMLIB)
 bat.cpp: bat.moc
 
 krock_kss_SOURCES = $(BASE_SRCS) rock.cpp
@@ -68,7 +67,7 @@ kblob_kss_SOURCES = $(BASE_SRCS) blob.cpp
 blob.cpp: blob.moc
 
 kmorph3d_kss_SOURCES = $(BASE_SRCS) morph3d.cpp
-kmorph3d_kss_LDADD = $(LDADD) @GLLIB@
+kmorph3d_kss_LDADD = $(LDADD) $(GLLIB)
 morph3d.cpp: morph3d.moc
 
 klock_SOURCES = klock.cpp kscreensave.cpp
@@ -84,7 +83,7 @@ noinst_HEADERS = saver.h polygon.h banner.h\
 		lissie.h blob.h
 
 messages:
-	@XGETTEXT@ -C -ktranslate *.cpp -x ../../kdelibs/po/kde.po # && mv messages.po ../po/klock.po 
+	$(XGETTEXT) -C -ktranslate *.cpp -x ../../kdelibs/po/kde.po # && mv messages.po ../po/klock.po 
 
 ########## Meta objects ##########
 

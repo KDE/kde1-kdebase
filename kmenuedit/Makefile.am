@@ -1,7 +1,6 @@
 
-INCLUDES = @all_includes@ 
-LDADD = @all_libraries@ -lkdeui -lkdecore -lqt -lXext -lX11 
-MOC   	= @MOC@
+INCLUDES = $(all_includes)
+LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(KDE_RPATH)
 
 SUBDIRS = icons
 
