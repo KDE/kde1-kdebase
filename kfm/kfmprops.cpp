@@ -50,14 +50,18 @@ mode_t FilePermissionsPropsPage::fperm[3][4] = {
 
 Properties::Properties( const char *_url ) : QObject()
 {
+    debug("Properties::Properties : %s \n",_url);
     pageList.setAutoDelete( true );
   
     url = _url;
     url.detach();
+    debug("Properties::Properties : url=%s \n",url.data());
   
     kurl = new KURL( url );
     if ( kurl->isMalformed() )
 	delete this;
+
+    debug("Properties::Properties : kurl=%s \n",kurl->url().data());
     
     tab = new QTabDialog( 0L, 0L );
 
@@ -618,17 +622,8 @@ void FilePermissionsPropsPage::applyChanges()
 	    if (permBox[row][col]->isChecked())
 	        p |= fperm[row][col];
 
-    if ( p != permissions )
-    {
-	struct stat buff;
-	stat( path.data(), &buff );
-	// int mask = ~( S_IRWXU | S_IRWXG | S_IRWXO );
-	// mask |= p;
-	if ( chmod( path, p ) != 0 )
-	    QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
-				  klocale->translate( "Could not change permissions\nPerhaps access denied." ) );	    
-    }
-
+    // First update group / owner
+    // (permissions have to set after, in case of suid and sgid)
     if ( strcmp( owner->text(), strOwner.data() ) != 0 || 
 	 (grp && strcmp( grp->text(grp->currentItem()), strGroup.data() ) != 0 ))
     {
@@ -654,6 +649,18 @@ void FilePermissionsPropsPage::applyChanges()
 	    QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
 				  klocale->translate( "Could not change owner/group\nPerhaps access denied." ) );
     }    
+
+    if ( p != permissions )
+    {
+	struct stat buff;
+	stat( path.data(), &buff );
+	// int mask = ~( S_IRWXU | S_IRWXG | S_IRWXO );
+	// mask |= p;
+	if ( chmod( path, p ) != 0 )
+	    QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+				  klocale->translate( "Could not change permissions\nPerhaps access denied." ) );	    
+    }
+
 }
 
 ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
