@@ -1,12 +1,25 @@
 #!/bin/sh
-# It looks like the sleeps do speed up the startup time
+#
+#  DEFAULT KDE STARTUP SCRIPT ( KDE-1.1 )
+#
+
+# initialize the configuration first.
+
+exec kcontrol -init kcmdisplay
+
+# Start the common desktop tools in the background.
+# The sleeps reduce disk usage during startup.
+
 (sleep 1 && exec kaudioserver) &
 (sleep 1 && exec kwmsound) &
 
 (sleep 1 && exec kfm) &
-(sleep 2 && exec kcontrol -init) &
 
 (sleep 1 && exec krootwm) &
 (sleep 1 && exec kpanel) &
 (sleep 3 && exec kbgndwm) &
+
+# finally, give the session control to the window manager
+
 sleep 2 ; exec kwm
+
