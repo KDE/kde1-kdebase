@@ -1,6 +1,5 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Default
-Name[C]=Default
 Name[no]=Standard
 SortOrder=Applications,apps,Games,Graphics,Internet,Multimedia,Network,Settings,System,Utilities
