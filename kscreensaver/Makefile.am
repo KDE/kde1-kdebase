@@ -101,7 +101,7 @@ noinst_HEADERS = saver.h polygon.h banner.h\
 		lissie.h blob.h space.h bouboule.h  kgroupbox.h science.h
 
 messages:
-	$(XGETTEXT) -C -ktranslate *.cpp -x ../../kdelibs/po/kde.pot && mv messages.po ../po/klock.pot
+	$(XGETTEXT) -C -ktranslate -ki18n *.cpp -x ../../kdelibs/po/kde.pot && mv messages.po ../po/klock.pot
 
 ########## Meta objects ##########
 

@@ -349,11 +349,12 @@ msgstr "Om KFM"
 
 # kfmgui.cpp:1227
 #: kfmgui.cpp:1262
+#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
 "\n"
-"HTML-widget by Martin Jones\n"
+"HTML widget by Martin Jones\n"
 "mjones@kde.org\n"
 "\n"
 "Proxy Manager by Lars Hoss\n"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-06-11 18:35+0200\n"
+"POT-Creation-Date: 1998-06-16 12:05+0200\n"
 "PO-Revision-Date: 1998-02-25 21:41 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -27,7 +27,8 @@ msgstr "Couleur :"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 slip.cpp:378 space.cpp:587 swarm.cpp:341
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1024 slip.cpp:378 space.cpp:587
+#: swarm.cpp:341
 msgid "Speed:"
 msgstr "Vitesse :"
 
@@ -557,10 +558,6 @@ msgstr "Rock"
 msgid "Setup krock"
 msgstr "Configuration de krock"
 
-#: rock.cpp:589
-msgid "Move"
-msgstr "Déplacer"
-
 #: rock.cpp:595
 msgid "Rotate"
 msgstr "Tourner"
@@ -590,6 +587,59 @@ msgstr "Mot de passe"
 #: saver.cpp:82
 msgid "Failed"
 msgstr "Mot de passe incorrect"
+
+#: science.cpp:112
+msgid "Science"
+msgstr "Science"
+
+#: science.cpp:448
+msgid "preparing lens..."
+msgstr ""
+
+#: science.cpp:768
+msgid "grabbing screen..."
+msgstr ""
+
+#: science.cpp:930
+msgid "Setup Science"
+msgstr "Configuration de Science"
+
+#: science.cpp:948
+msgid "Mode:"
+msgstr "Milieu :"
+
+#: science.cpp:963
+msgid "Inverse"
+msgstr ""
+
+#: science.cpp:973
+msgid "Gravity"
+msgstr ""
+
+#: science.cpp:982
+msgid "Hide Background"
+msgstr ""
+
+#: science.cpp:1008
+msgid "Intensity:"
+msgstr "Intensité:"
+
+#: science.cpp:1038
+msgid "Motion:"
+msgstr ""
+
+#: science.cpp:1259
+#, fuzzy
+msgid "Science Version"
+msgstr "Science"
+
+#: science.cpp:1260
+msgid "written by"
+msgstr ""
+
+#: science.cpp:1260
+msgid "About Science"
+msgstr "A propos de Science"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -677,23 +727,11 @@ msgstr ""
 "\n"
 "Porté vers kscreensave by Emanuel Pirker."
 
-#~ msgid "Science"
-#~ msgstr "Science"
-
-#~ msgid "Setup Science"
-#~ msgstr "Configuration de Science"
-
-#~ msgid "Mode:"
-#~ msgstr "Milieu :"
+#~ msgid "Move"
+#~ msgstr "Déplacer"
 
 #~ msgid "Sphere"
 #~ msgstr "Vitesse :"
-
-#~ msgid "Intensity:"
-#~ msgstr "Intensité:"
-
-#~ msgid "About Science"
-#~ msgstr "A propos de Science"
 
 #~ msgid ""
 #~ "Science Version 0.24.2 beta\n"

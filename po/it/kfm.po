@@ -571,7 +571,7 @@ msgid "Vertical Root Grid Spacing:"
 msgstr "Spaziatura Verticale griglia:"
 
 #: htmlopts.cpp:349
-#,fuzzy
+#, fuzzy
 msgid "Transparent Text for Root Icons."
 msgstr "Testo trasparente per le Icone di Root."
 
@@ -1286,7 +1286,7 @@ msgid "&Proxy"
 msgstr "P&roxy"
 
 #: kkfmoptdlg.cpp:21
-#,fuzzy
+#, fuzzy
 msgid "User &Agent"
 msgstr "Utente &Agent"
 
@@ -1371,4 +1371,3 @@ msgid ""
 msgstr ""
 "Errorore di sintassi:\n"
 "kfmexec comando [URL ....]\n"
-

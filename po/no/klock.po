@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-11 18:35+0200\n"
+"POT-Creation-Date: 1998-06-16 12:05+0200\n"
 "PO-Revision-Date: 98-03-23 18:21+0100\n"
 "Last-Translator: Svein Olav Aasen <svein.aasen@caa.no / soaasen@online.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -27,7 +27,8 @@ msgstr "Farge:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 slip.cpp:378 space.cpp:587 swarm.cpp:341
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1024 slip.cpp:378 space.cpp:587
+#: swarm.cpp:341
 msgid "Speed:"
 msgstr "Hastighet"
 
@@ -556,10 +557,6 @@ msgstr "Rock"
 msgid "Setup krock"
 msgstr "KRock-oppsett"
 
-#: rock.cpp:589
-msgid "Move"
-msgstr "Flytt"
-
 #: rock.cpp:595
 msgid "Rotate"
 msgstr "Roter"
@@ -589,6 +586,59 @@ msgstr "Skriv inn passord"
 #: saver.cpp:82
 msgid "Failed"
 msgstr "Slo feil"
+
+#: science.cpp:112
+msgid "Science"
+msgstr "Vitenskap"
+
+#: science.cpp:448
+msgid "preparing lens..."
+msgstr ""
+
+#: science.cpp:768
+msgid "grabbing screen..."
+msgstr ""
+
+#: science.cpp:930
+msgid "Setup Science"
+msgstr "Vitenskap-oppsett"
+
+#: science.cpp:948
+msgid "Mode:"
+msgstr "Modus:"
+
+#: science.cpp:963
+msgid "Inverse"
+msgstr "Omvendt"
+
+#: science.cpp:973
+msgid "Gravity"
+msgstr "Gravitasjon"
+
+#: science.cpp:982
+msgid "Hide Background"
+msgstr ""
+
+#: science.cpp:1008
+msgid "Intensity:"
+msgstr "Intensitet:"
+
+#: science.cpp:1038
+msgid "Motion:"
+msgstr "Bevegelse:"
+
+#: science.cpp:1259
+#, fuzzy
+msgid "Science Version"
+msgstr "Vitenskap"
+
+#: science.cpp:1260
+msgid "written by"
+msgstr ""
+
+#: science.cpp:1260
+msgid "About Science"
+msgstr "Om Vitenskap"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -676,35 +726,14 @@ msgstr ""
 "\n"
 "Portet til kscreensave av Emanuel Pirker."
 
-#~ msgid "Science"
-#~ msgstr "Vitenskap"
-
-#~ msgid "Setup Science"
-#~ msgstr "Vitenskap-oppsett"
-
-#~ msgid "Mode:"
-#~ msgstr "Modus:"
+#~ msgid "Move"
+#~ msgstr "Flytt"
 
 #~ msgid "Whirl"
 #~ msgstr "Virvel"
 
 #~ msgid "Sphere"
 #~ msgstr "Kule"
-
-#~ msgid "Inverse"
-#~ msgstr "Omvendt"
-
-#~ msgid "Gravity"
-#~ msgstr "Gravitasjon"
-
-#~ msgid "Intensity:"
-#~ msgstr "Intensitet:"
-
-#~ msgid "Motion:"
-#~ msgstr "Bevegelse:"
-
-#~ msgid "About Science"
-#~ msgstr "Om Vitenskap"
 
 #~ msgid ""
 #~ "Science Version 0.24.2 beta\n"

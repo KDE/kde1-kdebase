@@ -137,21 +137,19 @@ msgstr "Cache leeren"
 
 #: kfmgui.cpp:407
 msgid "Always look in cache"
-msgstr "Immer im Cache behalten"
+msgstr "Immer im Cache nachschauen"
 
 #: kfmgui.cpp:409
 msgid "Never look in cache"
-msgstr "Niemals im Cache behalten"
+msgstr "Niemals im Cache nachschauen"
 
 #: kfmgui.cpp:411
-#, fuzzy
 msgid "Always save cache"
-msgstr "Immer im Cache behalten"
+msgstr "In den Cache schreiben"
 
 #: kfmgui.cpp:413
-#, fuzzy
 msgid "Never save cache"
-msgstr "Niemals im Cache behalten"
+msgstr "Nichts in den Cache schreiben"
 
 #: kfmgui.cpp:424
 msgid "Show &Menubar"

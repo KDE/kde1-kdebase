@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-06-11 18:35+0200\n"
+"POT-Creation-Date: 1998-06-16 12:05+0200\n"
 "PO-Revision-Date: 1998-03-16 02:25+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -28,7 +28,8 @@ msgstr "Цвет:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 slip.cpp:378 space.cpp:587 swarm.cpp:341
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1024 slip.cpp:378 space.cpp:587
+#: swarm.cpp:341
 msgid "Speed:"
 msgstr "Скорость:"
 
@@ -556,10 +557,6 @@ msgstr "Скала"
 msgid "Setup krock"
 msgstr "Настроить krock"
 
-#: rock.cpp:589
-msgid "Move"
-msgstr "Двигать"
-
 #: rock.cpp:595
 msgid "Rotate"
 msgstr "Вращать"
@@ -589,6 +586,62 @@ msgstr "Введите Пароль:"
 #: saver.cpp:82
 msgid "Failed"
 msgstr "Неверно"
+
+#: science.cpp:112
+#, fuzzy
+msgid "Science"
+msgstr "Настройка KLines"
+
+#: science.cpp:448
+msgid "preparing lens..."
+msgstr ""
+
+#: science.cpp:768
+msgid "grabbing screen..."
+msgstr ""
+
+#: science.cpp:930
+#, fuzzy
+msgid "Setup Science"
+msgstr "Настройка KLines"
+
+#: science.cpp:948
+#, fuzzy
+msgid "Mode:"
+msgstr "Середина:"
+
+#: science.cpp:963
+msgid "Inverse"
+msgstr ""
+
+#: science.cpp:973
+msgid "Gravity"
+msgstr ""
+
+#: science.cpp:982
+msgid "Hide Background"
+msgstr ""
+
+#: science.cpp:1008
+msgid "Intensity:"
+msgstr ""
+
+#: science.cpp:1038
+msgid "Motion:"
+msgstr ""
+
+#: science.cpp:1259
+msgid "Science Version"
+msgstr ""
+
+#: science.cpp:1260
+msgid "written by"
+msgstr ""
+
+#: science.cpp:1260
+#, fuzzy
+msgid "About Science"
+msgstr "О Lines"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -675,18 +728,9 @@ msgstr ""
 "\n"
 "Переписано на kscreensave Эмануэлем Пиркером."
 
-#, fuzzy
-#~ msgid "Setup Science"
-#~ msgstr "Настройка KLines"
-
-#, fuzzy
-#~ msgid "Mode:"
-#~ msgstr "Середина:"
+#~ msgid "Move"
+#~ msgstr "Двигать"
 
 #, fuzzy
 #~ msgid "Sphere"
 #~ msgstr "Скорость:"
-
-#, fuzzy
-#~ msgid "About Science"
-#~ msgstr "О Lines"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-11 18:35+0200\n"
+"POT-Creation-Date: 1998-06-16 12:05+0200\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -19,7 +19,8 @@ msgstr "Cor:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 slip.cpp:378 space.cpp:587 swarm.cpp:341
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1024 slip.cpp:378 space.cpp:587
+#: swarm.cpp:341
 msgid "Speed:"
 msgstr "Velocidade:"
 
@@ -547,10 +548,6 @@ msgstr "Rocha"
 msgid "Setup krock"
 msgstr "Configurar Rocha"
 
-#: rock.cpp:589
-msgid "Move"
-msgstr "Mover"
-
 #: rock.cpp:595
 msgid "Rotate"
 msgstr "Rodar"
@@ -580,6 +577,59 @@ msgstr "Password"
 #: saver.cpp:82
 msgid "Failed"
 msgstr "Falhou"
+
+#: science.cpp:112
+msgid "Science"
+msgstr "Ciência"
+
+#: science.cpp:448
+msgid "preparing lens..."
+msgstr ""
+
+#: science.cpp:768
+msgid "grabbing screen..."
+msgstr ""
+
+#: science.cpp:930
+msgid "Setup Science"
+msgstr "Configurar Ciência"
+
+#: science.cpp:948
+msgid "Mode:"
+msgstr "Modo:"
+
+#: science.cpp:963
+msgid "Inverse"
+msgstr "Inverso"
+
+#: science.cpp:973
+msgid "Gravity"
+msgstr "Gravidade"
+
+#: science.cpp:982
+msgid "Hide Background"
+msgstr ""
+
+#: science.cpp:1008
+msgid "Intensity:"
+msgstr "Intensidade:"
+
+#: science.cpp:1038
+msgid "Motion:"
+msgstr "Movimento:"
+
+#: science.cpp:1259
+#, fuzzy
+msgid "Science Version"
+msgstr "Ciência"
+
+#: science.cpp:1260
+msgid "written by"
+msgstr ""
+
+#: science.cpp:1260
+msgid "About Science"
+msgstr "Acerca do Ciência"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -667,35 +717,14 @@ msgstr ""
 "\n"
 "Transposto para kscreensave por Emanuel Pirker."
 
-#~ msgid "Science"
-#~ msgstr "Ciência"
-
-#~ msgid "Setup Science"
-#~ msgstr "Configurar Ciência"
-
-#~ msgid "Mode:"
-#~ msgstr "Modo:"
+#~ msgid "Move"
+#~ msgstr "Mover"
 
 #~ msgid "Whirl"
 #~ msgstr "Remoinho"
 
 #~ msgid "Sphere"
 #~ msgstr "Esfera"
-
-#~ msgid "Inverse"
-#~ msgstr "Inverso"
-
-#~ msgid "Gravity"
-#~ msgstr "Gravidade"
-
-#~ msgid "Intensity:"
-#~ msgstr "Intensidade:"
-
-#~ msgid "Motion:"
-#~ msgstr "Movimento:"
-
-#~ msgid "About Science"
-#~ msgstr "Acerca do Ciência"
 
 #~ msgid ""
 #~ "Science Version 0.24.2 beta\n"

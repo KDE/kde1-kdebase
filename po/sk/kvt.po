@@ -26,10 +26,6 @@ msgstr "Znaky pridané do triedy slov:"
 msgid "The backspace key will send a"
 msgstr "Backspace bude posielaný ako"
 
-#: main.C:336
-msgid "Cursor key set"
-msgstr "Sada kurzorových kláves"
-
 #: main.C:459
 msgid "&New Terminal"
 msgstr "&Nový terminál"
@@ -226,10 +222,6 @@ msgid "-vt_font <fontname>       normal font\n"
 msgstr "-vt_font <názov>          normálny font\n"
 
 #: main.C:1249
-msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr "-no_font_hack             vypnú» obídenie chyby Qt fontu\n"
-
-#: main.C:1249
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr "-vt_size <veµkos»>        tiny, small, normal large, huge\n"
 
@@ -314,3 +306,9 @@ msgid ""
 msgstr ""
 "-grk9\\t\\tgreek kbd = ELOT 928 (¹tandardná)\n"
 "-grk4\\t\\tgreek kbd = IBM 437\n"
+
+#~ msgid "Cursor key set"
+#~ msgstr "Sada kurzorových kláves"
+
+#~ msgid "-no_font_hack             turn off Qt font bug workaround\n"
+#~ msgstr "-no_font_hack             vypnú» obídenie chyby Qt fontu\n"

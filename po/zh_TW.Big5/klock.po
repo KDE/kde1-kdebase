@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-06-11 18:35+0200\n"
+"POT-Creation-Date: 1998-06-16 12:05+0200\n"
 "PO-Revision-Date: 1998-04-20 22:56+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,8 @@ msgstr "顏色:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 slip.cpp:378 space.cpp:587 swarm.cpp:341
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1024 slip.cpp:378 space.cpp:587
+#: swarm.cpp:341
 msgid "Speed:"
 msgstr "速度"
 
@@ -482,10 +483,6 @@ msgstr "星際(Rock)"
 msgid "Setup krock"
 msgstr "設定 krock"
 
-#: rock.cpp:589
-msgid "Move"
-msgstr "移動"
-
 #: rock.cpp:595
 msgid "Rotate"
 msgstr "轉動"
@@ -510,6 +507,62 @@ msgstr "輸入密碼"
 #: saver.cpp:82
 msgid "Failed"
 msgstr "失敗"
+
+#: science.cpp:112
+#, fuzzy
+msgid "Science"
+msgstr "設定 klines"
+
+#: science.cpp:448
+msgid "preparing lens..."
+msgstr ""
+
+#: science.cpp:768
+msgid "grabbing screen..."
+msgstr ""
+
+#: science.cpp:930
+#, fuzzy
+msgid "Setup Science"
+msgstr "設定 klines"
+
+#: science.cpp:948
+#, fuzzy
+msgid "Mode:"
+msgstr "中間:"
+
+#: science.cpp:963
+msgid "Inverse"
+msgstr ""
+
+#: science.cpp:973
+msgid "Gravity"
+msgstr ""
+
+#: science.cpp:982
+msgid "Hide Background"
+msgstr ""
+
+#: science.cpp:1008
+msgid "Intensity:"
+msgstr ""
+
+#: science.cpp:1038
+msgid "Motion:"
+msgstr ""
+
+#: science.cpp:1259
+msgid "Science Version"
+msgstr ""
+
+#: science.cpp:1260
+msgid "written by"
+msgstr ""
+
+#: science.cpp:1260
+#, fuzzy
+msgid "About Science"
+msgstr "有關 Lines(線段)"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -586,18 +639,9 @@ msgid ""
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
 
-#, fuzzy
-#~ msgid "Setup Science"
-#~ msgstr "設定 klines"
-
-#, fuzzy
-#~ msgid "Mode:"
-#~ msgstr "中間:"
+#~ msgid "Move"
+#~ msgstr "移動"
 
 #, fuzzy
 #~ msgid "Sphere"
 #~ msgstr "速度"
-
-#, fuzzy
-#~ msgid "About Science"
-#~ msgstr "有關 Lines(線段)"

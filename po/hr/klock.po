@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-06-11 18:35+0200\n"
+"POT-Creation-Date: 1998-06-16 12:05+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Stjepan Zlodi <szlodi@public.srce.hr> \n"
 "Language-Team: Croatian\n"
@@ -26,7 +26,8 @@ msgstr "Boja:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 slip.cpp:378 space.cpp:587 swarm.cpp:341
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1024 slip.cpp:378 space.cpp:587
+#: swarm.cpp:341
 msgid "Speed:"
 msgstr "Brzina:"
 
@@ -554,10 +555,6 @@ msgstr "Stijena"
 msgid "Setup krock"
 msgstr "Podesi Stijenu"
 
-#: rock.cpp:589
-msgid "Move"
-msgstr "Pomakni"
-
 #: rock.cpp:595
 msgid "Rotate"
 msgstr "Rotiraj"
@@ -587,6 +584,59 @@ msgstr "Unesi Lozinku"
 #: saver.cpp:82
 msgid "Failed"
 msgstr "Gre¹ka"
+
+#: science.cpp:112
+msgid "Science"
+msgstr "Znanost"
+
+#: science.cpp:448
+msgid "preparing lens..."
+msgstr ""
+
+#: science.cpp:768
+msgid "grabbing screen..."
+msgstr ""
+
+#: science.cpp:930
+msgid "Setup Science"
+msgstr "Podesi Znanost"
+
+#: science.cpp:948
+msgid "Mode:"
+msgstr "Naèin:"
+
+#: science.cpp:963
+msgid "Inverse"
+msgstr "Obrnut"
+
+#: science.cpp:973
+msgid "Gravity"
+msgstr "Gravitacija"
+
+#: science.cpp:982
+msgid "Hide Background"
+msgstr ""
+
+#: science.cpp:1008
+msgid "Intensity:"
+msgstr "Jaèina:"
+
+#: science.cpp:1038
+msgid "Motion:"
+msgstr "Pokret:"
+
+#: science.cpp:1259
+#, fuzzy
+msgid "Science Version"
+msgstr "Znanost"
+
+#: science.cpp:1260
+msgid "written by"
+msgstr ""
+
+#: science.cpp:1260
+msgid "About Science"
+msgstr "O Znanosti"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -674,35 +724,14 @@ msgstr ""
 "\n"
 "Prilagodio za kscreensave Emanuel Pirker."
 
-#~ msgid "Science"
-#~ msgstr "Znanost"
-
-#~ msgid "Setup Science"
-#~ msgstr "Podesi Znanost"
-
-#~ msgid "Mode:"
-#~ msgstr "Naèin:"
+#~ msgid "Move"
+#~ msgstr "Pomakni"
 
 #~ msgid "Whirl"
 #~ msgstr "Kovitlanje"
 
 #~ msgid "Sphere"
 #~ msgstr "Kugla"
-
-#~ msgid "Inverse"
-#~ msgstr "Obrnut"
-
-#~ msgid "Gravity"
-#~ msgstr "Gravitacija"
-
-#~ msgid "Intensity:"
-#~ msgstr "Jaèina:"
-
-#~ msgid "Motion:"
-#~ msgstr "Pokret:"
-
-#~ msgid "About Science"
-#~ msgstr "O Znanosti"
 
 #~ msgid ""
 #~ "Science Version 0.24.2 beta\n"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-06-11 18:35+0200\n"
+"POT-Creation-Date: 1998-06-16 12:05+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -20,7 +20,8 @@ msgstr "颜色:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 slip.cpp:378 space.cpp:587 swarm.cpp:341
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1024 slip.cpp:378 space.cpp:587
+#: swarm.cpp:341
 msgid "Speed:"
 msgstr "速度"
 
@@ -554,10 +555,6 @@ msgstr "Rock"
 msgid "Setup krock"
 msgstr "设置 krock"
 
-#: rock.cpp:589
-msgid "Move"
-msgstr "移动"
-
 #: rock.cpp:595
 msgid "Rotate"
 msgstr "旋转"
@@ -587,6 +584,62 @@ msgstr "输入密码"
 #: saver.cpp:82
 msgid "Failed"
 msgstr "失败"
+
+#: science.cpp:112
+msgid "Science"
+msgstr "Science"
+
+#: science.cpp:448
+msgid "preparing lens..."
+msgstr ""
+
+#: science.cpp:768
+msgid "grabbing screen..."
+msgstr ""
+
+#
+#: science.cpp:930
+msgid "Setup Science"
+msgstr "设置 Science"
+
+#: science.cpp:948
+#, fuzzy
+msgid "Mode:"
+msgstr "中间:"
+
+#: science.cpp:963
+msgid "Inverse"
+msgstr ""
+
+#: science.cpp:973
+msgid "Gravity"
+msgstr ""
+
+#: science.cpp:982
+msgid "Hide Background"
+msgstr ""
+
+#: science.cpp:1008
+msgid "Intensity:"
+msgstr "张力:"
+
+#: science.cpp:1038
+msgid "Motion:"
+msgstr ""
+
+#: science.cpp:1259
+#, fuzzy
+msgid "Science Version"
+msgstr "Science"
+
+#: science.cpp:1260
+msgid "written by"
+msgstr ""
+
+#
+#: science.cpp:1260
+msgid "About Science"
+msgstr "关于 Science"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -676,27 +729,12 @@ msgstr ""
 "\n"
 "由 Emanuel Pirker 移植到 kscreensave."
 
-#~ msgid "Science"
-#~ msgstr "Science"
-
-#
-#~ msgid "Setup Science"
-#~ msgstr "设置 Science"
-
-#, fuzzy
-#~ msgid "Mode:"
-#~ msgstr "中间:"
+#~ msgid "Move"
+#~ msgstr "移动"
 
 #, fuzzy
 #~ msgid "Sphere"
 #~ msgstr "速度"
-
-#~ msgid "Intensity:"
-#~ msgstr "张力:"
-
-#
-#~ msgid "About Science"
-#~ msgstr "关于 Science"
 
 #, fuzzy
 #~ msgid ""

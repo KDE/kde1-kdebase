@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock VERSION\n"
-"POT-Creation-Date: 1998-06-11 18:35+0200\n"
+"POT-Creation-Date: 1998-06-16 12:05+0200\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -25,7 +25,8 @@ msgstr "Szín:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 slip.cpp:378 space.cpp:587 swarm.cpp:341
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1024 slip.cpp:378 space.cpp:587
+#: swarm.cpp:341
 msgid "Speed:"
 msgstr "Sebesség:"
 
@@ -502,10 +503,6 @@ msgstr "Kõ"
 msgid "Setup krock"
 msgstr "Beállítás"
 
-#: rock.cpp:589
-msgid "Move"
-msgstr ""
-
 #: rock.cpp:595
 msgid "Rotate"
 msgstr ""
@@ -533,6 +530,62 @@ msgstr "Shadow password-ök"
 #, fuzzy
 msgid "Failed"
 msgstr "Család:"
+
+#: science.cpp:112
+#, fuzzy
+msgid "Science"
+msgstr "A KLines beállításai"
+
+#: science.cpp:448
+msgid "preparing lens..."
+msgstr ""
+
+#: science.cpp:768
+msgid "grabbing screen..."
+msgstr ""
+
+#: science.cpp:930
+#, fuzzy
+msgid "Setup Science"
+msgstr "A KLines beállításai"
+
+#: science.cpp:948
+#, fuzzy
+msgid "Mode:"
+msgstr "Közepe:"
+
+#: science.cpp:963
+msgid "Inverse"
+msgstr ""
+
+#: science.cpp:973
+msgid "Gravity"
+msgstr ""
+
+#: science.cpp:982
+msgid "Hide Background"
+msgstr ""
+
+#: science.cpp:1008
+msgid "Intensity:"
+msgstr ""
+
+#: science.cpp:1038
+msgid "Motion:"
+msgstr ""
+
+#: science.cpp:1259
+msgid "Science Version"
+msgstr ""
+
+#: science.cpp:1260
+msgid "written by"
+msgstr ""
+
+#: science.cpp:1260
+#, fuzzy
+msgid "About Science"
+msgstr "A KLines névjegye"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -612,17 +665,5 @@ msgid ""
 msgstr ""
 
 #, fuzzy
-#~ msgid "Setup Science"
-#~ msgstr "A KLines beállításai"
-
-#, fuzzy
-#~ msgid "Mode:"
-#~ msgstr "Közepe:"
-
-#, fuzzy
 #~ msgid "Sphere"
 #~ msgstr "Sebesség:"
-
-#, fuzzy
-#~ msgid "About Science"
-#~ msgstr "A KLines névjegye"

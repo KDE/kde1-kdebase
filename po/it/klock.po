@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-06-11 18:35+0200\n"
+"POT-Creation-Date: 1998-06-16 12:05+0200\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Natali Giuliano \n"
 
@@ -19,7 +19,8 @@ msgstr "Colore:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 slip.cpp:378 space.cpp:587 swarm.cpp:341
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1024 slip.cpp:378 space.cpp:587
+#: swarm.cpp:341
 msgid "Speed:"
 msgstr "Velocita`:"
 
@@ -545,10 +546,6 @@ msgstr "Asteroidi"
 msgid "Setup krock"
 msgstr "Configurazione salvaschermo \"Asteroidi\""
 
-#: rock.cpp:589
-msgid "Move"
-msgstr "Movimento"
-
 #: rock.cpp:595
 msgid "Rotate"
 msgstr "Rotazioni"
@@ -578,6 +575,61 @@ msgstr "Inserisci password"
 #: saver.cpp:82
 msgid "Failed"
 msgstr "Sbagliata"
+
+#: science.cpp:112
+msgid "Science"
+msgstr ""
+
+#: science.cpp:448
+msgid "preparing lens..."
+msgstr ""
+
+#: science.cpp:768
+msgid "grabbing screen..."
+msgstr ""
+
+#: science.cpp:930
+#, fuzzy
+msgid "Setup Science"
+msgstr "Configurazione salvaschermo \"Linee\""
+
+#: science.cpp:948
+#, fuzzy
+msgid "Mode:"
+msgstr "Medio:"
+
+#: science.cpp:963
+msgid "Inverse"
+msgstr ""
+
+#: science.cpp:973
+msgid "Gravity"
+msgstr ""
+
+#: science.cpp:982
+msgid "Hide Background"
+msgstr ""
+
+#: science.cpp:1008
+msgid "Intensity:"
+msgstr ""
+
+#: science.cpp:1038
+msgid "Motion:"
+msgstr ""
+
+#: science.cpp:1259
+msgid "Science Version"
+msgstr ""
+
+#: science.cpp:1260
+msgid "written by"
+msgstr ""
+
+#: science.cpp:1260
+#, fuzzy
+msgid "About Science"
+msgstr "Info su Klines"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -665,3 +717,5 @@ msgstr ""
 "\n"
 "Porting su KDE di Emanuel Pirker."
 
+#~ msgid "Move"
+#~ msgstr "Movimento"
