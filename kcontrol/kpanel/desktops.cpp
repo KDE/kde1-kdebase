@@ -117,6 +117,7 @@ bool KDesktopsConfig::justSave() {
     for (int i = 0; i < 8; i++)
 	KWM::setDesktopName(i+1, fields[i]->text());
     config->writeEntry("DesktopButtonHorizontalSize", width_value);
+    config->sync();
     if (KWM::numberOfDesktops() != visible->value() * 2) {
 	KWM::setNumberOfDesktops(visible->value() * 2);
 	return true;
