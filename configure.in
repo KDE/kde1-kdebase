@@ -36,6 +36,7 @@ if test -n "$CXXFLAGS"; then
   IFS=$safe_IFS
 fi
 AC_SUBST(NOOPT_CXXFLAGS)
+AM_DISABLE_LIBRARIES
 KDE_PROG_LIBTOOL
 
 dnl WITH_NLS is for the po files

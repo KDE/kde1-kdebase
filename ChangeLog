@@ -1,3 +1,8 @@
+1998-03-21  Stephan Kulow  <coolo@kde.org>
+
+	* libtool.m4.in: created some new macros to work around this 
+	ugly (because long) help of configure --enable-shared/static
+
 1998-03-05  Stephan Kulow  <coolo@kde.org>
 
 	* acinclude.m4.in: set language to C++ before trying the ksize_t 
