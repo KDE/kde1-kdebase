@@ -595,7 +595,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	view->write( encodedURL.data() );
 	if ( view->getGUI()->isVisualSchnauzer() )
 	{
-	    view->write( "\"><cell>" );
+	    view->write( "\"><cell><center>" );
 	    view->write( getVisualSchnauzerIconTag( filename ).data() );
 	    view->write( "<br>" );
 	}

@@ -96,16 +96,20 @@ int KProtocolICON::Open(KURL * u, int mode)
 	pixmap.load( u->path() );
 	if ( !pixmap.isNull() && !xv.isEmpty() && access( xv, W_OK|R_OK|X_OK ) >= 0 )
 	{
-	    write_xv_file( xvfile, pixmap );
-	    is_avail = TRUE;
+	  printf("LOADED image %s\n", u->path() );
+	  write_xv_file( xvfile, pixmap );
+	  is_avail = TRUE;
 	}
 	else if ( !pixmap.isNull() )
 	{
-	    bDeleteFile = TRUE;
-	    xvfile.sprintf( "%s/.kde/share/apps/kfm/tmp/%s.%i.%i", getenv( "HOME" ), u->filename(), (int)time( 0L ), (int)getpid() );
-	    is_avail = TRUE;
-	    write_xv_file( xvfile, pixmap );
+	  printf("LOADED 2 image %s\n", u->path() );
+	  bDeleteFile = TRUE;
+	  xvfile.sprintf( "%s/.kde/share/apps/kfm/tmp/%s.%i.%i", getenv( "HOME" ), u->filename(), (int)time( 0L ), (int)getpid() );
+	  is_avail = TRUE;
+	  write_xv_file( xvfile, pixmap );
 	}
+	else
+	  fprintf( stderr, "COULD not load IMAGE %s\n", u->path() );
     }
     		    
     // Test wether it is really an image
@@ -125,7 +129,9 @@ int KProtocolICON::Open(KURL * u, int mode)
 		is_null = TRUE;
 	    fclose( f );
 	    if ( !is_null )
-		f = fopen( xvfile, "rb" );
+	      f = fopen( xvfile, "rb" );
+	    else
+	      f = 0L;
 	}
     }
 
@@ -155,7 +161,7 @@ int KProtocolICON::Close()
 
     // Delete temporary file
     if ( !xvfile.isEmpty() && bDeleteFile )
-	unlink( xvfile );
+      unlink( xvfile );
     
     return SUCCESS;
 }
@@ -175,9 +181,13 @@ long KProtocolICON::Size()
 
 int KProtocolICON::OpenDir( KURL * )
 {
-    // This is not really an error. The protocol does can not support it
+    // This is not really an error. The protocol can not support it
     // since the operation is technical impossible
     return ( Error( KIO_ERROR_NotPossible, "This is not possible...") ); 
 }
 
 #include "icon.moc"
+
+
+
+

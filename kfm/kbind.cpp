@@ -280,7 +280,7 @@ void KMimeType::initMimeTypes( const char* _path )
 		if ( !f.open( IO_ReadOnly ) )
 		    return;		
 		f.close();
-		KConfig config( file );
+		KSimpleConfig config( file, true );
 		config.setGroup( "KDE Desktop Entry" );
 		
 		// Read a new extension groups name
@@ -660,7 +660,7 @@ void KMimeType::getBindings( QStrList &_list, QList<QPixmap> &_pixlist, const ch
     QString tmp;
     
     // Try to read the file as a [KDE Desktop Entry]
-    KConfig *config = KMimeBind::openKConfig( _url );
+    KSimpleConfig *config = KMimeBind::openKConfig( _url );
     
     if ( config != 0L )
     {
@@ -946,7 +946,7 @@ QString KFolderType::getComment( const char *_url )
     
     f.close();
 
-    KConfig config( n );
+    KSimpleConfig config( n, true );
     config.setGroup( "KDE Desktop Entry" );
     
     QString com = config.readEntry( "Comment" );
@@ -966,7 +966,7 @@ QString KFolderType::getComment( const char *_url )
 const char* KDELnkMimeType::getPixmapFile( const char *_url, bool _mini )
 {
     // Try to read the file as a [KDE Desktop Entry]
-    KConfig *config = KMimeBind::openKConfig( _url );
+    KSimpleConfig *config = KMimeBind::openKConfig( _url );
     
     if ( config != 0L )
     {
@@ -1019,7 +1019,7 @@ QPixmap* KDELnkMimeType::getPixmap( const char *_url, bool _mini )
 
 QString KDELnkMimeType::getComment( const char *_url )
 {
-  KConfig *config = KMimeBind::openKConfig( _url ); // kalle
+  KSimpleConfig *config = KMimeBind::openKConfig( _url ); // kalle
     
     if ( config == 0L )
 	return QString();
@@ -1118,7 +1118,7 @@ void KMimeBind::initApplications( const char * _path )
 		// Do we have read access ?
 		if ( access( file, R_OK ) == 0 )
 		{
-		    KConfig config( file );
+		    KSimpleConfig config( file, true );
 		    
 		    config.setGroup( "KDE Desktop Entry" );
 		    QString exec = config.readEntry( "Exec" );
@@ -1431,7 +1431,7 @@ void KMimeBind::runCmd( const char *_cmd )
     delete [] cmd;
 }
 
-KConfig* KMimeBind::openKConfig( const char *_url ) // kalle
+KSimpleConfig* KMimeBind::openKConfig( const char *_url ) // kalle
 {
     KURL u( _url );
     if ( u.isMalformed() )
@@ -1461,10 +1461,9 @@ KConfig* KMimeBind::openKConfig( const char *_url ) // kalle
 	delete file;
 	return 0L;
     }
-    
-	file->close(); // kalle
-	// kalle    QTextStream *pstream = new QTextStream( file );
-    KConfig *config = new KConfig( decoded ); // kalle
+    file->close();
+
+    KSimpleConfig *config = new KSimpleConfig( decoded, true );
     config->setGroup( "KDE Desktop Entry" );
     return config;
 }
@@ -1620,7 +1619,7 @@ bool ExecutableMimeType::runAsApplication( const char *_url, QStrList *_argument
 bool KDELnkMimeType::run( const char *_url )
 {
     KURL u( _url );
-    KConfig *config = 0L;
+    KSimpleConfig *config = 0L;
     // Is it a "[KDE Desktop Entry]" file and do we want to open it ?
     // ... but only if it is on the local hard disk!
     if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
@@ -1694,7 +1693,7 @@ bool KDELnkMimeType::run( const char *_url )
 bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
 {
     KURL u2( _url );
-    KConfig *config = 0L;
+    KSimpleConfig *config = 0L;
     // Is it a "[KDE Desktop Entry]" file and do we want to open it ?
     // ... but only if it is on the local hard disk!
     if ( strcmp( u2.protocol(), "file" ) == 0 && !u2.hasSubProtocol() )
@@ -1845,11 +1844,11 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
 bool KDELnkMimeType::runBinding( const char *_url, const char *_binding )
 {
     KURL u( _url );
-    KConfig *config = 0L; // kalle
+    KSimpleConfig *config = 0L;
     // Is it a "[KDE Desktop Entry]" file and do we want to open it ?
     // ... but only if it is on the local hard disk!
     if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
-	  config = KMimeBind::openKConfig( _url ); // kalle
+	  config = KMimeBind::openKConfig( _url );
     else
     {
 	QMessageBox::message( i18n( "KFM Error" ),

@@ -1,3 +1,34 @@
+Mon Jun 15 03:21:12 1998  Torben Weis  <weis@localhost>
+
+	* kbind.cpp (initMimeTypes): Uses KSimpleConfig in
+	  readonly mode everywhere => hopefully faster.
+	  But it is fast on my machine anyway :-)
+	
+	* kfm.cpp (slotSave): The sockets are deleted if the
+	  session management tells KFM to quit itself.
+
+	* main.cpp (sig_term_handler): If KFM gets the TERM signal
+	  it removes the sockest from the temp directory and saves
+	  the cache index.
+
+	* kfm.cpp (slotInstallSegfaultHandler): Immortality bug fix.
+	  If KFM runs for 60 secs and segfaults then it restarts itself.
+	  You can turn this off with "kfm -debug".
+
+	* xview.cpp: Some cleanups, removed debug code
+
+	* kfmman.cpp (writeEntry): Fixed bug in visual schnauzer
+	  HTML generation. Looks better now.
+
+	* kfmpaths.cpp (initPaths): Added CachePath
+
+	* htmlcache.cpp: Moved cache to "/tmp/kfm-cache-<uid>/".
+	  Cache is cleaned up properly now.
+	  You may log in as the same user in an UNIX cluster on
+	  different machines without disturbing the caches.
+	  Little code cleanups.
+	  Clearing of the cache does now really work.
+	
 Thu Jun 11 15:14:57 1998  Torben Weis  <weis@localhost>
 
 	* kfmgui.cpp: New keyboard shortcuts ( very useful! )

@@ -20,6 +20,7 @@
 #include <unistd.h>
 #include <html.h>
 #include <qmsgbox.h>
+#include <qtimer.h>
 
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
@@ -32,13 +33,27 @@
 #include <sys/wait.h>
 #include <sys/signal.h>
 #include <sys/stat.h>
+#include <unistd.h>
 
 void autostart();
 void testDir( const char* );
 void testDir2( const char* );
+void testDir3( const char* );
+
 void sig_handler( int signum );
+void sig_term_handler( int signum );
 
 #include <klocale.h>
+
+void testDir3( const char *_name )
+{
+    DIR *dp;
+    dp = opendir( _name );
+    if ( dp == NULL )
+	::mkdir( _name, S_IRWXU );
+    else
+	closedir( dp );
+}
 
 void testDir2( const char *_name )
 {
@@ -90,19 +105,12 @@ void InitStaticMembers()
      * would never get called (Aix, Alpha,...). In the next versions these
      * elements should disappear.
      */
-    debugT("A\n");
     KMimeBind::InitStatic();
-    debugT("B\n");
     KMimeType::InitStatic();
-    debugT("C\n");
     HTMLCache::InitStatic();
-    debugT("D\n");
     KfmGui::InitStatic();
-    debugT("E\n");
     KfmView::InitStatic();
-    debugT("F\n");
     KIOJob::InitStatic();
-    debugT("G\n");
 }
 
 int main( int argc, char ** argv )
@@ -112,7 +120,6 @@ int main( int argc, char ** argv )
     testDir2( "/.kde/share/config" );
     testDir2( "/.kde/share/apps" );
     testDir2( "/.kde/share/apps/kfm" );
-    testDir2( "/.kde/share/apps/kfm/cache" );
     testDir2( "/.kde/share/apps/kfm/tmp" );
     testDir2( "/.kde/share/apps/kfm/bookmarks" );
     testDir2( "/.kde/share/icons" );
@@ -121,13 +128,8 @@ int main( int argc, char ** argv )
     testDir2( "/.kde/share/mimelnk" );
 
     debugT("1\n");
-    
+
     QString c;
-    
-    // Clean this directory
-    // c.sprintf("rm -f %s/.kde/share/apps/kfm/cache/*", getenv( "HOME" ) );
-    // system( c );
-    
     // Clean this directory
     c.sprintf("rm -f %s/.kde/share/apps/kfm/tmp/*", getenv( "HOME" ) );
     system( c );
@@ -154,6 +156,8 @@ int main( int argc, char ** argv )
     // Stephan: I must find a better place for this somewhen
     KFMPaths::initPaths();
 
+    testDir3( KFMPaths::CachePath() );
+
     debugT("1. Init KIOManager\n");
 
     //Stephan: This variable is not deleted here, but in the 
@@ -179,7 +183,7 @@ int main( int argc, char ** argv )
       closedir( dp );
 
     signal(SIGCHLD,sig_handler);
-
+    
     // Test for directories
     QString d;
 
@@ -326,8 +330,15 @@ int main( int argc, char ** argv )
     if ( as )
       autostart();
 
-    debugT("OOOOOOOOOOOOOOOOOO Display size %i %i\n",
-	   XDisplayWidth( a.getDisplay(), 0 ), XDisplayHeight( a.getDisplay(), 0 ) );
+    QTimer timer;
+    if ( argc < 2 || strcmp( argv[1], "-debug" ) != 0L )
+    {
+      signal(SIGTERM,sig_term_handler);
+      // Install SIGSEGV handler only if KFM worked for at least one minute.
+      // This hopefully avoids endless loops of crashes and restarts.
+      QObject::connect( &timer, SIGNAL( timeout() ), pkfm, SLOT( slotInstallSegfaultHandler() ) );
+      timer.start( 60000, true );
+    }
     
     return a.exec();
 }
@@ -347,8 +358,21 @@ void sig_handler( int )
 	    // Reinstall signal handler, since Linux resets to default after
 	    // the signal occured ( BSD handles it different, but it should do
 	    // no harm ).
-	    signal(SIGCHLD,sig_handler);
+	    signal( SIGCHLD, sig_handler );
 	    return;
 	}
     }
+}
+
+void sig_term_handler( int )
+{
+  printf("###################### TERM: Deleting sockets ###################\n");
+
+  if ( pkfm->isGoingDown() )
+    return;
+  
+  // Save cache and stuff and delete the sockets ...
+  pkfm->slotSave();
+  
+  exit(1);
 }

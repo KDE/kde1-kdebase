@@ -83,13 +83,6 @@ public:
     ~HTMLCache();
     
     /**
-     * Deletes all running jobs.
-     */
-    static void quit();
-    
-    static QString& getCachePath() { return (*cachePath); }
-
-    /**
      * This function is called whenever a job has finished its work.
      */
     void urlLoaded( HTMLCacheJob *_job );
@@ -110,6 +103,10 @@ public:
      */
     void stop();
 
+    /**
+     * Deletes all running jobs.
+     */
+    static void quit();
     /**
      * Writes the contents of @ref urlDict to disk
      */
@@ -140,7 +137,6 @@ public:
      * elements should disappear.
      */
     static void InitStatic() {
-    	cachePath = new QString;
     	staticJobList = new QList<HTMLCacheJob>;
     	urlDict = new QDict<QString>;
     	instanceList = new QList<HTMLCache>;
@@ -178,11 +174,6 @@ signals:
 		   int _percent, int _bytesTrasfered, float _rate, bool _stalled );
     
 protected:
-
-    /**
-     * The directory in which to store cached data.
-     */
-    static QString *cachePath;
 
     /**
      * List of all running jobs

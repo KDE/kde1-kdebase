@@ -1,17 +1,20 @@
 #include <time.h>
 #include <stdlib.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <dirent.h>
 
 #include "htmlcache.h"
 #include "kbind.h"
 #include "utils.h"
 
 #include "config-kfm.h"
+#include "kfmpaths.h"
 
 #include <qfileinf.h>
 #include <qdatetm.h>
 #include <kstring.h>
 
-QString *HTMLCache::cachePath;
 QList<HTMLCacheJob> *HTMLCache::staticJobList;
 QDict<QString> *HTMLCache::urlDict;
 QList<HTMLCache> *HTMLCache::instanceList;
@@ -59,7 +62,6 @@ HTMLCache::HTMLCache()
 	warning("ERROR: $HOME is not defined\n");
 	exit(1);
     }    
-    cachePath->sprintf( "file:%s/.kde/share/apps/kfm/cache/", p );
 
     staticJobList->setAutoDelete( false );
     urlDict->setAutoDelete( true );
@@ -98,10 +100,9 @@ void HTMLCache::slotURLRequest( const char *_url )
     
     KURL u( _url );
     
-    QString tmp( cachePath->data() );
-    tmp << time(0L) << "." << fileId++ << u.filename();
+    QString tmp( KFMPaths::CachePath().data() );
+    tmp << "/" << time(0L) << "." << fileId++ << u.filename();
     
-    // tmp.sprintf( "%s%i.%i.%s", cachePath->data(), time( 0L ), fileId++, u->filename() );
     job = new HTMLCacheJob( _url, tmp.data() );
     job->display( false );
     connect( job, SIGNAL( finished( HTMLCacheJob * ) ), this, SLOT( slotJobFinished( HTMLCacheJob * ) ) );
@@ -141,7 +142,9 @@ void HTMLCache::slotError( HTMLCacheJob *_job, int, const char * )
 
 void HTMLCache::slotJobFinished( HTMLCacheJob* _job )
 {
-    urlDict->insert( _job->getSrcURL(), new QString( _job->getDestURL() + 5 ) );
+  KURL u( _job->getDestURL() );
+  
+  urlDict->insert( _job->getSrcURL(), new QString( u.path() ) );
 
     // Tell all instances
     HTMLCache *p;
@@ -166,13 +169,14 @@ void HTMLCache::slotJobFinished( HTMLCacheJob* _job )
 
 void HTMLCache::urlLoaded( HTMLCacheJob *_job )
 {    
-    // Are we waiting for this URL ?
-    if ( waitingURLList.find( _job->getSrcURL() ) != - 1 )
-    {
-	emit urlLoaded( _job->getSrcURL(), _job->getDestURL() + 5 );
-	// We dont to wait for it now any more
-	waitingURLList.remove( _job->getSrcURL() );
-    }
+  // Are we waiting for this URL ?
+  if ( waitingURLList.find( _job->getSrcURL() ) != - 1 )
+  {
+    KURL u( _job->getDestURL() );
+    emit urlLoaded( _job->getSrcURL(), u.path() );
+    // We dont to wait for it now any more
+    waitingURLList.remove( _job->getSrcURL() );
+  }
 }
 
 bool HTMLCache::waitsForURL( const char *_url )
@@ -186,8 +190,8 @@ bool HTMLCache::waitsForURL( const char *_url )
 void HTMLCache::slotCheckinURL( const char* _url, const char *_data )
 {
     QString tmp;
-    tmp.sprintf( "%s%i.%i", cachePath->data(), time( 0L ), fileId++ );
-    FILE *f = fopen( tmp.data() + 5, "wb" );
+    tmp.sprintf( "%s/%i.%i", KFMPaths::CachePath().data(), time( 0L ), fileId++ );
+    FILE *f = fopen( tmp.data(), "wb" );
     if ( f == 0 )
     {
 	warning( "Could not write to cache\n");
@@ -196,7 +200,7 @@ void HTMLCache::slotCheckinURL( const char* _url, const char *_data )
     
     fwrite( _data, 1, strlen( _data ), f );
     fclose( f );
-    urlDict->insert( _url, new QString( tmp.data() + 5 ) );
+    urlDict->insert( _url, new QString( tmp.data() ) );
 }
 
 const char* HTMLCache::isCached( const char *_url )
@@ -236,8 +240,8 @@ void HTMLCache::stop()
 void HTMLCache::save()
 {
     if (! bSaveCacheEnabled) return;
-    QString p( getenv( "HOME" ) );
-    p += "/.kde/share/apps/kfm/cache/index.html";
+    QString p = KFMPaths::CachePath().data();
+    p += "/index.html";
     FILE *f = fopen( p, "w" );
     if ( f == 0L )
     {
@@ -266,56 +270,95 @@ void HTMLCache::save()
     fprintf( f, "</table></BODY></HTML>\n" );
     fclose( f );
 
-    p = getenv( "HOME" );
-    p += "/.kde/share/apps/kfm/cache/index.txt";
+    p = KFMPaths::CachePath().data();
+    p += "/index.txt";
     f = fopen( p, "w" );
     if ( f == 0L )
     {
-	warning("Could not write '%s'\n", p.data() );
-	return;
+      warning("Could not write '%s'\n", p.data() );
+      return;
     }
 
     QDictIterator<QString> it2( *urlDict );
     for ( ; it2.current(); ++it2 )
-	fprintf( f, "%s\n%s\n" , it2.currentKey(), it2.current()->data() );
+      fprintf( f, "%s\n%s\n" , it2.currentKey(), it2.current()->data() );
     
     fclose( f );
 }
 
 void HTMLCache::load()
 {
-    QString path( getenv( "HOME" ) );
-    path += "/.kde/share/apps/kfm/cache/index.txt";
-    FILE *f = fopen( path, "r" );
-    if ( f == 0L )
-    {
-	warning("Could not read '%s'\n", path.data() );
-	return;
-    }
- 
+  QString path = KFMPaths::CachePath().data();
+  path += "/index.txt";
+  
+  FILE *f = fopen( path, "r" );
+  if ( f != 0L )
+  {
     QString url;
     char buffer[ 2048 ];
     char *p = 0L;
     do
     {
+      p = fgets( buffer, 2048, f );
+      if ( p )
+      {
+	url = buffer;
+	if ( url.right(1) == "\n" )
+	  url.truncate( url.length() - 1 );
 	p = fgets( buffer, 2048, f );
 	if ( p )
-	{
-	    url = buffer;
-	    if ( url.right(1) == "\n" )
-		url.truncate( url.length() - 1 );
-	    p = fgets( buffer, 2048, f );
-	    if ( p )
-	    {
-		QString *s = new QString( buffer );
-		if ( s->right(1) == "\n" )
-		    s->truncate( s->length() - 1 );
-		urlDict->insert( url, s );
-	    }
+        {
+	  QString *s = new QString( buffer );
+	  if ( s->right(1) == "\n" )
+	    s->truncate( s->length() - 1 );
+	  
+	  // Does file really exist ?
+	  struct stat buff;
+	  if ( lstat( s->data(), &buff ) == 0 )
+	    urlDict->insert( url, s );
 	}
+      }
     } while ( p );
-    
+
     fclose( f );
+  }
+  else
+  {
+    warning("Could not read '%s'\n", path.data() );
+  }
+
+  // Delete files which are not in the dict
+  DIR *dp = 0L;
+  struct dirent *ep;
+  
+  dp = opendir( KFMPaths::CachePath() );
+  if ( dp == 0L )
+  {
+    warning("Could not scan %s", KFMPaths::CachePath().data() );
+    return;
+  }
+    
+  while ( ( ep = readdir( dp ) ) != 0L )
+  {
+    if ( strcmp( ep->d_name, "." ) != 0L && strcmp( ep->d_name, ".." ) != 0L )
+    {
+      QString name( KFMPaths::CachePath().data() );
+      name += "/";
+      name += ep->d_name;
+      
+      bool found = false;
+      QDictIterator<QString> it2( *urlDict );
+      for ( ; !found && it2.current(); ++it2 )
+	if ( strcmp( it2.current()->data(), name.data() ) == 0 )
+	  found = true;
+
+      if ( !found )
+      {
+	printf("Deleting %s because it is not listed\n", name.data() );
+	unlink( name.data() );
+      }
+    }
+  }
 }
 
 void HTMLCache::clear()

@@ -12,9 +12,13 @@
 
 #include <stdlib.h>
 #include <unistd.h> 
+#include <sys/signal.h>
 
 KFM* KFM::pKfm = 0L;
 QStrList* KFM::pHistory = 0L;
+bool KFM::s_bGoingDown = false;
+
+void sig_segv_handler( int signum );
 
 KFM::KFM()
 {
@@ -77,6 +81,7 @@ KFM::KFM()
 
 void KFM::slotTouch()
 {
+  // Prevent the sockets from being removed by the cleanup daemon of some systems.
   QString tmp;
   tmp.sprintf("touch /tmp/kfm_%i%s",(int)getpid(),displayName().data() );
   system( tmp.data() );
@@ -90,24 +95,36 @@ KFM::~KFM()
     
 void KFM::slotSave()
 {
-    KConfig *config = kapp->getConfig();
+  timer.stop();
+  
+  KConfig *config = kapp->getConfig();
 
-    QStrList urlList;
-    
-    KfmGui *gui;
-    int i = 0;
-    for ( gui = KfmGui::getWindowList().first(); gui != 0L; gui = KfmGui::getWindowList().next() )
-    {
-	i++;
-	gui->saveProperties(i);
-	urlList.append( gui->getURL() );
-    }
+  QStrList urlList;
+  
+  KfmGui *gui;
+  int i = 0;
+  for ( gui = KfmGui::getWindowList().first(); gui != 0L; gui = KfmGui::getWindowList().next() )
+  {
+    i++;
+    gui->saveProperties(i);
+    urlList.append( gui->getURL() );
+  }
+  
+  config->setGroup( "SM" );
+  config->writeEntry( "URLs", urlList );
+  config->sync();
+  
+  HTMLCache::save();
 
-    config->setGroup( "SM" );
-    config->writeEntry( "URLs", urlList );
-    config->sync();
+  // Delete the sockets
+  QString sock;
+  sock.sprintf("/tmp/kio_%i%s",(int)getpid(),displayName().data());
+  unlink( sock );
 
-    HTMLCache::save();
+  sock.sprintf("/tmp/kfm_%i%s",(int)getpid(),displayName().data());
+  unlink( sock );
+
+  s_bGoingDown = true;
 }
 
 void KFM::addToHistory( const char *_url )
@@ -143,4 +160,28 @@ bool KFM::saveHTMLHistory( const char *_filename )
   return true;
 }
 
+void KFM::slotInstallSegfaultHandler()
+{
+  printf("+++++++++++++++++++++ INSTALLING SIGSEGV handler +++++++++++++++++\n");
+  
+  signal( SIGSEGV, sig_segv_handler );
+}
+
+void sig_segv_handler( int )
+{
+  static bool forgetit = false;
+  
+  if ( forgetit )
+    return;
+  
+  forgetit = true;
+  
+  printf("###################### SEGV ###################\n");
+  
+  QString kfm = kapp->kde_bindir().data();
+  kfm += "/kfm";
+  execl( kfm.data(), 0L );
+}
+
 #include "kfm.moc"
+

@@ -14,6 +14,7 @@ class KMimeBind;
 #include <kurl.h>
 #include <kapp.h>
 #include <kconfig.h>
+#include <ksimpleconfig.h>
 
 #include "kioserver.h"
 #include "kmimemagic.h"
@@ -144,12 +145,11 @@ public:
     static void runCmd( const char *_exec, QStrList &_args );
 
     /**
-     * Open a KConfig file
-     * @return a KConfig if the file starts with "[KDE Desktop Entry]" otherwise 0L.
-     *         The group "[KDE Desktop Entry"] will be already selected in the returned
-     *         KConfig object.
+     * Open a config file
+     * @return a @ref KSimpleConfig if the file starts with "[KDE Desktop Entry]" otherwise 0L.
+     *         The group "[KDE Desktop Entry"] will be already selected in the returned config object.
      */
-    static KConfig* openKConfig( const char *_url );
+    static KSimpleConfig* openKConfig( const char *_url );
 
     /**
      * Scan the $KDEDIR/apps directory for application bindings

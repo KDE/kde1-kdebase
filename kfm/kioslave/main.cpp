@@ -507,94 +507,94 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
     ipc->done();
 }
 
-void KIOSlave::get( const char *_url ){
-  
-  get(_url,false);
+void KIOSlave::get( const char *_url )
+{  
+  get( _url, false );
 }
 
-void KIOSlave::reload( const char *_url ){
-
-  get(_url,true);
+void KIOSlave::reload( const char *_url )
+{
+  get( _url, true );
 }
 
 void KIOSlave::get( const char *_url, bool _reload )
 {
-    KURL u( _url );
-    if ( u.isMalformed() )
-    {
-	fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
-	ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
-	return;
+  KURL u( _url );
+  if ( u.isMalformed() )
+  {
+    fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
+    ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
+    return;
     }
-
-    KURL su( u.nestedURL() );
-    if ( su.isMalformed() )
-    {
-	fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
-	ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
+  
+  KURL su( u.nestedURL() );
+  if ( su.isMalformed() )
+  {
+    fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
+    ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
 	return;
+  }
+  
+  if( ProtocolSupported( _url ) )
+  {
+    KProtocol *src_prot = CreateProtocol(_url);
+    
+    connect( src_prot, SIGNAL( mimeType( const char* ) ),
+	     ipc, SLOT( mimeType( const char* ) ) );
+    connect( src_prot, SIGNAL( redirection( const char* ) ),
+	     ipc, SLOT( redirection( const char* ) ) );
+    connect( src_prot, SIGNAL( info( const char* ) ),
+	     ipc, SLOT( info( const char* ) ) );
+    int err;
+    if ( !_reload )
+      err = src_prot->Open( &su, KProtocol::READ );
+    else    
+      err = src_prot->ReOpen( &su, KProtocol::READ );
+    
+    if( err != KProtocol::SUCCESS )
+    {
+      ProcessError( src_prot, _url );
+      return;
     }
     
-    if( ProtocolSupported( _url ) )
+    long c = 0, last = 0, l = 1;
+    long size = src_prot->Size();
+    char buffer[1025];
+    
+    while ( !src_prot->atEOF() )
     {
-		KProtocol *src_prot = CreateProtocol(_url);
-
-		connect( src_prot, SIGNAL( mimeType( const char* ) ),
-			 ipc, SLOT( mimeType( const char* ) ) );
-		connect( src_prot, SIGNAL( redirection( const char* ) ),
-			 ipc, SLOT( redirection( const char* ) ) );
-		connect( src_prot, SIGNAL( info( const char* ) ),
-			 ipc, SLOT( info( const char* ) ) );
-                int err;
-		if (!_reload)
-		    err=src_prot->Open(&su, KProtocol::READ);
-		else    
-		    err=src_prot->ReOpen(&su, KProtocol::READ);
-		
-		if( err != KProtocol::SUCCESS)
-		{
-		    ProcessError( src_prot, _url );
-		    return;
-		}
-
-		long c = 0, last = 0, l = 1;
-		long size = src_prot->Size();
-		char buffer[1025];
-
-		while ( !src_prot->atEOF() )
-		{
-			if ((l = src_prot->Read( buffer, 1024 ) ) < 0)
-			{
-			    fprintf( stderr, "read error (%ld)\n",l);
-			    ProcessError(src_prot, _url);
-			    return;
-			}
-			buffer[l] = 0;
-			ipc->data( IPCMemory( buffer, l ) );
-			c += l;
-			if ( ( c * 100 / size ) != last )
-			{
-			    last = ( c * 100 / size );
-			    ipc->progress( last );
-			}
-		}
-		src_prot->Close();
-		
-		delete src_prot;
-	
-		ipc->done();
-		return;
+      if ( ( l = src_prot->Read( buffer, 1024 ) ) < 0)
+      {
+	fprintf( stderr, "read error (%ld)\n",l);
+	ProcessError(src_prot, _url);
+	return;
+      }
+      buffer[l] = 0;
+      ipc->data( IPCMemory( buffer, l ) );
+      c += l;
+      if ( ( c * 100 / size ) != last )
+      {
+	last = ( c * 100 / size );
+	ipc->progress( last );
+      }
     }
-    else
-    {
-		fprintf( stderr, "ERROR: Not implemented\n");
-		QString err = "GET ";
-		err += _url;
-		ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
-		return;
-    }
-
+    src_prot->Close();
+		
+    delete src_prot;
+    
     ipc->done();
+    return;
+  }
+  else
+  {
+    fprintf( stderr, "ERROR: Not implemented\n");
+    QString err = "GET ";
+    err += _url;
+    ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
+    return;
+  }
+  
+  ipc->done();
 }
 
 void KIOSlave::cleanUp()

@@ -18,7 +18,8 @@ class KFMPaths {
   static QString* templatePath;
   static QString* autostartPath;
   static QString* trashPath;
-
+  static QString* cachePath;
+  
  public:
   // reads in all paths
   static void initPaths(); 
@@ -28,6 +29,7 @@ class KFMPaths {
   static QString TemplatesPath();
   static QString AutostartPath();
   static QString TrashPath();
+  static QString CachePath();
 };
 
 #endif

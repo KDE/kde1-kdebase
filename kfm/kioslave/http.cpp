@@ -285,15 +285,17 @@ int revmatch(const char *host, const char *nplist)
     return 0;
 }
 
-int KProtocolHTTP::Open(KURL *_url, int mode){
-  return OpenHTTP(_url,mode,false);
+int KProtocolHTTP::Open( KURL *_url, int mode )
+{
+  return OpenHTTP( _url, mode, false );
 }
 
-int KProtocolHTTP::ReOpen(KURL *_url, int mode){
-  return OpenHTTP(_url,mode,true);
+int KProtocolHTTP::ReOpen( KURL *_url, int mode )
+{
+  return OpenHTTP( _url, mode, true );
 }
 
-int KProtocolHTTP::OpenHTTP(KURL *_url, int mode,bool _reload)
+int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 {
     url = _url->url().data();
   

@@ -3,22 +3,27 @@
 #include <qdir.h>
 #include <kapp.h>
 
+#include <unistd.h>
+
 QString* KFMPaths::desktopPath = 0L;
 QString* KFMPaths::templatePath = 0L;
 QString* KFMPaths::autostartPath = 0L;
 QString* KFMPaths::trashPath = 0L;
+QString* KFMPaths::cachePath = 0L;
 
 void KFMPaths::initPaths() 
 {
-    if ( desktopPath == 0L )
-        desktopPath = new QString;
-    if ( templatePath == 0L )
-        templatePath = new QString;
-    if ( autostartPath == 0L )
-        autostartPath = new QString;
-    if ( trashPath == 0L )
-        trashPath = new QString;
-    
+  if ( desktopPath == 0L )
+    desktopPath = new QString;
+  if ( templatePath == 0L )
+    templatePath = new QString;
+  if ( autostartPath == 0L )
+    autostartPath = new QString;
+  if ( trashPath == 0L )
+    trashPath = new QString;
+  if ( cachePath == 0L )
+    cachePath = new QString;
+  
   KConfig *config = kapp->getConfig();
   config->setGroup( "Paths" );
 
@@ -45,7 +50,8 @@ void KFMPaths::initPaths()
   *trashPath = config->readEntry( "Trash" , *trashPath);
   if ( autostartPath->right(1) != "/")
     *autostartPath += "/";
-
+  
+  cachePath->sprintf("/tmp/kfm-cache-%i", (int)getuid() );
 }
 
 QString KFMPaths::DesktopPath()
@@ -66,4 +72,9 @@ QString KFMPaths::AutostartPath()
 QString KFMPaths::TrashPath()
 {
   return *trashPath;
+}
+
+QString KFMPaths::CachePath()
+{
+  return *cachePath;
 }

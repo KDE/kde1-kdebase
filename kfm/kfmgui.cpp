@@ -658,17 +658,17 @@ void KfmGui::slotReloadTree()
 
 void KfmGui::slotShowCache()
 {
-    HTMLCache::save();
-    
-    QString s;
-    s.sprintf("file:%s/.kde/share/apps/kfm/cache/index.html", getenv( "HOME" ) );
-    view->openURL( s );
+  HTMLCache::save();
+  
+  QString s = KFMPaths::CachePath().data();
+  s += "/index.html";
+  view->openURL( s );
 }
 
 void KfmGui::slotShowHistory()
 {
-  QString s;
-  s.sprintf("%s/.kde/share/apps/kfm/cache/history.html", getenv( "HOME" ) );
+  QString s = KFMPaths::CachePath().data();
+  s += "/history.html";
   KFM::saveHTMLHistory( s );
 
   QString tmp( "file:" );
@@ -678,7 +678,7 @@ void KfmGui::slotShowHistory()
 
 void KfmGui::slotClearCache()
 {
-    HTMLCache::clear();
+  HTMLCache::clear();
 }
 
 void KfmGui::slotCacheOn()
