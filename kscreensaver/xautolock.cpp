@@ -71,24 +71,17 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 
-#ifdef AIXV3    
+#ifdef HAVE_SYS_M_WAIT_H
 #include <sys/m_wait.h>
-#endif /* AIXV3 */
+#endif 
 
-#if !defined (news1800) && !defined (sun386)
+#ifdef HAVE_MALLOC_H
+#include <malloc.h>
+#endif
 
-#if !defined (NOSTDHDRS)
-#include <stdlib.h>
-#endif /* !NOSTDHDRS */
-
-#if !defined (apollo) && !defined (VMS)
-# ifndef __FreeBSD__
-#  include <malloc.h>
-# endif
-# include <unistd.h>
-#endif /* !apollo && !VMS */
-
-#endif /* !news1800 && !sun386 */
+#ifdef HAVE_UNISTD_H
+#include <unistd.h>
+#endif
 
 #undef TrueColor
 

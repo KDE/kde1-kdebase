@@ -5,12 +5,13 @@
  *
  */
 
+#include <config.h>
 #include <stdio.h>
-#ifndef __FreeBSD__
-#include <malloc.h>
-#else
 #include <stdlib.h>
+#ifdef HAVE_MALLOC_H
+#include <malloc.h>
 #endif
+#include <stdlib.h>
 #include <qapp.h>
 #include <qpushbt.h>
 #include <qcolor.h>
