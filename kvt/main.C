@@ -17,7 +17,7 @@
 #include <qsocknot.h>
 #include <qmsgbox.h>
 #include <qlayout.h>
-#include <qlined.h> 
+#include <qlined.h>
 #include <qbttngrp.h>
 #include <qradiobt.h>
 #include <qclipbrd.h>
@@ -123,11 +123,11 @@ static int high = 0;
 static XEvent stored_xevent_for_keys;
 
 static const char* kvt_sizes[] = {
-  "normal", 
-  "tiny", 
-  "small", 
-  "medium", 
-  "large", 
+  "normal",
+  "tiny",
+  "small",
+  "medium",
+  "large",
   "huge"
 };
 
@@ -369,7 +369,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
   }
 
   // this hack is because the mentioned windows aren't in any widget.
-  // setting the window back to main_win (a Qt window) is 
+  // setting the window back to main_win (a Qt window) is
   // necessary for Qt-grabbing when using the menubar. TODO. Matthias
   if ( ev->xany.window == main_win ||
        ev->xany.window == vt_win){
@@ -382,7 +382,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
     if (ev->xany.type == ButtonPress
 	&& ev->xbutton.button == Button1)
       motion_allowed = TRUE;
-    
+
     if (ev->xany.type == ButtonRelease
 	&& ev->xbutton.button == Button1)
       motion_allowed = FALSE;
@@ -435,14 +435,14 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
   backspace = new QComboBox(this);
   backspace->setMinimumSize(backspace->sizeHint());
   backspace->setFixedHeight(backspace->sizeHint().height());
-  
+
   label_keyset = new QLabel(i18n("Cursor key set"), this);
   label_keyset->setMinimumSize(label_keyset->sizeHint());
   keyset = new QComboBox(this);
   keyset->setMinimumSize(keyset->sizeHint());
   keyset->setFixedHeight(keyset->sizeHint().height());
   connect( keyset, SIGNAL(activated(int)), SLOT(update_bs(int)) );
-  
+
   QPushButton *ok, *cancel;
 
   ok = new QPushButton( i18n("Ok"), this );
@@ -460,7 +460,7 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
   QGridLayout *geom2;
   QHBoxLayout *geom3;
   geom1 = new QVBoxLayout(this, 4);
-  geom2 = new QGridLayout(4, 2); 
+  geom2 = new QGridLayout(4, 2);
   geom1->addLayout(geom2, 3);
   geom2->setColStretch(1,10);
   geom2->addWidget(label_color, 0, 0);
@@ -477,7 +477,7 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
   geom3->addWidget(ok);
   geom3->addStretch();
   geom3->addWidget(cancel);
-  geom3->addStretch(); 
+  geom3->addStretch();
   resize(10, 10);
   geom1->activate();
 
@@ -548,9 +548,9 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
 
     // Init DnD: Set up drop zone and drop handler
     dropZone = new KDNDDropZone( this, DndURL );
-    connect( dropZone, SIGNAL( dropAction( KDNDDropZone* )), 
+    connect( dropZone, SIGNAL( dropAction( KDNDDropZone* )),
 	     SLOT( onDrop( KDNDDropZone*)));
-    
+
 
     QString entry;
     entry = sessionconfig->readEntry("menubar");
@@ -631,7 +631,7 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
       m_dimen->insertItem(kvt_dimens[i].text);
     }
     connect(m_dimen, SIGNAL(activated(int)), SLOT(dimen_menu_activated(int)));
-    
+
     m_color = new QPopupMenu;
     CHECK_PTR( m_color );
     m_color->insertItem( i18n("&black/white"));
@@ -649,8 +649,8 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
     m_color->insertSeparator();
     m_color->insertItem(i18n("&Custom Colors"),colors);
     connect(m_color, SIGNAL(activated(int)), SLOT(color_menu_activated(int)));
-    
-    
+
+
     m_options = new KVT_QPopupMenu;
     CHECK_PTR( m_options );
     if (menubar_visible)
@@ -670,7 +670,7 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
 
     m_options->installEventFilter( this );
 
-    connect(m_options, SIGNAL(activated(int)), 
+    connect(m_options, SIGNAL(activated(int)),
 	    SLOT(options_menu_activated(int)));
 
 
@@ -680,7 +680,7 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
 	       "(C) 1998 Ivan Schreter (schreter@kdk.sk)\n\n"
 	       "Terminal emulation for the KDE Desktop Environment\n"
 	       "based on Robert Nation's rxvt-2.08");
-		       
+		
     m_help = kapp->getHelpMenu(true, at.data());
     m_help->setAccel(0,0);
     menubar = new KMenuBar( this );
@@ -693,16 +693,11 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
       if (!entry.isEmpty()) {
 	menubar->setGeometry(KWM::setProperties(menubar->winId(), entry));
       }
-      menubar->show();
     }
-    else if (!entry.isEmpty() && entry == "top") {
-      menubar->setMenuBarPos(KMenuBar::Top);
-    }
-    else if (!entry.isEmpty() && entry == "bottom") {
+    else if (!entry.isEmpty() && menubar->menuBarPos() == KMenuBar::Top && entry == "bottom") {
       menubar->setMenuBarPos(KMenuBar::Bottom);
     }
-
-
+    
     connect(menubar, SIGNAL (moved(menuPosition)),
 	    SLOT (menubarMoved()));
     menubar->insertItem( i18n("&File"), m_file );
@@ -712,7 +707,7 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
 
     if (!menubar_visible)
       menubar->hide();
-    
+
     frame = new QFrame( this );
 	if( style() == WindowsStyle )
       frame ->setFrameStyle( QFrame::WinPanel | QFrame::Sunken);
@@ -732,9 +727,9 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
     installEventFilter( this );
 
     keyboard_secured = FALSE;
-    
+
     setAcceptFocus( TRUE );
-    
+
     KApplication::getKApplication()->setTopWidget(this);
     KApplication::getKApplication()->enableSessionManagement();
     KWM::setUnsavedDataHint(winId(), True);
@@ -746,14 +741,16 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
       setGeometry(KWM::setProperties(winId(), entry));
     }
 
+    if (menubar_visible && menubar->menuBarPos() == KMenuBar::Floating)
+	menubar->show();
 }
 
 void kVt::styleChange( GUIStyle ) {
   if( style() == WindowsStyle )
     frame ->setFrameStyle( QFrame::WinPanel | QFrame::Sunken);
   else
-    frame ->setFrameStyle( QFrame::Panel | QFrame::Sunken); 
-} 
+    frame ->setFrameStyle( QFrame::Panel | QFrame::Sunken);
+}
 
 void kVt::saveYourself(){
   KConfig* config = KApplication::getKApplication()->getSessionConfig();
@@ -761,7 +758,7 @@ void kVt::saveYourself(){
   config->writeEntry("geometry", KWM::getProperties(winId()));
   if (menubar->menuBarPos() == KMenuBar::Floating){
     config->writeEntry("kmenubar", "floating");
-    config->writeEntry("kmenubargeometry", 
+    config->writeEntry("kmenubargeometry",
 			  KWM::getProperties(menubar->winId()));
   }
   if (kvtarguments.count() > 0)
@@ -784,7 +781,7 @@ void kVt::saveOptions(KConfig* kvtconfig){
     kvtconfig->writeEntry("menubar", "visible");
   else
     kvtconfig->writeEntry("menubar", "invisible");
-  
+
   if (scrollbar_visible){
     if (kvt_scrollbar == kvt_left)
       kvtconfig->writeEntry("scrollbar", "left");
@@ -793,18 +790,18 @@ void kVt::saveOptions(KConfig* kvtconfig){
   }
   else
     kvtconfig->writeEntry("scrollbar", "hidden");
-  
+
   kvtconfig->writeEntry("size", kvt_sizes[kvt_size]);
-  
+
   kvtconfig->writeEntry("dimension", kvt_dimens[kvt_dimen].text);
-  
+
   kvtconfig->writeEntry("foreground", fg_string);
   kvtconfig->writeEntry("background", bg_string);
-  
+
   kvtconfig->writeEntry("charclass", kvt_charclass);
-  
+
   kvtconfig->writeEntry("colormode", color_mode_name[get_color_mode()]);
-  
+
   kvtconfig->writeEntry("backspace", BackspaceSendsControlH ? "BS" : "DEL");
 
   kvtconfig->writeEntry("keyset", KeySetSend);
@@ -831,9 +828,9 @@ void kVt::do_some_stuff(KConfig* kvtconfig) { //temporary (Matthias)
        if (entry == color_mode_name[COLOR_TYPE_ANSI])
  	init_color_mode(COLOR_TYPE_ANSI);
        if (entry == color_mode_name[COLOR_TYPE_Linux])
- 	init_color_mode(COLOR_TYPE_Linux);      
+ 	init_color_mode(COLOR_TYPE_Linux);
        if (entry == color_mode_name[COLOR_TYPE_DEFAULT])
- 	init_color_mode(COLOR_TYPE_DEFAULT);      
+ 	init_color_mode(COLOR_TYPE_DEFAULT);
      } else {
        init_color_mode(COLOR_TYPE_DEFAULT);
      }
@@ -877,7 +874,7 @@ void kVt::ResizeToDimen(int width, int height)
 void kVt::ResizeToVtWindow(){
   setting_to_vt_window = TRUE;
   int menubar_height = menubar->height();
-  if (menubar_visible){
+  if (menubar_visible &&  menubar->menuBarPos() != KMenuBar::Floating){
     if (scrollbar_visible){
       resize(sizehints.width+4+16,
 	     sizehints.height+4+menubar_height);
@@ -908,7 +905,7 @@ void kVt::options_menu_activated( int item){
   case 0:
     // menubar
     if (menubar->isVisible()){
-      // hide 
+      // hide
       menubar_visible = FALSE;
       menubar->hide();
       if (menubar->menuBarPos() != KMenuBar::Floating)
@@ -916,7 +913,7 @@ void kVt::options_menu_activated( int item){
       m_options->changeItem(i18n("Show &Menubar"), item);
     }
     else {
-      // show 
+      // show
       menubar_visible = TRUE;
       menubar->show();
       if (menubar->menuBarPos() != KMenuBar::Floating)
@@ -963,7 +960,7 @@ void kVt::options_menu_activated( int item){
 	ResizeToVtWindow();
     }
     break;
-    
+
   case 10:
     // save options
     {
@@ -974,7 +971,7 @@ void kVt::options_menu_activated( int item){
 
 void kVt::scrollbar_menu_activated( int item){
   switch (item){
-  case 0: 
+  case 0:
     if (scrollbar->isVisible()){
       // hide
       scrollbar_visible = FALSE;
@@ -983,14 +980,14 @@ void kVt::scrollbar_menu_activated( int item){
       m_scrollbar->changeItem(i18n("&Show"), item);
     }
     else {
-      // show 
+      // show
       scrollbar_visible = TRUE;
       scrollbar->show();
       resize(width()+16, height());
       m_scrollbar->changeItem(i18n("&Hide"), item);
     }
     break;
-    
+
   case 1: // left
       kvt_scrollbar = kvt_left;
       if (!scrollbar->isVisible()){
@@ -999,7 +996,7 @@ void kVt::scrollbar_menu_activated( int item){
       }
       doGeometry();
       break;
-      
+
   case 2: // right
     kvt_scrollbar = kvt_right;
     if (!scrollbar->isVisible()){
@@ -1030,10 +1027,10 @@ void kVt::dimen_menu_activated( int item){
 void kVt::select_foreground_color(){
 
   QColor color(fg_string.data());
-  
+
   if(KColorDialog::getColor(color) != QDialog::Accepted)
     return;
-  
+
   fg_string.sprintf("#%02x%02x%02x",color.red(),color.green(),color.blue());
 
   //  printf("%s %s\n",fg_string.data(),bg_string.data());
@@ -1048,10 +1045,10 @@ void kVt::select_foreground_color(){
 void kVt::select_background_color(){
 
   QColor color(bg_string.data());
-  
+
   if(KColorDialog::getColor(color) != QDialog::Accepted)
     return;
-  
+
   bg_string.sprintf("#%02x%02x%02x",color.red(),color.green(),color.blue());
 
   //  printf("%s %s\n",fg_string.data(),bg_string.data());
@@ -1065,19 +1062,19 @@ void kVt::select_background_color(){
 
 void kVt::color_menu_activated( int item){
   switch (item){
-  case 0: 
+  case 0:
     fg_string = "black";
     bg_string = "white";
     break;
-  case 1: 
+  case 1:
     fg_string = "white";
     bg_string = "black";
     break;
-  case 2: 
+  case 2:
     fg_string = "green";
     bg_string = "black";
     break;
-  case 3: 
+  case 3:
     fg_string = "black";
     bg_string = "#FFFFDD";
     break;
@@ -1092,7 +1089,7 @@ void kVt::color_menu_activated( int item){
     XClearWindow(display,vt_win);
     scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
   }else{
-    QMessageBox::message( i18n("Hint"), 
+    QMessageBox::message( i18n("Hint"),
 			  i18n("New color settings will be displayed\nwhen the keyboard is unsecured.") );
   }
 }
@@ -1100,7 +1097,7 @@ void kVt::color_menu_activated( int item){
 
 void kVt::file_menu_activated(int item){
   switch (item){
-  case 0: 
+  case 0:
      if (fork()==0){
        execvp(o_argv[0], o_argv);
        exit(1);
@@ -1131,12 +1128,12 @@ bool kVt::eventFilter( QObject *obj, QEvent * ev){
 	}
       }
       break;
-    case Event_MouseButtonRelease: 
+    case Event_MouseButtonRelease:
       tmp_point = QPoint(-10,-10);
       break;
     }
   }
-  
+
   if (obj == this){
     switch (ev->type()){
     case Event_KeyPress: case Event_KeyRelease:
@@ -1147,7 +1144,7 @@ bool kVt::eventFilter( QObject *obj, QEvent * ev){
       }
     }
   }
-  
+
   return FALSE;
 }
 
@@ -1209,12 +1206,12 @@ void kVt::doGeometry(){
     frame->setGeometry(0, 0, width(), height()-menubar->height());
   }
   else{ // menubar not visible or floating
-    menubar->resize(width(), menubar->height());
+      //    menubar->resize(width(), menubar->height());
     frame->setGeometry(0, 0, width(), height());
   }
 
   int frameWidth = frame->lineWidth();
-  
+
   if (scrollbar_visible) {
     switch (kvt_scrollbar){
     case kvt_right:
@@ -1261,7 +1258,7 @@ int main(int argc, char **argv)
 {
   setlocale(LC_CTYPE, "");
   int i;
-  // replace "-caption" with "-T" 
+  // replace "-caption" with "-T"
   for (i=0; i<argc; i++) {
     if (QString("-caption")==argv[i]){
       argv[i][1]='T';
@@ -1275,7 +1272,7 @@ int main(int argc, char **argv)
 		qt_font_hack = 0;
 	}
   }
-  
+
   // first make an argument copy for a new kvt
   QStrList orgarg;
   for (i=0; i<argc; i++) {
@@ -1285,7 +1282,7 @@ int main(int argc, char **argv)
       orgarg.append(argv[i]);
   }
 
-  // cut off the command arguments for the terminal command 
+  // cut off the command arguments for the terminal command
   char **com_argv = 0;
   for (i=0; i<argc; i++){
     if (strcmp(argv[i],"-e") == 0){
@@ -1318,7 +1315,7 @@ int main(int argc, char **argv)
 
   // arguments after Qt
   QStrList arguments;
-  for (i=0; i<argc; i++) 
+  for (i=0; i<argc; i++)
     arguments.append(argv[i]);
   if (com_argv){
     arguments.append("-e");
@@ -1342,7 +1339,7 @@ int main(int argc, char **argv)
       argv[i]=orgarg.at(i);
     argv[i]=0;
 
-    // cut off the command arguments for the terminal command 
+    // cut off the command arguments for the terminal command
     com_argv = 0;
     for (i=0; i<argc; i++){
       if (strcmp(argv[i],"-e") == 0){
@@ -1377,23 +1374,23 @@ int main(int argc, char **argv)
     set_geom_string(buffer);
     kvt_set_dimension(buffer);
   }
-  
+
   // set the names
-  xvt_name = window_name = icon_name = (char*) a.getCaption(); 
-  
+  xvt_name = window_name = icon_name = (char*) a.getCaption();
+
   char* s;
   if (com_argv){
-    if ((s=strrchr(com_argv[0],'/'))!=0) 
-      s++; 
-    else 
-      s=com_argv[0]; 
-    window_name = icon_name = s; 
+    if ((s=strrchr(com_argv[0],'/'))!=0)
+      s++;
+    else
+      s=com_argv[0];
+    window_name = icon_name = s;
   }
 
   if (!init_display(argc, argv)) {
     fprintf(stderr, KVT_VERSION);
     fprintf(stderr, "\n\n");
-    fprintf(stderr, 
+    fprintf(stderr,
 	    i18n("Copyright(C) 1996, 1997 Matthias Ettrich\n"
 		 "Copyright(C) 1997 M G Berberich\n"
 		 "Terminal emulation for the KDE Desktop Environment\n"
