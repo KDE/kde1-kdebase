@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1998-11-05 01:17+0100\n"
 "PO-Revision-Date: 1998-11-01 14:35+0100\n"
 "Last-Translator: Harri Porten <porten@kde.org>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -26,6 +26,8 @@ msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
+"X codes \"%s\" Datei existiert nicht.\n"
+"Benutze X Standard codes."
 
 #: kikbd.cpp:313
 #, c-format
@@ -33,6 +35,8 @@ msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
 msgstr ""
+"Keyboard map \"%s\" existiert nicht.\n"
+"Übergehe diese map."
 
 #: kikbd.cpp:330
 msgid "Setup"
@@ -77,104 +81,108 @@ msgid ""
 "You can preset X codes in \"Advanced\" section\n"
 "of configuration program."
 msgstr ""
+"Symbol \"%s\" nicht gefunden.\n"
+"Vielleicht passen Ihre Standard X Codes nicht.\n"
+"Sie können die X Xodes unter \"Erweitert\"
+"im Konfigurationsprogramm voreinstellen."
 
 #: keymap.cpp:233
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
 msgstr "KeyMap: Kann Symbol %s nicht finden"
 
 #: keymap.cpp:241
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: do not understand key code \"%s\"."
 msgstr "KeyMap: Verstehe Zeichencode %s nicht"
 
 #: keymap.cpp:247
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "KeyMap: Zeichenkode %s ist außerhalb des Bereiches"
 
 #: kikbdconf.cpp:95
 msgid "Global"
-msgstr ""
+msgstr "Global"
 
 #: kikbdconf.cpp:95
 msgid "Window"
-msgstr ""
+msgstr "Fenster"
 
 #: kikbdconf.cpp:95
 msgid "Class"
-msgstr ""
+msgstr "Klasse"
 
 #: kikbdconf.cpp:98 kikbdconf.cpp:110
 msgid "(None)"
-msgstr ""
+msgstr "(Kein)"
 
 #: kikbdconf.cpp:99 kikbdconf.cpp:111
 msgid "Right Alt"
-msgstr ""
+msgstr "Alt Gr"
 
 #: kikbdconf.cpp:100 kikbdconf.cpp:112
 msgid "Right Control"
-msgstr ""
+msgstr "Rechts Strg"
 
 #: kikbdconf.cpp:101
 msgid "Rights (Alt+Shift)"
-msgstr ""
+msgstr "Rechts (Alt+Shift)"
 
 #: kikbdconf.cpp:102
 msgid "Rights (Ctrl+Alt)"
-msgstr ""
+msgstr "Rechts (Strg+Alt)"
 
 #: kikbdconf.cpp:103
 msgid "Rights (Ctrl+Shift)"
-msgstr ""
+msgstr "Rechts (Strg+Shift)"
 
 #: kikbdconf.cpp:104
 msgid "Lefts  (Alt+Shift)"
-msgstr ""
+msgstr "Links (Alt+Shift)"
 
 #: kikbdconf.cpp:105
 msgid "Lefts  (Ctrl+Alt)"
-msgstr ""
+msgstr "Links (Strg+Alt)"
 
 #: kikbdconf.cpp:106
 msgid "Lefts  (Ctrl+Shift)"
-msgstr ""
+msgstr "Links (Strg+Shift)"
 
 #: kikbdconf.cpp:107
 msgid "Both Shift's (Shift+Shift)"
-msgstr ""
+msgstr "Beide Shifts (Shift+Shift)"
 
 #: kikbdconf.cpp:113
 msgid "Left  Alt"
-msgstr ""
+msgstr "Links Alt"
 
 #: kikbdconf.cpp:114
 msgid "Left  Control"
-msgstr ""
+msgstr "Links Strg"
 
 #: kikbdconf.cpp:117
 msgid "Top Left"
-msgstr ""
+msgstr "Oben/Links"
 
 #: kikbdconf.cpp:118
 msgid "Top Right"
-msgstr ""
+msgstr "Oben/Rechts"
 
 #: kikbdconf.cpp:119
 msgid "Bottom Left"
-msgstr ""
+msgstr "Unten/Links"
 
 #: kikbdconf.cpp:120
 msgid "Bottom Right"
-msgstr ""
+msgstr "Unten/Rechts"
 
 #: kikbdconf.cpp:147
 msgid "X default codes"
-msgstr ""
+msgstr "X Standard codes"
 
 #: kikbdconf.cpp:204
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "Do you want to start Configuration?"
@@ -189,24 +197,28 @@ msgid ""
 "Configuration file you have has older format when expected.\n"
 "Some settings may be incorrect."
 msgstr ""
+"Ihre Konfigurationsdatei hat ein älteres Format als erwartet."
+"Einige Einstellungen können fehlerhaft sein."
 
 #: kikbdconf.cpp:226
 msgid ""
 "Configuration file you have has newer format when expected.\n"
 "Some settings may be incorrect."
 msgstr ""
+"Ihre Konfigurationsdatei hat ein neueres Format als erwartet."
+"Einige Einstellungen können fehlerhaft sein."
 
 #: kikbdconf.cpp:353
 msgid "unknown"
-msgstr ""
+msgstr "Unbekannt"
 
 #: kikbdconf.cpp:357
 msgid "default"
-msgstr ""
+msgstr "Standard"
 
 #: kikbdconf.cpp:383
 msgid "Author:  Not specified"
-msgstr ""
+msgstr "Autor: Nicht angegeben"
 
 #: kikbdconf.cpp:385
 msgid "Author"
@@ -218,78 +230,73 @@ msgstr "Beschreibung:  "
 
 #: kikbdconf.cpp:394
 msgid "Source:  "
-msgstr ""
+msgstr "Quelle: "
 
 #: kikbdconf.cpp:395
 msgid "no file"
-msgstr ""
+msgstr "Keine Datei"
 
 #: kikbdconf.cpp:396
 msgid "user file"
-msgstr ""
+msgstr "Benutzer-Datei"
 
 #: kikbdconf.cpp:397
 msgid "system file"
-msgstr ""
+msgstr "System-Datei"
 
 #: kikbdconf.cpp:402
 msgid "Statistic:  "
-msgstr ""
+msgstr "Statistik: "
 
 #: kikbdconf.cpp:405
 msgid "symbols"
-msgstr ""
+msgstr "Symbole"
 
 #: kikbdconf.cpp:408
 msgid "codes"
-msgstr ""
+msgstr "Codes"
 
 #: kikbdconf.cpp:411
 msgid "alternative symbols"
-msgstr ""
+msgstr "Alternative Symbole"
 
 #: kikbdconf.cpp:418
 msgid "language"
-msgstr ""
+msgstr "Sprache"
 
 #: kikbdconf.cpp:419
 msgid "charset"
-msgstr ""
+msgstr "Zeichensatz"
 
 #: kikbdconf.cpp:457
-#, fuzzy
 msgid "International keyboard ERROR"
-msgstr "Internationale Tastatur"
+msgstr "Internationale Tastatur - FEHLER"
 
 #: kikbdconf.cpp:473
-#, fuzzy
 msgid "International keyboard warning"
-msgstr "Internationale Tastatur"
+msgstr "Internationale Tastatur - Warnung"
 
 #: kikbdconf.cpp:480 kikbdconf.cpp:485 kikbdconf.cpp:498
-#, fuzzy
 msgid "International keyboard question"
-msgstr "Internationale Tastatur"
+msgstr "Internationale Tastatur - Frage"
 
 #: kikbdconf.cpp:487
 msgid "Configure"
-msgstr ""
+msgstr "Konfigurieren"
 
 #: kikbdconf.cpp:497
-#, fuzzy
 msgid ""
 "\n"
 "Do you want to continue?"
-msgstr "Möchten Sie die Konfiguration starten?"
+msgstr "Möchten Sie die fortfahren?"
 
 #: widgets.cpp:107
 msgid "List of active keyboard maps"
 msgstr "Liste der aktiven Tastaturtabellen"
 
 #: widgets.cpp:117
-#, fuzzy
 msgid "&Add"
-msgstr "Hinzufügen"
+msgstr "&Hinzufügen"
 
 #: widgets.cpp:118
 msgid "Adding new keyboard map"
@@ -300,18 +307,16 @@ msgid "Remove selected keyboard map"
 msgstr "Entferne ausgewählte Tastaturtabelle"
 
 #: widgets.cpp:127
-#, fuzzy
 msgid "U&p"
-msgstr "Oben"
+msgstr "Nach &oben"
 
 #: widgets.cpp:127
 msgid "Up selected keyboard map"
 msgstr "Ausgewählte Tastaturtabelle nach oben"
 
 #: widgets.cpp:131
-#, fuzzy
 msgid "D&own"
-msgstr "Unten"
+msgstr "Nach &unten"
 
 #: widgets.cpp:131
 msgid "Down selected keyboard map"
@@ -319,17 +324,15 @@ msgstr "Ausgewählte Tastaturtabelle nach unten"
 
 #: widgets.cpp:135
 msgid "&Info"
-msgstr ""
+msgstr "&Info"
 
 #: widgets.cpp:136
-#, fuzzy
 msgid "Display information for selected keyboard map"
-msgstr "Ausgewählte Tastaturtabelle nach unten"
+msgstr "Zeige Informationen über die Ausgewählte Tastatur-Tabelle"
 
 #: widgets.cpp:145
-#, fuzzy
 msgid "Use &hot list"
-msgstr "Verwende ,,Hotlist\""
+msgstr "Verwende Hot&list"
 
 #: widgets.cpp:146
 msgid ""
@@ -348,7 +351,7 @@ msgstr "Es gibt keine weiteren Tastaturtabellen"
 
 #: widgets.cpp:249
 msgid "Keyboard map information"
-msgstr ""
+msgstr "Tastatur-Tabelle - Information"
 
 #: widgets.cpp:283
 msgid "Add Keyboard"
@@ -359,16 +362,14 @@ msgid "Available keyboard maps"
 msgstr "Verfügbare Tastaturtabellen"
 
 #: widgets.cpp:394
-#, fuzzy
 msgid "Keyboard maps"
-msgstr "Tastaturen"
+msgstr "Tastatur-Tabellen"
 
 #: widgets.cpp:405
 msgid "Switch and Alt Switch"
 msgstr "Wechseln und Alt-Wechseln"
 
 #: widgets.cpp:410
-#, fuzzy
 msgid "Key(s) to switch between keyboard maps"
 msgstr "Taste(n) zum Wechseln der Tastaturtabellen"
 
@@ -378,18 +379,16 @@ msgstr ""
 "Taste zum Aktivieren alternierender Symbole in der aktuellen Tastaturtabelle"
 
 #: widgets.cpp:429
-#, fuzzy
 msgid "&Beep"
-msgstr "Ton"
+msgstr "&Ton"
 
 #: widgets.cpp:430
 msgid "Beep when ever keyboard mapping changed"
 msgstr "Ton beim Wechsel der Tastaturtabelle"
 
 #: widgets.cpp:433
-#, fuzzy
 msgid "Ad&vanced"
-msgstr "Erweitert"
+msgstr "Er&weitert"
 
 #: widgets.cpp:433
 msgid "Advanced options"
@@ -400,17 +399,14 @@ msgid "Advanced"
 msgstr "Erweitert"
 
 #: widgets.cpp:466
-#, fuzzy
 msgid "&Emulate Caps Lock"
-msgstr "Emuliere CapsLock"
+msgstr "&Emuliere CapsLock"
 
 #: widgets.cpp:467
-#, fuzzy
 msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
 msgstr "Emuliere XServer-CapsLock. Für manche Sprachen benötigt"
 
 #: widgets.cpp:473
-#, fuzzy
 msgid "&World Menu"
 msgstr "Weltmenü"
 
@@ -419,9 +415,8 @@ msgid "Show menu in any window by holding Switch keys"
 msgstr "Zeige Menü in jedem Fenster durch Drücken der Wechseltasten"
 
 #: widgets.cpp:481
-#, fuzzy
 msgid "&Save Classes"
-msgstr "Klassen speichern"
+msgstr "Klassen &speichern"
 
 #: widgets.cpp:482
 msgid "Save relations between window classes and keyboard maps on exit"
@@ -431,7 +426,7 @@ msgstr ""
 
 #: widgets.cpp:488
 msgid "Define X codes"
-msgstr ""
+msgstr "Definiere X Codes"
 
 #: widgets.cpp:491
 msgid "Input"
@@ -458,17 +453,14 @@ msgid "Foreground"
 msgstr "Vordergrund"
 
 #: widgets.cpp:562
-#, fuzzy
 msgid "Color of the text label"
 msgstr "Farbe des Text-Labels"
 
 #: widgets.cpp:566
-#, fuzzy
 msgid "With Caps Lock"
 msgstr "Mit CapsLock"
 
 #: widgets.cpp:567
-#, fuzzy
 msgid "Background when Emulated Caps Lock active"
 msgstr "Hindergrund, wenn emuliertes CapsLock aktiv ist"
 
@@ -485,9 +477,8 @@ msgid "Button Font"
 msgstr "Tasten-Schrift"
 
 #: widgets.cpp:591
-#, fuzzy
 msgid "&Customize Font"
-msgstr "Schrift anpassen"
+msgstr "Schrift an&passen"
 
 #: widgets.cpp:592
 msgid "Customize Font for text label or use global settings"
@@ -495,23 +486,20 @@ msgstr ""
 "Schrift des Text-Labels anpassen oder allgemeine Einstellungen benutzen"
 
 #: widgets.cpp:596
-#, fuzzy
 msgid "C&hange Font"
-msgstr "Schrift ändern"
+msgstr "&Schrift ändern"
 
 #: widgets.cpp:641
-#, fuzzy
 msgid "&Autostart"
-msgstr "Autostart"
+msgstr "&Autostart"
 
 #: widgets.cpp:642
-#, fuzzy
 msgid "Start up automatically"
 msgstr "Starte automatisch"
 
 #: widgets.cpp:648
 msgid "&Docked"
-msgstr ""
+msgstr "Einge&bunden in KPanal"
 
 #: widgets.cpp:649
 msgid "Dock into special area in kpanel"
@@ -519,11 +507,11 @@ msgstr "Docke in KPanel in einem besonderen Bereich"
 
 #: widgets.cpp:658
 msgid "Place"
-msgstr "Platzieren"
+msgstr "Plazieren"
 
 #: widgets.cpp:665
 msgid "Place in selected corner"
-msgstr "Platziere in ausgewählter Ecke"
+msgstr "Plaziere in ausgewählter Ecke"
 
 #: kcmikbd.cpp:64
 msgid "&General"
@@ -537,45 +525,6 @@ msgstr "&Stil"
 msgid "Start&Up"
 msgstr "Programms&tart"
 
-#: kcmikbd.cpp:80
+#: kcmikbd.cpp:121
 msgid "International Keyboard"
 msgstr "Internationale Tastatur"
-
-#~ msgid "Exit"
-#~ msgstr "Beenden"
-
-#~ msgid "kikbd error"
-#~ msgstr "kikbd-Fehler"
-
-#~ msgid "kikbd warning"
-#~ msgstr "kikbd-Warnung"
-
-#~ msgid "kikbd configuration error"
-#~ msgstr "kikbd Konfigurationsfehler"
-
-#~ msgid "kikbd configuration message"
-#~ msgstr "kikbd Konfigurationsmeldung"
-
-#~ msgid "Label"
-#~ msgstr "Label"
-
-#~ msgid "yes"
-#~ msgstr "ja"
-
-#~ msgid "true"
-#~ msgstr "wahr"
-
-#~ msgid "Locale"
-#~ msgstr "Lokale"
-
-#~ msgid "Delete"
-#~ msgstr "Entfernen"
-
-#~ msgid "Options"
-#~ msgstr "Optionen"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Cancel"
-#~ msgstr "Abbrechen"

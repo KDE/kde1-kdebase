@@ -196,7 +196,7 @@ msgstr "SUID ausführbare Datein"
 
 #: kftabdlg.cpp:246
 msgid "(none)"
-msgstr ""
+msgstr "(nichts)"
 
 #: kftabdlg.cpp:247
 msgid "At Least"

@@ -125,7 +125,7 @@ msgstr "Zeichensatz..."
 
 #: main.C:674
 msgid "Enable &hotkeys"
-msgstr ""
+msgstr "&Hotkeys an"
 
 #: main.C:677
 msgid "Save &Options"

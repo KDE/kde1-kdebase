@@ -103,12 +103,11 @@ msgstr "Zeit&spanne"
 
 #: options.cpp:50 options.cpp:68 options.cpp:86
 msgid "Small"
-msgstr ""
+msgstr "Klein"
 
 #: options.cpp:51 options.cpp:69 options.cpp:87
-#, fuzzy
 msgid "Large"
-msgstr "G&roß"
+msgstr "Groß"
 
 #: options.cpp:62
 msgid "Visuals"
@@ -119,21 +118,20 @@ msgid "Auto &Hide Panel"
 msgstr "Panel &autom. verstecken"
 
 #: options.cpp:67 options.cpp:85
-#, fuzzy
 msgid "Delay:"
-msgstr "Zeit&spanne"
+msgstr "Verzögerung:"
 
 #: options.cpp:74 options.cpp:93
 msgid "Speed:"
-msgstr ""
+msgstr "Geschwindigkeit:"
 
 #: options.cpp:75 options.cpp:94 options.cpp:103
 msgid "Slow"
-msgstr ""
+msgstr "Langsam"
 
 #: options.cpp:76 options.cpp:95 options.cpp:104
 msgid "Fast"
-msgstr ""
+msgstr "Schnell"
 
 #: options.cpp:82
 msgid "Auto Hide &Taskbar"
@@ -141,11 +139,11 @@ msgstr "Tas&kbar autom. verstecken"
 
 #: options.cpp:100
 msgid "Animate Show/Hide"
-msgstr ""
+msgstr "Animiertes Anzeigen/Verstecken"
 
 #: options.cpp:102
 msgid "Speed"
-msgstr ""
+msgstr "Geschwindigkeit"
 
 #: options.cpp:117
 msgid "Others"
@@ -156,21 +154,20 @@ msgid "Personal &First"
 msgstr "Per&sönliches Menü zuerst"
 
 #: options.cpp:120
-#, fuzzy
 msgid "F&olders First"
-msgstr "Per&sönliches Menü zuerst"
+msgstr "Verzeichnisse zuerst"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
-msgstr ""
+msgstr "Uhr zeigt &Zeit im AM/PM Format"
 
 #: disknav.cpp:38
 msgid "History"
-msgstr ""
+msgstr "Bisherige"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr ""
+msgstr "Enträge bearbeiten: (Ordner ziehen und Verknüpfung erstellen"
 
 #: disknav.cpp:64
 msgid "Edit &Local..."
@@ -182,53 +179,40 @@ msgstr "&Globale einstellen"
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr ""
+msgstr "Maximale Zahl letzter Ordner:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr ""
+msgstr "Maximale Zahl letzter Dateien:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr ""
+msgstr "Max Dateien in einem Ordner:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr ""
+msgstr "Versteckte Dateien anzeigen"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr ""
+msgstr "Groß/Kleinschreibung beim Sortieren ignorieren"
 
 #: disknav.cpp:173
 msgid "Show Global section"
-msgstr ""
+msgstr "Globale Abschnitte anzeigen"
 
 #: disknav.cpp:180
-#, fuzzy
 msgid "Show Local section"
-msgstr "Stelle"
+msgstr "Lokale Abschnitte anzeigen"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr ""
+msgstr "Letzten Abschnitt anzeigen"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr ""
+msgstr "Optionseintrag anzeigen"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr ""
-
-#~ msgid "ms"
-#~ msgstr "ms"
-
-#~ msgid "Clock"
-#~ msgstr "Uhr"
-
-#~ msgid "&24h"
-#~ msgstr "&24h"
-
-#~ msgid "&12h AM/PM"
-#~ msgstr "&12h AM/PM"
+msgstr "Terminal-Anwendung:"

@@ -15,43 +15,43 @@ msgstr "&Prozessor"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr ""
+msgstr "&Interrupts"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr ""
+msgstr "DMA-C&annels"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr ""
+msgstr "&IO-Ports"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr ""
+msgstr "PCI-&Bus"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr ""
+msgstr "&Klang"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr ""
+msgstr "&Geräte"
 
 #: main.cpp:103
 msgid "S&CSI"
-msgstr ""
+msgstr "S&CSI""
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr ""
+msgstr "P&artitionen"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr ""
+msgstr "&X-Server"
 
 #: main.cpp:120
 msgid ""
-"usage: kcminfo [-init | "
+"Benutzung: kcminfo [-init | "
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
@@ -94,23 +94,4 @@ msgstr "%10ld Bytes  = %8.2f MB"
 msgid "Not available"
 msgstr "Nicht errechenbar"
 
-#~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
-#~ msgstr "Benutzung: kcminfo [-init | {processor, memory}]\n"
-
-#~ msgid "This system is not yet supported :-("
-#~ msgstr "Dieses System ist z.Z. nicht unterstützt :-("
-
-#~ msgid "Not Available"
-#~ msgstr "Nicht Errechenbar"
-
-#~ msgid "File Error!"
-#~ msgstr "Datei-Fehler!"
-
-#~ msgid "Cannot read /proc/cpuinfo"
-#~ msgstr "Konnte /proc/cpuinfo nicht lesen"
-
-#~ msgid "%s, unknown speed"
-#~ msgstr "%s, unbekannte Geschwindigkeit"
-
-#~ msgid "%s running at %s MHz"
-#~ msgstr "%s läuft mit %s MHz"
+k

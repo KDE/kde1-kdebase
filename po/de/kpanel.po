@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel VERSION\n"
-"POT-Creation-Date: 1998-11-18 13:15+0100\n"
+"POT-Creation-Date: 1998-11-14 01:18+0100\n"
 "PO-Revision-Date: 1997-10-25 18:28 MET DST\n"
 "Last-Translator: Christian Kirsch <ck@held.mind.de>\n"
 "Language-Team: German/KDE\n"
@@ -14,14 +14,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: kpanel.C:273
-#, fuzzy
 msgid "&Move"
-msgstr "Verschieben"
+msgstr "&Verschieben"
 
 #: kpanel.C:276
-#, fuzzy
 msgid "&Properties"
-msgstr "Eigenschaften"
+msgstr "&Eigenschaften"
 
 #: kpanel.C:313
 msgid "Go!"
@@ -124,49 +122,45 @@ msgid ""
 "\n"
 "%b %d"
 msgstr ""
+"\n"
+"%b %d"
 
 #: events.C:819
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kann dies nicht als Button in das Panel legen!"
 
-#: pfilemenu.C:420
+#: pfilemenu.C:389
 msgid "(empty folder)"
 msgstr "(leeres Verzeichnis)"
 
-#: pfilemenu.C:477
+#: pfilemenu.C:446
 msgid "(Too Many Files)"
 msgstr "(Zuviele Dateien)"
 
-#: pfilemenu.C:486
+#: pfilemenu.C:455
 msgid "(Access Denied)"
 msgstr "(Zugriff verweigert)"
 
-#: pfilemenu.C:489
+#: pfilemenu.C:458
 msgid "(Unreadable)"
 msgstr "(Nicht lesbar)"
 
-#: pfilemenu.C:496
+#: pfilemenu.C:465
 msgid "Open Folder"
 msgstr "Öffne Verzeichnis"
 
-#: pfilemenu.C:746
+#: pfilemenu.C:715
 msgid "Global:"
-msgstr ""
+msgstr "Globas:"
 
-#: pfilemenu.C:767
+#: pfilemenu.C:736
 msgid "Local:"
-msgstr ""
+msgstr "Lokal"
 
-#: pfilemenu.C:787
+#: pfilemenu.C:756
 msgid "Recent:"
-msgstr ""
+msgstr "Letzte:"
 
-#: pfilemenu.C:835
+#: pfilemenu.C:804
 msgid "Options..."
-msgstr ""
-
-#~ msgid "KFM Information"
-#~ msgstr "KFM-Information"
-
-#~ msgid "Creating directory:\n"
-#~ msgstr "Erzeuge Verzeichnis:\n"
+msgstr "Optionen..."

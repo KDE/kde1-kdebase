@@ -137,14 +137,12 @@ msgid "Select fonts"
 msgstr "Auswahl Schriftarten"
 
 #: kdm-font.cpp:50
-#, fuzzy
 msgid "Example"
-msgstr "Beispiel:"
+msgstr "Beispiel"
 
 #: kdm-font.cpp:52
-#, fuzzy
 msgid "Change font..."
-msgstr "Schriftart ändern"
+msgstr "Schriftart ändern..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
@@ -160,24 +158,23 @@ msgstr "Normal"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr ""
+msgstr "Vorschau"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "Farbe"
 
 #: kdm-bgnd.cpp:101
-#, fuzzy
 msgid "Solid Color"
-msgstr "Farbe"
+msgstr "Feste Farbe"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr ""
+msgstr "Waagrechter Verlauf"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr ""
+msgstr "Senkrechter Verlauf"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
@@ -188,39 +185,36 @@ msgid "None"
 msgstr "Kein"
 
 #: kdm-bgnd.cpp:176
-#, fuzzy
 msgid "Tile"
 msgstr "Fliesen"
 
 #: kdm-bgnd.cpp:181
-#, fuzzy
 msgid "Center"
 msgstr "Zentriert"
 
 #: kdm-bgnd.cpp:186
-#, fuzzy
 msgid "Scale"
-msgstr "Vergrößert"
+msgstr "Skaliert"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr ""
+msgstr "Oben/Links"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr ""
+msgstr "Oben/Rechts"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr ""
+msgstr "Unten/Links"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr ""
+msgstr "Unten/Rechts"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr ""
+msgstr "Phantasievoll"
 
 #: kdm-users.cpp:48
 msgid "All users"
@@ -309,12 +303,3 @@ msgstr "Verfügbare Typen"
 #: klangcombo.cpp:133
 msgid "without name!"
 msgstr "ohne Name!"
-
-#~ msgid "&Fonts"
-#~ msgstr "&Schriftarten"
-
-#~ msgid "Appearance"
-#~ msgstr "Erscheinung"
-
-#~ msgid "Browse..."
-#~ msgstr "Auswählen..."
