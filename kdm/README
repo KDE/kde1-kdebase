@@ -39,8 +39,9 @@ Version 0.1 of kdm is copyright Matthias Ettrich
 All later versions:
 License/Copyright: (C) 1997 Steffen Hansen.
 
-Thanks to:
-Michael Bach for drawing icons. The icons are copyleft M. Bach
+Thanks to (in no particular order):
+Michael Bach Jensen and Torsten Rahn for drawing icons.
+Duncan Haldane for investigation of PAM issues.
 Stephan Kulow for helping me with the autoconf stuff.
 Martin Baehr for intensive testing and writing the sample Xsession scripts.
 
