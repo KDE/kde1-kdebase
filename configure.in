@@ -291,6 +291,7 @@ AC_OUTPUT(Makefile \
 	kwmmodules/kbgndwm/Makefile \
 	kwmmodules/kwmpager/Makefile \
 	kwmmodules/kwmsound/Makefile \
+	kwmmodules/kpager/Makefile \
 	mimetypes/Makefile \
 	mimetypes/application/Makefile \
 	mimetypes/audio/Makefile \

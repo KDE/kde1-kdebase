@@ -1,0 +1,26 @@
+KPager
+------
+							The kwm pager.
+
+
+KPager is a program that shows you a small view of all your desktops
+and lets you see at a glanze all your windows and applications, it
+also allows you to change their position, desktop, sticky state, etc.
+
+KPager reads your kbgndwm configuration and shows each desktop's
+background with its corresponding image, gradient, etc.
+
+It also uses xdnd to move windows across desktops.
+
+TODO
+----
+
+Get back your menu after hiding it :-)
+Help (really needed ?)
+A more useful menu that allows to configure some options like
+   reading kbgndwm configuration, etc.
+Fix the flicker that happens when the about dialog appears 
+   ( if you have any idea of the source of this problem, please tell me )
+More bug fixes (if any)
+
+

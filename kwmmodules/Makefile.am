@@ -1,4 +1,4 @@
 
-SUBDIRS = kwmpager kbgndwm kwmsound
+SUBDIRS = kwmpager kbgndwm kwmsound kpager
 
 messages:
