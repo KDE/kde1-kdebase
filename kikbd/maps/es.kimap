@@ -1,0 +1,14 @@
+# KDE Config File
+ 
+[International Keyboard]
+Authors=Antonio Larrosa <larrosa@kde.org>,
+ 
+Language=Spanish
+Language[es]=Español
+Language[fr]=Espagnole
+Language[de]=Spanier
+ 
+Label=Es
+Locale=es
+
+[KeyboardMap] 
