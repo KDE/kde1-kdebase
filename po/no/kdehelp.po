@@ -42,9 +42,8 @@ msgid "Continue search from the top of the page?"
 msgstr "Fortsett søk fra toppen av siden?"
 
 #: helpwin.cpp:1309
-#, fuzzy
 msgid "Forward"
-msgstr "&Fremover"
+msgstr "Fremover"
 
 #: helpwin.cpp:1330
 msgid "Open this Link"
@@ -82,15 +81,15 @@ msgstr "Advarsel: "
 
 #: options.cpp:40
 msgid "Small"
-msgstr ""
+msgstr "Liten"
 
 #: options.cpp:44
 msgid "Medium"
-msgstr ""
+msgstr "Middels"
 
 #: options.cpp:48
 msgid "Large"
-msgstr ""
+msgstr "Stor"
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -168,7 +167,7 @@ msgstr "Systemadministrasjon"
 
 #: man.cpp:478
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
 #: man.cpp:592
 msgid "Reading Dir: "
@@ -236,13 +235,12 @@ msgid "&Up"
 msgstr "&Opp"
 
 #: mainwidget.cpp:160
-#, fuzzy
 msgid "&Previous"
-msgstr "Forrige node"
+msgstr "Forrige"
 
 #: mainwidget.cpp:161
 msgid "&Next"
-msgstr ""
+msgstr "&Neste"
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."

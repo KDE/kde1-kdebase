@@ -23,39 +23,39 @@ msgstr "&CPU"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr ""
+msgstr "&Avbrudsliner"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr ""
+msgstr "&DMA-Kanaler"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr ""
+msgstr "&IO-porter"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr ""
+msgstr "&PCI-buss"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr ""
+msgstr "&Lyd"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr ""
+msgstr "&Enheter"
 
 #: main.cpp:103
 msgid "S&CSI"
-msgstr ""
+msgstr "&SCSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr ""
+msgstr "&Partisjoner"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr ""
+msgstr "&X-tjener"
 
 #: main.cpp:120
 msgid ""
@@ -63,6 +63,9 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
+"bruk: kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"
@@ -101,24 +104,3 @@ msgstr "%10ld bytes  = %8.2f MB"
 #: memory.cpp:105
 msgid "Not available"
 msgstr "Ikke tilgjengelig"
-
-#~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
-#~ msgstr "bruk: KCminfo [-init | {processor,memory}]\n"
-
-#~ msgid "This system is not yet supported :-("
-#~ msgstr "Det er foreløpig ikke støtte for dette system :-{"
-
-#~ msgid "Not Available"
-#~ msgstr "Ikke tilgjengelig"
-
-#~ msgid "File Error!"
-#~ msgstr "Filfeil!"
-
-#~ msgid "Cannot read /proc/cpuinfo"
-#~ msgstr "Kan ikke åpne /proc/cpuinfo"
-
-#~ msgid "%s, unknown speed"
-#~ msgstr "%s, ukjent hastighet"
-
-#~ msgid "%s running at %s MHz"
-#~ msgstr "%s kjører på %s MHz"

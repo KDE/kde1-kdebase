@@ -145,14 +145,12 @@ msgid "Select fonts"
 msgstr "Velg skrifttyper"
 
 #: kdm-font.cpp:50
-#, fuzzy
 msgid "Example"
-msgstr "Eksempel:"
+msgstr "Eksempel"
 
 #: kdm-font.cpp:52
-#, fuzzy
 msgid "Change font..."
-msgstr "Endre skrifttype"
+msgstr "Endre skrifttype..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
@@ -168,24 +166,23 @@ msgstr "Standard"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr ""
+msgstr "Forhåndsvis"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "Farge"
 
 #: kdm-bgnd.cpp:101
-#, fuzzy
 msgid "Solid Color"
-msgstr "Farge"
+msgstr "Solid farge"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr ""
+msgstr "Horisontal overgang"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr ""
+msgstr "Vertikal overgang"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
@@ -193,42 +190,39 @@ msgstr "Tapet"
 
 #: kdm-bgnd.cpp:171 kdm-sess.cpp:56
 msgid "None"
-msgstr ""
+msgstr "Ingen"
 
 #: kdm-bgnd.cpp:176
-#, fuzzy
 msgid "Tile"
 msgstr "Flislagt"
 
 #: kdm-bgnd.cpp:181
-#, fuzzy
 msgid "Center"
 msgstr "Sentrert"
 
 #: kdm-bgnd.cpp:186
-#, fuzzy
 msgid "Scale"
 msgstr "Skalert"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr ""
+msgstr "Øverst til venstre"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr ""
+msgstr "Øverst til høyre"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr ""
+msgstr "Nederst til venstre"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr ""
+msgstr "Nederst til høyre"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr ""
+msgstr "Grill"
 
 #: kdm-users.cpp:48
 msgid "All users"

@@ -31,14 +31,13 @@ msgstr "FEIL: Mal finnes ikke '%s'"
 
 # kfmgui.cpp:926 kfmgui.cpp:933
 #: kfmgui.cpp:304
-#, fuzzy
 msgid "&New"
-msgstr "Ny"
+msgstr "&Ny"
 
 # kfmgui.cpp:302
 #: kfmgui.cpp:309
 msgid "&Run..."
-msgstr "Kjør"
+msgstr "&Kjør.."
 
 # kfmgui.cpp:304
 #: kfmgui.cpp:311
@@ -257,7 +256,7 @@ msgstr "Opp"
 
 #: kfmgui.cpp:533 kfmman.cpp:1079
 msgid "Forward"
-msgstr ""
+msgstr "Forover"
 
 # kfmtree.cpp:396
 #: kfmgui.cpp:538
@@ -611,7 +610,7 @@ msgstr "Åpne med"
 
 #: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
 msgid "Move"
-msgstr ""
+msgstr "Flytt"
 
 # kfmman.cpp:1233 kfmtree.cpp:159 main.cpp:245
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
@@ -630,15 +629,15 @@ msgstr "Legg til bokmerker"
 
 #: htmlopts.cpp:39
 msgid "Small"
-msgstr ""
+msgstr "Liten"
 
 #: htmlopts.cpp:43
 msgid "Medium"
-msgstr ""
+msgstr "Middels"
 
 #: htmlopts.cpp:47
 msgid "Large"
-msgstr ""
+msgstr "Stor"
 
 # htmlopts.cpp:51
 #: htmlopts.cpp:51

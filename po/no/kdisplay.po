@@ -394,7 +394,7 @@ msgstr "Valgt tekst"
 
 #: widgetcanvas.cpp:212
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"

@@ -87,7 +87,7 @@ msgstr "! Beskyttet knapp !"
 
 #: confmenu.cpp:115
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
 #: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"

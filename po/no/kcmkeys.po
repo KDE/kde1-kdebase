@@ -22,9 +22,8 @@ msgid "&Global shortcuts"
 msgstr "&Globale hurtigtaster"
 
 #: main.cpp:76
-#, fuzzy
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
-msgstr "bruk: kcmdisplay [-init | {standard,global}]\n"
+msgstr "bruk: kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:118
 msgid "Key binding settings"
@@ -32,7 +31,7 @@ msgstr "Tastkoblinginnstillinger"
 
 #: standard.cpp:53
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
 #: standard.cpp:57
 msgid "Next"
@@ -44,7 +43,7 @@ msgstr "Forrige"
 
 #: standard.cpp:63
 msgid "Find"
-msgstr ""
+msgstr "Finn"
 
 #: standard.cpp:66
 msgid "Home"

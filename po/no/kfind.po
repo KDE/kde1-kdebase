@@ -200,7 +200,7 @@ msgstr "SUID-programfiler"
 
 #: kftabdlg.cpp:246
 msgid "(none)"
-msgstr ""
+msgstr "(ingen)"
 
 #: kftabdlg.cpp:247
 msgid "At Least"

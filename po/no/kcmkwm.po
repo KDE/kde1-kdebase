@@ -143,7 +143,7 @@ msgstr "(Ikke)maksimer"
 
 #: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
 msgid "Move"
-msgstr ""
+msgstr "Flytt"
 
 #: titlebar.cpp:991
 msgid "(Un)Shade"
@@ -187,7 +187,7 @@ msgstr "Animasjon:"
 
 #: windows.cpp:91
 msgid "None"
-msgstr ""
+msgstr "Ingen"
 
 #: windows.cpp:92
 msgid "Fast"
