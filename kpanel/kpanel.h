@@ -236,11 +236,13 @@ protected:
     
     bool eventFilter(QObject *, QEvent *);
     void mousePressEvent( QMouseEvent * );
-    void  timerEvent( QTimerEvent * );
+
+private slots:
+    void slotUpdateClock();
 
 signals:
     
-private:
+private:  
   QPixmap mBackTexture;
   KWMModuleApplication* kwmmapp;
   Window* callbacklist;
@@ -384,6 +386,7 @@ private:
   QPushButton *miniSystem;
   QPushButton *miniDesk;
   
+  int clock_timer_id;
 };
 
 

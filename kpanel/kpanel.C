@@ -679,8 +679,13 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 	    SLOT( slotDropEvent( KDNDDropZone *) ) );
 
 
+    // to make the clock more precise, start the clock
+    // on the next minute break
     set_label_date();
-
+    QTime cur_time = QTime::currentTime();
+    clock_timer_id = 0;
+    int next_minute_break = (60 - cur_time.second()) * 1000 - cur_time.msec();
+    QTimer::singleShot(next_minute_break, this, SLOT(slotUpdateClock()));
 
     pmenu = new PMenu;
     pmenu->setAltSort(foldersFirst);
@@ -752,7 +757,6 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
 
     read_in_configuration();
-    startTimer( 60000 );
     KApplication::getKApplication()->getConfig()->sync();
     doGeometry();
     if (panelHiddenString=="00000000"){
@@ -1449,4 +1453,16 @@ void kPanel::load_and_set_some_fonts(){
 
   taskbar_height = taskbar->fontMetrics().height()+10;
 
+}
+
+void kPanel::slotUpdateClock() {
+  set_label_date();
+  
+  // if this is the first time this function is called, install a timer
+  if(clock_timer_id == 0) {
+    QTimer *t = new QTimer(this);
+    connect(t, SIGNAL(timeout()),
+	    this, SLOT(slotUpdateClock()));
+    clock_timer_id = t->start(60000);
+  }
 }

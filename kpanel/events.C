@@ -617,10 +617,6 @@ void kPanel::slotDropEvent( KDNDDropZone *_zone ){
   }
 }
 
-void  kPanel::timerEvent( QTimerEvent * ){
-  set_label_date();
-}
-
 void kPanel::kdisplayPaletteChanged(){
   int i;
   QButton* tmp_button;

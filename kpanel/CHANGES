@@ -1,6 +1,7 @@
 In kpanel-0.18:
 
     Patchlevel 3:
+       - fixes for the integrated clock (Mario Weilguni)
        - autohide feature for the taskbar
                AutoHideTaskbar=on/off
          The provisional panel config dialog also offers a checkbox
