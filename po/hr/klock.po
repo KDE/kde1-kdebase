@@ -435,10 +435,26 @@ msgid ""
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
+"  -corners xxxx     Placing cursor in corner performs action:\n"
+"                     x = i  no action (ignore)\n"
+"                     x = s  save screen\n"
+"                     x = l  lock screen\n"
+"                    order: top-left, top-right, bottom-left, bottom-right\n"
+"  -delay num        Amount of idle time before screen saver\n"
+"                     starts  (default 10min)\n"
+"  -desc             Print the screen saver's description to stdout\n"
+"  -install          Install screen saver\n"
+"  -lock             Require password to stop screen saver\n"
+"  -nice num         Run with specified nice value\n"
+"\n"
+"  -preview wid      Run in the specified XWindow\n"
+"  -inroot           Run in the root window\n"
+"  -setup            Setup screen saver\n"
+"  -test             Invoke the screen saver immediately\n"
 
 #: morph3d.cpp:839 space.cpp:419
 msgid "GL can not render with root visual\n"
-msgstr ""
+msgstr "GL ne renderirati sa root visualom"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
@@ -612,7 +628,7 @@ msgstr "Podesi KSlip"
 
 #: slip.cpp:392
 msgid "Batchcount:"
-msgstr ""
+msgstr "Batchcount:"
 
 #: slip.cpp:488
 msgid "About Slip"
