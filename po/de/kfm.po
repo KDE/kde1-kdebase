@@ -184,8 +184,7 @@ msgstr "Stop"
 
 #: kfmgui.cpp:572
 msgid "Could not load icon\n"
-msgstr ""
-"Icon konnte nicht geladen werden\n"
+msgstr "Icon konnte nicht geladen werden\n"
 
 #: kbind.cpp:306 kbind.cpp:379 kbind.cpp:432 kbind.cpp:1504 kbind.cpp:1512
 #: kbind.cpp:1530 kbind.cpp:1547 kbind.cpp:1608 kbind.cpp:1620 kbind.cpp:1647
@@ -894,7 +893,9 @@ msgstr "Verzeichnis konnte nicht verschoben werden\n"
 msgid ""
 "\n"
 "to "
-msgstr "\nin "
+msgstr ""
+"\n"
+"in "
 
 #: kiojob.cpp:688
 msgid ""
