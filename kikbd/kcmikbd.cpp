@@ -75,6 +75,8 @@ KiKbdApplication::KiKbdApplication(int &argc, char **argv)
 	startup = new KiKbdStartupWidget(dialog);
 	addPage(startup, i18n("Start&Up"), "");
 
+        ((KControlApplication *)kapp)->setTitle(i18n("International Keyboard"));
+
 	dialog->show();
     }
   else init();
@@ -118,7 +120,6 @@ int main(int argc, char **argv)
 {
   qInstallMsgHandler(msgHandler);
   KiKbdApplication app(argc, argv);
-  app.setTitle(i18n("International Keyboard"));
   
   if (app.runGUI())
     return app.exec();
