@@ -36,6 +36,10 @@ in this Software without prior written authorization from the X Consortium.
 
 #include "dm.h"
 
+#ifdef D_HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #ifdef XDMCP
 
 #include <X11/X.h>
@@ -383,7 +387,7 @@ ProcessChooserSocket (fd)
 {
     int client_fd;
     char	buf[1024];
-    int		len;
+    ksize_t	len;
     XdmcpBuffer	buffer;
     ARRAY8	clientAddress;
     CARD16	connectionType;

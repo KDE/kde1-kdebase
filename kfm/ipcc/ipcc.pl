@@ -37,6 +37,9 @@ EOT
 // (c) Torben Weis
 //     weis\@stud.uni-frankfurt.de
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include "ipc.h"
 #include "@ARGV[2].h"
 
