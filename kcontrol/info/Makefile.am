@@ -6,24 +6,17 @@ LDADD = $(LIB_KDEUI)
 bin_PROGRAMS = kcminfo
 
 kcminfo_SOURCES = main.cpp memory.cpp
-BUILT_SOURCES = memory.moc info.moc
+METASOURCES = memory.moc info.moc
 noinst_HEADERS = info.h memory.h
 ##  memory_linux.h memory_fbsd.h memory_hpux.h memory_sgi.h info_linux.h info_fbsd.h info_hpux.h info_sgi.h
 
 EXTRA_DIST = mini-kcmmemory.xpm mini-kcmprocessor.xpm mini-kcmdevices.xpm mini-kcmpartitions.xpm mini-kcmscsi.xpm mini-kcmsound.xpm mini-kcmx.xpm
 
-memory.cpp: memory.moc
-memory.moc: memory.h
-	$(MOC) $(srcdir)/memory.h -o memory.moc
-
-info.cpp: info.moc
-info.moc: info.h
-	$(MOC) $(srcdir)/info.h -o info.moc
-
-main.cpp: info.moc
-
 kde_icon_DATA = kcmdevices.xpm kcmmemory.xpm kcmpci.xpm kcmprocessor.xpm \
 	kcmscsi.xpm kcmsound.xpm kcmx.xpm 
+
+# main.cpp includes info.cpp. make can't know this
+main.cpp: info.cpp
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
