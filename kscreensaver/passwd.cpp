@@ -46,6 +46,7 @@ extern Bool inroot;
 extern Bool inwindow;
 extern Bool grabmouse;
 extern Bool nolock;
+extern int lock;
 
 #define ROOT "root"
 
@@ -1311,7 +1312,8 @@ initPasswd(void)
 {
         getUserName();
 #if !defined( ultrix ) && !defined( DCE_PASSWD )
-        if ( mode != MODE_TEST && mode != MODE_PREVIEW ) {
+	//        if ( mode != MODE_TEST && mode != MODE_PREVIEW ) {
+	if ( lock ) {
 #ifdef        BSD_AUTH
                 struct passwd *pwd = getpwnam(user);
  
