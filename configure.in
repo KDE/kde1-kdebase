@@ -36,15 +36,6 @@ CC=$CXX
 AM_PROG_LIBTOOL dnl for libraries
 CC=$ac_save_cc
 
-case $host in 
-*-*-linux* )
-   AC_CHECK_HEADER(elf.h, 
-     [ 
-     	AC_DEFINE(HAVE_SHADOW) 
-	ac_have_shadow="yes"
-     ])
-esac
-
 KCC_MODULES=""
 AC_MSG_CHECKING([dynamic loading])
 AC_MSG_RESULT($dynamic_loading)
@@ -101,6 +92,19 @@ AC_SUBST(LIBSOCKET)
 AC_PATH_KDE
 
 AC_CHECK_KDM dnl in kdminclude.m4
+
+case $host in 
+*-*-linux* )
+   AC_CHECK_HEADER(elf.h, 
+	ac_have_shadow="yes",
+        shadow_support="no"
+     )
+     ;;
+esac
+
+if test "$shadow_support" = "yes"; then
+  AC_DEFINE(HAVE_SHADOW)
+fi
 
 if test "$SETUIDFLAGS" = ""; then 
  if test "$shadow_support" = "no"; then
