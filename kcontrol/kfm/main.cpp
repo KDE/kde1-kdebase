@@ -72,72 +72,11 @@ KfmApplication::KfmApplication(int &argc, char **argv, const char *name)
     if (!pages || pages->contains("icons"))
       addPage( m_pRootOptions = new KRootOptions( dialog, "icons" ),
                i18n("&Desktop Icons"), "" );
-	    
     if ( m_pFontOptions || m_pColorOptions || m_pMiscOptions
          || m_pProxyOptions || m_pHTTPOptions || m_pUserAgentOptions
          || m_pRootOptions)
     {
-      QSize t;
-      int w = 0, h = 0;
-		
-      if ( m_pFontOptions )
-      {
-	t = m_pFontOptions->minimumSize();
-	w = t.width();
-	h = t.height();
-      }
-      if ( m_pColorOptions )
-      {
-	t = m_pColorOptions->minimumSize();
-	if ( w < t.width() )
-	  w = t.width();
-	if ( h < t.height() )
-	  h = t.height();
-      }
-      if ( m_pMiscOptions )
-      {
-	t = m_pMiscOptions->minimumSize();
-	if ( w < t.width() )
-	  w = t.width();
-	if ( h < t.height() )
-	  h = t.height();
-      }
-
-      if ( m_pProxyOptions )
-      {
-	t = m_pProxyOptions->minimumSize();
-	if ( w < t.width() )
-	  w = t.width();
-	if ( h < t.height() )
-	  h = t.height();
-      }
-      if ( m_pHTTPOptions )
-      {
-	t = m_pHTTPOptions->minimumSize();
-	if ( w < t.width() )
-	  w = t.width();
-	if ( h < t.height() )
-	  h = t.height();
-      }
-      if ( m_pUserAgentOptions )
-      {
-	t = m_pUserAgentOptions->minimumSize();
-	if ( w < t.width() )
-	  w = t.width();
-	if ( h < t.height() )
-	  h = t.height();
-      }
-      if ( m_pRootOptions )
-      {
-	t = m_pRootOptions->minimumSize();
-	if ( w < t.width() )
-	  w = t.width();
-	if ( h < t.height() )
-	  h = t.height();
-      }
-      
-      dialog->resize(w,h);
-      dialog->show();
+        dialog->show();
     }
     else
     {
