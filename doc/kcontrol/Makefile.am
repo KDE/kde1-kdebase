@@ -1,1 +1,1 @@
-SUBDIRS = input kwm bell info locale
+SUBDIRS = input kwm bell info locale syssound

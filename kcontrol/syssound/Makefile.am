@@ -43,7 +43,7 @@ DISTCLEANFILES = $(BUILTSOURCES)
 
 # make messages.po. Move this one to ../po/ and "make merge" in po
 messages:
-	$(XGETTEXT) -C -ktranslate $(kcmsyssound_SOURCES)
+	$(XGETTEXT) -C -ktranslate -x../../../kdelibs/po/kde.pot $(kcmsyssound_SOURCES) && mv messages.po ../../po/kcmsyssound.pot
 
 # just install datas here. Use install-exec-data for scripts and etc.
 # the binary itself is already installed from automake

@@ -146,6 +146,7 @@ AC_OUTPUT(Makefile \
 	kcontrol/kcontrol/pics/Makefile \
         kcontrol/locale/Makefile \
         kcontrol/locale/pics/Makefile \
+	kcontrol/syssound/Makefile \
 	kpanel/Makefile \
 	kpanel/pics/Makefile \
 	kpanel/pics/mini/Makefile \
@@ -203,6 +204,9 @@ AC_OUTPUT(Makefile \
 	doc/kcontrol/kwm/Makefile \
 	doc/kcontrol/info/Makefile \
         doc/kcontrol/locale/Makefile \
+	doc/kcontrol/syssound/Makefile \
+	doc/kcontrol/syssound/en/Makefile \
+	doc/kcontrol/syssound/de/Makefile \
 	applnk/Applications/Makefile \
 	applnk/Games/Makefile \
 	applnk/Graphics/Makefile \
@@ -238,6 +242,7 @@ AC_OUTPUT(Makefile \
 	po/hr/Makefile \
 	kwmmodules/Makefile \
 	kwmmodules/kwmpager/Makefile \
+	kwmmodules/kwmsound/Makefile \
 	kwmmodules/kbgndwm/Makefile \
 	kwmcom/Makefile \
 	krootwm/Makefile \

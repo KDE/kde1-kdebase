@@ -1,0 +1,123 @@
+msgid ""
+msgstr ""
+"Date: 1998-01-09 12:34:28+0100\n"
+"From: Christian Czezatke <ceci@klapauzius>\n"
+"Content-Type: text/plain; charset=\n"
+"Xgettext-Options: -C -ktranslate\n"
+"Files: main.cpp syssound.cpp\n"
+
+#: main.cpp:53
+msgid "&Sound"
+msgstr "&Klänge"
+
+#: main.cpp:80
+msgid "System Sounds"
+msgstr "Systemklänge"
+
+#: syssound.cpp:67 syssound.cpp:87 syssound.cpp:269
+msgid "(none)"
+msgstr "(keiner)"
+
+#: syssound.cpp:68
+msgid "Change to Desktop 1"
+msgstr "Wechsel zu Arbeitsplatz 1"
+
+#: syssound.cpp:69
+msgid "Change to Desktop 2"
+msgstr "Wechsel zu Arbeitsplatz 2"
+
+#: syssound.cpp:70
+msgid "Change to Desktop 3"
+msgstr "Wechsel zu Arbeitsplatz 3"
+
+#: syssound.cpp:71
+msgid "Change to Desktop 4"
+msgstr "Wechsel zu Arbeitsplatz 4"
+
+#: syssound.cpp:72
+msgid "Change to Desktop 5"
+msgstr "Wechsel zu Arbeitsplatz 5"
+
+#: syssound.cpp:73
+msgid "Change to Desktop 6"
+msgstr "Wechsel zu Arbeitsplatz 6"
+
+#: syssound.cpp:74
+msgid "Change to Desktop 7"
+msgstr "Wechsel zu Arbeitsplatz 7"
+
+#: syssound.cpp:75
+msgid "Change to Desktop 8"
+msgstr "Wechsel zu Arbeitsplatz 8"
+
+#: syssound.cpp:77
+msgid "Activate Window"
+msgstr "Fenster aktivieren"
+
+#: syssound.cpp:78
+msgid "Open new window"
+msgstr "Fenster öffnen"
+
+#: syssound.cpp:79
+msgid "Close Window"
+msgstr "Fenster schließen"
+
+#: syssound.cpp:80
+msgid "Startup"
+msgstr "KDE Start"
+
+#: syssound.cpp:102
+msgid "e&nable system sounds"
+msgstr "&Systemklänge aktivieren"
+
+#: syssound.cpp:107
+msgid "&Test"
+msgstr "&Anhören"
+
+#: syssound.cpp:111
+msgid "&Events:"
+msgstr "&Ereignisse:"
+
+#: syssound.cpp:115
+msgid "&Sounds:"
+msgstr "&Klänge:"
+
+#: syssound.cpp:119
+msgid "Additional WAV files can be dropped onto the sound list."
+msgstr "Zusätzliche WAV Dateien können auf die \"Klänge\" Liste gezogen werden."
+
+#: syssound.cpp:322
+msgid "Unsupported URL"
+msgstr "nicht unterstützte URL"
+
+#: syssound.cpp:323
+msgid "Sorry, this type of URL is currently unsupported by the KDE System Sound Module"
+msgstr "Dieser URL Typ wird im Moment von den KDE Systemklängen nicht unterstützt."
+
+#: syssound.cpp:327
+msgid "Sorry, but \n"
+msgstr ""
+
+#: syssound.cpp:329
+msgid ""
+"\n"
+"does not seem to be a WAV--file"
+msgstr "\nscheint keine gültige WAV Datei zu sein."
+
+#: syssound.cpp:330
+msgid "Improper File Extension"
+msgstr "ungültige Dateiendung"
+
+#: syssound.cpp:336
+msgid "The file\n"
+msgstr "Die Datei\n"
+
+#: syssound.cpp:338
+msgid ""
+"\n"
+"is already in the list"
+msgstr "ist bereits in der Liste."
+
+#: syssound.cpp:339
+msgid "File Already in List"
+msgstr "Datei ist bereits in der Liste."

@@ -1,0 +1,13 @@
+This is a KDE Control Center Module for configuring system sounds. 
+
+Currently, system sounds have to be in $KDEDIR/share/sounds
+
+However, you can now drop audio files on the Sounds listbox
+to add them to the list of selectable sounds.
+
+For more information have a look at the readme in "kwmsound"
+
+Hope you'll enjoy KDE system sounds... ;-) 
+
+     Christian Czezatke
+     e9025461@student.tuwien.ac.at
