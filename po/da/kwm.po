@@ -124,7 +124,7 @@ msgstr "Log ud"
 
 #: logout.C:45
 msgid "Session prepared for logout"
-msgstr "Sessionen er klargjort til at logge ud"
+msgstr "Du kan nu logge ud"
 
 #: logout.C:51
 msgid ""

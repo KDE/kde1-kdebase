@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-01-25 13:22+0100\n"
-"PO-Revision-Date: 1998-01-27 22:00+CET-1\n"
+"PO-Revision-Date: 1998-02-25 13:40+CET-1\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
@@ -105,7 +105,7 @@ msgstr "&Genlæs træ"
 
 #: kfmgui.cpp:379
 msgid "&Reload Document"
-msgstr "Genlæs &Dokument"
+msgstr "Genlæs &dokument"
 
 #: kfmgui.cpp:381
 msgid "Rescan &bindings"
@@ -157,7 +157,7 @@ msgstr "&Gem Indstillinger"
 
 #: kfmgui.cpp:423
 msgid "Configure Browser..."
-msgstr "Instil Browser"
+msgstr "Indstil Browser"
 
 #: kfmgui.cpp:449
 msgid "&Find"
@@ -277,7 +277,7 @@ msgid ""
 msgstr ""
 "Forfatter: Torben Weis\n"
 "weis@kde.org\n"
-"HTML widget af af Mrtin Jones\n"
+"HTML widget af af Martin Jones\n"
 "Proxy Manager af Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de"
 
@@ -345,7 +345,7 @@ msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
 msgstr ""
-"Denne side er ikke sikker, men indeholder et link til dit lokale filsystem"
+"Denne side er ikke sikker,\nmen indeholder et link til dit lokale filsystem"
 
 #: kfmview.cpp:704
 msgid "Symbolic Link"
@@ -417,7 +417,7 @@ msgstr "Kan kun starte programmer på lokale drev\n"
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
-msgstr ""
+msgstr "Kan kun bruge *.kdelnk filer\npå den lokale harddisk"
 
 #: kbind.cpp:1625
 #, c-format
@@ -476,7 +476,7 @@ msgstr "Installerer Skabeloner"
 
 #: main.cpp:215
 msgid "Cd"
-msgstr ""
+msgstr "Skift til"
 
 #: main.cpp:216
 msgid "New View"
@@ -569,7 +569,7 @@ msgstr ""
 
 #: kfmprops.cpp:429
 msgid "Read"
-msgstr "Læse"
+msgstr "Læs"
 
 #: kfmprops.cpp:434
 msgid ""
@@ -581,7 +581,7 @@ msgstr ""
 
 #: kfmprops.cpp:436
 msgid "Write"
-msgstr "Skrive"
+msgstr "Skriv"
 
 #: kfmprops.cpp:441
 msgid ""
@@ -593,7 +593,7 @@ msgstr ""
 
 #: kfmprops.cpp:443
 msgid "Exec"
-msgstr "Eksekver"
+msgstr "Kør"
 
 #: kfmprops.cpp:447
 msgid "Special"
@@ -663,7 +663,7 @@ msgstr "Kør"
 
 #: kfmprops.cpp:693
 msgid "Browse"
-msgstr ""
+msgstr "Søg..."
 
 #: kfmprops.cpp:697
 msgid "Working Directory"
@@ -675,7 +675,7 @@ msgstr "Kør normalt"
 
 #: kfmprops.cpp:717
 msgid "Run in Panel (drag onto Panel to execute)"
-msgstr "Kør i Panel (træk til Panel for at eksekvere)"
+msgstr "Kør i Panel (træk til Panel for at køre)"
 
 #: kfmprops.cpp:721
 msgid "Title of Application"
@@ -758,7 +758,7 @@ msgstr "Default applikation"
 
 #: kfmprops.cpp:1707
 msgid "Device ( /dev/fd0 )"
-msgstr ""
+msgstr "Enhed ( /dev/fd0 )"
 
 #: kfmprops.cpp:1715
 msgid "Mount Point ( /floppy )"
@@ -1317,4 +1317,4 @@ msgstr "KFM Spørgsmål"
 msgid ""
 "Syntax Error:\n"
 "kfmexec command [URLs ....]\n"
-msgstr "Syntaks fej [URLs ....]\n"
+msgstr "Syntaks fejl [URLs ....]\n"
