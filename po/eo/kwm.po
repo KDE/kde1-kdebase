@@ -1,0 +1,177 @@
+# Esperantaj mesaøoj por "kwm"
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kwm 1.0pre2\n"
+"POT-Creation-Date: 1998-06-18 22:21+0200\n"
+"PO-Revision-Date: 1998-07-17 21:00+0100\n"
+"Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
+"Language-Team: Esperanto <eo@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.C:68
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr ""
+"kwm: Þajnas ke jam fenestroregilo estas aktiva. Kwm ne lanæita\n"
+
+
+#: main.C:82
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr "kwm: Eraro dum lanæado; mortante\n"
+
+#: main.C:470
+msgid "Preparing session ... "
+msgstr "Preparante seancon ... "
+
+#: main.C:489
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Kopirajto (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: main.C:496
+msgid "Usage: "
+msgstr "uzo: "
+
+#: main.C:507
+msgid "&Maximize"
+msgstr "M&aksimigu"
+
+#: main.C:508
+msgid "&Restore"
+msgstr "&Restarigu"
+
+#: main.C:509
+msgid "&Iconify"
+msgstr "&Piktogramigu"
+
+#: main.C:510
+msgid "&DeIconify"
+msgstr "Malp&iktogramigu"
+
+#: main.C:511
+msgid "&Sticky"
+msgstr "&Fiksu"
+
+#: main.C:512
+msgid "&UnSticky"
+msgstr "Malfi&ksu"
+
+#: main.C:513
+msgid "Mo&ve"
+msgstr "&Movu"
+
+#: main.C:514
+msgid "Resi&ze"
+msgstr "Þanøu &grandecon"
+
+#: main.C:516
+msgid "&To desktop"
+msgstr "Al &labortabulo"
+
+#: main.C:518
+msgid "&Onto current desktop"
+msgstr "&Sur aktualan labortabulon"
+
+#: main.C:571
+msgid "One"
+msgstr "Unu"
+
+#: main.C:574
+msgid "Two"
+msgstr "Du"
+
+#: main.C:577
+msgid "Three"
+msgstr "Tri"
+
+#: main.C:580
+msgid "Four"
+msgstr "Kvar"
+
+#: main.C:583
+msgid "Five"
+msgstr "Kvin"
+
+#: main.C:586
+msgid "Six"
+msgstr "Ses"
+
+#: main.C:589
+msgid "Seven"
+msgstr "Sep"
+
+#: main.C:592
+msgid "Eight"
+msgstr "Ok"
+
+#: main.C:606
+msgid "Unnamed Desktop"
+msgstr "nenomita labortabulo"
+
+#: main.C:942
+msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
+msgstr "Kelkaj rastrobildoj ne estas en ordo: Figurmodo malaktivigita\n"
+
+#: main.C:1054
+msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
+msgstr "Kelkaj rastrobildoj ne estas en ordo: Anima¼modo malaktivigita\n"
+
+#: main.C:1311
+msgid "*** No Tasks ***"
+msgstr "*** Neniuj taskoj ****"
+
+#: minicli.C:116
+msgid "Command:"
+msgstr "Komando:"
+
+#: warning.C:36
+msgid "Ooops!"
+msgstr "Ho ve!"
+
+#: logout.C:36 taskmgr.C:108
+msgid "Logout"
+msgstr "Adiaýu"
+
+#: logout.C:46
+msgid "Session prepared for logout"
+msgstr "Seanco estas preparata por adiaýo"
+
+#: logout.C:52
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+"La sekvaj aplika¼oj enhavas nesekurigitajn datumojn\n"
+"kiuj estos perditaj en via sekva seanco."
+
+#: logout.C:63
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+"La sekvaj aplika¼oj ne povos esti restarigataj en via sekva seanco,\n"
+"sed nur relanæataj. Certigu, ke ili ne enhavas gravajn nesekurigitajn\n"
+"datumojn."
+
+#: logout.C:74
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+"La sekvaj aplika¼oj ne estas X11-atentaj kaj do ne povos esti restarigataj\n"
+"en via sekva seanco. Certigu, ke ili ne enhavas gravajn neskurigitajn\n"
+"datumojn."
+
+#: taskmgr.C:107
+msgid "Switch to"
+msgstr "Komutu al"
+
+#: taskmgr.C:121
+msgid "Current session"
+msgstr "Aktuala seanco"

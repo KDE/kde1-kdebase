@@ -1,0 +1,355 @@
+# Esperantaj mesaøoj por "kfind"
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfind 1.0pre2\n"
+"POT-Creation-Date: 1998-06-16 15:37+0200\n"
+"PO-Revision-Date: 1998-07-13 21:00+0100\n"
+"Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
+"Language-Team: Esperanto <eo@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: kfdird.cpp:46
+msgid "Directories:"
+msgstr "Dosierujoj:"
+
+#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
+msgid "Cannot open or read directory."
+msgstr "Ne eblis malfermi aý legi la dosierujon."
+
+#: kfindtop.cpp:118
+msgid "&Start search"
+msgstr "Ek&seræu"
+
+#: kfindtop.cpp:120
+msgid "S&top search"
+msgstr "Æ&esu seræi"
+
+#: kfindtop.cpp:125
+msgid "&Open"
+msgstr "&Malfermu"
+
+#: kfindtop.cpp:127
+msgid "&Add to archive"
+msgstr "&Aldonu al ar¶ivo"
+
+#: kfindtop.cpp:132
+msgid "&Properties"
+msgstr "&Ecoj"
+
+#: kfindtop.cpp:135
+msgid "Open Containing &Folder"
+msgstr "Malfermu koncernajn &dosierujojn"
+
+#: kfindtop.cpp:138
+msgid "&Save Search"
+msgstr "&Sekurigu la seræopciojn"
+
+#: kfindtop.cpp:155
+msgid "&Select All"
+msgstr "&Elektu æion"
+
+#: kfindtop.cpp:157
+msgid "Unse&lect All"
+msgstr "M&alelektu æion"
+
+#: kfindtop.cpp:159
+msgid "&Invert Selection"
+msgstr "&Inversigu elekton"
+
+#: kfindtop.cpp:171
+msgid "&Preferences ..."
+msgstr "&Preferoj ..."
+
+#: kfindtop.cpp:176
+#, c-format
+msgid ""
+"KFind %s\n"
+"Frontend to find utility\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"\n"
+"Special thanks to Stephan Kulow\n"
+"<coolo@kde.org>"
+msgstr ""
+"KFind %s\n"
+"Fasado por trovilo\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"\n"
+"Apartan dankon al Stephan Kulow\n"
+"ycoolo@kde.org>"
+
+#: kfindtop.cpp:196
+msgid "Start Search"
+msgstr "Ekseræu"
+
+#: kfindtop.cpp:201
+msgid "New Search"
+msgstr "Nova seræo"
+
+#: kfindtop.cpp:206
+msgid "Stop Search"
+msgstr "Æesu seræi"
+
+#: kfindtop.cpp:219
+msgid "Add to archive"
+msgstr "Aldonu al ar¶ivo"
+
+#: kfindtop.cpp:234
+msgid "Open Containing Folder"
+msgstr "Malfermu la dosierujon, kiu enhavas øin"
+
+#: kfindtop.cpp:239
+msgid "Save Search Results"
+msgstr "Sekurigu la serærezulton"
+
+#: kftabdlg.cpp:71
+msgid "&Named:"
+msgstr "&Nomo:"
+
+#: kftabdlg.cpp:74
+msgid "&Look in:"
+msgstr "&Trarigardu:"
+
+#: kftabdlg.cpp:77
+msgid "&Browse ..."
+msgstr "&Rigardu ..."
+
+#: kftabdlg.cpp:83
+msgid "Include &subfolders"
+msgstr "Trarigardu ankaý &subdosierujon"
+
+#: kftabdlg.cpp:114
+msgid " Name& Location "
+msgstr " Nomo k. &Situo "
+
+#: kftabdlg.cpp:126
+msgid "and"
+msgstr "kaj"
+
+#: kftabdlg.cpp:127
+msgid "month(s)"
+msgstr "monato(j)"
+
+#: kftabdlg.cpp:128
+msgid "day(s)"
+msgstr "tago(j)"
+
+#: kftabdlg.cpp:143
+msgid "&All files"
+msgstr "Æiujn &dosierojn"
+
+#: kftabdlg.cpp:144
+msgid "Find all files created or &modified:"
+msgstr "Trovu æiujn dosierojn &kreitajn aý þanøitajn:"
+
+#: kftabdlg.cpp:145
+msgid "&between"
+msgstr "&inter"
+
+#: kftabdlg.cpp:146
+msgid "during the previou&s "
+msgstr "du&m la pasintaj "
+
+#: kftabdlg.cpp:147
+msgid "&during the previous "
+msgstr "dum la pasin&taj"
+
+#: kftabdlg.cpp:195
+msgid " Date Modified "
+msgstr " Þanøodato "
+
+#: kftabdlg.cpp:202
+msgid "Of &type:"
+msgstr "Dosier&tipo:"
+
+#: kftabdlg.cpp:204
+msgid "&Containing Text:"
+msgstr "&Enhavita teksto:"
+
+#: kftabdlg.cpp:209
+msgid "&Size is:"
+msgstr "&Grandeco:"
+
+#: kftabdlg.cpp:232
+msgid "All Files and Folders"
+msgstr "Æiuj dosieroj kaj dosierujoj"
+
+#: kftabdlg.cpp:234
+msgid "Folders"
+msgstr "Dosierujoj"
+
+#: kftabdlg.cpp:235
+msgid "Symbolic links"
+msgstr "Simbolaj ligoj"
+
+#: kftabdlg.cpp:236
+msgid "Special files (sockets, device files...)"
+msgstr "Specialaj dosieroj (konektiloj, aparatdosieroj...)"
+
+#: kftabdlg.cpp:237
+msgid "Executable files"
+msgstr "Ruleblaj dosieroj"
+
+#: kftabdlg.cpp:238
+msgid "SUID executable files"
+msgstr "Dosieroj, ruleblaj kun posedantorajto (SUID)"
+
+#: kftabdlg.cpp:247
+msgid "At Least"
+msgstr "almenaý"
+
+#: kftabdlg.cpp:248
+msgid "At Most"
+msgstr "maksimume"
+
+#: kftabdlg.cpp:259
+msgid " Advanced "
+msgstr " Specialaj opcioj"
+
+#: kftabdlg.cpp:492
+msgid "The date is not valid!!"
+msgstr "La dato ne estas valida!!"
+
+#: kftabdlg.cpp:504
+msgid "The month(s) value isn't valid!!"
+msgstr "La monatnumero(j) ne estas valida(j)!!"
+
+#: kftabdlg.cpp:515
+msgid "The day(s) value isn't valid!!"
+msgstr "La tagnumero(j) ne estas valida(j)!!"
+
+#: kftabdlg.cpp:532
+msgid "The value in size isn't valid number!!"
+msgstr "La grandecovaloro ne estas valida nombro!!"
+
+#: kfoptions.cpp:52
+msgid "Preferences"
+msgstr "Preferoj"
+
+#: kfoptions.cpp:74
+msgid "File format:"
+msgstr "Dosierformo:"
+
+#: kfoptions.cpp:76
+msgid "Save results to file:"
+msgstr "Sekurigu la rezultojn al la dosiero:"
+
+#: kfoptions.cpp:79
+msgid "Save results to file ~/.kfind-results.html"
+msgstr "Sekurigu la rezultojn al la dosiero ~/.kfind-results.html"
+
+#: kfoptions.cpp:81
+msgid "Browse"
+msgstr "Rigardu"
+
+#: kfoptions.cpp:94
+msgid "Plain Text"
+msgstr "Plena teksto"
+
+#: kfoptions.cpp:123
+msgid "Saving"
+msgstr "Sekurigo"
+
+#: kfoptions.cpp:130
+msgid "Create Archive:"
+msgstr "Krei ar¶ivon:"
+
+#: kfoptions.cpp:132
+msgid "Add to Archive:"
+msgstr "Aldoni al øi:"
+
+#: kfoptions.cpp:136
+msgid "Patterns:"
+msgstr "Þablono:"
+
+#: kfoptions.cpp:139
+msgid "Add New"
+msgstr "Nova ar¶ivilo"
+
+#: kfoptions.cpp:180
+msgid "Archivers"
+msgstr "Ar¶iviloj"
+
+#: kfwin.cpp:111 kfwin.cpp:118 kfwin.cpp:134 kfwin.cpp:161
+#, c-format
+msgid "%d file(s) found"
+msgstr "%d dosiero(j) trovita(j)"
+
+#: kfwin.cpp:245
+msgid "It wasn't possible to save results!"
+msgstr "Ne eblis sekurigi la rezultojn!"
+
+#: kfwin.cpp:253 kfwin.cpp:255 kfwin.cpp:257
+msgid "KFind Results File"
+msgstr "KFind-rezultodosiero"
+
+#: kfwin.cpp:282
+msgid "Results were saved to file\n"
+msgstr "La rezulto estas sekurigita al la dosiero\n"
+
+#: kfwin.cpp:297
+#, c-format
+msgid ""
+"Do you really want to delete file:\n"
+"%s"
+msgstr ""
+"Æu vi vere volas forigi la dosieron:\n"
+"%s"
+
+#: kfwin.cpp:299
+msgid "Delete File"
+msgstr "Forigu la dosieron"
+
+#: kfwin.cpp:311
+msgid ""
+"You have no permission\n"
+" to delete this file"
+msgstr ""
+"Vi ne havas la permeson\n"
+" forigi tiun æi dosieron"
+
+#: kfwin.cpp:317
+msgid ""
+"It isn't possible to delete\n"
+"selected file"
+msgstr ""
+"Ne eblis forigi la\n"
+"elektitan dosieron"
+
+#: kfwin.cpp:335
+msgid ""
+"You have no permission\n"
+" to delete this directory"
+msgstr ""
+"Vi ne havas la permeson\n"
+" forigi tiun æi dosierujon"
+
+#: kfwin.cpp:340
+msgid ""
+"Specified directory\n"
+"is not empty!"
+msgstr ""
+"La indikita dosierujo\n"
+"ne estas malplena!"
+
+#: kfwin.cpp:345
+msgid ""
+"It isn't possible to delete\n"
+"selected directory"
+msgstr ""
+"Ne eblis forigi la\n"
+"elektitan dosierujon"
+
+#: kfwin.cpp:437
+msgid "Couldn't recognize archive type!"
+msgstr "Ne eblis rekoni la tipon de la ar¶ivo!"
+
+#: kfwin.cpp:496
+msgid "Error while creating child process!"
+msgstr "Okazis eraro dum kreo de procezido!"
+

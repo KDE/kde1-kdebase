@@ -1,0 +1,53 @@
+# Esperantaj mesaøoj por "kcmbell"
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmbell 1.0pre2\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
+"PO-Revision-Date: 1998-07-14 19:00+0100\n"
+"Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
+"Language-Team: Esperanto <eo@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:52
+msgid "&Bell"
+msgstr "&Pepo"
+
+#: main.cpp:58
+msgid "usage: kcmbell [-init | bell]\n"
+msgstr "uzo: kcmbell [-init | bell]\n"
+
+#: main.cpp:89
+msgid "Bell settings"
+msgstr "Pepokonfigura¼o"
+
+#: bell.cpp:85
+msgid "Volume"
+msgstr "Laýteco"
+
+#: bell.cpp:86
+msgid "Pitch"
+msgstr "Alteco"
+
+#: bell.cpp:87
+msgid "Duration"
+msgstr "Daýro"
+
+#: bell.cpp:89
+msgid "Hz"
+msgstr "Hz"
+
+#: bell.cpp:90
+msgid "ms"
+msgstr "ms"
+
+#: bell.cpp:92
+msgid "Test"
+msgstr "Testo"
+
+
