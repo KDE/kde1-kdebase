@@ -121,6 +121,7 @@ SearchDialog::SearchDialog(const char *searchFor, const char *replaceWith,
   connect(button2,SIGNAL(clicked()),this,SLOT(reject()));//SIGNAL(doneSearch()));
 
   search->setFocus();
+  mainLayout->activate();
   resize(minimumSize());
 }
 
@@ -196,6 +197,7 @@ ReplacePrompt::ReplacePrompt(QWidget *parent, const char *name)
   hbl->addStretch();
   connect(button4,SIGNAL(clicked()),this,SLOT(reject()));
 
+  mainLayout->activate();
   resize(minimumSize());
 /*
   if (parent) {
@@ -269,6 +271,8 @@ GotoLineDialog::GotoLineDialog(int line, QWidget *parent, const char *name)
 
   e1->setFocus();
   e1->setMinimumWidth(minimumSize().width());
+
+  mainLayout->activate();
   resize(minimumSize());
 }
 
@@ -426,6 +430,9 @@ SettingsDialog::SettingsDialog(int flags, int wrapAt, int tabWidth, int undoStep
   vbl4->addStretch( 1 );
   vbl4->addWidget(button1);
   vbl4->addWidget(button2);
+
+  mainLayout->activate();
+  resize(minimumSize());
 }
 
 int SettingsDialog::getFlags() {
@@ -521,6 +528,9 @@ ColorDialog::ColorDialog(QColor *colors, QWidget *parent, const char *name)
   button->setFixedSize( button->sizeHint() );
   hbl->addWidget( button );
   connect(button,SIGNAL(clicked()),this,SLOT(reject()));
+
+  mainLayout->activate();
+  resize(minimumSize());
 }
 
 void ColorDialog::getColors(QColor *colors) {
