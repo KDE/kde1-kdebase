@@ -1,3 +1,9 @@
+* Fri Nov 27 7:20:00 CEST 1998 
+
+Implemented kbgndwm's ability to read wallpapers from a directory
+Yet another "fix" for kpager not to need Qt-1.41
+Some bug fixes
+
 * Wed Nov 18 7:20:00 CEST 1998 
 
 Added Popup menus when right clicking on a window or on desktop

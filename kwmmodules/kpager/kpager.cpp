@@ -150,13 +150,13 @@ KPager::~KPager()
 #ifdef KPAGERDEBUG
     printf("KPager:: destructor\n");
 #endif
-
+/*
     delete m_file;
     delete m_options;
     delete m_drawmode;
     delete m_help;
     delete menu;
-
+*/
 #ifdef KPAGERDEBUG
     printf("KPager:: destructor(end)\n");
 #endif
@@ -357,7 +357,7 @@ QPopupMenu *KPager::getOptionlikeMenu(void)
 
 }
 
-void KPager::showPopupMenu(Window w,QPoint &p)
+void KPager::showPopupMenu(Window w,QPoint p)
 {
     printf("Here\n %d,%d\n",p.x(),p.y());
     QPopupMenu *menu;

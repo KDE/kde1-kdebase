@@ -74,7 +74,7 @@ public slots:
     void options_drawIcon();
     void options_drawPixmap();
 
-    void showPopupMenu(Window w,QPoint &p);
+    void showPopupMenu(Window w,QPoint p);
 
     void windowOperations(int id); 
 

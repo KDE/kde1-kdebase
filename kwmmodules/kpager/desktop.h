@@ -84,11 +84,21 @@ private:
     QPixmap *backgroundPixmap;
     bool useBackgroundInfoFromKbgndwm;
     bool useWallpaper;
+    bool useDir;
     QColor color1;
     QColor color2;
     uint pattern[8];
     
-    enum { Tiled = 1, Centred, Scaled};
+    enum { Tiled = 1,
+         Mirrored,
+         CenterTiled,
+         Centred,
+         CentredBrick,
+         CentredWarp,
+         CentredMaxpect,
+         SymmetricalTiled,
+         SymmetricalMirrored,
+         Scaled };
     int wpMode;
     
     enum { Flat = 1, Gradient, Pattern};
@@ -99,7 +109,8 @@ private:
     
     void readBackgroundSettings(void);     // read kbgndwm settings
     void prepareBackground(void);          // fills the backgroundPixmap
-    QPixmap *loadWallpaper(QString wallpaper);
+//    QPixmap *loadWallpaper(QString wallpaper);
+    void loadWallpaperBackground(QString wallpaper);
 
     void grabDesktop(void);
     void grabWindowContents(WindowProperties *wp);
@@ -151,7 +162,7 @@ signals:
     void moveWindow(Window w, int desktop, int x, int y, int origdesk);
     void switchToDesktop(int id);
     void updateDesk(int id);
-    void showPopupMenu(Window w, QPoint &p);
+    void showPopupMenu(Window w, QPoint p);
 
 };
     

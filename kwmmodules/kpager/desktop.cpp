@@ -21,6 +21,7 @@
  *   or to Antonio Larrosa, Rio Arnoya, 10 5B, 29006 Malaga, Spain
  *
  */
+#include <qdir.h>
 #include "desktop.moc"
 #include <qpainter.h>
 #include <stdio.h>
@@ -59,7 +60,7 @@ Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
     delete defaultfont;
     
     readBackgroundSettings();
-
+    
     setMouseTracking(TRUE);
         
 }
@@ -504,7 +505,6 @@ WindowProperties *Desktop::windowAtPosition(const QPoint *p,bool *ok,QPoint *pos
 
 void Desktop::mouseMoveEvent (QMouseEvent *e)
 {
-    printf("m\n");
     if (resizing)
     {
 	if (resizingWP==0L) {resizing=false;releaseMouse();return;};
@@ -642,7 +642,7 @@ void Desktop::mousePressEvent ( QMouseEvent *e )
     {
         bool ok;
         WindowProperties *wp=windowAtPosition(&e->pos(),&ok);
-	emit showPopupMenu((wp==0L)?(0):(wp->id), (QPoint &)e->globalPos() );
+	emit showPopupMenu((wp==0L)?(0):(wp->id), mapToGlobal(e->pos()) );
     };
 
 }
@@ -744,7 +744,24 @@ void Desktop::readBackgroundSettings(void)
                    KApplication::localconfigdir() + s);
 
     config.setGroup( "Common" );
+    bool useDir = config.readBoolEntry( "UseDir", false);
     int randomid=config.readNumEntry("Item");    
+    QString wallpaper;
+    if (useDir)
+    {
+	QString tmpd = config.readEntry( "Directory", KApplication::kde_wallpaperdir());
+        QDir d( tmpd, "*", QDir::Name, QDir::Readable | QDir::Files );
+ 
+        QStrList *list = (QStrList *)d.entryList();
+	color1 = QColor(black);
+        gfMode=Flat;
+        orMode=Portrait;
+        wpMode = Tiled;
+        useWallpaper = true;
+        wallpaper = d.absPath() + "/" + list->at( randomid ); 	
+	loadWallpaperBackground(wallpaper);
+	return;
+    };
 
     char group[50];
     sprintf(group,"Desktop%d",randomid);
@@ -799,31 +816,18 @@ void Desktop::readBackgroundSettings(void)
     }
 
     useWallpaper = config.readBoolEntry( "UseWallpaper", false );
-    QString wallpaper;
     if ( useWallpaper )
     {
-        QPixmap *qxpm;
         wallpaper = config.readEntry( "Wallpaper", "" );
-        qxpm=loadWallpaper(wallpaper);
-        backPixmapWidth=qxpm->width();
-        backPixmapHeight=qxpm->height();
-        if (qxpm==NULL) printf("isNULL !!!\n");
-        if (bigBackgroundPixmap!=0L) delete bigBackgroundPixmap;
-        if (backgroundPixmap!=0L) delete backgroundPixmap;
-        QWMatrix matrix;
-        matrix.scale((double)120/backPixmapWidth,(double)120/backPixmapWidth);
-        bigBackgroundPixmap = new QPixmap(qxpm->xForm(matrix));
-        delete qxpm;
-        matrix.scale(width()/bigBackgroundPixmap->width(),(height()-getHeaderHeight())/bigBackgroundPixmap->height());
-        backgroundPixmap = new QPixmap(bigBackgroundPixmap->xForm(matrix));
-        useBackgroundInfoFromKbgndwm=true;
+        loadWallpaperBackground(wallpaper);
 #ifdef DESKTOPDEBUG
         printf("[%d]Use wallpaper\n",id);
 #endif
     }
 };
 
-QPixmap *Desktop::loadWallpaper(QString wallpaper)
+
+void Desktop::loadWallpaperBackground(QString wallpaper)
 {
     QString filename;
 
@@ -842,7 +846,21 @@ QPixmap *Desktop::loadWallpaper(QString wallpaper)
         delete wpPixmap;
         wpPixmap = 0;
     }
-    return wpPixmap;
+//  return wpPixmap;
+    QPixmap *wpPixmap2=(QPixmap *)wpPixmap;
+        if (wpPixmap2==NULL) printf("isNULL !!!\n");
+        backPixmapWidth=wpPixmap2->width();
+        backPixmapHeight=wpPixmap2->height();
+        if (bigBackgroundPixmap!=0L) delete bigBackgroundPixmap;
+        if (backgroundPixmap!=0L) delete backgroundPixmap;
+        QWMatrix matrix;
+        matrix.scale((double)120/backPixmapWidth,(double)120/backPixmapWidth);
+        bigBackgroundPixmap = new QPixmap(wpPixmap2->xForm(matrix));
+//        delete qxpm;
+        matrix.scale(width()/bigBackgroundPixmap->width(),(height()-getHeaderHeight())/bigBackgroundPixmap->height());
+        backgroundPixmap = new QPixmap(bigBackgroundPixmap->xForm(matrix));
+        useBackgroundInfoFromKbgndwm=true;
+	delete wpPixmap;
 }
 
 void Desktop::prepareBackground(void)
@@ -918,8 +936,30 @@ void Desktop::prepareBackground(void)
     }
     if (useWallpaper)
     {
+        if ( ((backPixmapWidth > screen_width)||(backPixmapHeight > screen_height) || (wpMode == CentredMaxpect)) && (wpMode != Scaled) )
+        {
+        // shrink if image is bigger than desktop or CentredMaxpect
+        float sc;
+        float S = (float)screen_height / (float)screen_width ;
+        float I = (float)backPixmapHeight / (float)backPixmapWidth ;
+ 
+        if (S < I)
+          sc= (float)screen_height / (float)backPixmapHeight;
+        else
+          sc= (float)screen_width / (float)backPixmapWidth;
+ 
+        QWMatrix scaleMat;
+        scaleMat.scale(sc,sc);
+/* 
+        QPixmap tmp = wpPixmap->xForm( scaleMat );
+        wpPixmap->resize( tmp2.width(), tmp2.height() );
+        bitBlt( wpPixmap, 0, 0, &tmp2 );
+*/
+	backPixmapWidth*=sc;
+	backPixmapHeight*=sc;
+        }
+
         switch (wpMode)
-            
         {
         case (Scaled) :
             {
@@ -936,12 +976,12 @@ void Desktop::prepareBackground(void)
                 QWMatrix matrix;
                 matrix.scale(
                              ((double)backPixmapWidth*width()/screen_width)/bigBackgroundPixmap->width(),
-                             (((double)backPixmapWidth*(height()-getHeaderHeight())/screen_height)/bigBackgroundPixmap->height())
+                             (((double)backPixmapHeight*(height()-getHeaderHeight())/screen_height)/bigBackgroundPixmap->height())
                              );
                 QPixmap *tmp = new QPixmap(bigBackgroundPixmap->xForm(matrix));
                 int x,y=0;
 #ifdef DESKTOPDEBUG
-                printf("backPixmap %d x %d\n",backPixmapWidth,backPixmapHeight);
+                printf("[%d]backPixmap %d x %d\n",id,backPixmapWidth,backPixmapHeight);
                 printf("size  %d x %d\n",width(),height()-getHeaderHeight());
                 printf("tmp %d  x  %d\n",tmp->width(),tmp->height());
                 printf("ratio %g  x  %g\n",((double)backPixmapWidth*width()/screen_width)/*/bigBackgroundPixmap->width()*/,(((double)backPixmapWidth*(height()-getHeaderHeight())/screen_height)/*/bigBackgroundPixmap->height()*/));

@@ -52,7 +52,7 @@ KPagerClient::KPagerClient(KWMModuleApplication *_kwmmapp,QWidget *parent,const 
     desktop[0]=new Desktop(0,screenwidth,screenheight,this,"Global Desktop");
     connect(desktop[0],SIGNAL(moveWindow(Window,int,int,int,int)),this,SLOT(moveWindow(Window,int,int,int,int)));
     connect(desktop[0],SIGNAL(updateDesk(int)),this,SLOT(updateDesk(int)));
-    connect(desktop[0],SIGNAL(showPopupMenu(Window,QPoint&)),parent,SLOT(showPopupMenu(Window,QPoint&)));
+    connect(desktop[0],SIGNAL(showPopupMenu(Window,QPoint)),parent,SLOT(showPopupMenu(Window,QPoint)));
 
     right=new KTriangleButton(KTriangleButton::Right,this,"Right");
     left=new KTriangleButton(KTriangleButton::Left,this,"Left");
@@ -331,7 +331,7 @@ void KPagerClient::initDesktops(void)
         connect(desktop[i],SIGNAL(moveWindow(Window,int,int,int,int)),this,SLOT(moveWindow(Window,int,int,int,int)));
         connect(desktop[i],SIGNAL(switchToDesktop(int)),this,SLOT(switchToDesktop(int)));
         connect(desktop[i],SIGNAL(updateDesk(int)),this,SLOT(updateDesk(int)));
-        connect(desktop[i],SIGNAL(showPopupMenu(Window,QPoint&)),parent(),SLOT(showPopupMenu(Window,QPoint&)));
+        connect(desktop[i],SIGNAL(showPopupMenu(Window,QPoint)),parent(),SLOT(showPopupMenu(Window,QPoint)));
         desktop[i]->setGeometry(x,y,w,h);
 	desktop[i]->show();
         x+=w+5;
