@@ -374,7 +374,7 @@ void KWindowConfig::GetSettings( void )
 
   config->setGroup( "General" );
 
-  key = config->readEntry(KWM_MOVE);
+  key = config->readEntry(KWM_MOVE, "Opaque");
   if( key == "Transparent")
     setMove(TRANSPARENT);
   else if( key == "Opaque")
@@ -393,7 +393,7 @@ void KWindowConfig::GetSettings( void )
     config->writeEntry(KWM_RESIZE_ANIM, 1);
   }
 
-  key = config->readEntry(KWM_RESIZE_OPAQUE);
+  key = config->readEntry(KWM_RESIZE_OPAQUE, "Opaque");
   if( key == "Opaque")
     setResizeOpaque(RESIZE_OPAQUE);
   else if ( key == "Transparent")
@@ -510,7 +510,7 @@ void KWindowConfig::SaveSettings( void )
     config->writeEntry(KWM_MAXIMIZE, "off");
 
   v = getAutoRaiseInterval();
-  if (v <0) v = 0; 
+  if (v <0) v = 0;
   config->writeEntry(KWM_AUTORAISE_INTERVAL,v);
 
   if (autoRaiseOn->isChecked())
