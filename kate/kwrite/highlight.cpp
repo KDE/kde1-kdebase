@@ -974,8 +974,9 @@ void AdaHighlight::createItemData(ItemDataList &list) {
   list.append(new ItemData("Normal Text",0));
   list.append(new ItemData("Keyword",1));
   list.append(new ItemData("Decimal",2));
-  list.append(new ItemData("Octal",3));
+  list.append(new ItemData("Base-N",3));
   list.append(new ItemData("Float",4));
+  list.append(new ItemData("Char",5));
   list.append(new ItemData("String",6));
   list.append(new ItemData("Comment",7));
 }
