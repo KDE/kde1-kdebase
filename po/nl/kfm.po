@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-16 01:17+0100\n"
+"POT-Creation-Date: 1999-01-17 01:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Case Roole <cjr@xs4all.nl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -284,7 +284,7 @@ msgstr ""
 #: kbind.cpp:1797 kbind.cpp:1809 kbind.cpp:1825 kbind.cpp:1960 kbind.cpp:1972
 #: kbind.cpp:2017 kbind.cpp:2059 kfmexec.cpp:63 kfmexec.cpp:115
 #: kfmexec/main.cpp:47 kfmgui.cpp:548 kfmgui.cpp:758 kfmman.cpp:367
-#: kfmman.cpp:1400 kfmman.cpp:1628 kfmman.cpp:1654 kfmprops.cpp:380
+#: kfmman.cpp:1400 kfmman.cpp:1628 kfmman.cpp:1674 kfmprops.cpp:380
 #: kfmprops.cpp:648 kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092
 #: kfmprops.cpp:1223 kfmprops.cpp:1697 kfmprops.cpp:2058 kfmprops.cpp:2240
 #: kfmserver.cpp:45 kfmserver.cpp:218 kfmserver.cpp:298 kfmserver.cpp:313
@@ -297,8 +297,8 @@ msgstr ""
 #: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:332 kiojob.cpp:351 kiojob.cpp:566
 #: kiojob.cpp:584 kiojob.cpp:852 kiojob.cpp:873 kiojob.cpp:904 kiojob.cpp:952
 #: kiojob.cpp:1420 kiojob.cpp:1428 kiojob.cpp:1656 krenamewin.cpp:120
-#: popup.cpp:105 root.cpp:943 root.cpp:1204 root.cpp:1222 root.cpp:1228
-#: root.cpp:1234 root.cpp:1315 root.cpp:1840 root.cpp:1865
+#: popup.cpp:105 root.cpp:943 root.cpp:1224 root.cpp:1242 root.cpp:1248
+#: root.cpp:1254 root.cpp:1335 root.cpp:1860 root.cpp:1885
 msgid "KFM Error"
 msgstr "KFM fout"
 
@@ -360,7 +360,7 @@ msgstr "Mijn Home"
 
 #: kfmgui.cpp:1174 kfmgui.cpp:1342 kfmjob.cpp:36 kfmman.cpp:250
 #: kfmtree.cpp:500 kfmview.cpp:490 kfmview.cpp:559 kfmview.cpp:785
-#: kiojob.cpp:87 root.cpp:1223
+#: kiojob.cpp:87 root.cpp:1243
 msgid "ERROR: Malformed URL"
 msgstr "Fout: Misvormde URL"
 
@@ -397,11 +397,11 @@ msgid "ERROR: Drop over malformed URL"
 msgstr "FOUT: verplaatsing van misvormde URL"
 
 #: kfmserver.cpp:133 kfmtree.cpp:538 kfmview.cpp:530 kfmview.cpp:828
-#: kiojob.cpp:653 kiojob.cpp:1026 krenamewin.cpp:20 root.cpp:1266
+#: kiojob.cpp:653 kiojob.cpp:1026 krenamewin.cpp:20 root.cpp:1286
 msgid "KFM Warning"
 msgstr "KFM waarschuwing"
 
-#: kfmtree.cpp:539 kfmview.cpp:531 kfmview.cpp:829 root.cpp:1267
+#: kfmtree.cpp:539 kfmview.cpp:531 kfmview.cpp:829 root.cpp:1287
 #, fuzzy
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
@@ -413,12 +413,12 @@ msgstr ""
 "Ze kunnen niet meer teruggehaald worden"
 
 # FIXME
-#: kfmtree.cpp:506 kfmview.cpp:565 kfmview.cpp:793 root.cpp:1229
+#: kfmtree.cpp:506 kfmview.cpp:565 kfmview.cpp:793 root.cpp:1249
 #, fuzzy
 msgid "ERROR: You dropped a URL over itself"
 msgstr "FOUT: Een bestand mag niet op zichzelf geplaatst worden"
 
-#: kfmtree.cpp:512 kfmview.cpp:571 kfmview.cpp:801 root.cpp:1235
+#: kfmtree.cpp:512 kfmview.cpp:571 kfmview.cpp:801 root.cpp:1255
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "FOUT: Een directory mag niet over z'n kinderen geplaatst worden"
 
@@ -426,7 +426,7 @@ msgstr "FOUT: Een directory mag niet over z'n kinderen geplaatst worden"
 msgid "Open With:"
 msgstr "Openen met:"
 
-#: kfmview.cpp:622 root.cpp:1166
+#: kfmview.cpp:622 root.cpp:1186
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "Fout: Kan eigenschappen niet voor meerdere bestanden openen"
 
@@ -446,11 +446,11 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmtree.cpp:469 kfmview.cpp:738 root.cpp:1316
+#: kfmtree.cpp:469 kfmview.cpp:738 root.cpp:1336
 msgid "Could not access Trash Bin"
 msgstr "Kan de vuilnisbak niet lezen"
 
-#: kfmview.cpp:764 root.cpp:1205
+#: kfmview.cpp:764 root.cpp:1225
 #, fuzzy
 msgid "Can not paste into multiple directories"
 msgstr "Kan niet in meerdere mappen plakken"
@@ -634,11 +634,11 @@ msgstr "Naar vuilnisbak"
 msgid "Open with"
 msgstr "Openen met:"
 
-#: kfmman.cpp:1646 kfmtree.cpp:333 main.cpp:275
+#: kfmman.cpp:1666 kfmtree.cpp:333 main.cpp:275
 msgid "Move"
 msgstr "Verplaats"
 
-#: kfmman.cpp:1650 kfmtree.cpp:337 main.cpp:277
+#: kfmman.cpp:1670 kfmtree.cpp:337 main.cpp:277
 msgid "Link"
 msgstr "Verbinding"
 
@@ -1003,15 +1003,15 @@ msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "Fout: Kan buroblad-map '%s' niet lezen"
 
 # FIXME Fout: kan niet ... neerzetten
-#: root.cpp:992
+#: kfmman.cpp:1652 root.cpp:992 root.cpp:1012
 msgid "ERROR: Can not accept drop"
 msgstr "Fout: Kan 'drop' niet aanvaarden"
 
-#: kfmman.cpp:1629 root.cpp:1841
+#: kfmman.cpp:1629 root.cpp:1861
 msgid "Dont know what to do."
 msgstr "Weet niet wat ik moet doen."
 
-#: kfmman.cpp:1655 kfmtree.cpp:342 root.cpp:1866
+#: kfmman.cpp:1675 kfmtree.cpp:342 root.cpp:1886
 msgid "Dont know what to do"
 msgstr "Weet niet wat ik moet doen"
 
