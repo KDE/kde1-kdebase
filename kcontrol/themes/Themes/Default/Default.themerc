@@ -4,32 +4,4 @@ author=Stefan Taferner
 email=taferner@kde.org
 info=
 description=Reset to default theme-less Kde desktop
-version=0.2
-[Panel]
-background=
-[Filemanager]
-[Display]
-ColorMode0=Gradient
-Color1_0=#000000
-Color2_0=#000080
-[Colors]
-contrast=5
-activeBlend=0,0,0
-inactiveBackground=128,128,128
-activeBackground=0,0,128
-inactiveBlend=192,192,192
-inactiveForeground=192,192,192
-activeForeground=255,255,255
-foreground=0,0,0
-selectForeground=255,255,255
-selectBackground=0,0,128
-background=192,192,192
-windowForeground=0,0,0
-windowBackground=255,255,255
-terminalBackground=#ffffff
-terminalForeground=#000000
-[Window Border]
-[Window Titlebar]
-[Window Button Layout]
-[Sounds]
-[Window Gimmick]
+version=1.0
