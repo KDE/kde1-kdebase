@@ -1308,7 +1308,8 @@ int handle_X_event(XEvent event, unsigned char qt_c)
 		  scr_make_selection(event.xbutton.time);
 		  return 0;
 		case Button2:
-		  scr_paste_selection();
+		    if ((event.xbutton.state & Mod1Mask) == 0)
+			scr_paste_selection();
 		  return 0;
 		}
 	    }
