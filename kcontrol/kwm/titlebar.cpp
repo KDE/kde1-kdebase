@@ -1096,15 +1096,9 @@ void KTitlebarAppearance::GetSettings( void )
   sPixmapActive = config->readEntry("TitlebarPixmapActive");
   sPixmapInactive = config->readEntry("TitlebarPixmapInactive");
   if (!sPixmapActive.isEmpty())
-    {
-      pixmapActive = &iconLoader.loadIcon(sPixmapActive);
-      pbPixmapActive->setPixmap(*pixmapActive);
-    }
+    pbPixmapActive->setPixmap(iconLoader.loadIcon(sPixmapActive));
   if (!sPixmapInactive.isEmpty())
-    {
-      pixmapInactive = &iconLoader.loadIcon(sPixmapInactive);
-      pbPixmapInactive->setPixmap(*pixmapInactive);
-    }
+    pbPixmapInactive->setPixmap(iconLoader.loadIcon(sPixmapInactive));
 
 
   int k = config->readNumEntry(KWM_TITLEANIMATION,0);
