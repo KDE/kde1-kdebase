@@ -1,6 +1,7 @@
 1998-12-04  Alex Zepeda  <garbanzo@hooked.net>
 
 	* README: Removed unneeded whitespace and corrected the spelling.
+	* .cvsignore: Ignore object files too.
 
 1998-11-28  Christian Esken  <esken@kde.org>
 
