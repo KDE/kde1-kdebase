@@ -362,7 +362,7 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
       }
     }
   }
-  else {
+  else if (!c) {
     wc.x = e->x;
     wc.y = e->y;
     wc.width = e->width;
@@ -1712,7 +1712,7 @@ void Manager::manage(Window w, bool mapped){
     }
   }
   DEBUG_EVENTS2("manage..... Client", c,c->window)
-  if ( hasShape(c) ) 
+  if ( hasShape(c) )
 	c->decoration = KWM::noDecoration;
 
   // get KDE specific decoration hint
@@ -2536,7 +2536,7 @@ bool Manager::hasShape(Client* c){
 
   if (!shape)
       return false;
-  
+
   /* cheat: don't try to add a border if the window is non-rectangular */
   XShapeQueryExtents(qt_xdisplay(), c->window,
 		     &boundingShaped, &xws, &yws, &wws, &hws,
@@ -2549,7 +2549,7 @@ bool Manager::hasShape(Client* c){
 // put an appropriate  shape combine mask around the client
 void Manager::setShape(Client* c){
   if (hasShape(c)){
-      
+
     switch (c->getDecoration()){
     case KWM::noDecoration:
       XShapeCombineShape(qt_xdisplay(), c->winId(), ShapeBounding,
