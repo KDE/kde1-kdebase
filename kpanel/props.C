@@ -181,12 +181,12 @@ void kPanel::parseMenus(){
     PMenuItem* pwindowlist;
 
     // --sven: kdisknav button start --
-    panel_menu->add( pdisknav = new PMenuItem(prog_com, klocale->translate("Add Disk Navigator"), 0, 0, 0,
+    panel_menu->add( pdisknav = new PMenuItem(prog_com, klocale->translate("Add Disk Navigator"), 0, "kdisknav.xpm", 0,
 				   this, SLOT(add_kdisknav()), 0, false, 0,
 				   klocale->translate("Add a Disk Navigator menu onto the panel")) );
 
     // --sven: kdisknav button end --
-    panel_menu->add( pwindowlist = new PMenuItem(prog_com, klocale->translate("Add Windowlist"), 0, 0, 0,
+    panel_menu->add( pwindowlist = new PMenuItem(prog_com, klocale->translate("Add Windowlist"), 0, "window_list.xpm", 0,
 				   this, SLOT(add_windowlist()), 0, false, 0,
 				   klocale->translate("Add a windowlist menu onto the panel")) );
     panel_menu->add( new PMenuItem(prog_com, klocale->translate("Configure"), 0, 0, 0,
