@@ -8,7 +8,7 @@ POTFILES = kcmbell.pot kcminfo.pot kcminput.pot kcmkeys.pot kcmkfm.pot \
 	kcmsyssound.pot kcontrol.pot kdehelp.pot kcmdisplay.pot kdm.pot \
 	kdmconfig.pot kfind.pot kfm.pot kfontmanager.pot kikbd.pot \
 	klock.pot kmenuedit.pot konsole.pot kpanel.pot krootwm.pot \
-	kstart.pot kvt.pot kwm.pot kpager.pot kbgndwm.pot
+	kstart.pot kvt.pot kwm.pot kpager.pot kbgndwm.pot kthememgr.pot
 
 EXTRA_DIST = $(POTFILES)
 
@@ -31,4 +31,5 @@ merge:
 	done
 
 messages:
+
 
