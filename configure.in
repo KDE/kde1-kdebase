@@ -155,7 +155,7 @@ AC_CHECK_SETENV
 KWM="kwm klogout kwmclient kpanel"
 AC_ARG_WITH(kwm2, [  --with-kwm2             If you want to try the new kwm],
 if test "x$withval" = "xyes"; then
-KWM="kwm2 kwmcom krootwm kpanel2"
+KWM="kwm2 kwmcom krootwm kpanel2 kwmmodules"
 fi)
 AC_SUBST(KWM)
 
@@ -282,6 +282,8 @@ AC_OUTPUT(Makefile \
 	po/el/Makefile \	
 	kwm2/Makefile \
 	kwm2/pics/Makefile \
+	kwmmodules/Makefile \
+	kwmmodules/kwmpager/Makefile \
 	kwmcom/Makefile \
 	krootwm/Makefile)
 
