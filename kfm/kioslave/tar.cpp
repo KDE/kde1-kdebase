@@ -244,7 +244,7 @@ int KProtocolTAR::OpenDir(KURL *url)
 	readstr = fgets(buffer,1024,dirfile);
 
 	if (readstr && (sscanf(buffer,
-   " %[-drwxst] %[0-9.a-zA-Z_]/%[0-9.a-zA-Z_] %[0-9] %17[a-zA-Z0-9:- ] %[^\n]",
+   " %[-dlrwxst] %[0-9.a-zA-Z_]/%[0-9.a-zA-Z_] %[0-9] %17[a-zA-Z0-9:- ] %[^\n]",
    // is \r necessary, together with \n ? Not here...
 			       p_access, p_owner, p_group,
 			       p_size, p_date, p_name) == 6))
@@ -315,7 +315,7 @@ int KProtocolTAR::OpenDir(KURL *url)
 	    dirlist.append(de);
 	    // debug ("Tar: openDir: %s", de->name.data());
 	  }
-	}
+	} else if (readstr) { fprintf(stderr,"!! Couldn't parse %s",buffer); }
       }
     }
     while( readstr );
@@ -331,7 +331,7 @@ int KProtocolTAR::CloseDir()
   if( dirfile )
   {
     fclose( dirfile );
-    dirfile = NULL;
+    dirfile = 0L;
     Parent->Close();
     Slave.Stop();
   }
