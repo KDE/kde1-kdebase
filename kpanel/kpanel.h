@@ -76,7 +76,7 @@ public:
   bool flat;
   int last_button;
   static myPushButton* most_recent_pressed;
-  bool check_rect_for_leave;
+  Window swallowed_window;
 protected:
   void enterEvent( QEvent * );
   void leaveEvent( QEvent * );
@@ -195,6 +195,8 @@ public:
   void tipTimerDone();
   void tipSleepTimerDone();
 
+  
+  QWidget * parentOfSwallowed(Window);
 
   
 protected:

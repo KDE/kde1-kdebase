@@ -72,12 +72,15 @@ void kPanel::windowAdd(Window w){
  		      entries[bi].button->winId(), 3, 3);
 //       XReparentWindow(qt_xdisplay(), w, 
 // 		      winId(), 150+ 3, 3);
-      XSelectInput(qt_xdisplay(), w, ColormapChangeMask | EnterWindowMask | LeaveWindowMask | PropertyChangeMask);
+      XSelectInput(qt_xdisplay(), w, EnterWindowMask | LeaveWindowMask);
       XResizeWindow(qt_xdisplay(), w,
 		    entries[bi].button->width()-6,
 		    entries[bi].button->height()-6);
       XMapWindow(qt_xdisplay(),w);
-      entries[bi].button->check_rect_for_leave = TRUE;
+      XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, w, True, 
+		  ButtonPressMask,
+		  GrabModeSync, GrabModeAsync, None, None);
+      entries[bi].button->swallowed_window = w;
     }
   }
   
@@ -458,7 +461,6 @@ void kPanel::slotDropEvent( KDNDDropZone *_zone ){
       a = a.right(a.length() - 5);
       if (a.right(1) == "/")
 	a.truncate(a.length()-1);
-      printf("search for %s\n", a.data());
       PMenuItem* pmi = pmenu->searchItem(a);
       
       if (pmi){
@@ -511,4 +513,12 @@ void kPanel::kdisplayPaletteChanged(){
     set_button_text(tmp_button,
  		    KWM::getDesktopName(i+1));
    }
+}
+
+QWidget* kPanel::parentOfSwallowed(Window w){
+  int bi;
+  for (bi=0; bi<nbuttons && entries[bi].swallowed != w; bi++);
+  if (bi<nbuttons)
+    return entries[bi].button;
+  return 0;
 }

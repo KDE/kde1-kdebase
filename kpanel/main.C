@@ -38,6 +38,14 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):
 }
 
 bool MyApp::x11EventFilter( XEvent * ev){
+  if (ev->xany.window != None && 
+      the_panel->parentOfSwallowed(ev->xany.window)){
+    if (ev->type == ButtonPressMask){
+      XAllowEvents(qt_xdisplay(), SyncPointer, CurrentTime);
+      the_panel->parentOfSwallowed(ev->xany.window)->grabMouse();
+    }
+    ev->xany.window = the_panel->parentOfSwallowed(ev->xany.window)->winId();
+  }
   if (ev->type == KeyPress){
     XKeyEvent* e = &ev->xkey;
     int kc = XKeycodeToKeysym(qt_xdisplay(), e->keycode, 0);

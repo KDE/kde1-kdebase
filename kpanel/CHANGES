@@ -5,6 +5,8 @@ In kpanel-0.18:
          handling fixed.
        - texture support "BackgroundTexture=<file>" (Thanks to 
          Donavan Stanley)
+       - some fixes for swallowing (needs kwm >= 0.10.19 to work)
+
     Patchlevel 0:
        - new icons 
        - visual changes to work well with the new icons
@@ -55,6 +57,7 @@ In kpanel-0.18:
          no longer able to offer working swallowed windows :-(
          So docking will need some more time (and probably qt-1.5)
          as does the swallwed pager. Sorry.
+         (correction: It was not qt but a bug in kwm :-)
        - transient windows do no longer appear on the taskbar
        - tiny bug with editing desktop-labels fixed 
 

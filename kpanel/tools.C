@@ -53,7 +53,7 @@ myPushButton::myPushButton(QWidget *parent, const char* name)
     never_flat = False;
     flat_means_down = False;
     draw_down = False;
-    check_rect_for_leave = FALSE;
+    swallowed_window = None;
     last_button = 0;
 }
 
@@ -68,19 +68,12 @@ void myPushButton::enterEvent( QEvent * ){
   if (!flat)
     return;
   flat = False;
-  if (check_rect_for_leave)
-    XUnmapSubwindows(qt_xdisplay(), winId());
   if (!never_flat){
     repaint();
   }
 }
 
 void myPushButton::leaveEvent( QEvent * ){
-//    if (check_rect_for_leave
-//        && rect().contains(mapFromGlobal(QCursor::pos()), TRUE))
-//      return;
-  if (check_rect_for_leave)
-    XMapSubwindows(qt_xdisplay(), winId());
   if (flat)
     return;
   flat = True;
@@ -139,6 +132,8 @@ void myPushButton::mousePressEvent( QMouseEvent *e){
     most_recent_pressed = this;
     last_button = e->button();
     setDown( TRUE );
+    if (style() == WindowsStyle && swallowed_window != None)
+      XMoveWindow(qt_xdisplay(), swallowed_window, 4, 4);
     repaint( FALSE );
     emit pressed();
   }
@@ -147,9 +142,12 @@ void myPushButton::mousePressEvent( QMouseEvent *e){
 void myPushButton::mouseReleaseEvent( QMouseEvent *e){
   if ( !isDown() ){
     last_button = 0;
+    releaseMouse();
     return;
   }
   bool hit = hitButton( e->pos() );
+  if (style() == WindowsStyle && swallowed_window != None)
+    XMoveWindow(qt_xdisplay(), swallowed_window, 3, 3);
   setDown( FALSE );
   if ( hit ){
     if ( isToggleButton() )
@@ -165,6 +163,7 @@ void myPushButton::mouseReleaseEvent( QMouseEvent *e){
     emit released();
   }
   last_button = 0;
+  releaseMouse();
 }
 
 void myPushButton::mouseMoveEvent( QMouseEvent *e ){
@@ -181,12 +180,16 @@ void myPushButton::mouseMoveEvent( QMouseEvent *e ){
   if ( hit ) {
     if ( !isDown() ) {
       setDown(TRUE);
+      if (style() == WindowsStyle && swallowed_window != None)
+	XMoveWindow(qt_xdisplay(), swallowed_window, 4, 4);
       repaint(FALSE);
       emit pressed();
     }
   } else {
     if ( isDown() ) {
       setDown(FALSE);
+      if (style() == WindowsStyle && swallowed_window != None)
+	XMoveWindow(qt_xdisplay(), swallowed_window, 3, 3);
       repaint();
       emit released();
     }
