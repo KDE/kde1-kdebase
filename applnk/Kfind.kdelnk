@@ -12,6 +12,8 @@ Type=Application
 Terminal=0
 Comment=Find Utility
 Comment[de]=Suchwerkzeug für Dateien
+Comment[nl]=Zoekprogramma voor het vinden van bestanden.
 Name=Find Files
 Name[de]=Dateien suchen
+Name[nl]=Bestanden zoeken
 

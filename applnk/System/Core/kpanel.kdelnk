@@ -3,4 +3,5 @@ Type=Application
 Exec=kpanel
 DocPath=kpanel.html
 Info=The KDE Desktop Panel.
+Info[nl]=Het KDE burobladpaneel.
 

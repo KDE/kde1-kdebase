@@ -5,4 +5,5 @@ Exec=kvt -T "%c"
 Icon=UNIX.xpm
 DocPath=kvt.html
 Info=Terminal Emulation (kvt)
+Info[nl]=Terminal emulatie (kvt)
 Terminal=0

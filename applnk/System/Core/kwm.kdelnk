@@ -3,4 +3,5 @@ Type=Application
 execute=kwm
 docPath=kwm/kwm.html
 comment=kwm is the KDE window manager
+comment[nl]=KWm is de KDE window manager
 

@@ -8,5 +8,7 @@ Path=
 Terminal=0
 Name=Home Directory
 Name[de]=Heimatverzeichnis
+Name[nl]=Homedirectory
 Comment=This folder contains all your personal files.
 Comment[de]=Dieses Verzeichnis enthält alle Ihre persönlichen Dateien.
+Comment[nl]=Deze map bevat all uw persoonlijke bestanden.

@@ -1,8 +1,10 @@
 [KDE Desktop Entry]
 Name=Arrange Icons
+Name[nl]=Pictogrammen schikken
 BinaryPattern=
 Protocols=
 Comment=Arrange Desktop Icons
+Comment[nl]=Schik de buroblad-pictogrammen
 Exec=kfmclient sortDesktop
 Icon=kfm_refresh.xpm
 TerminalOptions=

@@ -1,10 +1,12 @@
 [KDE Desktop Entry]
 Name=Refresh Desktop
 Name[de]=Desktop neuzeichnen
+Name[nl]=Buroblad verversen
 BinaryPattern=
 Protocols=
 Comment=Update desktop icons
 Comment[de]=Zeichnet alle Elemente auf dem Desktop neu
+Comment[nl]=Ververs alle pictogrammen op het buroblad
 Exec=kfmclient refreshDesktop
 Icon=kfm_refresh.xpm
 TerminalOptions=

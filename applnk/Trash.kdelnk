@@ -8,6 +8,7 @@ Path=
 Terminal=0
 Name=Trashcan
 Name[de]=Papierkorb
+Name[nl]=Vuilnisbak
 Comment=This folder contains files to be deleted
 Comment[de]=Dieses Verzeichnis enthält die zu löschenden Dateien
-
+Comment[nl]=Deze map bevat de bestanden die verwijderd moeten worden

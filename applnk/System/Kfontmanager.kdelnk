@@ -2,4 +2,5 @@
 Exec=kfontmanager
 DocPath=kfontmanager/kfontmanager.html
 Info=KDE's Fontmanager.
+Info[nl]=KDE-lettertypebeheer.
 Type=Application

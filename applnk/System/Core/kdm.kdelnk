@@ -4,4 +4,5 @@ Section=Applications
 DocPath=kdm.html
 Title=Kdm
 Info=Info on the KDE Display Manager (Xdm replacement).
+Info[nl]=Informatie over het KDE schermbeheer (Xdm vervanger).
 
