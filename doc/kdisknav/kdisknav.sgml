@@ -25,7 +25,7 @@
 
 Disk Navigator is a simple utility to navigate through the filesystem starting
 from the KPanel menu. It is activated when the "Disk Navigator" entry from
-the KPanel menu is selected. In this case, a root menu with the following 
+the KPanel menu is selected. In this case, a menu with the following 
 entries is shown:
 
 
@@ -55,7 +55,9 @@ entries is shown:
 
 </list>
 
-The root menu is highly customizable, as explained in the remaining sections.
+The Disk Navigator menu is easily customizable to fit user needs, 
+as explained in the section
+"Adding, Changing and Removing Filesystem Entries".
 
 <!--################################################################## -->
 <sect>Features & Tips
@@ -65,17 +67,23 @@ The root menu is highly customizable, as explained in the remaining sections.
 <list>
 
 <item>
-On the top of each menu (except the first one) there is an entry "Open Folder".
-when this entry is selected, a KFM window is launched using the current
-folder as URL. If you hold down the Shift key when selecting this entry, Disk
-Navigator opens a terminal in the current folder.
+On the top of each folder submenu there is an entry "Open Folder".
+When this entry is selected, a KFM window referring to the current
+folder is displayed. 
+If you hold down the Shift key when selecting this entry, Disk
+Navigator opens a terminal with the current directory corresponding to the
+folder submenu.
 
 <item>
 Disk Navigator can be used to quickly access files in any mounted filesystem,
 including local files, remote files (eg. NFS mounts), removable media
-(CD-ROM, Iomega Zip, floppy drive), etc.
-When a file is selected, the action performed is exactly the same performed
-when the file is selected in a KFM window.
+(CD-ROM, Iomega Zip, floppy drive), etc. You can create folders in the
+Disk Navigator menu to group related filesystem entries (eg. "Remote 
+Filesystems", "Removable Media", "Development Stuff", etc.).
+
+<item>
+When you click on a file in a folder submenu, the action performed is
+exactly the same performed when the file is clicked in a KFM window.
 
 <item>
 Slow devices: accessing a folder on a slow device can stop Disk Navigator
