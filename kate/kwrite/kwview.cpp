@@ -740,6 +740,14 @@ X      : cut
         case Key_V:
             kWriteDoc->paste(c);
             break;   */
+        case Key_Home:
+            top(c);
+            home(c);
+            break;
+        case Key_End:
+            bottom(c);
+            end(c);
+            break;
         case Key_Delete:
 //        case Key_X:
             kWriteDoc->cut(this,c);

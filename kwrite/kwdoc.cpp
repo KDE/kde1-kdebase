@@ -507,7 +507,12 @@ void KWriteDoc::insert(KWriteView *view, VConfig &c, const char *s) {
   int pos;
 
   if (!s || !*s) return;
+
   recordStart(c.cursor);
+
+	if (c.flags & cfDelOnInput)
+	  delMarkedText(view,c);
+
   pos = 0;
   if (!(c.flags & cfVerticalSelect)) {
     while (*s != 0) {
@@ -568,6 +573,10 @@ void KWriteDoc::insertFile(KWriteView *view, VConfig &c, QIODevice &dev) {
   char *s;
 
   recordStart(c.cursor);
+
+  if (selectEnd >= selectStart && c.flags & cfDelOnInput)
+	  delMarkedText(view,c);
+
   pos = 0;
   do {
     len = dev.readBlock(buf,256);
@@ -725,6 +734,9 @@ void KWriteDoc::newLine(KWriteView *view, VConfig &c) {
 
   recordStart(c.cursor);
 
+  if (selectEnd >= selectStart && c.flags & cfDelOnInput)
+	  delMarkedText(view,c);
+
   if (!(c.flags & cfAutoIndent)) {
     recordAction(KWAction::newLine,c.cursor);
     c.cursor.y++;
@@ -767,8 +779,15 @@ void KWriteDoc::killLine(KWriteView *view, VConfig &c) {
 
 void KWriteDoc::backspace(KWriteView *view, VConfig &c) {
 
+  if (selectEnd >= selectStart && c.flags & cfDelOnInput) {
+	  delMarkedText(view,c);
+		return;
+	}
+
   if (c.cursor.x <= 0 && c.cursor.y <= 0) return;
+
   recordStart(c.cursor);
+
   if (c.cursor.x > 0) {
     if (!(c.flags & cfBackspaceIndent)) {
       c.cursor.x--;
