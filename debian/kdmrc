@@ -16,6 +16,6 @@ ShutdownButton=ConsoleOnly
 FailFont=helvetica,12,5,iso-8859-1,75,0
 GreetFont=charter,24,5,iso-8859-1,50,0
 StdFont=Helvetica,12,5,iso-8859-1,50,0
-SessionTypes=kde;fvwm;failsafe;
+SessionTypes=default;failsafe;
 #GUIStyle=Windows
 
