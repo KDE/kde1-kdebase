@@ -84,6 +84,19 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     
     kwmmapp = kwmmapp_arg;
 
+    // parse the configuration
+    KConfig *kconfig = KApplication::getKApplication()->getConfig();
+
+    kconfig->setGroup("MouseButtons");
+    QString s = kconfig->readEntry("Left", "Selection");
+
+    kpanel_menu_on_left_button = (s == "Menu");
+    
+    if (s != "Selection" && s != "Menu"){
+      kconfig->writeEntry("Left", "Selection");
+      kconfig->sync();
+    }
+
     XGCValues gv;
     unsigned long mask;
 
@@ -187,7 +200,21 @@ bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
     if (obj == QApplication::desktop()){
       switch (e->button()){
       case LeftButton:
-	{
+	if (kpanel_menu_on_left_button){
+	  QString x,y;
+	  x.setNum(e->pos().x());
+	  y.setNum(e->pos().y());
+	  while (x.length()<4)
+	    x.prepend("0");
+	  while (y.length()<4)
+	    y.prepend("0");
+	  XUngrabPointer(qt_xdisplay(), CurrentTime);
+	  XAllowEvents(qt_xdisplay(), SyncPointer, CurrentTime);
+	  XSync(qt_xdisplay(), False);
+	  KWM::sendKWMCommand(QString("kpanel:go")+x+y);
+	  return TRUE;
+	}
+	else {
 	  int x, y, dx, dy;
 	  x = e->pos().x();
 	  y = e->pos().y();

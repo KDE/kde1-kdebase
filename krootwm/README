@@ -9,7 +9,22 @@ window: root icon selection on the left mouse button, a windowlist on
 the middle mouse button and a desktop context menu on the right mouse
 button.
 
-It is separated from the KDE window manger (kwm) to allow the users of
+For compatibility (for those who are used to pre-KDE window managers for
+the X window system) there is also an option to get the kpanel menu instead
+of the the root icon selection with the left mouse button. Just use
+the following krootwmrc:
+
+  # KDE Config File
+  [MouseButtons]
+  Left=Menu
+
+The default is: Left=Selection.
+
+
+If you wonder why KDE needs krootwm and why not the windowmanager could
+handle this:
+
+krootwm is separated from the KDE window manger (kwm) to allow the users of
 other windowmanger to get the full power of kfm. The only thing these
 have to do is to comment out the ButtonPressMask and ButtonReleaseMask
 in the XSelectInput call for the root window in the sources of their

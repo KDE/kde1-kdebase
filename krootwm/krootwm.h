@@ -62,6 +62,8 @@ private:
   QString desktopPath;
   QString templatePath;
 
+  bool kpanel_menu_on_left_button;
+      
 private slots:
   void slotNewFile( int _id );
   void rmb_menu_activated(int);
