@@ -1139,11 +1139,10 @@ void KHelpWindow::slotForward()
 
 void KHelpWindow::slotDir()
 {
-	QString u = "file:";
-	u += DOCS_PATH;
-	u += "index.html";
+    QString initDoc = "file:";
+    initDoc += kapp->findFile( "/share/doc/HTML/default/kdehelp/main.html" );
 
-	openURL( u );
+    openURL( initDoc );
 }
 
 
