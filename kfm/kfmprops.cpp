@@ -1064,7 +1064,7 @@ void DirPropsPage::applyChanges()
     tmp.detach();
     
     if ( tmp.right(1) == "/" )
-	tmp = tmp.right( tmp.length() - 1 );
+	tmp = tmp.left( tmp.length() - 1 );
     
     i = tmp.findRev( "/" );
     // Should never happen
