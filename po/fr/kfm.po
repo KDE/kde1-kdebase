@@ -165,7 +165,7 @@ msgstr "&Enregistrer les options"
 
 #: kfmgui.cpp:353
 msgid "Save Settings for this &URL"
-msgstr "Enregistrer les options pour cette &URL"
+msgstr "Enregistrer les options locales"
 
 #: kfmgui.cpp:360
 #, fuzzy
@@ -607,7 +607,7 @@ msgstr "Ajouter un signet"
 
 #: main.cpp:276
 msgid "Save settings for this URL"
-msgstr "Enregistrer les options pour cette URL"
+msgstr "Enregistrer les options locales"
 
 #: main.cpp:277
 msgid "Show Menubar"
