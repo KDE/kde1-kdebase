@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1999-01-22 01:13+0100\n"
-"PO-Revision-Date: 1998-12-28 9:30+0100\n"
+"PO-Revision-Date: 1999-03-22 18:38+01:00\n"
 "Last-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
 "Language-Team: Spanish <kde-es@kyb.uni-stuttgart.de>\n"
 "MIME-Version: 1.0\n"
@@ -64,15 +64,16 @@ msgstr ""
 "Emulación de bloqueo de mayúsculas inhabilitada"
 
 #: kikbd.cpp:1003
-#, fuzzy
 msgid "Exiting International Keyboard"
-msgstr "Teclado internacional"
+msgstr "Saliendo de teclado internacional"
 
 #: kikbd.cpp:1004
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
+"Esta saliendo de la herramienta de \"teclado internacional\".\n"
+" Quiere que sea activada en su siguiente entrada al sistema?"
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
