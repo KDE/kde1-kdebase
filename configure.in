@@ -116,7 +116,7 @@ AC_SUBST(RUN_KAPPFINDER)
 AC_MSG_CHECKING([if it's safe to enable UTMP])
 
 case "$host_os" in
-linux* | freebsd*) utmp_support=yes;
+linux*) utmp_support=yes;
      ;;
 *) utmp_support=no;
 esac
