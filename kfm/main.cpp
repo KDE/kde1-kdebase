@@ -125,6 +125,11 @@ void InitStaticMembers()
 
 int main( int argc, char ** argv )
 {
+    // kfm uses lots of colors, especially when browsing the web
+    // The call below helps for 256-color displays
+    // Kudos to Nikita V. Youshchenko !
+    QApplication::setColorSpec( QApplication::ManyColor );
+
     KApplication a( argc, argv, "kfm" );
 
     testDir2( "" );

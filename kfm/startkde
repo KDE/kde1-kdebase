@@ -13,6 +13,7 @@ kcontrol -init
 (sleep 1 && exec kaudioserver) &
 (sleep 1 && exec kwmsound) &
 
+# Add -ncols 96 after kfm if using a 8-bit display
 (sleep 1 && exec kfm) &
 
 (sleep 1 && exec krootwm) &
