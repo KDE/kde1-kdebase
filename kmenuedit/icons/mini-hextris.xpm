@@ -1,0 +1,22 @@
+/* XPM */
+static char * mini-hextris_xpm[] = {
+"16 14 5 1",
+" 	c None",
+".	c gray51",
+"X	c yellow",
+"o	c black",
+"O	c red",
+"                ",
+"      ...       ",
+"     .XXXo      ",
+"    .XOOOOo     ",
+"     oOOOo.     ",
+"      ooo.      ",
+"     .XXXo.     ",
+"  ...XOOOOo..   ",
+" .XXXoOOOoXXXo  ",
+".XOOOOoooXOOOOo ",
+" oOOOo.  oOOOo. ",
+"  ooo.    ooo.  ",
+"                ",
+"                "};

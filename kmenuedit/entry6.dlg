@@ -1,0 +1,30 @@
+DlgEdit:v1.2:Dialog:
+Dialog {
+	ClassHeader {entry6.h}
+	ClassSource {entry6.cpp}
+	ClassName {entry6}
+	DataHeader {entry6Data.h}
+	DataSource {entry6Data.cpp}
+	DataName {entry6Data}
+	WindowBaseClass {QWidget}
+}
+WidgetLayout {
+		Rect {5 102 336 184}
+		Grid {8}
+
+Label {
+		Text {Fvwm Command:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {16 16 104 24}
+		Name {Label_8}
+}
+LineEdit {
+		Text {}
+		EchoMode {Normal}
+		MaxLength {32767}
+		FrameShown {TRUE}
+		Rect {24 40 296 24}
+		Name {LineEdit_8}
+		Variable {i_command}
+}}

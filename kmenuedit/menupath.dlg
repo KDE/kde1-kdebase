@@ -1,0 +1,74 @@
+DlgEdit:v1.2:Dialog:
+Dialog {
+	ClassHeader {DesktopPathDialog.h}
+	ClassSource {DesktopPathDialog.cpp}
+	ClassName {DesktopPathDialog}
+	DataHeader {DesktopPathDialogData.h}
+	DataSource {DesktopPathDialogData.cpp}
+	DataName {DesktopPathDialogData}
+	WindowBaseClass {QDialog}
+	IsModal {TRUE}
+}
+WidgetLayout {
+		Rect {5 102 400 248}
+		Grid {8}
+
+Label {
+		Text {Path for KDE Desktop Entries is not set.}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {16 16 256 24}
+		Name {Label_1}
+		Font {"helvetica" 12 63 0 0 0 0 0 0}
+}
+Label {
+		Text {I suggest the following entries:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {16 40 192 24}
+		Name {Label_2}
+		Font {"helvetica" 12 63 0 0 0 0 0 0}
+}
+Label {
+		Text {Path:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {16 72 40 24}
+		Name {Label_3}
+}
+LineEdit {
+		Text {}
+		EchoMode {Normal}
+		MaxLength {32767}
+		FrameShown {TRUE}
+		Rect {24 96 360 24}
+		Name {LineEdit_1}
+		Variable {le_path}
+}
+Label {
+		Text {PersonalPath:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {16 128 88 24}
+		Name {Label_4}
+}
+LineEdit {
+		Text {}
+		EchoMode {Normal}
+		MaxLength {32767}
+		FrameShown {TRUE}
+		Rect {24 152 360 24}
+		Name {LineEdit_2}
+		Variable {le_ppath}
+}
+PushButton {
+		ToggleButton {FALSE}
+		Default {FALSE}
+		AutoDefault {TRUE}
+		Text {Ok}
+		AutoRepeat {FALSE}
+		AutoResize {FALSE}
+		Rect {152 200 100 30}
+		Name {PushButton_1}
+		Variable {b_ok}
+}}

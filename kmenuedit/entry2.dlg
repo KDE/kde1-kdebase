@@ -1,0 +1,71 @@
+DlgEdit:v1.2:Dialog:
+Dialog {
+	ClassHeader {entry2.h}
+	ClassSource {entry2.cpp}
+	ClassName {entry2}
+	DataHeader {entry2Data.h}
+	DataSource {entry2Data.cpp}
+	DataName {entry2Data}
+	WindowBaseClass {QWidget}
+}
+WidgetLayout {
+		Rect {5 102 336 184}
+		Grid {8}
+
+LineEdit {
+		Text {}
+		EchoMode {Normal}
+		MaxLength {32767}
+		FrameShown {TRUE}
+		Rect {24 32 264 24}
+		Name {LineEdit_5}
+		Variable {i_command}
+}
+Label {
+		Text {Execute:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {16 8 56 24}
+		Name {Label_6}
+}
+Label {
+		Text {Working Directory:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {16 56 112 24}
+		Name {Label_7}
+}
+LineEdit {
+		Text {}
+		EchoMode {Normal}
+		MaxLength {32767}
+		FrameShown {TRUE}
+		Rect {24 80 264 24}
+		Name {LineEdit_6}
+		Variable {i_dir}
+}
+CheckBox {
+		Checked {FALSE}
+		Text {Run in terminal}
+		AutoRepeat {FALSE}
+		AutoResize {FALSE}
+		Rect {16 112 112 16}
+		Name {CheckBox_1}
+		Variable {ch_use_term}
+}
+Label {
+		Text {Terminal Options:}
+		AutoResize {FALSE}
+		Margin {-1}
+		Rect {24 136 112 16}
+		Name {Label_8}
+}
+LineEdit {
+		Text {}
+		EchoMode {Normal}
+		MaxLength {32767}
+		FrameShown {TRUE}
+		Rect {32 152 256 24}
+		Name {LineEdit_7}
+		Variable {i_term_opt}
+}}

@@ -1,0 +1,31 @@
+/* XPM */
+static char *mini-sh[] = {
+/* width height num_colors chars_per_pixel */
+"    16    14       10            1",
+/* colors */
+". c #008b8b",
+"# c #c3c3c3",
+"a c black",
+"b c white",
+"c c #616161",
+"d c #7f7f7f",
+"e c #0000ff",
+"f c #ff0000",
+"g c #ffff00",
+"h c #000080",
+/* pixels */
+"aaaaaaaaaaaaaaaa",
+"adddddddddddddda",
+"adeeeeeeeeeeeeda",
+"adddddddddddddda",
+"adbbbbbbbbbbbbda",
+"adbabbbbbbbbbbda",
+"adbbabbbbbbbbbda",
+"adbabbbbbbbbbbda",
+"adbbbbbbbbbbbbda",
+"adbbbbbbbbbbbbda",
+"adbbbbbbbbbbbbda",
+"adbbbbbbbbbbbbda",
+"adddddddddddddda",
+"aaaaaaaaaaaaaaaa"
+};

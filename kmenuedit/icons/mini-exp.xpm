@@ -1,0 +1,21 @@
+/* XPM */
+static char * mini-exp_xpm[] = {
+"16 14 4 1",
+" 	c None",
+".	c black",
+"X	c gray51",
+"o	c yellow",
+"       .        ",
+"       .   .X   ",
+"      .o. ..    ",
+" ......oo.o.    ",
+"  .oooooooo....X",
+"   .oooooooooo. ",
+"    .oooooooo.  ",
+"   ..ooooooo.   ",
+"   .oooooooo.   ",
+"  .oo..oo..oo.  ",
+" .... .oo. ...  ",
+" X     ..    .X ",
+"        .       ",
+"                "};

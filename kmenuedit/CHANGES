@@ -1,0 +1,17 @@
+version 0.2.1
+- compiles with kdelibs-970806
+- uses mimetypes as kfm II does
+
+version 0.2.0
+- changed the entry edit dialog
+- supports kdelnk types: Application, Link, Device
+- improved documentation
+- view configuration of protected buttons
+
+version 0.1.1
+- minor bug fixes
+- included mini icons from ktaskbar
+- changed the entry edit dialog (not finished yet) 
+
+version 0.1.0
+- this is the first public version

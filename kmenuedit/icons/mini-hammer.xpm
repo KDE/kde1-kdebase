@@ -1,0 +1,21 @@
+/* XPM */
+static char * mini-hammer_xpm[] = {
+"16 14 4 1",
+" 	c None",
+".	c black",
+"o	c white",
+"O	c gray50",
+"   .. .....     ",
+"  .oo.ooooo.    ",
+"  .ooooooooo.   ",
+"  .oO.oooo..o.  ",
+"   .. ....O ..  ",
+"       ...   .  ",
+"       ...      ",
+"       ...      ",
+"       ...      ",
+"       ...      ",
+"       ...      ",
+"       ...      ",
+"       ...      ",
+"                "};
