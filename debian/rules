@@ -69,6 +69,8 @@ binary-arch: checkroot build
 	debian/tmp/etc/init.d/xdm
 	dh_undocumented `cat debian/man-pages`
 	perl -w debian/kderules
+#	-rm -f debian/tmp/usr/bin/rman
+#	-rm -rf debian/tmp/usr/doc/kdebase/kdehelp/rman
 	dh_movefiles
 	dh_installdocs
 	dh_installmenu
