@@ -1,3 +1,6 @@
+4 October 1998	Lars Knoll <knoll@mpi-hd.mpg.de>
+	* Added Hebrew keyboard
+
 16 September 1998
         * You have to reconfigure kikbd because it now use readBool from
 	KBaseConfig

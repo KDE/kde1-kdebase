@@ -1,0 +1,42 @@
+# KDE Config File
+[International Keyboard]
+Authors=Lars Knoll <knoll@mpi-hd.mpg.de>
+Comment=Hebrew Keyboard
+Long Comment=Hebrew Keyboard Setting
+Language=Hebrew
+Label=He
+Locale=he
+[KeyboardMap]
+CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m,semicolon,apostrophe,comma,dot,slash,`
+keysym0=q,slash,q,q,Q,
+keysym1=w,apostrophe,w,w,W,
+keysym2=e,0xf7,e,e,E,
+keysym3=r,0xf8,r,r,R,
+keysym4=t,0xe0,t,t,T,
+keysym5=y,0xe8,y,y,Y,
+keysym6=u,0xe5,u,u,U,
+keysym7=i,0xef,i,i,I,
+keysym8=o,0xed,o,o,O,
+keysym9=p,0xf4,p,p,P,
+keysym10=a,0xf9,a,a,A,
+keysym11=s,0xe3,s,s,S,
+keysym12=d,0xe2,d,d,D,
+keysym13=f,0xeb,f,f,F,
+keysym14=g,0xf2,g,g,G,
+keysym15=h,0xe9,h,h,H,
+keysym16=j,0xe7,j,j,J,
+keysym17=k,0xec,k,k,K,
+keysym18=l,0xea,l,l,L,
+keysym19=z,0xe6,z,z,Z,
+keysym20=x,0xf1,x,x,X,
+keysym21=c,0xe1,c,c,C,
+keysym22=v,0xe4,v,v,V,
+keysym23=b,0xf0,b,b,B,
+keysym24=n,0xee,n,n,N,
+keysym25=m,0xf6,m,m,M,
+keysym26=semicolon,0xf3,colon,semicolon,colon,
+keysym27=apostrophe,comma,quotedbl,apostrophe,quotedbl,
+keysym28=comma,0xfa,less,comma,less,
+keysym29=period,0xf5,greater,period,greater,
+keysym30=slash,period,question,slash,question,
+keysym30=quoteleft,semicolon,asciitilde,quoteleft,asciitilde,
