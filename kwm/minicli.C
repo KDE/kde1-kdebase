@@ -72,7 +72,7 @@ void execute(const char* cmd){
       if ( strncmp( p, "file:", 5 ) == 0 )
 	  p = p + 5;
       // Just a document ?
-      if ( stat( p, &buff ) == 0 && S_ISREG( buff.st_mode ) )
+      if ( stat( p, &buff ) == 0 && ( S_ISREG( buff.st_mode ) || S_ISDIR( buff.st_mode ) ) )
       {
 	  // Tell KFM to open the document
 	  tmp = "kfmclient openURL ";
