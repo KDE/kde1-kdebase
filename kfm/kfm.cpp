@@ -149,18 +149,17 @@ void Kfm::slotSave()
     urlList.append( gui->getURL() );
   }
 
+  config->setGroup( "SM" );
+  config->writeEntry( "URLs", urlList );
+  config->sync();
+
   // Save HTTP Cookies
   if (cookiejar)
   {
       QString cookieFile = kapp->localkdedir().data();
       cookieFile += "/share/apps/kfm/cookies";
       cookiejar->saveCookies( cookieFile.data() );
-      cookiejar->saveConfig( config );
   }
-
-  config->setGroup( "SM" );
-  config->writeEntry( "URLs", urlList );
-  config->sync();
   
   HTMLCache::save();
 }

@@ -35,6 +35,7 @@
 #include "utils.h"
 #include "kbookmarkdlg.h"
 #include "kfm.h"
+#include "kcookiejar.h"
 
 #include <klocale.h>
 #include <kstring.h>
@@ -1480,6 +1481,7 @@ void KfmGui::slotConfigure()
             w->treeView->repaint();
         }
     }
+    
     // -- Group KFM Root Icons -- (Desktop Icons tab)
     if ( KRootWidget::getKRootWidget() ){
         KRootWidget::getKRootWidget()->configure(config); // read and apply configuration
@@ -1501,6 +1503,13 @@ void KfmGui::slotConfigure()
 
     // -- Group Browser Settings/Proxy -- (Proxy tab)
     // Nothing to do. Next jobs launched will read the setting and use it.
+
+    // -- Group Browser Settings/HTTP -- (Cookies)
+    // Let the cookiejar reread its settings
+    if (cookiejar)
+    {
+        cookiejar->loadConfig(config);
+    }
 }
 
 void KfmGui::slotViewFrameSource()

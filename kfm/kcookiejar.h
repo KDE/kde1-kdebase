@@ -253,6 +253,8 @@ protected:
     QStrList domainList;
 
     KCookieAdvice globalAdvice;
+    bool configChanged;
+    bool cookiesChanged;
 };
 
 #endif

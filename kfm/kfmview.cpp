@@ -152,12 +152,9 @@ KfmView::~KfmView()
     // Save HTTP Cookies
     if (cookiejar)
     {
-      KConfig *config = kapp->getConfig();
       QString cookieFile = kapp->localkdedir().data();
       cookieFile += "/share/apps/kfm/cookies";
       cookiejar->saveCookies( cookieFile.data() );
-      cookiejar->saveConfig( config );
-      config->sync();
     }
 }
 

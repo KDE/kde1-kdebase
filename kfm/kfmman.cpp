@@ -1069,6 +1069,8 @@ void KFMManager::slotCookie( const char *_url, const char *_cookie_str )
                 KCookieWin *kw = new KCookieWin( 0L, cookie);
 	        userAdvice = (KCookieAdvice) kw->exec();
 	        delete kw;
+	        // Save the cookie config if it has changed
+	        cookiejar->saveConfig( kapp->getConfig() ); 
 	    }
 	    advice = userAdvice;
         }

@@ -81,7 +81,6 @@ KCookie::KCookie(const char *_host, const char *_domain, const char *_path,
 }
 
 //
-
 // Checks if a cookie has been expired
 //
 bool    KCookie::isExpired(time_t currentDate)
@@ -142,6 +141,8 @@ KCookieJar::KCookieJar()
 {
     cookieDomains.setAutoDelete( true );
     globalAdvice = KCookieDunno;    
+    configChanged = false;
+    cookiesChanged = false;
 }
 
 //
@@ -697,6 +698,7 @@ void KCookieJar::addCookie(KCookiePtr &cookiePtr)
             KCookiePtr old_cookie = cookie;
             cookie = cookieList->next(); 
             cookieList->removeRef( old_cookie );
+            cookiesChanged = true;
         }
         else
         {
@@ -710,6 +712,7 @@ void KCookieJar::addCookie(KCookiePtr &cookiePtr)
     if (!cookiePtr->isExpired(time(0)))
     {
         cookieList->inSort( cookiePtr );
+        cookiesChanged = true;
     }
     else
     {
@@ -783,6 +786,7 @@ void KCookieJar::setDomainAdvice(const char *_domain, KCookieAdvice _advice)
     
     if (cookieList)
     {
+        configChanged = (cookieList->getAdvice() != _advice);
         // domain is already known
         cookieList->setAdvice( _advice);
 
@@ -801,6 +805,7 @@ void KCookieJar::setDomainAdvice(const char *_domain, KCookieAdvice _advice)
         if (_advice != KCookieDunno)
         {
             // We should create a domain entry
+            configChanged = true;
             
             // Make a new cookie list
             cookieList = new KCookieList();
@@ -831,6 +836,7 @@ void KCookieJar::setDomainAdvice(KCookiePtr _cookie, KCookieAdvice _advice)
 //
 void KCookieJar::setGlobalAdvice(KCookieAdvice _advice)
 {
+    configChanged = (globalAdvice != _advice);
     globalAdvice = _advice;
 }
 
@@ -1096,6 +1102,9 @@ static KCookieAdvice strToAdvice(const char *_str)
 
 void KCookieJar::saveConfig(KConfig *_config)
 {
+    if (!configChanged)
+        return;
+
     QStrList domainSettings;
     _config->setGroup("Browser Settings/HTTP");
     _config->writeEntry("CookieGlobalAdvice", adviceToStr( globalAdvice));
@@ -1114,6 +1123,7 @@ void KCookieJar::saveConfig(KConfig *_config)
          }
     }
     _config->writeEntry("CookieDomainAdvice", domainSettings);
+    _config->sync();
 }
  
  
