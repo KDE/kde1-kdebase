@@ -10,12 +10,15 @@ ksmbstatus.cpp: ksmbstatus.moc
 ksmbstatus.moc: ksmbstatus.h
 	$(MOC) ksmbstatus.h -o ksmbstatus.moc
 
-install-data-local: 
+install-data-local:
+	$(mkinstalldirs) $(kde_icondir)
+	$(INSTALL_DATA) smbstatus.xpm $(kde_icondir)
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) mini-smbstatus.xpm $(kde_minidir)/smbstatus.xpm
 
 uninstall-local:
 	rm -f $(kde_minidir)/smbstatus.xpm
+	rm -f $(kde_icondir)/smbstatus.xpm
 
 messages:
 	$(XGETTEXT) -C -ktranslate -x ../../../kdelibs/po/kde.pot $(kcmsamba_SOURCES) && mv messages.po ../../po/kcmsamba.pot
