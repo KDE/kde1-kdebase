@@ -15,6 +15,7 @@
 #include <qtooltip.h>
 #include <qlayout.h>
 #include <qclipbrd.h>
+#include <qbitmap.h>
 #include <kapp.h>
 #include <Kconfig.h>
 #include <kurl.h>

@@ -18,6 +18,7 @@
 #include <qkeycode.h>
 #include <qdialog.h>
 #include <qpushbt.h>
+#include <qbitmap.h>
 
 #include "xautolock.h"
 #include "saver.h"
