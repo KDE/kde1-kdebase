@@ -1030,7 +1030,7 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
 	   // kalle	   QTextStream mystream(&myfile);
 
 	   myfile.close(); // kalle
-	   KSimpleConfig pConfig(pmi->fullPathName() );
+	   KSimpleConfig pConfig(pmi->fullPathName(),true);
 	   pConfig.setGroup("KDE Desktop Entry");
 	   QString aString;
 	   if (pConfig.hasKey("SwallowTitle")){
