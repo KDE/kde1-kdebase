@@ -170,7 +170,7 @@ the left mousebutton onto the panel button.
 
 <p>
 <itemize>
-<item>prevent KMenuedit from expanding shell variables
+<item>rewrite KMenuedit
 </itemize>
 
 
