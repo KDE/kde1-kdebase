@@ -1,0 +1,91 @@
+Debian README for xdm package
+
+By Branden Robinson
+
+Newcomers to the X Window System should first read the file
+/usr/doc/xfree86-common/FAQ.  It would also be helpful to read
+/usr/doc/xfree86-common/README.Debian.
+
+Upgraders from Debian GNU/Linux 2.0 or earlier should be aware that the
+/etc/X11/config file is no longer used; its xdm-specific options are now in
+/etc/X11/xdm/xdm.options.
+
+The default configuration for the X display manager (xdm) under Debian
+GNU/Linux presumes that one is having xdm manage at least one local session,
+and is using an XFree86 X server to do so.  If either of the above is not
+true, it will be necessary to edit /etc/X11/xdm/xdm.options and change the
+line:
+
+check-local-xserver
+
+to:
+
+no-check-local-xserver
+
+See manual page for xdm.options ("man xdm.options") for more information.
+
+The parse-xf86config program, which is in the xserver-common package, is used
+to audit the XF86Config file for problems.  See the parse-xf86config(8) manual
+page and the files in /usr/doc/xserver-common/ for more information.
+
+If one does not wish to run a local X server at all, the following line should
+be commented out of /etc/X11/xdm/Xservers:
+
+:0 local /usr/bin/X11/X vt7
+
+Several configuration files are shipped with the xdm package; they reside
+in the /etc/X11/xdm/ directory.  Extensive documentation about the xdm
+configuration files may be found in the xdm(1) manual page.
+
+xdm-config contains X resources specific to xdm itself.  See the X(1)
+manual page for more information about X resources, and the xdm(1) manual
+pages for documentation of the available xdm resources.
+
+Xresources contains X resources that are designed to be specfic to sessions
+running under xdm.  Note that this file does contain the resource entries
+for xdm itself -- those are contained in the file xdm-config.  See the X(1)
+manual page for more information about X resources.
+
+Xresources_0 contains X resources that are designed to be specific to sessions
+running under xdm on server :0.
+
+The above three files, despite being X resource files, are not placed in the
+/etc/X11/Xresources directory (see /usr/doc/xbase/README.Debian) because they
+should not be used automatically in all X sessions; the /etc/X11/Xsession
+script merges in the resources of all files found in /etc/X11/Xresources, and
+this action would be inappropriate for these resource files.
+
+Xservers contains entries to start the X server(s) on the local machine, and
+on any remote X terminals that do not support XDMCP.  This file is internally
+documented.
+
+Xaccess determines what hosts on the network may use the services of the
+running xdm daemon.  This file is internally documented.
+
+Xsetup is a shell script which is run when xdm is asked to manage a server
+other than :0.
+
+Xsetup_0 is a shell script which is run when xdm is asked to manage server
+:0.
+
+Xstartup is a shell script which is run (as root) after a user has logged in
+on a server other than :0 (though by default it is called by Xstartup_0).
+
+Xstartup_0 is a shell script which is run (as root) after a user has logged
+in on server :0 (by default it merely calls Xstartup).
+
+Xreset is a shell script which is run (as root) after a user's X session
+ends on a server other than :0 (though by default it is called by
+Xreset_0).
+
+Xreset_0 is a shell script which is run (as root) after a user's X session
+ends on server :0 (by default it merely calls Xreset).
+
+xdm.options contains configuration options for xdm that are specific to the
+Debian GNU/Linux system.  See the xdm.options(5) manual page for more
+information.
+
+The X Display Manager Control Protocol document referenced in the xdm(1)
+manual page may be found in the xbooks package.
+
+Branden Robinson, 12 Feb 1999
