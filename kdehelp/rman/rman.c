@@ -1,127 +1,26 @@
 static char rcsid[] = "$Header$";
 
 /*
-  RosettaMan
-
-  Copyright (c) 1993-1996  T.A. Phelps (phelps@cs.Berkeley.EDU)
-  All Rights Reserved.
-
-     Permission to use, copy, modify, and distribute this software and its
-     documentation for educational, research and non-profit purposes, 
-     without fee, and without a written agreement is hereby granted, 
-     provided that the above copyright notice and the following 
-     paragraph appears in all copies.  
-
-     Permission to incorporate this software into commercial products may 
-     be obtained from the Office of Technology Licensing, 2150 Shattuck 
-     Avenue, Suite 510, Berkeley, CA  94704.
-
+   PolyglotMan by Thomas A. Phelps (phelps@ACM.org)
 
   accept man pages as formatted by (10)
      Hewlett-Packard HP-UX, AT&T System V, SunOS, Sun Solaris, OSF/1, DEC Ultrix,
 	SGI IRIX, Linux, FreeBSD, SCO
 
-  output as (10)
-     printable ASCII, section headers only, TkMan, [tn]roff, Ensemble, HTML,
+  output as (9)
+     printable ASCII, section headers only, TkMan, [tn]roff, HTML,
 	LaTeX, LaTeX2e, RTF, Perl pod, MIME, and soon SGML
 
      written March 24, 1993
 	bs2tk transformed into RosettaMan November 4-5, 1993
-
-   1993
-    2-Apr  bullets, change bars, copyright symbol
-    5      boldface, other SGI nicks
-    7      skip unrecognized escape codes
-   10      small caps
-   13      underscores considered uppercase so show up
-              in default small caps font
-           screen out Ultrix junk (code getting pretty tangled now)
-   14      until Tk text has better tab support, replace tabs by
-           spaces until get to next tab stop (for Ultrix)
-           -t gives tabstop spacing
-   20      Solaris support (Larry Tsui)
-    3-Jun  section subheading parsing (Per-Erik Martin)
-   28      hyphenated man pages in SEE ALSO show up correctly in Links
-           (Mike Steele)
-   13-Jul  under FILES, fully qualified path names are added to Links,
-              but this taken out immediately because not useful
-   14      option to keep changebars on right (Warren Jessop)
-    5-Aug  search for header, footer dynamically--
-              no need to edit or search large list of patterns
-   11      -m kicks in man page formatting beyond nroff backspace kludges
-   27      handle double digit numbers better by trying again relative to end of line
-   19-Sep  -T gives Tk extras (otherwise ASCII only)
-           -H gives headers only (implies -T off)
-   10-Oct  -r reverse compiles to [tn]roff source (as Geoff Collyer's nam and fontch,
-           but leveraging existing analysis so only addition of ~60 lines)
-           (The code is device-driver obscure now--obfuscated C contest next.)
-   13      header and footer optionally available at bottom in Tk view
-           (Marty Leisner)
-   19      "reflected" odd and even page headers&footers zapped
-   20      keep count of sections and subsections, using smaller font for larger numbers
-    1-Nov  reverse compiles to Ensemble, except for character ranges
-
-    4      started rman rewrite for cleaner support of multiple output targets,
-           including: plain ascii, headers only, TkMan, [nt]roff, Ensemble, SGML, HTML
-    5      line filtering separated from other logic
-           despite greater sophistication, RosettaMan faster than bs2tk (!)
-   28-Dec  man page reference recognition (Michael Harrison)
-
-   1994
-    1-Jan  identify descriptive lists by comparing scnt2 with s_avg
-    3      tail-end table of contents in HTML documents
-    5      -f <filter> and LaTeX output mode
-   24      proof-of-concept RTF output mode
-   26      handle man pages that don't have a header on the first page
-   28      parse "handwritten" man pages
-   22-Feb  alpha version released
-    6-Mar  various bug fixes
-   10      beta version released
-   13-Jun  fixed surious generation on <DL>'s (the existence of which pointed out by David Sibley)
-   22-Jul  table recognition experiment.
-              works reasonably well, except for tables with centered headers
-    3      allow for off-by-one (and -two) in identification of header and footer
-           fixed problem with recurrent/leftover text with OSF/1 bold bullets (yeesh)
-   12-Sep  2.0gamma released
-   13      check for *third* header, possibly centered, possibly after blank lines (Charles Anderson)
-           fixed tag ranges for lines following blank lines (just \n)
-              of pages with global indentation (Owen Rees)
-   19      fixed two small problems with LaTeX (^ => \^, \bullet => $\bullet$) (Neal Becker)
-   24      simple check for erroneously being fed roff source
-   26      deal with bold +- as in ksh (ugh)
-   30      2.0delta released
-    9-Oct  special check for OSF to guard against section head interpreted as footer
-    8-Nov  Perl pod output format (result still needs work, but not much)
-    7-Dec  2.0epsilon released (last one before final 2.0)
-   22      Happy Winter Solstice!  2.0 released
-           deprecated gets() replaced (Robert Withrow)
-   25      TkMan module's $w.show => $t, saving about 9% in generated characters
-
-   1995
-    1-Jan  experiment with TkMan output to take advantage of my hack to Tk text
-           (i.e., $t insert end "text" => $t insert end "text1" tag1 "text2" tag2 ...)
-		 results => output size reduced about 25%, time reduced about 12-15%
-   25-Mar  back to old mark command for Tk module
-    8-May  hyphens in SEE ALSO section would confuse link-finder, so re-linebreak if necessary(!)
-           (Greg Earle & Uri Guttman)
-    4-Aug  put formats and options into tables (inspired by Steve Maguire's Writing Solid Code)
-   19      -V accepts colon-separated list of valid volume names (Dag Nygren)
-   22      MIME output format that's usable in Emacs 19.29 (just three hours at hacking HTML module)
-           (Neal Becker)
-    9-Sep  nits in HTML and better Solaris code snippets (Drazen Kacar)
-   13-Nov  Macintosh port by Matthias Neeracher <neeri@iis.ee.ethz.ch>
-   18-Dec  adapted to LaTeX2e, null manRef yields italicized man ref (H. Palme)
-   28      allow long option names (Larry Schwimmer)
-
-   1996
-   22-Jan  fixed problem with hyphenation supression and tabs in man page--sheesh! (H. Palme)
-   23-May  split TkMan format into Tk and TkMan (which calls Tk)
-   25      in TkMan format, initial spaces converted to tabs
-   ??-???  SGML output format (DTD found at long last), validated by sgmls
+     source interpretation added September 24, 1996
+	renamed PolyglotMan due to lawsuit by Rosetta, Inc. August 8, 1997
 */
 
 
 /* TO DO ****
+
+   clean up relationship between source and formatted filtering support routines
 
    output to SGML with Davenport DTD
 
@@ -132,7 +31,7 @@ static char rcsid[] = "$Header$";
    collect header and footer until hit blank line?
    what to do about tables?   count second gap of spaces & average gap? ==>
       good idea but tables too variable for this to work
-   internal, outline-like header section for HTML documents?  how to put this *first*?
+   internal, outline-like header section for HTML documents?  how to put this *first*?  (can't in single pass)
    one line look ahead to enable better parsing (item lists, et cetera)
    alluc (==nonlc) flag, copy curline to last line vector (works well with lookahead cache)
    ??      collect sundry globals into vectors (i.e., arrays and enum indexes)
@@ -142,29 +41,35 @@ static char rcsid[] = "$Header$";
 */
 
 
-
+#include <unistd.h>
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
 #include <assert.h>
-/* OSF seems to need this */
-#ifdef I_UNISTD
-#include <unistd.h>
-#endif /* I_UNISTD */
+/* I'm sure I'll need some #ifdef's here to include the right headers */
+/* ... but compiles swell on Solaris, DEC Alpha, HP, SunOS */
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
 
 /*** make #define's into consts? => can't because compilers not smart enough ***/
 /* maximum number of tags per line */
-#define MAXTAGS 50
+#define MAXTAGS 50*100
+/* BUFSIZ = 1024 on Solaris */
+#define MAXBUF 2*5000
+#define MAXLINES 20000
 #define MAXTOC 500
-#define xputchar(c)		if (fcharout) putchar(c)
-enum { c_rsquote='\x27', c_lsquote='\x60', c_dagger='\xa7', c_bullet='\xb7', c_plusminus='\xb1' };
+#define xputchar(c)		(fcharout? putchar(c): (c))
+#define sputchar(c)		(fcharout? plain[sI++]=(char)c: (char)(c))
+#define stagadd(tag)	tagadd(tag,sI,0)
+enum { c_rsquote='\''/*\x27*/, c_lsquote='`'/*\x60*/, c_dagger='\xa7', c_bullet='\xb7', c_plusminus='\xb1' };
 
 
 /*** tag management ***/
 
 enum tagtype { NOTAG, TITLE, ITALICS, BOLD, SYMBOL, SMALLCAPS, BOLDITALICS, MONO, MANREF };	/* MANREF last */
-
 struct { enum tagtype type; int first; int last; } tags[MAXTAGS];
 int tagc=0;
 struct { char *text; int type; int line; } toc[MAXTOC];
@@ -173,23 +78,72 @@ int tocc=0;
 
 /* characters in this list automatically prefixed by a backslash (set in output format function */
 char *escchars="";
-/* characters that need special handling in any output format, *more than just a backslash* */
-/* characters in this list need a corresponding case statement in each output format */
-char *trouble=".`'><&\\^|\xa7\xb7\xb1";
+char *vollist = VOLLIST;
+const char *manvalid = "._-+:";	/* in addition to alphanumerics, valid characters to find in a man page name */
+char *manrefname;
+char *manrefsect;
+
 enum command {
+
+	/*BEGINCHARTAGS,*/
+	CHARTAB='\t',
 	CHARPERIOD='.', CHARLSQUOTE='`', CHARRSQUOTE='\'', CHARGT='>', CHARLT='<',
 	CHARAMP='&', CHARBACKSLASH='\\', CHARDASH='-', CHARHAT='^', CHARVBAR='|',
-	CHARPLUSMINUS=0xb1,	CHARDAGGER=0xa7, CHARBULLET=0xb7,
-	CHANGEBAR=0x100, CHARLQUOTE, CHARRQUOTE, 
-	BEGINDOC, ENDDOC, BEGINBODY, ENDBODY,
-	BEGINHEADER, ENDHEADER, BEGINFOOTER, ENDFOOTER, SHORTLINE,
+ 	CHARNBSP=0xa0,	CHARCENT=0xa2, CHARSECT=0xa7, CHARCOPYR=0xa9, CHARNOT=0xac,
+ 	CHARDAGGER=0xad, CHARREGTM=0xae, CHARDEG=0xb0, CHARPLUSMINUS=0xb1,
+ 	CHARACUTE=0xb4, CHARBULLET=0xb7, CHAR14=0xbc, CHAR12=0xbd, CHAR34=0xbe,
+ 	CHARMUL=0xd7, CHARDIV=0xf7,
+	CHANGEBAR=0x100, CHARLQUOTE, CHARRQUOTE, HR,
+	/*ENDCHARTAGS,*/
+
+	/*BEGINFONTTAGS,*/
+	BEGINBOLD, ENDBOLD, BEGINITALICS, ENDITALICS, BEGINBOLDITALICS, ENDBOLDITALICS,
+	BEGINSC, ENDSC, BEGINY, ENDY, BEGINCODE, ENDCODE, BEGINMANREF, ENDMANREF,
+	FONTSIZE,
+	/*ENDFONTTAGS*/
+
+	/*BEGINLAYOUTTAGS,*/
+	ITAB, BEGINCENTER, ENDCENTER,
+	/*ENDLAYOUTTAGS,*/
+
+	/*BEGINSTRUCTTAGS,*/
+	BEGINDOC, ENDDOC, BEGINCOMMENT, ENDCOMMENT, COMMENTLINE, BEGINBODY, ENDBODY, 
+	BEGINHEADER, ENDHEADER, BEGINFOOTER, ENDFOOTER, BEGINLINE, ENDLINE, SHORTLINE,
 	BEGINSECTION, ENDSECTION, BEGINSUBSECTION, ENDSUBSECTION,
 	BEGINSECTHEAD, ENDSECTHEAD, BEGINSUBSECTHEAD, ENDSUBSECTHEAD,
-	BEGINBOLD, ENDBOLD, BEGINITALICS, ENDITALICS, BEGINMANREF, ENDMANREF,
-	BEGINSC, ENDSC, BEGINBOLDITALICS, ENDBOLDITALICS, BEGINY, ENDY,
 	BEGINBULPAIR, ENDBULPAIR, BEGINBULLET, ENDBULLET, BEGINBULTXT, ENDBULTXT,
-	BEGINLINE, ENDLINE, BEGINTABLELINE, ENDTABLELINE, BEGINTABLE, ENDTABLE
+	BEGINTABLE, ENDTABLE, BEGINTABLELINE, ENDTABLELINE, BEGINTABLEENTRY, ENDTABLEENTRY,
+	BEGININDENT, ENDINDENT,
+
+	BEGINDIFFA, ENDDIFFA, BEGINDIFFD, ENDDIFFD
+	/*,*//*ENDSTRUCTTAGS,*/
 };
+
+const char *tcltkOP[] = { "Command-Line Name", "Database Name", "Database Class" };
+
+
+/* characters that need special handling in any output format, *more than just a backslash* */
+/* characters in this list need a corresponding case statement in each output format */
+/*char *trouble="\t.`'><&\\^|-\xa7\xb7\xb1";*/
+const unsigned char trouble[]= { CHARTAB, CHARPERIOD, CHARLSQUOTE, CHARRSQUOTE,
+	CHARGT, CHARLT, CHARAMP, CHARBACKSLASH, CHARDASH, CHARHAT, CHARVBAR, CHARCENT,
+	CHARSECT, CHARCOPYR, CHARNOT, CHARDAGGER, CHARREGTM, CHARDEG, CHARPLUSMINUS,
+	CHARACUTE, CHARBULLET, CHAR14, CHAR12, CHAR34, CHARMUL, CHARDIV,
+	0 };
+
+
+enum command tagbeginend[][2] = {	/* parallel to enum tagtype */
+	{ -1,-1 },
+	{ -1,-1 },
+	{ BEGINITALICS, ENDITALICS },
+	{ BEGINBOLD, ENDBOLD },
+	{ BEGINY, ENDY },
+	{ BEGINSC, ENDSC },
+	{ BEGINBOLDITALICS, ENDBOLDITALICS },
+	{ -1,-1 },
+	{ BEGINMANREF, ENDMANREF }
+};
+
 void (*fn)(enum command) = NULL;
 enum command prevcmd = BEGINDOC;
 
@@ -200,39 +154,89 @@ enum { fSubsX, fLast };
 int flags[fLast];
 */
 
+int fSource=-1;	/* -1 => not determined yet */
+int fDiff=0;
+FILE *difffd;
+char diffline[MAXBUF];
+char diffline2[MAXBUF];
+char *message = NULL;
+int fontdelta=0;
+int intArg;
+
 int fPara=0;			/* line or paragraph groupings of text */
 int fSubsections=0;	/* extract subsection titles too? */
 int fChangeleft=0;	/* move change bars to left? (-1 => delete them) */
-int fMan=1;		/* invoke agressive man page filtering? */
+int fReflow=0;
+int fURL=0;		/* scan for URLs too? */
+/*int fMan=1;		/* invoke agressive man page filtering? */
 int fQS=0;		/* squeeze out spaces (scnt and interword)? */
 int fIQS=0;		/* squeeze out initial spaces (controlled separately from fQS) */
 int fILQS=0;		/* squeeze out spaces for usual indent */
 int fHeadfoot=0;	/* show canonical header and footer at bottom? */
 int falluc=0;
-int fintable=0;
-int fTable=0;
-int fotable=0;
+int itabcnt=0;
+int fQuiet=0;
+int fTclTk=0;
+
+/* patterns observed in section heads that don't conform to first-letter-uppercase-rest-lowercase pattern (stay all uc, or go all lc, or have subsequent uc) */
+int lcexceptionslen = -1;	/* computed by system */
+char *lcexceptions[] = {
+/* new rule: double consonants == UC? */
+	/* articles, verbs, conjunctions, prepositions, pronouns */
+	"a", "an", "the", 
+	"am", "are", "is", "were",
+	"and", "or",
+	"by", "for", "from", "in", "into", "it", "of", "on", "to", "with",
+	"that", "this",
+
+	/* terms */
+	"API", "CD", "GUI", "UI", /*I/O=>I/O already*/ "ID", "IDs", "OO",
+	"IOCTLS", "IPC", "RPC",
+
+	/* system names */
+	"AWK", "cvs", "rcs", "GL", "vi", "PGP", "QuickTime",
+	"NFS", "NIS", "NIS+", "AFS", 
+	"UNIX", "SysV", 
+	"XFree86", "ICCCM",
+	"MH", "MIME",
+	"TeX", "LaTeX", "PicTeX",
+	"PostScript", "EPS", "EPSF", "EPSI", 
+	"HTML", "URL", "WWW",
+
+	/* institution names */
+	"ANSI", "CERN", "GNU", "ISO", "NCSA",
+
+	/* Sun-specific */	
+	"MT-Level", "SPARC",
+
+	NULL
+};
+/* what exceptions have you encountered? */
+
 int TabStops=8;
 int hanging=0;		/* location of hanging indent (if ==0, none) */
 enum { NAME, SYNOPSIS, DESCRIPTION, SEEALSO, FILES, AUTHOR, RANDOM };	/* RANDOM last */
 char *sectheadname[] = {
-  "NAME", "SYNOPSIS", "DESCRIPTION", "SEE ALSO:RELATED INFORMATION", "FILES", "AUTHOR", "RANDOM"
+  "NAME", "SYNOPSIS", "DESCRIPTION:INTRODUCTION", "SEE ALSO:RELATED INFORMATION", "FILES", "AUTHOR:AUTHORS", "RANDOM"
 };
 int sectheadid = RANDOM;
 int oldsectheadid = RANDOM;
 
 int fCodeline=0;
-int fNOHY=0;		/* re-linebreak so no words are hyphenated */
-const char *TABLEOFCONTENTS = "Table of Contents";
-const char *HEADERANDFOOTER = "Header and Footer";
+int fNOHY=0;		/* re-linebreak so no words are hyphenated; not used by TkMan, but gotta keep for people converting formatted text */
+int fNORM=0;		/* normalize?  initial space => tabs, no changebars, exactly one blank line between sections */
+const char TABLEOFCONTENTS[] = "Table of Contents";
+const char HEADERANDFOOTER[] = "Header and Footer";
 char manName[80]="man page";
 char manSect[10]="1";
-const char *providence =
-	"manual page source format generated by RosettaMan v" ROSETTAMANVERSION;
-const char *anonftp =
+const char provenance[] =
+	"manual page source format generated by PolyglotMan v" POLYGLOTMANVERSION;
+const char anonftp[] =
 	"available via anonymous ftp from ftp.cs.berkeley.edu:/ucb/people/phelps/tcltk/rman.tar.Z";
+const char horizontalrule[] = "------------------------------------------------------------";
 
-int linelen;			/* length of result in plain[] */
+const int LINEBREAK=70;
+int linelen=0;			/* length of result in plain[] */
 int spcsqz;			/* number of spaces squeezed out */
 int ccnt=0;			/* # of changebars */
 int scnt,scnt2;		/* counts of initial spaces in line */
@@ -244,20 +248,31 @@ int AbsLine=1-1;		/* absolute line number */
 int indent=0;			/* global indentation */
 int lindent=0;			/* usual local indent */
 int auxindent=0;		/* aux indent */
-int I;				/* index into line/paragraph */
+int I;			/* index into line/paragraph */
 int fcharout=1;		/* show text or not */
-int lookahead;
-/*int tabgram[BUFSIZ];*/	/* histogram of first character positions */
-char buf[BUFSIZ];
-char plain[BUFSIZ];		/* current text line with control characters stripped out */
-char hitxt[BUFSIZ];		/* highlighted text (available at time of BEGIN<highlight> signal */
-char header[BUFSIZ]="";		/* complete line */
-char header2[BUFSIZ]="";		/* SGIs have two lines of headers and footers */
-char header3[BUFSIZ]="";		/* GNU and some others have a third! */
-char footer[BUFSIZ]="";
-char footer2[BUFSIZ]="";
+char lookahead;
+/*int tabgram[MAXBUF];*/	/* histogram of first character positions */
+char buf[MAXBUF];
+char plain[MAXBUF];		/* current text line with control characters stripped out */
+char hitxt[MAXBUF];		/* highlighted text (available at time of BEGIN<highlight> signal */
+char header[MAXBUF]/*=""*/;		/* complete line */
+char header2[MAXBUF]/*=""*/;		/* SGIs have two lines of headers and footers */
+char header3[MAXBUF]/*=""*/;		/* GNU and some others have a third! */
+char footer[MAXBUF]/*=""*/;
+char footer2[MAXBUF]/*=""*/;
 #define CRUFTS 5
 char *cruft[CRUFTS] = { header, header2, header3, footer, footer2 };
+char *File, *in;		/* File = pointer to full file contents, in = current file pointer */
+char *argv0;
+int finTable=0;
+char tableSep='\0';	/*\t';*/
+/*int fTable=0;
+int fotable=0;*/
+char *tblcellformat;
+int tblcellspan;
+/*int tblspanmax;*/
+int listtype=-1;	/* current list type bogus to begin with */
+enum listtypes { DL, OL, UL };
 
 int fIP=0;
 
@@ -274,7 +289,7 @@ stricmp(const char *s1, const char *s2) {
 	/*strincmp(s1, s2, strlen(s1)+1);*/
 
 	while (tolower(*s1)==tolower(*s2)) {
-		if (*s1=='\0') return 0;
+		if (*s1=='\0' /*&& *s2=='\0'*/) return 0;
 		s1++; s2++;
 	}
 
@@ -282,23 +297,24 @@ stricmp(const char *s1, const char *s2) {
 	else return 1;
 }
 
+int lcexceptionscmp(const char **a, const char **b) { return stricmp(*a, *b); }
+
 int
 strincmp(const char *s1, const char *s2, size_t n) {
 	assert(s1!=NULL && s2!=NULL && n>0);
 
 	while (n>0 && tolower(*s1)==tolower(*s2)) {
-		if (*s1=='\0' || n==1) return 0;
 		n--; s1++; s2++;
 	}
-
-	if (tolower(*s1)<tolower(*s2)) return -1;
+	if (n==0) return 0;
+	else if (tolower(*s1)<tolower(*s2)) return -1;
 	else return 1;
 }
 
 /* compare string and a colon-separated list of strings */
 int
-strcoloncmp2(char *candidate, int end, char *list, int sen) {
-	char *l = list;
+strcoloncmp2(char *candidate, int end, const char *list, int sen) {
+	const char *l = list;
 	char *c,c2;
 
 	assert(candidate!=NULL && list!=NULL);
@@ -332,9 +348,9 @@ strcoloncmp2(char *candidate, int end, char *list, int sen) {
 }
 
 int
-strcoloncmp(char *candidate, int end, char *list) {
+strcoloncmp(char *candidate, int end, const char *list) {
 	int sen=1;
-	char *l = list;
+	const char *l = list;
 
 	assert(candidate!=NULL && list!=NULL);
 	assert(end>=-1 && end<=255);
@@ -345,12 +361,50 @@ strcoloncmp(char *candidate, int end, char *list) {
 	return strcoloncmp2(candidate, end, l, sen);
 }
 
+/* strdup not universally available */
+char *
+mystrdup(char *p) {
+  char *q;
+
+  if (p==NULL) return NULL;
+
+  q = malloc(strlen(p)+1);	/* +1 gives space for \0 that is not reported by strlen */
+  if (q!=NULL) strcpy(q,p);
+  return q;
+}
+
+
+/* given line of text, return "casified" version in place:
+   if word in exceptions list, return exception conversion
+   else uc first letter, lc rest
+*/
+void casify(char *p) {
+	char tmpch, *q, **exp;
+	int fuc;
+
+	for (fuc=1; *p; p++) {
+		if (isspace(*p) || strchr("&/",*p)!=NULL) fuc=1;
+		else if (fuc) {
+			/* usually */
+			if (p[1] && isupper(p[1]) /*&& p[2] && isupper(p[2])*/) fuc=0;
+			/* check for exceptions */
+			for (q=p; *q && !isspace(*q); q++) /*nada*/;
+			tmpch = *q; *q='\0';
+			exp = (char **)bsearch(&p, lcexceptions, lcexceptionslen, sizeof(char *), lcexceptionscmp);
+			*q = tmpch;
+			if (exp!=NULL) {
+				for (q=*exp; *q; q++) *p++=*q;
+				fuc = 1;
+			}
+		} else *p=tolower(*p);
+	}
+}
 
 
 /* add an attribute tag to a range of characters */
 
 void
-addtag(enum tagtype type, int first, int last) {
+tagadd(int /*enum tagtype--abused in source parsing*/ type, int first, int last) {
 	assert(type!=NOTAG);
 
 	if (tagc<MAXTAGS) {
@@ -369,7 +423,7 @@ addtag(enum tagtype type, int first, int last) {
 */
 
 void
-addtoc(char *text, enum command type, int line) {
+tocadd(char *text, enum command type, int line) {
 	char *r;
 
 	assert(text!=NULL && strlen(text)>0);
@@ -386,247 +440,32 @@ addtoc(char *text, enum command type, int line) {
 }
 
 
-
-char *vollist = VOLLIST;
-char phrase[BUFSIZ];	/* first "phrase" (space of >=3 spaces) */
-int phraselen;
+
+char *manTitle = MANTITLEPRINTF;
+char *manRef = MANREFPRINTF;
+char *href;
+int fmanRef=1;	/* make 'em links or just show 'em? */
 
 void
-filterline(char *buf, char *plain) {
-	char *p,*q,*r;
-	char *ph;
-	int iq;
-	int i,j;
-	int hl=-1, hl2=-1;
-	int iscnt=0;	/* interword space count */
-	int tagci;
-	int I0;
-	int etype;
-	int efirst;
-	enum tagtype tag = NOTAG;
+manrefextract(char *p) {
+  char *p0;
+  static char *nonhref = "\">'";
 
-	assert(buf!=NULL && plain!=NULL);
+  while (*p==' ') p++;
+  if (strincmp(p,"http",4)==0) {
+	href="%s"; manrefname = p;
+	p+=4;
+	while (*p && !isspace(*p) && !strchr(nonhref,*p)) p++;
+  } else {
+	href = manRef;
 
-	etype=NOTAG;
-	efirst=-1;
-	tagci=tagc;
-	ph=phrase; phraselen=0;
-	scnt=scnt2=0;
-	s_sum=s_cnt=0;
-	bs_sum=bs_cnt=0;
-	ccnt=0;
-	spcsqz=0;
-
-	/* strip only certain \x1b's and only at very beginning of line */
-	for (p=buf; *p=='\x1b' && (p[1]=='8'||p[1]=='9'); p+=2)
-		/* nop */;
-
-	strcpy(plain,p);
-	q=&plain[strlen(p)];
-
-	/*** spaces and change bars ***/
-	for (scnt=0,p=plain; *p==' '; p++) scnt++;	/* initial space count */
-
-	assert(*q=='\0');
-	q--;
-	if (fChangeleft)
-		for (; q-40>plain && *q=='|'; q--)	{	/* change bars */
-			if (fChangeleft!=-1) ccnt++;
-			while (q-2>=plain && q[-1]=='\b' && q[-2]=='|') q-=2;	/* boldface changebars! */
-		}
-
-	if (q!=&plain[scnt-1])			/* zap trailing spaces */
-		for (; *q==' '; q--) /* nop */;
-
-	q[1]='\0';
-
-
-	/* set I for tags below */
-	if (indent>=0 && scnt>=indent) scnt-=indent;
-	if (!fPara && !fIQS) {
-		if (fChangeleft) I+=(scnt>ccnt)?scnt:ccnt;
-		else I+=scnt;
-	}
-	I0=I;
-
-	/*** tags and filler spaces ***/
-
-	iq=0; falluc=1;
-	for (q=plain; *p; p++) {
-
-		iscnt=0;
-		if (*p==' ') {
-			for (r=p; *r==' '; r++) { iscnt++; spcsqz++; }
-			s_sum+=iscnt; s_cnt++;
-			if (iscnt>1 && !scnt2 && *p==' ') scnt2=iscnt;
-			if (iscnt>2) { bs_cnt++; bs_sum+=iscnt; }	/* keep track of large gaps */
-			iscnt--;		/* leave last space for tail portion of loop */
-
-			if (fQS && iscnt<3) { p=r-1;	iscnt=0; } /* reduce strings of <3 spaces to 1 */
-			/* else if (fQS && iscnt>=3) { replace with tab? } */
-			else {
-				for (i=0; i<iscnt; i++) { p++; *q++=' '; }
-			}
-		} /* need to go through if chain for closing off annotations */
-
-		/** backspace-related filtering **/
-
-		/* else */ if (*p=='\b' && p[1]=='_' && q>plain && q[-1]=='+') {
-			/* bold plus/minus(!) */
-			q[-1]=c_plusminus;
-			while (*p=='\b' && p[1]=='_') p+=2;
-			continue;
-		} else if ((*p=='_' && p[1]=='\b' && p[2]!='_' && p[3]!='\b')
-			|| (*p=='\b' && p[1]=='_')) {
-			/* italics */
-			/* start tag only if not already in one */
-			if (hl==-1) { hl=I+iq; tag=ITALICS; }
-			p+=2;
-		} else if (*p=='_' && p[2]==p[4] && p[1]=='\b' && p[3]=='\b' && p[2]!='_') {
-			/* bold italics (for Solaris) */
-			for (p+=2; *p==p[2] && p[1]=='\b';)
-				p+=2;
-			if (hl==-1) { hl=I+iq; tag=BOLDITALICS; }
-		} else if (*p==p[2] && p[1]=='\b') {
-			/* boldface */
-			while (*p==p[2] && p[1]=='\b')
-				p+=2;
-			if (hl==-1) { hl=I+iq; tag=BOLD; }
-		} else if (p[1]=='\b' &&
-				 ((*p=='o' && p[2]=='+') ||
-				  (*p=='+' && p[2]=='o')) ) {
-			/* bullets */
-			p+=2;
-			while (p[1]=='\b' &&		/* bold bullets(!) */
-				 (*p=='o' || p[2]=='+') )
-				p+=2;
-			*q++=c_bullet; iq++;
-			continue;
-		} else if (*p=='\b' && p>plain && p[-1]=='o' && p[1]=='+') {
-			/* OSF bullets */
-			while (*p=='\b' && p[1]=='+') p+=2;	/* bold bullets(!) */
-			q[-1]=c_bullet; p--;
-			continue;
-		} else if (p[1]=='\b' && *p=='+' && p[2]=='_') {
-			/* plus/minus */
-			p+=2;
-			*q++=c_plusminus; iq++;
-			continue;
-		} else if (p[1]=='\b' && *p=='|' && p[2]=='-') {
-			/* dagger */
-			*q++=c_dagger; iq++;
-			p+=2; continue;
-		} else if (*p=='\b') {
-			/* supress unattended backspaces */
-			continue;
-		} else if (*p=='\x1b' /*&& (p[1]=='9'||p[1]=='8')*/) {
-			p++;
-			if (*p=='[') {
-				p++;
-				if (*p=='1' && hl==-1) {
-					/* stash attributes in "invalid" array element */
-					efirst=I+iq; etype=BOLD;
-					/*hl=I+iq; tag=BOLD; -- faces immediate end of range */
-				} else if (*p=='0' /*&& hl>=0 && hl2==-1 && tags[MAXTAGS].first<I+iq*/) {
-					/* doesn't catch tag if spans line -- just make tag and hl static? */
-					/*addtag(tags[MAXTAGS].type, tags[MAXTAGS].first, I+iq);*/
-					if (hl==-1 && hl2==-1 && efirst!=-1/*<I+iq*/)
-						addtag(etype, efirst, I+iq);
-					efirst=-1;
-				} /* else skip unrecognized escape codes like 8/9 */
-			}
-			p+=2;	/* gobble 0/1 and mysterious following 'm' */
-			/* following 'm' (why?) gobbled in overarching for */
-			/*continue;*/
-		} else if ((isupper(*p) /*|| *p=='_' || *p=='&'*/) &&
-				 (hl>=0 || isupper(p[1]) || (p[1]=='_' && p[2]!='\b') || p[1]=='&')) {
-			if (hl==-1 && efirst==-1) { hl=I+iq; tag=SMALLCAPS; }
-		} else {
-			/* end of tag, one way or another */
-			/* collect tags in this pass, interspersed later if need be */
-			/* can't handle overlapping tags */
-			if (hl>=0) {
-				if (hl2==-1) addtag(tag, hl, I+iq);
-				hl=-1;
-			}
-		}
-
-		/** non-backspace related filtering **/
-		/* case statement here in place of if chain? */
-/* Tk 3.x's text widget tabs too crazy
-		if (*p==' ' && strncmp("     ",p,5)==0) {
-			xputchar('\t'); i+=5-1; ci++; continue;
-		} else
-*/
-/* copyright symbol: too much work for so little
-		if (p[i]=='o' && (strncmp("opyright (C) 19",&p[i],15)==0
-				    || strncmp("opyright (c) 19",&p[i],15)==0)) {
-			printf("opyright \xd3 19");
-			addtag(SYMBOL, ci+9, ci+10);
-			i+=15-1; ci+=13; continue;
-		} else
-*/
-		if (*p=='(' && q>plain && (isalnum(q[-1])||strchr("._-+",q[-1])!=NULL)
-		    && strcoloncmp(&p[1],')',vollist)
-		    /* && p[1]!='s' && p[-1]!='`' && p[-1]!='\'' && p[-1]!='"'*/ ) {
-			hl2=I+iq;
-			for (r=q-1; r>=plain && (isalnum(*r)||strchr("._-+:",*r)!=NULL); r--)
-				hl2--;
-			/* else ref to a function? */
-			/* maybe save position of opening paren so don't highlight it later */
-		} else if (*p==')' && hl2!=-1) {
-			/* don't overlap tags on man page referenes */
-			while (tagc>0 && tags[tagc-1].last>hl2) tagc--;
-			addtag(MANREF, hl2, I+iq+1);
-			hl2=hl=-1;
-		} else if (hl2!=-1) {
-			if (!isalnum(*p)) hl2=-1;
-		}
-
-
-		/*assert(*p!='\0');*/
-		if (!*p) break;	/* not just safety check -- check out sgmls.1 */
-
-		*q++=*p;
-		falluc = falluc && (isupper(*p) || isspace(*p) || strchr("-+&_'",*p)!=NULL);
-		if (!scnt2) { *ph++=*p; phraselen++; }
-		iq+=iscnt+1;
-	}
-	if (hl>=0) addtag(tag, hl, I+iq);
-	else if (efirst>=0) addtag(etype, efirst, I+iq);
-	*q=*ph='\0';
-	linelen=iq+ccnt;
-
-
-	/* special case for Solaris:
-	   if line has ONLY <CODE> tags AND they SPAN line, convert to one tag */
-	fCodeline=0;
-	if (tagc && tags[0].first==0 && tags[tagc-1].last==linelen) {
-		fCodeline=1;
-		j=0;
-		/* invariant: at start of a tag */
-		for (i=0; fCodeline && i<tagc; i++) {
-			if (tags[i].type!=BOLDITALICS /*&& tags[i].type!=BOLD*/) fCodeline=0;
-			else if ((j=tags[i].last)<linelen) {
-			  for (; j< tags[i+1].first ; j++)
-			  	if (!isspace(plain[j])) { fCodeline=0; break; }
-			}
-		}
-	}
-
-
-	/* verify tag lists -- compiler has dead code elimination, I hope */
-	for (i=tagci; i<tagc; i++) {
-		/* verify valid ranges */
-		assert(tags[i].type>NOTAG && tags[i].type<=MANREF);
-		assert(tags[i].first>=I0 && tags[i].last<=linelen+I0);
-		assert(tags[i].first<=tags[i].last);
-
-		/* verify for no overlap with other tags */
-		for (j=i+1; j<tagc; j++) {
-			assert(tags[i].last<=tags[j].first /*|| tags[i].first>=tags[j].last*/);
-		}
-	}
+	manrefname = p;
+	while (*p && *p!=' ' && *p!='(') p++; *p++='\0';
+	while (*p==' ' || *p=='(') p++; p0=p;
+	while (*p && *p!=')') p++;
+	manrefsect = p0;
+  }
+  *p='\0';
 }
 
 
@@ -638,8 +477,59 @@ filterline(char *buf, char *plain) {
  *    *** does this save significant space? ***
  */
 
+void
+formattedonly(void) {
+	fprintf(stderr, "The output formats for Tk and TkMan require nroff-formatted input\n");
+	exit(1);
+}
 
-
+
+/*
+ * DefaultFormat -- in weak OO inheritance, top of hierarchy for everybody
+ */
+void
+DefaultFormat(enum command cmd) {
+  int i;
+  
+  switch (cmd) {
+  case ITAB:
+    for (i=0; i<itabcnt; i++) putchar('\t');
+    break;
+  default:
+    /* nada */
+    break;
+  }
+}
+
+
+/*
+ * DefaultLine -- in weak OO inheritance, top of hierarchy for line-based formats
+ * for output format to "inherit", have "default: DefaultLine(cmd)" and override case statement "methods"
+ */
+
+void
+DefaultLine(enum command cmd) {
+	switch (cmd) {
+	default:
+	  DefaultFormat(cmd);
+	}
+}
+
+
+/*
+ * DefaultPara -- top of hierarchy for output formats that are formatted by their viewers
+ */
+
+void
+DefaultPara(enum command cmd) {
+	switch (cmd) {
+	default:
+	  DefaultFormat(cmd);
+	}
+}
+
+
+
 /*
  * Tk -- just emit list of text-tags pairs
  */
@@ -647,8 +537,9 @@ filterline(char *buf, char *plain) {
 void
 Tk(enum command cmd) {
 	static int skip=0;	/* skip==1 when line has no text */
-	/*static int markcnt=0;*/
 	int i;
+
+	if (fSource) formattedonly();
 
 	/* invariant: always ready to insert text */
 
@@ -669,64 +560,54 @@ Tk(enum command cmd) {
 
 			for (i=0; i<CRUFTS; i++) {
 				if (*cruft[i]) {
-					printf(/*$t insert end */" {%s} sc \\n\n",cruft[i]);
+					printf(/*$t insert end */"{%s} sc \\n\n",cruft[i]);
 					CurLine++;
 				}
 			}
 		} else printf("\"\n");
 		break;
 
+	   case COMMENTLINE: printf("# "); break;
+
 	   case BEGINLINE:
 		/*I=0; -- need to do this at end of line so set for filterline() */
 		/* nothing to do at start of line except catch up on newlines */
 		for (i=0; i<ncnt; i++) printf("\\n");
 		CurLine+=ncnt;
+		/*if (fSource) for (i=0; i<indent; i++) putchar('\t');*/
 		break;
 	   case ENDLINE:
-		if (!skip) printf("\\n");
-		/* reflist collected from manref-tagged text -- no need for explicit list
-		   easy to collect refs from entire page for Links menu
-		if (!skip) {
-			printf("\\n");
-			if (sectheadid==SEEALSO) {
-				printf("\"\n");
-				printf("append manx(links) {%s,}\n", plain);
-				printf("$t insert end \"");
-			}
+		/*if (!fSource) {*/
+		  if (!skip) /*if (ncnt)*/ printf("\\n"); /*else xputchar(' ');*/
+		  skip=0;
+		  CurLine++; I=0;
+		/*
+		} else {
+		  putchar(' '); I++;
 		}
 		*/
-
-		tagc=0;
-		skip=0;
-		CurLine++; I=0;
-		/*if ((CurLine&0x3f)==0x3f) printf("\"\nupdate idletasks\n$t insert end \"");*/
 		break;
 
 	   case ENDSECTHEAD:
-		/*printf("\\n\" {h2 +js%d}\n$t insert end \"",++markcnt); skip=1;*/
 		printf("\\n\" h2 \"");
 		tagc=0;
-		/*
-		printf("$t mark set js%d %d.0\n", ++markcnt, CurLine);
-		printf("$t insert end \""); skip=1;
-		*/
 		skip=1;
 		break;
 	   case ENDSUBSECTHEAD:
-		/*printf("\\n\" {+jss%d}\n$t insert end \"",++markcnt); skip=1;*/
-		printf("\\n\" {} \"");	/* add h3? */
+		printf("\\n\" h3 \"");	/* add h3? */
 		tagc=0;
-		/*
-		printf("$t mark set jss%d %d.0\n", ++markcnt, CurLine);
-		printf("$t insert end \""); skip=1;
-		*/
 		skip=1;
 		break;
+	   case HR:			/*printf("\\n%s\\n", horizontalrule); CurLine+=2; I=0;*/ break;
+	   case BEGINTABLEENTRY:
+		/*if (fSource) putchar('\t');*/
+		break;
 	   case BEGINTABLELINE:
+	   case ENDTABLEENTRY:
 		break;
 	   case ENDTABLELINE:
 		printf("\" tt \"");
-		/*addtag(MONO, 0, I);*/
+		/*tagadd(MONO, 0, I);*/
 		break;
 
 	   case CHANGEBAR:		putchar('|'); I++; break;
@@ -737,27 +618,44 @@ Tk(enum command cmd) {
 	   case CHARLSQUOTE:
 	   case CHARRSQUOTE:
 	   case CHARPERIOD:
+	   case CHARTAB:
 	   case CHARDASH:
 	   case CHARLT:
 	   case CHARGT:
 	   case CHARHAT:
 	   case CHARVBAR:
 	   case CHARAMP:
-	   case CHARDAGGER:
 	   case CHARPLUSMINUS:
-		putchar(cmd); I++; break;
+	   case CHARNBSP:
+ 	   case CHARCENT:
+ 	   case CHARSECT:
+ 	   case CHARCOPYR:
+ 	   case CHARNOT:
+ 	   case CHARREGTM:
+ 	   case CHARDEG:
+ 	   case CHARACUTE:
+ 	   case CHAR14:
+ 	   case CHAR12:
+ 	   case CHAR34:
+ 	   case CHARMUL:
+ 	   case CHARDIV:
+  		putchar(cmd); I++; break;
+ 	   case CHARDAGGER:
+ 		putchar('+'); I++; break;
 	   case CHARBACKSLASH:	printf("\\\\"); I++; break;
 	   case CHARBULLET:		printf("\" {} %c symbol \"",c_bullet); I++; break;
 
 
 	   case BEGINSECTHEAD:
 	   case BEGINSUBSECTHEAD:
+		/*if (fSource && sectheadid!=NAME) { printf("\\n\\n"); CurLine+=2; I=0; }*/
 		tagc=0;	/* section and subsection formatting controlled descriptively */
 		/* no break;*/
 
 	   case BEGINBOLD:
 	   case BEGINITALICS:
 	   case BEGINBOLDITALICS:
+	   case BEGINCODE:
 	   case BEGINY:
 	   case BEGINSC:
 	   case BEGINMANREF:
@@ -769,23 +667,38 @@ Tk(enum command cmd) {
 	   case ENDBOLD:		printf("\" b \""); break;
 	   case ENDITALICS:		printf("\" i \""); break;
 	   case ENDBOLDITALICS:	printf("\" bi \""); break;
+	   case ENDCODE:		printf("\" tt \""); break;
 	   case ENDY:			printf("\" symbol \""); break;
 	   case ENDSC:			printf("\" sc \""); break;
 	   case ENDMANREF:		printf("\" manref \""); break;
 		/* presentation attributes dealt with at end of line */
 
-	   case BEGINBODY: case ENDBODY:
+	   case BEGINBODY:
+		/*if (fSource) { printf("\\n\\n"); CurLine+=2; I=0; }*/
+		break;
 	   case SHORTLINE:
+		/*if (fSource) { printf("\\n"); CurLine++; I=0; }*/
+		break;
+	   case ENDBODY:
 	   case BEGINBULPAIR: case ENDBULPAIR:
+		/*if (fSource) { printf("\\n"); CurLine++; I=0; }*/
+		break;
+	   case BEGINBULTXT:
+		/*if (fSource) putchar('\t');*/
+		break;
 	   case BEGINBULLET: case ENDBULLET:
-	   case BEGINBULTXT: case ENDBULTXT:
+	   case ENDBULTXT:
 	   case BEGINSECTION: case ENDSECTION:
 	   case BEGINSUBSECTION: case ENDSUBSECTION:
 	   case BEGINHEADER: case ENDHEADER:
 	   case BEGINFOOTER: case ENDFOOTER:
 	   case BEGINTABLE: case ENDTABLE:
+	   case FONTSIZE:
+	   case BEGININDENT: case ENDINDENT:
 		/* no action */
 		break;
+	   default:
+		DefaultLine(cmd);
 	}
 }
 
@@ -796,10 +709,22 @@ Tk(enum command cmd) {
  * TkMan -- Tk format wrapped with commands
  */
 
+int linetabcnt[MAXLINES];	/* don't want to bother with realloc */
+int clocnt=0, clo[MAXLINES];
+int paracnt=0, para[MAXLINES];
+int rebuscnt=0, rebus[MAXLINES];
+int rebuspatcnt=0, rebuspatlen[25];
+char *rebuspat[25];
+
 void
 TkMan(enum command cmd) {
-	static int markcnt=0;
+	static int lastscnt=-1;
+	static int lastlinelen=-1;
+	static int lastsect=0;
+	/*static int coalese=0;*/
+	static int finflow=0;
 	int i;
+	char *p;
 
 	/* invariant: always ready to insert text */
 
@@ -809,12 +734,14 @@ TkMan(enum command cmd) {
 		Tk(cmd);
 		break;
 	   case ENDDOC:
+		Tk(ENDLINE);
+
 		if (fHeadfoot) {
 /*	grr, should have +mark syntax for Tk text widget!
-		printf("\\n\\n\" {} \"%s\\n\" {+headfoot h2}\n",HEADERANDFOOTER);
+		printf("\\n\\n\" {} \"%s\\n\" {+headfoot h2}\n", HEADERANDFOOTER);
 */
-			printf("\\n\\n\" {} \"%s\\n\" h2\n",HEADERANDFOOTER);
-			printf("$t mark set headfoot %d.0\n",CurLine);
+			printf("\\n\\n\" {} \"%s\\n\" h2\n", HEADERANDFOOTER);
+/*			printf("$t mark set headfoot end-2l\n");*/
 			CurLine++;
 
 			for (i=0; i<CRUFTS; i++) {
@@ -825,42 +752,79 @@ TkMan(enum command cmd) {
 			}
 		} else printf("\"\n");
 
-
 /*
 		printf("$t insert 1.0 {");
-		for (i=0; i<BUFSIZ; i++) if (tabgram[i]) printf("%d=%d, ", i, tabgram[i]);
+		for (i=0; i<MAXBUF; i++) if (tabgram[i]) printf("%d=%d, ", i, tabgram[i]);
 		printf("\\n\\n}\n");
 */
 
+		printf("set manx(tabcnts) {"); for (i=1; i<CurLine; i++) printf("%d ", linetabcnt[i]); printf("}\n");
+		printf("set manx(clo) {"); for (i=0; i<clocnt; i++) printf("%d ", clo[i]); printf("}\n");
+		printf("set manx(para) {"); for (i=0; i<paracnt; i++) printf("%d ", para[i]); printf("}\n");
+		printf("set manx(reb) {"); for (i=0; i<rebuscnt; i++) printf("%d ", rebus[i]); printf("}\n");
+
+		break;
+
+	   case BEGINCOMMENT: fcharout=0; break;
+	   case ENDCOMMENT: fcharout=1; break;
+	   case COMMENTLINE: break;
+
+	   case ENDSECTHEAD:
+	   case ENDSUBSECTHEAD:
+		lastsect=1;
+		Tk(cmd);
 		break;
 
 	   case BEGINLINE:
 	     Tk(cmd);
-		for (i=0; i<ccnt; i++) putchar('|');
-		for (i=0; i<(scnt/5); i++) putchar('\t');
-		for (i=0; i<(scnt%5); i++) putchar(' ');
-		/*if (fCodeline) printf("CODE");*/
+		linetabcnt[CurLine] = itabcnt;
+		/* old pattern for command line options "^\\|*\[ \t\]+-\[^-\].*\[^ \t\]" */
+		if (linelen>=2 && (plain[0]=='-' && plain[1]!='-') /*|| plain[0]=='%' || plain[0]=='$'*/ /* not much talk of money in man pages so reasonable */) clo[clocnt++] = CurLine;
+		/*
+		   would like to require second letter to be a capital letter to cut down on number of matches,
+		   but command names usually start with lowercase letter
+		   maybe use a uppercase requirement as secondary strategy, but probably not
+		*/
+		if ((ncnt || lastsect) && linelen>0 && scnt>0 && scnt<=5) para[paracnt++] = CurLine;
+		lastsect=0;
+
+
+		/* rebus too, instead of search through whole Tk widget */
+		if (rebuspatcnt && scnt>=5 /* not sect or subsect heads */) {
+			for (p=plain; *p && *p!=' '; p++) /*empty*/;	/* never first word */
+			while (*p) {
+				for (i=0; i<rebuspatcnt; i++) {
+					if (tolower(*p) == tolower(*rebuspat[i]) && strincmp(p, rebuspat[i], rebuspatlen[i])==0) {
+						/* don't interfere with man page refs */
+						for (; *p && !isspace(*p); p++) if (*p=='(') continue;
+						rebus[rebuscnt++] = CurLine;
+						p="";	/* break for outer */
+						break;	/* just locating any line with any rebus, not exact positions */
+					}
+				}
+				/* just check start of words, though doesn't have to be full word (if did, could use strlen rather than strnlen) */
+				while (*p && *p!=' ') p++;
+				while (*p && *p==' ') p++;
+			}
+		}
+
+
+		if (fReflow && !ncnt && (finflow || lastlinelen>50) && (abs(scnt-lastscnt)<=1 || abs(scnt-hanging)<=1)) {
+		  finflow=1;
+		  putchar(' ');
+		} else {
+		  Tk(ENDLINE);
+		  /*if ((CurLine&0x3f)==0x3f) printf("\"\nupdate idletasks\n$t insert end \""); blows up some Tk text buffer, apparently, on long lines*/
+		  if ((CurLine&0x1f)==0x1f) printf("\"\nupdate idletasks\n$t insert end \"");
+		  finflow=0;
+
+		  /*if (fCodeline) printf("CODE");*/
+		}
+		lastlinelen=linelen; lastscnt=scnt;
 		break;
-	   case CHANGEBAR:
-		break;
+
 	   case ENDLINE:
-		/*tagc=0; CurLine++; I=0;*/ Tk(cmd);
-		if ((CurLine&0x3f)==0x3f) printf("\"\nupdate idletasks\n$t insert end \"");
-		break;
-
-	   case ENDSECTHEAD:
-		Tk(cmd);
-		printf("\"\n"); /* close off current stream */
-		printf("$t mark set js%d %d.0\n", ++markcnt, CurLine);
-		printf("$t insert end \"");
-		break;
-
-	   case ENDSUBSECTHEAD:
-		Tk(cmd);
-		/*printf("\\n\" {+jss%d}\n$t insert end \"",++markcnt); skip=1;*/
-		printf("\"\n"); /* close off current stream */
-		printf("$t mark set jss%d %d.0\n", ++markcnt, CurLine);
-		printf("$t insert end \"");
+		/* don't call Tk(ENDLINE) */
 		break;
 
 	   default:	/* if not caught above, it's the same as Tk */
@@ -892,9 +856,11 @@ ASCII(enum command cmd) {
 		break;
 	   case CHARLSQUOTE:
 	   case CHARRSQUOTE:
+	   case CHARACUTE:
 		putchar('\'');
 		break;
 	   case CHARPERIOD:
+	   case CHARTAB:
 	   case CHARDASH:
 	   case CHARLT:
 	   case CHARAMP:
@@ -902,23 +868,38 @@ ASCII(enum command cmd) {
 	   case CHARGT:
 	   case CHARHAT:
 	   case CHARVBAR:
+	   case CHARNBSP:
 		putchar(cmd); break;
 	   case CHARDAGGER:	putchar('+'); break;
 	   case CHARBULLET:	putchar('*'); break;
 	   case CHARPLUSMINUS: printf("+-"); break;
 	   case CHANGEBAR:	putchar('|'); break;
+ 	   case CHARCENT:	putchar('c'); break;
+ 	   case CHARSECT:	putchar('S'); break;
+ 	   case CHARCOPYR:	printf("(C)"); break;
+ 	   case CHARNOT:	putchar('~'); break;
+ 	   case CHARREGTM:	printf("(R)"); break;
+ 	   case CHARDEG:	putchar('o'); break;
+ 	   case CHAR14:		printf("1/4"); break;
+ 	   case CHAR12:		printf("1/2"); break;
+ 	   case CHAR34:		printf("3/4"); break;
+ 	   case CHARMUL:	putchar('X'); break;
+ 	   case CHARDIV:	putchar('/'); break;
+	   case HR:		printf("\n%s\n", horizontalrule); break;
 
 	   case BEGINLINE:
 		for (i=0; i<ncnt; i++) putchar('\n');
 		break;
+	   case BEGINBODY:
+	   case SHORTLINE:
+		if (!fSource) break;
 	   case ENDLINE:
 		putchar('\n');
 		CurLine++;
-		tagc=0;
 		break;
 
 	   case BEGINDOC:
-	   case BEGINBODY: case ENDBODY:
+	   case ENDBODY:
 	   case BEGINHEADER: case ENDHEADER:
 	   case BEGINFOOTER: case ENDFOOTER:
 	   case BEGINSECTION: case ENDSECTION:
@@ -929,10 +910,12 @@ ASCII(enum command cmd) {
 	   case BEGINBULTXT: case ENDBULTXT:
 	   case BEGINSUBSECTION: case ENDSUBSECTION:
 
-	   case SHORTLINE:
 	   case BEGINTABLE: case ENDTABLE:
-	   case BEGINTABLELINE: case ENDTABLELINE:
+	   case BEGINTABLELINE: case ENDTABLELINE: case BEGINTABLEENTRY: case ENDTABLEENTRY:
+	   case BEGININDENT: case ENDINDENT:
+	   case FONTSIZE:
 	   case BEGINBOLD: case ENDBOLD:
+	   case BEGINCODE: case ENDCODE:
 	   case BEGINITALICS: case ENDITALICS:
 	   case BEGINMANREF: case ENDMANREF:
 	   case BEGINBOLDITALICS: case ENDBOLDITALICS:
@@ -940,6 +923,8 @@ ASCII(enum command cmd) {
 	   case BEGINSC: case ENDSC:
 		/* nothing */
 		break;
+	   default:
+		DefaultLine(cmd);
 	}
 }
 
@@ -960,6 +945,7 @@ pod(enum command cmd) {
 
 
 	if (cmd==BEGINBULPAIR) {
+		/* want to have multiply indented text */
 		if (curindent && hanging!=curindent) printf("\n=back\n\n");
 		if (hanging!=curindent) printf("\n=over %d\n\n",hanging);
 		curindent=hanging;
@@ -986,15 +972,21 @@ pod(enum command cmd) {
 	switch (cmd) {
 	   case BEGINDOC: I=0; break;
 
+	   case BEGINCOMMENT: fcharout=0; break;
+	   case ENDCOMMENT: fcharout=1; break;
+	   case COMMENTLINE: break;
+
 	   case CHARRQUOTE:
 	   case CHARLQUOTE:
 		putchar('"');
 		break;
 	   case CHARLSQUOTE:
 	   case CHARRSQUOTE:
+	   case CHARACUTE:
 		putchar('\'');
 		break;
 	   case CHARPERIOD:
+	   case CHARTAB:
 	   case CHARDASH:
 	   case CHARLT:
 	   case CHARAMP:
@@ -1002,10 +994,23 @@ pod(enum command cmd) {
 	   case CHARGT:
 	   case CHARHAT:
 	   case CHARVBAR:
+	   case CHARNBSP:
 		putchar(cmd); break;
 	   case CHARDAGGER:	putchar('+'); break;
 	   case CHARPLUSMINUS: printf("+-"); break;
 	   case CHANGEBAR:	putchar('|'); break;
+ 	   case CHARCENT:	putchar('c'); break;
+ 	   case CHARSECT:	putchar('S'); break;
+ 	   case CHARCOPYR:	printf("(C)"); break;
+ 	   case CHARNOT:	putchar('~'); break;
+	   case CHARREGTM:	printf("(R)"); break;
+ 	   case CHARDEG:	putchar('o'); break;
+ 	   case CHAR14:	printf("1/4"); break;
+ 	   case CHAR12:	printf("1/2"); break;
+ 	   case CHAR34:	printf("3/4"); break;
+ 	   case CHARMUL:	putchar('X'); break;
+ 	   case CHARDIV:	putchar('/'); break;
+	   case HR:		printf("\n%s\n", horizontalrule); break;
 	   case CHARBULLET:	putchar('*'); break;
 
 	   case BEGINLINE:
@@ -1015,7 +1020,6 @@ pod(enum command cmd) {
 	   case ENDLINE:
 		putchar('\n');
 		CurLine++;
-		tagc=0;
 		I=0;
 		break;
 
@@ -1027,11 +1031,13 @@ pod(enum command cmd) {
 		printf("\n");
 		break;
 
-	   case BEGINBOLD:	printf("B<"); break;
+	   case BEGINCODE:
+	   case BEGINBOLD:		printf("B<"); break;
 	   case BEGINITALICS:	printf("I<"); break;
 	   case BEGINMANREF:	printf("L<"); break;
 
 	   case ENDBOLD:
+	   case ENDCODE:
 	   case ENDITALICS:
 	   case ENDMANREF:
 		printf(">");
@@ -1063,12 +1069,16 @@ pod(enum command cmd) {
 
 	   case SHORTLINE:
 	   case BEGINTABLE: case ENDTABLE:
-	   case BEGINTABLELINE: case ENDTABLELINE:
+	   case BEGINTABLELINE: case ENDTABLELINE: case BEGINTABLEENTRY: case ENDTABLEENTRY:
+	   case BEGININDENT: case ENDINDENT:
+	   case FONTSIZE:
 	   case BEGINBOLDITALICS: case ENDBOLDITALICS:
 	   case BEGINY: case ENDY:
 	   case BEGINSC: case ENDSC:
 		/* nothing */
 		break;
+	   default:
+		DefaultLine(cmd);
 	}
 }
 
@@ -1084,6 +1094,11 @@ Sections(enum command cmd) {
 	   case BEGINDOC:
 		fcharout=0;
 		break;
+
+	   case BEGINCOMMENT: fcharout=0; break;
+	   case ENDCOMMENT: fcharout=1; break;
+	   case COMMENTLINE: break;
+
 	   case BEGINSUBSECTHEAD:
 		printf("  ");
 		/* no break */
@@ -1096,12 +1111,16 @@ Sections(enum command cmd) {
 		break;
 	   case CHARLSQUOTE:
 	   case CHARRSQUOTE:
+	   case CHARACUTE:
 		xputchar('\'');
 		break;
 	   case BEGINTABLE: case ENDTABLE:
-	   case BEGINTABLELINE: case ENDTABLELINE:
+	   case BEGINTABLELINE: case ENDTABLELINE: case BEGINTABLEENTRY: case ENDTABLEENTRY:
+	   case BEGININDENT: case ENDINDENT:
+	   case FONTSIZE:
 		break;
 	   case CHARPERIOD:
+	   case CHARTAB:
 	   case CHARDASH:
 	   case CHARBACKSLASH:
 	   case CHARLT:
@@ -1109,10 +1128,23 @@ Sections(enum command cmd) {
 	   case CHARHAT:
 	   case CHARVBAR:
 	   case CHARAMP:
+	   case CHARNBSP:
 		xputchar(cmd); break;
 	   case CHARDAGGER:	xputchar('+'); break;
 	   case CHARBULLET:	xputchar('*'); break;
 	   case CHARPLUSMINUS: xputchar('+'); xputchar('-'); break;
+ 	   case CHARCENT:	xputchar('c'); break;
+ 	   case CHARSECT:	xputchar('S'); break;
+	   case CHARCOPYR:	xputchar('('); xputchar('C'); xputchar(')'); break;
+ 	   case CHARNOT:	xputchar('~'); break;
+ 	   case CHARREGTM:	xputchar('('); xputchar('R'); xputchar(')'); break;
+ 	   case CHARDEG:	xputchar('o'); break;
+ 	   case CHAR14:	xputchar('1'); xputchar('/'); xputchar('4'); break;
+ 	   case CHAR12:	xputchar('1'); xputchar('/'); xputchar('2'); break;
+ 	   case CHAR34:	xputchar('3'); xputchar('/'); xputchar('4'); break;
+ 	   case CHARMUL:	xputchar('X'); break;
+ 	   case CHARDIV:	xputchar('/'); break;
+	   case ITAB:		DefaultLine(cmd); break;
 	   default:
 		/* nothing */
 		break;
@@ -1123,36 +1155,44 @@ Sections(enum command cmd) {
 
 void
 Roff(enum command cmd) {
-	int i;
-
 	switch (cmd) {
 	   case BEGINDOC:
 		I=1;
-		printf(".TH %s %s \"generated by RosettaMan\" UCB\n",manName,manSect);
-		printf(".\\\"  %s,\n",providence);
+		printf(".TH %s %s \"generated by PolyglotMan\" UCB\n",manName,manSect);
+		printf(".\\\"  %s,\n",provenance);
 		printf(".\\\"  %s\n",anonftp);
 		CurLine=1;
 		break;
-	   case BEGINBODY:		/*printf(".LP\n");*/ break;
+	   case BEGINBODY:		printf(".LP\n"); break;
+
+	   case BEGINCOMMENT: 
+	   case ENDCOMMENT:
+		break;
+	   case COMMENTLINE: printf("'\\\" "); break;
+
 	   case BEGINSECTHEAD:	printf(".SH "); break;
 	   case BEGINSUBSECTHEAD:printf(".SS "); break;
 	   case BEGINBULPAIR:	printf(".IP "); break;
 	   case SHORTLINE:		printf("\n.br"); break;
 	   case BEGINBOLD:		printf("\\fB"); break;	/* \n.B -- grr! */
+	   case ENDCODE:
 	   case ENDBOLD:		printf("\\fR"); break;	/* putchar('\n'); */
 	   case BEGINITALICS:	printf("\\fI"); break;
 	   case ENDITALICS:		printf("\\fR"); break;
+	   case BEGINCODE:
 	   case BEGINBOLDITALICS:printf("\\f4"); break;
 	   case ENDBOLDITALICS:	printf("\\fR"); break;
 
 	   case CHARLQUOTE:		printf("\\*(rq"); break;
 	   case CHARRQUOTE:		printf("\\*(lq"); break;
+	   case CHARNBSP:		printf("\\|"); break;
 	   case CHARLSQUOTE:
 	   case CHARRSQUOTE:
 		putchar('\'');
 		break;
 	   case CHARPERIOD:		if (I==1) printf("\\&"); putchar('.'); I++; break;
 	   case CHARDASH:		printf("\\-"); break;
+	   case CHARTAB:
 	   case CHARLT:
 	   case CHARGT:
 	   case CHARHAT:
@@ -1163,17 +1203,29 @@ Roff(enum command cmd) {
 	   case CHARDAGGER:		printf("\\(dg"); break;
 	   case CHARPLUSMINUS:	printf("\\(+-"); break;
 	   case CHANGEBAR:		putchar('|'); break;
+ 	   case CHARCENT:		printf("\\(ct"); break;
+ 	   case CHARSECT:		printf("\\(sc"); break;
+ 	   case CHARCOPYR:		printf("\\(co"); break;
+ 	   case CHARNOT:		printf("\\(no"); break;
+ 	   case CHARREGTM:		printf("\\(rg"); break;
+ 	   case CHARDEG:		printf("\\(de"); break;
+ 	   case CHARACUTE:		printf("\\(aa"); break;
+ 	   case CHAR14:		printf("\\(14"); break;
+ 	   case CHAR12:		printf("\\(12"); break;
+ 	   case CHAR34:		printf("\\(34"); break;
+ 	   case CHARMUL:		printf("\\(mu"); break;
+ 	   case CHARDIV:		printf("\\(di"); break;
+	   case HR:			/*printf("\n%s\n", horizontalrule);*/ break;
 	   case CHARBACKSLASH:	printf("\\\\"); break;  /* correct? */
 
 	   case BEGINLINE:
-		for (i=0; i<ncnt; i++) putchar('\n');
+		/*for (i=0; i<ncnt; i++) putchar('\n');*/
 		break;
 
 	   case BEGINBULLET:	putchar('"'); break;
 	   case ENDBULLET:		printf("\"\n"); break;
 
 	   case ENDLINE:
-		tagc=0;
 		CurLine++;
 		I=1;
 		/* no break */
@@ -1182,6 +1234,7 @@ Roff(enum command cmd) {
 	   case ENDDOC:
 		putchar('\n');
 		break;
+
 	   case ENDBODY:
 	   case ENDBULPAIR:
 	   case BEGINBULTXT: case ENDBULTXT:
@@ -1190,16 +1243,22 @@ Roff(enum command cmd) {
 	   case BEGINY: case ENDY:
 	   case BEGINSC: case ENDSC:
 	   case BEGINTABLE: case ENDTABLE:
-	   case BEGINTABLELINE: case ENDTABLELINE:
+	   case BEGINTABLELINE: case ENDTABLELINE: case BEGINTABLEENTRY: case ENDTABLEENTRY:
+	   case BEGININDENT: case ENDINDENT:
+	   case FONTSIZE:
 	   case BEGINHEADER: case ENDHEADER:
 	   case BEGINFOOTER: case ENDFOOTER:
 	   case BEGINMANREF: case ENDMANREF:
 		/* nothing */
 		break;
+	   default:
+		DefaultPara(cmd);
 	}
 }
 
 
+/* can't test Ensemble, probably not used, so why take up space? */
+#if 0
 
 /*
  * Ensemble
@@ -1261,6 +1320,11 @@ Ensemble(enum command cmd) {
 		escchars = "{}\\";
 		break;
 	   case ENDDOC:	printf("</MANPAGE>\n"); break;
+
+	   case BEGINCOMMENT: printf("\n<!--\n"); break;
+	   case ENDCOMMENT: printf("\n-->\n"); break;
+	   case COMMENTLINE: break;
+
 	   case BEGINBODY:
 		printf("<SUBSECTIONBODY><BODY>{");
 		break;
@@ -1275,8 +1339,12 @@ Ensemble(enum command cmd) {
 	   case ENDSECTHEAD:		tagc=0; I=0; printf("}</SECTHEAD>\n"); break;
 	   case BEGINSUBSECTHEAD:	printf("<SUBSECTHEAD>{"); break;
 	   case ENDSUBSECTHEAD:		tagc=0; I=0; printf("}</SUBSECTHEAD>\n"); break;
-	   case BEGINBULPAIR:		printf("<SUBSECTIONBODY><LISTELEMENT>"); break;
-	   case ENDBULPAIR:			printf("</LISTELEMENT></SUBSECTIONBODY>\n"); break;
+	   case BEGINBULPAIR:
+		printf("<SUBSECTIONBODY><LISTELEMENT>");
+		break;
+	   case ENDBULPAIR:
+		printf("</LISTELEMENT></SUBSECTIONBODY>\n");
+		break;
 	   case BEGINBULLET:		printf("<BULLET>{"); break;
 	   case ENDBULLET:			tagc=0; I=0; printf("}</BULLET>"); break;
 	   case BEGINBULTXT:		printf("<BULLETTEXT>{"); break;
@@ -1289,6 +1357,7 @@ Ensemble(enum command cmd) {
 	   case ENDSUBSECTION:	printf("</SUBSECTION></SUBSECTIONBODY>\n"); break;
 	   case SHORTLINE:		/*poppush(prevcmd);*/ break;
 
+
 	   case CHARRQUOTE:
 	   case CHARLQUOTE:
 		putchar('"'); I++;
@@ -1298,6 +1367,7 @@ Ensemble(enum command cmd) {
 		putchar('\'');
 		break;
 	   case CHARPERIOD:
+	   case CHARTAB:
 	   case CHARDASH:
 	   case CHARBACKSLASH:
 	   case CHARLT:
@@ -1308,9 +1378,23 @@ Ensemble(enum command cmd) {
 	   case CHARBULLET:
 	   case CHARDAGGER:
 	   case CHARPLUSMINUS:
+	   case CHARNBSP:
++ 	   case CHARCENT:
+ 	   case CHARSECT:
+ 	   case CHARCOPYR:
+ 	   case CHARNOT:
+ 	   case CHARREGTM:
+ 	   case CHARDEG:
+ 	   case CHARACUTE:
+ 	   case CHAR14:
+ 	   case CHAR12:
+ 	   case CHAR34:
+ 	   case CHARMUL:
+ 	   case CHARDIV:
 		putchar(cmd); I++; break;
 
 	   case ENDLINE:		putchar(' '); I++; break;
+	   case HR:			/*printf("\n%s\n", horizontalrule);*/ break;
 	   case CHANGEBAR:
 		/* maybe something later */
 	   case BEGINLINE: 
@@ -1318,27 +1402,28 @@ Ensemble(enum command cmd) {
 	   case BEGINHEADER: case ENDHEADER:
 	   case BEGINFOOTER: case ENDFOOTER:
 	   case BEGINBOLD: case ENDBOLD:
+	   case BEGINCODE: case ENDCODE:
 	   case BEGINITALICS: case ENDITALICS:
 	   case BEGINBOLDITALICS: case ENDBOLDITALICS:
 	   case BEGINSC: case ENDSC:
 	   case BEGINTABLE: case ENDTABLE:
-	   case BEGINTABLELINE: case ENDTABLELINE:
+	   case BEGINTABLELINE: case ENDTABLELINE: case BEGINTABLEENTRY: case ENDTABLEENTRY:
+	   case BEGININDENT: case ENDINDENT:
+	   case FONTSIZE:
 
 	   case BEGINMANREF:
 	   case ENDMANREF:
 		/* easy strike for hypertext--want to dynamically generate, though */
-
 		/* nothing */
 		break;
+	   default:
+		DefaultPara(cmd);
 	}
 }
+#endif
 
 
 
-char *manTitle = MANTITLEPRINTF;
-char *manRef = MANREFPRINTF;
-int fmanRef=1;	/* valid man ref? */
-
 /*
  * HTML
  */
@@ -1346,30 +1431,48 @@ int fmanRef=1;	/* valid man ref? */
 void
 HTML(enum command cmd) {
 	static int pre=0;
-	int i,j;
+	int i;
 	int lasttoc;
-	char *p, *p0;
 
 	/* always respond to these signals */
 	switch (cmd) {
-	   case CHARLQUOTE:
-	   case CHARRQUOTE:
-		printf("&quot;");
-		break;
+	   case CHARNBSP:		printf("&nbsp;"); I++; break;
+	   case CHARLQUOTE:		printf("&laquo;");		break;
+	   case CHARRQUOTE:		printf("&raquo;");		break;
+	   case CHARTAB:		printf("<tt> </tt>&nbsp;<tt> </tt>&nbsp;");		break;
+	  /* old browsers--who uses these?--don't understand symbolic codes */
+	  /*
+ 	   case CHARNBSP:		printf("&#160;"); I++; break;
+ 	   case CHARLQUOTE:		printf("&#171;"); break;
+ 	   case CHARRQUOTE:		printf("&#187;"); break;
+ 	   case CHARTAB:		printf("<tt> </tt>&#160;<tt> </tt>&#160;"); break;
+		*/
 	   case CHARLSQUOTE:
 	   case CHARRSQUOTE:
 	   case CHARPERIOD:
 	   case CHARDASH:
 	   case CHARBACKSLASH:
+	   case CHARVBAR:		/*printf("&brvbar;"); -- broken bar no good */
 	   case CHARHAT:
-	   case CHARVBAR:
-	   case CHARBULLET:
-	   case CHARDAGGER:
-	   case CHARPLUSMINUS:
 		putchar(cmd); break;
+	   case CHARDAGGER:		printf("*"); break;
+	   case CHARBULLET:		printf("&#183;"/*"&middot;"*//*&sect;--middot hardly visible*/); break;
+	   case CHARPLUSMINUS:	printf("&#177;"/*"&plusmn;"*/); break;
 	   case CHARGT:		printf("&gt;"); break;
 	   case CHARLT:		printf("&lt;"); break;
 	   case CHARAMP:		printf("&amp;"); break;
+	   case CHARCENT:		printf("&#162;"); break;	/* translate these to symbolic forms, sometime */
+ 	   case CHARSECT:		printf("&#167;"); break;
+ 	   case CHARCOPYR:		printf("&#169;"); break;
+ 	   case CHARNOT:		printf("&#172;"); break;
+ 	   case CHARREGTM:		printf("&#174;"); break;
+ 	   case CHARDEG:		printf("&#176;"); break;
+ 	   case CHARACUTE:		printf("&#180;"); break;
+ 	   case CHAR14:		printf("&#188;"); break;
+ 	   case CHAR12:		printf("&#189;"); break;
+ 	   case CHAR34:		printf("&#190;"); break;
+ 	   case CHARMUL:		printf("&#215;"); break;
+ 	   case CHARDIV:		printf("&#247;"); break;
 	   default:
 		break;
 	}
@@ -1377,8 +1480,14 @@ HTML(enum command cmd) {
 	/* while in pre mode... */
 	if (pre) {
 		switch (cmd) {
-		   case ENDLINE:	I=0; tagc=0; CurLine++; if (!fPara && scnt) printf("<BR>"); printf("\n"); break;
-		   case ENDTABLE:	printf("</PRE><br>\n"); pre=0; fQS=fIQS=fPara=1; break;
+		   case ENDLINE:	I=0; CurLine++; if (!fPara && scnt) printf("<BR>"); printf("\n"); break;
+		   case ENDTABLE:
+			if (fSource) {
+			  printf("</TABLE>\n");
+			} else {
+			  printf("</PRE><BR>\n"); pre=0; fQS=fIQS=fPara=1;
+			}
+			break;
 		   default:
 			/* nothing */
 			break;
@@ -1390,13 +1499,13 @@ HTML(enum command cmd) {
 	switch (cmd) {
 	   case BEGINDOC:
 		/* escchars = ...  => HTML doesn't backslash-quote metacharacters */
-		printf("<!-- %s, -->\n",providence);
-		printf("<!-- %s -->\n",anonftp);
+		printf("<!-- %s, -->\n",provenance);
+		printf("<!-- %s -->\n\n",anonftp);
 		printf("<HTML>\n<HEAD>\n");
 /*		printf("<ISINDEX>\n");*/
 		/* better title possible? */
 		printf("<TITLE>"); printf(manTitle, manName, manSect); printf("</TITLE>\n");
-		printf("</HEAD>\n<BODY>\n");
+		printf("</HEAD>\n<BODY bgcolor=white>\n");
 		printf("<A HREF=\"#toc\">%s</A><P>\n", TABLEOFCONTENTS);
 		I=0;
 		break;
@@ -1409,7 +1518,7 @@ HTML(enum command cmd) {
 		}
 
 		if (!tocc) {
-			printf("\n<H1>ERROR: Empty man page</H1>\n");
+			/*printf("\n<H1>ERROR: Empty man page</H1>\n");*/
 		} else {
 			printf("\n<HR><P>\n");
 			printf("<A NAME=\"toc\"><B>%s</B></A><P>\n", TABLEOFCONTENTS);
@@ -1419,15 +1528,21 @@ HTML(enum command cmd) {
 					if (toc[i].type==BEGINSUBSECTION) printf("<UL>\n");
 					else printf("</UL>\n");
 				}
-				printf("<LI><A NAME=\"toc%d\" HREF=\"#sect%d\">%s</A></LI>\n", i+1, i+1, toc[i].text);
+				printf("<LI><A NAME=\"toc%d\" HREF=\"#sect%d\">%s</A></LI>\n", i, i, toc[i].text);
 			}
 			if (lasttoc==BEGINSUBSECTION) printf("</UL>");
 			printf("</UL>\n");
 		}
 		printf("</BODY></HTML>\n");
 		break;
-	   case BEGINBODY:		break;
+	   case BEGINBODY:
+		printf("<P>\n");
+		break;
 	   case ENDBODY:		break;
+
+	   case BEGINCOMMENT: printf("\n<!--\n"); break;
+	   case ENDCOMMENT: printf("\n-->\n"); break;
+	   case COMMENTLINE: break;
 
 	   case BEGINSECTHEAD:
 		printf("\n<H2><A NAME=\"sect%d\" HREF=\"#toc%d\">", tocc, tocc);
@@ -1443,24 +1558,46 @@ HTML(enum command cmd) {
 		printf("</A></H3>\n");
 		break;
 	   case BEGINSECTION:	break;
-	   case ENDSECTION:		break;
+	   case ENDSECTION:
+		if (sectheadid==NAME && message!=NULL) printf(message);
+		break;
 	   case BEGINSUBSECTION:	break;
 	   case ENDSUBSECTION:	break;
 
-	   case BEGINBULPAIR:	printf("<DL>\n"); break;
-	   case ENDBULPAIR:		printf("</DL>\n"); break;
-	   case BEGINBULLET:	printf("<DT>"); break;
-	   case ENDBULLET:		break;
-	   case BEGINBULTXT:	printf("<DD>"); break;
-	   case ENDBULTXT:		printf("</DD>\n"); break;
+	   case BEGINBULPAIR:
+		if (listtype==OL) printf("\n<OL>\n");
+		else if (listtype==UL) printf("\n<UL>\n");
+		else printf("\n<DL>\n");
+		break;
+	   case ENDBULPAIR:
+		if (listtype==OL) printf("\n</OL>\n");
+		else if (listtype==UL) printf("\n</UL>\n");
+		else printf("</DL>\n");
+		break;
+	   case BEGINBULLET:
+		if (listtype==OL || listtype==UL) fcharout=0;
+		else printf("\n<DT>");
+		break;
+	   case ENDBULLET:
+		if (listtype==OL || listtype==UL) fcharout=1;
+		else printf("</DT>");
+		break;
+	   case BEGINBULTXT:
+		if (listtype==OL || listtype==UL) printf("<LI>");
+		else printf("\n<DD>");
+		break;
+	   case ENDBULTXT:
+		if (listtype==OL || listtype==UL) printf("</LI>");
+		else printf("</DD>\n");
+		break;
 
 	   case BEGINLINE:
-		if (ncnt) printf("<P>\n");
+		/*		if (ncnt) printf("<P>\n");*/
 
 		/* trailing spaces already trimmed off, so look for eol now */
 		if (fCodeline) {
 		  printf("<CODE>");
-		  for (i=0; i<scnt-indent; i++) printf("&nbsp;");		/* ? */
+		  for (i=0; i<scnt-indent; i++) printf("&nbsp;"/*&#160;*/);		/* ? */
 		  tagc=0;
 
 		  /* already have .tag=BOLDITALICS, .first=0 */
@@ -1476,7 +1613,7 @@ HTML(enum command cmd) {
 	   case ENDLINE:
 		/*if (fCodeline) { fIQS=1; fCodeline=0; }*/
 		if (fCodeline) { printf("</CODE><BR>"); fCodeline=0; }
-		I=0; tagc=0; CurLine++; if (!fPara && scnt) printf("<BR>"); printf("\n");
+		I=0; CurLine++; if (!fPara && scnt) printf("<BR>"); printf("\n");
 		break;
 
 	   case SHORTLINE:
@@ -1484,38 +1621,85 @@ HTML(enum command cmd) {
 		if (!fIP) printf("<BR>\n");
 		break;
 
-	   case BEGINTABLE:		printf("<BR><PRE>\n"); pre=1; fQS=fIQS=fPara=0; break;
-	   case ENDTABLE:		printf("</PRE><BR>\n"); pre=0; fQS=fIQS=fPara=1; break;
-		/* could use a new list type */
+
+	   case BEGINTABLE:
+		if (fSource) {
+		  /*printf("<CENTER><TABLE BORDER>\n");*/
+		  printf("<TABLE BORDER=0>\n");
+		} else {
+		  printf("<BR><PRE>\n"); pre=1; fQS=fIQS=fPara=0;
+		}
+		break;
+	   case ENDTABLE:
+		if (fSource) {
+		  printf("</TABLE>\n");
+		} else {
+		  printf("</PRE><BR>\n"); pre=0; fQS=fIQS=fPara=1;
+		}
+		break;
+	   case BEGINTABLELINE:		printf("<TR>"); break;
+	   case ENDTABLELINE:		printf("</TR>\n"); break;
+	   case BEGINTABLEENTRY:
+		printf("<TD ALIGN=");
+		switch (tblcellformat[0]) {
+		case 'c':	printf("CENTER"); break;
+		case 'n':	/*printf("DECIMAL"); break;  -- fall through to right for now */
+		case 'r':	printf("RIGHT"); break;
+		case 'l':
+		default:
+		  printf("LEFT");
+		}
+		if (tblcellspan>1) printf(" COLSPAN=%d", tblcellspan);
+		printf(">");
+		break;
+	   case ENDTABLEENTRY:
+		printf("</TD>");
+		break;
+
+	   /* something better with CSS */
+	   case BEGININDENT:		printf("<blockquote>"); break;
+	   case ENDINDENT:			printf("</blockquote>\n"); break;
+
+	   case FONTSIZE:
+		/* HTML font step sizes are bigger than troff's */
+		if ((fontdelta+=intArg)!=0) printf("<FONT SIZE=%c1>", (intArg>0)?'+':'-'); else printf("</FONT>\n");
+		break;
 
 	   case BEGINBOLD:		printf("<B>"); break;
 	   case ENDBOLD:		printf("</B>"); break;
 	   case BEGINITALICS:	printf("<I>"); break;
 	   case ENDITALICS:		printf("</I>"); break;
-	   case BEGINBOLDITALICS:printf("<CODE>"); break;
-	   case ENDBOLDITALICS:	printf("</CODE>"); break;
+	   case BEGINBOLDITALICS:
+	   case BEGINCODE:		printf("<CODE>"); break;
+	   case ENDBOLDITALICS:
+	   case ENDCODE:		printf("</CODE>"); break;
+	   case BEGINCENTER:		printf("<CENTER>"); break;
+	   case ENDCENTER:		printf("</CENTER>"); break;
 	   case BEGINMANREF:
-		/* put separation of name and number into caller */
-		for (p=hitxt; *p && *p!='('; p++) /* empty */;
-		*p++='\0'; p0=p;
-		for (; *p && *p!=')'; p++) /* empty */;
-		*p='\0';
-		if (fmanRef) { printf("<A HREF=\""); printf(manRef, hitxt, p0); printf("\">"); }
+		manrefextract(hitxt);
+		if (fmanRef) { printf("<A HREF=\""); printf(href, manrefname, manrefsect); printf("\">"); }
 		else printf("<I>");
 		break;
 	   case ENDMANREF:
-		if (fmanRef) printf("</A>"); else printf("</I>");
+		if (fmanRef) printf("</A>\n"); else printf("</I>");
 		break;
+	   case HR:		printf("\n<HR>\n"); break;
+
+		/* U (was B, I), strike -- all temporary until HTML 4.0's INS and DEL widespread */
+	   case BEGINDIFFA: printf("<INS><U>"); break;
+	   case ENDDIFFA: printf("</U></INS>"); break;
+	   case BEGINDIFFD: printf("<DEL><strike>"); break;
+	   case ENDDIFFD: printf("</strike></DEL>"); break;
 
 	   case BEGINSC: case ENDSC:
 	   case BEGINY: case ENDY:
 	   case BEGINHEADER: case ENDHEADER:
 	   case BEGINFOOTER: case ENDFOOTER:
-	   case BEGINTABLELINE: case ENDTABLELINE:
 	   case CHANGEBAR:
-	   default:
 		/* nothing */
 		break;
+	   default:
+		DefaultPara(cmd);
 	}
 }
 
@@ -1533,9 +1717,9 @@ HTML(enum command cmd) {
 void
 SGML(enum command cmd) {
 	static int pre=0;
-	int i,j;
+	int i;
 	int lasttoc;
-	char *p, *p0;
+	char *p;
 	static int fRefEntry=0;
 	static int fRefPurpose=0;
 	/*static char *bads => SGML doesn't backslash-quote metacharacters */
@@ -1559,11 +1743,25 @@ SGML(enum command cmd) {
 	   case CHARLSQUOTE:
 	   case CHARRSQUOTE:
 	   case CHARPERIOD:
+	   case CHARTAB:
 	   case CHARHAT:
 	   case CHARVBAR:
 	   case CHARBULLET:
 	   case CHARDAGGER:
 	   case CHARPLUSMINUS:
+	   case CHARNBSP:
+ 	   case CHARCENT:
+ 	   case CHARSECT:
+ 	   case CHARCOPYR:
+ 	   case CHARNOT:
+ 	   case CHARREGTM:
+ 	   case CHARDEG:
+ 	   case CHARACUTE:
+ 	   case CHAR14:
+ 	   case CHAR12:
+ 	   case CHAR34:
+ 	   case CHARMUL:
+ 	   case CHARDIV:
 		putchar(cmd); break;
 	   case CHARAMP:		printf("&amp;"); break;
 	   case CHARDASH:
@@ -1582,8 +1780,14 @@ SGML(enum command cmd) {
 	/* while in pre mode... */
 	if (pre) {
 		switch (cmd) {
-		   case ENDLINE:	I=0; tagc=0; CurLine++; if (!fPara && scnt) printf("<BR>"); printf("\n"); break;
-		   case ENDTABLE:	printf("</PRE><br>\n"); pre=0; fQS=fIQS=fPara=1; break;
+		   case ENDLINE:	I=0; CurLine++; if (!fPara && scnt) printf("<BR>"); printf("\n"); break;
+		   case ENDTABLE:
+			if (fSource) {
+			  printf("</TABLE>\n");
+			} else {
+			  printf("</PRE><BR>\n"); pre=0; fQS=fIQS=fPara=1;
+			}
+			break;
 		   default:
 			/* nothing */
 			break;
@@ -1597,7 +1801,7 @@ SGML(enum command cmd) {
 		/*printf("<!DOCTYPE chapter SYSTEM \"%s\">\n", docbookpath);*/
 		printf("<!--\n\n\tI am looking for help to finish SGML.\n\n-->\n");
 
-		printf("<!-- %s\n",providence);
+		printf("<!-- %s\n",provenance);
 		printf("     %s -->\n\n",anonftp);
 		/* better title possible? */
 		printf("<RefEntry ID=%s.%s>\n", manName, manSect);
@@ -1621,6 +1825,10 @@ SGML(enum command cmd) {
 		break;
 	   case BEGINBODY:		printf("\n\n<Para>"); break;
 	   case ENDBODY:		break;
+
+	   case BEGINCOMMENT: printf("\n<!--\n"); break;
+	   case ENDCOMMENT: printf("\n-->\n"); break;
+	   case COMMENTLINE: break;
 
 	   case BEGINSECTHEAD:
 	   case BEGINSUBSECTHEAD:
@@ -1646,6 +1854,7 @@ SGML(enum command cmd) {
 	   case BEGINSUBSECTION:	printf("<RefSect2>"); break;
 	   case ENDSUBSECTION:	printf("</RefSect2>"); break;
 
+	   /* need to update this for enumerated and plain lists */
 	   case BEGINBULPAIR:	printf("<ItemizedList MARK=Bullet>\n"); break;
 	   case ENDBULPAIR:		printf("</ItemizedList>\n"); break;
 	   case BEGINBULLET:	printf("<Term>"); break;
@@ -1668,7 +1877,7 @@ SGML(enum command cmd) {
 	   case ENDLINE:
 		/*if (fCodeline) { fIQS=1; fCodeline=0; }*/
 		if (fCodeline) { printf("</CODE><BR>"); fCodeline=0; }
-		I=0; tagc=0; CurLine++; if (!fPara && scnt) printf("<BR>"); printf("\n");
+		I=0; CurLine++; if (!fPara && scnt) printf("<BR>"); printf("\n");
 		break;
 
 	   case SHORTLINE:
@@ -1676,25 +1885,44 @@ SGML(enum command cmd) {
 		if (!fIP) printf("<BR>\n");
 		break;
 
-	   case BEGINTABLE:		printf("<BR><PRE>\n"); pre=1; fQS=fIQS=fPara=0; break;
-	   case ENDTABLE:		printf("</PRE><BR>\n"); pre=0; fQS=fIQS=fPara=1; break;
-		/* could use a new list type */
+	   case BEGINTABLE:
+		if (fSource) {
+		  printf("<TABLE>\n");
+		} else {
+		  printf("<BR><PRE>\n"); pre=1; fQS=fIQS=fPara=0;
+		}
+		break;
+	   case ENDTABLE:
+		if (fSource) {
+		  printf("</TABLE>\n");
+		} else {
+		  printf("</PRE><BR>\n"); pre=0; fQS=fIQS=fPara=1;
+		}
+		break;
+	   case BEGINTABLELINE:		printf("<TR>"); break;
+	   case ENDTABLELINE:		printf("</TR>\n"); break;
+	   case BEGINTABLEENTRY:		printf("<TD>"); break;
+	   case ENDTABLEENTRY:		printf("</TD>"); break;
+
+	   case BEGININDENT: case ENDINDENT:
+	   case FONTSIZE:
+		break;
 
 	   /* have to make some guess about bold and italics */
 	   case BEGINBOLD:		printf("<B>"); break;
 	   case ENDBOLD:		printf("</B>"); break;
 	   case BEGINITALICS:	printf("<I>"); break;
 	   case ENDITALICS:		printf("</I>"); break;
-	   case BEGINBOLDITALICS:printf("<CODE>"); break;
-	   case ENDBOLDITALICS:	printf("</CODE>"); break;
+	   case BEGINBOLDITALICS:
+	   case BEGINCODE:		printf("<CODE>"); break;
+	   case ENDBOLDITALICS:	
+	   case ENDCODE:		printf("</CODE>"); break;
 	   case BEGINMANREF:
 /*
-		for (p=hitxt; *p && *p!='('; p++) /* empty * /;
-		*p++='\0'; p0=p;
-		for (; *p && *p!=')'; p++) /* empty * /;
-		*p='\0';
-		if (fmanRef) { printf("<LINK LINKEND=\""); printf(manRef, hitxt, p0); printf("\">"); }
+		manrefextract(hitxt);
+		if (fmanRef) { printf("<LINK LINKEND=\""); printf(href, manrefname, manrefsect); printf("\">\n"); }
 		else printf("<I>");
+		break;
 */
 		printf("<Command>");
 		break;
@@ -1703,17 +1931,295 @@ SGML(enum command cmd) {
 		printf("</Command>");
 		break;
 
+	   case HR:		/*printf("\n<HR>\n", horizontalrule);*/ break;
+
 	   case BEGINSC: case ENDSC:
 	   case BEGINY: case ENDY:
 	   case BEGINHEADER: case ENDHEADER:
 	   case BEGINFOOTER: case ENDFOOTER:
-	   case BEGINTABLELINE: case ENDTABLELINE:
 	   case CHANGEBAR:
-	   default:
 		/* nothing */
 		break;
+	   default:
+		DefaultPara(cmd);
 	}
 }
+
+#if 0
+/*
+ * GNU Texinfo -- somebody should finish this up
+ */
+
+void
+Texinfo(enum command cmd) {
+	static int pre=0;
+	int i;
+	int lasttoc;
+
+	/* always respond to these signals */
+	switch (cmd) {
+	   case CHARNBSP:		printf("&nbsp;"); I++; break;
+	   case CHARLQUOTE:		printf("&laquo;");		break;
+	   case CHARRQUOTE:		printf("&raquo;");		break;
+	   case CHARTAB:		printf("<tt> </tt>&nbsp;<tt> </tt>&nbsp;");		break;
+	  /* old browsers--who uses these?--don't understand symbolic codes */
+	  /*
+ 	   case CHARNBSP:		printf("&#160;"); I++; break;
+ 	   case CHARLQUOTE:		printf("&#171;"); break;
+ 	   case CHARRQUOTE:		printf("&#187;"); break;
+ 	   case CHARTAB:		printf("<tt> </tt>&#160;<tt> </tt>&#160;"); break;
+		*/
+	   case CHARLSQUOTE:
+	   case CHARRSQUOTE:
+	   case CHARPERIOD:
+	   case CHARDASH:
+	   case CHARBACKSLASH:
+	   case CHARVBAR:		/*printf("&brvbar;"); -- broken bar no good */
+	   case CHARHAT:
+		putchar(cmd); break;
+	   case CHARDAGGER:		printf("*"); break;
+	   case CHARBULLET:		printf("&#183;"/*"&middot;"*//*&sect;--middot hardly visible*/); break;
+	   case CHARPLUSMINUS:	printf("&#177;"/*"&plusmn;"*/); break;
+	   case CHARGT:		printf("&gt;"); break;
+	   case CHARLT:		printf("&lt;"); break;
+	   case CHARAMP:		printf("&amp;"); break;
+	   case CHARCENT:		printf("&#162;"); break;	/* translate these to symbolic forms, sometime */
+ 	   case CHARSECT:		printf("&#167;"); break;
+ 	   case CHARCOPYR:		printf("&#169;"); break;
+ 	   case CHARNOT:		printf("&#172;"); break;
+ 	   case CHARREGTM:		printf("&#174;"); break;
+ 	   case CHARDEG:		printf("&#176;"); break;
+ 	   case CHARACUTE:		printf("&#180;"); break;
+ 	   case CHAR14:		printf("&#188;"); break;
+ 	   case CHAR12:		printf("&#189;"); break;
+ 	   case CHAR34:		printf("&#190;"); break;
+ 	   case CHARMUL:		printf("&#215;"); break;
+ 	   case CHARDIV:		printf("&#247;"); break;
+	   default:
+		break;
+	}
+
+	/* while in pre mode... */
+	if (pre) {
+		switch (cmd) {
+		   case ENDLINE:	I=0; CurLine++; if (!fPara && scnt) printf("<BR>"); printf("\n"); break;
+		   case ENDTABLE:
+			if (fSource) {
+			  printf("</TABLE>\n");
+			} else {
+			  printf("</PRE><BR>\n"); pre=0; fQS=fIQS=fPara=1;
+			}
+			break;
+		   default:
+			/* nothing */
+			break;
+		}
+		return;
+	}
+
+	/* usual operation */
+	switch (cmd) {
+	   case BEGINDOC:
+		/* escchars = ...  => HTML doesn't backslash-quote metacharacters */
+		printf("<!-- %s, -->\n",provenance);
+		printf("<!-- %s -->\n\n",anonftp);
+		printf("<HTML>\n<HEAD>\n");
+/*		printf("<ISINDEX>\n");*/
+		/* better title possible? */
+		printf("<TITLE>"); printf(manTitle, manName, manSect); printf("</TITLE>\n");
+		printf("</HEAD>\n<BODY>\n");
+		printf("<A HREF=\"#toc\">%s</A><P>\n", TABLEOFCONTENTS);
+		I=0;
+		break;
+	   case ENDDOC:
+		/* header and footer wanted? */
+		printf("<P>\n");
+		if (fHeadfoot) {
+			printf("<HR><H2>%s</H2>\n", HEADERANDFOOTER);
+			for (i=0; i<CRUFTS; i++) if (*cruft[i]) printf("%s<BR>\n",cruft[i]);
+		}
+
+		if (!tocc) {
+			/*printf("\n<H1>ERROR: Empty man page</H1>\n");*/
+		} else {
+			printf("\n<HR><P>\n");
+			printf("<A NAME=\"toc\"><B>%s</B></A><P>\n", TABLEOFCONTENTS);
+			printf("<UL>\n");
+			for (i=0, lasttoc=BEGINSECTION; i<tocc; lasttoc=toc[i].type, i++) {
+				if (lasttoc!=toc[i].type) {
+					if (toc[i].type==BEGINSUBSECTION) printf("<UL>\n");
+					else printf("</UL>\n");
+				}
+				printf("<LI><A NAME=\"toc%d\" HREF=\"#sect%d\">%s</A></LI>\n", i, i, toc[i].text);
+			}
+			if (lasttoc==BEGINSUBSECTION) printf("</UL>");
+			printf("</UL>\n");
+		}
+		printf("</BODY></HTML>\n");
+		break;
+	   case BEGINBODY:
+		printf("<P>\n");
+		break;
+	   case ENDBODY:		break;
+
+	   case BEGINCOMMENT:
+	   case ENDCOMMENT:
+		break;
+	   case COMMENTLINE: printf("@c ");	break;
+
+	   case BEGINSECTHEAD:
+		break;
+	   case ENDSECTHEAD:
+		printf("\n@node %s\n", toc[tocc].text);
+		printf("\n@section %s\n\n", toc[tocc].text);
+		/* useful extraction from FILES, ENVIRONMENT? */
+		break;
+	   case BEGINSUBSECTHEAD:
+		break;
+	   case ENDSUBSECTHEAD:
+		printf("\n@node %s\n", toc[tocc].text);
+		printf("\n@subsection %s\n\n", toc[tocc].text);
+		break;
+	   case BEGINSECTION:	break;
+	   case ENDSECTION:		break;
+	   case BEGINSUBSECTION:	break;
+	   case ENDSUBSECTION:	break;
+
+	   case BEGINBULPAIR:
+		if (listtype==OL) printf("\n<OL>\n");
+		else if (listtype==UL) printf("\n<UL>\n");
+		else printf("\n<DL>\n");
+		break;
+	   case ENDBULPAIR:
+		if (listtype==OL) printf("\n</OL>\n");
+		else if (listtype==UL) printf("\n</UL>\n");
+		else printf("</DL>\n");
+		break;
+	   case BEGINBULLET:
+		if (listtype==OL || listtype==UL) fcharout=0;
+		else printf("\n<DT>");
+		break;
+	   case ENDBULLET:
+		if (listtype==OL || listtype==UL) fcharout=1;
+		else printf("</DT>");
+		break;
+	   case BEGINBULTXT:
+		if (listtype==OL || listtype==UL) printf("<LI>");
+		else printf("\n<DD>");
+		break;
+	   case ENDBULTXT:
+		if (listtype==OL || listtype==UL) printf("</LI>");
+		else printf("</DD>\n");
+		break;
+
+	   case BEGINLINE:
+		/*		if (ncnt) printf("<P>\n");*/
+
+		/* trailing spaces already trimmed off, so look for eol now */
+		if (fCodeline) {
+		  printf("<CODE>");
+		  for (i=0; i<scnt-indent; i++) printf("&nbsp;"/*&#160;*/);		/* ? */
+		  tagc=0;
+
+		  /* already have .tag=BOLDITALICS, .first=0 */
+		  /* would be more elegant, but can't print initial spaces before first tag
+		  tags[0].last = linelen;
+		  tagc=1;
+		  fIQS=0;
+		  */
+		}
+
+		break;
+
+	   case ENDLINE:
+		/*if (fCodeline) { fIQS=1; fCodeline=0; }*/
+		if (fCodeline) { printf("</CODE><BR>"); fCodeline=0; }
+		I=0; CurLine++; if (!fPara && scnt) printf("<BR>"); printf("\n");
+		break;
+
+	   case SHORTLINE:
+		if (fCodeline) { printf("</CODE>"); fCodeline=0; }
+		if (!fIP) printf("<BR>\n");
+		break;
+
+
+	   case BEGINTABLE:
+		if (fSource) {
+		  /*printf("<CENTER><TABLE BORDER>\n");*/
+		  printf("<TABLE BORDER=0>\n");
+		} else {
+		  printf("<BR><PRE>\n"); pre=1; fQS=fIQS=fPara=0;
+		}
+		break;
+	   case ENDTABLE:
+		if (fSource) {
+		  printf("</TABLE>\n");
+		} else {
+		  printf("</PRE><BR>\n"); pre=0; fQS=fIQS=fPara=1;
+		}
+		break;
+	   case BEGINTABLELINE:		printf("<TR>"); break;
+	   case ENDTABLELINE:		printf("</TR>\n"); break;
+	   case BEGINTABLEENTRY:
+		printf("<TD ALIGN=");
+		switch (tblcellformat[0]) {
+		case 'c':	printf("CENTER"); break;
+		case 'n':	/*printf("DECIMAL"); break;  -- fall through to right for now */
+		case 'r':	printf("RIGHT"); break;
+		case 'l':
+		default:
+		  printf("LEFT");
+		}
+		if (tblcellspan>1) printf(" COLSPAN=%d", tblcellspan);
+		printf(">");
+		break;
+	   case ENDTABLEENTRY:
+		printf("</TD>");
+		break;
+
+	   /* something better with CSS */
+	   case BEGININDENT:		printf("<blockquote>"); break;
+	   case ENDINDENT:			printf("</blockquote>\n"); break;
+
+	   case FONTSIZE:
+		/* HTML font step sizes are bigger than troff's */
+		if ((fontdelta+=intArg)!=0) printf("<FONT SIZE=%c1>", (intArg>0)?'+':'-'); else printf("</FONT>\n");
+		break;
+
+	   case BEGINBOLD:		printf("@b{"); break;
+	   case BEGINITALICS:	printf("@i{"); break;
+	   case BEGINSC:		printf("@sc{"); break;
+	   case ENDITALICS:
+	   case ENDBOLD:
+	   case ENDSC:
+		printf("}");
+		break;
+	   case BEGINBOLDITALICS:
+	   case BEGINCODE:		printf("<CODE>"); break;
+	   case ENDBOLDITALICS:
+	   case ENDCODE:		printf("</CODE>"); break;
+	   case BEGINMANREF:
+		manrefextract(hitxt);
+		if (fmanRef) { printf("@xref{}"); }
+/*<A HREF=\""); printf(href, manrefname, manrefsect); printf("\">"); }*/
+		else printf("<I>");
+		break;
+	   case ENDMANREF:
+		if (fmanRef) printf("</A>\n"); else printf("</I>");
+		break;
+	   case HR:		printf("\n<HR>\n"); break;
+
+	   case BEGINY: case ENDY:
+	   case BEGINHEADER: case ENDHEADER:
+	   case BEGINFOOTER: case ENDFOOTER:
+	   case CHANGEBAR:
+		/* nothing */
+		break;
+	   default:
+		DefaultPara(cmd);
+	}
+}
+#endif
 
 
 
@@ -1723,20 +2229,32 @@ void
 MIME(enum command cmd) {
 	static int pre=0;
 	int i;
-	int lasttoc;
-	char *p, *p0;
 
 	/* always respond to these signals */
 	switch (cmd) {
 	   case CHARDASH:
 	   case CHARAMP:
 	   case CHARPERIOD:
+	   case CHARTAB:
 		putchar(cmd); break;
 	   case CHARLSQUOTE:	putchar('`'); break;
+	   case CHARACUTE:
 	   case CHARRSQUOTE:	putchar('\''); break;
 	   case CHARBULLET:		putchar('*'); break;
 	   case CHARDAGGER:		putchar('|'); break;
 	   case CHARPLUSMINUS:	printf("+-"); break;
+	   case CHARNBSP:		putchar(' '); break;
+ 	   case CHARCENT:	putchar('c'); break;
+ 	   case CHARSECT:	putchar('S'); break;
+ 	   case CHARCOPYR:	printf("(C)"); break;
+ 	   case CHARNOT:	putchar('~'); break;
+ 	   case CHARREGTM:	printf("(R)"); break;
+ 	   case CHARDEG:	putchar('o'); break;
+ 	   case CHAR14:		printf("1/4"); break;
+ 	   case CHAR12:		printf("1/2"); break;
+ 	   case CHAR34:		printf("3/4"); break;
+ 	   case CHARMUL:	putchar('X'); break;
+ 	   case CHARDIV:	putchar('/'); break;
 	   case CHARLQUOTE:
 	   case CHARRQUOTE:
 		putchar('"');
@@ -1753,7 +2271,7 @@ MIME(enum command cmd) {
 	/* while in pre mode... */
 	if (pre) {
 		switch (cmd) {
-		   case ENDLINE:	I=0; tagc=0; CurLine++; if (!fPara && scnt) printf("\n\n"); break;
+		   case ENDLINE:	I=0; CurLine++; if (!fPara && scnt) printf("\n\n"); break;
 		   case ENDTABLE:	printf("</fixed>\n\n"); pre=0; fQS=fIQS=fPara=1; break;
 		   default:
 			/* nothing */
@@ -1782,7 +2300,7 @@ MIME(enum command cmd) {
 
 /*
 		printf("\n<comment>\n");
-		printf("%s\n%s\n", providence, anonftp);
+		printf("%s\n%s\n", provenance, anonftp);
 		printf("</comment>\n\n");
 */
 
@@ -1795,15 +2313,21 @@ MIME(enum command cmd) {
 		    if (toc[i].type==BEGINSUBSECTION) printf("<UL>\n");
 		    else printf("</UL>\n");
 		  }
-		  printf("<LI><A NAME=\"toc%d\" HREF=\"#sect%d\">%s</A></LI>\n", i+1, i+1, toc[i].text);
+		  printf("<LI><A NAME=\"toc%d\" HREF=\"#sect%d\">%s</A></LI>\n", i, i, toc[i].text);
 		}
 		if (lasttoc==BEGINSUBSECTION) printf("</UL>");
 		printf("</UL>\n");
 		printf("</BODY></HTML>\n");
 */
 		break;
-	   case BEGINBODY:		break;
+	   case BEGINBODY:
+		printf("\n\n");
+		break;
 	   case ENDBODY:		break;
+
+	   case BEGINCOMMENT: fcharout=0; break;
+	   case ENDCOMMENT: fcharout=1; break;
+	   case COMMENTLINE: break;
 
 	   case BEGINSECTHEAD:
 		printf("\n<bigger><bigger><underline>");
@@ -1832,45 +2356,64 @@ MIME(enum command cmd) {
 	   case ENDBULPAIR:		break;
 	   case BEGINBULLET:	printf("<bold>"); break;
 	   case ENDBULLET:		printf("</bold>\t"); break;
-	   case BEGINBULTXT:	printf("<indent>"); break;
-	   case ENDBULTXT:		printf("</indent>\n"); break;
+	   case BEGINBULTXT:
+	   case BEGININDENT:
+		printf("<indent>");
+		break;
+	   case ENDBULTXT:
+	   case ENDINDENT:
+		printf("</indent>\n");
+		break;
 
-	   case BEGINLINE:		if (ncnt) printf("\n\n"); break;
-	   case ENDLINE:		I=0; tagc=0; CurLine++; printf("\n"); break;
+	   case FONTSIZE:
+		if ((fontdelta+=intArg)==0) {
+		  if (intArg>0) printf("</smaller>"); else printf("</bigger>");
+		} else {
+		  if (intArg>0) printf("<bigger>"); else printf("<smaller>");
+		}
+		break;
+
+	   case BEGINLINE:		/*if (ncnt) printf("\n\n");*/ break;
+	   case ENDLINE:		I=0; CurLine++; printf("\n"); break;
 	   case SHORTLINE:		if (!fIP) printf("\n\n"); break;
 	   case BEGINTABLE:		printf("<nl><fixed>\n"); pre=1; fQS=fIQS=fPara=0; break;
 	   case ENDTABLE:		printf("</fixed><nl>\n"); pre=0; fQS=fIQS=fPara=1; break;
+	   case BEGINTABLELINE: case ENDTABLELINE: case BEGINTABLEENTRY: case ENDTABLEENTRY:
+		break;
 		/* could use a new list type */
 
 	   case BEGINBOLD:		printf("<bold>"); break;
 	   case ENDBOLD:		printf("</bold>"); break;
 	   case BEGINITALICS:	printf("<italics>"); break;
 	   case ENDITALICS:		printf("</italics>"); break;
+	   case BEGINCODE:
 	   case BEGINBOLDITALICS:printf("<bold><italics>"); break;
+	   case ENDCODE:
 	   case ENDBOLDITALICS:	printf("</bold></italics>"); break;
 	   case BEGINMANREF:
 		printf("<x-color><param>blue</param>");
 /* how to make this hypertext?
-		for (p=hitxt; *p && *p!='('; p++) /* empty * /;
-		*p++='\0'; p0=p;
-		for (; *p && *p!=')'; p++) /* empty * /;
-		*p='\0';
-		printf("<A HREF=\""); printf(manRef, hitxt, p0); printf("\">");
+   		manrefextract(hitxt);
+		if (fmanRef) { printf("<A HREF=\""); printf(href, manrefname, manrefsect); printf("\">\n"); }
+		else printf("<I>");
+		break;
 */
 		break;
 	   case ENDMANREF:
 		printf("</x-color>");
 		break;
 
+	   case HR:		printf("\n\n%s\n\n", horizontalrule); break;
+
 	   case BEGINSC: case ENDSC:
 	   case BEGINY: case ENDY:
 	   case BEGINHEADER: case ENDHEADER:
 	   case BEGINFOOTER: case ENDFOOTER:
-	   case BEGINTABLELINE: case ENDTABLELINE:
 	   case CHANGEBAR:
-	   default:
 		/* nothing */
 		break;
+	   default:
+		DefaultPara(cmd);
 	}
 }
 
@@ -1886,7 +2429,7 @@ LaTeX(enum command cmd) {
 	switch (cmd) {
 	   case BEGINDOC:
 		escchars = "$&%#_{}"; /* and more to come? */
-		printf("%% %s,\n", providence);
+		printf("%% %s,\n", provenance);
 		printf("%% %s\n\n", anonftp);
 		/* definitions */
 		printf(
@@ -1903,23 +2446,32 @@ LaTeX(enum command cmd) {
 		printf("\n\\end{document}\n");
 
 		break;
-	   case BEGINBODY:		break;
+	   case BEGINBODY:
+		printf("\n\n");
+		break;
 	   case ENDBODY:		break;
+
+	   case BEGINCOMMENT:
+	   case ENDCOMMENT:
+		break;
+	   case COMMENTLINE: printf("% "); break;
+
+
 	   case BEGINSECTION:	break;
 	   case ENDSECTION:		break;
-	   case BEGINSECTHEAD:	printf("\\section{"); tagc=0; break;
+	   case BEGINSECTHEAD:	printf("\n\\section{"); tagc=0; break;
 	   case ENDSECTHEAD:
 		printf("}");
 /*
 		if (CurLine==1) printf("\\footnote{"
-		  "\\it conversion to \\LaTeX\ format by RosettaMan "
+		  "\\it conversion to \\LaTeX\ format by PolyglotMan "
 		  "available via anonymous ftp from {\\tt ftp.berkeley.edu:/ucb/people/phelps/tcltk}}"
 			  );
 */
 		/* useful extraction from files, environment? */
 		printf("\n");
 		break;
-	   case BEGINSUBSECTHEAD:printf("\\subsection{"); break;
+	   case BEGINSUBSECTHEAD:printf("\n\\subsection{"); break;
 	   case ENDSUBSECTHEAD:
 		printf("}");
 		break;
@@ -1929,10 +2481,15 @@ LaTeX(enum command cmd) {
 	   case ENDBULPAIR:		printf("\\end{itemize}\n"); break;
 	   case BEGINBULLET:	printf("\\item ["); break;
 	   case ENDBULLET:		printf("] "); break;
-	   case BEGINLINE:		if (ncnt) printf("\n\n"); break;
-	   case ENDLINE:		I=0; tagc=0; putchar('\n'); CurLine++; break;
+	   case BEGINLINE:		/*if (ncnt) printf("\n\n");*/ break;
+	   case ENDLINE:		I=0; putchar('\n'); CurLine++; break;
 	   case BEGINTABLE:		printf("\\begin{verbatim}\n"); break;
 	   case ENDTABLE:		printf("\\end{verbatim}\n"); break;
+	   case BEGINTABLELINE: case ENDTABLELINE: case BEGINTABLEENTRY: case ENDTABLEENTRY:
+		break;
+	   case BEGININDENT: case ENDINDENT:
+	   case FONTSIZE:
+		break;
 	   case SHORTLINE:		if (!fIP) printf("\n\n"); break;
 	   case BEGINBULTXT:	break;
 	   case ENDBULTXT:		putchar('\n'); break;
@@ -1942,7 +2499,9 @@ LaTeX(enum command cmd) {
 	   case CHARLSQUOTE:
 	   case CHARRSQUOTE:
 	   case CHARPERIOD:
+	   case CHARTAB:
 	   case CHARDASH:
+	   case CHARNBSP:
 		putchar(cmd); break;
 	   case CHARBACKSLASH:	printf("$\\backslash$"); break;
 	   case CHARGT:		printf("$>$"); break;
@@ -1953,12 +2512,26 @@ LaTeX(enum command cmd) {
 	   case CHARBULLET:		printf("$\\bullet$ "); break;
 	   case CHARDAGGER:		printf("\\dag "); break;
 	   case CHARPLUSMINUS:	printf("\\pm "); break;
+ 	   case CHARCENT:		printf("\\hbox{\\rm\\rlap/c}"); break;
+ 	   case CHARSECT:		printf("\\S "); break;
+ 	   case CHARCOPYR:		printf("\\copyright "); break;
+ 	   case CHARNOT:		printf("$\\neg$"); break;
+ 	   case CHARREGTM:		printf("(R)"); break;
+ 	   case CHARDEG:		printf("$^\\circ$"); break;
+ 	   case CHARACUTE:		putchar('\''); break;
+ 	   case CHAR14:		printf("$\\frac{1}{4}$"); break;
+ 	   case CHAR12:		printf("$\\frac{1}{2}$"); break;
+ 	   case CHAR34:		printf("$\\frac{3}{4}$"); break;
+ 	   case CHARMUL:		printf("\\times "); break;
+ 	   case CHARDIV:		printf("\\div "); break;
 
+	   case BEGINCODE:
 	   case BEGINBOLD:		printf("{\\bf "); break;
 	   case BEGINSC:		printf("{\\sc "); break;
 	   case BEGINITALICS:	printf("{\\it "); break;
 	   case BEGINBOLDITALICS:printf("{\\bf\\it "); break;
 	   case BEGINMANREF:	printf("{\\sf "); break;
+	   case ENDCODE:
 	   case ENDBOLD:
 	   case ENDSC:
 	   case ENDITALICS:
@@ -1966,14 +2539,16 @@ LaTeX(enum command cmd) {
 	   case ENDMANREF:
 		putchar('}');
 		break;
+	   case HR:		/*printf("\n%s\n", horizontalrule);*/ break;
 
 	   case BEGINY: case ENDY:
 	   case BEGINHEADER: case ENDHEADER:
 	   case BEGINFOOTER: case ENDFOOTER:
-	   case BEGINTABLELINE: case ENDTABLELINE:
 	   case CHANGEBAR:
 		/* nothing */
 		break;
+	   default:
+		DefaultPara(cmd);
 	}
 }
 
@@ -1985,7 +2560,7 @@ LaTeX2e(enum command cmd) {
 		/* replace selected commands ... */
 	   case BEGINDOC:
 		escchars = "$&%#_{}";
-		printf("%% %s,\n", providence);
+		printf("%% %s,\n", provenance);
 		printf("%% %s\n\n", anonftp);
 		/* definitions */
 		printf(
@@ -1997,6 +2572,7 @@ LaTeX2e(enum command cmd) {
 			  );
 		I=0;
 		break;
+	   case BEGINCODE:
 	   case BEGINBOLD:		printf("\\textbf{"); break;
 	   case BEGINSC:		printf("\\textsc{"); break;
 	   case BEGINITALICS:	printf("\\textit{"); break;
@@ -2048,15 +2624,22 @@ RTF(enum command cmd) {
 		break;
 	   case ENDDOC:
 		/* header and footer wanted? */
-		printf("\\par{\\f150 %s,\n%s}", providence, anonftp);
+		printf("\\par{\\f150 %s,\n%s}", provenance, anonftp);
 		printf("}\n");
 		break;
-	   case BEGINBODY:		break;
+	   case BEGINBODY:
+		printf("\n\n");
+		break;
 	   case ENDBODY:
 		CurLine++;
 		printf("\\par\n");
 		tagc=0;
 		break;
+
+	   case BEGINCOMMENT: fcharout=0; break;
+	   case ENDCOMMENT: fcharout=1; break;
+	   case COMMENTLINE: break;
+
 	   case BEGINSECTION:	break;
 	   case ENDSECTION:		printf("\n\\par\n"); break;
 	   case BEGINSECTHEAD:	printf("{\\s2 "); tagc=0; break;
@@ -2072,7 +2655,7 @@ RTF(enum command cmd) {
 	   case BEGINSUBSECTION:	break;
 	   case ENDSUBSECTION:	break;
 	   case BEGINLINE:		/*if (ncnt) printf("\n\n");*/ break;
-	   case ENDLINE:		I=0; tagc=0; putchar(' '); /*putchar('\n'); CurLine++;*/ break;
+	   case ENDLINE:		I=0; putchar(' '); /*putchar('\n'); CurLine++;*/ break;
 	   case SHORTLINE:		if (!fIP) printf("\\line\n"); break;
 	   case BEGINBULPAIR:	printf("{\\s4 "); break;
 	   case ENDBULPAIR:		printf("}\\par\n"); break;
@@ -2086,6 +2669,7 @@ RTF(enum command cmd) {
 	   case CHARLSQUOTE:
 	   case CHARRSQUOTE:
 	   case CHARPERIOD:
+	   case CHARTAB:
 	   case CHARDASH:
 	   case CHARBACKSLASH:
 	   case CHARGT:
@@ -2093,32 +2677,52 @@ RTF(enum command cmd) {
 	   case CHARHAT:
 	   case CHARVBAR:
 	   case CHARAMP:
+	   case CHARNBSP:
+ 	   case CHARCENT:
+ 	   case CHARSECT:
+ 	   case CHARCOPYR:
+ 	   case CHARNOT:
+ 	   case CHARREGTM:
+ 	   case CHARDEG:
+ 	   case CHARACUTE:
+ 	   case CHAR14:
+ 	   case CHAR12:
+ 	   case CHAR34:
+ 	   case CHARMUL:
+ 	   case CHARDIV:
 		putchar(cmd); break;
 	   case CHARBULLET:		printf("\\bullet "); break;
 	   case CHARDAGGER:		printf("\\dag "); break;
 	   case CHARPLUSMINUS:	printf("\\pm "); break;
 
+	   case BEGINCODE:
 	   case BEGINBOLD:		printf("{\\b "); break;
 	   case BEGINSC:		printf("{\\fs20 "); break;
 	   case BEGINITALICS:	printf("{\\i "); break;
 	   case BEGINBOLDITALICS:printf("{\\b \\i "); break;
 	   case BEGINMANREF:	printf("{\\f22 "); break;
 	   case ENDBOLD:
+	   case ENDCODE:
 	   case ENDSC:
 	   case ENDITALICS:
 	   case ENDBOLDITALICS:
 	   case ENDMANREF:
 		putchar('}');
 		break;
+	   case HR:		printf("\n%s\n", horizontalrule); break;
 
 	   case BEGINY: case ENDY:
 	   case BEGINHEADER: case ENDHEADER:
 	   case BEGINFOOTER: case ENDFOOTER:
 	   case BEGINTABLE: case ENDTABLE:
-	   case BEGINTABLELINE: case ENDTABLELINE:
+	   case BEGINTABLELINE: case ENDTABLELINE: case BEGINTABLEENTRY: case ENDTABLEENTRY:
+	   case BEGININDENT: case ENDINDENT:
+	   case FONTSIZE:
 	   case CHANGEBAR:
 		/* nothing */
 		break;
+	   default:
+		DefaultPara(cmd);
 	}
 }
 
@@ -2144,11 +2748,10 @@ FrameMaker(enum command cmd) {
 
 
 
-/*** Kong ***/
 /*
-  I hope the compiler has good common subexpression elimination
-     for all the pointer arithmetic.
-*/
+ * Utilities common to both parses
+ */
+
 
 /*
  level 0: DOC - need match
@@ -2160,11 +2763,11 @@ FrameMaker(enum command cmd) {
  never see: SECTHEAD, SUBSECTHEAD, BULLET
 */
 
-int Psect=0, Psub=0, Pbp=0, Pbt=0, Pb=0;
+int Psect=0, Psub=0, Pbp=0, Pbt=0, Pb=0, Pbul=0;
 
 void
 pop(enum command cmd) {
-	assert(cmd==BEGINBULTXT || cmd==BEGINBULPAIR || cmd==BEGINBODY || cmd==BEGINSECTION || cmd==BEGINSUBSECTION || cmd==ENDDOC);
+	assert(cmd==ENDINDENT || cmd==BEGINBULLET || cmd==BEGINBULTXT || cmd==BEGINBULPAIR || cmd==BEGINBODY || cmd==BEGINSECTION || cmd==BEGINSUBSECTION || cmd==ENDDOC);
 /*
 	int i;
 	int p;
@@ -2178,12 +2781,17 @@ pop(enum command cmd) {
 	/* if match, pop off all up to and including match */
 	/* otherwise, pop off one level*/
 
+	if (Pbul) {
+	  (*fn)(ENDBULLET); Pbul=0;
+	  if (cmd==BEGINBULLET) return;
+	} /* else close off ENDBULTXT */
+
 	if (Pbt) { (*fn)(ENDBULTXT); Pbt=0; }
-	if (cmd==BEGINBULTXT) return;
+	if (cmd==BEGINBULTXT || cmd==BEGINBULLET) return;
 
 	if (Pb && cmd==BEGINBULPAIR) { (*fn)(ENDBODY); Pb=0; }	/* special */
 	if (Pbp) { (*fn)(ENDBULPAIR); Pbp=0; }
-	if (cmd==BEGINBULPAIR) return;
+	if (cmd==BEGINBULPAIR || cmd==ENDINDENT) return;
 
 	if (Pb) { (*fn)(ENDBODY); Pb=0; }
 	if (cmd==BEGINBODY) return;
@@ -2198,18 +2806,19 @@ pop(enum command cmd) {
 
 void
 poppush(enum command cmd) {
-	assert(cmd==BEGINBULTXT || cmd==BEGINBULPAIR || cmd==BEGINBODY || cmd==BEGINSECTION || cmd==BEGINSUBSECTION);
+	assert(cmd==ENDINDENT || cmd==BEGINBULLET || cmd==BEGINBULTXT || cmd==BEGINBULPAIR || cmd==BEGINBODY || cmd==BEGINSECTION || cmd==BEGINSUBSECTION);
 
 	pop(cmd);
 
 	switch (cmd) {
+	   case BEGINBULLET: Pbul=1; break;
 	   case BEGINBULTXT: Pbt=1; break;
 	   case BEGINBULPAIR: Pbp=1; break;
 	   case BEGINBODY: Pb=1; break;
 	   case BEGINSECTION: Psect=1; break;
 	   case BEGINSUBSECTION: Psub=1; break;
 	   default:
-		fprintf(stderr, "poppush: unrecognized code %d\n", cmd);
+		if (!fQuiet) fprintf(stderr, "poppush: unrecognized code %d\n", cmd);
 	}
 
 	(*fn)(cmd);
@@ -2217,26 +2826,39 @@ poppush(enum command cmd) {
 }
 
 
+
+/*
+ * PREFORMATTED PAGES PARSING
+ */
 
-/* wrapper for getchar() that expands tabs */
-/* the compiler inlines this, one hopes */
+/* wrapper for getchar() that expands tabs, and sends maximum of n=40 consecutive spaces */
 
 int
 getchartab(void) {
 	static int tabexp = 0;
 	static int charinline = 0;
-	int c;
+	static int cspccnt = 0;
+	char c;
 
 	c = lookahead;
 	if (tabexp) tabexp--;
-	else if (c=='\n') charinline=0;
-	else if (c=='\t') {
+	else if (c=='\n') {
+		charinline=0;
+		cspccnt=0;
+	} else if (c=='\t') {
 		tabexp = TabStops-(charinline%TabStops); if (tabexp==TabStops) tabexp=0;
 		lookahead = c = ' ';
+	} else if (cspccnt>=40) {
+		if (*in==' ') {
+			while (*in==' '||*in=='\t') in++;
+			in--;
+		}
+		cspccnt=0;
 	}
 
-	if (!tabexp && lookahead!=EOF) lookahead=getchar();
+	if (!tabexp && lookahead) lookahead = *in++;
 	if (c=='\b') charinline--; else charinline++;
+	if (c==' ') cspccnt++;
 	return c;
 }
 
@@ -2244,7 +2866,7 @@ getchartab(void) {
 /* replace gets.  handles hyphenation too */
 char *
 la_gets(char *buf) {
-	static char la_buf[BUFSIZ];	/* can lookahead a full line, but nobody does now */
+	static char la_buf[MAXBUF];	/* can lookahead a full line, but nobody does now */
 	static int fla=0, hy=0;
 	char *ret,*p;
 	int c,i;
@@ -2258,7 +2880,7 @@ la_gets(char *buf) {
 	} else {
 		/*ret=gets(buf); -- gets is deprecated (since it can read too much?) */
 		/* could do this...
-		ret=fgets(buf, BUFSIZ, stdin);
+		ret=fgets(buf, MAXBUF, stdin);
 		buf[strlen(buf)-1]='\0';
 		... but don't want to have to rescan line with strlen, so... */
 
@@ -2267,38 +2889,299 @@ la_gets(char *buf) {
 		/* recover spaces if re-linebreaking */
 		for (; hy; hy--) { *p++=' '; i++; }
 
-		while (lookahead!=EOF && (c=getchartab())!='\n' && i<BUFSIZ) { *p++=c; i++; }
-		assert(i<BUFSIZ);
+		while (lookahead && (c=getchartab())!='\n' && i<MAXBUF) { *p++=c; i++; }
+		assert(i<MAXBUF);
 
 		/*lookahead=ungetc(getchar(), stdin);	/* only looking ahead one character for now */
 
 		/* very special case: if in SEE ALSO section, re-linebreak so references aren't linebroken
 		   (also do this if fNOHY flag is set) -- doesn't affect lookahead */
 		/* 0xad is an en dash on Linux? */
-		if (p>buf && (p[-1]=='-'||p[-1]=='\xAD') && (fPara || sectheadid==SEEALSO || fNOHY) && isspace(lookahead)) {
+		if ((fPara || sectheadid==SEEALSO || fNOHY) && p>buf && p[-1]=='-' && isspace(lookahead)) {
 			p--;	/* zap hyphen */
 			/* zap boldfaced hyphens, gr! */
 			while (p[-1]=='\b' && p[-2]=='-') p-=2;
 
 			/* start getting next line, spaces first ... */
-			while (lookahead!=EOF && isspace(lookahead) && lookahead!='\n') { getchartab(); hy++; }
+			while (lookahead && isspace(lookahead) && lookahead!='\n') { getchartab(); hy++; }
 
 			/* ... append next nonspace string to previous ... */
-			while (lookahead!=EOF && !isspace(lookahead) && i++<BUFSIZ) *p++=getchartab();
+			while (lookahead && !isspace(lookahead) && i++<MAXBUF) *p++=getchartab();
 
 			/* gobble following spaces (until, perhaps including, end of line) */
-			while (lookahead!=EOF && isspace(lookahead) && lookahead!='\n') getchartab();
+			while (lookahead && isspace(lookahead) && lookahead!='\n') getchartab();
 			if (lookahead=='\n') { getchartab(); hy=0; }
 		}
 
 		*p='\0';
-		ret=(lookahead!=EOF)?buf:NULL;
+		ret=(lookahead)?buf:NULL;
 	}
 
 	AbsLine++;
-	return ret;	/* change this to line length? */
+	return ret;	/* change this to line length? (-1==old NULL) */
 }
 
+
+/*** Kong ***/
+/*
+  I hope the compiler has good common subexpression elimination
+     for all the pointer arithmetic.
+*/
+
+
+char phrase[MAXBUF];	/* first "phrase" (space of >=3 spaces) */
+int phraselen;
+
+void
+filterline(char *buf, char *plain) {
+	char *p,*q,*r;
+	char *ph;
+	int iq;
+	int i,j;
+	int hl=-1, hl2=-1;
+	int iscnt=0;	/* interword space count */
+	int tagci;
+	int I0;
+	int etype;
+	int efirst;
+	enum tagtype tag = NOTAG;
+
+	assert(buf!=NULL && plain!=NULL);
+
+	etype=NOTAG;
+	efirst=-1;
+	tagci=tagc;
+	ph=phrase; phraselen=0;
+	scnt=scnt2=0;
+	s_sum=s_cnt=0;
+	bs_sum=bs_cnt=0;
+	ccnt=0;
+	spcsqz=0;
+
+	/* strip only certain \x1b's and only at very beginning of line */
+	for (p=buf; *p=='\x1b' && (p[1]=='8'||p[1]=='9'); p+=2)
+		/* nop */;
+
+	strcpy(plain,p);
+	q=&plain[strlen(p)];
+
+	/*** spaces and change bars ***/
+	for (scnt=0,p=plain; *p==' '; p++) scnt++;	/* initial space count */
+	if (scnt>200) scnt=130-(q-p);
+
+	assert(*q=='\0');
+	q--;
+	if (fChangeleft)
+		for (; q-40>plain && *q=='|'; q--)	{	/* change bars */
+			if (fChangeleft!=-1) ccnt++;
+			while (q-2>=plain && q[-1]=='\b' && q[-2]=='|') q-=2;	/* boldface changebars! */
+		}
+
+	/*if (q!=&plain[scnt-1])*/			/* zap trailing spaces */
+		for (; *q==' ' && q>plain; q--) /* nop */;
+
+	/* second changebar way out east! HACK HACK HACK */
+	if (q-plain>100 && *q=='|') {
+	  while (*q=='|' && q>plain) { q--; if (fChangeleft!=-1) ccnt++; }
+	  while ((*q==' ' || *q=='_' || *q=='-') && q>plain) q--;
+	}
+
+	for (r=q; (*r&0xff)==CHARDAGGER; r--) *r='-';	/* convert daggers at end of line to hyphens */
+
+	if (q-plain < scnt) scnt = q-plain+1;
+	q[1]='\0';
+
+	/* set I for tags below */
+	if (indent>=0 && scnt>=indent) scnt-=indent;
+	if (!fPara && !fIQS) {
+		if (fChangeleft) I+=(scnt>ccnt)?scnt:ccnt;
+		else I+=scnt;
+	}
+	I0=I;
+
+	/*** tags and filler spaces ***/
+
+	iq=0; falluc=1;
+	for (q=plain; *p; p++) {
+
+		iscnt=0;
+		if (*p==' ') {
+			for (r=p; *r==' '; r++) { iscnt++; spcsqz++; }
+			s_sum+=iscnt; s_cnt++;
+			if (iscnt>1 && !scnt2 && *p==' ') scnt2=iscnt;
+			if (iscnt>2) { bs_cnt++; bs_sum+=iscnt; }	/* keep track of large gaps */
+			iscnt--;		/* leave last space for tail portion of loop */
+
+			/* write out spaces */
+			if (fQS && iscnt<3) { p=r-1;	iscnt=0; } /* reduce strings of <3 spaces to 1 */
+			/* else if (fQS && iscnt>=3) { replace with tab? } */
+			else {
+				for (i=0; i<iscnt; i++) { p++; *q++=' '; }
+			}
+		} /* need to go through if chain for closing off annotations */
+
+		/** backspace-related filtering **/
+
+		/* else */ if (*p=='\b' && p[1]=='_' && q>plain && q[-1]=='+') {
+			/* bold plus/minus(!) */
+			q[-1]=c_plusminus;
+			while (*p=='\b' && p[1]=='_') p+=2;
+			continue;
+		} else if ((*p=='_' && p[1]=='\b' && p[2]!='_' && p[3]!='\b')
+			|| (*p=='\b' && p[1]=='_')) {
+			/* italics */
+			if (tag!=ITALICS && hl>=0) { tagadd(tag, hl, I+iq); hl=-1; }
+			if (hl==-1) hl=I+iq;
+			tag=ITALICS;
+			p+=2;
+		} else if (*p=='_' && p[2]==p[4] && p[1]=='\b' && p[3]=='\b' && p[2]!='_') {
+			/* bold italics (for Solaris) */
+			for (p+=2; *p==p[2] && p[1]=='\b';) p+=2;
+			if (tag!=BOLDITALICS && hl>=0) { tagadd(tag, hl, I+iq); hl=-1; }
+			if (hl==-1) hl=I+iq;
+			tag=BOLDITALICS;
+		} else if (*p==p[2] && p[1]=='\b') {
+			/* boldface */
+			while (*p==p[2] && p[1]=='\b') p+=2;
+			if (tag!=BOLD && hl>=0) { tagadd(tag, hl, I+iq); hl=-1; }
+			if (hl==-1) hl=I+iq;
+			tag=BOLD;
+		} else if (p[1]=='\b' &&
+				 ((*p=='o' && p[2]=='+') ||
+				  (*p=='+' && p[2]=='o')) ) {
+			/* bullets */
+			p+=2;
+			while (p[1]=='\b' && (*p=='o' || p[2]=='+') ) p+=2;		/* bold bullets(!) */
+			*q++=c_bullet; iq++;
+			continue;
+		} else if (*p=='\b' && p>plain && p[-1]=='o' && p[1]=='+') {
+			/* OSF bullets */
+			while (*p=='\b' && p[1]=='+') p+=2;	/* bold bullets(!) */
+			q[-1]=c_bullet; p--;
+			continue;
+		} else if (p[1]=='\b' && *p=='+' && p[2]=='_') {
+			/* plus/minus */
+			p+=2;
+			*q++=c_plusminus; iq++;
+			continue;
+		} else if (p[1]=='\b' && *p=='|' && p[2]=='-') {
+			/* dagger */
+			*q++=c_dagger; iq++;
+			p+=2; continue;
+		} else if (*p=='\b') {
+			/* supress unattended backspaces */
+			continue;
+		} else if (*p=='\x1b' /*&& (p[1]=='9'||p[1]=='8')*/) {
+			p++;
+			if (*p=='[') {
+				p++;
+				if (*p=='1' && hl==-1) {
+					/* stash attributes in "invalid" array element */
+					efirst=I+iq; etype=BOLD;
+					/*hl=I+iq; tag=BOLD; -- faces immediate end of range */
+				} else if (*p=='0' /*&& hl>=0 && hl2==-1 && tags[MAXTAGS].first<I+iq*/) {
+					/* doesn't catch tag if spans line -- just make tag and hl static? */
+					/*tagadd(tags[MAXTAGS].type, tags[MAXTAGS].first, I+iq);*/
+					if (hl==-1 && hl2==-1 && efirst!=-1/*<I+iq*/)
+						tagadd(etype, efirst, I+iq);
+					efirst=-1;
+				} /* else skip unrecognized escape codes like 8/9 */
+			}
+			p+=2;	/* gobble 0/1 and mysterious following 'm' */
+			/* following 'm' (why?) gobbled in overarching for */
+			/*continue;*/
+		} else if ((isupper(*p) /*|| *p=='_' || *p=='&'*/) &&
+				 (hl>=0 || isupper(p[1]) || (p[1]=='_' && p[2]!='\b') || p[1]=='&')) {
+			if (hl==-1 && efirst==-1) { hl=I+iq; tag=SMALLCAPS; }
+		} else {
+			/* end of tag, one way or another */
+			/* collect tags in this pass, interspersed later if need be */
+			/* can't handle overlapping tags */
+			if (hl>=0) {
+				if (hl2==-1) tagadd(tag, hl, I+iq);
+				hl=-1;
+			}
+		}
+
+		/** non-backspace related filtering **/
+		/* case statement here in place of if chain? */
+/* Tk 3.x's text widget tabs too crazy
+		if (*p==' ' && strncmp("     ",p,5)==0) {
+			xputchar('\t'); i+=5-1; ci++; continue;
+		} else
+*/
+/* copyright symbol: too much work for so little
+		if (p[i]=='o' && (strncmp("opyright (C) 19",&p[i],15)==0
+				    || strncmp("opyright (c) 19",&p[i],15)==0)) {
+			printf("opyright \xd3 19");
+			tagadd(SYMBOL, ci+9, ci+10);
+			i+=15-1; ci+=13; continue;
+		} else
+*/
+		if (*p=='(' && q>plain && (isalnum(q[-1])||strchr(manvalid/*"._-+"*/,q[-1])!=NULL)
+		    && strcoloncmp(&p[1],')',vollist)
+		    /* && p[1]!='s' && p[-1]!='`' && p[-1]!='\'' && p[-1]!='"'*/ ) {
+			hl2=I+iq;
+			for (r=q-1; r>=plain && (isalnum(*r)||strchr(manvalid/*"._-+:"*/,*r)!=NULL); r--)
+				hl2--;
+			/* else ref to a function? */
+			/* maybe save position of opening paren so don't highlight it later */
+		} else if (*p==')' && hl2!=-1) {
+			/* don't overlap tags on man page referenes */
+			while (tagc>0 && tags[tagc-1].last>hl2) tagc--;
+			tagadd(MANREF, hl2, I+iq+1);
+			hl2=hl=-1;
+		} else if (hl2!=-1) {
+			/* section names are alphanumic or '+' for C++ */
+			if (!isalnum(*p) && *p!='+') hl2=-1;
+		}
+
+
+		/*assert(*p!='\0');*/
+		if (!*p) break;	/* not just safety check -- check out sgmls.1 */
+
+		*q++=*p;
+/*		falluc = falluc && (isupper(*p) || isspace(*p) || isdigit(*p) || strchr("-+&_'/()?!.,;",*p)!=NULL);*/
+		falluc = falluc && !islower(*p);
+		if (!scnt2) { *ph++=*p; phraselen++; }
+		iq+=iscnt+1;
+	}
+	if (hl>=0) tagadd(tag, hl, I+iq);
+	else if (efirst>=0) tagadd(etype, efirst, I+iq);
+	*q=*ph='\0';
+	linelen=iq+ccnt;
+
+
+	/* special case for Solaris:
+	   if line has ONLY <CODE> tags AND they SPAN line, convert to one tag */
+	fCodeline=0;
+	if (tagc && tags[0].first==0 && tags[tagc-1].last==linelen) {
+		fCodeline=1;
+		j=0;
+		/* invariant: at start of a tag */
+		for (i=0; fCodeline && i<tagc; i++) {
+			if (tags[i].type!=BOLDITALICS /*&& tags[i].type!=BOLD*/) fCodeline=0;
+			else if ((j=tags[i].last)<linelen) {
+			  for (; j < tags[i+1].first ; j++)
+			  	if (!isspace(plain[j])) { fCodeline=0; break; }
+			}
+		}
+	}
+
+
+	/* verify tag lists -- in production, compiler should kill with dead code elimination */
+	for (i=tagci; i<tagc; i++) {
+		/* verify valid ranges */
+		assert(tags[i].type>NOTAG && tags[i].type<=MANREF);
+		assert(tags[i].first>=I0 && tags[i].last<=linelen+I0);
+		assert(tags[i].first<=tags[i].last);
+
+		/* verify for no overlap with other tags */
+		for (j=i+1; j<tagc; j++) {
+			assert(tags[i].last<=tags[j].first /*|| tags[i].first>=tags[j].last*/);
+		}
+	}
+}
 
 
 /*
@@ -2317,26 +3200,15 @@ int fHead=0;
 int fFoot=0;
 
 void
-filter(void) {
+preformatted_filter(void) {
 	const int MINRM=50;		/* minimum column for right margin */
 	const int MINMID=20;
 	const int HEADFOOTSKIP=20;
 	const int HEADFOOTMAX=25;
-	const enum command tagbeginend[][2] = {	/* parallel to enum tagtype */
-		{ -1,-1 },
-		{ -1,-1 },
-		{ BEGINITALICS, ENDITALICS },
-		{ BEGINBOLD, ENDBOLD },
-		{ BEGINY, ENDY },
-		{ BEGINSC, ENDSC },
-		{ BEGINBOLDITALICS, ENDBOLDITALICS },
-		{ -1,-1 },
-		{ BEGINMANREF, ENDMANREF }
-	};
 	int curtag;
 	char *p,*r;
-	char head[BUFSIZ]="";		/* first "word" */
-	char foot[BUFSIZ]="";
+	char head[MAXBUF]="";		/* first "word" */
+	char foot[MAXBUF]="";
 	int header_m=0, footer_m=0;
 	int headlen=0, footlen=0;
 /*	int line=1-1; */
@@ -2349,14 +3221,17 @@ filter(void) {
 	int Pnew=0,I0;
 	float s_avg=0.0;
 	int spaceout;
+	int skiplines=0;
+	int c;
 
 	/* try to keep tabeginend[][] in parallel with enum tagtype */
 	assert(tagbeginend[ITALICS][0]==BEGINITALICS);
 	assert(tagbeginend[MANREF][1]==ENDMANREF);
+	in++;	/* lookahead = current character, in points to following */
 
-	/*	for (i=0; i<BUFSIZ; i++) tabgram[i]=0;*/
+	/*	for (i=0; i<MAXBUF; i++) tabgram[i]=0;*/
 
-	if (fMan) indent=-1;
+	/*if (fMan) */indent=-1;
 	I=1;
 	CurLine=1;
 	(*fn)(BEGINDOC); I0=I;
@@ -2364,16 +3239,28 @@ filter(void) {
 	/* run through each line */
 	while (la_gets(buf)!=NULL) {
 		if (title) I=I0;
+		/* strip out Ousterhout box: it's confusing the section line counts in TkMan outlining */
+		if (fNORM && *buf=='_'
+		    && strncmp(buf,"_________________________________________________________________",65)==0) {
+			fTclTk = 1;
+			if (fChangeleft==0) fChangeleft=1;
+			skiplines = 2;
+		}
+		if (skiplines) { skiplines--; AbsLine++; continue; }
 		filterline(buf,plain);	/* ALL LINES ARE FILTERED */
-		fintable = fTable &&
+
+#if 0
+		/* dealing with tables in formatted pages is hopeless */
+		finTable = fTable &&
 			((!ncnt && fotable) ||
 			(ncnt && bs_cnt>=2 && bs_cnt<=5 && ((float) bs_sum / (float) bs_cnt)>3.0));
-		if (fintable) {
+		if (finTable) {
 			if (!fotable) (*fn)(BEGINTABLE);
 		} else if (fotable) {
 			(*fn)(ENDTABLE);
 			I=I0; tagc=0; filterline(buf,plain);	/* rescan first line out of table */
 		}
+#endif
 
 		s_avg=(float) s_sum;
 		if (s_cnt>=2) {
@@ -2385,11 +3272,11 @@ filter(void) {
 		p=plain;	/* points to current character in plain */
 
 		/*** determine header and global indentation ***/
-		if (fMan && (!fHead || indent==-1)) {
+		if (/*fMan && (*/!fHead || indent==-1/*)*/) {
 			if (!linelen) continue;
-			if (*header=='\0') {
+			if (!*header) {
 				/* check for missing first header--but this doesn't catch subsequent pages */
-				if (stricmp(p,"NAME")==0) {
+				if (stricmp(p,"NAME")==0 || stricmp(p,"NOMBRE")==0) {	/* works because line already filtered */
 					indent=scnt; /*filterline(buf,plain);*/ scnt=0; I=I0; fHead=1;
 				} else {
 					fHead=1;
@@ -2432,7 +3319,7 @@ filter(void) {
 
 		/*** strip out per-page titles ***/
 
-		if (fMan && (scnt==0 || scnt>MINMID)) {
+		if (/*fMan && (*/scnt==0 || scnt>MINMID/*)*/) {
 /*printf("***ncnt = %d, fFoot = %d, line = %d***", ncnt,fFoot,AbsLine);*/
 			if (!fFoot && !isspace(*p) && (scnt>5 || (*p!='-' && *p!='_')) &&
 			    /* don't add ncnt -- AbsLine gets absolute line number */
@@ -2501,12 +3388,16 @@ filter(void) {
 
 		/*tabgram[scnt]++;*/
 		if (title) ncnt=(scnt!=oscnt || (/*scnt<4 &&*/ isupper(*p)));
+		itabcnt = scnt/5;
 		if (CurLine==1) {ncnt=0; tagc=0;} /* gobble all newlines before first text line */
+		sect = (scnt==0 && isupper(*p));
+		subsect = (fSubsections && (scnt==2||scnt==3));
+		if ((sect || subsect) && ncnt>1) ncnt=1; /* single blank line between sections */
 		(*fn)(BEGINLINE);
 		if (/*fPara &&*/ ncnt) Pnew=1;
 		title=0; /*ncnt=0;--moved down*/
-		if (fintable) (*fn)(BEGINTABLELINE);
-		oscnt=scnt; fotable=fintable;
+		/*if (finTable) (*fn)(BEGINTABLELINE);*/
+		oscnt=scnt; /*fotable=finTable;*/
 
 /* let output modules decide what to do at the start of a paragraph
 		if (fPara && !Pnew && (prevcmd==BEGINBODY || prevcmd==BEGINBULTXT)) {
@@ -2516,9 +3407,7 @@ filter(void) {
 
 		/*** identify structural sections and notify fn */
 
-		if (fMan) {
-			sect = (scnt==0 && isupper(*p));
-			subsect=(fSubsections && (scnt==2||scnt==3));
+		/*if (fMan) {*/
 /*			bulpair = (scnt<7 && (*p==c_bullet || *p=='-'));*/
 			/* decode the below */
 			bulpair = ((!auxindent || scnt!=lindent+auxindent) /*!bulpair*/
@@ -2545,28 +3434,27 @@ filter(void) {
 /*			hanging = bulpair? phraselen+scnt2 : 0;*/
 /*if (bulpair) printf("hanging = %d\n",hanging);*/
 			/* maybe, bulpair=0 would be best */
-		}
+			/*end fMan}*/
 
 		/* certain sections (subsections too?) special, like SEE ALSO */
 		/* to make canonical name as plain, all lowercase */
 		if (sect /*||subsect -- no widespread subsection names*/) {
-		  sectheadid = RANDOM;
-		  for (j=0; j<RANDOM; j++) {
-		    if (strcoloncmp2(plain,'\0',sectheadname[j],0)) {
-			 sectheadid=j;
-			 break;
-		    }
-		  }
+		  for (j=0; (sectheadid=j)<RANDOM; j++) if (strcoloncmp2(plain,'\0',sectheadname[j],0)) break;
 		}
 
+		/* normalized section headers are put into mixed case */
+		if (/*fNORM &&*/falluc && (sect || subsect)) casify(plain);
+
 		if (sect) {
-			addtoc(plain, BEGINSECTION, CurLine);
 			poppush(BEGINSECTION); (*fn)(BEGINSECTHEAD);
+			tocadd(plain, BEGINSECTION, CurLine);
 		} else if (subsect && !osubsect) {
-			addtoc(plain, BEGINSUBSECTION, CurLine);
 			poppush(BEGINSUBSECTION); (*fn)(BEGINSUBSECTHEAD);
+			tocadd(plain, BEGINSUBSECTION, CurLine);
 		} else if (bulpair) {
-			poppush(BEGINBULPAIR); (*fn)(BEGINBULLET);
+			/* used to be just poppush(BEGINBULPAIR); */
+			if (!Pbp) poppush(BEGINBULPAIR);
+			(poppush)(BEGINBULLET);
 			fIP=1; /*grabphrase(plain);*/
 		} else if (Pnew) {
 			poppush(BEGINBODY);
@@ -2576,7 +3464,7 @@ filter(void) {
 
 
 		/* move change bars to left */
-		if (fChangeleft) {
+		if (fChangeleft && !fNORM) {
 			if (fPara) (*fn)(CHANGEBAR);
 			/* replace initial spaces with changebars */
 			else for (i=0; i<ccnt; i++) { /*xputchar('|'); */ (*fn)(CHANGEBAR); }
@@ -2587,7 +3475,10 @@ filter(void) {
 			spaceout = (scnt>ccnt)?(scnt-ccnt):0;
 			if (fILQS) { if (spaceout>=lindent) spaceout-=lindent; else spaceout=0; }
 			if (auxindent) { if (spaceout>=auxindent) spaceout-=auxindent; else spaceout=0; }
-			printf("%*s",spaceout,"");
+			if (fNORM) {
+			  	if (itabcnt>0) (*fn)(ITAB);
+				for (i=0; i<(scnt%5); i++) putchar(' ');
+			} else printf("%*s",spaceout,"");
 		}
 
 
@@ -2623,13 +3514,14 @@ filter(void) {
 			}
 
 			/* troublemaker characters */
+			c = (*p)&0xff;
 			if (!fcont && fcharout) {
-				if (strchr(escchars,*p)!=NULL) {
-					putchar('\\'); putchar(*p); I++;
-				} else if (strchr(trouble,*p)!=NULL) {
-					(*fn)(*p); fcont=1;
+				if (strchr(escchars,c)!=NULL) {
+					putchar('\\'); putchar(c); I++;
+				} else if (strchr(trouble,c)!=NULL) {
+					(*fn)(c); fcont=1;
 				} else {
-					putchar(*p); I++;
+					putchar(c); I++;
 				}
 			}
 
@@ -2672,44 +3564,1460 @@ filter(void) {
 			(*fn)(SHORTLINE);
 		osubsect=subsect;
 
-		if (fintable) (*fn)(ENDTABLELINE);
-		/*if (!fPara)*/ (*fn)(ENDLINE);
+		/*if (finTable) (*fn)(ENDTABLELINE);*/
+		/*if (!fPara)*/ (*fn)(ENDLINE); tagc=0;
 		ncnt=0;
 		I0=I;	/* save I here in case skipping lines screws it up */
 	}
 
 	/* wrap up at end */
-	pop(ENDDOC); (*fn)(ENDDOC);
+	pop(ENDDOC);	/* clear up all tags on stack */
+	(*fn)(ENDDOC);
 }
 
 
 
+/*
+ * SOURCE CODE PARSING
+ *    for better transcription short of full nroff interpreter
+ *
+ *    Macros derived empirically, except for weird register ones that were looked up in groff
+ *
+ * to do
+ *   X fix up output modules to be aware of Source: they need to do own formatting (Tk, ASCII, ...)
+ *	X profile if's and reorder, or centralized id (fast enough already?),
+ *   X how to format tables for Tk?
+ *   + coalese lists, distinguish DL vs OL vs UL,
+ *   + recognize more table ops (differences across flavors)
+ *   make lines with tabs into tables (tabs make no sense to HTML)
+ *
+ * buffer usage
+ *    buf = incoming text from man page file
+ *    plain = "second pass" buffer used to identify man page references
+ *
+ * test pages
+ *    Solaris: fdisk.1m, fcntl.2, curs_getwch.3x, locale.5 (numbered lists),
+ *		getservbyname.3n (font size changes)
+ */
+
+/* macros */
+/*
+/* put as much in here, as opposed to in code, as possible.
+   less expensive and here they can be overridden by other macros */
+/*const int macromax=100; -- dumb compiler */
+#define MACROMAX 1000
+struct { char *key; char *subst; } macro[MACROMAX] = {
+  /* Solaris */
+  {"NA", ".SH NAME"},
+  {"SB", "\\s-2\\fB\\$1\\fR\\s0"},
+  /* HP-UX */
+/*
+  {"SM", "\\s-2\\$1\\s0"},
+  {"C", "\\f3\\$1\\fR"},
+  {"CR", "\\f3\\$1\\fR\\$2"},
+  {"CI", "\\f3\\$1\\fI\\$2\\fR"},
+  {"RC", "\\fR\\$1\\f3\\$2\\fR"},
+*/
+  /* SGI -- doesn't ship man page source */
+
+  /* 4.4BSD  -  http://intergate.sonyinteractive.com/cgi-bin/manlink/7/mdoc */
+  /* scads more, but for them definition in -mandoc is sufficient */
+  /*
+  {"Dt", ".TH \\$1 \\$2 \\$3"},
+  {"Sh", ".SH \\$1 \\$2 \\$3 \\$4 \\$5 \\$6 \\$7 \\$8 \\$9"},
+  {"Ss", ".SS \\$1 \\$2 \\$3 \\$4 \\$5 \\$6 \\$7 \\$8 \\$9"},
+  {"Pp", ".P"},
+  {"Nm", ".BR \\$1 \\$2 \\$3 \\$4 \\$5 \\$6 \\$7 \\$8 \\$9"},	/* name * /
+  {"Ar", ".IR \\$1 \\$2 \\$3 \\$4 \\$5 \\$6 \\$7 \\$8 \\$9"},
+  */
+  { NULL, NULL }
+};
+/* what all can be represented as a macro? */
+int macrocnt=-1;	/* length of table counted at start */
+
+char *macnotfound[MACROMAX];
+int macnotcnt=0;
+
+#define SUBSTMAX 1000
+/* "*" or "*(" prefixed */
+struct { char *key; char *subst; } subst[SUBSTMAX] = {
+  {"rq", "'"}, {"lq", "`"}, {"L\"", "``"}, {"R\"", "''"},
+  {"L", "\\f3"}, {"E", "\\f2"}, {"V", "\\f4"}, {"O", "\\f1"}
+};
+int substcnt=8;
+
+#define REGISTERMAX 1000
+struct { char *name; char *value; } reg[REGISTERMAX];
+int regcnt=0;
+
+/* special characters */
+const struct { char key[4]; unsigned char subst[4]; } spec[] = {
+  { "**", "*" },
+  { "+-", { CHARPLUSMINUS, '\0' }},
+  { "12", { CHAR12, '\0' }},
+  { "14", { CHAR14, '\0' }},
+  { "34", { CHAR34, '\0' }},
+  { "aa", { CHARACUTE, '\0' }},
+  { "ap", "~" },
+  { "br", "|" },
+  { "bu", { CHARBULLET, '\0' }},
+  { "bv", "|" },
+  { "ci", "O" },
+  { "co", { CHARCOPYR, '\0' }},
+  { "ct", { CHARCENT, '\0' }},
+  { "de", { CHARDEG, '\0' }},
+  { "dg", { CHARDAGGER, '\0' }},
+  { "di", { CHARDIV, '\0' }},
+  { "em", "--" },
+  { "eq", "=" },
+  { "hy", "-" },
+  { "mi", "-" },
+  { "mu", { CHARMUL, '\0' }},
+  { "no", { CHARNOT, '\0' }},
+  { "or", "|" },
+  { "pl", "+" },
+  { "rg", { CHARREGTM, '\0' }},
+  { "ru", "_" },
+  { "sc", { CHARSECT, '\0' }},
+  { "sl", "/" },
+  { "ua", "^" },
+  { "ul", "_" }
+};
+#define speccnt (sizeof spec / sizeof spec[0])
+ 
+/* tbl line descriptions */
+char *tbl[20][20];	/* space enough for twenty description lines, twenty parts each */
+int tblc=0;
+int tbli;
+
+int fsourceTab = 0, fosourceTab=0;
+int supresseol=0;
+int finitDoc=0;
+int finlist=0;
+int sublevel=0;
+
+char *
+source_gets(void) {
+  char *p,*q;
+  char *ret = (*in)?buf:NULL;
+  int i;
+  char tmpbuf[MAXBUF];
+  char name[3];
+
+  if (!sublevel) AbsLine++;
+
+  p = tmpbuf;
+  falluc = 1;
+  while (1) {
+    /* collect characters in line */
+    while (*in && *in!='\n') {
+	 if (p[0]=='\\' && p[1]=='\n') p+=2;	/* \<newline> */
+	 falluc = falluc && !islower(*in);
+	 *p++ = *in++;
+    }
+    if (*in) in++;
+    *p='\0';
+
+    /* normalize commands */
+    p=tmpbuf; q=buf;	/* copy from tmpbuf to buf */
+    /* no spaces between command-initiating period and command letters */
+    if (*p=='\'') { *p='.'; }	/* what's the difference? */
+    if (*p=='.') { *q++ = *p++; while (isspace(*p)) p++; }
+
+
+    /* convert lines with tabs to tables? */
+    fsourceTab=0;
+
+    /* if comment at start of line, OK */
+    /* dynamically determine iff Tcl/Tk page by scanning comments */
+    if (*p=='\\' && *(p+1)=='"') {
+	    if (!fTclTk && strstr(p+1,"supplemental macros used in Tcl/Tk")!=NULL) fTclTk=1;
+	    p+=2;
+    }
+
+    while (*p) {
+	 if (*p=='\t') fsourceTab++;
+	 if (*p=='\\') {
+	   p++;
+	   if (*p=='n') {
+		p++;
+		if (*p=='(') {
+		  p++; name[0]=*p++; name[1]=*p++; name[2]='\0';
+		} else {
+		  name[0]=*p++; name[1]='\0';
+		}
+		*q='0'; *(q+1)='\0';	/* defaults to 0, in case doesn't exist */
+		for (i=0; i<regcnt; i++) {
+		  if (strcmp(reg[i].name,name)==0) {
+		    strcpy(q, reg[i].value);
+		    break;
+		  }
+		}
+		q+=strlen(q);
+	   } else if (*p=='"') {	/* comment in Digital UNIX, OK elsewhere? */
+		*p='\0';
+		q--; while (q>buf && isspace(*q)) q--;	/* trim tailing whitespace */
+		q++; *q='\0';
+	   } else {
+		/* verbatim character (often a backslash) */
+		*q++ = '\\';	/* postpone interpretation (not the right thing but...) */
+		*q++ = *p++;
+	   }
+	 } else *q++ = *p++;
+    }
+
+    /* dumb Digital--later */
+    /*if (q-3>plain && q[-1]=='{' && q[-2]=='\\' && q[-3]==' ') q[-3]='\n';*/
+
+    /* close off buf */
+    *q='\0';
+
+    /*if (q>buf && q[-1]=='\\' && *in=='.') { /* append next line * /} else break;*/
+    break;
+  }
+
+  /*printf("*ret = |%s|\n", ret!=NULL?ret : "NULL");*/
+  return ret;
+}
+
+
+/* dump characters from buffer, signalling right tags along the way */
+/* all this work to introduce an internal second pass to recognize man page references */
+/* now for HTTP references too */
+
+int sI=0;
+/* use int linelen from up top */
+int fFlush=1;
+
+void
+source_flush(void) {
+  int i,j;
+  char *p,*q,*r;
+  int c;
+  int manoff,posn;
+
+  if (!sI) return;
+  plain[sI] = '\0';
+
+  /* flush called often enough that all man page references are at end of text to be flushed */
+  /* find man page ref */
+  if (sI>=4/*+1*/ && (plain[sI-(manoff=1)-1]==')' || plain[sI-(manoff=0)-1]==')')) {
+    for (q=&plain[sI-manoff-1-1]; q>plain && isalnum(*q) && *q!='('; q--) /* nada */;
+    if (*q=='(' && strcoloncmp(&q[1],')',vollist)) {
+	 r=q-1;
+	 if (*r==' ' && (sectheadid==SEEALSO || /*single letter volume */ *(q+2)==')' || *(q+3)==')')) r--;	/* permitted single intervening space */
+	 for ( ; r>=plain && (isalnum(*r) || strchr(manvalid,*r)!=NULL); r--) /* nada */;
+	 r++;
+	 if (isalpha(*r) && r<q) {
+	   /* got one: clear out tags and spaces to make normalized form */
+	   posn = r-plain;
+	   /*while (tagc && tags[tagc-1].first >= posn) tagc--;*/
+
+	   /* add MANREF tags */
+	   strcpy(hitxt,r);
+	   tagadd(BEGINMANREF, posn, 0);
+	   tagadd(ENDMANREF, sI-manoff-1+1, 0);
+	 }
+    }
+
+  /* HTML hyperlinks */
+  } else if (fURL && sI>=4 && (p=strstr(plain,"http"))!=NULL) {
+    i = p-plain;
+    tagadd(BEGINMANREF, i, 0);
+    for (j=0; i<sI && !isspace(*p) && *p!='"' && *p!='>'; i++,j++) hitxt[j] = *p++;
+    hitxt[j]='\0';
+    tagadd(ENDMANREF, i, 0);
+  }
+
+  if (!fFlush) return;
+
+  /* output text */
+  for (i=0,j=0,p=plain; i<sI && *p; i++,p++) {
+    if (!linelen) (*fn)(BEGINLINE);	/* issue BEGINLINE when know will be chars on line */
+
+    /* dump tags */
+    /*for ( ; j<tagc && tags[j].first == i; j++) (*fn)(tags[j].type);*/
+    for (j=0 ; j<tagc; j++) if (tags[j].first == i) (*fn)((enum command)tags[j].type);
+
+    /* dump text */
+    c = (*p)&0xff;	/* just make c unsigned? */
+    if (strchr(escchars,c)!=NULL) {
+	 xputchar('\\'); xputchar(c);
+	 if (fcharout) linelen++;
+    } else if (strchr(trouble,c)!=NULL) {
+	 (*fn)(c);
+    } else {		/* normal character */
+	 xputchar(c);
+	 if (fcharout) linelen++;
+    }
+
+    if (linelen>=LINEBREAK && c==' ') { (*fn)(ENDLINE); linelen=0; }
+  }
+  /* dump tags at end */
+  /*for ( ; j<tagc && tags[j].first == sI; j++) (*fn)(tags[j].type);*/
+    for (j=0 ; j<tagc; j++) if (tags[j].first==sI) (*fn)((enum command)tags[j].type);
+
+  sI=0; tagc=0;
+}
+
+
+/* source_out stuffs characters in a buffer */
+char *
+source_out0(char *p, char end) {
+  /* stack of character formattings */
+  static enum tagtype styles[20];
+  static int style=-1;
+  int funwind=0;
+  int i, j;
+  int len;
+  int sign;
+
+  while (*p && *p!=end) {
+    if (*p=='\\') {	/* escape character */
+	 switch (*++p) {
+ 
+ 	 case '&':	/* no space.  used as a no-op sometimes */
+ 	 case '^':	/* 1/12 em space */
+ 	 case '|':      /* 1/6 em space */
+ 	 case '%':      /* hyphenation indicator */
+ 	   /* just ignore it */
+ 	   p++;
+ 	   break;
+ 	 case '0':	/* digit width space */
+ 	   p++;
+ 	   sputchar(' ');
+ 	   break;
+ 	 case ' ':	/* unpaddable space */
+ 	   stagadd(CHARNBSP);	/* nonbreaking space */
+ 	   /*sputchar(' ');*/
+ 	   p++;
+ 	   break;
+ 	 case 's':	/* font size change */
+	   p++;
+	   sign=1;
+	   if (*p=='-' || *p=='+') if (*p++=='-') sign=-1;
+	   intArg = sign * ((*p++)-'0');
+	   if (intArg==0) intArg = -fontdelta;	/* s0 returns to normal height */
+	   if (fontdelta || intArg) { source_flush(); (*fn)(FONTSIZE); }
+	   break;
+ 	 case 'v':	/* vertical motion */
+ 	 case 'h':	/* horizontal motion */
+ 	 case 'L':	/* vertical line */
+ 	 case 'l':	/* horizontal line */
+	   /* ignore */
+	   p++;
+	   if (*p=='\'') { p++; while (*p++!='\''); }
+	   break;
+	 case '"':	/* comment */
+	   *p='\0';	/* rest of line is comment */
+	   break;
+	 case 'f':
+	   p++;
+	   switch (*p++) {
+	   case '3': case 'B':		/* boldface */
+		styles[++style] = BOLD;
+		stagadd(BEGINBOLD);
+		break;
+	   case '2': case 'I':		/* italics */
+		styles[++style] = ITALICS;
+		stagadd(BEGINITALICS);
+		break;
+	   case '4':	 /* bolditalics mode => program code */
+		styles[++style] = BOLDITALICS;
+		stagadd(BEGINBOLDITALICS);
+		break;
+	   case '1': case '0': case 'R': case 'P':	/* back to Roman */
+		sputchar(' ');
+		funwind=1;
+		break;
+	   case '-':
+		p++;
+		break;
+	   }
+	   break;
+	 case '(':	/* multicharacter macros */
+	   p++;
+	   for (i=0; i<speccnt; i++) {
+		if (p[0]==spec[i].key[0] && p[1]==spec[i].key[1]) {
+		  p+=2;
+		  for (j=0; spec[i].subst[j]; j++) sputchar(spec[i].subst[j]);
+		  break;
+		}
+	   }
+	   break;
+	 case '*':	/* strings */
+	   p++;
+ 	   if (*p!='(') {	/* single character */
+ 	     for (i=0; i<substcnt; i++) {
+		  if (*p==subst[i].key[0] && subst[i].key[1]=='\0') {
+		    source_out0(subst[i].subst,'\0');
+		    break;
+		  }
+ 	     }
+ 	     p++;
+	   } else {	/* multicharacter macros */
+		p++;
+		for (i=0; i<substcnt; i++) {
+		  len = strlen(subst[i].key);
+		  if (strncmp(p,subst[i].key,len)==0) {
+		    source_out0(subst[i].subst,'\0');
+		    p+=len;
+		    break;
+		  }
+		}
+	   }
+	   break;
+	   /*------------------
+	 } else if (*p=='|') {
+	   stagadd(CHARNBSP);	/* nonbreaking space * /
+	   /*sputchar(' ');* /
+	   p++;
+	   -------------------*/
+	 case 'e':		/* escape */
+	   sputchar('\\');
+	   p++;
+	   break;
+	 case 'c':
+		/* supress following carriage return-induced space */
+	   /* handled in source_gets(); ignore within line => can't because next line might start with a command */
+	   supresseol=1;
+	   p++;
+	   break;
+	 case '-':		/* minus sign */
+	   sputchar(CHARDASH);
+	   p++;
+	   break;
+	   /*-----------------------
+	 } else if (*p=='^') {
+	   /* end stylings? (found in Solaris) * /
+	   p++;
+	   -------------------*/
+	 default:		/* unknown escaped character */
+	   sputchar(*p++);
+	 }
+
+    } else {		/* normal character */
+	 if (*p) sputchar(*p++);
+    }
+
+
+    /* unwind character formatting stack */
+    if (funwind) {
+	 for ( ; style>=0; style--) {
+	   if (styles[style]==BOLD) {
+		stagadd(ENDBOLD);
+	   } else if (styles[style]==ITALICS) {
+		stagadd(ENDITALICS);
+	   } else {
+		stagadd(ENDBOLDITALICS);
+	   }
+	 } /* else error */
+	 assert(style==-1);
+
+	 funwind=0;
+    }
+
+    /* check for man page reference and flush buffer if safe */
+    /* postpone check until after following character so catch closing tags */
+    if ((sI>=4+1 && plain[sI-1-1]==')') ||
+	   /*  (plain[sI-1]==' ' && (q=strchr(plain,' '))!=NULL && q<&plain[sI-1])) {*/
+	 (plain[sI-1]==' ' && !isalnum(plain[sI-1-1]))) {
+	 /* regardless, flush buffer */
+	 source_flush();
+    }
+  }
+
+  if (*p && *p!=' ') p++;		/* skip over end character */
+  return p;
+}
+
+/* oh, for function overloading.  inlined by compiler, probably */
+char *source_out(char *p) {
+  return source_out0(p,'\0');
+}
+
+
+char *
+source_out_word(char *p) {
+  char end = ' ';
+
+  while (*p && isspace(*p)) p++;
+  if (*p=='"' /* || *p=='`' ? */) {
+    end = *p;
+    p++;
+  }
+  p = source_out0(p,end);
+  /*while (*p && isspace(*p)) p++;*/
+  return p;
+}
+
+
+void
+source_struct(enum command cmd) {
+  source_out("\\fR\\s0");	/* don't let run-on stylings run past structural units */
+  source_flush();
+  (*fn)(cmd);
+}
+
+#define checkcmd(str)	strcmp(cmd,str)==0
+
+int finnf=0;
+
+void source_line(char *p);
+void
+source_subfile(char *newin) {
+  char *p;
+  char *oldin = in;
+
+  sublevel++;
+
+  in = newin;
+  while ((p=source_gets())!=NULL) {
+    source_line(p);
+  }
+  in = oldin;
+
+  sublevel--;
+}
+
+/* have to delay acquisition of list tag */
+void
+source_list(void) {
+  static int oldlisttype;	/* OK to have just one because nested lists done with RS/RE */
+  char *q;
+  int i;
+
+  /* guard against empty bullet */
+  for (i=0, q=plain; i<sI && isspace(*q); q++,i++) /* empty */;
+  if (i==sI) return;
+
+  assert(finlist);
+
+  fFlush=1;
+
+  /* try to determine type of list: DL, OL, UL */
+  q=plain; plain[sI]='\0';
+  if (((int)*q&0xff)==CHARBULLET /*||*/) {
+    listtype=UL;
+    q+=4;
+  } else {
+    if (strchr("[(",*q)) q++;
+    while (isdigit(*q)) { listtype=OL; q++; }	/* I hope this gives the right number */
+    if (*q=='.') q++;
+    if (strchr(")]",*q)) q++;
+    if (*q=='.') q++;
+    while (isspace(*q)) q++;
+    if (*q) listtype=DL;
+  }
+  oldlisttype = listtype;
+
+  /* interpretation left to output formats based on listtype (HTML: DL, OL, UL) */
+  i = sI; sI=0;
+  if (!Pbp || listtype!=oldlisttype) poppush(BEGINBULPAIR);
+  poppush(BEGINBULLET);
+  /*if (tphp) source_line(p); else source_out_word(p);*/
+  /*if (listtype!=OL && listtype!=UL)*/ sI=i;
+  source_struct(ENDBULLET); Pbul=0; /* handled immediately below */
+  poppush(BEGINBULTXT);
+
+  finlist=0;
+}
+
+static int inComment=0;
+static int isComment=0;
+
+void
+source_command(char *p) {
+  static int lastif=1;
+  int mylastif;
+  char *cmd=p;
+  char *q;
+  int i,j,endch;
+  int fid;
+  struct stat fileinfo;
+  char *sobuf;
+  char *macroArg[9];
+  char endig[10];
+  int err=0;
+  char ch;
+  int tphp=0;
+  int ie=0;
+  int cond,invcond=0;
+  char delim,op;
+  char if0[80], if1[80];
+  float nif0, nif1;
+  int insertat;
+  char macrobuf[MAXBUF];		/* local so can have nested macros */
+  static char ft='\0';
+
+  /* should centralize command matching (binary search?), pointer bumping here
+     if for no other reason than to catch conflicts -- and allow overrides? */
+  /* parse out command */
+  while (*p && !isspace(*p)) p++;
+  if (*p) { *p='\0'; p++; }
+  /* should set up argv, argc for command arguments--it's regular enough that everyone doesn't have to do it itself */
+
+  if (isComment) {
+    /* maybe have BEGINCOMMENT, ENDCOMMENT, COMMENTLINE */
+    supresseol=0;
+    if (!inComment) { source_flush(); source_struct(BEGINCOMMENT); inComment=1; }
+    source_struct(COMMENTLINE);
+    printf("%s\n", p);	/* could contain --> or other comment closer, but unlikely */
+
+  /* structural commands */
+  } else if (checkcmd("TH")) {
+    /* sample: .TH CC 1 "Dec 1990" */
+    /* overrides command line -- should fix this */
+    if (!finitDoc) {
+	 while (isspace(*p)) p++;
+	 if (*p) {
+	   q=strchr(p, ' ');
+	   if (q!=NULL) *q++='\0';
+	   strcpy(manName, p);
+	   for (p=q; isspace(*p); p++) /*nada*/;
+	   if (*p) {
+		   q=strchr(p,' ');
+		   if (q!=NULL) *q++='\0';
+		   strcpy(manSect, p);
+	   }
+	 }
+	 sI=0;
+	 finitDoc=1;
+	 (*fn)(BEGINDOC);
+	 /* emit information in .TH line? */
+    } /* else complain about multiple definitions? */
+
+  } else if (checkcmd("SH") || checkcmd("Sh")) {	/* section title */
+    while (indent) { source_command("RE"); }
+    source_flush();
+
+    pop(BEGINSECTION);	/* before reset sectheadid */
+
+    if (*p) {
+	 if (*p=='"') { p++; q=p; while (*q && *q!='"') q++; *q='\0'; }
+	 finnf=0;
+	 for (j=0; (sectheadid=j)<RANDOM; j++) if (strcoloncmp2(p,'\0',sectheadname[j],0)) break;
+	 if (!finitDoc) {
+	   /* handle missing .TH */
+	   /* if secthead!=NAME -- insist on this?
+	   fprintf(stderr, "Bogus man page: no .TH or \".SH NAME\" lines\n");
+	   exit(1);
+	   */
+	   (*fn)(BEGINDOC);
+	   finitDoc=1;
+	 }
+	 poppush(BEGINSECTION); source_struct(BEGINSECTHEAD);
+	 fFlush=0;
+	 if (falluc) casify(p);
+	 source_out(p);		/* people forget the quotes around multiple words */
+	 while (isspace(plain[--sI])) /*nada*/;
+	 plain[++sI]='\0'; tocadd(plain, BEGINSECTION, CurLine);	/* flushed with source_struct above */
+	 fFlush=1;
+	 source_struct(ENDSECTHEAD);
+    }
+  } else if (checkcmd("SS")) {	/* subsection title */
+    while (indent) { source_command("RE"); }
+    source_flush();
+
+    if (*p) {
+	 if (*p=='"') { p++; q=p; while (*q && *q!='"') q++; *q='\0'; }
+	 finnf=0;
+	 source_flush();
+	 poppush(BEGINSUBSECTION); source_struct(BEGINSUBSECTHEAD);
+	 fFlush=0;
+
+	 if (falluc) casify(p);
+	 source_out(p);		/* people forget the quotes around multiple words */
+	 while (isspace(plain[--sI])) /*nada*/;
+	 plain[++sI]='\0'; tocadd(plain, BEGINSUBSECTION, CurLine);
+	 fFlush=1;
+	 source_struct(ENDSUBSECTHEAD);
+    }
+
+  } else if (checkcmd("P") || checkcmd("PP") || checkcmd("LP")) {	 /* new paragraph */
+    source_flush();
+    poppush(BEGINBODY);
+
+  } else if ((tphp=checkcmd("TP")) || (tphp=checkcmd("HP")) || checkcmd("IP") || checkcmd("LI")) {
+    /* TP, HP: indented paragraph, tag on next line (DL list) */
+    /* IP, LI: tag as argument */
+    source_flush();
+    fFlush=0;
+    finlist=1;
+    if (!tphp) { source_out_word(p); source_list(); }
+    /* lists terminated only at start of non-lists */
+  } else if (checkcmd("RS")) {	/* set indent */
+    source_struct(BEGININDENT);
+    indent++;
+  } else if (checkcmd("RE")) {
+    if (indent) indent--;
+    pop(ENDINDENT);
+    source_struct(ENDINDENT);
+/*
+  } else if (checkcmd("Xr")) {
+    /* 4.4BSD man ref * /
+    supresseol=0;
+    p=source_out_word(p);
+    source_out("(");
+    p=source_out_word(p);
+    source_out(")");
+*/
+
+  } else if (checkcmd("nf")) {
+    finnf=1;
+  } else if (checkcmd("fi")) {
+    finnf=0;
+  } else if (checkcmd("br")) {
+    source_struct(SHORTLINE);
+  } else if (checkcmd("sp") || checkcmd("SP")) {	/* blank lines */
+    /*if (!finTable) {*/
+	 if (finnf) source_struct(SHORTLINE); else source_struct(BEGINBODY);
+	 /*}*/
+  } else if (checkcmd("ta")) {	/* set tab stop(s?) */
+    /* argument is tab stop -- handle these as tables => leave to output format */
+    /* HTML handles tables but not tabs, Tk's text tabs but not tables */
+    /* does cause a linebreak */
+    stagadd(BEGINBODY);
+  } else if (checkcmd("ce")) {
+	  /* get line count, recursively filter for that many lines */
+	  if (sscanf(p, "%d", &i)) {
+		  source_struct(BEGINCENTER);
+		  for (; i>0 && (p=source_gets())!=NULL; i--) source_line(p);
+		  source_struct(ENDCENTER);
+	  }
+
+  /* limited selection of control structures */
+  } else if (checkcmd("if") || (checkcmd("ie"))) {	/* if <test> cmd, if <test> command and else on next line */
+    supresseol=1;
+    ie = checkcmd("ie");
+    mylastif=lastif;
+
+    if (*p=='!') { invcond=1; p++; }
+
+    if (*p=='n') { cond=1; p++; }		/* masquerading as nroff the right thing to do? */
+    else if (*p=='t') { cond=0; p++; }
+    else if (*p=='(' || *p=='-' || *p=='+' || isdigit(*p)) {
+	 if (*p=='(') p++;
+	 nif0=atof(p);
+	 if (*p=='-' || *p=='+') p++; while (isdigit(*p)) p++;
+	 op = *p++;	/* operator: =, >, < */
+	 if (op==' ') {
+	   cond = (nif0!=0);
+	 } else {
+	   nif1=atoi(p);
+	   while (isdigit(*p)) p++;
+	   if (*p==')') p++;
+	   if (op=='=') cond = (nif0==nif1);
+	   else if (op=='<') cond = (nif0<nif1);
+	   else /* op=='>' -- ignore >=, <= */ cond = (nif0>nif1);
+	 }
+    } else if (!isalpha(*p)) {	/* usually quote, ^G in Digital UNIX */
+	 /* gobble up comparators between delimiters */
+	 delim = *p++;
+	 q = if0; while (*p!=delim) { *q++=*p++; } *q='\0'; p++;
+	 q = if1; while (*p!=delim) { *q++=*p++; } *q='\0'; p++;
+	 cond = (strcmp(if0,if1)==0);
+    } else cond=0;	/* a guess, seems to be right bettern than half the time */
+    if (invcond) cond=1-cond;
+    while (isspace(*p)) p++;
+
+    lastif = cond;
+    if (strncmp(p,"\\{",2)==0) {	/* rather than handle groups here, have turn on/off output flag? */
+	    p+=2; while (isspace(*p)) p++;
+	    while (strncmp(p,".\\}",3)!=0 || strncmp(p,"\\}",2)!=0 /*Solaris*/) {
+		    if (cond) source_line(p);
+		    if ((p=source_gets())==NULL) break;
+	    }
+    } else if (cond) source_line(p);
+
+    if (ie) source_line(source_gets());		/* do else part with prevailing lastif */
+
+    lastif=mylastif;
+
+  } else if (checkcmd("el")) {
+    mylastif=lastif;
+
+    /* should centralize gobbling of groups */
+    cond = lastif = !lastif;
+    if (strncmp(p,"\\{",2)==0) {
+	 p+=2; while (isspace(*p)) p++;
+	 while (strncmp(p,".\\}",3)!=0 || strncmp(p,"\\}",2)!=0 /*Solaris*/) {
+	   if (cond) source_line(p);
+	   if ((p=source_gets())==NULL) break;
+	 }
+    } else if (cond) source_line(p);
+
+    lastif=mylastif;
+
+  } else if (checkcmd("ig")) {	/* "ignore group" */
+    strcpy(endig,".."); if (*p) { endig[0]='.'; strcpy(&endig[1],p); }
+    while ((p=source_gets())!=NULL) {
+	 if (strcmp(p,endig)==0) break;
+	 if (!lastif) source_line(p);		/* usually ignore line, except in one weird case */
+    }
+
+
+  /* macros and substitutions */
+  } else if (checkcmd("de")) {
+    /* grab key */
+    q=p; while (*q && !isspace(*q)) q++; *q='\0';
+
+    /* if already have a macro of that name, override it */
+    /* could use a good dictionary class */
+    for (insertat=0; insertat<macrocnt; insertat++) {
+	 if (strcmp(p,macro[insertat].key)==0) break;
+    }
+    if (insertat==macrocnt) macrocnt++;
+
+    /* should replace one with same name, if one exists */
+    macro[insertat].key = mystrdup(p);
+
+    /* build up macro in plain[] ... */
+    /* everything until ".." line part of macro */
+    q=plain; i=0;
+    while ((p=source_gets())!=NULL) {
+	 if (strcmp(p,"..")==0) break;
+	 while (*p) {	/* append string, interpreting quotes along the way--just double backslash to single now */
+	   if (*p=='\\' && p[1]=='\\') p++;
+	   *q++=*p++;
+	 }
+	 *q++='\n';
+    }
+    *q='\0';
+
+    /* ... then copy once have whole thing */
+    macro[insertat].subst = mystrdup(plain);
+    /*fprintf(stderr, "defining macro %s as %s\n", macro[insertat].key, macro[insertat].subst);*/
+    sI=0;
+
+  } else if (checkcmd("rm")) {	/* remove macro definition, can have multiple arguments */
+    for (i=0; i<macrocnt; i++) {	/* moot as new definitions replace old when conflicts */
+	 if (strcmp(p,macro[i].key)) {
+	   macro[i] = macro[--macrocnt];
+	   break;
+	 }
+    }
+
+  } else if (checkcmd("ds")) {	/* text substitutions (like macros) */
+    /* /usr/sww/man/man1/CC.1 a good test of this */
+    q = strchr(p,' ');
+    if (q!=NULL) {
+	 *q='\0'; while (*++q) /*nada*/;
+	 if (*q=='"') q++;
+	 if (substcnt<SUBSTMAX) {
+	   subst[substcnt].key = mystrdup(p); subst[substcnt].subst = mystrdup(q); substcnt++;
+	 }
+	 /*fprintf(stderr, "defining substitution: name=%s, body=%s\n", p, q);*/
+    }
+
+  } else if (checkcmd("so")) {
+    /* assuming in .../man like nroff, source in file and execute it as nested file, */
+    /* so nested .so's OK */
+
+	err = 1;	/* assume error unless successful */
+	if (fTclTk) {
+		err=0;
+	} else if (stat(p, &fileinfo)==0) {
+		sobuf = malloc(fileinfo.st_size + 1);
+		if (sobuf!=NULL) {
+			/* suck in entire file */
+			fid = open(p, O_RDONLY);
+			if (fid!=-1) {
+				if (read(fid, sobuf, fileinfo.st_size) == fileinfo.st_size) {
+				  sobuf[fileinfo.st_size]='\0';
+				  /* dumb Digital puts \\} closers on same line */
+				  for (q=sobuf; (q=strstr(q," \\}"))!=NULL; q+=3) *q='\n';
+				  source_subfile(sobuf);
+				  err = 0;
+				}
+				close(fid);
+			}
+			free(sobuf);
+		}
+	}
+
+	if (err) {
+		fprintf(stderr, "%s: couldn't read in referenced file %s.\n", argv0, p);
+		if (strchr(p,'/')==NULL) {
+		  fprintf(stderr, "\tTry cd'ing into same directory of man page first.\n");
+		} else if (strchr(p,'/')==strrchr(p,'.')) {
+		  fprintf(stderr, "\tTry cd'ing into parent directory of man page first.\n");
+		} else {
+		  fprintf(stderr, "\tTry cd'ing into ancestor directory that makes relative path valid first.\n");
+		}
+		exit(1);
+	}
+
+
+  /* character formatting */
+  /* reencode m/any as macro definitions? would like to but the below don't have "words" */
+  } else if (checkcmd("ft")) {	/* change font, next char is R,I,B.  P=previous not supported */
+    if (ft=='B') stagadd(ENDBOLD); else if (ft=='I') stagadd(ENDITALICS);
+    ft = *p++;
+    if (ft=='B') stagadd(BEGINBOLD); else if (ft=='I') stagadd(BEGINITALICS);
+  } else if (checkcmd("B")) {
+    supresseol=0;
+    stagadd(BEGINBOLD); p = source_out_word(p); source_out(p); stagadd(ENDBOLD);
+  } else if (checkcmd("I")) {
+    supresseol=0;
+    stagadd(BEGINITALICS); p = source_out_word(p); stagadd(ENDITALICS);
+    source_out(p);
+  } else if (checkcmd("BI")) {
+    supresseol=0;
+    while (*p) {
+	 stagadd(BEGINBOLD); p = source_out_word(p); stagadd(ENDBOLD);
+	 if (*p) { stagadd(BEGINITALICS); p = source_out_word(p); stagadd(ENDITALICS); }
+    }
+  } else if (checkcmd("IB")) {
+    supresseol=0;
+    while (*p) {
+	 stagadd(BEGINITALICS); p = source_out_word(p); stagadd(ENDITALICS);
+	 if (*p) { stagadd(BEGINBOLD); p = source_out_word(p); stagadd(ENDBOLD); }
+    }
+  } else if (checkcmd("RB")) {
+    supresseol=0;
+    while (*p) {
+	 p = source_out_word(p);
+	 if (*p) { stagadd(BEGINBOLD); p = source_out_word(p); stagadd(ENDBOLD); }
+    }
+  } else if (checkcmd("BR")) {
+    supresseol=0;
+    while (*p) {
+	 stagadd(BEGINBOLD); p = source_out_word(p); stagadd(ENDBOLD);
+	 p = source_out_word(p);
+    }
+  } else if (checkcmd("IR")) {
+    supresseol=0;
+    while (*p) {
+	 stagadd(BEGINITALICS); p=source_out_word(p); stagadd(ENDITALICS);
+	 p=source_out_word(p);
+    }
+  } else if (checkcmd("RI")) {
+    supresseol=0;
+    while (*p) {
+	 p=source_out_word(p);
+	 stagadd(BEGINITALICS); p=source_out_word(p); stagadd(ENDITALICS);
+    }
+
+
+  /* HP-UX */
+  } else if (checkcmd("SM")) {
+    supresseol=0; source_out("\\s-1"); while (*p) p=source_out(p); source_out("\\s0");
+  } else if (checkcmd("C")) {
+    supresseol=0;
+    stagadd(BEGINCODE); while (*p) p=source_out_word(p); stagadd(ENDCODE);
+  } else if (checkcmd("CR")) {
+    supresseol=0;
+    while (*p) {
+	 stagadd(BEGINCODE); p=source_out_word(p); stagadd(ENDCODE);
+	 if (*p) p=source_out_word(p);
+    }
+  } else if (checkcmd("RC")) {
+    supresseol=0;
+    while (*p) {
+	 p=source_out_word(p);
+	 if (*p) { stagadd(BEGINCODE); p=source_out_word(p); stagadd(ENDCODE); }
+    }
+  } else if (checkcmd("CI")) {
+    supresseol=0;
+    while (*p) {
+	 stagadd(BEGINCODE); p=source_out_word(p); stagadd(ENDCODE);
+	 if (*p) { stagadd(BEGINITALICS); p=source_out_word(p); stagadd(ENDITALICS); }
+    }
+
+
+  /* tables */
+  } else if (checkcmd("TS")) {
+    tblc=0; /*tblspanmax=0;*/ tableSep='\0';		/* need to reset each time because tabbed lines (.ta) made into tables too */
+    while ((p = source_gets())!=NULL) {
+	 if ((q=strstr(p,"tab"))!=NULL) {	/* "tab(" or "tab (".  table entry separator */
+	   p=(q+3); while (isspace(*p)) p++;
+	   p++;	/* jump over '(' */
+	   tableSep=*p;
+	   continue;
+	 }
+	 if (p[strlen(p)-1]==';') { tblc=0; continue; }	/* HP has a prequel terminated by ';' */
+
+	 for (i=0; *p; i++,p=q) {
+	   if (*p=='.') break;
+	   if (*p=='f') p+=2;	/* DEC sets font here */
+	   q=p+1;
+	   if (strchr("lrcn",*q)==NULL) {	/* dumb DEC doesn't put spaces between them */
+		while (*q && *q!='.' && !isspace(*q)) q++;
+	   }
+	   ch=*q; *q='\0';
+	   tbl[tblc][i] = mystrdup(p);
+	   tbl[tblc][i+1] = "";	/* mark end */
+	   *q=ch;
+	   while (*q && isspace(*q)) q++;
+	 }
+	 /*if (i>tblspanmax) tblspanmax=i;*/
+	 tbl[tblc++][i]="";		/* mark end */
+	 if (*p=='.') break;
+    }
+    tbli=0;
+    source_struct(BEGINTABLE);
+
+    while ((p=source_gets())!=NULL) {
+	 if (strncmp(p,".TE",3)==0) break;
+	 if (*p=='.') { source_line(p); continue; }
+
+	 /* count number of entries on line.  if >1, can use to set tableSep */
+	 insertat=0; for (j=0; *tbl[tbli][j]; j++) if (*tbl[tbli][j]!='s') insertat++;
+	 if (!tableSep && insertat>1) if (fsourceTab) tableSep='\t'; else tableSep='@';
+	 source_struct(BEGINTABLELINE);
+	 if (strcmp(p,"_")==0 || /* double line */ strcmp(p,"=")==0) {
+	   source_out(" ");
+	   /*stagadd(HR);*/	/* empty row -- need ROWSPAN for HTML */
+	   continue;
+	 }
+
+	 for (i=0; *tbl[tbli][i] && *p; i++) {
+	   tblcellspan=1;
+	   tblcellformat = tbl[tbli][i];
+	   if (*tblcellformat=='^') {	/* vertical span => blank entry */
+		tblcellformat="l";
+	   } else if (*tblcellformat=='|') {
+		/* stagadd(VBAR); */
+		continue;
+	   } else if (strchr("lrcn", *tblcellformat)==NULL) {
+		tblcellformat="l";
+		/*continue;*/
+	   }
+
+	   while (strncmp(tbl[tbli][i+1],"s",1)==0) { tblcellspan++; i++; }
+
+	   source_struct(BEGINTABLEENTRY);
+	   if (toupper(tblcellformat[1])=='B') stagadd(BEGINBOLD);
+	   else if (toupper(tblcellformat[1])=='I') stagadd(BEGINITALICS);
+	   /* not supporting DEC's w(<num><unit>) */
+
+	   if (strcmp(p,"T{")==0) {	/* DEC, HP */
+		while (strncmp(p=source_gets(),"T}",2)!=0) source_line(p);
+		p+=2; if (*p) p++;
+	   } else {
+		p = source_out0(p, tableSep);
+	   }
+	   if (toupper(tblcellformat[1])=='B') stagadd(ENDBOLD);
+	   else if (toupper(tblcellformat[1])=='I') stagadd(ENDITALICS);
+	   source_struct(ENDTABLEENTRY);
+	 }
+	 if (tbli+1<tblc) tbli++;
+	 source_struct(ENDTABLELINE);
+    }
+    source_struct(ENDTABLE);
+
+
+  } else if (checkcmd("nr")) {
+    q=p; while (*q && !isspace(*q)) q++; *q='\0'; q++;
+
+    for (insertat=0; insertat<regcnt; insertat++) {
+	 if (strcmp(reg[insertat].name,p)==0) break;
+    }
+    if (insertat==regcnt) { regcnt++; reg[insertat].name = mystrdup(p); } /* else use same name */
+    p=q;
+    if (*q=='+' || *q=='-') q++;	/* accept signed, floating point numbers */
+    if (*q=='.') q++;
+    if (!*q || isspace(*q)) { *q++='0'; *q++='\0'; }
+    while (isdigit(*q)) { q++; } *q='\0'; /* ignore units */
+    reg[insertat].value = mystrdup(p);
+
+  } else if (checkcmd("EQ")) {	/* eqn not supported */
+    source_out("\\s-1\\fBeqn not supported\\fR\\s0");
+    while ((p=source_gets())!=NULL) {
+	 if (strncmp(p,".EN",3)==0) break;
+    }
+
+
+
+  /* Tcl/Tk macros */
+  } else if (fTclTk && (checkcmd("VS") || checkcmd("VE"))) {
+	  /* nothing for sidebars */
+  } else if (fTclTk && checkcmd("OP")) {
+    source_struct(BEGINBODY);
+    for (i=0; i<3; i++) {
+	 if (fcharout) { source_out(tcltkOP[i]); source_out(": "); }
+	 stagadd(BEGINBOLD); p=source_out_word(p); stagadd(ENDBOLD); 
+	 source_struct(SHORTLINE);
+    }
+    source_struct(BEGINBODY);
+
+  } else if (fTclTk && checkcmd("BS")) {	/* box */
+    /*source_struct(HR); -- ugh, no Ouster box */
+  } else if (fTclTk && checkcmd("BE")) {
+    /*source_struct(HR);*/
+
+  } else if (fTclTk && (checkcmd("CS")||checkcmd("DS"))) {	/* code excerpt */
+    /* respect line ends, set in teletype */
+    /* source_struct(SHORTLINE); -- done as part of CS's ENDLINE */
+    finnf=1;
+    source_struct(SHORTLINE);
+    if (checkcmd("DS")) source_line(".P");
+    stagadd(BEGINCODE);
+  } else if (fTclTk && (checkcmd("CE")||checkcmd("DE"))) {
+    stagadd(ENDCODE);
+    finnf=0;
+
+  } else if (fTclTk && checkcmd("SO")) {
+    source_struct(BEGINSECTION);
+    source_struct(BEGINSECTHEAD); source_out("STANDARD OPTIONS"); source_struct(ENDSECTHEAD);
+    tblc=1; tbl[0][0]=tbl[0][1]=tbl[0][2]="l"; tbl[0][3]="";
+    source_struct(BEGINTABLE);
+    while (1) {
+	 p = source_gets();
+	 if ((strncmp(p,".SE",3))==0) break;
+	 tblcellformat = "l";
+	 source_struct(BEGINTABLELINE);
+	 if (*p=='.') {
+	   source_command(p);
+	 } else {
+	   while (*p) {
+		source_struct(BEGINTABLEENTRY);
+		p = source_out0(p, '\t');
+		source_struct(ENDTABLEENTRY);
+	   }
+	 }
+	 source_struct(ENDTABLELINE);
+    }
+    source_struct(ENDTABLE);
+    source_struct(ENDSECTION);
+
+  } else if (fTclTk && checkcmd("AP")) {	/* arguments */
+    source_struct(BEGINBODY);
+    p = source_out_word(p); source_out("   ");
+    stagadd(BEGINITALICS); p = source_out_word(p); stagadd(ENDITALICS); source_out("\t");
+    source_out("("); p = source_out_word(p); source_out(")");
+    source_struct(SHORTLINE);
+    source_out("\t");
+  } else if (fTclTk && checkcmd("AS")) {	/* arguments */
+
+/* let these be defined as macros.  if they're not, they're just caught as unrecognized macros
+  } else if (checkcmd("ll") ||
+		   checkcmd("nh")||checkcmd("hy")||checkcmd("hc")||checkcmd("hw")	/* hyphenation * /
+	) {	/* unsupported macros -- usually roff specific * /
+
+    fprintf(stderr, "macro \"%s\" not supported -- ignoring\n", cmd);
+*/
+
+  } else {		/* could be a macro definition */
+    supresseol=0;
+
+    for (i=0; i<macrocnt; i++) {
+	 if (macro[i].key == NULL) continue;	/* !!! how does this happen? */
+	 if (checkcmd(macro[i].key)) {
+
+	   /* it is, collect arguments */
+	   for (j=0; j<9; j++) macroArg[j]="";
+	   for (j=0; p!=NULL && *p && j<9; j++, p=q) {
+		endch=' '; if (*p=='"') { endch='"'; p++; }
+		q = strchr(p,endch);
+		if (q!=NULL) {
+		  *q++='\0';
+		  if (*q && endch!=' ') q++;
+		}
+		macroArg[j] = p;
+	   }
+
+	   /* instantiate that text, substituting \\[1-9]'s */
+	   p = macro[i].subst;
+	   q = macrobuf;	/* allocated on stack */
+	   while (*p) {
+		if (*p=='\\') {
+		  p++;
+		  if (*p=='t') {
+		    *q++ = '\t';
+		    p++;
+		  } else if (*p=='$' && isdigit(p[1])) {
+		    j = p[1]-'0'-1;	/* convert to ASCII and align with macroArg array */
+		    p+=2;
+		    /* *q++='"'; -- no */
+		    strcpy(q, macroArg[j]); q += strlen(q);
+		    /* *q++='"'; -- no */
+
+		  } else {
+		    *q++ = '\\';
+		  }
+		} else {
+		  *q++ = *p++;
+		}
+	   }
+	   *q='\0';
+
+	   /* execute that text */
+	   /*fprintf(stderr, "for macro %s, substituted text is \n%s\n", macro[i].key, macrobuf);*/
+	   source_subfile(macrobuf);
+
+	   break;
+	 }
+    }
+
+    /* macro not found */
+    if (i==macrocnt) {
+	   /* report missing macros only once */
+	   for (j=0; j<macnotcnt; j++) if (strcmp(macnotfound[j],cmd)==0) break;
+	   if (j==macnotcnt) {
+		  if (!fQuiet) fprintf(stderr, "macro \"%s\" not recognized -- ignoring\n", cmd);
+		  q = malloc(strlen(cmd)+1); strcpy(q,cmd);
+		  macnotfound[macnotcnt++] = q;
+	   }
+    }
+  } /* else command is unrecognized -- ignore it: we're not a complete [tn]roff implementation */
+
+  /* popular but meaningless commands: .ne (need <n> lines--on infinite scroll */
+}
+
+
+void
+source_line(char *p) {
+  /*stagadd(BEGINLINE);*/
+  char *cmd=p;
+  if (p==NULL) return;	/* bug somewhere else, but where? */
+
+  isComment = (checkcmd("") || checkcmd("\\\"") || /*DEC triple dot*/checkcmd(".."));
+  if (inComment && !isComment) { source_struct(ENDCOMMENT); inComment=0; }	/* special case to handle transition */
+
+#if 0
+  if (*p!='.' && *p!='\'' && !finlist) {
+    if (fsourceTab && !fosourceTab) {
+	 tblc=1; tbli=0; tableSep='\t';
+	 tbl[0][0]=tbl[0][1]=tbl[0][2]=tbl[0][3]=tbl[0][4]=tbl[0][5]=tbl[0][6]=tbl[0][7]=tbl[0][8]="l";
+	 source_struct(BEGINTABLE); finTable=1;
+    } else if (!fsourceTab && fosourceTab) {
+	 source_struct(ENDTABLE); finTable=0;
+    }
+    fosourceTab=fsourceTab;
+  }
+#endif
+
+  if (*p=='.' /*|| *p=='\''  -- normalized */) {	/* command == starts with "." */
+    p++;
+    supresseol=1;
+    source_command(p);
+
+  } else if (!*p) {		/* blank line */
+    source_command("P");
+
+#if 0
+  } else if (fsourceTab && !finlist /* && pmode */) {	/* can't handle tabs, so try tables */
+    source_struct(BEGINTABLE);
+    tblcellformat = "l";
+    do {
+	 source_struct(BEGINTABLELINE);
+	 while (*p) {
+	   source_struct(BEGINTABLEENTRY);
+	   p = source_out0(p, '\t');
+	   source_struct(ENDTABLEENTRY);
+	 }
+	 source_struct(ENDTABLELINE);
+    } while ((p=source_gets())!=NULL && fsourceTab);
+    source_struct(ENDTABLE);
+    source_line(p);
+#endif
+
+  } else {			/* otherwise normal text */
+    source_out(p);
+    if (finnf) source_struct(SHORTLINE);
+  }
+
+  if (!supresseol) { source_out(" "); if (finlist) source_list(); }
+  supresseol=0;
+  /*stagadd(ENDLINE);*/
+}
+
+
+void
+source_filter(void) {
+  char *p = in, *q;
+  char *oldv,*newv,*shiftp,*shiftq,*endq;
+  int lenp,lenq;
+  int i,on1,on2,nn1,nn2,first;
+  int insertcnt=0, deletecnt=0, insertcnt0;
+  int nextDiffLine=-1;
+  char diffcmd, tmpc, tmpendq;
+
+  AbsLine=0;
+
+  /* just count length of macro table! */
+  for (i=0; macro[i].key!=NULL; i++) /*empty*/;
+  macrocnt = i;
+
+  /* dumb Digital puts \\} closers on same line */
+  for (p=in; (p=strstr(p," \\}"))!=NULL; p+=3) *p='\n';
+
+  sI=0;
+  /* (*fn)(BEGINDOC); -- done at .TH or first .SH */
+
+
+  /* was: source_subfile(in); */
+  while (fDiff && fgets(diffline, MAXBUF, difffd)!=NULL) {
+	  /* requirements: no context lines, no errors in files, ...
+		 change-command: 8a12,15 or 5,7c8,10 or 5,7d3
+		 < from-file-line
+		 < from-file-line...
+		 --
+		 > to-file-line
+		 > to-file-line...
+	  */
+	  for (q=diffline; ; q++) { diffcmd=*q; if (diffcmd=='a'||diffcmd=='c'||diffcmd=='d') break; }
+	  if (sscanf(diffline, "%d,%d", &on1,&on2)==1) on2=on1-1+(diffcmd=='d'||diffcmd=='c');
+	  if (sscanf(++q, "%d,%d", &nn1,&nn2)==1) nn2=nn1-1+(diffcmd=='a'||diffcmd=='c');
+
+	  deletecnt = on2-on1+1;
+	  insertcnt = nn2-nn1+1;
+
+	  nextDiffLine = nn1;
+	  /*assert(nextDiffLine>=AbsLine); -- can happen if inside a macro? */
+	  if (nextDiffLine<AbsLine) continue;
+
+	  while (AbsLine<nextDiffLine && (p=source_gets())!=NULL) {
+		  source_line(p);
+	  }
+
+	  insertcnt0=insertcnt+1;	/* eat duplicate insert lines and '---' too */
+	  diffline2[0] = '\0';
+	  while (insertcnt && deletecnt) {
+		  if (ungetc(fgetc(difffd),difffd)=='<') { fgetc(difffd); fgetc(difffd); }	/* skip '<' */		  
+		  /* stay away from commands -- too careful if .B <word> */
+		  do {
+			  p = oldv = fgets(diffline, MAXBUF, difffd);
+			  p[strlen(p)-1]='\0';	/* fgets's \n ending => \0 */
+			  deletecnt--;
+		  } while (deletecnt && p=='.');	/* throw out commands in old version */
+
+		  q = newv = source_gets();
+		  insertcnt--;
+		  while (insertcnt && *q=='.') {
+			  source_line(q);
+			  insertcnt--;
+		  }
+
+		  if (*p=='.' || *q=='.') break;
+
+
+		  /* make larger chunk for better diff -- but still keep away from commands */
+		  lenp=strlen(p); lenq=strlen(q);
+		  while (deletecnt && MAXBUF-lenq>80*2) {
+			  fgetc(difffd); fgetc(difffd);	/* skip '<' */
+			  if (ungetc(fgetc(difffd),difffd)=='.') break;
+			  p=&diffline[lenp]; *p++=' '; lenp++;
+			  fgets(p, MAXBUF-lenp, difffd); p[strlen(p)-1]='\0'; lenp+=strlen(p);
+			  deletecnt--;
+		  }
+
+		  while (insertcnt && *in!='.' && MAXBUF-lenq>80*2) {
+			  if (newv!=diffline2) { strcpy(diffline2,q); newv=diffline2; }
+			  q=source_gets(); diffline2[lenq]=' '; lenq++;
+			  strcpy(&diffline2[lenq],q); lenq+=strlen(q);
+			  insertcnt--;
+		  }
+
+		  /* common endings */
+		  p = &p[strlen(oldv)]; q=&q[strlen(newv)];
+		  while (p>oldv && q>newv && p[-1]==q[-1]) { p--; q--; }
+		  if ((p>oldv && p[-1]=='\\') || (q>newv && q[-1]=='\\'))
+			  while (*p && *q && !isspace(*p)) { p++; q++; }	/* steer clear of escapes */
+		  tmpendq=*q; *p=*q='\0'; endq=q;
+
+		  p=oldv; q=newv;
+		  while (*p && *q) {
+			  /* common starts */
+			  newv=q; while (*p && *q && *p==*q) { p++; q++; }
+			  if (q>newv) {
+				  tmpc=*q; *q='\0'; source_line(newv); *q=tmpc;
+			  }
+
+			  /* too hard to read */
+			  /* difference: try to find hunk of p in remainder of q */
+			  if (strlen(p)<15 || (shiftp=strchr(&p[15],' ') /*|| shiftp-p>30*/)==NULL) break;
+			  shiftp++; /* include the space */
+			  tmpc=*shiftp; *shiftp='\0'; shiftq=strstr(q,p); *shiftp=tmpc;	/* includes space */
+			  if (shiftq!=NULL) {
+			  	/* call that part of q inserted */
+				tmpc=*shiftq; *shiftq='\0';
+				stagadd(BEGINDIFFA); source_line(q); stagadd(ENDDIFFA); source_line(" ");
+				*shiftq=tmpc; q=shiftq;
+			  } else {
+				/* call that part of p deleted */
+				shiftp--;	*shiftp='\0';	/* squash the trailing space */
+				stagadd(BEGINDIFFD); source_line(p); stagadd(ENDDIFFD); source_line(" ");
+				p=shiftp+1;
+			  }
+/*#endif*/
+		  }
+
+		  if (*p) { stagadd(BEGINDIFFD); source_line(p); stagadd(ENDDIFFD); }
+		  if (*q) { stagadd(BEGINDIFFA); source_line(q); stagadd(ENDDIFFA); }
+		  if (tmpendq!='\0') { *endq=tmpendq; source_line(endq); }
+		  source_line(" ");
+	  }
+
+	  /* even if diffcmd=='c', could still have remaining old version lines */
+	  first=1;
+	  while (deletecnt--) {
+		  fgets(diffline, MAXBUF, difffd);
+		  if (diffline[2]!='.') {
+			  if (first) { stagadd(BEGINDIFFD); first=0; }
+			  source_line(&diffline[2]);	/* don't do commands; skip initial '<' */
+		  }
+	  }
+	  if (!first) { stagadd(ENDDIFFD); source_line(" "); }
+
+	  /* skip over duplicated from old */
+	  if (diffcmd=='c') while (insertcnt0--) fgets(diffline, MAXBUF, difffd);
+
+	  /* even if diffcmd=='c', could still have remaining new version lines */
+	  first=1;
+	  nextDiffLine = AbsLine + insertcnt;
+	  while (insertcnt--) fgets(diffline, MAXBUF, difffd);	/* eat duplicate text of above */
+	  while (/*insertcnt--*/AbsLine<nextDiffLine && (p=source_gets())!=NULL) {
+		  if (first && *p!='.') { stagadd(BEGINDIFFA); first=0; }
+		  source_line(p);
+	  }
+	  if (!first) { stagadd(ENDDIFFA); source_line(" "); }
+  }
+  /* finish up remainder (identical to both) */
+  while ((p=source_gets())!=NULL) {
+	  source_line(p);
+  }
+
+  source_flush();
+  pop(ENDDOC); (*fn)(ENDDOC);
+}
+
+
+
+/*
+ * STARTUP
+ */
+
 int
 setFilterDefaults(char *outputformat) {
-	struct {
+	static struct {
 		void (*fn)(enum command);
-		int fPara; int fQS; int fIQS; int fNOHY; int fChangeleft; char *names;
+		int fPara; int fQS; int fIQS; int fNOHY; int fChangeleft; int fURL; char *names;
 		/* (could set parameters at BEGINDOC call...) */
 	} format[] = {
-		/*{default	0	0	0	0	0 },*/
-		{ ASCII,		0,	0,	0,	0,	0,	"ASCII" },
-		{ TkMan,		0,	0,	/*0*/1,	0,	0,	"TkMan" },
-		{ Tk,		0,	0,	0,	0,	0,	"Tk:Tcl" },
-		{ Sections,	0,	0,	0,	0,	0,	"sections" },
-		{ Roff,		0,	1,	1,	1,	-1,	"roff:troff:nroff" },
-		{ HTML,		1,	1,	1,	1,	1,	"HTML:WWW" },
-		{ SGML,		1,	1,	1,	1,	1,	"SGML" },
-		{ MIME,		1,	1,	1,	1,	1,	"MIME:Emacs:enriched" },
-		{ LaTeX,		1,	1,	1,	1,	1,	"LaTeX:LaTeX209:209:TeX" },
-		{ LaTeX2e,	1,	1,	1,	1,	1,	"LaTeX2e:2e" },
-		{ RTF,		1,	1,	1,	1,	1,	"RTF" },
-		{ pod,		0,	0,	1,	0,	-1,	"pod:Perl" },
-		{ Ensemble,	1,	1,	1,	1,	1,	"Ensemble" },
-		{ PostScript,	0,	0,	0,	0,	0,	"PostScript:ps" },
-		{ FrameMaker,	0,	0,	0,	0,	0,	"FrameMaker:Frame:Maker:MIF" },
-		{ NULL,		0,	0,	0,	0,	0,	NULL }
+		/*{default	0par 0qs	0iqs	0hy	0cl	0url	"name"},*/
+		{ ASCII,		0,	0,	0,	0,	0,	0,	"ASCII" },
+		{ TkMan,		0,	0,	0,	0,	0,	0,	"TkMan" },
+		{ Tk,		0,	0,	0,	0,	0,	0,	"Tk:Tcl" },
+		{ Sections,	0,	0,	0,	0,	0,	0,	"sections" },
+		{ Roff,		0,	1,	1,	1,	-1,	0,	"roff:troff:nroff" },
+		{ HTML,		1,	1,	1,	1,	1,	1,	"HTML:WWW:htm" },
+		{ SGML,		1,	1,	1,	1,	1,	1,	"SGML:XML" },
+/*		{ Texinfo,	1,	1,	1,	1,	1,	1,	"Texinfo:info:GNU" },*/
+		{ MIME,		1,	1,	1,	1,	1,	0,	"MIME:Emacs:enriched" },
+		{ LaTeX,		1,	1,	1,	1,	1,	0,	"LaTeX:LaTeX209:209:TeX" },
+		{ LaTeX2e,	1,	1,	1,	1,	1,	0,	"LaTeX2e:2e" },
+		{ RTF,		1,	1,	1,	1,	1,	0,	"RTF" },
+		{ pod,		0,	0,	1,	0,	-1,	0,	"pod:Perl" },
+		/*{ Ensemble,	1,	1,	1,	1,	1,	0,	"Ensemble" },*/
+
+		{ PostScript,	0,	0,	0,	0,	0,	0,	"PostScript:ps" },
+		{ FrameMaker,	0,	0,	0,	0,	0,	0,	"FrameMaker:Frame:Maker:MIF" },
+
+		{ NULL,		0,	0,	0,	0,	0,	0,	NULL }
 	};
-	/*	assert(format[0].fn==ASCII);*/
 
 	int i, found=0;
 	for (i=0; format[i].fn!=NULL; i++) {
@@ -2720,6 +5028,7 @@ setFilterDefaults(char *outputformat) {
 			fIQS = format[i].fIQS;
 			fNOHY = format[i].fNOHY;
 			fChangeleft = format[i].fChangeleft;
+			fURL = format[i].fURL;
 			found=1;
 			break;
 		}
@@ -2729,11 +5038,28 @@ setFilterDefaults(char *outputformat) {
 }
 
 
+/* read in whole file.  caller responsible for freeing memory */
+char *
+filesuck(FILE *in) {
+  const int inc=1024*100;	/* what's 100K these days? */
+  int len=0,cnt;
+  char *file = malloc(1);  /*NULL -- relloc on NULL not reducing to malloc on some machines? */
+
+  do {
+    file = realloc(file, len+inc+1);	/* what's the ANSI way to find the file size? */
+    cnt = fread(&file[len], 1, inc, in);
+    len+=cnt;
+  } while (cnt==inc);
+  file[len]='\0';
+
+  return file;
+}
+
 int
 main(int argc, char *argv[]) {
 	int c;
 	int i,j;
-	char *p;
+	char *p,*oldp;
 	int fname=0;
 	const int helpbreak=75;
 	const int helpispace=4;
@@ -2741,29 +5067,48 @@ main(int argc, char *argv[]) {
 	int desclen;
 	char **argvch;	/* remapped argv */
 	char *argvbuf;
+	char *processing = "stdin";
 	extern char *optarg;
-	extern int optind, opterr;
+	extern int optind;
+/*	FILE *macros; -- interpret -man macros? */
 
 	char strgetopt[80];
 	/* options with an arg must have a '<' in the description */
-	struct { char letter; int arg; char *longnames; char *desc; } option[] = {
-		{ 'f', 1, "filter", " <ASCII|roff|TkMan|Tk|Ensemble|Sections|HTML|SGML|MIME|LaTeX|LaTeX2e|RTF|pod>" },
+	static struct { char letter; int arg; char *longnames; char *desc; } option[] = {
+		{ 'f', 1, "filter", " <ASCII|roff|TkMan|Tk|Sections|HTML|SGML|MIME|LaTeX|LaTeX2e|RTF|pod>" },
+		{ 'S', 0, "source", "(ource of man page passed in)" },
+		{ 'F', 0, "formatted:format", "(ormatted man page passed in)" },
+
 		{ 'r', 1, "reference:manref:ref", " <man reference printf string>" },
 		{ 'l', 1, "title", " <title printf string>" },
+		{ 'V', 1, "volumes:vol", "(olume) <colon-separated list>" },
+		{ 'U', 0, "url:urls", "(RLs as hyperlinks)" },
+
+		/* following options apply to formatted pages only */
 		{ 'b', 0, "subsections:sub", " (show subsections)" },
+		{ 'k', 0, "keep:head:foot:header:footer", "(eep head/foot)" },
 		{ 'n', 1, "name", "(ame of man page) <string>" },
 		{ 's', 1, "section:sect", "(ection) <string>" },
-		{ 'k', 0, "keep:head:foot:header:footer", "(eep head/foot)" },
-		{ 'V', 1, "volumes:vol", "(olume) <colon-separated list>" },
-		{ 'c', 0, "changeleft:changebar", "(hangebarstoleft toggle)" },
 		{ 'p', 0, "paragraph:para", "(aragraph mode toggle)" },
 		{ 't', 1, "tabstop:tabstops", "(abstops spacing) <number>" },
+		{ 'N', 0, "normalize:normal", "(ormalize spacing, changebars)" },
 		{ 'y', 0, "zap:nohyphens", " (zap hyphens toggle)" },
 		{ 'K', 0, "nobreak", " (declare that page has no breaks)" },
-		{ 'm', 0, "notaggressive", "(an page aggressive parsing OFF)" },
-		{ 'T', 0, "tables", "(able agressive parsing ON)" },
+		{ 'd', 1, "diff", "(iff) <file> (old version of page source to incorporate)" },
+		{ 'M', 1, "message", "(essage) <text> (included verbatim at end of Name section)" },
+		/*{ 'l', 0, "number lines", "... can number lines in a pipe" */
+		/*{ 'T', 0, "tables", "(able agressive parsing ON)" },*/
+/*		{ 'c', 0, "changeleft:changebar", "(hangebarstoleft toggle)" }, -- default is perfect */
+		/*{ 'R', 0, "reflow", "(eflow text lines)" },*/
+		{ 'R', 1, "rebus", "(ebus words for TkMan)" },
+		{ 'C', 0, "TclTk", " (enable Tcl/Tk formatting)" },
+
+		/*{ 'D', 0, "debug", "(ebugging mode)" }, -- dump unrecognized macros, e.g.*/
+		{ 'o', 0, "noop", " (no op)" },
+		{ 'O', 0, "noop", " <arg> (no op with arg)" },
+		{ 'q', 0, "quiet", "(uiet--don't report warnings)" },
 		{ 'h', 0, "help", "(elp)" },
-		/* { '?', 1, "", " (help)" }, -- getopt returns '?' as error flag */
+		/*{ '?', 0, "help", " (help)" },	-- getopt returns '?' as error flag */
 		{ 'v', 0, "version", "(ersion)" },
 		{ '\0', 0, "", NULL }
 	};
@@ -2789,13 +5134,17 @@ main(int argc, char *argv[]) {
 	InitToolbox();
 #endif
 
+	/* count, sort exception strings */
+	for (lcexceptionslen=0; (p=lcexceptions[lcexceptionslen])!=NULL; lcexceptionslen++) /*empty*/;
+	qsort(lcexceptions, lcexceptionslen, sizeof(char*), lcexceptionscmp);
 
 	/* map long option names to single letters for switching */
 	/* (GNU probably has a reusable function to do this...) */
 	/* deep six getopt in favor of integrated long names + letters? */
 	argvch = malloc(argc * sizeof(char*));
 	p = argvbuf = malloc(argc*3 * sizeof(char));	/* either -<char>'\0' or no space used */
-	for (i=0; i<argc; i++) argvch[i]=argv[i];
+	for (i=0; i<argc; i++) argvch[i]=argv[i];	/* need argvch[0] for getopt? */
+	argv0 = mystrdup(argv[0]);
 	for (i=1; i<argc; i++) {
 		if (argv[i][0]=='-' && argv[i][1]=='-') {
 			if (argv[i][2]=='\0') break;	/* end of options */
@@ -2812,16 +5161,21 @@ main(int argc, char *argv[]) {
 	}
 
 
-	/* first pass through options to set defaults for chosen format */
 
+	/* pass through options to set defaults for chosen format */
 	setFilterDefaults("ASCII");		/* default to ASCII (used by TkMan's Glimpse indexing */
+
+	/* initialize header/footer buffers (save room in binary) */
+	for (i=0; i<CRUFTS; i++) { *cruft[i] = '\0'; }	/* automatically done, guaranteed? */
+	/*for (i=0; i<MAXLINES; i++) { linetabcnt[i] = 0; } */
 
 	while ((c=getopt(argc,argvch,strgetopt))!=-1) {
 
 		switch (c) {
 		   case 'k': fHeadfoot=1; break;
 		   case 'b': fSubsections=1; break;
-		   case 'c': fChangeleft=1; break;
+/*		   case 'c': fChangeleft=1; break; -- obsolete */
+			/* case 'R': fReflow=1; break;*/
 		   case 'n': strcpy(manName,optarg); fname=1; break;	/* name & section for when using stdin */
 		   case 's': strcpy(manSect,optarg); break;
 		   /*case 'D': docbookpath = optarg; break;*/
@@ -2831,40 +5185,67 @@ main(int argc, char *argv[]) {
 			if (strlen(manRef)==0 || strcmp(manRef,"-")==0 || strcmp(manRef,"off")==0) fmanRef=0;
 			break;
 		   case 't': TabStops=atoi(optarg); break;
-		   case 'm': fMan=0; break;
-		   case 'T': fTable=1; break;
+		   /*case 'T': fTable=1; break;	-- if preformatted doesn't work, if source automatic */
 		   case 'p': fPara=!fPara; break;
 		   case 'K': fFoot=1; break;
 		   case 'y': fNOHY=1; break;
+		   case 'N': fNORM=1; break;
 
 		   case 'f': /* set format */
 			if (setFilterDefaults(optarg)) {
-				fprintf(stderr, "%s: unknown format: %s\n", argvch[0], optarg);
+				fprintf(stderr, "%s: unknown format: %s\n", argv0, optarg);
 				exit(1);
 			}
-			
 			break;
-		   case 'v':
-			printf("RosettaMan v" ROSETTAMANVERSION " of $Date$\n");
-			exit(0);
+		   case 'F': fSource=0; break;
+		   case 'S': fSource=1; break;
+
+		   case 'd':
+			difffd = fopen(optarg, "r");
+			if (difffd==NULL) { fprintf(stderr, "%s: can't open %s\n", argv0, optarg); exit(1); }
+/* read in a line at a time
+			diff = filesuck(fd);
+			fclose(fd);
+*/
+			fDiff=1;
 			break;
-		   case 'h': /*case '?':*/
+
+		   case 'M': message = optarg; break;
+
+		   case 'C': fTclTk=1; break;
+		   case 'R':
+			p = malloc(strlen(optarg)+1);
+			strcpy(p, optarg);	/* string may not be in writable address space */
+			oldp = "";
+			for (; *p; oldp=p, p++) {
+				if (*oldp=='\0') rebuspat[rebuspatcnt++] = p;
+				if (*p=='|') *p='\0';
+			}
+			for (i=0; i<rebuspatcnt; i++) rebuspatlen[i] = strlen(rebuspat[i]);	/* for strnlen() */
+			break;
+
+		   case 'q': fQuiet=1; break;
+		   case 'o': /*no op*/ break;
+		   case 'O': /* no op with arg */ break;
+		   case 'h':
 			printf("rman"); helplen=strlen("rman");
 
 			/* linebreak options */
 			assert(helplen>0);
 			for (i=0; option[i].letter!='\0'; i++) {
-				desclen = strlen(option[i].desc);
-				if (helplen+desclen+5 > helpbreak) { printf("\n%*s",helpispace,""); helplen=helpispace; }
-				printf(" [-%c%s]", option[i].letter, option[i].desc);
-				helplen += desclen+5;
+			  desclen = strlen(option[i].desc);
+			  if (helplen+desclen+5 > helpbreak) { printf("\n%*s",helpispace,""); helplen=helpispace; }
+			  printf(" [-%c%s]", option[i].letter, option[i].desc);
+			  helplen += desclen+5;
 			}
 			if (helplen>helpispace) printf("\n");
 			printf("%*s [<filename>]\n",helpispace,"");
 			exit(0);
-			break;
 
-		   /*case '?':*/
+		   case 'v': /*case '?':*/
+			printf("PolyglotMan v" POLYGLOTMANVERSION " of $Date$\n");
+			exit(0);
+
 		   default:
 			fprintf(stderr, "%s: unidentified option -%c (-h for help)\n",argvch[0],c);
 			exit(2);
@@ -2872,9 +5253,12 @@ main(int argc, char *argv[]) {
 	}
 
 
+
 	/* read from given file name(s) */
 	if (optind<argc) {
-		if (!fname) {  /* if no name given, create from file name */
+		processing = argvch[optind];
+
+		if (!fname) {	/* if no name given, create from file name */
 			/* take name from tail of path */
 			if ((p=strrchr(argvch[optind],'/'))!=NULL) p++; else p=argvch[optind];
 			strcpy(manName,p);
@@ -2886,21 +5270,44 @@ main(int argc, char *argv[]) {
 			}
 		}
 
+		strcpy(plain,argvch[optind]);
+
 		if (freopen(argvch[optind], "r", stdin)==NULL) {
 			fprintf(stderr, "%s: can't open %s\n", argvch[0],argvch[optind]);
 			exit(1);
 		}
 	}
 
+	/* need to read macros, ok if fail; from /usr/lib/tmac/an => needs to be set in Makefile, maybe a searchpath */
+	/*
+	if ((macros=fopen("/usr/lib/tmac/an", "r"))!=NULL) {
+		in = File = filesuck(macros);
+		lookahead = File[0];
+		source_filter();
+		free(File);
+	}
+	*/
+
+	/* suck in whole file and just operate on pointers */
+	in = File = filesuck(stdin);
+
+
 	/* minimal check for roff source: first character dot command or apostrophe comment */
 	/* MUST initialize lookahead here, BEFORE first call to la_gets */
-	lookahead = ungetc(getchar(), stdin);
-	if (lookahead=='.' || lookahead=='\'') {
-		fprintf(stderr, "%s:\tInput looks like [tn]roff source--RosettaMan needs formatted text\n"
-					 "\tfrom `nroff -man' or from */man/cat[1-8oln] directories.\n", argvch[0]);
+	if (fSource==-1) {
+		lookahead = File[0];
+		fSource = (lookahead=='.' || lookahead=='\'' || /*dumb HP*/lookahead=='/'
+		    /* HP needs this too but causes problems || isalpha(lookahead)--use --source flag*/);
+	}
+
+	if (fDiff && (!fSource || fn!=HTML)) {
+		fprintf(stderr, "diff incorporation supported for man page source, generating HTML\n");
 		exit(1);
 	}
 
-	filter();
+	if (fSource) source_filter(); else preformatted_filter();
+	if (fDiff) close(difffd);
+	/*free(File);	-- let system clean up, perhaps more efficiently */
+
 	return 0;
 }

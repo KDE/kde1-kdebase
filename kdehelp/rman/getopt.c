@@ -10,12 +10,14 @@ directly from AT&T.  The people there assure me that it is indeed
 in the public domain.
 */
 
+#include <sys/types.h>
+
 /*LINTLIBRARY*/
 
-extern int strlen();
+extern size_t strlen();
 extern int strcmp();
 extern char *strchr();
-extern int write();
+extern size_t write();
 
 #define NULL	0
 #define EOF	(-1)
