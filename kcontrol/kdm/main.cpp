@@ -89,7 +89,7 @@ KDMConfigApplication::KDMConfigApplication(int &argc, char **argv, const char *n
       if (!pages || pages->contains("font"))
         addPage(font = new KDMFontWidget(dialog, "font", FALSE),
 		klocale->translate("&Fonts"),
-		"kdm-fonts.html");
+		"kdm-font.html");
       if (!pages || pages->contains("background"))
 	  addPage(background = new KDMBackgroundWidget(dialog, "background", FALSE),
 		  klocale->translate("&Background"), "kdm-backgnd.html");
