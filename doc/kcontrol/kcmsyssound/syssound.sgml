@@ -1,0 +1,110 @@
+<!doctype linuxdoc system>
+
+<article>
+
+<!-- Title information -->
+
+<title>KDE System Sounds Help
+<author>Christian Czezatke
+<date>v0.1 (April 15, 1999)
+
+<!-- Table of Contents -->
+<toc>
+
+<!-- Begin the document -->
+
+<sect>Introduction
+
+<p>
+Activating ``<bf>enable system sounds</bf>''
+allows sounds to be assigned to
+the various
+system  events listed in the <bf>Events</bf> box.
+When such an event (like ``Window open'') occurs, the
+sound file that has been associated to that event will be played.
+
+<p>
+Currently, only WAV files are supported by the KDE System Sound
+Module. The default location of such WAV files is the directory
+$(KDEDIR)/share/sounds, and any WAV files available there will be
+listed in the <bf>Sounds</bf> box.
+You can also add other sound files to the Sounds list by,
+just dragging them from a <tt>kfm</tt> window onto the sound list. 
+
+
+To associate a sound to an event, use the pointer to
+highlight its entry in the Sounds list.  (You may now hear it by
+clicking on the <bf>Test</bf> button.)   Then highlight the corresponding
+event you wish to associate with it and click on <bf>Apply</bf> (or
+<bf>OK</bf> if you are finished).
+
+
+
+
+
+
+<sect>Changes
+
+<p>
+Version 0.0.3 (Nov. 22nd, 1997)
+
+- uses KApplication::localconfigdir()
+
+- fixed a bug that messed up the assignments of system sounds to 
+  events in some cases when WAV files were dropped on the sound list
+
+- initial help page written
+
+- german nationalisation added. (email me if you want to add
+  antother language to syssound).
+
+- syssounds is now based on kexample-0.5.1. This and the move to
+  the kcontrol interface finally removed the compile problems
+
+- prepared syssound.cpp for internationalisation (thanks
+  to Matthias Hoelzer)
+
+- Adapted syssound to the new kcontrol interface that replaces
+  kcc now, so syssound works with the current kde snapshots
+  now. (thanks to Matthias Hoelzer)
+
+Version 0.0.2 (Oct. 21st, 1997)
+
+- Moved README from "syssound/syssound" to "syssound"
+  and updated it a bit.
+
+- Moved the file "COMPILING.TXT" from "syssound/syssound"
+  to "syssound".
+
+- Made the placement of the configuration file compliant
+  with the new KDE convention. The sound configuration 
+  is now stored in $HOME/.kde/share/config/kwmsoundrc
+
+- Brushed up the look of the config dialog a bit. It
+  now supports keyboard accelerators and has 
+  labels for the listboxes.
+
+- Added support for Droping WAV Files onto the WAV
+  Filelist (currently, only file:/ URLs are supported,
+  .WAV Files are recognized by the extension ".wav"
+  (in small letters).
+
+- Sound configuration now works with KDE Beta1 too
+  (no more "pure virtual function called" or
+  "only root can run this module" error messages.
+
+Version 0.0.1 (initial release)
+
+
+<sect> Author
+<p>
+The KDE System Sound Module was written by <htmlurl
+url="mailto:e9025461@student.tuwien.ac.at"name="Christian
+Czezatke">.   
+<p>
+KDE System Sounds uses the KDE sound support written by
+<htmlurl url="mailto:chris@wallace.free.de"name="Christian Esken">.
+
+
+</article>
+
