@@ -1,12 +1,11 @@
 # KDE Config File
 [KDE Desktop Entry]
-Name=Graphic
+Name=Graphica
 Name[de]=Graphik
 Name[pl]=Grafika
 Name[fi]=Grafiikka
 Name[sv]=Grafik
 Name[it]=Grafica
 Name[pt]=Gráficos
-MiniIcon=
 SortOrder=xpaint.kdelnk,xv.kdelnk
-Icon=palette.xpm
+Icon=graphics_package.xpm

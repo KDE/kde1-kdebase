@@ -7,6 +7,5 @@ Name[fi]=Systeemi
 Name[sv]=System
 Name[it]=Sistema
 Name[pt]=Sistema
-MiniIcon=
 SortOrder=xosview.kdelnk
-Icon=kcontrol.xpm
+Icon=system_package.xpm

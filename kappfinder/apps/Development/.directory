@@ -7,6 +7,5 @@ Name[fi]=Kehitystyökalut
 Name[sv]=Utveckling
 Name[it]=Sviluppo
 Name[pt]=Desenvolvimento
-MiniIcon=library.xpm
 SortOrder=dlgedit.kdelnk
-Icon=library.xpm
+Icon=package.xpm

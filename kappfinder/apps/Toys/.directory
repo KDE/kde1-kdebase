@@ -7,6 +7,5 @@ Name[fi]=Lelut
 Name[sv]=Leksaker
 Name[it]=Giochini
 Name[pt]=Brincadeiras
-MiniIcon=sample.xpm
 SortOrder=xeyes.kdelnk,xpinguin.kdelnk
-Icon=pinguin.xpm
+Icon=games_package.xpm
