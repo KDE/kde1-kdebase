@@ -5,7 +5,8 @@ data_DATA = app.html mime.html app2.html mime2.html \
 	app2.gif       app4.gif       mime2.gif      templates.gif \
 	dontpanic.jpeg  lesson2.jpeg    manual.jpeg     previous.jpeg \
 	kfm.jpeg        lesson3.jpeg    next.jpeg       previous2.jpeg \
-	lesson1.jpeg    lesson4.jpeg    next2.jpeg
+	lesson1.jpeg    lesson4.jpeg    next2.jpeg      bookmarks.html \
+        keyboard.html
 
 datadir = $(kde_htmldir)/en/kfm
 
