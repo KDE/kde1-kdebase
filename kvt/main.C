@@ -561,31 +561,13 @@ void kVt::file_menu_activated(int item){
 }
 
 
-void _invokeHtmlHelp(const char* filename){
-  if ( fork	() == 0 )	
-    {		
-      QString path = "";
-      char* kdedir = getenv("KDEDIR");
-      if (kdedir)
-	path.append(kdedir);
-      else
-	path.append("/usr/local/kde");
-      path.append("/doc/HTML/");
-      path.append(filename);
-      execlp( "kdehelp", "kdehelp", path.data(), 0 );
-      exit( 1 );
-    }
-}
-
-
-
 void kVt::help_menu_activated(int item){
   switch (item){
   case 0:
     QMessageBox::message( "About kvt", "kvt-0.12\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n\nTerminal emulation for the KDE Desktop Environment\nbased on Robert Nation's rxvt-2.08");
     break;
   case 1:
-    _invokeHtmlHelp("kvt.html");
+    kapp->invokeHTMLHelp("kvt.html","");
     break;
   }
 }
