@@ -294,7 +294,11 @@ void KFMServer::slotOpenProperties( const char* _url )
                               i18n( "KFM Error" ), tmp );
         return;
     }
-    (void)new Properties( _url );
+    Properties *p = new Properties( _url );
+    if ( QString( _url ).find( KFMPaths::DesktopPath() ) != -1 )
+      // the icon is on the desktop : refresh it when the dialog box is closed
+      connect( p, SIGNAL( propertiesCancel( ) ), this,
+               SLOT( slotRefreshDesktop( ) ) );
 }
 
 void KFMServer::slotExec( const char* _url, const char * _documents )

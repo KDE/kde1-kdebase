@@ -40,6 +40,11 @@ protected slots:
      */
     void slotCheckUpToDate( );
  
+    /*
+     * Called when the templates has been copied
+     */
+    void slotCopyFinished( int id );
+
 private:
 
     /**
@@ -66,7 +71,13 @@ private:
      * When the user pressed the right mouse button over an URL a popup menu
      * is displayed. The URL belonging to this popup menu is stored here.
      */
-    KStrList popupFiles; 
+    KStrList popupFiles;
+
+    /*
+     * The destination of the copy, for each job being run (job id is the dict key).
+     * Used to popup properties for it
+     */
+    QIntDict <QString> m_sDest;
 };
 
 #endif // POPUP_H

@@ -14,6 +14,7 @@
 #include "kfmdlg.h"
 #include "kiojob.h"
 #include "popup.h"
+#include "kfmprops.h"
 
 QStrList * KNewMenu::templatesList = 0L;
 int KNewMenu::templatesVersion = 0;
@@ -95,6 +96,9 @@ void KNewMenu::slotNewFile( int _id )
     if ( this->text( _id ) == 0)
 	return;
 
+    m_sDest.clear();
+    m_sDest.setAutoDelete(true);
+
     QString p = templatesList->at( _id );
     QString tmp = p;
     tmp.detach();
@@ -135,6 +139,7 @@ void KNewMenu::slotNewFile( int _id )
 	
         QStrList urls = popupFiles;
         char *s;
+        int jobId = 0;
 	if ( strcmp( p.data(), "Folder" ) == 0 )
 	{
             for ( s = urls.first(); s != 0L; s = urls.next() )
@@ -160,7 +165,7 @@ void KNewMenu::slotNewFile( int _id )
 	    QString src = KFMPaths::TemplatesPath() + p.data();
             for ( s = urls.first(); s != 0L; s = urls.next() )
             {
-                KIOJob * job = new KIOJob;
+                KIOJob * job = new KIOJob( ++jobId );
                 QString dest = s;
                 dest.detach();
                 if ( dest.right( 1 ) != "/" )
@@ -174,10 +179,23 @@ void KNewMenu::slotNewFile( int _id )
 		// User wants to create new entry in global mime/apps dir;
 		Kfm::setUpDest(&dest);
 		// --- Sven's check if global apps/mime end ---
+                
+                if ( dest.right(7) ==".kdelnk" )
+                {
+                  m_sDest.insert( jobId, new QString( dest ) );
+                  connect(job, SIGNAL( finished( int ) ), this, SLOT( slotCopyFinished( int ) ) );
+                }
+                
                 job->copy( src.data(), dest.data() );
             }
 	}
     }
+}
+
+void KNewMenu::slotCopyFinished( int id )
+{
+  // Now open the properties dialog on the file, as it was a kdelnk
+  (void) new Properties( m_sDest.find( id )->data() );
 }
 
 #include "popup.moc"
