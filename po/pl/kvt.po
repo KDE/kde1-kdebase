@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
+"Content-Type: text/plain; charset=\n"
 "Date: 1997-08-26 14:27:08+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
-"Content-Type: text/plain; charset=\n"
 "Xgettext-Options: --keyword=translate\n"
 "Files: main.C\n"
 
