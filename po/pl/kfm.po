@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs \n"
 "POT-Creation-Date: 1999-04-17 01:15+0200\n"
-"PO-Revision-Date: 1999-01-10 13:10+0200\n"
+"PO-Revision-Date: 1999-04-18 16:09+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -223,6 +223,8 @@ msgid ""
 "\n"
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
 msgstr ""
+"\n"
+"Prosimy zg³aszaæ b³êdy i opinie pod adres http://bugs.kde.org"
 
 #: kfmgui.cpp:450
 msgid "&Go"
@@ -1046,12 +1048,12 @@ msgid "Recurse copying from/to distant locations"
 msgstr "Ponawiaj kopiowanie z/do odleg³ej lokacji"
 
 #: kiojob.cpp:909
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not remove symbolic link\n"
 "%s"
 msgstr ""
-"Nie mo¿na stworzyæ odno¶nika do\n"
+"Nie mo¿na usun±æ odno¶nika\n"
 "%s"
 
 #: kiojob.cpp:957
@@ -1213,7 +1215,7 @@ msgstr ""
 "nie istnieje"
 
 #: kiojob.cpp:1405
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not write\n"
 "%s\n"
@@ -1221,7 +1223,7 @@ msgid ""
 msgstr ""
 "Nie mo¿na zapisaæ\n"
 "%s\n"
-"Prawdopodobnie brak dostêpu."
+"Prawdopodobnie brak miejsca na dysku."
 
 #: kiojob.cpp:1456
 #, c-format
@@ -1525,28 +1527,3 @@ msgid ""
 msgstr ""
 "B³±d sk³adni:\n"
 "kfmexec command [URLs ....]\n"
-
-#~ msgid "Unknown binding"
-#~ msgstr "Nieznane skojarzenie"
-
-#~ msgid "Dont know what to do"
-#~ msgstr "Nie wiem co zrobiæ"
-
-#~ msgid "Copy here"
-#~ msgstr "Kopiuj tutaj"
-
-#~ msgid "Move here"
-#~ msgstr "Przenie¶ tutaj"
-
-#~ msgid "Link here"
-#~ msgstr "Odno¶nik tutaj"
-
-#~ msgid "Working Directory"
-#~ msgstr "Katalog roboczy"
-
-#~ msgid ""
-#~ "Please change the password in\n"
-#~ "~/.kde/share/apps/kfm/magic"
-#~ msgstr ""
-#~ "Proszê zmieniæ has³o w\n"
-#~ "~/.kde/share/apps/kfm/magic"

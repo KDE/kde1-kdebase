@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol \n"
 "POT-Creation-Date: 1999-01-27 01:14+0100\n"
-"PO-Revision-Date: 1998-12-26 14:54+0200\n"
+"PO-Revision-Date: 1999-04-18 16:08+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -40,9 +40,8 @@ msgstr ""
 "Piotr Roszatycki <dexter@fnet.pl>"
 
 #: mainwidget.cpp:44
-#, fuzzy
 msgid "KDE Version: "
-msgstr "Podwersja: "
+msgstr "Wersja KDE: "
 
 #: mainwidget.cpp:52
 msgid "User: "
@@ -67,6 +66,3 @@ msgstr "Podwersja: "
 #: mainwidget.cpp:88
 msgid "Machine: "
 msgstr "Architektura: "
-
-#~ msgid "System:"
-#~ msgstr "System:"
