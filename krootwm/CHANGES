@@ -7,6 +7,9 @@
 In 0.1:
 -------
 
+patchlevel 2:
+      - small fix to execute(...);
+
 patchlevel 1:
     
      - adaption to the current libkfm interface

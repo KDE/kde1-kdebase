@@ -38,7 +38,7 @@ void execute(const char* cmd){
     freopen("/dev/null", "r", stdin);
     freopen("/dev/null", "rw", stdout);
     freopen("/dev/null", "rw", stderr);
-    setpgrp();
+    setsid();
     execl(shell, shell, "-c", cmd, NULL);
     exit(1);
   }
@@ -125,13 +125,13 @@ bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
     }
   }
   
-  if (ev->type() == Event_MouseButtonRelease){
-    QMouseEvent *e = (QMouseEvent*) ev;
-    if (obj == rmb || obj == mmb){
-      if (((QWidget*)obj)->mapToGlobal(e->pos())==tmp_point)
-	return TRUE;
-    }
-  }
+//   if (ev->type() == Event_MouseButtonRelease){
+//     QMouseEvent *e = (QMouseEvent*) ev;
+//     if (obj == rmb || obj == mmb){
+//       if (((QWidget*)obj)->mapToGlobal(e->pos())==tmp_point)
+// 	return TRUE;
+//     }
+//   }
 
   return False;
 }
