@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-18 22:21+0200\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,107 +26,107 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: 초기화중 오류; 중단합니다\n"
 
-#: main.C:470
+#: main.C:483
 msgid "Preparing session ... "
 msgstr "세션을 준비중입니다 ... "
 
-#: main.C:489
+#: main.C:505
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:496
+#: main.C:512
 msgid "Usage: "
 msgstr "사용법: "
 
-#: main.C:507
+#: main.C:523
 msgid "&Maximize"
 msgstr "최대화(&M)"
 
-#: main.C:508
+#: main.C:524
 msgid "&Restore"
 msgstr "복원(&R)"
 
-#: main.C:509
+#: main.C:525
 msgid "&Iconify"
 msgstr "아이콘화(&I)"
 
-#: main.C:510
+#: main.C:526
 msgid "&DeIconify"
 msgstr "아이콘화 해제(&D)"
 
-#: main.C:511
+#: main.C:527
 msgid "&Sticky"
 msgstr "윈도우 고정(&S)"
 
-#: main.C:512
+#: main.C:528
 msgid "&UnSticky"
 msgstr "고정 해제(&U)"
 
-#: main.C:513
+#: main.C:529
 msgid "Mo&ve"
 msgstr "이동(&v)"
 
-#: main.C:514
+#: main.C:530
 msgid "Resi&ze"
 msgstr "크기조절(&z)"
 
-#: main.C:516
+#: main.C:532
 msgid "&To desktop"
 msgstr "데스크탑으로(&T)"
 
-#: main.C:518
+#: main.C:534
 msgid "&Onto current desktop"
 msgstr "현재 데스크탑으로(&O)"
 
-#: main.C:571
+#: main.C:574
 msgid "One"
 msgstr "하나"
 
-#: main.C:574
+#: main.C:577
 msgid "Two"
 msgstr "둘"
 
-#: main.C:577
+#: main.C:580
 msgid "Three"
 msgstr "셋"
 
-#: main.C:580
+#: main.C:583
 msgid "Four"
 msgstr "넷"
 
-#: main.C:583
+#: main.C:586
 msgid "Five"
 msgstr "다섯"
 
-#: main.C:586
+#: main.C:589
 msgid "Six"
 msgstr "여섯"
 
-#: main.C:589
+#: main.C:592
 msgid "Seven"
 msgstr "일곱"
 
-#: main.C:592
+#: main.C:595
 msgid "Eight"
 msgstr "여덟"
 
-#: main.C:606
+#: main.C:609
 msgid "Unnamed Desktop"
 msgstr "이름없는 데스크탑"
 
-#: main.C:942
+#: main.C:939
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "픽스맵이 올바르지 않습니다: Shape 모드가 불가능함\n"
 
-#: main.C:1054
+#: main.C:1051
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "픽스맵이 올바르지 않습니다: Gimmick 모드가 불가능함\n"
 
-#: main.C:1311
+#: main.C:1376
 msgid "*** No Tasks ***"
 msgstr "*** 작업 없음***"
 
-#: minicli.C:116
+#: minicli.C:119
 msgid "Command:"
 msgstr "명령:"
 

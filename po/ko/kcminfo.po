@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,56 +14,97 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
-#: main.cpp:50
+#: main.cpp:79
 msgid "&Memory"
 msgstr "메모리(&M)"
 
-#: main.cpp:53
+#: main.cpp:82
 msgid "&Processor"
 msgstr "프로세서(&P)"
 
-#: main.cpp:62
-msgid "usage: kcminfo [-init | {processor,memory}]\n"
-msgstr "사용법: kcminfo [-init | {프로세서,메모리}]\n"
+#: main.cpp:85
+msgid "&Interrupts"
+msgstr ""
 
-#: main.cpp:74
+#: main.cpp:88
+msgid "DMA-C&hannels"
+msgstr ""
+
+#: main.cpp:91
+msgid "&IO-Ports"
+msgstr ""
+
+#: main.cpp:94
+msgid "PCI-&Bus"
+msgstr ""
+
+#: main.cpp:97
+msgid "S&ound"
+msgstr ""
+
+#: main.cpp:100
+msgid "&Devices"
+msgstr ""
+
+#: main.cpp:103
+msgid "S&CSI"
+msgstr ""
+
+#: main.cpp:106
+msgid "P&artitions"
+msgstr ""
+
+#: main.cpp:109
+msgid "&X-Server"
+msgstr ""
+
+#: main.cpp:120
+msgid ""
+"usage: kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
+msgstr ""
+
+#: main.cpp:148
 msgid "System Information"
 msgstr "시스템 정보"
 
-#: memory.cpp:11
+#: memory.cpp:15
 msgid "Total memory"
 msgstr "총 메모리"
 
-#: memory.cpp:21
+#: memory.cpp:25
 msgid "Free memory"
 msgstr "남은 메모리"
 
-#: memory.cpp:29
+#: memory.cpp:33
 msgid "Shared memory"
 msgstr "공유 메모리"
 
-#: memory.cpp:37
+#: memory.cpp:41
 msgid "Buffer memory"
 msgstr "버퍼 메모리"
 
-#: memory.cpp:45
+#: memory.cpp:49
 msgid "Swap memory"
 msgstr "스왑 메모리"
 
-#: memory.cpp:53
+#: memory.cpp:57
 msgid "Free swap memory"
 msgstr "남은 스왑 메모리"
 
-#: memory.cpp:74
+#: memory.cpp:78
 #, c-format
 msgid "%10ld bytes  = %8.2f MB"
 msgstr "%10ld 바이트 = %8.2f MB"
 
-#: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
-#: memory.cpp:101
+#: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
+#: memory.cpp:105
 msgid "Not available"
 msgstr "여유 메모리가 없습니다"
 
-#: processor.cpp:29
-msgid "This system is not yet supported :-("
-msgstr "이 시스템은 아직 지원되지 않습니다 :-("
+#~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
+#~ msgstr "사용법: kcminfo [-init | {프로세서,메모리}]\n"
+
+#~ msgid "This system is not yet supported :-("
+#~ msgstr "이 시스템은 아직 지원되지 않습니다 :-("

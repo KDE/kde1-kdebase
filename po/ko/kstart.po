@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-10-29 13:59+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,26 +14,54 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
-#: kstartondesk.C:72
-msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+#: kstart.C:115
+#, c-format
+msgid ""
+"\n"
+" Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
+"\n"
+" Utility to launch legay applications with special KDE window properties\n"
+" such as iconified, maximized, a certain virtual desktop, a special "
+"decoration\n"
+" or sticky\n"
+" \n"
+" In addition, the -activate switch will jump to the window even if it is\n"
+" started on a different virtual desktop\n"
+" \n"
+" Usage:\n"
+" %s <command> [-window <regular expression>] [-desktop <number>]\n"
+"              [-sticky] [-iconify] [-maximize] \n"
+"              [-decoration tiny|none] [-activate]\n"
+" \n"
+" If you do not specify a regular expression for the windows title,\n"
+" then the very first window to appear will be taken. Not recommended!\n"
+" \n"
+" Example usage:\n"
+" %s \"xclock -geometry 80x80-0+0\" -window xclock -decoration tiny -sticky\n"
+" puts a tiny decorated, sticky xclock on the top right corner of the "
+"screen.\n"
+" \n"
+" "
+msgstr ""
+
+#: kstart.C:151
+#, fuzzy
+msgid ""
+"\n"
+" Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: kstartondesk.C:76
-msgid "Usage:"
-msgstr "사용법:"
+#~ msgid "Usage:"
+#~ msgstr "사용법:"
 
-#: kstartondesk.C:78
-msgid "command "
-msgstr "명령 "
+#~ msgid "command "
+#~ msgstr "명령 "
 
-#: kstartondesk.C:79
-msgid "title "
-msgstr "창제목 "
- 
-#: kstartondesk.C:80
-msgid "desktop"
-msgstr "데스크탑"
+#~ msgid "title "
+#~ msgstr "창제목 "
 
-#: kstartondesk.C:82
-msgid "Example"
-msgstr "예제"
+#~ msgid "desktop"
+#~ msgstr "데스크탑"
+
+#~ msgid "Example"
+#~ msgstr "예제"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-17 09:43+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,13 +22,26 @@ msgstr "배너"
 msgid "Setup kbanner"
 msgstr "kbanner 설정"
 
+#: banner.cpp:95
+#, fuzzy
+msgid "Family:"
+msgstr "실패"
+
+#: banner.cpp:114 science.cpp:1036
+msgid "Size:"
+msgstr ""
+
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
 msgstr "색"
 
+#: banner.cpp:147
+msgid "Bold"
+msgstr ""
+
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 science.cpp:1025 slip.cpp:378 space.cpp:587
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1069 slip.cpp:378 space.cpp:587
 #: swarm.cpp:341
 msgid "Speed:"
 msgstr "속도:"
@@ -387,37 +400,48 @@ msgstr ""
 "\n"
 "kscreensave로 포팅 : Emanuel Pirker"
 
-#: main.cpp:286
+#: main.cpp:351
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "%s 옵션은 이 플랫폼에서 지원되지 않습니다!"
 
-#: main.cpp:313
+#: main.cpp:380
+#, fuzzy
 msgid ""
-"Your system uses shadow passwords!\n"
-"Please contact your system administrator.\n"
+"Warning: You won't be able to lock the screen!\n"
 "\n"
-"Tell him, that you need suid for the screensavers!"
+"Your system uses shadow passwords.\n"
+"Please contact your system administrator,\n"
+"tell him, that you need suid for the screensavers!"
 msgstr ""
 "시스템이 쉐도우 암호를 사용합니다!\n"
 "시스템 관리자에게 문의하십시오.\n"
 "\n"
 "스크린세이버로 인해 suid가 필요하다고 연락하십시오!"
 
-#: main.cpp:318
+#: main.cpp:385
 msgid "Shadow Passwords"
 msgstr "쉐도우 암호"
 
-#: main.cpp:476
-#, c-format
+#: main.cpp:430
+msgid ""
+"\n"
+"please don't use -test together with -lock.\n"
+"use klock instead.\n"
+"\n"
+msgstr ""
+
+#: main.cpp:538
+#, fuzzy, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+"       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:479
+#: main.cpp:541
+#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -429,6 +453,7 @@ msgid ""
 "  -desc             Print the screen saver's description to stdout\n"
 "  -install          Install screen saver\n"
 "  -lock             Require password to stop screen saver\n"
+"  -allow-root       Accept root password to unlock\n"
 "  -nice num         Run with specified nice value\n"
 "\n"
 "  -preview wid      Run in the specified XWindow\n"
@@ -453,7 +478,7 @@ msgstr ""
 "  -setup            화면보호기 설정\n"
 "  -test             즉시 화면 보호기 작동\n"
 
-#: morph3d.cpp:839 space.cpp:419
+#: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
 msgid "GL can not render with root visual\n"
 msgstr ""
 
@@ -486,6 +511,33 @@ msgstr ""
 "Copyright (c) 1997, Marcelo F. Vianna\n"
 "\n"
 "kscreensave로 포팅 : Emanuel Pirker."
+
+#: pipes.cpp:299
+#, fuzzy
+msgid "Pipes (GL)"
+msgstr "Space (GL)"
+
+#: pipes.cpp:672
+#, fuzzy
+msgid "Setup KPipes"
+msgstr "KSlip 설정"
+
+#: pipes.cpp:678
+#, fuzzy
+msgid "Number of Pipes"
+msgstr "벌의 수:"
+
+#: pipes.cpp:743
+#, fuzzy
+msgid "About KPipes"
+msgstr "Lines 정보"
+
+#: pipes.cpp:745
+msgid ""
+"KPipes\n"
+"Copyright (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
+msgstr ""
 
 #: polygon.cpp:64
 msgid "Polygons"
@@ -557,6 +609,11 @@ msgstr "우주여행"
 msgid "Setup krock"
 msgstr "우주여행 설정"
 
+#: rock.cpp:589
+#, fuzzy
+msgid "Move"
+msgstr "모드:"
+
 #: rock.cpp:595
 msgid "Rotate"
 msgstr "회전"
@@ -615,51 +672,51 @@ msgstr "굴곡"
 msgid "Science"
 msgstr "Science"
 
-#: science.cpp:447
+#: science.cpp:491
 msgid "rendering lens..."
 msgstr "렌즈를 렌더링중입니다..."
 
-#: science.cpp:769
+#: science.cpp:813
 msgid "grabbing screen..."
 msgstr "화면을 수집중입니다..."
 
-#: science.cpp:931
+#: science.cpp:975
 msgid "Setup Science"
 msgstr "Science 설정"
 
-#: science.cpp:949
+#: science.cpp:993
 msgid "Mode:"
 msgstr "모드:"
 
-#: science.cpp:964
+#: science.cpp:1008
 msgid "Inverse"
 msgstr "역으로"
 
-#: science.cpp:974
+#: science.cpp:1018
 msgid "Gravity"
 msgstr "Gravity"
 
-#: science.cpp:983
+#: science.cpp:1027
 msgid "Hide Background"
 msgstr "배경 숨기기"
 
-#: science.cpp:1009
+#: science.cpp:1053
 msgid "Intensity:"
 msgstr "곡률강도:"
 
-#: science.cpp:1039
+#: science.cpp:1083
 msgid "Motion:"
 msgstr "움직임:"
 
-#: science.cpp:1260
+#: science.cpp:1304
 msgid "Science Version"
 msgstr "Science 버전"
 
-#: science.cpp:1261
+#: science.cpp:1305
 msgid "written by"
 msgstr "제작"
 
-#: science.cpp:1262
+#: science.cpp:1306
 msgid "About Science"
 msgstr "Science 정보"
 

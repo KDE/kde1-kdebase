@@ -337,6 +337,7 @@ AC_OUTPUT(Makefile \
 	po/hr/Makefile \
 	po/hu/Makefile \
 	po/it/Makefile \
+	po/ko/Makefile \
 	po/nl/Makefile \
 	po/no/Makefile \
 	po/mk/Makefile \

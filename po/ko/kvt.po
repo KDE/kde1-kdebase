@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,132 +14,138 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
-#: main.C:347
+#: main.C:424
 msgid "choose type of color-mode"
 msgstr "색모드 유형 선택"
 
-#: main.C:353
+#: main.C:430
 msgid "Add characters to word class"
 msgstr "단어 클래스에 문자 추가"
 
-#: main.C:359
+#: main.C:436
 msgid "The backspace key will send a"
 msgstr "백스페이스 키를 눌렀을 때 생기는 문자는"
 
-#: main.C:365
+#: main.C:442
 msgid "Cursor key set"
 msgstr "커서 키 설정"
 
-#: main.C:532
+#: main.C:611
 msgid "&New Terminal"
 msgstr "새 터미널(&N)"
 
-#: main.C:539 main.C:915
+#: main.C:618 main.C:1024
 msgid "&Hide"
 msgstr "숨기기(&H)"
 
-#: main.C:540
+#: main.C:619
 msgid "&Left"
 msgstr "왼쪽(&L)"
 
-#: main.C:541
+#: main.C:620
 msgid "&Right"
 msgstr "오른쪽(&R)"
 
-#: main.C:546
+#: main.C:625
 msgid "&Normal"
 msgstr "보통(&N)"
 
-#: main.C:547
+#: main.C:626
 msgid "&Tiny"
 msgstr "아주 작게(&T)"
 
-#: main.C:548
+#: main.C:627
 msgid "&Small"
 msgstr "작게(&S)"
 
-#: main.C:549
+#: main.C:628
 msgid "&Medium"
 msgstr "중간(&M)"
 
-#: main.C:550
+#: main.C:629
 msgid "&Large"
 msgstr "크게(&L)"
 
-#: main.C:551
+#: main.C:630
 msgid "&Huge"
 msgstr "아주 크게(&H)"
 
-#: main.C:563
+#: main.C:642
 msgid "&black/white"
 msgstr "흑/백(&b)"
 
-#: main.C:564
+#: main.C:643
 msgid "&white/black"
 msgstr "백/흑(&w)"
 
-#: main.C:565
+#: main.C:644
 msgid "&green/black"
 msgstr "녹/흑(&g)"
 
-#: main.C:566
+#: main.C:645
 msgid "black/light&yellow"
 msgstr "흑/밝은노랑(&y)"
 
-#: main.C:567
+#: main.C:646
 msgid "Linu&x Console"
 msgstr "리눅스 콘솔(&x)"
 
-#: main.C:576
+#: main.C:655
 msgid "&Custom Colors"
 msgstr "색 선택(&C)"
 
-#: main.C:583 main.C:849
+#: main.C:663 main.C:950
 msgid "Hide &Menubar"
 msgstr "메뉴바 숨기기(&M)"
 
-#: main.C:585 main.C:771 main.C:841
+#: main.C:665 main.C:872 main.C:942
 msgid "Show &Menubar"
 msgstr "메뉴바 보이기(&M)"
 
-#: main.C:586 main.C:859
+#: main.C:666 main.C:960
 msgid "Secure &keyboard"
 msgstr "키보드 잠그기(&k)"
 
-#: main.C:588
+#: main.C:668
 msgid "Scroll&bar"
 msgstr "스크롤바(&b)"
 
-#: main.C:589
+#: main.C:669
 msgid "&Font size"
 msgstr "글꼴 크기(&F)"
 
-#: main.C:590
+#: main.C:670
 msgid "&Color"
 msgstr "색(&C)"
 
-#: main.C:591
+#: main.C:671
 msgid "&Size"
 msgstr "크기(&S)"
 
-#: main.C:592
+#: main.C:672
 msgid "Terminal..."
 msgstr "터미널..."
 
-#: main.C:593
+#: main.C:673
 msgid "Font..."
 msgstr "글꼴..."
 
-#: main.C:595
+#: main.C:674
+msgid "Enable &hotkeys"
+msgstr ""
+
+#: main.C:677
 msgid "Save &Options"
 msgstr "옵션 저장(&O)"
 
-#: main.C:604
+#: main.C:686
+#, fuzzy
 msgid ""
 "\n"
 "\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
 "\n"
 "Terminal emulation for the KDE Desktop Environment\n"
 "based on Robert Nation's rxvt-2.08"
@@ -152,23 +158,23 @@ msgstr ""
 "KDE Desktop Environment의 터미널 에뮬레이션은\n"
 "Robert Nation의 rxvt-2.08에 기초를 두고 있습니다"
 
-#: main.C:780 main.C:908
+#: main.C:881 main.C:1017
 msgid "&Show"
 msgstr "보이기(&S)"
 
-#: main.C:855
+#: main.C:956
 msgid "Unsecure &keyboard"
 msgstr "키보드 풀기(&k)"
 
-#: main.C:866
+#: main.C:967
 msgid "Terminal Options"
 msgstr "터미널 옵션"
 
-#: main.C:1020
+#: main.C:1129
 msgid "Hint"
 msgstr "힌트"
 
-#: main.C:1021
+#: main.C:1130
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -176,7 +182,7 @@ msgstr ""
 "새로운 색 설정은 안전 키보드 모드가\n"
 "해제될 때 적용됩니다."
 
-#: main.C:1322
+#: main.C:1431
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -187,64 +193,63 @@ msgstr ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
 "KDE Desktop Environment의 터미널 에뮬레이션은\n"
-"Robert Nation의 rxvt-2.08에 기초를 두고 있습니다"
-"\n"
+"Robert Nation의 rxvt-2.08에 기초를 두고 있습니다\n"
 
-#: main.C:1326
+#: main.C:1435
 msgid "Permitted arguments are:\n"
 msgstr "허용되는 인수는:\n"
 
-#: main.C:1327
+#: main.C:1436
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 "-e <명령> <인수> ...      인수로 명령 실행 - 마지막은 인수가 되어야 함\n"
 
-#: main.C:1328
+#: main.C:1437
 msgid "-display <name>           specify the display (server)\n"
 msgstr "-display <이름>           디스플레이 (서버) 지정\n"
 
-#: main.C:1329
+#: main.C:1438
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr "-vt_geometry <스펙>       초기 vt 윈도우 위치\n"
 
-#: main.C:1330
+#: main.C:1439
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr "-print-pipe <이름>        vt100 프린터 파이프 지정\n"
 
-#: main.C:1331
+#: main.C:1440
 msgid "-vt_bg <colour>           background color\n"
 msgstr "-vt_bg <색>               배경 색\n"
 
-#: main.C:1332
+#: main.C:1441
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr "-vt_fg <색>               전면 색\n"
 
-#: main.C:1333
+#: main.C:1442
 msgid "-vt_font <fontname>       normal font\n"
 msgstr "-vt_font <글꼴이름>       정상 글꼴\n"
 
-#: main.C:1334
+#: main.C:1443
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
 msgstr "-no_font_hack             Qt 글꼴 버그 수정 기능 끄기\n"
 
-#: main.C:1335
+#: main.C:1444
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr "-vt_size <크기>           아주 작게, 작게, 정상, 크게, 아주크게\n"
 
-#: main.C:1336
+#: main.C:1445
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr "-linux                    kvt가 리눅스 콘솔을 흉내내도록 함\n"
 
-#: main.C:1337
+#: main.C:1446
 msgid "-no_menubar               hide the menubar\n"
 msgstr "-no_menubar               메뉴 바 숨기기\n"
 
-#: main.C:1338
+#: main.C:1447
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr "-no_scrollbar             스크롤 바 숨기기\n"
 
-#: main.C:1339
+#: main.C:1448
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
@@ -252,19 +257,19 @@ msgstr ""
 "-T <텍스트>               윈도우 타이틀 바에 쓸 문자열\n"
 "                          (낡은 기능. 대신 -caption을 사용하십시오)\n"
 
-#: main.C:1341
+#: main.C:1450
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr "-tn <터미널 유형>         터미널 유형. 기본값은 xterm\n"
 
-#: main.C:1342
+#: main.C:1451
 msgid "-C                        Capture system console message\n"
 msgstr "-C                        콘솔 메시지 갈무리\n"
 
-#: main.C:1343
+#: main.C:1452
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr "-n <텍스트>               아이콘화 시켰을 때의 이름\n"
 
-#: main.C:1344
+#: main.C:1453
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
@@ -272,17 +277,16 @@ msgstr ""
 "-7                        7비트 모드로 실행\n"
 "-8                        8비트 모드로 실행\n"
 
-#: main.C:1346
+#: main.C:1455
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
 "-ls                       kvt쉘을 로그인 쉘로 초기화\n"
-"-ls-                      kvt쉘을 비로그인 쉘로 초기화 "
-"(기본값)\n"
+"-ls-                      kvt쉘을 비로그인 쉘로 초기화 (기본값)\n"
 
-#: main.C:1348
+#: main.C:1457
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
@@ -290,23 +294,21 @@ msgstr ""
 "-meta <arg>               메타키에 ESCAPE를 붙이거나 8번째 비트를 설정 또는 "
 "무시\n"
 
-#: main.C:1349
+#: main.C:1458
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr "-sl <숫자>                백 스크롤시에 저장할 줄 수\n"
 
-#: main.C:1350
+#: main.C:1459
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
-"-pageup <keysym>          위로 스크롤할 때 사용할 핫 키 alt-<keysym> "
-"\n"
-"-pagedown <keysym>        아래로 스크롤할 때 사용할 핫 키 alt-<keysym> "
-"\n"
+"-pageup <keysym>          위로 스크롤할 때 사용할 핫 키 alt-<keysym> \n"
+"-pagedown <keysym>        아래로 스크롤할 때 사용할 핫 키 alt-<keysym> \n"
 
-#: main.C:1354
+#: main.C:1463
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

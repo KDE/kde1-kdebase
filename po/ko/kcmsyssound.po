@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,10 @@ msgstr "사운드(&S)"
 #: main.cpp:80
 msgid "System Sounds"
 msgstr "시스템 사운드"
+
+#: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
+msgid "(none)"
+msgstr ""
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"
@@ -162,9 +166,7 @@ msgstr "지원되지 않는 URL"
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
-msgstr ""
-"이 유형의 URL은 현재 KDE 시스템 사운드 모듈이 지원하지 "
-"않습니다"
+msgstr "이 유형의 URL은 현재 KDE 시스템 사운드 모듈이 지원하지 않습니다"
 
 #: syssound.cpp:468
 #, c-format

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,15 +38,15 @@ msgstr ""
 "\n"
 "변경사항을 저장하시겠읍니까?"
 
-#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:260
 msgid "EMPTY"
 msgstr "비어있음"
 
-#: kmenuedit.cpp:335
+#: kmenuedit.cpp:339
 msgid "Reload Menus"
 msgstr "메뉴 다시 불러오기"
 
-#: kmenuedit.cpp:336
+#: kmenuedit.cpp:340
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -54,11 +54,11 @@ msgstr ""
 "메뉴를 다시 불러오면 변경사항을 잃게 됩니다.\n"
 "다시 불러오겠읍니까?"
 
-#: button.cpp:209 main.cpp:78 main.cpp:91
+#: button.cpp:209 main.cpp:79 main.cpp:92
 msgid "KMenuedit"
 msgstr "KDE 메뉴편집기"
 
-#: main.cpp:79
+#: main.cpp:80
 msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
@@ -66,7 +66,7 @@ msgstr ""
 "귀하의 개인 메뉴를 위한 디렉토리가 존재하지 않습니다.\n"
 " 디렉토리를 만들시겠습니까?"
 
-#: main.cpp:92
+#: main.cpp:93
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Separator"
 msgstr "메뉴분리자"
 
-#: confmenu.cpp:102 confmenu.cpp:317
+#: confmenu.cpp:102 confmenu.cpp:316
 msgid "Open/ Close"
 msgstr "열기/ 닫기"
 
@@ -86,7 +86,11 @@ msgstr "열기/ 닫기"
 msgid "! PROTECTED Button !"
 msgstr "!고칠 수 없는 단추!"
 
-#: confmenu.cpp:171 confmenu.cpp:300
+#: confmenu.cpp:115
+msgid "New"
+msgstr ""
+
+#: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"
 msgstr "경고 !"
 
@@ -94,11 +98,11 @@ msgstr "경고 !"
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "이 단추를 삭제하면 하위메뉴가 모두 삭제됩니다"
 
-#: confmenu.cpp:281
+#: confmenu.cpp:280
 msgid "Wrong filename"
 msgstr "잘못된 파일이름"
 
-#: confmenu.cpp:282
+#: confmenu.cpp:281
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -106,11 +110,11 @@ msgstr ""
 "이 이름의 kdelnk 파일이 이미 존재합니다. \n"
 "다른 파일이름을 선택하십시오."
 
-#: confmenu.cpp:301
+#: confmenu.cpp:300
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "이 단추의 유형을 변경하면 하위 메뉴를 모두 지우게 됩니다"
 
-#: confmenu.cpp:322 confmenu.cpp:911
+#: confmenu.cpp:321 confmenu.cpp:909
 msgid "no command"
 msgstr "실행명령 없음"
 
@@ -155,12 +159,22 @@ msgstr "삽입"
 msgid "Link"
 msgstr "링크"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
 msgid "Device"
 msgstr "장치"
 
+#: entrydialog.cpp:63
+#, fuzzy
+msgid "Type:"
+msgstr "FS 유형:"
+
 #: entrydialog.cpp:69
 msgid "File Name:"
+msgstr "파일 이름:"
+
+#: entrydialog.cpp:82
+#, fuzzy
+msgid "Name:"
 msgstr "파일 이름:"
 
 #: entrydialog.cpp:95

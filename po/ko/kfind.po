@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-16 15:37+0200\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -193,6 +193,10 @@ msgstr "실행 파일"
 msgid "SUID executable files"
 msgstr "SUID 실행파일"
 
+#: kftabdlg.cpp:246
+msgid "(none)"
+msgstr ""
+
 #: kftabdlg.cpp:247
 msgid "At Least"
 msgstr "적어도"
@@ -205,19 +209,19 @@ msgstr "많아도"
 msgid " Advanced "
 msgstr " 고급 "
 
-#: kftabdlg.cpp:492
+#: kftabdlg.cpp:494
 msgid "The date is not valid!!"
 msgstr "날짜가 유효하지 않습니다!!"
 
-#: kftabdlg.cpp:504
+#: kftabdlg.cpp:506
 msgid "The month(s) value isn't valid!!"
 msgstr "개월수가 유효하지 않습니다!!"
 
-#: kftabdlg.cpp:515
+#: kftabdlg.cpp:517
 msgid "The day(s) value isn't valid!!"
 msgstr "일수가 유효하지 않습니다!!"
 
-#: kftabdlg.cpp:532
+#: kftabdlg.cpp:534
 msgid "The value in size isn't valid number!!"
 msgstr "크기값이 유효하지 않습니다!!"
 
