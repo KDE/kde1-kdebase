@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1998-12-10 01:15+0100\n"
-"PO-Revision-Date: 1998-12-12 22:30+0100\n"
+"PO-Revision-Date: 1998-12-15 22:30+0100\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
@@ -38,7 +38,8 @@ msgstr "&Avancé"
 #: main.cpp:86
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
-msgstr "utilisation : kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
+msgstr ""
+"utilisation : kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -357,7 +358,7 @@ msgstr "Activer"
 #: mouse.cpp:114 mouse.cpp:123 mouse.cpp:133 mouse.cpp:197 mouse.cpp:208
 #: mouse.cpp:219
 msgid "Lower"
-msgstr ""
+msgstr "Placer dessous"
 
 #: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
 msgid "Operations menu"
@@ -366,7 +367,7 @@ msgstr "Menu des opérations"
 #: mouse.cpp:116 mouse.cpp:125 mouse.cpp:135 mouse.cpp:194 mouse.cpp:205
 #: mouse.cpp:216
 msgid "Toggle raise and lower"
-msgstr ""
+msgstr "Basculer placement dessus/dessous"
 
 #: mouse.cpp:126 mouse.cpp:136 mouse.cpp:198 mouse.cpp:209 mouse.cpp:220
 msgid "Nothing"
@@ -375,11 +376,11 @@ msgstr "Pas d'action"
 #: mouse.cpp:142 mouse.cpp:150 mouse.cpp:158 mouse.cpp:169 mouse.cpp:178
 #: mouse.cpp:187
 msgid "Activate and raise"
-msgstr ""
+msgstr "Activer et placer dessus"
 
 #: mouse.cpp:143 mouse.cpp:151 mouse.cpp:159
 msgid "Activate and lower"
-msgstr ""
+msgstr "Activer et placer dessous"
 
 #: mouse.cpp:144 mouse.cpp:152 mouse.cpp:160 mouse.cpp:168 mouse.cpp:177
 #: mouse.cpp:186
@@ -470,57 +471,4 @@ msgstr "Titres"
 msgid "Classes"
 msgstr "Classes"
 
-#~ msgid "Titlebar appearance"
-#~ msgstr "Apparence de la barre de titre"
 
-#~ msgid "Operations Menu"
-#~ msgstr "Menu des opérations"
-
-#~ msgid "Window movement"
-#~ msgstr "Déplacement des fenêtres"
-
-#~ msgid "Transparent"
-#~ msgstr "Transparent"
-
-#~ msgid "Opaque"
-#~ msgstr "Opaque"
-
-#~ msgid "Window resize"
-#~ msgstr "Redimensionner la fenêtre"
-
-#~ msgid "Animation:"
-#~ msgstr "Animation :"
-
-#~ msgid "Allowed Overlap:"
-#~ msgstr "Permettre le recouvrement :"
-
-#~ msgid "Maximize Style"
-#~ msgstr "Type de maximisation"
-
-#~ msgid "Maximize fully"
-#~ msgstr "Maximisation complète"
-
-#~ msgid "Maximize vertically"
-#~ msgstr "Maximisation verticale"
-
-#~ msgid ""
-#~ "Auto raise delay\n"
-#~ "(<100 disables)"
-#~ msgstr ""
-#~ "Délai avant le passage au premier plan\n"
-#~ "(désactivé si inférieur à 100 ms)"
-
-#~ msgid "miliseconds"
-#~ msgstr "millisecondes"
-
-#~ msgid "&Desktop"
-#~ msgstr "&Bureau"
-
-#~ msgid "With animation"
-#~ msgstr "Avec animation"
-
-#~ msgid "Restore"
-#~ msgstr "Restaurer"
-
-#~ msgid "Shaded"
-#~ msgstr "Dégradé"
