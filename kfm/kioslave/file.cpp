@@ -302,26 +302,26 @@ int KProtocolFILE::OpenDir( KURL *url )
 	_de->name = (const char*)ep->d_name;
 
         // Now get the user and group names, but looking in the cache first
-        if ( usercache[ buff.st_uid ] )
-            _de->owner = usercache[ buff.st_uid ]->data();
+        if ( usercache[ lbuff.st_uid ] )
+            _de->owner = usercache[ lbuff.st_uid ]->data();
         else {
-            struct passwd * user = getpwuid( buff.st_uid );
+            struct passwd * user = getpwuid( lbuff.st_uid );
             if ( user != 0L ) {
-                usercache.insert( buff.st_uid, new QString( user->pw_name ) );
+                usercache.insert( lbuff.st_uid, new QString( user->pw_name ) );
                 _de->owner = user->pw_name;
             } else
-                _de->owner.setNum(buff.st_uid);
+                _de->owner.setNum(lbuff.st_uid);
         }
 
-        if ( groupcache[ buff.st_gid ] )
-            _de->group = groupcache[ buff.st_gid ]->data();
+        if ( groupcache[ lbuff.st_gid ] )
+            _de->group = groupcache[ lbuff.st_gid ]->data();
         else {
-            struct group * grp = getgrgid( buff.st_gid );
+            struct group * grp = getgrgid( lbuff.st_gid );
             if ( grp != 0L ) {
-                groupcache.insert( buff.st_gid, new QString( grp->gr_name ) );
+                groupcache.insert( lbuff.st_gid, new QString( grp->gr_name ) );
                 _de->group = grp->gr_name;
             } else
-                _de->group.setNum(buff.st_gid);
+                _de->group.setNum(lbuff.st_gid);
         }
 
 	QString d;
