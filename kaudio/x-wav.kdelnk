@@ -1,0 +1,9 @@
+# KDE Config File
+[KDE Desktop Entry]
+Type=MimeType
+MimeType=audio/x-wav
+Icon=sound.xpm
+Patterns=*.wav;*.WAV;
+Comment=Digitial Audio (WAV)
+Comment[de]=Digitialsound (WAV)
+DefaultApp=kmedia
