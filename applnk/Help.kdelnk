@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Type=Application
+Icon=kdehelp.xpm
 Exec=kdehelp %u
 DocPath=kdehelp/index.html
 Comment=KDE Help is the KDE on-line help browser.
