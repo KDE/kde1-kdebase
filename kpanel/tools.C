@@ -280,7 +280,10 @@ void myTaskButton::setActive(bool value){
 
 void myTaskButton::setNoActive()
 {
-    active = 0;
+  myTaskButton* buttontolower = active;
+  active = 0;
+  if (buttontolower!=0) 
+    buttontolower->setActive(FALSE);
 }
 
 void myTaskButton::setText(const char* arg){
