@@ -1,0 +1,66 @@
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"PO-Revision-Date: 1998-02-26 21:10+0100\n"
+"Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
+"Language-Team: no <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: krootwm.C:109 krootwm.C:471
+msgid "Folder"
+msgstr "Mappe"
+
+#: krootwm.C:136
+#, c-format
+msgid "ERROR: Template does not exist '%s'"
+msgstr "FEIL: Mal eksisterer ikke '%s'"
+
+#: krootwm.C:162
+msgid "Help on desktop"
+msgstr "Hjelp om skrivebord"
+
+#: krootwm.C:163
+msgid "Execute command"
+msgstr "Kjør"
+
+#: krootwm.C:164
+msgid "Display properties"
+msgstr "Skjerm innstillinger"
+
+#: krootwm.C:165
+msgid "Refresh desktop"
+msgstr "Forny skrivebord"
+
+#: krootwm.C:166
+msgid "Arrange icons"
+msgstr "Ordne ikoner"
+
+#: krootwm.C:168
+msgid "Lock screen"
+msgstr "Lås skjerm"
+
+#: krootwm.C:169
+msgid "Logout"
+msgstr "Logg ut"
+
+#: krootwm.C:491
+msgid "Could not create folder"
+msgstr "Kunne ikke opprette mappe"
+
+#: krootwm.C:524
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: krootwm.C:528
+msgid "Usage:"
+msgstr "Bruk"
+

@@ -1,0 +1,156 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"PO-Revision-Date: 1998-02-26 21:17:+0100\n"
+"Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
+"Language-Team: no <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.C:67
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr "kwm: Det ser ut til at det allerede kjører en window manager. kwm er"
+"startet\n"
+
+#: main.C:81
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr "kwm: feil ved oppstart; avbryter\n"
+
+#: main.C:370
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: main.C:377
+msgid "Usage: "
+msgstr "Bruk: "
+
+#: main.C:388
+msgid "&Maximize"
+msgstr "&Maksimer"
+
+#: main.C:389
+msgid "&Restore"
+msgstr "&Opprett på nytt"
+
+#: main.C:390
+msgid "&Iconify"
+msgstr "M&inimer"
+
+#: main.C:391
+msgid "&DeIconify"
+msgstr "&Gjør om minimer"
+
+#: main.C:392
+msgid "&Sticky"
+msgstr "&Sett fast"
+
+#: main.C:393
+msgid "&UnSticky"
+msgstr "Ikke fastsatt"
+
+#: main.C:394
+msgid "Mo&ve"
+msgstr "&Flytt"
+
+#: main.C:395
+msgid "Resi&ze"
+msgstr "&Endre størrelse"
+
+#: main.C:397
+msgid "&To desktop"
+msgstr "&Til skrivebord"
+
+#: main.C:399
+msgid "&Onto current desktop"
+msgstr "Til skrivebord i bruk"
+
+#: main.C:449
+msgid "One"
+msgstr "En"
+
+#: main.C:452
+msgid "Two"
+msgstr "To"
+
+#: main.C:455
+msgid "Three"
+msgstr "Tre"
+
+#: main.C:458
+msgid "Four"
+msgstr "Fire"
+
+#: main.C:461
+msgid "Five"
+msgstr "Fem"
+
+#: main.C:464
+msgid "Six"
+msgstr "Seks"
+
+#: main.C:467
+msgid "Seven"
+msgstr "Sju"
+
+#: main.C:470
+msgid "Eight"
+msgstr "Åtte"
+
+#: main.C:743
+msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
+msgstr "Noen pixmaps er ubrukelige: ShapeMode ikke iverksatt"
+
+#: main.C:986
+msgid "*** No Tasks ***"
+msgstr "*** Ingen oppgaver ***"
+
+#: minicli.C:115
+msgid "Command:"
+msgstr "Kommando"
+
+#: logout.C:35 taskmgr.C:106
+msgid "Logout"
+msgstr "Logg ut"
+
+#: logout.C:45
+msgid "Session prepared for logout"
+msgstr "Klart til å logge ut"
+
+#: logout.C:51
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr "De følgende applikasjoner inneholder data som ikke er lagret\n"
+"og som vil være forsvinne i din neste arbeidsperiode"
+
+#: logout.C:62
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr "De følgende applikasjoner kan ikke gjenopprettes i din neste arbeidsperiode,\n"
+"bare startes på nytt. Vær sikker på at de ikke inneholder ulagrede data."
+
+#: logout.C:73
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr "De følgende applikasjoner er ikke X11-klar og kan derfor ikke bli gjenopprettet\n"
+"i din neste arbeidsperiode. Vær sikker på at de ikke inneholder viktige ulagrede data"
+
+#: taskmgr.C:105
+msgid "Switch to"
+msgstr "Skift til"
+
+#: taskmgr.C:119
+msgid "Current session"
+msgstr "Nåværende arbeidsperiode"
+
