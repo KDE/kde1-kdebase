@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
-"POT-Creation-Date: 1997-11-13 18:31+0100\n"
+"POT-Creation-Date: 1997-12-14 18:07+0100\n"
 "PO-Revision-Date: 1997-10-29 20:15 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr "Vyprázdnit"
 msgid "Cancel"
 msgstr "Zru¹it"
 
-#: krootwm.C:109 krootwm.C:386
+#: krootwm.C:109 krootwm.C:406
 msgid "Folder"
 msgstr "Adresáø"
 
@@ -35,46 +35,46 @@ msgstr "Adresáø"
 msgid "ERROR: Template does not exist '%s'"
 msgstr "Chyba: ©ablona neexistuje '%s'"
 
-#: krootwm.C:160 krootwm.C:376 krootwm.C:384
+#: krootwm.C:160 krootwm.C:396 krootwm.C:404
 msgid "New"
 msgstr "Nový"
 
-#: krootwm.C:161
+#: krootwm.C:162
 msgid "Help on desktop"
 msgstr "Nápovìda pracovní plochy"
 
-#: krootwm.C:162
+#: krootwm.C:163
 msgid "Execute command"
 msgstr "Vykonej pøíkaz"
 
-#: krootwm.C:163
+#: krootwm.C:164
 msgid "Display properties"
 msgstr "Vlastnosti obrazovky"
 
-#: krootwm.C:164
+#: krootwm.C:165
 msgid "Refresh desktop"
 msgstr "Obnov pracovní plochu"
 
-#: krootwm.C:165
+#: krootwm.C:166
 msgid "Arrange icons"
 msgstr "Uspoøádej ikony"
 
-#: krootwm.C:167
+#: krootwm.C:168
 msgid "Lock screen"
 msgstr "Zablokuj obrazovku"
 
-#: krootwm.C:168
+#: krootwm.C:169
 msgid "Logout"
 msgstr "Odhlá¹ení"
 
-#: krootwm.C:406
+#: krootwm.C:426
 msgid "Could not create folder"
 msgstr "Není mo¾né vytvoøit adresáø"
 
-#: krootwm.C:439
+#: krootwm.C:459
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: krootwm.C:443
+#: krootwm.C:463
 msgid "Usage:"
 msgstr "Pou¾ití:"
