@@ -1,3 +1,9 @@
+kdebase (4:1.1-19990207-3) unstable; urgency=low
+
+  * new kdmrc handling
+
+ -- Stephan Kulow <coolo@kde.org>  Fri, 12 Feb 1999 11:03:56 +0100
+
 kdebase (4:1.1-19990207-2) unstable; urgency=low
 
   * followed the suggestion of Russel Cooker and splited kdebase
