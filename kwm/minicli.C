@@ -130,7 +130,6 @@ void execute( const char* cmd){
   {
       const char *p = cmd;
       QString tst;
-
       if ( strnicmp( p, "file:", 5 ) == 0 )
 	  p = p + 5;
       // Replace '~' with the user's home directory.
@@ -139,8 +138,8 @@ void execute( const char* cmd){
         p = tst.append( p ).replace( 0, 1, QDir::homeDirPath() ).data();
         cmd = p;
       }
-      bool isLocal = isLocalResource ( cmd );   // Am I locally available ?
-      bool isExec = isExecutable ( cmd );       // Am I locally executable ?
+      bool isLocal = isLocalResource ( p );   // Am I locally available ?
+      bool isExec = isExecutable ( p );       // Am I locally executable ?
       // Is this a non-executable local resource ?
       if ( !isExec && isLocal )
       {
