@@ -624,18 +624,23 @@ dnl this was AC_PROG_CC. I had to include it manualy, since I had to patch it
     GCC=
   fi
 
-  if test "$ac_use_debug_code" = "yes"; then
-    AC_PROG_CC_G
-    if test $ac_cv_prog_cc_g = yes; then
-      CFLAGS="-g"
-    fi
-  else
-    if test "$GCC" = "yes"; then
-      CFLAGS="-O2"
-      LDFLAGS="-s"
+  if test -z "$CFLAGS"; then
+    if test "$ac_use_debug_code" = "yes"; then
+      AC_PROG_CC_G
+      if test $ac_cv_prog_cc_g = yes; then
+        CFLAGS="-g"
+      fi
     else
-      CFLAGS=""
+      if test "$GCC" = "yes"; then
+        CFLAGS="-O2"
+      else
+        CFLAGS=""
+      fi
     fi
+  fi
+
+  if test -z "$LDLFLAGS" && test "$ac_use_debug_code" = "no" && test "$GCC" = "yes"; then
+     LDFLAGS="-s"
   fi
 
   if test "$GCC" = "yes"; then
@@ -693,22 +698,26 @@ dnl dependecies between AC_PROG_CPP and AC_PROG_CC (or is it automake?)
     GXX=
   fi
 
-  if test "$ac_use_debug_code" = "yes"; then
-    AC_PROG_CXX_G
-    if test $ac_cv_prog_cxx_g = yes; then
-      CXXFLAGS="-g"
-    fi
-  else
-    if test "$GXX" = "yes"; then
-       CXXFLAGS="-O2"
+  if test -z "$CXXFLAGS"; then 
+    if test "$ac_use_debug_code" = "yes"; then
+      AC_PROG_CXX_G
+      if test $ac_cv_prog_cxx_g = yes; then
+        CXXFLAGS="-g"
+      fi
     else
-       CXXFLAGS=""
+      if test "$GXX" = "yes"; then
+         CXXFLAGS="-O2"
+      else
+         CXXFLAGS=""
+      fi
     fi
+
+    if test "$GXX" = "yes"; then
+       CXXFLAGS="$CXXFLAGS -Wall"
+    fi
+
   fi
 
-  if test "$GXX" = "yes"; then
-     CXXFLAGS="$CXXFLAGS -Wall"
-  fi
 
 ])
 
