@@ -1,3 +1,8 @@
+First of all: this documentation is a little out-of-date, it was written
+when kioslave was first changed to be truely multiprotocol. But this was
+even before KDE-beta1, so some things might have changed since then.
+
+
 So this is the first beta-release of a kioslave using the new protocol-concept.
 It is meant to be used as a replacement for the kioslave that comes with kfm
 0.6.6 and higher.
