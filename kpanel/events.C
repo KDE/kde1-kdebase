@@ -13,12 +13,8 @@
 
 
 void kPanel::kwmInit(){
-  myTaskButton* b;
-  for (b = taskbar_buttons.first(); b; taskbar_buttons.next()){
-    taskbar->remove(b);
-    delete b;
-  }
-  taskbar_buttons.clear();
+  if (taskbar_buttons.count()>0)
+    restart();
 }
   
 
