@@ -20,14 +20,13 @@ post-install:
 		cp -R ${INSTALL_ROOT}/* /
 		rm -rf ${INSTALL_ROOT}
 
-# This is still imperfect, as it _still_ 
-# adds a null item to the plist.  *sigh* Some things don't change.
+# This should finally work somewhat decently now
 make-plist:
 		cd ${INSTALL_ROOT}/${PREFIX} && \
-			find ./ -type f|sed 's,^\./,,'|sort > $(PLIST)
+			find ./ -type f|sed 's,^\.//,,'|sort > $(PLIST)
 		cd ${INSTALL_ROOT}/${PREFIX} && \
-			find ./ -type l|sed 's,^\./,,'|sort >> $(PLIST)
+			find ./ -type l|sed 's,^\.//,,'|sort >> $(PLIST)
 		@echo "@exec /sbin/ldconfig -m %B" >> $(PLIST)
 		cd ${INSTALL_ROOT}/${PREFIX} && \
-			find ./ -type d|sed 's,^\./,@dirrm ,'|sort >> $(PLIST)
+			find ./ -type d|sed 's,^\.//,@dirrm ,'|sort -r>> $(PLIST)
 		@echo "@unexec /sbin/ldconfig -R" >> $(PLIST)
