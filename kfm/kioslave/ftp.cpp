@@ -478,34 +478,32 @@ int KProtocolFTP::OpenDir(KURL *url)
 
 KProtocolDirEntry *KProtocolFTP::ReadDir()
 {
-	char buffer[1024];
-	static KProtocolDirEntry de;
-
-	while(fgets(buffer,1024,dirfile) != NULL)
-	{
-               char *p_access, *p_junk, *p_owner, *p_group;
-               char *p_size, *p_date_1, *p_date_2, *p_date_3, *p_name;
-		if(p_access = strtok(buffer," "))
-		if(p_junk = strtok(NULL," "))
-		    if(p_owner = strtok(NULL," "))
-			if(p_group = strtok(NULL," "))
-			    if(p_size = strtok(NULL," "))
-				if(p_date_1 = strtok(NULL," "))
-				    if(p_date_2 = strtok(NULL," "))
-					if(p_date_3 = strtok(NULL," "))
-					    if(p_name = strtok(NULL," \r\n"))
-					    {
-						de.access	= p_access;
-						de.owner	= p_owner;
-						de.group	= p_group;
-						de.size		= atoi(p_size);
-						de.isdir	= p_access[0]=='d';
-						de.name		= p_name;
-						if(de.isdir) de.name += "/";
-						de.date.sprintf("%s %s %s",p_date_1, p_date_2, p_date_3);
-						return(&de);
+    char buffer[1024];
+    static KProtocolDirEntry de;
+    
+    while(fgets(buffer,1024,dirfile) != 0) {
+	char *p_access, *p_junk, *p_owner, *p_group;
+	char *p_size, *p_date_1, *p_date_2, *p_date_3, *p_name;
+	if ((p_access = strtok(buffer," ")) != 0)
+	    if ((p_junk = strtok(NULL," ")) != 0)
+		if ((p_owner = strtok(NULL," ")) != 0)
+		    if ((p_group = strtok(NULL," ")) != 0)
+			if ((p_size = strtok(NULL," ")) != 0)
+			    if ((p_date_1 = strtok(NULL," ")) != 0)
+				if ((p_date_2 = strtok(NULL," ")) != 0)
+				    if ((p_date_3 = strtok(NULL," ")) != 0)
+					if ((p_name = strtok(NULL," \r\n")) != 0) {
+					    de.access	= p_access;
+					    de.owner	= p_owner;
+					    de.group	= p_group;
+					    de.size	= atoi(p_size);
+					    de.isdir	= p_access[0]=='d';
+					    de.name	= p_name;
+					    if(de.isdir) de.name += "/";
+					    de.date.sprintf("%s %s %s",p_date_1, p_date_2, p_date_3);
+					    return(&de);
+					}
 					    }
-	}
 	return(NULL);
 }
 

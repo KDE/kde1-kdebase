@@ -1,4 +1,4 @@
-#ifndef lint
+#ifdef lint
 static char sccsid[] = "@(#)laser.c	3.3 95/09/26 xlockmore";
 #endif
 /*-

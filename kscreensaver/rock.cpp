@@ -1,4 +1,4 @@
-#ifndef lint
+#ifdef lint
 static char sccsid[] = "@(#)rock.c	3.3 95/09/24 xlockmore";
 #endif
 /*
@@ -89,7 +89,7 @@ static void
 rock_reset( Window win, arock *arocks)
 {
   arocks->real_size = MAX_WIDTH;
-  arocks->r = (RESOLUTION * 0.7) + (LRAND() % (30 * RESOLUTION));
+  arocks->r = (int)((RESOLUTION * 0.7) + (LRAND() % (30 * RESOLUTION)));
   arocks->theta = LRAND() % RESOLUTION;
   arocks->depth = MAX_DEPTH * DEPTH_SCALE;
   if (!mono && Scr[screen].npixels > 2)
@@ -128,15 +128,15 @@ rock_compute(arock *arocks)
   rockstruct *rp = &rocks[screen];
   double factor = depths[arocks->depth];
   arocks->size = (int) ((arocks->real_size * factor) + 0.5);
-  arocks->x = rp->midx + (cos_array[arocks->theta] * arocks->r * factor);
-  arocks->y = rp->midy + (sin_array[arocks->theta] * arocks->r * factor);
+  arocks->x = (int)(rp->midx + (cos_array[arocks->theta] * arocks->r * factor));
+  arocks->y = (int)(rp->midy + (sin_array[arocks->theta] * arocks->r * factor));
   if (rp->move_p) {
      double move_factor = (double)(MOVE_STYLE - (double)arocks->depth /
  			  (double)((MAX_DEPTH + 1) * (double)DEPTH_SCALE));
 
      /* move_factor is 0 when the rock is close, 1 when far */
-     arocks->x += (double)rp->dep_x * move_factor;
-     arocks->y += (double)rp->dep_y * move_factor;
+     arocks->x += (int)((double)rp->dep_x * move_factor);
+     arocks->y += (int)((double)rp->dep_y * move_factor);
   }
 }
 
@@ -197,13 +197,20 @@ init_pixmaps(Window win)
       bg_gc = XCreateGC (dsp, p, GCForeground, &gcv);
     }
     XFillRectangle(dsp, p, bg_gc, 0, 0, w, h);
-    points[0].x = i * 0.15; points[0].y = i * 0.85;
-    points[1].x = i * 0.00; points[1].y = i * 0.20;
-    points[2].x = i * 0.30; points[2].y = i * 0.00;
-    points[3].x = i * 0.40; points[3].y = i * 0.10;
-    points[4].x = i * 0.90; points[4].y = i * 0.10;
-    points[5].x = i * 1.00; points[5].y = i * 0.55;
-    points[6].x = i * 0.45; points[6].y = i * 1.00;
+    points[0].x = (short int)(i * 0.15); 
+    points[0].y = (short int)(i * 0.85);
+    points[1].x = (short int)(i * 0.00); 
+    points[1].y = (short int)(i * 0.20);
+    points[2].x = (short int)(i * 0.30); 
+    points[2].y = (short int)(i * 0.00);
+    points[3].x = (short int)(i * 0.40); 
+    points[3].y = (short int)(i * 0.10);
+    points[4].x = (short int)(i * 0.90); 
+    points[4].y = (short int)(i * 0.10);
+    points[5].x = (short int)(i * 1.00); 
+    points[5].y = (short int)(i * 0.55);
+    points[6].x = (short int)(i * 0.45); 
+    points[6].y = (short int)(i * 1.00);
     XFillPolygon(dsp, p, fg_gc, points, 7, Nonconvex, CoordModeOrigin);
   }
   XFreeGC(dsp, fg_gc);
@@ -214,7 +221,7 @@ void
 initrock(Window win)
 {
   rockstruct *rp = &rocks[screen];
-  int i;
+  unsigned int i;
   static int first = 1;
   XWindowAttributes xgwa;
 

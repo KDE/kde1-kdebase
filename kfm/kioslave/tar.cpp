@@ -153,49 +153,44 @@ KProtocolDirEntry *KProtocolTAR::ReadDir()
     int moredata = 1;
     char *readstr = "ok";		// to prevent breaking the loop at startup
     
-    do
+    do 
     {
 	int iomask = Slave.WaitIO( 1, 0 );
 	if( iomask & KSlave::IN || iomask == 0 )
 	    moredata = HandleRefill();
 	if( iomask & KSlave::OUT || !moredata )
 	{
-            char *p_access, *p_junk, *p_owner, *p_group, *p_date_4;
+            char *p_access, *p_owner, *p_group, *p_date_4;
             char *p_size, *p_date_1, *p_date_2, *p_date_3, *p_name;
-
+	    
 	    readstr = fgets(buffer,1024,dirfile);
-	    if( readstr )
-		if(p_access = strtok(buffer," "))
-		    if(p_owner = strtok(NULL,"/"))
-			if(p_group = strtok(NULL," "))
-			    if(p_size = strtok(NULL," "))
-				if(p_date_1 = strtok(NULL," "))
-				    if(p_date_2 = strtok(NULL," "))
-					if(p_date_3 = strtok(NULL," "))
-					    if(p_date_4 = strtok(NULL," "))
-						if(p_name = strtok(NULL," \r\n"))
-						    if(!strlen(dirpath) || strncmp(p_name,dirpath,strlen(dirpath)) == 0)
-						    {
-							if(strlen(dirpath) < strlen(p_name))
-							{
-							    p_name += strlen(dirpath);
-							    if(p_name[strlen(p_name)-1] == '/')
-								p_name[strlen(p_name)-1]=0;
-							    if(!strchr(p_name,'/'))
-							    {
-								de.access	= p_access;
-								de.owner	= p_owner;
-								de.group	= p_group;
-								de.size		= atoi(p_size);
-								de.isdir	= p_access[0]=='d';
-								de.name		= p_name;
-								if(de.isdir) de.name += "/";
-								de.date.sprintf("%s %s %s",p_date_1,p_date_2,p_date_4);
-								/* doesn't understand time */
-								return(&de);
-							    }
-							}
-						    }
+	    if( readstr && (p_access = strtok(buffer," ")) != 0 && (p_owner = strtok(NULL,"/")) != 0 &&
+		(p_group = strtok(NULL," ")) != 0 && (p_size = strtok(NULL," ")) != 0 &&
+		(p_date_1 = strtok(NULL," ")) != 0 && (p_date_2 = strtok(NULL," ")) != 0 &&
+		(p_date_3 = strtok(NULL," ")) != 0 && (p_date_4 = strtok(NULL," ")) != 0 &&
+		(p_name = strtok(NULL," \r\n")) != 0 &&
+		(!strlen(dirpath) || strncmp(p_name,dirpath,strlen(dirpath)) == 0))
+		{
+		    if (strlen(dirpath) < strlen(p_name))
+		    {
+			p_name += strlen(dirpath);
+			if(p_name[strlen(p_name)-1] == '/')
+			    p_name[strlen(p_name)-1]=0;
+			if(!strchr(p_name,'/'))
+			    {
+				de.access	= p_access;
+				de.owner	= p_owner;
+				de.group	= p_group;
+				de.size		= atoi(p_size);
+				de.isdir	= p_access[0]=='d';
+				de.name		= p_name;
+				if(de.isdir) de.name += "/";
+				de.date.sprintf("%s %s %s",p_date_1,p_date_2,p_date_4);
+				/* doesn't understand time */
+				return(&de);
+			    }
+		    }
+		}
 	    // when URL doesn't pass QC, give it to cachemanager (to be written)
 	}
     } while( readstr );
