@@ -1,11 +1,19 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: kmcsyssound\n"
 "POT-Creation-Date: 1998-05-06 20:59+0200\n"
 "Content-Type: text/plain; charset=\n"
-"Date: 1998-01-09 12:34:28+0100\n"
+"Date: 1998-05-09 00:15+0100\n"
 "From: Christian Czezatke <ceci@klapauzius>\n"
 "Xgettext-Options: -C -ktranslate\n"
 "Files: main.cpp syssound.cpp\n"
+"Project-Id-Version: kfind\n"
+"PO-Revision-Date: 1998-05-08 23:54+0100\n"
+"Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
+"Language-Team: German <kde-i18n@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: iso-8859-1\n"
 
 #: main.cpp:53
 msgid "&Sound"
@@ -73,27 +81,27 @@ msgstr ""
 
 #: syssound.cpp:163
 msgid "Window Iconify"
-msgstr ""
+msgstr "Fenster minimieren"
 
 #: syssound.cpp:164
 msgid "Window DeIconify"
-msgstr ""
+msgstr "Minimiertes Fenster wiederherstellen"
 
 #: syssound.cpp:165
 msgid "Window Maximize"
-msgstr ""
+msgstr "Fenster maximieren"
 
 #: syssound.cpp:166
 msgid "Window UnMaximize"
-msgstr ""
+msgstr "Maximiertes Fenster wiederherstellen"
 
 #: syssound.cpp:167
 msgid "Window Sticky"
-msgstr ""
+msgstr "Fenster angeheften - ein"
 
 #: syssound.cpp:168
 msgid "Window UnSticky"
-msgstr ""
+msgstr "Fenster angeheften - aus"
 
 #: syssound.cpp:169
 msgid "Window Trans New"

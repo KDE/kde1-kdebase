@@ -1,8 +1,15 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: kfind\n"
 "POT-Creation-Date: 1998-05-06 20:58+0200\n"
-"PO-Revision-Date: 1997-10-25 17:54 MET DST\n"
-"Last-Translator: Miroslav Flidr <flidr@kky.zcu.cz>\n"
+"PO-Revision-Date: 1998-05-08 23:54+0100\n"
+"Translator: Miroslav Flidr <flidr@kky.zcu.cz>\n"
+"Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
+"Language-Team: German <kde-i18n@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: iso-8859-1\n"
+
 
 #: kfdird.cpp:46
 msgid "Directories:"
@@ -41,9 +48,8 @@ msgid "&Select All"
 msgstr "&Alle auswählen"
 
 #: kfindtop.cpp:154
-#, fuzzy
 msgid "Unse&lect All"
-msgstr "&Alle auswählen"
+msgstr "&Keine auswählen"
 
 #: kfindtop.cpp:156
 msgid "&Invert Selection"
@@ -171,27 +177,27 @@ msgstr "Alle Dateien und Verzeichnisse"
 
 #: kftabdlg.cpp:233
 msgid "Files"
-msgstr ""
+msgstr "Dateien"
 
 #: kftabdlg.cpp:234
 msgid "Folders"
-msgstr ""
+msgstr "Ordner"
 
 #: kftabdlg.cpp:235
 msgid "Symbolic links"
-msgstr ""
+msgstr "Symbolische Links"
 
 #: kftabdlg.cpp:236
 msgid "Special files (sockets, device files...)"
-msgstr ""
+msgstr "Besondere Dateien (Sockets, Gerätedatein...)"
 
 #: kftabdlg.cpp:237
 msgid "Executable files"
-msgstr ""
+msgstr "Ausführbare Dateien"
 
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
-msgstr ""
+msgstr "SUID ausführbare Datein"
 
 #: kftabdlg.cpp:247
 msgid "At Least"
@@ -347,23 +353,3 @@ msgstr "Typ des Archivs konnte nicht ermittelt werden!"
 msgid "Error while creating child process!"
 msgstr "Fehler beim Erzeugen des Unterprozesses!"
 
-#~ msgid "Kfind &help"
-#~ msgstr "Kfind-&Hilfe"
-
-#~ msgid "About &Qt"
-#~ msgstr "Über &Qt"
-
-#~ msgid "(none)"
-#~ msgstr "(nichts)"
-
-#~ msgid "&Delete"
-#~ msgstr "&Löschen"
-
-#~ msgid "&Undo"
-#~ msgstr "&Rückgängig"
-
-#~ msgid "&About"
-#~ msgstr "Ü&ber..."
-
-#~ msgid "Information"
-#~ msgstr "Information"

@@ -387,12 +387,3 @@ msgstr "Standard"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "irgendein"
-
-#~ msgid "Window title font"
-#~ msgstr "Fenstertitel-Schrift"
-
-#~ msgid "kwmcom: communication with kwm failed\n"
-#~ msgstr "kwmcom: Die Kommunikation mit kwm schlug fehl\n"
-
-#~ msgid "Lock"
-#~ msgstr "Sperren"

@@ -245,27 +245,3 @@ msgstr "Persönlich:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Standard:"
-
-#~ msgid "Type:"
-#~ msgstr "Typ:"
-
-#~ msgid "Name:"
-#~ msgstr "Name:"
-
-#~ msgid ""
-#~ "KMenuedit 0.2.3\n"
-#~ "(C) by Christoph Neerfeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-#~ msgstr ""
-#~ "KMenuedit 0.2.3\n"
-#~ "(C) von Christoph Neerfeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-
-#~ msgid "Fvwm Command"
-#~ msgstr "Fvwm Kommando"
-
-#~ msgid "Fvwm"
-#~ msgstr "Fvwm"
-
-#~ msgid "Fvwm Command:"
-#~ msgstr "Fvwm Kommando:"

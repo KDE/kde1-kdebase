@@ -1,9 +1,14 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: kdehelp \n"
+"Project-Id-Version: klock \n"
 "POT-Creation-Date: 1998-05-06 20:58+0200\n"
-"PO-Revision-Date: 1997-12-28 14:57+01\n"
-"Last-Translator: Stephan Kulow <coolo@kde.org>\n"
+"PO-Revision-Date: 1998-05-09 00:03+0100\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
+"Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
+"Language-Team: German <kde-i18n@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: iso-8859-1\n"
 
 #: banner.cpp:62
 msgid "Banner"
@@ -144,35 +149,31 @@ msgstr "Tropfen"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
-msgstr ""
+msgstr "Bouboule"
 
 #: bouboule.cpp:1005
-#, fuzzy
 msgid "Setup KBouboule"
-msgstr "KFlame einstellen"
+msgstr "KBouboule einstellen"
 
 #: bouboule.cpp:1032
-#, fuzzy
 msgid "Number of points:"
-msgstr "Fledermäuse:"
+msgstr "Anzahl der Punkte:"
 
 #: bouboule.cpp:1046
-#, fuzzy
 msgid "Point size:"
-msgstr "Punkte"
+msgstr "Punktgröße"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr ""
+msgstr "Farbwechsel-Frequenz:"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
-msgstr ""
+msgstr "3D-Modus"
 
 #: bouboule.cpp:1223
-#, fuzzy
 msgid "About Bouboule"
-msgstr "Über Blob"
+msgstr "Über Bouboule"
 
 #: bouboule.cpp:1224
 msgid ""
@@ -182,6 +183,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
+"Bouboule v0.1 -- Tropfen von Kreisen, die sich verdrehen und ihre Größe ändern\n"
+"\n"
+"Copyright (c) 1996 von Jeremie PETIT\n"
+"\n"
+"Zu kscreensave portiert von Cedric Tefft"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -583,21 +589,19 @@ msgstr "Gescheitert"
 
 #: science.cpp:60
 msgid "Science"
-msgstr ""
+msgstr "Wissenschaft"
 
 #: science.cpp:386
-#, fuzzy
 msgid "Setup Science"
-msgstr "Klines einstellen"
+msgstr "Wissenschaft einstellen"
 
 #: science.cpp:413
 msgid "Intensity:"
-msgstr ""
+msgstr "Intensität:"
 
 #: science.cpp:544
-#, fuzzy
 msgid "About Science"
-msgstr "Über Klines"
+msgstr "Über Wissenschaft"
 
 #: science.cpp:545
 msgid ""
@@ -606,6 +610,10 @@ msgid ""
 "written by Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"
 msgstr ""
+"Wissenschaft Version 0.2beta\n"
+"\n"
+"geschrieben von Rene Beutler 1998\n"
+"rbeutler@g26.ethz.ch"
 
 #: slip.cpp:293
 msgid "Slip"
