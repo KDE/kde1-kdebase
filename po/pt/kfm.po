@@ -148,7 +148,7 @@ msgstr "Mostrar Barra de &Menu"
 
 #: kfmgui.cpp:426
 msgid "Show &Statusbar"
-msgstr "Mostrar Barra de &Status"
+msgstr "Mostrar Barra de E&stado"
 
 #: kfmgui.cpp:428
 msgid "Show &Toolbar"

@@ -204,11 +204,11 @@ msgstr "Mostrar &Localização"
 
 #: mainwidget.cpp:177
 msgid "Show Status&bar"
-msgstr "Mostrar &Barra de Status "
+msgstr "Mostrar Barra de E&stado"
 
 #: mainwidget.cpp:180
 msgid "&Save Options"
-msgstr "Gravar Opções"
+msgstr "Gravar &Opções"
 
 #: mainwidget.cpp:182
 msgid "KDE Help System\n"
