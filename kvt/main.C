@@ -1072,7 +1072,11 @@ void kVt::dimen_menu_activated( int item){
 //   if ( item == kvt_dimen)
 //     return;
   kvt_dimen = item;
-  kvt->ResizeToDimen(kvt_dimens[kvt_dimen].x, kvt_dimens[kvt_dimen].y);
+  //debug( "Resizing to %i, %i", kvt_dimens[item].x, kvt_dimens[item].y );
+  // Hmm. I don't know why y needs -1, and x doesn't. But it works,
+  // stty -a reports the correct size with -1, and not without.
+  // If you DO know, mail me: l.widdershoven@fz-juelich.de
+  kvt->ResizeToDimen(kvt_dimens[kvt_dimen].x, kvt_dimens[kvt_dimen].y-1);
 }
 
 void kVt::select_foreground_color(){
