@@ -1,12 +1,14 @@
 # KDE Config File
 [KDE Desktop Entry]
 SwallowExec=xbiff
-SwallowTitle=xbiff
-SwallowTitle[pl]=xbiff
-Name=xbiff
-Name[es]=xbiff
-Name[pl]=xbiff
-Name[sk]=xbiff
+SwallowTitle=X Biff
+SwallowTitle[pl]=X Biff
+SwallowTitle[no]=X Biff
+Name=X Biff
+Name[es]=X Biff
+Name[pl]=X Biff
+Name[sk]=X Biff
+Name[no]=X Biff
 Comment=Mail notification
 Comment[is_IS]=Forrit sem tilkynnir ný bréf
 Comment[es]=Notificador de correo
