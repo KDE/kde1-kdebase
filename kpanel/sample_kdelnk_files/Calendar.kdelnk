@@ -3,10 +3,12 @@
 Type=Application
 icon=whatever.xpm
 SwallowExec=xclock -bg grey76 
-SwallowTitle=xclock
-SwallowTitle[pl]=xclock
+SwallowTitle=X Clock
+SwallowTitle[no]=X Clock
+SwallowTitle[pl]=X Clock
 Exec=xcalendar
 Comment=Your personal secretary
+Comment[no]=Din personlige sekretær
 Comment[de]=Ihr persönlicher Sekretär
 Comment[fi]=Oma sihteerisi
 Comment[fr]=Votre secrétaire personnelle
