@@ -59,7 +59,7 @@ msgstr "Od&lepit"
 
 #: main.C:393
 msgid "Mo&ve"
-msgstr "Pøesu&nout"
+msgstr "Pøe&sunout"
 
 #: main.C:394
 msgid "Resi&ze"

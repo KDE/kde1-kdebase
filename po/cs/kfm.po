@@ -700,7 +700,7 @@ msgstr "Komentáø"
 
 #: kfmprops.cpp:1063
 msgid "Name ( in your language )"
-msgstr "Jmìno (ve va¹em jazyce)"
+msgstr "Jméno (ve va¹em jazyce)"
 
 #: kfmprops.cpp:1269
 msgid "Pattern ( example: *.html;*.HTML; )"
