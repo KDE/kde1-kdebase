@@ -90,52 +90,62 @@ KRootWidget::KRootWidget( QWidget *parent, const char *name ) : QWidget( parent,
     update();
 }
 
-void KRootWidget::setRootGridParameters(int _gridwidth ,int _gridheight){
+void KRootWidget::setRootGridParameters(int _gridwidth ,int _gridheight)
+{
+    oldgridwidth  = gridwidth;
+    oldgridheight = gridheight;
 
+    // better do some sanity checking ... -- Bernd
+    if(_gridwidth < 0  || _gridwidth > DEFAULT_GRID_MAX)
+        _gridwidth = DEFAULT_GRID_WIDTH;
+    if(_gridheight < 0  || gridheight > DEFAULT_GRID_MAX)
+        _gridheight = DEFAULT_GRID_HEIGHT;
 
-  oldgridwidth  = gridwidth;
-  oldgridheight = gridheight;
+    gridwidth     = _gridwidth;
+    gridheight    = _gridheight;
 
-  // better do some sanity checking ... -- Bernd
-  if(_gridwidth < 0  || _gridwidth > DEFAULT_GRID_MAX)
-    _gridwidth = DEFAULT_GRID_WIDTH;
-  if(_gridheight < 0  || gridheight > DEFAULT_GRID_MAX)
-    gridwidth = DEFAULT_GRID_HEIGHT;
-
-  gridwidth     = _gridwidth;
-  gridheight    = _gridheight;
-
-  if(gridwidth != oldgridwidth || gridheight != oldgridheight)
-    rearrangeIcons();
+    if(gridwidth != oldgridwidth || gridheight != oldgridheight)
+        rearrangeIcons();
 }
 
 void KRootWidget::setRootIconStyle(int newiconstyle)
 {
-  if(newiconstyle != iconstyle)
-  {
-    iconstyle = newiconstyle;
-    KRootIcon *icon;
-    for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
-      icon->update();
-  }
+    if(newiconstyle != iconstyle)
+    {
+        iconstyle = newiconstyle;
+        KRootIcon *icon;
+        for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
+            icon->update();
+    }
 }
 
 //CT 12Nov 1998
 void KRootWidget::setRootIconColors(QColor &fg, QColor &bg) {
-  if (fg != labelColor) labelColor = fg;
-  if (bg != iconBgColor) iconBgColor = bg;
-  KRootIcon *icon;
-  for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
-    icon->update();
+    bool changed = false; 
+    if (fg != labelColor) 
+    { 
+        changed = true;
+        labelColor = fg;
+    }
+    if (bg != iconBgColor) 
+    {
+        changed = true;
+        iconBgColor = bg;
+    }
+    if (!changed)
+        return;
+    KRootIcon *icon;
+    for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
+        icon->update();
 }
 //CT
 
 void KRootWidget::showHiddenFiles( bool show )
 {
-  if( show != showHidden ){
-    showHidden = show;
-    update(); 
-  }   
+    if( show != showHidden ){
+        showHidden = show;
+        update(); 
+    }   
 }
 
 /** Reads and applies configuration from config file */
