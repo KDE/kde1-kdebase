@@ -1,0 +1,535 @@
+# Danish translations for KDE Base, kikbd
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Erik Kjær Pedersen <erik@binghamton.edu>, 1999.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE BASE/kikbd\n"
+"POT-Creation-Date: 1998-11-28 01:10+0100\n"
+"PO-Revision-Date: 1999-01-30 01:10-0500\n"
+"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Language-Team: da <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"         
+
+#: kikbd.cpp:116
+msgid "KDE International Keyboard already started on this display."
+msgstr "KDE internationalt tastatur er allerede startet på denne skærm."
+
+#: kikbd.cpp:288
+#, c-format
+msgid ""
+"X codes \"%s\" file does not exist.\n"
+"Using X default codes."
+msgstr ""
+"X-kodefilen \"%s\" findes ikke.\n"
+"Bruger standard X-koder."
+
+#: kikbd.cpp:313
+#, c-format
+msgid ""
+"Keyboard map \"%s\" does not exists.\n"
+"Skipping this map."
+msgstr ""
+"Tastaturkortet \"%s\" findes ikke.\n"
+"Springer over dette kort."
+
+#: kikbd.cpp:330
+msgid "Setup"
+msgstr "Opsætning"
+
+#: kikbd.cpp:345 kikbd.cpp:358
+#, c-format
+msgid "Can not remove %s from Modifiers.\n"
+msgstr "Kan ikke fjerne %s fra \"Modifiers\".\n"
+
+#: kikbd.cpp:348
+#, c-format
+msgid "Can not add %s to Modifier number 3.\n"
+msgstr "Kan ikke tilføje %s til \"Modifier\" nr. 3.\n"
+
+#: kikbd.cpp:370
+#, c-format
+msgid ""
+"Can not set Mode Switch as %s for keyboard %s.\n"
+"Alt symbols disabled"
+msgstr ""
+"Kan ikke sætte Mode Switch som %s for tastatur %s.\n"
+"\"Alt\" symboler ude af kraft"
+
+#: kikbd.cpp:392
+msgid ""
+"Cannot remove Caps Lock from Modifiers.\n"
+"Caps Lock Emulation disabled"
+msgstr ""
+"Kan ikke fjerne Caps Lock fra \"Modifier\".\n"
+"Caps Lock-emulering er ude af kraft"
+
+#: kikbd.cpp:1003
+msgid "Exiting International Keyboard"
+msgstr "Afslutter Internationalt tastatur"
+
+#: kikbd.cpp:1004
+msgid ""
+"You're about to quit the \"International Keyboard\" tool.\n"
+" Do you want to have it autostarted at your next login?"
+msgstr ""
+"Du er ved at afslutte \"Internationalt tastatur\"-værktøjet.\n"
+"Vil du at det automatisk skal starte ved næste indlogning?"
+
+#: keymap.cpp:181
+msgid "KeyMap: cannot allocate memory"
+msgstr "Tastaturkort: kan ikke tildele hukommelse"
+
+#: keymap.cpp:228
+#, c-format
+msgid ""
+"Can not find symbol \"%s\".\n"
+"May be your default X codes does not match.\n"
+"You can preset X codes in \"Advanced\" section\n"
+"of configuration program."
+msgstr ""
+"Kan ikke finde symbol \"%s\".\n"
+"Måske passer dine standard X-koder ikke.\n"
+"Du kan forhåndssætte X-koder i \"Avanceret\"-sektionen\n"
+"af indstillingsprogrammet."
+
+#: keymap.cpp:233
+#, c-format
+msgid "KeyMap: can not find symbol \"%s\"."
+msgstr "Tastaturkort: kan ikke finde symbol \"%s\"."
+
+#: keymap.cpp:241
+#, c-format
+msgid "KeyMap: do not understand key code \"%s\"."
+msgstr "Tastaturkort: kan ikke forstå tastkode \"%s\"."
+
+#: keymap.cpp:247
+#, c-format
+msgid "KeyMap: key code \"%s\" go out of range."
+msgstr "Tastaturkart: tastkode \"%s\" går udenfor gyldigt område."
+
+#: kikbdconf.cpp:97
+msgid "Global"
+msgstr "Global"
+
+#: kikbdconf.cpp:97
+msgid "Window"
+msgstr "Vindue"
+
+#: kikbdconf.cpp:97
+msgid "Class"
+msgstr "Klasse"
+
+#: kikbdconf.cpp:100 kikbdconf.cpp:112
+msgid "(None)"
+msgstr "(Ingen)"
+
+#: kikbdconf.cpp:101 kikbdconf.cpp:113
+msgid "Right Alt"
+msgstr "Højre Alt"
+
+#: kikbdconf.cpp:102 kikbdconf.cpp:114
+msgid "Right Control"
+msgstr "Højre Control"
+
+#: kikbdconf.cpp:103
+msgid "Rights (Alt+Shift)"
+msgstr "Højre (Alt+Shift)"
+
+#: kikbdconf.cpp:104
+msgid "Rights (Ctrl+Alt)"
+msgstr "Højre (Ctrl+Alt)"
+
+#: kikbdconf.cpp:105
+msgid "Rights (Ctrl+Shift)"
+msgstr "Højre (Ctrl+Shift)"
+
+#: kikbdconf.cpp:106
+msgid "Lefts  (Alt+Shift)"
+msgstr "Venstre (Alt+Shift)"
+
+#: kikbdconf.cpp:107
+msgid "Lefts  (Ctrl+Alt)"
+msgstr "Venstre (Ctrl+Alt)"
+
+#: kikbdconf.cpp:108
+msgid "Lefts  (Ctrl+Shift)"
+msgstr "Venstre (Ctrl+Shift)"
+
+#: kikbdconf.cpp:109
+msgid "Both Shift's (Shift+Shift)"
+msgstr "Begge Shift'erne (Shift+Shift)"
+
+#: kikbdconf.cpp:115
+msgid "Right Meta"
+msgstr "Højre Meta"
+
+#: kikbdconf.cpp:116
+msgid "Left  Alt"
+msgstr "Venstre Alt"
+
+#: kikbdconf.cpp:117
+msgid "Left  Control"
+msgstr "Venstre Control"
+
+#: kikbdconf.cpp:118
+msgid "Left  Meta"
+msgstr "Venstre Meta"
+
+#: kikbdconf.cpp:121
+msgid "Top Left"
+msgstr "Venstre top"
+
+#: kikbdconf.cpp:122
+msgid "Top Right"
+msgstr "Højre top"
+
+#: kikbdconf.cpp:123
+msgid "Bottom Left"
+msgstr "Venstre bunn"
+
+#: kikbdconf.cpp:124
+msgid "Bottom Right"
+msgstr "Højre bund"
+
+#: kikbdconf.cpp:151
+msgid "X default codes"
+msgstr "X-standardkoder"
+
+#: kikbdconf.cpp:209
+#, c-format
+msgid ""
+"%s\n"
+"Do you want to configure now?"
+msgstr ""
+"%s\n"
+"Vil du indstille nu?"
+
+#: kikbdconf.cpp:217
+msgid ""
+"You're using \"International Keyboard\" for the first time.\n"
+"I installed a number of default settings."
+msgstr ""
+"Du bruger \"Internationalt tastatur\" for første gang.\n"
+"Jeg installerede en række standardindstillinger."
+
+#: kikbdconf.cpp:359
+msgid "unknown"
+msgstr "ukendt"
+
+#: kikbdconf.cpp:363 kikbdconf.cpp:436
+msgid "default"
+msgstr "standard"
+
+#: kikbdconf.cpp:389
+msgid "Author:  Not specified"
+msgstr "Forfatter: Ikke opgivet"
+
+#: kikbdconf.cpp:391
+msgid "Author"
+msgstr "Forfatter"
+
+#: kikbdconf.cpp:397
+msgid "Description:  "
+msgstr "Beskrivelse: "
+
+#: kikbdconf.cpp:400
+msgid "Source:  "
+msgstr "Kilde:  "
+
+#: kikbdconf.cpp:401
+msgid "no file"
+msgstr "ingen fil"
+
+#: kikbdconf.cpp:402
+msgid "user file"
+msgstr "brugerfil"
+
+#: kikbdconf.cpp:403
+msgid "system file"
+msgstr "systemfil"
+
+#: kikbdconf.cpp:408
+msgid "Statistic:  "
+msgstr "Statistik: "
+
+#: kikbdconf.cpp:411
+msgid "symbols"
+msgstr "symboler"
+
+#: kikbdconf.cpp:414
+msgid "codes"
+msgstr "koder"
+
+#: kikbdconf.cpp:417
+msgid "alternative symbols"
+msgstr "alternative symboler"
+
+#: kikbdconf.cpp:429
+msgid "Language"
+msgstr "Sprog"
+
+#: kikbdconf.cpp:433
+msgid "Charset"
+msgstr "Tegnsæt"
+
+#: kikbdconf.cpp:479
+msgid "International keyboard ERROR"
+msgstr "Internationalt tastatur-FEJL"
+
+#: kikbdconf.cpp:495
+msgid "International keyboard warning"
+msgstr "Internationalt tastatur-advarsel"
+
+#: kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
+msgid "International keyboard question"
+msgstr "Internationalt tastatur-spørgsmål"
+
+#: kikbdconf.cpp:509
+msgid "Configure"
+msgstr "Indstil"
+
+#: kikbdconf.cpp:519
+msgid ""
+"\n"
+"Do you want to continue?"
+msgstr ""
+"\n"
+"Vil du fortsætte?"
+
+#: widgets.cpp:107
+msgid "List of active keyboard maps"
+msgstr "Liste med aktive tastaturkort"
+
+#: widgets.cpp:117
+msgid "&Add"
+msgstr "&Tilføj"
+
+#: widgets.cpp:118
+msgid "Adding new keyboard map"
+msgstr "Tilføj nyt tastaturkort"
+
+#: widgets.cpp:122
+msgid "Remove selected keyboard map"
+msgstr "Fjern valgte tastaturkort"
+
+#: widgets.cpp:127
+msgid "U&p"
+msgstr "&Op"
+
+#: widgets.cpp:127
+msgid "Up selected keyboard map"
+msgstr "Valgte tastaturkort flyttes op"
+
+#: widgets.cpp:131
+msgid "D&own"
+msgstr "&Ned"
+
+#: widgets.cpp:131
+msgid "Down selected keyboard map"
+msgstr "Valgte tastaturkort flyttes ned"
+
+#: widgets.cpp:135
+msgid "&Info"
+msgstr "&Info"
+
+#: widgets.cpp:136
+msgid "Display information for selected keyboard map"
+msgstr "Vis information for valgt tastaturkort"
+
+#: widgets.cpp:145
+msgid "Use &hot list"
+msgstr "Brug &hurtigliste"
+
+#: widgets.cpp:146
+msgid ""
+"Use only default and last active keyboard maps to switching from keyboard"
+msgstr "Brug kun standard og sidste aktive tastaturkort for at ændre tastatur"
+
+#: widgets.cpp:215
+msgid "Adding Keyboard"
+msgstr "Tilføjer tastatur"
+
+#: widgets.cpp:216
+msgid "There is no more keyboard maps"
+msgstr "Der findes ikke flere tastaturkort"
+
+#: widgets.cpp:249
+msgid "Keyboard map information"
+msgstr "Tarstaturkort-information"
+
+#: widgets.cpp:283
+msgid "Add Keyboard"
+msgstr "Tilføj tastatur"
+
+#: widgets.cpp:287
+msgid "Available keyboard maps"
+msgstr "Tilgængelige tastaturkort"
+
+#: widgets.cpp:394
+msgid "Keyboard maps"
+msgstr "Tastaturkort"
+
+#: widgets.cpp:405
+msgid "Switch and Alt Switch"
+msgstr "Bryder og Alt bryder"
+
+#: widgets.cpp:410
+msgid "Key(s) to switch between keyboard maps"
+msgstr "Tast(er) der skifter mellem tastaturkort"
+
+#: widgets.cpp:416
+msgid "Key to activate Alternate symbols in current keyboard map"
+msgstr "Tast der aktiverer alternative symboler i gældende tastaturkort"
+
+#: widgets.cpp:429
+msgid "&Beep"
+msgstr "&Bip"
+
+#: widgets.cpp:430
+msgid "Beep when ever keyboard mapping changed"
+msgstr "Bip når tastaturkortet ændres"
+
+#: widgets.cpp:433
+msgid "Ad&vanced"
+msgstr "A&vanceret"
+
+#: widgets.cpp:433
+msgid "Advanced options"
+msgstr "Avancerede valg"
+
+#: widgets.cpp:450
+msgid "Advanced"
+msgstr "Avanceret"
+
+#: widgets.cpp:466
+msgid "&Emulate Caps Lock"
+msgstr "&Emuler CapsLock"
+
+#: widgets.cpp:467
+msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
+msgstr ""
+"Emuler XServer-CapsLock. Behøves i visse sprog for at de skal være korrekte"
+
+#: widgets.cpp:473
+msgid "&World Menu"
+msgstr "&Verdensmenu"
+
+#: widgets.cpp:474
+msgid "Show menu in any window by holding Switch keys"
+msgstr "Vis menu i hvilket som helst vindue ved at holde Switch tasterne nede"
+
+#: widgets.cpp:481
+msgid "&Save Classes"
+msgstr "&Gem klasser"
+
+#: widgets.cpp:482
+msgid "Save relations between window classes and keyboard maps on exit"
+msgstr "Gem relationer mellom vinduesklasser og tastaturkort ved afslutning."
+
+#: widgets.cpp:488
+msgid "Define X codes"
+msgstr "Definer X-koder"
+
+#: widgets.cpp:491
+msgid "Input"
+msgstr "Data ind"
+
+#: widgets.cpp:495
+msgid "Standard behavior. Keyboard map active for all windows"
+msgstr "Standard opførsel. Tastaturkort er aktivt for alle vinduer"
+
+#: widgets.cpp:499
+msgid "Extended behavior. Each windows remember it's own keyboard map"
+msgstr "Udvidet opførsel. Hvert vindue husker sit eget tastatur"
+
+#: widgets.cpp:503
+msgid "Special behavior. Each windows class remember it's own keyboard map"
+msgstr "Speciel opførsel. Hver vinduesklasse husker sit eget tastaturkort"
+
+#: widgets.cpp:551
+msgid "Button Colors"
+msgstr "Knapfarver"
+
+#: widgets.cpp:561
+msgid "Foreground"
+msgstr "Forgrund"
+
+#: widgets.cpp:562
+msgid "Color of the text label"
+msgstr "Farve på tekst mærkater"
+
+#: widgets.cpp:566
+msgid "With Caps Lock"
+msgstr "Med CapsLock"
+
+#: widgets.cpp:567
+msgid "Background when Emulated Caps Lock active"
+msgstr "Bakgrund når emuleret CapsLock er aktiv"
+
+#: widgets.cpp:573
+msgid "With Alternate"
+msgstr "Med alternativ"
+
+#: widgets.cpp:574
+msgid "Background when Alternate switch is pressed"
+msgstr "Baggrund når alternativ bryder er trykket ned"
+
+#: widgets.cpp:583
+msgid "Button Font"
+msgstr "Knapskrift"
+
+#: widgets.cpp:591
+msgid "&Customize Font"
+msgstr "&Brugerdefineret skrift"
+
+#: widgets.cpp:592
+msgid "Customize Font for text label or use global settings"
+msgstr ""
+"Brugerdefiner skrift for tekst mærkat eller brug globale indstillinger"
+
+#: widgets.cpp:596
+msgid "C&hange Font"
+msgstr "&Ændre skrift"
+
+#: widgets.cpp:641
+msgid "&Autostart"
+msgstr "&Autostart"
+
+#: widgets.cpp:642
+msgid "Start up automatically"
+msgstr "Start op automatisk"
+
+#: widgets.cpp:648
+msgid "&Docked"
+msgstr "&Dykket"
+
+#: widgets.cpp:649
+msgid "Dock into special area in the panel"
+msgstr "Dyk ned i specielt område i panelet"
+
+#: widgets.cpp:658
+msgid "Place"
+msgstr "Placer"
+
+#: widgets.cpp:665
+msgid "Place in selected corner"
+msgstr "Placer i udvalgt hjørne"
+
+#: kcmikbd.cpp:64
+msgid "&General"
+msgstr "&Generel"
+
+#: kcmikbd.cpp:70
+msgid "&Style"
+msgstr "&Stil"
+
+#: kcmikbd.cpp:76
+msgid "Start&Up"
+msgstr "&Opstart"
+
+#: kcmikbd.cpp:80
+msgid "International Keyboard"
+msgstr "Internationalt tastatur"

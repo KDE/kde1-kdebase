@@ -1,0 +1,215 @@
+# Danish Norwegian translations for KDE Base, kcmkeys
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Erik Kjær Pedersen <erik@binghamton.edu>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE BASE/kcmkeys\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
+"PO-Revision-Date: 1999-01-30 15:15+0200\n"
+"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Language-Team: da <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:72
+msgid "&Standard shortcuts"
+msgstr "&Standard genvejstaster"
+
+#: main.cpp:80
+msgid "&Global shortcuts"
+msgstr "&Globale genvejstaster"
+
+#: main.cpp:88
+msgid "usage: kcmkeys [-init | {standard,global}]\n"
+msgstr "brug: kcmkeys [-init | {standard,global}]\n"
+
+#: main.cpp:132
+msgid "Key binding settings"
+msgstr "Tastbindingsindstillinger"
+
+#: keyconfig.cpp:106
+msgid "Current scheme"
+msgstr "Nuværende valg"
+
+#: keyconfig.cpp:108
+msgid "KDE default"
+msgstr "KDE standard"
+
+#: keyconfig.cpp:115
+msgid "&Key scheme"
+msgstr "&Tastevalg"
+
+#: keyconfig.cpp:126
+msgid "&Add ..."
+msgstr "&Tilføj ..."
+
+#: keyconfig.cpp:148
+msgid "&Save changes"
+msgstr "&Gem ændringer"
+
+#: keyconfig.cpp:211
+msgid "Error removing scheme"
+msgstr "Fejl ved at fjerne valg"
+
+#: keyconfig.cpp:212
+msgid ""
+"This key scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the key scheme is stored."
+msgstr ""
+"Dette tastevalg kunne ikke fjernes.\n"
+"Måske har du ikke tilladelse til at ændre filsystemet\n"
+"hvor tastevalget er gemt."
+
+#: keyconfig.cpp:343
+msgid "Naming conflict"
+msgstr "Navnekonflikt"
+
+#: keyconfig.cpp:344
+msgid ""
+"Please choose a unique name for the new key\n"
+"scheme. The one you entered already appears\n"
+"in the key scheme list."
+msgstr ""
+"Vælg venligst et entydigt navn for det nye tastevalg.\n"
+"Det du allerede valgte findes allerede i tastevalglisten."
+
+#: savescm.cpp:18
+msgid "Add a key scheme"
+msgstr "Tilføj et tastvalg"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new key scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The keys currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"Ind&skriv navn på nyt tastevalg\n"
+"som skal lægges til din personlige liste.\n"
+"\n"
+"Tasterne som nu bruges i forhåndsvisningen vil\n"
+"blive kopieret til dette valg til at begynde med."
+
+#: ../../kwm/kwmbindings.cpp:1
+msgid "Task manager"
+msgstr "Opgavebehandler"
+
+#: ../../kwm/kwmbindings.cpp:2
+msgid "Kill window mode"
+msgstr "Dræb vindue-modus"
+
+#: ../../kwm/kwmbindings.cpp:3
+msgid "Execute command"
+msgstr "Kør kommando"
+
+#: ../../kwm/kwmbindings.cpp:4
+msgid "Window operations menu"
+msgstr "Vindueoperation-menu"
+
+#: ../../kwm/kwmbindings.cpp:5
+msgid "Pop-up system menu"
+msgstr "Flydende systemmenu"
+
+#: ../../kwm/kwmbindings.cpp:7
+msgid "Window raise"
+msgstr "Læg vindue øverst"
+
+#: ../../kwm/kwmbindings.cpp:8
+msgid "Window lower"
+msgstr "Læg vindue underst"
+
+#: ../../kwm/kwmbindings.cpp:9
+msgid "Window close"
+msgstr "Luk vindue"
+
+#: ../../kwm/kwmbindings.cpp:10
+msgid "Window iconify"
+msgstr "Ikoniser vindu"
+
+#: ../../kwm/kwmbindings.cpp:11
+msgid "Window resize"
+msgstr "Ændre vinduesstørrelse"
+
+#: ../../kwm/kwmbindings.cpp:12
+msgid "Window move"
+msgstr "Flyt vindue"
+
+#: ../../kwm/kwmbindings.cpp:13
+msgid "Window toggle sticky"
+msgstr "Slå klæbrigt vindue til/fra"
+
+#: ../../kwm/kwmbindings.cpp:15
+msgid "Switch to desktop 1"
+msgstr "Flyt til arbejdsplads 1"
+
+#: ../../kwm/kwmbindings.cpp:16
+msgid "Switch to desktop 2"
+msgstr "Flyt til arbejdsplads 2"
+
+#: ../../kwm/kwmbindings.cpp:17
+msgid "Switch to desktop 3"
+msgstr "Flyt til arbejdsplads 3"
+
+#: ../../kwm/kwmbindings.cpp:18
+msgid "Switch to desktop 4"
+msgstr "Flyt til arbejdsplads 4"
+
+#: ../../kwm/kwmbindings.cpp:19
+msgid "Switch to desktop 5"
+msgstr "Flyt til arbejdsplads 5"
+
+#: ../../kwm/kwmbindings.cpp:20
+msgid "Switch to desktop 6"
+msgstr "Flyt til arbejdsplads 6"
+
+#: ../../kwm/kwmbindings.cpp:21
+msgid "Switch to desktop 7"
+msgstr "Flyt til arbejdsplads 7"
+
+#: ../../kwm/kwmbindings.cpp:22
+msgid "Switch to desktop 8"
+msgstr "Flyt til arbejdsplads 8"
+
+#: ../../kwm/kwmbindings.cpp:24
+msgid "Switch one desktop to the right"
+msgstr "Flyt en arbejdsplads til højre"
+
+#: ../../kwm/kwmbindings.cpp:25
+msgid "Switch one desktop to the left"
+msgstr "Flyt en arbejdsplads til venstre"
+
+#: ../../kwm/kwmbindings.cpp:26
+msgid "Switch one desktop up"
+msgstr "Flyt en arbejdsplads op"
+
+#: ../../kwm/kwmbindings.cpp:27
+msgid "Switch one desktop down"
+msgstr "Flyt en arbejdsplads ned"
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Ny"
+
+#: stdbindings.cpp:8
+msgid "Next"
+msgstr "Næste"
+
+#: stdbindings.cpp:9
+msgid "Prior"
+msgstr "Forrige"
+
+#: stdbindings.cpp:14
+msgid "Find"
+msgstr "Find"
+
+#: stdbindings.cpp:17
+msgid "Home"
+msgstr "Hjem"
+
+#: stdbindings.cpp:18
+msgid "End"
+msgstr "Slut"

@@ -1,0 +1,74 @@
+# Danish translations for KDE Base, kbgndwm
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Erik Kjær Pedersen <erik@binghamton.edu>, 1999.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE BASE/kbgndwm\n"
+"POT-Creation-Date: 1998-11-28 01:10+0100\n"
+"PO-Revision-Date: 1999-01-30 01:10-0500\n"
+"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Language-Team: da <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kbgndwm.cpp:45
+msgid "Display Settings"
+msgstr "Skærmindstillinger"
+
+#: kbgndwm.cpp:46
+msgid "Background Settings"
+msgstr "Baggrundsindstillinger"
+
+#: kbgndwm.cpp:48
+msgid "Common Background"
+msgstr "Fælles baggrund"
+
+#: kbgndwm.cpp:50
+msgid "Undock"
+msgstr "Udyk"
+
+#: kbgndwm.cpp:58
+msgid "Tiled"
+msgstr "Fliselagt"
+
+#: kbgndwm.cpp:59
+msgid "Mirrored"
+msgstr "Spejlet"
+
+#: kbgndwm.cpp:60
+msgid "CenterTiled"
+msgstr "Fliselagt centreret"
+
+#: kbgndwm.cpp:61
+msgid "Centred"
+msgstr "Centreret"
+
+#: kbgndwm.cpp:62
+msgid "CentredBrick"
+msgstr "Centreret mursten"
+
+#: kbgndwm.cpp:63
+msgid "CentredWarp"
+msgstr "Centreret forvrængt"
+
+#: kbgndwm.cpp:64
+msgid "CentredMaxpect"
+msgstr "Centreret makspekt"
+
+#: kbgndwm.cpp:65
+msgid "SymmetricalTiled"
+msgstr "Symmetrisk fliselagt"
+
+#: kbgndwm.cpp:66
+msgid "SymmetricalMirrored"
+msgstr "Symmetrisk spejlet"
+
+#: kbgndwm.cpp:67
+msgid "Scaled"
+msgstr "Skaleret"
+
+#: bg.cpp:235 bg.cpp:238
+msgid "No wallpaper"
+msgstr "Intet tapet"

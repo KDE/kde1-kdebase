@@ -1,0 +1,129 @@
+# Danish translations for KDE Base, kpager
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Erik Kjær Pedersen <erik@binghamton.edu>, 1999.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE BASE/kpager\n"
+"POT-Creation-Date: 1998-11-28 01:10+0100\n"
+"PO-Revision-Date: 1999-01-30 01:10-0500\n"
+"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Language-Team: da <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"             
+
+#: kpager.cpp:72
+msgid "Toggle Global Desktop"
+msgstr "Globalt arbejdsplads til/fra"
+
+#: kpager.cpp:74
+msgid "Toggle Menubar"
+msgstr "Menubjælke til/fra"
+
+#: kpager.cpp:77
+msgid "Move Right"
+msgstr "Flyt til højre"
+
+#: kpager.cpp:79
+msgid "Move Left"
+msgstr "Flyt til venstre"
+
+#: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
+msgid "Hide &Global Desktop"
+msgstr "Skjul &global arbejdsplads"
+
+#: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
+msgid "Show &Global Desktop"
+msgstr "Vis &global arbejdsplads"
+
+#: kpager.cpp:97 kpager.cpp:380
+msgid "Hide &Menubar"
+msgstr "Skjul &menubjælke"
+
+#: kpager.cpp:101 kpager.cpp:386
+msgid "&2 Rows"
+msgstr "&2 rækker"
+
+#: kpager.cpp:104
+msgid "&One Click change Desktop"
+msgstr "&Et klik for at skifte arbejdsplads"
+
+#: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
+msgid "Hide Desktop &Names"
+msgstr "Skjul arbejdsplads&navne"
+
+#: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
+msgid "Show Desktop &Names"
+msgstr "Vis arbejdsplads&navne"
+
+#: kpager.cpp:115 kpager.cpp:402
+msgid "Plain"
+msgstr "Enkel"
+
+#: kpager.cpp:118 kpager.cpp:404
+msgid "Icon"
+msgstr "Ikon"
+
+#: kpager.cpp:121 kpager.cpp:406
+msgid "Pixmap"
+msgstr "Pixmap"
+
+#: kpager.cpp:125 kpager.cpp:412
+msgid "Draw Mode"
+msgstr "Tegnemodus"
+
+#: kpager.cpp:129
+#, c-format
+msgid ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"KPager's homepage is at : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n"
+"This is free software, and you are welcome to redistribute it\n"
+"under certain conditions\n"
+msgstr ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"KPagers hjemmeside er på : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager kommer med ABSOLUT INGEN GARANTI; for detaljer, se COPYING-filen\n"
+"Dette er gratis programvare, og du er velkommen til at videredistribuere\n"
+"den under visse vilkår\n"
+
+#: kpager.cpp:382
+msgid "Show &Menubar"
+msgstr "Vis &menubjælke"
+
+#: kpager.cpp:389
+msgid "One Click change Desktop"
+msgstr "Et klik for at skifte arbejdsplads"
+
+#: kpager.cpp:446
+msgid "&Maximize"
+msgstr "&Maksimer"
+
+#: kpager.cpp:447
+msgid "&Iconify"
+msgstr "&Ikoniser"
+
+#: kpager.cpp:449
+msgid "&UnSticky"
+msgstr "&Uklæbrig"
+
+#: kpager.cpp:451
+msgid "&Sticky"
+msgstr "&Klæbrig"
+
+#: kpager.cpp:453
+msgid "&To Desktop"
+msgstr "&Til arbejdsplads"
