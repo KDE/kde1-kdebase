@@ -421,7 +421,7 @@ void KFontExplorer::display_example(const QFont& font){
   else
     actual_weight_label_data->setText(klocale->translate("Normal"));
  
- QFont::CharSet charset=selFont.charSet();
+  if (info.italic())
     actual_style_label_data->setText(klocale->translate("italic"));
   else
     actual_style_label_data->setText(klocale->translate("roman"));

@@ -42,10 +42,20 @@
 char DOCS_PATH[256];
 char PICS_PATH[256];
 
-void setup(){
 
 
-	QTabDialog *mainWindow = new QTabDialog( 0, 0, TRUE );
+int main( int argc, char *argv[] ){
+
+
+	KApplication a( argc, argv, "kfontmanager" );
+	a.setFont(QFont("Helvetica",12,QFont::Normal),TRUE);
+
+	char *kdedir = a.kdedir().data();
+
+	sprintf( PICS_PATH, "%s/share/apps/kfontmanager/pics", kdedir );
+	sprintf( DOCS_PATH, "%s/share/doc/HTML/kfontmanager", kdedir );
+
+	QTabDialog* mainWindow = new QTabDialog( 0, 0, TRUE );
 
 	mainWindow->setCaption( i18n("KDE Font Manager") );
 	mainWindow->setCancelButton(i18n("Cancel"));
@@ -59,24 +69,14 @@ void setup(){
 	mainWindow->addTab( &manager, i18n("KDE Fonts") );
 	mainWindow->addTab( &explorer,i18n("Font Explorer"));
 	mainWindow->addTab( &list, i18n("Raw X11 Font List") );
-	
+   
+        a.enableSessionManagement(true);
+        a.setWmCommand(argv[0]);      
+   
+        a.setTopWidget(mainWindow);
        	mainWindow->resize( 430, 500 );
 	mainWindow->exec();
-}
-
-int main( int argc, char *argv[] ){
-
-
-	KApplication a( argc, argv, "kfontmanager" );
-	a.setFont(QFont("Helvetica",12,QFont::Normal),TRUE);
-
-	char *kdedir = a.kdedir().data();
-
-	sprintf( PICS_PATH, "%s/share/apps/kfontmanager/pics", kdedir );
-	sprintf( DOCS_PATH, "%s/share/doc/HTML/kfontmanager", kdedir );
-	
-	setup();
-	return 1;
+   	return 1;
 }
 
 
