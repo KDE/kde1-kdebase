@@ -12,6 +12,7 @@
 
 #include <kwm.h>
 #include <kprocess.h>
+#include <kstring.h>
 #include "kbgndwm.h"
 
 #include "kbgndwm.moc"
@@ -77,7 +78,10 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
 	   this, SLOT( slotDropEvent( KDNDDropZone *) ) );
 
   applyDesktop( current );
-  KWM::sendKWMCommand( "kbgwm_change" );
+
+  QString command;
+  command << "kbgwm_change_" << current;
+  KWM::sendKWMCommand( command.data() );
 }
 
 
@@ -171,7 +175,10 @@ void KBGndManager::commandReceived( QString com )
 	current = KWM::currentDesktop() - 1;
 
       applyDesktop( current );
-      KWM::sendKWMCommand( "kbgwm_change" );
+
+      QString command;
+      command << "kbgwm_change_" << current;
+      KWM::sendKWMCommand( command.data() );
     }
 }
 

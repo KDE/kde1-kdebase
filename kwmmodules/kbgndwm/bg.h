@@ -80,7 +80,6 @@ protected:
   bool    applied;
 
   bool    hasPm;
-
   bool bUseWallpaper;
 
   bool randomMode;

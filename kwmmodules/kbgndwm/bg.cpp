@@ -71,7 +71,10 @@ void KBackground::setImmediately( const char *_wallpaper, int mode )
 
   hasPm = true;
   apply();
-  KWM::sendKWMCommand( "kbgwm_change" );
+
+  QString command;
+  command << "kbgwm_change_" << desk;
+  KWM::sendKWMCommand( command.data() );
 }
 
 
@@ -268,7 +271,10 @@ void KBackground::doRandomize(bool fromTimer)
 	 ( !oneDesktopMode && desk == ( KWM::currentDesktop() - 1 ) ) )
       {
 	apply();
-	KWM::sendKWMCommand( "kbgwm_change" );
+
+	QString command;
+	command << "kbgwm_change_" << desk;
+	KWM::sendKWMCommand( command.data() );
 	return;
       }
   }
