@@ -29,6 +29,8 @@
 #include <kcharsets.h>
 #include <kconfigbase.h>
 #include <ksimpleconfig.h>
+#include <kwm.h>
+#include <kcolordlg.h>
 
 #include <X11/Xlib.h>
 #include <X11/X.h>
@@ -37,9 +39,6 @@
 #include <X11/Xutil.h>
 #include <X11/Xos.h>
 
-
-#include "kcolordlg.h"
-#include "kfontdialog.h"
 #include "fontchooser.h"
 #include "kresourceman.h"
 
@@ -54,6 +53,73 @@ FontUseItem::FontUseItem( const char *n, QFont default_fnt, bool f = false )
 	_text = n;
 	_default = _font = default_fnt;
 	fixed = f;
+}
+
+QString FontUseItem::fontString( QFont rFont )
+{
+	QString aValue;
+	QFontInfo fi( rFont );
+	
+	aValue.sprintf( "-*-" );
+	aValue += fi.family();
+	
+	if ( fi.bold() )
+		aValue += "-bold";
+	else
+		aValue += "-medium";
+	
+	if ( fi.italic() )
+		aValue += "-i";
+	else
+		aValue += "-r";
+		
+	//aValue += "-normal-*-*-";
+	//	
+	//QString s;
+	//s.sprintf( "%d-*-*-*-*-", fi.pointSize()*10 );
+	//aValue += s;
+	
+	aValue += "-normal-*-";
+		
+	QString s;
+	s.sprintf( "%d-*-*-*-*-*-", fi.pointSize() );
+	aValue += s;
+	
+	
+	switch ( fi.charSet() ) {
+		case QFont::Latin1:
+			aValue += "iso8859-1";
+			break;
+		case QFont::AnyCharSet:
+		default:
+			aValue += "-*";
+			break;
+		case QFont::Latin2:
+			aValue += "iso8859-2";
+			break;
+		case QFont::Latin3:
+			aValue += "iso8859-3";
+			break;
+		case QFont::Latin4:
+			aValue += "iso8859-4";
+			break;
+		case QFont::Latin5:
+			aValue += "iso8859-5";
+			break;
+		case QFont::Latin6:
+			aValue += "iso8859-6";
+			break;
+		case QFont::Latin7:
+			aValue += "iso8859-7";
+			break;
+		case QFont::Latin8:
+			aValue += "iso8859-8";
+			break;
+		case QFont::Latin9:
+			aValue += "iso8859-9";
+			break;
+	}
+	return aValue;
 }
 
 void FontUseItem::setRC( const char *group, const char *key, const char *rc )
@@ -81,7 +147,9 @@ void FontUseItem::readFont()
 	}
 	
 	config->setGroup( _rcgroup.data() );
-	_font = config->readFontEntry( _rckey.data(), new QFont( _font ) );
+	
+	QFont tmpFnt( _font );
+	_font = config->readFontEntry( _rckey.data(), &tmpFnt );
 }
 
 void FontUseItem::writeFont()
@@ -97,12 +165,13 @@ void FontUseItem::writeFont()
 	}
 	
 	config->setGroup( _rcgroup.data() );
-	if ( _rcfile.isEmpty() )
+	if ( _rcfile.isEmpty() ) {
 		 config->writeEntry( _rckey.data(), _font, true, true );
-	else {
+	} else {
 		config->writeEntry( _rckey.data(), _font );
-		config->sync();
 	}
+	
+	 config->sync();
 	
 	//delete config;
 }
@@ -189,17 +258,17 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	/*item = new FontUseItem( i18n("Window title font"),
 				QFont( "helvetica", 12, QFont::Bold ) );
 	item->setRC( "WM", "titleFont" );
-	fontUseList.append( item );
+	fontUseList.append( item );*/
 				
 	item = new FontUseItem( i18n("Panel button font"),
 				QFont( "helvetica", 12 )  );
-	item->setRC( "Fonts", "DesktopButtonFont", "kpanelrc" );
+	item->setRC( "kpanel", "DesktopButtonFont", "kpanelrc" );
 	fontUseList.append( item );
 	
 	item = new FontUseItem( i18n("Panel clock font"),
 				QFont( "times", 14, QFont::Normal, true ) );
-	item->setRC( "Fonts", "DateFont", "kpanelrc" );
-	fontUseList.append( item );*/
+	item->setRC( "kpanel", "DateFont", "kpanelrc" );
+	fontUseList.append( item );
 	
 	for ( i = 0; i < (int) fontUseList.count(); i++ )
 		fontUseList.at( i )->readFont();
@@ -412,6 +481,8 @@ void KGeneral::apply( bool  )
 	XSetErrorHandler(defaultHandler);
 	
 	XFree((void *) rootwins);
+	
+	KWM::sendKWMCommand("kpanel:restart");
 	
 	changed=false;
 }

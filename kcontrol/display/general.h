@@ -31,6 +31,7 @@ class FontUseItem
 {
 public:
     FontUseItem( const char *n, QFont default_fnt, bool fixed = false );
+	QString fontString( QFont rFont );
 	void setRC( const char *group, const char *key, const char *rc = 0 );
 	void readFont();
 	void writeFont();
