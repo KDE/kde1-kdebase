@@ -84,7 +84,7 @@ msgstr "Ukáza» &strom"
 
 #: kfmgui.cpp:356
 msgid "&Visual Schnauzer"
-msgstr "Inteligentné zaro&vnávanie"
+msgstr "Zobrazova» ob&rázky"
 
 #: kfmgui.cpp:358
 msgid "&HTML View"
