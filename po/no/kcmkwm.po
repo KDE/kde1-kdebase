@@ -75,7 +75,8 @@ msgstr ""
 #: titlebar.cpp:569
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "Høyre side av tittellinjen er full... kobler ut 'minimerings'-knappen\n"
+msgstr ""
+"Høyre side av tittellinjen er full... kobler ut 'minimerings'-knappen\n"
 
 #: titlebar.cpp:926
 msgid "Titlebar appearance"
