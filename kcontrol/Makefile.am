@@ -1,4 +1,4 @@
-SUBDIRS = samba bell display input kwm info kdm kcontrol kpanel locale syssound sample
+SUBDIRS = samba bell display input kwm info kdm kcontrol kpanel locale syssound keys sample
 
 messages:
 	@set fnord $(MAKEFLAGS); amf=$$2; \
