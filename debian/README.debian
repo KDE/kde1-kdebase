@@ -11,6 +11,13 @@ and I took over, when he orphaned them.
 Stephan Kulow <coolo@kde.org> Mon, 09 Mar 1998 23:14:46 +0100
 
 ---
+DEBIAN CHANGES
+==============
+kvt has been set to 4755 because if it's not setuid root there is
+a security issue that is opened up where the tty is world writable.
+
+
+
 HOW TO START KDE
 ================
 

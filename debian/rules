@@ -79,6 +79,7 @@ binary-arch: checkroot build
 	chown root.shadow debian/tmp/usr/bin/kcheckpass
 	chmod 2755 debian/tmp/usr/bin/kcheckpass
 	chmod 4755 debian/tmp/usr/bin/konsole_grantpty
+	chmod 4775 debian/tmp/usr/bin/kvt
 	dh_suidregister
 	dh_installdeb
 	dh_shlibdeps
