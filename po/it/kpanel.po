@@ -21,7 +21,7 @@ msgstr "&Proprietà"
 
 #: kpanel.C:330
 msgid "Go!"
-msgstr "Vai!"
+msgstr "Va!"
 
 #: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
@@ -49,7 +49,7 @@ msgstr "Mostra Pannello"
 
 #: kpanel.C:1100
 msgid "Iconify other &windows"
-msgstr ""
+msgstr "Riduci a icona le altre finestre"
 
 #: kpanel.C:1237
 msgid "No comment available"
@@ -61,7 +61,7 @@ msgstr "Lista Finestre"
 
 #: kpanel.C:1254 props.C:196
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Navigazione rapida all'interno del filesystem"
 
 #                 
 #: props.C:166
@@ -115,7 +115,7 @@ msgstr "Riavvia pannello"
 
 #: props.C:193
 msgid "Disk Navigator"
-msgstr ""
+msgstr "Disk Navigator"
 
 #: props.C:201
 msgid "Panel"
@@ -138,10 +138,12 @@ msgid ""
 "\n"
 "%b %d"
 msgstr ""
+"\n"
+"%b %d"
 
 #: tools.C:908
 msgid "KDiskNavigator"
-msgstr ""
+msgstr "KDiskNavigator"
 
 #: events.C:855
 msgid "Cannot put this as button onto the panel!"
@@ -149,52 +151,52 @@ msgstr "Impossibile mettere questo come pulsante sul pannello!"
 
 #: pfilemenu.C:425
 msgid "(empty folder)"
-msgstr ""
+msgstr "(cartella vuota)"
 
 #: pfilemenu.C:480
 msgid "Open Folder"
-msgstr ""
+msgstr "(Apri Cartella)"
 
 #: pfilemenu.C:491
 msgid "(Too Many Files)"
-msgstr ""
+msgstr "(Troppi File)"
 
 #: pfilemenu.C:500
 msgid "(Access Denied)"
-msgstr ""
+msgstr "(Accesso Negato)"
 
 #: pfilemenu.C:503
 msgid "(Unreadable)"
-msgstr ""
+msgstr "(Illeggibile)"
 
 #: pfilemenu.C:752
 msgid "Shared:"
-msgstr ""
+msgstr "Condivisi:"
 
 #: pfilemenu.C:754
 msgid "Entries shared among all users"
-msgstr ""
+msgstr "Voci condivise da tutti gil utenti"
 
 #: pfilemenu.C:773
 msgid "Personal:"
-msgstr ""
+msgstr "Personali:"
 
 #: pfilemenu.C:775
 msgid "Personal entries"
-msgstr ""
+msgstr "Voci personali"
 
 #: pfilemenu.C:793
 msgid "Recent:"
-msgstr ""
+msgstr "Recenti:"
 
 #: pfilemenu.C:795
 msgid "Recent entries"
-msgstr ""
+msgstr "Voci recenti"
 
 #: pfilemenu.C:841
 msgid "Options..."
-msgstr ""
+msgstr "Opzioni..."
 
 #: pfilemenu.C:843
 msgid "Customize Disk Navigator"
-msgstr ""
+msgstr "Personalizza il Disk Navigator"

@@ -72,11 +72,11 @@ msgstr "Windows"
 
 #: kdm-appear.cpp:128
 msgid "Language"
-msgstr ""
+msgstr "Lingua"
 
 #: kdm-appear.cpp:131
 msgid "Language:"
-msgstr ""
+msgstr "Lingua:"
 
 #: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
@@ -162,7 +162,7 @@ msgstr "Standard"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr ""
+msgstr "Anteprima"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
@@ -306,7 +306,7 @@ msgstr "Sessioni disponibili"
 
 #: klangcombo.cpp:133
 msgid "without name!"
-msgstr ""
+msgstr "senza nome!"
 
 #~ msgid "&Fonts"
 #~ msgstr "&Font"

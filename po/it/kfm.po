@@ -673,13 +673,13 @@ msgid "Last Modified"
 msgstr "Ultima Modifica"
 
 #: kfmprops.cpp:379
-#, fuzzy, c-format
+#,  c-format
 msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
 msgstr ""
-"Impossibile cancellare la directory\n"
-"%s"
+"Impossibile rinominare il file o la directory\n"
+"%s\n"
 
 #: kfmprops.cpp:429
 msgid "Access permissions"
@@ -691,7 +691,7 @@ msgid ""
 "Entries"
 msgstr ""
 "Mostra\n"
-"Campi"
+"Voci"
 
 #: kfmprops.cpp:437
 msgid "Read"
@@ -703,7 +703,7 @@ msgid ""
 "Entries"
 msgstr ""
 "Scrivi\n"
-"Campi"
+"Voci"
 
 #: kfmprops.cpp:444
 msgid "Write"
@@ -1401,12 +1401,12 @@ msgstr "Tutti i &cookie"
 
 #: kcookiewin.cpp:161
 msgid "&Accept"
-msgstr ""
+msgstr "&Accetta"
 
 #: kcookiewin.cpp:166
-#, fuzzy
+#
 msgid "&Reject"
-msgstr "&Seleziona"
+msgstr "&Rifiuta"
 
 #: popup.cpp:69
 #, c-format

@@ -19,7 +19,7 @@ msgstr "Vuoi spengere o riavviare il computer?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr ""
+msgstr "(Inserisci Password di Root)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
@@ -31,7 +31,7 @@ msgstr "Riavvia il Computer"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr ""
+msgstr "Riavvia Server X"
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -59,24 +59,24 @@ msgstr "Arresta sistema..."
 
 #: kgreeter.cpp:570
 msgid "Logins not available right now."
-msgstr ""
+msgstr "Login non disponibili al momento."
 
 #: kgreeter.cpp:611
 msgid "login_getcapstr() failed."
-msgstr ""
+msgstr "login_getcapstr() fallito."
 
 #: kgreeter.cpp:665 kgreeter.cpp:692
 msgid "Sorry -- your account has expired."
-msgstr ""
+msgstr "Spiacente -- il tuo account è scaduto."
 
 #: kgreeter.cpp:670 kgreeter.cpp:697
 #, c-format
 msgid "Warning: your account expires on %s"
-msgstr ""
+msgstr "Attenzione: il tuo account scadrà il %s"
 
 #: kgreeter.cpp:724
 msgid "Home directory not available"
-msgstr ""
+msgstr "Directory home non disponibile"
 
 #~ msgid "Exit kdm"
 #~ msgstr "Esci da kdm"
