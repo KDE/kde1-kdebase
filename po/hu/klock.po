@@ -1,0 +1,220 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-08-26 12:45+0200\n"
+"PO-Revision-Date: 1997-11-13 12:20+0100\n"
+"Last-Translator: John Zero <johnzero@telnet.hu>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: banner.cpp:56
+msgid "Banner"
+msgstr "Logo"
+
+#: banner.cpp:80
+msgid "Font"
+msgstr "Font"
+
+#: banner.cpp:83
+msgid "Family:"
+msgstr "Család:"
+
+#: banner.cpp:99
+msgid "Size:"
+msgstr "Méret:"
+
+#: banner.cpp:116 blankscrn.cpp:65
+msgid "Color:"
+msgstr "Szín:"
+
+#: banner.cpp:126
+msgid "Bold"
+msgstr "Félkövér"
+
+#: banner.cpp:131
+msgid "Italic"
+msgstr "Dõlt"
+
+#: banner.cpp:136 polygon.cpp:101
+msgid "Speed:"
+msgstr "Sebesség:"
+
+#: banner.cpp:146
+msgid "Message:"
+msgstr "Szöveg:"
+
+#: banner.cpp:161 polygon.cpp:117
+msgid "About"
+msgstr "A programról"
+
+#: banner.cpp:165 banner.cpp:317 blankscrn.cpp:81 polygon.cpp:121
+#: polygon.cpp:213
+msgid "Ok"
+msgstr ""
+
+#: banner.cpp:169 blankscrn.cpp:85 polygon.cpp:125
+msgid "Cancel"
+msgstr "Mégsem"
+
+#: banner.cpp:315
+msgid "About Banner"
+msgstr "A Logo-ról"
+
+#: banner.cpp:316
+msgid ""
+"Banner Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+
+#: banner.cpp:419
+msgid "KDE is great"
+msgstr "KDE világlegjobb!"
+
+#: bat.cpp:457
+msgid "Bat"
+msgstr "Denevérek"
+
+#: blankscrn.cpp:49
+msgid "Blank Screen"
+msgstr "Feketedoboz, belülrõl"
+
+#: blankscrn.cpp:63
+msgid "Setup kblankscrn"
+msgstr "Beállítások"
+
+#: blob.cpp:559
+msgid "Blobs"
+msgstr "Blob-ok"
+
+#: flame.cpp:303
+msgid "Flame"
+msgstr "Lángok"
+
+#: forest.cpp:200
+msgid "Forest"
+msgstr "Erdõ"
+
+#: hop.cpp:221
+msgid "Hop"
+msgstr "Ugrás"
+
+#: laser.cpp:327
+msgid "Laser"
+msgstr "Lézer"
+
+#: lines.cpp:110
+msgid "Lines"
+msgstr "Vonalak"
+
+#: lissie.cpp:234
+msgid "Lissie"
+msgstr "Lassie"
+
+#: main.cpp:263
+msgid "Shadow Passwords"
+msgstr "Shadow password-ök"
+
+#: main.cpp:264
+msgid ""
+"Your system uses shadow passwords!\n"
+"Please contact your system administrator."
+msgstr ""
+"A rendszered shadow password-öket\n"
+"használd, lépj kapcsolatba a rendszergazdával."
+
+#: main.cpp:420
+#, c-format
+msgid ""
+"Usage: %s -install|-setup|-test|-desc|-preview wid\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+msgstr ""
+"Használat: %s -install|-setup|-test|-desc|-preview wid\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+
+#: main.cpp:423
+msgid ""
+"  -corners xxxx     Placing cursor in corner performs action:\n"
+"                     x = i  no action (ignore)\n"
+"                     x = s  save screen\n"
+"                     x = l  lock screen\n"
+"                    order: top-left, top-right, bottom-left, bottom-right\n"
+"  -delay num        Amount of idle time before screen saver\n"
+"                     starts  (default 10min)\n"
+"  -desc             Print the screen saver's description to stdout\n"
+"  -install          Install screen saver\n"
+"  -lock             Require password to stop screen saver\n"
+"  -nice num         Run with specified nice value\n"
+"\n"
+"  -preview wid      Run in the specified XWindow\n"
+"  -setup            Setup screen saver\n"
+"  -test             Invoke the screen saver immediately\n"
+msgstr ""
+"  -corners xxxx     Megadja a teendõt, ha az egér kurzor a képernyõ"
+"                    sarkába ér:\n"
+"                     x = i  semmi akció (ignorálja)\n"
+"                     x = s  képernyõ mentés\n"
+"                     x = l  képernyõ zárás\n"
+"                    sorrend: bal fenti, jobb fenti, bal alsó, jobb alsó\n"
+"  -delay num        Mennyi idõ múlva induljon el a képernyõvédõ\n"
+"                     (az alapértelmezés 10 perc)\n"
+"  -desc             Kiiratja a képernyõvédõ leírását az stdout-ra\n"
+"  -install          A képernyõvédõt beinstallálja\n"
+"  -lock             Kérjen jelszót a képmentés megszakításakor\n"
+"  -nice num         A megadott nice (prioritás) értékkel fusson\n"
+"\n"
+"  -preview wid      A megadott wid (ablak ID) ablakban fusson\n"
+"  -setup            Képernyõvédõ beállítása\n"
+"  -test             A képernyõvédõ azonnali beindítása\n"
+
+#: morph3d.cpp:936
+msgid "Morph3D (GL)"
+msgstr ""
+
+#: polygon.cpp:58
+msgid "Polygons"
+msgstr "Poligonok"
+
+#: polygon.cpp:79
+msgid "Setup kpolygon"
+msgstr "Beállítás"
+
+#: polygon.cpp:81
+msgid "Length:"
+msgstr "Hossz:"
+
+#: polygon.cpp:91
+msgid "Vertices:"
+msgstr "Pontok száma:"
+
+#: polygon.cpp:209
+msgid "About Polygon"
+msgstr "A Poligon-ról"
+
+#: polygon.cpp:210
+msgid ""
+"Polygon Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+
+#: pyro.cpp:433
+msgid "Pyro"
+msgstr "Pirománia"
+
+#: rock.cpp:429
+msgid "Rock"
+msgstr "Kõ"
+
+#: slip.cpp:287
+msgid "Slip"
+msgstr "Slippy"
+
+#: swarm.cpp:252
+msgid "Swarm"
+msgstr ""
+
