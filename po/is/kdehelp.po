@@ -284,7 +284,9 @@ msgstr ""
 "Höfundarréttur 1997 Martin Jones <mjones@kde.org>\n"
 "\n"
 "Þetta forrit fellur undir \"GNU General Public License\" (GPL).\n"
-"Enginn tekur neina ábyrgð á gæðum KDEHelp svo fremi sem lög leyfa."
+"Enginn tekur neina ábyrgð á gæðum KDEHelp svo fremi sem lög leyfa.\n"
+"\n"
+"Þýðing: Logi Ragnarsson <logir@imf.au.dk>"
 
 #: mainwidget.cpp:224
 msgid "&Goto"

@@ -216,7 +216,9 @@ msgstr ""
 "Lars.Hoss@munich.netsurf.de\n"
 "\n"
 "Nú í höndum David Faure\n"
-"faure@kde.org"
+"faure@kde.org\n"
+"\n"
+"Þýðing: Logi Ragnarsson <logir@imf.au.dk>"
 
 #: kfmgui.cpp:434
 msgid ""

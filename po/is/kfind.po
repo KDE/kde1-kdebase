@@ -75,7 +75,9 @@ msgstr ""
 "Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "\n"
 "Sérstakar þakkir fær Stephan Kulow\n"
-"<coolo@kde.org>"
+"<coolo@kde.org>\n"
+"\n"
+"Þýðing: Logi Ragnarsson <logir@imf.au.dk>"
 
 #: kfindtop.cpp:199
 msgid "Start Search"

@@ -35,7 +35,9 @@ msgstr ""
 "(hoelzer@physik.uni-wuerzburg.de)\n"
 "\n"
 "Þakkir fá:\n"
-"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones.\n"
+"\n"
+"Þýðing: Logi Ragnarsson <logir@hi.is>"
 
 #: mainwidget.cpp:44
 msgid "KDE Version: "
