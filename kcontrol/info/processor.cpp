@@ -13,6 +13,8 @@
 #include "processor_sgi.cpp"
 #elif __FreeBSD__
 #include "processor_fbsd.cpp"
+#elif hpux
+#include "processor_hpux.cpp"
 #else
 
 // Default for unsupportet systems

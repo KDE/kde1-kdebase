@@ -81,6 +81,8 @@ QString format(unsigned long value)
 #include "memory_sgi.cpp"
 #elif __FreeBSD__
 #include "memory_fbsd.cpp"
+#elif hpux
+#include "memory_hpux.cpp"
 #else
 
 // Default for unsupported systems
