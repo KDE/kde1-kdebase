@@ -1,2 +1,2 @@
 #!/bin/sh
-kvt -e kfmsu2
+konsole -e kfmsu2
