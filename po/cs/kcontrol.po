@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol 1.0\n"
 "POT-Creation-Date: 1999-01-27 01:14+0100\n"
-"PO-Revision-Date: 1998-10-24 17:33 CEST\n"
+"PO-Revision-Date: 1999-02-23 10:13+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -44,9 +44,8 @@ msgstr ""
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 
 #: mainwidget.cpp:44
-#, fuzzy
 msgid "KDE Version: "
-msgstr "Verze:"
+msgstr "Verze KDE:"
 
 #: mainwidget.cpp:52
 msgid "User: "
@@ -71,6 +70,3 @@ msgstr "Verze:"
 #: mainwidget.cpp:88
 msgid "Machine: "
 msgstr "Stroj:"
-
-#~ msgid "System:"
-#~ msgstr "Systém:"
