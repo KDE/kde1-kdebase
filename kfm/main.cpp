@@ -20,6 +20,8 @@
 #include <dirent.h>
 #include <signal.h>
 #include <sys/wait.h>
+#include <sys/signal.h>
+#include <sys/stat.h>
 
 void autostart();
 void testDir();
