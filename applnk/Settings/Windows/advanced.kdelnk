@@ -1,0 +1,8 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcmkwm advanced
+Icon=winprops.xpm
+Type=Application
+DocPath=kcontrol/kcmkwm/kwm-3.html
+Comment=Advanced window properties
+Name=Advanced
