@@ -147,7 +147,7 @@ msgid ""
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
 "As seguintes aplicações não poderão ser restauradas na sua próxima sessão,\n"
-"apenas reinicializadas, certifique-se de que não contêm dados importantes "
+"apenas reiniciadas, certifique-se de que não contêm dados importantes "
 "para gravar"
 
 #: logout.C:74

@@ -99,11 +99,11 @@ msgstr "Adicionar ou remover aplicações ao menu"
 
 #: events.C:834 props.C:189
 msgid "Restart"
-msgstr "Reinicializar"
+msgstr "Reiniciar"
 
 #: props.C:191
 msgid "Restart panel"
-msgstr "Reinicializar painel"
+msgstr "Reiniciar painel"
 
 #: props.C:194
 msgid "Disk Navigator"

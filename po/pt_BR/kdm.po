@@ -7,7 +7,7 @@ msgstr ""
 
 #: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
-msgstr "Desligar ou reinicializar?"
+msgstr "Desligar ou reiniciar?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
@@ -19,7 +19,7 @@ msgstr "Desligar"
 
 #: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
-msgstr "Desligar e reinicializar"
+msgstr "Desligar e reiniciar"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"

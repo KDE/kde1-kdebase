@@ -95,7 +95,7 @@ msgstr "Dicas no Menu"
 
 #: options.cpp:62
 msgid "Show &Menu Tooltips"
-msgstr "Mostrar Tooltips nos &Menus"
+msgstr "Mostrar Dicas nos &Menus"
 
 #: options.cpp:84
 msgid "De&lay:"

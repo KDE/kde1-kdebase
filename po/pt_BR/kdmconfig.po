@@ -298,7 +298,7 @@ msgstr "Desligar"
 
 #: kdm-sess.cpp:70
 msgid "Restart"
-msgstr "Reinicializar"
+msgstr "Reiniciar"
 
 #: kdm-sess.cpp:77
 msgid "Session types"
