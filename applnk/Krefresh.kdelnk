@@ -2,13 +2,13 @@
 Name=Refresh Desktop
 Name[de]=Desktop neuzeichnen
 Name[nl]=Buroblad verversen
-Name[pl]=Od¶wierz desktop
+Name[pl]=Od¶wie¿ desktop
 BinaryPattern=
 Protocols=
 Comment=Update desktop icons
 Comment[de]=Zeichnet alle Elemente auf dem Desktop neu
 Comment[nl]=Ververs alle pictogrammen op het buroblad
-Comment[pl]=Od¶wierz wszystkie ikony le¿±ce na desktopie.
+Comment[pl]=Od¶wie¿ wszystkie ikony le¿±ce na desktopie.
 Exec=kfmclient refreshDesktop
 Icon=kfm_refresh.xpm
 TerminalOptions=
