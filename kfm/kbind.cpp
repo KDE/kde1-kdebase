@@ -1777,7 +1777,7 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
     if ( config == 0L )
     {
 	QString tmp;
-	sprintf( "%s\n%s", i18n( "Could not access" ), _url );
+	tmp.sprintf( "%s\n%s", i18n( "Could not access" ), _url );
 	QMessageBox::message( i18n( "KFM Error" ), tmp );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
@@ -1940,7 +1940,7 @@ bool KDELnkMimeType::runBinding( const char *_url, const char *_binding )
     if ( config == 0L )
     {
 	QString tmp;
-	sprintf( "%s\n%s", i18n( "Could not access" ), _url );
+	tmp.sprintf( "%s\n%s", i18n( "Could not access" ), _url );
 	QMessageBox::message( i18n( "KFM Error" ), tmp );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
