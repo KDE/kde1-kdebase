@@ -8,7 +8,7 @@ msgstr ""
 
 #: main.C:220
 msgid "_add_character"
-msgstr "Füge Zeichen zur Wortklasse hinzu"
+msgstr "Zeichen zur Wortklasse hinzufügen"
 
 #: main.C:224
 msgid "_choose colormode"
@@ -96,7 +96,7 @@ msgstr "Menüleiste sichtbar"
 
 #: main.C:403 main.C:605
 msgid "Secure &keyboard"
-msgstr "Sperre Tastatur"
+msgstr "Tastatur sperren"
 
 #: main.C:405
 msgid "Scroll&bar"
@@ -120,7 +120,7 @@ msgstr "Terminal..."
 
 #: main.C:411
 msgid "Save &Options"
-msgstr "Sichere Einstellungen"
+msgstr "Einstellungen sichern"
 
 #: main.C:420
 msgid "&About..."
@@ -144,7 +144,7 @@ msgstr "Sichtbar"
 
 #: main.C:601
 msgid "Unsecure &keyboard"
-msgstr "Entsperre Tastatur"
+msgstr "Tastatur entsperren"
 
 #: main.C:740
 msgid "Hint"
