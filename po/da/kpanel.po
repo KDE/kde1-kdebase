@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kpanel\n"
-"POT-Creation-Date: 1999-04-12 01:17+0200\n"
+"POT-Creation-Date: 1999-04-22 01:24+0200\n"
 "PO-Revision-Date: 1999-02-16 12:35+0100\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
@@ -13,47 +13,47 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kpanel.C:292
+#: kpanel.C:295
 msgid "&Move"
 msgstr "&Flyt"
 
-#: kpanel.C:295
+#: kpanel.C:298
 msgid "&Properties"
 msgstr "&Indstillinger"
 
-#: kpanel.C:338
+#: kpanel.C:341
 msgid "Go!"
 msgstr "Gå!"
 
-#: kpanel.C:415
+#: kpanel.C:418
 msgid "No info available"
 msgstr "Ingen tilgængelig information"
 
-#: kpanel.C:454 props.C:207 props.C:208
+#: kpanel.C:457 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Log af"
 
-#: kpanel.C:462 props.C:206
+#: kpanel.C:465 props.C:206
 msgid "Lock screen"
 msgstr "Lås skærm"
 
-#: kpanel.C:471 kpanel.C:480
+#: kpanel.C:474 kpanel.C:483
 msgid "Hide the panel"
 msgstr "Gem Panel"
 
-#: kpanel.C:490 kpanel.C:502
+#: kpanel.C:493 kpanel.C:505
 msgid "Show the panel"
 msgstr "Vis Panel"
 
-#: kpanel.C:1066
+#: kpanel.C:1069
 msgid "Iconify other &windows"
 msgstr "Minimer andre &vinduer"
 
-#: kpanel.C:1214 tools.C:910
+#: kpanel.C:1217 tools.C:910
 msgid "Windowlist"
 msgstr "Vindues oversigt"
 
-#: kpanel.C:1222 props.C:197
+#: kpanel.C:1225 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Naviger hurtigt gennem systemet"
 
@@ -81,7 +81,7 @@ msgstr "Tilføj vindues oversigt"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Tilføj vindues oversigt på panelet"
 
-#: events.C:855 props.C:183
+#: events.C:860 props.C:183
 msgid "Configure"
 msgstr "Indstil"
 
@@ -97,7 +97,7 @@ msgstr "Rediger menuer"
 msgid "Add or remove applications in the menu structure "
 msgstr "Tilføj eller fjern anvendelser fra menustrukturen "
 
-#: events.C:857 props.C:189
+#: events.C:862 props.C:189
 msgid "Restart"
 msgstr "Genstart"
 
@@ -121,7 +121,7 @@ msgstr "Lås skærm"
 msgid "The menu editor is not installed."
 msgstr "Menu editoren er ikke installéret."
 
-#: events.C:912 props.C:452
+#: events.C:917 props.C:452
 msgid "Oops!"
 msgstr "Hov!"
 
@@ -137,7 +137,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "Disk Navigator"
 
-#: events.C:911
+#: events.C:916
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kan ikke placere dette som en trykknap på panelet!"
 

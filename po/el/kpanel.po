@@ -1,53 +1,53 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-04-12 01:17+0200\n"
+"POT-Creation-Date: 1999-04-22 01:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
 
-#: kpanel.C:292
+#: kpanel.C:295
 #, fuzzy
 msgid "&Move"
 msgstr "Μετακίνηση"
 
-#: kpanel.C:295
+#: kpanel.C:298
 #, fuzzy
 msgid "&Properties"
 msgstr "Ιδιότητες"
 
-#: kpanel.C:338
+#: kpanel.C:341
 msgid "Go!"
 msgstr "Εκτέλεση"
 
-#: kpanel.C:415
+#: kpanel.C:418
 msgid "No info available"
 msgstr "Δεν υπάρχουν σχετικές πληροφορίες"
 
-#: kpanel.C:454 props.C:207 props.C:208
+#: kpanel.C:457 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Έξοδος"
 
-#: kpanel.C:462 props.C:206
+#: kpanel.C:465 props.C:206
 msgid "Lock screen"
 msgstr "Κλέιδωμα οθόνης"
 
-#: kpanel.C:471 kpanel.C:480
+#: kpanel.C:474 kpanel.C:483
 msgid "Hide the panel"
 msgstr "Απόκρυψη του πίνακα"
 
-#: kpanel.C:490 kpanel.C:502
+#: kpanel.C:493 kpanel.C:505
 msgid "Show the panel"
 msgstr "Εμφάνιση του πίνακα"
 
-#: kpanel.C:1066
+#: kpanel.C:1069
 msgid "Iconify other &windows"
 msgstr ""
 
-#: kpanel.C:1214 tools.C:910
+#: kpanel.C:1217 tools.C:910
 msgid "Windowlist"
 msgstr "Λίστα παραθύρων"
 
-#: kpanel.C:1222 props.C:197
+#: kpanel.C:1225 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
@@ -78,7 +78,7 @@ msgstr "Προσθήκη λίστας παραθύρων"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Προσθήκη λίστας παραθύρων στον πίνακα"
 
-#: events.C:855 props.C:183
+#: events.C:860 props.C:183
 msgid "Configure"
 msgstr "Διαμόρφωση"
 
@@ -94,7 +94,7 @@ msgstr ""
 msgid "Add or remove applications in the menu structure "
 msgstr ""
 
-#: events.C:857 props.C:189
+#: events.C:862 props.C:189
 msgid "Restart"
 msgstr "Επανεκίννηση"
 
@@ -118,7 +118,7 @@ msgstr "Κλέιδωμα οθόνης"
 msgid "The menu editor is not installed."
 msgstr ""
 
-#: events.C:912 props.C:452
+#: events.C:917 props.C:452
 msgid "Oops!"
 msgstr ""
 
@@ -132,7 +132,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr ""
 
-#: events.C:911
+#: events.C:916
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
 

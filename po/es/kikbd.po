@@ -345,8 +345,9 @@ msgstr "Usar &hotlist"
 msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
-msgstr "Usar solo teclado por defecto y últimos mapas de teclado activos cuando "
-"se use la secuencia de teclas para cambiar"
+msgstr ""
+"Usar solo teclado por defecto y últimos mapas de teclado activos cuando se "
+"use la secuencia de teclas para cambiar"
 
 #: widgets.cpp:224
 msgid "Adding Keyboard"

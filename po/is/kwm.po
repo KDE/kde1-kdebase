@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-03-22 01:16+0100\n"
+"POT-Creation-Date: 1999-04-05 01:20+0200\n"
 "PO-Revision-Date: 1999-02-13 10:41+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -116,7 +116,7 @@ msgstr "Sumar bitamyndir eru ekki í lagi. Því er slökkt á formham\n"
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Sumar bitamyndir eru ekki í lagi. Því er slökkt á glingurham\n"
 
-#: main.C:1524
+#: main.C:1531
 msgid "*** No Tasks ***"
 msgstr "*** Engin verkefni ***"
 

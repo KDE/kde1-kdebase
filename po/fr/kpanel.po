@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-04-12 01:17+0200\n"
+"POT-Creation-Date: 1999-04-22 01:24+0200\n"
 "PO-Revision-Date: 1999-03-04 01:00 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU <duranceau@kde.org>\n"
 "Language-Team: Français\n"
@@ -13,47 +13,47 @@ msgstr ""
 "Content-Type: text/plain;\n"
 "Content-Transfer-Encoding: 8bits\n"
 
-#: kpanel.C:292
+#: kpanel.C:295
 msgid "&Move"
 msgstr "&Déplacer"
 
-#: kpanel.C:295
+#: kpanel.C:298
 msgid "&Properties"
 msgstr "&Propriétés"
 
-#: kpanel.C:338
+#: kpanel.C:341
 msgid "Go!"
 msgstr "En avant !"
 
-#: kpanel.C:415
+#: kpanel.C:418
 msgid "No info available"
 msgstr "Information non disponible"
 
-#: kpanel.C:454 props.C:207 props.C:208
+#: kpanel.C:457 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: kpanel.C:462 props.C:206
+#: kpanel.C:465 props.C:206
 msgid "Lock screen"
 msgstr "Verrouiller l'écran"
 
-#: kpanel.C:471 kpanel.C:480
+#: kpanel.C:474 kpanel.C:483
 msgid "Hide the panel"
 msgstr "Cacher le tableau de bord"
 
-#: kpanel.C:490 kpanel.C:502
+#: kpanel.C:493 kpanel.C:505
 msgid "Show the panel"
 msgstr "Afficher le tableau de bord"
 
-#: kpanel.C:1066
+#: kpanel.C:1069
 msgid "Iconify other &windows"
 msgstr "Icônifier les autres fe&nêtres"
 
-#: kpanel.C:1214 tools.C:910
+#: kpanel.C:1217 tools.C:910
 msgid "Windowlist"
 msgstr "Liste des fenêtres"
 
-#: kpanel.C:1222 props.C:197
+#: kpanel.C:1225 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Navigation rapide dans l'arborescence"
 
@@ -81,7 +81,7 @@ msgstr "Ajouter la liste des fenêtres"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Ajouter le menu de sélection des fenêtres dans le tableau de bord"
 
-#: events.C:855 props.C:183
+#: events.C:860 props.C:183
 msgid "Configure"
 msgstr "Configurer"
 
@@ -97,7 +97,7 @@ msgstr "Modifier les menus"
 msgid "Add or remove applications in the menu structure "
 msgstr "Ajouter ou supprimer des applications dans le menu"
 
-#: events.C:857 props.C:189
+#: events.C:862 props.C:189
 msgid "Restart"
 msgstr "Redémarrer"
 
@@ -121,7 +121,7 @@ msgstr "Verrouiller l'écran"
 msgid "The menu editor is not installed."
 msgstr "L'éditeur de menus n'est pas installé."
 
-#: events.C:912 props.C:452
+#: events.C:917 props.C:452
 msgid "Oops!"
 msgstr "Houlà !"
 
@@ -137,7 +137,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "KDiskNavigator"
 
-#: events.C:911
+#: events.C:916
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
 "Impossible d'ajouter cette application comme bouton sur le tableau de bord !"

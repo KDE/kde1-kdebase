@@ -1,53 +1,53 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-04-12 01:17+0200\n"
+"POT-Creation-Date: 1999-04-22 01:24+0200\n"
 "PO-Revision-Date: 1999-03-31 21:50+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 "Translator: Wang Jian <larkw@263.net>\n"
 
-#: kpanel.C:292
+#: kpanel.C:295
 msgid "&Move"
 msgstr "移动(&M)"
 
-#: kpanel.C:295
+#: kpanel.C:298
 msgid "&Properties"
 msgstr "特性(&P)"
 
-#: kpanel.C:338
+#: kpanel.C:341
 msgid "Go!"
 msgstr "开始!"
 
-#: kpanel.C:415
+#: kpanel.C:418
 msgid "No info available"
 msgstr "没有信息"
 
-#: kpanel.C:454 props.C:207 props.C:208
+#: kpanel.C:457 props.C:207 props.C:208
 msgid "Logout"
 msgstr "退出"
 
-#: kpanel.C:462 props.C:206
+#: kpanel.C:465 props.C:206
 msgid "Lock screen"
 msgstr "锁住屏幕"
 
-#: kpanel.C:471 kpanel.C:480
+#: kpanel.C:474 kpanel.C:483
 msgid "Hide the panel"
 msgstr "隐藏面板"
 
-#: kpanel.C:490 kpanel.C:502
+#: kpanel.C:493 kpanel.C:505
 msgid "Show the panel"
 msgstr "显示面板"
 
-#: kpanel.C:1066
+#: kpanel.C:1069
 msgid "Iconify other &windows"
 msgstr "图标化其他窗口(&W)"
 
-#: kpanel.C:1214 tools.C:910
+#: kpanel.C:1217 tools.C:910
 msgid "Windowlist"
 msgstr "窗口列表"
 
-#: kpanel.C:1222 props.C:197
+#: kpanel.C:1225 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "快速操纵文件系统"
 
@@ -75,7 +75,7 @@ msgstr "添加窗口列表"
 msgid "Add a windowlist menu onto the panel"
 msgstr "在窗口面板上添加窗口列表菜单"
 
-#: events.C:855 props.C:183
+#: events.C:860 props.C:183
 msgid "Configure"
 msgstr "配置"
 
@@ -91,7 +91,7 @@ msgstr "编辑菜单项"
 msgid "Add or remove applications in the menu structure "
 msgstr "在菜单结构中添加或去掉应用程序 "
 
-#: events.C:857 props.C:189
+#: events.C:862 props.C:189
 msgid "Restart"
 msgstr "重新开始"
 
@@ -115,7 +115,7 @@ msgstr "锁住屏幕"
 msgid "The menu editor is not installed."
 msgstr "菜单编辑器没有安装."
 
-#: events.C:912 props.C:452
+#: events.C:917 props.C:452
 msgid "Oops!"
 msgstr "错误!"
 
@@ -131,7 +131,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "KDiskNavigator"
 
-#: events.C:911
+#: events.C:916
 msgid "Cannot put this as button onto the panel!"
 msgstr "不能把这个对象当作按钮放到面板上!"
 
