@@ -368,7 +368,8 @@ void KRootWm::updateNewMenu (void)
 	while ( ( fi = it.current() ) != 0L )
 	{
 	    if ( strcmp( fi->fileName().data(), "." ) != 0 &&
-		 strcmp( fi->fileName().data(), ".." ) != 0 )
+		 strcmp( fi->fileName().data(), ".." ) != 0 &&
+                 !fi->isDir() && fi->isReadable())
 	    {
 		QString tmp = fi->fileName().data();
                 KSimpleConfig config(templatePath + tmp.data(), true);
