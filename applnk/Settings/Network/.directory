@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Network
+Name[is_IS]=Net
 Name[es]=Red
 Name[fr]=Réseau
 Name[de]=Netzwerk

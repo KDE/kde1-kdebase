@@ -3,12 +3,14 @@
 WmCommand=
 BinaryPattern=
 Name=Xpaint
+Name[is_IS]=Teikniforrit X
 Name[es]=Xpaint
 Name[pl]=Xpaint
 MiniIcon=
 Protocols=
 MimeType=
 Comment=Xpaint painting application
+Comment[is_IS]=xpaint:  Einfalt teikniforrit fyrir X
 Comment[es]=Aplicación de diseño escalar (mapa de bits)
 Comment[de]=Xpaint Malprogramm
 Comment[no]=Xpaint-maleprogram

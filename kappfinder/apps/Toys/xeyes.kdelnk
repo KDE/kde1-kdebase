@@ -3,12 +3,14 @@
 WmCommand=
 BinaryPattern=
 Name=X Eyes
+Name[is_IS]=X augu
 Name[es]=X Eyes
 Name[pl]=X Eyes
 MiniIcon=
 Protocols=
 MimeType=
 Comment=X Eyes
+Comment[is_IS]=xeyes:  X augu
 Comment[es]=Ojos para X
 Comment[no]=X-øyne
 Comment[fr]=Yeux X (vous louchez ?)

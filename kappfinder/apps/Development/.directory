@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Development
+Name[is_IS]=Þróun
 Name[es]=Desarrollo
 Name[fr]=Développement
 Name[de]=Entwicklung

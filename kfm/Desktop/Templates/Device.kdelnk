@@ -8,6 +8,7 @@ ReadOnly=0
 FSType=Default
 Type=FSDevice
 Comment=File System Device
+Comment[is_IS]=Skráarkerfistæki
 Comment[de]=Dateisystem
 Comment[no]=Filsystemenhet
 Comment[pl]=Urz±dzenie

@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Refresh Desktop
+Name[is_IS]=Endurteikna skjáborð
 Name[de]=Desktop neuzeichnen
 Name[es]=Refrescar escritorio
 Name[eo]=Refreþigu labortabulon
@@ -25,6 +26,7 @@ Name[ca]=Refrescar l'escriptori
 BinaryPattern=
 Protocols=
 Comment=Update desktop icons
+Comment[is_IS]=Uppfæra táknmyndir skjáborðsins
 Comment[de]=Zeichnet alle Elemente auf dem Desktop neu
 Comment[no]=Oppdater ikonene på skrivebordet
 Comment[es]=Actualiza los iconos del escritorio

@@ -12,6 +12,7 @@ Comment[fi]=Äänitiedot
 Comment[cs]=Informace o zvuku
 Name[es]=Sonido
 Name=Sound
+Name[is_IS]=Hljóð
 NAme[cs]=Zvuk
 Name[no]=Lyd
 SwallowTitle[es]=Información sobre las Tarjetas de Sonido

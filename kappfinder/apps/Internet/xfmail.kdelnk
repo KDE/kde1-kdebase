@@ -7,6 +7,7 @@ Name=XFMail
 Name[es]=XFMail
 Name[pl]=XFMail
 Comment=XFMail Mailer
+Comment[is_IS]=Póstforritið XFMail
 Comment[es]=Cliente de correo para X
 Comment[de]=XFMail Mailprogramm
 Comment[no]=XFMail-epostprogrammet

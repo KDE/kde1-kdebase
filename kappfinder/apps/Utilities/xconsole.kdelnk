@@ -3,12 +3,14 @@
 WmCommand=
 BinaryPattern=
 Name=X Console
+Name[is_IS]=X kerfisskjár
 Name[es]=X Console
 Name[pl]=X Console
 MiniIcon=mini-sh.xpm
 Protocols=
 MimeType=
 Comment=X Console viewer
+Comment[is_IS]=xconsole:  Birtir skilaboð send til kerfisskjás
 Comment[es]=Consola para X
 Comment[de]=X Konsole
 Comment[no]=X-konsoll

@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Input Devices
+Name[is_IS]=Inntakstæki
 Name[es]=Dispositivos de Entrada
 Name[fr]=Périphériques d'entrée
 Name[de]=Eingabe Geräte

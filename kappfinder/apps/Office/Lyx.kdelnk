@@ -3,12 +3,14 @@
 WmCommand=
 BinaryPattern=
 Name=Lyx
+Name[is_IS]=Lyx
 Name[es]=Lyx
 Name[pl]=Lyx
 MiniIcon=
 Protocols=
 MimeType=
 Comment=Lyx
+Comment[is_IS]=Lyx
 Exec=lyx
 Icon=Lyx.xpm
 TerminalOptions=

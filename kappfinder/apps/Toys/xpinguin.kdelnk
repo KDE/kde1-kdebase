@@ -9,6 +9,7 @@ MiniIcon=sample.xpm
 Protocols=
 MimeType=
 Comment=Tux, the Linux mascot
+Comment[is_IS]=Tux, tákn Linux
 Comment[es]=Tux, la mascota de Linux
 Comment[fr]=Tux, la mascotte de Linux
 Comment[de]=Tux, das Linux Maskottchen

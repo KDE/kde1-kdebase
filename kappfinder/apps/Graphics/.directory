@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Graphica
+Name[is_IS]=Myndvinnsla
 Name[es]=Gráficos
 Name[fr]=Graphiques
 Name[de]=Graphik

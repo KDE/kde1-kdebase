@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Information
+Name[is_IS]=Upplýsingar
 Name[es]=Información
 Name[no]=Informasjon
 Name[fr]=Informations

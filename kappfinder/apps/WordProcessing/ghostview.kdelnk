@@ -3,12 +3,14 @@
 WmCommand=
 BinaryPattern=
 Name=GhostView
+Name[is_IS]=GhostView
 Name[es]=Ghostview
 Name[pl]=GhostView
 MiniIcon=mini-gv.xpm
 Protocols=
 MimeType=
 Comment=Postscript Viewer
+Comment[is_IS]=Postscript birtir
 Comment[es]=Visor de archivos Postscript
 Comment[de]=Postscript Betrachter
 Comment[no]=Postscript-fremviser

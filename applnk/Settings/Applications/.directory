@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Applications
+Name[is_IS]=Forrit
 Name[es]=Aplicaciones
 Name[no]=Applikasjoner
 Name[fr]=Applications

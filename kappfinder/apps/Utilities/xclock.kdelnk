@@ -15,6 +15,7 @@ TerminalOptions=
 Path=
 Type=Application
 Comment=The X clock
+Comment[is_IS]=xclock:  X klukkan
 Comment[es]=El reloj para X
 Comment[fr]=L'horloge xclock
 Comment[de]=Die X Uhr

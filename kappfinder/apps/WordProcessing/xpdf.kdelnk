@@ -3,12 +3,14 @@
 WmCommand=
 BinaryPattern=
 Name=X PDF
+Name[is_IS]=X PDF
 Name[es]=X PDF
 Name[pl]=X PDF
 MiniIcon=
 Protocols=
 MimeType=
 Comment=PDF Viewer
+Comment[is_IS]=PDF skoðari
 Comment[es]=Visor de documentos PDF
 Comment[de]=PDF Betrachter
 Comment[no]=PDF-fremviser

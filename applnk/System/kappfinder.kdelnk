@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=Appfinder
+Name[is_IS]=Forritaleit
 Name[es]=Buscar aplicaciones
 Name[no]=Finn applikasjoner
 Name[eo]=Aplika¼otrovilo
@@ -25,6 +26,7 @@ MiniIcon=kfind.xpm
 Protocols=
 MimeType=
 Comment=Application finder
+Comment[is_IS]=kappfinder:  Finnur og bætir forritum í valmyndir KDE
 Comment[es]=Busca aplicaciones no integradas a KDE
 Comment[no]=Søk etter applikasjoner som ikke er for KDE
 Comment[de]=Suche nach nicht-KDE Anwendungen

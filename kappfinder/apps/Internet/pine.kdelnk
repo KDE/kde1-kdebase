@@ -8,6 +8,7 @@ Name=Pine
 Name[es]=Pine
 Name[pl]=Pine
 Comment=PINE is not ELM
+Comment[is_IS]=PINE is not ELM ( tölvupóstforrit )
 Comment[es]=Cliente de correo (PINE no es ELM)
 Comment[fr]=Client de messagerie \"Pine Is Not Elm\" (Pine n'est pas Elm)
 Comment[de]=PINE Mailprogramm

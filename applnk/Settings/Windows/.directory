@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Windows
+Name[is_IS]=Gluggar
 Name[es]=Ventanas
 Name[de]=Fenster
 Name[no]=Vinduer

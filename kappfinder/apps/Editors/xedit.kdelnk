@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=X Editor
+Name[is_IS]=xedit:  X ritill
 Name[es]=Editor X
 Name[fi]=X Editori
 Name[fr]=Editeur X
@@ -16,6 +17,7 @@ Name[ro]=Editor de X
 Name[pl]=X Editor
 Name[ru]=Редактор X
 Comment=X Editor
+Comment[is_IS]=xedit:  X ritill
 Comment[es]=Editor para X
 Comment[fi]=X editori
 Comment[pt]=Editor X

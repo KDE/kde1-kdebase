@@ -1,6 +1,7 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=File manager ( Super User Mode )
+Name[is_IS]=Skráastjóri ( sem kerfisstjóri )
 Name[es]=Gestor de archivos (modo administrador)
 Name[no]=Filstyring ( Superbrukermodus )
 Name[eo]=Dosieradministrilo (kiel administranto)
@@ -26,6 +27,7 @@ Comment[es]=El gestor de archivos de KDE
 Comment[no]=KDE filstyring og browser logget inn som superbruker
 Comment[da]=KDE filstyring og browser logget ind som superbruger
 Comment=The KDE file manager
+Comment[is_IS]=KDE skráastjórinn, með réttindum kerfisstjóra
 Comment[de]=Der KDE Datei Manager
 Comment[pl]=KDE Mened¿er plików
 Comment[eo]=Lanæas la dosieradministrilon Kfm kun radiko-rajtoj

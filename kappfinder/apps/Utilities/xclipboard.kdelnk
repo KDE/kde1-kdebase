@@ -3,12 +3,14 @@
 WmCommand=
 BinaryPattern=
 Name=X Clipboard
+Name[is_IS]=X klemmuspjald
 Name[es]=X Clipboard
 Name[pl]=X Clipboard
 MiniIcon=mini-zoom.xpm
 Protocols=
 MimeType=
 Comment=X Clipboard viewer
+Comment[is_IS]=xclipboard:  Birtir innihald X klemmuspjaldsins
 Comment[es]=Visor del portapapeles para X
 Comment[fr]=Afficheur du presse-papiers
 Comment[no]=X-utklippsviser

@@ -1,6 +1,7 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=Fontmanager
+Name[is_IS]=Leturstjóri
 Icon=kfontmanager.xpm
 Name[de]=Schriftenmanager
 Name[es]=Gestor de Fuentes
@@ -24,6 +25,7 @@ Name[ru]=íÅÎÅÄÖÅÒ ÛÒÉÆÔÏ×
 Exec=kfontmanager -caption "%c" %i %m
 DocPath=kfontmanager/index.html
 Comment=KDE's Fontmanager.
+Comment[is_IS]=kfontmanager:  Meğhöndlun leturs í KDE
 Comment[no]=KDEs skrifttypebehandler
 Comment[da]=KDE's Fontmanager.
 Comment[es]=Gestiona las fuentes de KDE.

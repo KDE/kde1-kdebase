@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Comment=The lyx text processor
+Comment[is_IS]=Lyx ritvinnsluforritiП
 MiniIcon=
 Protocols=
 MimeType=
@@ -21,6 +22,7 @@ Comment[sk]=TextovЩ procesor LyX
 Comment[ro]=Procesorul de texte LyX
 Comment[ru]=Текстовый процессор LyX
 Name=Lyx
+Name[is_IS]=Lyx
 Name[es]=Lyx
 Name[pl]=Lyx
 Exec=lyx

@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Word Processing
+Name[is_IS]=Ritvinnsla
 Name[es]=Procesadores de texto
 Name[fr]=Traitement de textes
 Name[de]=Textverarbeitung

@@ -7,6 +7,7 @@ Name=xbiff
 Name[es]=xbiff
 Name[pl]=xbiff
 Comment=Mail notification
+Comment[is_IS]=Forrit sem tilkynnir ný bréf
 Comment[es]=Notificador de correo
 Comment[de]=Benachrichtung bei neuer Email
 Comment[no]=Gir beskjed når nye eposter ankommer
