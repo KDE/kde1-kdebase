@@ -1,6 +1,7 @@
 
 # This has to be set. The rest should be reusable
-GMFILES = kdisplay.gmo kfm.gmo kfind.gmo kpanel.gmo kwm.gmo
+GMFILES = kdisplay.gmo kfm.gmo kfind.gmo kpanel.gmo kwm.gmo \
+	kmenuedit.gmo
 POFILES = $(GMFILES:.gmo=.po)
 
 LANG = el
