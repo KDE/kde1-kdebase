@@ -154,7 +154,7 @@ int main()
 
 	stream << "<html><head><title>KDE Applications Index</title></head>"
 		<< endl;
-	stream << "<body bgcolor=#FFFFFF>" << endl;
+	stream << "<body>" << endl;
 	stream << "<h1>KDE Applications Index</h1>" << endl;
 
 	const char *d = getenv( "KDEDIR" );

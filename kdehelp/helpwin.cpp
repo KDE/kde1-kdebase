@@ -469,7 +469,7 @@ int KHelpWindow::formatInfo( int bodyOnly )
 		view->begin();
 		view->write( "<html><head><title>" );
 		view->write( info->GetTitle() );
-		view->write( "</title></head><body bgcolor=#FFFFFF>" );
+		view->write( "</title></head><body>" );
 	}
 
 	view->write( "<pre>" );
@@ -628,7 +628,7 @@ int KHelpWindow::formatMan( int bodyOnly )
 		view->begin();
 		view->write( "<html><head><title>" );
 		view->write( man->GetTitle() );
-		view->write( "</title></head><body bgcolor=#FFFFFF>" );
+		view->write( "</title></head><body>" );
 	}
 
 	view->write( "<pre>" );
