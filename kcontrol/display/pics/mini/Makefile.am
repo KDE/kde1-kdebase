@@ -1,7 +1,7 @@
 # $Id$
 # kdebase/kcontrol/display/pics/mini
 
-icons_DATA = background.xpm colors.xpm screensaver.xpm style.xpm
+icons_DATA = background.xpm colors.xpm screensaver.xpm style.xpm fonts.xpm
 
 iconsdir = $(kde_minidir)
 

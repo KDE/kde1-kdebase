@@ -1,5 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
+Icon=kcmkpanel.xpm
+MiniIcon=kcmkpanel.xpm
 Type=Application
 DocPath=kcontrol/kcmkpanel/kpanel-1.html
 Name=Panel
