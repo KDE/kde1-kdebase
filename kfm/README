@@ -674,6 +674,12 @@ Version 0.8.1
 Version 0.8.2
 
 - Stephan did a lot but was not so kind to let us know :-)
+   Stephan did: - added internationalization 
+
+                - moved the paths for desktop entries to a central class and
+                  make this configurable
+                     
+                - added first try for loading and saving GUI settings
 
 - Fixed bug with "New View" in popup menu. Should work now.
 
@@ -725,6 +731,10 @@ KNOWN BUGS
 - Files with '#' in their names are ignored at most places since
   they could cause KFM to crash. Stephan invested some work here, but
   did not let us know what he did.
+    Stephan: the problem is the URL decoding and encoding. It is necessary to
+        rewrite parts of kfm and kfmlib to handle URLs better. But this would 
+        also mean, that most applications, that uses kfmlib has to reflect this
+        changes.
 
 - Use "Move to Trash" instead of "delete" until the delete function is very
   well tested on some systems.
@@ -784,7 +794,7 @@ Bookmarks are from Martin Jones, too.
 
 Fritz Elfert <fritz@kde.org> added magic mime type detection.
 
-Stephan Kulow <coolo@kde.org> applied lost of patches.
+Stephan Kulow <coolo@kde.org> applied lots of patches.
 
 And thanks to all the others who contributed.
 
