@@ -521,6 +521,9 @@ void KFMDirTreeItem::setOpen( bool _open )
 	    
 	stat( u2.path(), &buff );
 
+	// For symlinks, follow them to stat the real file or directory
+	if ( S_ISLNK( buff.st_mode ) ) { lstat( u2.path(), &buff ); }
+
 	if ( S_ISDIR( buff.st_mode ) )
 	{
 	    KFMDirTreeItem *item = new KFMDirTreeItem( dirTree, u2.path(), FALSE );
