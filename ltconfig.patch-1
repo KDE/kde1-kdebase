@@ -1,15 +1,25 @@
 Index: libtool.m4
 ===================================================================
 RCS file: /gd/gnu/anoncvsroot/libtool/libtool.m4,v
-retrieving revision 1.17
-diff -u -u -r1.17 libtool.m4
---- libtool.m4	1999/01/18 13:30:39	1.17
-+++ libtool.m4	1999/01/20 10:53:37
-@@ -33,12 +33,9 @@
- AC_REQUIRE([AM_PROG_LD])dnl
- AC_REQUIRE([AM_PROG_NM])dnl
- AC_REQUIRE([AM_SYS_NM_PARSE])dnl
--AC_REQUIRE([AM_SYS_SYMBOL_UNDERSCORE])dnl
+retrieving revision 1.19
+diff -u -r1.19 libtool.m4
+--- libtool.m4	1999/01/27 00:48:49	1.19
++++ libtool.m4	1999/01/27 21:13:48
+@@ -23,8 +23,7 @@
+ 
+ # serial 30 AC_PROG_LIBTOOL
+ AC_DEFUN(AC_PROG_LIBTOOL,
+-[AC_PREREQ(2.12.2)dnl
+-AC_REQUIRE([AC_ENABLE_SHARED])dnl
++[AC_REQUIRE([AC_ENABLE_SHARED])dnl
+ AC_REQUIRE([AC_ENABLE_STATIC])dnl
+ AC_REQUIRE([AC_CANONICAL_HOST])dnl
+ AC_REQUIRE([AC_CANONICAL_BUILD])dnl
+@@ -33,12 +32,9 @@
+ AC_REQUIRE([AC_PROG_LD])dnl
+ AC_REQUIRE([AC_PROG_NM])dnl
+ AC_REQUIRE([AC_SYS_NM_PARSE])dnl
+-AC_REQUIRE([AC_SYS_SYMBOL_UNDERSCORE])dnl
  AC_REQUIRE([AC_PROG_LN_S])dnl
 +AC_REQUIRE([AM_SET_LIBTOOL_VARIABLE])dnl
  dnl
@@ -19,8 +29,8 @@ diff -u -u -r1.17 libtool.m4
  
  # Check for any special flags to pass to ltconfig.
  libtool_flags=
-@@ -516,6 +513,12 @@
- AC_DEFUN(AM_SYS_LIBTOOL_CYGWIN32,
+@@ -504,6 +500,12 @@
+ AC_DEFUN(AC_SYS_LIBTOOL_CYGWIN32,
  [AC_CHECK_TOOL(DLLTOOL, dlltool, false)
  AC_CHECK_TOOL(AS, as, false)
 +])
@@ -31,4 +41,4 @@ diff -u -u -r1.17 libtool.m4
 +AC_SUBST(LIBTOOL)dnl
  ])
  
- # AM_SYS_SYMBOL_UNDERSCORE - does the compiler prefix global symbols
+ # AC_SYS_SYMBOL_UNDERSCORE - does the compiler prefix global symbols
