@@ -1087,7 +1087,7 @@ void Manager::closeClient(Client* c){
   else {
     // client will not react on wm_delete_window. We have not choice
     // but destroy his connection to the XServer.
-    XDestroyWindow(qt_xdisplay(), c->window);
+    XKillClient(qt_xdisplay(), c->window);
     removeClient(c);
   }
 }
@@ -1964,7 +1964,7 @@ void Manager::killWindowAtPosition(int x, int y){
   Client* c;
   for (c = clients_sorted.last(); c; c = clients_sorted.prev()){
     if (c->geometry.contains(QPoint(x, y))){
-      XDestroyWindow(qt_xdisplay(), c->window);
+      XKillClient(qt_xdisplay(), c->window);
       return;
     }
   }
