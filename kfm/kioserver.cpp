@@ -853,7 +853,6 @@ bool KIOServer::testDirInclusion( const char *_src_url, const char *_dest_canoni
 
     if ( strncmp( url.data(), _dest_canonical, url.length() ) == 0 )
 	return false;
-    
     return true;
 }
 
@@ -868,7 +867,7 @@ QString KIOServer::canonicalURL( const char *_url )
     if ( url.isEmpty() )
 	return QString( _url );
     
-    return u.path();
+    return url.data();
 }
 
 void KIOServer::slotTimer()
