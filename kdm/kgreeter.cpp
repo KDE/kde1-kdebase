@@ -137,13 +137,23 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      loginLabel = new QLabel( klocale->translate("Login:"), this);
      set_min( loginLabel);
      loginEdit = new QLineEdit( this);
-     loginEdit->setFixedHeight( loginEdit->sizeHint().height());
+
+     // The line-edit look _very_ bad if you don't give them 
+     // a resonal height that observes a proportional aspect.
+     // -- Bernd
+     int leheight;
+     leheight = QMAX( 35,loginEdit->sizeHint().height());
+     loginEdit->setFixedHeight( leheight);
      loginEdit->setFocus();
 
      passwdLabel = new QLabel( klocale->translate("Password:"), this);
      set_min( passwdLabel);
      passwdEdit = new QLineEdit( this);
-     passwdEdit->setFixedHeight( passwdEdit->sizeHint().height());
+
+     int pweheight;
+     pweheight = QMAX( 35,passwdEdit->sizeHint().height());
+     passwdEdit->setFixedHeight( pweheight);
+
      passwdEdit->setEchoMode( QLineEdit::NoEcho);
      /* This is a way to get a passwd edit
       * with a moving cursor, but it's
