@@ -1306,7 +1306,6 @@ void KfmView::writeHTMLquoted (const char * text)
 
 bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mouse, bool _isselected )
 {
-    rectStart = false;
     selectedURL = "";
 	popupMenuEvent = false;
     
