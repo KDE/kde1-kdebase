@@ -49,5 +49,5 @@ Exec=kcmikbd
 Icon=kikbd.xpm
 Type=Application
 BinaryPattern=kcmikbd;
-Init=kcmikbd -startkikbd
+Init=kcmikbd -init
 DocPath=kikbd/kikbd.html
