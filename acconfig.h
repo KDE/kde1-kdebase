@@ -71,3 +71,7 @@
 #undef HAVE_HP_STL
 
 #undef HAVE_SGI_STL
+
+/* Define, if you have setupterm in -l(n)curses */
+#undef HAVE_SETUPTERM
+
