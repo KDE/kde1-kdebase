@@ -1,16 +1,16 @@
-%define	version Beta3
+%define	version @VERSION@
 %define name kdebase
 Name: %{name}
 Summary: K Desktop Environment - core files
 Version: %{version}
 Release: 1
-Source: ftp.kde.org:/pub/kde/unstable/CVS/snapshots/current/%{name}-%{version}.tar.gz
+Source: ftp.kde.org:/pub/kde/stable/Beta4/distribution/rpm/source/%{name}-%{version}-1.src.tar.gz
 Group: X11/KDE/Base
 Copyright: GPL
 BuildRoot: /tmp/realhot_%{name}
-Requires: qt >= 1.31
+Requires: qt >= 1.33
 Distribution: KDE
-Packager: Magnus Pfeffer <pfeffer@unix-ag.uni-kl.de>
+Packager: Preston Brown <pbrown@kde.org>
 Vendor: The KDE Team
 
 %description
