@@ -84,12 +84,12 @@ int cIndirectList::Read(const char *filename)
 
 	while (FindMarker(stream))
 	{
-		stream.getline(buffer, 256);
+		stream.getline(buffer, 255);
 		if (!strcmp(buffer, INFO_INDIRECT_TOKEN))
 		{
 			do							// read the indirects
 			{
-				stream.getline(buffer, 256);
+				stream.getline(buffer, 255);
 				if (buffer[0] == INFO_MARKER) continue;
 				file = strtok(buffer, ":");
 				if (file == NULL)
@@ -122,7 +122,9 @@ void cIndirectList::Add(const char *file, int offset)
 {
 	sIndirect *indirect = new sIndirect;
 
-	strcpy(indirect->file, file);
+	strncpy(indirect->file, file, 255);
+    indirect->file[255] = '\0';
+
 	indirect->offset = offset;
 	indirect->next = NULL;
 
@@ -1511,7 +1513,7 @@ int FindMarker(ifstream &stream)
 
 	do
 	{
-		stream.getline(buffer, 256);
+		stream.getline(buffer, 255);
 		if (buffer[0] == INFO_MARKER)
 			return 1;
 	}

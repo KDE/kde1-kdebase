@@ -545,6 +545,10 @@ int cMan::ReadLocation(const char *name)
 		{
 		    stream.getline( buffer, 256 );
 		    HTMLPage += buffer;
+            if ( HTMLPage.right(1) == "-" )
+                HTMLPage.truncate( HTMLPage.length() - 1 );
+            else
+                HTMLPage.append(" ");
 		}
 
 		stream.close();
