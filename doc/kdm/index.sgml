@@ -7,7 +7,7 @@
 <title>KDE Display Manager (KDM)
 <author>Steffen Hansen, 
 <tt><htmlurl url="mailto:stefh@dit.ou.dk" name="stefh@dit.ou.dk"></tt>
-<date>Fri Jul 11 14:27:34 1997 -- Steffen Hansen
+<date>Thu Oct 16 04:52:20 1997 -- Steffen Hansen
 <abstract>
 This document describes the KDE Display Manager
 </abstract>
@@ -71,7 +71,7 @@ If you dont like changing inittab,
 you might instead rename xdm to xdm.bak and make xdm a symlink to kdm.
 Kdm will read the general display manager settings from the xdm configuartion
 files and the kdm specific ones from the file
-&dollar;KDEDIR/config/kdmrc. Kdmdesktop will also read kdmrc.
+&dollar;KDEDIR/share/config/kdmrc. Kdmdesktop will also read kdmrc.
 
 <sect>Configuring kdm
 
@@ -86,7 +86,7 @@ Xsession script, but take a look at the files in the "samples" directory
 anyway -- they show how to use kdm's session argument feature.
 <p>
 The kdm-specific option are configured by editing the file
-"&dollar;KDEDIR/config/kdmrc". There are two sections in kdmrc:
+"&dollar;KDEDIR/share/config/kdmrc". There are two sections in kdmrc:
 
 <sect1>KDM
 
@@ -130,12 +130,12 @@ displayed in the graphical user view. If <tt>UserView</tt> is 1 and the
 <tt>Users </tt>entry is missing, kdm will look for users in the password
 file. The users displayed are those who have a real name beside their
 loginname, a home directory and a default shell - the rest is
-skipped. Kdm will look in &dollar;KDEDIR/lib/pics/users
+skipped. Kdm will look in &dollar;KDEDIR/share/apps/kdm/pics/users/
 for an icon for each user. If there exists an icon named johndoe.xpm, kdm
 will use that for displaying user johndoe, if not kdm will use default.xpm.
 So if you have a little picture of every user on your system, just place
-them in &dollar;KDEDIR/lib/pics/users and have great fun logging in with
-kdm ;-) 
+them in &dollar;KDEDIR/share/apps/kdm/pics/users/ and have great fun
+logging in with kdm ;-) 
 <bf>NOTE:</bf> Kdm is able to handle icons with different sizes, but it might
 not be too pretty to use both very small and very large icons.
 <tag/NoUsers/ is a ``;'' separated list of usernames that wont be

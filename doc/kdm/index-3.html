@@ -17,7 +17,7 @@ kdm.</P>
 Xsession script, but take a look at the files in the "samples" directory
 anyway -- they show how to use kdm's session argument feature.</P>
 <P>The kdm-specific option are configured by editing the file
-"$KDEDIR/config/kdmrc". There are two sections in kdmrc:</P>
+"$KDEDIR/share/config/kdmrc". There are two sections in kdmrc:</P>
 
 <H2><A NAME="ss3.1">3.1 KDM</A></H2>
 
@@ -65,12 +65,12 @@ displayed in the graphical user view. If <CODE>UserView</CODE> is 1 and the
 <CODE>Users </CODE>entry is missing, kdm will look for users in the password
 file. The users displayed are those who have a real name beside their
 loginname, a home directory and a default shell - the rest is
-skipped. Kdm will look in $KDEDIR/lib/pics/users
+skipped. Kdm will look in $KDEDIR/share/apps/kdm/pics/users/
 for an icon for each user. If there exists an icon named johndoe.xpm, kdm
 will use that for displaying user johndoe, if not kdm will use default.xpm.
 So if you have a little picture of every user on your system, just place
-them in $KDEDIR/lib/pics/users and have great fun logging in with
-kdm ;-) 
+them in $KDEDIR/share/apps/kdm/pics/users/ and have great fun
+logging in with kdm ;-) 
 <B>NOTE:</B> Kdm is able to handle icons with different sizes, but it might
 not be too pretty to use both very small and very large icons.</P>
 <DT><B>NoUsers</B><DD><P>is a ``;'' separated list of usernames that wont be
