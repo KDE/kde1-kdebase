@@ -187,13 +187,13 @@ void MenuButton::delete_item()
 
 void MenuButton::move_item()
 {
-    QApplication::setOverrideCursor(CrossCursor, TRUE); 
+    QApplication::setOverrideCursor(CrossCursor, TRUE);
     move_mode = MoveItem;
 }
 
 void MenuButton::move_menu()
 {
-    QApplication::setOverrideCursor(CrossCursor, TRUE); 
+    QApplication::setOverrideCursor(CrossCursor, TRUE);
     move_mode = MoveMenu;
 }
 
@@ -504,6 +504,11 @@ debug("is down");
       else
 	emit Rpressed(id);
     }
+}
+
+void MenuButton::mouseReleaseEvent(QMouseEvent *e)
+{
+    EditButton::mouseReleaseEvent(e);
 }
 
 void MenuButton::dndMouseReleaseEvent( QMouseEvent *e)
@@ -933,7 +938,7 @@ void ConfigureMenu::newButton( int but_id )
   changes_to_save = TRUE;
   ((KMenuEdit *) KApplication::getKApplication()->mainWidget())->setUnsavedData(TRUE);
   buttonMoved( but_nr-1, but_list.at(but_id)->button->pos() );
-  
+
   but_list.at(but_id)->button->change_item();
 }
 

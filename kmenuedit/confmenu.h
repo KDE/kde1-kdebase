@@ -84,6 +84,7 @@ protected slots:
 
 protected:
   virtual void mousePressEvent(QMouseEvent *e);
+  virtual void mouseReleaseEvent(QMouseEvent *e);
   virtual void dndMouseReleaseEvent(QMouseEvent *e);
   virtual void dndMouseMoveEvent(QMouseEvent *e);
   virtual void dragEndEvent() { left_pressed = FALSE; setDown(FALSE); }

@@ -55,7 +55,8 @@ KMenuEdit::KMenuEdit( const char *name )
   KConfig *config = KApplication::getKApplication()->getConfig();
   config->setGroup("kmenuedit");
   f_main = new QFrame(this);
-  f_main->setFrameStyle( 0 );
+  f_main->setFrameStyle( QFrame::Panel | QFrame::Sunken );
+  f_main->setBackgroundMode( PaletteBase );
 
   menubar = new KMenuBar( this, "menubar" );
   QPopupMenu *file = new QPopupMenu;
@@ -75,7 +76,7 @@ KMenuEdit::KMenuEdit( const char *name )
   QString about = "KMenuedit 0.3.1\n(C) ";
   about += (QString) klocale->translate("by") +
     " Christoph Neerfeld\nChristoph.Neerfeld@home.ivm.de";
-  menubar->insertItem( klocale->translate("&Help"), 
+  menubar->insertItem( klocale->translate("&Help"),
 		       KApplication::getKApplication()->getHelpMenu(TRUE, about ) );
 
   // create toolbar
@@ -103,7 +104,9 @@ KMenuEdit::KMenuEdit( const char *name )
 
   f_mask = new QFrame(f_main);
   f_mask->setFrameStyle( 0 );
+  f_mask->setBackgroundMode( PaletteBase );
   f_move = new QFrame(f_mask, "f_move");
+  f_move->setBackgroundMode( PaletteBase );
   f_move->setGeometry( 0, 0, QApplication::desktop()->width(), QApplication::desktop()->height() );
   scrollx = new QScrollBar(f_main);
   scrollx->setMinimumSize( 16, 16 );
@@ -130,13 +133,13 @@ KMenuEdit::KMenuEdit( const char *name )
   pers_menu_data = NULL;
   glob_menu_data = NULL;
   loadMenus();
-  
+
   // load file types
   global_file_types = new QStrList;
   global_file_types->setAutoDelete(TRUE);
   reloadFileTypes();
 
-  config->setGroup("kmenuedit");  
+  config->setGroup("kmenuedit");
   int x, y;
   x = config->readNumEntry( "PersPosX", 5 );
   y = config->readNumEntry( "PersPosY", 5 );
@@ -160,9 +163,10 @@ KMenuEdit::KMenuEdit( const char *name )
   changes_to_save = FALSE;
   setUnsavedData(FALSE);
 
-  // popup help if started for the first time
+  // maximize and popup help if started for the first time
   if( config->readNumEntry("FirstTime", 1) )
     {
+      KWM::doMaximize( winId(), TRUE );
       KApplication::getKApplication()->invokeHTMLHelp( "", "");
       config->writeEntry("FirstTime", 0);
     }
@@ -172,9 +176,9 @@ KMenuEdit::~KMenuEdit()
 {
   if( changes_to_save )
     {
-      if( QMessageBox::warning ( this, klocale->translate("Changes not saved !"), 
-				 klocale->translate("\nDo you want to save your changes ?"), 
-				 klocale->translate("Yes"), 
+      if( QMessageBox::warning ( this, klocale->translate("Changes not saved !"),
+				 klocale->translate("\nDo you want to save your changes ?"),
+				 klocale->translate("Yes"),
 				 klocale->translate("No") )  == 0 )
 	{
 	  saveMenus();
@@ -197,9 +201,9 @@ void KMenuEdit::closeEvent( QCloseEvent *e )
   int retcode;
   if( changes_to_save )
     {
-      retcode = QMessageBox::warning ( this, klocale->translate("Changes not saved !"), 
-				       klocale->translate("\nDo you want to save your changes ?"), 
-				       klocale->translate("Yes"), 
+      retcode = QMessageBox::warning ( this, klocale->translate("Changes not saved !"),
+				       klocale->translate("\nDo you want to save your changes ?"),
+				       klocale->translate("Yes"),
 				       klocale->translate("No"),
 				       klocale->translate("Cancel"), 0, 2 );
       switch ( retcode ) {
@@ -339,8 +343,8 @@ void KMenuEdit::reload()
       if( QMessageBox::warning(this, klocale->translate("Reload Menus"),
 			      klocale->translate("Reloading the menus will discard all "
 						 "changes.\n"
-						 "Are you sure you want to reload ?"), 
-			       klocale->translate("Yes"), 
+						 "Are you sure you want to reload ?"),
+			       klocale->translate("Yes"),
 			       klocale->translate("No") ) != 0 )
         {
 	  return;
@@ -380,7 +384,7 @@ void KMenuEdit::reloadFileTypes()
   const QFileInfoList *subdir_list = sub_dir.entryInfoList();
   QFileInfoListIterator subd_it( *subdir_list );
 
-  while( (fi = d_it.current()) ) 
+  while( (fi = d_it.current()) )
     {
       if( fi->fileName()[0] == '.' )
 	{ ++d_it; continue; }
@@ -390,7 +394,7 @@ void KMenuEdit::reloadFileTypes()
       while( (fi = subd_it.current()) )
 	{
 	  QFile config(fi->absFilePath());
-	  if( !config.open(IO_ReadOnly) ) 
+	  if( !config.open(IO_ReadOnly) )
 	    { ++subd_it; continue; }
 	  config.close(); // kalle
 	  // kalle	  QTextStream st( (QIODevice *) &config);
@@ -414,7 +418,7 @@ void KMenuEdit::changeMenuName()
   dialog->setPersonal( pers_menu_name );
   dialog->setDefault( glob_menu_name );
   dialog->setDefaultEnabled( glob_menu_writable );
-  
+
   if( dialog->exec() )
     {
       changes_to_save = TRUE;
