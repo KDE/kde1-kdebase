@@ -83,7 +83,6 @@ msgid "Titlebar appearance"
 msgstr "Tittellinjeutseende"
 
 #: titlebar.cpp:928
-#, fuzzy
 msgid "Shaded Vertically"
 msgstr "Vertikal overgang"
 

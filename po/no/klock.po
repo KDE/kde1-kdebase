@@ -156,14 +156,12 @@ msgid "Bouboule"
 msgstr ""
 
 #: bouboule.cpp:1005
-#, fuzzy
 msgid "Setup KBouboule"
-msgstr "KFlame-oppsett"
+msgstr "KBouboule-oppsett"
 
 #: bouboule.cpp:1032
-#, fuzzy
 msgid "Number of points:"
-msgstr "Antall flaggermus"
+msgstr "Antall poeng:"
 
 #: bouboule.cpp:1046
 msgid "Point size:"
