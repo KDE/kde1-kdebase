@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Marcell Lengyel <miketkf@yahoo.com>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1998-12-15 01:15+0100\n"
+"PO-Revision-Date: 1998-12-17 12:18+0100\n"
+"Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:58
+msgid "&Font"
+msgstr "&Betûtípus"
+
+#: main.cpp:60
+msgid "&Color"
+msgstr "&Szín"
+
+#: main.cpp:62
+msgid "&Other"
+msgstr "&Egyéb"
+
+#: main.cpp:65
+msgid "&Proxy"
+msgstr ""
+
+#: main.cpp:67
+msgid "&HTTP"
+msgstr ""
+
+#: main.cpp:70
+msgid "User &Agent"
+msgstr "&Bejelentkezés"
+
+#: main.cpp:74
+msgid "&Desktop Icons"
+msgstr "&Asztal Ikonok"
+
+#: main.cpp:83
+#, c-format
+msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
+msgstr "használat: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
+
+#: main.cpp:166
+msgid "KFM Configuration"
+msgstr "KFM Beáálítás"
+
+#: htmlopts.cpp:64
+msgid "Small"
+msgstr "Kicsi"
+
+#: htmlopts.cpp:69
+msgid "Medium"
+msgstr "Közepes"
+
+#: htmlopts.cpp:74
+msgid "Large"
+msgstr "Nagy"
+
+#: htmlopts.cpp:83
+msgid "Standard Font"
+msgstr "Közönséges betûtípus"
+
+#: htmlopts.cpp:97
+msgid "Fixed Font"
+msgstr "Állandó szélességû betûtípus"
+
+#: htmlopts.cpp:114
+msgid "Default Charset"
+msgstr "Alapértelmezett betûkészlet"
+
+#: htmlopts.cpp:122 htmlopts.cpp:276
+msgid "Use language charset"
+msgstr "Használja a nyelv betûkészletét"
+
+#: htmlopts.cpp:329
+msgid "Background Color:"
+msgstr "Háttér szín:"
+
+#: htmlopts.cpp:341
+msgid "Normal Text Color:"
+msgstr "Közönséges szöveg színe:"
+
+#: htmlopts.cpp:353
+msgid "URL Link Color:"
+msgstr "URL link színe:"
+
+#: htmlopts.cpp:365
+msgid "Followed Link Color:"
+msgstr "Meglátogatott link színe:"
+
+#: htmlopts.cpp:377
+msgid "Change cursor over link."
+msgstr "Vátozzon meg a kurzor a link fölött."
+
+#: htmlopts.cpp:383
+msgid "Underline links"
+msgstr "Húzza alá a linkeket"
+
+#: miscopts.cpp:25
+msgid "&Allow per-URL settings"
+msgstr "URL-enként be&állítások engedélyezése"
+
+#: miscopts.cpp:33
+msgid "Tree &view follows navigation"
+msgstr "Fa nézet kö&vesse a navigációt"
+
+#: kproxydlg.cpp:50
+msgid "Don't forget to save your settings!"
+msgstr "Ne felejtse el menteni a beállításokat!"
+
+#: kproxydlg.cpp:58
+msgid "Use proxy"
+msgstr "Használjon proxyt"
+
+#: kproxydlg.cpp:67
+msgid "HTTP Proxy:"
+msgstr ""
+
+#: kproxydlg.cpp:82 kproxydlg.cpp:113
+msgid "Port:"
+msgstr ""
+
+#: kproxydlg.cpp:98
+msgid "FTP Proxy:"
+msgstr ""
+
+#: kproxydlg.cpp:128
+msgid "No Proxy for:"
+msgstr "Nincs Proxy:"
+
+#: khttpoptdlg.cpp:38
+msgid "Accept languages:"
+msgstr "Elfogadható nyelvek:"
+
+#: khttpoptdlg.cpp:52
+msgid "Accept character sets:"
+msgstr "Elfogadható karakterkészletek:"
+
+#: khttpoptdlg.cpp:65
+msgid "Assume HTML"
+msgstr "Feltételezze, hogy HTML"
+
+#: useragentdlg.cpp:43
+msgid "On server:"
+msgstr "Ezen a kiszolgálón:"
+
+#: useragentdlg.cpp:65
+msgid "login as:"
+msgstr "így jelentkezzen be:"
+
+#: useragentdlg.cpp:85
+msgid "&Add"
+msgstr "Hozzá&adás"
+
+#: useragentdlg.cpp:105
+msgid "Known bindings:"
+msgstr "Ismert kötések:"
+
+#: rootopts.cpp:70
+msgid "Horizontal Root Grid Spacing:"
+msgstr "Vízszíntes rácspont távolság:"
+
+#: rootopts.cpp:81
+msgid "Vertical Root Grid Spacing:"
+msgstr "Függõleges rácspont távolság:"
+
+#: rootopts.cpp:92
+msgid "&Transparent Text for Desktop Icons."
+msgstr "Átlátszó szövegháttér az Asztal ikonjainál"
+
+#: rootopts.cpp:103
+msgid "Icon foreground color:"
+msgstr "Ikon elõtér szín:"
+
+#: rootopts.cpp:115
+msgid "Icon background color:"
+msgstr "Ikon háttér szín:"

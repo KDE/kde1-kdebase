@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Marcell Lengyel <miketkf@yahoo.com>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1998-11-28 01:10+0100\n"
+"PO-Revision-Date: 1998-12-17 12:06+0100\n"
+"Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
+"Language-Team: HUNGARIAN <HU@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: kbgndwm.cpp:45
+msgid "Display Settings"
+msgstr "Képernyõ Beállítások"
+
+#: kbgndwm.cpp:46
+msgid "Background Settings"
+msgstr "Háttér beállítások"
+
+#: kbgndwm.cpp:48
+msgid "Common Background"
+msgstr "Közös Háttér"
+
+#: kbgndwm.cpp:50
+msgid "Undock"
+msgstr "Kidokkolás"
+
+#: kbgndwm.cpp:58
+msgid "Tiled"
+msgstr "Egymás mellett"
+
+#: kbgndwm.cpp:59
+msgid "Mirrored"
+msgstr "Tükrözött"
+
+#: kbgndwm.cpp:60
+msgid "CenterTiled"
+msgstr "Középen egymás mellett"
+
+#: kbgndwm.cpp:61
+msgid "Centred"
+msgstr "Középre igzított"
+
+#: kbgndwm.cpp:62
+msgid "CentredBrick"
+msgstr "Középen téglaszerû"
+
+#: kbgndwm.cpp:63
+msgid "CentredWarp"
+msgstr "Középen levágva"
+
+#: kbgndwm.cpp:64
+msgid "CentredMaxpect"
+msgstr "Középen legnagyobb"
+
+#: kbgndwm.cpp:65
+msgid "SymmetricalTiled"
+msgstr "Szimmetrikusan egymás mellett"
+
+#: kbgndwm.cpp:66
+msgid "SymmetricalMirrored"
+msgstr "Szimmetrikusan tükrözött"
+
+#: kbgndwm.cpp:67
+msgid "Scaled"
+msgstr "Nyújtott"
+
+#: bg.cpp:235 bg.cpp:238
+msgid "No wallpaper"
+msgstr "Nincs tapéta"

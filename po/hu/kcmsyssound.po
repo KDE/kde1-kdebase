@@ -1,0 +1,200 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Marcell Lengyel <miketkf@yahoo.com>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"PO-Revision-Date: 1998-12-17 13:44+0100\n"
+"Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:53
+msgid "&Sound"
+msgstr "Hangok"
+
+#: main.cpp:80
+msgid "System Sounds"
+msgstr "Rendszer Hangok"
+
+#: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
+msgid "(none)"
+msgstr "(nincs)"
+
+#: syssound.cpp:147
+msgid "Change to Desktop 1"
+msgstr "1. Asztalra váltás"
+
+#: syssound.cpp:148
+msgid "Change to Desktop 2"
+msgstr "2. Asztalra váltás"
+
+#: syssound.cpp:149
+msgid "Change to Desktop 3"
+msgstr "3. Asztalra váltás"
+
+#: syssound.cpp:150
+msgid "Change to Desktop 4"
+msgstr "4. Asztalra váltás"
+
+#: syssound.cpp:151
+msgid "Change to Desktop 5"
+msgstr "5. Asztalra váltás"
+
+#: syssound.cpp:152
+msgid "Change to Desktop 6"
+msgstr "6. Asztalra váltás"
+
+#: syssound.cpp:153
+msgid "Change to Desktop 7"
+msgstr "7. Asztalra váltás"
+
+#: syssound.cpp:154
+msgid "Change to Desktop 8"
+msgstr "8. Asztalra váltás"
+
+#: syssound.cpp:156
+msgid "Activate Window"
+msgstr "Ablak aktiválás"
+
+#: syssound.cpp:157
+msgid "Open new window"
+msgstr "Új ablak felnyitás"
+
+#: syssound.cpp:158
+msgid "Close Window"
+msgstr "Ablak bezárás"
+
+#: syssound.cpp:159
+msgid "Startup"
+msgstr "Indulás"
+
+#: syssound.cpp:161
+msgid "Window Shade Up"
+msgstr "Ablak felgördítés"
+
+#: syssound.cpp:162
+msgid "Window Shade Down"
+msgstr "Ablak legördítés"
+
+#: syssound.cpp:163
+msgid "Window Iconify"
+msgstr "Ablak ikonizálás"
+
+#: syssound.cpp:164
+msgid "Window DeIconify"
+msgstr "Ikonizált ablak visszaállítás"
+
+#: syssound.cpp:165
+msgid "Window Maximize"
+msgstr "Ablak maximalizálás"
+
+#: syssound.cpp:166
+msgid "Window UnMaximize"
+msgstr "Maximalizált ablak visszaállítás"
+
+#: syssound.cpp:167
+msgid "Window Sticky"
+msgstr "Ablak rajzszögezés"
+
+#: syssound.cpp:168
+msgid "Window UnSticky"
+msgstr "Rajzszög kihúzás"
+
+#: syssound.cpp:169
+msgid "Window Trans New"
+msgstr ""
+
+#: syssound.cpp:170
+msgid "Window Trans Delete"
+msgstr ""
+
+#: syssound.cpp:171
+msgid "Logout"
+msgstr "Kilépés"
+
+#: syssound.cpp:172
+msgid "Logout Message"
+msgstr "Kilépõ üzenet"
+
+#: syssound.cpp:173
+msgid "Window Move Start"
+msgstr "Ablak mozgatás kezdete"
+
+#: syssound.cpp:174
+msgid "Window Move End"
+msgstr "Ablak mozgatás vége"
+
+#: syssound.cpp:175
+msgid "Window Resize Start"
+msgstr "Ablak átméretezés kezdete"
+
+#: syssound.cpp:176
+msgid "Window Resize End"
+msgstr "Ablak átméretezés vége"
+
+#: syssound.cpp:198
+msgid "e&nable system sounds"
+msgstr "Re&ndszerhangok engedélyezése"
+
+#: syssound.cpp:203
+msgid "&Test"
+msgstr "Próba"
+
+#: syssound.cpp:207
+msgid "&Events:"
+msgstr "&Események:"
+
+#: syssound.cpp:211
+msgid "&Sounds:"
+msgstr "Hangok:"
+
+#: syssound.cpp:216
+msgid "Additional WAV files can be dropped onto the sound list."
+msgstr "További WAV állományok a hangok listára dobhatók."
+
+#: syssound.cpp:456
+msgid "Unsupported URL"
+msgstr "Nem támogatott URL"
+
+#: syssound.cpp:458
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE System Sound "
+"Module"
+msgstr ""
+"Sajnálom, a KDE Redszer Hangok modul ezt a fajta URL-t nem támogatja."
+
+#: syssound.cpp:468
+#, c-format
+msgid ""
+"Sorry, but \n"
+"%s\n"
+"does not seem to be a WAV--file."
+msgstr ""
+"Sajnálom, de a\n"
+"%s\n"
+"nem úgy néz ki, mint egy WAV állomány."
+
+#: syssound.cpp:471
+msgid "Improper File Extension"
+msgstr "Helytelen állomány kiterjesztés"
+
+#: syssound.cpp:482
+#, c-format
+msgid ""
+"The file\n"
+"%s\n"
+"is already in the list"
+msgstr ""
+"A következõ állomány:\n"
+"%s\n"
+"már szerepel a listában."
+
+#: syssound.cpp:486
+msgid "File Already in List"
+msgstr "Az állomány már a listában van"
