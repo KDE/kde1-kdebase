@@ -262,8 +262,7 @@ msgid ""
 "(default)\n"
 msgstr ""
 "-ls                       iniciar kvt como shell de login\n"
-"-ls-                      initiar kvt não como shell de login "
-"(por omissão)\n"
+"-ls-                      initiar kvt não como shell de login (por omissão)\n"
 
 #: main.C:1176
 msgid ""
