@@ -7,8 +7,12 @@
 <title>KDE Control Center - KFM 
 <author>David Faure 
 <htmlurl url="mailto:faure@kde.org"
-name="faure@kde.org">
-<date>v1.01 14 April 1999
+name="faure@kde.org">; 
+documentation by 
+<htmlurl url="mailto:duncan@kde.org"
+name="duncan@kde.org">; 
+
+<date>v1.02 20 August 1999
 
 <!-- Table of contents -->
 <toc>
@@ -80,6 +84,15 @@ over a clickable link.
 
 <item>If "<bf>Underline links</bf>" is selected, clickable
 links are underlined.
+</itemize>
+
+The final button allows the user's default color scheme
+to be forced;
+
+<itemize>
+<item> If "<bf>Always use my colors</bf>" is selected, 
+the user's default color scheme will override any colors
+specified by the web page.
 
 </itemize>
 
@@ -106,12 +119,26 @@ You can then return
 to a previously-entered  directory easily, by clicking on its
 entry in in the tree.
 
-</itemize>  
-In the "<bf>terminal</bf>" box, you can enter the command that
+</itemize>
+
+You may also specify the terminal and editor applications
+that  may be invoked by the File Manager:
+
+<itemize>
+<item>   
+In the "<bf>Terminal</bf>" box, you can enter the command that
 will be  executed to provide a terminal whenever you select
-"Open Terminal" in the File Manager "File" menu, and when an application is
+"Open Terminal" in the File Manager "File" menu, or when an application is
 about to be run in a terminal by the file manager.
 The default terminal application is <tt>konsole</tt>.
+
+<item>
+In the ``<bf>Editor</bf>'' box, you can enter the command that
+will be used to  start an editor to view  <tt>html</tt>
+source when the  File Manager's <bf>View Frame Source</bf>
+or <bf>View Document Source</bf> ``View'' menu items are invoked.
+The default editor is <tt>kedit</tt>.
+</itemize>
 
 
 <sect> KFM Web Browser Configuration: Proxy
@@ -169,10 +196,10 @@ You can use the asterisk ("<bf> * </bf>") to specify 'any' language.
 
 A language should be specified with its 2-digit abbreviation. Examples are:
 <itemize>
-<item> en	English
-<item> de      German
-<item> fr	French
-<item> nl	Dutch
+<item> <tt>en</tt> =	English
+<item> <tt>de</tt> =    German
+<item> <tt>fr</tt> =	French
+<item> <tt>nl</tt> =	Dutch
 </itemize>
 
 The box "<bf>Accept character sets:</bf>" allows you
