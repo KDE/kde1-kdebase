@@ -32,6 +32,17 @@
 // --------- Sven's changes for macmode end;
 
 
+// Copied from kfm/utils.cpp. David
+QString stringSqueeze( const char *str, unsigned int maxlen )
+{
+    QString s ( str );
+    if (s.length() > maxlen) {
+        int part = (maxlen-3)/2;
+        return QString(s.left(part) + "..." + s.right(part));
+    }
+    else return s;
+} 
+
 void execute(const char* cmd){
   KShellProcess proc;
   proc << cmd;
@@ -506,7 +517,7 @@ void KRootWm::scanBookmarks( QPopupMenu *_popup, const char * _path )
 		pix.load( f );
 	      }
 	    }
-	    _popup->insertItem( pix, name, bookmarkId );
+	    _popup->insertItem( pix, stringSqueeze(name,50), bookmarkId );
 	    bookmarkDict.insert( bookmarkId++, new QString( url ) );
 	  }
 	}
