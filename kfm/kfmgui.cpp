@@ -1062,7 +1062,7 @@ void KfmGui::slotAbout()
 
 void KfmGui::slotHelp()
 {
-  kapp->invokeHTMLHelp( "kfm/kfm.html", "" );
+  kapp->invokeHTMLHelp( "kfm/index.html", "" );
 }
 
 void KfmGui::slotTreePopupMenu( const char *_url, const QPoint & )

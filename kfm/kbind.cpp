@@ -1242,8 +1242,7 @@ bool KMimeBind::runBinding( const char *_url )
       QStrList list;
       list.append( _url );
       openWithOldApplication( cmd, list );
-      // cmd += " ";
-      // cmd += f.data();
+      return TRUE;
     }
     // The application accepts only local files ?
     else if ( cmd.find( "%f" ) != -1 && cmd.find( "%u" ) == -1 && cmd.find( "%n" ) == -1 &&
@@ -1252,20 +1251,19 @@ bool KMimeBind::runBinding( const char *_url )
       QStrList list;
       list.append( _url );
       openWithOldApplication( cmd, list );      
+      return TRUE;
     }
-    else
-    {
-	int pos;
-	while ( ( pos = cmd.find( "%f" )) != -1 )
-	    cmd.replace( pos, 2, f.data() );
-	while ( ( pos = cmd.find( "%u" )) != -1 )
-	    cmd.replace( pos, 2, ur.data() );
-	while ( ( pos = cmd.find( "%n" )) != -1 )
-	    cmd.replace( pos, 2, n.data() );
-	while ( ( pos = cmd.find( "%d" )) != -1 )
-	    cmd.replace( pos, 2, d.data() );
-    }
+    
     int pos;
+    while ( ( pos = cmd.find( "%f" )) != -1 )
+	cmd.replace( pos, 2, f.data() );
+    while ( ( pos = cmd.find( "%u" )) != -1 )
+	cmd.replace( pos, 2, ur.data() );
+    while ( ( pos = cmd.find( "%n" )) != -1 )
+	cmd.replace( pos, 2, n.data() );
+    while ( ( pos = cmd.find( "%d" )) != -1 )
+	cmd.replace( pos, 2, d.data() );
+
     while ( ( pos = cmd.find( "%c" ) ) != -1 )
     {
 	QString s = _url;
