@@ -9,6 +9,7 @@ In 0.1:
 patchlevel 7:
        - new option to have kpanel´s menu on the left mouse button.
          (see README for details)
+       - internal cleanup: uses KShellProcess now :-)
 
 patchlevel 6:
        - small fix to save CPU during the root window selection
