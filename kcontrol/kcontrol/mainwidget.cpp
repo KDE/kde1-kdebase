@@ -41,8 +41,12 @@ void mainWidget::paintEvent(QPaintEvent *)
 
   // center the pixmap horizontally
   p.drawPixmap( (width() - pmap.width())/2, 250, pmap);
+  str = i18n("KDE Version: ");
   p.setFont(boldFont);
-  p.drawText(20,70,i18n("System:"));
+  p.drawText(60,70,str);
+  str.sprintf("%s",KDE_VERSION_STRING);
+  p.setFont(normalFont);
+  p.drawText(180,70,str);
 
   p.setFont(boldFont);
   str= i18n("User: ");
