@@ -243,15 +243,15 @@ int init_display(int argc,char **argv)
       login_shell = 1;
     } else if(strcmp(argv[i],"-ls-")==0) {
       login_shell = 0;
-    } else if(strncmp(argv[i],"-meta",5)==0) {
-      if(strcasecmp(argv[i+1],"escape")==0) {
-	MetaHandling = ESCAPE;
-      } else if(strcasecmp(argv[i+1],"8thbit")==0) {
-	MetaHandling = BIT;
-      } else {
-	MetaHandling = 0;
-      }
-      i++;
+    } else if((strncmp(argv[i],"-meta",5)==0) &&(i+1<argc)) {
+	if(strcasecmp(argv[i+1],"escape")==0) {
+	    MetaHandling = ESCAPE;
+	} else if(strcasecmp(argv[i+1],"8thbit")==0) {
+	    MetaHandling = BIT;
+	} else {
+	    MetaHandling = 0;
+	}
+	i++;
 #ifdef GREEK_KBD
     } else if (strcmp(argv[i],"-grk9")==0) {
       GreekMode = GREEK_ELOT928;

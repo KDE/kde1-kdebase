@@ -1168,7 +1168,7 @@ int main(int argc, char **argv)
 	    "-8			run in 8 bit mode\n"
 	    "-ls			initiate kvt's shell as a login shell\n"
 	    "-ls-			initiate kvt's shell as a non-login shell (default)\n"
-	    "-meta			handle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+	    "-meta <arg>		handle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
 	    "-sl <number>		save number lines in scroll-back buffer\n"
 	    "-pageup <keysym>	use hot key alt-keysym to scroll up through the buffer\n"
 	    "-pagedown <keysym>	use hot key alt-keysym to scroll down through buffer\n"));

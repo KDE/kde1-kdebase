@@ -1,6 +1,7 @@
 since kvt-0.18.2
   - fixed SM again (Jens stuff was broken, probably I applied the patch
      wrong. Anyways I redid it with C++ and Qt)   (Matthias)
+  - tiny fix for "-meta" with missing argument (Matthias)
 
 since kvt-0.18.1
   - save command line parameters into kvtrc (Jens Jahny)
