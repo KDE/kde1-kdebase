@@ -9,7 +9,7 @@
 #include <sys/stat.h>
  
 #include <limits.h>
-
+#include <fcntl.h>
 #include <dirent.h>
 #include <errno.h>
 #include <stddef.h>
@@ -286,7 +286,12 @@ void KMimeType::initMimeTypes( const char* _path )
 	    QString file = _path;
 	    file += "/";
 	    file += ep->d_name;
-	    if ( tmp.length() > 7 && tmp.right( 7 ) == ".kdelnk" )
+	    struct stat buff;
+	    stat( file.data(), &buff );
+	    if ( S_ISDIR( buff.st_mode ) )
+                initMimeTypes( file.data() );
+
+	    else if ( tmp.length() > 7 && tmp.right( 7 ) == ".kdelnk")
 	    {
 		KSimpleConfig config( file, true );
 		config.setGroup( "KDE Desktop Entry" );
@@ -348,15 +353,8 @@ void KMimeType::initMimeTypes( const char* _path )
 			old_pos2 = pos2;
 		    }
 		}
-	    }
-        else
-        {
-            struct stat buff;
-            stat( file.data(), &buff );
-            if ( S_ISDIR( buff.st_mode ) )
-                initMimeTypes( file.data() );
+            }
         }
-	}
     }
     closedir(dp);
 }
@@ -1124,125 +1122,125 @@ QPixmap* KMimeBind::getPixmap( bool _mini )
 
 void KMimeBind::initApplications( const char * _path )
 {
-    DIR *dp;
-    struct dirent *ep;
-    dp = opendir( _path );
-    if ( dp == 0L )
-	return;
+  DIR *dp;
+  struct dirent *ep;
+  dp = opendir( _path );
+  if ( dp == 0L )
+    return;
     
-    // Loop thru all directory entries
-    while ( ( ep = readdir( dp ) ) != 0L )
+  // Loop thru all directory entries
+  while ( ( ep = readdir( dp ) ) != 0L )
     {
-	if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
+      if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 	{
-	    QString tmp( ep->d_name );	
-    
-	    QString file( _path );
-	    file += "/";
-	    file += ep->d_name;
-	    if ( tmp.length() > 7 && tmp.right( 7 ) == ".kdelnk" )
-	    {
-		// The name of the application
-		QString app = tmp.left( tmp.length() - 7 );
+	  QString tmp( ep->d_name );	
+	  
+	  QString file( _path );
+	  file += "/";
+	  file += ep->d_name;
 
-		// Do we have read access ?
-		if ( access( file, R_OK ) == 0 )
-		{
-		    KSimpleConfig config( file, true );
-		    
-		    config.setGroup( "KDE Desktop Entry" );
-		    QString exec = config.readEntry( "Exec" );
-		    QString name = config.readEntry( "Name" );
-		    if ( name.isEmpty() )
-			name = app;
-		    // An icon for the binary
-		    QString app_icon = config.readEntry( "Icon" );
-		    // The pattern to identify the binary
-		    QString app_pattern = config.readEntry( "BinaryPattern" );
-		    QString comment = config.readEntry( "Comment" );
-		    // A ';' separated list of mime types
-		    QString mime = config.readEntry( "MimeType" );
-		    // Allow this program to be a default application for a mime type?
-		    // For example gzip should never be a default for any mime type.
-		    QString str_allowdefault = config.readEntry( "AllowDefault" );
-		    bool allowdefault = true;
-		    if ( str_allowdefault == "0" )
-			allowdefault = false;
-                    // Read the terminal settings.
-                    // termOptions will store both values (being 0L if Terminal=="0").
+	  struct stat buff;
+	  stat( file.data(), &buff );
 
-                    QString term = config.readEntry( "Terminal" );
-                    QString termOptions = config.readEntry( "TerminalOptions" );
-                    if (term=="0") termOptions = 0L;
-
-		    // Define an icon for the program file perhaps ?
-		    if ( !app_icon.isEmpty() && !app_pattern.isEmpty() )
-		    {
-			KMimeType *t;
-			types->append( t = new KMimeType( name.data(), app_icon.data() ) );
-			t->setComment( comment.data() );
-			t->setApplicationPattern();
-			int pos2 = 0;
-			int old_pos2 = 0;
-			while ( ( pos2 = app_pattern.find( ";", pos2 ) ) != - 1 )
-			{
-			    QString pat = app_pattern.mid( old_pos2, pos2 - old_pos2 );
-			    t->addPattern( pat.data() );
-			    pos2++;
-			    old_pos2 = pos2;
-			}
-		    } 
-		    
-		    // To which mime types is the application bound ?
-		    int pos2 = 0;
-		    int old_pos2 = 0;
-		    while ( ( pos2 = mime.find( ";", pos2 ) ) != - 1 )
-		    {
-			// 'bind' is the name of a mime type
-			QString bind = mime.mid( old_pos2, pos2 - old_pos2 );
-			// Bind this application to all files/directories
-			if ( strcasecmp( bind.data(), "all" ) == 0 )
-			{
-			    defaultType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault, termOptions.data() ) );
-			    folderType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault, termOptions.data() ) );
-			}
-			else if ( strcasecmp( bind.data(), "alldirs" ) == 0 )
-			{
-			    folderType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault, termOptions.data() ) );
-			}
-			else if ( strcasecmp( bind.data(), "allfiles" ) == 0 )
-			{
-			    defaultType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault, termOptions.data() ) );
-			}
-			// Bind this application to a mime type
-			else
-			{
-			    KMimeType *t = KMimeType::findByName( bind.data() );
-			    if ( t == 0 )
-				QMessageBox::warning( 0L, i18n("ERROR"), 
-						      i18n("Could not find mime type\n") + bind + "\n" + i18n("in ") + file );
-			    else
-			    {
-				t->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault, termOptions.data() ) );
-			    }
-			}
-			
-			pos2++;
-			old_pos2 = pos2;
-		    }    
+	  if (S_ISDIR(buff.st_mode))
+	      initApplications( file.data() );
+	  else if (tmp.length() > 7 && tmp.right( 7 ) == ".kdelnk")
+	  {
+	      // The name of the application
+	      QString app = tmp.left( tmp.length() - 7 );
+	      
+	      // Do we have read access ?
+	      if ( access( file, R_OK ) == 0 )
+    		{
+		  KSimpleConfig config( file, true );
+		  
+		  config.setGroup( "KDE Desktop Entry" );
+		  QString exec = config.readEntry( "Exec" );
+		  QString name = config.readEntry( "Name" );
+		  if ( name.isEmpty() )
+		    name = app;
+		  // An icon for the binary
+		  QString app_icon = config.readEntry( "Icon" );
+		  // The pattern to identify the binary
+		  QString app_pattern = config.readEntry( "BinaryPattern" );
+		  QString comment = config.readEntry( "Comment" );
+		  // A ';' separated list of mime types
+		  QString mime = config.readEntry( "MimeType" );
+		  // Allow this program to be a default application for a mime type?
+		  // For example gzip should never be a default for any mime type.
+		  QString str_allowdefault = config.readEntry( "AllowDefault" );
+		  bool allowdefault = true;
+		  if ( str_allowdefault == "0" )
+		    allowdefault = false;
+		  // Read the terminal settings.
+		  // termOptions will store both values (being 0L if Terminal=="0").
+		  
+		  QString term = config.readEntry( "Terminal" );
+		  QString termOptions = config.readEntry( "TerminalOptions" );
+		  if (term=="0") termOptions = 0L;
+		  
+		  // Define an icon for the program file perhaps ?
+		  if ( !app_icon.isEmpty() && !app_pattern.isEmpty() )
+    		    {
+		      KMimeType *t;
+		      types->append( t = new KMimeType( name.data(), app_icon.data() ) );
+		      t->setComment( comment.data() );
+		      t->setApplicationPattern();
+		      int pos2 = 0;
+		      int old_pos2 = 0;
+		      while ( ( pos2 = app_pattern.find( ";", pos2 ) ) != - 1 )
+    			{
+			  QString pat = app_pattern.mid( old_pos2, pos2 - old_pos2 );
+			  t->addPattern( pat.data() );
+			  pos2++;
+			  old_pos2 = pos2;
+    			}
+    		    } 
+		  
+		  // To which mime types is the application bound ?
+		  int pos2 = 0;
+		  int old_pos2 = 0;
+		  while ( ( pos2 = mime.find( ";", pos2 ) ) != - 1 )
+    		    {
+		      // 'bind' is the name of a mime type
+		      QString bind = mime.mid( old_pos2, pos2 - old_pos2 );
+		      // Bind this application to all files/directories
+		      if ( strcasecmp( bind.data(), "all" ) == 0 )
+    			{
+			  defaultType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault, termOptions.data() ) );
+			  folderType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault, termOptions.data() ) );
+    			}
+		      else if ( strcasecmp( bind.data(), "alldirs" ) == 0 )
+    			{
+			  folderType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault, termOptions.data() ) );
+    			}
+		      else if ( strcasecmp( bind.data(), "allfiles" ) == 0 )
+    			{
+			  defaultType->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault, termOptions.data() ) );
+    			}
+		      // Bind this application to a mime type
+		      else
+    			{
+			  KMimeType *t = KMimeType::findByName( bind.data() );
+			  if ( t == 0 )
+			    QMessageBox::warning( 0L, i18n("ERROR"), 
+						  i18n("Could not find mime type\n") + bind + "\n" + i18n("in ") + file );
+			  else
+    			    {
+			      t->append( new KMimeBind( app.data(), name.data(), exec.data(), app_icon, allowdefault, termOptions.data() ) );
+    			    }
+    			}
+		      
+		      pos2++;
+		      old_pos2 = pos2;
+    		    }
 		}
-	    }
-        else
-        {
-            struct stat buff;
-            stat( file.data(), &buff );
-            if ( S_ISDIR( buff.st_mode ) )
-                initApplications( file.data() );
-        }
+          }
 	}
     }
-    (void) closedir( dp );
+  (void) closedir( dp );
 }
+
 
 bool KMimeBind::runBinding( const char *_url, const char *_binding )
 {
@@ -1414,6 +1412,19 @@ void KMimeBind::runCmd( const char *_exec, QStrList &_args, const char *_workdir
             rc=chdir(_workdir);
             if (rc) printf("chdir(%s) failed : %d\n",_workdir,rc);
         }
+        // --- The following detaches the program's output from kfm
+        // Due to a X11 bug found by Stefan Westerfeld <stefan@space.twc.de>
+        // if one runs a ncurses program (e.g. less), it makes X hang
+        int fd = getdtablesize();
+        while( fd >= 0 ) {
+            close( fd );
+            fd--;
+        }
+        open( "/dev/null", O_RDWR );
+        dup( 0 );
+        dup( 0 );
+        // --- End of detach patch. David Faure.
+
 	execvp( argv[0], argv );
 	QString txt = i18n("Could not execute program\n");
 	txt += argv[0];
@@ -1507,6 +1518,19 @@ void KMimeBind::runCmd( const char *_cmd, const char *_workdir )
             rc=chdir(_workdir);
             if (rc) printf("chdir(%s) failed : %d\n",_workdir,rc);
         }
+        // --- The following detaches the program's output from kfm
+        // Due to a X11 bug found by Stefan Westerfeld <stefan@space.twc.de>
+        // if one runs a ncurses program (e.g. less), it makes X hang
+        int fd = getdtablesize();
+        while( fd >= 0 ) {
+            close( fd );
+            fd--;
+        }
+        open( "/dev/null", O_RDWR );
+        dup( 0 );
+        dup( 0 );
+        // --- End of detach patch. David Faure.
+
 	execvp( argv[0], argv );
 	QString txt = i18n("Could not execute program\n");
 	txt += argv[0];
@@ -2066,15 +2090,6 @@ bool KDELnkMimeType::runBinding( const char *_url, const char *_binding )
 		    delete config;
 		    return TRUE;
 		}
-	    }
-	    else
-	    {
- 		QString tmp;
-		tmp.sprintf( "%s %s", i18n( "Unknown binding" ), _binding );
-		QMessageBox::warning( 0, i18n( "KFM Error" ), tmp );
-		// Say: Yes we have done the job. That is not quite right, but
-		// we want to stop this here, before KFM tries some stupid things :-)
-		return TRUE;
 	    }
 	}    
     }
