@@ -655,13 +655,13 @@ int KProtocolHTTP::ProcessHeader()
 		KURL u2( u, buffer + 10 );
 		if (!u2.isMalformed())
 		{
-		  emit redirection( u2.url() );
-//		  return Open( &u2, currentMode );
-		  bytesleft = 0;
 		  if (!Cookie.isEmpty())
 		  {
 	            emit cookie( url.data(), Cookie.data() );
 		  }
+		  emit redirection( u2.url() );
+//		  return Open( &u2, currentMode );
+		  bytesleft = 0;
 		  return (SUCCESS);
 		}
 		else
