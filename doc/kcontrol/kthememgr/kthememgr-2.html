@@ -20,41 +20,34 @@
 </P>
 <H3><A NAME="s2">2. Theme package contents</A></H3>
 
-<P>The <B>Contents</B> screen presents a list of the components 
+<P>The <B>Contents</B> screen presents a list of the
+various possible components 
 contained in the selected 
-Theme package.
-It also allows you to choose which of these
-components to install.
+Theme package, and  allows you to choose which of these
+to install.
 <P>
 <P>Not all possible components are
-necessarily present in a given
+necessarily supplied by a given
 Theme package.
 Components that are present are
 listed as ``<B>available</B>'';
 missing components are listed as <B>``empty''</B>.
-<P>The checkbox ``<B>Uninstall parts of previous theme</B>'' determines
-how missing components are handled when a Theme package is installed:
+<P>Each Theme component also has a checkbox next to it. This
+determines the action taken by the Theme Manager when the Theme
+is installed:
 <UL>
-<LI> If the box is <B>not</B> checked, those components of the
-previously-installed Theme which are not supplied by the new
-Theme package are left in place.</LI>
-<LI> If the box is checked, all components of the previous
-Theme are removed.</LI>
+<LI>If the box is checked,  this component of the previous Theme will
+be removed, if installed.  The corresponding component of the
+current Theme will then be installed, if available.</LI>
+<LI> If the box is <B>not</B> checked, this component will not
+be changed. (Any previously installed component will be left in place.)</LI>
 </UL>
-
-If you wish to remove all Theme components by installing the
-``Default''  Theme (a themeless Desktop), this box must be checked.
-(The Default theme has <B>no</B> Theme components.)
 <P>
-<P>Each Theme component also has a checkbox next to it.
-If the box next to a component listed  as ``<B>available</B>''
-is checked, that component will be installed when the
-<B>Apply</B> or <B>OK</B> button is clicked.
-Components with unchecked boxes will not be installed.
 <P>
 <P>The <B>Clear</B> button clears all the checkboxes for the list of
-Theme components, and the <B>Invert</B> button  exchanges checked and
-unchecked items.
+Theme components, and the <B>Invert</B> button interchanges checked and
+unchecked items.  If you wish to completely re-install the Default theme, all
+boxes must be checked.
 <P>
 <UL>
 <LI> Note: the image files for the Window Titlebar and Window Border
@@ -62,7 +55,7 @@ components are installed into the directory
 <CODE>~/.kde/share/apps/kwm/pics/</CODE>
 and Panel image files go in
 <CODE>~/.kde/share/apps/kpanel/pics/</CODE>.
-If you find you are unable to 
+If for any reason you find you are unable to 
 completely remove a Theme to restore the
 default desktop,  
 delete the contents

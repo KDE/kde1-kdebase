@@ -35,63 +35,104 @@ window appearance (borders, titlebar, buttons), etc.
 </LI>
 </UL>
 <P>
-<P>The column on the left lists the available  <B>Theme</B> packages.
-The packages shown are either <EM>global themes</EM>
+<P>The column on the left lists the available  <B>Theme</B> packages,
+<P>They include:
+<UL>
+<LI> <B>global</B> Themes
 in the system Themes directory
-<CODE>$KDEDIR/share/apps/kthememgr/Themes</CODE>  or
-<EM>local themes</EM> in your personal
-Themes directory <CODE>~/.kde/share/apps/kthememgr/Themes</CODE>.
-The packages can either be <CODE>tar</CODE> archives
-compressed with <CODE>gzip</CODE>, or unpacked directories.
-<P>The ``Default'' Theme is the plain (themeless) KDE Desktop.
+<CODE>$KDEDIR/share/apps/kthememgr/Themes</CODE>  
+</LI>
+<LI><B>local</B> Themes in your personal
+Themes directory <CODE>~/.kde/share/apps/kthememgr/Themes</CODE>.</LI>
+</UL>
+<P>If a local Theme has the same name as a global theme,
+only the local Theme will appear in the list.
+If this local theme is deleted with the <B>Remove</B>
+button on the right,  the corresponding global Theme
+will take its place.  
+<UL>
+<LI>Note: Global Themes cannot
+be deleted; the <B>Remove</B> button changes its appearance
+to indicate that
+it is inactive when a global Theme is selected; this
+allows you to see whether a listed Theme is local or global.</LI>
+</UL>
+<P>The global ``Default'' Theme is the plain (themeless) KDE Desktop.
+<UL>
+<LI> Tip: if you have set up your Desktop the way you want it, but
+now wish to experiment with Themes, create your  own 
+<I>local</I>  ``Default'' Theme
+with the <B>Create</B> Button (specify the  new Theme name as
+``Default'' in the dialog box that opens).   Then you can recover
+your original Desktop configuration with the ``<B>Default</B>'' selection.
+<B>Be sure to save your configuration this way
+<I>before</I> installing any Themes!</B></LI>
+</UL>
+<P>
+<P>
+<P>
 <P>Click on a listed Theme to select it; its name will be
-highlighted and  a picture  showing its  components
+highlighted and (if available)  a picture showing its  components
 will be displayed in the central  box.   Information
 about the Theme will be displayed in the lower  box. 
 <P>Clicking on  <B>Default</B> will select the 
 ``Default'' Theme.
-<P>When you select a Theme package
+<P>
+<UL>
+<LI>When you select a Theme package,
 its contents will be extracted  and placed in your Theme Manager
 Work directory <CODE>~/.kde/share/apps/kthememgr/Work</CODE>.
-(The previous contents of this directory will be deleted.)
+The previous contents of this directory will be deleted.
+You may modify the Theme by
+making changes to its components in the Work directory;
+if you wish to  save these changes, do so before 
+selecting another Theme, or quitting the Theme Manager.</LI>
+</UL>
 <P>After selecting a Theme,
 go to the next screen (<B>Contents</B>) to
-choose which  components of the Theme package to
+choose which  components of the selected Theme package to
 install.  When you have made your choice, click on <B>Apply</B>
 to install the  selected components, which will be copied from
-your Theme Manager Work directory.
+your Theme Manager Work directory. 
+(If you have modified the Theme contents in the Work directory,
+you  can see the effect of your changes in this way.)
+<P>
 <P>To quit the Theme Manager, click on <B>OK</B> to
-apply the current Theme selection and then exit, or
+install the current Theme selection and then exit, or
 click on <B>Cancel</B> to exit without installing
-a new Theme.
+a new Theme.  
 <P>
-<P>
-<P>Theme packages can be imported, exported, created, or deleted
+<P>Theme packages can be imported, saved, exported, created, or deleted
 using the buttons
 at the right:
 <UL>
-<LI> Click on ``<B>Add</B>'' to import a new theme package into your
+<LI> Click on ``<B>Add</B>'' to import a new Theme package into your
 local Themes directory.  You will be prompted for the name and
 location
-of the package.
+of the package, which must be a <CODE>gzip</CODE>-compressed <CODE>tar</CODE>
+archive.
 </LI>
-<LI> Click on ``<B>Save as</B>'' to export the contents
-of your local Theme Manager Work directory as a new theme
-package. 
-You will be prompted for the location at  which to save it
-(as a compressed <CODE>tar</CODE> archive).
-
-
+<LI> Click on ``<B>Save</B>'' to archive and save the current contents
+of the Work directory as a local Theme with the current Theme name.
+(This is the way to save changes made in the Work
+directory, or to make a local copy of a global Theme.)
 </LI>
-<LI> Click on ``<B>Create</B>'' to create a new entry in the list.
-This creates a new Theme package in the local Theme Manager Work directory.  
-It will initially be a copy of the currently-installed Theme package; 
-you can then modify it as desired.
+<LI> Click on ``<B>Save as</B>'' to archive and export the contents
+of your local Theme Manager Work directory without affecting the copy
+in your local Themes directory.
+You will be prompted for a location at  which to save it.
+</LI>
+<LI> Click on ``<B>Create</B>'' to create 
+a new local Theme package (and select it).
+You will be prompted for a name and description
+of the new Theme, which will be  copy of  your
+current Desktop configuration.
+
 
 
  </LI>
 <LI> Click on ``<B>Remove</B>'' to delete a local Theme.
-(This button is inactive when a global Theme is highlighted.)
+This button is inactive if a global Theme is selected.
 </LI>
 </UL>
 <P>

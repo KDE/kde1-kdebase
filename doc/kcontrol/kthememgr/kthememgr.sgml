@@ -5,8 +5,8 @@
 <!-- Title information -->
 
 <title>KDE Control Center - KDE Theme Manager
-<author>The KDE team, Stefan Taverner; documentation by Duncan H.
-<date>v0.3 12 August 1999
+<author>The KDE team, Stefan Taverner,  Waldo Bastian ; documentation by Duncan
+<date>v0.4 16 August 1999
 
 <!-- Begin the document -->
 
@@ -31,115 +31,150 @@ window appearance (borders, titlebar, buttons), etc.
 </itemize>
 
 
-The column on the left lists the available  <bf>Theme</bf> packages.
-The packages shown are either <em>global themes</em>
-in the system Themes directory
-<tt>$KDEDIR/share/apps/kthememgr/Themes</tt>  or
-<em>local themes</em> in your personal
-Themes directory <tt>~/.kde/share/apps/kthememgr/Themes</tt>.
-The packages can either be <tt>tar</tt> archives
-compressed with <tt>gzip</tt>, or unpacked directories.
+The column on the left lists the available  <bf>Theme</bf> packages,
 
-The ``Default'' Theme is the plain (themeless) KDE Desktop.
+They include:
+<itemize>
+<item> <bf>global</bf> Themes
+in the system Themes directory
+<tt>$KDEDIR/share/apps/kthememgr/Themes</tt>  
+
+<item><bf>local</bf> Themes in your personal
+Themes directory <tt>~/.kde/share/apps/kthememgr/Themes</tt>.
+</itemize>
+
+If a local Theme has the same name as a global theme,
+only the local Theme will appear in the list.
+If this local theme is deleted with the <bf>Remove</bf>
+button on the right,  the corresponding global Theme
+will take its place.  
+<itemize>
+<item>Note: Global Themes cannot
+be deleted; the <bf>Remove</bf> button changes its appearance
+to indicate that
+it is inactive when a global Theme is selected; this
+allows you to see whether a listed Theme is local or global.
+</itemize>
+
+The global ``Default'' Theme is the plain (themeless) KDE Desktop.
+<itemize>
+<item> Tip: if you have set up your Desktop the way you want it, but
+now wish to experiment with Themes, create your  own 
+<it>local</it>  ``Default'' Theme
+with the <bf>Create</bf> Button (specify the  new Theme name as
+``Default'' in the dialog box that opens).   Then you can recover
+your original Desktop configuration with the ``<bf>Default</bf>'' selection.
+<bf>Be sure to save your configuration this way
+ <it>before</it> installing any Themes!</bf>
+</itemize>
+
+
+
 
 Click on a listed Theme to select it; its name will be
-highlighted and  a picture  showing its  components
+highlighted and (if available)  a picture showing its  components
 will be displayed in the central  box.   Information
 about the Theme will be displayed in the lower  box. 
 
 Clicking on  <bf>Default</bf> will select the 
 ``Default'' Theme.
 
-When you select a Theme package
+<itemize>
+<item>When you select a Theme package,
 its contents will be extracted  and placed in your Theme Manager
 Work directory <tt>~/.kde/share/apps/kthememgr/Work</tt>.
-(The previous contents of this directory will be deleted.)
+The previous contents of this directory will be deleted.
+You may modify the Theme by
+making changes to its components in the Work directory;
+if you wish to  save these changes, do so before 
+selecting another Theme, or quitting the Theme Manager.
+</itemize>
 
 After selecting a Theme,
 go to the next screen (<bf>Contents</bf>) to
-choose which  components of the Theme package to
+choose which  components of the selected Theme package to
 install.  When you have made your choice, click on <bf>Apply</bf>
 to install the  selected components, which will be copied from
-your Theme Manager Work directory.
+your Theme Manager Work directory. 
+(If you have modified the Theme contents in the Work directory,
+you  can see the effect of your changes in this way.)
+
 
 To quit the Theme Manager, click on <bf>OK</bf> to
-apply the current Theme selection and then exit, or
+install the current Theme selection and then exit, or
 click on <bf>Cancel</bf> to exit without installing
-a new Theme.
- 
+a new Theme.  
 
 
-Theme packages can be imported, exported, created, or deleted
+Theme packages can be imported, saved, exported, created, or deleted
 using the buttons
 at the right:
 <itemize>
 
-<item> Click on ``<bf>Add</bf>'' to import a new theme package into your
+<item> Click on ``<bf>Add</bf>'' to import a new Theme package into your
 local Themes directory.  You will be prompted for the name and
 location
-of the package.
+of the package, which must be a <tt>gzip</tt>-compressed <tt>tar</tt>
+archive.
 
-<item> Click on ``<bf>Save as</bf>'' to export the contents
-of your local Theme Manager Work directory as a new theme
-package. 
-You will be prompted for the location at  which to save it
-(as a compressed <tt>tar</tt> archive).
+<item> Click on ``<bf>Save</bf>'' to archive and save the current contents
+of the Work directory as a local Theme with the current Theme name.
+(This is the way to save changes made in the Work
+directory, or to make a local copy of a global Theme.)
 
+<item> Click on ``<bf>Save as</bf>'' to archive and export the contents
+of your local Theme Manager Work directory without affecting the copy
+in your local Themes directory.
+You will be prompted for a location at  which to save it.
 
+<item> Click on ``<bf>Create</bf>'' to create 
+a new local Theme package (and select it).
+You will be prompted for a name and description
+of the new Theme, which will be  copy of  your
+current Desktop configuration.
 
-<item> Click on ``<bf>Create</bf>'' to create a new entry in the list.
-This creates a new Theme package in the local Theme Manager Work directory.  
-It will initially be a copy of the currently-installed Theme package; 
-you can then modify it as desired.
 
 
  
 <item> Click on ``<bf>Remove</bf>'' to delete a local Theme.
-(This button is inactive when a global Theme is highlighted.)
+This button is inactive if a global Theme is selected.
 
 </itemize>
 
 
 <sect> Theme package contents
 <p>
-The <bf>Contents</bf> screen presents a list of the components 
+The <bf>Contents</bf> screen presents a list of the
+various possible components 
 contained in the selected 
-Theme package.
-It also allows you to choose which of these
-components to install.
+Theme package, and  allows you to choose which of these
+to install.
 
 
 Not all possible components are
-necessarily present in a given
+necessarily supplied by a given
 Theme package.
 Components that are present are
 listed as ``<bf>available</bf>'';
 missing components are listed as <bf>``empty''</bf>.
 
-The checkbox ``<bf>Uninstall parts of previous theme</bf>'' determines
-how missing components are handled when a Theme package is installed:
+Each Theme component also has a checkbox next to it. This
+determines the action taken by the Theme Manager when the Theme
+is installed:
 <itemize>
-<item> If the box is <bf>not</bf> checked, those components of the
-previously-installed Theme which are not supplied by the new
-Theme package are left in place.
-<item> If the box is checked, all components of the previous
-Theme are removed.
+<item>If the box is checked,  this component of the previous Theme will
+be removed, if installed.  The corresponding component of the
+current Theme will then be installed, if available.
+<item> If the box is <bf>not</bf> checked, this component will not
+be changed. (Any previously installed component will be left in place.)
 </itemize>
-If you wish to remove all Theme components by installing the
-``Default''  Theme (a themeless Desktop), this box must be checked.
-(The Default theme has <bf>no</bf> Theme components.)
 
-
-Each Theme component also has a checkbox next to it.
-If the box next to a component listed  as ``<bf>available</bf>''
-is checked, that component will be installed when the
-<bf>Apply</bf> or <bf>OK</bf> button is clicked.
-Components with unchecked boxes will not be installed.
 
 
 The <bf>Clear</bf> button clears all the checkboxes for the list of
-Theme components, and the <bf>Invert</bf> button  exchanges checked and
-unchecked items.
+Theme components, and the <bf>Invert</bf> button interchanges checked and
+unchecked items.  If you wish to completely re-install the Default theme, all
+boxes must be checked.
 
 <itemize>
 <item> Note: the image files for the Window Titlebar and Window Border
@@ -147,7 +182,7 @@ components are installed into the directory
 <tt>~/.kde/share/apps/kwm/pics/</tt>
 and Panel image files go in
 <tt>~/.kde/share/apps/kpanel/pics/</tt>.
-If you find you are unable to 
+If for any reason you find you are unable to 
 completely remove a Theme to restore the
 default desktop,  
 delete the contents
@@ -159,16 +194,25 @@ of these directories.
 
 <sect> About the package.
 <p>
-This screen provides information (version, author, etc.)
+The ``<bf>About</bf>'' screen provides information (version, author, etc.)
 about the selected Theme package, and about the KDE Theme Manager.
 
-
+If the name of the Theme is ``<tt>Theme_name</tt>'',
+Information about it is taken from the 
+<tt>Theme_name/Theme_name.themerc</tt> configuration file
+in the local Theme Manager Work directory.
 
 <sect> Authors.
 
 <p>
-The KDE Theme Manager <tt>kthememgr</tt>
-is writtten by <htmlurl url="mailto:taferner@kde.org" name="Stefan Taferner">.
+The KDE Theme Manager <tt>kthememgr</tt> is originally
+written by <htmlurl url="mailto:taferner@kde.org" name="Stefan Taferner">.
+
+Extensive later reorganization of the user interface is by
+<htmlurl url="mailto:bastian@kde.org" name="Waldo Bastian">.
+
+This documentation is by
+<htmlurl url="mailto:duncan@kde.org" name="Duncan">.
 
 
 </article>
