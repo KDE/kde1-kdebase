@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>KDE Display Manager (KDM): Installing kdm</TITLE>
+</HEAD>
+<BODY>
+<A HREF="kdm-1.html">Previous</A>
+<A HREF="kdm-3.html">Next</A>
+<A HREF="kdm.html#toc2">Table of Contents</A>
+<HR>
+<H2><A NAME="s2">2. Installing kdm</A></H2>
+
+<P>See the file README! It will tell you how to compile kdm.
+<B>NOTE:</B> <CODE>make install</CODE> will overwrite your previous <CODE>kdmrc</CODE>.</P>
+<P>Then you should insert the line
+<BLOCKQUOTE><CODE>
+<PRE>
+kdmdesktop
+</PRE>
+</CODE></BLOCKQUOTE>
+
+in the file called <CODE>XSetup_0</CODE> or similar in the xdm config directory
+(often <CODE>/etc/X11/xdm/XSetup_0</CODE>). Make sure the path is set,
+so that <CODE>kdmdesktop</CODE> can be executed.</P>
+<P>If you chose the PAM option, then you should check
+/etc/pam.conf for the lines
+<BLOCKQUOTE><CODE>
+<PRE>
+# xdm authorization
+xdm    auth       required     pam_unix_auth.so
+xdm    auth       required     pam_unix_acct.so
+</PRE>
+</CODE></BLOCKQUOTE>
+
+and insert them, if they aren't there.</P>
+<P>Now it's time to test kdm. You should bring your system to a runlevel
+that doesn't run xdm and try (as root) to say:
+<BLOCKQUOTE><CODE>
+<PRE>
+&gt; kdm -nodaemon
+</PRE>
+</CODE></BLOCKQUOTE>
+
+If you get a kdm login box and you are able to log in, things are great.
+The main thing that can go wrong here, is that the runtime linker might
+not find the shared Qt or KDE libraries. When everything works, then edit
+/etc/inittab to execute kdm instead of xdm. If you have a binary
+distribution of the KDE libraries, it might be nescesary to tell kdm
+where kde is installed (if the location of kde isn't found, icons will
+miss). This is done with the "kdm -kdedir /path/to/kde"
+option (note that KDEDIR cant be set if kdm is started from inittab).
+If you dont like changing inittab,
+you might instead rename xdm to xdm.bak and make xdm a symlink to kdm.
+Kdm will read the general display manager settings from the xdm configuartion
+files and the kdm specific ones from the file
+$KDEDIR/config/kdmrc. Kdmdesktop will also read kdmrc.</P>
+
+<HR>
+<A HREF="kdm-1.html">Previous</A>
+<A HREF="kdm-3.html">Next</A>
+<A HREF="kdm.html#toc2">Table of Contents</A>
+</BODY>
+</HTML>

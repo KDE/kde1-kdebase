@@ -1,0 +1,106 @@
+<html>
+<head><title>KDE Help System User Manual</title></head>
+<body>
+<h1>KDE Help System</h1>
+
+The KDE help system is designed to make accessing the common UNIX help systems
+(man and info) simple, as well as the native KDE documentation (HTML).
+<p>
+
+<h2>Invoking KDE Help</h2>
+
+The help system may be started using a URL to display a file, e.g:
+<p>
+	kdehelp file:/usr/local/src/qt/html/index.html
+<p>
+URL's have been added for info and man, e.g.
+<p>
+	kdehelp info:"(gcc)G++ and GCC"
+<p>
+	kdehelp man:strcpy
+<p>
+If no command line parameter is supplied, an index is displayed (currently
+just has links to info and man directories, but may have links to installed
+<b>KDE</b> application's help in the future).
+
+Alternatively, a file or URL may be opened using menus or dragged from
+the <b>KDE</b> file manager - <b>kfm</b>.
+<p>
+
+<h2>Navigating in Help</h2>
+
+Navigation in the help system is achieved by clicking on links within the
+documents and by using the options in the <em>Goto</em> menu and the toolbar.
+<p>
+<h3>Contents</h3>
+
+If the help system is started without a starting location supplied on the
+command line, the Contents are displayed.  The first section consists of
+general information on the KDE project. The second section section deals
+with specific applications/command documentation.
+
+The application and system documentation are divided into three sections:
+<p>
+<dl>
+<dt><a href="file:/cgi-bin/helpindex">KDE Applications Help Index</a>
+<dd>Native KDE application documentation.  All KDE applications have
+documentation written in HTML.  This section lists all the KDE applications
+with a brief description and a link to the full application documentation.
+<dt><a href="man:(index)">System Manual Pages</a>
+<dd>UNIX man pages are the traditional on-line documentation format for unix
+systems.  Most programs on your system will have a man page.  In addition,
+man pages exist for programming functions and file formats.
+<dt><a href="info:(dir)">System Info Directory</a>
+<dd>TeXinfo documentation is used by many GNU applications, including gcc
+(the C/C++ compiler), emacs, and many others.
+</dl>
+<p>
+At any point you may return to the Contents by selecting <em>Contents</em>
+from the <em>Goto</em> menu or from the toolbar.
+
+<p>
+
+<h3>Back and Forward</h3>
+
+These are the history commands.  <em>Back</em> moves back to the previous
+page you visited, while <em>Forward</em> moves you to the next page that
+you visited.  The history list is currently up to 50 locations deep, though
+this will probably be configurable in future releases.
+<p>
+<h3>Prev, Next, Up, Top</h3>
+
+You will recognise these commands if you have used info previously.  Info
+documents are arranged hierarchically with each page called a node.  All
+info documents have a <em>Top</em> node, i.e. the opening page.  You can
+return to the Top node of an info document by pressing Top.
+<p>
+<em>Prev & Next</em> are used to move to the previous/next page at the
+current level of the hierarchy.
+<p>
+Clicking on a menu item within a document moves you to a lower
+level in the hierarchy.  You may move up the hierarchy by pressing <em>Up</em>.
+<p>
+Man is treated similarly to info, with the section index being the Top node
+and each man page on the level below.
+
+<h2>Searching</h2>
+
+You may search the man pages for a string by selecting <em>Search...</em>
+from the <em>File</em> menu.  Once selected, the search page appears and
+prompts you for a search string.  You may choose to search any of the
+three help systems: KDE, man, or info.
+
+Pressing Submit Search displays a list of matches in each category you
+selected.
+KDE matches are listed in order of best match.
+Man page matches are listed as reported by the
+<a href="man:apropos(1)">apropos</a> command.
+
+<p>
+
+Searching info documents has not yet been implemented.
+<p>
+
+</body>
+</html>
+

@@ -1,0 +1,158 @@
+<html>
+<head>
+<title>KDE Development</title>
+</head>
+<body>
+
+<h1>KDE Development</h1>
+<img src="kule.gif" width=100%>
+<p>
+<h2>Introduction</h2>
+
+This is an early alpha release of KDE, but there are already many useful
+applications working.  The KDE developers hope that you enjoy using the
+applications we are writing.  We ask that you assist us by testing the
+software as it is released, and sending <a href="#bugs">bug reports</a>.
+<p>
+Keep in mind that alpha software is inherently buggy.
+If you need a rock solid desktop you should probably wait for
+a more stable release.  You may wish to install KDE in a test account
+first.
+
+<p>
+
+<h2>Want to help?</h2>
+
+We need your help to make KDE even better.<p>
+
+You don't need to be a programmer (though we want more of these too).  If you
+can document, draw icons, alpha/beta test then you can help.
+<p>
+If you would like to get involved in programming for the KDE project, the
+simplest way is to mail a description of your proposed project to the
+kde mailing list.  If a similar project is already underway you may wish
+to help, otherwise take note of any suggestions offered and start coding!
+<p>
+To keep up to date with future releases of KDE, or
+get involved more directly, please subscribe to the appropriate KDE
+<a href="#lists">mailing list</a>.
+<p>
+As you can see the documentation needs a lot of work :-)
+<p>
+
+<h2>Feature Requests</h2>
+
+At this stage of development we would rather not be flooded with feature
+requests.  If you do have a great idea, then mail your idea to the general
+mailing list.  Do not bother the developers directly.  If they like your
+idea and have time to implement it you may get a nice surprise in the next
+release.  Don't feel bad if your feature request goes unanswered - the
+developer may have added it to their (often long) todo list.
+
+<p>
+
+<h2>What do I need to develop a KDE application?</h2>
+
+All KDE applications are built using the Qt GUI toolkit from
+<a href="http://www.troll.no/">Troll Tech</a>.  Qt is an excellent commercial
+toolkit which includes a free license for X Window software which is freely
+distributable.  This allows us to use a commercial quality product with
+one restriction: the software we write must be free.  Obviously, this is
+exactly what we are doing, so the Qt license is not considered restrictive
+for our purpose.  Of course, if you wish to charge for an application you
+wrote for KDE, you need to buy a Qt license - only fair.
+<p>
+The version of Qt currently required by KDE is Qt-1.2.  This is available
+from <a href="ftp://ftp.troll.no/">Troll Tech's ftp site</a>, or from the
+<a href="ftp://ftp.kde.org">KDE ftp site</a>.
+<p>
+In addition to Qt, a library of core functionality and widgets for use by
+KDE applications has been developed:
+<p>
+<ul>
+<li>libkdecore: configuration (rc) file loading/saving, URL handling, and
+other functions required by all KDE applications.
+<li>libkdeui: user interface components such as font and color dialogs,
+and miscellaneous widgets used by KDE applications.
+<li>libkhtmlw: KDE HTML widget.  This widget is used primarily by kfm and
+kdehelp, but can be easily incorporated into any application which needs
+to display HTML or formatted text.
+</ul>
+<p>
+All of these libraries can be found in the kdelibs package.
+<p>
+Besides the software components mentioned above, there are guidelines
+which should be followed as closely as possible to ensure a consistent
+feel between applications. You should read the
+<a href="http://er4www.eng.ohio-state.edu/~cooperb/kde/style.html">
+Style Guide</a> and the <a href="http://www.anime.net/~goemon/kde_rfc.html">
+KDE RFC</a>.
+<p>
+
+<h2>More Information</h2>
+<p>
+<h3><a name="lists"></a>KDE mailing lists</h3>
+
+<dl>
+<dt>kde-announce@fiwi02.wiwi.uni-tuebingen.de
+<dd>General announcements, new releases, etc.<p>
+<dt>kde@fiwi02.wiwi.uni-tuebingen.de
+<dd>General discussion.<p>
+<dt>kde-look@fiwi02.wiwi.uni-tuebingen.de
+<dd>Discussion of look and feel of KDE, user interaction issues.<p>
+<dt>kde-devel@fiwi02.wiwi.uni-tuebingen.de
+<dd>Developers list - implementation details.
+</dl>
+<p>
+To subsribe or unsubscribe to any of these lists send mail to:<p>
+[list]-request@fiwi02.wiwi.uni-tuebingen.de<p>
+with an empty Subject: line and
+<tt>[un]subscribe [your-email-address]</tt> in the body.
+<p>
+<h3>WWW sites</h3>
+The official KDE home page is located at
+<a href="http://www.kde.org/">http://www.kde.org/</a>.
+Other KDE sites are listed at the official site.
+<p>
+
+<h2><a name="bugs"></a>Reporting Bugs</h2>
+
+There are two ways of reporting bugs in KDE software:
+<ol>
+<li>Mail KDE Bugreports to: kde-bugs@kde.org (Subject - 'BUG:&lt;app&gt;')
+<li>Send a bug report to the mailing list.
+</ol>
+<p>
+The first method is probably the most effective as the bug list maintainer
+(David McCanney) annoys us until we fix the bug.<br>
+<p>
+<b>IMPORTANT:</b> The developers of KDE are volunteers who are working on KDE
+in their free time.  Before you send a bug report, try to fix the problem
+yourself - if you can code, then track down the problem and send a patch.
+If you can't fix the problem, then send a <em>polite</em> bug report to one
+of the addresses shown above.  Be comprehensive:
+<p>
+<ul>
+<li>What did you do activate the bug?
+<li>Is it reproducable?
+<li>What debugging output does the application write to the console
+immediately before and after the bug occurrs?
+<li>If it crashes the app, send a stack backtrace.
+</ul>
+<p>
+<b>Note:</b> Several KDE packages have been ported from an existing package.
+  Please don't bother the original author - contact the person doing the port
+  to make sure it hasn't been introduced by the KDE programmer.
+<p>
+<b>BTW:</b> Even if your favourite KDE package has no bugs (yeah, I know - this
+doesn't happen in the real world), let the author know you like his
+program - a little encouragement helps maintain enthusiasm (we do it for
+love, not money ;-).
+<p>
+<img src="kule.gif" width=100%>
+<address>Written by Martin R. Jones &lt;mjones@kde.org&gt; 1997, for the
+KDE project</address>
+<p> 
+</body>
+</html>
+
