@@ -61,7 +61,7 @@ KDesktopsConfig::KDesktopsConfig( QWidget *parent, const char* name )
     fields_layout->setRowStretch(2, 1);
     fields_layout->setRowStretch(3, 1);
 
-    visible = new QSlider(0, 4, 1, number_of_desktops/2, QSlider::Horizontal, this);
+    visible = new QSlider(1, 4, 1, number_of_desktops/2, QSlider::Horizontal, this);
     visible_label = new QLabel(this);
     visible_label->setAlignment(AlignRight | AlignVCenter);
     visible_label->setText(klocale->translate("Visible"));
