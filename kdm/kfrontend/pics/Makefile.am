@@ -1,5 +1,5 @@
 
-PIXDIR		= @prefix@/lib/pics
+PIXDIR		= @prefix@/share/apps/kdm/pics
 
 install-data-local:
 	$(mkinstalldirs) $(PIXDIR)

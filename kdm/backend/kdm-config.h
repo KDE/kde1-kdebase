@@ -30,7 +30,7 @@
 # endif
 #endif
 
-#define KDMLOGO "/lib/pics/kdelogo.xpm"
+#define KDMLOGO "/share/apps/kdm/pics/kdelogo.xpm"
 
 #ifdef __cplusplus
 extern "C" {

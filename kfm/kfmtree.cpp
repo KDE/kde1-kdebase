@@ -72,14 +72,14 @@ KFMTreeView::KFMTreeView( QWidget *parent ) : QWidget(parent )
   // load the pixmaps we'll be using
 
   QString d = kapp->kdedir();
-  d += "/lib/pics/closed.xpm";
+  d += "/share/apps/kfm/pics/closed.xpm";
   closedPixmap = new QPixmap();
   closedPixmap->load( d.data() );
   if ( closedPixmap->isNull() )
       QMessageBox::message( "KFM Error", "Could not find\n" + d );
   
   d = kapp->kdedir();
-  d += "/lib/pics/open.xpm";
+  d += "/share/apps/kfm/pics/open.xpm";
   openPixmap = new QPixmap();
   openPixmap->load( d.data() );
   if ( openPixmap->isNull() )

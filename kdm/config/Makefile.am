@@ -1,5 +1,5 @@
 
-datadir	= @prefix@/config
+datadir	= @prefix@/share/config
 
 data_DATA = kdmrc
 

@@ -72,18 +72,6 @@ int main( int argc, char ** argv )
 	closedir( dp );
     }
     
-    c = getenv( "HOME" );
-    c += "/.kde/config/kfmrc";
-    FILE *f2 = fopen( c.data(), "rb" );
-    if ( f2 == 0L )
-    {
-	QString cmd;
-	cmd.sprintf( "cp %s/lib/kfm/config/kfmrc %s/.kde/config/kfmrc", kapp->kdedir().data(), getenv( "HOME" ) );
-	//	system( cmd.data() );
-    }
-    else
-	fclose( f2 );
-
     // Test for kfm directories
     c = getenv( "HOME" );
     c += "/.kfm";
@@ -117,14 +105,14 @@ int main( int argc, char ** argv )
 	debugT("Exist '%s'\n", c.data() );
 	closedir( dp );
     }
-
+    FILE *f2;
     c = getenv( "HOME" );
-    c += "/.desktop";
+    c += "/.kde/desktop";
     f2 = fopen( c.data(), "rb" );
     if ( f2 == 0L )
     {
 	QString cmd;
-	cmd.sprintf( "cp %s/lib/kfm/config/desktop %s/.desktop", kapp->kdedir().data(), getenv( "HOME" ) );
+	cmd.sprintf( "cp %s/share/apps/kfm/desktop %s/.kde/desktop", kapp->kdedir().data(), getenv( "HOME" ) );
 	system( cmd.data() );
     }
     else
@@ -156,29 +144,19 @@ int main( int argc, char ** argv )
 
     QString kd = kapp->kdedir();
     d = kd.copy();
-    d += "/apps";
+    d += "/share/applnk";
     testDir( d );
     d = kd.copy();
-    d += "/mimetypes";
+    d += "/share/mimelnk";
     testDir( d );
     d = kd.copy();
-
-    // Stephan: This must change in the near future
-    d += "/lib/pics";
-    testDir( d );
-    d = kd.copy();
-    d += "/lib/pics/toolbar";
-    testDir( d );
-    d = kd.copy();
-    d += "/lib/pics/wallpapers";
-    testDir( d );
 
     if ( !bTemplates )
     {
 	QMessageBox::message( klocale->translate("KFM Information"),
 			      klocale->translate("Installing Templates") );
 	QString cmd;
-	cmd.sprintf("cp %s/lib/kfm/Desktop/Templates/* %s", 
+	cmd.sprintf("cp %s/share/apps/kfm/Desktop/Templates/* %s", 
 		    kapp->kdedir().data(), KFMPaths::TemplatesPath().data() );
 	system( cmd.data() );
     }

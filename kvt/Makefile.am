@@ -6,10 +6,10 @@ INCLUDES= @all_includes@
 LDADD	= @all_libraries@ -lkdecore -lkdeui -lqt -lXext -lX11
 MOC	= @MOC@
 
-PICSDIR = $(libdir)/pics
-UTILSDIR = $(prefix)/apps/Utilities
-
 bin_PROGRAMS = kvt
+
+data_DATA = UNIX.xpm
+datadir = $(prefix)/share/icons
 
 kvt_SOURCES = \
 	command.c screen.c utmp.c \
@@ -20,11 +20,4 @@ main.C: main.moc
 
 main.moc: main.h
 	$(MOC) main.h -o main.moc
-
-install-data-local: 
-	$(mkinstalldirs) $(PICSDIR)
-	$(INSTALL_DATA) ./lib/pics/UNIX.xpm $(PICSDIR)
-
-uninstall-local:
-	rm -f $(PICSDIR)/UNIX.xpm
 

@@ -8,7 +8,6 @@ prefix = @prefix@
 BINDIR = $(prefix)/bin
 CGIDIR = $(prefix)/cgi-bin
 LIBDIR = $(prefix)/lib
-APPSDIR = $(LIBDIR)/apps
 PICSDIR = $(LIBDIR)/pics
 
 ########## Files ##########
@@ -27,17 +26,6 @@ options.cpp: options.moc
 bookmark.cpp: bookmark.moc
 cgi.cpp: cgi.moc
 mainwidget.cpp: mainwidget.moc
-
-install-data-local: all
-	$(mkinstalldirs) $(PICSDIR)
-	$(INSTALL_DATA) pics/khtmlw_dnd.xpm $(PICSDIR)
-	$(INSTALL_DATA) pics/stop.xpm $(PICSDIR)
-	$(INSTALL_DATA) pics/stop_gray.xpm $(PICSDIR)
-
-uninstall-local:
-	rm -f $(PICSDIR)/khtmlw_dnd.xpm
-	rm -f $(PICSDIR)/stop.xpm
-	rm -f $(PICSDIR)/stop_gray.xpm
 
 ########## Meta objects ##########
 

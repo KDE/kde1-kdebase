@@ -1,5 +1,5 @@
 
 data_DATA = kwm.html 
 
-datadir = @prefix@/doc/HTML/kwm
+datadir = @prefix@/share/doc/HTML/kwm
 

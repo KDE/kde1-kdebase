@@ -960,7 +960,7 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
 
     // Load all wallpapers in the combobox
     tmp = kapp->kdedir();
-    tmp += "/lib/pics/wallpapers";
+    tmp += "/share/wallpapers";
     QDir d2( tmp.data() );
     list = d2.entryInfoList();
     QFileInfoListIterator it2( *list );      // create list iterator
@@ -1139,7 +1139,7 @@ void DirPropsPage::drawWallPaper()
     }
 
     QString file = kapp->kdedir();
-    file += "/lib/pics/wallpapers/";
+    file += "/share/wallpapers/";
     file += text;
     
     if ( file != wallFile )

@@ -16,5 +16,5 @@ data_DATA = 3floppy_mount.xpm 3floppy_unmount.xpm 5floppy_mount.xpm \
 	trash.xpm txt.xpm unknown.xpm unzip.xpm video.xpm video2.xpm www.xpm \
 	y_src.xpm zip_mount.xpm zip_unmount.xpm
 
-datadir = @prefix@/lib/pics
+datadir = @prefix@/share/apps/kfm/pics
 

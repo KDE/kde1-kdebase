@@ -542,7 +542,7 @@ void KMimeType::init()
     QString ipath = kapp->kdedir();
     
     ipath.detach();
-    ipath += "/lib/pics";
+    ipath += "/share/apps/kfm/pics";
     strcpy( icon_path, ipath.data() );
     
     // KMimeType *ft;

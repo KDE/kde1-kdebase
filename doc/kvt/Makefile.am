@@ -1,3 +1,3 @@
 data_DATA = kvt.html
 
-datadir = $(prefix)/doc/HTML/kvt
+datadir = $(prefix)/share/doc/HTML/kvt

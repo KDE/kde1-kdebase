@@ -404,7 +404,7 @@ void KRootWidget::saveLayout()
     KRootIcon *icon;
 
     QString file = QDir::homeDirPath().data();
-    file += "/.desktop";
+    file += "/.kde/desktop";
     
     FILE *f = fopen( file.data(), "w" );
     if ( f != 0 )
@@ -422,7 +422,7 @@ void KRootWidget::loadLayout()
     layoutList.clear();
     
     QString file = QDir::homeDirPath().data();
-    file += "/.desktop";
+    file += "/.kde/desktop";
  
     FILE *f = fopen( file.data(), "r" );
     if ( f != 0 )

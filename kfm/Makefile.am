@@ -4,10 +4,7 @@ INCLUDES=	@all_includes@
 LDADD	=	@all_libraries@ -lkhtmlw -lkdeui -lkdecore -lqt -lXext -lX11 @LIBSOCKET@ @LIBJPEG@ -lgif -ljscript
 MOC	=	@MOC@
 
-prefix = @prefix@
-KDEINC = $(prefix)/include
-BINDIR = $(prefix)/bin
-LIBDIR = $(prefix)/lib
+CONFIGDIR = $(prefix)/share/config
 
 ####### Files
 
@@ -65,13 +62,14 @@ kfmexec.cpp: kfmexec.moc
 SUBDIRS = kfmwarn client kioslave pics Desktop
 
 install-local-exec: 
-	$(INSTALL_DATA) ./unpack $(BINDIR)
+	$(INSTALL_DATA) ./unpack $(bindir)
 
 install-data-local:
 	(cd pics && $(MAKE) install)
-	$(mkinstalldirs) $(LIBDIR)/kfm/config
-	$(INSTALL_DATA) config/kfmrc $(LIBDIR)/kfm/config
-	$(INSTALL_DATA) config/desktop $(LIBDIR)/kfm/config
+	$(mkinstalldirs) $(CONFIGDIR)
+	$(INSTALL_DATA) config/kfmrc $(CONFIGDIR)
+	$(INSTALL_DATA) config/desktop $(CONFIGDIR)
+	$(mkinstalldirs) $(KDEDIR)/share
 	$(INSTALL_DATA) magic $(KDEDIR)/share
 	(cd Desktop && $(MAKE) install)
 

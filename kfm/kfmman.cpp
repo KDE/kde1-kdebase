@@ -355,7 +355,7 @@ void KFMManager::writeBodyTag()
 	if ( tmp2.data()[0] != 0 )
 	{
 	    bg_image = getenv( "KDEDIR" );
-	    bg_image += "/lib/pics/wallpapers/";
+	    bg_image += "/share/wallpapers/";
 	    bg_image += tmp2.data();
 	}
 
@@ -396,8 +396,8 @@ void KFMManager::writeBodyTag()
 	    if ( !tmp.isNull() )
 		if ( tmp.data()[0] != 0 )
 		{
-		    bg_image = getenv( "KDEDIR" );
-		    bg_image += "/lib/pics/wallpapers/";
+		    bg_image = kapp->kdedir();
+		    bg_image += "/share/wallpapers/";
 		    bg_image += tmp.data();
 		}
 	}

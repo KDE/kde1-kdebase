@@ -55,7 +55,7 @@ KDMConfig::initStream( const char* rc)
 KVItemList*
 KDMConfig::getUsers( QString s, bool sorted = false)
 {
-     QString user_pix_dir( kdedir+"/lib/pics/users/");
+     QString user_pix_dir( kdedir+"/share/apps/kdm/pics/users/");
      KVItemList* result = new KVItemList;
      QPixmap default_pix( user_pix_dir + "default.xpm");
      if( default_pix.isNull())

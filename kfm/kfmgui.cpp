@@ -386,7 +386,7 @@ void KfmGui::initToolBar()
     QString file, path;
     QPixmap pixmap;
     toolbar = new KToolBar(this, "kfmwin-toolbar");
-    path = KMimeType::getIconPath() + QString("/toolbar/");
+    path = kapp->kdedir() + "/share/toolbar/";
     
     pixmap.load(path + "back.xpm");
     toolbar->insertButton(pixmap, 0, SIGNAL( clicked() ), view, 
