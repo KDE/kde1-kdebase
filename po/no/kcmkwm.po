@@ -261,9 +261,8 @@ msgid "Auto Raise"
 msgstr "Legg automatisk øverst"
 
 #: windows.cpp:209
-#, fuzzy
 msgid "Click Raise"
-msgstr "Legg øverst"
+msgstr "Klikk for å legge øverst"
 
 #: windows.cpp:216
 msgid "Delay (ms)"

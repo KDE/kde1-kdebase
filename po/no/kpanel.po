@@ -66,7 +66,6 @@ msgid "Quickly navigate through the filesystem"
 msgstr "Rask navigering gjennom filsystemet"
 
 #: props.C:166
-#, fuzzy
 msgid "Add Application"
 msgstr "Tilføy applikasjon"
 
@@ -75,17 +74,14 @@ msgid "Add an application or a submenu onto the panel"
 msgstr "Tilføy en applikasjon eller en undermeny til panelet"
 
 #: props.C:174
-#, fuzzy
 msgid "Add Disk Navigator"
-msgstr "Disknavigator"
+msgstr "Legg til Disknavigator"
 
 #: props.C:176
-#, fuzzy
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Tilføy en vindusliste meny til panelet"
+msgstr "Tilføy en Disknavigator-meny til panelet"
 
 #: props.C:179
-#, fuzzy
 msgid "Add Windowlist"
 msgstr "Tilføy vindusliste"
 
@@ -146,7 +142,6 @@ msgstr ""
 "%d. %b"
 
 #: tools.C:905
-#, fuzzy
 msgid "KDiskNavigator"
 msgstr "Disknavigator"
 
