@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>kmenuedit User Manual</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; I; Linux 2.0.30 i586) [Netscape]">
+</HEAD>
+<BODY>
+
+<H1>kmenuedit - Menu editor for kpanel and ktaskbar</H1>
+
+<P>Kmenuedit manages a directory hierarchy of kdelnk-files.</P>
+
+<P>This is an alpha release of kmenuedit </P>
+
+<H2>Contents</H2>
+
+<UL>
+<LI><A HREF="#start">Getting Started</A></LI>
+
+<LI><A HREF="#usage">Usage</A></LI>
+
+<UL>
+<LI><A HREF="#change">Changing menu entries</A></LI>
+</UL>
+
+<LI><A HREF="#file-types">Entry Types</A></LI>
+
+<LI><A HREF="#todo">To do</A></LI>
+</UL>
+
+<H2><A NAME="start"></A>Getting Started</H2>
+
+<P>Most systems use binary or ascii encoded configuration files to define
+a menu structure. KDE takes a different approach. KDE uses a directory
+hierarchy of kdelnk-files. Each submenu corresponds to a directory and
+each menuentry corresponds to a kdelnk-file. (kdelnk-files are special
+ascii files which names' end in '.kdelnk'.)</P>
+
+<P>One way to edit the menu is to move or copy the kdelnk-files and to
+change the files with the properties dialog of kfm.</P>
+
+<P>The other way is to use KMenuedit.</P>
+
+<H2><A NAME="usage"></A>Usage</H2>
+
+<P>KMenuedit tries to hide the details of kdelnk-files from the user.</P>
+
+<P>When you start KMenuedit for the first time it will probably ask you
+for your IconPath and the basedirectories of your menus. If you don't know
+what this means it should be save to say ok to both dialogs.</P>
+
+<P>After KMenuedit has started it will show you two menus.</P>
+
+<P><IMG SRC="kmenuedit1.gif" HEIGHT=464 WIDTH=537></P>
+
+<P>The left menu is your personal menu and the right menu is the system
+default menu. If you don't have a personal menu yet you will see a menu
+on the left with just one entry called 'EMPTY'.</P>
+
+<P>The entries in the right menu are displayed with a gray color because
+you don't have write permission to the system default menu. If you start
+KMenuedit with sufficient privileges then this menu will be displayed normal
+and you may change it.</P>
+
+<P>If you don't like the position of these menus in the window, hold down
+the shift key and the middle mouse button and move the menu arround. The
+position of the base menus will be saved for the next time you start KMenuedit.</P>
+
+<P>There are several ways to <I>add</I> an entry to a menu:</P>
+
+<UL>
+<LI>Drag a kdelnk-file with kfm and drop it on a menu.</LI>
+
+<LI>Press the right mouse button on a menuentry and select 'New' from the
+popupmenu.</LI>
+
+<LI>Drag a menuentry from another menu and drop it on the menu.</LI>
+</UL>
+
+<P>To <I>delete</I> a menuentry press the right mouse button on this entry
+and select 'Delete' from it's popupmenu.</P>
+
+<P>To <I>open a submenu</I>, select 'Open/ Close' from the popupmenu or
+click with the left mouse button on the menuentry. Do just the same to
+<I>close the submenu</I>. Note that closing a submenu closes all of it's
+submenus, too.</P>
+
+<P>You may even use<I> cut, copy and paste</I> with menuentries by selecting
+the correspondig option in the popupmenu. Just select 'copy' on one menuentry
+and select 'paste' on another entry to insert the copied menuentry below
+this entry.</P>
+
+<P>To <I>move</I> an entry to another position within it's menu, hold down
+the middle mouse button on this entry and move it around.</P>
+
+<P>To insert an new <I>seperator </I>or <I>submenu</I> select 'New'&nbsp;from
+the popupmenu and <A HREF="#change">change</A> the new entry.</P>
+
+<P>If you exit KMenuedit before saving no changes will be written to disk
+and if you want to discard all changes without restarting KMenuedit, just
+press the reload button.</P>
+
+<H4><A NAME="change"></A>Changing menu entries</H4>
+
+<P>To change a menuentry select 'Change' from it's popupmenu. You will
+be presented the following dialog.</P>
+
+<P><IMG SRC="kmenuedit2.gif" HEIGHT=499 WIDTH=376></P>
+
+<P>The combobox in the first line selects the type of the menu entry. To
+see a description of the various types see <A HREF="#file-types">Entry
+Types</A>.</P>
+
+<P>The next lines specify various attributes that are common to most menuentries.</P>
+
+<UL>
+<LI><B>Name:</B> The name of the menuentry.</LI>
+
+<LI><B>Icon:</B> The big icon shown by kfm.</LI>
+
+<LI><B>MiniIcon: </B>The small icon shown by ktaskbar.</LI>
+
+<LI><B>Comment:</B> The descriptive text displayed by kpanel and kfm.</LI>
+</UL>
+
+<P>If you want to change the icons, just click on the icon and select the
+new icon from a dialog.</P>
+
+<P>The attributes within the tab-dialog are type specific and are described
+in <A HREF="#file-types">Entry Types</A>.</P>
+
+<H2><A NAME="file-types"></A>Entry Types</H2>
+
+<P>KDE&nbsp;knows about several types of kdelnk-files and so we have different
+types of menu-entries.</P>
+
+<P><B>Submenu:<BR>
+</B>The submenu is not a kdelnk-file but a directory. So the only attributes
+that make sense for a submenu are Name, Icon, MiniIcon and Comment.</P>
+
+<P><B>Separator:<BR>
+</B>Like the submenu the separator is not a real kdelnk-file but this fact
+makes no difference for the user. Since a separator is just a bar there
+are no attributes you may set. Please note that the Separator is only used
+by ktaskbar at the moment.</P>
+
+<P><B>Application:<BR>
+</B>The application type is a real kdelnk-file. Please see the <A HREF="../kfm/kfm_apps.html">kfm</A>
+manual for a detailed description of its attributes.</P>
+
+<P><B>Link:<BR>
+</B>The link is basically a link to an object in the WWW. Just insert it's
+url in the corresponding field.</P>
+
+<P><B>Device:<BR>
+</B>The device is a kdelnk-file, too. Please see the <A HREF="../kfm/kfm_config.html">kfm</A>
+manual for details.</P>
+
+<P><B>Fvwm Command:<BR>
+</B>The fvwm command is not an official kdelnk-file type and is only used
+by the fvwm version of ktaskbar. It is used to send a command to fvwm.</P>
+
+<H2><A NAME="todo"></A>To do</H2>
+
+<P>I&nbsp;don't know. Suggestions are welcome.</P>
+
+<P>Christoph Neerfeld</P>
+
+<P>
+<HR WIDTH="100%"><FONT SIZE=-1>Last changed on 23.7.1997 by <A HREF="mailto:Christoph.Neerfeld@mail.bonn.netsurf.de">Christoph.Neerfeld@mail.bonn.netsurf.de</A></FONT><A HREF="mailto:Christoph.Neerfeld@mail.bonn.netsurf.de">
+</A></P>
+
+</BODY>
+</HTML>
