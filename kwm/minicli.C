@@ -85,7 +85,7 @@ bool isValidShortURL ( const char * cmd )
     return true;
 }
 
-void execute ( const char* cmd)
+void execute ( const char* cmd )
 {
   QString tmp;
   // Quoted all URLs (ONLY URLs) so that none of their parts
@@ -101,25 +101,10 @@ void execute ( const char* cmd)
       tmp += cmd;
       cmd = tmp.append("\"").data();
   }
-  // Torben
-  // WWW Adress - Weird but valid per RFC 1736 ?
-  else if ( strnicmp( cmd, "//www.", 6 ) == 0 )
-  {
-      tmp = "kfmclient exec \"http:";
-      tmp += cmd;
-      cmd = tmp.append("\"").data();
-  }
   // FTP Adress ?
   else if ( strnicmp( cmd, "ftp.", 4 ) == 0 )
   {
       tmp = "kfmclient exec \"ftp://";
-      tmp += cmd;
-      cmd = tmp.append("\"").data();
-  }
-  // FTP Adress - Weird but valid per RFC 1736 ?
-  else if ( strnicmp( cmd, "//ftp.", 6 ) == 0 )
-  {
-      tmp = "kfmclient exec \"ftp:";
       tmp += cmd;
       cmd = tmp.append("\"").data();
   }
