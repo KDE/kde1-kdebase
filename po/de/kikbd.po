@@ -45,7 +45,7 @@ msgstr "Einstellungen"
 #: kikbd.cpp:345 kikbd.cpp:358
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
-msgstr "Kann %s nicht von den Modikikatoren entfernen.\n"
+msgstr "Kann %s nicht von den Modifikatoren entfernen.\n"
 
 #: kikbd.cpp:348
 #, c-format
@@ -197,16 +197,16 @@ msgid ""
 "Configuration file you have has older format when expected.\n"
 "Some settings may be incorrect."
 msgstr ""
-"Ihre Konfigurationsdatei hat ein älteres Format als erwartet.Einige "
-"Einstellungen können fehlerhaft sein."
+"Ihre Konfigurationsdatei hat ein älteres Format als erwartet.\n"
+"Einige Einstellungen können fehlerhaft sein."
 
 #: kikbdconf.cpp:226
 msgid ""
 "Configuration file you have has newer format when expected.\n"
 "Some settings may be incorrect."
 msgstr ""
-"Ihre Konfigurationsdatei hat ein neueres Format als erwartet.Einige "
-"Einstellungen können fehlerhaft sein."
+"Ihre Konfigurationsdatei hat ein neueres Format als erwartet.\n"
+"Einige Einstellungen können fehlerhaft sein."
 
 #: kikbdconf.cpp:353
 msgid "unknown"
@@ -330,7 +330,7 @@ msgstr "&Info"
 
 #: widgets.cpp:136
 msgid "Display information for selected keyboard map"
-msgstr "Zeige Informationen über die Ausgewählte Tastatur-Tabelle"
+msgstr "Zeige Informationen über die ausgewählte Tastaturtabelle"
 
 #: widgets.cpp:145
 msgid "Use &hot list"
@@ -353,7 +353,7 @@ msgstr "Es gibt keine weiteren Tastaturtabellen"
 
 #: widgets.cpp:249
 msgid "Keyboard map information"
-msgstr "Tastatur-Tabelle - Information"
+msgstr "Tastaturtabelle - Information"
 
 #: widgets.cpp:283
 msgid "Add Keyboard"
@@ -501,7 +501,7 @@ msgstr "Starte automatisch"
 
 #: widgets.cpp:648
 msgid "&Docked"
-msgstr "Einge&bunden in KPanal"
+msgstr "Einge&bunden in KPanel"
 
 #: widgets.cpp:649
 msgid "Dock into special area in kpanel"
