@@ -438,7 +438,10 @@ klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin J
 
     menu = new KMenuBar( this );
     if ( sumode )
-	menu->setBackgroundColor( red );
+    {
+      menu->setBackgroundColor( red );
+      connect (menu, SIGNAL(moved(menuPosition)), this, SLOT(slotPaintRed()));
+    }
     
     CHECK_PTR( menu );
     menu->insertItem( klocale->translate("&File"), mfile );
@@ -452,6 +455,11 @@ klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin J
     //menu->show();
     
     setMenu( menu );
+}
+
+void KfmGui::slotPaintRed()
+{
+  menu->setBackgroundColor( red );
 }
 
 void KfmGui::enableToolbarButton( int id, bool enable )

@@ -514,6 +514,7 @@ protected slots:
     
     void slotShowLocationBar();
     void slotTextSelected( KHTMLView *, bool );
+    void slotPaintRed();
     
 protected:
     /**
