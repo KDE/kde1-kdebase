@@ -36,7 +36,7 @@ install-data-local:
 	$(INSTALL_DATA) $(srcdir)/large-kmenuedit.xpm $(kde_icondir)/large/kmenuedit.xpm
 
 uninstall-local:
-	rm -f $(kde_icondir)/kmenueedit.xpm
+	rm -f $(kde_icondir)/large/kmenueedit.xpm
 	rm -f $(kde_minidir)/kmenuedit.xpm
 
 messages:
