@@ -1,0 +1,43 @@
+Here is a short summary of all changes, that I made.
+
+KCMDISPLAY &  KBGNDWM :
+----------------------
+
+1. One Desktop radio button -
+   some people want only one wallpaper for all desktop
+   - however, also this one desktop can be set to randomize
+
+2. Random radio button - whether to use one wallpaper for a desktop or 
+   randomly choose from the list.
+
+3. Setup push button - opens dialog for setup of randomizing
+   - you can specify timer interval in miliseconds
+   - use drag and drop to create list of items
+   - you can create any kind of items, they do not have to contain wallpaper
+     f.e create two color background with a pattern
+   - use Add button for adding item with "No wallpaper"
+   - use Delete button to delete items
+   - in-order radio button - whether you want kbgndwm to choose files in order
+                             or randomly
+   - for each desktop you may specify list of items ( using drag and drop )
+     and timer interval.
+   - kbgndwm will at given interval change wallpapers on desktops.
+
+4. Docking radio button - kbgndwm can dock into kpanel. If you click on dock
+   window and random mode is set, then kbgndwm will change wallpaper without
+   waiting on timer
+   - clicking with right button opens popup menu with two items :
+      "Background Settings" will start "kcmdisplay background"
+      "One Desktop" toggles one desktop mode
+      
+5. More modes : Mirrored, Symmetrical Mirrored, Symmetrical Tiled,
+		Center Tiled, Centered Brick, Centered Warp, Centered Maxpect
+
+6. Use drag and drop from kfm on the monitor widget in settings dialog to
+   quickly change wallpaper
+
+7. Images larger than desktop are automatically scaled.
+
+
+-----------------------------
+ Matej Koss   koss@napri.sk
