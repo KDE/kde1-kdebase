@@ -1899,8 +1899,10 @@ bool MyApp::x11EventFilter( XEvent * ev){
     }
 
 
-  if (keys->x11EventFilter(ev))
-      return true;
+    if (!tab_grab && ! control_grab) { // don't process accelerators in tab or control mode
+	if (keys->x11EventFilter(ev))
+	    return true;
+    }
 
   // do some KApp client messages.
   // we cannot call the KApplication::x11EventFilter always,
