@@ -1,11 +1,20 @@
 In this file:
 
+* About kdebase
 * Common Mistakes
 * Configuring
 * Debugging
 * Upgrading
 * Removal/Uninstallation
 * More Info
+
+About kdelibs
+-------------
+
+This is the version 1.1.2 release of the KDE base distribution.  Included
+in this collection of applications are some generally useful programs such
+as a file manager, terminal emulation program, and programs to configure
+all of the K Desktop Environment.
 
 Common Mistakes
 ---------------
@@ -31,6 +40,11 @@ comes along with it, this is not a good idea.  The KDE does not, and will
 not depend on Mesa or any other implementations of OpenGL.  If you have
 any further questions on the subject please contact Andreas Klemm
 <andreas@klemm.gtn.com>.
+
+If you would like to include "C2" style secure encryption, define
+HAVE_OSF_C2_PASSWD in config.h, and link kcheckpass with the appropiate
+libraries.  This has been tested on Digital Unix, which requires the
+security library.
 
 Configuring
 -----------
@@ -145,5 +159,8 @@ Please direct any bug reports to http://bugs.kde.org.
 
 If you have problems compiling and installing this package, please contact
 Stephan Kulow <coolo@kde.org>.
+
+If you have discovered a security problem with KDE, or any of its included
+programs or libraries,
 
 General KDE discussions should go to the KDE mailing list (kde@kde.org).
