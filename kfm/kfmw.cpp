@@ -53,6 +53,18 @@ Kfm::Kfm()
     tmp += "/share/icons";
     list->append( tmp.data() );
 
+    KConfig *config = kapp->getConfig();
+    QStrList dirList;
+    config->setGroup("KDE Setup");
+    config->readListEntry( "IconPath", dirList, ':' );
+
+    for (const char *it=dirList.first(); it; it = dirList.next()) {
+      QDir dir( it );
+
+      if (dir.exists())
+        list->append( it );
+    }
+
     if ( KfmGui::rooticons )
     {
 	kapp->enableSessionManagement( TRUE );
@@ -62,7 +74,6 @@ Kfm::Kfm()
 	connect( kapp, SIGNAL( shutDown() ), this, SLOT( slotShutDown() ) );
 
         // Global configuration
-	KConfig *config = kapp->getConfig();
 	config->setGroup("KFM Misc Defaults");
         bAllowURLProps = config->readBoolEntry( "EnablePerURLProps", false );
         bTreeViewFollowMode = config->readBoolEntry( "TreeFollowsView", false);
