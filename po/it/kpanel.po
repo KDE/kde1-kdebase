@@ -171,7 +171,7 @@ msgstr "(Illeggibile)"
 
 #: pfilemenu.C:752
 msgid "Shared:"
-msgstr "Condivisi:"
+msgstr "Comuni:"
 
 #: pfilemenu.C:754
 msgid "Entries shared among all users"
