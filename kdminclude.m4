@@ -69,9 +69,9 @@ AC_SUBST(ac_xdmdir)
 
 AC_PATH_PAM
 if test "x$no_pam" = "xyes"; then 
-	pam_support="yes";
-else
 	pam_support="no";
+else
+	pam_support="yes";
 fi
 
 AC_ARG_WITH(shadow,
