@@ -11,11 +11,9 @@ TODO List
 - Downloading files from ftp.troll.no does not work
   ( perhaps why they dont want to see a password )
   ( seems to be fixed now )
-- http://www.rhein-main.net looks broken
 - KFM crashes if HTTP server closes connection unexpected.
 - Support for netscape. Switch that allows netscape to handle
   HTML files
-- index.html files of 0 bytes crash KFM ? ( not tested )
 - tar files on ftp serves make problems.
 - Some systems use gtar instead of tar ( we need the GNU version ).
 - Nice ftp dialog for users who do not know how to put their
