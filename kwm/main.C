@@ -1716,10 +1716,11 @@ bool MyApp::x11EventFilter( XEvent * ev){
 	}
  	// unfreeze the passive grab which is active currently
 	if (no_replay)
-	  XAllowEvents(qt_xdisplay(), SyncPointer, ev->xbutton.time);
+	  XAllowEvents(qt_xdisplay(), SyncPointer, CurrentTime);
 	else
-	  XAllowEvents(qt_xdisplay(), ReplayPointer, ev->xbutton.time);
+	  XAllowEvents(qt_xdisplay(), ReplayPointer, CurrentTime);
 	XUngrabPointer(qt_xdisplay(), CurrentTime);
+	XSync(qt_xdisplay(), false);
       }
       else {
 	  c = manager->getClientFromSizegrip(ev->xbutton.window);
