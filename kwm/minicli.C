@@ -51,8 +51,12 @@ bool isExecutable ( const char *name )
 		}
 		char save = *pc;
 		*pc = '\0';
-        test.resize ( strlen (path) ); // OVERLY CAUTIOUS BUFFER OVER-FLOW PROTECTION !!
-		test.sprintf( "%s/%s", pc-len, name);
+//        test.resize ( strlen (path) ); // OVERLY CAUTIOUS BUFFER OVER-FLOW PROTECTION !!
+//		test.sprintf( "%s/%s", pc-len, name);
+//WABA: sprintf kills each and every time you use it. DON'T USE IT!
+                test = pc-len;
+                test += '/';
+                test += name;
 		*pc = save;
 		if (*pc) { pc++; }
 		found = ( access(test.data(), 01) == 0 );  /* is it executable ? */
