@@ -229,7 +229,13 @@ void animate_size_change(QRect before, QRect after, bool decorated, int o1, int 
 			       decorated, o1, o2);
     }
   } while (tt - ts < 400);
-  
+  if (area2 == area){
+    draw_animation_rectangle(area2.left(), 
+			     area2.top(), 
+			     area2.width(), 
+			     area2.height(), 
+			     decorated, o1, o2);
+  }
   XUngrabServer(qt_xdisplay());
 }
 

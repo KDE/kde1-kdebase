@@ -18,6 +18,8 @@ In 0.10:
          to make "missbehaving" clients like GIMP usable on a KDE desktop.
        - new kwmrc-option: RstartProtocol. Defaults to "rstart -v"
        - support for noFocus property
+       - on fast X-Servers the resize animation sometimes left a tiny 
+         rectangle: fixed
   
   patchlevel 19:
        - small fixes for swallowing
