@@ -9,7 +9,7 @@ void openWithOldApplication( const char *_cmd, QStrList& _urlList, const char *_
 {
     // Find out wether there are some URL with a
     // protocol != "file"
-    printf("openWithOldApplication : _workdir=%s\n",_workdir);
+    // printf("openWithOldApplication : _workdir=%s\n",_workdir);
     bool prot = FALSE;
     char *s;
     for ( s = _urlList.first(); s != 0L; s = _urlList.next() )
