@@ -2,8 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-10-01 12:22+0200\n"
-"PO-Revision-Date: 1998-06-22 21:31+0200\n"
+"PO-Revision-Date: 1998-10-10 20:36+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
 #: backgnd.cpp:59
 msgid "Enter new desktop name"
@@ -289,7 +290,7 @@ msgstr "Pedir &contraseña"
 
 #: scrnsave.cpp:273
 msgid "&Accept root password to unlock"
-msgstr ""
+msgstr "&Aceptar contraseña del superusuario"
 
 #: scrnsave.cpp:279
 msgid "Show &password as stars"

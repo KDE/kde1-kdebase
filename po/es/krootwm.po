@@ -2,8 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-10-01 12:21+0200\n"
-"PO-Revision-Date: 1998-05-16 20:25+0200\n"
+"PO-Revision-Date: 1998-10-10 20:25+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
 #: krootwm.C:120 krootwm.C:587
 msgid "Folder"
@@ -16,7 +17,7 @@ msgstr "ERROR: La plantilla no existe '%s'"
 
 #: krootwm.C:181
 msgid "Bookmarks"
-msgstr ""
+msgstr "Marcadores"
 
 #: krootwm.C:183
 msgid "Help on desktop"
@@ -56,7 +57,7 @@ msgstr "Terminar"
 
 #: krootwm.C:219
 msgid "Edit Bookmarks"
-msgstr ""
+msgstr "Editar marcadores"
 
 #: krootwm.C:607
 msgid "Could not create folder"

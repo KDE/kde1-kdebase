@@ -2,10 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-10-01 12:22+0200\n"
-"PO-Revision-Date: 1998-05-21 10:39+0200\n"
+"PO-Revision-Date: 1998-10-10 20:12+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "First-Translator: Santiago Fernández and\n"
 "First-Translator: Jorge Valencia <jorgev@est.unileon.es>\n"
+"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
 #: main.cpp:64
 msgid "&Panel"
@@ -17,12 +18,11 @@ msgstr "&Escritorios"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr ""
+msgstr "&Navegador de disco"
 
 #: main.cpp:109
-#, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
-msgstr "modo de uso: kcmpanel [-init | {panel,options,desktops}]\n"
+msgstr "modo de uso: kcmpanel [-init | {panel,options,desktops,disknav}]\n"
 
 #: main.cpp:142
 msgid "KPanel Configuration"
@@ -46,7 +46,7 @@ msgstr "A&bajo"
 
 #: panel.cpp:63
 msgid "&Right"
-msgstr ""
+msgstr "&Derecha"
 
 #: panel.cpp:75
 msgid "Taskbar"
@@ -70,7 +70,7 @@ msgstr "Arriba/I&zquierda"
 
 #: panel.cpp:95
 msgid "Style"
-msgstr ""
+msgstr "Estilo"
 
 #: panel.cpp:97
 msgid "T&iny"
@@ -138,8 +138,8 @@ msgstr "&12h am/pm"
 
 #: disknav.cpp:43
 msgid "Edit &Global..."
-msgstr ""
+msgstr "Editar &global..."
 
 #: disknav.cpp:46
 msgid "Edit &Local..."
-msgstr ""
+msgstr "Editar &local..."

@@ -2,8 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-10-01 12:21+0200\n"
-"PO-Revision-Date: 1998-06-18 17:51+0200\n"
+"PO-Revision-Date: 1998-10-10 20:48+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
 #: kfmgui.cpp:257
 msgid "KFM"
@@ -43,9 +44,8 @@ msgid "&Select"
 msgstr "S&eleccionar"
 
 #: kfmgui.cpp:341
-#, fuzzy
 msgid "Select &all"
-msgstr "S&eleccionar"
+msgstr "S&eleccionar todo"
 
 #: kfmgui.cpp:344
 msgid "Mime Types"
@@ -200,9 +200,8 @@ msgid "Up"
 msgstr "Arriba"
 
 #: kfmgui.cpp:538
-#, fuzzy
 msgid "Home"
-msgstr "Inicio"
+msgstr "Propio"
 
 #: kfmgui.cpp:595
 msgid "Could not load icon\n"
@@ -228,7 +227,7 @@ msgstr "No se pudo leer el icono\n"
 #: root.cpp:874 root.cpp:1135 root.cpp:1153 root.cpp:1159 root.cpp:1165
 #: root.cpp:1246 root.cpp:1757 root.cpp:1782
 msgid "KFM Error"
-msgstr ""
+msgstr "Error de KFM"
 
 #: kfmexec.cpp:59 kfmgui.cpp:751 kfmman.cpp:1041
 msgid "Malformed URL\n"
@@ -277,9 +276,8 @@ msgid "Document: Done"
 msgstr "Documento: Listo"
 
 #: kfmview.cpp:350 root.cpp:875
-#, fuzzy
 msgid "ERROR: You may only drop URLs"
-msgstr "ERROR: Soltó una URL sobre sí misma"
+msgstr "ERROR: Solo puede soltar URLs"
 
 #: kfmview.cpp:366
 msgid "ERROR: Drop over malformed URL"
@@ -544,18 +542,16 @@ msgid "Transparent Text for Root Icons."
 msgstr "Texto transparente para iconos del escritorio."
 
 #: kfmdlg.cpp:114
-#, fuzzy
 msgid "&Browser"
-msgstr "Examinar"
+msgstr "&Examinar"
 
 #: bookmark.cpp:296
 msgid "Could not write bookmark"
 msgstr "Imposible escribir marcador"
 
 #: kfmprops.cpp:234
-#, fuzzy
 msgid "Name"
-msgstr "Nombre completo"
+msgstr "Nombre"
 
 #: kfmprops.cpp:251
 msgid "Full Name"
@@ -642,7 +638,7 @@ msgstr "Usuario"
 
 #: kfmprops.cpp:460 kfmprops.cpp:559
 msgid "Group"
-msgstr ""
+msgstr "Grupo"
 
 #: kfmprops.cpp:465
 msgid "Others"
@@ -662,10 +658,9 @@ msgstr "Pinchable"
 
 #: kfmprops.cpp:498
 msgid "Ownership"
-msgstr "Propietario"
+msgstr "Propiedad"
 
 #: kfmprops.cpp:504
-#, fuzzy
 msgid "Owner"
 msgstr "Propietario"
 
@@ -1295,7 +1290,7 @@ msgstr "Asumir HTML"
 
 #: open-with.cpp:132
 msgid "This group is empty!"
-msgstr ""
+msgstr "Este grupo esta vacío!"
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1362,12 +1357,3 @@ msgid ""
 msgstr ""
 "Error sintáctico:\n"
 "kfmexec comando [URLs ....]\n"
-
-#~ msgid "&Quit..."
-#~ msgstr "&Salir..."
-
-#~ msgid "&About..."
-#~ msgstr "A&cerca de..."
-
-#~ msgid "About KFM"
-#~ msgstr "&Acerca de"

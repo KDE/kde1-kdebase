@@ -2,8 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-09-10 20:54+0200\n"
-"PO-Revision-Date: 1998-04-22 21:29+0200\n"
+"PO-Revision-Date: 1998-10-10 21:29+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
 #: main.cpp:50
 msgid "&Memory"
@@ -61,24 +62,23 @@ msgstr "Todavia no hay soporte para este sistema :-("
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
-#, fuzzy
 msgid "Not Available"
 msgstr "No disponible"
 
 #: processor_linux.cpp:19
 msgid "File Error!"
-msgstr ""
+msgstr "Error de archivo!"
 
 #: processor_linux.cpp:20
 msgid "Cannot read /proc/cpuinfo"
-msgstr ""
+msgstr "No se pudo leer /proc/cpuinfo"
 
 #: processor_fbsd.cpp:47
 #, c-format
 msgid "%s, unknown speed"
-msgstr ""
+msgstr "%s, velocidad desconocida"
 
 #: processor_fbsd.cpp:49
 #, c-format
 msgid "%s running at %s MHz"
-msgstr ""
+msgstr "%s corriendo a %s MHz"

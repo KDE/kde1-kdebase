@@ -2,8 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-10-01 12:21+0200\n"
-"PO-Revision-Date: 1998-06-18 18:12+0200\n"
+"PO-Revision-Date: 1998-10-10 21:29+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
 #: kmenuedit.cpp:68
 msgid "Change &Menuname"
@@ -151,18 +152,16 @@ msgid "Device"
 msgstr "Dispositivo"
 
 #: entrydialog.cpp:63
-#, fuzzy
 msgid "Type:"
-msgstr "Tipo de sistema de archivos:"
+msgstr "Tipo:"
 
 #: entrydialog.cpp:69
 msgid "File Name:"
 msgstr "Nombre del archivo:"
 
 #: entrydialog.cpp:82
-#, fuzzy
 msgid "Name:"
-msgstr "Nombre del archivo:"
+msgstr "Nombre:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"

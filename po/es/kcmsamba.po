@@ -2,12 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-09-10 15:01+0200\n"
-"PO-Revision-Date: 1998-04-18 01:31+0200\n"
+"PO-Revision-Date: 1998-10-10 20:17+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
 #: main.cpp:48
 msgid "&Status"
-msgstr ""
+msgstr "&Estado"
 
 #: main.cpp:57
 msgid "usage: kcmsamba [-init | status]\n"
@@ -19,32 +20,32 @@ msgstr "Samba"
 
 #: ksmbstatus.cpp:114
 msgid "Error launching smbstatus !"
-msgstr ""
+msgstr "Error al iniciar smbstatus !"
 
 #: ksmbstatus.cpp:116
 msgid "Error ! smbstatus not found or non working !"
-msgstr ""
+msgstr "Error! smbstatus no fue encontrado o no funciona !"
 
 #: ksmbstatus.cpp:158
 msgid "Service"
-msgstr ""
+msgstr "Servicio"
 
 #: ksmbstatus.cpp:160
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 #: ksmbstatus.cpp:161
 msgid "GID"
-msgstr ""
+msgstr "GID"
 
 #: ksmbstatus.cpp:162
 msgid "PID"
-msgstr ""
+msgstr "PID"
 
 #: ksmbstatus.cpp:163
 msgid "Machine"
-msgstr ""
+msgstr "Máquina"
 
 #: ksmbstatus.cpp:164
 msgid "Open Files"
-msgstr ""
+msgstr "Archivos abiertos"

@@ -2,8 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-10-01 12:21+0200\n"
-"PO-Revision-Date: 1998-06-18 18:09+0200\n"
+"PO-Revision-Date: 1998-10-10 21:31+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
 #: kpanel.C:254
 msgid "Go!"
@@ -83,7 +84,7 @@ msgstr "Reiniciar panel"
 
 #: props.C:160
 msgid "Disk Navigator"
-msgstr ""
+msgstr "Navegador de disco"
 
 #: props.C:168
 msgid "Panel"
@@ -107,28 +108,28 @@ msgstr "Imposible poner este botón en el panel."
 
 #: pfilemenu.C:111
 msgid "KFM Information"
-msgstr ""
+msgstr "Información del KFM"
 
 #: pfilemenu.C:112
 msgid "Creating directory:\n"
-msgstr ""
+msgstr "Creando directorio:\n"
 
 #: pfilemenu.C:340
 msgid "(empty folder)"
-msgstr ""
+msgstr "(folder vacío)"
 
 #: pfilemenu.C:397
 msgid "(Too Many Files)"
-msgstr ""
+msgstr "(Demasiados archivos)"
 
 #: pfilemenu.C:406
 msgid "(Access Denied)"
-msgstr ""
+msgstr "(Acceso denegado)"
 
 #: pfilemenu.C:409
 msgid "(Unreadable)"
-msgstr ""
+msgstr "(Ilegíble)"
 
 #: pfilemenu.C:416
 msgid "Open Folder"
-msgstr ""
+msgstr "Abrir folder"
