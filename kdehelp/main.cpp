@@ -74,9 +74,9 @@ void errorHandler( int type, char *msg )
 {
 	QApplication::setOverrideCursor( arrowCursor );
 
-	QMessageBox::message( locale.translate("Error"), 
+	QMessageBox::message( klocale->translate("Error"), 
 			      msg, 
-			      locale.translate("Ok") );
+			      klocale->translate("Ok") );
 
 	QApplication::restoreOverrideCursor();
 
