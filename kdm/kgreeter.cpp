@@ -409,7 +409,7 @@ KGreeter::restrict()
 
 #ifdef HAVE_SETUSERCONTEXT
      lc = login_getpwclass(pwd);
-#elif USE_SHADOW
+#elif USESHADOW
      swd= getspnam(greet->name);
      endspent();
      if (!swd) return false;
