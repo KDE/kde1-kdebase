@@ -11,6 +11,6 @@ data_DATA = back.xpm back_gray.xpm bottom.xpm bottom_gray.xpm contents.xpm \
 	tick.xpm reload_gray.xpm rightjust.xpm start.xpm start_gray.xpm \
 	tick_gray.xpm top.xpm top_gray.xpm up.xpm up_gray.xpm viewmag+.xpm \
 	viewmag+_gray.xpm viewmag-.xpm viewmag-_gray.xpm viewmag.xpm \
-	viewmag_gray.xpm viewzoom.xpm viewzoom_gray.xpm 
+	viewmag_gray.xpm viewzoom.xpm viewzoom_gray.xpm stop.xpm
 
-datadir = $(prefix)/lib/pics/toolbar
+datadir = $(prefix)/share/toolbar
