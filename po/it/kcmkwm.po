@@ -52,7 +52,7 @@ msgstr "Ingrandisci"
 
 #: titlebar.cpp:133
 msgid "Sticky"
-msgstr "Appiccicato"
+msgstr "Attacata"
 
 #: titlebar.cpp:141
 msgid "Menu"
@@ -158,7 +158,7 @@ msgstr "Riduce a icona"
 
 #: titlebar.cpp:1089
 msgid "(Un)Sticky"
-msgstr "Appiccica/Stacca"
+msgstr "Attacca/Stacca"
 
 #            
 #: titlebar.cpp:1109
@@ -468,7 +468,7 @@ msgstr "non saranno attivabili"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr "inizieranno appiccicate"
+msgstr "inizieranno 'attaccate'"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"

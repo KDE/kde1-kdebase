@@ -114,11 +114,11 @@ msgstr "&Riduci a Icona"
 
 #: kpager.cpp:449
 msgid "&UnSticky"
-msgstr "&Staccato"
+msgstr "&Staccata"
 
 #: kpager.cpp:451
 msgid "&Sticky"
-msgstr "&Attaccato"
+msgstr "&Attaccata"
 
 #: kpager.cpp:453
 msgid "&To Desktop"

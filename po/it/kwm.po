@@ -51,11 +51,11 @@ msgstr "&DeIconifica"
 
 #: main.C:573
 msgid "&Sticky"
-msgstr "&Appiccicato"
+msgstr "&Attaccata"
 
 #: main.C:574
 msgid "&UnSticky"
-msgstr "&Staccato"
+msgstr "&Staccata"
 
 #: main.C:575
 msgid "Mo&ve"
