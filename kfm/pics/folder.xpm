@@ -5,7 +5,7 @@ static char * folder_xpm[] = {
 ".	c #d7a679",
 "X	c #404040",
 "o	c white",
-"O	c #b67949",
+"O	c #bf7949",
 "+	c #808080",
 "@	c black",
 "#	c #8e5930",

@@ -1,5 +1,5 @@
 /* XPM */
-static char * folder_noent_xpm[] = {
+static char * lockedfolder_xpm[] = {
 "32 32 10 1",
 " 	c None",
 ".	c #404040",
@@ -10,7 +10,7 @@ static char * folder_noent_xpm[] = {
 "@	c #df6138",
 "#	c #c0c0c0",
 "$	c #808080",
-"%	c #b67949",
+"%	c #bf7949",
 "     ...                        ",
 "     .X...                      ",
 "    ...oo...                    ",
