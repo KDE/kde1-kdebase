@@ -131,7 +131,7 @@ bool GetInfo_Sound (KTabListBox *lbox)
 
 bool GetInfo_Devices (KTabListBox *lbox)
 {
-	QFile *dmesg = new QFile("/var/log/dmesg.today");
+	QFile *dmesg = new QFile("/var/run/dmesg.boot");
 
 	if (!dmesg->exists()) {
 		delete dmesg;
@@ -157,9 +157,28 @@ bool GetInfo_Devices (KTabListBox *lbox)
 	return true;
 }
 
-bool GetInfo_SCSI (KTabListBox *)
+bool GetInfo_SCSI (KTabListBox *lbox)
 {
-	return FALSE;
+	FILE *pipe;
+	QFile *camcontrol = new QFile("/sbin/camcontrol");
+
+	if (!camcontrol->exists()) {
+		delete camcontrol;
+		return false;
+	}
+
+	if ((pipe = popen("/sbin/camcontrol devlist", "r")) == NULL) {
+	     return false;
+	}
+
+	QTextStream *t = new QTextStream(pipe, IO_ReadOnly);
+	QString s;
+
+	while ((s=t->readLine())!="")
+		lbox->insertItem(s);
+
+	delete t;
+	pclose(pipe);
 }
 
 bool GetInfo_Partitions (KTabListBox *lbox)
