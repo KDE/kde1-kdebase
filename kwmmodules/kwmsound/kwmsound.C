@@ -22,6 +22,10 @@
    Boston, MA 02111-1307, USA.
 
    $Log$
+   Revision 1.4  1998/05/01 22:34:51  esken
+   Fixed a bug. Only assigned events are played now. Others
+   were played using an empty filename.
+
    Revision 1.3  1998/03/08 08:05:44  wuebben
    Bernd: support for all sound events
 
@@ -34,6 +38,7 @@
 #include "kwmsound.h"
 
 #include <stdio.h>
+#include <unistd.h>
 
 #include "kwmsound.moc"
 
@@ -109,7 +114,24 @@ char *eventNames[2][29] = {
 
 KWmSound::KWmSound(KWMModuleApplication *modapp){
 
-  audio = new KAudio();
+  sleep(1);  // Workaround: wait for maudio to fire up
+  int tries;
+  for (tries=0; tries< 10; tries++) {
+    audio = new KAudio();
+    if ( audio && audio->serverStatus() == 0 )
+       break;
+    else {
+      if (audio)
+        delete audio;
+      sleep(1);
+    }
+  }
+  if (tries==10) {
+    printf("kwmsound: Failed connecting the audio server.\n
+Please check manually if you can start kaudioserver.\n");
+    exit(1);
+  }
+
   sounds.setAutoDelete(TRUE);
 
   last_event = "";
