@@ -15,6 +15,7 @@ Comment[ru]=Интернациональная клавиатура
 Comment[pt]=Teclado Internacional
 Comment[pt_BR]=Teclado Internacional
 Comment[fi]=KansainvДlinen nДppДimistЖ
+Comment[pl]=Klawiatura MiЙdzynarodowa
 Exec=kikbd -caption "%c" %i %m
 Icon=kikbd.xpm
 Type=Application
