@@ -168,7 +168,6 @@ msgid "Save Settings for this &URL"
 msgstr "Enregistrer les options locales"
 
 #: kfmgui.cpp:360
-#, fuzzy
 msgid "&Configure File Manager..."
 msgstr "&Configurer le gestionnaire de fichiers..."
 
@@ -1557,7 +1556,6 @@ msgstr ""
 #~ msgid "&Other"
 #~ msgstr "&Autres"
 
-#, fuzzy
 #~ msgid "KFM Preferences Settings"
 #~ msgstr "KFM - Options du navigateur"
 
