@@ -1,5 +1,4 @@
 # KTranslator Generated File
-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -8,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay-1.1\n"
-"POT-Creation-Date: 1999-01-15 01:15+0100\n"
+"POT-Creation-Date: 1999-02-06 01:16+0100\n"
 "PO-Revision-Date: 1999-01-29 15:45+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>>\n"
@@ -52,7 +51,7 @@ msgstr "Kef&luniañ ..."
 msgid "Wallpaper"
 msgstr "Paper-moger"
 
-#: backgnd.cpp:327 backgnd.cpp:1214 backgnd.cpp:1372 backgnd.cpp:1910
+#: backgnd.cpp:327 backgnd.cpp:1210 backgnd.cpp:1372 backgnd.cpp:1911
 msgid "No wallpaper"
 msgstr "Paper-moger ebet"
 
@@ -132,101 +131,100 @@ msgstr "Fazi restr"
 msgid "Can't load image file"
 msgstr "Na m'eus ket gallet kargañ restr ar skeudenn"
 
-#: backgnd.cpp:1408 backgnd.cpp:1880
+#: backgnd.cpp:1408 backgnd.cpp:1881
 msgid "Unsupported URL"
 msgstr "URL anskoraet"
 
-#: backgnd.cpp:1409 backgnd.cpp:1881
+#: backgnd.cpp:1409 backgnd.cpp:1882
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
-msgstr ""
-"Ho tigarez, ar seurt URL-mañ n'eo ket skoraet gant mollad diskouez KDE"
+msgstr "Ho tigarez, ar seurt URL-mañ n'eo ket skoraet gant mollad diskouez KDE"
 
-#: backgnd.cpp:1440
+#: backgnd.cpp:1441
 msgid "Two color backgrounds"
 msgstr "Drekleur daou liv"
 
-#: backgnd.cpp:1477
+#: backgnd.cpp:1478
 msgid "Blend colors from &top to bottom"
 msgstr "Kemmeskit livioù adalek al &laez davet an traoñ"
 
-#: backgnd.cpp:1483
+#: backgnd.cpp:1484
 msgid "Blend colors from &right to left"
 msgstr "Kemmeskit livioù adalek an tu &dehou davet an tu kleiz"
 
-#: backgnd.cpp:1489
+#: backgnd.cpp:1490
 msgid "Use &pattern"
 msgstr "Implijit &patrom"
 
-#: backgnd.cpp:1516
+#: backgnd.cpp:1517
 msgid "Preview"
 msgstr "Rakgwel"
 
-#: backgnd.cpp:1527
+#: backgnd.cpp:1528
 msgid "Pattern &name"
 msgstr "&Anv ar patrom"
 
-#: backgnd.cpp:1566
+#: backgnd.cpp:1567
 msgid "Current"
 msgstr "Hini red"
 
-#: backgnd.cpp:1626
+#: backgnd.cpp:1627
 msgid "Filled"
 msgstr "Leuniet"
 
-#: backgnd.cpp:1629
+#: backgnd.cpp:1630
 msgid "Fish net"
 msgstr "Roued pesketañ"
 
-#: backgnd.cpp:1632
+#: backgnd.cpp:1633
 msgid "Triangles"
 msgstr "Tric'hornioù"
 
-#: backgnd.cpp:1635
+#: backgnd.cpp:1636
 msgid "Flowers"
 msgstr "Bleunioù"
 
-#: backgnd.cpp:1638
+#: backgnd.cpp:1639
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1641
+#: backgnd.cpp:1642
 msgid "Cobbled Pavement"
 msgstr "Pavez"
 
-#: backgnd.cpp:1707
+#: backgnd.cpp:1708
 msgid "Random mode setup"
 msgstr "Kefluniadur dre zegouezh"
 
-#: backgnd.cpp:1713
+#: backgnd.cpp:1714
 msgid "Pick files from &directory"
 msgstr "Pakañ restroù diwar ar &renkell"
 
-#: backgnd.cpp:1727
+#: backgnd.cpp:1728
 msgid "&Browse ..."
 msgstr "&Furchal..."
 
-#: backgnd.cpp:1748
+#: backgnd.cpp:1749
 msgid "Timer Delay in seconds :"
 msgstr "Gedvezh an dilerc'hier e eilenn :"
 
-#: backgnd.cpp:1760
+#: backgnd.cpp:1761
 msgid "In &order"
 msgstr "En &urzh"
 
-#: backgnd.cpp:1777
+#: backgnd.cpp:1778
 msgid "Desktops :"
 msgstr "Burevioù :"
 
-#: backgnd.cpp:1816
+#: backgnd.cpp:1817
 msgid "&Add"
 msgstr "&Ouzhpennañ"
 
-#: backgnd.cpp:1988
+#: backgnd.cpp:1989
 msgid "Directory error"
 msgstr "Fazi renkell"
 
-#: backgnd.cpp:1989
+#: backgnd.cpp:1990
 msgid "Selected directory doesn't exists"
 msgstr "Ar renkell diuzet n'eus ket anezhi"
 
@@ -491,7 +489,8 @@ msgstr "&Giz"
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr ""
-"arveriadur : kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
+"arveriadur : kcmdisplay [-init | "
+"{background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"

@@ -6,84 +6,55 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkeys-1.1\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-12-11 11:16+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-""
 
-#: main.cpp:64
+#: main.cpp:72
 msgid "&Standard shortcuts"
 msgstr "Berradennoù &standard"
 
-#: main.cpp:69
+#: main.cpp:80
 msgid "&Global shortcuts"
 msgstr "Berradennoù &hollek"
 
-#: main.cpp:76
+#: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
 msgstr "arveriadur : kcmkeys [-init | {standard,global}]\n"
 
-#: main.cpp:118
+#: main.cpp:132
 msgid "Key binding settings"
 msgstr "Kefluniañ ereoù stokell"
 
-#: standard.cpp:53
-msgid "New"
-msgstr "Nevez"
-
-#: standard.cpp:57
-msgid "Next"
-msgstr "A heul"
-
-#: standard.cpp:58
-msgid "Prior"
-msgstr "Kent"
-
-#: standard.cpp:63
-msgid "Find"
-msgstr "Kavout"
-
-#: standard.cpp:66
-msgid "Home"
-msgstr "Deroù"
-
-#: standard.cpp:67
-msgid "End"
-msgstr "Dibenn"
-
-#: global.cpp:81 standard.cpp:83
+#: keyconfig.cpp:106
 msgid "Current scheme"
 msgstr "Steuñv-red"
 
-#: global.cpp:83 standard.cpp:84
+#: keyconfig.cpp:108
 msgid "KDE default"
 msgstr "KDE dre ziouer"
 
-#: standard.cpp:85
-msgid "KDE lite"
-msgstr "KDE skañv"
-
-#: global.cpp:90 standard.cpp:90
+#: keyconfig.cpp:115
 msgid "&Key scheme"
 msgstr "S&teuñv ar stokell"
 
-#: global.cpp:101
+#: keyconfig.cpp:126
 msgid "&Add ..."
 msgstr "O&uzhpennañ..."
 
-#: global.cpp:123
+#: keyconfig.cpp:148
 msgid "&Save changes"
 msgstr "&Enrollañ ar c'hemmoù"
 
-#: global.cpp:182
+#: keyconfig.cpp:211
 msgid "Error removing scheme"
 msgstr "Fazi o dilemel ur steuñv"
 
-#: global.cpp:183
+#: keyconfig.cpp:212
 msgid ""
 "This key scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -93,11 +64,11 @@ msgstr ""
 "N'oc'h ket aotreet da gemañ ar reizhad restr\n"
 "lec'h en em gav ar steuñv marteze."
 
-#: global.cpp:314
+#: keyconfig.cpp:343
 msgid "Naming conflict"
 msgstr "Enebiezh envel"
 
-#: global.cpp:315
+#: keyconfig.cpp:344
 msgid ""
 "Please choose a unique name for the new key\n"
 "scheme. The one you entered already appears\n"
@@ -221,3 +192,29 @@ msgstr "Gwintañ d'ur burev uheloc'h"
 msgid "Switch one desktop down"
 msgstr "Gwintañ d'ur burev izeloc'h"
 
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Nevez"
+
+#: stdbindings.cpp:8
+msgid "Next"
+msgstr "A heul"
+
+#: stdbindings.cpp:9
+msgid "Prior"
+msgstr "Kent"
+
+#: stdbindings.cpp:14
+msgid "Find"
+msgstr "Kavout"
+
+#: stdbindings.cpp:17
+msgid "Home"
+msgstr "Deroù"
+
+#: stdbindings.cpp:18
+msgid "End"
+msgstr "Dibenn"
+
+#~ msgid "KDE lite"
+#~ msgstr "KDE skañv"

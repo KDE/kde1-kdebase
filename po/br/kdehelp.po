@@ -1,10 +1,8 @@
 # KTranslator Generated File
-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -13,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp-1.1\n"
-"POT-Creation-Date: 1999-01-15 01:15+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1999-02-05 11:38+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -29,7 +27,7 @@ msgstr "Skoazell KDE : digeriñ un URL"
 msgid "Open URL"
 msgstr "Digeriñ un URL"
 
-#: helpwin.cpp:459 info.cpp:288
+#: helpwin.cpp:459 info.cpp:321
 msgid "Cannot open: "
 msgstr "N'hallan ket digeriñ :"
 
@@ -65,16 +63,16 @@ msgstr "Ouzhpennañ ur sined"
 msgid "Open in new Window"
 msgstr "Digeriñ en ur prenestr nevez"
 
-#: info.cpp:97 info.cpp:615
+#: info.cpp:113 info.cpp:641
 msgid "Error in info file"
 msgstr "Fazi er restr 'info'"
 
-#: info.cpp:1258
+#: info.cpp:1284
 #, c-format
 msgid "Node not found: %s"
 msgstr "Ar flosk %s n'eo ket kavet"
 
-#: info.cpp:1403
+#: info.cpp:1429
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "N'hallan ket digeriñ ar restr 'info' : %s"
@@ -139,7 +137,7 @@ msgstr "Dibaboù Skoazell KDE"
 msgid "Colors"
 msgstr "Livioù"
 
-#: man.cpp:55 man.cpp:445
+#: man.cpp:55 man.cpp:453
 msgid "Online Manuals"
 msgstr "Dornlevrioù enlinenn"
 
@@ -185,19 +183,19 @@ msgstr "Mererezh ar reizhiad"
 msgid "New"
 msgstr "Nevez"
 
-#: man.cpp:271
+#: man.cpp:279
 msgid "Reading Dir: "
 msgstr "O lenn ar renkell :"
 
-#: man.cpp:435
+#: man.cpp:443
 msgid "Online Manual - Section"
 msgstr "Dornlevrioù enlinenn - Rann"
 
-#: man.cpp:501 man.cpp:510
+#: man.cpp:509 man.cpp:518
 msgid "\"man\" system call failed"
 msgstr "Galv \"man\" d'ar reizhiad sac'het"
 
-#: man.cpp:528
+#: man.cpp:536
 msgid "Opening temporary file failed"
 msgstr "Digeriñ ur restr padennek zo c'hwitet"
 

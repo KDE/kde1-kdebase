@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-02-09 01:13+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,47 +14,47 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.C:303
+#: main.C:304
 msgid "&Normal"
 msgstr ""
 
-#: main.C:306
+#: main.C:307
 msgid "&Small"
 msgstr ""
 
-#: main.C:307
+#: main.C:308
 msgid "&Medium"
 msgstr ""
 
-#: main.C:308
+#: main.C:309
 msgid "&Large"
 msgstr ""
 
-#: main.C:309
+#: main.C:310
 msgid "&Huge"
 msgstr ""
 
-#: main.C:311
+#: main.C:312
 msgid "&Linux"
 msgstr ""
 
-#: main.C:312
+#: main.C:313
 msgid "Linux (small)"
 msgstr ""
 
-#: main.C:315
+#: main.C:316
 msgid "&More ..."
 msgstr ""
 
-#: main.C:321
+#: main.C:322
 msgid "&Hide"
 msgstr ""
 
-#: main.C:322
+#: main.C:323
 msgid "&Left"
 msgstr ""
 
-#: main.C:323
+#: main.C:324
 msgid "&Right"
 msgstr ""
 
@@ -82,67 +82,67 @@ msgstr ""
 msgid "&Menubar"
 msgstr ""
 
-#: main.C:344
+#: main.C:343
 msgid "&Frame"
 msgstr ""
 
-#: main.C:346
+#: main.C:344
 msgid "Scroll&bar"
 msgstr ""
 
-#: main.C:348
+#: main.C:346
 msgid "BS sends &DEL"
 msgstr ""
 
-#: main.C:351
+#: main.C:348
 msgid "&Font"
 msgstr ""
 
-#: main.C:352
+#: main.C:349
 msgid "&Size"
 msgstr ""
 
-#: main.C:353
+#: main.C:350
 msgid "&Schema"
 msgstr ""
 
-#: main.C:355
+#: main.C:352
 msgid "&Save options"
 msgstr ""
 
-#: main.C:359
+#: main.C:356
 msgid "&About ..."
 msgstr ""
 
-#: main.C:360
+#: main.C:357
 msgid "&User's Manual ..."
 msgstr ""
 
-#: main.C:361
+#: main.C:358
 msgid "&Technical Reference ..."
 msgstr ""
 
-#: main.C:365
+#: main.C:362
 msgid "cd"
 msgstr ""
 
-#: main.C:378
+#: main.C:375
 msgid "Sessions"
 msgstr ""
 
-#: main.C:517
+#: main.C:527
 #, c-format
 msgid ""
 "Font `%s' not found.\n"
 "Check README.linux.console for help."
 msgstr ""
 
-#: main.C:621
+#: main.C:647
 #, c-format
 msgid "About %s"
 msgstr ""
 
-#: main.C:623
+#: main.C:649
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -155,17 +155,17 @@ msgid ""
 "See `LICENSE.readme´ for details."
 msgstr ""
 
-#: main.C:749
+#: main.C:776
 #, c-format
 msgid "`%s' terminated abnormally."
 msgstr ""
 
-#: main.C:752
+#: main.C:779
 msgid ""
 "\n"
 "Return code = "
 msgstr ""
 
-#: main.C:936
+#: main.C:976
 msgid "Welcome to the console"
 msgstr ""

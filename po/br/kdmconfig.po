@@ -1,10 +1,8 @@
 # KTranslator Generated File
-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -41,7 +39,8 @@ msgstr "&Dalc'hoù"
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
-"arveriadur : kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+"arveriadur : kdmconfig [-init | "
+"{appearance,font,background,sessions,users}]\n"
 
 #: main.cpp:142
 msgid "KDM Configuration"
@@ -274,12 +273,14 @@ msgstr ""
 
 #: kdm-users.cpp:97
 msgid "Show users"
-msgstr "Diskouez an\n"
+msgstr ""
+"Diskouez an\n"
 "arveriaded"
 
 #: kdm-users.cpp:103
 msgid "Sort users"
-msgstr "Rummañ an\n"
+msgstr ""
+"Rummañ an\n"
 "arveriaded"
 
 #: kdm-users.cpp:182 kdm-users.cpp:251

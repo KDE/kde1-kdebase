@@ -1,25 +1,20 @@
 # KTranslator Generated File
-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -28,7 +23,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel-1.1\n"
-"POT-Creation-Date: 1998-12-20 03:02+0600\n"
+"POT-Creation-Date: 1999-01-28 01:15+0100\n"
 "PO-Revision-Date: 1999-02-05 14:45+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -52,7 +47,7 @@ msgstr "&Merdeer ar bladenn"
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "arveriadur : kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
-#: main.cpp:112
+#: main.cpp:113
 msgid "KPanel Configuration"
 msgstr "Kefluniadur KPanel"
 

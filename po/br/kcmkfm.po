@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm-1.1\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1999-02-01 17:48+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -51,7 +51,8 @@ msgstr "A&rlunioù ar gorretaol"
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr ""
-"arveriadur : %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+"arveriadur : %s [-init | "
+"{font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
@@ -124,6 +125,10 @@ msgstr "Gwel gwezenn a heul ar &merdeiñ"
 #: miscopts.cpp:43
 msgid "Terminal"
 msgstr "Termenell"
+
+#: miscopts.cpp:57
+msgid "Editor"
+msgstr ""
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
