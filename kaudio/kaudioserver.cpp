@@ -126,7 +126,8 @@ int main ( int, char** )
   else
     fgets(PidRead, 100, KMServerPidHandle);
 
-  fclose(KMServerPidHandle);
+  if(KMServerPidHandle)
+    fclose(KMServerPidHandle);
   int ret =  initMediatool(PidRead);
   if (ret==0)
     fatalexit(NotStarted);
