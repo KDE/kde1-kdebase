@@ -352,8 +352,22 @@ void KScreenSaver::readSettings( int )
 	QString str;
 	saverLocation = SCREENSAVER_DIR;
 
+//Antonio - Added support to parse the old config file for KDE 1.0 users
+
+        bool first_time = false;
 	KConfig *config = kapp->getConfig();
+ 
 	config->setGroup( "ScreenSaver" );
+	
+	if ( ! config->hasKey("UseSaver") ) {
+		first_time = true;
+		config= new KConfig(KApplication::kde_configdir() + "/kdisplayrc",
+                    KApplication::localconfigdir() + "/kdisplayrc");   
+		config->setGroup( "ScreenSaver" );
+	};
+
+//Antonio
+
 
 	saverLocation = config->readEntry( "Location", kapp->kde_bindir().copy() );
 
@@ -396,6 +410,8 @@ void KScreenSaver::readSettings( int )
 	cornerAction[4] = '\0';
 
 	showStars = kssConfig->readBoolEntry( "PasswordAsStars", true );
+
+	if (first_time) delete config; //Antonio : Let's delete the config file
 }
 
 void KScreenSaver::updateValues()
