@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit \n"
 "POT-Creation-Date: 1998-12-20 01:16+0100\n"
-"PO-Revision-Date: 1998-06-25 19:01+0200\n"
+"PO-Revision-Date: 1998-12-29 20:52+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -76,15 +76,15 @@ msgstr "Otwórz/Zamknij"
 
 #: confmenu.cpp:117
 msgid "Select item for moving"
-msgstr ""
+msgstr "Wybierz element do przemieszczenia"
 
 #: confmenu.cpp:118
 msgid "Select menu for moving"
-msgstr ""
+msgstr "Wybierz menu do przemieszczenia"
 
 #: confmenu.cpp:120
 msgid "New"
-msgstr ""
+msgstr "Nowy"
 
 #: confmenu.cpp:177 confmenu.cpp:316
 msgid "Warning !"
@@ -160,18 +160,16 @@ msgid "Device"
 msgstr "Urz±dzenie"
 
 #: entrydialog.cpp:63
-#, fuzzy
 msgid "Type:"
-msgstr "Typ FS:"
+msgstr "Typ:"
 
 #: entrydialog.cpp:69
 msgid "File Name:"
 msgstr "Nazwa pliku:"
 
 #: entrydialog.cpp:82
-#, fuzzy
 msgid "Name:"
-msgstr "Nazwa pliku:"
+msgstr "Nazwa:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"
@@ -187,7 +185,7 @@ msgstr "Komentarz:"
 
 #: entrydialog.cpp:165 entrydialog.cpp:535
 msgid "Execute"
-msgstr "Polecenie"
+msgstr "Wykonanie"
 
 #: entrydialog.cpp:186
 msgid "Execute:"
@@ -260,6 +258,3 @@ msgstr "Prywatne:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Domy¶lne:"
-
-#~ msgid "! PROTECTED Button !"
-#~ msgstr "! ZABEZPIECZONY Przycisk !"

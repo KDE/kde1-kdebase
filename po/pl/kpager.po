@@ -1,0 +1,122 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kpager \n"
+"POT-Creation-Date: 1998-12-15 07:34+0100\n"
+"PO-Revision-Date: 1998-12-29 21:38+0200\n"
+"Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+
+#: kpager.cpp:72
+msgid "Toggle Global Desktop"
+msgstr "Pokazuj ogólne biurko"
+
+#: kpager.cpp:74
+msgid "Toggle Menubar"
+msgstr "Poka¿ pasek menu"
+
+#: kpager.cpp:77
+msgid "Move Right"
+msgstr "Poka¿ nastêpny"
+
+#: kpager.cpp:79
+msgid "Move Left"
+msgstr "Poka¿ poprzedni"
+
+#: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
+msgid "Hide &Global Desktop"
+msgstr "Ukryj &ogólne biurko "
+
+#: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
+msgid "Show &Global Desktop"
+msgstr "Poka¿ &ogólne biurko"
+
+#: kpager.cpp:97 kpager.cpp:380
+msgid "Hide &Menubar"
+msgstr "Ukryj pasek &menu"
+
+#: kpager.cpp:101 kpager.cpp:386
+msgid "&2 Rows"
+msgstr "&2 wiersze"
+
+#: kpager.cpp:104
+msgid "&One Click change Desktop"
+msgstr "&Jedno klikniêcie prze³±cza biurko"
+
+#: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
+msgid "Hide Desktop &Names"
+msgstr "Ukryj &nazwê biurka"
+
+#: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
+msgid "Show Desktop &Names"
+msgstr "Poka¿ &nazwê biurka"
+
+#: kpager.cpp:115 kpager.cpp:402
+msgid "Plain"
+msgstr "Jednolite"
+
+#: kpager.cpp:118 kpager.cpp:404
+msgid "Icon"
+msgstr "Ikona"
+
+#: kpager.cpp:121 kpager.cpp:406
+msgid "Pixmap"
+msgstr "Pixmapa"
+
+#: kpager.cpp:125 kpager.cpp:412
+msgid "Draw Mode"
+msgstr "Tryb wype³niania"
+
+#: kpager.cpp:129
+#, c-format
+msgid ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"KPager's homepage is at : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n"
+"This is free software, and you are welcome to redistribute it\n"
+"under certain conditions\n"
+msgstr ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"Strona domowa KPager: http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager nie posiada ABSOLUTNIE ¯ADNEJ GWARANCJI; szczegó³y w pliku COPYING\n"
+"To jest wolnodostêpne oprogramowanie, wiêc dozwolona jest redystrybucja\n"
+"pod okre¶lonymi warunkami\n"
+
+#: kpager.cpp:382
+msgid "Show &Menubar"
+msgstr "Poka¿ pasek &menu"
+
+#: kpager.cpp:389
+msgid "One Click change Desktop"
+msgstr "Jedno klikniêcie prze³±cza biurko"
+
+#: kpager.cpp:446
+msgid "&Maximize"
+msgstr "&Maksymalizuj"
+
+#: kpager.cpp:447
+msgid "&Iconify"
+msgstr "Mi&nimalizuj"
+
+#: kpager.cpp:449
+msgid "&UnSticky"
+msgstr "Ode&pnij"
+
+#: kpager.cpp:451
+msgid "&Sticky"
+msgstr "Przy&pnij"
+
+#: kpager.cpp:453
+msgid "&To Desktop"
+msgstr "Na &biurko"

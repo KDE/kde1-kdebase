@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kcmlocale \n"
 "POT-Creation-Date: 1998-05-13 12:05+0200\n"
-"PO-Revision-Date: 1998-04-16 18:32+0200\n"
+"PO-Revision-Date: 1998-12-27 23:39+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 

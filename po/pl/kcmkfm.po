@@ -1,0 +1,222 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkfm \n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"PO-Revision-Date: 1998-12-29 13:14+0200\n"
+"Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+
+#: main.cpp:61
+msgid "&Font"
+msgstr "&Czcionka"
+
+#: main.cpp:63
+msgid "&Color"
+msgstr "Ko&lor"
+
+#: main.cpp:65
+msgid "&Other"
+msgstr "&Inne"
+
+#: main.cpp:68
+msgid "&Proxy"
+msgstr "&Proxy"
+
+#: main.cpp:70
+msgid "&HTTP"
+msgstr "&HTTP"
+
+#: main.cpp:73
+msgid "User &Agent"
+msgstr "&Logowanie"
+
+#: main.cpp:76
+msgid "Coo&kies"
+msgstr "Ciasteczka"
+
+#: main.cpp:80
+msgid "&Desktop Icons"
+msgstr "Ikony &biurka"
+
+#: main.cpp:89
+#, c-format
+msgid ""
+"usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+msgstr ""
+"u¿ycie: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+
+#: main.cpp:178
+msgid "KFM Configuration"
+msgstr "Konfiguracja KFM"
+
+#: htmlopts.cpp:64
+msgid "Small"
+msgstr "Ma³a"
+
+#: htmlopts.cpp:69
+msgid "Medium"
+msgstr "¦rednia"
+
+#: htmlopts.cpp:74
+msgid "Large"
+msgstr "Du¿a"
+
+#: htmlopts.cpp:83
+msgid "Standard Font"
+msgstr "Czcionka standardowa"
+
+#: htmlopts.cpp:97
+msgid "Fixed Font"
+msgstr "Czcionka proporcjonalna"
+
+#: htmlopts.cpp:114
+msgid "Default Charset"
+msgstr "Domy¶lne kodowanie"
+
+#: htmlopts.cpp:122 htmlopts.cpp:276
+msgid "Use language charset"
+msgstr "U¿yj domy¶lnego jêzyka"
+
+#: htmlopts.cpp:329
+msgid "Background Color:"
+msgstr "Kolor t³a:"
+
+#: htmlopts.cpp:341
+msgid "Normal Text Color:"
+msgstr "Kolor tekstu:"
+
+#: htmlopts.cpp:353
+msgid "URL Link Color:"
+msgstr "Kolor odno¶ników:"
+
+#: htmlopts.cpp:365
+msgid "Followed Link Color:"
+msgstr "Kolor odwiedzonych:"
+
+#: htmlopts.cpp:377
+msgid "Change cursor over link."
+msgstr "Zmieñ kursor ponad odno¶nikiem."
+
+#: htmlopts.cpp:383
+msgid "Underline links"
+msgstr "Podkre¶lone odno¶niki"
+
+#: miscopts.cpp:25
+msgid "&Allow per-URL settings"
+msgstr "Ustawienia dotycz± &URL"
+
+#: miscopts.cpp:33
+msgid "Tree &view follows navigation"
+msgstr "&Drzewo ¶ledzi odno¶niki"
+
+#: miscopts.cpp:43
+msgid "Terminal"
+msgstr "Terminal"
+
+#: kproxydlg.cpp:50
+msgid "Don't forget to save your settings!"
+msgstr "Nie zapomnij zachowaæ zmian!"
+
+#: kproxydlg.cpp:58
+msgid "Use proxy"
+msgstr "U¿ywaj proxy"
+
+#: kproxydlg.cpp:67
+msgid "HTTP Proxy:"
+msgstr "HTTP proxy:"
+
+#: kproxydlg.cpp:82 kproxydlg.cpp:113
+msgid "Port:"
+msgstr "Port:"
+
+#: kproxydlg.cpp:98
+msgid "FTP Proxy:"
+msgstr "FTP proxy:"
+
+#: kproxydlg.cpp:128
+msgid "No Proxy for:"
+msgstr "Brak proxy dla:"
+
+#: khttpoptdlg.cpp:38
+msgid "Accept languages:"
+msgstr "Akceptuj jêzyki:"
+
+#: khttpoptdlg.cpp:52
+msgid "Accept character sets:"
+msgstr "Akceptuj kodowanie:"
+
+#: khttpoptdlg.cpp:65
+msgid "Assume HTML"
+msgstr "Domy¶lnie HTML"
+
+#: useragentdlg.cpp:45
+msgid "On server:"
+msgstr "Na serwerze:"
+
+#: useragentdlg.cpp:67
+msgid "login as:"
+msgstr "loguj jako:"
+
+#: useragentdlg.cpp:87
+msgid "&Add"
+msgstr "&Dodaj"
+
+#: useragentdlg.cpp:107
+msgid "Known bindings:"
+msgstr "Znane skojarzenia:"
+
+#: kcookiesdlg.cpp:49
+msgid "&Enable Cookies"
+msgstr "&W³±cz ciasteczka"
+
+#: kcookiesdlg.cpp:56
+msgid "Default accept policy"
+msgstr "Domy¶lnie akceptuj ciasteczka"
+
+#: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
+msgid "Accept"
+msgstr "Akceptuj"
+
+#: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
+msgid "Ask"
+msgstr "Pytaj"
+
+#: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
+msgid "Reject"
+msgstr "Odrzucaj"
+
+#: kcookiesdlg.cpp:90
+msgid "Domain specific settings:"
+msgstr "Ustawienia dla domeny:"
+
+#: kcookiesdlg.cpp:97
+msgid "Change domain accept policy"
+msgstr "Zmieñ politykê dla domeny"
+
+#: kcookiesdlg.cpp:239
+msgid "You must enter a domain first !"
+msgstr "Wpierw trzeba podaæ domenê"
+
+#: rootopts.cpp:73
+msgid "Horizontal Root Grid Spacing:"
+msgstr "Poziome odstêpy ikon:"
+
+#: rootopts.cpp:84
+msgid "Vertical Root Grid Spacing:"
+msgstr "Pionowe odstêpy ikon:"
+
+#: rootopts.cpp:95
+msgid "&Transparent Text for Desktop Icons."
+msgstr "&Prze¼roczysty tekst pod ikonami na biurku"
+
+#: rootopts.cpp:106
+msgid "Icon foreground color:"
+msgstr "Kolor tekstu pod ikonami:"
+
+#: rootopts.cpp:118
+msgid "Icon background color:"
+msgstr "Kolor t³a pod ikonami:"
+
+#: rootopts.cpp:131
+msgid "Show &Hidden Files on Desktop"
+msgstr "Pokazuj &ukryte pliki na biurku"

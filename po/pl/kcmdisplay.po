@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: kdisplay \n"
-"POT-Creation-Date: 1998-12-28 01:13+0100\n"
-"PO-Revision-Date: 1998-06-25 18:45+0200\n"
+"Project-Id-Version: kdedisplay \n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"PO-Revision-Date: 1998-12-28 23:16+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -19,9 +19,8 @@ msgid "&Rename ..."
 msgstr "&Zmieñ nazwê..."
 
 #: backgnd.cpp:195
-#, fuzzy
 msgid "&Common Background"
-msgstr "&T³o"
+msgstr "&Jednolite t³o"
 
 #: backgnd.cpp:223 colorscm.cpp:82
 msgid "Colors"
@@ -54,93 +53,85 @@ msgstr "&Przegl±daj..."
 
 #: backgnd.cpp:367
 msgid "Arrangement:"
-msgstr ""
+msgstr "Rozmieszczenie:"
 
 #: backgnd.cpp:374
-#, fuzzy
 msgid "Tiled"
-msgstr "Kafe&lkowa"
+msgstr "Kafelkowe"
 
 #: backgnd.cpp:375
 msgid "Mirrored"
-msgstr ""
+msgstr "Lustrzane"
 
 #: backgnd.cpp:376
-#, fuzzy
 msgid "Center Tiled"
-msgstr "Na ¶&rodku"
+msgstr "Wy¶rodkowane kafelkowe"
 
 #: backgnd.cpp:377
-#, fuzzy
 msgid "Centred"
-msgstr "Na ¶&rodku"
+msgstr "Wy¶rodkowane"
 
 #: backgnd.cpp:378
-#, fuzzy
 msgid "Centred Brick"
-msgstr "Na ¶&rodku"
+msgstr "Wy¶rodkowane mur"
 
 #: backgnd.cpp:379
-#, fuzzy
 msgid "Centred Warp"
-msgstr "Na ¶&rodku"
+msgstr "Wy¶rodkowane warp"
 
 #: backgnd.cpp:380
-#, fuzzy
 msgid "Centred Maxpect"
-msgstr "Na ¶&rodku"
+msgstr "Wy¶rodkowane skalowane"
 
 #: backgnd.cpp:381
 msgid "Symmetrical Tiled"
-msgstr ""
+msgstr "Symetrycznie kalefkowe"
 
 #: backgnd.cpp:382
 msgid "Symmetrical Mirrored"
-msgstr ""
+msgstr "Symetrycznie lustrzane"
 
 #: backgnd.cpp:383
-#, fuzzy
 msgid "Scaled"
-msgstr "&Skalowana"
+msgstr "Skalowane"
 
 #: backgnd.cpp:398
 msgid "Ra&ndom"
-msgstr ""
+msgstr "Przy&padkowe"
 
 #: backgnd.cpp:407
-#, fuzzy
 msgid "Setu&p..."
-msgstr "Us&tawienia..."
+msgstr "U&stawienia..."
 
 #: backgnd.cpp:417
 msgid "&Dock into the panel"
-msgstr ""
+msgstr "&Dokuj w specjalnym obszarze panelu"
 
 #: backgnd.cpp:442
 msgid "Cache size (kB):"
-msgstr ""
+msgstr "Bufor (KB):"
 
 #: backgnd.cpp:1339
 msgid "Desktop names"
 msgstr "Nazwa biurka"
 
 #: backgnd.cpp:1384
-#, fuzzy
 msgid "File error"
-msgstr "B³±d nazwy"
+msgstr "B³±d pliku"
 
 #: backgnd.cpp:1385
 msgid "Can't load image file"
-msgstr ""
+msgstr "Nie mo¿na za³adowaæ pliku graficznego"
 
 #: backgnd.cpp:1408 backgnd.cpp:1880
 msgid "Unsupported URL"
-msgstr ""
+msgstr "Nieobs³ugiwany URL"
 
 #: backgnd.cpp:1409 backgnd.cpp:1881
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
+"Niestety, ten typ URL jest obecnie nieobs³ugiwany przez modu³ wy¶wietlania"
 
 #: backgnd.cpp:1440
 msgid "Two color backgrounds"
@@ -196,44 +187,39 @@ msgstr "Wybrukowany chodnik"
 
 #: backgnd.cpp:1707
 msgid "Random mode setup"
-msgstr ""
+msgstr "Losowe wybieranie"
 
 #: backgnd.cpp:1713
 msgid "Pick files from &directory"
-msgstr ""
+msgstr "Pobierz pliki z &katalogu"
 
 #: backgnd.cpp:1727
-#, fuzzy
 msgid "&Browse ..."
 msgstr "&Przegl±daj..."
 
 #: backgnd.cpp:1748
 msgid "Timer Delay in seconds :"
-msgstr ""
+msgstr "Opó¼nienie w sekundach:"
 
 #: backgnd.cpp:1760
-#, fuzzy
 msgid "In &order"
-msgstr "Ignoruj"
+msgstr "Po &kolei"
 
 #: backgnd.cpp:1777
-#, fuzzy
 msgid "Desktops :"
-msgstr "Biurko"
+msgstr "Biurka:"
 
 #: backgnd.cpp:1816
-#, fuzzy
 msgid "&Add"
-msgstr "&Dodaj..."
+msgstr "&Dodaj"
 
 #: backgnd.cpp:1987
-#, fuzzy
 msgid "Directory error"
-msgstr "B³±d nazwy"
+msgstr "B³±d katalogu"
 
 #: backgnd.cpp:1988
 msgid "Selected directory doesn't exists"
-msgstr ""
+msgstr "Wybrany katalog nie istnieje"
 
 #: colorscm.cpp:104
 msgid "Color Scheme"
@@ -411,7 +397,7 @@ msgstr "&Wymagane has³o"
 
 #: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
-msgstr ""
+msgstr "&Dozwolone has³o roota"
 
 #: scrnsave.cpp:280
 msgid "Show &password as stars"
@@ -439,11 +425,11 @@ msgstr "&Rysuj elementy w stylu Windows 95"
 
 #: general.cpp:244
 msgid "&Apply style to non-KDE apps"
-msgstr ""
+msgstr "Z&astosuj styl dla aplikacji nie-KDE"
 
 #: general.cpp:258
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr ""
+msgstr "Pasek &menu na górze ekranu tak jak w MacOS"
 
 #: general.cpp:273
 msgid "Desktop fonts"
@@ -458,9 +444,8 @@ msgid "Fixed font"
 msgstr "Czcionka proporcjonalna"
 
 #: general.cpp:296
-#, fuzzy
 msgid "Window title font"
-msgstr "Tekst w oknie"
+msgstr "Czcionka tytu³u okna"
 
 #: general.cpp:301
 msgid "Panel button font"
@@ -522,7 +507,7 @@ msgstr "Wybrany tekst"
 
 #: widgetcanvas.cpp:212
 msgid "New"
-msgstr ""
+msgstr "Nowy"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
@@ -551,7 +536,3 @@ msgstr "domy¶lnie"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "ka¿de"
-
-#, fuzzy
-#~ msgid "One Des&ktop"
-#~ msgstr "Biurko"

@@ -2,13 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmsamba \n"
 "POT-Creation-Date: 1998-11-17 15:21+0100\n"
-"PO-Revision-Date: 1998-04-16 18:33+0200\n"
+"PO-Revision-Date: 1998-12-27 23:40+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
 #: main.cpp:48
 msgid "&Status"
-msgstr ""
+msgstr "&Status"
 
 #: main.cpp:57
 msgid "usage: kcmsamba [-init | status]\n"
@@ -20,32 +20,32 @@ msgstr "Samba"
 
 #: ksmbstatus.cpp:114
 msgid "Error launching smbstatus !"
-msgstr ""
+msgstr "B³±d wywo³ania smbstatus"
 
 #: ksmbstatus.cpp:116
 msgid "Error ! smbstatus not found or non working !"
-msgstr ""
+msgstr "B³±d, nie mo¿na wywo³aæ polecenia smbstatus!"
 
 #: ksmbstatus.cpp:158
 msgid "Service"
-msgstr ""
+msgstr "Serwis"
 
 #: ksmbstatus.cpp:160
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 #: ksmbstatus.cpp:161
 msgid "GID"
-msgstr ""
+msgstr "GID"
 
 #: ksmbstatus.cpp:162
 msgid "PID"
-msgstr ""
+msgstr "PID"
 
 #: ksmbstatus.cpp:163
 msgid "Machine"
-msgstr ""
+msgstr "Maszyna"
 
 #: ksmbstatus.cpp:164
 msgid "Open Files"
-msgstr ""
+msgstr "Otwarte pliki"

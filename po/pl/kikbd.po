@@ -1,18 +1,10 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kikbd\n"
+"Project-Id-Version: kdelibs \n"
 "POT-Creation-Date: 1998-11-16 01:20+0100\n"
-"PO-Revision-Date: 1998-10-16 21:00++0200\n"
-"Last-Translator: Jacek Stolarczyk <jacek@mer.chemia.polsl.gliwice.pl>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=8859-2\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"PO-Revision-Date: 1998-12-29 14:52+0200\n"
+"Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
 
 #: kikbd.cpp:116
 msgid "KDE International Keyboard already started on this display."
@@ -24,6 +16,8 @@ msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
+"Plik z kodami X \"%s\" nie istnieje.\n"
+"U¿ycie domy¶lnych kodów X."
 
 #: kikbd.cpp:313
 #, c-format
@@ -31,6 +25,8 @@ msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
 msgstr ""
+"Mapa klawiatury \"%s\" nie istnieje.\n"
+"Pominiêcie tej mapy."
 
 #: kikbd.cpp:330
 msgid "Setup"
@@ -75,27 +71,24 @@ msgid ""
 "You can preset X codes in \"Advanced\" section\n"
 "of configuration program."
 msgstr ""
+"Nie mo¿na znale¼æ symbolu \"%s\".\n"
+"Byæ mo¿e domy¶lne kody X nie opisuj± tego symbolu.\n"
+"Mo¿esz wybraæ schemat kodów X w okienku dialogowym \"Zaawansowane\"."
 
 #: keymap.cpp:233
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
-msgstr ""
-"KeyMap: nie mogê znale¼æ symbolu \"%s\".\n"
-"Czy mam kontynuowaæ?"
+msgstr "KeyMap: nie mo¿na znale¼æ symbolu \"%s\"."
 
 #: keymap.cpp:241
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: do not understand key code \"%s\"."
-msgstr ""
-"KeyMap: nie rozumiem kodu znaku \"%s\".\n"
-"Czy mam kontynuowaæ?"
+msgstr "KeyMap: nie mo¿na rozpoznaæ kodu \"%s\"."
 
 #: keymap.cpp:247
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: key code \"%s\" go out of range."
-msgstr ""
-"KeyMap: kod znaku \"%s\" wypada poza zakresem.\n"
-"Czy mam kontynuowaæ?"
+msgstr "KeyMap: kod \"%s\" jest poza schematem."
 
 #: kikbdconf.cpp:95
 msgid "Global"
@@ -111,7 +104,7 @@ msgstr "Klasa"
 
 #: kikbdconf.cpp:98 kikbdconf.cpp:110
 msgid "(None)"
-msgstr "(¿aden)"
+msgstr "(Brak)"
 
 #: kikbdconf.cpp:99 kikbdconf.cpp:111
 msgid "Right Alt"
@@ -174,9 +167,8 @@ msgid "Bottom Right"
 msgstr "Dolny Prawy"
 
 #: kikbdconf.cpp:147
-#, fuzzy
 msgid "X default codes"
-msgstr "domy¶lny"
+msgstr "Domy¶lne kody X"
 
 #: kikbdconf.cpp:204
 #, c-format
@@ -190,7 +182,7 @@ msgstr ""
 #: kikbdconf.cpp:212
 msgid "Your configuration is empty. Install system default."
 msgstr ""
-"Brak Twoich plików konfiguracyjnych. Zainstaluj domy¶lne pliki konfiguracyjne"
+"Brak plików konfiguracyjnych. Zainstaluj domy¶lne pliki konfiguracyjne"
 
 #: kikbdconf.cpp:218
 msgid ""
@@ -212,11 +204,11 @@ msgstr ""
 
 #: kikbdconf.cpp:353
 msgid "unknown"
-msgstr "nieznany"
+msgstr "nieznane"
 
 #: kikbdconf.cpp:357
 msgid "default"
-msgstr "domy¶lny"
+msgstr "domy¶lnie"
 
 #: kikbdconf.cpp:383
 msgid "Author:  Not specified"
@@ -228,11 +220,11 @@ msgstr "Autor"
 
 #: kikbdconf.cpp:391
 msgid "Description:  "
-msgstr "Opis:   "
+msgstr "Opis:  "
 
 #: kikbdconf.cpp:394
 msgid "Source:  "
-msgstr "¬ród³o:   "
+msgstr "¬ród³o:  "
 
 #: kikbdconf.cpp:395
 msgid "no file"
@@ -256,7 +248,7 @@ msgstr "symbole"
 
 #: kikbdconf.cpp:408
 msgid "codes"
-msgstr "kody"
+msgstr "kodów"
 
 #: kikbdconf.cpp:411
 msgid "alternative symbols"
@@ -284,16 +276,15 @@ msgstr "Klawiatura Miêdzynarodowa: pytanie"
 
 #: kikbdconf.cpp:487
 msgid "Configure"
-msgstr ""
+msgstr "Konfiguruj"
 
 #: kikbdconf.cpp:497
-#, fuzzy
 msgid ""
 "\n"
 "Do you want to continue?"
 msgstr ""
-"%s\n"
-"Czy chcesz rozpocz±æ konfiguracjê ?"
+"\n"
+"Chcesz kontynuowaæ?"
 
 #: widgets.cpp:107
 msgid "List of active keyboard maps"
@@ -333,12 +324,11 @@ msgstr "&Informacje"
 
 #: widgets.cpp:136
 msgid "Display information for selected keyboard map"
-msgstr ""
+msgstr "Wy¶wietl informacje o wybranej mapie klawiatury"
 
 #: widgets.cpp:145
-#, fuzzy
 msgid "Use &hot list"
-msgstr "&U¿ywaj \"bie¿±cej listy\""
+msgstr "U¿yj &ostatnio wybranej klawiatury"
 
 #: widgets.cpp:146
 msgid ""
@@ -376,9 +366,8 @@ msgid "Switch and Alt Switch"
 msgstr "Prze³±cznik i Prze³±cznik Alt"
 
 #: widgets.cpp:410
-#, fuzzy
 msgid "Key(s) to switch between keyboard maps"
-msgstr "Klawisz(e) do prze³±czania miêdzy mapami klawiatury"
+msgstr "Lista aktywnych map klawiatury"
 
 #: widgets.cpp:416
 msgid "Key to activate Alternate symbols in current keyboard map"
@@ -405,14 +394,13 @@ msgid "Advanced"
 msgstr "Zaawansowane"
 
 #: widgets.cpp:466
-#, fuzzy
 msgid "&Emulate Caps Lock"
-msgstr "&Emuluj CapsLock"
+msgstr "&Emulacja Caps Lock"
 
 #: widgets.cpp:467
-#, fuzzy
 msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
-msgstr "Emuluj CapsLock XSerwera. Potrzebne dla niektórych jêzyków."
+msgstr "Emulacja klawisza Caps Lock. Niektóre jêzyki wymagaj± tej opcji "
+"do poprawnego dzia³ania"
 
 #: widgets.cpp:473
 msgid "&World Menu"
@@ -433,7 +421,7 @@ msgstr ""
 
 #: widgets.cpp:488
 msgid "Define X codes"
-msgstr ""
+msgstr "Definuj kody X"
 
 #: widgets.cpp:491
 msgid "Input"
@@ -458,22 +446,19 @@ msgstr "Kolory przycisków"
 
 #: widgets.cpp:561
 msgid "Foreground"
-msgstr "Pierwszy plan"
+msgstr "Tekst"
 
 #: widgets.cpp:562
-#, fuzzy
 msgid "Color of the text label"
 msgstr "Kolor tekstu"
 
 #: widgets.cpp:566
-#, fuzzy
 msgid "With Caps Lock"
-msgstr "Z CapsLock"
+msgstr "Z Caps Lock"
 
 #: widgets.cpp:567
-#, fuzzy
 msgid "Background when Emulated Caps Lock active"
-msgstr "T³o kiedy aktywny jest Emulowany CapsLock"
+msgstr "T³o kiedy prze³±cznik Alt jest wci¶niêty"
 
 #: widgets.cpp:573
 msgid "With Alternate"
@@ -504,9 +489,8 @@ msgid "&Autostart"
 msgstr "&Autostart"
 
 #: widgets.cpp:642
-#, fuzzy
 msgid "Start up automatically"
-msgstr "Startuj automatycznie"
+msgstr "Uruchom automatycznie"
 
 #: widgets.cpp:648
 msgid "&Docked"

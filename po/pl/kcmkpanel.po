@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: kuser \n"
+"Project-Id-Version: kcmkpanel \n"
 "POT-Creation-Date: 1998-12-20 03:02+0600\n"
-"PO-Revision-Date: 1998-06-25 18:53+0100\n"
+"PO-Revision-Date: 1998-12-27 22:08+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -16,12 +16,11 @@ msgstr "&Biurka"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr ""
+msgstr "&Nawigator dyskowy"
 
 #: main.cpp:79
-#, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
-msgstr "u¿ycie: kcmkpanel [-init | {panel,options,desktops}]\n"
+msgstr "u¿ycie: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
 #: main.cpp:112
 msgid "KPanel Configuration"
@@ -45,7 +44,7 @@ msgstr "Na d&ole"
 
 #: panel.cpp:63
 msgid "&Right"
-msgstr ""
+msgstr "Po &prawej"
 
 #: panel.cpp:75
 msgid "Taskbar"
@@ -53,7 +52,7 @@ msgstr "Pasek zadañ"
 
 #: panel.cpp:76
 msgid "&Hidden"
-msgstr "&Ukryte"
+msgstr "&Ukryty"
 
 #: panel.cpp:78
 msgid "T&op"
@@ -69,7 +68,7 @@ msgstr "Góra/&Lewo"
 
 #: panel.cpp:95
 msgid "Style"
-msgstr ""
+msgstr "Styl"
 
 #: panel.cpp:97
 msgid "T&iny"
@@ -77,7 +76,7 @@ msgstr "Mi&ni"
 
 #: panel.cpp:99
 msgid "&Normal"
-msgstr "No&rmaly"
+msgstr "No&rmalny"
 
 #: panel.cpp:101
 msgid "L&arge"
@@ -97,45 +96,43 @@ msgstr "Podpowiedzi"
 
 #: options.cpp:62
 msgid "Show &Menu Tooltips"
-msgstr "Poka¿ podpowiedzi"
+msgstr "Pokazuj podpowiedzi"
 
 #: options.cpp:84
 msgid "De&lay:"
-msgstr "Opó¿nienie:"
+msgstr "Opó¼nienie:"
 
 #: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
-msgstr ""
+msgstr "Ma³e"
 
 #: options.cpp:98 options.cpp:167 options.cpp:269
-#, fuzzy
 msgid "Large"
-msgstr "D&u¿y"
+msgstr "Du¿e"
 
 #: options.cpp:110
 msgid "Visuals"
-msgstr ""
+msgstr "Wizualno¶æ"
 
 #: options.cpp:144
 msgid "Auto &Hide Panel"
 msgstr "Ukrywaj &panel"
 
 #: options.cpp:153 options.cpp:255
-#, fuzzy
 msgid "Delay:"
-msgstr "Opó¿nienie:"
+msgstr "Opó¼nienie:"
 
 #: options.cpp:184 options.cpp:286 options.cpp:349
 msgid "Speed:"
-msgstr ""
+msgstr "Prêdko¶æ:"
 
 #: options.cpp:191 options.cpp:293 options.cpp:356
 msgid "Slow"
-msgstr ""
+msgstr "Powoli"
 
 #: options.cpp:198 options.cpp:300 options.cpp:363
 msgid "Fast"
-msgstr ""
+msgstr "Szybko"
 
 #: options.cpp:246
 msgid "Auto Hide &Taskbar"
@@ -143,96 +140,80 @@ msgstr "Ukrywaj listê &zadañ"
 
 #: options.cpp:341
 msgid "Animate Show/Hide"
-msgstr ""
+msgstr "Animuj Poka¿/Ukryj"
 
 #: options.cpp:395
 msgid "Others"
 msgstr "Inne"
 
 #: options.cpp:408
-#, fuzzy
 msgid "Personal Menu Entries &First"
 msgstr "Wpierw &prywatne"
 
 #: options.cpp:416
-#, fuzzy
 msgid "Menu F&olders First"
-msgstr "Wpierw &prywatne"
+msgstr "Wpierw &foldery"
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
-msgstr ""
+msgstr "Zegar w formacie AM/PM"
 
 #: options.cpp:432
 msgid "Clock shows time in &Internet beats"
-msgstr ""
+msgstr "Zegar w formacie internetowym"
 
 #: disknav.cpp:38
 msgid "History"
-msgstr ""
+msgstr "Historia"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr ""
+msgstr "Edytuj pozycje: (przeci±gnij folder i utwórz odno¶nik)"
 
 #: disknav.cpp:64
 msgid "Edit &Personal..."
-msgstr ""
+msgstr "Edytuj &prywatne"
 
 #: disknav.cpp:74
 msgid "Edit &Shared..."
-msgstr ""
+msgstr "Edytuj &dzielone"
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr ""
+msgstr "Ilo¶æ zapamiêtanych folderów:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr ""
+msgstr "Ilo¶æ zapamiêtanych plików:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr ""
+msgstr "Maksymalna ilo¶æ plików w folderze:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr ""
+msgstr "Pokazuj pliki ukryte"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr ""
+msgstr "Ignoruj wielko¶æ liter"
 
 #: disknav.cpp:173
-#, fuzzy
 msgid "Show Shared section"
-msgstr "Lokalizacja"
+msgstr "Pokazuj pozycje dzielone"
 
 #: disknav.cpp:180
-#, fuzzy
 msgid "Show Personal section"
-msgstr "Lokalizacja"
+msgstr "Pokazuj pozycje prywatne"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr ""
+msgstr "Pokazuj zapamiêtane pozycje"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr ""
+msgstr "Pokazuj opcje w menu"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr ""
-
-#~ msgid "ms"
-#~ msgstr "ms"
-
-#~ msgid "Clock"
-#~ msgstr "Zegar"
-
-#~ msgid "&24h"
-#~ msgstr "&24h"
-
-#~ msgid "&12h AM/PM"
-#~ msgstr "&12h AM/PM"
+msgstr "Aplikacja terminala:"

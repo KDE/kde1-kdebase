@@ -2,17 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpanel \n"
 "POT-Creation-Date: 1998-12-25 01:11+0100\n"
-"PO-Revision-Date: 1998-06-20 13:36+0200\n"
+"PO-Revision-Date: 1998-12-29 22:21+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
 #: kpanel.C:284
 msgid "&Move"
-msgstr ""
+msgstr "&Przenie¶"
 
 #: kpanel.C:287
 msgid "&Properties"
-msgstr ""
+msgstr "&W³a¶ciwo¶ci"
 
 #: kpanel.C:330
 msgid "Go!"
@@ -20,7 +20,7 @@ msgstr "Id¼!"
 
 #: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
-msgstr "A gdzie siê to dzisiaj wybierasz?"
+msgstr "A gdzie siê to dzisiaj wybierasz? ;-)"
 
 #: kpanel.C:408
 msgid "No info available"
@@ -44,7 +44,7 @@ msgstr "Poka¿ panel"
 
 #: kpanel.C:1100
 msgid "Iconify other &windows"
-msgstr ""
+msgstr "Ikonizuj inne &okna"
 
 #: kpanel.C:1237
 msgid "No comment available"
@@ -56,10 +56,9 @@ msgstr "Lista okien"
 
 #: kpanel.C:1254 props.C:196
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Szybka nawigacja po systemie plików"
 
 #: props.C:166
-#, fuzzy
 msgid "Add Application"
 msgstr "Dodaj aplikacjê"
 
@@ -69,15 +68,13 @@ msgstr "Dodaj aplikacjê lub podmenu do panelu"
 
 #: props.C:174
 msgid "Add Disk Navigator"
-msgstr ""
+msgstr "Dodaj Nawigatora Dyskowego"
 
 #: props.C:176
-#, fuzzy
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Dodaj listê okien do panelu"
+msgstr "Dodaj Nawigatora Dyskowego panelu"
 
 #: props.C:179
-#, fuzzy
 msgid "Add Windowlist"
 msgstr "Dodaj listê okien"
 
@@ -103,7 +100,7 @@ msgstr "Dodaj lub usuñ aplikacje ze struktury menu "
 
 #: events.C:802 props.C:188
 msgid "Restart"
-msgstr "Od¶wie¿"
+msgstr "Restart"
 
 #: props.C:190
 msgid "Restart panel"
@@ -111,7 +108,7 @@ msgstr "Od¶wie¿ panel"
 
 #: props.C:193
 msgid "Disk Navigator"
-msgstr ""
+msgstr "Nawigator dyskowy"
 
 #: props.C:201
 msgid "Panel"
@@ -134,10 +131,12 @@ msgid ""
 "\n"
 "%b %d"
 msgstr ""
+"\n"
+"%b %d"
 
 #: tools.C:908
 msgid "KDiskNavigator"
-msgstr ""
+msgstr "KDiskNavigator"
 
 #: events.C:855
 msgid "Cannot put this as button onto the panel!"
@@ -145,52 +144,52 @@ msgstr "Nie mo¿na umie¶ciæ tego jako przycisku na panelu!"
 
 #: pfilemenu.C:425
 msgid "(empty folder)"
-msgstr ""
+msgstr "(pusty katalog)"
 
 #: pfilemenu.C:480
 msgid "Open Folder"
-msgstr ""
+msgstr "Otwórz folder"
 
 #: pfilemenu.C:491
 msgid "(Too Many Files)"
-msgstr ""
+msgstr "(Za du¿o plików)"
 
 #: pfilemenu.C:500
 msgid "(Access Denied)"
-msgstr ""
+msgstr "(Brak dostêpu)"
 
 #: pfilemenu.C:503
 msgid "(Unreadable)"
-msgstr ""
+msgstr "(Nie do odczytania)"
 
 #: pfilemenu.C:752
 msgid "Shared:"
-msgstr ""
+msgstr "Dzielone:"
 
 #: pfilemenu.C:754
 msgid "Entries shared among all users"
-msgstr ""
+msgstr "Pozycjê dzielone przez wszystkich u¿ytkowników"
 
 #: pfilemenu.C:773
 msgid "Personal:"
-msgstr ""
+msgstr "Prywatne:"
 
 #: pfilemenu.C:775
 msgid "Personal entries"
-msgstr ""
+msgstr "Pozycje prywatne"
 
 #: pfilemenu.C:793
 msgid "Recent:"
-msgstr ""
+msgstr "Zapamiêtane:"
 
 #: pfilemenu.C:795
 msgid "Recent entries"
-msgstr ""
+msgstr "Wybrane wcze¶niej i zapamiêtane pozycje"
 
 #: pfilemenu.C:841
 msgid "Options..."
-msgstr ""
+msgstr "Opcje..."
 
 #: pfilemenu.C:843
 msgid "Customize Disk Navigator"
-msgstr ""
+msgstr "Konfiguruj Nawigatora Dyskowego"
