@@ -640,6 +640,7 @@ KGreeter::restrict_expired(){
      bool quietlog = false;
      time_t warntime = DEFAULT_WARN;
 #endif
+#ifndef __osf__
      if (pwd->pw_expire)
 	  if (pwd->pw_expire <= time(NULL)) {
 	       QMessageBox::critical(NULL, NULL,
@@ -654,6 +655,7 @@ KGreeter::restrict_expired(){
 				     str,
 				     i18n("&OK"));
 	  }
+#endif // __osf__
 
      return false;
 }
