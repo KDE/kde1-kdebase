@@ -222,6 +222,8 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	readSettings();
 	
 	QBoxLayout *topLayout = new QVBoxLayout( this, 10 );
+	QBoxLayout *top2Layout = new QHBoxLayout();
+	topLayout->addLayout(top2Layout);
 	
 	cbStyle = new QCheckBox( i18n( "&Draw widgets in the style of Windows 95" ),
 				 this );
@@ -235,7 +237,20 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	
 	connect( cbStyle, SIGNAL( clicked() ), SLOT( slotChangeStyle()  )  );
 	
-	topLayout->addWidget( cbStyle, 10 );
+	top2Layout->addWidget( cbStyle, 10 );
+
+	cbRes = new QCheckBox( i18n( "&Use Resource Manager" ),
+				 this );
+	cbRes->setMinimumSize(cbRes->sizeHint());
+
+	if( useRM )
+	        cbRes->setChecked( true );
+	else
+		cbRes->setChecked( false);
+	
+	connect( cbRes, SIGNAL( clicked() ), SLOT( slotUseResourceManager()  )  );
+	
+	top2Layout->addWidget( cbRes, 10 );
 
 	QGroupBox *group = new QGroupBox( i18n( "Desktop fonts" ), this );
 	
@@ -335,6 +350,13 @@ void KGeneral::slotChangeStyle()
 	changed=true;
 }
 
+void KGeneral::slotUseResourceManager()
+{
+	useRM = cbRes->isChecked();
+		
+	changed=true;
+}
+
 KGeneral::~KGeneral()
 {
 }
@@ -368,6 +390,8 @@ void KGeneral::setDefaults()
 	slotPreviewFont( ci );
 	
 	cbStyle->setChecked( false );
+	cbRes->setChecked( true );
+	useRM = true;
 	slotChangeStyle();
 }
 
@@ -395,6 +419,9 @@ void KGeneral::writeSettings()
 	config->writeEntry("widgetStyle", str, true, true);
 	config->sync();
 	
+	KConfigGroupSaver saver(kapp->getConfig(), "X11");
+	kapp->getConfig()->writeEntry( "useResourceManager", useRM );
+
 	if ( useRM ) {
 		QApplication::setOverrideCursor( waitCursor );
 

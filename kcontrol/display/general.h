@@ -96,6 +96,7 @@ public:
 
 protected slots:
 	void slotChangeStyle();
+	void slotUseResourceManager();
 	void slotApply();
 	void slotSetFont( QFont fnt );
 	void slotPreviewFont( int index );
@@ -108,7 +109,7 @@ protected:
 protected:
 	KFontChooser *fntChooser;
 	FontPreview *lSample;
-	QCheckBox *cbStyle;
+	QCheckBox *cbStyle, *cbRes;
 	QListBox *lbFonts;
 	
 	Bool changed;
