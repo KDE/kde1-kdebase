@@ -266,11 +266,9 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
     {
       QString file = fi->absFilePath();
       file += "/.directory";
-      QFile config(file);
-      if( config.open(IO_ReadOnly) ) 
+      QFileInfo fi_config(file);
+      if( fi_config.isReadable() ) 
 	{
-	  config.close(); // kalle
-	  // kalle	  QTextStream st( (QIODevice *) &config);
 	  KConfig kconfig(file);
 	  kconfig.setGroup("KDE Desktop Entry");
 	  comment         = kconfig.readEntry("Comment");
@@ -278,7 +276,6 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
 	  pixmap_name     = kconfig.readEntry("MiniIcon");
 	  big_pixmap_name = kconfig.readEntry("Icon");
 	  dir_path        = fi->dirPath(TRUE);
-	  config.close();
 	}
       entry_type  = submenu;
       sub_menu    = menu;
@@ -286,11 +283,8 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
     }
   else
     {
-      QFile config(fi->absFilePath());
-      if( !config.open(IO_ReadOnly) ) 
+      if( !fi->isReadable() ) 
 	return -1;
-	  config.close(); // kalle
-	  // kalle      QTextStream st( (QIODevice *) &config);
       KConfig kconfig(fi->absFilePath());
       kconfig.setGroup("KDE Desktop Entry");
       command_name    = kconfig.readEntry("WmCommand");
@@ -332,7 +326,7 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
 	      dev_read_only = kconfig.readNumEntry("ReadOnly");
 	    }
 	}
-      config.close();
+      //config.close();
     }
 
 
@@ -404,8 +398,7 @@ void PMenuItem::writeConfig( QDir dir )
   QFile config(file);
   if( !config.open(IO_ReadWrite) ) 
     return;
-  config.close(); // kalle
-  // kalle  QTextStream st( (QIODevice *) &config);
+  config.close();
   KConfig kconfig(file);
   kconfig.setGroup("KDE Desktop Entry");
   kconfig.writeEntry("Comment", comment );
@@ -442,7 +435,6 @@ void PMenuItem::writeConfig( QDir dir )
     break;
   };
   kconfig.sync();
-  config.close();
 }
 
 void PMenuItem::exec_system()
@@ -832,8 +824,11 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item = NULL )
   // remove files not in pmenu
   for( name = file_list.first(); !name.isEmpty(); name = file_list.next() )
     {
-      debug("will remove file: %s", (const char *) name );
-      base_dir.remove(name);
+      if( isKdelnkFile(base_dir.absFilePath(name)) )
+	{
+	  debug("will remove file: %s", (const char *) name );
+	  base_dir.remove(name);
+	}
     }
   // remove dirs not in pmenu
   for( name = dir_list.first(); !name.isEmpty(); name = dir_list.next() )
@@ -855,8 +850,7 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item = NULL )
   QFile config(file);
   if( !config.open(IO_ReadWrite) ) 
     return;
-  config.close(); // kalle
-  // kalle  QTextStream st( (QIODevice *) &config);
+  config.close();
   KConfig kconfig(file);
   kconfig.setGroup("KDE Desktop Entry");
   kconfig.writeEntry("SortOrder", sort_order);
@@ -866,9 +860,9 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item = NULL )
       if( parent_item->big_pixmap_name.isEmpty() )
 	parent_item->big_pixmap_name = "folder.xpm";
       kconfig.writeEntry("Icon", parent_item->big_pixmap_name );
+      kconfig.writeEntry("Name", parent_item->text_name );
     }
   kconfig.sync();
-  config.close();
 }
 
 void PMenu::copyLnkFiles(QDir base_dir)
@@ -876,23 +870,37 @@ void PMenu::copyLnkFiles(QDir base_dir)
   PMenuItem *item;
   for( item = list.first(); item != 0; item = list.next() )
     {
-      if( item->entry_type == separator )
-	continue;
       if( item->entry_type == submenu )
 	{
 	  QDir sub_dir(base_dir);
-	  if( !base_dir.exists( item->old_name ) )
+	  if( item->old_name.isEmpty() )
 	    {
-	      base_dir.mkdir(item->old_name);
-	      if( base_dir.exists( item->dir_path + '/' + item->old_name + "/.directory") )
-		copyFiles( item->dir_path + '/' + item->old_name + "/.directory",
-			   base_dir.absPath() + '/' + item->old_name + "/.directory" );
+	      if( item->real_name.isEmpty() )
+		item->real_name = item->text_name;
+	      base_dir.mkdir(item->real_name);
+	      if( !sub_dir.cd(item->real_name) )
+		continue;
 	    }
-	  if( !sub_dir.cd(item->old_name) )
-	    continue;
+	  else
+	    {
+	      if( !base_dir.exists( item->old_name ) )
+		{
+		  base_dir.mkdir(item->old_name);
+		  if( base_dir.exists( item->dir_path + '/' + item->old_name + "/.directory") )
+		    copyFiles( item->dir_path + '/' + item->old_name + "/.directory",
+			       base_dir.absPath() + '/' + item->old_name + "/.directory" );
+		}
+	      if( !sub_dir.cd(item->old_name) )
+		continue;
+	    }
 	  item->sub_menu->copyLnkFiles( sub_dir );
 	}
-      else
+    }
+  for( item = list.first(); item != 0; item = list.next() )
+    {
+      if( item->entry_type == separator || item->old_name.isEmpty() )
+	continue;
+      if( item->entry_type != submenu )
 	{
 	  if( base_dir.exists( item->old_name ) )
 	    continue;
@@ -911,6 +919,8 @@ void PMenu::renameLnkFiles(QDir base_dir)
   PMenuItem *item;
   for( item = list.first(); item != 0; item = list.next() )
     {
+      if( item->old_name.isEmpty() )
+	continue;
       if( item->entry_type == submenu )
 	{
 	  if( item->real_name != item->old_name )

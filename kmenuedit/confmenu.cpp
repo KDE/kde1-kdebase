@@ -301,6 +301,8 @@ void MenuButton::change_accept()
       pmenu_item->setType( new_type );
       pmenu_item->setText(dialog->i_name->text());
       pmenu_item->setName(dialog->i_fname->text());
+      if(pmenu_item->getName().isEmpty())
+	pmenu_item->setName(pmenu_item->getText());
       setText(pmenu_item->getText());
       pmenu_item->setPixmapName(dialog->i_pixmap->text());
       pmenu_item->setBigPixmapName(dialog->i_big_pixmap->text());
