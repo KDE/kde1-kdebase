@@ -61,7 +61,7 @@ bool GetInfo_CPU( KTabListBox *lBox )
   mhz=(char *)malloc(20);
   snprintf(mhz,20,"%d.%02d",(machspeed+4999)/1000000,
 		   ((machspeed+4999)/10000)%100);
-  if (strcmp(mhz,"0.0")==0)
+  if (strcmp(mhz,"0.00")==0)
  	/* We dunno how fast it's running */
  	snprintf(cpustring,128,i18n("%s, unknown speed"),buf);
   else
