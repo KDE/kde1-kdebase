@@ -38,13 +38,16 @@ DOCSDIR = $(prefix)/doc/HTML
 SRCS = main.cpp xautolock.cpp\
 		saver.cpp polygon.cpp banner.cpp blankscrn.cpp klock.cpp\
 		kscreensave.cpp xlock.cpp rock.cpp flame.cpp lines.cpp\
-		laser.cpp pyro.cpp
+		laser.cpp pyro.cpp hop.cpp forest.cpp swarm.cpp bat.cpp\
+		slip.cpp lissie.cpp
 SRCMETA = main.moc saver.moc polygon.moc banner.moc\
 		blankscrn.moc rock.moc flame.moc lines.moc laser.moc\
-		pyro.moc
+		pyro.moc hop.moc forest.moc swarm.moc bat.moc slip.moc\
+		lissie.moc
 HDRS = saver.h polygon.h banner.h\
 		blankscrn.h kscreensave.h xlock.h rock.h flame.h lines.h\
-		laser.h pyro.h
+		laser.h pyro.h hop.h forest.h swarm.h bat.h slip.h\
+		lissie.h
 
 BASE_OBJS = main.o xautolock.o saver.o passwd.o xlock.o
 POLYGON_OBJ = polygon.o
@@ -55,11 +58,18 @@ ROCK_OBJ = rock.o
 FLAME_OBJ = flame.o
 LASER_OBJ = laser.o
 PYRO_OBJ = pyro.o
+HOP_OBJ = hop.o
+FOREST_OBJ = forest.o
+SWARM_OBJ = swarm.o
+BAT_OBJ = bat.o
+SLIP_OBJ = slip.o
+LISSIE_OBJ = lissie.o
 KLOCK_OBJ = klock.o kscreensave.o
 
 OBJS = $(BASE_OBJS) $(POLYGON_OBJ) $(BANNER_OBJ) $(BLANK_OBJ)\
 		$(LINES_OBJ) $(ROCK_OBJ) $(FLAME_OBJ) $(LASER_OBJ) $(PYRO_OBJ)\
-		$(KLOCK_OBJ)
+		$(HOP_OBJ) $(FOREST_OBJ) $(SWARM_OBJ) $(BAT_OBJ) $(SLIP_OBJ)\
+		$(LISSIE_OBJ) $(KLOCK_OBJ)
 
 POLYGON = kpolygon.kss
 LINES = klines.kss
@@ -69,10 +79,17 @@ ROCK = krock.kss
 FLAME = kflame.kss
 LASER = klaser.kss
 PYRO = kpyro.kss
+HOP = khop.kss
+FOREST = kforest.kss
+SWARM = kswarm.kss
+BAT = kbat.kss
+SLIP = kslip.kss
+LISSIE = klissie.kss
 KLOCK = klock
 
 TARGETS = $(POLYGON) $(BANNER) $(BLANK) $(ROCK) $(FLAME) $(LINES)\
-		$(LASER) $(PYRO) $(KLOCK)
+		$(LASER) $(PYRO) $(HOP) $(FOREST) $(SWARM) $(BAT) $(SLIP)\
+		$(LISSIE) $(KLOCK)
 
 ########## Build Rules ##########
 
@@ -104,6 +121,24 @@ $(LASER): $(SRCMETA) $(BASE_OBJS) $(LASER_OBJ)
 
 $(PYRO): $(SRCMETA) $(BASE_OBJS) $(PYRO_OBJ)
 	$(CXX) -o $(PYRO) $(BASE_OBJS) $(PYRO_OBJ) $(LDFLAGS)
+
+$(HOP): $(SRCMETA) $(BASE_OBJS) $(HOP_OBJ)
+	$(CXX) -o $(HOP) $(BASE_OBJS) $(HOP_OBJ) $(LDFLAGS)
+
+$(FOREST): $(SRCMETA) $(BASE_OBJS) $(FOREST_OBJ)
+	$(CXX) -o $(FOREST) $(BASE_OBJS) $(FOREST_OBJ) $(LDFLAGS)
+
+$(SWARM): $(SRCMETA) $(BASE_OBJS) $(SWARM_OBJ)
+	$(CXX) -o $(SWARM) $(BASE_OBJS) $(SWARM_OBJ) $(LDFLAGS)
+
+$(BAT): $(SRCMETA) $(BASE_OBJS) $(BAT_OBJ)
+	$(CXX) -o $(BAT) $(BASE_OBJS) $(BAT_OBJ) $(LDFLAGS)
+
+$(SLIP): $(SRCMETA) $(BASE_OBJS) $(SLIP_OBJ)
+	$(CXX) -o $(SLIP) $(BASE_OBJS) $(SLIP_OBJ) $(LDFLAGS)
+
+$(LISSIE):  $(SRCMETA) $(BASE_OBJS) $(LISSIE_OBJ)
+	$(CXX) -o $(LISSIE) $(BASE_OBJS) $(LISSIE_OBJ) $(LDFLAGS)
 
 $(KLOCK): $(SRCMETA) $(KLOCK_OBJ)
 	$(CXX) -o $(KLOCK) $(KLOCK_OBJ) $(LDFLAGS)

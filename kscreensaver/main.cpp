@@ -257,7 +257,7 @@ int main( int argc, char *argv[] )
 			int pid;
 			fscanf( fp, "%d", &pid );
 			fclose( fp );
-			if ( pid != getpid() )
+			if ( pid != getpid() && pid > 1 )
 			{
 				kill( pid, SIGTERM );
 				sleep( 1 );

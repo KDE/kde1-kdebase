@@ -1,0 +1,438 @@
+/*-
+ * lissie.c - The Lissajous worm by Alexander Jolk
+ *            <ub9x@rz.uni-karlsruhe.de>
+ *
+ * See xlock.c for copying information.
+ *
+ * Revision History:
+ * 01-May-96: written.
+ */
+
+/* Ported to kscreensave:
+   July 1997, Emanuel Pirker <epirker@edu.uni-klu.ac.at>
+*/
+
+#include "xlock.h"
+#include <math.h>
+
+#define Lissie(n)\
+  if (lissie->xs[(n)] >= 0 && lissie->ys[(n)] >= 0 \
+      && lissie->xs[(n)] <= gp->width && lissie->ys[(n)] <= gp->height) {\
+    if (lissie->ri < 2)\
+     XDrawPoint(dsp, win, Scr[screen].gc, lissie->xs[(n)], lissie->ys[(n)]);\
+    else\
+     XDrawArc(dsp, win, Scr[screen].gc,\
+       lissie->xs[(n)] - lissie->ri / 2, lissie->ys[(n)] - lissie->ri / 2,\
+       lissie->ri, lissie->ri,\
+       0, 23040);\
+   }
+
+#define FLOATRAND(min,max)	((min)+(LRAND()/MAXRAND)*((max)-(min)))
+#define INTRAND(min,max)     ((min)+(LRAND()%((max)-(min)+1)))
+
+#define MINDT  0.01
+#define MAXDT  0.15
+
+#define MAXLISSIELEN  100
+#define MINLISSIELEN  10
+
+
+//ModeSpecOpt lissie_opts = {0, NULL, NULL, NULL};
+
+typedef struct {
+	double
+	            tx, ty, dtx, dty;
+	int
+	            xi, yi, ri, rx, ry, len, pos, xs[MAXLISSIELEN], ys[MAXLISSIELEN];
+	int         color;
+} lissiestruct;
+
+typedef struct {
+	int         width, height;
+	int         nlissies;
+	lissiestruct *lissie;
+} lissstruct;
+
+static lissstruct lisss[MAXSCREENS];
+
+static int  loopcount;
+
+static void initlissie(Window win, lissiestruct * lissie);
+static void drawlissie(Window win, lissiestruct * lissie);
+
+void
+init_lissie(Window win)
+{
+	lissstruct *gp = &lisss[screen];
+	unsigned char ball;
+
+	XWindowAttributes xwa;
+
+	(void) XGetWindowAttributes(dsp, win, &xwa);
+	gp->width = xwa.width;
+	gp->height = xwa.height;
+
+	gp->nlissies = batchcount;
+	if (gp->nlissies < 1)
+		gp->nlissies = 1;
+	else if (gp->nlissies > 1000)
+		gp->nlissies = 1000;
+
+	loopcount = 0;
+
+	//if (!gp->lissie)
+		gp->lissie = (lissiestruct *) calloc(gp->nlissies, sizeof (lissiestruct));
+	XSetForeground(dsp, Scr[screen].gc, BlackPixel(dsp, screen));
+	XFillRectangle(dsp, win, Scr[screen].gc, 0, 0, gp->width, gp->height);
+	for (ball = 0; ball < (unsigned char) gp->nlissies; ball++)
+		initlissie(win, &gp->lissie[ball]);
+
+}
+
+static void
+initlissie(Window win, lissiestruct * lissie)
+{
+	lissstruct *gp = &lisss[screen];
+
+	if (!mono && Scr[screen].npixels > 2)
+		lissie->color = LRAND() % Scr[screen].npixels;
+	else
+		lissie->color = WhitePixel(dsp, screen);
+	/* Initialize parameters */
+	lissie->ri = INTRAND(0, min(gp->width, gp->height) / 8);
+	lissie->xi = INTRAND(gp->width / 4 + lissie->ri,
+			     gp->width * 3 / 4 - lissie->ri);
+	lissie->yi = INTRAND(gp->height / 4 + lissie->ri,
+			     gp->height * 3 / 4 - lissie->ri);
+	lissie->rx = INTRAND(gp->width / 4,
+		   min(gp->width - lissie->xi, lissie->xi)) - 2 * lissie->ri;
+	lissie->ry = INTRAND(gp->height / 4,
+		  min(gp->height - lissie->yi, lissie->yi)) - 2 * lissie->ri;
+	lissie->len = INTRAND(MINLISSIELEN, MAXLISSIELEN - 1);
+	lissie->pos = 0;
+
+	lissie->tx = FLOATRAND(0, 2 * M_PI);
+	lissie->ty = FLOATRAND(0, 2 * M_PI);
+	lissie->dtx = FLOATRAND(MINDT, MAXDT);
+	lissie->dty = FLOATRAND(MINDT, MAXDT);
+
+	/* Draw lissie */
+	drawlissie(win, lissie);
+}
+
+void
+draw_lissie(Window win)
+{
+	lissstruct *gp = &lisss[screen];
+	register unsigned char ball;
+
+	if (++loopcount > cycles)
+		init_lissie(win);
+	else
+		for (ball = 0; ball < (unsigned char) gp->nlissies; ball++)
+			drawlissie(win, &gp->lissie[ball]);
+}
+
+static void
+drawlissie(Window win, lissiestruct * lissie)
+{
+	lissstruct *gp = &lisss[screen];
+	int         p = (++lissie->pos) % MAXLISSIELEN;
+	int         oldp = (lissie->pos - lissie->len + MAXLISSIELEN) % MAXLISSIELEN;
+	//printf("Lissie with %d batchcount and %d cycles.\n",batchcount,cycles); fflush(stdout);
+	/* Let time go by ... */
+	lissie->tx += lissie->dtx;
+	lissie->ty += lissie->dty;
+	if (lissie->tx > 2 * M_PI)
+		lissie->tx -= 2 * M_PI;
+	if (lissie->ty > 2 * M_PI)
+		lissie->ty -= 2 * M_PI;
+
+	/* slightly vary both (x/y) speeds for amusement */
+	lissie->dtx += FLOATRAND(-MINDT / 5.0, MINDT / 5.0);
+	lissie->dty += FLOATRAND(-MINDT / 5.0, MINDT / 5.0);
+	if (lissie->dtx < MINDT)
+		lissie->dtx = MINDT;
+	else if (lissie->dtx > MAXDT)
+		lissie->dtx = MAXDT;
+	if (lissie->dty < MINDT)
+		lissie->dty = MINDT;
+	else if (lissie->dty > MAXDT)
+		lissie->dty = MAXDT;
+
+	lissie->xs[p] = lissie->xi + sin(lissie->tx) * lissie->rx;
+	lissie->ys[p] = lissie->yi + sin(lissie->ty) * lissie->ry;
+
+	/* Mask */
+	XSetForeground(dsp, Scr[screen].gc, BlackPixel(dsp, screen));
+	Lissie(oldp);
+
+	/* Redraw */
+	if (!mono && Scr[screen].npixels > 2) {
+		XSetForeground(dsp, Scr[screen].gc, Scr[screen].pixels[lissie->color]);
+		if (++lissie->color >= Scr[screen].npixels)
+			lissie->color = 0;
+	} else
+		XSetForeground(dsp, Scr[screen].gc, WhitePixel(dsp, screen));
+	Lissie(p);
+}
+
+//-----------------------------------------------------------------------------
+
+#include <qpushbt.h>
+#include <qchkbox.h>
+#include <qcolor.h>
+#include <qmsgbox.h>
+#include "kslider.h"
+
+#include "lissie.h"
+
+#include "lissie.moc"
+
+static kLissieSaver *saver = NULL;
+
+void startScreenSaver( Drawable d )
+{
+	if ( saver )
+		return;
+	saver = new kLissieSaver( d );
+}
+
+void stopScreenSaver()
+{
+	if ( saver )
+		return;
+	saver = NULL;
+}
+
+int setupScreenSaver()
+{
+	kLissieSetup dlg;
+
+	return dlg.exec();
+}
+
+const char *getScreenSaverName()
+{
+	return "Lissie";
+}
+
+//-----------------------------------------------------------------------------
+
+kLissieSaver::kLissieSaver( Drawable drawable ) : kScreenSaver( drawable )
+{
+	readSettings();
+
+	colorContext = QColor::enterAllocContext();
+
+	batchcount = maxLevels;
+	cycles = numPoints;
+
+	initXLock( gc );
+	init_lissie( d );
+
+	timer.start( speed );
+	connect( &timer, SIGNAL( timeout() ), SLOT( slotTimeout() ) );
+}
+
+kLissieSaver::~kLissieSaver()
+{
+	timer.stop();
+	QColor::leaveAllocContext();
+	QColor::destroyAllocContext( colorContext );
+}
+
+void kLissieSaver::setSpeed( int spd )
+{
+	timer.stop();
+	speed = 100-spd;
+	timer.start( speed );
+}
+
+void kLissieSaver::setLevels( int l )
+{
+  batchcount = maxLevels = l;
+  init_lissie( d );
+}
+
+void kLissieSaver::setPoints( int p )
+{
+	cycles = numPoints = p;
+	init_lissie( d );
+}
+
+void kLissieSaver::readSettings()
+{
+	KConfig *config = KApplication::getKApplication()->getConfig();
+	config->setGroup( "Settings" );
+
+	QString str;
+
+	str = config->readEntry( "Speed" );
+	if ( !str.isNull() )
+		speed = 100 - atoi( str );
+	else
+		speed = 50;
+
+	str = config->readEntry( "MaxLevels" );
+	if ( !str.isNull() )
+		maxLevels = atoi( str );
+	else
+		maxLevels = 1;
+
+	str = config->readEntry( "NumPoints" );
+	if ( !str.isNull() )
+		numPoints = atoi( str );
+	else
+		numPoints = 3000;
+}
+
+void kLissieSaver::slotTimeout()
+{
+	draw_lissie( d );
+}
+
+//-----------------------------------------------------------------------------
+
+kLissieSetup::kLissieSetup( QWidget *parent, const char *name )
+	: QDialog( parent, name, TRUE )
+{
+	speed = 50;
+
+	readSettings();
+
+	setCaption( "Setup KLissie" );
+
+	QLabel *label;
+	QPushButton *button;
+	KSlider *slider;
+
+	label = new QLabel( "Speed:", this );
+	label->setGeometry( 15, 15, 60, 20 );
+
+	slider = new KSlider( KSlider::Horizontal, this );
+	slider->setGeometry( 15, 35, 90, 20 );
+	slider->setRange( 0, 100 );
+	slider->setSteps( 25, 50 );
+	slider->setValue( speed );
+	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
+
+	label = new QLabel( "Number of Lissies:", this );
+	label->setGeometry( 15, 65, 90, 20 );
+
+	slider = new KSlider( KSlider::Horizontal, this );
+	slider->setGeometry( 15, 85, 90, 20 );
+	slider->setRange( 1, 100 );
+	slider->setSteps( 25, 50 );
+	slider->setValue( maxLevels );
+	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotLevels( int ) ) );
+
+	label = new QLabel( "Cycles:", this );
+	label->setGeometry( 15, 115, 90, 20 );
+
+	slider = new KSlider( KSlider::Horizontal, this );
+	slider->setGeometry( 15, 135, 90, 20 );
+	slider->setRange( 1000, 11000 );
+	slider->setSteps( 2500, 5000 );
+	slider->setValue( numPoints );
+	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotPoints( int ) ) );
+
+	preview = new QWidget( this );
+	preview->setGeometry( 130, 15, 220, 170 );
+	preview->setBackgroundColor( black );
+	preview->show();    // otherwise saver does not get correct size
+	saver = new kLissieSaver( preview->winId() );
+
+	button = new QPushButton( "About", this );
+	button->setGeometry( 130, 210, 50, 25 );
+	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
+
+	button = new QPushButton( "Ok", this );
+	button->setGeometry( 235, 210, 50, 25 );
+	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
+
+	button = new QPushButton( "Cancel", this );
+	button->setGeometry( 300, 210, 50, 25 );
+	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
+}
+
+void kLissieSetup::readSettings()
+{
+	KConfig *config = KApplication::getKApplication()->getConfig();
+	config->setGroup( "Settings" );
+
+	QString str;
+
+	str = config->readEntry( "Speed" );
+	if ( !str.isNull() )
+		speed = atoi( str );
+
+	if ( speed > 100 )
+		speed = 100;
+	else if ( speed < 50 )
+		speed = 50;
+
+	str = config->readEntry( "MaxLevels" );
+	if ( !str.isNull() )
+		maxLevels = atoi( str );
+	else
+		maxLevels = 1;
+
+	str = config->readEntry( "NumPoints" );
+	if ( !str.isNull() )
+		numPoints = atoi( str );
+	else
+		numPoints = 5000;
+}
+
+void kLissieSetup::slotSpeed( int num )
+{
+	speed = num;
+
+	if ( saver )
+		saver->setSpeed( speed );
+}
+
+void kLissieSetup::slotLevels( int num )
+{
+	maxLevels = num;
+
+	if ( saver )
+		saver->setLevels( maxLevels );
+}
+
+void kLissieSetup::slotPoints( int num )
+{
+	numPoints = num;
+
+	if ( saver )
+		saver->setPoints( numPoints );
+}
+
+void kLissieSetup::slotOkPressed()
+{
+	KConfig *config = KApplication::getKApplication()->getConfig();
+	config->setGroup( "Settings" );
+
+	QString sspeed;
+	sspeed.setNum( speed );
+	config->writeEntry( "Speed", sspeed );
+
+	QString slevels;
+	slevels.setNum( maxLevels );
+	config->writeEntry( "MaxLevels", slevels );
+
+	QString spoints;
+	spoints.setNum( numPoints );
+	config->writeEntry( "NumPoints", spoints );
+
+	config->sync();
+	accept();
+}
+
+void kLissieSetup::slotAbout()
+{
+	QMessageBox::message("About Lissie", "Lissie\n\nCopyright (c) 1996 by Alexander Jolk\n\nPorted to kscreensave by Emanuel Pirker.", "Ok");
+}
+
+

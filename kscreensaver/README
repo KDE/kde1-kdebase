@@ -56,6 +56,11 @@ screensavers.
 
 CHANGES:
 
+Version 0.3.4
+
+More xlock ports from Emanuel Pirker <epirker@edu.uni-klu.ac.at>
+
+
 Version 0.3.3
 
 Fix small window problem under kwm (hopefully)
@@ -102,6 +107,14 @@ Ported from xlockmore:     (but blame me if they don't work)
   flame  -  Copyright (c) 1991 by Patrick J. Naughton.
   pyro   -  Copyright (c) 1991 by Patrick J. Naughton.
   laser  -  Copyright (c) 1995 Pascal Pensa <pensa@aurora.unice.fr>
+
+Ported from xlockmore by Emanuel Pirker <epirker@edu.uni-klu.ac.at>:
+  bat    -  Copyright (c) 1988 by Sun Microsystems
+  forest -  Copyright (c) 1995 Pascal Pensa <pensa@aurora.unice.fr>
+  hop    -  Copyright (c) 1991 by Patrick J. Naughton.
+  lissie -  Copyright (c) Alexander Jolk <ub9x@rz.uni-karlsruhe.de>
+  slip   -  Copyright (c) 1992 by Scott Draves (spot@cs.cmu.edu)
+  swarm  -  Copyright (c) 1991 by Patrick J. Naughton
 
 xlock Copyright Notice:
 
