@@ -100,6 +100,11 @@ AC_CHECK_LIB(socket, socket, [LIBSOCKET="-lsocket -lnsl"]) dnl for Solaris
 AC_SUBST(LIBSOCKET)
 AC_PATH_KDE
 
+LDFLAGS="$LDFLAGS -rpath \$(kde_libraries)"
+if test -n "$qt_libraries"; then
+ LDFLAGS="$LDFLAGS -rpath \$(qt_libraries)"
+fi
+
 AC_CHECK_KDM dnl in kdminclude.m4
 
 if test "$SETUIDFLAGS" = ""; then 
