@@ -1,5 +1,5 @@
 [KCM Locale]
-Languages=C,ca,cs,da,de,el,en_UK,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sk,sv,zh_CN.GB2312,zh_TW.Big5,pt_BR
+Languages=C,ca,cs,da,de,el,en_UK,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sk,sv,zh_CN.GB2312,zh_TW.Big5,pt_BR,eo
 
 [ca]
 Name=Catalan
@@ -303,3 +303,8 @@ Name[de]=Brasilianisches Portugiesisch
 Name[pt]=Português do Brasil
 Name[sv]=brasilisk portugisiska
 Name[ro]=Brazilian Protughez
+
+[eo]
+Name=Esperanto
+Name[de]=Esperanto
+
