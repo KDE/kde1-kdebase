@@ -1,0 +1,1505 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kfm\n"
+"POT-Creation-Date: 1998-11-30 01:10+0100\n"
+"PO-Revision-Date: 1998-11-12 08:36+01:00\n"
+"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Language-Team: Czech <cs@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kfmgui.cpp:203
+msgid "KFM"
+msgstr "KFM"
+
+#: kbind.cpp:939 kbind.cpp:951 kbind.cpp:961 kfmgui.cpp:215 kfmgui.cpp:1033
+msgid "Folder"
+msgstr "Adresáø"
+
+#: kfmgui.cpp:226
+#, c-format
+msgid "ERROR: Template does not exist '%s'"
+msgstr "Chyba: ©ablona nexistuje '%s'"
+
+#: kfmgui.cpp:250
+msgid "&New"
+msgstr "&Nový "
+
+#: kfmgui.cpp:255
+msgid "&Run..."
+msgstr "&Vykonat pøíkaz ..."
+
+#: kfmgui.cpp:257
+msgid "Open &Terminal"
+msgstr "Otevøít t&erminál"
+
+#: kfmgui.cpp:260
+msgid "&Open Location..."
+msgstr "Otevøít UR&L ..."
+
+#: finddlg.cpp:66 kfmgui.cpp:262
+msgid "&Find"
+msgstr "&Hledej"
+
+#: kfmgui.cpp:280
+msgid "&Move to Trash"
+msgstr "&Pøesunout do ko¹e"
+
+#: kfmgui.cpp:285
+msgid "&Select"
+msgstr "Vy&ber"
+
+#: kfmgui.cpp:287
+msgid "Select &all"
+msgstr "V&ybrat v¹e"
+
+#: kfmgui.cpp:290
+msgid "&Find in page..."
+msgstr "&Nalézt ve stránce ..."
+
+#: kfmgui.cpp:292
+msgid "Find &next"
+msgstr "N&alézt následující"
+
+#: kfmgui.cpp:295
+msgid "Mime Types"
+msgstr "Mime typy"
+
+#: kfmgui.cpp:297
+msgid "Applications"
+msgstr "Aplikace"
+
+#: kfmgui.cpp:303
+msgid "Global Mime Types"
+msgstr "Globální Mime typ"
+
+#: kfmgui.cpp:305
+msgid "Global Applications"
+msgstr "Globální aplikace"
+
+#: kfmgui.cpp:312
+msgid "Show &Dot Files"
+msgstr "&Ukázat skryté soubory"
+
+#: kfmgui.cpp:314
+msgid "Show Tr&ee"
+msgstr "Ukázat &strom"
+
+#: kfmgui.cpp:316
+msgid "&Visual Schnauzer"
+msgstr "V&isual Schnauzer"
+
+#: kfmgui.cpp:318
+msgid "&HTML View"
+msgstr "&HTML Pohled"
+
+#: kfmgui.cpp:321
+msgid "&Icon View"
+msgstr "Pohled s &Ikonami"
+
+#: kfmgui.cpp:323
+msgid "&Text View"
+msgstr "&Textový pohled"
+
+#: kfmgui.cpp:325
+msgid "&Long View"
+msgstr "&Podrobný podled"
+
+#: kfmgui.cpp:327
+msgid "&Short View"
+msgstr "&Jednoduchý pohled"
+
+#: kfmgui.cpp:333
+msgid "Rel&oad Tree"
+msgstr "O&bnov Strom"
+
+#: kfmgui.cpp:335
+msgid "&Reload Document"
+msgstr "&Obnov dokument"
+
+#: kfmgui.cpp:337
+msgid "Rescan &bindings"
+msgstr "Znovu naèíst &vazby"
+
+#: kfmgui.cpp:340
+msgid "&View Frame Source"
+msgstr "&Zobraz zdroj rámce"
+
+#: kfmgui.cpp:342
+msgid "View Docu&ment Source"
+msgstr "Zobraz zdroj doku&mentu"
+
+#: kfmgui.cpp:350
+msgid "Auto"
+msgstr ""
+
+#: kfmgui.cpp:358
+#, fuzzy
+msgid "&Document Encoding"
+msgstr "Dokument: Hotov"
+
+#: kfmgui.cpp:369
+msgid "Show History"
+msgstr "Zobrazit historii"
+
+#: kfmgui.cpp:371
+msgid "Show Cache"
+msgstr "Ukázat cache"
+
+#: kfmgui.cpp:373
+msgid "Clear Cache"
+msgstr "Vyprázdnit cache"
+
+#: kfmgui.cpp:376
+msgid "Always look in cache"
+msgstr "V¾dy pou¾ívat cache"
+
+#: kfmgui.cpp:378
+msgid "Never look in cache"
+msgstr "Nikdy nepou¾ívat cache"
+
+#: kfmgui.cpp:380
+msgid "Always save cache"
+msgstr "V¾dy ukládat cache"
+
+#: kfmgui.cpp:382
+msgid "Never save cache"
+msgstr "Nikdy neukládat cache"
+
+#: kfmgui.cpp:393
+msgid "Show &Menubar"
+msgstr "Zobrazovat &menu"
+
+#: kfmgui.cpp:395
+msgid "Show &Statusbar"
+msgstr "Zobrazovat &statusbar"
+
+#: kfmgui.cpp:397
+msgid "Show &Toolbar"
+msgstr "Zobrazovat Nás&trojovou li¹tu"
+
+#: kfmgui.cpp:399
+msgid "Show &Location bar"
+msgstr "Zobrazovat UR&L"
+
+#: kfmgui.cpp:402
+msgid "Sa&ve Settings"
+msgstr "&Ulo¾it nastavení"
+
+#: kfmgui.cpp:408
+msgid "Configure Browser..."
+msgstr "Konfigurovat prohlí¾eè ..."
+
+#: kfmgui.cpp:452
+msgid ""
+"Author: Torben Weis\n"
+"weis@kde.org\n"
+"\n"
+"HTML widget by Martin Jones\n"
+"mjones@kde.org\n"
+"\n"
+"Proxy Manager by Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de\n"
+"\n"
+"Bug reports and patches to David Faure\n"
+"faure@kde.org"
+msgstr ""
+"Autor: Torben Weis\n"
+"weis@kde.org\n"
+"\n"
+"HTML widget od Martina Jonese\n"
+"mjones@kde.org\n"
+"\n"
+"Správce proxy od Larse Hosse\n"
+"Lars.Hoss@munich.netsurf.de\n"
+"\n"
+"Hlá¹ení chyb a opravy zasílejte Davidu Faremu\n"
+"faure@kde.org"
+
+#: kfmgui.cpp:465
+msgid "&Bookmarks"
+msgstr "&Zálo¾ky"
+
+#: kfmgui.cpp:466
+msgid "&Cache"
+msgstr "&Cache"
+
+#: kfmgui.cpp:493 main.cpp:239
+msgid "Up"
+msgstr "Nahoru"
+
+#: kfmgui.cpp:503 main.cpp:241
+msgid "Forward"
+msgstr "Vpøed"
+
+#: kfmgui.cpp:508
+msgid "Home"
+msgstr "Domù"
+
+#: kfmgui.cpp:565
+msgid "Could not load icon\n"
+msgstr "Není mo¾né nahrát ikonu\n"
+
+#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:309
+#: kbind.cpp:381 kbind.cpp:433 kbind.cpp:1588 kbind.cpp:1596 kbind.cpp:1614
+#: kbind.cpp:1633 kbind.cpp:1692 kbind.cpp:1704 kbind.cpp:1731 kbind.cpp:1746
+#: kbind.cpp:1766 kbind.cpp:1778 kbind.cpp:1794 kbind.cpp:1930 kbind.cpp:1942
+#: kbind.cpp:1987 kbind.cpp:2029 kfmexec.cpp:60 kfmexec.cpp:92
+#: kfmexec/main.cpp:47 kfmgui.cpp:566 kfmgui.cpp:725 kfmman.cpp:341
+#: kfmman.cpp:1058 kfmman.cpp:1270 kfmman.cpp:1296 kfmprops.cpp:377
+#: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
+#: kfmprops.cpp:1141 kfmprops.cpp:1473 kfmprops.cpp:1705 kfmprops.cpp:1890
+#: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
+#: kfmserver.cpp:303 kfmserver.cpp:311 kfmtree.cpp:239 kfmtree.cpp:362
+#: kfmtree.cpp:393 kfmtree.cpp:399 kfmtree.cpp:405 kfmview.cpp:390
+#: kfmview.cpp:406 kfmview.cpp:425 kfmview.cpp:431 kfmview.cpp:493
+#: kfmview.cpp:499 kfmview.cpp:505 kfmview.cpp:611 kfmview.cpp:615
+#: kfmview.cpp:654 kfmview.cpp:680 kfmview.cpp:701 kfmview.cpp:709
+#: kfmview.cpp:717 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
+#: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:556
+#: kiojob.cpp:796 kiojob.cpp:827 kiojob.cpp:868 kiojob.cpp:1682
+#: krenamewin.cpp:120 root.cpp:891 root.cpp:1152 root.cpp:1170 root.cpp:1176
+#: root.cpp:1182 root.cpp:1263 root.cpp:1774 root.cpp:1799
+msgid "KFM Error"
+msgstr "Chyba KFM"
+
+#: kfmexec.cpp:59 kfmgui.cpp:724 kfmman.cpp:1057
+msgid "Malformed URL\n"
+msgstr "Chybný formát URL\n"
+
+#: kfmgui.cpp:911
+msgid "Select files:"
+msgstr "Vyber soubory:"
+
+#: kfmgui.cpp:966
+msgid "Find Complete"
+msgstr "Hledání dokonèeno"
+
+#: kfmgui.cpp:967
+msgid "Continue search from the top of the page?"
+msgstr "Pokraèovat v hledání od vrchu stránky?"
+
+#: kfmgui.cpp:985
+msgid "&Edit Bookmarks..."
+msgstr "&Upravit zálo¾ky"
+
+#: kfmgui.cpp:995
+msgid "&Add Bookmark"
+msgstr "&Pøidej zálo¾ku"
+
+#: kfmgui.cpp:1025 kfmgui.cpp:1032
+msgid "New "
+msgstr "Nový "
+
+#: kfmgui.cpp:1122 kfmgui.cpp:1291 kfmjob.cpp:35 kfmman.cpp:224
+#: kfmtree.cpp:394 kfmview.cpp:426 kfmview.cpp:494 kfmview.cpp:702
+#: kiojob.cpp:87 root.cpp:1171
+msgid "ERROR: Malformed URL"
+msgstr "Chyba: Chybný formát URL"
+
+#: kfmgui.cpp:1245 kfmserver.cpp:188
+msgid "Open Location:"
+msgstr "Otevøít URL:"
+
+#: kfmgui.cpp:1302
+msgid "KFM Confirm"
+msgstr "Potvrzení KFM"
+
+#: kfmgui.cpp:1303
+msgid ""
+"Do you really want to quit?\n"
+"Important desktop functionality will be lost"
+msgstr ""
+"Opravdu chcete ukonèit aplikaci?\n"
+"Bubou ztraceny dùle¾ité vlastnosti \n"
+"pracovní plochy."
+
+#: kfmgui.cpp:1413
+msgid "Document: Done"
+msgstr "Dokument: Hotov"
+
+#: kfmview.cpp:391 root.cpp:892
+msgid "ERROR: You may only drop URLs"
+msgstr "CHYBA: Je mo¾né upustit pouze URL"
+
+#: kfmview.cpp:407
+msgid "ERROR: Drop over malformed URL"
+msgstr "Chyba: Upu¹tìní nad chybnì daným URL"
+
+#: kfmview.cpp:432
+msgid "ERROR: You dropped some URL over itself"
+msgstr "CHYBA: Upustil jste nìkteré URL nad sebou samým"
+
+#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:432 kfmview.cpp:465
+#: kfmview.cpp:745 krenamewin.cpp:20 root.cpp:1214
+msgid "KFM Warning"
+msgstr "Varování KFM"
+
+#: kfmtree.cpp:433 kfmview.cpp:466 kfmview.cpp:746 root.cpp:1215
+msgid ""
+"Do you really want to delete the selected file(s)?\n"
+"\n"
+"There is no way to restore them."
+msgstr ""
+"Opravdu chcete smazat tyto soubory?\n"
+"\n"
+"Neexistuje zpùsob jak je obnovit!"
+
+#: kfmtree.cpp:400 kfmview.cpp:500 kfmview.cpp:710 root.cpp:1177
+msgid "ERROR: You dropped a URL over itself"
+msgstr "CHYBA: Upustil jste URL nad sebou samým"
+
+#: kfmtree.cpp:406 kfmview.cpp:506 kfmview.cpp:718 root.cpp:1183
+msgid "ERROR: You dropped a directory over one of its children"
+msgstr "CHYBA: Upustil jste adresáø nad nìkterým z jeho podadresáøù"
+
+#: kfmexec.cpp:265 kfmman.cpp:911 kfmview.cpp:522
+msgid "Open With:"
+msgstr "Otevøi pomocí:"
+
+#: kfmview.cpp:553 root.cpp:1114
+msgid "ERROR: Can not open properties for multiple files"
+msgstr "Chyba: Nemohu otevøít vlastnosti pro nìkolik souborù"
+
+#: kfmview.cpp:612
+msgid ""
+"Can not save properties because\n"
+"this directory is neither writable nor bookmarked.\n"
+"\n"
+" Bookmark this location first, or make kdelnk to it on desktop."
+msgstr ""
+
+#: kfmview.cpp:616
+msgid ""
+"Can not save properties because\n"
+"this URL is neither bookmarked nor on desktop.\n"
+"\n"
+" Bookmark this location first, or make kdelnk to it on desktop."
+msgstr ""
+
+#: kfmtree.cpp:363 kfmview.cpp:655 root.cpp:1264
+msgid "Could not access Trash Bin"
+msgstr "Nemohu pøistoupit ke ko¹i"
+
+#: kfmview.cpp:681 root.cpp:1153
+msgid "Can not paste into multiple directories"
+msgstr "Nemohu vkládat do nìkolika adresáøù"
+
+#: kfmview.cpp:778
+msgid "ERROR: Can not change to multiple directories"
+msgstr "Chyba: Nemohu jít do nìkolika adresáøù"
+
+#: kfmview.cpp:1042
+msgid "KFM Security Alert"
+msgstr "Bezpeènostní výstraha KFM"
+
+#: kfmview.cpp:1043
+msgid ""
+"This page is untrusted\n"
+"but it contains a link to your local file system."
+msgstr ""
+"Tato stránka není dùvìryhodná, ale obsahuje\n"
+"odkaz na lokální souborový systém."
+
+#: kfmview.cpp:1129
+msgid "Symbolic Link"
+msgstr "Symbolický link"
+
+#: kfmview.cpp:1131
+#, c-format
+msgid "%s (Link)"
+msgstr "%s (link)"
+
+#: kfmview.cpp:1151
+msgid "bytes"
+msgstr "bytù"
+
+#: kbind.cpp:307
+msgid "The mime type config file "
+msgstr "Konfiguraèní soubor mime typu "
+
+#: kbind.cpp:308
+msgid "does not conatain a MimeType=... entry"
+msgstr "neobsahuje polo¾ku MimeType..."
+
+#: kbind.cpp:382
+msgid "No mime types installed!"
+msgstr "Nejsou nainstalovány ¾ádné Mime typy!"
+
+#: kbind.cpp:430 kbind.cpp:1212
+msgid "Could not find mime type\n"
+msgstr "Nemohu nalézt mime typ\n"
+
+#: kbind.cpp:701 kbind.cpp:711 kbind.cpp:1965 kbind.cpp:1966 kbind.cpp:1978
+#: kbind.cpp:1980
+msgid "Mount"
+msgstr "Pøipojit"
+
+#: kbind.cpp:717 kbind.cpp:1956
+msgid "Unmount"
+msgstr "Odpojit"
+
+#: kbind.cpp:1211
+msgid "ERROR"
+msgstr "Chyba"
+
+#: kbind.cpp:1212
+msgid "in "
+msgstr "v "
+
+#: kbind.cpp:1378 kbind.cpp:1471
+msgid "Could not execute program\n"
+msgstr "Nemohu vykonat pøíkaz\n"
+
+#: kbind.cpp:1587
+msgid "Could not find binding"
+msgstr "Nemohu nalézt spojení"
+
+#: kbind.cpp:1597
+msgid ""
+"This is a document!\n"
+"Not an application"
+msgstr ""
+"Toto je dokument!\n"
+"Ne aplikace"
+
+#: kbind.cpp:1615 kbind.cpp:1634
+msgid "Can only start executables on local disks\n"
+msgstr "Mohu vykonat spustitelné programy pouze na lokalních discích\n"
+
+#: kbind.cpp:1693 kbind.cpp:1767 kbind.cpp:1931
+msgid ""
+"Can work with *.kdelnk files only\n"
+"on local hard disk"
+msgstr ""
+"Mohu pracovat s *.kdelnk soubory\n"
+"pouze na lokálním disku"
+
+#: kbind.cpp:1703
+#, c-format
+msgid ""
+"Could not access\n"
+"%s"
+msgstr ""
+"Nemohu pøistoupit k\n"
+"%s"
+
+#: kbind.cpp:1732
+msgid "The \"Link=....\" entry is empty"
+msgstr "Polo¾ka \"Link=...\" je prázdná"
+
+#: kbind.cpp:1747
+msgid "The config file has no \"Type=...\" line"
+msgstr "Konfiguraèní soubor neobsahuje polo¾ku \"Type=...\""
+
+#: kbind.cpp:1777 kbind.cpp:1941
+msgid "Could not access"
+msgstr "Nemohu pøistoupit k"
+
+#: kbind.cpp:1795
+msgid ""
+"This file does not contain an\n"
+"Exec=....\n"
+"entry. Edit the Properties\n"
+"to solve the problem"
+msgstr ""
+"Tento soubor neobsahuje \n"
+"polo¾ku Exec=....\n"
+"Kvùli vyøe¹ení problémù \n"
+"uprav vlastnosti."
+
+#: kbind.cpp:1893
+msgid "ERROR: No Terminal Setting"
+msgstr "Chyba: ®ádné nastavení terminálu"
+
+#: kbind.cpp:1988
+msgid "No mount point in *.kdelnk file"
+msgstr "V *.kdelnk souboru není místo pøipojení"
+
+#: kbind.cpp:2028
+msgid "Unknown binding"
+msgstr "Chyba: Neznámá vazba"
+
+#: main.cpp:87 main.cpp:191
+msgid "KFM Information"
+msgstr "Informace KFM"
+
+#: main.cpp:88
+msgid "Creating directory:\n"
+msgstr "Vytváøím adresáø:\n"
+
+#: main.cpp:192
+msgid "Installing Templates"
+msgstr "Instaluji ¹ablony"
+
+#: main.cpp:224
+msgid "Cd"
+msgstr "Cd"
+
+#: main.cpp:225
+msgid "New View"
+msgstr "Nový pohled"
+
+#: kfmtree.cpp:299 main.cpp:228
+msgid "Move to Trash"
+msgstr "Pøesunout do ko¹e"
+
+#: main.cpp:230
+msgid "Open with"
+msgstr "Otevøi pomocí"
+
+#: kfmman.cpp:1288 kfmtree.cpp:231 main.cpp:232
+msgid "Move"
+msgstr "Pøesunout"
+
+#: kfmman.cpp:1292 kfmtree.cpp:235 main.cpp:234
+msgid "Link"
+msgstr "Link"
+
+#: main.cpp:235
+msgid "Empty Trash Bin"
+msgstr "Vyprázdnit Ko¹"
+
+#: main.cpp:236
+msgid "Add to Bookmarks"
+msgstr "Pøidej k zálo¾kám"
+
+#: main.cpp:237
+#, fuzzy
+msgid "Save settings for this URL"
+msgstr "&Ulo¾it nastavení"
+
+#: main.cpp:238
+#, fuzzy
+msgid "Show Menubar"
+msgstr "Zobrazovat &menu"
+
+#: htmlopts.cpp:70
+msgid "Small"
+msgstr "Malý"
+
+#: htmlopts.cpp:79
+msgid "Medium"
+msgstr "Støední"
+
+#: htmlopts.cpp:88
+msgid "Large"
+msgstr "Velký"
+
+#: htmlopts.cpp:103
+msgid "Standard Font"
+msgstr "Standardní font"
+
+#: htmlopts.cpp:132
+msgid "Fixed Font"
+msgstr "Fixovaný font"
+
+#: htmlopts.cpp:161
+msgid "Default Charset"
+msgstr ""
+
+#: htmlopts.cpp:169
+msgid "Use language charset"
+msgstr ""
+
+#: htmlopts.cpp:361
+msgid "Background Color:"
+msgstr "Barva pozadí:"
+
+#: htmlopts.cpp:380
+msgid "Normal Text Color:"
+msgstr "Barva normálního textu:"
+
+#: htmlopts.cpp:399
+msgid "URL Link Color:"
+msgstr "Barva URL odkazu:"
+
+#: htmlopts.cpp:418
+msgid "Followed Link Color:"
+msgstr "Barva pou¾itého odkazu:"
+
+#: htmlopts.cpp:437
+msgid "Change cursor over link."
+msgstr "Zmìnit kurzor nad odkazem."
+
+#: htmlopts.cpp:448
+msgid "Underline links"
+msgstr "Podtrhnout odkazy"
+
+#: htmlopts.cpp:565
+msgid "Horizontal Root Grid Spacing:"
+msgstr "Horizontální rozteè sítì na plo¹e:"
+
+#: htmlopts.cpp:589
+msgid "Vertical Root Grid Spacing:"
+msgstr "Vertikální rozteè sítì na plo¹e:"
+
+#: htmlopts.cpp:613
+msgid "Allow per-URL settings"
+msgstr ""
+
+#: htmlopts.cpp:621
+msgid "Transparent Text for Root Icons."
+msgstr "Transparentní text pro ikony na plo¹e."
+
+#: htmlopts.cpp:635
+#, fuzzy
+msgid "Icon foreground color:"
+msgstr "Barva pozadí:"
+
+#: htmlopts.cpp:647
+#, fuzzy
+msgid "Icon background color:"
+msgstr "Barva pozadí:"
+
+#: kfmdlg.cpp:113
+msgid "&Browser"
+msgstr "&Prohlí¾eè"
+
+#: bookmark.cpp:296
+msgid "Could not write bookmark"
+msgstr "Nemohu zapsat zálo¾ky"
+
+#: kfmprops.cpp:238
+#, fuzzy
+msgid "File Name"
+msgstr "Plné jméno"
+
+#: kfmprops.cpp:253
+msgid "Full Name"
+msgstr "Plné jméno"
+
+#: kfmprops.cpp:270
+msgid "Is the Trash Bin"
+msgstr "Ko¹"
+
+#: kfmprops.cpp:277
+msgid "Is a Directory"
+msgstr "Adresáø"
+
+#: kfmprops.cpp:284
+msgid "Points to"
+msgstr "Ukazuje na"
+
+#: kfmprops.cpp:309
+#, c-format
+msgid "Size: %i"
+msgstr "Velikost: %i"
+
+#: kfmprops.cpp:319
+msgid "Last Access"
+msgstr "Poslední pøístup"
+
+#: kfmprops.cpp:329
+msgid "Last Modified"
+msgstr "Poslední modifikace"
+
+#: kfmprops.cpp:378
+msgid ""
+"Could not rename the file or directory\n"
+"The destination seems to already exist\n"
+msgstr ""
+"Není mo¾né pøejmenovat soubor nebo adresáø\n"
+"Zdá se, ¾e cílový soubor ji¾ existuje\n"
+
+#: kfmprops.cpp:426
+msgid "Access permissions"
+msgstr "Pøístupová práva"
+
+#: kfmprops.cpp:432
+msgid ""
+"Show\n"
+"Entries"
+msgstr ""
+"Zobrazit\n"
+"polo¾ky"
+
+#: kfmprops.cpp:434
+msgid "Read"
+msgstr "Ètení"
+
+#: kfmprops.cpp:439
+msgid ""
+"Write\n"
+"Entries"
+msgstr ""
+"Zápis do\n"
+"polo¾ek"
+
+#: kfmprops.cpp:441
+msgid "Write"
+msgstr "Zápis"
+
+#: kfmprops.cpp:446
+msgid ""
+"Change\n"
+"Into"
+msgstr ""
+"Vstup do\n"
+"adresáøe"
+
+#: kfmprops.cpp:448
+msgid "Exec"
+msgstr "Vykonání"
+
+#: kfmprops.cpp:452
+msgid "Special"
+msgstr "Speciální"
+
+#: kfmprops.cpp:456
+msgid "User"
+msgstr "U¾ivatel"
+
+#: kfmprops.cpp:461 kfmprops.cpp:560
+msgid "Group"
+msgstr "Skupina"
+
+#: kfmprops.cpp:466
+msgid "Others"
+msgstr "Ostatní"
+
+#: kfmprops.cpp:479
+msgid "Set UID"
+msgstr "Nastav UID"
+
+#: kfmprops.cpp:480
+msgid "Set GID"
+msgstr "Nastav GID"
+
+#: kfmprops.cpp:481
+msgid "Sticky"
+msgstr "Sticky"
+
+#: kfmprops.cpp:499
+msgid "Ownership"
+msgstr "Vlastnictví"
+
+#: kfmprops.cpp:505
+msgid "Owner"
+msgstr "Vlastník"
+
+#: kfmprops.cpp:629
+msgid ""
+"Could not change permissions\n"
+"Perhaps access denied."
+msgstr ""
+"Není mo¾né zmìnit pøístupová práva\n"
+"Mo¾ná nemáte pøístup."
+
+#: kfmprops.cpp:644
+#, c-format
+msgid " ERROR: No user %s"
+msgstr " Chyba: ®ádný u¾ivatel %s"
+
+#: kfmprops.cpp:649
+#, c-format
+msgid " ERROR: No group %s"
+msgstr " Chyba: ®ádná skupina %s"
+
+#: kfmprops.cpp:655
+msgid ""
+"Could not change owner/group\n"
+"Perhaps access denied."
+msgstr ""
+"Nemohu zmìnit vlastníka/skupinu\n"
+"Mo¾ná nemáte pøístup."
+
+#: kfmprops.cpp:667 kfmprops.cpp:726
+msgid "Execute"
+msgstr "Vykonej"
+
+#: kfmprops.cpp:683
+msgid "&Browse..."
+msgstr "&Listovat..."
+
+#: kfmprops.cpp:695
+msgid "Working Directory"
+msgstr "Pracovní adreáø"
+
+#: kfmprops.cpp:713
+msgid "Swallowing on panel"
+msgstr "Pohlcený v panelu"
+
+#: kfmprops.cpp:740
+msgid "Window Title"
+msgstr "Titulek okna"
+
+#: kfmprops.cpp:760
+msgid "Run in terminal"
+msgstr "Proveï v terminálu"
+
+#: kfmprops.cpp:768
+msgid "Terminal Options"
+msgstr "Parametry terminálu"
+
+#: kfmprops.cpp:882 kfmprops.cpp:1011 kfmprops.cpp:1474 kfmprops.cpp:1706
+#: kfmprops.cpp:1891
+msgid ""
+"Could not save properties\n"
+"Perhaps permissions denied"
+msgstr ""
+"Není mo¾né ulo¾it vlastnosti\n"
+"Mo¾ná nemáte pøístup."
+
+#: kfmprops.cpp:936
+msgid "URL"
+msgstr "URL"
+
+#: kfmprops.cpp:1033
+msgid "Background"
+msgstr "Pozadí"
+
+#: kfmprops.cpp:1043
+msgid "Apply global"
+msgstr "Aplikuj globálnì"
+
+#: kfmprops.cpp:1081 kfmprops.cpp:1153 kfmprops.cpp:1210
+msgid "(Default)"
+msgstr "(Implicitní)"
+
+#: kfmprops.cpp:1142
+msgid "Could not write to\n"
+msgstr "Nemohu zapsat do\n"
+
+#: kfmprops.cpp:1271
+msgid "(None)"
+msgstr "(®ádný)"
+
+#: kfmprops.cpp:1317
+msgid "Binary Pattern (netscape;Netscape;)"
+msgstr "Binární vzor (netscape;Netscape;)"
+
+#: kfmprops.cpp:1324 kfmprops.cpp:1575
+msgid "Comment"
+msgstr "Komentáø"
+
+#: kfmprops.cpp:1335
+msgid "Name ( in your language )"
+msgstr "Jméno (ve va¹em jazyce)"
+
+#: kfmprops.cpp:1552
+msgid "Pattern ( example: *.html;*.HTML; )"
+msgstr "Vzor ( pøíklad: *.html;*.HTML; )"
+
+#: kfmprops.cpp:1564
+msgid "Mime Type"
+msgstr "Mime typ"
+
+#: kfmprops.cpp:1593
+msgid "Default Application"
+msgstr "Implicitní aplikace"
+
+#: kfmprops.cpp:1633
+msgid "<none>"
+msgstr "<¾ádná>"
+
+#: kfmprops.cpp:1755
+msgid "Device ( /dev/fd0 )"
+msgstr "Zaøízení ( /dev/fd0 )"
+
+#: kfmprops.cpp:1764
+msgid "Mount Point ( /floppy )"
+msgstr "Místo pøipojení ( /floppy )"
+
+#: kfmprops.cpp:1775
+msgid "Readonly"
+msgstr "Pouze ètení"
+
+#: kfmprops.cpp:1781
+msgid "Filesystems ( iso9660,msdos,minix,default )"
+msgstr "Souborový systém  ( iso9660,msdos,minix,default )"
+
+#: kfmprops.cpp:1792
+msgid "Mounted Icon"
+msgstr "Ikona pøipojeného"
+
+#: kfmprops.cpp:1797
+msgid "Unmounted Icon"
+msgstr "Ikona odpojeného"
+
+#: kfmserver.cpp:41
+msgid "Could not create ~/.kde/share/apps/kfm/magic"
+msgstr "Není mo¾né vytvoøit soubor ~/.kde/share/apps/kfm/magic"
+
+#: kfmserver.cpp:51
+msgid ""
+"Please change the password in\n"
+"~/.kde/share/apps/kfm/magic"
+msgstr ""
+"Prosím zmìòte heslo v souboru\n"
+"~/.kde/share/apps/kfm/magic"
+
+#: kfmserver.cpp:79
+msgid "Do you really want to rearrange your icons ?"
+msgstr "Opravdu chcete pøeuspoøádat va¹e ikony?"
+
+#: kfmserver.cpp:244
+#, c-format
+msgid ""
+"The URL\n"
+"%s\n"
+"is malformed"
+msgstr ""
+"URL \n"
+"%s\n"
+"ma chybný formát"
+
+#: kfmserver.cpp:295
+msgid ""
+"You dont have the file ~/.kde/share/apps/kfm/magic\n"
+"Authorization failed"
+msgstr ""
+"Nemáte soubor ~/.kde/share/apps/kfm/magic\n"
+"Autorizace se nezdaøila"
+
+#: kfmserver.cpp:304
+msgid ""
+"The file ~/.kde/share/apps/kfm/magic is corrupted\n"
+"Authorization failed"
+msgstr ""
+"Soubor ~/.kde/share/apps/kfm/magic po¹kozen\n"
+"Autorizace se nezdaøila"
+
+#: kfmserver.cpp:312
+msgid ""
+"Someone tried to authorize himself\n"
+"using a wrong password"
+msgstr ""
+"Nìkdo se pokusil se autorizovat\n"
+"pomocí ¹patného hesla"
+
+#: root.cpp:695
+msgid ""
+"Cannot execute request.\n"
+"New root grid dimensions would move some icons\n"
+"off the desktop."
+msgstr ""
+"Není mo¾né vykonat po¾adavek.\n"
+"Nová rozteè sítì na pracovní plo¹e by posunula\n"
+"nekteré ikony mimo pracovní plochu."
+
+#: root.cpp:730
+msgid "Internal Error: desktopDir is malformed"
+msgstr "Interní chyba: desctopDir má ¹patný formát"
+
+#: root.cpp:741
+#, c-format
+msgid "ERROR: Could not read desktop directory '%s'"
+msgstr "Chyba: Nemohu èíst adresáø pracovní plochy '%s'"
+
+#: root.cpp:940
+msgid "ERROR: Can not accept drop"
+msgstr "Chyba: Nemohu akceptovat upu¹»ení"
+
+#: kfmman.cpp:1271 root.cpp:1775
+msgid "Dont know what to do."
+msgstr "Nevím co dìlat."
+
+#: kfmman.cpp:1297 kfmtree.cpp:240 root.cpp:1800
+msgid "Dont know what to do"
+msgstr "Nevím co dìlat"
+
+#: kfmexec.cpp:93 kfmman.cpp:342
+msgid "The file does not contain a URL"
+msgstr "Soubor neobsahuje URL"
+
+#: kfmman.cpp:391
+msgid "Contacting host "
+msgstr "Kontaktuji hostitele "
+
+#: kfmman.cpp:395
+msgid "Working ..."
+msgstr "Pracuji ..."
+
+#: kiojob.cpp:134
+msgid "INTERNAL ERROR: You must at least specify the device for mounting"
+msgstr "INTERNÍ CHYBA: Je nutné specifikovat pøinejmen¹ím zaøízení k pøipojení"
+
+#: kiojob.cpp:237 kiojob.cpp:245 kiojob.cpp:1209 kiojob.cpp:1349
+#, c-format
+msgid ""
+"Malformed URL\n"
+"%s"
+msgstr ""
+"Chybný formát URL\n"
+"%s"
+
+#: kiojob.cpp:254
+msgid "Can only make links on local file system"
+msgstr "Mohu vytváøet jen linky na lokálním systému souborù"
+
+#: kiojob.cpp:277 kiojob.cpp:296
+#, c-format
+msgid ""
+"Could not overwrite\n"
+"%s"
+msgstr ""
+"Nemohu pøepsat\n"
+"%s"
+
+#: kiojob.cpp:306 kiojob.cpp:329 kiojob.cpp:348
+#, c-format
+msgid ""
+"Could not make symlink to\n"
+"%s"
+msgstr ""
+"Není mo¾né vytvoøit symbolický odkaz na\n"
+"%s"
+
+#: kiojob.cpp:382
+#, c-format
+msgid " ERROR: Could not write to %s"
+msgstr "CHYBA: Nemohu zapsat do %s"
+
+#: kiojob.cpp:555 kiojob.cpp:795 kiojob.cpp:1266
+#, c-format
+msgid ""
+"Could not make directory\n"
+"%s"
+msgstr ""
+"Není mo¾né vytvoøit adresáø\n"
+"%s"
+
+#: kiojob.cpp:568 kiojob.cpp:1014
+#, c-format
+msgid "ERROR: Could not access directory '%s'"
+msgstr "CHYBA: Není mo¾né vstoupit do adresáøe '%s'"
+
+#: kiojob.cpp:826
+#, c-format
+msgid ""
+"Could not access directory\n"
+"%s"
+msgstr ""
+"Není mo¾né vstoupit do adresáøe\n"
+"%s "
+
+#: kiojob.cpp:867
+#, c-format
+msgid ""
+"Could not move directory\n"
+"%s\n"
+"to %s\n"
+"Perhaps access denied"
+msgstr ""
+"Není mo¾né zmìnit pøesunout adresáø\n"
+"%s\n"
+"do %s\n"
+"Pravdìpodobnì nemáte pøístup."
+
+#: kiojob.cpp:1217 kiojob.cpp:1357
+#, c-format
+msgid ""
+"Could not read\n"
+"%s\n"
+"File does not exist or access denied"
+msgstr ""
+"Není mo¾né èíst\n"
+"%s\n"
+"Pravdìpodobnì soubor neexistuje nebo nemáte pøístupová práva."
+
+#: kiojob.cpp:1225
+#, c-format
+msgid ""
+"Could not write\n"
+"%s\n"
+"Perhaps access denied"
+msgstr ""
+"Není mo¾né zapsat\n"
+"%s\n"
+"Pravdìpodobnì nemáte pøístupová práva."
+
+#: kiojob.cpp:1234 kiojob.cpp:1365
+#, c-format
+msgid ""
+"Could not create Socket for\n"
+"%s"
+msgstr ""
+"Není mo¾né vytvoøít Socket pro\n"
+"%s"
+
+#: kiojob.cpp:1242 kiojob.cpp:1373
+#, c-format
+msgid ""
+"Unknown host in\n"
+"%s"
+msgstr ""
+"Neznámý hostitel v\n"
+"%s"
+
+#: kiojob.cpp:1250 kiojob.cpp:1381
+#, c-format
+msgid ""
+"Could not connect to\n"
+"%s"
+msgstr ""
+"Není mo¾né se pøipojit k\n"
+"%s"
+
+#: kiojob.cpp:1258 kiojob.cpp:1389
+#, c-format
+msgid ""
+"The requested action\n"
+"%s\n"
+"is not implemented yet."
+msgstr ""
+"Po¾adovaná akce\n"
+"%s\n"
+"je¹tì není implementována!"
+
+#: kiojob.cpp:1274
+#, c-format
+msgid ""
+"Could not list directory contents\n"
+"%s"
+msgstr ""
+"Není mo¾né vypsat obsah adresáøe\n"
+"%s "
+
+#: kiojob.cpp:1282
+#, c-format
+msgid ""
+"Could not delete\n"
+"%s\n"
+"URL does not exist or permission denied"
+msgstr ""
+"Není mo¾né smazat\n"
+"%s\n"
+"URL neexistuje nebo nemáte pøístupová práva."
+
+#: kiojob.cpp:1292 kiojob.cpp:1399
+#, c-format
+msgid ""
+"Could not login for\n"
+"%s\n"
+"Perhaps wrong password"
+msgstr ""
+"Není mo¾né se pøipojit k\n"
+"%s\n"
+"Pravdìpodobné chybné heslo"
+
+#: kiojob.cpp:1308 kiojob.cpp:1415
+#, c-format
+msgid ""
+"Tar reproted an error\n"
+"%s"
+msgstr ""
+"Tar ohlásil chybu\n"
+"%s"
+
+#: kiojob.cpp:1316
+#, c-format
+msgid ""
+"Gzip reproted an error for\n"
+"%s"
+msgstr ""
+"Gzip ohlásil chybu pro\n"
+"%s"
+
+#: kiojob.cpp:1326 kiojob.cpp:1341
+#, c-format
+msgid ""
+"File %s\n"
+"does not exist"
+msgstr ""
+"Soubor %s\n"
+"neexistuje "
+
+#: kiojob.cpp:1423
+#, c-format
+msgid ""
+"Gzip reproted an error\n"
+"%s"
+msgstr ""
+"Gzip ohlásil chybu\n"
+"%s"
+
+#: kiojob.cpp:1431
+#, c-format
+msgid ""
+"Could not mount\n"
+"Error log:\n"
+"\n"
+"%s"
+msgstr ""
+"Není mo¾né pøipojit\n"
+"Záznam chyby:\n"
+"\n"
+"%s"
+
+#: kiojob.cpp:1437
+#, c-format
+msgid ""
+"Could not unmount\n"
+"Error log:\n"
+"\n"
+"%s"
+msgstr ""
+"Není mo¾né odpojit\n"
+"Záznam chyby:\n"
+"\n"
+"%s"
+
+#: kiojob.cpp:1528
+msgid "Making directory"
+msgstr "Vytváøení adresáøe"
+
+#: kiojob.cpp:1647 kiojob.cpp:1701 kiojob.cpp:1743
+#, c-format
+msgid "File %i/%i"
+msgstr "Soubor %i/%i"
+
+#: kiojob.cpp:1650 kiojob.cpp:1705
+#, c-format
+msgid "to %s"
+msgstr "do %s"
+
+#: kiojob.cpp:1681
+#, c-format
+msgid ""
+"Could not delete directory\n"
+"%s"
+msgstr ""
+"Není mo¾né smazat adresáø\n"
+"%s"
+
+#: kiojob.cpp:1771
+#, c-format
+msgid "Mounting %s ..."
+msgstr "Pøipojuji %s..."
+
+#: kiojob.cpp:1773
+#, c-format
+msgid "Unmounting %s ..."
+msgstr "Odpojuji %s ..."
+
+#: kiojob.cpp:1801
+#, c-format
+msgid "Retrieving listing of %s"
+msgstr "Obnovení výpisu %s"
+
+#: kiojob.cpp:2034
+msgid "Segmentation fault in io subprocess"
+msgstr "Segmentaèní chyba ve vstupnì/výstupním podprocesu"
+
+#: htmlcache.cpp:339
+msgid ""
+" is not a directory ! Security Alert !\n"
+"Please check it.\n"
+msgstr ""
+
+#: htmlcache.cpp:368
+msgid ""
+" is not a directory ! Security Alert !\n"
+"Check it before clearing the cache.\n"
+msgstr ""
+
+#: autostart.cpp:28
+msgid "KFM Installation Error"
+msgstr "Chyba pøi instalaci KFM"
+
+#: autostart.cpp:29
+msgid "The directory "
+msgstr "Adresáø "
+
+#: autostart.cpp:30
+msgid " does not exist\n"
+msgstr " neexistuje\n"
+
+#: kfmtree.cpp:306
+msgid "Add To Bookmarks"
+msgstr "Pøidej k zálo¾kám"
+
+#: kfmtree.cpp:472
+msgid "My Home"
+msgstr "Domovský adresáø"
+
+#: kfmtree.cpp:474
+msgid "Desktop"
+msgstr "Pracovní plocha"
+
+#: kfmtree.cpp:476
+msgid "Root"
+msgstr "Koøen"
+
+#: krenamewin.cpp:26
+msgid "Rename"
+msgstr "Pøejmenovat"
+
+#: krenamewin.cpp:31
+msgid "Skip"
+msgstr "Pøeskoèit"
+
+#: krenamewin.cpp:36
+msgid "Overwrite"
+msgstr "Pøepsat"
+
+#: krenamewin.cpp:41
+msgid "Overwrite All"
+msgstr "Pøepsat v¹e"
+
+#: krenamewin.cpp:52
+msgid "You try to overwrite"
+msgstr "Pokou¹íte se pøepsat"
+
+#: krenamewin.cpp:63
+msgid "already exists. Overwrite with"
+msgstr "ji¾ existuje. Pøepi¹ souborem"
+
+#: krenamewin.cpp:71
+msgid "Or rename to"
+msgstr "Nebo jej pøejmenuj na"
+
+#: krenamewin.cpp:121
+msgid "You did not change the name!\n"
+msgstr "Nezmìnil jste jméno!\n"
+
+#: passworddialog.cpp:41 passworddialog.cpp:80
+msgid "Password"
+msgstr "Heslo"
+
+#: kfmexec.cpp:141
+msgid "Trying to open"
+msgstr "Pokou¹ím se otevøít"
+
+#: useragentdlg.cpp:44
+msgid "On server:"
+msgstr "Na serveru:"
+
+#: useragentdlg.cpp:66
+msgid "login as:"
+msgstr "pøihlásit jako:"
+
+#: useragentdlg.cpp:110
+msgid "Known bindings:"
+msgstr "Známé vazby:"
+
+#: kproxydlg.cpp:46
+msgid "Don't forget to save your settings!"
+msgstr "Nezapomeòte ulo¾it va¹e nastavení!"
+
+#: kproxydlg.cpp:54
+msgid "Use proxy"
+msgstr "Pou¾ívat proxy"
+
+#: kproxydlg.cpp:132
+msgid "No Proxy for:"
+msgstr "®ádná proxy pro:"
+
+#: kkfmoptdlg.cpp:43
+msgid "&Proxy"
+msgstr "&Proxy"
+
+#: kkfmoptdlg.cpp:46
+msgid "&HTTP"
+msgstr "&HTTP"
+
+#: kkfmoptdlg.cpp:49
+msgid "User &Agent"
+msgstr "U¾ivatelský &agent"
+
+#: kkfmoptdlg.cpp:55
+msgid "&Colors"
+msgstr "&Barvy"
+
+#: kkfmoptdlg.cpp:58
+msgid "&Other"
+msgstr "&Ostatní"
+
+#: kkfmoptdlg.cpp:117
+msgid "KFM Browser Settings"
+msgstr "Nastavení KFM prohlí¾eèe"
+
+#: khttpoptdlg.cpp:39
+msgid "Accept languages:"
+msgstr "Akceptovat jazyky:"
+
+#: khttpoptdlg.cpp:55
+msgid "Accept character sets:"
+msgstr "Akceptovat znakové sady:"
+
+#: khttpoptdlg.cpp:70
+msgid "Assume HTML"
+msgstr "Pøedpokládat HTML"
+
+#: open-with.cpp:132
+msgid "This group is empty!"
+msgstr "Tato skupina je prázdná!"
+
+#: finddlg.cpp:41
+msgid "Find:"
+msgstr "Nalézt:"
+
+#: finddlg.cpp:56
+msgid "Case &sensitive"
+msgstr "Zohlednit &velikost znakù"
+
+#: kfmprops.h:73
+msgid "&General"
+msgstr "&V¹eobecné"
+
+#: kfmprops.h:107
+msgid "&Permissions"
+msgstr "&Pøístupová práva"
+
+#: kfmprops.h:201
+msgid "E&xecute"
+msgstr "Vy&konat pøíkaz"
+
+#: kfmprops.h:247
+msgid "U&RL"
+msgstr "U&RL"
+
+#: kfmprops.h:271
+msgid "&Dir"
+msgstr "&Adresáø"
+
+#: kfmprops.h:315
+msgid "&Application"
+msgstr "&Aplikace"
+
+#: kfmprops.h:357
+msgid "&Binding"
+msgstr "Vaz&ba"
+
+#: kfmprops.h:387
+msgid "De&vice"
+msgstr "&Zaøízení"
+
+#: kfmexec/main.cpp:46
+#, c-format
+msgid ""
+"The URL %s\n"
+"is malformed"
+msgstr ""
+"URL %s\n"
+"ma chybný formát"
+
+#: kfmexec/main.cpp:132
+#, c-format
+msgid ""
+"The file\n"
+"%s\n"
+"has been modified.\n"
+"Do you want to save it?"
+msgstr ""
+"Soubor\n"
+"%s\n"
+"byl modifikován.\n"
+"Pøejete si ho ulo¾it?"
+
+#: kfmexec/main.cpp:133
+msgid "KFM Question"
+msgstr "Otázka KFM"
+
+#: kfmexec/main.cpp:199
+msgid ""
+"Syntax Error:\n"
+"kfmexec command [URLs ....]\n"
+msgstr ""
+"Syntaktická chyba:\n"
+"kfmexec command [URLs ....]\n"
+
+#~ msgid "Name"
+#~ msgstr "Jméno"
