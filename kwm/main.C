@@ -1622,6 +1622,63 @@ bool MyApp::eventFilter( QObject *obj, QEvent * ev){
     return False;
 }
 
+bool MyApp::buttonPressEventFilter( XEvent * ev)
+{
+    
+    Client *c = manager->getClient(ev->xbutton.window);
+    if (c)
+	c->stopAutoraise();
+
+    if (c && ev->xbutton.window == c->window){
+	bool no_replay = false;
+	if ((ev->xbutton.state & Mod1Mask) == Mod1Mask){
+	    switch (ev->xbutton.button) {
+	    case Button1:
+		no_replay = executeMouseBinding(c, options.CommandAll1);
+		break;	
+	    case Button2: 	
+		no_replay = executeMouseBinding(c, options.CommandAll2);
+		break;
+	    case Button3:
+		no_replay = executeMouseBinding(c, options.CommandAll3);
+		break;
+	    }
+	}
+	else if (!c->isActive()){
+	    switch (ev->xbutton.button) {
+	    case Button1:
+		no_replay = executeMouseBinding(c, options.CommandWindow1);
+		break;
+	    case Button2:
+		no_replay = executeMouseBinding(c, options.CommandWindow2);
+		break;
+	    case Button3:
+		no_replay = executeMouseBinding(c, options.CommandWindow3);
+		break;
+	    default:
+		switchActivateClient(c,true);
+		break;
+	    }
+	}
+ 	// unfreeze the passive grab which is active currently
+	if (no_replay)
+	    XAllowEvents(qt_xdisplay(), SyncPointer, CurrentTime);
+	else
+	    XAllowEvents(qt_xdisplay(), ReplayPointer, CurrentTime);
+	XUngrabPointer(qt_xdisplay(), CurrentTime);
+	XSync(qt_xdisplay(), false);
+	return true;
+    }
+    else {
+	c = manager->getClientFromSizegrip(ev->xbutton.window);
+	if (c) {
+	    QCursor::setPos(c->mapToGlobal(QPoint(c->width()-1, c->height()-1)));
+	    c->simple_resize();
+	    return true;
+	}
+    }
+    return false;
+}
 
 
 bool MyApp::x11EventFilter( XEvent * ev){
@@ -1678,58 +1735,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
     break;
   case ButtonPress:
     DEBUG_EVENTS("ButtonPress", ev->xbutton.window)
-    {
-      Client *c = manager->getClient(ev->xbutton.window);
-      if (c)
-	c->stopAutoraise();
-
-      if (c && ev->xbutton.window == c->window){
-	bool no_replay = false;
-	if ((ev->xbutton.state & Mod1Mask) == Mod1Mask){
-	    switch (ev->xbutton.button) {
-	    case Button1:
-		no_replay = executeMouseBinding(c, options.CommandAll1);
-		break;	
-	    case Button2: 	
-		no_replay = executeMouseBinding(c, options.CommandAll2);
-		break;
-	    case Button3:
-		no_replay = executeMouseBinding(c, options.CommandAll3);
-		break;
-	    }
-	}
-	else if (!c->isActive()){
-	    switch (ev->xbutton.button) {
-	    case Button1:
-		no_replay = executeMouseBinding(c, options.CommandWindow1);
-		break;
-	    case Button2:
-		no_replay = executeMouseBinding(c, options.CommandWindow2);
-		break;
-	    case Button3:
-		no_replay = executeMouseBinding(c, options.CommandWindow3);
-		break;
-	    default:
-		switchActivateClient(c,true);
-		break;
-	    }
-	}
- 	// unfreeze the passive grab which is active currently
-	if (no_replay)
-	  XAllowEvents(qt_xdisplay(), SyncPointer, CurrentTime);
-	else
-	  XAllowEvents(qt_xdisplay(), ReplayPointer, CurrentTime);
-	XUngrabPointer(qt_xdisplay(), CurrentTime);
-	XSync(qt_xdisplay(), false);
-      }
-      else {
-	  c = manager->getClientFromSizegrip(ev->xbutton.window);
-	  if (c) {
-	      QCursor::setPos(c->mapToGlobal(QPoint(c->width()-1, c->height()-1)));
-	      c->simple_resize();
-	  }
-      }
-    }
+    return buttonPressEventFilter(ev);
   break;
   case ButtonRelease:
     DEBUG_EVENTS("ButtonRelease", ev->xbutton.window)

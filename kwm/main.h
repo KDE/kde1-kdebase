@@ -20,6 +20,8 @@ public:
   MyApp( int &argc, char **argv, const QString& rAppName );
   virtual bool x11EventFilter( XEvent * );
 
+  bool buttonPressEventFilter( XEvent * ev);
+
   // extend KApp (this should move to kapp some day in the future...
   QColor activeTitleBlend;
   QColor inactiveTitleBlend;
@@ -78,7 +80,7 @@ public:
   bool  executeMouseBinding(Client* c, int command);
 
   void myProcessEvents();
-    
+
   public slots:
 
   void slotTaskManager();
@@ -130,7 +132,7 @@ private:
   bool handleKeyPress(XKeyEvent);
   // handle key release events of kwm´s global key grabs
   void handleKeyRelease(XKeyEvent);
-    
+
   bool process_events_mode;
   XEvent events[10];
   int events_count ;
