@@ -35,29 +35,29 @@ void execute(const char* cmd){
 DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *parent )
         : QDialog( parent, 0L, true )
 {
-    setGeometry( x(), y(), 350, 110 );
+    setGeometry( x(), y(), 350, 100 );
 
     QLabel *label = new QLabel( _text , this );
     label->setGeometry( 10, 10, 330, 15 );
 
     edit = new KLined( this, 0L );
     
-    edit->setGeometry( 10, 40, 330, 25 );
+    edit->setGeometry( 10, 35, 330, 25 );
     connect( edit, SIGNAL(returnPressed()), SLOT(accept()) );
 
     QPushButton *ok;
     QPushButton *clear;
     QPushButton *cancel;
     ok = new QPushButton( klocale->translate("Ok"), this );
-    ok->setGeometry( 10,70, 80,30 );
+    ok->setGeometry( 10,70, 80,25 );
     connect( ok, SIGNAL(clicked()), SLOT(accept()) );
 
     clear = new QPushButton( klocale->translate("Clear"), this );
-    clear->setGeometry( 135, 70, 80, 30 );
+    clear->setGeometry( 135, 70, 80, 25 );
     connect( clear, SIGNAL(clicked()), SLOT(slotClear()) );
 
     cancel = new QPushButton( klocale->translate("Cancel"), this );
-    cancel->setGeometry( 260, 70, 80, 30 );
+    cancel->setGeometry( 260, 70, 80, 25 );
     connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
 
     edit->setText( _value );
