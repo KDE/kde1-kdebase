@@ -89,6 +89,9 @@ void KBGndManager::cacheDesktop()
     // cache current desktop
     if ( desktops[current].hasPixmap() )
     {
+	if ( qApp->desktop()->backgroundPixmap() == 0L )
+	    return;
+	
 	QPixmap *pm = new QPixmap;
 	*pm = *qApp->desktop()->backgroundPixmap();
 	if ( !QPixmapCache::find( desktops[current].getName() ) )
@@ -114,4 +117,14 @@ void KBGndManager::readSettings()
 
     QPixmapCache::setCacheLimit( cache );
 }
+
+
+
+
+
+
+
+
+
+
 
