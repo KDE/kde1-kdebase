@@ -1936,7 +1936,7 @@ kde_save_cxxflags=$CXXFLAGS
 CXXFLAGS="$CXXFLAGS $PYTHONINC"
 	AC_TRY_COMPILE([#include <Python.h>],
 [
-	PySys_SetArgv(argc, argv);
+	PySys_SetArgv(1, 0);
 ],
 	kde_cv_python_pthread=no,
 	[kde_cv_python_pthread=yes]
@@ -1967,8 +1967,12 @@ AC_DEFUN(KDE_CHECK_STL_SGI,
       AC_TRY_COMPILE([
 #include <string>
 ],[
+int main()
+{
   string astring="Hallo Welt.";
   astring.erase(, 6); // now astring is "Welt"
+  return 0;
+};
 ], kde_cv_stl_type_sgi=yes,
    kde_cv_stl_type_sgi=no)
 ])
@@ -1988,8 +1992,12 @@ AC_DEFUN(KDE_CHECK_STL_HP,
       AC_TRY_COMPILE([
 #include <string>
 ],[
+int main()
+{
   string astring="Hello World";
   astring.remove(0, 6); // now astring is "World"
+  return 0;
+};
 ], kde_cv_stl_type_hp=yes,
    kde_cv_stl_type_hp=no)
 ])
