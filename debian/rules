@@ -13,8 +13,7 @@ build:
 	--enable-debug --with-install-root=`pwd`/debian/tmp \
 	--disable-rpath )
 
-	( CFLAGS="-O2 -g -Wall -Wno-uninitialized -DUTMP_SUPPORT -DUTMP='\"/var/run/utmp\"'" \
-	  CXXFLAGS="-O2 -g -Wall -Wno-uninitialized" make )
+	make
 
 	touch build
 
