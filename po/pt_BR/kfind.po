@@ -1,9 +1,13 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-06-16 15:37+0200\n"
-"PO-Revision-Date: 1998-03-23 00:00+0100\n"
-"Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+msgstr "Project-Id-Version: kfind\n"
+       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
+       "PO-Revision-Date: 1998-06-23 09:00-0300\n"
+       "Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 
 #: kfdird.cpp:46
 msgid "Directories:"
@@ -14,14 +18,12 @@ msgid "Cannot open or read directory."
 msgstr "Não foi possível abrir ou ler o diretório."
 
 #: kfindtop.cpp:118
-#, fuzzy
 msgid "&Start search"
-msgstr "Iniciar Pesquisa"
+msgstr "&Iniciar pesquisa"
 
 #: kfindtop.cpp:120
-#, fuzzy
 msgid "S&top search"
-msgstr "Parar Pesquisa"
+msgstr "&Parar pesquisa"
 
 #: kfindtop.cpp:125
 msgid "&Open"
@@ -68,12 +70,11 @@ msgid ""
 "\n"
 "Special thanks to Stephan Kulow\n"
 "<coolo@kde.org>"
-msgstr ""
-"KFind %s\n"
-"Interface para o programa find\n"
-"Miroslav Flødr <flidr@kky.zcu.cz>\n"
-"Agradecimentos a Stephan Kulow\n"
-"<coolo@kde.org>"
+msgstr "KFind %s\n"
+       "Interface para o programa find\n"
+       "Miroslav Flødr <flidr@kky.zcu.cz>\n"
+       "Agradecimentos a Stephan Kulow\n"
+       "<coolo@kde.org>"
 
 #: kfindtop.cpp:196
 msgid "Start Search"
@@ -289,9 +290,8 @@ msgstr "Os resultados foram gravados no arquivo\n"
 msgid ""
 "Do you really want to delete file:\n"
 "%s"
-msgstr ""
-"Deseja mesmo apagar o arquivo:\n"
-"%s"
+msgstr "Deseja mesmo apagar o arquivo:\n"
+       "%s"
 
 #: kfwin.cpp:299
 msgid "Delete File"
@@ -301,41 +301,36 @@ msgstr "Apagar o Arquivo"
 msgid ""
 "You have no permission\n"
 " to delete this file"
-msgstr ""
-"Não tem permissões\n"
-" para apagar este arquivo"
+msgstr "Não tem permissões\n"
+       " para apagar este arquivo"
 
 #: kfwin.cpp:317
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
-msgstr ""
-"Não foi possível apagar\n"
-"o arquivo selecionado"
+msgstr "Não foi possível apagar\n"
+       "o arquivo selecionado"
 
 #: kfwin.cpp:335
 msgid ""
 "You have no permission\n"
 " to delete this directory"
-msgstr ""
-"Não tem permissões\n"
-" para apagar este diretório"
+msgstr "Não tem permissões\n"
+       " para apagar este diretório"
 
 #: kfwin.cpp:340
 msgid ""
 "Specified directory\n"
 "is not empty!"
-msgstr ""
-"O diretório especificado\n"
-"não está vazio!"
+msgstr "O diretório especificado\n"
+       "não está vazio!"
 
 #: kfwin.cpp:345
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
-msgstr ""
-"Não é possível apagar\n"
-"o diretório selecionado"
+msgstr "Não é possível apagar\n"
+       "o diretório selecionado"
 
 #: kfwin.cpp:437
 msgid "Couldn't recognize archive type!"
@@ -344,12 +339,3 @@ msgstr "Não foi possível reconhecer o tipo de arquivo!"
 #: kfwin.cpp:496
 msgid "Error while creating child process!"
 msgstr "Erro ao criar o processo filho!"
-
-#~ msgid "&Cut"
-#~ msgstr "&Cortar"
-
-#~ msgid "Properties"
-#~ msgstr "Propriedades"
-
-#~ msgid "Files"
-#~ msgstr "Arquivos"

@@ -1,17 +1,20 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-06-18 22:21+0200\n"
-"PO-Revision-Date: 1998-03-23 00:00+0100\n"
-"Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+msgstr "Project-Id-Version: kwm\n"
+       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
+       "PO-Revision-Date: 1998-06-23 09:00-0300\n"
+       "Last-Translator: Elvis Pfützenreuter<epx@netville.com.br>\n"
 
 #: main.C:68
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
-msgstr ""
-"kwm: parece que já está rodando outro gerenciador de janelas. kwm não "
-"inicializou.\n"
+msgstr "kwm: parece que já está rodando outro gerenciador de janelas. kwm não "
+       "inicializou.\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
@@ -19,7 +22,7 @@ msgstr "kwm: ocorreu uma falha durante a inicialização; abortando\n"
 
 #: main.C:470
 msgid "Preparing session ... "
-msgstr ""
+msgstr "Preparando sessão ..."
 
 #: main.C:489
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -110,9 +113,8 @@ msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Algumas imagens não são válidas: ShapeMode desativado\n"
 
 #: main.C:1054
-#, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Algumas imagens não são válidas: ShapeMode desativado\n"
+msgstr "Alguns pixmaps não são válidos: GimmikMode desativado\n"
 
 #: main.C:1311
 msgid "*** No Tasks ***"
@@ -124,7 +126,7 @@ msgstr "Comando:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr ""
+msgstr "Ooops!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
@@ -138,28 +140,26 @@ msgstr "Sessão pronta para desligar"
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
-msgstr ""
-"As seguintes aplicações contêm dados que não foram gravados e que\n"
-"não serão recuperados na sua próxima sessão."
+msgstr "As seguintes aplicações contêm dados que não foram gravados e que\n"
+       "não serão recuperados na sua próxima sessão."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
-msgstr ""
-"As seguintes aplicações não poderão ser restauradas na sua próxima sessão,\n"
-"apenas reinicializadas, certifique-se de que não contêm dados importantes "
-"para gravar"
+msgstr "As seguintes aplicações não poderão ser restauradas na sua próxima "
+       "sessão,\n"
+       "apenas reinicializadas, certifique-se de que não contêm dados "
+       "importantes para gravar"
 
 #: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
-msgstr ""
-"As seguintes aplicações não reconhecem o X11 e por isso não podem ser "
-"restauradas\n"
-"na sua próxima sessão. Certifique-se de que não contêm dados importantes "
-"para gravar."
+msgstr "As seguintes aplicações não reconhecem o X11 e por isso não podem "
+       "ser restauradas\n"
+       "na sua próxima sessão. Certifique-se de que não contêm dados "
+       "importantes para gravar."
 
 #: taskmgr.C:107
 msgid "Switch to"

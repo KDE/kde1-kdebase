@@ -1,9 +1,13 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
-"PO-Revision-Date: 1998-03-23 00:00+0100\n"
-"Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+msgstr "Project-Id-Version: kcmkwm\n"
+       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
+       "PO-Revision-Date: 1998-06-23 09:00-0300\n"
+       "Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 
 #: main.cpp:59
 msgid "&Windows"
@@ -48,43 +52,38 @@ msgstr "Menu"
 #: titlebar.cpp:463
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr ""
-"O lado esquerdo da barra de titulo está cheio... desativando o botão "
-"Maximizar\n"
+msgstr "O lado esquerdo da barra de titulo está cheio... desativando o "
+       "botão Maximizar\n"
 
 #: titlebar.cpp:496
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr ""
-"O lado direito da barra de título está cheio... desativando o botão "
-"Maximizar\n"
+msgstr "O lado direito da barra de título está cheio... desativando o botão "
+       "Maximizar\n"
 
 #: titlebar.cpp:536
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr ""
-"O lado esquerdo da barra de titulo está cheio... desativando o botão "
-"Minimizar\n"
+msgstr "O lado esquerdo da barra de titulo está cheio... desativando o "
+       "botão Minimizar\n"
 
 #: titlebar.cpp:569
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr ""
-"O lado direito da barra de título está cheio... desativando o botão "
-"Minimizar\n"
+msgstr "O lado direito da barra de título está cheio... desativando o botão "
+       "Minimizar\n"
 
 #: titlebar.cpp:926
 msgid "Titlebar appearance"
 msgstr "Aparência da barra de título"
 
 #: titlebar.cpp:928
-#, fuzzy
 msgid "Shaded Vertically"
-msgstr "Maximizar verticalmente"
+msgstr "Sombreado Verticalmente"
 
 #: titlebar.cpp:930
 msgid "Shaded Horizontally"
-msgstr ""
+msgstr "Sombreado Horizontalmente"
 
 #: titlebar.cpp:934
 msgid "Plain"
@@ -119,8 +118,8 @@ msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
-"Duplo click com botão esquerdo\n"
-"   na barra de título faz:"
+       "Duplo click com botão esquerdo\n"
+       "   na barra de título faz:"
 
 #: titlebar.cpp:993
 msgid "(Un)Maximize"
@@ -159,18 +158,16 @@ msgid "Opaque"
 msgstr "Opaca"
 
 #: windows.cpp:89
-#, fuzzy
 msgid "Window resize"
-msgstr "&Janelas"
+msgstr "Redimensionar Janela"
 
 #: windows.cpp:90
-#, fuzzy
 msgid "Animation:"
-msgstr "Animação do título"
+msgstr "Animação:"
 
 #: windows.cpp:92
 msgid "Fast"
-msgstr ""
+msgstr "Rápido"
 
 #: windows.cpp:98
 msgid "Placement policy"
@@ -225,22 +222,19 @@ msgid "Focus follows mouse"
 msgstr "Foco segue o mouse"
 
 #: windows.cpp:133
-#, fuzzy
 msgid "Classic focus follows mouse"
 msgstr "Foco segue o mouse"
 
 #: windows.cpp:135
-#, fuzzy
 msgid "Classic sloppy focus"
-msgstr "Clicar para obter foco"
+msgstr "Foco "
 
 #: windows.cpp:144
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
-msgstr ""
-"Demora do início automático\n"
-"(<100 desativa)"
+msgstr "Demora do início automático\n"
+       "(<100 desativa)"
 
 #: windows.cpp:147
 msgid "miliseconds"
@@ -271,25 +265,13 @@ msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Zona de Snap da Borda:\n"
-"       (pixels)"
+       "Zona de Snap da Borda:\n"
+       "       (pixels)"
 
 #: desktop.cpp:116
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Zona de Snap da Janela:\n"
-"       (pixels)"
-
-#~ msgid "Shaded"
-#~ msgstr "Sombreada"
-
-#~ msgid "Move"
-#~ msgstr "Mover"
-
-#~ msgid "Restore"
-#~ msgstr "Restaurar"
-
-#~ msgid "Resize Animation"
-#~ msgstr "Animação de Tamanho"
+       "Zona de Snap da Janela:\n"
+       "       (pixels)"

@@ -1,9 +1,13 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
-"PO-Revision-Date: 1998-03-23 00:00+0100\n"
-"Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+msgstr "Project-Id-Version: kvt\n"
+       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
+       "PO-Revision-Date: 1998-06-23 09:00-0300\n"
+       "Last-Translator: Elvis Pfützenreuter<epx@netville.com.br>\n"
 
 #: main.C:347
 msgid "choose type of color-mode"
@@ -19,7 +23,7 @@ msgstr "A tecla de backspace gera um"
 
 #: main.C:365
 msgid "Cursor key set"
-msgstr ""
+msgstr "Tecla de cursor configurada"
 
 #: main.C:532
 msgid "&New Terminal"
@@ -119,7 +123,7 @@ msgstr "Terminal..."
 
 #: main.C:593
 msgid "Font..."
-msgstr ""
+msgstr "Fonte..."
 
 #: main.C:595
 msgid "Save &Options"
@@ -134,14 +138,13 @@ msgid ""
 "\n"
 "Terminal emulation for the KDE Desktop Environment\n"
 "based on Robert Nation's rxvt-2.08"
-msgstr ""
-"\n"
-"\n"
-"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
-"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
-"\n"
-"Emulação de terminal para o KDE Desktop Environment\n"
-"baseado no rvt-2.08 de Robert Nation"
+msgstr "\n"
+       "\n"
+       "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+       "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+       "\n"
+       "Emulação de terminal para o KDE Desktop Environment\n"
+       "baseado no rvt-2.08 de Robert Nation"
 
 #: main.C:780 main.C:908
 msgid "&Show"
@@ -163,9 +166,8 @@ msgstr "Dica"
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
-msgstr ""
-"As novas definições de cor serão mostradas\n"
-"quando o teclado estiver destravado."
+msgstr "As novas definições de cor serão mostradas\n"
+       "quando o teclado estiver destravado."
 
 #: main.C:1322
 msgid ""
@@ -175,10 +177,10 @@ msgid ""
 "based on Robert Nation's rxvt-2.08\n"
 "\n"
 msgstr ""
-"Copyright(C) 1996, 1997 Matthias Ettrich\n"
-"Copyright(C) 1997 M G Berberich\n"
-"Emulação de terminal para o KDE Desktop Environment\n"
-"baseado no rvt-2.08 de Robert Nation\n"
+       "Copyright(C) 1996, 1997 Matthias Ettrich\n"
+       "Copyright(C) 1997 M G Berberich\n"
+       "Emulação de terminal para o KDE Desktop Environment\n"
+       "baseado no rvt-2.08 de Robert Nation\n"
 
 #: main.C:1326
 msgid "Permitted arguments are:\n"
@@ -188,8 +190,8 @@ msgstr "Argumentos aceitos são:\n"
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <comando> <arg> ...    executar comando com arg - deve ser o último "
-"argumento\n"
+       "-e <comando> <arg> ...    executar comando com arg - deve ser o último "
+       "argumento\n"
 
 #: main.C:1328
 msgid "-display <name>           specify the display (server)\n"
@@ -216,8 +218,8 @@ msgid "-vt_font <fontname>       normal font\n"
 msgstr "-vt_font <nome da fonte>   fonte normal\n"
 
 #: main.C:1334
-msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr ""
+msgid  "-no_font_hack             turn off Qt font bug workaround\n"
+msgstr "-no_font_hack             desliga desvio do bug de fontes do Qt\n"
 
 #: main.C:1335
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
@@ -226,7 +228,7 @@ msgstr "-vt_size <tamanho>        tiny, small, normal, large, huge\n"
 #: main.C:1336
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr ""
-"-linux                    configura o kvt para imitar o console linux\n"
+       "-linux                    configura o kvt para imitar o console linux\n"
 
 #: main.C:1337
 msgid "-no_menubar               hide the menubar\n"
@@ -241,8 +243,8 @@ msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
-"-T <texto>                texto no título da janela\n"
-"                          (Obsoleto. Use -caption)\n"
+       "-T <texto>                texto no título da janela\n"
+       "                          (Obsoleto. Use -caption)\n"
 
 #: main.C:1341
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
@@ -261,8 +263,8 @@ msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
-"-7                        rodar em modo 7 bits\n"
-"-8                        rodar em modo 8 bits\n"
+       "-7                        rodar em modo 7 bits\n"
+       "-8                        rodar em modo 8 bits\n"
 
 #: main.C:1346
 msgid ""
@@ -270,22 +272,22 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
-"-ls                       iniciar kvt como shell de login\n"
-"-ls-                      initiar kvt não como shell de login (padrão)\n"
+       "-ls                       iniciar kvt como shell de login\n"
+       "-ls-                      initiar kvt não como shell de login (padrão)\n"
 
 #: main.C:1348
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
-"-meta <arg>               tratar Meta com prefixo de ESCAPE, 8THBIT "
-"colocado, ou ignorar\n"
+       "-meta <arg>               tratar Meta com prefixo de ESCAPE, 8THBIT "
+       "colocado, ou ignorar\n"
 
 #: main.C:1349
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr ""
-"-sl <número>              número de linhas gravadas no buffer de "
-"scroll-back\n"
+       "-sl <número>              número de linhas gravadas no buffer de "
+       "scroll-back\n"
 
 #: main.C:1350
 msgid ""
@@ -294,15 +296,14 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
-"-pageup <keysym>          utilizar alt-keysym para subir no buffer de "
-"scroll-back\n"
-"-pagedown <keysym>        utilizar alt-keysym para descer no buffer de "
-"scroll-back\n"
+       "-pageup <keysym>          utilizar alt-keysym para subir no buffer de "
+       "scroll-back\n"
+       "-pagedown <keysym>        utilizar alt-keysym para descer no buffer de "
+       "scroll-back\n"
 
 #: main.C:1354
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
-msgstr ""
-"-grk9\t\tgreek kbd = ELOT 928 (padrão)\n"
-"-grk4\t\tgreek kbd = IBM 437\n"
+msgstr "-grk9\t\tgreek kbd = ELOT 928 (padrão)\n"
+       "-grk4\t\tgreek kbd = IBM 437\n"
