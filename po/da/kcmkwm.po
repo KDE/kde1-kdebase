@@ -187,8 +187,7 @@ msgstr "Vinduer"
 
 #: windows.cpp:82
 msgid "Vertical maximization only by default"
-msgstr ""
-"Der er kun lodret maksimering i standardkonfiguration"
+msgstr "Der er kun lodret maksimering i standardkonfiguration"
 
 #: windows.cpp:87
 msgid "Display content in moving windows"
@@ -196,8 +195,7 @@ msgstr "Vis indholdet når vinduer flyttes"
 
 #: windows.cpp:92
 msgid "Display content in resizing windows"
-msgstr ""
-"Vis indholdet når vinduer ændrer størrelse"
+msgstr "Vis indholdet når vinduer ændrer størrelse"
 
 #: windows.cpp:98
 msgid "Resize animation:"

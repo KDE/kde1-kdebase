@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kvt\n"
-"POT-Creation-Date: 1999-03-27 18:41+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1999-02-16 10:21+0100\n"
 "Last-Translator: Thorbjørn Ravn Andersen <ravn@mip.sdu.dk>\n"
 "Language-Team: Danish <da@li.org>\n"
@@ -234,7 +234,8 @@ msgstr "-vt_font <fontname>       normalskrift\n"
 
 #: main.C:1486
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr "-no_font_hack             benyt ikke Qt's omgåelse af skrifttypeproblem\n"
+msgstr ""
+"-no_font_hack             benyt ikke Qt's omgåelse af skrifttypeproblem\n"
 
 #: main.C:1487
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
@@ -294,7 +295,9 @@ msgstr ""
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
-msgstr "-meta <arg>               behandl Meta med ESCAPE prefix, 8THBIT sat, eller ignorer\n"
+msgstr ""
+"-meta <arg>               behandl Meta med ESCAPE prefix, 8THBIT sat, eller "
+"ignorer\n"
 
 #: main.C:1501
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
@@ -307,8 +310,10 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
-"-pageup <keysym>          brug genvejen alt-tastesymbol til at rulle op gennem bufferen\n"
-"-pagedown <keysym>        brug genvejen alt-tastesymbol til at rulle ned gennem bufferen\n"
+"-pageup <keysym>          brug genvejen alt-tastesymbol til at rulle op "
+"gennem bufferen\n"
+"-pagedown <keysym>        brug genvejen alt-tastesymbol til at rulle ned "
+"gennem bufferen\n"
 "buffer\n"
 
 #: main.C:1506

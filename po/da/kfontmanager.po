@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfontmanager\n"
-"POT-Creation-Date: 1998-12-27 01:17+0100\n"
+"POT-Creation-Date: 1998-12-14 01:17+0100\n"
 "PO-Revision-Date: 1999-02-16 01:00+CET-5\n"
 "Last-Translator: Thorbjoern Ravn Andersen <ravn@mip.sdu.dk>\n"
 "Language-Team: Danish <da@li.org>\n"

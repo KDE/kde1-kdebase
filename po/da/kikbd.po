@@ -296,7 +296,9 @@ msgstr "Indstil"
 msgid ""
 "\n"
 "Do you want to continue?"
-msgstr "\nFortsæt nu?"
+msgstr ""
+"\n"
+"Fortsæt nu?"
 
 #: widgets.cpp:116
 msgid "List of active keyboard maps"
@@ -382,7 +384,8 @@ msgstr "Tast(er) der skifter mellem tastaturkonfigurationer"
 
 #: widgets.cpp:425
 msgid "Key for activating Alternate symbols in current keyboard map"
-msgstr "Tast der aktiverer alternative symboler i gældende tastaturkonfiguration"
+msgstr ""
+"Tast der aktiverer alternative symboler i gældende tastaturkonfiguration"
 
 #: widgets.cpp:438
 msgid "&Beep"
@@ -430,7 +433,9 @@ msgstr "&Gem klasser"
 
 #: widgets.cpp:492
 msgid "Save relations between window classes and keyboard maps on exit"
-msgstr "Gem relationer mellem vinduesklasser og tastaturkonfigurationer ved afslutning."
+msgstr ""
+"Gem relationer mellem vinduesklasser og tastaturkonfigurationer ved "
+"afslutning."
 
 #: widgets.cpp:498
 msgid "Define X codes"
@@ -447,7 +452,9 @@ msgstr "Standardopførsel. Tastaturkonfiguration er aktivt for alle vinduer"
 #: widgets.cpp:509
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Udvidet opførsel. Tastaturkonfigurationstilstand gemmes uafhængigt for hvert vinduer"
+msgstr ""
+"Udvidet opførsel. Tastaturkonfigurationstilstand gemmes uafhængigt for hvert "
+"vinduer"
 
 #: widgets.cpp:513
 msgid ""

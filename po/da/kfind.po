@@ -227,7 +227,8 @@ msgid "The month(s) value isn't valid!!"
 msgstr "Ugyldig(e) måned(er)!"
 
 #: kftabdlg.cpp:524
-msgid "The day(s) value isn't valid!"
+#, fuzzy
+msgid "The day(s) value isn't valid!!"
 msgstr "Ugyldig(e) dag(e)!"
 
 #: kftabdlg.cpp:541

@@ -43,8 +43,7 @@ msgstr "KDM opsætning"
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
-msgstr ""
-"Du har ikke skriverettigheder til KDM opsætningsfilen"
+msgstr "Du har ikke skriverettigheder til KDM opsætningsfilen"
 
 #: main.cpp:154
 msgid "Missing privileges"
