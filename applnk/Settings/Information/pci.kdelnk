@@ -1,0 +1,9 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcminfo pci
+Icon=kcmpci.xpm
+Type=Application
+DocPath=kcontrol/kcminfo/info-5.html
+Comment=PCI information
+Name=PCI
+SwallowTitle=Information about PCI-Bus

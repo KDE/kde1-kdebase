@@ -1,0 +1,9 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcminfo ioports
+Icon=kcmmemory.xpm
+Type=Application
+DocPath=kcontrol/kcminfo/info-5.html
+Comment=IO-port information
+Name=IO-Ports
+SwallowTitle=Information about used IO-Ports

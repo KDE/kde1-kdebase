@@ -1,0 +1,10 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcminfo sound
+Icon=kcmsound.xpm
+#### sound_settings.xpm
+Type=Application
+DocPath=kcontrol/kcminfo/info-6.html
+Comment=Sound information
+Name=Sound
+SwallowTitle=Information about Sound-Cards

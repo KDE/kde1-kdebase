@@ -1,0 +1,9 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcminfo partitions
+Icon=kcmpartitions.xpm
+Type=Application
+DocPath=kcontrol/kcminfo/info-10.html
+Comment=Partition information
+Name=Partitions
+SwallowTitle=Information about Partitions

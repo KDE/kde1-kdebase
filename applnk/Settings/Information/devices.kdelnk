@@ -1,0 +1,9 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcminfo devices
+Icon=kcmdevices.xpm
+Type=Application
+DocPath=kcontrol/kcminfo/info-8.html
+Comment=attached devices information
+Name=Devices
+SwallowTitle=Information about attached devices

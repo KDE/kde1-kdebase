@@ -1,0 +1,9 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcminfo dma
+Icon=kcmmemory.xpm
+Type=Application
+DocPath=kcontrol/kcminfo/info-4.html
+Comment=DMA information
+Name=DMA-Channels
+SwallowTitle=Information about used DMA-channels

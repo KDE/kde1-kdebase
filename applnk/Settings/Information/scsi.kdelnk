@@ -1,0 +1,9 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcminfo scsi
+Icon=kcmscsi.xpm
+Type=Application
+DocPath=kcontrol/kcminfo/info-9.html
+Comment=SCSI information
+Name=SCSI
+SwallowTitle=Information about SCSI-devices

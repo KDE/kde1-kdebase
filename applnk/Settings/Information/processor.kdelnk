@@ -1,7 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Exec=kcminfo processor
-Icon=processor.xpm
+Icon=kcmprocessor.xpm
 Type=Application
 DocPath=kcontrol/kcminfo/info-2.html
 Comment=Processor information
