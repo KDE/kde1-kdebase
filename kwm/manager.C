@@ -2353,7 +2353,7 @@ void Manager::sendConfig(Client* c, bool emit_changed){
 
 // give all managed windows free and remove the kwm_running
 // property.
-void Manager::cleanup(){
+void Manager::cleanup(bool kill){
   Client *c;
   XWindowChanges wc;
   
@@ -2364,6 +2364,8 @@ void Manager::cleanup(){
     
     wc.border_width = c->border;
     XConfigureWindow(qt_xdisplay(), c->window, CWBorderWidth, &wc);
+    if (kill)
+      XKillClient(qt_xdisplay(), c->window);
   }
   XSetInputFocus(qt_xdisplay(), PointerRoot, RevertToPointerRoot, CurrentTime);
   colormapFocus(0);

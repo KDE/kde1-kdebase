@@ -16,6 +16,8 @@ patchlevel 13: Mario Weilguni <mweilguni@kde.org>
         higher than 8). It´s only used for horizontal gradients 
         - hopefully fixed Christoph Neerfeld's Ghostwindow problem
         - fixed a couple of memory leaks (thanks to Wolfgang Hoffmann)
+        - kill clients on shutdown. Clients can react on that via
+           KApplication's shutDown() signal.
 
 patchlevel 12:
         - new property "ResizeAnimationSpeed". Default value is 1 

@@ -176,7 +176,7 @@ public:
 
   // give all managed windows free and remove the kwm_running
   // property.
-  void cleanup();
+  void cleanup(bool kill=false);
 
   // repaint all windows. This is useful when we recieved a
   // KDEChangeGeneral or KDEChangePalette event.
