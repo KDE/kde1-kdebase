@@ -1,27 +1,26 @@
-
-The KCheckPass authentification software:
+The KCheckPass authentication software:
 -----------------------------------------
 
-kcheckpass is KDE's authentification program. It is meant to be
+KCheckPass is KDE's authentication program. It is meant to be
 used by any software in need of user authentication, most
 notably login programs (kdm) and screensavers.
 
 It enhances security be the following means:
 
 - It's only a small program, which is hopefully simple enough to
-  allow it to be SUID root. Setting it to SUID root is neccesary
+  allow it to be SUID root. Setting it to SUID root is necessary
   on Shadow Password systems.
 - No other program in need of user authentication, must be
   SUID root.
 - It provides a single implementation to check passwords. So one
-  only must take a closer look at kcheckpass to ensure password
-  security. It's much easier for programs using kcheckpass to
+  only must take a closer look at KCheckPass to ensure password
+  security. It's much easier for programs using KCheckPass to
   preserve security.
 
 
 Technique:
 ----------
-kcheckpass is a simple password checker. Just invoke and
+KCheckPass is a simple password checker. Just invoke and
 send it the password on stdin.
 
 If the password was accepted, the program exits with 0;
@@ -33,7 +32,8 @@ code signals an error.
 Compilation hints:
 ------------------
 Compile with -DHAVE_VSYSLOG if you have vsyslog().
-Compile with -DHAVE_PAM if you have a PAM system, and link with -lpam -ldl.
+Compile with -DHAVE_PAM if you have a PAM system, and link with -lpam -ldl
+  (If libdl is present).
 Compile with -DHAVE_SHADOW if you have a shadow password system.
 
 Copyright, Author and License notice:
@@ -47,7 +47,4 @@ Christian Esken <esken@kde.org>   Shadow and /etc/passwd support
 Some parts were taken from kscreensaver's passwd.cpp
 
 Currently this Software is maintained by Christian Esken (esken@kde.org).
-Please send new authentification modules (checkpass_*.cpp) to me.
-
-
-
+Please send new authentication modules (checkpass_*.cpp) to me.
