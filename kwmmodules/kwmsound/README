@@ -1,0 +1,51 @@
+KWMSound -- A system sound module for KWM II
+--------------------------------------------
+
+This kwm II module takes care of emitting sounds for various (just
+right now it would be fair to say only for a few...) system events.
+
+The events that are currently supported are:
+
+"Move to Desktop n" (you can have a different sound for every desktop)
+"Open Window"
+"Close Window"
+"ActivateWindow" (a new window getting focus)
+"Startup"
+
+Currently, the sounds must be WAV-Files that are placed in the
+following directory:
+
+	$KDEDIR/share/sounds
+
+kwmsound uses KDE's audio server to actually play back the sounds. 
+So you must startup "kaudioserver" _before_ firing up "kwmsound".
+
+Your startup script for your kde desktop could look like the following
+example:
+
+	kaudioserver &
+	kwmsound &
+	kbgndwm &
+	krootwm &
+	kfm &
+	kpanel &
+	kwm                 
+
+Also the KDE mediatool would fire up "kaudioserver" automatically when
+"kwmsound" starts up, it cannot hurt to start "kaudioserver"
+explicitely...
+
+You can use the KDE control center and the "syssound" module for kcc
+to configure the system sounds.
+
+     much fun with this useful tool... ;-) 
+
+     Christian Czezatke
+     e9025461@student.tuwien.ac.at
+
+
+
+
+
+
+
