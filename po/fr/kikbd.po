@@ -79,7 +79,7 @@ msgid ""
 " Do you want to have it autostarted at your next login?"
 msgstr ""
 "Vous allez quitter l'outil \"Clavier International\".\n"
-" Voulez-vous le lancer automatiquement à la prochaine connexion ?"
+"Voulez-vous le lancer automatiquement à la prochaine connexion ?"
 
 #: keymap.cpp:186
 msgid "KeyMap: can't allocate memory"
@@ -532,11 +532,11 @@ msgstr "Lancement automatique"
 
 #: widgets.cpp:663
 msgid "&Docked"
-msgstr "Insertion dans le &panneau"
+msgstr "Placer &dans le tableau de bord"
 
 #: widgets.cpp:664
 msgid "Dock into special area in the panel"
-msgstr "Insérer dans la zone spéciale du panneau"
+msgstr "Placer dans la zone spéciale du tableau de bord"
 
 #: widgets.cpp:673
 msgid "Place"
@@ -562,17 +562,3 @@ msgstr "&Démarrage"
 msgid "International Keyboard"
 msgstr "Clavier International"
 
-#~ msgid "Up selected keyboard map"
-#~ msgstr "Monte la disposition de clavier sélectionnée"
-
-#~ msgid "Extended behavior. Each windows remember it's own keyboard map"
-#~ msgstr ""
-#~ "Comportement étendu. Chaque fenêtre mémorise sa propre disposition de clavier"
-
-#~ msgid "Special behavior. Each windows class remember it's own keyboard map"
-#~ msgstr ""
-#~ "Comportement spécial. Chaque fenêtre mémorise sa propre disposition de "
-#~ "clavier"
-
-#~ msgid "Color of the text label"
-#~ msgstr "Couleur des textes"
