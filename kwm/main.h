@@ -85,10 +85,7 @@ bool focus_grabbed();
 void showMinicli();
 void showTask();
 // Like manager->activateClient but also raises the window and sends a
-// sound event. In addition switchActivateClient also takes care about
-// crappy focus policies: It will show a warning message in such a
-// case.  In addition, switchActivateClient takes care that the client
-// window is visible.
-void switchActivateClient(Client*, bool show_warning=false);
+// sound event. 
+void switchActivateClient(Client*);
 
 #endif /* MAIN_H */

@@ -451,37 +451,15 @@ static void grabKey(KeySym keysym, unsigned int mod){
 
 
 // Like manager->activateClient but also raises the window and sends a
-// sound event. In addition switchActivateClient also takes care about
-// crappy focus policies: It will show a warning message in such a
-// case.  In addition, switchActivateClient takes care that the client
-// window is visible.
-void switchActivateClient(Client* c, bool show_warning){
-  static bool warning_already_showed = false;
-
+// sound event. 
+void switchActivateClient(Client* c){
   if (!c->geometry.intersects(QApplication::desktop()->rect())){
     // window not visible => place it again.
     manager->doPlacement(c);
     manager->sendConfig(c);
   }
-
   manager->raiseClient(c);
-  if (options.FocusPolicy == CLASSIC_FOCUS_FOLLOWS_MOUSE
-      || options.FocusPolicy == CLASSIC_SLOPPY_FOCUS){ 
-    
-    if (show_warning && !warning_already_showed){
-      showWarning(
-		  klocale->translate(
-"You want to switch to another window. Unfortunately you have selected \n"
-"one of the classic focus policies which do not allow this.  These policies are \n"
-"included not because they make sense, but for compatibility reasons. Well, \n"
-"even old hand unix users should feel comfortable with the K Desktop Environment ;-)\n\n"
-"Anyway, if you prefer modern windowmanagement, please choose one of the \n"
-"recommended focus policies like ClickToFocus or FocusFollowMouse instead."
-));
-      warning_already_showed =true;
-    }
-  }
-  else {
+  if (!CLASSIC_FOCUS){
     manager->activateClient(c);
     manager->raiseSoundEvent("Window Activate");
   }
@@ -743,6 +721,19 @@ void MyApp::readConfiguration(){
     config->writeEntry("FocusPolicy","ClickToFocus");
     options.FocusPolicy = CLICK_TO_FOCUS;
   }
+
+  key = config->readEntry("AltTabMode");
+  if( key == "KDE")
+    options.AltTabMode = KDE_STYLE;
+  else if( key == "CDE")
+    options.AltTabMode = CDE_STYLE;
+  else{
+    config->writeEntry("AltTabMode","KDE");
+    options.AltTabMode = KDE_STYLE;
+  }
+
+  if (CLASSIC_FOCUS)
+    options.AltTabMode = CDE_STYLE;
 
   key = config->readEntry("TitlebarLook");
   if( key == "shadedHorizontal")
@@ -1256,6 +1247,30 @@ bool MyApp::handleKeyPress(XKeyEvent key){
 	  )){
       freeKeyboard(False);
       if (!tab_grab){
+ 	if (options.AltTabMode == CDE_STYLE){
+ 	  // CDE style raise / lower
+	  Client* c = manager->topClientOnDesktop();
+	  Client* nc = c;
+	  if (km & ShiftMask){
+	    do {
+	      nc = manager->previousStaticClient(nc);
+	    } while (nc && nc != c &&
+		     (!nc->isOnDesktop(manager->currentDesktop()) ||
+		      nc->isIconified()));
+
+	  }
+	  else
+	    do {
+	      nc = manager->nextStaticClient(nc);
+	    } while (nc && nc != c &&
+		     (!nc->isOnDesktop(manager->currentDesktop()) ||
+		      nc->isIconified()));
+	  if (c && c != nc)
+	    manager->lowerClient(c);
+	  if (nc)
+	    switchActivateClient(nc);
+ 	  return True;
+ 	}
 	XGrabKeyboard(qt_xdisplay(),
 		      qt_xrootwin(), False,
 		      GrabModeAsync, GrabModeAsync,
@@ -1454,7 +1469,7 @@ void MyApp::handleKeyRelease(XKeyEvent key){
 	    manager->switchDesktop(infoBoxClient->desktop);
 	  
 	  if (infoBoxClient->state == NormalState){
-	    switchActivateClient(infoBoxClient, true);
+	    switchActivateClient(infoBoxClient);
 	  }
 	  else{ // IconicState
 	    infoBoxClient->unIconify();

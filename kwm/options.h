@@ -62,11 +62,17 @@ enum ELECTRIC_BORDER_POINTER_WARP {
   NO_WARP
 };
 
+enum ALT_TAB_MODE{
+  KDE_STYLE,
+  CDE_STYLE
+};
+
 struct kwmOptions {
 
   WINDOW_MOVE_TYPE WindowMoveType;
   WINDOW_MOVE_TYPE WindowResizeType;
   FOCUS_POLICY FocusPolicy;
+  ALT_TAB_MODE AltTabMode;
   TITLEBAR_LOOK TitlebarLook;
   int ResizeAnimation;
   bool MaximizeOnlyVertically;

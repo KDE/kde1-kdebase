@@ -2546,6 +2546,47 @@ Client* Manager::previousClient(Client* c){
   return result;
 }
 
+// auxiliary functions to travers all clients according the static
+// order. Usefull for the CDE-style Alt-tab feature.
+Client* Manager::nextStaticClient(Client* c){
+ Client* result;
+  if (!c)
+    return clients.first();
+  for (result = clients.first(); result && result != c; 
+       result = clients.next());
+  if (result)
+    result = clients.next();
+  if (!result)
+    result = clients.first();
+  return result;
+}
+
+// auxiliary functions to travers all clients according the static
+// order. Usefull for the CDE-style Alt-tab feature.
+Client* Manager::previousStaticClient(Client* c){
+ Client* result;
+  if (!c)
+    return clients.last();
+  for (result = clients.last(); result && result != c; 
+       result = clients.prev());
+  if (result)
+    result = clients.prev();
+  if (!result)
+    result = clients.last();
+  return result;
+}
+// auxiliary functions to travers all clients according the static
+// order. Usefull for the CDE-style Alt-tab feature.
+Client* Manager::topClientOnDesktop(){
+  Client* result;
+  for (result = clients_sorted.last(); result; result = clients_sorted.prev()){
+    if (result->isOnDesktop(current_desktop))
+      return result;
+  }
+  return 0;
+}
+
+
 // returns wether a client with such a label is existing. Useful to
 // determine wether a label has to be unified with <2>, <3>, <4>,
 // ...

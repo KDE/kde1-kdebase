@@ -199,6 +199,12 @@ public:
   Client* nextClient(Client* c);
   Client* previousClient(Client* c);
 
+  // auxiliary functions to travers all clients according the static
+  // order. Usefull for the CDE-style Alt-tab feature.
+  Client* nextStaticClient(Client* c);
+  Client* previousStaticClient(Client* c);
+  Client* topClientOnDesktop();
+
   // returns wether a client with such a label is existing. Useful to
   // determine wether a label has to be unified with <2>, <3>, <4>,
   // ...

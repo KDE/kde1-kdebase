@@ -20,6 +20,13 @@ patchlevel 12:
 	   behaviour. ResizeAnimationSpeed is disabled (and deleted)
 	   for redundancy reasons. Support is offered in kcontrol too.
         - electric borders dissabled per default
+        - CDE style AltTab-Feature to have something usable with
+            the classic focus policies. The CDE style is default with
+            the classic focus policies, since KDE style does not 
+            make much sense under these circumstances. For all
+            other focus policies you may chose the style with
+                 AltTabStyle=KDE/CDE
+            Default is KDE, most certainly.
 
 patchlevel 11:
         - switchActivateClient (used by the taskbar or the current
