@@ -6,6 +6,7 @@ MiniIcon=fonts.xpm
 Type=Application
 DocPath=kcontrol/kcmdisplay/kdisplay-6.html
 Comment=Font settings
+Comment[ca]=Arranjament de les fonts
 Comment[cs]=Nastavení písem
 Comment[fr]=Configuration des polices
 Comment[is]=Stillingar leturs

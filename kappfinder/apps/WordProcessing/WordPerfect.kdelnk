@@ -14,6 +14,7 @@ DocPath=
 Type=Application
 Terminal=0
 Comment=WordPerfect Word Processor
+Comment[ca]=Processador de textos WordPerfect
 Comment[cs]=Textový procesor WordPerfect
 Comment[da]=WordPerfect teksbehandler
 Comment[fr]=Traitement de texte WordPerfect

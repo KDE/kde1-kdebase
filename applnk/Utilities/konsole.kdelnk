@@ -6,6 +6,7 @@ MiniIcon=konsole.xpm
 Icon=konsole.xpm
 DocPath=konsole/konsole.html
 Comment=Terminal Emulation (experimental)
+Comment[ca]=Emulació de terminal (experimental)
 Comment[cs]=Emulátor terminálu (experimentální)
 Comment[da]=Terminalemulering (eksperimentel
 Comment[es]=Emulador de Terminal (experimental)

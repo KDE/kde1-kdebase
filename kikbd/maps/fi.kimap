@@ -7,6 +7,7 @@
 Authors=Karl Backström <backstrom@kde.org>,
 
 Comment=Normal layout
+Comment[ca]=Disposició normal
 Comment[cs]=Nornální rozvr¾ení
 Comment[da]=Normal udlægning
 Comment[is]=Venjuleg uppsetning
@@ -16,6 +17,7 @@ Comment[ru]=îÏÒÍÁÌØÎÁÑ ÒÁÓËÌÁÄËÁ
 Comment[sl]=Normalni razpored
 
 Language=Finnish
+Language[ca]=Finlandès
 Language[cs]=Finskı
 Language[da]=Finsk
 Language[fr]=Finlandais

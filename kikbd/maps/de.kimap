@@ -2,6 +2,7 @@
 
 [International Keyboard]
 Comment=German Keyboard (Germany)
+Comment[ca]=Teclat alemany (Alemanya)
 Comment[cs]=Nìmecká klávesnice (Nìnecko)
 Comment[da]=Tysk tastatur (Tyskland)
 Comment[es]=Teclado Alemán (Alemania)
@@ -18,6 +19,7 @@ Comment[sl]=Nem¹ka tipkovnica (Nemèija)
 Comment[sv]=Tyskt tangentbord (Tyskland)
 
 Language=German
+Language[ca]=Alemany
 Language[cs]=Nìmecký
 Language[da]=Tysk
 Language[es]=Alemán
