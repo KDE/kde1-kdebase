@@ -88,6 +88,7 @@ AC_HEADER_TIME
 
 dnl check if the compiler has bool
 AC_CHECK_BOOL
+AC_LANG_C
 AC_C_LONG_DOUBLE
 AC_TYPE_GETGROUPS
 
