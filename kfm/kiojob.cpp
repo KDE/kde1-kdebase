@@ -1084,7 +1084,7 @@ void KIOJob::fatalError( int _kioerror, const char* _error, int )
 		if ( u.user() != 0L && u.user()[0] != 0 && u.passwd() != 0L && u.passwd()[0] != 0 )
 		{
 		    QString tmp;
-		    ksprintf(&tmp, "%s@%s", u.user, u.host());
+		    ksprintf(&tmp, "%s@%s", u.user(), u.host());
 		    passwordDict->remove( tmp.data() );
 		}
 	    }
@@ -1191,7 +1191,7 @@ void KIOJob::fatalError( int _kioerror, const char* _error, int )
 		if ( u.user() != 0L && u.user()[0] != 0 && u.passwd() != 0L && u.passwd()[0] != 0 )
 		{
 		    QString tmp;
-		    ksprintf(&tmp, "%s@%s", u.user, u.host());
+		    ksprintf(&tmp, "%s@%s", u.user(), u.host());
 		    passwordDict->remove( tmp.data() );
 		}
 	    }
