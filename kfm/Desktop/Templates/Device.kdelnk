@@ -10,8 +10,10 @@ Type=FSDevice
 Comment=File System Device
 Comment[de]=Dateisystem
 Comment[pl]=Urz±dzenie
+Comment[es]=Dispositivo con sistema de ficheros 
 Comment[fi]=Tiedostosysteemi
 Comment[fr]=Périphérique système de fichiers
 Comment[pt]=Dispositivo com Sistema de Ficheiros
 Comment[it]=Dispositivo con Sistema File
 Comment[sk]=Zariadenie súborového systému (File System Device)
+

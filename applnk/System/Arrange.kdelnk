@@ -3,6 +3,7 @@
 Name=Arrange Icons
 Name[de]=Symbole anordnen
 Name[da]=Arranger Ikoner
+Name[es]=Redisponer íconos
 Name[nl]=Pictogrammen schikken
 Name[pl]=Uporz±dkuj ikony
 Name[cs]=Uspoøádej ikony
@@ -19,6 +20,7 @@ Protocols=
 Comment=Arrange Desktop Icons
 Comment[de]=Anordnen der Desktopsymbole
 Comment[da]=Arranger ikonerne på Arbejdspladsen
+Comment[es]=Ordenar los íconos del área de trabajo 
 Comment[nl]=Schik de buroblad-pictogrammen
 Comment[pl]=Uporz±dkuj ikony na deskopie
 Comment[cs]=Uspoøádá ikony na pracovní plo¹e
@@ -35,7 +37,5 @@ Icon=kfm_refresh.xpm
 TerminalOptions=
 Path=
 Extensions=
-
 Type=Application
 Terminal=0
-

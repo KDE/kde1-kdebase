@@ -1,6 +1,7 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=File manager ( Super User Mode )
+Name[es]=Gestor de ficheros (en modo de administrador)
 Name[da]=Filstyring ( Superbruger Modus )
 Name[de]=Datei Manager ( Super User Modus )
 Name[pl]=Mened¿er plików ( Super User Mode )
@@ -15,6 +16,7 @@ Name[hr]=Upravitelj datoteka ( Samo za korjenskog korisnika )
 Type=Application
 Exec=kfmsu -caption "%c" %i %m
 DocPath=kfm/index.html
+Comment[es]=Gestor de ficheros de KDE
 Comment[da]=KDE filstyring og browser logget ind som superbruger
 Comment=The KDE file manager
 Comment[de]=Der KDE Datei Manager

@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=Appfinder
+Name[es]=Buscar aplicaciones
 Name[da]=Find applikationer
 Name[de]=Anwendungssuche
 Name[pl]=Znajd¼ aplikacje
@@ -17,6 +18,7 @@ MiniIcon=kfind.xpm
 Protocols=
 MimeType=
 Comment=Application finder
+Comment[es]=Busca aplicaciones no integradas a KDE
 Comment[de]=Suche nach nicht-KDE Anwendungen
 Comment[da]=Søg efter ikke-KDE applikationer
 Comment[pl]=Narzêdzie do szukania aplikacji spoza KDE

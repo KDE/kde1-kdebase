@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Name=Refresh Desktop
 Name[de]=Desktop neuzeichnen
+Name[es]=Repintar escritorio
 Name[nl]=Buroblad verversen
 Name[da]=Opfrisk Arbejdsplads
 Name[pl]=Od¶wie¿ desktop
@@ -18,6 +19,7 @@ BinaryPattern=
 Protocols=
 Comment=Update desktop icons
 Comment[de]=Zeichnet alle Elemente auf dem Desktop neu
+Comment[es]=Actualiza el área de trabajo
 Comment[da]=Opdater ikonerne p\145 Arbejdspladsen
 Comment[nl]=Ververs alle pictogrammen op het buroblad
 Comment[pl]=Od¶wie¿ wszystkie ikony le¿±ce na desktopie.
