@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1ç0\n"
-"POT-Creation-Date: 1998-12-25 01:11+0100\n"
+"POT-Creation-Date: 1999-01-04 01:15+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -18,197 +18,197 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ISO 8859-9\n"
 
-#: kfmgui.cpp:203
+#: kfmgui.cpp:204
 msgid "KFM"
 msgstr "KFM"
 
-#: kfmgui.cpp:221
+#: kfmgui.cpp:222
 #, fuzzy
 msgid "New &Window"
 msgstr "Yeni Bakýþ"
 
-#: kfmgui.cpp:224
+#: kfmgui.cpp:225
 msgid "&Run..."
 msgstr "&Çalýþtýr..."
 
-#: kfmgui.cpp:226
+#: kfmgui.cpp:227
 msgid "Open &Terminal"
 msgstr "&Uçbirim Aç"
 
-#: kfmgui.cpp:229
+#: kfmgui.cpp:230
 msgid "&Open Location..."
 msgstr "&Konumu Aç..."
 
-#: finddlg.cpp:66 kfmgui.cpp:231
+#: finddlg.cpp:66 kfmgui.cpp:232
 msgid "&Find"
 msgstr "&Bul"
 
-#: kfmgui.cpp:252
+#: kfmgui.cpp:253
 msgid "&Move to Trash"
 msgstr "Çöpe &Yürüt"
 
-#: kfmgui.cpp:261
+#: kfmgui.cpp:262
 msgid "&Select"
 msgstr "&Seç"
 
-#: kfmgui.cpp:263
+#: kfmgui.cpp:264
 #, fuzzy
 msgid "Select &all"
 msgstr "&Seç"
 
-#: kfmgui.cpp:266
+#: kfmgui.cpp:267
 msgid "&Find in page..."
 msgstr ""
 
-#: kfmgui.cpp:268
+#: kfmgui.cpp:269
 msgid "Find &next"
 msgstr ""
 
-#: kfmgui.cpp:271
+#: kfmgui.cpp:272
 #, fuzzy
 msgid "Mime &Types"
 msgstr "Mime Türleri"
 
-#: kfmgui.cpp:273
+#: kfmgui.cpp:274
 #, fuzzy
 msgid "App&lications"
 msgstr "Uygulamalar"
 
-#: kfmgui.cpp:279
+#: kfmgui.cpp:280
 msgid "Global Mime Types"
 msgstr "Genel Mime Türleri"
 
-#: kfmgui.cpp:281
+#: kfmgui.cpp:282
 msgid "Global Applications"
 msgstr "Genel Uygulamalar"
 
-#: kfmgui.cpp:288
+#: kfmgui.cpp:289
 #, fuzzy
 msgid "Show Hi&dden Files"
 msgstr "&Nokta Dosyalarý Göster"
 
-#: kfmgui.cpp:290
+#: kfmgui.cpp:291
 msgid "Show Tr&ee"
 msgstr "&Aðacý Göster"
 
-#: kfmgui.cpp:292
+#: kfmgui.cpp:293
 msgid "Sho&w Thumbnails"
 msgstr ""
 
-#: kfmgui.cpp:294
+#: kfmgui.cpp:295
 msgid "&HTML View"
 msgstr "&HTML Görüntüsü"
 
-#: kfmgui.cpp:297
+#: kfmgui.cpp:298
 msgid "&Icon View"
 msgstr "S&imge Görüntüsü"
 
-#: kfmgui.cpp:299
+#: kfmgui.cpp:300
 msgid "&Text View"
 msgstr "&Metin Görüntüsü"
 
-#: kfmgui.cpp:301
+#: kfmgui.cpp:302
 msgid "&Long View"
 msgstr "&Uzun Bakýþ"
 
-#: kfmgui.cpp:303
+#: kfmgui.cpp:304
 msgid "&Short View"
 msgstr "&Kýsa Bakýþ"
 
-#: kfmgui.cpp:309
+#: kfmgui.cpp:310
 msgid "Rel&oad Tree"
 msgstr "Aðacý Yeniden &Yükle"
 
-#: kfmgui.cpp:311
+#: kfmgui.cpp:312
 msgid "&Reload Document"
 msgstr "&Dosyayý Yeniden Yükle"
 
-#: kfmgui.cpp:313
+#: kfmgui.cpp:314
 #, fuzzy
 msgid "Rescan &Bindings"
 msgstr "&Baðdaþtýrmalarý Yeniden Tara"
 
-#: kfmgui.cpp:316
+#: kfmgui.cpp:317
 msgid "&View Frame Source"
 msgstr "&Frame Koduna Bak"
 
-#: kfmgui.cpp:318
+#: kfmgui.cpp:319
 msgid "View Docu&ment Source"
 msgstr "B&elge Koduna Bak"
 
-#: kfmgui.cpp:326
+#: kfmgui.cpp:327
 msgid "Auto"
 msgstr ""
 
-#: kfmgui.cpp:334
+#: kfmgui.cpp:335
 #, fuzzy
 msgid "Document Encodin&g"
 msgstr "Belge: Tamam"
 
-#: kfmgui.cpp:349
+#: kfmgui.cpp:351
 msgid "Show History"
 msgstr "Geçmiþi Göster"
 
-#: kfmgui.cpp:351
+#: kfmgui.cpp:353
 msgid "Show Cache"
 msgstr "Arabelleði Göster"
 
-#: kfmgui.cpp:353
+#: kfmgui.cpp:355
 msgid "Clear Cache"
 msgstr "Arabelleði Temizle"
 
-#: kfmgui.cpp:356
+#: kfmgui.cpp:358
 msgid "Always look in cache"
 msgstr "Herzaman arabelleðe bak"
 
-#: kfmgui.cpp:358
+#: kfmgui.cpp:360
 msgid "Never look in cache"
 msgstr "Arabelleðe bakma"
 
-#: kfmgui.cpp:360
+#: kfmgui.cpp:362
 msgid "Always save cache"
 msgstr "Herzaman arabelleði sakla"
 
-#: kfmgui.cpp:362
+#: kfmgui.cpp:364
 msgid "Never save cache"
 msgstr "Asla arabelleði saklama"
 
-#: kfmgui.cpp:373
+#: kfmgui.cpp:375
 msgid "Show &Menubar"
 msgstr "&Menü Çubuðunu Göster"
 
-#: kfmgui.cpp:375
+#: kfmgui.cpp:377
 msgid "Show &Statusbar"
 msgstr "&Durum Çubuðunu Göster"
 
-#: kfmgui.cpp:377
+#: kfmgui.cpp:379
 msgid "Show &Toolbar"
 msgstr "&Araç Çubuðunu Göster"
 
-#: kfmgui.cpp:379
+#: kfmgui.cpp:381
 msgid "Show &Location bar"
 msgstr "&Konum Çubuðunu Göster"
 
-#: kfmgui.cpp:382
+#: kfmgui.cpp:384
 msgid "Sa&ve Settings"
 msgstr "Ayarlarý Ka&ydet"
 
-#: kfmgui.cpp:384
+#: kfmgui.cpp:386
 #, fuzzy
 msgid "Save Settings for this &URL"
 msgstr "Ayarlarý Ka&ydet"
 
-#: kfmgui.cpp:391
+#: kfmgui.cpp:393
 #, fuzzy
 msgid "&Configure File Manager..."
 msgstr "Tarayýcýyý Ayarla..."
 
-#: kfmgui.cpp:393
+#: kfmgui.cpp:395
 #, fuzzy
 msgid "Configure &Browser..."
 msgstr "Tarayýcýyý Ayarla..."
 
-#: kfmgui.cpp:429
+#: kfmgui.cpp:431
 #, fuzzy
 msgid ""
 "Author: Torben Weis\n"
@@ -232,32 +232,32 @@ msgstr ""
 "Lars Hoss tarafýndan kukla yöneticisi\n"
 "Lars.Hoss@munich.netsurf.de"
 
-#: kfmgui.cpp:442
+#: kfmgui.cpp:444 kfmgui.cpp:1110
 msgid "&Go"
 msgstr ""
 
-#: kfmgui.cpp:443
+#: kfmgui.cpp:445
 msgid "&Bookmarks"
 msgstr "&Adresler"
 
-#: kfmgui.cpp:444
+#: kfmgui.cpp:446
 msgid "&Cache"
 msgstr "&Arabellek"
 
-#: kfmgui.cpp:474 main.cpp:282
+#: kfmgui.cpp:476 main.cpp:282
 msgid "Up"
 msgstr "Yukarý"
 
-#: kfmgui.cpp:484 main.cpp:284
+#: kfmgui.cpp:486 main.cpp:284
 msgid "Forward"
 msgstr ""
 
-#: kfmgui.cpp:489
+#: kfmgui.cpp:491
 #, fuzzy
 msgid "Home"
 msgstr "Baþlangýç"
 
-#: kfmgui.cpp:546
+#: kfmgui.cpp:548
 msgid "Could not load icon\n"
 msgstr "Simge yüklenemedi\n"
 
@@ -266,7 +266,7 @@ msgstr "Simge yüklenemedi\n"
 #: kbind.cpp:1636 kbind.cpp:1695 kbind.cpp:1707 kbind.cpp:1734 kbind.cpp:1749
 #: kbind.cpp:1769 kbind.cpp:1781 kbind.cpp:1797 kbind.cpp:1932 kbind.cpp:1944
 #: kbind.cpp:1989 kbind.cpp:2031 kfmexec.cpp:60 kfmexec.cpp:112
-#: kfmexec/main.cpp:47 kfmgui.cpp:547 kfmgui.cpp:747 kfmman.cpp:361
+#: kfmexec/main.cpp:47 kfmgui.cpp:549 kfmgui.cpp:749 kfmman.cpp:361
 #: kfmman.cpp:1388 kfmman.cpp:1616 kfmman.cpp:1642 kfmprops.cpp:380
 #: kfmprops.cpp:648 kfmprops.cpp:659 kfmprops.cpp:948 kfmprops.cpp:1080
 #: kfmprops.cpp:1211 kfmprops.cpp:1685 kfmprops.cpp:2046 kfmprops.cpp:2228
@@ -285,73 +285,73 @@ msgstr "Simge yüklenemedi\n"
 msgid "KFM Error"
 msgstr ""
 
-#: kfmgui.cpp:560
+#: kfmgui.cpp:562
 #, fuzzy
 msgid "Location:"
 msgstr "Konumu Aç:"
 
-#: kfmexec.cpp:59 kfmgui.cpp:746 kfmman.cpp:1387
+#: kfmexec.cpp:59 kfmgui.cpp:748 kfmman.cpp:1387
 msgid "Malformed URL\n"
 msgstr "Yetersiz URL\n"
 
-#: kfmgui.cpp:931
+#: kfmgui.cpp:932
 msgid "Select files:"
 msgstr "Dosyalarý Seçiniz:"
 
-#: kfmgui.cpp:997
+#: kfmgui.cpp:998
 msgid "Find Complete"
 msgstr ""
 
-#: kfmgui.cpp:998
+#: kfmgui.cpp:999
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: kfmgui.cpp:1016
+#: kfmgui.cpp:1017
 msgid "&Edit Bookmarks..."
 msgstr "Adreslerle &Oyna..."
 
-#: kfmgui.cpp:1026
+#: kfmgui.cpp:1027
 msgid "&Add Bookmark"
 msgstr "Adreslere &Ekle"
 
-#: kfmgui.cpp:1060 kfmman.cpp:1427 kfmtree.cpp:389 root.cpp:285
+#: kfmgui.cpp:1061 kfmman.cpp:1427 kfmtree.cpp:389 root.cpp:285
 #, fuzzy
 msgid "&New"
 msgstr "Yeni"
 
-#: kfmgui.cpp:1076
+#: kfmgui.cpp:1086
 #, fuzzy
 msgid "&Up"
 msgstr "Yukarý"
 
-#: kfmgui.cpp:1078
+#: kfmgui.cpp:1088
 msgid "&Back"
 msgstr ""
 
-#: kfmgui.cpp:1080
+#: kfmgui.cpp:1090
 msgid "&Forward"
 msgstr ""
 
-#: kfmgui.cpp:1082
+#: kfmgui.cpp:1092
 #, fuzzy
 msgid "&Home"
 msgstr "Baþlangýç"
 
-#: kfmgui.cpp:1144 kfmgui.cpp:1316 kfmjob.cpp:36 kfmman.cpp:244
+#: kfmgui.cpp:1161 kfmgui.cpp:1333 kfmjob.cpp:36 kfmman.cpp:244
 #: kfmtree.cpp:500 kfmview.cpp:608 kfmview.cpp:677 kfmview.cpp:885
 #: kiojob.cpp:87 root.cpp:1223
 msgid "ERROR: Malformed URL"
 msgstr "HATA: Yetersiz URL"
 
-#: kfmgui.cpp:1270 kfmserver.cpp:190
+#: kfmgui.cpp:1287 kfmserver.cpp:190
 msgid "Open Location:"
 msgstr "Konumu Aç:"
 
-#: kfmgui.cpp:1327
+#: kfmgui.cpp:1344
 msgid "KFM Confirm"
 msgstr "KFM Onayý"
 
-#: kfmgui.cpp:1328
+#: kfmgui.cpp:1345
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -359,7 +359,7 @@ msgstr ""
 "Gerçekten çýkmak mý istiyorsunuz?\n"
 "Masaüstünün önemli iþlevlerini kaybedeceksiniz"
 
-#: kfmgui.cpp:1441
+#: kfmgui.cpp:1458
 msgid "Document: Done"
 msgstr "Belge: Tamam"
 
