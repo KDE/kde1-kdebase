@@ -18,6 +18,7 @@ In 0.10:
        - KWM::geometry(Window w, bool including_frame = FALSE) has
          including_frame as additional argument. Useful for
          pager modules.
+       - workaround to the "X freezes when pasting in minicli"-bug
          
   patchlevel 12:
        - new command "execute" for minicli (temporary solution until

@@ -830,15 +830,19 @@ void Client::setLabel(){
 
 void Client::generateOperations(){
   myapp->operations->clear();
-  if (isMaximized())
+  if (isMaximized() && !fixedSize()){
     myapp->operations->insertItem(KWM::getUnMaximizeString(), 
 				  OP_RESTORE);
-  else
+  }
+  else {
     myapp->operations->insertItem(KWM::getMaximizeString(), 
 				  OP_MAXIMIZE);
-
+  }
+  
   if (fixedSize())
     myapp->operations->setItemEnabled(OP_MAXIMIZE, FALSE);
+
+
 
   myapp->operations->insertItem(KWM::getIconifyString(), 
 				OP_ICONIFY);

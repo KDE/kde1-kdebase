@@ -118,7 +118,7 @@ bool Minicli::do_grabbing(){
 		    GrabModeAsync,CurrentTime) != GrabSuccess)
     return False;
   lineedit->grabMouse();
-  XGrabServer(qt_xdisplay());
+//   XGrabServer(qt_xdisplay());
   do_not_draw = TRUE;
   raise();
   lineedit->setFocus();
@@ -139,7 +139,7 @@ void Minicli::return_pressed(){
 void Minicli::cleanup(){
   it->toLast();
   lineedit->setText("");
-  XUngrabServer(qt_xdisplay());
+//   XUngrabServer(qt_xdisplay());
   lineedit->releaseMouse();
   if (reactive){
     reactive->setactive(True);
