@@ -1629,10 +1629,10 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 
    if (panelCurrentlyHidden) // i.e. standalone shown
     {
-     pw = 0;
-     ph = 0;
-     px = 0;
-     py = 0;
+     pw = pwR = 0;
+     ph = phR = 0;
+     px = pxR = 0;
+     py = pyR = 0;
      sw = panel_button_frame_standalone->width()+1;
      sh = panel_button_frame_standalone->height()+1;
      {
