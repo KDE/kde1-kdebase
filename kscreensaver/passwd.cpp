@@ -231,9 +231,17 @@ static char *PAM_password;
  * Here we assume (for now, at least) that echo on means login name, and
  * echo off means password.
  */
+
+
+#ifdef PAM_MESSAGE_NONCONST
+typedef struct pam_message pam_message_type;
+#else
+typedef const struct pam_message pam_message_type;
+#endif
+
 static int
 PAM_conv(int num_msg,
-	 const struct pam_message **msg,
+	 pam_message_type **msg,
 	 struct pam_response **resp,
 	 void *appdata_ptr)
 {
