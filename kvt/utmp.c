@@ -8,6 +8,9 @@
  * I didn't touch the Sun part of the code so it should still work.
  *
  * $Log$
+ * Revision 1.7  1998/10/24 20:17:41  bieker
+ * Use the test for sys/param.h
+ *
  * Revision 1.6  1998/10/23 16:49:34  bieker
  * Enables utmp on FreeBSD.. I home sys/param.h is a common file on most
  * systems. :)
@@ -107,7 +110,7 @@ void clean_exit(int r)
 #endif
   if(madeutent)
     cleanutent();
-  exit(r);
+  if (r >= 0) exit(r);
 }
 
 #ifndef UTMP_SUPPORT

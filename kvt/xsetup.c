@@ -476,8 +476,13 @@ static void extract_fonts_and_geometry(char *font_string, int font_id,
 	if ((mainfont = XLoadQueryFont(display,font_string)) == NULL) 
 	    {
 	      error("can't access font %s\n",font_string);
-	      clean_exit(1);
-	    }
+              
+              if ((mainfont = XLoadQueryFont(display,"fixed")) == NULL) 
+	          error("can't access fixed font\n");
+              
+              clean_exit(1);
+             }
+
 	mainfontfid = 0;
   }
 

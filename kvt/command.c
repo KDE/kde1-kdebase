@@ -36,6 +36,7 @@
 #include <string.h>
 #include <time.h>
 #include <sys/time.h>
+#include <utime.h>
 #include <ctype.h>
 #include "debug.h"
 
@@ -313,7 +314,7 @@ static void catch_child(int nonsense)
 static void catch_sig(int sig)
 {
   signal(sig,SIG_DFL);
-  cleanutent();
+  clean_exit(-1);
   setuid(getuid());
   kill(getpid(),sig);
 }
@@ -384,7 +385,8 @@ static void catch_sig(int sig)
     signal(i,catch_sig);
   signal(SIGCHLD,catch_child);
   lstat(ttynam,&ttyfd_stat);
-
+  utime(ttynam,NULL);
+    
   makeutent(&ttynam[5]);	/* stamp /etc/utmp */  
 
   comm_pid = fork();

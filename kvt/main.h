@@ -64,7 +64,7 @@ public slots:
 
   void saveYourself();
   void toggleHotkeys();
-
+  void shutDown();
 
 protected:
     void    resizeEvent( QResizeEvent * );

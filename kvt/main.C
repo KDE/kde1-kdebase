@@ -695,7 +695,7 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
     CHECK_PTR( menubar );
 
     entry = sessionconfig->readEntry("kmenubar");
-    if (!entry.isEmpty() && entry == "floating") {
+    if (!entry.isEmpty() && entry == "floating" ) {
       menubar->setMenuBarPos(KMenuBar::Floating);
       entry = sessionconfig->readEntry("kmenubargeometry");
       if (!entry.isEmpty()) {
@@ -740,6 +740,8 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
     KWM::setUnsavedDataHint(winId(), True);
     connect(KApplication::getKApplication(), SIGNAL(saveYourself()),
 	    SLOT(saveYourself()));
+    connect(KApplication::getKApplication(), SIGNAL(shutDown()),
+	    SLOT(shutDown()));
 
     entry = sessionconfig->readEntry("geometry");
     if (!entry.isEmpty()) {
@@ -747,6 +749,9 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
     }
 
     if (menubar_visible && menubar->menuBarPos() == KMenuBar::Floating)
+	menubar->show();
+
+    if (menubar_visible && menubar->menuBarPos() == KMenuBar::FloatingSystem)
 	menubar->show();
 }
 
@@ -797,6 +802,10 @@ void kVt::saveYourself(){
   config->writeEntry("fontSize5", kvt_fnt5.pointSize());
   config->writeEntry("fontSize6", kvt_fnt6.pointSize());
   config->sync();
+}
+
+void kVt::shutDown(){  
+  clean_exit(-1);
 }
 
 kVt::~kVt(){
@@ -903,7 +912,8 @@ void kVt::ResizeToDimen(int width, int height)
 void kVt::ResizeToVtWindow(){
   setting_to_vt_window = TRUE;
   int menubar_height = menubar->height();
-  if (menubar_visible &&  menubar->menuBarPos() != KMenuBar::Floating){
+  if (menubar_visible &&  (menubar->menuBarPos() != KMenuBar::Floating
+      || menubar->menuBarPos() != KMenuBar::FloatingSystem) ){
     if (scrollbar_visible){
       resize(sizehints.width+4+16,
 	     sizehints.height+4+menubar_height);
@@ -937,7 +947,8 @@ void kVt::options_menu_activated( int item){
       // hide
       menubar_visible = FALSE;
       menubar->hide();
-      if (menubar->menuBarPos() != KMenuBar::Floating)
+      if (menubar->menuBarPos() != KMenuBar::Floating &&
+          menubar->menuBarPos() != KMenuBar::FloatingSystem )
 	resize(width(), height()-menubar->height());
       m_options->changeItem(i18n("Show &Menubar"), item);
     }
@@ -945,7 +956,8 @@ void kVt::options_menu_activated( int item){
       // show
       menubar_visible = TRUE;
       menubar->show();
-      if (menubar->menuBarPos() != KMenuBar::Floating)
+      if (menubar->menuBarPos() != KMenuBar::Floating &&
+          menubar->menuBarPos() != KMenuBar::FloatingSystem )
 	resize(width(), height()+menubar->height());
       m_options->changeItem(i18n("Hide &Menubar"), item);
     }
@@ -1231,6 +1243,10 @@ void kVt::menubarMoved(){
     if (frame->height() != height())
       resize(width(), height()-menubar->height());
   }
+  else if (new_pos == KMenuBar::FloatingSystem) {
+    if (frame->height() != height())
+      resize(width(), height()-menubar->height());
+  }
 }
 
 void kVt::doGeometry(){
@@ -1483,5 +1499,5 @@ int main(int argc, char **argv)
   a.setTopWidget( kvt );
   kvt->show();
 
-  return a.exec();
+  clean_exit(a.exec());  
 }
