@@ -17,7 +17,7 @@
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#include <iostream.h> 
+#include <iostream.h>
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -45,7 +45,7 @@ extern KConfig *config;
 KMouseConfig::KMouseConfig (QWidget * parent, const char *name)
   : KConfigWidget (parent, name)
 {
-  QGridLayout *layout = new QGridLayout( this, 12, 4, 1);
+  QGridLayout *layout = new QGridLayout( this, 12, 4, 10, 1);
   layout->setColStretch( 2, 100 );
   layout->setColStretch( 3, 100 );
 
@@ -53,12 +53,12 @@ KMouseConfig::KMouseConfig (QWidget * parent, const char *name)
 
   label = new QLabel(i18n("Active"), this);
   label->setMinimumSize(label->sizeHint());
-  layout->addWidget(label, 0,2);
+  layout->addWidget(label, 0,2, AlignHCenter);
 
   label = new QLabel(i18n("Inactive"), this);
   label->setMinimumSize(label->sizeHint());
-  layout->addWidget(label, 0,3);
-  
+  layout->addWidget(label, 0,3, AlignHCenter);
+
   label = new QLabel(i18n("Titlebar and frame:"), this);
   label->setMinimumSize(label->sizeHint());
   layout->addMultiCellWidget(label, 0,0,0,1);
@@ -108,8 +108,8 @@ KMouseConfig::KMouseConfig (QWidget * parent, const char *name)
   layout->addWidget(label, 11,1);
 
   QComboBox* combo;
- 
-  combo = new QComboBox(this);  
+
+  combo = new QComboBox(this);
   combo->insertItem(i18n("Raise"));
   combo->insertItem(i18n("Lower"));
   combo->insertItem(i18n("Operations menu"));
@@ -118,7 +118,7 @@ KMouseConfig::KMouseConfig (QWidget * parent, const char *name)
   layout->addWidget(combo, 1,2);
   coTiAct1 = combo;
 
-  combo = new QComboBox(this);  
+  combo = new QComboBox(this);
   combo->insertItem(i18n("Raise"));
   combo->insertItem(i18n("Lower"));
   combo->insertItem(i18n("Operations menu"));
@@ -126,9 +126,9 @@ KMouseConfig::KMouseConfig (QWidget * parent, const char *name)
   combo->insertItem(i18n("Nothing"));
   //combo->setMinimumSize(combo->sizeHint());
   layout->addWidget(combo, 2,2);
-  coTiAct2 = combo; 
+  coTiAct2 = combo;
 
-  combo = new QComboBox(this);  
+  combo = new QComboBox(this);
   combo->insertItem(i18n("Raise"));
   combo->insertItem(i18n("Lower"));
   combo->insertItem(i18n("Operations menu"));
@@ -138,7 +138,7 @@ KMouseConfig::KMouseConfig (QWidget * parent, const char *name)
   layout->addWidget(combo, 3,2);
   coTiAct3 =  combo;
 
-  combo = new QComboBox(this);  
+  combo = new QComboBox(this);
   combo->insertItem(i18n("Activate and raise"));
   combo->insertItem(i18n("Activate and lower"));
   combo->insertItem(i18n("Activate"));
@@ -146,7 +146,7 @@ KMouseConfig::KMouseConfig (QWidget * parent, const char *name)
   layout->addWidget(combo, 1,3);
   coTiInAct1 = combo;
 
-  combo = new QComboBox(this);  
+  combo = new QComboBox(this);
   combo->insertItem(i18n("Activate and raise"));
   combo->insertItem(i18n("Activate and lower"));
   combo->insertItem(i18n("Activate"));
@@ -154,7 +154,7 @@ KMouseConfig::KMouseConfig (QWidget * parent, const char *name)
   layout->addWidget(combo, 2,3);
   coTiInAct2 = combo;
 
-  combo = new QComboBox(this);  
+  combo = new QComboBox(this);
   combo->insertItem(i18n("Activate and raise"));
   combo->insertItem(i18n("Activate and lower"));
   combo->insertItem(i18n("Activate"));
@@ -162,7 +162,7 @@ KMouseConfig::KMouseConfig (QWidget * parent, const char *name)
   layout->addWidget(combo, 3,3);
   coTiInAct3 = combo;
 
-  combo = new QComboBox(this);  
+  combo = new QComboBox(this);
   combo->insertItem(i18n("Activate, raise and pass click"));
   combo->insertItem(i18n("Activate and pass click"));
   combo->insertItem(i18n("Activate"));
@@ -171,7 +171,7 @@ KMouseConfig::KMouseConfig (QWidget * parent, const char *name)
   layout->addMultiCellWidget(combo, 5,5, 2, 3);
   coWin1 = combo;
 
-  combo = new QComboBox(this);  
+  combo = new QComboBox(this);
   combo->insertItem(i18n("Activate, raise and pass click"));
   combo->insertItem(i18n("Activate and pass click"));
   combo->insertItem(i18n("Activate"));
@@ -180,7 +180,7 @@ KMouseConfig::KMouseConfig (QWidget * parent, const char *name)
   layout->addMultiCellWidget(combo, 6,6, 2, 3);
   coWin2 = combo;
 
-  combo = new QComboBox(this);  
+  combo = new QComboBox(this);
   combo->insertItem(i18n("Activate, raise and pass click"));
   combo->insertItem(i18n("Activate and pass click"));
   combo->insertItem(i18n("Activate"));
@@ -189,7 +189,7 @@ KMouseConfig::KMouseConfig (QWidget * parent, const char *name)
   layout->addMultiCellWidget(combo, 7,7, 2, 3);
   coWin3 = combo;
 
-  combo = new QComboBox(this);  
+  combo = new QComboBox(this);
   combo->insertItem(i18n("Move"));
   combo->insertItem(i18n("Toggle raise and lower"));
   combo->insertItem(i18n("Resize"));
@@ -200,7 +200,7 @@ KMouseConfig::KMouseConfig (QWidget * parent, const char *name)
   layout->addMultiCellWidget(combo, 9,9, 2, 3);
   coAll1 = combo;
 
-  combo = new QComboBox(this);  
+  combo = new QComboBox(this);
   combo->insertItem(i18n("Move"));
   combo->insertItem(i18n("Toggle raise and lower"));
   combo->insertItem(i18n("Resize"));
@@ -209,9 +209,9 @@ KMouseConfig::KMouseConfig (QWidget * parent, const char *name)
   combo->insertItem(i18n("Nothing"));
   //combo->setMinimumSize(combo->sizeHint());
   layout->addMultiCellWidget(combo, 10,10, 2, 3);
-  coAll2 = combo; 
+  coAll2 = combo;
 
-  combo = new QComboBox(this);  
+  combo = new QComboBox(this);
   combo->insertItem(i18n("Move"));
   combo->insertItem(i18n("Toggle raise and lower"));
   combo->insertItem(i18n("Resize"));
@@ -286,7 +286,7 @@ const char*  KMouseConfig::functionWin(int i)
   }
   return "";
 }
-const char*  KMouseConfig::functionAll(int i) 
+const char*  KMouseConfig::functionAll(int i)
 {
   switch (i){
   case 0: return "Move"; break;
