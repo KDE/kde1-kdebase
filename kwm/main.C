@@ -756,9 +756,9 @@ void MyApp::readConfiguration(){
   //   consistent with the buttons pixmaps definition technique
   if (options.TitlebarLook == PIXMAP) {
     *(options.titlebarPixmapActive) = getIconLoader()
-      ->loadIcon("activetitlebar.xpm");
+      ->reloadIcon("activetitlebar.xpm");
     *(options.titlebarPixmapInactive) = getIconLoader()
-      ->loadIcon("inactivetitlebar.xpm");
+      ->reloadIcon("inactivetitlebar.xpm");
 
     if (options.titlebarPixmapInactive->size() == QSize(0,0))
       *options.titlebarPixmapInactive = *options.titlebarPixmapActive;
@@ -1684,7 +1684,7 @@ bool MyApp::buttonPressEventFilter( XEvent * ev)
 bool MyApp::x11EventFilter( XEvent * ev){
 
     if (process_events_mode) {
-	switch (ev->type) {
+	switch (ev->type
 	case EnterNotify:
 	    return TRUE; //ignore these
 	case LeaveNotify:
