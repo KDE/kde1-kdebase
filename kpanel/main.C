@@ -20,6 +20,7 @@ char ** o_argv;
 void restart_the_panel(){
   QApplication::exit();
   execvp(o_argv[0],  o_argv);
+  exit(1);
 }
 
 #include "kpanel.moc"
