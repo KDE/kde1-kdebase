@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-11-22 01:13+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -253,11 +253,11 @@ msgstr "无法载入图标\n"
 #: kfmprops.cpp:1141 kfmprops.cpp:1473 kfmprops.cpp:1705 kfmprops.cpp:1890
 #: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
 #: kfmserver.cpp:303 kfmserver.cpp:311 kfmtree.cpp:164 kfmtree.cpp:287
-#: kfmtree.cpp:318 kfmtree.cpp:324 kfmtree.cpp:330 kfmview.cpp:363
-#: kfmview.cpp:379 kfmview.cpp:398 kfmview.cpp:404 kfmview.cpp:466
-#: kfmview.cpp:472 kfmview.cpp:478 kfmview.cpp:579 kfmview.cpp:583
-#: kfmview.cpp:622 kfmview.cpp:648 kfmview.cpp:669 kfmview.cpp:677
-#: kfmview.cpp:685 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
+#: kfmtree.cpp:318 kfmtree.cpp:324 kfmtree.cpp:330 kfmview.cpp:365
+#: kfmview.cpp:381 kfmview.cpp:400 kfmview.cpp:406 kfmview.cpp:468
+#: kfmview.cpp:474 kfmview.cpp:480 kfmview.cpp:581 kfmview.cpp:585
+#: kfmview.cpp:624 kfmview.cpp:650 kfmview.cpp:671 kfmview.cpp:679
+#: kfmview.cpp:687 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
 #: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:556
 #: kiojob.cpp:796 kiojob.cpp:827 kiojob.cpp:868 kiojob.cpp:1682
 #: krenamewin.cpp:120 root.cpp:891 root.cpp:1152 root.cpp:1170 root.cpp:1176
@@ -294,7 +294,7 @@ msgid "New "
 msgstr "新 "
 
 #: kfmgui.cpp:1100 kfmgui.cpp:1265 kfmjob.cpp:35 kfmman.cpp:224
-#: kfmtree.cpp:319 kfmview.cpp:399 kfmview.cpp:467 kfmview.cpp:670
+#: kfmtree.cpp:319 kfmview.cpp:401 kfmview.cpp:469 kfmview.cpp:672
 #: kiojob.cpp:87 root.cpp:1171
 msgid "ERROR: Malformed URL"
 msgstr "错误: 不正确的 URL"
@@ -319,25 +319,25 @@ msgstr ""
 msgid "Document: Done"
 msgstr "文件: 完成"
 
-#: kfmview.cpp:364 root.cpp:892
+#: kfmview.cpp:366 root.cpp:892
 #, fuzzy
 msgid "ERROR: You may only drop URLs"
 msgstr "错误: 拖放一个 URL 到自己本身"
 
-#: kfmview.cpp:380
+#: kfmview.cpp:382
 msgid "ERROR: Drop over malformed URL"
 msgstr "错误: 拖放到不正确的 URL"
 
-#: kfmview.cpp:405
+#: kfmview.cpp:407
 msgid "ERROR: You dropped some URL over itself"
 msgstr "错误: 拖放 URL 到自己本身"
 
-#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:357 kfmview.cpp:438
-#: kfmview.cpp:713 krenamewin.cpp:20 root.cpp:1214
+#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:357 kfmview.cpp:440
+#: kfmview.cpp:715 krenamewin.cpp:20 root.cpp:1214
 msgid "KFM Warning"
 msgstr "KFM 警告"
 
-#: kfmtree.cpp:358 kfmview.cpp:439 kfmview.cpp:714 root.cpp:1215
+#: kfmtree.cpp:358 kfmview.cpp:441 kfmview.cpp:716 root.cpp:1215
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -347,23 +347,23 @@ msgstr ""
 "\n"
 "删除的文件无法还原!"
 
-#: kfmtree.cpp:325 kfmview.cpp:473 kfmview.cpp:678 root.cpp:1177
+#: kfmtree.cpp:325 kfmview.cpp:475 kfmview.cpp:680 root.cpp:1177
 msgid "ERROR: You dropped a URL over itself"
 msgstr "错误: 拖放一个 URL 到自己本身"
 
-#: kfmtree.cpp:331 kfmview.cpp:479 kfmview.cpp:686 root.cpp:1183
+#: kfmtree.cpp:331 kfmview.cpp:481 kfmview.cpp:688 root.cpp:1183
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "错误: 拖放一个目录到它一个子目录上"
 
-#: kfmexec.cpp:265 kfmman.cpp:907 kfmview.cpp:495
+#: kfmexec.cpp:265 kfmman.cpp:907 kfmview.cpp:497
 msgid "Open With:"
 msgstr "以...打开:"
 
-#: kfmview.cpp:521 root.cpp:1114
+#: kfmview.cpp:523 root.cpp:1114
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "错误: 无法同时打开多个文件的特性"
 
-#: kfmview.cpp:580
+#: kfmview.cpp:582
 msgid ""
 "Can not save properties because\n"
 "this directory is neither writable nor bookmarked.\n"
@@ -371,7 +371,7 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmview.cpp:584
+#: kfmview.cpp:586
 msgid ""
 "Can not save properties because\n"
 "this URL is neither bookmarked nor on desktop.\n"
@@ -379,23 +379,23 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmtree.cpp:288 kfmview.cpp:623 root.cpp:1264
+#: kfmtree.cpp:288 kfmview.cpp:625 root.cpp:1264
 msgid "Could not access Trash Bin"
 msgstr "无法读取回收站"
 
-#: kfmview.cpp:649 root.cpp:1153
+#: kfmview.cpp:651 root.cpp:1153
 msgid "Can not paste into multiple directories"
 msgstr "无法贴入多个目录中"
 
-#: kfmview.cpp:746
+#: kfmview.cpp:748
 msgid "ERROR: Can not change to multiple directories"
 msgstr "错误: 无法同时进入多个目录"
 
-#: kfmview.cpp:937
+#: kfmview.cpp:971
 msgid "KFM Security Alert"
 msgstr "KFM 安全警报"
 
-#: kfmview.cpp:938
+#: kfmview.cpp:972
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -403,16 +403,16 @@ msgstr ""
 "这个页面不可信任\n"
 "但是它包含一个到你的本地文件系统的链接."
 
-#: kfmview.cpp:1024
+#: kfmview.cpp:1058
 msgid "Symbolic Link"
 msgstr "符号链接"
 
-#: kfmview.cpp:1026
+#: kfmview.cpp:1060
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (链结)"
 
-#: kfmview.cpp:1046
+#: kfmview.cpp:1080
 msgid "bytes"
 msgstr "字节"
 

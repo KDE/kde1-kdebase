@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfm\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-11-22 01:13+0100\n"
 "PO-Revision-Date: 1998-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -269,11 +269,11 @@ msgstr "Kunne ikke laste ikon\n"
 #: kfmprops.cpp:1141 kfmprops.cpp:1473 kfmprops.cpp:1705 kfmprops.cpp:1890
 #: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
 #: kfmserver.cpp:303 kfmserver.cpp:311 kfmtree.cpp:164 kfmtree.cpp:287
-#: kfmtree.cpp:318 kfmtree.cpp:324 kfmtree.cpp:330 kfmview.cpp:363
-#: kfmview.cpp:379 kfmview.cpp:398 kfmview.cpp:404 kfmview.cpp:466
-#: kfmview.cpp:472 kfmview.cpp:478 kfmview.cpp:579 kfmview.cpp:583
-#: kfmview.cpp:622 kfmview.cpp:648 kfmview.cpp:669 kfmview.cpp:677
-#: kfmview.cpp:685 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
+#: kfmtree.cpp:318 kfmtree.cpp:324 kfmtree.cpp:330 kfmview.cpp:365
+#: kfmview.cpp:381 kfmview.cpp:400 kfmview.cpp:406 kfmview.cpp:468
+#: kfmview.cpp:474 kfmview.cpp:480 kfmview.cpp:581 kfmview.cpp:585
+#: kfmview.cpp:624 kfmview.cpp:650 kfmview.cpp:671 kfmview.cpp:679
+#: kfmview.cpp:687 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
 #: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:556
 #: kiojob.cpp:796 kiojob.cpp:827 kiojob.cpp:868 kiojob.cpp:1682
 #: krenamewin.cpp:120 root.cpp:891 root.cpp:1152 root.cpp:1170 root.cpp:1176
@@ -318,7 +318,7 @@ msgstr "Ny"
 # kfmtree.cpp:318 kfmview.cpp:371 kfmview.cpp:440 kfmview.cpp:571
 # kiojob.cpp:71 root.cpp:1106
 #: kfmgui.cpp:1100 kfmgui.cpp:1265 kfmjob.cpp:35 kfmman.cpp:224
-#: kfmtree.cpp:319 kfmview.cpp:399 kfmview.cpp:467 kfmview.cpp:670
+#: kfmtree.cpp:319 kfmview.cpp:401 kfmview.cpp:469 kfmview.cpp:672
 #: kiojob.cpp:87 root.cpp:1171
 msgid "ERROR: Malformed URL"
 msgstr "FEIL: Misdannet URL"
@@ -348,29 +348,29 @@ msgid "Document: Done"
 msgstr "Dokument: Ferdig"
 
 # kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1112
-#: kfmview.cpp:364 root.cpp:892
+#: kfmview.cpp:366 root.cpp:892
 msgid "ERROR: You may only drop URLs"
 msgstr "FEIL: Du kan bare droppe URLer"
 
 # kfmview.cpp:352
-#: kfmview.cpp:380
+#: kfmview.cpp:382
 msgid "ERROR: Drop over malformed URL"
 msgstr "FEIL: Dropp over en misdannet URL"
 
 # kfmview.cpp:377
-#: kfmview.cpp:405
+#: kfmview.cpp:407
 msgid "ERROR: You dropped some URL over itself"
 msgstr "FEIL: Du droppet en URL over seg selv"
 
 # kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:412
 # kfmview.cpp:606 krenamewin.cpp:20 root.cpp:1147
-#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:357 kfmview.cpp:438
-#: kfmview.cpp:713 krenamewin.cpp:20 root.cpp:1214
+#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:357 kfmview.cpp:440
+#: kfmview.cpp:715 krenamewin.cpp:20 root.cpp:1214
 msgid "KFM Warning"
 msgstr "KFM Advarsel"
 
 # kfmtree.cpp:357 kfmview.cpp:413 kfmview.cpp:607 root.cpp:1148
-#: kfmtree.cpp:358 kfmview.cpp:439 kfmview.cpp:714 root.cpp:1215
+#: kfmtree.cpp:358 kfmview.cpp:441 kfmview.cpp:716 root.cpp:1215
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -380,26 +380,26 @@ msgstr ""
 "Det er ikke mulig å få dem tilbake."
 
 # kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1112
-#: kfmtree.cpp:325 kfmview.cpp:473 kfmview.cpp:678 root.cpp:1177
+#: kfmtree.cpp:325 kfmview.cpp:475 kfmview.cpp:680 root.cpp:1177
 msgid "ERROR: You dropped a URL over itself"
 msgstr "FEIL: Du droppet en URL over seg selv"
 
 # kfmtree.cpp:330 kfmview.cpp:452 kfmview.cpp:583 root.cpp:1118
-#: kfmtree.cpp:331 kfmview.cpp:479 kfmview.cpp:686 root.cpp:1183
+#: kfmtree.cpp:331 kfmview.cpp:481 kfmview.cpp:688 root.cpp:1183
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "FEIL: Du droppet en katalog over et av sine barn"
 
 # kfmexec.cpp:254 kfmman.cpp:880 kfmview.cpp:468
-#: kfmexec.cpp:265 kfmman.cpp:907 kfmview.cpp:495
+#: kfmexec.cpp:265 kfmman.cpp:907 kfmview.cpp:497
 msgid "Open With:"
 msgstr "Åpne Med:"
 
 # kfmview.cpp:485 root.cpp:1057
-#: kfmview.cpp:521 root.cpp:1114
+#: kfmview.cpp:523 root.cpp:1114
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "FEIL: Kan ikke åpne egenskaper for flere filer samtidig"
 
-#: kfmview.cpp:580
+#: kfmview.cpp:582
 msgid ""
 "Can not save properties because\n"
 "this directory is neither writable nor bookmarked.\n"
@@ -412,7 +412,7 @@ msgstr ""
 " Legg først dette stedet som et bokmerke, eller lag en kdelnk til det på\n"
 "skrivebordet."
 
-#: kfmview.cpp:584
+#: kfmview.cpp:586
 msgid ""
 "Can not save properties because\n"
 "this URL is neither bookmarked nor on desktop.\n"
@@ -426,27 +426,27 @@ msgstr ""
 "skrivebordet."
 
 # kfmtree.cpp:287 kfmview.cpp:527 root.cpp:1193
-#: kfmtree.cpp:288 kfmview.cpp:623 root.cpp:1264
+#: kfmtree.cpp:288 kfmview.cpp:625 root.cpp:1264
 msgid "Could not access Trash Bin"
 msgstr "Kunne ikke få adgang til Papirkurv"
 
 # kfmview.cpp:553 root.cpp:1088
-#: kfmview.cpp:649 root.cpp:1153
+#: kfmview.cpp:651 root.cpp:1153
 msgid "Can not paste into multiple directories"
 msgstr "Kan ikke lime inn i flere kataloger"
 
 # kfmview.cpp:639
-#: kfmview.cpp:746
+#: kfmview.cpp:748
 msgid "ERROR: Can not change to multiple directories"
 msgstr "FEIL: Kan ikke endre til flere kataloger"
 
 # kfmview.cpp:737
-#: kfmview.cpp:937
+#: kfmview.cpp:971
 msgid "KFM Security Alert"
 msgstr "KFM Sikkerhetsadvarsel"
 
 # kfmview.cpp:738
-#: kfmview.cpp:938
+#: kfmview.cpp:972
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -455,18 +455,18 @@ msgstr ""
 "men den inneholder en lenke til ditt lokale filsystem."
 
 # kfmview.cpp:824
-#: kfmview.cpp:1024
+#: kfmview.cpp:1058
 msgid "Symbolic Link"
 msgstr "Symbolsk Lenke"
 
 # kfmview.cpp:826
-#: kfmview.cpp:1026
+#: kfmview.cpp:1060
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (Lenke)"
 
 # kfmview.cpp:846
-#: kfmview.cpp:1046
+#: kfmview.cpp:1080
 msgid "bytes"
 msgstr "byte"
 

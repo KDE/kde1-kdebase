@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KONSOLE\n"
-"POT-Creation-Date: 1998-11-15 01:19+0100\n"
+"POT-Creation-Date: 1998-11-22 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -131,12 +131,12 @@ msgstr "Uusi"
 msgid "Sessions"
 msgstr "Sessiot"
 
-#: main.C:499
+#: main.C:501
 #, fuzzy, c-format
 msgid "About %s"
 msgstr "&Tietoja ..."
 
-#: main.C:501
+#: main.C:503
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -149,6 +149,6 @@ msgid ""
 "See `LICENSE.readme´ for details."
 msgstr ""
 
-#: main.C:817
+#: main.C:819
 msgid "Welcome to the console"
 msgstr "Tervetuloa konsoliin"
