@@ -1,0 +1,60 @@
+# Esperantaj mesaøoj por "kcminput"
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcminput 1.0pre2\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"PO-Revision-Date: 1998-07-15 18:00+0100\n"
+"Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
+"Language-Team: Esperanto <eo@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:54
+msgid "&Mouse"
+msgstr "&Muso"
+
+#: main.cpp:57
+msgid "&Keyboard"
+msgstr "&Klavaro"
+
+#: main.cpp:63
+msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
+msgstr "uzo: kcminput [-init | {mouse,keyboard}]\n"
+
+#: main.cpp:104
+msgid "Input Devices Properties"
+msgstr "Konfigura¼o de enigaparatoj"
+
+#: mouse.cpp:75
+msgid "Acceleration"
+msgstr "&Akcelado"
+
+#: mouse.cpp:81
+msgid "Threshold"
+msgstr "&Sojlo de reago"
+
+#: mouse.cpp:84
+msgid "Button mapping"
+msgstr "Butonordo"
+
+#: mouse.cpp:86
+msgid "Right handed"
+msgstr "por la &dekstra mano"
+
+#: mouse.cpp:88
+msgid "Left handed"
+msgstr "por la &maldekstra mano"
+
+#: keyboard.cpp:67
+msgid "Keyboard repeat"
+msgstr "Klavripeto"
+
+#: keyboard.cpp:75
+msgid "Key click volume"
+msgstr "&Laýteco de klavkliko"
+

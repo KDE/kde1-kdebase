@@ -1,0 +1,422 @@
+# Esperantaj mesaøoj por "kdisplay"
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdisplay 1.0pre2\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"PO-Revision-Date: 1998-07-13 21:00+0100\n"
+"Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
+"Language-Team: Esperanto <eo@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: backgnd.cpp:59
+msgid "Enter new desktop name"
+msgstr "Tajpu novan nomon por la labortabulo"
+
+#: backgnd.cpp:115 backgnd.cpp:150
+msgid "Desktop"
+msgstr "Labortabulo"
+
+#: backgnd.cpp:167
+msgid "&Rename ..."
+msgstr "&Alinomu ..."
+
+#: backgnd.cpp:193 colorscm.cpp:93
+msgid "Colors"
+msgstr "Koloroj"
+
+#: backgnd.cpp:220
+msgid "&One Color"
+msgstr "&Unu koloro"
+
+#: backgnd.cpp:237
+msgid "&Two Color"
+msgstr "&Du koloroj"
+
+#: backgnd.cpp:256
+msgid "Set&up ..."
+msgstr "&Adaptu ..."
+
+#: backgnd.cpp:265
+msgid "Wallpaper"
+msgstr "Tapeto"
+
+#: backgnd.cpp:275
+msgid "Ti&led"
+msgstr "&Kahele"
+
+#: backgnd.cpp:283
+msgid "&Centred"
+msgstr "&Centrigite"
+
+#: backgnd.cpp:291
+msgid "&Scaled"
+msgstr "&Etendite"
+
+#: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
+msgid "No wallpaper"
+msgstr "sen tapeto"
+
+#: backgnd.cpp:335
+msgid "&Browse..."
+msgstr "&Elektu..."
+
+#: backgnd.cpp:864
+msgid "Desktop names"
+msgstr "Nomoj de la labortabuloj"
+
+#: backgnd.cpp:910
+msgid "Two color backgrounds"
+msgstr "Dukoloraj fonoj"
+
+#: backgnd.cpp:947
+msgid "Blend colors from &top to bottom"
+msgstr "Þanøetu la kolorojn de &supre malsupren"
+
+#: backgnd.cpp:953
+msgid "Blend colors from &right to left"
+msgstr "Þanøetu la koloroj de &dekstre maldekstren"
+
+#: backgnd.cpp:959
+msgid "Use &pattern"
+msgstr "Uzu kolor&aranøon"
+
+#: backgnd.cpp:986
+msgid "Preview"
+msgstr "Antaýrigardo"
+
+#: backgnd.cpp:997
+msgid "Pattern &name"
+msgstr "&Nomo de koloraranøo"
+
+#: backgnd.cpp:1036
+msgid "Current"
+msgstr "Aktuala"
+
+#: backgnd.cpp:1096
+msgid "Filled"
+msgstr "Unukolora"
+
+#: backgnd.cpp:1099
+msgid "Fish net"
+msgstr "Fiþreto"
+
+#: backgnd.cpp:1102
+msgid "Triangles"
+msgstr "Trianguloj"
+
+#: backgnd.cpp:1105
+msgid "Flowers"
+msgstr "Floretoj"
+
+#: backgnd.cpp:1108
+msgid "Rattan"
+msgstr "Plekta¼o"
+
+#: backgnd.cpp:1111
+msgid "Cobbled Pavement"
+msgstr "Pavimo"
+
+#: colorscm.cpp:119
+msgid "Color Scheme"
+msgstr "Kolorskemo"
+
+#: colorscm.cpp:130
+msgid "Current scheme"
+msgstr "Aktuala skemo"
+
+#: colorscm.cpp:132
+msgid "KDE default"
+msgstr "KDE-origina"
+
+#: colorscm.cpp:145
+msgid "&Add ..."
+msgstr "&Aldonu ..."
+
+#: colorscm.cpp:162
+msgid "&Save changes"
+msgstr "&Sekurigu þanøojn"
+
+#: colorscm.cpp:176
+msgid "Widget color"
+msgstr "Koloro de la fenestra¼o"
+
+#: colorscm.cpp:183
+msgid "Inactive title bar"
+msgstr "Neaktiva titollistelo"
+
+#: colorscm.cpp:184
+msgid "Inactive title text"
+msgstr "Neaktiva titolteksto"
+
+#: colorscm.cpp:185
+msgid "Inactive title blend"
+msgstr "Neaktiva titolkolora¼o"
+
+#: colorscm.cpp:186
+msgid "Active title bar"
+msgstr "Aktiva titollistelo"
+
+#: colorscm.cpp:187
+msgid "Active title text"
+msgstr "Aktiva titolteksto"
+
+#: colorscm.cpp:188
+msgid "Active title blend"
+msgstr "Aktiva titolkolora¼o"
+
+#: colorscm.cpp:189
+msgid "Background"
+msgstr "Fono"
+
+#: colorscm.cpp:190
+msgid "Text"
+msgstr "Teksto"
+
+#: colorscm.cpp:191
+msgid "Select background"
+msgstr "Elektu fonon"
+
+#: colorscm.cpp:192
+msgid "Select text"
+msgstr "Elektu tekston"
+
+#: colorscm.cpp:193
+msgid "Window background"
+msgstr "Fenestrofono"
+
+#: colorscm.cpp:194 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+msgid "Window text"
+msgstr "Fenestroteksto"
+
+#: colorscm.cpp:222
+msgid "Contrast"
+msgstr "Kontrasto"
+
+#: colorscm.cpp:238
+msgid "&Low"
+msgstr "&Malgranda"
+
+#: colorscm.cpp:246
+msgid "High"
+msgstr "Granda"
+
+#: colorscm.cpp:317
+msgid "Error removing"
+msgstr "Eraro dum forigado"
+
+#: colorscm.cpp:318
+msgid ""
+"This color scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the color scheme is stored."
+msgstr ""
+"Ne eblis forigi tiun æi kolorskemon.\n"
+"Verþajne vi ne havas permeson por þanøi la\n"
+"dosierujojn kie la kolorskemo troviøas."
+
+#: colorscm.cpp:375
+msgid "Naming error"
+msgstr "Eraro de nomado"
+
+#: colorscm.cpp:376
+msgid ""
+"Please choose a unique name for the new color\n"
+"scheme. The one you entered already appears\n"
+"in the color scheme list."
+msgstr ""
+"Bonvolu elekti unikan nomon por la nova kolorskemo.\n"
+"Tiu, kiun vi indikis, jam troviøas en la listo\n"
+"de kolorskemoj."
+
+#: savescm.cpp:18
+msgid "Add a color scheme"
+msgstr "Aldonu kolorskemon"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new color scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The colors currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"&Indiku nomon por la nova kolorskemo\n"
+"aldonotan al via persona listo.\n"
+"\n"
+"La koloroj momente uzataj en la antaýrigarda¼o\n"
+"estos transprenataj en tiun skemon kiel bazo."
+
+#: scrnsave.cpp:48
+msgid "Ignore"
+msgstr "Ignoru"
+
+#: scrnsave.cpp:49
+msgid "Save Screen"
+msgstr "Sekurigu la ekranon"
+
+#: scrnsave.cpp:50
+msgid "Lock Screen"
+msgstr "Þlosu la ekranon"
+
+#: scrnsave.cpp:113 scrnsave.cpp:182
+msgid "Screen Saver"
+msgstr "Ekrananima¼o"
+
+#: scrnsave.cpp:189 scrnsave.cpp:360 scrnsave.cpp:571 scrnsave.cpp:686
+msgid "No screensaver"
+msgstr "sen ekrananima¼o"
+
+#: scrnsave.cpp:210
+msgid "&Setup ..."
+msgstr "&Adaptu ..."
+
+#: scrnsave.cpp:218
+msgid "&Test"
+msgstr "&Elprovu"
+
+#: scrnsave.cpp:231
+msgid "Settings"
+msgstr "Konfigura¼o"
+
+#: scrnsave.cpp:251
+msgid "&Wait for"
+msgstr "&Lanæu post"
+
+#: scrnsave.cpp:261
+msgid "min."
+msgstr "min."
+
+#: scrnsave.cpp:267
+msgid "&Require password"
+msgstr "&Postulu pasvorton"
+
+#: scrnsave.cpp:273
+msgid "Show &password as stars"
+msgstr "Montru &pasvorton stelete"
+
+#: scrnsave.cpp:281
+msgid "Priority"
+msgstr "Prioritato"
+
+#: scrnsave.cpp:294
+msgid "&High"
+msgstr "&Alta"
+
+#: scrnsave.cpp:303
+msgid "Low"
+msgstr "Malalta"
+
+#: general.cpp:216
+msgid "Fonts etc."
+msgstr "Tiparoj ktp."
+
+#: general.cpp:222
+msgid "&Draw widgets in the style of Windows 95"
+msgstr "&Pentru fenestra¼ojn laý Vin95-stilo"
+
+#: general.cpp:236
+msgid "Desktop fonts"
+msgstr "Labortabulaj tiparoj"
+
+#: general.cpp:248
+msgid "General font"
+msgstr "Normala tiparo"
+
+#: general.cpp:253
+msgid "Fixed font"
+msgstr "Egallarøa tiparo"
+
+#: general.cpp:263
+msgid "Panel button font"
+msgstr "Tiparo por la panelbutonoj"
+
+#: general.cpp:268
+msgid "Panel clock font"
+msgstr "Tiparo por la panelhorloøo"
+
+#: general.cpp:298
+msgid "Sample text"
+msgstr "Ekzemploteksto"
+
+#: general.cpp:306
+msgid ""
+"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+"the quick brown fox jumps over the lazy dog\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
+msgstr ""
+"A B C Æ D E F G Ø H ¦ I J ¬ K L M N O P R S Þ T U Ý V Z\n"
+"a b c æ d e f g ø h ¶ i j ¼ k l m n o p r s þ t u ý v z\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
+
+#: main.cpp:62
+msgid "&Fonts etc."
+msgstr "&Tiparoj ktp."
+
+#: main.cpp:65
+msgid "&Background"
+msgstr "&Fono"
+
+#: main.cpp:68
+msgid "&Screensaver"
+msgstr "&Ekrananima¼o"
+
+#: main.cpp:72
+msgid "&Colors"
+msgstr "&Koloroj"
+
+#: main.cpp:78
+msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr "uzo: kcmdisplay [-init | {fono,ekrananima¼o,koloroj,stilo}]\n"
+
+#: main.cpp:130
+msgid "Display settings"
+msgstr "Ekrankonfigura¼o"
+
+#: widgetcanvas.cpp:104 widgetcanvas.cpp:105
+msgid "Inactive window"
+msgstr "Neaktiva fenestro"
+
+#: widgetcanvas.cpp:132 widgetcanvas.cpp:133
+msgid "Active window"
+msgstr "Aktiva fenestro"
+
+#: widgetcanvas.cpp:189 widgetcanvas.cpp:190
+msgid "Selected text"
+msgstr "Markita teksto"
+
+#: fontchooser.cpp:82
+msgid "&Typeface"
+msgstr "&Tiparspeco"
+
+#: fontchooser.cpp:89
+msgid "&Bold"
+msgstr "&Grasa"
+
+#: fontchooser.cpp:96
+msgid "&Italic"
+msgstr "&Kursiva"
+
+#: fontchooser.cpp:125
+msgid "&Size"
+msgstr "&Grandeco"
+
+#: fontchooser.cpp:147
+msgid "&Character set"
+msgstr "&Signaro"
+
+#: fontchooser.cpp:262
+msgid "default"
+msgstr "implicita"
+
+#: fontchooser.cpp:265
+msgid "any"
+msgstr "iu"
+
+
+

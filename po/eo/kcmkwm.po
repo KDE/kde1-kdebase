@@ -1,0 +1,294 @@
+# Esperantaj mesaøoj por "kcmkwm"
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkwm 1.0pre2\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"PO-Revision-Date: 1998-07-15 18:00+0100\n"
+"Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
+"Language-Team: Esperanto <eo@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-3\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:59
+msgid "&Windows"
+msgstr "&Fenestroj"
+
+#: main.cpp:62
+msgid "&Buttons"
+msgstr "&Butonoj"
+
+#: main.cpp:65
+msgid "&Titlebar"
+msgstr "&Titollistelo"
+
+#: main.cpp:68
+msgid "&Desktop"
+msgstr "&Labortabulo"
+
+#: main.cpp:74
+msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
+msgstr "uzo: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
+
+#: main.cpp:105
+msgid "Window manager style"
+msgstr "Stilo de la fenestroregilo"
+
+#: titlebar.cpp:117
+msgid "Minimize"
+msgstr "Minimumigo"
+
+#: titlebar.cpp:121
+msgid "Maximize"
+msgstr "Maksimumigo"
+
+#: titlebar.cpp:125
+msgid "Sticky"
+msgstr "Fikso"
+
+#: titlebar.cpp:133
+msgid "Menu"
+msgstr "Menuo"
+
+#: titlebar.cpp:463
+msgid ""
+"The left side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr ""
+"La maldekstra flanko de la titollistelo estas plena...\n"
+"malaktivigas la maksimumigilon.\n"
+
+#: titlebar.cpp:496
+msgid ""
+"The right side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr ""
+"La dekstra flanko de la titollistelo estas plena...\n"
+"malaktibigas la maksimumigilon.\n"
+
+#: titlebar.cpp:536
+msgid ""
+"The left side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr ""
+"La maldekstra flanko de la titollistelo estas plena...\n"
+"malaktivigas la minimumigilon.\n"
+
+#: titlebar.cpp:569
+msgid ""
+"The right side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr ""
+"La dekstra flanko de la titollistelo estas plena...\n"
+"malaktivigas la minimumigilon.\n"
+
+#: titlebar.cpp:926
+msgid "Titlebar appearance"
+msgstr "Apera¼o de titollistelo"
+
+#: titlebar.cpp:928
+msgid "Shaded Vertically"
+msgstr "Vertikala kolorþanøo"
+
+#: titlebar.cpp:930
+msgid "Shaded Horizontally"
+msgstr "Horizontala kolorþanøo"
+
+#: titlebar.cpp:934
+msgid "Plain"
+msgstr "Plenkolora"
+
+#: titlebar.cpp:937 titlebar.cpp:958
+msgid "Pixmap"
+msgstr "Rastrobildo"
+
+#: titlebar.cpp:944
+msgid "Title Animation"
+msgstr "Titolanima¼o"
+
+#: desktop.cpp:91 titlebar.cpp:947
+msgid "ms"
+msgstr "ms"
+
+#: titlebar.cpp:969
+msgid "&Active pixmap"
+msgstr "por &aktiva titolo"
+
+#: titlebar.cpp:971
+msgid "&Inactive pixmap"
+msgstr "por &malaktiva titolo"
+
+#: titlebar.cpp:987
+msgid "Mouse action"
+msgstr "Musago"
+
+#: titlebar.cpp:989
+msgid ""
+"LeftMouseButton double click\n"
+"    on titlebar does:"
+msgstr ""
+"Æe duobla kliko per maldekstra musbutono\n"
+"    sur la titollistelon:"
+
+#: titlebar.cpp:993
+msgid "(Un)Maximize"
+msgstr "(Mal)Maksimumigu"
+
+#: titlebar.cpp:995
+msgid "(Un)Shade"
+msgstr "(Mal)Suprenvolvu"
+
+#: titlebar.cpp:996
+msgid "Iconify"
+msgstr "Piktogramigu"
+
+#: titlebar.cpp:997
+msgid "(Un)Sticky"
+msgstr "(Mal)Fiksu"
+
+#: titlebar.cpp:998
+msgid "Resize"
+msgstr "Þanøu la grandecon"
+
+#: titlebar.cpp:1000
+msgid "Operations Menu"
+msgstr "Montru agomenuon"
+
+#: windows.cpp:84
+msgid "Window movement"
+msgstr "Fenestromovado"
+
+#: windows.cpp:85
+msgid "Transparent"
+msgstr "Travidebla"
+
+#: windows.cpp:86 windows.cpp:95
+msgid "Opaque"
+msgstr "Netravidebla"
+
+#: windows.cpp:89
+msgid "Window resize"
+msgstr "Grandecoþanøo"
+
+#: windows.cpp:90
+msgid "Animation:"
+msgstr "Anima¼o:"
+
+#: windows.cpp:92
+msgid "Fast"
+msgstr "Rapida"
+
+#: windows.cpp:98
+msgid "Placement policy"
+msgstr "Lokadostrategio"
+
+#: windows.cpp:100
+msgid "Smart"
+msgstr "Inteligenta"
+
+#: windows.cpp:102
+msgid "Cascade"
+msgstr "Kaskada"
+
+#: windows.cpp:104
+msgid "Interactive"
+msgstr "Interaga"
+
+#: windows.cpp:106
+msgid "Random"
+msgstr "Hazarda"
+
+#: windows.cpp:108
+msgid "Manual"
+msgstr "Permana"
+
+#: windows.cpp:115
+msgid "Allowed Overlap:"
+msgstr "Permesita kovrado:"
+
+#: windows.cpp:122
+msgid "Maximize Style"
+msgstr "Maksimigomaniero"
+
+#: windows.cpp:123
+msgid "Maximize fully"
+msgstr "Maksimigu tute"
+
+#: windows.cpp:124
+msgid "Maximize vertically"
+msgstr "Maksimigu vertikale"
+
+#: windows.cpp:127
+msgid "Focus Policy"
+msgstr "Fokusigomaniero"
+
+#: windows.cpp:129
+msgid "Click to focus"
+msgstr "per kliko"
+
+#: windows.cpp:131
+msgid "Focus follows mouse"
+msgstr "sekvante la muson (inteligenta)"
+
+#: windows.cpp:133
+msgid "Classic focus follows mouse"
+msgstr "sekvante la muson (klasika)"
+
+#: windows.cpp:135
+msgid "Classic sloppy focus"
+msgstr "sekvante la muson"
+
+#: windows.cpp:144
+msgid ""
+"Auto raise delay\n"
+"(<100 disables)"
+msgstr ""
+"Aýtomata malfonigo\n"
+"post: (<100 elþaltas)"
+
+
+#: windows.cpp:147
+msgid "miliseconds"
+msgstr "milisekundoj"
+
+#: desktop.cpp:77
+msgid "Active desktop borders"
+msgstr "Þovi fenestrojn inter labortabuloj"
+
+#: desktop.cpp:79
+msgid "Enable active desktop borders"
+msgstr "Ebligu la þovadon de fenestroj trans limojn"
+
+#: desktop.cpp:81
+msgid "Move pointer towards center after switch"
+msgstr "Movu la montrilon al la centro post limtransiro"
+
+#: desktop.cpp:87
+msgid "Dekstop switch delay:"
+msgstr "Þalto al alia labortabulo post:"
+
+#: desktop.cpp:100
+msgid "Magic Borders"
+msgstr "Magiaj limoj"
+
+#: desktop.cpp:102
+msgid ""
+"Border Snap Zone:\n"
+"       (pixels)"
+msgstr ""
+"Kaptdistanco de limoj:\n"
+"       (bildpunktoj)"
+
+#: desktop.cpp:116
+msgid ""
+"Window Snap Zone:\n"
+"       (pixels)"
+msgstr ""
+"Kaptdistanco de fenestroj:\n"
+"       (bildpunktoj)"
+
+
+
+
+
+
