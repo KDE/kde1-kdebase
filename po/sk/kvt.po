@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kvt 0.18.1\n"
-"POT-Creation-Date: 1998-03-20 00:05+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -193,7 +193,6 @@ msgstr ""
 "-e <príkaz> <arg> ...     prevedie príkaz s parametrami - musí by» posledný\n"
 "                          argument\n"
 
-
 #: main.C:1157
 msgid "-display <name>           specify the display (server)\n"
 msgstr "-display <meno>           ¹pecifikuje display (server)\n"
@@ -277,7 +276,8 @@ msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
-"-meta <arg>               spracuj Meta s prefixom ESCAPE, nastaveným 8. bitom\n"
+"-meta <arg>               spracuj Meta s prefixom ESCAPE, nastaveným 8. "
+"bitom\n"
 "                          alebo ignoruj\n"
 
 #: main.C:1177
@@ -291,10 +291,8 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
-"-pageup <keysym>          hotkey alt-keysym na prechádzanie hore "
-"bufferom\n"
-"-pagedown <keysym>        hotkey alt-keysym na prechádzanie dole "
-"bufferom\n"
+"-pageup <keysym>          hotkey alt-keysym na prechádzanie hore bufferom\n"
+"-pagedown <keysym>        hotkey alt-keysym na prechádzanie dole bufferom\n"
 
 #: main.C:1182
 msgid ""
@@ -303,4 +301,3 @@ msgid ""
 msgstr ""
 "-grk9\\t\\tgreek kbd = ELOT 928 (¹tandardná)\n"
 "-grk4\\t\\tgreek kbd = IBM 437\n"
-

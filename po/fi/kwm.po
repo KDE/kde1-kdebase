@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KWM\n"
-"POT-Creation-Date: 1998-03-19 22:16+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,11 +99,11 @@ msgstr "Seitsemän"
 msgid "Eight"
 msgstr "Kahdeksan"
 
-#: main.C:866
+#: main.C:855
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Jotkut kuvat eivät ole kunnossa: ShapeMode poistettu\n"
 
-#: main.C:1175
+#: main.C:1164
 msgid "*** No Tasks ***"
 msgstr "*** Ei töitä ***"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-19 22:17+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -151,16 +151,8 @@ msgstr ""
 msgid "Device"
 msgstr ""
 
-#: entrydialog.cpp:63
-msgid "Type:"
-msgstr ""
-
 #: entrydialog.cpp:69
 msgid "File Name:"
-msgstr ""
-
-#: entrydialog.cpp:82
-msgid "Name:"
 msgstr ""
 
 #: entrydialog.cpp:95

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-03-19 22:17+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-01-05 20:56+0200\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
 
@@ -159,17 +159,9 @@ msgstr "Σύνδεσμος"
 msgid "Device"
 msgstr "Συσκευή"
 
-#: entrydialog.cpp:63
-msgid "Type:"
-msgstr "Τύπος:"
-
 #: entrydialog.cpp:69
 msgid "File Name:"
 msgstr "Όνομα αρχείου:"
-
-#: entrydialog.cpp:82
-msgid "Name:"
-msgstr "Όνομα:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"
@@ -261,6 +253,12 @@ msgstr "Προσωπικά:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Προκαθορισμένα:"
+
+#~ msgid "Type:"
+#~ msgstr "Τύπος:"
+
+#~ msgid "Name:"
+#~ msgstr "Όνομα:"
 
 #~ msgid ""
 #~ "KMenuedit 0.2.3\n"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm 0.10.23\n"
-"POT-Creation-Date: 1998-03-19 22:16+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -105,11 +105,11 @@ msgstr "Siedma"
 msgid "Eight"
 msgstr "Ôsma"
 
-#: main.C:866
+#: main.C:855
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Niektoré pixmapy nie sú korektné: ShapeMode vypnutý\n"
 
-#: main.C:1175
+#: main.C:1164
 msgid "*** No Tasks ***"
 msgstr "*** ®iadne úlohy ***"
 

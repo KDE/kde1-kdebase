@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kvt 0.18.1\n"
-"POT-Creation-Date: 1998-03-20 00:05+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-03-28 22:41 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -189,7 +189,9 @@ msgstr "Povolené parametry jsou:\n"
 #: main.C:1156
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
-msgstr "-e <pøíkaz> <param> ...   Vykonat pøíkaz s parametry - musí být posledním parametrem\n"
+msgstr ""
+"-e <pøíkaz> <param> ...   Vykonat pøíkaz s parametry - musí být posledním "
+"parametrem\n"
 
 #: main.C:1157
 msgid "-display <name>           specify the display (server)\n"
@@ -266,18 +268,22 @@ msgid ""
 "(default)\n"
 msgstr ""
 "-ls                       inicializovat shell kvt jako login shell\n"
-"-ls-                      neinicializovat shell kvt jako login shell (implicictì)\n"
+"-ls-                      neinicializovat shell kvt jako login shell "
+"(implicictì)\n"
 
 #: main.C:1176
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
-"-meta                     obsluhovat Meta s ESCAPE prefixem, 8THBIT nastaveno, nebo ignorovat\n"
+"-meta                     obsluhovat Meta s ESCAPE prefixem, 8THBIT "
+"nastaveno, nebo ignorovat\n"
 
 #: main.C:1177
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr "-sl <number>              ukládá <number> øádkù do vyrovnávací pamìti pro zpìtné posunování li¹ty\n"
+msgstr ""
+"-sl <number>              ukládá <number> øádkù do vyrovnávací pamìti pro "
+"zpìtné posunování li¹ty\n"
 
 #: main.C:1178
 msgid ""
@@ -286,8 +292,10 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
-"-pageup <keysym>          pou¾ívat klávesovou zkratku ALT-<keysym> k posunování li¹ty nahoru vyrovnávací pamìtí\n"
-"-pagedown <keysym>        pou¾ívat klávesovou zkratku ALT-<keysym> k posunování\n"
+"-pageup <keysym>          pou¾ívat klávesovou zkratku ALT-<keysym> k "
+"posunování li¹ty nahoru vyrovnávací pamìtí\n"
+"-pagedown <keysym>        pou¾ívat klávesovou zkratku ALT-<keysym> k "
+"posunování\n"
 
 #: main.C:1182
 msgid ""

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay VERSION\n"
-"POT-Creation-Date: 1998-03-22 22:46+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-02-26 19:20+0100\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -11,244 +11,246 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: backgnd.cpp:59
+#: backgnd.cpp:57
 msgid "Enter new desktop name"
 msgstr ""
 
-#: backgnd.cpp:112 backgnd.cpp:147
+#: backgnd.cpp:113 backgnd.cpp:148
 msgid "Desktop"
 msgstr "Asztal"
 
-#: backgnd.cpp:162
+#: backgnd.cpp:165
 #, fuzzy
 msgid "&Rename ..."
 msgstr "Átnevez"
 
-#: backgnd.cpp:182 colorscm.cpp:90
+#: backgnd.cpp:191 colorscm.cpp:93
 #, fuzzy
 msgid "Colors"
 msgstr "&Színek"
 
-#: backgnd.cpp:205
+#: backgnd.cpp:218
 #, fuzzy
 msgid "&One Color"
 msgstr "&Színek"
 
-#: backgnd.cpp:217
+#: backgnd.cpp:235
 #, fuzzy
 msgid "&Two Color"
 msgstr "&Színek"
 
-#: backgnd.cpp:235
-msgid "Blen&d"
-msgstr ""
-
-#: backgnd.cpp:241
-msgid "&Pattern"
-msgstr ""
-
-#: backgnd.cpp:249
+#: backgnd.cpp:254
 #, fuzzy
 msgid "Set&up ..."
 msgstr "Beállítás..."
 
-#: backgnd.cpp:259
+#: backgnd.cpp:263
 msgid "Wallpaper"
 msgstr "Tapéta"
 
-#: backgnd.cpp:269
+#: backgnd.cpp:273
 #, fuzzy
 msgid "Ti&led"
 msgstr "Ismétlõdõ"
 
-#: backgnd.cpp:275
+#: backgnd.cpp:281
 #, fuzzy
 msgid "&Centred"
 msgstr "Középen"
 
-#: backgnd.cpp:281
+#: backgnd.cpp:289
 #, fuzzy
 msgid "&Scaled"
 msgstr "Nyújtott"
 
-#: backgnd.cpp:317
+#: backgnd.cpp:305 backgnd.cpp:425 backgnd.cpp:438 backgnd.cpp:783
+#, fuzzy
+msgid "No wallpaper"
+msgstr "Tapéta"
+
+#: backgnd.cpp:333
 msgid "&Browse..."
 msgstr ""
 
-#: backgnd.cpp:484
+#: backgnd.cpp:530
 #, fuzzy
 msgid "Default"
 msgstr "KDE alap"
 
-#: backgnd.cpp:810
+#: backgnd.cpp:861
 #, fuzzy
 msgid "Desktop names"
 msgstr "Asztal"
 
-#: backgnd.cpp:847
-msgid "Two color background setup"
+#: backgnd.cpp:907
+#, fuzzy
+msgid "Two color backgrounds"
+msgstr "Háttér kiválasztása"
+
+#: backgnd.cpp:944
+msgid "Blend colors from &top to bottom"
 msgstr ""
 
-#: backgnd.cpp:893
-msgid "Pattern name"
+#: backgnd.cpp:950
+msgid "Blend colors from &right to left"
 msgstr ""
 
-#: backgnd.cpp:900
+#: backgnd.cpp:956
+msgid "Use &pattern"
+msgstr ""
+
+#: backgnd.cpp:983
 msgid "Preview"
 msgstr ""
 
-#: backgnd.cpp:922
-msgid "&Blend colors from right to left"
+#: backgnd.cpp:994
+msgid "Pattern &name"
 msgstr ""
 
-#: backgnd.cpp:953
+#: backgnd.cpp:1033
 msgid "Current"
 msgstr ""
 
-#: backgnd.cpp:984
+#: backgnd.cpp:1093
 #, fuzzy
 msgid "Filled"
 msgstr "Ismétlõdõ"
 
-#: backgnd.cpp:987
+#: backgnd.cpp:1096
 msgid "Fish net"
 msgstr ""
 
-#: backgnd.cpp:990
+#: backgnd.cpp:1099
 msgid "Triangles"
 msgstr ""
 
-#: backgnd.cpp:993
+#: backgnd.cpp:1102
 msgid "Flowers"
 msgstr ""
 
-#: backgnd.cpp:996
+#: backgnd.cpp:1105
 msgid "Rattan"
 msgstr ""
 
-#: backgnd.cpp:999
+#: backgnd.cpp:1108
 msgid "Cobbled Pavement"
 msgstr ""
 
-#: colorscm.cpp:120
+#: colorscm.cpp:119
 msgid "Color Scheme"
 msgstr "Szín kompozíció"
 
-#: colorscm.cpp:131
+#: colorscm.cpp:130
 #, fuzzy
 msgid "Current scheme"
 msgstr "Szín kompozíció"
 
-#: colorscm.cpp:133
+#: colorscm.cpp:132
 #, fuzzy
 msgid "KDE default"
 msgstr "KDE alap"
 
-#: colorscm.cpp:146
+#: colorscm.cpp:145
 msgid "&Add ..."
 msgstr ""
 
-#: colorscm.cpp:152
+#: colorscm.cpp:153
 #, fuzzy
 msgid "&Remove"
 msgstr "Kompozíció mentése"
 
-#: colorscm.cpp:159
+#: colorscm.cpp:162
 msgid "&Save changes"
 msgstr ""
 
-#: colorscm.cpp:170
+#: colorscm.cpp:176
 msgid "Widget color"
 msgstr "Widget színe"
 
-#: colorscm.cpp:177
+#: colorscm.cpp:183
 msgid "Inactive title bar"
 msgstr "Inaktív címsor"
 
-#: colorscm.cpp:178
+#: colorscm.cpp:184
 msgid "Inactive title text"
 msgstr "Inaktív címsor szövege"
 
-#: colorscm.cpp:179
+#: colorscm.cpp:185
 #, fuzzy
 msgid "Inactive title blend"
 msgstr "Inaktív címsor"
 
-#: colorscm.cpp:180
+#: colorscm.cpp:186
 msgid "Active title bar"
 msgstr "Aktív címsor"
 
-#: colorscm.cpp:181
+#: colorscm.cpp:187
 msgid "Active title text"
 msgstr "Aktív címsor szövege"
 
-#: colorscm.cpp:182
+#: colorscm.cpp:188
 #, fuzzy
 msgid "Active title blend"
 msgstr "Aktív címsor"
 
-#: colorscm.cpp:183
+#: colorscm.cpp:189
 msgid "Background"
 msgstr "Háttér"
 
-#: colorscm.cpp:184
+#: colorscm.cpp:190
 msgid "Text"
 msgstr "Szöveg"
 
-#: colorscm.cpp:185
+#: colorscm.cpp:191
 msgid "Select background"
 msgstr "Háttér kiválasztása"
 
-#: colorscm.cpp:186
+#: colorscm.cpp:192
 msgid "Select text"
 msgstr "Szöveg kiválasztása"
 
-#: colorscm.cpp:187
+#: colorscm.cpp:193
 msgid "Window background"
 msgstr "Ablak háttere"
 
-#: colorscm.cpp:188 widgetcanvas.cpp:164 widgetcanvas.cpp:165
+#: colorscm.cpp:194 widgetcanvas.cpp:175 widgetcanvas.cpp:176
 msgid "Window text"
 msgstr "Ablak szövege"
 
-#: colorscm.cpp:208
+#: colorscm.cpp:222
 msgid "Contrast"
 msgstr "Kontraszt"
 
-#: colorscm.cpp:221
+#: colorscm.cpp:238
 #, fuzzy
 msgid "&Low"
 msgstr "Kicsi"
 
-#: colorscm.cpp:229
+#: colorscm.cpp:246
 msgid "High"
 msgstr "Nagy"
 
-#: colorscm.cpp:295
+#: colorscm.cpp:318
 msgid "Error removing"
 msgstr ""
 
-#: colorscm.cpp:296
+#: colorscm.cpp:319
 msgid ""
 "This color scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
 "system where the color scheme is stored."
 msgstr ""
 
-#: colorscm.cpp:355
+#: colorscm.cpp:376
 msgid "Naming error"
 msgstr ""
 
-#: colorscm.cpp:356
+#: colorscm.cpp:377
 msgid ""
 "Please choose a unique name for the new color\n"
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
-
-#: kwmcom.cpp:78 kwmcom.cpp:105
-msgid "kwmcom: communication with kwm failed\n"
-msgstr "kwmcom: nem lehet kapcsolatba lépni a kwm-mel\n"
 
 #: savescm.cpp:18
 #, fuzzy
@@ -268,105 +270,98 @@ msgstr ""
 msgid "Ignore"
 msgstr "Kihagy"
 
-#: scrnsave.cpp:50
-msgid "Lock"
-msgstr "Zárol"
+#: scrnsave.cpp:49
+msgid "Save Screen"
+msgstr ""
 
-#: scrnsave.cpp:108 scrnsave.cpp:177
+#: scrnsave.cpp:50
+msgid "Lock Screen"
+msgstr ""
+
+#: scrnsave.cpp:110 scrnsave.cpp:179
 msgid "Screen Saver"
 msgstr "Képernyõvédõ"
 
-#: scrnsave.cpp:203
+#: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:548 scrnsave.cpp:657
+#, fuzzy
+msgid "No screensaver"
+msgstr "&Képernyõvédõ"
+
+#: scrnsave.cpp:207
 #, fuzzy
 msgid "&Setup ..."
 msgstr "Beállítás..."
 
-#: scrnsave.cpp:209
+#: scrnsave.cpp:215
 #, fuzzy
 msgid "&Test"
 msgstr "Tesztelés"
 
-#: scrnsave.cpp:219
+#: scrnsave.cpp:228
 msgid "Settings"
 msgstr "Beállítások"
 
-#: scrnsave.cpp:237
+#: scrnsave.cpp:248
 msgid "&Wait for"
 msgstr ""
 
-#: scrnsave.cpp:246
+#: scrnsave.cpp:258
 #, fuzzy
 msgid "min."
 msgstr "percet"
 
-#: scrnsave.cpp:252
+#: scrnsave.cpp:264
 #, fuzzy
 msgid "&Require password"
 msgstr "Jelszó szükséges"
 
-#: scrnsave.cpp:259
+#: scrnsave.cpp:272
 #, fuzzy
 msgid "Priority"
 msgstr "Prioritás"
 
-#: scrnsave.cpp:272
+#: scrnsave.cpp:285
 #, fuzzy
 msgid "&High"
 msgstr "Nagy"
 
-#: scrnsave.cpp:281
+#: scrnsave.cpp:294
 msgid "Low"
 msgstr "Kicsi"
 
-#: general.cpp:84
-msgid "&Bold"
-msgstr ""
-
-#: general.cpp:91
-msgid "&Italic"
-msgstr ""
-
-#: general.cpp:225
+#: general.cpp:147
 #, fuzzy
-msgid "default"
-msgstr "KDE alap"
+msgid "Fonts etc."
+msgstr "Betûk"
 
-#: general.cpp:228
-msgid "any"
-msgstr "bármelyik"
-
-#: general.cpp:320
-msgid "General"
-msgstr "Általános"
-
-#: general.cpp:327
+#: general.cpp:153
 msgid "&Draw widgets in the style of Windows 95"
 msgstr ""
 
-#: general.cpp:351
+#: general.cpp:167
 #, fuzzy
 msgid "Desktop fonts"
 msgstr "Asztal"
 
-#: general.cpp:374
+#: general.cpp:179
 msgid "General font"
 msgstr "Általános betû"
 
-#: general.cpp:375
+#: general.cpp:184
 msgid "Fixed font"
 msgstr ""
 
-#: general.cpp:376
+#: general.cpp:189
 #, fuzzy
 msgid "Window title font"
 msgstr "Ablak szövege"
 
-#: general.cpp:377
+#: general.cpp:194
 #, fuzzy
 msgid "Panel button font"
 msgstr "Általános betû"
 
-#: general.cpp:378
+#: general.cpp:199
 msgid "Panel clock font"
 msgstr ""
 
@@ -388,27 +383,53 @@ msgstr "&Képernyõvédõ"
 msgid "&Colors"
 msgstr "&Színek"
 
-#: main.cpp:78
+#: main.cpp:77
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr ""
 "használat: kcmdisplay [-init | {háttér,képernyõkímélõ,színek,stílus}]\n"
 
-#: main.cpp:118
+#: main.cpp:117
 msgid "Display settings"
 msgstr "Beállítások megjelenítése"
 
-#: widgetcanvas.cpp:108 widgetcanvas.cpp:109
+#: widgetcanvas.cpp:104 widgetcanvas.cpp:105
 msgid "Inactive window"
 msgstr "Inaktív ablak"
 
-#: widgetcanvas.cpp:128 widgetcanvas.cpp:129
+#: widgetcanvas.cpp:132 widgetcanvas.cpp:133
 msgid "Active window"
 msgstr "Aktív ablak"
 
-#: widgetcanvas.cpp:177 widgetcanvas.cpp:178
+#: widgetcanvas.cpp:189 widgetcanvas.cpp:190
 #, fuzzy
 msgid "Selected text"
 msgstr "Szöveg kiválasztása"
+
+#: fontchooser.cpp:89
+msgid "&Bold"
+msgstr ""
+
+#: fontchooser.cpp:96
+msgid "&Italic"
+msgstr ""
+
+#: fontchooser.cpp:262
+#, fuzzy
+msgid "default"
+msgstr "KDE alap"
+
+#: fontchooser.cpp:265
+msgid "any"
+msgstr "bármelyik"
+
+#~ msgid "kwmcom: communication with kwm failed\n"
+#~ msgstr "kwmcom: nem lehet kapcsolatba lépni a kwm-mel\n"
+
+#~ msgid "Lock"
+#~ msgstr "Zárol"
+
+#~ msgid "General"
+#~ msgstr "Általános"
 
 #, fuzzy
 #~ msgid "&New scheme ..."

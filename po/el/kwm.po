@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-03-19 22:16+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-1-3 20:45 GMT+2\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
 
@@ -99,11 +99,11 @@ msgstr "Εφτά"
 msgid "Eight"
 msgstr "Οχτώ"
 
-#: main.C:866
+#: main.C:855
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr ""
 
-#: main.C:1175
+#: main.C:1164
 #, fuzzy
 msgid "*** No Tasks ***"
 msgstr "*** Δεν υπάρχουν εργασίες  ***"

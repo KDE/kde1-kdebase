@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-19 22:18+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,8 @@ msgstr "&Radne povr¹ine"
 
 #: main.cpp:74
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
-msgstr "uporaba: kcmkwm [-init | {prozori,gumbi,naslovna traka,radne povr¹ine}]\n"
+msgstr ""
+"uporaba: kcmkwm [-init | {prozori,gumbi,naslovna traka,radne povr¹ine}]\n"
 
 #: main.cpp:105
 msgid "Window manager style"
@@ -56,20 +57,17 @@ msgstr "Izbornik"
 #: titlebar.cpp:463
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr ""
-"Lijeva strana naslovne trake je puna... onemoguæujem 'Poveæaj' gumb\n"
+msgstr "Lijeva strana naslovne trake je puna... onemoguæujem 'Poveæaj' gumb\n"
 
 #: titlebar.cpp:496
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr ""
-"Desna strana naslovne trake je puna... onemoguæujem 'Poveæaj' gumb\n"
+msgstr "Desna strana naslovne trake je puna... onemoguæujem 'Poveæaj' gumb\n"
 
 #: titlebar.cpp:536
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr ""
-"Lijeva strana naslovne trake je puna... onemoguæujem 'Smanji' gumb\n"
+msgstr "Lijeva strana naslovne trake je puna... onemoguæujem 'Smanji' gumb\n"
 
 #: titlebar.cpp:569
 msgid ""
@@ -96,7 +94,7 @@ msgstr "Pixmapa"
 msgid "Title Animation"
 msgstr "Naslovna animacija"
 
-#: desktop.cpp:93 titlebar.cpp:943
+#: desktop.cpp:91 titlebar.cpp:943
 msgid "ms"
 msgstr "ms"
 
@@ -234,31 +232,27 @@ msgstr ""
 msgid "miliseconds"
 msgstr "milisekundi"
 
-#: desktop.cpp:79
+#: desktop.cpp:77
 msgid "Active desktop borders"
 msgstr "Aktivni rubovi radne povr¹ine"
 
-#: desktop.cpp:81
+#: desktop.cpp:79
 msgid "Enable active desktop borders"
-msgstr "Omoguæi aktivne rubove radne povr¹ine" 
+msgstr "Omoguæi aktivne rubove radne povr¹ine"
 
-#: desktop.cpp:83
+#: desktop.cpp:81
 msgid "Move pointer towards center after switch"
 msgstr "Premjesti pokazivaè prema centru nakon promjene"
 
-#: desktop.cpp:89
+#: desktop.cpp:87
 msgid "Dekstop switch delay:"
 msgstr "Ka¹njenje prilikom promjene radne povr¹ine:"
 
-#: desktop.cpp:102
+#: desktop.cpp:100
 msgid "Magic Borders"
 msgstr "Magièni rubovi"
 
-#: desktop.cpp:104
-msgid "Edge Resistance:"
-msgstr "Otpor ivice:"
-
-#: desktop.cpp:118
+#: desktop.cpp:102
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
@@ -266,10 +260,13 @@ msgstr ""
 "Border Snap Zone:\n"
 "       (pikseli)"
 
-#: desktop.cpp:132
+#: desktop.cpp:116
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
 "Window Snap Zone:\n"
 "       (pikseli)"
+
+#~ msgid "Edge Resistance:"
+#~ msgstr "Otpor ivice:"

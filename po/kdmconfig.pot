@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-19 22:18+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,76 +53,84 @@ msgstr ""
 msgid "Missing privileges"
 msgstr ""
 
-#: kdm-appear.cpp:66
+#: kdm-appear.cpp:67
 msgid "Appearance"
 msgstr ""
 
-#: kdm-appear.cpp:69
+#: kdm-appear.cpp:70
 msgid "Greeting string:"
 msgstr ""
 
-#: kdm-appear.cpp:77
+#: kdm-appear.cpp:78
 msgid "KDM logo:"
 msgstr ""
 
-#: kdm-appear.cpp:104 kdm-users.cpp:135
+#: kdm-appear.cpp:105 kdm-users.cpp:135
 msgid "Click or drop an image here"
 msgstr ""
 
-#: kdm-appear.cpp:109
+#: kdm-appear.cpp:110
 msgid "GUI Style:"
 msgstr ""
 
-#: kdm-appear.cpp:115
+#: kdm-appear.cpp:116
 msgid "Motif"
 msgstr ""
 
-#: kdm-appear.cpp:116
+#: kdm-appear.cpp:117
 msgid "Windows"
 msgstr ""
 
-#: kdm-appear.cpp:143 kdm-appear.cpp:227 kdm-users.cpp:275
+#: kdm-appear.cpp:128
+msgid "Language"
+msgstr ""
+
+#: kdm-appear.cpp:131
+msgid "Language:"
+msgstr ""
+
+#: kdm-appear.cpp:168 kdm-appear.cpp:252 kdm-users.cpp:275
 msgid ""
 "There was an error loading the image:\n"
 ">"
 msgstr ""
 
-#: kdm-appear.cpp:145 kdm-appear.cpp:164 kdm-users.cpp:195
+#: kdm-appear.cpp:170 kdm-appear.cpp:189 kdm-users.cpp:195
 msgid "<"
 msgstr ""
 
-#: kdm-appear.cpp:146 kdm-appear.cpp:165 kdm-appear.cpp:230 kdm-users.cpp:196
+#: kdm-appear.cpp:171 kdm-appear.cpp:190 kdm-appear.cpp:255 kdm-users.cpp:196
 #: kdm-users.cpp:278
 msgid "ERROR"
 msgstr ""
 
-#: kdm-appear.cpp:162 kdm-users.cpp:193
+#: kdm-appear.cpp:187 kdm-users.cpp:193
 msgid ""
 "There was an error saving the image:\n"
 ">"
 msgstr ""
 
-#: kdm-appear.cpp:195 kdm-users.cpp:226
+#: kdm-appear.cpp:220 kdm-users.cpp:226
 msgid "Sorry, but \n"
 msgstr ""
 
-#: kdm-appear.cpp:197 kdm-users.cpp:228
+#: kdm-appear.cpp:222 kdm-users.cpp:228
 msgid ""
 "\n"
 "does not seem to be an image file"
 msgstr ""
 
-#: kdm-appear.cpp:198 kdm-users.cpp:229
+#: kdm-appear.cpp:223 kdm-users.cpp:229
 msgid ""
 "\n"
 "Please use files with these extensions\n"
 msgstr ""
 
-#: kdm-appear.cpp:200 kdm-users.cpp:231
+#: kdm-appear.cpp:225 kdm-users.cpp:231
 msgid "Improper File Extension"
 msgstr ""
 
-#: kdm-appear.cpp:229 kdm-users.cpp:277
+#: kdm-appear.cpp:254 kdm-users.cpp:277
 msgid ""
 "<\n"
 "It will not be saved..."
@@ -254,4 +262,8 @@ msgstr ""
 
 #: kdm-sess.cpp:98
 msgid "Available types"
+msgstr ""
+
+#: klangcombo.cpp:133
+msgid "without name!"
 msgstr ""

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-03-30 13:43+0200\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-03-30 16:29+01\n"
 "Last-Translator: Oliver Hensel <oliver.hensel@gmx.de>\n"
 
@@ -93,7 +93,7 @@ msgstr "Pixmap"
 msgid "Title Animation"
 msgstr "Bewegung des Titels"
 
-#: desktop.cpp:93 titlebar.cpp:943
+#: desktop.cpp:91 titlebar.cpp:943
 msgid "ms"
 msgstr "ms"
 
@@ -229,31 +229,27 @@ msgstr ""
 msgid "miliseconds"
 msgstr "Millisekunden"
 
-#: desktop.cpp:79
+#: desktop.cpp:77
 msgid "Active desktop borders"
 msgstr "Aktive Desktop-Ränder"
 
-#: desktop.cpp:81
+#: desktop.cpp:79
 msgid "Enable active desktop borders"
 msgstr "Aktive Desktop-Ränder an"
 
-#: desktop.cpp:83
+#: desktop.cpp:81
 msgid "Move pointer towards center after switch"
 msgstr "Zeiger nach einem Wechsel in die Mitte setzen"
 
-#: desktop.cpp:89
+#: desktop.cpp:87
 msgid "Dekstop switch delay:"
 msgstr "Zeitraum für Desktop-Wechsel:"
 
-#: desktop.cpp:102
+#: desktop.cpp:100
 msgid "Magic Borders"
 msgstr "Magic Ränder"
 
-#: desktop.cpp:104
-msgid "Edge Resistance:"
-msgstr "Widerstand am Rand:"
-
-#: desktop.cpp:118
+#: desktop.cpp:102
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
@@ -261,10 +257,13 @@ msgstr ""
 "Rand-Einrastzone:\n"
 "       (Pixel)"
 
-#: desktop.cpp:132
+#: desktop.cpp:116
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
 "Fenster-Einrastzone:\n"
 "       (Pixel)"
+
+#~ msgid "Edge Resistance:"
+#~ msgstr "Widerstand am Rand:"

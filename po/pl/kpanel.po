@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel \n"
-"POT-Creation-Date: 1998-03-19 22:16+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-03-25 21:41+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -14,78 +14,98 @@ msgstr "Przesuñ"
 msgid "Properties"
 msgstr "W³a¶ciwo¶ci"
 
-#: kpanel.C:252
+#: kpanel.C:253
 msgid "Go!"
 msgstr "Id¼!"
 
-#: kpanel.C:254 tools.C:797
+#: kpanel.C:256 tools.C:795
 msgid "Where do you want to go tomorrow?"
 msgstr "Uruchom rozs±dek - systemy otwarte"
 
-#: kpanel.C:327
+#: kpanel.C:329
 msgid "No info available"
 msgstr "Informacje niedostêpne"
 
-#: kpanel.C:366 props.C:151 props.C:152
+#: kpanel.C:368 props.C:156 props.C:157
 msgid "Logout"
 msgstr "Wyloguj siê"
 
-#: kpanel.C:374 props.C:150
+#: kpanel.C:376 props.C:155
 msgid "Lock screen"
 msgstr "Zablokuj ekran"
 
-#: kpanel.C:383
+#: kpanel.C:385
 msgid "Hide the panel"
 msgstr "Ukryj panel"
 
-#: kpanel.C:393
+#: kpanel.C:395
 msgid "Show the panel"
 msgstr "Poka¿ panel"
 
-#: kpanel.C:1092 tools.C:613
+#: kpanel.C:1093 tools.C:611
 msgid "No comment available"
 msgstr "Brak komentarza"
 
-#: kpanel.C:1101 tools.C:806
+#: kpanel.C:1102 tools.C:804
 msgid "Windowlist"
 msgstr "Lista okien"
 
-#: props.C:134
+#: props.C:136
 msgid "Add application"
 msgstr "Dodaj aplikacjê"
 
-#: props.C:136
+#: props.C:138
 msgid "Add an application or a submenu onto the panel"
 msgstr "Dodaj aplikacjê lub podmenu do panelu"
 
-#: props.C:137
+#: props.C:139
 msgid "Add windowlist"
 msgstr "Dodaj listê okien"
 
-#: props.C:139
+#: props.C:141
 msgid "Add a windowlist menu onto the panel"
 msgstr "Dodaj listê okien do panelu"
 
-#: events.C:705 props.C:140
+#: events.C:705 props.C:142
 msgid "Configure"
 msgstr "Konfiguruj"
 
-#: props.C:142
+#: props.C:144
 msgid "Configure panel"
 msgstr "Konfiguruj panel"
 
-#: events.C:707 props.C:143
+#: props.C:145
+msgid "Edit Menus"
+msgstr ""
+
+#: props.C:147
+msgid "Add or remove applications in the menu structure "
+msgstr ""
+
+#: events.C:707 props.C:148
 msgid "Restart"
 msgstr "Od¶wie¿"
 
-#: props.C:145
+#: props.C:150
 msgid "Restart panel"
 msgstr "Od¶wie¿ panel"
 
-#: props.C:146
+#: props.C:151
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:148
+#: props.C:153
 msgid "Lock Screen"
 msgstr "Zablokuj ekran"
+
+#: props.C:307
+msgid "The menu editor is not installed."
+msgstr ""
+
+#: events.C:743 props.C:308
+msgid "Oops!"
+msgstr ""
+
+#: events.C:742
+msgid "Cannot put this as button onto the panel!"
+msgstr ""

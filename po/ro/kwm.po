@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-19 22:16+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ionescu Paul <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -106,11 +106,11 @@ msgstr "ªapte"
 msgid "Eight"
 msgstr "Opt"
 
-#: main.C:866
+#: main.C:855
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Niºte pixmap-uri sunt defecte: ShapeMode nu este activat\n"
 
-#: main.C:1175
+#: main.C:1164
 msgid "*** No Tasks ***"
 msgstr "*** Nici un Program ***"
 

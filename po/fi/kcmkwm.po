@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMKWM\n"
-"POT-Creation-Date: 1998-03-19 22:18+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,7 +94,7 @@ msgstr "Kuva"
 msgid "Title Animation"
 msgstr "Otsikon animaatio"
 
-#: desktop.cpp:93 titlebar.cpp:943
+#: desktop.cpp:91 titlebar.cpp:943
 msgid "ms"
 msgstr "ms"
 
@@ -230,31 +230,27 @@ msgstr ""
 msgid "miliseconds"
 msgstr "millisekuntia"
 
-#: desktop.cpp:79
+#: desktop.cpp:77
 msgid "Active desktop borders"
 msgstr "Aktiiviset työpöydän reunat"
 
-#: desktop.cpp:81
+#: desktop.cpp:79
 msgid "Enable active desktop borders"
 msgstr "Käytä aktiivisia työpöydän reunoja"
 
-#: desktop.cpp:83
+#: desktop.cpp:81
 msgid "Move pointer towards center after switch"
 msgstr "Siirrä osoitin ruudun keskustaan"
 
-#: desktop.cpp:89
+#: desktop.cpp:87
 msgid "Dekstop switch delay:"
 msgstr "Työpöydän vaihtoviive:"
 
-#: desktop.cpp:102
+#: desktop.cpp:100
 msgid "Magic Borders"
 msgstr "Aktiiviset reunukset"
 
-#: desktop.cpp:104
-msgid "Edge Resistance:"
-msgstr "Reunuksen vastustus:"
-
-#: desktop.cpp:118
+#: desktop.cpp:102
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
@@ -262,10 +258,13 @@ msgstr ""
 "Reunan vaihtoalue:\n"
 "       (pisteitä)"
 
-#: desktop.cpp:132
+#: desktop.cpp:116
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
 "Ikkunan vaihtoalue:\n"
 "       (pisteitä)"
+
+#~ msgid "Edge Resistance:"
+#~ msgstr "Reunuksen vastustus:"

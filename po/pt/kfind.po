@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -13,7 +13,43 @@ msgstr "Directorias:"
 msgid "Cannot open or read directory."
 msgstr "Não foi possível abrir ou ler a directoria."
 
-#: kfindtop.cpp:118
+#: kfindtop.cpp:115
+msgid "&Open"
+msgstr "&Abrir"
+
+#: kfindtop.cpp:117
+msgid "&Add to archive"
+msgstr "A&dicionar ao arquivo"
+
+#: kfindtop.cpp:122
+msgid "&Properties"
+msgstr "&Propriedades"
+
+#: kfindtop.cpp:125
+msgid "Open Containing &Folder"
+msgstr "Ab&rir a Pasta que Contem"
+
+#: kfindtop.cpp:128
+msgid "&Save Search"
+msgstr "&Gravar Pesquisa"
+
+#: kfindtop.cpp:140
+msgid "&Cut"
+msgstr "&Cortar"
+
+#: kfindtop.cpp:145
+msgid "&Select All"
+msgstr "&Seleccionar Todos"
+
+#: kfindtop.cpp:147
+msgid "&Invert Selection"
+msgstr "&Inverter Selecção"
+
+#: kfindtop.cpp:158
+msgid "&Preferences ..."
+msgstr "&Preferências ..."
+
+#: kfindtop.cpp:163
 #, c-format
 msgid ""
 "KFind %s\n"
@@ -29,223 +65,179 @@ msgstr ""
 "Agradecimentos a Stephan Kulow\n"
 "<coolo@kde.org>"
 
-#: kfindtop.cpp:136
-msgid "&Open"
-msgstr "&Abrir"
-
-#: kfindtop.cpp:138
-msgid "&Add to archive"
-msgstr "A&dicionar ao arquivo"
-
-#: kfindtop.cpp:143
-msgid "&Properties"
-msgstr "&Propriedades"
-
-#: kfindtop.cpp:146
-msgid "Open Containing &Folder"
-msgstr "Ab&rir a Pasta que Contem"
-
-#: kfindtop.cpp:149
-msgid "&Save Search"
-msgstr "&Gravar Pesquisa"
-
-#: kfindtop.cpp:161
-msgid "&Cut"
-msgstr "&Cortar"
-
-#: kfindtop.cpp:166
-msgid "&Select All"
-msgstr "&Seleccionar Todos"
-
-#: kfindtop.cpp:168
-msgid "&Invert Selection"
-msgstr "&Inverter Selecção"
-
-#: kfindtop.cpp:179
-msgid "&Preferences ..."
-msgstr "&Preferências ..."
-
 #: kfindtop.cpp:183
-msgid "Kfind &help"
-msgstr "&Ajuda do Kfind"
-
-#: kfindtop.cpp:186
-msgid "About &Qt"
-msgstr "Acerca do &Qt"
-
-#: kfindtop.cpp:206
 msgid "Start Search"
 msgstr "Iniciar Pesquisa"
 
-#: kfindtop.cpp:211
+#: kfindtop.cpp:188
 msgid "New Search"
 msgstr "Nova Pesquisa"
 
-#: kfindtop.cpp:216
+#: kfindtop.cpp:193
 msgid "Stop Search"
 msgstr "Parar Pesquisa"
 
-#: kfindtop.cpp:229
+#: kfindtop.cpp:206
 msgid "Add to archive"
 msgstr "Adicionar ao arquivo"
 
-#: kfindtop.cpp:239
+#: kfindtop.cpp:216
 msgid "Properties"
 msgstr "Propriedades"
 
-#: kfindtop.cpp:244
+#: kfindtop.cpp:221
 msgid "Open Containing Folder"
 msgstr "Abrir a Pasta que Contem"
 
-#: kfindtop.cpp:249
+#: kfindtop.cpp:226
 msgid "Save Search Results"
 msgstr "Gravar Resultados da Pesquisa"
 
-#: kftabdlg.cpp:48
+#: kftabdlg.cpp:47
 msgid "&Named:"
 msgstr "&Nome:"
 
-#: kftabdlg.cpp:51
+#: kftabdlg.cpp:50
 msgid "&Look in:"
 msgstr "&Procurar em:"
 
-#: kftabdlg.cpp:54
+#: kftabdlg.cpp:53
 msgid "&Browse ..."
 msgstr "&Examinar ..."
 
-#: kftabdlg.cpp:66
+#: kftabdlg.cpp:65
 msgid "Include &subfolders"
 msgstr "Incluir &subpastas"
 
-#: kftabdlg.cpp:96
+#: kftabdlg.cpp:95
 msgid " Name& Location "
 msgstr " Nome& Localização "
 
-#: kftabdlg.cpp:108
+#: kftabdlg.cpp:107
 msgid "and"
 msgstr "e"
 
-#: kftabdlg.cpp:109
+#: kftabdlg.cpp:108
 msgid "month(s)"
 msgstr "mês(es)"
 
-#: kftabdlg.cpp:110
+#: kftabdlg.cpp:109
 msgid "day(s)"
 msgstr "dia(s)"
 
-#: kftabdlg.cpp:116
+#: kftabdlg.cpp:115
 msgid "&All files"
 msgstr "&Todos os ficheiros"
 
-#: kftabdlg.cpp:117
+#: kftabdlg.cpp:116
 msgid "Find all files created or &modified:"
 msgstr "Procurar todos os ficheiros criados ou modificados:"
 
-#: kftabdlg.cpp:118
+#: kftabdlg.cpp:117
 msgid "&between"
 msgstr "&entre"
 
-#: kftabdlg.cpp:119
+#: kftabdlg.cpp:118
 msgid "during the previou&s "
 msgstr "durante o(s) último(&s)"
 
-#: kftabdlg.cpp:120
+#: kftabdlg.cpp:119
 msgid "&during the previous "
 msgstr "&durante o(s) último(s)"
 
-#: kftabdlg.cpp:168
+#: kftabdlg.cpp:167
 msgid " Date Modified "
 msgstr " Data de Modificação "
 
-#: kftabdlg.cpp:174
+#: kftabdlg.cpp:173
 msgid "Of &type:"
 msgstr "Do &tipo:"
 
-#: kftabdlg.cpp:176
+#: kftabdlg.cpp:175
 msgid "&Containing Text:"
 msgstr "&Contendo:"
 
-#: kftabdlg.cpp:179
+#: kftabdlg.cpp:178
 msgid "&Size is:"
 msgstr "&Tamanho é:"
 
-#: kftabdlg.cpp:202
+#: kftabdlg.cpp:201
 msgid "All Files and Folders"
 msgstr "Todos os Ficheiros e Pastas"
 
-#: kftabdlg.cpp:210
+#: kftabdlg.cpp:209
 msgid "At Least"
 msgstr "No Mínimo"
 
-#: kftabdlg.cpp:211
+#: kftabdlg.cpp:210
 msgid "At Most"
 msgstr "No Máximo"
 
-#: kftabdlg.cpp:218
+#: kftabdlg.cpp:217
 msgid " Advanced "
 msgstr " Avançado "
 
-#: kftabdlg.cpp:390
+#: kftabdlg.cpp:389
 msgid "The date is not valid!!"
 msgstr "A data não é válida!!"
 
-#: kftabdlg.cpp:402
+#: kftabdlg.cpp:401
 msgid "The month(s) value isn't valid!!"
 msgstr "O valor do(s) mês(es) não é válido!!"
 
-#: kftabdlg.cpp:413
+#: kftabdlg.cpp:412
 msgid "The day(s) value isn't valid!!"
 msgstr "O valor do(s) dia(s) não é válido!!"
 
-#: kftabdlg.cpp:430
+#: kftabdlg.cpp:429
 msgid "The value in size isn't valid number!!"
 msgstr "O valor em tamanho não é um número válido"
 
-#: kfoptions.cpp:54
+#: kfoptions.cpp:51
 msgid "Preferences"
 msgstr "Preferências"
 
-#: kfoptions.cpp:76
+#: kfoptions.cpp:73
 msgid "File format:"
 msgstr "Formato de ficheiro:"
 
-#: kfoptions.cpp:78
+#: kfoptions.cpp:75
 msgid "Save results to file:"
 msgstr "Gravar resultados no ficheiro:"
 
-#: kfoptions.cpp:81
+#: kfoptions.cpp:78
 msgid "Save results to file ~/.kfind-results.html"
 msgstr "Gravar resultados no ficheiro ~/.kfind-results.html"
 
-#: kfoptions.cpp:83
+#: kfoptions.cpp:80
 msgid "Browse"
 msgstr "Examinar"
 
-#: kfoptions.cpp:96
+#: kfoptions.cpp:93
 msgid "Plain Text"
 msgstr "Texto"
 
-#: kfoptions.cpp:125
+#: kfoptions.cpp:122
 msgid "Saving"
 msgstr "Gravar"
 
-#: kfoptions.cpp:132
+#: kfoptions.cpp:129
 msgid "Create Archive:"
 msgstr "Criar Arquivo:"
 
-#: kfoptions.cpp:134
+#: kfoptions.cpp:131
 msgid "Add to Archive:"
 msgstr "Adicionar:"
 
-#: kfoptions.cpp:138
+#: kfoptions.cpp:135
 msgid "Patterns:"
 msgstr "Padrões:"
 
-#: kfoptions.cpp:141
+#: kfoptions.cpp:138
 msgid "Add New"
 msgstr "Adicionar Novo"
 
-#: kfoptions.cpp:182
+#: kfoptions.cpp:179
 msgid "Archivers"
 msgstr "Arquivadores"
 
@@ -326,3 +318,9 @@ msgstr "Não foi possível reconhecer o tipo de arquivo!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Erro ao criar o processo filho!"
+
+#~ msgid "Kfind &help"
+#~ msgstr "&Ajuda do Kfind"
+
+#~ msgid "About &Qt"
+#~ msgstr "Acerca do &Qt"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm VERSION\n"
-"POT-Creation-Date: 1998-03-19 22:17+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1997-09-14 13:53 MET DST\n"
 "Last-Translator: Christian Kirsch <ck@held.mind.de>\n"
 "Language-Team: German / KDE\n"
@@ -30,26 +30,26 @@ msgstr "Neu starten"
 msgid "Exit kdm"
 msgstr "kdm beenden"
 
-#: kgreeter.cpp:137
+#: kgreeter.cpp:139
 msgid "Login:"
 msgstr "Benutzer:"
 
-#: kgreeter.cpp:142
+#: kgreeter.cpp:151
 msgid "Password:"
 msgstr "Paßwort:"
 
-#: kgreeter.cpp:176
+#: kgreeter.cpp:191
 msgid "Login failed!"
 msgstr "Anmeldung nicht möglich."
 
-#: kgreeter.cpp:182
+#: kgreeter.cpp:197
 msgid "Session Type:"
 msgstr "Sitzungsart:"
 
-#: kgreeter.cpp:198
+#: kgreeter.cpp:213
 msgid "Go!"
 msgstr "Los!"
 
-#: kgreeter.cpp:214
+#: kgreeter.cpp:229
 msgid "Shutdown..."
 msgstr "Beenden"

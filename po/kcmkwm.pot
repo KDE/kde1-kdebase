@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-19 22:18+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,7 +94,7 @@ msgstr ""
 msgid "Title Animation"
 msgstr ""
 
-#: desktop.cpp:93 titlebar.cpp:943
+#: desktop.cpp:91 titlebar.cpp:943
 msgid "ms"
 msgstr ""
 
@@ -226,37 +226,33 @@ msgstr ""
 msgid "miliseconds"
 msgstr ""
 
-#: desktop.cpp:79
+#: desktop.cpp:77
 msgid "Active desktop borders"
 msgstr ""
 
-#: desktop.cpp:81
+#: desktop.cpp:79
 msgid "Enable active desktop borders"
 msgstr ""
 
-#: desktop.cpp:83
+#: desktop.cpp:81
 msgid "Move pointer towards center after switch"
 msgstr ""
 
-#: desktop.cpp:89
+#: desktop.cpp:87
 msgid "Dekstop switch delay:"
 msgstr ""
 
-#: desktop.cpp:102
+#: desktop.cpp:100
 msgid "Magic Borders"
 msgstr ""
 
-#: desktop.cpp:104
-msgid "Edge Resistance:"
-msgstr ""
-
-#: desktop.cpp:118
+#: desktop.cpp:102
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
 
-#: desktop.cpp:132
+#: desktop.cpp:116
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"

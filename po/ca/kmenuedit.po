@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-03-19 22:17+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-03-19 23:20+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -165,17 +165,9 @@ msgstr "Enllaç"
 msgid "Device"
 msgstr "Dispositiu"
 
-#: entrydialog.cpp:63
-msgid "Type:"
-msgstr "Tipus:"
-
 #: entrydialog.cpp:69
 msgid "File Name:"
 msgstr "Nom de fitxer:"
-
-#: entrydialog.cpp:82
-msgid "Name:"
-msgstr "Nom:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"
@@ -266,6 +258,12 @@ msgstr "Personal:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Omissió:"
+
+#~ msgid "Type:"
+#~ msgstr "Tipus:"
+
+#~ msgid "Name:"
+#~ msgstr "Nom:"
 
 #~ msgid ""
 #~ "KMenuedit 0.2.3\n"

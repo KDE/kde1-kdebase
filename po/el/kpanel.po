@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-03-19 22:16+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
 
@@ -13,81 +13,101 @@ msgstr "Μετακίνηση"
 msgid "Properties"
 msgstr "Ιδιότητες"
 
-#: kpanel.C:252
+#: kpanel.C:253
 msgid "Go!"
 msgstr "Εκτέλεση"
 
-#: kpanel.C:254 tools.C:797
+#: kpanel.C:256 tools.C:795
 msgid "Where do you want to go tomorrow?"
 msgstr "Που θέλετε να πάτε αύριο;"
 
-#: kpanel.C:327
+#: kpanel.C:329
 msgid "No info available"
 msgstr "Δεν υπάρχουν σχετικές πληροφορίες"
 
-#: kpanel.C:366 props.C:151 props.C:152
+#: kpanel.C:368 props.C:156 props.C:157
 msgid "Logout"
 msgstr "Έξοδος"
 
-#: kpanel.C:374 props.C:150
+#: kpanel.C:376 props.C:155
 msgid "Lock screen"
 msgstr "Κλέιδωμα οθόνης"
 
-#: kpanel.C:383
+#: kpanel.C:385
 msgid "Hide the panel"
 msgstr "Απόκρυψη του πίνακα"
 
-#: kpanel.C:393
+#: kpanel.C:395
 msgid "Show the panel"
 msgstr "Εμφάνιση του πίνακα"
 
-#: kpanel.C:1092 tools.C:613
+#: kpanel.C:1093 tools.C:611
 msgid "No comment available"
 msgstr "Δεν υπάρχει σχετικό σχόλιο"
 
-#: kpanel.C:1101 tools.C:806
+#: kpanel.C:1102 tools.C:804
 msgid "Windowlist"
 msgstr "Λίστα παραθύρων"
 
-#: props.C:134
+#: props.C:136
 msgid "Add application"
 msgstr "Προσθήκη εφαρμογής"
 
-#: props.C:136
+#: props.C:138
 msgid "Add an application or a submenu onto the panel"
 msgstr "Προσθήκη εφαρμογής ή υποκαταλόγου στον πίνακα"
 
-#: props.C:137
+#: props.C:139
 msgid "Add windowlist"
 msgstr "Προσθήκη λίστας παραθύρων"
 
-#: props.C:139
+#: props.C:141
 msgid "Add a windowlist menu onto the panel"
 msgstr "Προσθήκη λίστας παραθύρων στον πίνακα"
 
-#: events.C:705 props.C:140
+#: events.C:705 props.C:142
 msgid "Configure"
 msgstr "Διαμόρφωση"
 
-#: props.C:142
+#: props.C:144
 msgid "Configure panel"
 msgstr "Πίνακας διαμόρφωσης"
 
-#: events.C:707 props.C:143
+#: props.C:145
+msgid "Edit Menus"
+msgstr ""
+
+#: props.C:147
+msgid "Add or remove applications in the menu structure "
+msgstr ""
+
+#: events.C:707 props.C:148
 msgid "Restart"
 msgstr "Επανεκίννηση"
 
-#: props.C:145
+#: props.C:150
 msgid "Restart panel"
 msgstr "Επανεκίννηση πίνακα"
 
-#: props.C:146
+#: props.C:151
 msgid "Panel"
 msgstr "Πίνακας"
 
-#: props.C:148
+#: props.C:153
 msgid "Lock Screen"
 msgstr "Κλέιδωμα οθόνης"
+
+#: props.C:307
+msgid "The menu editor is not installed."
+msgstr ""
+
+#: events.C:743 props.C:308
+msgid "Oops!"
+msgstr ""
+
+#: events.C:742
+msgid "Cannot put this as button onto the panel!"
+msgstr ""
 
 #~ msgid "Location"
 #~ msgstr "Τοποθεσία"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser \n"
-"POT-Creation-Date: 1998-03-19 22:18+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-03-25 20:47+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -94,7 +94,7 @@ msgstr "Pixmapa"
 msgid "Title Animation"
 msgstr "Przewijanie tytu³u"
 
-#: desktop.cpp:93 titlebar.cpp:943
+#: desktop.cpp:91 titlebar.cpp:943
 msgid "ms"
 msgstr "ms"
 
@@ -230,31 +230,27 @@ msgstr ""
 msgid "miliseconds"
 msgstr "milisekundy"
 
-#: desktop.cpp:79
+#: desktop.cpp:77
 msgid "Active desktop borders"
 msgstr "Aktywne brzegi desktopu"
 
-#: desktop.cpp:81
+#: desktop.cpp:79
 msgid "Enable active desktop borders"
 msgstr "W³±cz aktywne brzegi desktopu"
 
-#: desktop.cpp:83
+#: desktop.cpp:81
 msgid "Move pointer towards center after switch"
 msgstr "Umie¶æ kursor na ¶rodku po prze³±czeniu"
 
-#: desktop.cpp:89
+#: desktop.cpp:87
 msgid "Dekstop switch delay:"
 msgstr "Opó¿nienie prze³±czania:"
 
-#: desktop.cpp:102
+#: desktop.cpp:100
 msgid "Magic Borders"
 msgstr "Magiczne brzegi"
 
-#: desktop.cpp:104
-msgid "Edge Resistance:"
-msgstr "Tolerancja krawêdzi:"
-
-#: desktop.cpp:118
+#: desktop.cpp:102
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
@@ -262,13 +258,16 @@ msgstr ""
 "Strefa prze³±czenia brzegu:\n"
 "       (w pikselach)"
 
-#: desktop.cpp:132
+#: desktop.cpp:116
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
 "Strefa prze³±czenia okna:\n"
 "       (w pikselach)"
+
+#~ msgid "Edge Resistance:"
+#~ msgstr "Tolerancja krawêdzi:"
 
 #~ msgid "Random placement"
 #~ msgstr "Przypadkowe umiejscawianie"

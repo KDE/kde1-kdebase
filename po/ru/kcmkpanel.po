@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-03-19 22:18+0100\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-01-18 04:52+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -22,8 +22,8 @@ msgstr "&Панель"
 msgid "&Desktops"
 msgstr "&Рабочие столы"
 
-#: main.cpp:97
 #
+#: main.cpp:97
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
 msgstr "использование: kcmkpanel [-init | {panel,options,desktops}]\n"
 
@@ -39,8 +39,8 @@ msgstr "Расположение"
 msgid "&Top"
 msgstr "Верх"
 
-#: panel.cpp:61
 #
+#: panel.cpp:61
 msgid "&Left"
 msgstr "Влево"
 
@@ -52,8 +52,8 @@ msgstr "Низ"
 msgid "Taskbar"
 msgstr "Задачи"
 
-#: panel.cpp:75
 #
+#: panel.cpp:75
 msgid "&Hidden"
 msgstr "Скрыть"
 
@@ -65,8 +65,8 @@ msgstr "Верх"
 msgid "Botto&m"
 msgstr "Низ"
 
-#: panel.cpp:81
 #
+#: panel.cpp:81
 msgid "Top/Le&ft"
 msgstr "Верх/лево"
 
@@ -74,8 +74,8 @@ msgstr "Верх/лево"
 msgid "T&iny"
 msgstr "Маленький"
 
-#: panel.cpp:98
 #
+#: panel.cpp:98
 msgid "&Normal"
 msgstr "Нормальный"
 
@@ -83,13 +83,13 @@ msgstr "Нормальный"
 msgid "L&arge"
 msgstr "Большой"
 
-#: desktops.cpp:73
 #
+#: desktops.cpp:73
 msgid "&Visible"
 msgstr "Видимый"
 
-#: desktops.cpp:82
 #
+#: desktops.cpp:82
 msgid "&Width"
 msgstr "Ширина"
 
@@ -97,8 +97,8 @@ msgstr "Ширина"
 msgid "Menu Tooltips"
 msgstr "Тоолтипсы у меню"
 
-#: options.cpp:39
 #
+#: options.cpp:39
 msgid "Show &Menu Tooltips"
 msgstr "Тоолтипсы у меню"
 
@@ -114,18 +114,18 @@ msgstr "мс"
 msgid "Others"
 msgstr "Другие"
 
-#: options.cpp:69
 #
+#: options.cpp:69
 msgid "Personal &First"
 msgstr "Персональные вначале"
 
-#: options.cpp:71
 #
+#: options.cpp:71
 msgid "Auto &Hide Panel"
 msgstr "Автоскрывать панель"
 
-#: options.cpp:73
 #
+#: options.cpp:73
 msgid "Auto Hide &Taskbar"
 msgstr "Автоскрывать задачи"
 
