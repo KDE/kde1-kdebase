@@ -11,6 +11,7 @@ int main( int argc, char **argv )
     int i = 1;
     KApplication a( i, argv, "kfm" );
     
-    QMessageBox::message( klocale->translate("KFM Warning"), argv[1] );
+    QMessageBox::warning( 0L, klocale->translate("KFM Warning"), argv[1],
+			  i18n("&OK") );
 }
 

@@ -523,6 +523,10 @@ void KfmGui::initToolBar()
 	toolbarButtons->enable( KToolBar::Hide );
 
     toolbarURL = new KToolBar(this, "URL History");
+    QLabel *locationLabel = new QLabel(i18n("Location:"), toolbarURL,
+				       "locationLabel");
+    locationLabel->adjustSize();
+    toolbarURL->insertWidget(0, locationLabel->width(), locationLabel);
     toolbarURL->insertLined( "", TOOLBAR_URL_ID,
 			  SIGNAL( returnPressed() ), this, SLOT( slotURLEntered() ) );
     KLined *lined = toolbarURL->getLined (TOOLBAR_URL_ID); //Sven
@@ -649,6 +653,13 @@ void KfmGui::slotURLEntered()
 	// Exit if the user did not enter an URL
 	if ( url.data()[0] == 0 )
 	    return;
+
+	// strip off any leading and trailing white space
+	while (url.find(' ') == 0)
+	  url.remove(0, 1);
+	while (url.findRev(' ') == (signed) url.length()-1)
+	  url.remove(url.length()-1, 1);
+
 	// Root directory?
 	if ( url.data()[0] == '/' )
 	{
@@ -873,7 +884,13 @@ void KfmGui::slotSelect()
 
 void KfmGui::slotSelectAll()
 {
-	view->getActiveView()->select( 0L, true );
+  KLined *lined = toolbarURL->getLined(TOOLBAR_URL_ID);
+  // if the URL editor is focused, the user really intends to go to
+  // the beginning of the line when they press CTRL-A (a la sh, emacs).  
+  if (focusWidget() == lined)
+    lined->setCursorPosition(0);
+  else
+    view->getActiveView()->select( 0L, true );
 }
 
 void KfmGui::slotFind()
@@ -992,7 +1009,7 @@ void KfmGui::slotFile()
 		     this, SLOT(slotTerminal()), CTRL+Key_T );
   mfile->insertSeparator();
   mfile->insertItem( klocale->translate("&Open Location..."),
-		     this, SLOT(slotOpenLocation()), CTRL+Key_L );
+		     this, SLOT(slotOpenLocation()), CTRL+Key_O );
   mfile->insertItem( klocale->translate("&Find"), 
                      this, SLOT(slotToolFind()), CTRL+Key_F );
   mfile->insertSeparator();
