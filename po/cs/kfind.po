@@ -1,4 +1,3 @@
-
 #: kfdird.cpp:46
 msgid "Directories:"
 msgstr "Adresáøe:"
@@ -299,6 +298,7 @@ msgid ""
 msgstr ""
 "Opravdu si pøejete zru¹it soubor:\n"
 "%s"
+
 #: kfwin.cpp:191
 msgid "Delete File"
 msgstr "Zru¹it soubor"
@@ -343,7 +343,6 @@ msgstr ""
 "Není mo¾né zru¹it\n"
 " vybraný adresáø"
 
-
 #: kfwin.cpp:340
 msgid "Couldn't recognize archive type!"
 msgstr "Nemohu urèit typ archivu!"
@@ -351,4 +350,3 @@ msgstr "Nemohu urèit typ archivu!"
 #: kfwin.cpp:401
 msgid "Error while creating child process!"
 msgstr "Chyba pøi vytváøení procesu!"
-

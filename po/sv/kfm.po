@@ -1,203 +1,224 @@
-
-#: kfmgui.cpp:205 kfmgui.cpp:851
+#: kfmgui.cpp:193 kfmgui.cpp:868
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:188 kbind.cpp:200 kbind.cpp:209 kfmgui.cpp:216 kfmgui.cpp:666
-#: kfmgui.cpp:676
+#: kbind.cpp:178 kbind.cpp:190 kbind.cpp:199 kfmgui.cpp:204 kfmgui.cpp:664
 msgid "Folder"
 msgstr "Folder"
 
-#: kfmgui.cpp:227
+#: kfmgui.cpp:215
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "FEL: Mallen '%s' finns inte"
 
-#: kfmgui.cpp:251
+#: kfmgui.cpp:239
 msgid "&New"
 msgstr "&Ny"
 
-#: kfmgui.cpp:253
+#: kfmgui.cpp:241
 msgid "&New Window"
 msgstr "&Nytt fönster"
 
-#: kfmgui.cpp:256
+#: kfmgui.cpp:244
 msgid "&Run"
 msgstr "&Kör"
 
-#: kfmgui.cpp:258
+#: kfmgui.cpp:246
 msgid "Open &Terminal"
 msgstr "Öppna &terminal"
 
-#: kfmgui.cpp:261
+#: kfmgui.cpp:249
 msgid "&Open Location"
 msgstr "&Öppna plats"
 
-#: kfmgui.cpp:264
+#: kfmgui.cpp:252
 msgid "&Print..."
 msgstr "S&kriv ut"
 
-#: kfmgui.cpp:267
+#: kfmgui.cpp:255
 msgid "&Close"
 msgstr "&Stäng"
 
-#: kfmgui.cpp:269
+#: kfmgui.cpp:257
 msgid "&Quit"
 msgstr "&Avsluta"
 
-#: kfmgui.cpp:274
+#: kfmgui.cpp:262
 msgid "&Copy"
 msgstr "&Kopiera"
 
-#: kfmgui.cpp:276
+#: kfmgui.cpp:264
 msgid "&Paste"
 msgstr "Klistra &in"
 
-#: kfmgui.cpp:278
+#: kfmgui.cpp:266
 msgid "&Move to Trash"
 msgstr "&Flytta till papperskorg"
 
-#: kfmgui.cpp:280
+#: kfmgui.cpp:268
 msgid "&Delete"
 msgstr "&Radera"
 
-#: kfmgui.cpp:283
+#: kfmgui.cpp:271
 msgid "&Select"
 msgstr "&Välj"
 
-#: kfmgui.cpp:289
+#: kfmgui.cpp:277
 msgid "Show &Dot Files"
 msgstr "Visa &punkt-filer"
 
-#: kfmgui.cpp:291
+#: kfmgui.cpp:279
 msgid "Show Tr&ee"
 msgstr "Visa &träd"
 
-#: kfmgui.cpp:293
+#: kfmgui.cpp:281
 msgid "&Visual Schnauzer"
 msgstr "&Bilder som ikoner"
 
-#: kfmgui.cpp:295
+#: kfmgui.cpp:283
 msgid "&HTML View"
 msgstr "Visa som &HTML"
 
-#: kfmgui.cpp:298
+#: kfmgui.cpp:286
 msgid "&Icon View"
 msgstr "Visa som ikoner"
 
-#: kfmgui.cpp:300
+#: kfmgui.cpp:288
 msgid "&Text View"
 msgstr "Visa som &text"
 
-#: kfmgui.cpp:302
+#: kfmgui.cpp:290
 msgid "&Long View"
 msgstr "Visa som &lång text"
 
-#: kfmgui.cpp:305
+#: kfmgui.cpp:293
 msgid "&Save Settings"
 msgstr "&Spara inställningar"
 
-#: kfmgui.cpp:311
+#: kfmgui.cpp:299
 msgid "&Reload Document"
 msgstr "&Ladda om dokument"
 
-#: kfmgui.cpp:313
+#: kfmgui.cpp:301
 msgid "Rescan &bindings"
 msgstr "Läs in &bindningar igen"
 
-#: kfmgui.cpp:339
+#: kfmgui.cpp:304
+msgid "&View Frame Source"
+msgstr ""
+
+#: kfmgui.cpp:330
 msgid "&Find"
 msgstr "&Sök"
 
-#: kfmgui.cpp:348
+#: kfmgui.cpp:339
 msgid "&Add Bookmark"
 msgstr "Lägg till bokmärke"
 
-#: kfmgui.cpp:354
+#: kfmgui.cpp:345
 msgid "&About"
 msgstr "&Om"
 
-#: kfmgui.cpp:355
+#: kfmgui.cpp:346
 msgid "&How can I ..."
 msgstr "&Hur kan jag..."
 
-#: kfmgui.cpp:360
+#: kfmgui.cpp:351
 msgid "&File"
 msgstr "&Arkiv"
 
-#: kfmgui.cpp:361
+#: kfmgui.cpp:352
 msgid "&Edit"
 msgstr "&Redigera"
 
-#: kfmgui.cpp:362
+#: kfmgui.cpp:353
 msgid "&View"
 msgstr "&Utseende"
 
-#: kfmgui.cpp:363
+#: kfmgui.cpp:354
 msgid "&Bookmarks"
 msgstr "&Bokmärken"
 
-#: kfmgui.cpp:364
+#: kfmgui.cpp:355
 msgid "&Tool"
 msgstr "&Verktyg"
 
-#: kfmgui.cpp:366
+#: kfmgui.cpp:357
 msgid "&Help"
 msgstr "&Hjälp"
 
-#: kfmgui.cpp:390
+#: kfmgui.cpp:381
 msgid "Back"
 msgstr "Tillbaka"
 
-#: kfmgui.cpp:395
+#: kfmgui.cpp:386
 msgid "Forward"
 msgstr "Framåt"
 
-#: kfmgui.cpp:400
+#: kfmgui.cpp:391
 msgid "Home"
 msgstr "Hem"
 
-#: kfmgui.cpp:407
+#: kfmgui.cpp:398
 msgid "Reload"
 msgstr "Ladda om"
 
-#: kfmgui.cpp:414 kfmman.cpp:666 kfmman.cpp:685 kfmman.cpp:787
+#: kfmgui.cpp:405 kfmman.cpp:899 kfmman.cpp:918 kfmman.cpp:1020 main.cpp:190
 msgid "Copy"
 msgstr "Kopiera"
 
-#: kfmgui.cpp:419 kfmman.cpp:669
+#: kfmgui.cpp:410 kfmman.cpp:902 main.cpp:193
 msgid "Paste"
 msgstr "Klistra in"
 
-#: kfmgui.cpp:433
+#: kfmgui.cpp:424
 msgid "Stop"
 msgstr "Stoppa"
 
-#: kfmgui.cpp:605
+#: kfmgui.cpp:447
+#, fuzzy, c-format
+msgid ""
+"Could not load icon\n"
+"\r%s"
+msgstr ""
+"Kunde inte skapa katalogen\n"
+"%s"
+
+#: kbind.cpp:715 kbind.cpp:763 kfmexec.cpp:62 kfmexec.cpp:95 kfmgui.cpp:448
+#: kfmjob.cpp:182 kfmman.cpp:238 kfmman.cpp:858 kfmman.cpp:1007
+#: kfmman.cpp:1033 kfmprops.cpp:473 kfmprops.cpp:492 kfmprops.cpp:669
+#: kfmprops.cpp:865 kfmprops.cpp:1426 kfmprops.cpp:1682 kfmprops.cpp:1933
+#: kfmview.cpp:269 kfmview.cpp:419 kfmview.cpp:441 kiojob.cpp:379
+#: kiojob.cpp:564 kiojob.cpp:580 kiojob.cpp:610 kiojob.cpp:1371 root.cpp:883
+#: root.cpp:1226 root.cpp:1252
+msgid "KFM Error"
+msgstr "KFM Fel"
+
+#: kfmgui.cpp:600
 msgid "Select files:"
 msgstr "Valda filer:"
 
-#: kfmgui.cpp:622
+#: kfmgui.cpp:617
 msgid "Add Bookmark"
 msgstr "Lägg till bokmärke"
 
-#: kfmgui.cpp:661
+#: kfmgui.cpp:656 kfmgui.cpp:663
 msgid "New "
 msgstr "Ny "
 
-#: kfmgui.cpp:746 kfmgui.cpp:841 kfmjob.cpp:34 kfmman.cpp:159 kiojob.cpp:65
+#: kfmgui.cpp:745 kfmgui.cpp:858 kfmjob.cpp:33 kfmman.cpp:178 kiojob.cpp:69
 msgid "ERROR: Malformed URL"
 msgstr "FEL: Ogiltlig URL"
 
-#: kfmgui.cpp:813
+#: kfmgui.cpp:812
 msgid "Open Location:"
 msgstr "Öppna plats"
 
-#: kfmgui.cpp:852
+#: kfmgui.cpp:869
 msgid "Do you really want to quit"
 msgstr "Vill du verkligen avsluta"
 
-#: kfmgui.cpp:876
+#: kfmgui.cpp:893
 msgid ""
 "(c) by Torben Weis\n"
 "weis@kde.org\n"
@@ -209,116 +230,161 @@ msgstr ""
 "\n"
 "och KFM-teamet"
 
-#: kfmgui.cpp:959
+#: kfmgui.cpp:976
 msgid "Document: Done"
 msgstr "Dokument: klart"
 
-#: kfmview.cpp:223
+#: kfmview.cpp:226
 msgid "ERROR: Drop over malformed URL"
 msgstr "FEL: Kan inte släppa en sak över ogiltlig URL"
 
-#: kfmexec.cpp:63 kfmexec.cpp:96 kfmjob.cpp:158 kfmman.cpp:188 kfmman.cpp:625
-#: kfmman.cpp:774 kfmman.cpp:800 kfmprops.cpp:628 kfmprops.cpp:815
-#: kfmprops.cpp:1366 kfmprops.cpp:1613 kfmprops.cpp:1855 kfmview.cpp:257
-#: kfmview.cpp:407 kfmview.cpp:430 root.cpp:942 root.cpp:1284 root.cpp:1310
-msgid "KFM Error"
-msgstr "KFM Fel"
-
-#: kfmview.cpp:258
+#: kfmview.cpp:270
 msgid "You dropped some file over itself"
 msgstr "Du släppe en fil över sig själv"
 
-#: kfmview.cpp:302 kfmview.cpp:471 krenamewin.cpp:18 root.cpp:901
+#: kfmview.cpp:314 kfmview.cpp:469 krenamewin.cpp:18 root.cpp:842
 msgid "KFM Warning"
 msgstr "KFM Varning"
 
-#: kfmview.cpp:303 kfmview.cpp:472 root.cpp:902
+#: kfmview.cpp:315 kfmview.cpp:470 root.cpp:843
+#, fuzzy
 msgid ""
-"Dou you really want to delete the files?\n"
+"Do you really want to delete the files?\n"
 "\n"
 "There is no way to restore them"
 msgstr ""
-"Vill du verkligen radera filerna?"
-"\n"
+"Vill du verkligen radera filerna?\n"
 "Det går inte att återskapa dem"
 
-#: kfmexec.cpp:214 kfmman.cpp:514 kfmview.cpp:325
+#: kfmexec.cpp:220 kfmman.cpp:724 kfmview.cpp:337
 msgid "Open With:"
 msgstr "Öppna med"
 
-#: kfmview.cpp:370 root.cpp:853
+#: kfmview.cpp:382 root.cpp:794
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "Fel: Kan inte öppna egenskaper för flera filer på en gång"
 
-#: kfmview.cpp:408 root.cpp:943
+#: kfmview.cpp:420 root.cpp:884
 msgid "Could not access Trash Bin"
 msgstr "Kunde inte komma åt papperskorgen"
 
-#: kfmview.cpp:431
+#: kfmview.cpp:442
 msgid "Can not paste in multiple directories"
 msgstr "Kan inte klistra in flera kataloger på en gång"
 
-#: kfmview.cpp:494
+#: kfmview.cpp:504
 msgid "ERROR: Can not change to multiple directories"
 msgstr "FEL: Kan inte byta katalog till flera stycken"
 
-#: kfmview.cpp:662
+#: kfmview.cpp:671
 msgid "Symbolic Link"
 msgstr "Symbolisk länk"
 
-#: kfmview.cpp:664
+#: kfmview.cpp:673
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (länk)"
 
-#: kfmview.cpp:684
+#: kfmview.cpp:693
 msgid "bytes"
 msgstr "byte"
 
-#: kbind.cpp:395
+#: kbind.cpp:387
 msgid "Too many protocols in file\n"
 msgstr "För många protokoll i fil\n"
 
-#: kbind.cpp:441
+#: kbind.cpp:433
 msgid "ERROR"
 msgstr "FEL"
 
-#: kbind.cpp:442
+#: kbind.cpp:434
 msgid "Could not find mime type\n"
 msgstr "Kunde inte hitta mime-typen\n"
 
-#: kbind.cpp:442
+#: kbind.cpp:434
 msgid "in "
 msgstr "i "
 
-#: kbind.cpp:1303
+#: kbind.cpp:716
+msgid "No mime types installed!"
+msgstr ""
+
+#: kbind.cpp:760
+#, fuzzy
+msgid "Could not find mime type\r\n"
+msgstr "Kunde inte hitta mime-typen\n"
+
+#: kbind.cpp:1367
 msgid "ERROR: No Terminal Setting"
 msgstr "FEL: Ingen terminalinställning"
 
-#: kbind.cpp:1373
+#: kbind.cpp:1437
 msgid "ERROR: You must first mount the device. Use the right mouse button"
 msgstr "FEL: Du måste montera enheten först. Använd rätt musknapp"
 
-#: kbind.cpp:1379
+#: kbind.cpp:1443
 #, c-format
 msgid "ERROR: Unknown Binding '%s'"
 msgstr "FEL: Okänd bindning '%s'"
 
-#: kbind.cpp:1581
+#: kbind.cpp:1645
 msgid "Could not execute program\n"
 msgstr "Kunde inte köra progarmmet\n"
 
-#: main.cpp:42 main.cpp:179
+#: main.cpp:41 main.cpp:156
 msgid "KFM Information"
 msgstr "KFM-information"
 
-#: main.cpp:43
+#: main.cpp:42
 msgid "Creating directory:\n"
 msgstr "Skapart katalog:\n"
 
-#: main.cpp:180
+#: main.cpp:157
 msgid "Installing Templates"
 msgstr "Installerar mallar"
+
+#: main.cpp:188
+msgid "Cd"
+msgstr ""
+
+#: main.cpp:189
+#, fuzzy
+msgid "New View"
+msgstr "Visa som &text"
+
+#: kfmman.cpp:908 kfmman.cpp:924 main.cpp:191
+msgid "Delete"
+msgstr "Radera"
+
+#: kfmman.cpp:905 kfmman.cpp:921 main.cpp:192
+msgid "Move to Trash"
+msgstr "Flytta till papperskorgen"
+
+#: main.cpp:194
+#, fuzzy
+msgid "Open with"
+msgstr "Öppna med"
+
+#: main.cpp:195
+msgid "Cut"
+msgstr ""
+
+#: kfmman.cpp:1025 main.cpp:196
+msgid "Move"
+msgstr "Flytta"
+
+#: kfmman.cpp:972 main.cpp:197
+msgid "Properties"
+msgstr "Egenskaper"
+
+#: kfmman.cpp:1029 main.cpp:198
+msgid "Link"
+msgstr "Länk"
+
+#: main.cpp:199
+#, fuzzy
+msgid "Empty Trash Bin"
+msgstr "Är i papperskorgen"
 
 #: kfmdlg.cpp:34
 msgid "Clear"
@@ -328,135 +394,145 @@ msgstr "Töm"
 msgid "<!-- Do not edit this file -->"
 msgstr "<!-- Ändra inte den här filen -->"
 
-#: kfmprops.cpp:177
+#: kfmprops.cpp:189
 msgid "Name"
 msgstr "Namn"
 
-#: kfmprops.cpp:190
+#: kfmprops.cpp:203
 msgid "Full Name"
 msgstr "För- och efternamn"
 
-#: kfmprops.cpp:204
+#: kfmprops.cpp:217
 msgid "Is the Trash Bin"
 msgstr "Är i papperskorgen"
 
-#: kfmprops.cpp:210
+#: kfmprops.cpp:223
 msgid "Is a Directory"
 msgstr "Är en katalog"
 
-#: kfmprops.cpp:216
+#: kfmprops.cpp:229
 msgid "Points to"
 msgstr "Pekar på"
 
-#: kfmprops.cpp:238
+#: kfmprops.cpp:251
 #, c-format
 msgid "Size: %i"
 msgstr "Storlek: %i"
 
-#: kfmprops.cpp:247
+#: kfmprops.cpp:260
 msgid "Last Access"
 msgstr "Senast använd"
 
-#: kfmprops.cpp:256
+#: kfmprops.cpp:269
 msgid "Last Modified"
 msgstr "Senast ändrad"
 
-#: kfmprops.cpp:334
+#: kfmprops.cpp:347
 msgid "Access permissions"
 msgstr "Åtkomsträttigheter"
 
-#: kfmprops.cpp:337
-msgid "User Read"
-msgstr "Användare Läs"
+#: kfmprops.cpp:350
+#, fuzzy
+msgid "Read"
+msgstr "Ladda om"
 
-#: kfmprops.cpp:340
-msgid "User Write"
+#: kfmprops.cpp:352
+#, fuzzy
+msgid "Write"
 msgstr "Användare Skriv"
 
-#: kfmprops.cpp:343
-msgid "User Exec"
-msgstr "Användare Kör"
-
-#: kfmprops.cpp:346
-msgid "Set UID"
-msgstr "Sätt UID"
-
-#: kfmprops.cpp:351
-msgid "Group Read"
-msgstr "Grupp Läs"
-
 #: kfmprops.cpp:354
-msgid "Group Write"
-msgstr "Grupp Skriv"
+#, fuzzy
+msgid "Exec"
+msgstr "Kör"
 
-#: kfmprops.cpp:357
-msgid "Group Exec"
-msgstr "Grupp Kör"
+#: kfmprops.cpp:358
+#, fuzzy
+msgid "User"
+msgstr "Användare Läs"
 
-#: kfmprops.cpp:360
-msgid "Set GID "
-msgstr "Sätt GID"
+#: kfmprops.cpp:369
+msgid "UID"
+msgstr ""
 
-#: kfmprops.cpp:365
-msgid "Others Read"
-msgstr "Andra Läs"
-
-#: kfmprops.cpp:368
-msgid "Others Write"
-msgstr "Andra Skriv"
-
-#: kfmprops.cpp:371
-msgid "Others Exec"
-msgstr "Andra Kör"
-
-#: kfmprops.cpp:374
-msgid "Sticky"
-msgstr "Sticky"
-
-#: kfmprops.cpp:381
-msgid "Owner"
-msgstr "Ägare"
-
-#: kfmprops.cpp:387
+#: kfmprops.cpp:374 kfmprops.cpp:414
 msgid "Group"
 msgstr "Grupp"
 
-#: kfmprops.cpp:454
+#: kfmprops.cpp:385
+#, fuzzy
+msgid "GID "
+msgstr "Sätt GID"
+
+#: kfmprops.cpp:390
+#, fuzzy
+msgid "Others"
+msgstr "Andra Läs"
+
+#: kfmprops.cpp:401
+msgid "Sticky"
+msgstr "Sticky"
+
+#: kfmprops.cpp:408
+msgid "Owner"
+msgstr "Ägare"
+
+#: kfmprops.cpp:474
+#, fuzzy
+msgid ""
+"Could not change permissions\n"
+"\rPerhaps access denied."
+msgstr ""
+"Kunde inte skriva\n"
+"%s\n"
+"Kanske nekades åtkomst"
+
+#: kfmprops.cpp:483
 #, c-format
 msgid " ERROR: No user %s"
 msgstr "FEL: Det finns ingen användare med namnet '%s'"
 
-#: kfmprops.cpp:459
+#: kfmprops.cpp:488
 #, c-format
 msgid " ERROR: No group %s"
 msgstr " FEL: Det finns ingen grupp med namnet '%s'"
 
-#: kfmprops.cpp:490
+#: kfmprops.cpp:493
+#, fuzzy
+msgid ""
+"Could not change owner/group\n"
+"\rPerhaps access denied."
+msgstr ""
+"Kunde inte skriva\n"
+"%s\n"
+"Kanske nekades åtkomst"
+
+#: kfmprops.cpp:521
 msgid "Execute"
 msgstr "Kör"
 
-#: kfmprops.cpp:494 kfmprops.cpp:1473
+#: kfmprops.cpp:525 kfmprops.cpp:1533
 msgid "Icon"
 msgstr "Ikon"
 
-#: kfmprops.cpp:498
+#: kfmprops.cpp:529
 msgid "Working Directory"
 msgstr "Aktuell katalog"
 
-#: kfmprops.cpp:512
+#: kfmprops.cpp:543
 msgid "Run in terminal"
 msgstr "Kör i terminal"
 
-#: kfmprops.cpp:520
+#: kfmprops.cpp:551
 msgid "Terminal Options"
 msgstr "Terminalinställningar"
 
-#: kfmprops.cpp:524
+#: kfmprops.cpp:555
 msgid "Browse"
 msgstr "Bläddra"
 
-#: kfmprops.cpp:629 kfmprops.cpp:816 kfmprops.cpp:1367 kfmprops.cpp:1614
-#: kfmprops.cpp:1856
+#: kfmprops.cpp:670 kfmprops.cpp:866 kfmprops.cpp:1427 kfmprops.cpp:1683
+#: kfmprops.cpp:1934
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -464,125 +540,130 @@ msgstr ""
 "Kunde inte spara egenskaper\n"
 "Kanske är rättigheterna fel"
 
-#: kfmprops.cpp:714
+#: kfmprops.cpp:755
 msgid "URL"
 msgstr ""
 
-#: kfmprops.cpp:885
+#: kfmprops.cpp:935
 msgid "Apply global"
 msgstr "Applicera globalt"
 
-#: kfmprops.cpp:949 kfmprops.cpp:1028 kfmprops.cpp:1161
-msgid "(None)"
-msgstr "(Ingen)"
+#: kfmprops.cpp:964 kfmprops.cpp:994 kfmprops.cpp:1067 kfmprops.cpp:1076
+#: kfmprops.cpp:1167
+msgid "(Default)"
+msgstr ""
 
-#: kfmprops.cpp:1017
+#: kfmprops.cpp:1056
 msgid "Could not write to\n"
 msgstr "Kunde inte skriva till\n"
 
-#: kfmprops.cpp:1204
+#: kfmprops.cpp:1212
+msgid "(None)"
+msgstr "(Ingen)"
+
+#: kfmprops.cpp:1255
 msgid "FTP"
 msgstr ""
 
-#: kfmprops.cpp:1206
+#: kfmprops.cpp:1257
 msgid "FILE"
 msgstr ""
 
-#: kfmprops.cpp:1208
+#: kfmprops.cpp:1259
 msgid "HTTP"
 msgstr ""
 
-#: kfmprops.cpp:1210
+#: kfmprops.cpp:1261
 msgid "TAR"
 msgstr ""
 
-#: kfmprops.cpp:1212
+#: kfmprops.cpp:1263
 msgid "MAN"
 msgstr ""
 
-#: kfmprops.cpp:1214
+#: kfmprops.cpp:1265
 msgid "INFO"
 msgstr ""
 
-#: kfmprops.cpp:1243
+#: kfmprops.cpp:1294
 msgid "Binary Pattern ( netscape;Netscape; )"
 msgstr "Binärt mönster ( netscape;Netscape; )"
 
-#: kfmprops.cpp:1247 kfmprops.cpp:1481
+#: kfmprops.cpp:1298 kfmprops.cpp:1541
 msgid "Comment"
 msgstr "Kommentar"
 
-#: kfmprops.cpp:1469
+#: kfmprops.cpp:1529
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "Mönster (exempel: *.html;*.HTML; )"
 
-#: kfmprops.cpp:1477
+#: kfmprops.cpp:1537
 msgid "Mime Type"
 msgstr "Mime-typ"
 
-#: kfmprops.cpp:1488
+#: kfmprops.cpp:1548
 msgid "Default Application"
 msgstr "Standardprogram"
 
-#: kfmprops.cpp:1698
+#: kfmprops.cpp:1767
 msgid "Device ( /dev/fd0 )"
 msgstr "Enhet ( /dev/fd0 )"
 
-#: kfmprops.cpp:1706
+#: kfmprops.cpp:1775
 msgid "Mount Point ( /floppy )"
 msgstr "Monteringsplats ( /floppy )"
 
-#: kfmprops.cpp:1714
+#: kfmprops.cpp:1783
 msgid "Readonly"
 msgstr "Skrivskyddad"
 
-#: kfmprops.cpp:1718
+#: kfmprops.cpp:1787
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Filsystem (iso9660,msdos,minix,standard )"
 
-#: kfmprops.cpp:1726
+#: kfmprops.cpp:1795
 msgid "Mounted Icon"
 msgstr "Monterad-ikon"
 
-#: kfmprops.cpp:1730
+#: kfmprops.cpp:1799
 msgid "Unmounted Icon"
 msgstr "Omonterad-ikon"
 
-#: root.cpp:513 root.cpp:646
+#: root.cpp:466 root.cpp:586
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Internt fel: desktopDir är ogiltligt"
 
-#: root.cpp:526
+#: root.cpp:478
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "FEL: Kunde inte läsa skrivbordskatalogen '%s'"
 
-#: root.cpp:634
+#: root.cpp:574
 msgid "ERROR: Can not accept drop"
 msgstr "FEL: Kan inte ta emot släpp"
 
-#: root.cpp:657
+#: root.cpp:597
 msgid "ERROR: Could not read desktop directory"
 msgstr "FEL: Kunde inte läsa skrivbordskatalogen"
 
-#: kfmman.cpp:775 root.cpp:1285
+#: kfmman.cpp:1008 root.cpp:1227
 msgid "Dont know what to do."
 msgstr "Vet inte vad som skall göras."
 
-#: kfmman.cpp:801 root.cpp:1311
+#: kfmman.cpp:1034 root.cpp:1253
 msgid "Dont know what to do"
 msgstr "Vet inte vad som skall göras"
 
-#: kfmexec.cpp:97 kfmman.cpp:189
+#: kfmexec.cpp:96 kfmman.cpp:239
 msgid "The file does not contain a URL"
 msgstr "Filen innehåller ingen URL"
 
-#: kfmman.cpp:262
+#: kfmman.cpp:337
 #, c-format
 msgid "Contacting host %s"
 msgstr "Innehåller värd %s"
 
-#: kfmexec.cpp:62 kfmman.cpp:624 kiojob.cpp:883 kiojob.cpp:1003
+#: kfmexec.cpp:61 kfmman.cpp:857 kiojob.cpp:908 kiojob.cpp:1028
 #, c-format
 msgid ""
 "Malformed URL\n"
@@ -591,81 +672,77 @@ msgstr ""
 "Felaktig URL\n"
 "%s"
 
-#: kfmman.cpp:672 kfmman.cpp:688
-msgid "Move to Trash"
-msgstr "Flytta till papperskorgen"
-
-#: kfmman.cpp:675 kfmman.cpp:691
-msgid "Delete"
-msgstr "Radera"
-
-#: kfmman.cpp:695
+#: kfmman.cpp:928
 msgid "Add To Bookmarks"
 msgstr "Lägg till som bokmärke"
 
-#: kfmman.cpp:739
-msgid "Properties"
-msgstr "Egenskaper"
-
-#: kfmman.cpp:792
-msgid "Move"
-msgstr "Flytta"
-
-#: kfmman.cpp:796
-msgid "Link"
-msgstr "Länk"
-
-#: kiojob.cpp:110
+#: kiojob.cpp:114
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr "INTERNT FEL: Du måste åtminstone ange vilken enhet som skall monteras"
 
-#: kiojob.cpp:237 kiojob.cpp:241
+#: kiojob.cpp:241 kiojob.cpp:245
 #, c-format
 msgid "ERROR: Malformed URL '%s'"
 msgstr "FEL: URLen '%s' är ogiltlig"
 
-#: kiojob.cpp:246
+#: kiojob.cpp:250
 msgid "ERROR: Can only make links on local file system"
 msgstr "FEL: Kan bara skapa länkar på lokala filsystem"
 
-#: kiojob.cpp:254
+#: kiojob.cpp:258
 #, c-format
 msgid "ERROR: Could not make symlink to %s"
 msgstr "FEL: Kunde inte skapa en symbolisk länk till '%s'"
 
-#: kiojob.cpp:281
+#: kiojob.cpp:285
 #, c-format
 msgid " ERROR: Could not write to %s"
 msgstr " FEL: Kunde inte skriva till %s"
 
-#: kiojob.cpp:378
-#, c-format
-msgid "ERROR: Could not make directory %s"
-msgstr "FEL: Kunde inte skapa katalogen %s"
+#: kiojob.cpp:378 kiojob.cpp:563
+#, fuzzy, c-format
+msgid ""
+"Could not make directory\n"
+"\r%s"
+msgstr ""
+"Kunde inte skapa katalogen\n"
+"%s"
 
-#: kiojob.cpp:387 kiojob.cpp:560 kiojob.cpp:723
+#: kiojob.cpp:388 kiojob.cpp:748
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
 msgstr "FEL: Kunde inte komma åt katalogen '%s'"
 
-#: kiojob.cpp:551
-msgid "ERROR: Could not make directory"
-msgstr "FEL: Kunde inte skapa katalog"
+#: kiojob.cpp:579
+#, fuzzy, c-format
+msgid ""
+"Could not access directory\n"
+"\r%s"
+msgstr ""
+"Kunde inte skapa katalogen\n"
+"%s"
 
-#: kiojob.cpp:594
-#, c-format
-msgid "ERROR: Could not move '%s'"
-msgstr "FEL: Kunde inte flytta '%s'"
+#: kiojob.cpp:609
+#, fuzzy, c-format
+msgid ""
+"Could not move directory\n"
+"\r%s\n"
+"\rto '%s'\n"
+"\rPerhaps access denied"
+msgstr ""
+"Kunde inte skriva\n"
+"%s\n"
+"Kanske nekades åtkomst"
 
-#: kiojob.cpp:887 kiojob.cpp:895 kiojob.cpp:901 kiojob.cpp:908 kiojob.cpp:916
-#: kiojob.cpp:924 kiojob.cpp:932 kiojob.cpp:941 kiojob.cpp:949 kiojob.cpp:957
-#: kiojob.cpp:976 kiojob.cpp:984 kiojob.cpp:990 kiojob.cpp:1007
-#: kiojob.cpp:1015 kiojob.cpp:1024 kiojob.cpp:1032 kiojob.cpp:1040
-#: kiojob.cpp:1048 kiojob.cpp:1067 kiojob.cpp:1075 kiojob.cpp:1083
+#: kiojob.cpp:912 kiojob.cpp:920 kiojob.cpp:926 kiojob.cpp:933 kiojob.cpp:941
+#: kiojob.cpp:949 kiojob.cpp:957 kiojob.cpp:966 kiojob.cpp:974 kiojob.cpp:982
+#: kiojob.cpp:1001 kiojob.cpp:1009 kiojob.cpp:1015 kiojob.cpp:1032
+#: kiojob.cpp:1040 kiojob.cpp:1049 kiojob.cpp:1057 kiojob.cpp:1065
+#: kiojob.cpp:1073 kiojob.cpp:1092 kiojob.cpp:1100 kiojob.cpp:1108
 msgid "Continue"
 msgstr "Fortsätt"
 
-#: kiojob.cpp:891 kiojob.cpp:1011
+#: kiojob.cpp:916 kiojob.cpp:1036
 #, c-format
 msgid ""
 "Could not read\n"
@@ -676,7 +753,7 @@ msgstr ""
 "%s\n"
 "Antingen finnns inte filen, eller så nekades åtkomsten"
 
-#: kiojob.cpp:899
+#: kiojob.cpp:924
 #, c-format
 msgid ""
 "Could not write\n"
@@ -687,7 +764,7 @@ msgstr ""
 "%s\n"
 "Kanske nekades åtkomst"
 
-#: kiojob.cpp:904 kiojob.cpp:1019
+#: kiojob.cpp:929 kiojob.cpp:1044
 #, c-format
 msgid ""
 "Could not create Socket for\n"
@@ -696,7 +773,7 @@ msgstr ""
 "Kunde inte skapa socket för\n"
 "%s"
 
-#: kiojob.cpp:912 kiojob.cpp:1028
+#: kiojob.cpp:937 kiojob.cpp:1053
 #, c-format
 msgid ""
 "Unknwon host in\n"
@@ -705,7 +782,7 @@ msgstr ""
 "Okänd värd i\n"
 "%s"
 
-#: kiojob.cpp:920 kiojob.cpp:1036
+#: kiojob.cpp:945 kiojob.cpp:1061
 #, c-format
 msgid ""
 "Could not connect to\n"
@@ -714,7 +791,7 @@ msgstr ""
 "Kunde inte komma åt\n"
 "%s"
 
-#: kiojob.cpp:928 kiojob.cpp:1044
+#: kiojob.cpp:953 kiojob.cpp:1069
 #, c-format
 msgid ""
 "The requested action\n"
@@ -725,7 +802,7 @@ msgstr ""
 "'%s'\n"
 "är inte implementerad ännu."
 
-#: kiojob.cpp:936
+#: kiojob.cpp:961
 #, c-format
 msgid ""
 "Could not make directory\n"
@@ -734,7 +811,7 @@ msgstr ""
 "Kunde inte skapa katalogen\n"
 "%s"
 
-#: kiojob.cpp:945
+#: kiojob.cpp:970
 #, c-format
 msgid ""
 "Could not list directory contents\n"
@@ -743,7 +820,7 @@ msgstr ""
 "Kunde inte lista kataloginnehåll för\n"
 "%s"
 
-#: kiojob.cpp:953
+#: kiojob.cpp:978
 #, c-format
 msgid ""
 "Could not delete\n"
@@ -754,7 +831,7 @@ msgstr ""
 "%s\n"
 "URLen finns inte, eller så nekades åtkomst"
 
-#: kiojob.cpp:963 kiojob.cpp:1054
+#: kiojob.cpp:988 kiojob.cpp:1079
 #, c-format
 msgid ""
 "Could not login for\n"
@@ -765,7 +842,7 @@ msgstr ""
 "%s\n"
 "Kanske är lösenordet fel"
 
-#: kiojob.cpp:980 kiojob.cpp:1071
+#: kiojob.cpp:1005 kiojob.cpp:1096
 #, c-format
 msgid ""
 "Tar reproted an error\n"
@@ -774,7 +851,7 @@ msgstr ""
 "Tar rapporterade ett fel\n"
 "%s"
 
-#: kiojob.cpp:988 kiojob.cpp:1079
+#: kiojob.cpp:1013 kiojob.cpp:1104
 #, c-format
 msgid ""
 "Gzip reproted an error\n"
@@ -783,7 +860,7 @@ msgstr ""
 "Gzip rapporterade ett fel\n"
 "%s"
 
-#: kiojob.cpp:1087
+#: kiojob.cpp:1112
 #, c-format
 msgid ""
 "Could not mount\n"
@@ -796,7 +873,7 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1092
+#: kiojob.cpp:1117
 #, c-format
 msgid ""
 "Could not unmount\n"
@@ -809,49 +886,53 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1229
+#: kiojob.cpp:1254
 msgid "Making directory"
 msgstr "Skapar katalog"
 
-#: kiojob.cpp:1311 kiojob.cpp:1365 kiojob.cpp:1408
+#: kiojob.cpp:1336 kiojob.cpp:1390 kiojob.cpp:1432
 #, c-format
 msgid "File %i/%i"
 msgstr "Fil %i/%i"
 
-#: kiojob.cpp:1314 kiojob.cpp:1369
+#: kiojob.cpp:1339 kiojob.cpp:1394
 #, c-format
 msgid "to %s"
 msgstr "till %s"
 
-#: kiojob.cpp:1344
-#, c-format
-msgid "ERROR: Could not delete dir '%s'"
-msgstr "FEL: Kunde inte radera katalogen '%s'"
+#: kiojob.cpp:1370
+#, fuzzy, c-format
+msgid ""
+"Could not delete directory\n"
+"\r%s"
+msgstr ""
+"Kunde inte skapa katalogen\n"
+"%s"
 
-#: kiojob.cpp:1437
+#: kiojob.cpp:1461
 #, c-format
 msgid "Mounting %s ..."
 msgstr "Monterar %s ..."
 
-#: kiojob.cpp:1441
+#: kiojob.cpp:1465
 #, c-format
 msgid "Unmounting %s ..."
 msgstr "Avmonterar %s ..."
 
-#: kiojob.cpp:1471
+#: kiojob.cpp:1495
 #, c-format
 msgid "Retrieving listing of %s ..."
 msgstr "Hämter listning för %s ..."
 
-#: autostart.cpp:28
+#: autostart.cpp:27
 msgid "KFM Installation Error"
 msgstr "Fel på KFM-installationen"
 
-#: autostart.cpp:29
+#: autostart.cpp:28
 msgid "The directory "
 msgstr "Katalogen "
 
-#: autostart.cpp:30
+#: autostart.cpp:29
 msgid ""
 " does not exist\n"
 "Run 'setupKFM' to solve the problem"
@@ -859,7 +940,7 @@ msgstr ""
 " finns inte\n"
 "Kör 'setupKFM' för at årgärda problemet"
 
-#: autostart.cpp:66
+#: autostart.cpp:65
 #, c-format
 msgid "ERROR: Could not access file %s\n"
 msgstr "FEL: Kunde inte komma år filen %s\n"
@@ -892,6 +973,39 @@ msgstr "Eller byt namn till"
 msgid "Password"
 msgstr "Lösenord"
 
-#: kfmexec.cpp:163
+#: kfmexec.cpp:139
 msgid "Trying to open"
 msgstr "Försöker öppna"
+
+#~ msgid "User Exec"
+#~ msgstr "Användare Kör"
+
+#~ msgid "Set UID"
+#~ msgstr "Sätt UID"
+
+#~ msgid "Group Read"
+#~ msgstr "Grupp Läs"
+
+#~ msgid "Group Write"
+#~ msgstr "Grupp Skriv"
+
+#~ msgid "Group Exec"
+#~ msgstr "Grupp Kör"
+
+#~ msgid "Others Write"
+#~ msgstr "Andra Skriv"
+
+#~ msgid "Others Exec"
+#~ msgstr "Andra Kör"
+
+#~ msgid "ERROR: Could not make directory %s"
+#~ msgstr "FEL: Kunde inte skapa katalogen %s"
+
+#~ msgid "ERROR: Could not make directory"
+#~ msgstr "FEL: Kunde inte skapa katalog"
+
+#~ msgid "ERROR: Could not move '%s'"
+#~ msgstr "FEL: Kunde inte flytta '%s'"
+
+#~ msgid "ERROR: Could not delete dir '%s'"
+#~ msgstr "FEL: Kunde inte radera katalogen '%s'"

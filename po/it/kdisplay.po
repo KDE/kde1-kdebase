@@ -1,4 +1,3 @@
-
 #: main.cpp:53
 msgid "KDE Display Configuration"
 msgstr "Configurazione Schermo KDE"
@@ -11,6 +10,7 @@ msgid ""
 msgstr ""
 "Utilizzo: %s -init|-setup\n"
 "\n"
+
 #: main.cpp:131
 msgid "  -init               apply current settings to the display\n"
 msgstr "  -init               applica i settaggi salvati al display\n"
@@ -202,6 +202,7 @@ msgid ""
 msgstr ""
 "Non sono stati trovati schemi dei colori.\n"
 "Vuoi installare quello di default ora ?"
+
 #: savescm.cpp:26
 msgid "Name"
 msgstr "Nome"
@@ -253,4 +254,3 @@ msgstr "Italici"
 #: kwmcom.cpp:80 kwmcom.cpp:107
 msgid "kwmcom: communication with kwm failed\n"
 msgstr "kwmcom: comunicazione con kwm fallita\n"
-

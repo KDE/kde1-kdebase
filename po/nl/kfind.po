@@ -1,7 +1,6 @@
 # Dutch translation of the kfind messages.
 # Copyright (C) 1997 Jeroen van der Most <jvdmost@wi.leidenuniv.nl>
 #
-
 #: kfdird.cpp:46
 msgid "Directories:"
 msgstr "Mappen"
@@ -171,7 +170,7 @@ msgstr "Creëer archief"
 msgid "Add to Archive:"
 msgstr "Voeg aan archief toe:"
 
-#FIXME
+# FIXME
 #: kfoptions.cpp:235
 msgid "Archivers"
 msgstr ""
@@ -351,13 +350,12 @@ msgstr ""
 "Het is niet mogelijk om de\n"
 "geselecteerde map te verwijderen"
 
-#FIXME
+# FIXME
 #: kfwin.cpp:340
 msgid "Couldn't recognize archive type!"
 msgstr "Het archieftype kon niet herkend worden"
 
+# FIXME
 #: kfwin.cpp:401
-#FIXME
 msgid "Error while creating child process!"
 msgstr "Fout tijdens het creëren van een kindproces!"
-

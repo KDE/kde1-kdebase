@@ -19,8 +19,7 @@ msgid ""
 msgstr ""
 "KFind %s\n"
 "Graafinen käyttöliittymä find työkalulle\n"
-"Miroslav Flídr <flidr@kky.zcu.cz>" 
-
+"Miroslav Flídr <flidr@kky.zcu.cz>"
 
 #: kfindtop.cpp:123
 msgid "&File"
@@ -348,8 +347,6 @@ msgstr ""
 msgid "Couldn't recognize archive type!"
 msgstr "Tunnistamaton arkistotyyppi!"
 
-
 #: kfwin.cpp:401
 msgid "Error while creating child process!"
 msgstr "Virhe luodessa lapsiprosessia!"
-

@@ -1,7 +1,14 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=\n"
+"Date: 1997-08-26 14:27:08+0200\n"
+"From: M G Berberich <berberic@thingol>\n"
+"Xgettext-Options: --keyword=translate\n"
+"Files: main.C\n"
+
 # Dutch translation of the kvt messages.
 # Copyright (C) 1997 Jeroen van der Most <jvdmost@wi.leidenuniv.nl>
 #
-
 #: main.C:220
 msgid "Add characters to word class"
 msgstr "Letters aan woordklasse toevoegen"
@@ -138,8 +145,8 @@ msgstr "&Instellingen"
 msgid "&Show"
 msgstr "&Laat zien"
 
+# FIXME
 #: main.C:600
-#FIXME
 msgid "Unsecure &keyboard"
 msgstr "Onveilig toetsenbord"
 
@@ -215,7 +222,8 @@ msgstr ""
 "gebaseerd op Robert Nation's rxvt-2.08\n"
 "\n"
 "Geaccepteerde schakelopties zijn:\n"
-"-e <commando> <arg> ...\tvoer commando uit met argumenten. Moet het laatste argument zijn\n"
+"-e <commando> <arg> ...\tvoer commando uit met argumenten. Moet het laatste "
+"argument zijn\n"
 "-display <naam>\t\tspecificeer de display (server)\n"
 "-vt_geometry <spec>\tspecificeer de venster grootte en positie\n"
 "-print-pipe <namm>\tspecificeer een vt100 printer pipe\n"
@@ -237,7 +245,8 @@ msgstr ""
 "-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
 "-sl <aantal>\t\tbewaar aantal regels in de scroll-back buffer\n"
 "-pageup <keysym>\tgebruik alt-keysym als toets om naar boven te schuiven\n"
-"-pagedown <keysym>\tgebruik alt-keysym als toets om naar beneden te schuiven\n"
+"-pagedown <keysym>\tgebruik alt-keysym als toets om naar beneden te "
+"schuiven\n"
 
 #: main.C:954
 msgid ""

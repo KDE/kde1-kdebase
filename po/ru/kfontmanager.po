@@ -1,4 +1,3 @@
-
 #: main.cpp:53
 msgid "KDE Font Manager"
 msgstr "KDE Font Manager"

@@ -3,7 +3,6 @@
 #
 # Words I need a better translation for: Widget, Disabled
 #
-
 #: main.cpp:53
 msgid "KDE Display Configuration"
 msgstr "KDE Scherm instellingen"

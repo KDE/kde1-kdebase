@@ -1,14 +1,140 @@
-
-#: error.C:28
+#: main.C:63
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
 "kwm: Sembra che ci sia gia' un gestore di finestre attivo. kwm non avviato\n"
 
-#: error.C:42
+#: main.C:77
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: fallimento durante l'inizializzazione; abbandono\n"
+
+#: main.C:352
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""
+
+#: main.C:356
+msgid "Usage: "
+msgstr ""
+
+#: main.C:367
+#, fuzzy
+msgid "Maximize"
+msgstr "(Non) In&grandito"
+
+#: main.C:368
+msgid "Restore"
+msgstr ""
+
+#: main.C:369
+#, fuzzy
+msgid "Iconify"
+msgstr "&Iconifica"
+
+#: main.C:370
+#, fuzzy
+msgid "DeIconify"
+msgstr "&Iconifica"
+
+#: main.C:371
+#, fuzzy
+msgid "Sticky"
+msgstr "(Non) &Attaccato"
+
+#: main.C:372
+#, fuzzy
+msgid "UnSticky"
+msgstr "(Non) &Attaccato"
+
+#: main.C:373
+#, fuzzy
+msgid "Move"
+msgstr "&Muovi"
+
+#: main.C:374
+#, fuzzy
+msgid "Resize"
+msgstr "&Ridimensiona"
+
+#: main.C:376
+#, fuzzy
+msgid "To desktop"
+msgstr "&Al Desktop"
+
+#: main.C:378
+msgid "Onto current desktop"
+msgstr ""
+
+#: main.C:416
+msgid "One"
+msgstr "Uno"
+
+#: main.C:419
+msgid "Two"
+msgstr "Due"
+
+#: main.C:422
+msgid "Three"
+msgstr "Tre"
+
+#: main.C:425
+msgid "Four"
+msgstr "Quattro"
+
+#: main.C:428
+msgid "Five"
+msgstr "Cinque"
+
+#: main.C:431
+msgid "Six"
+msgstr "Sei"
+
+#: main.C:434
+msgid "Seven"
+msgstr "Sette"
+
+#: main.C:437
+msgid "Eight"
+msgstr "Otto"
+
+#: main.C:878
+msgid "*** No Tasks ***"
+msgstr ""
+
+#: logout.C:34 task.C:35
+#, fuzzy
+msgid "Logout"
+msgstr "Lo&gout"
+
+#: logout.C:44
+msgid "Session prepared for logout"
+msgstr ""
+
+#: logout.C:49
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+
+#: logout.C:58
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+
+#: logout.C:67
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+
+#: task.C:34
+msgid "Switch to"
+msgstr ""
+
+#: task.C:48
+msgid "Current session"
+msgstr ""
 
 #: kwm.C:73
 msgid ""
@@ -69,38 +195,6 @@ msgstr "&Blocca schermo"
 msgid "Lo&gout"
 msgstr "Lo&gout"
 
-#: main.C:1093
-msgid "One"
-msgstr "Uno"
-
-#: main.C:1095
-msgid "Two"
-msgstr "Due"
-
-#: main.C:1097
-msgid "Three"
-msgstr "Tre"
-
-#: main.C:1099
-msgid "Four"
-msgstr "Quattro"
-
-#: main.C:1101
-msgid "Five"
-msgstr "Cinque"
-
-#: main.C:1103
-msgid "Six"
-msgstr "Sei"
-
-#: main.C:1105
-msgid "Seven"
-msgstr "Sette"
-
-#: main.C:1107
-msgid "Eight"
-msgstr "Otto"
-
 #: main.C:1141
 msgid "(Un) Ma&ximize"
 msgstr "(Non) In&grandito"
@@ -136,4 +230,3 @@ msgstr "&Distruggi"
 #: minicli.C:65
 msgid "Command:"
 msgstr "Comando:"
-

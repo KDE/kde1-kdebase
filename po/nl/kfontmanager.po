@@ -1,7 +1,6 @@
 # Dutch translation of the kfontmanager messages.
 # Copyright (C) 1997 Jeroen van der Most <jvdmost@wi.leidenuniv.nl>
 #
-
 #: main.cpp:53
 msgid "KDE Font Manager"
 msgstr "KDE-lettertypebeheer"
@@ -70,8 +69,7 @@ msgstr ""
 msgid ""
 "Can not create:\n"
 " ~/.kde/config/kdefonts\n"
-msgstr ""
-"Kan ~/.kde/config/kdefonts niet maken\n"
+msgstr "Kan ~/.kde/config/kdefonts niet maken\n"
 
 #: kfontmanager.cpp:288
 msgid ""

@@ -1,5 +1,4 @@
-
-#: error.C:28
+#: main.C:63
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
@@ -7,9 +6,136 @@ msgstr ""
 "kwm: det ser ut som om det redan finns en fönsterhanterare. Startar inte "
 "kwm\n"
 
-#: error.C:42
+#: main.C:77
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: initieringsfel; avbryter\n"
+
+#: main.C:352
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""
+
+#: main.C:356
+msgid "Usage: "
+msgstr ""
+
+#: main.C:367
+#, fuzzy
+msgid "Maximize"
+msgstr "(av) ma&ximera"
+
+#: main.C:368
+msgid "Restore"
+msgstr ""
+
+#: main.C:369
+#, fuzzy
+msgid "Iconify"
+msgstr "&Ikonifiera"
+
+#: main.C:370
+#, fuzzy
+msgid "DeIconify"
+msgstr "&Ikonifiera"
+
+#: main.C:371
+#, fuzzy
+msgid "Sticky"
+msgstr "(av) &Sticky"
+
+#: main.C:372
+#, fuzzy
+msgid "UnSticky"
+msgstr "(av) &Sticky"
+
+#: main.C:373
+#, fuzzy
+msgid "Move"
+msgstr "&Flytta"
+
+#: main.C:374
+#, fuzzy
+msgid "Resize"
+msgstr "&Ändra storlek"
+
+#: main.C:376
+#, fuzzy
+msgid "To desktop"
+msgstr "&Till skrivbord"
+
+#: main.C:378
+msgid "Onto current desktop"
+msgstr ""
+
+#: main.C:416
+msgid "One"
+msgstr "Ett"
+
+#: main.C:419
+msgid "Two"
+msgstr "Två"
+
+#: main.C:422
+msgid "Three"
+msgstr "Tre"
+
+#: main.C:425
+msgid "Four"
+msgstr "Fyra"
+
+#: main.C:428
+msgid "Five"
+msgstr "Fem"
+
+#: main.C:431
+msgid "Six"
+msgstr "Sex"
+
+#: main.C:434
+msgid "Seven"
+msgstr "Sju"
+
+#: main.C:437
+msgid "Eight"
+msgstr "Åtta"
+
+#: main.C:878
+msgid "*** No Tasks ***"
+msgstr ""
+
+#: logout.C:34 task.C:35
+#, fuzzy
+msgid "Logout"
+msgstr "Lo&gga ur"
+
+#: logout.C:44
+msgid "Session prepared for logout"
+msgstr ""
+
+#: logout.C:49
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+
+#: logout.C:58
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+
+#: logout.C:67
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+
+#: task.C:34
+msgid "Switch to"
+msgstr ""
+
+#: task.C:48
+msgid "Current session"
+msgstr ""
 
 #: kwm.C:73
 msgid ""
@@ -69,38 +195,6 @@ msgstr "&Lås skärmen"
 #: main.C:378
 msgid "Lo&gout"
 msgstr "Lo&gga ur"
-
-#: main.C:1093
-msgid "One"
-msgstr "Ett"
-
-#: main.C:1095
-msgid "Two"
-msgstr "Två"
-
-#: main.C:1097
-msgid "Three"
-msgstr "Tre"
-
-#: main.C:1099
-msgid "Four"
-msgstr "Fyra"
-
-#: main.C:1101
-msgid "Five"
-msgstr "Fem"
-
-#: main.C:1103
-msgid "Six"
-msgstr "Sex"
-
-#: main.C:1105
-msgid "Seven"
-msgstr "Sju"
-
-#: main.C:1107
-msgid "Eight"
-msgstr "Åtta"
 
 #: main.C:1141
 msgid "(Un) Ma&ximize"

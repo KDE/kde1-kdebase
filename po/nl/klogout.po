@@ -1,7 +1,6 @@
 # Dutch translation of the klogout messages.
 # Copyright (C) 1997 Jeroen van der Most <jvdmost@wi.leidenuniv.nl>
 #
-
 #: klogout.cpp:76
 msgid "Logout"
 msgstr "Uitloggen"

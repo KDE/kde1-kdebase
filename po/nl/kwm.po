@@ -1,17 +1,143 @@
 # Dutch translation of the kwm messages.
 # Copyright (C) 1997 Jeroen van der Most <jvdmost@wi.leidenuniv.nl>
 #
-
-#: error.C:28
+#: main.C:63
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
 "kwm: Het lijkt alsof er al een windowmanager draait. kwm niet opgestart\n"
 
-#: error.C:42
+#: main.C:77
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: probleem tijdens het initialiseren; stoppen\n"
+
+#: main.C:352
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""
+
+#: main.C:356
+msgid "Usage: "
+msgstr ""
+
+#: main.C:367
+#, fuzzy
+msgid "Maximize"
+msgstr "Ma&ximaliseren aan/uit"
+
+#: main.C:368
+msgid "Restore"
+msgstr ""
+
+#: main.C:369
+#, fuzzy
+msgid "Iconify"
+msgstr "Mi&nimaliseren"
+
+#: main.C:370
+#, fuzzy
+msgid "DeIconify"
+msgstr "Mi&nimaliseren"
+
+#: main.C:371
+#, fuzzy
+msgid "Sticky"
+msgstr "&Kleven aan/uit"
+
+#: main.C:372
+#, fuzzy
+msgid "UnSticky"
+msgstr "&Kleven aan/uit"
+
+#: main.C:373
+#, fuzzy
+msgid "Move"
+msgstr "&Verplaatsen"
+
+#: main.C:374
+#, fuzzy
+msgid "Resize"
+msgstr "&Grootte veranderen"
+
+#: main.C:376
+#, fuzzy
+msgid "To desktop"
+msgstr "Naar &buroblad"
+
+#: main.C:378
+msgid "Onto current desktop"
+msgstr ""
+
+#: main.C:416
+msgid "One"
+msgstr "Een"
+
+#: main.C:419
+msgid "Two"
+msgstr "Twee"
+
+#: main.C:422
+msgid "Three"
+msgstr "Drie"
+
+#: main.C:425
+msgid "Four"
+msgstr "Vier"
+
+#: main.C:428
+msgid "Five"
+msgstr "Vijf"
+
+#: main.C:431
+msgid "Six"
+msgstr "Zes"
+
+#: main.C:434
+msgid "Seven"
+msgstr "Zeven"
+
+#: main.C:437
+msgid "Eight"
+msgstr "Acht"
+
+#: main.C:878
+msgid "*** No Tasks ***"
+msgstr ""
+
+#: logout.C:34 task.C:35
+#, fuzzy
+msgid "Logout"
+msgstr "&Uitloggen"
+
+#: logout.C:44
+msgid "Session prepared for logout"
+msgstr ""
+
+#: logout.C:49
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+
+#: logout.C:58
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+
+#: logout.C:67
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+
+#: task.C:34
+msgid "Switch to"
+msgstr ""
+
+#: task.C:48
+msgid "Current session"
+msgstr ""
 
 #: kwm.C:73
 msgid ""
@@ -44,7 +170,7 @@ msgstr "Buroblad"
 msgid "kwm: exiting on signal\n"
 msgstr "kwm: onderbroken door signaal\n"
 
-#FIXME
+# FIXME
 #: main.C:371
 msgid "&Help on desktop"
 msgstr "&Hulp over het buroblad"
@@ -65,7 +191,7 @@ msgstr "&Ververs buroblad"
 msgid "&Arrange icons"
 msgstr "&Pictogrammen schikken"
 
-#FIXME
+# FIXME
 #: main.C:377
 msgid "&Lock screen"
 msgstr "Vergrendel &scherm"
@@ -73,38 +199,6 @@ msgstr "Vergrendel &scherm"
 #: main.C:378
 msgid "Lo&gout"
 msgstr "&Uitloggen"
-
-#: main.C:1093
-msgid "One"
-msgstr "Een"
-
-#: main.C:1095
-msgid "Two"
-msgstr "Twee"
-
-#: main.C:1097
-msgid "Three"
-msgstr "Drie"
-
-#: main.C:1099
-msgid "Four"
-msgstr "Vier"
-
-#: main.C:1101
-msgid "Five"
-msgstr "Vijf"
-
-#: main.C:1103
-msgid "Six"
-msgstr "Zes"
-
-#: main.C:1105
-msgid "Seven"
-msgstr "Zeven"
-
-#: main.C:1107
-msgid "Eight"
-msgstr "Acht"
 
 #: main.C:1141
 msgid "(Un) Ma&ximize"

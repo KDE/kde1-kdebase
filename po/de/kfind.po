@@ -1,4 +1,3 @@
-
 #: kfdird.cpp:46
 msgid "Directories:"
 msgstr "Verzeichnisse:"
@@ -432,4 +431,3 @@ msgstr "Typ des Archivs konnte nicht ermittelt werden!"
 #: kfwin.cpp:401
 msgid "Error while creating child process!"
 msgstr "Fehler beim Erzeugen des Unterprozesses!"
-

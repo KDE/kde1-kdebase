@@ -1,4 +1,3 @@
-
 #: klogout.cpp:76
 msgid "Logout"
 msgstr "Odhlásit"
