@@ -1,3 +1,6 @@
+#KDE Translation project
+#Italian Translation by Andrea Rizzzi <Bilibao@ouverture.it>
+
 #: main.cpp:53
 msgid "KDE Display Configuration"
 msgstr "Configurazione Schermo KDE"
@@ -10,7 +13,6 @@ msgid ""
 msgstr ""
 "Utilizzo: %s -init|-setup\n"
 "\n"
-
 #: main.cpp:131
 msgid "  -init               apply current settings to the display\n"
 msgstr "  -init               applica i settaggi salvati al display\n"
@@ -101,7 +103,7 @@ msgstr "Richiedi Password"
 
 #: scrnsave.cpp:216
 msgid "Priority:"
-msgstr "Priorita':"
+msgstr "Priorità:"
 
 #: colorscm.cpp:326 scrnsave.cpp:219
 msgid "High"
@@ -202,7 +204,6 @@ msgid ""
 msgstr ""
 "Non sono stati trovati schemi dei colori.\n"
 "Vuoi installare quello di default ora ?"
-
 #: savescm.cpp:26
 msgid "Name"
 msgstr "Nome"
