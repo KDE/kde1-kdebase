@@ -4,7 +4,10 @@
 // Copyright (C) 1996 Matthias Ettrich
 //
 
-#define STDC_HEADERS
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include <qapp.h>
 #include <qpushbt.h>
 #include <qbitmap.h>
