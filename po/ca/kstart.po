@@ -1,12 +1,12 @@
-# KSTARTONDESK CATALAN TRANSLATION
+# KSTART CATALAN TRANSLATION
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # Sebastià Pla <sastia@redestb.es>, 1998.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kstartondesk\n"
+"Project-Id-Version: kstart\n"
 "POT-Creation-Date: 1998-11-22 01:14+0100\n"
-"PO-Revision-Date: 1998-06-09 00:00+ZONE\n"
+"PO-Revision-Date: 1998-12-11 14:16+ZONE\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -45,25 +45,38 @@ msgid ""
 " \n"
 " "
 msgstr ""
+"\n"
+" Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
+"\n"
+" Utilitat per engegar aplicacions tradicionals amb propietats de finestres\n"
+" KDE tals com iconitza, maximitza, cap a un escriptori virtual, decoracions\n"
+" especials o apegalòs. A més podeu evitar que la finestra capturi el focus.\n"
+" \n"
+" A més, l'opció -activate passarà a la finestra encara que s'engegi a un\n"
+" escriptori virtual diferent\n"
+" \n"
+" Ús:\n"
+" %s <comanda> [-window <expressió regular>] [-desktop <número>]\n"
+"              [-sticky] [-iconify] [-maximize] \n"
+"              [-decoration tiny|none] [-activate] [-nofocus]\n"
+" \n"
+" Si no especifiqueu una expressió regular pel títol de la finestra,\n"
+" s'usarà la primera finestra en aparèixer. No ho recomano!\n"
+" \n"
+" Exemple d'ús:\n"
+" %s \"xclock -geometry 80x80-0+0\" -window xclock \\\n"
+"        -decoration tiny -sticky -nofocus\n"
+" posa un rellotget decorat i apegalòs a la part superior dreta de la "
+"pantalla,\n"
+" que no agafa el focus (per tant no té entrada a la barra de tasques).\n"
+" Fixeu-vos que encara podeu tancar-la amb el botó dret del ratolí.\n"
+" \n"
+" "
 
 #: kstart.C:156
-#, fuzzy
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-
-#~ msgid "Usage:"
-#~ msgstr "Us:"
-
-#~ msgid "command "
-#~ msgstr "ordre "
-
-#~ msgid "title "
-#~ msgstr "títol "
-
-#~ msgid "desktop"
-#~ msgstr "escriptori"
-
-#~ msgid "Example"
-#~ msgstr "Exemple"
+msgstr ""
+"\n"
+" Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"

@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-12-19 01:20+0100\n"
-"PO-Revision-Date: 1998-06-08 23:35+0100\n"
+"POT-Creation-Date: 1998-12-03 01:16+0100\n"
+"PO-Revision-Date: 1998-12-11 14:41+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,16 +18,16 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: sembla que ja hi ha un gestor de finestres en marxa. kwm nos'ha "
+"kwm: sembla que ja hi ha un gestor de finestres en marxa. kwm no s'ha "
 "engegat\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: error al inicialitzar; cancel·lant el procés\n"
+msgstr "kwm: error al inicialitzar; s'està cancel·lant el procés\n"
 
 #: main.C:485
 msgid "Preparing session ... "
-msgstr "Preparant la sessió ... "
+msgstr "S'està preparant la sessió ... "
 
 #: main.C:509
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -35,23 +35,23 @@ msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:516
 msgid "Usage: "
-msgstr "Us: "
+msgstr "Ús: "
 
 #: main.C:527
 msgid "&Maximize"
-msgstr "&Maximitzar"
+msgstr "&Maximitza"
 
 #: main.C:528
 msgid "&Restore"
-msgstr "&Restaurar"
+msgstr "&Restaura"
 
 #: main.C:529
 msgid "&Iconify"
-msgstr "&Iconitzar"
+msgstr "&Iconitza"
 
 #: main.C:530
 msgid "&DeIconify"
-msgstr "&DesIconitzar"
+msgstr "&DesIconitza"
 
 #: main.C:531
 msgid "&Sticky"
@@ -63,11 +63,11 @@ msgstr "&No apegalós"
 
 #: main.C:533
 msgid "Mo&ve"
-msgstr "M&oure"
+msgstr "M&ou"
 
 #: main.C:534
 msgid "Resi&ze"
-msgstr "Dimen&sionar"
+msgstr "Dimen&siona"
 
 #: main.C:536
 msgid "&To desktop"
@@ -115,11 +115,11 @@ msgstr "Escriptori sense nom"
 
 #: main.C:1040
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Alguns pixmaps no són vàlids: desactivat el mode ombrejat\n"
+msgstr "Alguns pixmaps no són vàlids: desactivo el mode ombrejat\n"
 
 #: main.C:1152
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Alguns pixmaps no són vàlids: desactivat el mode Gimmick\n"
+msgstr "Alguns pixmaps no són vàlids: desactivo el mode Gimmick\n"
 
 #: main.C:1477
 msgid "*** No Tasks ***"
@@ -127,7 +127,7 @@ msgstr "*** Sense Tasques ***"
 
 #: minicli.C:122
 msgid "Command:"
-msgstr "Ordre:"
+msgstr "Comanda:"
 
 #: warning.C:36
 msgid "Ooops!"
@@ -169,7 +169,7 @@ msgstr ""
 
 #: taskmgr.C:107
 msgid "Switch to"
-msgstr "Canviar a"
+msgstr "Canvia a"
 
 #: taskmgr.C:121
 msgid "Current session"

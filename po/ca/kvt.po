@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kvt\n"
 "POT-Creation-Date: 1998-11-12 01:17+0100\n"
-"PO-Revision-Date: 1998-05-20 23:27+0100\n"
+"PO-Revision-Date: 1998-12-11 14:28+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,15 +15,15 @@ msgstr ""
 
 #: main.C:424
 msgid "choose type of color-mode"
-msgstr "Escollir tipus de mode color"
+msgstr "Escull tipus de mode color"
 
 #: main.C:430
 msgid "Add characters to word class"
-msgstr "Afegir caràcters a la classe paraula"
+msgstr "Afegeix caràcters a la classe paraula"
 
 #: main.C:436
 msgid "The backspace key will send a"
-msgstr "La tecla backspace enviarà un"
+msgstr "La tecla esborrar enviarà un"
 
 #: main.C:442
 msgid "Cursor key set"
@@ -35,7 +35,7 @@ msgstr "&Nou Terminal"
 
 #: main.C:618 main.C:1024
 msgid "&Hide"
-msgstr "&Ocultar"
+msgstr "&Oculta"
 
 #: main.C:619
 msgid "&Left"
@@ -95,15 +95,15 @@ msgstr "&Colors a Mida"
 
 #: main.C:663 main.C:950
 msgid "Hide &Menubar"
-msgstr "Ocultar Barra de &Menú"
+msgstr "Oculta barra de &menú"
 
 #: main.C:665 main.C:872 main.C:942
 msgid "Show &Menubar"
-msgstr "Mostrar Barra de &Menú"
+msgstr "Mostra barra de &menú"
 
 #: main.C:666 main.C:960
 msgid "Secure &keyboard"
-msgstr "Assegurar &teclat"
+msgstr "Assegura &teclat"
 
 #: main.C:668
 msgid "Scroll&bar"
@@ -111,7 +111,7 @@ msgstr "&Barra de desplaçament"
 
 #: main.C:669
 msgid "&Font size"
-msgstr "Mida de &Font"
+msgstr "Mida de &font"
 
 #: main.C:670
 msgid "&Color"
@@ -119,7 +119,7 @@ msgstr "&Color"
 
 #: main.C:671
 msgid "&Size"
-msgstr "&Grandària"
+msgstr "M&ida"
 
 #: main.C:672
 msgid "Terminal..."
@@ -131,14 +131,13 @@ msgstr "Font..."
 
 #: main.C:674
 msgid "Enable &hotkeys"
-msgstr ""
+msgstr "Activa tecles de f&unció"
 
 #: main.C:677
 msgid "Save &Options"
-msgstr "Desar &Opcions"
+msgstr "Desa &opcions"
 
 #: main.C:686
-#, fuzzy
 msgid ""
 "\n"
 "\n"
@@ -153,17 +152,18 @@ msgstr ""
 "\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
 "\n"
 "Emulació de terminal per l'entorn d'escriptori KDE\n"
 "basat en el programa rxvt-2.08 de Robert Nation"
 
 #: main.C:881 main.C:1017
 msgid "&Show"
-msgstr "&Mostrar"
+msgstr "&Mostra"
 
 #: main.C:956
 msgid "Unsecure &keyboard"
-msgstr "No assegurar &teclat"
+msgstr "No assegura &teclat"
 
 #: main.C:967
 msgid "Terminal Options"
@@ -230,7 +230,7 @@ msgstr "-vt_font <nomfont>        font normal\n"
 
 #: main.C:1447
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr "-no_font_hack             desactivar la solució a l'error de font Qt\n"
+msgstr "-no_font_hack             desactiva la solució a l'error de font Qt\n"
 
 #: main.C:1448
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
@@ -238,15 +238,15 @@ msgstr "-vt_size <mida>           minúscula, petita, mitjana, gran, enorme\n"
 
 #: main.C:1449
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr "-linux                    arranjar kvt per imitar la consola linux\n"
+msgstr "-linux                    arranja kvt per imitar la consola linux\n"
 
 #: main.C:1450
 msgid "-no_menubar               hide the menubar\n"
-msgstr "-no_menubar               ocultar la barra de menú\n"
+msgstr "-no_menubar               oculta la barra de menú\n"
 
 #: main.C:1451
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr "-no_scrollbar             ocultar la barra de desplaçament\n"
+msgstr "-no_scrollbar             oculta la barra de desplaçament\n"
 
 #: main.C:1452
 msgid ""
@@ -262,8 +262,7 @@ msgstr "-tn <TERM>                Tipus de terminal. Per omissió és xterm.\n"
 
 #: main.C:1455
 msgid "-C                        Capture system console message\n"
-msgstr ""
-"-C                        Capturar els missatges de la consola del sistema\n"
+msgstr "-C                        Captura els missatges de la consola\n"
 
 #: main.C:1456
 msgid "-n <text>                 name in icon or icon window\n"
@@ -274,8 +273,8 @@ msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
-"-7                        executar en mode 7 bits\n"
-"-8                        executar en mode 8 bits\n"
+"-7                        executa en mode 7 bits\n"
+"-8                        executa en mode 8 bits\n"
 
 #: main.C:1459
 msgid ""
@@ -283,21 +282,21 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
-"-ls                       iniciar kvt amb un nou login\n"
-"-ls-                      iniciar kvt sense un nou login (omissió)\n"
+"-ls                       inicia kvt amb un nou login\n"
+"-ls-                      inicia kvt sense un nou login (omissió)\n"
 
 #: main.C:1461
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
-"-meta <arg>               manegar Meta amb prefix ESCAPE, 8THBIT fix, o "
-"ignorar\n"
+"-meta <arg>               manega Meta amb prefix ESCAPE, 8THBIT fix, o "
+"ignora\n"
 
 #: main.C:1462
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr ""
-"-sl <nombre>              desar nombre línies a l'àrea de desplaçament "
+"-sl <nombre>              desa nombre línies a l'àrea de desplaçament "
 "enrera\n"
 
 #: main.C:1463
@@ -307,8 +306,8 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
-"-pageup <keysym>          usar la tecla alt-keysym per desplaçar-se amunt\n"
-"-pagedown <keysym>        usar la tecla alt-keysym per desplaçar-se avall\n"
+"-pageup <keysym>          usa la tecla alt-keysym per desplaçar-se amunt\n"
+"-pagedown <keysym>        usa la tecla alt-keysym per desplaçar-se avall\n"
 
 #: main.C:1467
 msgid ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
 "POT-Creation-Date: 1998-12-22 01:15+0100\n"
-"PO-Revision-Date: 1998-12-22 00:04+0100\n"
+"PO-Revision-Date: 1998-12-23 23:25+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -38,19 +38,19 @@ msgid "User &Agent"
 msgstr "&Agent d'usuari"
 
 #: main.cpp:76
-#, fuzzy
 msgid "Coo&kies"
-msgstr "Desactiva cookies"
+msgstr "Coo&kies"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
 msgstr "Icones d'&escriptori"
 
 #: main.cpp:89
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
-msgstr "us: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
+msgstr ""
+"us: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
@@ -173,9 +173,8 @@ msgid "Known bindings:"
 msgstr "Enllaços coneguts:"
 
 #: kcookiesdlg.cpp:49
-#, fuzzy
 msgid "&Enable Cookies"
-msgstr "Desactiva cookies"
+msgstr "&Habilita cookies"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
@@ -203,7 +202,7 @@ msgstr "Política de canvi de domini"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr ""
+msgstr "Primer heu d'introduïr un domini !"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
@@ -227,4 +226,4 @@ msgstr "Color de fons de l'icona:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr ""
+msgstr "Mostra fitxers &ocults a l'escriptori"
