@@ -506,7 +506,7 @@ void KScienceSaver::initLens()
 	buffer = XSubImage( xRootWin, 0, 0, side, side );
         myAssert( buffer != 0, "can't allocate pixmap" );                             
 
-	offset = (T32bit **) malloc( sizeof( T32bit) * side );
+	offset = (T32bit **) malloc( sizeof(T32bit *) * side );
 	myAssert( offset != 0, "too few memory" );
 
 	switch( mode ) {
