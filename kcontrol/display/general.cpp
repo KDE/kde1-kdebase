@@ -359,6 +359,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	changed = false;
 	useRM = true;
 	macStyle = false;//CT
+	iconStyle = 0L;
 
 	//debug("KGeneral::KGeneral");
 	
