@@ -67,7 +67,8 @@ KDMConfig::getUsers( QString s, bool sorted = false)
 	  semsplit( nu, no_users);	  
 	  struct passwd *ps;
 #define CHECK_STRING( x) (x != 0 && x[0] != 0)
-	  for( ps = getpwent(); ps ; ps = getpwent()) {
+	  setpwent();
+	  for( ps = getpwent(); ps ; ) {
 	       if( CHECK_STRING(ps->pw_dir) &&
 		   CHECK_STRING(ps->pw_shell) &&
 		   CHECK_STRING(ps->pw_gecos) &&
@@ -81,7 +82,9 @@ KDMConfig::getUsers( QString s, bool sorted = false)
 		    else
 			 result->append( new KDMViewItem( ps->pw_name, p));
 	       }
+	       ps = getpwent();
 	  }
+	  endpwent();
 #undef CHECK_STRING
      } else {
 	  QStrList sl;

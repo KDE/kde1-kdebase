@@ -233,17 +233,19 @@ struct verify_info	*verify;
 #ifndef USE_PAM
 #ifdef USESHADOW
 	sp = getspnam(greet->name);
-	if (sp == NULL) {
-		Debug ("getspnam() failed.  Are you root?\n");
-		bzero(greet->password, strlen(greet->password));
-		return 0;
+	if (sp != NULL) {
+	  /*Debug ("getspnam() failed.  Are you root?\n");
+	    bzero(greet->password, strlen(greet->password));
+	    return 0;
+	  */
+	  char* tmp;
+	  tmp = p->pw_passwd;
+	  p->pw_passwd = sp->sp_pwdp;
+	  sp->sp_pwdp = tmp;
 	}
 	endspent();
-
-	if (strcmp (crypt (greet->password, sp->sp_pwdp), sp->sp_pwdp))
-#else
-	if (strcmp (crypt (greet->password, p->pw_passwd), p->pw_passwd))
 #endif
+	if (strcmp (crypt (greet->password, p->pw_passwd), p->pw_passwd))
 	{
 		Debug ("password verify failed\n");
 		bzero(greet->password, strlen(greet->password));
