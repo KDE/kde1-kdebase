@@ -47,25 +47,25 @@ msgstr "Desligar..."
 
 #: kgreeter.cpp:418
 msgid "No login"
-msgstr ""
+msgstr "Nenhum login"
 
 #: kgreeter.cpp:467 kgreeter.cpp:475 kgreeter.cpp:501 kgreeter.cpp:509
 msgid "Expired"
-msgstr ""
+msgstr "Expirado"
 
 #: kgreeter.cpp:468 kgreeter.cpp:502
 msgid "Sorry -- your account has expired."
-msgstr ""
+msgstr "Desculpe -- sua conta expirou."
 
 #: kgreeter.cpp:473 kgreeter.cpp:507
 #, c-format
 msgid "Warning: your account expires on %s"
-msgstr ""
+msgstr "Aviso: sua conta expira em %s"
 
 #: kgreeter.cpp:541
 msgid "No home"
-msgstr ""
+msgstr "Sem diretório-base"
 
 #: kgreeter.cpp:542
 msgid "Home directory not available"
-msgstr ""
+msgstr "Diretório-base não disponível"
