@@ -56,7 +56,7 @@ msgstr "Vy&bra»"
 
 #: kfmgui.cpp:342
 msgid "Mime Types"
-msgstr "Mime typy"
+msgstr "MIME typy"
 
 #: kfmgui.cpp:344
 msgid "Applications"
@@ -64,7 +64,7 @@ msgstr "Aplikácie"
 
 #: kfmgui.cpp:350
 msgid "Global Mime Types"
-msgstr "Globálne Mime typy"
+msgstr "Globálne MIME typy"
 
 #: kfmgui.cpp:352
 msgid "Global Applications"
@@ -130,27 +130,27 @@ msgstr "Ukáza» históriu"
 
 #: kfmgui.cpp:402
 msgid "Show Cache"
-msgstr "Ukáza» cache"
+msgstr "Ukáza» ke¹"
 
 #: kfmgui.cpp:404
 msgid "Clear Cache"
-msgstr "Vyprázdni» cache"
+msgstr "Vyprázdni» ke¹"
 
 #: kfmgui.cpp:407
 msgid "Always look in cache"
-msgstr "V¾dy pou¾íva» cache"
+msgstr "V¾dy pou¾íva» ke¹"
 
 #: kfmgui.cpp:409
 msgid "Never look in cache"
-msgstr "Nikdy nepou¾íva» cache"
+msgstr "Nikdy nepou¾íva» ke¹"
 
 #: kfmgui.cpp:411
 msgid "Always save cache"
-msgstr "V¾dy uklada» cache"
+msgstr "V¾dy uklada» ke¹"
 
 #: kfmgui.cpp:413
 msgid "Never save cache"
-msgstr "Nikdy neuklada» cache"
+msgstr "Nikdy neuklada» ke¹"
 
 # kfmgui.cpp:???
 #: kfmgui.cpp:424
@@ -191,7 +191,7 @@ msgstr "&Zálo¾ky"
 
 #: kfmgui.cpp:489
 msgid "&Cache"
-msgstr "&Cache"
+msgstr "&Ke¹"
 
 #: kfmgui.cpp:516 kfmman.cpp:1050
 msgid "Up"
@@ -199,7 +199,7 @@ msgstr "Hore"
 
 #: kfmgui.cpp:588
 msgid "Could not load icon\n"
-msgstr "Nie je mo¾né nahra» ikonu\n"
+msgstr "Nie je mo¾né naèíta» ikonu\n"
 
 #: kfmexec.cpp:59 kfmgui.cpp:744 kfmman.cpp:1020
 msgid "Malformed URL\n"
@@ -516,7 +516,7 @@ msgstr "Farba URL odkazu:"
 
 #: htmlopts.cpp:238
 msgid "Followed Link Color:"
-msgstr "Farba sledujúceho odkazu:"
+msgstr "Farba nav¹tíveného odkazu:"
 
 #: htmlopts.cpp:246
 msgid "Change cursor over link."
@@ -532,7 +532,7 @@ msgstr "Vertikálne vzdialenosti:"
 
 #: htmlopts.cpp:349
 msgid "Transparent Text for Root Icons."
-msgstr "Text ikoniek pracovnej plochy priehµadný"
+msgstr "Priehµadný text ikoniek roota"
 
 #: bookmark.cpp:264
 msgid "Could not write bookmark"
@@ -544,7 +544,7 @@ msgstr "Plné meno"
 
 #: kfmprops.cpp:260
 msgid "Is the Trash Bin"
-msgstr "Kô¹"
+msgstr "Je kô¹"
 
 #: kfmprops.cpp:267
 msgid "Is a Directory"

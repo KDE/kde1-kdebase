@@ -43,7 +43,7 @@ msgstr "Prihlásenie neúspe¹né!"
 
 #: kgreeter.cpp:197
 msgid "Session Type:"
-msgstr "Typ seansy:"
+msgstr "Typ sedenia:"
 
 #: kgreeter.cpp:213
 msgid "Go!"

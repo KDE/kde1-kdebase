@@ -124,7 +124,7 @@ msgstr "Nastavenie ¹etrièa Blob"
 
 #: blob.cpp:468
 msgid "Frame Show sec."
-msgstr "Zobrazuj po dobu [sec]"
+msgstr "Zobrazuj po dobu [sek.]"
 
 #: blob.cpp:480
 msgid "Algorithm"
@@ -455,7 +455,7 @@ msgstr ""
 
 #: morph3d.cpp:839 space.cpp:419
 msgid "GL can not render with root visual\n"
-msgstr "GL nemô¾e pracova» so základným \"visualim\"\n"
+msgstr "GL nemô¾e pracova» so základným \"visualom\"\n"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
@@ -747,18 +747,5 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Previedol pre kscreensaver Emanuel Pirker"
+"Pre kscreensaver previedol Emanuel Pirker"
 
-#~ msgid "Move"
-#~ msgstr "Hýba»"
-
-#~ msgid ""
-#~ "Science Version 0.24.2 beta\n"
-#~ "\n"
-#~ "written by Rene Beutler 1998\n"
-#~ "rbeutler@g26.ethz.ch"
-#~ msgstr ""
-#~ "Science Verzia 0.24.2 beta\n"
-#~ "\n"
-#~ "napísal Rene Beutler 1998\n"
-#~ "rbeutler@g26.ethz.ch"

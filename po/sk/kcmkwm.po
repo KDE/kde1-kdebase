@@ -252,7 +252,7 @@ msgstr "Povoli» aktívne okraje plochy"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr "Presuò ukazateµ do stredu po prepnutí"
+msgstr "Presun ukazateµa do stredu po prepnutí"
 
 #: desktop.cpp:87
 msgid "Dekstop switch delay:"
@@ -278,20 +278,3 @@ msgstr ""
 "Úchytná zóna\n"
 "okna (v bodoch):"
 
-#~ msgid "With animation"
-#~ msgstr "Animácia"
-
-#~ msgid "Move"
-#~ msgstr "Presun"
-
-#~ msgid "Restore"
-#~ msgstr "Obnovenie"
-
-#~ msgid "Shaded"
-#~ msgstr "Tieòovaný"
-
-#~ msgid "Resize Animation"
-#~ msgstr "Animácia pri zmene veµkosti"
-
-#~ msgid "Edge Resistance:"
-#~ msgstr "Sila rohov:"

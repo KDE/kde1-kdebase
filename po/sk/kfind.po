@@ -43,7 +43,7 @@ msgstr "&Vlastnosti"
 
 #: kfindtop.cpp:135
 msgid "Open Containing &Folder"
-msgstr "Otvori» o&dpovedajúci prieèinok"
+msgstr "Otvori» zo&dpovedajúci prieèinok"
 
 #: kfindtop.cpp:138
 msgid "&Save Search"
@@ -352,17 +352,3 @@ msgstr "Nemô¾em urèi» typ archívu!"
 msgid "Error while creating child process!"
 msgstr "Chyba pri vytváraní procesu!"
 
-#~ msgid "&Cut"
-#~ msgstr "V&ystrihnú»"
-
-#~ msgid "Properties"
-#~ msgstr "Vlastnosti"
-
-#~ msgid "Files"
-#~ msgstr "Súbory"
-
-#~ msgid "Kfind &help"
-#~ msgstr "&Pomocník kfindu"
-
-#~ msgid "About &Qt"
-#~ msgstr "Informácie o &Qt"

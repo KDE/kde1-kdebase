@@ -27,7 +27,7 @@ msgstr "Logo KDM:"
 
 #: kdm-appear.cpp:104 kdm-users.cpp:139
 msgid "Click or drop an image here"
-msgstr "Klikni tu alebo sem pusti obrázok"
+msgstr "Kliknite tu alebo sem pustite obrázok"
 
 #: kdm-appear.cpp:109
 msgid "GUI Style:"
@@ -86,7 +86,7 @@ msgstr ""
 
 #: kdm-appear.cpp:192 kdm-users.cpp:200
 msgid "Improper File Extension"
-msgstr "Nesprávna koncovka súboru"
+msgstr "Nesprávna prípona súboru"
 
 #: kdm-appear.cpp:221 kdm-users.cpp:246
 msgid ""

@@ -39,7 +39,7 @@ msgstr "Voµná pamä»"
 
 #: memory.cpp:29
 msgid "Shared memory"
-msgstr "Zdieµaná pamì»"
+msgstr "Zdieµaná pamä»"
 
 #: memory.cpp:37
 msgid "Buffer memory"

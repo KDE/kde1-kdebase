@@ -250,5 +250,3 @@ msgstr "Osobné:"
 msgid "Default:"
 msgstr "©tandardné:"
 
-#~ msgid "&Reload"
-#~ msgstr "Znovu naèíta» menu"

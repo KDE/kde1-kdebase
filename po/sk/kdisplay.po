@@ -179,7 +179,7 @@ msgstr "Text"
 
 #: colorscm.cpp:191
 msgid "Select background"
-msgstr "Vyber pozadie"
+msgstr "Výber pozadia"
 
 #: colorscm.cpp:192
 msgid "Select text"
@@ -207,7 +207,7 @@ msgstr "&Veµký"
 
 #: colorscm.cpp:317
 msgid "Error removing"
-msgstr "Chyba pri ru¹ení"
+msgstr "Chyba pri odstránení"
 
 #: colorscm.cpp:318
 msgid ""
@@ -221,7 +221,7 @@ msgstr ""
 
 #: colorscm.cpp:375
 msgid "Naming error"
-msgstr "Chyba pri pomenúvavaní"
+msgstr "Chyba pri pomenovávaní"
 
 #: colorscm.cpp:376
 msgid ""
@@ -414,24 +414,3 @@ msgstr "¹tandardné"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "µubovoµné"
-
-#~ msgid "&Remove"
-#~ msgstr "Zru¹i»"
-
-#~ msgid "Default"
-#~ msgstr "©tandardné"
-
-#~ msgid "Window title font"
-#~ msgstr "Písmo v titulku okna"
-
-#~ msgid "Blen&d"
-#~ msgstr "Ladenie"
-
-#~ msgid "kwmcom: communication with kwm failed\n"
-#~ msgstr "kwmcom: komunikácia s kwm prebehla neúspe¹ne\n"
-
-#~ msgid "Lock"
-#~ msgstr "Zámok"
-
-#~ msgid "General"
-#~ msgstr "V¹eobecné"
