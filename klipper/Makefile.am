@@ -27,6 +27,9 @@ klipper_LDADD   = -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET)
 
 DISTCLEANFILES = $()
 
+messages:
+	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(klipper_SOURCES) && mv messages.po ../po/klipper.pot
+
 install-data-local: 
 	$(mkinstalldirs) $(APPSDIR)
 	$(INSTALL_DATA) klipper.kdelnk $(APPSDIR)
