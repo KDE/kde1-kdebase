@@ -5,223 +5,209 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1998-12-20 05:05+0600\n"
 "Last-Translator: Juraj Bednar <bednar@isternet.sk>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:61
+#: main.cpp:58
 msgid "&Font"
 msgstr "&Písmo"
 
-#: main.cpp:63
+#: main.cpp:60
 msgid "&Color"
 msgstr "&Farba"
 
-#: main.cpp:65
+#: main.cpp:62
 msgid "&Other"
-msgstr ""
+msgstr "&Ostatné"
 
-#: main.cpp:68
+#: main.cpp:65
 msgid "&Proxy"
-msgstr ""
+msgstr "&Proxy"
+
+#: main.cpp:67
+msgid "&HTTP"
+msgstr "&HTTP"
 
 #: main.cpp:70
-msgid "&HTTP"
-msgstr ""
-
-#: main.cpp:73
 msgid "User &Agent"
-msgstr ""
+msgstr "&Agent"
 
-#: main.cpp:76
-msgid "Coo&kies"
-msgstr ""
-
-#: main.cpp:80
+#: main.cpp:74
 msgid "&Desktop Icons"
-msgstr ""
+msgstr "&Ikonky plochy"
 
-#: main.cpp:89
-#, fuzzy, c-format
-msgid ""
-"usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
-msgstr "pou¾itie: kcmkfm [-init | {font,color}]\n"
+#: main.cpp:83
+msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
+msgstr "pou¾itie: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
 
-#: main.cpp:178
+#: main.cpp:166
 msgid "KFM Configuration"
 msgstr "Nastavenie KFM"
 
 #: htmlopts.cpp:64
 msgid "Small"
-msgstr ""
+msgstr "Malý"
 
 #: htmlopts.cpp:69
 msgid "Medium"
-msgstr ""
+msgstr "Stredný"
 
 #: htmlopts.cpp:74
 msgid "Large"
-msgstr ""
+msgstr "Veµký"
 
 #: htmlopts.cpp:83
 msgid "Standard Font"
-msgstr ""
+msgstr "©tandardné písmo"
 
 #: htmlopts.cpp:97
 msgid "Fixed Font"
-msgstr ""
+msgstr "Fixované písmo"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr ""
+msgstr "©tandardná znaková sada"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr ""
+msgstr "Pou¾íva» znak. sadu jazyka"
 
 #: htmlopts.cpp:329
 msgid "Background Color:"
-msgstr ""
+msgstr "Farba pozadia:"
 
 #: htmlopts.cpp:341
 msgid "Normal Text Color:"
-msgstr ""
+msgstr "Farba textu:"
 
 #: htmlopts.cpp:353
 msgid "URL Link Color:"
-msgstr ""
+msgstr "Farba linky:"
 
 #: htmlopts.cpp:365
 msgid "Followed Link Color:"
-msgstr ""
+msgstr "Farba nasl. linky:"
 
 #: htmlopts.cpp:377
 msgid "Change cursor over link."
-msgstr ""
+msgstr "Zmeni» kurzor ponad linku"
 
 #: htmlopts.cpp:383
 msgid "Underline links"
-msgstr ""
+msgstr "Podtrhnú» linky"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr ""
+msgstr "&Dovoli» pre URL ¹pecifické nast."
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr ""
+msgstr "Stromový &pohµad nasleduje navigáciu"
 
 #: miscopts.cpp:43
 msgid "Terminal"
-msgstr ""
+msgstr "Terminál"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr ""
+msgstr "Nezabudnite ulo¾i» va¹e nastavenie!"
 
 #: kproxydlg.cpp:58
 msgid "Use proxy"
-msgstr ""
+msgstr "Pou¾íva» proxy"
 
 #: kproxydlg.cpp:67
 msgid "HTTP Proxy:"
-msgstr ""
+msgstr "HTTP Proxy:"
 
 #: kproxydlg.cpp:82 kproxydlg.cpp:113
 msgid "Port:"
-msgstr ""
+msgstr "Port:"
 
 #: kproxydlg.cpp:98
 msgid "FTP Proxy:"
-msgstr ""
+msgstr "FTP Proxy:"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
-msgstr ""
+msgstr "®iadne proxy pre:"
 
-#: khttpoptdlg.cpp:38
+#: khttpoptdlg.cpp:51
 msgid "Accept languages:"
-msgstr ""
-
-#: khttpoptdlg.cpp:52
-msgid "Accept character sets:"
-msgstr ""
+msgstr "Akceptova» jazyky:"
 
 #: khttpoptdlg.cpp:65
+msgid "Accept character sets:"
+msgstr "Akceptova» znak. sady:"
+
+#: khttpoptdlg.cpp:78
 msgid "Assume HTML"
-msgstr ""
+msgstr "Predpoklada» HTML"
+
+#: khttpoptdlg.cpp:84
+msgid "Disable Cookies"
+msgstr "Zakáza» Cookies"
+
+#: khttpoptdlg.cpp:91
+msgid "Default accept policy"
+msgstr "©tandardný typ akceptácie"
+
+#: khttpoptdlg.cpp:100 khttpoptdlg.cpp:148
+msgid "Accept"
+msgstr "Akceptova»"
+
+#: khttpoptdlg.cpp:105 khttpoptdlg.cpp:153
+msgid "Ask"
+msgstr "Opýta» sa"
+
+#: khttpoptdlg.cpp:110 khttpoptdlg.cpp:158
+msgid "Reject"
+msgstr "Odmietnu»"
+
+#: khttpoptdlg.cpp:123
+msgid "Domain specific settings:"
+msgstr "Pre doménu ¹pecifické nastavenie:"
+
+#: khttpoptdlg.cpp:130
+msgid "Change domain accept policy"
+msgstr "Zmeni» typ akceptácie domény"
 
 #: useragentdlg.cpp:45
 msgid "On server:"
-msgstr ""
+msgstr "Na serveri:"
 
 #: useragentdlg.cpp:67
 msgid "login as:"
-msgstr ""
+msgstr "meno u¾ív.:"
 
 #: useragentdlg.cpp:87
 msgid "&Add"
-msgstr ""
+msgstr "&Prida»"
 
 #: useragentdlg.cpp:107
 msgid "Known bindings:"
-msgstr ""
+msgstr "Známe väzby:"
 
-#: kcookiesdlg.cpp:49
-msgid "&Enable Cookies"
-msgstr ""
-
-#: kcookiesdlg.cpp:56
-msgid "Default accept policy"
-msgstr ""
-
-#: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
-msgid "Accept"
-msgstr ""
-
-#: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
-msgid "Ask"
-msgstr ""
-
-#: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
-msgid "Reject"
-msgstr ""
-
-#: kcookiesdlg.cpp:90
-msgid "Domain specific settings:"
-msgstr ""
-
-#: kcookiesdlg.cpp:97
-msgid "Change domain accept policy"
-msgstr ""
-
-#: kcookiesdlg.cpp:239
-msgid "You must enter a domain first !"
-msgstr ""
-
-#: rootopts.cpp:73
+#: rootopts.cpp:70
 msgid "Horizontal Root Grid Spacing:"
-msgstr ""
+msgstr "Horizontálny odstup mrie¾ky:"
 
-#: rootopts.cpp:84
+#: rootopts.cpp:81
 msgid "Vertical Root Grid Spacing:"
-msgstr ""
+msgstr "Vertikálny odstup mrie¾ky:"
 
-#: rootopts.cpp:95
+#: rootopts.cpp:92
 msgid "&Transparent Text for Desktop Icons."
-msgstr ""
+msgstr "&Transparentny text pre ikonky plochy."
 
-#: rootopts.cpp:106
+#: rootopts.cpp:103
 msgid "Icon foreground color:"
-msgstr ""
+msgstr "Popredie ikonky:"
 
-#: rootopts.cpp:118
+#: rootopts.cpp:115
 msgid "Icon background color:"
-msgstr ""
-
-#: rootopts.cpp:131
-msgid "Show &Hidden Files on Desktop"
-msgstr ""
+msgstr "Pozadie ikonky:"

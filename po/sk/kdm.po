@@ -19,7 +19,7 @@ msgstr "Ukonèi» alebo re¹tartova»?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr ""
+msgstr "(Zadajte Rootovské heslo)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
@@ -31,7 +31,7 @@ msgstr "Ukonèi» a re¹tartova»"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr ""
+msgstr "Re¹tar X Servera"
 
 #: kgreeter.cpp:222
 msgid "Login:"

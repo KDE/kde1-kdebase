@@ -9,22 +9,20 @@ msgstr ""
 "kpagerclient.cpp kpager.cpp main.cpp\n"
 
 #: kpager.cpp:72
-#, fuzzy
 msgid "Toggle Global Desktop"
-msgstr "Skry» &globálnu plochu"
+msgstr "Skry»/odkry» globálnu plochu"
 
 #: kpager.cpp:74
-#, fuzzy
 msgid "Toggle Menubar"
-msgstr "Skry» &menu"
+msgstr "Skry»/odkry» menu"
 
 #: kpager.cpp:77
 msgid "Move Right"
-msgstr ""
+msgstr "Posunú» vpravo"
 
 #: kpager.cpp:79
 msgid "Move Left"
-msgstr ""
+msgstr "Posunú» vµavo"
 
 #: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
@@ -40,21 +38,19 @@ msgstr "Skry» &menu"
 
 #: kpager.cpp:101 kpager.cpp:386
 msgid "&2 Rows"
-msgstr ""
+msgstr "&2 riadky"
 
 #: kpager.cpp:104
 msgid "&One Click change Desktop"
-msgstr ""
+msgstr "&Jeden klik na zmenu plochy"
 
 #: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
-#, fuzzy
 msgid "Hide Desktop &Names"
-msgstr "Skry» &globálnu plochu"
+msgstr "Skry» &názvy plôch"
 
 #: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
-#, fuzzy
 msgid "Show Desktop &Names"
-msgstr "Ukáza» &globálnu plochu"
+msgstr "Ukáza» &názvy plôch"
 
 #: kpager.cpp:115 kpager.cpp:402
 msgid "Plain"
@@ -100,32 +96,29 @@ msgstr ""
 "redistribuova» za urèitých podmienok\n"
 
 #: kpager.cpp:382
-#, fuzzy
 msgid "Show &Menubar"
-msgstr "Skry» &menu"
+msgstr "Ukáza» &menu"
 
 #: kpager.cpp:389
 msgid "One Click change Desktop"
-msgstr ""
+msgstr "Jeden klik na zmenu plochy"
 
 #: kpager.cpp:446
 msgid "&Maximize"
-msgstr ""
+msgstr "&Maximalizova»"
 
 #: kpager.cpp:447
-#, fuzzy
 msgid "&Iconify"
-msgstr "Ikonka"
+msgstr "&Ikonifikova»"
 
 #: kpager.cpp:449
 msgid "&UnSticky"
-msgstr ""
+msgstr "&Odlepi»"
 
 #: kpager.cpp:451
 msgid "&Sticky"
-msgstr ""
+msgstr "&Prilepi»"
 
 #: kpager.cpp:453
-#, fuzzy
 msgid "&To Desktop"
-msgstr "Skry» &globálnu plochu"
+msgstr "&Na plochu"

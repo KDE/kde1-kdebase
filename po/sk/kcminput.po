@@ -39,7 +39,7 @@ msgstr "Prah citlivosti"
 
 #: mouse.cpp:72
 msgid "pixels"
-msgstr ""
+msgstr "bodov"
 
 #: mouse.cpp:81
 msgid "Button mapping"

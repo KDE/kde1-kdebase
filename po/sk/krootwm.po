@@ -51,7 +51,7 @@ msgstr "Pomocník pracovnej plochy"
 
 #: krootwm.C:245
 msgid "About KDE..."
-msgstr ""
+msgstr "O KDE..."
 
 #: krootwm.C:263 krootwm.C:286 krootwm.C:761 krootwm.C:769
 msgid "New"
@@ -63,11 +63,11 @@ msgstr "Zálo¾ky"
 
 #: krootwm.C:288
 msgid "Desk"
-msgstr ""
+msgstr "Plocha"
 
 #: krootwm.C:289
 msgid "Windows"
-msgstr ""
+msgstr "Okná"
 
 #: krootwm.C:344
 msgid "Edit Bookmarks"

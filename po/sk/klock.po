@@ -263,9 +263,8 @@ msgstr ""
 "Ported to kscreensave by Cedric Tefft"
 
 #: bsod.cpp:1192
-#, fuzzy
 msgid "Black Screen of Death"
-msgstr "Prázdna obrazovka"
+msgstr "Èierna obrazovka smrti"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -463,7 +462,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Voµba %s nie je podporovaná na tejto platforme!"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -474,8 +472,8 @@ msgstr ""
 "Varovanie: Nebudete môc» zamknú» obrazovku!\n"
 "\n"
 "Vá¹ systém pou¾íva tieòové heslá!\n"
-"Prosím, kontaktujte svojho systémového administrátora.\n"
-"Povedzte mu, ¾e potrebujete SUID pre ¹etrièe obrazovky!"
+"Prosím, kontaktujte svojho systémového administrátora a\n"
+"povedzte mu, ¾e potrebujete SUID pre kcheckpass!"
 
 #: main.cpp:427
 msgid "Shadow Passwords"

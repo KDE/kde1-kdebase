@@ -43,11 +43,8 @@ msgstr "Trvanie"
 
 #: bell.cpp:72
 msgid "milliseconds"
-msgstr ""
+msgstr "milisekúnd"
 
 #: bell.cpp:87
 msgid "Test"
 msgstr "Test"
-
-#~ msgid "ms"
-#~ msgstr "ms"

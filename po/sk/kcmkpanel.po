@@ -154,12 +154,10 @@ msgid "Others"
 msgstr "Ostatné"
 
 #: options.cpp:408
-#, fuzzy
 msgid "Personal Menu Entries &First"
 msgstr "Osobné menu j&e hlavné"
 
 #: options.cpp:416
-#, fuzzy
 msgid "Menu F&olders First"
 msgstr "Najprv &prieèinky"
 
@@ -168,9 +166,8 @@ msgid "&Clock shows time in AM/PM format"
 msgstr "&Hodinky ukazujú èas v AM/PM formáte"
 
 #: options.cpp:432
-#, fuzzy
 msgid "Clock shows time in &Internet beats"
-msgstr "&Hodinky ukazujú èas v AM/PM formáte"
+msgstr "&Hodinky ukazujú èas v &Internetových úderoch"
 
 #: disknav.cpp:38
 msgid "History"
@@ -181,14 +178,12 @@ msgid "Edit entries: (drag a folder and create a link)"
 msgstr "Editova» polo¾ky: (pustite prieèinok a vytvorte odkaz)"
 
 #: disknav.cpp:64
-#, fuzzy
 msgid "Edit &Personal..."
-msgstr "Editova» &lokálne..."
+msgstr "Editova» &osobné..."
 
 #: disknav.cpp:74
-#, fuzzy
 msgid "Edit &Shared..."
-msgstr "Editova» &lokálne..."
+msgstr "Editova» &zdieµané..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
@@ -211,14 +206,12 @@ msgid "Ignore case when sorting"
 msgstr "Ignorova» veµkos» písmen pri triedení"
 
 #: disknav.cpp:173
-#, fuzzy
 msgid "Show Shared section"
-msgstr "Ukazova» sekciu Lokálne"
+msgstr "Ukazova» zdieµanú sekciu"
 
 #: disknav.cpp:180
-#, fuzzy
 msgid "Show Personal section"
-msgstr "Ukazova» sekciu Lokálne"
+msgstr "Ukazova» osobnú sekciu"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
@@ -231,12 +224,3 @@ msgstr "Ukazova» polo¾ku Nastavenie"
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Terminálová aplikácia:"
-
-#~ msgid "Speed"
-#~ msgstr "Rýchlos»"
-
-#~ msgid "Edit &Global..."
-#~ msgstr "Editova» &globálne..."
-
-#~ msgid "Show Global section"
-#~ msgstr "Ukazova» sekciu Globálne"

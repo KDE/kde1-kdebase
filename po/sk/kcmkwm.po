@@ -114,7 +114,7 @@ msgstr "Obrázok"
 
 #: titlebar.cpp:1003
 msgid "Active title has shaded frame"
-msgstr ""
+msgstr "Aktívny titulok má tieòovaný rám"
 
 #: titlebar.cpp:1044
 msgid "Active pixmap:"
@@ -126,7 +126,7 @@ msgstr "Neaktívna pixmapa"
 
 #: titlebar.cpp:1055
 msgid "No pixmap under text"
-msgstr ""
+msgstr "®iadna pixmapa pod textom"
 
 #: titlebar.cpp:1066
 msgid "Mouse action"
@@ -258,9 +258,8 @@ msgid "Auto Raise"
 msgstr "Auto. zdvihnú»"
 
 #: windows.cpp:209
-#, fuzzy
 msgid "Click Raise"
-msgstr "Zdvihnú»"
+msgstr "Klik zdvíha"
 
 #: windows.cpp:216
 msgid "Delay (ms)"
@@ -279,9 +278,8 @@ msgid "Move pointer towards center after switch"
 msgstr "Presunú» ukazateµ do stredu po prepnutí"
 
 #: desktop.cpp:87
-#, fuzzy
 msgid "Desktop switch delay:"
-msgstr "Oddialenie prepnutia plochy:"
+msgstr "Oddiali» prepnutie plochy:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"

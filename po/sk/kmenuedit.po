@@ -83,11 +83,11 @@ msgstr "Otvori»/ Zavrie»"
 
 #: confmenu.cpp:117
 msgid "Select item for moving"
-msgstr ""
+msgstr "Zvoµte polo¾ku na presunutie"
 
 #: confmenu.cpp:118
 msgid "Select menu for moving"
-msgstr ""
+msgstr "Zvoµte menu pre posunutie"
 
 #: confmenu.cpp:120
 msgid "New"

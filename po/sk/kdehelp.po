@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.6\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -117,7 +117,7 @@ msgstr "Farba pou¾itého odkazu:"
 
 #: options.cpp:238
 msgid "Underline links"
-msgstr ""
+msgstr "Podtrháva» odkazy"
 
 #: options.cpp:317
 msgid "KDE Help Options"
@@ -205,6 +205,10 @@ msgstr "&Nové okno s pomocníkom"
 #: mainwidget.cpp:135
 msgid "&Open File..."
 msgstr "&Otvori» súbor..."
+
+#: mainwidget.cpp:137
+msgid "Open UR&L..."
+msgstr "Otvori» UR&L..."
 
 #: mainwidget.cpp:142
 msgid "&Search"
@@ -332,7 +336,7 @@ msgstr "Znovu naèíta» aktuálny dokument"
 msgid "In the Constructor!"
 msgstr "V kon¹truktore!"
 
-#: mainwidget.cpp:612
+#: mainwidget.cpp:605
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -340,11 +344,11 @@ msgstr ""
 "KDE pomocník\n"
 "Verzia "
 
-#: mainwidget.cpp:614
+#: mainwidget.cpp:607
 msgid "About KDE Help"
 msgstr "O KDE pomocníkovi"
 
-#: mainwidget.cpp:647
+#: mainwidget.cpp:640
 msgid "&Add Bookmark"
 msgstr "&Prida» zálo¾ku"
 
@@ -359,9 +363,6 @@ msgstr "Rozli¹ova» &veµké/malé"
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr "&Hµada»"
-
-#~ msgid "Open UR&L..."
-#~ msgstr "Otvori» UR&L..."
 
 #~ msgid "&Contents"
 #~ msgstr "&Obsah"
