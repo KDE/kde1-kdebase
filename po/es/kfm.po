@@ -489,7 +489,7 @@ msgstr "Imposible ejecutar el programa\n"
 
 #: kbind.cpp:1618
 msgid "Could not find binding"
-msgstr "Imposible encontrar conección"
+msgstr "Imposible encontrar conexión"
 
 #: kbind.cpp:1628
 msgid ""
@@ -905,7 +905,7 @@ msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
 msgstr ""
-"El archivo ~/.kde/share/apps/kfm/magic se corrompió\n"
+"El archivo ~/.kde/share/apps/kfm/magic está corrupto\n"
 "La autorización falló"
 
 #: kfmserver.cpp:378
@@ -1000,7 +1000,7 @@ msgid " ERROR: Could not write to %s"
 msgstr "ERROR: Imposible escribir en %s"
 
 #: kiojob.cpp:565 kiojob.cpp:851
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not make symbolic link\n"
 "%s"
@@ -1028,11 +1028,13 @@ msgid ""
 "Special file will not be copied\n"
 "%s"
 msgstr ""
+"El fichero especial no será copiado\n"
+"%s"
 
 #: kiojob.cpp:652
 #, c-format
 msgid "%d special files will not be copied."
-msgstr ""
+msgstr "%d ficheros especiales no serán copiados"
 
 #: kiojob.cpp:903
 #, c-format
@@ -1062,11 +1064,13 @@ msgid ""
 "Special file will not be moved\n"
 "%s"
 msgstr ""
+"El fichero especial no será movido\n"
+"%s"
 
 #: kiojob.cpp:1025
 #, c-format
 msgid "%d special files will not be moved."
-msgstr ""
+msgstr "%d ficheros especiales no serán movidos"
 
 #: kiojob.cpp:1289 kiojob.cpp:1356
 #, c-format
