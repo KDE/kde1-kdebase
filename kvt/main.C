@@ -74,6 +74,7 @@ extern char *xvt_name; // the name the program is run under
 extern char *window_name;
 extern char *icon_name;
 
+extern keyset keys[];			/* keysets */
 
 extern unsigned long	foreground;	/* foreground pixel value */
 extern unsigned long	background;	/* background pixel value */
@@ -82,7 +83,7 @@ extern int rstyle;
 extern int mouse_block;			/* block mouse input while popup */
 
 extern int BackspaceSendsControlH;
-extern int HomeEndSend;
+extern int KeySetSend;
 
 extern void kvt_set_fontnum(char *);
 extern void kvt_set_menubar(int);
@@ -147,14 +148,6 @@ static const char* color_mode_name[] = {
 static const char* backspace_name[] = {
   "Delete (^?)",
   "Backspace (^H)",
-  0
-};
-
-static const char* homeend_name[] = {
-  "KVT/XTerm/ANSI",
-  "Color XTerm",
-  "Console",
-  "Original XTerm",
   0
 };
 
@@ -320,7 +313,7 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
   : QDialog( parent, name, TRUE )
 {
   setCaption(name);
-  QLabel *label_color, *label_class, *label_backspace, *label_homeend;
+  QLabel *label_color, *label_class, *label_backspace, *label_keyset;
 
   label_color = new QLabel(i18n("choose type of color-mode"), this);
   label_color->setMinimumSize(label_color->sizeHint());
@@ -340,11 +333,12 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
   backspace->setMinimumSize(backspace->sizeHint());
   backspace->setFixedHeight(backspace->sizeHint().height());
   
-  label_homeend = new QLabel(i18n("Home and End will emulate"), this);
-  label_homeend->setMinimumSize(label_homeend->sizeHint());
-  homeend = new QComboBox(this);
-  homeend->setMinimumSize(homeend->sizeHint());
-  homeend->setFixedHeight(homeend->sizeHint().height());
+  label_keyset = new QLabel(i18n("Cursor key set"), this);
+  label_keyset->setMinimumSize(label_keyset->sizeHint());
+  keyset = new QComboBox(this);
+  keyset->setMinimumSize(keyset->sizeHint());
+  keyset->setFixedHeight(keyset->sizeHint().height());
+  connect( keyset, SIGNAL(highlighted(int)), SLOT(update_bs(int)) );
   
   QPushButton *ok, *cancel;
 
@@ -372,8 +366,8 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
   geom2->addWidget(chars, 1, 1);
   geom2->addWidget(label_backspace, 2, 0);
   geom2->addWidget(backspace, 2, 1);
-  geom2->addWidget(label_homeend, 3, 0);
-  geom2->addWidget(homeend, 3, 1);
+  geom2->addWidget(label_keyset, 3, 0);
+  geom2->addWidget(keyset, 3, 1);
   geom3 = new QHBoxLayout();
   geom1->addLayout(geom3);
   geom3->addStretch();
@@ -391,9 +385,15 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
   for (i=0; backspace_name[i]; i++) {
     backspace->insertItem(backspace_name[i], i);
   }
-  for (i=0; homeend_name[i]; i++) {
-    homeend->insertItem(homeend_name[i], i);
+  for (i=0; keys[i].name; i++) {
+    keyset->insertItem(keys[i].name, i);
   }
+}
+
+void OptionDialog::update_bs( int keyset ) {
+  // update Backspace/delete according to current keyset
+  if (keys[keyset].bs[0] == 8) backspace->setCurrentItem(1);
+  else backspace->setCurrentItem(0);
 }
 
 void sbar_init(void){
@@ -495,8 +495,8 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
 
     /* if bacspace=BS then backspace sends a ^H otherwise it will send a ^? */
     entry = sessionconfig->readEntry("backspace");
-    BackspaceSendsControlH = (entry && entry=="BS");
-    HomeEndSend = sessionconfig->readNumEntry("homeend", 0);
+    BackspaceSendsControlH = !(entry && entry=="DEL");
+    KeySetSend = sessionconfig->readNumEntry("keyset", 0);
 
     m_file = new QPopupMenu;
     CHECK_PTR( m_file );
@@ -703,7 +703,7 @@ void kVt::saveOptions(KConfig* kvtconfig){
   
   kvtconfig->writeEntry("backspace", BackspaceSendsControlH ? "BS" : "DEL");
 
-  kvtconfig->writeEntry("homeend", HomeEndSend);
+  kvtconfig->writeEntry("keyset", KeySetSend);
 
   if (menubar->menuBarPos() == KMenuBar::Bottom)
     kvtconfig->writeEntry("kmenubar", "bottom");
@@ -838,14 +838,14 @@ void kVt::options_menu_activated( int item){
     m_optiondialog->colormode->setCurrentItem(get_color_mode());
     m_optiondialog->chars->setText(kvt_charclass);
     m_optiondialog->backspace->setCurrentItem(BackspaceSendsControlH);
-    m_optiondialog->homeend->setCurrentItem(HomeEndSend);
+    m_optiondialog->keyset->setCurrentItem(KeySetSend);
     if (m_optiondialog->exec()) {
       set_color_mode(m_optiondialog->colormode->currentItem());
       kvt_charclass = m_optiondialog->chars->text();
       set_charclass(kvt_charclass);
       scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
       BackspaceSendsControlH = m_optiondialog->backspace->currentItem();
-      HomeEndSend = m_optiondialog->homeend->currentItem();
+      KeySetSend = m_optiondialog->keyset->currentItem();
     }
     delete m_optiondialog;
     break;

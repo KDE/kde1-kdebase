@@ -58,7 +58,7 @@ public slots:
   void file_menu_activated(int);
   void scrolling(int);
   void onDrop( KDNDDropZone* _zone );
-  
+
   void menubarMoved();
   void quit();
 
@@ -108,10 +108,13 @@ public:
   QComboBox *colormode;
   QLineEdit *chars;
   QComboBox *backspace;
-  QComboBox *homeend;
+  QComboBox *keyset;
 
   OptionDialog(QWidget *parent, const char *name );
 
+public slots:
+  void update_bs(int);
+  
 private:
 };
 

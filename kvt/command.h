@@ -28,3 +28,12 @@ void cprintf(unsigned char *,...);
 /* get to handle.   Matthias */ 
 void handle_token(unsigned char);
 void process_robs_sequence(void);
+
+typedef struct __KEYSET {
+        const char *home, *end,         /* home and end keys */
+                *cu, *cd, *cl, *cr,     /* cursor keys */
+                *ins, *del,             /* insert and delete keys */
+                *bs,                    /* backspace key */
+                *name;                  /* key set name */
+} keyset;
+

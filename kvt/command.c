@@ -176,25 +176,35 @@ KeySym GreekSwitchKeysym = XK_Mode_switch;
 int GreekMode = GREEK_ELOT928;
 #endif
 unsigned int BackspaceSendsControlH = 0;
-unsigned int HomeEndSend = 0;
+unsigned int KeySetSend = 0;
 
 int refresh_nl_count=0;
 int refresh_nl_limit = 1;
 extern int refresh_type;
 
-/* home/end key codes */
-const char* homekey[] = {
-	"\e[H",		/* kvt/xterm/ansi */
-	"\e[7~",	/* xterm-color */
-	"\e[1~",	/* linux console */
-	"\eO\200"	/* original Xterm */
-};
+/* cursor key codes - note that up/down/left/right are currently unused */
 
-const char* endkey[] = {
-	"\e[F",		/* kvt/xterm/ansi */
-	"\e[8~",	/* xterm-color */
-	"\e[4~",	/* linux console */
-	"\eOe"		/* original Xterm */
+keyset keys[] = {
+	/* home	    end		up	    down	left	    right
+	   insert   delete	backspace		name		  */
+
+	{"\e[H",    "\e[F",	"\e[A",	    "\e[B",	"\e[D",	    "\e[C",
+	 "\e[2~",   "\177",	"\010",			"KVT/XTerm/ANSI"},
+
+	{"\e[7~",   "\e[8~",	"\e[A",	    "\e[B",	"\e[D",	    "\e[C",
+	 "\e[2~",   "\177",	"\010",			"Color XTerm"},
+
+	{"\e[1~",   "\e[4~",	"\e[A",	    "\e[B",	"\e[D",	    "\e[C",
+	 "\e[2~",   "\e[3~",	"\177",			"Console"},
+
+	{"\eO\200", "\eOe",	"\e[A",	    "\e[B",	"\e[D",	    "\e[C",
+	 "\e[2~",   "\177",	"\010",			"Original XTerm"},
+
+	{"\eOq",    "\eOp",	"\eOA",	    "\eOB",	"\eOD",	    "\eOC",
+	 "\eOr",    "\177",	"\010",			"VT 100"},
+
+	{0,	    0,		0,	    0,		0,	    0,
+	 0,	    0,		0,			0}
 };
 
 /*  Terminal mode structures.
@@ -713,8 +723,9 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount, unsigned char qt_c)
 #if XlibSpecificationRelease >= 6
     case XK_KP_Delete :
 #endif
-      strcpy(kbuf,"\033[3~");
-      count = 4;
+      /* strcpy(kbuf,"\033[3~"); */
+      strcpy(kbuf, keys[KeySetSend].del);
+      count = strlen(kbuf);
       break;
 
       
@@ -818,16 +829,16 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount, unsigned char qt_c)
     case XK_KP_Home :
 #endif
       /*strcpy(kbuf,"\033[H");*/
-      strcpy(kbuf, homekey[HomeEndSend]);
-      count = 3;
+      strcpy(kbuf, keys[KeySetSend].home);
+      count = strlen(kbuf);
       break;
     case XK_End :
 #if XlibSpecificationRelease >= 6
     case XK_KP_End :
 #endif
       /*strcpy(kbuf,"\033[F");*/
-      strcpy(kbuf, endkey[HomeEndSend]);
-      count = 3;
+      strcpy(kbuf, keys[KeySetSend].end);
+      count = strlen(kbuf);
       break;
     case XK_F1 :
       strcpy(kbuf,"\033[11~");
@@ -919,8 +930,9 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount, unsigned char qt_c)
 #if XlibSpecificationRelease >= 6
     case XK_KP_Insert :
 #endif
-      strcpy(kbuf,"\033[2~");
-      count = 4;
+      /* strcpy(kbuf,"\033[2~"); */
+      strcpy(kbuf, keys[KeySetSend].ins);
+      count = strlen(kbuf);
       break;
     case XK_Execute :
       strcpy(kbuf,"\033[3~");
