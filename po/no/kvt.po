@@ -123,7 +123,7 @@ msgstr "Terminal..."
 
 #: main.C:520
 msgid "Font..."
-msgstr ""
+msgstr "Skrifttype..."
 
 #: main.C:522
 msgid "Save &Options"
@@ -303,5 +303,5 @@ msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
 msgstr ""
-"-grk9\t\tgreek kbd = ELOT 928 (default)\n"
+"-grk9\t\tgreek kbd = ELOT 928 (standard)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
