@@ -51,17 +51,29 @@ cat /etc/X11/xdm/Xsetup_0-new >/etc/X11/xdm/Xsetup_0
 rm -f /etc/X11/xdm/Xsetup_0-new
 echo "done."
 
-
 if ! grep -q "^# Start kdebase added code" /etc/X11/xdm/Xsetup_0; then
 echo "we have to patch /etc/X11/xdm/Xsetup_0 to run kdmdesktop"
 cat >> /etc/X11/xdm/Xsetup_0 <<EOF
-# Start kdebase added code
+# Start kdebase added code v2DEB
 if grep -q ^start-kdm /etc/X11/kdm/config; then # kdebase added code
-  kdmdesktop & # kdebase added code
+  /usr/bin/kdmdesktop & # kdebase added code
 fi # kdebase added code
 # End kdebase added code
 EOF
 fi
+
+if ! grep -q "^# Start kdebase added code v2DEB" /etc/X11/xdm/Xsetup_0; then
+echo -n "Patching away another old kdm bug... "
+sed "s|/ kdmdesktop|/usr/bin/kdmdesktop|" </etc/X11/xdm/Xsetup_0 >/etc/X11/xdm/Xsetup_0-new
+cat /etc/X11/xdm/Xsetup_0-new >/etc/X11/xdm/Xsetup_0
+rm -f /etc/X11/xdm/Xsetup_0-new
+
+sed "s|Start kdebase added code|Start kdebase added code v2DEB|" </etc/X11/xdm/Xsetup_0 >/etc/X11/xdm/Xsetup_0-new
+cat /etc/X11/xdm/Xsetup_0-new >/etc/X11/xdm/Xsetup_0
+rm -f /etc/X11/xdm/Xsetup_0-new
+echo "done."  
+fi
+
 
 #DEBHELPER#
 #KDEHELPER#
@@ -71,5 +83,19 @@ fi
 if ! grep -q ^start-kdm /etc/X11/kdm/config; then
   /usr/bin/switchdm
 else
-  /etc/init.d/kdm start
+
+ if test -n "`pidof kdm`"
+ then
+   echo "KDM is already running, you may need to stop it and restart it"
+   echo "manually"
+ else
+    echo -n "Start kde display manager now ? (y/n) [n] "
+    read answer
+    case "$answer" in
+    y|Y) /etc/init.d/kdm start ;;
+    *)
+    echo "kdm will not be started.  "
+ esac
+ fi
+
 fi
