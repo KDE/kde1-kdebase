@@ -87,17 +87,19 @@ pid_t		maudioPID = 0;
  * of severe trouble (SHM segment garbled), I still want to
  * make sure, maudio does get killed.
  * So I send maudio a "KILL" signal, which always should work.
+ * MdDisconnect() is still called to clean up libmediatool internal
+ * stuff (for example /tmp/.MediaCon)
  */
 void disconnectChild()
 {
-  fprintf(stderr, "kaudioserver: disconnectChild() with pid %i\n",maudioPID);
-
   if (maudioPID != 0) {
-    int ret = kill(maudioPID, SIGKILL);
-    fprintf(stderr, "            Return = %i\n", ret);
+    // Disconnect for cleanup
+    MdDisconnect(&m);
+    // Kill the child process (maudio)
+    kill(maudioPID, SIGKILL);
   }
   else
-    fprintf(stderr, "            maudioPID == 0 :-(\n");
+    fprintf(stderr, "kaudioserver: disconnectChild() with maudioPID == 0\n");
 
 }
 
@@ -109,21 +111,21 @@ void myExit(int retcode)
 {
   disconnectChild();
   unlink (KMServerPidFile);
-  fprintf(stderr, "kaudioserver: Exiting on myExit(%i).\n", retcode);
+  //fprintf(stderr, "kaudioserver: Exiting on myExit(%i).\n", retcode);
   exit (retcode);
 }
 
 // signal handler for various signals. Calls myExit() -------------------
 void mysigchild(int signum)
 {
-  fprintf(stderr, "kaudioserver: Captured signal %i.\n", signum);
+  signal(signum, SIG_DFL);
   myExit(1);  
 }
 
 // fatalexit() prints out a string and calls myExit() -------------------
 void fatalexit(char *s)
 {
-  fprintf(stdout, s);
+  fprintf(stderr, s);
   myExit(2);
 }
 
@@ -252,7 +254,7 @@ int main ( int argc , char **argv )
 
   initXconnection();
   if ( globalDisplay == 0 ) {
-    fprintf(stdout, "kaudioserver: Can't connect to the X Server.\n" \
+    fprintf(stderr, "kaudioserver: Can't connect to the X Server.\n" \
 	"kaudioserver: Audio system might not terminate at end of session.\n");
   }
 
@@ -304,12 +306,31 @@ int main ( int argc , char **argv )
     Opts[5]=(char*)NULL;
   }
 
-  int forkret=fork();
+
+  /* --- Decouple from shell ---
+     This is not the optimal place for the decoupling. Nicer would
+     be to fork off the maudio client and then decouple. But then
+     I would not be able to catch the SIGCHLD if maudio should go down.
+   */
+  pid_t forkret = fork();
+  if ( forkret == -1 ) {
+    fprintf(stderr,  "%s: fork() failure\n", argv[0]);
+    exit(1);
+  }
+  if ( forkret > 0)
+    exit (0);        // original process quits
+
+
+  // --- decoupling from shell finished ---
+
+  forkret=fork();
   if (forkret==0) {
+    // start audio server "maudio"
     execvp( MaudioText, Opts);
-    fprintf(stdout,"Failed starting audio server!\n");
+    fprintf(stderr,"Failed starting audio server!\n");
   }
   else if (forkret > 0) {
+    // Controlling process ("maudio")
     maudioPID = forkret;
 
     signal(SIGCHLD,mysigchild);
@@ -318,23 +339,22 @@ int main ( int argc , char **argv )
     signal(SIGBUS ,mysigchild);
     signal(SIGSEGV,mysigchild);
     signal(SIGTERM,mysigchild);
- 
+
     /*
      * Stupid SysV IPC throws away SHM piece, when autodeletion is enabled
-     * and when calling exec(). So I just idle around here, waiting for the
-     * child to die :'-|
+     * and when calling exec(). In todays man page this behaviour is finally
+     * document, but it  does not help me. So I just idle around here, waiting
+     * for the child to die :'-|
      */
     while(1) {
       XEvent event_return;
       if (globalDisplay != 0) {
-        //XCheckMaskEvent(globalDisplay, (long)(-1l) , &event_return);
-        //XFlush(globalDisplay);
         XNextEvent(globalDisplay, &event_return);
       }
       sleep(1);
     }
   }
 
-  fprintf(stdout,"Failed starting audio server!\n");
+  fprintf(stderr,"kaudioserver: Failed starting audio server!\n");
   myExit(1);
 }
