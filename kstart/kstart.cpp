@@ -116,7 +116,7 @@ int main( int argc, char *argv[] )
        "\n Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
        "\n Utility to launch legay applications with special KDE window properties"
        "\n such as iconified, maximized, a certain virtual desktop, a special decoration"
-       "\n or sticky"
+       "\n or sticky. Furthermore you can exclude the window from getting the focus."
        "\n "
        "\n In addition, the -activate switch will jump to the window even if it is"
        "\n started on a different virtual desktop"
@@ -124,14 +124,17 @@ int main( int argc, char *argv[] )
        "\n Usage:"
        "\n %s <command> [-window <regular expression>] [-desktop <number>]"
        "\n              [-sticky] [-iconify] [-maximize] "
-       "\n              [-decoration tiny|none] [-activate]"
+       "\n              [-decoration tiny|none] [-activate] [-nofocus]"
        "\n "
        "\n If you do not specify a regular expression for the windows title,"
        "\n then the very first window to appear will be taken. Not recommended!"
        "\n "
        "\n Example usage:"
-       "\n %s \"xclock -geometry 80x80-0+0\" -window xclock -decoration tiny -sticky"
-       "\n puts a tiny decorated, sticky xclock on the top right corner of the screen."
+       "\n %s \"xclock -geometry 80x80-0+0\" -window xclock \\"
+       "\n        -decoration tiny -sticky -nofocus"
+       "\n puts a tiny decorated, sticky xclock on the top right corner of the screen,"
+       "\n that does not even get focus (and therefore has no entry in the taskbar)."
+       "\n Note that you can still close it with the right mouse button."
        "\n "
        "\n "), argv[0], argv[0]);
 
@@ -143,6 +146,7 @@ int main( int argc, char *argv[] )
   bool maximize = FALSE;
   bool iconify = FALSE;
   bool sticky = FALSE;
+  int noFocus = 0;
   int decoration = KWM::normalDecoration;
 
   for (int i = 2; i < argc; i++)
@@ -170,6 +174,7 @@ int main( int argc, char *argv[] )
     if (!strcmp(argv[i],"-maximize") ) maximize = true;
     if (!strcmp(argv[i],"-iconify") ) iconify = true;
     if (!strcmp(argv[i],"-sticky") ) sticky = true;
+    if (!strcmp(argv[i],"-nofocus") ) noFocus = KWM::noFocus;
   }
 
   KWMModuleApplication a (argc, argv);
@@ -177,7 +182,7 @@ int main( int argc, char *argv[] )
   fcntl(ConnectionNumber(qt_xdisplay()), F_SETFD, 1);
 
 
-  new KStart(&a, argv[1], window, desktop, activate, maximize, iconify, sticky, decoration);
+  new KStart(&a, argv[1], window, desktop, activate, maximize, iconify, sticky, decoration | noFocus);
 
 
   return a.exec();

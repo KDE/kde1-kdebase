@@ -1,0 +1,14 @@
+
+       Changes file for kstart
+       ================
+
+ Developed and maintained by Matthias Ettrich (ettrich@kde.org)
+
+
+
+In 0.9 patchlevel 1:
+
+     * added "-nofocus" switch (sorry, I forgot this one)
+
+
+0.9: initial checkin
