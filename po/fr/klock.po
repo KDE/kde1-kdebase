@@ -155,19 +155,16 @@ msgid "Bouboule"
 msgstr ""
 
 #: bouboule.cpp:1005
-#, fuzzy
 msgid "Setup KBouboule"
-msgstr "Configuration de KFlame"
+msgstr "Configuration de KBouboule"
 
 #: bouboule.cpp:1032
-#, fuzzy
 msgid "Number of points:"
-msgstr "Nombre de chauve-souris :"
+msgstr "Nombre de points:"
 
 #: bouboule.cpp:1046
-#, fuzzy
 msgid "Point size:"
-msgstr "Nombre de points :"
+msgstr "Taille des points :"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
@@ -178,9 +175,8 @@ msgid "3D mode"
 msgstr ""
 
 #: bouboule.cpp:1223
-#, fuzzy
 msgid "About Bouboule"
-msgstr "A propos de Blob"
+msgstr "A propos de Bouboule"
 
 #: bouboule.cpp:1224
 msgid ""
@@ -386,7 +382,6 @@ msgstr ""
 "Porté vers kscreensave by Emanuel Pirker."
 
 #: main.cpp:280
-#, fuzzy, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "L'option %s n'est pas supportée sur cette plateforme !"
 
@@ -596,18 +591,16 @@ msgid "Science"
 msgstr ""
 
 #: science.cpp:386
-#, fuzzy
 msgid "Setup Science"
-msgstr "Configuration de klines"
+msgstr "Configuration de Science"
 
 #: science.cpp:413
 msgid "Intensity:"
 msgstr ""
 
 #: science.cpp:544
-#, fuzzy
 msgid "About Science"
-msgstr "A propos de Lines"
+msgstr "A propos de Science"
 
 #: science.cpp:545
 msgid ""
@@ -652,7 +645,6 @@ msgid "Space (GL)"
 msgstr "Espace (GL)"
 
 #: space.cpp:581
-#, fuzzy
 msgid "Setup KSpace"
 msgstr "Configuration de KSpace"
 
@@ -661,7 +653,6 @@ msgid "Warp Interval:"
 msgstr "Intervalle de torsion :"
 
 #: space.cpp:685
-#, fuzzy
 msgid "About KSpace"
 msgstr "A propos de KSpace"
 
