@@ -86,6 +86,7 @@ install:
 	$(INSTALL_DATA) ./libkfm/kfmclient_ipc.h $(KDEINC)
 	$(INSTALL_DATA) ./libkfm/ipc.h $(KDEINC)
 	(cd doc && make install)
+	(cd pics && make install)
 	$(INSTALL_DIR) $(LIBDIR)/kfm/config
 	$(INSTALL_DATA) kfmrc $(LIBDIR)/kfm/config
 	$(INSTALL_DIR) $(LIBDIR)/kfm/Desktop

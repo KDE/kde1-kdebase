@@ -60,14 +60,15 @@ dnl Checks for typedefs, structures, and compiler characteristics.
 AC_C_CONST
 AC_C_INLINE
 AC_HEADER_TIME
-AC_C_LONG_DOUBLE
 
 dnl check if the compiler has bool
 AC_CHECK_BOOL
+AC_C_LONG_DOUBLE
 
 dnl Checks for library functions. MISCOBJS is for kdecore
 AC_CHECK_FUNCS(socket)
 AC_CHECK_FUNC(setenv, [], MISCOBJS="$MISCOBJS setenv.lo")
+AC_CHECK_FUNCS(powl)
 
 dnl Perform program name transformation
 AC_ARG_PROGRAM

@@ -11,6 +11,9 @@
 /* Define to empty if the keyword does not work.  */
 /* #undef const */
 
+/* Define if the `long double' type works.  */
+#define HAVE_LONG_DOUBLE 1
+
 /* Define as __inline if that's what the C compiler calls it.  */
 /* #undef inline */
 
@@ -33,8 +36,15 @@
 /* Define if the C++ compiler supports BOOL */
 #define HAVE_BOOL 1
 
+#define VERSION "0.7"
+
+#define PACKAGE "kdebase" kdelibs
+
+/* Define if you have the powl function.  */
+/* #undef HAVE_POWL */
+
 /* Define if you have the socket function.  */
-#define HAVE_SOCKET 1
+/* #undef HAVE_SOCKET */
 
 /* Define if you have the <dirent.h> header file.  */
 #define HAVE_DIRENT_H 1
@@ -57,26 +67,9 @@
 /* Define if you have the <unistd.h> header file.  */
 #define HAVE_UNISTD_H 1
 
-/* Define if you have the compat library (-lcompat).  */
-/* #undef HAVE_LIBCOMPAT */
-
-/* Define if you have the gif library (-lgif).  */
-#define HAVE_LIBGIF 1
-
-/* Define if you have the jpeg library (-ljpeg).  */
-#define HAVE_LIBJPEG 1
-
-/* Define if you have the qt library (-lqt).  */
-/* #undef HAVE_LIBQT */
-
 #ifndef HAVE_BOOL
 #define HAVE_BOOL
 typedef int bool;
 const bool false = 0;
 const bool true = 1;
 #endif
- 
-/* Define if the `long double' type works.  */
-#define HAVE_LONG_DOUBLE 1
-
-
