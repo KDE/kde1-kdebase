@@ -47,14 +47,27 @@
 #define IconList KRootWidget::pKRootWidget->icon_list
 
 QStrList *KfmView::clipboard;
+bool KfmView::stackLock = false;
 
-KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_parent_view )
+KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KfmView *_parent_view )
     : KHTMLView( parent, name, 0, _parent_view )
 {
     rectStart = false;
     dPainter = 0L;
     
     htmlCache = new HTMLCache();
+    if(!_parent_view)
+    {
+	backStack = new QStack<SavedPage>;
+	forwardStack = new QStack<SavedPage>;
+	backStack->setAutoDelete( false );
+	forwardStack->setAutoDelete( false );
+    }
+    else
+    {
+	backStack = _parent_view->getBackStack();
+	forwardStack = _parent_view->getForwardStack();
+    }
 
     connect( htmlCache, SIGNAL( urlLoaded( const char*, const char *) ),
 	     this, SLOT( slotImageLoaded( const char*, const char* ) ) );
@@ -71,6 +84,9 @@ KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_p
     connect( this, SIGNAL( goLeft() ), this, SLOT( slotBack() ) );
     connect ( getKHTMLWidget(), SIGNAL( redirect( int , const char *) ),
 	      this, SLOT( slotRedirect( int, const char * )) );
+    connect( &redirectTimer, SIGNAL(timeout()), 
+	     this, SLOT(slotDelayedRedirect2()));
+
 
     gui = _gui;
  
@@ -80,9 +96,6 @@ KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_p
     stackLock = false;
 
     // ignoreMouseRelease = false; // Stephan: Just guessed. It was undefined
-
-    backStack.setAutoDelete( false );
-    forwardStack.setAutoDelete( false );
 
     childViewList.setAutoDelete( false );
 
@@ -120,12 +133,17 @@ KfmView::~KfmView()
     dropZone = 0L;
 
     // MRJ: make sure all requests are cancelled before the cache is deleted
-    cancelAllRequests();
-    
+    slotStop();
+
     delete manager;
  
     delete htmlCache;
     
+    if(getParentView() == 0)
+    {
+	delete backStack;
+	delete forwardStack;
+    }
     // debugT("Deleted\n");
 }
 
@@ -301,8 +319,13 @@ void KfmView::slotTerminal()
 
 void KfmView::slotStop()
 {
+    KfmView *v;
+
     // MRJ: cancel any file requests before the htmlCache is stopped.
     cancelAllRequests();
+    for( v = childViewList.first(); v != 0; v = childViewList.next())
+	v->slotStop();
+
     manager->stop();
     htmlCache->stop();
 }
@@ -825,6 +848,7 @@ void KfmView::checkLocalProperties (const char *_url)
 
 void KfmView::openURL( const char *_url, bool _refresh, int _xoffset, int _yoffset )
 {
+    redirectTimer.stop();
     checkLocalProperties (_url);
     emit newURL( _url );
     manager->openURL( _url, _refresh, _xoffset, _yoffset );
@@ -832,6 +856,16 @@ void KfmView::openURL( const char *_url, bool _refresh, int _xoffset, int _yoffs
 
 void KfmView::openURL( const char *_url )
 {
+    redirectTimer.stop();
+
+    // dirty hack to get the restoring of frames working correctly
+    if( strncmp( _url, "restored:", 9 ) == 0 )
+    {
+	_url += 9;
+	emit newURL(_url);
+	return;
+    }
+
     checkLocalProperties (_url);
     emit newURL( _url );
     manager->openURL( _url );
@@ -839,6 +873,8 @@ void KfmView::openURL( const char *_url )
 
 void KfmView::openURL( const char *_url, const char *_data )
 {
+    redirectTimer.stop();
+
     checkLocalProperties (_url);
     emit newURL( _url );
     manager->openURL( _url, FALSE, 0, 0, _data );
@@ -849,15 +885,14 @@ void KfmView::pushURLToHistory()
     if ( stackLock )
 	return;
     
-    HistoryEntry *h = new HistoryEntry;
-    h->url = getKHTMLWidget()->getDocumentURL().url();
-    h->xOffset = xOffset();
-    h->yOffset = yOffset();
-    
-    backStack.push( h );
-    forwardStack.setAutoDelete( true );
-    forwardStack.clear();
-    forwardStack.setAutoDelete( false );
+    printf("pushing to stack\n");
+    SavedPage *p = saveYourself();
+    if(!p) return;
+
+    backStack->push( p );
+    forwardStack->setAutoDelete( true );
+    forwardStack->clear();
+    forwardStack->setAutoDelete( false );
 	
     emit historyUpdate( true, false );
 }
@@ -882,23 +917,37 @@ void KfmView::slotUp()
 
 void KfmView::slotForward()
 {
-    if ( forwardStack.isEmpty() )
+    if ( forwardStack->isEmpty() )
 	return;
 
-    HistoryEntry *h = new HistoryEntry;
-    h->url = getKHTMLWidget()->getDocumentURL().url();
-    h->xOffset = xOffset();
-    h->yOffset = yOffset();
-    backStack.push( h );
+    SavedPage *s = forwardStack->pop();
+    // try to find the corresponding htmlview. If only this view
+    // (the one that changes saves itself, we will reduce flicker
+    // a lot...
     
-    HistoryEntry *s = forwardStack.pop();
-    if ( forwardStack.isEmpty() )
+    // we are the top level widget, since we get signals from kfmgui
+    KHTMLView *top = (KHTMLView *)this;
+    KHTMLView *v;
+    for ( v = viewList->first(); v != 0; v = viewList->next() )
+    {
+	if ( strcmp( v->getFrameName(), s->frameName ) == 0 ) 
+	    if( top != v->findView( "_top" ) )
+		continue;
+	    else
+		break;
+    }
+    if( !v ) v = top;
+
+    SavedPage *p = v->saveYourself();
+    backStack->push( p );
+    
+    if ( forwardStack->isEmpty() )
 	emit historyUpdate( true, false );
     else
 	emit historyUpdate( true, true );
     
     stackLock = true;
-    openURL( s->url, false, s->xOffset, s->yOffset );
+    restore( s );
     stackLock = false;
 
     delete s;
@@ -906,23 +955,37 @@ void KfmView::slotForward()
 
 void KfmView::slotBack()
 {
-    if ( backStack.isEmpty() )
+    if ( backStack->isEmpty() )
 	return;
 
-    HistoryEntry *h = new HistoryEntry;
-    h->url = getKHTMLWidget()->getDocumentURL().url();
-    h->xOffset = xOffset();
-    h->yOffset = yOffset();
-    forwardStack.push( h );
+    SavedPage *s = backStack->pop();
+    // try to find the corresponding htmlview. If only this view
+    // (the one that changes saves itself, we will reduce flicker
+    // a lot...
     
-    HistoryEntry *s = backStack.pop();
-    if ( backStack.isEmpty() )
+    // we are the top level widget, since we get signals from kfmgui
+    KHTMLView *top = (KHTMLView *)this;
+    KHTMLView *v;
+    for ( v = viewList->first(); v != 0; v = viewList->next() )
+    {
+	if ( strcmp( v->getFrameName(), s->frameName ) == 0 ) 
+	    if( top != v->findView( "_top" ) )
+		continue;
+	    else
+		break;
+    }
+    if( !v ) v = top;
+
+    SavedPage *p = v->saveYourself();
+    forwardStack->push( p );
+    
+    if ( backStack->isEmpty() )
 	emit historyUpdate( false, true );
     else
 	emit historyUpdate( true, true );    
 
     stackLock = true;
-    openURL( s->url, false, s->xOffset, s->yOffset );
+    restore( s );
     stackLock = false;
 
     delete s;
@@ -949,8 +1012,9 @@ void KfmView::slotDelayedRedirect(KHTMLView *)
 {
     disconnect( this, SIGNAL( documentDone(KHTMLView *)),
 		this, SLOT( slotDelayedRedirect(KHTMLView *) ) );
-    QTimer::singleShot(1000*redirectDelay, this, SLOT( slotDelayedRedirect2() ) );
+    redirectTimer.start(1000*redirectDelay, true);
 }
+
 void KfmView::slotDelayedRedirect2()
 {
     stackLock = true;
@@ -1534,5 +1598,16 @@ bool KfmView::URLVisited( const char *_url )
   
   return false;
 }
+
+QStack<SavedPage> *KfmView::getBackStack()
+{
+    return backStack;
+}
+
+QStack<SavedPage> *KfmView::getForwardStack()
+{
+    return forwardStack;
+}
+
 
 #include "kfmview.moc"

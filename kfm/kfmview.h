@@ -10,6 +10,7 @@ class KfmView;
 
 #include <ktopwidget.h>
 #include <htmlview.h>
+#include <html.h>
 
 #include "kioserver.h"
 #include "kstrlist.h"
@@ -17,20 +18,13 @@ class KfmView;
 #include "kfmgui.h"
 #include "htmlcache.h"
 
-struct HistoryEntry
-{
-  QString url;
-  int xOffset;
-  int yOffset;
-};
-
 #include "config-kfm.h"
 
 class KfmView : public KHTMLView
 {
     Q_OBJECT
 public:
-    KfmView( KfmGui *_gui, QWidget *parent=0, const char *name=0, KHTMLView *_parent_view = 0L );
+    KfmView( KfmGui *_gui, QWidget *parent=0, const char *name=0, KfmView *_parent_view = 0L );
     virtual ~KfmView();
 
     /**
@@ -48,7 +42,16 @@ public:
      *         This function will never return 0L.
      */
     KfmView* getActiveView();
-	
+
+    /**
+     * returns the backStack
+     */
+    QStack<SavedPage> *getBackStack();
+    /**
+     * returns the forwardStack
+     */
+    QStack<SavedPage> *getForwardStack();
+
     /**
      * @return write HTML-code to the widget (Hen). Quote HTML
      *   special characters, according to <b>RFC 1866</b>,
@@ -161,8 +164,8 @@ public:
      */
     void setUpURL( const char *_url );
 
-    bool hasBackHistory() { return !backStack.isEmpty(); }
-    bool hasForwardHistory() { return !forwardStack.isEmpty(); }
+    bool hasBackHistory() { return !backStack->isEmpty(); }
+    bool hasForwardHistory() { return !forwardStack->isEmpty(); }
     bool hasUpHistory() { return !m_strUpURL.isEmpty(); }
   
     /**
@@ -433,20 +436,21 @@ protected:
     /**
      * Contains all URLs you can reach with the back button.
      */
-    QStack<HistoryEntry>backStack;
+    QStack<SavedPage> *backStack;
     /**
      * Contains all URLs you can reach with the forward button.
      */
-    QStack<HistoryEntry>forwardStack;
+    QStack<SavedPage> *forwardStack;
     /**
      * Lock @ref #backStack and @ref #forwardStack .
      */
-    bool stackLock;
+    static bool stackLock;
 
     /**
      * url for redirection and delay 
      */
     QString redirectURL;
+    QTimer redirectTimer;
     int redirectDelay;
 
     KfmGui *gui;
