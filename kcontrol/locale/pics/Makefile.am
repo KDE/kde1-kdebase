@@ -5,7 +5,7 @@ data_DATA = flag_de.gif flag_en.gif flag_fr.gif flag_C.gif flag_cs.gif \
 	    flag_zh_TW.Big5.gif flag_zh_CN.GB2312.gif flag_en_UK.gif \
 	    flag_ca.gif flag_pt_BR.gif flag_eo.gif flag_mk.gif flag_br.gif \
 	    flag_he.gif flag_tr.gif flag_et.gif flag_se.gif \
-	    flag_fr_CA.gif flag_us_eu.gif 
+	    flag_fr_CA.gif flag_us_eu.gif flag_fr_CH.gif flag_de_CH.gif
 
 datadir = $(kde_datadir)/kcmlocale/pics
 
