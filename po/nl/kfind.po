@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-31 01:12+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-10-01 16:40:07+0200\n"
 "From: root <flidr@CyberGate.zcu.cz>\n"
@@ -115,128 +115,128 @@ msgstr "Open de omvattende map"
 msgid "Save Search Results"
 msgstr "Zoekresultaten bewaren"
 
-#: kftabdlg.cpp:71
+#: kftabdlg.cpp:72
 msgid "&Named:"
 msgstr "&Naam:"
 
-#: kftabdlg.cpp:74
+#: kftabdlg.cpp:75
 msgid "&Look in:"
 msgstr "&Zoek in:"
 
-#: kftabdlg.cpp:77
+#: kftabdlg.cpp:78
 msgid "&Browse ..."
 msgstr "B&laderen..."
 
-#: kftabdlg.cpp:83
+#: kftabdlg.cpp:84
 msgid "Include &subfolders"
 msgstr "Inclusief &onderliggende mappen"
 
-#: kftabdlg.cpp:117
+#: kftabdlg.cpp:118
 #, fuzzy
 msgid " Name& Location "
 msgstr " Naam&Locatie "
 
-#: kftabdlg.cpp:129
+#: kftabdlg.cpp:130
 msgid "and"
 msgstr "en"
 
-#: kftabdlg.cpp:130
+#: kftabdlg.cpp:131
 msgid "month(s)"
 msgstr "maand(en)"
 
-#: kftabdlg.cpp:131
+#: kftabdlg.cpp:132
 msgid "day(s)"
 msgstr "dag(en)"
 
-#: kftabdlg.cpp:146
+#: kftabdlg.cpp:147
 msgid "&All files"
 msgstr "&Alle bestanden"
 
-#: kftabdlg.cpp:147
+#: kftabdlg.cpp:148
 msgid "Find all files created or &modified:"
 msgstr "&Vind alle bestanden aangemaakt of gewijzigd:"
 
-#: kftabdlg.cpp:148
+#: kftabdlg.cpp:149
 msgid "&between"
 msgstr "&tussen"
 
-#: kftabdlg.cpp:149
+#: kftabdlg.cpp:150
 msgid "during the previou&s "
 msgstr "&in de laatste"
 
-#: kftabdlg.cpp:150
+#: kftabdlg.cpp:151
 msgid "&during the previous "
 msgstr "i&n de laatste"
 
-#: kftabdlg.cpp:198
+#: kftabdlg.cpp:199
 msgid " Date Modified "
 msgstr " Wijzigingsdatum "
 
-#: kftabdlg.cpp:205
+#: kftabdlg.cpp:206
 msgid "Of &type:"
 msgstr "&Van type:"
 
-#: kftabdlg.cpp:207
+#: kftabdlg.cpp:208
 msgid "&Containing Text:"
 msgstr "&Bevattende de tekst:"
 
-#: kftabdlg.cpp:212
+#: kftabdlg.cpp:213
 msgid "&Size is:"
 msgstr "&Grootte is:"
 
-#: kftabdlg.cpp:235
+#: kftabdlg.cpp:236
 msgid "All Files and Folders"
 msgstr "Alle bestanden en mappen"
 
-#: kftabdlg.cpp:237
+#: kftabdlg.cpp:238
 msgid "Folders"
 msgstr ""
 
-#: kftabdlg.cpp:238
+#: kftabdlg.cpp:239
 msgid "Symbolic links"
 msgstr ""
 
-#: kftabdlg.cpp:239
+#: kftabdlg.cpp:240
 msgid "Special files (sockets, device files...)"
 msgstr ""
 
-#: kftabdlg.cpp:240
+#: kftabdlg.cpp:241
 msgid "Executable files"
 msgstr ""
 
-#: kftabdlg.cpp:241
+#: kftabdlg.cpp:242
 msgid "SUID executable files"
 msgstr ""
 
-#: kftabdlg.cpp:249
+#: kftabdlg.cpp:250
 msgid "(none)"
 msgstr "(geen)"
 
-#: kftabdlg.cpp:250
+#: kftabdlg.cpp:251
 msgid "At Least"
 msgstr "minstens"
 
-#: kftabdlg.cpp:251
+#: kftabdlg.cpp:252
 msgid "At Most"
 msgstr "hoog uit"
 
-#: kftabdlg.cpp:262
+#: kftabdlg.cpp:263
 msgid " Advanced "
 msgstr "Geavanceerd "
 
-#: kftabdlg.cpp:500
+#: kftabdlg.cpp:501
 msgid "The date is not valid!!"
 msgstr "De datum is niet geldig!"
 
-#: kftabdlg.cpp:512
+#: kftabdlg.cpp:513
 msgid "The month(s) value isn't valid!!"
 msgstr "The maand(en) waarde is niet geldig!"
 
-#: kftabdlg.cpp:523
+#: kftabdlg.cpp:524
 msgid "The day(s) value isn't valid!!"
 msgstr "The dag(en) waarde is niet geldig!"
 
-#: kftabdlg.cpp:540
+#: kftabdlg.cpp:541
 msgid "The value in size isn't valid number!!"
 msgstr "De waarde in \"grootte\" is niet een geldig nummer!"
 
@@ -290,24 +290,24 @@ msgstr "Voeg nieuwe toe"
 msgid "Archivers"
 msgstr "Archief programmas"
 
-#: kfwin.cpp:111 kfwin.cpp:118 kfwin.cpp:134 kfwin.cpp:161
+#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:135 kfwin.cpp:162
 #, c-format
 msgid "%d file(s) found"
 msgstr "%d bestand(en) gevonden"
 
-#: kfwin.cpp:245
+#: kfwin.cpp:246
 msgid "It wasn't possible to save results!"
 msgstr "Het was niet mogelijk de resultaten op te slaan!"
 
-#: kfwin.cpp:253 kfwin.cpp:255 kfwin.cpp:257
+#: kfwin.cpp:254 kfwin.cpp:256 kfwin.cpp:258
 msgid "KFind Results File"
 msgstr "KFind resultatenbestand"
 
-#: kfwin.cpp:282
+#: kfwin.cpp:283
 msgid "Results were saved to file\n"
 msgstr "De resultaten zijn in het bestand bewaard\n"
 
-#: kfwin.cpp:297
+#: kfwin.cpp:298
 #, c-format
 msgid ""
 "Do you really want to delete file:\n"
@@ -317,11 +317,11 @@ msgstr ""
 "%s\n"
 "wilt verwijderen ?"
 
-#: kfwin.cpp:299
+#: kfwin.cpp:300
 msgid "Delete File"
 msgstr "Verwijder bestand"
 
-#: kfwin.cpp:311
+#: kfwin.cpp:312
 msgid ""
 "You have no permission\n"
 " to delete this file"
@@ -329,7 +329,7 @@ msgstr ""
 "U hebt niet de benodigde rechten\n"
 " om dit bestand te verwijderen"
 
-#: kfwin.cpp:317
+#: kfwin.cpp:318
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
@@ -337,7 +337,7 @@ msgstr ""
 "Het is niet mogelijk om het\n"
 "geselecteerde bestand te verwijderen"
 
-#: kfwin.cpp:335
+#: kfwin.cpp:336
 msgid ""
 "You have no permission\n"
 " to delete this directory"
@@ -345,7 +345,7 @@ msgstr ""
 "U hebt niet de benodigde rechten\n"
 " om deze map te verwijderen"
 
-#: kfwin.cpp:340
+#: kfwin.cpp:341
 msgid ""
 "Specified directory\n"
 "is not empty!"
@@ -353,7 +353,7 @@ msgstr ""
 "De gespecificeerde map\n"
 "is niet leeg!"
 
-#: kfwin.cpp:345
+#: kfwin.cpp:346
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
@@ -362,12 +362,12 @@ msgstr ""
 "geselecteerde map te verwijderen"
 
 # FIXME
-#: kfwin.cpp:437
+#: kfwin.cpp:438
 msgid "Couldn't recognize archive type!"
 msgstr "Het archieftype kon niet herkend worden"
 
 # FIXME
-#: kfwin.cpp:496
+#: kfwin.cpp:497
 msgid "Error while creating child process!"
 msgstr "Fout tijdens het creëren van een kindproces!"
 
