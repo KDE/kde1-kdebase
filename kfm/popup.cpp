@@ -8,6 +8,9 @@
 #include <ksimpleconfig.h>
 
 #include "kfmpaths.h"
+// --- Sven's check if this is global apps/mime start ---
+#include "kfm.h"
+// --- Sven's check if this is global apps/mime end ---
 #include "kfmdlg.h"
 #include "kiojob.h"
 #include "popup.h"
@@ -141,7 +144,14 @@ void KNewMenu::slotNewFile( int _id )
               u.detach();
 	      if ( u.right( 1 ) != "/" )
 		u += "/";
-              u += name.data();
+	      u += name.data();
+	      // --- Sven's check if this is global apps/mime start ---
+	      // This is a bug fix for bug report from A. Pour from
+	      // Mietierra (sp?)
+	      // User wants to create dir in global mime/apps dir;
+
+	      Kfm::setUpDest(&u); // this checks & repairs destination
+	      // --- Sven's check if global apps/mime end ---
 	      job->mkdir( u.data() );
             }
 	}
@@ -156,7 +166,14 @@ void KNewMenu::slotNewFile( int _id )
                 if ( dest.right( 1 ) != "/" )
                     dest += "/";
                 dest += name.data();
-                // debugT("Command copy '%s' '%s'\n",src.data(),dest.data());
+		// debugT("Command copy '%s' '%s'\n",src.data(),dest.data());
+
+		// --- Sven's check if this is global apps/mime start ---
+		// This is a bug fix for bug report from A. Pour from
+		// Mietierra (sp?)
+		// User wants to create new entry in global mime/apps dir;
+		Kfm::setUpDest(&dest);
+		// --- Sven's check if global apps/mime end ---
                 job->copy( src.data(), dest.data() );
             }
 	}
