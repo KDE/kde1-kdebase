@@ -538,10 +538,10 @@ void KfmGui::slotSplitWindow()
 
 void KfmGui::slotViewHTML( )
 {
-    bViewHTML = !mview->isItemChecked( 3 );
-    debugT("VIEW is '%i'\n",(int)bViewHTML);
+    bViewHTML = !mview->isItemChecked( mview->idAt(3) );
+    debugT("VIEW is '%i' %d\n",(int)bViewHTML, mview->idAt(3));
     // viewMode = ICON_VIEW;
-    mview->setItemChecked( mview->idAt( 3 ), !mview->isItemChecked( 3 ) );
+    mview->setItemChecked( mview->idAt( 3 ), bViewHTML);
     view->slotUpdateView();
 }
 
