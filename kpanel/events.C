@@ -123,16 +123,33 @@ void kPanel::kwmInit(){
 }
 
 
+static Window ignore_this_dialog = None;
+
+void kPanel::dialogWindowAdd(Window w) {
+    ignore_this_dialog = w;
+}
 void kPanel::windowAdd(Window w){
 
-  {
-    // ignore transient windows
-    Window trans = None;
-    if (XGetTransientForHint(qt_xdisplay(), w, &trans)){
-      if (trans != None && trans != qt_xrootwin())
+    if (w == ignore_this_dialog ) {
+	ignore_this_dialog = None;
 	return;
     }
-  }
+    else {
+	//compatibility: ignore transient windows
+	Window trans = None;
+	if (XGetTransientForHint(qt_xdisplay(), w, &trans)){
+	    if (trans != None && trans != qt_xrootwin())
+		return;
+	}
+    }
+    
+//     // ignore dialog windows
+//     XWMHints *hints = XGetWMHints(qt_xdisplay(), w);
+//     if (hints && (hints->flags & WindowGroupHint) ) {
+// 	if (hints->window_group != None && hints->window_group != w)
+// 	    return;
+//     }
+//   }
 
   int nr = numberOfTaskbarRows();
 
@@ -430,7 +447,7 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
   // --sven: kdisknav button start --
   if (ob == kdisknav && ev->type() == Event_MouseButtonRelease) {
     bool doIt = false;
-    
+
     if (miniPanelHidden) {
       for (int i=0 ; i<nbuttons && !doIt; i++)
 	// is this our button?
@@ -442,14 +459,14 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
     else if (QApplication::widgetAt(((QMouseEvent *) ev)->globalPos(), true)
 	    == miniDiskNav)
       doIt = true;
-      
+
     if (doIt) {
       kdisknav->setActiveItem(0); // set first active
       return true;  // ignore release
     }
   }
   // --sven: kdisknav button end --
-  
+
   switch (ev->type()){
 
   case Event_KeyPress:

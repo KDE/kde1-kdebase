@@ -180,6 +180,7 @@ public:
  // kwm communication
   void kwmInit();
   void windowAdd(Window);
+  void dialogWindowAdd(Window);
   void windowRemove(Window);
   void windowChange(Window);
   void windowActivate(Window);

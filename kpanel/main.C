@@ -43,7 +43,7 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):
 }
 
 bool MyApp::x11EventFilter( XEvent * ev){
-  if (ev->xany.window != None && 
+  if (ev->xany.window != None &&
       the_panel->parentOfSwallowed(ev->xany.window)){
     if (ev->type == ButtonPressMask){
       XAllowEvents(qt_xdisplay(), SyncPointer, CurrentTime);
@@ -90,7 +90,7 @@ void copyFiles( QString source, QString dest )
 }
 
 int main( int argc, char ** argv ){
- 
+
   o_argc = argc;
   o_argv = new char*[o_argc + 2];
   int v;
@@ -100,7 +100,7 @@ int main( int argc, char ** argv ){
 
   MyApp myapp( argc, argv, "kpanel" );
   bool use_kwm = true;
-  
+
   for (v=1; v<argc; v++){
     if (QString("-version")==argv[v]){
       printf(KPANEL_VERSION);
@@ -122,7 +122,7 @@ int main( int argc, char ** argv ){
     printf("And all KApplication and Qt-toolkit arguments.\n");
     exit(0);
   }
-  
+
   if (use_kwm){
     if (!KWM::isKWMInitialized()){
       printf("kpanel: waiting for windowmanager\n");
@@ -130,7 +130,7 @@ int main( int argc, char ** argv ){
       sleep(1);
     }
   }
-  
+
   // create $HOME/.kde/share/apps/kpanel/applnk
   testDir( "" );
   testDir( "/share" );
@@ -143,45 +143,47 @@ int main( int argc, char ** argv ){
   // create default $HOME/.kde/share/applnk/.directory file if there is none
   QString src_path = KApplication::kde_datadir().copy();
   src_path += "/kpanel/default/personal_directory";
-  QString dest_path = KApplication::localkdedir().copy();  
+  QString dest_path = KApplication::localkdedir().copy();
   dest_path += "/share/applnk/.directory";
   QFileInfo fi(dest_path);
   if( !fi.exists() ) {
     copyFiles(src_path, dest_path);
   }
-  
+
   the_panel = new kPanel(&myapp);
-  the_panel->connect(&myapp, SIGNAL(init()), 
+  the_panel->connect(&myapp, SIGNAL(init()),
 		     SLOT(kwmInit()));
-  the_panel->connect(&myapp, SIGNAL(windowAdd(Window)), 
+  the_panel->connect(&myapp, SIGNAL(windowAdd(Window)),
 		     SLOT(windowAdd(Window)));
-  the_panel->connect(&myapp, SIGNAL(windowRemove(Window)), 
+  the_panel->connect(&myapp, SIGNAL(dialogWindowAdd(Window)),
+		     SLOT(dialogWindowAdd(Window)));
+  the_panel->connect(&myapp, SIGNAL(windowRemove(Window)),
 		     SLOT(windowRemove(Window)));
-  the_panel->connect(&myapp, SIGNAL(windowChange(Window)), 
+  the_panel->connect(&myapp, SIGNAL(windowChange(Window)),
 		     SLOT(windowChange(Window)));
-  the_panel->connect(&myapp, SIGNAL(windowActivate(Window)), 
+  the_panel->connect(&myapp, SIGNAL(windowActivate(Window)),
 		     SLOT(windowActivate(Window)));
-  the_panel->connect(&myapp, SIGNAL(windowIconChanged(Window)), 
+  the_panel->connect(&myapp, SIGNAL(windowIconChanged(Window)),
 		     SLOT(windowIconChanged(Window)));
-  the_panel->connect(&myapp, SIGNAL(windowRaise(Window)), 
+  the_panel->connect(&myapp, SIGNAL(windowRaise(Window)),
 		     SLOT(windowRaise(Window)));
-  the_panel->connect(&myapp, SIGNAL(desktopChange(int)), 
+  the_panel->connect(&myapp, SIGNAL(desktopChange(int)),
 		     SLOT(kwmDesktopChange(int)));
-  the_panel->connect(&myapp, SIGNAL(desktopNameChange(int, QString)), 
+  the_panel->connect(&myapp, SIGNAL(desktopNameChange(int, QString)),
 		     SLOT(kwmDesktopNameChange(int, QString)));
-  the_panel->connect(&myapp, SIGNAL(desktopNumberChange(int)), 
+  the_panel->connect(&myapp, SIGNAL(desktopNumberChange(int)),
 		     SLOT(kwmDesktopNumberChange(int)));
-  the_panel->connect(&myapp, SIGNAL(commandReceived(QString)), 
+  the_panel->connect(&myapp, SIGNAL(commandReceived(QString)),
 		     SLOT(kwmCommandReceived(QString)));
-  the_panel->connect(&myapp, SIGNAL(dockWindowAdd(Window)), 
+  the_panel->connect(&myapp, SIGNAL(dockWindowAdd(Window)),
 		     SLOT(dockWindowAdd(Window)));
-  the_panel->connect(&myapp, SIGNAL(dockWindowRemove(Window)), 
+  the_panel->connect(&myapp, SIGNAL(dockWindowRemove(Window)),
 		     SLOT(dockWindowRemove(Window)));
 
-//   the_panel->connect(&myapp, SIGNAL(playSound(QString)), 
+//   the_panel->connect(&myapp, SIGNAL(playSound(QString)),
 // 		     SLOT(playSound(QString)));
 
-  the_panel->connect(&myapp, SIGNAL(kdisplayPaletteChanged()), 
+  the_panel->connect(&myapp, SIGNAL(kdisplayPaletteChanged()),
 		     SLOT(kdisplayPaletteChanged()));
 
   myapp.setMainWidget(the_panel);
@@ -193,9 +195,9 @@ int main( int argc, char ** argv ){
   myapp.syncX();
   myapp.processEvents();
   the_panel->parseMenus();
-  XSelectInput(qt_xdisplay(), qt_xrootwin(), 
+  XSelectInput(qt_xdisplay(), qt_xrootwin(),
 	       KeyPressMask);
   while (1)
-    myapp.exec(); 
+    myapp.exec();
   return 0;
 }
