@@ -572,8 +572,11 @@ void KFMManager::writeBodyTag()
 	if ( tmp2.data()[0] != 0 )
 	{
 	    bg_image = "file:";
-	    bg_image += kapp->kde_wallpaperdir().copy();
-	    bg_image += "/";
+	    if (tmp2.left(1)!="/") // relative path
+            {
+              bg_image += kapp->kde_wallpaperdir().copy();
+              bg_image += "/";
+            }
 	    bg_image += tmp2.data();
 	}
 
@@ -615,9 +618,13 @@ void KFMManager::writeBodyTag()
 	    if ( !tmp.isNull() )
 		if ( tmp.data()[0] != 0 )
 		{
+                  bg_image = "";
+                  if (tmp.left(1)!="/") // relative path
+                  {
 		    bg_image = kapp->kde_wallpaperdir().copy();
 		    bg_image += "/";
-		    bg_image += tmp.data();
+                  }
+                  bg_image += tmp.data();
 		}
 	}
     }

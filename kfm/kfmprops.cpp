@@ -1176,8 +1176,13 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
 	}
 	++it2;                               // goto next list element
     }
-    // Select the current icon
-    wallBox->setCurrentItem( index );
+    if (index)
+      // Select the current icon
+      wallBox->setCurrentItem( index );
+    else {
+      wallBox->insertItem( wallStr );
+      wallBox->setCurrentItem( wallBox->count()-1 ); 
+    }
 
     drawWallPaper();
 
@@ -1296,9 +1301,12 @@ void DirPropsPage::drawWallPaper()
 	return;
     }
 
-    QString file = kapp->kde_wallpaperdir().copy();
-    file += "/";
-    file += text;
+    QString file;
+    if (text[0]!='/') { // absolute path
+      file = kapp->kde_wallpaperdir().copy();
+      file += "/";
+      file += text;
+    } else file = text;
     
     if ( file != wallFile )
     {
