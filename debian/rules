@@ -78,7 +78,7 @@ binary-arch: checkroot build
 	dh_fixperms
 	chown root.shadow debian/tmp/usr/bin/kcheckpass
 	chmod 2755 debian/tmp/usr/bin/kcheckpass
-	chmod 4755 debian/tmp/usr/bin/konsole
+	chmod 4755 debian/tmp/usr/bin/konsole_grantpty
 	dh_suidregister
 	dh_installdeb
 	dh_shlibdeps
