@@ -2329,10 +2329,13 @@ void Manager::raiseClient(Client* c){
   // X Semantics are somewhat cryptic
   Window* new_stack = new Window[tmp.count()+1 + top_windows.count()];
   int i = 0;
-  // top windows (such as the panel) are always taken into account
-  for (Window* w = top_windows.last(); w; w = top_windows.prev() ) {
+  // top windows (such as the panel) are always taken into account (if
+  // not stays on top )
+  if ( !ignore_stays_on_top_windows ) {
+    for (Window* w = top_windows.last(); w; w = top_windows.prev() ) {
       new_stack[i] = *w;
       i++;
+    }
   }
   // take care about the gimmick: this should be always on top!
   if (options.GimmickMode && tmp.first() == current() && Client::gimmickWindow() != None){
