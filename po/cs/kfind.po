@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfind 0.3.5\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: 1998-01-20 10:27 MET\n"
+"PO-Revision-Date: 1998-04-17 15:16 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -327,9 +327,3 @@ msgstr "Nemohu urèit typ archivu!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Chyba pøi vytváøení procesu!"
-
-#~ msgid "Kfind &help"
-#~ msgstr "&Nápovìda kfindu"
-
-#~ msgid "About &Qt"
-#~ msgstr "Informace o &Qt"

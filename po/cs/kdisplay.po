@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: 1998-03-28 22:03 MET\n"
+"PO-Revision-Date: 1998-04-17 15:22 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -58,9 +58,8 @@ msgid "&Scaled"
 msgstr "&Zvìt¹enì"
 
 #: backgnd.cpp:305 backgnd.cpp:425 backgnd.cpp:438 backgnd.cpp:783
-#, fuzzy
 msgid "No wallpaper"
-msgstr "Tapeta"
+msgstr "®ádná tapeta"
 
 #: backgnd.cpp:333
 msgid "&Browse..."
@@ -75,33 +74,28 @@ msgid "Desktop names"
 msgstr "Jméno pracovní plochy"
 
 #: backgnd.cpp:907
-#, fuzzy
 msgid "Two color backgrounds"
-msgstr "Nastavení dvoubarevného pozadí"
+msgstr "Dvoubarevná pozadí"
 
 #: backgnd.cpp:944
-#, fuzzy
 msgid "Blend colors from &top to bottom"
-msgstr "Smíchat barvy zprava doleva"
+msgstr "Smíchat barvy z&hora dolù"
 
 #: backgnd.cpp:950
-#, fuzzy
 msgid "Blend colors from &right to left"
-msgstr "Smíchat barvy zprava doleva"
+msgstr "Smíchat barvy z&prava doleva"
 
 #: backgnd.cpp:956
-#, fuzzy
 msgid "Use &pattern"
-msgstr "Vzo&r"
+msgstr "Pou¾ít vzo&r"
 
 #: backgnd.cpp:983
 msgid "Preview"
 msgstr "Náhled"
 
 #: backgnd.cpp:994
-#, fuzzy
 msgid "Pattern &name"
-msgstr "Jméno Vzoru"
+msgstr "J&méno vzoru"
 
 #: backgnd.cpp:1033
 msgid "Current"
@@ -271,20 +265,19 @@ msgstr "Ignoruj"
 
 #: scrnsave.cpp:49
 msgid "Save Screen"
-msgstr ""
+msgstr "©etøit obrazovku"
 
 #: scrnsave.cpp:50
 msgid "Lock Screen"
-msgstr ""
+msgstr "Zablokovat obrazovku"
 
 #: scrnsave.cpp:110 scrnsave.cpp:179
 msgid "Screen Saver"
 msgstr "©etøiè obrazovky"
 
 #: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:548 scrnsave.cpp:657
-#, fuzzy
 msgid "No screensaver"
-msgstr "©etøiè &obrazovky"
+msgstr "®ádný ¹etøiè obrazovky"
 
 #: scrnsave.cpp:207
 msgid "&Setup ..."
@@ -323,7 +316,6 @@ msgid "Low"
 msgstr "Malá"
 
 #: general.cpp:147
-#, fuzzy
 msgid "Fonts etc."
 msgstr "&Znakové sady atd."
 
@@ -406,15 +398,3 @@ msgstr "Implicitní"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "libovolné"
-
-#~ msgid "Blen&d"
-#~ msgstr "Smísi&t"
-
-#~ msgid "kwmcom: communication with kwm failed\n"
-#~ msgstr "kwmcom: komunikace s kwm probìhla neúspì¹nì\n"
-
-#~ msgid "Lock"
-#~ msgstr "Zámek"
-
-#~ msgid "General"
-#~ msgstr "Obecné"

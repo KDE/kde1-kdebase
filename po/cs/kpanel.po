@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: 1998-03-28 22:18 MET\n"
+"PO-Revision-Date: 1998-04-17 15:14 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -83,11 +83,11 @@ msgstr "Konfiguruj panel"
 
 #: props.C:145
 msgid "Edit Menus"
-msgstr ""
+msgstr "Upravit menu"
 
 #: props.C:147
 msgid "Add or remove applications in the menu structure "
-msgstr ""
+msgstr "Pøidání nebo ubrání aplikací ve struktuøe menu"
 
 #: events.C:707 props.C:148
 msgid "Restart"
@@ -107,12 +107,12 @@ msgstr "Blokovat obrazovku"
 
 #: props.C:307
 msgid "The menu editor is not installed."
-msgstr ""
+msgstr "Editor menu není nainstalován."
 
 #: events.C:743 props.C:308
 msgid "Oops!"
-msgstr ""
+msgstr "Ouha!"
 
 #: events.C:742
 msgid "Cannot put this as button onto the panel!"
-msgstr ""
+msgstr "Toto není mo¾né dát na panel jako tlaèítko!"
