@@ -1197,8 +1197,8 @@ bool KMimeBind::runBinding( const char *_url, const char *_binding )
     QString decodedURL( _url );
     KURL::decodeURL( decodedURL );
     
-    KMimeType *typ = KMimeType::getMagicMimeType( _url );    
-    return typ->runBinding( _url, _binding );
+    KMimeType *typ = KMimeType::getMagicMimeType( decodedURL );    
+    return typ->runBinding( decodedURL, _binding );
 }
 
 bool KMimeBind::runBinding( const char *_url )

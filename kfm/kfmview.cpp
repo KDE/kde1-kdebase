@@ -411,6 +411,7 @@ void KfmView::slotPopupEmptyTrashBin()
 	    if ( strcmp( ep->d_name, "." ) != 0L && strcmp( ep->d_name, ".." ) != 0L )
 	    {
 		QString t = "file:" + d + ep->d_name;
+		KURL::encodeURL(t);
 		trash.append( t.data() );
 	    }
 	}

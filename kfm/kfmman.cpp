@@ -519,8 +519,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 
     QString filename( url );        // filename, Filename, useable to find file on Disk (Hen)
     filename.detach();
-    KURL::decodeURL ( filename );
-    filename += decoded;         
+    filename += s->getName();
 
     QString encodedURL ( url );  
     encodedURL.detach();            // encodedURL, URL,  encoded for <a href ..> (Hen)
