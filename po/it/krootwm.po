@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-03 22:39+0100\n"
-"POT-Creation-Date: 1999-01-30 01:12+0100\n"
+"POT-Creation-Date: 1999-03-26 01:17+0100\n"
 "PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi "
 "<Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -114,10 +114,10 @@ msgstr "ERORRE: Modello inesistente '%s'"
 msgid "Could not create folder"
 msgstr "Impossibile creare la cartella"
 
-#: krootwm.C:922
+#: krootwm.C:938
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:926
+#: krootwm.C:942
 msgid "Usage:"
 msgstr "Utilizzo:"

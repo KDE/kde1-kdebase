@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1999-01-30 01:12+0100\n"
+"POT-Creation-Date: 1999-03-26 01:17+0100\n"
 "PO-Revision-Date: 1999-02-24 12:05+MET\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
@@ -115,10 +115,10 @@ msgstr "FEHLER: Vorlage existiert nicht '%s'"
 msgid "Could not create folder"
 msgstr "Konnte Verzeichnis nicht erstellen"
 
-#: krootwm.C:922
+#: krootwm.C:938
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:926
+#: krootwm.C:942
 msgid "Usage:"
 msgstr "Benutzung:"

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm VERSION\n"
-"POT-Creation-Date: 1999-01-30 01:12+0100\n"
+"POT-Creation-Date: 1999-03-26 01:17+0100\n"
 "PO-Revision-Date: 1998-02-26 20:45+MET\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -117,10 +117,10 @@ msgstr ""
 msgid "Could not create folder"
 msgstr "Nem lehet mappát létrehozni"
 
-#: krootwm.C:922
+#: krootwm.C:938
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: krootwm.C:926
+#: krootwm.C:942
 msgid "Usage:"
 msgstr "Használat:"

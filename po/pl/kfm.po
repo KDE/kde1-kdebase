@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs \n"
-"POT-Creation-Date: 1999-03-25 01:17+0100\n"
+"POT-Creation-Date: 1999-03-26 01:17+0100\n"
 "PO-Revision-Date: 1999-01-10 13:10+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -51,142 +51,146 @@ msgid "Find &next"
 msgstr "Znajd¼ &nastêpny"
 
 #: kfmgui.cpp:269
-msgid "Mime &Types"
-msgstr "Typy &mime"
-
-#: kfmgui.cpp:271
-msgid "App&lications"
-msgstr "Ap&likacja"
-
-#: kfmgui.cpp:277
-msgid "Global Mime Types"
-msgstr "Ogólne typy mime"
-
-#: kfmgui.cpp:279
-msgid "Global Applications"
-msgstr "Ogólne aplikacje"
-
-#: kfmgui.cpp:287
-msgid "Show Hi&dden Files"
-msgstr "Poka¿ ukryte pliki"
-
-#: kfmgui.cpp:289
-msgid "Show Tr&ee"
-msgstr "Pokazuj &drzewo"
-
-#: kfmgui.cpp:291
-msgid "Sho&w Thumbnails"
-msgstr "Pokazuj &miniaturki"
-
-#: kfmgui.cpp:293
-msgid "&HTML View"
-msgstr "Pokazuj &HTML"
-
-#: kfmgui.cpp:296
-msgid "&Icon View"
-msgstr "Pokazuj &ikony"
-
-#: kfmgui.cpp:298
-msgid "&Text View"
-msgstr "Pokazuj &tekst"
-
-#: kfmgui.cpp:300
-msgid "&Long View"
-msgstr "Pokazuj &d³u¿szy tekst"
-
-#: kfmgui.cpp:302
-msgid "&Short View"
-msgstr "Pokazuj &krótszy tekst"
-
-#: kfmgui.cpp:308
-msgid "Rel&oad Tree"
-msgstr "Prze³aduj d&rzewo"
-
-#: kfmgui.cpp:310
-msgid "&Reload Document"
-msgstr "&Prze³aduj dokument"
-
-#: kfmgui.cpp:312
-msgid "Rescan &Bindings"
-msgstr "Przeskanuj &skojarzenia"
-
-#: kfmgui.cpp:315
-msgid "&View Frame Source"
-msgstr "Poka¿ ¼rod³o &ramki"
-
-#: kfmgui.cpp:317
-msgid "View Docu&ment Source"
-msgstr "Poka¿ ¼ród³o &dokumentu"
-
-#: kfmgui.cpp:325
-msgid "Auto"
-msgstr "Auto"
-
-#: kfmgui.cpp:333
-msgid "Document Encodin&g"
-msgstr "Ko&dowanie dokumentu"
-
-#: kfmgui.cpp:349
 msgid "Show History"
 msgstr "Poka¿ historiê"
 
-#: kfmgui.cpp:351
+#: kfmgui.cpp:271
 msgid "Show Cache"
 msgstr "Poka¿ bufor"
 
-#: kfmgui.cpp:353
+#: kfmgui.cpp:273
+msgid "Mime &Types"
+msgstr "Typy &mime"
+
+#: kfmgui.cpp:275
+msgid "App&lications"
+msgstr "Ap&likacja"
+
+#: kfmgui.cpp:281
+msgid "Global Mime Types"
+msgstr "Ogólne typy mime"
+
+#: kfmgui.cpp:283
+msgid "Global Applications"
+msgstr "Ogólne aplikacje"
+
+#: kfmgui.cpp:291
+msgid "Show Hi&dden Files"
+msgstr "Poka¿ ukryte pliki"
+
+#: kfmgui.cpp:293
+msgid "Show Tr&ee"
+msgstr "Pokazuj &drzewo"
+
+#: kfmgui.cpp:295
+msgid "Sho&w Thumbnails"
+msgstr "Pokazuj &miniaturki"
+
+#: kfmgui.cpp:297
+msgid "&HTML View"
+msgstr "Pokazuj &HTML"
+
+#: kfmgui.cpp:300
+msgid "&Icon View"
+msgstr "Pokazuj &ikony"
+
+#: kfmgui.cpp:302
+msgid "&Text View"
+msgstr "Pokazuj &tekst"
+
+#: kfmgui.cpp:304
+msgid "&Long View"
+msgstr "Pokazuj &d³u¿szy tekst"
+
+#: kfmgui.cpp:306
+msgid "&Short View"
+msgstr "Pokazuj &krótszy tekst"
+
+#: kfmgui.cpp:312
+msgid "Rel&oad Tree"
+msgstr "Prze³aduj d&rzewo"
+
+#: kfmgui.cpp:314
+msgid "&Reload Document"
+msgstr "&Prze³aduj dokument"
+
+#: kfmgui.cpp:316
+msgid "Rescan &Bindings"
+msgstr "Przeskanuj &skojarzenia"
+
+#: kfmgui.cpp:319
+msgid "&View Frame Source"
+msgstr "Poka¿ ¼rod³o &ramki"
+
+#: kfmgui.cpp:321
+msgid "View Docu&ment Source"
+msgstr "Poka¿ ¼ród³o &dokumentu"
+
+#: kfmgui.cpp:329
+msgid "Auto"
+msgstr "Auto"
+
+#: kfmgui.cpp:337
+msgid "Document Encodin&g"
+msgstr "Ko&dowanie dokumentu"
+
+#: kfmgui.cpp:352
 msgid "Clear Cache"
 msgstr "Czy¶æ bufor"
 
-#: kfmgui.cpp:356
+#: kfmgui.cpp:355
 msgid "Always look in cache"
 msgstr "Zawsze sprawdzaj bufor"
 
-#: kfmgui.cpp:358
+#: kfmgui.cpp:357
 msgid "Never look in cache"
 msgstr "Nigdy nie sprawdzaj buforu"
 
-#: kfmgui.cpp:360
+#: kfmgui.cpp:359
 msgid "Always save cache"
 msgstr "Zawsze zapisz w buforze"
 
-#: kfmgui.cpp:362
+#: kfmgui.cpp:361
 msgid "Never save cache"
 msgstr "Nigdy nie zapisuj w buforze"
 
-#: kfmgui.cpp:373
+#: kfmgui.cpp:372
 msgid "Show &Menubar"
 msgstr "Pokazuj pasek &menu"
 
-#: kfmgui.cpp:375
+#: kfmgui.cpp:374
 msgid "Show &Statusbar"
 msgstr "Pokazuj pasek &stanu"
 
-#: kfmgui.cpp:377
+#: kfmgui.cpp:376
 msgid "Show &Toolbar"
 msgstr "Pokazuj pasek &narzêdzi"
 
-#: kfmgui.cpp:379
+#: kfmgui.cpp:378
 msgid "Show &Location bar"
 msgstr "Pokazuj pasek &lokacji"
 
-#: kfmgui.cpp:382
+#: kfmgui.cpp:381
 msgid "Sa&ve Settings"
 msgstr "&Zapisz opcje"
 
-#: kfmgui.cpp:384
+#: kfmgui.cpp:383
 msgid "Save Settings for this &URL"
 msgstr "Zapisz opcje dla tego &URL"
 
 #: kfmgui.cpp:391
+msgid "&Cache"
+msgstr "&Bufor"
+
+#: kfmgui.cpp:392
 msgid "&Configure File Manager..."
 msgstr "&Konfiguruj Mened¿era plików..."
 
-#: kfmgui.cpp:393
+#: kfmgui.cpp:394
 msgid "Configure &Browser..."
 msgstr "Konfiguruj &Przegl±darkê..."
 
-#: kfmgui.cpp:429
+#: kfmgui.cpp:430
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -214,23 +218,19 @@ msgstr ""
 "Polskie t³umaczenie: Piotr Roszatycki\n"
 "dexter@fnet.pl"
 
-#: kfmgui.cpp:432
+#: kfmgui.cpp:433
 msgid ""
 "\n"
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
 msgstr ""
 
-#: kfmgui.cpp:445
+#: kfmgui.cpp:446
 msgid "&Go"
 msgstr "&Id¼"
 
-#: kfmgui.cpp:446
+#: kfmgui.cpp:447
 msgid "&Bookmarks"
 msgstr "&Zak³adki"
-
-#: kfmgui.cpp:447
-msgid "&Cache"
-msgstr "&Bufor"
 
 #: kfmgui.cpp:477 main.cpp:296
 msgid "Up"
@@ -249,10 +249,10 @@ msgid "Could not load icon\n"
 msgstr "Nie mo¿na za³adowaæ ikony\n"
 
 #: bookmark.cpp:296 htmlcache.cpp:363 htmlcache.cpp:396 kbind.cpp:229
-#: kbind.cpp:308 kbind.cpp:360 kbind.cpp:1574 kbind.cpp:1582 kbind.cpp:1600
-#: kbind.cpp:1619 kbind.cpp:1678 kbind.cpp:1690 kbind.cpp:1717 kbind.cpp:1738
-#: kbind.cpp:1758 kbind.cpp:1770 kbind.cpp:1786 kbind.cpp:1921 kbind.cpp:1933
-#: kbind.cpp:1978 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
+#: kbind.cpp:308 kbind.cpp:360 kbind.cpp:1606 kbind.cpp:1614 kbind.cpp:1632
+#: kbind.cpp:1651 kbind.cpp:1710 kbind.cpp:1722 kbind.cpp:1749 kbind.cpp:1770
+#: kbind.cpp:1790 kbind.cpp:1802 kbind.cpp:1818 kbind.cpp:1953 kbind.cpp:1965
+#: kbind.cpp:2010 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
 #: kfmgui.cpp:550 kfmgui.cpp:791 kfmman.cpp:370 kfmman.cpp:1429
 #: kfmman.cpp:1656 kfmman.cpp:1702 kfmprops.cpp:380 kfmprops.cpp:649
 #: kfmprops.cpp:656 kfmprops.cpp:950 kfmprops.cpp:1089 kfmprops.cpp:1218
@@ -458,16 +458,16 @@ msgstr "nie zawiera pozycji MimeType=..."
 msgid "No mime types installed!"
 msgstr "Brak zainstalowanych typów mime!"
 
-#: kbind.cpp:357 kbind.cpp:1145
+#: kbind.cpp:357 kbind.cpp:1177
 msgid "Could not find mime type\n"
 msgstr "Nie mo¿na odnale¼æ typów mime\n"
 
-#: kbind.cpp:627 kbind.cpp:637 kbind.cpp:1956 kbind.cpp:1957 kbind.cpp:1969
-#: kbind.cpp:1971
+#: kbind.cpp:627 kbind.cpp:637 kbind.cpp:1988 kbind.cpp:1989 kbind.cpp:2001
+#: kbind.cpp:2003
 msgid "Mount"
 msgstr "Montowanie"
 
-#: kbind.cpp:643 kbind.cpp:1947
+#: kbind.cpp:643 kbind.cpp:1979
 msgid "Unmount"
 msgstr "Odmontowanie"
 
@@ -475,27 +475,27 @@ msgstr "Odmontowanie"
 msgid "Folder"
 msgstr "Folder"
 
-#: kbind.cpp:1144
+#: kbind.cpp:1176
 msgid "ERROR"
 msgstr "B£¡D"
 
-#: kbind.cpp:1145
+#: kbind.cpp:1177
 msgid "in "
 msgstr "w "
 
-#: kbind.cpp:1280 kbind.cpp:1884
+#: kbind.cpp:1312 kbind.cpp:1916
 msgid "ERROR: No Terminal Setting"
 msgstr "B£¡D: Brak ustawieñ terminala"
 
-#: kbind.cpp:1349 kbind.cpp:1457
+#: kbind.cpp:1381 kbind.cpp:1489
 msgid "Could not execute program\n"
 msgstr "Nie mo¿na uruchomiæ polecenia\n"
 
-#: kbind.cpp:1573
+#: kbind.cpp:1605
 msgid "Could not find binding"
 msgstr "Nie mo¿na znale¼æ skojarzenia"
 
-#: kbind.cpp:1583
+#: kbind.cpp:1615
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -503,11 +503,11 @@ msgstr ""
 "To jest dokument!\n"
 "Nie aplikacja"
 
-#: kbind.cpp:1601 kbind.cpp:1620
+#: kbind.cpp:1633 kbind.cpp:1652
 msgid "Can only start executables on local disks\n"
 msgstr "Uruchomiæ program mo¿na tylko z dysku lokalnego\n"
 
-#: kbind.cpp:1679 kbind.cpp:1759 kbind.cpp:1922
+#: kbind.cpp:1711 kbind.cpp:1791 kbind.cpp:1954
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -515,7 +515,7 @@ msgstr ""
 "Z plikami *.kdelnk mo¿na pracowaæ\n"
 "tylko na dysku lokalnym"
 
-#: kbind.cpp:1689
+#: kbind.cpp:1721
 #, c-format
 msgid ""
 "Could not access\n"
@@ -524,19 +524,19 @@ msgstr ""
 "Brak dostêpu do\n"
 "%s"
 
-#: kbind.cpp:1718
+#: kbind.cpp:1750
 msgid "The \"Link=....\" entry is empty"
 msgstr "Linia \"Links=....\" w pliku konfiguracyjnym jest pusta"
 
-#: kbind.cpp:1739
+#: kbind.cpp:1771
 msgid "The config file has no \"Type=...\" line"
 msgstr "Plik konfiguracyjny nie ma linii \"Type=...\""
 
-#: kbind.cpp:1769 kbind.cpp:1932
+#: kbind.cpp:1801 kbind.cpp:1964
 msgid "Could not access"
 msgstr "Nie ma dostêpu"
 
-#: kbind.cpp:1787
+#: kbind.cpp:1819
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -548,7 +548,7 @@ msgstr ""
 "Wyedytuj w³a¶ciwo¶ci\n"
 "aby rozwi±zaæ ten problem"
 
-#: kbind.cpp:1979
+#: kbind.cpp:2011
 msgid "No mount point in *.kdelnk file"
 msgstr "Brak miejsca podmontowania w pliku *.kdelnk"
 

@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-03-25 01:17+0100\n"
+"POT-Creation-Date: 1999-03-26 01:17+0100\n"
 "PO-Revision-Date: 1999-02-13-10:30+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is <kde-isl@mmedia.is>\n"
@@ -53,142 +53,146 @@ msgid "Find &next"
 msgstr "Finna &næsta"
 
 #: kfmgui.cpp:269
-msgid "Mime &Types"
-msgstr "MIME &tög"
-
-#: kfmgui.cpp:271
-msgid "App&lications"
-msgstr "For&rit"
-
-#: kfmgui.cpp:277
-msgid "Global Mime Types"
-msgstr "Altæk MIME tög"
-
-#: kfmgui.cpp:279
-msgid "Global Applications"
-msgstr "Altæk forrit"
-
-#: kfmgui.cpp:287
-msgid "Show Hi&dden Files"
-msgstr "Sýna &faldar skrár"
-
-#: kfmgui.cpp:289
-msgid "Show Tr&ee"
-msgstr "Sýna t&ré"
-
-#: kfmgui.cpp:291
-msgid "Sho&w Thumbnails"
-msgstr "Sýna þumal&myndir"
-
-#: kfmgui.cpp:293
-msgid "&HTML View"
-msgstr "&HTML sýn"
-
-#: kfmgui.cpp:296
-msgid "&Icon View"
-msgstr "&Táknmyndasýn"
-
-#: kfmgui.cpp:298
-msgid "&Text View"
-msgstr "Te&xtasýn"
-
-#: kfmgui.cpp:300
-msgid "&Long View"
-msgstr "&Löng sýn"
-
-#: kfmgui.cpp:302
-msgid "&Short View"
-msgstr "&Stutt sýn"
-
-#: kfmgui.cpp:308
-msgid "Rel&oad Tree"
-msgstr "&Endurlesa tré"
-
-#: kfmgui.cpp:310
-msgid "&Reload Document"
-msgstr "Endurlesa &skjal"
-
-#: kfmgui.cpp:312
-msgid "Rescan &Bindings"
-msgstr "Endurlesa l&yklabindingar"
-
-#: kfmgui.cpp:315
-msgid "&View Frame Source"
-msgstr "Skoða HTML texta &ramma"
-
-#: kfmgui.cpp:317
-msgid "View Docu&ment Source"
-msgstr "Skoða HTML texta &skjals"
-
-#: kfmgui.cpp:325
-msgid "Auto"
-msgstr "Sjálfvirkt"
-
-#: kfmgui.cpp:333
-msgid "Document Encodin&g"
-msgstr "Stafatafla skjals"
-
-#: kfmgui.cpp:349
 msgid "Show History"
 msgstr "Sýna sögu"
 
-#: kfmgui.cpp:351
+#: kfmgui.cpp:271
 msgid "Show Cache"
 msgstr "Sýna skyndiminni"
 
-#: kfmgui.cpp:353
+#: kfmgui.cpp:273
+msgid "Mime &Types"
+msgstr "MIME &tög"
+
+#: kfmgui.cpp:275
+msgid "App&lications"
+msgstr "For&rit"
+
+#: kfmgui.cpp:281
+msgid "Global Mime Types"
+msgstr "Altæk MIME tög"
+
+#: kfmgui.cpp:283
+msgid "Global Applications"
+msgstr "Altæk forrit"
+
+#: kfmgui.cpp:291
+msgid "Show Hi&dden Files"
+msgstr "Sýna &faldar skrár"
+
+#: kfmgui.cpp:293
+msgid "Show Tr&ee"
+msgstr "Sýna t&ré"
+
+#: kfmgui.cpp:295
+msgid "Sho&w Thumbnails"
+msgstr "Sýna þumal&myndir"
+
+#: kfmgui.cpp:297
+msgid "&HTML View"
+msgstr "&HTML sýn"
+
+#: kfmgui.cpp:300
+msgid "&Icon View"
+msgstr "&Táknmyndasýn"
+
+#: kfmgui.cpp:302
+msgid "&Text View"
+msgstr "Te&xtasýn"
+
+#: kfmgui.cpp:304
+msgid "&Long View"
+msgstr "&Löng sýn"
+
+#: kfmgui.cpp:306
+msgid "&Short View"
+msgstr "&Stutt sýn"
+
+#: kfmgui.cpp:312
+msgid "Rel&oad Tree"
+msgstr "&Endurlesa tré"
+
+#: kfmgui.cpp:314
+msgid "&Reload Document"
+msgstr "Endurlesa &skjal"
+
+#: kfmgui.cpp:316
+msgid "Rescan &Bindings"
+msgstr "Endurlesa l&yklabindingar"
+
+#: kfmgui.cpp:319
+msgid "&View Frame Source"
+msgstr "Skoða HTML texta &ramma"
+
+#: kfmgui.cpp:321
+msgid "View Docu&ment Source"
+msgstr "Skoða HTML texta &skjals"
+
+#: kfmgui.cpp:329
+msgid "Auto"
+msgstr "Sjálfvirkt"
+
+#: kfmgui.cpp:337
+msgid "Document Encodin&g"
+msgstr "Stafatafla skjals"
+
+#: kfmgui.cpp:352
 msgid "Clear Cache"
 msgstr "Tæma skyndiminni"
 
-#: kfmgui.cpp:356
+#: kfmgui.cpp:355
 msgid "Always look in cache"
 msgstr "Alltaf að líta í skyndiminni"
 
-#: kfmgui.cpp:358
+#: kfmgui.cpp:357
 msgid "Never look in cache"
 msgstr "Aldrei að líta i skyndiminni"
 
-#: kfmgui.cpp:360
+#: kfmgui.cpp:359
 msgid "Always save cache"
 msgstr "Alltaf að vista skyndiminni"
 
-#: kfmgui.cpp:362
+#: kfmgui.cpp:361
 msgid "Never save cache"
 msgstr "Aldrei að vista skyndiminni"
 
-#: kfmgui.cpp:373
+#: kfmgui.cpp:372
 msgid "Show &Menubar"
 msgstr "Sýna &valslá"
 
-#: kfmgui.cpp:375
+#: kfmgui.cpp:374
 msgid "Show &Statusbar"
 msgstr "Sýna &stöðuslá"
 
-#: kfmgui.cpp:377
+#: kfmgui.cpp:376
 msgid "Show &Toolbar"
 msgstr "Sýna &tækjaslá"
 
-#: kfmgui.cpp:379
+#: kfmgui.cpp:378
 msgid "Show &Location bar"
 msgstr "Sýna s&taðslá"
 
-#: kfmgui.cpp:382
+#: kfmgui.cpp:381
 msgid "Sa&ve Settings"
 msgstr "&Vista stillingar"
 
-#: kfmgui.cpp:384
+#: kfmgui.cpp:383
 msgid "Save Settings for this &URL"
 msgstr "Vista stillingar fyrir þessa s&lóð"
 
 #: kfmgui.cpp:391
+msgid "&Cache"
+msgstr "Bið&minni"
+
+#: kfmgui.cpp:392
 msgid "&Configure File Manager..."
 msgstr "Stilla &notendaflöt..."
 
-#: kfmgui.cpp:393
+#: kfmgui.cpp:394
 msgid "Configure &Browser..."
 msgstr "Stilla &vafra..."
 
-#: kfmgui.cpp:429
+#: kfmgui.cpp:430
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -214,25 +218,22 @@ msgstr ""
 "Nú í höndum David Faure\n"
 "faure@kde.org"
 
-#: kfmgui.cpp:432
+#: kfmgui.cpp:433
 msgid ""
 "\n"
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
 msgstr ""
 "\n"
-"Sjá http://bugs.kde.org varðandi ábendingar um villur og hugmyndir að framförum"
+"Sjá http://bugs.kde.org varðandi ábendingar um villur og hugmyndir að "
+"framförum"
 
-#: kfmgui.cpp:445
+#: kfmgui.cpp:446
 msgid "&Go"
 msgstr "&Fara"
 
-#: kfmgui.cpp:446
+#: kfmgui.cpp:447
 msgid "&Bookmarks"
 msgstr "&Bókamerki"
-
-#: kfmgui.cpp:447
-msgid "&Cache"
-msgstr "Bið&minni"
 
 #: kfmgui.cpp:477 main.cpp:296
 msgid "Up"
@@ -251,10 +252,10 @@ msgid "Could not load icon\n"
 msgstr "Ekki tókst að lesa táknmynd\n"
 
 #: bookmark.cpp:296 htmlcache.cpp:363 htmlcache.cpp:396 kbind.cpp:229
-#: kbind.cpp:308 kbind.cpp:360 kbind.cpp:1574 kbind.cpp:1582 kbind.cpp:1600
-#: kbind.cpp:1619 kbind.cpp:1678 kbind.cpp:1690 kbind.cpp:1717 kbind.cpp:1738
-#: kbind.cpp:1758 kbind.cpp:1770 kbind.cpp:1786 kbind.cpp:1921 kbind.cpp:1933
-#: kbind.cpp:1978 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
+#: kbind.cpp:308 kbind.cpp:360 kbind.cpp:1606 kbind.cpp:1614 kbind.cpp:1632
+#: kbind.cpp:1651 kbind.cpp:1710 kbind.cpp:1722 kbind.cpp:1749 kbind.cpp:1770
+#: kbind.cpp:1790 kbind.cpp:1802 kbind.cpp:1818 kbind.cpp:1953 kbind.cpp:1965
+#: kbind.cpp:2010 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
 #: kfmgui.cpp:550 kfmgui.cpp:791 kfmman.cpp:370 kfmman.cpp:1429
 #: kfmman.cpp:1656 kfmman.cpp:1702 kfmprops.cpp:380 kfmprops.cpp:649
 #: kfmprops.cpp:656 kfmprops.cpp:950 kfmprops.cpp:1089 kfmprops.cpp:1218
@@ -461,16 +462,16 @@ msgstr "inniheldur ekki \"MimeType=...\" færslu"
 msgid "No mime types installed!"
 msgstr "Engin MIME tög eru inni"
 
-#: kbind.cpp:357 kbind.cpp:1145
+#: kbind.cpp:357 kbind.cpp:1177
 msgid "Could not find mime type\n"
 msgstr "MIME-tag fannst ekki\n"
 
-#: kbind.cpp:627 kbind.cpp:637 kbind.cpp:1956 kbind.cpp:1957 kbind.cpp:1969
-#: kbind.cpp:1971
+#: kbind.cpp:627 kbind.cpp:637 kbind.cpp:1988 kbind.cpp:1989 kbind.cpp:2001
+#: kbind.cpp:2003
 msgid "Mount"
 msgstr "Tengja inn í skráarkerfið"
 
-#: kbind.cpp:643 kbind.cpp:1947
+#: kbind.cpp:643 kbind.cpp:1979
 msgid "Unmount"
 msgstr "Aftengja skráarkerfinu"
 
@@ -478,38 +479,38 @@ msgstr "Aftengja skráarkerfinu"
 msgid "Folder"
 msgstr "Mappa"
 
-#: kbind.cpp:1144
+#: kbind.cpp:1176
 msgid "ERROR"
 msgstr "VILLA"
 
-#: kbind.cpp:1145
+#: kbind.cpp:1177
 msgid "in "
 msgstr "í"
 
-#: kbind.cpp:1280 kbind.cpp:1884
+#: kbind.cpp:1312 kbind.cpp:1916
 msgid "ERROR: No Terminal Setting"
 msgstr "VILLA: Engar skjáhermistillingar"
 
-#: kbind.cpp:1349 kbind.cpp:1457
+#: kbind.cpp:1381 kbind.cpp:1489
 msgid "Could not execute program\n"
 msgstr "Ekki tókst að keyra forrit\n"
 
 # FIXME
-#: kbind.cpp:1573
+#: kbind.cpp:1605
 msgid "Could not find binding"
 msgstr "Fann ekki bindingu"
 
-#: kbind.cpp:1583
+#: kbind.cpp:1615
 msgid ""
 "This is a document!\n"
 "Not an application"
 msgstr "Þetta er skjal en ekki forrit"
 
-#: kbind.cpp:1601 kbind.cpp:1620
+#: kbind.cpp:1633 kbind.cpp:1652
 msgid "Can only start executables on local disks\n"
 msgstr "Það er bara hægt að ræsa forrit úr skráakerfinu\n"
 
-#: kbind.cpp:1679 kbind.cpp:1759 kbind.cpp:1922
+#: kbind.cpp:1711 kbind.cpp:1791 kbind.cpp:1954
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -517,7 +518,7 @@ msgstr ""
 "Það er bara hægt að vinna með *.kdelnk skrár\n"
 "í skrákerfinu"
 
-#: kbind.cpp:1689
+#: kbind.cpp:1721
 #, c-format
 msgid ""
 "Could not access\n"
@@ -526,19 +527,19 @@ msgstr ""
 "Komst ekki í\n"
 "%s"
 
-#: kbind.cpp:1718
+#: kbind.cpp:1750
 msgid "The \"Link=....\" entry is empty"
 msgstr "\"Link=...\" færslan er tóm"
 
-#: kbind.cpp:1739
+#: kbind.cpp:1771
 msgid "The config file has no \"Type=...\" line"
 msgstr "Í stilliskránni er engin \"Type=...\" lína"
 
-#: kbind.cpp:1769 kbind.cpp:1932
+#: kbind.cpp:1801 kbind.cpp:1964
 msgid "Could not access"
 msgstr "Komst ekki í"
 
-#: kbind.cpp:1787
+#: kbind.cpp:1819
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -548,7 +549,7 @@ msgstr ""
 "Í þessari skrá er engin \"Exec=...\" færsla.\n"
 "Breytu eiginleikum hennar til að leysa úr vandanum"
 
-#: kbind.cpp:1979
+#: kbind.cpp:2011
 msgid "No mount point in *.kdelnk file"
 msgstr "Í *.kdelnk skránni er enginn tengipunktur gefinn."
 

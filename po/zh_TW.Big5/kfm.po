@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1999-03-25 01:17+0100\n"
+"POT-Creation-Date: 1999-03-26 01:17+0100\n"
 "PO-Revision-Date: 1998-04-20 22:30+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -60,153 +60,157 @@ msgid "Find &next"
 msgstr ""
 
 #: kfmgui.cpp:269
+msgid "Show History"
+msgstr "秀出歷史列表"
+
+#: kfmgui.cpp:271
+msgid "Show Cache"
+msgstr "秀出快取"
+
+#: kfmgui.cpp:273
 #, fuzzy
 msgid "Mime &Types"
 msgstr "Mime 類型"
 
-#: kfmgui.cpp:271
+#: kfmgui.cpp:275
 #, fuzzy
 msgid "App&lications"
 msgstr "應用程式"
 
-#: kfmgui.cpp:277
+#: kfmgui.cpp:281
 msgid "Global Mime Types"
 msgstr "整體 Mime 類型"
 
-#: kfmgui.cpp:279
+#: kfmgui.cpp:283
 msgid "Global Applications"
 msgstr "整體應用程式"
 
-#: kfmgui.cpp:287
+#: kfmgui.cpp:291
 #, fuzzy
 msgid "Show Hi&dden Files"
 msgstr "顯示隱藏檔案[&D]"
 
-#: kfmgui.cpp:289
+#: kfmgui.cpp:293
 msgid "Show Tr&ee"
 msgstr "顯示樹狀目錄[&E]"
 
-#: kfmgui.cpp:291
+#: kfmgui.cpp:295
 msgid "Sho&w Thumbnails"
 msgstr ""
 
-#: kfmgui.cpp:293
+#: kfmgui.cpp:297
 msgid "&HTML View"
 msgstr "檢視 &HTML"
 
-#: kfmgui.cpp:296
+#: kfmgui.cpp:300
 msgid "&Icon View"
 msgstr "圖示顯示[&I]"
 
-#: kfmgui.cpp:298
+#: kfmgui.cpp:302
 msgid "&Text View"
 msgstr "文字顯示[&T]"
 
-#: kfmgui.cpp:300
+#: kfmgui.cpp:304
 msgid "&Long View"
 msgstr "詳細顯示[&L]"
 
-#: kfmgui.cpp:302
+#: kfmgui.cpp:306
 #, fuzzy
 msgid "&Short View"
 msgstr "圖示顯示[&I]"
 
-#: kfmgui.cpp:308
+#: kfmgui.cpp:312
 msgid "Rel&oad Tree"
 msgstr "重新載入樹狀目錄[&O]"
 
-#: kfmgui.cpp:310
+#: kfmgui.cpp:314
 msgid "&Reload Document"
 msgstr "重新載入文件[&R]"
 
-#: kfmgui.cpp:312
+#: kfmgui.cpp:316
 #, fuzzy
 msgid "Rescan &Bindings"
 msgstr "重新掃描檔案關聯[&B]"
 
-#: kfmgui.cpp:315
+#: kfmgui.cpp:319
 msgid "&View Frame Source"
 msgstr "觀看 Frame 原始檔[&V]"
 
-#: kfmgui.cpp:317
+#: kfmgui.cpp:321
 msgid "View Docu&ment Source"
 msgstr "觀看文件原始檔[&M]"
 
-#: kfmgui.cpp:325
+#: kfmgui.cpp:329
 msgid "Auto"
 msgstr ""
 
-#: kfmgui.cpp:333
+#: kfmgui.cpp:337
 #, fuzzy
 msgid "Document Encodin&g"
 msgstr "文件: 完成"
 
-#: kfmgui.cpp:349
-msgid "Show History"
-msgstr "秀出歷史列表"
-
-#: kfmgui.cpp:351
-msgid "Show Cache"
-msgstr "秀出快取"
-
-#: kfmgui.cpp:353
+#: kfmgui.cpp:352
 msgid "Clear Cache"
 msgstr "清除快取"
 
-#: kfmgui.cpp:356
+#: kfmgui.cpp:355
 msgid "Always look in cache"
 msgstr "先在 快取 中尋找"
 
-#: kfmgui.cpp:358
+#: kfmgui.cpp:357
 msgid "Never look in cache"
 msgstr "不在 快取 中尋找"
 
-#: kfmgui.cpp:360
+#: kfmgui.cpp:359
 #, fuzzy
 msgid "Always save cache"
 msgstr "先在 快取 中尋找"
 
-#: kfmgui.cpp:362
+#: kfmgui.cpp:361
 #, fuzzy
 msgid "Never save cache"
 msgstr "不在 快取 中尋找"
 
-#: kfmgui.cpp:373
+#: kfmgui.cpp:372
 msgid "Show &Menubar"
 msgstr "顯示選單列[&M]"
 
-#: kfmgui.cpp:375
+#: kfmgui.cpp:374
 msgid "Show &Statusbar"
 msgstr "顯示狀態列[&S]"
 
-#: kfmgui.cpp:377
+#: kfmgui.cpp:376
 msgid "Show &Toolbar"
 msgstr "顯示工具列[&T]"
 
-#: kfmgui.cpp:379
+#: kfmgui.cpp:378
 msgid "Show &Location bar"
 msgstr "顯示位置列[&L]"
 
-#: kfmgui.cpp:382
+#: kfmgui.cpp:381
 msgid "Sa&ve Settings"
 msgstr "儲存設定[&V]"
 
-#: kfmgui.cpp:384
+#: kfmgui.cpp:383
 #, fuzzy
 msgid "Save Settings for this &URL"
 msgstr "儲存設定[&V]"
 
 #: kfmgui.cpp:391
+msgid "&Cache"
+msgstr "快取[&C]"
+
+#: kfmgui.cpp:392
 #, fuzzy
 msgid "&Configure File Manager..."
 msgstr "設定瀏覽器..."
 
-#: kfmgui.cpp:393
+#: kfmgui.cpp:394
 #, fuzzy
 msgid "Configure &Browser..."
 msgstr "設定瀏覽器..."
 
-#: kfmgui.cpp:429
+#: kfmgui.cpp:430
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -221,23 +225,19 @@ msgid ""
 "faure@kde.org"
 msgstr ""
 
-#: kfmgui.cpp:432
+#: kfmgui.cpp:433
 msgid ""
 "\n"
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
 msgstr ""
 
-#: kfmgui.cpp:445
+#: kfmgui.cpp:446
 msgid "&Go"
 msgstr ""
 
-#: kfmgui.cpp:446
+#: kfmgui.cpp:447
 msgid "&Bookmarks"
 msgstr "書籤[&B]"
-
-#: kfmgui.cpp:447
-msgid "&Cache"
-msgstr "快取[&C]"
 
 #: kfmgui.cpp:477 main.cpp:296
 msgid "Up"
@@ -257,10 +257,10 @@ msgid "Could not load icon\n"
 msgstr "無法載入圖示\n"
 
 #: bookmark.cpp:296 htmlcache.cpp:363 htmlcache.cpp:396 kbind.cpp:229
-#: kbind.cpp:308 kbind.cpp:360 kbind.cpp:1574 kbind.cpp:1582 kbind.cpp:1600
-#: kbind.cpp:1619 kbind.cpp:1678 kbind.cpp:1690 kbind.cpp:1717 kbind.cpp:1738
-#: kbind.cpp:1758 kbind.cpp:1770 kbind.cpp:1786 kbind.cpp:1921 kbind.cpp:1933
-#: kbind.cpp:1978 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
+#: kbind.cpp:308 kbind.cpp:360 kbind.cpp:1606 kbind.cpp:1614 kbind.cpp:1632
+#: kbind.cpp:1651 kbind.cpp:1710 kbind.cpp:1722 kbind.cpp:1749 kbind.cpp:1770
+#: kbind.cpp:1790 kbind.cpp:1802 kbind.cpp:1818 kbind.cpp:1953 kbind.cpp:1965
+#: kbind.cpp:2010 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
 #: kfmgui.cpp:550 kfmgui.cpp:791 kfmman.cpp:370 kfmman.cpp:1429
 #: kfmman.cpp:1656 kfmman.cpp:1702 kfmprops.cpp:380 kfmprops.cpp:649
 #: kfmprops.cpp:656 kfmprops.cpp:950 kfmprops.cpp:1089 kfmprops.cpp:1218
@@ -463,16 +463,16 @@ msgstr "沒有包含 MimeType=... 內容"
 msgid "No mime types installed!"
 msgstr "沒有安裝任何 mime 類型!"
 
-#: kbind.cpp:357 kbind.cpp:1145
+#: kbind.cpp:357 kbind.cpp:1177
 msgid "Could not find mime type\n"
 msgstr "找不到 mime 類型\n"
 
-#: kbind.cpp:627 kbind.cpp:637 kbind.cpp:1956 kbind.cpp:1957 kbind.cpp:1969
-#: kbind.cpp:1971
+#: kbind.cpp:627 kbind.cpp:637 kbind.cpp:1988 kbind.cpp:1989 kbind.cpp:2001
+#: kbind.cpp:2003
 msgid "Mount"
 msgstr "Mount"
 
-#: kbind.cpp:643 kbind.cpp:1947
+#: kbind.cpp:643 kbind.cpp:1979
 msgid "Unmount"
 msgstr "Unmount"
 
@@ -480,27 +480,27 @@ msgstr "Unmount"
 msgid "Folder"
 msgstr "資料夾"
 
-#: kbind.cpp:1144
+#: kbind.cpp:1176
 msgid "ERROR"
 msgstr "錯誤"
 
-#: kbind.cpp:1145
+#: kbind.cpp:1177
 msgid "in "
 msgstr "在目錄 "
 
-#: kbind.cpp:1280 kbind.cpp:1884
+#: kbind.cpp:1312 kbind.cpp:1916
 msgid "ERROR: No Terminal Setting"
 msgstr "錯誤: 沒有終端機設定"
 
-#: kbind.cpp:1349 kbind.cpp:1457
+#: kbind.cpp:1381 kbind.cpp:1489
 msgid "Could not execute program\n"
 msgstr "無法執行程式\n"
 
-#: kbind.cpp:1573
+#: kbind.cpp:1605
 msgid "Could not find binding"
 msgstr "找不到關聯程式"
 
-#: kbind.cpp:1583
+#: kbind.cpp:1615
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -508,11 +508,11 @@ msgstr ""
 "這是一份文件!\n"
 "不是一個應用程式"
 
-#: kbind.cpp:1601 kbind.cpp:1620
+#: kbind.cpp:1633 kbind.cpp:1652
 msgid "Can only start executables on local disks\n"
 msgstr "只能執行區域磁碟的程式\n"
 
-#: kbind.cpp:1679 kbind.cpp:1759 kbind.cpp:1922
+#: kbind.cpp:1711 kbind.cpp:1791 kbind.cpp:1954
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -520,7 +520,7 @@ msgstr ""
 "只能作用於\n"
 "區域硬碟上的 *.kdelink"
 
-#: kbind.cpp:1689
+#: kbind.cpp:1721
 #, c-format
 msgid ""
 "Could not access\n"
@@ -529,19 +529,19 @@ msgstr ""
 "無法讀取\n"
 "%s"
 
-#: kbind.cpp:1718
+#: kbind.cpp:1750
 msgid "The \"Link=....\" entry is empty"
 msgstr "這個 \"Link=....\" 的內容是空的"
 
-#: kbind.cpp:1739
+#: kbind.cpp:1771
 msgid "The config file has no \"Type=...\" line"
 msgstr "設定檔並無 \"Type=...\" 這一行"
 
-#: kbind.cpp:1769 kbind.cpp:1932
+#: kbind.cpp:1801 kbind.cpp:1964
 msgid "Could not access"
 msgstr "無法讀取"
 
-#: kbind.cpp:1787
+#: kbind.cpp:1819
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -553,7 +553,7 @@ msgstr ""
 "紀錄內容. 請編輯特質內容\n"
 "以解決這個問題"
 
-#: kbind.cpp:1979
+#: kbind.cpp:2011
 msgid "No mount point in *.kdelnk file"
 msgstr "在 *.kdelnk 中沒有 mount point"
 

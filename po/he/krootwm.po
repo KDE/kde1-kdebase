@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-30 01:12+0100\n"
+"POT-Creation-Date: 1999-03-26 01:17+0100\n"
 "PO-Revision-Date: 1998-12-01 HO:MI+ZONE\n"
 "Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
 "Language-Team: LANGUAGE <he@li.org>\n"
@@ -120,10 +120,10 @@ msgstr "%s תמייק אל תינבת:האיגש"
 msgid "Could not create folder"
 msgstr "הייקית רוציל ןתינ אל"
 
-#: krootwm.C:922
+#: krootwm.C:938
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "(ettrich@kde.org) ךירטא סאיתאמ (C) 1997 תורומש תויוכזה לכ\n"
 
-#: krootwm.C:926
+#: krootwm.C:942
 msgid "Usage:"
 msgstr ":שומיש"
