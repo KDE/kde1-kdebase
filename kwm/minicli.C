@@ -40,10 +40,7 @@ void execute(const char* cmd){
   }
   signal(SIGCHLD, catch_child);
   if (!(fork())){ // child
-    // this avoids hanging (Matthias)
     freopen("/dev/null", "r", stdin);
-    freopen("/dev/null", "rw", stdout);
-    freopen("/dev/null", "rw", stderr);
     setsid();
     execl(shell, shell, "-c", cmd, NULL);
     exit(1);

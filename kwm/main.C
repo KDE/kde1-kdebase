@@ -887,7 +887,7 @@ bool MyApp::handleKeyPress(XKeyEvent key){
   if( (kc == XK_F3)  && (km == Mod1Mask) ){
     freeKeyboard(False);
     if (manager->current())
-      manager->current()->showOperations(True);
+      manager->current()->showOperations();
     return False;
   }
 

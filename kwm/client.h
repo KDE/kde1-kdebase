@@ -156,7 +156,7 @@ public:
   void setLabel();
 
   void generateOperations();
-  void showOperations(bool warp_pointer = FALSE);
+  void showOperations();
   void setCursor();
 
   void handleOperationsPopup(int);

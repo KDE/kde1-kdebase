@@ -12,6 +12,13 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 8:
+       - needs qt-1.3
+       - for modules: 
+            KWM_WIN_DESKTOP handling fixed
+            KWM_DESKTOP_NAME_CHANGE and KWM_DESKTOP_NUMBER_CHANGE
+       - some smaller improvements
+
   patchlevel 7:
        - improved KConfig handling (uses strlists :-)
        - small bugfix with module registration (introduced with some cleanups

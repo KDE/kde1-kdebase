@@ -181,6 +181,7 @@ private:
   Atom   kwm_win_maximized;
   Atom   kwm_win_decorated;
   Atom   kwm_win_icon;
+  Atom   kwm_win_desktop;
 
   Atom kwm_command;
   Atom kwm_activate_window;
@@ -202,12 +203,15 @@ private:
   Atom kwm_module;
   Atom module_init;
   Atom module_desktop_change;
+  Atom module_desktop_name_change;
+  Atom module_desktop_number_change;
   Atom module_win_add;
   Atom module_win_remove;
   Atom module_win_change;
   Atom module_win_raise;
   Atom module_win_lower;
   Atom module_win_activate;
+  Atom module_win_icon_change;
   Atom module_dockwin_add;
   Atom module_dockwin_remove;
 

@@ -66,6 +66,7 @@ Manager::Manager(): QObject(){
   kwm_win_maximized = XInternAtom(qt_xdisplay(),"KWM_WIN_MAXIMIZED",False);
   kwm_win_decorated = XInternAtom(qt_xdisplay(),"KWM_WIN_DECORATED",False);
   kwm_win_icon = XInternAtom(qt_xdisplay(),"KWM_WIN_ICON",False);
+  kwm_win_desktop = XInternAtom(qt_xdisplay(),"KWM_WIN_DESKTOP",False);
 
   kwm_command = XInternAtom(qt_xdisplay(), "KWM_COMMAND", False);
   kwm_activate_window = XInternAtom(qt_xdisplay(), "KWM_ACTIVATE_WINDOW", False);
@@ -76,6 +77,8 @@ Manager::Manager(): QObject(){
   kwm_module = XInternAtom(qt_xdisplay(), "KWM_MODULE", False);
   module_init = XInternAtom(qt_xdisplay(), "KWM_MODULE_INIT", False);
   module_desktop_change = XInternAtom(qt_xdisplay(), "KWM_MODULE_DESKTOP_CHANGE", False);
+  module_desktop_name_change = XInternAtom(qt_xdisplay(), "KWM_MODULE_DESKTOP_NAME_CHANGE", False);
+  module_desktop_number_change = XInternAtom(qt_xdisplay(), "KWM_MODULE_DESKTOP_NUMBER_CHANGE", False);
   
   module_win_add = XInternAtom(qt_xdisplay(), "KWM_MODULE_WIN_ADD", False);
   module_win_remove = XInternAtom(qt_xdisplay(), "KWM_MODULE_WIN_REMOVE", False);
@@ -83,6 +86,7 @@ Manager::Manager(): QObject(){
   module_win_raise = XInternAtom(qt_xdisplay(), "KWM_MODULE_WIN_RAISE", False);
   module_win_lower = XInternAtom(qt_xdisplay(), "KWM_MODULE_WIN_LOWER", False);
   module_win_activate = XInternAtom(qt_xdisplay(), "KWM_MODULE_WIN_ACTIVATE", False);
+  module_win_icon_change = XInternAtom(qt_xdisplay(), "KWM_MODULE_WIN_ICON_CHANGE", False);
   dock_module = None;
   module_dockwin_add = XInternAtom(qt_xdisplay(), "KWM_MODULE_DOCKWIN_ADD", False);
   module_dockwin_remove = XInternAtom(qt_xdisplay(), "KWM_MODULE_DOCKWIN_REMOVE", False);
@@ -112,6 +116,12 @@ Manager::Manager(): QObject(){
   scanWins();
   if (!current()){
     noFocus();
+  }
+  
+  {
+    long data = 1;
+    XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_running, kwm_running, 8,
+		    PropModeAppend, (unsigned char*) &data, 1);
   }
 }
 
@@ -381,9 +391,19 @@ void Manager::colormapNotify(XColormapEvent *e){
 }
 
 void Manager::propertyNotify(XPropertyEvent *e){
+  static Atom da[8] = {0,0,0,0,0,0,0,0};
   Atom a;
   int del;
   Client *c;
+  int i;
+  if (!da[0]){
+    for (i=0;i<7;i++){
+      QString n;
+      n.setNum(i+1);
+      n.prepend("KWM_DESKTOP_NAME_");
+      da[i] = XInternAtom(qt_xdisplay(), n.data(), False);
+    }
+  }
   
   a = e->atom;
   del = (e->state == PropertyDelete);
@@ -394,6 +414,12 @@ void Manager::propertyNotify(XPropertyEvent *e){
     }
     if (a == kwm_number_of_desktops){
       number_of_desktops = KWM::numberOfDesktops();
+      sendToModules(module_desktop_number_change, (Window) number_of_desktops);
+    }
+    for (i=0;i<8;i++){
+      if (a == da[i]){
+	sendToModules(module_desktop_name_change, (Window) i+1);
+      }
     }
     return;
   }
@@ -454,12 +480,16 @@ void Manager::propertyNotify(XPropertyEvent *e){
     QPixmap pm = KWM::miniIcon(c->window, 14, 14);
     if (!pm.isNull() && c->buttonMenu)
       c->buttonMenu->setPixmap(pm);
+    sendToModules(module_win_icon_change, c->window);
   }
   else if (a == kwm_win_iconified){
     if (KWM::isIconified(c->window))
       c->iconify();
     else
       c->unIconify();
+  }
+  else if (a == kwm_win_desktop){
+    c->ontoDesktop(KWM::desktop(c->window));
   }
   else if (a == kwm_win_maximized){
     if (c->isMaximized() != KWM::isMaximized(c->window)){
@@ -772,6 +802,9 @@ void Manager::manage(Window w, bool mapped){
     c->geometry_restore = tmprec;
   }
   
+
+  sendToModules(module_win_add, c->window);
+
   if (!dohide){
     if (c->isDecorated())
       activateClient(c);
@@ -779,7 +812,6 @@ void Manager::manage(Window w, bool mapped){
       c->setactive(FALSE);
   }
  
-  sendToModules(module_win_add, c->window);
   XUngrabServer(qt_xdisplay()); 
   
 }
@@ -987,7 +1019,7 @@ void Manager::getWindowTrans(Client* c){
 void Manager::switchDesktop(int new_desktop){
   if (new_desktop == current_desktop)
     return;
-
+  
   if (current() && !current()->isSticky())
     current()->setactive(False); // no more current()!
 
@@ -1004,6 +1036,10 @@ void Manager::switchDesktop(int new_desktop){
     }
   }
   current_desktop = new_desktop;
+
+  KWM::switchToDesktop(current_desktop);
+  sendToModules(module_desktop_change, (Window) current_desktop);
+
   for (c=clients_sorted.last(); c ; c=clients_sorted.prev()){
     if (c->isOnDesktop(current_desktop) && !c->isIconified() && !c->isSticky()){
       c->show();
@@ -1013,8 +1049,6 @@ void Manager::switchDesktop(int new_desktop){
   }
   if (!current())
     noFocus();
-  KWM::switchToDesktop(current_desktop);
-  sendToModules(module_desktop_change, (Window) current_desktop);
 }
 
 
@@ -1070,6 +1104,7 @@ void Manager::cleanup(){
   }
   XSetInputFocus(qt_xdisplay(), PointerRoot, RevertToPointerRoot, CurrentTime);
   colormapFocus(0);
+  XDeleteProperty(qt_xdisplay(), qt_xrootwin(), kwm_running);
 }
 
 void Manager::repaintAll(){

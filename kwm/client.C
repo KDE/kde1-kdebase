@@ -857,19 +857,13 @@ void Client::generateOperations(){
 				OP_CLOSE);
 }
 
-void Client::showOperations(bool warp_pointer){
+void Client::showOperations(){
   generateOperations();
   if (isDecorated())
     myapp->operations->popup(QPoint(geometry.x() + BORDER, 
 			     geometry.y() + BORDER + TITLEBAR_HEIGHT));
   else
     myapp->operations->popup(geometry.topLeft());
-
-  if (warp_pointer){
-    // generate a Motion event for the qt popup:
-    QCursor::setPos(myapp->operations->pos() + QPoint(myapp->operations->width()-5,5));
-    QCursor::setPos(myapp->operations->pos() + QPoint(myapp->operations->width()-6,5));
-  }
 }
 
 bool Client::fixedSize(){
@@ -1216,7 +1210,6 @@ void Client::closeClicked(){
 void Client::stickyToggled(bool depressed){
   QPixmap* pm;
   KWM::setSticky(window, depressed);
-  manager->changedClient(this);
   if (depressed){
     pm = pm_pin_down;
     if (state != NormalState && !isIconified()){
