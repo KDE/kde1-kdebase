@@ -13,6 +13,10 @@ In 0.10:
 --------
 patchlevel 33:
         - new property "EdgeResistance=<value>". Default value is 50
+        - bugfix for electric borders
+        - bugfix for winMove and winResize (internal pointer grabbing)
+        - bugfix for interactive (manual) placement: now the whole
+          window is painted :)
 
 patchlevel 32:
 	- fixed bugs:   interactive placement persistence

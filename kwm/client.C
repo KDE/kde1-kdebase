@@ -707,8 +707,10 @@ void Client::mouseMoveEvent( QMouseEvent *ev ){
     }
     else{
          dragging_state = dragging_enabled;
-      if (do_resize == 0)
-	grabMouse(sizeAllCursor);
+	 if (do_resize == 0){
+	   grabMouse(sizeAllCursor);
+	   ensurePointerGrab();
+	 }
     }
   }
   
@@ -1709,6 +1711,7 @@ void Client::  handleOperation(int i){
   case OP_MOVE:
     manager->raiseClient(this);
     grabMouse();
+    ensurePointerGrab();
     // use the PointerMotionMask, too
     XChangeActivePointerGrab( qt_xdisplay(), 
 			      ButtonPressMask | ButtonReleaseMask |
@@ -1728,6 +1731,7 @@ void Client::  handleOperation(int i){
   case OP_RESIZE:
     manager->raiseClient(this);
     grabMouse();
+    ensurePointerGrab();
     // use the PointerMotionMask, too
     XChangeActivePointerGrab( qt_xdisplay(), 
 			      ButtonPressMask | ButtonReleaseMask |
@@ -1783,6 +1787,7 @@ void Client::  handleOperation(int i){
 
 void Client::simple_move(){
   grabMouse();
+  ensurePointerGrab();
   old_cursor_pos = mapFromGlobal(QCursor::pos());
   dragging_state = dragging_enabled;
   do_resize = 0;
@@ -1796,6 +1801,7 @@ void Client::simple_move(){
 
 void Client::simple_resize(){
   grabMouse();
+  ensurePointerGrab();
   // correct positioning
   old_cursor_pos = mapFromGlobal(QCursor::pos());
   dragging_state = dragging_enabled;
@@ -1966,6 +1972,17 @@ void Client::doButtonGrab(){
   }
   if (!options.Button3Grab)
     XUngrabButton(qt_xdisplay(), Button3, AnyModifier, window); 
+}
+
+
+void Client::ensurePointerGrab(){
+  while (XGrabPointer(qt_xdisplay(), winId(), False, 
+		      ButtonPressMask | ButtonReleaseMask |
+		      PointerMotionMask |
+		      EnterWindowMask | LeaveWindowMask,
+		      GrabModeAsync, GrabModeAsync, None, 
+		      None , CurrentTime) != GrabSuccess)
+    sleep(1);
 }
 
 

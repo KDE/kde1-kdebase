@@ -27,7 +27,6 @@ extern MyApp* myapp;
 extern Manager* manager;
 
 extern Window root;
-extern Display *dpy;
 extern GC rootgc;
 extern GC rootfillgc;
 
@@ -139,10 +138,10 @@ void dragcalc(Client* c, int x, int y) {
 }
 
 void draw_selection_rectangle(int x, int y, int dx, int dy){
-   XDrawRectangle(dpy, root, rootgc, x, y, dx, dy);
+   XDrawRectangle(qt_xdisplay(), root, rootgc, x, y, dx, dy);
    if (dx>2) dx-=2;
    if (dy>2) dy-=2;
-   XDrawRectangle(dpy, root, rootgc, x+1, y+1, dx, dy);
+   XDrawRectangle(qt_xdisplay(), root, rootgc, x+1, y+1, dx, dy);
 }
 
 
@@ -165,15 +164,15 @@ void draw_animation_rectangle(int x, int y, int dx, int dy, bool decorated, int 
    rects[2].y = y+2;
    rects[2].width = dx-4;
    rects[2].height = dy-4;
-   XDrawRectangles(dpy,root,rootgc,rects,3);
+   XDrawRectangles(qt_xdisplay(),root,rootgc,rects,3);
    if (decorated){
      if (dy > TITLEBAR_HEIGHT + 3 + BORDER){
-       XDrawLine(dpy, root, rootgc, x+3, y+BORDER+TITLEBAR_HEIGHT, 
+       XDrawLine(qt_xdisplay(), root, rootgc, x+3, y+BORDER+TITLEBAR_HEIGHT, 
 		 x+dx-3, y+BORDER+TITLEBAR_HEIGHT);
-       XDrawLine(dpy, root, rootgc, x+3, y+BORDER+TITLEBAR_HEIGHT+1, 
+       XDrawLine(qt_xdisplay(), root, rootgc, x+3, y+BORDER+TITLEBAR_HEIGHT+1, 
 		 x+dx-3, y+BORDER+TITLEBAR_HEIGHT+1);
        if (dx > o1 + o2){
-	 XFillRectangle(dpy, root, rootfillgc,
+	 XFillRectangle(qt_xdisplay(), root, rootfillgc,
 			x+o1, y+BORDER+1,
 			dx-o1-o2, 
 			TITLEBAR_HEIGHT - TITLEWINDOW_SEPARATION -2);
@@ -247,7 +246,7 @@ bool electricBorder(Client* c, bool grab_server, int &x, int &y){
     }
     manager->moveDesktopInDirection(d, c);
     manager->timeStamp();
-    while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
+    while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
     myapp->processEvents(); 
     if (grab_server){
       XGrabServer(qt_xdisplay());
@@ -292,16 +291,16 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
     options.FocusPolicy = CLICK_TO_FOCUS;
     
     if (options.WindowMoveType == TRANSPARENT || recalc != dragcalc){
-      XGrabServer(dpy);
+      XGrabServer(qt_xdisplay());
       drawbound(c);
     }
     
     while (c->dragging_is_running() && !return_pressed){
       
-      XMaskEvent(dpy, ButtonMask|KeyPressMask|PointerMotionMask, &ev);
+      XMaskEvent(qt_xdisplay(), ButtonMask|KeyPressMask|PointerMotionMask, &ev);
       return_pressed = ev.type == ButtonRelease;
       if (ev.type == KeyPress){
-	int kc = XKeycodeToKeysym(dpy, ev.xkey.keycode, 0);
+	int kc = XKeycodeToKeysym(qt_xdisplay(), ev.xkey.keycode, 0);
 	int mx = 0;
 	int my = 0;
 	return_pressed = (kc == XK_Return) || (kc == XK_space)
@@ -349,14 +348,14 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
       else {
 	manager->sendConfig(c);
 	XSync(qt_xdisplay(), False);
-	while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
+	while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
 	Window w = c->window;
 	myapp->processEvents(); 
 	c = manager->getClient(w);
 	if (!c)
 	  return true;
       }
-      XFlush(dpy);
+      XFlush(qt_xdisplay());
       continue;
     }
 
@@ -374,9 +373,9 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
     manager->sendConfig(c);
     
     if (options.WindowMoveType == TRANSPARENT || recalc != dragcalc)
-      XUngrabServer(dpy);
+      XUngrabServer(qt_xdisplay());
 
-    while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
+    while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
 
     if (c->isMaximized()){
       c->maximized = FALSE;
@@ -442,15 +441,15 @@ void killSelect(){
     int escape_pressed = 0;
     int button_1_released = 0;
 
-    XGrabServer(dpy);
+    XGrabServer(qt_xdisplay());
 
     while (!return_pressed &&
 	   ! escape_pressed &&
 	   ! button_1_released){
-      XMaskEvent(dpy, KeyPressMask | ButtonMask | 
+      XMaskEvent(qt_xdisplay(), KeyPressMask | ButtonMask | 
 		 PointerMotionMask, &ev);
       if (ev.type == KeyPress){
-	int kc = XKeycodeToKeysym(dpy, ev.xkey.keycode, 0);
+	int kc = XKeycodeToKeysym(qt_xdisplay(), ev.xkey.keycode, 0);
 	int mx = 0;
 	int my = 0;
 	return_pressed = (kc == XK_Return) || (kc == XK_space);
@@ -475,7 +474,7 @@ void killSelect(){
       manager->killWindowAtPosition(QCursor::pos().x(), QCursor::pos().y());
     }
 
-    XUngrabServer(dpy);
+    XUngrabServer(qt_xdisplay());
 
 }
 

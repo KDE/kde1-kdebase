@@ -6,6 +6,7 @@
  */
 
 #include "manager.moc"
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -25,12 +26,12 @@
 
 extern bool kwm_error;
 
+extern MyApp* myapp;
 extern Manager* manager;
 
 KGreyerWidget *greyer_widget = 0;
 
 Window root;
-Display *dpy;
 GC rootgc;
 GC rootfillgc;
 GC rootfillsolidgc;
@@ -68,7 +69,6 @@ Manager::Manager(): QObject(){
   XGCValues gv;
   unsigned long mask;
   
-  dpy = qt_xdisplay();
   root = qt_xrootwin();
   default_colormap = DefaultColormap(qt_xdisplay(), qt_xscreen());
   
@@ -889,8 +889,11 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
       nd = current_desktop + 1;
     else
       nd = current_desktop - 1;
-    if (c)
+    if (c){
       c->desktop = nd;
+      KWM::moveToDesktop(c->window, c->desktop);
+      changedClient(c);
+    }
     switchDesktop(nd);
 
     if(!options.ElectricBorderMovePointer){
@@ -908,8 +911,11 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
       nd = current_desktop + 1;
     else
       nd = current_desktop - 1;
-    if (c)
+    if (c){
       c->desktop = nd;
+      KWM::moveToDesktop(c->window, c->desktop);
+      changedClient(c);
+    }
     switchDesktop(nd);
 
     if(!options.ElectricBorderMovePointer){
@@ -926,8 +932,11 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
     nd = current_desktop - 2;
     if (nd < 1)
 	nd += number_of_desktops;
-    if (c)
+    if (c){
       c->desktop = nd;
+      KWM::moveToDesktop(c->window, c->desktop);
+      changedClient(c);
+    }
     switchDesktop(nd);
 
     if(!options.ElectricBorderMovePointer){
@@ -944,8 +953,11 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
     nd = current_desktop - 2;
     if (nd < 1)
       nd += number_of_desktops;
-    if (c)
+    if (c){
       c->desktop = nd;
+      KWM::moveToDesktop(c->window, c->desktop);
+      changedClient(c);
+    }
     switchDesktop(nd);
 
     if(!options.ElectricBorderMovePointer){
@@ -1512,7 +1524,7 @@ void Manager::manage(Window w, bool mapped){
   }
   
   XAddToSaveSet(qt_xdisplay(), c->window);
-  XSync(dpy, False);
+  XSync(qt_xdisplay(), False);
   sendConfig(c, FALSE);
   XSync(qt_xdisplay(), False);
 
@@ -1617,9 +1629,18 @@ void Manager::manage(Window w, bool mapped){
 
   if(options.Placement == MANUAL_PLACEMENT && !mapped
      && c->isOnDesktop(manager->currentDesktop())
-     //hoping this places transients without interaction
-     && (c->trans == None)) 
+     && (c->trans == None)) {
+    // ensure that the window is completely visible
+    XSync(qt_xdisplay(), False);
+    XEvent ev;
+    while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
+    Window w = c->window;
+    myapp->processEvents();
+    c = manager->getClient(w);
+    if (!c)
+      return;
     c->handleOperation(OP_MOVE);
+  }
   
 }
 

@@ -262,6 +262,7 @@ private:
   bool autoraised_stopped;
 
   void doButtonGrab();
+  void ensurePointerGrab();
 
 private slots:
   void autoRaise();
