@@ -187,11 +187,11 @@ int KProtocolFTP::ftpOpen(const char *host)
  */
 int KProtocolFTP::ftpSendCmd(const char *cmd, char expresp)
 {
-    char buf[256];
     if (ftplib_debug > 2)
 		fprintf(stderr,"%s\n",cmd);
-    sprintf(buf,"%s\r\n",cmd);
-    if (write(sControl,buf,strlen(buf)) <= 0)
+    QString buf (cmd);
+    buf += "\r\n";
+    if (write(sControl,buf.data(),buf.length()) <= 0)
     {
 		perror("write");
 		return 0;
@@ -206,11 +206,11 @@ int KProtocolFTP::ftpSendCmd(const char *cmd, char expresp)
  */
 int KProtocolFTP::ftpLogin( const char *user, const char *pass, QString *redirect)
 {
-    char tempbuf[64];
+    QString tempbuf("user ");
 
     ftplib_lastresp[0] = '\0';
 
-    sprintf(tempbuf,"user %s",user);
+    tempbuf += user;
 
     rspbuf[0]='\0';
 
@@ -219,14 +219,15 @@ int KProtocolFTP::ftpLogin( const char *user, const char *pass, QString *redirec
 	if (rspbuf[0]=='2') return 1; /* no password required */
 	return 0;
     }      
-    sprintf(tempbuf,"pass %s",pass);
+    tempbuf = "pass ";
+    tempbuf += pass;
 
     if ( redirect == 0L )
 	return ftpSendCmd(tempbuf,'2');
 
     if ( ftpSendCmd( tempbuf, '2' ) == 1 )
     {
-	strcpy(tempbuf,"pwd");
+	tempbuf = "pwd";
 	if ( ftpSendCmd( tempbuf, '2' ) == 0 )
 	    return 0;
 	
@@ -315,13 +316,14 @@ int KProtocolFTP::ftpPort(void)
     Warning : the size depends on the transfer mode, hence the second arg. */
 long KProtocolFTP::ftpSize( const char *path, char mode)
 {
-    char buf[256];
+    QString buf;
     ftplib_lastresp[0] = '\0';
-    sprintf(buf,"type %c",mode);
+    buf.sprintf("type %c",mode);
     if ( !ftpSendCmd( buf, '2' ) ) return Error(KIO_ERROR_CouldNotConnect,
 				"Could not set ftp to correct mode for transmission");
 
-    sprintf(buf,"SIZE %s",path);
+    buf = "SIZE ";
+    buf += path;
     if (!ftpSendCmd(buf,'2'))
 	return FAIL;
     return atol(rspbuf+4); // skip leading "213 " (response code)
@@ -334,9 +336,9 @@ long KProtocolFTP::ftpSize( const char *path, char mode)
  */
 int KProtocolFTP::ftpMkdir( const char *path )
 {
-    char buf[256];
+    QString buf("mkd ");
+    buf += path;
     ftplib_lastresp[0] = '\0';
-    sprintf(buf,"mkd %s",path);
     if (!ftpSendCmd(buf,'2')) return 0;
     return 1;
 }
@@ -348,9 +350,9 @@ int KProtocolFTP::ftpMkdir( const char *path )
  */
  int KProtocolFTP::ftpChdir( const char *path)
 {
-    char buf[256];
+    QString buf("cwd ");
+    buf += path;
     ftplib_lastresp[0] = '\0';
-    sprintf(buf,"cwd %s",path);
     if (!ftpSendCmd(buf,'2'))
 	return 0;
     return 1;
@@ -358,9 +360,9 @@ int KProtocolFTP::ftpMkdir( const char *path )
 
  int KProtocolFTP::ftpRmdir( const char *path)
 {
-    char buf[256];
+    QString buf("RMD ");
+    buf += path;
     ftplib_lastresp[0] = '\0';
-    sprintf(buf,"RMD %s",path);
     if (!ftpSendCmd(buf,'2'))
 	return 0;
     return 1;
@@ -403,12 +405,13 @@ int KProtocolFTP::ftpMkdir( const char *path )
  */
 int KProtocolFTP::ftpRename( const char *src, const char *dst)
 {
-    char cmd[256];
+    QString cmd("RNFR ");
+    cmd += src;
     ftplib_lastresp[0] = '\0';
-    sprintf(cmd,"RNFR %s",src);
     if (!ftpSendCmd(cmd,'3'))
 	return 0;
-    sprintf(cmd,"RNTO %s",dst);
+    cmd = "RNTO ";
+    cmd += dst;
     if (!ftpSendCmd(cmd,'2'))
 	return 0;
     return 1;
@@ -421,9 +424,9 @@ int KProtocolFTP::ftpRename( const char *src, const char *dst)
  */
 int KProtocolFTP::ftpDelete( const char *fnm )
 {
-    char cmd[256];
+    QString cmd("DELE ");
+    cmd += fnm;
     ftplib_lastresp[0] = '\0';
-    sprintf(cmd,"DELE %s",fnm);
     if (!ftpSendCmd(cmd,'2'))
 	return 0;
     return 1;
@@ -461,10 +464,9 @@ KProtocolFTP::~KProtocolFTP()
 
 int KProtocolFTP::OpenConnection( const char *command, const char *path, char mode )
 {
-    char buf[256];
-
+    QString buf;
     ftplib_lastresp[0] = '\0';
-	sprintf(buf,"type %c",mode);
+    buf.sprintf("type %c",mode);
     if ( !ftpSendCmd( buf, '2' ) ) return Error(KIO_ERROR_CouldNotConnect,
 				"Could not set ftp to correct mode for transmission");
     if ( !ftpPort() ) return Error(KIO_ERROR_CouldNotConnect,
@@ -627,6 +629,7 @@ int KProtocolFTP::Connect(KURL *url)
     {
 	user = url->user();
 	passwd = url->passwd();
+        KURL::decodeURL(passwd);
     }
     else
     {

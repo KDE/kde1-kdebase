@@ -2000,6 +2000,7 @@ QString KIOJob::completeURL( const char *_url )
 		return QString( _url );
 	    }
 	    passwd = dlg->password();
+	    KURL::encodeURL(passwd);
 	    delete dlg;
 
 	    // If the password is wrong, the error function will remove it from
