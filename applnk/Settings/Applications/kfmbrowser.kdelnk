@@ -17,4 +17,4 @@ Comment[ru]=Здесь вы можете настроить просмотрщик
 # This needs a new icon !
 Icon=kfm.xpm
 MiniIcon=kfm.xpm
-Exec=kcmkfm proxy http useragent
+Exec=kcmkfm proxy http useragent cookies
