@@ -31,6 +31,11 @@
 #include <ctype.h>
 #include "debug.h"
 
+/* sgis have /dev/ptmx [bmg] */
+#ifdef __sgi__
+#define SVR4
+#endif
+
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif

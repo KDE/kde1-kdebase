@@ -1,3 +1,12 @@
+
+
+  - Now kvt searches a list of TERM-entries and takes the first
+    (`best') available.  This should minimize problems with
+    unincomplete or antiquated terminfo/termcap databases. (This is
+    based on curses.)
+
+since kvt-0.16:
+  	
   - added a linux-console compatible color-mode (M G Berberich)
 
 since kvt-0.15:

@@ -134,7 +134,7 @@ typedef struct _screen_info
 #define COLOR_TYPE_Linux 1
 
 void screen_init(void);
-void scr_reset(void);
+void scrn_reset(void);
 void scr_power_on(void);
 void set_charclass(const char *s);
 void set_color_mode(int mode);

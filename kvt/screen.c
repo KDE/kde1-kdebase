@@ -191,7 +191,7 @@ void screen_init(void)
 
   MyWinInfo.sline_top = 0;
   MyWinInfo.offset = 0;
-  scr_reset();
+  scrn_reset();
 }
 
 /**************************************************************************
@@ -268,7 +268,7 @@ int get_color_mode(void)
  *  Reset the screen - called whenever the screen needs to be repaired due
  *  to re-sizing or initialization.
  *************************************************************************/
-void scr_reset(void)
+void scrn_reset(void)
 {
   static int previous_rows[NSCREENS] = {-1,-1};
   static int previous_cols[NSCREENS] = {-1,-1};
@@ -277,7 +277,7 @@ void scr_reset(void)
   int i,j,k,l,sl;
 
 #ifdef DEBUG
-  fprintf(stderr,"scr_reset\n");
+  fprintf(stderr,"scrn_reset\n");
 #endif
   if((previous_cols[0] == MyWinInfo.cwidth)&&
      (previous_cols[1] == MyWinInfo.cwidth)&&
@@ -285,7 +285,7 @@ void scr_reset(void)
      (previous_rows[1] == MyWinInfo.cheight))
     return;
 #ifdef DEBUG
-  fprintf(stderr,"scr_reset continue\n");
+  fprintf(stderr,"scrn_reset continue\n");
 #endif
   /* In case rows/columns are invalid */
   if(MyWinInfo.cwidth <= 0)
@@ -334,9 +334,9 @@ void scr_reset(void)
 	  new_rend[j*(MyWinInfo.cwidth+1)+MyWinInfo.cwidth]=DEFAULT_RSTYLE;  
 	}
       if(screens[i].text != NULL)
-	safefree(screens[i].text,"Screens.text","scr_reset");
+	safefree(screens[i].text,"Screens.text","scrn_reset");
       if(screens[i].rendition != NULL)
-	safefree(screens[i].rendition,"Screens.rend","scr_reset");
+	safefree(screens[i].rendition,"Screens.rend","scrn_reset");
       screens[i].text = new_screen;
       screens[i].rendition = new_rend;      
 
@@ -369,9 +369,9 @@ void scr_reset(void)
 
 
   if(displayed_text != NULL)
-    safefree(displayed_text,"deisplay_text","scr_reset");
+    safefree(displayed_text,"deisplay_text","scrn_reset");
   if(displayed_rend != NULL)
-    safefree(displayed_rend,"displayed_rend","scr_reset");
+    safefree(displayed_rend,"displayed_rend","scrn_reset");
   displayed_text = safemalloc(MyWinInfo.cheight*(MyWinInfo.cwidth+1)*
 			   sizeof(char),"displayed_text");
   displayed_rend = safemalloc(MyWinInfo.cheight*(MyWinInfo.cwidth+1)*
@@ -391,7 +391,7 @@ void scr_reset(void)
     save_col = MyWinInfo.cwidth-1;
 
   if(tabs != NULL)
-    safefree(tabs,"tabs","scr_reset");
+    safefree(tabs,"tabs","scrn_reset");
 
   tabs = safemalloc(sizeof(char)*MyWinInfo.cwidth,"tabs");
 
@@ -455,7 +455,7 @@ void scr_power_on(void)
   save_col = 0;
   save_charset = 'B';
   save_charset_num = 0;
-  scr_reset();
+  scrn_reset();
   screen_refresh();
 }
 

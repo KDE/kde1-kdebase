@@ -482,7 +482,7 @@ void kVt::ResizeToDimen(int width, int height)
   sizehints.width = sizehints.width*sizehints.width_inc+sizehints.base_width;
   sizehints.height = sizehints.height*sizehints.height_inc+
   sizehints.base_height;
-  scr_reset();
+  scrn_reset();
   kvt->ResizeToVtWindow();
 }
 
