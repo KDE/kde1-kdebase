@@ -1,5 +1,11 @@
 1999-01-03  David Faure  <faure@kde.org>
 
+	* kfmgui.cpp: Argh, another late bug. When entering a directory in
+	a window, all other windows had out-of-date history menus (and
+	clicking on one item brought you to another item!). Fixed by
+	connecting an AboutToShow for the Go menu to a new method filling
+	the go menu (slotUpdateHistoryMenu), taken out from slotUpdateHistory. 
+
 	* krenamewin.cpp, kiojob.cpp: Made window always modal.
 	The modal argument is used to know whether to call done(x) or emit
 	result(...). Fixes bug introduced by Preston when copying and
