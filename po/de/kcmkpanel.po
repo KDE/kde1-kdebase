@@ -180,7 +180,7 @@ msgstr "&Lokale einstellen"
 #: disknav.cpp:74
 #, fuzzy
 msgid "Edit &Shared..."
-msgstr "&Lokale einstellen"
+msgstr "&Gemeinsam genutzte einstellen"
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
@@ -205,7 +205,7 @@ msgstr "Groﬂ/Kleinschreibung beim Sortieren ignorieren"
 #: disknav.cpp:173
 #, fuzzy
 msgid "Show Shared section"
-msgstr "Lokale Abschnitte anzeigen"
+msgstr "Gemeinsam genutzte Abschnitte anzeigen"
 
 #: disknav.cpp:180
 #, fuzzy

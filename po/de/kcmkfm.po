@@ -32,7 +32,7 @@ msgstr "User-&Agent"
 
 #: main.cpp:76
 msgid "Coo&kies"
-msgstr ""
+msgstr "Coo&kies"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
@@ -43,6 +43,7 @@ msgstr "&Desktop Icons"
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr "Benutzung: %s [-init | {font,color,misc,proxy,http,useragent,root}]\n"
+"Aufruf: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
@@ -102,7 +103,7 @@ msgstr "Unterstreiche Links"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
-msgstr ""
+msgstr "Immer die eingestellten Farben verwenden""
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
@@ -114,7 +115,7 @@ msgstr "&Baum-Ansicht folgt Navigation"
 
 #: miscopts.cpp:43
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
@@ -126,16 +127,16 @@ msgstr "Benutze Proxy"
 
 #: kproxydlg.cpp:67
 msgid "HTTP Proxy:"
-msgstr ""
+msgstr "&HTTP-Proxy:"
 
 #: kproxydlg.cpp:82 kproxydlg.cpp:113
 msgid "Port:"
-msgstr ""
+msgstr "Port:"
 
 #: kproxydlg.cpp:98
 #, fuzzy
 msgid "FTP Proxy:"
-msgstr "&Proxy"
+msgstr "&FTP-Proxy"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
@@ -171,7 +172,7 @@ msgstr "Bekannte Zuordnungen:"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
-msgstr ""
+msgstr "Cookies einschalten"
 
 #: kcookiesdlg.cpp:56
 #, fuzzy
@@ -180,27 +181,27 @@ msgstr "Default-Zeichensatz"
 
 #: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
 msgid "Accept"
-msgstr ""
+msgstr "Akzeptieren"
 
 #: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
 msgid "Ask"
-msgstr ""
+msgstr "Nachfragen"
 
 #: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
 msgid "Reject"
-msgstr ""
+msgstr "Ablehnen"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
-msgstr ""
+msgstr "Domänen-spezifische Einstellungen:"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
-msgstr ""
+msgstr "Andere Einstellungen für diese Domäne"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr ""
+msgstr "Sie müssen zunächst eine Domäne einstellen"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
@@ -225,4 +226,4 @@ msgstr "Hintergrundfarbe der Icons:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr ""
+msgstr "&Versteckte Dateien auf dem Desktop anzeigen"
