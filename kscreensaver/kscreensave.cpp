@@ -15,9 +15,9 @@
 
 void kForceLocker()
 {
-	char *buffer=0;
+	QString buffer(getenv("HOME"));
 
-	sprintf(buffer, "%s/.kss.pid", getenv("HOME"));
+	buffer.append("/.kss.pid");
 
 	FILE *fp;
 
@@ -28,16 +28,20 @@ void kForceLocker()
 
 		fscanf( fp, "%d", &pid );
 		fclose( fp );
-		kill( pid, SIGUSR1 );
+
+                // But only kill it if the pid isn't -1!
+                if (pid > 0)
+                  kill( pid, SIGUSR1 );
 	}
 	else
 	{
-	    sprintf(buffer, "%s/kblankscrn.kss", KApplication::kde_bindir().data());
+            buffer = QString(KApplication::kde_bindir().data());
+	    buffer.append("/kblankscrn.kss");
 	    
 	    if ( fork() == 0 )
 		{
 		    execlp( buffer, buffer, "-test", "-lock", 0 );
-		    
+
                     // if we make it here then try again using default path
 		    execlp("kblankscrn.kss","kblankscrn.kss","-test","-lock",0);
 		    
