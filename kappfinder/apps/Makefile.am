@@ -1,4 +1,4 @@
-SUBDIRS = Editors Internet Toys WordProcessing Development Graphic System \
+SUBDIRS = Editors Internet Toys WordProcessing Development Graphics System \
           Utilities Office
 
 data_DATA = .directory
