@@ -1,0 +1,33 @@
+# KDE Config File  
+[KDE Desktop Entry]
+Type=Application
+Exec=konsole %i %mi -caption "%c"
+MiniIcon=konsole.xpm
+Icon=konsole.xpm
+DocPath=konsole/konsole.html
+Comment=Terminal Emulation (experimental)
+Comment[ca]=EmulaciÛ de terminal (experimental)
+Comment[cs]=Emul·tor termin·lu (experiment·lnÌ)
+Comment[da]=Terminalemulering (eksperimentel
+Comment[es]=Emulador de Terminal (experimental)
+Comment[fi]=Terminaaliemulaattori (kokeellinen)
+Comment[fr]=Emulateur de Terminal (expÈrimental)
+Comment[is]=kvt:  KDE skj·hermirinn
+Comment[it]=Emulazione Terminale (sperimentale)
+Comment[no]=Terminalemulering (eksperimentell)
+Comment[pt_BR]=Emulador de Terminal (experimental)
+Comment[ro]=Emulator de consol„
+Comment[ru]=¸Õ’Ã—√…— ‘≈“Õ…Œ¡Ã¡ (‹À”–≈“…Õ≈Œ‘¡ÃÿŒ¡—)
+Comment[sk]=Emul·tor termin·lu (experiment·lny)
+Comment[sl]=Emulacija terminala (eksperimentalna)
+Comment[sv]=Terminalemulering (experimentell)
+Terminal=0
+Name=Konsole
+Name[ca]=Consola
+Name[da]=Konsol
+Name[is]=Skj·hermir
+Name[no]=Konsoll
+Name[ro]=Consol„
+Name[ru]=ÎœŒ”œÃÿ
+Name[sl]=Konzola
+Name[sv]=Konsol
