@@ -366,7 +366,7 @@ private:
 
   // tools
   QString findMenuEditor(const QString& folder);
-    
+
   QPixmap create_arrow_pixmap(QPixmap pm);
   void arrow_on_pixmap(QPixmap* pm, ArrowType rt);
 

@@ -232,7 +232,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     }
     else
       config->writeEntry ("AutoHideTaskbarDelay", autoHideTaskbarDelay=6000);
-    
+
     if (config->hasKey("AutoHideTaskbarSpeed")) {
       autoHideTaskbarSpeed = config->readNumEntry("AutoHideTaskbarSpeed");
       if (autoHideTaskbarSpeed < 1) autoHideTaskbarSpeed = 1;//CT
@@ -1642,7 +1642,7 @@ void kPanel::showPanelFromRight(bool smooth){
 void kPanel::doGeometry (bool do_not_change_taskbar) {
 
    int space = 0;
-   
+
    int w = QApplication::desktop()->width();
    int h = QApplication::desktop()->height();
    int pw = width()+space; // panel...
@@ -1669,7 +1669,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 
    int tbw = taskbar_frame->width();
    int tbh = taskbar_frame->height();
-   
+
 
    taskbar_frame_geometry = taskbar_frame->geometry();
 
@@ -1691,7 +1691,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
        tfy = tfyR;
        tfx = tfxR;
    }
-   
+
 
    if (panelCurrentlyHidden) // i.e. standalone shown
     {

@@ -185,6 +185,9 @@ int main( int argc, char ** argv ){
 
   the_panel->connect(&myapp, SIGNAL(kdisplayPaletteChanged()),
 		     SLOT(kdisplayPaletteChanged()));
+  
+  the_panel->connect( &myapp, SIGNAL( kdisplayStyleChanged() ), SLOT( restart() ) );
+  
 
   myapp.setMainWidget(the_panel);
 
