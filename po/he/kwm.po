@@ -22,7 +22,7 @@ msgstr "לעפוי אל KDE לש תונולחה להנמ ץהלועפב אצמנ רחא תונולח להנמ וליאכ הארנ\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "תוליעפ םייסמ - לוחתיא תאיגש :תונולחה להנמ"
+msgstr "תוליעפ םייסמ - לוחתיא תאיגש :תונולחה להנמ\n"
 
 #: main.C:483
 msgid "Preparing session ... "
@@ -114,11 +114,11 @@ msgstr "םש אלל ןחלוש"
 
 #: main.C:918
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "תלטובמ םילמס תרוצת :םייקוח םניא םילמס המכ"
+msgstr "תלטובמ םילמס תרוצת :םייקוח םניא םילמס המכ\n"
 
 #: main.C:1030
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "תלטובמ קימיג תרוצת :םייקוח םניא םילמס המכ"
+msgstr "תלטובמ קימיג תרוצת :םייקוח םניא םילמס המכ\n"
 
 #: main.C:1353
 msgid "*** No Tasks ***"
