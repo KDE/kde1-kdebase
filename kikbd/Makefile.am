@@ -12,9 +12,6 @@
 # kde_wallpaperdir  Where general wallpapers should go to.
 
 # just set the variable
-APPSDIR = $(kde_appsdir)/System
-APPSDIRC= $(kde_appsdir)/Settings/Input_Devices
-kikbd_conf = $(kde_datadir)/kikbd
 INCLUDES= $(all_includes)
 SUBDIRS = doc maps
 
@@ -27,12 +24,12 @@ BUILT_SOURCES = kconfobjs.moc.h  kobjconf.moc.h \
 kikbd_SOURCES = kikbd.cpp keytrans.cpp keymap.cpp kikbdconf.cpp \
 	kobjconf.cpp kconfobjs.cpp
 kikbd_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-kikbd_LDADD   =       $(LIB_KDEUI)
+kikbd_LDADD   = $(LIB_KDEUI)
 
 kcmikbd_SOURCES = widgets.cpp kcmikbd.cpp kikbdconf.cpp \
 	kobjconf.cpp kconfobjs.cpp
 kcmikbd_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-kcmikbd_LDADD   =       $(LIB_KDEUI)
+kcmikbd_LDADD   = $(LIB_KDEUI)
 
 # this option you can leave out. Just, if you use "make dist", you need it
 noinst_HEADERS = 
@@ -45,26 +42,24 @@ CLEANFILES = $(BUILT_SOURCES)
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kikbd_SOURCES) $(kcmikbd_SOURCES) && mv messages.po ../po/kikbd.pot
 
-# just install datas here. Use install-exec-local for scripts and etc.
-# the binary itself is already installed from automake
-# use mkinstalldirs, not "install -d"
-# don't install a list of file. Just one file per install.
-# if you have more of them, create a subdirectory with an extra Makefile 
-install-data-local: 
-	$(mkinstalldirs) $(kikbd_conf)
-	$(INSTALL_DATA) kikbd.kdelnk   $(APPSDIR)/kikbd.kdelnk
-	$(INSTALL_DATA) kcmikbd.kdelnk $(APPSDIRC)/kcmikbd.kdelnk
+kdelnk_DATA = kikbd.kdelnk 
+kdelnkdir = $(kde_appsdir)/System
+
+kdelnk2_DATA = kcmikbd.kdelnk
+kdelnk2dir = $(kde_appsdir)/Settings/Input_Devices
+
+icon_DATA = kikbd.xpm
+icondir = $(kde_icondir)
+
+config_DATA = kikbdrc
+configdir = $(kde_datadir)/kikbd
+
+install-data-local: kcmikbd.kdelnk
+	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) mini-kikbd.xpm $(kde_minidir)/kikbd.xpm
-	$(INSTALL_DATA) kikbd.xpm $(kde_icondir)/kikbd.xpm
-	$(INSTALL_DATA) kikbdrc $(kde_confdir) 
 
-# remove ALL you have installed in install-data-local or install-exec-local
 uninstall-local:
-	-rm -f $(APPSDIR)/kikbd.kdelnk
-	-rm -f $(APPSDIRC)/kcmikbd.kdelnk
-	-rm -f $(kde_icondir)/kikbd.xpm
 	-rm -f $(kde_minidir)/kikbd.xpm
-
 
 kconfobjs.moc.h: kconfobjs.h
 	$(MOC) -o kconfobjs.moc.h kconfobjs.h
