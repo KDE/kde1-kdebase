@@ -4,6 +4,7 @@ Makefile.in
 *.lo
 *.moc
 konsole
+konsole_grantpty
 kcmkonsole
 .deps
 .libs
