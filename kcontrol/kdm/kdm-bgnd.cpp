@@ -19,9 +19,24 @@
 
 #include <qframe.h>
 #include <qlayout.h>
+#include <qdragobject.h>
 #include "utils.h"
+#include "kdropsite.h"
 #include "kdm-bgnd.moc"
 #include <kfiledialog.h>
+
+void KBGMonitor::setAllowDrop(bool a)
+{
+  if(a == allowdrop)
+    return;
+  allowdrop = a;
+
+  QPainter p;
+  p.begin( this );
+  p.setRasterOp (NotROP);
+  p.drawRect(0, 0, width(), height() );
+  p.end();
+}
 
 // Destructor
 KDMBackgroundWidget::~KDMBackgroundWidget()
@@ -72,6 +87,16 @@ void KDMBackgroundWidget::setupPage(QWidget *)
       monitor->setBackgroundColor( color );
       tLayout->addWidget(label, 1, AlignCenter);
       tLayout->activate();
+
+      KDropSite *dropsite = new KDropSite( monitor );
+      connect( dropsite, SIGNAL( dropAction( QDropEvent*) ), 
+        this, SLOT( slotQDrop( QDropEvent*) ) );
+
+      connect( dropsite, SIGNAL( dragLeave( QDragLeaveEvent*) ), 
+        this, SLOT( slotQDragLeave( QDragLeaveEvent*) ) );
+
+      connect( dropsite, SIGNAL( dragEnter( QDragEnterEvent*) ), 
+        this, SLOT( slotQDragEnter( QDragEnterEvent*) ) );
 
       lGroup = new QGroupBox( klocale->translate("Color"), this );
       QBoxLayout *lLayout = new QVBoxLayout(lGroup, 10);
@@ -164,6 +189,44 @@ void KDMBackgroundWidget::setupPage(QWidget *)
       ml->activate();
 
       showSettings();
+}
+
+void KDMBackgroundWidget::slotQDrop( QDropEvent *e )
+{
+  QStrList list;
+  QString s;
+
+#if QT_VERSION > 140
+  if(QUrlDrag::decode( e, list ) )
+  {
+    monitor->setAllowDrop(false);
+    s = list.first(); // we only want the first
+    //debug("slotQDropEvent - %s", s.data());
+    s = QUrlDrag::urlToLocalFile(s.data()); // a hack. should be improved
+    if(!s.isEmpty())
+      loadWallpaper(s.data());
+  } 
+#endif   
+}
+
+void KDMBackgroundWidget::slotQDragLeave( QDragLeaveEvent* )
+{
+  //debug("Got QDragLeaveEvent!");
+  monitor->setAllowDrop(false);
+}
+
+void KDMBackgroundWidget::slotQDragEnter( QDragEnterEvent *e )
+{
+  //debug("Got QDragEnterEvent!");
+#if QT_VERSION > 140
+  if( QUrlDrag::canDecode( e ) )
+  {
+    monitor->setAllowDrop(true);
+    e->accept();
+  }
+  else
+#endif
+    e->ignore();
 }
 
 

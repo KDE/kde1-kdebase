@@ -4,11 +4,14 @@ SUBDIRS = doc pics
 
 bin_PROGRAMS = kdmconfig
 
-kdmconfig_SOURCES = main.cpp jpeg.cpp utils.cpp kdm-appear.cpp kdm-font.cpp kdm-bgnd.cpp kdm-users.cpp kdm-sess.cpp klangcombo.cpp
+kdmconfig_SOURCES = main.cpp jpeg.cpp utils.cpp kdm-appear.cpp kdm-font.cpp kdm-bgnd.cpp \
+	kdm-users.cpp kdm-sess.cpp klangcombo.cpp kdropsite.cpp
 kdmconfig_LDADD = $(LDADD)
 #kdmconfig_LDFLAGS = -g
-BUILT_SOURCES =  kdm-appear.moc kdm-font.moc kdm-bgnd.moc kdm-users.moc kdm-sess.moc klangcombo.moc
-noinst_HEADERS = kdm-appear.h kdm-font.h kdm-bgnd.h kdm-users.h kdm-sess.h klangcombo.h utils.h
+BUILT_SOURCES =  kdm-appear.moc kdm-font.moc kdm-bgnd.moc kdm-users.moc kdm-sess.moc \
+	klangcombo.moc
+noinst_HEADERS = kdm-appear.h kdm-font.h kdm-bgnd.h kdm-users.h kdm-sess.h klangcombo.h \
+	utils.h kdropsite.h
 
 kdm-appear.cpp: kdm-appear.moc
 kdm-appear.moc: kdm-appear.h
@@ -33,6 +36,10 @@ kdm-users.moc: kdm-users.h
 kdm-sess.cpp: kdm-sess.moc
 kdm-sess.moc: kdm-sess.h
 	$(MOC) kdm-sess.h -o kdm-sess.moc
+
+kdropsite.cpp: kdropsite.moc
+kdropsite.moc: kdropsite.h
+	$(MOC) kdropsite.h -o kdropsite.moc
 
 DISTCLEANFILES = $(BUILT_SOURCES)
 

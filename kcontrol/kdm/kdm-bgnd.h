@@ -31,10 +31,13 @@ class KBGMonitor : public QWidget
 {
 	Q_OBJECT
 public:
-	KBGMonitor( QWidget *parent ) : QWidget( parent ) {};
+	KBGMonitor( QWidget *parent ) : QWidget( parent ) { allowdrop = false;};
 
 	// we don't want no steenking palette change
 	virtual void setPalette( const QPalette & ) {};
+	void setAllowDrop(bool);
+protected:
+	bool allowdrop;
 };
 
 class KDMBackgroundWidget : public KConfigWidget
@@ -50,13 +53,16 @@ public:
         void applySettings();
 	void setupPage(QWidget*);
 
-private slots:
+protected slots:
 	void slotSelectColor( const QColor &col );
 	void slotBrowse();
 	void slotWallpaper( const char * );
 	void slotWallpaperMode( int );
+	void slotQDrop( QDropEvent* );
+	void slotQDragLeave( QDragLeaveEvent* );
+	void slotQDragEnter( QDragEnterEvent* );
 
-private:
+protected:
         void setMonitor();
         void showSettings();
         int  loadWallpaper( const char *name, bool useContext = true);
