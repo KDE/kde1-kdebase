@@ -24,13 +24,15 @@
 
 int authenticate(const char *login, const char *passwd)
 {
-  struct spwd *spw; 
   struct passwd *pw;
+  char* crpt_passwd;
+  int result;
+
   pw = getpwnam(login);
   if ( pw == 0 )
     return 0;
-  char* crpt_passwd = crypt(passwd,pw->pw_passwd);
-  int result = strcmp(pw->pw_passwd, crpt_passwd );
+  crpt_passwd = crypt(passwd,pw->pw_passwd);
+  result = strcmp(pw->pw_passwd, crpt_passwd );
   endpwent();
   if (result == 0)
     return 1; // success

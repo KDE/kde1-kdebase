@@ -55,6 +55,9 @@
 #include <paths.h>
 #endif
 
+#include <pwd.h>
+#include <sys/types.h>
+
 #ifndef _PATH_TMP
 #define _PATH_TMP "/tmp/"
 #endif
@@ -73,9 +76,9 @@
 #include <prot.h>
 #endif
 
-// Default back to ETCPASSWD
-#if !defined(PAM) && !defined(SHADOW)
-#define ETCPASSWD
+// Default back to HAVE_ETCPASSWD
+#if !defined(HAVE_PAM) && !defined(HAVE_SHADOW)
+#define HAVE_ETCPASSWD
 #endif
 
 
@@ -85,4 +88,3 @@
  *   0		otherwise
  *****************************************************************/
 int authenticate(const char *login, const char *pass);
-void message(const char*, ...);

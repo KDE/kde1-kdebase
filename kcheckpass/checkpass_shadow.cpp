@@ -30,15 +30,18 @@
 int authenticate(const char *login, const char *passwd)
 {
   struct spwd *pw;
+  char* crpt_passwd;
+  int result;
+
   pw = getspnam(login);
   if ( pw == 0 )
     return 0;
 #if defined( __linux__ ) && defined( HAVE_PW_ENCRYPT )
-  char* crpt_passwd = pw_encrypt(passwd, pw->sp_pwdp);  // (1)
+  crpt_passwd = pw_encrypt(passwd, pw->sp_pwdp);  // (1)
 #else  
-  char* crpt_passwd = crypt(passwd, pw->sp_pwdp);
+  crpt_passwd = crypt(passwd, pw->sp_pwdp);
 #endif
-  int result = strcmp(pw->sp_pwdp, crpt_passwd );
+  result = strcmp(pw->sp_pwdp, crpt_passwd );
   endspent();
   if (result == 0)
     return 1; // success

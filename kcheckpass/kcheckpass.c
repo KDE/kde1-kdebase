@@ -49,23 +49,29 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include <fcntl.h>
 #include <syslog.h>
 #include <memory.h>
 #include <malloc.h>
 #include <errno.h>
-#include <pwd.h>
-#include <sys/types.h>
+#include <time.h>
+
+/* Define this if you want kcheckpass to accept options
+ * (They don't do anything useful right now) */
+#undef ACCEPT_OPTIONS
 
 /*****************************************************************
  * Set to 1 if stdin is a tty
  *****************************************************************/
 static int	havetty = 0;
+#ifdef ACCEPT_OPTIONS
 static int	debug = 0;
+#endif
 
 /*****************************************************************
  * Output a message to syslog (and to stderr as well, if available)
  *****************************************************************/
-void
+static void
 message(const char *fmt, ...)
 {
   va_list		ap;
@@ -94,7 +100,19 @@ message(const char *fmt, ...)
 static void
 usage(int exitval)
 {
-  message("usage: kcheckpass [-dh]\n");
+  message("usage: kcheckpass %s\n"
+	  "    Obtains the password from standard input and checks it\n"
+	  "    against that of the invoking user.\n"
+	  "    Exit codes:\n"
+	  "        0 success\n"
+	  "        1 invalid password\n"
+	  "    Anything else tells you something's badly hosed.\n",
+#ifdef ACCEPT_OPTIONS
+	" [-dh]"
+#else
+	""
+#endif
+	);
   exit(exitval);
 }
 
@@ -104,15 +122,36 @@ usage(int exitval)
 int
 main(int argc, char **argv)
 {
-  char		userbuffer[1024], *login,
-    passbuffer[1024], *passwd;
+  char		*login, passbuffer[1024], *passwd;
   struct passwd	*pw;
   int		status, c;
   uid_t		uid;
 
-  havetty = isatty(0);
   openlog("kcheckpass", LOG_PID, LOG_AUTH);
 
+
+  /* Make sure stdout/stderr are open */
+  for (c = 1; c <= 2; c++) {
+    if (fcntl(c, F_GETFL) == -1) {
+      int	nfd;
+
+      if ((nfd = open("/dev/null", O_WRONLY)) < 0) {
+        message("cannot open /dev/null: %s\n", strerror(errno));
+	exit(2);
+      }
+      if (c != nfd) {
+	dup2(nfd, c);
+	close(nfd);
+      }
+    }
+  }
+
+  havetty = isatty(0);
+
+#ifndef ACCEPT_OPTIONS
+  if (argc != 1)
+    usage(2);
+#else
   while ((c = getopt(argc, argv, "d")) != -1) {
     switch (c) {
     case 'd':
@@ -125,18 +164,17 @@ main(int argc, char **argv)
       usage(2);
     }
   }
+#endif
 
   uid = getuid();
   if (!(pw = getpwuid(uid))) {
     message("Unknown user (uid %d)\n", uid);
     exit(2);
   }
-  if (strlen(pw->pw_name) >= sizeof(userbuffer)) {
-    message("Incredibly long user name: %s\n", pw->pw_name);
+  if ((login = strdup(pw->pw_name)) == NULL) {
+    message("Out of memory on strdup'ing user name \"%.100s\"\n", pw->pw_name);
     exit(2);
   }
-  strcpy(userbuffer, pw->pw_name);
-  login = userbuffer;
 
   /* If we have a tty, use getpass.
    * Otherwise, just snarf the password from stdin (we don't
@@ -168,9 +206,13 @@ main(int argc, char **argv)
   memset(passbuffer, 0, sizeof(passbuffer));
 
   if (!status) {
-    sleep (1); // <<< Security: Don't undermine the shadow system
+    time_t	now = time(NULL);
     message("authentication failure for user %s [uid %d]\n",
 	    login, uid);
+
+    do {
+      sleep (1); // <<< Security: Don't undermine the shadow system
+    } while (time(NULL) < now + 1);
     exit(1);
   }
 
