@@ -10,8 +10,8 @@ Email=granroth@kde.org
 [Display]
 CommonDesktop=true
 ColorMode0=Flat
-Color0_1=#000000
-Color0_2=#a0a0a4
+Color1_0=#000000
+Color2_0=#a0a0a4
 Wallpaper0=Glax.jpg
 WallpaperMode0=Centred
 #-----------------------------------------------------------------------------
