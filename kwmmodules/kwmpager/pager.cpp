@@ -209,13 +209,13 @@ void Pager::initDesktops()
 
 void Pager::changeNumber(int)
 {
+    windowActivate(0); // clear Desktop With Active Window
     desktops.clear();
     int count = KWM::numberOfDesktops();
-    
+
     for (int i = 0; i < count; i++) {
 	Desktop *desk = new Desktop(kwmmapp, i + 1, this);
 	desktops.append(desk);
-	connect(desk, SIGNAL(doubleClick()), this, SLOT(decorate()));
 	desk->show();
     }
     
@@ -318,6 +318,11 @@ void Pager::windowActivate(Window w)
 
     static Desktop *desktopWithActiveWindow = 0L;
  
+    if (w == 0L) {
+	desktopWithActiveWindow = 0L;
+	return;
+    }
+
     if (desktopWithActiveWindow)
 	desktopWithActiveWindow -> activateWindow( 0L );
 

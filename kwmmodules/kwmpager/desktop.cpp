@@ -300,6 +300,7 @@ void Desktop::calculate(PagerWindow *win) {
 void Desktop::resizeEvent ( QResizeEvent * )
 {
     pixmap_size = contentsRect().size();
+      
     for (PagerWindow *win = windows.last(); win; win = windows.prev()) 
 	calculate(win);
 
