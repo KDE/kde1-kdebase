@@ -383,6 +383,9 @@ void KGlobalConfig::slotPreviewScheme( int indx )
 
 void KGlobalConfig::readSchemeNames( )
  {
+   // Always a current and a default scheme 
+   nSysSchemes = 2;
+	
 	QString kksPath( kapp->kde_datadir() );
 	kksPath += "/kcmkeys/global";
 	
@@ -398,8 +401,6 @@ void KGlobalConfig::readSchemeNames( )
 			QFileInfoListIterator sysIt( *sysList );
 			QFileInfo *fi;
 
-			// Always a current and a default scheme 
-			nSysSchemes = 2;
 
 			QString str;
 
@@ -470,5 +471,5 @@ void KGlobalConfig::applySettings()
 }
 void KGlobalConfig::defaultSettings()
 {
-   
+  kc->allDefault();
 }

@@ -128,4 +128,5 @@ void KStdConfig::applySettings()
 }
 void KStdConfig::defaultSettings(  )
 {
+  kc->allDefault();
 }

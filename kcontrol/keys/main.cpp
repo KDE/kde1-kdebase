@@ -1,7 +1,10 @@
+//
+// KDE Shotcut config module
+//
+// Copyright (c)  Mark Donohoe 1998
+// Copyright (c)  Matthias Ettrich 1998
+//
 /*
-  main.cpp - A sample KControl Application
-
-  written 1997 by Matthias Hoelzer
   
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -29,14 +32,15 @@
 #include "global.h"
 #include <kwm.h>
 
-class KDisplayApplication : public KControlApplication
+class KKeyApplication : public KControlApplication
 {
 public:
 
-  KDisplayApplication(int &argc, char **arg, const char *name);
+  KKeyApplication(int &argc, char **arg, const char *name);
 
   void init();
   void apply();
+  void defaultValues();
 
 private:
 
@@ -45,7 +49,7 @@ private:
 };
 
 
-KDisplayApplication::KDisplayApplication(int &argc, char **argv, const char *name)
+KKeyApplication::KKeyApplication(int &argc, char **argv, const char *name)
   : KControlApplication(argc, argv, name)
 {
   standard = 0;
@@ -77,7 +81,7 @@ KDisplayApplication::KDisplayApplication(int &argc, char **argv, const char *nam
 }
 
 
-void KDisplayApplication::init()
+void KKeyApplication::init()
 {
   KStdConfig *standard=new KStdConfig(0);
   standard->keys->writeSettings();
@@ -88,7 +92,7 @@ void KDisplayApplication::init()
 }
 
 
-void KDisplayApplication::apply()
+void KKeyApplication::apply()
 {
 
   if (standard)
@@ -100,10 +104,17 @@ void KDisplayApplication::apply()
   
 }
 
+void KKeyApplication::defaultValues(){
+  if (standard)
+    standard->defaultSettings();
+  if (global)
+    global->defaultSettings();
+}
+
 int main(int argc, char **argv)
 {
   
-  KDisplayApplication app(argc, argv, "kcmkeys");
+  KKeyApplication app(argc, argv, "kcmkeys");
   app.setTitle(klocale->translate("Key binding settings"));
   
   if (app.runGUI())
