@@ -58,6 +58,9 @@ public slots:
      void shutdown_button_clicked();
      void timerDone();
      void slot_user_name( int i);
+     int restrict_nologin();
+     int restrict_expired();
+     int restrict_nohome();
      void load_wm();
      void save_wm();
 protected:

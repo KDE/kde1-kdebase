@@ -13,6 +13,8 @@ Work is being done here.
 Done! Make it more portable?
 - Require homedirs etc to login
 Done!
+- Handle expired accounts correctly
+Done! On BSD.
 - Do html documentation.
 Partially done.
 - Make a kchooser!

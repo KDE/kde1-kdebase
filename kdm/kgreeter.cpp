@@ -32,10 +32,23 @@ void SessionExit(void*,void*,void*);
 }
 
 #include <stdio.h>
+#include <sys/param.h>
 #include <math.h>
 #include <unistd.h>
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
+
+#if defined(__FreeBSD__) && __FreeBSD__ >= 2
+#include <osreldate.h>
+#if __FreeBSD_version >= 222000
+#define HAVE_SETUSERCONTEXT
+#endif
+#endif
+
+#ifdef HAVE_SETUSERCONTEXT
+#include <login_cap.h>		/* BSDI-like login classes */
+#include <pwd.h>
+#endif
 
 #ifdef TEST_KDM
 
@@ -375,6 +388,127 @@ KGreeter::load_wm(){
   sessionargBox->setCurrentItem(wm);
 }
 
+int
+KGreeter::restrict_nologin(){
+     struct passwd *pwd;
+     char * file;
+
+     pwd = getpwnam(greet->name);
+     endpwent();
+
+     // don't deny root to log in
+     if (pwd && !pwd->pw_uid) return 0;
+
+#ifdef HAVE_SETUSERCONTEXT
+     login_cap_t * lc;
+
+     lc = login_getpwclass(pwd);
+     file = login_getcapstr(lc, "nologin", "", NULL);
+     if (login_getcapbool(lc, "ignorenologin", 0)) file = NULL;
+#else
+#ifndef _PATH_NOLOGIN
+#define _PATH_NOLOGIN "/etc/nologin"
+#endif
+     file = _PATH_NOLOGIN;
+#endif
+     QFile f(file);
+     QString s;  
+     if ( f.open(IO_ReadOnly) ) {
+       QTextStream t( &f ); 
+       while ( !t.eof() )
+         s += t.readLine() + "\n";  
+       f.close();
+       QMessageBox::critical(NULL, i18n("No login"),s, i18n("&Ok"));
+#ifdef HAVE_SETUSERCONTEXT
+       login_close(lc);
+#endif
+       return -1;
+     };
+
+#ifdef HAVE_SETUSERCONTEXT
+     login_close(lc);
+#endif
+     return 0;
+}
+
+#ifdef BSD
+/* don't know if other systems than BSD support this.. I know the
+   shadow system on Linux does support something simular, but they don't use
+   the same api
+ */
+
+int
+KGreeter::restrict_expired(){
+#define DEFAULT_WARN  (2L * 7L * 86400L)  /* Two weeks */
+     struct passwd *pwd;
+     time_t warntime;
+     int quietlog;
+
+     pwd = getpwnam(greet->name);
+     if (!pwd) return 0;
+     endpwent();
+
+     // don't deny root to log in
+     if (!pwd->pw_uid) return 0;
+
+#ifdef HAVE_SETUSERCONTEXT
+     login_cap_t * lc;
+
+     lc = login_getpwclass(pwd);
+     quietlog = login_getcapbool(lc, "hushlogin", 0);
+     warntime = login_getcaptime(lc, "warnexpire",
+				 DEFAULT_WARN, DEFAULT_WARN);
+     login_close(lc);
+#else
+     quietlog = 0;
+     warntime = DEFAULT_WARN;
+#endif
+
+     if (pwd->pw_expire)
+       if (pwd->pw_expire <= time(NULL)) {
+         QMessageBox::critical(NULL, i18n("Expired"), i18n("Sorry -- your account has expired."), i18n("&Ok"));
+         return -1;
+       } else if (pwd->pw_expire - time(NULL) < warntime && !quietlog) {
+         QString str;
+         str.sprintf(i18n("Warning: your account expires on %s"), ctime(&pwd->pw_expire));  // use locales
+         QMessageBox::critical(NULL, i18n("Expired"), str, i18n("&Ok"));
+       }
+
+     return 0;
+}
+#endif
+
+#ifdef HAVE_SETUSERCONTEXT
+int
+KGreeter::restrict_nohome(){
+     struct passwd *pwd;
+
+     pwd = getpwnam(greet->name);
+     if (!pwd) return 0;
+     endpwent();
+
+     // don't deny root to log in
+     if (!pwd->pw_uid) return 0;
+
+     login_cap_t * lc;
+
+     lc = login_getpwclass(pwd);
+     (void)seteuid(pwd->pw_uid);
+     if (!*pwd->pw_dir || chdir(pwd->pw_dir) < 0) {
+       if (login_getcapbool(lc, "requirehome", 0)) {
+         QMessageBox::critical(NULL, i18n("No home"), i18n("Home directory not available"), i18n("&Ok"));
+         login_close(lc);
+         return -1;
+       }
+     }
+     (void)seteuid(0);
+     login_close(lc);
+
+     return 0;
+}
+#endif
+
+
 void 
 KGreeter::go_button_clicked(){
      greet->name = qstrdup(loginEdit->text());
@@ -389,6 +523,8 @@ KGreeter::go_button_clicked(){
      }
      // Set session argument:
      verify->argv = parseArgs( verify->argv, sessionargBox->text( sessionargBox->currentItem()));
+     if (restrict_nologin() || restrict_expired() || restrict_nohome())
+       SessionExit (d, OBEYSESS_DISPLAY, FALSE);
      save_wm();
      qApp->desktop()->setCursor( waitCursor);
      qApp->desktop()->grabMouse();
