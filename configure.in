@@ -221,26 +221,32 @@ AC_OUTPUT(Makefile \
 	kaudio/Makefile \
         kcheckpass/Makefile \
 	kcontrol/Makefile \
-	kcontrol/kfm/Makefile \
 	kcontrol/bell/Makefile \
 	kcontrol/display/Makefile \
 	kcontrol/display/ad/Makefile \
 	kcontrol/display/kcs/Makefile \
+	kcontrol/display/pics/Makefile \
+	kcontrol/display/pics/mini/Makefile \
 	kcontrol/info/Makefile \
 	kcontrol/input/Makefile \
+	kcontrol/input/pics/Makefile \
+	kcontrol/input/pics/mini/Makefile \
 	kcontrol/kcontrol/Makefile \
 	kcontrol/kcontrol/pics/Makefile \
 	kcontrol/kcontrol/pics/mini/Makefile \
 	kcontrol/kdm/Makefile \
 	kcontrol/kdm/doc/Makefile \
 	kcontrol/kdm/pics/Makefile \
+	kcontrol/keys/Makefile \
+	kcontrol/kfm/Makefile \
 	kcontrol/kpanel/Makefile \
 	kcontrol/kwm/Makefile \
+	kcontrol/kwm/pics/Makefile \
+	kcontrol/kwm/pics/mini/Makefile \
 	kcontrol/locale/Makefile \
 	kcontrol/locale/pics/Makefile \
 	kcontrol/samba/Makefile \
 	kcontrol/sample/Makefile \
-	kcontrol/keys/Makefile \
 	kcontrol/syssound/Makefile \
 	kdehelp/Makefile \
 	kdehelp/index/Makefile \
