@@ -199,7 +199,7 @@ void Desktop::activate(bool flag)
 {
     if (!flag) {
 	activeWindow = NULL;
-	setFrameStyle(Panel | Raised);
+ 	setFrameStyle(Panel | Raised);
     } else 
 	setFrameStyle(Panel | Sunken);
     

@@ -33,15 +33,12 @@
 const char *Pager::PosStrings[] = {"TopRight", "TopLeft", "BottomRight",
 				   "BottomLeft" };
 
-Pager::Pager(KWMModuleApplication *a) : QWidget(NULL,  "kwmpager",
-						WStyle_Customize | 
-						WStyle_NoBorder | 
-						WStyle_Tool) 
+Pager::Pager(KWMModuleApplication *a) : QWidget(NULL,  "kwmpager")
 {
     kwmmapp = a;
     kwmmapp -> connectToKWM();
     KWM::setSticky(winId(), true);
-    KWM::setDecoration(winId(), false);
+    KWM::setDecoration(winId(), KWM::tinyDecoration | KWM::noFocus);
 
     int count = KWM::numberOfDesktops();
     desktops.setAutoDelete(true);
@@ -142,16 +139,16 @@ void Pager::placeIt()
     QRect rect = KWM::getWindowRegion(KWM::currentDesktop());
     switch (position) {
     case TopRight:
-	KWM::move(winId(), rect.topRight() - QPoint(width(), 0));
+	KWM::move(winId(), rect.topRight() - QPoint(width(), 0) + QPoint(-4,0));
 	break;
     case TopLeft:
 	KWM::move(winId(), rect.topLeft());
 	break;
     case BottomRight:
-	KWM::move(winId(), rect.bottomRight() - QPoint(width(), height()));
+	KWM::move(winId(), rect.bottomRight() - QPoint(width(), height()) + QPoint(-4,-4));
 	break;
     case BottomLeft:
-	KWM::move(winId(), rect.bottomLeft() - QPoint(0, height()));
+	KWM::move(winId(), rect.bottomLeft() - QPoint(0, height()) + QPoint(0,-4));
 	break;
     case Costumized:
 	move(posx ,posy);
@@ -225,23 +222,23 @@ void Pager::changeNumber(int)
 void Pager::decorate()
 {
 
-    hide();
-    if ( style == Undecorated ) {
-	recreate(NULL, 0, pos());
-	KWM::setDecoration(winId(), 2);
-	KWM::setSticky(winId(), true);
-	style = Decorated;
-    } else {
-	QPoint p = KWM::geometry(winId(), false).topLeft();
-	recreate(NULL, WStyle_Customize | 
-		 WStyle_NoBorder | 
-		 WStyle_Tool, pos());
-	move(p);
-	KWM::setDecoration(winId(), false);
-	KWM::setSticky(winId(), true);
-	style = Undecorated;
-    }
-    show();	
+//     hide();
+//     if ( style == Undecorated ) {
+// 	recreate(NULL, 0, pos());
+// 	KWM::setDecoration(winId(), 2);
+// 	KWM::setSticky(winId(), true);
+// 	style = Decorated;
+//     } else {
+// 	QPoint p = KWM::geometry(winId(), false).topLeft();
+// 	recreate(NULL, WStyle_Customize | 
+// 		 WStyle_NoBorder | 
+// 		 WStyle_Tool, pos());
+// 	move(p);
+// 	KWM::setDecoration(winId(), false);
+// 	KWM::setSticky(winId(), true);
+// 	style = Undecorated;
+//     }
+//     show();	
 }
 
 void Pager::closeEvent( QCloseEvent *e)
@@ -301,8 +298,8 @@ void Pager::windowChange(Window w)
 	for (Desktop *desk = desktops.first(); desk; desk = desktops.next())
 	    desk->removeWindow(w);
 	current->addWindow(w);
-    } else
-	desktops.at(KWM::desktop(w) - 1)->changeWindow(w);
+    } 
+    desktops.at(KWM::desktop(w) - 1)->changeWindow(w);
 }
 
 void Pager::raiseWindow(Window w)
