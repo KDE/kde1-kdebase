@@ -8,9 +8,11 @@ Language[br]=Hungareg
 Language[ca]=Hongarès
 Language[cs]=Maïarskı
 Language[da]=Ungarsk
+Language[de]=Ungarisch
 Language[es]=Húngaro
 Language[fi]=Unkari
 Language[fr]=Hongrois
+Language[hr]=Mağjarski
 Language[is]=Ungverskt
 Language[it]=Ungherese
 Language[no]=Ungarsk
@@ -22,13 +24,11 @@ Language[ru]=÷ÅÎÇÅÒÓËÉÊ
 Language[sk]=Maïarskı
 Language[sl]=mad¾arsko
 Language[sv]=Ungerskt
-Language[hu]=Magyar
 
 Label=Hu2
 Locale=hu
 Charset=ISO-8859-2
 Comment=Hungarian keyboard layout for keyboards with 101 keys.
-Comment[hu]=Magyar billentyûzetkiosztás 101 gombos billentyûzetekhez.
 
 [KeyboardMap]
 keysym0=grave,iacute,Iacute,0
