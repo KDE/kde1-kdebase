@@ -160,9 +160,7 @@ void KfmIpc::parse( char *_data, int _len )
 	if ( strcmp( name, "moveClient" ) == 0 ) { parse_moveClient( _data, _len ); } else
 	if ( strcmp( name, "copyClient" ) == 0 ) { parse_copyClient( _data, _len ); } else
 	if ( strcmp( name, "sortDesktop" ) == 0 ) { parse_sortDesktop( _data, _len ); } else
-	  //CT 14Nov1998
-	  if ( strcmp( name, "showConfig" ) == 0 ) { parse_showConfig( _data, _len ); } else
-	    //CT
+        if ( strcmp( name, "configure" ) == 0 ) { parse_configure( _data, _len ); } else
 	if ( strcmp( name, "auth" ) == 0 ) { parse_auth( _data, _len ); } else
 	if ( strcmp( name, "selectRootIcons" ) == 0 ) { parse_selectRootIcons( _data, _len ); } else
 		return;

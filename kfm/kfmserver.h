@@ -23,7 +23,7 @@ public slots:
     void slotRefreshDirectory( const char* _url );
     void slotOpenURL( const char* _url );
     void slotRefreshDesktop();
-    void slotShowConfig();//CT
+    void slotConfigure();
     void slotExec( const char *_url, const char *_binding );
     void slotMoveClients( const char *_src_urls, const char *_dest_url );
     void slotCopyClients( const char *_src_urls, const char *_dest_url );

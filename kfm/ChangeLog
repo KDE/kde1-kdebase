@@ -1,3 +1,8 @@
+1998-12-07  David Faure  <faure@kde.org>
+
+	* Delete showConfigUI from kfmclient options. Added configure
+	instead. Will be used to re-read KFM configuration. Still todo.
+	
 1998-12-03  David Faure  <faure@kde.org>
 
 	* kfmgui.cpp : Added Go menu, with up/back/forward/home and the last 10 history URLs.
