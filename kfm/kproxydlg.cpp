@@ -13,8 +13,8 @@ KProxyDlg::KProxyDlg(QWidget *parent, const char *name, WFlags f)
   lb_info = new QLabel( klocale->translate("Don't forget to save your settings!"), this);
   lb_info->setGeometry(20, 20, 360, 30);
   
-  cb_useProxy = new QCheckBox( "Use proxy", this );
-  cb_useProxy->setGeometry( 20, 70, 80, 30 );
+  cb_useProxy = new QCheckBox( klocale->translate("Use proxy"), this );
+  cb_useProxy->setGeometry( 20, 70, 140, 30 );
   connect( cb_useProxy, SIGNAL( clicked() ), SLOT( changeProxy() ) );
   
   lb_http_url = new QLabel("HTTP Proxy:", this);
