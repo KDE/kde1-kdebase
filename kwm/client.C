@@ -955,7 +955,7 @@ void Client::paintEvent( QPaintEvent* e){
     x = w1;
     while (1){
       if (pm.width() < width()-w2-x){
-	p.drawPixmap(x,BORDER-options.shapePixmapTop->height()-1,
+	p.drawPixmap(x,BORDER-pm.height()-1,
 		     pm);
 	x += pm.width();
       }
@@ -984,7 +984,7 @@ void Client::paintEvent( QPaintEvent* e){
 	x += pm.width();
       }
       else {
-	p.drawPixmap(x,height()-BORDER,pm,
+	p.drawPixmap(x,height()-BORDER+1,pm,
 		     0,0,width()-w4-x,pm.height());
 	break;
       }
