@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kpanel\n"
-"POT-Creation-Date: 1998-10-13 13:29+0200\n"
+"POT-Creation-Date: 1998-10-19 19:22+0200\n"
 "PO-Revision-Date: 1998-02-27 12:35+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -13,43 +13,43 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kpanel.C:232
+#: kpanel.C:274
 msgid "Move"
 msgstr "Flytt"
 
-#: kpanel.C:272
+#: kpanel.C:314
 msgid "Go!"
 msgstr "Sett igang!"
 
-#: kpanel.C:275 tools.C:828
+#: kpanel.C:317 tools.C:826
 msgid "Where do you want to go tomorrow?"
 msgstr "Hvor vil du dra i morgen?"
 
-#: kpanel.C:349
+#: kpanel.C:392
 msgid "No info available"
 msgstr "Ingen informasjon tilgjengelig"
 
-#: kpanel.C:388 props.C:173 props.C:174
+#: kpanel.C:431 props.C:173 props.C:174
 msgid "Logout"
 msgstr "Logg ut"
 
-#: kpanel.C:396 props.C:172
+#: kpanel.C:439 props.C:172
 msgid "Lock screen"
 msgstr "Lås skjerm"
 
-#: kpanel.C:405 kpanel.C:414
+#: kpanel.C:448 kpanel.C:457
 msgid "Hide the panel"
 msgstr "Skjul panelet"
 
-#: kpanel.C:424 kpanel.C:436
+#: kpanel.C:467 kpanel.C:479
 msgid "Show the panel"
 msgstr "Vis panelet"
 
-#: kpanel.C:1159 tools.C:658
+#: kpanel.C:1219 tools.C:656
 msgid "No comment available"
 msgstr "Ingen kommentar tilgjengelig"
 
-#: kpanel.C:1168 tools.C:837
+#: kpanel.C:1228 tools.C:835
 msgid "Windowlist"
 msgstr "Vindusliste"
 
@@ -69,7 +69,7 @@ msgstr "Tilføy vindusliste"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Tilføy en vindusliste meny til panelet"
 
-#: events.C:772 props.C:149
+#: events.C:786 props.C:149
 msgid "Configure"
 msgstr "Konfigurer"
 
@@ -85,7 +85,7 @@ msgstr "Redigere menyer"
 msgid "Add or remove applications in the menu structure "
 msgstr "Legg til eller fjerne applikasjoner i meny-strukturen "
 
-#: events.C:774 props.C:155
+#: events.C:788 props.C:155
 msgid "Restart"
 msgstr "Omstart"
 
@@ -109,11 +109,19 @@ msgstr "Lås skjerm"
 msgid "The menu editor is not installed."
 msgstr "Meny-editoren er ikke installert."
 
-#: events.C:810 props.C:400
+#: events.C:826 props.C:400
 msgid "Oops!"
 msgstr "Ops!"
 
-#: events.C:809
+#: tools.C:617
+msgid ""
+"\n"
+"%b %d"
+msgstr ""
+"\n"
+"%d. %b"
+
+#: events.C:825
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kan ikke putte denne knappen på panelet!"
 
@@ -137,8 +145,18 @@ msgstr "(Uleslig)"
 msgid "Open Folder"
 msgstr "Åpne mappe"
 
-#~ msgid "KFM Information"
-#~ msgstr "KFM Informasjon"
+#: pfilemenu.C:668
+msgid "Global:"
+msgstr "Global:"
 
-#~ msgid "Creating directory:\n"
-#~ msgstr "Lager katalog:\n"
+#: pfilemenu.C:687
+msgid "Local:"
+msgstr "Lokal:"
+
+#: pfilemenu.C:705
+msgid "Recent:"
+msgstr "Nylig:"
+
+#: pfilemenu.C:751
+msgid "Options..."
+msgstr "Valg..."
