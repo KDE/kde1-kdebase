@@ -1,0 +1,10 @@
+# KDE Config File
+[KDE Desktop Entry]
+Name=Internet
+Name[eo]=Interreto
+Name[is]=NetiП
+Name[no]=Internett
+Name[ru]=Интернет
+SortOrder=xftp.kdelnk
+Icon=network_package.xpm
+MiniIcon=network_package.xpm
