@@ -51,10 +51,8 @@ void myFrame::enterEvent(QEvent *){
   hideTimer->start(hide_delay, true);
   if (!autoHidden)
     return;
-  raise();
   autoHidden = false;
   emit showMe();
-  KWM::sendKWMCommand("moduleRaised");
 }
 
 void myFrame::hideTimerDone(){
@@ -62,7 +60,7 @@ void myFrame::hideTimerDone(){
     return;
   bool do_hide = true;
   // check for popups
-  if (!QApplication::activePopupWidget() && 
+  if (!QApplication::activePopupWidget() &&
       !QApplication::widgetAt(QCursor::pos()) &&
       XGrabPointer(qt_xdisplay(), qt_xrootwin(), False,
 		   ButtonPressMask | ButtonReleaseMask |
@@ -100,7 +98,6 @@ void kPanel::showTaskbar(){
 void kPanel::hideTaskbar(){
   if (in_animation)
       return;
-  raise();
   doGeometry(TRUE);
   animateMove(taskbar_frame,
 	      taskbar_frame_geometry.x(),
@@ -108,7 +105,6 @@ void kPanel::hideTaskbar(){
 	      taskbar_position == bottom?autoHideTaskbarSpeed:
 	                          -autoHideTaskbarSpeed);
   doGeometry();
-  KWM::sendKWMCommand("moduleRaised");
 }
 
 
@@ -123,6 +119,26 @@ void kPanel::kwmInit(){
 	layoutTaskbar();
 	doGeometry();
     }
+    
+    // tell kwm to keep the panel raised. This will move into libkdecore after KDE-1.1
+    {
+	XEvent ev;
+	long mask;
+	
+	memset(&ev, 0, sizeof(ev));
+	ev.xclient.type = ClientMessage;
+	ev.xclient.window = qt_xrootwin();
+	ev.xclient.message_type = XInternAtom(qt_xdisplay(), "KWM_KEEP_ON_TOP", False);
+	ev.xclient.format = 32;
+	ev.xclient.data.l[0] = (long)winId();
+	ev.xclient.data.l[1] = CurrentTime;
+	mask = SubstructureRedirectMask;
+	XSendEvent(qt_xdisplay(), qt_xrootwin(), False, mask, &ev);
+	ev.xclient.data.l[0] = (long)taskbar_frame->winId();
+	XSendEvent(qt_xdisplay(), qt_xrootwin(), False, mask, &ev);
+    }
+
+    
 }
 
 
@@ -145,7 +161,7 @@ void kPanel::windowAdd(Window w){
 		return;
 	}
     }
-    
+
 //     // ignore dialog windows
 //     XWMHints *hints = XGetWMHints(qt_xdisplay(), w);
 //     if (hints && (hints->flags & WindowGroupHint) ) {
@@ -286,6 +302,14 @@ void kPanel::windowRaise(Window /* w */){
     panel_button_frame_standalone->raise();
   if (panel_button_frame_standalone2->isVisible())
     panel_button_frame_standalone2->raise();
+  
+  
+//   Window* new_stack = new Window[2];
+//   new_stack[0] = winId();
+//   new_stack[1] = taskbar_frame->winId();
+//   XRaiseWindow(qt_xdisplay(), new_stack[0]);
+//   XRestackWindows(qt_xdisplay(), new_stack, 2);
+//   delete [] new_stack;
 }
 
 
@@ -736,7 +760,6 @@ void kPanel::enterEvent( QEvent *){
   }
   if (!autoHidden)
     return;
-  raise();
   if (orientation == horizontal){
     if (position == top_left)
       animateMove (this, 0,0,4*autoHideSpeed);
@@ -750,13 +773,9 @@ void kPanel::enterEvent( QEvent *){
       animateMove (this, QApplication::desktop()->width()-width(),0, -4*autoHideSpeed);
 
   }
-  if (taskbar_frame->isVisible()){
-    taskbar_frame->raise();
-  }
   autoHidden = false;
   doGeometry();
   layoutTaskbar();
-  KWM::sendKWMCommand("moduleRaised");
 }
 void kPanel::leaveEvent( QEvent * ){
 }
@@ -770,7 +789,7 @@ void kPanel::hideTimerDone(){
 
 
   // check for popups
-  if (!QApplication::activePopupWidget() && 
+  if (!QApplication::activePopupWidget() &&
       !QApplication::widgetAt(QCursor::pos()) &&
       XGrabPointer(qt_xdisplay(), qt_xrootwin(), False,
 		   ButtonPressMask | ButtonReleaseMask |
@@ -825,8 +844,6 @@ void kPanel::standalonePanelButton2Clicked(){
 }
 
 void kPanel::mousePressEvent( QMouseEvent*  ev  ){
-  raise();
-  KWM::sendKWMCommand("moduleRaised");
   if (ev->button() == RightButton){
     QPopupMenu* p = new QPopupMenu();
     p->insertItem(klocale->translate("Configure"),

@@ -888,6 +888,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 		      KWM::getDesktopName(i+1));
     }
 
+    
     initing = false;
 }
 
@@ -1288,7 +1289,6 @@ void kPanel::launchSwallowedApplications(){
 void kPanel::show(){
   if (!panelCurrentlyHidden) {
      QFrame::show();
-     QFrame::raise();
     }
   else {
       if (panelCurrentlyLeft) {
@@ -1307,9 +1307,7 @@ void kPanel::show(){
   if (taskbar_position != hidden)
    {
     taskbar_frame->show();
-    taskbar_frame->raise();
    }
-  KWM::sendKWMCommand("moduleRaised");
 }
 
 void kPanel::showPanel()
@@ -1527,7 +1525,6 @@ void kPanel::showPanelFromLeft( bool smooth){
 
   if (panelCurrentlyHidden){
     panelCurrentlyHidden = False;
-    raise();
 
     QRect geom = geometry();
     in_animation = true;
@@ -1573,7 +1570,6 @@ void kPanel::showPanelFromLeft( bool smooth){
     config->writeEntry("PanelHidden", a);
     config->sync();
   }
-  KWM::sendKWMCommand("moduleRaised");
 }
 
 void kPanel::showPanelFromRight(bool smooth){
@@ -1588,7 +1584,6 @@ void kPanel::showPanelFromRight(bool smooth){
 
   if (panelCurrentlyHidden){
     panelCurrentlyHidden = False;
-    raise();
 
     QRect geom = geometry();
     in_animation = true;
@@ -1634,7 +1629,6 @@ void kPanel::showPanelFromRight(bool smooth){
     config->writeEntry("PanelHidden", a);
     config->sync();
   }
-  KWM::sendKWMCommand("moduleRaised");
 }
 
 
