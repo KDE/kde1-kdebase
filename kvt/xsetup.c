@@ -753,7 +753,8 @@ void LoadNewFont(){
   XResizeWindow(display, main_win, w, h);
   MyWinInfo.pwidth = MyWinInfo.cwidth*MyWinInfo.fwidth;
   MyWinInfo.pheight = MyWinInfo.cheight*MyWinInfo.fheight;
-  XClearWindow(display,vt_win);
+/*  XClearWindow(display,vt_win);*/
+  XClearArea(display, vt_win, 0, 0, w, h, True);
   XSync(display,0); 
 }
 

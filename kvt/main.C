@@ -199,28 +199,102 @@ char* kvt_get_selection(){
   return (char*) QApplication::clipboard()->text();
 }
 
+int kvt_find_font(const char *name, int ptsz, char *ret)
+{
+	char **fontNames;
+	int    count, score = 99999, ptscore = 0, gfpts = 0, pos;
+	char   buf[32];
+	QString data;
+
+	fontNames = XListFonts(QPaintDevice::x__Display(), (char*)name,
+		1024, &count);
+// printf("Query for [%s] size %d returned %d fonts\n", name, ptsz, count);
+	score = 99999; ptscore = 0;
+	for (int i = 0; i < count; ++i) {
+		// find out point size from font name
+		int sc1, fsz, fpts;
+		const char *p = fontNames[i];
+		int dashcnt = 7;
+		while (*p && dashcnt) {
+			if (*p == '-') dashcnt--;
+			p++;
+		}
+		sscanf(p, "%d-%d-", &fsz, &fpts);
+		sc1 = (fsz - ptsz) * 10;
+		if (sc1 < 0) sc1 = -sc1 + 5;
+// printf("Examine: [%s], size: %d, score: %d\n", fontNames[i], fsz, sc1);
+		if (sc1 < score || (sc1 == score && ptsz > ptscore)) {
+			ptscore = ptsz;
+			score = sc1;
+			gfpts = fpts;
+			data = fontNames[i];
+		}
+	}
+	XFreeFontNames(fontNames);
+/*
+	// now remove ptsize from font name and retry
+	sprintf(buf, "-%d-", gfpts);
+	pos = data.find(buf);
+	if (pos >= 0) {
+		data.replace(pos, strlen(buf), "-*-");
+	}
+	fontNames = XListFonts(QPaintDevice::x__Display(), (const char*)data,
+		1024, &count);
+// printf("Query for [%s] size %d returned %d fonts\n", (const char*) data, ptsz, count);
+	for (int i = 0; i < count; ++i) {
+		// find out point size from font name
+		int sc1, fsz, fpts;
+		const char *p = fontNames[i];
+		int dashcnt = 7;
+		while (*p && dashcnt) {
+			if (*p == '-') dashcnt--;
+			p++;
+		}
+		sscanf(p, "%d-%d-", &fsz, &fpts);
+		sc1 = (fsz - ptsz) * 10;
+		if (sc1 < 0) sc1 = -sc1 + 5;
+// printf("Examine: [%s], size: %d, score: %d\n", fontNames[i], fsz, sc1);
+		if (sc1 < score || (sc1 == score && ptsz > ptscore)) {
+			ptscore = ptsz;
+			score = sc1;
+			data = fontNames[i];
+		}
+	}
+	XFreeFontNames(fontNames);
+*/
+	strcpy(ret, (const char*) data);
+// printf("Return [%s], score: %d\n", ret, score);
+	return score;
+}
+
 int kvt_get_font_handle(QFont *fnt)
 {
 	if (qt_font_hack && strcmp(fnt->family(), "fixed") == 0
 	    && (fnt->charSet() == QFont::ISO_8859_1
 		|| fnt->charSet() == QFont::ISO_8859_2)) {
 		// change font name
-		char buf[256];
+		char buf1[256], buf2[256], buf3[256], buf4[256];
 		int chset = (fnt->charSet() == QFont::ISO_8859_1)?1:2;
-		sprintf(buf, "-*-fixed-%s-r-semicondensed-*-%d-*-75-75-*-*-"
+		int score1, score2;
+
+		sprintf(buf1, "-*-fixed-%s-r-semicondensed-*-*-*-*-*-*-*-"
 			"iso8859-%d",
 			(fnt->weight() >= QFont::Bold)?"bold":"medium",
-			fnt->pointSize(), chset);
-		fnt->setFamily(buf);
-		fnt->setRawMode(true);
-		if (!fnt->exactMatch()) {
-			sprintf(buf, "-*-fixed-%s-r-normal-*-%d-*-75-75-*-*-"
-				"iso8859-%d",
-				(fnt->weight() >= QFont::Bold)?"bold":"medium",
-				fnt->pointSize(), chset);
-			fnt->setFamily(buf);
-			fnt->setRawMode(true);
+			chset);
+		sprintf(buf2, "-*-fixed-%s-r-normal-*-*-*-*-*-*-*-"
+			"iso8859-%d",
+			(fnt->weight() >= QFont::Bold)?"bold":"medium",
+			chset);
+		
+		score1 = kvt_find_font(buf1, fnt->pointSize(), buf3);
+		score2 = kvt_find_font(buf2, fnt->pointSize(), buf4);
+
+		if (score1 <= score2) {
+			fnt->setFamily(buf3);
+		} else {
+			fnt->setFamily(buf4);
 		}
+		fnt->setRawMode(true);
 	}
 	return fnt->handle();
 }
@@ -602,7 +676,8 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
 
     QString at = KVT_VERSION;
     at += i18n("\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
-	       "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n\n"
+	       "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+	       "(C) 1998 Ivan Schreter (schreter@kdk.sk)\n\n"
 	       "Terminal emulation for the KDE Desktop Environment\n"
 	       "based on Robert Nation's rxvt-2.08");
 		       
