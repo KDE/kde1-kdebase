@@ -601,6 +601,7 @@ void KScreenSaver::slotScreenSaver( int indx )
 {
 	if ( indx == 0 )
 	{
+		saverFile.detach();
 		saverFile.sprintf( i18n("No screensaver") );
 		setupBt->setEnabled( FALSE );
 		testBt->setEnabled( FALSE );
