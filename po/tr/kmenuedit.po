@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -37,15 +37,15 @@ msgstr ""
 "\n"
 "Deðiþikliklerinizi kaydetmek istiyor musunuz?"
 
-#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:260
 msgid "EMPTY"
 msgstr "Boþ"
 
-#: kmenuedit.cpp:335
+#: kmenuedit.cpp:339
 msgid "Reload Menus"
 msgstr "Menüleri Yükle"
 
-#: kmenuedit.cpp:336
+#: kmenuedit.cpp:340
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -53,11 +53,11 @@ msgstr ""
 "Menüleri yeniden yüklemek deðiþikliklerinizi\n"
 "iptal edecektir. Geri yüklemek istiyor musunuz?"
 
-#: button.cpp:209 main.cpp:78 main.cpp:91
+#: button.cpp:209 main.cpp:79 main.cpp:92
 msgid "KMenuedit"
 msgstr "KMenuedit"
 
-#: main.cpp:79
+#: main.cpp:80
 msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
@@ -65,7 +65,7 @@ msgstr ""
 "Kiþisel menüleriniz için dizin mevcut deðil.\n"
 "Þimdi yaratýlsýn mý?"
 
-#: main.cpp:92
+#: main.cpp:93
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
@@ -77,7 +77,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Ayýraç"
 
-#: confmenu.cpp:102 confmenu.cpp:317
+#: confmenu.cpp:102 confmenu.cpp:316
 msgid "Open/ Close"
 msgstr "Aç/ Kapa"
 
@@ -85,7 +85,11 @@ msgstr "Aç/ Kapa"
 msgid "! PROTECTED Button !"
 msgstr "! Korunmuþ Tuþ !"
 
-#: confmenu.cpp:171 confmenu.cpp:300
+#: confmenu.cpp:115
+msgid "New"
+msgstr ""
+
+#: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"
 msgstr "Uyarý !"
 
@@ -93,11 +97,11 @@ msgstr "Uyarý !"
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Bu tuþu silerseniz tüm alt menüleri kaybedeceksiniz"
 
-#: confmenu.cpp:281
+#: confmenu.cpp:280
 msgid "Wrong filename"
 msgstr "Yanlýþ dosya adý"
 
-#: confmenu.cpp:282
+#: confmenu.cpp:281
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -105,11 +109,11 @@ msgstr ""
 "Bu isimde bir kdelnk dosyasý zaten var.\n"
 "Lütfen farklý bir ad seçiniz."
 
-#: confmenu.cpp:301
+#: confmenu.cpp:300
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Bu tuþun türünü deðiþtirmek ile bütün alt menüleri yok edeceksiniz"
 
-#: confmenu.cpp:322 confmenu.cpp:911
+#: confmenu.cpp:321 confmenu.cpp:909
 msgid "no command"
 msgstr "Komut yok"
 
@@ -154,12 +158,22 @@ msgstr "Yut"
 msgid "Link"
 msgstr "Bað"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
 msgid "Device"
 msgstr "Aygýt"
 
+#: entrydialog.cpp:63
+#, fuzzy
+msgid "Type:"
+msgstr "Dosya Sistemi:"
+
 #: entrydialog.cpp:69
 msgid "File Name:"
+msgstr "Dosya Adý:"
+
+#: entrydialog.cpp:82
+#, fuzzy
+msgid "Name:"
 msgstr "Dosya Adý:"
 
 #: entrydialog.cpp:95

@@ -2,15 +2,15 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1ç0\n"
-"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"POT-Creation-Date: 1998-11-18 13:15+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -18,234 +18,183 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ISO 8859-9\n"
 
-#: kfmgui.cpp:257
+#: kfmgui.cpp:203
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:933 kbind.cpp:945 kbind.cpp:955 kfmgui.cpp:269 kfmgui.cpp:969
+#: kbind.cpp:932 kbind.cpp:944 kbind.cpp:954 kfmgui.cpp:215 kfmgui.cpp:999
 msgid "Folder"
 msgstr "Dizin"
 
-#: kfmgui.cpp:280
+#: kfmgui.cpp:226
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "HATA: '%s' geçicisi yok"
 
-#: kfmgui.cpp:309
+#: kfmgui.cpp:250
+#, fuzzy
+msgid "&New"
+msgstr "Yeni"
+
+#: kfmgui.cpp:255
 msgid "&Run..."
 msgstr "&Çalýþtýr..."
 
-#: kfmgui.cpp:311
+#: kfmgui.cpp:257
 msgid "Open &Terminal"
 msgstr "&Uçbirim Aç"
 
-#: kfmgui.cpp:314
+#: kfmgui.cpp:260
 msgid "&Open Location..."
 msgstr "&Konumu Aç..."
 
-#: kfmgui.cpp:316
+#: finddlg.cpp:66 kfmgui.cpp:262
 msgid "&Find"
 msgstr "&Bul"
 
-#: kfmgui.cpp:324
-msgid "&Quit..."
-msgstr "Ç&ýkýþ..."
-
-#: kfmgui.cpp:333
+#: kfmgui.cpp:280
 msgid "&Move to Trash"
 msgstr "Çöpe &Yürüt"
 
-#: kfmgui.cpp:338
+#: kfmgui.cpp:285
 msgid "&Select"
 msgstr "&Seç"
 
-#: kfmgui.cpp:342
+#: kfmgui.cpp:287
+#, fuzzy
+msgid "Select &all"
+msgstr "&Seç"
+
+#: kfmgui.cpp:290
+msgid "&Find in page..."
+msgstr ""
+
+#: kfmgui.cpp:292
+msgid "Find &next"
+msgstr ""
+
+#: kfmgui.cpp:295
 msgid "Mime Types"
 msgstr "Mime Türleri"
 
-#: kfmgui.cpp:344
+#: kfmgui.cpp:297
 msgid "Applications"
 msgstr "Uygulamalar"
 
-#: kfmgui.cpp:350
+#: kfmgui.cpp:303
 msgid "Global Mime Types"
 msgstr "Genel Mime Türleri"
 
-#: kfmgui.cpp:352
+#: kfmgui.cpp:305
 msgid "Global Applications"
 msgstr "Genel Uygulamalar"
 
-#: kfmgui.cpp:359
+#: kfmgui.cpp:312
 msgid "Show &Dot Files"
 msgstr "&Nokta Dosyalarý Göster"
 
-#: kfmgui.cpp:361
+#: kfmgui.cpp:314
 msgid "Show Tr&ee"
 msgstr "&Aðacý Göster"
 
-#: kfmgui.cpp:363
+#: kfmgui.cpp:316
 msgid "&Visual Schnauzer"
 msgstr "&Tarama Birimi"
 
-#: kfmgui.cpp:365
+#: kfmgui.cpp:318
 msgid "&HTML View"
 msgstr "&HTML Görüntüsü"
 
-#: kfmgui.cpp:368
+#: kfmgui.cpp:321
 msgid "&Icon View"
 msgstr "S&imge Görüntüsü"
 
-#: kfmgui.cpp:370
+#: kfmgui.cpp:323
 msgid "&Text View"
 msgstr "&Metin Görüntüsü"
 
-#: kfmgui.cpp:372
+#: kfmgui.cpp:325
 msgid "&Long View"
 msgstr "&Uzun Bakýþ"
 
-#: kfmgui.cpp:374
+#: kfmgui.cpp:327
 msgid "&Short View"
 msgstr "&Kýsa Bakýþ"
 
-#: kfmgui.cpp:380
+#: kfmgui.cpp:333
 msgid "Rel&oad Tree"
 msgstr "Aðacý Yeniden &Yükle"
 
-#: kfmgui.cpp:382
+#: kfmgui.cpp:335
 msgid "&Reload Document"
 msgstr "&Dosyayý Yeniden Yükle"
 
-#: kfmgui.cpp:384
+#: kfmgui.cpp:337
 msgid "Rescan &bindings"
 msgstr "&Baðdaþtýrmalarý Yeniden Tara"
 
-#: kfmgui.cpp:387
+#: kfmgui.cpp:340
 msgid "&View Frame Source"
 msgstr "&Frame Koduna Bak"
 
-#: kfmgui.cpp:389
+#: kfmgui.cpp:342
 msgid "View Docu&ment Source"
 msgstr "B&elge Koduna Bak"
 
-#: kfmgui.cpp:400
+#: kfmgui.cpp:353
 msgid "Show History"
 msgstr "Geçmiþi Göster"
 
-#: kfmgui.cpp:402
+#: kfmgui.cpp:355
 msgid "Show Cache"
 msgstr "Arabelleði Göster"
 
-#: kfmgui.cpp:404
+#: kfmgui.cpp:357
 msgid "Clear Cache"
 msgstr "Arabelleði Temizle"
 
-#: kfmgui.cpp:407
+#: kfmgui.cpp:360
 msgid "Always look in cache"
 msgstr "Herzaman arabelleðe bak"
 
-#: kfmgui.cpp:409
+#: kfmgui.cpp:362
 msgid "Never look in cache"
 msgstr "Arabelleðe bakma"
 
-#: kfmgui.cpp:411
+#: kfmgui.cpp:364
 msgid "Always save cache"
 msgstr "Herzaman arabelleði sakla"
 
-#: kfmgui.cpp:413
+#: kfmgui.cpp:366
 msgid "Never save cache"
 msgstr "Asla arabelleði saklama"
 
-#: kfmgui.cpp:424
+#: kfmgui.cpp:377
 msgid "Show &Menubar"
 msgstr "&Menü Çubuðunu Göster"
 
-#: kfmgui.cpp:426
+#: kfmgui.cpp:379
 msgid "Show &Statusbar"
 msgstr "&Durum Çubuðunu Göster"
 
-#: kfmgui.cpp:428
+#: kfmgui.cpp:381
 msgid "Show &Toolbar"
 msgstr "&Araç Çubuðunu Göster"
 
-#: kfmgui.cpp:430
+#: kfmgui.cpp:383
 msgid "Show &Location bar"
 msgstr "&Konum Çubuðunu Göster"
 
-#: kfmgui.cpp:433
+#: kfmgui.cpp:386
 msgid "Sa&ve Settings"
 msgstr "Ayarlarý Ka&ydet"
 
-#: kfmgui.cpp:435
+#: kfmgui.cpp:392
 msgid "Configure Browser..."
 msgstr "Tarayýcýyý Ayarla..."
 
-#: kfmgui.cpp:478
-msgid "&About..."
-msgstr "&Hakkýnda..."
-
-#: kfmgui.cpp:488
-msgid "&Bookmarks"
-msgstr "&Adresler"
-
-#: kfmgui.cpp:489
-msgid "&Cache"
-msgstr "&Arabellek"
-
-#: kfmgui.cpp:516 kfmman.cpp:1050
-msgid "Up"
-msgstr "Yukarý"
-
-#: kfmgui.cpp:588
-msgid "Could not load icon\n"
-msgstr "Simge yüklenemedi\n"
-
-#: kfmexec.cpp:59 kfmgui.cpp:744 kfmman.cpp:1020
-msgid "Malformed URL\n"
-msgstr "Yetersiz URL\n"
-
-#: kfmgui.cpp:904
-msgid "Select files:"
-msgstr "Dosyalarý Seçiniz:"
-
-#: kfmgui.cpp:921
-msgid "&Edit Bookmarks..."
-msgstr "Adreslerle &Oyna..."
-
-#: kfmgui.cpp:931
-msgid "&Add Bookmark"
-msgstr "Adreslere &Ekle"
-
-#: kfmgui.cpp:961 kfmgui.cpp:968
-msgid "New "
-msgstr "Yeni"
-
-#: kfmgui.cpp:1058 kfmgui.cpp:1220 kfmjob.cpp:33 kfmman.cpp:218
-#: kfmtree.cpp:318 kfmview.cpp:375 kfmview.cpp:444 kfmview.cpp:575
-#: kiojob.cpp:83 root.cpp:1117
-msgid "ERROR: Malformed URL"
-msgstr "HATA: Yetersiz URL"
-
-#: kfmgui.cpp:1174 kfmserver.cpp:178
-msgid "Open Location:"
-msgstr "Konumu Aç:"
-
-#: kfmgui.cpp:1230
-msgid "KFM Confirm"
-msgstr "KFM Onayý"
-
-#: kfmgui.cpp:1231
-msgid ""
-"Do you really want to quit?\n"
-"Important desktop functionality will be lost"
-msgstr ""
-"Gerçekten çýkmak mý istiyorsunuz?\n"
-"Masaüstünün önemli iþlevlerini kaybedeceksiniz"
-
-#: kfmgui.cpp:1261
-msgid "About KFM"
-msgstr "KFM Hakkýnda"
-
-#: kfmgui.cpp:1262
+#: kfmgui.cpp:437
+#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -254,7 +203,10 @@ msgid ""
 "mjones@kde.org\n"
 "\n"
 "Proxy Manager by Lars Hoss\n"
-"Lars.Hoss@munich.netsurf.de"
+"Lars.Hoss@munich.netsurf.de\n"
+"\n"
+"Bug reports and patches to David Faure\n"
+"faure@kde.org"
 msgstr ""
 "Yazar: Torben Weis\n"
 "weis@kde.org\n"
@@ -265,66 +217,184 @@ msgstr ""
 "Lars Hoss tarafýndan kukla yöneticisi\n"
 "Lars.Hoss@munich.netsurf.de"
 
-#: kfmgui.cpp:1355
+#: kfmgui.cpp:450
+msgid "&Bookmarks"
+msgstr "&Adresler"
+
+#: kfmgui.cpp:451
+msgid "&Cache"
+msgstr "&Arabellek"
+
+#: kfmgui.cpp:478 main.cpp:242
+msgid "Up"
+msgstr "Yukarý"
+
+#: kfmgui.cpp:488 main.cpp:244
+msgid "Forward"
+msgstr ""
+
+#: kfmgui.cpp:493
+#, fuzzy
+msgid "Home"
+msgstr "Baþlangýç"
+
+#: kfmgui.cpp:550
+msgid "Could not load icon\n"
+msgstr "Simge yüklenemedi\n"
+
+#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:304
+#: kbind.cpp:376 kbind.cpp:428 kbind.cpp:1545 kbind.cpp:1553 kbind.cpp:1571
+#: kbind.cpp:1588 kbind.cpp:1646 kbind.cpp:1658 kbind.cpp:1685 kbind.cpp:1700
+#: kbind.cpp:1720 kbind.cpp:1732 kbind.cpp:1748 kbind.cpp:1880 kbind.cpp:1892
+#: kbind.cpp:1937 kbind.cpp:1979 kfmexec.cpp:60 kfmexec.cpp:92
+#: kfmexec/main.cpp:47 kfmgui.cpp:551 kfmgui.cpp:707 kfmman.cpp:341
+#: kfmman.cpp:1054 kfmman.cpp:1266 kfmman.cpp:1292 kfmprops.cpp:375
+#: kfmprops.cpp:626 kfmprops.cpp:652 kfmprops.cpp:879 kfmprops.cpp:1008
+#: kfmprops.cpp:1139 kfmprops.cpp:1471 kfmprops.cpp:1703 kfmprops.cpp:1888
+#: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
+#: kfmserver.cpp:303 kfmserver.cpp:311 kfmtree.cpp:164 kfmtree.cpp:287
+#: kfmtree.cpp:318 kfmtree.cpp:324 kfmtree.cpp:330 kfmview.cpp:357
+#: kfmview.cpp:373 kfmview.cpp:392 kfmview.cpp:398 kfmview.cpp:460
+#: kfmview.cpp:466 kfmview.cpp:472 kfmview.cpp:572 kfmview.cpp:576
+#: kfmview.cpp:615 kfmview.cpp:641 kfmview.cpp:662 kfmview.cpp:670
+#: kfmview.cpp:678 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
+#: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:556
+#: kiojob.cpp:796 kiojob.cpp:827 kiojob.cpp:868 kiojob.cpp:1682
+#: krenamewin.cpp:120 root.cpp:902 root.cpp:1163 root.cpp:1181 root.cpp:1187
+#: root.cpp:1193 root.cpp:1274 root.cpp:1785 root.cpp:1810
+msgid "KFM Error"
+msgstr ""
+
+#: kfmexec.cpp:59 kfmgui.cpp:706 kfmman.cpp:1053
+msgid "Malformed URL\n"
+msgstr "Yetersiz URL\n"
+
+#: kfmgui.cpp:877
+msgid "Select files:"
+msgstr "Dosyalarý Seçiniz:"
+
+#: kfmgui.cpp:932
+msgid "Find Complete"
+msgstr ""
+
+#: kfmgui.cpp:933
+msgid "Continue search from the top of the page?"
+msgstr ""
+
+#: kfmgui.cpp:951
+msgid "&Edit Bookmarks..."
+msgstr "Adreslerle &Oyna..."
+
+#: kfmgui.cpp:961
+msgid "&Add Bookmark"
+msgstr "Adreslere &Ekle"
+
+#: kfmgui.cpp:991 kfmgui.cpp:998
+msgid "New "
+msgstr "Yeni"
+
+#: kfmgui.cpp:1088 kfmgui.cpp:1253 kfmjob.cpp:35 kfmman.cpp:224
+#: kfmtree.cpp:319 kfmview.cpp:393 kfmview.cpp:461 kfmview.cpp:663
+#: kiojob.cpp:87 root.cpp:1182
+msgid "ERROR: Malformed URL"
+msgstr "HATA: Yetersiz URL"
+
+#: kfmgui.cpp:1207 kfmserver.cpp:188
+msgid "Open Location:"
+msgstr "Konumu Aç:"
+
+#: kfmgui.cpp:1264
+msgid "KFM Confirm"
+msgstr "KFM Onayý"
+
+#: kfmgui.cpp:1265
+msgid ""
+"Do you really want to quit?\n"
+"Important desktop functionality will be lost"
+msgstr ""
+"Gerçekten çýkmak mý istiyorsunuz?\n"
+"Masaüstünün önemli iþlevlerini kaybedeceksiniz"
+
+#: kfmgui.cpp:1372
 msgid "Document: Done"
 msgstr "Belge: Tamam"
 
-#: kfmview.cpp:356
+#: kfmview.cpp:358 root.cpp:903
+#, fuzzy
+msgid "ERROR: You may only drop URLs"
+msgstr "HATA: Bir URL'yi kendi üzerine býraktýnýz"
+
+#: kfmview.cpp:374
 msgid "ERROR: Drop over malformed URL"
 msgstr "HATA: Yetersiz URL üzerine býrakýldý"
 
-#: kfmview.cpp:381
+#: kfmview.cpp:399
 msgid "ERROR: You dropped some URL over itself"
 msgstr "HATA: Bir URL'yi kendi üzerine býraktýnýz"
 
-#: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:416
-#: kfmview.cpp:610 krenamewin.cpp:20 root.cpp:1158
+#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:357 kfmview.cpp:432
+#: kfmview.cpp:706 krenamewin.cpp:20 root.cpp:1225
 msgid "KFM Warning"
 msgstr "KFM Uyarýsý"
 
-#: kfmtree.cpp:357 kfmview.cpp:417 kfmview.cpp:611 root.cpp:1159
+#: kfmtree.cpp:358 kfmview.cpp:433 kfmview.cpp:707 root.cpp:1226
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
 "There is no way to restore them."
 msgstr ""
-"Seçili dosyalarý gerçekten silmek istiyor musunuz?"
-"\n"
+"Seçili dosyalarý gerçekten silmek istiyor musunuz?\n"
 "Geri kurtarmak mümkün olmayacak."
 
-#: kfmtree.cpp:324 kfmview.cpp:450 kfmview.cpp:581 root.cpp:1123
+#: kfmtree.cpp:325 kfmview.cpp:467 kfmview.cpp:671 root.cpp:1188
 msgid "ERROR: You dropped a URL over itself"
 msgstr "HATA: Bir URL'yi kendi üzerine býraktýnýz"
 
-#: kfmtree.cpp:330 kfmview.cpp:456 kfmview.cpp:587 root.cpp:1129
+#: kfmtree.cpp:331 kfmview.cpp:473 kfmview.cpp:679 root.cpp:1194
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "HATA: Bir dizini çocuklarýndan birine býraktýnýz"
 
-#: kfmexec.cpp:254 kfmman.cpp:867 kfmview.cpp:472
+#: kfmexec.cpp:265 kfmman.cpp:907 kfmview.cpp:489
 msgid "Open With:"
 msgstr "Birlikte Aç:"
 
-#: kfmview.cpp:489 root.cpp:1068
+#: kfmview.cpp:515 root.cpp:1125
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "HATA: Birden çok dosya için özellikler açýlamýyor"
 
-#: kfmtree.cpp:287 kfmview.cpp:531 root.cpp:1204
+#: kfmview.cpp:573
+msgid ""
+"Can not save properties because\n"
+"this directory is neither writable nor bookmarked.\n"
+"\n"
+" Bookmark this location first, or make kdelnk to it on desktop."
+msgstr ""
+
+#: kfmview.cpp:577
+msgid ""
+"Can not save properties because\n"
+"this URL is neither bookmarked nor on desktop.\n"
+"\n"
+" Bookmark this location first, or make kdelnk to it on desktop."
+msgstr ""
+
+#: kfmtree.cpp:288 kfmview.cpp:616 root.cpp:1275
 msgid "Could not access Trash Bin"
 msgstr "Çöp Kutusuna ulaþýlamýyor"
 
-#: kfmview.cpp:557 root.cpp:1099
+#: kfmview.cpp:642 root.cpp:1164
 msgid "Can not paste into multiple directories"
 msgstr "Birden çok dizine yapýþtýrýlamaz"
 
-#: kfmview.cpp:643
+#: kfmview.cpp:739
 msgid "ERROR: Can not change to multiple directories"
 msgstr "HATA: Birden çok dizine deðiþtirilemez"
 
-#: kfmview.cpp:759
+#: kfmview.cpp:930
 msgid "KFM Security Alert"
 msgstr "KFM Güvenlik Uyarýsý"
 
-#: kfmview.cpp:760
+#: kfmview.cpp:931
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -332,16 +402,16 @@ msgstr ""
 "Bu sayfa güvenilir deðil\n"
 "Buna raðmen yerel sisteminize bir bað içeriyor."
 
-#: kfmview.cpp:846
+#: kfmview.cpp:1017
 msgid "Symbolic Link"
 msgstr "Sembolik Bað"
 
-#: kfmview.cpp:848
+#: kfmview.cpp:1019
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (bað)"
 
-#: kfmview.cpp:868
+#: kfmview.cpp:1039
 msgid "bytes"
 msgstr "byte"
 
@@ -357,36 +427,36 @@ msgstr "MimeType=... verisi içermiyor"
 msgid "No mime types installed!"
 msgstr "Yüklenmiþ Mime Türü yok!!"
 
-#: kbind.cpp:425 kbind.cpp:1188
+#: kbind.cpp:425 kbind.cpp:1205
 msgid "Could not find mime type\n"
 msgstr "Mime Türü bulunamadý\n"
 
-#: kbind.cpp:697 kbind.cpp:707 kbind.cpp:1889 kbind.cpp:1890 kbind.cpp:1902
-#: kbind.cpp:1904
+#: kbind.cpp:696 kbind.cpp:706 kbind.cpp:1915 kbind.cpp:1916 kbind.cpp:1928
+#: kbind.cpp:1930
 msgid "Mount"
 msgstr "Baðlama"
 
-#: kbind.cpp:713 kbind.cpp:1880
+#: kbind.cpp:712 kbind.cpp:1906
 msgid "Unmount"
 msgstr "Ayýrma"
 
-#: kbind.cpp:1187
+#: kbind.cpp:1204
 msgid "ERROR"
 msgstr "HATA"
 
-#: kbind.cpp:1188
+#: kbind.cpp:1205
 msgid "in "
 msgstr "içinde "
 
-#: kbind.cpp:1332 kbind.cpp:1418
+#: kbind.cpp:1349 kbind.cpp:1435
 msgid "Could not execute program\n"
 msgstr "Program çalýþtýrýlamýyor\n"
 
-#: kbind.cpp:1527
+#: kbind.cpp:1544
 msgid "Could not find binding"
 msgstr "Baðdaþtýrma bulunamýyor"
 
-#: kbind.cpp:1537
+#: kbind.cpp:1554
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -394,11 +464,11 @@ msgstr ""
 "Bu bir belge!\n"
 "Uygulama deðil"
 
-#: kbind.cpp:1555 kbind.cpp:1572
+#: kbind.cpp:1572 kbind.cpp:1589
 msgid "Can only start executables on local disks\n"
 msgstr "Ancak yerel diskteki progranlar çalýþtýrýlabilir\n"
 
-#: kbind.cpp:1630 kbind.cpp:1704 kbind.cpp:1855
+#: kbind.cpp:1647 kbind.cpp:1721 kbind.cpp:1881
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -406,7 +476,7 @@ msgstr ""
 "Yanlýzca yerel diskinizde *.kdelnk\n"
 "dosyalarý ile çalýþýlabilir"
 
-#: kbind.cpp:1640
+#: kbind.cpp:1657
 #, c-format
 msgid ""
 "Could not access\n"
@@ -415,19 +485,19 @@ msgstr ""
 "%s'e\n"
 "eriþilemiyor"
 
-#: kbind.cpp:1669
+#: kbind.cpp:1686
 msgid "The \"Link=....\" entry is empty"
 msgstr "\"Link=...\" verisi boþ"
 
-#: kbind.cpp:1684
+#: kbind.cpp:1701
 msgid "The config file has no \"Type=...\" line"
 msgstr "Ayar dosyasýnda \"Type\"=... satýrý yok"
 
-#: kbind.cpp:1714 kbind.cpp:1865
+#: kbind.cpp:1731 kbind.cpp:1891
 msgid "Could not access"
 msgstr "Eriþilemiyor"
 
-#: kbind.cpp:1733
+#: kbind.cpp:1749
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -439,132 +509,185 @@ msgstr ""
 "Problemi çözmek için özellikleri\n"
 "deðiþtiriniz"
 
-#: kbind.cpp:1821
+#: kbind.cpp:1847
 msgid "ERROR: No Terminal Setting"
 msgstr "HATA: Uçbirim ayarý yok"
 
-#: kbind.cpp:1912
+#: kbind.cpp:1938
 msgid "No mount point in *.kdelnk file"
 msgstr "*.kdelnk dosyasýnda baðlama noktasý yok"
 
-#: kbind.cpp:1952
+#: kbind.cpp:1978
 msgid "Unknown binding"
 msgstr "Bilinmeyen eþleme"
 
-#: main.cpp:80 main.cpp:203
+#: main.cpp:87 main.cpp:194
 msgid "KFM Information"
 msgstr "KFM Bilgisi"
 
-#: main.cpp:81
+#: main.cpp:88
 msgid "Creating directory:\n"
 msgstr "Dizin yaratýlýyor:\n"
 
-#: main.cpp:204
+#: main.cpp:195
 msgid "Installing Templates"
 msgstr "Geçiciler yükleniyor"
 
-#: main.cpp:239
+#: main.cpp:227
 msgid "Cd"
 msgstr "Cd"
 
-#: main.cpp:240
+#: main.cpp:228
 msgid "New View"
 msgstr "Yeni Bakýþ"
 
-#: kfmtree.cpp:223 main.cpp:243
+#: kfmtree.cpp:224 main.cpp:231
 msgid "Move to Trash"
 msgstr "Çöpe Yürüt"
 
-#: main.cpp:245
+#: main.cpp:233
 msgid "Open with"
 msgstr "Birlikte Aç"
 
-#: kfmman.cpp:1226 kfmtree.cpp:159 main.cpp:249
+#: kfmman.cpp:1284 kfmtree.cpp:156 main.cpp:235
+msgid "Move"
+msgstr ""
+
+#: kfmman.cpp:1288 kfmtree.cpp:160 main.cpp:237
 msgid "Link"
 msgstr "Bað"
 
-#: main.cpp:250
+#: main.cpp:238
 msgid "Empty Trash Bin"
 msgstr "Boþ Çöp Kutusu"
 
-#: main.cpp:251
+#: main.cpp:239
 msgid "Add to Bookmarks"
 msgstr "Adreslere Ekle"
 
-#: htmlopts.cpp:51
+#: main.cpp:240
+msgid "Save settings for this URL"
+msgstr ""
+
+#: main.cpp:241
+#, fuzzy
+msgid "Show Menubar"
+msgstr "&Menü Çubuðunu Göster"
+
+#: htmlopts.cpp:69
+msgid "Small"
+msgstr ""
+
+#: htmlopts.cpp:78
+msgid "Medium"
+msgstr ""
+
+#: htmlopts.cpp:87
+msgid "Large"
+msgstr ""
+
+#: htmlopts.cpp:102
 msgid "Standard Font"
 msgstr "Standart Yazýyüzü"
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:131
 msgid "Fixed Font"
 msgstr "Sabit YazýYüzü"
 
-#: htmlopts.cpp:214
+#: htmlopts.cpp:325
 msgid "Background Color:"
 msgstr "Arkaplan Rengi:"
 
-#: htmlopts.cpp:222
+#: htmlopts.cpp:344
 msgid "Normal Text Color:"
 msgstr "Normal Yazý Rengi:"
 
-#: htmlopts.cpp:230
+#: htmlopts.cpp:363
 msgid "URL Link Color:"
 msgstr "URL Baðý Rengi:"
 
-#: htmlopts.cpp:238
+#: htmlopts.cpp:382
 msgid "Followed Link Color:"
 msgstr "Ýzlenmiþ Bað Rengi:"
 
-#: htmlopts.cpp:246
+#: htmlopts.cpp:401
 msgid "Change cursor over link."
 msgstr "Bað üzerinde imleci deðiþtir."
 
-#: htmlopts.cpp:321
+#: htmlopts.cpp:412
+msgid "Underline links"
+msgstr ""
+
+#: htmlopts.cpp:529
 msgid "Horizontal Root Grid Spacing:"
 msgstr "Yatay Kök Izgaralama Aralýðý:"
 
-#: htmlopts.cpp:335
+#: htmlopts.cpp:553
 msgid "Vertical Root Grid Spacing:"
 msgstr "Düþey Kök Izgaralama Aralýðý:"
 
-#: htmlopts.cpp:349
+#: htmlopts.cpp:577
+msgid "Allow per-URL settings"
+msgstr ""
+
+#: htmlopts.cpp:585
 msgid "Transparent Text for Root Icons."
 msgstr "Ana Pencere Simgeleri için Saydam Yazý."
 
-#: bookmark.cpp:264
+#: htmlopts.cpp:599
+#, fuzzy
+msgid "Icon foreground color:"
+msgstr "Arkaplan Rengi:"
+
+#: htmlopts.cpp:611
+#, fuzzy
+msgid "Icon background color:"
+msgstr "Arkaplan Rengi:"
+
+#: kfmdlg.cpp:114
+#, fuzzy
+msgid "&Browser"
+msgstr "Tara"
+
+#: bookmark.cpp:296
 msgid "Could not write bookmark"
 msgstr "Adreslere yazýlamýyor"
 
-#: kfmprops.cpp:242
+#: kfmprops.cpp:236
+#, fuzzy
+msgid "File Name"
+msgstr "Tam Adý"
+
+#: kfmprops.cpp:251
 msgid "Full Name"
 msgstr "Tam Adý"
 
-#: kfmprops.cpp:260
+#: kfmprops.cpp:268
 msgid "Is the Trash Bin"
 msgstr "Çöp Kutusu"
 
-#: kfmprops.cpp:267
+#: kfmprops.cpp:275
 msgid "Is a Directory"
 msgstr "Dizin"
 
-#: kfmprops.cpp:274
+#: kfmprops.cpp:282
 msgid "Points to"
 msgstr "Ýþaret ediyor:"
 
-#: kfmprops.cpp:299
+#: kfmprops.cpp:307
 #, c-format
 msgid "Size: %i"
 msgstr "Boyut: %i"
 
-#: kfmprops.cpp:309
+#: kfmprops.cpp:317
 msgid "Last Access"
 msgstr "Son Eriþim"
 
-#: kfmprops.cpp:319
+#: kfmprops.cpp:327
 msgid "Last Modified"
 msgstr "Son Deðiþim"
 
-#: kfmprops.cpp:368
+#: kfmprops.cpp:376
 msgid ""
 "Could not rename the file or directory\n"
 "The destination seems to already exist\n"
@@ -572,11 +695,11 @@ msgstr ""
 "Dosya yada dizin yeniden adlandýrýlamýyor\n"
 "Hedef zaten var\n"
 
-#: kfmprops.cpp:416
+#: kfmprops.cpp:424
 msgid "Access permissions"
 msgstr "Eriþim haklarý"
 
-#: kfmprops.cpp:422
+#: kfmprops.cpp:430
 msgid ""
 "Show\n"
 "Entries"
@@ -584,11 +707,11 @@ msgstr ""
 "Girdileri\n"
 "Göster"
 
-#: kfmprops.cpp:424
+#: kfmprops.cpp:432
 msgid "Read"
 msgstr "Oku"
 
-#: kfmprops.cpp:429
+#: kfmprops.cpp:437
 msgid ""
 "Write\n"
 "Entries"
@@ -596,11 +719,11 @@ msgstr ""
 "Girdileri\n"
 "Yaz"
 
-#: kfmprops.cpp:431
+#: kfmprops.cpp:439
 msgid "Write"
 msgstr "Yaz"
 
-#: kfmprops.cpp:436
+#: kfmprops.cpp:444
 msgid ""
 "Change\n"
 "Into"
@@ -608,39 +731,48 @@ msgstr ""
 "'a\n"
 "Deðiþtir"
 
-#: kfmprops.cpp:438
+#: kfmprops.cpp:446
 msgid "Exec"
 msgstr "Çalýþtýr"
 
-#: kfmprops.cpp:442
+#: kfmprops.cpp:450
 msgid "Special"
 msgstr "Özel"
 
-#: kfmprops.cpp:446
+#: kfmprops.cpp:454
 msgid "User"
 msgstr "Kullanýcý"
 
-#: kfmprops.cpp:456
+#: kfmprops.cpp:459 kfmprops.cpp:558
+msgid "Group"
+msgstr ""
+
+#: kfmprops.cpp:464
 msgid "Others"
 msgstr "Diðerleri"
 
-#: kfmprops.cpp:469
+#: kfmprops.cpp:477
 msgid "Set UID"
 msgstr "UID Belirle"
 
-#: kfmprops.cpp:470
+#: kfmprops.cpp:478
 msgid "Set GID"
 msgstr "GID Belirle"
 
-#: kfmprops.cpp:471
+#: kfmprops.cpp:479
 msgid "Sticky"
 msgstr "Sticky"
 
-#: kfmprops.cpp:489
+#: kfmprops.cpp:497
 msgid "Ownership"
 msgstr "Sahibi"
 
-#: kfmprops.cpp:619
+#: kfmprops.cpp:503
+#, fuzzy
+msgid "Owner"
+msgstr "Sahibi"
+
+#: kfmprops.cpp:627
 msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
@@ -648,17 +780,17 @@ msgstr ""
 "Eriþim haklarý deðiþtirilemiyor\n"
 "Büyük ihtimalle eriþim yasak."
 
-#: kfmprops.cpp:634
+#: kfmprops.cpp:642
 #, c-format
 msgid " ERROR: No user %s"
 msgstr " HATA: %s kullanýcýsý yok"
 
-#: kfmprops.cpp:639
+#: kfmprops.cpp:647
 #, c-format
 msgid " ERROR: No group %s"
 msgstr " HATA: %s grubu yok"
 
-#: kfmprops.cpp:645
+#: kfmprops.cpp:653
 msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
@@ -666,36 +798,37 @@ msgstr ""
 "Sahibi/grubu deðiþtirilemiyor\n"
 "Büyük ihtimalle eriþim yasak."
 
-#: kfmprops.cpp:663
-msgid "Swallowing on panel"
-msgstr "Panele ekleniyor"
-
-#: kfmprops.cpp:681 kfmprops.cpp:704
+#: kfmprops.cpp:665 kfmprops.cpp:724
 msgid "Execute"
 msgstr "Çalýþtýr"
 
-#: kfmprops.cpp:685
-msgid "Browse"
+#: kfmprops.cpp:681
+#, fuzzy
+msgid "&Browse..."
 msgstr "Tara"
 
-#: kfmprops.cpp:689
+#: kfmprops.cpp:693
 msgid "Working Directory"
 msgstr "Çalýþma Dizini"
 
-#: kfmprops.cpp:712
+#: kfmprops.cpp:711
+msgid "Swallowing on panel"
+msgstr "Panele ekleniyor"
+
+#: kfmprops.cpp:738
 msgid "Window Title"
 msgstr "Pencere Baþlýðý"
 
-#: kfmprops.cpp:716
+#: kfmprops.cpp:758
 msgid "Run in terminal"
 msgstr "Uçbirimde çalýþtýr"
 
-#: kfmprops.cpp:724
+#: kfmprops.cpp:766
 msgid "Terminal Options"
 msgstr "Uçbirim Seçenekleri"
 
-#: kfmprops.cpp:825 kfmprops.cpp:947 kfmprops.cpp:1390 kfmprops.cpp:1602
-#: kfmprops.cpp:1778
+#: kfmprops.cpp:880 kfmprops.cpp:1009 kfmprops.cpp:1472 kfmprops.cpp:1704
+#: kfmprops.cpp:1889
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -703,79 +836,88 @@ msgstr ""
 "Özellikler kaydedilemiyor\n"
 "Büyük ihtimalle eriþim yasak"
 
-#: kfmprops.cpp:873
+#: kfmprops.cpp:934
 msgid "URL"
 msgstr "URL"
 
-#: kfmprops.cpp:974
+#: kfmprops.cpp:1031
+#, fuzzy
+msgid "Background"
+msgstr "Arkaplan Rengi:"
+
+#: kfmprops.cpp:1041
 msgid "Apply global"
 msgstr "Genele Uygula"
 
-#: kfmprops.cpp:1013 kfmprops.cpp:1085 kfmprops.cpp:1142
+#: kfmprops.cpp:1079 kfmprops.cpp:1151 kfmprops.cpp:1208
 msgid "(Default)"
 msgstr "(Öntanýmlý)"
 
-#: kfmprops.cpp:1074
+#: kfmprops.cpp:1140
 msgid "Could not write to\n"
 msgstr "'a yazýlamýyor\n"
 
-#: kfmprops.cpp:1187
+#: kfmprops.cpp:1269
 msgid "(None)"
 msgstr "(Hiçbiri)"
 
-#: kfmprops.cpp:1233
+#: kfmprops.cpp:1315
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr "Ýkili Desen (netscape;Netscape;)"
 
-#: kfmprops.cpp:1240 kfmprops.cpp:1492
+#: kfmprops.cpp:1322 kfmprops.cpp:1573
 msgid "Comment"
 msgstr "Yorum"
 
-#: kfmprops.cpp:1251
+#: kfmprops.cpp:1333
 msgid "Name ( in your language )"
 msgstr "Adý ( kendi dilinizde )"
 
-#: kfmprops.cpp:1480
+#: kfmprops.cpp:1550
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "Desen ( örneðin: *.html;*.HTML; )"
 
-#: kfmprops.cpp:1488
+#: kfmprops.cpp:1562
 msgid "Mime Type"
 msgstr "Mime Türü"
 
-#: kfmprops.cpp:1499
+#: kfmprops.cpp:1591
 msgid "Default Application"
 msgstr "Öntanýmlý Uygulama"
 
-#: kfmprops.cpp:1647
+#: kfmprops.cpp:1631
+msgid "<none>"
+msgstr ""
+
+#: kfmprops.cpp:1753
 msgid "Device ( /dev/fd0 )"
 msgstr "Aygýt ( /dev/fd0 )"
 
-#: kfmprops.cpp:1655
+#: kfmprops.cpp:1762
 msgid "Mount Point ( /floppy )"
 msgstr "Baðlama Noktasý ( /floppy )"
 
-#: kfmprops.cpp:1665
+#: kfmprops.cpp:1773
 msgid "Readonly"
 msgstr "Yanlýz Okunur"
 
-#: kfmprops.cpp:1671
+#: kfmprops.cpp:1779
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Dosya Sistemleri ( iso9660,msdos,minix,öntanýmlý )"
 
-#: kfmprops.cpp:1681
+#: kfmprops.cpp:1790
 msgid "Mounted Icon"
 msgstr "Baðlý Simgesi"
 
-#: kfmprops.cpp:1685
+#: kfmprops.cpp:1795
 msgid "Unmounted Icon"
 msgstr "Ayrýlmýþ Simgesi"
 
-#: kfmserver.cpp:40
+#: kfmserver.cpp:41
 msgid "Could not create ~/.kde/share/apps/kfm/magic"
 msgstr "~/.kde/share/apps/kfm/magic dosyasý yaratýlamýyor"
 
-#: kfmserver.cpp:50
+#: kfmserver.cpp:51
 msgid ""
 "Please change the password in\n"
 "~/.kde/share/apps/kfm/magic"
@@ -783,22 +925,19 @@ msgstr ""
 "~/.kde/share/apps/kfm/magic\n"
 "dosyasýndaki parolayý deðiþtiriniz"
 
-#: kfmserver.cpp:78
+#: kfmserver.cpp:79
 msgid "Do you really want to rearrange your icons ?"
 msgstr "Gerçekten simgeleri dizmek istiyor musunuz?"
 
-#: kfmserver.cpp:234
+#: kfmserver.cpp:244
 #, c-format
 msgid ""
 "The URL\n"
 "%s\n"
 "is malformed"
-msgstr ""
-"%s"
-"URL'si"
-"yetersiz"
+msgstr "%sURL'siyetersiz"
 
-#: kfmserver.cpp:285
+#: kfmserver.cpp:295
 msgid ""
 "You dont have the file ~/.kde/share/apps/kfm/magic\n"
 "Authorization failed"
@@ -806,7 +945,7 @@ msgstr ""
 "~/.kde/share/apps/kfm/magic dosyasýna sahip deðilsiniz\n"
 "Eriþim yetkisi verilmedi"
 
-#: kfmserver.cpp:294
+#: kfmserver.cpp:304
 msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
@@ -814,7 +953,7 @@ msgstr ""
 "~/.kde/share/apps/kfm/magic dosyasý bozulmuþ\n"
 "Eriþim yetkisi verilmedi"
 
-#: kfmserver.cpp:302
+#: kfmserver.cpp:312
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
@@ -822,7 +961,7 @@ msgstr ""
 "Birileri yanlýþ parola kullanarak\n"
 "kendini yetkilendirmeye çalýþmýþ"
 
-#: root.cpp:672
+#: root.cpp:706
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -832,48 +971,44 @@ msgstr ""
 "Yeni kök ýzgarasý masaüstündeki bazý simgeleri\n"
 "oynatabilir."
 
-#: root.cpp:707
+#: root.cpp:741
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Ýç Hata: masaüstü dizini yetersiz"
 
-#: root.cpp:718
+#: root.cpp:752
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "HATA: '%s' masaüstü dizini okunamýyor"
 
-#: root.cpp:909
+#: root.cpp:951
 msgid "ERROR: Can not accept drop"
 msgstr "HATA: Býrakma kabul edilemez"
 
-#: kfmman.cpp:1205 root.cpp:1711
+#: kfmman.cpp:1267 root.cpp:1786
 msgid "Dont know what to do."
 msgstr "Ne yapýlacaðý bilinmiyor"
 
-#: kfmman.cpp:1231 kfmtree.cpp:164 root.cpp:1736
+#: kfmman.cpp:1293 kfmtree.cpp:165 root.cpp:1811
 msgid "Dont know what to do"
 msgstr "Ne yapýlacaðý bilinmiyor"
 
-#: kfmexec.cpp:93 kfmman.cpp:296
+#: kfmexec.cpp:93 kfmman.cpp:342
 msgid "The file does not contain a URL"
 msgstr "Dosya bir URL içermiyor"
 
-#: kfmman.cpp:347
+#: kfmman.cpp:391
 msgid "Contacting host "
 msgstr "Sunucuya baðlanýlýyor"
 
-#: kfmman.cpp:351
+#: kfmman.cpp:395
 msgid "Working ..."
 msgstr "Çalýþýyor..."
 
-#: kfmman.cpp:1100 kfmtree.cpp:230
-msgid "Add To Bookmarks"
-msgstr "Adreslere Ekle"
-
-#: kiojob.cpp:130
+#: kiojob.cpp:134
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr "ÝÇ HATA: Baðlama için bir aygýt belirlemelisiniz"
 
-#: kiojob.cpp:233 kiojob.cpp:241 kiojob.cpp:1204 kiojob.cpp:1344
+#: kiojob.cpp:237 kiojob.cpp:245 kiojob.cpp:1209 kiojob.cpp:1349
 #, c-format
 msgid ""
 "Malformed URL\n"
@@ -882,11 +1017,11 @@ msgstr ""
 "Yetersiz URL\n"
 "%s"
 
-#: kiojob.cpp:250
+#: kiojob.cpp:254
 msgid "Can only make links on local file system"
 msgstr "Yanlýzca yerel sisteminizde baðlar yapabilirsiniz"
 
-#: kiojob.cpp:273 kiojob.cpp:292
+#: kiojob.cpp:277 kiojob.cpp:296
 #, c-format
 msgid ""
 "Could not overwrite\n"
@@ -895,7 +1030,7 @@ msgstr ""
 "%s'in\n"
 "üzerine yazýlamýyor"
 
-#: kiojob.cpp:302 kiojob.cpp:325 kiojob.cpp:344
+#: kiojob.cpp:306 kiojob.cpp:329 kiojob.cpp:348
 #, c-format
 msgid ""
 "Could not make symlink to\n"
@@ -904,12 +1039,12 @@ msgstr ""
 "%s'e\n"
 "sembolik bað yapýlamýyor"
 
-#: kiojob.cpp:378
+#: kiojob.cpp:382
 #, c-format
 msgid " ERROR: Could not write to %s"
 msgstr "HATA: %s'e yazýlamýyor"
 
-#: kiojob.cpp:550 kiojob.cpp:790 kiojob.cpp:1261
+#: kiojob.cpp:555 kiojob.cpp:795 kiojob.cpp:1266
 #, c-format
 msgid ""
 "Could not make directory\n"
@@ -918,21 +1053,19 @@ msgstr ""
 "%s dizini\n"
 "yaratýlamýyor"
 
-#: kiojob.cpp:563 kiojob.cpp:1009
+#: kiojob.cpp:568 kiojob.cpp:1014
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
 msgstr "HATA: '%s' dizinine ulaþýlamýyor"
 
-#: kiojob.cpp:821
+#: kiojob.cpp:826
 #, c-format
 msgid ""
 "Could not access directory\n"
 "%s"
-msgstr ""
-"%s dizinine"
-"ulaþýlamýyor"
+msgstr "%s dizinineulaþýlamýyor"
 
-#: kiojob.cpp:862
+#: kiojob.cpp:867
 #, c-format
 msgid ""
 "Could not move directory\n"
@@ -945,7 +1078,7 @@ msgstr ""
 "dizin taþýnamýyor\n"
 "Eriþime izin verilmiyor"
 
-#: kiojob.cpp:1212 kiojob.cpp:1352
+#: kiojob.cpp:1217 kiojob.cpp:1357
 #, c-format
 msgid ""
 "Could not read\n"
@@ -956,7 +1089,7 @@ msgstr ""
 "okunamýyor\n"
 "Dosya yok yada eriþim engellendi"
 
-#: kiojob.cpp:1220
+#: kiojob.cpp:1225
 #, c-format
 msgid ""
 "Could not write\n"
@@ -967,7 +1100,7 @@ msgstr ""
 "yazýlamýyor\n"
 "eriþim engellendi"
 
-#: kiojob.cpp:1229 kiojob.cpp:1360
+#: kiojob.cpp:1234 kiojob.cpp:1365
 #, c-format
 msgid ""
 "Could not create Socket for\n"
@@ -976,7 +1109,7 @@ msgstr ""
 "%s\n"
 "için soket yaratýlamýyor"
 
-#: kiojob.cpp:1237 kiojob.cpp:1368
+#: kiojob.cpp:1242 kiojob.cpp:1373
 #, c-format
 msgid ""
 "Unknown host in\n"
@@ -985,7 +1118,7 @@ msgstr ""
 "%s'de\n"
 "bilinmeyen sunucu"
 
-#: kiojob.cpp:1245 kiojob.cpp:1376
+#: kiojob.cpp:1250 kiojob.cpp:1381
 #, c-format
 msgid ""
 "Could not connect to\n"
@@ -994,7 +1127,7 @@ msgstr ""
 "%s'e\n"
 "baðlanýlamýyor"
 
-#: kiojob.cpp:1253 kiojob.cpp:1384
+#: kiojob.cpp:1258 kiojob.cpp:1389
 #, c-format
 msgid ""
 "The requested action\n"
@@ -1005,7 +1138,7 @@ msgstr ""
 "%s\n"
 "desteði henüz yok."
 
-#: kiojob.cpp:1269
+#: kiojob.cpp:1274
 #, c-format
 msgid ""
 "Could not list directory contents\n"
@@ -1014,7 +1147,7 @@ msgstr ""
 "%s\n"
 "içeriði dökümü verilemiyor"
 
-#: kiojob.cpp:1277
+#: kiojob.cpp:1282
 #, c-format
 msgid ""
 "Could not delete\n"
@@ -1025,7 +1158,7 @@ msgstr ""
 "silinemiyor\n"
 "URL yok yada izin verilmiyor"
 
-#: kiojob.cpp:1287 kiojob.cpp:1394
+#: kiojob.cpp:1292 kiojob.cpp:1399
 #, c-format
 msgid ""
 "Could not login for\n"
@@ -1036,7 +1169,7 @@ msgstr ""
 "için sisteme girilemiyor.\n"
 "Büyük ihtimal yanlýþ parola"
 
-#: kiojob.cpp:1303 kiojob.cpp:1410
+#: kiojob.cpp:1308 kiojob.cpp:1415
 #, c-format
 msgid ""
 "Tar reproted an error\n"
@@ -1045,7 +1178,7 @@ msgstr ""
 "%s\n"
 "tar hata bildirdi"
 
-#: kiojob.cpp:1311
+#: kiojob.cpp:1316
 #, c-format
 msgid ""
 "Gzip reproted an error for\n"
@@ -1054,7 +1187,7 @@ msgstr ""
 "%s için\n"
 "gzip hata bildirdi"
 
-#: kiojob.cpp:1321 kiojob.cpp:1336
+#: kiojob.cpp:1326 kiojob.cpp:1341
 #, c-format
 msgid ""
 "File %s\n"
@@ -1063,16 +1196,14 @@ msgstr ""
 "%s dosyasý\n"
 "yok"
 
-#: kiojob.cpp:1418
+#: kiojob.cpp:1423
 #, c-format
 msgid ""
 "Gzip reproted an error\n"
 "%s"
-msgstr ""
-"%s"
-"gzip hata bildirdi"
+msgstr "%sgzip hata bildirdi"
 
-#: kiojob.cpp:1426
+#: kiojob.cpp:1431
 #, c-format
 msgid ""
 "Could not mount\n"
@@ -1084,7 +1215,7 @@ msgstr ""
 "Hata durumu:\n"
 "%s"
 
-#: kiojob.cpp:1432
+#: kiojob.cpp:1437
 #, c-format
 msgid ""
 "Could not unmount\n"
@@ -1096,21 +1227,21 @@ msgstr ""
 "Hata durumu:\n"
 "%s"
 
-#: kiojob.cpp:1523
+#: kiojob.cpp:1528
 msgid "Making directory"
 msgstr "Dizin yaratýlýyor"
 
-#: kiojob.cpp:1642 kiojob.cpp:1696 kiojob.cpp:1738
+#: kiojob.cpp:1647 kiojob.cpp:1701 kiojob.cpp:1743
 #, c-format
 msgid "File %i/%i"
 msgstr "Dosya %i/%i"
 
-#: kiojob.cpp:1645 kiojob.cpp:1700
+#: kiojob.cpp:1650 kiojob.cpp:1705
 #, c-format
 msgid "to %s"
 msgstr "%s'e"
 
-#: kiojob.cpp:1676
+#: kiojob.cpp:1681
 #, c-format
 msgid ""
 "Could not delete directory\n"
@@ -1119,24 +1250,36 @@ msgstr ""
 "dizin silinemiyor\n"
 "%s"
 
-#: kiojob.cpp:1766
+#: kiojob.cpp:1771
 #, c-format
 msgid "Mounting %s ..."
 msgstr "%s baðlanýyor..."
 
-#: kiojob.cpp:1768
+#: kiojob.cpp:1773
 #, c-format
 msgid "Unmounting %s ..."
 msgstr "%s ayýrýlýyor..."
 
-#: kiojob.cpp:1796
+#: kiojob.cpp:1801
 #, c-format
 msgid "Retrieving listing of %s"
 msgstr "%s'in listesi alýnýyor"
 
-#: kiojob.cpp:2029
+#: kiojob.cpp:2034
 msgid "Segmentation fault in io subprocess"
 msgstr "Girdi Çýktý altiþlemleri sýrasýnda hata"
+
+#: htmlcache.cpp:339
+msgid ""
+" is not a directory ! Security Alert !\n"
+"Please check it.\n"
+msgstr ""
+
+#: htmlcache.cpp:368
+msgid ""
+" is not a directory ! Security Alert !\n"
+"Check it before clearing the cache.\n"
+msgstr ""
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"
@@ -1150,15 +1293,19 @@ msgstr " "
 msgid " does not exist\n"
 msgstr " dizini mevcut deðil\n"
 
-#: kfmtree.cpp:396
+#: kfmtree.cpp:231
+msgid "Add To Bookmarks"
+msgstr "Adreslere Ekle"
+
+#: kfmtree.cpp:397
 msgid "My Home"
 msgstr "Baþlangýç"
 
-#: kfmtree.cpp:398
+#: kfmtree.cpp:399
 msgid "Desktop"
 msgstr "Masaüstü"
 
-#: kfmtree.cpp:400
+#: kfmtree.cpp:401
 msgid "Root"
 msgstr "Kök"
 
@@ -1198,87 +1345,100 @@ msgstr "Adý deðiþtirmediniz!\n"
 msgid "Password"
 msgstr "Parola"
 
-#: kfmexec.cpp:136
+#: kfmexec.cpp:141
 msgid "Trying to open"
 msgstr "Açmayý dene"
 
-#: useragentdlg.cpp:20
+#: useragentdlg.cpp:44
 msgid "On server:"
 msgstr "Sunucuda:"
 
-#: useragentdlg.cpp:31
+#: useragentdlg.cpp:66
 msgid "login as:"
 msgstr "Kullanýcý olarak:"
 
-#: useragentdlg.cpp:52
+#: useragentdlg.cpp:110
 msgid "Known bindings:"
 msgstr "Bilinen eþlemeler:"
 
-#: kproxydlg.cpp:13
+#: kproxydlg.cpp:46
 msgid "Don't forget to save your settings!"
 msgstr "Deðiþikliklerinizi kaydetmeyi unutmayýnýz!"
 
-#: kproxydlg.cpp:16
+#: kproxydlg.cpp:54
 msgid "Use proxy"
 msgstr "Kukla kullan"
 
-#: kproxydlg.cpp:42
+#: kproxydlg.cpp:132
 msgid "No Proxy for:"
 msgstr "Kukla yok:"
 
-#: kkfmoptdlg.cpp:19
+#: kkfmoptdlg.cpp:43
 msgid "&Proxy"
 msgstr "&Kukla"
 
-#: kkfmoptdlg.cpp:22
+#: kkfmoptdlg.cpp:46
 msgid "&HTTP"
 msgstr "HTTP"
 
-#: kkfmoptdlg.cpp:25
+#: kkfmoptdlg.cpp:49
 msgid "User &Agent"
 msgstr "Kullanýcý &Aracýsý"
 
-#: kkfmoptdlg.cpp:31
+#: kkfmoptdlg.cpp:55
 msgid "&Colors"
 msgstr "&Renkler"
 
-#: kkfmoptdlg.cpp:34
+#: kkfmoptdlg.cpp:58
 msgid "&Other"
 msgstr "&Diðer"
 
-#: kkfmoptdlg.cpp:54
+#: kkfmoptdlg.cpp:117
 msgid "KFM Browser Settings"
 msgstr "KFM Gezgin Ayarlarý"
 
-#: khttpoptdlg.cpp:13
+#: khttpoptdlg.cpp:39
 msgid "Accept languages:"
 msgstr "Kullanýlan diller:"
 
-#: khttpoptdlg.cpp:18
+#: khttpoptdlg.cpp:55
 msgid "Accept character sets:"
 msgstr "Kullanýlan karakter kümeleri:"
 
-#: khttpoptdlg.cpp:23
+#: khttpoptdlg.cpp:70
 msgid "Assume HTML"
 msgstr "HTML varsay"
+
+#: open-with.cpp:132
+msgid "This group is empty!"
+msgstr ""
+
+#: finddlg.cpp:41
+#, fuzzy
+msgid "Find:"
+msgstr "&Bul"
+
+#: finddlg.cpp:56
+msgid "Case &sensitive"
+msgstr ""
 
 #: kfmprops.h:73
 msgid "&General"
 msgstr "&Genel"
 
-#: kfmprops.h:108
+#: kfmprops.h:107
 msgid "&Permissions"
 msgstr "&Eriþim Haklarý"
 
-#: kfmprops.h:198
+#: kfmprops.h:199
 msgid "E&xecute"
 msgstr "&çalýþtýr"
 
-#: kfmprops.h:246
+#: kfmprops.h:245
 msgid "U&RL"
 msgstr "&URL"
 
-#: kfmprops.h:270
+#: kfmprops.h:269
 msgid "&Dir"
 msgstr "D&izin"
 
@@ -1324,3 +1484,12 @@ msgid ""
 "Syntax Error:\n"
 "kfmexec command [URLs ....]\n"
 msgstr ""
+
+#~ msgid "&Quit..."
+#~ msgstr "Ç&ýkýþ..."
+
+#~ msgid "&About..."
+#~ msgstr "&Hakkýnda..."
+
+#~ msgid "About KFM"
+#~ msgstr "KFM Hakkýnda"

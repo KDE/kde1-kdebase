@@ -5,13 +5,78 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"POT-Creation-Date: 1998-11-18 13:15+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ISO 8859-9\n"
+
+#: attraction.cpp:716
+#, fuzzy
+msgid "Attraction"
+msgstr "Sýkýþma"
+
+#: attraction.cpp:803
+#, fuzzy
+msgid "Setup KAttraction"
+msgstr "KBat Ayarla"
+
+#: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
+msgid "Number:"
+msgstr "Sayý:"
+
+#: attraction.cpp:829 science.cpp:993 slidescreen.cpp:493
+msgid "Mode:"
+msgstr "Kip:"
+
+#: attraction.cpp:834 slidescreen.cpp:498
+msgid "Balls"
+msgstr ""
+
+#: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
+msgid "Lines"
+msgstr "Lines"
+
+#: attraction.cpp:836 polygon.cpp:64 slidescreen.cpp:500
+msgid "Polygons"
+msgstr "Poligonlar"
+
+#: attraction.cpp:837 slidescreen.cpp:501
+msgid "Tails"
+msgstr ""
+
+#: attraction.cpp:850 slidescreen.cpp:514
+msgid "Glow"
+msgstr ""
+
+#: attraction.cpp:869 attraction.cpp:956 slidescreen.cpp:534
+#: slidescreen.cpp:563
+msgid "Ok"
+msgstr ""
+
+#: attraction.cpp:951
+#, fuzzy
+msgid "About Attraction"
+msgstr "Sýkýþma"
+
+#: attraction.cpp:952
+#, fuzzy
+msgid ""
+"Attraction Version 1.0\n"
+"\n"
+"Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"Ported to kscreensaver by:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
+msgstr ""
+"Rock Sürüm 3.3\n"
+"\n"
+"Telif Hakký (c) 1992 Jamie Zawinski\n"
+"\n"
+"kscreensave'e Martin Jones çevirmiþtir."
 
 #: banner.cpp:62
 msgid "Banner"
@@ -21,13 +86,26 @@ msgstr "Büyük Yazý"
 msgid "Setup kbanner"
 msgstr "kbanner Ayarla"
 
+#: banner.cpp:95
+#, fuzzy
+msgid "Family:"
+msgstr "Baþarýsýz"
+
+#: banner.cpp:114 science.cpp:1036
+msgid "Size:"
+msgstr ""
+
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
 msgstr "Renk:"
 
+#: banner.cpp:147
+msgid "Bold"
+msgstr ""
+
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 science.cpp:1025 slip.cpp:378 space.cpp:587
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1069 slip.cpp:378 space.cpp:587
 #: swarm.cpp:341
 msgid "Speed:"
 msgstr "Hýz:"
@@ -192,7 +270,6 @@ msgstr ""
 "\n"
 "kscreensave uyarlamasý: Cedric Tefft"
 
-
 #: flame.cpp:310
 msgid "Flame"
 msgstr "Meþale"
@@ -317,10 +394,6 @@ msgstr ""
 "\n"
 "kscreensave'e Martin Jones çevirmiþtir."
 
-#: lines.cpp:116
-msgid "Lines"
-msgstr "Lines"
-
 #: lines.cpp:134
 msgid "Setup klines"
 msgstr "klines Ayarla"
@@ -387,37 +460,48 @@ msgstr ""
 "\n"
 "kscreensave'e Emanuel Pirker çevirmiþtir."
 
-#: main.cpp:286
+#: main.cpp:353
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "%s seçeneði bu mimari tarafýndan desteklenmemektedir."
 
-#: main.cpp:313
+#: main.cpp:382
+#, fuzzy
 msgid ""
-"Your system uses shadow passwords!\n"
-"Please contact your system administrator.\n"
+"Warning: You won't be able to lock the screen!\n"
 "\n"
-"Tell him, that you need suid for the screensavers!"
+"Your system uses shadow passwords.\n"
+"Please contact your system administrator,\n"
+"tell him, that you need suid for the screensavers!"
 msgstr ""
 "Sisteminiz gölge parola kullanmaktadýr!\n"
 "Sistem yöneticinize baþ vurunuz.\n"
 "\n"
 "Ona ekran koruyucu için suid'e ihtiyacýnýz olduðunu söyleyiniz"
 
-#: main.cpp:318
+#: main.cpp:387
 msgid "Shadow Passwords"
 msgstr "Gölge Parolalar"
 
-#: main.cpp:476
-#, c-format
+#: main.cpp:432
+msgid ""
+"\n"
+"please don't use -test together with -lock.\n"
+"use klock instead.\n"
+"\n"
+msgstr ""
+
+#: main.cpp:540
+#, fuzzy, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+"       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "Kullaným: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:479
+#: main.cpp:543
+#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -429,6 +513,7 @@ msgid ""
 "  -desc             Print the screen saver's description to stdout\n"
 "  -install          Install screen saver\n"
 "  -lock             Require password to stop screen saver\n"
+"  -allow-root       Accept root password to unlock\n"
 "  -nice num         Run with specified nice value\n"
 "\n"
 "  -preview wid      Run in the specified XWindow\n"
@@ -453,7 +538,7 @@ msgstr ""
 "  -setup            Ekran koruyucuyu ayarla\n"
 "  -test             Test et\n"
 
-#: morph3d.cpp:839 space.cpp:419
+#: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
 msgid "GL can not render with root visual\n"
 msgstr "GL yetkili kullanýcý görüntüsü ile çalýþamaz\n"
 
@@ -487,9 +572,32 @@ msgstr ""
 "\n"
 "kscreensave'e Emanuel Pirker çevirmiþtir."
 
-#: polygon.cpp:64
-msgid "Polygons"
-msgstr "Poligonlar"
+#: pipes.cpp:299
+#, fuzzy
+msgid "Pipes (GL)"
+msgstr "Space (GL)"
+
+#: pipes.cpp:672
+#, fuzzy
+msgid "Setup KPipes"
+msgstr "KSlip Ayarla"
+
+#: pipes.cpp:678
+#, fuzzy
+msgid "Number of Pipes"
+msgstr "Arý sayýsý:"
+
+#: pipes.cpp:743
+#, fuzzy
+msgid "About KPipes"
+msgstr "Lines hakkýnda"
+
+#: pipes.cpp:745
+msgid ""
+"KPipes\n"
+"Copyright (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
+msgstr ""
 
 #: polygon.cpp:85
 msgid "Setup kpolygon"
@@ -523,10 +631,6 @@ msgstr "Pyro"
 msgid "Setup KPyro"
 msgstr "KPyro Ayarla"
 
-#: pyro.cpp:529 rock.cpp:575
-msgid "Number:"
-msgstr "Sayý:"
-
 #: pyro.cpp:543
 msgid "Cloud"
 msgstr "Bulut"
@@ -557,6 +661,11 @@ msgstr "Rock"
 msgid "Setup krock"
 msgstr "Krock Ayarla"
 
+#: rock.cpp:589
+#, fuzzy
+msgid "Move"
+msgstr "Kip:"
+
 #: rock.cpp:595
 msgid "Rotate"
 msgstr "Çevir"
@@ -579,11 +688,11 @@ msgstr ""
 "\n"
 "kscreensave'e Martin Jones çevirmiþtir."
 
-#: saver.cpp:56 saver.cpp:146
+#: saver.cpp:60 saver.cpp:178
 msgid "Enter Password"
 msgstr "Parolayý giriniz"
 
-#: saver.cpp:114
+#: saver.cpp:118
 msgid "Failed"
 msgstr "Baþarýsýz"
 
@@ -615,53 +724,81 @@ msgstr "Kavis"
 msgid "Science"
 msgstr "Science"
 
-#: science.cpp:447
+#: science.cpp:491
 msgid "rendering lens..."
 msgstr "mercek hesaplanýyor..."
 
-#: science.cpp:769
+#: science.cpp:813
 msgid "grabbing screen..."
 msgstr "ekran yakalanýyor..."
 
-#: science.cpp:931
+#: science.cpp:975
 msgid "Setup Science"
 msgstr "Science ayarlarý"
 
-#: science.cpp:949
-msgid "Mode:"
-msgstr "Kip:"
-
-#: science.cpp:964
+#: science.cpp:1008
 msgid "Inverse"
 msgstr "Ters"
 
-#: science.cpp:974
+#: science.cpp:1018
 msgid "Gravity"
 msgstr "Yerçekimi"
 
-#: science.cpp:983
+#: science.cpp:1027
 msgid "Hide Background"
 msgstr "Arkaplaný sakla"
 
-#: science.cpp:1009
+#: science.cpp:1053
 msgid "Intensity:"
 msgstr "Koyuluk:"
 
-#: science.cpp:1039
+#: science.cpp:1083
 msgid "Motion:"
 msgstr "Hareker:"
 
-#: science.cpp:1260
+#: science.cpp:1304
 msgid "Science Version"
 msgstr "Science Sürüm"
 
-#: science.cpp:1261
+#: science.cpp:1305
 msgid "written by"
 msgstr "yazan:"
 
-#: science.cpp:1262
+#: science.cpp:1306
 msgid "About Science"
 msgstr "Science hakkýnda"
+
+#: slidescreen.cpp:419
+#, fuzzy
+msgid "SlideScreen"
+msgstr "Boþ Ekran"
+
+#: slidescreen.cpp:465
+#, fuzzy
+msgid "Setup KSlideScreen"
+msgstr "Science ayarlarý"
+
+#: slidescreen.cpp:558
+#, fuzzy
+msgid "About SlideScreen"
+msgstr "Science hakkýnda"
+
+#: slidescreen.cpp:559
+#, fuzzy
+msgid ""
+"SlideScreen Version 1.1\n"
+"\n"
+"Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"Ported to kscreensaver by:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
+msgstr ""
+"Rock Sürüm 3.3\n"
+"\n"
+"Telif Hakký (c) 1992 Jamie Zawinski\n"
+"\n"
+"kscreensave'e Martin Jones çevirmiþtir."
 
 #: slip.cpp:293
 msgid "Slip"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"POT-Creation-Date: 1998-11-17 15:21+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -13,203 +13,323 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ISO 8859-9\n"
 
-#: backgnd.cpp:59
+#: backgnd.cpp:54
 msgid "Enter new desktop name"
 msgstr "Yeni masaüstü adýný giriniz"
 
-#: backgnd.cpp:115 backgnd.cpp:150
+#: backgnd.cpp:110 backgnd.cpp:151
 msgid "Desktop"
 msgstr "Masaüstü"
 
-#: backgnd.cpp:167
+#: backgnd.cpp:173
 msgid "&Rename ..."
 msgstr "&Yeniden adlandýr..."
 
-#: backgnd.cpp:193 colorscm.cpp:93
+#: backgnd.cpp:184
+#, fuzzy
+msgid "&Common Background"
+msgstr "&Arkaplan"
+
+#: backgnd.cpp:213 colorscm.cpp:94
 msgid "Colors"
 msgstr "Renkler"
 
-#: backgnd.cpp:220
+#: backgnd.cpp:240
 msgid "&One Color"
 msgstr "&Tek Renk"
 
-#: backgnd.cpp:237
+#: backgnd.cpp:257
 msgid "&Two Color"
 msgstr "&Ýki Renk"
 
-#: backgnd.cpp:256
+#: backgnd.cpp:276
 msgid "Set&up ..."
 msgstr "&Ayarla..."
 
-#: backgnd.cpp:265
+#: backgnd.cpp:285
 msgid "Wallpaper"
 msgstr "Duvar Kaðýdý"
 
-#: backgnd.cpp:275
-msgid "Ti&led"
-msgstr "&Döþe"
-
-#: backgnd.cpp:283
-msgid "&Centred"
-msgstr "&Ortala"
-
-#: backgnd.cpp:291
-msgid "&Scaled"
-msgstr "&Ölçülü"
-
-#: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
+#: backgnd.cpp:296 backgnd.cpp:521 backgnd.cpp:535 backgnd.cpp:1140
+#: backgnd.cpp:1297 backgnd.cpp:1833
 msgid "No wallpaper"
 msgstr "Duvar Kaðýdý Yok"
 
-#: backgnd.cpp:335
+#: backgnd.cpp:325
 msgid "&Browse..."
 msgstr "&Gözat..."
 
-#: backgnd.cpp:864
+#: backgnd.cpp:333
+#, fuzzy
+msgid "Tiled"
+msgstr "&Döþe"
+
+#: backgnd.cpp:334
+msgid "Mirrored"
+msgstr ""
+
+#: backgnd.cpp:335
+#, fuzzy
+msgid "Center Tiled"
+msgstr "&Ortala"
+
+#: backgnd.cpp:336
+#, fuzzy
+msgid "Centred"
+msgstr "&Ortala"
+
+#: backgnd.cpp:337
+#, fuzzy
+msgid "Centred Brick"
+msgstr "&Ortala"
+
+#: backgnd.cpp:338
+#, fuzzy
+msgid "Centred Warp"
+msgstr "&Ortala"
+
+#: backgnd.cpp:339
+#, fuzzy
+msgid "Centred Maxpect"
+msgstr "&Ortala"
+
+#: backgnd.cpp:340
+msgid "Symmetrical Tiled"
+msgstr ""
+
+#: backgnd.cpp:341
+msgid "Symmetrical Mirrored"
+msgstr ""
+
+#: backgnd.cpp:342
+#, fuzzy
+msgid "Scaled"
+msgstr "&Ölçülü"
+
+#: backgnd.cpp:354
+msgid "Ra&ndom"
+msgstr ""
+
+#: backgnd.cpp:363
+#, fuzzy
+msgid "Setu&p..."
+msgstr "&Ayarla..."
+
+#: backgnd.cpp:371
+msgid "&Dock into the panel"
+msgstr ""
+
+#: backgnd.cpp:381
+msgid "Cache size"
+msgstr ""
+
+#: backgnd.cpp:399
+msgid "kb"
+msgstr ""
+
+#: backgnd.cpp:1264
 msgid "Desktop names"
 msgstr "Masaüstü adlarý"
 
-#: backgnd.cpp:910
+#: backgnd.cpp:1309
+#, fuzzy
+msgid "File error"
+msgstr "Adlandýrma hatasý"
+
+#: backgnd.cpp:1310
+msgid "Can't load image file"
+msgstr ""
+
+#: backgnd.cpp:1333 backgnd.cpp:1803
+msgid "Unsupported URL"
+msgstr ""
+
+#: backgnd.cpp:1334 backgnd.cpp:1804
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE Display Module"
+msgstr ""
+
+#: backgnd.cpp:1365
 msgid "Two color backgrounds"
 msgstr "Ýki renkli arkaplanlar"
 
-#: backgnd.cpp:947
+#: backgnd.cpp:1402
 msgid "Blend colors from &top to bottom"
 msgstr "Yu&karýdan aþaðýya renkleri kaynaþtýr"
 
-#: backgnd.cpp:953
+#: backgnd.cpp:1408
 msgid "Blend colors from &right to left"
 msgstr "Renkleri saðdan sola kaynaþtýr"
 
-#: backgnd.cpp:959
+#: backgnd.cpp:1414
 msgid "Use &pattern"
 msgstr "&Desen kullan"
 
-#: backgnd.cpp:986
+#: backgnd.cpp:1441
 msgid "Preview"
 msgstr "Önbakýþ"
 
-#: backgnd.cpp:997
+#: backgnd.cpp:1452
 msgid "Pattern &name"
 msgstr "&Desen adý"
 
-#: backgnd.cpp:1036
+#: backgnd.cpp:1491
 msgid "Current"
 msgstr "Þu anki"
 
-#: backgnd.cpp:1096
+#: backgnd.cpp:1551
 msgid "Filled"
 msgstr "Doldurulmuþ"
 
-#: backgnd.cpp:1099
+#: backgnd.cpp:1554
 msgid "Fish net"
 msgstr "Balýk aðý"
 
-#: backgnd.cpp:1102
+#: backgnd.cpp:1557
 msgid "Triangles"
 msgstr "Üçgenler"
 
-#: backgnd.cpp:1105
+#: backgnd.cpp:1560
 msgid "Flowers"
 msgstr "Çiçekler"
 
-#: backgnd.cpp:1108
+#: backgnd.cpp:1563
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1111
+#: backgnd.cpp:1566
 msgid "Cobbled Pavement"
 msgstr "Cobbled Pavement"
 
-#: colorscm.cpp:119
+#: backgnd.cpp:1632
+msgid "Random mode setup"
+msgstr ""
+
+#: backgnd.cpp:1638
+msgid "Pick files from &directory"
+msgstr ""
+
+#: backgnd.cpp:1652
+#, fuzzy
+msgid "&Browse ..."
+msgstr "&Gözat..."
+
+#: backgnd.cpp:1673
+msgid "Timer Delay in seconds :"
+msgstr ""
+
+#: backgnd.cpp:1685
+#, fuzzy
+msgid "In &order"
+msgstr "Atla"
+
+#: backgnd.cpp:1702
+#, fuzzy
+msgid "Desktops :"
+msgstr "Masaüstü"
+
+#: backgnd.cpp:1740
+#, fuzzy
+msgid "&Add"
+msgstr "&Ekle"
+
+#: backgnd.cpp:1910
+msgid "Directory error"
+msgstr ""
+
+#: backgnd.cpp:1911
+msgid "Selected directory doesn't exists"
+msgstr ""
+
+#: colorscm.cpp:120
 msgid "Color Scheme"
 msgstr "Renk Ölçüsü"
 
-#: colorscm.cpp:130
+#: colorscm.cpp:131
 msgid "Current scheme"
 msgstr "Þu anki ölçü"
 
-#: colorscm.cpp:132
+#: colorscm.cpp:133
 msgid "KDE default"
 msgstr "KDE Öntanýmlý"
 
-#: colorscm.cpp:145
+#: colorscm.cpp:146
 msgid "&Add ..."
 msgstr "&Ekle"
 
-#: colorscm.cpp:162
+#: colorscm.cpp:163
 msgid "&Save changes"
 msgstr "&Deðiþiklikleri Kaydet"
 
-#: colorscm.cpp:176
+#: colorscm.cpp:177
 msgid "Widget color"
 msgstr "Rengi al"
 
-#: colorscm.cpp:183
+#: colorscm.cpp:184
 msgid "Inactive title bar"
 msgstr "Etkisiz baþlýk çubuðu"
 
-#: colorscm.cpp:184
+#: colorscm.cpp:185
 msgid "Inactive title text"
 msgstr "Etkisiz baþlýk metni"
 
-#: colorscm.cpp:185
+#: colorscm.cpp:186
 msgid "Inactive title blend"
 msgstr "Etkisiz baþlýk kaynaþmasý"
 
-#: colorscm.cpp:186
+#: colorscm.cpp:187
 msgid "Active title bar"
 msgstr "Etkin baþlýk çubuðu"
 
-#: colorscm.cpp:187
+#: colorscm.cpp:188
 msgid "Active title text"
 msgstr "Etkin baþlýk metni"
 
-#: colorscm.cpp:188
+#: colorscm.cpp:189
 msgid "Active title blend"
 msgstr "Aktif baþlýk kaynaþmasý"
 
-#: colorscm.cpp:189
+#: colorscm.cpp:190
 msgid "Background"
 msgstr "Arkaplan"
 
-#: colorscm.cpp:190
+#: colorscm.cpp:191
 msgid "Text"
 msgstr "Metin"
 
-#: colorscm.cpp:191
+#: colorscm.cpp:192
 msgid "Select background"
 msgstr "Arkaplaný seçiniz"
 
-#: colorscm.cpp:192
+#: colorscm.cpp:193
 msgid "Select text"
 msgstr "Metni seçiniz"
 
-#: colorscm.cpp:193
+#: colorscm.cpp:194
 msgid "Window background"
 msgstr "Pencere arkaplaný"
 
-#: colorscm.cpp:194 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+#: colorscm.cpp:195 widgetcanvas.cpp:175 widgetcanvas.cpp:176
 msgid "Window text"
 msgstr "Pencere metni"
 
-#: colorscm.cpp:222
+#: colorscm.cpp:223
 msgid "Contrast"
 msgstr "Parlaklýk"
 
-#: colorscm.cpp:238
+#: colorscm.cpp:239
 msgid "&Low"
 msgstr "&Düþük"
 
-#: colorscm.cpp:246
+#: colorscm.cpp:247
 msgid "High"
 msgstr "Yüksek"
 
-#: colorscm.cpp:317
+#: colorscm.cpp:320
 msgid "Error removing"
 msgstr "Silme hatasý"
 
-#: colorscm.cpp:318
+#: colorscm.cpp:321
 msgid ""
 "This color scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -219,11 +339,11 @@ msgstr ""
 "renk ölçülerinin tutulduðu dosyaya eriþim \n"
 "hakkýnýz yok."
 
-#: colorscm.cpp:375
+#: colorscm.cpp:378
 msgid "Naming error"
 msgstr "Adlandýrma hatasý"
 
-#: colorscm.cpp:376
+#: colorscm.cpp:379
 msgid ""
 "Please choose a unique name for the new color\n"
 "scheme. The one you entered already appears\n"
@@ -249,99 +369,112 @@ msgstr ""
 "\n"
 "Öngörüþte olan renkler açýlýþta baþlayacaktýr."
 
-#: scrnsave.cpp:48
+#: scrnsave.cpp:47
 msgid "Ignore"
 msgstr "Atla"
 
-#: scrnsave.cpp:49
+#: scrnsave.cpp:48
 msgid "Save Screen"
 msgstr "Ekraný koru"
 
-#: scrnsave.cpp:50
+#: scrnsave.cpp:49
 msgid "Lock Screen"
 msgstr "Ekraný Kilitle"
 
-#: scrnsave.cpp:113 scrnsave.cpp:182
+#: scrnsave.cpp:112 scrnsave.cpp:181
 msgid "Screen Saver"
 msgstr "Ekran Koruyucu"
 
-#: scrnsave.cpp:189 scrnsave.cpp:360 scrnsave.cpp:571 scrnsave.cpp:686
+#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:605 scrnsave.cpp:726
 msgid "No screensaver"
 msgstr "Ekran Koruyucu Yok"
 
-#: scrnsave.cpp:210
+#: scrnsave.cpp:209
 msgid "&Setup ..."
 msgstr "&Ayarlar..."
 
-#: scrnsave.cpp:218
+#: scrnsave.cpp:217
 msgid "&Test"
 msgstr "&Test"
 
-#: scrnsave.cpp:231
+#: scrnsave.cpp:230
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: scrnsave.cpp:251
+#: scrnsave.cpp:250
 msgid "&Wait for"
 msgstr "&Bekle"
 
-#: scrnsave.cpp:261
+#: scrnsave.cpp:260
 msgid "min."
 msgstr "dak."
 
-#: scrnsave.cpp:267
+#: scrnsave.cpp:266
 msgid "&Require password"
 msgstr "Parola sor"
 
-#: scrnsave.cpp:273
+#: scrnsave.cpp:272
+msgid "&Accept root password to unlock"
+msgstr ""
+
+#: scrnsave.cpp:278
 msgid "Show &password as stars"
 msgstr "Parola'yý * ile göster"
 
-#: scrnsave.cpp:281
+#: scrnsave.cpp:286
 msgid "Priority"
 msgstr "Öncelik"
 
-#: scrnsave.cpp:294
+#: scrnsave.cpp:299
 msgid "&High"
 msgstr "&Yüksek"
 
-#: scrnsave.cpp:303
+#: scrnsave.cpp:308
 msgid "Low"
 msgstr "Düþük"
 
-#: general.cpp:216
+#: general.cpp:220
 msgid "Fonts etc."
 msgstr "Yazý türü vb."
 
-#: general.cpp:222
+#: general.cpp:228
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "&Windows 95 türü widgetler çiz"
 
-#: general.cpp:236
+#: general.cpp:242
+msgid "&Apply style to non-KDE apps"
+msgstr ""
+
+#: general.cpp:255
 msgid "Desktop fonts"
 msgstr "Masaüstü yazý türleri"
 
-#: general.cpp:248
+#: general.cpp:267
 msgid "General font"
 msgstr "Genel yazý türü"
 
-#: general.cpp:253
+#: general.cpp:272
 msgid "Fixed font"
 msgstr "Sabit Yazý türü"
 
-#: general.cpp:263
+#: general.cpp:278
+#, fuzzy
+msgid "Window title font"
+msgstr "Pencere metni"
+
+#: general.cpp:283
 msgid "Panel button font"
 msgstr "Panel tuþ yazý türü"
 
-#: general.cpp:268
+#: general.cpp:288
 msgid "Panel clock font"
 msgstr "Panel saat yazý türü"
 
-#: general.cpp:298
+#: general.cpp:318
 msgid "Sample text"
 msgstr "Örnek metin"
 
-#: general.cpp:306
+#: general.cpp:326
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
@@ -351,27 +484,27 @@ msgstr ""
 "fötr þapkalý çocuk bergamalý hasanýn üvey kýzý jale deðil\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" @ $ % ^ & * ( )"
 
-#: main.cpp:62
+#: main.cpp:63
 msgid "&Fonts etc."
 msgstr "&Yazý tipleri vb."
 
-#: main.cpp:65
+#: main.cpp:66
 msgid "&Background"
 msgstr "&Arkaplan"
 
-#: main.cpp:68
+#: main.cpp:69
 msgid "&Screensaver"
 msgstr "&Ekran koruyucu"
 
-#: main.cpp:72
+#: main.cpp:73
 msgid "&Colors"
 msgstr "&Renkler"
 
-#: main.cpp:78
+#: main.cpp:79
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr "Kullaným: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
-#: main.cpp:130
+#: main.cpp:140
 msgid "Display settings"
 msgstr "Ayarlarý göster"
 
@@ -386,6 +519,10 @@ msgstr "Etkin pencere"
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
 msgid "Selected text"
 msgstr "Seçilmiþ metin"
+
+#: widgetcanvas.cpp:212
+msgid "New"
+msgstr ""
 
 #: fontchooser.cpp:82
 msgid "&Typeface"

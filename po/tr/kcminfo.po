@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -13,56 +13,97 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ISO 8859-9\n"
 
-#: main.cpp:50
+#: main.cpp:79
 msgid "&Memory"
 msgstr "&Bellek"
 
-#: main.cpp:53
+#: main.cpp:82
 msgid "&Processor"
 msgstr "&Ýþlemci"
 
-#: main.cpp:62
-msgid "usage: kcminfo [-init | {processor,memory}]\n"
-msgstr "Kullaným: kcminfo [-init | {iþlemci,bellek}]\n"
+#: main.cpp:85
+msgid "&Interrupts"
+msgstr ""
 
-#: main.cpp:74
+#: main.cpp:88
+msgid "DMA-C&hannels"
+msgstr ""
+
+#: main.cpp:91
+msgid "&IO-Ports"
+msgstr ""
+
+#: main.cpp:94
+msgid "PCI-&Bus"
+msgstr ""
+
+#: main.cpp:97
+msgid "S&ound"
+msgstr ""
+
+#: main.cpp:100
+msgid "&Devices"
+msgstr ""
+
+#: main.cpp:103
+msgid "S&CSI"
+msgstr ""
+
+#: main.cpp:106
+msgid "P&artitions"
+msgstr ""
+
+#: main.cpp:109
+msgid "&X-Server"
+msgstr ""
+
+#: main.cpp:120
+msgid ""
+"usage: kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
+msgstr ""
+
+#: main.cpp:148
 msgid "System Information"
 msgstr "Sistem Bilgisi"
 
-#: memory.cpp:11
+#: memory.cpp:15
 msgid "Total memory"
 msgstr "Toplam Bellek"
 
-#: memory.cpp:21
+#: memory.cpp:25
 msgid "Free memory"
 msgstr "Serbest Bellek"
 
-#: memory.cpp:29
+#: memory.cpp:33
 msgid "Shared memory"
 msgstr "Paylaþýlan Bellek"
 
-#: memory.cpp:37
+#: memory.cpp:41
 msgid "Buffer memory"
 msgstr "Ara Bellek"
 
-#: memory.cpp:45
+#: memory.cpp:49
 msgid "Swap memory"
 msgstr "Takas Bellek"
 
-#: memory.cpp:53
+#: memory.cpp:57
 msgid "Free swap memory"
 msgstr "Serbest Takan Alaný"
 
-#: memory.cpp:74
+#: memory.cpp:78
 #, c-format
 msgid "%10ld bytes  = %8.2f MB"
 msgstr "%10ld byte = %8.2f MB"
 
-#: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
-#: memory.cpp:101
+#: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
+#: memory.cpp:105
 msgid "Not available"
 msgstr "Yok"
 
-#: processor.cpp:29
-msgid "This system is not yet supported :-("
-msgstr "Bu sistem henüz desteklenmiyor :-("
+#~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
+#~ msgstr "Kullaným: kcminfo [-init | {iþlemci,bellek}]\n"
+
+#~ msgid "This system is not yet supported :-("
+#~ msgstr "Bu sistem henüz desteklenmiyor :-("

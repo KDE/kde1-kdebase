@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"POT-Creation-Date: 1998-11-17 15:21+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -13,42 +13,63 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ISO 8859-9\n"
 
-#: kdmshutdown.cpp:159
+#: kdmshutdown.cpp:171
 msgid "Shutdown or restart?"
 msgstr "Kapat yada yeniden baþlat?"
 
-#: kdmshutdown.cpp:175
+#: kdmshutdown.cpp:187
 msgid "Shutdown"
 msgstr "Kapat"
 
-#: kdmshutdown.cpp:189
+#: kdmshutdown.cpp:201
 msgid "Shutdown and restart"
 msgstr "Kapat ve yeniden baþlat"
 
-#: kdmshutdown.cpp:198
+#: kdmshutdown.cpp:210
 msgid "Exit kdm"
 msgstr "KDM çýkýþ"
 
-#: kgreeter.cpp:139
+#: kgreeter.cpp:176
 msgid "Login:"
 msgstr "Kullanýcý:"
 
-#: kgreeter.cpp:151
+#: kgreeter.cpp:188
 msgid "Password:"
 msgstr "Parola:"
 
-#: kgreeter.cpp:191
+#: kgreeter.cpp:213
 msgid "Login failed!"
 msgstr "Giriþ baþarýsýz!"
 
-#: kgreeter.cpp:197
+#: kgreeter.cpp:219
 msgid "Session Type:"
 msgstr "Oturum Türü:"
 
-#: kgreeter.cpp:213
+#: kgreeter.cpp:262
 msgid "Go!"
 msgstr "Git!"
 
-#: kgreeter.cpp:229
+#: kgreeter.cpp:278
 msgid "Shutdown..."
 msgstr "Kapat..."
+
+#: kgreeter.cpp:520
+msgid "Logins not available right now."
+msgstr ""
+
+#: kgreeter.cpp:561
+msgid "login_getcapstr() failed."
+msgstr ""
+
+#: kgreeter.cpp:615 kgreeter.cpp:642
+msgid "Sorry -- your account has expired."
+msgstr ""
+
+#: kgreeter.cpp:620 kgreeter.cpp:647
+#, c-format
+msgid "Warning: your account expires on %s"
+msgstr ""
+
+#: kgreeter.cpp:674
+msgid "Home directory not available"
+msgstr ""

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -13,33 +13,33 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ISO 8859-9\n"
 
-#: main.cpp:87
+#: main.cpp:84
 msgid "&Appearance"
 msgstr "&Görünüm"
 
-#: main.cpp:95
+#: main.cpp:92
 msgid "&Background"
 msgstr "%Arkaplan"
 
-#: main.cpp:98
+#: main.cpp:95
 msgid "&Users"
 msgstr "&Kullanýcýlar"
 
-#: main.cpp:101
+#: main.cpp:98
 msgid "&Sessions"
 msgstr "&Oturumlar"
 
-#: main.cpp:106
+#: main.cpp:103
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
 "kullaným: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 
-#: main.cpp:145
+#: main.cpp:142
 msgid "KDM Configuration"
 msgstr "KDM Ayarlama"
 
-#: main.cpp:155
+#: main.cpp:152
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
@@ -47,7 +47,7 @@ msgstr ""
 "Üzgünüm, fakat KDM ayar dosyasýný \n"
 "okuma/yazma hakkýna sahip deðilsiniz."
 
-#: main.cpp:157
+#: main.cpp:154
 msgid "Missing privileges"
 msgstr "Eksik tanýmlamalar"
 
@@ -145,44 +145,90 @@ msgid "Select fonts"
 msgstr "Yazý tipini seçiniz"
 
 #: kdm-font.cpp:50
-msgid "Change font"
+#, fuzzy
+msgid "Example"
+msgstr "Örnek:"
+
+#: kdm-font.cpp:52
+#, fuzzy
+msgid "Change font..."
 msgstr "Yazý tipi deðiþtir"
 
-#: kdm-font.cpp:55
+#: kdm-font.cpp:57
 msgid "Greeting"
 msgstr "Karþýlama"
 
-#: kdm-font.cpp:56
+#: kdm-font.cpp:58
 msgid "Fail"
 msgstr "Baþarýsýz"
 
-#: kdm-font.cpp:57
+#: kdm-font.cpp:59
 msgid "Standard"
 msgstr "Standart"
 
-#: kdm-font.cpp:59
-msgid "Example:"
-msgstr "Örnek:"
+#: kdm-bgnd.cpp:70
+msgid "Preview"
+msgstr ""
 
-#: kdm-bgnd.cpp:66
+#: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "Renk"
 
-#: kdm-bgnd.cpp:74
+#: kdm-bgnd.cpp:101
+#, fuzzy
+msgid "Solid Color"
+msgstr "Renk"
+
+#: kdm-bgnd.cpp:106
+msgid "Horizontal Blend"
+msgstr ""
+
+#: kdm-bgnd.cpp:111
+msgid "Vertical Blend"
+msgstr ""
+
+#: kdm-bgnd.cpp:130
 msgid "Wallpaper"
 msgstr "Duvar Kaðýdý"
 
-#: kdm-bgnd.cpp:108
-msgid "Tiled"
+#: kdm-bgnd.cpp:171 kdm-sess.cpp:56
+msgid "None"
+msgstr ""
+
+#: kdm-bgnd.cpp:176
+#, fuzzy
+msgid "Tile"
 msgstr "Döþe"
 
-#: kdm-bgnd.cpp:112
-msgid "Centred"
+#: kdm-bgnd.cpp:181
+#, fuzzy
+msgid "Center"
 msgstr "Ortala"
 
-#: kdm-bgnd.cpp:116
-msgid "Scaled"
+#: kdm-bgnd.cpp:186
+#, fuzzy
+msgid "Scale"
 msgstr "Ölçülü"
+
+#: kdm-bgnd.cpp:191
+msgid "TopLeft"
+msgstr ""
+
+#: kdm-bgnd.cpp:196
+msgid "TopRight"
+msgstr ""
+
+#: kdm-bgnd.cpp:201
+msgid "BottomLeft"
+msgstr ""
+
+#: kdm-bgnd.cpp:206
+msgid "BottomRight"
+msgstr ""
+
+#: kdm-bgnd.cpp:211
+msgid "Fancy"
+msgstr ""
 
 #: kdm-users.cpp:48
 msgid "All users"
@@ -228,39 +274,43 @@ msgstr "Seçilmiþ kullanýcý yok"
 msgid "Save image as default image?"
 msgstr "Görüntüyü öntanýmlý görüntü olarak kayýt edeyim mi?"
 
-#: kdm-sess.cpp:55
+#: kdm-sess.cpp:52
+msgid "Allow to shutdown"
+msgstr ""
+
+#: kdm-sess.cpp:57
 msgid "All"
 msgstr "Hepsi"
 
-#: kdm-sess.cpp:56
+#: kdm-sess.cpp:58
 msgid "Root Only"
 msgstr "Yetkili Kullanýcý Yanlýzca"
 
-#: kdm-sess.cpp:57
+#: kdm-sess.cpp:59
 msgid "Console Only"
 msgstr "Yanlýzca Konsol"
 
-#: kdm-sess.cpp:61
+#: kdm-sess.cpp:63
 msgid "Commands"
 msgstr "Komutlar"
 
-#: kdm-sess.cpp:62
+#: kdm-sess.cpp:64
 msgid "Shutdown"
 msgstr "Kapat"
 
-#: kdm-sess.cpp:67
+#: kdm-sess.cpp:70
 msgid "Restart"
 msgstr "Yeniden Baþlat"
 
-#: kdm-sess.cpp:73
+#: kdm-sess.cpp:77
 msgid "Session types"
 msgstr "Oturum Türleri"
 
-#: kdm-sess.cpp:75
+#: kdm-sess.cpp:79
 msgid "New type"
 msgstr "Yeni Tür"
 
-#: kdm-sess.cpp:83
+#: kdm-sess.cpp:89
 msgid "Available types"
 msgstr "Mümkün türler"
 

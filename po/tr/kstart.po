@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"POT-Creation-Date: 1998-10-29 13:59+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -13,26 +13,54 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ISO 8859-9\n"
 
-#: kstartondesk.C:72
-msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+#: kstart.C:115
+#, c-format
+msgid ""
+"\n"
+" Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
+"\n"
+" Utility to launch legay applications with special KDE window properties\n"
+" such as iconified, maximized, a certain virtual desktop, a special "
+"decoration\n"
+" or sticky\n"
+" \n"
+" In addition, the -activate switch will jump to the window even if it is\n"
+" started on a different virtual desktop\n"
+" \n"
+" Usage:\n"
+" %s <command> [-window <regular expression>] [-desktop <number>]\n"
+"              [-sticky] [-iconify] [-maximize] \n"
+"              [-decoration tiny|none] [-activate]\n"
+" \n"
+" If you do not specify a regular expression for the windows title,\n"
+" then the very first window to appear will be taken. Not recommended!\n"
+" \n"
+" Example usage:\n"
+" %s \"xclock -geometry 80x80-0+0\" -window xclock -decoration tiny -sticky\n"
+" puts a tiny decorated, sticky xclock on the top right corner of the "
+"screen.\n"
+" \n"
+" "
+msgstr ""
+
+#: kstart.C:151
+#, fuzzy
+msgid ""
+"\n"
+" Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Telif hakký (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: kstartondesk.C:76
-msgid "Usage:"
-msgstr "Kullaným: "
+#~ msgid "Usage:"
+#~ msgstr "Kullaným: "
 
-#: kstartondesk.C:78
-msgid "command "
-msgstr "komut "
+#~ msgid "command "
+#~ msgstr "komut "
 
-#: kstartondesk.C:79
-msgid "title "
-msgstr "baþlýk"
+#~ msgid "title "
+#~ msgstr "baþlýk"
 
-#: kstartondesk.C:80
-msgid "desktop"
-msgstr "masaüstü"
+#~ msgid "desktop"
+#~ msgstr "masaüstü"
 
-#: kstartondesk.C:82
-msgid "Example"
-msgstr "Örnek"
+#~ msgid "Example"
+#~ msgstr "Örnek"

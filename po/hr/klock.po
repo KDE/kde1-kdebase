@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-11-18 13:15+0100\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Stjepan Zlodi <szlodi@public.srce.hr> \n"
 "Language-Team: Croatian\n"
@@ -458,12 +458,12 @@ msgstr ""
 "\n"
 "Prilagodio za kscreensaver Emanuel Pirker."
 
-#: main.cpp:351
+#: main.cpp:353
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "Opcija %s nije podr¾ana na ovoj platformi!"
 
-#: main.cpp:380
+#: main.cpp:382
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -477,11 +477,11 @@ msgstr ""
 "Molim kontaktirajte svojeg administratora,\n"
 "i recite mu/joj da trebate suid za screensavers!"
 
-#: main.cpp:385
+#: main.cpp:387
 msgid "Shadow Passwords"
 msgstr "Skrivene (Shadow) Lozinke"
 
-#: main.cpp:430
+#: main.cpp:432
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -492,7 +492,7 @@ msgstr ""
 "nmolim nemojte koristiti -test zajedno s -lock.\n"
 "umjesto toga koristite klock.\n"
 
-#: main.cpp:538
+#: main.cpp:540
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -501,7 +501,7 @@ msgstr ""
 "Uporaba: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:541
+#: main.cpp:543
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -687,11 +687,11 @@ msgstr ""
 "\n"
 "Prilagodio za kscreensave Martin Jones."
 
-#: saver.cpp:56 saver.cpp:146
+#: saver.cpp:60 saver.cpp:178
 msgid "Enter Password"
 msgstr "Unesi Lozinku"
 
-#: saver.cpp:114
+#: saver.cpp:118
 msgid "Failed"
 msgstr "Gre¹ka"
 

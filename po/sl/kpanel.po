@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-11-14 01:18+0100\n"
+"POT-Creation-Date: 1998-11-18 13:15+0100\n"
 "PO-Revision-Date: 1998-07-18 15:00+0100\n"
 "Last-Translator: luka steger <luka_steger@hotmail.com>\n"
 "Language-Team: slovene <LL@li.org>\n"
@@ -130,38 +130,38 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr "Ne morem narediti gumba na pultu!"
 
-#: pfilemenu.C:389
+#: pfilemenu.C:420
 msgid "(empty folder)"
 msgstr ""
 
-#: pfilemenu.C:446
+#: pfilemenu.C:477
 msgid "(Too Many Files)"
 msgstr ""
 
-#: pfilemenu.C:455
+#: pfilemenu.C:486
 msgid "(Access Denied)"
 msgstr ""
 
-#: pfilemenu.C:458
+#: pfilemenu.C:489
 msgid "(Unreadable)"
 msgstr ""
 
-#: pfilemenu.C:465
+#: pfilemenu.C:496
 msgid "Open Folder"
 msgstr ""
 
-#: pfilemenu.C:715
+#: pfilemenu.C:746
 msgid "Global:"
 msgstr ""
 
-#: pfilemenu.C:736
+#: pfilemenu.C:767
 msgid "Local:"
 msgstr ""
 
-#: pfilemenu.C:756
+#: pfilemenu.C:787
 msgid "Recent:"
 msgstr ""
 
-#: pfilemenu.C:804
+#: pfilemenu.C:835
 msgid "Options..."
 msgstr ""

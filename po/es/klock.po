@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-11-18 13:15+0100\n"
 "PO-Revision-Date: 1998-10-23 18:00+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -452,12 +452,12 @@ msgstr ""
 "\n"
 "Adaptado a kscreensave por Emanuel Pirker."
 
-#: main.cpp:351
+#: main.cpp:353
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "La opción %s no está disponible en esta arquitectura."
 
-#: main.cpp:380
+#: main.cpp:382
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -471,11 +471,11 @@ msgstr ""
 "Por favor consulte al administrador de su sistema.\n"
 "¡Dígale que necesita cambiar los derechos de los salvapantallas!"
 
-#: main.cpp:385
+#: main.cpp:387
 msgid "Shadow Passwords"
 msgstr "Contraseñas ocultas"
 
-#: main.cpp:430
+#: main.cpp:432
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -487,7 +487,7 @@ msgstr ""
 "mejor use klock.\n"
 "\n"
 
-#: main.cpp:538
+#: main.cpp:540
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -496,7 +496,7 @@ msgstr ""
 "Modo de uso: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "   [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
-#: main.cpp:541
+#: main.cpp:543
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -681,11 +681,11 @@ msgstr ""
 "\n"
 "Adaptado a kscreensave por Martin Jones."
 
-#: saver.cpp:56 saver.cpp:146
+#: saver.cpp:60 saver.cpp:178
 msgid "Enter Password"
 msgstr "Contraseña"
 
-#: saver.cpp:114
+#: saver.cpp:118
 msgid "Failed"
 msgstr "Error"
 

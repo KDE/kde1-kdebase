@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -21,6 +21,14 @@ msgstr "Dizin"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "HATA: '%s' geçicisi yok!"
+
+#: krootwm.C:180 krootwm.C:577 krootwm.C:585
+msgid "New"
+msgstr ""
+
+#: krootwm.C:181
+msgid "Bookmarks"
+msgstr ""
 
 #: krootwm.C:183
 msgid "Help on desktop"
@@ -57,6 +65,10 @@ msgstr "Ekraný kilitle"
 #: krootwm.C:193
 msgid "Logout"
 msgstr "Çýkýþ"
+
+#: krootwm.C:219
+msgid "Edit Bookmarks"
+msgstr ""
 
 #: krootwm.C:607
 msgid "Could not create folder"

@@ -2,15 +2,15 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -84,8 +84,7 @@ msgstr ""
 "Find için K arabirimi\n"
 "Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "\n"
-"Stephan Kulow'a teþekkürler"
-"<coolo@kde.org>"
+"Stephan Kulow'a teþekkürler<coolo@kde.org>"
 
 #: kfindtop.cpp:196
 msgid "Start Search"
@@ -203,6 +202,10 @@ msgstr "Çalýþtýrýlabilir dosyalar"
 msgid "SUID executable files"
 msgstr "SUID çalýþtýrýlabilir dosyalar"
 
+#: kftabdlg.cpp:246
+msgid "(none)"
+msgstr ""
+
 #: kftabdlg.cpp:247
 msgid "At Least"
 msgstr "En az"
@@ -215,19 +218,19 @@ msgstr "En fazla"
 msgid " Advanced "
 msgstr " Ýleri düzey"
 
-#: kftabdlg.cpp:492
+#: kftabdlg.cpp:494
 msgid "The date is not valid!!"
 msgstr "Tarih geçersiz!!"
 
-#: kftabdlg.cpp:504
+#: kftabdlg.cpp:506
 msgid "The month(s) value isn't valid!!"
 msgstr "Ay verisi geçersiz!!"
 
-#: kftabdlg.cpp:515
+#: kftabdlg.cpp:517
 msgid "The day(s) value isn't valid!!"
 msgstr "Gün verisi geçersiz!!"
 
-#: kftabdlg.cpp:532
+#: kftabdlg.cpp:534
 msgid "The value in size isn't valid number!!"
 msgstr "Boyut bilgisindeki veri geçerli bir sayý deðil!!"
 

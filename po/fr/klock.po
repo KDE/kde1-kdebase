@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-11-18 13:15+0100\n"
 "PO-Revision-Date: 1998-02-25 21:41 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -460,12 +460,12 @@ msgstr ""
 "\n"
 "Porté vers kscreensave by Emanuel Pirker."
 
-#: main.cpp:351
+#: main.cpp:353
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "L'option %s n'est pas supportée sur cette plateforme !"
 
-#: main.cpp:380
+#: main.cpp:382
 #, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
@@ -479,11 +479,11 @@ msgstr ""
 "\n"
 "Dites-lui que vous avez besoin d'avoir les mises en veille setuid root."
 
-#: main.cpp:385
+#: main.cpp:387
 msgid "Shadow Passwords"
 msgstr "Mots de passe cachés"
 
-#: main.cpp:430
+#: main.cpp:432
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -491,7 +491,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: main.cpp:538
+#: main.cpp:540
 #, fuzzy, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -500,7 +500,7 @@ msgstr ""
 "utilisation: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:541
+#: main.cpp:543
 #, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
@@ -689,11 +689,11 @@ msgstr ""
 "\n"
 "Porté vers kscreensave par Martin Jones."
 
-#: saver.cpp:56 saver.cpp:146
+#: saver.cpp:60 saver.cpp:178
 msgid "Enter Password"
 msgstr "Mot de passe"
 
-#: saver.cpp:114
+#: saver.cpp:118
 msgid "Failed"
 msgstr "Mot de passe incorrect"
 

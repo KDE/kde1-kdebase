@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-11-18 13:15+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -459,12 +459,12 @@ msgstr ""
 "\n"
 "Previedol pre kscreensaver Emanuel Pirker"
 
-#: main.cpp:351
+#: main.cpp:353
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "Voµba %s nie je podporovaná na tejto platforme!"
 
-#: main.cpp:380
+#: main.cpp:382
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -478,11 +478,11 @@ msgstr ""
 "Prosím, kontaktujte svojho systémového administrátora.\n"
 "Povedzte mu, ¾e potrebujete SUID pre ¹etrièe obrazovky!"
 
-#: main.cpp:385
+#: main.cpp:387
 msgid "Shadow Passwords"
 msgstr "Tieòové heslá"
 
-#: main.cpp:430
+#: main.cpp:432
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -494,7 +494,7 @@ msgstr ""
 "pou¾ite klock namiesto toho.\n"
 "\n"
 
-#: main.cpp:538
+#: main.cpp:540
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -503,7 +503,7 @@ msgstr ""
 "Pou¾itie: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
-#: main.cpp:541
+#: main.cpp:543
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -690,11 +690,11 @@ msgstr ""
 "\n"
 "Previedol pre kscreensaver Martin Jones"
 
-#: saver.cpp:56 saver.cpp:146
+#: saver.cpp:60 saver.cpp:178
 msgid "Enter Password"
 msgstr "Zadajte heslo"
 
-#: saver.cpp:114
+#: saver.cpp:118
 msgid "Failed"
 msgstr "Neúspe¹né"
 

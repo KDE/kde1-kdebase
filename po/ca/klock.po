@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-11-18 13:15+0100\n"
 "PO-Revision-Date: 1998-06-08 23:45+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -460,12 +460,12 @@ msgstr ""
 "\n"
 "Portat a kscreensave per Emanuel Pirker."
 
-#: main.cpp:351
+#: main.cpp:353
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "L'opció %s no té suport en aquesta plataforma!"
 
-#: main.cpp:380
+#: main.cpp:382
 #, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
@@ -479,11 +479,11 @@ msgstr ""
 "\n"
 "Digueu-li que us cal suid pels salvapantalles!"
 
-#: main.cpp:385
+#: main.cpp:387
 msgid "Shadow Passwords"
 msgstr "Paraules de pas ombra"
 
-#: main.cpp:430
+#: main.cpp:432
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -491,7 +491,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: main.cpp:538
+#: main.cpp:540
 #, fuzzy, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -500,7 +500,7 @@ msgstr ""
 "Us: %s -install|-setup|-test|-desc|-preview mid|-inroot\n"
 "    [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:541
+#: main.cpp:543
 #, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
@@ -688,11 +688,11 @@ msgstr ""
 "\n"
 "Portat a kscreensave per Martin Jones."
 
-#: saver.cpp:56 saver.cpp:146
+#: saver.cpp:60 saver.cpp:178
 msgid "Enter Password"
 msgstr "Paraula de pas"
 
-#: saver.cpp:114
+#: saver.cpp:118
 msgid "Failed"
 msgstr "Fallat"
 
