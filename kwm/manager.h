@@ -134,6 +134,12 @@ private:
   QStrList* proxy_hints;
   QStrList* proxy_props;
 
+  QStrList additional_commands;
+  QStrList additional_machines;
+  QStrList additional_proxy_hints;
+  QStrList additional_proxy_props;
+   
+
   void scanWins();
 
   // Colormaps

@@ -20,7 +20,7 @@
 #include "minicli.h"
 #include "logout.h"
 #include "task.h"
-#include "kwm.h"
+#include <kwm.h>
 #include "version.h"
 
 #include <kapp.h>
@@ -903,8 +903,16 @@ bool MyApp::handleKeyPress(XKeyEvent key){
     }
   }
 
-  if (control_grab || tab_grab)
+  if (control_grab || tab_grab){
+    if (kc == XK_Escape){
+      XUngrabKeyboard(qt_xdisplay(), CurrentTime);
+      hideInfoBox();
+      tab_grab = False;
+      control_grab = False;
+      return True;
+    }
     return False;
+  }
 
   if( (kc == XK_Escape)  && (km == Mod1Mask || km == ControlMask) ){
     freeKeyboard(False);

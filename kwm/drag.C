@@ -211,6 +211,10 @@ int sweepdrag(Client* c, XButtonEvent * /* e0 */,
 
     getmouse(&cx, &cy);
     recalc (c, cx, cy);
+
+    // set the focus policy to ClickToFocus to avoid flickering
+    FOCUS_POLICY oldFocusPolicy = options.FocusPolicy;
+    options.FocusPolicy = CLICK_TO_FOCUS;
     
     if (options.WindowMoveType == TRANSPARENT || recalc != dragcalc){
       XGrabServer(dpy);
@@ -252,6 +256,8 @@ int sweepdrag(Client* c, XButtonEvent * /* e0 */,
 	drawbound(c);
       else {
 	manager->sendConfig(c);
+	XSync(qt_xdisplay(), False);
+	while (XCheckMaskEvent(dpy, EnterWindowMask | LeaveWindowMask, &ev));
 	myapp->processEvents(); 
       }
       XFlush(dpy);
@@ -277,11 +283,14 @@ int sweepdrag(Client* c, XButtonEvent * /* e0 */,
     if (options.WindowMoveType == TRANSPARENT || recalc != dragcalc)
       XUngrabServer(dpy);
 
+    while (XCheckMaskEvent(dpy, EnterWindowMask | LeaveWindowMask, &ev));
+
     if (c->isMaximized()){
       c->geometry_restore = c->geometry;
       c->buttonMaximize->toggle();
     }
     
+    options.FocusPolicy =  oldFocusPolicy;
     return 0;
 }
 

@@ -27,7 +27,7 @@
 #include "client.moc"
 #include "manager.h"
 #include "main.h"
-#include "kwm.h"
+#include <kwm.h>
 
 #include <X11/Xutil.h>
 #include <X11/cursorfont.h>

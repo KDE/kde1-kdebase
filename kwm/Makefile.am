@@ -12,7 +12,7 @@ SUBDIRS 	= pics
 
 #######	Files
 
-kwm_SOURCES	= client.C manager.C main.C minicli.C drag.C logout.C kwm.C task.C
+kwm_SOURCES	= client.C manager.C main.C minicli.C drag.C logout.C task.C
 BUILT_SOURCES	= client.moc manager.moc main.moc minicli.moc logout.moc task.moc
 
 client.C:client.moc

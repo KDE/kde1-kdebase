@@ -12,6 +12,21 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 3:
+       - session management can handle even crappy missbehaving clients
+         like xfig, which destroy their window instead of saving theirselfs.
+         kwm even enables the proxy (if possible) for those lying programs.
+         (Please do not look at the hacks necessary to support this rubbish)
+       - no more flickering with opaque move and FocusFollowMouse
+       - Alt-Tab works now even with FocusFollowMouse
+       - Alt-Tab/Control-Tab can be aborted with Escape (Thanks to Christian
+         for this idea)
+       - re-enabled MWM decoration hints for StarOffice (floatwinshells)
+       - kwm_desktop_change contains new desktop as argument
+       - unknown commands are sent to the modules as described in kwm.h
+       - session management now possible for unmapped windows (usefull
+         for example for kfm). Please see kwm.h for details.
+
   patchlevel 2:
        - fixed the frames-are-dissappearing-and-qt-focus-not-working
          bug I introduced in patchlevel 1 :-(
