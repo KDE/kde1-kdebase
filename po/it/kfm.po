@@ -1069,12 +1069,12 @@ msgid "Recurse copying from/to distant locations"
 msgstr "La copia ricorsiva da/a locazioni distanti"
 
 #: kiojob.cpp:909
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not remove symbolic link\n"
 "%s"
 msgstr ""
-"Impossibile creare il collegamento simbolico\n"
+"Impossibile cancellare il collegamento simbolico\n"
 "%s"
 
 #: kiojob.cpp:957
@@ -1236,7 +1236,7 @@ msgstr ""
 "non esiste"
 
 #: kiojob.cpp:1405
-#, fuzzy, c-format
+#,  c-format
 msgid ""
 "Could not write\n"
 "%s\n"
@@ -1244,7 +1244,7 @@ msgid ""
 msgstr ""
 "Impossibile scrivere\n"
 "%s\n"
-"Possibile accesso negato"
+"E' possibile che il disco sia pieno"
 
 #: kiojob.cpp:1456
 #, c-format

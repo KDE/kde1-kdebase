@@ -336,7 +336,7 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
-"Per favore scgeli un nome unico per il nuovo schema\n"
+"Per favore scegli un nome unico per il nuovo schema\n"
 "di colori. Quello che hai inserito appare già nella\n"
 "lista degli schemi di colori."
 

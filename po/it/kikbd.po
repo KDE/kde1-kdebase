@@ -92,7 +92,7 @@ msgstr ""
 "del programma di configurazione."
 
 #: keymap.cpp:238
-#, fuzzy, c-format
+#,  c-format
 msgid "KeyMap: can't find symbol \"%s\"."
 msgstr "KeyMap: impossibile trovare il simbolo \"%s\"."
 
@@ -440,7 +440,7 @@ msgid "Standard behavior. Keyboard map effective for all windows"
 msgstr "Aspetto standard. Mappa attiva per tutte le finestre"
 
 #: widgets.cpp:509
-#, fuzzy
+#
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
 msgstr ""
