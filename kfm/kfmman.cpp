@@ -1447,6 +1447,7 @@ QString KFMManager::getVisualSchnauzerIconTag( const char *_url )
 		if ( is_avail && !is_null )
 		{
 		    QString result;
+                    KURL::encodeURL(xvfile); // in case of "'" in the name, for instance.
 		    result.sprintf("<img border=0 src=\"file:%s\">", xvfile.data() );
 		    return result;
 		}
@@ -1457,17 +1458,23 @@ QString KFMManager::getVisualSchnauzerIconTag( const char *_url )
 	KMimeType *mime = KMimeType::getMagicMimeType( _url );
 	if ( strcmp( mime->getMimeType(), "image/jpeg" ) == 0 ||
 	     strcmp( mime->getMimeType(), "image/gif" ) == 0 ||
+	     strcmp( mime->getMimeType(), "image/bmp" ) == 0 ||  
+                            // Added bmp, because it seems to work. David.
 	     strcmp( mime->getMimeType(), "image/x-xpm" ) == 0 )
 	{
 	    QString result;
-	    result.sprintf("<img border=0 src=\"icon:%s\">", u2.path() );
+            QString path(u2.path());
+            KURL::encodeURL(path); // in case of "'" in the name, for instance.
+	    result.sprintf("<img border=0 src=\"icon:%s\">", path.data() );
 	    return result;
 	}
     }
     
     KMimeType *mime = KMimeType::getMagicMimeType( _url );
     QString result;
-    result.sprintf("<img border=0 src=\"file:%s\">", mime->getPixmapFile( _url ) );
+    QString path( mime->getPixmapFile( _url ) );
+    KURL::encodeURL(path); // in case of "'" in the name, for instance.
+    result.sprintf("<img border=0 src=\"file:%s\">", path.data() );
     return result;
 }
 
