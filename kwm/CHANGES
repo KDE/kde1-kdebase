@@ -21,6 +21,7 @@ patchlevel 9 (CT - 27May98):
                 - small bugfix to allow runtime switching between vertical and horizontal (Matthias)
                 - small fix to avoid a double calling of Manager::sendConfig after a 
                    drag/resize in opaque mode(Matthias)
+                - bugfix for double buffering (confusing dst and src in bitBlt is a bad idea....)
   
 patchlevel 8:
         - WindowResizeType=Opaque improved. No more flickering and a 
