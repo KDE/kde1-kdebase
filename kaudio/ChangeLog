@@ -1,3 +1,7 @@
+1998-11-01  Alex Zepeda  <garbanzo@hooked.net>
+
+	* Tweak the Makefile template a bit.
+
 1998-06-17  Christian Esken  <esken@kde.org>
 
 	* ADDING MdDisconnect(). *BSD users should be much happier now.
