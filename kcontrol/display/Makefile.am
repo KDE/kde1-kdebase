@@ -5,7 +5,7 @@ DISTCLEANFILES = $(BUILT_SOURCES)
 
 bin_PROGRAMS = kcmdisplay
 
-kcmdisplay_SOURCES = backgnd.cpp gif.cpp jpeg.cpp display.cpp \
+kcmdisplay_SOURCES = backgnd.cpp jpeg.cpp display.cpp \
                         colorscm.cpp kwmcom.cpp savescm.cpp scrnsave.cpp \
 			general.cpp main.cpp
 BUILT_SOURCES = backgnd.moc display.moc colorscm.moc savescm.moc kwmcom.moc \

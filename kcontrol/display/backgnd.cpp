@@ -35,10 +35,6 @@
 #include <kwm.h>
 #include <ksimpleconfig.h>
 
-#ifdef HAVE_LIBGIF
-#include "gif.h"
-#endif
-
 #ifdef HAVE_LIBJPEG
 #include "jpeg.h"
 #endif
@@ -186,10 +182,6 @@ KRenameDeskDlg::KRenameDeskDlg( const char *t, QWidget *parent )
 KBackground::KBackground( QWidget *parent, int mode, int desktop )
 	: KDisplayModule( parent, mode, desktop )
 {
-#ifdef HAVE_LIBGIF
-    QImageIO::defineIOHandler("GIF", "^GIF[0-9][0-9][a-z]", 
-			  0, read_gif_file, NULL);
-#endif
 #ifdef HAVE_LIBJPEG
     QImageIO::defineIOHandler("JFIF","^\377\330\377\340", 
 			  0, read_jpeg_jfif, NULL);
