@@ -1,0 +1,100 @@
+# KDE Config File
+
+[International Keyboard]
+Authors=Denis V. Dmitrienko <denus@null.net>, Aleksey Nogin <ayn2@cornell.edu>,
+
+Comment=Microsoft layout. Has English characters as alternate symbols.
+Comment[br]=Tres Microsoft. Nodoù saoz dezhañ evel arouezennoù divoutin.
+Comment[ca]=Disposició Microsoft. Caràcters anglesos com símbols alternatius.
+Comment[cs]=Rozvr¾ení podle Microsoftu. Obsahuje anglické znaky jako alternativní symboly.
+Comment[da]=Microsoft udlægning. Har engelske tegn som alternative symboler.
+Comment[de]=Microsoft-Layout. Englische Zeichen als Alternativ-Belegung.
+Comment[es]=Disposición Microsoft. Tiene caracteres ingleses como símbolos alternativos.
+Comment[fi]=Microsoft järjestys. Sisältää englantilaiset kirjaimet vaihtoehtoisina symboleina.
+Comment[fr]=Disposition Microsoft. Les caractères anglais sont alternatifs.
+Comment[hr]=Microsoftov raspored. Engleski znakovi kao alternativni znakovi
+Comment[hu]=Microsoft kiosztás. Az angol karakterek mint alternatív szimbólumok.
+Comment[is]=Microsoft uppsetning.  Hefur ensk aukatákn.
+Comment[no]=Microsoft-utseende. Har engelske tegn som alternative symboler.
+Comment[pl]=U³o¿enie Microsoftu. Znaki alfabetu ³aciñskiego jako symbole alternatywne.
+Comment[pt]=Disposição Microsoft. Tem caractéres inglêses como alternativa.
+Comment[pt_BR]=Disposição Microsoft. Tem caracteres ingleses bem como símbolos alternativos.
+Comment[ro]=Machetã microsoft. Are caractere englezeºti ca simboluri alternative
+Comment[ru]=òÁÓËÌÁÄËÏÊ Microsoft. ğÏÚ×ÏÌÑÅÔ ÎÁÂÉÒÁÔØ ÌÁÔÉÎÓËÉÅ ÓÉÍ×ÏÌÙ ÉÓĞÏÌØÚÕÑ áÌÔÅÒÎÁÔÉ×ÎÙÊ ĞÅÒÅËÌÀŞÁÔÅÌØ.
+Comment[sk]=Microsof»ácke rozlo¾enie. Má anglické znaky ako alternatívne symboly.Comment=Microsof»ácky layout. Má anglické znaky ako alternatívne symboly.
+Comment[sl]=Microsoftov razpored. Angle¹ki znaki kot alternativni.
+Comment[sv]=Microsofts layout. Har engelska bokstäver som alternativa symboler.
+
+Language=Russian
+Language[br]=Rusianeg
+Language[ca]=Rus
+Language[cs]=Ruskı
+Language[da]=Russisk
+Language[de]=Russisch
+Language[es]=Ruso
+Language[fi]=Venäjä
+Language[fr]=Russe
+Language[hr]=Ruski
+Language[hu]=Orosz
+Language[is]=Rússneskt
+Language[it]=Russo
+Language[no]=Russisk
+Language[pl]=Rosyjski
+Language[pt]=Russo
+Language[pt_BR]=Russo
+Language[ro]=Ruseascã
+Language[ru]=òÕÓÓËÉÊ
+Language[sk]=Ruskı
+Language[sl]=rusko
+Language[sv]=Ryskt
+
+Charset=Cyrillic_* keysyms
+Label=Ru
+Locale=ru
+
+[KeyboardMap]
+CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m,bracketleft,bracketright,semicolon,apostrophe,grave,comma,period,less
+keysym0=1,1,exclam,1,exclam,
+keysym1=2,2,quotedbl,2,at,
+keysym2=3,3,numbersign,3,numbersign,
+keysym3=4,4,dollar,4,dollar,
+keysym4=5,5,colon,5,percent,
+keysym5=6,6,comma,6,asciicircum,
+keysym6=7,7,period,7,ampersand,
+keysym7=8,8,semicolon,8,asterisk,
+keysym8=9,9,parenleft,9,parenleft,
+keysym9=0,0,parenright,0,parenright,
+keysym10=q,Cyrillic_shorti,Cyrillic_SHORTI,q,Q,
+keysym11=w,Cyrillic_tse,Cyrillic_TSE,w,W,
+keysym12=e,Cyrillic_u,Cyrillic_U,e,E,
+keysym13=r,Cyrillic_ka,Cyrillic_KA,r,R,
+keysym14=t,Cyrillic_ie,Cyrillic_IE,t,T,
+keysym15=y,Cyrillic_en,Cyrillic_EN,y,Y,
+keysym16=u,Cyrillic_ghe,Cyrillic_GHE,u,U,
+keysym17=i,Cyrillic_sha,Cyrillic_SHA,i,I,
+keysym18=o,Cyrillic_shcha,Cyrillic_SHCHA,o,O,
+keysym19=p,Cyrillic_ze,Cyrillic_ZE,p,P,
+keysym20=bracketleft,Cyrillic_ha,Cyrillic_HA,bracketleft,braceleft,
+keysym21=bracketright,Cyrillic_hardsign,Cyrillic_HARDSIGN,bracketright,braceright,
+keysym22=a,Cyrillic_ef,Cyrillic_EF,a,A,
+keysym23=s,Cyrillic_yeru,Cyrillic_YERU,s,S,
+keysym24=d,Cyrillic_ve,Cyrillic_VE,d,D,
+keysym25=f,Cyrillic_a,Cyrillic_A,f,F,
+keysym26=g,Cyrillic_pe,Cyrillic_PE,g,G,
+keysym27=h,Cyrillic_er,Cyrillic_ER,h,H,
+keysym28=j,Cyrillic_o,Cyrillic_O,j,J,
+keysym29=k,Cyrillic_el,Cyrillic_EL,k,K,
+keysym30=l,Cyrillic_de,Cyrillic_DE,l,L,
+keysym31=semicolon,Cyrillic_zhe,Cyrillic_ZHE,semicolon,colon,
+keysym32=apostrophe,Cyrillic_e,Cyrillic_E,apostrophe,quotedbl,
+keysym33=grave,Cyrillic_io,Cyrillic_IO,grave,asciitilde,
+keysym34=z,Cyrillic_ya,Cyrillic_YA,z,Z,
+keysym35=x,Cyrillic_che,Cyrillic_CHE,x,X,
+keysym36=c,Cyrillic_es,Cyrillic_ES,c,C,
+keysym37=v,Cyrillic_em,Cyrillic_EM,v,V,
+keysym38=b,Cyrillic_i,Cyrillic_I,b,B,
+keysym39=n,Cyrillic_te,Cyrillic_TE,n,N,
+keysym40=m,Cyrillic_softsign,Cyrillic_SOFTSIGN,m,M,
+keysym41=comma,Cyrillic_be,Cyrillic_BE,comma,less,
+keysym42=period,Cyrillic_yu,Cyrillic_YU,period,greater,
+keysym43=slash,slash,question,slash,question
