@@ -5,7 +5,7 @@ all:
 	cat acinclude.m4.in kdminclude.m4 libtool.m4.in > acinclude.m4
 	aclocal 
 	autoheader
-	automake
+	automake --foreign
 	autoconf
 
 dist:
