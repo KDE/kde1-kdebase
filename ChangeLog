@@ -1,3 +1,9 @@
+Wed Feb 11 00:53:11 1998  Stephan Kulow  <coolo@kde.org>
+
+	* configure.in: made shadow under Linux default, since the
+	binaries will work also under non-shadow systems. The only problem 
+	left is PAM, so I disabled shadow in case, PAM is present
+
 Tue Feb 10 16:46:32 1998  Stephan Kulow  <coolo@kde.org>
 
 	* configure.in: added test for nice to find out, if the option
