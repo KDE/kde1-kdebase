@@ -836,6 +836,7 @@ void kPanel::showMiniPanel ()
   
   miniPanelFrame->show();
   miniPanelFrame->raise();
+  KWM::sendKWMCommand("moduleRaised");
 }
  
  void kPanel::hideMiniPanel() {

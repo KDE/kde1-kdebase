@@ -31,6 +31,7 @@ void myFrame::enterEvent(QEvent *){
   raise();
   autoHidden = false;
   emit showMe();
+  KWM::sendKWMCommand("moduleRaised");
 }
 
 void myFrame::hideTimerDone(){
@@ -65,6 +66,7 @@ void kPanel::showTaskbar(){
 void kPanel::hideTaskbar(){
   raise();
   doGeometry();
+  KWM::sendKWMCommand("moduleRaised");
 }
 
 
@@ -635,6 +637,7 @@ void kPanel::enterEvent( QEvent * ){
   doGeometry();
   layoutTaskbar();
   autoHidden = false;
+  KWM::sendKWMCommand("moduleRaised");
 }
 void kPanel::leaveEvent( QEvent * ){
 }
@@ -696,6 +699,7 @@ void kPanel::standalonePanelButtonClicked(){
 
 void kPanel::mousePressEvent( QMouseEvent*  ev  ){
   raise();
+  KWM::sendKWMCommand("moduleRaised");
   if (ev->button() == RightButton){
     QPopupMenu* p = new QPopupMenu();
     p->insertItem(klocale->translate("Configure"), 

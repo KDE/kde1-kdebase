@@ -1126,7 +1126,7 @@ void kPanel::show(){
     taskbar_frame->show();
     taskbar_frame->raise();
    }
- 
+  KWM::sendKWMCommand("moduleRaised");
 }
 
 
@@ -1201,6 +1201,7 @@ void kPanel::showPanel(){
     config->writeEntry("PanelHidden", a);
     config->sync();
   }
+  KWM::sendKWMCommand("moduleRaised");
 }
 
 
