@@ -577,7 +577,7 @@ msgid ""
 "Change\n"
 "Into"
 msgstr ""
-"Ändern\n"
+"Wechseln\n"
 "in"
 
 #: kfmprops.cpp:440

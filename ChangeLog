@@ -1,9 +1,14 @@
+Sun Jan 11 17:27:53 1998  Stephan Kulow  <coolo@kde.org>
+
+	* acinclude.m4.in added a return value in the CREATE_KFSSTND
+	macro. Perhaps this has caused the problems
+
 Sat Jan 10 17:40:44 1998  Stephan Kulow  <coolo@kde.org>
 
-	* started to maintain a ChangeLog file again
-	* rewrote the AC_CREATE_KFSSTND to get better debug output to find 
-	  the problem
-
+	* ChangeLog started to maintain a ChangeLog file again
+	* acinclude.m4.in the AC_CREATE_KFSSTND to get better debug output
+	to find the problem
+	
 
 Old logs, Stephan Kulow made:
 	
