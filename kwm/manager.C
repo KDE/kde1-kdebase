@@ -598,6 +598,9 @@ void Manager::clientMessage(XEvent*  ev){
     if (c && c->state == NormalState){
       switchActivateClient(c,true);
     }
+    else if (!c) {
+	activateClient(0);
+    }
   }
   if (e->message_type == kwm_module){
     Window w = (Window) e->data.l[0];
@@ -2115,7 +2118,7 @@ void Manager::addClient(Client* c){
 // activate a client: Take care about visibility, floating submenus
 // and focus.
 void Manager::activateClient(Client* c, bool set_revert){
-  if (!c->wantsFocus())
+  if (c && !c->wantsFocus() )
     return;
   Client* cc = current();
   enable_focus_follow_mouse_activation = false;
@@ -2125,28 +2128,32 @@ void Manager::activateClient(Client* c, bool set_revert){
     return;
   if (cc){
     cc->setactive( false );
-    if (cc->mainClient() != c->mainClient())
+    if (!c || cc->mainClient() != c->mainClient())
       iconifyFloatingOf(cc->mainClient());
   }
 
-  c->setactive( true );
-  unIconifyTransientOf(c->mainClient());
-  focusToClient(c);
+  if (c) {
+      c->setactive( true );
+      unIconifyTransientOf(c->mainClient());
+      focusToClient(c);
+      colormapFocus(c);
+      if (clients_traversing.removeRef(c))
+	  clients_traversing.append(c);
+      if (!set_revert && cc){
+	  if (clients_traversing.removeRef(cc))
+	      clients_traversing.insert(0,cc);
+      }
+      
+      raiseMenubarsOf(c->mainClient());
 
-  colormapFocus(c);
-  if (clients_traversing.removeRef(c))
-    clients_traversing.append(c);
-  if (!set_revert && cc){
-    if (clients_traversing.removeRef(cc))
-      clients_traversing.insert(0,cc);
+      XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_active_window,
+		      kwm_active_window, 32,
+		      PropModeReplace, (unsigned char *)&(c->window), 1);
+      sendToModules(module_win_activate, c);
   }
-
-  raiseMenubarsOf(c->mainClient());
-
-  XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_active_window,
-		  kwm_active_window, 32,
-		  PropModeReplace, (unsigned char *)&(c->window), 1);
-  sendToModules(module_win_activate, c);
+  else {
+      focusToNull();
+  }
 }
 
 // remove a client from the manager´s client list
