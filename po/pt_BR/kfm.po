@@ -335,7 +335,7 @@ msgstr ""
 
 #: kfmgui.cpp:1478
 msgid "Document: Done"
-msgstr "Documento: Feito"
+msgstr "Documento: Pronto"
 
 #: kfmview.cpp:437 root.cpp:944
 msgid "ERROR: You may only drop URLs"
