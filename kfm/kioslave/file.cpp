@@ -432,7 +432,7 @@ bool KProtocolFILE::OpenKdeHtml( KIOSlaveIPC *_ipc )
     prot.CloseDir();
 
     // Read the HTML code into memory
-    char *mem = (char*) malloc( kdeHtmlSize + 1 );
+    char *mem = new char[kdeHtmlSize + 1];
     fread( mem, 1, kdeHtmlSize, file );
     mem[ kdeHtmlSize ] = 0;
 	
@@ -440,8 +440,6 @@ bool KProtocolFILE::OpenKdeHtml( KIOSlaveIPC *_ipc )
     // This is used for filter option "Rest"
     QList<QString> displayedFiles;
     displayedFiles.setAutoDelete( TRUE );
-    // Indicates wether filter option "Rest" is currently selected.
-    bool rest = FALSE;
 
     char *p = mem;
     char *old = mem;
@@ -449,8 +447,6 @@ bool KProtocolFILE::OpenKdeHtml( KIOSlaveIPC *_ipc )
     // Search All <files...> tags
     while ( ( p = strstr( p, "<files " ) ) != 0L )
     {
-	rest = FALSE;
-	
 	*p = 0;
 	// Write everything up to the start of <files...
         _ipc->data( IPCMemory( old, strlen( old ) ) );
@@ -493,7 +489,7 @@ bool KProtocolFILE::OpenKdeHtml( KIOSlaveIPC *_ipc )
 		{
 		    name = token.data() + 5;
 		    // A regular expression
-		    if ( name.data()[0] == '/' )
+		    if ( name.left(1) == "/" )
 		    {
 			re = name.data() + 1;
 			re.setWildcard( FALSE );
@@ -539,8 +535,7 @@ bool KProtocolFILE::OpenKdeHtml( KIOSlaveIPC *_ipc )
 			}
 			else if ( strncasecmp( s.data() + j, "Rest", 4 ) == 0 )
 			{
-			    rest = TRUE;
-			    // filter = 0;
+			    // filter stays 0;
 			    j += 4;
 			}
 			else
@@ -556,14 +551,8 @@ bool KProtocolFILE::OpenKdeHtml( KIOSlaveIPC *_ipc )
 		}
 	    }
 
-	    // The name pattern. Default is no pattern
-	    const char *pname = 0L;
-	    // Do we have a pattern ?
-	    if ( !name.isNull() )
-		if ( name.data()[0] != 0 )
-		    pname = name.data();
-
-	    char buff [ 1024 ];
+	    QString buff; // no size limitation.
+	    // char buff [ 1024 ];
 	    
 	    // Traverse all files
 	    for ( de = list.first(); de != 0L; de = list.next() )
@@ -578,29 +567,28 @@ bool KProtocolFILE::OpenKdeHtml( KIOSlaveIPC *_ipc )
 			if ( strcmp( s->data(), de->name ) == 0 )
 			    ok2 = FALSE;
 		 
+		    buff = "file:";
 		    if ( de->name == ".." )
 		    {
 			KURL u2( u.path() );
 			u2.cdUp();
-			strcpy( buff, "file:" );
-			strcat( buff, u2.path() );
+			buff += u2.path();
 		    }
 		    else
 		    {
-			strcpy( buff, "file:" );
-			strcat( buff, u.path() );
-			if ( buff[ strlen( buff ) - 1 ] != '/' )
-			    strcat( buff, "/" );
-			strcat( buff, de->name );
+			buff += u.path();
+			if ( buff.right(1) != "/" )
+			    buff += "/";
+			buff += de->name;
 		    }
-		    
+
 		    struct stat sbuff;
-		    stat( buff+5, &sbuff );
+		    stat( buff.data()+5, &sbuff );
 
 		    struct stat lbuff;
-		    lstat( buff+5, &lbuff );
+		    lstat( buff.data()+5, &lbuff );
 
-		    // Test wether the file matches our filters
+		    // Test whether the file matches our filters
 		    if ( ( filter & QDir::Dirs ) == QDir::Dirs && S_ISDIR( sbuff.st_mode ) )
 			ok = TRUE;
 		    if ( ( filter & QDir::Files ) == QDir::Files && S_ISREG( sbuff.st_mode ) )
@@ -618,8 +606,8 @@ bool KProtocolFILE::OpenKdeHtml( KIOSlaveIPC *_ipc )
 		    else if ( filter == 0 )
 			ok = TRUE;
 		 
-		    if ( pname != 0L )
-		    {
+		    if ( !name.isEmpty() ) // do we have a "name=" field ?
+		    { // yes: match regexp
 			if ( re.match( de->name ) == -1 )
 			    ok = FALSE;
 		    }
@@ -627,17 +615,14 @@ bool KProtocolFILE::OpenKdeHtml( KIOSlaveIPC *_ipc )
 		    if ( ok && ok2 )
 		    {
 			// Remember all files we already displayed
-			//if ( !rest )
-			//{
 			QString *s = new QString( de->name );
 			displayedFiles.append( s );
-			//}
 			
 			QString e( "<cell><a href=\"" );
 			e += buff;
 			e += "\"><center>";
 			_ipc->data( IPCMemory( e, e.length() ) );
-			// KFM has to substitue this by the correct icon
+			// KFM has to substitute this by the correct icon
 			// This tag must be submitted in an extra data block!
 			e = "<icon ";
 			e += buff;
@@ -665,7 +650,7 @@ bool KProtocolFILE::OpenKdeHtml( KIOSlaveIPC *_ipc )
     
     _ipc->data( IPCMemory( old, strlen( old ) ) );
 
-    free( mem );
+    delete mem;
 
     return SUCCESS;
 }
