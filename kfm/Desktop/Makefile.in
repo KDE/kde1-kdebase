@@ -1,23 +1,19 @@
-DESKTOPLNKS = "./Templates/FTP URL.kdelnk" \
-	"./Templates/Program.kdelnk" \
-	"./Templates/WWW URL.kdelnk" \
-	"./Templates/File Type.kdelnk" \
-	"./Templates/URL.kdelnk" \
+DESKTOPLNKS = "FTP URL.kdelnk" "Program.kdelnk" "WWW URL.kdelnk" "File Type.kdelnk" "URL.kdelnk"
 
-TEMPLATEDIR = @prefix@/lib/kfm/Desktop/
+DESTDIR = @prefix@/lib/kfm/Desktop/Templates
 INSTALL_DIR = @INSTALL@ -d -m 0755
 INSTALL_DATA = @INSTALL@ -m 644
 
 all:
 
 install:
-	$(INSTALL_DIR) $(TEMPLATEDIR)
+	$(INSTALL_DIR) $(DESTDIR)
 	@for i in $(DESKTOPLNKS); do \
-	 echo "$(INSTALL_DATA) $$i $(TEMPLATEDIR)"; \
-	 $(INSTALL_DATA) "$$i" $(TEMPLATEDIR)/"$$i"; \
+	 echo "$(INSTALL_DATA) $$i $(DESTDIR)"; \
+	 $(INSTALL_DATA) "./Templates/$$i" $(DESTDIR)/"$$i"; \
 	done
 
 uninstall:
 	for i in $(DESKTOPLNKS); do \
-	 rm -f $(TEMPLATEDIR)/"$$i"; \
+	 rm -f $(DESTDIR)/"$$i"; \
 	done

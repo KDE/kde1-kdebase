@@ -16,12 +16,6 @@ AM_INIT_AUTOMAKE(kdeapps, 0.8) dnl searches for some needed programs
 dnl make $KDEDIR the default for the installation
 AC_PREFIX_DEFAULT(${KDEDIR:-/usr/local/kde})
 
-dnl version and name (not really needed)
-VERSION=0.8
-AC_SUBST(VERSION)
-PACKAGE=kdeapps
-AC_SUBST(PACKAGE) 
-
 dnl generate the config header
 AM_CONFIG_HEADER(config.h) dnl at the distribution this done
 
@@ -36,11 +30,6 @@ AC_PROG_LN_S
 AC_PROG_MAKE_SET
 AC_PROG_INSTALL
 AC_PROG_RANLIB dnl for libkfm
-dnl AM_PROG_LIBTOOL dnl for libraries
-
-dnl find out some variables (not supported yet)
-AC_AIX
-AC_MINIX
 
 dnl Checks for supported features
 KSCREEN="kscreensaver"
@@ -49,9 +38,6 @@ test $enableval = "no" && KSCREEN="")
 AC_SUBST(KSCREEN)
 
 dnl Checks for libraries.
-dnl Checks for the QT environment.  Set QTDIR if it's not in a standard place.
-dnl sets @qt_includes@ @qt_libraries@
-AC_PATH_QT
 AC_PATH_KDE
 
 dnl Checks for libraries. 
@@ -83,10 +69,6 @@ dnl Perform program name transformation
 AC_ARG_PROGRAM
 
 dnl output files
-AC_SUBST(x_includes)
-AC_SUBST(x_libraries)
-AC_SUBST(topdir)
-AC_SUBST(MISCOBJS)
 AC_SUBST(LIBSOCKET)
 AC_SUBST(LIBCOMPAT)
 
