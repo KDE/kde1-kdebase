@@ -560,6 +560,7 @@ void kPanel::set_label_date(){
   QDateTime d = QDateTime::currentDateTime();
   QString s;
   QString s2;
+  int rows = 1;
   if (!clockAmPm){
     s.sprintf(" %.2d:%.2d ",
 	      d.time().hour(),
@@ -569,7 +570,12 @@ void kPanel::set_label_date(){
     s.sprintf(" %.2d:%.2d",
 	      d.time().hour()%12,
 	      d.time().minute());
-    s.append(d.time().hour()<13?"am":"pm");
+       QString s3 = d.time().hour()<13?"am":"pm";
+       if (label_date->fontMetrics().width(s+s3) > label_date->width()){
+           s3.prepend("\n");
+           rows++;
+      }
+     s.append(s3);
   }
   
   s2.sprintf("\n %s %d ",
@@ -581,7 +587,7 @@ void kPanel::set_label_date(){
   
   QToolTip::add(label_date, s+s2);
 
-  if (label_date->fontMetrics().height() * 2 > label_date->height())
+  if (label_date->fontMetrics().height() * (rows+1) > label_date->height())
     label_date->setText(s);
   else
     label_date->setText(s+s2);
