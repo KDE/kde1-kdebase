@@ -674,6 +674,13 @@ void KfmGui::slotURLEntered()
 	  KURL u( tmp );
 	  url = u.url().data();
 	}
+	// Does url begin with www? (sven)
+	else if (url.find("www") == 0)
+	  url.prepend("http://");
+
+	// Does url begin with ftp?  (sven)
+	else if (url.find("ftp") == 0)
+	  url.prepend("ftp://");
 
 	KURL u( url.data() );
 	if ( u.isMalformed() )
