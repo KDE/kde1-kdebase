@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Name=Applications
 Name[cs]=Aplikace
+Name[de]=Anwendungen
 Name[fi]=Sovellukset
 Name[hr]=Programi
 Name[nl]=Toepassingen
@@ -10,6 +11,7 @@ Name[pt]=Aplicações
 Name[pt_BR]=Aplicativos
 Name[ro]=Aplicaşii
 Name[ru]=ğÒÉÌÏÖÅÎÉÑ
+Name[sk]=Aplikácie
 Name[sl]=Uporabni¹ki programi
 Name[sv]=Program
 SortOrder=panel.kdelnk,kdm.kdelnk

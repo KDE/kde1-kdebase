@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Name=Games
 Name[cs]=Hry
+Name[de]=Spiele
 Name[fi]=Pelit
 Name[hr]=Igre
 Name[pl]=Gry
@@ -9,6 +10,7 @@ Name[pt]=Jogos
 Name[pt_BR]=Jogos
 Name[ro]=Jocuri
 Name[ru]=Игры
+Name[sk]=Hry
 Name[sl]=Igre
 Name[sv]=Spel
 Icon=games_package.xpm

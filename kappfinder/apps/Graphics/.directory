@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Name=Graphica
 Name[cs]=Grafika
+Name[de]=Grafik
 Name[fi]=Grafiikka
 Name[hr]=Grafika
 Name[pl]=Grafika
@@ -9,6 +10,7 @@ Name[pt]=Gr·ficos
 Name[pt_BR]=Gr·ficos
 Name[ro]=Grafic„
 Name[ru]=Á“¡∆…À¡
+Name[sk]=Grafika
 Name[sl]=Grafika
 Name[sv]=Grafik
 SortOrder=acroread.kdelnk,xpaint.kdelnk,xv.kdelnk
