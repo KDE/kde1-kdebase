@@ -259,7 +259,7 @@ void KBackground::randomize()
 }
 
 
-void KBackground::doRandomize(bool fromTimer = FALSE)
+void KBackground::doRandomize(bool fromTimer)
 {
   if ( randomMode ) {
     readSettings( desk, oneDesktopMode, oneDesk );
