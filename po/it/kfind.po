@@ -196,7 +196,7 @@ msgstr "File eseguibili con SUID"
 
 #: kftabdlg.cpp:250
 msgid "(none)"
-msgstr ""
+msgstr "(nessuno)"
 
 #: kftabdlg.cpp:251
 msgid "At Least"

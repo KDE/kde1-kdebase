@@ -31,16 +31,16 @@ msgstr "Formato sconosciuto: "
 
 #: helpwin.cpp:1107
 msgid "Find Complete"
-msgstr ""
+msgstr "Trova Completo"
 
 #: helpwin.cpp:1108
 msgid "Continue search from the top of the page?"
-msgstr ""
+msgstr "Continuo la ricerca dall'inizio della pagina ?"
 
 #: helpwin.cpp:1325
-#, fuzzy
+#,
 msgid "Forward"
-msgstr "&Avanti"
+msgstr "Avanti"
 
 #: helpwin.cpp:1346
 msgid "Open this Link"
@@ -114,7 +114,7 @@ msgstr "Colore colegamenti seguiti:"
 
 #: options.cpp:238
 msgid "Underline links"
-msgstr ""
+msgstr "Sottolina link"
 
 #: options.cpp:317
 msgid "KDE Help Options"
@@ -168,7 +168,7 @@ msgstr "Amministrazione sistema"
 
 #: man.cpp:148
 msgid "New"
-msgstr ""
+msgstr "Nuovo"
 
 #: man.cpp:271
 msgid "Reading Dir: "
@@ -209,11 +209,11 @@ msgstr "&Cerca"
 
 #: mainwidget.cpp:157
 msgid "&Find..."
-msgstr ""
+msgstr "&Cerca..."
 
 #: mainwidget.cpp:159
 msgid "Find &next"
-msgstr ""
+msgstr "Cerca &successivo"
 
 #: mainwidget.cpp:164
 msgid "&Back"
@@ -347,15 +347,15 @@ msgstr "&Aggiungi Segnalibro"
 
 #: finddlg.cpp:39
 msgid "Find:"
-msgstr ""
+msgstr "Cerca:"
 
 #: finddlg.cpp:54
 msgid "Case &sensitive"
-msgstr ""
+msgstr "maiuscole/minuscole"
 
 #: finddlg.cpp:64
 msgid "&Find"
-msgstr ""
+msgstr "&Cerca"
 
 #~ msgid "Open UR&L..."
 #~ msgstr "Apri indirizzo(UR&L)..."

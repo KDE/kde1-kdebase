@@ -47,27 +47,27 @@ msgstr "Guida in linea"
 
 #: krootwm.C:245
 msgid "About KDE..."
-msgstr ""
+msgstr "Informazioni su KDE..."
 
 #: krootwm.C:263 krootwm.C:286 krootwm.C:761 krootwm.C:769
 msgid "New"
-msgstr ""
+msgstr "Nuovo"
 
 #: krootwm.C:264 krootwm.C:287
 msgid "Bookmarks"
-msgstr ""
+msgstr "Segnalibri"
 
 #: krootwm.C:288
 msgid "Desk"
-msgstr ""
+msgstr "Desk"
 
 #: krootwm.C:289
 msgid "Windows"
-msgstr ""
+msgstr "Finestre"
 
 #: krootwm.C:344
 msgid "Edit Bookmarks"
-msgstr ""
+msgstr "Modifca Segnalibri"
 
 #: krootwm.C:358 krootwm.C:771
 msgid "Folder"

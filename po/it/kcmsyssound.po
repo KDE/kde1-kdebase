@@ -20,7 +20,7 @@ msgstr "Suoni di sistema"
 
 #: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
 msgid "(none)"
-msgstr ""
+msgstr "(nessuno)"
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"

@@ -171,7 +171,7 @@ msgstr "&Ora scritta in formato AM/PM"
 #         
 #: options.cpp:432
 msgid "Clock shows time in &Internet beats"
-msgstr ""
+msgstr "Formato orologio &Internet beats"
 
 #: disknav.cpp:38
 msgid "History"

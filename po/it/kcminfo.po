@@ -137,7 +137,7 @@ msgstr "&Processore"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr ""
+msgstr "&Interrupts"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
@@ -221,9 +221,9 @@ msgstr "Non disponibile"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
-#, fuzzy
+#
 msgid "Not Available"
-msgstr "Non disponibile"
+msgstr "Non Disponibile"
 
 #~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
 #~ msgstr "utilizzo: kcminfo [-init | {processor,memory}]\n"

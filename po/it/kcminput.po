@@ -35,7 +35,7 @@ msgstr "Movimento minimo"
 
 #: mouse.cpp:72
 msgid "pixels"
-msgstr ""
+msgstr "pixel"
 
 #: mouse.cpp:81
 msgid "Button mapping"
