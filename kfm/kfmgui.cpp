@@ -811,8 +811,7 @@ void KfmGui::slotTerminal()
 
 void KfmGui::slotOpenURL( const char *_url )
 {
-    if ( view->getActiveView() )
-	view->getActiveView()->openURL( _url );
+    view->openURL( _url );
 }
 
 void KfmGui::slotEditSUMimeTypes()
