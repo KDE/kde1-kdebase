@@ -23,3 +23,5 @@ netscape*defaultBackground:	WINDOW_BACKGROUND
 netscape*selectColor: BACKGROUND
 netscape*highlightColor: BACKGROUND
 netscape*highlightThickness: 1
+netscape*selectForeground: SELECT_FOREGROUND
+netscape*selectBackground: SELECT_BACKGROUND
