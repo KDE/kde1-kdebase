@@ -42,6 +42,7 @@
 #include <kwm.h> // for sendKWMCommand. David.
 
 #define FIRSTFILEMENUITEM 100
+#define GOMENUITEM 120
 
 bool KfmGui::sumode = false;
 bool KfmGui::rooticons = true;
@@ -341,7 +342,8 @@ void KfmGui::initMenu()
 
     mgo = new QPopupMenu;
     CHECK_PTR( mgo );
-    slotUpdateHistory(false,false);
+    connect( mgo, SIGNAL(aboutToShow()), this, SLOT(slotUpdateHistoryMenu()) );
+    // slotUpdateHistory(false,false); doesn't fill the history menu anymore
     
     mcache = new QPopupMenu;
     CHECK_PTR( mcache );
@@ -439,7 +441,7 @@ klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin J
     menu->insertItem( klocale->translate("&File"), mfile );
     menu->insertItem( klocale->translate("&Edit"), edit );
     menu->insertItem( klocale->translate("&View"), mview );
-    menu->insertItem( klocale->translate("&Go"), mgo );
+    menu->insertItem( klocale->translate("&Go"), mgo, GOMENUITEM );
     menu->insertItem( klocale->translate("&Bookmarks"), bookmarkMenu );
     menu->insertItem( klocale->translate("&Cache"), mcache );
     menu->insertItem( klocale->translate("&Options"), moptions );
@@ -1067,10 +1069,19 @@ void KfmGui::slotStop()
     view->slotStop();
 }
 
-void KfmGui::slotUpdateHistory( bool _back, bool _forward )
+void KfmGui::slotUpdateHistoryMenu( )
 {
+    // Workaround for shortcuts disappearing from menu - part 1
+    menu->removeItem( GOMENUITEM );
+
+    // Store current state of Up, Back & Forward menu items
+    static bool itemsEnabled[3];
+    for (int i=0; i<3; i++) itemsEnabled[i] = mgo->isItemEnabled( mgo->idAt( i ) );
+
     mgo->clear();
     mgo->disconnect( this );
+    connect( mgo, SIGNAL(aboutToShow()), this, SLOT(slotUpdateHistoryMenu()) );
+
     // The go menu, with items in the same order as the toolbar.
     mgo->insertItem( klocale->translate( "&Up" ),
 			this, SLOT( slotUp() ), ALT+Key_Up );
@@ -1093,7 +1104,14 @@ void KfmGui::slotUpdateHistory( bool _back, bool _forward )
         KURL::decodeURL(url); // we don't want encoded URLs in the menu
         mgo->insertItem ( url, id );
     }
-    // this enables/disables the related menu items so it has to be done after
+    // Enable or disable Up, Back & Forward menu items
+    for (int i=0; i<3; i++) mgo->setItemEnabled( mgo->idAt( i ), itemsEnabled[i] );
+    // Workaround for shortcuts disappearing from menu - part 2
+    menu->insertItem( klocale->translate("&Go"), mgo, GOMENUITEM, 3 /* after view menu */ );
+}
+
+void KfmGui::slotUpdateHistory( bool _back, bool _forward )
+{
     enableToolbarButton( 1, _back );
     enableToolbarButton( 2, _forward );
 }

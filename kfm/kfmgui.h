@@ -433,6 +433,11 @@ public slots:
      */
     void slotUpdateHistory( bool _back, bool _forward );
 
+    /* This method is called when the History menu has to be updated, i.e. when 
+       it's about to show.
+      */
+    void slotUpdateHistoryMenu();
+
     /**
      * This slot is called whenever a new URL is opened. This URL is
      * then appended to the history list.
