@@ -199,12 +199,12 @@ void kPanel::parseMenus(){
     pmenu->add( fileBrowser );
 
 
-    pmenu->add( new PMenuItem(submenu, klocale->translate("Panel"), 0, 0, panel_menu,
-			      0, 0, new myPopupMenu) );
-    pmenu->add( new PMenuItem(prog_com, klocale->translate("Lock Screen"), 0, 0, 0,
+    pmenu->add( new PMenuItem(submenu, klocale->translate("Panel"), 0, "mini-panel.xpm",
+			      panel_menu, 0, 0, new myPopupMenu) );
+    pmenu->add( new PMenuItem(prog_com, klocale->translate("Lock Screen"), 0, "mini-key.xpm", 0,
 			      this, SLOT(call_klock()), 0, false, 0,
 			      klocale->translate("Lock screen")) );
-    pmenu->add( new PMenuItem(prog_com, klocale->translate("Logout"), 0, 0, 0,
+    pmenu->add( new PMenuItem(prog_com, klocale->translate("Logout"), 0, "mini-exit.xpm", 0,
 			      this, SLOT(ask_logout()), 0, false, 0, klocale->translate("Logout")) );
 
     pmenu->createMenu(new myPopupMenu, this);
