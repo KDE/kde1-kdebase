@@ -1341,6 +1341,7 @@ void Client::setLabel(){
     rawlabel = "???";
   if (rawlabel.left(1) == "("){
     // (...) means iconified. MUST be unique!
+    rawlabel.detach();
     rawlabel.prepend("\"");
     rawlabel.append("\"");
   }
