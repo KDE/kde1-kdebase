@@ -19,15 +19,15 @@ msgstr "Ukonèi» alebo re¹tartova»?"
 
 #: kdmshutdown.cpp:175
 msgid "Shutdown"
-msgstr "Ukonèi"
+msgstr "Ukonèi»"
 
 #: kdmshutdown.cpp:189
 msgid "Shutdown and restart"
-msgstr "Ukonèi a re¹tartuj"
+msgstr "Ukonèi» a re¹tartova»"
 
 #: kdmshutdown.cpp:198
 msgid "Exit kdm"
-msgstr "Ukonèi kdm"
+msgstr "Ukonèi» kdm"
 
 #: kgreeter.cpp:137
 msgid "Login:"

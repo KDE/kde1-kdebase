@@ -15,11 +15,11 @@ msgstr ""
 
 #: main.C:249
 msgid "choose type of color-mode"
-msgstr "Vyber typ farebného módu"
+msgstr "Typ farebného módu:"
 
 #: main.C:252
 msgid "Add characters to word class"
-msgstr "Pridaj znaky do triedy slov"
+msgstr "Znaky pridané do triedy slov:"
 
 # ???
 #: main.C:255
@@ -108,7 +108,7 @@ msgstr "Scroll&bar"
 
 #: main.C:456
 msgid "&Font size"
-msgstr "Veµkos» &fontu"
+msgstr "Veµkos» &písma"
 
 #: main.C:457
 msgid "&Color"
@@ -124,7 +124,7 @@ msgstr "&Terminál..."
 
 #: main.C:461
 msgid "Save &Options"
-msgstr "Ulo¾ nastavenie"
+msgstr "Ulo¾i» nastavenie"
 
 #: main.C:470
 msgid ""
@@ -146,7 +146,7 @@ msgstr ""
 
 #: main.C:631 main.C:805
 msgid "&Show"
-msgstr "Uká¾"
+msgstr "&Ukáza»"
 
 #: main.C:764
 msgid "Unsecure &keyboard"
@@ -158,14 +158,14 @@ msgstr "Nastavenie terminálu"
 
 #: main.C:917
 msgid "Hint"
-msgstr "Upozornenie"
+msgstr "Rada"
 
 #: main.C:918
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
-"Nové nastavenie farieb bude zobrazené\n"
+"Nové nastavenie farieb sa prejaví\n"
 "po vypnutí zabezpeèenia klávesnice."
 
 #: main.C:1151

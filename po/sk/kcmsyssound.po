@@ -23,35 +23,35 @@ msgstr "Systémové zvuky"
 
 #: syssound.cpp:144
 msgid "Change to Desktop 1"
-msgstr "Zmeni» na Plochu 1"
+msgstr "Prepnutie na Plochu 1"
 
 #: syssound.cpp:145
 msgid "Change to Desktop 2"
-msgstr "Zmeni» na Plochu 2"
+msgstr "Prepnutie na Plochu 2"
 
 #: syssound.cpp:146
 msgid "Change to Desktop 3"
-msgstr "Zmeni» na Plochu 3"
+msgstr "Prepnutie na Plochu 3"
 
 #: syssound.cpp:147
 msgid "Change to Desktop 4"
-msgstr "Zmeni» na Plochu 4"
+msgstr "Prepnutie na Plochu 4"
 
 #: syssound.cpp:148
 msgid "Change to Desktop 5"
-msgstr "Zmeni» na Plochu 5"
+msgstr "Prepnutie na Plochu 5"
 
 #: syssound.cpp:149
 msgid "Change to Desktop 6"
-msgstr "Zmeni» na Plochu 6"
+msgstr "Prepnutie na Plochu 6"
 
 #: syssound.cpp:150
 msgid "Change to Desktop 7"
-msgstr "Zmeni» na Plochu 7"
+msgstr "Prepnutie na Plochu 7"
 
 #: syssound.cpp:151
 msgid "Change to Desktop 8"
-msgstr "Zmeni» na Plochu 8"
+msgstr "Prepnutie na Plochu 8"
 
 #: syssound.cpp:153
 msgid "Activate Window"
@@ -67,7 +67,7 @@ msgstr "Zavrie» okno"
 
 #: syssound.cpp:156
 msgid "Startup"
-msgstr "Spusti»"
+msgstr "Spustenie KDE"
 
 # DARKIE: Toto je pravdepodobne blbos»
 #: syssound.cpp:158

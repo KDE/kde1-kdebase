@@ -28,7 +28,7 @@ msgstr "Pomocník pracovnej plochy"
 
 #: krootwm.C:169
 msgid "Execute command"
-msgstr "Vykonaj príkaz"
+msgstr "Vykona» príkaz"
 
 #: krootwm.C:170
 msgid "Display properties"
@@ -36,27 +36,27 @@ msgstr "Vlastnosti obrazovky"
 
 #: krootwm.C:171
 msgid "Refresh desktop"
-msgstr "Obnov pracovnú plochu"
+msgstr "Obnovi» pracovnú plochu"
 
 #: krootwm.C:173
 msgid "Unclutter windows"
-msgstr ""
+msgstr "Usporiada» okná"
 
 #: krootwm.C:174
 msgid "Cascade windows"
-msgstr ""
+msgstr "Kaskádova» okná"
 
 #: krootwm.C:175
 msgid "Arrange icons"
-msgstr "Usporiadaj ikony"
+msgstr "Usporiada» ikony"
 
 #: krootwm.C:177
 msgid "Lock screen"
-msgstr "Zablokuj obrazovku"
+msgstr "Zablokova» obrazovku"
 
 #: krootwm.C:178
 msgid "Logout"
-msgstr "Odhlásenie"
+msgstr "Odhlási»"
 
 #: krootwm.C:469
 msgid "Could not create folder"

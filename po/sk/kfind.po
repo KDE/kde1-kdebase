@@ -72,7 +72,7 @@ msgstr "Obrát&i» výber"
 
 #: kfindtop.cpp:179
 msgid "&Preferences ..."
-msgstr "&Preferencie..."
+msgstr "&Nastavenie..."
 
 #: kfindtop.cpp:183
 msgid "Kfind &help"
@@ -120,7 +120,7 @@ msgstr "&Kde hµada»:"
 
 #: kftabdlg.cpp:54
 msgid "&Browse ..."
-msgstr "&Listuj..."
+msgstr "&Listova»..."
 
 #: kftabdlg.cpp:66
 msgid "Include &subfolders"
@@ -212,7 +212,7 @@ msgstr "Hodnota veµkosti nie je platné èíslo!"
 
 #: kfoptions.cpp:54
 msgid "Preferences"
-msgstr "Predvoµby"
+msgstr "Nastavenie"
 
 #: kfoptions.cpp:76
 msgid "File format:"
@@ -252,7 +252,7 @@ msgstr "Filter:"
 
 #: kfoptions.cpp:141
 msgid "Add New"
-msgstr "Pridaj nový"
+msgstr "Prida» nový"
 
 #: kfoptions.cpp:182
 msgid "Archivers"

@@ -95,15 +95,15 @@ msgstr "Nastavenie prázdnej obrazovky"
 
 #: blob.cpp:53
 msgid "Random Linear"
-msgstr "Náhodné línie"
+msgstr "Náhodné èiary"
 
 #: blob.cpp:54
 msgid "Horizonal Sine"
-msgstr "Horizontálny sínus"
+msgstr "Vodorovná sínusovka"
 
 #: blob.cpp:55
 msgid "Circular Bounce"
-msgstr "Krihovité odskoky"
+msgstr "Kruhovité odskoky"
 
 #: blob.cpp:56
 msgid "Polar Coordinates"
@@ -189,7 +189,7 @@ msgstr "Les"
 
 #: forest.cpp:272
 msgid "Setup KForest"
-msgstr "Nastavenie lesu"
+msgstr "Nastavenie Lesa"
 
 #: forest.cpp:288
 msgid "Num of Trees:"
@@ -275,11 +275,11 @@ msgstr ""
 
 #: lines.cpp:110
 msgid "Lines"
-msgstr "Línie"
+msgstr "Èiary"
 
 #: lines.cpp:128
 msgid "Setup klines"
-msgstr "Nastavenie línií"
+msgstr "Nastavenie èiar"
 
 #: lines.cpp:130 polygon.cpp:81
 msgid "Length:"
@@ -299,7 +299,7 @@ msgstr "Koncová:"
 
 #: lines.cpp:259
 msgid "About Lines"
-msgstr "Informácie o líniách"
+msgstr "Informácie o èiarach"
 
 #: lines.cpp:260
 msgid ""
@@ -346,7 +346,7 @@ msgstr ""
 #: main.cpp:279
 #, c-format
 msgid "Option %s is not support on this plattform!"
-msgstr ""
+msgstr "Voµba %s nie je podporovaná na tejto platforme!"
 
 #: main.cpp:306
 msgid ""
@@ -393,26 +393,26 @@ msgid ""
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
 "  -corners xxxx     Umiestnenie kurzoru do rohu prevedie akciu:\n"
-"                      x = i  ¾iadna akcia (ignoruj)\n"
-"                      x = s  ¹etri obrazovku\n"
-"                      x = l  uzamkni obrazovku\n"
+"                      x = i  ¾iadna akcia (ignorova»)\n"
+"                      x = s  ¹etri» obrazovku\n"
+"                      x = l  uzamknú» obrazovku\n"
 "                     poradie: horný-µavý, horný-pravý, dolný-µavý, "
-"dolní-pravý\n"
-"  -delay num        Doba neèinnosti pred spustìním ¹etrièa obrazovky\n"
+"dolný-pravý\n"
+"  -delay num        Doba neèinnosti pred spustením ¹etrièa obrazovky\n"
 "                    (¹tandardne 10min)\n"
-"  -desc             Vypí¹ popis ¹etrièa obrazovky na stdout\n"
-"  -install          Nain¹taluj ¹etriè obrazovky\n"
-"  -lock             Vy¾aduj heslo na ukonèenie ¹etrièa obrazovky\n"
-"  -nice num         Preveï so ¹pecifikovanou hodnotou nice\n"
+"  -desc             Vypí¹e popis ¹etrièa obrazovky na stdout\n"
+"  -install          Nain¹taluje ¹etriè obrazovky\n"
+"  -lock             Vy¾aduje heslo na ukonèenie ¹etrièa obrazovky\n"
+"  -nice num         Prevedie so ¹pecifikovanou hodnotou nice\n"
 "\n"
-"  -preview wid      Preveï vo ¹pecifikovanom X okne\n"
-"  -inroot           Preveï v koreòovom okne\n"
-"  -setup            Nastav ¹etriè obrazovky\n"
-"  -test             Vyvola» okam¾ite ¹etøiè obrazovky\n"
+"  -preview wid      Prevedie vo ¹pecifikovanom X okne\n"
+"  -inroot           Prevedie v koreòovom okne\n"
+"  -setup            Nastaví ¹etriè obrazovky\n"
+"  -test             Vyvolá okam¾ite ¹etøiè obrazovky\n"
 
 #: morph3d.cpp:839 space.cpp:419
 msgid "GL can not render with root visual\n"
-msgstr "GL nemô¾e pracova» so základným \"visualem\"\n"
+msgstr "GL nemô¾e pracova» so základným \"visualim\"\n"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
@@ -446,11 +446,11 @@ msgstr ""
 
 #: polygon.cpp:58
 msgid "Polygons"
-msgstr "Polygony"
+msgstr "Polygóny"
 
 #: polygon.cpp:79
 msgid "Setup kpolygon"
-msgstr "Nastavenie Polygonov"
+msgstr "Nastavenie Polygónov"
 
 #: polygon.cpp:91
 msgid "Vertices:"
@@ -458,7 +458,7 @@ msgstr "Vrcholy:"
 
 #: polygon.cpp:209
 msgid "About Polygon"
-msgstr "Informácie o Polygoneoh"
+msgstr "Informácie o Polygónoch"
 
 #: polygon.cpp:210
 msgid ""
@@ -467,7 +467,7 @@ msgid ""
 "written by Martin R. Jones 1996\n"
 "mjones@kde.org"
 msgstr ""
-"Polygon verzia 0.1\n"
+"Polygón verzia 0.1\n"
 "\n"
 "napísal Martin R. Jones 1996\n"
 "mjones@kde.org"
@@ -516,7 +516,7 @@ msgstr "Nastavenie Skaly"
 
 #: rock.cpp:570
 msgid "Move"
-msgstr "Hýbova»"
+msgstr "Hýba»"
 
 #: rock.cpp:575
 msgid "Rotate"
@@ -542,7 +542,7 @@ msgstr ""
 
 #: saver.cpp:52 saver.cpp:112
 msgid "Enter Password"
-msgstr "Zadaj heslo"
+msgstr "Zadajte heslo"
 
 #: saver.cpp:82
 msgid "Failed"

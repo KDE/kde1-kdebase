@@ -18,7 +18,7 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: zdá sa, ®e je u¾ spustený iný správca okien.\n"
+"kwm: zdá sa, ¾e u¾ je spustený iný správca okien.\n"
 "kwm nespustený\n"
 
 #: main.C:81
@@ -59,11 +59,11 @@ msgstr "Od&lepi»"
 
 #: main.C:472
 msgid "Mo&ve"
-msgstr "Pøe&sunú»"
+msgstr "Pre&sunú»"
 
 #: main.C:473
 msgid "Resi&ze"
-msgstr "Zmìni» &veµkos»"
+msgstr "Zmeni» &veµkos»"
 
 #: main.C:475
 msgid "&To desktop"
@@ -130,15 +130,15 @@ msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"Nasledujúce aplikácie obsahujú neulo¾ené dáta, které budú stracené \n"
-"vo va¹ej nasledujúcej seanse."
+"Nasledujúce aplikácie obsahujú neulo¾ené dáta, ktoré budú stratené \n"
+"vo va¹om nasledujúcom sedení."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"Nasledujúce aplikácie nemô¾u by» obbovené v nasledujúcej seanse, mô¾u by»\n"
+"Nasledujúce aplikácie nemô¾u by» obnovené v nasledujúcom sedení, mô¾u by»\n"
 "iba znovu spustené. Uistite sa, ¾e neobsahujú dôle¾ité neulo¾ené dáta."
 
 #: logout.C:74
@@ -146,8 +146,8 @@ msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Následujúce aplikácie sú prispôsobené X11, ale napriek tomu nemô¾u\n"
-"by» obnovené vo va¹ej nasledujúcej seanse. Uistite sa, ¾e neobsahujú\n"
+"Následujúce aplikácie sú prispôsobené X11, a preto nemô¾u\n"
+"by» obnovené vo va¹om nasledujúcom sedení. Uistite sa, ¾e neobsahujú\n"
 "dôle¾ité neulo¾ené dáta."
 
 #: taskmgr.C:106

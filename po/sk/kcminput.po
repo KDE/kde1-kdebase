@@ -31,11 +31,11 @@ msgstr "Vlastnosti vstupných zariadení"
 
 #: mouse.cpp:75
 msgid "Acceleration"
-msgstr "Akcelerácia"
+msgstr "Zrýchlenie"
 
 #: mouse.cpp:81
 msgid "Threshold"
-msgstr "Prah"
+msgstr "Prah citlivosti"
 
 #: mouse.cpp:84
 msgid "Button mapping"
@@ -43,11 +43,11 @@ msgstr "Mapovanie tlaèítok"
 
 #: mouse.cpp:86
 msgid "Right handed"
-msgstr "Pravácke"
+msgstr "Pre pravákov"
 
 #: mouse.cpp:88
 msgid "Left handed"
-msgstr "¥avácke"
+msgstr "Pre µavákov"
 
 #: keyboard.cpp:67
 msgid "Keyboard repeat"

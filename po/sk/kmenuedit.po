@@ -19,7 +19,7 @@ msgstr "Znovu naèíta» menu"
 
 #: kmenuedit.cpp:68
 msgid "Change &Menuname"
-msgstr "Zmìòi» meno menu"
+msgstr "Zmìni» názov menu"
 
 #: kmenuedit.cpp:69
 msgid "Reload &Filetypes"
@@ -27,11 +27,11 @@ msgstr "Znovu naèíta» typ&y súborov"
 
 #: kmenuedit.cpp:76
 msgid "by"
-msgstr ""
+msgstr " "
 
 #: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
-msgstr "Zmeny nie sú ulozené!"
+msgstr "Zmeny nie sú ulo¾ené!"
 
 #: kmenuedit.cpp:176 kmenuedit.cpp:201
 msgid ""
@@ -55,7 +55,7 @@ msgid ""
 "Are you sure you want to reload ?"
 msgstr ""
 "Nové naèítanie menu zru¹í v¹etky zmeny.\n"
-"Ste si istí, ¾e si prajete nové naèítanie ?"
+"Ste si istý, ¾e si prajete nové naèítanie ?"
 
 #: button.cpp:209 main.cpp:77 main.cpp:90
 msgid "KMenuedit"
@@ -200,7 +200,7 @@ msgstr "Pracovný prieèinok:"
 
 #: entrydialog.cpp:205
 msgid "Run in terminal"
-msgstr "Previes» v termináli"
+msgstr "Spusti» v termináli"
 
 #: entrydialog.cpp:211
 msgid "Terminal Options:"
@@ -248,11 +248,11 @@ msgstr "Ikona odpojeného:"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"
-msgstr "Zmeni» meno menu"
+msgstr "Zmeni» názov menu"
 
 #: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "Zmeòi» meno menu, ako je zobrazené v Paneli"
+msgstr "Zmeni» názov menu, ako je zobrazené v Paneli"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"

@@ -82,7 +82,7 @@ msgid ""
 "Please use files with these extensions\n"
 msgstr ""
 "\n"
-"Prosím pou¾ívajte súbor s takýmito príponami\n"
+"Prosím, pou¾ívajte súbor s takýmito príponami\n"
 
 #: kdm-appear.cpp:192 kdm-users.cpp:200
 msgid "Improper File Extension"
@@ -118,7 +118,7 @@ msgstr "Zväè¹ené"
 
 #: kdm-bgnd.cpp:124
 msgid "Browse..."
-msgstr "Listuj..."
+msgstr "Listova»..."
 
 #: kdm-font.cpp:48
 msgid "Select fonts"
@@ -126,7 +126,7 @@ msgstr "Výber fontu"
 
 #: kdm-font.cpp:51
 msgid "Change font"
-msgstr "Zmeò font"
+msgstr "Zmeni» font"
 
 #: kdm-font.cpp:59
 msgid "Greeting"
@@ -146,7 +146,7 @@ msgstr "Uká¾ka:"
 
 #: kdm-sess.cpp:51
 msgid "Allow to shutdown:"
-msgstr "Povolenie k vypnutiu:"
+msgstr "Povoli» ukonèenie:"
 
 #: kdm-sess.cpp:58
 msgid "None"
@@ -178,7 +178,7 @@ msgstr "Re¹tart"
 
 #: kdm-sess.cpp:86
 msgid "Session types"
-msgstr "Typy seansy"
+msgstr "Typy sedenia"
 
 #: kdm-sess.cpp:89
 msgid "New type"
@@ -282,7 +282,7 @@ msgstr "&U¾ívatelia"
 
 #:
 msgid "&Sessions"
-msgstr "&Seansy"
+msgstr "&Sedenia"
 
 #:
 msgid "KDM Configuration"

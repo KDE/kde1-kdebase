@@ -15,7 +15,7 @@ msgstr ""
 
 #: kpanel.C:213
 msgid "Move"
-msgstr "Presuò"
+msgstr "Presunú»"
 
 #: kpanel.C:216
 msgid "Properties"
@@ -23,7 +23,7 @@ msgstr "Vlastnosti"
 
 #: kpanel.C:252
 msgid "Go!"
-msgstr "Choï"
+msgstr "Ís»!"
 
 #: kpanel.C:254 tools.C:797
 msgid "Where do you want to go tomorrow?"
@@ -75,11 +75,11 @@ msgstr "Prida» zoznam okien na panel"
 
 #: events.C:705 props.C:140
 msgid "Configure"
-msgstr "Konfiguruj"
+msgstr "Nastavenie"
 
 #: props.C:142
 msgid "Configure panel"
-msgstr "Konfiguruj panel"
+msgstr "Nastavenie panela"
 
 #: events.C:707 props.C:143
 msgid "Restart"

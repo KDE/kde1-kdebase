@@ -27,7 +27,7 @@ msgstr "Pou¾itie: kcmkpanel [-init | {panel,desktops}]\n"
 
 #: main.cpp:127
 msgid "KPanel Configuration"
-msgstr "Konfigurácia KPanelu"
+msgstr "Nastavenie KPanelu"
 
 #: panel.cpp:59
 msgid "Location"
@@ -47,7 +47,7 @@ msgstr "&Dole"
 
 #: panel.cpp:74
 msgid "Taskbar"
-msgstr "Panel programov"
+msgstr "Panel úloh"
 
 #: panel.cpp:75
 msgid "&Hidden"
@@ -67,7 +67,7 @@ msgstr "Hor&e/vµavo"
 
 #: panel.cpp:96
 msgid "T&iny"
-msgstr "Malièký"
+msgstr "Malý"
 
 #: panel.cpp:98
 msgid "&Normal"
@@ -79,7 +79,7 @@ msgstr "&Veµký"
 
 #: desktops.cpp:73
 msgid "&Visible"
-msgstr "&Viditeµný"
+msgstr "&Viditeµné"
 
 #: desktops.cpp:82
 msgid "&Width"
@@ -87,15 +87,15 @@ msgstr "©írka"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
-msgstr "Nápovedy v menu"
+msgstr "Pomocník v menu"
 
 #: options.cpp:39
 msgid "Show &Menu Tooltips"
-msgstr "Ukazova» nápovedy v menu"
+msgstr "Ukazova» pomocníka v menu"
 
 #: options.cpp:44
 msgid "De&lay:"
-msgstr "Pauza"
+msgstr "&Oneskorenie:"
 
 #: options.cpp:56
 msgid "ms"
@@ -111,11 +111,11 @@ msgstr "Prvý osobný"
 
 #: options.cpp:71
 msgid "Auto &Hide Panel"
-msgstr "Skrýva» &panel"
+msgstr "Automaticky skry» &panel"
 
 #: options.cpp:73
 msgid "Auto Hide &Taskbar"
-msgstr "Skrýva» panel úloh"
+msgstr "Automaticky skry» panel úloh"
 
 #: options.cpp:81
 msgid "Clock"

@@ -43,15 +43,15 @@ msgstr "Zdieµaná pamì»"
 
 #: memory.cpp:37
 msgid "Buffer memory"
-msgstr "Vyrovnávajúca pamä»"
+msgstr "Vyrovnávacia pamä»"
 
 #: memory.cpp:45
 msgid "Swap memory"
-msgstr "Disková pamä»"
+msgstr "Disková odkladacia pamä»"
 
 #: memory.cpp:53
 msgid "Free swap memory"
-msgstr "Voµná disková pamä»"
+msgstr "Voµná disková odkladacia pamä»"
 
 #: memory.cpp:74
 #, c-format
