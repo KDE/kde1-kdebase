@@ -13,6 +13,7 @@
 #include "kproxydlg.h"
 #include "khttpoptdlg.h"
 #include "useragentdlg.h"
+#include "kcookiesdlg.h"
 
 #include "rootopts.h"
 
@@ -35,6 +36,7 @@ private:
   KProxyOptions *m_pProxyOptions;
   KHTTPOptions *m_pHTTPOptions;
   UserAgentOptions *m_pUserAgentOptions;
+  KCookiesOptions *m_pCookiesOptions;
 
   KRootOptions *m_pRootOptions;
 };
@@ -49,6 +51,7 @@ KfmApplication::KfmApplication(int &argc, char **argv, const char *name)
   m_pProxyOptions = 0L;
   m_pHTTPOptions = 0L;
   m_pUserAgentOptions = 0L;
+  m_pCookiesOptions = 0L;
 
   m_pRootOptions = 0L;
 
@@ -68,19 +71,22 @@ KfmApplication::KfmApplication(int &argc, char **argv, const char *name)
     if (!pages || pages->contains("useragent"))
       addPage( m_pUserAgentOptions = new UserAgentOptions( dialog, "useragent"),
                i18n("User &Agent"), "kfm-6.html" );
+    if (!pages || pages->contains("cookies"))
+      addPage( m_pCookiesOptions = new KCookiesOptions( dialog, "cookies"),
+               i18n("Coo&kies"), "kfm-7.html" );
 
     if (!pages || pages->contains("icons"))
       addPage( m_pRootOptions = new KRootOptions( dialog, "icons" ),
-               i18n("&Desktop Icons"), "kfm-7.html" );
+               i18n("&Desktop Icons"), "kfm-8.html" );
     if ( m_pFontOptions || m_pColorOptions || m_pMiscOptions
          || m_pProxyOptions || m_pHTTPOptions || m_pUserAgentOptions
-         || m_pRootOptions)
+         || m_pRootOptions || m_pCookiesOptions)
     {
         dialog->show();
     }
     else
     {
-      fprintf(stderr, i18n("usage: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"), argv[0]);
+      fprintf(stderr, i18n("usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"), argv[0]);
       justInit = true;
     }  
   }
@@ -102,6 +108,8 @@ void KfmApplication::init()
     m_pHTTPOptions->loadSettings();
   if ( m_pUserAgentOptions )
     m_pUserAgentOptions->loadSettings();
+  if ( m_pCookiesOptions )
+    m_pCookiesOptions->loadSettings();
 
   if ( m_pRootOptions )
     m_pRootOptions->loadSettings();
@@ -123,6 +131,8 @@ void KfmApplication::defaultValues()
     m_pHTTPOptions->defaultSettings();
   if ( m_pUserAgentOptions )
     m_pUserAgentOptions->defaultSettings();
+  if ( m_pCookiesOptions )
+    m_pCookiesOptions->defaultSettings();
 
   if ( m_pRootOptions )
     m_pRootOptions->defaultSettings();
@@ -143,6 +153,8 @@ void KfmApplication::apply()
     m_pHTTPOptions->applySettings();
   if ( m_pUserAgentOptions )
     m_pUserAgentOptions->applySettings();
+  if ( m_pCookiesOptions )
+    m_pCookiesOptions->applySettings();
 
   if ( m_pRootOptions )
     m_pRootOptions->applySettings();
