@@ -112,8 +112,6 @@ public:
     KIOSlaveIPCServer();
     ~KIOSlaveIPCServer();
 
-    int getPort();
-
 signals:
    void newClient( KIOSlaveIPC * );
 

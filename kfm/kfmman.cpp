@@ -103,8 +103,8 @@ void KFMManager::writeWrapped( char *_str )
     
     if (labelFontMetrics->width(_str) <= maxLabelWidth)
     {
-      QString str_str(_str);
-      KURL::decodeURL(str_str);
+        QString str_str(_str);
+        //KURL::decodeURL(str_str); // _str is decoded already (Hen)
 	view->write( str_str );
 	return;
     }

@@ -382,12 +382,13 @@ void KIOJob::copy( QStrList & _src_url_list, const char *_dest_dir_url )
 {
     action = KIOJob::JOB_COPY;
     
-    cmSrcURLList.copy( _src_url_list );
-    cmDestURLList.clear();
+    // cmSrcURLList.copy( _src_url_list );
+    tmpSrcURLList.clear();
+    tmpDestURLList.clear();
 
     // Fill cmDestURLList
     char *p;
-    for ( p = cmSrcURLList.first(); p != 0L; p = cmSrcURLList.next() )
+    for ( p = _src_url_list.first(); p != 0L; p = _src_url_list.next() )
     {
 	QString tmp = p;
 	// Is there a trailing '/' ? Delete is, so that KURL::filename works
@@ -400,8 +401,11 @@ void KIOJob::copy( QStrList & _src_url_list, const char *_dest_dir_url )
 	if ( d.right(1) != "/" )
 	    d += "/";
 	d += su.filename();
-	
-	cmDestURLList.append( d.data() );
+
+	printf("############# COPY '%s' to '%s'\n", tmp.data(), d.data());
+    
+	tmpDestURLList.append( d.data() );
+	tmpSrcURLList.append( tmp.data() );
     }
 
     copy();
@@ -411,43 +415,107 @@ void KIOJob::copy( const char *_src_url, const char *_dest_url )
 {
     action = KIOJob::JOB_COPY;
 
-    cmSrcURLList.clear();
-    cmDestURLList.clear();    
-    cmSrcURLList.append( _src_url );
-    cmDestURLList.append( _dest_url );
+    tmpSrcURLList.clear();
+    tmpDestURLList.clear();    
 
+    QString tmp = _src_url;
+    // Is there a trailing '/' ? Delete is, so that KURL::filename works
+    if ( tmp.right(1) == "/" && tmp.right(2) != ":/" )
+      tmp.truncate( tmp.length() - 1 );
+    tmpSrcURLList.append( tmp );
+
+    tmp = _dest_url;
+    // Is there a trailing '/' ? Delete is, so that KURL::filename works
+    if ( tmp.right(1) == "/" && tmp.right(2) != ":/" )
+      tmp.truncate( tmp.length() - 1 );
+    tmpDestURLList.append( tmp );
+
+    printf("############# COPY '%s' to '%s'\n", _src_url, _dest_url);
+    
     copy();
 }
 
 void KIOJob::copy()
 {
+    cmSrcURLList.clear();
+    cmDestURLList.clear();    
+
+    // Does anybody try to copy a file on itself ?
+    QListIterator<char> it3( tmpSrcURLList );
+    QListIterator<char> it4( tmpDestURLList );
+    for ( ; it3.current(); ++it3 )
+    {
+        char *p;
+	char *p2;
+	p = it3.current();
+	p2 = it4.current();
+	QString tmp;
+	
+	// Never copy a file on itself!!
+	if ( strcmp( p, p2 ) == 0 )
+        {
+	  do 
+	  {      
+	    KRenameWin *r = new KRenameWin( 0L, p, p2, true );
+	    int button = r->exec();
+	    if ( button == 2 ) // Skip
+	    {
+	      // Do not copy this one
+	      goto ende;
+	    }
+	    else if ( button == 3 ) // Rename
+	    {
+	      // Get the new destinations name
+	      tmp = r->getNewName();
+	      printf("Got '%s'\n",tmp.data());
+	      if ( tmp.right(1) == "/" )
+		tmp.truncate( tmp.length() - 1 );
+	      KURL du( tmp.data() );
+	      tmp = du.url();
+	      p2 = tmp.data();
+	      delete r;
+	    }
+	    else
+	    {
+		delete r;
+	      done();
+	      return;
+	    }
+	    printf("Now '%s' '%s'\n",p,p2);
+	  }
+	  while ( strcmp( p, p2 ) == 0 );
+	}
+
+	cmSrcURLList.append( p );
+	cmDestURLList.append( p2 );
+    ende:
+	++it4;
+    }
+
     QStrList tmpList1;
     QStrList tmpList2;
     
-    // Recursive directory
-    char *p;
-    char *p2;
-
+    // Recursive directory    
     QListIterator<char> it( cmSrcURLList );
     QListIterator<char> it2( cmDestURLList );
     for ( ; it.current(); ++it )
     {
+        char *p;
+	char *p2;
 	p = it.current();
 	p2 = it2.current();
 	KURL su( p );
 	KURL du( p2 );
-
-	// debugT("Have: '%s' '%s'\n",p,p2);
 	
-	if ( strcmp( su.protocol(), "file" ) == 0 && strcmp( du.protocol(), "file" ) == 0 )
+	if ( su.isLocalFile() && du.isLocalFile() )
 	{
 	    struct stat buff;
 	    stat( su.path(), &buff );
 	    if ( S_ISDIR( buff.st_mode ) )
 	    {
-		// debugT("Making diretory '%s'\n",du.path());
-		
+	        printf("??????? Is directory '%s'\n",p);
 		if ( ::mkdir( du.path(), buff.st_mode ) == -1 )
+                {    
 		    if ( errno != EEXIST )
 		    {
 			QString tmp;
@@ -455,6 +523,9 @@ void KIOJob::copy()
 			QMessageBox::warning( 0, i18n( "KFM Error" ), tmp.data() );
 			return;
 		    }
+		}
+		else
+		  printf("?? Making of directory ok\n");
 		
 		DIR *dp;
 		struct dirent *ep;
@@ -469,7 +540,6 @@ void KIOJob::copy()
 		{
 		    if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 		    {
-			// debugT("Adding '%s'\n",ep->d_name);
 			QString s = p;
 			s.detach();
 			if ( s.length() > 0 && s.data()[ s.length() - 1 ] != '/' )
@@ -484,6 +554,7 @@ void KIOJob::copy()
 			
 			cmSrcURLList.append( s.data() );
 			cmDestURLList.append( d.data() );
+			printf("Adding '%s' -> '%s'\n", s.data(), d.data() );
 		    }
 		}
 		
@@ -494,7 +565,6 @@ void KIOJob::copy()
 		tmpList2.append( p2 );
 	    }
 	}
-
 	++it2;
     }
 
@@ -522,8 +592,18 @@ void KIOJob::move( const char *_src_url, const char *_dest_url )
 
     tmpSrcURLList.clear();
     tmpDestURLList.clear();    
-    tmpSrcURLList.append( _src_url );
-    tmpDestURLList.append( _dest_url );
+
+    QString tmp = _src_url;
+    // Is there a trailing '/' ? Delete is, so that KURL::filename works
+    if ( tmp.right(1) == "/" && tmp.right(2) != ":/" )
+      tmp.truncate( tmp.length() - 1 );
+    tmpSrcURLList.append( tmp );
+
+    tmp = _dest_url;
+    // Is there a trailing '/' ? Delete is, so that KURL::filename works
+    if ( tmp.right(1) == "/" && tmp.right(2) != ":/" )
+      tmp.truncate( tmp.length() - 1 );
+    tmpDestURLList.append( tmp );
 
     move();
 }
@@ -532,11 +612,11 @@ void KIOJob::move( QStrList & _src_url_list, const char *_dest_dir_url )
 {
     action = KIOJob::JOB_MOVE;
     
-    tmpSrcURLList.copy( _src_url_list );
+    tmpSrcURLList.clear();
     tmpDestURLList.clear();
 
     char *p;
-    for ( p = tmpSrcURLList.first(); p != 0L; p = tmpSrcURLList.next() )
+    for ( p = _src_url_list.first(); p != 0L; p = _src_url_list.next() )
     {
 	QString tmp = p;
 	// Is there a trailing '/' ? Delete is, so that KURL::filename works
@@ -550,6 +630,7 @@ void KIOJob::move( QStrList & _src_url_list, const char *_dest_dir_url )
 	    d += "/";
 	d += su.filename();
 	
+	tmpSrcURLList.append( tmp.data() );
 	tmpDestURLList.append( d.data() );
     }
 
@@ -559,7 +640,8 @@ void KIOJob::move( QStrList & _src_url_list, const char *_dest_dir_url )
 void KIOJob::move()
 {
     tmpDelURLList.clear();
-    skipURLList.clear();
+    cmDestURLList.clear();
+    cmSrcURLList.clear();
     
     // Recursive directory
     QListIterator<char> itSrc( tmpSrcURLList );
@@ -570,20 +652,51 @@ void KIOJob::move()
     {
 	p = itSrc.current();
 	p2 = itDest.current();
-	
+	char* orig = p;
+	char* orig2 = p;
 	KURL su( p );
 	KURL du( p2 );
 
+	QString tmp;
+	// Never copy a file on itself!!
+	if ( strcmp( p, p2 ) == 0 )
+        {
+	  do 
+	  {      
+	    KRenameWin *r = new KRenameWin( 0L, p, p2, true );
+	    int button = r->exec();
+	    if ( button == 3 ) // Rename
+	    {
+	      // Get the new destinations name
+	      tmp = r->getNewName();
+	      printf("Got '%s'\n",tmp.data());
+	      if ( tmp.right(1) == "/" )
+		tmp.truncate( tmp.length() - 1 );
+	      du = tmp.data();
+	      tmp = du.url();
+	      p2 = tmp.data();
+	      delete r;
+	    }
+	    else
+	    {
+		delete r;
+	      done();
+	      return;
+	    }
+	    printf("Now '%s' '%s'\n",p,p2);
+	  }
+	  while ( strcmp( p, p2 ) == 0 );
+	}
+	
 	QString supath( su.path() );
 	QString dupath( du.path() );
 	KURL::decodeURL( supath );
 	KURL::decodeURL( dupath );
-	
+
 	int i = 1;
 	// Moving on the local hard disk ?
-	if ( strcmp( su.protocol(), "file" ) == 0 && !su.hasSubProtocol() &&
-	     strcmp( du.protocol(), "file" ) == 0 && !du.hasSubProtocol() )
-	{
+	if ( su.isLocalFile() && du.isLocalFile() )
+	{	    
 	    // Does the file already exist ?
 	    // If yes, care about renaming.
 	    struct stat buff;
@@ -598,9 +711,7 @@ void KIOJob::move()
 		    overwriteExistingFiles = true;
 		else if ( button == 2 ) // Skip
 		{
-		    skipURLList.append( p );
-		    skipURLList.append( p2 );
-		    continue;
+		  goto ende2;
 		}
 		else if ( button == 3 ) // Rename
 		    du = r->getNewName();
@@ -617,124 +728,151 @@ void KIOJob::move()
 	    // 'i' will indicate wether we succeeded.
 	    // Now i is either 0 or -1.
 	    i = rename( supath, dupath );
-	}
 	
-	// Did we succeed with our call to 'rename'
-	if ( i == -1 )
-	{
-	    // We tried to move across devices ?
-	    // Ok, that is not a real error.
-	    if ( errno == EXDEV )
+	    // Did we succeed with our call to 'rename'
+	    if ( i == -1 )
 	    {
-		// debugT("Testing for dir '%s'\n",su.path());
+	      // We tried to move across devices ?
+	      // Ok, that is not a real error.
+	      if ( errno == EXDEV )
+	      {
 		struct stat buff;
 		stat( supath, &buff );
 		// We want to move a directory ?
 		// Then we must know each file in the tree ....
 		if ( S_ISDIR( buff.st_mode ) )
 		{
-		    // debugT("Making diretory '%s'\n",du.path());
-	    
-		    if ( ::mkdir( dupath, S_IRWXU ) == -1 )
-			if ( errno != EEXIST )
-			{
-			    QString tmp;
-			    ksprintf(&tmp, i18n( "Could not make directory\n%s"), dupath.data());
-			    QMessageBox::warning( 0, i18n( "KFM Error" ), tmp.data() );
-			    return;
-			}
+		  if ( ::mkdir( dupath, S_IRWXU ) == -1 )
+		    if ( errno != EEXIST )
+		    {
+		      QString tmp;
+		      ksprintf(&tmp, i18n( "Could not make directory\n%s"), dupath.data());
+		      QMessageBox::warning( 0, i18n( "KFM Error" ), tmp.data() );
+		      done();
+		      return;
+		    }
+		  
+		  // Dont forget to delete this directory at the end
+		  tmpDelURLList.append( supath );
+		  
+		  // Create notifys for the directories
+		  {
+		    QString tmp = p;
+		    if ( tmp.right(1) == "/" )
+		      tmp.truncate( tmp.length() - 1 );
+		    KURL u( tmp );
+		    if ( notifyList.find( u.directoryURL( false ) ) == -1 )
+		      notifyList.append( u.directoryURL( false ) );
+		    tmp = p2;
+		    if ( tmp.right(1) == "/" )
+		      tmp.truncate( tmp.length() - 1 );
+		    u = tmp.data();
+		    if ( notifyList.find( u.directoryURL( false ) ) == -1 )
+		      notifyList.append( u.directoryURL( false ) );
+		  }
 
-		    // Dont forget to delete this directory at the end
-		    tmpDelURLList.append( supath );
-		    // ... and dont try to copy it
-		    skipURLList.append( p );
-		    
-		    DIR *dp;
-		    struct dirent *ep;
-		    dp = opendir( supath );
-		    if ( dp == NULL )
+		  DIR *dp;
+		  struct dirent *ep;
+		  dp = opendir( supath );
+		  if ( dp == NULL )
+		  {
+		    QString tmp;
+		    ksprintf(&tmp, i18n( "Could not access directory\n%s"), dupath.data());
+		    QMessageBox::warning( 0, i18n( "KFM Error" ), tmp.data() );
+		    done();
+		    return;
+		  }
+		  
+		  while ( ( ep = readdir( dp ) ) != 0L )
+		  {
+		    if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 		    {
-			QString tmp;
-			ksprintf(&tmp, i18n( "Could not access directory\n%s"), dupath.data());
-			QMessageBox::warning( 0, i18n( "KFM Error" ), tmp.data() );
-			return;
+		      QString s = p;
+		      s.detach();
+		      if ( s.right(1) != "/" )
+			s += "/";
+		      s += ep->d_name;
+		      
+		      QString d = p2;
+		      d.detach();
+		      if ( d.right(1) != "/" )
+			d += "/";
+		      d += ep->d_name;
+		      
+		      tmpSrcURLList.append( s.data() );
+		      tmpDestURLList.append( d.data() );
 		    }
-		    
-		    while ( ( ep = readdir( dp ) ) != 0L )
-		    {
-			if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
-			{
-			    QString s = p;
-			    s.detach();
-			    if ( s.right(1) != "/" )
-				s += "/";
-			    s += ep->d_name;
-			    
-			    QString d = du.url();
-			    d.detach();
-			    if ( d.right(1) != "/" )
-				d += "/";
-			    d += ep->d_name;
-			    
-			    tmpSrcURLList.append( s.data() );
-			    tmpDestURLList.append( d.data() );
-			}
-		    }
+		  }
+		  (void) closedir ( dp );
 		}
-	    }
-	    else
-	    {
+		else // A usual file
+		{
+		  cmSrcURLList.append( p );
+		  cmDestURLList.append( p2 );
+		}
+	      }
+	      else
+	      {
 		QString tmp;
 		ksprintf(&tmp, i18n( "Could not move directory\n%s\nto %s\nPerhaps access denied"), supath.data(), dupath.data());
 		QMessageBox::warning( 0, i18n( "KFM Error" ), tmp.data() );
+		done();
 		return;
+	      }
+	    }
+	    else // We already moved the file => We just need to generate notifys
+	    {
+	      QString tmp = p;
+	      if ( tmp.right(1) == "/" )
+		tmp.truncate( tmp.length() - 1 );
+	      KURL u( tmp );
+	      if ( notifyList.find( u.directoryURL( false ) ) == -1 )
+		notifyList.append( u.directoryURL( false ) );
+	      tmp = p2;
+	      if ( tmp.right(1) == "/" )
+		tmp.truncate( tmp.length() - 1 );
+	      u = tmp.data();
+	      if ( notifyList.find( u.directoryURL( false ) ) == -1 )
+		notifyList.append( u.directoryURL( false ) );
 	    }
 	}
-	// We moved the files already, so take them from the list
-	else if ( i == 0 )
+	else // Some URL movement ( not both local files )
 	{
-	    skipURLList.append( p );
-	    skipURLList.append( p2 );
+	  cmSrcURLList.append( p );
+	  cmDestURLList.append( p2 );
 	}
-	
+
+    ende2:
 	// Dont forget to get the next dest. We get the corresponding src
 	// in the 'for' clause.
 	++itDest;
     }
-
-    cmDestURLList.clear();
-    cmSrcURLList.clear();
     
-    // Delete the last name from the URL to get the directory we have to notify.
-    // If one copies "file:/home/weis/test.txt" to "file:/tmp/trash/test.txt" we have
-    // to notify "file:/home/weis/" and "file:/tmp/trash/" about changes.
-    // Usually no directories appear in cmDestURLList and cmSrcURLList, but if one says
-    // move( "ftp://www.ftp.org/contrib/", "file:/GreatStuff/" ), we can not change the
-    // directory path "/contrib/ in the source into lots of pathes for files like
-    // "/contrib/kfm.tgz" and "/contrib/kwm.tgz" and so on. In this case we might get
-    // directories in here.
+    // Create a list of all directories we wish to notify about changes.
     char *s;
-    for ( s = tmpDestURLList.first(); s != 0L; s = tmpDestURLList.next() )
+    for ( s = cmDestURLList.first(); s != 0L; s = cmDestURLList.next() )
     {
 	QString tmp = s;
 	if ( tmp.right(1) == "/" )
 	    tmp.truncate( tmp.length() - 1 );
 	KURL u( tmp );
 	if ( notifyList.find( u.directoryURL( false ) ) == -1 )
+	  {
+	    printf("========= NOTIFY '%s'\n", u.directoryURL( false ) );
 	    notifyList.append( u.directoryURL( false ) );
-	if ( skipURLList.find( s ) == -1 )
-	    cmDestURLList.append( s );
+	  }
     }
-    for ( s = tmpSrcURLList.first(); s != 0L; s = tmpSrcURLList.next() )
+    for ( s = cmSrcURLList.first(); s != 0L; s = cmSrcURLList.next() )
     {
 	QString tmp = s;
 	if ( tmp.right(1) == "/" )
 	    tmp.truncate( tmp.length() - 1 );
 	KURL u( tmp );
 	if ( notifyList.find( u.directoryURL( false ) ) == -1 )
+	  {
+	    printf("========= NOTIFY '%s'\n", u.directoryURL( false ) );
 	    notifyList.append( u.directoryURL( false ) );
-	if ( skipURLList.find( s ) == -1 )
-	    cmSrcURLList.append( s );
+	  }
     }
     
     cmCount = cmSrcURLList.count();
@@ -743,7 +881,6 @@ void KIOJob::move()
     mvDelURLList.clear();
     for ( p = tmpDelURLList.last(); p != 0L; p = tmpDelURLList.prev() )
     {
-	// debugT(">> REMOVING '%s'\n",p);
 	mvDelURLList.append( p );
     }
     
@@ -843,6 +980,7 @@ void KIOJob::del()
 			tmpDelURLList.append( s.data() );
 		    }
 		}
+		(void) closedir ( dp );
 	    }
 	}
     }
@@ -1240,7 +1378,6 @@ void KIOJob::fatalError( int _kioerror, const char* _error, int )
     }
     if ( r != 0L )
     {
-	// debugT("++++++++++++++++++++++++++++++ Connect ++++++++++++++++++++++++++\n");
 	connect( r, SIGNAL( result( QWidget*, int, const char*, const char* ) ),
 		 this, SLOT( msgResult2( QWidget*, int, const char*, const char* ) ) );
 	r->show();

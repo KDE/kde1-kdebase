@@ -17,7 +17,7 @@ class KIOSlaveIPC : public QObject
 {
     Q_OBJECT
 public:
-    KIOSlaveIPC( int _port );
+    KIOSlaveIPC( char *_path );
     ~KIOSlaveIPC();
 
     bool isConnected();
@@ -86,7 +86,6 @@ public slots:
 private:
     void parse( char *_data, int _len );
 
-    int port;
     KSocket *sock;
     bool connected;
     char headerBuffer[11];

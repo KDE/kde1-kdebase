@@ -1210,7 +1210,8 @@ bool KMimeBind::runBinding( const char *_url )
     QString decodedPath( u.path() );
     KURL::decodeURL( decodedPath );
     QString decodedURL( _url );
-    KURL::decodeURL( decodedURL );
+    // An application which accepts an URL does decoding itself ! (Hen)
+    // KURL::decodeURL( decodedURL );
 
     QString quote1 = KIOServer::shellQuote( decodedPath ).copy();
     QString quote2 = KIOServer::shellQuote( decodedURL ).copy();

@@ -100,8 +100,6 @@ public:
     KfmIpcServer();
     ~KfmIpcServer();
 
-    int getPort();
-
 signals:
    void newClient( KfmIpc * );
 

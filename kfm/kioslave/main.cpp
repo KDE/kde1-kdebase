@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 {
     if ( argc != 2 )
     {
-	fprintf( stderr, "Usage: kioslave port\n");
+      fprintf( stderr, "Usage: kioslave path\n");
 	exit(1);
     }
 
@@ -37,7 +37,7 @@ int main(int argc, char **argv)
     
     QApplication a( argc, argv );
 
-    KIOSlave slave( atoi( argv[1] ) );
+    KIOSlave slave( argv[1] );
     
     a.exec();
 	return(0);
@@ -55,13 +55,13 @@ void KIOSlave::ProcessError(KProtocol *prot, const char *srcurl)
     ipc->fatalError(KError, srcurl, SysError);
 }
 
-KIOSlave::KIOSlave( int _port )
+KIOSlave::KIOSlave( char * _path )
 {
-    ipc = new KIOSlaveIPC( _port );
+    ipc = new KIOSlaveIPC( _path );
     
     if ( !ipc->isConnected() )
     {
-	fprintf( stderr, "Could not connect to KIO om port %i\n", _port );
+	fprintf( stderr, "Could not connect to KIO om path %s\n", _path );
 	exit(1);
     }
 
@@ -429,7 +429,7 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
 	return;
     }
 
-    if(ProtocolSupported(_src_url) && ProtocolSupported(_dest_url))
+    if( ProtocolSupported( _src_url ) && ProtocolSupported( _dest_url ) )
     {
 		KProtocol *src_prot = CreateProtocol(_src_url);
 		KProtocol *dest_prot = CreateProtocol(_dest_url);
@@ -437,27 +437,17 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
 		int destmode = KProtocol::WRITE;
 		if( _overwriteExistingFiles ) destmode |= KProtocol::OVERWRITE;
 	
-		if(dest_prot->Open(&du, destmode) != KProtocol::SUCCESS)
+		if( dest_prot->Open(&du, destmode) != KProtocol::SUCCESS )
 		{
 		    ProcessError(dest_prot, _dest_url);
 		    return;
 		}
 
-		if(src_prot->Open(&su, KProtocol::READ) != KProtocol::SUCCESS)
+		if( src_prot->Open(&su, KProtocol::READ) != KProtocol::SUCCESS )
 		{
 		    ProcessError(src_prot, _src_url);
 		    return;
 		}
-
-/************************************** has to be adapted to match protocols *
-	copyDestFile = out;
-	copyDestFileName = du.path();
-	copyDestFileName.detach();
-
-	[...]
-
-	copyDestFile = 0L;
-******************************************************************************/
 
 		long c = 0, last = 0, l = 1;
 		long size = src_prot->Size();
@@ -465,9 +455,9 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
 
 		while ( !src_prot->atEOF() )
 		{
-			if ((l = src_prot->Read( buffer, 4096 ) ) < 0)
+			if ( ( l = src_prot->Read( buffer, 4096 ) ) < 0 )
 			{
-			    fprintf( stderr, "read error (%ld)\n",l);
+			    fprintf( stderr, "read error (%ld)\n", l );
 			    ProcessError(src_prot, _src_url);
 			    return;
 			}

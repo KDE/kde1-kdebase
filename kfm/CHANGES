@@ -158,3 +158,13 @@
  - If you have a link on your desktop and open it, then KFM will use readlink
    to find the destination of the link. This is really needfull, since you
    want for example /home/pub/diplom/text.lyx instead of /home/weis/Desktop/diplom/text.lyx
+
+22.01.98 Torben
+ - Applied "KURL decoding patch" from Henner
+ - Fixed empty root icon tooltip
+ - Fixed bug in kioslave ( file=0L )
+ - Uses UNIX domain sockets now => Communication is 99.99% secure.
+   Now KFM should work without any loopback device, too.
+ - Use fixed path in kfmsu2. Hardcoded to "/opt/kde". Change if required.
+ - Fixed bug in recursive copy/move
+ - Fixed memory leak in kiojob.cpp

@@ -51,52 +51,53 @@ KProtocolFILE::~KProtocolFILE()
 
 int KProtocolFILE::Open(KURL *url, int mode)
 {
-    QString p( url->path() );
-    KURL::decodeURL( p );
+  QString p( url->path() );
+  KURL::decodeURL( p );
     
-	struct stat st;
-	Close();
+  struct stat st;
+  Close();
 
-	size=0;
+  size=0;
+  
+  if( mode & READ )
+  {
+    file = fopen( p, "rb");
+    if( !file )
+    {
+      Error(KIO_ERROR_CouldNotRead,"Can't open File for reading",errno);
+      return(FAIL);
+    }
+    fstat(fileno(file), &st);
+    size = st.st_size;
+  }
+  else if( mode & WRITE )
+  {
+    if( !( mode & OVERWRITE ) )
+    {
+      if(stat( p, &st) != -1)
+      {
+	Error( KIO_ERROR_FileExists, "File already exists", errno );
+	return(FAIL);
+      }
+    }
 
-	if(mode & READ)
-	{
+    file = fopen( p, "wb");
+    if( !file )
+    {
+      Error(KIO_ERROR_CouldNotWrite,"Can't open file for writing",errno);
+      return(FAIL);
+    }
+  }
 
-		file = fopen( p, "rb");
-		if(!file)
-		{
-			Error(KIO_ERROR_CouldNotRead,"Can't open File for reading",errno);
-			return(FAIL);
-		}
-		fstat(fileno(file), &st);
-		size = st.st_size;
-	}
-	if(mode & WRITE)
-	{
-		if(!(mode & OVERWRITE))
-		{
-			if(stat( p, &st) != -1)
-			{
-			    Error(KIO_ERROR_FileExists,"File already exists",errno);
-				return(FAIL);
-			}
-		}
-
-		file = fopen( p, "wb");
-		if(!file)
-		{
-			Error(KIO_ERROR_CouldNotRead,"Can't open file for reading",errno);
-			return(FAIL);
-		}
-	}
-	return SUCCESS;
+  return SUCCESS;
 }
 
 int KProtocolFILE::Close()
 {
-	if(file) fclose(file);
-	file = NULL;
-	return SUCCESS;
+  if( file )
+    fclose(file);
+  file = NULL;
+  return SUCCESS;
 }
 
 long KProtocolFILE::Read(void *buffer, long len)

@@ -14,6 +14,8 @@ KRenameWin::KRenameWin(QWidget *parent, const char *_src, const char *_dest, boo
     
     src = _src;
     dest = _dest;
+
+    b0 = b1 = b2 = b3 = b4 = 0L;
     
     setCaption(klocale->translate("KFM Warning"));
 
@@ -25,7 +27,7 @@ KRenameWin::KRenameWin(QWidget *parent, const char *_src, const char *_dest, boo
 			  this, "Rename");
     b3->setGeometry( 110, 170, 90, 30 );
     connect(b3, SIGNAL(clicked()), this, SLOT(b3Pressed()));
-    
+    	
     b2 = new QPushButton( klocale->translate("Skip"), 
 			  this, "Skip");
     b2->setGeometry( 210, 170, 90, 30 );
@@ -40,27 +42,41 @@ KRenameWin::KRenameWin(QWidget *parent, const char *_src, const char *_dest, boo
 			  this, "Overwrite All");
     b1->setGeometry( 410, 170, 90, 30 );
     connect(b1, SIGNAL(clicked()), this, SLOT(b1Pressed()));
-        
-    QLabel *lb = new QLabel( src.data(), this );
-    lb->setGeometry( 10, 10, 350, 20 );
-
-    lb = new QLabel( klocale->translate("already exists. Overwrite with"), 
-		     this );
-    lb->setGeometry( 10, 40, 350, 20 );
-
-    QString str;
-    str << dest << " ?";
-    lb = new QLabel( str.data(), this );
-    lb->setGeometry( 10, 70, 350, 20 );
     
-    lb = new QLabel( klocale->translate("Or rename to"), this );
-    lb->setGeometry( 10, 110, 350, 20 );
+    // User tries to overwrite a file with itself ?
+    if ( strcmp( _src, _dest ) == 0 )
+    {
+      b0->setEnabled( false );
+      b1->setEnabled( false );
 
+      QLabel *lb = new QLabel( klocale->translate("You try to overwrite"), this );
+      lb->setGeometry( 10, 10, 350, 20 );
+      lb = new QLabel( src.data(), this );
+      lb->setGeometry( 10, 40, 350, 20 );
+      lb = new QLabel( "with itself. Do you want to rename it to", this );
+      lb->setGeometry( 10, 70, 350, 20 );
+    }
+    else
+    {	
+      QLabel *lb = new QLabel( dest.data(), this );
+      lb->setGeometry( 10, 10, 350, 20 );
+      lb = new QLabel( klocale->translate("already exists. Overwrite with"), this );
+      lb->setGeometry( 10, 40, 350, 20 );
+      
+      QString str;
+      str << src << " ?";
+      lb = new QLabel( str.data(), this );
+      lb->setGeometry( 10, 70, 350, 20 );
+      
+      lb = new QLabel( klocale->translate("Or rename to"), this );
+      lb->setGeometry( 10, 110, 350, 20 );
+    }
+    
     lineEdit = new QLineEdit( this );
     lineEdit->setText( dest.data() );
     lineEdit->setGeometry( 10, 130, 300, 30 );
     
-    b4->setDefault( true );
+    b3->setDefault( true );
     
     setGeometry( x(), y(), 510, 210 );
 }

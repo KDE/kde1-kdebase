@@ -5,14 +5,13 @@
 #include "ipc.h"
 #include "kioslave_ipc.h"
 
-KIOSlaveIPC::KIOSlaveIPC( int _port )
+KIOSlaveIPC::KIOSlaveIPC( char * _path )
 {
     bHeader = TRUE;
     cHeader = 0;
     pBody = 0L;
 
-    port = _port;
-    sock = new KSocket( "localhost", port );
+    sock = new KSocket( _path );
     connect( sock, SIGNAL( readEvent(KSocket*) ), this, SLOT( readEvent(KSocket*) ) );
     connect( sock, SIGNAL( closeEvent(KSocket*) ), this, SLOT( closeEvent(KSocket*) ) );
     sock->enableRead( TRUE );

@@ -7,7 +7,7 @@
 #include <qdir.h>
 #include <qmsgbox.h>
 #include <qstring.h>
-#include "kfmclient_ipc.h"
+#include <kfmclient_ipc.h>
 #include "config-kfm.h"
 
 char flag = 0;
@@ -111,15 +111,16 @@ int doIt( int argc, char **argv )
     }
 
     buffer[0] = 0;
-    fgets( buffer, 1023, f );
-    int slot = atoi( buffer );
-    if ( slot <= 0 )
+    fscanf( f, "%s", buffer );
+    char * slot = strdup( buffer ); 
+    if ( slot == (void *)0 )
     {
 	printf("ERROR: Invalid Slot\n");
 	exit(1);
     }
     
     KfmIpc kfm( slot );
+    free( slot );
 
     // Read the password
     QString fn = getenv( "HOME" );

@@ -5,17 +5,21 @@
 #include <errno.h>
 
 #include "kioserver_ipc.h"
-#include <errno.h>
+#include "utils.h"
 
 KIOSlaveIPCServer::KIOSlaveIPCServer()
 {
-    serv_sock = new KServerSocket( 0 ); /* 0: choose free port */
+    // Keep in sync with the same in kioserver.cpp!
+    QString idir = getenv("HOME");
+    idir += "/.kde/share/apps/kfm/kio";
+    idir += displayName();
+    
+    serv_sock = new KServerSocket( idir.data() );
     if ( serv_sock->socket() < 0 )
     {
-	printf("ERROR: Could not establish server\n");
+	printf("ERROR: Could not establish server socket!\n");
 	exit(1);
     }
-    printf( "SOCK=%i\n",serv_sock->getPort());
     connect( serv_sock, SIGNAL( accepted(KSocket*) ), 
 	    this, SLOT( slotAccept(KSocket*) ) );
 }
@@ -29,11 +33,6 @@ void KIOSlaveIPCServer::slotAccept( KSocket *_sock )
 KIOSlaveIPCServer::~KIOSlaveIPCServer()
 {
     delete serv_sock;
-}
-
-int KIOSlaveIPCServer::getPort()
-{
-    return serv_sock->getPort();
 }
 
 KIOSlaveIPC::KIOSlaveIPC( KSocket *_sock )

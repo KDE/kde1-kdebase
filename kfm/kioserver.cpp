@@ -22,6 +22,7 @@
 #include "kioserver.h"
 #include "kbind.h"
 #include "kfmpaths.h"
+#include "utils.h"
 #include <config-kfm.h>
 
 KIOServer* KIOServer::pKIOServer;
@@ -709,11 +710,14 @@ void KIOServer::runNewSlave()
     ipath.detach();
     ipath += "/bin/kioslave";
 
-    char buffer[ 1024 ];
-    sprintf( buffer, "%i", getPort() );
+    // Keep in sync with the same in kioserver_ipc.cpp!
+    QString idir = getenv( "HOME" );
+    idir += "/.kde/share/apps/kfm/kio"; 
+    idir += displayName();
+    
     if ( fork() == 0 )
     {
-        execlp( ipath.data(), "kioslave", buffer, 0 );
+        execlp( ipath.data(), "kioslave", idir.data(), 0 );
 	fatal( "ERROR: Could not start kioslave\n");
         exit( 1 );
     }

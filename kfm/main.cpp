@@ -203,7 +203,11 @@ int main( int argc, char ** argv )
 	debugT("ERROR: Could not write PID file\n");
 	exit(1);
     }
-    fprintf( f, "%i\n%i\n", (int)getpid(),(int)ipc.getPort() );
+    // Keep in sync with the same in kfmserver.cpp!
+    QString idir = getenv( "HOME" );
+    idir += "/.kde/share/apps/kfm/kfm"; 
+    idir += displayName();
+    fprintf( f, "%i\n%s\n", (int)getpid(),idir.data() );
     fclose( f );
 
     // Stephan: alias some translated string to find them faster

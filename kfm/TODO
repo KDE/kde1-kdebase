@@ -3,8 +3,6 @@ TODO List
 
 - KFM seg faults on too large URLs. This might be a security bug
   ( hopefully fixed but not tested )
-- Use UNIX domain sockets instead of internet name space sockets
-  for more security.
 - HTTP PUT command
 - FTP does not always close every socket
   ( not seen in the last time )
@@ -21,3 +19,4 @@ TODO List
 - index.html files of 0 bytes crash KFM ? ( not tested )
 - kioslave crashes on dangling links if compiled with -O2 ( not tested )
 - Kopieren von FTP server ?
+- Links on FTP Servers do not seem to work

@@ -5,17 +5,21 @@
 #include <errno.h>
 
 #include "kfmserver_ipc.h"
-#include <errno.h>
+#include "utils.h"
 
 KfmIpcServer::KfmIpcServer()
 {
-    serv_sock = new KServerSocket( 0 ); /* 0: choose free port */
+    // Keep in sync with the same in main.cpp!
+    QString idir = getenv( "HOME" );
+    idir += "/.kde/share/apps/kfm/kfm"; 
+    idir += displayName();
+    
+    serv_sock = new KServerSocket( idir.data() );
     if ( serv_sock->socket() < 0 )
     {
-	printf("ERROR: Could not establish server\n");
+	printf("ERROR: Could not establish server socket\n");
 	exit(1);
     }
-    printf( "SOCK=%i\n",serv_sock->getPort());
     connect( serv_sock, SIGNAL( accepted(KSocket*) ), 
 	    this, SLOT( slotAccept(KSocket*) ) );
 }
@@ -29,11 +33,6 @@ void KfmIpcServer::slotAccept( KSocket *_sock )
 KfmIpcServer::~KfmIpcServer()
 {
     delete serv_sock;
-}
-
-int KfmIpcServer::getPort()
-{
-    return serv_sock->getPort();
 }
 
 KfmIpc::KfmIpc( KSocket *_sock )
