@@ -20,7 +20,7 @@ msgid ""
 "started\n"
 msgstr ""
 "kwm: parece que ya hay un administrador de ventanas funcionando. El kwm no "
-"arrancará"
+"arrancar\n"
 
 #: error.C:42
 msgid "kwm: failure during initialisation; aborting\n"

@@ -210,42 +210,42 @@ AC_ARG_PROGRAM
 
 AC_OUTPUT(Makefile \
 	kpanel/Makefile \
+	kpanel/pics/Makefile \
 	kdehelp/Makefile \
-	kdehelp/doc/Makefile \
 	kdehelp/index/Makefile \
 	kdehelp/search/Makefile \
 	kfm/Makefile \
 	kfm/Desktop/Makefile \
-	kfm/doc/Makefile \
-	kfm/apps/Makefile \
 	kfm/client/Makefile \
 	kfm/kioslave/Makefile \
 	kfm/pics/Makefile \
 	kfm/kfmwarn/Makefile \
 	mimetypes/Makefile \
 	kdisplay/Makefile \
-	kdisplay/doc/Makefile \
 	kfind/Makefile \
-	kfind/doc/Makefile \
 	kfind/pics/Makefile \
 	kfontmanager/Makefile \
-	kfontmanager/docs/Makefile \
 	klogout/Makefile \
-	kpanel/apps/Makefile \
-	kpanel/lib/pics/Makefile \
 	kscreensaver/Makefile \
 	kvt/Makefile \
 	kwm/Makefile \
-	kwm/doc/Makefile \
 	kwm/pics/Makefile \
 	kwmclient/Makefile \
 	po/Makefile \
-	pics/Makefile
-	kdm/Makefile 
-	kdm/config/Makefile 
-	kdm/doc/Makefile
-	kdm/pics/Makefile 
-	kdm/xdmconfig/Makefile
+	pics/Makefile \
+	kdm/Makefile \
+	kdm/config/Makefile \
+	kdm/pics/Makefile \
+	kdm/xdmconfig/Makefile \
+	doc/Makefile \
+	doc/kfm/Makefile \
+	doc/kfind/Makefile \
+	doc/kdehelp/Makefile \
+	doc/kfontmanager/Makefile \
+	doc/kdm/Makefile \
+	doc/kdisplay/Makefile \
+	doc/kwm/Makefile \
+	doc/kvt/Makefile 
 )
 
 

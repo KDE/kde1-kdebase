@@ -7,7 +7,6 @@ LDADD	= @all_libraries@ -lkdecore -lkdeui -lqt -lXext -lX11
 MOC	= @MOC@
 
 PICSDIR = $(libdir)/pics
-DOCSDIR = $(prefix)/doc/HTML
 UTILSDIR = $(prefix)/apps/Utilities
 
 bin_PROGRAMS = kvt
@@ -25,10 +24,7 @@ main.moc: main.h
 install-data-local: 
 	$(mkinstalldirs) $(PICSDIR)
 	$(INSTALL_DATA) ./lib/pics/UNIX.xpm $(PICSDIR)
-	$(mkinstalldirs) $(DOCSDIR)
-	$(INSTALL_DATA) ./doc/HTML/kvt.html $(DOCSDIR)
 
 uninstall-local:
 	rm -f $(PICSDIR)/UNIX.xpm
-	rm -f $(DOCSDIR)/kvt.html
 

@@ -1,5 +1,5 @@
 
-SUBDIRS		= config doc pics @xdmconfigsubdir@
+SUBDIRS		= config pics @xdmconfigsubdir@
 
 # System depended vars:
 MOC	 = @MOC@

@@ -8,7 +8,6 @@ prefix = @prefix@
 KDEINC = $(prefix)/include
 BINDIR = $(prefix)/bin
 LIBDIR = $(prefix)/lib
-DOCSDIR = $(prefix)/doc/HTML/kfm
 
 ####### Files
 
@@ -69,7 +68,6 @@ install-local-exec:
 	$(INSTALL_DATA) ./unpack $(BINDIR)
 
 install-data-local:
-	(cd doc && $(MAKE) install)
 	(cd pics && $(MAKE) install)
 	$(mkinstalldirs) $(LIBDIR)/kfm/config
 	$(INSTALL_DATA) config/kfmrc $(LIBDIR)/kfm/config

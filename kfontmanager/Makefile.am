@@ -16,12 +16,6 @@ kfontmanager.cpp: kfontmanager.moc
 kfontlist.cpp: kfontlist.moc
 kfontexplorer.cpp: kfontexplorer.moc
 
-install-local-data:
-	(cd docs && $(MAKE) install)
-
-uninstall-local:
-	(cd docs && $(MAKE) uninstall)
-
 ####### Meta objects
 
 kfontmanager.moc: kfontmanager.h
