@@ -87,17 +87,17 @@ msgstr ""
 #: keymap.cpp:233
 #, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
-msgstr "KeyMap: kan inte hitta symbolen \"%s\".\n"
+msgstr "KeyMap: kan inte hitta symbolen \"%s\"."
 
 #: keymap.cpp:241
 #, c-format
 msgid "KeyMap: do not understand key code \"%s\"."
-msgstr "KeyMap: Förstår inte tangentkoden \"%s\".\n"
+msgstr "KeyMap: Förstår inte tangentkoden \"%s\"."
 
 #: keymap.cpp:247
 #, c-format
 msgid "KeyMap: key code \"%s\" go out of range."
-msgstr "KeyMap: tangentkoden \"%s\" är utanför gränsen.\n"
+msgstr "KeyMap: tangentkoden \"%s\" är utanför gränsen."
 
 #: kikbdconf.cpp:95
 msgid "Global"
