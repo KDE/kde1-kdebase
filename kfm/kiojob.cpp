@@ -1470,8 +1470,11 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
       }
       break;
     default:
-      debug("warning, case not handled in processError()\n");
-      break;
+      kdebug(1,1201,"warning, case not handled in processError()");
+      kdebug(1,1201,"action = %d, kioerror = %d", action, _kioerror);
+      kdebug(1,1201,"error msg = %s", _error);
+      emit error( _kioerror, "" );
+      return;
     }
 	
     if (r != 0) { // the rename dialog should be executed

@@ -752,7 +752,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	  dupList->append(s->getName()); // we're in first pass; add to list;
 	else // debug fallback
 	{
-	  debug ("DIROVERLAY: BAD, no dupList! (pass 1)");
+	  kdebug (KDEBUG_ERROR,1201,"DIROVERLAY: BAD, no dupList! (pass 1)");
 	  return;
 	}
       }
@@ -763,7 +763,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	{
 	  if (dupList->contains(s->getName())) // if we have it...
 	  {
-	    debug ("DIROVERLAY: OK, discarded duplicate %s", s->getName());
+	    kdebug (KDEBUG_INFO,1021,"DIROVERLAY: OK, discarded duplicate %s", s->getName());
 	    // we might remove it from the list making future search
 	    // faster. But since removing would imply search (we
 	    // cannot search by reference, copies are deep, they
@@ -775,7 +775,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	}
 	else // debug fallback
 	{
-	  debug ("DIROVERLAY: BAD, no dupList! (pass 2)");
+	  kdebug (KDEBUG_WARN,1021,"DIROVERLAY: BAD, no dupList! (pass 2)");
 	  return;
 	}
 
@@ -835,7 +835,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
       }
       else  // Debug fallback
       {
-	debug ("DIROVERLAY:BAD, encodedURL doesn't contain LOCAL part: %s (pass2)",
+	kdebug (KDEBUG_WARN,1021,"DIROVERLAY:BAD, encodedURL doesn't contain LOCAL part: %s (pass2)",
 	       encodedURL.data());
 	return;
       }
@@ -1064,7 +1064,7 @@ void KFMManager::stop()
 
 void KFMManager::slotRedirection( const char *_url )
 {
-    debug("Setting job URL to %s",_url);
+    kdebug(KDEBUG_INFO,1201,"Setting job URL to %s",_url);
     jobURL = _url; // store it to a special QString.
     if (KURL(_url).isLocalFile())
     {
@@ -1322,7 +1322,7 @@ void KFMManager::slotFinished()
       }
       else  // Debug fallback
       {
-	debug ("DIROVERLAY:BAD, job->url doesn't contain LOCAL part: %s (pass2)",
+	kdebug (KDEBUG_WARN,1021,"DIROVERLAY:BAD, job->url doesn't contain LOCAL part: %s (pass2)",
 	       tryURL.data());
 	// cleanup:
 	pass2 = false;
