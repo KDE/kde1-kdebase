@@ -2,7 +2,7 @@
 [KDE Desktop Entry]
 Name=X Editor
 Name[ca]=Editor X
-Name[da]=X skriver
+Name[da]=X redigerer
 Name[es]=Editor X
 Name[fi]=X Editori
 Name[fr]=Editeur X
@@ -17,7 +17,7 @@ Name[ru]=Редактор X
 Comment=X Editor
 Comment[ca]=Editor X
 Comment[cs]=Editor pro Xwindows
-Comment[da]= X skriver
+Comment[da]= X redigerer
 Comment[es]=Editor para X
 Comment[fi]=X editori
 Comment[fr]=Editeur pour X

@@ -2,7 +2,7 @@
 Name=Templates
 Name[ca]=Terminal
 Name[cs]=Termin·l
-Name[da]=Emacs
+Name[de]=Schablonen
 Name[eo]=Terminalo
 Name[es]=Tetris
 Name[fi]=P‰‰teikkuna
@@ -11,4 +11,5 @@ Name[hr]=Terminal
 Name[hu]=Tetrisz
 Name[is]=Skj·hermir
 Name[it]=Tetris
+Name[pt_BR]=Modelos
 

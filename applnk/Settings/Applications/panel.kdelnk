@@ -35,6 +35,7 @@ Comment[no]=Her kan du konfigurere utseende til panelet
 Comment[pl]=Konfiguracja panelu
 Comment[pt_BR]=Você pode configurar aqui a aparência do Painel
 Comment[ru]=úÄÅÓØ ×Ù ÍÏÖÅÔÅ ÎÁÓÔÒÏÉÔØ ĞÁÎÅÌØ
+Comment[sk]=Tu mô¾ete nastavi» vlastnosti panelu
 Comment[sv]=Här kan du anpassa panelens utseende
 Exec=kcmkpanel 
 

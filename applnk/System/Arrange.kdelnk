@@ -3,7 +3,7 @@
 Name=Arrange Icons
 Name[ca]=Arranja les icones
 Name[cs]=Uspoøádej ikony
-Name[da]=Arbejdsplads ikoner
+Name[da]=Arranger ikoner
 Name[de]=Symbole anordnen
 Name[eo]=Ordigu piktogramojn
 Name[es]=Ordenar iconos
@@ -29,7 +29,7 @@ Protocols=
 Comment=Arrange Desktop Icons
 Comment[ca]=Arranja les icones de l'escriptori
 Comment[cs]=Uspoøádá ikony na pracovní plo¹e
-Comment[da]=Opdater ikonerne på Arbejdspladsen
+Comment[da]=Arranger ikonerne på Arbejdspladsen
 Comment[de]=Anordnen der Desktopsymbole
 Comment[eo]=Ordigas la piktogramojn sur la laburtabulo
 Comment[es]=Ordenar los iconos del escritorio

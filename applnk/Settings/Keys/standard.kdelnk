@@ -7,7 +7,7 @@ Type=Application
 Comment=Configuration of standard keys
 Comment[ca]=Configuració de les tecles estàndard
 Comment[cs]=Nastavení standardních klávesových zkratek
-Comment[da]=Værktøj til indstilling af bind
+Comment[da]=Værktøj til indstilling af standard taster
 Comment[de]=Konfiguration der Standard-Tastenbelegungen
 Comment[eo]=Sonorokonfigura¼o
 Comment[es]=Configuración de teclas normales
@@ -27,7 +27,7 @@ Comment[sv]=Anpassning av standardtangenter
 Name=Standard Keys
 Name[ca]=Tecles estàndard
 Name[cs]=Standarní klávesové zkratky
-Name[da]=Taster
+Name[da]=Standard taster
 Name[de]=name[de]=Standard-Tastenbelegungen
 Name[eo]=Trovu dosierojn
 Name[es]=Teclas normales

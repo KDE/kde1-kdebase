@@ -2,7 +2,6 @@
 Name=Autostart
 Name[ca]=Botons
 Name[cs]=Dekorace oken
-Name[da]=KIllustrator
 Name[eo]=Simboloj
 Name[es]=Botones
 Name[fi]=Napit
@@ -11,4 +10,5 @@ Name[hr]=Gumbi
 Name[hu]=Gombok
 Name[is]=Hnappar
 Name[it]=Pulsanti
+Name[pt_BR]=Auto-Início
 

@@ -3,7 +3,6 @@
 WmCommand=
 BinaryPattern=
 Name=GV
-Name[da]=XV
 Name[eo]=Ludoj
 Name[hu]=Játékok
 MiniIcon=mini-gv.xpm

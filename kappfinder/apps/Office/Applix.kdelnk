@@ -3,7 +3,6 @@
 WmCommand=
 BinaryPattern=
 Name=Applix
-Name[da]=Kppp
 Name[eo]=Aplika¼oj
 Name[hr]=nt=Applix
 Name[hu]=Applikációk
@@ -21,7 +20,7 @@ Terminal=0
 Comment=ApplixWare Office Suite
 Comment[ca]=Aplicació d'oficina d'ApplixWare
 Comment[cs]=Kanceláøský balík Applixware
-Comment[da]=Palm pilotprogram
+Comment[da]=Applixware kontorprogrammer
 Comment[de]=ApplixWare Office
 Comment[eo]=Trovas konatajn ne-KDEajn aplika¼ojn
 Comment[es]=Suite de Oficina ApplixWare

@@ -8,6 +8,7 @@ DocPath=konsole/konsole.html
 Comment=Terminal Emulation (experimental)
 Comment[ca]=Emulació de terminal (experimental)
 Comment[cs]=Emulátor terminálu (experimentální)
+Comment[da]=Terminalemulering (eksperimentel)
 Comment[de]=Terminal Emulation (experimentell)
 Comment[eo]=Terminalimita¼o (kvt)
 Comment[es]=Emulador de Terminal (experimental)
@@ -28,7 +29,7 @@ Comment[sv]=Terminalemulering (experimentell)
 Terminal=0
 Name=Konsole
 Name[ca]=Consola
-Name[da]=X konsol
+Name[da]=Konsol
 Name[eo]=NAme[eo]=Stilo
 Name[fr]=X Console
 Name[hr]=Konzola
