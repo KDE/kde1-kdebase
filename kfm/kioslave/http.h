@@ -30,7 +30,7 @@ protected:
     QString Cookies;
 
 // needed for language/charset support 
-    KLocale *klocale;
+//    KLocale *klocale;
 
     //#define HTTP_PROXY_NAME "someproxy.somewhere.org"
     //#define HTTP_PROXY_PORT 80
