@@ -315,7 +315,6 @@ QString KFMExec::openLocalURL( const char *_url )
     QString tmp = u.path();
     if ( tmp.right(4) == ".tgz" || tmp.right(7) == ".tar.gz" )
     {
-	printf("!!!!!!!!!!!!!! TGZ !!!!!!!!!!!!!!!!\n");
 	// We change the destination on the fly
 	tryURL = "file:";
 	tryURL += u.path();
@@ -348,26 +347,16 @@ QString KFMExec::openLocalURL( const char *_url )
     {
 	tryURL = _url;
     }
-    // Executables
-    /* else if ( strcmp( typ->getMimeType(), "application/x-executable" ) == 0L ||
-	      strcmp( typ->getMimeType(), "application/x-shellscript" ) == 0L )
+    else
     {
-	KMimeBind::runCmd( _url );
+      // Execute the best matching binding for this URL.
+      if ( typ->run( _url ) )
 	// No URL left since we have done the job
 	// => return an empty string
 	return QString();
-    } */
-    else
-    {
-	// Execute the best matching binding for this URL.
-	printf("IS A '%s'\n",typ->getMimeType());
-	if ( typ->run( _url ) )
-	    // No URL left since we have done the job
-	    // => return an empty string
-	    return QString();
 
-	// We could not execute the mimetype
-	tryURL = _url;
+      // We could not execute the mimetype
+      tryURL = _url;
     }
     
     return tryURL;

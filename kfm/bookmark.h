@@ -120,6 +120,12 @@ protected:
   KBookmark m_Root;
   bool m_bAllowSignalChanged;
   bool m_bNotify;
+
+  /**
+   * This list is to prevent infinite looping while
+   * scanning directories with ugly symbolic links
+   */
+  QList<QString> m_lstParsedDirs;
 };
 
 #endif	// __BOOKMARK_H__

@@ -31,13 +31,15 @@ int g_id = 0;
 
 KBookmarkManager::KBookmarkManager() : m_Root( 0L, 0L, 0L )
 {
+  m_lstParsedDirs.setAutoDelete( true );
+  
   // Little hack
   m_Root.m_pManager = this;
   m_bAllowSignalChanged = true;
   m_bNotify = true;
   
-  QString p = getenv( "HOME" );
-  p += "/.kde/share/apps/kfm/bookmarks";
+  QString p = kapp->localkdedir().data();
+  p += "/share/apps/kfm/bookmarks";
   scan( p );
 
   connect( KIOServer::getKIOServer(), SIGNAL( notify( const char* ) ),
@@ -53,8 +55,8 @@ void KBookmarkManager::slotNotify( const char *_url )
   if ( strcmp( u.protocol(), "file" ) != 0 )
     return;
   
-  QString p = getenv( "HOME" );
-  p += "/.kde/share/apps/kfm/bookmarks";
+  QString p = kapp->localkdedir().data();
+  p += "/share/apps/kfm/bookmarks";
   QDir dir2( p );
   QDir dir1( u.path() );
 
@@ -69,8 +71,8 @@ void KBookmarkManager::slotNotify( const char *_url )
   
   if ( strncmp( p1.data(), p2.data(), p2.length() ) == 0 )
   {
-    QString d = getenv( "HOME" );
-    d += "/.kde/share/apps/kfm/bookmarks/";
+    QString d = kapp->localkdedir().data();
+    d += "/share/apps/kfm/bookmarks/";
     scan( d );
   }
 }
@@ -79,12 +81,12 @@ void KBookmarkManager::emitChanged()
 {
   // Scanning right now ?
   if ( m_bAllowSignalChanged )
-    {
-      // ... no => emit signal
-      emit changed();
-      //tell krootwm to refresh the bookmarks popup menu
-      KWM::sendKWMCommand ("krootwm:refreshBM");
-    }
+  {
+    // ... no => emit signal
+    emit changed();
+    // tell krootwm to refresh the bookmarks popup menu
+    KWM::sendKWMCommand ("krootwm:refreshBM");
+  }
 }
 
 void KBookmarkManager::scan( const char * _path )
@@ -94,6 +96,7 @@ void KBookmarkManager::scan( const char * _path )
   // Do not emit 'changed' signals here.
   m_bAllowSignalChanged = false;
   scanIntern( &m_Root, _path );
+  m_lstParsedDirs.clear();
   m_bAllowSignalChanged = true;
    
   emitChanged();
@@ -101,12 +104,24 @@ void KBookmarkManager::scan( const char * _path )
 
 void KBookmarkManager::scanIntern( KBookmark *_bm, const char * _path )
 {
+  // Substitute all symbolic links in the path
+  QDir dir( _path );
+  QString canonical = dir.canonicalPath();
+  QString *s;
+  // Did we scan this one already ?
+  for( s = m_lstParsedDirs.first(); s != 0L; s = m_lstParsedDirs.next() )
+  {
+    if ( strcmp( s->data(), canonical.data() ) == 0 )
+      return;
+  }
+  m_lstParsedDirs.append( new QString( canonical.data() ) );
+
   DIR *dp;
   struct dirent *ep;
   dp = opendir( _path );
   if ( dp == 0L )
     return;
-  
+
   // Loop thru all directory entries
   while ( ( ep = readdir( dp ) ) != 0L )
   {
@@ -119,27 +134,48 @@ void KBookmarkManager::scanIntern( KBookmark *_bm, const char * _path )
       file += ep->d_name;
       struct stat buff;
       stat( file.data(), &buff );
+
+      printf("Scanning %s\n", file.data());
+      
       if ( S_ISDIR( buff.st_mode ) )
       {
 	KBookmark* bm = new KBookmark( this, _bm, KBookmark::decode( ep->d_name ) );
 	scanIntern( bm, file );
       }
-      else
-      {    
-	KSimpleConfig cfg( file, true );
-	cfg.setGroup( "KDE Desktop Entry" );
-	QString type = cfg.readEntry( "Type" );	
-	// QString url = cfg.readEntry( "URL" );
-	// QString icon = cfg.readEntry( "Icon" );
-	// QString miniicon = cfg.readEntry( "MiniIcon", icon );
-	// if ( !url.isEmpty() && !icon.isEmpty() && !miniicon.isEmpty() )
-	if ( type == "Link" )
-	{
-	  new KBookmark( this, _bm, ep->d_name, cfg );
+      else if ( S_ISREG( buff.st_mode ) )
+      {
+	// Is it really a kde config file ?
+	bool ok = true;
+	
+	FILE *f;
+	f = fopen( file, "rb" );
+	if ( f == 0L )
+	  ok = false;
+	else
+	{    
+	  char buff[ 100 ];
+	  buff[ 0 ] = 0;
+	  fgets( buff, 100, f );
+	  fclose( f );
+	  
+	  if ( strncmp( buff, "# KDE Config File", 17 ) != 0L )
+	    ok = false;
+	}
+	
+	if ( ok )
+	{    
+	  KSimpleConfig cfg( file, true );
+	  cfg.setGroup( "KDE Desktop Entry" );
+	  QString type = cfg.readEntry( "Type" );	
+	  // Is it really a bookmark file ?
+	  if ( type == "Link" )
+	    new KBookmark( this, _bm, ep->d_name, cfg );
 	}
       }
     }
   }
+
+  closedir( dp );
 }
 
 /********************************************************************
@@ -187,8 +223,8 @@ KBookmark::KBookmark( KBookmarkManager *_bm, KBookmark *_parent, const char *_te
   m_type = Folder;
   m_text = _text;
 
-  QString p( getenv( "HOME" ) );
-  p += "/.kde/share/apps/kfm/bookmarks";
+  QString p = kapp->localkdedir().data();
+  p += "/share/apps/kfm/bookmarks";
   const char *dir = p;
   if ( _parent )
     dir = _parent->file();

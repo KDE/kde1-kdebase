@@ -58,7 +58,7 @@ void testDir3( const char *_name )
 void testDir2( const char *_name )
 {
     DIR *dp;
-    QString c = getenv( "HOME" );
+    QString c = kapp->localkdedir().data();
     c += _name;
     dp = opendir( c.data() );
     if ( dp == NULL )
@@ -115,66 +115,52 @@ void InitStaticMembers()
 
 int main( int argc, char ** argv )
 {
-    testDir2( "/.kde" );
-    testDir2( "/.kde/share" );    
-    testDir2( "/.kde/share/config" );
-    testDir2( "/.kde/share/apps" );
-    testDir2( "/.kde/share/apps/kfm" );
-    testDir2( "/.kde/share/apps/kfm/tmp" );
-    testDir2( "/.kde/share/apps/kfm/bookmarks" );
-    testDir2( "/.kde/share/icons" );
-    testDir2( "/.kde/share/icons/mini" );
-    testDir2( "/.kde/share/applnk" );
-    testDir2( "/.kde/share/mimelnk" );
+    KApplication a( argc, argv, "kfm" );
 
-    debugT("1\n");
+    testDir2( "" );
+    testDir2( "/share" );    
+    testDir2( "/share/config" );
+    testDir2( "/share/apps" );
+    testDir2( "/share/apps/kfm" );
+    testDir2( "/share/apps/kfm/tmp" );
+    testDir2( "/share/apps/kfm/bookmarks" );
+    testDir2( "/share/icons" );
+    testDir2( "/share/icons/mini" );
+    testDir2( "/share/applnk" );
+    testDir2( "/share/mimelnk" );
 
     QString c;
     // Clean this directory
-    c.sprintf("rm -f %s/.kde/share/apps/kfm/tmp/*", getenv( "HOME" ) );
+    c.sprintf("rm -f %s/share/apps/kfm/tmp/*", kapp->localkdedir().data() );
     system( c );
 
     FILE *f2;
-    c = getenv( "HOME" );
-    c += "/.kde/share/apps/kfm/desktop";
+    c = kapp->localkdedir().data();
+    c += "/share/apps/kfm/desktop";
     f2 = fopen( c.data(), "rb" );
     if ( f2 == 0L )
     {
 	QString cmd;
-	cmd.sprintf( "cp %s/desktop %s/.kde/share/apps/kfm/desktop", kapp->kde_configdir().data(), getenv( "HOME" ) );
+	cmd.sprintf( "cp %s/desktop %s/share/apps/kfm/desktop", kapp->kde_configdir().data(), kapp->localkdedir().data() );
 	system( cmd.data() );
     }
     else
 	fclose( f2 );
     
-    debugT("2\n");
-    
-    KApplication a( argc, argv, "kfm" );
-    
-    debugT("4\n");
-
     // Stephan: I must find a better place for this somewhen
     KFMPaths::initPaths();
 
     testDir3( KFMPaths::CachePath() );
-
-    debugT("1. Init KIOManager\n");
 
     //Stephan: This variable is not deleted here, but in the 
     // slotQuit methode of KFileWindow. I'm not that sure, if
     // this is the best way! 
     (void)new KIOServer();
 
-    debugT("3\n");
-
     InitStaticMembers();
-
-    debugT("5\n");    
 
     // Test for existing Templates
     bool bTemplates = true;
-
-    debugT("6\n");
 
     DIR* dp = opendir( KFMPaths::TemplatesPath().data() );
     if ( dp == NULL )
@@ -185,8 +171,6 @@ int main( int argc, char ** argv )
     signal(SIGCHLD,sig_handler);
     
     // Test for directories
-    QString d;
-
     testDir( KFMPaths::DesktopPath() );
     testDir( KFMPaths::TrashPath() );
     copyDirectoryFile("directory.trash", KFMPaths::TrashPath());
@@ -214,12 +198,10 @@ int main( int argc, char ** argv )
     KHTMLWidget::registerFormats();
     QImageIO::defineIOHandler( "XV", "^P7 332", 0, read_xv_file, 0L );
     
-    debugT("0. Init IPC\n");
-    
     KFMServer ipc;
     
-    QString file = QDir::homeDirPath();
-    file += "/.kde/share/apps/kfm/pid";
+    QString file = kapp->localkdedir().data();
+    file += "/share/apps/kfm/pid";
     file += displayName();
     
     FILE *f = fopen( file.data(), "wb" );
@@ -261,29 +243,21 @@ int main( int argc, char ** argv )
 		KfmGui::sumode = true;
 	}
 
-    debugT("2. Init FileTypes\n");
-    
     KMimeType::init();
     
-    debugT("3. Init Root widget\n");
-
     Kfm kfm;
     a.setMainWidget( &kfm );
 
     if ( KfmGui::rooticons )
 	(void)new KRootWidget();
     
-    debugT("4. Init window\n");
-        
     if ( KfmGui::rooticons == false )
     {
 	QString home = "file:";
 	home.detach();
 	home += QDir::homeDirPath().data();
-	debugT("Opening window\n");
 	KfmGui *m = new KfmGui( 0L, 0L, home.data() );
 	m->show();
-	debugT("Opended\n");
     }
     
     Window root = DefaultRootWindow( a.getDisplay() );
@@ -291,45 +265,34 @@ int main( int argc, char ** argv )
     Atom atom = XInternAtom( a.getDisplay(), "DndRootWindow", False );    
     XChangeProperty( a.getDisplay(), root, atom, XA_STRING, 32,
 		     PropModeReplace, (const unsigned char*)(&win), 1);
-    debugT("Root window = %x\n",(int)win);
+    
+    unsigned char *Data;
+    unsigned long Size;
+    Atom    ActualType;
+    int     ActualFormat;
+    unsigned long RemainingBytes;
+    
+    XGetWindowProperty(a.getDisplay(),root,atom,
+		       0L,4L,
+		       false,AnyPropertyType,
+		       &ActualType,&ActualFormat,
+		       &Size,&RemainingBytes,
+		       &Data);
 
-	debugT("Fetching RootWindow\n");
+    if ( Data != 0L )
+      win = *((Window*)Data);
+    else
+      win = 0L;
 	
-	unsigned char *Data;
-	unsigned long Size;
-        Atom    ActualType;
-        int     ActualFormat;
-        unsigned long RemainingBytes;
-      
-	debugT("Call\n");
-
-        XGetWindowProperty(a.getDisplay(),root,atom,
-                           0L,4L,
-                           false,AnyPropertyType,
-                           &ActualType,&ActualFormat,
-                           &Size,&RemainingBytes,
-                           &Data);
-
-	debugT("Called and Data is %x\n",*Data);
-
-	if ( Data != 0L )
-	    win = *((Window*)Data);
-	else
-	    win = 0L;
-	
-	debugT("root window is %x\n",(int)win);
-
-    debugT("5. running\n");
-
     bool as = true;
     
     if ( argc > arg )
-	if ( strcmp( argv[arg++], "-na" ) == 0 )    
-	  as = false;
+      if ( strcmp( argv[arg++], "-na" ) == 0 )    
+	as = false;
     
     if ( as )
       autostart();
-
+    
     QTimer timer;
     if ( argc < 2 || strcmp( argv[1], "-debug" ) != 0L )
     {

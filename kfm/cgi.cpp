@@ -37,7 +37,7 @@ KCGI::KCGI()
 
 QString KCGI::get( const char *_url, const char *_method )
 {
-    destFile.sprintf( "%s/.kde/share/apps/kfm/tmp/cgi%i", getenv( "HOME" ), idCounter++ );
+    destFile.sprintf( "%s/share/apps/kfm/tmp/cgi%i", kapp->localkdedir().data(), idCounter++ );
     
     debugT("'%s' Writing to '%s'\n",_url, destFile.data() );
     

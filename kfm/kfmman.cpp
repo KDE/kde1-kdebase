@@ -190,8 +190,6 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     nextXOffset = _xoffset;
     nextYOffset = _yoffset;
 
-    Kfm::addToHistory( _url );
-    
     // By Default we display everything at the moment we
     // get it => now buffering of HTML code
     bBufferPage = FALSE;
@@ -210,8 +208,6 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     // Store the parameter for recursive function calls
     bReload = _reload;
     
-    // debugT("Changing to URL %s\n", _url );
-    
     KURL u( _url );
     if ( u.isMalformed() )
     {
@@ -219,6 +215,9 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 	return false;
     }
 
+    Kfm::addToHistory( _url );
+    
+    // Dirty hack for calling kmail
     if ( strcmp( u.protocol(), "mailto" ) == 0 )
     {
 	QString subject;
@@ -252,7 +251,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 	    }
 	    fclose( f );
 
-	    // Add old URL to history
+	    // Add old URL to history stacks
 	    view->pushURLToHistory();
 
 	    url = _url;
@@ -267,7 +266,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 	else
 	    warning("ERROR: Could not read file in cache\n");
     }
-    
+
     // A link to the web in form of a *.kdelnk file ?
     QString path = u.path();
     if ( u.isLocalFile() && path.right(7) == ".kdelnk" )
@@ -315,7 +314,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     // Do we know that it is !really! a file ?
     // Then we can determine the mime type for shure and run
     // the best matching binding
-    if ( KIOServer::isDir( _url ) == 0 && u.isLocalFile() )
+    if ( u.isLocalFile() && KIOServer::isDir( _url ) == 0 )
     {    
 	tryURL = KFMExec::openLocalURL( _url );
 	if ( tryURL.isEmpty() )
@@ -325,6 +324,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 	// We try to load this URL now
 	tryURL = _url;
 
+    // Start the rotating gear
     view->getGUI()->slotAddWaitingWidget( view );
     
     // Stop a running job. Calling this if no job is running does no harm.
@@ -356,6 +356,7 @@ void KFMManager::slotError( int, const char * )
 {
     bFinished = TRUE;
 
+    // Stop the spinning gear
     view->getGUI()->slotRemoveWaitingWidget( view );
 }
 

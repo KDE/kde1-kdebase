@@ -27,6 +27,8 @@ KFMJob::KFMJob( )
 
 bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_currentURL, QList<KIODirectoryEntry> *_list )
 {
+    bError = false;
+
     KURL u( _url );
     if ( u.isMalformed() )
     {
@@ -167,6 +169,8 @@ void KFMJob::slotError( int _kioerror, const char *_text, int _errno )
 	{
 	    // Stop the running job, since it is nonsense
 	    disconnect( job, 0, this, 0 );
+	    if ( !bFinished )
+	      job->cancel();
 	    job->setAutoDelete( TRUE );
 	    job = 0L;
 	    // Try to open as file

@@ -1,3 +1,27 @@
+Sat Jun 20 22:04:25 1998  Torben Weis  <weis@localhost>
+
+	* bookmark.cpp (scanIntern): You can now link from the bookmarks
+	  to the home directory without seeing infinite recursion.
+	  ( Some people do crazy things )
+
+	* root.cpp (update): Removed all ".kde" dependencies
+
+	* bookmark.cpp (scanIntern): Fixed bug with too many open files/directories
+
+	* main.cpp (main): Uses kapp->localkdedir.
+
+	* bookmark.cpp (scanIntern): Accept only regular files as
+	  bookmarks. Skip fifos, pipes etc.
+
+	* kfmjob.cpp (browse): Reset error flag. Entering an invalid URL
+	  brings up a window. After that you could not open any other
+	  file. This is fixed now.
+
+	* bookmark.cpp (scanIntern): Check wether a file is really a kde
+	  config file
+	
+	* bookmark.cpp (KBookmarkManager): Uses kapp->localkdedir()
+
 Tue Jun 16 16:04:12 1998  Jacek Konieczny <jajcus@zeus.polsl.gliwice.pl>
 
 	* kioslave/http.cpp

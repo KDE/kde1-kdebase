@@ -1023,8 +1023,8 @@ void KfmGui::slotHome()
 
 void KfmGui::addBookmark( const char *_title, const char *_url )
 {
-    QString p = getenv( "HOME" );
-    QString bmFile = p + "/.kde/share/apps/kfm/bookmarks";
+    QString p = kapp->localkdedir().data();
+    QString bmFile = p + "/share/apps/kfm/bookmarks";
 
     KBookmark *root = bookmarkManager->root();
    
@@ -1033,8 +1033,8 @@ void KfmGui::addBookmark( const char *_title, const char *_url )
 
 void KfmGui::slotEditBookmarks()
 {
-  QString p = getenv( "HOME" );
-  p += "/.kde/share/apps/kfm/bookmarks";
+  QString p = kapp->localkdedir().data();
+  p += "/share/apps/kfm/bookmarks";
 
   KfmGui *m = new KfmGui( 0L, 0L, p );
   m->show();
@@ -1236,8 +1236,8 @@ void KfmGui::slotQuit()
     // Session management
     pkfm->slotSave();
     
-    QString file = QDir::homeDirPath();
-    file += "/.kde/share/apps/kfm/pid";
+    QString file = kapp->localkdedir().data();
+    file += "/share/apps/kfm/pid";
     file += displayName();
     unlink( file.data() );
 
@@ -1684,8 +1684,8 @@ KfmGui::~KfmGui()
     if ( windowList->count() == 0 && !rooticons )
     {
 	// remove pid file
-	QString file = QDir::homeDirPath();
-	file += "/.kde/share/apps/kfm/pid";
+	QString file = kapp->localkdedir().data();
+	file += "/share/apps/kfm/pid";
 	file += displayName();
 	unlink( file.data() );
 	// quit

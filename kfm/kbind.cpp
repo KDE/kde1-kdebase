@@ -76,8 +76,8 @@ void KMimeType::InitStatic()
     }
     if ( localIconPath == 0L )
     {
-	localIconPath = new QString( getenv( "HOME" ) );
-	*localIconPath += "/.kde/share/icons";
+	localIconPath = new QString( kapp->localkdedir().data() );
+	*localIconPath += "/share/icons";
     }    
     if ( defaultIcon == 0L )
     {
@@ -351,8 +351,8 @@ void KMimeType::init()
     types->setAutoDelete( true );
 
     // Read the application bindings in the local directories
-    QString path = getenv( "HOME" );
-    path += "/.kde/share/mimelnk";
+    QString path = kapp->localkdedir().data();
+    path += "/share/mimelnk";
     initMimeTypes( path.data() );
     
     // Read the application bindings in the global directories
@@ -411,8 +411,8 @@ void KMimeType::init()
     }
     
     // Read the application bindings in the local directories
-    path = getenv( "HOME" );
-    path += "/.kde/share/applnk";
+    path = kapp->localkdedir().data();
+    path += "/share/applnk";
     KMimeBind::initApplications( path.data() );
 
     // Read the application bindings in the global directories
@@ -1431,7 +1431,7 @@ void KMimeBind::runCmd( const char *_cmd )
     delete [] cmd;
 }
 
-KSimpleConfig* KMimeBind::openKConfig( const char *_url ) // kalle
+KSimpleConfig* KMimeBind::openKConfig( const char *_url )
 {
     KURL u( _url );
     if ( u.isMalformed() )
@@ -1455,13 +1455,13 @@ KSimpleConfig* KMimeBind::openKConfig( const char *_url ) // kalle
     if ( strncmp( buff, "# KDE Config File", 17 ) != 0L )
 	return 0L; 
        
-    QFile *file = new QFile( decoded );
+    /* QFile *file = new QFile( decoded );
     if ( !file->open( IO_ReadOnly ) )
     {
 	delete file;
 	return 0L;
     }
-    file->close();
+    file->close(); */
 
     KSimpleConfig *config = new KSimpleConfig( decoded, true );
     config->setGroup( "KDE Desktop Entry" );

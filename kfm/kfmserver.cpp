@@ -17,6 +17,7 @@
 
 #include <klocale.h>
 #include <kstring.h>
+#include <kapp.h>
 
 #include <qmsgbox.h>
 
@@ -28,8 +29,8 @@ QString* KFMClient::password = 0L;
 KFMServer::KFMServer() : KfmIpcServer()
 {
     // Create the password file if it does not exist
-    QString fn = getenv( "HOME" );
-    fn += "/.kde/share/apps/kfm/magic";
+    QString fn = kapp->localkdedir().data();
+    fn += "/share/apps/kfm/magic";
     FILE *f = fopen( fn.data(), "rb" );
     if ( f == 0L )
     {
@@ -276,8 +277,8 @@ void KFMClient::slotAuth( const char *_password )
     
     if ( KFMClient::password->isNull() )
     {
-	QString fn = getenv( "HOME" );
-	fn += "/.kde/share/apps/kfm/magic";
+	QString fn = kapp->localkdedir().data();
+	fn += "/share/apps/kfm/magic";
 	FILE *f = fopen( fn.data(), "rb" );
 	if ( f == 0L )
 	{

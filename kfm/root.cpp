@@ -497,8 +497,8 @@ void KRootWidget::saveLayout()
 {
     KRootIcon *icon;
 
-    QString file = QDir::homeDirPath().copy();
-    file += "/.kde/share/apps/kfm/desktop";
+    QString file = kapp->localkdedir().data();
+    file += "/share/apps/kfm/desktop";
     
     FILE *f = fopen( file.data(), "w" );
     if ( f != 0 )
@@ -786,8 +786,8 @@ void KRootWidget::update()
      */
 
     // Find correct places for the icons
-    QString file = QDir::homeDirPath().data();
-    file += "/.kde/share/apps/kfm/desktop";
+    QString file = kapp->localkdedir().data();
+    file += "/share/apps/kfm/desktop";
  
     FILE *f = fopen( file.data(), "r" );
     if ( f != 0 )
