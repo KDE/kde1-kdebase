@@ -354,7 +354,6 @@ if test "$ac_cv_func_setenv" = "yes"; then
   AC_DEFINE_UNQUOTED(HAVE_FUNC_SETENV)
 else
   AC_MSG_RESULT(no)
-  MISCOBJS="$MISCOBJS setenv.lo"
 fi
 ])
 
@@ -365,9 +364,13 @@ AC_CACHE_VAL(ac_cv_lib_gif,
 LIBS="$all_libraries -lgif -lX11 $LIBSOCKET"
 AC_TRY_LINK(dnl
 [
+#ifdef __cplusplus
 extern "C" {
+#endif
 int GifLastError(void);
+#ifdef __cplusplus
 }
+#endif
 /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
 ],
@@ -394,10 +397,14 @@ AC_TRY_LINK(
 struct jpeg_decompress_struct;
 typedef struct jpeg_decompress_struct * j_decompress_ptr;
 typedef int size_t;
+#ifdef __cplusplus
 extern "C" {
+#endif
     void jpeg_CreateDecompress(j_decompress_ptr cinfo,
                                     int version, size_t structsize);
+#ifdef __cplusplus
 }
+#endif
 /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
 ],
@@ -672,16 +679,9 @@ AC_DEFUN(AM_KDE_GNU_GETTEXT,
    AC_REQUIRE([AC_FUNC_MMAP])dnl
    AC_REQUIRE([AM_KDE_WITH_NLS])dnl
    AC_CHECK_HEADERS([argz.h limits.h locale.h nl_types.h malloc.h string.h \
-unistd.h values.h])
+unistd.h values.h alloca.h])
    AC_CHECK_FUNCS([getcwd munmap putenv setenv setlocale strchr strcasecmp \
-__argz_count __argz_stringify __argz_next])
-
-   if test "${ac_cv_func_stpcpy+set}" != "set"; then
-     AC_CHECK_FUNCS(stpcpy)
-   fi
-   if test "${ac_cv_func_stpcpy}" = "yes"; then
-     AC_DEFINE(HAVE_STPCPY)
-   fi
+__argz_count __argz_stringify __argz_next stpcpy])
 
    AM_LC_MESSAGES
 
@@ -776,7 +776,7 @@ AC_DEFUN(AC_HAVE_GL,
     AC_LANG_C
     ac_save_ldflags=$LDFLAGS
     ac_save_cflags=$CFLAGS
-    LDFLAGS="$LDFLAGS $GL_LDFLAGS $X_LDFLAGS $QT_LDFLAGS -lMesaGL -lMesaGLU-lX11 -lXext"
+    LDFLAGS="$LDFLAGS $GL_LDFLAGS $X_LDFLAGS $QT_LDFLAGS -lMesaGL -lMesaGLU -lX11 -lXext"
     CFLAGS="$CFLAGS $X_INCLUDES"
     test ! -z "$GL_INCLUDE" && CFLAGS="-I$GL_INCLUDE $CFLAGS"
     AC_TRY_LINK([],[],
@@ -919,3 +919,4 @@ AC_DEFUN(AC_PATH_PAM,
  AC_SUBST(PAMLIBPATHS)
 
 ]) 
+
