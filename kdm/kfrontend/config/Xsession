@@ -1,5 +1,5 @@
 #!/bin/sh
-# $XConsortium: Xsession,v 1.9 92/08/29 16:24:57 gildea Exp $
+# $XConsortium: Xsession /main/10 1995/12/18 18:21:28 gildea $
 # $Id$
 
 # redirect errors to a file in user's home directory if we can
@@ -19,24 +19,16 @@ case $# in
 	failsafe)
 		exec xterm -geometry 80x24-0-0
 		;;
-	fvwm)
-		exec fvwm
-		;;
-	kde)
-		exec startkde
-		;;
 	esac
 esac
 
-startup=$HOME/.xsession
-resources=$HOME/.Xresources
+# start windowmanager
+exec $1
 
-if [ -f "$startup" ]; then
-	exec "$startup"
+# windowmanager not found, tell user
+message="Sorry, $1 not found."
+if [ `which kmessage` ]; then
+  exec kmessage -center $message
 else
-	if [ -f "$resources" ]; then
-		xrdb -load "$resources"
-	fi
-	twm &
-	exec xterm -geometry 80x24+10+10 -ls
+  exec xmessage -center $message
 fi
