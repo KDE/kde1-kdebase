@@ -1,0 +1,57 @@
+
+msgid ""
+msgstr ""
+"Date: 1997-09-09 17:23:06+0200\n"
+"From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
+"Content-Type: text/plain; charset=\n"
+"Xgettext-Options: -s -C -ktranslate\n"
+"Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
+
+#: kdmshutdown.cpp:229 kgreeter.cpp:207
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: kdmshutdown.cpp:192
+msgid "Exit kdm"
+msgstr "Finalizar kdm"
+
+#: kgreeter.cpp:201
+msgid "Go!"
+msgstr "Iniciar"
+
+#: kgreeter.cpp:179
+msgid "Login failed!"
+msgstr "Entrada errónea!"
+
+#: kgreeter.cpp:145
+msgid "Login:"
+msgstr "Entrada:"
+
+#: kdmshutdown.cpp:226
+msgid "Ok"
+msgstr "Continuar"
+
+#: kgreeter.cpp:150
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: kgreeter.cpp:185
+msgid "Session Type:"
+msgstr "Tipo de sesión:"
+
+#: kdmshutdown.cpp:169
+msgid "Shutdown"
+msgstr "Finalizar"
+
+#: kdmshutdown.cpp:183
+msgid "Shutdown and restart"
+msgstr "Finalizar y reiniciar"
+
+#: kdmshutdown.cpp:153
+msgid "Shutdown or restart?"
+msgstr "¿Finalizar o reiniciar?"
+
+#: kgreeter.cpp:217
+msgid "Shutdown..."
+msgstr "Finalizando..."
+

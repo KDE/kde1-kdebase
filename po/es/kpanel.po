@@ -1,0 +1,147 @@
+#: kpanel.C:172
+msgid "Personal menu"
+msgstr "Menú personal"
+
+#: kpanel.C:180
+msgid "Add application"
+msgstr "Añadir aplicación"
+
+#: kpanel.C:182
+msgid "Add special"
+msgstr "Añadir especial"
+
+#: kpanel.C:183
+msgid "Configure"
+msgstr "Configurar"
+
+#: kpanel.C:185
+msgid "Configure panel"
+msgstr "Configurar panel"
+
+#: kpanel.C:186
+msgid "Restart"
+msgstr "Reiniciar"
+
+#: kpanel.C:188
+msgid "Restart panel"
+msgstr "Reiniciar panel"
+
+#: kpanel.C:189 props.C:327
+msgid "Panel"
+msgstr "Panel"
+
+#: kpanel.C:191
+msgid "Lock Screen"
+msgstr "Bloquear pantalla"
+
+#: kpanel.C:193
+msgid "Lock panel"
+msgstr "Bloquear panel"
+
+#: kpanel.C:194 kpanel.C:195
+msgid "Logout"
+msgstr "Terminar"
+
+#: kpanel.C:203
+msgid "Move"
+msgstr "Mover"
+
+#: kpanel.C:204
+msgid "Remove"
+msgstr "Eliminar"
+
+#: kpanel.C:206
+msgid "Properties"
+msgstr "Propiedades"
+
+#: kpanel.C:241
+msgid "System"
+msgstr "Sistema"
+
+#: kpanel.C:350
+msgid "No info available"
+msgstr "No hay información"
+
+#: kpanel.C:437 kpanel.C:453
+msgid "Destroy"
+msgstr "Destruir"
+
+#: kpanel.C:440 kpanel.C:450
+msgid "(Un) Sticky"
+msgstr "Fijar/Liberar"
+
+#: kpanel.C:441 kpanel.C:449
+msgid "(Un) Iconify"
+msgstr "Minimizar/Restaurar"
+
+#: kpanel.C:442 kpanel.C:448
+msgid "(Un) Maximize"
+msgstr "Maximizar/Restaurar"
+
+#: kpanel.C:443 kpanel.C:447
+msgid "On this desktop"
+msgstr "En este escritorio"
+
+#: props.C:264
+msgid "Location"
+msgstr "Localización"
+
+#: props.C:284
+msgid "Taskbar"
+msgstr "Barra de tareas"
+
+#: props.C:285
+msgid "Hidden"
+msgstr "Oculto"
+
+#: props.C:297
+msgid "Top/Left"
+msgstr "Arriba/Izquierda"
+
+#: props.C:308
+msgid "Tiny Style"
+msgstr "Aspecto diminuto"
+
+#: props.C:309
+msgid "Small Style"
+msgstr "Aspecto pequeño"
+
+#: props.C:310
+msgid "Large Style"
+msgstr "Aspecto grande"
+
+#: props.C:322
+msgid "Menu Tooltips"
+msgstr "Ayuda de menú"
+
+#: props.C:398
+msgid "Visible"
+msgstr "Visible"
+
+#: props.C:405
+msgid "Width"
+msgstr "Ancho"
+
+#: props.C:410
+msgid "Desktops"
+msgstr "Escritorios"
+
+#: props.C:416
+msgid "KPanel Configuration"
+msgstr "Configuración de KPanel"
+
+#: tools.C:489
+msgid "No comment available"
+msgstr "No hay comentarios"
+
+#: pmenu.C:252
+msgid "Sorry"
+msgstr "Disculpe"
+
+#: pmenu.C:253
+msgid ""
+"Could not communicate with nor\n"
+"start a new instance of KFM"
+msgstr ""
+"No se puede comunicar ni tampoco\n"
+"iniciar una nueva sesión KFM"
