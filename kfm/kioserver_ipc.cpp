@@ -58,13 +58,13 @@ KIOSlaveIPC::~KIOSlaveIPC()
 	free( pBody );
 }
 
-void KIOSlaveIPC::closeEvent( KSocket *_sock )
+void KIOSlaveIPC::closeEvent( KSocket * )
 {
     delete this;
     return;
 }
 
-void KIOSlaveIPC::readEvent( KSocket *_sock )
+void KIOSlaveIPC::readEvent( KSocket * )
 {
     if ( bHeader )
     {
