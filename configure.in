@@ -182,6 +182,7 @@ AC_OUTPUT(Makefile \
 	applnk/Settings/Applications/Makefile \
 	applnk/Settings/Sound/Makefile \
 	applnk/Settings/Windows/Makefile \
+	applnk/Settings/Keys/Makefile \
 	applnk/System/Makefile \
 	applnk/Utilities/Makefile \
 	config/Makefile \
@@ -244,7 +245,7 @@ AC_OUTPUT(Makefile \
 	kcontrol/locale/pics/Makefile \
 	kcontrol/samba/Makefile \
 	kcontrol/sample/Makefile \
-	kcontrol/syssound/Makefile \
+	kcontrol/keys/Makefile \
 	kdehelp/Makefile \
 	kdehelp/index/Makefile \
 	kdehelp/search/Makefile \
