@@ -52,7 +52,7 @@ void KNewMenu::fillMenu()
         config.setGroup( "KDE Desktop Entry" );
         if ( tmp.right(7) == ".kdelnk" )
             tmp.truncate( tmp.length() - 7 );
-        this->insertItem( config.readEntry("Comment", tmp ) );
+        this->insertItem( config.readEntry("Name", tmp ) );
     }
 }
 
@@ -107,7 +107,7 @@ void KNewMenu::slotNewFile( int _id )
       config.setGroup( "KDE Desktop Entry" );
       if ( tmp.right(7) == ".kdelnk" )
 	tmp.truncate( tmp.length() - 7 );
-      tmp = config.readEntry("Comment", tmp);
+      tmp = config.readEntry("Name", tmp);
     }
     
     QString text = klocale->translate("New ");
