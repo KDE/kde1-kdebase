@@ -1895,7 +1895,7 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
     if ( term == "1" )
     {
 	KConfig *config = KApplication::getKApplication()->getConfig();
-	config->setGroup( "Terminal" );
+	config->setGroup( "KFM Misc Defaults" );
 	QString cmd = config->readEntry( "Terminal", DEFAULT_TERMINAL);
 	cmd.detach();
 	if ( cmd.isNull() )
