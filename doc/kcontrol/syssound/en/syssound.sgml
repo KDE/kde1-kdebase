@@ -18,13 +18,11 @@
 <p>
 KDE <bf>System Sounds</bf> allows you to assign sounds to various
 system events. When such an event (like "Window open") occurs, the
-sound file that has been associated to that sound file will be played
-back. 
-
+sound file that has been associated to that sound will be played.
 
 <p>
-Currently only WAV files are supported by the KDE System Sound
-Module. By default these WAV files must be located in the directory
+Currently, only WAV files are supported by the KDE System Sound
+Module. By default, these WAV files must be in the directory
 $(KDEDIR)/share/sounds. To assign other sound files to system events,
 just drag them from a <tt>kfm</tt> window onto the sound list. 
 
@@ -84,11 +82,11 @@ Version 0.0.1 (initial release)
 
 <sect> Author
 <p>
-The KDE System Sound Module is written by <htmlurl
+The KDE System Sound Module was written by <htmlurl
 url="mailto:e9025461@student.tuwien.ac.at"name="Christian
 Czezatke">.   
 <p>
-KDE System Sounds use the KDE sound support written by
+KDE System Sounds uses the KDE sound support written by
 <htmlurl url="mailto:chris@wallace.free.de"name="Christian Esken">.
 
 
