@@ -54,7 +54,8 @@ binary-arch2:
 	install -d debian/tmp/etc/init.d
 	cp debian/kdm.init.d debian/tmp/etc/init.d/kdm
 	install -d debian/tmp/usr/X11R6/bin
-	cp debian/kde debian/tmp/usr/X11R6/bin
+	mv debian/tmp/usr/X11R6/bin/startkde debian/tmp/usr/X11R6/bin/kde
+	ln -s debian/tmp/usr/X11R6/bin/kde debian/tmp/usr/X11R6/bin/startkde
 	install -d debian/tmp/usr/sbin
 	cp debian/switchdm debian/tmp/usr/sbin
 	install -d debian/tmp/etc/X11
@@ -62,10 +63,7 @@ binary-arch2:
 	install -d debian/tmp/usr/share/applnk/debian_menu
 	cp debian/debian.directory \
 	      debian/tmp/usr/share/applnk/debian_menu/.directory
-	chmod +x debian/tmp/etc/init.d/kdm debian/tmp/usr/sbin/switchdm \
-		debian/tmp/usr/X11R6/bin/kde 
-	rm -f debian/tmp/usr/X11R6/bin/startkde
-	ln -s kde debian/tmp/usr/X11R6/bin/startkde
+	chmod +x debian/tmp/etc/init.d/kdm debian/tmp/usr/sbin/switchdm 
 	dh_undocumented `cat debian/man-pages`
 	dh_installdocs
 	dh_installmenu

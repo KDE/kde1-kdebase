@@ -1,3 +1,9 @@
+kdebase (4:1.1-19990214-1) unstable; urgency=low
+
+  * fix some bugs (krdb & menu)
+
+ -- Stephan Kulow <coolo@kde.org>  Sun, 14 Feb 1999 21:29:34 +0100
+
 kdebase (4:1.1-19990207-3) unstable; urgency=low
 
   * new kdmrc handling
