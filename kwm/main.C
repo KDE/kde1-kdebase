@@ -758,10 +758,10 @@ void MyApp::readConfiguration(){
       ->loadIcon("activetitlebar.xpm");
     *(options.titlebarPixmapInactive) = getIconLoader()
       ->loadIcon("inactivetitlebar.xpm");
-    
+
     if (options.titlebarPixmapInactive->size() == QSize(0,0))
       *options.titlebarPixmapInactive = *options.titlebarPixmapActive;
-    
+
     if (options.titlebarPixmapActive->size() == QSize(0,0))
       options.TitlebarLook = PLAIN;
   }
@@ -905,7 +905,7 @@ void MyApp::readConfiguration(){
     *(options.shapePixmapBottomLeft) = getIconLoader()->loadIcon("bottomleft.xpm");
     *(options.shapePixmapBottomRight) = getIconLoader()->loadIcon("bottomright.xpm");
 
-    
+
     if (
 	options.shapePixmapTop->isNull() ||
 	options.shapePixmapLeft->isNull() ||
@@ -929,9 +929,9 @@ void MyApp::readConfiguration(){
 	BORDER = options.shapePixmapRight->width();
     }
   }
-  
-  
-  
+
+
+
   // Windows Placement config --- CT 18jan98 ---
   key = config->readEntry("WindowsPlacement");
   //CT isn't this completely dangerous? what if there are white spaces?
@@ -1795,6 +1795,14 @@ bool MyApp::x11EventFilter( XEvent * ev){
   case FocusIn:
     break;
   case FocusOut:
+      {
+	  // experimental code for multi screen displays. Breaks desktop swtiches.
+ 	  Client *c = manager->getClient(ev->xfocus.window);
+ 	  if (ev->xfocus.mode == NotifyNormal && c && c == manager->current()){
+ 	      c->setactive(False); 
+ 	  }
+      }
+      
     break;
   case MappingNotify:
     break;

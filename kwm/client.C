@@ -351,6 +351,8 @@ Client::Client(Window w, Window _sizegrip, QWidget *parent, const char *name_for
 
     window = w;
     sizegrip = _sizegrip;
+    
+    recently_resized = true;
 
     backing_store = false;
     state = WithdrawnState;
@@ -849,19 +851,27 @@ void Client::leaveEvent( QEvent * ){
     set_x_cursor(normal_cursor);
 }
 
-void Client::paintEvent( QPaintEvent*){
+void Client::paintEvent( QPaintEvent* e){
   QPainter p;
   p.begin(this);
-   p.eraseRect(2,2,title_rect.x()-2, TITLEBAR_HEIGHT+BORDER-2);
-   p.eraseRect(title_rect.right(),2, width()-title_rect.right()-2,
- 	      TITLEBAR_HEIGHT+BORDER-2-TITLEWINDOW_SEPARATION);
-   p.eraseRect(2,2,width()-4, BORDER-2);
-   p.eraseRect(2, TITLEBAR_HEIGHT+BORDER-TITLEWINDOW_SEPARATION, width()-4,
- 	      height()-TITLEBAR_HEIGHT-BORDER+TITLEWINDOW_SEPARATION-2);
-  qDrawWinPanel(&p, rect(), colorGroup());
+  if (recently_resized) {
+      recently_resized = FALSE;
+      // do not set the clipping if recently_resized. Seems to be a
+      // bug in the either e->rect() or the things kwm does in resizeEvent.
+  }
+  else
+      p.setClipRect(e->rect());
+
   if (!options.ShapeMode || getDecoration() != KWM::normalDecoration){
-    p.eraseRect(width()-18, height()-18, 16, 16);
-    qDrawShadeRect( &p, width()-20, height()-20, 20, 20, colorGroup(), False);
+      p.eraseRect(2,2,title_rect.x()-2, TITLEBAR_HEIGHT+BORDER-2);
+      p.eraseRect(2,2,width()-4, BORDER-2);
+      p.eraseRect(title_rect.right(),2, width()-title_rect.right()-2,
+		  TITLEBAR_HEIGHT+BORDER-2-TITLEWINDOW_SEPARATION);
+      p.eraseRect(2, TITLEBAR_HEIGHT+BORDER-TITLEWINDOW_SEPARATION, width()-4,
+		  height()-TITLEBAR_HEIGHT-BORDER+TITLEWINDOW_SEPARATION-2);
+      qDrawWinPanel(&p, rect(), colorGroup());
+      p.eraseRect(width()-18, height()-18, 16, 16);
+      qDrawShadeRect( &p, width()-20, height()-20, 20, 20, colorGroup(), False);
   }
   else {
     // the users wants shaped windows! A lot of code but more or less trivial....
@@ -1021,6 +1031,8 @@ void Client::paintEvent( QPaintEvent*){
 void Client::resizeEvent( QResizeEvent * ){
   // we have been resized => we have to layout the window decoration
   // again and adapt our swallowed application window
+  recently_resized = true;
+  
   layoutButtons();
 
   switch (getDecoration()){
@@ -1193,6 +1205,7 @@ void Client::resizeEvent( QResizeEvent * ){
     p.end();
 
     // finally set the shape :-)
+    setBackgroundMode( NoBackground );
     XShapeCombineMask( qt_xdisplay(), winId(),
 		       ShapeBounding, 0, 0, shapemask.handle(),
 		       ShapeSet );
@@ -1313,7 +1326,7 @@ void Client::setLabel(){
 
   if (oldlabel != label){
     if (isVisible())
-      repaint();
+	paintState( TRUE );
     XChangeProperty(qt_xdisplay(), window, a, XA_STRING, 8,
 		    PropModeReplace, (unsigned char *)(label.data()),
 		    label.length()+1);
@@ -1759,7 +1772,7 @@ void Client::unIconify(bool animation){
   if (isOnDesktop(manager->currentDesktop())){
     if (animation){
       KWM::raiseSoundEvent("Window DeIconify");
-      if (animate_size_change(this, 
+      if (animate_size_change(this,
 			      KWM::iconGeometry(window),
 			      geometry,
 			      getDecoration()==KWM::normalDecoration,

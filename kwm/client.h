@@ -352,6 +352,8 @@ private:
     };
     DRAGGING dragging_state;
     int do_resize;
+    
+    bool recently_resized; //hack
 
     // set the mouse pointer shape to the specified cursor. Also
     // stores the defined shaped in current_cursor.

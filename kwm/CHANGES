@@ -13,6 +13,7 @@ In 0.12:
 --------
 patchlevel 3:
         - honours KWM_WIN_ICON_GEOMETRY for iconify/deiconify animation
+        - shaped window decorations faster and less flickering
 
 patchlevel 2:
         - improved shaped window handling
