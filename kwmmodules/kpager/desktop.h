@@ -60,7 +60,8 @@ private:
     static Window hilitwin;
     bool mousepressed;
     bool resizing;
-    WindowProperties *resizingWP;
+//    WindowProperties *resizingWP;
+    int resizingWPidx;
 
     int screen_width, screen_height;
     int ratio;

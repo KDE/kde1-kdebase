@@ -347,6 +347,7 @@ int Desktop::headerHeight=25;
 
 void Desktop::paintWindow(QPainter *painter,WindowProperties *wp, QRect &tmp)
 {
+    printf("PaintWindow\n");
     QWMatrix matrix;
     QRect tmp2;
     double rx,ry;
@@ -397,7 +398,7 @@ void Desktop::paintWindow(QPainter *painter,WindowProperties *wp, QRect &tmp)
 
 void Desktop::paintEvent(QPaintEvent *)
 {
-    tmpScreen->resize(width(),height());
+    printf("PaintEvent\n");
     QPainter *painter=new QPainter(tmpScreen);
     QRect tmp;
     int x=0;
@@ -427,6 +428,14 @@ void Desktop::paintEvent(QPaintEvent *)
     while (wp!=NULL)
     {
         tmp.setRect((int)(wp->framegeometry.x()*ratiox),(int)(y+wp->framegeometry.y()*ratioy),(int)(wp->framegeometry.width()*ratiox),(int)(wp->framegeometry.height()*ratioy));
+	printf("wpframegeometry : %dx%d %dx%d\n",wp->framegeometry.x()
+               ,wp->framegeometry.y()
+               ,wp->framegeometry.width()
+               ,wp->framegeometry.height()
+              );           
+
+
+//        tmp.setRect((int)(wp->geometry.x()*ratiox),(int)(y+wp->geometry.y()*ratioy),(int)(wp->framegeometry.width()*ratiox),(int)(wp->framegeometry.height()*ratioy));
 
         paintWindow(painter,wp,tmp);
         
@@ -435,11 +444,17 @@ void Desktop::paintEvent(QPaintEvent *)
     painter->setClipping(FALSE);
 //    painter->setPen(QColor(0,0,0));
     painter->drawRect(0,0,width(),height());
+    printf("PaintEvent2\n");
+static int fallillo=1;
+    painter->drawRect(0,0,fallillo,fallillo);
+    fallillo++;
+    if (fallillo==width()) fallillo=1;
 
     delete painter;
     painter=new QPainter(this);
     painter->drawPixmap(0,0,*tmpScreen);
     delete painter;
+    printf("PaintEvent3\n");
 
 }
 
@@ -472,20 +487,21 @@ WindowProperties *Desktop::windowAtPosition(const QPoint *p,bool *ok,QPoint *pos
 #endif
     while ((wp!=0L)&&(!wp->minigeometry.contains(*p)))
     {
-        if (kwmmapp!=NULL)
-        {
-            if (!kwmmapp->hasWindow(wp->id))
-            {
-                printf("Doing workaround for not receiving signal\n");
-                removeWindow(wp->id);
-            };
-        };
 #ifdef DESKTOPDEBUG
         printf("minigeom : x %d   y %d    w %d   h %d\n",wp->minigeometry.x(),wp->minigeometry.y(),wp->minigeometry.width(),wp->minigeometry.height());
 #endif
         wp=window_list->prev();
         if (wp!=NULL) wp->minigeometry.setRect((int)(wp->framegeometry.x()*ratiox),(int)(y+wp->framegeometry.y()*ratioy),(int)(wp->framegeometry.width()*ratiox),(int)(wp->framegeometry.height()*ratioy));
     }
+    if ((kwmmapp!=NULL)&&(wp!=0L))
+        {
+            if (!kwmmapp->hasWindow(wp->id))
+            {
+                printf("Doing workaround for not receiving signal\n");
+                removeWindow(wp->id);
+		wp=0L;
+            };
+        };
     
     if (wp==0L)
     {
@@ -507,27 +523,38 @@ void Desktop::mouseMoveEvent (QMouseEvent *e)
 {
     if (resizing)
     {
-	if (resizingWP==0L) {resizing=false;releaseMouse();return;};
-//        resizingWP->minigeometry.setWidth(MAX(0,e->x()-resizingWP->minigeometry.x()));	
-//        resizingWP->minigeometry.setHeight(MAX(0,e->y()/*-getHeaderHeight()*/-resizingWP->minigeometry.y()));
-       double ratiox=(double)width()/(double)screen_width;
-       double ratioy=(double)(height()-getHeaderHeight())/(double)screen_height;
-/*	resizingWP->framegeometry.setRect(
-		resizingWP->minigeometry.x()/ratiox,
-		(resizingWP->minigeometry.y()-getHeaderHeight())/ratioy,
-		resizingWP->minigeometry.width()/ratiox,
-		resizingWP->minigeometry.height()/ratioy);
-*/
-	resizingWP->framegeometry.setWidth(e->x()/ratiox-resizingWP->framegeometry.x());
-	resizingWP->geometry.setWidth(e->x()/ratiox-resizingWP->geometry.x());
-	resizingWP->framegeometry.setHeight((e->y()-getHeaderHeight())/ratioy-resizingWP->framegeometry.y());
-	resizingWP->geometry.setHeight((e->y()-getHeaderHeight())/ratioy-resizingWP->geometry.y());
-
-	update();
+        printf("m\n");
+/*******************************************/
+	WindowProperties *resizingWP=window_list->at(resizingWPidx);
+/*******************************************/
+        if (resizingWP==0L) {printf("Oops\n");resizing=false;releaseMouse();return;};
+        //        resizingWP->minigeometry.setWidth(MAX(0,e->x()-resizingWP->minigeometry.x()));	
+        //        resizingWP->minigeometry.setHeight(MAX(0,e->y()/*-getHeaderHeight()*/-resizingWP->minigeometry.y()));
+        double ratiox=(double)width()/(double)screen_width;
+        double ratioy=(double)(height()-getHeaderHeight())/(double)screen_height;
+        printf("ratio %gx%g\n",ratiox,ratioy);
+        /*	resizingWP->framegeometry.setRect(
+         resizingWP->minigeometry.x()/ratiox,
+         (resizingWP->minigeometry.y()-getHeaderHeight())/ratioy,
+         resizingWP->minigeometry.width()/ratiox,
+         resizingWP->minigeometry.height()/ratioy);
+         */
+        resizingWP->framegeometry.setWidth(MAX(10,e->x()/ratiox-resizingWP->framegeometry.x()));
+        resizingWP->geometry.setWidth(MAX(10,e->x()/ratiox-resizingWP->geometry.x()));
+        resizingWP->framegeometry.setHeight(MAX(10,(e->y()-getHeaderHeight())/ratioy-resizingWP->framegeometry.y()));
+        resizingWP->geometry.setHeight(MAX(10,(e->y()-getHeaderHeight())/ratioy-resizingWP->geometry.y()));
+        printf("pos %dx%d\n",e->x(),e->y());
+        printf("framegeometry %dx%d+%dx%d\n",resizingWP->framegeometry.x()
+               ,resizingWP->framegeometry.y()
+               ,resizingWP->framegeometry.width()
+               ,resizingWP->framegeometry.height()
+              );
+        
+        update();
         return;
     };
-
-
+    
+    
     if (mousepressed) 
     {
 #ifdef DESKTOPDEBUG
@@ -553,9 +580,12 @@ void Desktop::mouseMoveEvent (QMouseEvent *e)
     {
 //        if ((i=KWM::desktop(hilitwin))!=id)
 //	{
-	    if (KWM::isSticky(KWM::desktop(hilitwin))) i=0;
-	    hilitwin=0;
-	    emit updateDesk(i);
+	    if (KWM::isSticky(KWM::desktop(hilitwin))) 
+		{
+		    i=0;
+		    hilitwin=0;
+		    emit updateDesk(i);
+		};
 //	};
     };
     
@@ -583,11 +613,13 @@ void Desktop::mouseReleaseEvent ( QMouseEvent *e )
 //#endif
     if (resizing)
     {
+	WindowProperties *resizingWP=window_list->at(resizingWPidx);
 	if (resizingWP==0L) {resizing=false;releaseMouse();return;};
 	printf("res\n");
 	KWM::setGeometry(resizingWP->id,resizingWP->geometry);
 	printf("res\n");
-	resizing=false;
+        resizing=false;
+        resizingWP=0L;
         releaseMouse();
 	return;
     };
@@ -629,9 +661,11 @@ void Desktop::mousePressEvent ( QMouseEvent *e )
     };
     if (e->button()==MidButton) 
     {
+        resizing=false;
         bool ok;
-	resizingWP=windowAtPosition(&e->pos(),&ok);
+	WindowProperties *resizingWP=windowAtPosition(&e->pos(),&ok);
 	if (resizingWP==0L) return;
+	resizingWPidx=window_list->at();
 	resizing=true;
 	printf("a\n");
 	grabMouse();
@@ -1022,6 +1056,7 @@ void Desktop::prepareBackground(void)
 
 void Desktop::resizeEvent (QResizeEvent *)
 {
+    tmpScreen->resize(width(),height());
     if (!useBackgroundInfoFromKbgndwm) return;
     prepareBackground();
 }
