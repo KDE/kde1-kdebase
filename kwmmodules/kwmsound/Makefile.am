@@ -2,7 +2,7 @@
 INCLUDES = $(all_includes)
 
 LDFLAGS	= $(all_libraries) $(KDE_RPATH)
-LDADD = -lkdeui -lkdecore -lmediatool  -lXext  -lstdc++ $(LIB_QT) $(LIBCOMPAT)
+LDADD =   -lmediatool     -lstdc++ $(LIB_KDEUI) $(LIBCOMPAT)
 
 bin_PROGRAMS = kwmsound
 kwmsound_SOURCES = kwmsound.C

@@ -3,7 +3,7 @@
 
 INCLUDES = $(all_includes) 
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
-LDADD = -lkdeui -lkdecore  -lXext  $(LIBCOMPAT) $(LIB_QT) 
+LDADD =       $(LIBCOMPAT) $(LIB_KDEUI) 
 
 SUBDIRS = pics
 
