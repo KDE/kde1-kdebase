@@ -1,9 +1,20 @@
+// $Id$
+
 #ifndef _kslave_h
 #define _kslave_h
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
+
+#ifdef HAVE_SYS_PARAM_H
+#include <sys/param.h>
+#endif
+
+#ifdef BSD
+#include <sys/types.h>
+#endif
+
 #ifdef HAVE_SYS_SELECT_H
 #include <sys/select.h>
 #endif
