@@ -509,6 +509,7 @@ void kPanel::showToolTip(QString s){
  	t =100;
        info_label->hide();
        info_label->setText(s);
+       info_label->adjustSize();
        info_label->move(QCursor::pos().x()+6, QCursor::pos().y()+16);
        if (t>=0){
  	tipTimer->start(t, TRUE);
@@ -528,6 +529,7 @@ void kPanel::addButton(PMenuItem* pmi)
   s.remove(0,1);
   PMenuItem* pmi2 = pmenu->searchItem(s);
   addButtonInternal(pmi2);
+  write_out_configuration();
 }
 
 
@@ -538,9 +540,8 @@ void kPanel::delete_button(QWidget* button){
   if (i<nbuttons && button){
     if (entries[i].drop_zone)
       delete entries[i].drop_zone;
-    // TODO
-//     if (entries[i].swallowed)
-//       delete_window(entries[i].swallowed);
+    if (entries[i].swallowed)
+      KWM::close(entries[i].swallowed);
     nbuttons--;
     for (;i<nbuttons;i++)
       entries[i] = entries[i+1];

@@ -278,7 +278,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     connect( taskbar, SIGNAL(pressed( int )), 
 	     SLOT(taskbarPressed(int)) );
 
-    taskbar_position = hidden;
+    taskbar_position = taskbar_top_left;
     a = config->readEntry("TaskbarPosition");
     if ( a == "top"){
       taskbar_position = top;

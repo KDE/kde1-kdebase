@@ -268,6 +268,7 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 	  popup_item->setItemEnabled(3, FALSE);
 	  if (show_popup(popup_item, tmp) == 0){
 	    moving_button = tmp;
+	    moving_button->raise();
 	    moving_button->setCursor(sizeAllCursor);
 	    // the next line _IS_ necessary! 
 	    XGrabPointer( qt_xdisplay(), moving_button->winId(), FALSE,
