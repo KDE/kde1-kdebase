@@ -31,7 +31,7 @@ msgstr "Gå ut av kdm"
 
 #: kgreeter.cpp:139
 msgid "Login:"
-msgstr "Logginn:"
+msgstr "Logginnnavn:"
 
 #: kgreeter.cpp:151
 msgid "Password:"
