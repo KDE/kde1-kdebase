@@ -1,7 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Exec=kcmdisplay screensaver
-Icon=screensaver.xpm
+Icon=kscreensaver.xpm
 Type=Application
 DocPath=kcontrol/kdisplay/scrnsave.html
 Comment=Screensaver settings
