@@ -42,7 +42,7 @@ msgstr "Åpne &terminal"
 # kfmgui.cpp:307
 #: kfmgui.cpp:314
 msgid "&Open Location..."
-msgstr "&Åpne ..."
+msgstr "Å&pne ..."
 
 # kfmgui.cpp:309
 #: kfmgui.cpp:316

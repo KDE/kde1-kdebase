@@ -19,7 +19,7 @@ msgstr "KDE skrifttypebehandler"
 
 #: main.cpp:71
 msgid "KDE Fonts"
-msgstr "KDE skrifttyper"
+msgstr "KDE-skrifttyper"
 
 #: main.cpp:72
 msgid "Font Explorer"

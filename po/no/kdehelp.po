@@ -172,7 +172,7 @@ msgstr "&Nytt hjelpevindu"
 
 #: mainwidget.cpp:135
 msgid "&Open File..."
-msgstr "&Åpne fil..."
+msgstr "Å&pne fil..."
 
 #: mainwidget.cpp:136
 msgid "Open UR&L..."

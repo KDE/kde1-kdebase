@@ -31,7 +31,7 @@ msgstr "S&topp søk"
 
 #: kfindtop.cpp:125
 msgid "&Open"
-msgstr "&Åpne"
+msgstr "Å&pne"
 
 #: kfindtop.cpp:127
 msgid "&Add to archive"

@@ -99,7 +99,7 @@ msgstr "Skjul &menylinje"
 
 #: main.C:585 main.C:771 main.C:841
 msgid "Show &Menubar"
-msgstr "Vis &menulinje"
+msgstr "Vis &menylinje"
 
 #: main.C:586 main.C:859
 msgid "Secure &keyboard"
@@ -119,7 +119,7 @@ msgstr "&Farge"
 
 #: main.C:591
 msgid "&Size"
-msgstr "S&tørrelse"
+msgstr "&Størrelse"
 
 #: main.C:592
 msgid "Terminal..."

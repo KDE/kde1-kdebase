@@ -19,7 +19,7 @@ msgstr "Endre &menynavn"
 
 #: kmenuedit.cpp:69
 msgid "Reload &Filetypes"
-msgstr "Last inn på nytt &filtyper"
+msgstr "Last inn &filtyper på nytt"
 
 #: kmenuedit.cpp:76
 msgid "by"
