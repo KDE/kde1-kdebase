@@ -625,21 +625,23 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     pmenu->parse(QDir(kde_apps));
     
     if (personal){
-
-      pmenu->add( new PMenuItem((EntryType) separator) );
-
-      p_pmenu = new PMenu;
-      p_pmenu->parse(QDir(personal));
-      PMenuItem* pmi = new PMenuItem ;
-      pmi->parse(&QFileInfo(personal), p_pmenu);
-      
-      pmenu->add( pmi );
-
+      PMenu* tmp = new PMenu;
+      tmp->parse(QDir(personal));
+      tmp->createMenu(new myPopupMenu, this);
+      if (tmp->getQPopupMenu() && tmp->getQPopupMenu()->count()>0){
+	p_pmenu = new PMenu;
+	p_pmenu->parse(QDir(personal));
+	PMenuItem* pmi = new PMenuItem ;
+	pmi->parse(&QFileInfo(personal), p_pmenu);
+	pmenu->add( new PMenuItem((EntryType) separator) );
+	pmenu->add( pmi );
+      }
+      delete tmp;
     }
     
-    pmenu_add = new PMenu(*pmenu);
     
     pmenu->add( new PMenuItem(separator) );
+    pmenu_add = new PMenu(*pmenu);
 
     PMenu *panel_menu = new PMenu;
     panel_menu->add( new PMenuItem(add_but, klocale->translate("Add application"), NULL, NULL, pmenu_add,
