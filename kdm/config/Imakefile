@@ -1,8 +1,0 @@
-XCOMM Config for KDM
-XCOMM Sat Mar 22 01:28:35 1997 -- Steffen Hansen
-
-all:: kdmrc
-
-CppFileTarget(kdmrc,kdmrc.cpp,-DKDEDIR=$(KDEDIR),NullParameter)
-
-InstallNonExecFile(kdmrc,$(KDEDIR)/config/)
