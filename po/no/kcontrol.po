@@ -20,7 +20,7 @@ msgstr "Ukjent modul"
 
 #: main.cpp:46 mainwidget.cpp:19
 msgid "KDE Control Center"
-msgstr "KDE kontrol senter"
+msgstr "KDE kontrollsenter"
 
 #: toplevel.cpp:78
 msgid "&Swallow modules"
