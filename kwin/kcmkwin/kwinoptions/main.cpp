@@ -52,7 +52,7 @@ private:
 KKWMApplication::KKWMApplication(int &argc, char **argv, const char *name)
   : KControlApplication(argc, argv, name)
 {
-  options = 0; buttons = 0; appearance = 0; desktop = 0; mouse = 0; decors = 0;
+  options = 0; buttons = 0; appearance = 0; desktop = 0; mouse = 0; 
 
   if (runGUI())
     {
