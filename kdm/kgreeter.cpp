@@ -23,15 +23,24 @@
 
     */
  
-
 #include "kgreeter.h"
+
+#include <stdio.h>
+#include <signal.h>
+#include <pwd.h>
+#include <sys/param.h>
+#include <sys/types.h>
+#include <math.h>
+#include <unistd.h>
+
 #include <qmsgbox.h>
+#include <kstring.h>
+
+#include <X11/Xlib.h>
+#include <X11/keysym.h>
 
 #include "dm.h"
 #include "greet.h"
-#include <signal.h>
-#include <sys/types.h>
-#include <pwd.h>
 
 // Make the C++ compiler shut the f... up:
 extern "C" {
@@ -44,13 +53,6 @@ void RegisterCloseOnFork( int );
 int source(void*,void*);
 void SessionExit(void*,void*,void*);
 }
-
-#include <stdio.h>
-#include <sys/param.h>
-#include <math.h>
-#include <unistd.h>
-#include <X11/Xlib.h>
-#include <X11/keysym.h>
 
 #ifdef USESHADOW
 #include<shadow.h>
@@ -731,8 +733,8 @@ GreetUser(
       */
      if (source (verify->systemEnviron, d->startup) != 0)
      {
-          char buf[256];
-	  snprintf(buf, sizeof(buf),
+          QString buf;
+	  ksprintf(&buf,
 		  "Startup program %s exited with non-zero status.\n"
 		  "Please contact your system administrator.\n",
 		 d->startup);

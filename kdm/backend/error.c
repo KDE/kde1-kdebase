@@ -181,7 +181,7 @@ LogOutOfMem (
 {
 #ifdef USE_SYSLOG
     char fmt1[256];
-    snprintf(fmt1, 256, "out of memory: %s", fmt);
+    sprintf(fmt1, "out of memory: %s", fmt);
 #else
     fprintf (stderr, "kdm: out of memory in routine ");
 #endif

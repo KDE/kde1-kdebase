@@ -810,10 +810,10 @@ int cMan::ReadLocation(const char *name)
 		char sysCmd[256];
 		char *ptr;
 
-		snprintf(stdFile, 256, _PATH_TMP"khelpXXXXXX");	// temp file
+		sprintf(stdFile, _PATH_TMP"khelpXXXXXX");	// temp file
 		mktemp(stdFile);
 
-		snprintf(errFile, 256, _PATH_TMP"khelpXXXXXX");	// temp file
+		sprintf(errFile, _PATH_TMP"khelpXXXXXX");	// temp file
 		mktemp(errFile);
 
 		// create the system cmd to read the man page
