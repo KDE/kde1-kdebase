@@ -24,6 +24,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <strings.h> /* DF : for strcasecmp */
 #include <string.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>

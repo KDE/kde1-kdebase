@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <strings.h> /* DF : for strcasecmp */
 #include <string.h>
 #include <ctype.h> /* CC: for isspace */
 #include <X11/Xlib.h>
