@@ -29,7 +29,7 @@
 
 class EditButton : public QButton
 {
-  Q_OBJECT;
+  Q_OBJECT
 public:
   EditButton(QWidget *parent = NULL, const char *name = NULL);
   ~EditButton();

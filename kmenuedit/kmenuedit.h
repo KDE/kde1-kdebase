@@ -36,7 +36,7 @@ class PMenu;
 
 class KMenuEdit : public KTopLevelWidget
 {
-  Q_OBJECT;
+  Q_OBJECT
 public:
   KMenuEdit( const char* name = NULL );
   virtual ~KMenuEdit();

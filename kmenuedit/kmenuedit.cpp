@@ -45,7 +45,7 @@ KStatusBar *global_status_bar;
 QStrList *global_file_types;
 bool changes_to_save;
 
-KMenuEdit::KMenuEdit( const char *name = NULL )
+KMenuEdit::KMenuEdit( const char *name )
   : KTopLevelWidget( name )
 {
   initMetaObject();
@@ -261,8 +261,8 @@ void KMenuEdit::reload()
   int code = 1;
   if( changes_to_save )
     {
-      code = KMsgBox::yesNo(this, "Reload Menus", "Reloading the menus will discard all changes.\n
-Are you sure you want to reload ?" );
+      code = KMsgBox::yesNo(this, "Reload Menus", "Reloading the menus will discard all changes.\n"
+"Are you sure you want to reload ?" );
     }
   if( code == 1 )
     {

@@ -40,7 +40,7 @@ class MenuButton;
 
 class PLineEdit : public QLineEdit
 {
-  Q_OBJECT;
+  Q_OBJECT
 public:
   PLineEdit(QWidget* parent=0, const char* name=0)
     : QLineEdit(parent, name) { initMetaObject(); }
@@ -53,7 +53,7 @@ protected:
 class EntryDialog : public QDialog
 {
   friend MenuButton;
-  Q_OBJECT;
+  Q_OBJECT
 public:
   EntryDialog(QWidget* parent = NULL, const char* name = NULL );
 

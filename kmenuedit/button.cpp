@@ -44,7 +44,7 @@ Window debugWin = 0;
 //---------------  EditButton  -----------------------------------------
 //----------------------------------------------------------------------
 
-EditButton::EditButton( QWidget *parent = NULL, const char *name = NULL)
+EditButton::EditButton( QWidget *parent , const char *name )
   : QButton ( parent, name )
 {
   initMetaObject();

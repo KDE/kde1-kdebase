@@ -16,7 +16,7 @@
 
 class IconPathDialog : public IconPathDialogData
 {
-  Q_OBJECT;
+  Q_OBJECT
 public:
   IconPathDialog( QString text, QWidget* parent = NULL, const char* name = NULL );
   virtual ~IconPathDialog();

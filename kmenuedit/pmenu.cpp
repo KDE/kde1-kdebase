@@ -74,8 +74,8 @@ PMenuItem::PMenuItem()
   read_only = FALSE;
 }
 
-PMenuItem::PMenuItem( EntryType e, QString t=0, QString c=0, QString n=0, PMenu *menu=0,
-		      QObject *receiver=0, char *member=0, CPopupMenu *cm=0, bool ro = FALSE )
+PMenuItem::PMenuItem( EntryType e, QString t, QString c, QString n, PMenu *menu,
+		      QObject *receiver, char *member, CPopupMenu *cm, bool ro )
   : url_name(command_name), dev_name(command_name), mount_point(term_opt), fs_type(exec_path),
     dev_read_only(use_term), umount_pixmap_name(pattern)
 {
@@ -196,7 +196,7 @@ QString &operator<<( QString &s, PMenuItem &item )
   return s;
 }
 
-short PMenuItem::parse( QString &s, PMenu *menu = NULL)
+short PMenuItem::parse( QString &s, PMenu *menu)
 {
   s.simplifyWhiteSpace();
   short pos = s.find(' ');
@@ -250,7 +250,7 @@ short PMenuItem::parse( QString &s, PMenu *menu = NULL)
   return 0;
 }
 
-short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
+short PMenuItem::parse( QFileInfo *fi, PMenu *menu )
 {
   real_name = fi->fileName().copy();
   old_name = real_name;
@@ -759,7 +759,7 @@ void PMenu::writeConfig( QTextStream &s )
   s << "End_Menu\n";
 }
 
-void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item = NULL )
+void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item)
 {
   if( parent_item )
     if( parent_item->read_only )
@@ -1040,7 +1040,7 @@ void PMenu::set_net_recv(QObject *receiver, char *member)
     }
 }
 
-void PMenu::popupConfig(QPoint p, QWidget *par_widg, bool bot = FALSE)
+void PMenu::popupConfig(QPoint p, QWidget *par_widg, bool bot)
 {
   if( !menu_conf )
     {
