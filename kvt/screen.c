@@ -2036,7 +2036,10 @@ void screen_refresh()
 {
   /* extern int font_num; */
   char force_next,fn;
-  int j,k,x1,y1,x,n,k0,xrow,x2,xrow2,k1,l,trow,trow2,count,j0;
+  int j,k,x1,y1,x,n,k0,xrow,x2,xrow2,k1;
+#ifdef USE_XCOPYAREA
+  int l,trow,trow2,count,j0;
+#endif
   int rval, fore, back;
   unsigned long newgcm = 0;
   XGCValues newgcv;

@@ -1,3 +1,8 @@
+since kvt-0.18.6	
+  - fixed a few compiler warnings (mweilguni@kde.org)
+  - configureable menu shortcuts for the root menu items (needed for some
+    programs, because Alt-(H|F|O) are often used as accelerator keys.
+	
 since kvt-0.18.5
   - Now the Terminal-Dialog exchanges the meaning of Backspace and Delete
     This prevents us from having two Delete-keys and no Backspace-key (bmg)

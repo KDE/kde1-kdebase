@@ -63,6 +63,8 @@ public slots:
   void quit();
 
   void saveYourself();
+  void toggleHotkeys();
+
 
 protected:
     void    resizeEvent( QResizeEvent * );
@@ -86,6 +88,7 @@ private:
   // weird flags
   Bool setting_to_vt_window;
   Bool keyboard_secured;
+  bool enableHotkeys;
   
   // options
   
@@ -119,5 +122,3 @@ private:
 
 
 #endif // MAIN_H
-
-

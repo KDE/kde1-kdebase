@@ -1,1 +1,1 @@
-#define KVT_VERSION "kvt-0.18.5"
+#define KVT_VERSION "kvt-0.18.6"

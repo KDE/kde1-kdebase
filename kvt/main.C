@@ -38,6 +38,7 @@
 #include <kcolordlg.h>
 #include <kcharsets.h>
 #include <kfontdialog.h>
+#include <qregexp.h>
 
 #include "kvt_version.h"
 
@@ -202,8 +203,10 @@ char* kvt_get_selection(){
 int kvt_find_font(const char *name, int ptsz, char *ret)
 {
 	char **fontNames;
-	int    count, score = 99999, ptscore = 0, gfpts = 0, pos;
-	char   buf[32];
+	int    count, score = 99999, ptscore = 0, gfpts = 0;
+	/* int pos
+	 * char   buf[32];
+	 */
 	QString data;
 
 	fontNames = XListFonts(QPaintDevice::x__Display(), (char*)name,
@@ -588,6 +591,8 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
     bg_string = sessionconfig->readEntry("background","white");
     bg_string_tmp = bg_string.data();
 
+    enableHotkeys = sessionconfig->readBoolEntry("Hotkeys", true);
+
     entry = sessionconfig->readEntry("charclass");
     if (!entry.isEmpty()) {
       kvt_charclass = entry;
@@ -653,6 +658,7 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
 
     m_options = new KVT_QPopupMenu;
     CHECK_PTR( m_options );
+    m_options->setCheckable(true);
     if (menubar_visible)
       m_options->insertItem( i18n("Hide &Menubar") );
     else
@@ -665,6 +671,8 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
     m_options->insertItem( i18n("&Size"), m_dimen);
     m_options->insertItem( i18n("Terminal...") );
     m_options->insertItem( i18n("Font...") );
+    int id = m_options->insertItem( i18n("Enable &hotkeys") );
+    m_options->setItemChecked(id, enableHotkeys);
     m_options->insertSeparator();
     m_options->insertItem( i18n("Save &Options"));
 
@@ -700,10 +708,7 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
     
     connect(menubar, SIGNAL (moved(menuPosition)),
 	    SLOT (menubarMoved()));
-    menubar->insertItem( i18n("&File"), m_file );
-    menubar->insertItem( i18n("&Options"), m_options);
-    menubar->insertSeparator();
-    menubar->insertItem( i18n("&Help"), m_help);
+    toggleHotkeys();
 
     if (!menubar_visible)
       menubar->hide();
@@ -743,6 +748,26 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
 
     if (menubar_visible && menubar->menuBarPos() == KMenuBar::Floating)
 	menubar->show();
+}
+
+void kVt::toggleHotkeys() {
+  menubar->clear();
+  QRegExp r("&");
+
+  QString s = i18n("&File");
+  if(!enableHotkeys)
+    s.replace(r, "");
+  menubar->insertItem( s.data(), m_file);
+
+  s = i18n("&Options");
+  if(!enableHotkeys)
+    s.replace(r, "");
+  menubar->insertItem( s.data(), m_options);
+
+  s = i18n("&Help");
+  if(!enableHotkeys)
+    s.replace(r, "");
+  menubar->insertItem( s.data(), m_help);
 }
 
 void kVt::styleChange( GUIStyle ) {
@@ -805,6 +830,8 @@ void kVt::saveOptions(KConfig* kvtconfig){
   kvtconfig->writeEntry("backspace", BackspaceSendsControlH ? "BS" : "DEL");
 
   kvtconfig->writeEntry("keyset", KeySetSend);
+
+  kvtconfig->writeEntry("Hotkeys", enableHotkeys);
 
   if (menubar->menuBarPos() == KMenuBar::Bottom)
     kvtconfig->writeEntry("kmenubar", "bottom");
@@ -961,7 +988,15 @@ void kVt::options_menu_activated( int item){
     }
     break;
 
-  case 10:
+  case 9:
+    // hotkeys
+    {
+      enableHotkeys = !enableHotkeys;
+      m_options->setItemChecked(9, enableHotkeys);
+      toggleHotkeys();
+    }
+
+  case 11:
     // save options
     {
       saveOptions(kvtconfig);
