@@ -226,8 +226,6 @@ protected:
     QString swallowTitleStr;
     QString termStr;
     QString termOptionsStr;
-
-    QBoxLayout *layout, *layoutH1, *layoutV1;
 };
 
 /// Edit "KDE Desktop Entry" Files.

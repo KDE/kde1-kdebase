@@ -3,10 +3,13 @@
  * View/Edit Properties of files
  *
  * (c) Torben Weiss <weis@kde.org>
+ *
  * some FilePermissionsPropsPage-changes by 
  *  Henner Zeller <zeller@think.de>
  * some layout management by 
  *  Bertrand Leconte <B.Leconte@mail.dotcom.fr>
+ * the rest of the layout management and bug fixes by
+ *  David Faure <faure@kde.org>
  */
 
 #include <pwd.h>
@@ -657,80 +660,126 @@ void FilePermissionsPropsPage::applyChanges()
 
 ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
 {
-    execEdit = new QLineEdit( this, "LineEdit_1" );
-    pathEdit = new QLineEdit( this, "LineEdit_2" );
-    iconBox = new KIconLoaderButton( pkfm->iconLoader(), this );
+    QVBoxLayout * mainlayout = new QVBoxLayout(this, SEPARATION);
 
-    swallowExecEdit = new QLineEdit( this, "LineEdit_3" );
-    swallowTitleEdit = new QLineEdit( this, "LineEdit_4" );
-
-    terminalCheck = new QCheckBox( this, "RadioButton_3" );
-    terminalEdit = new QLineEdit( this, "LineEdit_5" );
-    execBrowse = new QPushButton( this, "Button_1" );
-    
-    QGroupBox* tmpQGroupBox;
-    tmpQGroupBox = new QGroupBox( klocale->translate("Swallowing on panel"), this, "GroupBox_1" );
-    tmpQGroupBox->setGeometry( 10, 141, 320, 110 );
-    tmpQGroupBox->setFrameStyle( 49 );
-    tmpQGroupBox->setAlignment( 1 );
- 
-     tmpQGroupBox = new QGroupBox( this, "GroupBox_2" );
-     tmpQGroupBox->setGeometry( 10, 245, 320, 70 );
-     tmpQGroupBox->setFrameStyle( 49 );
-     tmpQGroupBox->setAlignment( 1 );
-
-    execEdit->raise();
-    execEdit->setGeometry( 10, 30, 210, 30 );
-    execEdit->setText( "" );
-    execEdit->setMaxLength( 256 );
+    // Now the widgets in the top layout
 
     QLabel* tmpQLabel;
     tmpQLabel = new QLabel( this, "Label_1" );
-    tmpQLabel->setGeometry( 10, 0, 100, 30 );
     tmpQLabel->setText( klocale->translate("Execute") );
+    tmpQLabel->setMinimumSize(tmpQLabel->sizeHint());
+    mainlayout->addWidget(tmpQLabel, 1);
 
-    execBrowse->raise();
-    execBrowse->setGeometry( 230, 30, 100, 30 );
-    execBrowse->setText( klocale->translate("Browse") );
+    QHBoxLayout * hlayout;
+    hlayout = new QHBoxLayout(SEPARATION);
+    mainlayout->addLayout(hlayout, 1);
+
+    execEdit = new QLineEdit( this, "LineEdit_1" );
+    execEdit->setText( "" );
+    execEdit->setMaxLength( 256 );
+    execEdit->setFixedHeight(fontHeight);
+    execEdit->setMinimumSize( execEdit->sizeHint() );
+    hlayout->addWidget(execEdit, 0);
+
+    execBrowse = new QPushButton( this, "Button_1" );
+    execBrowse->setText( klocale->translate("&Browse...") );
+    execBrowse->setFixedSize(execBrowse->sizeHint());
+    hlayout->addWidget(execBrowse, 0);
+
+    hlayout = new QHBoxLayout(SEPARATION);
+    mainlayout->addLayout(hlayout, 2); // double stretch, because two items
+
+    QVBoxLayout * vlayout; // a vertical layout for the two following items
+    vlayout = new QVBoxLayout(SEPARATION);
+    hlayout->addLayout(vlayout, 1);
 
     tmpQLabel = new QLabel( this, "Label_3" );
-    tmpQLabel->setGeometry( 10, 60, 120, 30 );
     tmpQLabel->setText( klocale->translate("Working Directory") );
+    tmpQLabel->setMinimumSize(tmpQLabel->sizeHint());
+    vlayout->addWidget(tmpQLabel, 1);
     
-    iconBox->raise();
-    iconBox->setGeometry( 280, 80, 50, 50 );
-
-    pathEdit->raise();
-    pathEdit->setGeometry( 10, 90, 210, 30 );
+    pathEdit = new QLineEdit( this, "LineEdit_2" );
+    pathEdit->setFixedHeight(fontHeight);
     pathEdit->setMaxLength( 256 );
-    
-    swallowExecEdit->raise();
-    swallowExecEdit->setGeometry( 140, 160, 180, 30 );
-    swallowExecEdit->setText( "" );
+    pathEdit->setMinimumSize( pathEdit->sizeHint() );
+    vlayout->addWidget(pathEdit, 1);
 
-    tmpQLabel = new QLabel( this, "Label_6" );
-    tmpQLabel->setGeometry( 20, 160, 110, 30 );
+    // and the icon button, on the right of this vertical layout
+    iconBox = new KIconLoaderButton( pkfm->iconLoader(), this );
+    iconBox->setFixedSize( 50, 50 );
+    hlayout->addWidget(iconBox, 0, AlignCenter);
+
+    // The groupbox about swallowing
+
+    QGroupBox* tmpQGroupBox;
+    tmpQGroupBox = new QGroupBox( klocale->translate("Swallowing on panel"), this, "GroupBox_1" );
+    tmpQGroupBox->setFrameStyle( 49 );
+    mainlayout->addWidget(tmpQGroupBox, 3); // 3 vertical items -> stretch = 3
+
+    QVBoxLayout * grouplayout;
+    grouplayout = new QVBoxLayout(tmpQGroupBox, SEPARATION);
+
+    grouplayout->addSpacing( fontMetrics().height() ); 
+
+    hlayout = new QHBoxLayout(SEPARATION);
+    grouplayout->addLayout(hlayout, 0);
+
+    tmpQLabel = new QLabel( tmpQGroupBox, "Label_6" );
     tmpQLabel->setText( klocale->translate("Execute") );
+    tmpQLabel->setMinimumSize(tmpQLabel->sizeHint());
+    hlayout->addWidget(tmpQLabel, 0);
 
-    swallowTitleEdit->raise();
-    swallowTitleEdit->setGeometry( 140, 195, 180, 30 );
-    swallowTitleEdit->setText( "" );
+    swallowExecEdit = new QLineEdit( tmpQGroupBox, "LineEdit_3" );
+    swallowExecEdit->setText( "" );
+    swallowExecEdit->setFixedHeight(fontHeight);
+    swallowExecEdit->setMinimumSize( swallowExecEdit->sizeHint() );
+    hlayout->addWidget(swallowExecEdit, 1);
 
-    tmpQLabel = new QLabel( this, "Label_7" );
-    tmpQLabel->setGeometry( 20, 195, 110, 30 );
+    hlayout = new QHBoxLayout(SEPARATION);
+    grouplayout->addLayout(hlayout, 0);
+
+    tmpQLabel = new QLabel( tmpQGroupBox, "Label_7" );
     tmpQLabel->setText( klocale->translate("Window Title") );
+    tmpQLabel->setMinimumSize(tmpQLabel->sizeHint());
+    hlayout->addWidget(tmpQLabel, 0);
 
-    terminalCheck->raise();
-    terminalCheck->setGeometry( 20, 250, 150, 30 );
+    swallowTitleEdit = new QLineEdit( tmpQGroupBox, "LineEdit_4" );
+    swallowTitleEdit->setText( "" );
+    swallowTitleEdit->setFixedHeight(fontHeight);
+    swallowTitleEdit->setMinimumSize( swallowTitleEdit->sizeHint() );
+    hlayout->addWidget(swallowTitleEdit, 1);
+
+    // The groupbox about run in terminal
+
+    tmpQGroupBox = new QGroupBox( this, "GroupBox_2" );
+    tmpQGroupBox->setFrameStyle( 49 );
+    tmpQGroupBox->setAlignment( 1 );
+    mainlayout->addWidget(tmpQGroupBox, 2);  // 2 vertical items -> stretch = 2
+
+    grouplayout = new QVBoxLayout(tmpQGroupBox, SEPARATION);
+
+    terminalCheck = new QCheckBox( tmpQGroupBox, "RadioButton_3" );
     terminalCheck->setText( klocale->translate("Run in terminal") );
+    terminalCheck->setMinimumSize( terminalCheck->sizeHint() );
+    grouplayout->addWidget(terminalCheck, 0);
 
-    terminalEdit->raise();
-    terminalEdit->setGeometry( 140, 280, 180, 30 );
-    terminalEdit->setText( "" );
+    hlayout = new QHBoxLayout(SEPARATION);
+    grouplayout->addLayout(hlayout, 1);
 
-    tmpQLabel = new QLabel( this, "Label_5" );
-    tmpQLabel->setGeometry( 20, 280, 110, 30 );
+    tmpQLabel = new QLabel( tmpQGroupBox, "Label_5" );
     tmpQLabel->setText( klocale->translate("Terminal Options") );
+    tmpQLabel->setMinimumSize(tmpQLabel->sizeHint());
+    hlayout->addWidget(tmpQLabel, 0);
+
+    terminalEdit = new QLineEdit( tmpQGroupBox, "LineEdit_5" );
+    terminalEdit->setText( "" );
+    terminalEdit->setFixedHeight(fontHeight);
+    terminalEdit->setMinimumSize( terminalEdit->sizeHint() );
+    hlayout->addWidget(terminalEdit, 1);
+
+    mainlayout->activate();
+
+    //
 
     QFile f( _props->getKURL()->path() );
     if ( !f.open( IO_ReadOnly ) )
@@ -879,8 +928,9 @@ URLPropsPage::URLPropsPage( Properties *_props ) : PropsPage( _props )
 
     QLabel* tmpQLabel;
     tmpQLabel = new QLabel( this, "Label_1" );
-    tmpQLabel->setGeometry( 10, 10, 100, 30 );
+    tmpQLabel->move( 10, 10 );
     tmpQLabel->setText( klocale->translate("URL") );
+    tmpQLabel->adjustSize();
     
     iconBox->raise();
     iconBox->setGeometry( 10, 90, 50, 50 );
@@ -1486,27 +1536,27 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
 
     QLabel* tmpQLabel;
     tmpQLabel = new QLabel( this, "Label_1" );
-    tmpQLabel->setGeometry( 10, 10, 300, 30 );
+    tmpQLabel->move( 10, 10 );
     tmpQLabel->setText(  klocale->translate("Pattern ( example: *.html;*.HTML; )") );
-
-    // tmpQLabel = new QLabel( this, "Label_2" );
-    // tmpQLabel->setGeometry( 180, 210, 100, 30 );
-    // tmpQLabel->setText(  klocale->translate("Icon") );
+    tmpQLabel->adjustSize();
 
     tmpQLabel = new QLabel( this, "Label_2" );
-    tmpQLabel->setGeometry( 10, 130, 100, 30 );
+    tmpQLabel->move( 10, 130 );
     tmpQLabel->setText(  klocale->translate("Mime Type") );
+    tmpQLabel->adjustSize();
 
     tmpQLabel = new QLabel( this, "Label_3" );
-    tmpQLabel->setGeometry( 10, 70, 120, 30 );
+    tmpQLabel->move( 10, 70 );
     tmpQLabel->setText(  klocale->translate("Comment") );
-    
+    tmpQLabel->adjustSize();
+
     iconBox->raise();
     iconBox->setGeometry( 180, 210, 50, 50 );
 
     tmpQLabel = new QLabel( this, "Label_2" );
-    tmpQLabel->setGeometry( 10, 210, 170, 30 );
+    tmpQLabel->move( 10, 210 );
     tmpQLabel->setText(  klocale->translate("Default Application") );
+    tmpQLabel->adjustSize();
 
     appBox->raise();
     appBox->setGeometry( 10, 240, 120, 30 );
@@ -1659,17 +1709,19 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
 
     QLabel* tmpQLabel;
     tmpQLabel = new QLabel( this, "Label_1" );
-    tmpQLabel->setGeometry( 10, 10, 140, 30 );
+    tmpQLabel->move( 10, 10 );
     tmpQLabel->setText(  klocale->translate("Device ( /dev/fd0 )") );
+    tmpQLabel->adjustSize();
     
     device = new QLineEdit( this, "LineEdit_1" );
     device->setGeometry( 10, 40, 180, 30 );
     device->setText( "" );
     
     tmpQLabel = new QLabel( this, "Label_2" );
-    tmpQLabel->setGeometry( 10, 80, 170, 30 );
+    tmpQLabel->move( 10, 80 );
     tmpQLabel->setText(  klocale->translate("Mount Point ( /floppy )") );
-    
+    tmpQLabel->adjustSize();
+
     mountpoint = new QLineEdit( this, "LineEdit_2" );
     mountpoint->setGeometry( 10, 110, 180, 30 );
     mountpoint->setText( "" );
@@ -1683,9 +1735,10 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
 	readonly->setEnabled( false );
     
     tmpQLabel = new QLabel( this, "Label_4" );
-    tmpQLabel->setGeometry( 10, 150, 300, 30 );
+    tmpQLabel->move( 10, 150 );
     tmpQLabel->setText(  klocale->translate("Filesystems ( iso9660,msdos,minix,default )") );
-    
+    tmpQLabel->adjustSize();
+
     fstype = new QLineEdit( this, "LineEdit_3" );
     fstype->setGeometry( 10, 180, 280, 30 );
     fstype->setText( "" );
@@ -1693,12 +1746,14 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
 	fstype->setEnabled( false );
 
     tmpQLabel = new QLabel( this, "Label_5" );
-    tmpQLabel->setGeometry( 10, 220, 150, 30 );
+    tmpQLabel->move( 10, 220 );
     tmpQLabel->setText(  klocale->translate("Mounted Icon") );
-    
+    tmpQLabel->adjustSize();
+
     tmpQLabel = new QLabel( this, "Label_6" );
-    tmpQLabel->setGeometry( 170, 220, 150, 30 );
+    tmpQLabel->move( 170, 220 );
     tmpQLabel->setText(  klocale->translate("Unmounted Icon") );
+    tmpQLabel->adjustSize();
     
     mounted = new KIconLoaderButton( pkfm->iconLoader(), this );
     mounted->setGeometry( 10, 250, 50, 50 );
