@@ -16,11 +16,11 @@ msgstr ""
 
 #: backgnd.cpp:204 backgnd.cpp:239
 msgid "Desktop"
-msgstr ""
+msgstr "Skrivbord"
 
 #: backgnd.cpp:249
 msgid "Rename..."
-msgstr ""
+msgstr "Byt namn..."
 
 #: backgnd.cpp:255
 msgid "Color"
@@ -63,13 +63,12 @@ msgid "Browse..."
 msgstr "Bläddra..."
 
 #: backgnd.cpp:489
-#, fuzzy
 msgid "Default"
-msgstr "KDE Standard"
+msgstr "Standard"
 
 #: backgnd.cpp:821
 msgid "Desktop Title"
-msgstr ""
+msgstr "Skrivbordsnamn"
 
 #: colorscm.cpp:142 colorscm.cpp:143
 msgid "Inactive window"
@@ -97,7 +96,7 @@ msgstr "Palett"
 
 #: colorscm.cpp:286
 msgid "Widget color"
-msgstr ""
+msgstr "Färg på widgetar"
 
 #: colorscm.cpp:291
 msgid "Inactive title bar"
@@ -229,11 +228,11 @@ msgstr "Widget-utseende"
 
 #: general.cpp:70
 msgid "Motif"
-msgstr ""
+msgstr "Motif"
 
 #: general.cpp:71
 msgid "Windows 95"
-msgstr ""
+msgstr "Windows 95"
 
 #: general.cpp:80
 msgid "Fonts"
@@ -260,26 +259,22 @@ msgid "Large"
 msgstr "Stor"
 
 #: main.cpp:61
-#, fuzzy
 msgid "&Background"
-msgstr "Bakgrund"
+msgstr "&Bakgrund"
 
 #: main.cpp:64
-#, fuzzy
 msgid "&Colors"
-msgstr "Färg"
+msgstr "&Färg"
 
 #: main.cpp:67
-#, fuzzy
 msgid "&Screensaver"
-msgstr "Skärmsläckare"
+msgstr "&Skärmsläckare"
 
 #: main.cpp:70
 msgid "&Style"
-msgstr ""
+msgstr "&Typsnitt"
 
 #: main.cpp:105
-#, fuzzy
 msgid "Display settings"
 msgstr "Omgivningsinställningar"
 

@@ -37,7 +37,7 @@ msgstr "Användning: "
 #: main.C:385
 #, fuzzy
 msgid "&Maximize"
-msgstr "Maximera"
+msgstr "&Maximera"
 
 #: main.C:386
 #, fuzzy
@@ -49,38 +49,32 @@ msgid "&Iconify"
 msgstr "&Ikonifiera"
 
 #: main.C:388
-#, fuzzy
 msgid "&DeIconify"
-msgstr "&Ikonifiera"
+msgstr "&Av-ikonifiera"
 
 #: main.C:389
-#, fuzzy
 msgid "&Sticky"
 msgstr "&Klistrig"
 
 #: main.C:390
-#, fuzzy
 msgid "&UnSticky"
 msgstr "&Inte Klistrig"
 
 #: main.C:391
-#, fuzzy
 msgid "Mo&ve"
 msgstr "&Flytta"
 
 #: main.C:392
-#, fuzzy
 msgid "Resi&ze"
 msgstr "&Ändra storlek"
 
 #: main.C:394
-#, fuzzy
 msgid "&To desktop"
 msgstr "&Till skrivbord"
 
 #: main.C:396
 msgid "&Onto current desktop"
-msgstr ""
+msgstr "Till den &här skrivbordet"
 
 #: main.C:446
 msgid "One"

@@ -411,7 +411,8 @@ msgstr ""
 msgid ""
 "Could not access\n"
 "%s"
-msgstr "Konnte nicht zugreifen auf:\n"
+msgstr ""
+"Konnte nicht zugreifen auf:\n"
 "%s"
 
 #: kbind.cpp:1648
@@ -796,7 +797,8 @@ msgid ""
 "%s\n"
 "is malformed"
 msgstr ""
-"Die URL\n%s\n"
+"Die URL\n"
+"%s\n"
 "ist fehlerhaft"
 
 #: kfmserver.cpp:285
@@ -870,7 +872,8 @@ msgstr ""
 msgid ""
 "Malformed URL\n"
 "%s"
-msgstr "Fehlerhafte URL\n"
+msgstr ""
+"Fehlerhafte URL\n"
 "%s"
 
 #: kiojob.cpp:233
@@ -882,7 +885,8 @@ msgstr "Verknüpfungen können nur auf dem lokalen Dateisystem erstellt werden."
 msgid ""
 "Could not overwrite\n"
 "%s"
-msgstr "Konnte nicht überschreiben:\n"
+msgstr ""
+"Konnte nicht überschreiben:\n"
 "%s"
 
 #: kiojob.cpp:285 kiojob.cpp:308 kiojob.cpp:327
@@ -890,8 +894,7 @@ msgstr "Konnte nicht überschreiben:\n"
 msgid ""
 "Could not make symlink to\n"
 "%s"
-msgstr "Symbolische Verknüpfung zu konnte nicht erstellt werden:"
-"%s"
+msgstr "Symbolische Verknüpfung zu konnte nicht erstellt werden:%s"
 
 #: kiojob.cpp:361
 #, c-format
@@ -903,7 +906,8 @@ msgstr " FEHLER: In %s konnte nicht geschrieben werden."
 msgid ""
 "Could not make directory\n"
 "%s"
-msgstr "Verzeichnis konnte nicht erstellt werden:\n"
+msgstr ""
+"Verzeichnis konnte nicht erstellt werden:\n"
 "%s"
 
 #: kiojob.cpp:464 kiojob.cpp:827
@@ -916,7 +920,8 @@ msgstr "FEHLER: Kein Zugriff auf Verzeichnis '%s'."
 msgid ""
 "Could not access directory\n"
 "%s"
-msgstr "Auf Verzeichnis konnte nicht zugegriffen werden:\n"
+msgstr ""
+"Auf Verzeichnis konnte nicht zugegriffen werden:\n"
 "%s"
 
 #: kiojob.cpp:688
@@ -1279,5 +1284,3 @@ msgid ""
 msgstr ""
 "Syntax Fehler:\n"
 "kfmexec Kommando [URLs ...]\n"
-
-

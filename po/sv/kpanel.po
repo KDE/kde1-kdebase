@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1997-12-31 15:26+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 1997-01-07 00:16+0100\n"
+"Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
+"Language-Team: Swedish <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
@@ -24,11 +24,11 @@ msgstr "Egenskaper"
 
 #: kpanel.C:243
 msgid "Go!"
-msgstr ""
+msgstr "Starta!"
 
 #: kpanel.C:245 tools.C:818
 msgid "Where do you want to go tomorrow?"
-msgstr ""
+msgstr "Vart vill du gå i morgon?"
 
 #: kpanel.C:318
 msgid "No info available"
@@ -129,11 +129,11 @@ msgstr "Stor profil"
 
 #: props.C:294
 msgid "Menu Tooltips"
-msgstr "Meny Verktygstips"
+msgstr "Verktygstips för menyer"
 
 #: props.C:298
 msgid "Personal First"
-msgstr ""
+msgstr "Personliga menyn först"
 
 #: props.C:302
 #, fuzzy
@@ -142,23 +142,23 @@ msgstr "Göm panelen"
 
 #: props.C:306
 msgid "Auto Hide Taskbar"
-msgstr ""
+msgstr "Göm aktivitetsfältet automatiskt"
 
 #: props.C:362
 msgid "Visible"
-msgstr ""
+msgstr "Synlig"
 
 #: props.C:369
 msgid "Width"
-msgstr ""
+msgstr "Vidd"
 
 #: props.C:374
 msgid "Desktops"
-msgstr ""
+msgstr "Skrivbord"
 
 #: props.C:380
 msgid "KPanel Configuration"
-msgstr ""
+msgstr "Konfigurering av KPanel"
 
 #~ msgid "Remove"
 #~ msgstr "Ta bort"

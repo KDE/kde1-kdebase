@@ -67,22 +67,20 @@ msgstr ""
 "är inte satt\n"
 
 #: kfontmanager.cpp:286
-#, fuzzy
 msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
 msgstr ""
 "Kan inte skapa:\n"
-" ~/.kde/config/kdefonts\n"
+" ~/.kde/share/config/kdefonts\n"
 
 #: kfontmanager.cpp:291
-#, fuzzy
 msgid ""
 "~/.kde/share/config/kdefonts exists but\n"
 "is not writeable\n"
 "Can't save KDE Fontlist."
 msgstr ""
-"~/.kde/config/kdefonts finns, men\n"
+"~/.kde/share/config/kdefonts finns, men\n"
 "är inte skrivbar\n"
 "Kan inte spara fontlistan."
 

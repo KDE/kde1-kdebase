@@ -208,9 +208,8 @@ msgid "Open UR&L..."
 msgstr "Öppna &URL"
 
 #: mainwidget.cpp:138
-#, fuzzy
 msgid "&Reload"
-msgstr "Ladda om"
+msgstr "&Ladda om"
 
 #: mainwidget.cpp:140
 msgid "&Search"
@@ -265,15 +264,12 @@ msgid "&Save Options"
 msgstr "Spara inställningar"
 
 #: mainwidget.cpp:183
-#, fuzzy
 msgid "KDE Help System\n"
-msgstr ""
-"KDE Hjälpsystem\n"
-"Version"
+msgstr "KDE Hjälpsystem\n"
 
 #: mainwidget.cpp:184
 msgid "Version "
-msgstr ""
+msgstr "Version "
 
 #: mainwidget.cpp:186
 msgid ""
@@ -285,10 +281,17 @@ msgid ""
 "KDEHelp comes with ABSOLUTELY NO WARRANY to the extent permitted by "
 "applicable law."
 msgstr ""
+"\n"
+"\n"
+"Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
+"\n"
+"Det här programmet är licensierat efter GNU General Public License (GPL).\n"
+"KDEHelp kommer UTAN NÅGRA GARANTIERR ALLS, i den utsträckning "
+"somapplicerbara lagar tillåter"
 
 #: mainwidget.cpp:202
 msgid "&Goto"
-msgstr "&Gå till"
+msgstr "&Gå"
 
 #: mainwidget.cpp:203
 msgid "&Bookmarks"
@@ -324,7 +327,7 @@ msgstr "Innehåll i hjälpen"
 
 #: mainwidget.cpp:260
 msgid "Reload current document"
-msgstr ""
+msgstr "Uppdatera det här dokument"
 
 #: mainwidget.cpp:265
 msgid "Stop"
@@ -382,6 +385,15 @@ msgstr "&Lägg till som bokmärke"
 
 #~ msgid "&Help"
 #~ msgstr "&Hjälp"
+
+#~ msgid "&Help..."
+#~ msgstr "&Hjälp..."
+
+#~ msgid "&About kdehelp..."
+#~ msgstr "&Om kdehelp..."
+
+#~ msgid "About &KDE..."
+#~ msgstr "Om &KDE..."
 
 #~ msgid "Cancel"
 #~ msgstr "Avbryt"
