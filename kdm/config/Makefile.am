@@ -1,5 +1,5 @@
 
-datadir	= @prefix@/share/config
+datadir	= $(prefix)/share/config
 
 data_DATA = kdmrc
 DISTCLEANFILES = kdmrc
