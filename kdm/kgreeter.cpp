@@ -136,7 +136,9 @@ MyApp::x11EventFilter( XEvent * ev){
 #endif
      if( ev->type == KeyPress && kgreeter){
 	  // This should go away
-	  if (XLookupKeysym(&(ev->xkey),0) == XK_Return)
+	  KeySym ks = XLookupKeysym(&(ev->xkey),0);
+	  if (ks == XK_Return ||
+	      ks == XK_KP_Enter)
 	       kgreeter->ReturnPressed();
      }
      // Hack to tell dialogs to take focus
@@ -394,6 +396,9 @@ KGreeter::timerDone()
      if (failedLabel->isVisible()){
 	  failedLabel->hide();
 	  goButton->setEnabled( true);
+	  loginEdit->setEnabled( true);
+	  passwdEdit->setEnabled( true);
+	  loginEdit->setFocus();
      } else {
 	  //cancel_button_clicked();
 	  //mydesktop->grabKeyboard();
@@ -758,6 +763,8 @@ KGreeter::go_button_clicked()
      if (!Verify (d, greet, verify)){
 	  failedLabel->show();
 	  goButton->setEnabled( false);
+	  loginEdit->setEnabled( false);
+	  passwdEdit->setEnabled( false);
 	  cancel_button_clicked();
 	  timer->start( 2000, true );
 	  return;
