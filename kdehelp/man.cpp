@@ -243,6 +243,14 @@ void cManSection::ReadSection()
 					ReadDir(buffer);
 				}
 			}
+            else if (!strncmp(dirEntry->d_name, "sman", 4))
+            {
+                if (!strncmp(strtok(dirEntry->d_name+4, "."), name, 1))
+                {
+                    sprintf(buffer, "%s/%s", searchPath[i], dirEntry->d_name);
+                    ReadDir(buffer);
+                }
+            }            
 			else if (!strncmp(dirEntry->d_name, "cat", 3))
 			{
 				if (!strcmp(strtok(dirEntry->d_name+3, "."), name))
