@@ -1,18 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kdehelp \n"
 "POT-Creation-Date: 1997-12-18 13:52+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"PO-Revision-Date: 1997-12-28 14:57+01\n"
+"Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
 #: helpwin.cpp:57
 msgid "KDE Help: Open URL"
@@ -300,11 +291,8 @@ msgid "&Save Options"
 msgstr "&Einstellungen sichern"
 
 #: mainwidget.cpp:183
-#, fuzzy
 msgid "KDE Help System\n"
-msgstr ""
-"KDE-Hilfe-System\n"
-"Version"
+msgstr "KDE-Hilfe-System\n"
 
 #: mainwidget.cpp:184
 msgid "Version "
@@ -404,24 +392,3 @@ msgstr "Information über KDE-Hilfe"
 #: mainwidget.cpp:618
 msgid "&Add Bookmark"
 msgstr "&Lesezeichen hinzufügen"
-
-#~ msgid "Cancel"
-#~ msgstr "Abbrechen"
-
-#~ msgid " Location:"
-#~ msgstr "Adresse:"
-
-#~ msgid "KDE Help"
-#~ msgstr "KDE-Hilfe"
-
-#~ msgid "Waiting for kmail to be finished..."
-#~ msgstr "Es wäre schön, wenn kmail jetzt fertig wäre..."
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "&Using KDE Help"
-#~ msgstr "Benutzung der &KDE-Hilfe"
-
-#~ msgid "&About"
-#~ msgstr "&Über..."

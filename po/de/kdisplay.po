@@ -1,18 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kdehelp \n"
 "POT-Creation-Date: 1997-12-14 20:07+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"PO-Revision-Date: 1997-12-28 14:57+01\n"
+"Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
 #: backgnd.cpp:204 backgnd.cpp:239
 msgid "Desktop"
@@ -64,9 +55,8 @@ msgid "Browse..."
 msgstr "Auswählen..."
 
 #: backgnd.cpp:489
-#, fuzzy
 msgid "Default"
-msgstr "KDE-Standard"
+msgstr "Standard"
 
 #: backgnd.cpp:821
 msgid "Desktop Title"

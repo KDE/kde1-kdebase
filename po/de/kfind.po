@@ -1,16 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
 "PO-Revision-Date: 1997-10-25 17:54 MET DST\n"
 "Last-Translator: Miroslav Flidr <flidr@kky.zcu.cz>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
 
 #: kftabdlg.cpp:214
 msgid " Advanced "
@@ -21,7 +12,6 @@ msgid " Date Modified "
 msgstr " Änderungsdatum "
 
 #: kftabdlg.cpp:94
-#, fuzzy
 msgid " Name& Location "
 msgstr " Name& Pfad "
 
@@ -34,7 +24,6 @@ msgid "&About"
 msgstr "Ü&ber..."
 
 #: kfindtop.cpp:186
-#, fuzzy
 msgid "About &Qt"
 msgstr "Über &Qt"
 

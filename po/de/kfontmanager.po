@@ -93,17 +93,9 @@ msgstr ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 #~ msgid ""
 #~ msgstr ""
-#~ "Project-Id-Version: PACKAGE VERSION\n"
-#~ "PO-Revision-Date: 1997-10-25 18:09 MET DST\n"
-#~ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-#~ "Language-Team: LANGUAGE <LL@li.org>\n"
-#~ "MIME-Version: 1.0\n"
-#~ "Content-Type: text/plain; charset=CHARSET\n"
-#~ "Content-Transfer-Encoding: ENCODING\n"
+#~ "Project-Id-Version: kdehelp \n"
+#~ "POT-Creation-Date: 1997-12-18 13:52+0100\n"
+#~ "PO-Revision-Date: 1997-12-28 14:57+01\n"
+#~ "Last-Translator: Lars Doelle <lars.doelle@on-line.de>\n"

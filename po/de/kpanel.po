@@ -122,7 +122,6 @@ msgid "Tiny Style"
 msgstr "Winzig"
 
 #: props.C:281
-#, fuzzy
 msgid "Normal Style"
 msgstr "Normal"
 

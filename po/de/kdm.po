@@ -42,7 +42,6 @@ msgid "Password:"
 msgstr "Paﬂwort:"
 
 #: kgreeter.cpp:185
-#, fuzzy
 msgid "Session Type:"
 msgstr "Sitzungsart:"
 
