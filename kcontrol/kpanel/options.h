@@ -51,9 +51,10 @@ public:
     virtual void saveSettings();
     virtual void applySettings();
 
+/*CT 19Dec1998 - using layouts instead
 protected:
     void  resizeEvent(QResizeEvent *e);
-
+CT*/
 protected slots:
     void tooltips_clicked(bool click);
     void hide_panel_clicked(bool click);

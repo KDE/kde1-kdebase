@@ -33,105 +33,412 @@ extern KConfigBase *config;
 KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
     : KConfigWidget (parent, name)
 {
-    layout = new QVBoxLayout(this, 3);
+    layout = new QVBoxLayout(this, 5);
 
     tooltips_group = new QGroupBox(i18n("Menu Tooltips"), this);
+
+    //CT 19Dec1998 using layouts
+    QGridLayout *t_lay = new QGridLayout(tooltips_group, 4,8,1,1);
+    t_lay->addRowSpacing(0,15);
+    t_lay->addRowSpacing(3,1);
+    t_lay->addColSpacing(0,5);
+    t_lay->addColSpacing(2,5);
+    t_lay->addColSpacing(7,5);
+
+    t_lay->setRowStretch(0,0);
+    t_lay->setRowStretch(1,0);
+    t_lay->setRowStretch(2,0);
+    t_lay->setRowStretch(3,0);
+    t_lay->setColStretch(0,0);
+    t_lay->setColStretch(1,0);
+    t_lay->setColStretch(2,0);
+    t_lay->setColStretch(3,0);
+    t_lay->setColStretch(4,0);
+    t_lay->setColStretch(5,1);
+    t_lay->setColStretch(6,0);
+    t_lay->setColStretch(7,0);
+    //CT
+
     tips = new QCheckBox(i18n("Show &Menu Tooltips"), tooltips_group);
     connect(tips, SIGNAL(toggled(bool)), SLOT(tooltips_clicked(bool)));
 
+    //CT 19Dec1998 using layouts
+    tips->adjustSize();
+    tips->setMinimumSize(tips->size());
+    t_lay->addWidget(tips,1,1);
+    //CT
+
     slider = new KSlider(0, 2000, 10, 0,
 			 KSlider::Horizontal, tooltips_group);
-    tips_label = new QLabel(slider, i18n("De&lay:"), tooltips_group);
     slider->setSteps ( 125, 125 );
     slider->setTickmarks ( static_cast<QSlider::TickSetting>(QSlider::Below) );
     slider->setTickInterval ( 250 );
     slider->setTracking( true );
+    //CT 19Dec1998 using layouts
+    slider->adjustSize();
+    slider->setMinimumSize(slider->size());
+    slider->setMinimumHeight(slider->height()-20);
+    t_lay->addMultiCellWidget(slider,1,1,4,6);
+    //CT
+
+    tips_label = new QLabel(slider, i18n("De&lay:"), tooltips_group);
+    //CT 19Dec1998 using layouts
+    tips_label->adjustSize();
+    tips_label->setMinimumSize(tips_label->size());
+    t_lay->addWidget(tips_label,1,3);
+    //CT
 
     slider_small_label = new QLabel(i18n("Small"), tooltips_group);
-    slider_large_label = new QLabel(i18n("Large"), tooltips_group);
-    slider->adjustSize();
-    tips->adjustSize();
+    //CT 19Dec1998 using layouts
     slider_small_label->adjustSize();
-    tooltips_group->adjustSize();
-    tooltips_group->setMinimumSize(100, slider->sizeHint().height()+
-				   slider_small_label->sizeHint().height()+38);
+    slider_small_label->setMinimumSize(slider_small_label->size());
+    t_lay->addWidget(slider_small_label,2,4);
+    //CT
 
-    layout->addWidget(tooltips_group, 3);
+    slider_large_label = new QLabel(i18n("Large"), tooltips_group);
+    //CT 19Dec1998 using layouts
+    slider_large_label->adjustSize();
+    slider_large_label->setMinimumSize(slider_large_label->size());
+    t_lay->addWidget(slider_large_label,2,6);
+    //CT
+
+    t_lay->activate();
+
+    layout->addWidget(tooltips_group);
 
     //CT 17Oct1998
     vis_group = new QGroupBox(i18n("Visuals"), this);
 
+    QVBoxLayout *v_lay = new QVBoxLayout(vis_group,5);
+    v_lay->addSpacing(5);
+
+    //CT 19Dec1998 using layouts
+    t_lay = new QGridLayout(vis_group,5,11,1,1);
+    v_lay->addLayout(t_lay);
+
+    t_lay->addRowSpacing(0,5);
+    t_lay->addRowSpacing(4,5);
+    t_lay->addColSpacing(0,5);
+    t_lay->addColSpacing(2,5);
+    t_lay->addColSpacing(7,5);
+    t_lay->addColSpacing(10,5);
+
+    t_lay->setRowStretch(0,0);
+    t_lay->setRowStretch(1,0);
+    t_lay->setRowStretch(2,0);
+    t_lay->setRowStretch(3,0);
+    t_lay->setRowStretch(4,0);
+    t_lay->setColStretch(0,0);
+    t_lay->setColStretch(1,0);
+    t_lay->setColStretch(2,0);
+    t_lay->setColStretch(3,0);
+    t_lay->setColStretch(4,1);
+    t_lay->setColStretch(5,0);
+    t_lay->setColStretch(6,0);
+    t_lay->setColStretch(7,0);
+    t_lay->setColStretch(8,1);
+    t_lay->setColStretch(9,0);
+    t_lay->setColStretch(10,0);
+    //CT
+
     hide_panel = new QCheckBox( i18n("Auto &Hide Panel"),
 				vis_group);
     connect(hide_panel,SIGNAL(toggled(bool)), SLOT(hide_panel_clicked(bool)));
+    //CT 19Dec1998 using layouts
+    hide_panel->adjustSize();
+    hide_panel->setMinimumSize(hide_panel->size());
+    t_lay->addWidget(hide_panel,2,1);
+    //CT
+
     p_dl_label = new QLabel( i18n("Delay:"), vis_group);
+    //CT 19Dec1998 using layouts
+    p_dl_label->adjustSize();
+    p_dl_label->setMinimumSize(p_dl_label->size());
+    t_lay->addMultiCellWidget(p_dl_label,1,1,3,5);
+    //CT
+
     p_small_label = new QLabel ( i18n("Small"), vis_group);
+    //CT 19Dec1998 using layouts
+    p_small_label->adjustSize();
+    p_small_label->setMinimumSize(p_small_label->size());
+    t_lay->addWidget(p_small_label,3,3);
+    //CT
+
     p_large_label = new QLabel ( i18n("Large"), vis_group);
+    //CT 19Dec1998 using layouts
+    p_large_label->adjustSize();
+    p_large_label->setMinimumSize(p_large_label->size());
+    t_lay->addWidget(p_large_label,3,5);
+    //CT
+
     panel_delay_slider = new KSlider(1000, 10000, 1000, 6000,
 			 KSlider::Horizontal, vis_group);
     panel_delay_slider->setSteps(1000,1000);
+    //CT 19Dec1998 using layouts
+    panel_delay_slider->adjustSize();
+    panel_delay_slider->setMinimumSize(panel_delay_slider->size());
+    panel_delay_slider->setMinimumHeight(panel_delay_slider->height()-20);
+    t_lay->addMultiCellWidget(panel_delay_slider,2,2,3,5);
+    //CT
 
     p_spd_label = new QLabel ( i18n ("Speed:"), vis_group);
+    //CT 19Dec1998 using layouts
+    p_spd_label->adjustSize();
+    p_spd_label->setMinimumSize(p_spd_label->size());
+    t_lay->addMultiCellWidget(p_spd_label,1,1,7,9);
+    //CT
+
     p_slow_label = new QLabel ( i18n("Slow"), vis_group);
+    //CT 19Dec1998 using layouts
+    p_slow_label->adjustSize();
+    p_slow_label->setMinimumSize(p_slow_label->size());
+    t_lay->addWidget(p_slow_label,3,7);
+    //CT
+
     p_fast_label = new QLabel ( i18n("Fast"), vis_group);
+    //CT 19Dec1998 using layouts
+    p_fast_label->adjustSize();
+    p_fast_label->setMinimumSize(p_fast_label->size());
+    t_lay->addWidget(p_fast_label,3,9);
+    //CT
+
     panel_speed_slider = new KSlider(1, 20, 1, 4,
 			 KSlider::Horizontal, vis_group);
     panel_speed_slider->setSteps(1,1);
+    //CT 19Dec1998 using layouts
+    panel_speed_slider->adjustSize();
+    panel_speed_slider->setMinimumSize(panel_speed_slider->size());
+    panel_speed_slider->setMinimumHeight(panel_speed_slider->height()-20);
+    t_lay->addMultiCellWidget(panel_speed_slider,2,2,7,9);
+    //CT
+
+ 
+    //CT 19Dec1998 using layouts
+    t_lay = new QGridLayout(vis_group,5,11,1,1);
+    v_lay->addLayout(t_lay);
+
+    t_lay->addRowSpacing(0,5);
+    t_lay->addRowSpacing(4,5);
+    t_lay->addColSpacing(0,5);
+    t_lay->addColSpacing(2,5);
+    t_lay->addColSpacing(7,5);
+    t_lay->addColSpacing(10,5);
+
+    t_lay->setRowStretch(0,0);
+    t_lay->setRowStretch(1,0);
+    t_lay->setRowStretch(2,0);
+    t_lay->setRowStretch(3,0);
+    t_lay->setRowStretch(4,0);
+    t_lay->setColStretch(0,0);
+    t_lay->setColStretch(1,0);
+    t_lay->setColStretch(2,0);
+    t_lay->setColStretch(3,0);
+    t_lay->setColStretch(4,1);
+    t_lay->setColStretch(5,0);
+    t_lay->setColStretch(6,0);
+    t_lay->setColStretch(7,0);
+    t_lay->setColStretch(8,1);
+    t_lay->setColStretch(9,0);
+    t_lay->setColStretch(10,0);
+    //CT
 
 
     hide_taskbar = new QCheckBox( i18n("Auto Hide &Taskbar"),
 				  vis_group);
     connect(hide_taskbar,SIGNAL(toggled(bool)),SLOT(hide_taskbar_clicked(bool)));
+    //CT 19Dec1998 using layouts
+    hide_taskbar->adjustSize();
+    hide_taskbar->setMinimumSize(hide_taskbar->size());
+    t_lay->addWidget(hide_taskbar,2,1);
+    //CT
+
     t_dl_label = new QLabel( i18n("Delay:"), vis_group);
+    //CT 19Dec1998 using layouts
+    t_dl_label->adjustSize();
+    t_dl_label->setMinimumSize(t_dl_label->size());
+    t_lay->addMultiCellWidget(t_dl_label,1,1,3,5);
+    //CT
+
     t_small_label = new QLabel ( i18n("Small"), vis_group);
+    //CT 19Dec1998 using layouts
+    t_small_label->adjustSize();
+    t_small_label->setMinimumSize(t_small_label->size());
+    t_lay->addWidget(t_small_label,3,3);
+    //CT
+
     t_large_label = new QLabel ( i18n("Large"), vis_group);
+    //CT 19Dec1998 using layouts
+    t_large_label->adjustSize();
+    t_large_label->setMinimumSize(t_large_label->size());
+    t_lay->addWidget(t_large_label,3,5);
+    //CT
 
     tbar_delay_slider = new KSlider(1000, 10000, 1000, 6000,
 			 KSlider::Horizontal, vis_group);
     tbar_delay_slider->setSteps(1000,1000);
+    //CT 19Dec1998 using layouts
+    tbar_delay_slider->adjustSize();
+    tbar_delay_slider->setMinimumSize(tbar_delay_slider->size());
+    tbar_delay_slider->setMinimumHeight(tbar_delay_slider->height()-20);
+    t_lay->addMultiCellWidget(tbar_delay_slider,2,2,3,5);
+    //CT
 
     t_spd_label = new QLabel ( i18n ("Speed:"), vis_group);
+    //CT 19Dec1998 using layouts
+    t_spd_label->adjustSize();
+    t_spd_label->setMinimumSize(t_spd_label->size());
+    t_lay->addMultiCellWidget(t_spd_label,1,1,7,9);
+    //CT
+
     t_slow_label = new QLabel ( i18n("Slow"), vis_group);
+    //CT 19Dec1998 using layouts
+    t_slow_label->adjustSize();
+    t_slow_label->setMinimumSize(t_slow_label->size());
+    t_lay->addWidget(t_slow_label,3,7);
+    //CT
+
     t_fast_label = new QLabel ( i18n("Fast"), vis_group);
+    //CT 19Dec1998 using layouts
+    t_fast_label->adjustSize();
+    t_fast_label->setMinimumSize(t_fast_label->size());
+    t_lay->addWidget(t_fast_label,3,9);
+    //CT
+
     tbar_speed_slider = new KSlider(1, 20, 1, 4,
 			 KSlider::Horizontal, vis_group);
     tbar_speed_slider->setSteps(1,1);
+    //CT 19Dec1998 using layouts
+    tbar_speed_slider->adjustSize();
+    tbar_speed_slider->setMinimumSize(tbar_speed_slider->size());
+    tbar_speed_slider->setMinimumHeight(tbar_speed_slider->height()-20);
+    t_lay->addMultiCellWidget(tbar_speed_slider,2,2,7,9);
+    //CT
+
+    //CT 19Dec1998 using layouts
+    t_lay = new QGridLayout(vis_group,5,7,1,1);
+    v_lay->addLayout(t_lay);
+
+    t_lay->addRowSpacing(0,5);
+    t_lay->addRowSpacing(4,5);
+    t_lay->addColSpacing(0,5);
+    t_lay->addColSpacing(2,5);
+    t_lay->addColSpacing(6,5);
+
+    t_lay->setRowStretch(0,0);
+    t_lay->setRowStretch(1,0);
+    t_lay->setRowStretch(2,0);
+    t_lay->setRowStretch(3,0);
+    t_lay->setRowStretch(4,0);
+    t_lay->setColStretch(0,0);
+    t_lay->setColStretch(1,0);
+    t_lay->setColStretch(2,0);
+    t_lay->setColStretch(3,0);
+    t_lay->setColStretch(4,1);
+    t_lay->setColStretch(5,0);
+    t_lay->setColStretch(6,0);
+    //CT
 
     show_hide = new QCheckBox( i18n("Animate Show/Hide"), vis_group);
     connect(show_hide,SIGNAL(toggled(bool)),SLOT(show_hide_clicked(bool)));
-    show_hide_label = new QLabel( i18n("Speed"), vis_group);
+    //CT 19Dec1998 using layouts
+    show_hide->adjustSize();
+    show_hide->setMinimumSize(show_hide->size());
+    t_lay->addWidget(show_hide,2,1);
+    //CT
+
+    show_hide_label = new QLabel( i18n("Speed:"), vis_group);
+    //CT 19Dec1998 using layouts
+    show_hide_label->adjustSize();
+    show_hide_label->setMinimumSize(show_hide_label->size());
+    t_lay->addMultiCellWidget(show_hide_label,1,1,3,5);
+    //CT
+
     show_slow_label = new QLabel ( i18n("Slow"), vis_group);
+    //CT 19Dec1998 using layouts
+    show_slow_label->adjustSize();
+    show_slow_label->setMinimumSize(show_slow_label->size());
+    t_lay->addWidget(show_slow_label,3,3);
+    //CT
+
     show_fast_label = new QLabel ( i18n("Fast"), vis_group);
+    //CT 19Dec1998 using layouts
+    show_fast_label->adjustSize();
+    show_fast_label->setMinimumSize(show_fast_label->size());
+    t_lay->addWidget(show_fast_label,3,5);
+    //CT
+
     show_hide_slider = new KSlider(10,200,19,50,
 				   KSlider::Horizontal, vis_group);
     show_hide_slider->setSteps(10,10);
+    //CT 19Dec1998 using layouts
+    show_hide_slider->adjustSize();
+    show_hide_slider->setMinimumSize(show_hide_slider->size());
+    show_hide_slider->setMinimumHeight(show_hide_slider->height()-20);
+    t_lay->addMultiCellWidget(show_hide_slider,2,2,3,5);
+    //CT
 
-    panel_delay_slider->adjustSize();
-    p_small_label->adjustSize();
-    p_dl_label->adjustSize();
-    layout->addWidget(vis_group, 2);
-    vis_group->setMinimumSize(100,(panel_delay_slider->sizeHint().height()
-				   +p_small_label->sizeHint().height()
-				   +p_dl_label->sizeHint().height())*3 + 60);
+    //CT try to align the checkboxes somehow
+    int max  = hide_panel->width();
+    int temp = hide_taskbar->width();
+    max      = temp>max?temp:max;
+    temp     = show_hide->width();
+    max      = temp>max?temp:max;
+    hide_panel->setMinimumWidth(max);
+    hide_taskbar->setMinimumWidth(max);
+    show_hide->setMinimumWidth(max);
+    //CT
+
+    v_lay->activate();
+
+    layout->addWidget(vis_group);
 
     others_group = new QGroupBox( i18n("Others"), this);
-    personal_first = new QCheckBox( i18n("Personal &First"),
+
+    //CT 19Dec1998 using layouts
+    t_lay = new QGridLayout(others_group,9,3,1,1);
+    t_lay->addRowSpacing(0,15);
+    t_lay->addRowSpacing(8,5);
+    t_lay->addColSpacing(0,5);
+    t_lay->addColSpacing(2,5);
+    t_lay->setColStretch(0,0);
+    t_lay->setColStretch(1,1);
+    t_lay->setColStretch(2,0);
+    //CT
+
+    personal_first = new QCheckBox( i18n("Personal Menu Entries &First"),
 				    others_group);
-    folders_first = new QCheckBox ( i18n("F&olders First"),
+    //CT 19Dec1998 using layouts
+    personal_first->adjustSize();
+    personal_first->setMinimumSize(personal_first->size());
+    t_lay->addWidget(personal_first,1,1);
+    //CT
+
+    folders_first = new QCheckBox ( i18n("Menu F&olders First"),
 				    others_group);
+    //CT 19Dec1998 using layouts
+    folders_first->adjustSize();
+    folders_first->setMinimumSize(folders_first->size());
+    t_lay->addWidget(folders_first,3,1);
+    //CT
+
     clock = new QCheckBox(i18n("&Clock shows time in AM/PM format"),
 				others_group);
-    clockBeats = new QCheckBox( i18n("&Clock shows time in Internet beats"), others_group );
-
-    personal_first->adjustSize();
-    folders_first->adjustSize();
+    //CT 19Dec1998 using layouts
     clock->adjustSize();
-    clockBeats->adjustSize();
-    layout->addWidget(others_group, 2);
-    others_group->setMinimumSize(100,
- 	      clockBeats->sizeHint().height() * 4 + 30);
-
+    clock->setMinimumSize(clock->size());
+    t_lay->addWidget(clock,5,1);
     //CT
+
+    clockBeats = new QCheckBox( i18n("Clock shows time in &Internet beats"), others_group );
+    //CT 19Dec1998 using layouts
+    clockBeats->adjustSize();
+    clockBeats->setMinimumSize(clockBeats->size());
+    t_lay->addWidget(clockBeats,7,1);
+
+    t_lay->activate();
+    //CT
+
+    layout->addWidget(others_group);
 
     layout->activate();
 
@@ -184,157 +491,8 @@ KOptionsConfig::~KOptionsConfig( ) {
 }
 
 //CT 17Oct1998 -- rewritten
-void KOptionsConfig::resizeEvent(QResizeEvent *e) {
-    KConfigWidget::resizeEvent(e);
-
-    QRect rect = vis_group->contentsRect();
-    int h = panel_delay_slider->height();
-    h += p_small_label->height();
-    h += p_dl_label->height();
-    int o = (rect.height() - 10 - 3*h) / 6;
-
-    rect.setTop(rect.top() + 10);
-
-    hide_panel->adjustSize();
-    hide_panel->move(10,rect.top() + o + (h - hide_panel->height())/2);
-    hide_taskbar->adjustSize();
-    hide_taskbar->move(10,rect.top() + 3*o+h+(h - hide_taskbar->height())/2);
-    show_hide->adjustSize();
-    show_hide->move(10,rect.top() + 5*o+2*h+(h - show_hide->height())/2);
-
-    int maxw = hide_panel->width();
-    if (maxw < hide_taskbar->width()) maxw =hide_taskbar->width();
-    if (maxw < show_hide->width()) maxw = show_hide->width();
-
-    int xpos = maxw + 20;
-    int ypos = 10+2*o;
-    int dispw = (rect.width()-xpos)/2;
-
-    p_dl_label->move(xpos + (dispw-20-p_dl_label->width())/2,ypos);
-    ypos += p_dl_label->height()+2;
-    panel_delay_slider->setGeometry(xpos, ypos,
-				    dispw-10, panel_delay_slider->height());
-
-    ypos += panel_delay_slider->height() -3;
-    p_small_label->move(xpos,ypos);
-
-    p_large_label->adjustSize();
-    xpos += dispw -10- p_large_label->width();
-    p_large_label->move(xpos,ypos);
-
-    ypos += p_small_label->height()+o;
-
-    xpos = maxw + 20;
-    t_dl_label->adjustSize();
-    t_dl_label->move(xpos+(dispw-10-t_dl_label->width())/2, ypos);
-
-    ypos += t_dl_label->height()+2;
-    tbar_delay_slider->adjustSize();
-    tbar_delay_slider->setGeometry(xpos,ypos,
-				   dispw-10, tbar_delay_slider->height());
-
-    t_small_label->adjustSize();
-    ypos += tbar_delay_slider->height()-3;
-    t_small_label->move(xpos,ypos);
-
-    t_large_label->adjustSize();
-    t_large_label->move(xpos+dispw-10-t_large_label->width(),ypos);
-
-    ypos += t_small_label->height()+o;
-
-    show_hide_label->adjustSize();
-    show_hide_label->move(xpos + (dispw-10-show_hide_label->width()/2),ypos);
-
-    show_hide_slider->adjustSize();
-    ypos += show_hide_label->height();
-    show_hide_slider->setGeometry(xpos,ypos,dispw*2 - 10,
-				  show_hide_slider->height());
-
-    show_slow_label->adjustSize();
-    ypos += show_hide_slider->height()-3;
-    show_slow_label->move(xpos,ypos);
-
-    show_fast_label->adjustSize();
-    xpos = rect.width()-10-show_fast_label->width();
-    show_fast_label->move(xpos,ypos);
-
-    //CT another column
-    xpos = maxw + dispw + 40;
-    ypos = p_dl_label->y();
-
-    p_spd_label->adjustSize();
-    p_spd_label->move(xpos+(dispw-10-p_spd_label->width())/2,ypos);
-
-    ypos = panel_delay_slider->y();
-
-    panel_speed_slider->adjustSize();
-    panel_speed_slider->setGeometry(xpos,ypos,dispw-20,
-				    panel_speed_slider->height());
-
-    p_slow_label->adjustSize();
-    ypos = p_small_label->y();
-    p_slow_label->move(xpos,ypos);
-
-    p_fast_label->adjustSize();
-    xpos = rect.width()-20 - p_fast_label->width();
-    p_fast_label->move(xpos,ypos);
-
-    ypos = t_dl_label->y();
-    xpos = maxw + dispw + 40;
-    t_spd_label->adjustSize();
-    t_spd_label->move(xpos+(dispw-10-t_spd_label->width())/2,ypos);
-
-    ypos = tbar_delay_slider->y();
-
-    tbar_speed_slider->adjustSize();
-    tbar_speed_slider->setGeometry(xpos,ypos,dispw-20,
-				   tbar_speed_slider->height());
-
-    t_slow_label->adjustSize();
-    ypos = t_small_label->y();
-    t_slow_label->move(xpos,ypos);
-
-    t_fast_label->adjustSize();
-    xpos=rect.width()-10-t_fast_label->width();
-    t_fast_label->move(xpos,ypos);
-
-
-    rect = tooltips_group->contentsRect();
-    rect.setTop(rect.top() + 5);
-
-    ypos = 10  +(slider->height()+
-		slider_small_label->height()-tips->height())/2;
-    tips->setGeometry(10, ypos, tips->width(), tips->height());
-    xpos = tips->width() + 20;
-
-    tips_label->adjustSize();
-    tips_label->move(xpos, 10 + (slider->height()
-				     +slider_small_label->height()
-				     -tips_label->height())/2 );
-
-    xpos += tips_label->width() +10;
-    slider->setGeometry(xpos, ypos, rect.width() - xpos -10, slider->height());
-
-    ypos = 15 + slider->height();
-    slider_small_label->move(xpos,ypos);
-
-    slider_large_label->adjustSize();
-    xpos = rect.width() - 10 - slider_large_label->width();
-    slider_large_label->move(xpos,ypos);
-
-    rect = others_group->contentsRect();
-    h = clock->height();
-    o = (rect.height()  - 4*h) / 4;
-    rect.setTop(rect.top() + 5);
-
-    personal_first->move(10,10+o);
-    folders_first->adjustSize();
-    folders_first->move(10,10+2*o+h);
-    clock->adjustSize();
-    clock->move(10, 10+3*o + 2*h);
-    clockBeats->adjustSize();
-    clockBeats->move(10,10+4*o+3*h);
-}
+//CT 19Dec1998 I HATE applying layout management
+//CT this is out! void KOptionsConfig::resizeEvent(QResizeEvent *e) {
 
 void KOptionsConfig::loadSettings() {
 
