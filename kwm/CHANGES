@@ -5,9 +5,9 @@
 
 
 kwm (since 0.10) was almost rewritten from scratch in C++.  Many ideas
-and some code went in from David Hogan's 9wm, a smart and small
-windowmanager written in plain C. There are of course also strong
-influences from my experiences with the former kwm.
+and some code went in from my experiences with the former kwm, which I
+originally based on David Hogan's 9wm (a smart and small windowmanager
+written in plain C).
 
 
 In 0.13:
