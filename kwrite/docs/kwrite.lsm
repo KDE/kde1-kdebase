@@ -1,0 +1,15 @@
+Begin3
+Title:          KWrite
+Version:        0.98
+Entered-date:   25/01/1999
+Description:    A programmer's text editor for the KDE project
+Keywords:       KDE, Qt, gui, X11, editor, text editor
+Author:         <digisnap@cs.tu-berlin.de> Jochen Wilhelmy
+Maintained-by:  <digisnap@cs.tu-berlin.de> Jochen Wilhelmy
+Primary-site:   ftp://fiwi02.wiwi.uni-tuebingen.de/pub/kde/apps/editors
+Home-Page:      
+Alternate-site: 
+Original-site:  ftp://fiwi02.wiwi.uni-tuebingen.de/pub/kde/apps/editors
+Platform:       Unix with Qt 1.42 and kde libs
+Copying-policy: GPL 
+End

@@ -1,0 +1,272 @@
+<!doctype linuxdoc system>
+
+<!-- The KWrite Handbook.
+
+ -->
+
+<article>
+
+<!-- Title information -->
+
+<title>The KWrite Handbook
+<author>Cristian Tibirna, <tt/tibirna@kde.org/
+<date>Version 0.1, 25 Jan 1999
+<abstract>This Handbook describes KWrite Version 0.98
+
+<!-- Table of contents -->
+<toc>
+
+<!-- Begin the document -->
+
+
+<sect>Introduction
+
+<p>
+KWrite is a text editor for the KDE Desktop. It could be a
+programmer's editor best used in conjunction with kfm for source file
+browsing for different languages. KWrite may also serve well for
+composition of small plain text documents. It is meant to be a
+programmers editor, and it could be considered as a partial
+alternative to more powerful editors such as XEmacs or Emacs. KWrite's
+main functionality feature is the colorized syntax assured for many
+programming languages: C/C++, Java, Python, Perl, Bash, Modula 2,
+HTML, Ada.
+<p>
+<sect1>New<p>
+<itemize>
+<item>Python and Perl support
+<item> many, many others
+</itemize>
+
+<P>
+I hope you will enjoy this editor,
+<p>
+<tt>Jochen Wilhelmy</tt>
+<p>
+<htmlurl url="mailto:digisnap@cs.tu-berlin.de" name="digisnap@cs.tu-berlin.de">
+<p>
+
+<sect>Installation
+<p>
+<sect1>How to obtain KWrite
+<p>
+KWrite is a core application of the KDE project <url url="http://www.kde.org">.
+KWrite can be found on <url url="ftp://ftp.kde.org/pub/kde/">, the main ftp site
+of the KDE project.
+
+<sect1>Requirements
+<p>
+In order to successfully compile KWrite, you need the latest versions of <tt> libkdecore</tt>
+and <tt> libkfm</tt>. All required libraries as well as KWrite itself can be found
+on <url url="ftp://ftp.kde.org/pub/kde/">. 
+
+
+
+<sect1>Compilation and installation
+<p>
+
+In order to compile and install KWrite on your system, type the following in the base 
+directory of the KWrite distribution:
+<tscreen><verb>
+% ./configure
+% make
+% make install
+</verb></tscreen>
+
+
+Since KWrite uses <tt>autoconf</tt> you should have not trouble compiling it.
+Should you run into problems please report them to the <sf/KDE/ mailing lists.
+
+<sect>Onscreen Fundamentals
+<p>
+
+KWrite is very simply to use. I am sure that if you have ever used a text edit you 
+will have no problems with KWrite. 
+
+<p>
+<sect1>Drag and Drop
+<p>
+KWrite makes use of the KDE Drag and Drop protocol. This means that you can darg
+and drop files form the Desktop or kfm or some remote ftp site that you have
+open in one of kfm's windows on to KWrite. 
+
+<sect1>Editing files on the internet
+<p>
+You can open and save files transparently on the internet. Try the the following at the
+command-line prompt to see an example of this.
+
+<tscreen><verb>
+% kwrite ftp://ftp.kde.org/pub/kde/Welcome.msg
+</verb></tscreen>
+
+
+<sect1> Printing
+<p>
+KWrite doesn't support printing yet.
+<p>
+
+<p>
+<sect1> Key Bindings
+<p>
+KWrite honors the following key bindings.
+
+
+<itemize>
+<item><tt/Insert/ Toggle between Insert and Overwrite mode
+<item><tt/Left Arrow/ Move the cursor one character leftwards 
+<item><tt/Right Arrow/ Move the cursor one character rightwards 
+<item><tt/Up Arrow/ Move the cursor one line upwards 
+<item><tt/Down Arrow/ Move the cursor one line downwards 
+<item><tt/Page Up/ Move the cursor one page upwards 
+<item><tt/Page Down/ Move the cursor one page downwards 
+<item><tt/Backspace/ Delete the character to the left of the cursor 
+<item><tt/Home/ Move the cursor to the beginning of the line 
+<item><tt/End/ Move the cursor to the end of the line 
+<item><tt/Delete/ Delete the character to the right of the cursor 
+<item><tt/Shift - Left Arrow/ Mark text one character leftwards 
+<item><tt/Shift - Right Arrow/ Mark text one character rightwards 
+<item><tt/Alternate-S/ Set bookmark
+<item><tt/Alternate-C/ Clear bookmark
+<item><tt/F1/ Help
+<item><tt/F3/ Find again
+<item><tt/F5/ Vertical selection
+<item><tt/Control-F/ Find
+<item><tt/Control-C/ Copy the marked text to the clipboard. 
+<item><tt/Control-F/ Find
+<item><tt/Control-G/ Go to a given line
+<item><tt/Control-I/ Indent
+<item><tt/Control-K/ Delete a line
+<item><tt/Control-N/ New document (the one already in editing will be saved) 
+<item><tt/Control-R/ Replace
+<item><tt/Control-U/ Unindent
+<item><tt/Control-V/ Paste the clipboard text into line edit. 
+<item><tt/Control-X/ Cut the marked text, copy to clipboard. 
+</itemize>
+
+<sect>The Menu Entries
+<p>
+<sect1>File
+<p>
+<sect2>New
+<p>
+Opens a new Document in the editor
+<sect2>Open
+<p>
+Allows the user to open a document
+<sect2>Insert
+<p>
+Allows the user to insert a new document in the edited document
+<sect2>Open Recent
+<p>
+A fast list of previously opened documents
+<sect2>Save
+<p>
+Saves the current Document
+<sect2>Save As
+<p>
+Allows the user to save the document in a new file.
+<sect2>Close
+<p>
+Closes the editor window. If the closed editor window was the last instance open,
+KWrite will exit.
+<sect2>New Window
+<p>
+Creates a new window
+<sect2>New View
+<p>
+Creates a new view of the same document
+
+
+<sect1>Edit
+<p>
+<sect2>Copy 
+<p>
+Copies the current selection to the clip board.
+<sect2>Cut
+<p>
+Deletes the current selection and places it into the clip board
+<sect2>Paste
+<p>
+Inserts the content of the clip board at the current cursor position
+<sect2>Find
+<p>
+Opens the find dialog. 
+<sect2>Replace
+<p>
+Opens the replace dialog
+<sect2>Find Again 
+<p>
+Repeats the last find operation , if a find operation has already taken place.
+<sect2>Goto Line
+<p>
+Opens the goto line dialog
+<sect2>Undo
+<p>
+Annulated the last operation
+<sect2>Redo
+<p>
+Redoes the last annulated operation
+<sect2>Indent
+<p>
+Increases the paragraph's indentation
+<sect2>Unindent
+<p>
+Reduces the paragraph's indentation
+<sect2>Select All
+<p>
+Selects all the buffer
+<sect2>Unselect All
+<p>
+Annulates the selections
+<sect2>Invert the selection
+<p>
+Selects the unselected text and annulates the previous selection
+
+<sect1>Bookmarks
+<p>
+
+<sect1>Options
+<p>
+<sect2>Set Highlight
+<p>
+Allows the user to choose the type of color highlighting which the editor uses to display the text.
+The font/color information is not stored with the document. 
+<sect2>Defaults
+<p>
+Allows the user to set and save a group of default settings: font, fg/bg color, for each type of highlight definition
+<sect2>Highlight
+<p>
+Allows the user to customize in detail the way highlight rules work for him (together with mime type association for each highlight definition). 
+<sect2>Colors
+<p>
+Allows the user to select fore and background color of KWrite's text display area.
+<sect2>Vertical Selection
+<p>
+Turns on/off the vertical selection feature
+<sect2>Show toolbar
+<p>
+<sect2>Show statusbar
+<p>
+<sect2>Save Config
+<p>
+Saves the modified configurations
+
+<sect1>Help
+<p>
+<sect2>Contents
+<p>
+Invokes the KDE help system with the KWrite help pages displayed.
+<sect2>About kwrite
+<p>
+Displays essential information about KWrite.
+
+<sect2>About KDE
+<p>
+Displays essential information about KDE
+
+<sect>Questions and answers
+
+
+
+<p>
+</article>

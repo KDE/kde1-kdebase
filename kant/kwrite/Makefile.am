@@ -12,6 +12,7 @@ noinst_HEADERS = highlight.h kwdialog.h kwview.h toplevel.h \
 
 kwrite_METASOURCES = USE_AUTOMOC
 
+SUBDIRS = docs
 
 lnkdir = $(kde_appsdir)/Applications
 lnk_DATA = kwrite.kdelnk
