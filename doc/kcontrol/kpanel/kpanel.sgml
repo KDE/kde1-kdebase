@@ -13,11 +13,11 @@
 
 <!-- Begin the document -->
 
-<sect>Location and Style of the  Panel and Taskbar.
+<sect>Panel and Taskbar: Location and Style 
 
 <p>
 The <em>Panel</em> contains the <em>Application
-Starter</em> button, buttons for selecting between virtual
+Starter</em> button, buttons for switching virtual
 desktops, a clock, and various other swallowed icons
 placed there by default or by the user.
 <itemize>
@@ -34,7 +34,7 @@ displayed horizontally along the <bf>top</bf> or <bf>bottom</bf>
 of the screen,
 or vertically downwards from the  <bf>top/left</bf> corner.
 <item>
-The <bf>Style</bf> buttons choose  between three sizes of the panel:
+The <bf>Style</bf> buttons choose between three sizes of the panel:
 <bf>Tiny</bf>, <bf>Normal</bf>, or <bf>Large</bf>.  This choice 
 affects the size of icons used in the panel, and the placement of
 virtual desktop buttons, etc.
@@ -45,15 +45,14 @@ virtual desktop buttons, etc.
 <itemize>
 <item>
 <bf>Menu Tooltips</bf>
-are a boxes containing a short descriptive text that appear
-(after a short delay) when the mouse pointer is placed over
+Tooltips are small descriptive hints that appear
+after a short delay when the mouse pointer is over
 a button on the Panel or an entry in the Application Starter
-list.    If you enable Tooltips, you can use the slider
-to  set the delay
-before they appear.
+list.  If you enable Tooltips, you can use the slider
+to set the delay before they appear.
 <item>
 <bf>Personal First</bf>:  
-Choosing this makes your custom entries in the user
+Choosing this option makes your custom entries in the user
 section of the Application Starter the
 <em>primary  entries </em> on the menu.
 (The default makes the KDE application entries primary).
@@ -81,7 +80,7 @@ the Panel corresponding to each Virtual Desktop.
 Text entered in an open  box appears as a label
 on the corresponding button.
 
-The <bf>Visible</bf> slider choses  the number of
+The <bf>Visible</bf> slider choses the number of
 Virtual Desktops to be configured.
 (Possible choices are 2,4,6, or 8).  
 
