@@ -37,6 +37,7 @@ public:
 private:
     KWMModuleApplication* kwmmapp;
     QList<Desktop> desktops;
+    QList<PagerWindow> stickys;
     Desktop *activeDesktop;
     enum Position { TopRight, TopLeft, BottomRight, BottomLeft, Costumized } position;
     static const char *PosStrings[5];

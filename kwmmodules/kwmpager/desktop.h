@@ -46,13 +46,15 @@ public:
     ~Desktop() {};
     void activate(bool flag);
     void addWindow(Window);
-    void removeWindow(Window);
+    void addWindow(PagerWindow *win);
+    PagerWindow *removeWindow(Window);
+    PagerWindow *getWindow(Window);
     void changeWindow(Window w);
     void raiseWindow(Window w);
     void activateWindow(Window w);
     void lowerWindow(Window);
     void init();
-    
+
 protected:
     void fillPixmap();
     void calculate(PagerWindow* win);

@@ -87,7 +87,7 @@ Pager::~Pager()
 
 void Pager::receiveCommand(QString command)
 {
-    if (command == "pager::config") {
+    if (command == "pager:config") {
 	readSettings();
 	initDesktops();
 	placeIt();
@@ -154,9 +154,15 @@ void Pager::placeIt()
 
 void Pager::changeDesktop(int index) 
 {
+    Desktop *old = activeDesktop;
     activeDesktop->activate(false);
     activeDesktop = desktops.at(index - 1);
     activeDesktop->activate(true);
+    PagerWindow *win;
+    for (win = stickys.first(); win ; win = stickys.next()) {
+	old -> removeWindow(win->id);
+	activeDesktop -> addWindow(win);
+    }	
 }
 
 void Pager::resizeEvent ( QResizeEvent * )  
@@ -211,19 +217,55 @@ void Pager::changeNumber(int)
 void Pager::addWindow(Window w)
 { 
     // debug("add %lx",w);
-    desktops.at(KWM::desktop(w) - 1 ) -> addWindow(w);
+    PagerWindow *win = new PagerWindow;
+    win->id = w;
+    
+    if (KWM::isSticky(w)) {
+	stickys.append(win);
+	desktops.at(KWM::desktop(w) - 1 )->addWindow(win);
+    } else
+	desktops.at(KWM::desktop(w) - 1 ) -> addWindow(w);
 }
 
 void Pager::removeWindow(Window w)
 {
     // debug("remove %lx",w);
-    desktops.at(KWM::desktop(w) - 1) -> removeWindow(w);
+    PagerWindow *win;
+    for (win = stickys.first(); win && win->id != w; win = stickys.next())
+	continue;
+
+    if (win)
+	stickys.remove();
+
+    win = desktops.at(KWM::desktop(w) - 1) -> removeWindow(w);
+    if (win)
+	delete win;
 }
 
 void Pager::windowChange(Window w)
 {
+    Desktop *current = desktops.at(KWM::desktop(w) - 1);
     // debug("change %lx",w);
-    desktops.at(KWM::desktop(w) - 1)->changeWindow(w);
+    PagerWindow *win;
+    for (win = stickys.first(); win && win->id != w; win = stickys.next())
+	continue;
+
+    if (!KWM::isSticky(w)) 
+	stickys.remove();
+    else {
+	if (!win) {
+	    win = current->getWindow(w);
+	    if (win)
+		stickys.append(win);
+	}
+    }
+	
+    if ( current->getWindow(w) == 0L ) {
+	for (Desktop *desk = desktops.first(); desk; desk = desktops.next())
+	    desk->removeWindow(w);
+	current->addWindow(w);
+    } else
+	desktops.at(KWM::desktop(w) - 1)->changeWindow(w);
 }
 
 void Pager::raiseWindow(Window w)
@@ -241,7 +283,14 @@ void Pager::lowerWindow(Window w)
 void Pager::windowActivate(Window w)
 {
     // debug("activate %lx",w);
-    desktops.at(KWM::desktop(w) - 1) -> activateWindow(w);
+
+    static Desktop *desktopWithActiveWindow = 0L;
+ 
+    if (desktopWithActiveWindow)
+	desktopWithActiveWindow -> activateWindow( 0L );
+
+    desktopWithActiveWindow = desktops.at(KWM::desktop(w) - 1);
+    desktopWithActiveWindow -> activateWindow( w );
 }
 
 int main( int argc, char *argv[] )

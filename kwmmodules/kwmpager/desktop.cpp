@@ -81,16 +81,22 @@ void Desktop::init()
     pixmap.fill(backgroundColor());
 }
 
-void Desktop::addWindow(Window w)
+PagerWindow *Desktop::getWindow(Window w)
 {
-    PagerWindow *win = new PagerWindow;
-    if (w == KWM::activeWindow())
+    PagerWindow *win = 0L;
+    for (win = windows.first(); win && win->id != w; win = windows.next())
+	continue;
+    return win;
+}
+
+void Desktop::addWindow(PagerWindow *win)
+{
+    if (win->id == KWM::activeWindow())
 	activeWindow = win;
-    
-    win->id = w;
-    win->rect = KWM::geometry(w, true);
-    win->icony = KWM::isIconified(w);
-    win->name = KWM::title(w);
+
+    win->rect = KWM::geometry(win->id, true);
+    win->icony = KWM::isIconified(win->id);
+    win->name = KWM::title(win->id);
     calculate(win);
     //    QToolTip::add(this, win->prect, win->name);
     windows.append(win);
@@ -98,7 +104,15 @@ void Desktop::addWindow(Window w)
     repaint( false );
 }
 
-void Desktop::removeWindow(Window w)
+void Desktop::addWindow(Window w)
+{
+    PagerWindow *win = new PagerWindow;
+    win->id = w;
+    
+    addWindow(win);
+}
+
+PagerWindow *Desktop::removeWindow(Window w)
 {
     PagerWindow *win;
     for (win = windows.first(); win && win->id != w; win = windows.next())
@@ -106,15 +120,23 @@ void Desktop::removeWindow(Window w)
 
     if (win)
 	windows.remove();
+    if (win == activeWindow)
+	activeWindow = 0L;
+
     fillPixmap();
     repaint( false );
+    return win;
 }
 
 void Desktop::activateWindow(Window w)
 {
     PagerWindow *win;
-    for (win = windows.first(); win && win->id != w; win = windows.next()) 
-	continue;
+    
+    if (w != 0L) 
+	for (win = windows.first(); win && win->id != w; win = windows.next()) 
+	    continue;
+    else
+	win = 0L;
     
     activeWindow = win; // maybe NULL !
     fillPixmap();
