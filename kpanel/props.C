@@ -39,7 +39,7 @@ void kPanel::writeOutConfiguration(){
      if (entries[i].popup == windowlist)
        s="windowlist";
      // --sven: kdisknav button start --
-     if (entries[i].popup == kdisknav)
+     else if (entries[i].popup == kdisknav)
        s="kdisknav";
      // --sven: kdisknav button end --
      else if (entries[i].pmi){
@@ -166,12 +166,17 @@ void kPanel::parseMenus(){
     panel_menu->add( new PMenuItem(add_but, klocale->translate("Add Application"), 0, 0, pmenu_add,
 				   0, 0, new myPopupMenu, false, 0,
 				   klocale->translate("Add an application or a submenu onto the panel")));
+
+    PMenuItem* pdisknav;
+    PMenuItem* pwindowlist;
+
     // --sven: kdisknav button start --
-    panel_menu->add( new PMenuItem(prog_com, klocale->translate("Add Disk Navigator"), 0, 0, 0,
+    panel_menu->add( pdisknav = new PMenuItem(prog_com, klocale->translate("Add Disk Navigator"), 0, 0, 0,
 				   this, SLOT(add_kdisknav()), 0, false, 0,
 				   klocale->translate("Add a Disk Navigator menu onto the panel")) );
+
     // --sven: kdisknav button end --
-    panel_menu->add( new PMenuItem(prog_com, klocale->translate("Add Windowlist"), 0, 0, 0,
+    panel_menu->add( pwindowlist = new PMenuItem(prog_com, klocale->translate("Add Windowlist"), 0, 0, 0,
 				   this, SLOT(add_windowlist()), 0, false, 0,
 				   klocale->translate("Add a windowlist menu onto the panel")) );
     panel_menu->add( new PMenuItem(prog_com, klocale->translate("Configure"), 0, 0, 0,
@@ -203,6 +208,16 @@ void kPanel::parseMenus(){
 
     pmenu->createMenu(new myPopupMenu, this);
     PFileMenu::calculateMaxEntriesOnScreen(fileBrowser);
+
+    panel_popup = panel_menu->getQPopupMenu();
+    add_disknav_entry = pdisknav->getId();
+    add_windowlist_entry = pwindowlist->getId();
+
+    if (has_kdisknav_button)
+      panel_popup->setItemChecked(add_disknav_entry, true);
+
+    if (has_windowlist_button)
+      panel_popup->setItemChecked(add_windowlist_entry, true);
 
     int i;
     for (i=0; i<nbuttons && entries[i].button!=kde_button; i++);
@@ -287,11 +302,13 @@ void kPanel::readInConfiguration(){
 	 if (button_entry_value == "windowlist"){
 	     addButtonInternal(0, (int)x, (int)y, "windowlist");
 	     buttonAdded = true;
+	     has_windowlist_button = true;
 	 }
 	 // --sven: kdisknav button start --
 	 else if (button_entry_value == "kdisknav"){
 	     addButtonInternal(0, (int)x, (int)y, "kdisknav");
 	     buttonAdded = true;
+	     has_kdisknav_button = true;
 	 }
          // --sven: kdisknav button end -- 
 	 else {

@@ -483,6 +483,12 @@ private:
 
   QPixmap defaultPixmap;
 
+  bool has_kdisknav_button;
+  bool has_windowlist_button;
+  int add_disknav_entry;
+  int add_windowlist_entry;
+  QPopupMenu* panel_popup;
+
 };
 
 

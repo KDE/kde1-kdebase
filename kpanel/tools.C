@@ -657,14 +657,36 @@ void kPanel::set_label_date(){
 }
 
 void kPanel::add_windowlist(){
-  addButtonInternal(0, -1, -1, "windowlist");
+  if (has_windowlist_button) {
+    for (int i = 0; i < nbuttons; i++)
+      if (entries[i].popup == windowlist) {
+	delete_button(entries[i].button);
+	break;
+      }
+  }
+  else
+    addButtonInternal(0, -1, -1, "windowlist");
+
+  has_windowlist_button = !has_windowlist_button;
+  panel_popup->setItemChecked(add_windowlist_entry, has_windowlist_button);
   writeOutConfiguration();
 }
 
 // --sven: kdisknav button start --
 void kPanel::add_kdisknav(){
+  if (has_kdisknav_button) {
+    for (int i = 0; i < nbuttons; i++)
+      if (entries[i].popup == kdisknav) {
+	delete_button(entries[i].button);
+	break;
+      }
+  }
+  else
     addButtonInternal(0, -1, -1, "kdisknav");
-    writeOutConfiguration();
+
+  has_kdisknav_button = !has_kdisknav_button;
+  panel_popup->setItemChecked(add_disknav_entry, has_kdisknav_button);
+  writeOutConfiguration();
 }
 // --sven: kdisknav button end --
 
