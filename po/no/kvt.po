@@ -68,11 +68,11 @@ msgstr "&Veldig stor"
 
 #: main.C:447
 msgid "&black/white"
-msgstr "svart/hvit"
+msgstr "&svart/hvit"
 
 #: main.C:448
 msgid "&white/black"
-msgstr "hvit/svart"
+msgstr "&hvit/svart"
 
 #: main.C:449
 msgid "&green/black"
@@ -80,11 +80,11 @@ msgstr "&grønn/svart"
 
 #: main.C:450
 msgid "black/light&yellow"
-msgstr "svart/lys gul"
+msgstr "s&vart/lys gul"
 
 #: main.C:451
 msgid "Linu&x Console"
-msgstr "Linu&x konsol"
+msgstr "Linu&x-konsoll"
 
 #: main.C:460
 msgid "&Custom Colors"
@@ -92,11 +92,11 @@ msgstr "&Egendefinerte farger"
 
 #: main.C:467 main.C:717
 msgid "Hide &Menubar"
-msgstr "Skjul &Menubjelke"
+msgstr "Skjul &menylinje"
 
 #: main.C:469 main.C:639 main.C:709
 msgid "Show &Menubar"
-msgstr "Vis Menubjelke"
+msgstr "Vis &menulinje"
 
 #: main.C:470 main.C:727
 msgid "Secure &keyboard"
@@ -104,11 +104,11 @@ msgstr "Sikre &tastatur"
 
 #: main.C:472
 msgid "Scroll&bar"
-msgstr "Scrollbar"
+msgstr "&Rullefelt"
 
 #: main.C:473
 msgid "&Font size"
-msgstr "Skrifttype størrelse"
+msgstr "&Skrifttypestørrelse"
 
 #: main.C:474
 msgid "&Color"
@@ -116,7 +116,7 @@ msgstr "&Farge"
 
 #: main.C:475
 msgid "&Size"
-msgstr "Størrelse"
+msgstr "S&tørrelse"
 
 #: main.C:476
 msgid "Terminal..."
@@ -230,7 +230,7 @@ msgstr "-no_menubar               skjul menylinje\n"
 
 #: main.C:1171
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr "-no_scrollbar             skjul scrollbar\n"
+msgstr "-no_scrollbar             skjul rullefelt\n"
 
 #: main.C:1172
 msgid ""
