@@ -314,9 +314,8 @@ KGreeter::slot_user_name( int i)
 {
      loginEdit->setText( kdmcfg->users()->at( i)->text());
      passwdEdit->setFocus();
-#if 0
+
      load_wm();
-#endif
 }
 
 void 
@@ -374,7 +373,13 @@ KGreeter::save_wm()
      QFile f(file);
 
      // open file as user which is loging in
-     seteuid(pwd->pw_uid);
+     if( setegid( pwd->pw_gid) == -1) {
+	  return; // error
+     }
+     if( seteuid(pwd->pw_uid) == -1) {
+	  setegid(0);  
+	  return; //error
+     }
 
      if ( f.open(IO_WriteOnly) ) {
 	  QTextStream t;
@@ -383,6 +388,7 @@ KGreeter::save_wm()
 	  f.close();
      }
      seteuid(0);
+     setegid(0);
 }
 
 void
@@ -400,7 +406,13 @@ KGreeter::load_wm()
      QFile f(file);
 
      // open file as user which is loging in
-     seteuid(pwd->pw_uid);
+     if( setegid( pwd->pw_gid) == -1) {
+	  return; // error
+     }
+     if( seteuid(pwd->pw_uid) == -1) {
+	  setegid(0);
+	  return; // error
+     }
 
      // set default wm
      int wm = 0;
@@ -422,6 +434,7 @@ KGreeter::load_wm()
 	  }
      }
      seteuid(0);
+     setegid(0);
      sessionargBox->setCurrentItem(wm);
 }
 
@@ -673,9 +686,8 @@ KGreeter::go_button_clicked()
 			       sessiontags.at(
 				    sessionargBox->currentItem()));
 
-#if 0
      save_wm();
-#endif
+
      //qApp->desktop()->setCursor( waitCursor);
      qApp->setOverrideCursor( waitCursor);
      hide();
