@@ -4,15 +4,8 @@
 Authors=Nicola Pero <n.pero@mi.flashnet.it>
 
 Comment=Italian Keyboard (Italy)
-Comment[de]=Italienische Tastatur (Italien)
-Comment[fr]=Clavier italien (Italie)
-Comment[it]=Tastiera Italiana (Italia)
 
 Language=Italian
-Language[de]=Italienisch
-Language[es]=Italiano
-Language[fr]=Italien
-Language[it]=Italiano
 
 Charset=iso-8859-1
 Label=It

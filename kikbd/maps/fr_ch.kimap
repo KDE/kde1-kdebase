@@ -3,13 +3,7 @@
 [International Keyboard]
 Authors=Cyrill Schneider <cyrill.schneider@bluewin.ch>
 Comment=French Keyboard (Switzerland)
-Comment[de]=Französische Tastatur (Schweiz)
-Comment[es]=Teclado Francés (Suiza)
-Comment[fr]=Clavier français (Suisse)
 Language=French (Switzerland)
-Language[de]=Französisch (Schweiz)
-Language[es]=Francés (Suiza)
-Language[fr]=Français (Suisse)
 
 Label=CH
 Locale=fr_CH

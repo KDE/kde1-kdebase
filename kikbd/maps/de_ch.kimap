@@ -3,32 +3,8 @@
 [International Keyboard]
 Authors=Cyrill Schneider <cyrill.schneider@bluewin.ch>, Ernst Rall <ErnstRall@gmx.net>
 Comment=German Keyboard (Switzerland)
-Comment[de]=Deutsche Tastatur (Schweiz)
-Comment[es]=Teclado Alemán (Suiza)
-Comment[fr]=Clavier allemand (Suisse)
 
 Language=German (Switzerland)
-Language[de]=Deutsch (Schweiz)
-Language[es]=Alemán (Suiza)
-Language[fr]=Allemand (Suisse)
-Language[ca]=Alemany
-Language[cs]=Nìmecký
-Language[da]=Tysk
-Language[fi]=Saksa
-Language[fi]=Saksa
-Language[fr]=Allemand
-Language[hr]=Njemaèki
-Language[is]=Þýskt
-Language[it]=Tedesco
-Language[no]=Tysk
-Language[pl]=Niemiecki
-Language[pt]=Alemão
-Language[pt_BR]=Alemão
-Language[ro]=Germanã
-Language[ru]=îÅÍÅÃËÉÊ
-Language[sk]=Nemecký
-Language[sl]=nem¹ko
-Language[sv]=Tyskt
 
 Label=CH
 Locale=de_CH

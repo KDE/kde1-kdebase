@@ -4,10 +4,8 @@
 Authors=Vedran Vyroubal <vedran.vyroubal@fer.hr>,
 
 Comment=Croatian keyboard layout
-Comment[hr]=Hrvatska tipkovnica
 
 Language=Croatian
-Language[hr]=Hrvatski
 
 Label=Hr 
 Locale=hr

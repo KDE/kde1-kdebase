@@ -3,11 +3,8 @@
 Authors=Leon Kukovec <sniper@kibla.org>,
 
 Comment=Slovene Keyboard (Slovenia)
-Comment[sl]=Slovenska tipkovnica (Slovenija)
 
 Language=Slovene
-Language[en]=slovene
-Language[sl]=slovensko
 
 Charset=ISO-8859-2
 Label=Sl

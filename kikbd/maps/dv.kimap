@@ -4,25 +4,6 @@
 Authors=Rob Mayoff <mayoff@dqd.com>
 
 Language=English/Dvorak
-Language[ca]=Anglès/Dvorak
-Language[cs]=Anglický/Dvorak
-Language[da]=Engelsk/Dvorak
-Language[de]=Englisch/Dvorak
-Language[es]=Inglés/Dvorak
-Language[fi]=Englanti/Dvorak
-Language[fr]=Anglais/Dvorak
-Language[hr]=Engleski/Dvorak
-Language[is]=Enskt/Dvorak
-Language[it]=Inglese/Dvorak
-Language[no]=Engelsk/Dvorak
-Language[pl]=Angielski/Dvorak
-Language[pt]=Inglês/Dvorak
-Language[pt_BR]=Inglês/Dvorak
-Language[ro]=Englezeascã/Dvorak
-Language[ru]=áÎÇÌÉÊÓËÉÊ/Dvorak
-Language[sk]=Anglický/Dvorak
-Language[sl]=angle¹ko/Dvorak
-Language[sv]=Engelskt/Dvorak
 
 Label=Dv
 Locale=en
