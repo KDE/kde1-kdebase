@@ -8,7 +8,7 @@
 #include <kstring.h>
 
 KRenameWin::KRenameWin(QWidget *parent, const char *_src, const char *_dest, bool _modal ) :
-    QDialog ( parent, "" , _modal )
+    QDialog ( parent, "" , TRUE )
 {
     modal = _modal;
     

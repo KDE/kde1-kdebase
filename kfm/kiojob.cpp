@@ -1231,7 +1231,7 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
 	ksprintf(&msg, i18n("Gzip reproted an error for\n%s"), url.data());
 	break;
       case KIO_ERROR_FileExists:
-	r = new KRenameWin( 0L, lastSource.data(), lastDest.data(), true );
+	r = new KRenameWin( 0L, lastSource.data(), lastDest.data(), false );
 	break;
       case KIO_ERROR_FileDoesNotExist:
 	ksprintf(&msg,i18n("File %s\ndoes not exist"), url.data());

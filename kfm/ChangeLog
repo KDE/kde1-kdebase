@@ -1,3 +1,10 @@
+1999-01-03  David Faure  <faure@kde.org>
+
+	* krenamewin.cpp, kiojob.cpp: Made window always modal.
+	The modal argument is used to know whether to call done(x) or emit
+	result(...). Fixes bug introduced by Preston when copying and
+	overwriting destination. Thanks Torsten Rahn for reporting.
+
 1998-12-22  Alex Zepeda  <garbanzo@hooked.net>
 
 	* kioslave/ftp_proxy.cpp: Add proper line termination to user
