@@ -27,6 +27,10 @@
 #include <qpushbt.h>
 #include <klined.h>
 
+// --------- Sven's changes for macmode begin
+class KMenuBar;
+// --------- Sven's changes for macmode end;
+
 enum {
   RMB_HELP=100,
   RMB_DISPLAY_PROPERTIES,
@@ -57,7 +61,7 @@ private:
   void draw_selection_rectangle(int x, int y, int dx, int dy);
   bool select_rectangle(int &x, int &y, int &dx, int &dy);
   
-  void generateWindowlist(QPopupMenu* p);
+  //void generateWindowlist(QPopupMenu* p); sven -  moved to slots
   Window* callbacklist;
 
   QPopupMenu* mmb;
@@ -75,6 +79,16 @@ private:
   void scanBookmarks( QPopupMenu*, const char *_dir );
   int bookmarkId;
   QIntDict<QString> bookmarkDict;
+
+  // --------- Sven's changes for macmode begin
+  bool macMode;
+  KMenuBar *myMenuBar;
+  QWidget *myMenuBarContainer;
+  
+  QPopupMenu *file;
+  QPopupMenu *desk;
+  QPopupMenu *help;
+  // --------- Sven's changes for macmode end
   
 private slots:
   void slotNewFile( int _id );
@@ -82,6 +96,10 @@ private slots:
   
   void rmb_menu_activated(int);
   void mmb_menu_activated(int);
+  // --------- Sven's changes for macmode begin
+  void slotFocusChanged(Window);
+  void generateWindowlist();
+  // --------- Sven's changes for macmode end
 };
 
 

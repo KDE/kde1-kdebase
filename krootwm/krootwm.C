@@ -25,6 +25,10 @@
 #include <kfm.h>
 #include <kprocess.h>
 #include <ksimpleconfig.h>
+// --------- Sven's changes for macmode begin
+#include <kmenubar.h>
+// --------- Sven's changes for macmode end;
+
 
 void execute(const char* cmd){
   KShellProcess proc;
@@ -84,6 +88,17 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
 
     // parse the configuration
     KConfig *kconfig = KApplication::getKApplication()->getConfig();
+
+    // --------- Sven's changes for macmode begin
+    myMenuBar = 0;
+    myMenuBarContainer = 0;
+
+    kconfig->setGroup("Menubar");
+    if (kconfig->readEntry("position") == "TopOfScreen")
+      macMode = true;
+    else
+      macMode = false;
+    // --------- Sven's changes for macmode end
 
     kconfig->setGroup("MouseButtons");
     QString s = kconfig->readEntry("Left", "Selection");
@@ -173,13 +188,83 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     connect( bookmarks, SIGNAL( activated( int ) ),
 	     SLOT( slotBookmarkSelected( int ) ) );
     updateBookmarkMenu();
-    
+
+    // --------- Sven's changes for macmode begin
+    if (macMode)
+    {
+      myMenuBarContainer = new QWidget;
+      myMenuBar = new KMenuBar(myMenuBarContainer);
+
+      myMenuBarContainer->setGeometry(-10,-10,100,40);
+      myMenuBarContainer->show();
+      myMenuBarContainer->hide();
+      if (myMenuBar->menuBarPos() != KMenuBar::Floating) {
+        delete myMenuBarContainer;
+        myMenuBarContainer = 0;
+        myMenuBar = 0;
+      }
+
+
+     /*
+     File    New    Bookmarks    Desktop     Windows    Help
+     Exec,   temp-  bookmarks    disp.props  Window-    Help
+     Lock,   lates  ...          refresh     list       About KDE
+     Logout                      unclutter
+                                 cascade
+                                 arrange
+
+                                 
+      */
+
+      if (myMenuBar)
+      {
+        file = new QPopupMenu;
+        file->setMouseTracking(TRUE);
+        file->installEventFilter(this);
+
+        file->insertItem(klocale->translate("Execute command"), RMB_EXECUTE);
+        file->insertSeparator();
+        file->insertItem(klocale->translate("Lock screen"), RMB_LOCK_SCREEN);
+        file->insertItem(klocale->translate("Logout"), RMB_LOGOUT);
+
+        connect(file, SIGNAL(activated(int)), this, SLOT(rmb_menu_activated(int)));
+
+        desk = new QPopupMenu;
+        desk->setMouseTracking(TRUE);
+        desk->installEventFilter(this);
+
+        desk->insertItem(klocale->translate("Refresh desktop"), RMB_REFRESH_DESKTOP);
+        desk->insertItem(klocale->translate("Unclutter windows"), RMB_UNCLUTTER_WINDOWS);
+        desk->insertItem(klocale->translate("Cascade windows"), RMB_CASCADE_WINDOWS);
+        desk->insertItem(klocale->translate("Arrange icons"), RMB_ARRANGE_ICONS);
+        desk->insertItem(klocale->translate("Display properties"), RMB_DISPLAY_PROPERTIES);
+
+        connect(desk, SIGNAL(activated(int)), this, SLOT(rmb_menu_activated(int)));
+
+        help = new QPopupMenu;
+        help->setMouseTracking(TRUE);
+        help->installEventFilter(this);
+
+        help->insertItem(klocale->translate("Help on desktop"), RMB_HELP);
+        help->insertItem(klocale->translate("About KDE..."), kapp,
+                         SLOT(aboutKDE()));
+        
+        connect(help, SIGNAL(activated(int)), this, SLOT(rmb_menu_activated(int)));
+      }
+
+    }
+
     rmb = new QPopupMenu;
     rmb->setMouseTracking(TRUE);
     rmb->installEventFilter(this);
-    rmb->insertItem(klocale->translate("New"), menuNew );
-    rmb->insertItem(klocale->translate("Bookmarks"), bookmarks );
-    rmb->insertSeparator();
+    if (!myMenuBar)
+    {
+      // This is because popupmenu cannot be submenu of two
+      // QMenuData based classes QMenuBar or QPopupMenu :-(
+      rmb->insertItem(klocale->translate("New"), menuNew );
+      rmb->insertItem(klocale->translate("Bookmarks"), bookmarks );
+      rmb->insertSeparator();
+    }
     rmb->insertItem(klocale->translate("Help on desktop"), RMB_HELP);
     rmb->insertItem(klocale->translate("Execute command"), RMB_EXECUTE);
     rmb->insertItem(klocale->translate("Display properties"), RMB_DISPLAY_PROPERTIES);
@@ -198,11 +283,31 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     mmb->installEventFilter(this);
     mmb->setCheckable(TRUE);
     connect(mmb, SIGNAL(activated(int)), this, SLOT(mmb_menu_activated(int)));
+    connect(mmb, SIGNAL(aboutToShow()), this, SLOT(generateWindowlist()));
 
+    if (myMenuBar)
+    {
+      myMenuBar->insertItem(klocale->translate("File"), file);
+      myMenuBar->insertItem(klocale->translate("New"), menuNew);
+      myMenuBar->insertItem(klocale->translate("Bookmarks"), bookmarks);
+      myMenuBar->insertItem(klocale->translate("Desk"), desk);
+      myMenuBar->insertItem(klocale->translate("Windows"), mmb);
+      myMenuBar->insertItem(klocale->translate("Help"), help);
+    }
+    
     QApplication::desktop()->installEventFilter(this);  
 
     kwmmapp->connectToKWM();
-}
+
+    if (myMenuBar && macMode)
+    {
+      KWM::setSticky(myMenuBar->winId(), true); //why doesn't this work?
+      connect(kwmmapp, SIGNAL(windowActivate (Window)), this,
+              SLOT(slotFocusChanged(Window)));
+    }
+
+    // --------- Sven's changes for macmode end
+  }
 
 void KRootWm::kwmCommandReceived(QString com)
 {
@@ -210,7 +315,6 @@ void KRootWm::kwmCommandReceived(QString com)
   //sent by KBookmarkManager::emitChanged()
   if (com == "krootwm:refreshBM")
     updateBookmarkMenu ();
-
 }
 
 void KRootWm::updateBookmarkMenu (void)
@@ -357,12 +461,24 @@ bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
 	    kfm->selectRootIcons(x, y, dx, dy,
 				 (e->state() & ControlButton) == ControlButton);
 	    delete kfm;
-	  }
+          }
+          // --------- Sven's changes for macmode begin
+          else
+          {
+            // Can I take focus from everybody here?
+            if (macMode && myMenuBar)
+            {
+	      KWM::activateInternal(None);
+              myMenuBar->show();
+              myMenuBar->raise();
+            }
+          }
+          // --------- Sven's changes for macmode else
 	}
 	return TRUE;
       break;
       case MidButton:
-	generateWindowlist(mmb);
+	//generateWindowlist(mmb); sven disabled- using sig aboutToShow
 	mmb->popup(e->pos());
 	break;
       case RightButton:
@@ -510,12 +626,16 @@ bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
   XUngrabServer(qt_xdisplay());
   XAllowEvents(qt_xdisplay(), AsyncPointer, CurrentTime);
   XSync(qt_xdisplay(), False);
-  
+
+  // --------- Sven's changes for macmode begin
+  if (dx < 5 && dy < 5)
+    return false;
+  // --------- Sven's changes for macmode end
   return True;
 }
 
-void KRootWm::generateWindowlist(QPopupMenu* p){
-  p->clear();
+void KRootWm::generateWindowlist(){ //sven changed this to slot
+  mmb->clear();
   Window *w;
   int i = 0;
   int nw = kwmmapp->windows.count();
@@ -528,9 +648,9 @@ void KRootWm::generateWindowlist(QPopupMenu* p){
   Window active_window = KWM::activeWindow();
   if (nd > 1){
     for (d=1; d<=nd; d++){
-      p->insertItem(QString("&")+KWM::getDesktopName(d), 1000+d);
+      mmb->insertItem(QString("&")+KWM::getDesktopName(d), 1000+d);
       if (!active_window && d == cd)
-	p->setItemChecked(1000+d, TRUE);
+	mmb->setItemChecked(1000+d, TRUE);
       for (i=0; i<nw;i++){
 	if (
 	    (KWM::desktop(callbacklist[i]) == d
@@ -539,14 +659,14 @@ void KRootWm::generateWindowlist(QPopupMenu* p){
 	    || 
 	    (d == cd && KWM::isSticky(callbacklist[i]))
 	    ){
-	  p->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
+	  mmb->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
 			QString("   ")+KWM::titleWithState(callbacklist[i]),i);
 	  if (callbacklist[i] == active_window)
-	    p->setItemChecked(i, TRUE);
+	    mmb->setItemChecked(i, TRUE);
 	}
       }
       if (d < nd)
-	p->insertSeparator();
+	mmb->insertSeparator();
     }
   }
   else {
@@ -558,10 +678,10 @@ void KRootWm::generateWindowlist(QPopupMenu* p){
 	  || 
 	  (d == cd && KWM::isSticky(callbacklist[i]))
 	  ){
-	p->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
+	mmb->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
 		      KWM::titleWithState(callbacklist[i]),i);
 	if (callbacklist[i] == active_window)
-	  p->setItemChecked(i, TRUE);
+	  mmb->setItemChecked(i, TRUE);
       }
     }
   }
@@ -654,6 +774,18 @@ void KRootWm::slotBookmarkSelected( int _id )
   cmd += s->data();
   cmd += "\"";
   execute( cmd );
+}
+
+void KRootWm::slotFocusChanged(Window w)
+{
+  if (myMenuBar)
+    if (w)
+      myMenuBar->hide();
+    else
+    {
+      myMenuBar->show();
+      myMenuBar->raise();
+    }
 }
 
 int main( int argc, char *argv[] )
