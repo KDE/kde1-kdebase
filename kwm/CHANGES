@@ -19,6 +19,7 @@ In 0.10:
        - session management fix (Netscape 3 et. al.)
        - placement: transient windows always on the desktop of their parent
        - desktop placement fixed for withdraw-by-client windows
+       - maximize/sticky fixed (bug with hidden buttons)
   patchlevel 10:
        - internal changes to module registration. (Needs the newest
          libkdecore to work)

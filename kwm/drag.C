@@ -286,8 +286,10 @@ int sweepdrag(Client* c, XButtonEvent * /* e0 */,
     while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
 
     if (c->isMaximized()){
+      c->maximized = FALSE;
       c->geometry_restore = c->geometry;
-      c->buttonMaximize->toggle();
+      if (c->buttonMaximize->isOn)
+	c->buttonMaximize->toggle();
     }
     
     options.FocusPolicy =  oldFocusPolicy;

@@ -364,13 +364,13 @@ void Client::generateButtons(){
     }
   }
   if (!buttonMaximize){
-    buttonMaximize = new myPushButton();
+    buttonMaximize = new myPushButton;
     buttonMaximize->setToggleButton(TRUE);
     buttonMaximize->hide();
     connect( buttonMaximize, SIGNAL(toggled(bool)), SLOT(maximizeToggled(bool)));
   }
   if (!buttonSticky){
-    buttonSticky = new myPushButton();
+    buttonSticky = new myPushButton;
     buttonSticky->setToggleButton(TRUE);
     buttonSticky->hide();
     connect( buttonSticky, SIGNAL(toggled(bool)), SLOT(stickyToggled(bool)));
@@ -576,7 +576,10 @@ void Client::mouseDoubleClickEvent( QMouseEvent* ev){
     return; 
   if (ev->pos().x() >= title_rect.x() && ev->pos().x() <= title_rect.x()+title_rect.width() &&
       ev->pos().y() >= title_rect.y() && ev->pos().y() <= title_rect.y()+title_rect.height()){
-    buttonMaximize->toggle(); 
+    if (!isMaximized())
+      maximize();
+    else
+      unMaximize();
   }
 }
 
@@ -696,6 +699,18 @@ void Client::resizeEvent( QResizeEvent * ){
 }  
 
 myPushButton * Client::getNewButton(BUTTON_FUNCTIONS buttonFunction){
+  if (!pm_max){
+    pm_max = loadIcon("maximize.xpm");
+  }
+  if (!pm_max_down){
+    pm_max_down = loadIcon("maximizedown.xpm");
+  }
+  if (!pm_pin_up){
+    pm_pin_up = loadIcon("pinup.xpm");
+  }
+  if (!pm_pin_down){
+    pm_pin_down = loadIcon("pindown.xpm");
+  }
   
   if(buttonFunction == NOFUNC)
     return NULL;
@@ -709,12 +724,6 @@ myPushButton * Client::getNewButton(BUTTON_FUNCTIONS buttonFunction){
   myPushButton *button = new myPushButton(this);
   switch(buttonFunction){
   case MAXIMIZE: 
-    if (!pm_max){
-      pm_max = loadIcon("maximize.xpm");
-    }
-    if (!pm_max_down){
-      pm_max_down = loadIcon("maximizedown.xpm");
-    }
     button->setPixmap(*pm_max);
     button->setToggleButton(TRUE);
     buttonMaximize = button;
@@ -735,12 +744,6 @@ myPushButton * Client::getNewButton(BUTTON_FUNCTIONS buttonFunction){
     connect( button, SIGNAL(clicked()), SLOT(closeClicked()));
     break;
   case STICKY:
-    if (!pm_pin_up){
-      pm_pin_up = loadIcon("pinup.xpm");
-    }
-    if (!pm_pin_down){
-      pm_pin_down = loadIcon("pindown.xpm");
-    }
     button->setPixmap(*pm_pin_up);
     button->setToggleButton(TRUE);
     buttonSticky = button;
@@ -1192,26 +1195,26 @@ void Client::unMaximize(){
 void Client::maximizeToggled(bool depressed){
   bool do_not_activate = depressed == isMaximized();
   
-  if ( depressed){
-    switch (buttonMaximize->last_button){
-    case MidButton:
-      maximize(options.MaximizeOnlyVertically?0:1);
-      break;
-    case RightButton:
-      maximize(2);
-      break;
-    default: //Leftbutton 
-      maximize(options.MaximizeOnlyVertically?1:0);
-      break;
-    }
-  }
-  else
-    unMaximize();
-  
   buttonMaximize->setPixmap(buttonMaximize->isOn() ? *pm_max_down : *pm_max);
   buttonMaximize->update();
 
   if (!do_not_activate){
+    if ( depressed){
+      switch (buttonMaximize->last_button){
+      case MidButton:
+	maximize(options.MaximizeOnlyVertically?0:1);
+	break;
+      case RightButton:
+	maximize(2);
+	break;
+      default: //Leftbutton 
+	maximize(options.MaximizeOnlyVertically?1:0);
+	break;
+      }
+    }
+    else
+      unMaximize();
+    
     if (state == NormalState){
       manager->raiseClient( this );
       manager->activateClient( this );
