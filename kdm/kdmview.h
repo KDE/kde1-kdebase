@@ -45,6 +45,8 @@ private:
 
 class KVItemList : public QList<KDMViewItem>
 {
+public:
+    ~KVItemList();
     int compareItems( GCI i1, GCI i2);
 };
 

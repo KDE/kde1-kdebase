@@ -142,7 +142,7 @@ void BecomeDaemon ()
     setpgrp (0, getpid());
 #endif
 */
-    setpgid( 0, getpid()); // This should be POSIX /stefh
+    setpgid( 0, getpid()); /* This should be POSIX /stefh */
     close (0); 
     close (1);
     close (2);

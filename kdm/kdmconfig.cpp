@@ -40,7 +40,7 @@ KDMConfig::KDMConfig( const char* rc)
 }
 
 KVItemList*
-KDMConfig::getUsers( QString s, bool sorted = false)
+KDMConfig::getUsers( QString s, bool sorted)
 {
      QString user_pix_dir( kdedir+"/share/apps/kdm/pics/users/");
      KVItemList* result = new KVItemList;

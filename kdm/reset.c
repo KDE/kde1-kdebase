@@ -102,7 +102,7 @@ Window	window;
 	Window	root, parent, *children;
 	int	child;
 	unsigned int nchildren = 0;
-	// This prop. indicates that its a kdm window!
+	/* This prop. indicates that its a kdm window! */
 	Atom a = XInternAtom(dpy, "KDE_DESKTOP_WINDOW", False);
  
 	/* We cannot loop, when we want to keep the stupid window...*.

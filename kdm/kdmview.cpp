@@ -213,7 +213,7 @@ KDMView::paintCell( QPainter *p, int row, int col )
 }
 
 void
-KDMView::insertItem( const KDMViewItem* item, int index, bool sorted = false)
+KDMView::insertItem( const KDMViewItem* item, int index, bool sorted)
 {
      index = 0;
      if( sorted)

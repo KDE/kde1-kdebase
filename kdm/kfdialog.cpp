@@ -35,8 +35,8 @@ FocusFilter::eventFilter( QObject *, QEvent *e)
 }
 
 
-FDialog::FDialog( QWidget *parent = 0, const char* name = 0, 
-		  bool modal = FALSE, WFlags f = 0) 
+FDialog::FDialog( QWidget *parent, const char* name, 
+		  bool modal, WFlags f) 
      : QDialog( parent, name, modal, f) 
 { 
      ff = new FocusFilter( this);
