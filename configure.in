@@ -226,6 +226,7 @@ AC_OUTPUT(Makefile \
 	kfm/kioslave/Makefile \
 	kfm/pics/Makefile \
 	kfm/kfmwarn/Makefile \
+	kfm/kfmexec/Makefile \
 	mimetypes/Makefile \
 	mimetypes/application/Makefile \
 	mimetypes/text/Makefile \
@@ -245,6 +246,7 @@ AC_OUTPUT(Makefile \
 	kwm/pics/Makefile \
 	kwmclient/Makefile \
 	pics/Makefile \
+	pics/mini/Makefile \
 	pics/toolbar/Makefile \
 	pics/wallpapers/Makefile \
 	kdm/Makefile \
