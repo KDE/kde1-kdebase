@@ -1244,10 +1244,8 @@ void DirPropsPage::resizeEvent ( QResizeEvent *)
     // could be calculated in the future, depending on the length of the items
     // in the list.
     imageY = 90 + fontHeight; // so that combo & image are under the label
-    imageW = width() - imageX;
+    imageW = width() - imageX - SEPARATION;
     imageH = height() - imageY - applyButton->height() - SEPARATION*2;
-    // force a square
-    if (imageW > imageH) imageW = imageH ; else imageH = imageW ;
 
     iconBox->setGeometry( 10, 20, 50, 50 );
     wallBox->setGeometry( 10, imageY, imageX-20, 30 );
