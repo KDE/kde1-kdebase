@@ -1528,7 +1528,7 @@ bool KHelpWindow::x11Event( XEvent *xevent )
 
 	case SelectionClear:
 	    // Do we want to clear the selection???
-	    view->selectText( 0, 0, 0, 0, 0 );
+	    view->selectText( 0, 0, 0, 0 );
 	    break;
     }
 
