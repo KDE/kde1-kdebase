@@ -1,0 +1,227 @@
+
+==================kpanel-0.17 has been almost a rewrite============
+
+Major visible changes:
+    - no more graphical configuration (this is done by kcc)
+       (not true, but will be removed soon)
+    - works with the modern kwm II now (kwm >= 0.10)
+    - uses Christoph Neerfeld's pmenu class from ktaskbar
+      => item order can be modified via Chris' kmenuedit
+    - works (only) with qt-1.3
+
+Major unsibible changes: 
+    - cleaner code :-)
+
+====================================================================
+
+
+since kpanel-0.16:
+
+- visual feedback (waitCursor) when invoking applications via buttons.
+- should ignore non-readable files and directories
+
+NOTE: kpanel needs a kwm>=0.8pl15 now
+
+- bugfixes
+- no more special menufont
+- handles general change requests from kdisplay now
+
+- taskbar and windowlist sorted in virtual desktops
+- virtual desktop definitions are yet in the global config file
+   in a special "Desktops" group
+- takes better care of kdisplay's settings
+
+- tiny style improved (desktop buttons in one row)
+
+- minor fixes
+
+- small bug in minipanel's geometry fixed
+- kwm like windowname detection
+- fixed the taskbar look (didn't know it was broken... )
+- kpanel:system (=kwm's Alt-F1) fixed
+
+- PanelHidden refers only for a certain virtual desktop
+- focusPolicy == NoFocus for all buttons
+- minor fixes
+
+- Desktop buttons editable (a really cool patch from Stephan Kulow :-)
+- minor fixes to editable buttons (minipanel's desktopmenu, desktop
+  changes via keyboard, FocusPolicy, ...)
+
+since kpanel-0.15:
+
+- standalone K-Button is also moveable now (with MMB)
+- show/hide-state is saved
+- Right positioning no longer valid
+- Minipanel integrated (Sven and Matthias)
+- RMB menu on taskbar (Sven and Matthias)
+- Tooltip placement improved
+- tells kwm about the number of desktops
+- new command "kpanel:system" to show the system menu
+- several bugfixes
+
+- first code for Sven Radej's Minipanel included.
+
+- kpanel understands "hide" and "show" commands now (Sven Radej)
+- implemented a new test-feature for the KDE-Button: Hide/Show Panel
+   (doesn't yet work too well in combination with the taskbar)
+- click on panel raises it   
+
+- Bernd: Replaced usage of kfmclient by KFM ipc in 
+  void kPanel::execute_kde_desktop_entry(const char* name) -- tool.C
+  
+- bugfixes in pixmaps handling
+
+- RMB on taskbar will show the window on the current desktop
+- fix to kwmcom (Christian Czezatke)
+
+- works better with kdisplay --- also looks nicer
+- fixes for drag'n'drop
+- usage of KApplication::findFile() for icons (*./lib/pics/)
+- usage of KApplication::kdedir()/apps for Desktop Entries
+- empty-taskbar-bug fixed (division by zero)
+- kpanel_version.h
+
+- usage of KApplication::findFile() for icons (*./lib/pics/)
+- usage of KApplication::kdedir()/apps for Desktop Entries
+- empty-taskbar-bug fixed (division by zero)
+- kpanel_version.h
+
+since kpanel-0.14
+- up to eight virtual desktop buttons 
+- width of the desktop buttons as well as the number of buttons can be
+   set interactively
+- "--help" and "--version" command line option
+- included KDE Desktop Entries contain "Type=Application" line
+
+since kpanel-0.13
+
+- reenabled my own tooltips for buttons, since qt-1.2 still has broken
+   tooltips for windows that are WStyle_Tool or WStyle_NoBorder
+- enabled my own tooltips for the taskbarbuttons, too
+- several bugfixes and enhancements for tooltips
+- compiles now with qt-1.2 (i.e. it includes X.h after qapp.h)
+- contains a KDE Desktop Entry for kpanel now 
+
+
+
+since kpanel-0.12
+- fixed the reported segfault bug with kfm
+- new config property "DateVisible". Can be "false"
+- includes kpanelpics-0.3 (thanks to Mark :)
+- configure and distribution stuff included
+- contains a lsm-entry
+
+since kpanel-0.11
+
+- a patch for kwmcom and kwm-0.4.6 which makes
+   swallowing possible WITHOUT breaking anything
+   inside kwm :-)
+- iconified windows displayed in brackets.
+- taskbar buttons have full window title as tooltip
+- taskbar buttons improved. I'm not too sure about the semantics, but
+   the technical possiblity to put different actions on the different
+   mouse buttons is implemented now. Yet the LMB just calls unMaximize,
+   while the MMB toggles iconified/de-iconified. I'm open for ideas in this
+   respect, if it's not something like weird jumping of the mouse-pointer ;-)
+
+since kpanel-0.10
+
+- menubar popups moved slightly to the right, they also cannot slide
+  of the screen anymore (sorry, I just forgot about that)
+- new look with flat buttons (according to Mark's proposal)
+- several bugfixes
+
+
+since kpanel-0.9
+- icons can be switched during runtime from outside
+- swallowing applications is possible
+
+since kpanel-0.8
+
+- reinstalled qt's tooltips for the buttons and modified kpanel's own
+  tooltip mechanism for menus in a way that it looks like qt now.
+  The menu tooltips can be disabled and appear with the RMB then.
+- kpanel saves its state now after each change.
+- support for the brandnew kwmcom_changed_window command.
+- kpanel waits for kwm now to setup the communication.
+- small bugfixes
+
+since kpanel-0.7
+
+- supports all kwm-0.4.2 commands (also kwmcom_define_maximize)
+- taskbar highlights the active window (kwmcom_active_window)
+- own tool-tip-like mechanism which displays the entries' info or
+  comment field when moving over buttons or highlighting a certain
+  menuitem.  (qtooltips removed)
+- khome and ktrash shellscripts removed.  The KDE Desktop Entries
+  "Home" and "Trash" now call the brandnew "kfmclient folder" function.
+  Note that you need a patched kfmclient-0.5.5 for this to work (patch
+  is included in the kpanel distribution)
+- of course some unavoidable bugfixes. In fact kpanel-0.8 should be really
+  stable now.
+
+since kpanel-0.6.1
+- bugfixes
+- configure option implemented (not yet complete, but allows the
+  setting of the location and the naming of the virtual desktops as well
+  as the selection of several hardcoded design styles)
+- new taskbar-location top_left
+- buttons are yet left-aligned (pixmaps)
+- buttons have tooltips (This does not work
+  with qt-1.1, but maybe with qt-1.2) 
+
+since kpanel-0.6
+- bugfixes
+
+since kpanel-0.5
+- many bugfixes
+- File System Standard
+- make install 
+- usage of kpanelpics-0.1 
+- temporary scripts ktrash and khome
+- simple taskbar-feature
+                                              (Matthias)
+
+since kpanel-0.4
+
+- bugfixes (write/read-config should work correct now)
+- usage of kwmclient as execution engine
+- drag'n'drop onto buttons 
+- drag'n'drop of kdelnk-files onto the panel
+- ".kdelnk" extension yet necessary for compatibility with kfm
+                                              (Matthias)
+
+since kpanel-0.3
+- some bugfixes, some internal improvements
+- kwmcom stuff for communication with kwm
+                                              (Matthias)
+
+since kpanel-0.2.1:
+- reads and writes its current state with kconfig
+- reads properties [KDE Desktop Entries] Path and  PersonalPath
+- is able to ignore ".kdelnk" extensions from KDE Desktop Entries to work
+  best with kfm
+- [KDE Directory Entry]  renamed to [KDE Desktop Entry] to be
+  consitent with kfm
+- Included various look-properties to allow a design similar to Mark's
+  proposal as well as a look similar to the original kpanel.
+- various bugfixes and restructuring 
+                                              (Matthias)
+
+since kpanel-0.2
+
+- well... for some strange reasons the event-sending done in the
+  eventfilter made trouble: At least on my machine the X-Server hangs..
+  Sorry for that. After little rewriting the stuff works, but I didn't 
+  really understand why this happend (sometimes)              
+
+- kpanel is now a KApplication
+
+- kpanel yet reads the Path property from the Icons-section as
+  kfm does.
+
+- kpanel yet understands the extended KDE Desktop Entry format 
+   introduced by kfm-0.41, including the Terminal-Settings.
+
+                                              (Matthias)

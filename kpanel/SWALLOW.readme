@@ -1,0 +1,97 @@
+Readme updated for kpanel-0.17 / kwm-0.10
+            Matthias
+---------------------------------------------------
+
+
+===============================================================
+
+kpanel 0.10 has some brand new gimmicks build in:
+
+Swallowing other X Window Applications as well as switching icons
+during runtime from outside.
+
+================================================================
+
+
+
+What about an "xosview" with "xload" as icon on the panel?  
+Try this
+as "xosview.kdelnk":
+
+[KDE Desktop Entry]
+icon=whatever.xpm
+SwallowExec=xload -bg grey -nolabel  -geometry 50x50+10000+10000
+SwallowTitle=xload
+Exec=xosview
+Comment=Informations about your system status
+
+
+Or a calendar-application (here xcalendar) with "xclock" running as
+icon on the panel?  
+Try this as "Calendar.kdelnk":
+
+[KDE Desktop Entry]
+icon=whatever.xpm
+SwallowExec=xclock -bg grey -geometry 50x50+10000+10000
+SwallowTitle=xclock
+Exec=xcalendar
+Comment=Calendar
+
+
+BTW: both kdelnk-files are available in the
+"sample_kdelnk_files"-folder of the kpanel-0.10 distribution.
+
+Note that kpanel finds the window-to-be-swallowed by the window title
+(item SwallowTitle). This must be exactly the title of the window!
+
+
+But for example a mailclient like kmail probably don't want to create
+its own animated programm just for the mail-indicator.  Wouldn't it be
+nice, if a button could have more than one icons?  Even that is
+possible with kpanel-0.10!  Look at the following as "Mail.kdelnk"
+file :
+
+[KDE Desktop Entry]
+Exec=kmail
+Comment=Mail client
+icon=mail1.xpm
+icon2=mail2.xpm
+PanelIdentity=kmail
+SwallowExec=kmailobserver
+
+Then kmail (and the kmailobserver) can switch the panelicon during
+runtime with
+    system("kwmcom, kpanel:icon1:kmail");
+and
+    system("kwmcom kpanel:icon2:kmail");
+
+"kwmcom" is a very small program that communicates with kwm.  Since
+kwm doesn't understand commands beinning with "kpanel:", it will send
+the stuff to its modules.
+
+You may define at maximum 4 icons (icon, icon2, icon3, icon4 ).  So
+the feature is definitly not meant for animation!!  If you need
+animation, just write an outstanding program and let kpanel swallow
+it.  But please write only programs for swallowing that don't take any
+mouse-input from X. (If you use a Qt-Widget you may have to disable
+the default Input-Scheme of Qt with XSelectInput. Of course also a
+complex program can be swallowed by kpanel, for example coolmail. But
+then you cannot move the button around on the panel, since kpanel
+doesn't get the events cause the application needs them itself.  If
+you are able to catch the margin of the button, you can of course move
+it around.)
+
+Also the PanelIdentity is restricted to 5 character maximum, following
+character are ignored (this is due to the limited X-Atoms
+communication and may be replaced with ktooltalk some day).
+
+If you miss performance because of the calling of kwmcom, you can also
+send the string via KWM::sendKWMCommand (defined in kwm.h from
+libkdecore) directly.
+
+
+Hope you'll enjoy the new features,
+
+
+  Matthias
+  (ettrich@kde.org)

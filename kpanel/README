@@ -1,0 +1,19 @@
+Hello, here is kpanel II ( == kpanel >= 0.17 )
+
+It's an almost complete rewrite of the design-study-that-grow-into-a-
+-usable-application-but-with-unsuable-code-called-kpanel ;-)
+
+Major visible changes:
+    - no more graphical configuration (this is done by kcc)
+       (not true, but will be removed soon)
+    - works with the modern kwm II now (kwm >= 0.10)
+    - uses Christoph Neerfeld's pmenu class from ktaskbar
+      => item order can be modified via Chris' kmenuedit
+    - works (only) with qt-1.3
+
+Major unsibible changes: 
+    - cleaner code :-)
+
+
+ Matthias
+ (ettrich@kde.org)

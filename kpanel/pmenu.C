@@ -1,0 +1,798 @@
+// -*- C++ -*-
+
+//
+//  This file is part of KPanel
+//
+//  Copyright (C) 1997 Christoph Neerfeld
+//  email:  Christoph.Neerfeld@bonn.netsurf.de
+//
+//  This program is free software; you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation; either version 2 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with this program; if not, write to the Free Software
+//  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+//
+
+/*
+ * Several modifications by Matthias Ettrich <ettrich@kde.org>
+ */
+
+#include <qdstream.h>
+#include <qtstream.h>
+#include <qpainter.h>
+#include <qpixmap.h>
+#include <qapp.h>
+#include <qfont.h>
+#include <qdir.h>
+#include <qpixmap.h>
+
+#include <kapp.h>
+#include <kiconloader.h>
+#include <kfm.h>
+#include <kmsgbox.h>
+
+#include "pmenu.h"
+#include "pmenu.moc"
+
+extern "C" {
+#include <stdlib.h>
+}
+
+static int global_id = 1;
+
+
+bool PMenuItem::use_kfm = TRUE;
+
+PMenuItem::PMenuItem()
+{
+  initMetaObject();
+  entry_type = empty; 
+  sub_menu = NULL;
+  cmenu = NULL;
+  recv = NULL;
+  memb = NULL;
+  //Stephan: pixmap is not a pointer
+  // pixmap = NULL;
+  read_only = false;
+  id = global_id++;
+}
+
+PMenuItem::PMenuItem( EntryType e, QString t=NULL, QString c=NULL, QString n=NULL, 
+		      PMenu *menu=NULL, QObject *receiver=NULL, char *member=NULL,
+		      QPopupMenu *cm=NULL, bool ro = FALSE, QString d=NULL, QString co = NULL )
+{
+  initMetaObject();
+  entry_type = e;
+  text_name = t;
+  command_name = c;
+  pixmap_name = n;
+  if( !pixmap_name.isEmpty() )
+    {
+      pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon( pixmap_name , 14, 14);
+    }
+  else
+    {
+	// pixmap = NULL;
+	pixmap = QPixmap();
+    }
+  sub_menu = menu;
+  cmenu = (myPopupMenu *) cm;
+  recv = receiver;
+  memb = member;
+  read_only = ro;
+  dir_path = d.copy();
+  comment = co;
+  if (comment.isEmpty())
+    comment = text_name;
+  id = global_id++;
+}
+
+PMenuItem::PMenuItem( PMenuItem &item )
+{
+  initMetaObject();
+  text_name       = item.text_name;
+  pixmap_name     = item.pixmap_name;
+  big_pixmap_name = item.big_pixmap_name;
+  pixmap          = item.pixmap;
+  entry_type      = item.entry_type; 
+  command_name    = item.command_name;
+  comment         = item.comment;
+  dir_path        = item.dir_path;
+  if( entry_type == submenu )
+    {
+      sub_menu = new PMenu( *(item.sub_menu) );
+      cmenu    = new myPopupMenu;
+    }
+  else
+    {
+      sub_menu = NULL;
+      cmenu    = NULL;
+    }
+  recv         = item.cmenu;
+  memb         = item.memb;
+  if( item.read_only && entry_type == prog_com )
+    {
+      entry_type = unix_com;
+      recv = NULL;
+      memb = NULL;
+    }
+  read_only = FALSE; 
+  id = global_id++;
+}
+
+PMenuItem::~PMenuItem()
+{
+  if( cmenu ) 
+    delete cmenu;
+  if( sub_menu )
+    {
+      delete sub_menu;
+    }
+}
+
+short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
+{
+  int pos = fi->fileName().find(".kdelnk");
+  if( pos >= 0 )
+    text_name = fi->fileName().left(pos);
+  else
+    text_name = fi->fileName();
+  if( !(fi->isWritable()) )
+    read_only = TRUE;
+  if( menu != NULL )
+    {
+      QString file = fi->absFilePath();
+      dir_path = fi->dirPath();
+      file += "/.directory";
+      QFile config(file);
+      if( config.open(IO_ReadOnly) ) 
+	{
+	  QTextStream st( (QIODevice *) &config);
+	  KConfig kconfig(&st);
+	  kconfig.setGroup("KDE Desktop Entry");
+	  pixmap_name = kconfig.readEntry("MiniIcon");
+	  big_pixmap_name = kconfig.readEntry("Icon");
+	  comment = kconfig.readEntry("Comment");
+	  config.close();
+	}
+      entry_type  = submenu;
+      sub_menu    = menu;
+      cmenu       = new myPopupMenu;      
+    }
+  else
+    {
+      QFile config(fi->absFilePath());
+      if( !config.open(IO_ReadOnly) ) 
+	return -1;
+      QTextStream st( (QIODevice *) &config);
+      KConfig kconfig(&st);
+      kconfig.setGroup("KDE Desktop Entry");
+      command_name = kconfig.readEntry("Exec");
+      entry_type = unix_com;
+      pixmap_name     = kconfig.readEntry("MiniIcon");
+      big_pixmap_name = kconfig.readEntry("Icon");
+      comment         = kconfig.readEntry("Comment");
+      dir_path        = fi->dirPath(TRUE);
+      config.close();
+    }
+  if( pixmap_name.isEmpty() )
+    {
+      pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon("mini-default.xpm", 14, 14);
+    }
+  else
+    {
+      pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon(pixmap_name, 14, 14);
+    }
+  if (comment.isEmpty())
+    comment = text_name;
+
+  return 0;
+}
+
+short PMenuItem::parse( QString abs_file_path )
+{
+  QFileInfo fi(abs_file_path);
+  return parse(&fi);
+}
+
+void PMenuItem::writeConfig( QDir dir )
+{
+  if( read_only || entry_type == separator )
+    return;
+  QString file = dir.absPath();
+  file += ( (QString) "/" + text_name + ".kdelnk" );
+  QFile config(file);
+  if( !config.open(IO_ReadWrite) ) 
+    return;
+  QTextStream st( (QIODevice *) &config);
+  KConfig kconfig(&st);
+  kconfig.setGroup("KDE Desktop Entry");
+  kconfig.writeEntry("Exec", command_name );
+  kconfig.writeEntry("MiniIcon", pixmap_name );
+  kconfig.sync();
+  config.close();
+}
+
+
+QString PMenuItem::fullPathName(){
+  QString result = dir_path.copy();
+  result.append("/");
+  result.append(text_name);
+  if (getType() != submenu){
+    result.append(".kdelnk");
+  }
+  return result;
+}
+
+void PMenuItem::exec()
+{
+  QFileInfo fi( (QString) (dir_path + '/' + text_name) );
+  parse(&fi);
+  if( command_name.isNull() )
+    return;
+  QString name;
+  if( use_kfm )
+    {
+      KFM* kfm;
+      kfm = new KFM();
+      if(!kfm){
+	KMsgBox::message(NULL, klocale->translate("Sorry"),
+			 klocale->translate("Could not communicate with nor\n"\
+					    "start a new instance of KFM"));
+	return;
+      }
+      name = "file:";
+      name.append(dir_path+"/");
+      name.append(text_name);
+      name.append(".kdelnk");
+      debug("name = %s", (const char *) name );	  
+      kfm->exec(name.data(),0L);
+      delete kfm;
+    }
+  else
+    {
+      if( command_name.right(1) != "&" )
+	name = command_name + " &";
+      else
+	name = command_name;
+      system( (const char *) name );
+    }
+}
+
+QString PMenuItem::getSaveName()
+{
+  QString name;
+  KConfig config;
+  config.setGroup("KDE Desktop Entries");
+  QString temp = QDir::homeDirPath() +"/Personal";
+  QString personal = config.readEntry("PersonalPath", temp.data() );
+  temp = KApplication::kdedir()+"/share/applnk";
+  QString kde_apps = config.readEntry("Path", temp.data() );
+  QString temp_dir = dir_path.copy();
+  if( (temp_dir+'/'+text_name) == personal )
+    {
+      name = "$$PERSONAL";
+      return name;
+    }
+  else if( temp_dir.left(personal.length()) ==  personal )
+    {
+      // kdelnk file is in $HOME/Personal
+      name = "$$PERSONAL";
+      name += temp_dir.right(temp_dir.length()-personal.length());
+      name += '/';
+      name += text_name;
+      if (getType() == unix_com)
+	name += ".kdelnk";
+      return name;
+    }
+  else if( temp_dir.left(kde_apps.length()) == kde_apps )
+    {
+      // kdelnk file is in $KDEDIR/apps
+      name = "$$KDEAPPS";
+      name += temp_dir.right(temp_dir.length()-kde_apps.length());
+      name += '/';
+      name += text_name;
+      if (getType() == unix_com)
+	name += ".kdelnk";
+      return name;
+    }
+  else
+    {
+      // return abs file path
+      name = temp_dir;
+      name += '/';
+      name += text_name;
+      if (getType() == unix_com)
+	name += ".kdelnk";
+      return name;
+    }
+  return (void *) 0L;
+}
+
+QPixmap PMenuItem::getBigIcon()
+{
+  QFileInfo fi( (QString) (dir_path + '/' + text_name) );
+  parse(&fi);
+  return KApplication::getKApplication()->getIconLoader()->loadApplicationIcon(big_pixmap_name);
+}
+
+
+//--------------------------------------------------------------------------------------
+
+PMenu::PMenu()
+{
+  initMetaObject();
+  list.setAutoDelete(TRUE);
+  cmenu = NULL;
+}
+
+PMenu::PMenu( PMenu &menu )
+{
+  initMetaObject();
+  cmenu = NULL;
+  list.setAutoDelete(TRUE);
+  PMenuItem *item, *new_item;
+  for( item = menu.list.first(); item != 0; item = menu.list.next() )
+    {
+      new_item = new PMenuItem( *item );
+      list.append(new_item);
+    }
+}
+
+PMenu::~PMenu()
+{
+  list.clear();
+}
+
+void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button = FALSE )
+{
+  QPixmap buffer;
+  PMenuItem *item;
+  EntryType et;
+  cmenu = (myPopupMenu *) menu;
+  menu->installEventFilter((QObject *) panel);
+  connect( menu, SIGNAL(highlighted(int)), this, SLOT(highlighted(int)) );
+  for( item = list.first(); item != 0; item = list.next() )
+    {
+      et = item->entry_type;
+      switch ( et ) {
+      case separator:
+	menu->insertSeparator();
+	continue;
+      case submenu:
+	if( add_button )
+	  {
+	    item->cmenu->setFont(menu->font());
+	    item->cmenu->insertItem(item->pixmap, item->text_name, item->getId());
+	    item->cmenu->connectItem(item->getId(), item, SLOT(execAddButton()) );
+	    connect( item, SIGNAL(addButton(PMenuItem*)), 
+	    	     (QObject *) panel, SLOT(addButton(PMenuItem*)) );
+	    connect( item->cmenu, SIGNAL(highlighted(int)), this, SLOT(highlighted(int)) );
+	    item->cmenu->insertSeparator();
+	    // create submenu
+	    item->sub_menu->createMenu( item->cmenu, panel, TRUE );
+	    menu->insertItem(item->pixmap, item->text_name, item->cmenu, item->getId());
+	    connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
+		     SLOT(showToolTip(QString)) );
+	  }
+	else
+	  {
+	    item->cmenu->setFont(menu->font());
+	    item->sub_menu->createMenu( item->cmenu, panel );
+	    menu->insertItem(item->pixmap, item->text_name, item->cmenu, item->getId());
+	    connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
+		     SLOT(showToolTip(QString)) );
+	  }
+	continue;
+      case label:
+	menu->insertItem(item->pixmap, item->text_name, item->getId());
+	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
+		 SLOT(showToolTip(QString)) );
+	continue;
+      case unix_com:
+	menu->insertItem(item->pixmap, item->text_name, item->getId());
+	if( add_button )
+	  {
+	    menu->connectItem( item->getId(), item, SLOT(execAddButton()) );
+	    connect( item, SIGNAL(addButton(PMenuItem *)), (QObject *) panel, 
+		     SLOT(addButton(PMenuItem*)) );
+	  }
+	else
+	  {
+	    if( !item->command_name.isEmpty() )
+	      menu->connectItem( item->getId(), item, SLOT(exec()) );
+	  }
+	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel, 
+		 SLOT(showToolTip(QString)) );
+	continue;
+      case prog_com:
+	menu->insertItem(item->pixmap, item->text_name, item->getId());
+	if( add_button )
+	  {
+	    menu->connectItem( item->getId(), item, SLOT(execAddButton()) );
+	    connect( item, SIGNAL(addButton(PMenuItem *)), (QObject *) panel,
+		     SLOT(addButton(PMenuItem*)) );
+	  }
+	else
+	  menu->connectItem(item->getId(), item->recv, item->memb);
+	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel, 
+		 SLOT(showToolTip(QString)) );
+	continue;
+      case add_but:
+	item->cmenu->setFont(menu->font());
+	// create submenu
+	item->sub_menu->createMenu( item->cmenu, panel, TRUE );
+	menu->insertItem(item->pixmap, item->text_name, item->cmenu, item->getId());
+	item->cmenu->installEventFilter((QObject *) panel);
+	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
+		 SLOT(showToolTip(QString)) );
+	connect( item->cmenu, SIGNAL(highlighted(int)), this,
+		 SLOT(highlighted(int)) );
+	continue;
+      case empty:
+	continue;
+      };
+    }
+  return;
+}
+
+void PMenu::add (PMenuItem *item)
+{
+  list.append(item);
+}
+
+void PMenu::insert( PMenuItem *item, int index )
+{
+  if( index > (int) list.count() )
+    list.append(item);
+  else
+    list.insert(index, item);
+}
+
+short PMenu::parse( QDir d )
+{
+  if( !d.exists() )
+    return -1;
+
+  PMenuItem *new_item;
+  PMenu *new_menu;
+  QDir new_dir;
+  QStrList sort_order;
+  QList<PMenuItem> item_list;
+  item_list.setAutoDelete(FALSE);
+  int pos;
+  bool read_only = FALSE;
+  sort_order.setAutoDelete(TRUE);
+
+  QString file = d.path();
+  QFileInfo dir_info(file);
+  if( !dir_info.isWritable() )
+    read_only = TRUE;
+  file += "/.directory";
+  QFile config(file);
+  if( config.open(IO_ReadOnly) ) 
+    {
+      QTextStream st( (QIODevice *) &config);
+      KConfig kconfig(&st);
+      kconfig.setGroup("KDE Desktop Entry");
+      QString order = kconfig.readEntry("SortOrder");
+      int len = order.length();
+      int j,i;
+      QString temp;
+      for( i = 0; i < len; )
+	{
+	  j = order.find(',', i);
+	  if( j == -1 )
+	    j = len;
+	  temp = order.mid(i, j-i);
+	  temp.stripWhiteSpace();
+	  sort_order.append(temp);
+	  i = j+1;
+	}
+      config.close();
+    }
+
+  const QFileInfoList *list = d.entryInfoList();
+  QFileInfoListIterator it( *list );
+  QFileInfo *fi;
+  if( it.count() < 3 )
+    return -1;
+  while ( (fi=it.current()) )
+    {
+      if( fi->fileName() == "." || fi->fileName() == ".." )
+	{ ++it; continue; }
+      if( fi->isDir() )
+	{
+	  new_menu = new PMenu;
+	  new_item = new PMenuItem;
+          new_dir.setPath( fi->filePath() );
+	  new_item->read_only = read_only;
+	  if( new_menu->parse( new_dir ) < 0 || new_item->parse( fi, new_menu ) < 0 )
+	    {
+	      delete new_menu;
+	      delete new_item;
+	      ++it;
+	      continue;
+	    }
+	  item_list.append(new_item);
+	}
+      else
+	{
+	  if( !fi->extension().contains("kdelnk") )
+	    { ++it; continue; }
+	  new_item = new PMenuItem;
+	  new_item->read_only = read_only;
+	  if( new_item->parse(fi) < 0 )
+	    delete new_item;
+	  else
+	    item_list.append(new_item);
+	}
+      ++it;
+    }
+  // sort items
+  QString item_name;
+  PMenuItem *item;
+  for( item_name = sort_order.first(); !item_name.isEmpty(); item_name = sort_order.next() )
+    {
+      for( item = item_list.first(); item != NULL; item = item_list.next() )
+	{
+	  if( item->text_name == item_name )
+	    {
+	      add(item);
+	      item_list.removeRef(item);
+	      break;
+	    }
+	}
+    }
+  if( item_list.count() != 0 )
+    {
+      for( item = item_list.first(); item != NULL; item = item_list.next() )
+	{ add(item); }
+    }
+  item_list.clear();
+  // insert separators
+  sort_order.first();
+  while( (pos = sort_order.findNext((QString) "SEPARATOR")) >= 0 )
+    {
+      sort_order.next();
+      new_item = new PMenuItem;
+      new_item->entry_type = separator;
+      new_item->read_only = read_only;
+      insert(new_item, pos);
+    }   
+  return 0;
+}
+
+void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item = NULL )
+{
+  if( parent_item )
+    if( parent_item->read_only )
+      return;
+  if( !base_dir.exists() )
+    {
+      return;
+    }
+  QString name;
+  const QStrList *temp_list = base_dir.entryList("*.kdelnk");
+  QStrList file_list;
+  file_list.setAutoDelete(TRUE);
+  QStrListIterator temp_it( *temp_list );
+  while( name = temp_it.current() )
+    {
+      file_list.append(name);
+      ++temp_it;
+    }
+  temp_list = base_dir.entryList("*", QDir::Dirs);
+  QStrList dir_list;
+  dir_list.setAutoDelete(TRUE);
+  temp_it.toFirst();
+  while( name = temp_it.current() )
+    {
+      if(name != "." && name != "..")
+	dir_list.append(name);
+      ++temp_it;
+    }
+
+  QString sort_order;
+  PMenuItem *item;
+  for( item = list.first(); item != 0; item = list.next() )
+    {
+      if( item->read_only )
+	continue;
+      if( item->entry_type == separator )
+	sort_order += ((QString) "SEPARATOR" + ',');
+      else
+	sort_order += (item->text_name + ',');
+      if( item->getType() == submenu )
+	{
+	  if( item->read_only )
+	    continue;
+	  QDir sub_dir(base_dir);
+	  if( !sub_dir.cd(item->text_name) )
+	    {
+	      base_dir.mkdir(item->text_name);
+	      if( !sub_dir.cd(item->text_name) )
+		continue;
+	    }
+	  item->sub_menu->writeConfig( sub_dir, item );
+	  dir_list.remove(item->text_name);
+	}
+      else
+	{
+	  item->writeConfig(base_dir);
+	  file_list.remove(item->text_name + ".kdelnk");
+	}
+    }
+  // remove files not in pmenu
+  for( name = file_list.first(); !name.isEmpty(); name = file_list.next() )
+    {
+      //debug("will remove file: %s", (const char *) name );
+      base_dir.remove(name);
+    }
+  // remove dirs not in pmenu
+  for( name = dir_list.first(); !name.isEmpty(); name = dir_list.next() )
+    {
+      //debug("will remove dir: %s", (const char *) name );
+      QDir sub_dir(base_dir);
+      if(sub_dir.cd(name))
+	{
+	  PMenu *new_menu = new PMenu;
+	  new_menu->writeConfig(sub_dir);
+	  delete new_menu;
+	  sub_dir.remove(".directory");	  
+	}
+      base_dir.rmdir(name);
+    }
+  sort_order.truncate(sort_order.length()-1);
+  QString file = base_dir.absPath();
+  file += "/.directory";
+  QFile config(file);
+  if( !config.open(IO_ReadWrite) ) 
+    return;
+  QTextStream st( (QIODevice *) &config);
+  KConfig kconfig(&st);
+  kconfig.setGroup("KDE Desktop Entry");
+  kconfig.writeEntry("SortOrder", sort_order);
+  if( parent_item )
+    {
+      kconfig.writeEntry("MiniIcon", parent_item->pixmap_name );
+    }
+  kconfig.sync();
+  config.close();
+}
+
+void PMenu::move(short item_id, short new_pos)
+{
+  PMenuItem *item;
+  if( item_id > new_pos )
+    {
+      item = list.take(item_id);
+      list.insert( new_pos, item);
+    }
+  else
+    {
+      item = list.take(item_id);
+      list.insert( new_pos - 1, item);
+    }
+}
+
+void PMenu::remove( short item_id )
+{
+  list.remove( item_id );
+}
+
+void PMenu::create_pixmap( QPixmap &buf, PMenuItem *item, QPopupMenu *menu)
+{
+  int w, h;
+  QPainter p;
+  QFontMetrics fm = menu->fontMetrics();   // size of font set for this widget
+
+  w  = 2 + item->pixmap.width() + 4 + fm.width( item->text_name ) + 2;
+  h = ( item->pixmap.height() > fm.height() ? item->pixmap.height() : fm.height() ) + 4; 
+  
+  buf.resize( w, h );                    // resize pixmap
+  buf.fill( menu->backgroundColor() );   // clear it
+  
+  p.begin( &buf );
+  p.drawPixmap( 2, 2, item->pixmap );              // use 2x2 border
+  p.setFont( menu->font() );
+  /*
+  p.drawText( 2 + item->pixmap.width() + 4,        // center text in item
+	      (h + fm.height()) / 2 - fm.descent(),
+	      item->text_name );
+	      */
+  p.drawText( 2 + item->pixmap.width() + 4,        // center text in item
+	      0, w, h,
+	      AlignVCenter | ShowPrefix | DontClip | SingleLine,
+	      item->text_name );
+  p.end();
+}
+
+PMenuItem * PMenu::searchItem(QString name)
+{
+  // search for kdelnk-file as a PMenuItem inside this PMenu hierarchy
+  // if it can't find the file it will return 0L
+  KConfig config;
+  config.setGroup("KDE Desktop Entries");
+  QString temp = QDir::homeDirPath()+"/Personal";
+  QString personal = config.readEntry("PersonalPath", temp.data() );
+  temp = KApplication::kdedir()+"/share/applnk";
+  QString kde_apps = config.readEntry("Path", temp.data() );
+  PMenuItem *found_item = 0L;
+  PMenuItem *item;
+  QString path;
+  QString origname = name.copy();
+  bool isKdelnkFile = FALSE;
+  //debug("searchName = %s", (const char *) name );
+  name = name.stripWhiteSpace();
+  if( name.left(9) == "$PERSONAL" )
+    {
+      // in $HOME/Personal
+      name.remove(0, 9);
+      name.prepend(personal);
+    }
+  else if( name.left(8) == "$KDEAPPS" )
+    {
+      // in $KDEDIR/apps
+      name.remove(0, 8);
+      name.prepend(kde_apps);
+    }
+  if( name.right(7) == ".kdelnk" ){
+    isKdelnkFile = TRUE;
+    name.truncate(name.length()-7);
+  }
+  path = name.left( name.findRev('/') );
+  name.remove( 0, path.length()+1 );
+//   debug("name = '%s' / path = '%s'", name.data(), path.data() );
+//   debug("name = '%s' / path = '%s'", (const char *) name, (const char *) path );
+  if( list.first()->dir_path != path )
+    {
+//       debug("list.first()->dir_path = '%s'", (const char *) list.first()->dir_path );
+      // can't be inside of this menu, so search only for submenus
+      for( item = list.first(); item != 0L; item = list.next() )
+	{
+	  if( item->text_name == name && item->dir_path == path )
+	    return item;
+	  if( item->cmenu != 0L )
+	    {
+	     if( ( found_item = item->sub_menu->searchItem( (QString) (path + '/' + name)) ) )
+	       return found_item;
+	    }
+	}
+    }
+  else
+    {
+      // should be inside of this menu
+      for( item = list.first(); item != 0L; item = list.next() )
+	{
+// 	  debug("item->text_name = '%s'", (const char *) item->text_name );
+	  if( item->text_name == name )
+	    return item;
+	}
+    }  
+
+  if (isKdelnkFile){
+    // generate a free entry
+    PMenuItem* pmi = new PMenuItem(unix_com);
+    pmi->parse(origname);
+    return pmi; 
+  }
+  return 0L;
+}
+
+void PMenu::highlighted( int id )
+{
+  PMenuItem *item;
+  for( item = list.first(); item != NULL && item->getId() != id; 
+       item = list.next() );
+  if (item && item->getId() == id)
+    item->highlighted();
+}
