@@ -1,2 +1,2 @@
-msgid ""
-msgstr "putuz magnuz"
+msgid "putuz magnuz"
+msgstr "ee"

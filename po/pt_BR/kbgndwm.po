@@ -2,13 +2,12 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-11-28 01:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
@@ -16,60 +15,60 @@ msgstr ""
 
 #: kbgndwm.cpp:45
 msgid "Display Settings"
-msgstr ""
+msgstr "Mostrar Configurações"
 
 #: kbgndwm.cpp:46
 msgid "Background Settings"
-msgstr ""
+msgstr "Configurações de Fundo"
 
 #: kbgndwm.cpp:48
 msgid "Common Background"
-msgstr ""
+msgstr "Fundo Comum"
 
 #: kbgndwm.cpp:50
 msgid "Undock"
-msgstr ""
+msgstr "Desembutir"
 
 #: kbgndwm.cpp:58
 msgid "Tiled"
-msgstr ""
+msgstr "Ladrilhado"
 
 #: kbgndwm.cpp:59
 msgid "Mirrored"
-msgstr ""
+msgstr "Espelhado"
 
 #: kbgndwm.cpp:60
 msgid "CenterTiled"
-msgstr ""
+msgstr "Centro-Ladrilhado"
 
 #: kbgndwm.cpp:61
 msgid "Centred"
-msgstr ""
+msgstr "Centrado"
 
 #: kbgndwm.cpp:62
 msgid "CentredBrick"
-msgstr ""
+msgstr "Centro-Tijolos"
 
 #: kbgndwm.cpp:63
 msgid "CentredWarp"
-msgstr ""
+msgstr "Centro-Warp"
 
 #: kbgndwm.cpp:64
 msgid "CentredMaxpect"
-msgstr ""
+msgstr "Centro-Maxpect"
 
 #: kbgndwm.cpp:65
 msgid "SymmetricalTiled"
-msgstr ""
+msgstr "Simétrico-Ladrilhado"
 
 #: kbgndwm.cpp:66
 msgid "SymmetricalMirrored"
-msgstr ""
+msgstr "Simétrico-Espelhado"
 
 #: kbgndwm.cpp:67
 msgid "Scaled"
-msgstr ""
+msgstr "Escalonado"
 
 #: bg.cpp:235 bg.cpp:238
 msgid "No wallpaper"
-msgstr ""
+msgstr "Sem papel de parede"
