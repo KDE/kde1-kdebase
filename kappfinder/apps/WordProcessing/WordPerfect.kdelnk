@@ -14,3 +14,4 @@ DocPath=
 Type=Application
 Terminal=0
 Comment=WordPerfect Word Processor
+Comment[no]=Tekstbehandleren Word Perfect
