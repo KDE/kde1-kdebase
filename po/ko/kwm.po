@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-06-18 22:21+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
+
+#: main.C:68
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr ""
+"kwm: 다른 윈도우 관리자가 실행되고 있습니다.\n"
+"kwm을 실행할 수 없습니다.\n"
+
+#: main.C:82
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr "kwm: 초기화중 오류; 중단합니다\n"
+
+#: main.C:470
+msgid "Preparing session ... "
+msgstr "세션을 준비중입니다 ... "
+
+#: main.C:489
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""
+
+#: main.C:496
+msgid "Usage: "
+msgstr "사용법: "
+
+#: main.C:507
+msgid "&Maximize"
+msgstr "최대화(&M)"
+
+#: main.C:508
+msgid "&Restore"
+msgstr "복원(&R)"
+
+#: main.C:509
+msgid "&Iconify"
+msgstr "아이콘화(&I)"
+
+#: main.C:510
+msgid "&DeIconify"
+msgstr "아이콘화 해제(&D)"
+
+#: main.C:511
+msgid "&Sticky"
+msgstr "윈도우 고정(&S)"
+
+#: main.C:512
+msgid "&UnSticky"
+msgstr "고정 해제(&U)"
+
+#: main.C:513
+msgid "Mo&ve"
+msgstr "이동(&v)"
+
+#: main.C:514
+msgid "Resi&ze"
+msgstr "크기조절(&z)"
+
+#: main.C:516
+msgid "&To desktop"
+msgstr "데스크탑으로(&T)"
+
+#: main.C:518
+msgid "&Onto current desktop"
+msgstr "현재 데스크탑으로(&O)"
+
+#: main.C:571
+msgid "One"
+msgstr "하나"
+
+#: main.C:574
+msgid "Two"
+msgstr "둘"
+
+#: main.C:577
+msgid "Three"
+msgstr "셋"
+
+#: main.C:580
+msgid "Four"
+msgstr "넷"
+
+#: main.C:583
+msgid "Five"
+msgstr "다섯"
+
+#: main.C:586
+msgid "Six"
+msgstr "여섯"
+
+#: main.C:589
+msgid "Seven"
+msgstr "일곱"
+
+#: main.C:592
+msgid "Eight"
+msgstr "여덟"
+
+#: main.C:606
+msgid "Unnamed Desktop"
+msgstr "이름없는 데스크탑"
+
+#: main.C:942
+msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
+msgstr "픽스맵이 올바르지 않습니다: Shape 모드가 불가능함\n"
+
+#: main.C:1054
+msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
+msgstr "픽스맵이 올바르지 않습니다: Gimmick 모드가 불가능함\n"
+
+#: main.C:1311
+msgid "*** No Tasks ***"
+msgstr "*** 작업 없음***"
+
+#: minicli.C:116
+msgid "Command:"
+msgstr "명령:"
+
+#: warning.C:36
+msgid "Ooops!"
+msgstr "오우!"
+
+#: logout.C:36 taskmgr.C:108
+msgid "Logout"
+msgstr "로그아웃"
+
+#: logout.C:46
+msgid "Session prepared for logout"
+msgstr "로그아웃 준비"
+
+#: logout.C:52
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+"다음 응용프로그램은 이후의 세션에서 잃어버릴 수도 있는\n"
+"저장하지 않은 데이터를 포함하고 있습니다."
+
+#: logout.C:63
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+"다음 응용프로그램은 다시 시작할 때 변화된 내용을 복원할 수\n"
+"없습니다. 아직 저장되지 않은 중요한 자료가 없는지 확인하십시오."
+
+#: logout.C:74
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+"다음 응용프로그램은 X11용 프로그램이 아니므로 다시 실행할 때 변화된 내용을\n"
+"복원할 수 없습니다. 아직 저장되지 않은 중요한 데이터가 없는지 확인하십시오."
+
+#: taskmgr.C:107
+msgid "Switch to"
+msgstr "교체"
+
+#: taskmgr.C:121
+msgid "Current session"
+msgstr "현재 세션"

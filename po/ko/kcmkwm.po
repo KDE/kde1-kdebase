@@ -1,0 +1,283 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
+
+#: main.cpp:59
+msgid "&Windows"
+msgstr "윈도우(&W)"
+
+#: main.cpp:62
+msgid "&Buttons"
+msgstr "단추(&B)"
+
+#: main.cpp:65
+msgid "&Titlebar"
+msgstr "창제목(&T)"
+
+#: main.cpp:68
+msgid "&Desktop"
+msgstr "데스크탑(&D)"
+
+#: main.cpp:74
+msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
+msgstr "사용법: kcmkwm [-init | {윈도우,단추,타이틀바,데스크탑}]\n"
+
+#: main.cpp:105
+msgid "Window manager style"
+msgstr "윈도우 매니져 스타일"
+
+#: titlebar.cpp:117
+msgid "Minimize"
+msgstr "최소화"
+
+#: titlebar.cpp:121
+msgid "Maximize"
+msgstr "최대화"
+
+#: titlebar.cpp:125
+msgid "Sticky"
+msgstr "윈도우 고정"
+
+#: titlebar.cpp:133
+msgid "Menu"
+msgstr "메뉴"
+
+#: titlebar.cpp:463
+msgid ""
+"The left side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr ""
+"타이틀 바의 왼쪽이 여유가 없습니다... '최대화' 단추 기능을 사용할 수 없습니다\n"
+
+#: titlebar.cpp:496
+msgid ""
+"The right side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr ""
+"타이틀 바의 오른쪽이 여유가 없습니다... '최대화' 단추 기능을 사용할 수 없습니다\n"
+
+#: titlebar.cpp:536
+msgid ""
+"The left side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr ""
+"타이틀 바의 왼쪽이 여유가 없습니다... '최소화' 단추 기능을 사용할 수 없습니다\n"
+
+#: titlebar.cpp:569
+msgid ""
+"The right side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr ""
+"타이틀 바의 오른쪽이 여유가 없습니다... '최소화' 단추 기능을 사용할 수 없습니다\n"
+
+#: titlebar.cpp:926
+msgid "Titlebar appearance"
+msgstr "창제목 모양"
+
+#: titlebar.cpp:928
+msgid "Shaded Vertically"
+msgstr "수직으로 어두워짐"
+
+#: titlebar.cpp:930
+msgid "Shaded Horizontally"
+msgstr "수평으로 어두워짐"
+
+#: titlebar.cpp:934
+msgid "Plain"
+msgstr "효과없앰"
+
+#: titlebar.cpp:937 titlebar.cpp:958
+msgid "Pixmap"
+msgstr "픽스맵"
+
+#: titlebar.cpp:944
+msgid "Title Animation"
+msgstr "창제목 움직임"
+
+#: desktop.cpp:91 titlebar.cpp:947
+msgid "ms"
+msgstr "ms"
+
+#: titlebar.cpp:969
+msgid "&Active pixmap"
+msgstr "픽스맵 활성화(&A)"
+
+#: titlebar.cpp:971
+msgid "&Inactive pixmap"
+msgstr "픽스맵 비활성화(&I)"
+
+#: titlebar.cpp:987
+msgid "Mouse action"
+msgstr "마우스 동작"
+
+#: titlebar.cpp:989
+msgid ""
+"LeftMouseButton double click\n"
+"    on titlebar does:"
+msgstr ""
+"창제목을 왼쪽 마우스 단추를\n"
+"    두번 누르기:"
+
+#: titlebar.cpp:993
+msgid "(Un)Maximize"
+msgstr "최대(소)화"
+
+#: titlebar.cpp:995
+msgid "(Un)Shade"
+msgstr "윈도감추기(보이기)"
+
+#: titlebar.cpp:996
+msgid "Iconify"
+msgstr "아이콘화"
+
+#: titlebar.cpp:997
+msgid "(Un)Sticky"
+msgstr "윈도우 고정(해제)"
+
+#: titlebar.cpp:998
+msgid "Resize"
+msgstr "크기조정"
+
+#: titlebar.cpp:1000
+msgid "Operations Menu"
+msgstr "윈도우 조작 메뉴"
+
+#: windows.cpp:84
+msgid "Window movement"
+msgstr "윈도우 이동"
+
+#: windows.cpp:85
+msgid "Transparent"
+msgstr "투명이동"
+
+#: windows.cpp:86 windows.cpp:95
+msgid "Opaque"
+msgstr "불투명이동"
+
+#: windows.cpp:89
+msgid "Window resize"
+msgstr "윈도우 크기조절"
+
+#: windows.cpp:90
+msgid "Animation:"
+msgstr "움직임:"
+
+#: windows.cpp:92
+msgid "Fast"
+msgstr "빠르게"
+
+#: windows.cpp:98
+msgid "Placement policy"
+msgstr "윈도우 배치 방법"
+
+#: windows.cpp:100
+msgid "Smart"
+msgstr "스마트"
+
+#: windows.cpp:102
+msgid "Cascade"
+msgstr "계단배열"
+
+#: windows.cpp:104
+msgid "Interactive"
+msgstr "사용자가 위치 지정"
+
+#: windows.cpp:106
+msgid "Random"
+msgstr "임의배치"
+
+#: windows.cpp:108
+msgid "Manual"
+msgstr "수동배치"
+
+#: windows.cpp:115
+msgid "Allowed Overlap:"
+msgstr "겹쳐지기 허용:"
+
+#: windows.cpp:122
+msgid "Maximize Style"
+msgstr "최대화 형식"
+
+#: windows.cpp:123
+msgid "Maximize fully"
+msgstr "전체적으로 최대화"
+
+#: windows.cpp:124
+msgid "Maximize vertically"
+msgstr "수직으로 최대화"
+
+#: windows.cpp:127
+msgid "Focus Policy"
+msgstr "활성화 방법"
+
+#: windows.cpp:129
+msgid "Click to focus"
+msgstr "클릭시 활성화"
+
+#: windows.cpp:131
+msgid "Focus follows mouse"
+msgstr "마우스따라 활성화"
+
+#: windows.cpp:133
+msgid "Classic focus follows mouse"
+msgstr "마우스따라 활성화(전통방식)??"
+
+#: windows.cpp:135
+msgid "Classic sloppy focus"
+msgstr "마우스따라 활성화(전통방식)??"
+
+#: windows.cpp:144
+msgid ""
+"Auto raise delay\n"
+"(<100 disables)"
+msgstr ""
+"자동 불러내기 지연\n"
+"(<100 불가능)"
+
+#: windows.cpp:147
+msgid "miliseconds"
+msgstr "ms"
+
+#: desktop.cpp:77
+msgid "Active desktop borders"
+msgstr "데스크탑 경계선 활성화"
+
+#: desktop.cpp:79
+msgid "Enable active desktop borders"
+msgstr "데스크탑 경계선 활성화 가능"
+
+#: desktop.cpp:81
+msgid "Move pointer towards center after switch"
+msgstr "교체후 포인터 중앙으로 옮김"
+
+#: desktop.cpp:87
+msgid "Dekstop switch delay:"
+msgstr "데스크탑 교체 지연시간:"
+
+#: desktop.cpp:100
+msgid "Magic Borders"
+msgstr "요술 경계선"
+
+#: desktop.cpp:102
+msgid ""
+"Border Snap Zone:\n"
+"       (pixels)"
+msgstr ""
+"경계선 스냅 존:\n"
+"       (픽셀단위)"
+
+#: desktop.cpp:116
+msgid ""
+"Window Snap Zone:\n"
+"       (pixels)"
+msgstr ""
+"윈도우 스냅 존:\n"
+"       (픽셀단위)"

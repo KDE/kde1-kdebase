@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
+
+#: main.cpp:62
+msgid "&Panel"
+msgstr "패널(&P)"
+
+#: main.cpp:68
+msgid "&Desktops"
+msgstr "데스크탑(&D)"
+
+#: main.cpp:97
+msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
+msgstr "사용법: kcmkpanel [-init | {패널,옵션,데스크탑}]\n"
+
+#: main.cpp:128
+msgid "KPanel Configuration"
+msgstr "KPanel 설정"
+
+#: panel.cpp:59
+msgid "Location"
+msgstr "위치"
+
+#: panel.cpp:60
+msgid "&Top"
+msgstr "위(&T)"
+
+#: panel.cpp:61
+msgid "&Left"
+msgstr "왼쪽(&L)"
+
+#: panel.cpp:62
+msgid "&Bottom"
+msgstr "아래(&B)"
+
+#: panel.cpp:74
+msgid "Taskbar"
+msgstr "태스크바"
+
+#: panel.cpp:75
+msgid "&Hidden"
+msgstr "숨김(&H)"
+
+#: panel.cpp:77
+msgid "T&op"
+msgstr "위(&o)"
+
+#: panel.cpp:79
+msgid "Botto&m"
+msgstr "아래(&m)"
+
+#: panel.cpp:81
+msgid "Top/Le&ft"
+msgstr "위/왼쪽(&f)"
+
+#: panel.cpp:96
+msgid "T&iny"
+msgstr "최소(&i)"
+
+#: panel.cpp:98
+msgid "&Normal"
+msgstr "보통(&N)"
+
+#: panel.cpp:100
+msgid "L&arge"
+msgstr "최대(&a)"
+
+#: desktops.cpp:73
+msgid "&Visible"
+msgstr "가상창 갯수(&V)"
+
+#: desktops.cpp:82
+msgid "&Width"
+msgstr "패널넓이(&W)"
+
+#: options.cpp:38
+msgid "Menu Tooltips"
+msgstr "풍선도움말"
+
+#: options.cpp:39
+msgid "Show &Menu Tooltips"
+msgstr "풍선도움말 보이기(&M)"
+
+#: options.cpp:44
+msgid "De&lay:"
+msgstr "지연시간(&l)"
+
+#: options.cpp:56
+msgid "ms"
+msgstr "ms"
+
+#: options.cpp:68
+msgid "Others"
+msgstr "기타"
+
+#: options.cpp:69
+msgid "Personal &First"
+msgstr "개인 사용자 우선(&F)"
+
+#: options.cpp:71
+msgid "Auto &Hide Panel"
+msgstr "패널 자동 감추기(&H)"
+
+#: options.cpp:73
+msgid "Auto Hide &Taskbar"
+msgstr "태스크바 자동 숨기기(&T)"
+
+#: options.cpp:81
+msgid "Clock"
+msgstr "시계"
+
+#: options.cpp:83
+msgid "&24h"
+msgstr "24시간(&2)"
+
+#: options.cpp:85
+msgid "&12h AM/PM"
+msgstr "12시간 AM/PM(&1)"

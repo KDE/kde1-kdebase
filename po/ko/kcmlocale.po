@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
+
+#: main.cpp:52
+msgid "&Locale"
+msgstr "로케일(&L)"
+
+#: main.cpp:58
+msgid "usage: kcmlocale [-init | language]\n"
+msgstr "사용법: kcmlocale [-init | language]\n"
+
+#: main.cpp:86
+msgid "Locale settings"
+msgstr "로케일 설정"
+
+#: locale.cpp:45
+msgid "Language"
+msgstr "언어"
+
+#: locale.cpp:55
+msgid "First"
+msgstr "첫번째"
+
+#: locale.cpp:65
+msgid "Second"
+msgstr "두번째"
+
+#: locale.cpp:75
+msgid "Third"
+msgstr "세번째"
+
+#: locale.cpp:115
+msgid "without name!"
+msgstr "이름 없음!"
+
+#: locale.cpp:181
+msgid "Applying language settings"
+msgstr "언어 설정 적용"
+
+#: locale.cpp:182
+msgid ""
+"Changed language settings apply only to newly started applications.\n"
+"To change the language of all programs, you will have to logout first."
+msgstr ""
+"바뀐 언어 설정은 새로 시작되는 어플리케이션에서 적용됩니다.\n"
+"모든 프로그램들의 언어 설정을 바꾸시려면, 로그아웃을 해야합니다."

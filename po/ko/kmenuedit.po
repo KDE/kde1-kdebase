@@ -1,0 +1,252 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
+
+#: kmenuedit.cpp:68
+msgid "Change &Menuname"
+msgstr "메뉴이름 바꾸기(&M)"
+
+#: kmenuedit.cpp:69
+msgid "Reload &Filetypes"
+msgstr "파일유형 다시불러오기(&F)"
+
+#: kmenuedit.cpp:76
+msgid "by"
+msgstr " "
+
+#: kmenuedit.cpp:175 kmenuedit.cpp:200
+msgid "Changes not saved !"
+msgstr "변경사항이 저장되지 않습니다 !"
+
+#: kmenuedit.cpp:176 kmenuedit.cpp:201
+msgid ""
+"\n"
+"Do you want to save your changes ?"
+msgstr ""
+"\n"
+"변경사항을 저장하시겠읍니까?"
+
+#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
+msgid "EMPTY"
+msgstr "비어있음"
+
+#: kmenuedit.cpp:335
+msgid "Reload Menus"
+msgstr "메뉴 다시 불러오기"
+
+#: kmenuedit.cpp:336
+msgid ""
+"Reloading the menus will discard all changes.\n"
+"Are you sure you want to reload ?"
+msgstr ""
+"메뉴를 다시 불러오면 변경사항을 잃게 됩니다.\n"
+"다시 불러오겠읍니까?"
+
+#: button.cpp:209 main.cpp:78 main.cpp:91
+msgid "KMenuedit"
+msgstr "KDE 메뉴편집기"
+
+#: main.cpp:79
+msgid ""
+"The directory for your personal menu does not exist.\n"
+" Do you want to create it now ?"
+msgstr ""
+"귀하의 개인 메뉴를 위한 디렉토리가 존재하지 않습니다.\n"
+" 디렉토리를 만들시겠습니까?"
+
+#: main.cpp:92
+msgid ""
+"Unable to create directory for personal menu.\n"
+" Select Ok to exit KMenuedit."
+msgstr ""
+"개인 메뉴 디렉토리를 만들 수 없읍니다.\n"
+" KMenuedit를 끝내려면 OK를 선택하십시오."
+
+#: confmenu.cpp:90 entrydialog.cpp:52
+msgid "Separator"
+msgstr "메뉴분리자"
+
+#: confmenu.cpp:102 confmenu.cpp:317
+msgid "Open/ Close"
+msgstr "열기/ 닫기"
+
+#: confmenu.cpp:110
+msgid "! PROTECTED Button !"
+msgstr "!고칠 수 없는 단추!"
+
+#: confmenu.cpp:171 confmenu.cpp:300
+msgid "Warning !"
+msgstr "경고 !"
+
+#: confmenu.cpp:172
+msgid "If you delete this button you will lose all of its submenus"
+msgstr "이 단추를 삭제하면 하위메뉴가 모두 삭제됩니다"
+
+#: confmenu.cpp:281
+msgid "Wrong filename"
+msgstr "잘못된 파일이름"
+
+#: confmenu.cpp:282
+msgid ""
+"A kdelnk-file with this name does already exist. \n"
+"Please choose another filename."
+msgstr ""
+"이 이름의 kdelnk 파일이 이미 존재합니다. \n"
+"다른 파일이름을 선택하십시오."
+
+#: confmenu.cpp:301
+msgid "Changing the type of this button will delete all of its submenus"
+msgstr "이 단추의 유형을 변경하면 하위 메뉴를 모두 지우게 됩니다"
+
+#: confmenu.cpp:322 confmenu.cpp:911
+msgid "no command"
+msgstr "실행명령 없음"
+
+#: button.cpp:210
+msgid ""
+"Sorry ! You have to save your changes\n"
+"before you can drop this item on another window."
+msgstr ""
+"이 아이템을 다른 윈도우로\n"
+"옮기기 전에 변경사항을 저장해야 합니다."
+
+#: DesktopPathDialogData.cpp:37
+msgid "Path for KDE Desktop Entries is not set."
+msgstr "KDE 데스크탑 경로가 설정되지 않았읍니다"
+
+#: DesktopPathDialogData.cpp:49
+msgid "I suggest the following entries:"
+msgstr "다음 항목들이 있읍니다:"
+
+#: DesktopPathDialogData.cpp:55
+msgid "Path:"
+msgstr "경로:"
+
+#: DesktopPathDialogData.cpp:68
+msgid "PersonalPath:"
+msgstr "개인경로:"
+
+#: entrydialog.cpp:53
+msgid "Submenu"
+msgstr "하위메뉴"
+
+#: entrydialog.cpp:54 entrydialog.cpp:167 entrydialog.cpp:536
+#: entrydialog.cpp:541
+msgid "Application"
+msgstr "응용프로그램"
+
+#: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
+msgid "Swallow"
+msgstr "삽입"
+
+#: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
+msgid "Link"
+msgstr "링크"
+
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
+msgid "Device"
+msgstr "장치"
+
+#: entrydialog.cpp:69
+msgid "File Name:"
+msgstr "파일 이름:"
+
+#: entrydialog.cpp:95
+msgid "Mini Icon:"
+msgstr "작은 Icon:"
+
+#: entrydialog.cpp:127
+msgid "Icon:"
+msgstr "Icon:"
+
+#: entrydialog.cpp:133
+msgid "Comment:"
+msgstr "주석:"
+
+#: entrydialog.cpp:165 entrydialog.cpp:535
+msgid "Execute"
+msgstr "실행"
+
+#: entrydialog.cpp:186
+msgid "Execute:"
+msgstr "실행:"
+
+#: entrydialog.cpp:192
+msgid "Working Directory:"
+msgstr "작업 디렉토리:"
+
+#: entrydialog.cpp:205
+msgid "Run in terminal"
+msgstr "터미널에 실행"
+
+#: entrydialog.cpp:211
+msgid "Terminal Options:"
+msgstr "터미널 옵션:"
+
+#: entrydialog.cpp:292
+msgid "Binary Pattern:"
+msgstr "바이너리 패턴:"
+
+#: entrydialog.cpp:300
+msgid "Application to swallow:"
+msgstr "삽입할 응용프로그램:"
+
+#: entrydialog.cpp:306
+msgid "Title of application:"
+msgstr "응용프로그램 제목:"
+
+#: entrydialog.cpp:312
+msgid "Application to execute on button press:"
+msgstr "단추를 눌렀을 때 실행할 응용프로그램:"
+
+#: entrydialog.cpp:342
+msgid "URL:"
+msgstr "URL:"
+
+#: entrydialog.cpp:391
+msgid "Read Only"
+msgstr "읽기 전용"
+
+#: entrydialog.cpp:397
+msgid "Device:"
+msgstr "장치:"
+
+#: entrydialog.cpp:403
+msgid "Mount Point:"
+msgstr "마운트할 곳:"
+
+#: entrydialog.cpp:409
+msgid "FS Type:"
+msgstr "FS 유형:"
+
+#: entrydialog.cpp:415
+msgid "Unmount Icon:"
+msgstr "언마운트 Icon:"
+
+#: MenuNameDialog.cpp:21
+msgid "Change Menunames"
+msgstr "메뉴이름 바꾸기"
+
+#: MenuNameDialogData.cpp:31
+msgid "Change the name of the menus as displayed in kpanel"
+msgstr "kpanel에서 보이는 메뉴의 이름을 바꿉니다"
+
+#: MenuNameDialogData.cpp:36
+msgid "Personal:"
+msgstr "사용자지정:"
+
+#: MenuNameDialogData.cpp:41
+msgid "Default:"
+msgstr "기본설정:"
