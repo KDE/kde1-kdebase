@@ -42,11 +42,11 @@
 #include <kiconloaderdialog.h>
 #include <kmsgbox.h>
 #include <ksimpleconfig.h>
-
+/*
 #ifdef HAVE_LIBGIF
 #include <gif.h>
 #endif
-
+*/
 #ifdef HAVE_LIBJPEG
 #include <jpeg.h>
 #endif
