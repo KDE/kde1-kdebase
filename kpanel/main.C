@@ -145,5 +145,6 @@ int main( int argc, char ** argv ){
   XSelectInput(qt_xdisplay(), qt_xrootwin(), 
 	       KeyPressMask);
   grabKey(XK_F1, Mod1Mask);
-  return myapp.exec();
+  while (1)  myapp.exec();
+  return 0;
 }
