@@ -811,7 +811,9 @@ void KfmView::slotNewView()
 	char *s;
     QStrList popupFiles = new QStrList();
     getActiveView()->getSelected ( popupFiles ); // get the selected URL(s)
-	for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
+    if ( popupFiles.isEmpty() && popupMenuEvent )
+       popupFiles.append ( getURL() );
+	for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
 	{
 	KfmGui *m = new KfmGui( 0L, 0L, s );
 	m->show();
