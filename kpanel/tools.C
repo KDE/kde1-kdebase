@@ -255,6 +255,11 @@ myTaskButton::~myTaskButton () {
     active = 0;
 }
 
+bool myTaskButton::isActive() const
+{
+   return this == active;
+}
+
 void myTaskButton::setActive(bool value){
   if (value){
     myTaskButton* tmp = active;
@@ -270,6 +275,12 @@ void myTaskButton::setActive(bool value){
     flat = !(rect().contains(mapFromGlobal(QCursor::pos()), true));
     repaint();
   }
+}
+
+
+static void myTaskButton::setNoActive()
+{
+    active = 0;
 }
 
 void myTaskButton::setText(const char* arg){

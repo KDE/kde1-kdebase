@@ -65,7 +65,8 @@ enum {
   OP_RESIZE,
   OP_CLOSE,
   OP_STICKY,
-  OP_ONTO_CURRENT_DESKTOP
+  OP_ONTO_CURRENT_DESKTOP,
+  OP_ICONIFY_OTHER_WINDOWS
 };
 
 enum StyleSize { tiny = 0, normal, large };
@@ -131,6 +132,8 @@ public:
   ~myTaskButton();
   void setText(const char*);
   void setActive(bool value = TRUE);
+  bool isActive() const;
+  static void setNoActive();
   Window win;
   int virtual_desktop;
  protected:

@@ -1031,7 +1031,10 @@ void kPanel::taskbarClicked(int item){
 
     break;
   default:
-    KWM::activate(b->win);
+      if (b->isActive() && KWM::desktop(b->win) == KWM::currentDesktop())
+	  KWM::setIconify(b->win, TRUE );
+      else
+	  KWM::activate(b->win);
     break;
   }
 }
@@ -1077,6 +1080,10 @@ void kPanel::taskbarPressed(int item){
     pop.setItemEnabled(OP_ONTO_CURRENT_DESKTOP, false);
 
   pop.insertSeparator();
+  pop.insertItem(i18n("Iconify other &windows"), OP_ICONIFY_OTHER_WINDOWS);
+  if (b->virtual_desktop != KWM::currentDesktop())
+    pop.setItemEnabled(OP_ICONIFY_OTHER_WINDOWS, false);
+  pop.insertSeparator();
   pop.insertItem(KWM::getCloseString(),
 		 OP_CLOSE);
 
@@ -1101,6 +1108,16 @@ void kPanel::taskbarPressed(int item){
     break;
   case OP_ONTO_CURRENT_DESKTOP:
     KWM::moveToDesktop(b->win, KWM::currentDesktop());
+    break;
+  case OP_ICONIFY_OTHER_WINDOWS:
+      {
+	  myTaskButton* bi;
+	  int cd = KWM::currentDesktop();
+	  for (bi=taskbar_buttons.first(); bi; bi = taskbar_buttons.next()){
+	      if ( b != bi && KWM::desktop(bi->win) == cd)
+		  KWM::setIconify(bi->win, true);
+	  }
+      }
     break;
   default:
     break;

@@ -243,8 +243,10 @@ void kPanel::windowChange(Window w){
 }
 void kPanel::windowActivate(Window w){
   myTaskButton* b = taskButtonFromWindow(w);
-  if (!b)
+  if (!b) {
+      myTaskButton::setNoActive();
     return;
+  }
   b->setActive();
 }
 
@@ -798,7 +800,7 @@ void kPanel::slotDropEvent( KDNDDropZone *_zone ){
 	a.truncate(a.length()-1);
 
       QPoint p = mapFromGlobal(QPoint(drop_zone->getMouseX(), drop_zone->getMouseY()));
-      if( QRect(kde_button->x(), kde_button->y(), kde_button->width(), 
+      if( QRect(kde_button->x(), kde_button->y(), kde_button->width(),
 		kde_button->height()).contains(p) ){
 	// file was dropped onto the K-Button
 	if( personal_menu->addFromDrop(a) ){
