@@ -361,7 +361,7 @@ msgid ""
 "\n"
 "There is no way to restore them."
 msgstr ""
-"¿Realmente desea borrar los archivos?\n"
+"¿Realmente desea borrar los archivos seleccionados?\n"
 "\n"
 "No hay forma de recuperarlos."
 
@@ -375,7 +375,7 @@ msgstr "ERROR: Soltó un directorio sobre un subdirectorio"
 
 #: kfmexec.cpp:286 kfmman.cpp:1182 kfmview.cpp:708
 msgid "Open With:"
-msgstr "Abrir con:"
+msgstr "Abrir Con:"
 
 #: kfmview.cpp:743 root.cpp:1166
 msgid "ERROR: Can not open properties for multiple files"
@@ -401,7 +401,7 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 "Imposible guardar propiedades porque\n"
-"esta dirección no tiene marcador y no esta en el escritorio.\n"
+"esta dirección no tiene marcador y no está en el escritorio.\n"
 "\n"
 " Ponga un marcador aqui primero o haga un kdelnk hacia aqui en el escritorio."
 
@@ -447,7 +447,6 @@ msgid "The mime type config file "
 msgstr "El archivo de configuración del tipo mime"
 
 #: kbind.cpp:304
-#, fuzzy
 msgid "does not contain a MimeType=... entry"
 msgstr "no contiene una linea MimeType=..."
 
@@ -695,7 +694,9 @@ msgstr "Escribir"
 msgid ""
 "Change\n"
 "Into"
-msgstr "Entrar"
+msgstr ""
+"Cambiar\n"
+"a"
 
 #: kfmprops.cpp:451
 msgid "Exec"
@@ -810,7 +811,7 @@ msgstr "Aplicar globalmente"
 
 #: kfmprops.cpp:1163 kfmprops.cpp:1235 kfmprops.cpp:1293
 msgid "(Default)"
-msgstr "(Estándar)"
+msgstr "(Por Defecto)"
 
 #: kfmprops.cpp:1224
 msgid "Could not write to\n"
@@ -904,7 +905,7 @@ msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
 msgstr ""
-"El archivo ~/.kde/share/apps/kfm/magic se corrumpió\n"
+"El archivo ~/.kde/share/apps/kfm/magic se corrompió\n"
 "La autorización falló"
 
 #: kfmserver.cpp:378
@@ -960,17 +961,15 @@ msgstr "Trabajando ..."
 
 #: kfmman.cpp:1631
 msgid "Copy here"
-msgstr ""
+msgstr "Copiar aquí"
 
 #: kfmman.cpp:1636
-#, fuzzy
 msgid "Move here"
-msgstr "Mover"
+msgstr "Mover aquí"
 
 #: kfmman.cpp:1640
-#, fuzzy
 msgid "Link here"
-msgstr "Enlazar"
+msgstr "Enlazar aquí"
 
 #: kiojob.cpp:134
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
