@@ -1261,6 +1261,30 @@ int handle_X_event(XEvent event, unsigned char qt_c)
 		  /* deactivated since Button3 is for popupmenu. Matthias */ 
 		  /* case Button3 : */
 		  /* scr_extend_selection(event.xbutton.x,event.xbutton.y); */
+
+		  /* Scroll up */
+		case Button4:
+		    MyWinInfo.offset += 3;
+		    
+		    // check to make sure we aren't at the top already
+		    if (MyWinInfo.offset > MyWinInfo.sline_top)
+			{
+			    MyWinInfo.offset = MyWinInfo.sline_top;
+			}
+		    screen_refresh();
+		    return 0;
+
+		    /* Scroll down */
+		case Button5:
+		    MyWinInfo.offset -= 3;
+
+		    // check to make sure we aren't at the bottom already
+		    if (MyWinInfo.offset < 0)
+			{
+			    MyWinInfo.offset = 0;
+			}
+		    screen_refresh();
+		    return 0;
 		default:
 		  return 0;
 		}
