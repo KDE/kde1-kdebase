@@ -10,11 +10,9 @@ Language[da]=Ungarsk
 Language[es]=Húngaro
 Language[fi]=Unkari
 Language[fr]=Hongrois
-Language[hr]=Mağjarski
 Language[is]=Ungverskt
 Language[it]=Ungherese
 Language[no]=Ungarsk
-Language[pt]=Hungaro
 Language[pt_BR]=Húngaro
 Language[ro]=Ungureascã
 Language[ru]=÷ÅÎÇÅÒÓËÉÊ
@@ -62,3 +60,5 @@ keysym32=n,n,N,braceright
 keysym33=comma,comma,question,semicolon
 keysym34=period,period,colon
 keysym35=slash,minus,underscore,asterisk
+keycode36=94,iacute,Iacute,less
+
