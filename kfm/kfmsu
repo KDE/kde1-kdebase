@@ -1,5 +1,5 @@
 #!/bin/sh
-if [ $UID = 0 ]; then
+if test `id -u` -eq 0 ; then
 	kfmclient openURL $HOME
 else
 	konsole  -vt_sz 80x12 -e kfmsu2
