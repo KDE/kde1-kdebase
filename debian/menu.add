@@ -8,7 +8,7 @@
 	section=Apps/Tools\
 	title="KDE Filemanager"\
 	command=kfm\
-	icon=/usr/share/icons/kfm_home.xpm
+	icon=/usr/share/pixmaps/kfm_home.xpm
 ?package(kdebase):\
 	needs=x11\
 	section=Apps/Viewers\
