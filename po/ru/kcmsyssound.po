@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmsyssound-0.1\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-11-07 01:50+0600\n"
+"PO-Revision-Date: 1998-12-10 01:50+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -100,11 +100,11 @@ msgstr "Демаксимизация окна"
 
 #: syssound.cpp:167
 msgid "Window Sticky"
-msgstr "Прикалывание окна"
+msgstr "Прилепление окна"
 
 #: syssound.cpp:168
 msgid "Window UnSticky"
-msgstr "Откалывание окна"
+msgstr "Отлепление окна"
 
 #: syssound.cpp:169
 msgid "Window Trans New"

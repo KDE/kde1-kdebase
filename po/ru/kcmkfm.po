@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
 "POT-Creation-Date: 1998-12-12 14:27+0100\n"
-"PO-Revision-Date: 1998-11-07 00:00+0600\n"
+"PO-Revision-Date: 1998-12-10 00:00+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,28 +23,29 @@ msgstr "Цвет"
 
 #: main.cpp:62
 msgid "&Other"
-msgstr ""
+msgstr "&Другие"
 
 #: main.cpp:65
 msgid "&Proxy"
-msgstr ""
+msgstr "Прокси"
 
 #: main.cpp:67
 msgid "&HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: main.cpp:70
 msgid "User &Agent"
-msgstr ""
+msgstr "&Агент пользователя"
 
 #: main.cpp:74
 msgid "&Desktop Icons"
-msgstr ""
+msgstr "Пиктограммы рабочего стола"
 
 #: main.cpp:83
 #, fuzzy, c-format
 msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
-msgstr "использование: kcmkfm [-init | {font,color}]\n"
+msgstr ""
+"использование: %s [-init | {font,color,misc,proxy,http,useragent,root}]\n"
 
 #: main.cpp:166
 msgid "KFM Configuration"
@@ -52,71 +53,71 @@ msgstr "Настройка KFM"
 
 #: htmlopts.cpp:64
 msgid "Small"
-msgstr ""
+msgstr "Маленький"
 
 #: htmlopts.cpp:69
 msgid "Medium"
-msgstr ""
+msgstr "Средний"
 
 #: htmlopts.cpp:74
 msgid "Large"
-msgstr ""
+msgstr "Большой"
 
 #: htmlopts.cpp:83
 msgid "Standard Font"
-msgstr ""
+msgstr "Стандартный шрифт"
 
 #: htmlopts.cpp:97
 msgid "Fixed Font"
-msgstr ""
+msgstr "Фиксированный шрифт"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr ""
+msgstr "Кодировка по умолчанию"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr ""
+msgstr "Использовать кодировку"
 
 #: htmlopts.cpp:329
 msgid "Background Color:"
-msgstr ""
+msgstr "Цвет фона:"
 
 #: htmlopts.cpp:341
 msgid "Normal Text Color:"
-msgstr ""
+msgstr "Цвет нормального текста:"
 
 #: htmlopts.cpp:353
 msgid "URL Link Color:"
-msgstr ""
+msgstr "Цвет ссылки:"
 
 #: htmlopts.cpp:365
 msgid "Followed Link Color:"
-msgstr ""
+msgstr "Цвет пройденной ссылки:"
 
 #: htmlopts.cpp:377
 msgid "Change cursor over link."
-msgstr ""
+msgstr "Изменять курсор над ссылками."
 
 #: htmlopts.cpp:383
 msgid "Underline links"
-msgstr ""
+msgstr "Подчеркивать ссылки."
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr ""
+msgstr "Разрешать настройки на каждый URL"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr ""
+msgstr "Дерево следует за движениями"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr ""
+msgstr "Не зыбудьте сохранить свои установки!"
 
 #: kproxydlg.cpp:58
 msgid "Use proxy"
-msgstr ""
+msgstr "Использовать прокси"
 
 #: kproxydlg.cpp:67
 msgid "HTTP Proxy:"
@@ -127,57 +128,58 @@ msgid "Port:"
 msgstr ""
 
 #: kproxydlg.cpp:98
+#, fuzzy
 msgid "FTP Proxy:"
-msgstr ""
+msgstr "Прокси"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
-msgstr ""
+msgstr "Напрямую:"
 
 #: khttpoptdlg.cpp:38
 msgid "Accept languages:"
-msgstr ""
+msgstr "Допустимые языки:"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Допустимые кодировки:"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
-msgstr ""
+msgstr "Подразумевать HTML"
 
 #: useragentdlg.cpp:43
 msgid "On server:"
-msgstr ""
+msgstr "На сервер:"
 
 #: useragentdlg.cpp:65
 msgid "login as:"
-msgstr ""
+msgstr "заходить как:"
 
 #: useragentdlg.cpp:85
 msgid "&Add"
-msgstr ""
+msgstr "Добавить"
 
 #: useragentdlg.cpp:105
 msgid "Known bindings:"
-msgstr ""
+msgstr "Известные привязки:"
 
 #: rootopts.cpp:70
 msgid "Horizontal Root Grid Spacing:"
-msgstr ""
+msgstr "Горизонтальное расстояние основной сетки:"
 
 #: rootopts.cpp:81
 msgid "Vertical Root Grid Spacing:"
-msgstr ""
+msgstr "Вертикальное расстояние основной сетки:"
 
 #: rootopts.cpp:92
 msgid "&Transparent Text for Root Icons."
-msgstr ""
+msgstr "Прозначный текст для основных пиктограмм."
 
 #: rootopts.cpp:103
 msgid "Icon foreground color:"
-msgstr ""
+msgstr "Цвет пиктограммы:"
 
 #: rootopts.cpp:115
 msgid "Icon background color:"
-msgstr ""
+msgstr "Цвет фона пиктограммы:"

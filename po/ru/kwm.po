@@ -1,7 +1,6 @@
-# kwm.
-# Copyright (C) 1997 Free Software Foundation, Inc.
-# Denis Pershin <dyp@inetlab.com>, 1997.
-#
+# Перевод kwm.
+# Copyright (C) 1997, 1998 Free Software Foundation, Inc.
+# Denis Pershin <dyp@inetlab.com>, 1997, 1998.
 #
 msgid ""
 msgstr ""
@@ -58,12 +57,12 @@ msgstr "Максимизировать"
 #
 #: main.C:531
 msgid "&Sticky"
-msgstr "Приколоть"
+msgstr "&Прилепить"
 
 #
 #: main.C:532
 msgid "&UnSticky"
-msgstr "Отколоть"
+msgstr "&Отлепить"
 
 #
 #: main.C:533

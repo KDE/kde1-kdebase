@@ -2,12 +2,11 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Denis Pershin <dyp@inetlab.com>, 1998.
 #
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
 "POT-Creation-Date: 1998-12-12 01:17+0100\n"
-"PO-Revision-Date: 1998-11-07 01:59+0600\n"
+"PO-Revision-Date: 1998-12-10 01:59+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -104,7 +103,7 @@ msgstr "Исследователь диска"
 
 #: props.C:182
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Быстро перемещаться по файловой системе"
 
 #: props.C:188
 msgid "Panel"
@@ -156,19 +155,19 @@ msgstr "(Нечитабельный)"
 
 #: pfilemenu.C:742
 msgid "Shared:"
-msgstr ""
+msgstr "Общие:"
 
 #: pfilemenu.C:744
 msgid "Entries shared among all users"
-msgstr ""
+msgstr "Элементы используемые всеми пользователями"
 
 #: pfilemenu.C:763
 msgid "Personal:"
-msgstr ""
+msgstr "Личные:"
 
 #: pfilemenu.C:765
 msgid "Personal entries"
-msgstr ""
+msgstr "Личные элементы"
 
 #: pfilemenu.C:783
 msgid "Recent:"
@@ -176,19 +175,12 @@ msgstr "Недавние:"
 
 #: pfilemenu.C:785
 msgid "Recent entries"
-msgstr ""
+msgstr "Недавние элементы"
 
 #: pfilemenu.C:831
 msgid "Options..."
 msgstr "Опции..."
 
 #: pfilemenu.C:833
-#, fuzzy
 msgid "Customize Disk Navigator"
-msgstr "Исследователь диска"
-
-#~ msgid "Global:"
-#~ msgstr "Глобальные:"
-
-#~ msgid "Local:"
-#~ msgstr "Локальные:"
+msgstr "Настроить исследователь диска"

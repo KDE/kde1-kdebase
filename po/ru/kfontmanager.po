@@ -1,13 +1,12 @@
-# kfontmanager
+# Перевод kfontmanager
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Denis Pershin <dyp@inetlab.com>, 1998.
-#
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kfontmanager 0.2.2\n"
 "POT-Creation-Date: 1998-12-14 01:17+0100\n"
-"PO-Revision-Date: 1998-11-07 22:18+0600\n"
+"PO-Revision-Date: 1998-12-14 22:18+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: ru <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -43,6 +42,9 @@ msgid ""
 "The Quick Brown Fox Jumps Over The Lazy Dog\n"
 "AaBbCc123"
 msgstr ""
+"The Quick Brown Fox Jumps Over The Lazy Dog\n"
+"Съешь еще этих мягких французских булок\n"
+"1234567890"
 
 #: kfontlist.cpp:62 kfontmanager.cpp:112
 msgid "About kfontmanager"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
 "POT-Creation-Date: 1998-12-12 15:11+0100\n"
-"PO-Revision-Date: 1998-11-07 04:22+0600\n"
+"PO-Revision-Date: 1998-12-14 04:22+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,52 +17,52 @@ msgstr ""
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr ""
+msgstr "экран #%d"
 
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr ""
+msgstr "  размеры             : %dx%d пикселей (%dx%d мм)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr ""
+msgstr "  разрешение          : %dx%d точек на дюйм\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr ""
+msgstr "  глубины (%d)         :"
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr ""
+msgstr "имя дисплея           : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr ""
+msgstr "версия                : %i.%i"
 
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr ""
+msgstr "производитель         : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr ""
+msgstr "версия производителя  : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr ""
+msgstr "номер экрана по умолчанию : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr ""
+msgstr "количество экранов    : %i"
 
 #: info.cpp:179
 msgid ""
@@ -70,68 +70,68 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
+"Нет информации\n"
+" или\n"
+"эта система еще не поддерживается."
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr ""
+msgstr "%s, неизвестная скорость"
 
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr ""
+msgstr "%s работающий на %s МГц"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr ""
+msgstr "Ошибка открытия fstab!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
-#, fuzzy
 msgid "Device"
-msgstr "&Устройства"
+msgstr "Устройство"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
-msgstr ""
+msgstr "Точка монтирования"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr ""
+msgstr "Тип ФС"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr ""
+msgstr "Опции"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
-msgstr ""
+msgstr "неизвестный тип процессора"
 
 #
 #: info_hpux.cpp:62
-#, fuzzy
 msgid "unavailable"
 msgstr "Не известно"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr ""
+msgstr "Количество активных процессоров= "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr ""
+msgstr "Значение"
 
 #: info_linux.cpp:114
-#, fuzzy
 msgid "DMA-Channel"
-msgstr "&Каналы DMA"
+msgstr "Канал DMA"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr ""
+msgstr "используется"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr ""
+msgstr "Диапазон ввода-вывода"
 
 #: main.cpp:79
 msgid "&Memory"
@@ -229,6 +229,5 @@ msgstr "Не известно"
 #
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
-#, fuzzy
 msgid "Not Available"
 msgstr "Не известно"

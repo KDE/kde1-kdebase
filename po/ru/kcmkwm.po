@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1998-12-10 01:15+0100\n"
-"PO-Revision-Date: 1998-11-08 05:04+0600\n"
+"PO-Revision-Date: 1998-12-10 05:04+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -32,15 +32,15 @@ msgstr "Мышь"
 
 #: main.cpp:80
 msgid "&Advanced"
-msgstr ""
+msgstr "Расширенные"
 
 #
 #: main.cpp:86
-#, fuzzy
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr ""
-"использование: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
+"использование: kcmkwm [-init | "
+"{options,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -56,7 +56,7 @@ msgstr "Максимизировать"
 
 #: titlebar.cpp:133
 msgid "Sticky"
-msgstr "Приколоть"
+msgstr "Прилепить"
 
 #: titlebar.cpp:141
 msgid "Menu"
@@ -122,6 +122,8 @@ msgstr "Картинка"
 #: titlebar.cpp:1003
 msgid "Active title has shaded frame"
 msgstr ""
+"Активный заголовок имеет\n"
+"переливающююся рамку"
 
 #: titlebar.cpp:1044
 msgid "Active pixmap:"
@@ -134,6 +136,8 @@ msgstr "Неактивная пиктограмма:"
 #: titlebar.cpp:1055
 msgid "No pixmap under text"
 msgstr ""
+"Изображение не фон\n"
+"для текста"
 
 #: titlebar.cpp:1066
 msgid "Mouse action"
@@ -141,7 +145,9 @@ msgstr "Действие мышью"
 
 #: titlebar.cpp:1074
 msgid "Left Button double click does:"
-msgstr "Двойной щелчок левой кнопкой мыши делает:"
+msgstr ""
+"Двойной щелчок левой кнопкой\n"
+"мыши делает:"
 
 #
 #: titlebar.cpp:1084
@@ -160,7 +166,7 @@ msgstr "Минимизировать"
 #
 #: titlebar.cpp:1087
 msgid "(Un)Sticky"
-msgstr "Приколоть"
+msgstr "(От)Прилепить"
 
 #: titlebar.cpp:1107
 msgid "Title animation"
@@ -409,71 +415,68 @@ msgstr "Изменить размер"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
-msgstr ""
+msgstr "Клавиатура и мышь"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr ""
+msgstr "Ctrl-Tab переключает рабочие столы"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr ""
+msgstr "Alt-Tab ограничен в задачами текущего рабочего стола"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
-msgstr ""
+msgstr "Режим Alt-Tab:"
 
 #: advanced.cpp:63
 msgid "KDE"
-msgstr ""
+msgstr "KDE"
 
 #: advanced.cpp:64
 msgid "CDE"
-msgstr ""
+msgstr "CDE"
 
 #: advanced.cpp:69
-#, fuzzy
 msgid "Grab the Right Mouse Button"
-msgstr "ALT + Правая кнопка"
+msgstr "Перехватывать правую кнопку мыши"
 
 #: advanced.cpp:78
 msgid "Filters"
-msgstr ""
+msgstr "Фильтры"
 
 #: advanced.cpp:98
-#, fuzzy
 msgid "Windows will:"
-msgstr "Окна"
+msgstr "Окна будут:"
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr ""
+msgstr "иметь минимальное обрамление"
 
 #: advanced.cpp:105
 msgid "have no decorations"
-msgstr ""
+msgstr "не иметь обрамления"
 
 #: advanced.cpp:106
 msgid "never gain focus"
-msgstr ""
+msgstr "никогда не получать фокус"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr ""
+msgstr "запускаться как Прилепленные"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr ""
+msgstr "исключены из управления сессиями"
 
 #: advanced.cpp:116
 msgid "if they match the following:"
-msgstr ""
+msgstr "если они соответствуют:"
 
 #: advanced.cpp:121
-#, fuzzy
 msgid "Titles"
-msgstr "&Заголовок"
+msgstr "Заголовки"
 
 #: advanced.cpp:126
 msgid "Classes"
-msgstr ""
+msgstr "Классы"

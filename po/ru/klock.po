@@ -2,12 +2,11 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Denis Pershin <dyp@inetlab.com>, 1998.
 #
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
 "POT-Creation-Date: 1998-12-14 01:17+0100\n"
-"PO-Revision-Date: 1998-11-07 02:25+0600\n"
+"PO-Revision-Date: 1998-12-10 02:25+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,14 +14,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: attraction.cpp:716
-#, fuzzy
 msgid "Attraction"
-msgstr "Конус"
+msgstr "Аттракцион"
 
 #: attraction.cpp:803
-#, fuzzy
 msgid "Setup KAttraction"
-msgstr "Настройка KBat"
+msgstr "Настройка KAttraction"
 
 #: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
@@ -35,7 +32,7 @@ msgstr "Режим:"
 
 #: attraction.cpp:834 slidescreen.cpp:498
 msgid "Balls"
-msgstr ""
+msgstr "Мячей"
 
 #: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
@@ -47,19 +44,17 @@ msgstr "Полигоны"
 
 #: attraction.cpp:837 slidescreen.cpp:501
 msgid "Tails"
-msgstr ""
+msgstr "Хвосты"
 
 #: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
-msgstr ""
+msgstr "Мерцать"
 
 #: attraction.cpp:951
-#, fuzzy
 msgid "About Attraction"
-msgstr "Конус"
+msgstr "Об Аттракционе"
 
 #: attraction.cpp:952
-#, fuzzy
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -69,11 +64,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Rock версии 3.3\n"
+"Аттракцион версии 1.0\n"
 "\n"
-"Copyright (c) 1992 Джами Завински\n"
+"Copyright (c) 1992-1997 Джами Завински <jwz@jwz.org>\n"
 "\n"
-"Переписано на kscreensave Мартином Джонсом."
+"Переписано на kscreensave:\n"
+"\n"
+"Том Вильжльбриф <tom.vijlbrief@knoware.nl> октябрь 1998"
 
 #: banner.cpp:62
 msgid "Banner"
@@ -271,9 +268,8 @@ msgstr ""
 "Переписано на kscreensave Cedric Tefft"
 
 #: bsod.cpp:1192
-#, fuzzy
 msgid "Black Screen of Death"
-msgstr "Пустой Экран"
+msgstr "Черный экран смерти"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -780,24 +776,20 @@ msgid "About Science"
 msgstr "О Science"
 
 #: slidescreen.cpp:419
-#, fuzzy
 msgid "SlideScreen"
-msgstr "Пустой Экран"
+msgstr "Слайдовый Экран"
 
 #
 #: slidescreen.cpp:465
-#, fuzzy
 msgid "Setup KSlideScreen"
-msgstr "Настройка Science"
+msgstr "Настройка KSlideScreen"
 
 #
 #: slidescreen.cpp:558
-#, fuzzy
 msgid "About SlideScreen"
-msgstr "О Science"
+msgstr "О SlideScreen"
 
 #: slidescreen.cpp:559
-#, fuzzy
 msgid ""
 "SlideScreen Version 1.1\n"
 "\n"
@@ -807,11 +799,12 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Rock версии 3.3\n"
+"SlideScreen версии 1.1\n"
 "\n"
-"Copyright (c) 1992 Джами Завински\n"
+"Copyright (c) 1992 Джами Завински <jwz@jwz.org>\n"
 "\n"
-"Переписано на kscreensave Мартином Джонсом."
+"Переписано на kscreensaver:\n"
+"Том Вильжльбриф <tom.vijlbrief@knoware.nl> октябрь 1998"
 
 #: slip.cpp:293
 msgid "Slip"

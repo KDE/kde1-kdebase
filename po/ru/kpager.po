@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpager\n"
 "POT-Creation-Date: 1998-11-27 18:11+0100\n"
-"PO-Revision-Date: 1998-11-07 00:00+0600\n"
+"PO-Revision-Date: 1998-12-10 00:00+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -14,14 +14,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kpager.cpp:72
-#, fuzzy
 msgid "Toggle Global Desktop"
-msgstr "Скрыть глобальный рабочий стол"
+msgstr "Скрыть/показать глобальный рабочий стол"
 
 #: kpager.cpp:74
-#, fuzzy
 msgid "Toggle Menubar"
-msgstr "Скрыть меню"
+msgstr "Скрыть/показать меню"
 
 #: kpager.cpp:84 kpager.cpp:188 kpager.cpp:323
 msgid "Hide &Global Desktop"
@@ -37,7 +35,7 @@ msgstr "Скрыть меню"
 
 #: kpager.cpp:95 kpager.cpp:337
 msgid "&2 Rows"
-msgstr ""
+msgstr "2 ряда"
 
 #: kpager.cpp:101 kpager.cpp:344
 msgid "Plain"
@@ -83,28 +81,25 @@ msgstr ""
 "с указанными условиями\n"
 
 #: kpager.cpp:333
-#, fuzzy
 msgid "Show &Menubar"
-msgstr "Скрыть меню"
+msgstr "Показать меню"
 
 #: kpager.cpp:388
 msgid "&Maximize"
-msgstr ""
+msgstr "Максимизировать"
 
 #: kpager.cpp:389
-#, fuzzy
 msgid "&Iconify"
-msgstr "Пиктограма"
+msgstr "Минимизировать"
 
 #: kpager.cpp:391
 msgid "&UnSticky"
-msgstr ""
+msgstr "Отлепить"
 
 #: kpager.cpp:393
 msgid "&Sticky"
-msgstr ""
+msgstr "Прилепить"
 
 #: kpager.cpp:395
-#, fuzzy
 msgid "&To Desktop"
-msgstr "Скрыть глобальный рабочий стол"
+msgstr "На рабочий стол"

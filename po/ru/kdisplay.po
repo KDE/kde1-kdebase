@@ -1,13 +1,13 @@
-# Локализация kdisplay.
-# Copyright (C) 1997 Free Software Foundation, Inc.
-# Denis Y. Pershin <dyp@siblug.org>, 1997.
+# Перевод kdisplay.
+# Copyright (C) 1997,1998 Free Software Foundation, Inc.
+# Denis Pershin <dyp@inetlab.com>, 1997, 1998.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
 "POT-Creation-Date: 1998-12-08 01:17+0100\n"
-"PO-Revision-Date: 1997-11-07 02:51+0600\n"
-"Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
+"PO-Revision-Date: 1998-12-10 02:51+0600\n"
+"Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=koi8-r\n"
@@ -28,23 +28,19 @@ msgstr "&Переименовать..."
 
 #
 #: backgnd.cpp:195
-#, fuzzy
 msgid "&Common Background"
-msgstr "&Фон"
+msgstr "&Общий фон"
 
-#
 #
 #: backgnd.cpp:223 colorscm.cpp:82
 msgid "Colors"
 msgstr "Цвета"
 
 #
-#
 #: backgnd.cpp:250
 msgid "&One Color"
 msgstr "&Один Цвет"
 
-#
 #
 #: backgnd.cpp:267
 msgid "&Two Color"
@@ -72,79 +68,71 @@ msgstr "&Просмотреть..."
 
 #: backgnd.cpp:366
 msgid "Arrangement:"
-msgstr ""
+msgstr "Расположение:"
 
 #
 #: backgnd.cpp:373
-#, fuzzy
 msgid "Tiled"
 msgstr "Черепицей"
 
 #: backgnd.cpp:374
 msgid "Mirrored"
-msgstr ""
+msgstr "Зеркально"
 
 #
 #: backgnd.cpp:375
-#, fuzzy
 msgid "Center Tiled"
-msgstr "В &центре"
+msgstr "Черепицей в центре"
 
 #
 #: backgnd.cpp:376
-#, fuzzy
 msgid "Centred"
-msgstr "В &центре"
+msgstr "В центре"
 
 #
 #: backgnd.cpp:377
-#, fuzzy
 msgid "Centred Brick"
-msgstr "В &центре"
+msgstr "В центре кирпичей"
 
 #
 #: backgnd.cpp:378
-#, fuzzy
 msgid "Centred Warp"
-msgstr "В &центре"
+msgstr "В центре волны"
 
 #
 #: backgnd.cpp:379
-#, fuzzy
 msgid "Centred Maxpect"
-msgstr "В &центре"
+msgstr "В центре Maxpect"
 
 #: backgnd.cpp:380
 msgid "Symmetrical Tiled"
-msgstr ""
+msgstr "Симметричная черепица"
 
 #: backgnd.cpp:381
 msgid "Symmetrical Mirrored"
-msgstr ""
+msgstr "Симметричное отражение"
 
 #
 #: backgnd.cpp:382
-#, fuzzy
 msgid "Scaled"
-msgstr "Изменять размер"
+msgstr "С измененным размером"
 
 #: backgnd.cpp:397
 msgid "Ra&ndom"
-msgstr ""
+msgstr "Случайно"
 
 #
 #: backgnd.cpp:406
-#, fuzzy
 msgid "Setu&p..."
 msgstr "&Настроить..."
 
 #: backgnd.cpp:416
 msgid "&Dock into the panel"
-msgstr ""
+msgstr "Разместить в специальной области panel"
 
 #: backgnd.cpp:441
 msgid "Cache size (kB):"
-msgstr ""
+msgstr "Размер буфера (кБ):"
 
 #
 #: backgnd.cpp:1338
@@ -152,22 +140,21 @@ msgid "Desktop names"
 msgstr "Названия рабочих столов"
 
 #: backgnd.cpp:1383
-#, fuzzy
 msgid "File error"
-msgstr "Ошибка перименования"
+msgstr "Ошибка файла"
 
 #: backgnd.cpp:1384
 msgid "Can't load image file"
-msgstr ""
+msgstr "Ошибка загрузки файла с изображением"
 
 #: backgnd.cpp:1407 backgnd.cpp:1879
 msgid "Unsupported URL"
-msgstr ""
+msgstr "Неподдерживаемый URL"
 
 #: backgnd.cpp:1408 backgnd.cpp:1880
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
-msgstr ""
+msgstr "Извините, но данный тип URL не поддерживается Модулем дисплея KDE"
 
 #
 #: backgnd.cpp:1439
@@ -226,45 +213,40 @@ msgstr "Мостовая"
 
 #: backgnd.cpp:1706
 msgid "Random mode setup"
-msgstr ""
+msgstr "Настройка случайного режима"
 
 #: backgnd.cpp:1712
 msgid "Pick files from &directory"
-msgstr ""
+msgstr "Брать файлы из каталога"
 
 #
 #: backgnd.cpp:1726
-#, fuzzy
 msgid "&Browse ..."
 msgstr "&Просмотреть..."
 
 #: backgnd.cpp:1747
 msgid "Timer Delay in seconds :"
-msgstr ""
+msgstr "Задержка в секундах :"
 
 #: backgnd.cpp:1759
-#, fuzzy
 msgid "In &order"
-msgstr "Игнорировать"
+msgstr "В порядке"
 
 #: backgnd.cpp:1776
-#, fuzzy
 msgid "Desktops :"
-msgstr "Рабочий стол"
+msgstr "Рабочие столы :"
 
 #: backgnd.cpp:1815
-#, fuzzy
 msgid "&Add"
-msgstr "&Добавить..."
+msgstr "&Добавить"
 
 #: backgnd.cpp:1986
-#, fuzzy
 msgid "Directory error"
-msgstr "Ошибка перименования"
+msgstr "Ошибка каталога"
 
 #: backgnd.cpp:1987
 msgid "Selected directory doesn't exists"
-msgstr ""
+msgstr "Выбранный каталог не существует"
 
 #: colorscm.cpp:104
 msgid "Color Scheme"
@@ -489,7 +471,7 @@ msgstr "Применять стиль для приложений не из KDE"
 
 #: general.cpp:258
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr ""
+msgstr "Меню наверху экрана, как в MacOS"
 
 #
 #: general.cpp:273
@@ -528,8 +510,10 @@ msgid ""
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" ё $ % ^ & * ( )"
 msgstr ""
-"English test Русский тест\n"
+"съешь еще этих вкусных французских булок\n"
+"СЪЕШЬ ЕЩЕ ЭТИХ ВКУСНЫХ ФРАНЦУЗСКИХ БУЛОК\n"
 "the quick brown fox jumps over the lazy dog\n"
+"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" ё $ % ^ & * ( )"
 
 #
@@ -608,7 +592,3 @@ msgstr "по умолчанию"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "любой"
-
-#, fuzzy
-#~ msgid "One Des&ktop"
-#~ msgstr "Рабочий стол"

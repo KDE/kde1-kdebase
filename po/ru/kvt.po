@@ -1,3 +1,7 @@
+# Перевод kvt.
+# Copyright (C) 1997, 1998 Free Software Foundation, Inc.
+# Denis Pershin <dyp@inetlab.com>, 1997, 1998.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kvt 0.16\n"

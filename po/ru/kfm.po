@@ -2,12 +2,11 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Denis Pershin <dyp@inetlab.com>, 1998.
 #
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: KDE 0.2POT-Creation-Date: 1998-02-19 22:49+0100\n"
+"Project-Id-Version: KDE 0.2\n"
 "POT-Creation-Date: 1998-12-14 01:17+0100\n"
-"PO-Revision-Date: 1998-11-07 11:51+0600\n"
+"PO-Revision-Date: 1998-12-14 11:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -32,19 +31,17 @@ msgstr "Выделить все"
 
 #: kfmgui.cpp:234
 msgid "&Find in page..."
-msgstr ""
+msgstr "Найти на странице..."
 
 #: kfmgui.cpp:236
 msgid "Find &next"
-msgstr ""
+msgstr "Найти дальше"
 
 #: kfmgui.cpp:239
-#, fuzzy
 msgid "Mime &Types"
 msgstr "Типы MIME"
 
 #: kfmgui.cpp:241
-#, fuzzy
 msgid "App&lications"
 msgstr "Приложения"
 
@@ -57,7 +54,6 @@ msgid "Global Applications"
 msgstr "Глобальные Приложения"
 
 #: kfmgui.cpp:256
-#, fuzzy
 msgid "Show Hi&dden Files"
 msgstr "Показывать скрытые файлы"
 
@@ -67,7 +63,7 @@ msgstr "Показывать дерево"
 
 #: kfmgui.cpp:260
 msgid "Sho&w Thumbnails"
-msgstr ""
+msgstr "Показывать уменьшенные изображения"
 
 #: kfmgui.cpp:262
 msgid "&HTML View"
@@ -99,9 +95,8 @@ msgid "&Reload Document"
 msgstr "&Перегрузить Документ"
 
 #: kfmgui.cpp:281
-#, fuzzy
 msgid "Rescan &Bindings"
-msgstr "Просканировать пр&ивязки"
+msgstr "Пересканировать пр&ивязки"
 
 #: kfmgui.cpp:284
 msgid "&View Frame Source"
@@ -113,12 +108,11 @@ msgstr "Посмотреть Текст Документа"
 
 #: kfmgui.cpp:294
 msgid "Auto"
-msgstr ""
+msgstr "Авто"
 
 #: kfmgui.cpp:302
-#, fuzzy
 msgid "Document Encodin&g"
-msgstr "Документ: Сделано"
+msgstr "Кодировка документа"
 
 #: kfmgui.cpp:317
 msgid "Show History"
@@ -171,22 +165,18 @@ msgid "Sa&ve Settings"
 msgstr "Записать установки"
 
 #: kfmgui.cpp:352
-#, fuzzy
 msgid "Save Settings for this &URL"
-msgstr "Записать установки"
+msgstr "Записать установки для этого URL"
 
 #: kfmgui.cpp:359
-#, fuzzy
 msgid "&Configure File Manager..."
-msgstr "Настроить Броузер..."
+msgstr "Настроить Менеджер файлов..."
 
 #: kfmgui.cpp:361
-#, fuzzy
 msgid "Configure &Browser..."
 msgstr "Настроить Броузер..."
 
 #: kfmgui.cpp:397
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -211,7 +201,7 @@ msgstr ""
 
 #: kfmgui.cpp:410
 msgid "&Go"
-msgstr ""
+msgstr "Перейти"
 
 #: kfmgui.cpp:411
 msgid "&Bookmarks"
@@ -270,11 +260,11 @@ msgstr "Выберите файлы:"
 
 #: kfmgui.cpp:914
 msgid "Find Complete"
-msgstr ""
+msgstr "Поиск завершен"
 
 #: kfmgui.cpp:915
 msgid "Continue search from the top of the page?"
-msgstr ""
+msgstr "Продолжить поиск с начала страницы?"
 
 #: kfmgui.cpp:933
 msgid "&Edit Bookmarks..."
@@ -289,9 +279,8 @@ msgid "&New"
 msgstr "Новый "
 
 #: kfmgui.cpp:984
-#, fuzzy
 msgid "New &Window"
-msgstr "Новый вид"
+msgstr "Новое окно"
 
 #: kfmgui.cpp:987
 msgid "&Run..."
@@ -310,21 +299,18 @@ msgid "&Find"
 msgstr "Поиск"
 
 #: kfmgui.cpp:1019
-#, fuzzy
 msgid "&Up"
 msgstr "Вверх"
 
 #: kfmgui.cpp:1021
 msgid "&Back"
-msgstr ""
+msgstr "Назад"
 
 #: kfmgui.cpp:1023
-#, fuzzy
 msgid "&Forward"
 msgstr "Вперед"
 
 #: kfmgui.cpp:1025
-#, fuzzy
 msgid "&Home"
 msgstr "Домашний каталог"
 
@@ -400,6 +386,11 @@ msgid ""
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Ошибка сохранения свойств в следствии\n"
+"того, что этот каталог либо не доступен на запись,\n"
+"либо не содержится в закладках.\n"
+"\n"
+"Либо внесите каталог в закладки, либо сделайте ссылку на рабочем столе."
 
 #: kfmview.cpp:629
 msgid ""
@@ -408,6 +399,11 @@ msgid ""
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Ошибка сохранения свойств в следствии\n"
+"того, что этот URL либо не содержится в закладках,\n"
+"либо не лежит на рабочем столе.\n"
+"\n"
+"Либо внесите каталог в закладки, либо сделайте ссылку на рабочем столе."
 
 #: kfmtree.cpp:374 kfmview.cpp:668 root.cpp:1281
 msgid "Could not access Trash Bin"
@@ -602,10 +598,9 @@ msgstr "Добавить закладку"
 
 #: main.cpp:237
 msgid "Save settings for this URL"
-msgstr ""
+msgstr "Записать настройки для этого URL"
 
 #: main.cpp:238
-#, fuzzy
 msgid "Show Menubar"
 msgstr "Показать меню"
 
@@ -631,11 +626,11 @@ msgstr "Фиксированный Шрифт"
 
 #: htmlopts.cpp:153
 msgid "Default Charset"
-msgstr ""
+msgstr "Кодировка по умолчанию"
 
 #: htmlopts.cpp:161
 msgid "Use language charset"
-msgstr ""
+msgstr "Использовать кодировку"
 
 #: htmlopts.cpp:353
 msgid "Background Color:"
@@ -659,7 +654,7 @@ msgstr "Изменять курсор над ссылкой."
 
 #: htmlopts.cpp:431
 msgid "Underline links"
-msgstr ""
+msgstr "Подчеркивать ссылки"
 
 #: htmlopts.cpp:549
 msgid "Horizontal Root Grid Spacing:"
@@ -671,30 +666,27 @@ msgstr "Вертикальный размер сетки"
 
 #: htmlopts.cpp:593
 msgid "&Allow per-URL settings"
-msgstr ""
+msgstr "Разрешать настройки на каждый URL"
 
 #: htmlopts.cpp:602
 msgid "Tree &view follows navigation"
-msgstr ""
+msgstr "Дерево следует за движением"
 
 #: htmlopts.cpp:610
-#, fuzzy
 msgid "&Transparent Text for Root Icons."
 msgstr "Прозрачный текст для пиктограмм"
 
 #: htmlopts.cpp:623
-#, fuzzy
 msgid "Icon foreground color:"
-msgstr "Цвет фона:"
+msgstr "Цвет пиктограмм:"
 
 #: htmlopts.cpp:635
-#, fuzzy
 msgid "Icon background color:"
 msgstr "Цвет фона:"
 
 #: kfmdlg.cpp:113
 msgid "&Browser"
-msgstr "Просмотришик"
+msgstr "Просмотрщик"
 
 #
 #: bookmark.cpp:296
@@ -702,9 +694,8 @@ msgid "Could not write bookmark"
 msgstr "Не могу записать закладки"
 
 #: kfmprops.cpp:238
-#, fuzzy
 msgid "File Name"
-msgstr "Полное имя"
+msgstr "Имя файла"
 
 #: kfmprops.cpp:253
 msgid "Full Name"
@@ -712,7 +703,7 @@ msgstr "Полное имя"
 
 #: kfmprops.cpp:270
 msgid "Is the Trash Bin"
-msgstr "Пуста ли Корзина"
+msgstr "Корзина"
 
 #: kfmprops.cpp:277
 msgid "Is a Directory"
@@ -809,7 +800,7 @@ msgstr "Установить GID"
 
 #: kfmprops.cpp:481
 msgid "Sticky"
-msgstr "Липучка"
+msgstr "Прикрепление"
 
 #: kfmprops.cpp:499
 msgid "Ownership"
@@ -850,9 +841,8 @@ msgid "Execute"
 msgstr "Выполнять"
 
 #: kfmprops.cpp:683
-#, fuzzy
 msgid "&Browse..."
-msgstr "Просмотришик"
+msgstr "Просмотреть..."
 
 #: kfmprops.cpp:695
 msgid "Working Directory"
@@ -888,9 +878,8 @@ msgid "URL"
 msgstr "URL"
 
 #: kfmprops.cpp:1033
-#, fuzzy
 msgid "Background"
-msgstr "Цвет фона:"
+msgstr "Цвет фона"
 
 #: kfmprops.cpp:1043
 msgid "Apply global"
@@ -934,7 +923,7 @@ msgstr "Приложение по умолчанию"
 
 #: kfmprops.cpp:1644
 msgid "<none>"
-msgstr ""
+msgstr "<ничего>"
 
 #: kfmprops.cpp:1766
 msgid "Device ( /dev/fd0 )"
@@ -1331,12 +1320,16 @@ msgid ""
 " is not a directory ! Security Alert !\n"
 "Please check it.\n"
 msgstr ""
+" не каталог ! Проблемы с безопасностью !\n"
+"Пожайлуста проверьте.\n"
 
 #: htmlcache.cpp:368
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Check it before clearing the cache.\n"
 msgstr ""
+" не каталог ! Проблемы с безопасностью !\n"
+"Проверьте перед очисткой буферов.\n"
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"
@@ -1411,13 +1404,12 @@ msgid "This group is empty!"
 msgstr "Эта группа - пустая!"
 
 #: finddlg.cpp:41
-#, fuzzy
 msgid "Find:"
-msgstr "Поиск"
+msgstr "Поиск:"
 
 #: finddlg.cpp:56
 msgid "Case &sensitive"
-msgstr ""
+msgstr "Чуствительный к регистру"
 
 #: kcookiewin.cpp:58
 msgid "Cookie Alert!"
@@ -1429,12 +1421,11 @@ msgstr ""
 
 #: kcookiewin.cpp:89
 msgid "Do you want to accept or reject this cookie?"
-msgstr ""
+msgstr "Вы хотите принять или отвергнуть эту куку"
 
 #: kcookiewin.cpp:120
-#, fuzzy
 msgid "Apply to "
-msgstr "Применить глобально"
+msgstr "Применить к"
 
 #: kcookiewin.cpp:125
 msgid "&This cookie only"
@@ -1528,72 +1519,3 @@ msgid ""
 msgstr ""
 "Синтаксическая Ошибка:\n"
 "kfmexec комманда [URLs ....]\n"
-
-#~ msgid "On server:"
-#~ msgstr "Сервер:"
-
-#~ msgid "login as:"
-#~ msgstr "войти как:"
-
-#~ msgid "Known bindings:"
-#~ msgstr "Известные привязки"
-
-#~ msgid "Don't forget to save your settings!"
-#~ msgstr "Не забудьте записать свои установки!"
-
-#
-#~ msgid "Use proxy"
-#~ msgstr "Использовать прокси"
-
-#~ msgid "No Proxy for:"
-#~ msgstr "Напрямую:"
-
-#~ msgid "&Proxy"
-#~ msgstr "Прокси"
-
-#~ msgid "&HTTP"
-#~ msgstr "HTTP"
-
-#~ msgid "User &Agent"
-#~ msgstr "&Агент пользователя"
-
-#~ msgid "&Colors"
-#~ msgstr "&Цвета"
-
-#
-#~ msgid "&Other"
-#~ msgstr "&Другие"
-
-#, fuzzy
-#~ msgid "KFM Preferences Settings"
-#~ msgstr "Установки Броузера KFM"
-
-#~ msgid "Accept languages:"
-#~ msgstr "Допустимые языки:"
-
-#~ msgid "Accept character sets:"
-#~ msgstr "Допустимые кодировки:"
-
-#~ msgid "Assume HTML"
-#~ msgstr "Предполагать HTML"
-
-#~ msgid "ERROR: You dropped some URL over itself"
-#~ msgstr "ОШИБКА: Вы перенесли URL поверх самого себя"
-
-#~ msgid "&Visual Schnauzer"
-#~ msgstr "Визуальный просмотр"
-
-#~ msgid "Name"
-#~ msgstr "Имя"
-
-#~ msgid "Browse"
-#~ msgstr "Просматривать"
-
-#~ msgid "&Quit..."
-#~ msgstr "Выход..."
-
-#~ msgid "&About..."
-#~ msgstr "О программе..."
-
-#~ msgid "About KFM"
-#~ msgstr "О KFM"

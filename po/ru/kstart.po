@@ -2,7 +2,6 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Denis Pershin <dyp@inetab.com>, 1998.
 #
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: kstartondesk\n"
@@ -15,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: kstart.C:116
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
@@ -59,15 +58,18 @@ msgstr ""
 " Использование:\n"
 " %s <команда> [-window <регулярное выражение>] [-desktop <number>]\n"
 "              [-sticky] [-iconify] [-maximize] \n"
-"              [-decoration tiny|none] [-activate]\n"
+"              [-decoration tiny|none] [-activate] [-nofocus]\n"
 " \n"
 " Если вы не указали регулярное выражение для заголовка окна,\n"
 " тогда будет использовано первое попавшееся окно. Не рекомендуется!\n"
 " \n"
 " Пример использования:\n"
-" %s \"xclock -geometry 80x80-0+0\" -window xclock -decoration tiny -sticky\n"
+" %s \"xclock -geometry 80x80-0+0\" -window xclock -decoration tiny -sticky "
+"-nofocus\n"
 " помещает тонко обрамленный, прищемленный xclock в правый верхний угол\n"
-" экрана\n"
+" экрана, который никогда не получит фокуса (и поэтому не имеет пункта на\n"
+" списке задач). Имейте в виду, что вы все еще можете закрыть его при помощи\n"
+" правой кнопки мыши.\n"
 " \n"
 " "
 
