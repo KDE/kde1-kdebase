@@ -1,5 +1,5 @@
-## Makefile.am for kvt 
-## written by Stephan Kulow using the old Makefile.in, that I wrote too :-)
+## Makefile.am for kcheckpass
+## written by Christian Esken
 ##
 
 INCLUDES= $(all_includes)
