@@ -1,0 +1,26 @@
+/* XPM */
+static char * pinup_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 4 1",
+/* colors */
+" 	s None	c None",
+".	c #707070",
+"X	c white",
+"o	c #a0a0a0",
+/* pixels */
+"                ",
+"                ",
+"                ",
+"      ..     .  ",
+"      .X.   ..  ",
+"      .XX...X.  ",
+"XXXXXX.oXoXoX.  ",
+"oooooo.oXoXoX.  ",
+".......oo.o.o.  ",
+"      .o......  ",
+"      ...   ..  ",
+"      ..     .  ",
+"                ",
+"                ",
+"                ",
+"                "};
