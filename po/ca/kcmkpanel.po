@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-11-21 01:13+0100\n"
-"PO-Revision-Date: 1998-12-02 00:10+0100\n"
+"PO-Revision-Date: 1998-12-15 22:29+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -95,7 +95,7 @@ msgstr "&Visible"
 
 #: desktops.cpp:82
 msgid "&Width"
-msgstr "&Ample"
+msgstr "&Amplada"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
@@ -107,7 +107,7 @@ msgstr "Mostra &Indicacions de menú"
 
 #: options.cpp:44
 msgid "De&lay:"
-msgstr "&Retard"
+msgstr "&Retard:"
 
 #: options.cpp:50 options.cpp:68 options.cpp:86
 msgid "Small"
@@ -127,7 +127,7 @@ msgstr "Auto &Oculta Panell"
 
 #: options.cpp:67 options.cpp:85
 msgid "Delay:"
-msgstr "Retard"
+msgstr "Retard:"
 
 #: options.cpp:74 options.cpp:93
 msgid "Speed:"

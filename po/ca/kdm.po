@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdm\n"
 "POT-Creation-Date: 1998-12-05 01:14+0100\n"
-"PO-Revision-Date: 1998-12-05 14:10+0100\n"
+"PO-Revision-Date: 1998-12-15 22:42+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr "Identificació:"
 
 #: kgreeter.cpp:234
 msgid "Password:"
-msgstr "Paraula de pas:"
+msgstr "Contrasenya:"
 
 #: kgreeter.cpp:259
 msgid "Login failed!"
@@ -63,13 +63,13 @@ msgstr "Ha fallat login_getcapstr()"
 
 #: kgreeter.cpp:665 kgreeter.cpp:692
 msgid "Sorry -- your account has expired."
-msgstr "Ho sento -- el seu compte ha vençut."
+msgstr "Ho sento -- el vostre compte ha vençut."
 
 #: kgreeter.cpp:670 kgreeter.cpp:697
 #, c-format
 msgid "Warning: your account expires on %s"
-msgstr "Avís: el seu compte venç el %s"
+msgstr "Avís: el vostre compte venç el %s"
 
 #: kgreeter.cpp:724
 msgid "Home directory not available"
-msgstr "El directori llar no està disponible"
+msgstr "El directori d'inici no està disponible"   

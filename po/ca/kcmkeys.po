@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkeys\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
-"PO-Revision-Date: 1998-12-05 16:06+0100\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"PO-Revision-Date: 1998-12-15 22:26+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -47,21 +47,25 @@ msgstr "Busca"
 
 #: standard.cpp:66
 msgid "Home"
-msgstr "Llar"
+msgstr "Inici"
 
 #: standard.cpp:67
 msgid "End"
 msgstr "Fi"
 
-#: global.cpp:81
+#: global.cpp:81 standard.cpp:83
 msgid "Current scheme"
 msgstr "Esquema actual"
 
-#: global.cpp:83
+#: global.cpp:83 standard.cpp:84
 msgid "KDE default"
-msgstr "KDE per omissió"
+msgstr "KDE predeterminat"
 
-#: global.cpp:90
+#: standard.cpp:85
+msgid "KDE lite"
+msgstr "KDE limitat"
+
+#: global.cpp:90 standard.cpp:90
 msgid "&Key scheme"
 msgstr "Esquema de &tecla"
 
@@ -98,7 +102,7 @@ msgid ""
 "in the key scheme list."
 msgstr ""
 "Si us plau, escolliu un nom únic pel nou esquema\n"
-"de tecla. El que heu entrat ja hi és a la llista\n"
+"de tecla. El que heu entrat ja és a la llista\n"
 "d'esquemes de tecla."
 
 #: savescm.cpp:18
@@ -116,7 +120,7 @@ msgstr ""
 "&Entreu un nom pel nou esquema de tecla\n"
 "que s'afegirà a la vostra llista personal.\n"
 "\n"
-"Per començar, és copiaran a l'esquema\n"
+"Per començar, es copiaran a l'esquema\n"
 "les tecles en ús a la vista prèvia."
 
 #: ../../kwm/kwmbindings.cpp:1
@@ -214,6 +218,3 @@ msgstr "Canvia a l'escriptori de dalt"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Canvia a l'escriptori de baix"
-
-#~ msgid "KDE lite"
-#~ msgstr "KDE lleuger"

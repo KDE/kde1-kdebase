@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmsyssound\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-12-05 12:53+0100\n"
+"PO-Revision-Date: 1998-12-15 22:35+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -110,7 +110,7 @@ msgid "Window Trans New"
 msgstr "Apareix finestra temporal"
 
 #: syssound.cpp:170
-msgid "Window Trans Delete"
+msgid "Window Trans delete"
 msgstr "Desapareix finestra temporal"
 
 #: syssound.cpp:171
@@ -147,7 +147,7 @@ msgstr "&Prova"
 
 #: syssound.cpp:207
 msgid "&Events:"
-msgstr "&Cassos:"
+msgstr "&Esdeveniments:"
 
 #: syssound.cpp:211
 msgid "&Sounds:"
@@ -174,7 +174,7 @@ msgid ""
 "%s\n"
 "does not seem to be a WAV--file."
 msgstr ""
-"Ho sento, pero \n"
+"Ho sento, pero \n" # "Ho sento, però
 "%s\n"
 "no sembla ser un fitxer WAV."
 
@@ -191,8 +191,8 @@ msgid ""
 msgstr ""
 "El fitxer\n"
 "%s\n"
-"ja hi és a la llista"
+"ja és a la llista"
 
 #: syssound.cpp:486
 msgid "File Already in List"
-msgstr "El fitxer ja hi és a la llista"
+msgstr "El fitxer ja és a la llista"

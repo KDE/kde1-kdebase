@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
 "POT-Creation-Date: 1998-11-29 01:12+0100\n"
-"PO-Revision-Date: 1998-12-05 13:02+0100\n"
+"PO-Revision-Date: 1998-12-15 22:38+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -196,7 +196,7 @@ msgstr "<!-- No editeu aquest fitxer -->"
 #: cgi.cpp:79
 #, c-format
 msgid "CGI: Destination URL malformed: %s\n"
-msgstr "CGI: URL de destí erroni: %s\n"
+msgstr "CGI: URL de destinació errònia: %s\n"
 
 #: mainwidget.cpp:130
 msgid "&New Help Window"
@@ -289,12 +289,12 @@ msgstr ""
 "Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
 "\n"
 "Aquest programa està cobert per la General Public License GNU (GPL).\n"
-"KDEHelp no té CAP GARANTIA EN ABSOLUT fins el punt permés per la legislació "
+"KDEHelp no té CAP GARANTIA EN ABSOLUT fins el punt permès per la legislació "
 "vigent."
 
 #: mainwidget.cpp:201
 msgid "&Goto"
-msgstr "&Ves"
+msgstr "&Vés"
 
 #: mainwidget.cpp:202
 msgid "&Bookmarks"
@@ -330,7 +330,7 @@ msgstr "Contingut de l'ajut"
 
 #: mainwidget.cpp:259
 msgid "Reload current document"
-msgstr "Refresca el document actual"
+msgstr "Actualitza el document actual"
 
 #: mainwidget.cpp:288
 msgid "In the Constructor!"
