@@ -49,24 +49,24 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   c_type = new QComboBox( this, "ComboBox_1" );
   c_type->setGeometry( 72, 8, 100, 24 );
   c_type->setAutoResize( TRUE );
-  c_type->insertItem( "Separator" );
-  c_type->insertItem( "Submenu" );
-  c_type->insertItem( "Application" );
-  c_type->insertItem( "Fvwm Command" );
-  c_type->insertItem( "Link" );
-  c_type->insertItem( "Device" );
+  c_type->insertItem( klocale->translate("Separator") );
+  c_type->insertItem( klocale->translate("Submenu") );
+  c_type->insertItem( klocale->translate("Application") );
+  c_type->insertItem( klocale->translate("Fvwm Command") );
+  c_type->insertItem( klocale->translate("Link") );
+  c_type->insertItem( klocale->translate("Device") );
   //c_type->insertItem( "Filetype" );
 
   QLabel* tmpQLabel;
   tmpQLabel = new QLabel( this, "Label_1" );
   tmpQLabel->setGeometry( 32, 8, 40, 24 );
-  tmpQLabel->setText( "Type:" );
+  tmpQLabel->setText( klocale->translate("Type:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
   tmpQLabel = new QLabel( this );
   tmpQLabel->setGeometry( 8, 40, 72, 24 );
-  tmpQLabel->setText( "File Name:" );
+  tmpQLabel->setText( klocale->translate("File Name:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
@@ -79,7 +79,7 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
 
   tmpQLabel = new QLabel( this, "Label_2" );
   tmpQLabel->setGeometry( 32, 72, 40, 24 );
-  tmpQLabel->setText( "Name:" );
+  tmpQLabel->setText( klocale->translate("Name:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
@@ -92,7 +92,7 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   
   tmpQLabel = new QLabel( this, "Label_3" );
   tmpQLabel->setGeometry( 16, 136, 56, 24 );
-  tmpQLabel->setText( "Mini Icon:" );
+  tmpQLabel->setText( klocale->translate("Mini Icon:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
 
@@ -124,13 +124,13 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   
   tmpQLabel = new QLabel( this, "Label_4" );
   tmpQLabel->setGeometry( 40, 104, 32, 24 );
-  tmpQLabel->setText( "Icon:" );
+  tmpQLabel->setText( klocale->translate("Icon:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
   tmpQLabel = new QLabel( this, "Label_5" );
   tmpQLabel->setGeometry( 16, 168, 56, 24 );
-  tmpQLabel->setText( "Comment:" );
+  tmpQLabel->setText( klocale->translate("Comment:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
@@ -146,13 +146,13 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
 
   b_ok = new QPushButton( this, "PushButton_1" );
   b_ok->setGeometry( 56, 432, 80, 24 );
-  b_ok->setText( "Ok" );
+  b_ok->setText( klocale->translate("Ok") );
   b_ok->setAutoRepeat( FALSE );
   b_ok->setAutoResize( FALSE );
   
   b_cancel = new QPushButton( this, "PushButton_2" );
   b_cancel->setGeometry( 240, 432, 80, 24 );
-  b_cancel->setText( "Cancel" );
+  b_cancel->setText( klocale->translate("Cancel") );
   b_cancel->setAutoRepeat( FALSE );
   b_cancel->setAutoResize( FALSE );
   
@@ -162,15 +162,15 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   tb_app = new KTabCtl(f_sub_diag);
   tb_app->setGeometry(0, 0, f_sub_diag->width(), f_sub_diag->height() );
   f_app_1 = new QFrame(f_sub_diag);
-  tb_app->addTab(f_app_1, "Execute");
+  tb_app->addTab(f_app_1, klocale->translate("Execute"));
   f_app_2 = new QFrame(f_sub_diag);
-  tb_app->addTab(f_app_2, "Application");
+  tb_app->addTab(f_app_2, klocale->translate("Application"));
   f_app_3 = new QFrame(f_sub_diag);
-  tb_app->addTab(f_app_3, "Fvwm");
+  tb_app->addTab(f_app_3, klocale->translate("Fvwm"));
   f_app_4 = new QFrame(f_sub_diag);
-  tb_app->addTab(f_app_4, "Link");
+  tb_app->addTab(f_app_4, klocale->translate("Link"));
   f_app_5 = new QFrame(f_sub_diag);
-  tb_app->addTab(f_app_5, "Device");
+  tb_app->addTab(f_app_5, klocale->translate("Device"));
   //QFrame *f_app_6 = new QFrame(tb_app);
   //tb_app->addTab(f_app_6, "FileType");
   // create application 1st dialog from 'entry2.dlg'
@@ -183,13 +183,13 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   
   tmpQLabel = new QLabel( f_app_1, "Label_6" );
   tmpQLabel->setGeometry( 16, 8, 56, 24 );
-  tmpQLabel->setText( "Execute:" );
+  tmpQLabel->setText( klocale->translate("Execute:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
   tmpQLabel = new QLabel( f_app_1, "Label_7" );
   tmpQLabel->setGeometry( 16, 56, 112, 24 );
-  tmpQLabel->setText( "Working Directory:" );
+  tmpQLabel->setText( klocale->translate("Working Directory:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
@@ -202,13 +202,13 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   
   ch_use_term = new QCheckBox( f_app_1, "CheckBox_1" );
   ch_use_term->setGeometry( 16, 112, 112, 16 );
-  ch_use_term->setText( "Run in terminal" );
+  ch_use_term->setText( klocale->translate("Run in terminal") );
   ch_use_term->setAutoRepeat( FALSE );
   ch_use_term->setAutoResize( FALSE );
   
   tmpQLabel = new QLabel( f_app_1, "Label_8" );
   tmpQLabel->setGeometry( 24, 136, 112, 16 );
-  tmpQLabel->setText( "Terminal Options:" );
+  tmpQLabel->setText( klocale->translate("Terminal Options:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
@@ -289,7 +289,7 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   
   tmpQLabel = new QLabel( f_app_2, "Label_4" );
   tmpQLabel->setGeometry( 192, 8, 100, 16 );
-  tmpQLabel->setText( "Binary Pattern:" );
+  tmpQLabel->setText( klocale->translate("Binary Pattern:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   // end 'entry3.dlg'
@@ -297,7 +297,7 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   // create application 3rd dialog from 'entry6.dlg'
   tmpQLabel = new QLabel( f_app_3, "Label_8" );
   tmpQLabel->setGeometry( 16, 16, 104, 24 );
-  tmpQLabel->setText( "Fvwm Command:" );
+  tmpQLabel->setText( klocale->translate("Fvwm Command:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
@@ -312,7 +312,7 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   // create application 4th dialog from 'entry7.dlg'
   tmpQLabel = new QLabel( f_app_4, "Label_10" );
   tmpQLabel->setGeometry( 16, 16, 40, 24 );
-  tmpQLabel->setText( "URL:" );
+  tmpQLabel->setText( klocale->translate("URL:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
@@ -361,31 +361,31 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
 
   cb_read_only = new QCheckBox( f_app_5, "CheckBox_8" );
   cb_read_only->setGeometry( 88, 144, 88, 24 );
-  cb_read_only->setText( "Read Only" );
+  cb_read_only->setText( klocale->translate("Read Only") );
   cb_read_only->setAutoRepeat( FALSE );
   cb_read_only->setAutoResize( FALSE );
   
   tmpQLabel = new QLabel( f_app_5, "Label_5" );
   tmpQLabel->setGeometry( 40, 16, 48, 24 );
-  tmpQLabel->setText( "Device:" );
+  tmpQLabel->setText( klocale->translate("Device:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
   tmpQLabel = new QLabel( f_app_5, "Label_6" );
   tmpQLabel->setGeometry( 16, 48, 72, 24 );
-  tmpQLabel->setText( "Mount Point:" );
+  tmpQLabel->setText( klocale->translate("Mount Point:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
   tmpQLabel = new QLabel( f_app_5, "Label_7" );
   tmpQLabel->setGeometry( 32, 80, 56, 24 );
-  tmpQLabel->setText( "FS Type:" );
+  tmpQLabel->setText( klocale->translate("FS Type:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
   tmpQLabel = new QLabel( f_app_5, "Label_8" );
   tmpQLabel->setGeometry( 8, 112, 80, 24 );
-  tmpQLabel->setText( "Unmount Icon:" );
+  tmpQLabel->setText( klocale->translate("Unmount Icon:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   // end 'entry4.dlg'
@@ -505,17 +505,17 @@ void EntryDialog::typeActivated( int t )
   case 1:  // submenu
     break;
   case 2:  // unix_com
-    tb_app->addTab(f_app_1, "Execute");
-    tb_app->addTab(f_app_2, "Application");
+    tb_app->addTab(f_app_1, klocale->translate("Execute"));
+    tb_app->addTab(f_app_2, klocale->translate("Application"));
     break;
   case 3:  // fvwm_com
-    tb_app->addTab(f_app_3, "Fvwm");
+    tb_app->addTab(f_app_3, klocale->translate("Fvwm"));
     break;
   case 4:  // url
-    tb_app->addTab(f_app_4, "Link");
+    tb_app->addTab(f_app_4, klocale->translate("Link"));
     break;
   case 5:  // device
-    tb_app->addTab(f_app_5, "Device");
+    tb_app->addTab(f_app_5, klocale->translate("Device"));
     break;
   };
   tb_app->show();

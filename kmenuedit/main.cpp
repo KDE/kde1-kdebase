@@ -54,7 +54,7 @@ int main( int argc, char **argv )
 	temp1 = config->readEntry("Path");
       else
 	{
-	  temp1 = KApplication::kdedir();
+	  temp1 = KApplication::kdedir().copy();
 	  temp1 += "/share/applnk";
 	}
       if( config->hasKey("PersonalPath") )
@@ -77,7 +77,8 @@ int main( int argc, char **argv )
   bool error = FALSE;
   if( !(fi.exists() && fi.isDir()) )
     {
-      if( KMsgBox::yesNo( NULL, "KMenuedit", "The directory for your personal menu does not exist.\n Do you want to create it now ?") == 1 )
+      if( KMsgBox::yesNo( NULL, klocale->translate("KMenuedit"), 
+			  klocale->translate("The directory for your personal menu does not exist.\n Do you want to create it now ?")) == 1 )
 	{
 	  QDir dir( fi.dirPath() );
 	  if( !dir.mkdir(fi.fileName()) )
@@ -89,7 +90,8 @@ int main( int argc, char **argv )
 	}
       if( error )
 	{
-	  KMsgBox::message( NULL, "KMenuedit", "Unable to create directory for personal menu.\n Select Ok to exit KMenuedit.");
+	  KMsgBox::message( NULL, klocale->translate("KMenuedit"), 
+			    klocale->translate("Unable to create directory for personal menu.\n Select Ok to exit KMenuedit."));
 	  exit(1);
 	}
     }

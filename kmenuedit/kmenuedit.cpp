@@ -72,17 +72,17 @@ KMenuEdit::KMenuEdit( const char *name )
   //menubar->insertItem( klocale->translate("Edit"), edit_menu);
   menubar->insertItem( klocale->translate("Options"), options);
   menubar->insertSeparator();
-  menubar->insertItem( klocale->translate("Help"), KApplication::getKApplication()->getHelpMenu(TRUE, "KMenuedit 0.2.1\n(C) by Christoph Neerfeld\nChristoph.Neerfeld@bonn.netsurf.de") );
+  menubar->insertItem( klocale->translate("Help"), KApplication::getKApplication()->getHelpMenu(TRUE, klocale->translate("KMenuedit 0.2.3\n(C) by Christoph Neerfeld\nChristoph.Neerfeld@bonn.netsurf.de")) );
 
   // create toolbar
   toolbar = new KToolBar(this);
   QPixmap temp_pix;
   temp_pix = global_pix_loader->loadIcon("reload.xpm");
   toolbar->insertButton(temp_pix, 0, SIGNAL(clicked()), this,
-                      SLOT(reload()), TRUE, "Reload");
+                      SLOT(reload()), TRUE, klocale->translate("Reload"));
   temp_pix = global_pix_loader->loadIcon("filefloppy.xpm");
   toolbar->insertButton(temp_pix, 1, SIGNAL(clicked()), this,
-                      SLOT(save()), TRUE, "Save");
+                      SLOT(save()), TRUE, klocale->translate("Save"));
   toolbar->insertSeparator();
   toolbar->setBarPos( (KToolBar::BarPosition) config->readNumEntry("ToolBarPos") );
   setMenu(menubar);
@@ -161,8 +161,10 @@ KMenuEdit::~KMenuEdit()
 {
   if( changes_to_save )
     {
-      if( QMessageBox::information ( this, "Changes not saved !", 
-				     "Do you want to save your changes", "Yes", "No" )  == 0 )
+      if( QMessageBox::information ( this, klocale->translate("Changes not saved !"), 
+				     klocale->translate("Do you want to save your changes"), 
+				     klocale->translate("Yes"), 
+				     klocale->translate("No") )  == 0 )
 	{
 	  saveMenus();
 	}
@@ -205,8 +207,9 @@ void KMenuEdit::startHelp()
 
 void KMenuEdit::about()
 {
-  QMessageBox::message( "About", \
-                        "Kmenuedit 0.2.3\n\r(c) by Christoph Neerfeld\n\rChristoph.Neerfeld@bonn.netsurf.de", "Ok" );
+  QMessageBox::message( klocale->translate("About"), \
+                        klocale->translate("KMenuedit 0.2.3\n(C) by Christoph Neerfeld\nChristoph.Neerfeld@bonn.netsurf.de"), 
+			klocale->translate("Ok") );
 }
 
 void KMenuEdit::loadMenus()
@@ -224,7 +227,7 @@ void KMenuEdit::loadMenus()
   pers_menu_data = new PMenu;
   pers_menu_data->parse(dir);
   if( !pers_menu_data->count() )
-    pers_menu_data->add(new PMenuItem(unix_com, "EMPTY"));
+    pers_menu_data->add(new PMenuItem(unix_com, klocale->translate("EMPTY")));
   QFileInfo fi(dir_name + "/.directory");
   if( fi.isReadable() )
     {
@@ -300,9 +303,12 @@ void KMenuEdit::reload()
 {
   if( changes_to_save )
     {
-      if( QMessageBox::warning(this, "Reload Menus",
-			      "Reloading the menus will discard all changes.\n\
-Are you sure you want to reload ?", "Yes", "No" ) != 0 )
+      if( QMessageBox::warning(this, klocale->translate("Reload Menus"),
+			      klocale->translate("Reloading the menus will discard all "
+						 "changes.\n"
+						 "Are you sure you want to reload ?"), 
+			       klocale->translate("Yes"), 
+			       klocale->translate("No") ) != 0 )
         {
 	  return;
 	}
@@ -324,7 +330,7 @@ void KMenuEdit::save()
 void KMenuEdit::reloadFileTypes()
 {
   // kfm II method of mimetypes
-  QString dir_name = KApplication::kdedir();
+  QString dir_name = KApplication::kdedir().copy();
   dir_name += "/share/mimelnk";
   QDir dir(dir_name);
   if( !dir.exists() )

@@ -87,7 +87,7 @@ MenuButton::MenuButton( PMenuItem *p_it, int i, PMenu *p_parent, QWidget *parent
   id = i;
   type = pmenu_item->getType();
   if( type == separator )
-    setText( "Separator" );
+    setText( klocale->translate("Separator") );
   else
     setText( pmenu_item->getText() );
   setPixmap( pmenu_item->getPixmap() );
@@ -99,23 +99,24 @@ MenuButton::MenuButton( PMenuItem *p_it, int i, PMenu *p_parent, QWidget *parent
   left_pressed = FALSE;
   if( type == submenu )
     {
-      popmenu.insertItem("Open/ Close", this, SLOT(open()));
+      popmenu.insertItem(klocale->translate("Open/ Close"), 
+			   this, SLOT(open()));
       connect( this, SIGNAL(clicked(int)), this, SLOT(sOpen(int)) );
     }
   if( (pmenu_item->isReadOnly()) )
     {
-      popmenu.insertItem("Copy", this, SLOT(copyItem()));
-      popmenu.insertItem("View", this, SLOT(change_item()));
-      popmenu.insertItem("! PROTECTED Button !");
+      popmenu.insertItem(klocale->translate("Copy"), this, SLOT(copyItem()));
+      popmenu.insertItem(klocale->translate("View"), this, SLOT(change_item()));
+      popmenu.insertItem(klocale->translate("! PROTECTED Button !"));
     }
   else
     {
-      popmenu.insertItem("Change", this, SLOT(change_item()));
-      popmenu.insertItem("New", this, SLOT(new_item()));
-      popmenu.insertItem("Cut", this, SLOT(cutItem()));
-      popmenu.insertItem("Copy", this, SLOT(copyItem()));
-      popmenu.insertItem("Paste", this, SLOT(pasteItem()));
-      popmenu.insertItem("Delete", this, SLOT(delete_item()));
+      popmenu.insertItem(klocale->translate("Change"), this, SLOT(change_item()));
+      popmenu.insertItem(klocale->translate("New"), this, SLOT(new_item()));
+      popmenu.insertItem(klocale->translate("Cut"), this, SLOT(cutItem()));
+      popmenu.insertItem(klocale->translate("Copy"), this, SLOT(copyItem()));
+      popmenu.insertItem(klocale->translate("Paste"), this, SLOT(pasteItem()));
+      popmenu.insertItem(klocale->translate("Delete"), this, SLOT(delete_item()));
     }
   connect( this, SIGNAL(Rpressed(int)), this, SLOT(popupMenu(int)) );
   setFocusPolicy(StrongFocus);
@@ -167,9 +168,10 @@ void MenuButton::delete_item()
   QMessageBox msg_box;
   if( pmenu_item->getType() == submenu )
     {
-      if( !msg_box.query( "Warning !",\
-			  "If you delete this button you will lose all of its submenus",\
-			  "Ok", "Cancel" ) )
+      if( !msg_box.query( klocale->translate("Warning !"),
+			  klocale->translate("If you delete this button you will lose all of its submenus"),
+			  klocale->translate("Ok"),
+			  klocale->translate("Cancel") ) )
 	{ return; }
     }
   emit delButton( id );
@@ -267,7 +269,10 @@ void MenuButton::change_accept()
       if( pmenu_item->getName() != dialog->i_fname->text() )
 	if( pmenu_parent->checkFilenames(dialog->i_fname->text()) )
 	  {
-	    QMessageBox::information(dialog, "Wrong filename", "A kdelnk-file with this name does already exist. \nPlease choose another filename.", "Ok" );
+	    QMessageBox::information(dialog, 
+				     klocale->translate("Wrong filename"), 
+				     klocale->translate("A kdelnk-file with this name does already exist. \nPlease choose another filename."), 
+				     klocale->translate("Ok") );
 	    return;
 	  }
       if( ((QString) dialog->i_fname->text()).isEmpty() )
@@ -284,9 +289,10 @@ void MenuButton::change_accept()
 	  if( old_type == submenu )
 	    {
 	      QMessageBox msg_box;
-	      if( msg_box.query( "Warning !",\
-				 "Changing the type of this button will delete all of its submenus",\
-				 "Ok", "Cancel" ) )
+	      if( msg_box.query( klocale->translate("Warning !"),
+				 klocale->translate("Changing the type of this button will delete all of its submenus"),
+				 klocale->translate("Ok"), 
+				 klocale->translate("Cancel") ) )
 		{
 		  popmenu.removeItemAt(0);
 		  disconnect( this, SIGNAL(clicked(int)), this, SLOT(sOpen(int)) );
@@ -300,11 +306,12 @@ void MenuButton::change_accept()
 	    }
 	  if( new_type == submenu )
 	    {
-	      popmenu.insertItem( "Open/ Close", 0, 0 );
+	      popmenu.insertItem( klocale->translate("Open/ Close"), 0, 0 );
 	      popmenu.connectItem( 0, this, SLOT(open()) );
 	      connect( this, SIGNAL(clicked(int)), this, SLOT(sOpen(int)) );
 	      PMenu *new_menu = new PMenu();
-	      new_menu->add( new PMenuItem(unix_com, "EMPTY", "no command") );
+	      new_menu->add( new PMenuItem(unix_com, klocale->translate("EMPTY"), 
+					   klocale->translate("no command")) );
 	      pmenu_item->setMenu( new_menu );
 	    }
 	}
@@ -868,8 +875,8 @@ void ConfigureMenu::newButton( int but_id )
 {
   PMenuItem *new_it = new PMenuItem;
   new_it->setType(unix_com);
-  new_it->setText("EMPTY");
-  new_it->setCommand("no command");
+  new_it->setText(klocale->translate("EMPTY"));
+  new_it->setCommand(klocale->translate("no command"));
   append(new_it);
   pmenu->add(new_it);
   changes_to_save = TRUE;

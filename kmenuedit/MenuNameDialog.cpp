@@ -13,11 +13,12 @@
 
 #include "MenuNameDialog.moc"
 #include "MenuNameDialogData.moc"
+#include <kapp.h>
 
 MenuNameDialog::MenuNameDialog(	QWidget* parent, const char* name )
   : Inherited( parent, name )
 {
-  setCaption( "Change Menunames" );
+  setCaption( klocale->translate("Change Menunames") );
   i_personal->setFocus();
 }
 

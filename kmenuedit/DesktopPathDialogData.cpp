@@ -11,6 +11,7 @@
  *********************************************************************/
 
 #include "DesktopPathDialogData.h"
+#include <kapp.h>
 
 #define Inherited QDialog
 
@@ -33,7 +34,7 @@ DesktopPathDialogData::DesktopPathDialogData
 		font.setCharSet( (QFont::CharSet)0 );
 		tmpQLabel->setFont( font );
 	}
-	tmpQLabel->setText( "Path for KDE Desktop Entries is not set." );
+	tmpQLabel->setText( klocale->translate("Path for KDE Desktop Entries is not set.") );
 	tmpQLabel->setAlignment( 289 );
 	tmpQLabel->setMargin( -1 );
 
@@ -45,13 +46,13 @@ DesktopPathDialogData::DesktopPathDialogData
 		font.setCharSet( (QFont::CharSet)0 );
 		tmpQLabel->setFont( font );
 	}
-	tmpQLabel->setText( "I suggest the following entries:" );
+	tmpQLabel->setText( klocale->translate("I suggest the following entries:") );
 	tmpQLabel->setAlignment( 289 );
 	tmpQLabel->setMargin( -1 );
 
 	tmpQLabel = new QLabel( this, "Label_3" );
 	tmpQLabel->setGeometry( 16, 72, 40, 24 );
-	tmpQLabel->setText( "Path:" );
+	tmpQLabel->setText( klocale->translate("Path:") );
 	tmpQLabel->setAlignment( 289 );
 	tmpQLabel->setMargin( -1 );
 
@@ -64,7 +65,7 @@ DesktopPathDialogData::DesktopPathDialogData
 
 	tmpQLabel = new QLabel( this, "Label_4" );
 	tmpQLabel->setGeometry( 16, 128, 88, 24 );
-	tmpQLabel->setText( "PersonalPath:" );
+	tmpQLabel->setText( klocale->translate("PersonalPath:") );
 	tmpQLabel->setAlignment( 289 );
 	tmpQLabel->setMargin( -1 );
 
@@ -77,7 +78,7 @@ DesktopPathDialogData::DesktopPathDialogData
 
 	b_ok = new QPushButton( this, "PushButton_1" );
 	b_ok->setGeometry( 152, 200, 100, 30 );
-	b_ok->setText( "Ok" );
+	b_ok->setText( klocale->translate("Ok") );
 	b_ok->setAutoRepeat( FALSE );
 	b_ok->setAutoResize( FALSE );
 	b_ok->setAutoDefault( TRUE );

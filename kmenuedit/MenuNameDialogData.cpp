@@ -15,6 +15,7 @@
 #define Inherited QDialog
 
 #include <qlabel.h>
+#include <kapp.h>
 
 MenuNameDialogData::MenuNameDialogData
 (
@@ -29,7 +30,7 @@ MenuNameDialogData::MenuNameDialogData
 	dlgedit_Label_1->setGeometry( 16, 16, 328, 24 );
 	dlgedit_Label_1->setMinimumSize( 10, 10 );
 	dlgedit_Label_1->setMaximumSize( 32767, 32767 );
-	dlgedit_Label_1->setText( "Change the name of the menus as displayed in kpanel" );
+	dlgedit_Label_1->setText( klocale->translate("Change the name of the menus as displayed in kpanel") );
 	dlgedit_Label_1->setAlignment( 289 );
 	dlgedit_Label_1->setMargin( -1 );
 
@@ -38,7 +39,7 @@ MenuNameDialogData::MenuNameDialogData
 	dlgedit_Label_2->setGeometry( 24, 48, 56, 24 );
 	dlgedit_Label_2->setMinimumSize( 10, 10 );
 	dlgedit_Label_2->setMaximumSize( 32767, 32767 );
-	dlgedit_Label_2->setText( "Personal:" );
+	dlgedit_Label_2->setText( klocale->translate("Personal:") );
 	dlgedit_Label_2->setAlignment( 290 );
 	dlgedit_Label_2->setMargin( -1 );
 
@@ -47,7 +48,7 @@ MenuNameDialogData::MenuNameDialogData
 	dlgedit_Label_3->setGeometry( 24, 88, 56, 16 );
 	dlgedit_Label_3->setMinimumSize( 10, 10 );
 	dlgedit_Label_3->setMaximumSize( 32767, 32767 );
-	dlgedit_Label_3->setText( "Default:" );
+	dlgedit_Label_3->setText( klocale->translate("Default:") );
 	dlgedit_Label_3->setAlignment( 290 );
 	dlgedit_Label_3->setMargin( -1 );
 
@@ -74,7 +75,7 @@ MenuNameDialogData::MenuNameDialogData
 	b_ok->setMinimumSize( 10, 10 );
 	b_ok->setMaximumSize( 32767, 32767 );
 	connect( b_ok, SIGNAL(pressed()), SLOT(accept()) );
-	b_ok->setText( "Ok" );
+	b_ok->setText( klocale->translate("Ok") );
 	b_ok->setAutoRepeat( FALSE );
 	b_ok->setAutoResize( FALSE );
 
@@ -83,7 +84,7 @@ MenuNameDialogData::MenuNameDialogData
 	b_cancel->setMinimumSize( 10, 10 );
 	b_cancel->setMaximumSize( 32767, 32767 );
 	connect( b_cancel, SIGNAL(pressed()), SLOT(reject()) );
-	b_cancel->setText( "Cancel" );
+	b_cancel->setText( klocale->translate("Cancel") );
 	b_cancel->setAutoRepeat( FALSE );
 	b_cancel->setAutoResize( FALSE );
 
