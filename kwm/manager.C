@@ -63,7 +63,6 @@ Manager::Manager(): QObject(){
   manager = this;
   current_desktop = KWM::currentDesktop();
   number_of_desktops = KWM::numberOfDesktops();
-  printf("manager: number of desktops = %d \n", number_of_desktops);
 
   proxy_hints = 0;
   proxy_props = 0;
@@ -1838,7 +1837,6 @@ void Manager::manage(Window w, bool mapped){
       return;
     c->handleOperation(OP_MOVE);
   }
-  
 }
 
 // put the client in withdraw state (which means it is not managed any

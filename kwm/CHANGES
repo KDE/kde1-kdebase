@@ -18,6 +18,7 @@ patchlevel 4:
            desktop without dragging a window. The number of pushes within the
            timeframe given by the ElectricBorder property is defined in the new property
            ElectricBorderNumberOfPushes. The default is 5.
+        - small fix to generate less toplevel windows
 
 patchlevel 4:
         - new option: WindowResizeType={Opaque, Transparent}

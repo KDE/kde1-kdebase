@@ -473,13 +473,13 @@ void Client::generateButtons(){
     }
   }
   if (!buttonMaximize){
-    buttonMaximize = new myPushButton;
+    buttonMaximize = new myPushButton(this);
     buttonMaximize->setToggleButton(TRUE);
     buttonMaximize->hide();
     connect( buttonMaximize, SIGNAL(toggled(bool)), SLOT(maximizeToggled(bool)));
   }
   if (!buttonSticky){
-    buttonSticky = new myPushButton;
+    buttonSticky = new myPushButton(this);
     buttonSticky->setToggleButton(TRUE);
     buttonSticky->hide();
     connect( buttonSticky, SIGNAL(toggled(bool)), SLOT(stickyToggled(bool)));
