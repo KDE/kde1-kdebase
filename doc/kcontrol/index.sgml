@@ -18,18 +18,18 @@
 
 The KDE Control Center provides a convenient way to access all the
 configuration modules. In principle, the configuration modules are
-independent programs. The can be executed either by using the Settings menu,
+independent programs. They can be executed using the Settings menu,
 the command line, or the Control Center.
 <p>
-The Control Center has the advantage that all possible modules are displayed
-in a list, so it is easier to find the right configuration module.
+The Control Center shows all the  modules in a list, so it is easier 
+to find the right configuration module.
 
-<sect> The configuration modules
+<sect> The Configuration Modules
 <p>
 
 This is a list of the <it>standard</it> configuration modules provided by the
-KDE base packages. Please note that there might be many more on your system
-if you install additional software. You can access the help for all modules
+KDE base package. Please note that there may be many more modules on your system
+if you install additional software. You can access the help for any module
 by first selecting the module in the control center and the pressing the
 help button.
 <p>
