@@ -61,10 +61,10 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     rmb->setMouseTracking(TRUE);
     rmb->installEventFilter(this);
     rmb->insertItem("Help on desktop", RMB_HELP);
+    rmb->insertItem("Execute command", RMB_EXECUTE);
     rmb->insertItem("Display properties", RMB_DISPLAY_PROPERTIES);
     rmb->insertItem("Refresh desktop", RMB_REFRESH_DESKTOP);
     rmb->insertItem("Arrange icons", RMB_ARRANGE_ICONS);
-    rmb->insertItem("Execute command", RMB_EXECUTE);
     rmb->insertSeparator();
     rmb->insertItem("Lock screen", RMB_LOCK_SCREEN);
     rmb->insertItem("Logout", RMB_LOGOUT);
@@ -121,7 +121,7 @@ void KRootWm::rmb_menu_activated(int item){
     break;
   case RMB_ARRANGE_ICONS:
     {
-      KFM kfm; kfm.exec("sortDesktop", 0L);
+      KFM kfm; kfm.sortDesktop();
     }
   break;
   case RMB_EXECUTE:
