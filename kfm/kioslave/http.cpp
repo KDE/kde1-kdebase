@@ -561,7 +561,7 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 	    command += "?";
 	    command += _url->searchPart();
 	}
-	command += " HTTP/1.1\r\n"; /* start header, we're HTTP/1.1 compliant, sorta */
+	command += " HTTP/1.0\r\n"; /* start header, we're HTTP/1.1 compliant, not! */
 	command += "Connection: close\r\n"; /* Make sure we don't use persistant connections */
 
 	QString _host = _url->host(); QString agent_host=""; QString agent_string="";
