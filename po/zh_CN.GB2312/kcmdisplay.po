@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1999-03-21 01:19+0100\n"
-"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"POT-Creation-Date: 1999-02-06 01:16+0100\n"
+"PO-Revision-Date: 1999-03-16 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Translator: Wang Jian <larkw@263.net>\n"
 
 #: backgnd.cpp:54
 msgid "Enter new desktop name"
@@ -16,12 +17,12 @@ msgstr "×ÀÃæ"
 
 #: backgnd.cpp:185
 msgid "&Rename ..."
-msgstr "ÖØÃüÃû[&R] ..."
+msgstr "ÖØÃüÃû(&R) ..."
 
 #: backgnd.cpp:196
-#, fuzzy
+#
 msgid "&Common Background"
-msgstr "±³¾°[&B]"
+msgstr "Í¨ÓÃ±³¾°(&C)"
 
 #: backgnd.cpp:224 colorscm.cpp:82
 msgid "Colors"
@@ -29,16 +30,16 @@ msgstr "ÑÕÉ«"
 
 #: backgnd.cpp:251
 msgid "&One Color"
-msgstr "µ¥É«[&C]"
+msgstr "µ¥É«(&C)"
 
 #
 #: backgnd.cpp:268
 msgid "&Two Color"
-msgstr "Ë«É«[&C]"
+msgstr "Ë«É«(&C)"
 
 #: backgnd.cpp:287
 msgid "Set&up ..."
-msgstr "ÉèÖÃ[&U] ..."
+msgstr "ÉèÖÃ(&U) ..."
 
 #: backgnd.cpp:296
 msgid "Wallpaper"
@@ -51,75 +52,75 @@ msgstr "Ã»ÓĞÇ½Ö½"
 
 #: backgnd.cpp:360
 msgid "&Browse..."
-msgstr "ä¯ÀÀ[&B]..."
+msgstr "ä¯ÀÀ(&B)..."
 
 #: backgnd.cpp:368
 msgid "Arrangement:"
-msgstr ""
+msgstr "²¼¾Ö:"
 
 #: backgnd.cpp:375
-#, fuzzy
+#
 msgid "Tiled"
-msgstr "²¢ÁĞ[&L]"
+msgstr "Æ½ÆÌ"
 
 #: backgnd.cpp:376
 msgid "Mirrored"
-msgstr ""
+msgstr "¾µÏñ"
 
 #: backgnd.cpp:377
-#, fuzzy
+#
 msgid "Center Tiled"
-msgstr "·ÅÖÃÔÚÖĞ¼ä[&C]"
+msgstr "¾ÓÖĞÆ½ÆÌ"
 
 #: backgnd.cpp:378
-#, fuzzy
+#
 msgid "Centred"
-msgstr "·ÅÖÃÔÚÖĞ¼ä[&C]"
+msgstr "¾ÓÖĞ"
 
 #: backgnd.cpp:379
-#, fuzzy
+#
 msgid "Centred Brick"
-msgstr "·ÅÖÃÔÚÖĞ¼ä[&C]"
+msgstr "¾ÓÖĞ´íÔÓ"
 
 #: backgnd.cpp:380
-#, fuzzy
+#
 msgid "Centred Warp"
-msgstr "·ÅÖÃÔÚÖĞ¼ä[&C]"
+msgstr "¾ÓÖĞ»·ÈÆ"
 
 #: backgnd.cpp:381
-#, fuzzy
+#
 msgid "Centred Maxpect"
-msgstr "·ÅÖÃÔÚÖĞ¼ä[&C]"
+msgstr "¾ÓÖĞ×î´ó"
 
 #: backgnd.cpp:382
 msgid "Symmetrical Tiled"
-msgstr ""
+msgstr "¶Ô³ÆÆ½ÆÌ"
 
 #: backgnd.cpp:383
 msgid "Symmetrical Mirrored"
-msgstr ""
+msgstr "¶Ô³Æ¾µÏñ"
 
 #: backgnd.cpp:384
-#, fuzzy
+#
 msgid "Scaled"
-msgstr "±ÈÀıËõ·Å[&S]"
+msgstr "Ëõ·Å"
 
 #: backgnd.cpp:399
 msgid "Ra&ndom"
-msgstr ""
+msgstr "Ëæ»ú(&N)"
 
 #: backgnd.cpp:408
-#, fuzzy
+#
 msgid "Setu&p..."
-msgstr "ÉèÖÃ[&U] ..."
+msgstr "ÉèÖÃ(&P) ..."
 
 #: backgnd.cpp:418
 msgid "&Dock into the panel"
-msgstr ""
+msgstr "Ç¶Èëµ½Ãæ°å(&D)"
 
 #: backgnd.cpp:443
 msgid "Cache size (kB):"
-msgstr ""
+msgstr "»º´æ´óĞ¡(KB)"
 
 #
 #: backgnd.cpp:1339
@@ -127,38 +128,39 @@ msgid "Desktop names"
 msgstr "×ÀÃæÃû³Æ"
 
 #: backgnd.cpp:1384
-#, fuzzy
+#
 msgid "File error"
-msgstr "ÃüÃû´íÎó"
+msgstr "ÎÄ¼ş´íÎó"
 
 #: backgnd.cpp:1385
 msgid "Can't load image file"
-msgstr ""
+msgstr "²»ÄÜÔØÈëÍ¼ÏñÎÄ¼ş"
 
 #: backgnd.cpp:1408 backgnd.cpp:1881
 msgid "Unsupported URL"
-msgstr ""
+msgstr "²»Ö§³ÖµÄURL"
 
 #: backgnd.cpp:1409 backgnd.cpp:1882
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
+"¶Ô²»Æğ,KDEÏÔÊ¾Ä£¿éÏÖÔÚ»¹²»Ö§³ÖÕâÖÖÀàĞÍµÄURL"
 
 #: backgnd.cpp:1441
 msgid "Two color backgrounds"
-msgstr "Á½¸ö²ÊÉ«±³¾°"
+msgstr "Ë«É«±³¾°"
 
 #: backgnd.cpp:1478
 msgid "Blend colors from &top to bottom"
-msgstr "´ÓÉÏµ½ÏÂÊ¹ÓÃ»ìºÍÉ«"
+msgstr "´ÓÉÏµ½ÏÂÊ¹ÓÃ»ìºÍÉ«(&T)"
 
 #: backgnd.cpp:1484
 msgid "Blend colors from &right to left"
-msgstr "´ÓÓÒµ½×óÊ¹ÓÃ»ìºÍÉ«"
+msgstr "´ÓÓÒµ½×óÊ¹ÓÃ»ìºÍÉ«(&R)"
 
 #: backgnd.cpp:1490
 msgid "Use &pattern"
-msgstr "Ê¹ÓÃ»¨Ñù[&P]"
+msgstr "Ê¹ÓÃ»¨Ñù(&P)"
 
 #: backgnd.cpp:1517
 msgid "Preview"
@@ -166,7 +168,7 @@ msgstr "Ô¤ÀÀ"
 
 #: backgnd.cpp:1528
 msgid "Pattern &name"
-msgstr "»¨ÑùÃû[&N]"
+msgstr "»¨ÑùÃû(&N)"
 
 #: backgnd.cpp:1567
 msgid "Current"
@@ -174,7 +176,7 @@ msgstr "µ±Ç°µÄ"
 
 #: backgnd.cpp:1627
 msgid "Filled"
-msgstr "Ìî³äµÄ"
+msgstr "Ìî³ä"
 
 #: backgnd.cpp:1630
 msgid "Fish net"
@@ -199,44 +201,39 @@ msgstr "ÂÑÊ¯Â·"
 
 #: backgnd.cpp:1708
 msgid "Random mode setup"
-msgstr ""
+msgstr "Ëæ»úÄ£Ê½ÉèÖÃ"
 
 #: backgnd.cpp:1714
 msgid "Pick files from &directory"
-msgstr ""
+msgstr "´ÓÄ¿Â¼ÖĞÑ¡ÔñÎÄ¼ş(&D)"
 
 #: backgnd.cpp:1728
-#, fuzzy
 msgid "&Browse ..."
-msgstr "ä¯ÀÀ[&B]..."
+msgstr "ä¯ÀÀ(&B) ..."
 
 #: backgnd.cpp:1749
 msgid "Timer Delay in seconds :"
-msgstr ""
+msgstr "¼ÆÊ±Æ÷ÑÓÊ±Ãë :"
 
 #: backgnd.cpp:1761
-#, fuzzy
 msgid "In &order"
-msgstr "ºöÂÔ"
+msgstr "°´Ë³Ğò(&O)"
 
 #: backgnd.cpp:1778
-#, fuzzy
 msgid "Desktops :"
-msgstr "×ÀÃæ"
+msgstr "×ÀÃæ :"
 
 #: backgnd.cpp:1817
-#, fuzzy
 msgid "&Add"
-msgstr "Ìí¼Ó[&A] ..."
+msgstr "Ìí¼Ó(&A)"
 
 #: backgnd.cpp:1989
-#, fuzzy
 msgid "Directory error"
-msgstr "ÃüÃû´íÎó"
+msgstr "Ä¿Â¼´íÎó"
 
 #: backgnd.cpp:1990
 msgid "Selected directory doesn't exists"
-msgstr ""
+msgstr "Ñ¡ÖĞµÄÄ¿Â¼²»´æÔÚ"
 
 #: colorscm.cpp:104
 msgid "Color Scheme"
@@ -250,15 +247,15 @@ msgstr "µ±Ç°µÄÉ«²ÊÖ÷Ìâ"
 #
 #: colorscm.cpp:117
 msgid "KDE default"
-msgstr "KDE Ä¬ÈÏ"
+msgstr "KDE Ä¬ÈÏÖµ"
 
 #: colorscm.cpp:130
 msgid "&Add ..."
-msgstr "Ìí¼Ó[&A] ..."
+msgstr "Ìí¼Ó(&A) ..."
 
 #: colorscm.cpp:147
 msgid "&Save changes"
-msgstr "±£´æ¸Ä¶¯[&S]"
+msgstr "±£´æ¸Ä¶¯(&S)"
 
 #: colorscm.cpp:161
 msgid "Widget color"
@@ -285,7 +282,6 @@ msgstr "»î¶¯´°¿Ú±êÌâĞĞ"
 msgid "Active title text"
 msgstr "»î¶¯´°¿Ú±êÌâÎÄ×Ö"
 
-#
 #: colorscm.cpp:173
 msgid "Active title blend"
 msgstr "»î¶¯´°¿Ú±êÌâĞĞ»ìÉ«"
@@ -318,10 +314,9 @@ msgstr "´°¿ÚÎÄ×Ö"
 msgid "Contrast"
 msgstr "¶Ô±È"
 
-#
 #: colorscm.cpp:223
 msgid "&Low"
-msgstr "µÍ[&L]"
+msgstr "µÍ(&L)"
 
 #: colorscm.cpp:231
 msgid "High"
@@ -351,7 +346,7 @@ msgid ""
 "in the color scheme list."
 msgstr ""
 "Çë¸øĞÂµÄÉ«²ÊÖ÷ÌâÑ¡ÔñÒ»¸öÎ¨Ò»µÄÃû×Ö . ÄãËù¼üÈë\n"
-"µÄÃû×ÖÔÚÉ«²ÊÖ÷ÌâÁĞ±íÀïÒÔ¼°ÓĞÁË ."
+"µÄÃû×ÖÔÚÉ«²ÊÖ÷ÌâÁĞ±íÀïÒÑ¾­ÓĞÁË ."
 
 #
 #: savescm.cpp:18
@@ -370,13 +365,12 @@ msgstr ""
 "ÖĞµÄÉ«²ÊÖ÷Ìâ.\n"
 "\n"
 "ÕıÔÚÔ¤ÀÀµÄµÄÑÕÉ«½«±»¿½±´µ½Õâ¸öÉ«²ÊÖ÷Ìâ\n"
-"ÖĞ."
+"ÖĞ.(&E)"
 
 #: scrnsave.cpp:47
 msgid "Ignore"
 msgstr "ºöÂÔ"
 
-#
 #: scrnsave.cpp:48
 msgid "Save Screen"
 msgstr "ÆÁÄ»±£»¤"
@@ -396,12 +390,12 @@ msgstr "Ã»ÓĞÆÁÄ»±£»¤³ÌĞò"
 
 #: scrnsave.cpp:209
 msgid "&Setup ..."
-msgstr "ÉèÖÃ[&S]"
+msgstr "ÉèÖÃ(&S) ..."
 
 #
 #: scrnsave.cpp:217
 msgid "&Test"
-msgstr "²âÊÔ[&T]"
+msgstr "²âÊÔ(&T)"
 
 #: scrnsave.cpp:230
 msgid "Settings"
@@ -409,7 +403,7 @@ msgstr "ÉèÖÃ"
 
 #: scrnsave.cpp:250
 msgid "&Wait for"
-msgstr "µÈ´ı[&W]"
+msgstr "µÈ´ı(&W)"
 
 #: scrnsave.cpp:260
 msgid "min."
@@ -417,24 +411,23 @@ msgstr "·ÖÖÓ"
 
 #: scrnsave.cpp:266
 msgid "&Require password"
-msgstr "ĞèÒªÃÜÂë[&R]"
+msgstr "ĞèÒª¿ÚÁî(&R)"
 
 #: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
-msgstr ""
+msgstr "½ÓÊÜrootÓÃ»§¿ÚÁî½âËøÆÁÄ»"
 
 #: scrnsave.cpp:280
 msgid "Show &password as stars"
-msgstr "ÒÔ `*' ÏÔÊ¾ÃÜÂë"
+msgstr "ÒÔ `*' ÏÔÊ¾¿ÚÁî"
 
 #: scrnsave.cpp:288
 msgid "Priority"
 msgstr "ÓÅÏÈ¼¶"
 
-#
 #: scrnsave.cpp:301
 msgid "&High"
-msgstr "¸ß[&H]"
+msgstr "¸ß(&H)"
 
 #: scrnsave.cpp:310
 msgid "Low"
@@ -442,74 +435,78 @@ msgstr "µÍ"
 
 #: general.cpp:221
 msgid "Style"
-msgstr ""
+msgstr "·ç¸ñ"
 
 #: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
-msgstr "ÒÔ Windows 95 µÄ·ç¸ñÀ´ÏÔÊ¾¿Ø¼ş"
+msgstr "ÒÔ Windows 95 µÄ·ç¸ñÀ´ÏÔÊ¾¿Ø¼ş(&D)"
 
 #: general.cpp:245
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr ""
+msgstr "ÒÔMacOSµÄ·ç¸ñ°Ñ²Ëµ¥ÌõÏÔÊ¾ÔÚÆÁÄ»¶¥¶Ë(&M)"
 
 #: general.cpp:259
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr ""
+msgstr "ÔÚ·ÇKDE³ÌĞòÖĞÊ¹ÓÃÏàÍ¬µÄ×ÖÌåºÍÑÕÉ«(&A)"
 
-#: general.cpp:529
+#: general.cpp:530
 msgid "General font"
-msgstr "Ò»°ã×ÖÌå"
+msgstr "Í¨ÓÃ×ÖÌå"
 
-#: general.cpp:534
+#: general.cpp:535
 msgid "Fixed font"
 msgstr "µÈ¿í×ÖÌå"
 
 #
-#: general.cpp:540
+#: general.cpp:541
 msgid "Window title font"
 msgstr "´°¿Ú±êÌâ×ÖÌå"
 
-#: general.cpp:545
+#: general.cpp:546
 msgid "Panel button font"
 msgstr "Ãæ°å°´Å¥×ÖÌå"
 
-#: general.cpp:550
+#: general.cpp:551
 msgid "Panel clock font"
 msgstr "Ãæ°åÊ±ÖÓ×ÖÌå"
 
-#: general.cpp:580
-#, fuzzy
+#: general.cpp:581
+#
 msgid "Sample text"
-msgstr "Ñ¡ÔñÎÄ×Ö"
+msgstr "Ê¾ÀıÎÄ×Ö"
 
-#: general.cpp:588
+#: general.cpp:589
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
+"ÁãÒ»¶şÈıËÄÎåÁùÆß°Ë¾ÅÊ®\n"
+"Ling Yi Er San Si Wu Liu Qi Ba Jiu Shi\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 
 #: main.cpp:64
 msgid "&Background"
-msgstr "±³¾°[&B]"
+msgstr "±³¾°(&B)"
 
 #: main.cpp:67
 msgid "&Screensaver"
-msgstr "ÆÁÄ»±£»¤³ÌĞò[&S]"
+msgstr "ÆÁÄ»±£»¤³ÌĞò(&S)"
 
 #: main.cpp:71
 msgid "&Colors"
-msgstr "ÑÕÉ«[&C]"
+msgstr "ÑÕÉ«(&C)"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr ""
+msgstr "·ç¸ñ(&S)"
 
 #: main.cpp:83
-#, fuzzy
+#
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
-msgstr "ÓÃ·¨: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr ""
+"ÓÃ·¨: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
@@ -530,27 +527,27 @@ msgstr "Ñ¡ÖĞµÄÎÄ×Ö"
 
 #: widgetcanvas.cpp:212
 msgid "New"
-msgstr ""
+msgstr "ĞÂ½¨"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
-msgstr ""
+msgstr "×ÖÑù(&T)"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
-msgstr "´ÖÌå[&B]"
+msgstr "´ÖÌå(&B)"
 
 #: fontchooser.cpp:96
 msgid "&Italic"
-msgstr "Ğ±Ìå[&I]"
+msgstr "Ğ±Ìå(&I)"
 
 #: fontchooser.cpp:125
 msgid "&Size"
-msgstr ""
+msgstr "´óĞ¡(&S)"
 
 #: fontchooser.cpp:147
 msgid "&Character set"
-msgstr ""
+msgstr "×Ö·û¼¯(&C)"
 
 #: fontchooser.cpp:262
 msgid "default"

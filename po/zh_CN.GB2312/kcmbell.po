@@ -2,13 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"PO-Revision-Date: 1999-03-16 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Translator: Wang Jian <larkw@263.net>\n"
 
 #: main.cpp:52
 msgid "&Bell"
-msgstr "铃声[&B]"
+msgstr "铃声(&B)"
 
 #: main.cpp:58
 msgid "usage: kcmbell [-init | bell]\n"
@@ -24,7 +25,7 @@ msgstr "音量"
 
 #: bell.cpp:67
 msgid "Pitch"
-msgstr "调音"
+msgstr "音调"
 
 #: bell.cpp:69
 msgid "Hz"
@@ -36,7 +37,7 @@ msgstr "持续时间"
 
 #: bell.cpp:72
 msgid "milliseconds"
-msgstr ""
+msgstr "毫秒"
 
 #: bell.cpp:87
 msgid "Test"
