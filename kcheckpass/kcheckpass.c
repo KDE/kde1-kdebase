@@ -54,7 +54,7 @@
 #include <malloc.h>
 #include <errno.h>
 #include <pwd.h>
-
+#include <sys/types.h>
 
 /*****************************************************************
  * Set to 1 if stdin is a tty
