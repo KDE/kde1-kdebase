@@ -267,6 +267,7 @@ int KProtocolFTP::ftpPort(void)
     ksize_t l;
     char buf[64];
     int on=1;
+    pasv=0;
 
     l = sizeof(sin);
     if (getsockname(sControl,&sin.sa,&l) < 0)
@@ -334,6 +335,71 @@ long KProtocolFTP::ftpSize( const char *path, char mode)
     return atol(rspbuf+4); // skip leading "213 " (response code)
 }
 
+int KProtocolFTP::ftpPasv(void)
+{
+    int i[6], j;
+    unsigned char n[6];
+    int on=1;
+    union {
+	       struct sockaddr sa;
+	       struct sockaddr_in in;
+    } sin;
+    struct linger lng = { 0, 0 };
+
+    pasv=1;
+    if (sDatal != -1)
+       close(sDatal);
+    sDatal = socket(AF_INET, SOCK_STREAM, 0);
+    if (setsockopt(sDatal,SOL_SOCKET,SO_REUSEADDR,(char*)&on, sizeof(on)) == -1)
+    {
+	       perror("setsockopt");
+	       close(sData);
+	       return 0;
+    }
+    if (sDatal < 0)
+    {
+	       perror("socket");
+	       close(sDatal);
+	       return 0;
+    }
+
+    /* Let's PASsiVe*/
+    if (!(ftpSendCmd("PASV",'2')))
+    {
+	       if (ftplib_debug>1) debug("server does not support PASV.");
+	       close(sDatal);
+	       return ftpPort(); // use old method if PASV not supported
+    }
+
+    if (sscanf(rspbuf, "%*[^(](%d,%d,%d,%d,%d,%d)",&i[0], &i[1], &i[2], &i[3], &i[4], &i[5]) != 6)
+    {
+	       perror("cannot parse PASV message.");
+	       close(sDatal);
+	       return ftpPort();	       
+    }
+
+    for (j=0; j<6; j++)
+    {
+		n[j] = (unsigned char) (i[j] & 0xff);
+    }
+       
+    memset(&sin,0, sizeof(sin));
+    sin.in.sin_family = AF_INET;
+    memcpy(&sin.in.sin_addr, &n[0], (size_t) 4);
+    memcpy(&sin.in.sin_port, &n[4], (size_t) 2);
+
+    if( ::connect(sDatal, &sin.sa, sizeof(sin)) == -1)
+    {
+	       perror("connect");
+	       close(sDatal);
+	       return 0;
+    }
+
+    if (setsockopt(sDatal, SOL_SOCKET,SO_LINGER, (char *) &lng,(int) sizeof (lng)) < 0)
+	       perror("Linger mode was not allowed.");
+    return 1;
+}
+
 /*
  * ftpMkdir - create a directory at server
  *
@@ -393,6 +459,10 @@ int KProtocolFTP::ftpMkdir( const char *path )
     {
 		close(sDatal);
 		return -2;
+    }
+    if (pasv == 1)
+    {
+	    return sDatal;
     }
 
     l = sizeof(addr);
@@ -457,7 +527,7 @@ KProtocolFTP::KProtocolFTP()
     dirfile = NULL;
     sControl = sData = sDatal = -1;
     ftplib_lastresp = rspbuf;
-    ftplib_debug = 0; // set to 9 for maximum debugging output
+    ftplib_debug = 9; // set to 9 for maximum debugging output
 }
 
 KProtocolFTP::~KProtocolFTP()
@@ -474,8 +544,13 @@ int KProtocolFTP::OpenConnection( const char *command, const char *path, char mo
     buf.sprintf("type %c",mode);
     if ( !ftpSendCmd( buf, '2' ) ) return Error(KIO_ERROR_CouldNotConnect,
 				"Could not set ftp to correct mode for transmission");
+#ifdef DONT_TRY_PASV // never defined - define if you don't want to try PASV first
     if ( !ftpPort() ) return Error(KIO_ERROR_CouldNotConnect,
 				"Could not setup ftp data port", errno);
+#else
+    if ( !ftpPasv() ) return Error(KIO_ERROR_CouldNotConnect,
+				"Could not setup ftp data port", errno);
+#endif
     
     // Special case for the list command. We try to change to this
     // directory first to see whether it really is a directory.

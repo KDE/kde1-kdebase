@@ -25,6 +25,7 @@ class KProtocolFTP :public KProtocol
 private:
 	FILE *dirfile;
 	int dirfd;
+	int pasv;
 	int sData,sControl,sDatal;
 
 	#define FTP_BUFSIZ 1024
@@ -49,6 +50,7 @@ private:
 	int ftpSendCmd(const char *cmd, char expresp);
 	int ftpLogin( const char *user, const char *pass, QString *redirect = 0L);
 	int ftpPort();
+	int ftpPasv();
         long ftpSize( const char *path, char mode);
 	int ftpMkdir(const char *path);
 	int ftpChdir( const char *path);
