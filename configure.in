@@ -152,8 +152,6 @@ if test "$kde_cv_utmp_file" != "no"; then
   AC_DEFINE_UNQUOTED(UTMP, "$kde_cv_utmp_file")
 fi
 
-KDE_CHECK_STL
-
 AC_OUTPUT(Makefile \
 	applnk/Applications/Makefile \
 	applnk/Games/Makefile \
