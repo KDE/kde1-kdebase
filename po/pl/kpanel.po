@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-15 20:06+0100\n"
+"POT-Creation-Date: 1997-12-19 10:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,6 +32,10 @@ msgstr "&W³a¶ciwo¶ci"
 #: kpanel.C:238
 msgid "Go!"
 msgstr "Id¼!"
+
+#: kpanel.C:240 tools.C:787
+msgid "Where do you want to go tomorrow?"
+msgstr ""
 
 #: kpanel.C:313
 msgid "No info available"
