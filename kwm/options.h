@@ -6,6 +6,7 @@
  */
 
 #include <qpixmap.h>
+#include <stdio.h>
 
 #ifndef OPTIONS_H
 #define OPTIONS_H
@@ -122,6 +123,17 @@ extern kwmOptions options;
 #define CLASSIC_FOCUS  (options.FocusPolicy == CLASSIC_FOCUS_FOLLOWS_MOUSE \
 			|| options.FocusPolicy == CLASSIC_SLOPPY_FOCUS)
 
+
+#define DEBUG_EVENTS_ENABLED 
+
+#ifdef DEBUG_EVENTS_ENABLED
+#define DEBUG_EVENTS(x,y) debug_events(x,y);
+#define DEBUG_EVENTS2(x,y,z) debug_events(x,y,z);
+     void debug_events(const char* s, long int l);
+     void debug_events(const char* s, void* v, long int l=0);
+#else
+#define DEBUG_EVENTS(x,y) 
+#endif
 
 #endif // OPTIONS_H
 

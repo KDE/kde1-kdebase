@@ -1688,6 +1688,7 @@ void Manager::manage(Window w, bool mapped){
       c->backing_store = attr.backing_store;
     }
   }
+  DEBUG_EVENTS2("manage..... Client", c,c->window)
   {
     int n, order;
     // don't show any visible decoration, if the window is shaped
@@ -1723,6 +1724,10 @@ void Manager::manage(Window w, bool mapped){
   c->iconname = getprop(c->window, XA_WM_ICON_NAME);
   c->name = getprop(c->window, XA_WM_NAME); 
   c->setLabel();
+
+#ifdef DEBUG_EVENTS_ENABLED
+  printf("client %p with Window %ld has title '%s'\n", c, c->window, c->label.data());
+#endif
 
   doGlobalDecorationAndFocusHints(c);
 
@@ -1918,6 +1923,7 @@ void Manager::manage(Window w, bool mapped){
 // put the client in withdraw state (which means it is not managed any
 // longer)
 void Manager::withdraw(Client* c){
+  DEBUG_EVENTS2("widthdraw client", c,c->window)
   KWM::moveToDesktop(c->window, 0);
 
   // first of all we have to hide the window. We do not use
@@ -1941,6 +1947,7 @@ void Manager::withdraw(Client* c){
   for (i = 0; i < nwins; i++) {
     if (wins[i] == c->window){
       // we still manage it => do reparenting 
+      DEBUG_EVENTS2("widthdraw we still manage => do reparenting", c,c->window)
       gravitate(c, true);
       XUnmapWindow(qt_xdisplay(), c->window);
       XReparentWindow(qt_xdisplay(), c->window, qt_xrootwin(), 

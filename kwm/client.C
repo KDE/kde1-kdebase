@@ -346,6 +346,9 @@ static void grabButton(int button, Window window, unsigned int mod){
 Client::Client(Window w, QWidget *parent, const char *name_for_qt)
   : QWidget( parent, name_for_qt, WResizeNoErase){
     //, WStyle_Customize | WStyle_NoBorder | WStyle_Tool ){
+
+    DEBUG_EVENTS2("Create new Client. Client/Window", this,w)
+
     window = w;
 
     backing_store = false;
@@ -415,6 +418,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
 }  
 
 Client::~Client(){
+  DEBUG_EVENTS2("Destroy Client", this,window)
   if (ncmapwins != 0) {
     XFree((char *)cmapwins);
     free((char *)wmcmaps);
@@ -430,6 +434,7 @@ QLabel* Client::gimmick=0;
 
 // show the client. This means the decoration frame and the inner window
 void Client::showClient(){
+  DEBUG_EVENTS("ShowClient", this)
   if (!isShaded())
     XMapWindow(qt_xdisplay(),window);
   show();
@@ -437,6 +442,7 @@ void Client::showClient(){
 
 // hide the client. This means the decoration frame and the inner window
 void Client::hideClient(){
+  DEBUG_EVENTS("HideClient", this)
   hide();
   if (!isShaded()){
     XUnmapWindow(qt_xdisplay(), window);

@@ -271,6 +271,16 @@ void setInfoBoxWindows(Client* c, bool traverse_all = false){
 
 kwmOptions options;
 
+void debug_events(const char* s, long int l){
+  printf("%s: %ld\n", s,l);
+}
+void debug_events(const char* s, void* v, long int l = 0){
+  if (!l)
+    printf("%s: %p\n", s,v);
+  else
+    printf("%s: %p / %ld\n", s,v,l);
+}
+
 QPushButton* ignore_release_on_this = 0;
 
 
@@ -1557,13 +1567,16 @@ bool MyApp::x11EventFilter( XEvent * ev){
   
   switch (ev->type) {
   case KeyPress:
+    DEBUG_EVENTS("KeyPress", ev->xkey.window)
     return handleKeyPress(ev->xkey);
     break;
   case KeyRelease:
+    DEBUG_EVENTS("KeyRelease", ev->xkey.window)
     handleKeyRelease(ev->xkey);
     return false;
     break;
   case ButtonPress:
+    DEBUG_EVENTS("ButtonPress", ev->xbutton.window)
     {
       Client *c = manager->getClient(ev->xbutton.window);
       bool replay = true;
@@ -1600,38 +1613,48 @@ bool MyApp::x11EventFilter( XEvent * ev){
     }
   break;
   case ButtonRelease:
+    DEBUG_EVENTS("ButtonRelease", ev->xbutton.window)
     break;
   case CreateNotify:
+    DEBUG_EVENTS("CreationNotify", ev->xcreatewindow.window)
     return true;
     break;
   case MapRequest:
+    DEBUG_EVENTS("MapRequest", ev->xmaprequest.window)
     manager->mapRequest(&ev->xmaprequest);
     break;
   case ConfigureRequest:
+    DEBUG_EVENTS("ConfigureRequest", ev->xconfigurerequest.window)
     manager->configureRequest(&ev->xconfigurerequest);
     break;
   case CirculateRequest:
+    DEBUG_EVENTS("CirculateRequest", ev->xcirculaterequest.window)
     manager->circulateRequest(&ev->xcirculaterequest);
     break;
   case UnmapNotify:
+    DEBUG_EVENTS("UnmapNotify", ev->xunmap.window)
     manager->unmapNotify(&ev->xunmap);
     if (ev->xunmap.window != ev->xunmap.event){
       return true;
     }
     break;
   case DestroyNotify:
+    DEBUG_EVENTS("DestroyNotify", ev->xdestroywindow.window)
     manager->destroyNotify(&ev->xdestroywindow);
     if (ev->xdestroywindow.window != ev->xdestroywindow.event){
       return true;
     }
     break;
   case ClientMessage:
+    DEBUG_EVENTS("ClientMessage", ev->xclient.window)
     manager->clientMessage(ev);
     break;
   case ColormapNotify:
+    DEBUG_EVENTS("ColormapNotify", ev->xcolormap.window)
     manager->colormapNotify(&ev->xcolormap);
     break;
   case PropertyNotify:
+    DEBUG_EVENTS("PropertyNotify", ev->xproperty.window)
     manager->propertyNotify(&ev->xproperty);
     break;
   case SelectionClear:
@@ -1641,20 +1664,25 @@ bool MyApp::x11EventFilter( XEvent * ev){
   case SelectionRequest:
     break;
   case EnterNotify:
+    //DEBUG_EVENTS("EnterNotify", ev->xcrossing.window)
     if (!operations->isVisible())
       manager->enterNotify(&ev->xcrossing);
     break;
   case LeaveNotify:
+    //DEBUG_EVENTS("LeaveNotify", ev->xcrossing.window)
     manager->leaveNotify(&ev->xcrossing);
     break;
   case ReparentNotify:
+    DEBUG_EVENTS("ReparentNotify", ev->xreparent.window)
     manager->reparentNotify(&ev->xreparent);
     return true; //do not confuse Qt with these events...
     break;
   case MotionNotify:
+    //DEBUG_EVENTS("MotionNotify", ev->xmotion.window)
     manager->motionNotify(&ev->xmotion);
     break;
   case ConfigureNotify:
+    DEBUG_EVENTS("ConfigureNotify", ev->xconfigure.window)
     // this is because Qt cannot handle (usually does not need to)
     // SubstructureNotify events. 
     if (ev->xconfigure.window != ev->xconfigure.event){
@@ -1662,6 +1690,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
     }
     break;
   case MapNotify:
+    DEBUG_EVENTS("MapNotify", ev->xmap.window)
     if (ev->xmap.window != ev->xmap.event){
       return true;
     }
