@@ -619,7 +619,7 @@ msgstr "izraðujem leæu..."
 
 #: science.cpp:769
 msgid "grabbing screen..."
-msgstr ""
+msgstr "grabim zaslon..."
 
 #: science.cpp:931
 msgid "Setup Science"

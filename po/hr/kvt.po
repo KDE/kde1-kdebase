@@ -199,11 +199,11 @@ msgstr "-display <ime>\t\t  navedi ime prikaza (poslu¾itelja)\n"
 
 #: main.C:1329
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr "-vt_geometry <spec>\t  poèetna geometrija vt prozora\n"
+msgstr "-vt_geometry <spec>\t\t  poèetna geometrija vt prozora\n"
 
 #: main.C:1330
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr "-print-pipe <ime>\t  navedi pipe za vt100 pisaè\n"
+msgstr "-print-pipe <ime>\t\t  navedi pipe za vt100 pisaè\n"
 
 #: main.C:1331
 msgid "-vt_bg <colour>           background color\n"
@@ -215,11 +215,11 @@ msgstr "-vt_fg <boja>\t\t  boja prvog plana\n"
 
 #: main.C:1333
 msgid "-vt_font <fontname>       normal font\n"
-msgstr "-vt_font <ime pisma>\t  normalno pismo\n"
+msgstr "-vt_font <ime pisma>\t\t  normalno pismo\n"
 
 #: main.C:1334
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr ""
+msgstr "-no_font_hack \t\t  iskljuèi Qt font bug workaround\n"
 
 #: main.C:1335
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
