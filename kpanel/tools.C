@@ -360,6 +360,10 @@ int kPanel::show_popup(QPopupMenu* popup, QWidget* button, bool isTaskButton){
       else
 	yp = button->mapToGlobal(QPoint(0,0)).y() - popup->height();
     }
+    if (yp + popup->height() > QApplication::desktop()->height())
+      yp = button->y()+button->height()-popup->height();
+    if (yp < 0)
+      yp = QApplication::desktop()->height()-popup->height()+button->height();
   }
   else {
     if (taskbar_position == taskbar_top_left){
