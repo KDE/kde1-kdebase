@@ -9,6 +9,7 @@ MimeType=
 Comment=Postscript Viewer
 Comment[de]=Postscript Betrachter
 Comment[pl]=Przegl±darka Postcript ghostview
+Comment[fr]=Afficheur Postscript
 Comment[fi]=Postscript näyttäjä
 Comment[sv]=Postskriptsvisare
 Exec=ghostview

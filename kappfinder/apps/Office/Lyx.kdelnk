@@ -16,3 +16,4 @@ Type=Application
 Terminal=0
 Comment=LaTeX Word Processor
 Comment[pl]=Edytor tekstu LaTeX
+Comment[fr]=Editeur de textes LaTeX (Lyx)

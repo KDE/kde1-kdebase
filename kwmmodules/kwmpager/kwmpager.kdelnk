@@ -7,6 +7,7 @@ Name=KWM Pager
 Protocols=
 MimeType=
 Comment=Shows the positions of the windows
+Comment[fr]=Montre les positions des fenêtres
 Exec=kwmpager
 Icon=unknown.xpm
 TerminalOptions=

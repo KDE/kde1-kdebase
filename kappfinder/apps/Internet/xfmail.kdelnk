@@ -5,5 +5,6 @@ Icon=xfmail.xpm
 Type=Application
 Name=XFMail
 Comment=XFMail Mailer
+Comment[fr]=Messagerie XFMail 
 Comment[pl]=Program pocztowy XFMail
 Comment[fi]=XFMail postiohjelma

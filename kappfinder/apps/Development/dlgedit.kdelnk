@@ -11,6 +11,7 @@ Comment[de]=Qt Dialog Editor
 Comment[pl]=Qt Dialog Editor
 Comment[fi]=Qt:n Dialogieditori
 Comment[sv]=Dialogredigerare för Qt
+Comment[fr]=Editeur de fenêtre de dialogue Qt
 Exec=dlgedit
 Icon=kcmkwm.xpm
 TerminalOptions=

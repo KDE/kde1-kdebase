@@ -11,6 +11,7 @@ TerminalOptions=
 Path=
 Type=Application
 Comment=The X clock
+Comment[fr]=Horloge sous X
 Comment[de]=Die X Uhr
 Comment[pl]=X Zegar
 Comment[fi]=X Kello

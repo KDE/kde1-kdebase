@@ -8,6 +8,7 @@ Protocols=
 MimeType=
 Comment[de]=Das lyx Textprogramm
 Comment[pl]=Edytor tekstu lyx
+Comment[fr]=Editeur de textes Lyx
 Comment[fi]=Lyx tekstinkäsittelyohjelma
 Comment[sv]=Lyx latexeditor
 Name=Lyx

@@ -3,4 +3,6 @@ Name=Templates
 Name[de]=Vorlagen
 Name[pl]=Szablony
 Name[fi]=Pohjat
+Name[fr]=Gabaris
 Comment[pl]=Gotowe wzorce dokumentów i innych plików
+Comment[fr]=Ce répertoire contient des gabaris pour fabriquer de nouveaux documents

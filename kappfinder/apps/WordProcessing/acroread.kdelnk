@@ -9,6 +9,7 @@ MimeType=
 Comment=
 Comment[pl]=Przegl±darka plików Adobe Portable Document Format
 Comment[fi]=Adobe Acrobat PDF dokumenttien näyttäjä
+Comment[fr]=Afficheur Adobe Acrobat
 Comment[sv]=Visare för Adobe Acrobat PDF-dokument
 Exec=acroread
 Icon=gv.xpm

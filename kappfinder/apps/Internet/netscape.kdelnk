@@ -5,6 +5,7 @@ Icon=netscape.xpm
 Type=Application
 Name=Netscape
 Comment=Netscape Navigator
+Comment[fr]=Navigateur Netscape
 Comment[pl]=Netscape Navigator
 Comment[fi]=Netscape Navigator selainohjelma
 Comment[sv]=Netscape Navigator

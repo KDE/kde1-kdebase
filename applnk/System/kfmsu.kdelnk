@@ -6,6 +6,7 @@ Name[pl]=Mened¿er plików ( Super User Mode )
 Name[cs]=Správce souborù ( Super u¾ivatelský mode )
 Name[sv]=Filhanterare ( Systemadministreringsläge )
 Name[fi]=Tiedostonhallinta (pääkäyttäjätila)
+Name[fr]=Gestionnaire de fichiers (mode super-utilisateur)
 Type=Application
 Exec=kfmsu
 DocPath=kfm/index.html
@@ -15,5 +16,6 @@ Comment[pl]=KDE Mened¿er plików
 Comment[cs]=KDE Správce souborù
 Comment[sv]=Filhanteraren för KDE
 Comment[fi]=KDE Tiedostohallinta
+Comment[fr]=Gestionnaire de fichiers KDE
 Icon=kfm.xpm
 
