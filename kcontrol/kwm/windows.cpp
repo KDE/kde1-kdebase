@@ -47,6 +47,7 @@
 #define KWM_RESIZE_OPAQUE    "WindowResizeType"
 #define KWM_AUTORAISE_INTERVAL "AutoRaiseInterval"
 #define KWM_AUTORAISE "AutoRaise"
+#define KWM_CLICKRAISE "ClickRaise"
 
 // CT 19jan98
 #define KWM_PLACEMENT "WindowsPlacement"
@@ -203,8 +204,14 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   autoRaiseOn->adjustSize();
   autoRaiseOn->setMinimumSize(autoRaiseOn->size());
   fLay->addWidget(autoRaiseOn,2,0);
-
   connect(autoRaiseOn,SIGNAL(toggled(bool)), this, SLOT(autoRaiseOnTog(bool)));
+
+  clickRaiseOn = new QCheckBox(klocale->translate("Click Raise"), fcsBox);
+  clickRaiseOn->adjustSize();
+  clickRaiseOn->setMinimumSize(clickRaiseOn->size());
+  fLay->addWidget(clickRaiseOn,3,0);
+
+  connect(clickRaiseOn,SIGNAL(toggled(bool)), this, SLOT(clickRaiseOnTog(bool)));
 
   alabel = new QLabel(klocale->translate("Delay (ms)"), fcsBox);
   alabel->adjustSize();
@@ -335,6 +342,11 @@ void KWindowConfig::setAutoRaise(bool on)
     autoRaiseOn->setChecked(on);
 }
 
+void KWindowConfig::setClickRaise(bool on)
+{
+    clickRaiseOn->setChecked(on);
+}
+
 void KWindowConfig::setAutoRaiseEnabled()
 {
   // the auto raise related widgets are: autoRaise, alabel, s, sec
@@ -342,11 +354,15 @@ void KWindowConfig::setAutoRaiseEnabled()
     {
       autoRaiseOn->setEnabled(TRUE);
       autoRaiseOnTog(autoRaiseOn->isChecked());
+      clickRaiseOn->setEnabled(TRUE);
+      clickRaiseOnTog(clickRaiseOn->isChecked());
     }
   else
     {
       autoRaiseOn->setEnabled(FALSE);
       autoRaiseOnTog(FALSE);
+      clickRaiseOn->setEnabled(FALSE);
+      clickRaiseOnTog(FALSE);
     }
 }
 
@@ -371,6 +387,9 @@ void KWindowConfig::autoRaiseOnTog(bool a) {
   alabel->setEnabled(a);
 }
 //CT
+
+void KWindowConfig::clickRaiseOnTog(bool a) {
+}
 
 void KWindowConfig::GetSettings( void )
 {
@@ -454,6 +473,8 @@ void KWindowConfig::GetSettings( void )
 
   key = config->readEntry(KWM_AUTORAISE);
   setAutoRaise(key == "on");
+  key = config->readEntry(KWM_CLICKRAISE);
+  setClickRaise(key != "off");
   setAutoRaiseEnabled();      // this will disable/hide the auto raise delay widget if focus==click
 }
 
@@ -522,6 +543,10 @@ void KWindowConfig::SaveSettings( void )
   else
     config->writeEntry(KWM_AUTORAISE, "off");
 
+  if (clickRaiseOn->isChecked())
+    config->writeEntry(KWM_CLICKRAISE, "on");
+  else
+    config->writeEntry(KWM_CLICKRAISE, "off");
 
   config->sync();
 

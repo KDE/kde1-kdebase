@@ -84,6 +84,7 @@ private slots:
   void setAutoRaiseEnabled();
   void ifPlacementIsInteractive();
   void autoRaiseOnTog(bool);//CT 23Oct1998
+  void clickRaiseOnTog(bool);
 
 private:
 
@@ -105,6 +106,7 @@ private:
   void setMaximize(int);
   void setAutoRaiseInterval(int);
   void setAutoRaise(bool);
+  void setClickRaise(bool);
 
   QButtonGroup *windowsBox;
   QCheckBox *opaque, *vertOnly;
@@ -122,6 +124,7 @@ private:
   QButtonGroup *fcsBox;
   QComboBox *focusCombo;
   QCheckBox *autoRaiseOn;
+  QCheckBox *clickRaiseOn;
   KSlider *autoRaise;
   QLabel *alabel;
   QLCDNumber *s;
