@@ -1,0 +1,18 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=Xpaint
+MiniIcon=
+Protocols=
+MimeType=
+Comment=Xpaint painting application
+Comment[de]=Xpaint Malprogramm
+Comment[pl]=Aplikacja do malowania Xpaint
+Comment[fi]=Xpaint piirto-ohjelma
+Exec=xpaint
+Icon=xpaint.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

@@ -1,0 +1,11 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=xfig
+Icon=xfig.xpm
+Type=Application
+Name=Xfig
+Name[de]=Xfig
+Comment=Xfig drawing application
+Comment[de]=Xfig Zeichenprogramm
+Comment[pl]=Aplikacja do kre¶lenia Xfig 
+Comment[fi]=Xfig vektoripiirto-ohjelma

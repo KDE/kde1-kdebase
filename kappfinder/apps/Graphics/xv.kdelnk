@@ -1,0 +1,18 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=XV
+MiniIcon=mini-xv.xpm
+Protocols=
+MimeType=
+Comment=XV Picture Viewer
+Comment[de]=XV Bildbetrachter
+Comment[pl]=Przegl±darka plików graficznych XV
+Comment[fi]=XV kuvien näyttäjä
+Exec=xv
+Icon=xv.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0
