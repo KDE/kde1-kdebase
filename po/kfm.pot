@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-23 01:15+0100\n"
+"POT-Creation-Date: 1999-01-26 01:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -238,10 +238,10 @@ msgid "Could not load icon\n"
 msgstr ""
 
 #: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:306
-#: kbind.cpp:392 kbind.cpp:444 kbind.cpp:1620 kbind.cpp:1628 kbind.cpp:1646
-#: kbind.cpp:1665 kbind.cpp:1724 kbind.cpp:1736 kbind.cpp:1763 kbind.cpp:1784
-#: kbind.cpp:1804 kbind.cpp:1816 kbind.cpp:1832 kbind.cpp:1967 kbind.cpp:1979
-#: kbind.cpp:2024 kbind.cpp:2066 kfmexec.cpp:63 kfmexec.cpp:115
+#: kbind.cpp:392 kbind.cpp:444 kbind.cpp:1628 kbind.cpp:1636 kbind.cpp:1654
+#: kbind.cpp:1673 kbind.cpp:1732 kbind.cpp:1744 kbind.cpp:1771 kbind.cpp:1792
+#: kbind.cpp:1812 kbind.cpp:1824 kbind.cpp:1840 kbind.cpp:1975 kbind.cpp:1987
+#: kbind.cpp:2032 kbind.cpp:2074 kfmexec.cpp:63 kfmexec.cpp:115
 #: kfmexec/main.cpp:47 kfmgui.cpp:547 kfmgui.cpp:757 kfmman.cpp:370
 #: kfmman.cpp:1425 kfmman.cpp:1653 kfmman.cpp:1699 kfmprops.cpp:380
 #: kfmprops.cpp:648 kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092
@@ -432,79 +432,79 @@ msgstr ""
 msgid "No mime types installed!"
 msgstr ""
 
-#: kbind.cpp:441 kbind.cpp:1215
+#: kbind.cpp:441 kbind.cpp:1223
 msgid "Could not find mime type\n"
 msgstr ""
 
-#: kbind.cpp:711 kbind.cpp:721 kbind.cpp:2002 kbind.cpp:2003 kbind.cpp:2015
-#: kbind.cpp:2017
+#: kbind.cpp:711 kbind.cpp:721 kbind.cpp:2010 kbind.cpp:2011 kbind.cpp:2023
+#: kbind.cpp:2025
 msgid "Mount"
 msgstr ""
 
-#: kbind.cpp:727 kbind.cpp:1993
+#: kbind.cpp:727 kbind.cpp:2001
 msgid "Unmount"
 msgstr ""
 
-#: kbind.cpp:951 kbind.cpp:963 kbind.cpp:973 popup.cpp:48 popup.cpp:125
+#: kbind.cpp:959 kbind.cpp:971 kbind.cpp:981 popup.cpp:48 popup.cpp:125
 msgid "Folder"
 msgstr ""
 
-#: kbind.cpp:1214
+#: kbind.cpp:1222
 msgid "ERROR"
 msgstr ""
 
-#: kbind.cpp:1215
+#: kbind.cpp:1223
 msgid "in "
 msgstr ""
 
-#: kbind.cpp:1356 kbind.cpp:1930
+#: kbind.cpp:1364 kbind.cpp:1938
 msgid "ERROR: No Terminal Setting"
 msgstr ""
 
-#: kbind.cpp:1410 kbind.cpp:1503
+#: kbind.cpp:1418 kbind.cpp:1511
 msgid "Could not execute program\n"
 msgstr ""
 
-#: kbind.cpp:1619
+#: kbind.cpp:1627
 msgid "Could not find binding"
 msgstr ""
 
-#: kbind.cpp:1629
+#: kbind.cpp:1637
 msgid ""
 "This is a document!\n"
 "Not an application"
 msgstr ""
 
-#: kbind.cpp:1647 kbind.cpp:1666
+#: kbind.cpp:1655 kbind.cpp:1674
 msgid "Can only start executables on local disks\n"
 msgstr ""
 
-#: kbind.cpp:1725 kbind.cpp:1805 kbind.cpp:1968
+#: kbind.cpp:1733 kbind.cpp:1813 kbind.cpp:1976
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
 msgstr ""
 
-#: kbind.cpp:1735
+#: kbind.cpp:1743
 #, c-format
 msgid ""
 "Could not access\n"
 "%s"
 msgstr ""
 
-#: kbind.cpp:1764
+#: kbind.cpp:1772
 msgid "The \"Link=....\" entry is empty"
 msgstr ""
 
-#: kbind.cpp:1785
+#: kbind.cpp:1793
 msgid "The config file has no \"Type=...\" line"
 msgstr ""
 
-#: kbind.cpp:1815 kbind.cpp:1978
+#: kbind.cpp:1823 kbind.cpp:1986
 msgid "Could not access"
 msgstr ""
 
-#: kbind.cpp:1833
+#: kbind.cpp:1841
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -512,11 +512,11 @@ msgid ""
 "to solve the problem"
 msgstr ""
 
-#: kbind.cpp:2025
+#: kbind.cpp:2033
 msgid "No mount point in *.kdelnk file"
 msgstr ""
 
-#: kbind.cpp:2065
+#: kbind.cpp:2073
 msgid "Unknown binding"
 msgstr ""
 
