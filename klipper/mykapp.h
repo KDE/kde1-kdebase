@@ -2,34 +2,32 @@
 #define MYKAPP_H
 
 #include <kapp.h>
-
-#include "toplevel.h"
+#include <kglobalaccel.h>
 
 class MyKApplication : public KApplication
 {
 public:
 
   MyKApplication( int &argc, char **argv, char *name ) :
-    KApplication( argc, argv, name ) { widget = 0L; }
+    KApplication( argc, argv, name ) { accel = 0L; }
   ~MyKApplication() {}
 
-  void setGlobalKeyWidget( QWidget *w ) { widget = (TopLevel *) w; }
+  void setGlobalKeys( KGlobalAccel *a ) { accel = a; }
 
 private:
 
-  TopLevel *widget;
+  KGlobalAccel *accel;
 
   inline bool MyKApplication::x11EventFilter( XEvent *e )
   {
-    if ( widget )
+    if ( accel )
       {
-	if ( widget->globalKeys->x11EventFilter( e ) )
+	if ( accel->x11EventFilter( e ) )
 	  return true;
       }
 
     return KApplication::x11EventFilter( e );
   }
-
 
 };
 

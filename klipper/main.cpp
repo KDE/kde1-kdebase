@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
   }
 
   // the widget handling the global keys
-  app.setGlobalKeyWidget( toplevel );
+  app.setGlobalKeys( toplevel->globalKeys );
   
   KWM::setDockWindow(toplevel->winId());
   toplevel->show();
