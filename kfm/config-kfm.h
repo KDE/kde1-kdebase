@@ -58,3 +58,5 @@ void debugC( const char *msg , ...);
 #define KFMGUI_HEIGHT 360
 #define KFMGUI_WIDTH 540
 
+// Default terminal for Open Terminal and for 'run in terminal'
+#define DEFAULT_TERMINAL "konsole"

@@ -1896,8 +1896,7 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
     {
 	KConfig *config = KApplication::getKApplication()->getConfig();
 	config->setGroup( "Terminal" );
-	QString cmd = "kvt";
-	cmd = config->readEntry( "Terminal", cmd );
+	QString cmd = config->readEntry( "Terminal", DEFAULT_TERMINAL);
 	cmd.detach();
 	if ( cmd.isNull() )
 	{

@@ -317,8 +317,7 @@ void KfmView::slotTerminal()
 {
     KConfig *config = KApplication::getKApplication()->getConfig();
     config->setGroup( "Terminal" );
-    QString term = "konsole";
-    term = config->readEntry( "Terminal", term );
+    QString term = config->readEntry( "Terminal", DEFAULT_TERMINAL );
 
     QString dir ( QDir::homeDirPath() );
     
