@@ -225,7 +225,7 @@ QPalette mkPalette(const QColor& fg, const QColor& bg) {
 void KiKbdApplication::loadConfig()
 {
   /**
-     mark what we are loading configuration
+     indicate that we are loading configuration
   */
   static bool isInit = TRUE;
   inConfig = TRUE;

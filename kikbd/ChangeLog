@@ -1,3 +1,13 @@
+1999-01-12  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
+
+	* Added HP9000 keyboard codes map thanks to Petter Reinholdtsen
+ 		<pere@hungry.com>
+	* Added pc102 keyboard codes map
+	* Added pc-win keyboard codes map thanks to Peter Silva 
+		<peter.silva@videotron.ca> 
+	* Added Meta_L and Meta_R support in Alternate symbols switchers
+	* Fixed a cut/paste error in fr.kimap
+
 1999-01-07  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
 
 	* Fixed (in the lamest way possible) the bug of non-responsive

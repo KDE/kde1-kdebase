@@ -1,4 +1,4 @@
-As of 07Jan1998:
+As of 17Jan1999:
 FIXED - incorrect fr.kimap (reported and fixed by 
 	binois stephane <binois@normandnet.fr>
 
@@ -9,10 +9,12 @@ FIXED - incorrect fr.kimap (reported and fixed by
 
 - conflict with vnc (???) (reported by Alex Zepeda)
 
-- segfault on FreeBSD (because of API diffs in execlp) (reported by 
+FIXED - segfault on FreeBSD (because of API diffs in execlp) (reported by 
 	Hans Petter Bieker <zerium@webindex.no>)
 
 - Alt+Ctrl eats the next key (if window has menus) while Ctrl+Alt doesn't
 
 WORKED AROUND - windows newer than kikbd insensitive to map switching
 	keyboard accelerator (e.g. Alt+Ctrl)  
+
+FIXED? - segfault on Alpha because of uninitialised KObjConfig::version

@@ -112,6 +112,7 @@ KObjectConfig::KObjectConfig(int type, const char* name, bool rdOnly)
   init();
   configType = type;
   configFile = name;
+  version      = -1.0; //CT 07Jan1999 - fix for segfault on Alphas
   readOnly   = rdOnly;
 }
 KObjectConfig::~KObjectConfig(){if(deleteConfig && config) delete config;}
