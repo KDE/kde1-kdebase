@@ -1,0 +1,51 @@
+
+INCDIR  =       @all_includes@ -I../..
+CXXFLAGS+=      $(INCDIR) 
+LDFLAGS =       @all_libraries@ -lqt -lXext -lX11 -lkdecore -lkdeui -lkhtmlw @LIBSOCKET@ -ljpeg -lgif
+CXX     =       @CXX@
+MOC     =       @MOC@
+
+####### Files
+
+SOURCES =	kioslave_ipc.cpp kioslave_ipc2.cpp main.cpp ipc.cpp ftlib.cpp
+HEADERS =	kioslave_ipc.h main.h ipc.h ftlib.h
+OBJECTS =	kioslave_ipc.o kioslave_ipc2.o main.o ipc.o ftplib.o
+SRCMETA =	kioslave_ipc.moc main.moc
+TARGET	=	kioslave
+
+####### Implicit rules
+
+.SUFFIXES: .cpp
+
+.cpp.o:
+	$(CXX) -c $(CXXFLAGS) -DHAVE_CONFIG_H $(INCDIR) $<
+
+####### Build rules
+
+all: $(TARGET)
+
+$(TARGET): $(SRCMETA) $(OBJECTS)
+	$(CXX) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
+
+depend:
+	@makedepend $(INCDIR) $(SOURCES) 2> /dev/null
+
+showfiles:
+	@echo $(SOURCES) $(HEADERS) Makefile
+
+clean:
+	-rm -f *.o *.bak *~ *% #*
+	-rm -f $(SRCMETA) $(TARGET)
+
+
+####### Meta objects
+
+kioslave_ipc.moc: kioslave_ipc.h
+	$(MOC) kioslave_ipc.h -o kioslave_ipc.moc
+
+main.moc: main.h
+	$(MOC) main.h -o main.moc
+
+# DO NOT DELETE THIS LINE -- make depend depends on it.
+
+

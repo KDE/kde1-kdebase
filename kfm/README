@@ -1,0 +1,437 @@
+Alpha Version 0.61a
+
+-------------------- ATTENTION ---------------- LATEST NEWS --------------------
+
+KFM has a different setup procedure now. Read the installation instructions
+below careful.
+
+-------------------------------------------------------------------------------
+
+KDE Filemanager
+===============
+
+Features
+--------
+
+- Supports drag and drop.
+- You can place icons on the desktop. Their position is stored. So when you
+  start the filemanager the next time, all icons on the desktop will appear on
+  the same position again.
+- Double clicking with the left mouse button on a directory changes to
+  the directory.
+- Double clicking with the middle mouse button on a directorychanges to
+  the dirctory, but opens a new window.
+- Right mouse button brings up a popup menu.
+- You can assign some programs to every file extension. Doing so
+  will place an item for every assigned program to the popup menu.
+- Double clicking on a tar or tgz or tar.gz file will change
+  in the tar file. Hust try it. You can even drag files out of the
+  archive ( well, this may have some bugs).
+
+
+TODO
+----
+
+Lots of work...
+
+- FTP support.
+- Fixing bugs.
+- Use .xvpics/ to display previews of images.
+- Implement better DND. 
+
+
+Drag and Drop
+-------------
+
+If you are interested in using Drag and Drop with Qt you may want to look at
+the sources in drag.XXX or contact me.
+
+
+Needed Packages
+---------------
+
+khtmlw-0.5.0.tgz or greater
+ktoolicons.tgz
+kdehelp-0.4 or greater
+libkde-0.7.tgz or greater
+kview-0.8.tgz or greater
+kedit-0.3.tgz or greater
+
+
+Installation
+------------
+Just untar the sources and type the following:
+
+make
+make install
+
+( this is done best at root, but it is not a must ).
+
+Every user must call the program "setupKFM". It creates a directory ~/Desktop.
+The program will create a file called ~/.desktop in your home directory.
+
+If you want to create your own icons, you must use XPaint and convert them to
+XPM. Using XV for example crashes the kfm, since the loading code in kpixmap.cpp is not
+perfect yet.
+
+I hope that I did not forget to include a file in the distribution.
+
+FTP
+---
+
+You can now browse ftp servers. But it has many bugs. It just works with simple
+servers like your local ftp server. A link to an ftp server is placed in the demo
+file 'ftp.kdelnk'. Edit it to your needs and copy it to ~/Desktop. Whenever you
+link a ftp file/directory to the local file system such a *.kdelnk file is
+generated. Before compiling change user and passwrord in lines 1113 and 1104 in
+file kio.cpp.
+
+
+HTTP
+----
+
+I tried a little on this. Try it out with some easy HTML code.
+
+Changes
+-------
+
+- This version has improved speed. It may have some new bugs since I had to change
+  a lot in the HTMLWidget.
+
+- Support for KSocket and KServerSocket is implemented. Look at ksock.cpp.
+
+- DND bug fixed. Works now with AfterStep, too.
+
+Verison 0.2a
+
+- Faster HTML Widget
+
+Version 0.32a
+
+- Support for mounting filesystems.
+
+- Fixed bug with root widgets.
+
+Version 0.33a
+
+- Basic FTP support.
+
+Version 0.35a
+
+- Lars maintaines the ftp part
+
+- Fixed broken URLs using KURL ( and fixed this :-)
+
+- Basic HTTP support
+
+- Reads file .kde.html if found in a directory ( some extra tags )
+  View the source directory of kfm with kfm to see what this means.
+
+- Find Tool
+
+- Mounts devices named in /etc/fstab
+  Just enter 'default' as filetype and mounting will result in a call to
+  for example "mount /dev/scd0". The corresponding lines in /etc/fstab might
+  look like this:
+
+    /dev/scd0       /cd                       iso9660         user,noauto,exec,ro 0 0
+    /dev/fd0        /floppy                   msdos           user,noauto 0 0
+
+- Many new options not worth mentioning here in detail.
+
+- An "Location" Dialog like the one from Netscape to open an URL. This URL may
+  be a normal file name, too, like /home/weis/test.html.
+
+Version 0.36a
+
+- Using libkdecore.
+  You must first move kurl.cpp and kurl.h to the libkde source tree and recompile
+  the library ( version 0.4 ) to fix some bugs there.
+  Copy .kderc in your home directory for example. I think that the contents of
+  this file is explaining itself. You can edit bindings and any kind of icons
+  there. No need to change PICS_PATH in the sources any more. You must change
+  the path in your .kderc file now. DONT FORGET!
+
+Version 0.37a
+
+- Using libkde-0.51
+
+Version 0.38a
+
+- Bookmarks ( Taken from Martin Jones Help System )
+
+- Toolbar
+
+Version 0.39a
+
+- kfmwin.cpp and root.cpp have been restructured
+
+- Root icons work like icons in a kfm window.
+
+- Double clicking on icons will start the program
+
+- Dragging files over an executable will start the program with
+  the filenames or URLs as argument
+
+- Dragging files over an folder will copy/move/link files in that
+  folder.
+
+- Extensions in .kderc may be bound to the beginning or end of a filename
+  ^README will match all README files
+  .html^ will match all HTML files
+  xv will only match file named xv
+
+- Applications may have icons
+  You can define an icon for every application. This means an icon for
+  the binary. It does not matter where the binary is placed.
+  You must write for example
+
+   [XV]
+   Exec=/usr/bin/X11/xv %f
+   Protocols=file;
+   Extensions=Images;
+   Icon=image.xpm
+   Pattern=xv
+
+- Templates
+  Edit the directory for your templates in .kderc. You can store for example a
+  default 'Makefile' or 'physics.lyx' or 'qt.cpp' or a complete directory there.
+  You are offered to create a copy of these defaults in the actual directory
+  when you choose "New" from the menu "File".
+  If you put a directory in the templates dir, the whole directory is recursivly
+  copied to the new location. You will be prompted for a new name.
+
+Version 0.41a
+
+- *.kdelnk files changes. They use the kpanel format now (KConfig!)
+
+- Added support for kpanel like "[KDE Desktop Entry]" files.
+
+	[KDE Desktop Entry]
+	Exec=/usr/bin/X11/gimp %f
+	Icon=draw.xpm
+	TerminalOptions=
+	Path=
+	Terminal=0
+
+- Addes IPC and client. In the subdirectory 'client' is a program which can be
+  used to force kfm to do something. It may be used by kpanel for example
+  to force KFM to open an URL or something like that. Start the program with
+  no parameters to get help. The IPC was created using an IPC Compiler written
+  by me. It is not public available now.
+
+  You must type make in the subdirectory 'client' to create the program.
+
+- Fixed millions of bugs and created new ones.
+
+- Fixed support for *.kdelnk files of type LINK.
+  A file looking like this
+
+	[KDE Desktop Entry]
+	URL=info:(cvs)
+	Icon=draw.xpm
+	Type=Link
+
+  is a link into the net. In this case we have a link into the help system.
+  A entry in .kderc like this
+
+	[KInfoSystem]
+	Protocols=info;man;
+	Exec=/usr/local/bin/kdehelp "%u"
+	Extensions=ALL;
+
+  causes the kde-help-system to be used for displaying ALL files with a given
+  protocoll. The Extension all must not be specified. It matches in this case
+  all URLs with protocol info or man.
+
+- You must insert this ( or something like that ) in your .kderc file.
+
+	[Terminal]
+	Terminal=/usr/X11/bin/kvt
+
+  This is used to start terminal applications like pine from KFM.
+
+- Preferences Dialog. Hitting the right mouse button and selecting the Properties 
+  Menu will show you the dialog.
+  *.kdelnk files of type LINK or the kpanel like files cause the properties
+  dialog to insert a special page. It was never so easy edit a [KDE Desktop Entry]
+  file.
+
+- Addes DND root protocol. Other applications can make root drops and KFM
+  will catch them. Wait for the next release of libkde to use this feature.
+
+- KFM will work best in conjunction with kpanel in the future. For example it is
+  a good idea to insert a call to
+  
+	/usr/local/bin/kfmclient refreshDesktop
+  and
+	/usr/local/bin/kfmclient openURL
+
+  in the kpanel to work best with KFM.
+
+  Matthias, use './kfmclient openURL /home/weis/Desktop/Trash' for example to open
+  the trash directory.
+
+Version 0.42a
+
+- Find shows "No Match" if it found nothing.
+
+- Seg. Fault. in properties dlg removed.
+
+- Added 'openProperties' to IPC for kpanel. For example run kfm and call
+
+	/usr/local/bin/kfmclient openProperties file:/root/2.jpg
+
+  to open a properties dialog for this URL.
+
+Version 0.5
+
+- Supports '.directory' files used by kpanel. A sample .directory file may look like
+
+	[KDE Desktop Entry]
+	icon=draw.xpm
+
+  All icons mentioned here must reside in the icon directory you mentioned in your
+  .kderc file.
+  In General you can find information about an directory in a .directory file. It is
+  a simple KConfig file. You may add additional entries to those files.
+
+- Uses new HTML Widget
+
+Version 0.51
+
+- Bugs fixed
+
+- Exec stuff for KPanel. See kfmclient for information
+
+- New installation procedure. Read the HTML docu for details
+
+- Uses ktoolicons
+
+- Works with .kfmrc instead of .kderc, too.
+
+- Uses kdehelp
+
+Version 0.54
+
+- Is able to browse the WEB. But this is really pre alpha. Try it.
+
+- kfmclient supports what Matthias wants to: kfmclient ask 100 100 url1 url2 dest
+
+- applied Matthias patch and patched it since it crashed kfm pretty good :-)
+
+- uses khtmlw-0.4.8 and libkde-0.6.3
+
+- Root icons may be moved by few pixels now. Dropping an icon on itself does
+  not harm any more.
+
+- Installed little dnd print support ( still need printer icons ).
+
+- Uses free icons ( I created some new ones but most of them are from Mark ).
+
+- Lots of bug fixes and new bugs
+
+- Deleting of non empty directories should work now. 
+
+- Every Directory has a special properties page. There you can select
+  its icon and its wallpaper. A set of free wallpapers is available.
+  All Wallpapers install in $KDEDIR/lib/wallpapers
+
+Version 0.55
+
+- This version has a special way of dealinng with application and filetype bindings.
+  Example application bindnigs are in $KDEDIR/apps/kfm. Every application has its own
+  file with its own bindings. This means that deleting the applications *.kdelnk
+  file will delete its bindings.
+
+- Bindings to filetypes have some files in $KDEDIR/filetypes. Every file type has
+  its own *.kdelnk file. Have a look at the installed applications.
+
+- KFM has a statusbar right now. It tells you about the file you are currently
+  pointing on and some information about the kind of file ( if available ).  
+
+Version 0.56
+
+- Browsing the Web and FTP sites does not popup many windows
+
+- The toolbar has Office 97 look and feel
+
+- Autostart folder is supported now. See docu for details
+
+- extended documentation
+
+- FTP supports passwords in URL like ftp://weis:secret@nowhere.com/
+
+- The filebindigs use now simple wildcards as pattern like *.txt and README*.
+
+- KFM does not open any window on startup.
+
+Version 0.5.7
+
+- Small icons in "Long View"
+
+- Patch for KPanel included
+
+- Makefile modified
+
+Version 0.5.8
+
+- Compiles with libkde-0.7.0
+
+Version 0.5.9
+
+- Bug fixes:
+	- Selecting a directory and clicking on "New View"
+	- "New->SomeFile" shows the new file in the window
+	- "Long View" does not seg fault when doing FTP
+
+- "Text View" works with FTP, too.
+
+- "Text View" looks like "Long View", but no images are shown.
+
+- Properties dialog for Applicatin-Bindings and File-Types.
+
+- Runs only with libkde-0.7.1 or later
+
+- You can copy/move/link files to the desktop
+
+Version 0.6.1
+
+- Tree Widget included
+
+- Visual Schnauzer works ( can read/write xvpics ). It is XV compatible of course.
+
+- File->Quit brings up a security dialog
+
+- Copying(Moving a file to a place where a file of this name already exists, causes
+  a dialog aking to for Overwrite/Overwrite All/Skip/Rename/Cancel.
+
+- ~/Desktop/Trash has Trash-Icon by default
+
+- Set of Filetype/Application bindings included. Most of them are taken from the
+  kfind distribution. They are somewhat modified, so dont overwrite them with the
+  kfind ones ( happens when installing kfind ). The Image.kdelnk does not
+  exist anymore.
+
+- Put the application KPanel->KFM->Refresh Desktop on the KPanel. Klicking on it
+  refreshes the desktop icons and scans for new files on the desktop.
+
+Authors
+-------
+
+Torben Weis <weis@stud.uni-frankfurt.de>
+
+KHTML Widget was extended by
+Josip A. Gracin <grac@fly.cc.fer.hr>
+and
+Martin Jones <mjones@powerup.com.au>
+The KHTML Widget is now maintained by Martin.
+
+Bookmarks are from Martin Jones, too.
+
+And thanks to all the others who contributed.
+
+
+Torben Weis, weis@stud.uni-frankfurt.de, weis@kde.org
+http://www.uni-frankfurt.de/~weis/kde.html
+Last change: 8.4.97

@@ -1,0 +1,83 @@
+#
+# Makefile for kdehelp.   Good Luck
+#
+
+.SUFFIXES: .cpp
+
+CXX = @CXX@
+CC = @CC@
+MOC = @MOC@
+INCFLAGS = -I. -I@x_includes@ -I@qt_includes@ -I@kde_includes@ -I.. -I../..
+CXXFLAGS = -Wall $(INCFLAGS) -DHAVE_CONFIG_H 
+LDFLAGS = -L@x_libraries@ -L@qt_libraries@ -L@kde_libraries@ -lqt -lkfm -lkdecore -lkhtmlw -lXext -lX11 @LIBSOCKET@ @LIBCOMPAT@ -lgif -ljpeg
+
+############# Install ##############
+
+INSTALL = @INSTALL@ -m 0755
+INSTALL_DATA = @INSTALL@ -m 0644
+INSTALL_DIR = @mkinstalldirs@ 
+
+prefix = @prefix@
+BINDIR = $(prefix)/bin
+CGIDIR = $(prefix)/cgi-bin
+LIBDIR = $(prefix)/lib
+APPSDIR = $(LIBDIR)/applications
+DOCSDIR = $(prefix)/doc/HTML
+
+########### File Formats ###########
+
+DEFS =
+
+########## Implicit Rules ##########
+
+.cpp.o:
+	$(CXX) $(CXXFLAGS) $(DEFS) -c $<
+
+########## Files ##########
+
+SRCS = main.cpp help.cpp info.cpp error.cpp misc.cpp options.cpp\
+		man.cpp bookmark.cpp cgi.cpp kbutton.cpp
+SRCMETA = help.moc options.moc bookmark.moc cgi.moc kbutton.moc
+HDRS = help.h info.h error.h misc.h man.h options.h\
+		bookmark.h dbnew.cpp cgi.h kbutton.h
+OBJS = help.o main.o info.o error.o misc.o man.o options.o\
+		bookmark.o dbnew.o cgi.o kbutton.o
+
+TARGET = kdehelp
+
+########## Build Rules ##########
+
+all: $(TARGET) helpsearch helpindex
+
+$(TARGET): $(SRCMETA) $(OBJS)
+	$(CXX) -o $(TARGET) $(OBJS) $(LDFLAGS)
+
+helpsearch:
+	( cd search && $(MAKE) all) 
+helpindex:
+	( cd index && $(MAKE)  all)  
+
+install:
+	$(INSTALL_DIR) $(BINDIR)
+	$(INSTALL) $(TARGET) $(BINDIR)
+	(cd doc && make install)
+	$(INSTALL_DIR) $(CGIDIR)
+	$(INSTALL) search/helpsearch $(CGIDIR)
+	$(INSTALL) index/helpindex $(CGIDIR)
+
+clean:
+	rm -f core *~ *.bak *.BAK $(SRCMETA) $(OBJS) $(TARGET)
+	cd index ; $(MAKE) clean; cd ..
+	cd search ; $(MAKE) clean; cd ..
+
+depend: $(SRCS)
+	@makedepend $(INCFLAGS) $(SRCS) 2> /dev/null
+
+########## Meta objects ##########
+
+%.moc: %.h
+	$(MOC) $< -o $@
+
+##################################
+# DO NOT DELETE
+

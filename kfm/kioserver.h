@@ -1,0 +1,190 @@
+// KIOSlave
+// Server side implementation
+
+#ifndef kioserver_h
+#define kioserver_h
+
+#include <qobject.h>
+#include <qlist.h>
+#include <qdict.h>
+#include <qstring.h>
+
+#include <kurl.h>
+
+#include "kioserver_ipc.h"
+
+//@Man: KIO Modes
+//@{
+/** Modes used for the static 'supports' functions of the KIOs */
+/// Read from the KIO
+#define KIO_Read 1
+/// Write to the KIO
+#define KIO_Write 2
+/// Make a directory
+#define KIO_MakeDir 4
+/// Delete a file
+#define KIO_Delete 8
+/// Link a file
+#define KIO_Link 16
+//@}
+
+class KIOServer;
+class KIODirectoryEntry;
+
+class KIODirectoryEntry
+{
+public:
+    KIODirectoryEntry( const char *_name, bool _isDir, int _size = -1, const char * creationDate = 0L,
+		       const char * _access = 0L, const char * _owner = 0L, const char *_group = 0L );
+    
+    KIODirectoryEntry( KIODirectoryEntry & _entry );
+    
+    bool isDir() { return bDir; }
+    const char* getName() { return name.data(); }
+    const char* getAccess() { return access.data(); }    
+    const char* getOwner() { return owner.data(); }
+    const char* getGroup() { return group.data(); }
+    const char* getCreationDate() { return creationDate.data(); }
+    int getSize() { return size; }
+
+protected:
+    bool bDir;
+    QString name;
+    int size;
+    QString creationDate;
+    QString access;
+    QString owner;
+    QString group;
+};
+
+typedef QList<KIODirectoryEntry> KIODirectory;
+
+#include "kiojob.h"
+
+class KIOServer : public KIOSlaveIPCServer
+{
+    Q_OBJECT
+public:
+    KIOServer();
+    ~KIOServer();
+    
+    /// A Job is waiting for a slave
+    /**
+      If a job needs a slave, it calls this function. If a 
+      slave is available ( after this call has returned ), the
+      job will be told so.
+      */
+    void getSlave( KIOJob * _job );
+    /// A Job does not need a slave any more.
+    void freeSlave( KIOSlaveIPC * _slave );
+
+    /// Get a cached directory
+    /**
+      May return 0L if the directory is not cached.
+      */
+    KIODirectory* getDirectory( const char *_url );
+
+    /// Return a pointer to the running KIOServer
+    static KIOServer* getKIOServer() { return pKIOServer; }
+    /// Get a new name for a link.
+    /**
+      If the user wants to make a link to an URL we need to make a valid file
+      name from the URL because the link needs a name.
+      */
+    static QString getDestNameForLink( const char * _url );
+    /// Tests wether the list of URLs are all together directories
+    /**
+      If the protocol of the URL is not "file", then this function
+      depends an the convention, that directories have a trailing '/'
+      in their URL.
+      */
+    static bool isDir( QStrList & _urls );
+    /// Tests wether _url is a directory or not
+    /**
+      If the protocol of the URL is not "file", then this function
+      depends an the convention, that directories have a trailing '/'
+      in their URL.
+      */
+    static bool isDir( const char *_url );
+    static QString findDeviceMountPoint( const char *_device, const char *_file = "/etc/mtab" );
+    /// Tells wether KIOServer supports an operation on an URL
+    /**
+      _mode is for example KIO_Read or any of those constants.
+      */
+    static bool supports( const char *_src_url, int _mode );
+    /// Tells wether KIOServer supports an operation on some URLs
+    /**
+      An operation that is not supported by at least one of the URLs
+      will cause this function to return FALSE.
+      */
+    static bool supports( QStrList & _urls, int _mode );
+    /// Emit a notify signal for the given URL
+    /**
+      This function may be called by others to emit a notify signal.
+      */
+    static void sendNotify( const char *_url );
+    /// Emit a notify signal after mount/unmount
+    /**
+      This function may be called by others to emit a mount notify signal.
+      Every time a device is mounted unmounted, this signal is emitted. This
+      causes some icons to change. A normal notify signal is emitted for
+      the mount directory, too.
+      */
+    static void sendMountNotify();
+    
+public slots:
+    /// If a new slave is created, this slot is called.
+    /**
+      This function connects 'slotDirEntry' and 'slotFlushDir' to the new slave
+      and calls 'newSlave2' to do the rest.
+      */
+    void newSlave( KIOSlaveIPC * );
+    void slotDirEntry( const char *_url, const char *_name, bool _isDir, int _size,
+		   const char * creationDate, const char * _access,
+		   const char * _owner, const char *_group );
+    void slotFlushDir( const char *_url );
+
+signals:
+    /// This notify is emitted each time a URL changed.
+    /**
+      Connect to this signal if you need to know when to 
+      update your directory contents.
+      */
+    void notify( const char *_url );
+    
+    /// Tells that some device has been mounted/unmounted.
+    /**
+      Connect to this signal to get the icons associated with the devices
+      updated.
+      */
+    void mountNotify();
+    
+protected:
+    /// Handles the arrival of a new or freed slave
+    void newSlave2( KIOSlaveIPC * );
+    
+    /// Internal function used to implement 'sendNotify' as static.
+    void sendNotify2( const char *_url );
+
+    /// Internal function used to implement 'sendMountNotify' as static.
+    void sendMountNotify2();
+    
+    /// Start a new slave process
+    void runNewSlave();
+    
+    /// List of all slaves without work
+    QList<KIOSlaveIPC> freeSlaves;
+    /// List of all jobs waiting for a slave
+    QList<KIOJob> waitingJobs;
+
+    /// List of all cached directories
+    QDict<KIODirectory> dirList;
+
+    /// A pointer to the running server
+    /**
+      Sometimes needed by static functions.
+      */
+    static KIOServer *pKIOServer;
+};
+
+#endif

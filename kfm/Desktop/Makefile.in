@@ -1,0 +1,29 @@
+DESKTOPLNKS = "./ftp.kde.org.kdelnk" \
+	"./KEdit.kdelnk"\
+	"./KView.kdelnk" \
+	"./cdrom.kdelnk" \
+	"./Laserjet IIP+.kdelnk" \
+	"./floppy.kdelnk" \
+	"./Templates/FTP URL.kdelnk" \
+	"./Templates/Program.kdelnk" \
+	"./Templates/WWW URL.kdelnk" \
+	"./Templates/File Type.kdelnk" \
+	"./Templates/URL.kdelnk" \
+	"./KDE Browser.kdelnk" \
+	"./KDE Help.kdelnk" \
+	"./Emacs.kdelnk" \
+	"./XV.kdelnk" \
+	"./Netscape.kdelnk"
+
+TEMPLATEDIR = @prefix@/lib/kfm/Desktop/
+INSTALL_DIR = @mkinstalldirs@
+INSTALL_DATA = @INSTALL@ -m 644
+
+all:
+
+install:
+	$(INSTALL_DIR) $(TEMPLATEDIR)
+	@for i in $(DESKTOPLNKS); do \
+	 echo "$(INSTALL_DATA) $$i $(TEMPLATEDIR)"; \
+	 $(INSTALL_DATA) "$$i" $(TEMPLATEDIR); \
+	done

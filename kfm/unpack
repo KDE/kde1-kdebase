@@ -1,0 +1,23 @@
+#!/usr/bin/perl
+
+$_ = @ARGV[0];
+
+if ( /\.tar$/ )
+{
+	system "cd @ARGV[1];tar -xf @ARGV[2]";
+}
+elsif ( /\.tar\.gz$/ )
+{
+	system "cd @ARGV[1];tar -xzf @ARGV[2]";
+}
+elsif ( /\.gz$/ )
+{
+	system "cd @ARGV[1];gunzip @ARGV[2]";
+}
+elsif ( /\.tgz$/ )
+{
+	system "cd @ARGV[1];tar -xzf @ARGV[2]";
+}
+
+system "kfmclient refreshDirectory @ARGV[1]";
+

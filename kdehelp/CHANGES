@@ -1,0 +1,81 @@
+KDE Help System CHANGES
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Version 0.4.9
+-------------
+
+More documentation
+Check that links in man pages exist and other man fixes
+KDE HTML documentation searching
+more font options
+handle #refs properly
+
+Version 0.4.8
+-------------
+
+Added search form and very basic CGI server for search engine. This is
+still very preliminary.
+Only man page searching implemented so far.
+more bug fixes as usual
+removed "search:" url type
+removed kcolordlg code - use libkdeui
+KDE help index is a CGI program
+
+Version 0.4.7
+-------------
+
+Catch up to kpanel-0.6 *.kdelnk format and location
+more info fixes
+cleanup URL handling
+initial kfm http: and ftp: support
+
+Version 0.4.6
+-------------
+
+Bug fixes (especially info)
+adopt kpanel [KDE Desktop Entry] for application index
+use Mark Donohoe's ktoolpics-0.2 (you will need to install this separately)
+khtmlw is no longer packaged with kdehelp
+
+Version 0.4.5
+-------------
+
+Use Mark Donohoe's opening page.
+more minor changes
+removed the silly "index:" url type
+keyboard accelerators for up/dn/left/right/pgup/pgdn
+
+Version 0.4
+-----------
+
+major changes to khtmlw
+horizontal scrolling
+
+Version 0.3.2
+-------------
+
+bookmarks bug-fix
+use libkde-0.51
+simple options dialog
+remove man page footers
+fix other man bugs
+
+Version 0.3
+-----------
+
+bookmarks
+special characters display properly in man/info - #include <header.h> works
+allow only one instance
+included khtmlw-0.2, see README.HTMLWidget
+
+Version 0.2
+-----------
+
+searching (man only currently)
+pictures on toolbar
+right button popup
+
+
+Martin Jones
+mjones@kde.org
+

@@ -1,0 +1,93 @@
+#
+# Makefile for help search.   Good Luck
+#
+
+.SUFFIXES: .cpp
+
+CXX = g++
+CC = gcc
+MOC = moc
+INCFLAGS = -I. -I/usr/X11/include -I$(QTDIR)/include -I$(KDEDIR)/include
+CXXFLAGS = -g -Wall $(INCFLAGS) -DSTDC_HEADERS -DHAVE_UNISTD_H $(DEBUG)
+#CXXFLAGS = -O2 $(INCFLAGS) -DSTDC_HEADERS -DHAVE_UNISTD_H $(DEBUG)
+LDFLAGS = -L/usr/X11/lib -L$(QTDIR)/lib -L$(KDEDIR)/lib -L. -lqt\
+		-lkfm -lkdecore -lX11 -lXext
+
+############# Install ##############
+
+INSTALL = install -m 0755
+INSTALL_DATA = install -m 0644
+INSTALL_DIR = install -d -m 0755
+
+prefix = $(KDEDIR)
+BINDIR = $(prefix)/cgi-bin
+LIBDIR = $(prefix)/lib
+PICSDIR = $(LIBDIR)/pics
+APPSDIR = $(prefix)/apps
+DOCSDIR = $(prefix)/doc/HTML
+
+########## Implicit Rules ##########
+
+.cpp.o:
+	$(CXX) $(CXXFLAGS) $(DEFS) -c $<
+
+########## Files ##########
+
+SRCS = kdeindex.cpp
+SRCMETA =
+HDRS =
+OBJS = kdeindex.o
+
+TARGET = helpindex
+
+########## Build Rules ##########
+
+all: $(TARGET)
+
+$(TARGET): $(SRCMETA) $(OBJS)
+	$(CXX) -o $(TARGET) $(OBJS) $(LDFLAGS)
+
+install:
+	[ -d $(BINDIR) ] || $(INSTALL_DIR) $(BINDIR)
+	$(INSTALL) $(TARGET) $(BINDIR)
+
+clean:
+	rm -f core *~ *.bak *.BAK $(SRCMETA) $(OBJS)
+
+veryclean:
+	rm -f *~ *.bak *.BAK $(TARGET) $(SRCMETA) $(OBJS) core
+
+depend: $(SRCS)
+	@makedepend $(INCFLAGS) $(SRCS) 2> /dev/null
+
+########## Meta objects ##########
+
+%.moc: %.h
+	$(MOC) $< -o $@
+
+##################################
+# DO NOT DELETE
+
+search.o: /usr/include/stdlib.h /usr/include/features.h
+search.o: /usr/include/sys/cdefs.h
+search.o: /usr/lib/gcc-lib/i486-linux/2.7.2/include/stddef.h
+search.o: /usr/include/errno.h /usr/include/linux/errno.h
+search.o: /usr/include/asm/errno.h /usr/include/alloca.h
+search.o: /u/local/qt/include/qstring.h /u/local/qt/include/qarray.h
+search.o: /u/local/qt/include/qgarray.h /u/local/qt/include/qshared.h
+search.o: /u/local/qt/include/qglobal.h /u/local/qt/include/qgeneric.h
+search.o: /usr/include/string.h mansrch.h
+mansrch.o: /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h
+mansrch.o: /usr/include/sys/cdefs.h /usr/include/features.h
+mansrch.o: /usr/include/string.h
+mansrch.o: /usr/lib/gcc-lib/i486-linux/2.7.2/include/stddef.h
+mansrch.o: /usr/include/dirent.h /usr/include/gnu/types.h
+mansrch.o: /usr/include/sys/types.h /usr/include/linux/types.h
+mansrch.o: /usr/include/linux/posix_types.h /usr/include/asm/posix_types.h
+mansrch.o: /usr/include/asm/types.h /usr/include/sys/bitypes.h
+mansrch.o: /usr/include/linux/limits.h /usr/include/linux/dirent.h
+mansrch.o: /usr/include/posix1_lim.h /usr/include/unistd.h
+mansrch.o: /usr/include/posix_opt.h /usr/include/confname.h
+mansrch.o: /usr/include/sys/wait.h /usr/include/waitflags.h
+mansrch.o: /usr/include/waitstatus.h /usr/include/endian.h
+mansrch.o: /usr/include/bytesex.h mansrch.h

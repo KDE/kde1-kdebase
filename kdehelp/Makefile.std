@@ -1,0 +1,94 @@
+#
+# Makefile for kdehelp.   Good Luck
+#
+
+.SUFFIXES: .cpp
+
+CXX = g++
+CC = gcc
+MOC = moc
+INCFLAGS = -I. -I/usr/X11/include -I$(QTDIR)/include -I$(KDEDIR)/include
+CXXFLAGS = -g -Wall $(INCFLAGS) -DSTDC_HEADERS -DHAVE_UNISTD_H $(DEBUG)
+#CXXFLAGS = -O2 $(INCFLAGS) -DSTDC_HEADERS -DHAVE_UNISTD_H $(DEBUG)
+LDFLAGS = -L/usr/X11/lib -L$(QTDIR)/lib -L$(KDEDIR)/lib -L. -lqt\
+		-lkfm -lkdecore -lkdeui -lkhtmlw -ljpeg -lgif -lXext -lX11
+
+############# Install ##############
+
+INSTALL = install -m 0755
+INSTALL_DATA = install -m 0644
+INSTALL_DIR = install -d -m 0755
+
+prefix = $(KDEDIR)
+BINDIR = $(prefix)/bin
+LIBDIR = $(prefix)/lib
+PICSDIR = $(LIBDIR)/pics
+APPSDIR = $(prefix)/apps
+DOCSDIR = $(prefix)/doc/HTML
+
+########### File Formats ###########
+
+DEFS =
+
+########## Implicit Rules ##########
+
+.cpp.o:
+	$(CXX) $(CXXFLAGS) $(DEFS) -c $<
+
+########## Files ##########
+
+SRCS = main.cpp help.cpp info.cpp error.cpp misc.cpp options.cpp\
+		man.cpp bookmark.cpp cgi.cpp kbutton.cpp
+SRCMETA = help.moc options.moc bookmark.moc cgi.moc kbutton.moc
+HDRS = help.h info.h error.h misc.h man.h options.h\
+		bookmark.h dbnew.cpp cgi.h kbutton.h
+OBJS = help.o main.o info.o error.o misc.o man.o options.o\
+		bookmark.o dbnew.o cgi.o kbutton.o
+
+TARGET = kdehelp
+
+########## Build Rules ##########
+
+all: $(TARGET) helpsearch helpindex
+
+$(TARGET): $(SRCMETA) $(OBJS)
+	$(CXX) -o $(TARGET) $(OBJS) $(LDFLAGS)
+
+helpsearch:
+	cd search ; cp Makefile.std Makefile ; make ; cd ..
+
+helpindex:
+	cd index ; cp Makefile.std Makefile ; make ; cd ..
+
+install:
+	[ -d $(BINDIR) ] || $(INSTALL_DIR) $(BINDIR)
+	$(INSTALL) $(TARGET) $(BINDIR)
+	[ -d $(PICSDIR) ] || $(INSTALL_DIR) $(PICSDIR)
+	$(INSTALL_DATA) ./pics/* $(PICSDIR)
+	[ -d $(DOCSDIR) ] || $(INSTALL_DIR) $(DOCSDIR)
+	$(INSTALL_DATA) ./doc/* $(DOCSDIR)
+	[ -d $(APPSDIR) ] || $(INSTALL_DIR) $(APPSDIR)
+	cp -R ./apps/* $(APPSDIR)
+	cd search ; make install ; cd ..
+	cd index ; make install ; cd ..
+
+clean:
+	rm -f core *~ *.bak *.BAK $(SRCMETA) $(OBJS)
+	cd search ; make clean ; cd ..
+	cd index ; make clean ; cd ..
+
+veryclean:
+	rm -f *~ *.bak *.BAK $(TARGET) $(SRCMETA) $(OBJS) core
+	cd search ; make veryclean ; cd ..
+	cd index ; make veryclean ; cd ..
+
+depend: $(SRCS)
+	@makedepend $(INCFLAGS) $(SRCS) 2> /dev/null
+
+########## Meta objects ##########
+
+%.moc: %.h
+	$(MOC) $< -o $@
+
+##################################
+# DO NOT DELETE

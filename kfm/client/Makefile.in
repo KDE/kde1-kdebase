@@ -1,0 +1,48 @@
+
+INCDIR  =       @all_includes@
+CXXFLAGS+=      $(INCDIR) 
+LDFLAGS =       @all_libraries@ -lqt -lXext -lX11 -lkdecore -lkdeui -lkhtmlw @LIBSOCKET@ -ljpeg -lgif
+CXX     =       @CXX@
+MOC     =       @MOC@
+
+####### Files
+
+SOURCES =	kfmclient.cpp kfmclient_ipc.cpp kfmclient_ipc2.cpp ipc.cpp
+HEADERS =	kfmclient_ipc.h ipc.h
+OBJECTS =	kfmclient.o kfmclient_ipc.o kfmclient_ipc2.o ipc.o
+SRCMETA =	kfmclient_ipc.moc
+TARGET	=	kfmclient
+
+####### Implicit rules
+
+.SUFFIXES: .cpp
+
+.cpp.o:
+	$(CXX) -c $(CFLAGS) -DSTDC_HEADERS -DHAVE_UNISTD_H $(INCDIR) $<
+
+####### Build rules
+
+all: $(TARGET)
+
+$(TARGET): $(SRCMETA) $(OBJECTS)
+	$(CXX) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
+
+depend:
+	@makedepend $(INCDIR) $(SOURCES) 2> /dev/null
+
+showfiles:
+	@echo $(SOURCES) $(HEADERS) Makefile
+
+clean:
+	-rm -f *.o *.bak *~ *% #*
+	-rm -f $(SRCMETA) $(TARGET)
+
+
+####### Meta objects
+
+kfmclient_ipc.moc: kfmclient_ipc.h
+	$(MOC) kfmclient_ipc.h -o kfmclient_ipc.moc
+
+# DO NOT DELETE THIS LINE -- make depend depends on it.
+
+
