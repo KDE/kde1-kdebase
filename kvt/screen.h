@@ -182,5 +182,5 @@ void scr_set_tab(int value);
 void scr_E(void);
 void scr_rev_vid(int mode);
 void mouse_report(XButtonEvent *ev, int release);
-
+int scr_has_focus(); /* Leon, needed for clipboard */
 #endif /* SCREEN_H */
