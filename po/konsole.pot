@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-02-05 01:16+0100\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -155,17 +155,17 @@ msgid ""
 "See `LICENSE.readme´ for details."
 msgstr ""
 
-#: main.C:746
+#: main.C:749
 #, c-format
 msgid "`%s' terminated abnormally."
 msgstr ""
 
-#: main.C:749
+#: main.C:752
 msgid ""
 "\n"
 "Return code = "
 msgstr ""
 
-#: main.C:934
+#: main.C:936
 msgid "Welcome to the console"
 msgstr ""

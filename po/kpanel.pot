@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-02-05 01:16+0100\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -90,7 +90,7 @@ msgstr ""
 msgid "Add a windowlist menu onto the panel"
 msgstr ""
 
-#: events.C:849 props.C:183
+#: events.C:851 props.C:183
 msgid "Configure"
 msgstr ""
 
@@ -106,7 +106,7 @@ msgstr ""
 msgid "Add or remove applications in the menu structure "
 msgstr ""
 
-#: events.C:851 props.C:189
+#: events.C:853 props.C:189
 msgid "Restart"
 msgstr ""
 
@@ -130,7 +130,7 @@ msgstr ""
 msgid "The menu editor is not installed."
 msgstr ""
 
-#: events.C:905 props.C:452
+#: events.C:908 props.C:452
 msgid "Oops!"
 msgstr ""
 
@@ -144,7 +144,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr ""
 
-#: events.C:904
+#: events.C:907
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-02-05 01:16+0100\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -242,20 +242,20 @@ msgstr ""
 #: kbind.cpp:1697 kbind.cpp:1756 kbind.cpp:1768 kbind.cpp:1795 kbind.cpp:1816
 #: kbind.cpp:1836 kbind.cpp:1848 kbind.cpp:1864 kbind.cpp:1999 kbind.cpp:2011
 #: kbind.cpp:2056 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
-#: kfmgui.cpp:547 kfmgui.cpp:757 kfmman.cpp:370 kfmman.cpp:1420
-#: kfmman.cpp:1651 kfmman.cpp:1697 kfmprops.cpp:380 kfmprops.cpp:648
+#: kfmgui.cpp:547 kfmgui.cpp:757 kfmman.cpp:370 kfmman.cpp:1422
+#: kfmman.cpp:1653 kfmman.cpp:1699 kfmprops.cpp:380 kfmprops.cpp:648
 #: kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092 kfmprops.cpp:1223
 #: kfmprops.cpp:1697 kfmprops.cpp:2058 kfmprops.cpp:2240 kfmserver.cpp:50
 #: kfmserver.cpp:230 kfmserver.cpp:310 kfmserver.cpp:325 kfmserver.cpp:372
-#: kfmserver.cpp:381 kfmserver.cpp:389 kfmtree.cpp:341 kfmtree.cpp:468
-#: kfmtree.cpp:499 kfmtree.cpp:505 kfmtree.cpp:511 kfmview.cpp:437
+#: kfmserver.cpp:381 kfmserver.cpp:389 kfmtree.cpp:340 kfmtree.cpp:467
+#: kfmtree.cpp:498 kfmtree.cpp:504 kfmtree.cpp:510 kfmview.cpp:437
 #: kfmview.cpp:471 kfmview.cpp:490 kfmview.cpp:572 kfmview.cpp:578
 #: kfmview.cpp:584 kfmview.cpp:709 kfmview.cpp:713 kfmview.cpp:752
 #: kfmview.cpp:779 kfmview.cpp:800 kfmview.cpp:808 kfmview.cpp:816
 #: kiojob.cpp:239 kiojob.cpp:247 kiojob.cpp:254 kiojob.cpp:279 kiojob.cpp:298
 #: kiojob.cpp:309 kiojob.cpp:333 kiojob.cpp:352 kiojob.cpp:569 kiojob.cpp:587
 #: kiojob.cpp:892 kiojob.cpp:905 kiojob.cpp:922 kiojob.cpp:953 kiojob.cpp:1001
-#: kiojob.cpp:1477 kiojob.cpp:1485 kiojob.cpp:1713 krenamewin.cpp:120
+#: kiojob.cpp:1480 kiojob.cpp:1488 kiojob.cpp:1723 krenamewin.cpp:124
 #: popup.cpp:105 root.cpp:944 root.cpp:1226 root.cpp:1244 root.cpp:1250
 #: root.cpp:1256 root.cpp:1337 root.cpp:1862 root.cpp:1887
 msgid "KFM Error"
@@ -265,7 +265,7 @@ msgstr ""
 msgid "Location:"
 msgstr ""
 
-#: kfmexec.cpp:62 kfmgui.cpp:756 kfmman.cpp:1419
+#: kfmexec.cpp:62 kfmgui.cpp:756 kfmman.cpp:1421
 msgid "Malformed URL\n"
 msgstr ""
 
@@ -289,7 +289,7 @@ msgstr ""
 msgid "&Add Bookmark"
 msgstr ""
 
-#: kfmgui.cpp:1079 kfmman.cpp:1460 kfmtree.cpp:389 root.cpp:286
+#: kfmgui.cpp:1079 kfmman.cpp:1462 kfmtree.cpp:388 root.cpp:286
 msgid "&New"
 msgstr ""
 
@@ -310,7 +310,7 @@ msgid "&Home"
 msgstr ""
 
 #: kfmgui.cpp:1227 kfmgui.cpp:1395 kfmjob.cpp:36 kfmman.cpp:252
-#: kfmtree.cpp:500 kfmview.cpp:491 kfmview.cpp:573 kfmview.cpp:801
+#: kfmtree.cpp:499 kfmview.cpp:491 kfmview.cpp:573 kfmview.cpp:801
 #: kiojob.cpp:88 root.cpp:1245
 msgid "ERROR: Malformed URL"
 msgstr ""
@@ -341,23 +341,23 @@ msgstr ""
 msgid "ERROR: Drop over malformed URL"
 msgstr ""
 
-#: kfmserver.cpp:145 kfmtree.cpp:538 kfmview.cpp:544 kfmview.cpp:844
-#: kiojob.cpp:665 kiojob.cpp:1075 krenamewin.cpp:20 root.cpp:1288
+#: kfmserver.cpp:145 kfmtree.cpp:537 kfmview.cpp:544 kfmview.cpp:844
+#: kiojob.cpp:665 kiojob.cpp:1075 krenamewin.cpp:24 root.cpp:1288
 msgid "KFM Warning"
 msgstr ""
 
-#: kfmtree.cpp:539 kfmview.cpp:545 kfmview.cpp:845 root.cpp:1289
+#: kfmtree.cpp:538 kfmview.cpp:545 kfmview.cpp:845 root.cpp:1289
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
 "There is no way to restore them."
 msgstr ""
 
-#: kfmtree.cpp:506 kfmview.cpp:579 kfmview.cpp:809 root.cpp:1251
+#: kfmtree.cpp:505 kfmview.cpp:579 kfmview.cpp:809 root.cpp:1251
 msgid "ERROR: You dropped a URL over itself"
 msgstr ""
 
-#: kfmtree.cpp:512 kfmview.cpp:585 kfmview.cpp:817 root.cpp:1257
+#: kfmtree.cpp:511 kfmview.cpp:585 kfmview.cpp:817 root.cpp:1257
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr ""
 
@@ -385,7 +385,7 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmtree.cpp:469 kfmview.cpp:753 root.cpp:1338
+#: kfmtree.cpp:468 kfmview.cpp:753 root.cpp:1338
 msgid "Could not access Trash Bin"
 msgstr ""
 
@@ -540,7 +540,7 @@ msgstr ""
 msgid "New View"
 msgstr ""
 
-#: kfmtree.cpp:404 main.cpp:271
+#: kfmtree.cpp:403 main.cpp:271
 msgid "Move to Trash"
 msgstr ""
 
@@ -548,11 +548,11 @@ msgstr ""
 msgid "Open with"
 msgstr ""
 
-#: kfmman.cpp:1689 kfmtree.cpp:333 main.cpp:275
+#: kfmman.cpp:1691 kfmtree.cpp:332 main.cpp:275
 msgid "Move"
 msgstr ""
 
-#: kfmman.cpp:1693 kfmtree.cpp:337 main.cpp:277
+#: kfmman.cpp:1695 kfmtree.cpp:336 main.cpp:277
 msgid "Link"
 msgstr ""
 
@@ -869,11 +869,11 @@ msgstr ""
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr ""
 
-#: kfmman.cpp:1675 root.cpp:993 root.cpp:1013
+#: kfmman.cpp:1677 root.cpp:993 root.cpp:1013
 msgid "ERROR: Can not accept drop"
 msgstr ""
 
-#: kfmman.cpp:1652 kfmman.cpp:1698 kfmtree.cpp:342 root.cpp:1863 root.cpp:1888
+#: kfmman.cpp:1654 kfmman.cpp:1700 kfmtree.cpp:341 root.cpp:1863 root.cpp:1888
 msgid "Dont know what to do."
 msgstr ""
 
@@ -893,7 +893,7 @@ msgstr ""
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr ""
 
-#: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:1335 kiojob.cpp:1409
+#: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:1335 kiojob.cpp:1412
 #, c-format
 msgid ""
 "Malformed URL\n"
@@ -930,7 +930,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: kiojob.cpp:586 kiojob.cpp:921 kiojob.cpp:1358
+#: kiojob.cpp:586 kiojob.cpp:921 kiojob.cpp:1360
 #, c-format
 msgid ""
 "Could not make directory\n"
@@ -999,7 +999,7 @@ msgstr ""
 msgid "%d special files will not be moved."
 msgstr ""
 
-#: kiojob.cpp:1338 kiojob.cpp:1413
+#: kiojob.cpp:1338 kiojob.cpp:1416
 #, c-format
 msgid ""
 "Could not read\n"
@@ -1015,28 +1015,28 @@ msgid ""
 "Perhaps access denied"
 msgstr ""
 
-#: kiojob.cpp:1345 kiojob.cpp:1417
+#: kiojob.cpp:1345 kiojob.cpp:1420
 #, c-format
 msgid ""
 "Could not create Socket for\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1348 kiojob.cpp:1421
+#: kiojob.cpp:1348 kiojob.cpp:1424
 #, c-format
 msgid ""
 "Unknown host in\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1351 kiojob.cpp:1425
+#: kiojob.cpp:1352 kiojob.cpp:1428
 #, c-format
 msgid ""
 "Could not connect to\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1354 kiojob.cpp:1429
+#: kiojob.cpp:1356 kiojob.cpp:1432
 #, c-format
 msgid ""
 "The requested action\n"
@@ -1044,14 +1044,14 @@ msgid ""
 "is not implemented yet."
 msgstr ""
 
-#: kiojob.cpp:1361
+#: kiojob.cpp:1363
 #, c-format
 msgid ""
 "Could not list directory contents\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1365
+#: kiojob.cpp:1367
 #, c-format
 msgid ""
 "Could not delete\n"
@@ -1059,7 +1059,7 @@ msgid ""
 "URL does not exist or permission denied"
 msgstr ""
 
-#: kiojob.cpp:1369 kiojob.cpp:1434
+#: kiojob.cpp:1371 kiojob.cpp:1437
 #, c-format
 msgid ""
 "Could not login for\n"
@@ -1067,32 +1067,32 @@ msgid ""
 "Perhaps wrong password"
 msgstr ""
 
-#: kiojob.cpp:1380
+#: kiojob.cpp:1383
 #, c-format
 msgid ""
 "Tar reported an error\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1383
+#: kiojob.cpp:1386
 #, c-format
 msgid ""
 "Gzip reported an error for\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1389
+#: kiojob.cpp:1392
 msgid "Operation technically impossible"
 msgstr ""
 
-#: kiojob.cpp:1392 kiojob.cpp:1405
+#: kiojob.cpp:1395 kiojob.cpp:1408
 #, c-format
 msgid ""
 "File %s\n"
 "does not exist"
 msgstr ""
 
-#: kiojob.cpp:1395
+#: kiojob.cpp:1398
 #, c-format
 msgid ""
 "Could not write\n"
@@ -1100,21 +1100,21 @@ msgid ""
 "Perhaps disk full"
 msgstr ""
 
-#: kiojob.cpp:1446
+#: kiojob.cpp:1449
 #, c-format
 msgid ""
 "Tar reported a fatal error\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1450
+#: kiojob.cpp:1453
 #, c-format
 msgid ""
 "Gzip reported a fatal error\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1454
+#: kiojob.cpp:1457
 #, c-format
 msgid ""
 "Could not mount\n"
@@ -1123,7 +1123,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1458
+#: kiojob.cpp:1461
 #, c-format
 msgid ""
 "Could not unmount\n"
@@ -1132,43 +1132,43 @@ msgid ""
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1562
+#: kiojob.cpp:1565
 msgid "Making directory"
 msgstr ""
 
-#: kiojob.cpp:1678 kiojob.cpp:1732 kiojob.cpp:1774
+#: kiojob.cpp:1681 kiojob.cpp:1742 kiojob.cpp:1791
 #, c-format
 msgid "File %i/%i"
 msgstr ""
 
-#: kiojob.cpp:1681 kiojob.cpp:1736
+#: kiojob.cpp:1691 kiojob.cpp:1753
 #, c-format
 msgid "to %s"
 msgstr ""
 
-#: kiojob.cpp:1712
+#: kiojob.cpp:1722
 #, c-format
 msgid ""
 "Could not delete directory\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1802
+#: kiojob.cpp:1824
 #, c-format
 msgid "Mounting %s ..."
 msgstr ""
 
-#: kiojob.cpp:1804
+#: kiojob.cpp:1826
 #, c-format
 msgid "Unmounting %s ..."
 msgstr ""
 
-#: kiojob.cpp:1832
+#: kiojob.cpp:1854
 #, c-format
 msgid "Retrieving listing of %s"
 msgstr ""
 
-#: kiojob.cpp:2071
+#: kiojob.cpp:2093
 msgid "Segmentation fault in io subprocess"
 msgstr ""
 
@@ -1196,51 +1196,51 @@ msgstr ""
 msgid " does not exist\n"
 msgstr ""
 
-#: kfmtree.cpp:411
+#: kfmtree.cpp:410
 msgid "Add To Bookmarks"
 msgstr ""
 
-#: kfmtree.cpp:590
+#: kfmtree.cpp:589
 msgid "My Home"
 msgstr ""
 
-#: kfmtree.cpp:592
+#: kfmtree.cpp:591
 msgid "Desktop"
 msgstr ""
 
-#: kfmtree.cpp:594
+#: kfmtree.cpp:593
 msgid "Root"
 msgstr ""
 
-#: krenamewin.cpp:26
+#: krenamewin.cpp:30
 msgid "Rename"
 msgstr ""
 
-#: krenamewin.cpp:31
+#: krenamewin.cpp:35
 msgid "Skip"
 msgstr ""
 
-#: krenamewin.cpp:36
+#: krenamewin.cpp:40
 msgid "Overwrite"
 msgstr ""
 
-#: krenamewin.cpp:41
+#: krenamewin.cpp:45
 msgid "Overwrite All"
 msgstr ""
 
-#: krenamewin.cpp:52
+#: krenamewin.cpp:56
 msgid "You try to overwrite"
 msgstr ""
 
-#: krenamewin.cpp:63
+#: krenamewin.cpp:67
 msgid "already exists. Overwrite with"
 msgstr ""
 
-#: krenamewin.cpp:71
+#: krenamewin.cpp:75
 msgid "Or rename to"
 msgstr ""
 
-#: krenamewin.cpp:121
+#: krenamewin.cpp:125
 msgid "You did not change the name!\n"
 msgstr ""
 
