@@ -249,16 +249,14 @@ Debug (
 	va_start(args, fmt);
 #  ifdef USE_SYSLOG
 	vsyslog (LOG_DEBUG, fmt, args);
-#  else
-	vprintf (fmt, args);
 #  endif
+	vprintf (fmt, args);
 	va_end(args);
 #else
 #  ifdef USE_SYSLOG
 	syslog (LOG_DEBUG, fmt, arg1, arg2, arg3, arg4, arg5, arg6);
-#  else
-	printf (fmt, arg1, arg2, arg3, arg4, arg5, arg6);
 #  endif
+	printf (fmt, arg1, arg2, arg3, arg4, arg5, arg6);
 #endif
 #ifndef USE_SYSLOG
 	fflush (stdout);
