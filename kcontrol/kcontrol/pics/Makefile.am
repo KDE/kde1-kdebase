@@ -1,7 +1,7 @@
 # $Id$
 # kdebase/kcontrol/kcontrol/pics
 
-SUBDIRS = mini
+SUBDIRS = mini large
 
 logo_DATA = kdekcc.xpm
 

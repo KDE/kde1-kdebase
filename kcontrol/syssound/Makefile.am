@@ -22,7 +22,7 @@ noinst_HEADERS = syssound.h
 # just to make sure, automake makes them 
 METASOURCES =	syssound.moc
 
-EXTRA_DIST = kcmsyssound.xpm mini-kcmsyssound.xpm CHANGES
+EXTRA_DIST = kcmsyssound.xpm mini-kcmsyssound.xpm large-kcmsyssound.xpm CHANGES
 
 # make messages.po. Move this one to ../po/ and "make merge" in po
 messages:
@@ -33,8 +33,11 @@ kde_icon_DATA = kcmsyssound.xpm
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) $(srcdir)/mini-kcmsyssound.xpm $(kde_minidir)/kcmsyssound.xpm
+	$(mkinstalldirs) $(kde_minidir)/../large/
+	$(INSTALL_DATA) $(srcdir)/large-kcmsyssound.xpm $(kde_minidir)/../large/kcmsyssound.xpm
 
 # remove ALL you have installed in install-data-local or install-exec-local
 uninstall-local:
 	-rm -f $(kde_minidir)/kcmsyssound.xpm
+	-rm -f $(kde_minidir)/../large/kcmsyssound.xpm
 

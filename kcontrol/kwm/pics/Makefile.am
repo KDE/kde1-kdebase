@@ -1,7 +1,7 @@
 # $Id$
 # kdebase/kcontrol/kwm/pics
 
-SUBDIRS = mini
+SUBDIRS = mini large
 
 icons_DATA = buttons.xpm kcmkwm.xpm properties.xpm titlebar.xpm
 
