@@ -3,6 +3,8 @@
 	* README: Removed unneeded whitespace and corrected the spelling.
 	* .cvsignore: Ignore object files too.
 	* checkpas_etcpasswd.cpp: Indent more sanely, and comment a bit more.
+	* kcheckpass.h: Removed comments that are already in README, add a description
+	of what message() does.
 
 1998-11-28  Christian Esken  <esken@kde.org>
 

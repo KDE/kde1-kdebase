@@ -24,16 +24,6 @@
  * License along with this program; if not, write to the Free
  * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
- *
- *	It's hopefully simple enough to allow it to be setuid
- *	root.
- *
- *	Compile with -DHAVE_VSYSLOG if you have vsyslog().
- *	Compile with -DHAVE_PAM if you have a PAM system,
- *	and link with -lpam -ldl.
- *	Compile with -DHAVE_SHADOW if you have a shadow
- *	password system.
- *
  *	Copyright (C) 1998, Caldera, Inc.
  *	Released under the GNU General Public License
  *
@@ -88,4 +78,8 @@
  *   0		otherwise
  *****************************************************************/
 int authenticate(const char *login, const char *pass);
-void message(const char*, ...);
+
+/*****************************************************************
+ * Output a message to syslog (and to stderr as well, if available)
+ *****************************************************************/
+void message(const char *, ...);
