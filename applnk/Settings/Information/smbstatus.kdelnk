@@ -47,6 +47,7 @@ Name[ca]=Estat de Samba
 SwallowTitle[no]=Monitor for Samba-status
 Name[hr]=Status Sambe
 SwallowTitle=Samba status
+SwallowTitle[de]=Samba Status-Monitor
 SwallowTitle[es]=Estado de Samba
 SwallowTitle[pl]=Monitor stanu Samby
 SwallowTitle[eo]=Stato de Sambo

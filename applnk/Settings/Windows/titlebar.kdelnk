@@ -49,6 +49,7 @@ Name[ro]=Zona de titlu
 Name[ru]=úÁÇÏÌÏ×ÏË
 Name[ca]=Barra de títol
 SwallowTitle=Window titlebar
+SwallowTitle[de]=Erscheinungsbild der Titelleiste
 SwallowTitle[no]=Tittellinje til vindu
 SwallowTitle[es]=Barra de título
 SwallowTitle[pl]=Pasek tytu³owy okna

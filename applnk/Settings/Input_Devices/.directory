@@ -2,9 +2,9 @@
 [KDE Desktop Entry]
 Name=Input Devices
 Name[is_IS]=Inntakstæki
+Name[de]=Eingabe-Geräte
 Name[es]=Dispositivos de Entrada
 Name[fr]=Périphériques d'entrée
-Name[de]=Eingabe Geräte
 Name[no]=Innenheter
 Name[eo]=Enigaparatoj
 Name[da]=Inputenheder
@@ -22,3 +22,7 @@ Name[ru]=õÓÔÒÏÊÓÔ×Á ××ÏÄÁ
 Name[ca]=Dispositius d'entrada
 SortOrder=keyboard.kdelnk,mouse.kdelnk
 Icon=input_devices_settings.xpm
+
+
+
+

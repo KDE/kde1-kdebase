@@ -49,6 +49,7 @@ Name[ru]=“œ√≈””œ“
 Name[hr]=Procesor
 Name[ca]=Processador
 SwallowTitle=Processor Information
+SwallowTitle[de]=Prozessor
 SwallowTitle[no]=Procsessorinfomasjon
 SwallowTitle[es]=InformaciÛn sobre el procesador
 SwallowTitle[pl]=Informacje o procesorze

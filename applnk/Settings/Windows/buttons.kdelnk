@@ -49,6 +49,7 @@ SwallowTitle[no]=Vindustrykknapper
 Name[hr]=Gumbi
 Name[zh_CN.GB2312]=°´Å¥
 SwallowTitle=Window buttons
+SwallowTitle[de]=Anordung der Fenster-Symbole
 SwallowTitle[es]=Botones de ventanas
 SwallowTitle[eo]=Fenestrosimboloj
 SwallowTitle[pl]=Przyciski okna
