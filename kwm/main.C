@@ -700,6 +700,7 @@ void MyApp::restoreSession(){
   QStrList* com = new QStrList;
   QStrList* ph = new QStrList;
   QStrList* pp = new QStrList;
+  QStrList* pi = new QStrList;
 
   config->readListEntry("tasks", *com);
   for (command = com->first(); !command.isNull(); command = com->next())
@@ -707,7 +708,8 @@ void MyApp::restoreSession(){
   delete com;
   config->readListEntry("proxyhints", *ph);
   config->readListEntry("proxyprops", *pp);
-  manager->setProxyData(ph, pp);
+  config->readListEntry("proxyignore", *pi);
+  manager->setProxyData(ph, pp, pi);
 }
 
 void MyApp::cleanup(){

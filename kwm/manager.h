@@ -114,7 +114,8 @@ public:
   QStrList* getProxyHints();
   QStrList* getProxyProps();
 
-  void setProxyData(QStrList* proxy_hints_arg, QStrList* proxy_props_arg);
+  void setProxyData(QStrList* proxy_hints_arg, QStrList* proxy_props_arg,
+		    QStrList* proxy_ignore_arg);
 
   void killWindowAtPosition(int x, int y);
 
@@ -134,6 +135,7 @@ private:
 					  
   QStrList* proxy_hints;
   QStrList* proxy_props;
+  QStrList* proxy_ignore;
 
   QStrList additional_commands;
   QStrList additional_machines;

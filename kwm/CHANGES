@@ -18,6 +18,8 @@ In 0.10:
          traversal if they were automatically iconified.
        - new commandline option "-nosession" to disable the restoration
          of the previous session.
+       - new list entry "proxyignore" in the [session]-group of kwmrc
+         to specify WM_COMMANDS that should be ignored
           
   patchlevel 14:
        - new keybindings Control-F[1..8] for virtual desktop switching

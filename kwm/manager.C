@@ -39,6 +39,7 @@ Manager::Manager(): QObject(){
 
   proxy_hints = NULL;
   proxy_props = NULL;
+  proxy_ignore = NULL;
   
   int dummy;
   XGCValues gv;
@@ -840,12 +841,10 @@ void Manager::manage(Window w, bool mapped){
   }
   
 
-  if (!dohide){
-    if (c->getDecoration())
-      activateClient(c);
-    else
-      c->setactive(FALSE);
-  }
+  if (!dohide && c->getDecoration())
+    activateClient(c);
+  else
+    c->setactive(FALSE);
 
   if (c->isIconified())
     iconifyTransientOf(c);
@@ -1734,7 +1733,7 @@ QStrList* Manager::getSessionCommands(){
   QString command;
   QString machine;
   for (c = clients.first(); c; c = clients.next()){
-    if (!c->command.isEmpty()){
+    if (!c->command.isEmpty() && !proxy_ignore->contains(c->command)){
       // create a machine dependend command
       command = c->command.data();
       if (!c->machine.isEmpty()){
@@ -1772,6 +1771,7 @@ QStrList* Manager::getPseudoSessionClients(){
   Client* c;
   for (c = clients.first(); c; c = clients.next()){
     if (!c->Psaveyourself && !c->command.isEmpty() 
+	&& !proxy_ignore->contains(c->command)
 	&& !KWM::unsavedDataHintDefined(c->window))
       result->append(c->label);
   }
@@ -1845,9 +1845,12 @@ QStrList* Manager::getProxyProps(){
 }
 
 
-void Manager::setProxyData(QStrList* proxy_hints_arg, QStrList* proxy_props_arg){
+void Manager::setProxyData(QStrList* proxy_hints_arg, 
+			   QStrList* proxy_props_arg,
+			   QStrList* proxy_ignore_arg){
   proxy_hints = proxy_hints_arg;
   proxy_props = proxy_props_arg;
+  proxy_ignore = proxy_ignore_arg;
 }
 
 

@@ -933,17 +933,18 @@ void Client::setactive(bool on){
 		GrabModeSync, GrabModeAsync, None, normal_cursor );
     XGrabButton(qt_xdisplay(), AnyButton, Mod1Mask | LockMask | NumLockMask, window, True, ButtonPressMask, 
 		GrabModeSync, GrabModeAsync, None, normal_cursor );
+
+    if ( options.FocusPolicy == FOCUS_FOLLOW_MOUSE
+	 && options.AutoRaise > 0){
+      QTimer::singleShot(options.AutoRaise, this, SLOT(autoRaise()));
+    }
   }
-  else if (state == NormalState) {
+  else {
     XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, window, True, ButtonPressMask, 
 		GrabModeSync, GrabModeAsync, None, normal_cursor );
   }
-
-  if ( options.FocusPolicy == FOCUS_FOLLOW_MOUSE
-       && options.AutoRaise > 0){
-    QTimer::singleShot(options.AutoRaise, this, SLOT(autoRaise()));
-  }
-
+  
+  
 }  
 
 void Client::paintState(bool only_label){
