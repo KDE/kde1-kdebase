@@ -1845,7 +1845,7 @@ void Manager::manage(Window w, bool mapped){
       // be a bit clever
   {
 	  QRect maxRect = KWM::getWindowRegion(currentDesktop());
-	  if (myapp->systemMenuBar) {
+	  if (myapp->systemMenuBar && !c->isMenuBar()) {
 	      maxRect.setTop(myapp->systemMenuBar->geometry().bottom());
 	  }
 	  if (c->geometry.x() < maxRect.x() )
