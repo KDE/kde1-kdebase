@@ -19,7 +19,7 @@
 //  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 //
 
-
+#include <stdlib.h>
 #include <qfont.h>
 #include <qlist.h>
 #include <qcombo.h>

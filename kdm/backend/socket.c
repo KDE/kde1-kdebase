@@ -38,6 +38,9 @@ from the X Consortium.
  */
 
 #include "dm.h"
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
 
 #ifdef XDMCP
 #ifndef STREAMSCONN
@@ -209,7 +212,7 @@ GetChooserAddr (addr, lenp)
     int		*lenp;
 {
     struct sockaddr_in	in_addr;
-    int			len;
+    ksize_t		len;
 
     len = sizeof in_addr;
     if (getsockname (chooserFd, (struct sockaddr *)&in_addr, &len) < 0)
