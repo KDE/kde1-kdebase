@@ -83,6 +83,7 @@ msgid "KeyMap: can't allocate memory"
 msgstr "KeyMap : n'hallañ ket derannañ memor"
 
 #: keymap.cpp:233
+#, c-format
 msgid ""
 "Can't find symbol \"%s\".\n"
 "Maybe your default X codes do not match.\n"
@@ -95,14 +96,17 @@ msgstr ""
 "ar goulev kefluniañ."
 
 #: keymap.cpp:238
+#, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
 msgstr "KeyMap : n'hallan ket kavout an arouezenn \"%s\"."
 
 #: keymap.cpp:246
+#, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
 msgstr "KeyMap : ne veizan ket ar voneg stokell \"%s\"."
 
 #: keymap.cpp:252
+#, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
 msgstr "KeyMap : boneg stokell \"%s\" a ya er-maez ar rummad."
 
@@ -452,7 +456,8 @@ msgstr "Emzalc'h astennet. Tres stokellaoueg enrollet distag evit pep prenestr"
 #: widgets.cpp:513
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "Emzalc'h dibar. Tres stokellaoueg enrollet distag evit pep renkad prenestr"
+msgstr ""
+"Emzalc'h dibar. Tres stokellaoueg enrollet distag evit pep renkad prenestr"
 
 #: widgets.cpp:561
 msgid "Button Colors"

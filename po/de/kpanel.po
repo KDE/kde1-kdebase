@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel VERSION\n"
-"POT-Creation-Date: 1999-04-12 01:17+0200\n"
+"POT-Creation-Date: 1999-04-22 01:24+0200\n"
 "PO-Revision-Date: 1999-02-03 19:30+MET\n"
 "Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
@@ -14,47 +14,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 "Translator: Christian Kirsch <ck@held.mind.de>\n"
 
-#: kpanel.C:292
+#: kpanel.C:295
 msgid "&Move"
 msgstr "&Verschieben"
 
-#: kpanel.C:295
+#: kpanel.C:298
 msgid "&Properties"
 msgstr "&Eigenschaften"
 
-#: kpanel.C:338
+#: kpanel.C:341
 msgid "Go!"
 msgstr "Start!"
 
-#: kpanel.C:415
+#: kpanel.C:418
 msgid "No info available"
 msgstr "Keine Informationen verfügbar"
 
-#: kpanel.C:454 props.C:207 props.C:208
+#: kpanel.C:457 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Abmelden"
 
-#: kpanel.C:462 props.C:206
+#: kpanel.C:465 props.C:206
 msgid "Lock screen"
 msgstr "Bildschirm sperren"
 
-#: kpanel.C:471 kpanel.C:480
+#: kpanel.C:474 kpanel.C:483
 msgid "Hide the panel"
 msgstr "Kontrolleiste ausblenden"
 
-#: kpanel.C:490 kpanel.C:502
+#: kpanel.C:493 kpanel.C:505
 msgid "Show the panel"
 msgstr "Kontrolleiste anzeigen"
 
-#: kpanel.C:1066
+#: kpanel.C:1069
 msgid "Iconify other &windows"
 msgstr "Andere Fenster ver&kleinern"
 
-#: kpanel.C:1214 tools.C:910
+#: kpanel.C:1217 tools.C:910
 msgid "Windowlist"
 msgstr "Fensterliste"
 
-#: kpanel.C:1222 props.C:197
+#: kpanel.C:1225 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Schnell durch das Dateisystem navigieren"
 
@@ -82,7 +82,7 @@ msgstr "Fensterliste hinzufügen"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Menü für Fensterliste zu Kontrolleiste hinzufügen"
 
-#: events.C:855 props.C:183
+#: events.C:860 props.C:183
 msgid "Configure"
 msgstr "Konfigurieren"
 
@@ -98,7 +98,7 @@ msgstr "Menü bearbeiten"
 msgid "Add or remove applications in the menu structure "
 msgstr "Anwendungen in der Menü-Struktur hinzufügen oder löschen "
 
-#: events.C:857 props.C:189
+#: events.C:862 props.C:189
 msgid "Restart"
 msgstr "Neu starten"
 
@@ -122,7 +122,7 @@ msgstr "Bildschirm sperren"
 msgid "The menu editor is not installed."
 msgstr "Der Menü-Editor ist nicht installiert."
 
-#: events.C:912 props.C:452
+#: events.C:917 props.C:452
 msgid "Oops!"
 msgstr "Hoppla!"
 
@@ -138,7 +138,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "KDisk-Navigator"
 
-#: events.C:911
+#: events.C:916
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kann dies nicht als Button auf die Kontrolleiste legen!"
 

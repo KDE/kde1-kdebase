@@ -1,5 +1,4 @@
 # KTranslator Generated File
-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # Marcell Lengyel <miketkf@yahoo.com>, 1998.
@@ -37,7 +36,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"X-Generator: KTranslator v 0.4.0"
+"X-Generator: KTranslator v 0.4.0\n"
 
 #: info.cpp:50
 #, c-format
@@ -89,8 +88,8 @@ msgstr "alapértelmezett kép.  : %i"
 msgid "number of screens     : %i"
 msgstr "képernyõk száma       : %i"
 
-#: info.cpp:181
 #
+#: info.cpp:181
 msgid ""
 "No Information available\n"
 " or\n"
@@ -134,8 +133,8 @@ msgstr "Mountolási kapcsolók"
 msgid "unknown CPU type"
 msgstr "ismeretlen CPU típus"
 
-#: info_hpux.cpp:62
 #
+#: info_hpux.cpp:62
 msgid "unavailable"
 msgstr "nem elérhetõ"
 
@@ -246,15 +245,14 @@ msgstr "Szabad swap memória"
 msgid "%10ld bytes  = %8.2f MB"
 msgstr "%10ld byte  = %8.2f MB"
 
+#
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
-#
 msgid "Not available"
 msgstr "nem elérhetõ"
 
+#
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
-#
 msgid "Not Available"
 msgstr "nem elérhetõ"
-

@@ -16,7 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"X-Generator: KTranslator v 0.4.0"
+"X-Generator: KTranslator v 0.4.0\n"
 
 #: main.cpp:61
 msgid "&Font"
@@ -54,8 +54,7 @@ msgstr "&Asztal Ikonok"
 #, c-format
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
-msgstr ""
-"használat: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
+msgstr "használat: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
