@@ -33,6 +33,7 @@
 #include "config-kfm.h"
 #include "utils.h"
 #include "kfm.h"
+#include "kfmexec.h"
 
 #include <klocale.h>
 #include <kstring.h>
@@ -746,15 +747,17 @@ void KfmView::slotURLSelected( const char *_url, int _button, const char *_targe
 	    return;
 	}
     }
-    
-    if ( _button == MidButton && KIOServer::isDir( _url ) )
+
+    if ( _button == MidButton )
     {
 	KURL base( manager->getURL() );
 	KURL u( base, _url );
 	QString url = u.url();
 
-	KfmGui *m = new KfmGui( 0L, 0L, url.data() );
-	m->show();
+	KFMExec *e = new KFMExec();
+	e->openURL( url );
+	// KfmGui *m = new KfmGui( 0L, 0L, url.data() );
+	// m->show();
     }
     
     if ( _button == LeftButton )

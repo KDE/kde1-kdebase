@@ -1222,37 +1222,29 @@ bool KMimeBind::runBinding( const char *_url )
     
     QString cmd = getCmd();
     cmd.detach();
+
+    bool b_local_app = false;
+    if ( cmd.find( "%u" ) == -1 )
+      b_local_app = true;
     
     // Did the user forget to append something like '%f' ?
     // If so, then assume that '%f' is the right joice => the application
     // accepts only local files.
     if ( cmd.find( "%f" ) == -1 && cmd.find( "%u" ) == -1 && cmd.find( "%n" ) == -1 &&
 	 cmd.find( "%d" ) == -1 )
-    {
-      QStrList list;
-      list.append( _url );
-      openWithOldApplication( cmd, list );
-      return TRUE;
-    }
-    // The application accepts only local files ?
-    else if ( cmd.find( "%f" ) != -1 && cmd.find( "%u" ) == -1 && cmd.find( "%n" ) == -1 &&
-	      cmd.find( "%d" ) == -1 )
-    {
-      QStrList list;
-      list.append( _url );
-      openWithOldApplication( cmd, list );      
-      return TRUE;
-    }
+      cmd.append( " %f" );
     
     int pos;
-    while ( ( pos = cmd.find( "%f" )) != -1 )
+    // Replacing of '%f' is done in openWithOldApplication
+    if ( !b_local_app )
+      while ( ( pos = cmd.find( "%f" )) != -1 )
 	cmd.replace( pos, 2, f.data() );
     while ( ( pos = cmd.find( "%u" )) != -1 )
-	cmd.replace( pos, 2, ur.data() );
+      cmd.replace( pos, 2, ur.data() );
     while ( ( pos = cmd.find( "%n" )) != -1 )
-	cmd.replace( pos, 2, n.data() );
+      cmd.replace( pos, 2, n.data() );
     while ( ( pos = cmd.find( "%d" )) != -1 )
-	cmd.replace( pos, 2, d.data() );
+      cmd.replace( pos, 2, d.data() );
 
     while ( ( pos = cmd.find( "%c" ) ) != -1 )
     {
@@ -1271,6 +1263,26 @@ bool KMimeBind::runBinding( const char *_url )
 	    cmd.replace(pos,2,s.data());
 	}
     }        
+
+    QString icon = pixmapFile;
+    if (!icon.isEmpty())
+      icon.prepend("-icon ");
+    while ( ( i = cmd.find( "%i" ) ) != -1 )
+      cmd.replace( i, 2, icon.data());
+    QString miniicon = miniPixmapFile;
+    if (!miniicon.isEmpty())
+      miniicon.prepend("-miniicon ");
+    while ( ( i = cmd.find( "%m" ) ) != -1 )
+      cmd.replace( i, 2, miniicon.data());
+
+    // The application accepts only local files ?
+    if ( b_local_app )
+    {
+      QStrList list;
+      list.append( _url );
+      openWithOldApplication( cmd, list );      
+      return TRUE;
+    }
 
     runCmd( cmd.data() );
     return TRUE;

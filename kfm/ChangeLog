@@ -1,3 +1,11 @@
+Thu Mar 26 02:40:24 1998  Torben Weis  <weis@localhost>
+
+	* kbind.cpp (runBinding): Fixes for %m and %i and %c
+
+	* Added support for middle mouse button. It opens
+	  a new window now if that makes sense or acts like
+	  the lft mouse button otherwise ( almost ).
+
 Sat Mar 21 17:18:13 1998  Torben Weis  <weis@localhost>
 
 	* kfmgui.cpp (slotShowHistory): KFM can display its history
