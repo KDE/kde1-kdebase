@@ -282,7 +282,6 @@ msgid "Move pointer towards center after switch"
 msgstr "Flytt peker mot senter etter bytte"
 
 #: desktop.cpp:87
-#, fuzzy
 msgid "Desktop switch delay:"
 msgstr "Forsinkelese for skrivebordsbytte:"
 

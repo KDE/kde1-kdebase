@@ -4,8 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: KDE BASE/kcmbellPOT-Creation-Date: 1998-05-13 "
-"12:05+0200\n"
+"Project-Id-Version: KDE BASE/kcmbell\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-03-01 11:23+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
@@ -16,7 +15,7 @@ msgstr ""
 
 #: main.cpp:52
 msgid "&Bell"
-msgstr "&Klokke"
+msgstr "&Bjelle"
 
 #: main.cpp:58
 msgid "usage: kcmbell [-init | bell]\n"
@@ -24,7 +23,7 @@ msgstr "bruk: kcmbell [-init | bell]\n"
 
 #: main.cpp:89
 msgid "Bell settings"
-msgstr "Klokkeinstillinger"
+msgstr "Bjelleinstillinger"
 
 #: bell.cpp:65
 msgid "Volume"
@@ -44,11 +43,8 @@ msgstr "Varighet"
 
 #: bell.cpp:72
 msgid "milliseconds"
-msgstr ""
+msgstr "millisekunder"
 
 #: bell.cpp:87
 msgid "Test"
 msgstr "Test"
-
-#~ msgid "ms"
-#~ msgstr "ms"

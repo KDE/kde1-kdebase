@@ -19,7 +19,7 @@ msgstr "Avslutte eller starte på nytt?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr ""
+msgstr "(Skriv inn root-passordet)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
@@ -31,7 +31,7 @@ msgstr "Avslutte og starte på nytt"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr ""
+msgstr "Omstart X-tjener"
 
 #: kgreeter.cpp:222
 msgid "Login:"

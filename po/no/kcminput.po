@@ -39,7 +39,7 @@ msgstr "Terskel"
 
 #: mouse.cpp:72
 msgid "pixels"
-msgstr ""
+msgstr "piksler"
 
 #: mouse.cpp:81
 msgid "Button mapping"

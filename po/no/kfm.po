@@ -293,7 +293,7 @@ msgstr "Sted:"
 # kfmexec.cpp:59 kfmgui.cpp:709 kfmman.cpp:1043
 #: kfmexec.cpp:59 kfmgui.cpp:743 kfmman.cpp:1375
 msgid "Malformed URL\n"
-msgstr "URL på feil form\n"
+msgstr "Misdannet URL\n"
 
 # kfmgui.cpp:869
 #: kfmgui.cpp:933
@@ -1335,22 +1335,22 @@ msgstr ""
 
 # kiojob.cpp:1289 kiojob.cpp:1396
 #: kiojob.cpp:1287
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Tar reported a fatal error\n"
 "%s"
 msgstr ""
-"Tar rapporterte en feil\n"
+"Tar rapporterte en fatal feil\n"
 "%s"
 
 # kiojob.cpp:1404
 #: kiojob.cpp:1291
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Gzip reported a fatal error\n"
 "%s"
 msgstr ""
-"Gzip rapporterte en feil\n"
+"Gzip rapporterte en fatal feil\n"
 "%s"
 
 # kiojob.cpp:1412
