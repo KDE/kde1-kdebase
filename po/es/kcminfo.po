@@ -24,31 +24,31 @@ msgstr "&Procesador"
 
 #: main.cpp:66
 msgid "System Information"
-msgstr "Información del Sistema"
+msgstr "Información del sistema"
 
 #: memory.cpp:10
 msgid "Total memory"
-msgstr "Memoria Total"
+msgstr "Memoria total"
 
 #: memory.cpp:18
 msgid "Free memory"
-msgstr "Memoria Libre"
+msgstr "Memoria libre"
 
 #: memory.cpp:26
 msgid "Shared memory"
-msgstr "Memoria Compartida"
+msgstr "Memoria compartida"
 
 #: memory.cpp:34
 msgid "Buffer memory"
-msgstr "Memoria en Buffers"
+msgstr "Memoria de búfer"
 
 #: memory.cpp:42
 msgid "Swap memory"
-msgstr "Memoria de Intercambio"
+msgstr "Memoria de intercambio (swap)"
 
 #: memory.cpp:50
 msgid "Free swap memory"
-msgstr "Memoria de Intercambio Libre"
+msgstr "Memoria de intercambio (swap) libre"
 
 #: memory.cpp:71
 #, c-format
@@ -62,4 +62,4 @@ msgstr "no disponible"
 
 #: processor.cpp:29
 msgid "This system is not yet supported :-("
-msgstr "Este sistema no está soportado todavía :-("
+msgstr "Este sistema aún no está soportado :-("

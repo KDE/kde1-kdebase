@@ -16,11 +16,11 @@ msgstr ""
 
 #: main.cpp:51
 msgid "&Bell"
-msgstr "&Alerta Sonora"
+msgstr "&Sonido de aviso"
 
 #: main.cpp:75
 msgid "Bell settings"
-msgstr "Propiedades Alerta Sonora"
+msgstr "Preferencias de sonido de aviso"
 
 #: bell.cpp:85
 msgid "Volume"
