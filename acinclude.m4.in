@@ -470,7 +470,8 @@ test -n "$QTDIR" && qt_libdirs="$QTDIR/lib $QTDIR $qt_libdirs"
 test=NONE
 qt_libdir=NONE
 for dir in $qt_libdirs; do
-  if test=`ls -1 $dir/libqt*`; then qt_libdir=$dir; break; else echo "tried $dir" >&AC_FD_CC ; fi
+  try="ls -1 $dir/libqt*"
+  if test=`eval $try 2> /dev/null`; then qt_libdir=$dir; break; else echo "tried $dir" >&AC_FD_CC ; fi
 done
 
 dnl AC_FIND_FILE(libqt.so libqt.so.1.30 libqt.so.1.31 libqt.so.1 libqt.a libqt.sl, $qt_libdirs, qt_libdir)

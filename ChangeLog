@@ -1,3 +1,8 @@
+1998-04-21  Stephan Kulow  <coolo@kde.org>
+
+	* acinclude.m4.in: cool, I found the trick to suppress the ls 
+	errors
+
 1998-04-20  Stephan Kulow  <coolo@kde.org>
 
 	* acinclude.m4.in: rewrote the qt checking test, since it
