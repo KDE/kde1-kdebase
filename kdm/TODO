@@ -13,3 +13,5 @@ Work is being done here.
 - Do html documentation.
 Partially done.
 - Make a kchooser!
+- Make kdm return the loadavg. to chooser instead of just "Willing to manage"
+

@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:45:44 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Tue Sep  9 18:38:50 1997
-// Update Count     : 68
+// Last Modified On : Thu Oct 16 04:39:04 1997
+// Update Count     : 73
 // Status           : Unknown, Use with caution!
 // 
 
@@ -222,6 +222,7 @@ KDMView::insertItem( const KDMViewItem* item, int index, bool sorted = false)
 	  setCellWidth( w );
      if ( w > cellHeight() )
 	  setCellHeight( h );
+     //updateTableSize();
      if ( autoUpdate() )
 	  repaint();
      //setNumRows( itemList->count()/numCols());
@@ -240,6 +241,7 @@ KDMView::insertItemList( KVItemList* itlist)
      }
      setCellWidth( max_width);
      setCellHeight( max_height);
+     //updateTableSize();
      calcDimen();
 }
 
@@ -247,8 +249,8 @@ void
 KDMView::calcDimen()
 {
      setNumCols( viewWidth()/(cellWidth()?cellWidth():1));
-     if( numCols() * cellWidth() < viewWidth() - cellWidth()*0.75) 
-	  setNumCols( numCols()+1);
+     /*if( numCols() * cellWidth() < viewWidth() - cellWidth()*0.75) 
+	  setNumCols( numCols()+1);*/
      if( numCols() == 0)
 	  setNumCols( 1);
      setNumRows( itemList->count()/numCols());
@@ -259,14 +261,16 @@ KDMView::calcDimen()
 QSize
 KDMView::sizeHint() const
 {
-     return QSize( (int)sqrt( itemList->count())*cellWidth(), 
-		   (int)sqrt( itemList->count())*cellHeight());
+     return QSize( (int)sqrt( itemList->count())*cellWidth()+2*frameWidth(), 
+		   (int)sqrt( itemList->count())*cellHeight()+2*frameWidth());
 }
 
 int
-KDMView::sizeHintHeight( int w) const
+KDMView::sizeHintHeight( int width) const
 {
-     int s = (cellHeight()*cellWidth()*itemList->count())/(w>0?w:1);
+     int w = width - 2*frameWidth();
+     if( w <= 0 ) w = 1;
+     int s = (cellHeight()*cellWidth()*itemList->count())/w;
      int h = (cellHeight()>0?cellHeight():1);
      int delta = h - (s % h);
      return s+delta+2*frameWidth();
