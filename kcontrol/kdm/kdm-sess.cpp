@@ -274,7 +274,7 @@ void KDMSessionsWidget::loadSettings()
 
   // read restart and shutdown cmds
   restartstr = c->readEntry("Restart", "/sbin/reboot");
-  shutdownstr = c->readEntry("Shutdown", "/sbin/shutdown");
+  shutdownstr = c->readEntry("Shutdown", "/sbin/halt");
 
   str = c->readEntry("ShutDownButton", "All");
   if(str == "All")

@@ -308,9 +308,14 @@ KDMShutdown::pw_entered()
 void
 KDMShutdown::bye_bye()
 {
-     if( cur_action)
-	  system( cur_action);
-     else
+     if( cur_action) {
+	  if( fork() == 0) {
+	       system( cur_action);
+	       exit(0);
+	  } else {
+	       exit( UNMANAGE_DISPLAY);
+	  }
+     } else
 	  exit( RESERVER_DISPLAY);
 }
 
