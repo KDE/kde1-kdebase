@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
 "POT-Creation-Date: 1998-02-25 16:11+0100\n"
-"PO-Revision-Date: 1998-01-20 22:22 CET\n"
+"PO-Revision-Date: 1998-02-25 21:43 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
@@ -14,34 +14,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kmenuedit.cpp:62
-#, fuzzy
 msgid "&Reload"
-msgstr "Recharger les menus"
+msgstr "&Recharger"
 
 #: kmenuedit.cpp:68
-#, fuzzy
 msgid "Change &Menuname"
-msgstr "Changer le nom du menu"
+msgstr "Changer le nom du &menu"
 
 #: kmenuedit.cpp:69
-#, fuzzy
 msgid "Reload &Filetypes"
-msgstr "Recharger les types de fichiers"
+msgstr "Recharger les types de &fichiers"
 
 #: kmenuedit.cpp:76
 msgid "by"
-msgstr ""
+msgstr "par"
 
 #: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
 msgstr "Changements non enregistrés !"
 
 #: kmenuedit.cpp:176 kmenuedit.cpp:201
-#, fuzzy
 msgid ""
 "\n"
 "Do you want to save your changes ?"
-msgstr "Voulez-vous enregistrer vos changements"
+msgstr "\nVoulez-vous enregistrer vos changements ?"
 
 #: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"
@@ -154,7 +150,7 @@ msgstr "Application"
 
 #: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
 msgid "Swallow"
-msgstr ""
+msgstr "Avaler"
 
 #: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
 msgid "Link"
@@ -213,18 +209,16 @@ msgid "Binary Pattern:"
 msgstr "Echantillon binaire :"
 
 #: entrydialog.cpp:300
-#, fuzzy
 msgid "Application to swallow:"
-msgstr "Application"
+msgstr "Application à avaler :"
 
 #: entrydialog.cpp:306
-#, fuzzy
 msgid "Title of application:"
-msgstr "Application"
+msgstr "Titre de l'application :"
 
 #: entrydialog.cpp:312
 msgid "Application to execute on button press:"
-msgstr ""
+msgstr "Application à exécuter sur pression du bouton :"
 
 #: entrydialog.cpp:342
 msgid "URL:"

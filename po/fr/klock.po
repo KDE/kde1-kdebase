@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
 "POT-Creation-Date: 1998-02-25 16:11+0100\n"
-"PO-Revision-Date: 1998-01-17 23:51 CET\n"
+"PO-Revision-Date: 1998-02-25 21:41 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
@@ -346,7 +346,7 @@ msgstr ""
 #: main.cpp:279
 #, c-format
 msgid "Option %s is not support on this plattform!"
-msgstr ""
+msgstr "L'option %s n'est pas supportée sur cette pate-forme !"
 
 #: main.cpp:306
 msgid ""

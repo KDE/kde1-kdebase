@@ -2,17 +2,16 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Cola Damien <damien@wanadoo.fr>, 1998.
 # software : KCMsysSOUND
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kcmsyssound\n"
 "POT-Creation-Date: 1998-02-25 16:11+0100\n"
-"PO-Revision-Date: 1998-02-11 14:46+0100\n"
+"PO-Revision-Date: 1998-02-25 21:40 CET\n"
 "Last-Translator: Cola Damien <damien@wanadoo.fr>\n"
-"Language-Team: FRENCH <FR@li.org>\n"
+"Language-Team: Français\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain;\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:53
 msgid "&Sound"
@@ -20,7 +19,7 @@ msgstr "&Son"
 
 #: main.cpp:80
 msgid "System Sounds"
-msgstr "Sons systeme"
+msgstr "Sons système"
 
 #: syssound.cpp:69
 msgid "Change to Desktop 1"
@@ -56,52 +55,49 @@ msgstr "Basculer vers le bureau 8"
 
 #: syssound.cpp:78
 msgid "Activate Window"
-msgstr "Activer la fenetre"
+msgstr "Activer la fenêtre"
 
 #: syssound.cpp:79
 msgid "Open new window"
-msgstr "Ouvrir une nouvelle fenetre"
+msgstr "Ouvrir une nouvelle fenêtre"
 
 #: syssound.cpp:80
 msgid "Close Window"
-msgstr "Fermer la fenetre"
+msgstr "Fermer la fenêtre"
 
 #: syssound.cpp:81
 msgid "Startup"
-msgstr "Demarrage"
+msgstr "Démarrage"
 
 #: syssound.cpp:102
 msgid "e&nable system sounds"
-msgstr "Permettre les so&ns systeme"
+msgstr "Permettre les so&ns système"
 
 #: syssound.cpp:107
 msgid "&Test"
-msgstr "&Test"
+msgstr "&Tester"
 
 #: syssound.cpp:111
 msgid "&Events:"
-msgstr "&Evenements"
+msgstr "&Evénements :"
 
 #: syssound.cpp:115
 msgid "&Sounds:"
-msgstr "&Sons:"
+msgstr "&Sons :"
 
 #: syssound.cpp:119
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr ""
-"Des fichiers WAV supplementaires peuvent etre deposes dans la liste de sons."
+msgstr "Des fichiers WAV supplémentaires peuvent être déposés dans la liste de sons."
 
 #: syssound.cpp:321
 msgid "Unsupported URL"
-msgstr "URL non supportee"
+msgstr "URL non supportée"
 
 #: syssound.cpp:322
 msgid ""
 "Sorry, this type of URL is currently unsupported by the KDE System Sound "
 "Module"
-msgstr ""
-"Desole, ce type d'URL n'est pas supportee actuellement par le composant son "
-"de KDE"
+msgstr "Désolé, ce type d'URL n'est pas supportée actuellement par le composant son de KDE"
 
 #: syssound.cpp:326
 #, c-format
@@ -110,9 +106,9 @@ msgid ""
 "%s\n"
 "does not seem to be a WAV--file!"
 msgstr ""
-"Desole, mais \n"
+"Désolé, mais \n"
 "%s\n"
-"ne semble pas etre un fichier WAV !"
+"ne semble pas être un fichier WAV !"
 
 #: syssound.cpp:327
 msgid "Improper File Extension"
@@ -127,8 +123,8 @@ msgid ""
 msgstr ""
 "Le fichier\n"
 "%s\n"
-"est deja dans la liste"
+"est déjà dans la liste"
 
 #: syssound.cpp:334
 msgid "File Already in List"
-msgstr "Fichier deja dans la liste"
+msgstr "Fichier déjà dans la liste"

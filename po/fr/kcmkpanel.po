@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-02-25 16:11+0100\n"
-"PO-Revision-Date: 1998-01-17 21:38 CET\n"
+"PO-Revision-Date: 1998-02-25 21:36 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
@@ -22,9 +22,8 @@ msgid "&Desktops"
 msgstr "&Bureaux"
 
 #: main.cpp:97
-#, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
-msgstr "utilisation : kcmkpanel [-init | {panel,desktops}]\n"
+msgstr "utilisation : kcmkpanel [-init | {panel,options,desktops}]\n"
 
 #: main.cpp:127
 msgid "KPanel Configuration"
@@ -36,112 +35,96 @@ msgstr "Emplacement"
 
 #: panel.cpp:60
 msgid "&Top"
-msgstr ""
+msgstr "&Haut"
 
 #: panel.cpp:61
-#, fuzzy
 msgid "&Left"
-msgstr "Haut/Gauche"
+msgstr "Gauch&e"
 
 #: panel.cpp:62
 msgid "&Bottom"
-msgstr ""
+msgstr "B&as"
 
 #: panel.cpp:74
 msgid "Taskbar"
 msgstr "Barre de tâches"
 
 #: panel.cpp:75
-#, fuzzy
 msgid "&Hidden"
-msgstr "Cachée"
+msgstr "&Cachée"
 
 #: panel.cpp:77
 msgid "T&op"
-msgstr ""
+msgstr "Hau&t"
 
 #: panel.cpp:79
 msgid "Botto&m"
-msgstr ""
+msgstr "Ba&s"
 
 #: panel.cpp:81
-#, fuzzy
 msgid "Top/Le&ft"
-msgstr "Haut/Gauche"
+msgstr "Haut/Ga&uche"
 
 #: panel.cpp:96
 msgid "T&iny"
-msgstr ""
+msgstr "Pet&it"
 
 #: panel.cpp:98
-#, fuzzy
 msgid "&Normal"
-msgstr "Style normal"
+msgstr "&Normal"
 
 #: panel.cpp:100
 msgid "L&arge"
-msgstr ""
+msgstr "G&rand"
 
 #: desktops.cpp:73
-#, fuzzy
 msgid "&Visible"
-msgstr "Nombre visible"
+msgstr "&Visible"
 
 #: desktops.cpp:82
-#, fuzzy
 msgid "&Width"
-msgstr "Largeur"
+msgstr "&Largeur"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
 msgstr "Info-bulles sur les menus"
 
 #: options.cpp:39
-#, fuzzy
 msgid "Show &Menu Tooltips"
-msgstr "Info-bulles sur les menus"
+msgstr "Afficher les &info-bulles sur les menus"
 
 #: options.cpp:44
 msgid "De&lay:"
-msgstr ""
+msgstr "&Délai :"
 
 #: options.cpp:56
 msgid "ms"
-msgstr ""
+msgstr "ms"
 
 #: options.cpp:68
 msgid "Others"
-msgstr ""
+msgstr "Autres"
 
 #: options.cpp:69
-#, fuzzy
 msgid "Personal &First"
-msgstr "Menu \"Personnel\" en premier"
+msgstr "Menu \"P&ersonnel\" en premier"
 
 #: options.cpp:71
-#, fuzzy
 msgid "Auto &Hide Panel"
-msgstr "Panneau auto-cachable"
+msgstr "Panneau &auto-cachable"
 
 #: options.cpp:73
-#, fuzzy
 msgid "Auto Hide &Taskbar"
-msgstr "Barre de tâches auto-cachable"
+msgstr "Barre de &tâches auto-cachable"
 
 #: options.cpp:81
 msgid "Clock"
-msgstr ""
+msgstr "Horloge"
 
 #: options.cpp:83
 msgid "&24h"
-msgstr ""
+msgstr "&24h"
 
 #: options.cpp:85
 msgid "&12h AM/PM"
-msgstr ""
-
-#~ msgid "Tiny Style"
-#~ msgstr "Style petit"
-
-#~ msgid "Large Style"
-#~ msgstr "Style grand"
+msgstr "&12h AM/PM"
