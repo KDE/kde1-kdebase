@@ -298,7 +298,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
     group = new QGroupBox( klocale->translate("Wallpaper"), this );
     group->setGeometry( 240, 190, 215, 130 );
 
-    QString path = kapp->kdedir();
+    QString path = kapp->kdedir().copy();
     path += "/share/wallpapers";
     QDir d( path, "*", QDir::Name, QDir::Readable | QDir::Files );
     const QStrList *list = d.entryList();

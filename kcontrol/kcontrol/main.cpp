@@ -55,7 +55,7 @@ int standalone(ConfigList *cl)
 
 int main(int argc, char **argv)
 {
-  KWMModuleApplication app(argc, argv, "kcc");
+  KWMModuleApplication app(argc, argv, "kcontrol");
   ConfigList configList;
 
   app.connectToKWM();

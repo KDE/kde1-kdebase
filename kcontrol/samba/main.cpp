@@ -57,7 +57,7 @@ KSambaApplication::KSambaApplication(int &argc, char **argv,
 
 int main(int argc, char **argv)
 {
-  KSambaApplication app(argc, argv, "samba");
+  KSambaApplication app(argc, argv, "kcmsamba");
   app.setTitle(klocale->translate("Samba"));
   
   if (app.runGUI())

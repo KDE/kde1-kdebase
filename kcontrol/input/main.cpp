@@ -81,7 +81,7 @@ void KInputApplication::apply()
 
 int main(int argc, char **argv)
 {
-  KInputApplication app(argc, argv, "input");
+  KInputApplication app(argc, argv, "kcminput");
   app.setTitle(klocale->translate("Input Devices Properties"));
   
   if (app.runGUI())

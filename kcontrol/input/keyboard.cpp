@@ -74,7 +74,7 @@ KeyboardConfig::KeyboardConfig (QWidget * parent, const char *name, bool init)
       c = new QLCDNumber (3, this, "c");
       c->setFrameStyle( QFrame::NoFrame );
       clabel = new QLabel(klocale->translate("Key click volume"), this);
-      percent = new QLabel(klocale->translate("%"), this); 
+      percent = new QLabel("%", this); 
       connect( click,   SIGNAL(valueChanged(int)), c, SLOT(display(int)) );
 
       repeatOn->adjustSize();

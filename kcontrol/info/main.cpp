@@ -62,7 +62,7 @@ KInfoApplication::KInfoApplication(int &argc, char **argv, const char *name)
 
 int main(int argc, char **argv)
 {
-  KInfoApplication app(argc, argv, "info");
+  KInfoApplication app(argc, argv, "kcminfo");
   app.setTitle(klocale->translate("System Information"));
   
   if (app.runGUI())

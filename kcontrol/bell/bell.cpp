@@ -89,7 +89,7 @@ KBellConfig::KBellConfig (QWidget * parent, const char *name, bool init)
       hertz = new QLabel(klocale->translate("Hz"), this);
       ms = new QLabel(klocale->translate("ms"), this);
 
-      test = new QPushButton("Test",this,"test");
+      test = new QPushButton((klocale->translate("Test"),this,"test");
 
       connect( volume,   SIGNAL(valueChanged(int)), v, SLOT(display(int)) );
       connect( pitch,    SIGNAL(valueChanged(int)), p, SLOT(display(int)) );

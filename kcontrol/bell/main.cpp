@@ -71,7 +71,7 @@ void KBellApplication::apply()
 
 int main(int argc, char **argv)
 {
-  KBellApplication app(argc, argv, "bell");
+  KBellApplication app(argc, argv, "kcmbell");
   app.setTitle(klocale->translate("Bell settings"));
   
   if (app.runGUI())

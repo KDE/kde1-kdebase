@@ -75,7 +75,7 @@ void KDMBackgroundWidget::setupPage(QWidget *)
       group = new QGroupBox( klocale->translate("Wallpaper"), this );
       group->setGeometry( 240, 190, 215, 130 );
 
-      QString path = kapp->kdedir();
+      QString path = kapp->kdedir().copy();
       path += "/share/wallpapers";
       QDir d( path, "*", QDir::Name, QDir::Readable | QDir::Files );
       QStrList list = *d.entryList();
@@ -140,7 +140,7 @@ void KDMBackgroundWidget::slotBrowse()
 {
 	QString path;
 
-	path = kapp->kdedir();
+	path = kapp->kdedir().copy();
 	path += "/share/wallpapers";
 
 	QDir dir( path );
