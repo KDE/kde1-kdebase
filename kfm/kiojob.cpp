@@ -248,17 +248,16 @@ void KIOJob::link()
 		    QTextStream pstream( &f );
 		    KConfig config( &pstream );
 		    config.setGroup( "KDE Desktop Entry" );
-		    config.writeEntry( "URL", QString( p2 ) );
-		    config.writeEntry( "Type", QString( "Link" ) );
+		    config.writeEntry( QString("URL"), QString(p2) );
+		    config.writeEntry( QString("Type"), QString("Link"));
 		    if ( strcmp( du.protocol(), "ftp" ) == 0 )
-			config.writeEntry( "Icon", QString( "ftp.xpm" ) );
+			config.writeEntry( QString("Icon"), QString("ftp.xpm") );
 		    else if ( strcmp( du.protocol(), "http" ) == 0 )
-			config.writeEntry( "Icon", QString( "www.xpm" ) );
+			config.writeEntry( QString("Icon"), QString("www.xpm") );
 		    else if ( strcmp( du.protocol(), "info" ) == 0 )
-			config.writeEntry( "Icon", QString( "info.xpm" ) );
+			config.writeEntry( QString("Icon"), QString("info.xpm") );
 		    else
-			config.writeEntry( "Icon", 
-							   QString( KFileType::getDefaultPixmap() ) );
+			config.writeEntry( QString("Icon"), QString(KFileType::getDefaultPixmap()) );
 		    config.sync();
 		    if ( globalNotify )
 			KIOServer::sendNotify( p2 );

@@ -9,7 +9,7 @@ MOC = @MOC@
 INCFLAGS = -I. @all_includes@ -I../..
 CXXFLAGS = -Wall
 DEFS = -DHAVE_CONFIG_H
-LDFLAGS = @all_libraries@ -lqt -lkdecore -lkhtmlw -lXext -lX11 @LIBSOCKET@ @LIBCOMPAT@ -lgif -ljpeg
+LDFLAGS = @all_libraries@ -lkdecore -lkhtmlw -lqt -lXext -lX11 @LIBSOCKET@ @LIBCOMPAT@ -lgif -ljpeg
 
 ########## Implicit Rules ##########
 

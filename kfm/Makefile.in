@@ -2,7 +2,7 @@
 
 INCDIR	=	@all_includes@  -I..
 CXXFLAGS+=	$(INCDIR) 
-LDFLAGS	=	@all_libraries@ -lqt -lXext -lX11 -lkdecore -lkdeui -lkhtmlw @LIBSOCKET@ -ljpeg -lgif
+LDFLAGS	=	@all_libraries@ -lkdecore -lkdeui -lkhtmlw -lqt -lXext -lX11 @LIBSOCKET@ -ljpeg -lgif
 CXX 	=	@CXX@
 MOC	=	@MOC@
 
@@ -73,8 +73,8 @@ clean: cleanroot
 install:
 	$(INSTALL_DIR) $(BINDIR)
 	$(INSTALL_DIR) $(LIBDIR)
-	(cd apps && make install)
-	(cd filetypes && make install)
+	(cd apps && $(MAKE) install)
+	(cd filetypes && $(MAKE) install)
 	$(INSTALL) $(TARGET) $(BINDIR)
 	$(INSTALL_SHELL) ./setupKFM $(BINDIR)
 	$(INSTALL) ./kioslave/kioslave $(BINDIR)
@@ -85,8 +85,8 @@ install:
 	$(INSTALL_DATA) ./libkfm/kfm.h $(KDEINC)
 	$(INSTALL_DATA) ./libkfm/kfmclient_ipc.h $(KDEINC)
 	$(INSTALL_DATA) ./libkfm/ipc.h $(KDEINC)
-	(cd doc && make install)
-	(cd pics && make install)
+	(cd doc && $(MAKE) install)
+	(cd pics && $(MAKE) install)
 	$(INSTALL_DIR) $(LIBDIR)/kfm/config
 	$(INSTALL_DATA) kfmrc $(LIBDIR)/kfm/config
 	$(INSTALL_DIR) $(LIBDIR)/kfm/Desktop

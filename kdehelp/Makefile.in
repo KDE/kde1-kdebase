@@ -8,7 +8,7 @@ CXX = @CXX@
 MOC = @MOC@
 INCFLAGS = -I. @all_includes@ -I../kfm/libkfm -I.. -I../..
 CXXFLAGS = -Wall 
-LDFLAGS = @all_libraries@ -lqt -L../kfm/libkfm -lkfm -lkdecore -lkhtmlw -lXext -lX11 @LIBSOCKET@ @LIBCOMPAT@ -lgif -ljpeg
+LDFLAGS = @all_libraries@ -L../kfm/libkfm -lkfm -lkdecore -lkhtmlw -lqt -lXext -lX11 @LIBSOCKET@ @LIBCOMPAT@ -lgif -ljpeg
 DEFS = -DHAVE_CONFIG_H
 
 ############# Install ##############
@@ -21,7 +21,7 @@ prefix = @prefix@
 BINDIR = $(prefix)/bin
 CGIDIR = $(prefix)/cgi-bin
 LIBDIR = $(prefix)/lib
-APPSDIR = $(LIBDIR)/applications
+APPSDIR = $(LIBDIR)/apps
 DOCSDIR = $(prefix)/doc/HTML
 
 ########## Implicit Rules ##########
@@ -56,7 +56,7 @@ helpindex:
 install:
 	$(INSTALL_DIR) $(BINDIR)
 	$(INSTALL) $(TARGET) $(BINDIR)
-	(cd doc && make install)
+	(cd doc && $(MAKE) install)
 	$(INSTALL_DIR) $(CGIDIR)
 	$(INSTALL) search/helpsearch $(CGIDIR)
 	$(INSTALL) index/helpindex $(CGIDIR)

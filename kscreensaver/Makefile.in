@@ -7,9 +7,9 @@
 CXX = @CXX@
 CC = @CC@
 MOC = @MOC@
-INCFLAGS = -I. @all_includes@ -I../..
+INCFLAGS = -I. @all_includes@ -I..
 CXXFLAGS += $(INCFLAGS) @DEFS@ $(DEBUG)
-LDFLAGS = @all_libraries@ -L. -lqt -lkdecore -lkdeui -lXext -lX11
+LDFLAGS = @all_libraries@ -L. -lkdecore -lkdeui -lqt -lXext -lX11
 
 ############# Install ##############
 
