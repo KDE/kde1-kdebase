@@ -519,6 +519,7 @@ void MenuButton::dndMouseReleaseEvent( QMouseEvent *e)
       move_group = FALSE;
       move_button = FALSE;
       emit posChanged(id, pos());
+      return;
     }
   if ( hit )
     {                                // mouse release on button
