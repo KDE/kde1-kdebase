@@ -2,25 +2,23 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kcmkeys\n"
 "POT-Creation-Date: 1999-01-08 01:16+0100\n"
-"PO-Revision-Date: 1998-12-12 20:00+0200\n"
-"Last-Translator: Montel laurent <montell@club-internet.fr>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"PO-Revision-Date: 1999-01-29 21:00+0200\n"
+"Last-Translator: Francois-Xavier DURANCEAU <Francois-Xavier.Duranceau@loria.fr>\n"
+"Language-Team: Français <fr@li.org>\n" "MIME-Version: 1.0\n" 
+"Content-Type: text/plain; charset=CHARSET\n" 
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:72
 msgid "&Standard shortcuts"
-msgstr ""
+msgstr "Raccourcis &standards"
 
 #: main.cpp:80
 msgid "&Global shortcuts"
-msgstr ""
+msgstr "Raccourcis &globaux"
 
 #: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
@@ -28,19 +26,19 @@ msgstr "utilisation : kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:132
 msgid "Key binding settings"
-msgstr ""
+msgstr "Configuration des raccourcis clavier"
 
 #: keyconfig.cpp:106
 msgid "Current scheme"
-msgstr ""
+msgstr "Modèle courant"
 
 #: keyconfig.cpp:108
 msgid "KDE default"
-msgstr ""
+msgstr "Standard KDE"
 
 #: keyconfig.cpp:115
 msgid "&Key scheme"
-msgstr "&Raccourci clavier"
+msgstr "Modèle de &raccourcis"
 
 #: keyconfig.cpp:126
 msgid "&Add ..."
@@ -52,7 +50,7 @@ msgstr "&Enregistrer les modifications"
 
 #: keyconfig.cpp:211
 msgid "Error removing scheme"
-msgstr ""
+msgstr "Erreur de suppression du modèle"
 
 #: keyconfig.cpp:212
 msgid ""
@@ -60,9 +58,9 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the key scheme is stored."
 msgstr ""
-"Ce raccourci clavier ne peut être enlever.\n"
-"Peut-être n'avez vous pas la permission de modifier le fichier\n"
-"système ou le raccourci clavier est stocké."
+"Ce modèle de raccourcis ne peut pas être supprimé.\n"
+"Peut-être n'avez-vous pas la permission de modifier le fichier\n"
+"dans lequel le modèle de raccourcis est stocké."
 
 #: keyconfig.cpp:343
 msgid "Naming conflict"
@@ -74,12 +72,13 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the key scheme list."
 msgstr ""
-"Utilisé un nom unique pour ce nouveau raccourci\n"
-"Celui-ci apparaît déjà dans la liste des raccourcis."
+"Veuillez choisir un nom unique pour ce nouveau modèle\n"
+"de raccourcis. Celui que vous avez entré apparaît déjà\n"
+"dans la liste des modèles de raccourcis."
 
 #: savescm.cpp:18
 msgid "Add a key scheme"
-msgstr "Ajouter un raccourci clavier"
+msgstr "Ajouter un modèle de raccourcis"
 
 #: savescm.cpp:32
 msgid ""
@@ -89,18 +88,23 @@ msgid ""
 "The keys currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
+"Entrez un nom pour le nouveau modèle de\n"
+"raccourcis à ajouter dans votre liste personnelle.\n"
+"\n"
+"Les raccourcis actuellement utilisés dans l'aperçu\n"
+"seront copiés dans ce modèle pour l'initialiser."
 
 #: ../../kwm/kwmbindings.cpp:1
 msgid "Task manager"
-msgstr ""
+msgstr "Gestionnaire de tâches"
 
 #: ../../kwm/kwmbindings.cpp:2
 msgid "Kill window mode"
-msgstr "Mode de destruction de fenêtre"
+msgstr "Mode destruction de fenêtre"
 
 #: ../../kwm/kwmbindings.cpp:3
 msgid "Execute command"
-msgstr "Executer la commande"
+msgstr "Exécuter une commande"
 
 #: ../../kwm/kwmbindings.cpp:4
 msgid "Window operations menu"
@@ -108,19 +112,19 @@ msgstr "Menu des actions sur la fenêtre"
 
 #: ../../kwm/kwmbindings.cpp:5
 msgid "Pop-up system menu"
-msgstr ""
+msgstr "Menu système déroulant"
 
 #: ../../kwm/kwmbindings.cpp:7
 msgid "Window raise"
-msgstr ""
+msgstr "Placer la fenêtre dessus"
 
 #: ../../kwm/kwmbindings.cpp:8
 msgid "Window lower"
-msgstr ""
+msgstr "Placer la fenêtre dessous"
 
 #: ../../kwm/kwmbindings.cpp:9
 msgid "Window close"
-msgstr "Fermeture de la fenêtre"
+msgstr "Fermer la fenêtre"
 
 #: ../../kwm/kwmbindings.cpp:10
 msgid "Window iconify"
@@ -136,55 +140,55 @@ msgstr "Déplacer la fenêtre"
 
 #: ../../kwm/kwmbindings.cpp:13
 msgid "Window toggle sticky"
-msgstr ""
+msgstr "Changer le clouage/déclouage"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
-msgstr "Commuter vers le bureau 1"
+msgstr "Basculer vers le bureau 1"
 
 #: ../../kwm/kwmbindings.cpp:16
 msgid "Switch to desktop 2"
-msgstr "Commuter vers le bureau 2"
+msgstr "Basculer vers le bureau 2"
 
 #: ../../kwm/kwmbindings.cpp:17
 msgid "Switch to desktop 3"
-msgstr "Commuter vers le bureau 3"
+msgstr "Bacsuler vers le bureau 3"
 
 #: ../../kwm/kwmbindings.cpp:18
 msgid "Switch to desktop 4"
-msgstr "Commuter vers le bureau 4"
+msgstr "Basculer vers le bureau 4"
 
 #: ../../kwm/kwmbindings.cpp:19
 msgid "Switch to desktop 5"
-msgstr "Commuter vers le bureau 5"
+msgstr "Baculer vers le bureau 5"
 
 #: ../../kwm/kwmbindings.cpp:20
 msgid "Switch to desktop 6"
-msgstr "Commuter vers le bureau 6"
+msgstr "Basculer vers le bureau 6"
 
 #: ../../kwm/kwmbindings.cpp:21
 msgid "Switch to desktop 7"
-msgstr "Commuter vers le bureau 7"
+msgstr "Basculer vers le bureau 7"
 
 #: ../../kwm/kwmbindings.cpp:22
 msgid "Switch to desktop 8"
-msgstr "Commuter vers le bureau 8"
+msgstr "Basculer vers le bureau 8"
 
 #: ../../kwm/kwmbindings.cpp:24
 msgid "Switch one desktop to the right"
-msgstr "Commuter d'un bureau vers la droite"
+msgstr "Basculer d'un bureau vers la droite"
 
 #: ../../kwm/kwmbindings.cpp:25
 msgid "Switch one desktop to the left"
-msgstr "Commuter d'un bureau vers la gauche"
+msgstr "Basculer d'un bureau vers la gauche"
 
 #: ../../kwm/kwmbindings.cpp:26
 msgid "Switch one desktop up"
-msgstr "Commuter d'un bureau vers le haut"
+msgstr "Basculer d'un bureau vers le haut"
 
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
-msgstr "Commuter d'un bureau vers le bas"
+msgstr "Basculer d'un bureau vers le bas"
 
 #: stdbindings.cpp:3
 msgid "New"
@@ -192,11 +196,11 @@ msgstr "Nouveau"
 
 #: stdbindings.cpp:8
 msgid "Next"
-msgstr "Prochain"
+msgstr "Suivant"
 
 #: stdbindings.cpp:9
 msgid "Prior"
-msgstr ""
+msgstr "Précédent"
 
 #: stdbindings.cpp:14
 msgid "Find"
@@ -204,7 +208,7 @@ msgstr "Chercher"
 
 #: stdbindings.cpp:17
 msgid "Home"
-msgstr ""
+msgstr "Début"
 
 #: stdbindings.cpp:18
 msgid "End"

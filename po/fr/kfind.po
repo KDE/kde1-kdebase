@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1998-01-17 23:30 CET\n"
-"Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
+"PO-Revision-Date: 1999-01-29 23:30 CET\n"
+"Last-Translator: Francois-Xavier Duranceau <Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; \n"
@@ -176,7 +176,7 @@ msgstr "&La taille est :"
 
 #: kftabdlg.cpp:217
 msgid "KB"
-msgstr ""
+msgstr "Koctets"
 
 #: kftabdlg.cpp:236
 msgid "All Files and Folders"
@@ -360,17 +360,4 @@ msgstr "Type d'archive inconnu !"
 msgid "Error while creating child process!"
 msgstr "Erreur lors de la création du processus fils !"
 
-#~ msgid "&Cut"
-#~ msgstr "&Couper"
 
-#~ msgid "Properties"
-#~ msgstr "Propriétés"
-
-#~ msgid "Files"
-#~ msgstr "Fichiers"
-
-#~ msgid "Kfind &help"
-#~ msgstr "&Aide sur Kfind"
-
-#~ msgid "About &Qt"
-#~ msgstr "A propos de &Qt"

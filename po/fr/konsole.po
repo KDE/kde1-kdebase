@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konsole 0.9.8\n"
 "POT-Creation-Date: 1998-12-22 01:15+0100\n"
-"PO-Revision-Date: 1998-12-05 00:35 CET\n"
+"PO-Revision-Date: 1999-01-29 21:35 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français <fr@li.org>\n"
@@ -104,7 +104,7 @@ msgstr "&Taille"
 
 #: main.C:334
 msgid "&Schema"
-msgstr "&Schéma"
+msgstr "M&odèle"
 
 #: main.C:336
 msgid "&Save options"
@@ -168,7 +168,7 @@ msgstr ""
 #: main.C:732
 #, c-format
 msgid "`%s' terminated abnormally."
-msgstr "`%s' terminé anormalement."
+msgstr "`%s' a terminé anormalement."
 
 #: main.C:735
 msgid ""
@@ -182,56 +182,4 @@ msgstr ""
 msgid "Welcome to the console"
 msgstr "Bienvenue à la console"
 
-#~ msgid "New"
-#~ msgstr "Nouveau"
 
-#~ msgid "(%d columns x %d lines)"
-#~ msgstr "(%d colonnes x %d lignes)"
-
-#~ msgid "&VGA"
-#~ msgstr "&VGA"
-
-#~ msgid "&black/white"
-#~ msgstr "&noir/blanc"
-
-#~ msgid "&white/black"
-#~ msgstr "&blanc/noir"
-
-#~ msgid "&green/black"
-#~ msgstr "&vert/noir"
-
-#~ msgid "black/light&yellow"
-#~ msgstr "noir/&jaune"
-
-#~ msgid "&System colors"
-#~ msgstr "Couleurs &système"
-
-#~ msgid "&Custom Colors"
-#~ msgstr "Couleurs &utilisateur"
-
-#~ msgid "&Color"
-#~ msgstr "&Couleur"
-
-#~ msgid "&Background"
-#~ msgstr "&Fond d'écran"
-
-#~ msgid "&Exit"
-#~ msgstr "&Quitter"
-
-#~ msgid "&Foreground Color"
-#~ msgstr "Couleur de &texte"
-
-#~ msgid "&Background Color"
-#~ msgstr "Couleur de &fond d'écran"
-
-#~ msgid "&Handbook..."
-#~ msgstr "&Manuel..."
-
-#~ msgid "&File"
-#~ msgstr "&Fichier"
-
-#~ msgid "&Options"
-#~ msgstr "&Options"
-
-#~ msgid "&Help"
-#~ msgstr "&Aide"

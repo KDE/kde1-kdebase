@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
 "POT-Creation-Date: 1999-01-22 01:13+0100\n"
-"PO-Revision-Date: 1999-01-16 19:30+0100\n"
+"PO-Revision-Date: 1999-01-29 22:00+0100\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français <fr@li.org>\n"
@@ -66,15 +66,16 @@ msgstr ""
 "Emulation du verrouillage Majuscule désactivée"
 
 #: kikbd.cpp:1003
-#, fuzzy
 msgid "Exiting International Keyboard"
-msgstr "Clavier International"
+msgstr "Arrêt du Clavier International"
 
 #: kikbd.cpp:1004
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
+"Vous allez quitter l'outil \"Clavier International\".\n"
+" Voulez-vous le lancer automatiquement à la prochaine connexion ?"
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -126,55 +127,55 @@ msgstr "(Aucun)"
 
 #: kikbdconf.cpp:101 kikbdconf.cpp:113
 msgid "Right Alt"
-msgstr ""
+msgstr "Alt droit"
 
 #: kikbdconf.cpp:102 kikbdconf.cpp:114
 msgid "Right Control"
-msgstr ""
+msgstr "Control droit"
 
 #: kikbdconf.cpp:103
 msgid "Rights (Alt+Shift)"
-msgstr ""
+msgstr "Droits (Alt+Shift)"
 
 #: kikbdconf.cpp:104
 msgid "Rights (Ctrl+Alt)"
-msgstr ""
+msgstr "Droits (Ctrl+Alt)"
 
 #: kikbdconf.cpp:105
 msgid "Rights (Ctrl+Shift)"
-msgstr ""
+msgstr "Droits (Ctrl+Shift)"
 
 #: kikbdconf.cpp:106
 msgid "Lefts  (Alt+Shift)"
-msgstr ""
+msgstr "Gauches (Alt+Shift)"
 
 #: kikbdconf.cpp:107
 msgid "Lefts  (Ctrl+Alt)"
-msgstr ""
+msgstr "Gauches (Ctrl+Alt)"
 
 #: kikbdconf.cpp:108
 msgid "Lefts  (Ctrl+Shift)"
-msgstr ""
+msgstr "Gauches (Ctrl+Shift)"
 
 #: kikbdconf.cpp:109
 msgid "Both Shift's (Shift+Shift)"
-msgstr ""
+msgstr "Deux Shifts  (Shift+Shift)"
 
 #: kikbdconf.cpp:115
 msgid "Right Meta"
-msgstr ""
+msgstr "Meta droit"
 
 #: kikbdconf.cpp:116
 msgid "Left  Alt"
-msgstr ""
+msgstr "Alt gauche"
 
 #: kikbdconf.cpp:117
 msgid "Left  Control"
-msgstr ""
+msgstr "Control gauche"
 
 #: kikbdconf.cpp:118
 msgid "Left  Meta"
-msgstr ""
+msgstr "Meta gauche"
 
 #: kikbdconf.cpp:121
 msgid "Top Left"
@@ -197,19 +198,21 @@ msgid "X default codes"
 msgstr "codes X par défaut"
 
 #: kikbdconf.cpp:209
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "Do you want to configure now?"
 msgstr ""
-"\n"
-"Voulez-vous continuer ?"
+"%s\n"
+"Voulez-vous effectuer la configuration maintenant ?"
 
 #: kikbdconf.cpp:217
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
 msgstr ""
+"Vous utilisez \"Clavier International\" pour la première fois.\n"
+"J'ai installé des paramètres par défaut."
 
 #: kikbdconf.cpp:359
 msgid "unknown"
@@ -264,14 +267,12 @@ msgid "alternative symbols"
 msgstr "symboles alternatifs"
 
 #: kikbdconf.cpp:429
-#, fuzzy
 msgid "Language"
 msgstr "langue"
 
 #: kikbdconf.cpp:433
-#, fuzzy
 msgid "Charset"
-msgstr "jeu de caractères"
+msgstr "Table de caractères"
 
 #: kikbdconf.cpp:479
 msgid "International keyboard ERROR"
@@ -493,7 +494,7 @@ msgstr "&Polise personnalisée"
 
 #: widgets.cpp:592
 msgid "Customize Font for text label or use global settings"
-msgstr ""
+msgstr "Personnalisez la Police pour le texte ou utilisez les paramètres globaux"
 
 #: widgets.cpp:596
 msgid "C&hange Font"
@@ -501,7 +502,7 @@ msgstr "C&hanger la police"
 
 #: widgets.cpp:641
 msgid "&Autostart"
-msgstr ""
+msgstr "Démarrage &automatique"
 
 #: widgets.cpp:642
 msgid "Start up automatically"
@@ -509,12 +510,11 @@ msgstr "Lancement automatiqe"
 
 #: widgets.cpp:648
 msgid "&Docked"
-msgstr "Insertion &dans le panneau"
+msgstr "Insertion dans le &panneau"
 
 #: widgets.cpp:649
-#, fuzzy
 msgid "Dock into special area in the panel"
-msgstr "Insérer dans la zone spéciale de kpanel"
+msgstr "Insérer dans la zone spéciale du panneau"
 
 #: widgets.cpp:658
 msgid "Place"
@@ -540,26 +540,4 @@ msgstr "&Démarrage"
 msgid "International Keyboard"
 msgstr "Clavier International"
 
-#~ msgid ""
-#~ "%s\n"
-#~ "Do you want to start Configuration?"
-#~ msgstr ""
-#~ "%s\n"
-#~ "Voulez-vous lancer la configuration ?"
 
-#~ msgid "Your configuration is empty. Install system default."
-#~ msgstr "Votre configuration est vide. Installation du système par défaut."
-
-#~ msgid ""
-#~ "Configuration file you have has older format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "Votre fichier de configuration a un format plus ancien que prévu.\n"
-#~ "Quelques paramètres pourraient être incorrects."
-
-#~ msgid ""
-#~ "Configuration file you have has newer format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "Votre fichier de configuration a un format plus récent que prévu.\n"
-#~ "Quelques paramètres pourraient être incorrects."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1998-12-08 21:30+0100\n"
+"PO-Revision-Date: 1999-01-30 23:45+0100\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>Language-Team: Français\n"
 "MIME-Version: 1.0\n"
@@ -63,13 +63,12 @@ msgid "Bookmarks"
 msgstr "Signets"
 
 #: krootwm.C:280
-#, fuzzy
 msgid "Arrange Window Maker icons"
-msgstr "Ranger les icônes"
+msgstr ""
 
 #: krootwm.C:281
 msgid "Show all"
-msgstr ""
+msgstr "Afficher tout"
 
 #: krootwm.C:282
 msgid "Hide other"
@@ -85,16 +84,15 @@ msgstr ""
 
 #: krootwm.C:286
 msgid "Restart"
-msgstr ""
+msgstr "Redémarrer"
 
 #: krootwm.C:288
 msgid "Exit"
-msgstr ""
+msgstr "Quitter"
 
 #: krootwm.C:289
-#, fuzzy
 msgid "Window Maker"
-msgstr "Fenêtres"
+msgstr ""
 
 #: krootwm.C:306
 msgid "Desk"
@@ -119,7 +117,7 @@ msgstr "Erreur : le modèle \"%s\" n'existe pas"
 
 #: krootwm.C:843
 msgid "Could not create folder"
-msgstr "Création du répertoire impossible"
+msgstr "Impossible de créer le répertoire"
 
 #: krootwm.C:911
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -127,4 +125,4 @@ msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: krootwm.C:915
 msgid "Usage:"
-msgstr "Utilisation :"
+msgstr "Utilisation : "

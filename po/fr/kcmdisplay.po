@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
 "POT-Creation-Date: 1999-01-15 01:15+0100\n"
-"PO-Revision-Date: 1999-01-16 15:00 CET\n"
+"PO-Revision-Date: 1999-01-29 21:15 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
@@ -113,7 +113,7 @@ msgstr "Confi&gurer..."
 
 #: backgnd.cpp:418
 msgid "&Dock into the panel"
-msgstr "Inclure &dans le panneau"
+msgstr "Insérer &dans le panneau"
 
 #: backgnd.cpp:443
 msgid "Cache size (kB):"
@@ -316,7 +316,7 @@ msgstr "Elevé"
 
 #: colorscm.cpp:304
 msgid "Error removing"
-msgstr "Erreur en effaçant"
+msgstr "Erreur d'effacement"
 
 #: colorscm.cpp:305
 msgid ""
@@ -326,7 +326,7 @@ msgid ""
 msgstr ""
 "Ce modèle n'a pas pu être effacé.\n"
 "Vous n'avez peut-être pas la permission de modifier le\n"
-"fichier système où le modèle de couleurs est enregistré."
+"fichier dans lequel le modèle de couleurs est enregistré."
 
 #: colorscm.cpp:362
 msgid "Naming error"

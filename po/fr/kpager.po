@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kpager\n"
+"POT-Creation-Date: 1998-12-15 07:34+0100\n"
+"PO-Revision-Date: 1999-01-18 22:30+0100\n"
+"Last-Translator: Francois-Xavier DURANCEAU <Francois-Xavier.Duranceau@loria.fr>\n"
+"Language-Team: Français <fr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kpager.cpp:72
+msgid "Toggle Global Desktop"
+msgstr "Bascule le Bureau Global"
+
+#: kpager.cpp:74
+msgid "Toggle Menubar"
+msgstr "Bascule la barre de menus"
+
+#: kpager.cpp:77
+msgid "Move Right"
+msgstr "Déplacer à droite"
+
+#: kpager.cpp:79
+msgid "Move Left"
+msgstr "Déplacer à gauche"
+
+#: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
+msgid "Hide &Global Desktop"
+msgstr "Cacher le bureau &global"
+
+#: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
+msgid "Show &Global Desktop"
+msgstr "Afficher le bureau &global"
+
+#: kpager.cpp:97 kpager.cpp:380
+msgid "Hide &Menubar"
+msgstr "Cacher la barre de &menus"
+
+#: kpager.cpp:101 kpager.cpp:386
+msgid "&2 Rows"
+msgstr "&2 lignes"
+
+#: kpager.cpp:104
+msgid "&One Click change Desktop"
+msgstr "&Un clic change de bureau"
+
+#: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
+msgid "Hide Desktop &Names"
+msgstr "Cacher les &noms de bureau"
+
+#: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
+msgid "Show Desktop &Names"
+msgstr "Afficher les &noms de bureau"
+
+#: kpager.cpp:115 kpager.cpp:402
+msgid "Plain"
+msgstr "Plein"
+
+#: kpager.cpp:118 kpager.cpp:404
+msgid "Icon"
+msgstr "Icône"
+
+#: kpager.cpp:121 kpager.cpp:406
+msgid "Pixmap"
+msgstr "Image"
+
+#: kpager.cpp:125 kpager.cpp:412
+msgid "Draw Mode"
+msgstr "Mode d'afichage"
+
+#: kpager.cpp:129
+#, c-format
+msgid ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"KPager's homepage is at : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n"
+"This is free software, and you are welcome to redistribute it\n"
+"under certain conditions\n"
+msgstr ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Espagne)\n"
+"\n"
+"La page Web de KPager est à : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager vous est fourni SANS AUCUNE GARANTIE ; pour plus de détails, voir le fichier COPYING\n"
+"Ceci est un logiciel libre, et vous êtes invité à le redistribuer\n"
+"sous certaines conditions\n"
+
+#: kpager.cpp:382
+msgid "Show &Menubar"
+msgstr "Afficher la barre de &menus"
+
+#: kpager.cpp:389
+msgid "One Click change Desktop"
+msgstr "Un clic change de bureau"
+
+#: kpager.cpp:446
+msgid "&Maximize"
+msgstr "&Maximiser"
+
+#: kpager.cpp:447
+msgid "&Iconify"
+msgstr "&Icônifier"
+
+#: kpager.cpp:449
+msgid "&UnSticky"
+msgstr "&Déclouer"
+
+#: kpager.cpp:451
+msgid "&Sticky"
+msgstr "&Clouer"
+
+#: kpager.cpp:453
+msgid "&To Desktop"
+msgstr "Sur le &bureau"

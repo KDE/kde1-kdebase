@@ -266,7 +266,7 @@ msgstr ""
 
 #: bsod.cpp:1192
 msgid "Black Screen of Death"
-msgstr "Ecran vide de la mort"
+msgstr "Ecran noir de la mort"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -464,7 +464,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "L'option %s n'est pas supportée sur cette plateforme !"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -477,7 +476,7 @@ msgstr ""
 "Votre système utilise des mots de passe cachés.\n"
 "Veuillez contacter votre administrateur système.\n"
 "\n"
-"Dites-lui que vous avez besoin d'avoir les mises en veille setuid root."
+"Dites-lui de rendre le programme kcheckpass setuid."
 
 #: main.cpp:427
 msgid "Shadow Passwords"

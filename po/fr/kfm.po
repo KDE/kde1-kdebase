@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1999-01-22 01:13+0100\n"
-"PO-Revision-Date: 1999-01-16 15:00 CET\n"
+"PO-Revision-Date: 1999-01-30 17:00 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
@@ -218,7 +218,7 @@ msgstr ""
 "Gestionnaire de proxy par Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de\n"
 "\n"
-"Responsable actuel: David Faure\n"
+"Responsable actuel : David Faure\n"
 "faure@kde.org"
 
 #: kfmgui.cpp:442
@@ -423,7 +423,7 @@ msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
 msgstr ""
-"C'est page n'est sûre\n"
+"C'est page n'est pas sûre\n"
 "mais elle contient un lien vers votre système de fichiers local."
 
 #: kfmview.cpp:1225
@@ -1166,7 +1166,7 @@ msgstr ""
 "Le mot de passe est peut-être incorrect"
 
 #: kiojob.cpp:1352
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Tar reported an error\n"
 "%s"
@@ -1175,7 +1175,7 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1355
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Gzip reported an error for\n"
 "%s"
@@ -1498,5 +1498,3 @@ msgstr ""
 "Erreur de syntaxe :\n"
 "kfmexec commande [URLs....]\n"
 
-#~ msgid "Dont know what to do"
-#~ msgstr "Le système ne sait pas quoi faire."
