@@ -188,6 +188,7 @@ AC_OUTPUT(Makefile \
 	doc/kfind/Makefile \
 	doc/kfm/Makefile \
 	doc/kfontmanager/Makefile \
+	doc/kpanel/Makefile \
 	doc/kmenuedit/Makefile \
 	doc/kvt/Makefile \
 	doc/kwm/Makefile \
