@@ -65,8 +65,8 @@ binary-arch:	checkroot build
 	chown root.shadow debian/tmp/usr/X11R6/bin/*kss
 	chown root.shadow debian/tmp/usr/X11R6/bin/klock
 	chmod 2755 debian/tmp/usr/X11R6/bin/*kss 
-	chmod 2755 debian/tmp/usr/X11R6/bin/klock
-	chmod 4755 debian/tmp/usr/X11R6/bin/kvt
+#       security hole
+#	chmod 4755 debian/tmp/usr/X11R6/bin/kvt
 	dh_movefiles
 	dh_undocumented `cat debian/man-pages`
 	dh_installdocs
