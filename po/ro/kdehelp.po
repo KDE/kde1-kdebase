@@ -287,7 +287,6 @@ msgstr ""
 "\n"
 "Acest program este licenþiat sub GNU General Public License (GPL)."
 
-
 #: mainwidget.cpp:202
 msgid "&Goto"
 msgstr "&Salt la"
@@ -343,6 +342,7 @@ msgid ""
 msgstr ""
 "Sistemul de Informaþii KDE\n"
 "Versiunea "
+
 #: mainwidget.cpp:585
 msgid "About KDE Help"
 msgstr "Despre Informaþii KDE"

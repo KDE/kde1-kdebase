@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
+"POT-Creation-Date: 1998-01-19 22:47+0100\n"
 "PO-Revision-Date: 1998-01-19 23:42 CET\n"
-"Last-Translator: didier Belot <dib@avo.fr>\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
@@ -679,7 +679,8 @@ msgstr "Titre de l'application"
 
 #: kfmprops.cpp:723
 msgid "enter the exact title, as normally shown in the window titlebar"
-msgstr "entrer le titre exact, comme normalement montré dans la barre de titres"
+msgstr ""
+"entrer le titre exact, comme normalement montré dans la barre de titres"
 
 #: kfmprops.cpp:727
 msgid "Run in terminal"
@@ -866,7 +867,8 @@ msgstr "Ajouter un signet"
 
 #: kiojob.cpp:119
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
-msgstr "ERREUR INTERNE : vous devez au moins spécifier le périphérique à attacher"
+msgstr ""
+"ERREUR INTERNE : vous devez au moins spécifier le périphérique à attacher"
 
 #: kiojob.cpp:216 kiojob.cpp:224 kiojob.cpp:999 kiojob.cpp:1139
 #, c-format

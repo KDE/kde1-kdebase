@@ -19,7 +19,9 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: se pare ca este deja în funcþiune un alt Window Manager, aºa cã nu am pornit kwm-ul\n"
+"kwm: se pare ca este deja în funcþiune un alt Window Manager, aºa cã nu am "
+"pornit kwm-ul\n"
+
 #: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: eroare în timpul iniþializãrii; pa \n"
@@ -139,6 +141,7 @@ msgid ""
 msgstr ""
 "Aplicaþiile urmãtoare nu pot fi refãcute în sesiunea urmãtoare,\n"
 "ci doar restartate. Asigurã-te cã nu conþin date nesalvate importante."
+
 #: logout.C:73
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"

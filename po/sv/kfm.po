@@ -414,8 +414,7 @@ msgstr ""
 msgid ""
 "Could not access\n"
 "%s"
-msgstr "Kunde inte accessa"
-"%s"
+msgstr "Kunde inte accessa%s"
 
 #: kbind.cpp:1653
 msgid "The \"Link=....\" entry is empty"
@@ -866,7 +865,8 @@ msgstr "INTERNT FEL: Du måste åtminstone ange vilken enhet som skall monteras"
 msgid ""
 "Malformed URL\n"
 "%s"
-msgstr "Ogiltlig URL\n"
+msgstr ""
+"Ogiltlig URL\n"
 "%s"
 
 #: kiojob.cpp:233
@@ -878,7 +878,8 @@ msgstr "Kan bara skapa länkar på lokala filsystem"
 msgid ""
 "Could not overwrite\n"
 "%s"
-msgstr "Kunde inte skriva över\n"
+msgstr ""
+"Kunde inte skriva över\n"
 "%s"
 
 #: kiojob.cpp:285 kiojob.cpp:308 kiojob.cpp:327
@@ -886,8 +887,7 @@ msgstr "Kunde inte skriva över\n"
 msgid ""
 "Could not make symlink to\n"
 "%s"
-msgstr "Kunde inte skapa en symbolisk länk till"
-"%s"
+msgstr "Kunde inte skapa en symbolisk länk till%s"
 
 #: kiojob.cpp:361
 #, c-format
@@ -899,7 +899,8 @@ msgstr " FEL: Kunde inte skriva till %s"
 msgid ""
 "Could not make directory\n"
 "%s"
-msgstr "Kunde inte skapa katalog\n"
+msgstr ""
+"Kunde inte skapa katalog\n"
 "%s"
 
 #: kiojob.cpp:464 kiojob.cpp:828
@@ -912,7 +913,8 @@ msgstr "FEL: Kunde inte komma åt katalogen '%s'"
 msgid ""
 "Could not access directory\n"
 "%s"
-msgstr "Kunde inte komma åt katalogen\n"
+msgstr ""
+"Kunde inte komma åt katalogen\n"
 "%s"
 
 #: kiojob.cpp:688
@@ -1204,8 +1206,8 @@ msgstr "logga in som:"
 msgid "Known bindings:"
 msgstr "Kända bindningar:"
 
-#: kproxydlg.cpp:10
 #
+#: kproxydlg.cpp:10
 msgid "Only HTTP-Proxy is implemented yet!"
 msgstr "Bara HTTP-Proxy är implementerad för närvarande!!"
 
@@ -1217,28 +1219,28 @@ msgstr "Ny proxy för:"
 msgid "KFM Browser Settings"
 msgstr "KFM bläddrar-inställningar"
 
-#: kbookmarkdlg.cpp:19 kbookmarkdlg.cpp:24
 #
+#: kbookmarkdlg.cpp:19 kbookmarkdlg.cpp:24
 msgid "Edit Bookmarks"
 msgstr "Redigera bokmärken"
 
-#: kbookmarkdlg.cpp:36
 #
+#: kbookmarkdlg.cpp:36
 msgid "Move up"
 msgstr "Flytta upp"
 
-#: kbookmarkdlg.cpp:37
 #
+#: kbookmarkdlg.cpp:37
 msgid "Move down"
 msgstr "Flytta ner"
 
-#: kbookmarkdlg.cpp:176
 #
+#: kbookmarkdlg.cpp:176
 msgid "Rename Bookmark"
 msgstr "Byt namn på bokmärke"
 
-#: kbookmarkdlg.cpp:178
 #
+#: kbookmarkdlg.cpp:178
 msgid "Rename Bookmark:"
 msgstr "Byt namn på bokmärke:"
 

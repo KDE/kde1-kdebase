@@ -94,7 +94,8 @@ msgstr "Varning !"
 
 #: confmenu.cpp:172
 msgid "If you delete this button you will lose all of its submenus"
-msgstr "Om du raderar den här knappen kommer du att förlora alla dess undermenyer"
+msgstr ""
+"Om du raderar den här knappen kommer du att förlora alla dess undermenyer"
 
 #: confmenu.cpp:273
 msgid "Wrong filename"
@@ -110,7 +111,8 @@ msgstr ""
 
 #: confmenu.cpp:293
 msgid "Changing the type of this button will delete all of its submenus"
-msgstr "Om du ändrar typ på den här knappen kommer alla dess undermenyer försvinna"
+msgstr ""
+"Om du ändrar typ på den här knappen kommer alla dess undermenyer försvinna"
 
 #: confmenu.cpp:314 confmenu.cpp:879
 msgid "no command"

@@ -59,8 +59,7 @@ msgstr ""
 #: titlebar.cpp:492
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr ""
-"Den högra delen av namnlisten är full. Stänger av 'maximera'-knappen\n"
+msgstr "Den högra delen av namnlisten är full. Stänger av 'maximera'-knappen\n"
 
 #: titlebar.cpp:532
 msgid ""
@@ -71,8 +70,7 @@ msgstr ""
 #: titlebar.cpp:565
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr ""
-"Den högra delen av namnlisten är full. Stänger av 'minimera'-knappen\n"
+msgstr "Den högra delen av namnlisten är full. Stänger av 'minimera'-knappen\n"
 
 #: titlebar.cpp:916
 msgid "Titlebar appearance"

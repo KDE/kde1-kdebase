@@ -277,7 +277,6 @@ msgstr ""
 "Rutine HTML de Martin Jones\n"
 "mjones@kde.org"
 
-
 #: kfmgui.cpp:1321
 msgid "Document: Done"
 msgstr "Document: Gata"
@@ -304,6 +303,7 @@ msgstr ""
 "Chiar vrei sã ºtergi fiºierul(ele) selectate ?\n"
 "\n"
 "Nu mai este nici o speranþã de recuperare."
+
 #: kfmtree.cpp:320 kfmview.cpp:345 kfmview.cpp:468 root.cpp:991
 msgid "ERROR: You dropped a URL over itself"
 msgstr "Eroare: Ai scãpat un URL peste el însuºi"

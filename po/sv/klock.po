@@ -392,7 +392,8 @@ msgstr ""
 "                     x = i inget (ignorera)\n"
 "                     x = s släck skärmen\n"
 "                     x = l lås skärmen\n"
-"                    ordning: övre vänstra, övre högra, nedre vänstra, nedre högra\n"
+"                    ordning: övre vänstra, övre högra, nedre vänstra, nedre "
+"högra\n"
 "  -delay num        Fördröjning innan skärmsläckaren startat\n"
 "                     (standardvärdet är 10 min)\n"
 "  -desc             Skriv skärmsläckarens beskrivning till stdout\n"
@@ -403,7 +404,6 @@ msgstr ""
 "  -preview wid      Kör i specifierat X-fönster\n"
 "  -inroot           Kör i rotfönstret\n"
 "  -test             Starta skärmsläckaren med en gång\n"
-
 
 #: morph3d.cpp:839
 msgid "GL can not render with root visual\n"
