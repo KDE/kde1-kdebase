@@ -5,8 +5,8 @@
 <!-- Title information -->
 
 <title>KDE Control Center - Keys
-<author> Mark Donahoe, Matthias Ettrich; documentation by Duncan Haldane.
-<date>v1.1. 19 December 1998
+<author> Mark Donahoe, Matthias Ettrich; documentation by Duncan.
+<date>v1.2. 19 August 1999
 
 <!-- Table of contents -->
 <toc>
@@ -104,59 +104,19 @@ Click on <bf>Cancel</bf> to
 close the key binding configuration window with no further changes.
 
 
-
-<sect> Configuration of the Standard Key Bindings.
-<p>
-
-(<it> This page documents the older standard Key configuration scheme;
-it will be removed once the new scheme is fully tested)</it>
-
-This screen configures the key bindings that provide  
-"<bf>Standard shortcuts</bf>"
-to a set of common "<bf>Actions</bf>" that can be taken by 
-many KDE applications.
-(A "<it>Key binding</it>" programs 
-a special key, or combination of keys, to initiate an action
-by an application.)
-
-When the Standard Key Binding configuration
-window first opens, your current key bindings 
-are displayed in the <it>Action list box</it> in the
-center of the screen.  
-
-To change a particular key binding, click on the corresponding
-action to highlight it; using the buttons
-below the Action list box, the following changes can be made:
-<itemize>
-<item> Press "<bf>No key</bf>" to remove the key binding.
- 
-<item> Press "<bf>Default key</bf>" to select the KDE default key binding. 
-(This button will only be enabled
-if there is a KDE default key binding for this action.)
-
-<item> Press "<bf>Custom key</bf>" to use your own choice
-of key binding.  Your chosen key may be combined with one or
-more of the <bf>SHIFT</bf>, <bf>CTRL</bf>, or <bf>ALT</bf>
-shift keys, by pressing the corresponding button.  Click on the
-representation of a key in the lower right of the screen to 
-activate it, and type the desired key on your keyboard.  If
-the key binding you select is invalid, or is in conflict with another
-key binding, you will be warned, and the change will not
-be made.
-</itemize>
-
-
-Click on <bf>Apply</bf> at the bottom of the screen to replace
-the currently used key bindings with those shown in the
-Action list box.
-
-Click on <bf>OK</bf>
-to do this and also close the key binding configuration window.
-
-Click on <bf>Default</bf> to restore all the default KDE standard
-shortcut key bindings.
-
-Click on <bf>Cancel</bf> to
-close the key binding configuration window with no further changes.
-
 </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
