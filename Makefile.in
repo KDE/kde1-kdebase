@@ -3,53 +3,10 @@ SHELL = /bin/sh
 srcdir = @srcdir@
 top_srcdir = @top_srcdir@
 topdir = @topdir@
-VPATH = @srcdir@
 prefix = @prefix@
 exec_prefix = @exec_prefix@
 
-bindir = @bindir@
-sbindir = @sbindir@
-libexecdir = @libexecdir@
-datadir = @datadir@
-sysconfdir = @sysconfdir@
-sharedstatedir = @sharedstatedir@
-localstatedir = @localstatedir@
-libdir = @libdir@
-infodir = @infodir@
-mandir = @mandir@
-incdir = @includedir@
-oldincludedir = /usr/include
-
-pkgdatadir = $(datadir)/@PACKAGE@
-pkglibdir = $(libdir)/@PACKAGE@
-pkgincludedir = $(includedir)/@PACKAGE@
-
 top_builddir = .
-
-INSTALL = @INSTALL@
-INSTALL_PROGRAM = @INSTALL_PROGRAM@
-INSTALL_DATA = @INSTALL_DATA@
-INSTALL_SCRIPT = @INSTALL_SCRIPT@
-transform = @program_transform_name@
-build_alias = @build_alias@
-build_triplet = @build@
-host_alias = @host_alias@
-host_triplet = @host@
-target_alias = @target_alias@
-target_triplet = @target@
-CC = @CC@
-CXX = @CXX@
-LIBSOCKET = @LIBSOCKET@
-LIBTOOL = @LIBTOOL@
-MISCOBJS = @MISCOBJS@
-MOC = @MOC@
-PACKAGE = @PACKAGE@
-RANLIB = @RANLIB@
-VERSION = @VERSION@
-x_includes = @x_includes@
-x_libraries = @x_libraries@
-all_includes = @all_includes@
-all_libraries = @all_libraries@
 
 SUBDIRS =  kacli kfm kdehelp kdisplay kedit kfind kghostview kmines kpanel kpat ktetris kvt kview kwm klogout kwmclient kpaint kcalc khexdit @KSCREEN@ pics 
 
@@ -59,13 +16,6 @@ CONFIG_HEADER_FULL = config.h
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = config.h
 CONFIG_CLEAN_FILES = 
-DIST_COMMON =  README AUTHORS COPYING ChangeLog INSTALL \
-Makefile.in NEWS acconfig.h aclocal.m4 config.guess config.h.bot \
-config.h.in config.sub configure configure.in install-sh ltconfig \
-ltmain.sh missing mkinstalldirs stamp-h.in
-
-
-DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
 
 default: all
 
@@ -113,22 +63,9 @@ distclean: clean
 	-rm -f libtool stamp-h
 	find . -name Makefile -exec rm -f \{\} \;
 
-#libraries are installed right through libraries
-kdebase: libraries apps install
-
 all: apps
 
-.PHONY: default libraries apps 
-
-libraries: 
-	@INSTALL@ -d -m 0755 $(incdir)
-	@INSTALL_DATA@ -m 644 config.h $(incdir)/config.h
-	@for subdir in $(LSUBDIRS); do \
-          target=`echo $@ | sed s/-recursive//`; \
-          echo "Making library in $$subdir"; \
-          (cd $$subdir && $(MAKE) all && $(MAKE) install) \
-           || case "$(MFLAGS)" in *k*) fail=yes;; *) exit 1;; esac; \
-        done && test -z "$$fail"
+.PHONY: default apps 
 
 apps:
 	@for subdir in $(SUBDIRS); do \
@@ -142,7 +79,7 @@ install:
 	$(mkinstalldirs) $(incdir)
 	@INSTALL_DATA@ config.h $(incdir)
 	@for subdir in $(SUBDIRS); do \
-	echo "Making app in $$subdir"; \
+	echo "Making install in $$subdir"; \
 	(cd $$subdir && $(MAKE) install) \
 	|| case "$(MFLAGS)" in *k*) fail=yes;; *) exit 1;; esac; \
 	done && test -z "$$fail"
@@ -163,12 +100,9 @@ install:
 
 uninstall:
 	@for subdir in $(SUBDIRS); do \
-	echo "Making app in $$subdir"; \
+	echo "Making uninstall in $$subdir"; \
 	(cd $$subdir && $(MAKE) uninstall) \
 	|| case "$(MFLAGS)" in *k*) fail=yes;; *) exit 1;; esac; \
 	done && test -z "$$fail"
 		@echo ""
 
-# Tell versions [3.59,3.63) of GNU make to not export all variables.
-# Otherwise a system limit (for SysV at least) may be exceeded.
-.NOEXPORT:
