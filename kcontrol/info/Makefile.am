@@ -29,6 +29,7 @@ icondir = $(kde_icondir)
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) mini-kcmmemory.xpm     $(kde_minidir)/kcmmemory.xpm
+	$(INSTALL_DATA) mini-kcmpci.xpm        $(kde_minidir)/kcmpci.xpm
 	$(INSTALL_DATA) mini-kcmprocessor.xpm  $(kde_minidir)/kcmprocessor.xpm
 	$(INSTALL_DATA) mini-kcmdevices.xpm    $(kde_minidir)/kcmdevices.xpm
 	$(INSTALL_DATA) mini-kcmpartitions.xpm $(kde_minidir)/kcmpartitions.xpm
