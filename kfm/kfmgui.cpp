@@ -582,7 +582,7 @@ void KfmGui::initToolBar()
     toolbarURL = new KToolBar(this, "URL History");
     toolbarURL->insertLined( "", TOOLBAR_URL_ID,
 			  SIGNAL( returnPressed() ), this, SLOT( slotURLEntered() ) );
-    KToolBarLined *lined = toolbarURL->getLined (TOOLBAR_URL_ID);
+    KLined *lined = toolbarURL->getLined (TOOLBAR_URL_ID); //Sven
     completion = new KURLCompletion();
     connect ( lined, SIGNAL (completion()),
 	      completion, SLOT (make_completion()));
