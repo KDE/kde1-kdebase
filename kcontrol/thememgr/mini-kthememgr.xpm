@@ -1,0 +1,33 @@
+/* XPM */
+static char *mini-kthememgr[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16       10            1",
+/* colors */
+". c #008000",
+"# c #c8ccc8",
+"a c #c0c000",
+"b c #808000",
+"c c #000000",
+"d c #b0c0d8",
+"e c #303030",
+"f c #f8fcc0",
+"g c #00c000",
+"h c #f8fcf8",
+/* pixels */
+"dddddd##dd######",
+"dddd.dddddgggddd",
+"d#..gg.#cg.#..##",
+"##.g##g.g.eg..##",
+"###.g.g..gg.c###",
+"##ch..g..eaffac#",
+"d.gg.....a..eacd",
+"dg.ag.ehg.e.aacd",
+"d.hfg.fh..a.aacd",
+"ddhfg.ffegb.aae#",
+"ddhfg.ffeba.aae#",
+"ddhfg.ffeaa.aae#",
+"ddafg.ffeaa.aae#",
+"dddcg.ffeaa.be##",
+"dddddeafeabc####",
+"dddddddcecdddddd"
+};

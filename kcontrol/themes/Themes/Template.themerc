@@ -1,0 +1,122 @@
+# KDE Config File
+#
+# Kde Theme Template
+# (C) 1998 Stefan Taferner <taferner@kde.org>
+# 
+# All config groups and values that are supported by kthememgr.
+# Remove empty keys/groups.
+#
+# A theme package consists of at least this file and a preview image.
+# See the theme Default.tar.gz as an example.
+#
+#-----------------------------------------------------------------------------
+[General]
+# Some entries of this group are not displayed yet but will be used
+# in later versions of the theme manager.
+# Name of the theme
+name=
+# Name of the author
+author=
+# Email address of the author
+email=
+# Name of additional information file
+info=
+# Short description
+description=
+# Version of the theme
+version=
+#
+#-----------------------------------------------------------------------------
+[Panel]
+background=
+#
+#-----------------------------------------------------------------------------
+[Display]
+# If eactly one wallpaper is given the desktop will be switched
+# to common-wallpaper mode.
+Wallpaper0=
+WallpaperMode0=
+Wallpaper1=
+WallpaperMode1=
+Wallpaper2=
+WallpaperMode2=
+Wallpaper3=
+WallpaperMode3=
+Wallpaper4=
+WallpaperMode4=
+Wallpaper5=
+WallpaperMode5=
+Wallpaper6=
+WallpaperMode6=
+Wallpaper7=
+WallpaperMode7=
+#
+#-----------------------------------------------------------------------------
+[Colors]
+contrast=
+activeBackground=
+activeBlend=
+activeForeground=
+background=
+foreground=
+inactiveBackground=
+inactiveBlend=
+inactiveForeground=
+selectBackground=
+selectForeground=
+windowBackground=
+windowForeground=
+#
+#-----------------------------------------------------------------------------
+[Window Border]
+shapePixmapTop=
+shapePixmapBottom=
+shapePixmapLeft=
+shapePixmapRight=
+shapePixmapTopLeft=
+shapePixmapTopRight=
+shapePixmapBottomLeft=
+shapePixmapBottomRight=
+#
+#-----------------------------------------------------------------------------
+[Window Titlebar]
+CloseButton=
+MaximizeButton=
+MenuButton=
+MinimizeButton=
+StickyButton=
+TitlebarPixmapActive=
+TitlebarPixmapInactive=
+#
+#-----------------------------------------------------------------------------
+[Sounds]
+Desktop1=
+Desktop2=
+Desktop3=
+Desktop4=
+Desktop5=
+Desktop6=
+Desktop7=
+Desktop8=
+Logout=
+LogoutMessage=
+Startup=
+WindowActivate=
+WindowClose=
+WindowDeIconify=
+WindowIconify=
+WindowMaximize=
+WindowMoveEnd=
+WindowMoveStart=
+WindowOpen=
+WindowResizeEnd=
+WindowResizeStart=
+WindowShadeDown=
+WindowShadeUp=
+WindowSticky=
+WindowTransDelete=
+WindowTransNew=
+WindowUnMaximize=
+WindowUnSticky=
+#
+#-----------------------------------------------------------------------------
