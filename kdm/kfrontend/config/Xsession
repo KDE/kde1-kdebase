@@ -23,7 +23,7 @@ case $# in
 esac
 
 # start windowmanager
-exec $1
+if [ `which $1` ]; then exec $1; fi
 
 # windowmanager not found, tell user
 message="Sorry, $1 not found."
