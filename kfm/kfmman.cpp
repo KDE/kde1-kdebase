@@ -336,7 +336,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 
     // A link to the web in form of a *.kdelnk file ?
     QString path = u.path();
-    if ( u.isLocalFile() && path.right(7) == ".kdelnk" )
+    if ( u.isLocalFile() && KIOServer::isDir(_url) == 0 && path.right(7) == ".kdelnk" )
     {
 	// Try to open the *.kdelnk file
 	QFile file( path );
