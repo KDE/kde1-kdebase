@@ -13,3 +13,4 @@ remove) chmod a-x /etc/menu-methods/kde
 	mv /etc/X11/window-managers.temp /etc/X11/window-managers
 	;; 
 esac   
+#DEBHELPER#
