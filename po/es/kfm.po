@@ -206,6 +206,7 @@ msgstr ""
 "(c) Torben Weis\n"
 "weis@kde.org\n"
 "\n"
+"and the KFM team"
 
 #: kfmgui.cpp:959
 msgid "Document: Done"
@@ -312,7 +313,7 @@ msgstr "Información de KFM"
 
 #: main.cpp:43
 msgid "Creating directory:\n"
-msgstr "Creando directorio:\n""
+msgstr "Creando directorio:\n"
 
 #: main.cpp:180
 msgid "Installing Templates"

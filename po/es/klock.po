@@ -163,7 +163,6 @@ msgstr ""
 "  -preview wid      Ejecutar en una ventana específica\n"
 "  -setup            Configurar el salvapantallas\n"
 "  -test             Ejecutar el salvapantallas inmediatamente\n"
-msgstr ""
 
 #: morph3d.cpp:936
 msgid "Morph3D (GL)"
