@@ -42,7 +42,14 @@ enum {
   RMB_LOCK_SCREEN,
   RMB_LOGOUT,
   RMB_EXECUTE,
-  RMP_NEW
+  RMP_NEW,
+  RMB_WMAKER_INFO,
+  RMB_WMAKER_LEGAL,
+  RMB_WMAKER_ARRANGE_ICONS,
+  RMB_WMAKER_SHOW_ALL,
+  RMB_WMAKER_HIDE_OTHER,
+  RMB_WMAKER_RESTART,
+  RMB_WMAKER_EXIT,
 };
 
 class KRootWm: public QObject {
@@ -92,8 +99,10 @@ private:
   QPopupMenu *desk;
   QPopupMenu *help;
   // --------- Sven's changes for macmode end
-    
+
   QPixmap defaultPixmap;
+    
+    bool wmakerMode;
 
 private slots:
   void slotNewFile( int _id );

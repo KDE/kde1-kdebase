@@ -6,6 +6,9 @@
 
 In 0.1:
 -------
+patchlevel 10:
+	- special support for the "Window Maker" window manager
+
 patchlevel 9:
 	- "Unclutter windows" and "Cascade windows" added to the rmb menu (CT)
 patchlevel 8:

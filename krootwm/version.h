@@ -1,1 +1,1 @@
-#define KROOTWM_VERSION "krootwm 0.1 patchlevel 8"
+#define KROOTWM_VERSION "krootwm 0.1 patchlevel 10"

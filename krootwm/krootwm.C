@@ -82,6 +82,9 @@ void DlgLineEntry::slotClear()
 KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
   :QObject(){
 
+    
+    wmakerMode = FALSE;
+    
     // Torben
     bookmarkId = 10;
     bookmarkDict.setAutoDelete( true );
@@ -271,6 +274,22 @@ void KRootWm::buildMenubars() {
     rmb->insertItem(klocale->translate("Unclutter windows"), RMB_UNCLUTTER_WINDOWS);
     rmb->insertItem(klocale->translate("Cascade windows"), RMB_CASCADE_WINDOWS);
     rmb->insertItem(klocale->translate("Arrange icons"), RMB_ARRANGE_ICONS);
+    
+    if (wmakerMode) {
+	rmb->insertSeparator();
+	rmb->insertItem(klocale->translate("Arrange Window Maker icons"), RMB_WMAKER_ARRANGE_ICONS);
+	rmb->insertItem(klocale->translate("Show all"), RMB_WMAKER_SHOW_ALL);
+	rmb->insertItem(klocale->translate("Hide other"), RMB_WMAKER_HIDE_OTHER);
+	QPopupMenu* wmaker = new QPopupMenu;
+	wmaker->insertItem(klocale->translate("Show info panel"), RMB_WMAKER_INFO);
+	wmaker->insertItem(klocale->translate("Show legal panel"), RMB_WMAKER_LEGAL);
+	wmaker->insertItem(klocale->translate("Restart"), RMB_WMAKER_RESTART);
+	wmaker->insertSeparator();
+	wmaker->insertItem(klocale->translate("Exit"), RMB_WMAKER_EXIT);
+	rmb->insertItem(klocale->translate("Window Maker"), wmaker);
+    }
+    
+    
     rmb->insertSeparator();
     rmb->insertItem(klocale->translate("Lock screen"), RMB_LOCK_SCREEN);
     rmb->insertItem(klocale->translate("Logout"), RMB_LOGOUT);
@@ -298,7 +317,7 @@ void KRootWm::buildMenubars() {
       KWM::setSticky(myMenuBar->winId(), true);
       connect(kwmmapp, SIGNAL(windowActivate (Window)), this,
               SLOT(slotFocusChanged(Window)));
-      
+
       if (KWM::activeWindow() != None)
 	  myMenuBar->lower();
     }
@@ -331,6 +350,14 @@ void KRootWm::kwmCommandReceived(QString com)
           updateNewMenu ();
 	  buildMenubars(); // will add New and Bookmark menus
       }
+  }
+  else if (com == "wm:wmaker") {
+      wmakerMode = TRUE;
+      buildMenubars();
+  }
+  else if (com == "wm:kwm") {
+      wmakerMode = FALSE;
+      buildMenubars();
   }
 
   else if (com== "krootwm:refreshNew")
@@ -396,7 +423,7 @@ void KRootWm::scanBookmarks( QPopupMenu *_popup, const char * _path )
   DIR *dp;
   struct dirent *ep;
   dp = opendir( _path );
-  if ( dp == 0L ) { 
+  if ( dp == 0L ) {
       fprintf(stderr,strerror(errno)); // Can be "too many open files"...
       return;
   }
@@ -583,6 +610,28 @@ void KRootWm::rmb_menu_activated(int item){
   case RMB_LOGOUT:
     KWM::logout();
     break;
+    
+  case RMB_WMAKER_INFO :
+      KWM::sendKWMCommand("wmaker:lega");
+      break;
+  case RMB_WMAKER_LEGAL :
+      KWM::sendKWMCommand("wmaker:info");
+      break;
+  case RMB_WMAKER_ARRANGE_ICONS :
+      KWM::sendKWMCommand("wmaker:arrangeIcons");
+      break;
+  case RMB_WMAKER_SHOW_ALL :
+      KWM::sendKWMCommand("wmaker:showAll");
+      break;
+  case RMB_WMAKER_HIDE_OTHER :
+      KWM::sendKWMCommand("wmaker:hideOther");
+      break;
+  case RMB_WMAKER_RESTART :
+      KWM::sendKWMCommand("wmaker:restart");
+      break;
+  case RMB_WMAKER_EXIT :
+      KWM::sendKWMCommand("wmaker:exit");
+      break;
   default:
     // nothing
     break;
