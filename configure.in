@@ -122,7 +122,7 @@ AC_C_LONG_DOUBLE
 AC_TYPE_GETGROUPS
 
 dnl Checks for library functions. MISCOBJS is for kdecore
-AC_CHECK_FUNCS(socket powl sqrtl strdup getdtablesize vsnprintf setpgid nice seteuid snprintf vsyslog initgroups setgroups getgroups)
+AC_CHECK_FUNCS(socket powl sqrtl strdup getdtablesize vsnprintf setpgid nice seteuid snprintf vsyslog initgroups setgroups getgroups random rand)
 AC_CHECK_SETENV
 AC_CHECK_GETDOMAINNAME
 AC_CHECK_GETHOSTNAME
