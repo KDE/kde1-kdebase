@@ -1,0 +1,241 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.C:236
+msgid "Add characters to word class"
+msgstr "Adaugã caractere la clasa de cuvinte"
+
+#: main.C:239
+msgid "choose type of color-mode"
+msgstr "alege tipul de culoare"
+
+#: main.C:242
+msgid "The backspace key will send a"
+msgstr "Tasta 'backspace' va trimite "
+
+#: main.C:383
+msgid "&New Terminal"
+msgstr "Terminal &Nou"
+
+#: main.C:390 main.C:789
+msgid "&Hide"
+msgstr "&Ascunde"
+
+#: main.C:391
+msgid "&Left"
+msgstr "&Stânga"
+
+#: main.C:392
+msgid "&Right"
+msgstr "&Dreapta"
+
+#: main.C:397
+msgid "&Normal"
+msgstr "&Normal"
+
+#: main.C:398
+msgid "&Tiny"
+msgstr "&Puchineþe"
+
+#: main.C:399
+msgid "&Small"
+msgstr "&Mic"
+
+#: main.C:400
+msgid "&Medium"
+msgstr "&Normal"
+
+#: main.C:401
+msgid "&Large"
+msgstr "M&are"
+
+#: main.C:402
+msgid "&Huge"
+msgstr "&Imens (cicã)"
+
+#: main.C:414
+msgid "&black/white"
+msgstr "&negru/alb"
+
+#: main.C:415
+msgid "&white/black"
+msgstr "&alb/negru"
+
+#: main.C:416
+msgid "&green/black"
+msgstr "&verde/negru"
+
+#: main.C:417
+msgid "black/light&yellow"
+msgstr "negru/&galben deschis"
+
+#: main.C:418
+msgid "Linu&x Console"
+msgstr "Consolã de &Linux"
+
+#: main.C:427
+msgid "&Custom Colors"
+msgstr "&Culori utilizator"
+
+#: main.C:434 main.C:735
+msgid "Hide &Menubar"
+msgstr "Ascunde bara de meniu"
+
+#: main.C:436 main.C:599 main.C:727
+msgid "Show &Menubar"
+msgstr "Afiºeazã bara de meniu"
+
+#: main.C:437 main.C:745
+msgid "Secure &keyboard"
+msgstr "Securizeazã tastatura"
+
+#: main.C:439
+msgid "Scroll&bar"
+msgstr "Barã de defilare"
+
+#: main.C:440
+msgid "&Font size"
+msgstr "Mãrimea fontului"
+
+#: main.C:441
+msgid "&Color"
+msgstr "&Culoare"
+
+#: main.C:442
+msgid "&Size"
+msgstr "&Mãrime"
+
+#: main.C:443
+msgid "Terminal..."
+msgstr "Terminal..."
+
+#: main.C:445
+msgid "Save &Options"
+msgstr "Salveazã &Opþiunile"
+
+#: main.C:454
+msgid ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08"
+msgstr ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Emulator de terminal pentru Mediul de Lucru KDE\n"
+"bazat pe rxvt-2.08-ul lui Robert Nation"
+
+
+#: main.C:608 main.C:782
+msgid "&Show"
+msgstr "&Aratã"
+
+#: main.C:741
+msgid "Unsecure &keyboard"
+msgstr "Desecurizeazã tastatura"
+
+#: main.C:752
+msgid "Terminal Options"
+msgstr "Opþiunile Terminalului"
+
+#: main.C:894
+msgid "Hint"
+msgstr "Sugestie"
+
+#: main.C:895
+msgid ""
+"New color settings will be displayed\n"
+"when the keyboard is unsecured."
+msgstr ""
+"Noi setãri de culoare vor fi afiºate\n"
+"când tastatura nu este securizatã."
+#: main.C:1084
+msgid ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08\n"
+"\n"
+"Permitted arguments are:\n"
+"-e <command> <arg> ...\texecute command with ars - must be last argument\n"
+"-display <name>\tspecify the display (server)\n"
+"-vt_geometry <spec>\tthe initial vt window geometry\n"
+"-print-pipe <name>\tspecify pipe for vt100 printer\n"
+"-vt_bg <colour>\t\tbackground color\n"
+"-vt_fg <colour>\t\tforeground color\n"
+"-vt_font <fontname>\tnormal font\n"
+"-vt_size <size>     \ttiny, small, normal, large, huge\n"
+"-linux\t\t\tset up kvt to mimic linux-console\n"
+"-no_menubar\t\thide the menubar\n"
+"-no_scrollbar\t\thide the scrollbar\n"
+"-T <text>\t\ttext in window titlebar \n"
+"                   (Obsolete. Use -caption instead)\n"
+"-tn <TERM>\t\tTerminal type. Default is xterm.\n"
+"-C\t\t\tCapture system console message\n"
+"-n <text>\t\tname in icon or icon window\n"
+"-7\t\t        run in 7 bit mode\n"
+"-8\t\t\trun in 8 bit mode\n"
+"-ls\t\t\tinitiate kvt's shell as a login shell\n"
+"-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
+"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+"-sl <number>\t\tsave number lines in scroll-back buffer\n"
+"-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
+"-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
+msgstr ""
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Emulator de terminal pentru Mediul de Lucru KDE\n"
+"bazat pe rxvt-2.08-ul lui Robert Nation"
+"\n"
+"Argumentele posibile sunt urmãtoarele:\n"
+"-e <comanda> <arg> ...\texecutã comanda cu arg - trebuie sã fie ultimul argument\n"
+"-display <nume>\tspecificã  display-ul (server)\n"
+"-vt_geometry <spec>\tgeometria iniþialã a terminalului vt\n"
+"-print-pipe <nume>\tspecificã þeava pentru imprimanta vt100\n"
+"-vt_bg <culoare>\t\tculoarea de fond\n"
+"-vt_fg <culoare>\t\tculoarea de text\n"
+"-vt_font <nume_font>\tfont normal\n"
+"-vt_size <mãrime>     \ttiny, small, normal, large, huge\n"
+"-linux\t\t\tseteazã kvt sã emuleze o consolã linux\n"
+"-no_menubar\t\tascunde bara de meniu\n"
+"-no_scrollbar\t\tascunde bara de defilare\n"
+"-T <text>\t\ttitlul ferestrei \n"
+"                   (Depreciat. foloseºte '-caption' în loc)\n"
+"-tn <TERM>\t\tTipul de Terminal. Implicit este xterm.\n"
+"-C\t\t\tCaptureazã mesajele din consola sistem\n"
+"-n <text>\t\tnume în icoanã sau fereastra icoanei\n"
+"-7\t\t        porneºte în modul 7 bit\n"
+"-8\t\t\tporneºte în modul 8 bit\n"
+"-ls\t\t\tiniþiazã interpretorul kvt ca interpretor login\n"
+"-ls-\t\t\tiniþiazã interpretorul kvt ca interpretor non-login (implicit)\n"
+"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+"-sl <numãr>\t\tsalveazã un numãr de linii în tamponul de defilare\n"
+"-pageup <keysym>\tfoloseºte combinaþia de taste alt-keysym pentru a defila în sus prin zona tampon\n"
+"-pagedown <keysym>\tfoloseºte combinaþia de taste alt-keysym pentru a defila în jos prin zona tampon\n"
+ 
+
+#: main.C:1115
+msgid ""
+"-grk9\t\tgreek kbd = ELOT 928 (default)\n"
+"-grk4\t\tgreek kbd = IBM 437\n"
+msgstr ""

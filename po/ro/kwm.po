@@ -19,10 +19,10 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: se pare ca este deja in functiune un alt Window Manager, asa ca nu am pornit kwm-ul\n"
+"kwm: se pare ca este deja în funcþiune un alt Window Manager, aºa cã nu am pornit kwm-ul\n"
 #: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: eroare in timpul initializarii; pa \n"
+msgstr "kwm: eroare în timpul iniþializãrii; pa \n"
 
 #: main.C:370
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -50,27 +50,27 @@ msgstr "&DezMinimizare"
 
 #: main.C:392
 msgid "&Sticky"
-msgstr "&Lipicioasa"
+msgstr "&Lipicioasã"
 
 #: main.C:393
 msgid "&UnSticky"
-msgstr "&Nelipicioasa"
+msgstr "&Nelipicioasã"
 
 #: main.C:394
 msgid "Mo&ve"
-msgstr "Mu&ta"
+msgstr "Mu&tã"
 
 #: main.C:395
 msgid "Resi&ze"
-msgstr "Schim&ba dimensiunea"
+msgstr "Schim&bã dimensiunea"
 
 #: main.C:397
 msgid "&To desktop"
-msgstr "I&n ecranul"
+msgstr "Î&n ecranul"
 
 #: main.C:399
 msgid "&Onto current desktop"
-msgstr "&In ecranul curent"
+msgstr "&În ecranul curent"
 
 #: main.C:449
 msgid "One"
@@ -94,11 +94,11 @@ msgstr "Cinci"
 
 #: main.C:464
 msgid "Six"
-msgstr "Sase"
+msgstr "ªasex"
 
 #: main.C:467
 msgid "Seven"
-msgstr "Sapte"
+msgstr "ªaptex"
 
 #: main.C:470
 msgid "Eight"
@@ -106,7 +106,7 @@ msgstr "Opt"
 
 #: main.C:743
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Niste pixmap-uri sunt defecte: ShapeMode nu este activat\n"
+msgstr "Niºte pixmap-uri sunt defecte: ShapeMode nu este activat\n"
 
 #: main.C:975
 msgid "*** No Tasks ***"
@@ -114,43 +114,43 @@ msgstr "*** Nici un Program ***"
 
 #: minicli.C:115
 msgid "Command:"
-msgstr "Comanda: "
+msgstr "Comandã : "
 
 #: logout.C:35 taskmgr.C:106
 msgid "Logout"
-msgstr "Iesire"
+msgstr "Ieºire"
 
 #: logout.C:45
 msgid "Session prepared for logout"
-msgstr "Sesiune pregatita pentru iesire"
+msgstr "Sesiune pregãtitã pentru ieºire"
 
 #: logout.C:51
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"Aplicatiile urmatoare contin date nesalvate care \n"
-"vor fi pierdute in sesiunea urmatoare."
+"Aplicaþiile urmãtoare conþin date nesalvate care \n"
+"vor fi pierdute în sesiunea urmãtoare."
 
 #: logout.C:62
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"Aplicatiile urmatoare nu pot fi refacute in sesiunea urmatoare,\n"
-"ci doar restartate. Asigura-te ca nu contin date nesalvate importante."
+"Aplicaþiile urmãtoare nu pot fi refãcute în sesiunea urmãtoare,\n"
+"ci doar restartate. Asigurã-te cã nu conþin date nesalvate importante."
 #: logout.C:73
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Aplicatiile urmatoare nu sunt X11 native si de aceea nu pot fi restaurate\n"
-"in sesiunea urmatoare. Asigura-te ca nu contin date importante nesalvate."
+"Aplicaþiile urmãtoare nu sunt X11 native ºi de aceea nu pot fi restaurate\n"
+"în sesiunea urmãtoare. Asigurã-te cã nu conþin date importante nesalvate."
 
 #: taskmgr.C:105
 msgid "Switch to"
-msgstr "Schimba la"
+msgstr "Schimbã la"
 
 #: taskmgr.C:119
 msgid "Current session"
-msgstr "Sesiune curenta"
+msgstr "Sesiune curentã"

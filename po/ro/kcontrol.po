@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: configlist.cpp:119
+msgid "Unknown module: "
+msgstr "Modul necunoscut: "
+
+#: main.cpp:46 mainwidget.cpp:18
+msgid "KDE Control Center"
+msgstr "Centrul de control KDE"
+
+#: toplevel.cpp:79
+msgid "&Swallow modules"
+msgstr "Înghite modulele"
+
+#: toplevel.cpp:82
+msgid "&About KControl..."
+msgstr "&Despre KControl"
+
+#: toplevel.cpp:85
+msgid "&Using KControl"
+msgstr "Folosirea KControl"
+
+#: toplevel.cpp:100
+msgid "About KControl"
+msgstr "Despre KControl"
+
+#: toplevel.cpp:101
+msgid ""
+"KDE Control Center - Version 0.3\n"
+"\n"
+"Written by Matthias Hölzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Thanks to:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+msgstr ""
+"Centrul de control KDE - Versiunea 0.3\n"
+"\n"
+"Programat de Matthias H÷lzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Mulþumiri adresate :"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+       

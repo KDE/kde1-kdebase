@@ -11,36 +11,36 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: kdmshutdown.cpp:153
 msgid "Shutdown or restart?"
-msgstr "Inchide sau restarteaza?"
+msgstr "Închide sau restarteazã?"
 
 #: kdmshutdown.cpp:169
 msgid "Shutdown"
-msgstr "Inchide"
+msgstr "Închide"
 
 #: kdmshutdown.cpp:183
 msgid "Shutdown and restart"
-msgstr "Inchide si restarteaza"
+msgstr "Închide ºi restarteazã"
 
 #: kdmshutdown.cpp:192
 msgid "Exit kdm"
-msgstr "Iesire din kdm"
+msgstr "Ieºire din KDE"
 
 #: kgreeter.cpp:136
 msgid "Login:"
-msgstr "Nume:"
+msgstr "Nume utilizator :"
 
 #: kgreeter.cpp:141
 msgid "Password:"
-msgstr "Parola:"
+msgstr "Parolã:"
 
 #: kgreeter.cpp:175
 msgid "Login failed!"
-msgstr "Autentificare nereusita !"
+msgstr "Autentificare nereuºitã !"
 
 #: kgreeter.cpp:181
 msgid "Session Type:"
@@ -52,4 +52,4 @@ msgstr "Validare"
 
 #: kgreeter.cpp:213
 msgid "Shutdown..."
-msgstr "Inchide..."
+msgstr "Închide..."
