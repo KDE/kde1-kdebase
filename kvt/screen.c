@@ -178,8 +178,6 @@ void scr_init(void)
   save_charset ='B';
   save_charset_num = 0;
 
-  set_charclass("");
-
   MyWinInfo.sline_top = 0;
   MyWinInfo.offset = 0;
   scr_reset();

@@ -279,6 +279,8 @@ kVt::kVt( QWidget *parent, const char *name )
     if (entry) {
       kvt_charclass = entry;
       set_charclass(entry);
+    } else {
+      set_charclass("");
     }
 
     m_file = new QPopupMenu;
