@@ -7,8 +7,13 @@
 Authors=Karl BackstrЖm <backstrom@kde.org>,
 
 Comment=Normal layout
+Comment[pt_BR]=DisposiГЦo normal
+Comment[ru]=Нормальная раскладка
 
 Language=Finnish
+Language[pt_BR]=FinlandЙs
+Language[ru]=Финский
+Language[sv]=Finskt
 
 Charset=ISO-8859-1
 Label=Fi

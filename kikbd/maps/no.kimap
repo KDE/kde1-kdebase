@@ -7,8 +7,13 @@
 Authors=Petter Reinholdtsen <pere@td.org.uit.no>,
 
 Comment=Normal layout
+Comment[pt_BR]=DisposiГЦo normal
+Comment[ru]=Нормальная раскладка
 
 Language=Norwegian
+Language[pt_BR]=NorueguЙs
+Language[ru]=Норвежский
+Language[sv]=kt
 
 Charset=ISO-8859-1
 Label=No
