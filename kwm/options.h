@@ -68,6 +68,12 @@ enum ALT_TAB_MODE{
   CDE_STYLE
 };
 
+enum ALIGN_TITLE {
+  AT_LEFT,
+  AT_MIDDLE,
+  AT_RIGHT
+};
+
 struct kwmOptions {
 
   WINDOW_MOVE_TYPE WindowMoveType;
@@ -75,6 +81,9 @@ struct kwmOptions {
   FOCUS_POLICY FocusPolicy;
   ALT_TAB_MODE AltTabMode;
   TITLEBAR_LOOK TitlebarLook;
+  //CT 04Nov1998 - titlebar align
+  ALIGN_TITLE alignTitle;
+  //CT
   int ResizeAnimation;
   bool MaximizeOnlyVertically;
   int TitleAnimation;

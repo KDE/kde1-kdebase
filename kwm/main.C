@@ -759,6 +759,19 @@ void MyApp::readConfiguration(){
     options.TitlebarLook = H_SHADED;
   }
 
+  //CT 04Nov1998 - titlebar align
+  key = config->readEntry("TitleAlignment");
+  if (key == "left")
+    options.alignTitle = AT_LEFT;
+  else if (key == "middle")
+    options.alignTitle = AT_MIDDLE;
+  else if (key == "right")
+    options.alignTitle = AT_RIGHT;
+  else {
+    config->writeEntry("TitleAlignment", "left");
+    options.alignTitle = AT_LEFT;
+  }
+
   //CT 23Sep1998 - fixed the name of the titlebar pixmaps to become
   //   consistent with the buttons pixmaps definition technique
   if (options.TitlebarLook == PIXMAP) {

@@ -505,6 +505,11 @@ private:
   QStrList no_focus_titles;
   QStrList no_focus_classes;
 
+  //CT 03Nov1998 sticky windows (titles and classes)
+  QStrList sticky_titles;
+  QStrList sticky_classes;
+  //CT
+
   // apply the above mentioned global hints
   void doGlobalDecorationAndFocusHints(Client* c);
 };

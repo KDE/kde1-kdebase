@@ -18,6 +18,10 @@ patchlevel 2:
         - new signal "initialized" emited to modules when the
           initialization is finished.
 	- titlebar font choosing enabled (CT)
+	- title alignment (CT) 
+		( kwmrc\[General]\TitleAlignment=[left|middle|right] )
+	- stickyTitles, stickyClasses lists (in a [Sticky] section) 
+		a la noDecor*, noFocus* lists (CT)
 
 patchlevel 1:
         - simplified outline drawing since the previous nifty stippled

@@ -1179,6 +1179,14 @@ void Manager::readConfiguration(){
   config->setGroup( "Focus" );
   config->readListEntry("noFocusTitles", no_focus_titles);
   config->readListEntry("noFocusClasses", no_focus_classes);
+
+  //CT 03Nov1998 sticky windows
+  sticky_titles.clear();
+  sticky_classes.clear();
+  config->setGroup( "Sticky");
+  config->readListEntry("stickyTitles", sticky_titles);
+  config->readListEntry("stickyClasses", sticky_classes);
+  //CT
 }
 
   // kwm supports different kinds of window placement. doPlacement
@@ -3616,6 +3624,17 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
 	}
       }
     }
+    //CT 03Nov1998
+    if(!c->isSticky()) {
+      for (s = sticky_titles.first(); s; s = sticky_titles.next()) {
+	r = s;
+	if (r.match(c->label) != -1) {
+	  c->sticky = true;
+	  break;
+	}
+      }
+    }
+    //CT 
   }
   if (!c->instance.isEmpty()){
     if (c->getDecoration() == KWM::normalDecoration){
@@ -3645,7 +3664,17 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
 	}
       }
     }
-
+    //CT 03Nov1998
+    if(!c->isSticky()) {
+      for (s = sticky_classes.first(); s; s = sticky_classes.next()) {
+	r = s;
+	if (r.match(c->instance) != -1) {
+	  c->sticky = true;
+	  break;
+	}
+      }
+    }
+    //CT 
   }
   if (!c->klass.isEmpty()){
     if (c->getDecoration() == KWM::normalDecoration){
@@ -3675,6 +3704,17 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
 	}
       }
     }
+    //CT 03Nov1998
+    if(!c->isSticky()) {
+      for (s = sticky_classes.first(); s; s = sticky_classes.next()) {
+	r = s;
+	if (r.match(c->klass) != -1) {
+	  c->sticky = true;
+	  break;
+	}
+      }
+    }
+    //CT 
   }
 }
 

@@ -506,6 +506,13 @@ void Client::generateButtons(){
     buttonSticky->hide();
     connect( buttonSticky, SIGNAL(toggled(bool)), SLOT(stickyToggled(bool)));
   }
+
+  //CT 03Nov1998 - make sure sticky displays correctly
+  if (this->isSticky()) 
+    buttonSticky->setPixmap(*pm_pin_down);
+  else 
+    buttonSticky->setPixmap(*pm_pin_up);
+  //CT
 }
 
 // layout the window decoration buttons. Necessary after the window
@@ -1671,11 +1678,24 @@ void Client::paintState(bool only_label, bool colors_have_changed, bool animate)
     }
   }
 
-  if (!titlestring_too_large)
-    titlestring_offset = 0;
   p.setClipRect(r);
   p.setClipping(True);
-  p.drawText(r.x()+(options.TitleAnimation?titlestring_offset:0),
+
+  //CT 04Nov1998 - align the title in the bar
+  int aln = 0;
+  int need = p.fontMetrics().width(QString(" ")+label+" ");
+  if (options.alignTitle == AT_LEFT || r.width() < need) aln = 0;
+  else if (options.alignTitle == AT_MIDDLE )
+    aln = r.width()/2 - need/2;
+  else if (options.alignTitle == AT_RIGHT)
+    aln = r.width() - need;
+  //CT see next lines. Replaced two 0 by `aln`. Moved next two lines here 
+  //  from above.
+  
+  if (!titlestring_too_large)
+    titlestring_offset = aln;
+
+  p.drawText(r.x()+(options.TitleAnimation?titlestring_offset:aln),
 	     r.y()+p.fontMetrics().ascent(),
 	     QString(" ")+label+" ");
   p.setClipping(False);
