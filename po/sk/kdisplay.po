@@ -277,7 +277,7 @@ msgstr "©etøiè obrazovky"
 
 #: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:553 scrnsave.cpp:662
 msgid "No screensaver"
-msgstr "Bez ¹etøièa &obrazovky"
+msgstr "Bez ¹etøièa obrazovky"
 
 #: scrnsave.cpp:207
 msgid "&Setup ..."
