@@ -1484,7 +1484,7 @@ void Client::stopAutoraise(){
 }
 
 Client* Client::mainClient(){
-  if (trans != None && trans != qt_xrootwin()){
+  if (trans != None && trans != qt_xrootwin() && trans != window){
     Client* c = manager->getClient(trans);
     if (c)
       return c->mainClient();

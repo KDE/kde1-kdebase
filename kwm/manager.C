@@ -468,7 +468,7 @@ void Manager::propertyNotify(XPropertyEvent *e){
   case XA_WM_TRANSIENT_FOR:
     // this probably never happens. Care anyway...
     getWindowTrans(c);
-    if(c->trans){
+    if(c->trans != None){
       int i;
       if (c->buttons[0] && c->buttons[0] != c->buttonMenu)
 	c->buttons[0]->hide();
@@ -740,7 +740,7 @@ void Manager::manage(Window w, bool mapped){
   getWindowTrans(c);
   getMwmHints(c);
 
-  if(c->trans || c->getDecoration()!=1){
+  if(c->trans != None || c->getDecoration()!=1){
     int i;
     if (c->buttons[0] && 
 	(c->buttons[0] != c->buttonMenu || c->getDecoration()!=1))
@@ -769,7 +769,7 @@ void Manager::manage(Window w, bool mapped){
     }
   }
   
-  if (mapped || c->trans 
+  if (mapped || c->trans != None 
       ||c->size.flags & PPosition
       ||c->size.flags & USPosition 
       || pseudo_session_management

@@ -11,6 +11,9 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 20:
+       - self-transient do not crash kwm anymore
+  
   patchlevel 19:
        - small fixes for swallowing
        - bugfix for  TitlebarPixmapActive
