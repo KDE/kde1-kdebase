@@ -1,11 +1,13 @@
 In kpanel-0.19:
 
+    Patchlevel 7:
+                - disk navigator ( Pietro Iglio )
+
     Patchlevel 6:
 	- new configuration option: HideShowAnimation. Default is
 	  10. Setting it to 0 disables the feature.
                 - autohide animated
                 - iconify (in combination with new kwm) animates to the taskbar button  
-
     Patchlevel 5: 
                - small fix (kudos to David Faure)
                - fixed possible loss of the system menu (kmenu)
