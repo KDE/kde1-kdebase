@@ -48,11 +48,18 @@
 // CT 19jan98
 #define KWM_PLACEMENT "WindowsPlacement"
 
+//CT 31jan98
+#define SMART_STR         "Smart"
+#define CASCADE_STR       "Cascade"
+#define RANDOM_STR        "Random"
+
 KWindowConfig::~KWindowConfig ()
 {
   delete transparent;
   delete opaque;
   delete clickTo;
+  delete placementCombo; //CT 11feb98 - leaking memory
+  delete placementBox;//CT 31jan98 - leaking memory bug squash :-)
   delete followMouse;
   delete animOn;
   delete animOff;
@@ -78,9 +85,15 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
 
   // placement policy --- CT 19jan98 ---
   placementBox = new QButtonGroup(klocale->translate("Placement policy"), this);
-  random = new QRadioButton(klocale->translate("Random placement"), placementBox);
-  smart = new QRadioButton(klocale->translate("Smart placement"), placementBox);
-
+  placementCombo = new QComboBox(FALSE, placementBox);
+  placementCombo->insertItem(klocale->translate(SMART_STR),
+			     SMART_PLACEMENT);
+  placementCombo->insertItem(klocale->translate(CASCADE_STR),
+			     CASCADE_PLACEMENT);
+  placementCombo->insertItem(klocale->translate(RANDOM_STR),
+			     RANDOM_PLACEMENT);
+  placementCombo->setCurrentItem(RANDOM_PLACEMENT);
+  
   // maximize behaviour
   maximizeBox = new QButtonGroup(klocale->translate("Maximize Style"), this);
   fullScreen =  new QRadioButton(klocale->translate("Maximize fully"), maximizeBox);
@@ -151,15 +164,19 @@ void KWindowConfig::resizeEvent(QResizeEvent *)
   if (boxW < buttonW + 2*SPACE_XI)
     boxW = buttonW + 2*SPACE_XI;
 
-  // placement policy --- CT 19jan98 ---
-  random->adjustSize();
-  random->move(SPACE_XI, SPACE_YI + titleH);
-  smart->adjustSize();
-  smart->move(SPACE_XI, 2*SPACE_YI + buttonH + titleH);
+  // placement policy --- CT 31jan98 ---
+  placementCombo->adjustSize();
+  if (placementCombo->width() < (boxW - 2*SPACE_XI)) 
+    placementCombo->setGeometry(SPACE_XI,
+				SPACE_YI + titleH + buttonH/2,
+				boxW - 2*SPACE_XI,
+				placementCombo->height());
+  else
+    placementCombo->move(SPACE_XI, SPACE_YI + titleH + buttonH/2);
   int h3 = h;
 
   titleW = fm.width(placementBox->title());
-  buttonW = max( smart->width(), random->width() );
+  buttonW = placementCombo->width();
   if (boxW < titleW + 4*SPACE_XI)
     boxW =  titleW + 4*SPACE_XI;
   if (boxW < buttonW + 2*SPACE_XI)
@@ -234,27 +251,15 @@ void KWindowConfig::setMove(int trans)
   }
 }
 
-// placement policy --- CT 19jan98 ---
+// placement policy --- CT 31jan98 ---
 int KWindowConfig::getPlacement()
 {
-  if (random->isChecked())
-    return RANDOM_PLACEMENT;
-  else
-    return SMART_PLACEMENT;
+  return placementCombo->currentItem();
 }
 
 void KWindowConfig::setPlacement(int plac)
 { 
-  if (plac == RANDOM_PLACEMENT)
-    {
-      random->setChecked(TRUE);
-      smart->setChecked(FALSE);
-    }
-  else
-    {
-      smart->setChecked(TRUE);
-      random->setChecked(FALSE);
-    }
+  placementCombo->setCurrentItem(plac);
 }
 
 
@@ -375,10 +380,12 @@ void KWindowConfig::GetSettings( void )
 
   // placement policy --- CT 19jan98 ---
   key = config->readEntry(KWM_PLACEMENT);
-  if( key == "random")
-    setPlacement(RANDOM_PLACEMENT);
-  else if( key == "smart")
+  if( key == "smart")
     setPlacement(SMART_PLACEMENT);
+  else if( key == "cascade")
+    setPlacement(CASCADE_PLACEMENT); //CT 31jan98
+  else
+    setPlacement(RANDOM_PLACEMENT);
 
 
   key = config->readEntry(KWM_FOCUS);
@@ -412,12 +419,14 @@ void KWindowConfig::SaveSettings( void )
     config->writeEntry(KWM_MOVE,"Opaque");
 
 
-  // placement policy --- CT 19jan98 ---
+  // placement policy --- CT 31jan98 ---
   v =getPlacement();
-  if (v == RANDOM_PLACEMENT)
-    config->writeEntry(KWM_PLACEMENT, "random");
-  else
+  if (v == SMART_PLACEMENT)
     config->writeEntry(KWM_PLACEMENT, "smart");
+  else if (v == CASCADE_PLACEMENT)
+    config->writeEntry(KWM_PLACEMENT, "cascade");
+  else
+    config->writeEntry(KWM_PLACEMENT, "random");
 
 
   v = getFocus();

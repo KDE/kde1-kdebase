@@ -51,6 +51,9 @@ extern KSimpleConfig *config;
 #define KWM_B5 "ButtonE"
 #define KWM_B6 "ButtonD"
 
+//CT 11feb98
+#define KWM_DCTBACTION "TitlebarDoubleClickCommand"
+
 // this function grabbed from kwm/client.C
 static QPixmap* loadIcon(const char* name)
 {
@@ -904,6 +907,11 @@ KTitlebarAppearance::~KTitlebarAppearance ()
   delete plain;
   delete titlebarBox;
 
+  //CT 11feb98
+  delete dblClickCombo;
+  delete lDblClick;
+  delete titlebarDblClickBox;
+
   delete titleAnim;
   delete tlabel;
   delete t;
@@ -968,6 +976,30 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
   iconLoader->insertDirectory(4, kapp->localkdedir()+"/share/toolbar");
   iconLoader->insertDirectory(5, kapp->localkdedir()+"/share/apps/kwm/pics");
 
+
+  //CT 11feb98 - Title double click
+  titlebarDblClickBox = new QButtonGroup(klocale->translate("Mouse action"),
+				       this);
+  lDblClick = new QLabel(klocale->translate("LeftMouseButton double click"
+					    "\n    on titlebar does:"),
+			 titlebarDblClickBox);
+  dblClickCombo = new QComboBox(FALSE, titlebarDblClickBox);
+  dblClickCombo->insertItem(klocale->translate("(Un)Maximize"),DCTB_MAXIMIZE);
+  dblClickCombo->insertItem(klocale->translate("Move"),DCTB_MOVE);
+  dblClickCombo->insertItem(klocale->translate("(Un)Shade"),DCTB_SHADE);
+  dblClickCombo->insertItem(klocale->translate("Iconify"),DCTB_ICONIFY);
+  dblClickCombo->insertItem(klocale->translate("(Un)Sticky"),DCTB_STICKY);
+  dblClickCombo->insertItem(klocale->translate("Resize"),DCTB_RESIZE);
+  dblClickCombo->insertItem(klocale->translate("Restore"),DCTB_RESTORE);
+  dblClickCombo->insertItem(klocale->translate("Operations Menu"),
+			    DCTB_OPERATIONS);
+  dblClickCombo->insertItem(klocale->translate("Close"),DCTB_CLOSE);
+  dblClickCombo->setCurrentItem( DCTB_MAXIMIZE );
+
+  lDblClick->adjustSize();
+  dblClickCombo->adjustSize();
+  //CT ---
+
   GetSettings();
 }
 
@@ -997,24 +1029,64 @@ void KTitlebarAppearance::resizeEvent(QResizeEvent *)
 
   h += boxH + SPACE_YO;
 
-  int dw = SPACE_XO;
+  //CT 11feb98 place dblclick combo on tab
+  int dw = lDblClick->width();
+  int dh = lDblClick->height();
+  int cw = dblClickCombo->width();  
+  int ch = dblClickCombo->height();  
+  int boxX = SPACE_XO;
+  
+  if ((dw > (boxW - 2*SPACE_XI)) ||
+      (cw > (boxW - 2*SPACE_XI)) )
+    boxW = 2*boxW + SPACE_XO;
+  else
+    boxX = boxW/2 + SPACE_XO;
+    
 
-  int w = tlabel->width();
+  if (((dw+cw) > (boxW - 3*SPACE_XI)) &&
+      ((dh+ch) > (boxH - 3*SPACE_YI)))
+    boxH = dh + ch + 3*SPACE_YI;
+  else 
+    if ((dw+cw) <= (boxW - 3*SPACE_XI)) 
+      boxH = (dh>ch?dh:ch)+2*SPACE_YI+titleH;
+  
+  titlebarDblClickBox->setGeometry(boxX, h, boxW, boxH);
+  
+  if (((dw+cw) > (boxW - 3*SPACE_XI))) {
+    lDblClick->setGeometry( (boxW - dw)/2, SPACE_YI+titleH/2, dw, dh);
+    
+    dblClickCombo->setGeometry((boxW - cw)/2,
+			       dh + 2*SPACE_YI+titleH/2,
+			       cw, ch);
+  }
+  else {
+    lDblClick->setGeometry( SPACE_XI, (boxH - dh)/2+titleH/2, dw, dh);
+    
+    dblClickCombo->setGeometry(dw + 2*SPACE_XI, (boxH-ch)/2+titleH/2, cw, ch);
+  }
+
+  h += boxH + SPACE_YO;
+  //CT ---
+  
+  dw = SPACE_XO;
+
+  cw = tlabel->width();
   tlabel->move(dw, h);
-  titleAnim->setGeometry(dw + w + 2*SPACE_XO, h, 200, tlabel->height()+SPACE_YO/2);
+
+  titleAnim->setGeometry(dw + cw + 2*SPACE_XO, h, 200, tlabel->height()+SPACE_YO/2);
   h += titleAnim->height() ;
-  int center = titleAnim->x() + ( titleAnim->width() - t->width() )/2;
-  int dh = ( t->height() - sec->height() )/2;
+  int center = titleAnim->x() + ( titleAnim->width() - cw )/2;
+  dh = ( t->height() - sec->height() )/2;
   t->move(center, h);
-  sec->move(t->x() + t->width() + 3, h+dh);
+  sec->move(t->x() + cw + 3, h+dh);
   h += t->height() + SPACE_YO;    
 
-  w = max(lPixmapActive->width(), lPixmapInactive->width());
+  cw = max(lPixmapActive->width(), lPixmapInactive->width());
   lPixmapActive->move(SPACE_XI, SPACE_YI + titleH);
   lPixmapInactive->move(SPACE_XI, 2*SPACE_YI + titleH + pbPixmapActive->height());
-  pbPixmapActive->move(SPACE_XI+w+SPACE_XO, + titleH);
-  pbPixmapInactive->move(SPACE_XI+w+SPACE_XO, SPACE_YI + titleH + pbPixmapActive->height());
-  pixmapBox->resize(2*SPACE_XI+w+SPACE_XO+pbPixmapActive->width(), pixmapBox->height());
+  pbPixmapActive->move(SPACE_XI+cw+SPACE_XO, + titleH);
+  pbPixmapInactive->move(SPACE_XI+cw+SPACE_XO, SPACE_YI + titleH + pbPixmapActive->height());
+  pixmapBox->resize(2*SPACE_XI+cw+SPACE_XO+pbPixmapActive->width(), pixmapBox->height());
 
   h += 2*lPixmapActive->height() + 2*SPACE_YI;
 }
@@ -1037,7 +1109,11 @@ void KTitlebarAppearance::setTitlebar(int tb)
     plain->setChecked(FALSE);
     shaded->setChecked(FALSE);
     pixmap->setChecked(TRUE);
-    pixmapBox->show();
+    pixmapBox->setEnabled(TRUE);
+    lPixmapActive->setEnabled(TRUE);
+    pbPixmapActive->setEnabled(TRUE);
+    lPixmapInactive->setEnabled(TRUE);
+    pbPixmapInactive->setEnabled(TRUE);
     return;
   }
   if (tb == TITLEBAR_SHADED)
@@ -1045,13 +1121,21 @@ void KTitlebarAppearance::setTitlebar(int tb)
     shaded->setChecked(TRUE);
     plain->setChecked(FALSE);
     pixmap->setChecked(FALSE);
-    pixmapBox->hide();
+    pixmapBox->setEnabled(FALSE);
+    lPixmapActive->setEnabled(FALSE);
+    pbPixmapActive->setEnabled(FALSE);
+    lPixmapInactive->setEnabled(FALSE);
+    pbPixmapInactive->setEnabled(FALSE);
     return;
   }
   plain->setChecked(TRUE);
   shaded->setChecked(FALSE);
   pixmap->setChecked(FALSE);
-  pixmapBox->hide();
+  pixmapBox->setEnabled(FALSE);
+  lPixmapActive->setEnabled(FALSE);
+  pbPixmapActive->setEnabled(FALSE);
+  lPixmapInactive->setEnabled(FALSE);
+  pbPixmapInactive->setEnabled(FALSE);
 }
  
 int KTitlebarAppearance::getTitleAnim()
@@ -1064,6 +1148,18 @@ void KTitlebarAppearance::setTitleAnim(int tb)
   t->display(tb);
 }
  
+//CT 11feb98 action on double click on titlebar
+int KTitlebarAppearance::getDCTBAction()
+{
+  return dblClickCombo->currentItem();
+}
+
+void KTitlebarAppearance::setDCTBAction(int action)
+{
+  dblClickCombo->setCurrentItem(action);
+}
+//CT ---
+
 void KTitlebarAppearance::SaveSettings( void )
 {
   config->setGroup( "General" );
@@ -1081,7 +1177,42 @@ void KTitlebarAppearance::SaveSettings( void )
 
   int a = getTitleAnim();
   config->writeEntry(KWM_TITLEANIMATION, a);
-   
+
+  //CT 11feb98 action on double click on titlebar
+  a = getDCTBAction();
+  switch (a) {
+  case DCTB_MOVE:
+    config->writeEntry(KWM_DCTBACTION, "winMove");
+    break;
+  case DCTB_RESIZE:
+    config->writeEntry(KWM_DCTBACTION, "winResize");
+    break;
+  case DCTB_MAXIMIZE:
+    config->writeEntry(KWM_DCTBACTION, "winMaximize");
+    break;
+  case DCTB_RESTORE:
+    config->writeEntry(KWM_DCTBACTION, "winRestore");
+    break;
+  case DCTB_ICONIFY:
+    config->writeEntry(KWM_DCTBACTION, "winIconify");
+    break;
+  case DCTB_CLOSE:
+    config->writeEntry(KWM_DCTBACTION, "winClose");
+    break;
+  case DCTB_STICKY:
+    config->writeEntry(KWM_DCTBACTION, "winSticky");
+    break;
+  case DCTB_SHADE:
+    config->writeEntry(KWM_DCTBACTION, "winShade");
+    break;
+  case DCTB_OPERATIONS:
+    config->writeEntry(KWM_DCTBACTION, "winOperations");
+    break;
+  //CT should never get here
+  default:     config->writeEntry(KWM_DCTBACTION, "winMaximize");
+  }
+  //CT ---
+  
   config->sync();
 
   // tell kwm to re-parse the config file
@@ -1112,6 +1243,19 @@ void KTitlebarAppearance::GetSettings( void )
 
   int k = config->readNumEntry(KWM_TITLEANIMATION,0);
   setTitleAnim(k);
+  
+  key = config->readEntry(KWM_DCTBACTION);
+  if (key == "winMove") setDCTBAction(DCTB_MOVE);
+  else if (key == "winResize") setDCTBAction(DCTB_RESIZE);
+  else if (key == "winMaximize") setDCTBAction(DCTB_MAXIMIZE);
+  else if (key == "winRestore") setDCTBAction(DCTB_RESTORE);
+  else if (key == "winIconify") setDCTBAction(DCTB_ICONIFY);
+  else if (key == "winClose") setDCTBAction(DCTB_CLOSE);
+  else if (key == "winSticky") setDCTBAction(DCTB_STICKY);
+  else if (key == "winShade") setDCTBAction(DCTB_SHADE);
+  else if (key == "winOperations") setDCTBAction(DCTB_OPERATIONS);
+  else setDCTBAction(DCTB_MAXIMIZE);
+
 }
 
 void KTitlebarAppearance::loadSettings()

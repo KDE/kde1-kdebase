@@ -35,6 +35,7 @@
 #include <qpainter.h>
 #include <qbttngrp.h>
 #include <qlcdnum.h>
+#include <qcombo.h> //CT 11feb98
 
 #include <kslider.h>
 
@@ -55,6 +56,17 @@
 #define TITLEBAR_PLAIN  0
 #define TITLEBAR_SHADED 1
 #define TITLEBAR_PIXMAP 2
+
+//CT 11feb98
+#define DCTB_MAXIMIZE      0
+#define DCTB_MOVE          1
+#define DCTB_SHADE         2
+#define DCTB_ICONIFY       3
+#define DCTB_STICKY        4
+#define DCTB_RESIZE        5
+#define DCTB_RESTORE       6
+#define DCTB_OPERATIONS    7
+#define DCTB_CLOSE         8
 
 class TitlebarPreview : public QFrame
 {
@@ -152,7 +164,16 @@ private:
 
  QButtonGroup *titlebarBox;
  QRadioButton *shaded, *plain, *pixmap;
- 
+
+ //CT 11feb98
+ int getDCTBAction();
+ void setDCTBAction(int);
+
+ QButtonGroup *titlebarDblClickBox;
+ QLabel * lDblClick;
+ QComboBox * dblClickCombo;
+ //CT ---
+
  KSlider *titleAnim;
  QLabel *tlabel;
  QLCDNumber *t;
