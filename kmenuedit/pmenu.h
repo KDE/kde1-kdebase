@@ -88,6 +88,7 @@ public:
   void      setReadOnly( bool b )         { read_only = b; }
   void      setExecDir( QString dir )     { exec_path = dir; }
   QString   getExecDir()                  { return exec_path; }
+  QPixmap   getBigPixmap();
   void      setBigPixmapName( QString n ) { big_pixmap_name = n; }
   QString   getBigPixmapName()            { return big_pixmap_name; }
   void      setTermOpt( QString opt )     { term_opt = opt; }
@@ -103,6 +104,7 @@ protected slots:
 
 protected:
   QString     text_name;
+  QString     real_name;
   QString     pixmap_name;
   QString     comment;
   QPixmap     pixmap;

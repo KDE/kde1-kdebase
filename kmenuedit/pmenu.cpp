@@ -80,12 +80,13 @@ PMenuItem::PMenuItem( EntryType e, QString t=0, QString c=0, QString n=0, PMenu 
 {
   initMetaObject();
   entry_type = e;
-  text_name = t;
+  text_name = t.copy();
+  real_name = t.copy();
   command_name = c;
   pixmap_name = n;
   if( !pixmap_name.isEmpty() )
     {
-      pixmap = global_pix_loader->loadApplicationMiniIcon( pixmap_name, 14, 14 );
+      pixmap = global_pix_loader->loadApplicationMiniIcon( pixmap_name, 16, 16 );
     }
   else
     {
@@ -104,6 +105,7 @@ PMenuItem::PMenuItem( PMenuItem &item )
 {
   initMetaObject();
   text_name       = item.text_name;
+  real_name       = item.real_name;
   comment         = item.comment;
   pixmap_name     = item.pixmap_name;
   pixmap          = item.pixmap;
@@ -241,13 +243,14 @@ short PMenuItem::parse( QString &s, PMenu *menu = NULL)
 //debug ( "unix = '%s'", (const char *) command_name);
   if( !pixmap_name.isEmpty() )
     {
-      pixmap = global_pix_loader->loadApplicationMiniIcon(pixmap_name, 14, 14);
+      pixmap = global_pix_loader->loadApplicationMiniIcon(pixmap_name, 16, 16);
     }
   return 0;
 }
 
 short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
 {
+  real_name = fi->fileName().copy();
   QString type_string;
   int pos = fi->fileName().find(".kdelnk");
   if( pos >= 0 )
@@ -267,6 +270,8 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
 	  // kalle	  QTextStream st( (QIODevice *) &config);
 	  KConfig kconfig(file);
 	  kconfig.setGroup("KDE Desktop Entry");
+	  comment = kconfig.readEntry("Comment");
+	  text_name = kconfig.readEntry("Name", text_name);
 	  pixmap_name = kconfig.readEntry("MiniIcon");
 	  big_pixmap_name = kconfig.readEntry("Icon");
 	  config.close();
@@ -286,6 +291,7 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
       kconfig.setGroup("KDE Desktop Entry");
       command_name    = kconfig.readEntry("WmCommand");
       comment         = kconfig.readEntry("Comment");
+      text_name       = kconfig.readEntry("Name", text_name);
       pixmap_name     = kconfig.readEntry("MiniIcon");
       big_pixmap_name = kconfig.readEntry("Icon");
       if( !command_name.isEmpty() )
@@ -324,22 +330,64 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
 	}
       config.close();
     }
-  if( pixmap_name.isEmpty() )
-    {
-      pixmap_name = "mini-ball.xpm";
-      pixmap = global_pix_loader->loadMiniIcon("mini-ball.xpm", 14, 14);
-    }
-  else
-    {
-      pixmap = global_pix_loader->loadApplicationMiniIcon(pixmap_name, 14, 14);
-    }
-  if( big_pixmap_name.isEmpty() )
-    {
-      if( entry_type == submenu )
-	big_pixmap_name = "folder.xpm";
-      else if( entry_type == unix_com )
-	big_pixmap_name = "exec.xpm";
-    }
+
+
+
+  // some code from kpanel
+  QPixmap tmppix;
+  pixmap = tmppix;
+  if( !pixmap_name.isEmpty() ){
+    pixmap = global_pix_loader->loadApplicationMiniIcon(pixmap_name, 16, 16);
+  }
+  if (pixmap.isNull() && !big_pixmap_name.isEmpty()){
+    pixmap = global_pix_loader->loadApplicationMiniIcon(big_pixmap_name, 16, 16);
+  }
+  if (pixmap.isNull() && getType() == unix_com){
+    QString tmp = real_name.copy();
+    int pos = tmp.find(".kdelnk");
+    if( pos >= 0 )
+      tmp = tmp.left(pos);
+    tmp.append(".xpm");
+    pixmap = global_pix_loader->loadApplicationMiniIcon(tmp, 16, 16);
+  }
+  
+  if (pixmap.isNull())
+    pixmap = global_pix_loader->loadApplicationMiniIcon("mini-default.xpm", 16, 16);
+  
+  if (comment.isEmpty())
+    comment = text_name;
+  if (big_pixmap_name.isEmpty()){
+    QString tmp = real_name.copy();
+    int pos = tmp.find(".kdelnk");
+    if( pos >= 0 )
+      tmp = tmp.left(pos);
+    tmp.append(".xpm");
+    big_pixmap_name = tmp.copy();
+  }
+  // end kpanel
+
+
+
+
+
+
+//   if( pixmap_name.isEmpty() )
+//     {
+//       pixmap_name = "mini-ball.xpm";
+//       pixmap = global_pix_loader->loadMiniIcon("mini-ball.xpm", 16, 16);
+//     }
+//   else
+//     {
+//       pixmap = global_pix_loader->loadApplicationMiniIcon(pixmap_name, 16, 16);
+//     }
+
+//   if( big_pixmap_name.isEmpty() )
+//     {
+//       if( entry_type == submenu )
+//  	big_pixmap_name = "folder.xpm";
+//       else if( entry_type == unix_com )
+//  	big_pixmap_name = "exec.xpm";
+//     }
   return 0;
 }
 
@@ -348,7 +396,7 @@ void PMenuItem::writeConfig( QDir dir )
   if( read_only || entry_type == separator )
     return;
   QString file = dir.absPath();
-  file += ( (QString) "/" + text_name ); //+ ".kdelnk" );
+  file += ( (QString) "/" + real_name ); //+ ".kdelnk" );
   QFile config(file);
   if( !config.open(IO_ReadWrite) ) 
     return;
@@ -410,6 +458,22 @@ void PMenuItem::exec_fvwm()
 }
 
 //--------------------------------------------------------------------------------------
+
+
+QPixmap PMenuItem::getBigPixmap()
+{
+  QPixmap pm = global_pix_loader->loadApplicationIcon( big_pixmap_name);
+
+  if (pm.isNull()){
+    if( entry_type == submenu )
+      pm = global_pix_loader->loadApplicationIcon("folder.xpm");
+    else if( entry_type == unix_com )
+      pm = global_pix_loader->loadApplicationIcon("exec.xpm");
+  }
+  return pm;
+}
+
+
 
 PMenu::PMenu()
 {
@@ -654,7 +718,7 @@ short PMenu::parse( QDir d )
     {
       for( item = item_list.first(); item != NULL; item = item_list.next() )
 	{
-	  if( item->text_name == item_name )
+	  if( item->real_name == item_name )
 	    {
 	      add(item);
 	      item_list.removeRef(item);
@@ -737,7 +801,7 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item = NULL )
       if( item->entry_type == separator )
 	sort_order += ((QString) "SEPARATOR" + ',');
       else
-	sort_order += (item->text_name + ',');
+	sort_order += (item->real_name + ',');
       if( item->getType() == submenu )
 	{
 	  if( item->read_only )

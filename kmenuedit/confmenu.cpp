@@ -185,8 +185,7 @@ void MenuButton::change_item()
   dialog->i_comment->setText(pmenu_item->getComment());
   dialog->b_pixmap->setPixmap( pmenu_item->getPixmap() );
   QString temp_name = pmenu_item->getBigPixmapName();
-  if( !temp_name.isEmpty() )
-    dialog->b_big_pixmap->setPixmap( global_pix_loader->loadApplicationIcon(temp_name, 70, 70) );
+  dialog->b_big_pixmap->setPixmap( pmenu_item->getBigPixmap());
   dialog->i_big_pixmap->setText(temp_name);
 
   if( type == unix_com )

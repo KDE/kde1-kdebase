@@ -1,3 +1,11 @@
+- smaller fixes in pmenu.cpp:
+    - introduced real_name and uses this for the sort_order
+      to work together with kpanel needs  
+    - default icons similar to the filename (a la kpanel) if
+      icon/miniicon is not specified
+
+                                                 (Matthias)
+
 version 0.2.1
 - compiles with kdelibs-970806
 - uses mimetypes as kfm II does
