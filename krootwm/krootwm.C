@@ -175,7 +175,7 @@ void KRootWm::buildMenubars() {
     if (macMode)
     {
 	debug("buildMenubars");
-      myMenuBarContainer = new QWidget;
+      myMenuBarContainer = new QWidget(0, 0, WStyle_Customize|WStyle_NoBorder);
       myMenuBar = new KMenuBar(myMenuBarContainer);
 
       myMenuBarContainer->setGeometry(0, qApp->desktop()->width()+10,100,40);
