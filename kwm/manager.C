@@ -847,7 +847,9 @@ void Manager::manage(Window w, bool mapped){
   sendToModules(module_win_add, c->window);
 
   if (dohide){
-    c->hideClient();
+    c->hide();
+    XUnmapWindow(qt_xdisplay(), c->window);
+    //c->hideClient();
     setWindowState(c, IconicState); 
   }
   else {
