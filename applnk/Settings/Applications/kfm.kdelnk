@@ -23,5 +23,5 @@ Comment[sk]=Mô¾ete tu nastavi» vzhµad mana¾éru súborov
 Comment[cs]=Zde mù¾ete nastavit vzhled a chování správce souborù
 Comment[ca]=Aquí podeu configurar l'aspecte i efecte dels gestors de fitxers
 Icon=kfm.xpm
-Exec=kcmkfm font color misc icons
+Exec=kcmkfm font color misc
 
