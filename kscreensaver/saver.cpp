@@ -43,7 +43,7 @@ kScreenSaver::~kScreenSaver()
 
 //-----------------------------------------------------------------------------
 
-KPasswordDlg::KPasswordDlg( QWidget *parent, bool s=true ) : QWidget( parent )
+KPasswordDlg::KPasswordDlg( QWidget *parent, bool s ) : QWidget( parent )
 {
 	setCursor( arrowCursor );
 

@@ -22,6 +22,9 @@
    Boston, MA 02111-1307, USA.
 
    $Log$
+   Revision 1.5  1998/06/22 20:39:29  esken
+   Fixing kwmsound: Waits for server process and exits cleanly after n retries.
+
    Revision 1.4  1998/05/01 22:34:51  esken
    Fixed a bug. Only assigned events are played now. Others
    were played using an empty filename.
@@ -127,8 +130,8 @@ KWmSound::KWmSound(KWMModuleApplication *modapp){
     }
   }
   if (tries==10) {
-    printf("kwmsound: Failed connecting the audio server.\n
-Please check manually if you can start kaudioserver.\n");
+    warning("kwmsound: Failed connecting the audio server.\n"
+           "Please check manually if you can start kaudioserver.");
     exit(1);
   }
 

@@ -266,7 +266,7 @@ bool KiKbdConfig::oneKeySwitch() const
 {
   return (!switchComb.contains('+')) && (switchComb != "None");
 }
-QStrList KiKbdConfig::availableMaps(const char* subdir = "")
+QStrList KiKbdConfig::availableMaps(const char* subdir)
 {
   static QDict<QStrList> *dict = 0L;
 

@@ -80,7 +80,7 @@ void KConfigObject::markDataChanged() {
   emit dataChanged();
   flag--;
 }
-QWidget* KConfigObject::createWidget(QWidget* parent, const char* label=0L) 
+QWidget* KConfigObject::createWidget(QWidget* parent, const char* label) 
 {
   return 0L;
 }

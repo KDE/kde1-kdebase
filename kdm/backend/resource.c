@@ -38,8 +38,8 @@ from the X Consortium.
  * resource.c
  */
 
-# include "dm.h"
 # include <X11/Intrinsic.h>
+# include "dm.h"
 /*# include <X11/Xmu/CharSet.h>*/
 
 char	*config;

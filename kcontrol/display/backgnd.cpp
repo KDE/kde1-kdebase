@@ -1419,8 +1419,8 @@ void KBackground::slotDropped (KDNDDropZone *zone)
 
 
 KBPatternDlg::KBPatternDlg( QColor col1, QColor col2, uint *p, int *orient,
-			    int *type, QWidget *parent, char *name)
-  : QDialog( parent, name, true)
+			    int *type, QWidget *parent, char *oname)
+  : QDialog( parent, oname, true)
 {
   int i;
   pattern = p;

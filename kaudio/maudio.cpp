@@ -9,7 +9,7 @@
 
 extern "C" {
 #include <mediatool.h>
-	   }
+}
 
 #include "maudio.h"
 #include "io_oss.h"

@@ -47,7 +47,7 @@
 
 extern int dropError(Display *, XErrorEvent *);
 
-FontUseItem::FontUseItem( const char *n, QFont default_fnt, bool f = false )
+FontUseItem::FontUseItem( const char *n, QFont default_fnt, bool f )
 	: selected(0)
 {
 	_text = n;

@@ -61,7 +61,7 @@ public:
      enum { KNone, All, RootOnly, ConsoleOnly };
 private:
      void           getConfig();
-     KVItemList*    getUsers( QString s = NULL, bool = false);
+     KVItemList*    getUsers( QString s = 0, bool = false);
      KConfig*       kc;
 
      QFont*         _normalFont;

@@ -342,6 +342,7 @@ ConfigList::~ConfigList()
 void ConfigList::insertEntry(KTreeList *list, KPath *path, KModuleListEntry *entry, bool root)
 {
   ConfigTreeItem *item;
+  QPixmap icon;
 
   if (!entry)
     return;
@@ -351,7 +352,8 @@ void ConfigList::insertEntry(KTreeList *list, KPath *path, KModuleListEntry *ent
       // add directory
       item = new ConfigTreeItem(entry);
       item->setText(entry->getName());
-      item->setPixmap(&entry->getIcon());
+      icon = entry->getIcon();
+      item->setPixmap(&icon);
 
       if (path->top())
 	list->addChildItem(item, path);
@@ -374,7 +376,8 @@ void ConfigList::insertEntry(KTreeList *list, KPath *path, KModuleListEntry *ent
       // add application
       item = new ConfigTreeItem(entry);
       item->setText(entry->getName());
-      item->setPixmap(&entry->getIcon());
+      icon = entry->getIcon();
+      item->setPixmap(&icon);
       if (path->count() > 0)
         list->addChildItem(item, path);
       else
