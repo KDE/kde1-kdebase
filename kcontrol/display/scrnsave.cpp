@@ -289,7 +289,7 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	
 	stackLayout->addWidget( group, 10 );
 	
-	groupLayout = new QHBoxLayout( group, 10 );
+	groupLayout = new QHBoxLayout( group, 15 );
 
 	prioritySlider = new QSlider( QSlider::Horizontal, group );
 	prioritySlider->setRange( 0, 20 );
