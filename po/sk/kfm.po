@@ -666,13 +666,12 @@ msgid "Last Modified"
 msgstr "Posledná modifikácia"
 
 #: kfmprops.cpp:379
-#, fuzzy, c-format
 msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
 msgstr ""
-"Nemô¾em zmaza» prieèinok\n"
-"%s"
+"Nemô¾em premenova» súbor alebo prieèinok\n"
+"%s\n"
 
 #: kfmprops.cpp:429
 msgid "Access permissions"
@@ -1390,12 +1389,11 @@ msgstr "V¹etky &cookie"
 
 #: kcookiewin.cpp:161
 msgid "&Accept"
-msgstr ""
+msgstr "&Akceptova»"
 
 #: kcookiewin.cpp:166
-#, fuzzy
 msgid "&Reject"
-msgstr "Vy&bra»"
+msgstr "&Odmietnu»"
 
 #: popup.cpp:69
 #, c-format
@@ -1480,9 +1478,3 @@ msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
 
-#~ msgid ""
-#~ "Could not rename the file or directory\n"
-#~ "The destination seems to already exist\n"
-#~ msgstr ""
-#~ "Nie je mo¾né premenova» súbor alebo prieèinok\n"
-#~ "Zdá sa, ¾e cieµový súbor u¾ existuje\n"
