@@ -1,4 +1,8 @@
-* Mon Jan  4 12:26:00 CEST 1998
+* Mon Jan 11 18:40:00 CEST 1999
+
+Made KPager store the "one click mode" and "show name" status
+
+* Mon Jan  4 12:26:00 CEST 1999
 
 Use kcmdisplayrc instead of kdisplayrc
 Fix for common desktop change

@@ -295,6 +295,8 @@ void KPager::saveProperties(KConfig *kcfg)
     kcfg->writeEntry("visibleGlobalDesktop",kpagerclient->isVisibleGlobalDesktop());
     kcfg->writeEntry("drawMode",kpagerclient->getDrawMode());
     kcfg->writeEntry("use2Rows",kpagerclient->is2Rows());
+    kcfg->writeEntry("use1ClickToChangeDesktop",kpagerclient->is1ClickMode());
+    kcfg->writeEntry("showDesktopName",kpagerclient->isShowingDesktopName());
 }
 
 void KPager::readProperties(KConfig *kcfg)
