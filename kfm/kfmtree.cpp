@@ -516,7 +516,7 @@ KFMDirTreeItem::KFMDirTreeItem( KFMDirTree *_finder, const char *_url, bool _isf
 	name = u.filename();
 
     // Find the correct icon
-    QString pixmapFile( folderType->getPixmapFile( url, TRUE ) );
+    QString pixmapFile(KMimeType::getPixmapFileStatic( url, TRUE ) );
     // Is the icon cached ?
     pixmap = KMimeType::pixmapCache->find( pixmapFile );
     // If not => create a new icon
