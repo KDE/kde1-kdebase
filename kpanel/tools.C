@@ -593,12 +593,10 @@ void kPanel::ask_logout(){
 
 
 void kPanel::call_klock(){
-//   QMessageBox::message( "Hi!", "This will invoke the fabulous KLOCK (xlock replacement)");
   execute("klock");
 }
 
  void kPanel::call_help(){
-//     QMessageBox::message( "Hi!", "This will invoke the KDE Help system with the\n KDE Startup Screen." );
   execute("kdehelp");
 }
 

@@ -739,8 +739,8 @@ void kPanel::slotDropEvent( KDNDDropZone *_zone ){
     }
     
     QMessageBox::warning( 0, "Panel", 
-			  "Cannot put this as button onto the panel!",
-			  "Oops!");
+			  klocale->translate("Cannot put this as button onto the panel!"),
+			  klocale->translate("Oops!"));
     return;
   }
 

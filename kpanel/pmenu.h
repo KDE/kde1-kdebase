@@ -141,6 +141,9 @@ public:
   void       setAltSort( bool alternateSort ) { altSort = alternateSort; }
   bool       getAltSort() { return altSort; }
 
+  // this is a bit tricky: it returns the menu item of the menu editor (if any)
+  PMenuItem* getMenuEditorItem(){return menu_editor_item;}
+
 signals:
 
 public slots:
@@ -153,6 +156,7 @@ protected:
   myPopupMenu      *cmenu;
 
   bool             altSort;
+  static PMenuItem* menu_editor_item;
 };
 
 

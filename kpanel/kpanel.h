@@ -210,6 +210,7 @@ public:
   void standalonePanelButtonClicked();
   
   void configurePanel();
+  void editMenus();
     
   
   void restart();

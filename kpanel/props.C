@@ -8,6 +8,7 @@
 
 #include "kpanel.h"
 #include <klocale.h>
+#include <qmsgbox.h>
 
 extern void execute(const char*);
 
@@ -141,6 +142,9 @@ void kPanel::parseMenus(){
     panel_menu->add( new PMenuItem(prog_com, klocale->translate("Configure"), NULL, NULL, NULL, 
 				   this, SLOT(configurePanel()), NULL, FALSE, NULL, 
 				   klocale->translate("Configure panel")) );
+    panel_menu->add( new PMenuItem(prog_com, klocale->translate("Edit Menus"), NULL, NULL, NULL, 
+				   this, SLOT(editMenus()), NULL, FALSE, NULL, 
+				   klocale->translate("Add or remove applications in the menu structure ")) );
     panel_menu->add( new PMenuItem(prog_com, klocale->translate("Restart"), NULL, NULL, NULL, 
 				   this, SLOT(restart()), NULL, FALSE, NULL, 
 				   klocale->translate("Restart panel")) );
@@ -296,4 +300,14 @@ void kPanel::configurePanel(){
   execute("kcmkpanel");
 }
 
+void kPanel::editMenus(){
+  PMenuItem* pmi = pmenu->getMenuEditorItem();
+  if (!pmi){
+    QMessageBox::warning( 0, "Panel", 
+			  klocale->translate("The menu editor is not installed."),
+			  klocale->translate("Oops!"));
+  } else {
+    pmi->exec();
+  }
+}
 

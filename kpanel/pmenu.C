@@ -499,6 +499,10 @@ short PMenu::parse( QDir d )
 	    delete new_item;
 	    new_item = NULL;
 	  }
+	  else {
+	    if (fi->fileName() == "KMenuEdit.kdelnk")
+	      menu_editor_item = new_item;
+	  }
 	}
 
       if ( new_item )
@@ -686,3 +690,5 @@ void PMenu::highlighted( int id )
   if (item && item->getId() == id)
     item->highlighted();
 }
+
+PMenuItem*PMenu:: menu_editor_item = 0;
