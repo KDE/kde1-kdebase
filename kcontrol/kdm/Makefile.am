@@ -1,5 +1,5 @@
 INCLUDES = $(all_includes) 
-LDADD = $(all_libraries) -lkfile -lkfm -lkdeui -lkdecore -lqt $(KIMGIO_LIBS) -lkimgio -lXext -lX11 $(LIBSOCKET) $(KDE_RPATH)
+LDADD = $(all_libraries) -lkfile -lkfm -lkdeui -lkdecore -lqt $(LIB_KIMGIO) -lXext -lX11 $(LIBSOCKET) $(KDE_RPATH)
 SUBDIRS = doc pics 
 
 bin_PROGRAMS = kdmconfig

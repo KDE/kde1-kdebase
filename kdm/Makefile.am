@@ -16,10 +16,10 @@ bin_PROGRAMS = kdm kdmdesktop
 # Libraries:
 LDADD  = $(all_libraries) -lkdecore -lqt -lXext \
 	-lXau $(LIBXDMCP) -lX11 $(PASSLIB) $(LIB_LIBS) $(LIBSOCKET) $(LIBCRYPT) \
-	$(KDE_RPATH) $(LIBUCB) $(LIBUTIL) -lkimgio $(KIMGIO_LIBS) 
+	$(KDE_RPATH) $(LIBUCB) $(LIBUTIL) $(LIB_KIMGIO)
 
 # For kdmdesktop
-kdmdesktop_LDADD = $(all_libraries) -lkdecore -lqt -lm -lkimgio $(KIMGIO_LIBS) -lXext\
+kdmdesktop_LDADD = $(all_libraries) -lkdecore -lqt -lm $(LIB_KIMGIO) -lXext\
 		   -lX11 $(LIBSOCKET) $(KDE_RPATH)
 
 # Sources for xdm (both C and C++):
