@@ -27,7 +27,7 @@
 #include "xs_hsv.h"
 #include "xs_colors.h"
 
-// extern char *progname;
+/* extern char *progname; */
 
 void
 free_colors(Display *dpy, Colormap cmap, XColor *colors, int ncolors)

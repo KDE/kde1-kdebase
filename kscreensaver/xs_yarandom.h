@@ -24,8 +24,8 @@
 # include "vms-gtod.h"
 #endif
 
-// #define random()   ya_random()
-// #define srandom(i) ya_rand_init(0)
+/* #define random()   ya_random()
+ #define srandom(i) ya_rand_init(0) */
 
 extern unsigned int ya_random (void);
 extern void ya_rand_init (unsigned int);

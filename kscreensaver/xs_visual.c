@@ -21,7 +21,7 @@
 
 #include <X11/Xutil.h>
 
-// extern char *progname;
+/* extern char *progname; */
 
 
 #ifndef isupper
