@@ -57,6 +57,43 @@ XErrorEvent	*event;
  * this code wouldn't have to be this kludgy.
  */
 
+/*
+ * The Property code is taken from kwm.
+ * This should only be a temporary solution, but
+ * it is necessary to check for windows with
+ * the property KDE_DESKTOP_WINDOW so that
+ * kdm doesn't kill itself!!
+ *
+ * Sat Oct 18 07:44:56 1997 -- Steffen Hansen
+ */
+static int _getprop(Display* dpy, Window w, Atom a, Atom type, long len, unsigned char **p){
+  Atom real_type;
+  int format;
+  unsigned long n, extra;
+  int status;
+
+  status = XGetWindowProperty(dpy, w, a, 0L, len, False, type, 
+			      &real_type, &format, &n , &extra, p);
+  if (status != Success || *p == 0)
+    return -1;
+  if (n == 0)
+    XFree((void*) *p);
+  return n;
+}
+
+/* Small modification to be C */
+static int getSimpleProperty(Display* dpy, Window w, Atom a, long *result){
+  long *p = 0;
+
+  if (_getprop(dpy, w, a, a, 1L, (unsigned char**)&p) <= 0){
+    return FALSE;
+  }
+
+  *result = p[0];
+  XFree((char *) p);
+  return TRUE;
+}
+
 static
 killWindows (dpy, window)
 Display	*dpy;
@@ -65,13 +102,24 @@ Window	window;
 	Window	root, parent, *children;
 	int	child;
 	unsigned int nchildren = 0;
-	
+	// This prop. indicates that its a kdm window!
+	Atom a = XInternAtom(dpy, "KDE_DESKTOP_WINDOW", False);
+ 
+	/* We cannot loop, when we want to keep the stupid window...*.
 	while (XQueryTree (dpy, window, &root, &parent, &children, &nchildren)
 	       && nchildren > 0)
+	*/
+	XQueryTree (dpy, window, &root, &parent, &children, &nchildren);
+	if( nchildren > 0)
 	{
 		for (child = 0; child < nchildren; child++) {
-			Debug ("XKillClient 0x%x\n", children[child]);
-			XKillClient (dpy, children[child]);
+		        long result = 0;
+			getSimpleProperty(dpy, children[child],a,&result);
+			if( !result) {
+			  /* not kdm window, kill it */
+			  Debug ("XKillClient 0x%x\n", children[child]);
+			  XKillClient (dpy, children[child]);
+			}
 		}
 		XFree ((char *)children);
 	}
@@ -116,3 +164,4 @@ Display	*dpy;
 	XSetErrorHandler ((int (*)()) 0);
 	Debug ("pseudoReset done\n");
 }
+
