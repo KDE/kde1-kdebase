@@ -13,7 +13,7 @@
 <sect>KDE Theme Manager: Installer
 <p>
 The KDE Theme Manager <bf>Installer</bf>
-screen allows you to select the desktop <bf>Theme</bf>
+dialog allows you to select the desktop <bf>Theme</bf>
 package you wish to install. 
 
 Installation of a <bf>Theme</bf> package customizes the appearance
@@ -91,7 +91,7 @@ selecting another Theme, or quitting the Theme Manager.
 </itemize>
 
 After selecting a Theme,
-go to the next screen (<bf>Contents</bf>) to
+go to the next dialog (<bf>Contents</bf>) to
 choose which  components of the selected Theme package to
 install.  When you have made your choice, click on <bf>Apply</bf>
 to install the  selected components, which will be copied from
@@ -144,7 +144,7 @@ This button is inactive if a global Theme is selected.
 
 <sect> Theme package contents
 <p>
-The <bf>Contents</bf> screen presents a list of the
+The <bf>Contents</bf> dialog presents a list of the
 various possible components 
 contained in the selected 
 Theme package, and  allows you to choose which of these
@@ -158,23 +158,26 @@ Components that are present are
 listed as ``<bf>available</bf>'';
 missing components are listed as <bf>``empty''</bf>.
 
-Each Theme component also has a checkbox next to it. This
-determines the action taken by the Theme Manager when the Theme
+Each Theme component can  be individually activated
+(with the check box or button next to it, depending on your Desktop style). 
+This determines the action taken by the Theme Manager when the Theme
 is installed:
 <itemize>
-<item>If the box is checked,  this component of the previous Theme will
+<item>If the component is active,  
+this component of the previous Theme will
 be removed, if installed.  The corresponding component of the
 current Theme will then be installed, if available.
-<item> If the box is <bf>not</bf> checked, this component will not
+<item> If it is <bf>not</bf> active, this component will not
 be changed. (Any previously installed component will be left in place.)
 </itemize>
 
 
 
-The <bf>Clear</bf> button clears all the checkboxes for the list of
-Theme components, and the <bf>Invert</bf> button interchanges checked and
-unchecked items.  If you wish to completely re-install the Default theme, all
-boxes must be checked.
+The <bf>Clear</bf> button deactivates all
+listed 
+Theme components, and the <bf>Invert</bf> button interchanges active and
+inactive items.  If you wish to completely re-install the Default theme, all
+components must be active.
 
 <itemize>
 <item> Note: the image files for the Window Titlebar and Window Border
@@ -194,7 +197,7 @@ of these directories.
 
 <sect> About the package.
 <p>
-The ``<bf>About</bf>'' screen provides information (version, author, etc.)
+The ``<bf>About</bf>'' dialog provides information (version, author, etc.)
 about the selected Theme package, and about the KDE Theme Manager.
 
 If the name of the Theme is ``<tt>Theme_name</tt>'',
