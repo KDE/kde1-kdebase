@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-04-02 01:15+0200\n"
+"POT-Creation-Date: 1999-04-12 01:17+0200\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Radoslav Dejanovic <rdejanov@public.srce.hr>\n"
 "Language-Team: Croatian\n"
@@ -48,7 +48,7 @@ msgstr "Prika¾i ploèu"
 msgid "Iconify other &windows"
 msgstr "Ikonifiraj ostale &prozore"
 
-#: kpanel.C:1214 tools.C:909
+#: kpanel.C:1214 tools.C:910
 msgid "Windowlist"
 msgstr "Lista prozora"
 
@@ -132,7 +132,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:918
+#: tools.C:919
 msgid "KDiskNavigator"
 msgstr "Navigator diska"
 

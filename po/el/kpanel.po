@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-04-02 01:15+0200\n"
+"POT-Creation-Date: 1999-04-12 01:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
 
@@ -43,7 +43,7 @@ msgstr "Εμφάνιση του πίνακα"
 msgid "Iconify other &windows"
 msgstr ""
 
-#: kpanel.C:1214 tools.C:909
+#: kpanel.C:1214 tools.C:910
 msgid "Windowlist"
 msgstr "Λίστα παραθύρων"
 
@@ -128,7 +128,7 @@ msgid ""
 "%b %d"
 msgstr ""
 
-#: tools.C:918
+#: tools.C:919
 msgid "KDiskNavigator"
 msgstr ""
 

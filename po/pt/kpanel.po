@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-04-02 01:15+0200\n"
+"POT-Creation-Date: 1999-04-12 01:17+0200\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -45,7 +45,7 @@ msgstr "Mostrar o painel"
 msgid "Iconify other &windows"
 msgstr "Iconificar outras &janelas"
 
-#: kpanel.C:1214 tools.C:909
+#: kpanel.C:1214 tools.C:910
 msgid "Windowlist"
 msgstr "Lista de Janelas"
 
@@ -129,7 +129,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:918
+#: tools.C:919
 msgid "KDiskNavigator"
 msgstr "Navegador"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kpanel\n"
-"POT-Creation-Date: 1999-04-02 01:15+0200\n"
+"POT-Creation-Date: 1999-04-12 01:17+0200\n"
 "PO-Revision-Date: 1999-02-16 12:35+0100\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
@@ -49,7 +49,7 @@ msgstr "Vis Panel"
 msgid "Iconify other &windows"
 msgstr "Minimer andre &vinduer"
 
-#: kpanel.C:1214 tools.C:909
+#: kpanel.C:1214 tools.C:910
 msgid "Windowlist"
 msgstr "Vindues oversigt"
 
@@ -133,7 +133,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:918
+#: tools.C:919
 msgid "KDiskNavigator"
 msgstr "Disk Navigator"
 

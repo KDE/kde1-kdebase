@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1999-04-02 01:15+0200\n"
+"POT-Creation-Date: 1999-04-12 01:17+0200\n"
 "PO-Revision-Date: 1999-01-18 08:18+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -49,7 +49,7 @@ msgstr "Ukázat panel"
 msgid "Iconify other &windows"
 msgstr "Ikonifikovat ostatní okna"
 
-#: kpanel.C:1214 tools.C:909
+#: kpanel.C:1214 tools.C:910
 msgid "Windowlist"
 msgstr "Seznam oken"
 
@@ -133,7 +133,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:918
+#: tools.C:919
 msgid "KDiskNavigator"
 msgstr "Diskový navigátor"
 
