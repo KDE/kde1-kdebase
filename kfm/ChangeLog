@@ -1,3 +1,9 @@
+1999-02-16  David Faure  <faure@kde.org>
+
+	* kfmgui.cpp (showSource): Added option Editor to choose the preferred 
+	editor used by Show Document / Frame source. Defaults to kedit.
+	Idea from Dawit A.
+
 1999-02-01  David Faure  <faure@kde.org>
 
 	* kfm*: Copy/Paste for text (browser mode) as well as URLs (file

@@ -1670,8 +1670,16 @@ void KfmGui::showSource ( const char * url )
     // use it.  ( Dawit A. )
     if ( view->getHTMLCache()->isEnabled() && tmp != 0L )
         url = tmp;
+
+    KConfig *config = KApplication::getKApplication()->getConfig();
+    config->setGroup( "KFM Misc Defaults" );
+    QString term = config->readEntry( "Editor", DEFAULT_EDITOR );
+
+    if (!strncmp(url,"file:",5)) // file URL, remove protocol part, just in 
+      // case the application doesn't support URLs.
+      url+=5;
     QString cmd;
-    cmd << "kedit \"" << url << "\"";
+    cmd << term << " \"" << url << "\"";
     KMimeBind::runCmd( cmd );
 }
 

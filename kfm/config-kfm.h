@@ -62,5 +62,9 @@ void debugC( const char *msg , ...);
 // Default terminal for Open Terminal and for 'run in terminal'
 #define DEFAULT_TERMINAL "konsole"
 
+// Default editor for "View Document/Frame Source"
+#define DEFAULT_EDITOR "kedit"
+
 // Default UserAgent string (e.g. Konqueror/1.1)
 #define DEFAULT_USERAGENT_STRING QString("Konqueror/")+KDE_VERSION_STRING
+
