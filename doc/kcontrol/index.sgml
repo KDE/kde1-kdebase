@@ -48,7 +48,7 @@ help button.
 <item> <htmlurl url="kcmlocale/locale-1.html" name="Language Setting">
 <item> <htmlurl url="kcmsamba/smbstatus-1.html" name="The Samba Status Monitor">
 <item> <htmlurl url="kcmsyssound/syssound.html" name="System Sound Selection">
-<item> <htmlurl url="kpanel/kpanel.html" name="Panel and Taskbar Configuration">
+<item> <htmlurl url="kcmkpanel/kpanel.html" name="Panel and Taskbar Configuration">
 <item> <htmlurl url="kcmdisplay/kdisplay-3.html" name="Background Configuration">
 <item> <htmlurl url="kcmdisplay/kdisplay-4.html" name="Screen Saver Configuration">
 <item> <htmlurl url="kcmdisplay/kdisplay-5.html" name="Color Scheme Configuration">
