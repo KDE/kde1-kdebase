@@ -749,8 +749,10 @@ void KMimeType::getBindings( QStrList &_list, QList<QPixmap> &_pixlist, const ch
     {
 	KMimeType *typ = KMimeType::getMagicMimeType( _url );
 
-	if ( !typ->hasBindings() )
-	    return;
+// this makes it impossible to have a defaut binding (e.g. allfiles)
+// without at least one mime binding  rjakob (rjakob@duffy1.franken.de)
+//	if ( !typ->hasBindings() )
+//	    return;
 
 	KMimeBind *bind;
 	for ( bind = typ->firstBinding(); bind != 0L; bind = typ->nextBinding() )
@@ -1539,6 +1541,15 @@ bool KMimeType::runBinding( const char *_url, const char *_binding )
 	if ( strcmp( bind->getProgram(), _binding ) == 0 )
 	    return bind->runBinding( _url );
     }
+//   repeat the loop for default bindings before we say we have none
+//   Sep 5 rjakob
+    for ( bind = defaultType->firstBinding(); bind != 0L; bind = defaultType->nextBinding() )
+    {
+	// Is it the one we want ?
+	if ( strcmp( bind->getProgram(), _binding ) == 0 )
+	    return bind->runBinding( _url );
+    }
+
 
     QString tmp;
     tmp.sprintf( "%s\n%s", i18n( "Could not find binding" ), _binding );
