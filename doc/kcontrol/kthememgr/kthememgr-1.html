@@ -19,7 +19,8 @@ Previous<A HREF="kthememgr.html#toc1">Table of Contents</A>
 </P>
 <H3><A NAME="s1">1. KDE Theme Manager: Installer</A></H3>
 
-<P>This KDE Theme Manager screen allows you to select the desktop <B>Theme</B>
+<P>The KDE Theme Manager <B>Installer</B>
+screen allows you to select the desktop <B>Theme</B>
 package you wish to install. 
 <P>Installation of a <B>Theme</B> package customizes the appearance
 of your desktop by modifying
@@ -40,57 +41,51 @@ in the system Themes directory
 <CODE>$KDEDIR/share/apps/kthememgr/Themes</CODE>  or
 <EM>local themes</EM> in your personal
 Themes directory <CODE>~/.kde/share/apps/kthememgr/Themes</CODE>.
-The packages can either be gzipped tarballs or unpacked directories.
-<P>
+The packages can either be <CODE>tar</CODE> archives
+compressed with <CODE>gzip</CODE>, or unpacked directories.
+<P>The ``Default'' Theme is the plain (themeless) KDE Desktop.
 <P>Click on a listed Theme to select it; its name will be
-highlighted and (if available)  a picture  showing its  components
+highlighted and  a picture  showing its  components
 will be displayed in the central  box.   Information
 about the Theme will be displayed in the lower  box. 
-<P>To activate the highlighted theme package, click on <B>Apply</B>.
-The contents of the package will be extracted to  your Theme manager
-Work directory <CODE>~/.kde/share/apps/kthememgr/Work</CODE>, and the various
-components will be copied to the KDE configuration directories which
-control the desktop.    (Go to the  <B>Contents</B> screen to
-select which  components of the Theme package to activate)
+<P>Clicking on  <B>Default</B> will select the 
+``Default'' Theme.
+<P>When you select a Theme package
+its contents will be extracted  and placed in your Theme Manager
+Work directory <CODE>~/.kde/share/apps/kthememgr/Work</CODE>.
+(The previous contents of this directory will be deleted.)
+<P>After selecting a Theme,
+go to the next screen (<B>Contents</B>) to
+choose which  components of the Theme package to
+install.  When you have made your choice, click on <B>Apply</B>
+to install the  selected components, which will be copied from
+your Theme Manager Work directory.
+<P>To quit the Theme Manager, click on <B>OK</B> to
+apply the current Theme selection and then exit, or
+click on <B>Cancel</B> to exit without installing
+a new Theme.
 <P>
 <P>
-<P>
-<P>Clicking on <B>OK</B> will also apply the selected  Theme package, and
-then close the Theme Manager.
-<P>
-<P>Clicking on  <B>Default</B> will restore the default theme-less
-KDE desktop.
-<P>
-<P>
-<UL>
-<LI> Note: the image files for the various window  elements
-(buttons, titlebar, etc.) are placed in the directory
-<CODE>~/.kde/share/apps/kwm/pics/</CODE>
-and panel elements go in
-<CODE>~/.kde/share/apps/kpanel/pics/</CODE>.
-If you are unable to 
-completely remove a Theme to restore the
-default desktop, you may need to delete the contents
-of these directories.
-</LI>
-</UL>
-<P>
-<P>Themes can be imported, exported, created, or deleted
+<P>Theme packages can be imported, exported, created, or deleted
 using the buttons
 at the right:
 <UL>
-<LI> Click on ``<B>Add</B>'' to import a new theme package to your
+<LI> Click on ``<B>Add</B>'' to import a new theme package into your
 local Themes directory.  You will be prompted for the name and
 location
 of the package.
 </LI>
-<LI> Click on ``<B>Save as</B>'' to export the highlighted theme
-package.  You will be propted for the location at  which to save it.
+<LI> Click on ``<B>Save as</B>'' to export the contents
+of your local Theme Manager Work directory as a new theme
+package. 
+You will be prompted for the location at  which to save it
+(as a compressed <CODE>tar</CODE> archive).
+
 
 </LI>
 <LI> Click on ``<B>Create</B>'' to create a new entry in the list.
-This creates a new Theme package in the local Work directory.  
-It will initially be a copy of the currently-highlighted Theme package; 
+This creates a new Theme package in the local Theme Manager Work directory.  
+It will initially be a copy of the currently-installed Theme package; 
 you can then modify it as desired.
 
 

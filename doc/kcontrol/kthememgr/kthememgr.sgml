@@ -6,13 +6,14 @@
 
 <title>KDE Control Center - KDE Theme Manager
 <author>The KDE team, Stefan Taverner; documentation by Duncan H.
-<date>v0.2 6 August 1999
+<date>v0.3 12 August 1999
 
 <!-- Begin the document -->
 
 <sect>KDE Theme Manager: Installer
 <p>
-This KDE Theme Manager screen allows you to select the desktop <bf>Theme</bf>
+The KDE Theme Manager <bf>Installer</bf>
+screen allows you to select the desktop <bf>Theme</bf>
 package you wish to install. 
 
 Installation of a <bf>Theme</bf> package customizes the appearance
@@ -36,63 +37,59 @@ in the system Themes directory
 <tt>$KDEDIR/share/apps/kthememgr/Themes</tt>  or
 <em>local themes</em> in your personal
 Themes directory <tt>~/.kde/share/apps/kthememgr/Themes</tt>.
-The packages can either be gzipped tarballs or unpacked directories.
+The packages can either be <tt>tar</tt> archives
+compressed with <tt>gzip</tt>, or unpacked directories.
 
+The ``Default'' Theme is the plain (themeless) KDE Desktop.
 
 Click on a listed Theme to select it; its name will be
-highlighted and (if available)  a picture  showing its  components
+highlighted and  a picture  showing its  components
 will be displayed in the central  box.   Information
 about the Theme will be displayed in the lower  box. 
 
-To activate the highlighted theme package, click on <bf>Apply</bf>.
-The contents of the package will be extracted to  your Theme manager
-Work directory <tt>~/.kde/share/apps/kthememgr/Work</tt>, and the various
-components will be copied to the KDE configuration directories which
-control the desktop.    (Go to the  <bf>Contents</bf> screen to
-select which  components of the Theme package to activate)
+Clicking on  <bf>Default</bf> will select the 
+``Default'' Theme.
+
+When you select a Theme package
+its contents will be extracted  and placed in your Theme Manager
+Work directory <tt>~/.kde/share/apps/kthememgr/Work</tt>.
+(The previous contents of this directory will be deleted.)
+
+After selecting a Theme,
+go to the next screen (<bf>Contents</bf>) to
+choose which  components of the Theme package to
+install.  When you have made your choice, click on <bf>Apply</bf>
+to install the  selected components, which will be copied from
+your Theme Manager Work directory.
+
+To quit the Theme Manager, click on <bf>OK</bf> to
+apply the current Theme selection and then exit, or
+click on <bf>Cancel</bf> to exit without installing
+a new Theme.
+ 
 
 
-
-
-Clicking on <bf>OK</bf> will also apply the selected  Theme package, and
-then close the Theme Manager.
-
-
-Clicking on  <bf>Default</bf> will restore the default theme-less
-KDE desktop.
-
-
-<itemize>
-<item> Note: the image files for the various window  elements
-(buttons, titlebar, etc.) are placed in the directory
-<tt>~/.kde/share/apps/kwm/pics/</tt>
-and panel elements go in
-<tt>~/.kde/share/apps/kpanel/pics/</tt>.
-If you are unable to 
-completely remove a Theme to restore the
-default desktop, you may need to delete the contents
-of these directories.
-
-</itemize>
-
-
-Themes can be imported, exported, created, or deleted
+Theme packages can be imported, exported, created, or deleted
 using the buttons
 at the right:
 <itemize>
 
-<item> Click on ``<bf>Add</bf>'' to import a new theme package to your
+<item> Click on ``<bf>Add</bf>'' to import a new theme package into your
 local Themes directory.  You will be prompted for the name and
 location
 of the package.
 
-<item> Click on ``<bf>Save as</bf>'' to export the highlighted theme
-package.  You will be propted for the location at  which to save it.
+<item> Click on ``<bf>Save as</bf>'' to export the contents
+of your local Theme Manager Work directory as a new theme
+package. 
+You will be prompted for the location at  which to save it
+(as a compressed <tt>tar</tt> archive).
+
 
 
 <item> Click on ``<bf>Create</bf>'' to create a new entry in the list.
-This creates a new Theme package in the local Work directory.  
-It will initially be a copy of the currently-highlighted Theme package; 
+This creates a new Theme package in the local Theme Manager Work directory.  
+It will initially be a copy of the currently-installed Theme package; 
 you can then modify it as desired.
 
 
@@ -105,40 +102,58 @@ you can then modify it as desired.
 
 <sect> Theme package contents
 <p>
-This screen lists the elements contained in the selected Theme package.
-and allows their selective installation to replace the 
-corresponding elements
-of the Theme that is currently being used.
+The <bf>Contents</bf> screen presents a list of the components 
+contained in the selected 
+Theme package.
+It also allows you to choose which of these
+components to install.
 
 
-If the checkbox <bf>Uninstall parts of previous theme</bf> is
-selected,  the  previous theme files in the KDE configuration
-directories will be backed up with a 
-<tt>~</tt>  extension;  if the box is not checked, they
-will be overwritten.  
+Not all possible components are
+necessarily present in a given
+Theme package.
+Components that are present are
+listed as ``<bf>available</bf>'';
+missing components are listed as <bf>``empty''</bf>.
+
+The checkbox ``<bf>Uninstall parts of previous theme</bf>'' determines
+how missing components are handled when a Theme package is installed:
+<itemize>
+<item> If the box is <bf>not</bf> checked, those components of the
+previously-installed Theme which are not supplied by the new
+Theme package are left in place.
+<item> If the box is checked, all components of the previous
+Theme are removed.
+</itemize>
+If you wish to remove all Theme components by installing the
+``Default''  Theme (a themeless Desktop), this box must be checked.
+(The Default theme has <bf>no</bf> Theme components.)
 
 
-A list of the possible elements of the Theme package is presented
-(Colors, Wallpapers, Panel, ... etc.).   Each has a checkbox next to it,
-and is identified as <bf>available</bf> or <bf>empty</bf>,
-depending on whether or not this element is present
-in  the  highlighted theme package listed on the previous (Installer) screen.
-(Some Theme packages only contain a subset of the possible Theme elements.)
-
-If they are listed as <bf>available</bf>, 
-the checked  items in this list of possible Theme elements will
-be installed into the appropriate
-KDE configuration directories when the <bf>Apply</bf> button is clicked.
-If items are left unchecked, the corresponding elements of the 
-currently-running Theme package will be left unchanged when the <bf>Apply</bf>
-button is clicked.
-
+Each Theme component also has a checkbox next to it.
+If the box next to a component listed  as ``<bf>available</bf>''
+is checked, that component will be installed when the
+<bf>Apply</bf> or <bf>OK</bf> button is clicked.
+Components with unchecked boxes will not be installed.
 
 
 The <bf>Clear</bf> button clears all the checkboxes for the list of
-Theme elements, and the <bf>Invert</bf>  exchanges checked and
+Theme components, and the <bf>Invert</bf> button  exchanges checked and
 unchecked items.
 
+<itemize>
+<item> Note: the image files for the Window Titlebar and Window Border
+components are installed into the directory
+<tt>~/.kde/share/apps/kwm/pics/</tt>
+and Panel image files go in
+<tt>~/.kde/share/apps/kpanel/pics/</tt>.
+If you find you are unable to 
+completely remove a Theme to restore the
+default desktop,  
+delete the contents
+of these directories.
+
+</itemize>
 
 
 
