@@ -3,7 +3,7 @@
 Exec=kcmkwm windows
 Icon=windows.xpm
 Type=Application
-DocPath=kcontrol/kdisplay/windows.html
+DocPath=kcontrol/kcmkwm/kwm-3.html
 Comment=Window properties
 Comment[de]=Fenstereigenschaften
 Comment[pl]=W³a¶ciwo¶ci okna

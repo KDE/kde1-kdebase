@@ -3,7 +3,7 @@
 Exec=kcmlocale language
 Icon=locale.xpm
 Type=Application
-DocPath=kdisplay/locale/language.html
+DocPath=kcontrol/kcmlocale/locale-1.html
 Comment=Language settings
 Comment[de]=Einstellung der Landessprachen
 Comment[fi]=Kieliasetukset

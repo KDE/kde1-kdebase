@@ -3,6 +3,7 @@
 Exec=kcmkwm titlebar
 Icon=titlebar.xpm
 Type=Application
+DocPath=kcontrol/kcmkwm/kwm-2.html
 Comment=Titlebar appearance
 Comment[de]=Erscheinungsbild der Titelleiste
 Comment[pl]=Wygl±d paska tytu³owego

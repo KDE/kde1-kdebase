@@ -3,7 +3,7 @@
 Exec=kcmbell bell
 Icon=bell.xpm
 Type=Application
-DocPath=kcontrol/bell/bell.html
+DocPath=kcontrol/kcmbell/bell-1.html
 Comment=Bell settings
 Comment[de]=Einstellung der Tastaturglocke
 Comment[da]=Indstil klokke

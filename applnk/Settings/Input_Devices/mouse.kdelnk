@@ -3,7 +3,7 @@
 Exec=kcminput mouse
 Icon=mouse.xpm
 Type=Application
-DocPath=kcontrol/input/mouse.html
+DocPath=kcontrol/kcminput/input-2.html
 Comment=Mouse settings
 Comment[de]=Einstellung der Mausparameter
 Comment[da]=Indstil musen

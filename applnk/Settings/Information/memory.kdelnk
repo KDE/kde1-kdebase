@@ -3,7 +3,7 @@
 Exec=kcminfo memory
 Icon=memory.xpm
 Type=Application
-DocPath=kcontrol/info/memory.html
+DocPath=kcontrol/kcminfo/info-1.html
 Comment=Memory information
 Comment[de]=Infomrationen zum Speicher
 Comment[cs]=Informace o pamìti

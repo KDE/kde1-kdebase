@@ -3,7 +3,7 @@
 Exec=kcminfo processor
 Icon=processor.xpm
 Type=Application
-DocPath=kcontrol/info/processor.html
+DocPath=kcontrol/kcminfo/info-2.html
 Comment=Processor information
 Comment[de]=Informationen zum Prozessor
 Comment[pl]=Informacje o procesorze

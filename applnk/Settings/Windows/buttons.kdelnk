@@ -3,7 +3,7 @@
 Exec=kcmkwm buttons
 Icon=buttons.xpm
 Type=Application
-DocPath=kcontrol/kwm/titlebar.html
+DocPath=kcontrol/kcmkwm/kwm-1.html
 Comment=Arrangement of window buttons
 Comment[de]=Anordung der Fenster-Symbole
 Comment[da]=Placering af vinduestrykknapper
