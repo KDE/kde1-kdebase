@@ -160,6 +160,37 @@ bool KFMManager::openURL( const char *_url, bool _reload )
 	return false;
     }
 
+    // Is page cached ?
+    const char *file;
+    if ( ( file = view->getHTMLCache()->isCached( _url ) ) != 0L && !_reload )
+    {
+	FILE* f = fopen( file, "rb" );
+	if ( f )
+	{
+	    QString page = "";
+	    char buffer[ 1025 ];
+	    while ( !feof( f ) )
+	    {
+		int n = fread( buffer, 1, 1024, f );
+		if ( n > 0 )
+		{
+		    buffer[n] = 0;
+		    page += buffer;
+		}
+	    }
+	    fclose( f );
+
+	    url = _url;
+	    view->begin( _url );	    
+	    view->write( page );
+	    view->parse();
+	    view->end();
+	    return true;
+	}
+	else
+	    warning("ERROR: Could not read file in cache\n");
+    }
+    
     // A link to the web in form of a *.kdelnk file ?
     QString path = u.path();
     if ( !u.hasSubProtocol() && strcmp( u.protocol(), "file" ) == 0 && path.right(7) == ".kdelnk" )
@@ -196,7 +227,7 @@ bool KFMManager::openURL( const char *_url, bool _reload )
 
     // A HACK
     HTMLBuffer = "";
-    
+
     bHTML = FALSE;
     bFinished = FALSE;
     // Prevent us from modifying the history stack if the stack
@@ -443,6 +474,8 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 
 void KFMManager::slotData( const char *_text )
 {
+    pageBuffer += _text;
+    
     HTMLBuffer += _text;
     do
     {
@@ -541,6 +574,8 @@ void KFMManager::slotMimeType( const char *_type )
 	if ( !url.isEmpty() && !bHistoryStackLock )
 	    view->slotURLToStack( url.data() );
 	bHTML = TRUE;
+	// Clear the page buffer
+	pageBuffer = "";
 	// The 'job->browse' command was successful. So lets
 	// get the correct URL. This URL may vary from the URL
 	// passed to 'openURL' in a trailing "/" for example.
@@ -569,6 +604,11 @@ void KFMManager::slotFinished()
 	if ( !HTMLBuffer.isEmpty() )
 	    slotData( "\n" );
 	view->end();
+	// Checkin this page in the cache
+	KURL u( url );
+	if ( !u.hasSubProtocol() && ( strcmp( u.protocol(), "http" ) == 0 ||
+				      strcmp( u.protocol(), "cgi" ) == 0 ) )
+	     view->getHTMLCache()->slotCheckinURL( url, pageBuffer );
 	// Our job is done
 	return;
     }

@@ -186,6 +186,12 @@ protected:
      * @see #writeWrapped
      */
     int maxLabelWidth;
+    /**
+     * The HTML page of the currently displayed page is stored here.
+     * This is for example useful to checkin the page into the HTML cache
+     * after it is entirely loaded.
+     */
+    QString pageBuffer;
 };
 
 #endif

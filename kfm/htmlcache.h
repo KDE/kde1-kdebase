@@ -112,9 +112,21 @@ public:
     
     /// Returns TRUE if this instance is waiting for '_url'.
     bool waitsForURL( const char *_url );
+
+    /**
+     * @return 0L if the URL is not cached, or the filename ( starting with '/' )
+     *         of the file, which holds the cached data.
+     */
+    const char* HTMLCache::isCached( const char *_url );
     
 public slots:
-    /// The KHTMLWidget may request an URL using this function.
+    /**
+     * Checks in an already loaded URL.
+     */
+    void slotCheckinURL( const char *_url, const char *_data );
+    /**
+     * The KHTMLWidget may request an URL using this function.
+     */
     void slotURLRequest( const char * _url );
     /// This function cancels a request.
     /**

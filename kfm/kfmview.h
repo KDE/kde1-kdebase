@@ -63,6 +63,7 @@ public:
     const char* getURL();
 
     KfmGui* getGUI() { return gui; }
+    HTMLCache* getHTMLCache() { return htmlCache; }
     
     /**
      * Splits the view into 2 frames of equal size. Every frame loads the

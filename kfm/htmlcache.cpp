@@ -177,7 +177,33 @@ bool HTMLCache::waitsForURL( const char *_url )
     
     return true;
 }
+
+void HTMLCache::slotCheckinURL( const char* _url, const char *_data )
+{
+    QString tmp;
+    tmp.sprintf( "%s%i.%i", cachePath.data(), time( 0L ), fileId++ );
+    FILE *f = fopen( tmp.data() + 5, "wb" );
+    if ( f == 0 )
+    {
+	warning( "Could not write to cache\n");
+	return;
+    }
     
+    fwrite( _data, 1, strlen( _data ), f );
+    fclose( f );
+    urlDict.insert( _url, new QString( tmp.data() + 5 ) );
+    // emit urlLoaded( _job->getSrcURL(), _job->getDestURL() + 5 );
+}
+
+const char* HTMLCache::isCached( const char *_url )
+{
+    QString *s = urlDict[ _url ];
+    if ( s != 0L )
+	return s->data();
+    
+    return 0L;
+}
+
 HTMLCache::~HTMLCache()
 {
     instanceList.removeRef( this );

@@ -940,7 +940,10 @@ bool KfmView::dndHook( const char *_url, QPoint &_p )
     }
     else
     {
-	pixmap.load( KMimeType::getPixmapFileStatic( l.first() ) );
+	// pixmap.load( KMimeType::getPixmapFileStatic( l.first() ) );
+	QString dir = kapp->kdedir();
+	dir += "/lib/pics/kmultiple.xpm";
+	pixmap.load( dir );
 	// TODO  Nice icon for multiple files
 	/* KMimeType *typ = KMimeType::findType( l.first() );
 	pixmap = typ->getPixmap( l.first() ); */
