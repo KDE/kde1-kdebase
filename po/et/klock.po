@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 1999-02-05 20:31+0200\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Estonian <heathcliff@iname.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
@@ -462,7 +462,7 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Valik %s ei ole sellel platvormil toetatud!"
 
 #: main.cpp:422
-#, fuzzy
+#
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -474,7 +474,7 @@ msgstr ""
 "\n"
 "Sinu süsteem kasutab variparoole.\n"
 "Palun võta kontakti oma süsteemi administraatoriga\n"
-"ja ütle talle, et sa vajad suid'i kcheckpass'ile!"
+"ja ütle talle, et sa vajad SUID'i programmile kcheckpass!"
 
 #: main.cpp:427
 msgid "Shadow Passwords"

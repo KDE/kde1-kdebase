@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-01-22 01:13+0100\n"
-"PO-Revision-Date: 1999-01-17 23:41:41+0200\n"
+"PO-Revision-Date: 1999-02-05 20:23+0200\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: Estonian <heathcliff@iname.com>\n"
 "MIME-Version: 1.0\n"
@@ -70,13 +70,15 @@ msgstr ""
 #: kikbd.cpp:1003
 #, fuzzy
 msgid "Exiting International Keyboard"
-msgstr "Rahvusvaheline klaviatuur"
+msgstr "Rahvusvahelisest klaviatuurist väljumine"
 
 #: kikbd.cpp:1004
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
+"Sa soovisid väljuda programmist \"Rahvusvaheline klaviatuur\".\n"
+"Soovid sa, et see käivitataks automaatselt järgmisel sisse logimisel?"
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -201,19 +203,21 @@ msgid "X default codes"
 msgstr "X'i vaikimisi koodid"
 
 #: kikbdconf.cpp:209
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "Do you want to configure now?"
 msgstr ""
-"\n"
-"Soovid sa jätkata?"
+"%s\n"
+"Soovid sa praegu jätkata?"
 
 #: kikbdconf.cpp:217
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
 msgstr ""
+"Sa kasutad \"Rahvusvahelist klaviatuuri\" esimest korda.\n"
+"Ma installeerisin mitmed vaikeväärtused."
 
 #: kikbdconf.cpp:359
 msgid "unknown"
@@ -268,14 +272,14 @@ msgid "alternative symbols"
 msgstr "alternatiivsed sümbolid"
 
 #: kikbdconf.cpp:429
-#, fuzzy
+#
 msgid "Language"
-msgstr "keel"
+msgstr "Keel"
 
 #: kikbdconf.cpp:433
-#, fuzzy
+#
 msgid "Charset"
-msgstr "kooditabel"
+msgstr "Kooditabel"
 
 #: kikbdconf.cpp:479
 msgid "International keyboard ERROR"
@@ -509,9 +513,9 @@ msgid "&Docked"
 msgstr "&Dokitud"
 
 #: widgets.cpp:649
-#, fuzzy
+#
 msgid "Dock into special area in the panel"
-msgstr "Doki spetsiaalses alas paneelil"
+msgstr "Doki spetsiaalsesse alassse paneelil"
 
 #: widgets.cpp:658
 msgid "Place"
@@ -536,29 +540,3 @@ msgstr "Al&glaadimine"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Rahvusvaheline klaviatuur"
-
-#~ msgid ""
-#~ "%s\n"
-#~ "Do you want to start Configuration?"
-#~ msgstr ""
-#~ "%s\n"
-#~ "Soovid sa konfigureerimise käivitada?"
-
-#~ msgid "Your configuration is empty. Install system default."
-#~ msgstr "Su konfiguratsioon on tühi. Installeeri süsteemi vaikeväärtused."
-
-#
-#~ msgid ""
-#~ "Configuration file you have has older format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "Koniguratsioonifail on vanemas formaadis kui oli oodatud.\n"
-#~ "Mõned seadistused võivad olla ebakorrektsed."
-
-#
-#~ msgid ""
-#~ "Configuration file you have has newer format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "Konfiguratsioonifail on uuemas formaadis kui oli oodatud.\n"
-#~ "Mõned seadistused võivad olla ebakorrektsed."

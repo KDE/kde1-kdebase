@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1999-01-17 23:10:37+0200\n"
+"PO-Revision-Date: 1999-02-05 20:14+0200\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: Estonian <heathcliff@iname.com>\n"
 "MIME-Version: 1.0\n"
@@ -176,7 +176,7 @@ msgstr "Suurus on:"
 
 #: kftabdlg.cpp:217
 msgid "KB"
-msgstr ""
+msgstr "KB"
 
 #: kftabdlg.cpp:236
 msgid "All Files and Folders"

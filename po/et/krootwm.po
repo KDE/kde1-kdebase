@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 1999-02-05 20:33+0200\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Estonian <heathcliff@iname.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
@@ -62,38 +62,38 @@ msgid "Bookmarks"
 msgstr "Järjehoidjad"
 
 #: krootwm.C:280
-#, fuzzy
+#
 msgid "Arrange Window Maker icons"
-msgstr "Korrasta ikoonid"
+msgstr "Korrasta WindowMaker'i ikoonid"
 
 #: krootwm.C:281
 msgid "Show all"
-msgstr ""
+msgstr "Näita kõiki"
 
 #: krootwm.C:282
 msgid "Hide other"
-msgstr ""
+msgstr "Peida teised"
 
 #: krootwm.C:284
 msgid "Show info panel"
-msgstr ""
+msgstr "Näita infopaneeli"
 
 #: krootwm.C:285
 msgid "Show legal panel"
-msgstr ""
+msgstr "Näita autorikaitse paneeli"
 
 #: krootwm.C:286
 msgid "Restart"
-msgstr ""
+msgstr "Käivita uuesti"
 
 #: krootwm.C:288
 msgid "Exit"
-msgstr ""
+msgstr "Välju"
 
 #: krootwm.C:289
-#, fuzzy
+#
 msgid "Window Maker"
-msgstr "Aknad"
+msgstr "Window Maker"
 
 #: krootwm.C:306
 msgid "Desk"
