@@ -269,11 +269,10 @@ AC_OUTPUT(Makefile \
 	kfm/config/Makefile	\
 	kfontmanager/Makefile \
 	kikbd/Makefile \
-	kikbd/kcmikbd/Makefile \
-	kikbd/maps/Makefile \
 	kikbd/doc/Makefile \
 	kikbd/doc/en/Makefile \
 	kikbd/doc/ru/Makefile \
+	kikbd/maps/Makefile \
 	kmenuedit/Makefile \
 	kmenuedit/icons/Makefile \
 	kpanel/Makefile \
