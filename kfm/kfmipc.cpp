@@ -10,19 +10,28 @@ void write_int( int _fd, int _value )
 {
     char buffer[10];
     sprintf( buffer, "%i ", _value );
-    write( _fd, (const char*)buffer, strlen(buffer) );
+next:
+    if ( write( _fd, (const char*)buffer, strlen(buffer) ) < 0 )
+      if ( errno == EINTR )
+	goto next;
 }
 
 void write_double( int _fd, double _value )
 {
     char buffer[10];
     sprintf( buffer, "%f ", _value );
-    write( _fd, (const char*)buffer, strlen(buffer) );
+next:
+    if ( write( _fd, (const char*)buffer, strlen(buffer) ) < 0 )
+      if ( errno == EINTR )
+	goto next;
 }
 
 void write_char( int _fd, char _value )
 {
-    write( _fd, (const char*)&_value, sizeof(char) );
+next:
+  if ( write( _fd, (const char*)&_value, sizeof(char) ) < 0 )
+    if ( errno == EINTR )
+      goto next;
 }
 
 void write_string( int _fd, const char* _value )
@@ -35,7 +44,10 @@ void write_string( int _fd, const char* _value )
     
     int len = strlen( _value );
     write_int( _fd, len );
-    write( _fd, (const char*)_value, strlen(_value) );
+next:
+    if ( write( _fd, (const char*)_value, strlen(_value) ) < 0 )
+      if ( errno == EINTR )
+	goto next;
 }
 
 void write_mem( int _fd, IPCMemory _mem )
@@ -47,34 +59,59 @@ void write_mem( int _fd, IPCMemory _mem )
     }
     
     write_int( _fd, _mem.size );
-    write( _fd, _mem.data, _mem.size );
+next:
+    if ( write( _fd, _mem.data, _mem.size ) < 0 )
+      if ( errno == EINTR )
+	goto next;
 }
 
 void write_intList( int _fd, intList* _list )
 {
     int len = _list->elements * sizeof(int);
-    write( _fd, (const char*)&(_list->elements), sizeof(int) );
-    write( _fd, (const char*)(_list->list), len );
+next1:
+    if ( write( _fd, (const char*)&(_list->elements), sizeof(int) ) )
+      if ( errno == EINTR )
+	goto next1;
+next2:
+    if ( write( _fd, (const char*)(_list->list), len ) )
+      if ( errno == EINTR )
+	goto next2;
 }
 
 void write_doubleList( int _fd, doubleList* _list )
 {
     int len = _list->elements * sizeof(double);
-    write( _fd, (const char*)&(_list->elements), sizeof(int) );
-    write( _fd, (const char*)(_list->list), len );
+next1:
+    if ( write( _fd, (const char*)&(_list->elements), sizeof(int) ) < 0 )
+      if ( errno == EINTR )
+	goto next1;
+next2:
+    if ( write( _fd, (const char*)(_list->list), len ) < 0 )
+      if ( errno == EINTR )
+	goto next2;
 }
 
 void write_charList( int _fd, charList* _list )
 {
     int len = _list->elements * sizeof(char);
-    write( _fd, (const char*)&(_list->elements), sizeof(int) );
-    write( _fd, (const char*)(_list->list), len );
+next1:
+    if ( write( _fd, (const char*)&(_list->elements), sizeof(int) ) < 0 )
+      if ( errno == EINTR )
+	goto next1;
+next2:
+    if ( write( _fd, (const char*)(_list->list), len ) < 0 )
+      if ( errno == EINTR )
+	goto next2;
 }
 
 void write_stringList( int _fd, stringList* _list )
 {
     // int len = _list->elements * sizeof(int);
-    write( _fd, (const char*)&(_list->elements), sizeof(int) );
+next:
+  if ( write( _fd, (const char*)&(_list->elements), sizeof(int) ) < 0 )
+      if ( errno == EINTR )
+	goto next;
+
     for( int i = 0; i < _list->elements; i++ )
     {
 	write_string( _fd, _list->list[i] );

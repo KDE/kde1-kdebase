@@ -764,7 +764,7 @@ void KIOJob::del( const char *_url )
 	notifyList.append( u.url() );
     }
     else
-	notifyList.append( u.directoryURL() );
+      notifyList.append( u.directoryURL() );
     
     del();
 }
@@ -782,9 +782,10 @@ void KIOJob::del( QStrList & _url_list )
 	if ( KIOServer::isDir( s ) )
 	{
 	    u.cd( ".." );
-	    notifyList.append( u.url() );
+	    if( notifyList.find( u.url() ) == -1 )
+	      notifyList.append( u.url() );
 	}
-	else
+	else if ( notifyList.find( u.directoryURL() ) == -1 )
 	    notifyList.append( u.directoryURL() );
     }
     
@@ -1711,6 +1712,7 @@ void KIOJob::done()
     {
 	printf("Handing slave back\n");
 	disconnect( server, 0, this, 0 );
+	disconnect( slave, 0, this, 0 );
 	server->freeSlave( slave );
     }
     
@@ -1729,10 +1731,8 @@ void KIOJob::done()
     char *s;
     for ( s = notifyList.first(); s != 0L; s = notifyList.next() )
     {
-	// debugT("NOTIFY '%s'\n",s);
 	if ( globalNotify )
 	{
-	    // debugT("NOTIFY IS GLOBAL '%s'\n", s);
 	    KIOServer::sendNotify( s );
 	}
 	emit notify( id, s ); 
@@ -1818,6 +1818,8 @@ void KIOJob::slotSlaveClosed( KIOSlaveIPC* )
     // We assumed that the slave is going to die.
     if ( slave == 0L )
 	return;
+    
+    printf( "The segmentation faul thing\n");
     
     slave = 0L;
     

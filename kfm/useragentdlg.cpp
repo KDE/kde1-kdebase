@@ -50,7 +50,7 @@ UserAgentDialog::UserAgentDialog( QWidget * parent,
   connect( deletePB, SIGNAL( clicked() ), SLOT( deleteClicked() ) );
 
   bindingsLA = new QLabel( klocale->translate( "Known bindings:" ), this );
-  bindingsLA->setGeometry( 60, 110, 100, 30 );
+  bindingsLA->setGeometry( 60, 110, 200, 30 );
 
   bindingsLB = new QListBox( this );
   bindingsLB->setGeometry( 60, 140, 210, 150 );

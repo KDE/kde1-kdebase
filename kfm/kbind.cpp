@@ -1708,7 +1708,8 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
     if ( exec.isEmpty() )
     {
 	QMessageBox::message( i18n( "KFM Error" ),
-		     i18n( "This file does not contain an\nExec=....\nentry. Edit the Properties\nto solve the probelm" ) );
+		     i18n( "This file does not contain an\nExec=....\nentry. Edit the Properties\nto solve the problem" ) );
+
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
 	return TRUE;

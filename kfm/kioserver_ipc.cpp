@@ -70,7 +70,16 @@ void KIOSlaveIPC::readEvent( KSocket * )
     if ( bHeader )
     {
 	int n;
-	n = read( data_sock->socket(), headerBuffer + cHeader, 1 );
+    next:
+	if ( ( n = read( data_sock->socket(), headerBuffer + cHeader, 1 ) ) < 0 )
+        {
+	  if ( errno == EINTR )
+	    goto next;
+	  warning("ERROR: KIOSlaveIPC::readEvent\n");
+	  delete this;
+	  return;
+        }
+	
 	if ( headerBuffer[ cHeader ] == ' ' )
 	{
 	    bHeader = FALSE;
@@ -108,7 +117,16 @@ void KIOSlaveIPC::readEvent( KSocket * )
     }
 	
     int n;
-    n = read( data_sock->socket(), pBody + cBody, bodyLen - cBody );
+next2:
+    if ( ( n = read( data_sock->socket(), pBody + cBody, bodyLen - cBody ) ) < 0 )
+    {
+      if ( errno == EINTR )
+	goto next2;
+      warning("ERROR: KIOSlaveIPC::readEvent\n");
+      delete this;
+      return;
+    }
+
     if ( n + cBody == bodyLen )
     {
 	pBody[bodyLen] = 0;

@@ -308,14 +308,16 @@ void KfmView::slotDelete()
     
     view->getSelected( marked );
 
-    KIOJob * job = new KIOJob;
     bool ok = !QMessageBox::information( this, klocale->translate("KFM Warning"), 
 				   klocale->translate("Do you really want to delete the selected file(s)?\n\nThere is no way to restore them."), 
 				    klocale->translate("Yes"), 
 				    klocale->translate("No") );
     
     if ( ok )
-	job->del( marked );
+    {
+      KIOJob * job = new KIOJob;
+      job->del( marked );
+    }
 }
 
 void KfmView::slotPaste()

@@ -91,7 +91,7 @@
  - applied patch by Piotr Roszatycki, that added klocale support and 
    accelerators to the property pages
 
-04.01.97 Torben
+04.01.98 Torben
 
  - Fixed bug in mounting. Please mention: NEVER put symlinks in fstab.
    This is a correct line:
@@ -126,4 +126,13 @@
  
  - replaced some << constructs with the new function ksprintf
  - fixed a bug in the passwd dialog
+
+08.01.98 Torben
+
+ - Fixed bug that causes seg. fault if one tries to delete multiple files.
+   This was a VERY ugly one and should make kfm a lot more stable.
+ - Spelling mistakes fixed.
+ - Fixed hopefully all EINTR bugs
+ - Deleting multiple files at once caused multiple updates of one directory.
+ - Fixed geometry problem in user dialog
 
