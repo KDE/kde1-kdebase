@@ -1,14 +1,16 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=Cut & paste history (klipper)
+Name[br]=Istor an troc'hañ ha pegañ (klipper)
 Name[ca]=Historial de tallar i enganxar
 Name[cs]=Historie kopírování a vkládání (klipper)
 Name[da]=Klippe- og klistrehistorie (klipper)
-Name[de]=Ausschneiden/Einfügen - Bisherige
+Name[de]=Ausschneiden/Einfügen - bisher
 Name[es]=Cortar y pegar historial (klipper)
 Name[fi]=Leikepöydän historia
 Name[fr]=Historique du presse-papiers
 Name[hr]=Povijest rezanja & ljepljenja (klipper)
+Name[hu]=Vágólap
 Name[is]=Saga klippiborðsins
 Name[no]=Klippe- og limehistorie (klipper)
 Name[pl]=Historia schowka
