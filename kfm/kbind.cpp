@@ -1940,7 +1940,7 @@ bool KDELnkMimeType::runBinding( const char *_url, const char *_binding )
 			if ( readonly == '1' )
 			    ro = true;
 		    
-		    new KFMAutoMount( ro, 0L, dev, 0L );
+		    (void) new KFMAutoMount( ro, 0L, dev, 0L );
 
 		    delete config;
 		    return TRUE;
