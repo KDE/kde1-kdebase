@@ -362,8 +362,9 @@ void ma_init(char argc, char **argv)
   }
   StatStatPtr = &(StatChunk->status);
 
-#ifndef OSS_AUDIO
-  // Only OSS is supported today. Quit now for not wasting resources.
+#if ! ( defined (linux) || defined (__FreeBSD__) || defined (__NetBSD__) )
+  // Linux, FreeBSD and NetBSD are supported today. Quit now for
+  // not wasting resources.
   // kaudioserver will get a SIGCHLD and exit, too, which is good.
   *StatStatPtr =  MD_STAT_EXITED;
   MYexit(1);
