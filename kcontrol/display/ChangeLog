@@ -1,0 +1,4 @@
+1998-11-30  Alex Zepeda  <garbanzo@hooked.net>
+
+	* Makefile.am: Moved icons into pics/ && pics/mini/
+
