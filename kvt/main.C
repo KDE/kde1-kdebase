@@ -267,7 +267,7 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
   geom3->addStretch();
   geom3->addWidget(cancel);
   geom3->addStretch();
-  setGeometry(x(), y(), 400, 120);
+  resize(400, 120);
 
   int i;
   for (i=0; color_mode_name[i]; i++) {
@@ -740,6 +740,7 @@ void kVt::options_menu_activated( int item){
     break;
 
   case 7:
+    m_optiondialog = new OptionDialog(this, klocale->translate("Terminal Options"));
     m_optiondialog->colormode->setCurrentItem(get_color_mode());
     m_optiondialog->chars->setText(kvt_charclass);
     m_optiondialog->backspace->setCurrentItem(BackspaceSendsControlH);
@@ -750,6 +751,7 @@ void kVt::options_menu_activated( int item){
       scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
       BackspaceSendsControlH = m_optiondialog->backspace->currentItem();
     }
+    delete m_optiondialog;
     break;
     
   case 9:
@@ -1077,7 +1079,6 @@ int main(int argc, char **argv)
 
   kvt->show();
 
-  m_optiondialog = new OptionDialog(kvt, klocale->translate("Terminal Options"));
 
   return a.exec();
 }
