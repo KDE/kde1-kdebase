@@ -1,3 +1,18 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: 1997-10-25 18:08 MET DST\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
 
 #: kfmgui.cpp:254 kfmgui.cpp:1081
 msgid "KFM"
@@ -5,7 +20,7 @@ msgstr "KFM"
 
 #: kbind.cpp:860 kbind.cpp:872 kbind.cpp:882 kfmgui.cpp:266 kfmgui.cpp:837
 msgid "Folder"
-msgstr "Ordner"
+msgstr "Verzeichnis"
 
 #: kfmgui.cpp:277
 #, c-format
@@ -26,7 +41,7 @@ msgstr "&Ausführen"
 
 #: kfmgui.cpp:308
 msgid "Open &Terminal"
-msgstr "Öffne &Terminal"
+msgstr "&Terminal öffnen"
 
 #: kfmgui.cpp:311
 msgid "&Open Location"
@@ -54,7 +69,7 @@ msgstr "&Einfügen"
 
 #: kfmgui.cpp:328
 msgid "&Move to Trash"
-msgstr "In den &Papierkorb schieben"
+msgstr "In den &Papierkorb werfen"
 
 #: kfmgui.cpp:330
 msgid "&Delete"
@@ -82,11 +97,11 @@ msgstr "Globale Anwendungen"
 
 #: kfmgui.cpp:354
 msgid "Show &Dot Files"
-msgstr "&Versteckte Dateien anzeigen"
+msgstr "&Versteckte Dateien zeigen"
 
 #: kfmgui.cpp:356
 msgid "Show Tr&ee"
-msgstr "Verzeichnis&baum anzeigen"
+msgstr "Verzeichnis&baum zeigen"
 
 #: kfmgui.cpp:358
 msgid "&Visual Schnauzer"
@@ -122,27 +137,27 @@ msgstr "&Zuordnungen neu lesen"
 
 #: kfmgui.cpp:380
 msgid "&View Frame Source"
-msgstr "Html-Code des &Rahmens anzeigen"
+msgstr "Html-Code des &Rahmens zeigen"
 
 #: kfmgui.cpp:382
 msgid "View Docu&ment Source"
-msgstr "Html-Code des D&okuments anzeigen"
+msgstr "Html-Code des D&okuments zeigen"
 
 #: kfmgui.cpp:393
 msgid "Show &Menubar"
-msgstr "&Menüleiste anzeigen"
+msgstr "&Menüleiste zeigen"
 
 #: kfmgui.cpp:395
 msgid "Show &Statusbar"
-msgstr "&Statusleiste anzeigen"
+msgstr "&Statusleiste zeigen"
 
 #: kfmgui.cpp:397
 msgid "Show &Toolbar"
-msgstr "&Werkzeugleiste anzeigen"
+msgstr "&Werkzeugleiste zeigen"
 
 #: kfmgui.cpp:399
 msgid "Show &Location bar"
-msgstr "&Adressenleiste anzeigen"
+msgstr "&Adressenleiste zeigen"
 
 #: kfmgui.cpp:402
 msgid "Sa&ve Settings"
@@ -227,7 +242,7 @@ msgid ""
 "Could not load icon\n"
 "%s"
 msgstr ""
-"Symbol nicht geladen werden\n"
+"Icon konnte nicht geladen werden\n"
 "%s"
 
 #: kbind.cpp:231 kbind.cpp:308 kbind.cpp:361 kbind.cpp:1423 kbind.cpp:1431
@@ -281,7 +296,7 @@ msgstr ""
 "Autor: Torben Weis\n"
 "weis@kde.org\n"
 "\n"
-"HTML Widget von Martin Jones\n"
+"HTML-Widget von Martin Jones\n"
 "mjones@kde.org"
 
 #: kfmgui.cpp:1196
@@ -294,7 +309,7 @@ msgstr "FEHLER: fehlerhafte URL gefunden"
 
 #: kfmview.cpp:271
 msgid "You dropped some file over itself"
-msgstr "Datei wurde auf sich selbst abgelegt"
+msgstr "Datei wurde auf sich selbst gelegt"
 
 #: kfmtree.cpp:334 kfmview.cpp:315 kfmview.cpp:491 krenamewin.cpp:18
 #: root.cpp:844
@@ -309,7 +324,7 @@ msgid ""
 msgstr ""
 "Sollen die Dateien wirklich gelöscht werden?\n"
 "\n"
-"Es gibt keine Möglichkeit, sie wieder herzustellen."
+"Sie können sie nicht wieder herstellen!"
 
 #: kfmexec.cpp:233 kfmman.cpp:706 kfmview.cpp:338
 msgid "Open With:"
@@ -346,7 +361,7 @@ msgstr "Bytes"
 
 #: kbind.cpp:229
 msgid "The mime type config file "
-msgstr "Die Mime-Typ Konfigurations-Datei"
+msgstr "Konfigurationsdatei für Mime-Typen "
 
 #: kbind.cpp:230
 msgid "does not conatain a MimeType=... entry"
@@ -386,7 +401,7 @@ msgstr ""
 
 #: kbind.cpp:1450 kbind.cpp:1467
 msgid "Can only start executables on local disks\n"
-msgstr "Ausführbare Dateien können nur auf lokalen Laufwerken gestartet werden.\n"
+msgstr "Programme können nur auf lokalen Laufwerken gestartet werden.\n"
 
 #: kbind.cpp:1530 kbind.cpp:1604 kbind.cpp:1742
 msgid ""
@@ -402,7 +417,7 @@ msgstr "Kein Zugriff"
 
 #: kbind.cpp:1569
 msgid "The \"Link=....\" entry is empty"
-msgstr "Der Eintrag ist \"Link=....\" leer."
+msgstr "Der Eintrag \"Link=....\" ist leer."
 
 #: kbind.cpp:1584
 msgid "The config file has no \"Type=...\" line"
@@ -426,15 +441,15 @@ msgstr "FEHLER: Keine Terminal-Einstellungen"
 
 #: kbind.cpp:1767
 msgid "Unmount"
-msgstr "Symbol für 'nicht-eingebunden'"
+msgstr "Aushängen"
 
 #: kbind.cpp:1774 kbind.cpp:1786
 msgid "Mount"
-msgstr "Einbinden"
+msgstr "Einhängen"
 
 #: kbind.cpp:1785
 msgid "Mount default"
-msgstr "Einbinden"
+msgstr "Einhängen"
 
 #: kbind.cpp:1824
 msgid "Unknown binding"
@@ -444,9 +459,10 @@ msgstr "FEHLER: Unbekannte Zuordnung '%s'"
 msgid "KFM Information"
 msgstr "KFM-Information"
 
+#
 #: main.cpp:58
 msgid "Creating directory:\n"
-msgstr "Erstelle Verzeichis:\n"
+msgstr "Erstelle Verzeichnis:\n"
 
 #: main.cpp:138
 msgid "Installing Templates"
@@ -682,7 +698,7 @@ msgstr "Gerät ( /dev/fd0 )"
 
 #: kfmprops.cpp:1457
 msgid "Mount Point ( /floppy )"
-msgstr "Eingebunden in ( /floppy )"
+msgstr "Eingehängt in ( /floppy )"
 
 #: kfmprops.cpp:1465
 msgid "Readonly"
@@ -694,11 +710,11 @@ msgstr "Dateisystem (iso9660, msdos, minix, default)"
 
 #: kfmprops.cpp:1477
 msgid "Mounted Icon"
-msgstr "Symbol für 'eingebunden'"
+msgstr "Icon für 'eingehängt'"
 
 #: kfmprops.cpp:1481
 msgid "Unmounted Icon"
-msgstr "Symbol für 'nicht-eingebunden'"
+msgstr "Icon für 'nicht-eingehängt'"
 
 #: kfmserver.cpp:236
 msgid "The URL"
@@ -757,7 +773,7 @@ msgstr "Lesezeichen hinzufügen"
 
 #: kiojob.cpp:114
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
-msgstr "INTERNER FEHLER: Wenigstens das einzubindende Gerät muß angegeben werden."
+msgstr "INTERNER FEHLER: Wenigstens das einzuhängende Gerät muß angegeben werden."
 
 #: kiojob.cpp:227
 msgid "Can only make links on local file system"
@@ -886,7 +902,7 @@ msgid ""
 "Could not list directory contents\n"
 "%s"
 msgstr ""
-"Verzeichnisinhalt konnte nicht aufgelistet werden\n"
+"Verzeichnis konnte nicht gelistet werden\n"
 "%s"
 
 #: kiojob.cpp:1050
@@ -908,8 +924,8 @@ msgid ""
 "Perhaps wrong password"
 msgstr ""
 "%s\n"
-"Einloggen nicht möglich\n"
-"Eventuell falsches Passwort"
+"Anmeldung nicht möglich\n"
+"Vielleicht falsches Passwort."
 
 #: kiojob.cpp:1077 kiojob.cpp:1168
 #, c-format
@@ -937,7 +953,7 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"Konnte nicht eingebunden werden.\n"
+"Konnte nicht eingehängt werden.\n"
 "Fehler-Protokoll:\n"
 "\n"
 "%s"
@@ -950,7 +966,7 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"Einbindung konnte nicht aufgehoben werden.\n"
+"Konnte nicht ausgehängt werden.\n"
 "Fehler-Protokoll:\n"
 "\n"
 "%s"
@@ -962,7 +978,7 @@ msgstr "Erstelle Verzeichnis"
 #: kiojob.cpp:1408 kiojob.cpp:1462 kiojob.cpp:1504
 #, c-format
 msgid "File %i/%i"
-msgstr "Datei %i%i"
+msgstr "Datei %i/%i"
 
 #: kiojob.cpp:1411 kiojob.cpp:1466
 #, c-format
@@ -981,12 +997,12 @@ msgstr ""
 #: kiojob.cpp:1533
 #, c-format
 msgid "Mounting %s ..."
-msgstr "Einbinden von %s ..."
+msgstr "Einhängen von %s ..."
 
 #: kiojob.cpp:1537
 #, c-format
 msgid "Unmounting %s ..."
-msgstr "Einbindung aufheben von %s ..."
+msgstr "Aushängen von %s ..."
 
 #: kiojob.cpp:1567
 #, c-format
@@ -995,7 +1011,7 @@ msgstr "Erstelle Liste von %s ..."
 
 #: kiojob.cpp:1775
 msgid "Segmentation fault in io subprocess"
-msgstr "Schutzverletzung in IO Unterprozeß"
+msgstr "Schutzverletzung in IO-Unterprozeß"
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"

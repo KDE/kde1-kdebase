@@ -1,10 +1,25 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=\n"
-"Date: 1997-08-23 15:45:33+0200\n"
-"From: M G Berberich <berberic@thingol>\n"
-"Xgettext-Options: --keyword=translate\n"
-"Files: main.C\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#~ msgid ""
+#~ msgstr ""
+#~ "Content-Type: text/plain; charset=\n"
+#~ "Date: 1997-08-23 15:45:33+0200\n"
+#~ "From: M G Berberich <berberic@thingol>\n"
+#~ "Xgettext-Options: --keyword=translate\n"
+#~ "Files: main.C\n"
 
 #: main.C:220
 msgid "Add characters to word class"
@@ -12,7 +27,7 @@ msgstr "Zeichen zur Wortklasse hinzufügen"
 
 #: main.C:224
 msgid "choose type of color-mode"
-msgstr "Art der Farbdarstellung"
+msgstr "Farbdarstellung wählen"
 
 #: main.C:227
 msgid "Ok"
@@ -24,47 +39,47 @@ msgstr "Abbrechen"
 
 #: main.C:357
 msgid "&New Terminal"
-msgstr "Neues Terminal"
+msgstr "&Neues Terminal"
 
 #: main.C:359
 msgid "E&xit"
-msgstr "Beenden"
+msgstr "&Beenden"
 
 #: main.C:364 main.C:669
 msgid "&Hide"
-msgstr "Unsichtbar"
+msgstr "&Unsichtbar"
 
 #: main.C:365
 msgid "&Left"
-msgstr "Links"
+msgstr "&Links"
 
 #: main.C:366
 msgid "&Right"
-msgstr "Rechts"
+msgstr "&Rechts"
 
 #: main.C:371
 msgid "&Normal"
-msgstr "Normal"
+msgstr "&Normal"
 
 #: main.C:372
 msgid "&Tiny"
-msgstr "Winzig"
+msgstr "&Winzig"
 
 #: main.C:373
 msgid "&Small"
-msgstr "Klein"
+msgstr "&Klein"
 
 #: main.C:374
 msgid "&Medium"
-msgstr "Mittel"
+msgstr "&Mittel"
 
 #: main.C:375
 msgid "&Large"
-msgstr "Groß"
+msgstr "&Groß"
 
 #: main.C:376
 msgid "&Huge"
-msgstr "Riesig"
+msgstr "&Riesig"
 
 #: main.C:388
 msgid "&black/white"
@@ -72,71 +87,71 @@ msgstr "schwarz/weiß"
 
 #: main.C:389
 msgid "&white/black"
-msgstr "weiß/schwarz"
+msgstr "&weiß/schwarz"
 
 #: main.C:390
 msgid "&green/black"
-msgstr "grün/schwarz"
+msgstr "&grün/schwarz"
 
 #: main.C:391
 msgid "black/light&yellow"
-msgstr "schwarz/hellgelb"
+msgstr "schwarz/hell&gelb"
 
 #: main.C:392
 msgid "Linu&x Console"
-msgstr "Linux-Konsole"
+msgstr "Linu&x-Konsole"
 
 #: main.C:399 main.C:594
 msgid "Hide &Menubar"
-msgstr "Menüleiste unsichtbar"
+msgstr "&Menüleiste unsichtbar"
 
 #: main.C:401 main.C:460 main.C:586
 msgid "Show &Menubar"
-msgstr "Menüleiste sichtbar"
+msgstr "&Menüleiste sichtbar"
 
 #: main.C:402 main.C:604
 msgid "Secure &keyboard"
-msgstr "Tastatur sperren"
+msgstr "&Tastatur sperren"
 
 #: main.C:404
 msgid "Scroll&bar"
-msgstr "Rollbalken"
+msgstr "&Rollbalken"
 
 #: main.C:405
 msgid "&Font size"
-msgstr "Schriftgröße"
+msgstr "&Schriftgröße"
 
 #: main.C:406
 msgid "&Color"
-msgstr "Farben"
+msgstr "&Farben"
 
 #: main.C:407
 msgid "&Size"
-msgstr "Fenstergröße"
+msgstr "Fenster&größe"
 
 #: main.C:408
 msgid "Terminal..."
-msgstr "Terminal..."
+msgstr "Te&rminal..."
 
 #: main.C:410
 msgid "Save &Options"
-msgstr "Einstellungen sichern"
+msgstr "&Einstellungen sichern"
 
 #: main.C:419
 msgid "&About..."
-msgstr "Über..."
+msgstr "Ü&ber..."
 
 #: main.C:420 main.C:430
 msgid "&Help"
-msgstr "Hilfe"
+msgstr "&Hilfe"
 
 #: main.C:427
 msgid "&File"
-msgstr "Datei"
+msgstr "&Datei"
 
 #: main.C:428
 msgid "&Options"
-msgstr "Einstellungen"
+msgstr "&Einstellungen"
 
 #: main.C:469 main.C:662
 msgid "&Show"
@@ -144,7 +159,7 @@ msgstr "Sichtbar"
 
 #: main.C:600
 msgid "Unsecure &keyboard"
-msgstr "Tastatur entsperren"
+msgstr "&Tastatur entsperren"
 
 #: main.C:739
 msgid "Hint"
@@ -212,6 +227,35 @@ msgid ""
 "-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
 "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
 msgstr ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Terminal für das KDE Desktop Environment\n"
+"basierend auf Robert Nations rxvt-2.08\n"
+"\n"
+"Zulässige Parameter:\n"
+"-e <Kommando> <Arg> ...\tKommando mit Argumenten ausführen - muß letzter Parameter sein\n"
+"-display <name>\t\tName des Rechners, auf dem das Terminal-Fenster erscheint\n"
+"-vt_geometry <Größe>\tAnfängliche Fenstergröße\n"
+"-print-pipe <Name>\t???\n"
+"-vt_bg <Farbe>\t\tHintergrundfarbe\n"
+"-vt_fg <Farbe>\t\tVordergrundfarbe\n"
+"-vt_font <Schrift>\tStandard-Schrift\n"
+"-vt_size <size>     \t???\n"
+"-linux\t\t\tKvt wie Linux-Konsole einstellen\n"
+"-no_menubar\t\tMenüleiste verstecken\n"
+"-no_scrollbar\t\tRollbalken verstecken\n"
+"-T <text>\t\tTiteltext\n"
+"-tn <TERM>\t\tTerminaltyp, Voreinstellung ist \"xterm\"\n"
+"-C\t\t\tMeldungen für die Systemkonsole anzeigen\n"
+"-n <text>\t\tText für Icon\n"
+"-7\t\t        7-Bit-Mode\n"
+"-8\t\t\t8-Bit-Mode\n"
+"-ls\t\t\tLogin-Shell starten\n"
+"-ls-\t\t\tKeine Login-Shell starten\n"
+"-meta\t\t\t???\n"
+"-sl <Zahl>\t\tAnzahl der zu speichernden Zeilen\n"
+"-pageup <Taste>\t\t<Alt>-<Taste> zum Rückwärtsrollen benutzen\n"
+"-pagedown <Taste>\t<Alt>-<Taste> zum Vorwärtsrollen benutzen\n"
 
 #: main.C:954
 msgid ""

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 1997-10-04 16:22 MET DST\n"
+"PO-Revision-Date: 1997-10-25 17:54 MET DST\n"
 "Last-Translator: Miroslav Flidr <flidr@kky.zcu.cz>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -36,7 +36,7 @@ msgstr "Ü&ber..."
 #: kfindtop.cpp:186
 #, fuzzy
 msgid "About &Qt"
-msgstr "Ü&ber Qt"
+msgstr "Über &Qt"
 
 #: kfindtop.cpp:137
 msgid "&Add to archive"
@@ -52,7 +52,7 @@ msgstr "B&lättern..."
 
 #: kftabdlg.cpp:173
 msgid "&Containing Text:"
-msgstr "&Beinhaltet Text:"
+msgstr "&Enthält Text:"
 
 #: kfindtop.cpp:162
 msgid "&Copy"
@@ -204,7 +204,7 @@ msgid ""
 "Do you really want to delete file:\n"
 "%s"
 msgstr ""
-"Wollen Sie wirklich dieses File löschen:\n"
+"Wollen Sie wirklich diese Datei löschen:\n"
 "%s"
 
 #: kfwin.cpp:140 kfwin.cpp:178 kfwin.cpp:209 kfwin.cpp:216 kfwin.cpp:238
@@ -230,7 +230,7 @@ msgstr "Hilfe"
 
 #: kftabdlg.cpp:64
 msgid "Include &subfolders"
-msgstr "&Unterverzeichnisse einschliessen"
+msgstr "&Unterverzeichnisse einschließen"
 
 #: kfwin.cpp:252
 msgid ""
@@ -246,7 +246,7 @@ msgid ""
 "selected file"
 msgstr ""
 "Es war nicht möglich, die\n"
-"gewählte Datei zu löschen"
+"angegebene Datei zu löschen"
 
 #: kfwin.cpp:141
 msgid "It wasn't possible to save results!"
@@ -263,7 +263,9 @@ msgid ""
 msgstr ""
 "Kfind %s\n"
 "Grafische Oberfläche für Programm find\n"
-"Miroslav Flídr <flidr@kky.zcu.cz>"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Speziellen Dank an Stephan Kulow\n"
+"<coolo@kde.org>"
 
 #: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
 msgid "KFind Results File"
@@ -377,14 +379,14 @@ msgstr "Der Monat existiert nicht!"
 
 #: kftabdlg.cpp:424
 msgid "The value in size isn't valid number!!"
-msgstr "Der Wert der Größe ist keine Zahl!"
+msgstr "\"Größe\" ist keine Zahl!"
 
 #: kfwin.cpp:239
 msgid ""
 "You have no permission\n"
 " to delete this directory"
 msgstr ""
-"Sie dürfen dieses Verzeichnis,\n"
+"Sie dürfen dieses Verzeichnis\n"
 " nicht löschen."
 
 #: kfwin.cpp:210

@@ -1,3 +1,18 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
 #: main.C:64
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
@@ -31,7 +46,7 @@ msgstr "Mi&nimieren"
 
 #: main.C:390
 msgid "&DeIconify"
-msgstr "Wieder&herstellen"
+msgstr "(&De)Iconisieren"
 
 #: main.C:391
 msgid "&Sticky"
@@ -61,7 +76,7 @@ msgstr "A&uf Arbeitsplatz"
 
 #: main.C:398
 msgid "&Onto current desktop"
-msgstr ""
+msgstr "Auf aktuellen Arbeitsplatz"
 
 #: main.C:446
 msgid "One"
@@ -101,7 +116,7 @@ msgstr "*** Keine Programme ***"
 
 #: minicli.C:56
 msgid "Command:"
-msgstr "Ausführen"
+msgstr "Kommando:"
 
 #: logout.C:35 task.C:36
 msgid "Logout"
@@ -109,7 +124,7 @@ msgstr "KDE beenden"
 
 #: logout.C:45
 msgid "Session prepared for logout"
-msgstr "Sitzung vorbereitet zum Ausloggen"
+msgstr "Sitzung für Abmelden vorbereitet"
 
 #: logout.C:51
 msgid ""

@@ -1,3 +1,18 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: 1997-10-25 17:49 MET DST\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
 #: main.cpp:53
 msgid "KDE Display Configuration"
 msgstr "KDE-Umgebungseinstellungen"
@@ -13,7 +28,7 @@ msgstr ""
 
 #: main.cpp:131
 msgid "  -init               apply current settings to the display\n"
-msgstr "  -init               derzeitige Einstellungen aktivieren\n"
+msgstr "  -init               aktuelle Einstellungen benutzen\n"
 
 #: main.cpp:132
 msgid "  -setup              setup the display\n"
@@ -98,7 +113,7 @@ msgstr "Minuten"
 
 #: scrnsave.cpp:211
 msgid "Requires Password"
-msgstr "Nach Password fragen"
+msgstr "Nach Paﬂwort fragen"
 
 #: scrnsave.cpp:216
 msgid "Priority:"
@@ -202,7 +217,7 @@ msgid ""
 "Do you want to install the default color schemes now ?"
 msgstr ""
 "Es wurden keine Farbpaletten gefunden.\n"
-"Sollen jetzt Standardfarbpaletten installiert werden?"
+"Wollen Sie jetzt Standardfarbpaletten installieren?"
 
 #: savescm.cpp:26
 msgid "Name"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpanel VERSION\n"
 "POT-Creation-Date: 1997-10-09 21:47-0500\n"
-"PO-Revision-Date: 1997-09-14 15:10 MET DST\n"
+"PO-Revision-Date: 1997-10-25 18:28 MET DST\n"
 "Last-Translator: Christian Kirsch <ck@held.mind.de>\n"
 "Language-Team: German/KDE\n"
 "MIME-Version: 1.0\n"
@@ -38,17 +38,16 @@ msgid "Logout"
 msgstr "Abmelden"
 
 #: kpanel.C:315 kpanel.C:663
-#, fuzzy
 msgid "Lock screen"
 msgstr "Bildschirm sperren"
 
 #: kpanel.C:326
 msgid "Hide the panel"
-msgstr ""
+msgstr "Panel verstecken"
 
 #: kpanel.C:342
 msgid "Show the panel"
-msgstr ""
+msgstr "Panel zeigen"
 
 #: kpanel.C:647
 msgid "Add application"
@@ -56,15 +55,15 @@ msgstr "Programm hinzufügen"
 
 #: kpanel.C:649
 msgid "Add an application or a submenu onto the panel"
-msgstr ""
+msgstr "Programm oder Untermenü zum Panel hinzufügen"
 
 #: kpanel.C:650
 msgid "Add windowlist"
-msgstr ""
+msgstr "Fensterliste hinzufügen"
 
 #: kpanel.C:652
 msgid "Add a windowlist menu onto the panel"
-msgstr ""
+msgstr "Menü für Fensterliste zum Panel hinzufügen"
 
 #: kpanel.C:653
 msgid "Configure"
@@ -96,7 +95,7 @@ msgstr "Keine Erklärung verfügbar"
 
 #: kpanel.C:1021 tools.C:690
 msgid "Windowlist"
-msgstr ""
+msgstr "Fensterliste"
 
 #: props.C:239
 msgid "Location"

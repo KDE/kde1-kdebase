@@ -1,3 +1,18 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: 1997-10-25 18:26 MET DST\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
 #: banner.cpp:56
 msgid "Banner"
 msgstr "Laufschrift"
@@ -76,7 +91,7 @@ msgstr ""
 
 #: blankscrn.cpp:49
 msgid "Blank Screen"
-msgstr "Blanker Bildschirm"
+msgstr "Leerer Bildschirm"
 
 #: blankscrn.cpp:63
 msgid "Setup kblankscrn"
@@ -84,57 +99,55 @@ msgstr "Einstellungen"
 
 #: blob.cpp:58
 msgid "Random Linear"
-msgstr ""
+msgstr "Zufällige Linien"
 
 #: blob.cpp:59
 msgid "Horizonal Sine"
-msgstr ""
+msgstr "Sinuskurve"
 
 #: blob.cpp:60
 msgid "Circular Bounce"
-msgstr ""
+msgstr "Kreisförmige Sprünge"
 
 #: blob.cpp:61
 msgid "Polar Coordinates"
-msgstr ""
+msgstr "Polarkoordinaten"
 
 #: blob.cpp:62
 msgid "Random"
-msgstr ""
+msgstr "Zufall"
 
 #: blob.cpp:67
 msgid "Sorry. This screensaver needs a color display"
-msgstr ""
+msgstr "Dieser Bildschirmschoner läuft nur auf Farbbildschirmen."
 
 #: blob.cpp:444
 msgid "Setup Blob Saver"
-msgstr ""
+msgstr "Blob Saver einstellen"
 
 #: blob.cpp:447
 msgid "Frame Show sec."
-msgstr ""
+msgstr "Dia-Show (Sekunden)"
 
 #: blob.cpp:455
 msgid "Algorithm"
-msgstr ""
+msgstr "Algorithmus"
 
 #: blob.cpp:535
-#, fuzzy
 msgid "About Blob"
-msgstr "Über Polygon"
+msgstr "Über Blob"
 
 #: blob.cpp:536
-#, fuzzy
 msgid ""
 "Blobsaver Version 0.1\n"
 "\n"
 "written by Tiaan Wessels 1997\n"
 "tiaan@netsys.co.za"
 msgstr ""
-"Banner Version 0.1\n"
+"Blobsaver Version 0.1\n"
 "\n"
-"Autor: Martin R. Jones 1996\n"
-"mjones@kde.org"
+"Autor: Tiaan Wessel 1997\n"
+"tiaan@netsys.co.za"
 
 #: blob.cpp:571
 msgid "Blobs"
@@ -146,20 +159,19 @@ msgstr "Feuer&Flamme"
 
 #: flame.cpp:390
 msgid "Setup KFlame"
-msgstr ""
+msgstr "KFlame einstellen"
 
 #: flame.cpp:406
 msgid "Max Levels:"
-msgstr ""
+msgstr "Max. Ebenen"
 
 #: flame.cpp:416
 msgid "Num Points:"
-msgstr ""
+msgstr "Punkte"
 
 #: flame.cpp:521
-#, fuzzy
 msgid "About Flame"
-msgstr "Über Banner"
+msgstr "Über KFlame"
 
 #: flame.cpp:522
 msgid ""
@@ -169,24 +181,27 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
+"KFlame Version 3.3\n"
+"\n"
+"Copyright (c) 1991 Patrick J. Naughton\n"
+"\n"
+"Portiert für KDE von Martin Jones."
 
 #: forest.cpp:200
 msgid "Forest"
 msgstr "Wald"
 
 #: forest.cpp:272
-#, fuzzy
 msgid "Setup KForest"
-msgstr "Wald"
+msgstr "Wald einstellen"
 
 #: forest.cpp:288
 msgid "Num of Trees:"
-msgstr ""
+msgstr "Bäume"
 
 #: forest.cpp:375
-#, fuzzy
 msgid "About Forest"
-msgstr "Wald"
+msgstr "Über Forest"
 
 #: forest.cpp:376
 msgid ""
@@ -196,6 +211,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Forest\n"
+"\n"
+"Copyright (c) 1995 Pascal Pensa\n"
+"\n"
+"Portiert für KDE von Emanuel Pirker."
 
 #: hop.cpp:221
 msgid "Hop"
@@ -203,20 +223,19 @@ msgstr "Hop (Fractal)"
 
 #: hop.cpp:306
 msgid "Setup KHop"
-msgstr ""
+msgstr "KHop einstellen"
 
 #: hop.cpp:322
 msgid "Samecolor Pixels:"
-msgstr ""
+msgstr "Gleichfarbige Pixel"
 
 #: hop.cpp:332 lissie.cpp:346
 msgid "Cycles:"
-msgstr ""
+msgstr "Durchläufe"
 
 #: hop.cpp:437
-#, fuzzy
 msgid "About Hop"
-msgstr "Über"
+msgstr "Über Hop"
 
 #: hop.cpp:438
 msgid ""
@@ -226,20 +245,23 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Hop Version 3.3\n"
+"\n"
+"Copyright (c) 1991 Patrick J. Naughton\n"
+"\n"
+"Portiert für KDE von Emanuel Pirker."
 
 #: laser.cpp:327
 msgid "Laser"
 msgstr "Laser"
 
 #: laser.cpp:387
-#, fuzzy
 msgid "Setup KLaser"
-msgstr "Einstellungen"
+msgstr "KLaser einstellen"
 
 #: laser.cpp:462
-#, fuzzy
 msgid "About Laser"
-msgstr "Über Banner"
+msgstr "Über Laser"
 
 #: laser.cpp:463
 msgid ""
@@ -249,15 +271,19 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
+"Laser Version 3.3\n"
+"\n"
+"Copyright (c) 1995 Pascal Pensa\n"
+"\n"
+"Portiert für KDE von Martin Jones."
 
 #: lines.cpp:110
 msgid "Lines"
 msgstr "Linien"
 
 #: lines.cpp:128
-#, fuzzy
 msgid "Setup klines"
-msgstr "Einstellungen"
+msgstr "Klines einstellen"
 
 #: lines.cpp:130 polygon.cpp:81
 msgid "Length:"
@@ -265,20 +291,19 @@ msgstr "Länge:"
 
 #: lines.cpp:150
 msgid "Beginning:"
-msgstr ""
+msgstr "Anfang:"
 
 #: lines.cpp:159
 msgid "Middle:"
-msgstr ""
+msgstr "Mitte:"
 
 #: lines.cpp:168
 msgid "End:"
-msgstr ""
+msgstr "Ende:"
 
 #: lines.cpp:259
-#, fuzzy
 msgid "About Lines"
-msgstr "Über Banner"
+msgstr "Über Klines"
 
 #: lines.cpp:260
 msgid ""
@@ -287,24 +312,26 @@ msgid ""
 "written by Dirk Staneker 1997\n"
 "dirk.stanerker@student.uni-tuebingen.de"
 msgstr ""
+"Lines Version 0.1.1\n"
+"\n"
+"Autor: Dirk Staneker 1997\n"
+"<dirk.stanerker@student.uni-tuebingen.de>"
 
 #: lissie.cpp:234
 msgid "Lissie"
 msgstr "Lissie"
 
 #: lissie.cpp:320
-#, fuzzy
 msgid "Setup KLissie"
-msgstr "Lissie"
+msgstr "KLissie einstellen"
 
 #: lissie.cpp:336
 msgid "Num of Lissies:"
-msgstr ""
+msgstr "Anzahl Lissies:"
 
 #: lissie.cpp:451
-#, fuzzy
 msgid "About Lissie"
-msgstr "Lissie"
+msgstr "Über Lissie"
 
 #: lissie.cpp:452
 msgid ""
@@ -314,17 +341,22 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Lissie\n"
+"\n"
+"Copyright (c) 1996 Alexander Jolk\n"
+"\n"
+"Portiert für KDE von Emanuel Pirker."
 
 #: main.cpp:263
 msgid "Shadow Passwords"
-msgstr "Versteckte Passwörter"
+msgstr "Versteckte Paßwörter"
 
 #: main.cpp:264
 msgid ""
 "Your system uses shadow passwords!\n"
 "Please contact your system administrator."
 msgstr ""
-"Dieses System benutzt versteckte Passwörter (shadow passwords)!\n"
+"Dieses System benutzt versteckte Paßwörter (shadow passwords)!\n"
 "Sie brauchen die Hilfe des System-Verwalters."
 
 #: main.cpp:420
@@ -354,42 +386,41 @@ msgid ""
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
-"  -corners xxxx     Mousezeiger in Ecke führt zu:\n"
+"  -corners xxxx     Maus in Ecke bewirkt:\n"
 "                     x = i  keine Aktion (ignorieren)\n"
 "                     x = s  Bildschirm schonen\n"
-"                     x = l  Bildschirm verschliessen\n"
-"                    Reihenfolge: links-oben, rechts-oben, links-unten, "
-"rechts-unten\n"
+"                     x = l  Bildschirm verschließen\n"
+"                    Reihenfolge: links-oben, rechts-oben, links-unten, rechts-unten\n"
 "  -delay zahl       Zeit, bis der Bildschirmschoner startet\n"
 "                     (Normalerweise 10 Minuten)\n"
-"  -desc             Gibt den Namen des Bildschirmschoners aus\n"
+"  -desc             Gibt Beschreibung des Bildschirmschoners aus\n"
 "  -install          Bildschirmschoner einrichten\n"
-"  -lock             Passwortschutz des Bildschirmschoners\n"
+"  -lock             Paßwort zum Beenden des Bildschirmschoners\n"
 "  -nice zahl        Starten mit angegebener Priorität (nice level)\n"
 "\n"
-"  -preview wid      Läuft in dem angegeben XWindow\n"
+"  -preview wid      Läuft im angegeben Fenster\n"
 "  -setup            Bildschirmschoner einstellen\n"
 "  -test             Bildschirmschoner sofort starten\n"
 
 #: morph3d.cpp:836
 msgid "GL can not render with root visual\n"
-msgstr ""
+msgstr "GL kann nicht in Root-Visual zeichnen\n"
 
 #: morph3d.cpp:937
 msgid "Morph3D (GL)"
-msgstr "3D Körper (GL)"
+msgstr "3D-Körper (GL)"
 
 #: morph3d.cpp:1011
 msgid "Setup KMorph3d"
-msgstr ""
+msgstr "KMorph3D eisntellen"
 
 #: morph3d.cpp:1027
 msgid "Object Type:"
-msgstr ""
+msgstr "Objektart:"
 
 #: morph3d.cpp:1115
 msgid "About Morph3D"
-msgstr ""
+msgstr "Über Morph3D"
 
 #: morph3d.cpp:1116
 msgid ""
@@ -399,6 +430,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 Marcelo F. Vianna\n"
+"\n"
+"Portiert für KDE von Emanuel Pirker."
 
 #: polygon.cpp:58
 msgid "Polygons"
@@ -433,22 +469,20 @@ msgid "Pyro"
 msgstr "Feuerwerk"
 
 #: pyro.cpp:511
-#, fuzzy
 msgid "Setup KPyro"
-msgstr "Einstellungen"
+msgstr "Feuerwerk einstellen"
 
 #: pyro.cpp:517 rock.cpp:553
 msgid "Number:"
-msgstr ""
+msgstr "Anzahl"
 
 #: pyro.cpp:527
 msgid "Cloud"
-msgstr ""
+msgstr "Wolke"
 
 #: pyro.cpp:608
-#, fuzzy
 msgid "About Pyro"
-msgstr "Über Polygon"
+msgstr "Über Feuerwerk"
 
 #: pyro.cpp:609
 msgid ""
@@ -458,28 +492,31 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
+"Pyro Version 3.4\n"
+"\n"
+"Copyright (c) 1991 Patrick J. Naughton\n"
+"\n"
+"Portiert für KDE von Martin Jones."
 
 #: rock.cpp:429
 msgid "Rock"
 msgstr "Asteroiden"
 
 #: rock.cpp:537
-#, fuzzy
 msgid "Setup krock"
-msgstr "Einstellungen"
+msgstr "Asteroiden einstellen"
 
 #: rock.cpp:563
 msgid "Move"
-msgstr ""
+msgstr "Bewegen"
 
 #: rock.cpp:568
 msgid "Rotate"
-msgstr ""
+msgstr "Drehen"
 
 #: rock.cpp:686
-#, fuzzy
 msgid "About Rock"
-msgstr "Über"
+msgstr "Über Asteroiden"
 
 #: rock.cpp:687
 msgid ""
@@ -489,16 +526,19 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
+"Rock Version 3.3\n"
+"\n"
+"Copyright (c) 1992 Jamie Zawinski\n"
+"\n"
+"Portiert für KDE von  Martin Jones."
 
 #: saver.cpp:50 saver.cpp:173
-#, fuzzy
 msgid "Enter Password"
-msgstr "Versteckte Passwörter"
+msgstr "Paßwort eingeben"
 
 #: saver.cpp:80
-#, fuzzy
 msgid "Failed"
-msgstr "Schriftart:"
+msgstr "Gescheitert"
 
 #: slip.cpp:287
 msgid "Slip"
@@ -506,16 +546,15 @@ msgstr "Fetzen"
 
 #: slip.cpp:360
 msgid "Setup KSlip"
-msgstr ""
+msgstr "KSlip einstellen"
 
 #: slip.cpp:376
 msgid "Batchcount:"
 msgstr ""
 
 #: slip.cpp:464
-#, fuzzy
 msgid "About Slip"
-msgstr "Über"
+msgstr "Über Slip"
 
 #: slip.cpp:465
 msgid ""
@@ -525,6 +564,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 Scott Draves\n"
+"\n"
+"Portiert für KDE von Emanuel Pirker."
 
 #: swarm.cpp:252
 msgid "Swarm"
@@ -532,16 +576,15 @@ msgstr "Schwarm"
 
 #: swarm.cpp:324
 msgid "Setup KSwarm"
-msgstr ""
+msgstr "Schwarm einstellen"
 
 #: swarm.cpp:340
 msgid "Number of Bees:"
-msgstr ""
+msgstr "Anzahl Bienen:"
 
 #: swarm.cpp:427
-#, fuzzy
 msgid "About Swarm"
-msgstr "Über Banner"
+msgstr "Über Schwarm"
 
 #: swarm.cpp:428
 msgid ""
@@ -551,5 +594,10 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Swarm\n"
+"\n"
+"Copyright (c) 1991 Patrick J. Naughton\n"
+"\n"
+"Portiert für KDE von Emanuel Pirker."
 
 
