@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Draft//EN">
+<HTML>
+<HEAD>
+<TITLE>KFM Configuration</TITLE>
+</HEAD>
+<BODY>
+<H1>KFM Configuration</H1>
+<H2>KDE Ressource File</H2>
+<P>The KFM ressource file is named <CODE>.fmrc</CODE> and can be found in
+<CODE>~/.kde/config/.kfmrc</CODE>. It should contain some lines you really
+need to run KFM. The following entries are a must</P>
+<PRE>[Templates]
+Path=$HOME/Desktop/Templates
+[Trash]
+Path=$HOME/Desktop/Trash
+[Terminal]
+Terminal=$KDEDIR/bin/kvt
+[Icons]
+Batch=terminal.xpm
+Default=unknown.xpm
+Folder=folder.xpm
+Executable=exec.xpm
+[KFM HTML Defaults]
+TextColor=#000000
+LinkColor=#FF0000
+BgColor=#FFFFFF
+BgImage=WATER04.JPG</PRE>
+<P>The first entry tells KFM where to find you templates. Those directories
+are created by the installation of KFM. The same could be said about the Trash
+entry. If KFM is forced to use a terminal to run a program, it must know which
+one. This entry suggests the fine KDE terminal. The Icons section tells KFM
+about some default icons. The icons are installed by the installation of KFM.
+Please dont change these lines yet, since KFM 0.6.6 has them hardcoded in some
+places. All icons must be in the directory <CODE>$KDEDIR/lib/pics</CODE> and
+all wallpapers are in <CODE>$KDEDIR/lib/wallpapers</CODE></P>
+<P>The HTML entries configure the way KFM displays the directories. You can
+choose a text color ( not used yet ), the color of the links ( in this case
+red ) and the color of the background. The values you may pass are the same
+like the ones in the <CODE>&lt;body></CODE> HTML tag. The <CODE>BgImage</CODE>
+overrides the background color. In this case a image is displayed as
+background in every window. Please notice how KConfig uses environment
+variables like <CODE>$KDEDIR</CODE> in the ressource file. You can of course
+configure each directory different. This is described in one of the next
+chapters.</P>
+<H2>Configuring the devices</H2>
+<P>All mountable devices are supported by KFM. Lets learn by example and have
+a look at my configuration. I places a file named <CODE>cdrom.kdelnk</CODE> in
+my Desktop directory</P>
+<PRE>[KDE Desktop Entry]
+Type=FSDevice
+Dev=/dev/scd0
+MountPoint=/cd
+ReadOnly=1
+FSType=iso9660,Default
+Icon=cd_mount.xpm
+UnmountIcon=cd_unmount.xpm</PRE>
+<P>The first line in the file identifies the kind of file. The <CODE>[KDE
+Desktop Entry]</CODE> files are very common to KDE. For example KPanel uses
+them, too.</P>
+<P>The next line identifies this to be a device configuration file. A device
+may be a cdrom, a floppy disk drive, a hard disk or a NFS disk. You must be
+root to allow mounting of devices. But luckily the admin can allow users to
+mount file systems, too.</P>
+<P>The third line tells KDE what device we are talking about. See your linux
+distribution manuals for details. Sometimes you use for example
+<CODE>/dev/cdrom</CODE> which is a link to a real device. In version 0.5 of
+KFM you must not mention such a link here.</P>
+<P>The fourth line tells KFM where this device should be mounted to. This
+means that in our example the file system of the CDROM will appear in the
+directory <CODE>/cd</CODE>.</P>
+<P>The line number five tells KFM wether the device is read only ( a CDROM for
+example ). If it is read-write able, you must set this value to 0.</P>
+<P>The next line tells which filesystem this device needs. The common file
+system for CDROMs is ISO9660 as mentioned in the example. You may name several
+file system types separated by colons. Default is something special. More
+about this later on.</P>
+<P>The last two lines tell KFM which icon to use. The first icon is used if
+the device is mounted and the second one if the device is not mounted.</P>
+<P>Since you may be a non root user, you wont be allowed to mount the CDROM
+the way mentioned above. But perhaps your admin put a line for you in the
+<CODE>/etc/fstab</CODE>. My one looks like that</P>
+<P>As you can see, the user is allowed to mount the floppy and the CDROM. KFM
+has all information in this case. You must just specify the first three lines
+and the line</P>
+<PRE>FSType=Default</PRE>
+<P>followed by the two lines for the icons. All other information is extracted
+from <CODE>/etc/fstab</CODE>.</P>
+<P>Since I am root, I allowed myself to use default and explicit mounting. To
+give another example: Here is my file for mounting the floppy</P>
+<PRE>[KDE Desktop Entry]
+Type=FSDevice
+Dev=/dev/fd0
+MountPoint=/floppy
+ReadOnly=0
+FSType=msdos,minix,default
+Icon=floppy_mount.xpm
+UnmountIcon=floppy_unmout.xpm</PRE>
+<H2>The .directory files</H2>
+<P>In each directory ( on which you have write access ) you may write a
+.directory file. Please mention that some directories could be a bad place for
+such a file. I can not mention one yet, but be warned. KPanel uses this files
+to give its trees in the start menu an icon. KFM notices that and uses the
+same icon. Of course you can use these files outside of KPanels directory
+strcuture, too.</P>
+<P>KFM lets you configure the look of your directory in many ways. As
+mentioned above you can make a default setting. The same entries you may write
+in the <CODE>[KFM HTML Defaults]</CODE> group in <CODE>.kderc</CODE> may be
+written in the group <CODE>[KDE Desktop Entry]</CODE>. A sample
+<CODE>.directory</CODE> file may look like this</P>
+<PRE>[KDE Desktop Entry]
+Icon=garfield-red.xpm
+TextColor=#00FF00
+BgColor=#000000
+LinkColor=#00FF00
+BgImage=file:/tmp/icons/WATER05.JPG</PRE>
+<P>Mention that the background color has no effect since an image is
+specified.</P>
+<H2>The .kde.html file</H2>
+<P>This is a sample file. Have a close look at it</P>
+<PRE>&lt;html>&lt;head>&lt;title>TMP&lt;/title>&lt;/head>&lt;body background="/home/src/kfm-0.5/back.jpg" link=#FF0000 text=#FFFFFF>
+&lt;h1>Hallo in Temp&lt;/h1>
+Klappts?&lt;br>
+Ein &lt;a href="http://localhost/html/install.html">Link&lt;/a>&lt;br>
+&lt;files name=*.jpeg>&lt;br>
+&lt;h1>Tar Archives&lt;/h1>
+&lt;files name=*.tgz>&lt;br>
+&lt;files name=*.tar>&lt;br>
+&lt;files name=*.tar.gz>&lt;br>
+&lt;h1>Hidden files&lt;/h1>
+&lt;files filter=Hidden>&lt;br>
+&lt;h1>Dires&lt;/h1>
+&lt;files filter=Dirs>&lt;br>
+&lt;h1>Executables&lt;/h1>
+&lt;files filter=Executable>&lt;br>
+&lt;h1>Rest of the Best&lt;/h1>
+&lt;files filter=Rest>&lt;br>
+&lt;/body>
+&lt;/html></PRE>
+<P>It looks like a normal HTML file, but includes some goodies. Look at the
+&lt;files> tag. With &lt;files name=pattern> you can display all files
+matching this wildcard pattern. Using &lt;files filter=Hidden> you can display
+all hidden files ( those starting with a point). Of interest is &lt;files
+filter=Rest>. This tag displays all files in the current directory, which dont
+match one of the above criterias. As you may have seen already you can embed
+links to HTTP and FTP URLs in such a document. This way you can write a better
+README files. When the user looks at your sources, he will see a HTML file
+with some explanations for every source file and some URLs of interest. Try it
+out!</P>
+
+<HR>
+<P>Torben Weis, <A href="mailto:weis@kde.org">weis@kde.org</A></P>
+</BODY>
+</HTML>

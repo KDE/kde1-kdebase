@@ -1,0 +1,80 @@
+<!doctype linuxdoc system>
+
+<!-- The KFontManager Handbook.
+
+ -->
+
+<article>
+
+<!-- Title information -->
+
+<title>The KFontManger Handbook
+<author>Bernd Johannes Wuebben, <tt/wuebben@kde.org/
+<date>Version 0.2.2, 20 May 1997
+<abstract>This Handbook describes KFontManger Version 0.2.2
+
+<!-- Table of contents -->
+<toc>
+
+<!-- Begin the document -->
+
+
+<sect>Introduction
+<p>
+
+KFontManager is a font manager for the KDE project. KFontManger was designed
+to work in conjunction with kfontdialog version 0.5 and higher.
+<p>
+The neccessity for a Font-Manager arose from the following facts:
+
+<itemize>
+<item>The font-list in kfontdialog used to be hard-coded. This was clearly
+not desirable. 
+<item>Not all fonts that come with the X11 window system are useful. Were
+kfontdialog simply to display all fonts availabe on your X server system,
+you would over and over again be confronted with the same list of fonts,
+some of which completely unusable. KFontManger allows you to select which
+fonts you want to be available to KDE applications and in particular to
+kfontdialog.
+</itemize>
+
+<sect>Installation
+<p>
+
+You need libkdecore and libqt1.2 in order to be able to compile KFontManager.
+To compile and install KFontManger simply execute the following command
+at the command-line prompt.
+
+<tscreen><verb>
+% ./configure
+% make
+% make install
+</verb></tscreen>
+
+<P>
+<sect>How it works
+<p>
+KFontManager will present to you a list of all available fonts on you
+system. You will then use kfontmanger to compose a list of KDE fonts
+by choosing those fonts availabe on you system that you like. This list
+of fonts will then be available to the KDE applications. For example kfontdialog,
+which is used for example in kedit, will then offer exactly those fonts
+you selected. The list of fonts you create using KFontManager will be stored
+in the file ~/.kde/config/kdefonts. Unless you know what you are doing
+you should refrain from manipulating the KDE font file by hand.</P>
+
+
+<sect>For Developers
+<p>
+
+A Kapplication method: getKDEFonts(QStrList&nbsp;*fontlist) is availabe 
+in KApplication. This method will enable you to obtain the
+list of KDE fonts for use in your application, should you have a need for
+it. Normally only kfontdialog would do this. 
+
+
+<tt>Bernd Johannes Wuebben</tt>
+<p>
+<htmlurl url="mailto:wuebben@kde.org" name="wuebben@kde.org">
+<p>
+</article>
