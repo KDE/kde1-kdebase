@@ -61,7 +61,11 @@ public:
   //CT 18jan98
   void smartPlacement(Client* c);
   //CT 30jan98
-  void cascadePlacement(Client* c);
+  void cascadePlacement(Client* c, bool re_init);
+
+  //CT 12mar98 - functions to rearrange the windows on the desk
+  void deskUnclutter();
+  void deskCascade();
 
   void manage(Window w, bool mapped = False);
 

@@ -542,6 +542,15 @@ void Manager::clientMessage(XEvent*  ev){
     else if (com == "moduleRaised") {
       raiseElectricBorders();
     }
+    
+    //CT 12mar98 commands to rearrange the windows
+    else if (com == "deskUnclutter") {
+      deskUnclutter();
+    }
+    else if (com == "deskCascade") {
+      deskCascade();
+    }
+
     else {
       // forward unknown command to the modules
       long mask = 0L;
@@ -1016,7 +1025,7 @@ void Manager::randomPlacement(Client* c){
  * Attempts to place the windows in cascade on each desktop, according
  * with their height and weight (30jan98)
  */
-void Manager::cascadePlacement (Client* c) {
+void Manager::cascadePlacement (Client* c, bool re_init) {
 
   // buffers: will keep x-es and y-es on each desktop
   static int x[] = {0,0,0,0,0,0,0,0};
@@ -1031,6 +1040,12 @@ void Manager::cascadePlacement (Client* c) {
   int delta_y = TITLEBAR_HEIGHT + BORDER;
 
   int d = currentDesktop() - 1;
+
+  //initialize if needed
+  if (re_init) {
+    x[d]   = y[d]   = 0;
+    col[d] = row[d] = 0;
+  }
 
   // get the maximum allowed windows space
   QRect maxRect = KWM::getWindowRegion(currentDesktop()); 
@@ -1121,7 +1136,10 @@ void Manager::smartPlacement(Client* c) {
       
       // compare to the position of each client on the current desk
       for(l = clients.first(); l ; l = clients.next()) {
-	if(!l->isOnDesktop(currentDesktop()) || (l == c)) 
+	if(!l->isOnDesktop(currentDesktop()) ||
+	   //12mar98 kill bug about avoiding iconified windows
+	   (l->isIconified()) || 
+	   (l == c)) 
 	  continue;
 	// if not enough room above or under the current tested client
 	// determine the first non-overlapped x position
@@ -1245,6 +1263,49 @@ void Manager::spGetOverlap(Client* c, int x, int y, int* overlap) {
   return;
 }
 
+//CT 12mar98 - function to place clients on the current desk in order
+//   to minimize the overlap
+void Manager::deskUnclutter() {
+ 
+  Client *cl, *bm; //a client and a bookmark
+
+  // save interactive_trigger value and then get rid of it
+  //   we don't need interactive placement here, even if set on
+  int save_interactive_trigger = -1;
+  if (options.interactive_trigger >=0) {
+    save_interactive_trigger = options.interactive_trigger;
+    options.interactive_trigger = -1;
+  }
+  //prefer to loop backwards (often badly placed windows expected to be
+  //  the last placed ones. Have to trigger discussion about. Anybody else?
+  for(cl = clients.last(); cl; cl = clients.prev()) {
+    //save the current position in the clients list
+    bm = clients.current(); 
+    if((!cl->isOnDesktop(currentDesktop())) || (cl->isIconified()) )
+      continue;
+    smartPlacement(cl);
+    sendConfig(cl, FALSE); //ask Matthias if this is the best way
+    //restore the pos in clients list (munged by smartPlacement
+    clients.findRef(bm); 
+  }
+  options.interactive_trigger = save_interactive_trigger;
+}
+
+//CT 12mar98 - function to place clients on the current desk in order
+//   to organize them in cascade
+void Manager::deskCascade() {
+ 
+  Client *cl;
+  cl = clients.first();
+  cascadePlacement(cl,True);
+  sendConfig(cl, FALSE);
+  for(cl = clients.next(); cl; cl = clients.next()) {
+    if((!cl->isOnDesktop(currentDesktop())) || (cl->isIconified()) )
+      continue;
+    cascadePlacement(cl,False);
+    sendConfig(cl, FALSE);
+  }
+}
 
 void Manager::manage(Window w, bool mapped){
 
@@ -1421,7 +1482,7 @@ void Manager::manage(Window w, bool mapped){
        (options.interactive_trigger >= 0))
       smartPlacement(c);
     else if(options.Placement == CASCADE_PLACEMENT)
-      cascadePlacement(c);
+      cascadePlacement(c, False);
     else
       randomPlacement(c);
   }
