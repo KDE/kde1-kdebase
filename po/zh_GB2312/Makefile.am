@@ -2,14 +2,14 @@
 # This has to be set. The rest should be reusable
 GMFILES = kfind.gmo kdehelp.gmo kdisplay.gmo kvt.gmo \
 	kfm.gmo kwm.gmo kfontmanager.gmo \
-	kdm.gmo kpanel.gmo klock.gmo krootwm.gmo \
+	kpanel.gmo klock.gmo krootwm.gmo \
 	kcmbell.gmo kcminfo.gmo kcminput.gmo kcmkwm.gmo \
 	kcmsamba.gmo kcmsample.gmo kcontrol.gmo kmenuedit.gmo \
-	kdmconfig.gmo kcmkpanel.gmo kcmlocale.gmo kcmsyssound.gmo
+	kdmconfig.gmo kcmkpanel.gmo kcmlocale.gmo 
 
 POFILES = $(GMFILES:.gmo=.po)
 
-LANG = de
+LANG = zh_GB2312
 
 localedir = $(kde_locale)
 
