@@ -227,6 +227,7 @@ AC_OUTPUT(Makefile \
 	kappfinder/pics/mini/Makefile \
 	kaudio/Makefile \
 	kcontrol/Makefile \
+	kcontrol/kfm/Makefile \
 	kcontrol/bell/Makefile \
 	kcontrol/display/Makefile \
 	kcontrol/display/ad/Makefile \
