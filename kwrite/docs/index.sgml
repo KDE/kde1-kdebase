@@ -22,15 +22,14 @@
 <sect>Introduction
 
 <p>
-KWrite is a text editor for the KDE Desktop. It could be a
-programmer's editor best used in conjunction with kfm for source file
-browsing for different languages. KWrite may also serve well for
-composition of small plain text documents. It is meant to be a
-programmers editor, and it could be considered as a partial
-alternative to more powerful editors such as XEmacs or Emacs. KWrite's
-main functionality feature is the colorized syntax assured for many
+KWrite is a text editor for the KDE Desktop. It is best used in 
+conjunction with kfm for source file browsing. KWrite also works well for
+small plain text documents. It is meant to be a programmer's editor, 
+and it could be considered as a partial alternative to more powerful 
+editors such as XEmacs or Emacs. KWrite's most useful feature 
+is the colorized syntax highlighting provided for many
 programming languages: C/C++, Java, Python, Perl, Bash, Modula 2,
-HTML, Ada.
+HTML, and Ada.
 <p>
 <sect1>New<p>
 <itemize>
@@ -74,7 +73,7 @@ directory of the KWrite distribution:
 </verb></tscreen>
 
 
-Since KWrite uses <tt>autoconf</tt> you should have not trouble compiling it.
+Since KWrite uses <tt>autoconf</tt> you should not have trouble compiling it.
 Should you run into problems please report them to the <sf/KDE/ mailing lists.
 
 <sect>Onscreen Fundamentals
@@ -86,13 +85,13 @@ will have no problems with KWrite.
 <p>
 <sect1>Drag and Drop
 <p>
-KWrite makes use of the KDE Drag and Drop protocol. This means that you can darg
+KWrite makes use of the KDE Drag and Drop protocol. This means that you can drag
 and drop files form the Desktop or kfm or some remote ftp site that you have
 open in one of kfm's windows on to KWrite. 
 
 <sect1>Editing files on the internet
 <p>
-You can open and save files transparently on the internet. Try the the following at the
+You can open and save files transparently on the internet. Try the following at the
 command-line prompt to see an example of this.
 
 <tscreen><verb>
@@ -112,19 +111,19 @@ KWrite honors the following key bindings.
 
 
 <itemize>
-<item><tt/Insert/ Toggle between Insert and Overwrite mode
-<item><tt/Left Arrow/ Move the cursor one character leftwards 
-<item><tt/Right Arrow/ Move the cursor one character rightwards 
-<item><tt/Up Arrow/ Move the cursor one line upwards 
-<item><tt/Down Arrow/ Move the cursor one line downwards 
-<item><tt/Page Up/ Move the cursor one page upwards 
-<item><tt/Page Down/ Move the cursor one page downwards 
+<item><tt/Insert/ Toggle between Insert and Overwrite modes
+<item><tt/Left Arrow/ Move the cursor one character to the left
+<item><tt/Right Arrow/ Move the cursor one character to the right
+<item><tt/Up Arrow/ Move the cursor up one line 
+<item><tt/Down Arrow/ Move the cursor down one line 
+<item><tt/Page Up/ Move the cursor up one page 
+<item><tt/Page Down/ Move the cursor down one page 
 <item><tt/Backspace/ Delete the character to the left of the cursor 
 <item><tt/Home/ Move the cursor to the beginning of the line 
 <item><tt/End/ Move the cursor to the end of the line 
 <item><tt/Delete/ Delete the character to the right of the cursor 
-<item><tt/Shift - Left Arrow/ Mark text one character leftwards 
-<item><tt/Shift - Right Arrow/ Mark text one character rightwards 
+<item><tt/Shift - Left Arrow/ Mark text one character to the left 
+<item><tt/Shift - Right Arrow/ Mark text one character to the right 
 <item><tt/Alternate-S/ Set bookmark
 <item><tt/Alternate-C/ Clear bookmark
 <item><tt/F1/ Help
@@ -161,7 +160,7 @@ Allows the user to insert a new document in the edited document
 A fast list of previously opened documents
 <sect2>Save
 <p>
-Saves the current Document
+Saves the current document
 <sect2>Save As
 <p>
 Allows the user to save the document in a new file.
@@ -239,7 +238,7 @@ Allows the user to set and save a group of default settings: font, fg/bg color, 
 Allows the user to customize in detail the way highlight rules work for him (together with mime type association for each highlight definition). 
 <sect2>Colors
 <p>
-Allows the user to select fore and background color of KWrite's text display area.
+Allows the user to select foreground and background color of KWrite's text display area.
 <sect2>Vertical Selection
 <p>
 Turns on/off the vertical selection feature
