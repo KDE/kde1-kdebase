@@ -19,6 +19,8 @@ In 0.10:
        - fixed the "last window is iconified and deficonified"-focus-
          follows-mouse-bug
        - fixed the autoraise-over-operations-menu bug 
+       - Uwe's fix for the timing problem of the resize animation
+       - history command completion with Tab in minicli
 
   patchlevel 13:
        - new decoration style (tiny decoration). Useful for floating

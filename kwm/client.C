@@ -237,7 +237,7 @@ void animate_size_change(QRect before, QRect after, bool decorated, int o1, int 
       else
 	dy1 = dy2;
     }
-    tt = tt2;
+    tt2 = tt = manager->timeStamp();
     
     draw_animation_rectangle(x1, y1, dx1-x1, dy1-y1, decorated, o1, o2);
     XFlush(qt_xdisplay());

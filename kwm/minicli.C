@@ -103,6 +103,10 @@ bool Minicli::eventFilter( QObject *ob, QEvent * e){
       lineedit->setText(it->current());
       return True;
     }
+    else if (((QKeyEvent*)e)->key() == Key_Tab){
+      commandCompletion();
+      return True;
+    }
   }
   return False;
 }
@@ -149,5 +153,49 @@ void Minicli::cleanup(){
   hide();
   do_not_draw = FALSE;
   XSync(qt_xdisplay(), FALSE);
+}
+
+void Minicli::commandCompletion(){
+  QListIterator <char> *it;
+  it = new QListIterator <char> (*history);
+  QString s,t,u;
+  s = lineedit->text();
+  bool abort = True;
+
+  if (!it->isEmpty()){
+    it->toLast();
+    while (!it->atFirst()){
+      --(*it);
+      t = it->current();
+      if (t.length()>=s.length() && t.left(s.length()) == s){
+	if (t.length()>s.length()){
+	  u = t.left(s.length()+1);
+	  abort = False;
+	}
+	it->toFirst();
+      }
+    }
+    if (!abort){
+      it->toLast();
+      while (!it->atFirst()){
+	--(*it);
+	t = it->current();
+	if (t.length()>=s.length() && t.left(s.length()) == s){
+	  if (t.length()<u.length()
+	      || t.left(u.length()) != u){
+	    abort = True;
+	    it->toFirst();
+	  }
+	}
+      }
+    }
+
+    if (!abort){
+      lineedit->setText(u.data());
+      commandCompletion();
+    }
+  }
+  delete it;
+  return;
 }
 

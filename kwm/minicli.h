@@ -25,5 +25,6 @@ private:
   QLineEdit* lineedit;
   QLabel* label;
   Client* reactive;
+  void commandCompletion();
 };
 
