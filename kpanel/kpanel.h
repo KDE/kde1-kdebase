@@ -74,6 +74,7 @@ public:
   bool flat;
   int last_button;
   static myPushButton* most_recent_pressed;
+  bool check_rect_for_leave;
 protected:
   void enterEvent( QEvent * );
   void leaveEvent( QEvent * );
@@ -286,9 +287,6 @@ private:
   
   void addButtonInternal(PMenuItem* pmi, int x = -1, int y = -1, QString name = ""); 
 
-/*   bool add_button(ListItem* li, int x = -1, int y = -1, QString name = ""); */
-/*   void add_free_app(const char* filename); */
-  
   //layout
   void layoutTaskbar();
   void reposition(int l = 0);

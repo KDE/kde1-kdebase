@@ -225,6 +225,14 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
   
   if (comment.isEmpty())
     comment = text_name;
+  if (big_pixmap_name.isEmpty()){
+    QString tmp = real_name.copy();
+    int pos = tmp.find(".kdelnk");
+    if( pos >= 0 )
+      tmp = tmp.left(pos);
+    tmp.append(".xpm");
+    big_pixmap_name = tmp.copy();
+  }
 
   return 0;
 }

@@ -53,6 +53,7 @@ myPushButton::myPushButton(QWidget *parent, const char* name)
     never_flat = False;
     flat_means_down = False;
     draw_down = False;
+    check_rect_for_leave = FALSE;
 }
 
 myPushButton::~myPushButton () {
@@ -63,14 +64,18 @@ myPushButton::~myPushButton () {
 myPushButton* myPushButton::most_recent_pressed = NULL;
 
 void myPushButton::enterEvent( QEvent * ){
+  if (!flat)
+    return;
   flat = False;
   if (!never_flat)
     repaint();
 }
 
 void myPushButton::leaveEvent( QEvent * ){
-  // The next check is for swallowd windows and makes sense
-  if (rect().contains(mapFromGlobal(QCursor::pos()), TRUE))
+  if (check_rect_for_leave
+      && rect().contains(mapFromGlobal(QCursor::pos()), TRUE))
+    return;
+  if (flat)
     return;
   flat = True;
   if (!never_flat)

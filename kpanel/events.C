@@ -64,7 +64,7 @@ void kPanel::windowAdd(Window w){
 		    entries[bi].button->width()-6,
 		    entries[bi].button->height()-6);
       XMapWindow(qt_xdisplay(),w);
-      
+      entries[bi].button->check_rect_for_leave = TRUE;
     }
   }
   

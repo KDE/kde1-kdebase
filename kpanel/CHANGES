@@ -7,6 +7,8 @@ In kpanel-0.17:
        - weird taskbar bug (wrong window) fixed. Thanks to Stephan Kulow
          for bug hunting.
        - active taskbar button painted down (for Stephan Kulow :-)
+       - Fix for qt-tooltips on taskbarbuttons
+       - fix for big icons on panel buttons
     Patchlevel 3:
        - fixed the dragging of data onto panel buttons
        - no more need for the kdelnk suffix (but mimetype)
