@@ -81,7 +81,7 @@ msgstr "N‰yt‰ p&uu"
 
 #: kfmgui.cpp:363
 msgid "&Visual Schnauzer"
-msgstr "Kuvatied&ostot ikoneina"
+msgstr "Kuvatied&ostot kuvakkeina"
 
 #: kfmgui.cpp:365
 msgid "&HTML View"
@@ -89,7 +89,7 @@ msgstr "N‰yt‰ &HTML"
 
 #: kfmgui.cpp:368
 msgid "&Icon View"
-msgstr "N‰yt‰ &Ikonit"
+msgstr "N‰yt‰ &Kuvakkeet"
 
 #: kfmgui.cpp:370
 msgid "&Text View"
@@ -193,7 +193,7 @@ msgstr "Ylˆs"
 
 #: kfmgui.cpp:588
 msgid "Could not load icon\n"
-msgstr "Ikonin lataus ep‰onnistui\n"
+msgstr "Kuvakkeen lataus ep‰onnistui\n"
 
 #: kfmexec.cpp:59 kfmgui.cpp:744 kfmman.cpp:1020
 msgid "Malformed URL\n"
@@ -255,7 +255,7 @@ msgstr ""
 "Tekij‰: Torben Weis\n"
 "weis@kde.org\n"
 "\n"
-"HTML kontrolli Martin Jones\n"
+"HTML kontrolli, Martin Jones\n"
 "mjones@kde.org\n"
 "V‰lityspalvelimen hallinta Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de"
@@ -266,11 +266,11 @@ msgstr "Dokumentti: Valmis"
 
 #: kfmview.cpp:356
 msgid "ERROR: Drop over malformed URL"
-msgstr "VIRHE: Pudotus virheellisen URL p‰‰lle."
+msgstr "VIRHE: Pudotus virheellisen URL:n p‰‰lle."
 
 #: kfmview.cpp:381
 msgid "ERROR: You dropped some URL over itself"
-msgstr "VIRHE: Pudotit URL itsens‰ p‰‰lle"
+msgstr "VIRHE: Pudotit URL:n itsens‰ p‰‰lle"
 
 #: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:416
 #: kfmview.cpp:610 krenamewin.cpp:20 root.cpp:1158
@@ -324,7 +324,7 @@ msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
 msgstr ""
-"T‰m‰ sivu ei ole luotettava sivu\n"
+"T‰m‰ sivu ei ole luotettava sivu,\n"
 "mutta se sis‰lt‰‰ linkin paikalliseen tiedostoj‰rjestelm‰‰n."
 
 #: kfmview.cpp:846
@@ -440,7 +440,7 @@ msgstr "VIRHE: Ei p‰‰teasetusta"
 
 #: kbind.cpp:1912
 msgid "No mount point in *.kdelnk file"
-msgstr "Ei liitospaikkaa *.kdelnk tiedostossa"
+msgstr "Ei liitospaikkaa *.kdelnk-tiedostossa"
 
 #: kbind.cpp:1952
 msgid "Unknown binding"
@@ -504,7 +504,7 @@ msgstr "Tekstiv‰ri:"
 
 #: htmlopts.cpp:230
 msgid "URL Link Color:"
-msgstr "URL linkin v‰ri:"
+msgstr "URL:n linkin v‰ri:"
 
 #: htmlopts.cpp:238
 msgid "Followed Link Color:"
@@ -524,7 +524,7 @@ msgstr "Pystysuuntainen hilav‰listys:"
 
 #: htmlopts.cpp:349
 msgid "Transparent Text for Root Icons."
-msgstr "L‰pin‰kyv‰ teksti p‰‰ikoneille"
+msgstr "L‰pin‰kyv‰ teksti p‰‰kuvakkeille"
 
 #: bookmark.cpp:264
 msgid "Could not write bookmark"
@@ -569,7 +569,7 @@ msgstr ""
 
 #: kfmprops.cpp:416
 msgid "Access permissions"
-msgstr "K‰sittely oikeudet"
+msgstr "K‰sittelyoikeudet"
 
 #: kfmprops.cpp:422
 msgid ""
@@ -675,7 +675,7 @@ msgstr "Selaa"
 
 #: kfmprops.cpp:689
 msgid "Working Directory"
-msgstr "Tyˆskentelyhakemisto"
+msgstr "Tyˆhakemisto"
 
 #: kfmprops.cpp:712
 msgid "Window Title"
@@ -740,7 +740,7 @@ msgstr "MIME-tyyppi"
 
 #: kfmprops.cpp:1499
 msgid "Default Application"
-msgstr "Oletus sovellus"
+msgstr "Oletussovellus"
 
 #: kfmprops.cpp:1647
 msgid "Device ( /dev/fd0 )"
@@ -756,19 +756,19 @@ msgstr "Vain luku"
 
 #: kfmprops.cpp:1671
 msgid "Filesystems ( iso9660,msdos,minix,default )"
-msgstr "Tiedostoj‰rjestelm‰t ( iso9660,msdos,minix,default )"
+msgstr "Tiedostoj‰rjestelm‰t ( iso9660,msdos,minix,oletus )"
 
 #: kfmprops.cpp:1681
 msgid "Mounted Icon"
-msgstr "Liitetyn ikoni"
+msgstr "Liitetyn kuvake"
 
 #: kfmprops.cpp:1685
 msgid "Unmounted Icon"
-msgstr "Irroitetun ikoni"
+msgstr "Irroitetun kuvake"
 
 #: kfmserver.cpp:40
 msgid "Could not create ~/.kde/share/apps/kfm/magic"
-msgstr "En voi luoda ~/.kde/share/apps/kfm/magic tiedostoa"
+msgstr "En voi luoda ~/.kde/share/apps/kfm/magic -tiedostoa"
 
 #: kfmserver.cpp:50
 msgid ""
@@ -776,11 +776,11 @@ msgid ""
 "~/.kde/share/apps/kfm/magic"
 msgstr ""
 "Ole hyv‰ ja muuta salasanaa\n"
-"~/.kde/share/apps/kfm/magic tiedostossa"
+"~/.kde/share/apps/kfm/magic-tiedostossa"
 
 #: kfmserver.cpp:78
 msgid "Do you really want to rearrange your icons ?"
-msgstr "Haluatko todella uudelleenj‰rjest‰‰ ikonit?"
+msgstr "Haluatko todella uudelleenj‰rjest‰‰ kuvakkeet?"
 
 #: kfmserver.cpp:234
 #, c-format
@@ -806,7 +806,7 @@ msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
 msgstr ""
-"Tiedosto ~/.kde/share/apps/kfm/magic on rikkin‰inen\n"
+"Tiedosto ~/.kde/share/apps/kfm/magic on vioittunut\n"
 "Tunnistus ep‰onnistui"
 
 #: kfmserver.cpp:302
@@ -814,7 +814,7 @@ msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
 msgstr ""
-"Joku yritti tunistaa itsens‰\n"
+"Joku yritti tunnistaa itsens‰\n"
 "k‰ytt‰en v‰‰r‰‰ salasanaa"
 
 #: root.cpp:672
@@ -824,7 +824,7 @@ msgid ""
 "off the desktop."
 msgstr ""
 "En voi suorittaa pyyntˆ‰.\n"
-"Uudet hilav‰lin asetukset siirt‰‰ joitain ikoneja\n"
+"Uudet hilav‰lin asetukset siirt‰isiv‰t osan kuvakkeista\n"
 "pois tyˆpˆyd‰lt‰."
 
 #: root.cpp:707
@@ -854,7 +854,7 @@ msgstr "Tiedostossa ei ole URL:‰‰"
 
 #: kfmman.cpp:347
 msgid "Contacting host "
-msgstr "Muodostan yhteytt‰ is‰nt‰‰n "
+msgstr "Muodostan yhteytt‰ koneeseen "
 
 #: kfmman.cpp:351
 msgid "Working ..."
@@ -866,7 +866,7 @@ msgstr "Lis‰‰ osoitekirjaan"
 
 #: kiojob.cpp:130
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
-msgstr "SISƒINEN VIRHE: Sinun t‰ytyy ainakin m‰‰ritt‰‰ laite jota liitet‰‰n."
+msgstr "SISƒINEN VIRHE: Sinun t‰ytyy ainakin m‰‰ritt‰‰ laite, jota liitet‰‰n."
 
 #: kiojob.cpp:233 kiojob.cpp:241 kiojob.cpp:1204 kiojob.cpp:1344
 #, c-format
@@ -961,7 +961,7 @@ msgid ""
 msgstr ""
 "En voinut kirjoittaa\n"
 "%s\n"
-"Ehk‰ sinulal ei ole oikeuksia t‰h‰n"
+"Ehk‰ sinulla ei ole oikeuksia t‰h‰n"
 
 #: kiojob.cpp:1229 kiojob.cpp:1360
 #, c-format
@@ -1040,7 +1040,7 @@ msgid ""
 "Tar reproted an error\n"
 "%s"
 msgstr ""
-"Tar ohjelma ilmoitti virheen tiedostolle\n"
+"Tar-ohjelma ilmoitti virheen tiedostolle\n"
 "%s"
 
 #: kiojob.cpp:1311
@@ -1049,7 +1049,7 @@ msgid ""
 "Gzip reproted an error for\n"
 "%s"
 msgstr ""
-"Gzip ohjelma ilmoitti virheen tiedostolle\n"
+"Gzip-ohjelma ilmoitti virheen tiedostolle\n"
 "%s"
 
 #: kiojob.cpp:1321 kiojob.cpp:1336
@@ -1123,7 +1123,7 @@ msgstr ""
 #: kiojob.cpp:1766
 #, c-format
 msgid "Mounting %s ..."
-msgstr "Liit‰n %s ..."
+msgstr "Liit‰n: %s ..."
 
 #: kiojob.cpp:1768
 #, c-format
@@ -1137,7 +1137,7 @@ msgstr "Listausta %s:st‰ vastaanotetaan ..."
 
 #: kiojob.cpp:2029
 msgid "Segmentation fault in io subprocess"
-msgstr "Suojausvirhe I/O aliprosessissa"
+msgstr "Suojausvirhe I/O-aliprosessissa"
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"

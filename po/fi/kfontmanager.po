@@ -28,15 +28,15 @@ msgstr "Kirjasinselain"
 
 #: main.cpp:73
 msgid "Raw X11 Font List"
-msgstr "X11 kirjasinlista"
+msgstr "X11-kirjasinlista"
 
 #: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
-msgstr "Saatavillaolevat X11 kirjasimet"
+msgstr "Saatavillaolevat X11-kirjasimet"
 
 #: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"
-msgstr "KDE:n omat kirjasimet"
+msgstr "KDE:n käytössä olevat kirjasimet"
 
 #: kfontmanager.cpp:87
 msgid "The KDE Font Manager Example String"
@@ -72,7 +72,7 @@ msgid ""
 " ~/.kde/share/config/kdefonts\n"
 msgstr ""
 "En saanut luotua:\n"
-" ~/.kde/share/config/kdefonts tiedostoa\n"
+" ~/.kde/share/config/kdefonts -tiedostoa\n"
 
 #: kfontmanager.cpp:294
 msgid ""
@@ -80,8 +80,8 @@ msgid ""
 "is not writeable\n"
 "Can't save KDE Fontlist."
 msgstr ""
-"~/.kde/share/config/kdefonts tiedosto on olemassa\n"
-"mutta siihen ei voida kirjoittaa\n"
+"~/.kde/share/config/kdefonts -tiedosto on olemassa\n"
+"mutta siihen ei voida kirjoittaa.\n"
 "En saanut talletettua KDE kirjasinlistaa."
 
 #: kfontlist.cpp:62

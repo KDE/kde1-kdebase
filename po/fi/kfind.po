@@ -350,18 +350,3 @@ msgstr "Tunnistamaton arkistotyyppi!"
 #: kfwin.cpp:496
 msgid "Error while creating child process!"
 msgstr "Virhe luotaessa lapsiprosessia!"
-
-#~ msgid "&Cut"
-#~ msgstr "&Leikkaa"
-
-#~ msgid "Properties"
-#~ msgstr "Ominaisuudet"
-
-#~ msgid "Files"
-#~ msgstr "Tiedostot"
-
-#~ msgid "Kfind &help"
-#~ msgstr "KFind &ohje"
-
-#~ msgid "About &Qt"
-#~ msgstr "Tietoja &Qt:ta"

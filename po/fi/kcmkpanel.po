@@ -112,11 +112,11 @@ msgstr "Henkilökohtainen &ensin"
 
 #: options.cpp:71
 msgid "Auto &Hide Panel"
-msgstr "Automaattisesti &piilota Paneeli"
+msgstr "&Piilota automaattisesti paneeli"
 
 #: options.cpp:73
 msgid "Auto Hide &Taskbar"
-msgstr "Automaattisesti piilota &työpalkki"
+msgstr "Piilota automaattisesti &työpalkki"
 
 #: options.cpp:81
 msgid "Clock"

@@ -107,10 +107,4 @@ msgstr "Hups!"
 
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"
-msgstr "En voi sis‰llytt‰‰ t‰t‰ nappia paneeliin!"
-
-#~ msgid "Move"
-#~ msgstr "Siirr‰"
-
-#~ msgid "Properties"
-#~ msgstr "Ominaisuudet"
+msgstr "En voi laittaa t‰t‰ nappina paneeliin!"

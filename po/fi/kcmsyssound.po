@@ -20,7 +20,7 @@ msgstr "&ƒ‰net"
 
 #: main.cpp:80
 msgid "System Sounds"
-msgstr "J‰rjestelm‰ ‰‰net"
+msgstr "J‰rjestelm‰n ‰‰net"
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"
@@ -80,11 +80,11 @@ msgstr "Ikkunan rullaus alas"
 
 #: syssound.cpp:163
 msgid "Window Iconify"
-msgstr "Ikkuna Ikoniksi"
+msgstr "Ikkuna kuvakkeeksi"
 
 #: syssound.cpp:164
 msgid "Window DeIconify"
-msgstr "Ikkunan palautus ikonista"
+msgstr "Ikkunan palautus kuvakkeesta"
 
 #: syssound.cpp:165
 msgid "Window Maximize"
@@ -152,7 +152,7 @@ msgstr "&ƒ‰net:"
 
 #: syssound.cpp:216
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Lis‰‰ WAV tiedostoja voidaan pudottaa ‰‰nilistaan."
+msgstr "Lis‰‰ WAV-tiedostoja voidaan pudottaa ‰‰nilistaan."
 
 #: syssound.cpp:456
 msgid "Unsupported URL"
@@ -177,7 +177,7 @@ msgstr ""
 
 #: syssound.cpp:471
 msgid "Improper File Extension"
-msgstr "Riitt‰m‰tˆn tiedostop‰‰te"
+msgstr "Soveltumaton tiedostop‰‰te"
 
 #: syssound.cpp:482
 #, c-format
@@ -192,4 +192,4 @@ msgstr ""
 
 #: syssound.cpp:486
 msgid "File Already in List"
-msgstr "Tiedosto jo listalla"
+msgstr "Tiedosto on jo listalla"

@@ -151,7 +151,7 @@ msgstr "Passiivinen otsikkopalkki"
 
 #: colorscm.cpp:184
 msgid "Inactive title text"
-msgstr "Passivinen otsikkoteksti"
+msgstr "Passiivinen otsikkoteksti"
 
 #: colorscm.cpp:185
 msgid "Inactive title blend"
@@ -235,7 +235,7 @@ msgstr ""
 
 #: savescm.cpp:18
 msgid "Add a color scheme"
-msgstr "Lis‰‰ b‰riteema"
+msgstr "Lis‰‰ v‰riteema"
 
 #: savescm.cpp:32
 msgid ""
@@ -245,7 +245,7 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"&Anna nimi uudelle v‰riteemalle joka\n"
+"&Anna nimi uudelle v‰riteemalle, joka\n"
 "lis‰t‰‰n henkilˆkohtaiseen listaasi.\n"
 "\n"
 "Esikatselussa k‰ytetyt v‰rit kopioidaan\n"
@@ -416,24 +416,3 @@ msgstr "oletus"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "kaikki"
-
-#~ msgid "&Remove"
-#~ msgstr "&Poista"
-
-#~ msgid "Default"
-#~ msgstr "Oletus"
-
-#~ msgid "Window title font"
-#~ msgstr "Ikkunan otsikon kirjasin"
-
-#~ msgid "Blen&d"
-#~ msgstr "Se&koita"
-
-#~ msgid "kwmcom: communication with kwm failed\n"
-#~ msgstr "kwmcom: Tiedonsiirto kwm:n kanssa ep‰onnistui\n"
-
-#~ msgid "Lock"
-#~ msgstr "Lukitse"
-
-#~ msgid "General"
-#~ msgstr "Yleinen"

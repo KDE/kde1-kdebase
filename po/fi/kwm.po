@@ -41,11 +41,11 @@ msgstr "&Palauta"
 
 #: main.C:509
 msgid "&Iconify"
-msgstr "&Ikoniksi"
+msgstr "&Kuvakkeeksi"
 
 #: main.C:510
 msgid "&DeIconify"
-msgstr "P&oista ikonisointi"
+msgstr "P&oista kuvake"
 
 #: main.C:511
 msgid "&Sticky"
@@ -109,11 +109,11 @@ msgstr "Nimeämätön työpöytä"
 
 #: main.C:942
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Jotkut kuvat eivät ole kunnossa: ShapeMode poistettu\n"
+msgstr "Jotkut kuvat eivät ole kelvollisia: ShapeMode poistettu\n"
 
 #: main.C:1054
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Jotkut kuvat eivät ole kunnossa: GimmickMode poistettu\n"
+msgstr "Jotkut kuvat eivät ole kelvollisia: GimmickMode poistettu\n"
 
 #: main.C:1311
 msgid "*** No Tasks ***"
@@ -140,7 +140,7 @@ msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"Seuraavat ohjelmat sisältävät tallentamatonta tietoa\n"
+"Seuraavat ohjelmat sisältävät tallentamatonta tietoa,\n"
 "joka häviää ennen seuraavaa istuntoa."
 
 #: logout.C:63
@@ -149,7 +149,7 @@ msgid ""
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
 "Seuraavia ohjelmia ei voida palauttaa seuraavalla istunnolla.\n"
-"Ne voidaan vain käynnistää uudellen. Varmista ettei niissä ole "
+"Ne voidaan vain käynnistää uudellen. Varmista, ettei niissä ole "
 "tallentamatonta tietoa."
 
 #: logout.C:74
@@ -159,7 +159,7 @@ msgid ""
 msgstr ""
 "Seuraavat sovellukset eivät ole X11-yhteensopivia eikä niitä voida "
 "palauttaa\n"
-"seuraavalla istunnolla. Varmista ettei niissä ole tallentamatonta tietoa."
+"seuraavalla istunnolla. Varmista, ettei niissä ole tallentamatonta tietoa."
 
 #: taskmgr.C:107
 msgid "Switch to"
@@ -168,22 +168,3 @@ msgstr "Siirry"
 #: taskmgr.C:121
 msgid "Current session"
 msgstr "Nykyinen istunto"
-
-#~ msgid ""
-#~ "You want to switch to another window. Unfortunately you have selected \n"
-#~ "one of the classic focus policies which do not allow this.  These policies "
-#~ "are \n"
-#~ "included not because they make sense, but for compatibility reasons. Well, \n"
-#~ "even old hand unix users should feel comfortable with the K Desktop "
-#~ "Environment ;-)\n"
-#~ "\n"
-#~ "Anyway, if you prefer modern windowmanagement, please choose one of the \n"
-#~ "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
-#~ msgstr ""
-#~ "Haluat vaihtaa toiseen ikkunaan. Valutettavasti olet valinnut yhden \n"
-#~ "perinteisistä kohdistustavoista jotka eivät salli tätä.  Nämä "
-#~ "kohdistustavat\n"
-#~ "eivät ole mukana koska ne ovat järkeviä vaan yhteensopivuussyistä. \n"
-#~ "\n"
-#~ "Jos haluat modernia ikkunoidenhallintaa, valitse joku suositelluista \n"
-#~ "kohdistustavoista kuten Kohdista hiiren napilla tai Kohdistus seuraa hiirtä."

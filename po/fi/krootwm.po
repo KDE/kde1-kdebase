@@ -49,7 +49,7 @@ msgstr "Sarjoita ikkunat"
 
 #: krootwm.C:190
 msgid "Arrange icons"
-msgstr "Järjestä ikonit"
+msgstr "Järjestä kuvakkeet"
 
 #: krootwm.C:192
 msgid "Lock screen"

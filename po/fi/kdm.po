@@ -11,7 +11,7 @@ msgstr ""
 
 #: kdmshutdown.cpp:159
 msgid "Shutdown or restart?"
-msgstr "Sammutetaanko vai käynnistetään uudelleen"
+msgstr "Sammutetaanko vai käynnistetäänkö uudelleen?"
 
 #: kdmshutdown.cpp:175
 msgid "Shutdown"

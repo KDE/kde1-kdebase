@@ -23,7 +23,7 @@ msgstr "Lisää sanoja sanaluokkaan"
 
 #: main.C:359
 msgid "The backspace key will send a"
-msgstr "Backspace näppäin lähettää"
+msgstr "Backspace-näppäin lähettää"
 
 #: main.C:365
 msgid "Cursor key set"
@@ -148,7 +148,7 @@ msgstr ""
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
 "\n"
-"Terminaaliemulaatio KDE Desktop Ympäristöön\n"
+"Pääte-emulaatio KDE Desktop -ympäristöön\n"
 "perustuu Robert Nationin rxvt-2.08 ohjelmaan."
 
 #: main.C:780 main.C:908
@@ -173,7 +173,7 @@ msgid ""
 "when the keyboard is unsecured."
 msgstr ""
 "Uudet väriasetukset astuvat voimaan\n"
-"heti kun näppäimistö vapautetaan."
+"heti, kun näppäimistö vapautetaan."
 
 #: main.C:1322
 msgid ""
@@ -185,7 +185,7 @@ msgid ""
 msgstr ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
-"Terminaaliemulaatio KDE Desktop Ympäristöön\n"
+"Pääte-emulaatio KDE Desktop Ympäristöön\n"
 "perustuu Robert Nationin rxvt-2.08 ohjelmaan.\n"
 
 #: main.C:1326
@@ -225,7 +225,7 @@ msgstr "-vt_font <kirjasinnimi>   normaalikirjasin\n"
 
 #: main.C:1334
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr "-no_font_hack             poista Qt fonttivirheen kierto\n"
+msgstr "-no_font_hack             poista Qt:n fonttivirheen kierto\n"
 
 #: main.C:1335
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
@@ -248,12 +248,12 @@ msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
-"-T <teksti>               Terminaalin otsikko \n"
+"-T <teksti>               ikkunan otsikkoteksti \n"
 "                          (Vanha. Käytä -caption:ia)\n"
 
 #: main.C:1341
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr "-tn <TERM>                Terminaalin tyyppi. Oletus on xterm.\n"
+msgstr "-tn <TERM>                Päätteen tyyppi. Oletus on xterm.\n"
 
 #: main.C:1342
 msgid "-C                        Capture system console message\n"
@@ -261,15 +261,15 @@ msgstr "-C                        Kaappaa järjestelmän konsoliviestit\n"
 
 #: main.C:1343
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr "-n <teksti>               nimi ikonin yhteydessä\n"
+msgstr "-n <teksti>               nimi kuvakkeen yhteydessä\n"
 
 #: main.C:1344
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
-"-7                        aja 7 bittisessä tilassa\n"
-"-8                        aja 8 bittisessä tilassa\n"
+"-7                        aja 7-bittisessä tilassa\n"
+"-8                        aja 8-bittisessä tilassa\n"
 
 #: main.C:1346
 msgid ""
@@ -277,7 +277,7 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
-"-ls                       taseta kvt:n komentotulkki login tilaan.\n"
+"-ls                       aseta kvt:n komentotulkki login-tilaan.\n"
 "-ls-                      aseta kvt:n komentotulkki ei-login tilaan "
 "(oletus)\n"
 

@@ -125,7 +125,7 @@ msgstr ""
 
 #: kdm-appear.cpp:192 kdm-users.cpp:200
 msgid "Improper File Extension"
-msgstr "Ep‰t‰ydellinen tiedostop‰‰te"
+msgstr "Soveltumaton tiedostop‰‰te"
 
 #: kdm-appear.cpp:221 kdm-users.cpp:246
 msgid ""

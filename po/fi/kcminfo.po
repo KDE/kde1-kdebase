@@ -28,7 +28,7 @@ msgstr "käyttö: kcminfo [-init | {processor,memory}]\n"
 
 #: main.cpp:74
 msgid "System Information"
-msgstr "Systeemin tila"
+msgstr "Järjestelmän tila"
 
 #: memory.cpp:11
 msgid "Total memory"
@@ -48,11 +48,11 @@ msgstr "Puskuroitu muisti"
 
 #: memory.cpp:45
 msgid "Swap memory"
-msgstr "Heittovaihtomuisti"
+msgstr "Sivutusmuisti"
 
 #: memory.cpp:53
 msgid "Free swap memory"
-msgstr "Vapaa heittovaihtomuisti"
+msgstr "Vapaa sivutusmuisti"
 
 #: memory.cpp:74
 #, c-format
@@ -66,4 +66,4 @@ msgstr "Ei saatavilla"
 
 #: processor.cpp:29
 msgid "This system is not yet supported :-("
-msgstr "Systeemiä ei vielä tueta :-("
+msgstr "Järjestelmää ei vielä tueta :-("

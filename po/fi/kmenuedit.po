@@ -52,7 +52,7 @@ msgid ""
 "Are you sure you want to reload ?"
 msgstr ""
 "Valikoiden lataaminen kumoaa muutokset.\n"
-"Oletko varma että haluat ladata valikot ?"
+"Oletko varma, että haluat ladata valikot ?"
 
 #: button.cpp:209 main.cpp:78 main.cpp:91
 msgid "KMenuedit"
@@ -92,7 +92,7 @@ msgstr "Varoitus !"
 
 #: confmenu.cpp:172
 msgid "If you delete this button you will lose all of its submenus"
-msgstr "Jos tuhoat tämän napin menetät sen kaikki alivalikot"
+msgstr "Jos tuhoat tämän napin, menetät sen kaikki alivalikot"
 
 #: confmenu.cpp:281
 msgid "Wrong filename"
@@ -120,7 +120,7 @@ msgid ""
 "before you can drop this item on another window."
 msgstr ""
 "Sinun pitää tallentaa muutoksesi\n"
-"ennenkuin voit pudottaa tämän toiseen ikkunaan."
+"ennen kuin voit pudottaa tämän toiseen ikkunaan."
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
@@ -165,11 +165,11 @@ msgstr "Tiedoston nimi:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"
-msgstr "Pienoisikoni:"
+msgstr "Pienoiskuvake:"
 
 #: entrydialog.cpp:127
 msgid "Icon:"
-msgstr "Ikoni:"
+msgstr "Kuvake:"
 
 #: entrydialog.cpp:133
 msgid "Comment:"
@@ -189,11 +189,11 @@ msgstr "Työhakemisto:"
 
 #: entrydialog.cpp:205
 msgid "Run in terminal"
-msgstr "Aja terminaalissa"
+msgstr "Aja päätteessä"
 
 #: entrydialog.cpp:211
 msgid "Terminal Options:"
-msgstr "Terminaalin asetukset:"
+msgstr "Päätteen asetukset:"
 
 #: entrydialog.cpp:292
 msgid "Binary Pattern:"
@@ -233,7 +233,7 @@ msgstr "Tiedostojärjestelmä:"
 
 #: entrydialog.cpp:415
 msgid "Unmount Icon:"
-msgstr "Irrotusikoni:"
+msgstr "Irrotuskuvake:"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"
@@ -250,12 +250,3 @@ msgstr "Henkilökohtainen:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Oletus:"
-
-#~ msgid "&Reload"
-#~ msgstr "&Uudelleenlataa valikot"
-
-#~ msgid "Type:"
-#~ msgstr "Tyyppi:"
-
-#~ msgid "Name:"
-#~ msgstr "Nimi:"

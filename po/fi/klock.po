@@ -85,7 +85,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1986 by Sun Microsystems\n"
 "\n"
-"Siirtänyt kscreensave ohjelmaan Emanuel Pirker."
+"Siirtänyt kscreensave-ohjelmaan Emanuel Pirker."
 
 #: blankscrn.cpp:53
 msgid "Blank Screen"
@@ -191,7 +191,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1996 Jeremie PETIT\n"
 "\n"
-"Siirtänyt kscreensaveen Cedric Tefft"
+"Siirtänyt kscreensave-ohjelmaan Cedric Tefft"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -225,7 +225,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Siirtänyt kscreensave ohjelmaan Martin Jones."
+"Siirtänyt kscreensave-ohjelmaan Martin Jones."
 
 #: forest.cpp:206
 msgid "Forest"
@@ -255,7 +255,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1995 by Pascal Pensa\n"
 "\n"
-"Siirtänyt kscreensave ohjelmaan Emanuel Pirker."
+"Siirtänyt kscreensave-ohjelmaan Emanuel Pirker."
 
 #: hop.cpp:226
 msgid "Hop"
@@ -289,7 +289,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Siirtänyt kscreensave ohjelmaan Emanuel Pirker."
+"Siirtänyt kscreensave-ohjelmaan Emanuel Pirker."
 
 #: laser.cpp:333
 msgid "Laser"
@@ -315,7 +315,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1995 by Pascal Pensa\n"
 "\n"
-"Siirtänyt kscreensave ohjelmaan Martin Jones."
+"Siirtänyt kscreensave-ohjelmaan Martin Jones."
 
 #: lines.cpp:116
 msgid "Lines"
@@ -385,7 +385,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1996 by Alexander Jolk\n"
 "\n"
-"Siirtänyt kscreensave ohjelmaan Emanuel Pirker."
+"Siirtänyt kscreensave-ohjelmaan Emanuel Pirker."
 
 #: main.cpp:286
 #, c-format
@@ -418,6 +418,7 @@ msgstr ""
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
 #: main.cpp:479
+#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -455,7 +456,7 @@ msgstr ""
 
 #: morph3d.cpp:839 space.cpp:419
 msgid "GL can not render with root visual\n"
-msgstr "GL ei pysty varjostamaan root näytöllä\n"
+msgstr "GL ei pysty varjostamaan juuri-näytöllä\n"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
@@ -485,7 +486,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1997 by Marcelo F. Vianna\n"
 "\n"
-"Siirtänyt kscreensave ohjelmaan Emanuel Pirker."
+"Siirtänyt kscreensave-ohjelmaan Emanuel Pirker."
 
 #: polygon.cpp:64
 msgid "Polygons"
@@ -547,7 +548,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Siirtänyt kscreensave ohjelmaan Martin Jones."
+"Siirtänyt kscreensave-ohjelmaan Martin Jones."
 
 #: rock.cpp:441
 msgid "Rock"
@@ -577,7 +578,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1992 by Jamie Zawinski\n"
 "\n"
-"Siirtänyt kscreensave ohjelmaan Martin Jones."
+"Siirtänyt kscreensave-ohjelmaan Martin Jones."
 
 #: saver.cpp:56 saver.cpp:146
 msgid "Enter Password"
@@ -691,7 +692,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 by Scott Draves\n"
 "\n"
-"Siirtänyt kscreensave ohjelmaan Emanuel Pirker."
+"Siirtänyt kscreensave-ohjelmaan Emanuel Pirker."
 
 #: space.cpp:491
 msgid "Space (GL)"
@@ -747,7 +748,4 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Siirtänyt kscreensave ohjelmaan Emanuel Pirker."
-
-#~ msgid "Move"
-#~ msgstr "Siirrä"
+"Siirtänyt kscreensave-ohjelmaan Emanuel Pirker."
