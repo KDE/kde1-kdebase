@@ -1,5 +1,8 @@
 [KCM Locale]
-Languages=de,en,fr,C,cs,sv,es,ru,nl,hu,da,fi,it,pt,pl,no,el,hr,
+Languages=C,cs,da,de,el,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sv,
+
+[ro]
+Name=Romanian
 
 [C]
 Name=Default language
