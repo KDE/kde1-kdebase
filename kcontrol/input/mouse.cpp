@@ -47,11 +47,7 @@ MouseConfig::~MouseConfig ()
 {
   if (GUI)
     {
-      delete alabel;
-      delete a;
       delete accel;
-      delete tlabel;
-      delete t;
       delete thresh;
       delete leftHanded;
       delete rightHanded;
@@ -69,17 +65,18 @@ MouseConfig::MouseConfig (QWidget * parent, const char *name, bool init)
 
   if (GUI)
     {
-      accel = new KSlider(1,20,2,20, KSlider::Horizontal, this, "acc");
-      a = new QLCDNumber (2, this, "a");
-      a->setFrameStyle( QFrame::NoFrame );
-      alabel = new QLabel(klocale->translate("Acceleration"), this);
-      connect( accel, SIGNAL(valueChanged(int)), a, SLOT(display(int)) );
-
-      thresh = new KSlider(0,20,2,20, KSlider::Horizontal, this, "thr");
-      t = new QLCDNumber (2, this, "t");
-      t->setFrameStyle( QFrame::NoFrame );
-      tlabel = new QLabel(klocale->translate("Threshold"), this);
-      connect( thresh, SIGNAL(valueChanged(int)), t, SLOT(display(int)) );
+      accel = new KSliderControl(klocale->translate("Acceleration"), 
+				 1,20,2,20, "x", 
+				 this);
+      thresh = new KSliderControl(klocale->translate("Threshold"), 
+				  1,20,2,20, klocale->translate("pixels"), 
+				  this);
+      accel->setLabelSize(0.3);
+      thresh->setLabelSize(0.3);
+      accel->setLabelAlignment(AlignLeft);
+      thresh->setLabelAlignment(AlignLeft);
+      accel->setSteps(1,20);
+      thresh->setSteps(1,20);
 
       handedBox = new QButtonGroup(klocale->translate("Button mapping"), 
 				   this, "handed");
@@ -87,13 +84,39 @@ MouseConfig::MouseConfig (QWidget * parent, const char *name, bool init)
 				     handedBox, "R");
       leftHanded = new QRadioButton(klocale->translate("Left handed"), 
 				    handedBox, "L");
- 
-      a->adjustSize();
-      t->adjustSize();
-      alabel->adjustSize();
-      tlabel->adjustSize();
+
+      accel->move(SPACE_XO, SPACE_YO);
+      accel->resize(accel->minimumSize().width(), 
+		    accel->minimumSize().height());
+      thresh->move(SPACE_XO, accel->y() + accel->height() + SPACE_YO);
+      thresh->resize(thresh->minimumSize().width(), 
+		    thresh->minimumSize().height());
+
       rightHanded->adjustSize();
       leftHanded->adjustSize();
+
+      QFontMetrics fm = handedBox->font();
+      int titleH = fm.height();
+      int titleW = fm.width(handedBox->title());
+      int buttonH = rightHanded->height();
+      int buttonW = max( rightHanded->width(), leftHanded->width() );
+      int boxH = 2*buttonH + 3*SPACE_YI + titleH;
+      int boxW = 0;
+      if (boxW < titleW + 4*SPACE_XI)
+	boxW =  titleW + 4*SPACE_XI;
+      if (boxW < buttonW + 2*SPACE_XI)
+	boxW = buttonW + 2*SPACE_XI;
+      
+      rightHanded->move(SPACE_XI, SPACE_YI + titleH);
+      leftHanded->move(SPACE_XI, 2*SPACE_YI + buttonH + titleH);
+      handedBox->move(SPACE_XO, thresh->y() + thresh->height() + SPACE_YO);
+      handedBox->resize(boxW, boxH);
+
+      // determine minimum size
+      int w = max(accel->minimumSize().width(), thresh->minimumSize().width());
+      int h = accel->minimumSize().height() + thresh->minimumSize().height() +
+	boxH + 4*SPACE_YO;
+      setMinimumSize(w,h);
     }
 
   handedEnabled = TRUE;
@@ -104,69 +127,28 @@ MouseConfig::MouseConfig (QWidget * parent, const char *name, bool init)
 
 void MouseConfig::resizeEvent(QResizeEvent *)
 {
-  int h = SPACE_YO;
-  int w = 0;
-  int center;
-  
-  w = max( alabel->width(), tlabel->width() );
-
-  alabel->move(SPACE_XO, h);
-  QSize qsha = accel->sizeHint();
-  accel->setGeometry(w + 2*SPACE_XO, h, 200, qsha.height());
-  h += (QMAX( qsha.height(),alabel->height()) + SPACE_YI);
-
-  center = accel->x() + ( accel->width() - a->width() )/2;
-
-  a->move(center, h);
-  h += a->height() + SPACE_YO;
-
-  tlabel->move(SPACE_XO, h);
-  QSize qsht = thresh->sizeHint();
-  thresh->setGeometry(w + 2*SPACE_XO, h, 200, qsht.height());
-  h += (QMAX( qsht.height(),tlabel->height()) + SPACE_YI);
-
-  t->move(center, h);
-  h += t->height() + SPACE_YO;
-
-  QFontMetrics fm = handedBox->font();
-  int titleH = fm.height();
-  int titleW = fm.width(handedBox->title());
-  int buttonH = rightHanded->height();
-  int buttonW = max( rightHanded->width(), leftHanded->width() );
-  int boxH = 2*buttonH + 3*SPACE_YI + titleH;
-  int boxW = 0;
-  if (boxW < titleW + 4*SPACE_XI)
-    boxW =  titleW + 4*SPACE_XI;
-  if (boxW < buttonW + 2*SPACE_XI)
-    boxW = buttonW + 2*SPACE_XI;
-  int h_box = h;
-  h += boxH + SPACE_YO; 
-
-  rightHanded->move(SPACE_XI, SPACE_YI + titleH);
-  leftHanded->move(SPACE_XI, 2*SPACE_YI + buttonH + titleH);
-  handedBox->setGeometry(SPACE_XO, h_box, boxW, boxH);
+  accel->resize(width() - 2*SPACE_XO, accel->minimumSize().height());
+  thresh->resize(width() - 2*SPACE_XO, thresh->minimumSize().height());
 }
 
 int MouseConfig::getAccel()
 {
-  return a->intValue();
+  return accel->intValue();
 }
 
 void MouseConfig::setAccel(int val)
 {
   accel->setValue(val);
-  a->display(val);
 }
 
 int MouseConfig::getThreshold()
 {
-  return t->intValue();
+  return thresh->intValue();
 }
 
 void MouseConfig::setThreshold(int val)
 {
   thresh->setValue(val);
-  t->display(val);
 }
 
 

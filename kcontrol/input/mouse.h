@@ -36,6 +36,7 @@
 #include <kslider.h>
 
 #include <kcontrol.h>
+#include "kslidercontrol.h"
 
 #define RIGHT_HANDED 0
 #define LEFT_HANDED  1
@@ -64,13 +65,8 @@ private:
   void setThreshold(int);
   void setHandedness(int);
 
-  KSlider *accel;
-  QLabel *alabel;
-  QLCDNumber *a;
-
-  KSlider *thresh;
-  QLabel *tlabel;
-  QLCDNumber *t;
+  KSliderControl *accel;
+  KSliderControl *thresh;
 
   QButtonGroup *handedBox;
   QRadioButton *leftHanded, *rightHanded;

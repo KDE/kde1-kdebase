@@ -33,7 +33,7 @@
 #include <kslider.h>
 
 #include <kcontrol.h>
-
+#include "kslidercontrol.h"
 
 class KeyboardConfig : public KConfigWidget
 {
@@ -62,9 +62,7 @@ private:
   QButtonGroup *repeatBox;
   QRadioButton *repeatOn, *repeatOff;
 
-  KSlider *click;
-  QLabel *clabel, *percent;
-  QLCDNumber *c;
+  KSliderControl *click;
 
   KConfig *config;
   int clickVolume, keyboardRepeat;

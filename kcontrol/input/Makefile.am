@@ -9,9 +9,9 @@ LDADD =       $(LIB_KDEUI)
 
 bin_PROGRAMS = kcminput
 
-kcminput_SOURCES = main.cpp mouse.cpp keyboard.cpp
-BUILT_SOURCES = mouse.moc keyboard.moc
-noinst_HEADERS = mouse.h keyboard.h geom.h
+kcminput_SOURCES = main.cpp mouse.cpp keyboard.cpp kslidercontrol.cpp
+BUILT_SOURCES = mouse.moc keyboard.moc kslidercontrol.moc
+noinst_HEADERS = mouse.h keyboard.h geom.h kslidercontrol.h
 
 EXTRA_DIST = mouse.xpm mini-mouse.xpm keyboard.xpm mini-keyboard.xpm
 
@@ -22,6 +22,10 @@ mouse.moc: mouse.h
 keyboard.cpp: keyboard.moc geom.h
 keyboard.moc: keyboard.h
 	$(MOC) keyboard.h -o keyboard.moc
+
+kslidercontrol.cpp: kslidercontrol.moc
+kslidercontrol.moc: kslidercontrol.h
+	$(MOC) kslidercontrol.h -o kslidercontrol.moc
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)

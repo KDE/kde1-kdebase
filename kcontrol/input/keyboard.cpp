@@ -45,12 +45,6 @@ KeyboardConfig::~KeyboardConfig ()
   if (GUI)
     {
       delete click;
-      delete c;
-      delete clabel;
-      delete percent;
-      delete repeatOn;
-      delete repeatOff;
-      delete repeatBox;
     }
 }
 
@@ -65,22 +59,40 @@ KeyboardConfig::KeyboardConfig (QWidget * parent, const char *name, bool init)
   if (GUI)
     {
       repeatBox = new QButtonGroup(klocale->translate("Keyboard repeat"), 
-				   this, "repeat");
-      repeatOn = new QRadioButton(klocale->translate("On"), repeatBox, "on");
-      repeatOff = new QRadioButton(klocale->translate("Off"), repeatBox, "off");
+				   this);
+      repeatOn = new QRadioButton(klocale->translate("On"), repeatBox);
+      repeatOff = new QRadioButton(klocale->translate("Off"), repeatBox);
       
-      click = new KSlider(0,100,10,100, KSlider::Horizontal, this, "click");
-      c = new QLCDNumber (3, this, "c");
-      c->setFrameStyle( QFrame::NoFrame );
-      clabel = new QLabel(klocale->translate("Key click volume"), this);
-      percent = new QLabel("%", this); 
-      connect( click,   SIGNAL(valueChanged(int)), c, SLOT(display(int)) );
+      click = new KSliderControl(klocale->translate("Key click volume"),
+				 0, 100, 10, 100, "%", this);
+      click->setLabelSize(0.3);
+      click->setLabelAlignment(AlignLeft);
+      click->setSteps(5,25);
 
       repeatOn->adjustSize();
       repeatOff->adjustSize();
-      c->adjustSize();
-      clabel->adjustSize();
-      percent->adjustSize();
+
+      QFontMetrics fm = repeatBox->font();
+      int titleH = fm.height();
+      int titleW = fm.width(repeatBox->title()); 
+      int buttonH = repeatOn->height();
+      int buttonW = max( repeatOn->width(), repeatOff->width() );
+      int boxH = 2*buttonH + 3*SPACE_YI + titleH;
+      int boxW = 0;
+      if (boxW < titleW + 4*SPACE_XI)
+	boxW =  titleW + 4*SPACE_XI;
+      if (boxW < buttonW + 2*SPACE_XI)
+	boxW = buttonW + 2*SPACE_XI;
+      
+      repeatOn->move(SPACE_XI, SPACE_YI + titleH);
+      repeatOff->move(SPACE_XI, 2*SPACE_YI + buttonH + titleH);
+      repeatBox->move(SPACE_XO, SPACE_YO);
+      repeatBox->resize(boxW, boxH);
+
+      click->move(SPACE_XO, repeatBox->y() + repeatBox->height() + SPACE_YO);
+      setMinimumSize( click->minimumSize().width() + 2*SPACE_XO,
+		      click->minimumSize().height() + repeatBox->height() +
+		      3*SPACE_YO );
     }
 
   config = kapp->getConfig();
@@ -90,41 +102,8 @@ KeyboardConfig::KeyboardConfig (QWidget * parent, const char *name, bool init)
 
 void KeyboardConfig::resizeEvent(QResizeEvent *)
 {
-  int h = SPACE_YO;
-  
-  QFontMetrics fm = repeatBox->font();
-  int titleH = fm.height();
-  int titleW = fm.width(repeatBox->title()); 
-  int buttonH = repeatOn->height();
-  int buttonW = max( repeatOn->width(), repeatOff->width() );
-  int boxH = 2*buttonH + 3*SPACE_YI + titleH;
-  int boxW = 0;
-  if (boxW < titleW + 4*SPACE_XI)
-    boxW =  titleW + 4*SPACE_XI;
-  if (boxW < buttonW + 2*SPACE_XI)
-    boxW = buttonW + 2*SPACE_XI;
-  int h_box = h;
-  h += boxH + SPACE_YO;
-  
-  repeatOn->move(SPACE_XI, SPACE_YI + titleH);
-  repeatOff->move(SPACE_XI, 2*SPACE_YI + buttonH + titleH);
-  repeatBox->setGeometry(SPACE_XO, h_box, boxW, boxH);
-
-  int w = 0;
-  w = max(w, clabel->width());
-
-  clabel->move(SPACE_XO, h);
-  QSize qsh = click->sizeHint();
-  click->setGeometry(w + 2*SPACE_XO, h, 200, qsh.height());
-  h += (QMAX( qsh.height(),clabel->height()) + SPACE_YI);
-
-  int center = click->x() + ( click->width() - c->width() )/2;
-
-  c->move(center, h);
-  int dh = ( c->height() - percent->height() )/2;
-  percent->move(c->x() + c->width() + 3, h+dh);
-  h += c->height() + SPACE_YO;
-
+  // only the slider control can change width
+  click->resize(width() - 2*SPACE_XO, click->minimumSize().height() );
 }
 
 // return the current LCD setting
@@ -138,7 +117,7 @@ int  KeyboardConfig::getRepeat()
 
 int  KeyboardConfig::getClick()
 {
-  return c->intValue();
+  return click->intValue();
 }
 
 // set the slider and LCD values
@@ -155,7 +134,6 @@ void KeyboardConfig::setRepeat(int r)
 void KeyboardConfig::setClick(int v)
 {
   click->setValue(v);
-  c->display(v);
 }
 
 void KeyboardConfig::GetSettings( void )
