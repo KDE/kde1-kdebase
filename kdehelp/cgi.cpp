@@ -17,6 +17,7 @@
 #include <sys/wait.h>
 #include <signal.h>
 #include <kurl.h>
+#include <kmisc.h>
 #include "cgi.h"
 
 #include "cgi.moc"

@@ -5,11 +5,11 @@
 .SUFFIXES: .cpp
 
 CXX = @CXX@
-CC = @CC@
 MOC = @MOC@
-INCFLAGS = -I. -I@x_includes@ -I@qt_includes@ -I@kde_includes@ -I.. -I../..
-CXXFLAGS = -Wall $(INCFLAGS) -DHAVE_CONFIG_H 
-LDFLAGS = -L@x_libraries@ -L@qt_libraries@ -L@kde_libraries@ -lqt -lkfm -lkdecore -lkhtmlw -lXext -lX11 @LIBSOCKET@ @LIBCOMPAT@ -lgif -ljpeg
+INCFLAGS = -I. @all_includes@ -I../kfm/libkfm -I.. -I../..
+CXXFLAGS = -Wall 
+LDFLAGS = @all_libraries@ -lqt -L../kfm/libkfm -lkfm -lkdecore -lkhtmlw -lXext -lX11 @LIBSOCKET@ @LIBCOMPAT@ -lgif -ljpeg
+DEFS = -DHAVE_CONFIG_H
 
 ############# Install ##############
 
@@ -24,14 +24,10 @@ LIBDIR = $(prefix)/lib
 APPSDIR = $(LIBDIR)/applications
 DOCSDIR = $(prefix)/doc/HTML
 
-########### File Formats ###########
-
-DEFS =
-
 ########## Implicit Rules ##########
 
 .cpp.o:
-	$(CXX) $(CXXFLAGS) $(DEFS) -c $<
+	$(CXX) $(CXXFLAGS) $(INCFLAGS) $(DEFS) -c $<
 
 ########## Files ##########
 
