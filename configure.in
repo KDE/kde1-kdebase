@@ -240,6 +240,7 @@ AC_OUTPUT(Makefile \
 	kwmmodules/kbgndwm/Makefile \
 	kwmcom/Makefile \
 	krootwm/Makefile \
+	kappfinder/kappfinder \
 	kappfinder/Makefile \
 	kappfinder/apps/Development/Makefile \
 	kappfinder/apps/Editors/Makefile \
@@ -253,4 +254,6 @@ AC_OUTPUT(Makefile \
 	kappfinder/pics/mini/Makefile \
 	kappfinder/pics/Makefile \
 	kappfinder/Makefile )
+
+chmod +x kappfinder/kappfinder
 

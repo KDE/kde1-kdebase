@@ -22,17 +22,18 @@
 # test the arguments
 if [ $# -ne 1 ]; then
   INSTPATH=$HOME/.kde
+  kde_appsdir=$INSTPATH/share/applnk
+  kde_icondir=$INSTPATH/share/icons
+  kde_minidir=$INSTPATH/share/icons/mini
 else
-  INSTPATH=$1
-fi
-
-if [ ! -d $INSTPATH ]; then
-  echo "the path $INSTPATH is not valid!"
-  exit 1
+  INSTPATH=$1 # ignored the more or the less
+  kde_icondir=@kde_icondir@
+  kde_appsdir=@kde_appsdir@
+  kde_minidir=@kde_minidir@
 fi
 
 OLDDIR=`pwd`
-cd $KDEDIR/share/apps/kappfinder
+cd @kde_datadir@/kappfinder
 
 echo "Installing to $INSTPATH"
 
@@ -50,15 +51,15 @@ do
 
     # create the directory
     pathname=`echo $file | sed "s/\/[^\/]*kdelnk$//"`    
-    mkdir -m 755 -p $INSTPATH/share/applnk/$pathname
+    mkdir -m 755 -p $kde_appsdir/$pathname
 
     # copy the kdelnk file
-    cp $file $INSTPATH/share/applnk/$pathname
+    cp $file $kde_appsdir/$pathname
 
     # copy the icon file
     picname=`grep "^Icon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
     if [ -f "pics/$picname" ]; then
-      cp pics/$picname $INSTPATH/share/icons
+      cp pics/$picname $kde_icondir
     fi
 
     # copy the mini icon file
@@ -67,7 +68,7 @@ do
       minipic=$picname
     fi
     if [ -f "pics/mini/$minipic" ]; then
-      cp pics/mini/$minipic $INSTPATH/share/icons/mini
+      cp pics/mini/$minipic $kde_minidir
     fi
 
   else  
@@ -81,17 +82,17 @@ for file in `find apps -name ".directory"`
 do
 
   # copy the .directory file
-  cp $file $INSTPATH/share/applnk/$file 2>/dev/null
+  cp $file $kde_appsdir/$file 2>/dev/null
   
   # continue, if the file was not installed
-  if [ ! -f $INSTPATH/share/applnk/$file ]; then
+  if [ ! -f $kde_appsdir/$file ]; then
     continue
   fi
 
   # copy the icon
   picname=`grep "^Icon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
   if [ -f "pics/$picname" ]; then
-    cp pics/$picname $INSTPATH/share/icons
+    cp pics/$picname $kde_icondir
   fi
 
   # copy the mini icon file
@@ -100,7 +101,7 @@ do
     minipic=$picname
   fi
   if [ -f "pics/mini/$minipic" ]; then
-    cp pics/mini/$minipic $INSTPATH/share/icons/mini
+    cp pics/mini/$minipic $kde_minidir
   fi
 
 done

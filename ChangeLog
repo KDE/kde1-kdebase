@@ -1,3 +1,8 @@
+Thu Jan 22 14:46:15 1998  Stephan Kulow  <coolo@kde.org>
+
+	* kappfinder/kappfinder.in: let kappfinder create by configure to
+	allow the use of the kde_ paths
+
 Wed Jan 21 22:19:35 1998  Stephan Kulow  <coolo@kde.org>
 
 	* acinclude.m4.in: - added a install_root prefix to all paths, if
