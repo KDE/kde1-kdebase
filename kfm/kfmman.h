@@ -263,6 +263,25 @@ protected:
     // link and readonly overlay images
     static QString *link_overlay;
     static QString *ro_overlay;
+
+    /**
+     * The menu "New" in the popup menu.
+     * Since the items of this menu are not connected themselves
+     * we need a pointer to this menu to get information about the
+     * selected menu item.
+     */
+    QPopupMenu *menuNew;
+
+    /**
+     * List of all template files. It is important that they are in
+     * the same order as the 'New' menu.
+     */
+    QStrList templatesList;
+protected slots:
+    /**
+     * Popup Menu "New->*"
+     */
+    void slotNewFile( int _id );
 };
 
 #endif

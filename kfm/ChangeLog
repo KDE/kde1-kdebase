@@ -1,5 +1,9 @@
 1998-12-09  David Faure  <faure@kde.org>
 
+	* kfmgui.cpp, kfmman.*, kfmtree.*:
+	Patch from Michael Reiher <michael.reiher@gmx.de> to use i18n'ed comments
+        instead of filenames in the 'New' menu. Looks a lot better :)
+
 	* kfmman.cpp: Fixed Visual Schnauzer for files with special chars
 	such as "'". Bug reported by Christian Fertig
 	<fertig@informatik.uni-frankfurt.de>.

@@ -20,6 +20,7 @@
 #include "kfmgui.h"
 #include "kfmpaths.h"
 #include "utils.h"
+#include "kfmdlg.h"
 
 KFMDirTree::KFMDirTree( QWidget *_parent, KfmGui *_gui ) : KFinder( _parent )
 {
@@ -28,6 +29,43 @@ KFMDirTree::KFMDirTree( QWidget *_parent, KfmGui *_gui ) : KFinder( _parent )
 
     gui = _gui;
     popupMenu = new QPopupMenu();
+
+    menuNew = new QPopupMenu;
+    CHECK_PTR( menuNew );
+    menuNew->insertItem( klocale->translate("Folder") );
+
+    connect( menuNew, SIGNAL( activated( int ) ), 
+	     this, SLOT( slotNewFile( int ) ) );
+
+    templatesList.clear();
+    
+    templatesList.append( QString( "Folder") );
+    QDir d( KFMPaths::TemplatesPath() );
+    const QFileInfoList *list = d.entryInfoList();
+    if ( list == 0L )
+        warning(klocale->translate("ERROR: Template does not exist '%s'"),
+		KFMPaths::TemplatesPath().data());
+    else
+    {
+	QFileInfoListIterator it( *list );      // create list iterator
+	QFileInfo *fi;                          // pointer for traversing
+
+	while ( ( fi = it.current() ) != 0L )
+	{
+	    if ( strcmp( fi->fileName().data(), "." ) != 0 && 
+		 strcmp( fi->fileName().data(), ".." ) != 0 )
+	    {
+		QString tmp = fi->fileName().data();
+                KSimpleConfig config(KFMPaths::TemplatesPath() + tmp.data());
+                config.setGroup( "KDE Desktop Entry" );
+		templatesList.append( tmp );
+		if ( tmp.right(7) == ".kdelnk" )
+		    tmp.truncate( tmp.length() - 7 );
+		menuNew->insertItem( config.readEntry("Comment", tmp ) );
+	    }
+	    ++it;                               // goto next list element
+	}
+    }
 }
 
 void KFMDirTree::fill()
@@ -268,6 +306,9 @@ void KFMDirTree::openPopupMenu( const char *_url, const QPoint &_point )
     // Store for later use
     popupDir = _url;
     
+    popupMenu->insertItem( klocale->translate("&New"), menuNew );
+    popupMenu->insertSeparator();
+
     if ( KIOServer::isTrash( _url ) )
     {
 	int id;
@@ -443,6 +484,70 @@ void KFMDirTree::slotPopupDelete()
 void KFMDirTree::emitUrlSelected( const char *_url, int _button )
 {
     emit urlSelected( _url, _button );
+}
+
+void KFMDirTree::slotNewFile( int _id )
+{
+    if ( menuNew->text( _id ) == 0)
+	return;
+    
+    // QString p =  menuNew->text( _id );    
+    QString p = templatesList.at( _id );
+    QString tmp = p;
+    tmp.detach();
+
+    if ( strcmp( tmp.data(), "Folder" ) != 0 ) {
+      QString x = KFMPaths::TemplatesPath() + p.data();
+      KSimpleConfig config(x);
+      config.setGroup( "KDE Desktop Entry" );
+      if ( tmp.right(7) == ".kdelnk" )
+	tmp.truncate( tmp.length() - 7 );
+      tmp = config.readEntry("Comment", tmp);
+    }
+    
+    QString text = klocale->translate("New ");
+    text += tmp.data();
+    text += ":";
+    const char *value = p.data();
+
+    if ( strcmp( tmp.data(), "Folder" ) == 0 ) {
+	value = "";
+	text = klocale->translate("New ");
+	text += klocale->translate("Folder");
+	text += ":";
+    }
+    
+    DlgLineEntry l( text.data(), value, this );
+    if ( l.exec() )
+    {
+	QString name = l.getText();
+	if ( name.length() == 0 )
+	    return;
+	
+	if ( strcmp( p.data(), "Folder" ) == 0 )
+	{
+	    KIOJob * job = new KIOJob;
+	    QString u = popupDir;
+	    u.detach();
+            debug("url: %s",u.data());
+	    if ( u.right( 1 ) != "/" )
+		u += "/";
+	    u += name.data();
+	    job->mkdir( u.data() );
+	}
+	else
+	{
+	    KIOJob * job = new KIOJob;
+	    QString src = KFMPaths::TemplatesPath() + p.data();
+	    QString dest = popupDir;
+	    dest.detach();
+	    if ( dest.right( 1 ) != "/" )
+	        dest += "/";
+	    dest += name.data();
+	    // debugT("Command copy '%s' '%s'\n",src.data(),dest.data());
+	    job->copy( src.data(), dest.data() );
+	}
+    }
 }
 
 KFMDirTreeItem::KFMDirTreeItem( KFMDirTree *_finder, const char *_url, bool _isfile  ) : KFinderItem( _finder )

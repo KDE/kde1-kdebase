@@ -30,6 +30,7 @@
 #include "utils.h"
 #include "kfm.h"
 #include "root.h"
+#include "kfmpaths.h"
 
 // enable this to show a readonly indicator over the icon.
 //#define OVERLAY_READONLY
@@ -45,6 +46,43 @@ KFMManager::KFMManager( KfmView *_v )
     labelFontMetrics = new QFontMetrics(view->defaultFont());
     popupMenu = new QPopupMenu();
     popupMenu->installEventFilter( this );
+
+    menuNew = new QPopupMenu;
+    CHECK_PTR( menuNew );
+    menuNew->insertItem( klocale->translate("Folder") );
+
+    connect( menuNew, SIGNAL( activated( int ) ), 
+	     this, SLOT( slotNewFile( int ) ) );
+
+    templatesList.clear();
+    
+    templatesList.append( QString( "Folder") );
+    QDir d( KFMPaths::TemplatesPath() );
+    const QFileInfoList *list = d.entryInfoList();
+    if ( list == 0L )
+        warning(klocale->translate("ERROR: Template does not exist '%s'"),
+		KFMPaths::TemplatesPath().data());
+    else
+    {
+	QFileInfoListIterator it( *list );      // create list iterator
+	QFileInfo *fi;                          // pointer for traversing
+
+	while ( ( fi = it.current() ) != 0L )
+	{
+	    if ( strcmp( fi->fileName().data(), "." ) != 0 && 
+		 strcmp( fi->fileName().data(), ".." ) != 0 )
+	    {
+		QString tmp = fi->fileName().data();
+                KSimpleConfig config(KFMPaths::TemplatesPath() + tmp.data());
+                config.setGroup( "KDE Desktop Entry" );
+		templatesList.append( tmp );
+		if ( tmp.right(7) == ".kdelnk" )
+		    tmp.truncate( tmp.length() - 7 );
+		menuNew->insertItem( config.readEntry("Comment", tmp ) );
+	    }
+	    ++it;                               // goto next list element
+	}
+    }
 
     // Connect to the popup menu
     connect( popupMenu, SIGNAL( activated( int )), this, SLOT( slotPopupActivated( int )) );
@@ -1115,6 +1153,10 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
     if ( KIOServer::isTrash( _urls ) )
     {
 	int id;
+
+        popupMenu->insertItem( klocale->translate("&New"), menuNew );
+        popupMenu->insertSeparator();
+
         /* Commented out. Left click does it. Why have it on right click menu ?. David.
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_CD), 
 				    view, SLOT( slotPopupCd() ) );
@@ -1128,6 +1170,10 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
     else if ( isdir )
     {
 	int id;
+
+        popupMenu->insertItem( klocale->translate("&New"), menuNew );
+        popupMenu->insertSeparator();
+
         /* Commented out the open with for directories. David. */
 	/* id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN_WITH), 
 				    view, SLOT( slotPopupOpenWith() ) );
@@ -1476,6 +1522,80 @@ QString KFMManager::getVisualSchnauzerIconTag( const char *_url )
     KURL::encodeURL(path); // in case of "'" in the name, for instance.
     result.sprintf("<img border=0 src=\"file:%s\">", path.data() );
     return result;
+}
+
+void KFMManager::slotNewFile( int _id )
+{
+    // Please note this method is strongly related to
+    // void KfmGui::slotNewFile( int _id ) 
+
+    if ( menuNew->text( _id ) == 0)
+	return;
+   
+    // QString p =  menuNew->text( _id );    
+    QString p = templatesList.at( _id );
+    QString tmp = p;
+    tmp.detach();
+
+    if ( strcmp( tmp.data(), "Folder" ) != 0 ) {
+      QString x = KFMPaths::TemplatesPath() + p.data();
+      KSimpleConfig config(x);
+      config.setGroup( "KDE Desktop Entry" );
+      if ( tmp.right(7) == ".kdelnk" )
+	tmp.truncate( tmp.length() - 7 );
+      tmp = config.readEntry("Comment", tmp);
+    }
+    
+    QString text = klocale->translate("New ");
+    text += tmp.data();
+    text += ":";
+    const char *value = p.data();
+
+    if ( strcmp( tmp.data(), "Folder" ) == 0 ) {
+	value = "";
+	text = klocale->translate("New ");
+	text += klocale->translate("Folder");
+	text += ":";
+    }
+    
+    DlgLineEntry l( text.data(), value, view->getGUI() );
+    if ( l.exec() )
+    {
+	QString name = l.getText();
+	if ( name.length() == 0 )
+	    return;
+	
+        QStrList urls = view->getPopupFiles();
+        char *s;
+	if ( strcmp( p.data(), "Folder" ) == 0 )
+	{
+            for ( s = urls.first(); s != 0L; s = urls.next() )
+	    {
+     	      KIOJob * job = new KIOJob;
+              QString u = s;
+              u.detach();
+	      if ( u.right( 1 ) != "/" )
+		u += "/";
+              u += name.data();
+	      job->mkdir( u.data() );
+            }
+	}
+	else
+	{
+	    QString src = KFMPaths::TemplatesPath() + p.data();
+            for ( s = urls.first(); s != 0L; s = urls.next() )
+	    {
+	      KIOJob * job = new KIOJob;
+  	      QString dest = s;
+	      dest.detach();
+	      if ( dest.right( 1 ) != "/" )
+	        dest += "/";
+	      dest += name.data();
+	      // debugT("Command copy '%s' '%s'\n",src.data(),dest.data());
+	      job->copy( src.data(), dest.data() );
+            }
+	}
+    }
 }
 
 #include "kfmman.moc"

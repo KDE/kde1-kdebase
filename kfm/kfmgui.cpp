@@ -235,10 +235,12 @@ void KfmGui::initMenu()
 		 strcmp( fi->fileName().data(), ".." ) != 0 )
 	    {
 		QString tmp = fi->fileName().data();
+                KSimpleConfig config(KFMPaths::TemplatesPath() + tmp.data());
+                config.setGroup( "KDE Desktop Entry" );
 		templatesList.append( tmp );
 		if ( tmp.right(7) == ".kdelnk" )
 		    tmp.truncate( tmp.length() - 7 );
-		menuNew->insertItem( tmp );
+		menuNew->insertItem( config.readEntry("Comment", tmp ) );
 	    }
 	    ++it;                               // goto next list element
 	}
@@ -1017,18 +1019,32 @@ void KfmGui::fillBookmarkMenu( KBookmark *parent, QPopupMenu *menu )
 
 void KfmGui::slotNewFile( int _id )
 {
+    // Please note this method is strongly related to
+    // void KFMManager::slotNewFile( int _id )
+
     if ( menuNew->text( _id ) == 0)
 	return;
     
     // QString p =  menuNew->text( _id );    
     QString p = templatesList.at( _id );
+    QString tmp = p;
+    tmp.detach();
+
+    if ( strcmp( tmp.data(), "Folder" ) != 0 ) {
+      QString x = KFMPaths::TemplatesPath() + p.data();
+      KSimpleConfig config(x);
+      config.setGroup( "KDE Desktop Entry" );
+      if ( tmp.right(7) == ".kdelnk" )
+	tmp.truncate( tmp.length() - 7 );
+      tmp = config.readEntry("Comment", tmp);
+    }
     
     QString text = klocale->translate("New ");
-    text += p.data();
+    text += tmp.data();
     text += ":";
     const char *value = p.data();
 
-    if ( strcmp( p.data(), "Folder" ) == 0 ) {
+    if ( strcmp( tmp.data(), "Folder" ) == 0 ) {
 	value = "";
 	text = klocale->translate("New ");
 	text += klocale->translate("Folder");

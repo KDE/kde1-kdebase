@@ -174,10 +174,12 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
 		 strcmp( fi->fileName().data(), ".." ) != 0 )
 	    {
 		QString tmp = fi->fileName().data();
+                KSimpleConfig config(templatePath + tmp.data());
+                config.setGroup( "KDE Desktop Entry" );
 		templatesList.append( tmp );
 		if ( tmp.right(7) == ".kdelnk" )
 		    tmp.truncate( tmp.length() - 7 );
-		menuNew->insertItem( tmp );
+		menuNew->insertItem( config.readEntry("Comment", tmp ) );
 	    }
 	    ++it;                               // goto next list element
 	}
@@ -702,14 +704,25 @@ void KRootWm::slotNewFile( int _id )
 	return;
 
     QString p = templatesList.at( _id );
+    QString tmp = p;
+    tmp.detach();
 
+    if ( strcmp( tmp.data(), "Folder" ) != 0 ) {
+      QString x = templatePath + p.data();
+      KSimpleConfig config(x);
+      config.setGroup( "KDE Desktop Entry" );
+      if ( tmp.right(7) == ".kdelnk" )
+	tmp.truncate( tmp.length() - 7 );
+      tmp = config.readEntry("Comment", tmp);
+    }
+    
     QString text = klocale->translate("New");
     text += " ";
-    text += p.data();
+    text += tmp.data();
     text += ":";
     const char *value = p.data();
 
-    if ( strcmp( p.data(), "Folder" ) == 0 ) {
+    if ( strcmp( tmp.data(), "Folder" ) == 0 ) {
 	value = "";
 	text = klocale->translate("New");
 	text += " ";
@@ -727,6 +740,7 @@ void KRootWm::slotNewFile( int _id )
 	if ( strcmp( p.data(), "Folder" ) == 0 )
 	{
 	    QString u = desktopPath.data();
+	    u.detach();
 	    if ( u.right( 1 ) != "/" )
 		u += "/";
 	    u += name.data();
