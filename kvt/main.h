@@ -67,6 +67,8 @@ public slots:
   void toggleHotkeys();
   void shutDown();
 
+  void clipboard_changed();
+
 protected:
     void    resizeEvent( QResizeEvent * );
     bool eventFilter( QObject *, QEvent * );
