@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmsyssound\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1999-01-26 15:33+0100\n"
+"PO-Revision-Date: 1999-02-16 15:33+0100\n"
 "Last-Translator: Erik Kjær Pedersen\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -99,11 +99,11 @@ msgstr "Tidligere vindue"
 
 #: syssound.cpp:167
 msgid "Window Sticky"
-msgstr "Vindue klæbrig"
+msgstr "Vindue klæbrigt"
 
 #: syssound.cpp:168
 msgid "Window UnSticky"
-msgstr "Vindue uklæbrig"
+msgstr "Vindue uklæbrigt"
 
 #: syssound.cpp:169
 msgid "Window Trans New"
@@ -115,11 +115,11 @@ msgstr "Vindue trans slet"
 
 #: syssound.cpp:171
 msgid "Logout"
-msgstr "Log ud"
+msgstr "Log af"
 
 #: syssound.cpp:172
 msgid "Logout Message"
-msgstr "Udlognings meddelelse"
+msgstr "Udlogningsmeddelelse"
 
 #: syssound.cpp:173
 msgid "Window Move Start"
@@ -139,7 +139,7 @@ msgstr "Skift størrelse slut"
 
 #: syssound.cpp:198
 msgid "e&nable system sounds"
-msgstr "&Iværksæt system lyde"
+msgstr "&Iværksæt systemlyde"
 
 #: syssound.cpp:203
 msgid "&Test"
@@ -166,7 +166,7 @@ msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Desværre - denne type URL er endnu ikke understøttet af KDE System Lyde Modul"
+"Desværre - denne type URL er endnu ikke understøttet af KDE SystemLydeModul"
 
 #: syssound.cpp:468
 #, c-format

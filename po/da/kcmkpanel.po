@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDEBASE/kcmkfm\n"
-"POT-Creation-Date: 1999-01-28 01:15+0100\n"
-"PO-Revision-Date: 1999-01-26 23:59-0500\n"
+"POT-Creation-Date: 1998-12-20 03:02+0600\n"
+"PO-Revision-Date: 1999-02-16 23:59-0500\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,7 @@ msgstr "Disk &Navigatør"
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "brug: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
-#: main.cpp:113
+#: main.cpp:112
 msgid "KPanel Configuration"
 msgstr "KPanel indstilling"
 
@@ -99,11 +99,11 @@ msgstr "&Bredde"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
-msgstr "Menu tricks"
+msgstr "Menutricks"
 
 #: options.cpp:62
 msgid "Show &Menu Tooltips"
-msgstr "Vis &menu tricks"
+msgstr "Vis &menutricks"
 
 #: options.cpp:84
 msgid "De&lay:"
@@ -123,7 +123,7 @@ msgstr "Visuelle ting"
 
 #: options.cpp:144
 msgid "Auto &Hide Panel"
-msgstr "Auto &gem Panel"
+msgstr "Auto&gem Panel"
 
 #: options.cpp:153 options.cpp:255
 msgid "Delay:"
@@ -143,7 +143,7 @@ msgstr "Hurtig"
 
 #: options.cpp:246
 msgid "Auto Hide &Taskbar"
-msgstr "Auto gem &Procesbjælke"
+msgstr "Autogem &Procesbjælke"
 
 #: options.cpp:341
 msgid "Animate Show/Hide"

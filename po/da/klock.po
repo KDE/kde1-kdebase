@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/klock\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 99-01-26 18:21+0100\n"
+"PO-Revision-Date: 99-02-16 18:21+0100\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -76,7 +76,7 @@ msgstr "Banner"
 
 #: banner.cpp:84
 msgid "Setup kbanner"
-msgstr "Banner indstilling"
+msgstr "Bannerindstilling"
 
 #: banner.cpp:95
 msgid "Family:"
@@ -131,7 +131,7 @@ msgstr "Flagermus"
 
 #: bat.cpp:537
 msgid "Setup KBat"
-msgstr "KBat indstilling"
+msgstr "KBat-indstilling"
 
 #: bat.cpp:564
 msgid "Number of bats:"
@@ -153,7 +153,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1986 af Sun Microsystems\n"
 "\n"
-"Porteret til kscreensave af Emanuel Pirker."
+"Overført til kscreensave af Emanuel Pirker."
 
 #: blankscrn.cpp:53
 msgid "Blank Screen"
@@ -189,7 +189,7 @@ msgstr "Desværre, men denne skærmskåner skal bruge en farveskærm"
 
 #: blob.cpp:458
 msgid "Setup Blob Saver"
-msgstr "Blob skåner indstillinger"
+msgstr "Blob skærmskånerindstillinger"
 
 #: blob.cpp:468
 msgid "Frame Show sec."
@@ -233,7 +233,7 @@ msgstr "Antal punkter:"
 
 #: bouboule.cpp:1046
 msgid "Point size:"
-msgstr "Punkt størrelse:"
+msgstr "Punktstørrelse:"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
@@ -264,7 +264,7 @@ msgstr ""
 
 #: bsod.cpp:1192
 msgid "Black Screen of Death"
-msgstr "Dødens sorte skærm"
+msgstr "Dødens blå skærm"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -486,7 +486,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Vær venlig ikke at brugr -test sammen med -lock.\n"
+"Vær venlig ikke at bruge -test sammen med -lock.\n"
 "brug klock i stedet for.\n"
 "\n"
 
@@ -833,7 +833,7 @@ msgstr "KSpace indstilling"
 
 #: space.cpp:597
 msgid "Warp Interval:"
-msgstr "Forvrængnings interval:"
+msgstr "Forvrængningsinterval:"
 
 #: space.cpp:685
 msgid "About KSpace"

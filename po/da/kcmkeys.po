@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkeys\n"
 "POT-Creation-Date: 1999-01-08 01:16+0100\n"
-"PO-Revision-Date: 1999-01-30 15:15+0200\n"
+"PO-Revision-Date: 1999-01-16 15:15+0200\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgstr ""
 
 #: savescm.cpp:18
 msgid "Add a key scheme"
-msgstr "Tilføj et tastvalg"
+msgstr "Tilføj et tastevalg"
 
 #: savescm.cpp:32
 msgid ""
@@ -88,7 +88,7 @@ msgid ""
 "The keys currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"Ind&skriv navn på nyt tastevalg\n"
+"Ind&tast navn på nyt tastevalg\n"
 "som skal lægges til din personlige liste.\n"
 "\n"
 "Tasterne som nu bruges i forhåndsvisningen vil\n"
@@ -132,7 +132,7 @@ msgstr "Ikoniser vindu"
 
 #: ../../kwm/kwmbindings.cpp:11
 msgid "Window resize"
-msgstr "Ændre vinduesstørrelse"
+msgstr "Ændr vinduesstørrelse"
 
 #: ../../kwm/kwmbindings.cpp:12
 msgid "Window move"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version:  KDE BASE/kcmkwmPOT-Creation-Date: 1998-12-19 01:20+01 "
 "00\n"
 "POT-Creation-Date: 1998-12-19 01:20+0100\n"
-"PO-Revision-Date: 1999-01-26 13:23\n"
+"PO-Revision-Date: 1999-02-16 13:23\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da<LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -97,7 +97,7 @@ msgstr ""
 
 #: titlebar.cpp:930
 msgid "Title Alignment"
-msgstr "Titel justering"
+msgstr "Titeljustering"
 
 #: titlebar.cpp:939
 msgid "Middle"
@@ -163,7 +163,7 @@ msgstr "(U)klæbrig"
 
 #: titlebar.cpp:1107
 msgid "Title animation"
-msgstr "Titel animation"
+msgstr "Titel animering"
 
 #: titlebar.cpp:1123
 msgid "ms"
@@ -171,15 +171,15 @@ msgstr "ms"
 
 #: titlebar.cpp:1366
 msgid "Window manager setup - ERROR"
-msgstr "Vindues manager indretning - FEJL"
+msgstr "Vinduesmanagerindretning - FEJL"
 
 #: titlebar.cpp:1367
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
-"Der skete en fejl da titelbjælkens pixamps blev\n"
-"gemt! Check venligst tilladelser."
+"Der skete en fejl da titelbjælkens pixmaps blev\n"
+"gemt! Undersøg venligst tilladelser."
 
 #: windows.cpp:68
 msgid "Windows"
@@ -203,7 +203,7 @@ msgstr ""
 
 #: windows.cpp:98
 msgid "Resize animation:"
-msgstr "Animation ved størrelsesændring"
+msgstr "Animering ved størrelsesændring"
 
 #: windows.cpp:111
 msgid "None"
@@ -215,7 +215,7 @@ msgstr "Hurtigt"
 
 #: windows.cpp:128
 msgid "Placement policy"
-msgstr "Placerings politik"
+msgstr "Placeringspolitik"
 
 #: windows.cpp:134
 msgid "Smart"
@@ -248,7 +248,7 @@ msgstr ""
 
 #: windows.cpp:175
 msgid "Focus policy"
-msgstr "Fokus politik"
+msgstr "Fokuspolitik"
 
 #: windows.cpp:185
 msgid "Click to focus"

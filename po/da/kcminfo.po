@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcminfo\n"
 "POT-Creation-Date: 1998-12-12 15:11+0100\n"
-"PO-Revision-Date: 1999-01-26 17:10+CET-1\n"
+"PO-Revision-Date: 1999-02-16 17:10+CET-1\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -41,12 +41,12 @@ msgstr "navn på skærm        : %s"
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr "version nummer       : %i.%i"
+msgstr "versionsnummer       : %i.%i"
 
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr "leverandør identifikator         : %s"
+msgstr "leverandøridentifikator         : %s"
 
 #: info.cpp:91
 #, c-format
@@ -56,7 +56,7 @@ msgstr "leverandørudgivelsesnummer : %i"
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr "standard skærm nummer"
+msgstr "standard skærmnummer"
 
 #: info.cpp:95
 #, c-format

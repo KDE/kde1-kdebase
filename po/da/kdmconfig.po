@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kdmconfig\n"
 "POT-Creation-Date: 1999-01-12 01:14+0100\n"
-"PO-Revision-Date: 1999-01-26 18:19+0100\n"
+"PO-Revision-Date: 1999-02-16 18:19+0100\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr "Manglende rettigheder"
 
 #: kdm-appear.cpp:70
 msgid "Greeting string:"
-msgstr "Velkomst tekst:"
+msgstr "Velkomsttekst:"
 
 #: kdm-appear.cpp:78
 msgid "KDM logo:"
@@ -105,7 +105,7 @@ msgid ""
 "There was an error saving the image:\n"
 ">"
 msgstr ""
-"Der opstod en fejl ved skrivningen af billedet:\n"
+"Der opstod en fejl ved skrivning af billedet:\n"
 ">"
 
 #: kdm-appear.cpp:219 kdm-users.cpp:227
@@ -278,7 +278,7 @@ msgstr "Ingen bruger valgt"
 
 #: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
-msgstr "Gem billede som standard billede?"
+msgstr "Gem billede som standardbillede?"
 
 #: kdm-sess.cpp:52
 msgid "Allow to shutdown"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkfm\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-02-16 01:13+0100\n"
 "PO-Revision-Date: 1998-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr "&Skrift"
 
 #: main.cpp:63
 msgid "&Color"
-msgstr "F&arver"
+msgstr "F&arve"
 
 #: main.cpp:65
 msgid "&Other"
@@ -183,7 +183,7 @@ msgstr "På tjener:"
 # useragentdlg.cpp:31
 #: useragentdlg.cpp:67
 msgid "login as:"
-msgstr "log ind som:"
+msgstr "log på som:"
 
 #: useragentdlg.cpp:87
 msgid "&Add"

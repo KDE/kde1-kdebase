@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmdisplay\n"
-"POT-Creation-Date: 1999-02-06 01:16+0100\n"
-"PO-Revision-Date: 1999-01-26 17:00+CET-1\n"
+"POT-Creation-Date: 1999-01-15 01:15+0100\n"
+"PO-Revision-Date: 1999-02-16 17:00+CET-1\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 
 #: backgnd.cpp:54
 msgid "Enter new desktop name"
-msgstr "Indtast ny Arbejdsplads navn"
+msgstr "Indtast nyt arbejdspladsnavn"
 
 #: backgnd.cpp:110 backgnd.cpp:163
 msgid "Desktop"
@@ -49,7 +49,7 @@ msgstr "&Indstillinger..."
 msgid "Wallpaper"
 msgstr "Tapet"
 
-#: backgnd.cpp:327 backgnd.cpp:1210 backgnd.cpp:1372 backgnd.cpp:1911
+#: backgnd.cpp:327 backgnd.cpp:1214 backgnd.cpp:1372 backgnd.cpp:1910
 msgid "No wallpaper"
 msgstr "Intet tapet"
 
@@ -129,100 +129,100 @@ msgstr "Navngivelses fejl"
 msgid "Can't load image file"
 msgstr "Kan ikke åbne billedfil"
 
-#: backgnd.cpp:1408 backgnd.cpp:1881
+#: backgnd.cpp:1408 backgnd.cpp:1880
 msgid "Unsupported URL"
 msgstr "Ikke understøttet URL"
 
-#: backgnd.cpp:1409 backgnd.cpp:1882
+#: backgnd.cpp:1409 backgnd.cpp:1881
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr "Undskyld, denne slags URL er ikke understøttet af KDE fremviseren"
 
-#: backgnd.cpp:1441
+#: backgnd.cpp:1440
 msgid "Two color backgrounds"
-msgstr "To farve baggrund"
+msgstr "To-farve baggrund"
 
-#: backgnd.cpp:1478
+#: backgnd.cpp:1477
 msgid "Blend colors from &top to bottom"
 msgstr "Bland farver fra &top til bund"
 
-#: backgnd.cpp:1484
+#: backgnd.cpp:1483
 msgid "Blend colors from &right to left"
 msgstr "Bland farver fra &højre til venstre"
 
-#: backgnd.cpp:1490
+#: backgnd.cpp:1489
 msgid "Use &pattern"
 msgstr "Brug &mønster"
 
-#: backgnd.cpp:1517
+#: backgnd.cpp:1516
 msgid "Preview"
 msgstr "Fremvis"
 
-#: backgnd.cpp:1528
+#: backgnd.cpp:1527
 msgid "Pattern &name"
 msgstr "Mønster &navn"
 
-#: backgnd.cpp:1567
+#: backgnd.cpp:1566
 msgid "Current"
 msgstr "Aktuel"
 
-#: backgnd.cpp:1627
+#: backgnd.cpp:1626
 msgid "Filled"
 msgstr "Udfyldt"
 
-#: backgnd.cpp:1630
+#: backgnd.cpp:1629
 msgid "Fish net"
 msgstr "Fiskenet"
 
-#: backgnd.cpp:1633
+#: backgnd.cpp:1632
 msgid "Triangles"
 msgstr "Trekanter"
 
-#: backgnd.cpp:1636
+#: backgnd.cpp:1635
 msgid "Flowers"
 msgstr "Blomster"
 
-#: backgnd.cpp:1639
+#: backgnd.cpp:1638
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1642
+#: backgnd.cpp:1641
 msgid "Cobbled Pavement"
 msgstr "Toppede brosten"
 
-#: backgnd.cpp:1708
+#: backgnd.cpp:1707
 msgid "Random mode setup"
 msgstr "Opsætning i tilfældig modus"
 
-#: backgnd.cpp:1714
+#: backgnd.cpp:1713
 msgid "Pick files from &directory"
 msgstr "Tag fil fra &folder"
 
-#: backgnd.cpp:1728
+#: backgnd.cpp:1727
 msgid "&Browse ..."
 msgstr "&Gennemsøg..."
 
-#: backgnd.cpp:1749
+#: backgnd.cpp:1748
 msgid "Timer Delay in seconds :"
 msgstr "Tids tøven i sekunder"
 
-#: backgnd.cpp:1761
+#: backgnd.cpp:1760
 msgid "In &order"
 msgstr "I &rækkefølge"
 
-#: backgnd.cpp:1778
+#: backgnd.cpp:1777
 msgid "Desktops :"
 msgstr "Arbejdspladser :"
 
-#: backgnd.cpp:1817
+#: backgnd.cpp:1816
 msgid "&Add"
 msgstr "&Tilføj"
 
-#: backgnd.cpp:1989
+#: backgnd.cpp:1988
 msgid "Directory error"
 msgstr "Navngivelses fejl"
 
-#: backgnd.cpp:1990
+#: backgnd.cpp:1989
 msgid "Selected directory doesn't exists"
 msgstr "Den valgte folder eksisterer ike"
 
@@ -292,11 +292,11 @@ msgstr "Udvælg tekst"
 
 #: colorscm.cpp:178
 msgid "Window background"
-msgstr "Vindues baggrund"
+msgstr "Vinduesbaggrund"
 
 #: colorscm.cpp:179 widgetcanvas.cpp:175 widgetcanvas.cpp:176
 msgid "Window text"
-msgstr "Vindues tekst"
+msgstr "Vinduestekst"
 
 #: colorscm.cpp:207
 msgid "Contrast"
@@ -320,13 +320,13 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the color scheme is stored."
 msgstr ""
-"Farve skemaet kunne ikke fjernes.\n"
+"Farveskemaet kunne ikke fjernes.\n"
 "Måske har du ikke tilladelse til at ændre det\n"
-"filsystem hvor farve skemaet er gemt."
+"filsystem hvor farveskemaet er gemt."
 
 #: colorscm.cpp:362
 msgid "Naming error"
-msgstr "Navngivelses fejl"
+msgstr "Navngivelsesfejl"
 
 #: colorscm.cpp:363
 msgid ""
@@ -335,11 +335,11 @@ msgid ""
 "in the color scheme list."
 msgstr ""
 "Vælg venligst et entydigt navn for det nye farveskema.\n"
-"Navnet du skrev findes allerede i farveskema listen."
+"Navnet du skrev findes allerede i farveskemalisten."
 
 #: savescm.cpp:18
 msgid "Add a color scheme"
-msgstr "Tilføj et farve skema"
+msgstr "Tilføj et farveskema"
 
 #: savescm.cpp:32
 msgid ""
@@ -405,7 +405,7 @@ msgstr "&Accepter at root kodeord låser op"
 
 #: scrnsave.cpp:280
 msgid "Show &password as stars"
-msgstr "Vis kodeord som stjerner"
+msgstr "Vis &kodeord som stjerner"
 
 #: scrnsave.cpp:288
 msgid "Priority"
@@ -445,19 +445,19 @@ msgstr "Fast skrift"
 
 #: general.cpp:541
 msgid "Window title font"
-msgstr "Vindues titel skrift"
+msgstr "Vinduestitelskrift"
 
 #: general.cpp:546
 msgid "Panel button font"
-msgstr "Panelknap skrift"
+msgstr "Panelknapskrift"
 
 #: general.cpp:551
 msgid "Panel clock font"
-msgstr "Panel ur skrift"
+msgstr "Panelurskrift"
 
 #: general.cpp:581
 msgid "Sample text"
-msgstr "Tekst eksempel"
+msgstr "Teksteksempel"
 
 #: general.cpp:589
 msgid ""
@@ -492,7 +492,7 @@ msgstr ""
 
 #: main.cpp:150
 msgid "Display settings"
-msgstr "Skærm indstillinger"
+msgstr "Skærmindstillinger"
 
 #: widgetcanvas.cpp:104 widgetcanvas.cpp:105
 msgid "Inactive window"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kmenuedit\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-02-16 01:18+0100\n"
 "PO-Revision-Date: 1999-01-26 13:22+0100\n"
 "Last-Translator: Erik Kjær Pedersen\n"
 "Language-Team: da <LL@li.org>\n"
@@ -216,7 +216,7 @@ msgstr "Filnavne:"
 
 #: entrydialog.cpp:325
 msgid "Application to swallow:"
-msgstr "Applikation til swallow:"
+msgstr "Anvendelse til swallow:"
 
 #: entrydialog.cpp:331
 msgid "Title of application:"

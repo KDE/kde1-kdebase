@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcminput\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1999-01-26 23:10-0500\n"
+"PO-Revision-Date: 1999-02-16 23:10-0500\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgstr "piksler"
 
 #: mouse.cpp:81
 msgid "Button mapping"
-msgstr "Knap tilknytning"
+msgstr "Knaptilknytning"
 
 #: mouse.cpp:83
 msgid "Right handed"
@@ -55,8 +55,8 @@ msgstr "Venstrehåndet"
 
 #: keyboard.cpp:61
 msgid "Keyboard repeat"
-msgstr "Tastatur gentagelse"
+msgstr "Tastaturgentagelse"
 
 #: keyboard.cpp:66
 msgid "Key click volume"
-msgstr "Taste klik volumen"
+msgstr "Tasteklikvolumen"

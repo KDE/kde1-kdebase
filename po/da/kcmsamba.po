@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmsamba\n"
 "POT-Creation-Date: 1998-11-17 15:21+0100\n"
-"PO-Revision-Date: 1998-03-26 13:11+0100\n"
+"PO-Revision-Date: 1999-02-16 13:11+0100\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr "Fejl! smbstatus ikke fundet eller ude af kraft !"
 
 #: ksmbstatus.cpp:158
 msgid "Service"
-msgstr "Service"
+msgstr "Tjeneste"
 
 #: ksmbstatus.cpp:160
 msgid "UID"

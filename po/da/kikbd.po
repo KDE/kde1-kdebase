@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kikbd\n"
-"POT-Creation-Date: 1999-01-22 01:13+0100\n"
-"PO-Revision-Date: 1999-01-30 01:10-0500\n"
+"POT-Creation-Date: 1998-11-28 01:10+0100\n"
+"PO-Revision-Date: 1999-02-16 01:10-0500\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit\n"         
 
 #: kikbd.cpp:116
 msgid "KDE International Keyboard already started on this display."
@@ -188,7 +188,7 @@ msgstr "Højre top"
 
 #: kikbdconf.cpp:123
 msgid "Bottom Left"
-msgstr "Venstre bunn"
+msgstr "Venstre bund"
 
 #: kikbdconf.cpp:124
 msgid "Bottom Right"
@@ -467,7 +467,7 @@ msgstr "Med CapsLock"
 
 #: widgets.cpp:567
 msgid "Background when Emulated Caps Lock active"
-msgstr "Bakgrund når emuleret CapsLock er aktiv"
+msgstr "Baggrund når emuleret CapsLock er aktiv"
 
 #: widgets.cpp:573
 msgid "With Alternate"
@@ -487,11 +487,12 @@ msgstr "&Brugerdefineret skrift"
 
 #: widgets.cpp:592
 msgid "Customize Font for text label or use global settings"
-msgstr "Brugerdefiner skrift for tekst mærkat eller brug globale indstillinger"
+msgstr ""
+"Brugerdefiner skrift for tekst mærkat eller brug globale indstillinger"
 
 #: widgets.cpp:596
 msgid "C&hange Font"
-msgstr "&Ændre skrift"
+msgstr "&Ændr skrift"
 
 #: widgets.cpp:641
 msgid "&Autostart"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kwm\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1999-01-26 17:28+0200\n"
+"PO-Revision-Date: 1999-02-16 17:28+0200\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr "&Gendan"
 
 #: main.C:571
 msgid "&Iconify"
-msgstr "&Minimer"
+msgstr "M&inimer"
 
 #: main.C:572
 msgid "&DeIconify"
@@ -123,7 +123,7 @@ msgstr "Nogle pixmaps er ubrugelige: GimmickMode ikke iværksat\n"
 
 #: main.C:1524
 msgid "*** No Tasks ***"
-msgstr "*** Ingenting ***"
+msgstr "*** Ingen opgaver ***"
 
 #: minicli.C:124
 msgid "Command:"
@@ -135,18 +135,18 @@ msgstr "Uuups!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
-msgstr "Log ud"
+msgstr "Log af"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Du kan logge ud nu"
+msgstr "Du kan logge af nu"
 
 #: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"De følgende applikationer indeholder ugemte data\n"
+"Følgende anvendelser indeholder ugemte data\n"
 "som vil gå tabt i næste session."
 
 #: logout.C:63
@@ -154,7 +154,7 @@ msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"De følgende applikationer kan ikke gendannes under næste session,\n"
+"Følgende anvendelser kan ikke gendannes under næste session,\n"
 "kun genstartes. Vær sikker på at de ikke indeholder vigtige ugemte data."
 
 #: logout.C:74
@@ -162,7 +162,8 @@ msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"De følgende applikationer er ikke X11-klar og kan derfor ikkegendannes\n"
+"Følgende anvendelser er ikke X11-klar og kan derfor ikke"
+"gendannes\n"
 "i din næste session.  Vær sikker på at de ikke indeholder vigtige ugemte "
 "data."
 
