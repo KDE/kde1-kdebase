@@ -35,7 +35,7 @@ msgstr "Otvori sadr¾ani &direktorij"
 
 #: kfindtop.cpp:135
 msgid "&Save Search"
-msgstr "Sni&mi pretra¾ivanje"
+msgstr "Spre&mi pretra¾ivanje"
 
 #: kfindtop.cpp:147
 msgid "&Cut"
@@ -46,9 +46,8 @@ msgid "&Select All"
 msgstr "&Oznaèi sve"
 
 #: kfindtop.cpp:154
-#, fuzzy
 msgid "Unse&lect All"
-msgstr "&Oznaèi sve"
+msgstr "O&dznaèi sve"
 
 #: kfindtop.cpp:156
 msgid "&Invert Selection"
@@ -217,11 +216,11 @@ msgstr "Datum nije ispravan!!"
 
 #: kftabdlg.cpp:504
 msgid "The month(s) value isn't valid!!"
-msgstr "Mjesec nije ispravan!!"
+msgstr "Mjesec(i) nije(su) ispravan!!"
 
 #: kftabdlg.cpp:515
 msgid "The day(s) value isn't valid!!"
-msgstr "Dan nije ispravan!!"
+msgstr "Dan(i) nije(su) ispravan!!"
 
 #: kftabdlg.cpp:532
 msgid "The value in size isn't valid number!!"
@@ -229,7 +228,7 @@ msgstr "Vrijednost velièine nije ispravna!!"
 
 #: kfoptions.cpp:51
 msgid "Preferences"
-msgstr "Pode¹avanja"
+msgstr "Postava"
 
 #: kfoptions.cpp:73
 msgid "File format:"
@@ -253,7 +252,7 @@ msgstr "Èisti tekst"
 
 #: kfoptions.cpp:122
 msgid "Saving"
-msgstr "Snimam"
+msgstr "Spremam"
 
 #: kfoptions.cpp:129
 msgid "Create Archive:"
@@ -278,7 +277,7 @@ msgstr "Arhiveri"
 #: kfwin.cpp:110 kfwin.cpp:117 kfwin.cpp:133 kfwin.cpp:160
 #, c-format
 msgid "%d file(s) found"
-msgstr "%d datoteka naðeno"
+msgstr "%d datoteka naðeno/a"
 
 #: kfwin.cpp:244
 msgid "It wasn't possible to save results!"
@@ -290,7 +289,7 @@ msgstr "KFind datoteka s rezultatima"
 
 #: kfwin.cpp:281
 msgid "Results were saved to file\n"
-msgstr "Rezultati su snimljeni u datoteku\n"
+msgstr "Rezultati su spremljeni u datoteku\n"
 
 #: kfwin.cpp:296
 #, c-format
@@ -298,7 +297,7 @@ msgid ""
 "Do you really want to delete file:\n"
 "%s"
 msgstr ""
-"®elite li  zbilja obrisati datoteku:\n"
+"®elite li zbilja obrisati datoteku:\n"
 "%s"
 
 #: kfwin.cpp:298
@@ -339,7 +338,9 @@ msgstr ""
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
-msgstr "Ne mogu obrisati birani direktorij"
+msgstr 
+"Ne mogu obrisati\n"
+"birani direktorij"
 
 #: kfwin.cpp:436
 msgid "Couldn't recognize archive type!"
@@ -347,4 +348,4 @@ msgstr "Ne prepoznajem vrstu arhive!"
 
 #: kfwin.cpp:495
 msgid "Error while creating child process!"
-msgstr "Gre¹ka prilikom kreiranja nasljednog procesa!"
+msgstr "Gre¹ka prilikom stvaranja nasljednog (child) procesa!"
