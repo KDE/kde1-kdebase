@@ -2,21 +2,21 @@
   configlist.cpp - internally used by the KDE control center
 
   written 1997 by Matthias Hoelzer
-  
+
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation; either version 2 of the License, or
   (at your option) any later version.
-  
+
   This program is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU General Public License for more details.
-  
+
   You should have received a copy of the GNU General Public License
   along with this program; if not, write to the Free Software
   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-   
+
   */
 
 
@@ -31,10 +31,11 @@
 #include <kmsgbox.h>
 #include <kiconloader.h>
 #include <kapp.h>
-#include <qfileinf.h> 
+#include <qfileinf.h>
 
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
+#include <kwm.h>
 
 #include "kdelnk.h"
 #include "configlist.moc"
@@ -53,9 +54,9 @@ KModuleListEntry::KModuleListEntry(const QString &fn)
   : filename(fn)
 {
   QFileInfo info(fn);
-  
+
   children = 0;
-  process = 0;  
+  process = 0;
   swallowWidget = 0;
   swallowParent = 0;
 
@@ -66,7 +67,7 @@ KModuleListEntry::KModuleListEntry(const QString &fn)
     {
       // scan the directory information, if any
       QFileInfo desc(filename+"/.directory");
-      
+
       if (desc.exists() && desc.isReadable())
 	parseKdelnkFile(filename+"/.directory");
 
@@ -79,7 +80,7 @@ KModuleListEntry::KModuleListEntry(const QString &fn)
 
       dir.setFilter(QDir::Dirs | QDir::Files);
       dir.setSorting(QDir::DirsFirst);
-      
+
       for (unsigned int i=0; i<dir.count(); i++)
 	{
 	  // skip directories and hidden files
@@ -87,7 +88,7 @@ KModuleListEntry::KModuleListEntry(const QString &fn)
 	    continue;
 
 	  // add the file or directory
-	  children->append(new KModuleListEntry(filename+"/"+dir[i])); 
+	  children->append(new KModuleListEntry(filename+"/"+dir[i]));
 	}
     }
   else
@@ -118,11 +119,10 @@ void KModuleListEntry::parseKdelnkFile(const QString &fn)
   comment =  config.readEntry("Comment");
   name =     config.readEntry("Name", klocale->translate("Unknown module: ")+fn);
   init =     config.readEntry("Init");
-  swallowTitle = config.readEntry("SwallowTitle");
-  if (swallowTitle.isEmpty()){
-    swallowTitle = "skcm: "; // (s)wallow (k) (c)ontrol (m)odule
-    swallowTitle += name.data();
-    }
+  
+  //create a unique swallow title. IGNORE SwallowTitle settings in the kdelnk file (ettrich)
+  swallowTitle = "skcm:"; // (s)wallow (k) (c)ontrol (m)odule
+  swallowTitle += name;
 }
 
 
@@ -159,11 +159,11 @@ bool KModuleListEntry::execute(QWidget *parent)
       if (!process)
 	return FALSE;
 
-      // split Exec entry 
+      // split Exec entry
       QString executable(exec.data());
       QString params;
       int pos = executable.find(' ');
-      
+
       if (pos > 0)
 	{
 	  params = executable.right(executable.length()-pos-1);
@@ -198,10 +198,10 @@ bool KModuleListEntry::execute(QWidget *parent)
 	{
           if (params[0]==' ')
           {
-            if (!par.isEmpty())  
+            if (!par.isEmpty())
               *process << par;
             par = "";
-          } 
+          }
           else
           {
             if (params[0]=='"')
@@ -211,7 +211,7 @@ bool KModuleListEntry::execute(QWidget *parent)
               {
                 par += params[0];
                 params.remove(0,1);
-              } 
+              }
             }
             else
             {
@@ -222,7 +222,7 @@ bool KModuleListEntry::execute(QWidget *parent)
 	}
       if (!par.isEmpty())
         *process << par;
-       
+
       QObject::connect(process, SIGNAL(processExited(KProcess *)), this, SLOT(processExit(KProcess *)));
 
       // start process
@@ -256,7 +256,7 @@ void KModuleListEntry::processExit(KProcess *proc)
 
       if (visibleWidget && visibleWidget == swallowWidget){
 	//Workaround /see kswallow.cpp (ettrich)
-	XSetInputFocus(qt_xdisplay(), visibleWidget->topLevelWidget()->winId(), 
+	XSetInputFocus(qt_xdisplay(), visibleWidget->topLevelWidget()->winId(),
 		       RevertToPointerRoot, CurrentTime);
 	visibleWidget = 0;
       }
@@ -269,11 +269,8 @@ void KModuleListEntry::processExit(KProcess *proc)
 
 void KModuleListEntry::addWindow(Window w)
 {
-  XTextProperty titleProperty;
-
-  XGetWMName(qt_xdisplay(), w, &titleProperty);
-
-  if (strcmp(getSwallowTitle().data(), (char *) titleProperty.value) == 0)
+    
+   if (getSwallowTitle() == KWM::title(w))
     {
       if (!swallowWidget)
 	{
@@ -288,10 +285,10 @@ void KModuleListEntry::addWindow(Window w)
       swallowWidget->setFocus(); //workaround (ettrich)
 
       swallowWidget->resize(swallowParent->size());
-      
+
       // disconnect from KWM events
       disconnect(kapp, SIGNAL(windowAdd(Window)), this, SLOT(addWindow(Window)));
-    }  
+    }
 }
 
 
@@ -336,14 +333,14 @@ void ConfigList::insertEntry(KTreeList *list, KPath *path, KModuleListEntry *ent
       item = new ConfigTreeItem(entry);
       item->setText(entry->getName());
       item->setPixmap(&entry->getIcon());
-     
+
       if (path->top())
 	list->addChildItem(item, path);
-      else 
+      else
 	if (!root)
 	  list->insertItem(item);
 
-      // add children 
+      // add children
       if (!root)
 	path->push(&entry->getName());
       for (KModuleListEntry *current = entry->getChildren()->first(); current != 0; current = entry->getChildren()->next())
