@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1999-03-22 01:16+0100\n"
+"POT-Creation-Date: 1999-03-23 01:20+0100\n"
 "PO-Revision-Date: 1999-01-30 17:00 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
@@ -269,10 +269,10 @@ msgstr "Impossible de charger l'icône\n"
 #: kfmprops.cpp:1722 kfmprops.cpp:2083 kfmprops.cpp:2265 kfmserver.cpp:46
 #: kfmserver.cpp:214 kfmserver.cpp:294 kfmserver.cpp:313 kfmserver.cpp:360
 #: kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:339 kfmtree.cpp:466
-#: kfmtree.cpp:497 kfmtree.cpp:503 kfmtree.cpp:509 kfmview.cpp:437
-#: kfmview.cpp:471 kfmview.cpp:490 kfmview.cpp:572 kfmview.cpp:578
-#: kfmview.cpp:584 kfmview.cpp:709 kfmview.cpp:713 kfmview.cpp:752
-#: kfmview.cpp:779 kfmview.cpp:800 kfmview.cpp:808 kfmview.cpp:816
+#: kfmtree.cpp:497 kfmtree.cpp:503 kfmtree.cpp:509 kfmview.cpp:441
+#: kfmview.cpp:475 kfmview.cpp:494 kfmview.cpp:576 kfmview.cpp:582
+#: kfmview.cpp:588 kfmview.cpp:713 kfmview.cpp:717 kfmview.cpp:756
+#: kfmview.cpp:783 kfmview.cpp:804 kfmview.cpp:812 kfmview.cpp:820
 #: kiojob.cpp:239 kiojob.cpp:247 kiojob.cpp:254 kiojob.cpp:279 kiojob.cpp:298
 #: kiojob.cpp:309 kiojob.cpp:333 kiojob.cpp:352 kiojob.cpp:569 kiojob.cpp:587
 #: kiojob.cpp:892 kiojob.cpp:905 kiojob.cpp:922 kiojob.cpp:953 kiojob.cpp:1001
@@ -331,7 +331,7 @@ msgid "&Home"
 msgstr "&Ma maison"
 
 #: kfmgui.cpp:1258 kfmgui.cpp:1424 kfmjob.cpp:36 kfmman.cpp:252
-#: kfmtree.cpp:498 kfmview.cpp:491 kfmview.cpp:573 kfmview.cpp:801
+#: kfmtree.cpp:498 kfmview.cpp:495 kfmview.cpp:577 kfmview.cpp:805
 #: kiojob.cpp:88 root.cpp:1247
 msgid "ERROR: Malformed URL"
 msgstr "ERREUR : URL mal écrite"
@@ -356,20 +356,20 @@ msgstr ""
 msgid "Document: Done"
 msgstr "Document : terminé"
 
-#: kfmview.cpp:438 root.cpp:944
+#: kfmview.cpp:442 root.cpp:944
 msgid "ERROR: You may only drop URLs"
 msgstr "ERREUR : vous ne pouvez déposer que des URLs"
 
-#: kfmview.cpp:472
+#: kfmview.cpp:476
 msgid "ERROR: Drop over malformed URL"
 msgstr "ERREUR : utilisation d'une URL mal écrite"
 
-#: kfmserver.cpp:129 kfmtree.cpp:536 kfmview.cpp:544 kfmview.cpp:844
+#: kfmserver.cpp:129 kfmtree.cpp:536 kfmview.cpp:548 kfmview.cpp:848
 #: kiojob.cpp:665 kiojob.cpp:1075 krenamewin.cpp:24 root.cpp:1290
 msgid "KFM Warning"
 msgstr "KFM - Avertissement"
 
-#: kfmtree.cpp:537 kfmview.cpp:545 kfmview.cpp:845 root.cpp:1291
+#: kfmtree.cpp:537 kfmview.cpp:549 kfmview.cpp:849 root.cpp:1291
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -379,23 +379,23 @@ msgstr ""
 "\n"
 "Il n'y a aucun moyen de le(s) récupérer."
 
-#: kfmtree.cpp:504 kfmview.cpp:579 kfmview.cpp:809 root.cpp:1253
+#: kfmtree.cpp:504 kfmview.cpp:583 kfmview.cpp:813 root.cpp:1253
 msgid "ERROR: You dropped a URL over itself"
 msgstr "ERREUR : vous avez déposé un fichier URL sur lui-même"
 
-#: kfmtree.cpp:510 kfmview.cpp:585 kfmview.cpp:817 root.cpp:1259
+#: kfmtree.cpp:510 kfmview.cpp:589 kfmview.cpp:821 root.cpp:1259
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "Erreur : vous avez déposé un répertoire sur l'un de ses fils"
 
-#: kfmexec.cpp:300 kfmman.cpp:1214 kfmview.cpp:601 root.cpp:1134
+#: kfmexec.cpp:300 kfmman.cpp:1214 kfmview.cpp:605 root.cpp:1134
 msgid "Open With:"
 msgstr "Ouvrir avec :"
 
-#: kfmview.cpp:637 root.cpp:1190
+#: kfmview.cpp:641 root.cpp:1190
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "ERREUR : impossible d'ouvrir les propriétés pour plusieurs fichiers"
 
-#: kfmview.cpp:710
+#: kfmview.cpp:714
 msgid ""
 "Can not save properties because\n"
 "this directory is neither writable nor bookmarked.\n"
@@ -407,7 +407,7 @@ msgstr ""
 "\n"
 " Ajoutez cet emplacement aux signets ou créez-en un kdelnk sur le bureau."
 
-#: kfmview.cpp:714
+#: kfmview.cpp:718
 msgid ""
 "Can not save properties because\n"
 "this URL is neither bookmarked nor on desktop.\n"
@@ -419,23 +419,23 @@ msgstr ""
 "\n"
 " Ajoutez cet emplacement aux signets ou créez-en un kdelnk sur le bureau."
 
-#: kfmtree.cpp:467 kfmview.cpp:753 root.cpp:1340
+#: kfmtree.cpp:467 kfmview.cpp:757 root.cpp:1340
 msgid "Could not access Trash Bin"
 msgstr "Impossible d'accéder à la corbeille"
 
-#: kfmview.cpp:780 root.cpp:1229
+#: kfmview.cpp:784 root.cpp:1229
 msgid "Can not paste into multiple directories"
 msgstr "Impossible de coller dans plusieurs répertoires"
 
-#: kfmview.cpp:877
+#: kfmview.cpp:881
 msgid "ERROR: Can not change to multiple directories"
 msgstr "ERREUR : impossible d'aller dans plusieurs répertoires"
 
-#: kfmview.cpp:1148
+#: kfmview.cpp:1152
 msgid "KFM Security Alert"
 msgstr "KFM - Alerte de sécurité"
 
-#: kfmview.cpp:1149
+#: kfmview.cpp:1153
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -443,16 +443,16 @@ msgstr ""
 "C'est page n'est pas sûre\n"
 "mais elle contient un lien vers votre système de fichiers local."
 
-#: kfmview.cpp:1241
+#: kfmview.cpp:1245
 msgid "Symbolic Link"
 msgstr "Lien symbolique"
 
-#: kfmview.cpp:1243
+#: kfmview.cpp:1247
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (Lien)"
 
-#: kfmview.cpp:1263
+#: kfmview.cpp:1267
 msgid "bytes"
 msgstr "octets"
 
