@@ -175,6 +175,7 @@ private:
   // internal tools
   int _getprop(Window w, Atom a, Atom type, long len, unsigned char **p);
   QString getprop(Window w, Atom a);
+  QString xgetprop(Window w, Atom a);
   bool getSimpleProperty(Window w, Atom a, long &result);
   void setQRectProperty(Window w, Atom a, const QRect &rect);
   void sendClientMessage(Window w, Atom a, long x);

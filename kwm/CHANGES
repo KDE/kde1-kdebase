@@ -32,6 +32,9 @@ In 0.10:
       stored. That means it is possible to launch the sound module after
       the applications without losing any registered sound-event.
 
+ 
+       - fix for the session management proxy (Gerd Knorr)
+
   patchlevel 22:
        - fixes for the screen-shading during logout. The old way had
          severe problems with backing store. (Christian Czezatke)

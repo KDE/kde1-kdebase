@@ -566,7 +566,7 @@ void Manager::propertyNotify(XPropertyEvent *e){
     getWMNormalHints(c);
     return;
   case XA_WM_COMMAND:
-    c->command = getprop(c->window, XA_WM_COMMAND);
+    c->command = xgetprop(c->window, XA_WM_COMMAND);
     return;
   }
   if (a == wm_colormap_windows) {
@@ -779,7 +779,7 @@ void Manager::manage(Window w, bool mapped){
 
     getWindowProtocols(c);
     // pseudo sessionmanagement proxy
-    c->command = getprop(c->window, XA_WM_COMMAND);
+    c->command = xgetprop(c->window, XA_WM_COMMAND);
     c->machine = getprop(c->window, wm_client_machine);
     if (proxy_hints && !proxy_hints->isEmpty() && !c->command.isEmpty()){
       QString s = c->command + " @ " + c->machine;
@@ -1580,10 +1580,10 @@ void Manager::getWindowProtocols(Client *c){
 // Motif support (Matthias)
 struct PropMotifWmHints
 {
-  INT32      flags;
-  INT32      functions;
-  INT32      decorations;
-  INT32      inputMode;
+  int      flags;
+  int      functions;
+  int      decorations;
+  int      inputMode;
 };
 
 #define MWM_DECOR_ALL                 (1L << 0)
@@ -1710,6 +1710,19 @@ QString Manager::getprop(Window w, Atom a){
   unsigned char *p;
   if (_getprop(w, a, XA_STRING, 100L, &p) > 0){
     result = (char*) p;
+    XFree((char *) p);
+  }
+  return result;
+}
+
+QString Manager::xgetprop(Window w, Atom a){
+  QString result;
+  char *p;
+  int i,n;
+  if ((n = _getprop(w, a, XA_STRING, 100L, (unsigned char **)&p)) > 0){
+    result = p;
+    for (i = 0; (i += strlen(p+i)+1) < n; result.append(p+i))
+	result.append(" ");
     XFree((char *) p);
   }
   return result;
@@ -1858,7 +1871,7 @@ void Manager::logout(){
 		 propertyNotify(&ev.xproperty);
 	     } while (ev.xproperty.atom != XA_WM_COMMAND);
 	     XSelectInput(qt_xdisplay(), wins[i], NoEventMask);
-	     command = getprop(wins[i], XA_WM_COMMAND);
+	     command = xgetprop(wins[i], XA_WM_COMMAND);
 	     if (!command.isEmpty()){
 		 machine = getprop(wins[i], wm_client_machine);
 		 additional_commands.append(command);
@@ -1881,12 +1894,12 @@ void Manager::logout(){
     }
 
     if (c->Psaveyourself){
-      command = getprop(c->window, XA_WM_COMMAND);
+      command = xgetprop(c->window, XA_WM_COMMAND);
       machine = getprop(c->window, wm_client_machine);
       properties = KWM::getProperties(c->window);
       XSelectInput(qt_xdisplay(), c->window, 
 		   PropertyChangeMask| StructureNotifyMask );
-      command = getprop(c->window, XA_WM_COMMAND);
+      command = xgetprop(c->window, XA_WM_COMMAND);
       machine = getprop(c->window, wm_client_machine);
       XSync(qt_xdisplay(), FALSE);
       sendClientMessage(c->window, wm_protocols, wm_save_yourself);
@@ -1926,7 +1939,7 @@ void Manager::logout(){
   for (c = clients.first(); c; c = clients.next()){
     if (!c->Psaveyourself){
       // poor man's "session" management a la xterm :-(
-      c->command = getprop(c->window, XA_WM_COMMAND);
+      c->command = xgetprop(c->window, XA_WM_COMMAND);
       if (c->command.isNull()){
 	long result = None;
 	getSimpleProperty(c->window, wm_client_leader, result);
@@ -1934,7 +1947,7 @@ void Manager::logout(){
 	if (clw != None && clw != c->window && getClient(clw))
 	    c->command = ""; // will be stored anyway
 	  else
-	    c->command = getprop(clw, XA_WM_COMMAND);
+	    c->command = xgetprop(clw, XA_WM_COMMAND);
       }
     }
   }
