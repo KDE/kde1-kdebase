@@ -561,6 +561,17 @@ void KFMDirTreeItem::paintCell( QPainter *_painter, int _col )
     }
 }
 
+int KFMDirTreeItem::width() const
+{
+    int w = ( PIXMAP_WIDTH + 6 ) * level + 2 * PIXMAP_WIDTH + 18;
+
+	QFontMetrics fm( finder->font() );
+
+    w += fm.width( name );
+
+    return w;
+}
+
 void KFMDirTreeItem::pressed( QMouseEvent *_ev, const QPoint &_globalPoint  )
 {
     if ( _ev->button() == RightButton )

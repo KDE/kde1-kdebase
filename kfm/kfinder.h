@@ -60,6 +60,8 @@ protected:
 
     virtual void pressed( QMouseEvent *, const QPoint &_globalPoint ) = 0;
     virtual void dropEvent( QStrList &, const QPoint & ) { }
+
+    virtual int  width() const { return 1; }
     
     KFinder *finder;
     KFinderNode *finderNode;

@@ -82,6 +82,8 @@ public:
     virtual void setOpen( bool _open );
 
     const char* getURL() { return url; }
+
+    virtual int width() const;
     
 protected:
     virtual void pressed( QMouseEvent *_ev, const QPoint &_globalPoint );

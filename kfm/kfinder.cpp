@@ -333,7 +333,19 @@ void KFinderWin::paintCell( QPainter * _painter, int _row, int _col )
 int KFinderWin::cellWidth( int _column )
 {
     if ( finder->buttonList.count() == 0 )
-	return viewWidth();
+    {
+        int itemWidth = 0;
+        QListIterator<KFinderItem> it( itemList );
+        for ( ; it.current(); ++it )
+        {
+            if ( it.current()->width() > itemWidth )
+                itemWidth = it.current()->width();
+        }
+
+        int vWidth = viewWidth();
+    
+        return ( itemWidth > vWidth ? itemWidth : vWidth );
+    }
     
     return finder->currentSizeList[ _column ];
 }
