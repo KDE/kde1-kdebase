@@ -200,6 +200,7 @@ AC_OUTPUT(Makefile \
 	doc/kcontrol/kcmlocale/Makefile \
 	doc/kcontrol/kcmsamba/Makefile \
 	doc/kcontrol/kcmsyssound/Makefile \
+	doc/kcontrol/kcmthememgr/Makefile \
 	doc/kcontrol/kcmkpanel/Makefile \
 	doc/kdehelp/Makefile \
 	doc/kdehelp/kwm/Makefile \
