@@ -111,34 +111,56 @@ char *std_color_names[10] =
   "#0000ff",
   "#ff00ff",
   "#00ffff",
-  "#ffffff"
+  "#e0e0e0",
 };
 
-char *linux_color_names[18] = 
+char *default_color_names[18] = 
 {
   "",                  /* default foreground */
   "",                  /* default background */
   "#000000",
-  "#b21818",
-  "#18b218",
-  "#b26918",
-  "#1818b2",
-  "#b218b2",
-  "#18b2b2",
-  "#b2b2b2",
-  "#555555",
-  "#ff5555",
-  "#55ff55",
-  "#ffff55",
-  "#5555ff",
-  "#ff55ff",
-  "#55ffff",
+  "#cd0000",
+  "#00cd00",
+  "#cdcd00",
+  "#0000cd",
+  "#cd00cd",
+  "#00cdcd",
+  "#e5e5e5",
+  "#4d4d4d",
+  "#ff0000",
+  "#00ff00",
+  "#ffff00",
+  "#0000ff",
+  "#ff00ff",
+  "#00ffff",
   "#ffffff"
 };
 
+ char *linux_color_names[18] = 
+ {
+   "",                  /* default foreground */
+   "",                  /* default background */
+   "#000000", 
+   "#b21818", 
+   "#18b218", 
+   "#b26918", 
+   "#1818b2", 
+   "#b218b2", 
+   "#18b2b2", 
+   "#b2b2b2", 
+   "#555555", 
+   "#ff5555", 
+   "#55ff55", 
+   "#ffff55", 
+   "#5555ff", 
+   "#ff55ff", 
+   "#55ffff", 
+   "#ffffff" 
+ }; 
+
 #define STD_BOLD_COLOR (5)
 
-int color_type = COLOR_TYPE_ANSI;
+int color_type = COLOR_TYPE_DEFAULT;
 char **color_names = std_color_names;
 char colors_loaded[18] = {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 unsigned long pixel_colors[18];
@@ -148,7 +170,7 @@ int back_color = 1;
 static paste_internal_selection = 0; /* Matthias */ 
 
 /* set default rstyle colors */
-#define DEFAULT_RSTYLE (0)
+#define DEFAULT_RSTYLE (1 << 16)
 
 int screenNum = 0, rstyle=DEFAULT_RSTYLE, save_rstyle = DEFAULT_RSTYLE, focus = 0;
 
@@ -159,6 +181,19 @@ char charclass[256];
 
 /* check if a char is in the charclass. bmg */
 #define ischarclass(a) (charclass[(a)])
+
+
+
+
+/* Matthias */
+void memset2(RENDITION* rend, RENDITION rstyle, int n){
+  int i;
+  for (i=0; i<n; i++){
+    *rend++ = rstyle;
+  }
+}
+
+
 
 /***************************************************************************
  *  Perform any initialisation on the screen data structures.  
@@ -230,6 +265,10 @@ void init_color_mode(int mode)
     color_type = COLOR_TYPE_ANSI;
     color_names = std_color_names;
     break;
+  case COLOR_TYPE_DEFAULT:
+    color_type = COLOR_TYPE_DEFAULT;
+    color_names = default_color_names;
+    break;
   case COLOR_TYPE_Linux:
     color_type = COLOR_TYPE_Linux;
     color_names = linux_color_names;
@@ -244,44 +283,44 @@ void init_color_mode(int mode)
 
 /**************************************************************************
  * setup color_type. bmg
+ *
+ * extended for xterm-mode (Matthias)
  *************************************************************************/
 void set_color_mode(int mode)
 {
   int i;
 
+  if (color_type == mode)
+    return;
+
+  for (i=2;i<18;i++){
+    if (colors_loaded[i]){
+      free_color(i);
+    }
+  }
+
   switch (mode) {
   case COLOR_TYPE_ANSI:
-    if (color_type != COLOR_TYPE_ANSI) {
-      color_type = COLOR_TYPE_ANSI;
-      color_names = std_color_names;
-      for (i=2; i<10; i++) {
-	if (colors_loaded[i]) {
-	  free_color(i);
-	  alloc_color(i);
-	}
-      }
-      for (i=10; i<18; i++) {
-	if (colors_loaded[i]) {
-	  free_color(i);
-	}
-      }
+    color_type = COLOR_TYPE_ANSI;
+    color_names = std_color_names;
+    for (i=2; i<10; i++) {
+      alloc_color(i);
     }
     break;
+  case COLOR_TYPE_DEFAULT:
+    color_type = COLOR_TYPE_DEFAULT;
+    color_names = default_color_names;
+    for (i=2; i<18; i++) 
+      alloc_color(i);
+    break;
   case COLOR_TYPE_Linux:
-    if (color_type != COLOR_TYPE_Linux) {
-      color_type = COLOR_TYPE_Linux;
-      color_names = linux_color_names;
-      for (i=2; i<10; i++) {
-	if (colors_loaded[i]) {
-	  free_color(i);
-	  alloc_color(i);
-	  alloc_color(i+8);
-	}
-      }
-      if (colors_loaded[0] && !colors_loaded[STD_BOLD_COLOR]) {
-	alloc_color(STD_BOLD_COLOR); /* foreground bold */
-      }
-    }   
+    color_type = COLOR_TYPE_Linux;
+    color_names = linux_color_names;
+    for (i=2; i<18; i++)
+      alloc_color(i);
+    if (colors_loaded[0] && !colors_loaded[STD_BOLD_COLOR]) {
+      alloc_color(STD_BOLD_COLOR); /* foreground bold */
+    }
     break;
   default:
     error("invalid colormode %d.", mode);
@@ -800,7 +839,7 @@ void scr_add_lines(unsigned char *c,int nl_count,int n)
 	  if (cScreen->insert) 
 	    scr_insert_delete_characters(1,INSERT);
 	  cScreen->text[x] = c[i];
-/* 	  nase; */
+
 /*  	  displayed_text[cScreen->row*(MyWinInfo.cwidth+1)+cScreen->col] = '\0';  */
 /* 	  displayed_rend[cScreen->row*(MyWinInfo.cwidth+1)+cScreen->col] = 255; */
 	  cScreen->rendition[x++] = rstyle;
@@ -870,7 +909,7 @@ int screen_scroll(int row1,int row2,int count)
 
       /* copy blank lines in at the bottom */
       memset(dest1,' ',(MyWinInfo.cwidth+1)*count);
-      memset(dest2,DEFAULT_RSTYLE,(MyWinInfo.cwidth+1)*count*RENDSIZE);
+      memset2(dest2,DEFAULT_RSTYLE,(MyWinInfo.cwidth+1)*count);
 
       dest1--;
       dest1 += MyWinInfo.cwidth + 1; /* Matthias */ 
@@ -902,7 +941,7 @@ int screen_scroll(int row1,int row2,int count)
       for(;i>=row1;i--)
 	{
 	  memset(dest1,' ',MyWinInfo.cwidth);
-	  memset(dest2,DEFAULT_RSTYLE,MyWinInfo.cwidth*RENDSIZE);
+	  memset2(dest2,DEFAULT_RSTYLE,MyWinInfo.cwidth);
 	  dest2 -= (MyWinInfo.cwidth+1);
 	  *(dest1+MyWinInfo.cwidth) = 0;
 	  dest1 -= (MyWinInfo.cwidth+1);
@@ -1222,7 +1261,7 @@ void scr_erase_line(int mode)
 #endif
       /* erase to start of line */
       memset(starttext,' ',cScreen->col+1);
-      memset(startrend,DEFAULT_RSTYLE,(cScreen->col+1)*RENDSIZE);
+      memset2(startrend,DEFAULT_RSTYLE,(cScreen->col+1));
       break;
     case END :
 #ifdef DEBUG
@@ -1230,15 +1269,15 @@ void scr_erase_line(int mode)
 #endif
       /* erase to end of line */
       memset(starttext+cScreen->col,' ',MyWinInfo.cwidth - cScreen->col);
-      memset(startrend+cScreen->col,DEFAULT_RSTYLE,
-	     (MyWinInfo.cwidth - cScreen->col)*RENDSIZE);
+      memset2(startrend+cScreen->col, rstyle & ~RS_CURSOR,
+	     (MyWinInfo.cwidth - cScreen->col));
       break;
     case ENTIRE :
 #ifdef DEBUG
       check_text("erase line entire");
 #endif
       memset(starttext,' ',MyWinInfo.cwidth);
-      memset(startrend,DEFAULT_RSTYLE,MyWinInfo.cwidth*RENDSIZE);
+      memset2(startrend,rstyle & ~RS_CURSOR,MyWinInfo.cwidth);
       break;
     default :
 #ifdef DEBUG
@@ -1251,6 +1290,29 @@ void scr_erase_line(int mode)
 #endif
   if(selected)check_selection(cScreen->row,cScreen->row);
   cScreen->wrap_next = 0;
+}
+
+
+/* Matthias */
+void scr_erase_char(int n){
+  unsigned char *starttext;
+  int back_color, fore_color;
+  RENDITION *startrend;
+  int end,i;
+  if (n < 1)
+    return;
+  MyWinInfo.offset = 0;
+  
+  starttext = &cScreen->text[(cScreen->row+MyWinInfo.saved_lines)*
+			     (MyWinInfo.cwidth+1) + cScreen->col];
+  startrend = &cScreen->rendition[(cScreen->row+MyWinInfo.saved_lines)*
+				  (MyWinInfo.cwidth+1) + cScreen->col];
+
+  if (n + cScreen->col > MyWinInfo.cwidth)
+    n = MyWinInfo.cwidth - cScreen->col;
+  
+  memset(starttext,' ',n);
+  memset2(startrend, rstyle & ~RS_CURSOR, n);
 }
  
 
@@ -1305,17 +1367,8 @@ void scr_erase_screen(int mode)
       x=(j+MyWinInfo.saved_lines-MyWinInfo.offset)*
 	(MyWinInfo.cwidth+1)+a;
       memset(&cScreen->text[x],' ',b-a+1);
-      /* memset(&cScreen->rendition[x],DEFAULT_RSTYLE,(b-a+1)*RENDSIZE); */
-      { 
-	/* experimental (Matthias) / optimized [bmg] */ 
-	int i = 0;
-	RENDITION *rend = &cScreen->rendition[x];
-	/* this was rstyle & ~RS_CURSOR; [bmg] */
-	RENDITION val = DEFAULT_RSTYLE; 
-	for (i=0; i<b-a+1; i++){
-	  *rend++ = val;
-	}
-      }
+      /* memset2(&cScreen->rendition[x],DEFAULT_RSTYLE,(b-a+1)); */
+      memset2(&cScreen->rendition[x],rstyle & ~RS_CURSOR,(b-a+1));
     }
 }
 
@@ -1335,7 +1388,7 @@ void scr_E(void)
       x=(j+MyWinInfo.saved_lines-MyWinInfo.offset)*
 	(MyWinInfo.cwidth+1);
       memset(&cScreen->text[x],'E',MyWinInfo.cwidth);
-      memset(&cScreen->rendition[x],DEFAULT_RSTYLE,MyWinInfo.cwidth);
+      memset2(&cScreen->rendition[x],DEFAULT_RSTYLE,MyWinInfo.cwidth);
     }
 } 
 
@@ -2048,7 +2101,6 @@ void scr_refresh(int x,int y,int width,int height)
   int r1,r2,c1,c2,j;
 #ifdef DEBUG
   check_text("scr_refresh");  
-  fprintf(stderr,"scr_refresh");
 #endif
   c1=(x - MARGIN)/MyWinInfo.fwidth;
   r1 =(y - MARGIN)/MyWinInfo.fheight;
@@ -2073,8 +2125,8 @@ void scr_refresh(int x,int y,int width,int height)
   for(j=r1;j<=r2;j++)
     {
       memset(&displayed_text[j*(MyWinInfo.cwidth+1)+c1],0,c2-c1+1);
-      memset(&displayed_rend[j*(MyWinInfo.cwidth+1)+c1],
-	     DEFAULT_RSTYLE,(c2-c1+1)*RENDSIZE);
+      memset2(&displayed_rend[j*(MyWinInfo.cwidth+1)+c1],
+	     DEFAULT_RSTYLE,(c2-c1+1));
     }
 }
 
@@ -2102,7 +2154,6 @@ void screen_refresh()
   int outline = False;
 #ifdef DEBUG
   check_text("screen_refresh");  
-  fprintf(stderr,"screen_refresh\n");
 #endif
 
 
@@ -2317,29 +2368,52 @@ void screen_refresh()
 		    }
 		}
 #ifdef COLOR
-	      /* this is a hack because of one byte memset! (Matthias) */
-	      if (back == 0) 
-		back = 1;
 	      
 	      if (rval & (RS_RVID | RS_SELECTED | RS_CURSOR)) {
-		if (color_type == COLOR_TYPE_Linux && 
-		    rval & RS_BOLD)
-		  newgcv.foreground = pixel_colors[back+8];
-		else 
+		switch (color_type){
+		case COLOR_TYPE_Linux:
+		  if (rval & RS_BOLD)
+		    newgcv.foreground = pixel_colors[back==1?0:back+8];
+		  else 
+		    newgcv.foreground = pixel_colors[back];
+		  newgcv.background = pixel_colors[fore];
+		  break;
+		case COLOR_TYPE_ANSI:
 		  newgcv.foreground = pixel_colors[back];
-		newgcv.background = pixel_colors[fore];
-	      } else {
-		if (color_type == COLOR_TYPE_Linux && rval & RS_BOLD) {
-		  if (fore >= 2) {
-		    newgcv.foreground = pixel_colors[fore+8];
-		  } else {
-		    newgcv.foreground = pixel_colors[STD_BOLD_COLOR];
-		  }
-		} else {
-		  newgcv.foreground = pixel_colors[fore];
+		  newgcv.background = pixel_colors[fore];
+		  break;
+		default: /* COLOR_TYPE_DEFAULT */
+		  newgcv.foreground = pixel_colors[back];
+		  newgcv.background = pixel_colors[fore<3?fore:fore+8];
+		  break;
 		}
-		newgcv.background = pixel_colors[back];
+		  
+	      } else {
+
+		switch (color_type){
+		case COLOR_TYPE_Linux:
+		  if (rval & RS_BOLD){
+		    if (fore >= 2) {
+		      newgcv.foreground = pixel_colors[fore+8];
+		    } else {
+		      newgcv.foreground = pixel_colors[STD_BOLD_COLOR];
+		    }
+		  } else {
+		    newgcv.foreground = pixel_colors[fore];
+		  }
+		  newgcv.background = pixel_colors[back];
+		  break;
+		case COLOR_TYPE_ANSI:
+		  newgcv.foreground = pixel_colors[fore];
+		  newgcv.background = pixel_colors[back];
+		  break;
+		default: /* COLOR_TYPE_DEFAULT */
+		  newgcv.foreground = pixel_colors[fore<3?fore:fore+8];
+		  newgcv.background = pixel_colors[back];
+		  break;
+		}
 	      }
+
 	      newgcm = GCBackground | GCForeground;
 	      XChangeGC(display,thisGC,newgcm,&newgcv);
 #endif
@@ -2348,7 +2422,7 @@ void screen_refresh()
   	      XDrawImageString(display,vt_win,thisGC,x1,y1,ch,n);  
 
 	      if(rval != 0) {
-		if (rval & RS_BOLD && color_type == COLOR_TYPE_ANSI) {
+		if (rval & RS_BOLD && color_type != COLOR_TYPE_Linux) {
 		  XDrawString(display,vt_win,thisGC,x1+1,y1,ch,n);
 		}	      
 		  
@@ -2551,7 +2625,7 @@ scr_fore_color(int color)
     fore_color = color+2;
     rstyle = (rstyle &(0xffff00ff) ) | (fore_color <<8);
   }
-  if (color_type == COLOR_TYPE_Linux && color >= 0 && 
+  if (color_type != COLOR_TYPE_ANSI && color >= 0 && 
       !colors_loaded[color+10]) {
     alloc_color(color+10);
   }
@@ -2571,12 +2645,7 @@ scr_back_color(int color)
   if((color <-2)||(color > 7))
     return;
 
-  /* this is a hack because of one byte memset! (Matthias) */
-  if (color == -2)
-    color = -1;
-  else if (color == -1)
-    color = -2;
-  
+
   if(colors_loaded[color+2]) {
     back_color = color+2;
     rstyle = (rstyle &(0xff00ffff) ) | (back_color <<16);
@@ -2584,7 +2653,7 @@ scr_back_color(int color)
     back_color = color+2;
     rstyle = (rstyle &(0xff00ffff) ) | (back_color <<16);
   }
-  if (color_type == COLOR_TYPE_Linux && color >=0 && 
+  if (color_type != COLOR_TYPE_ANSI && color >=0 && 
       !colors_loaded[color+10]) {
     alloc_color(color+10);
   }

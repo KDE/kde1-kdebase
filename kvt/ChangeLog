@@ -1,15 +1,22 @@
-since kvt-0.17:
+since kvt-0.18:
 
-	
-since kvt-0.16:
+  - patchlevel 1 to clearify upload confusions due to demeter.
+
+
+since kvt-0.17:
   - modifications and enhancements to keyboard handling: now kvt is quite 
     compatible with a decent xterm (which itself is very vt-220 like).
     This includes control sequences, numpad  and dead-key support. (Matthias)
   - cleaned up the distribution. Also added LICENSE.readme (Matthias)
+  - new color scheme "KDE". Looks similar to modern xterms. (Matthias)
+  - small fixes for the "Terminal Options" dialog (Matthias)
+  - new cgi-sequence "X" for erase char. (Matthias)
   - uses kapp's help menu (Matthias)
   - enabled "-caption" (Matthias)
   - session management (Matthias)
   - re-arranged help menu (Matthias)
+	
+since kvt-0.16:
   - added user-configurable backspace (^H/^?)
     (Jeroen van der Most <jvdmost@wi.leidenuniv.nl>)
   - bugfixed in DnD handling

@@ -1644,6 +1644,10 @@ void process_csi_sequence()
       else if ((nargs == 0)||((nargs == 1)&&(arg[0] == 0)))
 	scr_set_tab(0);
       break;
+    case 'X' :
+      /* Matthias */
+      scr_erase_char(arg[0]);
+      break;
     default:
       fprintf(stderr, "kvt: unknown CSI-sequence '%c'\n", c);
     }
@@ -1800,6 +1804,7 @@ void process_sgr_mode(int c,int private,int nargs,int *arg)
 	  break;
 	case 39:
 	  scr_fore_color(28); /* Matthias */ 
+	  break;
 	case 40:
 	case 41:
 	case 42:
@@ -1812,6 +1817,9 @@ void process_sgr_mode(int c,int private,int nargs,int *arg)
 	  break;
 	case 49:
 	  scr_back_color(39); /* Matthias */ 
+	  break;
+	default:
+	  printf("unkown sgr sequence %d\n", arg[i]);
 	}
 }
 

@@ -118,7 +118,8 @@ static int kvt_dimen;
 
 static const char* color_mode_name[] = {
   "ANSI",
-  "Linux",
+  "Console",
+  "KDE",
   0
 };
 
@@ -228,6 +229,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
 OptionDialog::OptionDialog(QWidget *parent, const char *name)
   : QDialog( parent, name, TRUE )
 {
+  setCaption(name);
   QLabel *label_color, *label_class, *label_backspace;
   label_class = new QLabel(klocale->translate("Add characters to word class"), this);
   chars = new QLineEdit(this);
@@ -259,9 +261,12 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
   geom2->addWidget(backspace, 2, 1);
   geom3 = new QBoxLayout(QBoxLayout::LeftToRight, 4);
   geom1->addLayout(geom3, 1);
+  geom3->addStretch();
   geom3->addWidget(ok);
+  ok->setDefault(true);
   geom3->addStretch();
   geom3->addWidget(cancel);
+  geom3->addStretch();
   setGeometry(x(), y(), 400, 120);
 
   int i;
@@ -571,8 +576,10 @@ void kVt::do_some_stuff(KConfig* kvtconfig) { //temporary (Matthias)
  	init_color_mode(COLOR_TYPE_ANSI);
        if (entry == color_mode_name[COLOR_TYPE_Linux])
  	init_color_mode(COLOR_TYPE_Linux);      
+       if (entry == color_mode_name[COLOR_TYPE_DEFAULT])
+ 	init_color_mode(COLOR_TYPE_DEFAULT);      
      } else {
-       init_color_mode(COLOR_TYPE_ANSI);
+       init_color_mode(COLOR_TYPE_DEFAULT);
      }
 }
 
@@ -833,7 +840,6 @@ void kVt::color_menu_activated( int item){
   }
   if (!keyboard_secured){
     extract_colors(fg_string, bg_string);
-    rstyle = 0;
     // redraw all
     XClearWindow(display,vt_win);
     scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);

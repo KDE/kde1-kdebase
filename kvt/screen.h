@@ -132,6 +132,7 @@ typedef struct _screen_info
 
 #define COLOR_TYPE_ANSI 0
 #define COLOR_TYPE_Linux 1
+#define COLOR_TYPE_DEFAULT 2
 
 void screen_init(void);
 void scrn_reset(void);
@@ -153,6 +154,7 @@ void scr_index(int);
 void scr_save_cursor(void);
 void scr_restore_cursor(void);
 void scr_erase_line(int);
+void scr_erase_char(int n);
 void scr_erase_screen(int);
 void scr_insert_delete_lines(int,int);
 void scr_insert_delete_characters(int,int);
