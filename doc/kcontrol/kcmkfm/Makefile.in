@@ -165,7 +165,8 @@ x_includes = @x_includes@
 x_libraries = @x_libraries@
 xdmconfigsubdir = @xdmconfigsubdir@
 
-data_DATA = kfm.html kfm-1.html kfm-2.html kfm-3.html kfm-4.html
+data_DATA = kfm.html kfm-1.html kfm-2.html kfm-3.html kfm-4.html \
+	kfm-5.html kfm-6.html kfm-7.html kfm-8.html logotp3.gif
 
 datadir = $(kde_htmldir)/en/kcontrol/kcmkfm
 
@@ -180,13 +181,13 @@ DIST_COMMON =  Makefile.am Makefile.in
 
 DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
 
-TAR = tar
+TAR = gtar
 GZIP = --best
 all: Makefile $(DATA)
 
 .SUFFIXES:
 $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4)
-	cd $(top_srcdir) && $(AUTOMAKE) --gnu doc/kcontrol/kfm/Makefile
+	cd $(top_srcdir) && $(AUTOMAKE) --gnu doc/kcontrol/kcmkfm/Makefile
 
 Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status $(BUILT_SOURCES)
 	cd $(top_builddir) \
@@ -217,14 +218,14 @@ TAGS:
 
 distdir = $(top_builddir)/$(PACKAGE)-$(VERSION)/$(subdir)
 
-subdir = doc/kcontrol/kfm
+subdir = doc/kcontrol/kcmkfm
 
 distdir: $(DISTFILES)
 	here=`cd $(top_builddir) && pwd`; \
 	top_distdir=`cd $(top_distdir) && pwd`; \
 	distdir=`cd $(distdir) && pwd`; \
 	cd $(top_srcdir) \
-	  && $(AUTOMAKE) --include-deps --build-dir=$$here --srcdir-name=$(top_srcdir) --output-dir=$$top_distdir --gnu doc/kcontrol/kfm/Makefile
+	  && $(AUTOMAKE) --include-deps --build-dir=$$here --srcdir-name=$(top_srcdir) --output-dir=$$top_distdir --gnu doc/kcontrol/kcmkfm/Makefile
 	@for file in $(DISTFILES); do \
 	  d=$(srcdir); \
 	  test -f $(distdir)/$$file \
@@ -284,7 +285,6 @@ installcheck install-exec install-data install uninstall all \
 installdirs mostlyclean-generic distclean-generic clean-generic \
 maintainer-clean-generic clean mostlyclean distclean maintainer-clean
 
-	kfm-5.html kfm-6.html kfm-7.html logotp3.gif
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

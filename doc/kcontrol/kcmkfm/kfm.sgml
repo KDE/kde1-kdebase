@@ -134,6 +134,10 @@ server at www.microsoft.com that you are an Internet Exploder, the web
 server at www.netscape.com that you are a Navigator and all others that
 you are a honest web browser :-)
 
+<sect> KFM Web Browser Configuration: Cookies
+<p>
+FIXME: documentation needed
+
 <sect> KFM Configuration: Desktop Icons
 <p>
 In this screen, you can control the default spacing of the icons
