@@ -1,12 +1,12 @@
 # Перевод krootwm
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Denis Pershin <dyp@inetlab.com>, 1998.
+# Denis Pershin <dyp@inetlab.com>, 1998, 1999.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1998-11-07 05:26+0600\n"
+"PO-Revision-Date: 1999-02-09 05:26+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -62,21 +62,20 @@ msgid "Bookmarks"
 msgstr "Закладки"
 
 #: krootwm.C:280
-#, fuzzy
 msgid "Arrange Window Maker icons"
-msgstr "Выровнять пиктограммы"
+msgstr "Выровнять пиктограммы Window Maker'а"
 
 #: krootwm.C:281
 msgid "Show all"
-msgstr ""
+msgstr "Показать все"
 
 #: krootwm.C:282
 msgid "Hide other"
-msgstr ""
+msgstr "Скрыть остальные"
 
 #: krootwm.C:284
 msgid "Show info panel"
-msgstr ""
+msgstr "Показать панель информации"
 
 #: krootwm.C:285
 msgid "Show legal panel"
@@ -84,16 +83,15 @@ msgstr ""
 
 #: krootwm.C:286
 msgid "Restart"
-msgstr ""
+msgstr "Перезапустить"
 
 #: krootwm.C:288
 msgid "Exit"
-msgstr ""
+msgstr "Выйти"
 
 #: krootwm.C:289
-#, fuzzy
 msgid "Window Maker"
-msgstr "Окна"
+msgstr "Window Maker"
 
 #: krootwm.C:306
 msgid "Desk"

@@ -1,12 +1,12 @@
 # Перевод для kfm.
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Denis Pershin <dyp@inetlab.com>, 1998.
+# Denis Pershin <dyp@inetlab.com>, 1998, 1999.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 0.2\n"
 "POT-Creation-Date: 1999-01-22 01:13+0100\n"
-"PO-Revision-Date: 1999-01-15 03:51+0600\n"
+"PO-Revision-Date: 1999-02-09 03:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1044,10 +1044,12 @@ msgid ""
 "Recurse copying from file with sub-protocol\n"
 "(for instance, tar files)"
 msgstr ""
+"Рекурсивное копирование из файла с подпротоколом\n"
+"(на пример из файла tar)"
 
 #: kiojob.cpp:673
 msgid "Recurse copying from/to distant locations"
-msgstr ""
+msgstr "Рекурсивное копирование из/в удаленн[ого/ое] местоположения"
 
 #: kiojob.cpp:924
 #, c-format
@@ -1177,7 +1179,7 @@ msgstr ""
 "Возможно неверный пароль"
 
 #: kiojob.cpp:1352
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Tar reported an error\n"
 "%s"
@@ -1186,7 +1188,7 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1355
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Gzip reported an error for\n"
 "%s"
@@ -1196,7 +1198,7 @@ msgstr ""
 
 #: kiojob.cpp:1361
 msgid "Operation technically impossible"
-msgstr ""
+msgstr "Операция технически невозможна"
 
 #: kiojob.cpp:1364 kiojob.cpp:1373
 #, c-format
