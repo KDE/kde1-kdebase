@@ -428,8 +428,10 @@ void kPanel::kwmCommandReceived(QString com){
     hidePanelLeft ();
   if (com == "kpanel:show")
     showPanelFromLeft ();
-  if (com == "kpanel:system")
-    showSystem ();
+  if (com == "kpanel:system") {
+      if (!in_animation)
+	  showSystem ();
+  }
 
   if (com.left(11) == "kpanel:icon"){
     if (com.mid(12, 1) != ":")
