@@ -164,12 +164,12 @@ KHTTPOptions::KHTTPOptions(QWidget *parent, const char *name)
     KButtonBox *bbox = new KButtonBox( bg );
     bbox->addStretch( 20 );
         
-    b0 = bbox->addButton( "Change" );
+    b0 = bbox->addButton( i18n("Change") );
     connect( b0, SIGNAL( clicked() ), this, SLOT( changePressed() ) );
                 
     bbox->addStretch( 10 );
                     
-    b1 = bbox->addButton( "Delete" );
+    b1 = bbox->addButton( i18n("Delete") );
     connect( b1, SIGNAL( clicked() ), this, SLOT( deletePressed() ) );
                             
     bbox->addStretch( 20 );
