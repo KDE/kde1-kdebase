@@ -5,7 +5,7 @@ data_DATA = cf.kimap csz.kimap pl.kimap rum.kimap ua.kimap \
 	he.kimap rua.kimap rui.kimap skp.kimap sky.kimap skz.kimap \
 	es.kimap no.kimap sv.kimap fi.kimap se.kimap weu.kimap is.kimap
 	fr_ch.kimap de_ch.kimap dv.kimap hr.kimap it.kimap la.kimap \
-	th.kimap
+	th.kimap ro.kimap
 
 datadir = $(kde_datadir)/kikbd
 

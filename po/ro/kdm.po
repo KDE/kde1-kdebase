@@ -1,3 +1,4 @@
+# KTranslator Generated File
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -5,14 +6,15 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kde-1.0pre\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-07-04 12:00+0200\n"
-"Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
-"Language-Team: ??? <ro@li.org>\n"
+"PO-Revision-Date: Sat Feb 27 1999 19:07:36+0200\n"
+"Last-Translator: Paul Ionescu <ipaul@romsys.ro>\n"
+"Language-Team: Romanian <ro@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"X-Generator: KTranslator v 0.4.0"
 
 #: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
@@ -20,7 +22,7 @@ msgstr "Închide sau restarteazã?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr ""
+msgstr "(Introduceþi parola de root)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
@@ -32,7 +34,7 @@ msgstr "Închide ºi restarteazã"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr ""
+msgstr "Restarteazã serverul X"
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -60,24 +62,21 @@ msgstr "Închide..."
 
 #: kgreeter.cpp:570
 msgid "Logins not available right now."
-msgstr ""
+msgstr "Momentan nu se acceptã nici un utilizator."
 
 #: kgreeter.cpp:611
 msgid "login_getcapstr() failed."
-msgstr ""
+msgstr "A eºuat login_getcapstr() "
 
 #: kgreeter.cpp:665 kgreeter.cpp:692
 msgid "Sorry -- your account has expired."
-msgstr ""
+msgstr "Din pãcate contul dumneavoastrã a expirat."
 
 #: kgreeter.cpp:670 kgreeter.cpp:697
 #, c-format
 msgid "Warning: your account expires on %s"
-msgstr ""
+msgstr "Atenþie: contul dumneavoastrã expirã în %s"
 
 #: kgreeter.cpp:724
 msgid "Home directory not available"
-msgstr ""
-
-#~ msgid "Exit kdm"
-#~ msgstr "Ieºire din KDE"
+msgstr "Directorul dumneavoastrã nu este disponibil"

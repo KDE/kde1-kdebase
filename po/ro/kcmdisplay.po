@@ -1,3 +1,5 @@
+# KTranslator Generated File
+
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -5,14 +7,15 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1999-03-21 01:19+0100\n"
-"PO-Revision-Date: 1998-07-04 12:00+0200\n"
-"Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
-"Language-Team: ??? <ro@li.org>\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-02-06 01:16+0100\n"
+"PO-Revision-Date: Sat Feb 27 1999 19:52:02+0200\n"
+"Last-Translator: Paul Ionescu <ipaul@romsys.ro>\n"
+"Language-Team: Romanian <ro@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KTranslator v 0.4.0"
 
 #: backgnd.cpp:54
 msgid "Enter new desktop name"
@@ -27,9 +30,8 @@ msgid "&Rename ..."
 msgstr "&Redenumeºte"
 
 #: backgnd.cpp:196
-#, fuzzy
 msgid "&Common Background"
-msgstr "&Fundal"
+msgstr "&Fundal comun"
 
 #: backgnd.cpp:224 colorscm.cpp:82
 msgid "Colors"
@@ -61,93 +63,85 @@ msgstr "&Cautã..."
 
 #: backgnd.cpp:368
 msgid "Arrangement:"
-msgstr ""
+msgstr "Aranjament:"
 
 #: backgnd.cpp:375
-#, fuzzy
 msgid "Tiled"
-msgstr "&Alãturate"
+msgstr "Lipite"
 
 #: backgnd.cpp:376
 msgid "Mirrored"
-msgstr ""
+msgstr "În oglindã"
 
 #: backgnd.cpp:377
-#, fuzzy
 msgid "Center Tiled"
-msgstr "&Centratã"
+msgstr "Lipite din mijloc"
 
 #: backgnd.cpp:378
-#, fuzzy
 msgid "Centred"
-msgstr "&Centratã"
+msgstr "Centratã"
 
 #: backgnd.cpp:379
-#, fuzzy
 msgid "Centred Brick"
-msgstr "&Centratã"
+msgstr "Centratã pe zid"
 
 #: backgnd.cpp:380
-#, fuzzy
 msgid "Centred Warp"
-msgstr "&Centratã"
+msgstr "Centratã pe stea"
 
 #: backgnd.cpp:381
-#, fuzzy
 msgid "Centred Maxpect"
-msgstr "&Centratã"
+msgstr "Centratã Maxpect"
 
 #: backgnd.cpp:382
 msgid "Symmetrical Tiled"
-msgstr ""
+msgstr "Lipite simetric"
 
 #: backgnd.cpp:383
 msgid "Symmetrical Mirrored"
-msgstr ""
+msgstr "În oglindã simetric"
 
 #: backgnd.cpp:384
-#, fuzzy
 msgid "Scaled"
-msgstr "&Scalatã"
+msgstr "Scalatã"
 
 #: backgnd.cpp:399
 msgid "Ra&ndom"
-msgstr ""
+msgstr "&Aleatoare"
 
 #: backgnd.cpp:408
-#, fuzzy
 msgid "Setu&p..."
-msgstr "Setã&ri ..."
+msgstr "&Setare..."
 
 #: backgnd.cpp:418
 msgid "&Dock into the panel"
-msgstr ""
+msgstr "Introduce în panou"
 
 #: backgnd.cpp:443
 msgid "Cache size (kB):"
-msgstr ""
+msgstr "Marime cache (kB):"
 
 #: backgnd.cpp:1339
 msgid "Desktop names"
 msgstr "Numele ecranului"
 
 #: backgnd.cpp:1384
-#, fuzzy
 msgid "File error"
-msgstr "Eroare de denumire"
+msgstr "Eroare de fiºier"
 
 #: backgnd.cpp:1385
 msgid "Can't load image file"
-msgstr ""
+msgstr "Nu pot încãrca fiºierul"
 
 #: backgnd.cpp:1408 backgnd.cpp:1881
 msgid "Unsupported URL"
-msgstr ""
+msgstr "URL neimplementat"
 
 #: backgnd.cpp:1409 backgnd.cpp:1882
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
+"Acest tip de URL este nesuportat în prezent "
 
 #: backgnd.cpp:1441
 msgid "Two color backgrounds"
@@ -203,44 +197,39 @@ msgstr "Pavaj"
 
 #: backgnd.cpp:1708
 msgid "Random mode setup"
-msgstr ""
+msgstr "Setare pentru modul aleator"
 
 #: backgnd.cpp:1714
 msgid "Pick files from &directory"
-msgstr ""
+msgstr "Alege fiºiere din &director"
 
 #: backgnd.cpp:1728
-#, fuzzy
 msgid "&Browse ..."
-msgstr "&Cautã..."
+msgstr "&Rãsfoire"
 
 #: backgnd.cpp:1749
 msgid "Timer Delay in seconds :"
-msgstr ""
+msgstr "Duratã (în secunde):"
 
 #: backgnd.cpp:1761
-#, fuzzy
 msgid "In &order"
-msgstr "Ignorã"
+msgstr "În &ordine"
 
 #: backgnd.cpp:1778
-#, fuzzy
 msgid "Desktops :"
-msgstr "Ecran"
+msgstr "Ecrane:"
 
 #: backgnd.cpp:1817
-#, fuzzy
 msgid "&Add"
-msgstr "&Adaugã ..."
+msgstr "&Adaugã"
 
 #: backgnd.cpp:1989
-#, fuzzy
 msgid "Directory error"
-msgstr "Eroare de denumire"
+msgstr "Eroare în director"
 
 #: backgnd.cpp:1990
 msgid "Selected directory doesn't exists"
-msgstr ""
+msgstr "Directorul selectat nu existã"
 
 #: colorscm.cpp:104
 msgid "Color Scheme"
@@ -409,7 +398,7 @@ msgstr "&Aºteaptã"
 
 #: scrnsave.cpp:260
 msgid "min."
-msgstr ""
+msgstr "min."
 
 #: scrnsave.cpp:266
 msgid "&Require password"
@@ -417,7 +406,7 @@ msgstr "&Cere parolã"
 
 #: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
-msgstr ""
+msgstr "&Acceptã parola de root pentru deblocare"
 
 #: scrnsave.cpp:280
 msgid "Show &password as stars"
@@ -437,7 +426,7 @@ msgstr "Micã"
 
 #: general.cpp:221
 msgid "Style"
-msgstr ""
+msgstr "Stil"
 
 #: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
@@ -445,46 +434,45 @@ msgstr "&Deseneazã butoanele în stil Windoze 95"
 
 #: general.cpp:245
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr ""
+msgstr "&Barã de meniu în stil MacOS"
 
 #: general.cpp:259
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr ""
+msgstr "&Aplicã fonturile ºi culorile la aplicaþiile non-KDE"
 
-#: general.cpp:529
+#: general.cpp:530
 msgid "General font"
-msgstr "Font general"
+msgstr "Fontul general"
 
-#: general.cpp:534
+#: general.cpp:535
 msgid "Fixed font"
-msgstr "Font fix"
+msgstr "Fontul fix"
 
-#: general.cpp:540
-#, fuzzy
+#: general.cpp:541
 msgid "Window title font"
-msgstr "Text în fereastrã"
+msgstr "Fontul zonei de titlu"
 
-#: general.cpp:545
+#: general.cpp:546
 msgid "Panel button font"
 msgstr "Fontul butoanelor din panou"
 
-#: general.cpp:550
+#: general.cpp:551
 msgid "Panel clock font"
 msgstr "Fontul ceasului din panou"
 
-#: general.cpp:580
+#: general.cpp:581
 msgid "Sample text"
 msgstr "Mostrã de text"
 
-#: general.cpp:588
+#: general.cpp:589
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
-"QWERTYUIOPASDFGHJKLZXCVBNMÂÃÎÞª\n"
-"qwertyuiopasdfghjklzxcvbnmâãîþº\n"
-"0123456789,.<>?!\" £ $ % ^ & * ( )[ ]{ }"
+"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+"the quick brown fox jumps over the lazy dog\n"
+"0123456789 ! \" £ $ % ^ & * ( ) ãÃâÂºªþÞîÎ "
 
 #: main.cpp:64
 msgid "&Background"
@@ -500,13 +488,13 @@ msgstr "&Culori"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr ""
+msgstr "&Stil"
 
 #: main.cpp:83
-#, fuzzy
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
-msgstr "folosire: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr ""
+"folosire: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
@@ -526,7 +514,7 @@ msgstr "Text selectat"
 
 #: widgetcanvas.cpp:212
 msgid "New"
-msgstr ""
+msgstr "Nou"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
@@ -555,16 +543,3 @@ msgstr "implicit"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "oricare"
-
-#~ msgid "Fonts etc."
-#~ msgstr "Fonturi, etc."
-
-#~ msgid "Desktop fonts"
-#~ msgstr "Fonturi"
-
-#~ msgid "&Fonts etc."
-#~ msgstr "&Fonturi, etc."
-
-#, fuzzy
-#~ msgid "One Des&ktop"
-#~ msgstr "Ecran"
