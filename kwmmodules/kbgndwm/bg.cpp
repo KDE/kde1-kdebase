@@ -310,14 +310,20 @@ void KBackground::apply()
 		    {
 			float sx = (float)w / wpPixmap->width();
 			float sy = (float)h / wpPixmap->height();
+			
+			bgPixmap->resize( w, h );
+			bgPixmap->fill( color1 );
+			
 			QWMatrix matrix;
 			matrix.scale( sx, sy );
-			*bgPixmap = wpPixmap->xForm( matrix );
+			bitBlt( bgPixmap, 0, 0, &wpPixmap->xForm( matrix ) );
 		    }
 		    break;
 		    
 		case Tiled:
-		    *bgPixmap = *wpPixmap;
+			bgPixmap->resize( wpPixmap->width(), wpPixmap->height() );
+			bgPixmap->fill( color1 );
+			bitBlt( bgPixmap, 0, 0, wpPixmap );
 		}
 	    
 	    delete wpPixmap;
