@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
 "POT-Creation-Date: 1998-01-25 13:23+0100\n"
-"PO-Revision-Date: 1998-01-20 10:23 MET\n"
+"PO-Revision-Date: 1998-01-27 13:50 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -254,13 +254,12 @@ msgid "Large"
 msgstr "Velké"
 
 #: general.cpp:173
-#, fuzzy
 msgid "default"
 msgstr "Implicitní"
 
 #: general.cpp:176
 msgid "any"
-msgstr ""
+msgstr "libovolné"
 
 #: main.cpp:61
 msgid "&Background"

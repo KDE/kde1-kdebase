@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-01-25 13:22+0100\n"
-"PO-Revision-Date: 1998-01-20 10:29 MET\n"
+"PO-Revision-Date: 1998-01-27 13:53 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -271,7 +271,6 @@ msgid "About KFM"
 msgstr "Informace o KFM"
 
 #: kfmgui.cpp:1231
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -286,7 +285,10 @@ msgstr ""
 "weis@kde.org\n"
 "\n"
 "HTML widget od Martina Jonese\n"
-"mjones@kde.org"
+"mjones@kde.org\n"
+"\n"
+"Správce proxy od Larse Hosse\n"
+"Lars.Hoss@munich.netsurf.de"
 
 #: kfmgui.cpp:1323
 msgid "Document: Done"
@@ -1201,11 +1203,8 @@ msgid "Overwrite All"
 msgstr "Pøepsat v¹e"
 
 #: krenamewin.cpp:52
-#, fuzzy
 msgid "You try to overwrite"
-msgstr ""
-"Nemohu pøepsat\n"
-"%s"
+msgstr "Pokou¹íte se pøepsat"
 
 #: krenamewin.cpp:63
 msgid "already exists. Overwrite with"
@@ -1241,7 +1240,7 @@ msgstr "Známé vazby:"
 
 #: kproxydlg.cpp:14
 msgid "Don't forget to save your settings!"
-msgstr ""
+msgstr "Nezapomeòte ulo¾it va¹e nastavení!"
 
 #: kproxydlg.cpp:43
 msgid "No Proxy for:"
