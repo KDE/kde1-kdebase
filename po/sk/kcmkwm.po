@@ -27,12 +27,11 @@ msgstr "&Titulok"
 
 #: main.cpp:68
 msgid "&Desktop"
-msgstr ""
+msgstr "&Plocha"
 
 #: main.cpp:74
-#, fuzzy
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
-msgstr "Pou¾itie: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+msgstr "Pou¾itie: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:105
 msgid "Window manager style"
@@ -62,7 +61,7 @@ msgstr "¥avá strana titulku je plná... zakazujem 'maximalizaèné' tlaèítko\n"
 #: titlebar.cpp:496
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "Pravá strana titulku je plná ... zakazujem 'maximalizaèní' tlaèítko\n"
+msgstr "Pravá strana titulku je plná ... zakazujem 'maximalizaèné' tlaèítko\n"
 
 #: titlebar.cpp:536
 msgid ""
@@ -80,7 +79,7 @@ msgstr "Vzhµad titulku"
 
 #: titlebar.cpp:927
 msgid "Shaded"
-msgstr "«ienovaný"
+msgstr "Tieòovaný"
 
 #: titlebar.cpp:930
 msgid "Plain"
@@ -108,48 +107,47 @@ msgstr "Obrázok pre titulok &neaktívneho okna"
 
 #: titlebar.cpp:982
 msgid "Mouse action"
-msgstr ""
+msgstr "Akcia my¹ky"
 
 #: titlebar.cpp:984
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
+"Dvojitý klik µavým tlaèítkom\n"
+"    na titulku spraví:"
 
 #: titlebar.cpp:988
-#, fuzzy
 msgid "(Un)Maximize"
-msgstr "Maximalizácia"
+msgstr "Maximalizácia/Spä»"
 
 #: titlebar.cpp:989
 msgid "Move"
-msgstr ""
+msgstr "Presun"
 
 #: titlebar.cpp:990
-#, fuzzy
 msgid "(Un)Shade"
-msgstr "«ienovaný"
+msgstr "Iba pás titulku (zap./vyp.)"
 
 #: titlebar.cpp:991
 msgid "Iconify"
-msgstr ""
+msgstr "Ikonifikova»"
 
 #: titlebar.cpp:992
-#, fuzzy
 msgid "(Un)Sticky"
-msgstr "Prilepenie"
+msgstr "Prilepenie/Odlepenie"
 
 #: titlebar.cpp:993
 msgid "Resize"
-msgstr ""
+msgstr "Zmena veµkosti"
 
 #: titlebar.cpp:994
 msgid "Restore"
-msgstr ""
+msgstr "Obnovenie"
 
 #: titlebar.cpp:995
 msgid "Operations Menu"
-msgstr ""
+msgstr "Menu operácií"
 
 #: windows.cpp:74
 msgid "Window movement"
@@ -173,28 +171,27 @@ msgstr "Spôsob umiestòovania"
 
 #: windows.cpp:86
 msgid "Smart"
-msgstr ""
+msgstr "Inteligentne"
 
 #: windows.cpp:88
 msgid "Cascade"
-msgstr ""
+msgstr "Kaskáda"
 
 #: windows.cpp:90
 msgid "Interactive"
-msgstr ""
+msgstr "Interaktívne"
 
 #: windows.cpp:92
 msgid "Random"
-msgstr ""
+msgstr "Náhodne"
 
 #: windows.cpp:94
-#, fuzzy
 msgid "Manual"
-msgstr "Menu"
+msgstr "Manuálne"
 
 #: windows.cpp:101
 msgid "Allowed Overlap:"
-msgstr ""
+msgstr "Povolený prekryv:"
 
 #: windows.cpp:108
 msgid "Maximize Style"
@@ -210,7 +207,7 @@ msgstr "Maximalizuj vertikálne"
 
 #: windows.cpp:113
 msgid "Focus Policy"
-msgstr "Spôsob zaktívnenia okna"
+msgstr "Spôsob aktivácie okna"
 
 #: windows.cpp:114
 msgid "Click to focus"
@@ -234,42 +231,40 @@ msgstr "milisekúnd"
 
 #: desktop.cpp:79
 msgid "Active desktop borders"
-msgstr ""
+msgstr "Aktívne pozadie plochy"
 
 #: desktop.cpp:81
 msgid "Enable active desktop borders"
-msgstr ""
+msgstr "Povoµ aktívne pozadie plochy"
 
 #: desktop.cpp:83
 msgid "Move pointer towards center after switch"
-msgstr ""
+msgstr "Presuò ukazateµ cez stred po prepnutí"
 
 #: desktop.cpp:89
 msgid "Dekstop switch delay:"
-msgstr ""
+msgstr "Oddialenie prepnutia plochy:"
 
 #: desktop.cpp:102
 msgid "Magic Borders"
-msgstr ""
+msgstr "Magické pozadie"
 
 #: desktop.cpp:104
 msgid "Edge Resistance:"
-msgstr ""
+msgstr "Sila rohov:"
 
 #: desktop.cpp:118
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Zóna zarovnania\n"
+"pozadia (v bodoch):"
 
 #: desktop.cpp:132
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-
-#~ msgid "Random placement"
-#~ msgstr "Náhodné umiestòovanie"
-
-#~ msgid "Smart placement"
-#~ msgstr "Inteligentné umiestòovanie"
+"Zóna zarovnania\n"
+"okna (v bodoch):"

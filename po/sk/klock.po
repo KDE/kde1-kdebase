@@ -583,18 +583,16 @@ msgid "Space (GL)"
 msgstr ""
 
 #: space.cpp:581
-#, fuzzy
 msgid "Setup KSpace"
-msgstr "Nastavenie KSlipu"
+msgstr "Nastavenie KSpace"
 
 #: space.cpp:597
 msgid "Warp Interval:"
-msgstr ""
+msgstr "Interval:"
 
 #: space.cpp:685
-#, fuzzy
 msgid "About KSpace"
-msgstr "Informácie o Slipu"
+msgstr "Informácie o KSpace"
 
 #: space.cpp:687
 msgid ""
@@ -602,6 +600,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 msgstr ""
+"KSpace\n"
+"Napísal (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
 
 #: swarm.cpp:252
 msgid "Swarm"

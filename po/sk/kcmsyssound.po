@@ -67,71 +67,75 @@ msgstr "Zavrie» okno"
 
 #: syssound.cpp:156
 msgid "Startup"
-msgstr "Spustenie"
+msgstr "Spusti»"
 
+# DARKIE: Toto je pravdepodobne blbos»
 #: syssound.cpp:158
 msgid "Window Shade Up"
-msgstr ""
+msgstr "Zapnú» tieò"
 
+# DARKIE: Toto je pravdepodobne blbos»
 #: syssound.cpp:159
 msgid "Window Shade Down"
-msgstr ""
+msgstr "Vypnú» tieò"
 
 #: syssound.cpp:160
 msgid "Window Iconify"
-msgstr ""
+msgstr "Ikonifikácia okna"
 
 #: syssound.cpp:161
 msgid "Window DeIconify"
-msgstr ""
+msgstr "Deikonifikácia okna"
 
 #: syssound.cpp:162
 msgid "Window Maximize"
-msgstr ""
+msgstr "Maximalizácia okna"
 
 #: syssound.cpp:163
 msgid "Window UnMaximize"
-msgstr ""
+msgstr "Odmaximalizácia okna"
 
 #: syssound.cpp:164
 msgid "Window Sticky"
-msgstr ""
+msgstr "Prilepenie okna"
 
 #: syssound.cpp:165
 msgid "Window UnSticky"
-msgstr ""
+msgstr "Odlepenie okna"
 
+# DARKIE: Toto je pravdepodobne blbos»
 #: syssound.cpp:166
 msgid "Window Trans New"
-msgstr ""
+msgstr "Nový Trans okna"
 
+# DARKIE: Toto je pravdepodobne blbos»
 #: syssound.cpp:167
 msgid "Window Trans Delete"
-msgstr ""
+msgstr "Zmazanie transu okna"
 
 #: syssound.cpp:168
 msgid "Logout"
-msgstr ""
+msgstr "Odhlásenie"
 
 #: syssound.cpp:169
 msgid "Logout Message"
-msgstr ""
+msgstr "Správa o odhlásení"
 
 #: syssound.cpp:170
 msgid "Window Move Start"
-msgstr ""
+msgstr "Zaèiatok presunu okna"
 
 #: syssound.cpp:171
 msgid "Window Move End"
-msgstr ""
+msgstr "Koniec presunu okna"
 
 #: syssound.cpp:172
 msgid "Window Resize Start"
-msgstr ""
+msgstr "Zaèiatok zmeny veµkosti okna"
 
 #: syssound.cpp:173
 msgid "Window Resize End"
-msgstr ""
+msgstr "Koniec zmeny veµkosti okna"
 
 #: syssound.cpp:195
 msgid "e&nable system sounds"
@@ -151,14 +155,13 @@ msgstr "&Zvuky:"
 
 #: syssound.cpp:213
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Ïal¹ie WAV súbory mô¾u by» pustené nad zoznamom zvukov."
+msgstr "Nad zoznam zvukov mô¾ete pusti» ïal¹ie WAV súbory."
 
 #: syssound.cpp:453
 msgid "Unsupported URL"
 msgstr "Nepodporované URL"
 
 #: syssound.cpp:455
-#, fuzzy
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
@@ -167,7 +170,6 @@ msgstr ""
 "Modulom"
 
 #: syssound.cpp:465
-#, fuzzy, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"
@@ -194,4 +196,4 @@ msgstr ""
 
 #: syssound.cpp:481
 msgid "File Already in List"
-msgstr "Súbr je u¾ na zozname"
+msgstr "Súbor je u¾ na zozname"

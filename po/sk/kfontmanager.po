@@ -15,7 +15,7 @@ msgstr ""
 
 #: main.cpp:58
 msgid "KDE Font Manager"
-msgstr "Správca znakových siad KDE"
+msgstr "Správca znakových sád KDE"
 
 #: main.cpp:71
 msgid "KDE Fonts"
@@ -23,11 +23,11 @@ msgstr "Znakové sady KDE"
 
 #: main.cpp:72
 msgid "Font Explorer"
-msgstr "Prieskumník znakových siad"
+msgstr "Prieskumník znakových sád"
 
 #: main.cpp:73
 msgid "Raw X11 Font List"
-msgstr "Zoznam znakových siad"
+msgstr "Zoznam znakových sád"
 
 #: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
@@ -39,7 +39,7 @@ msgstr "Sady dostupné pre KDE"
 
 #: kfontmanager.cpp:87
 msgid "The KDE Font Manager Example String"
-msgstr "Vzorový text Správcu znakových siad"
+msgstr "Vzorový text Správcu znakových sád"
 
 #: kfontlist.cpp:62 kfontmanager.cpp:109
 msgid "About kfontmanager"
@@ -79,7 +79,7 @@ msgid ""
 msgstr ""
 "~/.kde/share/config/kdefonts existuje,\n"
 "ale nemô¾em do neho zapisova»\n"
-"Nemô¾em ulo¾i» zoznam znakových siad pre KDE."
+"Nemô¾em ulo¾i» zoznam znakových sád pre KDE."
 
 #: kfontlist.cpp:62
 msgid ""

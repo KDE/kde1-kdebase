@@ -43,11 +43,11 @@ msgstr "Mapovanie tlaèítok"
 
 #: mouse.cpp:86
 msgid "Right handed"
-msgstr "Pravoruké"
+msgstr "Pravácke"
 
 #: mouse.cpp:88
 msgid "Left handed"
-msgstr "¥avoruké"
+msgstr "¥avácke"
 
 #: keyboard.cpp:67
 msgid "Keyboard repeat"

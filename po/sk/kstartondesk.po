@@ -20,19 +20,19 @@ msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: kstartondesk.C:74
 msgid "Usage:"
-msgstr "Pou¾itie"
+msgstr "Pou¾itie: "
 
 #: kstartondesk.C:76
 msgid "command "
-msgstr "príkaz"
+msgstr "príkaz "
 
 #: kstartondesk.C:77
 msgid "title "
-msgstr "titulok"
+msgstr "titulok "
 
 #: kstartondesk.C:78
 msgid "desktop"
-msgstr "plocha"
+msgstr "plocha " 
 
 #: kstartondesk.C:80
 msgid "Example"

@@ -35,11 +35,11 @@ msgstr "Celková veµkos» pamäte"
 
 #: memory.cpp:21
 msgid "Free memory"
-msgstr "Volná pamä»"
+msgstr "Voµná pamä»"
 
 #: memory.cpp:29
 msgid "Shared memory"
-msgstr "Zdielaná pamì»"
+msgstr "Zdieµaná pamì»"
 
 #: memory.cpp:37
 msgid "Buffer memory"
@@ -51,7 +51,7 @@ msgstr "Disková pamä»"
 
 #: memory.cpp:53
 msgid "Free swap memory"
-msgstr "Volná disková pamä»"
+msgstr "Voµná disková pamä»"
 
 #: memory.cpp:74
 #, c-format

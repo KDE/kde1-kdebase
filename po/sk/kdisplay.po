@@ -15,148 +15,135 @@ msgstr ""
 
 #: backgnd.cpp:59
 msgid "Enter new desktop name"
-msgstr ""
+msgstr "Zadaj nový názov plochy"
 
 #: backgnd.cpp:112 backgnd.cpp:147
 msgid "Desktop"
 msgstr "Pracovná plocha"
 
 #: backgnd.cpp:162
-#, fuzzy
 msgid "&Rename ..."
-msgstr "Premenova»..."
+msgstr "&Premenova»..."
 
 #: backgnd.cpp:182 colorscm.cpp:90
-#, fuzzy
 msgid "Colors"
-msgstr "&Farby"
+msgstr "Farby"
 
 #: backgnd.cpp:205
-#, fuzzy
 msgid "&One Color"
-msgstr "&Farby"
+msgstr "Jednofarebné"
 
 #: backgnd.cpp:217
-#, fuzzy
 msgid "&Two Color"
-msgstr "&Farby"
+msgstr "Dvojfarebné"
 
 #: backgnd.cpp:235
 msgid "Blen&d"
-msgstr ""
+msgstr "Ladenie"
 
 #: backgnd.cpp:241
 msgid "&Pattern"
-msgstr ""
+msgstr "&Vzor"
 
 #: backgnd.cpp:249
-#, fuzzy
 msgid "Set&up ..."
-msgstr "Nastav.."
+msgstr "Nastavi».."
 
 #: backgnd.cpp:259
 msgid "Wallpaper"
 msgstr "Tapeta"
 
 #: backgnd.cpp:269
-#, fuzzy
 msgid "Ti&led"
-msgstr "Vydla¾di»"
+msgstr "Vydlá¾dená"
 
 #: backgnd.cpp:275
-#, fuzzy
 msgid "&Centred"
-msgstr "Centrova»"
+msgstr "Centrovaná"
 
 #: backgnd.cpp:281
-#, fuzzy
 msgid "&Scaled"
-msgstr "©kálované"
+msgstr "©kálovaná"
 
 #: backgnd.cpp:317
 msgid "&Browse..."
-msgstr ""
+msgstr "&Nalistova»..."
 
 #: backgnd.cpp:484
 msgid "Default"
-msgstr "Implicitné"
+msgstr "©tandardné"
 
 #: backgnd.cpp:810
-#, fuzzy
 msgid "Desktop names"
-msgstr "Pracovná plocha"
+msgstr "Názvy plôch"
 
 #: backgnd.cpp:847
 msgid "Two color background setup"
-msgstr ""
+msgstr "Nastavenie dvojfarebného pozadia"
 
 #: backgnd.cpp:893
 msgid "Pattern name"
-msgstr ""
+msgstr "Názov vzoru"
 
 #: backgnd.cpp:900
 msgid "Preview"
-msgstr ""
+msgstr "Náhµad"
 
 #: backgnd.cpp:922
 msgid "&Blend colors from right to left"
-msgstr ""
+msgstr "&Vytieòuj farby zµava do prava"
 
 #: backgnd.cpp:953
 msgid "Current"
-msgstr ""
+msgstr "Súèasný"
 
 #: backgnd.cpp:984
-#, fuzzy
 msgid "Filled"
-msgstr "Vydla¾di»"
+msgstr "Vyplòovaný"
 
 #: backgnd.cpp:987
 msgid "Fish net"
-msgstr ""
+msgstr "Fish net"
 
 #: backgnd.cpp:990
 msgid "Triangles"
-msgstr ""
+msgstr "Trojuholníky"
 
 #: backgnd.cpp:993
 msgid "Flowers"
-msgstr ""
+msgstr "Kvietky"
 
 #: backgnd.cpp:996
 msgid "Rattan"
-msgstr ""
+msgstr "Rattan"
 
 #: backgnd.cpp:999
 msgid "Cobbled Pavement"
-msgstr ""
+msgstr "Cobbled Pavement"
 
 #: colorscm.cpp:120
 msgid "Color Scheme"
 msgstr "Farebná schéma"
 
 #: colorscm.cpp:131
-#, fuzzy
 msgid "Current scheme"
-msgstr "Farebná schéma"
+msgstr "Súèasná schéma"
 
 #: colorscm.cpp:133
-#, fuzzy
 msgid "KDE default"
-msgstr "KDE implicitné"
+msgstr "KDE ¹tandardná"
 
 #: colorscm.cpp:146
 msgid "&Add ..."
-msgstr ""
+msgstr "&Prida»..."
 
 #: colorscm.cpp:152
-#, fuzzy
 msgid "&Remove"
-msgstr "Ulo¾ schému"
+msgstr "Zru¹i»"
 
 #: colorscm.cpp:159
 msgid "&Save changes"
-msgstr ""
+msgstr "Ulo¾ zmeny"
 
 #: colorscm.cpp:170
 msgid "Widget color"
@@ -171,9 +158,8 @@ msgid "Inactive title text"
 msgstr "Text neaktívneho titulku"
 
 #: colorscm.cpp:179
-#, fuzzy
 msgid "Inactive title blend"
-msgstr "Neaktívny titulok"
+msgstr "Tieòovanie neaktívneho titulku"
 
 #: colorscm.cpp:180
 msgid "Active title bar"
@@ -184,9 +170,8 @@ msgid "Active title text"
 msgstr "Text aktívneho titulku"
 
 #: colorscm.cpp:182
-#, fuzzy
 msgid "Active title blend"
-msgstr "Aktívny titulok"
+msgstr "Tieòovanie aktívneho titulku"
 
 #: colorscm.cpp:183
 msgid "Background"
@@ -217,17 +202,16 @@ msgid "Contrast"
 msgstr "Kontrast"
 
 #: colorscm.cpp:221
-#, fuzzy
 msgid "&Low"
-msgstr "Malá"
+msgstr "&Malý"
 
 #: colorscm.cpp:229
 msgid "High"
-msgstr "Veµká"
+msgstr "&Veµký"
 
 #: colorscm.cpp:295
 msgid "Error removing"
-msgstr ""
+msgstr "Chyba pri ru¹ení"
 
 #: colorscm.cpp:296
 msgid ""
@@ -235,10 +219,13 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the color scheme is stored."
 msgstr ""
+"Táto farebná schéma nemô¾e by» zru¹ená.\n"
+"Mo¾no nemáte práva na zmenu súboru, v ktorom sú uchovávané\n"
+"farebné schémy."
 
 #: colorscm.cpp:355
 msgid "Naming error"
-msgstr ""
+msgstr "Chyba pri pomenúvavaní"
 
 #: colorscm.cpp:356
 msgid ""
@@ -246,15 +233,17 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
+"Prosím zvoµte jedineèný názov pre novú farebnú\n"
+"schému. To, ktoré ste zadali u¾ vyzerá by» pou¾ité\n"
+"v zozname farebných schém."
 
 #: kwmcom.cpp:78 kwmcom.cpp:105
 msgid "kwmcom: communication with kwm failed\n"
-msgstr "kwmcom: komunikace s kwm prebehla neúspe¹ne\n"
+msgstr "kwmcom: komunikácia s kwm prebehla neúspe¹ne\n"
 
 #: savescm.cpp:18
-#, fuzzy
 msgid "Add a color scheme"
-msgstr "Farebná schéma"
+msgstr "Pridaj farebnú schému"
 
 #: savescm.cpp:32
 msgid ""
@@ -264,6 +253,11 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
+"Zadaj názov pre novú farebnú schému, ktorá\n"
+"má by» pridaná do vá¹ho osobného zoznamu.\n"
+"\n"
+"Farby, ktoré sa momentálne pou¾ívajú v náhµade\n"
+"budú skopírované do tejto schémy."
 
 #: scrnsave.cpp:48
 msgid "Ignore"
@@ -278,14 +272,12 @@ msgid "Screen Saver"
 msgstr "©etøiè obrazovky"
 
 #: scrnsave.cpp:203
-#, fuzzy
 msgid "&Setup ..."
-msgstr "Nastav.."
+msgstr "&Nastavi».."
 
 #: scrnsave.cpp:209
-#, fuzzy
 msgid "&Test"
-msgstr "Test"
+msgstr "&Test"
 
 #: scrnsave.cpp:219
 msgid "Settings"
@@ -293,39 +285,35 @@ msgstr "Nastavenie"
 
 #: scrnsave.cpp:237
 msgid "&Wait for"
-msgstr ""
+msgstr "Èakaj na"
 
 #: scrnsave.cpp:246
-#, fuzzy
 msgid "min."
-msgstr "min"
+msgstr "min."
 
 #: scrnsave.cpp:252
-#, fuzzy
 msgid "&Require password"
-msgstr "Po¾aduje heslo"
+msgstr "&Po¾aduje heslo"
 
 #: scrnsave.cpp:259
-#, fuzzy
 msgid "Priority"
 msgstr "Priorita:"
 
 #: scrnsave.cpp:272
-#, fuzzy
 msgid "&High"
-msgstr "Veµká"
+msgstr "Vysoká"
 
 #: scrnsave.cpp:281
 msgid "Low"
-msgstr "Malá"
+msgstr "Nízka"
 
 #: general.cpp:84
 msgid "&Bold"
-msgstr ""
+msgstr "&Tuèné"
 
 #: general.cpp:91
 msgid "&Italic"
-msgstr ""
+msgstr "©&ikmé"
 
 #: general.cpp:225
 msgid "default"
@@ -341,10 +329,9 @@ msgstr "V¹eobecné"
 
 #: general.cpp:327
 msgid "&Draw widgets in the style of Windows 95"
-msgstr ""
+msgstr "&Kresli kontrolky v ¹týle Windows 95"
 
 #: general.cpp:351
-#, fuzzy
 msgid "Desktop fonts"
 msgstr "Pracovná plocha"
 
@@ -354,26 +341,23 @@ msgstr "V¹eobecná znaková sada"
 
 #: general.cpp:375
 msgid "Fixed font"
-msgstr ""
+msgstr "Fixné písmo"
 
 #: general.cpp:376
-#, fuzzy
 msgid "Window title font"
-msgstr "Text v okne"
+msgstr "Písmo v titulku okna"
 
 #: general.cpp:377
-#, fuzzy
 msgid "Panel button font"
-msgstr "V¹eobecná znaková sada"
+msgstr "Písmo tlaèítok panelu"
 
 #: general.cpp:378
 msgid "Panel clock font"
-msgstr ""
+msgstr "Písmo hodín na paneli"
 
 #: main.cpp:61
-#, fuzzy
 msgid "&Fonts etc."
-msgstr "Znakové sady"
+msgstr "&Znakové sady"
 
 #: main.cpp:64
 msgid "&Background"
@@ -404,81 +388,6 @@ msgid "Active window"
 msgstr "Aktívne okno"
 
 #: widgetcanvas.cpp:177 widgetcanvas.cpp:178
-#, fuzzy
 msgid "Selected text"
-msgstr "Vyber text"
+msgstr "Vybraný text"
 
-#, fuzzy
-#~ msgid "&New scheme ..."
-#~ msgstr "Ulo¾ schému"
-
-#~ msgid "You have chosen a name used by a supplied color scheme"
-#~ msgstr "Vybrali ste meno u¾ pou¾ité u dodanej farebnej schémy"
-
-#~ msgid "Display Setup"
-#~ msgstr "Nastavenie obrazovky"
-
-#~ msgid ""
-#~ "No desktop color schemes were found.\n"
-#~ "Do you want to install the default color schemes now ?"
-#~ msgstr ""
-#~ "Nena¹iel som ¾iadne farebné schémy.\n"
-#~ "Chcete nain¹talova» implicitné farebné schemy?"
-
-#~ msgid "Disabled"
-#~ msgstr "Vypnuté"
-
-#~ msgid "Selected"
-#~ msgstr "Vybrané"
-
-#~ msgid "Name"
-#~ msgstr "Meno"
-
-#~ msgid "Wait:"
-#~ msgstr "Èakaj:"
-
-#~ msgid "Widget style"
-#~ msgstr "©týl kontroliek"
-
-#~ msgid "Motif"
-#~ msgstr "Motif"
-
-#~ msgid "Windows 95"
-#~ msgstr "Windows 95"
-
-#~ msgid "Sample"
-#~ msgstr "Vzorka"
-
-#~ msgid "Small"
-#~ msgstr "Malé"
-
-#~ msgid "Medium"
-#~ msgstr "Stredné"
-
-#~ msgid "Large"
-#~ msgstr "Veµké"
-
-#~ msgid "&Style"
-#~ msgstr "&©týl"
-
-#~ msgid "Color"
-#~ msgstr "Farba"
-
-#, fuzzy
-#~ msgid "&Flat"
-#~ msgstr "Jednofarebný"
-
-#, fuzzy
-#~ msgid "&Gradient"
-#~ msgstr "Prechod"
-
-#, fuzzy
-#~ msgid "&Portrait"
-#~ msgstr "Na vý¹ku"
-
-#, fuzzy
-#~ msgid "&Landscape"
-#~ msgstr "Na ¹írku"
-
-#~ msgid "Desktop Title"
-#~ msgstr "Názov plochy"

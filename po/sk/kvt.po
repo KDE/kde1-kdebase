@@ -169,7 +169,6 @@ msgstr ""
 "po vypnutí zabezpeèenia klávesnice."
 
 #: main.C:1151
-#, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -177,86 +176,90 @@ msgid ""
 "based on Robert Nation's rxvt-2.08\n"
 "\n"
 msgstr ""
-"\n"
-"\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
-"\n"
 "Emulácia terminálu pre KDE Desktop Environment\n"
 "zalo¾ené na  rxvt-2.08 Roberta Nationa"
 
 #: main.C:1155
 msgid "Permitted arguments are:\n"
-msgstr ""
+msgstr "\nPovolené argumenty sú:\n"
 
 #: main.C:1156
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
+"-e <príkaz> <arg> ...     prevedie príkaz s parametrami - musí by» posledný\n"
+"                          argument\n"
+
 
 #: main.C:1157
 msgid "-display <name>           specify the display (server)\n"
-msgstr ""
+msgstr "-display <meno>           ¹pecifikuje display (server)\n"
 
 #: main.C:1158
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr ""
+msgstr "-vt_geometry <spec>       poèiatoèná geometria vt okna\n"
 
 #: main.C:1159
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr ""
+msgstr "-print-pipe <názov>       ¹pecifikuje rúru pre vt100 tlaèiareò\n"
 
 #: main.C:1160
 msgid "-vt_bg <colour>           background color\n"
-msgstr ""
+msgstr "-vt_bg <farba>            farba pozadia\n"
 
 #: main.C:1161
 msgid "-vt_fg <colour>           foreground color\n"
-msgstr ""
+msgstr "-vt_fg <farba>            farba popredia\n"
 
 #: main.C:1162
 msgid "-vt_font <fontname>       normal font\n"
-msgstr ""
+msgstr "-vt_font <názov>          normálny font\n"
 
 #: main.C:1163
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
-msgstr ""
+msgstr "-vt_size <veµkos»>        tiny, small, normal large, huge\n"
 
 #: main.C:1164
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr ""
+msgstr "-linux                    nastav kvt na emuláciu linuxáckej konzoly\n"
 
 #: main.C:1165
 msgid "-no_menubar               hide the menubar\n"
-msgstr ""
+msgstr "-no_menubar               skry riadok s menu\n"
 
 #: main.C:1166
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr ""
+msgstr "-no_scrollbar             skry rolovací pás\n"
 
 #: main.C:1167
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
+"-T <text>                 text v titulku okna \n"
+"                          (Zastaralé. Pou¾i rad¹ej -caption)\n"
 
 #: main.C:1169
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr ""
+msgstr "-tn <TERM>                Typ terminálu. ©tandardne xterm.\n"
 
 #: main.C:1170
 msgid "-C                        Capture system console message\n"
-msgstr ""
+msgstr "-C                        Odchytávaj správy systémovej konzoly\n"
 
 #: main.C:1171
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr ""
+msgstr "-n <text>                 názov v ikonke alebo okne ikoniek\n"
 
 #: main.C:1172
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
+"-7                        spusti v 7-bitovom móde\n"
+"-8                        spusti v 8-bitovom móde\n"
 
 #: main.C:1174
 msgid ""
@@ -264,16 +267,21 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
+"-ls                       spusti shell kvt ako prihlasovací shell\n"
+"-ls-                      nespusti shell kvt ako prihlasovací shell "
+"(¹tand.)\n"
 
 #: main.C:1176
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
+"-meta <arg>               spracuj Meta s prefixom ESCAPE, nastaveným 8. bitom\n"
+"                          alebo ignoruj\n"
 
 #: main.C:1177
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr ""
+msgstr "-sl <èíslo>               ulo¾ 'èíslo' riadkov do buffra scrollbaru\n"
 
 #: main.C:1178
 msgid ""
@@ -282,6 +290,10 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
+"-pageup <keysym>          hotkey alt-keysym na prechádzanie hore "
+"bufferom\n"
+"-pagedown <keysym>        hotkey alt-keysym na prechádzanie dole "
+"bufferom\n"
 
 #: main.C:1182
 msgid ""
@@ -291,70 +303,3 @@ msgstr ""
 "-grk9\\t\\tgreek kbd = ELOT 928 (¹tandardná)\n"
 "-grk4\\t\\tgreek kbd = IBM 437\n"
 
-#, fuzzy
-#~ msgid ""
-#~ "Copyright(C) 1996, 1997 Matthias Ettrich\n"
-#~ "Copyright(C) 1997 M G Berberich\n"
-#~ "Terminal emulation for the KDE Desktop Environment\n"
-#~ "based on Robert Nation's rxvt-2.08\n"
-#~ "\n"
-#~ "Permitted arguments are:\n"
-#~ "-e <command> <arg> ...\texecute command with ars - must be last argument\n"
-#~ "-display <name>\tspecify the display (server)\n"
-#~ "-vt_geometry <spec>\tthe initial vt window geometry\n"
-#~ "-print-pipe <name>\tspecify pipe for vt100 printer\n"
-#~ "-vt_bg <colour>\t\tbackground color\n"
-#~ "-vt_fg <colour>\t\tforeground color\n"
-#~ "-vt_font <fontname>\tnormal font\n"
-#~ "-vt_size <size>     \ttiny, small, normal, large, huge\n"
-#~ "-linux\t\t\tset up kvt to mimic linux-console\n"
-#~ "-no_menubar\t\thide the menubar\n"
-#~ "-no_scrollbar\t\thide the scrollbar\n"
-#~ "-T <text>\t\ttext in window titlebar \n"
-#~ "                   (Obsolete. Use -caption instead)\n"
-#~ "-tn <TERM>\t\tTerminal type. Default is xterm.\n"
-#~ "-C\t\t\tCapture system console message\n"
-#~ "-n <text>\t\tname in icon or icon window\n"
-#~ "-7\t\t        run in 7 bit mode\n"
-#~ "-8\t\t\trun in 8 bit mode\n"
-#~ "-ls\t\t\tinitiate kvt's shell as a login shell\n"
-#~ "-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
-#~ "-meta <arg>\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
-#~ "-sl <number>\t\tsave number lines in scroll-back buffer\n"
-#~ "-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
-#~ "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
-#~ msgstr ""
-#~ "Copyright(C) 1996, 1997 Matthias Ettrich\n"
-#~ "Copyright(C) 1997 M G Berberich\n"
-#~ "Terminálová emulácia pre KDE \n"
-#~ "zalo¾ené na rxvt-2.08 Roberta Nationa \n"
-#~ "\n"
-#~ "Povolené argumenty sú:\n"
-#~ "-e <command> <arg> ...\tvykonaj príkaz s parametrami <arg> \n"
-#~ "\t\t\t- musí by» posledný parameter\n"
-#~ "-display <name>\t\t¹pecifikuje obrazovku (server)\n"
-#~ "-vt_geometry <spec>\tpoèiatoèná geometria okna terminálu\n"
-#~ "-print-pipe <name>\t¹pecifikuje pipe pro vt100 tlaèiareò\n"
-#~ "-vt_bg <colour>\t\tfarba pozadia\n"
-#~ "-vt_fg <colour>\t\tfarba textu\n"
-#~ "-vt_font <fontname>\tnormálny font\n"
-#~ "-vt_size <size>     \ttiny, small, normal, large, huge\n"
-#~ "-linux\t\t\tnastaví kvt, aby imitoval linux konzolu\n"
-#~ "-no_menubar\t\tskryje menu\n"
-#~ "-no_scrollbar\t\tskryje posunovaciu li¹tu\n"
-#~ "-T <text>\t\ttext v titulku okna \n"
-#~ "                   \t(Zastaralé. Pou¾ívajte namiesto toho -caption)\n"
-#~ "-tn <TERM>\t\tTyp terminálu. ©tandardne jexterm.\n"
-#~ "-C\t\t\tZachytáva» správy systémovej konzoli\n"
-#~ "-n <text>\t\tmeno v ikone alebo okne ikony\n"
-#~ "-7\t\t        pracova» v 7 bitovom móde\n"
-#~ "-8\t\t\tpracova» v 8 bitovém móde\n"
-#~ "-ls\t\t\tinicializova» shell kvt ako login shell\n"
-#~ "-ls-\t\t\tneinicializova» shell kvt jako login shell (¹tandardne)\n"
-#~ "-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
-#~ "-sl <number>\t\tukladá <number> riadkov do vyrovnávacej pamäte pre\n"
-#~ "\t\t\tspätné posúvanie li¹ty\n"
-#~ "-pageup <keysym>\tpou¾íva» klávesovú skratku ALT-<keysym> k posúvaniu \n"
-#~ "\t\t\tli¹ty hore vyrovnávacou pamä»ou\n"
-#~ "-pagedown <keysym>\tpou¾íva» klávesovú skratku ALT-<keysym> k posúvaniu \n"
-#~ "\t\t\tli¹ty dole vyrovnávacou pamä»ou\n"
