@@ -439,12 +439,10 @@ KGreeter::load_wm()
      ::close(pipefd[0]);
 
      int wm = 0;
-     if (j)
-	  for (int i = 0; i < sessionargBox->count(); i++)
-	       if (strcmp(sessiontags.at(i), s) == 0) {
-		    wm = i;
-		    break;
-	       }
+     if (j) {
+	  wm = sessiontags.find(s);
+	  if (wm == -1) wm = 0;
+     }
      sessionargBox->setCurrentItem(wm);
 #endif /* HAVE_INITGROUPS */
 }
