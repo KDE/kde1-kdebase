@@ -3,6 +3,7 @@
 Name=File manager ( Super User Mode )
 Name[es]=Gestor de ficheros (en modo de administrador)
 Name[no]=Filstyring ( Superbrukermodus )
+Name[eo]=Dosieradministrilo (kiel administranto)
 Name[da]=Filstyring ( Superbruger Modus )
 Name[de]=Datei Manager ( Super User Modus )
 Name[pl]=Mened¿er plików ( Super User Mode )
@@ -26,6 +27,7 @@ Comment[da]=KDE filstyring og browser logget ind som superbruger
 Comment=The KDE file manager
 Comment[de]=Der KDE Datei Manager
 Comment[pl]=KDE Mened¿er plików
+Comment[eo]=Lanæas la dosieradministrilon Kfm kun radiko-rajtoj
 Comment[cs]=KDE Správce souborù
 Comment[sk]=KDE Správca súborov
 Comment[sv]=Filhanteraren för KDE

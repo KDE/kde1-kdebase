@@ -3,6 +3,7 @@
 Name=Refresh Desktop
 Name[de]=Desktop neuzeichnen
 Name[es]=Repintar escritorio
+Name[eo]=Refreþigu labortabulon
 Name[nl]=Buroblad verversen
 Name[no]=Oppdater skrivebord
 Name[da]=Opfrisk Arbejdsplads
@@ -27,6 +28,7 @@ Comment=Update desktop icons
 Comment[de]=Zeichnet alle Elemente auf dem Desktop neu
 Comment[no]=Oppdater ikonene på skrivebordet
 Comment[es]=Actualiza el área de trabajo
+Commant[eo]=Repentras æiujn fenestrojn de la labortabulo
 Comment[da]=Opdater ikonerne p\145 Arbejdspladsen
 Comment[nl]=Ververs alle pictogrammen op het buroblad
 Comment[pl]=Od¶wie¿ wszystkie ikony le¿±ce na desktopie.
