@@ -180,6 +180,7 @@ is invoked.
 
 Checking <em>Requires Password</em> will make the screen saver prompt you for
 a password before restoring the screen.
+(Either the user's or the root password can unlock the screen.)
 
 <p>
 

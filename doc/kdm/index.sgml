@@ -45,14 +45,34 @@ in the file called <tt/XSetup_0/ or similar in the xdm config directory
 (often <tt>/etc/X11/xdm/XSetup_0</tt>). Make sure the path is set,
 so that <tt/kdmdesktop/ can be executed.
 <p>
-If you chose the PAM option, then you should check
-/etc/pam.conf for the lines
+PAM (Pluggable Authentication Modules) is a powerful and flexible
+"plug-in" authentication system that comes with Solaris and RedHat Linux,
+and has been ported to other systems.  PAM will handle shadow
+passwords transparently.  If your system has PAM
+installed, you can enable PAM support in KDE 
+by compiling kdebase using ./configure --with-pam. 
+See the file kdebase/README.pam for more information.
+If you chose the PAM option,  you should check that the PAM service "xdm" 
+has been configured. This will either be through a file /etc/pam.d/xdm, or 
+by lines begining  with "xdm" in a file /etc/pam.conf.  A minimal 
+configuration in /etc/pam.conf is provided by lines
 <tscreen><verb>
 # xdm authorization
 xdm    auth       required     pam_unix_auth.so
-xdm    auth       required     pam_unix_acct.so
+xdm    account    required     pam_unix_acct.so
 </verb></tscreen>
-and insert them, if they aren't there.
+Besides "auth" and "account" entries, there may also be 
+"password" and "session" entries;  see your PAM documentation.
+While kdm uses the PAM service "xdm" by default, the name of
+the PAM service can be changed when kdebase is compiled: for example
+./configure --with-pam=kde will make kdm use a PAM service "kde".
+In this example, /etc/pam.d/kde must exist (it can be a symlink to 
+/etc/pam.d/xdm) or there must be valid "kde" entries in /etc/pam.conf.
+kdm logins and logouts will generate entries in the system log,
+identified by the name of the PAM service.
+Note that kscreensaver will use the same PAM service for the "auth"
+(password authentication) function, when unlocking the display;
+authentication failures are logged in the system log.
 <p>
 Now it's time to test kdm. You should bring your system to a runlevel
 that doesn't run xdm and try (as root) to say:
