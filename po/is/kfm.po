@@ -272,7 +272,7 @@ msgstr "Slóð:"
 
 #: kfmexec.cpp:59 kfmgui.cpp:748 kfmman.cpp:1387
 msgid "Malformed URL\n"
-msgstr "G-lluð slóð\n"
+msgstr "Gölluð slóð\n"
 
 #: kfmgui.cpp:934
 msgid "Select files:"
@@ -296,7 +296,7 @@ msgstr "&Setja bókamerki"
 
 #: kfmgui.cpp:1063 kfmman.cpp:1427 kfmtree.cpp:389 root.cpp:285
 msgid "&New"
-msgstr "&Búa til"
+msgstr "Hér &verði"
 
 #: kfmgui.cpp:1088
 msgid "&Up"
@@ -308,7 +308,7 @@ msgstr "&Aftur"
 
 #: kfmgui.cpp:1092
 msgid "&Forward"
-msgstr "&Framm"
+msgstr "&Áfram"
 
 #: kfmgui.cpp:1094
 msgid "&Home"
@@ -359,7 +359,8 @@ msgid ""
 "\n"
 "There is no way to restore them."
 msgstr ""
-"Viltu örugglega eyða völdu skránum?\n"
+"Viltu örugglega eyða skránum\n"
+"sem þú hefur valið?\n"
 "\n"
 "Það er engin leið að endurheimta þær."
 
@@ -442,7 +443,7 @@ msgstr "bæti"
 
 #: kbind.cpp:303
 msgid "The mime type config file "
-msgstr "MIME taga stilliskráin "
+msgstr "MIME-taga stilliskráin "
 
 #: kbind.cpp:304
 msgid "does not conatain a MimeType=... entry"
@@ -454,7 +455,7 @@ msgstr "Engin MIME tög eru inni"
 
 #: kbind.cpp:440 kbind.cpp:1208
 msgid "Could not find mime type\n"
-msgstr "MIME tag fannst ekki\n"
+msgstr "MIME-tag fannst ekki\n"
 
 #: kbind.cpp:710 kbind.cpp:720 kbind.cpp:1967 kbind.cpp:1968 kbind.cpp:1980
 #: kbind.cpp:1982
@@ -463,7 +464,7 @@ msgstr "Tengja inn í skráarkerfið"
 
 #: kbind.cpp:726 kbind.cpp:1958
 msgid "Unmount"
-msgstr "Tengja frá skráarkerfinu"
+msgstr "Aftengja skráarkerfinu"
 
 #: kbind.cpp:950 kbind.cpp:962 kbind.cpp:972 popup.cpp:45 popup.cpp:122
 msgid "Folder"
@@ -541,7 +542,7 @@ msgstr "VILLA: Engar skjáhermistillingar"
 
 #: kbind.cpp:1990
 msgid "No mount point in *.kdelnk file"
-msgstr "Í *.kdelnk skránni er enginn tengipunktu gefinn."
+msgstr "Í *.kdelnk skránni er enginn tengipunktur gefinn."
 
 # FIXME
 #: kbind.cpp:2030
@@ -622,7 +623,7 @@ msgstr "Skráarnafn"
 
 #: kfmprops.cpp:254
 msgid "Full Name"
-msgstr "Fullt Nafn"
+msgstr "Fullt nafn"
 
 #: kfmprops.cpp:271
 msgid "Is the Trash Bin"
@@ -655,7 +656,7 @@ msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
 msgstr ""
-"Ekki tókst að eyða möppunni\n"
+"Ekki tókst að breyta nafni möppunnar\n"
 "%s\n"
 
 #: kfmprops.cpp:429
@@ -691,8 +692,7 @@ msgid ""
 "Change\n"
 "Into"
 msgstr ""
-"Skipta\n"
-"inn í"
+"Skipta í"
 
 #: kfmprops.cpp:451
 msgid "Exec"
@@ -737,7 +737,7 @@ msgstr "Eigandi"
 #: kfmprops.cpp:638
 #, c-format
 msgid " ERROR: No user %s"
-msgstr " VILLA: %s er ekki notandi"
+msgstr " VILLA: notandi %s er ekki til"
 
 #: kfmprops.cpp:643
 #, c-format
@@ -835,11 +835,11 @@ msgstr "Nafn (á íslensku)"
 
 #: kfmprops.cpp:1767
 msgid "Pattern ( example: *.html;*.HTML; )"
-msgstr "Skráasía"
+msgstr "Skráasía ( dæmi: *.html;*.HTML; )"
 
 #: kfmprops.cpp:1779
 msgid "Mime Type"
-msgstr "MIME tag"
+msgstr "MIME-tag"
 
 #: kfmprops.cpp:1808
 msgid "Default Application"
@@ -1121,7 +1121,7 @@ msgid ""
 msgstr ""
 "Ekki tókst að stimpla inn á\n"
 "%s\n"
-"Hugsanlega var gefið pp rangt lykilorð"
+"Hugsanlega var gefið upp rangt lykilorð"
 
 #: kiojob.cpp:1241
 #, c-format
@@ -1189,7 +1189,7 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"Ekki tókst að tengja frá skráakerfinu\n"
+"Ekki tókst að aftengja skráakerfinu\n"
 "Villuboð:\n"
 "\n"
 "%s"
@@ -1225,7 +1225,7 @@ msgstr "Tengi %s inn í skráakerfið..."
 #: kiojob.cpp:1658
 #, c-format
 msgid "Unmounting %s ..."
-msgstr "Tengi %s frá skráakerfinu..."
+msgstr "Aftengi %s skráakerfinu..."
 
 #: kiojob.cpp:1686
 #, c-format
@@ -1322,7 +1322,7 @@ msgstr "Reyni að opna"
 
 #: open-with.cpp:132
 msgid "This group is empty!"
-msgstr "Þessi flokkur er tómur!"
+msgstr "Þessi hópur er tómur!"
 
 #: finddlg.cpp:41
 msgid "Find:"
@@ -1384,7 +1384,7 @@ msgstr ""
 
 #: popup.cpp:114 popup.cpp:121
 msgid "New "
-msgstr "Nýtt"
+msgstr "Hér verði "
 
 #: kfmprops.h:73
 msgid "&General"
