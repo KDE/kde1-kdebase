@@ -1604,14 +1604,17 @@ void Client::paintState(bool only_label, bool colors_have_changed){
 void Client::createGimmick(){
   if (gimmick)
     delete gimmick;
-  gimmick = new QLabel;
-  gimmick->resize(options.gimmickPixmap->size());
-  gimmick->setPixmap(*(options.gimmickPixmap));
-  if (options.gimmickPixmap->mask()){
-    XShapeCombineMask( qt_xdisplay(), gimmick->winId(), 
-		       ShapeBounding, 0, 0, 
-		       options.gimmickPixmap->mask()->handle(),
-		       ShapeSet);
+  gimmick = 0;
+  if (options.GimmickMode){
+    gimmick = new QLabel;
+    gimmick->resize(options.gimmickPixmap->size());
+    gimmick->setPixmap(*(options.gimmickPixmap));
+    if (options.gimmickPixmap->mask()){
+      XShapeCombineMask( qt_xdisplay(), gimmick->winId(), 
+			 ShapeBounding, 0, 0, 
+			 options.gimmickPixmap->mask()->handle(),
+			 ShapeSet);
+    }
   }
 }
 
