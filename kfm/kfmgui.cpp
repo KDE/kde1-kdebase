@@ -32,6 +32,7 @@
 #include "utils.h"
 #include "kkfmoptdlg.h"
 #include "kbookmarkdlg.h"
+#include "kfm.h"
 
 //-> was: #include "useragentdlg.h" => moved to kkfmoptdlg.h
 
@@ -383,6 +384,8 @@ void KfmGui::initMenu()
     mcache = new QPopupMenu;
     CHECK_PTR( mcache );
     mcache->setCheckable(true);
+    mcache->insertItem( klocale->translate( "Show History" ),
+			this, SLOT( slotShowHistory() ) );
     mcache->insertItem( klocale->translate( "Show Cache" ),
 			this, SLOT( slotShowCache() ) );
     mcache->insertItem( klocale->translate( "Clear Cache" ),
@@ -642,6 +645,17 @@ void KfmGui::slotShowCache()
     QString s;
     s.sprintf("file:%s/.kde/share/apps/kfm/cache/index.html", getenv( "HOME" ) );
     view->openURL( s );
+}
+
+void KfmGui::slotShowHistory()
+{
+  QString s;
+  s.sprintf("%s/.kde/share/apps/kfm/cache/history.html", getenv( "HOME" ) );
+  KFM::saveHTMLHistory( s );
+
+  QString tmp( "file:" );
+  tmp += s;
+  view->openURL( tmp );
 }
 
 void KfmGui::slotClearCache()

@@ -13,11 +13,13 @@
 #include <stdlib.h>
 #include <unistd.h> 
 
-KFM *KFM::pKfm = 0L;
+KFM* KFM::pKfm = 0L;
+QStrList* KFM::pHistory = 0L;
 
 KFM::KFM()
 {
     pKfm = this;
+    pHistory = new QStrList;
     
     kapp->setTopWidget( this );
 
@@ -108,6 +110,39 @@ void KFM::slotSave()
     config->sync();
 
     HTMLCache::save();
+}
+
+void KFM::addToHistory( const char *_url )
+{
+  if ( pHistory->find( _url ) != -1 )
+    return;
+  
+  if ( pHistory->count() == 100 )
+    pHistory->removeRef( pHistory->first() );
+  
+  pHistory->append( _url );
+}
+
+bool KFM::saveHTMLHistory( const char *_filename )
+{
+  FILE *f = fopen( _filename, "w" );
+  if ( f == 0L )
+  {
+    warning( "Could not write to %s\n",_filename );
+    return false;
+  }
+  
+  fprintf( f, "<HTML><HEAD><TITLE>History</TITLE></HEAD><BODY><H1>History</H1>\n" );
+  
+  const char *p;
+  for ( p = pHistory->first(); p != 0L; p = pHistory->next() )
+    fprintf( f, "<a href=\"%s\">%s</a><br>\n", p, p );
+  
+  fprintf( f, "</HTML></BODY>\n" );
+  
+  fclose( f );
+  
+  return true;
 }
 
 #include "kfm.moc"

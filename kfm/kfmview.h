@@ -17,6 +17,13 @@ class KfmView;
 #include "kfmgui.h"
 #include "htmlcache.h"
 
+struct HistoryEntry
+{
+  QString url;
+  int xOffset;
+  int yOffset;
+};
+
 #include "config-kfm.h"
 
 class KfmView : public KHTMLView
@@ -76,7 +83,7 @@ public:
      * Open the URL.
      * The function asks the @ref #manager to open the URL.
      */
-    virtual void openURL( const char *_url );
+    virtual void openURL( const char *_url, bool _refresh = false, int _xoffset = 0, int _yoffset = 0 );
 
     /**
      * Return the currently opened URL.
@@ -131,14 +138,21 @@ public:
     const QFont defaultFont( void ) { return QFont(DEFAULT_VIEW_FONT); } 
 
     bool isHistoryStackLocked() { return stackLock; }
+
+    /**
+     * Pushes '_url' on the stack. This function is called if the
+     * view displays a new URL and wants to store the old
+     * URL on the stack.
+     */
+    void pushURLToHistory();
     
-	/*
-	 * hack to get static classes up and running even with C++-Compilers/
-	 * Systems where a constructor of a class element declared static
+    /**
+     * hack to get static classes up and running even with C++-Compilers/
+     * Systems where a constructor of a class element declared static
      * would never get called (Aix, Alpha,...). In the next versions these
      * elements should disappear.
-	 */
-	static void InitStatic() { clipboard = new QStrList; }
+     */
+    static void InitStatic() { clipboard = new QStrList; }
 
 signals:
 
@@ -169,12 +183,6 @@ public slots:
      * Called for example from the toolbars "Back" button
      */
     void slotBack();
-    /**
-     * Pushes '_url' on the stack. This function is called if the
-     * view displays a new URL and wants to store the old
-     * URL on the stack.
-     */
-    void slotURLToStack( const char *_url );
     
     /**
      * Start an new terminal. Usually called from the menu.
@@ -357,6 +365,13 @@ protected slots:
     virtual void slotFormSubmitted( const char *_method, const char *_url );
     
 protected:
+    /**
+     * This function determines wether we already visited a certain URL.
+     * This in turn determines the color of the link.
+     * The function is implemented in @ref KHTMLView and overloaded here.
+     */
+    virtual bool URLVisited( const char *_url );
+
     KFMManager *manager;
     
     /**
@@ -379,11 +394,11 @@ protected:
     /**
      * Contains all URLs you can reach with the back button.
      */
-    QStack<QString>backStack;
+    QStack<HistoryEntry>backStack;
     /**
      * Contains all URLs you can reach with the forward button.
      */
-    QStack<QString>forwardStack;
+    QStack<HistoryEntry>forwardStack;
     /**
      * Lock @ref #backStack and @ref #forwardStack .
      */

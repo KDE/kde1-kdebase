@@ -1,3 +1,19 @@
+Sat Mar 21 17:18:13 1998  Torben Weis  <weis@localhost>
+
+	* kfmgui.cpp (slotShowHistory): KFM can display its history
+	  information using the HTML Widget.
+
+	* kfm.cpp (addToHistory): KFM remembers the history
+	  of all visited URLs.
+	  (saveHTMLHistory): KFM can now save its history
+	  to a HTML file.
+
+	* kfmview.cpp (URLVisited): KFM display visited URLs
+	  with another color now.
+
+	* KFM remebers the position of the scrollbars again.
+	  ( perhaps not everywhere ? )
+	
 Sat Mar 21 09:21:34 1998  Martin Jones  <mjones@kde.org>
 
 	* Added link overlay to icons.

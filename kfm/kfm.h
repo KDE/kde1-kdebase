@@ -3,6 +3,8 @@
 
 #include <qwidget.h>
 #include <qtimer.h>
+#include <qstrlist.h>
+
 #include <kiconloader.h>
 
 #define pkfm KFM::kfm()
@@ -16,7 +18,13 @@ public:
     
     KIconLoader *iconLoader() { return pIconLoader; }
     static KFM* kfm() { return pKfm; }
-    
+    static QStrList* history() { return pHistory; }
+    static void addToHistory( const char *_url );
+    /**
+     * @return false on error.
+     */
+    static bool saveHTMLHistory( const char *_filename );
+  
 public slots:
     void slotSave();
     void slotTouch();
@@ -26,6 +34,7 @@ protected:
     QTimer timer;
 
     static KFM *pKfm;
+    static QStrList *pHistory;
 };
 
 #endif

@@ -25,7 +25,7 @@ public:
     /**
      * Open a new URL.
      */
-    virtual bool openURL( const char *_url, bool _refresh = FALSE );
+    virtual bool openURL( const char *_url, bool _refresh = FALSE, int _x_offset = 0, int _y_offset = 0 );
     /**
      * The user pressed the right mouse button over _url at point _p.
      *
@@ -236,12 +236,26 @@ protected:
      */
     bool bBufferPage;
 
+    // A HACK
+    QString HTMLBuffer;
+
+    /**
+     * If we call @ref KHTMLWidget::begin next time, then we get the
+     * vertical offset from this variable. It is set by a call to
+     * @ref #openURL.
+     */
+    int nextYOffset;
+    /**
+     * If we call @ref KHTMLWidget::begin next time, then we get the
+     * horizontal offset from this variable. It is set by a call to
+     * @ref #openURL.
+     */
+    int nextXOffset;  
+
     QString text_color;
     QString link_color;
     QString bg_color;
     QString vlink_color;
-	// A HACK
-	QString HTMLBuffer;
 
     // link and readonly overlay images
     static QString *link_overlay;

@@ -32,6 +32,7 @@
 #include "kfmpaths.h"
 #include "config-kfm.h"
 #include "utils.h"
+#include "kfm.h"
 
 #include <klocale.h>
 #include <kstring.h>
@@ -642,19 +643,23 @@ const char * KfmView::getURL()
     return manager->getURL();
 }
 
-void KfmView::openURL( const char *_url )
+void KfmView::openURL( const char *_url, bool _refresh, int _xoffset, int _yoffset )
 {
     emit newURL( _url );
-    manager->openURL( _url );
+    manager->openURL( _url, _refresh, _xoffset, _yoffset );
 }
 
-void KfmView::slotURLToStack( const char *_url )
+void KfmView::pushURLToHistory()
 {
     if ( stackLock )
 	return;
     
-    QString *s = new QString( _url );
-    backStack.push( s );
+    HistoryEntry *h = new HistoryEntry;
+    h->url = getKHTMLWidget()->getDocumentURL().url();
+    h->xOffset = xOffset();
+    h->yOffset = yOffset();
+    
+    backStack.push( h );
     forwardStack.setAutoDelete( true );
     forwardStack.clear();
     forwardStack.setAutoDelete( false );
@@ -667,18 +672,20 @@ void KfmView::slotForward()
     if ( forwardStack.isEmpty() )
 	return;
 
-    QString *s2 = new QString( manager->getURL() );
-    s2->detach();
-    backStack.push( s2 );
-
-    QString *s = forwardStack.pop();
+    HistoryEntry *h = new HistoryEntry;
+    h->url = getKHTMLWidget()->getDocumentURL().url();
+    h->xOffset = xOffset();
+    h->yOffset = yOffset();
+    backStack.push( h );
+    
+    HistoryEntry *s = forwardStack.pop();
     if ( forwardStack.isEmpty() )
 	emit historyUpdate( true, false );
     else
 	emit historyUpdate( true, true );
     
     stackLock = true;
-    openURL( s->data() );
+    openURL( s->url, false, s->xOffset, s->yOffset );
     stackLock = false;
 
     delete s;
@@ -688,19 +695,21 @@ void KfmView::slotBack()
 {
     if ( backStack.isEmpty() )
 	return;
+
+    HistoryEntry *h = new HistoryEntry;
+    h->url = getKHTMLWidget()->getDocumentURL().url();
+    h->xOffset = xOffset();
+    h->yOffset = yOffset();
+    forwardStack.push( h );
     
-    QString *s2 = new QString( manager->getURL() );
-    s2->detach();
-    forwardStack.push( s2 );
-    
-    QString *s = backStack.pop();
+    HistoryEntry *s = backStack.pop();
     if ( backStack.isEmpty() )
 	emit historyUpdate( false, true );
     else
 	emit historyUpdate( true, true );    
 
     stackLock = true;
-    openURL( s->data() );
+    openURL( s->url, false, s->xOffset, s->yOffset );
     stackLock = false;
 
     delete s;
@@ -1251,6 +1260,15 @@ void KfmView::slotPopupMenu2( KHTMLView *, const char *_url, const QPoint &_poin
     list.append( _url );
     slotPopupMenu( list, _point );
   }
+}
+
+bool KfmView::URLVisited( const char *_url )
+{
+  QStrList *list = KFM::history();
+  if ( list->find( _url ) != -1 )
+    return true;
+  
+  return false;
 }
 
 #include "kfmview.moc"

@@ -293,6 +293,10 @@ public slots:
     void slotReloadTree();
     
     /**
+     * Cache "View->Show History"
+     */
+    void slotShowHistory();
+    /**
      * Cache "View->Show Cache"
      */
     void slotShowCache();
@@ -511,23 +515,6 @@ protected:
      * The widget that contains the HTML stuff and the ( optional ) scrollbars.
      */
     KfmView *view;
-
-    /**
-     * Contains all URLs you can reach with the back button.
-     */
-    QStack<QString>backStack;
-    /**
-     * Contains all URLs you can reach with the forward button.
-     */
-    QStack<QString>forwardStack;
-    /**
-     * Lock 'backStack' and 'forwardStack'.
-     * This is used by @ref #slotBack for example. When calling @ref #slotBack we dont
-     * like the history stacks to be manipulated. In slotBack we call @ref KfmView::openURL.
-     * This function in turn tries to tell us about the new URL but we dont want to modify
-     * the history stack.
-     */
-    bool stackLock;
 
     /**
      * The path where the templates are stored.

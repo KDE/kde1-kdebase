@@ -28,6 +28,7 @@
 #include "kfmdlg.h"
 #include "kfmexec.h"
 #include "utils.h"
+#include "kfm.h"
 
 // enable this to show a readonly indicator over the icon.
 //#define OVERLAY_READONLY
@@ -181,8 +182,15 @@ bool KFMManager::eventFilter( QObject *ob, QEvent *ev )
     return false;
 }
     
-bool KFMManager::openURL( const char *_url, bool _reload )
+bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yoffset )
 {
+    nextXOffset = _xoffset;
+    nextYOffset = _yoffset;
+
+    KFM::addToHistory( _url );
+    
+    printf("Scroll: %i %i\n",_xoffset,_yoffset );
+    
     // By Default we display everything at the moment we
     // get it => now buffering of HTML code
     bBufferPage = FALSE;
@@ -244,10 +252,10 @@ bool KFMManager::openURL( const char *_url, bool _reload )
 	    fclose( f );
 
 	    // Add old URL to history
-	    view->slotURLToStack( url.data() );
+	    view->pushURLToHistory();
 
 	    url = _url;
-	    view->begin( _url );	    
+	    view->begin( _url, nextXOffset, nextYOffset );
 	    view->write( page );
 	    view->parse();
 	    view->end();
@@ -460,14 +468,14 @@ void KFMManager::writeBeginning()
 {
     // Push the old URL on the stack if we are allowed to
     if ( !url.isEmpty() && !bHistoryStackLock )
-	view->slotURLToStack( url.data() );
+	view->pushURLToHistory();
     // The 'job->browse' command was successful. So lets
     // get the correct URL. This URL may vary from the URL
     // passed to 'openURL' in a trailing "/" for example.
     // Or we got a HTTP redirection or stuff like that.
     url = job->getURL();
     
-    view->begin( url.data() );
+    view->begin( url.data(), nextXOffset, nextYOffset );
     view->parse();
     view->write( "<html><head><title>" );
     view->write( url.data() );
@@ -713,7 +721,6 @@ void KFMManager::stop()
 
 void KFMManager::slotRedirection( const char *_url )
 {
-    printf("REDIRECTION!!!\n");
     url = _url;
     view->getGUI()->setToolbarURL( _url );
     // view->getGUI()->slotSetStatusBar( _text );
@@ -732,21 +739,20 @@ void KFMManager::slotMimeType( const char *_type )
     const char *aCharset=0;
     if (_type)
     {
-        printf("MimeType: %s\n",_type);
         typestr=new char[strlen(_type)+1];
         strcpy(typestr,_type);
 	aType=strtok(typestr," ;\t\n");
 	char *tmp;
-	while((tmp=strtok(0," ;\t\n"))){
-	    printf("token: %s\n",tmp);
-            if ( strncmp(tmp,"charset=",8)==0 ) aCharset=tmp+8;
+	while( ( tmp = strtok( 0, " ;\t\n" ) ) )
+	{
+	  if ( strncmp( tmp, "charset=", 8 ) == 0 )
+	    aCharset = tmp + 8;
 	}    
 	if ( aCharset != 0 )
 	{
-	    printf("charset: %s\n",aCharset);
-	    tmp=strpbrk(aCharset," ;\t\n");
-	    if ( tmp != 0 ) *tmp=0;
-	    printf("charset: %s\n",aCharset);
+	    tmp = strpbrk( aCharset, " ;\t\n" );
+	    if ( tmp != 0 )
+	      *tmp = 0;
 	}    
     }  
  
@@ -836,7 +842,7 @@ void KFMManager::slotMimeType( const char *_type )
     {
 	// Push the old URL on the stack if we are allowed to
 	if ( !url.isEmpty() && !bHistoryStackLock )
-	    view->slotURLToStack( url.data() );
+	    view->pushURLToHistory();
 	bHTML = TRUE;
 	// Clear the page buffer
 	pageBuffer = "";
@@ -856,8 +862,9 @@ void KFMManager::slotMimeType( const char *_type )
 	{
 	    bBufferPage = FALSE;
 	    // view->begin( u2 );
-	    view->begin( url );
-	    if ( aCharset != 0 ) view->setCharset(aCharset);
+	    view->begin( url, nextXOffset, nextYOffset );
+	    if ( aCharset != 0 )
+	      view->setCharset(aCharset);
 	    view->parse();
 	}
 	else
@@ -867,9 +874,8 @@ void KFMManager::slotMimeType( const char *_type )
 
 
 void KFMManager::setDefaultTextColors( const QColor& textc,const QColor& linkc,
-				    const QColor& vlinkc){
-
-printf("Setting default colors in KFMManger::setDefaultTextColors\n");
+				    const QColor& vlinkc)
+{
   text_color = text_color.sprintf("#%02x%02x%02x",
 				  textc.red(),textc.green(),textc.blue());
 
@@ -878,18 +884,12 @@ printf("Setting default colors in KFMManger::setDefaultTextColors\n");
 
   vlink_color = vlink_color.sprintf("#%02x%02x%02x",
 				 vlinkc.red(),vlinkc.green(),vlinkc.blue());
-
-printf("text %s link %s vlink %s \n",text_color.data(),link_color.data(),vlink_color.data());
-
 }
 
-void KFMManager::setDefaultBGColor( const QColor& bgcolor ){
-
-printf("Setting default colors in KFMManger::setDefaultBGColors\n");
+void KFMManager::setDefaultBGColor( const QColor& bgcolor )
+{
   bg_color = bg_color.sprintf("#%02x%02x%02x",
 			      bgcolor.red(),bgcolor.green(),bgcolor.blue());
-printf(" background %s \n",bg_color.data());
-
 }
 
 void KFMManager::slotFinished()
@@ -905,7 +905,7 @@ void KFMManager::slotFinished()
 	{
 	    // Display it now
 	    // QString u2 = u.directoryURL();
-	    view->begin( url );
+	    view->begin( url, nextXOffset, nextYOffset );
 	    view->write( pageBuffer );
 	    view->parse();
 	}
@@ -1269,7 +1269,6 @@ QString KFMManager::getVisualSchnauzerIconTag( const char *_url )
 		
 		if ( is_avail && !is_null )
 		{
-		    printf("******** XVPIC found for '%s'\n",_url );
 		    QString result;
 		    result.sprintf("<img border=0 src=\"file:%s\">", xvfile.data() );
 		    return result;
@@ -1283,14 +1282,12 @@ QString KFMManager::getVisualSchnauzerIconTag( const char *_url )
 	     strcmp( mime->getMimeType(), "image/gif" ) == 0 ||
 	     strcmp( mime->getMimeType(), "image/x-xpm" ) == 0 )
 	{
-	    printf("*********** TRYING for '%s'\n",_url );
 	    QString result;
 	    result.sprintf("<img border=0 src=\"icon:%s\">", u2.path() );
 	    return result;
 	}
     }
     
-    printf("************ DEFAULT for '%s'\n",_url);
     KMimeType *mime = KMimeType::getMagicMimeType( _url );
     QString result;
     result.sprintf("<img border=0 src=\"file:%s\">", mime->getPixmapFile( _url ) );
