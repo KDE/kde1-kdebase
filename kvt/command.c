@@ -54,6 +54,10 @@
 #define SVR4
 #endif
 
+/* SCO OpenServer needs _SVID3 defined to pick up the definition of TCGETS */
+#if defined (_SCO_DS)
+#define _SVID3 1
+#endif
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
