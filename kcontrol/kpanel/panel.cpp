@@ -99,7 +99,7 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
 					 style_group );
     style_buttons[2] = new QRadioButton( i18n("L&arge"), 
 					 style_group);
-    
+    connect(style_group, SIGNAL(clicked(int)), SLOT(style_clicked(int)));
     for (i = 0; i < 4; i++) {
 	style_buttons[i]->adjustSize();
 	if (w < style_buttons[i]->width())

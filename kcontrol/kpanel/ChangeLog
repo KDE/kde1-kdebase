@@ -1,5 +1,7 @@
 Thu Feb 12 00:12:11 1998  Stephan Kulow  <coolo@kde.org>
 
+	* panel.cpp: fixed a little bug
+
 	* Makefile.am: changed from klocale->translate to i18n
 
 	* options.cpp: made use of the dialog possible without mouse
