@@ -24,6 +24,8 @@ msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
+"X kooditiedostoa \"%s\" ei ole olemassa.\n"
+"Käytän X:n oletuskooditiedostoa."
 
 #: kikbd.cpp:307
 #, c-format
@@ -31,6 +33,8 @@ msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skiping this map."
 msgstr ""
+"Näppäinkarttaa \"%s\" ei ole olemassa.\n"
+"Ohitan tämän kartan."
 
 #: kikbd.cpp:324
 msgid "Setup"
@@ -75,27 +79,25 @@ msgid ""
 "You can preset X codes in \"Advanced\" section\n"
 "of configuration program."
 msgstr ""
+"En löydä symbolia \"%s\".\n"
+"Mahdollisesti oletus X koodisi eivät osu kohdalleen.\n"
+"Voit esiasettaa X koodeja \"Edistyneet\" osiosta\n"
+"asetusosiossa."
 
 #: keymap.cpp:228
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
-msgstr ""
-"KeyMap: en löydä symbolia \"%s\".\n"
-"Haluatko jatkaa?"
+msgstr "KeyMap: en löydä symbolia \"%s\"."
 
 #: keymap.cpp:236
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: do not undestand keycode \"%s\"."
-msgstr ""
-"KeyMap: en ymmärrä  näppäinkoodia \"%s\".\n"
-"Haluatko jatkaa?"
+msgstr "KeyMap: en ymmärrä  näppäinkoodia \"%s\"."
 
 #: keymap.cpp:242
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: keycode \"%s\" go out of range."
-msgstr ""
-"KeyMap: näppäinkoodi \"%s\" menee rajojen ulkopuolelle.\n"
-"Haluatko jatkaa?"
+msgstr "KeyMap: näppäinkoodi \"%s\" menee rajojen ulkopuolelle."
 
 #: kikbdconf.cpp:95
 msgid "Global"
@@ -174,16 +176,17 @@ msgid "Bottom Right"
 msgstr "Ala oikea"
 
 #: kikbdconf.cpp:147
-#, fuzzy
 msgid "X default codes"
-msgstr "oletus"
+msgstr "X oletuskoodit"
 
 #: kikbdconf.cpp:204
 #, c-format
 msgid ""
 "%s\n"
 "Do you want to start Configuration?"
-msgstr "Haluatko käynnistää Asetukset?"
+msgstr ""
+"%s\n"
+"Haluatko käynnistää asetusohjelman?"
 
 #: kikbdconf.cpp:212
 msgid "Your configuration is empty. Install system default."
@@ -279,14 +282,15 @@ msgstr "Kansainvälisen näppäimistön kysymys"
 
 #: kikbdconf.cpp:487
 msgid "Configure"
-msgstr ""
+msgstr "Asetukset"
 
 #: kikbdconf.cpp:497
-#, fuzzy
 msgid ""
 "\n"
 "Do you want to continue?"
-msgstr "Haluatko käynnistää Asetukset?"
+msgstr ""
+"\n"
+"Haluatko jatkaa?"
 
 #: widgets.cpp:107
 msgid "List of active keyboard maps"
@@ -422,7 +426,7 @@ msgstr "Tallenna yhteydet ikkunaluokkien ja näppäimistön välillä lopetettaessa"
 
 #: widgets.cpp:488
 msgid "Define X codes"
-msgstr ""
+msgstr "Määrittele X -koodeja"
 
 #: widgets.cpp:491
 msgid "Input"

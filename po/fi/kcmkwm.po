@@ -23,7 +23,6 @@ msgid "&Titlebar"
 msgstr "&Otsikko"
 
 #: main.cpp:70
-#, fuzzy
 msgid "Bo&rders"
 msgstr "&Reunukset"
 
@@ -32,9 +31,8 @@ msgid "&Mouse"
 msgstr "&Hiiri"
 
 #: main.cpp:79
-#, fuzzy
 msgid "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
-msgstr "käyttö: kcmkwm [-init | {windows,buttons,titlebar,borders,mouse}]\n"
+msgstr "käyttö: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
 
 #: main.cpp:114
 msgid "Window manager style"
@@ -101,25 +99,20 @@ msgid "Pixmap"
 msgstr "Kuva"
 
 #: titlebar.cpp:990
-#, fuzzy
 msgid "Active pixmap:"
-msgstr "&Aktiivinen kuva"
+msgstr "Aktiivinen kuva:"
 
 #: titlebar.cpp:995
-#, fuzzy
 msgid "Inactive pixmap:"
-msgstr "&Ei-aktiivinen kuva"
+msgstr "Ei-aktiivinen kuva:"
 
 #: titlebar.cpp:1005
 msgid "Mouse action"
 msgstr "Hiiren toiminta"
 
 #: titlebar.cpp:1013
-#, fuzzy
 msgid "Left Button double click does:"
-msgstr ""
-"Vasemman hiirinapin tuplapainallus\n"
-"    otsikkopalkkiin tekee:"
+msgstr "Vasemman hiirinapin tuplapainallus:"
 
 #: titlebar.cpp:1023
 msgid "(Un)Maximize"
@@ -138,7 +131,6 @@ msgid "(Un)Sticky"
 msgstr "Naulaa"
 
 #: titlebar.cpp:1046
-#, fuzzy
 msgid "Title animation"
 msgstr "Otsikon animaatio"
 
@@ -147,26 +139,24 @@ msgid "ms"
 msgstr "ms"
 
 #: windows.cpp:66
-#, fuzzy
 msgid "Windows"
-msgstr "&Ikkunat"
+msgstr "Ikkunat"
 
 #: windows.cpp:80
 msgid "Vertical maximization only by default"
-msgstr ""
+msgstr "Pystysuuntainen suurennus vain oletuksena"
 
 #: windows.cpp:85
 msgid "Display content in moving windows"
-msgstr ""
+msgstr "Näytä sisältö ikkunoita siirrettäessä"
 
 #: windows.cpp:90
 msgid "Display content in resizing windows"
-msgstr ""
+msgstr "Näytä sisältö ikkunan kokoa muutettaessa"
 
 #: windows.cpp:96
-#, fuzzy
 msgid "Resize animation:"
-msgstr "Otsikon animaatio"
+msgstr "Koonmuutosanimaatio"
 
 #: windows.cpp:109
 msgid "None"
@@ -206,9 +196,10 @@ msgid ""
 "  Allowed overlap:\n"
 "(% of desktop space)"
 msgstr ""
+"  Sallittu päälekkäisyys:\n"
+"(% työpöydän tilasta)"
 
 #: windows.cpp:170
-#, fuzzy
 msgid "Focus policy"
 msgstr "Kohdistustapa"
 
@@ -229,13 +220,12 @@ msgid "Classic sloppy focus"
 msgstr "Klassinen kohdista hiiren napilla"
 
 #: windows.cpp:197
-#, fuzzy
 msgid "Auto Raise"
-msgstr "Nosta"
+msgstr "Automaattinosta"
 
 #: windows.cpp:204
 msgid "Delay (ms)"
-msgstr ""
+msgstr "Viime (ms)"
 
 #: desktop.cpp:65
 msgid "Active desktop borders"
@@ -370,45 +360,3 @@ msgstr "Siirrä"
 msgid "Resize"
 msgstr "Muuta kokoa"
 
-#~ msgid "Titlebar appearance"
-#~ msgstr "Otsikon ulkonäkö"
-
-#~ msgid "Operations Menu"
-#~ msgstr "Toimintovalikko"
-
-#~ msgid "Window movement"
-#~ msgstr "Ikkunan liikutus"
-
-#~ msgid "Transparent"
-#~ msgstr "Läpinäkyvä"
-
-#~ msgid "Opaque"
-#~ msgstr "Läpikuultava"
-
-#~ msgid "Window resize"
-#~ msgstr "Ikkunan koonmuutos"
-
-#~ msgid "Animation:"
-#~ msgstr "Animaatio:"
-
-#~ msgid "Allowed Overlap:"
-#~ msgstr "Sallitty päällekkäisyys:"
-
-#~ msgid "Maximize Style"
-#~ msgstr "Suurennustyyli"
-
-#~ msgid "Maximize fully"
-#~ msgstr "Suurenna täysin"
-
-#~ msgid "Maximize vertically"
-#~ msgstr "Suurenna pystysuunnassa"
-
-#~ msgid ""
-#~ "Auto raise delay\n"
-#~ "(<100 disables)"
-#~ msgstr ""
-#~ "automaattinoston viive\n"
-#~ "(<100 poistaa)"
-
-#~ msgid "miliseconds"
-#~ msgstr "millisekuntia"

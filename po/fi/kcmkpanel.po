@@ -112,37 +112,35 @@ msgstr "Vi&ive:"
 
 #: options.cpp:50 options.cpp:68 options.cpp:86
 msgid "Small"
-msgstr ""
+msgstr "Pieni"
 
 #: options.cpp:51 options.cpp:69 options.cpp:87
-#, fuzzy
 msgid "Large"
-msgstr "&Suuri"
+msgstr "Suuri"
 
 #: options.cpp:62
 msgid "Visuals"
-msgstr ""
+msgstr "Efektit"
 
 #: options.cpp:64
 msgid "Auto &Hide Panel"
 msgstr "&Piilota automaattisesti paneeli"
 
 #: options.cpp:67 options.cpp:85
-#, fuzzy
 msgid "Delay:"
-msgstr "Vi&ive:"
+msgstr "Viive:"
 
 #: options.cpp:74 options.cpp:93
 msgid "Speed:"
-msgstr ""
+msgstr "Nopeus:"
 
 #: options.cpp:75 options.cpp:94 options.cpp:103
 msgid "Slow"
-msgstr ""
+msgstr "Hidas"
 
 #: options.cpp:76 options.cpp:95 options.cpp:104
 msgid "Fast"
-msgstr ""
+msgstr "Nopea"
 
 #: options.cpp:82
 msgid "Auto Hide &Taskbar"
@@ -150,11 +148,11 @@ msgstr "Piilota automaattisesti &työpalkki"
 
 #: options.cpp:100
 msgid "Animate Show/Hide"
-msgstr ""
+msgstr "Animoi näytä/piilota"
 
 #: options.cpp:102
 msgid "Speed"
-msgstr ""
+msgstr "Nopeus"
 
 #: options.cpp:117
 msgid "Others"
@@ -165,17 +163,16 @@ msgid "Personal &First"
 msgstr "Henkilökohtainen &ensin"
 
 #: options.cpp:120
-#, fuzzy
 msgid "F&olders First"
-msgstr "Henkilökohtainen &ensin"
+msgstr "K&ansiot ensin"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
-msgstr ""
+msgstr "&Kello näyttää ajan AM/PM muodossa"
 
 #: disknav.cpp:38
 msgid "History"
-msgstr ""
+msgstr "Historia"
 
 #: disknav.cpp:64
 msgid "Edit &Local..."

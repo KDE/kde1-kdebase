@@ -131,7 +131,7 @@ msgstr "Kirjasin..."
 
 #: main.C:674
 msgid "Enable &hotkeys"
-msgstr ""
+msgstr "Käytä &pikanäppäimiä"
 
 #: main.C:677
 msgid "Save &Options"

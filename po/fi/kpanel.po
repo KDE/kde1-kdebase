@@ -118,6 +118,8 @@ msgid ""
 "\n"
 "%b %d"
 msgstr ""
+"\n"
+"%b %d"
 
 #: events.C:819
 msgid "Cannot put this as button onto the panel!"
@@ -145,16 +147,16 @@ msgstr "Avaa kansio"
 
 #: pfilemenu.C:657
 msgid "Global:"
-msgstr ""
+msgstr "Yleiset:"
 
 #: pfilemenu.C:676
 msgid "Local:"
-msgstr ""
+msgstr "Paikalliset:"
 
 #: pfilemenu.C:694
 msgid "Recent:"
-msgstr ""
+msgstr "Viimeiset:"
 
 #: pfilemenu.C:740
 msgid "Options..."
-msgstr ""
+msgstr "Asetukset..."

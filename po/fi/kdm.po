@@ -55,7 +55,7 @@ msgstr "Sis‰‰nkirjoittautuminen ei ole mahdollista nyt."
 
 #: kgreeter.cpp:518
 msgid "login_getcapstr() failed."
-msgstr ""
+msgstr "login_getcapstr() ep‰onnistui."
 
 #: kgreeter.cpp:572 kgreeter.cpp:599
 msgid "Sorry -- your account has expired."

@@ -325,7 +325,7 @@ msgstr "&Piirrä työkalut Windows 95 tyylillä"
 
 #: general.cpp:242
 msgid "&Apply style to non-KDE apps"
-msgstr ""
+msgstr "&Käytä tyyliä muissa sovelluksissa"
 
 #: general.cpp:255
 msgid "Desktop fonts"

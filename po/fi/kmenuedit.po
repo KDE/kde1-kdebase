@@ -88,7 +88,7 @@ msgstr "! SUOJATTU Nappi !"
 
 #: confmenu.cpp:115
 msgid "New"
-msgstr ""
+msgstr "Uusi"
 
 #: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"
