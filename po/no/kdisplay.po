@@ -47,7 +47,7 @@ msgstr "Tapet"
 
 #: backgnd.cpp:275
 msgid "Ti&led"
-msgstr "Fli&selagt"
+msgstr "F&liselagt"
 
 #: backgnd.cpp:283
 msgid "&Centred"
@@ -135,7 +135,7 @@ msgstr "KDE standard"
 
 #: colorscm.cpp:145
 msgid "&Add ..."
-msgstr "&Legg til ..."
+msgstr "L&egg til ..."
 
 #: colorscm.cpp:162
 msgid "&Save changes"
@@ -390,7 +390,7 @@ msgstr "Valgt tekst"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
-msgstr "S&kriftbilde"
+msgstr "Sk&riftbilde"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
@@ -406,7 +406,7 @@ msgstr "&Størrelse"
 
 #: fontchooser.cpp:147
 msgid "&Character set"
-msgstr "&Tegnsett"
+msgstr "T&egnsett"
 
 #: fontchooser.cpp:262
 msgid "default"

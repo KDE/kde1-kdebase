@@ -107,7 +107,7 @@ msgstr "Andre"
 
 #: options.cpp:69
 msgid "Personal &First"
-msgstr "Personlig f&ørst"
+msgstr "P&ersonlig først"
 
 #: options.cpp:71
 msgid "Auto &Hide Panel"
