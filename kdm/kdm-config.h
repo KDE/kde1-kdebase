@@ -52,12 +52,28 @@
 */
 #undef SECURE_RPC
 
+#ifdef HAVE_PATHS_H
+#include <paths.h>
+#endif
+
 #ifdef HAVE_PAM
 # define USE_PAM 1
 #else
 # ifdef HAVE_SHADOW
 #  define USESHADOW 1
 # endif
+#endif
+
+#ifdef HAVE_SYSLOG_H
+ #define USE_SYSLOG
+#endif
+
+#ifndef _PATH_VARRUN
+#define _PATH_VARRUN "/var/run/"
+#endif
+
+#ifndef _PATH_MEM
+#define _PATH_MEM "/dev/mem"
 #endif
 
 #ifdef sun
