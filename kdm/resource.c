@@ -71,32 +71,34 @@ int	choiceTimeout;	/* chooser choice timeout */
  * if it is server-specific).  DO NOT CHANGE THESE DEFINITIONS!
  */
 #ifndef __EMX__
+#define Quote(s) #s
+#define QUOTE(s) Quote(s)
 #ifndef DEF_SERVER_LINE 
-#define DEF_SERVER_LINE ":0 local /usr/bin/X11/X :0"
+#define DEF_SERVER_LINE ":0 local " QUOTE(XBINDIR) "/X :0"
 #endif
 #ifndef XRDB_PROGRAM
-#define XRDB_PROGRAM "/usr/bin/X11/xrdb"
+#define XRDB_PROGRAM QUOTE(XBINDIR) "/xrdb"
 #endif
 #ifndef DEF_SESSION
-#define DEF_SESSION "/usr/bin/X11/xterm -ls"
+#define DEF_SESSION QUOTE(XBINDIR) "/xterm -ls"
 #endif
 #ifndef DEF_USER_PATH
-#define DEF_USER_PATH ":/bin:/usr/bin:/usr/bin/X11:/usr/ucb"
+#define DEF_USER_PATH "/bin:/usr/bin:" QUOTE(XBINDIR) ":/usr/local/bin:/usr/ucb"
 #endif
 #ifndef DEF_SYSTEM_PATH
-#define DEF_SYSTEM_PATH "/etc:/bin:/usr/bin:/usr/bin/X11:/usr/ucb"
+#define DEF_SYSTEM_PATH "/sbin:/usr/sbin:/bin:/usr/bin:" QUOTE(XBINDIR) ":/usr/local/bin:/etc:/usr/ucb"
 #endif
 #ifndef DEF_SYSTEM_SHELL
 #define DEF_SYSTEM_SHELL "/bin/sh"
 #endif
 #ifndef DEF_FAILSAFE_CLIENT
-#define DEF_FAILSAFE_CLIENT "/usr/bin/X11/xterm"
+#define DEF_FAILSAFE_CLIENT QUOTE(XBINDIR) "/xterm"
 #endif
 #ifndef DEF_XDM_CONFIG
-#define DEF_XDM_CONFIG "/usr/lib/X11/xdm/xdm-config"
+#define DEF_XDM_CONFIG XDMDIR "/xdm-config"
 #endif
 #ifndef DEF_CHOOSER
-#define DEF_CHOOSER "/usr/lib/X11/xdm/chooser"
+#define DEF_CHOOSER XDMDIR "/chooser"
 #endif
 #ifndef DEF_AUTH_NAME
 #ifdef HASXDMAUTH
@@ -106,7 +108,7 @@ int	choiceTimeout;	/* chooser choice timeout */
 #endif
 #endif
 #ifndef DEF_AUTH_DIR
-#define DEF_AUTH_DIR "/usr/lib/X11/xdm"
+#define DEF_AUTH_DIR XDMDIR
 #endif
 #ifndef DEF_USER_AUTH_DIR
 #define DEF_USER_AUTH_DIR	"/tmp"
@@ -121,7 +123,7 @@ int	choiceTimeout;	/* chooser choice timeout */
 #define DEF_RANDOM_FILE "/dev/mem"
 #endif
 #ifndef DEF_GREETER_LIB
-#define DEF_GREETER_LIB "/X11/lib/X11/xdm/libXdmGreet.so"
+#define DEF_GREETER_LIB ""
 #endif
 #else
 /* unfortunately I have to declare all of them, because there is a limit
