@@ -1283,7 +1283,7 @@ msgstr "&Collegamenti"
 
 #: kfmprops.h:385
 msgid "De&vice"
-msgstr "&Di&spositivo"
+msgstr "&Dispositivo"
 
 #: kfmexec/main.cpp:46
 #, c-format
