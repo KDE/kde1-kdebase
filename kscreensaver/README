@@ -1,30 +1,24 @@
 KDE Screen Saver
 ~~~~~~~~~~~~~~~~
-This is an alpha release of screen savers for KDE.  The timeout stuff is
-based on a very heavily modified xautolock.
-You should get kdisplay also.
-
+This is kscreensaver.. screen savers for KDE.  The timeout stuff is based
+on a very heavily modified xautolock.
 
 Features:
 
-Each screen saver is a stand-alone executable.
-Each screen saver has a setup dialog.
-Interfaces with kdisplay, so no manual setup of screen saver is necessary.
-Hotspots in corners of display to invoke saver/locker.
-Copy kscreensaver.h/cpp to your app and call kForceLock() to lock the
- screen any time.
-or just run klock
-
+* Each screen saver is a stand-alone executable.
+* Each screen saver has a setup dialog.
+* Interfaces with kdisplay, so no manual setup of screen saver is necessary.
+* Hotspots in corners of display to invoke saver/locker.
+* Copy kscreensaver.h/cpp to your app and call kForceLock() to lock the
+  screen any time.
+(or just run klock)
 
 Installation:
 
-You will require libkde-0.7.1 or higher
+You will require kdelibs from KDE Version 1.1 or newer
 
-1. Create a KDEDIR environment variable, e.g. /usr/local/kde
-2. Type make
-3. If you DO NOT have shadow passwords type: make install
-   If you   DO   have shadow passwords type: make install-shadow
-
+Since this is now part of kdebase, please check the top level directory
+(e.g. ../) for more information.
 
 Adding New Screensavers:
 
