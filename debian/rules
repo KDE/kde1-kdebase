@@ -4,9 +4,9 @@
 
 BUILDDIR = ../build_kdebase
 
-build: $(BUILDDIR)/build
+build: $(BUILDDIR)/build-stamp
 
-$(BUILDDIR)/build:
+$(BUILDDIR)/build-stamp:
 	dh_testdir
 	if test ! -f configure; then \
 	  $(MAKE) -f admin/Makefile.common ;\
@@ -47,7 +47,8 @@ binary-arch:	checkroot build
 
 binary-arch2:
 	dh_installdirs
-	make install prefix=`pwd`/debian/tmp/usr 
+	make prefix=`pwd`/debian/tmp/usr install
+	dh_movefiles
 	-mv debian/tmp/etc/kde/kdmrc \
 			debian/tmp/etc/kde/kdmrc.in
 	perl -w debian/kderules
@@ -69,7 +70,6 @@ binary-arch2:
 		debian/tmp/usr/X11R6/bin/kde debian/tmp/etc/menu-methods/kde 
 	rm -f debian/tmp/usr/X11R6/bin/startkde
 	ln -s kde debian/tmp/usr/X11R6/bin/startkde
-	dh_movefiles
 	dh_undocumented `cat debian/man-pages`
 	dh_installdocs
 	dh_installchangelogs

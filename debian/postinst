@@ -9,9 +9,10 @@ fi
 
 chmod +x /etc/menu-methods/kde
 
-if ! grep -q kde /etc/X11/window-managers 
+window_manager_entry='/usr/X11R6/bin/kde'
+if ! grep -q "^$window_manager_entry$" /etc/X11/window-managers 
 then
-	echo /usr/X11R6/bin/kde >>/etc/X11/window-managers 
+	echo $window_manager_entry >> /etc/X11/window-managers 
         echo "Installed kde in the window-manager list."
 fi
  
@@ -27,12 +28,6 @@ rm /etc/kde/kdmrc.tmp
 
 if test ! -L /var/spool/kdeapplnk; then
 	ln -s /usr/share/applnk/debian_menu /var/spool/kdeapplnk
-fi
-
-if test -L /usr/bin/kioslave
-then
-	echo "Removing /usr/bin/kioslave symlink ..."
-	rm /usr/bin/kioslave
 fi
 
 #DEBHELPER#
