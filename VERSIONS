@@ -1,6 +1,6 @@
-kwm: 0.5.0
-kpanel: 0.15
-kfm: 0.6.4
+kwm: 0.5.0 (patched from Matthias)
+kpanel: 0.15 (patched from Matthias)
+kfm: 0.6.4 (patched from Coolo)
 kwmclient: 0.2
 kdisplay: 0.5.3
 kdehelp: 0.4.11
@@ -11,11 +11,11 @@ kpat: 0.3 (patched a lot)
 kview: 0.10
 kpaint: 0.1
 kfind: 0.3
-kedit: 0.3
+kedit: 0.4.2 (kedit+)
 kcalc: 0.1
 kacli: 0.5
 kscreensaver: 0.3.3 (patched for QT-1.2)
-kvt: 0.14
+kvt: 0.14 (patched from Matthias)
 khexdit: 0.4.5
 klogout: 0.1
 kfontmanager: 0.2.1
