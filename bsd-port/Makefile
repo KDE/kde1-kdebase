@@ -13,7 +13,7 @@ MAINTAINER=	garbanzo@hooked.net
 BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt \
 		autoconf:${PORTSDIR}/devel/autoconf \
 		automake:${PORTSDIR}/devel/automake
-INSTALL_ROOT?=	${.CURDIR}/${PKGNAME}
+INSTALL_ROOT=	${.CURDIR}/${PKGNAME}
 LIB_DEPENDS=	qt\\.1\\.3[0-9]:${PORTSDIR}/x11/qt \
 		gif\\.[23]\\.:${PORTSDIR}/graphics/giflib \
 		jpeg\\.8\\.:${PORTSDIR}/graphics/jpeg \
@@ -35,30 +35,5 @@ CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
 		"--with-install-root=$(INSTALL_ROOT)" \
 		"--with-extra-includes=$(PREFIX)/include/giflib"
 
-CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
-		install_root=$(INSTALL_ROOT) \
-		INSTALL_SCRIPT="install -c -m 555"
-
-# Since there's nothing to fetch, we might as well use a dummy target
-do-fetch:
-		@true
-# This should clean the KDE target pretty well
-pre-clean:
-		cd $(WRKSRC);$(GMAKE) clean   
-
-# We need to go through Makefile.cvs before anything else.
-pre-configure:
-		cd $(WRKSRC);rm -f config.cache;$(GMAKE) -f Makefile.cvs
-		rm -f $(PLIST)
-
-make-plist:
-		cd ${INSTALL_ROOT} && \
-			find . -type f|sed 's,^\./,,'|sort > $(PLIST)
-		cd ${INSTALL_ROOT} && \
-			find . -type l|sed 's,^\./,,'|sort > $(PLIST)
-		@echo "@exec /sbin/ldconfig -m %B" >> $(PLIST)
-		cd ${INSTALL_ROOT} && \
-			find . -type d|sed 's,^\./,@dirrm ,'|sort > $(PLIST)
-		@echo "@unexec /sbin/ldconfig -R" >> $(PLIST)
-
+.include "kde-snapshot.mk"
 .include <bsd.port.mk>
