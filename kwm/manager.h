@@ -144,6 +144,9 @@ public:
 
   void raiseSoundEvent(const QString &);
 
+  // Electric Border Window management
+  void createBorderWindows();
+  void destroyBorderWindows();
 
 signals:
   void reConfigure();
@@ -180,7 +183,8 @@ private:
   void installColormap(Colormap cmap);
   void colormapFocus(Client *c);
   void getColormaps(Client *c);
-  
+
+
 
   void getWMNormalHints(Client *c);
   void getWindowProtocols(Client *c);
@@ -271,6 +275,7 @@ private:
   Window top_border;
   Window right_border;
   Window bottom_border;
+  bool have_border_windows;
 
   void raiseElectricBorders();
 };

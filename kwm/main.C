@@ -361,6 +361,9 @@ static void grabKey(KeySym keysym, unsigned int mod){
 
 
 MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc, argv, rAppName ){
+
+  manager = 0; // this is important -- Bernd
+
   int i;
   bool restore_session = true;
   for (i=1; i<argc; i++){
@@ -695,6 +698,15 @@ void MyApp::readConfiguration(){
     options.ElectricBorderMovePointer = true;
     config->writeEntry("ElectricBorderMovePointer", (int)options.ElectricBorder);
   }
+
+  if(options.ElectricBorder > -1){
+    if( manager)
+      manager->createBorderWindows();
+  }
+  else{
+    if( manager)
+      manager->destroyBorderWindows();
+  }    
 
 
   key = config->readEntry("ShapeMode");

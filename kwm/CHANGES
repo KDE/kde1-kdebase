@@ -11,7 +11,14 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
-  patchlevel 29:
+
+patchlevel 30:
+	-- Bernd: 
+	
+	Further improved Electric Borders. They can now be graphically configured
+	using a kcontrol module and also completely turned off.
+	
+patchlevel 29:
   
   	- Bernd:
   	ElectricBorders are great but difficult to use. Added option

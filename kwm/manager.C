@@ -47,6 +47,15 @@ extern void showMinicli();
 extern void showTask();
 
 Manager::Manager(): QObject(){
+
+  have_border_windows = false;
+  current_border = None;
+
+  top_border    = 0;
+  bottom_border = 0;
+  left_border   = 0;
+  right_border  = 0;
+
   manager = this;
   current_desktop = KWM::currentDesktop();
   number_of_desktops = KWM::numberOfDesktops();
@@ -151,8 +160,17 @@ Manager::Manager(): QObject(){
   delayed_focus_follow_mouse_client = NULL;
   enable_focus_follow_mouse_activation = false;
 
-  // electric borders
-  {
+  if (options.ElectricBorder > -1){
+    createBorderWindows();
+  }
+
+}
+
+void Manager::createBorderWindows(){
+
+  if( have_border_windows)
+    return;
+
     current_border = None;
 
     QRect r = QApplication::desktop()->rect();
@@ -205,10 +223,33 @@ Manager::Manager(): QObject(){
 				  CopyFromParent,
 				  valuemask, &attributes);             
     XMapWindow(qt_xdisplay(), right_border);
-  }
+
+    have_border_windows = true;
 }
 
 
+void Manager::destroyBorderWindows(){
+
+  if( !have_border_windows)
+    return;
+
+  if(top_border)
+    XDestroyWindow(qt_xdisplay(),top_border);
+  if(bottom_border)
+    XDestroyWindow(qt_xdisplay(),bottom_border);
+  if(left_border)
+    XDestroyWindow(qt_xdisplay(),left_border);
+  if(right_border)
+    XDestroyWindow(qt_xdisplay(),right_border);
+
+  top_border    = 0;
+  bottom_border = 0;
+  left_border   = 0;
+  right_border  = 0;
+  
+  have_border_windows = false;
+
+}
 
 void Manager::configureRequest(XConfigureRequestEvent *e){
 
@@ -802,25 +843,29 @@ void Manager::enterNotify(XCrossingEvent *e){
     }
   }
 
-  // electric borders
-  if (e->window == top_border ||
-      e->window == left_border ||
-      e->window == bottom_border ||
-      e->window == right_border){
-    if (options.ElectricBorder > -1){
-      QTimer::singleShot(options.ElectricBorder, 
+  if(have_border_windows){
+    if (e->window == top_border ||
+	e->window == left_border ||
+	e->window == bottom_border ||
+	e->window == right_border){
+      if (options.ElectricBorder > -1){
+	QTimer::singleShot(options.ElectricBorder, 
 			 this, SLOT(electricBorder()));
-      current_border = e->window;
+	current_border = e->window;
+      }
     }
   }
 }
 void Manager::leaveNotify(XCrossingEvent *e){
-  // electric borders
-  if (e->window == top_border ||
-      e->window == left_border ||
-      e->window == bottom_border ||
-      e->window == right_border){
-    current_border = None;
+
+
+  if(have_border_windows){
+    if (e->window == top_border ||
+	e->window == left_border ||
+	e->window == bottom_border ||
+	e->window == right_border){
+      current_border = None;
+    }
   }
 }
 
@@ -921,11 +966,13 @@ void Manager::electricBorder(){
 }
 
 void Manager::raiseElectricBorders(){
-  // electric borders
-  XRaiseWindow(qt_xdisplay(), top_border);
-  XRaiseWindow(qt_xdisplay(), left_border);
-  XRaiseWindow(qt_xdisplay(), bottom_border);
-  XRaiseWindow(qt_xdisplay(), right_border);
+
+  if(have_border_windows){
+    XRaiseWindow(qt_xdisplay(), top_border);
+    XRaiseWindow(qt_xdisplay(), left_border);
+    XRaiseWindow(qt_xdisplay(), bottom_border);
+    XRaiseWindow(qt_xdisplay(), right_border);
+  }
 }
 
 
