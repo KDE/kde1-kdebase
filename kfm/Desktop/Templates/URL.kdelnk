@@ -4,6 +4,7 @@ URL=
 Icon=unknown.xpm
 Type=Link
 Comment[de]=Internetadresse (URL)
+Comment[no]=Internettadresse (URL)
 Comment[fr]=Adresse Internet (URL)
 Comment[pt]=URL
 Comment[pt_BR]=URL

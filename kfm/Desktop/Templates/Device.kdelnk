@@ -9,6 +9,7 @@ FSType=Default
 Type=FSDevice
 Comment=File System Device
 Comment[de]=Dateisystem
+Comment[no]=Filsystemenhet
 Comment[pl]=Urz±dzenie
 Comment[es]=Dispositivo con sistema de ficheros 
 Comment[fi]=Tiedostosysteemi
