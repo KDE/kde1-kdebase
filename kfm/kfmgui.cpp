@@ -1521,192 +1521,6 @@ void KfmGui::slotConfigureBrowser()
    }
 }
 
-#if 0 // TEMPORARILY KEPT, FOR REFERENCE ONLY.     David
-{
-  //-> was:  UserAgentDialog dlg;
-  KKFMOptDlg dlg;
-  QStrList strlist( true );
-
-  // read entries from config file
-  KConfig* config = kapp->getConfig();
-  QString oldgroup = config->group();
-
-  // read entries for UserAgentDlg
-  config->setGroup( "Browser Settings/UserAgent" );
-  int entries = config->readNumEntry( "EntriesCount", 0 );
-  for( int i = 0; i < entries; i++ )
-	{
-	  QString key;
-	  key.sprintf( "Entry%d", i );
-	  strlist.append( config->readEntry( key, "" ) );
-	}
-  // if there was no entry at all, we set at least a default
-  if( entries == 0 )
-	strlist.append( "*:Konqueror/1.0" );
-
-  // transmit data to dialog
-  dlg.setUsrAgentData( &strlist );
-
-  // show the dialog
-  int ret = dlg.exec();
-  if( ret == QDialog::Accepted )
-	{
-	  // write back the entries from UserAgent
-          config->setGroup("Browser Settings/UserAgent");
-	  strlist = dlg.dataUsrAgent();
-	  if( strlist.count() )
-		{
-		  config->writeEntry( "EntriesCount", strlist.count() );
-		  for( uint i = 0; i < strlist.count(); i++ )
-			{
-			  QString key;
-			  key.sprintf( "Entry%d", i );
-			  config->writeEntry( key, strlist.at( i ) );
-			}
-		}
-	  else
-		{
-		  // everything deleted -> write at least the Konqueror entry
-		  config->writeEntry( "EntriesCount", 1 );
-		  config->writeEntry( "Entry1", "*:Konqueror/1.0" );
-		}
-
-	  // write back the entries from KProxyDlg
-          struct proxyoptions proxyopts;
-          
-	  dlg.proxyData( proxyopts );
-          config->setGroup("Browser Settings/Proxy");
-          config->writeEntry( "UseProxy", proxyopts.useProxy.data() );
-	  config->writeEntry( "HTTP-Proxy", proxyopts.http_proxy.data() );
-          config->writeEntry( "FTP-Proxy", proxyopts.ftp_proxy.data() );
-	  config->writeEntry( "NoProxyFor", proxyopts.no_proxy_for.data() );
-
-          struct httpoptions httpopts;
-          
-	  dlg.httpData( httpopts );
-          config->setGroup("Browser Settings/HTTP");
-          config->writeEntry( "AcceptLanguages", httpopts.languages.data() );
-	  config->writeEntry( "AcceptCharsets", httpopts.charsets.data() );
-          config->writeEntry( "AssumeHTML", httpopts.assumeHTML );
-
-	  struct coloroptions coloropts;
-	  struct fontoptions  fontopts;
-	  struct rootoptions  rootopts;
-
-	  dlg.fontData(fontopts);
-	  dlg.colorData(coloropts);
-	  dlg.miscData(rootopts);
-
-	  if(fontopts.changed){
-
-	    config->setGroup( "KFM HTML Defaults" );			
-	    config->writeEntry( "BaseFontSize", fontopts.fontsize );
-	    config->writeEntry( "StandardFont", fontopts.standardfont );
-	    config->writeEntry( "FixedFont", fontopts.fixedfont );
-	    config->writeEntry( "DefaultCharset", fontopts.charset );
-	  }
-
-
-	  if(coloropts.changed){
-
-	    config->setGroup( "KFM HTML Defaults" );			
-	    config->writeEntry( "BgColor", coloropts.bg );
-	    config->writeEntry( "TextColor", coloropts.text);
-	    config->writeEntry( "LinkColor", coloropts.link);
-	    config->writeEntry( "VLinkColor", coloropts.vlink);
-	    config->writeEntry( "ChangeCursor", coloropts.changeCursoroverLink);
-	    config->writeEntry( "UnderlineLinks", coloropts.underlineLinks);
-
-	  }
-
-
-	  if(rootopts.changed){
-	    config->setGroup( "KFM Misc Defaults" );			
-	    config->writeEntry( "GridWidth", rootopts.gridwidth);
-            config->writeEntry( "GridHeight", rootopts.gridheight);
-            config->writeEntry( "EnablePerURLProps", rootopts.urlprops);
-            config->writeEntry( "TreeFollowsView", rootopts.bTreeFollow);
-	    config->setGroup( "KFM Root Icons" );			
-	    config->writeEntry( "Style", rootopts.iconstyle);
-	    //CT 12Nov1998
-	    config->writeEntry( "Foreground", rootopts.icon_fg);
-	    config->writeEntry( "Background", rootopts.icon_bg);
-	    //CT
-	  }
-
-	  
-
-	  if(coloropts.changed || fontopts.changed){
-
-	    KfmGui *w;
-	    KHTMLWidget* htmlview;
-	    for ( w = windowList->first(); w != 0L; w = windowList->next() ){
-
-	      htmlview = view->getKHTMLWidget();
-	      //htmlview now points to the underlying lowl leve html widget.
-	      
-	      htmlview->setFixedFont( fontopts.fixedfont.data() );
-	      htmlview->setStandardFont( fontopts.standardfont.data() );
-	      htmlview->setDefaultFontBase( fontopts.fontsize );
-	      // default charset LK 17Nov98
-	      if( !fontopts.charset.isEmpty() )
-		  kapp->getCharsets()->setDefault( fontopts.charset );
-	      else
-		  kapp->getCharsets()->setDefault( klocale->charset() );
-
-	      // w->view points to the kfmview in w  the kfmgui
-	      w->view->setDefaultTextColors( 
-					     coloropts.text, 
-					     coloropts.link,
-					     coloropts.vlink 
-					     );
-
-	      w->view->setDefaultBGColor( coloropts.bg );
-			w->view->setUnderlineLinks( coloropts.underlineLinks );
-	      if(coloropts.changeCursoroverLink)
-		htmlview->setURLCursor( KCursor::handCursor() );
-	      else
-		htmlview->setURLCursor( KCursor::arrowCursor() );
-
-	      w->updateView();
-
-	      if(w->treeView){
-		w->treeView->setColors(coloropts.bg,coloropts.link);
-		w->treeView->repaint();
-	      }
-	      
-
-	    }
-
-	  }
-
-	  if(rootopts.changed){
-	    if ( KRootWidget::getKRootWidget() ){
-	      KRootWidget::getKRootWidget()->setRootGridParameters(
-								   rootopts.gridwidth ,
-								   rootopts.gridheight
-								   );
-              
-	      KRootWidget::getKRootWidget()->setRootIconStyle( rootopts.iconstyle );
-              KRootWidget::getKRootWidget()->setRootIconColors( rootopts.icon_fg, rootopts.icon_bg);
-              pkfm->setURLProps( rootopts.urlprops ); //sven
-              pkfm->setTreeViewFollowMode( rootopts.bTreeFollow );
-              KfmGui *w;
-              for ( w = windowList->first(); w != 0L; w = windowList->next() ) {
-                  w->moptions->setItemEnabled(w->moptions->idAt( 6 ), rootopts.urlprops);
-              }
-	    }
-
-	  }
-
-          config->sync(); // write all this to the file
-	}
-
-  // restore the group
-  config->setGroup( oldgroup );
-}
-#endif
-
 /** Static method, to read configuration and apply it to all kfmguis */
 void KfmGui::slotConfigure()
 {
@@ -1731,12 +1545,12 @@ void KfmGui::slotConfigure()
             w->treeView->repaint();
         }
     }
-    // -- Group KFM Root Icons -- (part of the Misc tab)
+    // -- Group KFM Root Icons -- (Desktop Icons tab)
     if ( KRootWidget::getKRootWidget() ){
         KRootWidget::getKRootWidget()->configure(config); // read and apply configuration
     }
 
-    // -- Group KFM Misc Defaults -- (rest of the Misc tab)
+    // -- Group KFM Misc Defaults -- (Misc tab)
     config->setGroup("KFM Misc Defaults");
     bool urlprops = config->readBoolEntry( "EnablePerURLProps", false );
     pkfm->setURLProps( urlprops );
@@ -1748,15 +1562,10 @@ void KfmGui::slotConfigure()
     }
 
     // -- Group Browser Settings/UserAgent -- (UserAgent tab)
-    // wasn't done after closing the config dialog.
-    // but will need to be done anyway
+    // Nothing to do. Next jobs launched will read the setting and use it.
 
     // -- Group Browser Settings/Proxy -- (Proxy tab)
-    // wasn't done after closing the config dialog.
-    // but will need to be done anyway
-
-    // -- Group Cache -- this is configureable from the menu, no need for anything here.
-
+    // Nothing to do. Next jobs launched will read the setting and use it.
 }
 
 void KfmGui::slotViewFrameSource()
