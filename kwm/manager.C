@@ -1948,6 +1948,7 @@ void Manager::manage(Window w, bool mapped){
   }
 
 
+  bool didPlacement = FALSE;
   if (mapped || c->trans != None
       ||c->size.flags & PPosition
       ||c->size.flags & USPosition
@@ -1957,6 +1958,7 @@ void Manager::manage(Window w, bool mapped){
   }
   else {
     doPlacement(c);
+    didPlacement = TRUE;
   }
 
   XSetWindowBorderWidth(qt_xdisplay(), c->window, 0);
@@ -2094,7 +2096,7 @@ void Manager::manage(Window w, bool mapped){
   if (!initting)
     XUngrabServer(qt_xdisplay());
 
-  if(options.Placement == MANUAL_PLACEMENT && !mapped
+  if(options.Placement == MANUAL_PLACEMENT && didPlacement 
      && c->isOnDesktop(manager->currentDesktop())
      && (c->trans == None)) {
     // ensure that the window is completely visible
