@@ -14,7 +14,6 @@
 #include <kwm.h>
 
 extern bool kwm_error;
-extern QList<Window> own_toplevel_windows;
 
 extern Manager* manager;
 
@@ -29,7 +28,7 @@ static char stipple_bits[] = {
   0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa};
 
 extern bool ignore_badwindow; // for the X error handler
-
+extern bool initting;
 
 Manager::Manager(): QObject(){
   manager = this;
@@ -125,27 +124,6 @@ Manager::Manager(): QObject(){
   }
 }
 
-
-void Manager::createNotify(XCreateWindowEvent *e){
-  if (e->parent== qt_xrootwin()){ 
-
-    // This sync is ABSOLUTELY necessary for a proper module registration
-    XSync(qt_xdisplay(), FALSE);
-
-    if (KWM::isKWMModule(e->window))
-      addModule(e->window);
-    if (!getClient(e->window)){
-      Window *wp;
-      for (wp = own_toplevel_windows.first(); 
-	   wp && *wp != e->window; 
-	   wp = own_toplevel_windows.next());
-      if (!wp){
-	XSelectInput(qt_xdisplay(), e->window, PropertyChangeMask);
-      }
-      
-    }
-  }
-}
 
 
 void Manager::configureRequest(XConfigureRequestEvent *e){
@@ -364,7 +342,13 @@ void Manager::clientMessage(XClientMessageEvent *  e){
     if (c && c->state == NormalState)
       activateClient(c);
   }
-
+  if (e->message_type == kwm_module){
+    Window w = (Window) e->data.l[0];
+    if (KWM::isKWMModule(w)) 
+      addModule(w);
+    else
+      removeModule(w);
+  }
 }
 
 void Manager::colormapNotify(XColormapEvent *e){
@@ -424,13 +408,6 @@ void Manager::propertyNotify(XPropertyEvent *e){
     return;
   }
   
-  if (a == kwm_module){
-    if (KWM::isKWMModule(e->window))
-      addModule(e->window);
-    else
-      removeModule(e->window);
-  }
-
   c = getClient(e->window);
   if (c == 0 || c->window != e->window)
     return;
@@ -588,7 +565,8 @@ void Manager::manage(Window w, bool mapped){
   XWMHints *hints;
   XWindowAttributes attr;
   
-  XGrabServer(qt_xdisplay()); // we want to be alone...
+  if (!initting)
+    XGrabServer(qt_xdisplay()); // we want to be alone...
   
   // create a client
   if (KWM::isDockWindow(w)){
@@ -810,8 +788,8 @@ void Manager::manage(Window w, bool mapped){
     else
       c->setactive(FALSE);
   }
- 
-  XUngrabServer(qt_xdisplay()); 
+  if (!initting)
+    XUngrabServer(qt_xdisplay()); 
   
 }
 
@@ -1142,7 +1120,6 @@ void Manager::scanWins(){
   XQueryTree(qt_xdisplay(), qt_xrootwin(), &dw1, &dw2, &wins, &nwins);
   for (i = 0; i < nwins; i++) {
     if (KWM::isKWMModule(wins[i])){
-      XSelectInput(qt_xdisplay(), wins[i], PropertyChangeMask);
       addModule(wins[i]);
     }
     XGetWindowAttributes(qt_xdisplay(), wins[i], &attr);
@@ -1816,6 +1793,7 @@ void Manager::removeModule(Window w){
     if (*mw == w){
       modules.remove();
       delete mw;
+      break;
     }
   }
   if (dock_module == w)

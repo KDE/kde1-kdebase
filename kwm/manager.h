@@ -40,8 +40,6 @@ public:
 
   // events
 
-  void createNotify(XCreateWindowEvent *e);
-
   void configureRequest(XConfigureRequestEvent *e);
   void mapRequest(XMapRequestEvent *e);
   void circulateRequest(XCirculateRequestEvent */* e */ ){};

@@ -12,6 +12,9 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 10:
+       - internal changes to module registration. (Needs the newest
+         libkdecore to work)
   patchlevel 9:
        - small fix for kwm modules
        - further qt-1.3 changes: with 1.3 the mouse sometimes hang
