@@ -34,7 +34,7 @@
 #define HAVE_BOOL 1
 
 /* Define if you have the socket function.  */
-/* #undef HAVE_SOCKET */
+#define HAVE_SOCKET 1
 
 /* Define if you have the <dirent.h> header file.  */
 #define HAVE_DIRENT_H 1
