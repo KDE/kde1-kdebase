@@ -1436,16 +1436,18 @@ void kPanel::load_and_set_some_fonts(){
 //   }
   
   if (config->hasKey("DateFont")){
-    QFont tmpfont;
-    tmpfont.setRawMode(true);
-    tmpfont.setFamily(config->readEntry("DateFont"));
+    //QFont tmpfont;
+    //tmpfont.setRawMode(true);
+    //tmpfont.setFamily(config->readEntry("DateFont"));
+	QFont tmpfont = config->readFontEntry( "DateFont" );
     label_date->setFont(tmpfont);
   }
   
   if (config->hasKey("DesktopButtonFont")){
-    QFont tmpfont;
-    tmpfont.setRawMode(true);
-    tmpfont.setFamily(config->readEntry("DesktopButtonFont"));
+    //QFont tmpfont;
+    //tmpfont.setRawMode(true);
+    //tmpfont.setFamily(config->readEntry("DesktopButtonFont"));
+	QFont tmpfont = config->readFontEntry( "DesktopButtonFont" );
     for (i=0; (tmp_button = desktopbar->find(i)); i++){
       tmp_button->setFont(tmpfont);
     }
