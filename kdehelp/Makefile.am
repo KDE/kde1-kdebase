@@ -17,11 +17,11 @@ DOCSDIR = $(prefix)/doc/HTML
 bin_PROGRAMS = kdehelp
 
 kdehelp_SOURCES =  main.cpp helpwin.cpp info.cpp error.cpp misc.cpp options.cpp\
-		man.cpp bookmark.cpp cgi.cpp mainwidget.cpp 
+		man.cpp bookmark.cpp cgi.cpp mainwidget.cpp history.cpp
 BUILTSOURCES = helpwin.moc options.moc bookmark.moc cgi.moc mainwidget.moc
 		
 noinst_HEADERS = helpwin.h info.h error.h misc.h man.h options.h\
-		bookmark.h dbnew.cpp cgi.h mainwidget.h 
+		bookmark.h dbnew.cpp cgi.h mainwidget.h history.h
 
 helpwin.cpp: helpwin.moc
 options.cpp: options.moc

@@ -106,6 +106,30 @@ void KLocationBar::slotReturnPressed()
 
 //-----------------------------------------------------------------------------
 
+KHistory *KHelpView::urlHistory = 0;
+
+KHelpView::KHelpView( QWidget *parent, const char *name )
+    : KHTMLWidget( parent, name )
+{
+    QString histFile = getenv( "HOME" );
+    histFile += "/.kdehelp/history";
+
+    if ( !urlHistory )
+	urlHistory = new KHistory( histFile );
+}
+
+KHelpView::~KHelpView()
+{
+    urlHistory->saveHistory();
+}
+
+bool KHelpView::URLVisited( const char *_url )
+{
+    return urlHistory->inHistory( _url );
+}
+
+//-----------------------------------------------------------------------------
+
 // statics
 QString KHelpWindow::newURL;
 KBookmarkManager KHelpWindow::bookmarkManager;
@@ -152,7 +176,7 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	QBitmap cm( hand_width, hand_height, hand_mask_bits, TRUE );
 	QCursor handCursor( cb, cm, 0, 0 );
 
-	view = new KHTMLWidget( this );
+	view = new KHelpView( this );
 	CHECK_PTR( view );
 	view->setDefaultFontBase( fontBase );
 	view->setStandardFont( standardFont );
@@ -212,6 +236,8 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	QString bmFile = p + "/.kdehelp/bookmarks.html";
 	bookmarkManager.read( bmFile );
 
+	QString histFile = p + "/.kdehelp/history";
+
 	setLocationBar(TRUE); // CC: LocationBar is on by default
 	layout();
 }
@@ -244,7 +270,7 @@ void KHelpWindow::readOptions()
 	bgColor = config->readColorEntry( "BgColor", &white );
 	textColor = config->readColorEntry( "TextColor", &black );
 	linkColor = config->readColorEntry( "LinkColor", &blue );
-	vLinkColor = config->readColorEntry( "VLinkColor", &magenta );
+	vLinkColor = config->readColorEntry( "VLinkColor", &darkMagenta );
 }
 
 
@@ -297,6 +323,7 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 				if ( history.Current() )
 					history.Current()->setOffset( viewPos );
 				history.Add( new KPageInfo( currentURL, 0 ) );
+				view->urlHistory->addURL( currentURL );
 			}
 			emit enableMenuItems();
             emit setURL( currentURL );
@@ -395,6 +422,7 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 				history.Current()->setOffset( viewPos );
 			}
 			history.Add( new KPageInfo( currentURL, 0 ) );
+			view->urlHistory->addURL( currentURL );
 		}
 		emit enableMenuItems();
 
@@ -1071,6 +1099,11 @@ void KHelpWindow::slotSearch()
 {
 	QString searchURL = DOCS_PATH + "/ksearch.html";
 	openURL( searchURL );
+}
+
+void KHelpWindow::slotReload()
+{
+    openURL( QUOTE + getPrefix() + format->GetLocation() + QUOTE, false );
 }
 
 

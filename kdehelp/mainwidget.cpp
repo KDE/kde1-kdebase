@@ -128,6 +128,7 @@ void KHelpMain::createMenu()
 	fileMenu->insertSeparator();
 	fileMenu->insertItem( klocale->translate("&Open File..."), helpwin, SLOT(slotOpenFile()) );
 	fileMenu->insertItem( klocale->translate("Open UR&L..."), helpwin, SLOT(slotOpenURL()) );
+	fileMenu->insertItem( klocale->translate("&Reload"), helpwin, SLOT(slotReload()) );
 	fileMenu->insertSeparator();
 	fileMenu->insertItem( klocale->translate("&Search"), helpwin, SLOT(slotSearch()) );
 	fileMenu->insertSeparator();
@@ -201,55 +202,60 @@ void KHelpMain::createToolbar()
 	pmpath = kapp->findFile( "lib/pics/toolbar/back.xpm" );
 	pixmap.load( pmpath );
 	tb->insertButton(pixmap, 0, SIGNAL( clicked() ),
-			    helpwin, SLOT( slotBack() ),
-			    FALSE, klocale->translate("Previous Document"));
+		    helpwin, SLOT( slotBack() ),
+		    FALSE, klocale->translate("Previous Document"));
 
 	pmpath = kapp->findFile( "lib/pics/toolbar/forward.xpm" );
 	pixmap.load( pmpath );
 	tb->insertButton(pixmap, 1, SIGNAL( clicked() ),
-			    helpwin, SLOT( slotForward() ),
-			    FALSE, klocale->translate("Next Document"));
+		    helpwin, SLOT( slotForward() ),
+		    FALSE, klocale->translate("Next Document"));
 
 	tb->insertSeparator();
 
 	pmpath = kapp->findFile( "lib/pics/toolbar/prev.xpm" );
 	pixmap.load( pmpath );
 	tb->insertButton(pixmap, 2, SIGNAL( clicked() ),
-			    helpwin, SLOT( slotPrev() ),
-			    FALSE, klocale->translate("Previous Node"));
+		    helpwin, SLOT( slotPrev() ),
+		    FALSE, klocale->translate("Previous Node"));
 
 	pmpath = kapp->findFile( "lib/pics/toolbar/next.xpm" );
 	pixmap.load( pmpath );
 	tb->insertButton(pixmap, 3, SIGNAL( clicked() ),
-			    helpwin, SLOT( slotNext() ),
-			    FALSE, klocale->translate("Next Node"));
+		    helpwin, SLOT( slotNext() ),
+		    FALSE, klocale->translate("Next Node"));
 
 	pmpath = kapp->findFile( "lib/pics/toolbar/up.xpm" );
 	pixmap.load( pmpath );
 	tb->insertButton(pixmap, 4, SIGNAL( clicked() ),
-			    helpwin, SLOT( slotUp() ),
-			    FALSE,klocale->translate( "Up one Node"));
+		    helpwin, SLOT( slotUp() ),
+		    FALSE,klocale->translate( "Up one Node"));
 
 	pmpath = kapp->findFile( "lib/pics/toolbar/top.xpm" );
 	pixmap.load( pmpath );
 	tb->insertButton(pixmap, 5, SIGNAL( clicked() ),
-			    helpwin, SLOT( slotTop() ),
-			    FALSE, klocale->translate("Top Node"));
+		    helpwin, SLOT( slotTop() ),
+		    FALSE, klocale->translate("Top Node"));
 
 	tb->insertSeparator();
 
 	pmpath = kapp->findFile( "lib/pics/toolbar/contents.xpm" );
 	pixmap.load( pmpath );
 	tb->insertButton(pixmap, 6, SIGNAL( clicked() ),
-			    helpwin, SLOT( slotDir() ),
-			    FALSE, klocale->translate("Help Contents"));
+		    helpwin, SLOT( slotDir() ),
+		    FALSE, klocale->translate("Help Contents"));
 
 	pmpath = kapp->findFile( "lib/pics/stop.xpm" );
 	pixmap.load( pmpath );
 	tb->insertButton(pixmap, 7, SIGNAL( clicked() ),
-			    helpwin, SLOT( slotStopProcessing() ),
-			    FALSE, klocale->translate("Stop"));
+		    helpwin, SLOT( slotStopProcessing() ),
+		    FALSE, klocale->translate("Stop"));
 
+	pmpath = kapp->findFile( "lib/pics/toolbar/reload.xpm" );
+	pixmap.load( pmpath );
+	tb->insertButton(pixmap, 8, SIGNAL( clicked() ),
+		helpwin, SLOT( slotReload() ),
+		TRUE, "Reload current document");
 
 	tb->setBarPos( KToolBar::Top );
 	toolbar = tb;

@@ -27,6 +27,7 @@
 #include "info.h"
 #include "man.h"
 #include "options.h"
+#include "history.h"
 
 // accelerator IDs
 #define NEW				100
@@ -105,6 +106,20 @@ private:
 
 //-----------------------------------------------------------------------------
 
+class KHelpView : public KHTMLWidget
+{
+public:
+    KHelpView( QWidget *parent = 0L, const char *name = 0L );
+    virtual ~KHelpView();
+
+    static KHistory *urlHistory;
+
+protected:
+    virtual bool URLVisited( const char *_url );
+};
+
+//-----------------------------------------------------------------------------
+
 class KHelpWindow : public QWidget
 {
 	Q_OBJECT
@@ -138,6 +153,7 @@ public slots:
 	void	slotOpenFile();
 	void	slotOpenURL();
 	void	slotSearch();
+	void	slotReload();
 	void	slotPrint();
 
 	void	slotCopy();
@@ -209,7 +225,7 @@ private:
 	KLocationBar *locationBar;
 	QPopupMenu *rmbPopup;
 	QAccel *accel;
-	KHTMLWidget *view;
+	KHelpView *view;
 	KDNDDropZone *dropZone;
 	KOpenURLDialog *openURLDialog;
 

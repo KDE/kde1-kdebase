@@ -1,6 +1,13 @@
 KDE Help System CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+Version 0.5
+-----------
+
+Reload option from Andre Fornacon <Andre.Fornacon@tesis.de>
+Maintain a history of sites visited so that visited links are rendered with
+the vlink color.
+
 Version 0.4.19
 --------------
 
