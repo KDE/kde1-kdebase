@@ -957,7 +957,6 @@ void ExecPropsPage::applyChanges()
     config.writeEntry( "Exec", execEdit->text() );
     config.writeEntry( "Path", pathEdit->text() );
     config.writeEntry( "Icon", iconBox->icon() );
-    config.writeEntry( "MiniIcon", iconBox->icon() );
     config.writeEntry( "SwallowExec", swallowExecEdit->text() );
     config.writeEntry( "SwallowTitle", swallowTitleEdit->text() );
 
@@ -1228,11 +1227,12 @@ void DirPropsPage::applyChanges()
     QString str( KMimeType::getMagicMimeType( properties->getKURL()->url() )->getPixmapFile() );
     KURL u( str );
     QString str2 = u.filename();
-    // Is it still the default ?
-    if ( str2 == iconBox->icon() )
-	config.writeEntry( "Icon", "" );
-    else
-	config.writeEntry( "Icon", iconBox->icon()  );
+    QString sIcon;
+    // Is it another one than the default ?
+    if ( str2 != iconBox->icon() )
+        sIcon = iconBox->icon();
+    config.writeEntry( "Icon", sIcon );
+    config.writeEntry( "MiniIcon", sIcon );
     
     config.sync();
 
