@@ -8,6 +8,8 @@
 #include "gzip.h"
 #include "icon.h"
 #include "ftp_proxy.h"
+#include <ksimpleconfig.h>
+#include <kapp.h>
 
 extern int revmatch(const char *host, const char *nplist);
 
@@ -55,23 +57,40 @@ const char *TopLevelURL(const char *url)
 
 KProtocol *CreateProtocol(const char *url)
 {
+    QString noPrxFor;
+    QString prxStr;
+    bool do_proxy;
+    
     KURL u( url );
     if ( u.isMalformed() )
 	return NULL;
 
-    bool do_proxy = false;
-    QString ftp_proxy = getenv("ftp_proxy");
-    if ( ftp_proxy.isEmpty() )
-	ftp_proxy = getenv("FTP_PROXY");
-    if ( !ftp_proxy.isEmpty() )
-	do_proxy = true;
+    do_proxy = false;
+    KSimpleConfig prxcnf(KApplication::localconfigdir() + "/kfmrc");
+    prxcnf.setGroup("Browser Settings/Proxy");
+    noPrxFor = prxcnf.readEntry("NoProxyFor");
+    prxStr = prxcnf.readEntry("FTP-Proxy");
+    if( ! prxStr.isEmpty() ) { // Do we need proxy?
+        do_proxy = true;
+    }
+
+//    bool do_proxy = false;
+//    QString ftp_proxy = getenv("ftp_proxy");
+//    if ( ftp_proxy.isEmpty() )
+//	ftp_proxy = getenv("FTP_PROXY");
+//    if ( !ftp_proxy.isEmpty() )
+//	do_proxy = true;
     
     QString lasturl( u.nestedURL() );
 
-    char *no_proxy = getenv("no_proxy");
-    if ( no_proxy != 0L && do_proxy )
-    {
-	do_proxy = !revmatch( u.host(), no_proxy );
+//    char *no_proxy = getenv("no_proxy");
+//    if ( no_proxy != 0L && do_proxy )
+//    {
+//	do_proxy = !revmatch( u.host(), no_proxy );
+//    }
+
+    if( ! noPrxFor.isEmpty() ) {
+        do_proxy = !revmatch( u.host(), noPrxFor.data() );
     }
 
     // A Hack. Does allow only one subprotocol.

@@ -1,4 +1,6 @@
 // File: ftp_proxy.cpp by Martin Zumkley (uc2n@rzstud1.rz.uni-karlsruhe.de)
+//
+// additions to work with KFM Proxy Manager by Lars Hoss ( Lars.Hoss@munich.netsurf.de )
 
 #include "ftp_proxy.h"
 #include <stdio.h>
@@ -7,8 +9,8 @@
 #include <unistd.h>
 #include "kio_errors.h"
 #include <qmsgbox.h>
-
-
+#include <ksimpleconfig.h>
+#include <kapp.h>
 
 extern char * base64_encode_line(const char*);
 extern char *create_www_auth(const char*, const char*);
@@ -16,7 +18,34 @@ extern int revmatch(const char*, const char*);
 
 /*****************************************************************************/
 
-KProtocolProxyFTP::KProtocolProxyFTP () {}
+KProtocolProxyFTP::KProtocolProxyFTP () {
+
+    use_proxy = 0;
+    int port = 80;
+
+    QString proxyStr;
+    QString tmp;
+    KURL proxyURL;
+    
+    printf("Huhu!\n");
+    // All right. Now read the proxy settings
+    KSimpleConfig prxcnf(KApplication::localconfigdir() + "/kfmrc");
+    prxcnf.setGroup("Browser Settings/Proxy");
+
+    noProxyForStr = prxcnf.readEntry("NoProxyFor");
+    
+    tmp = prxcnf.readEntry( "UseProxy" );
+    if ( tmp == "Yes" ) { // Do we need proxy?
+        proxyStr = prxcnf.readEntry( "FTP-Proxy" );
+        proxyURL = proxyStr.data();
+        printf( "Using ftp proxy %s on port %d\n", proxyURL.host(), proxyURL.port() );
+        port = proxyURL.port();
+	if ( port == 0 )
+	    port = 80;
+	init_sockaddr(&proxy_name, proxyURL.host(), port);
+	use_proxy = 1;
+    }
+}
 
 KProtocolProxyFTP::~KProtocolProxyFTP() {}
 
@@ -64,7 +93,7 @@ int KProtocolProxyFTP::Open(KURL *_url, int mode)
     currentMode = mode;
     
 	if(mode != READ) return(Error(KIO_ERROR_NotImplemented,
-					              "FTP Proxy currently only supports reading",0));
+				              "FTP Proxy currently only supports reading",0));
 	if (connected) Close();
 
 	sock = ::socket(PF_INET,SOCK_STREAM,0);
@@ -78,9 +107,15 @@ int KProtocolProxyFTP::Open(KURL *_url, int mode)
 	int do_proxy = use_proxy;
 	if (do_proxy)
 	{
-            char *p;
-	    if ( ( p = getenv("no_proxy") ) ) {
-	         do_proxy = !revmatch(_url->host(), p);
+//            char *p;
+//	    if ( ( p = getenv("no_proxy") ) ) {
+//	         do_proxy = !revmatch(_url->host(), p);
+//	    }
+       	    if ( ! noProxyForStr.isEmpty() ) 
+	    {
+                printf( "host: %s\n", _url->host() );
+		printf( "nplist: %s\n", noProxyForStr.data() );
+	        do_proxy = !revmatch( _url->host(), noProxyForStr.data() );    
 	    }
 	}
 

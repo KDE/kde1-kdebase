@@ -7,6 +7,7 @@
 #include <qlabel.h>
 #include <qlined.h>
 #include <qpushbt.h>
+#include <qchkbox.h>
 
 class KProxyDlg : public QWidget
 {
@@ -19,6 +20,8 @@ Q_OBJECT
     QStrList data() const;
      
   private:
+    bool useProxy;
+    
     // a little information for the user
     QLabel *lb_info;
     
@@ -37,6 +40,17 @@ Q_OBJECT
     // "no proxy for" fields
     QLabel *lb_no_prx;
     QLineEdit *le_no_prx;
+
+    // copy down butto
+    QPushButton *cp_down;
+    // use proxy checker
+    QCheckBox *cb_useProxy;
+
+    void setProxy();
+    
+  public slots:
+    void copyDown();		// use the http setting for all services
+    void changeProxy();
 };
 
 #endif // __KPROXYDLG_H

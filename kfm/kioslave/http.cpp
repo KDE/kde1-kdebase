@@ -1,3 +1,5 @@
+// Additions to work with KFM Proxy Manager by Lars Hoss ( Lars.Hoss@munich.netsurf.de )
+
 #include "http.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -85,45 +87,38 @@ KProtocolHTTP::KProtocolHTTP()
     use_proxy = 0;
     
 
-    char *proxy = 0L;
     int port = 80;
 
-    QString prxport;
-    QString prxurl;
+    QString proxyStr;
+    QString tmp;
+    KURL proxyURL;
     
     // All right. Now read the proxy settings
     KSimpleConfig prxcnf(KApplication::localconfigdir() + "/kfmrc");
     prxcnf.setGroup("Browser Settings/Proxy");
 
-    prxurl = prxcnf.readEntry("HTTP-URL");
-    if ( ! prxurl.isEmpty() ) {	// Do we need proxy?
-        // Ok, now build the url
-        prxport = prxcnf.readEntry("HTTP-Port");
-        QString tmp("http://");
-        tmp += prxurl;
-        tmp += ":";
-        tmp += prxport;
-        printf("Using proxy: %s\n", tmp.data());
-
-	KURL u( tmp );
-	if ( u.isMalformed() )
-	{
-	    QMessageBox::message( "KFM Error", "HTTP Proxy URL malformed\nProxy disabled." );
-	    return;
-	}
-//	proxy = u.host();
-//	port = u.port();
-	proxy = prxurl.data();
-	port = prxport.toInt();
+    noProxyForStr = prxcnf.readEntry("NoProxyFor");
+    
+    tmp = prxcnf.readEntry( "UseProxy" );
+    if ( tmp == "Yes" ) { // Do we need proxy?
+        proxyStr = prxcnf.readEntry( "HTTP-Proxy" );
+        proxyURL = proxyStr.data();
+        printf( "Using proxy %s on port %d\n", proxyURL.host(), proxyURL.port() );
+        port = proxyURL.port();
 	if ( port == 0 )
 	    port = 80;
+	init_sockaddr(&proxy_name, proxyURL.host(), port);
+	use_proxy = 1;
 	
-	if(proxy)
-	{
-		init_sockaddr(&proxy_name, proxy, port);
-		printf("Using proxy\n");
-		use_proxy = 1;
-	}
+//	if(proxy)
+//	{
+//		init_sockaddr(&proxy_name, httpURL.host(), port);
+//		printf("Using proxy\n");
+//		use_proxy = 1;
+//	}
+//    } else {
+//        QMessageBox::message( "KFM Error", "HTTP Proxy URL malformed\nProxy disabled." );
+//	return;
     }
 }
 
@@ -198,39 +193,90 @@ long KProtocolHTTP::Read(void *buffer, long len)
 
 int KProtocolHTTP::init_sockaddr(struct sockaddr_in *server_name, char *hostname, int port)
 {
+ 	printf("host: %s\n", hostname);
+	
 	struct hostent *hostinfo;
 	server_name->sin_family = AF_INET;
 	server_name->sin_port = htons( port );
 
 	hostinfo = gethostbyname( hostname );
 
-	if ( hostinfo == 0L ) return(FAIL);
+	if ( hostinfo == 0L ) {
+	    printf( "init_sockaddr: failed!\n");
+	    return(FAIL);
+	}
 	server_name->sin_addr = *(struct in_addr*) hostinfo->h_addr;
 	return(SUCCESS);
 }
 
 /* Domain suffix match. E.g. return 1 if host is "cuzco.inka.de" and
    nplist is "inka.de,hadiko.de" */
+//int revmatch(const char *host, const char *nplist)
+//{
+//        const char *p;
+//        const char *q = nplist + qstrlen(nplist);  
+//        const char *r = host + qstrlen(host) - 1;
+
+//        printf( "q: %s\n", q );
+//        printf( "r: %s\n", r );
+
+//	p = r;
+//	while (--q>=nplist) {
+//	  printf("q is: %s\n", q);
+//	  printf("p is: %s\n", p);
+//	  if (*q!=*p || p<host) { // <- BUG! was --p
+//	    printf("Mismatch!\n");
+//	    p=r;
+//	    while (--q>=nplist && *q!=',' && *q!=' ')
+//	      ;
+//	  } else {
+//	    printf("Got match for q is: %s\n", q);
+//	    printf( "q: %d nplist: %d\n", q, nplist );
+//	    if ((q==nplist || q[-1]==',' || q[-1]==' ') &&
+//		(p<host || *p=='.'))
+//	      return 1;
+//	  }
+//	  p--; // added by me
+//	}
+//	return 0;
+//}
+
+/* Domain suffix match. E.g. return 1 if host is "cuzco.inka.de" and
+   nplist is "inka.de,hadiko.de" or if host is "localhost" and
+   nplist is "localhost" */
+   
 int revmatch(const char *host, const char *nplist)
 {
-        const char *p;
-        const char *q = nplist + qstrlen(nplist);
-        const char *r = host + qstrlen(host) - 1;
-
-	p = r;
-	while (--q>=nplist) {
-	  if (*q!=*p || --p<host) {
-	    p=r;
-	    while (--q>=nplist && *q!=',' && *q!=' ')
-	      ;
-	  } else {
-	    if ((q==nplist || q[-1]==',' || q[-1]==' ') &&
-		(p<host || *p=='.'))
-	      return 1;
-	  }
-	}
-	return 0;
+    const char *hptr = host + qstrlen(host) - 1;
+    const char *nptr = nplist + qstrlen(nplist) - 1;
+    const char *shptr = hptr;
+    
+    printf("host is: %s\n", host); 
+    
+    while( nptr >= nplist ) {
+        printf("*hptr is: %c\n", *hptr);
+        printf("*nptr is: %c\n", *nptr);
+        if ( *hptr != *nptr ) 
+        {
+            hptr = shptr; 
+            // Try to find another domain or host in the list
+            while ( --nptr>=nplist && *nptr!=',' && *nptr!=' ') 
+                ;            
+            while ( --nptr>=nplist && (*nptr==',' || *nptr==' '))
+                ;
+        } else {
+            if ( nptr==nplist || nptr[-1]==',' || nptr[-1]==' ') 
+            { 
+                return 1;
+            }
+            hptr--;
+            nptr--;
+        }
+    }
+    
+    return 0;
 }
+
 
 int KProtocolHTTP::Open(KURL *_url, int mode)
 {
@@ -259,10 +305,17 @@ int KProtocolHTTP::Open(KURL *_url, int mode)
 	int do_proxy = use_proxy;
 	if (do_proxy)
 	{
-            char *p;
-	    if ( ( p = getenv("no_proxy") ) )
+//            char *p;
+//	    if ( ( p = getenv("no_proxy") ) )
+//	    {
+//	         do_proxy = !revmatch(_url->host(), p);
+//	    }
+
+	    if ( ! noProxyForStr.isEmpty() ) 
 	    {
-	         do_proxy = !revmatch(_url->host(), p);
+                printf( "host: %s\n", _url->host() );
+		printf( "nplist: %s\n", noProxyForStr.data() );
+	        do_proxy = !revmatch( _url->host(), noProxyForStr.data() );    
 	    }
 	}
 

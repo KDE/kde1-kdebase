@@ -1228,7 +1228,7 @@ void KfmGui::slotAbout()
 {
     QString about_title, about_text;
     about_title.sprintf( klocale->translate("About KFM") );
-    about_text.sprintf("KFM Ver. %s\n\n%s", kfm_getrev(), klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin Jones\nmjones@kde.org") );
+    about_text.sprintf("KFM Ver. %s\n\n%s", kfm_getrev(), klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin Jones\nmjones@kde.org\n\nProxy Manager by Lars Hoss\nLars.Hoss@munich.netsurf.de") );
     QMessageBox::about( this, about_title, about_text );
 }
 
@@ -1446,10 +1446,9 @@ void KfmGui::slotConfigureBrowser()
 
   // now read data for KProxyDlg
   config->setGroup("Browser Settings/Proxy");
-  prxStrList.append(config->readEntry("HTTP-URL", ""));
-  prxStrList.append(config->readEntry("HTTP-Port", ""));
-  prxStrList.append(config->readEntry("FTP-URL", ""));
-  prxStrList.append(config->readEntry("FTP-Port", ""));
+  prxStrList.append(config->readEntry("UseProxy", ""));
+  prxStrList.append(config->readEntry("HTTP-Proxy", ""));
+  prxStrList.append(config->readEntry("FTP-Proxy", ""));
   prxStrList.append(config->readEntry("NoProxyFor", ""));
   
   // transmit data to dialog
@@ -1482,12 +1481,10 @@ void KfmGui::slotConfigureBrowser()
 	  // write back the entries from KProxyDlg
           config->setGroup("Browser Settings/Proxy");
 	  strlist = dlg.dataProxy();
-          // printf("kfmgui: got %d entries from dataProxy\n", strlist.count());
-	  config->writeEntry("HTTP-URL", strlist.first());
-	  config->writeEntry("HTTP-Port", strlist.next());
-	  config->writeEntry("FTP-URL", strlist.next());
-	  config->writeEntry("FTP-Port", strlist.next());
-	  config->writeEntry("NoProxyFor", strlist.next());
+          config->writeEntry( "UseProxy", strlist.first() );
+	  config->writeEntry( "HTTP-Proxy", strlist.next() );
+          config->writeEntry( "FTP-Proxy", strlist.next() );
+	  config->writeEntry( "NoProxyFor", strlist.next() );
 	}
 
   // restore the group

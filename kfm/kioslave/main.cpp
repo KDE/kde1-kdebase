@@ -26,6 +26,8 @@ KIOSlave *slave = 0L;
 
 int main(int argc, char **argv)
 {
+    printf("A new kioslave has been started\n");
+    
     if ( argc != 2 )
     {
       fprintf( stderr, "Usage: kioslave path\n");

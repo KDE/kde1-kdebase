@@ -18,18 +18,21 @@ class KProtocolHTTP :public KProtocol
 {
     Q_OBJECT
 protected:
+    QString noProxyForStr;    
+    int use_proxy;
 
     //#define HTTP_PROXY_NAME "someproxy.somewhere.org"
     //#define HTTP_PROXY_PORT 80
     
     struct sockaddr_in proxy_name;
-    int use_proxy, connected, sock;
+    int connected, sock;
     long size;
     long bytesleft;
     long bytesRead;
     FILE *fsocket;
 
     QString url;
+
 
     /**
      * Used to store the parameter given by a call to @ref #Open. We need this
