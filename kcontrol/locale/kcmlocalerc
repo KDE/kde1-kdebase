@@ -5,6 +5,7 @@ Languages=C,cs,da,de,el,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sv,
 Name=Romanian
 Name[fi]=Romania
 Name[pl]=Rumuñski
+Name[hu]=Román
 
 [C]
 Name=Default language
@@ -12,6 +13,7 @@ Name[de]=Default Sprache
 Name[fi]=Oletuskieli
 Name[pl]=Domy¶lny jêzyk
 Name[fr]=Langue par défaut
+Name[hu]=Alapértelmezett nyelv
 
 [de]
 Name=German
@@ -19,6 +21,7 @@ Name[de]=Deutsch
 Name[fi]=Saksa
 Name[pl]=Niemiecki
 Name[fr]=Allemand
+Name[hu]=Német
 
 [en]
 Name=English
@@ -26,6 +29,7 @@ Name[de]=English
 Name[fi]=Englanti
 Name[pl]=Angielski
 Name[fr]=Anglais
+Name[hu]=Angol
 
 [fr]
 Name=French
@@ -33,6 +37,7 @@ Name[de]=Französisch
 Name[fi]=Ranska
 Name[pl]=Francuski
 Name[fr]=Français
+Name[hu]=Francia
 
 [cs]
 Name=Czech
@@ -40,6 +45,7 @@ Name[de]=Tschechisch
 Name[fi]=Tshekki
 Name[pl]=Czeski
 Name[fr]=Tchèque
+Name[hu]=Cseh
 
 [sv]
 Name=Swedish
@@ -47,6 +53,7 @@ Name[de]=Schwedisch
 Name[fi]=Ruotsi
 Name[pl]=Szwedzki
 Name[fr]=Suédois
+Name[hu]=Svéd
 
 [es]
 Name=Spanish
@@ -54,6 +61,7 @@ Name[de]=Spanisch
 Name[fi]=Espanja
 Name[pl]=Hiszpañski
 Name[fr]=Espagnol
+Name[hu]=Spanyol
 
 [ru]
 Name=Russian
@@ -61,6 +69,7 @@ Name[de]=Russisch
 Name[fi]=Venäjä
 Name[pl]=Rosyjski
 Name[fr]=Russe
+Name[hu]=Orosz
 
 [nl]
 Name=Dutch
@@ -68,6 +77,7 @@ Name[de]=Niederländisch
 Name[fi]=Hollanti
 Name[pl]=Holenderski
 Name[fr]=Hollandais
+Name[hu]=Holland
  
 [hu]
 Name=Hungarian
@@ -75,6 +85,7 @@ Name[de]=Ungarisch
 Name[fi]=Unkari
 Name[pl]=Wêgierski
 Name[fr]=Hongrois
+Name[hu]=Magyar
  
 [da]
 Name=Danish
@@ -82,6 +93,7 @@ Name[de]=Dänisch
 Name[fi]=Tanska
 Name[pl]=Duñski
 Name[fr]=Danois
+Name[hu]=Dán
 
 [fi]
 Name=Finnish
@@ -89,6 +101,7 @@ Name[de]=Finnisch
 Name[fi]=Suomi
 Name[pl]=Fiñski
 Name[fr]=Finlandais
+Name[hu]=Finn
 
 [it]
 Name=Italian
@@ -96,6 +109,7 @@ Name[de]=Italienisch
 Name[fi]=Italia
 Name[pl]=W³oski
 Name[fr]=Italien
+Name[hu]=Olasz
 
 [pt]
 Name=Portuguese
@@ -103,6 +117,7 @@ Name[de]=Portugiesisch
 Name[fi]=Portugali
 Name[pl]=Portugalski
 Name[fr]=Portugais
+Name[hu]=Portugál
 
 [pl]
 Name=Polish
@@ -110,6 +125,7 @@ Name[de]=Polnisch
 Name[fi]=Puola
 Name[pl]=Polski
 Name[fr]=Polonais
+Name[hu]=Lengyel
 
 [no]
 Name=Norwegian
@@ -117,6 +133,7 @@ Name[de]=Norwegisch
 Name[fi]=Norja
 Name[pl]=Norweski
 Name[fr]=Norvégien
+Name[hu]=Norvég
 
 [el]
 Name=Greek
@@ -124,6 +141,7 @@ Name[de]=Griechisch
 Name[fi]=Kreikka
 Name[pl]=Grecki
 Name[fr]=Grec
+Name[hu]=Görög
 
 [hr]
 Name=Croation
@@ -131,3 +149,4 @@ Name[de]=Kroatisch
 Name[fi]=Kroatia
 Name[pl]=Chorwacki
 Name[fr]=Croatien
+Name[hu]=Horvát
