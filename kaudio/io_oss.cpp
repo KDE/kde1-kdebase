@@ -86,7 +86,7 @@ bool AudioDev::grab()
 	 count++;
        }
        arg |= count;
-       cerr << "Count=" << count <<'\n';
+//       cerr << "Count=" << count <<'\n';
 
        if (ioctl(audiodev, SNDCTL_DSP_SETFRAGMENT, &arg)) {
 	 release();
