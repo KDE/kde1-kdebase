@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-11 15:37+0100\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -19,7 +19,7 @@ msgstr "Cor:"
 
 #: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
 #: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1021 polygon.cpp:101
-#: rock.cpp:550 slip.cpp:366 swarm.cpp:330
+#: rock.cpp:550 slip.cpp:366 space.cpp:581 swarm.cpp:330
 msgid "Speed:"
 msgstr "Velocidade:"
 
@@ -401,7 +401,7 @@ msgstr ""
 "  -setup            Configurar protecção de écran\n"
 "  -test             Inicializar a protecção de écran imediatamente\n"
 
-#: morph3d.cpp:839
+#: morph3d.cpp:839 space.cpp:413
 msgid "GL can not render with root visual\n"
 msgstr "GL não consegue criar com visual de raiz\n"
 
@@ -568,6 +568,31 @@ msgstr ""
 "Copyright (c) 1991 por Scott Draves\n"
 "\n"
 "Transposto para kscreensave por Emanuel Pirker."
+
+#: space.cpp:485
+msgid "Space (GL)"
+msgstr ""
+
+#: space.cpp:575
+#, fuzzy
+msgid "Setup KSpace"
+msgstr "Configurar Slip"
+
+#: space.cpp:591
+msgid "Warp Interval:"
+msgstr ""
+
+#: space.cpp:679
+#, fuzzy
+msgid "About KSpace"
+msgstr "Acerca do Slip"
+
+#: space.cpp:681
+msgid ""
+"KSpace\n"
+"Copyright (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
+msgstr ""
 
 #: swarm.cpp:252
 msgid "Swarm"
