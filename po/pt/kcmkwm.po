@@ -78,13 +78,12 @@ msgid "Titlebar appearance"
 msgstr "Aparência da barra de título"
 
 #: titlebar.cpp:928
-#, fuzzy
 msgid "Shaded Vertically"
-msgstr "Maximizar verticalmente"
+msgstr "Sombreada verticalmente"
 
 #: titlebar.cpp:930
 msgid "Shaded Horizontally"
-msgstr ""
+msgstr "Sombreada horizontalmente"
 
 #: titlebar.cpp:934
 msgid "Plain"
@@ -167,14 +166,12 @@ msgid "Opaque"
 msgstr "Opaca"
 
 #: windows.cpp:79
-#, fuzzy
 msgid "Window resize"
-msgstr "&Janelas"
+msgstr "Mudança de tamanho das janelas"
 
 #: windows.cpp:80
-#, fuzzy
 msgid "With animation"
-msgstr "Animação do título"
+msgstr "Com animação"
 
 #: windows.cpp:85
 msgid "Placement policy"
@@ -229,14 +226,12 @@ msgid "Focus follows mouse"
 msgstr "Foco segue o rato"
 
 #: windows.cpp:120
-#, fuzzy
 msgid "Classic focus follows mouse"
-msgstr "Foco segue o rato"
+msgstr "Foco segue o rato clássico"
 
 #: windows.cpp:122
-#, fuzzy
 msgid "Classic sloppy focus"
-msgstr "Clicar para obter foco"
+msgstr "Foco escorregadio clássico"
 
 #: windows.cpp:131
 msgid ""

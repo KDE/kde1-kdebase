@@ -591,26 +591,24 @@ msgid "Setup Science"
 msgstr "Configurar Ciência"
 
 #: science.cpp:580
-#, fuzzy
 msgid "Mode:"
-msgstr "Meio:"
+msgstr "Modo:"
 
 #: science.cpp:585
 msgid "Whirl"
-msgstr ""
+msgstr "Remoinho"
 
 #: science.cpp:586
-#, fuzzy
 msgid "Sphere"
-msgstr "Velocidade:"
+msgstr "Esfera"
 
 #: science.cpp:598
 msgid "Inverse"
-msgstr ""
+msgstr "Inverso"
 
 #: science.cpp:607
 msgid "Gravity"
-msgstr ""
+msgstr "Gravidade"
 
 #: science.cpp:632
 msgid "Intensity:"
@@ -618,21 +616,20 @@ msgstr "Intensidade:"
 
 #: science.cpp:660
 msgid "Motion:"
-msgstr ""
+msgstr "Movimento:"
 
 #: science.cpp:845
 msgid "About Science"
 msgstr "Acerca do Ciência"
 
 #: science.cpp:846
-#, fuzzy
 msgid ""
 "Science Version 0.24.2 beta\n"
 "\n"
 "written by Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"
 msgstr ""
-"Ciência Versão 0.2beta\n"
+"Ciência Versão 0.24.2 beta\n"
 "\n"
 "Escrito por Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"

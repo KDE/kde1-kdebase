@@ -28,6 +28,13 @@ msgid ""
 "Anyway, if you prefer modern windowmanagement, please choose one of the \n"
 "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
 msgstr ""
+"Quer mudar para outra janela. Infelizmente seleccionou uma das políticas\n"
+"de foco clássicas que não permitem isto. Essa políticas são incluídas\n"
+"não porque façam sentido, mas por questões de compatibilidade. Bem, até\n"
+"os velhos utilizadores de unix se devem sentir confortaveis com o KDE ;-)\n"
+"\n"
+"De qualquer modo, se prefere gestão de janelas mais moderna, selecione uma \n"
+"política de foco como "Cliquar para obter Foco" ou "Foco segue o rato"."
 
 #: main.C:491
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -118,9 +125,8 @@ msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Algumas imagens não são válidas: ShapeMode desactivado\n"
 
 #: main.C:1043
-#, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Algumas imagens não são válidas: ShapeMode desactivado\n"
+msgstr "Algumas imagens não são válidas: GimmickMode desactivado\n"
 
 #: main.C:1281
 msgid "*** No Tasks ***"
@@ -132,7 +138,7 @@ msgstr "Comando:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr ""
+msgstr "Ooops!"
 
 #: logout.C:36 taskmgr.C:107
 msgid "Logout"
