@@ -2,6 +2,8 @@
 // (c) Torben Weis
 //     weis@stud.uni-frankfurt.de
 
+#include <kdebug.h>
+
 #include "ipc.h"
 #include "kioslave_ipc.h"
 
@@ -30,7 +32,7 @@ bool KIOSlaveIPC::isConnected()
 
 void KIOSlaveIPC::closeEvent( KSocket * )
 {
-    printf("******** EXIT ********\n");
+    kdebug(KDEBUG_INFO, 0, "******** EXIT ********\n");
     exit(1);
     connected = FALSE;
 }
