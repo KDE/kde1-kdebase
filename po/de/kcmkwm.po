@@ -114,7 +114,7 @@ msgstr "Pixmap"
 
 #: titlebar.cpp:1003
 msgid "Active title has shaded frame"
-msgstr ""
+msgstr "Aktiver Titel hat schattierten Rahmen"
 
 #: titlebar.cpp:1044
 msgid "Active pixmap:"
@@ -126,7 +126,7 @@ msgstr "Inaktive Pixmap"
 
 #: titlebar.cpp:1055
 msgid "No pixmap under text"
-msgstr ""
+msgstr "Keine Pixmap unter Text"
 
 #: titlebar.cpp:1066
 msgid "Mouse action"
@@ -353,7 +353,7 @@ msgstr "Nach hinten"
 
 #: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
 msgid "Operations menu"
-msgstr "Menu mit Operationen"
+msgstr "Menü mit Operationen"
 
 #: mouse.cpp:116 mouse.cpp:125 mouse.cpp:135 mouse.cpp:194 mouse.cpp:205
 #: mouse.cpp:216
@@ -408,7 +408,7 @@ msgstr "Alt-Tab ist auf aktuellen Arbeitsplatz beschränkt"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
-msgstr "Alt-Tab Modus_"
+msgstr "Alt-Tab Modus:"
 
 #: advanced.cpp:63
 msgid "KDE"
