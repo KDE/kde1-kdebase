@@ -3,7 +3,7 @@
 #
 
 INCLUDES = $(all_includes)
-LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(PAMLIBS) \
+LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 -lm $(PAMLIBS) \
 	$(LIBCRYPT) $(LIBSOCKET) $(KDE_RPATH)
 DISTCLEANFILES = $(BUILT_SOURCES)
 
