@@ -196,11 +196,11 @@ msgstr "&Nouvelle fenêtre d'aide"
 
 #: mainwidget.cpp:135
 msgid "&Open File..."
-msgstr "&Ouvrir un fichier ..."
+msgstr "&Ouvrir un fichier..."
 
 #: mainwidget.cpp:136
 msgid "Open UR&L..."
-msgstr "Ouvrir une UR&L ..."
+msgstr "Ouvrir une UR&L..."
 
 #: mainwidget.cpp:137
 msgid "&Reload"
@@ -236,7 +236,7 @@ msgstr "&Suivant"
 
 #: mainwidget.cpp:171
 msgid "&General Preferences..."
-msgstr "Préférences &générales ..."
+msgstr "Préférences &générales..."
 
 #: mainwidget.cpp:174
 msgid "Show &Toolbar"

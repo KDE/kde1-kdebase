@@ -22,14 +22,12 @@ msgid "Cannot open or read directory."
 msgstr "Impossible d'ouvrir ou de lire le répertoire."
 
 #: kfindtop.cpp:115
-#, fuzzy
 msgid "&Start search"
-msgstr "Lancer la recherche"
+msgstr "&Lancer la recherche"
 
 #: kfindtop.cpp:117
-#, fuzzy
 msgid "S&top search"
-msgstr "Stopper la recherche"
+msgstr "&Stopper la recherche"
 
 #: kfindtop.cpp:122
 msgid "&Open"
@@ -37,7 +35,7 @@ msgstr "&Ouvrir"
 
 #: kfindtop.cpp:124
 msgid "&Add to archive"
-msgstr "&Ajouter à l'archive ..."
+msgstr "&Ajouter à l'archive..."
 
 #: kfindtop.cpp:129
 msgid "&Properties"
@@ -68,8 +66,9 @@ msgid "&Invert Selection"
 msgstr "&Inverser la sélection"
 
 #: kfindtop.cpp:168
+#, fuzzy
 msgid "&Preferences ..."
-msgstr "&Préférences ..."
+msgstr "&Préférences..."
 
 #: kfindtop.cpp:173
 #, c-format
@@ -102,7 +101,7 @@ msgstr "Stopper la recherche"
 
 #: kfindtop.cpp:216
 msgid "Add to archive"
-msgstr "Ajouter à l'archive ..."
+msgstr "Ajouter à l'archive..."
 
 #: kfindtop.cpp:226
 msgid "Properties"
@@ -125,8 +124,9 @@ msgid "&Look in:"
 msgstr "Regarder &dans :"
 
 #: kftabdlg.cpp:77
+#, fuzzy
 msgid "&Browse ..."
-msgstr "&Parcourir ..."
+msgstr "&Parcourir..."
 
 #: kftabdlg.cpp:83
 msgid "Include &subfolders"

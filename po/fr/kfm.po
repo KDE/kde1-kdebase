@@ -33,7 +33,7 @@ msgstr "Nouvelle &fenêtre"
 
 #: kfmgui.cpp:309
 msgid "&Run..."
-msgstr "&Exécuter ..."
+msgstr "&Exécuter..."
 
 #: kfmgui.cpp:311
 msgid "Open &Terminal"
@@ -41,7 +41,7 @@ msgstr "Ouvrir un &terminal"
 
 #: kfmgui.cpp:314
 msgid "&Open Location..."
-msgstr "&Ouvrir l'URL ..."
+msgstr "&Ouvrir l'URL..."
 
 #: kfmgui.cpp:316
 msgid "&Find"
@@ -49,7 +49,7 @@ msgstr "Re&chercher"
 
 #: kfmgui.cpp:324
 msgid "&Quit..."
-msgstr "&Quitter ..."
+msgstr "&Quitter..."
 
 #: kfmgui.cpp:333
 msgid "&Move to Trash"
@@ -148,14 +148,12 @@ msgid "Never look in cache"
 msgstr "Ne jamais regarder dans le cache"
 
 #: kfmgui.cpp:411
-#, fuzzy
 msgid "Always save cache"
-msgstr "Toujours regarder dans le cache"
+msgstr "Toujours enregistrer dans le cache"
 
 #: kfmgui.cpp:413
-#, fuzzy
 msgid "Never save cache"
-msgstr "Ne jamais regarder dans le cache"
+msgstr "Ne jamais enregistrer dans le cache"
 
 #: kfmgui.cpp:424
 msgid "Show &Menubar"
@@ -179,11 +177,11 @@ msgstr "&Enregistrer les options"
 
 #: kfmgui.cpp:435
 msgid "Configure Browser..."
-msgstr "Configurer le navigateur ..."
+msgstr "Configurer le navigateur..."
 
 #: kfmgui.cpp:478
 msgid "&About..."
-msgstr "&A propos ..."
+msgstr "&A propos..."
 
 #: kfmgui.cpp:488
 msgid "&Bookmarks"
@@ -237,7 +235,7 @@ msgstr "Sélectionner les fichiers :"
 
 #: kfmgui.cpp:921
 msgid "&Edit Bookmarks..."
-msgstr "Modifier les &signets ..."
+msgstr "Modifier les &signets..."
 
 #: kfmgui.cpp:931
 msgid "&Add Bookmark"
@@ -877,7 +875,7 @@ msgid ""
 "off the desktop."
 msgstr ""
 "Impossible d'exécuter cette commande.\n"
-"Modifier ainsi les dimensions de la grille du bureauferait sortir certaines "
+"Modifier ainsi les dimensions de la grille du bureau ferait sortir certaines "
 "icônes de l'écran."
 
 #: root.cpp:707
@@ -910,8 +908,9 @@ msgid "Contacting host "
 msgstr "Hôte contacté "
 
 #: kfmman.cpp:351
+#, fuzzy
 msgid "Working ..."
-msgstr "En cours ..."
+msgstr "En cours..."
 
 #: kfmman.cpp:1084 kfmtree.cpp:230
 msgid "Add To Bookmarks"
@@ -1182,19 +1181,19 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1766
-#, c-format
+#, fuzzy, c-format
 msgid "Mounting %s ..."
-msgstr "Attachement de %s ..."
+msgstr "Attachement de %s..."
 
 #: kiojob.cpp:1768
-#, c-format
+#, fuzzy, c-format
 msgid "Unmounting %s ..."
-msgstr "Détachement de %s ..."
+msgstr "Détachement de %s..."
 
 #: kiojob.cpp:1796
 #, c-format
 msgid "Retrieving listing of %s"
-msgstr "Récupération du contenu de %s ..."
+msgstr "Récupération du contenu de %s..."
 
 #: kiojob.cpp:2029
 msgid "Segmentation fault in io subprocess"
@@ -1371,12 +1370,13 @@ msgid "KFM Question"
 msgstr "KFM - Question"
 
 #: kfmexec/main.cpp:199
+#, fuzzy
 msgid ""
 "Syntax Error:\n"
 "kfmexec command [URLs ....]\n"
 msgstr ""
 "Erreur de syntaxe :\n"
-"kfmexec command [URLs ....]\n"
+"kfmexec command [URLs....]\n"
 
 #~ msgid "Run normally"
 #~ msgstr "Lancer normalement"

@@ -119,7 +119,7 @@ msgstr "&Taille"
 
 #: main.C:519
 msgid "Terminal..."
-msgstr "Terminal ..."
+msgstr "Terminal..."
 
 #: main.C:520
 msgid "Font..."
@@ -191,10 +191,11 @@ msgid "Permitted arguments are:\n"
 msgstr "Les arguments reconnus sont :\n"
 
 #: main.C:1242
+#, fuzzy
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <commande> <arg> ...   exécute 'commande' avec les paramètres 'args' - "
+"-e <commande> <arg>...   exécute 'commande' avec les paramètres 'args' - "
 "dernier argument absolument\n"
 
 #: main.C:1243

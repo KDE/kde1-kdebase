@@ -58,28 +58,28 @@ msgstr "Menu"
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"La partie gauche de la barre de titre est pleine ...\n"
+"La partie gauche de la barre de titre est pleine...\n"
 "Désactivation du bouton \"Maximiser\".\n"
 
 #: titlebar.cpp:496
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"La partie droite de la barre de titre est pleine ...\n"
+"La partie droite de la barre de titre est pleine...\n"
 "Désactivation du bouton \"Maximiser\".\n"
 
 #: titlebar.cpp:536
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"La partie gauche de la barre de titre est pleine ...\n"
+"La partie gauche de la barre de titre est pleine...\n"
 "Désactivation du bouton \"Icônifier\".\n"
 
 #: titlebar.cpp:569
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"La partie droite de la barre de titre est pleine ...\n"
+"La partie droite de la barre de titre est pleine...\n"
 "Désactivation du bouton \"Icônifier\".\n"
 
 #: titlebar.cpp:926
@@ -87,9 +87,8 @@ msgid "Titlebar appearance"
 msgstr "Apparence de la barre de titre"
 
 #: titlebar.cpp:928
-#, fuzzy
 msgid "Shaded Vertically"
-msgstr "Maximisation verticale"
+msgstr "Ombrée verticalement"
 
 #: titlebar.cpp:930
 msgid "Shaded Horizontally"
@@ -176,14 +175,12 @@ msgid "Opaque"
 msgstr "Opaque"
 
 #: windows.cpp:79
-#, fuzzy
 msgid "Window resize"
-msgstr "&Fenêtres"
+msgstr "Redimensionner la fenêtre"
 
 #: windows.cpp:80
-#, fuzzy
 msgid "With animation"
-msgstr "Animation du titre"
+msgstr "Avec animation"
 
 #: windows.cpp:85
 msgid "Placement policy"
@@ -238,12 +235,10 @@ msgid "Focus follows mouse"
 msgstr "Le focus suit la souris"
 
 #: windows.cpp:120
-#, fuzzy
 msgid "Classic focus follows mouse"
 msgstr "Le focus suit la souris"
 
 #: windows.cpp:122
-#, fuzzy
 msgid "Classic sloppy focus"
 msgstr "Cliquer pour avoir le focus"
 

@@ -131,9 +131,8 @@ msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Quelques pixmaps ne sont pas valides: ShapeMode désactivé\n"
 
 #: main.C:1062
-#, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Quelques pixmaps ne sont pas valides: ShapeMode désactivé\n"
+msgstr "Quelques pixmaps ne sont pas valides: GimmickMode désactivé\n"
 
 #: main.C:1295
 msgid "*** No Tasks ***"

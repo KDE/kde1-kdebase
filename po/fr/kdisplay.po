@@ -22,8 +22,9 @@ msgid "Desktop"
 msgstr "Bureau"
 
 #: backgnd.cpp:166
+#, fuzzy
 msgid "&Rename ..."
-msgstr "&Renommer ..."
+msgstr "&Renommer..."
 
 #: backgnd.cpp:192 colorscm.cpp:93
 msgid "Colors"
@@ -38,8 +39,9 @@ msgid "&Two Color"
 msgstr "&Deux couleurs"
 
 #: backgnd.cpp:255
+#, fuzzy
 msgid "Set&up ..."
-msgstr "Config&urer ..."
+msgstr "Config&urer..."
 
 #: backgnd.cpp:264
 msgid "Wallpaper"
@@ -63,7 +65,7 @@ msgstr "Pas de papier peint"
 
 #: backgnd.cpp:334
 msgid "&Browse..."
-msgstr "&Parcourir ..."
+msgstr "&Parcourir..."
 
 #: backgnd.cpp:863
 msgid "Desktop names"
@@ -134,8 +136,9 @@ msgid "KDE default"
 msgstr "Standard KDE"
 
 #: colorscm.cpp:145
+#, fuzzy
 msgid "&Add ..."
-msgstr "&Ajouter ..."
+msgstr "&Ajouter..."
 
 #: colorscm.cpp:153
 msgid "&Remove"
@@ -276,8 +279,9 @@ msgid "No screensaver"
 msgstr "Pas de mise en veille"
 
 #: scrnsave.cpp:207
+#, fuzzy
 msgid "&Setup ..."
-msgstr "Config&urer ..."
+msgstr "Config&urer..."
 
 #: scrnsave.cpp:215
 msgid "&Test"
@@ -407,7 +411,7 @@ msgstr "n'importe lequel"
 #~ msgid "General"
 #~ msgstr "Général"
 
-#~ msgid "&New scheme ..."
+#~ msgid "&New scheme..."
 #~ msgstr "Enregistrer le modèle"
 
 #~ msgid "You have chosen a name used by a supplied color scheme"

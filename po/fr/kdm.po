@@ -51,4 +51,4 @@ msgstr "Entrer !"
 
 #: kgreeter.cpp:229
 msgid "Shutdown..."
-msgstr "Arrêter ..."
+msgstr "Arrêter..."

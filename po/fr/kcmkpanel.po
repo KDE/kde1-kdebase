@@ -107,7 +107,7 @@ msgstr "Autres"
 
 #: options.cpp:69
 msgid "Personal &First"
-msgstr "Menu \"P&ersonnel\" en premier"
+msgstr "Menu p&ersonnel en premier"
 
 #: options.cpp:71
 msgid "Auto &Hide Panel"

@@ -127,7 +127,7 @@ msgstr "\nVeuillez utiliser des fichiers avec ces extensions\n"
 
 #: kdm-appear.cpp:192 kdm-users.cpp:200
 msgid "Improper File Extension"
-msgstr "Extension du fichier inadéquate"
+msgstr "Extension de fichier inadéquate"
 
 #: kdm-appear.cpp:221 kdm-users.cpp:246
 msgid ""
@@ -135,7 +135,7 @@ msgid ""
 "It will not be saved..."
 msgstr ""
 "<\n"
-"Il ne sera pas enregistré ..."
+"Il ne sera pas enregistré..."
 
 #: kdm-font.cpp:48
 msgid "Select fonts"

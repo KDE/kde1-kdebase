@@ -683,11 +683,9 @@ msgstr ""
 #~ msgid "Setup Science"
 #~ msgstr "Configuration de Science"
 
-#, fuzzy
 #~ msgid "Mode:"
 #~ msgstr "Milieu :"
 
-#, fuzzy
 #~ msgid "Sphere"
 #~ msgstr "Vitesse :"
 
@@ -697,7 +695,6 @@ msgstr ""
 #~ msgid "About Science"
 #~ msgstr "A propos de Science"
 
-#, fuzzy
 #~ msgid ""
 #~ "Science Version 0.24.2 beta\n"
 #~ "\n"
