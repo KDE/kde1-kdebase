@@ -60,7 +60,7 @@ msgstr "&Selaa..."
 
 #: backgnd.cpp:367
 msgid "Arrangement:"
-msgstr ""
+msgstr "Järjestys:"
 
 #: backgnd.cpp:374
 msgid "Tiled"
@@ -115,9 +115,8 @@ msgid "&Dock into the panel"
 msgstr "&Nielaise paneeliin"
 
 #: backgnd.cpp:442
-#, fuzzy
 msgid "Cache size (kB):"
-msgstr "Välimuisti"
+msgstr "Välimuisti (kt):"
 
 #: backgnd.cpp:1339
 msgid "Desktop names"
@@ -436,7 +435,7 @@ msgstr "&Käytä tyyliä muissa sovelluksissa"
 
 #: general.cpp:258
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr ""
+msgstr "&Otsikkopalkki ruudun ylälaidassa MacOS tyyliin"
 
 #: general.cpp:273
 msgid "Desktop fonts"

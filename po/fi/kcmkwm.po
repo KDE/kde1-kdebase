@@ -114,7 +114,7 @@ msgstr "Kuva"
 
 #: titlebar.cpp:1003
 msgid "Active title has shaded frame"
-msgstr ""
+msgstr "Aktiivisella otsikolla on varjo"
 
 #: titlebar.cpp:1044
 msgid "Active pixmap:"
@@ -126,7 +126,7 @@ msgstr "Ei-aktiivinen kuva:"
 
 #: titlebar.cpp:1055
 msgid "No pixmap under text"
-msgstr ""
+msgstr "Ei kuvaa tekstin alla"
 
 #: titlebar.cpp:1066
 msgid "Mouse action"
@@ -258,9 +258,8 @@ msgid "Auto Raise"
 msgstr "Automaattinosta"
 
 #: windows.cpp:209
-#, fuzzy
 msgid "Click Raise"
-msgstr "Nosta"
+msgstr "Painallusnosto"
 
 #: windows.cpp:216
 msgid "Delay (ms)"
@@ -279,7 +278,6 @@ msgid "Move pointer towards center after switch"
 msgstr "Siirrä osoitin ruudun keskustaan"
 
 #: desktop.cpp:87
-#, fuzzy
 msgid "Desktop switch delay:"
 msgstr "Työpöydän vaihtoviive:"
 

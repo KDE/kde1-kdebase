@@ -84,11 +84,11 @@ msgstr "Avaa / Sulje"
 
 #: confmenu.cpp:117
 msgid "Select item for moving"
-msgstr ""
+msgstr "Valitse siirrettävä tietue"
 
 #: confmenu.cpp:118
 msgid "Select menu for moving"
-msgstr ""
+msgstr "Valitse siirrettävä valikko"
 
 #: confmenu.cpp:120
 msgid "New"

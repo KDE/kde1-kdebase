@@ -44,11 +44,8 @@ msgstr "Kesto"
 
 #: bell.cpp:72
 msgid "milliseconds"
-msgstr ""
+msgstr "millisekuntia"
 
 #: bell.cpp:87
 msgid "Test"
 msgstr "Kokeile"
-
-#~ msgid "ms"
-#~ msgstr "ms"

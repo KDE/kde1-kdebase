@@ -52,7 +52,7 @@ msgstr "Työpöydän ohje"
 
 #: krootwm.C:245
 msgid "About KDE..."
-msgstr ""
+msgstr "Tietoja KDE:ta..."
 
 #: krootwm.C:263 krootwm.C:286 krootwm.C:761 krootwm.C:769
 msgid "New"
@@ -64,11 +64,11 @@ msgstr "Kirjanmerkit"
 
 #: krootwm.C:288
 msgid "Desk"
-msgstr ""
+msgstr "Työpöytä"
 
 #: krootwm.C:289
 msgid "Windows"
-msgstr ""
+msgstr "Ikkuna"
 
 #: krootwm.C:344
 msgid "Edit Bookmarks"

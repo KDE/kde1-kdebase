@@ -17,52 +17,52 @@ msgstr ""
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr ""
+msgstr "näyttö #%d"
 
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr ""
+msgstr "  mitat               : %dx%d pikseliä (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr ""
+msgstr "  resoluutio          : %dx%d pistettä tuumalle\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr ""
+msgstr "  syvyys (%d)          : "
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr ""
+msgstr "näytön nimi           : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr ""
+msgstr "versionumero          : %i.%i"
 
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr ""
+msgstr "valmistaja            : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr ""
+msgstr "valmistajan versio    : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr ""
+msgstr "oletusnäytön numero   : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr ""
+msgstr "näyttöjen lukumäärä   : %i"
 
 #: info.cpp:179
 msgid ""
@@ -70,67 +70,67 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
+"Ei tietoja saatavilla\n"
+" tai\n"
+"järjestelmää ei tueta :-("
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr ""
+msgstr "%s, tuntematon nopeus"
 
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr ""
+msgstr "%s toimii %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr ""
+msgstr "Voih, en saanut avattua fstab:a!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
-#, fuzzy
 msgid "Device"
-msgstr "&Laitteet"
+msgstr "Laite"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
-msgstr ""
+msgstr "Liitospiste"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr ""
+msgstr "Tiedostojärjestelmä"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr ""
+msgstr "Liitostiedot"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
-msgstr ""
+msgstr "tuntematon CPU"
 
 #: info_hpux.cpp:62
-#, fuzzy
 msgid "unavailable"
-msgstr "Ei saatavilla"
+msgstr "ei saatavilla"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr ""
+msgstr "Aktiivisia prosessoreita= "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr ""
+msgstr "Arvo"
 
 #: info_linux.cpp:114
-#, fuzzy
 msgid "DMA-Channel"
-msgstr "&DMA-kanavat"
+msgstr "DMA-kanava"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr ""
+msgstr "käyttäjä"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr ""
+msgstr "I/O-alue"
 
 #: main.cpp:79
 msgid "&Memory"
@@ -226,6 +226,5 @@ msgstr "Ei saatavilla"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
-#, fuzzy
 msgid "Not Available"
 msgstr "Ei saatavilla"

@@ -461,7 +461,6 @@ msgid "With Caps Lock"
 msgstr "CapsLock:n kanssa"
 
 #: widgets.cpp:567
-#, fuzzy
 msgid "Background when Emulated Caps Lock active"
 msgstr "Tausta kun emuloitu CapsLock on aktivoitu"
 

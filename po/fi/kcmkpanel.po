@@ -155,23 +155,20 @@ msgid "Others"
 msgstr "Muut"
 
 #: options.cpp:408
-#, fuzzy
 msgid "Personal Menu Entries &First"
-msgstr "Omat &ensin"
+msgstr "Omat valikot &ensin"
 
 #: options.cpp:416
-#, fuzzy
 msgid "Menu F&olders First"
-msgstr "K&ansiot ensin"
+msgstr "Valikon K&ansiot ensin"
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
 msgstr "&Kello n‰ytt‰‰ ajan AM/PM muodossa"
 
 #: options.cpp:432
-#, fuzzy
 msgid "Clock shows time in &Internet beats"
-msgstr "&Kello n‰ytt‰‰ ajan AM/PM muodossa"
+msgstr "Kello n‰ytt‰‰ ajan &Internet muodossa"
 
 #: disknav.cpp:38
 msgid "History"

@@ -9,22 +9,20 @@ msgstr ""
 "kpagerclient.cpp kpager.cpp main.cpp\n"
 
 #: kpager.cpp:72
-#, fuzzy
 msgid "Toggle Global Desktop"
-msgstr "Piilota &Yleinen työpöytä"
+msgstr "Piilota Yleinen työpöytä"
 
 #: kpager.cpp:74
-#, fuzzy
 msgid "Toggle Menubar"
-msgstr "Piilota &valikot"
+msgstr "Piilota valikot"
 
 #: kpager.cpp:77
 msgid "Move Right"
-msgstr ""
+msgstr "Siirrä oikealle"
 
 #: kpager.cpp:79
 msgid "Move Left"
-msgstr ""
+msgstr "Siirrä vasemmalle"
 
 #: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
@@ -40,21 +38,19 @@ msgstr "Piilota &valikot"
 
 #: kpager.cpp:101 kpager.cpp:386
 msgid "&2 Rows"
-msgstr ""
+msgstr "&2 Riviä"
 
 #: kpager.cpp:104
 msgid "&One Click change Desktop"
-msgstr ""
+msgstr "&Klikkaus vaihtaa työpöytää"
 
 #: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
-#, fuzzy
 msgid "Hide Desktop &Names"
-msgstr "Piilota &Yleinen työpöytä"
+msgstr "Piilota Työpöytien &nimet"
 
 #: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
-#, fuzzy
 msgid "Show Desktop &Names"
-msgstr "Näytä &Yleinen työpöytä"
+msgstr "Näytä työpöytien &nimet"
 
 #: kpager.cpp:115 kpager.cpp:402
 msgid "Plain"
@@ -100,32 +96,29 @@ msgstr ""
 "under certain conditions\n"
 
 #: kpager.cpp:382
-#, fuzzy
 msgid "Show &Menubar"
-msgstr "Piilota &valikot"
+msgstr "Näytä &valikot"
 
 #: kpager.cpp:389
 msgid "One Click change Desktop"
-msgstr ""
+msgstr "Yksi painallus vaihtaa työpöytää"
 
 #: kpager.cpp:446
 msgid "&Maximize"
-msgstr ""
+msgstr "&Suurenna"
 
 #: kpager.cpp:447
-#, fuzzy
 msgid "&Iconify"
-msgstr "Ikoni"
+msgstr "&Pienennä"
 
 #: kpager.cpp:449
 msgid "&UnSticky"
-msgstr ""
+msgstr "&Irroita"
 
 #: kpager.cpp:451
 msgid "&Sticky"
-msgstr ""
+msgstr "&Naulaa"
 
 #: kpager.cpp:453
-#, fuzzy
 msgid "&To Desktop"
-msgstr "Piilota &Yleinen työpöytä"
+msgstr "&Työpöydälle"

@@ -19,9 +19,8 @@ msgid "KFM"
 msgstr "KFM"
 
 #: kfmgui.cpp:221
-#, fuzzy
 msgid "New &Window"
-msgstr "Näytä uusi"
+msgstr "&Uusi ikkuna"
 
 #: kfmgui.cpp:224
 msgid "&Run..."
@@ -60,14 +59,12 @@ msgid "Find &next"
 msgstr "Etsi &seuraava"
 
 #: kfmgui.cpp:271
-#, fuzzy
 msgid "Mime &Types"
-msgstr "MIME-tyypit"
+msgstr "MIME-&tyypit"
 
 #: kfmgui.cpp:273
-#, fuzzy
 msgid "App&lications"
-msgstr "Sovellukset"
+msgstr "&Sovellukset"
 
 #: kfmgui.cpp:279
 msgid "Global Mime Types"
@@ -78,9 +75,8 @@ msgid "Global Applications"
 msgstr "Globaalit sovellukset"
 
 #: kfmgui.cpp:288
-#, fuzzy
 msgid "Show Hi&dden Files"
-msgstr "Näytä &pistealkuiset tiedostot"
+msgstr "Näytä &piilotiedostot"
 
 #: kfmgui.cpp:290
 msgid "Show Tr&ee"
@@ -88,7 +84,7 @@ msgstr "Näytä p&uu"
 
 #: kfmgui.cpp:292
 msgid "Sho&w Thumbnails"
-msgstr ""
+msgstr "Näytä &kuvat"
 
 #: kfmgui.cpp:294
 msgid "&HTML View"
@@ -119,9 +115,8 @@ msgid "&Reload Document"
 msgstr "Lataa si&vu uudelleen"
 
 #: kfmgui.cpp:313
-#, fuzzy
 msgid "Rescan &Bindings"
-msgstr "Lataa &sidokset uudelleen"
+msgstr "Uudelleenlataa &sidokset"
 
 #: kfmgui.cpp:316
 msgid "&View Frame Source"
@@ -136,9 +131,8 @@ msgid "Auto"
 msgstr "Auto"
 
 #: kfmgui.cpp:334
-#, fuzzy
 msgid "Document Encodin&g"
-msgstr "&Dokumentin koodaus"
+msgstr "&Asiakirjan koodaus"
 
 #: kfmgui.cpp:349
 msgid "Show History"
@@ -189,22 +183,18 @@ msgid "Sa&ve Settings"
 msgstr "Tallenna &asetukset"
 
 #: kfmgui.cpp:384
-#, fuzzy
 msgid "Save Settings for this &URL"
-msgstr "Tallenna asetukset URL:iin"
+msgstr "Tallenna asetukset &URL:iin"
 
 #: kfmgui.cpp:391
-#, fuzzy
 msgid "&Configure File Manager..."
-msgstr "Selaimen asetukset ..."
+msgstr "&Tiedostoselaimen asetukset ..."
 
 #: kfmgui.cpp:393
-#, fuzzy
 msgid "Configure &Browser..."
-msgstr "Selaimen asetukset ..."
+msgstr "&Selaimen asetukset ..."
 
 #: kfmgui.cpp:429
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -226,12 +216,13 @@ msgstr ""
 "\n"
 "Välityspalvelimen hallinta Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de\n"
-"Virheraportit ja virheidenkorjaukset David Faurelle\n"
+"\n"
+"Nykyinen ylläpitäjä: David Faure\n"
 "faure@kde.org"
 
 #: kfmgui.cpp:442
 msgid "&Go"
-msgstr ""
+msgstr "&Siirry"
 
 #: kfmgui.cpp:443
 msgid "&Bookmarks"
@@ -282,9 +273,8 @@ msgid "KFM Error"
 msgstr "KFM Virhe"
 
 #: kfmgui.cpp:560
-#, fuzzy
 msgid "Location:"
-msgstr "Avaa sijainti:"
+msgstr "Sijainti:"
 
 #: kfmexec.cpp:59 kfmgui.cpp:746 kfmman.cpp:1387
 msgid "Malformed URL\n"
@@ -315,23 +305,20 @@ msgid "&New"
 msgstr "&Uusi "
 
 #: kfmgui.cpp:1076
-#, fuzzy
 msgid "&Up"
-msgstr "Ylös"
+msgstr "&Ylös"
 
 #: kfmgui.cpp:1078
 msgid "&Back"
-msgstr ""
+msgstr "&Takaisin"
 
 #: kfmgui.cpp:1080
-#, fuzzy
 msgid "&Forward"
-msgstr "Eteen"
+msgstr "&Eteen"
 
 #: kfmgui.cpp:1082
-#, fuzzy
 msgid "&Home"
-msgstr "Koti"
+msgstr "&Koti"
 
 #: kfmgui.cpp:1144 kfmgui.cpp:1316 kfmjob.cpp:36 kfmman.cpp:244
 #: kfmtree.cpp:484 kfmview.cpp:608 kfmview.cpp:677 kfmview.cpp:885
@@ -584,6 +571,10 @@ msgid ""
 "\n"
 "Would you like to install the new ones?"
 msgstr ""
+"Uusi KDE versio on asennettu.\n"
+"Pohjat ovat voineet muuttua.\n"
+"\n"
+"Haluatko asentaa uudet pohjat?"
 
 #: main.cpp:267
 msgid "Cd"
@@ -667,14 +658,14 @@ msgid "Last Modified"
 msgstr "Viimeeksi muokattu"
 
 #: kfmprops.cpp:379
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
 msgstr ""
-"Hakemistoa\n"
+"Hakemistoa tai tiedostoa\n"
 "%s\n"
-"ei voitu tuhota"
+"ei voitu uudelleennimetä\n"
 
 #: kfmprops.cpp:429
 msgid "Access permissions"
@@ -1183,21 +1174,21 @@ msgstr ""
 "ei ole olemassa"
 
 #: kiojob.cpp:1287
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Tar reported a fatal error\n"
 "%s"
 msgstr ""
-"Tar-ohjelma ilmoitti virheen tiedostolle\n"
+"Tar-ohjelma ilmoitti kriittisen virheen tiedostolle\n"
 "%s"
 
 #: kiojob.cpp:1291
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Gzip reported a fatal error\n"
 "%s"
 msgstr ""
-"Gzip ilmoitti virheestä\n"
+"Gzip ilmoitti kriittisestä virheestä\n"
 "%s"
 
 #: kiojob.cpp:1295
@@ -1367,41 +1358,39 @@ msgstr "Kirjasin&tasoherkkä"
 
 #: kcookiewin.cpp:58
 msgid "Cookie Alert!"
-msgstr ""
+msgstr "Evästevaroitus!"
 
 #: kcookiewin.cpp:76
 msgid "You received a cookie from host:"
-msgstr ""
+msgstr "Vastaanotit evästeen isännältä:"
 
 #: kcookiewin.cpp:89
 msgid "Do you want to accept or reject this cookie?"
-msgstr ""
+msgstr "Haluatko hyväksyä vai hylätä evästeen?"
 
 #: kcookiewin.cpp:120
-#, fuzzy
 msgid "Apply to "
-msgstr "Muuta globaalisti"
+msgstr "Käytä "
 
 #: kcookiewin.cpp:125
 msgid "&This cookie only"
-msgstr ""
+msgstr "&Tämä eväste vain"
 
 #: kcookiewin.cpp:133
 msgid "All cookies from this &domain"
-msgstr ""
+msgstr "Kaikki evästeet &verkkoalueesta"
 
 #: kcookiewin.cpp:140
 msgid "All &cookies"
-msgstr ""
+msgstr "&Kaikki evästeet"
 
 #: kcookiewin.cpp:161
 msgid "&Accept"
-msgstr ""
+msgstr "&Hyväksy"
 
 #: kcookiewin.cpp:166
-#, fuzzy
 msgid "&Reject"
-msgstr "&Valitse"
+msgstr "&Hylkää"
 
 #: popup.cpp:69
 #, c-format
@@ -1413,6 +1402,8 @@ msgid ""
 "Source file doesn't exist anymore ! \n"
 "Use \"Rescan Bindings\" in View menu to update the menu"
 msgstr ""
+"Lähtötiedostoa ei ole enään ! \n"
+"Käytä \"Uudelleenlataa sidokset\" toimintoa Näytä valikossa"
 
 #: popup.cpp:114 popup.cpp:121
 msgid "New "
@@ -1483,130 +1474,3 @@ msgid ""
 msgstr ""
 "Syntaksivirhe\n"
 "kfmexec command [URL ....]\n"
-
-#~ msgid ""
-#~ "Could not rename the file or directory\n"
-#~ "The destination seems to already exist\n"
-#~ msgstr ""
-#~ "En voi nimetä uudelleen tiedostoa tai hakemistoa\n"
-#~ "Kohde on jo olemassa\n"
-
-#~ msgid "Installing Templates"
-#~ msgstr "Asennan pohjat"
-
-#~ msgid "Small"
-#~ msgstr "Pieni"
-
-#~ msgid "Medium"
-#~ msgstr "Keskikokoinen"
-
-#~ msgid "Large"
-#~ msgstr "Suuri"
-
-#~ msgid "Standard Font"
-#~ msgstr "Vakiokirjasin"
-
-#~ msgid "Fixed Font"
-#~ msgstr "Vakiovälinen"
-
-#~ msgid "Default Charset"
-#~ msgstr "Oletusmerkistö"
-
-#~ msgid "Use language charset"
-#~ msgstr "Käytä kielen merkistöä"
-
-#~ msgid "Background Color:"
-#~ msgstr "Taustaväri:"
-
-#~ msgid "Normal Text Color:"
-#~ msgstr "Tekstiväri:"
-
-#~ msgid "URL Link Color:"
-#~ msgstr "URL:n linkin väri:"
-
-#~ msgid "Followed Link Color:"
-#~ msgstr "Käydyn linkin väri:"
-
-#~ msgid "Change cursor over link."
-#~ msgstr "Muuta osoitinta linkin kohdalla."
-
-#~ msgid "Underline links"
-#~ msgstr "Alleviivaa linkit"
-
-#~ msgid "Horizontal Root Grid Spacing:"
-#~ msgstr "Vaakasuuntainen hilavälistys:"
-
-#~ msgid "Vertical Root Grid Spacing:"
-#~ msgstr "Pystysuuntainen hilavälistys:"
-
-#, fuzzy
-#~ msgid "&Allow per-URL settings"
-#~ msgstr "Salli URL-kohtaiset asetukset"
-
-#, fuzzy
-#~ msgid "&Transparent Text for Root Icons."
-#~ msgstr "Läpinäkyvä teksti pääkuvakkeille"
-
-#~ msgid "Icon foreground color:"
-#~ msgstr "Kuvakkeen edustaväri:"
-
-#~ msgid "Icon background color:"
-#~ msgstr "Kuvakkeen taustaväri:"
-
-#~ msgid "On server:"
-#~ msgstr "Palvelimella:"
-
-#~ msgid "login as:"
-#~ msgstr "käyttäjätunnus:"
-
-#~ msgid "Known bindings:"
-#~ msgstr "Tunnettuja sidoksia:"
-
-#~ msgid "Don't forget to save your settings!"
-#~ msgstr "Älä unohda tallentaa asetuksiasi!"
-
-#~ msgid "Use proxy"
-#~ msgstr "Käytä proxyä"
-
-#~ msgid "No Proxy for:"
-#~ msgstr "Ei proxyä:"
-
-#~ msgid "&Proxy"
-#~ msgstr "&Proxy"
-
-#~ msgid "&HTTP"
-#~ msgstr "&HTTP"
-
-#~ msgid "User &Agent"
-#~ msgstr "Käyttäjä&agentti"
-
-#~ msgid "&Colors"
-#~ msgstr "&Värit"
-
-#~ msgid "&Other"
-#~ msgstr "&Muut"
-
-#, fuzzy
-#~ msgid "KFM Preferences Settings"
-#~ msgstr "KFM:n Selaimen asetukset"
-
-#~ msgid "Accept languages:"
-#~ msgstr "Hyväksy kielet:"
-
-#~ msgid "Accept character sets:"
-#~ msgstr "Hyväksy merkistöt:"
-
-#~ msgid "Assume HTML"
-#~ msgstr "Oleta HTML"
-
-#~ msgid "ERROR: You dropped some URL over itself"
-#~ msgstr "VIRHE: Pudotit URL:n itsensä päälle"
-
-#~ msgid "&Visual Schnauzer"
-#~ msgstr "Kuvatied&ostot kuvakkeina"
-
-#~ msgid "Name"
-#~ msgstr "Nimi"
-
-#~ msgid "Browse"
-#~ msgstr "Selaa"

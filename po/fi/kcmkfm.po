@@ -24,33 +24,33 @@ msgstr "&Väri"
 
 #: main.cpp:65
 msgid "&Other"
-msgstr ""
+msgstr "&Muut"
 
 #: main.cpp:68
 msgid "&Proxy"
-msgstr ""
+msgstr "&Välityspalvelin"
 
 #: main.cpp:70
 msgid "&HTTP"
-msgstr ""
+msgstr "&HTTP"
 
 #: main.cpp:73
 msgid "User &Agent"
-msgstr ""
+msgstr "&Tunniste"
 
 #: main.cpp:76
 msgid "Coo&kies"
-msgstr ""
+msgstr "&Evästeet"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
-msgstr ""
+msgstr "Työpöydän &kuvakkeet"
 
 #: main.cpp:89
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
-msgstr "käyttö: kcmkfm [-init | {font,color}]\n"
+msgstr "käyttö: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
@@ -58,172 +58,172 @@ msgstr "KFM Asetukset"
 
 #: htmlopts.cpp:64
 msgid "Small"
-msgstr ""
+msgstr "Pieni"
 
 #: htmlopts.cpp:69
 msgid "Medium"
-msgstr ""
+msgstr "Keskikoko"
 
 #: htmlopts.cpp:74
 msgid "Large"
-msgstr ""
+msgstr "Suuri"
 
 #: htmlopts.cpp:83
 msgid "Standard Font"
-msgstr ""
+msgstr "Oletuskirjasin"
 
 #: htmlopts.cpp:97
 msgid "Fixed Font"
-msgstr ""
+msgstr "Tasavälinen kirjasin"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr ""
+msgstr "Oletuskirjasinkoodaus"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr ""
+msgstr "Käytä kielen koodausta"
 
 #: htmlopts.cpp:329
 msgid "Background Color:"
-msgstr ""
+msgstr "Taustan väri:"
 
 #: htmlopts.cpp:341
 msgid "Normal Text Color:"
-msgstr ""
+msgstr "Tavallisen tekstin väri:"
 
 #: htmlopts.cpp:353
 msgid "URL Link Color:"
-msgstr ""
+msgstr "URL -linkin väri:"
 
 #: htmlopts.cpp:365
 msgid "Followed Link Color:"
-msgstr ""
+msgstr "Seuratun linkin väri:"
 
 #: htmlopts.cpp:377
 msgid "Change cursor over link."
-msgstr ""
+msgstr "Vaihda kohdistin linkin päällä"
 
 #: htmlopts.cpp:383
 msgid "Underline links"
-msgstr ""
+msgstr "Alleviivaa linkit"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr ""
+msgstr "&Hyväksy URL -kohtaiset asetukset"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr ""
+msgstr "&Puunäkymä seuraa selausta"
 
 #: miscopts.cpp:43
 msgid "Terminal"
-msgstr ""
+msgstr "Terminaaliemulaattori"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr ""
+msgstr "Älä unohda tallentaa muutoksia!"
 
 #: kproxydlg.cpp:58
 msgid "Use proxy"
-msgstr ""
+msgstr "Käytä välitystä"
 
 #: kproxydlg.cpp:67
 msgid "HTTP Proxy:"
-msgstr ""
+msgstr "HTTP Välitys:"
 
 #: kproxydlg.cpp:82 kproxydlg.cpp:113
 msgid "Port:"
-msgstr ""
+msgstr "Portti:"
 
 #: kproxydlg.cpp:98
 msgid "FTP Proxy:"
-msgstr ""
+msgstr "FTP välitys:"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
-msgstr ""
+msgstr "Ei välitystä:"
 
 #: khttpoptdlg.cpp:38
 msgid "Accept languages:"
-msgstr ""
+msgstr "Hyväksy kielet:"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Hyväksy kirjasinkoodaukset:"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
-msgstr ""
+msgstr "Oleta HTML"
 
 #: useragentdlg.cpp:45
 msgid "On server:"
-msgstr ""
+msgstr "Palvelimella:"
 
 #: useragentdlg.cpp:67
 msgid "login as:"
-msgstr ""
+msgstr "kirjaudu sisään:"
 
 #: useragentdlg.cpp:87
 msgid "&Add"
-msgstr ""
+msgstr "&Lisää"
 
 #: useragentdlg.cpp:107
 msgid "Known bindings:"
-msgstr ""
+msgstr "Tunnetut sidokset:"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
-msgstr ""
+msgstr "&Käytä evästeitä"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
-msgstr ""
+msgstr "Hyväksymistapa"
 
 #: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
 msgid "Accept"
-msgstr ""
+msgstr "Hyväksy"
 
 #: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
 msgid "Ask"
-msgstr ""
+msgstr "Kysy"
 
 #: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
 msgid "Reject"
-msgstr ""
+msgstr "Hylkää"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
-msgstr ""
+msgstr "Verkkoaluekohtaiset asetukset:"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
-msgstr ""
+msgstr "Muuta verkkoalueen hyväksymistä"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr ""
+msgstr "Sinun on annettava verkkoalue ensin !"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
-msgstr ""
+msgstr "Vaakasuuntainen hilaväli:"
 
 #: rootopts.cpp:84
 msgid "Vertical Root Grid Spacing:"
-msgstr ""
+msgstr "Pystysuunatainen hilaväli:"
 
 #: rootopts.cpp:95
 msgid "&Transparent Text for Desktop Icons."
-msgstr ""
+msgstr "&Läpinäkyvä teksti työpöydän kuvakkeille"
 
 #: rootopts.cpp:106
 msgid "Icon foreground color:"
-msgstr ""
+msgstr "Kuvakkeen edustaväri:"
 
 #: rootopts.cpp:118
 msgid "Icon background color:"
-msgstr ""
+msgstr "Kuvakkeen taustaväri:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr ""
+msgstr "Näytä &piilotiedostot työpöydällä"

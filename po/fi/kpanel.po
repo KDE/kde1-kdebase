@@ -51,7 +51,7 @@ msgstr "N‰yt‰ paneeli"
 
 #: kpanel.C:1100
 msgid "Iconify other &windows"
-msgstr ""
+msgstr "Pienenn‰ &muut ikkunat"
 
 #: kpanel.C:1237
 msgid "No comment available"
@@ -66,28 +66,24 @@ msgid "Quickly navigate through the filesystem"
 msgstr "Selaa nopeasti tiedostopuuta"
 
 #: props.C:166
-#, fuzzy
 msgid "Add Application"
-msgstr "Lis‰‰ sovellus"
+msgstr "Lis‰‰ Sovellus"
 
 #: props.C:168
 msgid "Add an application or a submenu onto the panel"
 msgstr "Lis‰‰ sovellus tai valikko paneeliin"
 
 #: props.C:174
-#, fuzzy
 msgid "Add Disk Navigator"
-msgstr "Levyselain"
+msgstr "Lis‰‰ Levyselain"
 
 #: props.C:176
-#, fuzzy
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Lis‰‰ ikkunalista -valikko paneeliin"
+msgstr "Lis‰‰ Levyselain -valikko paneeliin"
 
 #: props.C:179
-#, fuzzy
 msgid "Add Windowlist"
-msgstr "Lis‰‰ ikkunalista"
+msgstr "Lis‰‰ Ikkunalista"
 
 #: props.C:181
 msgid "Add a windowlist menu onto the panel"
@@ -146,7 +142,6 @@ msgstr ""
 "%b %d"
 
 #: tools.C:905
-#, fuzzy
 msgid "KDiskNavigator"
 msgstr "Levyselain"
 
@@ -180,30 +175,28 @@ msgstr "Jaettu:"
 
 #: pfilemenu.C:745
 msgid "Entries shared among all users"
-msgstr ""
+msgstr "Kaikkien k‰ytt‰jien jakamat tietueet"
 
 #: pfilemenu.C:764
 msgid "Personal:"
 msgstr "Oma:"
 
 #: pfilemenu.C:766
-#, fuzzy
 msgid "Personal entries"
-msgstr "Oma:"
+msgstr "Omat"
 
 #: pfilemenu.C:784
 msgid "Recent:"
-msgstr "Viimeiset:"
+msgstr "Edelliset:"
 
 #: pfilemenu.C:786
 msgid "Recent entries"
-msgstr ""
+msgstr "Edelliset tietueet"
 
 #: pfilemenu.C:832
 msgid "Options..."
 msgstr "Asetukset..."
 
 #: pfilemenu.C:834
-#, fuzzy
 msgid "Customize Disk Navigator"
-msgstr "Levyselain"
+msgstr "Aseta Levyselainta"

@@ -120,7 +120,7 @@ msgstr "Seuratun linkin väri:"
 
 #: options.cpp:238
 msgid "Underline links"
-msgstr ""
+msgstr "Alleviivaa linkit"
 
 #: options.cpp:317
 msgid "KDE Help Options"

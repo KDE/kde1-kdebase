@@ -124,7 +124,7 @@ msgstr "Tekninen &referenssi ..."
 
 #: main.C:346
 msgid "cd"
-msgstr ""
+msgstr "cd"
 
 #: main.C:359
 msgid "Sessions"
@@ -136,6 +136,8 @@ msgid ""
 "Font `%s' not found.\n"
 "Check README.linux.console for help."
 msgstr ""
+"Kirjasinta `%s' ei löytynyt.\n"
+"Tarkista README.linux.console saadaksesi lisätietoja."
 
 #: main.C:607
 #, c-format
@@ -154,17 +156,26 @@ msgid ""
 "WITHOUT ANY WARRANTY.\n"
 "See `LICENSE.readme´ for details."
 msgstr ""
+"%s versio %s - X -terminaaliemulaattori\n"
+"\n"
+"Copyright (c) 1998 by Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"Tämä ohjelma on vapaa ohjelmisto Artistic\n"
+"License:n alla ja on ILMAN MITÄÄN TOIMINTATAKUITA.\n"
+"Lue `LICENSE.readme´ saadaksesi lisätietoja."
 
 #: main.C:732
 #, c-format
 msgid "`%s' terminated abnormally."
-msgstr ""
+msgstr "`%s' lopetettiin epänormaalisti."
 
 #: main.C:735
 msgid ""
 "\n"
 "Return code = "
 msgstr ""
+"\n"
+"Paluukoodi = "
 
 #: main.C:928
 msgid "Welcome to the console"

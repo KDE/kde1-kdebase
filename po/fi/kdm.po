@@ -15,7 +15,7 @@ msgstr "Sammutetaanko vai käynnistetäänkö uudelleen?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr ""
+msgstr "(Anna pääkäyttäjän salasana)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
@@ -27,7 +27,7 @@ msgstr "Sammuta ja käynnistä uudelleen"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr ""
+msgstr "Uudelleenkäynnistä X -palvelin"
 
 #: kgreeter.cpp:222
 msgid "Login:"
