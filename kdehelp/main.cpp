@@ -61,9 +61,10 @@ void Timer::timerEvent( QTimerEvent * )
 			url += buf.getMsg();
 		}
 
-		helpWin->openURL( url );
-
-		helpWin->show();
+		if ( helpWin->openURL( url ) )
+			delete helpWin;
+		else
+			helpWin->show();
 	}
 }
 
@@ -114,6 +115,20 @@ int main(int argc, char *argv[])
 		initDoc = "file:";
 		initDoc += kdedir;
 		initDoc += "/doc/HTML/index.html";
+	}
+
+	url = initDoc;
+
+	if ( !strchr( url, ':' ) )
+	{
+		if ( initDoc[0] == '.' || initDoc[0] != '/' )
+		{
+			QFileInfo fi( initDoc );
+			initDoc = fi.absFilePath();
+		}
+
+		url = "file:";
+		url += initDoc;
 	}
 
 	// create data directory if necessary
@@ -176,18 +191,12 @@ int main(int argc, char *argv[])
 
 	KHelpWindow *helpWin = new KHelpWindow;
 
-	url = initDoc;
-
-	if ( !strchr( url, ':' ) )
+	if ( !helpWin->openURL( url ) )
 	{
-		url = "file:";
-		url += initDoc;
+		helpWin->show();
+
+		a.exec();
 	}
-
-	helpWin->openURL( url );
-	helpWin->show();
-
-	a.exec();
 
 	delete timer;
 

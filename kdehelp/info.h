@@ -299,6 +299,7 @@ private:
 	char			decompressCmd[256];
 	char 			compressExtn[10];
 	char			*searchPath[INFO_MAXPATHS];
+	char			*currentPath; // will be set to last searchPath entry
 	int				numPaths;
 	char			compressed;
 	char			firstFind;

@@ -1,6 +1,23 @@
 KDE Help System CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+Version 0.4.11
+--------------
+
+Apply patch from Marco Zuehlke to accept compressed man pages.
+Apply patches from Christian Czezatke to stop SEGV when a url is not found.
+Add location bar.
+Options to hide tool/location/status bars
+Remember position on page in history.
+Handle full path names in info correctly
+Presentation changes in documentation
+
+Version 0.4.10
+--------------
+
+man and info display improvements
+fix running kdehelp when kdehelp is already running bug
+
 Version 0.4.9
 -------------
 

@@ -34,9 +34,10 @@
 #define QUIT			102
 #define COPY			200
 
-#define KDEHELP_VERSION		"0.4.9"
+#define KDEHELP_VERSION		"0.4.11"
 
 #define STATUSBAR_HEIGHT	20
+#define SCROLLBAR_WIDTH		16
 #define BUTTON_HEIGHT		26
 #define BUTTON_WIDTH		26
 #define BUTTON_SEPARATION	6
@@ -62,11 +63,44 @@ private:
 
 //-----------------------------------------------------------------------------
 
-class KHelpView : public KHTMLWidget
+class KLocationBar : public QFrame
 {
 	Q_OBJECT
 public:
-	KHelpView(QWidget *parent, const char *name, const char *_pix_path );
+	KLocationBar( QWidget *parent = NULL, const char *name = NULL );
+
+	void setLocation( const char *l )
+		{	lineEdit->setText( l ); }
+
+signals:
+	void openURL( const char *URL, int );
+
+protected slots:
+	void slotReturnPressed();
+
+private:
+	QLineEdit *lineEdit;
+};
+
+//-----------------------------------------------------------------------------
+
+class KPageInfo
+{
+public:
+	KPageInfo( const char *u, int y )
+		{	url = u; yOffset = y; }
+
+	const QString getUrl() const
+		{	return url; }
+	int getOffset() const
+		{	return yOffset; }
+
+	void setOffset( int y )
+		{	yOffset = y; }
+
+private:
+	QString url;
+	int yOffset;
 };
 
 //-----------------------------------------------------------------------------
@@ -78,7 +112,7 @@ public:
 	KHelpWindow(QWidget *parent=NULL, const char *name=NULL);
 	virtual ~KHelpWindow();
 
-	int 	openURL( const char *URL, int withHistory = TRUE );
+	int 	openURL( const char *URL, bool withHistory = true );
 	void	openNewWindow( const char *url );
 
 public slots:
@@ -101,6 +135,10 @@ public slots:
 	void	slotBookmarkChanged();
 	void	slotStopProcessing();
 	void	slotOptionsGeneral();
+	void	slotOptionsToolbar();
+	void	slotOptionsStatusbar();
+	void	slotOptionsLocation();
+	void	slotOptionsSave();
 	void	slotUsingHelp();
 	void	slotAbout();
 	void	slotSetTitle( const char * );
@@ -114,12 +152,6 @@ public slots:
 	void	slotCGIDone();
 	void	slotScrollVert( int _y );
 	void	slotScrollHorz( int _y );
-	void	slotScrollUp();
-	void	slotScrollDown();
-	void	slotScrollLeft();
-	void	slotScrollRight();
-	void	slotScrollPageUp();
-	void	slotScrollPageDown();
 	void	slotBackgroundColor( const QColor &col );
 	void	slotFontSize( int );
 	void	slotStandardFont( const char * );
@@ -127,15 +159,16 @@ public slots:
 	void	slotPopupOpenURL();
 	void	slotPopupAddBookmark();
 	void	slotPopupOpenNew();
+	void	slotViewResized( const QSize & );
 	void	slotDocumentChanged();
 	void	slotDocumentDone();
 
 protected:
-	void	resizeEvent(QResizeEvent *);
+	void	resizeEvent( QResizeEvent * );
 	void	closeEvent( QCloseEvent * );
 
 private:
-	enum FileType { UnknownFile, HTMLFile, InfoFile, ManFile };
+	enum FileType { UnknownFile, HTMLFile, InfoFile, ManFile, CannotOpenFile };
 
 	void	readOptions();
 	int		openFile( const QString & );
@@ -148,11 +181,13 @@ private:
 	void	convertSpecial( const char *buffer, QString &converted );
 	void	enableMenuItems();
 	void	enableToolbarButton( int id, bool enable );
+	void	createMenu();
 	void	createToolbar();
 	void	fillBookmarkMenu( KBookmark *parent, QPopupMenu *menu, int &id );
 	QString	getPrefix();
 	QString	getLocation();
 	void	addBookmark( const char *_title, const char *url );
+	void	layout();
 
 private:
 	QMenuBar *menu;
@@ -160,11 +195,13 @@ private:
 	QPopupMenu *fileMenu;
 	QPopupMenu *gotoMenu;
 	QPopupMenu *bookmarkMenu;
+	QPopupMenu *optionsMenu;
 	QScrollBar *vert;
 	QScrollBar *horz;
 	QLabel *statusBar;
+	KLocationBar *locationBar;
 	QAccel *accel;
-	KHelpView *view;
+	KHTMLWidget *view;
 	KDNDDropZone *dropZone;
 	KOpenURLDialog *openURLDialog;
 
@@ -178,9 +215,15 @@ private:
 	static KHelpOptionsDialog *optionsDialog;
 	static KBookmarkManager bookmarkManager;
 
+	// html view preferences
 	static int  fontBase;
 	static QString standardFont;
 	static QString fixedFont;
+
+	// bars showing
+	bool   showToolBar;
+	bool   showStatusBar;
+	bool   showLocationBar;
 
 	KPixmap toolbarPixmaps[16];
 	QString fullURL;
@@ -189,9 +232,13 @@ private:
 	QString title;
 	QString ref;
 
-	int topOffset;
-	int bottomOffset;
+	// current width of the html view
+	int viewWidth;
 
+	// scroll to here when parsed
+	int scrollTo;
+
+	// menu ids
 	int idClose;
 	int idCopy;
 	int idBack;
@@ -202,9 +249,10 @@ private:
 	int idPrev;
 	int idNext;
 
+	// busy parsing
 	bool busy;
 
-	cHistory<QString> history;
+	cHistory<KPageInfo> history;
 	cHTMLFormat html;
 	cInfo *info;
 	cMan *man;

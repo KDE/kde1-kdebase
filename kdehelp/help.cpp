@@ -13,6 +13,7 @@
 #include <qfiledlg.h>
 #include <qmsgbox.h>
 #include <qtooltip.h>
+#include <qlayout.h>
 #include <kapp.h>
 #include <Kconfig.h>
 #include <kurl.h>
@@ -62,10 +63,23 @@ void KOpenURLDialog::openPressed()
 
 //-----------------------------------------------------------------------------
 
-KHelpView::KHelpView( QWidget *parent, const char *name, const char *_pix_path )
-	: KHTMLWidget( parent, name, _pix_path )
+KLocationBar::KLocationBar( QWidget *parent, const char *name )
+	: QFrame( parent, name )
 {
-//	setBackgroundColor( QColor( 192, 192, 192 ) );
+	QBoxLayout *gm = new QBoxLayout( this, QBoxLayout::LeftToRight, 4 );
+
+	QLabel *label = new QLabel( " Location:", this );
+	label->setMaximumSize( label->sizeHint() );
+	gm->addWidget( label );
+
+	lineEdit = new QLineEdit( this );
+	connect( lineEdit, SIGNAL( returnPressed() ), SLOT( slotReturnPressed() ) );
+	gm->addWidget( lineEdit );
+}
+
+void KLocationBar::slotReturnPressed()
+{
+	emit openURL( lineEdit->text(), LeftButton );
 }
 
 //-----------------------------------------------------------------------------
@@ -86,6 +100,7 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	remotePage = NULL;
 	CGIServer = NULL;
 	busy = false;
+	scrollTo = 0;
 
 	char *kdedir = getenv( "KDEDIR" );
 
@@ -96,8 +111,8 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 		DOCS_PATH = kdedir;
 		DOCS_PATH += "/doc/HTML/";
 	}
-	else
-		QMessageBox::message( "KDE Help", "Please set a $KDEDIR environment variable" );
+//	else
+//		QMessageBox::message( "KDE Help", "Please set a $KDEDIR environment variable" );
 
 	readOptions();
 
@@ -112,115 +127,51 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	accel->insertItem( CTRL + Key_Q,		QUIT );
 
 	accel->connectItem( COPY, this, SLOT(slotCopy()) );
-	accel->connectItem( accel->insertItem(Key_Up), this, SLOT(slotScrollUp()) );
-	accel->connectItem( accel->insertItem(Key_Down), this,
-		SLOT(slotScrollDown()) );
-	accel->connectItem( accel->insertItem(Key_Left), this,
-		SLOT(slotScrollLeft()) );
-	accel->connectItem( accel->insertItem(Key_Right), this,
-		SLOT(slotScrollRight()) );
-	accel->connectItem( accel->insertItem(Key_Prior), this,
-		SLOT(slotScrollPageUp()) );
-	accel->connectItem( accel->insertItem(Key_Next), this,
-		SLOT(slotScrollPageDown()) );
 
-	fileMenu = new QPopupMenu;
-	CHECK_PTR( fileMenu );
-	fileMenu->insertItem( "New Help Window", this, SLOT(slotNewWindow()),
-						CTRL+Key_N );
-	fileMenu->insertSeparator();
-	fileMenu->insertItem( "Open File...", this, SLOT(slotOpenFile()) );
-	fileMenu->insertItem( "Open URL...", this, SLOT(slotOpenURL()) );
-	fileMenu->insertSeparator();
-	fileMenu->insertItem( "Search", this, SLOT(slotSearch()) );
-	fileMenu->insertSeparator();
-	idClose = fileMenu->insertItem("Close",this,SLOT(slotClose()),CTRL+Key_W);
-	fileMenu->insertItem( "Quit", qApp, SLOT(quit()), CTRL+Key_Q );
-
-	QPopupMenu *editMenu = new QPopupMenu;
-	CHECK_PTR( editMenu );
-	idCopy = editMenu->insertItem( "Copy", this, SLOT(slotCopy()), CTRL+Key_C );
-	editMenu->setItemEnabled( idCopy, FALSE );
-
-	gotoMenu = new QPopupMenu;
-	CHECK_PTR( gotoMenu );
-	idBack = gotoMenu->insertItem( "Back", this, SLOT(slotBack()) );
-	idForward = gotoMenu->insertItem( "Forward", this, SLOT(slotForward()) );
-	gotoMenu->insertSeparator();
-	idDir = gotoMenu->insertItem( "Contents", this, SLOT(slotDir()) );
-	idTop = gotoMenu->insertItem( "Top", this, SLOT(slotTop()) );
-	idUp = gotoMenu->insertItem( "Up", this, SLOT(slotUp()) );
-	idPrev = gotoMenu->insertItem( "Previous", this, SLOT(slotPrev()) );
-	idNext = gotoMenu->insertItem( "Next", this, SLOT(slotNext()) );
-
-	bookmarkMenu = new QPopupMenu;
-	CHECK_PTR( bookmarkMenu );
-	connect( bookmarkMenu, SIGNAL( activated( int ) ),
-			SLOT( slotBookmarkSelected( int ) ) );
-	connect( bookmarkMenu, SIGNAL( highlighted( int ) ),
-			SLOT( slotBookmarkHighlighted( int ) ) );
-
-	QPopupMenu *optionsMenu = new QPopupMenu;
-	CHECK_PTR( optionsMenu );
-	optionsMenu->insertItem( "General Preferences...", this,
-			SLOT(slotOptionsGeneral()) );
-
-	QPopupMenu *helpMenu = new QPopupMenu;
-	CHECK_PTR( helpMenu );
-	helpMenu->insertItem( "Using Help", this, SLOT(slotUsingHelp()) );
-	helpMenu->insertItem( "About", this, SLOT(slotAbout()) );
-
-	menu = new QMenuBar( this );
-	CHECK_PTR( menu );
-	menu->insertItem( "&File", fileMenu );
-	menu->insertItem( "&Edit", editMenu );
-	menu->insertItem( "&Goto", gotoMenu );
-	menu->insertItem( "&Bookmarks", bookmarkMenu );
-	menu->insertItem( "&Options", optionsMenu );
-	menu->insertSeparator();
-	menu->insertItem( "&Help", helpMenu );
-
-	toolbarPixmaps[0].load( PIXDIR + "toolbar/back.xpm");
-	toolbarPixmaps[1].load( PIXDIR + "toolbar/back_gray.xpm");
-	toolbarPixmaps[2].load( PIXDIR + "toolbar/forward.xpm");
-	toolbarPixmaps[3].load( PIXDIR + "toolbar/forward_gray.xpm");
-	toolbarPixmaps[4].load( PIXDIR + "toolbar/prev.xpm");
-	toolbarPixmaps[5].load( PIXDIR + "toolbar/prev_gray.xpm");
-	toolbarPixmaps[6].load( PIXDIR + "toolbar/next.xpm");
-	toolbarPixmaps[7].load( PIXDIR + "toolbar/next_gray.xpm");
-	toolbarPixmaps[8].load( PIXDIR + "toolbar/up.xpm");
-	toolbarPixmaps[9].load( PIXDIR + "toolbar/up_gray.xpm");
-	toolbarPixmaps[10].load( PIXDIR + "toolbar/top.xpm");
-	toolbarPixmaps[11].load( PIXDIR + "toolbar/top_gray.xpm");
-	toolbarPixmaps[12].load( PIXDIR + "toolbar/contents.xpm");
-	toolbarPixmaps[13].load( PIXDIR + "toolbar/contents_gray.xpm");
-	toolbarPixmaps[14].load( PIXDIR + "stop.xpm");
-	toolbarPixmaps[15].load( PIXDIR + "stop_gray.xpm");
+	createMenu();
 
 	createToolbar();
+	if ( showToolBar )
+		toolbar->show();
+	else
+		toolbar->hide();
 
-	bottomOffset = STATUSBAR_HEIGHT;
+	locationBar = new KLocationBar( this );
+	locationBar->setFrameStyle( QFrame::Panel | QFrame::Raised );
+	if ( showLocationBar )
+		locationBar->show();
+	else
+		locationBar->hide();
+	connect( locationBar, SIGNAL(openURL( const char *, int )),
+						SLOT(slotURLSelected( const char *, int )) );
 
-	statusBar = new QLabel( this );
-	statusBar->setAlignment( AlignLeft | AlignVCenter );
-	statusBar->setFrameStyle( QFrame::Panel | QFrame::Sunken );
-
-	vert = new QScrollBar( 0, 0, 12, height() - topOffset-36, 0,
-			QScrollBar::Vertical, this, "vert" );
-
-	horz = new QScrollBar( 0, 0, 24, width() - 16, 0, QScrollBar::Horizontal,
-			this, "horz" );
-
-	view = new KHelpView( this, NULL, PIXDIR );
+	view = new KHTMLWidget( this, NULL, PIXDIR );
 	CHECK_PTR( view );
 	view->setDefaultFontBase( fontBase );
 	view->setStandardFont( standardFont );
 	view->setFixedFont( fixedFont );
 	view->setURLCursor( upArrowCursor );
+	view->setFocusPolicy( QWidget::StrongFocus );
+	view->setFocus();
+
+	vert = new QScrollBar( 0, 0, 12, view->height(), 0,
+			QScrollBar::Vertical, this, "vert" );
+
+	horz = new QScrollBar( 0, 0, 24, view->width(), 0,
+			QScrollBar::Horizontal, this, "horz" );
+
+	statusBar = new QLabel( this );
+	statusBar->setAlignment( AlignLeft | AlignVCenter );
+	statusBar->setFrameStyle( QFrame::Panel | QFrame::Sunken );
+	if ( showStatusBar )
+		statusBar->show();
+	else
+		statusBar->hide();
 
 	dropZone = new KDNDDropZone( view , DndURL );
 	connect( dropZone, SIGNAL( dropAction( KDNDDropZone *) ), this,
 			SLOT( slotDropEvent( KDNDDropZone *) ) );
+
 
 	connect( &bookmarkManager, SIGNAL( changed() ), 
 			SLOT( slotBookmarkChanged() ) );
@@ -238,6 +189,8 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 			SLOT( slotPopupMenu(const char *, const QPoint & ) ) );
 	connect( view, SIGNAL( formSubmitted( const char *, const char * ) ),
 			SLOT( slotFormSubmitted( const char *, const char * ) ) );
+	connect( view, SIGNAL( resized( const QSize & ) ),
+			SLOT( slotViewResized( const QSize & ) ) );
 //	connect( view, SIGNAL( imageRequest( const char * ) ), 
 //			SLOT( slotImageRequest( const char * ) ) );
 
@@ -249,6 +202,7 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 
 	connect( view, SIGNAL( documentDone() ),
 			SLOT( slotDocumentDone() ) );
+
 
 	// load bookmarks
 	QString p = getenv( "HOME" );
@@ -277,20 +231,19 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	KConfig *config = KApplication::getKApplication()->getConfig();
 	config->setGroup( "Appearance" );
 	QString geom = config->readEntry( "Geometry" );
-	if ( !geom.isNull() && !geom.isEmpty() )
+	if ( !geom.isEmpty() )
 	{
 		int width, height;
 		sscanf( geom, "%dx%d", &width, &height );
 		resize( width, height );
 	}
-	else
-	{
-		resizeEvent( NULL );
-	}
+
+	layout();
 }
 
 KHelpWindow::~KHelpWindow()
 {
+	helpWindowList.removeRef( this );
 	if (openURLDialog)
 		delete openURLDialog;
 	delete man;
@@ -305,26 +258,45 @@ void KHelpWindow::readOptions()
 	config->setGroup( "Appearance" );
 
 	QString bf = config->readEntry( "BaseFontSize" );
-	if ( !bf.isNull() )
+	if ( !bf.isEmpty() )
 		fontBase = bf.toInt();
 
 	standardFont = config->readEntry( "StandardFont" );
-	if ( standardFont.isNull() )
+	if ( standardFont.isEmpty() )
 		standardFont = "times";
 
 	fixedFont = config->readEntry( "FixedFont" );
-	if ( fixedFont.isNull() )
+	if ( fixedFont.isEmpty() )
 		fixedFont = "courier";
+
+	QString o = config->readEntry( "ShowToolBar" );
+	if ( !o.isEmpty() && o.find( "no", 0, false ) == 0 )
+		showToolBar = false;
+	else
+		showToolBar = true;
+
+	o = config->readEntry( "ShowStatusBar" );
+	if ( !o.isEmpty() && o.find( "no", 0, false ) == 0 )
+		showStatusBar = false;
+	else
+		showStatusBar = true;
+
+	o = config->readEntry( "ShowLocationBar" );
+	if ( !o.isEmpty() && o.find( "no", 0, false ) == 0 )
+		showLocationBar = false;
+	else
+		showLocationBar = true;
 }
 
 // Open a URL.  Initiate remote transfer if necessary
-int KHelpWindow::openURL( const char *URL, int withHistory )
+int KHelpWindow::openURL( const char *URL, bool withHistory )
 {
 	char location[256];
-	int pos, rv = 1;
+	int pos, rv = 1, viewPos = view->yOffset();
 	const char *colon;
 	bool isRemote = false;
 
+	scrollTo = 0;
 	ref = "";
 
 	if ( !URL )
@@ -360,8 +332,14 @@ int KHelpWindow::openURL( const char *URL, int withHistory )
 				currentURL.truncate( prevPos + 1 );
 			currentURL += ref;
 			if ( withHistory )
-				history.Add( currentURL.copy() );
+			{
+				if ( history.Current() )
+					history.Current()->setOffset( viewPos );
+				history.Add( new KPageInfo( currentURL, 0 ) );
+			}
+			enableMenuItems();
 			statusBar->setText( currentURL );
+			locationBar->setLocation( currentURL );
 			return 0;
 		}
 	}
@@ -451,7 +429,14 @@ int KHelpWindow::openURL( const char *URL, int withHistory )
 			currentURL += ref;
 		}
 		if ( withHistory )
-			history.Add( currentURL.copy() );
+		{
+			if ( history.Current() )
+			{
+				printf( "Setting offset: %d\n", viewPos );
+				history.Current()->setOffset( viewPos );
+			}
+			history.Add( new KPageInfo( currentURL, 0 ) );
+		}
 		enableMenuItems();
 
 		if ( !isRemote )
@@ -459,6 +444,7 @@ int KHelpWindow::openURL( const char *URL, int withHistory )
 			view->parse();
 			horz->setValue( 0 );
 			statusBar->setText( currentURL );
+			locationBar->setLocation( currentURL );
 		}
 	}
 
@@ -471,10 +457,7 @@ int KHelpWindow::openURL( const char *URL, int withHistory )
 int KHelpWindow::openFile( const QString &location )
 {
 	int rv = 1;
-	bool fileIdentified = TRUE;
 	QString fileName;
-
-	cout << "opening : " << location << endl;
 
 	if ( location[0] == '~' )
 	{
@@ -502,28 +485,26 @@ int KHelpWindow::openFile( const QString &location )
 				formatMan();
 			break;
 
+		case CannotOpenFile:
+			{
+				QMessageBox mb;
+				mb.setText( "Cannot open: " + fileName );
+				mb.setButtonText( "Oops!" );
+				mb.show();
+			}
+			break;
+
 		default:
-			fileIdentified = FALSE;
+			{
+				QMessageBox mb;
+				mb.setText( "Unknown format: " + fileName );
+				mb.setButtonText( "Oops!" );
+				mb.show();
+			}
 	}
 
-	if ( !fileIdentified )
-	{
-		QMessageBox mb;
-		mb.setText( "Unknown format: " + fileName );
-		mb.setButtonText( "Oops!" );
-		mb.show();
-	}
-	else if ( rv == 0 )
-	{
+	if ( rv == 0 )
 		view->parse();
-	}
-	else
-	{
-		QMessageBox mb;
-		mb.setText( "Cannot open: " + fileName );
-		mb.setButtonText( "Oops!" );
-		mb.show();
-	}
 
 	return rv;
 }
@@ -538,7 +519,7 @@ int KHelpWindow::formatInfo( int bodyOnly )
 
 	if ( !bodyOnly )
 	{
-		view->setGranularity( 100 );
+		view->setGranularity( 200 );
 		view->begin();
 		view->write( "<html><head><title>" );
 		view->write( info->GetTitle() );
@@ -564,7 +545,7 @@ int KHelpWindow::formatInfo( int bodyOnly )
 			case INFO_NODETEXT:
 				convertSpecial( ((cNodeText *)curr)->text(), converted );
 				view->write( converted );
-				view->write( "<br>" );
+				view->write( "\n" );
 				break;
 
 			case INFO_NODEINLINE:
@@ -593,13 +574,13 @@ int KHelpWindow::formatInfo( int bodyOnly )
 				view->write( "</a>   </td><td valign=top>" );
 				convertSpecial( ((cNodeMenu *)curr)->desc, converted );
 				view->write( converted );
-				view->write( "<br>" );
+				view->write( "\n" );
 				break;
 
 			case INFO_NODEMENUCONT:
 				convertSpecial( ((cNodeText *)curr)->text(), converted );
 				view->write( converted );
-				view->write( "<br>" );
+				view->write( "\n" );
 				break;
 
 			case INFO_NODEXREF:
@@ -672,7 +653,7 @@ int KHelpWindow::formatMan( int bodyOnly )
 
 	if ( !bodyOnly )
 	{
-		view->setGranularity( 400 );
+		view->setGranularity( 500 );
 		view->begin();
 		view->write( "<html><head><title>" );
 		view->write( man->GetTitle() );
@@ -725,10 +706,10 @@ int KHelpWindow::formatMan( int bodyOnly )
 				break;
 
 			case MAN_HEADING3:
-				view->write( "</pre><h3>" );
+				view->write( "<b><i>" );
 				convertSpecial( curr->text, converted );
 				view->write( converted );
-				view->write( "</h3><pre>" );
+				view->write( "</i></b>" );
 				break;
 
 			case MAN_DIR:
@@ -767,7 +748,7 @@ int KHelpWindow::formatMan( int bodyOnly )
 				break;
 
 			case MAN_CR:
-				view->write( "<br>" );
+				view->write( "\n" );
 				break;
 		}
 		curr = curr->next;
@@ -799,7 +780,7 @@ int KHelpWindow::openHTML( const char *location )
 	if ( !file.open(IO_ReadOnly) )
 		return 1;
 
-	view->setGranularity( 400 );
+	view->setGranularity( 500 );
 	view->begin( fullURL );
 
 	do
@@ -934,6 +915,8 @@ KHelpWindow::FileType KHelpWindow::detectFileType( const QString &fileName )
 				}
 			}
 		}
+		else
+			type = CannotOpenFile;
 		if ( strstr( fileName, ".gz" ) )
 			remove( fname );
 	}
@@ -969,7 +952,7 @@ void KHelpWindow::convertSpecial( const char *buffer, QString &converted )
 //
 void KHelpWindow::enableMenuItems()
 {
-	fileMenu->setItemEnabled( idClose, helpWindowList.count() != 1 );
+//	fileMenu->setItemEnabled( idClose, helpWindowList.count() != 1 );
 
 	gotoMenu->setItemEnabled( idBack, history.IsBack() );
 	enableToolbarButton( 0, history.IsBack() );
@@ -987,6 +970,78 @@ void KHelpWindow::enableMenuItems()
 	enableToolbarButton( 6, TRUE );
 
 	enableToolbarButton( 7, busy );
+}
+
+void KHelpWindow::createMenu()
+{
+	fileMenu = new QPopupMenu;
+	CHECK_PTR( fileMenu );
+	fileMenu->insertItem( "&New Help Window", this, SLOT(slotNewWindow()),
+						CTRL+Key_N );
+	fileMenu->insertSeparator();
+	fileMenu->insertItem( "&Open File...", this, SLOT(slotOpenFile()) );
+	fileMenu->insertItem( "Open UR&L...", this, SLOT(slotOpenURL()) );
+	fileMenu->insertSeparator();
+	fileMenu->insertItem( "&Search", this, SLOT(slotSearch()) );
+	fileMenu->insertSeparator();
+	idClose = fileMenu->insertItem("&Close",this,SLOT(slotClose()),CTRL+Key_W);
+	fileMenu->insertItem( "&Quit", qApp, SLOT(quit()), CTRL+Key_Q );
+
+	QPopupMenu *editMenu = new QPopupMenu;
+	CHECK_PTR( editMenu );
+	idCopy = editMenu->insertItem("&Copy", this, SLOT(slotCopy()), CTRL+Key_C );
+	editMenu->setItemEnabled( idCopy, FALSE );
+
+	gotoMenu = new QPopupMenu;
+	CHECK_PTR( gotoMenu );
+	idBack = gotoMenu->insertItem( "&Back", this, SLOT(slotBack()) );
+	idForward = gotoMenu->insertItem( "&Forward", this, SLOT(slotForward()) );
+	gotoMenu->insertSeparator();
+	idDir = gotoMenu->insertItem( "&Contents", this, SLOT(slotDir()) );
+	idTop = gotoMenu->insertItem( "&Top", this, SLOT(slotTop()) );
+	idUp = gotoMenu->insertItem( "&Up", this, SLOT(slotUp()) );
+	idPrev = gotoMenu->insertItem( "&Previous", this, SLOT(slotPrev()) );
+	idNext = gotoMenu->insertItem( "&Next", this, SLOT(slotNext()) );
+
+	bookmarkMenu = new QPopupMenu;
+	CHECK_PTR( bookmarkMenu );
+	connect( bookmarkMenu, SIGNAL( activated( int ) ),
+			SLOT( slotBookmarkSelected( int ) ) );
+	connect( bookmarkMenu, SIGNAL( highlighted( int ) ),
+			SLOT( slotBookmarkHighlighted( int ) ) );
+
+	optionsMenu = new QPopupMenu;
+	CHECK_PTR( optionsMenu );
+	optionsMenu->setCheckable( true );
+	optionsMenu->insertItem( "&General Preferences...", this,
+			SLOT(slotOptionsGeneral()) );
+	optionsMenu->insertSeparator();
+	optionsMenu->insertItem( "Show &Toolbar", this,SLOT(slotOptionsToolbar()));
+	optionsMenu->setItemChecked( optionsMenu->idAt( 2 ), showToolBar );
+	optionsMenu->insertItem( "Show &Location", this,
+		SLOT(slotOptionsLocation()) );
+	optionsMenu->setItemChecked( optionsMenu->idAt( 3 ), showLocationBar );
+	optionsMenu->insertItem( "Show Status&bar", this,
+		SLOT(slotOptionsStatusbar()) );
+	optionsMenu->setItemChecked( optionsMenu->idAt( 4 ), showStatusBar );
+	optionsMenu->insertSeparator();
+	optionsMenu->insertItem( "&Save Options", this, SLOT(slotOptionsSave()) );
+
+	QPopupMenu *helpMenu = new QPopupMenu;
+	CHECK_PTR( helpMenu );
+	helpMenu->insertItem( "&Using KDE Help", this, SLOT(slotUsingHelp()) );
+	helpMenu->insertSeparator();
+	helpMenu->insertItem( "&About", this, SLOT(slotAbout()) );
+
+	menu = new QMenuBar( this );
+	CHECK_PTR( menu );
+	menu->insertItem( "&File", fileMenu );
+	menu->insertItem( "&Edit", editMenu );
+	menu->insertItem( "&Goto", gotoMenu );
+	menu->insertItem( "&Bookmarks", bookmarkMenu );
+	menu->insertItem( "&Options", optionsMenu );
+	menu->insertSeparator();
+	menu->insertItem( "&Help", helpMenu );
 }
 
 // enable/disable toolbar button and set appropriate pixmap
@@ -1007,63 +1062,79 @@ void KHelpWindow::createToolbar()
 	if ( toolbar )
 		delete toolbar;
 
+	QString file = KApplication::findFile( "lib/pics/toolbar/back.xpm" );
+	toolbarPixmaps[0].load( file );
+	file = KApplication::findFile( "lib/pics/toolbar/back_gray.xpm" );
+	toolbarPixmaps[1].load( file );
+	file = KApplication::findFile( "lib/pics/toolbar/forward.xpm" );
+	toolbarPixmaps[2].load( file );
+	toolbarPixmaps[3].load( PIXDIR + "toolbar/forward_gray.xpm");
+	toolbarPixmaps[4].load( PIXDIR + "toolbar/prev.xpm");
+	toolbarPixmaps[5].load( PIXDIR + "toolbar/prev_gray.xpm");
+	toolbarPixmaps[6].load( PIXDIR + "toolbar/next.xpm");
+	toolbarPixmaps[7].load( PIXDIR + "toolbar/next_gray.xpm");
+	toolbarPixmaps[8].load( PIXDIR + "toolbar/up.xpm");
+	toolbarPixmaps[9].load( PIXDIR + "toolbar/up_gray.xpm");
+	toolbarPixmaps[10].load( PIXDIR + "toolbar/top.xpm");
+	toolbarPixmaps[11].load( PIXDIR + "toolbar/top_gray.xpm");
+	toolbarPixmaps[12].load( PIXDIR + "toolbar/contents.xpm");
+	toolbarPixmaps[13].load( PIXDIR + "toolbar/contents_gray.xpm");
+	toolbarPixmaps[14].load( PIXDIR + "stop.xpm");
+	toolbarPixmaps[15].load( PIXDIR + "stop_gray.xpm");
+
 	buttonWidth = BUTTON_WIDTH;
 	buttonHeight = BUTTON_HEIGHT;
 
 	toolbar = new QButtonGroup( this );
-	toolbar->setGeometry( 0, menu->frameGeometry().height(),
-						width(), buttonHeight + 8 );
+	toolbar->setFrameStyle( QFrame::Panel | QFrame::Raised );
 
-	pb = new KButton( toolbar, "Previous Document" );
-	pb->setGeometry( pos, 4, buttonWidth, buttonHeight );
+	pb = new KButton( toolbar );
+	pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
 	connect( pb, SIGNAL( clicked() ), SLOT( slotBack() ) );
 	pos += buttonWidth;
 	QToolTip::add( pb, "Previous Document" );
 
-	pb = new KButton( toolbar, "Next Document" );
-	pb->setGeometry( pos, 4, buttonWidth, buttonHeight );
+	pb = new KButton( toolbar );
+	pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
 	connect( pb, SIGNAL( clicked() ), SLOT( slotForward() ) );
 	pos += buttonWidth + BUTTON_SEPARATION;
 	QToolTip::add( pb, "Next Document" );
 
-	pb = new KButton( toolbar, "Previous Node" );
-	pb->setGeometry( pos, 4, buttonWidth, buttonHeight );
+	pb = new KButton( toolbar );
+	pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
 	connect( pb, SIGNAL( clicked() ), SLOT( slotPrev() ) );
 	pos += buttonWidth;
 	QToolTip::add( pb, "Previous Node" );
 
-	pb = new KButton( toolbar, "Next Mode" );
-	pb->setGeometry( pos, 4, buttonWidth, buttonHeight );
+	pb = new KButton( toolbar );
+	pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
 	connect( pb, SIGNAL( clicked() ), SLOT( slotNext() ) );
 	pos += buttonWidth;
 	QToolTip::add( pb, "Next Node" );
 
-	pb = new KButton( toolbar, "Up one Node" );
-	pb->setGeometry( pos, 4, buttonWidth, buttonHeight );
+	pb = new KButton( toolbar );
+	pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
 	connect( pb, SIGNAL( clicked() ), SLOT( slotUp() ) );
 	pos += buttonWidth;
 	QToolTip::add( pb, "Up one Node" );
 
-	pb = new KButton( toolbar, "Top Node" );
-	pb->setGeometry( pos, 4, buttonWidth, buttonHeight );
+	pb = new KButton( toolbar );
+	pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
 	connect( pb, SIGNAL( clicked() ), SLOT( slotTop() ) );
 	pos += buttonWidth + BUTTON_SEPARATION;
 	QToolTip::add( pb, "Top Node" );
 
-	pb = new KButton( toolbar, "Help Contents" );
-	pb->setGeometry( pos, 4, buttonWidth, buttonHeight );
+	pb = new KButton( toolbar );
+	pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
 	connect( pb, SIGNAL( clicked() ), SLOT( slotDir() ) );
 	pos += buttonWidth + BUTTON_SEPARATION;
 	QToolTip::add( pb, "Help Contents" );
 
-	pb = new KButton( toolbar, "Stop" );
-	pb->setGeometry( pos, 4, buttonWidth, buttonHeight );
+	pb = new KButton( toolbar );
+	pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
 	connect( pb, SIGNAL( clicked() ), SLOT( slotStopProcessing() ) );
 	pos += buttonWidth + BUTTON_SEPARATION;
 	QToolTip::add( pb, "Stop" );
-
-	topOffset = menu->frameGeometry().height() +
-			toolbar->frameGeometry().height();
 }
 
 // add bookmarks to the Bookmarks menu
@@ -1133,6 +1204,38 @@ void KHelpWindow::addBookmark( const char *_title, const char *url )
 	bookmarkManager.write( bmFile );
 }
 
+void KHelpWindow::layout()
+{
+	int top = menu->frameGeometry().height();
+	int bottom = height();
+
+	if ( toolbar->isVisible() )
+	{
+		toolbar->setGeometry( 0, top, width(), BUTTON_HEIGHT + 6 );
+		top += BUTTON_HEIGHT + 6;
+	}
+
+	if ( locationBar->isVisible() )
+	{
+		locationBar->setGeometry( 0, top, width(), 32 );
+		top += 32;
+	}
+
+	if ( statusBar->isVisible() )
+	{
+		bottom -= STATUSBAR_HEIGHT;
+		statusBar->setGeometry( 0, bottom, width(), STATUSBAR_HEIGHT );
+	}
+
+	bottom -= SCROLLBAR_WIDTH;
+	horz->setGeometry( 0, bottom,
+					width() - SCROLLBAR_WIDTH, SCROLLBAR_WIDTH );
+
+	vert->setGeometry( width()-SCROLLBAR_WIDTH, top,
+					SCROLLBAR_WIDTH, bottom-top );
+	view->setGeometry( 0, top, width() - SCROLLBAR_WIDTH, bottom-top );
+}
+
 void KHelpWindow::slotNewWindow()
 {
 	openNewWindow( currentURL );
@@ -1180,18 +1283,30 @@ void KHelpWindow::slotCopy()
 
 void KHelpWindow::slotBack()
 {
-	QString *back = history.Back();
+	if ( history.Current() )
+		history.Current()->setOffset( view->yOffset() );
 
-	if ( back )
-		openURL( *back, FALSE );
+	KPageInfo *p = history.Back();
+
+	if ( p )
+	{
+		if ( !openURL( p->getUrl(), false ) )
+			scrollTo = p->getOffset();
+	}
 }
 
 void KHelpWindow::slotForward()
 {
-	QString *forward = history.Forward();
+	if ( history.Current() )
+		history.Current()->setOffset( view->yOffset() );
 
-	if ( forward )
-		openURL( *forward, FALSE );
+	KPageInfo *p = history.Forward();
+
+	if ( p )
+	{
+		if ( !openURL( p->getUrl(), false ) )
+			scrollTo = p->getOffset();
+	}
 }
 
 void KHelpWindow::slotDir()
@@ -1253,7 +1368,7 @@ void KHelpWindow::slotBookmarkHighlighted( int id )
 void KHelpWindow::slotBookmarkChanged()
 {
 	bookmarkMenu->clear();
-	bookmarkMenu->insertItem( "Add Bookmark", this, SLOT(slotAddBookmark()) );
+	bookmarkMenu->insertItem( "&Add Bookmark", this, SLOT(slotAddBookmark()) );
 	bookmarkMenu->insertSeparator();
 	int idStart = BOOKMARK_ID_BASE;
 	fillBookmarkMenu( bookmarkManager.getRoot(), bookmarkMenu, idStart );
@@ -1308,6 +1423,66 @@ void KHelpWindow::slotOptionsGeneral()
 	optionsDialog->show();
 }
 
+void KHelpWindow::slotOptionsToolbar()
+{
+	if ( showToolBar )
+	{
+		toolbar->hide();
+		showToolBar = false;
+	}
+	else
+	{
+		toolbar->show();
+		showToolBar = true;
+	}
+
+	optionsMenu->setItemChecked( optionsMenu->idAt( 2 ), showToolBar );
+	layout();
+}
+
+void KHelpWindow::slotOptionsLocation()
+{
+	if ( showLocationBar )
+	{
+		locationBar->hide();
+		showLocationBar = false;
+	}
+	else
+	{
+		locationBar->show();
+		showLocationBar = true;
+	}
+
+	optionsMenu->setItemChecked( optionsMenu->idAt( 3 ), showLocationBar );
+	layout();
+}
+
+void KHelpWindow::slotOptionsStatusbar()
+{
+	if ( showStatusBar )
+	{
+		statusBar->hide();
+		showStatusBar = false;
+	}
+	else
+	{
+		statusBar->show();
+		showStatusBar = true;
+	}
+
+	optionsMenu->setItemChecked( optionsMenu->idAt( 4 ), showStatusBar );
+	layout();
+}
+
+void KHelpWindow::slotOptionsSave()
+{
+	KConfig *config = KApplication::getKApplication()->getConfig();
+	config->setGroup( "Appearance" );
+	config->writeEntry( "ShowToolBar", showToolBar ? "Yes" : "No" );
+	config->writeEntry( "ShowStatusBar", showStatusBar ? "Yes" : "No" );
+	config->writeEntry( "ShowLocationBar", showLocationBar ? "Yes" : "No" );
+}
+
 void KHelpWindow::slotUsingHelp()
 {
 	KHelpWindow *helpWin = new KHelpWindow;
@@ -1337,6 +1512,7 @@ void KHelpWindow::slotURLSelected( const char *URL, int button )
 	if ( button == LeftButton )
 	{
 		openURL( URL );
+		view->setFocus();
 	}
 	else if ( button == MidButton )
 	{
@@ -1350,13 +1526,9 @@ void KHelpWindow::slotURLSelected( const char *URL, int button )
 void KHelpWindow::slotOnURL( const char *url )
 {
 	if ( url )
-	{
 		statusBar->setText( url );
-	}
 	else
-	{
 		statusBar->setText( currentURL );
-	}
 }
 
 void KHelpWindow::slotFormSubmitted( const char *method, const char *url )
@@ -1445,6 +1617,7 @@ void KHelpWindow::slotRemoteDone()
 	KURL u( localFile.data() );
 	openFile( u.path() );
 	statusBar->setText( currentURL );
+	locationBar->setLocation( currentURL );
 
 	delete remotePage;
 	remotePage = NULL;
@@ -1459,6 +1632,7 @@ void KHelpWindow::slotCGIDone()
 	KURL u( localFile );
 	openFile( u.path() );
 	statusBar->setText( currentURL );
+	locationBar->setLocation( currentURL );
 
 	delete CGIServer;
 	CGIServer = NULL;
@@ -1474,78 +1648,6 @@ void KHelpWindow::slotScrollVert( int _y )
 void KHelpWindow::slotScrollHorz( int _x )
 {
 	horz->setValue( _x );
-}
-
-void KHelpWindow::slotScrollUp()
-{
-	int pos = view->yOffset();
-
-	pos -= vert->lineStep();
-	if ( pos < 0 )
-		pos = 0;
-
-	view->slotScrollVert( pos );
-	vert->setValue( pos );
-}
-
-void KHelpWindow::slotScrollDown()
-{
-	int pos = view->yOffset();
-
-	pos += vert->lineStep();
-	if ( pos > vert->maxValue() )
-		pos = vert->maxValue();
-
-	view->slotScrollVert( pos );
-	vert->setValue( pos );
-}
-
-void KHelpWindow::slotScrollLeft()
-{
-	int pos = view->xOffset();
-
-	pos -= horz->lineStep();
-	if ( pos < 0 )
-		pos = 0;
-
-	view->slotScrollHorz( pos );
-	horz->setValue( pos );
-}
-
-void KHelpWindow::slotScrollRight()
-{
-	int pos = view->xOffset();
-
-	pos += horz->lineStep();
-	if ( pos > horz->maxValue() )
-		pos = horz->maxValue();
-
-	view->slotScrollHorz( pos );
-	horz->setValue( pos );
-}
-
-void KHelpWindow::slotScrollPageUp()
-{
-	int pos = view->yOffset();
-
-	pos -= vert->pageStep();
-	if ( pos < 0 )
-		pos = 0;
-
-	view->slotScrollVert( pos );
-	vert->setValue( pos );
-}
-
-void KHelpWindow::slotScrollPageDown()
-{
-	int pos = view->yOffset();
-
-	pos += vert->pageStep();
-	if ( pos > vert->maxValue() )
-		pos = vert->maxValue();
-
-	view->slotScrollVert( pos );
-	vert->setValue( pos );
 }
 
 void KHelpWindow::slotBackgroundColor( const QColor &col )
@@ -1595,46 +1697,45 @@ void KHelpWindow::slotPopupOpenNew()
 	openNewWindow( newURL );
 }
 
-void KHelpWindow::resizeEvent( QResizeEvent *e )
+
+void KHelpWindow::slotViewResized( const QSize &s )
 {
 	QApplication::setOverrideCursor( waitCursor );
 
-	toolbar->setGeometry( 0, menu->frameGeometry().height(),
-						width(), toolbar->height() );
-	vert->setGeometry( width()-16, topOffset, 16,
-			height() - topOffset - bottomOffset - 16 );
-	vert->setSteps( 12, height() - topOffset - bottomOffset - 40 );
-	horz->setGeometry( 0, height() - bottomOffset - 16, width() - 16, 16 );
-	horz->setSteps( 24, width() - 16 );
-	view->setGeometry( 0, topOffset, width() - vert->width(),
-						height() - topOffset - bottomOffset - horz->height() );
-	statusBar->setGeometry( 0, height() - STATUSBAR_HEIGHT,
-			width(), STATUSBAR_HEIGHT );
+	vert->setSteps( 12, view->height() - 20 );
+	horz->setSteps( 24, view->width() );
 
-	if ( e && !currentURL.isEmpty() )
+	if ( view->docHeight() > view->height() )
+		vert->setRange( 0, view->docHeight() - view->height() );
+	else
+		vert->setRange( 0, 0 );
+
+	// we need to parse again if the width of the widget changes
+	if ( !currentURL.isEmpty() && s.width() != viewWidth )
 	{
 		view->parse();
-		vert->setSteps( 12, view->height() - 20 );
 		busy = true;
 		enableMenuItems();
+		viewWidth = s.width();
 	}
 
 	QApplication::restoreOverrideCursor();
-
-	if ( e )
-	{
-		KConfig *config = KApplication::getKApplication()->getConfig();
-		config->setGroup( "Appearance" );
-		QString geom;
-		geom.sprintf( "%dx%d", geometry().width(), geometry().height() );
-		config->writeEntry( "Geometry", geom );
-	}
 }
 
+void KHelpWindow::resizeEvent( QResizeEvent * )
+{
+	layout();
+
+	// save size of the application window
+	KConfig *config = KApplication::getKApplication()->getConfig();
+	config->setGroup( "Appearance" );
+	QString geom;
+	geom.sprintf( "%dx%d", geometry().width(), geometry().height() );
+	config->writeEntry( "Geometry", geom );
+}
 
 void KHelpWindow::closeEvent( QCloseEvent * )
 {
-	helpWindowList.removeRef( this );
 	delete this;
 
 	if ( helpWindowList.isEmpty() )
@@ -1662,9 +1763,17 @@ void KHelpWindow::slotDocumentChanged()
 
 void KHelpWindow::slotDocumentDone()
 {
-	warning( "Doc Done" );
-	if ( ref.isEmpty() )
+	if ( scrollTo )
+	{
+		if ( scrollTo > view->docHeight() - view->height() )
+			scrollTo = view->docHeight() - view->height();
+		view->slotScrollVert( scrollTo );
+		vert->setValue( scrollTo );
+	}
+	else if ( ref.isEmpty() )
+	{
 		vert->setValue( 0 );
+	}
 	else
 	{
 		if ( !view->gotoAnchor( ref ) )

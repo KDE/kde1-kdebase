@@ -580,6 +580,11 @@ void cManSection::ReadDir(const char *dirName)
 		strcpy( buffer, dirEntry->d_name );
 
 		ptr = strrchr( buffer, '.' );
+		if ( !strcmp(ptr, ".gz") || !strcmp(ptr, ".Z") ) // skip compress extn
+		{
+			*ptr = '\0';
+			ptr = strrchr( buffer, '.' );
+		}
 		if (ptr)
 		{
 			*ptr = '\0';

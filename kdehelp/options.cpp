@@ -9,6 +9,7 @@
 #include <qpushbt.h>
 #include <qcombo.h>
 #include <qlabel.h>
+#include <qchkbox.h>
 #include <kapp.h>
 #include <Kconfig.h>
 #include <X11/Xlib.h>
@@ -35,15 +36,15 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 	bg->setGeometry( 15, 15, 300, 50 );
 
 	rb = new QRadioButton( "Small", bg );
-	rb->setGeometry( 10, 20, 60, 20 );
+	rb->setGeometry( 10, 20, 80, 20 );
 	rb->setChecked( fSize == 3 );
 
 	rb = new QRadioButton( "Medium", bg );
-	rb->setGeometry( 100, 20, 60, 20 );
+	rb->setGeometry( 100, 20, 80, 20 );
 	rb->setChecked( fSize == 4 );
 
 	rb = new QRadioButton( "Large", bg );
-	rb->setGeometry( 200, 20, 60, 20 );
+	rb->setGeometry( 200, 20, 80, 20 );
 	rb->setChecked( fSize == 5 );
 
 	label = new QLabel( "Standard Font", this );
@@ -59,7 +60,7 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 		if ( !strcmp( stdName, sit.current() ) )
 			cb->setCurrentItem( i );
 	}
-	connect( cb, SIGNAL( highlighted( const char * ) ),
+	connect( cb, SIGNAL( activated( const char * ) ),
 		SLOT( slotStandardFont( const char * ) ) );
 
 	label = new QLabel( "Fixed Font", this );
@@ -75,7 +76,7 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 		if ( !strcmp( fixedName, fit.current() ) )
 			cb->setCurrentItem( i );
 	}
-	connect( cb, SIGNAL( highlighted( const char * ) ),
+	connect( cb, SIGNAL( activated( const char * ) ),
 		SLOT( slotFixedFont( const char * ) ) );
 
 	connect( bg, SIGNAL( clicked( int ) ), SLOT( slotFontSize( int ) ) );
@@ -87,7 +88,7 @@ void KFontOptions::readOptions()
 	config->setGroup( "Appearance" );
 	
 	QString fs = config->readEntry( "BaseFontSize" );
-	if ( !fs.isNull() )
+	if ( !fs.isEmpty() )
 	{
 		fSize = fs.toInt();
 		if ( fSize < 3 )
@@ -99,11 +100,11 @@ void KFontOptions::readOptions()
 		fSize = 3;
 
 	stdName = config->readEntry( "StandardFont" );
-	if ( stdName.isNull() )
+	if ( stdName.isEmpty() )
 		stdName = "times";
 
 	fixedName = config->readEntry( "FixedFont" );
-	if ( fixedName.isNull() )
+	if ( fixedName.isEmpty() )
 		fixedName = "courier";
 }
 
@@ -137,6 +138,9 @@ void KFontOptions::addFont( QStrList &list, const char *xfont )
 	if ( ( pos = font.find( '-' ) ) > 0 )
 	{
 		font.truncate( pos );
+
+		if ( font.find( "open look", 0, false ) >= 0 )
+			return;
 
 		QStrListIterator it( list );
 

@@ -24,7 +24,7 @@ public:
 	virtual const char *NextNode()	{	return NULL; }
 	virtual const char *UpNode()	{	return NULL; }
 	virtual const char *TopNode()	{	return NULL; }
-	virtual const char *Dir()	{	return "index:"; }
+	virtual const char *Dir()	{	return "(index)"; }
 	virtual int  IsTop()	{	return 0; }
 	virtual int  IsDir()	{	return 1; }
 };

@@ -9,10 +9,10 @@ with built-in filters for info and man (including links to other man pages :-).
 BUILDING:
 
 1. You will require:
-      Qt-1.1        (or greater)
-      libkde-0.7.1  (or greater)
-      ktoolpics-0.2 (or greater)
-      khtml-0.5.1	(or greater)
+      Qt-1.2          (or greater)
+      kdelibs-0.8.06  (or greater)
+      ktoolpics-0.2   (or greater)
+      khtml-0.5.4     (or greater)
 2. Make sure you have QTDIR and KDEDIR environment variables
 3. Check install paths in Makefile
 4. type make
@@ -49,18 +49,17 @@ as a guide.  Bookmarks file: $HOME/.kdehelp/bookmarks.html
 
 LAUNCHING FROM YOUR PROGRAM:
 
-To open a kdehelp window, just fork() and execlp() kdehelp, e.g.
+To open a kdehelp window, call:
 
-if ( fork() == 0 )
-{
-	execlp( "kdehelp", "kdehelp", "file:/usr/doc/HTML/myprog.html", 0 );
-	exit( 1 );
-}
+kapp->invokeHTMLHelp( QString aFilename, QString aTopic )
+
+e.g.
+
+kapp->invokeHTMLHelp( "kmyapp/main.html", "saving" );
 
 This will open a new help window if kdehelp is already running or start a new
 kdehelp session otherwise.  Only one instance of kdehelp will be run per
-user.  Note that the example above uses a hardcoded path.  You should use
-the KDEDIR environment variable to ensure your help file is found.
+user.  It is assumed that the documentation is located in $KDEDIR/doc/HTML/
 
 
 THE KDE HELP INDEX STUFF

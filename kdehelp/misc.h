@@ -25,17 +25,18 @@ public:
 
 	T *Back()	{	return list.prev(); }
 	T *Forward()	{	return list.next(); }
+	T *Current()	{	return list.current(); }
 
 	int IsBack()	{	return (list.current() != list.getFirst()); }
 	int IsForward()	{	return (list.current() != list.getLast()); }
 
-	void Add(const T &item)
+	void Add( T *item )
 	{
 		T *stop = list.current();
 		if (stop)
 			while (list.last() != stop) list.removeLast();
 		if (list.count() > maxLen) list.removeFirst();
-		list.append( new T(item) );
+		list.append( item );
 	}
 
 private:
@@ -44,3 +45,4 @@ private:
 };
 
 #endif
+

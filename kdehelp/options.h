@@ -47,7 +47,6 @@ private:
 	QStrList fixedFonts;
 };
 
-
 //-----------------------------------------------------------------------------
 
 class KHelpOptionsDialog : public QTabDialog

@@ -1116,7 +1116,7 @@ cInfo::cInfo()
 		char *paths = StrDup(envPath);
 		char *p = strtok(paths, ":");
 
-		while (p)
+		while (p && numPaths < INFO_MAXPATHS-1)
 		{
 			searchPath[numPaths++] = StrDup(p);
 			p = strtok(NULL, ":");
@@ -1127,7 +1127,11 @@ cInfo::cInfo()
 	else
 		searchPath[numPaths++] = StrDup("/usr/info");
 
-//	ReadNode("(dir)");
+	// append space to store the last used path
+	searchPath[numPaths] = new char [256];
+	searchPath[numPaths][0] = '\0';
+	currentPath = searchPath[numPaths];
+	numPaths++;
 }
 
 // ----------------------------------------------------------------------------
@@ -1258,6 +1262,7 @@ int cInfo::Read(const char *theFilename)
 //
 int cInfo::FindFile(const char *theFilename)
 {
+	char *ptr;
 	char fullPath[256];
 	char workFile[256];
 	int n = 0;
@@ -1279,6 +1284,11 @@ int cInfo::FindFile(const char *theFilename)
 	{
 		while (n < numPaths)
 		{
+			if ( searchPath[n][0] == '\0' )
+			{
+				n++;
+				continue;
+			}
 			sprintf(fullPath, "%s/%s", searchPath[n], workFile);
 			if (!access(fullPath, R_OK))
 			{
@@ -1366,6 +1376,12 @@ NOTCOMPRESSED:
 	strcpy(filename, workFile);
 	strcpy(infoFile, theFilename);
 
+	// save the full path of this file
+	strcpy( currentPath, workFile );
+	ptr = strrchr( currentPath, '/' );
+	if ( ptr )
+		*ptr = '\0';
+
 	return 0;
 
 COMPRESSED:
@@ -1375,6 +1391,12 @@ COMPRESSED:
 
 	strcpy(filename, workFile);
 	strcpy(infoFile, theFilename);
+
+	// save the full path of this file
+	strcpy( currentPath, workFile );
+	ptr = strrchr( currentPath, '/' );
+	if ( ptr )
+		*ptr = '\0';
 
 	return 0;
 }
