@@ -695,6 +695,11 @@ void cNodeLineList::AddXRef(ifstream &stream, char *buffer)
 		wrapped = TRUE;
 	}
 
+    if ( !ptr1 )
+    {
+        return;
+    }
+
 	if ( *(ptr1+1) == ':' )
 	{
 		*ptr1 = '\0';
