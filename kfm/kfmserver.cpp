@@ -67,27 +67,22 @@ KFMServer::KFMServer() : KfmIpcServer()
 		stat( file.data(), &fileinfo );
 		if ( ! S_ISREG( fileinfo.st_mode ) )
 		    continue;
-		if ( ++ num > 48 )
-		    break;
 		// make sure file does not block
 		fd = open( file.data(), O_RDONLY | O_NONBLOCK );
 		if ( fd >= 0 )
 		{
-		    int offset = fileinfo.st_size - sizeof( long int );
-		    if (offset > 0 )
+		    off_t offset = fileinfo.st_size & ( off_t ) seed ;
+		    if ( offset > (off_t) sizeof( long int ))
 		    {
-		    	lseek( fd, (off_t) offset & 0x7F, SEEK_SET );
+		    	lseek( fd, (off_t) ( (offset - (off_t) sizeof( long int )) & (off_t) 0x7FF ), SEEK_SET );
 		        read( fd, ( void * ) &temp, sizeof( long int ) );
-		    }
-		    else if ( file.length( ) > sizeof( long int ) )
-		    {
-			long int *ptr = ( long int * ) ( file.data( ) + file.length( ) - sizeof( long int ) );
-			temp = *ptr;
 		    }
 		    else
 			temp = fileinfo.st_mtime;
 			
 		    close( fd );
+		    if ( ++ num > 24 )
+		        break;
 		}
 		else
 		    temp = fileinfo.st_mtime;
