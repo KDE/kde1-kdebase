@@ -13,6 +13,8 @@ datadir = $(kde_datadir)/kfm
 
 ####### Files
 
+bin_SCRIPTS = kfmsu kfmsu2 startkde unpack
+
 bin_PROGRAMS = kfm
 
 kfm_SOURCES =	\
@@ -158,28 +160,14 @@ kbookmarkdlg.moc: kbookmarkdlg.h
      
 SUBDIRS = kfmwarn client kioslave pics Desktop kfmexec
 
-install-local-exec: 
-	$(mkinstalldirs) $(bindir)
-	$(INSTALL_DATA) ./unpack $(bindir)
-	$(INSTALL_SCRIPT) ./kfmsu $(bindir)
-	$(INSTALL_SCRIPT) ./kfmsu2 $(bindir)
-	$(INSTALL_SCRIPT) ./startkde $(bindir)
-
 install-data-local:
 	$(mkinstalldirs) $(CONFIGDIR)
 	$(INSTALL_DATA) config/kfmrc $(CONFIGDIR)
 	$(INSTALL_DATA) config/desktop $(CONFIGDIR)
 	$(mkinstalldirs) $(MIMELNKDIR)
 	$(INSTALL_DATA) magic $(MIMELNKDIR)
-	$(INSTALL_SCRIPT) ./kfmsu $(bindir)
-	$(INSTALL_SCRIPT) ./kfmsu2 $(bindir)
-	$(INSTALL_SCRIPT) ./startkde $(bindir)
 
 uninstall-local:
-	-rm -f $(bindir)/unpack
-	-rm -f $(bindir)/kfmsu
-	-rm -f $(bindir)/kfmsu2
-	-rm -f $(bindir)/startkde
 	-rm -f $(CONFIGDIR)/kfmrc
 	-rm -f $(CONFIGDIR)/desktop
 	-rm -f $(MIMELNKDIR)/magic
