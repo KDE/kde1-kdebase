@@ -46,6 +46,7 @@ private:
 
   KColorScheme *colors;
   KScreenSaver *screensaver;
+  KFonts *fonts;
   KGeneral *general;
   KBackground *background;
 };
@@ -54,7 +55,7 @@ private:
 KDisplayApplication::KDisplayApplication(int &argc, char **argv, const char *name)
   : KControlApplication(argc, argv, name)
 {
-  colors = 0; screensaver = 0; general = 0; background = 0;
+  colors = 0; screensaver = 0; fonts = 0; general = 0; background = 0;
 
   if (runGUI())
     {
@@ -68,15 +69,18 @@ KDisplayApplication::KDisplayApplication(int &argc, char **argv, const char *nam
       if (!pages || pages->contains("colors"))
 	addPage(colors = new KColorScheme(dialog, KDisplayModule::Setup),
 		klocale->translate("&Colors"), "kdisplay-5.html");
+      if (!pages || pages->contains("fonts"))
+	addPage(fonts = new KFonts(dialog, KDisplayModule::Setup),
+		klocale->translate("&Fonts"), "kdisplay-6.html");
       if (!pages || pages->contains("style"))
 	addPage(general = new KGeneral(dialog, KDisplayModule::Setup),
-		klocale->translate("&Fonts etc."), "kdisplay-6.html");
+		klocale->translate("&Style"), "kdisplay-6.html");
 
-      if (background || screensaver || colors || general)
+      if (background || screensaver || colors || fonts || general)
         dialog->show();
       else
         {
-          fprintf(stderr, klocale->translate("usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"));
+          fprintf(stderr, klocale->translate("usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"));
           justInit = TRUE;
         }
 
@@ -92,6 +96,8 @@ void KDisplayApplication::init()
   delete background;
   KScreenSaver *screensaver = new KScreenSaver(0, KDisplayModule::Init);
   delete screensaver;
+  KFonts *fonts = new KFonts(0, KDisplayModule::Init);
+  delete fonts;
   KGeneral *general = new KGeneral(0, KDisplayModule::Init);
   delete general;
 
@@ -114,6 +120,8 @@ void KDisplayApplication::apply()
     background->applySettings();
   if (screensaver)
     screensaver->applySettings();
+  if (fonts)
+    fonts->applySettings();
   if (general)
     general->applySettings();
 }
@@ -126,6 +134,8 @@ void KDisplayApplication::defaultValues()
     background->defaultSettings();
   if (screensaver)
     screensaver->defaultSettings();
+  if (fonts)
+    fonts->defaultSettings();
   if (general)
     general->defaultSettings();
 }

@@ -99,6 +99,44 @@ protected slots:
 	void slotUseResourceManager();
 	void slotMacStyle();//CT
 	void slotApply();
+	void slotHelp();
+
+protected:
+	void writeSettings();
+	void setDefaults();
+	
+protected:
+	QCheckBox *cbStyle, *cbRes;
+	QCheckBox *cbMac;//CT
+	Bool changed;
+	
+	bool useRM;
+	bool macStyle;//CT
+	Window root;
+	int screen;
+};
+
+class KFonts : public KDisplayModule
+{
+	Q_OBJECT
+	
+public:
+	KFonts( QWidget *parent, int mode, int desktop = 0 );
+	~KFonts();
+
+	virtual void readSettings( int deskNum = 0 );
+	virtual void apply( bool Force = FALSE);
+	virtual void loadSettings() {};
+	virtual void applySettings();
+	virtual void defaultSettings();
+	
+	QFont generalFont;
+	
+	Display *kde_display;
+	Atom 	KDEChangeGeneral;
+
+protected slots:
+	void slotApply();
 	void slotSetFont( QFont fnt );
 	void slotPreviewFont( int index );
 	void slotHelp();
@@ -110,17 +148,14 @@ protected:
 protected:
 	KFontChooser *fntChooser;
 	FontPreview *lSample;
-	QCheckBox *cbStyle, *cbRes;
-	QCheckBox *cbMac;//CT
 	QListBox *lbFonts;
+	bool useRM;
 	
 	Bool changed;
 	
 	QList <FontUseItem> fontUseList;
 	
 	Bool defaultCharset;
-	bool useRM;
-	bool macStyle;//CT
 	Window root;
 	int screen;
 };

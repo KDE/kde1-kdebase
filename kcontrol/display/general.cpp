@@ -219,7 +219,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	screen = DefaultScreen(kde_display);
 	root = RootWindow(kde_display, screen);
 
-	setName( i18n("Fonts etc.") );
+	setName( i18n("Style") );
 
 	readSettings();
 	
@@ -241,18 +241,6 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	
 	topLayout->addWidget( cbStyle, 10 );//CT
 
-	cbRes = new QCheckBox( i18n( "&Apply style to non-KDE apps" ),
-				 this );
-	cbRes->setMinimumSize(cbRes->sizeHint());
-
-	if( useRM )
-	        cbRes->setChecked( true );
-	else
-		cbRes->setChecked( false);
-	
-	connect( cbRes, SIGNAL( clicked() ), SLOT( slotUseResourceManager()  )  );
-	
-	topLayout->addWidget( cbRes, 10 );//CT
 
 	//CT 30Nov1998
 	cbMac = new QCheckBox( i18n( "&Menubar on top of the screen in the style of MacOS" ),
@@ -268,93 +256,21 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	connect( cbMac, SIGNAL( clicked() ), SLOT( slotMacStyle()  )  );
 	
 	topLayout->addWidget( cbMac, 10 );
-	//CT
 
-	QGroupBox *group = new QGroupBox( i18n( "Desktop fonts" ), this );
-	
-	topLayout->addWidget( group, 100 );
-	
-	QBoxLayout *groupLayout = new QVBoxLayout( group, 10, 5 );
-	
-	groupLayout->addSpacing( 15 );
-	
-	QBoxLayout *pushLayout = new QHBoxLayout( 5 );
-	
-	groupLayout->addLayout( pushLayout );
-	
-	FontUseItem *item = new FontUseItem( i18n("General font"),
-				QFont( "helvetica", 12 ) );
-	item->setRC( "General", "font" );
-	fontUseList.append( item );
-	
-	item = new FontUseItem( i18n("Fixed font"),
-				QFont( "fixed", 10 ), true );
-	item->setRC( "General", "fixedFont" );
-	fontUseList.append( item );
-	
-	//CT 03Nov1998 - this code was here already. Only reactivated
-	item = new FontUseItem( i18n("Window title font"),
-				QFont( "helvetica", 12, QFont::Bold ) );
-	item->setRC( "WM", "titleFont" );
-	fontUseList.append( item );
-				
-	item = new FontUseItem( i18n("Panel button font"),
-				QFont( "helvetica", 12 )  );
-	item->setRC( "kpanel", "DesktopButtonFont", "kpanelrc" );
-	fontUseList.append( item );
-	
-	item = new FontUseItem( i18n("Panel clock font"),
-				QFont( "helvetica", 12, QFont::Normal) );
-	item->setRC( "kpanel", "DateFont", "kpanelrc" );
-	fontUseList.append( item );
-	
-	for ( i = 0; i < (int) fontUseList.count(); i++ )
-		fontUseList.at( i )->readFont();
-	
-	lbFonts = new QListBox( group );
-	for ( i=0; i < (int) fontUseList.count(); i++ )
-  	     lbFonts->insertItem( fontUseList.at( i )->text() );
-	lbFonts->adjustSize();
-	lbFonts->setMinimumSize(lbFonts->size());
-	
-	connect( lbFonts, SIGNAL( highlighted( int ) ),
-		 SLOT( slotPreviewFont( int ) ) );
-			
-	pushLayout->addWidget( lbFonts );
-	
-	fntChooser = new KFontChooser( group );
-	
-	connect( fntChooser, SIGNAL( fontChanged( QFont ) ), this,
-		SLOT( slotSetFont( QFont ) ) );
-	
-	pushLayout->addWidget( fntChooser );
-	
-	QBoxLayout *stackLayout = new QVBoxLayout( 4 );
-	
-	groupLayout->addLayout( stackLayout );
+	cbRes = new QCheckBox( i18n( "&Apply fonts and colors to non-KDE apps" ),
+				 this );
+	cbRes->setMinimumSize(cbRes->sizeHint());
 
-	QLabel *label = new QLabel( i18n("Sample text"), group );
-	label->adjustSize();
-	label->setFixedHeight( label->height() );
-	label->setMinimumWidth(label->width());
-
-	stackLayout->addWidget( label );
+	if( useRM )
+	        cbRes->setChecked( true );
+	else
+		cbRes->setChecked( false);
 	
-	lSample = new FontPreview( group );
-	lSample->setText(i18n( "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
-			  "the quick brown fox jumps over the lazy dog\n"
-			  "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )" ));
-	lSample->setAlignment( AlignLeft | AlignVCenter );
-	lSample->setFixedHeight( 2*lSample->sizeHint().height() );
-	lSample->setFrameStyle( QFrame::Panel | QFrame::Sunken );
-	lSample->adjustSize();
-	lSample->setMinimumSize(lSample->size());
+	connect( cbRes, SIGNAL( clicked() ), SLOT( slotUseResourceManager()  )  );
+	
+	topLayout->addWidget( cbRes, 10 );//CT
 
-	stackLayout->addWidget( lSample );
-	groupLayout->activate();
-		
-	lbFonts->setCurrentItem( 0 );
-
+	topLayout->addStretch( 100 );
 	topLayout->activate();
 }
 
@@ -398,7 +314,7 @@ void KGeneral::readSettings( int )
 	KConfig config;
 	config.setGroup( "KDE" );
 
-	str = config.readEntry( "widgetStyle", "Motif" );
+	str = config.readEntry( "widgetStyle", "Windows 95" );
 	if ( str == "Windows 95" )
 		applicationStyle = WindowsStyle;
 	else
@@ -420,13 +336,7 @@ void KGeneral::readSettings( int )
 
 void KGeneral::setDefaults()
 {
-	int ci = lbFonts->currentItem();
-	for ( int i = 0; i < (int) fontUseList.count(); i++ )
-		fontUseList.at( i )->setDefault();
-	fontUseList.at( ci );
-	slotPreviewFont( ci );
-	
-	cbStyle->setChecked( false );
+	cbStyle->setChecked( true );
 	cbRes->setChecked( true );
 	cbMac->setChecked( false );//CT
 	useRM = true;
@@ -445,9 +355,6 @@ void KGeneral::writeSettings()
 	if ( !changed )
 		return;
 		
-	for ( int i = 0; i < (int) fontUseList.count(); i++ )
-		fontUseList.at( i )->writeFont();	
-	
 	KConfig *config = kapp->getConfig();
 	config->setGroup( "KDE" );
 
@@ -471,14 +378,17 @@ void KGeneral::writeSettings()
 	if ( useRM ) {
 		QApplication::setOverrideCursor( waitCursor );
 
+		// the krdb run is for colors and other parameters (Matthias)
+		KProcess proc;
+		proc.setExecutable("krdb");
+		proc.start( KProcess::Block );
+
+		// still some KResourceMan stuff stuff. We need to
+		// clean this up.  The best thing would be to use
+		// KResourceMan always for KDE applications to make
+		// the desktop settings machine independent but
+		// per-display (Matthias)
 		KResourceMan *krdb = new KResourceMan();
-		for ( int i = 0; i < (int) fontUseList.count(); i++ ) {
-			FontUseItem *it = fontUseList.at( i );
-			if ( !it->rcFile() ) {
-				krdb->setGroup( it->rcGroup() );
-				krdb->writeEntry( it->rcKey(), it->font() );
-			}
-		}
 		krdb->setGroup( "KDE" );
 		krdb->writeEntry( "widgetStyle", str );
 		krdb->sync();
@@ -486,7 +396,6 @@ void KGeneral::writeSettings()
 		QApplication::restoreOverrideCursor();
 	}
 	
-	fontUseList.at( lbFonts->currentItem() );
 
 	if (macStyle) {
 	    KWM::sendKWMCommand("macStyleOn");
@@ -572,19 +481,6 @@ void KGeneral::apply( bool  )
 	changed=false;
 }
 
-void KGeneral::slotSetFont( QFont fnt )
-{
-	fontUseList.current()->setFont( fnt );
-	lSample->setPreviewFont( fnt );
-	changed = true;
-}
-
-void KGeneral::slotPreviewFont( int index )
-{
-	fntChooser->setFont( fontUseList.at( index )->font(),
-			fontUseList.at( index )->spacing() );
-	lSample->setPreviewFont( fontUseList.at( index )->font() );
-}
 
 void KGeneral::slotHelp()
 {
@@ -592,6 +488,243 @@ void KGeneral::slotHelp()
 }
 
 void KGeneral::applySettings()
+{
+  writeSettings();
+  apply( true );
+}
+
+
+
+
+
+//------------------------------------------------------------------
+
+KFonts::KFonts( QWidget *parent, int mode, int desktop )
+	: KDisplayModule( parent, mode, desktop )
+{
+	int i;
+	changed = false;
+
+	debug("KFonts::KFonts");
+	
+	// if we are just initialising we don't need to create setup widget
+	if ( mode == Init )
+		return;
+	
+	kde_display = x11Display();
+	KDEChangeGeneral = XInternAtom( kde_display, "KDEChangeGeneral", False);
+	screen = DefaultScreen(kde_display);
+	root = RootWindow(kde_display, screen);
+
+	setName( i18n("Fonts") );
+
+	readSettings();
+	
+	QBoxLayout *topLayout = new QVBoxLayout( this, 10 );
+	
+	topLayout->addSpacing( 15 );
+	
+	QBoxLayout *pushLayout = new QHBoxLayout( 5 );
+	
+	topLayout->addLayout( pushLayout );
+	
+	FontUseItem *item = new FontUseItem( i18n("General font"),
+				QFont( "helvetica", 12 ) );
+	item->setRC( "General", "font" );
+	fontUseList.append( item );
+	
+	item = new FontUseItem( i18n("Fixed font"),
+				QFont( "fixed", 10 ), true );
+	item->setRC( "General", "fixedFont" );
+	fontUseList.append( item );
+	
+	//CT 03Nov1998 - this code was here already. Only reactivated
+	item = new FontUseItem( i18n("Window title font"),
+				QFont( "helvetica", 12, QFont::Bold ) );
+	item->setRC( "WM", "titleFont" );
+	fontUseList.append( item );
+				
+	item = new FontUseItem( i18n("Panel button font"),
+				QFont( "helvetica", 12 )  );
+	item->setRC( "kpanel", "DesktopButtonFont", "kpanelrc" );
+	fontUseList.append( item );
+	
+	item = new FontUseItem( i18n("Panel clock font"),
+				QFont( "helvetica", 12, QFont::Normal) );
+	item->setRC( "kpanel", "DateFont", "kpanelrc" );
+	fontUseList.append( item );
+	
+	for ( i = 0; i < (int) fontUseList.count(); i++ )
+		fontUseList.at( i )->readFont();
+	
+	lbFonts = new QListBox( this );
+	for ( i=0; i < (int) fontUseList.count(); i++ )
+  	     lbFonts->insertItem( fontUseList.at( i )->text() );
+	lbFonts->adjustSize();
+	lbFonts->setMinimumSize(lbFonts->size());
+	
+	connect( lbFonts, SIGNAL( highlighted( int ) ),
+		 SLOT( slotPreviewFont( int ) ) );
+			
+	pushLayout->addWidget( lbFonts );
+	
+	fntChooser = new KFontChooser( this );
+	
+	connect( fntChooser, SIGNAL( fontChanged( QFont ) ), this,
+		SLOT( slotSetFont( QFont ) ) );
+	
+	pushLayout->addWidget( fntChooser );
+	
+	QBoxLayout *stackLayout = new QVBoxLayout( 4 );
+	
+	topLayout->addLayout( stackLayout );
+
+	QLabel *label = new QLabel( i18n("Sample text"), this );
+	label->adjustSize();
+	label->setFixedHeight( label->height() );
+	label->setMinimumWidth(label->width());
+
+	stackLayout->addWidget( label );
+	
+	lSample = new FontPreview( this );
+	lSample->setText(i18n( "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+			  "the quick brown fox jumps over the lazy dog\n"
+			  "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )" ));
+	lSample->setAlignment( AlignLeft | AlignVCenter );
+	lSample->setFixedHeight( 2*lSample->sizeHint().height() );
+	lSample->setFrameStyle( QFrame::Panel | QFrame::Sunken );
+	lSample->adjustSize();
+	lSample->setMinimumSize(lSample->size());
+
+	stackLayout->addWidget( lSample );
+	lbFonts->setCurrentItem( 0 );
+
+	topLayout->activate();
+}
+
+
+
+KFonts::~KFonts()
+{
+}
+
+
+
+void KFonts::readSettings( int )
+{		
+    useRM = kapp->getConfig()->readBoolEntry( "useResourceManager", true );
+}
+
+void KFonts::setDefaults()
+{
+	int ci = lbFonts->currentItem();
+	for ( int i = 0; i < (int) fontUseList.count(); i++ )
+		fontUseList.at( i )->setDefault();
+	fontUseList.at( ci );
+	slotPreviewFont( ci );
+	
+}
+
+void KFonts::defaultSettings()
+{
+	setDefaults();
+}
+
+void KFonts::writeSettings()
+{
+	if ( !changed )
+		return;
+		
+	for ( int i = 0; i < (int) fontUseList.count(); i++ )
+		fontUseList.at( i )->writeFont();	
+	
+
+	if ( useRM ) {
+		QApplication::setOverrideCursor( waitCursor );
+
+		KResourceMan *krdb = new KResourceMan();
+		for ( int i = 0; i < (int) fontUseList.count(); i++ ) {
+			FontUseItem *it = fontUseList.at( i );
+			if ( !it->rcFile() ) {
+				krdb->setGroup( it->rcGroup() );
+				krdb->writeEntry( it->rcKey(), it->font() );
+			}
+		}
+		krdb->sync();
+
+		QApplication::restoreOverrideCursor();
+	}
+	
+	fontUseList.at( lbFonts->currentItem() );
+	
+}
+
+void KFonts::slotApply()
+{
+	writeSettings();
+	apply();
+}
+
+
+void KFonts::apply( bool  )
+{
+	if ( !changed )
+		return;
+	
+	XEvent ev;
+	unsigned int i, nrootwins;
+	Window dw1, dw2, *rootwins;
+	int (*defaultHandler)(Display *, XErrorEvent *);
+
+
+	defaultHandler=XSetErrorHandler(dropError);
+	
+	XQueryTree(kde_display, root, &dw1, &dw2, &rootwins, &nrootwins);
+	
+	// Matthias
+	Atom a = XInternAtom(qt_xdisplay(), "KDE_DESKTOP_WINDOW", False);
+	for (i = 0; i < nrootwins; i++) {
+	  long result = 0;
+	  getSimpleProperty(rootwins[i],a, result);
+	  if (result){
+	    ev.xclient.type = ClientMessage;
+	    ev.xclient.display = kde_display;
+	    ev.xclient.window = rootwins[i];
+	    ev.xclient.message_type = KDEChangeGeneral;
+	    ev.xclient.format = 32;
+	
+	    XSendEvent(kde_display, rootwins[i] , False, 0L, &ev);
+	  }
+	}
+
+	XFlush(kde_display);
+	XSetErrorHandler(defaultHandler);
+	
+	XFree((char *) rootwins);
+	
+	changed=false;
+}
+
+void KFonts::slotSetFont( QFont fnt )
+{
+	fontUseList.current()->setFont( fnt );
+	lSample->setPreviewFont( fnt );
+	changed = true;
+}
+
+void KFonts::slotPreviewFont( int index )
+{
+	fntChooser->setFont( fontUseList.at( index )->font(),
+			fontUseList.at( index )->spacing() );
+	lSample->setPreviewFont( fontUseList.at( index )->font() );
+}
+
+void KFonts::slotHelp()
+{
+	kapp->invokeHTMLHelp( "kcmdisplay/kdisplay-6.html", "" );
+}
+
+void KFonts::applySettings()
 {
   writeSettings();
   apply( true );

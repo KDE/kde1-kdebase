@@ -1,0 +1,18 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcmdisplay fonts
+Icon=fonts.xpm
+MiniIcon=fonts.xpm
+Type=Application
+DocPath=kcontrol/kcmdisplay/kdisplay-6.html
+Comment=Font settings
+Comment[ca]=Arranjament de les fonts
+Comment[de]=Einstellung der Schriftarten
+Comment[es]=Configuración de fuentes
+Comment[fr]=Configuration des caractères
+Name=Fonts
+Name[de]=Schriftarten
+Name[fr]=Caractères
+Name[ro]=Fonturi
+Name[sv]=Typsnitt
+Init=kcmdisplay -init
