@@ -4,12 +4,14 @@
 Authors=Alexander Budnik <budnik@linserv.jinr.ru>,Denis V. Dmitrienko <denis@null.net>,
 
 Comment=Has latin characters as alternate symbols.
+Comment[de]=Lateinische Zeichen als Alternativ-Belegung.
 Comment[ru]=Содержит латинские символы в качестве алтернативных.
 Comment[fi]=Latinalaiset kirjaimet vaihtoehtoisina symboleina.
 Comment[sv]=Har latinska bockstДver som alternativa symboler.
 Comment[sk]=MА latin znaky ako alternatМvne symboly.
 
 Language=Russian
+Language[de]=Russische
 Language[no]=Russisk
 Language[ru]=Русский
 Language[fi]=VenДjД

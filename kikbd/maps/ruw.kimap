@@ -4,12 +4,14 @@
 Authors=Alexander Budnik <budnik@linserv.jinr.ru>,Denis V. Dmitrienko <denis@null.net>,
 
 Comment=Has English characters as alternate symbols.
+Comment[de]=Englische Zeichen als Alternativ-Belegung.
 Comment[ru]=Содержит латинские символы в качестве алтернативных.
 Comment[fi]=Englantilaiset kirjaimet vaihtoehtoisina symboleina.
 Comment[pl]=Znaki alfabetu ЁaciЯskiego jako symbole alternatywne.
 Comment[sv]=Har engelska bokstДver som alternativa symboler.
 
 Language=Russian
+Language[de]=Russische
 Language[no]=Russisk
 Language[ru]=Русский
 Language[fi]=VenДjД

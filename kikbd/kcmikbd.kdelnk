@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=International Keyboard
+Name[de]=Internationale Tastatur
 Name[es]=Teclado internacional
 Name[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ëÌÁ×ÉÁÔÕÒÁ
 Name[pt]=Configurações do Teclado Internacional
@@ -11,6 +12,7 @@ Name[fi]=Kansainvälinen näppäimistö
 Name[sk]=Medzinárodná klávesnica
 Name[no]=Internasjonalt tastatur
 Comment=International Keyboard
+Comment[de]=Einstellung des Tastatur-Layouts
 Comment[es]=Configuración de teclado internacional
 Comment[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ëÌÁ×ÉÁÔÕÒÁ
 Comment[pt]=Configurações do Teclado Internacional

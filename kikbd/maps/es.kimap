@@ -4,9 +4,9 @@
 Authors=Antonio Larrosa <larrosa@kde.org>,
  
 Language=Spanish
+Language[de]=Spanische
 Language[es]=Español
 Language[fr]=Espagnole
-Language[de]=Spanier
  
 Label=Es
 Locale=es
