@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KCMBELL\n"
 "POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
+"Last-TraTnslator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
@@ -55,7 +55,7 @@ msgstr "Avaa kohteen &kansio"
 
 #: kfindtop.cpp:149
 msgid "&Save Search"
-msgstr "&Tallenna etsintä"
+msgstr "Ta&llenna etsintä"
 
 #: kfindtop.cpp:161
 msgid "&Cut"
@@ -215,7 +215,7 @@ msgstr "Ominaisuudet"
 
 #: kfoptions.cpp:76
 msgid "File format:"
-msgstr "Tiedosto formaatti:"
+msgstr "Tiedostoformaatti:"
 
 #: kfoptions.cpp:78
 msgid "Save results to file:"

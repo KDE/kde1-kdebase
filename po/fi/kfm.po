@@ -1290,7 +1290,7 @@ msgstr "Palvelimella:"
 
 #: useragentdlg.cpp:31
 msgid "login as:"
-msgstr "käytä nimeä:"
+msgstr "käyttäjätunnus:"
 
 #: useragentdlg.cpp:52
 msgid "Known bindings:"
@@ -1302,7 +1302,7 @@ msgstr "Älä unohda tallentaa asetuksiasi!"
 
 #: kproxydlg.cpp:43
 msgid "No Proxy for:"
-msgstr "Ei välityspalvelinta:"
+msgstr "Ei proxyä:"
 
 #: kkfmoptdlg.cpp:50
 msgid "KFM Browser Settings"

@@ -32,7 +32,7 @@ msgstr "&Käyttäjät"
 
 #: main.cpp:113
 msgid "&Sessions"
-msgstr "&istunnot"
+msgstr "&Istunnot"
 
 #: main.cpp:119
 msgid ""
@@ -68,7 +68,7 @@ msgstr "Paina tai tiputa kuva tähän"
 
 #: kdm-appear.cpp:109
 msgid "GUI Style:"
-msgstr "Käyttöliittymän tyyli:"
+msgstr "Tyyli:"
 
 #: kdm-appear.cpp:115
 msgid "Motif"
@@ -208,8 +208,9 @@ msgid ""
 "Show all users\n"
 " but no-show users"
 msgstr ""
-"Näytä kaikki muut paitsi\n"
-" ei-näytettävät käyttäjät"
+"Näytä kaikki muut\n"
+"paitsi ei-näytettävät\n"
+"käyttäjät"
 
 #: kdm-users.cpp:97
 msgid "Show users"
@@ -233,7 +234,7 @@ msgstr "Salli sammuttaminen:"
 
 #: kdm-sess.cpp:58
 msgid "None"
-msgstr "Ei mikään"
+msgstr "Ei kukaan"
 
 #: kdm-sess.cpp:59
 msgid "All"
@@ -245,7 +246,7 @@ msgstr "Vain Root"
 
 #: kdm-sess.cpp:61
 msgid "Console Only"
-msgstr "Vain Konsoli"
+msgstr "Vain Konsolilta"
 
 #: kdm-sess.cpp:65
 msgid "Commands"
@@ -257,7 +258,7 @@ msgstr "Sammuta"
 
 #: kdm-sess.cpp:75
 msgid "Restart"
-msgstr "Uudelleenkäynnistä"
+msgstr "Käynnistä"
 
 #: kdm-sess.cpp:86
 msgid "Session types"

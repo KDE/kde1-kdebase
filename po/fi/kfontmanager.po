@@ -28,11 +28,11 @@ msgstr "Kirjasinselain"
 
 #: main.cpp:73
 msgid "Raw X11 Font List"
-msgstr "Puhtaat X11 kirjasimet"
+msgstr "X11 kirjasinlista"
 
 #: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
-msgstr "Saatavissaolevat X11 kirjasimet"
+msgstr "Saatavillaolevat X11 kirjasimet"
 
 #: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"

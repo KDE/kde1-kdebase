@@ -44,15 +44,15 @@ msgstr "Jaettu muisti"
 
 #: memory.cpp:37
 msgid "Buffer memory"
-msgstr "Bufferoitu muisti"
+msgstr "Puskuroitu muisti"
 
 #: memory.cpp:45
 msgid "Swap memory"
-msgstr "Swap muisti"
+msgstr "Heittovaihtomuisti"
 
 #: memory.cpp:53
 msgid "Free swap memory"
-msgstr "Vapaa swap muisti"
+msgstr "Vapaa heittovaihtomuisti"
 
 #: memory.cpp:74
 #, c-format

@@ -183,11 +183,11 @@ msgstr "Teksti"
 
 #: colorscm.cpp:185
 msgid "Select background"
-msgstr "Valitse tausta"
+msgstr "Valinnan tausta"
 
 #: colorscm.cpp:186
 msgid "Select text"
-msgstr "Valitse teksti"
+msgstr "Valinnan teksti"
 
 #: colorscm.cpp:187
 msgid "Window background"

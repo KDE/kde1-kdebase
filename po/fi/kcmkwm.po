@@ -115,7 +115,7 @@ msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
-"Vasemman hiirinapin tuplapainallus\n"
+"Vasemman hiirenapin tuplapainallus\n"
 "    otsikkopalkkiin tekee:"
 
 #: titlebar.cpp:988
@@ -132,7 +132,7 @@ msgstr "Varjosta"
 
 #: titlebar.cpp:991
 msgid "Iconify"
-msgstr "Muuta ikoniksi"
+msgstr "Ikoniksi"
 
 #: titlebar.cpp:992
 msgid "(Un)Sticky"
@@ -164,7 +164,7 @@ msgstr "Kuultava"
 
 #: windows.cpp:79
 msgid "Resize Animation"
-msgstr "Aseta animaation koko"
+msgstr "Muuta animaation kokoa"
 
 #: windows.cpp:84
 msgid "Placement policy"
@@ -176,7 +176,7 @@ msgstr "Älykäs"
 
 #: windows.cpp:88
 msgid "Cascade"
-msgstr "Sarjaan"
+msgstr "Sarjoita"
 
 #: windows.cpp:90
 msgid "Interactive"
@@ -196,7 +196,7 @@ msgstr "Sallitty päällekkäisyys:"
 
 #: windows.cpp:108
 msgid "Maximize Style"
-msgstr "Suurenna tyyli"
+msgstr "Suurennustyyli"
 
 #: windows.cpp:109
 msgid "Maximize fully"
@@ -212,7 +212,7 @@ msgstr "Kohdistustapa"
 
 #: windows.cpp:114
 msgid "Click to focus"
-msgstr "Kohdista napilla"
+msgstr "Kohdista hiiren napilla"
 
 #: windows.cpp:115
 msgid "Focus follows mouse"
@@ -244,7 +244,7 @@ msgstr "Siirrä osoitin ruudun keskustaan"
 
 #: desktop.cpp:89
 msgid "Dekstop switch delay:"
-msgstr "Työpöydän vaihtoviime:"
+msgstr "Työpöydän vaihtoviive:"
 
 #: desktop.cpp:102
 msgid "Magic Borders"

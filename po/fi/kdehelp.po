@@ -96,7 +96,7 @@ msgstr "Vakiokirjasin"
 
 #: options.cpp:69
 msgid "Fixed Font"
-msgstr "Kiinteä kirjasin"
+msgstr "Kiinteävälinen"
 
 #: options.cpp:207
 msgid "Background Color:"
@@ -104,7 +104,7 @@ msgstr "Taustan väri:"
 
 #: options.cpp:215
 msgid "Normal Text Color:"
-msgstr "Normaalin tekstin väri:"
+msgstr "Normaalitekstin väri:"
 
 #: options.cpp:223
 msgid "URL Link Color:"

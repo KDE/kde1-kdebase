@@ -66,7 +66,7 @@ msgstr "Aseta lepakkoja"
 
 #: bat.cpp:548
 msgid "Number of bats:"
-msgstr "Lepakkojen lukumäärä:"
+msgstr "Lepakoiden määrä:"
 
 #: bat.cpp:636
 msgid "About Bat"
@@ -116,11 +116,11 @@ msgstr "Satunnainen"
 
 #: blob.cpp:73
 msgid "Sorry. This screensaver needs a color display"
-msgstr "Valitettavasti tämä ruudunsäästäjä vaatii värinäytön"
+msgstr "Valitettavasti tämä näytönsäästäjä vaatii värinäytön"
 
 #: blob.cpp:452
 msgid "Setup Blob Saver"
-msgstr "Aseta Kupla ruudunsäästäjää"
+msgstr "Aseta Kupla näytönsäästäjää"
 
 #: blob.cpp:455
 msgid "Frame Show sec."
@@ -319,7 +319,7 @@ msgstr "Aseta putkea"
 
 #: lissie.cpp:336
 msgid "Num of Lissies:"
-msgstr "Putkien lukumäärä"
+msgstr "Putkien määrä"
 
 #: lissie.cpp:451
 msgid "About Lissie"
@@ -354,7 +354,7 @@ msgstr ""
 "Järjestelmäsi käyttää shadow-salasanoja!\n"
 "Ota yhteyttä järjestelmän ylläpitäjään.\n"
 "\n"
-"Ja kerro tarvitsevasi suid:n ruudunsäästäjiin!"
+"Ja kerro tarvitsevasi suid:n näytönsäästäjiin!"
 
 #: main.cpp:311
 msgid "Shadow Passwords"
@@ -393,17 +393,17 @@ msgstr ""
 "                     x = s  tallenna ruutu\n"
 "                     x = l  lukitse ruutu\n"
 "                    järjestys: ylävasen, yläoikea, alavasen, alaoikea\n"
-"  -delay num        Aika joka odotetaan ennenkuin ruudunsäästäjä\n"
+"  -delay num        Aika joka odotetaan ennenkuin näytönsäästäjä\n"
 "                     käynnistetään  (oletus 10min)\n"
-"  -desc             Tulosta ruudunsäästäjän kuvaus stdout:n\n"
-"  -install          Asenna ruudunsäätsäjä\n"
-"  -lock             Vaadi salasana ruudunsäätjänä lopettamiseksi\n"
+"  -desc             Tulosta näytönsäästäjän kuvaus stdout:n\n"
+"  -install          Asenna näytönsäästäjä\n"
+"  -lock             Vaadi salasana näytönsäästäjän lopettamiseksi\n"
 "  -nice num         Ajaa halutulla nice arvolla\n"
 "\n"
 "  -preview wid      Aja määritellyssä X-Ikkunassa\n"
 "  -inroot           Aja root-ikkunassa\n"
-"  -setup            Aseta ruudunsäästäjää\n"
-"  -test             Käynnistä ruudunsäätjäjä heti\n"
+"  -setup            Aseta näytönsäästäjää\n"
+"  -test             Käynnistä näytönsäästäjää heti\n"
 
 #: morph3d.cpp:839 space.cpp:419
 msgid "GL can not render with root visual\n"
@@ -601,7 +601,7 @@ msgstr ""
 
 #: swarm.cpp:252
 msgid "Swarm"
-msgstr "Hyönteinen"
+msgstr "Hyönteiset"
 
 #: swarm.cpp:324
 msgid "Setup KSwarm"
@@ -609,7 +609,7 @@ msgstr "Aseta hyönteisiä"
 
 #: swarm.cpp:340
 msgid "Number of Bees:"
-msgstr "Mehiläisten määrä:"
+msgstr "Mehiläisiä:"
 
 #: swarm.cpp:427
 msgid "About Swarm"

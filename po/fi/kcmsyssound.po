@@ -20,39 +20,39 @@ msgstr "&Äänet"
 
 #: main.cpp:80
 msgid "System Sounds"
-msgstr "Järjestelmän äänet"
+msgstr "Järjestelmä äänet"
 
 #: syssound.cpp:144
 msgid "Change to Desktop 1"
-msgstr "Vaihda työpöytään 1"
+msgstr "Vaihto työpöytään 1"
 
 #: syssound.cpp:145
 msgid "Change to Desktop 2"
-msgstr "Vaihda työpöytään 2"
+msgstr "Vaihto työpöytään 2"
 
 #: syssound.cpp:146
 msgid "Change to Desktop 3"
-msgstr "Vaihda työpöytään 3"
+msgstr "Vaihto työpöytään 3"
 
 #: syssound.cpp:147
 msgid "Change to Desktop 4"
-msgstr "Vaihda työpöytään 4"
+msgstr "Vaihto työpöytään 4"
 
 #: syssound.cpp:148
 msgid "Change to Desktop 5"
-msgstr "Vaihda työpöytään 5"
+msgstr "Vaihto työpöytään 5"
 
 #: syssound.cpp:149
 msgid "Change to Desktop 6"
-msgstr "Vaihda työpöytään 6"
+msgstr "Vaihto työpöytään 6"
 
 #: syssound.cpp:150
 msgid "Change to Desktop 7"
-msgstr "Vaihda työpöytään 7"
+msgstr "Vaihto työpöytään 7"
 
 #: syssound.cpp:151
 msgid "Change to Desktop 8"
-msgstr "Vaihda työpöytään 8"
+msgstr "Vaihto työpöytään 8"
 
 #: syssound.cpp:153
 msgid "Activate Window"
@@ -104,11 +104,11 @@ msgstr "Ikkunan naulauksen poisto"
 
 #: syssound.cpp:166
 msgid "Window Trans New"
-msgstr "Uusi ikkuna"
+msgstr "Uusi muutos ikkuna"
 
 #: syssound.cpp:167
 msgid "Window Trans Delete"
-msgstr "Ikkunan tuhoaminen"
+msgstr "Muutosikkunan tuhoaminen"
 
 #: syssound.cpp:168
 msgid "Logout"
@@ -120,19 +120,19 @@ msgstr "Lopetusviesti"
 
 #: syssound.cpp:170
 msgid "Window Move Start"
-msgstr "Ikkunan liikutuksen alku"
+msgstr "Ikkunan siirron alku"
 
 #: syssound.cpp:171
 msgid "Window Move End"
-msgstr "Ikkunan liikutuksen loppu"
+msgstr "Ikkunan siirron loppu"
 
 #: syssound.cpp:172
 msgid "Window Resize Start"
-msgstr "Ikkunan koon muuttamisen alku"
+msgstr "Ikkunan skaalauksen alku"
 
 #: syssound.cpp:173
 msgid "Window Resize End"
-msgstr "Ikkunan koon muuttamisen loppu"
+msgstr "Ikkunan skaalauksen loppu"
 
 #: syssound.cpp:195
 msgid "e&nable system sounds"
