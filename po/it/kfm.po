@@ -1,13 +1,16 @@
+# KTranslator Generated File
+
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-02-19 22:49+0100\n"
 "POT-Creation-Date: 1998-12-04 01:12+0100\n"
-"PO-Revision-Date: 1998-02-03 16:00+0100\n"
-"Last-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
+"PO-Revision-Date: Sat Dec 5 1998 21:52:54+0200\n"
+"Last-Translator: Andrea Rizzi <rizzi@kde.org>\n"
 "Language-Team: Italiano <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
+"X-Generator: KTranslator v 0.4.0"
 
 #: kfmgui.cpp:203
 msgid "KFM"
@@ -23,14 +26,14 @@ msgid "ERROR: Template does not exist '%s'"
 msgstr "ERORRE: Modello inesistente '%s'"
 
 #: kfmgui.cpp:250
-#, fuzzy
+#
 msgid "&New"
-msgstr "Nuovo"
+msgstr "&Nuovo"
 
 #: kfmgui.cpp:252
-#, fuzzy
+#
 msgid "New &Window"
-msgstr "Nuova Finestra"
+msgstr "Nuova Fi&nestra"
 
 #: kfmgui.cpp:255
 msgid "&Run..."
@@ -59,25 +62,25 @@ msgstr "&Seleziona"
 #: kfmgui.cpp:287
 #, fuzzy
 msgid "Select &all"
-msgstr "&Seleziona"
+msgstr "Seleziona &tutto"
 
 #: kfmgui.cpp:290
 msgid "&Find in page..."
-msgstr ""
+msgstr "&Cerca nella pagina..."
 
 #: kfmgui.cpp:292
 msgid "Find &next"
-msgstr ""
+msgstr "Cerca &successivo"
 
 #: kfmgui.cpp:295
-#, fuzzy
+#
 msgid "Mime &Types"
-msgstr "Mime Types"
+msgstr "Mime T&ypes"
 
 #: kfmgui.cpp:297
 #, fuzzy
 msgid "App&lications"
-msgstr "Applicazioni"
+msgstr "A&pplicazioni"
 
 #: kfmgui.cpp:303
 msgid "Global Mime Types"
@@ -88,7 +91,7 @@ msgid "Global Applications"
 msgstr "Applicazioni Globali"
 
 #: kfmgui.cpp:312
-#, fuzzy
+#
 msgid "Show Hi&dden Files"
 msgstr "Mostra File &Nascosti"
 
@@ -98,7 +101,7 @@ msgstr "Mostra Struttura Dir&ectory"
 
 #: kfmgui.cpp:316
 msgid "Sho&w Thumbnails"
-msgstr ""
+msgstr "Mostra T&humbnails"
 
 #: kfmgui.cpp:318
 msgid "&HTML View"
@@ -129,9 +132,9 @@ msgid "&Reload Document"
 msgstr "&Rileggi Documento"
 
 #: kfmgui.cpp:337
-#, fuzzy
+#
 msgid "Rescan &Bindings"
-msgstr "Ricontrolla &Collegamenti"
+msgstr "RiLeggi &Collegamenti"
 
 #: kfmgui.cpp:340
 msgid "&View Frame Source"
@@ -143,12 +146,12 @@ msgstr "Mostra Sorgente del Documento"
 
 #: kfmgui.cpp:350
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 #: kfmgui.cpp:358
-#, fuzzy
+#
 msgid "Document Encodin&g"
-msgstr "Documento: Ok"
+msgstr "Codi&fica Documento"
 
 #: kfmgui.cpp:373
 msgid "Show History"
@@ -199,13 +202,13 @@ msgid "Sa&ve Settings"
 msgstr "Sal&va Impostazioni"
 
 #: kfmgui.cpp:408
-#, fuzzy
+#
 msgid "Save Settings for this &URL"
-msgstr "Sal&va Impostazioni"
+msgstr "Sal&va Impostazioni per questa URL"
 
 #: kfmgui.cpp:415
 msgid "Set Preferen&ces..."
-msgstr ""
+msgstr "%Imposta preferenze..."
 
 #: kfmgui.cpp:455
 #, fuzzy
@@ -225,12 +228,18 @@ msgstr ""
 "Autore: Torben Weis\n"
 "weis@kde.org\n"
 "\n"
-"HTML widget by Martin Jones\n"
-"mjones@kde.org"
+"HTML widget di Martin Jones\n"
+"mjones@kde.org\n"
+"\n"
+"Proxy Manager di Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de\n"
+"\n"
+"Bug reports e patch a David Faure\n"
+"faure@kde.org"
 
 #: kfmgui.cpp:468
 msgid "&Go"
-msgstr ""
+msgstr "&Vai"
 
 #: kfmgui.cpp:469
 msgid "&Bookmarks"
@@ -246,12 +255,12 @@ msgstr "Su"
 
 #: kfmgui.cpp:507 main.cpp:241
 msgid "Forward"
-msgstr ""
+msgstr "Avanti"
 
 #: kfmgui.cpp:512
-#, fuzzy
+#
 msgid "Home"
-msgstr "La mia Home"
+msgstr "Home"
 
 #: kfmgui.cpp:569
 msgid "Could not load icon\n"
@@ -278,7 +287,7 @@ msgstr "Impossibile caricare l'icona\n"
 #: root.cpp:886 root.cpp:1147 root.cpp:1165 root.cpp:1171 root.cpp:1177
 #: root.cpp:1258 root.cpp:1771 root.cpp:1796
 msgid "KFM Error"
-msgstr ""
+msgstr "Errore KFM"
 
 #: kfmexec.cpp:59 kfmgui.cpp:728 kfmman.cpp:1094
 msgid "Malformed URL\n"
@@ -290,11 +299,11 @@ msgstr "Seleziona file:"
 
 #: kfmgui.cpp:970
 msgid "Find Complete"
-msgstr ""
+msgstr "Ricerca completa"
 
 #: kfmgui.cpp:971
 msgid "Continue search from the top of the page?"
-msgstr ""
+msgstr "Continuo la ricerca dall'inzio della pagina?"
 
 #: kfmgui.cpp:989
 msgid "&Edit Bookmarks..."
@@ -309,22 +318,22 @@ msgid "New "
 msgstr "Nuovo"
 
 #: kfmgui.cpp:1085
-#, fuzzy
+#
 msgid "&Up"
-msgstr "Su"
+msgstr "&Su"
 
 #: kfmgui.cpp:1087
 msgid "&Back"
-msgstr ""
+msgstr "&Indietro"
 
 #: kfmgui.cpp:1089
 msgid "&Forward"
-msgstr ""
+msgstr "&Avanti"
 
 #: kfmgui.cpp:1091
 #, fuzzy
 msgid "&Home"
-msgstr "La mia Home"
+msgstr "&Home"
 
 #: kfmgui.cpp:1148 kfmgui.cpp:1317 kfmjob.cpp:37 kfmman.cpp:226
 #: kfmtree.cpp:392 kfmview.cpp:426 kfmview.cpp:495 kfmview.cpp:703
@@ -353,9 +362,9 @@ msgid "Document: Done"
 msgstr "Documento: Ok"
 
 #: kfmview.cpp:391 root.cpp:887
-#, fuzzy
+# ,fuzzy
 msgid "ERROR: You may only drop URLs"
-msgstr "ERRORE: Hai eseguito un Drop di una URL su se stessa"
+msgstr "ERRORE: Puoi fare il drop solo di URL"
 
 #: kfmview.cpp:407
 msgid "ERROR: Drop over malformed URL"
@@ -400,6 +409,10 @@ msgid ""
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Impossibile salvare le proprietà perché\n"
+"questa directory non è né scrivibile né tra i segnalibri\n"
+"\n"
+" Aggiungi ai segnalibri questa directory, o crea un link ad essa sul desktop."
 
 #: kfmview.cpp:617
 msgid ""
@@ -408,6 +421,10 @@ msgid ""
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Impossibile salvare le proprietà perché\n"
+"questa URL non è né scrivibile né tra i segnalibri\n"
+"\n"
+" Aggiungi ai segnalibri questa URL, o crea un link ad essa sul desktop."
 
 #: kfmtree.cpp:361 kfmview.cpp:656 root.cpp:1259
 msgid "Could not access Trash Bin"
@@ -518,7 +535,7 @@ msgstr ""
 
 #: kbind.cpp:1735
 msgid "The \"Link=....\" entry is empty"
-msgstr "The \"Link=....\" entry is empty"
+msgstr "La voce  \"Link=....\"  è vuota"
 
 #: kbind.cpp:1750
 msgid "The config file has no \"Type=...\" line"
@@ -582,7 +599,7 @@ msgstr "Apri con..."
 
 #: kfmman.cpp:1329 kfmtree.cpp:229 main.cpp:232
 msgid "Move"
-msgstr ""
+msgstr "Sposta"
 
 #: kfmman.cpp:1333 kfmtree.cpp:233 main.cpp:234
 msgid "Link"
@@ -598,24 +615,24 @@ msgstr "Aggiungi ai Segnalibri"
 
 #: main.cpp:237
 msgid "Save settings for this URL"
-msgstr ""
+msgstr "Salva le impostazioni per questa URL"
 
 #: main.cpp:238
-#, fuzzy
+#
 msgid "Show Menubar"
-msgstr "Mostra &Menu"
+msgstr "Mostra Barra Menu"
 
 #: htmlopts.cpp:70
 msgid "Small"
-msgstr ""
+msgstr "Piccolo"
 
 #: htmlopts.cpp:79
 msgid "Medium"
-msgstr ""
+msgstr "Medio"
 
 #: htmlopts.cpp:88
 msgid "Large"
-msgstr ""
+msgstr "Grande"
 
 #: htmlopts.cpp:103
 msgid "Standard Font"
@@ -627,11 +644,11 @@ msgstr "Carattere a spaziatura fissa"
 
 #: htmlopts.cpp:161
 msgid "Default Charset"
-msgstr ""
+msgstr "Set caratteri predefinito"
 
 #: htmlopts.cpp:169
 msgid "Use language charset"
-msgstr ""
+msgstr "Usa set caratteri della lingua"
 
 #: htmlopts.cpp:361
 msgid "Background Color:"
@@ -655,7 +672,7 @@ msgstr "Cambia cursore sui collegamenti."
 
 #: htmlopts.cpp:448
 msgid "Underline links"
-msgstr ""
+msgstr "Sottolina collegamenti"
 
 #: htmlopts.cpp:565
 msgid "Horizontal Root Grid Spacing:"
@@ -667,35 +684,35 @@ msgstr "Spaziatura Verticale griglia:"
 
 #: htmlopts.cpp:613
 msgid "Allow per-URL settings"
-msgstr ""
+msgstr "Autorizza impostazioni per URL"
 
 #: htmlopts.cpp:621
 msgid "Transparent Text for Root Icons."
 msgstr "Testo trasparente per le Icone di Root."
 
 #: htmlopts.cpp:635
-#, fuzzy
+#
 msgid "Icon foreground color:"
-msgstr "Colore di Sfondo"
+msgstr "Colore primopiano delle icone:"
 
 #: htmlopts.cpp:647
-#, fuzzy
+#
 msgid "Icon background color:"
-msgstr "Colore di Sfondo"
+msgstr "Colore sfondo delle icone:"
 
 #: kfmdlg.cpp:113
-#, fuzzy
+#
 msgid "&Browser"
-msgstr "Sfoglia"
+msgstr "&Browser"
 
 #: bookmark.cpp:296
 msgid "Could not write bookmark"
 msgstr "Impossibile scrivere nei segnalibri"
 
 #: kfmprops.cpp:238
-#, fuzzy
+#
 msgid "File Name"
-msgstr "Nome completo"
+msgstr "Nome File"
 
 #: kfmprops.cpp:253
 msgid "Full Name"
@@ -784,7 +801,7 @@ msgstr "Utente"
 
 #: kfmprops.cpp:461 kfmprops.cpp:560
 msgid "Group"
-msgstr ""
+msgstr "Gruppo"
 
 #: kfmprops.cpp:466
 msgid "Others"
@@ -809,7 +826,7 @@ msgstr "Proprietà"
 #: kfmprops.cpp:505
 #, fuzzy
 msgid "Owner"
-msgstr "Proprietà"
+msgstr "Proprietario"
 
 #: kfmprops.cpp:629
 msgid ""
@@ -844,7 +861,7 @@ msgstr "Esegui"
 #: kfmprops.cpp:683
 #, fuzzy
 msgid "&Browse..."
-msgstr "Sfoglia"
+msgstr "&Sfoglia"
 
 #: kfmprops.cpp:695
 msgid "Working Directory"
@@ -880,9 +897,9 @@ msgid "URL"
 msgstr "Indirizzo (URL)"
 
 #: kfmprops.cpp:1033
-#, fuzzy
+#
 msgid "Background"
-msgstr "Colore di Sfondo"
+msgstr "Sfondo"
 
 #: kfmprops.cpp:1043
 msgid "Apply global"
@@ -890,7 +907,7 @@ msgstr "Applica globalmente"
 
 #: kfmprops.cpp:1081 kfmprops.cpp:1153 kfmprops.cpp:1210
 msgid "(Default)"
-msgstr "(Default)"
+msgstr "(Predefinito)"
 
 #: kfmprops.cpp:1142
 msgid "Could not write to\n"
@@ -926,7 +943,7 @@ msgstr "Applicazione di Default"
 
 #: kfmprops.cpp:1633
 msgid "<none>"
-msgstr ""
+msgstr "<nessuno>"
 
 #: kfmprops.cpp:1755
 msgid "Device ( /dev/fd0 )"
@@ -1322,12 +1339,16 @@ msgid ""
 " is not a directory ! Security Alert !\n"
 "Please check it.\n"
 msgstr ""
+" non è una directory ! Avviso di sicurezza ! \n"
+"Si consiglia di controllare. "
 
 #: htmlcache.cpp:368
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Check it before clearing the cache.\n"
 msgstr ""
+" non è una directory ! Avviso di sicurezza ! \n"
+"Si consiglia di controllare prima di pulire la cache. "
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"
@@ -1339,7 +1360,7 @@ msgstr "La directory"
 
 #: autostart.cpp:30
 msgid " does not exist\n"
-msgstr " does not exist\n"
+msgstr " non esiste\n"
 
 #: kfmtree.cpp:304
 msgid "Add To Bookmarks"
@@ -1387,7 +1408,7 @@ msgstr "o rinomina in"
 
 #: krenamewin.cpp:121
 msgid "You did not change the name!\n"
-msgstr "You did not change the name!\n"
+msgstr "Non hai cambiato il nome!\n"
 
 #: passworddialog.cpp:41 passworddialog.cpp:80
 msgid "Password"
@@ -1442,9 +1463,9 @@ msgid "&Other"
 msgstr "&Altro"
 
 #: kkfmoptdlg.cpp:117
-#, fuzzy
+#
 msgid "KFM Preferences Settings"
-msgstr "Impostazioni Browser KFM"
+msgstr "Impostazione preferenze KFM"
 
 #: khttpoptdlg.cpp:39
 msgid "Accept languages:"
@@ -1460,16 +1481,16 @@ msgstr "Supponi HTML"
 
 #: open-with.cpp:132
 msgid "This group is empty!"
-msgstr ""
+msgstr "Questo gruppo è vuoto!"
 
 #: finddlg.cpp:41
 #, fuzzy
 msgid "Find:"
-msgstr "&Trova"
+msgstr "Trova:"
 
 #: finddlg.cpp:56
 msgid "Case &sensitive"
-msgstr ""
+msgstr "Sensibile masiucole/minuscole"
 
 #: kfmprops.h:73
 msgid "&General"
