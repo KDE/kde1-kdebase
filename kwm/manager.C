@@ -416,7 +416,7 @@ void Manager::unmapNotify(XUnmapEvent *e){
     Client *c;
     c = getClient(e->window);
     if (c && c->window == e->window && c->winId() == e->event) {
-//       XGrabServer(qt_xdisplay());
+      XGrabServer(qt_xdisplay());
       XEvent ev;
       Bool reparented;
       XSync(qt_xdisplay(), False);
@@ -426,7 +426,7 @@ void Manager::unmapNotify(XUnmapEvent *e){
 	// if we are reparenting then X will send us a synthetic unmap
 	// notify.
 	reparentNotify(&(ev.xreparent));
-// 	XUngrabServer(qt_xdisplay());
+ 	XUngrabServer(qt_xdisplay());
 	return;
       }
 
@@ -439,7 +439,7 @@ void Manager::unmapNotify(XUnmapEvent *e){
 	// which have to be ignored. For that reason each client
 	// counts self generated unmap events.
 	c->unmap_events--;
-// 	XUngrabServer(qt_xdisplay());
+ 	XUngrabServer(qt_xdisplay());
 	return;
       }
       switch (c->state) {
@@ -457,7 +457,7 @@ void Manager::unmapNotify(XUnmapEvent *e){
 	withdraw(c);
 	break;
       }
-//       XUngrabServer(qt_xdisplay());
+      XUngrabServer(qt_xdisplay());
     }
 }
 
