@@ -78,15 +78,9 @@ QStrList KKFMOptDlg::dataUsrAgent() const
   return(usrDlg->data()); 
 }
 
-void KKFMOptDlg::setProxyData(QStrList *strList)
-// forward data to KProxyDlg
+void KKFMOptDlg::proxyData( struct proxyoptions &proxyopts )
 {
-  prxDlg->setData(strList);
-}
-
-QStrList KKFMOptDlg::dataProxy() const
-{
-  return(prxDlg->data());
+  prxDlg->getProxyOpts( proxyopts );
 }
 
 void KKFMOptDlg::fontData(struct fontoptions& fntopts){

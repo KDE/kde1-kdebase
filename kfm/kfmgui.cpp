@@ -1439,7 +1439,6 @@ void KfmGui::slotConfigureBrowser()
   //-> was:  UserAgentDialog dlg;
   KKFMOptDlg dlg;
   QStrList strlist( true );
-  QStrList prxStrList ( true );
 
   // read entries from config file
   KConfig* config = kapp->getConfig();
@@ -1461,16 +1460,6 @@ void KfmGui::slotConfigureBrowser()
   // transmit data to dialog
   dlg.setUsrAgentData( &strlist );
 
-  // now read data for KProxyDlg
-  config->setGroup("Browser Settings/Proxy");
-  prxStrList.append(config->readEntry("UseProxy", ""));
-  prxStrList.append(config->readEntry("HTTP-Proxy", ""));
-  prxStrList.append(config->readEntry("FTP-Proxy", ""));
-  prxStrList.append(config->readEntry("NoProxyFor", ""));
-  
-  // transmit data to dialog
-  dlg.setProxyData(&prxStrList);
-  
   // show the dialog
   int ret = dlg.exec();
   if( ret == QDialog::Accepted )
@@ -1496,12 +1485,14 @@ void KfmGui::slotConfigureBrowser()
 		}
 
 	  // write back the entries from KProxyDlg
+          struct proxyoptions proxyopts;
+          
+	  dlg.proxyData( proxyopts );
           config->setGroup("Browser Settings/Proxy");
-	  strlist = dlg.dataProxy();
-          config->writeEntry( "UseProxy", strlist.first() );
-	  config->writeEntry( "HTTP-Proxy", strlist.next() );
-          config->writeEntry( "FTP-Proxy", strlist.next() );
-	  config->writeEntry( "NoProxyFor", strlist.next() );
+          config->writeEntry( "UseProxy", proxyopts.useProxy.data() );
+	  config->writeEntry( "HTTP-Proxy", proxyopts.http_proxy.data() );
+          config->writeEntry( "FTP-Proxy", proxyopts.ftp_proxy.data() );
+	  config->writeEntry( "NoProxyFor", proxyopts.no_proxy_for.data() );
 
 
 	  struct coloroptions coloropts;

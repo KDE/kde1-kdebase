@@ -18,8 +18,7 @@ class KKFMOptDlg : public QDialog
     // methods to access data
     void setUsrAgentData(QStrList *strList);
     QStrList dataUsrAgent() const;
-    void setProxyData(QStrList *strList);
-    QStrList dataProxy() const;
+    void proxyData( struct proxyoptions &proxyopts );
     void fontData(struct fontoptions& fontopts);
     void colorData(struct coloroptions& coloropts);
     void miscData(struct rootoptions& miscopts);

@@ -9,6 +9,15 @@
 #include <qpushbt.h>
 #include <qchkbox.h>
 
+struct proxyoptions {
+  QString useProxy; 		// shall we use proxy?
+  QString ftp_proxy;		// url of the ftp proxy
+  QString http_proxy;		// url of the http proxy
+  QString no_proxy_for;		// do not use proxy for these urls
+  QString proxy_login;		// proxy login
+  QString proxy_pass;		//   and password
+};
+
 class KProxyDlg : public QWidget
 {
 Q_OBJECT
@@ -16,8 +25,7 @@ Q_OBJECT
     KProxyDlg(QWidget *parent=0, const char *name=0, WFlags f=0);
     ~KProxyDlg();
 
-    void setData(QStrList *strList);
-    QStrList data() const;
+    void getProxyOpts( struct proxyoptions &proxyopts );
      
   private:
     bool useProxy;
@@ -47,6 +55,7 @@ Q_OBJECT
     QCheckBox *cb_useProxy;
 
     void setProxy();
+    void readOptions();
     
   public slots:
     void copyDown();		// use the http setting for all services

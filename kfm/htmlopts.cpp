@@ -360,12 +360,13 @@ void KMiscOptions::readOptions()
 
 
 
-void KMiscOptions::getMiscOpts(struct rootoptions& rootopts){
-
-
-  if(gridwidth != (hspin->getValue()  - DEFAULT_GRID_MIN) || 
-     gridheight != (vspin->getValue() - DEFAULT_GRID_MIN) )
+void KMiscOptions::getMiscOpts(struct rootoptions& rootopts)
+{
+  if(gridwidth != (hspin->getValue()  + DEFAULT_GRID_MIN) || 
+     gridheight != (vspin->getValue() + DEFAULT_GRID_MIN) ) {
+    printf( "Grid changed!\n" );
     changed = true;
+  }
 
   rootopts.gridwidth = hspin->getValue()+DEFAULT_GRID_MIN;
   rootopts.gridheight = vspin->getValue()+DEFAULT_GRID_MIN;

@@ -1,3 +1,10 @@
+Sun May  3 15:40:05 1998
+
+        * htmlopts.cpp (getMiscOpts): Fixed the "changed" check
+          
+        * kproxydlg.cpp, kkfmoptdlg.cpp, kfmgui.cpp:
+          Made some code cleanups. Now it looks better :-)
+
 Thu Apr 23 13:15:39 1998    <weis@snoopy.rz.uni-frankfurt.de>
 
 	* kfmprops.cpp (applyChanges): Fixed directory renaming bug.

@@ -10,7 +10,6 @@
 KProxyDlg::KProxyDlg(QWidget *parent, const char *name, WFlags f)
   : QWidget(parent, name, f)
 {
-//  lb_info = new QLabel( klocale->translate("You may configure a proxy and port number for each of\nthe internet protocols that KFM supports."), this);
   lb_info = new QLabel( klocale->translate("Don't forget to save your settings!"), this);
   lb_info->setGeometry(20, 20, 360, 30);
   
@@ -53,6 +52,9 @@ KProxyDlg::KProxyDlg(QWidget *parent, const char *name, WFlags f)
   cp_down->setPixmap( pixmap );
   cp_down->setGeometry(342, 115, 20, 20);
   connect( cp_down, SIGNAL( clicked() ), SLOT( copyDown() ) );
+
+  // finaly read the options
+  readOptions();
 }
 
 KProxyDlg::~KProxyDlg()
@@ -70,6 +72,41 @@ KProxyDlg::~KProxyDlg()
   delete cp_down;
   delete cb_useProxy;
   // time to say goodbye ...
+}
+
+void KProxyDlg::readOptions()
+{
+  QString port, tmp;
+  KURL url;
+  
+  KConfig *config = KApplication::getKApplication()->getConfig();
+  config->setGroup( "Browser Settings/Proxy" );	
+  tmp = config->readEntry( "HTTP-Proxy" );
+  if( !tmp.isEmpty() ) {
+    url = tmp.data();
+    port.setNum( url.port() );
+    le_http_url->setText( url.host() );
+    le_http_port->setText( port.data() ); 
+  }
+ 
+  tmp = config->readEntry( "FTP-Proxy" );
+  if( !tmp.isEmpty() ) {
+    url = tmp.data();
+    port.setNum( url.port() );
+    le_ftp_url->setText( url.host() );
+    le_ftp_port->setText( port.data() ); 
+  }
+  
+  tmp = config->readEntry( "UseProxy" );
+  if( tmp == "Yes" ) {
+    useProxy = TRUE;
+  } else {
+    useProxy = FALSE;
+  }
+  setProxy();
+  
+  tmp = config->readEntry( "NoProxyFor" );
+  le_no_prx->setText( tmp.data() );  
 }
 
 void KProxyDlg::copyDown()
@@ -96,77 +133,37 @@ void KProxyDlg::changeProxy()
   setProxy();
 }
 
-void KProxyDlg::setData(QStrList *strList)
+void KProxyDlg::getProxyOpts( struct proxyoptions &proxyopts )
 {
-  QString port;
-  KURL url;
-
-  QString tmp( strList->first() );
-  if( tmp == "Yes" ) {
-    useProxy = TRUE;
-  } else {
-    useProxy = FALSE;
-  }
-  setProxy();
-  
-  tmp = ( strList->next() );
-  if ( ! tmp.isEmpty() ) {
-    printf("HTTP Proxy found in kfmrc!\n");
-    url = tmp.data();
-    le_http_url->setText( url.host() );
-    port.setNum ( url.port() );    
-    le_http_port->setText( port.data() );
-  }
-  
-  tmp = strList->next();
-  if ( ! tmp.isEmpty() ) {
-    printf("FTP Proxy found in kfmrc!\n");
-    url = tmp.data();
-    le_ftp_url->setText( url.host() );
-    port.setNum ( url.port() );
-    le_ftp_port->setText( port.data() );
-  }
-  
-  le_no_prx->setText(strList->next());
-}
-
-static QStrList strList(true);
-
-QStrList KProxyDlg::data() const
-{
-  strList.clear();
   QString url;
-  
+
   if( useProxy == TRUE ) {
-    strList.append( "Yes" );
+    proxyopts.useProxy = "Yes";
   } else {
-    strList.append( "No" );
+    proxyopts.useProxy = "No";
   }
   
   url = le_http_url->text();
   if( url.isEmpty() ) {
-    printf("No http proxy selected!\n");
-    strList.append("");
+    proxyopts.http_proxy = "";
   } else {
     QString httpstr("http://");
     httpstr += le_http_url->text();	// host
     httpstr += ":";
     httpstr += le_http_port->text();	// and port
-    strList.append( httpstr.data() );
+    proxyopts.http_proxy = httpstr;
   }
   url = le_ftp_url->text();
   if( url.isEmpty() ) {
-    printf("No ftp proxy selected!\n");
-    strList.append("");
+    proxyopts.ftp_proxy = "";
   } else {
     QString ftpstr("ftp://");
     ftpstr += le_ftp_url->text();	// host
     ftpstr += ":";
     ftpstr += le_ftp_port->text();	// and port
-    strList.append( ftpstr.data() );	  
+    proxyopts.ftp_proxy = ftpstr;	  
   }
-  strList.append(le_no_prx->text());
-  return strList;
+  proxyopts.no_proxy_for = le_no_prx->text();
 }
 
 #include "kproxydlg.moc"
