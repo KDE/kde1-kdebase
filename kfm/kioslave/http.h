@@ -83,4 +83,11 @@ public:
     virtual int atEOF();
 };
 
+extern "C" {
+	int revmatch (const char *host, const char *nplist);
+	char *base64_encode_line (const char *s);
+	char *create_generic_auth (const char *prefix, const char *user, const char *papasswd);
+	char *create_www_auth (const char *user, const char *passwd);
+};
+
 #endif
