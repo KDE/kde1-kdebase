@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr "Project-Id-Version: kdelibs"
+"POT-Creation-Date: 1998-01-25 13:21+0100\n"
+"PO-Revision-Date: 1998-01-22 17:20+0100\n"
+"Last-Translator: Andrea Rizzi <BILIBAO@ouverture.it>\n"
+""
+
+#: configlist.cpp:119
+msgid "Unknown module: "
+msgstr "Modulo sconosciuto:"
+
+#: main.cpp:46 mainwidget.cpp:18
+msgid "KDE Control Center"
+msgstr "Centro fi Controllo KDE"
+
+#: toplevel.cpp:79
+msgid "&Swallow modules"
+msgstr "Importa moduli"
+
+#: toplevel.cpp:82
+msgid "&About KControl..."
+msgstr "&Info su KControl..."
+
+#: toplevel.cpp:85
+msgid "&Using KControl"
+msgstr "&Utilizzo di KControl"
+
+#: toplevel.cpp:100
+msgid "About KControl"
+msgstr "Info su KControl"
+
+#: toplevel.cpp:101
+msgid ""
+"KDE Control Center - Version 0.3\n"
+"\n"
+"Written by Matthias Hölzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Thanks to:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+msgstr ""
+"Centro di COntrollo KDE - Versione 0.3"
+"\n"
+"Scritto da Matthias Hölzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Ringraziamenti a:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+

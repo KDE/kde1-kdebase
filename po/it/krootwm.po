@@ -4,15 +4,14 @@
 #
 #, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1997-12-18 13:52+0100\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+msgstr "Project-Id-Version: PACKAGE VERSION"
+"POT-Creation-Date: 1998-01-03 22:39+0100\n"
+"PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
+"Language-Team: Italiano <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
+""
 
 #: krootwm.C:109 krootwm.C:471
 msgid "Folder"
@@ -21,7 +20,7 @@ msgstr "Cartella"
 #: krootwm.C:136
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
-msgstr "ERRORE: Il modello '%s' è inesistente"
+msgstr "ERORRE: Modello inesistente '%s'"
 
 #: krootwm.C:162
 msgid "Help on desktop"
@@ -63,8 +62,3 @@ msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgid "Usage:"
 msgstr "Utilizzo:"
 
-#~ msgid "Clear"
-#~ msgstr "Pulisci"
-
-#~ msgid "New"
-#~ msgstr "Nuovo"

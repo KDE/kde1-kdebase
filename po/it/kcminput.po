@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"PO-Revision-Date: 1998-02-03 15:22+0100\n"
+"Last-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
+"Language-Team: Italiano <it@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:53
+msgid "&Mouse"
+msgstr "&Mouse"
+
+#: main.cpp:56
+msgid "&Keyboard"
+msgstr "&Tastiera"
+
+#: main.cpp:62
+msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
+msgstr "utilizzo: kcminput [-init | {mouse,keyboard}]\n"
+
+#: main.cpp:92
+msgid "Input Devices Properties"
+msgstr "Proprietà dei dispositivi di Input"
+
+#: mouse.cpp:76
+msgid "Acceleration"
+msgstr "Accelerazione"
+
+#: mouse.cpp:82
+msgid "Threshold"
+msgstr "Movimento minima"
+
+#: mouse.cpp:85
+msgid "Button mapping"
+msgstr "Impostazione Tasti"
+
+#: mouse.cpp:87
+msgid "Right handed"
+msgstr "Mano Destra"
+
+#: mouse.cpp:89
+msgid "Left handed"
+msgstr "Mano Sinistra"
+
+#: keyboard.cpp:68
+msgid "Keyboard repeat"
+msgstr "Ripetizioni tastiera"
+
+#: keyboard.cpp:76
+msgid "Key click volume"
+msgstr "Volume key click"
+

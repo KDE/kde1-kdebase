@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"PO-Revision-Date: 1998-01-25 13:23+0100\n"
+"Last-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
+"Language-Team: Italiano <it@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:50
+msgid "&Memory"
+msgstr "&Memoria"
+
+#: main.cpp:53
+msgid "&Processor"
+msgstr "&Processore"
+
+#: main.cpp:62
+msgid "usage: kcminfo [-init | {processor,memory}]\n"
+msgstr "utilizzo: kcminfo [-init | {processor,memory}]\n"
+
+#: main.cpp:74
+msgid "System Information"
+msgstr "Informazioni sul Sistema"
+
+#: memory.cpp:10
+msgid "Total memory"
+msgstr "Memoria Totale"
+
+#: memory.cpp:18
+msgid "Free memory"
+msgstr "Memoria Libera"
+
+#: memory.cpp:26
+msgid "Shared memory"
+msgstr "Memoria Condivisa"
+
+#: memory.cpp:34
+msgid "Buffer memory"
+msgstr "Memmoria bufferizzata"
+
+#: memory.cpp:42
+msgid "Swap memory"
+msgstr "Memoria Swap"
+
+#: memory.cpp:50
+msgid "Free swap memory"
+msgstr "Memoria Swap Libera"
+
+#: memory.cpp:71
+#, c-format
+msgid "%10ld bytes  = %8.2f MB"
+msgstr "%10ld bytes  = %8.2f MB"
+
+#: memory.cpp:93 memory.cpp:94 memory.cpp:95 memory.cpp:96 memory.cpp:97
+#: memory.cpp:98
+msgid "not available"
+msgstr "non disponibile"
+
+#: processor.cpp:29
+msgid "This system is not yet supported :-("
+msgstr "Questo sistema non è ancora supportato :-("
+

@@ -1,7 +1,9 @@
 
 # This has to be set. The rest should be reusable
 GMFILES = kfm.gmo kdisplay.gmo kwm.gmo kfind.gmo kdehelp.gmo \
-	kdm.gmo kfontmanager.gmo kpanel.gmo kvt.gmo
+	kdm.gmo kfontmanager.gmo kpanel.gmo kvt.gmo \
+	kcmkpanel.gmo kcontrol.gmo kcmlocale.gmo kcmbell.gmo \
+	kcminfo.gmo kcminput.gmo
 POFILES = $(GMFILES:.gmo=.po)
 
 LANG = it

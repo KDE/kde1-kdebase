@@ -6,111 +6,111 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1997-12-15 20:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: Andrea Rizzi <Bilibao@Ouverture.it>\n"
+"Language-Team: Italiano <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
+""
 
-#: main.C:67
+#: main.C:65
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
-msgstr ""
-"kwm: sembra che ci sia già un windows manager in esecuzione\n"
+msgstr "kwm: sembra che ci sia già un windows manager in esecuzione\n"
 "kwm non può essere avviato.\n"
 
-#: main.C:81
+#: main.C:79
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: fallimento dell'inizializzazione; annullamento\n"
 
-#: main.C:370
+#: main.C:367
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:377
+#: main.C:374
 msgid "Usage: "
 msgstr "Utilizzo:"
 
-#: main.C:388
+#: main.C:385
 msgid "&Maximize"
-msgstr "Ingrandisci/Riduci"
+msgstr "In&grandisci"
 
-#: main.C:389
+#: main.C:386
 msgid "&Restore"
 msgstr "&Ripristina"
 
-#: main.C:390
+#: main.C:387
 msgid "&Iconify"
 msgstr "&Iconifica"
 
-#: main.C:391
+#: main.C:388
 msgid "&DeIconify"
-msgstr "&Deiconifica"
+msgstr "&DeIconifica"
 
-#: main.C:392
+#: main.C:389
 msgid "&Sticky"
 msgstr "&Appiccicato"
 
-#: main.C:393
+#: main.C:390
 msgid "&UnSticky"
 msgstr "&Staccato"
 
-#: main.C:394
+#: main.C:391
 msgid "Mo&ve"
 msgstr "&Sposta"
 
-#: main.C:395
+#: main.C:392
 msgid "Resi&ze"
 msgstr "&Ridimensiona"
 
-#: main.C:397
+#: main.C:393
+msgid "&Close"
+msgstr "&Chiudi"
+
+#: main.C:394
 msgid "&To desktop"
 msgstr "&Al Desktop"
 
-#: main.C:399
+#: main.C:396
 msgid "&Onto current desktop"
 msgstr "&Sul desktop attivo"
 
-#: main.C:449
+#: main.C:446
 msgid "One"
 msgstr "Uno"
 
-#: main.C:452
+#: main.C:449
 msgid "Two"
 msgstr "Due"
 
-#: main.C:455
+#: main.C:452
 msgid "Three"
 msgstr "Tre"
 
-#: main.C:458
+#: main.C:455
 msgid "Four"
 msgstr "Quattro"
 
-#: main.C:461
+#: main.C:458
 msgid "Five"
 msgstr "Cinque"
 
-#: main.C:464
+#: main.C:461
 msgid "Six"
 msgstr "Sei"
 
-#: main.C:467
+#: main.C:464
 msgid "Seven"
 msgstr "Sette"
 
-#: main.C:470
+#: main.C:467
 msgid "Eight"
 msgstr "Otto"
 
-#: main.C:743
-msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr ""
-
-#: main.C:986
+#: main.C:885
 msgid "*** No Tasks ***"
 msgstr "*** Nessun Task ***"
 
@@ -118,7 +118,7 @@ msgstr "*** Nessun Task ***"
 msgid "Command:"
 msgstr "Comando:"
 
-#: logout.C:35 taskmgr.C:106
+#: logout.C:35 taskmgr.C:36
 msgid "Logout"
 msgstr "&Esci dal KDE"
 
@@ -139,28 +139,21 @@ msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"Le seguenti applicazioni non possono essere ripristinate nella prossima "
-"sessione\n"
-"ma soltanto riavviate. Accertarsi che non contengano importanti dati non "
-"ancora salvati."
+"Le seguenti applicazioni non possono essere ripristinate nella prossima sessione\n"
+"ma soltanto riavviate. Accertarsi che non contengano importanti dati non ancora salvati."
 
 #: logout.C:73
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
-msgstr ""
-"Le seguenti applicazioni non sono caratteristiche di X11, quindi non possono "
-"essere\n"
-"ripristinate nella prossima sessione. Accertarsi che non contengano "
-"importanti dati non ancora salvati."
+msgstr "Le seguenti applicazioni non sono caratteristiche di X11, quindi non possono essere\n"
+"ripristinate nella prossima sessione. Accertarsi che non contengano importanti dati non ancora salvati."
 
-#: taskmgr.C:105
+#: taskmgr.C:35
 msgid "Switch to"
 msgstr "Passa A"
 
-#: taskmgr.C:119
+#: taskmgr.C:49
 msgid "Current session"
 msgstr "Sessione attiva"
 
-#~ msgid "&Close"
-#~ msgstr "&Chiudi"

@@ -4,31 +4,30 @@
 #
 #, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-28 10:06+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+msgstr "Project-Id-Version: PACKAGE VERSION"
+"POT-Creation-Date: 1998-01-03 22:39+0100\n"
+"PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
+"Language-Team: Italiano <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
+""
 
 #: kpanel.C:210
 msgid "Move"
-msgstr "Muovi"
+msgstr "Sposta"
 
 #: kpanel.C:213
 msgid "Properties"
-msgstr "Proprietá"
+msgstr "Proprietà"
 
 #: kpanel.C:245
 msgid "Go!"
-msgstr ""
+msgstr "Vai!"
 
 #: kpanel.C:247 tools.C:805
 msgid "Where do you want to go tomorrow?"
-msgstr ""
+msgstr "Dove vuoi andare Domani ?"
 
 #: kpanel.C:320
 msgid "No info available"
@@ -39,17 +38,16 @@ msgid "Logout"
 msgstr "Fine Sessione"
 
 #: kpanel.C:367 kpanel.C:778
-#, fuzzy
 msgid "Lock screen"
 msgstr "Blocca schermo"
 
 #: kpanel.C:376
 msgid "Hide the panel"
-msgstr ""
+msgstr "Nascondi Pannello"
 
 #: kpanel.C:386
 msgid "Show the panel"
-msgstr ""
+msgstr "Mostra Pannello"
 
 #: kpanel.C:762
 msgid "Add application"
@@ -57,15 +55,15 @@ msgstr "Aggiungi applicazione"
 
 #: kpanel.C:764
 msgid "Add an application or a submenu onto the panel"
-msgstr ""
+msgstr "Aggiunge un applicazione o un sottomenu al pannello"
 
 #: kpanel.C:765
 msgid "Add windowlist"
-msgstr ""
+msgstr "Aggiungi Lista Finestre"
 
 #: kpanel.C:767
 msgid "Add a windowlist menu onto the panel"
-msgstr ""
+msgstr "Aggiunge la Lista Finestre sul Pannello"
 
 #: kpanel.C:768
 msgid "Configure"
@@ -97,7 +95,7 @@ msgstr "Nessun commento disponibile"
 
 #: kpanel.C:1152 tools.C:814
 msgid "Windowlist"
-msgstr ""
+msgstr "Lista Finestre"
 
 #: props.C:327
 msgid "Location"
@@ -113,62 +111,55 @@ msgstr "Nascosta"
 
 #: props.C:350
 msgid "Top/Left"
-msgstr "In alto a Sinistra"
+msgstr "In alto a Sin."
 
 #: props.C:380
 msgid "Tiny Style"
-msgstr "Stile Piccolissimo"
+msgstr "Piccolissimo"
 
 #: props.C:381
-#, fuzzy
 msgid "Normal Style"
-msgstr "Stile Piccolo"
+msgstr "Normale"
 
 #: props.C:382
 msgid "Large Style"
-msgstr "Stile Largo"
+msgstr "Largo"
 
 #: props.C:401
 msgid "Menu Tooltips"
-msgstr "Menu di aiuto"
+msgstr "Suggerimenti Menu"
 
 #: props.C:447
 msgid "Others"
-msgstr ""
+msgstr "Altro"
 
-# File : kpanel.po -- kde internationalization, italian translation.
-# Authors : Andrea Rizzi <bilibao@ouverture.it>,
-#           Lucien Nocera <lnocera@limpet.cis.upenn.edu> and
-#           Marco Spolaore <gemini@sctrade.it>.
-# v 0.1 -- 15/10/97
 #: props.C:449
-#, fuzzy
 msgid "Personal First"
-msgstr "Menu Privato"
+msgstr "Prima Menu Personale"
 
 #: props.C:452
 msgid "Auto Hide Panel"
-msgstr ""
+msgstr "Sparizione Automatica Pannello"
 
 #: props.C:455
 msgid "Auto Hide Taskbar"
-msgstr ""
+msgstr "Sparizione Automatica TaskBar"
 
 #: props.C:473
 msgid "Clock"
-msgstr ""
+msgstr "Orologio"
 
 #: props.C:475
 msgid "24h"
-msgstr ""
+msgstr "24h"
 
 #: props.C:479
 msgid "12h AM/PM"
-msgstr ""
+msgstr "12h AM/PM"
 
 #: props.C:540
 msgid "Visible"
-msgstr "Visibile"
+msgstr "Visibili"
 
 #: props.C:547
 msgid "Width"
@@ -182,37 +173,3 @@ msgstr "Schermi"
 msgid "KPanel Configuration"
 msgstr "Configurazione KPanel "
 
-#~ msgid "Remove"
-#~ msgstr "Rimuovi"
-
-#~ msgid "System"
-#~ msgstr "Sistema"
-
-#~ msgid "Add special"
-#~ msgstr "Aggiungi speciale"
-
-#~ msgid "Lock panel"
-#~ msgstr "Blocca Pannello"
-
-#~ msgid "Destroy"
-#~ msgstr "Distruggi"
-
-#~ msgid "(Un) Sticky"
-#~ msgstr "(Non) &Attaccato"
-
-#~ msgid "(Un) Iconify"
-#~ msgstr "(De) Iconifica"
-
-#~ msgid "(Un) Maximize"
-#~ msgstr "(Non) In&grandito"
-
-#~ msgid "On this desktop"
-#~ msgstr "Su questo desktop"
-
-#~ msgid "Sorry"
-#~ msgstr "Mi dispiace"
-
-#~ msgid ""
-#~ "Could not communicate with nor\n"
-#~ "start a new instance of KFM"
-#~ msgstr "Impossibile comunicare con, o lanciare, KFM"

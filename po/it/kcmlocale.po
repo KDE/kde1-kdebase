@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:51
+msgid "&Locale"
+msgstr "&Locale"
+
+#: main.cpp:57
+msgid "usage: kcmlocale [-init | language]\n"
+msgstr "utilizzo: kcmlocale [-init | language]\n"
+
+#: main.cpp:79
+msgid "Locale settings"
+msgstr "Impostazioni Locale"
+
+#: locale.cpp:40
+msgid "Language"
+msgstr "Linguaggio"
+
+#: locale.cpp:45
+msgid "First"
+msgstr "Primo"
+
+#: locale.cpp:52
+msgid "Second"
+msgstr "Secondo"
+
+#: locale.cpp:59
+msgid "Third"
+msgstr "Terzo"
+
+#: locale.cpp:94
+msgid "without name!"
+msgstr "Senza nome!"
+
+#: locale.cpp:160
+msgid "Applying language settings"
+msgstr "Applica impostazioni linguaggio"
+
+#: locale.cpp:161
+msgid ""
+"Changed language settings apply only to newly started applications.\n"
+"To change the language of all programs, you will have to logout first."
+msgstr ""
+"Il nuovo linguaggio sarà utilizzato solo dalle applicazioni avviate da adesso.\n"
+"Per usarlo con tutti i programmi devi riavviare il KDE."
+

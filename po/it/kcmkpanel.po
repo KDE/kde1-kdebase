@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr "Project-Id-Version: PACKAGE VERSION"
+"POT-Creation-Date: 1998-01-03 22:39+0100\n"
+"PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
+"Language-Team: Italiano <it@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+""
+
+#: panel.cpp:58
+msgid "Location"
+msgstr "Indirizzo"
+
+#: panel.cpp:66
+msgid "Taskbar"
+msgstr "Barra Task"
+
+#: panel.cpp:67
+msgid "Hidden"
+msgstr "Nascosta"
+
+#: panel.cpp:70
+msgid "Top/Left"
+msgstr "In alto a Sinistra"
+
+#: panel.cpp:91
+msgid "Tiny Style"
+msgstr "Stile Piccolissimo"
+
+#: panel.cpp:92
+msgid "Normal Style"
+msgstr "Normal Style"
+
+#: panel.cpp:93
+msgid "Large Style"
+msgstr "Stile Largo"
+
+#: panel.cpp:101
+msgid "Menu Tooltips"
+msgstr "Menu di aiuto"
+
+#: panel.cpp:103
+msgid "Personal First"
+msgstr "Personal First"
+
+#: panel.cpp:105
+msgid "Auto Hide Panel"
+msgstr "Auto Hide Panel"
+
+#: panel.cpp:107
+msgid "Auto Hide Taskbar"
+msgstr "Auto Hide Taskbar"
+
+#: desktops.cpp:67
+msgid "Visible"
+msgstr "Visibile"
+
+#: desktops.cpp:75
+msgid "Width"
+msgstr "Larghezza"
+
