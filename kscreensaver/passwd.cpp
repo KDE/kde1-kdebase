@@ -757,7 +757,7 @@ checkPasswd(char *buffer)
 #endif /* !ultrix */
 #endif /* !DCE_PASSWD */
 
-	return done;
+	return !canGetPasswd || done;
 }
 
 /*-
