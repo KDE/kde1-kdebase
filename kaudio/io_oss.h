@@ -18,7 +18,7 @@ public:
   bool pause();
   void setBugs(int bugs);
   int  Write(AudioSample *a);
-
+  int emitSilence();
 private:
   int   audiodev;	/* Should be private, cannot be for now :- */
   char	*devname;
@@ -30,6 +30,9 @@ private:
   uint32 frequency;
   int8	channels;	/* Not supported by now */
   int	BugFlags;	/* Yeah, I like OSS and its thousand bugs :-( */
+  char  *silence8;      /* Memory buffer where "silence" is stored */
+  char  *silence16;     /* Memory buffer where "silence" is stored */
+  bool  ParamsChanged;
 };
 
 

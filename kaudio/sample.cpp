@@ -5,7 +5,11 @@
 
 
 // Wavplay compatibility function
+#ifdef DEBUG
 void err(char *value)
+#else
+void err(char *)
+#endif
 {
 #ifdef DEBUG
   cerr << value << '\n';
@@ -257,12 +261,23 @@ int AudioSample::readData()
   cerr << "Trying to read " << len_toRead << " bytes from " << cur_read_pos << ". Read: ";
 #endif
   len = fread(Buffer, 1, len_toRead, audiofile);
+
+  if (len==0)
+    {
+      BuferValidLength = 0;
+      return 0;
+    }
+
+  // Always pad with ZeroData!!!
+  for (int i=len; i<BUFFSIZE; i++)
+    Buffer[i]=0x80;
+
 #ifdef DEBUG
   cerr << len << '\n';
 #endif
 
-  BuferValidLength = len;
-  return(len);
+  BuferValidLength = BUFFSIZE; //len;
+  return(BUFFSIZE);
 }
 
 AudioSample::~AudioSample()

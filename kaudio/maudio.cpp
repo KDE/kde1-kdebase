@@ -90,14 +90,6 @@ int main(char argc, char **argv)
       if ( FileNameGet(FnamChunk, filename) )
 	{
 	  PlayerStatus=START_MEDIA;
-	  SoftStop = 0;
-	  PtrFname = strrchr(filename, '/');
-	  if ( PtrFname == NULL )
-	    PtrFname = filename;
-	  else
-	    // Skip '/' character
-	    PtrFname++;
-	  strncpy(StatChunk->songname, PtrFname, LEN_NAME);
 	}
 
       // ----------------------------------------------------------------------------- //
@@ -120,6 +112,10 @@ int main(char argc, char **argv)
 #endif
 		      ADev->release();
 		    }
+		  else
+		   { // Send some zero data, to keep (especially) OSS happy
+		      ADev->emitSilence();
+		   }
 		}
 		usleep(10*USLEEP_DELAY);
 	    }
@@ -135,22 +131,23 @@ int main(char argc, char **argv)
 #endif
 
 	  if(SoftStop)
-	    ADev->sync();  // TODO: Sync nonblocking ... or flush *somehow* :-(
+	    true;//ADev->sync();  // TODO: Sync nonblocking ... or flush *somehow* :-(
 	  else
-	    ADev->reset();
+	    true;
+	  //ADev->reset();
 
 	  /* Reposition stream at start */
 	  ASample->seek(0,0);
 
 	  SoftStop=0;
-	  ReleaseDelay=10; // Delay until releasing audio (about 1 sec)
+	  ReleaseDelay=50; // Delay until releasing audio (about 1 sec)
 #ifdef DEBUG
 	  cerr << " 2";
 #endif
 
 	  *StatStatPtr = MD_STAT_READY;
 	  PlayerStatus = STOPPED;
-         // Give KAudio feedback on "finished". This crappy syncroization
+         // Give KAudio feedback on "finished". This crappy synchroization
           // thing REALLY must be replaced by some real protocol.
           StatChunk->sync_id = KeysChunk->sync_id;
 
@@ -185,8 +182,15 @@ int main(char argc, char **argv)
 	  cerr << "Preparing filename" << filename <<  "1";
 #endif
 	  *StatStatPtr = MD_STAT_BUSY;
-
-	  ADev->reset();
+	  SoftStop=0;
+	  PtrFname = strrchr(filename, '/');
+	  if ( PtrFname == NULL )
+	    PtrFname = filename;
+	  else
+	    // Skip '/' character
+	    PtrFname++;
+	  strncpy(StatChunk->songname, PtrFname, LEN_NAME);
+	  //!!!ADev->reset();
 #ifdef DEBUG
 	  cerr <<" 2\n";
 #endif
@@ -203,7 +207,10 @@ int main(char argc, char **argv)
 	      // Must grab *after* probing media, so that frequency etc are set
 	      retgrab = ADev->grab();
 	      if (retgrab != true)
-		PlayerStatus = STOP_MEDIA;
+		{
+		  PlayerStatus = STOP_MEDIA;
+		  cerr << "Failed to grab\n";
+		}
 	      else
 		PlayerStatus = PLAYING;
 	    }
@@ -219,7 +226,7 @@ int main(char argc, char **argv)
 	  *StatStatPtr = MD_STAT_PLAYING;
 	  /*
 	   * Big Loop: Each time this loop is called, I read another
-	   * chunk of audio datafrom the file.
+	   * chunk of audio data from the file.
 	   */
 	  bytes_read = ASample->readData();
 
