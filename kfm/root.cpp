@@ -29,7 +29,7 @@
 
 #define root KRootWidget::getKRootWidget()
 
-KRootWidget* KRootWidget::pKRootWidget;
+KRootWidget* KRootWidget::pKRootWidget = 0L;
 
 KRootWidget::KRootWidget( QWidget *parent=0, const char *name=0 ) : QWidget( parent, name )
 {

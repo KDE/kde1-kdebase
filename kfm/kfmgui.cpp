@@ -31,6 +31,9 @@
 
 #include <klocale.h>
 
+bool KfmGui::sumode = false;
+bool KfmGui::rooticons = true;
+
 char* kfm_getrev();
 
 char* kfm_getrev()
@@ -427,6 +430,9 @@ void KfmGui::initMenu()
 		      this, SLOT(slotHelp()) );
 
     menu = new KMenuBar( this );
+    if ( sumode )
+	menu->setBackgroundColor( red );
+    
     CHECK_PTR( menu );
     menu->insertItem( klocale->translate("&File"), file );
     menu->insertItem( klocale->translate("&Edit"), edit );
@@ -607,7 +613,8 @@ void KfmGui::slotRescanBindings()
 {
     KMimeType::clearAll();
     KMimeType::init();
-    KRootWidget::getKRootWidget()->update();
+    if ( KRootWidget::getKRootWidget() )
+	KRootWidget::getKRootWidget()->update();
 
     KfmGui *win;
     for ( win = windowList.first(); win != 0L; win = windowList.next() )
@@ -1260,6 +1267,12 @@ void KfmGui::slotViewDocumentSource()
     
 KfmGui::~KfmGui()
 {
+    if ( animatedLogoTimer )
+    {
+	animatedLogoTimer->stop();
+	delete animatedLogoTimer;
+    }
+    
     if ( toolbarButtons )
 	delete toolbarButtons;
     if ( toolbarURL )
@@ -1267,6 +1280,17 @@ KfmGui::~KfmGui()
     
     delete view;
     windowList.remove( this );
+
+    // Last window and in window-only-mode ?
+    if ( windowList.count() == 0 && !rooticons )
+    {
+	// remove pid file
+	QString file = QDir::homeDirPath();
+	file += "/.kde/kfm/pid";
+	unlink( file.data() );
+	// quit
+	exit(0);
+    }
 }
 
 #include "kfmgui.moc"

@@ -134,6 +134,8 @@ SUBDIRS = kfmwarn client kioslave pics Desktop kfmexec
 install-local-exec: 
 	$(mkinstalldirs) $(bindir)
 	$(INSTALL_DATA) ./unpack $(bindir)
+	$(INSTALL_DATA) ./kfmsu $(bindir)
+	$(INSTALL_DATA) ./kfmsu2 $(bindir)
 
 install-data-local:
 	$(mkinstalldirs) $(CONFIGDIR)

@@ -208,6 +208,21 @@ int main( int argc, char ** argv )
     klocale->aliasLocale("Link", ID_STRING_LINK);
     klocale->aliasLocale("Empty Trash Bin", ID_STRING_TRASH);
 
+    bool openwin = true;
+    
+    int arg = 1;
+    
+    if ( argc > arg )
+	if ( argv[arg][0] == '-' )
+	{
+	    if ( strchr( argv[arg], 'd' ) != 0L )
+		openwin = false;
+	    if ( strchr( argv[arg], 'w' ) != 0L )
+		KfmGui::rooticons = false;
+	    if ( strchr( argv[arg], 's' ) != 0L )
+		KfmGui::sumode = true;
+	}
+
     debugT("1. Init KIOManager\n");
 
     //Stephan: This variable is not deleted here, but in the 
@@ -222,18 +237,11 @@ int main( int argc, char ** argv )
     
     debugT("3. Init Root widget\n");
 
-    new KRootWidget();
+    if ( KfmGui::rooticons )
+	new KRootWidget();
     
     debugT("4. Init window\n");
-    
-    bool openwin = true;
-
-    int arg = 1;
-    
-    if ( argc > arg )
-	if ( strcmp( argv[arg++], "-d" ) == 0 )
-	    openwin = false;
-    
+        
     if ( openwin )
     {
 	QString home = "file:";

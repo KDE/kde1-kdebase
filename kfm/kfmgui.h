@@ -105,6 +105,9 @@ public:
      * Adds '_url' to the bookmarks with '_title' as description.
      */    
     void addBookmark( const char *_title, const char *_url );
+
+    static bool sumode;
+    static bool rooticons;
     
 public slots:
     /**

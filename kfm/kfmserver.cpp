@@ -57,20 +57,25 @@ void KFMServer::slotAccept( KSocket * _sock )
 
 void KFMServer::slotSelectRootIcons( int _x, int _y, int _w, int _h, bool _add )
 {
-  if ( !_add )
-    root->unselectAllIcons();
-  QRect r( _x, _y, _w, _h );
-  root->selectIcons( r );
+    if ( root )
+    {
+	if ( !_add )
+	    root->unselectAllIcons();
+	QRect r( _x, _y, _w, _h );
+	root->selectIcons( r );
+    }
 }
 
 void KFMServer::slotSortDesktop()
 {
-    KRootWidget::getKRootWidget()->sortIcons();
+    if ( root )
+	KRootWidget::getKRootWidget()->sortIcons();
 }
 
 void KFMServer::slotRefreshDesktop()
 {
-    KRootWidget::getKRootWidget()->update();
+    if ( root )
+	KRootWidget::getKRootWidget()->update();
 }
 
 void KFMServer::slotMoveClients( const char *_src_urls, const char *_dest_url )

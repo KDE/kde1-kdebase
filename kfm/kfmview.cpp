@@ -28,7 +28,6 @@
 #include "kfmdlg.h"
 #include "kfmprops.h"
 #include "kbutton.h"
-#include "root.h"
 #include "kfmpaths.h"
 #include <config-kfm.h>
 #include "utils.h"

@@ -358,8 +358,12 @@ void KIOServer::sendMountNotify2()
 
 QString KIOServer::findDeviceMountPoint( const char *_device, const char *_file )
 {
+    debugT("Finding mount point of %s\n",_device );
+    
     // Get the real device name, not some link.
     char buffer[1024];
+    QString tmp;
+    
     struct stat lbuff;
     lstat( _device, &lbuff );
 
@@ -369,10 +373,19 @@ QString KIOServer::findDeviceMountPoint( const char *_device, const char *_file 
 	if ( n > 0 )
 	{
 	    buffer[ n ] = 0;
-	    _device = buffer;
+	    if ( buffer[0] == '/' )
+		_device = buffer;
+	    else
+	    {
+		tmp = "/dev/";
+		tmp += buffer;
+		_device = tmp.data();
+	    }
 	}
     }
     
+    debugT("Now Finding mount point of %s\n",_device );
+
     int len = strlen( _device );
     
     FILE *f;
@@ -400,6 +413,7 @@ QString KIOServer::findDeviceMountPoint( const char *_device, const char *_file 
 		    {
 			*p = 0;
 			fclose( f );
+			debugT("MP=%s\n", buff + len );
 			return QString( buff + len );
 		    }
 		}
