@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-02-25 16:11+0100\n"
-"PO-Revision-Date: 1998-01-20 10:06 MET\n"
+"PO-Revision-Date: 1998-03-12 12:00 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,9 +22,8 @@ msgid "&Desktops"
 msgstr "P&racovní plochy"
 
 #: main.cpp:97
-#, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
-msgstr "Pou¾ití: kcmkpanel [-init | {panel,desktops}]\n"
+msgstr "Pou¾ití: kcmkpanel [-init | {panel,options,desktops}]\n"
 
 #: main.cpp:127
 msgid "KPanel Configuration"
@@ -36,112 +35,96 @@ msgstr "Umístìní"
 
 #: panel.cpp:60
 msgid "&Top"
-msgstr ""
+msgstr "Na&hoøe"
 
 #: panel.cpp:61
-#, fuzzy
 msgid "&Left"
-msgstr "Nahoøe/Vlevo"
+msgstr "V&levo"
 
 #: panel.cpp:62
 msgid "&Bottom"
-msgstr ""
+msgstr "&Dole"
 
 #: panel.cpp:74
 msgid "Taskbar"
 msgstr "Taskbar"
 
 #: panel.cpp:75
-#, fuzzy
 msgid "&Hidden"
-msgstr "Skrytý"
+msgstr "&Skrytý"
 
 #: panel.cpp:77
 msgid "T&op"
-msgstr ""
+msgstr "N&ahoøe"
 
 #: panel.cpp:79
 msgid "Botto&m"
-msgstr ""
+msgstr "D&ole"
 
 #: panel.cpp:81
-#, fuzzy
 msgid "Top/Le&ft"
-msgstr "Nahoøe/Vlevo"
+msgstr "Nahoøe/Vle&vo"
 
 #: panel.cpp:96
 msgid "T&iny"
-msgstr ""
+msgstr "D&robný"
 
 #: panel.cpp:98
-#, fuzzy
 msgid "&Normal"
-msgstr "Normální"
+msgstr "&Normální"
 
 #: panel.cpp:100
 msgid "L&arge"
-msgstr ""
+msgstr "V&elký"
 
 #: desktops.cpp:73
-#, fuzzy
 msgid "&Visible"
-msgstr "Viditelný"
+msgstr "&Viditelný"
 
 #: desktops.cpp:82
-#, fuzzy
 msgid "&Width"
-msgstr "©íøka"
+msgstr "©íø&ka"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
 msgstr "Nápovìdy v menu"
 
 #: options.cpp:39
-#, fuzzy
 msgid "Show &Menu Tooltips"
-msgstr "Nápovìdy v menu"
+msgstr "Zobrazovat nápovìdy v &menu"
 
 #: options.cpp:44
 msgid "De&lay:"
-msgstr ""
+msgstr "&Zpo¾dìní"
 
 #: options.cpp:56
 msgid "ms"
-msgstr ""
+msgstr "ms"
 
 #: options.cpp:68
 msgid "Others"
-msgstr ""
+msgstr "Ostatní"
 
 #: options.cpp:69
-#, fuzzy
 msgid "Personal &First"
-msgstr "Osobní první"
+msgstr "Osobní polo¾ky &první"
 
 #: options.cpp:71
-#, fuzzy
 msgid "Auto &Hide Panel"
-msgstr "Skrývat panel"
+msgstr "&Skrývat panel"
 
 #: options.cpp:73
-#, fuzzy
 msgid "Auto Hide &Taskbar"
-msgstr "Skrývat pruh úloh"
+msgstr "Skrývat &pruh úloh"
 
 #: options.cpp:81
 msgid "Clock"
-msgstr ""
+msgstr "Hodiny"
 
 #: options.cpp:83
 msgid "&24h"
-msgstr ""
+msgstr "&24h"
 
 #: options.cpp:85
 msgid "&12h AM/PM"
-msgstr ""
-
-#~ msgid "Tiny Style"
-#~ msgstr "Drobný"
-
-#~ msgid "Large Style"
-#~ msgstr "Velký"
+msgstr "&12h AM/PM"

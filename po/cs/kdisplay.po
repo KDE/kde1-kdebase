@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
 "POT-Creation-Date: 1998-03-09 00:13+0100\n"
-"PO-Revision-Date: 1998-01-27 13:50 MET\n"
+"PO-Revision-Date: 1998-03-12 12:12 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,47 +26,40 @@ msgid "Color"
 msgstr "Barva"
 
 #: backgnd.cpp:309
-#, fuzzy
 msgid "&Flat"
-msgstr "Plocha"
+msgstr "Pl&ocha"
 
 #: backgnd.cpp:313
-#, fuzzy
 msgid "&Gradient"
-msgstr "Pøechod"
+msgstr "Pø&echod"
 
 #: backgnd.cpp:327
-#, fuzzy
 msgid "&Portrait"
-msgstr "Na vý¹ku"
+msgstr "Na &vý¹ku"
 
 #: backgnd.cpp:331
-#, fuzzy
 msgid "&Landscape"
-msgstr "Na ¹íøku"
+msgstr "Na ¹íø&ku"
 
 #: backgnd.cpp:342
 msgid "Wallpaper"
 msgstr "Tapeta"
 
 #: backgnd.cpp:374
-#, fuzzy
 msgid "Ti&led"
-msgstr "Vydlá¾dit"
+msgstr "Vy&dlá¾dit"
 
 #: backgnd.cpp:378
-#, fuzzy
 msgid "&Centred"
-msgstr "Centrovanì"
+msgstr "&Centrovanì"
 
 #: backgnd.cpp:382
-#, fuzzy
 msgid "&Scaled"
-msgstr "Zvìt¹enì"
+msgstr "&Zvìt¹enì"
 
 #: backgnd.cpp:388
 msgid "&Browse..."
-msgstr ""
+msgstr "&Listovat..."
 
 #: backgnd.cpp:549
 msgid "Default"
@@ -75,6 +68,14 @@ msgstr "Implicitní"
 #: backgnd.cpp:888
 msgid "Desktop Title"
 msgstr "Název plochy"
+
+#: backgnd.cpp:???
+msgid "Pa&ttern"
+msgstr "Vzo&r"
+
+#: backgnd.cpp:???
+msgid "&Change..."
+msgstr "Z&mìnit..."
 
 #: colorscm.cpp:142 colorscm.cpp:143
 msgid "Inactive window"

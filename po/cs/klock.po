@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
 "POT-Creation-Date: 1998-03-11 15:37+0100\n"
-"PO-Revision-Date: 1998-01-20 10:31 MET\n"
+"PO-Revision-Date: 1998-03-13 08:15 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -346,7 +346,7 @@ msgstr ""
 #: main.cpp:279
 #, c-format
 msgid "Option %s is not support on this plattform!"
-msgstr ""
+msgstr "Parametr %s není podporován na této platformì!"
 
 #: main.cpp:306
 msgid ""
@@ -583,18 +583,16 @@ msgid "Space (GL)"
 msgstr ""
 
 #: space.cpp:575
-#, fuzzy
 msgid "Setup KSpace"
-msgstr "Nastavení KSlipu"
+msgstr "Nastavení KSpace"
 
 #: space.cpp:591
 msgid "Warp Interval:"
 msgstr ""
 
 #: space.cpp:679
-#, fuzzy
 msgid "About KSpace"
-msgstr "Informace o Slipu"
+msgstr "Informace o KSpace"
 
 #: space.cpp:681
 msgid ""
@@ -602,6 +600,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 msgstr ""
+"KSpace\n"
+"Copyright (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
 
 #: swarm.cpp:252
 msgid "Swarm"

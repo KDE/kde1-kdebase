@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit 0.2.3\n"
 "POT-Creation-Date: 1998-03-05 15:54+0100\n"
-"PO-Revision-Date: 1998-01-20 10:32 MET\n"
+"PO-Revision-Date: 1998-03-12 12:23 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -14,34 +14,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kmenuedit.cpp:62
-#, fuzzy
 msgid "&Reload"
-msgstr "Znovu naèíst menu"
+msgstr "&Znovu naèíst menu"
 
 #: kmenuedit.cpp:68
-#, fuzzy
 msgid "Change &Menuname"
-msgstr "Zmìnit jméno menu"
+msgstr "Zmìnit jméno &menu"
 
 #: kmenuedit.cpp:69
-#, fuzzy
 msgid "Reload &Filetypes"
-msgstr "Znovu naèít Minetypy"
+msgstr "Znovu naèít Mine&typy"
 
 #: kmenuedit.cpp:76
 msgid "by"
-msgstr ""
+msgstr "napsal"
 
 #: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
 msgstr "Zmìny nejsou ulo¾eny!"
 
 #: kmenuedit.cpp:176 kmenuedit.cpp:201
-#, fuzzy
 msgid ""
 "\n"
 "Do you want to save your changes ?"
-msgstr "Pøejete si ulo¾it va¹e zmìny"
+msgstr ""
+"\n"
+"Pøejete si ulo¾it va¹e zmìny?"
 
 #: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"
@@ -154,7 +152,7 @@ msgstr "Aplikace"
 
 #: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
 msgid "Swallow"
-msgstr ""
+msgstr "Pohlcovaná aplikace"
 
 #: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
 msgid "Link"
@@ -213,18 +211,16 @@ msgid "Binary Pattern:"
 msgstr "Binární vzor:"
 
 #: entrydialog.cpp:300
-#, fuzzy
 msgid "Application to swallow:"
-msgstr "Aplikace"
+msgstr "Pohlcovaná aplikace:"
 
 #: entrydialog.cpp:306
-#, fuzzy
 msgid "Title of application:"
-msgstr "Aplikace"
+msgstr "Titulek aplikace:"
 
 #: entrydialog.cpp:312
 msgid "Application to execute on button press:"
-msgstr ""
+msgstr "Aplikace vykonaná po stisku tlaèítka:"
 
 #: entrydialog.cpp:342
 msgid "URL:"
@@ -265,21 +261,3 @@ msgstr "Osobní:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Implicitní:"
-
-#~ msgid ""
-#~ "KMenuedit 0.2.3\n"
-#~ "(C) by Christoph Neerfeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-#~ msgstr ""
-#~ "KMenuedit 0.2.3\n"
-#~ "(C) Christoph Neerfeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-
-#~ msgid "Fvwm Command"
-#~ msgstr "Pøíkaz Fvwm"
-
-#~ msgid "Fvwm"
-#~ msgstr "Fvwm"
-
-#~ msgid "Fvwm Command:"
-#~ msgstr "Pøíkaz Fvwm:"

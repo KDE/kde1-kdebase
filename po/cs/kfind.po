@@ -335,6 +335,3 @@ msgstr "Nemohu urèit typ archivu!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Chyba pøi vytváøení procesu!"
-
-#~ msgid "(none)"
-#~ msgstr "(¾ádná)"
