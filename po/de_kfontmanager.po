@@ -65,7 +65,7 @@ msgstr "Vorhandene X11 Schriftarten"
 
 #: kfontmanager.cpp:68
 msgid "Fonts made available to KDE"
-msgstr "Für KDE verfügbar gemachte Schriftarten"
+msgstr "In KDE verfügbare Schriftarten"
 
 #: kfontmanager.cpp:74
 msgid "Add"
@@ -133,12 +133,19 @@ msgstr "KDE Schriftartmanager"
 
 #: main.cpp:61
 msgid "KDE Fonts"
-msgstr "KDE Fonts"
+msgstr "KDE Schriftarten"
 
 #: main.cpp:62
 msgid "Font Explorer"
-msgstr "Schriftarten-Explorer"
+msgstr "Schriftartentest"
 
 #: main.cpp:63
 msgid "Raw X11 Font List"
-msgstr "Unbearbeitete X11 Schriftartenliste"
+msgstr "Unbearbeitete X11 Schriftarten"
+
+# Manually added
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Apply"
+msgstr "Anwenden"
