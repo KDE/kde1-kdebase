@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmfm \n"
-"POT-Creation-Date: 1998-12-12 01:17+0100\n"
+"POT-Creation-Date: 1998-12-12 14:27+0100\n"
 "PO-Revision-Date: 1998-12-10 22:45+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -110,6 +110,19 @@ msgstr "Vergessen Sie nicht, die Einstellungen zu speichern!"
 #: kproxydlg.cpp:58
 msgid "Use proxy"
 msgstr "Benutze Proxy"
+
+#: kproxydlg.cpp:67
+msgid "HTTP Proxy:"
+msgstr ""
+
+#: kproxydlg.cpp:82 kproxydlg.cpp:113
+msgid "Port:"
+msgstr ""
+
+#: kproxydlg.cpp:98
+#, fuzzy
+msgid "FTP Proxy:"
+msgstr "&Proxy"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"

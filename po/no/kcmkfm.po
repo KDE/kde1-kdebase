@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfm\n"
-"POT-Creation-Date: 1998-12-12 01:17+0100\n"
+"POT-Creation-Date: 1998-12-12 14:27+0100\n"
 "PO-Revision-Date: 1998-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -45,9 +45,9 @@ msgid "&Desktop Icons"
 msgstr "&Skrivebordikoner"
 
 #: main.cpp:83
-#, fuzzy, c-format
+#, c-format
 msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
-msgstr "bruk: %s [-init | {font,color,misc,proxy,http,useragent,root}]\n"
+msgstr "bruk: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
 
 # main.cpp:65 main.cpp:199
 #: main.cpp:166
@@ -131,6 +131,19 @@ msgstr "Ikke glem å lagre innstillingene!"
 msgid "Use proxy"
 msgstr "Bruk proxy"
 
+#: kproxydlg.cpp:67
+msgid "HTTP Proxy:"
+msgstr "HTTP-proxy:"
+
+#: kproxydlg.cpp:82 kproxydlg.cpp:113
+msgid "Port:"
+msgstr "Port:"
+
+# kkfmoptdlg.cpp:19
+#: kproxydlg.cpp:98
+msgid "FTP Proxy:"
+msgstr "FTP-proxy:"
+
 # kproxydlg.cpp:43
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
@@ -142,7 +155,7 @@ msgstr "Aksepter språk:"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
-msgstr "aksepter tegnsett:"
+msgstr "Aksepter tegnsett:"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
