@@ -180,7 +180,6 @@ static void setInfoBoxText(QString text, Window w){
     infoFrame->grabMouse();
     do_not_draw = True;
   }
-
 }
 
 
@@ -991,7 +990,7 @@ bool MyApp::handleKeyPress(XKeyEvent key){
 
 
   
-  if( (kc == XK_Escape)  && (km == Mod1Mask | ControlMask) ){
+  if( (kc == XK_Escape)  && (km == (Mod1Mask | ControlMask)) ){
     freeKeyboard(False);
     if (!kill_cursor)
       kill_cursor = XCreateFontCursor(qt_xdisplay(), XC_pirate);
@@ -1113,16 +1112,11 @@ bool MyApp::x11EventFilter( XEvent * ev){
   
   switch (ev->type) {
   case KeyPress:
-    if (operations->isVisible())
-      return FALSE;
-    handleKeyPress(ev->xkey);
-    return TRUE;
+    return handleKeyPress(ev->xkey);
     break;
   case KeyRelease:
-    if (operations->isVisible())
-      return FALSE;
     handleKeyRelease(ev->xkey);
-    return TRUE;
+    return FALSE;
     break;
   case ButtonPress:
     {
