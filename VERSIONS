@@ -1,10 +1,10 @@
-kwm: 0.4.7 (patched for QT-1.2 && kdelib-0.8)
+kwm: 0.4.8
 kpanel: 0.15
 kfm: 0.6.1
 kwmclient: 0.2
 kdisplay: 0.5.2
 kdehelp: 0.4.9
-kghostview: 0.3.3 (bug removed)
+kghostview: 0.3.3 (bug fixed) 
 ktetris: 0.2.3
 kmines: 0.6.4
 kpat: 0.3 (patched a lot)
