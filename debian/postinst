@@ -12,21 +12,26 @@ fi
 if test -L /var/spool/kdeapplnk; then
   rm -f /var/spool/kdeapplnk
 fi
+
+echo -n "Verifying /usr/share/wallpapers dir: ";
 if test /usr/share/wallpapers; then
-  echo "wallpapers directory already exists...not creating.";
+  echo "Exists!";
 else
   mkdir /usr/share/wallpapers > /dev/null 2>&1
+  echo "Created!";
 fi
-
 
 ## Install the linux fonts for konsole
 
+echo -n "Updating fonts: ";
 mkfontdir /usr/X11R6/lib/X11/fonts/misc > /dev/null 2>&1
-xset fp rehash > /dev/null 2>&1
+echo "done!";
 
-## Run kappfinder
+## Run kappfinder 
 
+echo -n "Running kappfinder: ";
 /usr/bin/kappfinder > /dev/null 2>&1
+echo "done!";
 
 #DEBHELPER#
 #KDEHELPER#
