@@ -29,9 +29,9 @@
 #include <qmsgbox.h>
 #include <qlabel.h>
 #include <qbttngrp.h>
-#include <qradiobt.h> 
+#include <qradiobt.h>
 #include <qpixmap.h>
-#include <qgrpbox.h> 
+#include <qgrpbox.h>
 #include <qpainter.h>
 #include <qbttngrp.h>
 #include <qlcdnum.h>
@@ -60,10 +60,10 @@
 
 //CT 11feb98
 #define DCTB_MAXIMIZE      0
-#define DCTB_MOVE          1
-#define DCTB_SHADE         2
-#define DCTB_ICONIFY       3
-#define DCTB_STICKY        4
+#define DCTB_SHADE         1
+#define DCTB_ICONIFY       2
+#define DCTB_STICKY        3
+#define DCTB_MOVE          4
 #define DCTB_RESIZE        5
 #define DCTB_RESTORE       6
 #define DCTB_OPERATIONS    7
@@ -102,10 +102,10 @@ public:
 
   void loadSettings();
   void applySettings();
-  
+
 protected slots:
     void updatePreview();
-    	  
+    	
 private:
  void GetSettings( void );
  void getStringValue(int, QString *);
@@ -120,7 +120,7 @@ private:
  QFrame *titlebarFrame;
 
  TitlebarPreview *blankTitlebar;
- 
+
  QLabel *right, *left, *off;
  QLabel *minB, *maxB, *stickyB, *closeB, *menuB;
  QLabel *minP, *maxP, *stickyP, *closeP, *menuP;
@@ -146,14 +146,14 @@ public:
 
   void loadSettings();
   void applySettings();
-  
-  
+
+
 private slots:
 
   void titlebarChanged();
   void activePressed();
   void inactivePressed();
-  
+
 private:
  void GetSettings( void );
 
@@ -185,7 +185,7 @@ private:
  QPushButton *pbPixmapActive, *pbPixmapInactive;
  QPixmap pixmapActive, pixmapInactive, pixmapActiveOld, pixmapInactiveOld;
 
- QString sPixmapActive, sPixmapInactive; 
+ QString sPixmapActive, sPixmapInactive;
 
  KIconLoader *iconLoader;
 };

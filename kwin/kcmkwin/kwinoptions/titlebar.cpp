@@ -21,13 +21,13 @@
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#include <iostream.h> 
+#include <iostream.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include <stdlib.h>
 
-#include <kmsgbox.h> 
+#include <kmsgbox.h>
 #include <kapp.h>
 #include <kiconloaderdialog.h>
 #include <kiconloader.h>
@@ -239,9 +239,9 @@ void KTitlebarButtons::resizeEvent(QResizeEvent *)
   h = column_h + left->height() + SPACE_YO;
 
   // use the previews own setGeometry to do what we mean
-  titlebarFrame->setGeometry( SPACE_XO, SPACE_YO, 
+  titlebarFrame->setGeometry( SPACE_XO, SPACE_YO,
 			      width() - 2*SPACE_XO, minP->height() + 8 );
-  blankTitlebar->setGeometry( 4, 4, 
+  blankTitlebar->setGeometry( 4, 4,
 			      width() - 2*SPACE_XO - 8, minP->height() );
   blankTitlebar->setPixmapSize( minP->width(), minP->height() );
 
@@ -316,7 +316,7 @@ void KTitlebarButtons::drawPreview(bool draw)
 {
   int left = 0, right = 0;
   QPixmap *p = closeP->pixmap();
-  
+
   for (int i=0; i<NUM_BUTTONS; i++)
     selectedFunc[i] = NOFUNC;
 
@@ -345,7 +345,7 @@ void KTitlebarButtons::drawPreview(bool draw)
       selectedFunc[5] = MENU;
       right++;
     }
-  else 
+  else
     {
       menuRB[2]->setChecked(TRUE);
     }
@@ -381,7 +381,7 @@ void KTitlebarButtons::drawPreview(bool draw)
 	}
       right++;
     }
-  else 
+  else
     {
       // make sure it is OFF
       closeRB[2]->setChecked(TRUE);
@@ -429,7 +429,7 @@ void KTitlebarButtons::drawPreview(bool draw)
 	}
       right++;
     }
-  else 
+  else
     {
       // make sure this func is OFF
       stickyRB[2]->setChecked(TRUE);
@@ -461,7 +461,7 @@ void KTitlebarButtons::drawPreview(bool draw)
 	  KMsgBox::message(this,klocale->translate("Warning"),
 			   klocale->translate("The left side of the titlebar "
 					      "is full... disabling the 'maximise' "
-					      "button\n"), 
+					      "button\n"),
 			   KMsgBox::EXCLAMATION,
 			   klocale->translate("Close") );
 	  maxRB[0]->setChecked(FALSE);
@@ -494,7 +494,7 @@ void KTitlebarButtons::drawPreview(bool draw)
 	  KMsgBox::message(this,klocale->translate("Warning"),
 			   klocale->translate("The right side of the titlebar "
 					      "is full... disabling the 'maximise' "
-					      "button\n"), 
+					      "button\n"),
 			   KMsgBox::EXCLAMATION,
 			   klocale->translate("Close") );
 	  maxRB[1]->setChecked(FALSE);
@@ -503,7 +503,7 @@ void KTitlebarButtons::drawPreview(bool draw)
 	}
       right++;
     }
-  else 
+  else
     {
       // make sure this func is OFF
       maxRB[2]->setChecked(TRUE);
@@ -534,7 +534,7 @@ void KTitlebarButtons::drawPreview(bool draw)
 	  KMsgBox::message(this,klocale->translate("Warning"),
 			   klocale->translate("The left side of the titlebar "
 					      "is full... disabling the 'minimise' "
-					      "button\n"), 
+					      "button\n"),
 			   KMsgBox::EXCLAMATION,
 			   klocale->translate("Close") );
 	  minRB[0]->setChecked(FALSE);
@@ -567,7 +567,7 @@ void KTitlebarButtons::drawPreview(bool draw)
 	  KMsgBox::message(this,klocale->translate("Warning"),
 			   klocale->translate("The right side of the titlebar "
 					      "is full... disabling the 'minimise' "
-					      "button\n"), 
+					      "button\n"),
 			   KMsgBox::EXCLAMATION,
 			   klocale->translate("Close") );
 	  minRB[1]->setChecked(FALSE);
@@ -576,7 +576,7 @@ void KTitlebarButtons::drawPreview(bool draw)
 	}
       right++;
     }
-  else 
+  else
     {
       // make sure it is OFF
       minRB[2]->setChecked(TRUE);
@@ -598,24 +598,24 @@ void KTitlebarButtons::setButton(int button, int func)
     case ICONIFY:
       if (button < 3)
       {
-	minRB[0]->setChecked(TRUE);  
+	minRB[0]->setChecked(TRUE);
         minRB[1]->setChecked(FALSE);
       }
       else
       {
-	minRB[1]->setChecked(TRUE);  
+	minRB[1]->setChecked(TRUE);
         minRB[0]->setChecked(FALSE);
       }
       break;
     case MAXIMIZE:
       if (button < 3)
       {
-	maxRB[0]->setChecked(TRUE);  
+	maxRB[0]->setChecked(TRUE);
         maxRB[1]->setChecked(FALSE);
       }
       else
       {
-	maxRB[1]->setChecked(TRUE);  
+	maxRB[1]->setChecked(TRUE);
         maxRB[0]->setChecked(FALSE);
       }
       break;
@@ -634,24 +634,24 @@ void KTitlebarButtons::setButton(int button, int func)
     case CLOSE:
       if (button < 3)
       {
-	closeRB[0]->setChecked(TRUE); 
+	closeRB[0]->setChecked(TRUE);
         closeRB[1]->setChecked(FALSE);
       }
       else
       {
-	closeRB[1]->setChecked(TRUE); 
+	closeRB[1]->setChecked(TRUE);
         closeRB[0]->setChecked(FALSE);
       }
       break;
     case MENU:
       if (button < 3)
       {
-	menuRB[0]->setChecked(TRUE);  
+	menuRB[0]->setChecked(TRUE);
         menuRB[1]->setChecked(FALSE);
       }
       else
       {
-	menuRB[1]->setChecked(TRUE);  
+	menuRB[1]->setChecked(TRUE);
         menuRB[0]->setChecked(FALSE);
       }
       break;
@@ -739,7 +739,7 @@ int KTitlebarButtons::buttonFunc(QString *key)
     ret = STICKY;
   else if (*key == "Menu" )
     ret = MENU;
-  
+
   return ret;
 }
 
@@ -749,7 +749,7 @@ void KTitlebarButtons::GetSettings( void )
 
   config->setGroup( "Buttons");
   int ABUTTON=0, BBUTTON=0, CBUTTON=0, DBUTTON=0, EBUTTON=0, FBUTTON=0;
-  
+
   key = config->readEntry(KWM_B1);
   ABUTTON = buttonFunc(&key);
 
@@ -769,15 +769,15 @@ void KTitlebarButtons::GetSettings( void )
   FBUTTON = buttonFunc(&key);
 
   // clear all buttons (for reloading!)
-  minRB[0]->setChecked(FALSE);  
+  minRB[0]->setChecked(FALSE);
   minRB[1]->setChecked(FALSE);
-  maxRB[0]->setChecked(FALSE);  
+  maxRB[0]->setChecked(FALSE);
   maxRB[1]->setChecked(FALSE);
   stickyRB[0]->setChecked(FALSE);
   stickyRB[1]->setChecked(FALSE);
-  closeRB[0]->setChecked(FALSE); 
+  closeRB[0]->setChecked(FALSE);
   closeRB[1]->setChecked(FALSE);
-  menuRB[0]->setChecked(FALSE);  
+  menuRB[0]->setChecked(FALSE);
   menuRB[1]->setChecked(FALSE);
 
   setButton(0, ABUTTON);
@@ -919,15 +919,15 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
   : KConfigWidget (parent, name)
 {
   // titlebar shading style
-  titlebarBox = new QButtonGroup(klocale->translate("Titlebar appearance"), 
+  titlebarBox = new QButtonGroup(klocale->translate("Titlebar appearance"),
 				 this);
-  vShaded = new QRadioButton(klocale->translate("Shaded Vertically"), 
+  vShaded = new QRadioButton(klocale->translate("Shaded Vertically"),
 			    titlebarBox);
-  hShaded = new QRadioButton(klocale->translate("Shaded Horizontally"), 
+  hShaded = new QRadioButton(klocale->translate("Shaded Horizontally"),
 			    titlebarBox);
   connect(vShaded, SIGNAL(clicked()), this, SLOT(titlebarChanged()));
   connect(hShaded, SIGNAL(clicked()), this, SLOT(titlebarChanged()));
-  plain = new QRadioButton(klocale->translate("Plain"), 
+  plain = new QRadioButton(klocale->translate("Plain"),
 			   titlebarBox);
   connect(plain, SIGNAL(clicked()), this, SLOT(titlebarChanged()));
   pixmap = new QRadioButton(klocale->translate("Pixmap"),
@@ -951,7 +951,7 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
   tlabel->adjustSize();
   sec->adjustSize();
 
-  pixmapBox    = new QGroupBox(klocale->translate("Pixmap"), this); 
+  pixmapBox    = new QGroupBox(klocale->translate("Pixmap"), this);
 
   //CT pixmapActive = pixmapInactive = 0;
 
@@ -963,14 +963,14 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
   connect(pbPixmapInactive, SIGNAL(clicked()), this, SLOT(inactivePressed()));
 
   lPixmapActive = new QLabel(pbPixmapActive, klocale->translate("&Active pixmap"), pixmapBox);
-  lPixmapActive->adjustSize(); 
+  lPixmapActive->adjustSize();
   lPixmapInactive = new QLabel(pbPixmapInactive, klocale->translate("&Inactive pixmap"), pixmapBox);
   lPixmapInactive->adjustSize();
 
   iconLoader = new KIconLoader();
 
   iconLoader->getDirList()->clear();
-   
+
   iconLoader->insertDirectory(0, kapp->localkdedir()+"/share/apps/kwm/pics");
   iconLoader->insertDirectory(1, kapp->kde_datadir()+"/kwm/pics");
   iconLoader->insertDirectory(2, kapp->localkdedir()+"/share/apps/kwm/toolbar");
@@ -980,6 +980,8 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
 
 
   //CT 11feb98 - Title double click
+  
+  // I commented some stuff out, since it does not make sense (Matthias 23okt98)
   titlebarDblClickBox = new QButtonGroup(klocale->translate("Mouse action"),
 				       this);
   lDblClick = new QLabel(klocale->translate("LeftMouseButton double click"
@@ -987,14 +989,14 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
 			 titlebarDblClickBox);
   dblClickCombo = new QComboBox(FALSE, titlebarDblClickBox);
   dblClickCombo->insertItem(klocale->translate("(Un)Maximize"),DCTB_MAXIMIZE);
-  dblClickCombo->insertItem(klocale->translate("Move"),DCTB_MOVE);
   dblClickCombo->insertItem(klocale->translate("(Un)Shade"),DCTB_SHADE);
   dblClickCombo->insertItem(klocale->translate("Iconify"),DCTB_ICONIFY);
   dblClickCombo->insertItem(klocale->translate("(Un)Sticky"),DCTB_STICKY);
-  dblClickCombo->insertItem(klocale->translate("Resize"),DCTB_RESIZE);
-  dblClickCombo->insertItem(klocale->translate("Restore"),DCTB_RESTORE);
-  dblClickCombo->insertItem(klocale->translate("Operations Menu"),
-			    DCTB_OPERATIONS);
+//   dblClickCombo->insertItem(klocale->translate("Move"),DCTB_MOVE);
+//   dblClickCombo->insertItem(klocale->translate("Resize"),DCTB_RESIZE);
+//   dblClickCombo->insertItem(klocale->translate("Restore"),DCTB_RESTORE);
+//   dblClickCombo->insertItem(klocale->translate("Operations Menu"),
+// 			    DCTB_OPERATIONS);
   dblClickCombo->insertItem(klocale->translate("Close"),DCTB_CLOSE);
   dblClickCombo->setCurrentItem( DCTB_MAXIMIZE );
 
@@ -1036,42 +1038,42 @@ void KTitlebarAppearance::resizeEvent(QResizeEvent *)
   //CT 11feb98 place dblclick combo on tab
   int dw = lDblClick->width();
   int dh = lDblClick->height();
-  int cw = dblClickCombo->width();  
-  int ch = dblClickCombo->height();  
+  int cw = dblClickCombo->width();
+  int ch = dblClickCombo->height();
   int boxX = SPACE_XO;
-  
+
   if ((dw > (boxW - 2*SPACE_XI)) ||
       (cw > (boxW - 2*SPACE_XI)) )
     boxW = 2*boxW + SPACE_XO;
   else
     boxX = boxW/2 + SPACE_XO;
-    
+
 
   if (((dw+cw) > (boxW - 3*SPACE_XI)) &&
       ((dh+ch) > (boxH - 3*SPACE_YI)))
     boxH = dh + ch + 3*SPACE_YI;
-  else 
-    if ((dw+cw) <= (boxW - 3*SPACE_XI)) 
+  else
+    if ((dw+cw) <= (boxW - 3*SPACE_XI))
       boxH = (dh>ch?dh:ch)+2*SPACE_YI+titleH;
-  
+
   titlebarDblClickBox->setGeometry(boxX, h, boxW, boxH);
-  
+
   if (((dw+cw) > (boxW - 3*SPACE_XI))) {
     lDblClick->setGeometry( (boxW - dw)/2, SPACE_YI+titleH/2, dw, dh);
-    
+
     dblClickCombo->setGeometry((boxW - cw)/2,
 			       dh + 2*SPACE_YI+titleH/2,
 			       cw, ch);
   }
   else {
     lDblClick->setGeometry( SPACE_XI, (boxH - dh)/2+titleH/2, dw, dh);
-    
+
     dblClickCombo->setGeometry(dw + 2*SPACE_XI, (boxH-ch)/2+titleH/2, cw, ch);
   }
 
   h += boxH + SPACE_YO;
   //CT ---
-  
+
   dw = SPACE_XO;
 
   cw = tlabel->width();
@@ -1083,7 +1085,7 @@ void KTitlebarAppearance::resizeEvent(QResizeEvent *)
   dh = ( t->height() - sec->height() )/2;
   t->move(center, h);
   sec->move(t->x() + cw + 3, h+dh);
-  h += t->height() + SPACE_YO;    
+  h += t->height() + SPACE_YO;
 
   cw = max(lPixmapActive->width(), lPixmapInactive->width());
   lPixmapActive->move(SPACE_XI, SPACE_YI + titleH);
@@ -1162,7 +1164,7 @@ void KTitlebarAppearance::setTitlebar(int tb)
       return;
     }
 }
- 
+
 int KTitlebarAppearance::getTitleAnim()
 {
   return t->intValue();
@@ -1172,7 +1174,7 @@ void KTitlebarAppearance::setTitleAnim(int tb)
   titleAnim->setValue(tb);
   t->display(tb);
 }
- 
+
 //CT 11feb98 action on double click on titlebar
 int KTitlebarAppearance::getDCTBAction()
 {
@@ -1202,38 +1204,38 @@ void KTitlebarAppearance::SaveSettings( void )
   config->writeEntry("TitlebarPixmapActive", sPixmapActive);
   config->writeEntry("TitlebarPixmapInactive", sPixmapInactive);
   */
-  
+
   //CT 18Oct1998 - save the pixmaps
   if (t == TITLEBAR_PIXMAP ) {
     //first, a backup
     sPixmapInactive = kapp->localkdedir() +
       "/share/apps/kwm/pics/oldinactivetitlebar.xpm";
-    
+
     if (!pixmapInactiveOld.isNull())
       pixmapInactiveOld.save(sPixmapInactive,"XPM");
-    
+
     sPixmapInactive = kapp->localkdedir() +
       "/share/apps/kwm/pics/oldinactivetitlebar.xpm";
-    
+
     if (!pixmapInactiveOld.isNull())
       pixmapInactiveOld.save(sPixmapInactive,"XPM");
-    
+
     //then, the save
     sPixmapActive = kapp->localkdedir() +
       "/share/apps/kwm/pics/activetitlebar.xpm";
     sPixmapInactive = kapp->localkdedir() +
       "/share/apps/kwm/pics/inactivetitlebar.xpm";
-    
+
     bool a_saved, i_saved;
-    if (!pixmapActive.isNull()) 
+    if (!pixmapActive.isNull())
       a_saved = pixmapActive.save(sPixmapActive,"XPM");
     else a_saved = FALSE;
-    
+
     if (!pixmapInactive.isNull())
       i_saved = pixmapInactive.save(sPixmapInactive,"XPM");
     else
       i_saved = FALSE;
-    
+
     //and a little check
     if (!a_saved || !i_saved) {
       QMessageBox::critical(this, "Titlebar Appearence",
@@ -1280,7 +1282,7 @@ void KTitlebarAppearance::SaveSettings( void )
   default:     config->writeEntry(KWM_DCTBACTION, "winMaximize");
   }
   //CT ---
-  
+
   config->sync();
 
 }
@@ -1307,13 +1309,13 @@ void KTitlebarAppearance::GetSettings( void )
     pbPixmapActive->setPixmap(pixmapActiveOld =
 			      iconLoader->loadIcon(sPixmapActive));
   if (!sPixmapInactive.isEmpty())
-    pbPixmapInactive->setPixmap(pixmapInactiveOld = 
+    pbPixmapInactive->setPixmap(pixmapInactiveOld =
 				iconLoader->loadIcon(sPixmapInactive));
 
 
   int k = config->readNumEntry(KWM_TITLEANIMATION,0);
   setTitleAnim(k);
-  
+
   key = config->readEntry(KWM_DCTBACTION);
   if (key == "winMove") setDCTBAction(DCTB_MOVE);
   else if (key == "winResize") setDCTBAction(DCTB_RESIZE);
