@@ -50,12 +50,6 @@
 #undef INT32
 
 
-//special keys
-#define PINGUIN_LEFT 115
-#define PINGUIN_RIGHT 116
-#define PINGUIN_LIST 117
-
-
 int BORDER;
 
 bool initting;
@@ -423,12 +417,9 @@ static QString rectToString(QRect r){
   return result;
 }
 
-static void grabKey(KeySym keysym, unsigned int mod, unsigned int keycode=0){
+static void grabKey(KeySym keysym, unsigned int mod){
   static int NumLockMask = 0;
-  if (!keycode)
-    keycode=XKeysymToKeycode(qt_xdisplay(), keysym);
-  if (!keycode)
-    return; 
+  if (!XKeysymToKeycode(qt_xdisplay(), keysym)) return; 
   if (!NumLockMask){
     XModifierKeymap* xmk = XGetModifierMapping(qt_xdisplay());
     int i;
@@ -437,27 +428,25 @@ static void grabKey(KeySym keysym, unsigned int mod, unsigned int keycode=0){
 	  XKeysymToKeycode(qt_xdisplay(), XK_Num_Lock))
 	NumLockMask = (1<<i); 
     }
-    XFreeModifiermap(xmk);
   }
+  XGrabKey(qt_xdisplay(),
+	   XKeysymToKeycode(qt_xdisplay(), keysym), mod,
+	   qt_xrootwin(), True,
+	   GrabModeAsync, GrabModeSync);
+  XGrabKey(qt_xdisplay(),
+	   XKeysymToKeycode(qt_xdisplay(), keysym), mod | LockMask,
+	   qt_xrootwin(), True,
+	   GrabModeAsync, GrabModeSync);
+  XGrabKey(qt_xdisplay(),
+	   XKeysymToKeycode(qt_xdisplay(), keysym), mod | NumLockMask,
+	   qt_xrootwin(), True,
+	   GrabModeAsync, GrabModeSync);
+  XGrabKey(qt_xdisplay(),
+	   XKeysymToKeycode(qt_xdisplay(), keysym), mod | LockMask | NumLockMask,
+	   qt_xrootwin(), True,
+	   GrabModeAsync, GrabModeSync);
 
-  XGrabKey(qt_xdisplay(),
-	   keycode, mod,
-	   qt_xrootwin(), True,
-	   GrabModeAsync, GrabModeSync);
-  if (mod == AnyModifier)
-    return;
-  XGrabKey(qt_xdisplay(),
-	   keycode, mod | LockMask,
-	   qt_xrootwin(), True,
-	   GrabModeAsync, GrabModeSync);
-  XGrabKey(qt_xdisplay(),
-	   keycode, mod | NumLockMask,
-	   qt_xrootwin(), True,
-	   GrabModeAsync, GrabModeSync);
-  XGrabKey(qt_xdisplay(),
-	   keycode, mod | LockMask | NumLockMask,
-	   qt_xrootwin(), True,
-	   GrabModeAsync, GrabModeSync);
+  
 }
 
 
@@ -563,9 +552,6 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
   grabKey(XK_F6, ControlMask);
   grabKey(XK_F7, ControlMask);
   grabKey(XK_F8, ControlMask);
-
-  grabKey(0,AnyModifier,PINGUIN_RIGHT);
-  grabKey(0,AnyModifier,PINGUIN_LIST);
 
   options.titlebarPixmapActive = new QPixmap;
   options.titlebarPixmapInactive = new QPixmap;
@@ -1376,22 +1362,19 @@ bool MyApp::handleKeyPress(XKeyEvent key){
     return False;
   }
 
-  if( ((kc == XK_Escape)  && (km == Mod1Mask || km == ControlMask) )
-      || (key.keycode == PINGUIN_LIST && !(km & ShiftMask))){
+  if( (kc == XK_Escape)  && (km == Mod1Mask || km == ControlMask) ){
     freeKeyboard(False);
     showTask();
     return True;
   }    
   
-  if( ((kc == XK_F2)  && (km == Mod1Mask))
-       || key.keycode == PINGUIN_RIGHT){
+  if( (kc == XK_F2)  && (km == Mod1Mask) ){
     freeKeyboard(False);
     showMinicli();
     return False;
   }    
 
-  if( ((kc == XK_F3)  && (km == Mod1Mask))
-      || (key.keycode == PINGUIN_LIST)){
+  if( (kc == XK_F3)  && (km == Mod1Mask) ){
     freeKeyboard(False);
     if (manager->current())
       manager->current()->showOperations();
