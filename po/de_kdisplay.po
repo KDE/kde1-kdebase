@@ -157,7 +157,7 @@ msgstr ""
 
 #: general.cpp:57
 msgid "General"
-msgstr ""
+msgstr "Allgemein"
 
 #: general.cpp:61
 msgid "Widget style"
