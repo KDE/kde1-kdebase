@@ -1,5 +1,4 @@
 # KTranslator Generated File
-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -11,10 +10,10 @@ msgstr ""
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1999-02-05 11:16+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
-"Language-Team : Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language-Team : Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 
 #: main.C:68
 msgid ""

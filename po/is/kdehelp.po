@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-02-02 01:17+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1998-10-05 01:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -16,7 +16,7 @@ msgstr "KDE Hjálp: Opna slóð (URL)"
 msgid "Open URL"
 msgstr "Opna slóð (URL)"
 
-#: helpwin.cpp:459 info.cpp:290
+#: helpwin.cpp:459 info.cpp:321
 msgid "Cannot open: "
 msgstr "Ekki tókst að opna: "
 
@@ -52,16 +52,16 @@ msgstr "Setja bókamerki"
 msgid "Open in new Window"
 msgstr "Opna í nýjum glugga"
 
-#: info.cpp:97 info.cpp:617
+#: info.cpp:113 info.cpp:641
 msgid "Error in info file"
 msgstr "Villa í \"info\" skrá"
 
-#: info.cpp:1260
+#: info.cpp:1284
 #, c-format
 msgid "Node not found: %s"
 msgstr "Hlekkurinn %s fanst ekki"
 
-#: info.cpp:1405
+#: info.cpp:1429
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Ekki tókst að opna \"info\" skrána %s"
@@ -126,7 +126,7 @@ msgstr "KDE Hjálparstillingar"
 msgid "Colors"
 msgstr "Litir"
 
-#: man.cpp:55 man.cpp:445
+#: man.cpp:55 man.cpp:453
 msgid "Online Manuals"
 msgstr "Mansíður"
 
@@ -172,19 +172,19 @@ msgstr "Kerfisstjórnun"
 msgid "New"
 msgstr "Nýtt"
 
-#: man.cpp:271
+#: man.cpp:279
 msgid "Reading Dir: "
 msgstr "Les möppu: "
 
-#: man.cpp:435
+#: man.cpp:443
 msgid "Online Manual - Section"
 msgstr "Mansíður - kafli"
 
-#: man.cpp:501 man.cpp:510
+#: man.cpp:509 man.cpp:518
 msgid "\"man\" system call failed"
 msgstr "\"man\" kerfiskallið mistókst"
 
-#: man.cpp:528
+#: man.cpp:536
 msgid "Opening temporary file failed"
 msgstr "Ekki tókst að opna tímabundna skrá"
 

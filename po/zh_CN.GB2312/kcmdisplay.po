@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1999-02-06 01:16+0100\n"
+"POT-Creation-Date: 1999-03-21 01:19+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -456,33 +456,33 @@ msgstr ""
 msgid "&Apply fonts and colors to non-KDE apps"
 msgstr ""
 
-#: general.cpp:530
+#: general.cpp:529
 msgid "General font"
 msgstr "一般字体"
 
-#: general.cpp:535
+#: general.cpp:534
 msgid "Fixed font"
 msgstr "等宽字体"
 
 #
-#: general.cpp:541
+#: general.cpp:540
 msgid "Window title font"
 msgstr "窗口标题字体"
 
-#: general.cpp:546
+#: general.cpp:545
 msgid "Panel button font"
 msgstr "面板按钮字体"
 
-#: general.cpp:551
+#: general.cpp:550
 msgid "Panel clock font"
 msgstr "面板时钟字体"
 
-#: general.cpp:581
+#: general.cpp:580
 #, fuzzy
 msgid "Sample text"
 msgstr "选择文字"
 
-#: general.cpp:589
+#: general.cpp:588
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"

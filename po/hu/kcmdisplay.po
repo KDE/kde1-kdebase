@@ -1,18 +1,17 @@
 # KTranslator Generated File
-
 # John Zero <johnzero@telnet.hu>, 1997
 # Balazs Nagy <julian7@kva.hu>, 1998
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay VERSION\n"
-"POT-Creation-Date: 1999-02-06 01:16+0100\n"
+"POT-Creation-Date: 1999-03-21 01:19+0100\n"
 "PO-Revision-Date: Mon Mar 8 1999 15:59:45+0100\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"X-Generator: KTranslator v 0.4.0"
+"X-Generator: KTranslator v 0.4.0\n"
 
 #: backgnd.cpp:54
 msgid "Enter new desktop name"
@@ -22,33 +21,33 @@ msgstr "Írd be az új munkaasztal nevét"
 msgid "Desktop"
 msgstr "Asztal"
 
-#: backgnd.cpp:185
 #
+#: backgnd.cpp:185
 msgid "&Rename ..."
 msgstr "Á&tnevez..."
 
-#: backgnd.cpp:196
 #
+#: backgnd.cpp:196
 msgid "&Common Background"
 msgstr "&Közös háttér"
 
-#: backgnd.cpp:224 colorscm.cpp:82
 #
+#: backgnd.cpp:224 colorscm.cpp:82
 msgid "Colors"
 msgstr "Színek"
 
-#: backgnd.cpp:251
 #
+#: backgnd.cpp:251
 msgid "&One Color"
 msgstr "&Egy szín"
 
-#: backgnd.cpp:268
 #
+#: backgnd.cpp:268
 msgid "&Two Color"
 msgstr "&Két szín"
 
-#: backgnd.cpp:287
 #
+#: backgnd.cpp:287
 msgid "Set&up ..."
 msgstr "&Beállítás..."
 
@@ -56,8 +55,8 @@ msgstr "&Beállítás..."
 msgid "Wallpaper"
 msgstr "Tapéta"
 
-#: backgnd.cpp:327 backgnd.cpp:1210 backgnd.cpp:1372 backgnd.cpp:1911
 #
+#: backgnd.cpp:327 backgnd.cpp:1210 backgnd.cpp:1372 backgnd.cpp:1911
 msgid "No wallpaper"
 msgstr "Nincs tapéta"
 
@@ -69,8 +68,8 @@ msgstr "&Tallóz..."
 msgid "Arrangement:"
 msgstr "Elrendezés:"
 
-#: backgnd.cpp:375
 #
+#: backgnd.cpp:375
 msgid "Tiled"
 msgstr "Egymás mellett"
 
@@ -78,28 +77,28 @@ msgstr "Egymás mellett"
 msgid "Mirrored"
 msgstr "Tükrözött"
 
-#: backgnd.cpp:377
 #
+#: backgnd.cpp:377
 msgid "Center Tiled"
 msgstr "Középe, egymás mellett"
 
-#: backgnd.cpp:378
 #
+#: backgnd.cpp:378
 msgid "Centred"
 msgstr "Középre igzított"
 
-#: backgnd.cpp:379
 #
+#: backgnd.cpp:379
 msgid "Centred Brick"
 msgstr "Középen, tégla szerûen"
 
-#: backgnd.cpp:380
 #
+#: backgnd.cpp:380
 msgid "Centred Warp"
 msgstr "Középen, behajtva"
 
-#: backgnd.cpp:381
 #
+#: backgnd.cpp:381
 msgid "Centred Maxpect"
 msgstr "Középen, arányos maximum"
 
@@ -111,8 +110,8 @@ msgstr "Szimmetrikusan egymás mellett"
 msgid "Symmetrical Mirrored"
 msgstr "Szimmetrikusan tükrözött"
 
-#: backgnd.cpp:384
 #
+#: backgnd.cpp:384
 msgid "Scaled"
 msgstr "Nyújtott"
 
@@ -133,8 +132,8 @@ msgstr "Panelba &dokkolás"
 msgid "Cache size (kB):"
 msgstr "Gyorstár mérete (kB):"
 
-#: backgnd.cpp:1339
 #
+#: backgnd.cpp:1339
 msgid "Desktop names"
 msgstr "Asztalok nevei"
 
@@ -154,10 +153,11 @@ msgstr "Nem támogatott URL"
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
-"Sajnálom, de jelenleg ezt a fajta URL-t nem támogatja a KDE Megjelenítõ Modulja"
+"Sajnálom, de jelenleg ezt a fajta URL-t nem támogatja a KDE Megjelenítõ "
+"Modulja"
 
-#: backgnd.cpp:1441
 #
+#: backgnd.cpp:1441
 msgid "Two color backgrounds"
 msgstr "Két színû háttér"
 
@@ -185,8 +185,8 @@ msgstr "Minta &neve"
 msgid "Current"
 msgstr "Jelenlegi"
 
-#: backgnd.cpp:1627
 #
+#: backgnd.cpp:1627
 msgid "Filled"
 msgstr "Kitöltött"
 
@@ -218,8 +218,8 @@ msgstr "Véletlenszerû mód beállítás"
 msgid "Pick files from &directory"
 msgstr "&Ebbõl a könyvtárból vegye a fájlokat"
 
-#: backgnd.cpp:1728
 #
+#: backgnd.cpp:1728
 msgid "&Browse ..."
 msgstr "&Tallóz..."
 
@@ -227,13 +227,13 @@ msgstr "&Tallóz..."
 msgid "Timer Delay in seconds :"
 msgstr "Késleltetés másodpercben:"
 
-#: backgnd.cpp:1761
 #
+#: backgnd.cpp:1761
 msgid "In &order"
 msgstr "S&orban"
 
-#: backgnd.cpp:1778
 #
+#: backgnd.cpp:1778
 msgid "Desktops :"
 msgstr "Asztalok:"
 
@@ -253,13 +253,13 @@ msgstr "A választott könyvtár nem létezik"
 msgid "Color Scheme"
 msgstr "Szín kompozíció"
 
-#: colorscm.cpp:115
 #
+#: colorscm.cpp:115
 msgid "Current scheme"
 msgstr "Jelenlegi összeállítás"
 
-#: colorscm.cpp:117
 #
+#: colorscm.cpp:117
 msgid "KDE default"
 msgstr "KDE alapértelmezett"
 
@@ -283,8 +283,8 @@ msgstr "Inaktív címsor"
 msgid "Inactive title text"
 msgstr "Inaktív címsor szövege"
 
-#: colorscm.cpp:170
 #
+#: colorscm.cpp:170
 msgid "Inactive title blend"
 msgstr "Inaktív címsor átmenet"
 
@@ -296,8 +296,8 @@ msgstr "Aktív címsor"
 msgid "Active title text"
 msgstr "Aktív címsor szövege"
 
-#: colorscm.cpp:173
 #
+#: colorscm.cpp:173
 msgid "Active title blend"
 msgstr "Aktív címsor átmenet"
 
@@ -329,8 +329,8 @@ msgstr "Ablak szövege"
 msgid "Contrast"
 msgstr "Kontraszt"
 
-#: colorscm.cpp:223
 #
+#: colorscm.cpp:223
 msgid "&Low"
 msgstr "A&lacsony"
 
@@ -401,18 +401,18 @@ msgstr "Képernyõ zárolás"
 msgid "Screen Saver"
 msgstr "Képernyõvédõ"
 
-#: scrnsave.cpp:188 scrnsave.cpp:382 scrnsave.cpp:623 scrnsave.cpp:744
 #
+#: scrnsave.cpp:188 scrnsave.cpp:382 scrnsave.cpp:623 scrnsave.cpp:744
 msgid "No screensaver"
 msgstr "Nincs képernyõvédõ"
 
-#: scrnsave.cpp:209
 #
+#: scrnsave.cpp:209
 msgid "&Setup ..."
 msgstr "&Beállítás..."
 
-#: scrnsave.cpp:217
 #
+#: scrnsave.cpp:217
 msgid "&Test"
 msgstr "&Próba"
 
@@ -424,13 +424,13 @@ msgstr "Beállítások"
 msgid "&Wait for"
 msgstr "&Késleltetés"
 
-#: scrnsave.cpp:260
 #
+#: scrnsave.cpp:260
 msgid "min."
 msgstr "perc"
 
-#: scrnsave.cpp:266
 #
+#: scrnsave.cpp:266
 msgid "&Require password"
 msgstr "&Jelszó szükséges"
 
@@ -442,13 +442,13 @@ msgstr "Root jelszóv&al is ki lehessen nyitni"
 msgid "Show &password as stars"
 msgstr "J&elszó elrejtése"
 
-#: scrnsave.cpp:288
 #
+#: scrnsave.cpp:288
 msgid "Priority"
 msgstr "Prioritás"
 
-#: scrnsave.cpp:301
 #
+#: scrnsave.cpp:301
 msgid "&High"
 msgstr "&Nagy"
 
@@ -470,44 +470,45 @@ msgstr "&Menüsor a képernyõ tetején, MacOS stílusban"
 
 #: general.cpp:259
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "&Alkalmazza a szín és betûtípus beállításokat a nem-KDE alkalmazásokra is"
+msgstr ""
+"&Alkalmazza a szín és betûtípus beállításokat a nem-KDE alkalmazásokra is"
 
-#: general.cpp:530
+#: general.cpp:529
 msgid "General font"
 msgstr "Általános betû"
 
-#: general.cpp:535
+#: general.cpp:534
 msgid "Fixed font"
 msgstr "Fix betû"
 
-#: general.cpp:541
 #
+#: general.cpp:540
 msgid "Window title font"
 msgstr "Címsor betûtípusa"
 
-#: general.cpp:546
 #
+#: general.cpp:545
 msgid "Panel button font"
 msgstr "Panel gombok betûtípusa"
 
-#: general.cpp:551
+#: general.cpp:550
 msgid "Panel clock font"
 msgstr "Panel óra betûtípusa"
 
-#: general.cpp:581
 #
+#: general.cpp:580
 msgid "Sample text"
 msgstr "Minta szöveg"
 
-#: general.cpp:589
+#: general.cpp:588
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
 
-#: main.cpp:64
 #
+#: main.cpp:64
 msgid "&Background"
 msgstr "&Háttér"
 
@@ -523,8 +524,8 @@ msgstr "&Színek"
 msgid "&Style"
 msgstr "&Stílus"
 
-#: main.cpp:83
 #
+#: main.cpp:83
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr ""
@@ -542,8 +543,8 @@ msgstr "Inaktív ablak"
 msgid "Active window"
 msgstr "Aktív ablak"
 
-#: widgetcanvas.cpp:189 widgetcanvas.cpp:190
 #
+#: widgetcanvas.cpp:189 widgetcanvas.cpp:190
 msgid "Selected text"
 msgstr "Kiválasztott szöveg"
 
@@ -571,8 +572,8 @@ msgstr "&Méret"
 msgid "&Character set"
 msgstr "Ka&rakterkészlet"
 
-#: fontchooser.cpp:262
 #
+#: fontchooser.cpp:262
 msgid "default"
 msgstr "alapértelmezett"
 

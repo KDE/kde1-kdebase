@@ -9,16 +9,16 @@ msgstr ""
 "PO-Revision-Date: 1999-03-12 10:00+0100\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
-"Next-Translator: Alain Gibaud "
-"<Alain.Gibaud@univ-valenciennes.fr>\n"
 "Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
+"Next-Translator: Alain Gibaud <Alain.Gibaud@univ-valenciennes.fr>\n"
 
 #: kikbd.cpp:116
 msgid "KDE International Keyboard already started on this display."
-msgstr "Clavier International KDE est déjà démarré sur ce périphérique d'affichage."
+msgstr ""
+"Clavier International KDE est déjà démarré sur ce périphérique d'affichage."
 
 #: kikbd.cpp:288
 #, c-format
@@ -423,11 +423,12 @@ msgstr "Emuler le verrouillage Majuscule X. Nécessaire dans certaines langues."
 msgid "&World Menu"
 msgstr "Menu &Mondial"
 
-#: widgets.cpp:474
 # ++Gib: ???
+#: widgets.cpp:474
 msgid "Show menu in any window by holding Switch keys"
-msgstr "Montrer le menu dans n'importe quelle fenetre "
-"en enfonçant les touches de commutation"
+msgstr ""
+"Montrer le menu dans n'importe quelle fenetre en enfonçant les touches de "
+"commutation"
 
 #: widgets.cpp:481
 msgid "&Save Classes"
@@ -435,8 +436,9 @@ msgstr "&Sauver les Classes"
 
 #: widgets.cpp:482
 msgid "Save relations between window classes and keyboard maps on exit"
-msgstr "Sauver les relations entre les classes de fenetre "
-"et les dispositions de claviers en sortant"
+msgstr ""
+"Sauver les relations entre les classes de fenetre et les dispositions de "
+"claviers en sortant"
 
 #: widgets.cpp:488
 msgid "Define X codes"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-02-02 01:17+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr "Βοήθεια KDE: ’νοιγμα URL"
 msgid "Open URL"
 msgstr "’νοιγμα URL"
 
-#: helpwin.cpp:459 info.cpp:290
+#: helpwin.cpp:459 info.cpp:321
 msgid "Cannot open: "
 msgstr "Δεν μπορώ να ανοίξω:"
 
@@ -58,16 +58,16 @@ msgstr "Προσθήκη σελιδοδείκτη"
 msgid "Open in new Window"
 msgstr "’νοιγμα σε νέο παράθυρο"
 
-#: info.cpp:97 info.cpp:617
+#: info.cpp:113 info.cpp:641
 msgid "Error in info file"
 msgstr "Σφάλμα στο αρχείο πληροφοριών (info file)"
 
-#: info.cpp:1260
+#: info.cpp:1284
 #, c-format
 msgid "Node not found: %s"
 msgstr "Ο κόμβος δεν βρέθηκε: %s"
 
-#: info.cpp:1405
+#: info.cpp:1429
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Δεν μπορώ να ανοίξω το αρχείο πληροφοριών (info file): %s"
@@ -132,7 +132,7 @@ msgstr "Επιλογές Βοηθείας KDE"
 msgid "Colors"
 msgstr "Χρώματα"
 
-#: man.cpp:55 man.cpp:445
+#: man.cpp:55 man.cpp:453
 msgid "Online Manuals"
 msgstr "Ηλεκτρονικά Εγχειρίδια"
 
@@ -178,19 +178,19 @@ msgstr "Διοίκηση Συστήματος"
 msgid "New"
 msgstr ""
 
-#: man.cpp:271
+#: man.cpp:279
 msgid "Reading Dir: "
 msgstr "Διαβάζω τον κατάλογο: "
 
-#: man.cpp:435
+#: man.cpp:443
 msgid "Online Manual - Section"
 msgstr "Ηλεκτρονικό Εγχειρίδιο - Τμήμα"
 
-#: man.cpp:501 man.cpp:510
+#: man.cpp:509 man.cpp:518
 msgid "\"man\" system call failed"
 msgstr "Η κλήση συστήματος \"man\" απέτυχε"
 
-#: man.cpp:528
+#: man.cpp:536
 msgid "Opening temporary file failed"
 msgstr "Το άνοιγμα προσωρινού αρχείου απέτυχε"
 

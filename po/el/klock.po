@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,50 +13,50 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: attraction.cpp:716
+#: attraction.cpp:718
 msgid "Attraction"
 msgstr ""
 
-#: attraction.cpp:803
+#: attraction.cpp:805
 #, fuzzy
 msgid "Setup KAttraction"
 msgstr "Ρυθμίσεις Νυχτερίδας"
 
-#: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
+#: attraction.cpp:817 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
 msgstr "Αριθμός:"
 
-#: attraction.cpp:829 science.cpp:993 slidescreen.cpp:493
+#: attraction.cpp:831 science.cpp:993 slidescreen.cpp:493
 #, fuzzy
 msgid "Mode:"
 msgstr "Μέσο:"
 
-#: attraction.cpp:834 slidescreen.cpp:498
+#: attraction.cpp:836 slidescreen.cpp:498
 msgid "Balls"
 msgstr ""
 
-#: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
+#: attraction.cpp:837 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
 msgstr "Γραμμές"
 
-#: attraction.cpp:836 polygon.cpp:64 slidescreen.cpp:500
+#: attraction.cpp:838 polygon.cpp:64 slidescreen.cpp:500
 msgid "Polygons"
 msgstr "Πολύγωνα"
 
-#: attraction.cpp:837 slidescreen.cpp:501
+#: attraction.cpp:839 slidescreen.cpp:501
 msgid "Tails"
 msgstr ""
 
-#: attraction.cpp:850 slidescreen.cpp:514
+#: attraction.cpp:852 slidescreen.cpp:514
 msgid "Glow"
 msgstr ""
 
-#: attraction.cpp:951
+#: attraction.cpp:953
 #, fuzzy
 msgid "About Attraction"
 msgstr "Για την Νυχτερίδα"
 
-#: attraction.cpp:952
+#: attraction.cpp:954
 #, fuzzy
 msgid ""
 "Attraction Version 1.0\n"
@@ -191,23 +191,23 @@ msgstr "Τυχαίο"
 msgid "Sorry. This screensaver needs a color display"
 msgstr "Συγγνώμη. Αυτή η επιλογή χρειάζεται έγχρωμη οθόνη"
 
-#: blob.cpp:458
+#: blob.cpp:461
 msgid "Setup Blob Saver"
 msgstr "Ρυθμίσεις Μάζας"
 
-#: blob.cpp:468
+#: blob.cpp:471
 msgid "Frame Show sec."
 msgstr "Εμφάνιση καρέ δευτ."
 
-#: blob.cpp:480
+#: blob.cpp:483
 msgid "Algorithm"
 msgstr "Αλγόριθμος"
 
-#: blob.cpp:570
+#: blob.cpp:573
 msgid "About Blob"
 msgstr "Για την Μάζα"
 
-#: blob.cpp:571
+#: blob.cpp:574
 msgid ""
 "Blobsaver Version 0.1\n"
 "\n"
@@ -219,7 +219,7 @@ msgstr ""
 "Προγραμματισμός από τον Tiaan Wessels 1997\n"
 "tiaan@netsys.co.za"
 
-#: blob.cpp:606
+#: blob.cpp:609
 msgid "Blobs"
 msgstr "Μάζα"
 
@@ -491,7 +491,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: main.cpp:580
+#: main.cpp:586
 #, fuzzy, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -500,7 +500,7 @@ msgstr ""
 "Σύνταξη: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:583
+#: main.cpp:589
 #, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"

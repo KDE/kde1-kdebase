@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-02-02 01:17+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr "KDE Help: URL openen"
 msgid "Open URL"
 msgstr "URL openen"
 
-#: helpwin.cpp:459 info.cpp:290
+#: helpwin.cpp:459 info.cpp:321
 msgid "Cannot open: "
 msgstr "Kon niet openen: "
 
@@ -58,16 +58,16 @@ msgstr "Bladwijzer toevoegen"
 msgid "Open in new Window"
 msgstr "In een nieuw venster openen"
 
-#: info.cpp:97 info.cpp:617
+#: info.cpp:113 info.cpp:641
 msgid "Error in info file"
 msgstr "Fout in \"info\"-bestand"
 
-#: info.cpp:1260
+#: info.cpp:1284
 #, c-format
 msgid "Node not found: %s"
 msgstr "Punt %s niet gevonden."
 
-#: info.cpp:1405
+#: info.cpp:1429
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Kan info bestand %s niet openen"
@@ -132,7 +132,7 @@ msgstr "Instellingen voor KDE Help"
 msgid "Colors"
 msgstr "Kleuren"
 
-#: man.cpp:55 man.cpp:445
+#: man.cpp:55 man.cpp:453
 msgid "Online Manuals"
 msgstr "Online handboek"
 
@@ -178,19 +178,19 @@ msgstr "Systeembeheer"
 msgid "New"
 msgstr "Nieuw"
 
-#: man.cpp:271
+#: man.cpp:279
 msgid "Reading Dir: "
 msgstr "Directory lezen: "
 
-#: man.cpp:435
+#: man.cpp:443
 msgid "Online Manual - Section"
 msgstr "Online Handoek - Onderdeel"
 
-#: man.cpp:501 man.cpp:510
+#: man.cpp:509 man.cpp:518
 msgid "\"man\" system call failed"
 msgstr "\"man\" systeemaanroep niet succesvol"
 
-#: man.cpp:528
+#: man.cpp:536
 msgid "Opening temporary file failed"
 msgstr "Openen van tijdelijk bestand gefaald"
 

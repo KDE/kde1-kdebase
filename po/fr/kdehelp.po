@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1999-02-02 01:17+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1998-01-08 23:37 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français <fr@kde.org>\n"
@@ -21,7 +21,7 @@ msgstr "Aide de KDE : Ouvrir l'URL"
 msgid "Open URL"
 msgstr "Ouvrir l'URL"
 
-#: helpwin.cpp:459 info.cpp:290
+#: helpwin.cpp:459 info.cpp:321
 msgid "Cannot open: "
 msgstr "Impossible d'ouvrir :"
 
@@ -57,16 +57,16 @@ msgstr "Ajouter un signet"
 msgid "Open in new Window"
 msgstr "Ouvrir dans une nouvelle fenêtre"
 
-#: info.cpp:97 info.cpp:617
+#: info.cpp:113 info.cpp:641
 msgid "Error in info file"
 msgstr "Erreur dans le fichier d'informations"
 
-#: info.cpp:1260
+#: info.cpp:1284
 #, c-format
 msgid "Node not found: %s"
 msgstr "Noeud introuvable : %s"
 
-#: info.cpp:1405
+#: info.cpp:1429
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Impossible d'ouvrir le fichier d'informations : %s"
@@ -131,7 +131,7 @@ msgstr "Options de l'aide de KDE"
 msgid "Colors"
 msgstr "Couleurs"
 
-#: man.cpp:55 man.cpp:445
+#: man.cpp:55 man.cpp:453
 msgid "Online Manuals"
 msgstr "Manuels en ligne"
 
@@ -177,19 +177,19 @@ msgstr "Administration système"
 msgid "New"
 msgstr "Nouveau"
 
-#: man.cpp:271
+#: man.cpp:279
 msgid "Reading Dir: "
 msgstr "Lecture du répertoire : "
 
-#: man.cpp:435
+#: man.cpp:443
 msgid "Online Manual - Section"
 msgstr "Manuel en ligne - Section"
 
-#: man.cpp:501 man.cpp:510
+#: man.cpp:509 man.cpp:518
 msgid "\"man\" system call failed"
 msgstr "L'appel système \"man\" a échoué"
 
-#: man.cpp:528
+#: man.cpp:536
 msgid "Opening temporary file failed"
 msgstr "L'ouverture du fichier temporaire a échoué"
 

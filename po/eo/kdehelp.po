@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 1.0pre2\n"
-"POT-Creation-Date: 1999-02-02 01:17+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1998-12-02 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -22,7 +22,7 @@ msgstr "KDE-helpo: Malfermi URLon"
 msgid "Open URL"
 msgstr "URL:"
 
-#: helpwin.cpp:459 info.cpp:290
+#: helpwin.cpp:459 info.cpp:321
 msgid "Cannot open: "
 msgstr "Ne eblas malfermi: "
 
@@ -58,16 +58,16 @@ msgstr "Aldonu legosignon"
 msgid "Open in new Window"
 msgstr "Malfermu en nova fenestro"
 
-#: info.cpp:97 info.cpp:617
+#: info.cpp:113 info.cpp:641
 msgid "Error in info file"
 msgstr "Eraro en la informdosiero"
 
-#: info.cpp:1260
+#: info.cpp:1284
 #, c-format
 msgid "Node not found: %s"
 msgstr "Nodo ne trovebla: %s"
 
-#: info.cpp:1405
+#: info.cpp:1429
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Ne eblas malfermi informdosieron: %s"
@@ -132,7 +132,7 @@ msgstr "KDE-Helpopcioj"
 msgid "Colors"
 msgstr "Koloroj"
 
-#: man.cpp:55 man.cpp:445
+#: man.cpp:55 man.cpp:453
 msgid "Online Manuals"
 msgstr "Elektronikaj manlibroj"
 
@@ -178,19 +178,19 @@ msgstr "Sistemadministrado"
 msgid "New"
 msgstr "Nova"
 
-#: man.cpp:271
+#: man.cpp:279
 msgid "Reading Dir: "
 msgstr "Legas la dosierujon: "
 
-#: man.cpp:435
+#: man.cpp:443
 msgid "Online Manual - Section"
 msgstr "Elektronika manlibro - sekcio"
 
-#: man.cpp:501 man.cpp:510
+#: man.cpp:509 man.cpp:518
 msgid "\"man\" system call failed"
 msgstr "\"man\" sistemvoko fiaskis"
 
-#: man.cpp:528
+#: man.cpp:536
 msgid "Opening temporary file failed"
 msgstr "Malfermo de provizora dosiero fiaskis"
 

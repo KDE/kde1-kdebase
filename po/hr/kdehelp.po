@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-02-02 01:17+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -20,7 +20,7 @@ msgstr "KDE pomoæ: OtvoriURL"
 msgid "Open URL"
 msgstr "Otvori URL"
 
-#: helpwin.cpp:459 info.cpp:290
+#: helpwin.cpp:459 info.cpp:321
 msgid "Cannot open: "
 msgstr "Ne mogu otvoriti: "
 
@@ -56,16 +56,16 @@ msgstr "Dodaj oznaku"
 msgid "Open in new Window"
 msgstr "Otvori u novom prozoru"
 
-#: info.cpp:97 info.cpp:617
+#: info.cpp:113 info.cpp:641
 msgid "Error in info file"
 msgstr "Gre¹ka u info datoteci"
 
-#: info.cpp:1260
+#: info.cpp:1284
 #, c-format
 msgid "Node not found: %s"
 msgstr "Èvor nije pronaðen: %s"
 
-#: info.cpp:1405
+#: info.cpp:1429
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Ne mogu otvoriti info datoteku: %s"
@@ -130,7 +130,7 @@ msgstr "KDE pomoæ opcije"
 msgid "Colors"
 msgstr "Boje"
 
-#: man.cpp:55 man.cpp:445
+#: man.cpp:55 man.cpp:453
 msgid "Online Manuals"
 msgstr "Upute"
 
@@ -176,19 +176,19 @@ msgstr "Administracija sustava"
 msgid "New"
 msgstr "Novo"
 
-#: man.cpp:271
+#: man.cpp:279
 msgid "Reading Dir: "
 msgstr "Èitam direktorij: "
 
-#: man.cpp:435
+#: man.cpp:443
 msgid "Online Manual - Section"
 msgstr "Upute - sekcija"
 
-#: man.cpp:501 man.cpp:510
+#: man.cpp:509 man.cpp:518
 msgid "\"man\" system call failed"
 msgstr "\"man\" sistemski poziv nije uspio"
 
-#: man.cpp:528
+#: man.cpp:536
 msgid "Opening temporary file failed"
 msgstr "Ne mogu otvoriti privremenu datoteku"
 

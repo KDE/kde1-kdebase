@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: konsole\n"
-"POT-Creation-Date: 1999-02-09 01:13+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1998-12-02 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -14,47 +14,47 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-3\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: main.C:303
+#: main.C:304
 msgid "&Normal"
 msgstr "&Normala"
 
-#: main.C:306
+#: main.C:307
 msgid "&Small"
 msgstr "&Malgranda"
 
-#: main.C:307
+#: main.C:308
 msgid "&Medium"
 msgstr "&Mezgranda"
 
-#: main.C:308
+#: main.C:309
 msgid "&Large"
 msgstr "&Granda"
 
-#: main.C:309
+#: main.C:310
 msgid "&Huge"
 msgstr "&Grandega"
 
-#: main.C:311
+#: main.C:312
 msgid "&Linux"
 msgstr "&Linux"
 
-#: main.C:312
+#: main.C:313
 msgid "Linux (small)"
 msgstr "Linux (malgranda)"
 
-#: main.C:315
+#: main.C:316
 msgid "&More ..."
 msgstr "&Pli..."
 
-#: main.C:321
+#: main.C:322
 msgid "&Hide"
 msgstr "&Kasu"
 
-#: main.C:322
+#: main.C:323
 msgid "&Left"
 msgstr "&Maldekstre"
 
-#: main.C:323
+#: main.C:324
 msgid "&Right"
 msgstr "&Dekstre"
 
@@ -82,67 +82,67 @@ msgstr "80x52 (ibmv&ga)"
 msgid "&Menubar"
 msgstr "&Menulistelo"
 
-#: main.C:344
+#: main.C:343
 msgid "&Frame"
 msgstr "&Kadro"
 
-#: main.C:346
+#: main.C:344
 msgid "Scroll&bar"
 msgstr "Þ&ovilo"
 
-#: main.C:348
+#: main.C:346
 msgid "BS sends &DEL"
 msgstr "Retroklavo sendas &DEL"
 
-#: main.C:351
+#: main.C:348
 msgid "&Font"
 msgstr "&Tiparo"
 
-#: main.C:352
+#: main.C:349
 msgid "&Size"
 msgstr "&Grandeco"
 
-#: main.C:353
+#: main.C:350
 msgid "&Schema"
 msgstr "S&kemo"
 
-#: main.C:355
+#: main.C:352
 msgid "&Save options"
 msgstr "&Sekurigu opciojn"
 
-#: main.C:359
+#: main.C:356
 msgid "&About ..."
 msgstr "&Pri ..."
 
-#: main.C:360
+#: main.C:357
 msgid "&User's Manual ..."
 msgstr "&Manlibro ..."
 
-#: main.C:361
+#: main.C:358
 msgid "&Technical Reference ..."
 msgstr "&Teknika referenco ..."
 
-#: main.C:365
+#: main.C:362
 msgid "cd"
 msgstr ""
 
-#: main.C:378
+#: main.C:375
 msgid "Sessions"
 msgstr "Seancoj"
 
-#: main.C:517
+#: main.C:527
 #, c-format
 msgid ""
 "Font `%s' not found.\n"
 "Check README.linux.console for help."
 msgstr ""
 
-#: main.C:621
+#: main.C:647
 #, c-format
 msgid "About %s"
 msgstr "Pri %s"
 
-#: main.C:623
+#: main.C:649
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -163,18 +163,18 @@ msgstr ""
 "SEN IU AJN GARANTIO.\n"
 "Legu `LICENSE.readme´ pri detaloj."
 
-#: main.C:749
+#: main.C:776
 #, c-format
 msgid "`%s' terminated abnormally."
 msgstr ""
 
-#: main.C:752
+#: main.C:779
 msgid ""
 "\n"
 "Return code = "
 msgstr ""
 
-#: main.C:936
+#: main.C:976
 msgid "Welcome to the console"
 msgstr "Bonvenon æe la konsolo"
 

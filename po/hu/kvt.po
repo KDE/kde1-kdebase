@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kvt\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1997-09-21 19:39+MET\n"
 "Last-Translator: Nagy Balazs <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -12,159 +12,159 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 
 # main.C:224
-#: main.C:424
+#: main.C:426
 msgid "choose type of color-mode"
 msgstr "válassz szín módot"
 
 # main.C:220
-#: main.C:430
+#: main.C:432
 msgid "Add characters to word class"
 msgstr "Karakterek hozzáadása a szó osztályhoz"
 
-#: main.C:436
+#: main.C:438
 msgid "The backspace key will send a"
 msgstr "A törlõ billentyû"
 
-#: main.C:442
+#: main.C:444
 msgid "Cursor key set"
 msgstr ""
 
 # main.C:357
-#: main.C:611
+#: main.C:613
 msgid "&New Terminal"
 msgstr "Új &terminál"
 
 # main.C:364 main.C:669
-#: main.C:618 main.C:1024
+#: main.C:620 main.C:1043
 msgid "&Hide"
 msgstr "&Elrejt"
 
 # main.C:365
-#: main.C:619
+#: main.C:621
 msgid "&Left"
 msgstr "&Bal"
 
 # main.C:366
-#: main.C:620
+#: main.C:622
 msgid "&Right"
 msgstr "&Jobb"
 
 # main.C:371
-#: main.C:625
+#: main.C:627
 msgid "&Normal"
 msgstr "&Normál"
 
 # main.C:372
-#: main.C:626
+#: main.C:628
 msgid "&Tiny"
 msgstr "&Apró"
 
 # main.C:373
-#: main.C:627
+#: main.C:629
 msgid "&Small"
 msgstr "K&icsi"
 
 # main.C:374
-#: main.C:628
+#: main.C:630
 msgid "&Medium"
 msgstr "&Közepes"
 
 # main.C:375
-#: main.C:629
+#: main.C:631
 msgid "&Large"
 msgstr "&Nagy"
 
 # main.C:376
-#: main.C:630
+#: main.C:632
 msgid "&Huge"
 msgstr "Ó&riás"
 
 # main.C:388
-#: main.C:642
+#: main.C:644
 msgid "&black/white"
 msgstr "&fekete/fehér"
 
 # main.C:389
-#: main.C:643
+#: main.C:645
 msgid "&white/black"
 msgstr "f&ehér/fekete"
 
 # main.C:390
-#: main.C:644
+#: main.C:646
 msgid "&green/black"
 msgstr "&zöld/fekete"
 
 # main.C:391
-#: main.C:645
+#: main.C:647
 msgid "black/light&yellow"
 msgstr "fekete/világos&sárga"
 
 # main.C:392
-#: main.C:646
+#: main.C:648
 msgid "Linu&x Console"
 msgstr "Linu&x Konzol"
 
 # main.C:406
-#: main.C:655
+#: main.C:657
 #, fuzzy
 msgid "&Custom Colors"
 msgstr "&Szín"
 
 # main.C:399 main.C:594
-#: main.C:663 main.C:950
+#: main.C:665 main.C:969
 msgid "Hide &Menubar"
 msgstr "Menü &elrejtése"
 
 # main.C:401 main.C:460 main.C:586
-#: main.C:665 main.C:872 main.C:942
+#: main.C:667 main.C:888 main.C:960
 msgid "Show &Menubar"
 msgstr "Menü &megmutatása"
 
 # main.C:402 main.C:604
-#: main.C:666 main.C:960
+#: main.C:668 main.C:979
 msgid "Secure &keyboard"
 msgstr "&Biztonságos billentyûzet"
 
 # main.C:404
-#: main.C:668
+#: main.C:670
 msgid "Scroll&bar"
 msgstr "Gördítõsáv"
 
 # main.C:405
-#: main.C:669
+#: main.C:671
 msgid "&Font size"
 msgstr "&Betûméret"
 
 # main.C:406
-#: main.C:670
+#: main.C:672
 msgid "&Color"
 msgstr "&Szín"
 
 # main.C:407
-#: main.C:671
+#: main.C:673
 msgid "&Size"
 msgstr "&Méret"
 
 # main.C:408
-#: main.C:672
+#: main.C:674
 msgid "Terminal..."
 msgstr "Terminál..."
 
-#: main.C:673
+#: main.C:675
 msgid "Font..."
 msgstr ""
 
-#: main.C:674
+#: main.C:676
 msgid "Enable &hotkeys"
 msgstr ""
 
 # main.C:410
-#: main.C:677
+#: main.C:679
 msgid "Save &Options"
 msgstr "&Beállítások elmentése"
 
 # main.C:760
-#: main.C:686
+#: main.C:688
 #, fuzzy
 msgid ""
 "\n"
@@ -172,6 +172,7 @@ msgid ""
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
 "(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
+"(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
 "\n"
 "Terminal emulation for the KDE Desktop Environment\n"
 "based on Robert Nation's rxvt-2.08"
@@ -185,27 +186,27 @@ msgstr ""
 "Robert Nation rxvt-2.08 alapján"
 
 # main.C:469 main.C:662
-#: main.C:881 main.C:1017
+#: main.C:897 main.C:1036
 msgid "&Show"
 msgstr "&Mutasd"
 
 # main.C:600
-#: main.C:956
+#: main.C:975
 msgid "Unsecure &keyboard"
 msgstr "&Normál billentyûzet"
 
 # main.C:970
-#: main.C:967
+#: main.C:986
 msgid "Terminal Options"
 msgstr "Terminál beállítások"
 
 # main.C:739
-#: main.C:1129
+#: main.C:1152
 msgid "Hint"
 msgstr "Tanács"
 
 # main.C:740
-#: main.C:1130
+#: main.C:1153
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -214,7 +215,7 @@ msgstr ""
 "ha a billentyûzet fel lesz oldva titkosítás alól."
 
 # main.C:760
-#: main.C:1433
+#: main.C:1474
 #, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
@@ -231,101 +232,101 @@ msgstr ""
 "Terminál emulátor a KDE grafikus környezethez\n"
 "Robert Nation rxvt-2.08 alapján"
 
-#: main.C:1437
+#: main.C:1478
 msgid "Permitted arguments are:\n"
 msgstr ""
 
-#: main.C:1438
+#: main.C:1479
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 
-#: main.C:1439
+#: main.C:1480
 msgid "-display <name>           specify the display (server)\n"
 msgstr ""
 
-#: main.C:1440
+#: main.C:1481
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr ""
 
-#: main.C:1441
+#: main.C:1482
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr ""
 
-#: main.C:1442
+#: main.C:1483
 msgid "-vt_bg <colour>           background color\n"
 msgstr ""
 
-#: main.C:1443
+#: main.C:1484
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr ""
 
-#: main.C:1444
+#: main.C:1485
 msgid "-vt_font <fontname>       normal font\n"
 msgstr ""
 
-#: main.C:1445
+#: main.C:1486
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
 msgstr ""
 
-#: main.C:1446
+#: main.C:1487
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr ""
 
-#: main.C:1447
+#: main.C:1488
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr ""
 
-#: main.C:1448
+#: main.C:1489
 msgid "-no_menubar               hide the menubar\n"
 msgstr ""
 
-#: main.C:1449
+#: main.C:1490
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr ""
 
-#: main.C:1450
+#: main.C:1491
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
 
-#: main.C:1452
+#: main.C:1493
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr ""
 
-#: main.C:1453
+#: main.C:1494
 msgid "-C                        Capture system console message\n"
 msgstr ""
 
-#: main.C:1454
+#: main.C:1495
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr ""
 
-#: main.C:1455
+#: main.C:1496
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
 
-#: main.C:1457
+#: main.C:1498
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
 
-#: main.C:1459
+#: main.C:1500
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
 
-#: main.C:1460
+#: main.C:1501
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr ""
 
-#: main.C:1461
+#: main.C:1502
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
@@ -334,7 +335,7 @@ msgid ""
 msgstr ""
 
 # main.C:954
-#: main.C:1465
+#: main.C:1506
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

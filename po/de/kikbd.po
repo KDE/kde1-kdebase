@@ -3,12 +3,12 @@ msgstr ""
 "Project-Id-Version: kikbd\n"
 "POT-Creation-Date: 1999-01-22 01:13+0100\n"
 "PO-Revision-Date: 1999-03-13 17:05+MET\n"
-"Translator: Harri Porten <porten@kde.org>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"Translator: Harri Porten <porten@kde.org>\n"
 "Date: 1998-04-15 09:13:42+0400\n"
 "From: Alexander Budnik,LCTA 323,64880,, <budnik@linserv.jinr.ru>\n"
 "Xgettext-Options: -C -ktranslate\n"
@@ -80,8 +80,7 @@ msgid ""
 " Do you want to have it autostarted at your next login?"
 msgstr ""
 "Sie sind dabei, das \"Internationale Tastatur-Tool\" zu verlassen.\n"
-"Möchten Sie es automatisch starten, wenn Sie das nächste Mal "
-"einloggen?"
+"Möchten Sie es automatisch starten, wenn Sie das nächste Mal einloggen?"
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -496,8 +495,7 @@ msgstr "Schrift an&passen"
 
 #: widgets.cpp:592
 msgid "Customize Font for text label or use global settings"
-msgstr ""
-"Schrift des Textlabels anpassen oder allgemeine Einstellungen benutzen"
+msgstr "Schrift des Textlabels anpassen oder allgemeine Einstellungen benutzen"
 
 #: widgets.cpp:596
 msgid "C&hange Font"

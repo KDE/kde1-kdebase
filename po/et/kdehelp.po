@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-02-02 01:17+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 199-01-18 00:10+0200\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: Estonian <heathcliff@iname.com>\n"
@@ -21,7 +21,7 @@ msgstr "KDE abi: Ava URL"
 msgid "Open URL"
 msgstr "Ava URL"
 
-#: helpwin.cpp:459 info.cpp:290
+#: helpwin.cpp:459 info.cpp:321
 msgid "Cannot open: "
 msgstr "Ei suuda avada: "
 
@@ -57,16 +57,16 @@ msgstr "Lisa järjehoidja"
 msgid "Open in new Window"
 msgstr "Ava uues aknas"
 
-#: info.cpp:97 info.cpp:617
+#: info.cpp:113 info.cpp:641
 msgid "Error in info file"
 msgstr "Viga info failis"
 
-#: info.cpp:1260
+#: info.cpp:1284
 #, c-format
 msgid "Node not found: %s"
 msgstr "Sõlme ei leitud: %s"
 
-#: info.cpp:1405
+#: info.cpp:1429
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Info faili pole võimalik avada: %s"
@@ -131,7 +131,7 @@ msgstr "KDE abi valikud"
 msgid "Colors"
 msgstr "Värvid"
 
-#: man.cpp:55 man.cpp:445
+#: man.cpp:55 man.cpp:453
 msgid "Online Manuals"
 msgstr "Onlain manuaalid"
 
@@ -177,19 +177,19 @@ msgstr "Süsteemi administreerimine"
 msgid "New"
 msgstr "Uus"
 
-#: man.cpp:271
+#: man.cpp:279
 msgid "Reading Dir: "
 msgstr "Kataloogi lugemine: "
 
-#: man.cpp:435
+#: man.cpp:443
 msgid "Online Manual - Section"
 msgstr "Onlain manuaal - sektsioon"
 
-#: man.cpp:501 man.cpp:510
+#: man.cpp:509 man.cpp:518
 msgid "\"man\" system call failed"
 msgstr "süsteemne kutsung \"man\" ebaõnnestus"
 
-#: man.cpp:528
+#: man.cpp:536
 msgid "Opening temporary file failed"
 msgstr "Ajutise faili avamine ebaõnnestus"
 

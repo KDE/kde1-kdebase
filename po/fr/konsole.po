@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: konsole 0.9.8\n"
-"POT-Creation-Date: 1999-02-09 01:13+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1999-01-29 21:35 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
@@ -14,47 +14,47 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.C:303
+#: main.C:304
 msgid "&Normal"
 msgstr "&Normal"
 
-#: main.C:306
+#: main.C:307
 msgid "&Small"
 msgstr "&Petit"
 
-#: main.C:307
+#: main.C:308
 msgid "&Medium"
 msgstr "&Moyen"
 
-#: main.C:308
+#: main.C:309
 msgid "&Large"
 msgstr "&Grand"
 
-#: main.C:309
+#: main.C:310
 msgid "&Huge"
 msgstr "&Enorme"
 
-#: main.C:311
+#: main.C:312
 msgid "&Linux"
 msgstr "&Linux"
 
-#: main.C:312
+#: main.C:313
 msgid "Linux (small)"
 msgstr "Linux (petit)"
 
-#: main.C:315
+#: main.C:316
 msgid "&More ..."
 msgstr "&Plus..."
 
-#: main.C:321
+#: main.C:322
 msgid "&Hide"
 msgstr "&Cacher"
 
-#: main.C:322
+#: main.C:323
 msgid "&Left"
 msgstr "&Gauche"
 
-#: main.C:323
+#: main.C:324
 msgid "&Right"
 msgstr "&Droite"
 
@@ -82,55 +82,55 @@ msgstr "80x52 (ibmv&ga)"
 msgid "&Menubar"
 msgstr "Barre de &menu"
 
-#: main.C:344
+#: main.C:343
 msgid "&Frame"
 msgstr "&Cadre"
 
-#: main.C:346
+#: main.C:344
 msgid "Scroll&bar"
 msgstr "&Ascenseur"
 
-#: main.C:348
+#: main.C:346
 msgid "BS sends &DEL"
 msgstr "BS envoie &DEL"
 
-#: main.C:351
+#: main.C:348
 msgid "&Font"
 msgstr "&Police"
 
-#: main.C:352
+#: main.C:349
 msgid "&Size"
 msgstr "&Taille"
 
-#: main.C:353
+#: main.C:350
 msgid "&Schema"
 msgstr "M&odèle"
 
-#: main.C:355
+#: main.C:352
 msgid "&Save options"
 msgstr "&Enregistrer les options"
 
-#: main.C:359
+#: main.C:356
 msgid "&About ..."
 msgstr "&A propos..."
 
-#: main.C:360
+#: main.C:357
 msgid "&User's Manual ..."
 msgstr "Manuel &utilisateur..."
 
-#: main.C:361
+#: main.C:358
 msgid "&Technical Reference ..."
 msgstr "Référence &technique..."
 
-#: main.C:365
+#: main.C:362
 msgid "cd"
 msgstr "Commande cd"
 
-#: main.C:378
+#: main.C:375
 msgid "Sessions"
 msgstr "Sessions"
 
-#: main.C:517
+#: main.C:527
 #, c-format
 msgid ""
 "Font `%s' not found.\n"
@@ -139,12 +139,12 @@ msgstr ""
 "Police `%s' non trouvée.\n"
 "Consultez le fichier README.linux.console pour de l'aide."
 
-#: main.C:621
+#: main.C:647
 #, c-format
 msgid "About %s"
 msgstr "A propos de %s"
 
-#: main.C:623
+#: main.C:649
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -165,12 +165,12 @@ msgstr ""
 "SANS AUCUNE GARANTIE.\n"
 "Voir `LICENSE.readme´ pour plus de détails."
 
-#: main.C:749
+#: main.C:776
 #, c-format
 msgid "`%s' terminated abnormally."
 msgstr "`%s' a terminé anormalement."
 
-#: main.C:752
+#: main.C:779
 msgid ""
 "\n"
 "Return code = "
@@ -178,6 +178,6 @@ msgstr ""
 "\n"
 "Code de retour = "
 
-#: main.C:936
+#: main.C:976
 msgid "Welcome to the console"
 msgstr "Bienvenue à la console"

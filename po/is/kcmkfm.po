@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1998-12-01 21:00+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -118,6 +118,10 @@ msgstr "Tré fylgir flakki"
 #: miscopts.cpp:43
 msgid "Terminal"
 msgstr "Skjáhermir"
+
+#: miscopts.cpp:57
+msgid "Editor"
+msgstr ""
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"

@@ -2,7 +2,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # Marcell Lengyel <miketkf@yahoo.com>, 1999.
-
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
@@ -13,7 +12,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"X-Generator: KTranslator v 0.4.0"
+"X-Generator: KTranslator v 0.4.0\n"
 
 #: kpager.cpp:72
 msgid "Toggle Global Desktop"
@@ -98,7 +97,8 @@ msgstr ""
 "\n"
 "KPager honlapja: http://www.arrakis.es/~rlarrosa/kpager.html\n"
 "\n"
-"KPager TELJESEN GRANCIA NÉLKÜL használható;részletekért nézd meg a COPYING fájlt\n"
+"KPager TELJESEN GRANCIA NÉLKÜL használható;részletekért nézd meg a COPYING "
+"fájlt\n"
 "Ez szabad szoftver, ígyhát nyugodtan terjesztheted bizonyos\n"
 "feltételek mellett.\n"
 

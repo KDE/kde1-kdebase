@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1999-02-02 01:17+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1998-09-24 18:27+0100\n"
 "Last-Translator: luka steger <luka.steger@siol.net>\n"
 "Language-Team: Slovenian\n"
@@ -25,7 +25,7 @@ msgid "Open URL"
 msgstr "Odpri URL"
 
 # helpwin.cpp:454 info.cpp:274
-#: helpwin.cpp:459 info.cpp:290
+#: helpwin.cpp:459 info.cpp:321
 msgid "Cannot open: "
 msgstr "Ne morem odpreti: "
 
@@ -69,18 +69,18 @@ msgid "Open in new Window"
 msgstr "Odpri v novem oknu"
 
 # info.cpp:86 info.cpp:601
-#: info.cpp:97 info.cpp:617
+#: info.cpp:113 info.cpp:641
 msgid "Error in info file"
 msgstr "Napaka v info datoteki"
 
 # info.cpp:1230
-#: info.cpp:1260
+#: info.cpp:1284
 #, c-format
 msgid "Node not found: %s"
 msgstr "Ne najdem poglavja: %s"
 
 # info.cpp:1375
-#: info.cpp:1405
+#: info.cpp:1429
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Ne morem odpreti info datoteke: %s"
@@ -156,7 +156,7 @@ msgid "Colors"
 msgstr "Barve"
 
 # man.cpp:84 man.cpp:788
-#: man.cpp:55 man.cpp:445
+#: man.cpp:55 man.cpp:453
 msgid "Online Manuals"
 msgstr "Priroèniki"
 
@@ -212,22 +212,22 @@ msgid "New"
 msgstr ""
 
 # man.cpp:580
-#: man.cpp:271
+#: man.cpp:279
 msgid "Reading Dir: "
 msgstr "Berem imenik:"
 
 # man.cpp:777
-#: man.cpp:435
+#: man.cpp:443
 msgid "Online Manual - Section"
 msgstr "Priroènik - Poglavje"
 
 # man.cpp:835
-#: man.cpp:501 man.cpp:510
+#: man.cpp:509 man.cpp:518
 msgid "\"man\" system call failed"
 msgstr "\"man\" sistemski klic neuspe¹en"
 
 # man.cpp:853
-#: man.cpp:528
+#: man.cpp:536
 msgid "Opening temporary file failed"
 msgstr "Ni mi uspelo odpreti zaèasne datoteke"
 

@@ -5,131 +5,131 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/konsole\n"
-"POT-Creation-Date: 1998-11-28 01:10+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1999-02-16 01:10-0500\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
-"Content-Transfer-Encoding: 8bit\n"       
+"Content-Transfer-Encoding: 8bit\n"
 
-#: main.C:288
+#: main.C:304
 msgid "&Normal"
 msgstr "&Normal"
 
-#: main.C:291
+#: main.C:307
 msgid "&Small"
 msgstr "&Lille"
 
-#: main.C:292
+#: main.C:308
 msgid "&Medium"
 msgstr "&Middel"
 
-#: main.C:293
+#: main.C:309
 msgid "&Large"
 msgstr "&Stor"
 
-#: main.C:294
+#: main.C:310
 msgid "&Huge"
 msgstr "&Kæmpemæssig"
 
-#: main.C:296
+#: main.C:312
 msgid "&Linux"
 msgstr "&Linux"
 
-#: main.C:297
+#: main.C:313
 msgid "Linux (small)"
 msgstr "Linux (lille)"
 
-#: main.C:300
+#: main.C:316
 msgid "&More ..."
 msgstr "&Mer ..."
 
-#: main.C:306
+#: main.C:322
 msgid "&Hide"
 msgstr "&Skjul"
 
-#: main.C:307
+#: main.C:323
 msgid "&Left"
 msgstr "&Venstre"
 
-#: main.C:308
+#: main.C:324
 msgid "&Right"
 msgstr "&Højre"
 
-#: main.C:314
+#: main.C:329
 msgid "40x15 (&small)"
 msgstr "40x15 (&lille)"
 
-#: main.C:315
+#: main.C:330
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:316
+#: main.C:331
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:317
+#: main.C:332
 msgid "80x40 (&xterm)"
 msgstr "80x40 (&xterm)"
 
-#: main.C:318
+#: main.C:333
 msgid "80x52 (ibmv&ga)"
 msgstr "80x52 (ibmv&ga)"
 
-#: main.C:327
+#: main.C:342
 msgid "&Menubar"
 msgstr "&Menubjælke"
 
-#: main.C:329
+#: main.C:343
 msgid "&Frame"
 msgstr "&Ramme"
 
-#: main.C:331
+#: main.C:344
 msgid "Scroll&bar"
 msgstr "&Rullebjælke"
 
-#: main.C:333
+#: main.C:346
 msgid "BS sends &DEL"
 msgstr "BS sender &DEL"
 
-#: main.C:336
+#: main.C:348
 msgid "&Font"
 msgstr "&Skrift"
 
-#: main.C:337
+#: main.C:349
 msgid "&Size"
 msgstr "&Størrelse"
 
-#: main.C:338
+#: main.C:350
 msgid "&Schema"
 msgstr "&Schema"
 
-#: main.C:340
+#: main.C:352
 msgid "&Save options"
 msgstr "&Gem valg"
 
-#: main.C:344
+#: main.C:356
 msgid "&About ..."
 msgstr "&Om ..."
 
-#: main.C:345
+#: main.C:357
 msgid "&User's Manual ..."
 msgstr "&Brugermanual ..."
 
-#: main.C:346
+#: main.C:358
 msgid "&Technical Reference ..."
 msgstr "&Teknisk reference ..."
 
-#: main.C:350
+#: main.C:362
 msgid "cd"
 msgstr "skift folder"
 
-#: main.C:363
+#: main.C:375
 msgid "Sessions"
 msgstr "Sessioner"
 
-#: main.C:498
+#: main.C:527
 #, c-format
 msgid ""
 "Font `%s' not found.\n"
@@ -138,12 +138,12 @@ msgstr ""
 "Skrift `%s' ikke fundet.\n"
 "Kig i README.linux.console for hjælp."
 
-#: main.C:603
+#: main.C:647
 #, c-format
 msgid "About %s"
 msgstr "Om %s"
 
-#: main.C:605
+#: main.C:649
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -159,17 +159,17 @@ msgstr ""
 "\n"
 "Copyright (c) 1998 ved Lars Doelle <lars.doelle@on-line.de>\n"
 "\n"
-"Dette program er fri programvare under"
-"betingelserne i Artistic-licensen og kommer\n"
+"Dette program er fri programvare underbetingelserne i Artistic-licensen og "
+"kommer\n"
 "UDEN NOGEN GARANTIER.\n"
 "Se `LICENSE.readme' for detaljer."
 
-#: main.C:728
+#: main.C:776
 #, c-format
 msgid "`%s' terminated abnormally."
 msgstr "`%s' afsluttet unormalt."
 
-#: main.C:731
+#: main.C:779
 msgid ""
 "\n"
 "Return code = "
@@ -177,6 +177,6 @@ msgstr ""
 "\n"
 "Afslutningskode = "
 
-#: main.C:924
+#: main.C:976
 msgid "Welcome to the console"
 msgstr "Velkommen til konsollen"

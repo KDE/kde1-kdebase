@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.4\n"
-"POT-Creation-Date: 1999-02-02 01:17+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1998-02-26 19:39+MET\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -21,7 +21,7 @@ msgstr "KDE Segítség: URL megnyitása"
 msgid "Open URL"
 msgstr "URL megnyitása"
 
-#: helpwin.cpp:459 info.cpp:290
+#: helpwin.cpp:459 info.cpp:321
 msgid "Cannot open: "
 msgstr "Nem lehet megnyitni: "
 
@@ -58,16 +58,16 @@ msgstr "Hozzáadás a kedvencekhez"
 msgid "Open in new Window"
 msgstr "Megnyitás új ablakban"
 
-#: info.cpp:97 info.cpp:617
+#: info.cpp:113 info.cpp:641
 msgid "Error in info file"
 msgstr "Hiba az info file-ban"
 
-#: info.cpp:1260
+#: info.cpp:1284
 #, c-format
 msgid "Node not found: %s"
 msgstr "Nincs meg a %s node"
 
-#: info.cpp:1405
+#: info.cpp:1429
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Nincs %s nevû info file!"
@@ -132,7 +132,7 @@ msgstr "KDE Segítség beállítások"
 msgid "Colors"
 msgstr "Színek"
 
-#: man.cpp:55 man.cpp:445
+#: man.cpp:55 man.cpp:453
 msgid "Online Manuals"
 msgstr "Online kézikönyvek"
 
@@ -178,20 +178,20 @@ msgstr "Rendszeradminisztráció"
 msgid "New"
 msgstr ""
 
-#: man.cpp:271
+#: man.cpp:279
 msgid "Reading Dir: "
 msgstr "Könyvtár olvasása: "
 
 # man.cpp:779 -- have to be changed
-#: man.cpp:435
+#: man.cpp:443
 msgid "Online Manual - Section"
 msgstr "Online kézikönyv - Fejezet: "
 
-#: man.cpp:501 man.cpp:510
+#: man.cpp:509 man.cpp:518
 msgid "\"man\" system call failed"
 msgstr "Nem lehet meghívni a \"man\"-t!"
 
-#: man.cpp:528
+#: man.cpp:536
 msgid "Opening temporary file failed"
 msgstr "Nem lehet létrehozni átmeneti file-t!"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay\n"
-"POT-Creation-Date: 1999-02-06 01:16+0100\n"
+"POT-Creation-Date: 1999-03-21 01:19+0100\n"
 "PO-Revision-Date: 1999-01-30 00:43+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -438,31 +438,31 @@ msgstr "&Lägg menyraden överst på skärmen i MacOS-stil"
 msgid "&Apply fonts and colors to non-KDE apps"
 msgstr "&Använd typsnitt och färger även för program utanför KDE"
 
-#: general.cpp:530
+#: general.cpp:529
 msgid "General font"
 msgstr "Standard"
 
-#: general.cpp:535
+#: general.cpp:534
 msgid "Fixed font"
 msgstr "Med fast breddsteg"
 
-#: general.cpp:541
+#: general.cpp:540
 msgid "Window title font"
 msgstr "För text i namnlisten"
 
-#: general.cpp:546
+#: general.cpp:545
 msgid "Panel button font"
 msgstr "För panelknapparna"
 
-#: general.cpp:551
+#: general.cpp:550
 msgid "Panel clock font"
 msgstr "För panelklockan"
 
-#: general.cpp:581
+#: general.cpp:580
 msgid "Sample text"
 msgstr "Exempeltext"
 
-#: general.cpp:589
+#: general.cpp:588
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"

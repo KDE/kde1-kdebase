@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kvt 0.16\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
@@ -15,138 +15,140 @@ msgstr ""
 "Xgettext-Options: --keyword=translate\n"
 "Files: main.C\n"
 
-#: main.C:424
+#: main.C:426
 msgid "choose type of color-mode"
 msgstr "выберите тип цветного режима"
 
-#: main.C:430
+#: main.C:432
 msgid "Add characters to word class"
 msgstr "Добавьте символы к классу"
 
-#: main.C:436
+#: main.C:438
 msgid "The backspace key will send a"
 msgstr "Клавиша забой будет посылать "
 
-#: main.C:442
+#: main.C:444
 msgid "Cursor key set"
 msgstr "Набор клавиш"
 
-#: main.C:611
+#: main.C:613
 msgid "&New Terminal"
 msgstr "Новый терминал"
 
-#: main.C:618 main.C:1024
+#: main.C:620 main.C:1043
 msgid "&Hide"
 msgstr "Скрыть"
 
-#: main.C:619
+#: main.C:621
 msgid "&Left"
 msgstr "Слева"
 
-#: main.C:620
+#: main.C:622
 msgid "&Right"
 msgstr "Справа"
 
-#: main.C:625
+#: main.C:627
 msgid "&Normal"
 msgstr "Нормальный"
 
-#: main.C:626
+#: main.C:628
 msgid "&Tiny"
 msgstr "Очень маленький"
 
-#: main.C:627
+#: main.C:629
 msgid "&Small"
 msgstr "Маленький"
 
-#: main.C:628
+#: main.C:630
 msgid "&Medium"
 msgstr "Средний"
 
-#: main.C:629
+#: main.C:631
 msgid "&Large"
 msgstr "Большой"
 
-#: main.C:630
+#: main.C:632
 msgid "&Huge"
 msgstr "Огромный"
 
-#: main.C:642
+#: main.C:644
 msgid "&black/white"
 msgstr "черно-белое"
 
-#: main.C:643
+#: main.C:645
 msgid "&white/black"
 msgstr "бело-черное"
 
-#: main.C:644
+#: main.C:646
 msgid "&green/black"
 msgstr "зелено-черное"
 
-#: main.C:645
+#: main.C:647
 msgid "black/light&yellow"
 msgstr "черно-светло-желтое"
 
-#: main.C:646
+#: main.C:648
 msgid "Linu&x Console"
 msgstr "Линуксовая консоль"
 
 #
-#: main.C:655
+#: main.C:657
 msgid "&Custom Colors"
 msgstr "&Цвет"
 
-#: main.C:663 main.C:950
+#: main.C:665 main.C:969
 msgid "Hide &Menubar"
 msgstr "Скрыть меню"
 
-#: main.C:665 main.C:872 main.C:942
+#: main.C:667 main.C:888 main.C:960
 msgid "Show &Menubar"
 msgstr "Показать меню"
 
-#: main.C:666 main.C:960
+#: main.C:668 main.C:979
 msgid "Secure &keyboard"
 msgstr "Захватить клавиатуру"
 
-#: main.C:668
+#: main.C:670
 msgid "Scroll&bar"
 msgstr "Полоса прокрутки"
 
-#: main.C:669
+#: main.C:671
 msgid "&Font size"
 msgstr "Размер шрифта"
 
-#: main.C:670
+#: main.C:672
 msgid "&Color"
 msgstr "Цвет"
 
-#: main.C:671
+#: main.C:673
 msgid "&Size"
 msgstr "Размер"
 
-#: main.C:672
+#: main.C:674
 msgid "Terminal..."
 msgstr "Терминал..."
 
-#: main.C:673
+#: main.C:675
 msgid "Font..."
 msgstr "Шрифт..."
 
-#: main.C:674
+#: main.C:676
 msgid "Enable &hotkeys"
 msgstr "Включить горячие клавиши"
 
-#: main.C:677
+#: main.C:679
 msgid "Save &Options"
 msgstr "Записать параметры"
 
-#: main.C:686
+#: main.C:688
+#, fuzzy
 msgid ""
 "\n"
 "\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
 "(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
+"(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
 "\n"
 "Terminal emulation for the KDE Desktop Environment\n"
 "based on Robert Nation's rxvt-2.08"
@@ -160,23 +162,23 @@ msgstr ""
 "Эмуляция терминала для проекта KDE\n"
 "Основан на rxvt-2.08 Роберта Натиона"
 
-#: main.C:881 main.C:1017
+#: main.C:897 main.C:1036
 msgid "&Show"
 msgstr "Показать"
 
-#: main.C:956
+#: main.C:975
 msgid "Unsecure &keyboard"
 msgstr "Не шифровать клавиатуру"
 
-#: main.C:967
+#: main.C:986
 msgid "Terminal Options"
 msgstr "Опции терминала"
 
-#: main.C:1129
+#: main.C:1152
 msgid "Hint"
 msgstr "Намек"
 
-#: main.C:1130
+#: main.C:1153
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -185,7 +187,7 @@ msgstr ""
 "когда клавиатура будет разблокирована."
 
 #
-#: main.C:1433
+#: main.C:1474
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -199,63 +201,63 @@ msgstr ""
 "Основан на rxvt-2.08 Роберта Натиона\n"
 "\n"
 
-#: main.C:1437
+#: main.C:1478
 msgid "Permitted arguments are:\n"
 msgstr "Разрешенные аргументы:\n"
 
-#: main.C:1438
+#: main.C:1479
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 "-e <command> <arg> ... запустить команду с параметрами arg - должна быть\n"
 "                       последней опцией\n"
 
-#: main.C:1439
+#: main.C:1480
 msgid "-display <name>           specify the display (server)\n"
 msgstr "-display <name>           использовать дисплей (сервер) <name>\n"
 
-#: main.C:1440
+#: main.C:1481
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr "-vt_geometry <spec>       начальные размеры окна\n"
 
-#: main.C:1441
+#: main.C:1482
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr ""
 "-print-pipe <name>        использовать канал <pipe> для принтера vt100\n"
 
-#: main.C:1442
+#: main.C:1483
 msgid "-vt_bg <colour>           background color\n"
 msgstr "-vt_bg <colour>           фоновый цвет\n"
 
-#: main.C:1443
+#: main.C:1484
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr "-vt_fg <colour>           цвет переднего плана\n"
 
-#: main.C:1444
+#: main.C:1485
 msgid "-vt_font <fontname>       normal font\n"
 msgstr "-vt_font <fontname>       нормальный шрифт\n"
 
-#: main.C:1445
+#: main.C:1486
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
 msgstr "-no_font_hack             выключает обход ошибки в Qt\n"
 
-#: main.C:1446
+#: main.C:1487
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr "-vt_size <size>           tiny, small, normal, large, huge\n"
 
-#: main.C:1447
+#: main.C:1488
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr "-linux                    эмуляция линуксового терминала\n"
 
-#: main.C:1448
+#: main.C:1489
 msgid "-no_menubar               hide the menubar\n"
 msgstr "-no_menubar               спрятать меню\n"
 
-#: main.C:1449
+#: main.C:1490
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr "-no_scrollbar             спрятать полосы прокрутки\n"
 
-#: main.C:1450
+#: main.C:1491
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
@@ -263,20 +265,20 @@ msgstr ""
 "-T <text>                  установить заголовок <text>\n"
 "                           (Устарела. Используйте -caption)\n"
 
-#: main.C:1452
+#: main.C:1493
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr "-tn <TERM>                Тип терминала, по умолчанию xterm.\n"
 
-#: main.C:1453
+#: main.C:1494
 msgid "-C                        Capture system console message\n"
 msgstr ""
 "-C                        Перехватывать сообщения с системной консоли\n"
 
-#: main.C:1454
+#: main.C:1495
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr "-n <text>                 имя пиктограммы\n"
 
-#: main.C:1455
+#: main.C:1496
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
@@ -284,7 +286,7 @@ msgstr ""
 "-7                         запускаться в 7 битном режиме\n"
 "-8                         запускаться в 8 битном режиме\n"
 
-#: main.C:1457
+#: main.C:1498
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
@@ -293,7 +295,7 @@ msgstr ""
 "-ls                        запрашивать имя и пароль\n"
 "-ls-                       не запрашивать имени и пароля (по умолчанию)\n"
 
-#: main.C:1459
+#: main.C:1500
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
@@ -302,11 +304,11 @@ msgstr ""
 "                           установите 8-ми битный режим, или опция будет\n"
 "                           проигнорирована\n"
 
-#: main.C:1460
+#: main.C:1501
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr "-sl <number>              сохранять number количество строк в буфере\n"
 
-#: main.C:1461
+#: main.C:1502
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
@@ -318,7 +320,7 @@ msgstr ""
 "-pagedown <keysym>         использовать клавишу alt-keysym для прокрутки "
 "вниз\n"
 
-#: main.C:1465
+#: main.C:1506
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

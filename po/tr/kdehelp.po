@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1999-02-02 01:17+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -20,7 +20,7 @@ msgstr "KDE Yardým: URL Aç"
 msgid "Open URL"
 msgstr "URL Aç"
 
-#: helpwin.cpp:459 info.cpp:290
+#: helpwin.cpp:459 info.cpp:321
 msgid "Cannot open: "
 msgstr "Açýlamýyor: "
 
@@ -57,16 +57,16 @@ msgstr "Adreslere Ekle"
 msgid "Open in new Window"
 msgstr "Yeni pencerede aç"
 
-#: info.cpp:97 info.cpp:617
+#: info.cpp:113 info.cpp:641
 msgid "Error in info file"
 msgstr "Info dosyasýnda hata"
 
-#: info.cpp:1260
+#: info.cpp:1284
 #, c-format
 msgid "Node not found: %s"
 msgstr "%s düðümü bulunamadý."
 
-#: info.cpp:1405
+#: info.cpp:1429
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "%s info dosyasý açýlamadý."
@@ -131,7 +131,7 @@ msgstr "KDE Yardým Seçenekleri"
 msgid "Colors"
 msgstr "Renkler"
 
-#: man.cpp:55 man.cpp:445
+#: man.cpp:55 man.cpp:453
 msgid "Online Manuals"
 msgstr "Çevrimiçi Yardýmlar"
 
@@ -177,19 +177,19 @@ msgstr "Sistem Yönetimi"
 msgid "New"
 msgstr ""
 
-#: man.cpp:271
+#: man.cpp:279
 msgid "Reading Dir: "
 msgstr "Dizin Okunuyor: "
 
-#: man.cpp:435
+#: man.cpp:443
 msgid "Online Manual - Section"
 msgstr "Çevrimiçi Yardýmlar - Bölüm "
 
-#: man.cpp:501 man.cpp:510
+#: man.cpp:509 man.cpp:518
 msgid "\"man\" system call failed"
 msgstr "\"man\" sistem çaðrýsý baþarýsýz"
 
-#: man.cpp:528
+#: man.cpp:536
 msgid "Opening temporary file failed"
 msgstr "Geçici dosya açýmý baþarýsýz"
 

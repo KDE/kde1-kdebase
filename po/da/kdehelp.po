@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kdehelp\n"
-"POT-Creation-Date: 1999-02-16 01:15+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date:1999-01-26 HO:MI+ZONE\n"
 "Last-Translator: Erik Kjær Pedersen\n"
 "Language-Team: da <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr "KDE Hjælp: Åbn URL"
 msgid "Open URL"
 msgstr "Åbn URL"
 
-#: helpwin.cpp:459 info.cpp:288
+#: helpwin.cpp:459 info.cpp:321
 msgid "Cannot open: "
 msgstr "Kan ikke åbne: "
 
@@ -57,16 +57,16 @@ msgstr "Tilføj bogmærke"
 msgid "Open in new Window"
 msgstr "Åbn i nyt vindue"
 
-#: info.cpp:97 info.cpp:615
+#: info.cpp:113 info.cpp:641
 msgid "Error in info file"
 msgstr "Fejl i info fil"
 
-#: info.cpp:1258
+#: info.cpp:1284
 #, c-format
 msgid "Node not found: %s"
 msgstr "Node ikke fundet: %s"
 
-#: info.cpp:1403
+#: info.cpp:1429
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Kan ikke åbne info fil: %s"
@@ -131,7 +131,7 @@ msgstr "KDE Hjælp indstillinger"
 msgid "Colors"
 msgstr "Farver"
 
-#: man.cpp:55 man.cpp:445
+#: man.cpp:55 man.cpp:453
 msgid "Online Manuals"
 msgstr "Online manualer"
 
@@ -177,19 +177,19 @@ msgstr "Systemadministration"
 msgid "New"
 msgstr "Ny"
 
-#: man.cpp:271
+#: man.cpp:279
 msgid "Reading Dir: "
 msgstr "Læser folder: "
 
-#: man.cpp:435
+#: man.cpp:443
 msgid "Online Manual - Section"
 msgstr "Online manual - Sektion"
 
-#: man.cpp:501 man.cpp:510
+#: man.cpp:509 man.cpp:518
 msgid "\"man\" system call failed"
 msgstr "\"man\" systemkald fejlede"
 
-#: man.cpp:528
+#: man.cpp:536
 msgid "Opening temporary file failed"
 msgstr "Fejl ved åbning af midelrtidig fil"
 

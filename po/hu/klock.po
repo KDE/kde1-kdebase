@@ -1,5 +1,4 @@
 # KTranslator Generated File
-
 # John Zero <johnzero@telnet.hu>, 1997
 msgid ""
 msgstr ""
@@ -16,8 +15,8 @@ msgstr ""
 msgid "Attraction"
 msgstr "Vonzás"
 
-#: attraction.cpp:805
 #
+#: attraction.cpp:805
 msgid "Setup KAttraction"
 msgstr "A KAttraction beállítása"
 
@@ -25,8 +24,8 @@ msgstr "A KAttraction beállítása"
 msgid "Number:"
 msgstr "Darab:"
 
-#: attraction.cpp:831 science.cpp:993 slidescreen.cpp:493
 #
+#: attraction.cpp:831 science.cpp:993 slidescreen.cpp:493
 msgid "Mode:"
 msgstr "Mód:"
 
@@ -50,8 +49,8 @@ msgstr "Nyomot hagy"
 msgid "Glow"
 msgstr "Ragyogás"
 
-#: attraction.cpp:953
 #
+#: attraction.cpp:953
 msgid "About Attraction"
 msgstr "A Vonzás-ról"
 
@@ -77,13 +76,13 @@ msgstr ""
 msgid "Banner"
 msgstr "Felirat"
 
-#: banner.cpp:84
 #
+#: banner.cpp:84
 msgid "Setup kbanner"
 msgstr "A Felirat beállításai"
 
-#: banner.cpp:95
 #
+#: banner.cpp:95
 msgid "Family:"
 msgstr "Család:"
 
@@ -142,8 +141,8 @@ msgstr "A Denevérek beállítása"
 msgid "Number of bats:"
 msgstr "Denevérek száma:"
 
-#: bat.cpp:661
 #
+#: bat.cpp:661
 msgid "About Bat"
 msgstr "A Denevérek-rõl"
 
@@ -229,18 +228,18 @@ msgstr "Blob-ok"
 msgid "Bouboule"
 msgstr "Buborékok"
 
-#: bouboule.cpp:1005
 #
+#: bouboule.cpp:1005
 msgid "Setup KBouboule"
 msgstr "A Buborékok beállításai"
 
-#: bouboule.cpp:1032
 #
+#: bouboule.cpp:1032
 msgid "Number of points:"
 msgstr "Pontok száma:"
 
-#: bouboule.cpp:1046
 #
+#: bouboule.cpp:1046
 msgid "Point size:"
 msgstr "Pontok mérete:"
 
@@ -252,8 +251,8 @@ msgstr "Színváltás gyakorisága:"
 msgid "3D mode"
 msgstr "3D mód"
 
-#: bouboule.cpp:1223
 #
+#: bouboule.cpp:1223
 msgid "About Bouboule"
 msgstr "A Buborékokról"
 
@@ -271,8 +270,8 @@ msgstr ""
 "\n"
 "kscreensave-hez portolta: Cedric Tefft"
 
-#: bsod.cpp:1192
 #
+#: bsod.cpp:1192
 msgid "Black Screen of Death"
 msgstr "OpRendszerek Halála"
 
@@ -356,8 +355,8 @@ msgstr "Egyszínû pixelek:"
 msgid "Cycles:"
 msgstr "Ciklusok:"
 
-#: hop.cpp:464
 #
+#: hop.cpp:464
 msgid "About Hop"
 msgstr "Az Ugrás névjegye"
 
@@ -379,13 +378,13 @@ msgstr ""
 msgid "Laser"
 msgstr "Lézer"
 
-#: laser.cpp:393
 #
+#: laser.cpp:393
 msgid "Setup KLaser"
 msgstr "A Lézer beállításai"
 
-#: laser.cpp:482
 #
+#: laser.cpp:482
 msgid "About Laser"
 msgstr "A Lézer névjegye"
 
@@ -474,8 +473,8 @@ msgstr ""
 msgid "Option %s is not support on this plattform!"
 msgstr "A(z) %s paraméter nem értelmezhetõ ezen a platformon!"
 
-#: main.cpp:422
 #
+#: main.cpp:422
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -514,8 +513,8 @@ msgstr ""
 "Használat: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
-#: main.cpp:589
 #
+#: main.cpp:589
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -592,18 +591,18 @@ msgstr ""
 msgid "Pipes (GL)"
 msgstr "Csövek (GL)"
 
-#: pipes.cpp:672
 #
+#: pipes.cpp:672
 msgid "Setup KPipes"
 msgstr "A Csövek beállításai"
 
-#: pipes.cpp:678
 #
+#: pipes.cpp:678
 msgid "Number of Pipes"
 msgstr "Csövek száma:"
 
-#: pipes.cpp:743
 #
+#: pipes.cpp:743
 msgid "About KPipes"
 msgstr "A Csövek névjegye"
 
@@ -645,8 +644,8 @@ msgstr ""
 msgid "Pyro"
 msgstr "Pirománia"
 
-#: pyro.cpp:517
 #
+#: pyro.cpp:517
 msgid "Setup KPyro"
 msgstr "Pirománia beállítása"
 
@@ -654,8 +653,8 @@ msgstr "Pirománia beállítása"
 msgid "Cloud"
 msgstr "Felhõ"
 
-#: pyro.cpp:629
 #
+#: pyro.cpp:629
 msgid "About Pyro"
 msgstr "A Pirománia névjegye"
 
@@ -677,13 +676,13 @@ msgstr ""
 msgid "Rock"
 msgstr "Kõ"
 
-#: rock.cpp:549
 #
+#: rock.cpp:549
 msgid "Setup krock"
 msgstr "A Kõ beállítása"
 
-#: rock.cpp:589
 #
+#: rock.cpp:589
 msgid "Move"
 msgstr "Mozgás"
 
@@ -691,8 +690,8 @@ msgstr "Mozgás"
 msgid "Rotate"
 msgstr "Forgás"
 
-#: rock.cpp:719
 #
+#: rock.cpp:719
 msgid "About Rock"
 msgstr "A Kõ névjegye"
 
@@ -710,13 +709,13 @@ msgstr ""
 "\n"
 "kscreensave-hez portolta: Martin Jones."
 
-#: saver.cpp:60 saver.cpp:191
 #
+#: saver.cpp:60 saver.cpp:191
 msgid "Enter Password"
 msgstr "Jelszó:"
 
-#: saver.cpp:121
 #
+#: saver.cpp:121
 msgid "Failed"
 msgstr "Hibás!"
 
@@ -724,8 +723,8 @@ msgstr "Hibás!"
 msgid "Whirl"
 msgstr "Gyûrõdés"
 
-#: science.cpp:68
 #
+#: science.cpp:68
 msgid "Sphere"
 msgstr "Gömb"
 
@@ -745,8 +744,8 @@ msgstr "Hullám"
 msgid "Curvature"
 msgstr "Görbület"
 
-#: science.cpp:112
 #
+#: science.cpp:112
 msgid "Science"
 msgstr "Tudományos"
 
@@ -758,8 +757,8 @@ msgstr "lencse renderelése..."
 msgid "grabbing screen..."
 msgstr "képernyõ leszedése..."
 
-#: science.cpp:975
 #
+#: science.cpp:975
 msgid "Setup Science"
 msgstr "A Tudományos beállítása"
 
@@ -791,23 +790,23 @@ msgstr "Verzió"
 msgid "written by"
 msgstr "írta"
 
-#: science.cpp:1306
 #
+#: science.cpp:1306
 msgid "About Science"
 msgstr "A Tudományos névjegye"
 
-#: slidescreen.cpp:419
 #
+#: slidescreen.cpp:419
 msgid "SlideScreen"
 msgstr "Mozaik"
 
-#: slidescreen.cpp:465
 #
+#: slidescreen.cpp:465
 msgid "Setup KSlideScreen"
 msgstr "A Mozaik beállításai"
 
-#: slidescreen.cpp:558
 #
+#: slidescreen.cpp:558
 msgid "About SlideScreen"
 msgstr "A Mozaik névjegye"
 
@@ -841,8 +840,8 @@ msgstr "A Csúszás beállítása"
 msgid "Batchcount:"
 msgstr "Csoportok:"
 
-#: slip.cpp:488
 #
+#: slip.cpp:488
 msgid "About Slip"
 msgstr "A Csúszás névjegye"
 
@@ -864,8 +863,8 @@ msgstr ""
 msgid "Space (GL)"
 msgstr "Ûr (GL)"
 
-#: space.cpp:581
 #
+#: space.cpp:581
 msgid "Setup KSpace"
 msgstr "Az Ûr beállításai"
 
@@ -873,8 +872,8 @@ msgstr "Az Ûr beállításai"
 msgid "Warp Interval:"
 msgstr "Warp gyakoriság:"
 
-#: space.cpp:685
 #
+#: space.cpp:685
 msgid "About KSpace"
 msgstr "Az Ûr névjegye"
 
@@ -900,8 +899,8 @@ msgstr "A Raj beállítása"
 msgid "Number of Bees:"
 msgstr "Méhek száma:"
 
-#: swarm.cpp:450
 #
+#: swarm.cpp:450
 msgid "About Swarm"
 msgstr "A Raj névjegye"
 

@@ -57,4 +57,3 @@ msgstr ""
 "Le changement de langue s'applique seulement aux applications\n"
 "lancées à partir de maintenant. Pour changer la langue de tous\n"
 "les programmes, vous devrez d'abord vous déconnecter."
-

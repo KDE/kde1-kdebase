@@ -1,20 +1,16 @@
 # KTranslator Generated File
-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -23,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock-1.1\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1999-02-05 12:19+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -31,47 +27,47 @@ msgstr ""
 "Content-Type: text/plain; charset=iso8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: attraction.cpp:716
+#: attraction.cpp:718
 msgid "Attraction"
 msgstr "Dedennerezh"
 
-#: attraction.cpp:803
+#: attraction.cpp:805
 msgid "Setup KAttraction"
 msgstr "Kefluniañ KDedennerezh"
 
-#: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
+#: attraction.cpp:817 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
 msgstr "Niver :"
 
-#: attraction.cpp:829 science.cpp:993 slidescreen.cpp:493
+#: attraction.cpp:831 science.cpp:993 slidescreen.cpp:493
 msgid "Mode:"
 msgstr "Giz :"
 
-#: attraction.cpp:834 slidescreen.cpp:498
+#: attraction.cpp:836 slidescreen.cpp:498
 msgid "Balls"
 msgstr "Melloù"
 
-#: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
+#: attraction.cpp:837 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
 msgstr "Linennoù"
 
-#: attraction.cpp:836 polygon.cpp:64 slidescreen.cpp:500
+#: attraction.cpp:838 polygon.cpp:64 slidescreen.cpp:500
 msgid "Polygons"
 msgstr "Lieskognegoù"
 
-#: attraction.cpp:837 slidescreen.cpp:501
+#: attraction.cpp:839 slidescreen.cpp:501
 msgid "Tails"
 msgstr "Roudennoù"
 
-#: attraction.cpp:850 slidescreen.cpp:514
+#: attraction.cpp:852 slidescreen.cpp:514
 msgid "Glow"
 msgstr "Lufrus"
 
-#: attraction.cpp:951
+#: attraction.cpp:953
 msgid "About Attraction"
 msgstr "Diwar-benn Dedennerezh"
 
-#: attraction.cpp:952
+#: attraction.cpp:954
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -206,23 +202,23 @@ msgstr "Ankivil"
 msgid "Sorry. This screensaver needs a color display"
 msgstr "Ho tigarez : an damanter-se a c'houlenn groñs ur skramm liv"
 
-#: blob.cpp:458
+#: blob.cpp:461
 msgid "Setup Blob Saver"
 msgstr "Kefluniañ Blob"
 
-#: blob.cpp:468
+#: blob.cpp:471
 msgid "Frame Show sec."
 msgstr "Diskouez steuñvennoù"
 
-#: blob.cpp:480
+#: blob.cpp:483
 msgid "Algorithm"
 msgstr "Algoritm"
 
-#: blob.cpp:570
+#: blob.cpp:573
 msgid "About Blob"
 msgstr "Diwar-benn Blob"
 
-#: blob.cpp:571
+#: blob.cpp:574
 msgid ""
 "Blobsaver Version 0.1\n"
 "\n"
@@ -234,7 +230,7 @@ msgstr ""
 "skrivet gant Tiaan Wessels 1997\n"
 "tiaan@netsys.co.za"
 
-#: blob.cpp:606
+#: blob.cpp:609
 msgid "Blobs"
 msgstr "Bloboù"
 
@@ -507,9 +503,8 @@ msgstr ""
 "\n"
 "na arverit ket mar plij -test a-stroll gant -lock.\n"
 "arverit kentoc'h klock.\n"
-""
 
-#: main.cpp:580
+#: main.cpp:586
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -518,7 +513,7 @@ msgstr ""
 "Arveriadur : %s -install|-setup|-test|-desc|-preview led|-inroot\n"
 "       [-corners xxxx] [-delay niv] [-lock] [-allow-root] [-nice niv]\n"
 
-#: main.cpp:583
+#: main.cpp:589
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -542,7 +537,8 @@ msgstr ""
 "                     x = i  hini ebet (na ober van)\n"
 "                     x = s  damantiñ ar skramm\n"
 "                     x = l  prennañ ar skramm\n"
-"                    urzh : gorre-kleiz, gorre-dehou, traoñ-kleiz, traoñ-dehou\n"
+"                    urzh : gorre-kleiz, gorre-dehou, traoñ-kleiz, "
+"traoñ-dehou\n"
 "  -delay niv       gedvezh araok loc''hañ an damanter\n"
 "                      skramm  (dre ziouer 10mun)\n"
 "  -desc             moulañ deskrivadur an damanter skramm war stdout\n"

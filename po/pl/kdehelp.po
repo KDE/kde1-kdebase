@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1999-02-02 01:17+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1999-01-10 13:04+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -14,7 +14,7 @@ msgstr "KDE Pomoc: Otwórz URL"
 msgid "Open URL"
 msgstr "Otwórz URL"
 
-#: helpwin.cpp:459 info.cpp:290
+#: helpwin.cpp:459 info.cpp:321
 msgid "Cannot open: "
 msgstr "Nie mo¿na otworzyæ: "
 
@@ -50,16 +50,16 @@ msgstr "Dodaj zak³adkê"
 msgid "Open in new Window"
 msgstr "Otwórz w nowym oknie"
 
-#: info.cpp:97 info.cpp:617
+#: info.cpp:113 info.cpp:641
 msgid "Error in info file"
 msgstr "B³±d w pliku informacyjnym"
 
-#: info.cpp:1260
+#: info.cpp:1284
 #, c-format
 msgid "Node not found: %s"
 msgstr "Poziom nie znaleziony: %s"
 
-#: info.cpp:1405
+#: info.cpp:1429
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Nie mo¿a otworzyæ pliku informacyjnego: %s"
@@ -124,7 +124,7 @@ msgstr "Opcje KDE Pomoc"
 msgid "Colors"
 msgstr "Kolory"
 
-#: man.cpp:55 man.cpp:445
+#: man.cpp:55 man.cpp:453
 msgid "Online Manuals"
 msgstr "Bie¿±ca dokumentacja"
 
@@ -170,19 +170,19 @@ msgstr "Administracja systemu"
 msgid "New"
 msgstr "Nowy"
 
-#: man.cpp:271
+#: man.cpp:279
 msgid "Reading Dir: "
 msgstr "Wczytujê katalog: "
 
-#: man.cpp:435
+#: man.cpp:443
 msgid "Online Manual - Section"
 msgstr "Bie¿±ca dokumentacja - sekcja"
 
-#: man.cpp:501 man.cpp:510
+#: man.cpp:509 man.cpp:518
 msgid "\"man\" system call failed"
 msgstr "Wywo³anie \"man\" nie powiod³o siê"
 
-#: man.cpp:528
+#: man.cpp:536
 msgid "Opening temporary file failed"
 msgstr "Otwarcie pliku tymczasowego nie powiod³o siê"
 

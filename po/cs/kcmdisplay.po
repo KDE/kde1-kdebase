@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
-"POT-Creation-Date: 1999-02-06 01:16+0100\n"
+"POT-Creation-Date: 1999-03-21 01:19+0100\n"
 "PO-Revision-Date: 1999-01-22 23:31+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -438,31 +438,31 @@ msgstr "&Menu na vrchu pracovní plochy ve stylu MacOSu"
 msgid "&Apply fonts and colors to non-KDE apps"
 msgstr "&Aplikovat písma a barvy na aplikace nepatøící do KDE"
 
-#: general.cpp:530
+#: general.cpp:529
 msgid "General font"
 msgstr "Obecná znaková sada"
 
-#: general.cpp:535
+#: general.cpp:534
 msgid "Fixed font"
 msgstr "Fixovaná znaková sada"
 
-#: general.cpp:541
+#: general.cpp:540
 msgid "Window title font"
 msgstr "Font titulku okna"
 
-#: general.cpp:546
+#: general.cpp:545
 msgid "Panel button font"
 msgstr "Znaková sada tlaèítek Panelu"
 
-#: general.cpp:551
+#: general.cpp:550
 msgid "Panel clock font"
 msgstr "Znaková sada hodin Panelu"
 
-#: general.cpp:581
+#: general.cpp:580
 msgid "Sample text"
 msgstr "Vzorový text"
 
-#: general.cpp:589
+#: general.cpp:588
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"

@@ -174,5 +174,3 @@ msgstr "Aller vers"
 #: taskmgr.C:121
 msgid "Current session"
 msgstr "Session courante"
-
-

@@ -14,6 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 
 #: kstart.C:116
+#, c-format
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"

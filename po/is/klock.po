@@ -3,52 +3,52 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1998-12-17 22:28+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: ia <kde-isl@mmedia.is>\n"
 
-#: attraction.cpp:716
+#: attraction.cpp:718
 msgid "Attraction"
 msgstr "Aðdráttur"
 
-#: attraction.cpp:803
+#: attraction.cpp:805
 msgid "Setup KAttraction"
 msgstr "Stilla KAðdrátt"
 
-#: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
+#: attraction.cpp:817 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
 msgstr "Fjöldi:"
 
-#: attraction.cpp:829 science.cpp:993 slidescreen.cpp:493
+#: attraction.cpp:831 science.cpp:993 slidescreen.cpp:493
 msgid "Mode:"
 msgstr "Hamur:"
 
-#: attraction.cpp:834 slidescreen.cpp:498
+#: attraction.cpp:836 slidescreen.cpp:498
 msgid "Balls"
 msgstr "Boltar"
 
-#: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
+#: attraction.cpp:837 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
 msgstr "Línur"
 
-#: attraction.cpp:836 polygon.cpp:64 slidescreen.cpp:500
+#: attraction.cpp:838 polygon.cpp:64 slidescreen.cpp:500
 msgid "Polygons"
 msgstr "Marghyrningar"
 
-#: attraction.cpp:837 slidescreen.cpp:501
+#: attraction.cpp:839 slidescreen.cpp:501
 msgid "Tails"
 msgstr "Skott"
 
-#: attraction.cpp:850 slidescreen.cpp:514
+#: attraction.cpp:852 slidescreen.cpp:514
 msgid "Glow"
 msgstr "Glóð"
 
-#: attraction.cpp:951
+#: attraction.cpp:953
 msgid "About Attraction"
 msgstr "Um aðdrátt"
 
-#: attraction.cpp:952
+#: attraction.cpp:954
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -182,23 +182,23 @@ msgstr "Slembið"
 msgid "Sorry. This screensaver needs a color display"
 msgstr "Þetta skjáskraut þarf litaskjá"
 
-#: blob.cpp:458
+#: blob.cpp:461
 msgid "Setup Blob Saver"
 msgstr "Stilla klessuskreytingu"
 
-#: blob.cpp:468
+#: blob.cpp:471
 msgid "Frame Show sec."
 msgstr "Rammar á sek."
 
-#: blob.cpp:480
+#: blob.cpp:483
 msgid "Algorithm"
 msgstr "Reiknirit"
 
-#: blob.cpp:570
+#: blob.cpp:573
 msgid "About Blob"
 msgstr "Um slessu"
 
-#: blob.cpp:571
+#: blob.cpp:574
 msgid ""
 "Blobsaver Version 0.1\n"
 "\n"
@@ -210,7 +210,7 @@ msgstr ""
 "Skrifað af Tiaan Wessels 1997\n"
 "tiaan@netsys.co.za"
 
-#: blob.cpp:606
+#: blob.cpp:609
 msgid "Blobs"
 msgstr "Klessur"
 
@@ -486,7 +486,7 @@ msgstr ""
 "Ekki nota -test með -lock.\n"
 "Notaðu frekar klock.\n"
 
-#: main.cpp:580
+#: main.cpp:586
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -495,7 +495,7 @@ msgstr ""
 "Notkun: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "        [-corners xxxx] [-delay tala] [-lock] [-allow-root] [-nice tala]\n"
 
-#: main.cpp:583
+#: main.cpp:589
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.6\n"
-"POT-Creation-Date: 1999-02-02 01:17+0100\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -21,7 +21,7 @@ msgstr "KDE pomocník: Otvori» URL"
 msgid "Open URL"
 msgstr "Otvori» URL"
 
-#: helpwin.cpp:459 info.cpp:290
+#: helpwin.cpp:459 info.cpp:321
 msgid "Cannot open: "
 msgstr "Nemô¾em otvori»: "
 
@@ -57,16 +57,16 @@ msgstr "Prida» zálo¾ku"
 msgid "Open in new Window"
 msgstr "Otvori» v novom okne"
 
-#: info.cpp:97 info.cpp:617
+#: info.cpp:113 info.cpp:641
 msgid "Error in info file"
 msgstr "Chyba v \"info\" súbore"
 
-#: info.cpp:1260
+#: info.cpp:1284
 #, c-format
 msgid "Node not found: %s"
 msgstr "Nena¹iel som uzol %s"
 
-#: info.cpp:1405
+#: info.cpp:1429
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Nemô¾em otvori» info súbor %s"
@@ -131,7 +131,7 @@ msgstr "Nastavenie pomocníka KDE"
 msgid "Colors"
 msgstr "Farby"
 
-#: man.cpp:55 man.cpp:445
+#: man.cpp:55 man.cpp:453
 msgid "Online Manuals"
 msgstr "Online manuály"
 
@@ -177,19 +177,19 @@ msgstr "Administrácia systému"
 msgid "New"
 msgstr "Nová"
 
-#: man.cpp:271
+#: man.cpp:279
 msgid "Reading Dir: "
 msgstr "Èítam prieèinok: "
 
-#: man.cpp:435
+#: man.cpp:443
 msgid "Online Manual - Section"
 msgstr "Online manuál - Sekcie"
 
-#: man.cpp:501 man.cpp:510
+#: man.cpp:509 man.cpp:518
 msgid "\"man\" system call failed"
 msgstr "\"man\" systémové volanie neúspe¹né"
 
-#: man.cpp:528
+#: man.cpp:536
 msgid "Opening temporary file failed"
 msgstr "Otváranie pomocného súboru neúspe¹né"
 

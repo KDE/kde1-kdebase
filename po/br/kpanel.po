@@ -1,5 +1,4 @@
 # KTranslator Generated File
-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -8,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
 "PO-Revision-Date: 1999-02-01 00:21+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -52,19 +51,19 @@ msgstr "Kuzhat ar banell"
 msgid "Show the panel"
 msgstr "Diskouez ar banell"
 
-#: kpanel.C:1108
+#: kpanel.C:1067
 msgid "Iconify other &windows"
 msgstr "Arlunañ ar &prenester all"
 
-#: kpanel.C:1245
+#: kpanel.C:1204
 msgid "No comment available"
 msgstr "Askelenn hegerz ebet"
 
-#: kpanel.C:1254 tools.C:910
+#: kpanel.C:1213 tools.C:910
 msgid "Windowlist"
 msgstr "Roll prenester"
 
-#: kpanel.C:1262 props.C:197
+#: kpanel.C:1221 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Merdeiñ buan a-dreuz ar reizhiad restroù"
 
@@ -92,7 +91,7 @@ msgstr "Ouzhpennañ ur roll prenester"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Ouzhpennañ ur roll prenester war ar banell"
 
-#: events.C:832 props.C:183
+#: events.C:851 props.C:183
 msgid "Configure"
 msgstr "Kefluniañ"
 
@@ -108,7 +107,7 @@ msgstr "Aozañ lañserioù"
 msgid "Add or remove applications in the menu structure "
 msgstr "Ouzhpennañ pe lemel arloadoù e framm al lañser"
 
-#: events.C:834 props.C:189
+#: events.C:853 props.C:189
 msgid "Restart"
 msgstr "Adloc'hañ"
 
@@ -132,7 +131,7 @@ msgstr "Prennañ ar skramm"
 msgid "The menu editor is not installed."
 msgstr "An aozer lañser n'eo ket staliet"
 
-#: events.C:888 props.C:452
+#: events.C:908 props.C:452
 msgid "Oops!"
 msgstr "Opala !"
 
@@ -148,7 +147,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "KDiskNavigator"
 
-#: events.C:887
+#: events.C:907
 msgid "Cannot put this as button onto the panel!"
 msgstr "N'hallan ket lakaat se da nozelenn war ar banell"
 

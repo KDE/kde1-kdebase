@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
-"POT-Creation-Date: 1999-02-06 01:16+0100\n"
+"POT-Creation-Date: 1999-03-21 01:19+0100\n"
 "PO-Revision-Date: 1999-01-15 02:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -471,33 +471,33 @@ msgstr "Меню наверху экрана, как в MacOS"
 msgid "&Apply fonts and colors to non-KDE apps"
 msgstr "Применять шрифты и цвета к приложениям не из KDE"
 
-#: general.cpp:530
+#: general.cpp:529
 msgid "General font"
 msgstr "Общий шрифт"
 
-#: general.cpp:535
+#: general.cpp:534
 msgid "Fixed font"
 msgstr "Фиксированный шрифт"
 
-#: general.cpp:541
+#: general.cpp:540
 msgid "Window title font"
 msgstr "Шрифт заголовка"
 
 #
-#: general.cpp:546
+#: general.cpp:545
 msgid "Panel button font"
 msgstr "Шрифт кнопок панели"
 
-#: general.cpp:551
+#: general.cpp:550
 msgid "Panel clock font"
 msgstr "Шрифт часов панели"
 
 #
-#: general.cpp:581
+#: general.cpp:580
 msgid "Sample text"
 msgstr "Текст примера"
 
-#: general.cpp:589
+#: general.cpp:588
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
