@@ -47,15 +47,15 @@ msgstr "&Rohkem ..."
 
 #: main.C:322
 msgid "&Hide"
-msgstr "&Peida"
+msgstr "&Peidetud"
 
 #: main.C:323
 msgid "&Left"
-msgstr "&Vasak"
+msgstr "&Vasakul"
 
 #: main.C:324
 msgid "&Right"
-msgstr "P&arem"
+msgstr "P&aremal"
 
 #: main.C:329
 msgid "40x15 (&small)"

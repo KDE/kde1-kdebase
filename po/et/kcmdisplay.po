@@ -359,15 +359,15 @@ msgstr ""
 
 #: scrnsave.cpp:47
 msgid "Ignore"
-msgstr "Ignoreeri"
+msgstr "Tühista (tegevus puudub)"
 
 #: scrnsave.cpp:48
 msgid "Save Screen"
-msgstr "Salvesta ekraan"
+msgstr "Ekraanisäästja sisse lülitamine"
 
 #: scrnsave.cpp:49
 msgid "Lock Screen"
-msgstr "Lukusta ekraan"
+msgstr "Ekraani lukustamine"
 
 #: scrnsave.cpp:112 scrnsave.cpp:181
 msgid "Screen Saver"
@@ -375,7 +375,7 @@ msgstr "Ekraanisäästja"
 
 #: scrnsave.cpp:188 scrnsave.cpp:382 scrnsave.cpp:623 scrnsave.cpp:744
 msgid "No screensaver"
-msgstr "Ekraanisäästjat pole"
+msgstr "Ekraanisäästja puudub"
 
 #: scrnsave.cpp:209
 msgid "&Setup ..."

@@ -126,8 +126,8 @@ msgid ""
 "Sorry ! You have to save your changes\n"
 "before you can drop this item on another window."
 msgstr ""
-"Vabandust! Enne pead sa salvestama muudatused\n"
-"kui tahad elemente lohistada teise aknasse."
+"Vabandust! Enne elementide lohistamist teise\n"
+"aknasse pead sa salvestama muudatused."
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
@@ -248,7 +248,7 @@ msgstr "FS tüüp:"
 
 #: entrydialog.cpp:435
 msgid "Unmount Icon:"
-msgstr "Lahti ühendatud ikoon:"
+msgstr "Ikoon lahti ühendatud seadmele:"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"

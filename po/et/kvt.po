@@ -15,7 +15,7 @@ msgstr ""
 
 #: main.C:426
 msgid "choose type of color-mode"
-msgstr "vali värvireziimi tüüp"
+msgstr "Vali värvireziimi tüüp"
 
 #: main.C:432
 msgid "Add characters to word class"
@@ -35,15 +35,15 @@ msgstr "&Uus terminal"
 
 #: main.C:620 main.C:1043
 msgid "&Hide"
-msgstr "&Peida"
+msgstr "&Peidetud"
 
 #: main.C:621
 msgid "&Left"
-msgstr "&Vasak"
+msgstr "&Vasakul"
 
 #: main.C:622
 msgid "&Right"
-msgstr "&Parem"
+msgstr "&Paremal"
 
 #: main.C:627
 msgid "&Normal"

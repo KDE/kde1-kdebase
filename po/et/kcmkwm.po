@@ -24,7 +24,7 @@ msgstr "&Tiitliriba"
 
 #: main.cpp:73
 msgid "Bo&rders"
-msgstr "&Ääred"
+msgstr "&Piirded"
 
 #: main.cpp:76
 msgid "&Mouse"
@@ -119,7 +119,7 @@ msgstr "Aktiivsel tiitlil on varjutatud raam"
 
 #: titlebar.cpp:1046
 msgid "Active pixmap:"
-msgstr "Aktiivse pixelraster:"
+msgstr "Aktiivse pikselraster:"
 
 #: titlebar.cpp:1051
 msgid "Inactive pixmap:"

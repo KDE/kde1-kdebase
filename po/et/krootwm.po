@@ -23,7 +23,7 @@ msgstr "Lukusta ekraan"
 
 #: krootwm.C:237 krootwm.C:306
 msgid "Logout"
-msgstr "Logi välja"
+msgstr "Lõpeta sessioon"
 
 #: krootwm.C:245 krootwm.C:283
 msgid "Refresh desktop"

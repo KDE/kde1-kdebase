@@ -31,7 +31,7 @@ msgstr "Info puudub"
 
 #: kpanel.C:458 props.C:207 props.C:208
 msgid "Logout"
-msgstr "Logi välja"
+msgstr "Lõpeta sessioon"
 
 #: kpanel.C:466 props.C:206
 msgid "Lock screen"
@@ -139,7 +139,7 @@ msgstr "KDiskNavigator"
 
 #: events.C:916
 msgid "Cannot put this as button onto the panel!"
-msgstr "Seda nupu pole võimalik asetada paneelile!"
+msgstr "Seda nupu pole võimalik paneelile asetada!"
 
 #: pfilemenu.C:425
 msgid "(empty folder)"
@@ -196,9 +196,3 @@ msgstr "Valikud..."
 #: pfilemenu.C:843
 msgid "Customize Disk Navigator"
 msgstr "Kohanda ketta navigaatorit"
-
-#~ msgid "Where do you want to go tomorrow?"
-#~ msgstr "Kuhu sa soovid homme suunduda?"
-
-#~ msgid "No comment available"
-#~ msgstr "Kommentaar puudub"

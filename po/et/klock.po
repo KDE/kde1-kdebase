@@ -15,11 +15,11 @@ msgstr ""
 
 #: attraction.cpp:718
 msgid "Attraction"
-msgstr "Atraktsioon"
+msgstr "Attraction"
 
 #: attraction.cpp:813
 msgid "Setup KAttraction"
-msgstr "KAtraktsiooni seadistus"
+msgstr "KAttraction seadistus"
 
 #: attraction.cpp:825 pyro.cpp:537 rock.cpp:583 slidescreen.cpp:510
 msgid "Number:"
@@ -51,7 +51,7 @@ msgstr "Helendus"
 
 #: attraction.cpp:961
 msgid "About Attraction"
-msgstr "Atraktsiooni info"
+msgstr "Attraction info"
 
 #: attraction.cpp:962
 msgid ""
@@ -128,11 +128,11 @@ msgstr "KDE on suurepärane"
 
 #: bat.cpp:462
 msgid "Bat"
-msgstr "Nahkhiir"
+msgstr "Bat"
 
 #: bat.cpp:545
 msgid "Setup KBat"
-msgstr "Nahkhiire seadistus"
+msgstr "KBat seadistus"
 
 #: bat.cpp:572
 msgid "Number of bats:"
@@ -140,7 +140,7 @@ msgstr "Nahkhiirte arv:"
 
 #: bat.cpp:669
 msgid "About Bat"
-msgstr "Nahkhiire info"
+msgstr "Bat'i info"
 
 #: bat.cpp:670
 msgid ""
@@ -190,7 +190,7 @@ msgstr "Vabandust. See ekraanisäästja vajab värvilist ekraani"
 
 #: blob.cpp:461
 msgid "Setup Blob Saver"
-msgstr "Piisad seadistus"
+msgstr "Blob seadistus"
 
 #: blob.cpp:471
 msgid "Frame Show sec."
@@ -202,7 +202,7 @@ msgstr "Algoritm"
 
 #: blob.cpp:573
 msgid "About Blob"
-msgstr "Piisad info"
+msgstr "Blob info"
 
 #: blob.cpp:574
 msgid ""
@@ -218,7 +218,7 @@ msgstr ""
 
 #: blob.cpp:609
 msgid "Blobs"
-msgstr "Piisad"
+msgstr "Blobs"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
@@ -264,15 +264,15 @@ msgstr ""
 
 #: bsod.cpp:1192
 msgid "Black Screen of Death"
-msgstr "Surma must ekraan"
+msgstr "Blank Screen of Death"
 
 #: flame.cpp:310
 msgid "Flame"
-msgstr "Leek"
+msgstr "Flame"
 
 #: flame.cpp:405
 msgid "Setup KFlame"
-msgstr "KLeegi seadistus"
+msgstr "KFlame seadistus"
 
 #: flame.cpp:431
 msgid "Max Levels:"
@@ -284,7 +284,7 @@ msgstr "Punktide arv:"
 
 #: flame.cpp:559
 msgid "About Flame"
-msgstr "Leegi info"
+msgstr "Flame info"
 
 #: flame.cpp:560
 msgid ""
@@ -302,11 +302,11 @@ msgstr ""
 
 #: forest.cpp:206
 msgid "Forest"
-msgstr "Mets"
+msgstr "Forest"
 
 #: forest.cpp:286
 msgid "Setup KForest"
-msgstr "KMets seadistus"
+msgstr "KForest seadistus"
 
 #: forest.cpp:312
 msgid "Num of Trees:"
@@ -314,7 +314,7 @@ msgstr "Puude arv:"
 
 #: forest.cpp:407
 msgid "About Forest"
-msgstr "Metsa info"
+msgstr "Forest info"
 
 #: forest.cpp:408
 msgid ""
@@ -332,11 +332,11 @@ msgstr ""
 
 #: hop.cpp:226
 msgid "Hop"
-msgstr "Hüpe"
+msgstr "Hop"
 
 #: hop.cpp:319
 msgid "Setup KHop"
-msgstr "KHüpe seadistus"
+msgstr "KHop seadistus"
 
 #: hop.cpp:345
 msgid "Samecolor Pixels:"
@@ -370,7 +370,7 @@ msgstr "Laser"
 
 #: laser.cpp:401
 msgid "Setup KLaser"
-msgstr "Klaser seadistus"
+msgstr "KLaser seadistus"
 
 #: laser.cpp:490
 msgid "About Laser"
@@ -392,7 +392,7 @@ msgstr ""
 
 #: lines.cpp:142
 msgid "Setup klines"
-msgstr "Kjooned seadistus"
+msgstr "Klines seadistus"
 
 #: lines.cpp:150 polygon.cpp:101
 msgid "Length:"
@@ -412,7 +412,7 @@ msgstr "Lõpp:"
 
 #: lines.cpp:302
 msgid "About Lines"
-msgstr "Jooned info"
+msgstr "Lines info"
 
 #: lines.cpp:303
 msgid ""
@@ -523,7 +523,7 @@ msgid ""
 msgstr ""
 "  -corners xxxx     Kursori asetamine nurka tekitab järgneva:\n"
 "                     x = i  tegevus puudub (ignoreeri)\n"
-"                     x = s  salvesta ekraan\n"
+"                     x = s  lülita sisse ekraanisäästja\n"
 "                     x = l  lukusta ekraan\n"
 "                    järjekord: ülal-vasakul, ülal-paremal, all-vasakul, "
 "all-paremal\n"
@@ -576,11 +576,11 @@ msgstr ""
 
 #: pipes.cpp:299
 msgid "Pipes (GL)"
-msgstr "Torud (GL)"
+msgstr "Pipes (GL)"
 
 #: pipes.cpp:680
 msgid "Setup KPipes"
-msgstr "KTorud seadistus"
+msgstr "KPipes seadistus"
 
 #: pipes.cpp:686
 msgid "Number of Pipes"
@@ -588,7 +588,7 @@ msgstr "Torude arv"
 
 #: pipes.cpp:751
 msgid "About KPipes"
-msgstr "KTorud info"
+msgstr "KPipes info"
 
 #: pipes.cpp:753
 msgid ""
@@ -602,7 +602,7 @@ msgstr ""
 
 #: polygon.cpp:93
 msgid "Setup kpolygon"
-msgstr "KPolügon seadistus"
+msgstr "KPolygon seadistus"
 
 #: polygon.cpp:115
 msgid "Vertices:"
@@ -610,7 +610,7 @@ msgstr "Tipud:"
 
 #: polygon.cpp:246
 msgid "About Polygon"
-msgstr "Polügon info"
+msgstr "Polygon info"
 
 #: polygon.cpp:247
 msgid ""
@@ -626,19 +626,19 @@ msgstr ""
 
 #: pyro.cpp:439
 msgid "Pyro"
-msgstr "Püro"
+msgstr "Pyro"
 
 #: pyro.cpp:525
 msgid "Setup KPyro"
-msgstr "KPüro seadistus"
+msgstr "KPyro seadistus"
 
 #: pyro.cpp:551
 msgid "Cloud"
-msgstr "Pilv"
+msgstr "Cloud"
 
 #: pyro.cpp:637
 msgid "About Pyro"
-msgstr "Püro info"
+msgstr "Pyro info"
 
 #: pyro.cpp:638
 msgid ""
@@ -656,11 +656,11 @@ msgstr ""
 
 #: rock.cpp:441
 msgid "Rock"
-msgstr "Kivi"
+msgstr "Rock"
 
 #: rock.cpp:557
 msgid "Setup krock"
-msgstr "KKivi seadistus"
+msgstr "KRock seadistus"
 
 #: rock.cpp:597
 msgid "Move"
@@ -672,7 +672,7 @@ msgstr "Keeruta"
 
 #: rock.cpp:727
 msgid "About Rock"
-msgstr "Kivi info"
+msgstr "Rock info"
 
 #: rock.cpp:728
 msgid ""
@@ -722,7 +722,7 @@ msgstr "Kõverdumine"
 
 #: science.cpp:112
 msgid "Science"
-msgstr "Teadus"
+msgstr "Science"
 
 #: science.cpp:504
 msgid "rendering lens..."
@@ -734,11 +734,11 @@ msgstr "ekraani grabimine..."
 
 #: science.cpp:988
 msgid "Setup Science"
-msgstr "Teaduse seadistus"
+msgstr "Science seadistus"
 
 #: science.cpp:1021
 msgid "Inverse"
-msgstr "Vastupidi"
+msgstr "Vastupidine"
 
 #: science.cpp:1031
 msgid "Gravity"
@@ -766,7 +766,7 @@ msgstr "kirjutanud"
 
 #: science.cpp:1319
 msgid "About Science"
-msgstr "Teadus info"
+msgstr "Science info"
 
 #: slidescreen.cpp:427
 msgid "SlideScreen"
@@ -800,11 +800,11 @@ msgstr ""
 
 #: slip.cpp:293
 msgid "Slip"
-msgstr "Libistamine"
+msgstr "Slip"
 
 #: slip.cpp:374
 msgid "Setup KSlip"
-msgstr "KLibisatmine seadistus"
+msgstr "KSlip seadistus"
 
 #: slip.cpp:400
 msgid "Batchcount:"
@@ -830,11 +830,11 @@ msgstr ""
 
 #: space.cpp:491
 msgid "Space (GL)"
-msgstr "Kosmos (GL)"
+msgstr "Space (GL)"
 
 #: space.cpp:589
 msgid "Setup KSpace"
-msgstr "KKosmos seadistus"
+msgstr "KSpace seadistus"
 
 #: space.cpp:605
 msgid "Warp Interval:"
@@ -842,7 +842,7 @@ msgstr "Kooldumise intervall:"
 
 #: space.cpp:693
 msgid "About KSpace"
-msgstr "KKosmos info"
+msgstr "KSpace info"
 
 #: space.cpp:695
 msgid ""
@@ -856,11 +856,11 @@ msgstr ""
 
 #: swarm.cpp:257
 msgid "Swarm"
-msgstr "Mesilasparv"
+msgstr "Swarm"
 
 #: swarm.cpp:337
 msgid "Setup KSwarm"
-msgstr "KMesilasparv seadistus"
+msgstr "KSwarm seadistus"
 
 #: swarm.cpp:363
 msgid "Number of Bees:"
@@ -868,7 +868,7 @@ msgstr "Mesilaste arv:"
 
 #: swarm.cpp:458
 msgid "About Swarm"
-msgstr "Mesilasparv info"
+msgstr "Swarm info"
 
 #: swarm.cpp:459
 msgid ""
