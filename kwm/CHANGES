@@ -15,6 +15,7 @@ patchlevel 3:
         - "snap to border" and "snap to window" modified: they are
            working in "real time", now. The default is 10 pixel for
            both. This made my older edge resitance obsolete (removed)
+         - doNotManage understands regular expressions
 
 patchlevel 2:
 	- fixed a bunch of bugs with smart placement, cascade placement,

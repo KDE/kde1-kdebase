@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <X11/cursorfont.h>
+#include <qregexp.h>
 
 #include <kwm.h>
 
@@ -1461,10 +1462,13 @@ void Manager::manage(Window w, bool mapped){
 
   // test for manage prohibitation
   if (!mapped) {
+    QString t = getprop(w, XA_WM_NAME);
     char* s;
+    QRegExp r;
     for (s = do_not_manage_titles.first(); s ; 
 	 s = do_not_manage_titles.next()){
-      if (getprop(w, XA_WM_NAME) == s){
+      r = s;
+      if (r.match(s) != -1){
 	do_not_manage_titles.remove();
 	sendToModules(module_win_add, 0, w);
 	sendToModules(module_win_remove, 0, w);
