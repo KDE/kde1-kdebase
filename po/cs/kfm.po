@@ -129,7 +129,7 @@ msgstr "O&bnov Strom"
 
 #: kfmgui.cpp:???
 msgid "View Docu&ment Source"
-msgstr "Zobraz zrdoj doku&mentu"
+msgstr "Zobraz zdroj doku&mentu"
 
 #: kfmgui.cpp:???
 msgid "&Options"
@@ -306,7 +306,7 @@ msgstr ""
 
 #: kfmexec.cpp:220 kfmman.cpp:724 kfmview.cpp:337
 msgid "Open With:"
-msgstr "Otevøi s:"
+msgstr "Otevøi pomocí:"
 
 #: kfmview.cpp:382 root.cpp:794
 msgid "ERROR: Can not open properties for multiple files"

@@ -15,7 +15,7 @@ msgid " Date Modified "
 msgstr "Poslední zmìna"
 
 #: kftabdlg.cpp:94
-msgid " Name&Location "
+msgid " Name& Location "
 msgstr "Název a umístìní"
 
 #: kfwin.cpp:104
