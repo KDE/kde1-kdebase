@@ -1,5 +1,5 @@
 # Polish translation of KDE kvt
-# Version 0.1.3
+# Version 0.1.4
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 
 msgid "The backspace key will send a"
@@ -10,6 +10,12 @@ msgstr "&Spis tre¶ci"
 
 msgid "&About Qt..."
 msgstr "Qt - &informacje"
+
+msgid "About "
+msgstr "Informacje o "
+
+msgid "About KDE"
+msgstr "&Informacje o KDE..."
 
 
 #: main.C:220

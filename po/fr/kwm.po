@@ -1,75 +1,111 @@
-#: main.C:64
 msgid ""
-"kwm: it looks like there's already a window manager running.  kwm not "
-"started\n"
 msgstr ""
-"kwm: un autre gestionnaire de fenêtres semble être en fonction. kwm n'as pas "
-"été lancé\n"
+"Date: 1997-11-16 13:40:09+0100\n"
+"From: didier Belot <dib@avo.fr>\n"
+"Content-Type: text/plain; charset=\n"
+"Xgettext-Options: --keyword=translate\n"
+"Files: changer.C client.C drag.C logout.C main.C manager.C minicli.C taskmgr.C kURLcompletion.cpp client.h kURLcompletion.h logout.h main.h manager.h minicli.h options.h taskmgr.h version.h\n"
 
-#: main.C:78
+#: logout.C:35 taskmgr.C:36
+msgid "Logout"
+msgstr "Quitter KDE"
+
+#: logout.C:36 taskmgr.C:37
+msgid "Cancel"
+msgstr "Annuler"
+
+#: logout.C:45
+msgid "Session prepared for logout"
+msgstr "Session préparée pour quitter"
+
+#: logout.C:51
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+"Les applications suivantes contiennent des données non enregistrées\n"
+"qui seront perdues lors de votre prochaine session."
+
+#: logout.C:62
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+"Les applications suivantes ne seront pas restaurées lors de votre prochaine\n"
+"session, seulement relancées. Assurez-vous qu'elles ne contiennent pas de\n"
+"données importantes non enregistrées."
+
+#: logout.C:73
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+"Les applications suivantes ne sont pas conforme à X11 et ne pourront donc\n"
+"être restaurées lors de votre prochaine session. Assurez-vous qu'elles ne\n"
+"contiennent pas de données importantes non enregistrées."
+
+
+#: main.C:65
+msgid "kwm: it looks like there's already a window manager running.  kwm not started\n"
+msgstr "kwm: un autre gestionnaire de fenêtres semble être en fonction.\n"
+"kwm n'as pas été lancé\n"
+
+
+#: main.C:79
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: érreur pendant l'initialisation; commande annulée\n"
+msgstr "kwm: erreur pendant l'initialisation; abandon\n"
 
-#: main.C:369
+#: main.C:367
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr "Touts droits réservés (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:376
+#: main.C:374
 msgid "Usage: "
-msgstr "Utilisation:"
+msgstr "Utilisation: "
+
+#: main.C:385
+msgid "&Maximize"
+msgstr "&Maximiser"
+
+#: main.C:386
+msgid "&Restore"
+msgstr "Res&taurer"
 
 #: main.C:387
-#, fuzzy
-msgid "&Maximize"
-msgstr "Maximer"
+msgid "&Iconify"
+msgstr "&Mettre en icône"
 
 #: main.C:388
-#, fuzzy
-msgid "&Restore"
-msgstr "Restaurer"
+msgid "&DeIconify"
+msgstr "&Rétablir"
 
 #: main.C:389
-msgid "&Iconify"
-msgstr "&Iconifier"
+msgid "&Sticky"
+msgstr "Fi&xer"
 
 #: main.C:390
-#, fuzzy
-msgid "&DeIconify"
-msgstr "DeIconifier"
+msgid "&UnSticky"
+msgstr "&Libérer"
 
 #: main.C:391
-#, fuzzy
-msgid "&Sticky"
-msgstr "Clouer"
+msgid "Mo&ve"
+msgstr "Dé&placer"
 
 #: main.C:392
-#, fuzzy
-msgid "&UnSticky"
-msgstr "DéClour"
+msgid "Resi&ze"
+msgstr "Redi&mensionner"
 
 #: main.C:393
-#, fuzzy
-msgid "Mo&ve"
-msgstr "Déplacer"
-
-#: main.C:394
-#, fuzzy
-msgid "Resi&ze"
-msgstr "Dimensionner"
-
-#: main.C:395
 msgid "&Close"
 msgstr "&Fermer"
 
-#: main.C:396
-#, fuzzy
+#: main.C:394
 msgid "&To desktop"
-msgstr "Sur Bureau"
+msgstr "&Vers le bureau"
 
-#: main.C:398
-#, fuzzy
+#: main.C:396
 msgid "&Onto current desktop"
-msgstr "Sur cu bureau "
+msgstr "&Sur le bureau actuel"
 
 #: main.C:446
 msgid "One"
@@ -85,7 +121,7 @@ msgstr "Trois"
 
 #: main.C:455
 msgid "Four"
-msgstr "Quatres"
+msgstr "Quatre"
 
 #: main.C:458
 msgid "Five"
@@ -93,7 +129,7 @@ msgstr "Cinq"
 
 #: main.C:461
 msgid "Six"
-msgstr "Six"
+msgstr ""
 
 #: main.C:464
 msgid "Seven"
@@ -103,119 +139,18 @@ msgstr "Sept"
 msgid "Eight"
 msgstr "Huit"
 
-#: main.C:852
+#: main.C:872
 msgid "*** No Tasks ***"
-msgstr "*** Pas d'application ***"
+msgstr "*** Aucune tâche ***"
 
-#: minicli.C:56
+#: minicli.C:115
 msgid "Command:"
-msgstr "Commande:"
+msgstr "Commande: "
 
-#: logout.C:35 task.C:36
-msgid "Logout"
-msgstr "Quitter"
-
-#: logout.C:45
-msgid "Session prepared for logout"
-msgstr "Session préparée pour quitter"
-
-#: logout.C:51
-msgid ""
-"The following applications contain unsaved data which\n"
-"will be lost in your next session."
-msgstr ""
-"Les applications suivantes détiennes des fichier non sauveguardés\n"
-"qui vont êtres perdus dans votre prochaine session."
-
-#: logout.C:62
-msgid ""
-"The following applications cannot be restored in your next session,\n"
-"only restarted. Make sure they do not contain important unsaved data."
-msgstr ""
-"Les applications suivantes ne pourront pas êtres restaurées dans votre\n"
-"prochaine session de travail, mais relancé. Veuillez vous assurer qu'elles\n"
-"ne détiennent pas des fichiers importants non sauveguardés."
-
-#: logout.C:73
-msgid ""
-"The following applications are not X11-aware and though cannot be restored\n"
-"in your next session. Make sure they do not contain important unsaved data."
-msgstr ""
-"Les applications suivantes ne sont pas conforme á X11 et ne pourront donc\n"
-"être restaurées dans votre prochaine session de travail. Veuillez vous\n"
-"assurer qu'elles ne contiennes pas des fichiers importants non sauveguardés."
-
-#: task.C:35
+#: taskmgr.C:35
 msgid "Switch to"
-msgstr "Changer à"
+msgstr "Changer pour"
 
-#: task.C:49
+#: taskmgr.C:49
 msgid "Current session"
 msgstr "Session actuelle"
-
-#~ msgid "Iconify"
-#~ msgstr "Iconifier"
-
-#~ msgid ""
-#~ "kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-#~ "     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-#~ "     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-#~ "     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-#~ "     No warranty. Please see the README's\n"
-#~ msgstr ""
-#~ "kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-#~ "     basée sur version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-#~ "     basée sur version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-#~ "     Parties derivées de 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-#~ "     Sans garanties. Veuillez lire les fichiers README\n"
-
-#~ msgid "patch level %d"
-#~ msgstr "Sous-version %d"
-
-#~ msgid "usage: kwm [-version] [-exec prog] \n"
-#~ msgstr "utilisation: kwm [-version] [-exec programme] \n"
-
-#~ msgid "Desktop"
-#~ msgstr "Bureau"
-
-#~ msgid "kwm: exiting on signal\n"
-#~ msgstr "kwm: sortie au signal\n"
-
-#~ msgid "&Help on desktop"
-#~ msgstr "&Aide sur le Bureau"
-
-#~ msgid "&Execute command"
-#~ msgstr "&Executer commande"
-
-#~ msgid "&Display properties"
-#~ msgstr "Propriétés d'&affichage"
-
-#~ msgid "&Refresh desktop"
-#~ msgstr "&Rafraichir le bureau"
-
-#~ msgid "&Arrange icons"
-#~ msgstr "&Disposer les icônes"
-
-#~ msgid "&Lock screen"
-#~ msgstr "&Vérouiller l'écran"
-
-#~ msgid "Lo&gout"
-#~ msgstr "&Quitter"
-
-#~ msgid "(Un) Ma&ximize"
-#~ msgstr "(Dé) Ma&ximiser"
-
-#~ msgid "&Move"
-#~ msgstr "&Déplacer"
-
-#~ msgid "&Resize"
-#~ msgstr "&Dimensionner"
-
-#~ msgid "(Un) &Sticky"
-#~ msgstr "(Dé) &Clouer"
-
-#~ msgid "&To Desktop"
-#~ msgstr "&Sur Bureau"
-
-#~ msgid "&Destroy"
-#~ msgstr "&Détruire"

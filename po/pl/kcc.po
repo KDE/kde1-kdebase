@@ -1,5 +1,5 @@
 # Polish translation of KDE kcc
-# Version 0.1.0
+# Version 0.1.1
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 
 msgid "About"
@@ -31,6 +31,24 @@ msgstr "Przywróæ ustawienia"
 
 msgid "Apply settings and exit"
 msgstr "Zastosuj ustawienia na wyj¶cie"
+
+msgid "Control Center"
+msgstr "Kontrola systemu"
+
+msgid "Default Module"
+msgstr "Modu³ standardowy"
+
+msgid ""
+"Default Module\n"
+"\n"
+"by Markus Wuebben."
+msgstr ""
+"Modu³ standardowy\n"
+"\n"
+"napisa³ Markus Wuebben"
+
+msgid "The KDE Control Center default module"
+msgstr "Modu³ standardowy KDE Centrum Kontroli"
 
 #: background/backgnd.cpp:149 background/module.cpp:59 colors/module.cpp:44
 #: screensaver/module.cpp:45 style/module.cpp:48 titlebar/module.cpp:43
@@ -359,7 +377,7 @@ msgstr "Modu³ konfiguracji"
 
 #: kcc/main.cpp:46 kcc/mainwidget.cpp:17
 msgid "KDE Control Center"
-msgstr "KDE Centrum kontroli systemu"
+msgstr "KDE Centrum kontroli"
 
 #: kcc/main.cpp:71
 #, c-format

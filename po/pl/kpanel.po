@@ -1,6 +1,9 @@
 # Polish translation of KDE kpanel
-# Version 0.2.0
+# Version 0.2.1
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+
+msgid "Personal First"
+msgstr "Wpierw prywatne"
 
 #: kpanel.C:172
 msgid "Move"
@@ -73,7 +76,7 @@ msgstr "Od¶wie¿ panel"
 
 #: kpanel.C:659 props.C:297
 msgid "Panel"
-msgstr "&Panel"
+msgstr "Panel"
 
 #: kpanel.C:661
 msgid "Lock Screen"
