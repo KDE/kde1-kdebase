@@ -41,7 +41,7 @@ install-themes:
 	cd $(srcdir)/Themes; \
 	for f in *; do \
 	  if [ -d $$f -a $$f != "CVS" ]; then \
-	    tar --exclude CVS -c -f - $$f | gzip -c > $(THEMESDIR)/$$f.tar.gz; \
+	    $(TAR) --exclude CVS -c -f - $$f | gzip -c > $(THEMESDIR)/$$f.tar.gz; \
 	  fi; \
 	done
 
