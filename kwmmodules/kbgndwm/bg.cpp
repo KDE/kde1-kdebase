@@ -198,7 +198,8 @@ void KBackground::readSettings( const char *group )
      */
     if ( wallpaper != NO_WALLPAPER )
     {
-	name.sprintf( "%s_%d", wallpaper.data(), wpMode );
+	name.sprintf( "%s_%d_#%02x%02x%02x", wallpaper.data(), wpMode,
+	    color1.red(), color1.green(), color1.blue() );
 	hasPm = true;
     }
     else
