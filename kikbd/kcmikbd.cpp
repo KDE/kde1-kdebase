@@ -75,6 +75,8 @@ KiKbdApplication::KiKbdApplication(int &argc, char **argv)
 	startup = new KiKbdStartupWidget(dialog);
 	addPage(startup, i18n("Start&Up"), "");
 
+        // Needs to be done before showing the dialog, so that it shows with the
+        // correct title (KControl relies on that to swallow it)
         ((KControlApplication *)kapp)->setTitle(i18n("International Keyboard"));
 
 	dialog->show();
