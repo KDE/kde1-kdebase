@@ -24,3 +24,4 @@ democlient.cpp: democlient.moc
 democlient.moc: democlient.h
 	$(MOC) -o democlient.moc democlient.h
 
+messages:

@@ -8,3 +8,4 @@ LDADD   = $(all_libraries) -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_RPATH)
 bin_PROGRAMS    = kwmcom
 kwmcom_SOURCES = kwmcom.C 
 
+messages:

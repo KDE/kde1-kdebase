@@ -1,3 +1,4 @@
 
 SUBDIRS = kwmpager kbgndwm
 
+messages:

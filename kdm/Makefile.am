@@ -77,5 +77,6 @@ kgreeter.cpp: kgreeter.moc
 kgreeter.moc: kgreeter.h
 	$(MOC) kgreeter.h -o kgreeter.moc
 
-
+messages:
+	$(XGETTEXT) -C -ktranslate -x ../../kdelibs/po/kde.pot $(kdm_SOURCES) $(kdmdesktop_SOURCES) && mv messages.po ../po/kdm.pot
 

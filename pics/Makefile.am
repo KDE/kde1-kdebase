@@ -15,3 +15,5 @@ data_DATA =	3floppy_mount.xpm 3floppy_unmount.xpm 5floppy_mount.xpm \
 
 datadir = $(kde_icondir)
 SUBDIRS = toolbar wallpapers mini
+
+messages:
