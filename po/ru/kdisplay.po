@@ -1,126 +1,84 @@
-#: main.cpp:53
-msgid "KDE Display Configuration"
-msgstr "Конфигурация Дисплея KDE"
-
-#: main.cpp:130
-#, c-format
+# Локализация kdisplay.
+# Copyright (C) 1997 Free Software Foundation, Inc.
+# Denis Y. Pershin <dyp@siblug.org>, 1997.
+#
 msgid ""
-"Usage: %s -init|-setup\n"
-"\n"
 msgstr ""
-"Использование: %s -init|-setup\n"
-"\n"
+"Project-Id-Version: kdisplay 0.5.3\n"
+"POT-Creation-Date: 1997-12-14 20:07+0100\n"
+"PO-Revision-Date: 1997-09-05 02:51+0600\n"
+"Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
-#: main.cpp:131
-msgid "  -init               apply current settings to the display\n"
-msgstr "  -init               применить текущие установки к дисплею\n"
+#: backgnd.cpp:204 backgnd.cpp:239
+msgid "Desktop"
+msgstr ""
 
-#: main.cpp:132
-#, fuzzy
-msgid "  -setup              setup the display\n"
-msgstr " -setup              настроить дисплей\n"
+#: backgnd.cpp:249
+msgid "Rename..."
+msgstr ""
 
-#: backgnd.cpp:140 colorscm.cpp:293
-msgid "Background"
-msgstr "Фон"
-
-#: backgnd.cpp:165
+#: backgnd.cpp:255
 msgid "Color"
 msgstr "Цвет"
 
-#: backgnd.cpp:185
+#: backgnd.cpp:273
 msgid "Flat"
 msgstr "Флат"
 
-#: backgnd.cpp:189
+#: backgnd.cpp:277
 msgid "Gradient"
 msgstr "Градиент"
 
-#: backgnd.cpp:202
+#: backgnd.cpp:287
 msgid "Portrait"
 msgstr "В длину"
 
-#: backgnd.cpp:206
+#: backgnd.cpp:291
 msgid "Landscape"
 msgstr "В ширину"
 
-#: backgnd.cpp:224
+#: backgnd.cpp:298
 msgid "Wallpaper"
 msgstr "Обои"
 
-#: backgnd.cpp:257
+#: backgnd.cpp:331
 msgid "Tiled"
 msgstr "Черепицей"
 
-#: backgnd.cpp:261
+#: backgnd.cpp:335
 msgid "Centred"
 msgstr "В центре"
 
-#: backgnd.cpp:265
+#: backgnd.cpp:339
 msgid "Scaled"
 msgstr "Изменять размер"
 
-#: backgnd.cpp:272
+#: backgnd.cpp:345
 msgid "Browse..."
 msgstr "Просмотреть..."
 
-#: scrnsave.cpp:45
-msgid "Ignore"
-msgstr "Игнорировать"
+#: backgnd.cpp:489
+#, fuzzy
+msgid "Default"
+msgstr "KDE по умолчанию"
 
-#: scrnsave.cpp:47
-msgid "Lock"
-msgstr "Закрыть"
+#: backgnd.cpp:821
+msgid "Desktop Title"
+msgstr ""
 
-#: scrnsave.cpp:103 scrnsave.cpp:161
-msgid "Screen Saver"
-msgstr "Хранитель экрана"
-
-#: scrnsave.cpp:182
-msgid "Setup..."
-msgstr "Настроить..."
-
-#: scrnsave.cpp:186
-msgid "Test"
-msgstr "Тест"
-
-#: scrnsave.cpp:194
-msgid "Settings"
-msgstr "Установки"
-
-#: scrnsave.cpp:197
-msgid "Wait:"
-msgstr "Подождите:"
-
-#: scrnsave.cpp:208
-msgid "min"
-msgstr "min"
-
-#: scrnsave.cpp:211
-msgid "Requires Password"
-msgstr "Требуется пароль"
-
-#: scrnsave.cpp:216
-msgid "Priority:"
-msgstr "Приоритет:"
-
-#: colorscm.cpp:326 scrnsave.cpp:219
-msgid "High"
-msgstr "Высокий"
-
-#: colorscm.cpp:322 scrnsave.cpp:222
-msgid "Low"
-msgstr "Низкий"
-
-#: colorscm.cpp:139 colorscm.cpp:140
+#: colorscm.cpp:142 colorscm.cpp:143
 msgid "Inactive window"
 msgstr "Неактивное окно"
 
-#: colorscm.cpp:155 colorscm.cpp:156
+#: colorscm.cpp:158 colorscm.cpp:159
 msgid "Active window"
 msgstr "Активное окно"
 
-#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:298
+#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:300
 msgid "Window text"
 msgstr "Текст в окне"
 
@@ -132,71 +90,83 @@ msgstr "Запрещено"
 msgid "Selected"
 msgstr "Выбрано"
 
-#: colorscm.cpp:252 colorscm.cpp:262
+#: colorscm.cpp:252 colorscm.cpp:264
 msgid "Color Scheme"
 msgstr "Цветовая схема"
 
-#: colorscm.cpp:276
+#: colorscm.cpp:278
 msgid "Remove"
 msgstr "Удалить"
 
-#: colorscm.cpp:284
+#: colorscm.cpp:286
 msgid "Widget color"
 msgstr "Цвет управляющего элемента"
 
-#: colorscm.cpp:289
+#: colorscm.cpp:291
 msgid "Inactive title bar"
 msgstr "Неактивный заголовок (фон)"
 
-#: colorscm.cpp:290
+#: colorscm.cpp:292
 msgid "Inactive title text"
 msgstr "Неактивный заголовок"
 
-#: colorscm.cpp:291
+#: colorscm.cpp:293
 msgid "Active title bar"
 msgstr "Активный заголовок (фон)"
 
-#: colorscm.cpp:292
+#: colorscm.cpp:294
 msgid "Active title text"
 msgstr "Активный заголовок"
 
-#: colorscm.cpp:294
+#: colorscm.cpp:295
+msgid "Background"
+msgstr "Фон"
+
+#: colorscm.cpp:296
 msgid "Text"
 msgstr "Текст"
 
-#: colorscm.cpp:295
+#: colorscm.cpp:297
 msgid "Select background"
 msgstr "Выбранный фон"
 
-#: colorscm.cpp:296
+#: colorscm.cpp:298
 msgid "Select text"
 msgstr "Выбранный текст"
 
-#: colorscm.cpp:297
+#: colorscm.cpp:299
 msgid "Window background"
 msgstr "Фон окна"
 
-#: colorscm.cpp:309
+#: colorscm.cpp:311
 msgid "Contrast"
 msgstr "Котраст"
 
-#: colorscm.cpp:341
+#: colorscm.cpp:324 scrnsave.cpp:224
+msgid "Low"
+msgstr "Низкий"
+
+#: colorscm.cpp:328 scrnsave.cpp:221
+msgid "High"
+msgstr "Высокий"
+
+#: colorscm.cpp:343
 msgid "Save scheme"
 msgstr "Сохранить схему"
 
-#: colorscm.cpp:372 colorscm.cpp:380
+#: colorscm.cpp:374 colorscm.cpp:382
 msgid "You have chosen a name used by a supplied color scheme"
 msgstr "Вы выбрали уже используемое имя"
 
-#: colorscm.cpp:463
+#: colorscm.cpp:467
 msgid "KDE Default"
 msgstr "KDE по умолчанию"
 
-#: colorscm.cpp:687
+#: colorscm.cpp:693
 msgid "Display Setup"
 msgstr "Настройка дисплея"
 
-#: colorscm.cpp:688
+#: colorscm.cpp:694
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"
@@ -204,69 +174,139 @@ msgstr ""
 "Не найдено цветовых схем.\n"
 "Установить схемы по умолчанию ?"
 
+#: kwmcom.cpp:78 kwmcom.cpp:105
+msgid "kwmcom: communication with kwm failed\n"
+msgstr "kwmcom: не удалось связаться с kwm\n"
+
 #: savescm.cpp:26
 msgid "Name"
 msgstr "Имя"
 
-#: general.cpp:55
+#: scrnsave.cpp:47
+msgid "Ignore"
+msgstr "Игнорировать"
+
+#: scrnsave.cpp:49
+msgid "Lock"
+msgstr "Закрыть"
+
+#: scrnsave.cpp:107 scrnsave.cpp:163
+msgid "Screen Saver"
+msgstr "Хранитель экрана"
+
+#: scrnsave.cpp:184
+msgid "Setup..."
+msgstr "Настроить..."
+
+#: scrnsave.cpp:188
+msgid "Test"
+msgstr "Тест"
+
+#: scrnsave.cpp:196
+msgid "Settings"
+msgstr "Установки"
+
+#: scrnsave.cpp:199
+msgid "Wait:"
+msgstr "Подождите:"
+
+#: scrnsave.cpp:210
+msgid "min"
+msgstr "min"
+
+#: scrnsave.cpp:213
+msgid "Requires Password"
+msgstr "Требуется пароль"
+
+#: scrnsave.cpp:218
+msgid "Priority:"
+msgstr "Приоритет:"
+
+#: general.cpp:80
 msgid "General"
 msgstr "Главное"
 
-#: general.cpp:59
+#: general.cpp:84
 msgid "Widget style"
 msgstr "Вид управляющих элементов"
 
-#: general.cpp:64
+#: general.cpp:89
 msgid "Motif"
 msgstr "Motif"
 
-#: general.cpp:65
+#: general.cpp:90
 msgid "Windows 95"
 msgstr "Windowz 95"
 
-#: general.cpp:74
+#: general.cpp:99
 msgid "Fonts"
 msgstr "Шрифты"
 
-#: general.cpp:79
+#: general.cpp:104
 msgid "General font"
 msgstr "Главные шрифты"
 
-#: general.cpp:104
+#: general.cpp:129
 msgid "Sample"
 msgstr "Пример"
 
-#: general.cpp:110
+#: general.cpp:135
 msgid "Small"
 msgstr "Маленький"
 
-#: general.cpp:114
+#: general.cpp:139
 msgid "Medium"
 msgstr "Средний"
 
-#: general.cpp:118
+#: general.cpp:143
 msgid "Large"
 msgstr "Большой"
 
-#: general.cpp:135
+#: general.cpp:160
 msgid "Italic"
 msgstr "Наклонный"
 
-#: kwmcom.cpp:80 kwmcom.cpp:107
-msgid "kwmcom: communication with kwm failed\n"
-msgstr "kwmcom: не удалось связаться с kwm\n"
+#: general.cpp:170
+msgid "Charset:"
+msgstr ""
 
-# Локализация kdisplay.
-# Copyright (C) 1997 Free Software Foundation, Inc.
-# Denis Y. Pershin <dyp@siblug.org>, 1997.
-#
+#: main.cpp:61
+#, fuzzy
+msgid "&Background"
+msgstr "Фон"
+
+#: main.cpp:64
+#, fuzzy
+msgid "&Colors"
+msgstr "Цвет"
+
+#: main.cpp:67
+#, fuzzy
+msgid "&Screensaver"
+msgstr "Хранитель экрана"
+
+#: main.cpp:70
+msgid "&Style"
+msgstr ""
+
+#: main.cpp:105
+#, fuzzy
+msgid "Display settings"
+msgstr "Настройка дисплея"
+
+#~ msgid "KDE Display Configuration"
+#~ msgstr "Конфигурация Дисплея KDE"
+
 #~ msgid ""
+#~ "Usage: %s -init|-setup\n"
+#~ "\n"
 #~ msgstr ""
-#~ "Project-Id-Version: kdisplay 0.5.3\n"
-#~ "POT-Creation-Date: 1997-08-27 15:03+0200\n"
-#~ "PO-Revision-Date: 1997-09-05 02:51+0600\n"
-#~ "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
-#~ "Language-Team: Russian <ru@li.org>\n"
-#~ "MIME-Version: 1.0\n"
-#~ "Content-Type: text/plain; charset=koi8-r\n"
-#~ "Content-Transfer-Encoding: 8-bit\n"
+#~ "Использование: %s -init|-setup\n"
+#~ "\n"
+
+#~ msgid "  -init               apply current settings to the display\n"
+#~ msgstr "  -init               применить текущие установки к дисплею\n"
+
+#, fuzzy
+#~ msgid "  -setup              setup the display\n"
+#~ msgstr " -setup              настроить дисплей\n"

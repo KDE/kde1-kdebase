@@ -1,161 +1,88 @@
-# Polish translation of KDE kdisplay
-# Version 0.1.5
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-12-14 20:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
 
-msgid "Desktop Title"
-msgstr "Tytu³ desktopu"
-
+#: backgnd.cpp:204 backgnd.cpp:239
 msgid "Desktop"
 msgstr "Desktop"
 
-msgid "Save"
-msgstr "&Zachowaj"
-
-msgid "File"
-msgstr "Plik"
-
-msgid "Edit"
-msgstr "Edycja"
-
+#: backgnd.cpp:249
 msgid "Rename..."
 msgstr "Zmieñ &nazwê..."
 
-msgid "Charset:"
-msgstr "Charset:"
-
-msgid "&Background"
-msgstr "&T³o"
-
-msgid "&Colors"
-msgstr "&Kolory"
-
-msgid "&Screensaver"
-msgstr "&Wygaszacz"
-
-msgid "&Style"
-msgstr "&Styl"
-
-#: main.cpp:53
-msgid "KDE Display Configuration"
-msgstr "KDE W³a¶ciwo¶ci Wy¶wietlania"
-
-#: main.cpp:130
-#, c-format
-msgid ""
-"Usage: %s -init|-setup\n"
-"\n"
-msgstr ""
-"Uzycie: %s -init|-setup\n"
-
-#: main.cpp:131
-msgid "  -init               apply current settings to the display\n"
-msgstr "  -init               zastosowanie biezacych ustawien\n"
-
-#: main.cpp:132
-msgid "  -setup              setup the display\n"
-msgstr "  -setup              ustawienie nowych wlasciwosci\n"
-
-#: backgnd.cpp:140 colorscm.cpp:293
-msgid "Background"
-msgstr "T³o"
-
-#: backgnd.cpp:165
+#: backgnd.cpp:255
 msgid "Color"
 msgstr "Kolor"
 
-#: backgnd.cpp:185
+#: backgnd.cpp:273
 msgid "Flat"
 msgstr "P³askie"
 
-#: backgnd.cpp:189
+#: backgnd.cpp:277
 msgid "Gradient"
 msgstr "Cieniowane"
 
-#: backgnd.cpp:202
+#: backgnd.cpp:287
 msgid "Portrait"
 msgstr "Pionowo"
 
-#: backgnd.cpp:206
+#: backgnd.cpp:291
 msgid "Landscape"
 msgstr "Poziomo"
 
-#: backgnd.cpp:224
+#: backgnd.cpp:298
 msgid "Wallpaper"
 msgstr "Tapeta"
 
-#: backgnd.cpp:257
+#: backgnd.cpp:331
 msgid "Tiled"
 msgstr "Kafelkowa"
 
-#: backgnd.cpp:261
+#: backgnd.cpp:335
 msgid "Centred"
 msgstr "Na ¶rodku"
 
-#: backgnd.cpp:265
+#: backgnd.cpp:339
 msgid "Scaled"
 msgstr "Skalowana"
 
-#: backgnd.cpp:272
+#: backgnd.cpp:345
 msgid "Browse..."
 msgstr "Przegl±daj"
 
-#: scrnsave.cpp:45
-msgid "Ignore"
-msgstr "Ignoruj"
+#: backgnd.cpp:489
+#, fuzzy
+msgid "Default"
+msgstr "KDE Standard"
 
-#: scrnsave.cpp:47
-msgid "Lock"
-msgstr "Ochrona has³em"
+# Polish translation of KDE kdisplay
+# Version 0.1.5
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+#: backgnd.cpp:821
+msgid "Desktop Title"
+msgstr "Tytu³ desktopu"
 
-#: scrnsave.cpp:103 scrnsave.cpp:161
-msgid "Screen Saver"
-msgstr "Wygaszacz ekranu"
-
-#: scrnsave.cpp:182
-msgid "Setup..."
-msgstr "Ustawienia..."
-
-#: scrnsave.cpp:186
-msgid "Test"
-msgstr "Podgl±d"
-
-#: scrnsave.cpp:194
-msgid "Settings"
-msgstr "Ustawienia"
-
-#: scrnsave.cpp:197
-msgid "Wait:"
-msgstr "Czekaj:"
-
-#: scrnsave.cpp:208
-msgid "min"
-msgstr "min"
-
-#: scrnsave.cpp:211
-msgid "Requires Password"
-msgstr "Wymagane has³o"
-
-#: scrnsave.cpp:216
-msgid "Priority:"
-msgstr "Priorytet:"
-
-#: colorscm.cpp:326 scrnsave.cpp:219
-msgid "High"
-msgstr "Wysoki"
-
-#: colorscm.cpp:322 scrnsave.cpp:222
-msgid "Low"
-msgstr "Niski"
-
-#: colorscm.cpp:139 colorscm.cpp:140
+#: colorscm.cpp:142 colorscm.cpp:143
 msgid "Inactive window"
 msgstr "Nieaktywne okno"
 
-#: colorscm.cpp:155 colorscm.cpp:156
+#: colorscm.cpp:158 colorscm.cpp:159
 msgid "Active window"
 msgstr "Aktywne okno"
 
-#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:298
+#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:300
 msgid "Window text"
 msgstr "Tekst w oknie"
 
@@ -167,71 +94,83 @@ msgstr "Wy³±czony"
 msgid "Selected"
 msgstr "Wybrany"
 
-#: colorscm.cpp:252 colorscm.cpp:262
+#: colorscm.cpp:252 colorscm.cpp:264
 msgid "Color Scheme"
 msgstr "Schemat kolorów"
 
-#: colorscm.cpp:276
+#: colorscm.cpp:278
 msgid "Remove"
 msgstr "Usuñ"
 
-#: colorscm.cpp:284
+#: colorscm.cpp:286
 msgid "Widget color"
 msgstr "Kolor elementu"
 
-#: colorscm.cpp:289
+#: colorscm.cpp:291
 msgid "Inactive title bar"
 msgstr "Nieaktywny pasek tytu³u"
 
-#: colorscm.cpp:290
+#: colorscm.cpp:292
 msgid "Inactive title text"
 msgstr "Nieaktywny tytu³ okna"
 
-#: colorscm.cpp:291
+#: colorscm.cpp:293
 msgid "Active title bar"
 msgstr "Aktywny pasek tytu³u"
 
-#: colorscm.cpp:292
+#: colorscm.cpp:294
 msgid "Active title text"
 msgstr "Aktywny tytu³ okna"
 
-#: colorscm.cpp:294
+#: colorscm.cpp:295
+msgid "Background"
+msgstr "T³o"
+
+#: colorscm.cpp:296
 msgid "Text"
 msgstr "Tekst"
 
-#: colorscm.cpp:295
+#: colorscm.cpp:297
 msgid "Select background"
 msgstr "T³o wybranego"
 
-#: colorscm.cpp:296
+#: colorscm.cpp:298
 msgid "Select text"
 msgstr "Tekst wybranego"
 
-#: colorscm.cpp:297
+#: colorscm.cpp:299
 msgid "Window background"
 msgstr "T³o okna"
 
-#: colorscm.cpp:309
+#: colorscm.cpp:311
 msgid "Contrast"
 msgstr "Kontrast"
 
-#: colorscm.cpp:341
+#: colorscm.cpp:324 scrnsave.cpp:224
+msgid "Low"
+msgstr "Niski"
+
+#: colorscm.cpp:328 scrnsave.cpp:221
+msgid "High"
+msgstr "Wysoki"
+
+#: colorscm.cpp:343
 msgid "Save scheme"
 msgstr "Zachowaj schemat"
 
-#: colorscm.cpp:372 colorscm.cpp:380
+#: colorscm.cpp:374 colorscm.cpp:382
 msgid "You have chosen a name used by a supplied color scheme"
 msgstr "Wybra³e¶ nazwê u¿ywan± przez standardowy schemat koloru"
 
-#: colorscm.cpp:463
+#: colorscm.cpp:467
 msgid "KDE Default"
 msgstr "KDE Standard"
 
-#: colorscm.cpp:687
+#: colorscm.cpp:693
 msgid "Display Setup"
 msgstr "Ustawienia wy¶wietlania"
 
-#: colorscm.cpp:688
+#: colorscm.cpp:694
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"
@@ -239,54 +178,142 @@ msgstr ""
 "Nie znaleziono schematów kolorów.\n"
 "Czy chcesz zainstalowaæ standardowe schematy?"
 
+#: kwmcom.cpp:78 kwmcom.cpp:105
+msgid "kwmcom: communication with kwm failed\n"
+msgstr "kwmcom: komunikacja z kwm nie powiodla sie\n"
+
 #: savescm.cpp:26
 msgid "Name"
 msgstr "Nazwa"
 
-#: general.cpp:55
+#: scrnsave.cpp:47
+msgid "Ignore"
+msgstr "Ignoruj"
+
+#: scrnsave.cpp:49
+msgid "Lock"
+msgstr "Ochrona has³em"
+
+#: scrnsave.cpp:107 scrnsave.cpp:163
+msgid "Screen Saver"
+msgstr "Wygaszacz ekranu"
+
+#: scrnsave.cpp:184
+msgid "Setup..."
+msgstr "Ustawienia..."
+
+#: scrnsave.cpp:188
+msgid "Test"
+msgstr "Podgl±d"
+
+#: scrnsave.cpp:196
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: scrnsave.cpp:199
+msgid "Wait:"
+msgstr "Czekaj:"
+
+#: scrnsave.cpp:210
+msgid "min"
+msgstr "min"
+
+#: scrnsave.cpp:213
+msgid "Requires Password"
+msgstr "Wymagane has³o"
+
+#: scrnsave.cpp:218
+msgid "Priority:"
+msgstr "Priorytet:"
+
+#: general.cpp:80
 msgid "General"
 msgstr "&Ogólne"
 
-#: general.cpp:59
+#: general.cpp:84
 msgid "Widget style"
 msgstr "Styl elementów"
 
-#: general.cpp:64
+#: general.cpp:89
 msgid "Motif"
 msgstr "Motif"
 
-#: general.cpp:65
+#: general.cpp:90
 msgid "Windows 95"
 msgstr "Windows 95"
 
-#: general.cpp:74
+#: general.cpp:99
 msgid "Fonts"
 msgstr "Czcionki"
 
-#: general.cpp:79
+#: general.cpp:104
 msgid "General font"
 msgstr "Czcionka ogólna"
 
-#: general.cpp:104
+#: general.cpp:129
 msgid "Sample"
 msgstr "Przyk³ad"
 
-#: general.cpp:110
+#: general.cpp:135
 msgid "Small"
 msgstr "Ma³a"
 
-#: general.cpp:114
+#: general.cpp:139
 msgid "Medium"
 msgstr "¦rednia"
 
-#: general.cpp:118
+#: general.cpp:143
 msgid "Large"
 msgstr "Du¿a"
 
-#: general.cpp:135
+#: general.cpp:160
 msgid "Italic"
 msgstr "Italic"
 
-#: kwmcom.cpp:80 kwmcom.cpp:107
-msgid "kwmcom: communication with kwm failed\n"
-msgstr "kwmcom: komunikacja z kwm nie powiodla sie\n"
+#: general.cpp:170
+msgid "Charset:"
+msgstr "Charset:"
+
+#: main.cpp:61
+msgid "&Background"
+msgstr "&T³o"
+
+#: main.cpp:64
+msgid "&Colors"
+msgstr "&Kolory"
+
+#: main.cpp:67
+msgid "&Screensaver"
+msgstr "&Wygaszacz"
+
+#: main.cpp:70
+msgid "&Style"
+msgstr "&Styl"
+
+#: main.cpp:105
+#, fuzzy
+msgid "Display settings"
+msgstr "Ustawienia wy¶wietlania"
+
+#~ msgid "Save"
+#~ msgstr "&Zachowaj"
+
+#~ msgid "File"
+#~ msgstr "Plik"
+
+#~ msgid "Edit"
+#~ msgstr "Edycja"
+
+#~ msgid "KDE Display Configuration"
+#~ msgstr "KDE W³a¶ciwo¶ci Wy¶wietlania"
+
+#~ msgid ""
+#~ "Usage: %s -init|-setup\n"
+#~ "\n"
+#~ msgstr "Uzycie: %s -init|-setup\n"
+
+#~ msgid "  -init               apply current settings to the display\n"
+#~ msgstr "  -init               zastosowanie biezacych ustawien\n"
+
+#~ msgid "  -setup              setup the display\n"
+#~ msgstr "  -setup              ustawienie nowych wlasciwosci\n"
