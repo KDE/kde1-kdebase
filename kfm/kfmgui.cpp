@@ -107,6 +107,8 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
       viewMode = LONG_VIEW;
     if (entry == "TextView")
       viewMode = TEXT_VIEW;
+    if (entry == "ShortView")
+      viewMode = SHORT_VIEW;
 
     entry = "no";
     if ( config->readEntry("ShowDotFiles",entry) == "yes")
@@ -362,6 +364,8 @@ void KfmGui::initMenu()
 		       this, SLOT(slotTextView()) );
     mview->insertItem( klocale->translate("&Long View"),
 		       this, SLOT(slotLongView()) );
+    mview->insertItem( klocale->translate("&Short View"),
+		       this, SLOT(slotShortView()) );
     /* mview->insertSeparator();
     mview->insertItem( klocale->translate("Split &window"),
 		       this, SLOT(slotSplitWindow()) ); */
@@ -432,6 +436,9 @@ void KfmGui::initMenu()
 	break;
       case LONG_VIEW:
 	mview->setItemChecked( mview->idAt( 7 ), true );
+	break;
+      case SHORT_VIEW:
+	mview->setItemChecked( mview->idAt( 8 ), true );
 	break;
       }
 
@@ -823,6 +830,7 @@ void KfmGui::slotIconView()
     mview->setItemChecked( mview->idAt( 5 ), true );
     mview->setItemChecked( mview->idAt( 6 ), false );
     mview->setItemChecked( mview->idAt( 7 ), false );
+    mview->setItemChecked( mview->idAt( 8 ), false );
     view->slotUpdateView( false );
 }
 
@@ -832,6 +840,7 @@ void KfmGui::slotLongView()
     mview->setItemChecked( mview->idAt( 5 ), false );
     mview->setItemChecked( mview->idAt( 6 ), false);
     mview->setItemChecked( mview->idAt( 7 ), true );
+    mview->setItemChecked( mview->idAt( 8 ), false );
     view->slotUpdateView( false );
 }
 
@@ -841,6 +850,17 @@ void KfmGui::slotTextView()
     mview->setItemChecked( mview->idAt( 5 ), false );
     mview->setItemChecked( mview->idAt( 6 ), true );
     mview->setItemChecked( mview->idAt( 7 ), false );
+    mview->setItemChecked( mview->idAt( 8 ), false );
+    view->slotUpdateView( false );
+}
+
+void KfmGui::slotShortView()
+{
+    viewMode = SHORT_VIEW;
+    mview->setItemChecked( mview->idAt( 5 ), false );
+    mview->setItemChecked( mview->idAt( 6 ), false );
+    mview->setItemChecked( mview->idAt( 7 ), false );
+    mview->setItemChecked( mview->idAt( 8 ), true );
     view->slotUpdateView( false );
 }
 
@@ -1345,6 +1365,9 @@ void KfmGui::slotSaveSettings()
       break;
     case TEXT_VIEW:
       entry = "TextView";
+      break;
+    case SHORT_VIEW:
+      entry = "ShortView";
       break;
     }
 

@@ -1,5 +1,7 @@
 Thu Apr 16 04:10:25 1998  Torben Weis  <weis@localhost>
 
+	* kfmman.cpp (writeEntry): New View ( short view ).
+
 	* kfmprops.cpp (applyChanges): Sets icon and miniicon equal.
 	  In the past miniicon was not set at all.
 	

@@ -114,7 +114,7 @@ bool KFMManager::isBindingHardcoded( const char *_txt )
     return false;
 }
   
-void KFMManager::writeWrapped( char *_str )
+void KFMManager::writeWrapped( char *_str, int _maxlen )
 {
     short        j, width, charWidth;
     char*        pos;
@@ -123,7 +123,10 @@ void KFMManager::writeWrapped( char *_str )
     char* part;
     char  c;
     
-    if (labelFontMetrics->width(_str) <= maxLabelWidth)
+    if ( _maxlen == -1 )
+      _maxlen = maxLabelWidth;
+    
+    if ( labelFontMetrics->width(_str) <= _maxlen )
     {
 	view->writeHTMLquoted ( _str );
 	return;
@@ -132,7 +135,7 @@ void KFMManager::writeWrapped( char *_str )
     for (width=0, part=_str, pos=_str; *pos; pos++)
     {
 	charWidth = labelFontMetrics->width( *pos );
-	if (width+charWidth >= maxLabelWidth)
+	if ( width+charWidth >= _maxlen )
 	{
 	    // search for a suitable separator in the previous 8 characters
 	    for (sepPos=pos, j=0; j<8 && sepPos>part; j++, sepPos--)
@@ -491,6 +494,8 @@ void KFMManager::writeBeginning()
 	view->write( "<table width=100%>" );
     else if ( view->getGUI()->getViewMode() == KfmGui::TEXT_VIEW )
 	view->write( "<table width=100%>" );
+    else if ( view->getGUI()->getViewMode() == KfmGui::SHORT_VIEW )
+	;
     
     if ( strcmp( u.path(), "/" ) != 0 )
     {
@@ -524,6 +529,14 @@ void KFMManager::writeBeginning()
 	    view->write( s.data() );
 	    view->write( "\">../</td><td></a></td>" );
 	    view->write( "<td></td><td></td><td></td><td></td></tr>" );
+	}
+	else if ( view->getGUI()->getViewMode() == KfmGui::SHORT_VIEW )
+	{
+	    view->write( "<a href=\"" );
+	    view->write( s.data() );
+	    view->write( "\"><cell width=180><img border=0 width=16 height=16 src=\"file:" );
+	    view->write( KMimeType::getPixmapFileStatic( s.data(), TRUE ) );
+	    view->write( "\">..</cell></a>" );
 	}
     }
 }
@@ -674,6 +687,50 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	view->write( tmp.data() );
 	view->write( s->getCreationDate() );
 	view->write( "</td></td></tr>" );
+    }
+    if ( view->getGUI()->getViewMode() == KfmGui::SHORT_VIEW )
+    {	
+	// Begin Link
+	view->write( "<a href=\"" );
+	view->write( encodedURL.data() );
+	view->write( "\">" );
+
+	// Begin Cell
+	QString tmp;
+	tmp.sprintf( "<cell width=%i>", 180 );
+	view->write( tmp.data() );
+
+	// Begin Link
+	// We have to duplicate this here, since KHTMLW addes a </a>
+	// at this place automatically.
+	view->write( "<table><tr><td valign=top><a href=\"" );
+	view->write( encodedURL.data() );
+	view->write( "\">" );
+
+	// Write Icon
+	view->write( "<img border=0 width=16 height=16 src=\"file:" );
+	view->write( KMimeType::getPixmapFileStatic( filename.data(), TRUE ) );
+	view->write( "\"></a></td><td><a href=\"" );
+
+	// Begin Link
+	view->write( encodedURL.data() );
+	view->write( "\">" );
+
+	// Begin italic (if file is a link)
+	if ( s->getAccess() && s->getAccess()[0] == 'l' )
+	    view->write("<i>");
+
+	// Write Filename
+	// view->writeHTMLquoted ( decoded );
+	strcpy( buffer, decoded );
+	writeWrapped( buffer, 150 );  // writeWrapped htmlQuotes itself
+
+	// End italic
+	if ( s->getAccess() && s->getAccess()[0] == 'l' )
+	    view->write("</i>");
+	
+	// End Cell & Link
+	view->write( "</a></td></tr></table></cell></a>" );
     }
 }
 
@@ -943,6 +1000,8 @@ void KFMManager::slotFinished()
 	view->write( "</table></body></html>" );
     else if ( view->getGUI()->getViewMode() == KfmGui::TEXT_VIEW )
 	view->write( "</table></body></html>" );
+    else if ( view->getGUI()->getViewMode() == KfmGui::SHORT_VIEW )
+	view->write( "</body></html>" );
     
     view->end();
 }

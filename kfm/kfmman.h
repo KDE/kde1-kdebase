@@ -121,7 +121,11 @@ protected:
      */
     bool eventFilter( QObject *, QEvent * );
 
-    void writeWrapped( char * );
+    /**
+     * @param _maxwidth If no value is specified, then '_maxwidth' is set to
+     *                  @ref #maxLabelWidth.
+     */
+    void writeWrapped( char *, int _maxwidth = -1 );
 
     /**
      * Produces the image tag to display the icon if the visual schnauzer

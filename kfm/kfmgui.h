@@ -51,7 +51,7 @@ public:
     /**
      * The values for the variable @ref #viewMode .
      */
-    enum ViewMode { ICON_VIEW, TEXT_VIEW, LONG_VIEW };    
+    enum ViewMode { ICON_VIEW, TEXT_VIEW, LONG_VIEW, SHORT_VIEW };    
     /**
      * For example KFileManager use this to determine how to display the
      * directory listing.
@@ -264,6 +264,10 @@ public slots:
      * Menu "View->Long View"
      */
     void slotLongView();
+    /**
+     * Menu "View->Short View"
+     */
+    void slotShortView();
     /**
      * Menu "View->Text View"
      */
