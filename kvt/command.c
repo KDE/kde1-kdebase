@@ -724,7 +724,7 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount, unsigned char qt_c)
     case XK_KP_Delete :
 #endif
       /* strcpy(kbuf,"\033[3~"); */
-      strcpy(kbuf, keys[KeySetSend].del);
+      strcpy(kbuf, BackspaceSendsControlH ? "\177" : "\010");
       count = strlen(kbuf);
       break;
 

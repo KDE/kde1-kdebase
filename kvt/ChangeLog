@@ -1,4 +1,6 @@
 since kvt-0.18.5
+  - Now the Terminal-Dialog exchanges the meaning of Backspace and Delete
+    This prevents us from having two Delete-keys and no Backspace-key (bmg)
   - a Patch for FreeBSD from Kevin Street <street@iName.com>
     FreeBSD has setupterm in libmytinfo (bmg)
   - HAVE_SETUPTERM used (bmg)
@@ -395,4 +397,4 @@ from 1.4 to 1.45
 
 	1.  Fixed scrolling error when switching to larger fonts
 	2.  Fixed utmp-entry removal for SYSV type systems.
-	3.  Icorportated patches for FreeBSD and svr4
+	3.  Icorportated patches for FreeBSD and
