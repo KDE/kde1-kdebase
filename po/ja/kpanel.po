@@ -7,57 +7,48 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-04-12 01:17+0200\n"
-"PO-Revision-Date: Tue May 4 1999 08:21:42+0200\n"
-"Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
-"Language-Team: Japan <kde-jp@albert.nikkeibp.co.jp>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
-"X-Generator: KTranslator v 0.4.0"
 
-#: kpanel.C:292
+#: kpanel.C:296
 msgid "&Move"
 msgstr "移動(&M)"
 
-#: kpanel.C:295
+#: kpanel.C:299
 msgid "&Properties"
 msgstr "プロパティ(&P)"
 
-#: kpanel.C:338
+#: kpanel.C:342
 msgid "Go!"
 msgstr "実行"
 
-#: kpanel.C:415
+#: kpanel.C:419
 msgid "No info available"
 msgstr "何の情報もありません"
 
-#: kpanel.C:454 props.C:207 props.C:208
+#: kpanel.C:458 props.C:207 props.C:208
 msgid "Logout"
 msgstr "ログアウト"
 
-#: kpanel.C:462 props.C:206
+#: kpanel.C:466 props.C:206
 msgid "Lock screen"
 msgstr "スクリーンロック"
 
-#: kpanel.C:471 kpanel.C:480
+#: kpanel.C:475 kpanel.C:484
 msgid "Hide the panel"
 msgstr "パネルを隠す"
 
-#: kpanel.C:490 kpanel.C:502
+#: kpanel.C:494 kpanel.C:506
 msgid "Show the panel"
 msgstr "パネルを表示する"
 
-#: kpanel.C:1066
+#: kpanel.C:1070
 msgid "Iconify other &windows"
 msgstr "他のウィンドウを最小化する(&W)"
 
-#: kpanel.C:1214 tools.C:910
+#: kpanel.C:1218 tools.C:910
 msgid "Windowlist"
 msgstr "ウィンドウリスト"
 
-#: kpanel.C:1222 props.C:197
+#: kpanel.C:1226 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "ファイルシステムを素早くナビゲート"
 
@@ -85,7 +76,7 @@ msgstr "ウィンドウリストを追加"
 msgid "Add a windowlist menu onto the panel"
 msgstr "パネルにウィンドウリストのメニューを追加"
 
-#: events.C:855 props.C:183
+#: events.C:860 props.C:183
 msgid "Configure"
 msgstr "設定"
 
@@ -101,7 +92,7 @@ msgstr "メニューの編集"
 msgid "Add or remove applications in the menu structure "
 msgstr "メニュー構造にアプリケーションを追加/削除 "
 
-#: events.C:857 props.C:189
+#: events.C:862 props.C:189
 msgid "Restart"
 msgstr "再起動"
 
@@ -125,7 +116,7 @@ msgstr "スクリーンのロック"
 msgid "The menu editor is not installed."
 msgstr "メニューエディタはインストールされていません。"
 
-#: events.C:912 props.C:452
+#: events.C:917 props.C:452
 msgid "Oops!"
 msgstr "あぅ！"
 
@@ -134,14 +125,12 @@ msgid ""
 "\n"
 "%b %d"
 msgstr ""
-"\n"
-"%b %d"
 
 #: tools.C:919
 msgid "KDiskNavigator"
 msgstr ""
 
-#: events.C:911
+#: events.C:916
 msgid "Cannot put this as button onto the panel!"
 msgstr "これをパネル上にボタンとして置くことはできません！"
 

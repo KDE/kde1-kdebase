@@ -5,17 +5,13 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-03-31 01:21+0200\n"
-"PO-Revision-Date: Tue May 4 1999 05:54:50+0200\n"
-"Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
-"Language-Team: Japan <kde-jp@albert.nikkeibp.co.jp>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
-"X-Generator: KTranslator v 0.4.0"
 
 #: attraction.cpp:718
 msgid "Attraction"
@@ -67,6 +63,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
+"Attraction Version 1.0\n"
+"\n"
+"Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"Ported to kscreensaver by:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
 #: banner.cpp:62
 msgid "Banner"
@@ -114,10 +117,6 @@ msgid ""
 "written by Martin R. Jones 1996\n"
 "mjones@kde.org"
 msgstr ""
-"Banner Version 0.1\n"
-"\n"
-"written by Martin R. Jones 1996\n"
-"mjones@kde.org"
 
 #: banner.cpp:469
 msgid "KDE is great"
@@ -410,12 +409,12 @@ msgid ""
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
 
-#: main.cpp:417
+#: main.cpp:436
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "オプション%sはこのプラットフォームではサポートされていません！"
 
-#: main.cpp:459
+#: main.cpp:491
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -429,11 +428,11 @@ msgstr ""
 "あなたのシステムの管理者に連絡してください。\n"
 "そしてkcheckpassプログラムにsuidが必要なことを教えてください！"
 
-#: main.cpp:464
+#: main.cpp:496
 msgid "Shadow Passwords"
 msgstr "シャドウパスワード"
 
-#: main.cpp:514
+#: main.cpp:546
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -441,18 +440,18 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"-testを-lockと一緒に使わないでください。\n"
-"代りにklockを使ってください。\n"
+"-test を -lock と一緒に使わないでください。\n"
+"klockを代わりに使ってください.\n"
 ""
 
-#: main.cpp:632
+#: main.cpp:664
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 
-#: main.cpp:635
+#: main.cpp:667
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -475,11 +474,11 @@ msgstr ""
 
 #: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
 msgid "GL can not render with root visual\n"
-msgstr "GLはルートビジュアルを描画できません\n"
+msgstr "GLはルートビジュアルに描画できません\n"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
-msgstr "Morph3D (GL)"
+msgstr ""
 
 #: morph3d.cpp:1023
 msgid "Setup KMorph3d"
