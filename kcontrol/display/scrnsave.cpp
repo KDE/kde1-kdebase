@@ -266,7 +266,7 @@ void KScreenSaver::readSettings( int )
 		saverLocation = str;
 	else
 	{
-		saverLocation = kapp->kdedir();
+		saverLocation = kapp->kdedir().copy();
 		saverLocation += "/bin";
 	}
 
