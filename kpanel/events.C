@@ -409,6 +409,11 @@ void kPanel::kwmDesktopChange(int nd){
   else
     showPanel();
 
+  if( !doGeometry_called[nd] )
+  {
+      doGeometry();
+      doGeometry_called[nd]=true;
+  }
 }
 
 void kPanel::kwmDesktopNameChange(int d, QString name){

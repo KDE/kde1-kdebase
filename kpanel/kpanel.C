@@ -42,10 +42,13 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
   : QFrame( parent, name,WStyle_Customize | WStyle_NoBorder | WStyle_Tool ){
     //: QFrame( parent, name){
 
+    int i;
+    for(i=1; i<=8; i++)
+      doGeometry_called[i]=false;
+
     initing = true;
 
     kwmmapp = kwmapp_arg;
-    int i;
 
     tab = 0;
 
@@ -522,7 +525,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 				 exit_button->height());
 
 	//CT 29Jan1999 - fix for more than 8 buttons and cleaner code
-	for (int i=0; (tmp_button = desktopbar->find(i)); i++){
+	for (i=0; (tmp_button = desktopbar->find(i)); i++){
 	  tmp_button->setGeometry( (i / 2)*(exit_button->width() * dbhs+1)+1,
 				  !(i % 2)?0:lock_button->y(),
 				    exit_button->width() * dbhs,
@@ -1252,7 +1255,7 @@ void kPanel::swallowApplication(const char *s) {
 void kPanel::slotSwallowedChildDied(KProcess *proc) {
   if(proc) {
       // TODO: update the panel to remove the swallow-button
-    delete proc;      
+    delete proc;
   }
 }
 
@@ -1611,7 +1614,7 @@ void kPanel::showPanelFromRight(bool smooth){
 
 //////////////////////////////////////////////////////////////////////////////
 // Set the same WindowRegion for all desktops.
-// Called when a window is added/removed and the number of taskbar rows 
+// Called when a window is added/removed and the number of taskbar rows
 // changes.
 void kPanel::syncWindowRegions() {
   QRect region = KWM::getWindowRegion(currentDesktop);
@@ -1619,7 +1622,13 @@ void kPanel::syncWindowRegions() {
 
   for (int i = 1; i <= nd; i++)
     if (i != currentDesktop)
+    {
       KWM::setWindowRegion(i, region);
+      doGeometry_called[i]=false;
+    }
+    else{
+      doGeometry_called[i]=true;
+    }
 }
 
 void kPanel::doGeometry (bool do_not_change_taskbar) {

@@ -478,6 +478,7 @@ private:
   Bool panelCurrentlyHidden;
   Bool panelCurrentlyLeft;
   Bool miniPanelHidden;
+  Bool doGeometry_called[8+1];
 
   QFrame *miniPanelFrame;
   QButtonGroup *miniPanel;
