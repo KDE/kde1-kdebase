@@ -339,9 +339,8 @@ msgid "Fixed font"
 msgstr "Fast skrifttype"
 
 #: general.cpp:278
-#, fuzzy
 msgid "Window title font"
-msgstr "Vindustekst"
+msgstr "Skrifttype for vindustittel"
 
 #: general.cpp:283
 msgid "Panel button font"
