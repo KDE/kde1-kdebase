@@ -18,15 +18,11 @@
 
 // ----------------------------------------------------------------------
 
-// problems: empty dirs
-//           S.u.S.E (no .directory)
-
-// ----------------------------------------------------------------------
-
 KAppTreeListItem::KAppTreeListItem( const char *name, QPixmap *pixmap, 
-     bool parse, bool dir, QString p, QString c )
+     bool d, bool parse, bool dir, QString p, QString c )
     : KTreeListItem( name, pixmap )
 {
+  dummy = d;
   parsed = parse;
   directory = dir;
   path = p;
@@ -116,18 +112,23 @@ void KApplicationTree::parseKdelnkFile( QFileInfo *fi, KTreeList *tree, KAppTree
       pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon(big_pixmap_name, 16, 16);
     if( pixmap.isNull() )
       pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon("mini-default.xpm", 16, 16);	
+  }
+  else
+  {
+     command_name = text_name;
+     pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon("mini-default.xpm", 16, 16); 
+  }
 
-    it2 = new KAppTreeListItem( (const char *)text_name, &pixmap, false, fi->isDir(), fi->absFilePath(), command_name );	
+  it2 = new KAppTreeListItem( (const char *)text_name, &pixmap, false, false, fi->isDir(), fi->absFilePath(), command_name );	
 
     if( item == 0 )
       tree->insertItem( it2 );
     else
       item->appendChild( it2 );
-  }
 
   if( fi->isDir() )
   {
-    dummy = new KAppTreeListItem( "dummy", 0, false, false, "dummy", "dummy" );	
+    dummy = new KAppTreeListItem( i18n("This group is empty!"), 0, true, false, false, "", "" );	
     it2->appendChild( dummy );
   }
 }
@@ -177,11 +178,12 @@ void KApplicationTree::expanded(int index)
 {
   KAppTreeListItem *item = (KAppTreeListItem *)tree->itemAt( index );
 
-  if( !item->parsed )
+  if( !item->parsed && !(item->dummy ) )
   {
-    item->removeChild( item->getChild() );
-    parseKdelnkDir( QDir(item->path), tree, item );
-    item->parsed = true;
+     parseKdelnkDir( QDir(item->path), tree, item );
+     item->parsed = true;
+     if( item->childCount() > 1 )
+        item->removeChild( item->getChild() );
   }
 }
 
@@ -189,6 +191,9 @@ void KApplicationTree::expanded(int index)
 void KApplicationTree::highlighted(int index)
 {
   KAppTreeListItem *item = (KAppTreeListItem *)tree->itemAt( index );
+
+  if( !item->directory && !(item->exec.isEmpty()) )
+     emit highlighted( (const char *) item->exec );
 }
 */
 
@@ -196,13 +201,13 @@ void KApplicationTree::selected(int index)
 {
   KAppTreeListItem *item = (KAppTreeListItem *)tree->itemAt( index );
 
-  if( !item->directory )
-    emit selected( item->getText() );
+  if( (!item->directory) && !(item->exec.isEmpty()) )
+     emit selected( (const char *) item->exec ); 
   else
     tree->expandOrCollapseItem( index );
 }
 
-void KApplicationTree::resizeEvent( QResizeEvent *_ev )
+void KApplicationTree::resizeEvent( QResizeEvent * )
 {
   tree->setGeometry( 0, 0, width(), height() );
 }

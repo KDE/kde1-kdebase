@@ -9,9 +9,9 @@
 class KAppTreeListItem : public KTreeListItem
 {	
 public:
-  KAppTreeListItem( const char *name, QPixmap *pixmap, bool parse, bool dir, 
+  KAppTreeListItem( const char *name, QPixmap *pixmap, bool d, bool parse, bool dir, 
 		    QString p, QString c );
-
+  bool dummy;
   bool parsed;
   bool directory;
   QString path;
