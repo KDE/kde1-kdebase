@@ -652,7 +652,9 @@ void KfmGui::slotShowCache()
   
   QString s = KFMPaths::CachePath().data();
   s += "/index.html";
-  view->openURL( s );
+  QString tmp( "file:" );
+  tmp += s;
+  view->openURL( tmp );
 }
 
 void KfmGui::slotShowHistory()
@@ -669,7 +671,13 @@ void KfmGui::slotShowHistory()
 void KfmGui::slotClearCache()
 {
   HTMLCache::clear();
-  view->slotUpdateView();  
+  // Send notifications to windows displaying 
+  // the cache directory
+  KURL k (KFMPaths::CachePath().data());
+  KIOServer::sendNotify(k.url());
+  // or the 'contents of the cache' page
+  QString s = k.url()+"/index.html";
+  KIOServer::sendNotify(s);
 }
 
 void KfmGui::slotCacheOn()

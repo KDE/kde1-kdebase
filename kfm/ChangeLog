@@ -1,5 +1,10 @@
 1999-01-13  David Faure  <faure@kde.org>
 
+	* kfmman.cpp (openURL): special case for the cache directory :
+	save contents of the cache to index.html before opening the URL.
+
+	* kfmgui.cpp (slotClearCache): notify windows showing the cache.
+
 	* kfmexec.*: Let the job finish, don't stop it after the first dir
  	returned. This fixes lots of problems, including opening ftp locations 
 	twice from minicli (this used to sigsegv), only one directory 

@@ -235,6 +235,12 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 	_url = tmpurl.data();
     }
     
+    QString cachePath("file:");
+    cachePath += KFMPaths::CachePath().data();
+    cachePath += "/index.html";
+    if (cachePath == _url)
+          HTMLCache::save();
+    
     // Store the parameter for recursive function calls
     bReload = _reload;
     
