@@ -176,6 +176,7 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     
     rmb = new QPopupMenu;
     rmb->setMouseTracking(TRUE);
+    rmb->installEventFilter(this);
     rmb->insertItem(klocale->translate("New"), menuNew );
     rmb->insertItem(klocale->translate("Bookmarks"), bookmarks );
     rmb->insertSeparator();
@@ -194,6 +195,7 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
 
     mmb = new QPopupMenu;
     mmb->setMouseTracking(TRUE);
+    mmb->installEventFilter(this);
     mmb->setCheckable(TRUE);
     connect(mmb, SIGNAL(activated(int)), this, SLOT(mmb_menu_activated(int)));
 
@@ -326,13 +328,10 @@ void KRootWm::scanBookmarks( QPopupMenu *_popup, const char * _path )
 }
 
 bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
-  static QTime hide_time;
   if (ev->type() == Event_MouseButtonPress
       || ev->type() == Event_MouseButtonDblClick){
     QMouseEvent *e = (QMouseEvent*) ev;
     if (obj == QApplication::desktop()){
-      if (hide_time.msecsTo(QTime::currentTime())<100)
-	return False;
       switch (e->button()){
       case LeftButton:
 	if (kpanel_menu_on_left_button){
@@ -365,15 +364,9 @@ bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
       case MidButton:
 	generateWindowlist(mmb);
 	mmb->popup(e->pos());
-	mmb->exec();
-	hide_time = QTime::currentTime();
-	return True;
 	break;
       case RightButton:
 	rmb->popup(e->pos());
-	rmb->exec();
-	hide_time = QTime::currentTime();
-	return True;
 	break;
       }
     }
