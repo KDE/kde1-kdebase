@@ -161,6 +161,7 @@ void kPanel::parseMenus(){
     int i;
     for (i=0; i<nbuttons && entries[i].button!=kde_button; i++);
     entries[i].popup = pmenu->getQPopupMenu();
+    kmenu = entries[i].popup;
     ready_for_event_loop = false;
     kde_button->setCursor(arrowCursor);
 }

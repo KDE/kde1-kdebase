@@ -702,8 +702,7 @@ void kPanel::cleanup(){
 
 void kPanel::showSystem(){
   int i;
-  for (i=0; i<nbuttons && entries[i].button!=kde_button; i++);
-  if (!entries[i].popup || entries[0].popup->isVisible())
+  if (!kmenu ||kmenu->isVisible())
     return;
 
   if (info_label->isVisible())
@@ -713,23 +712,9 @@ void kPanel::showSystem(){
     miniButtons(1); 
   }
   else {
-    entries[0].popup->setActiveItem(entries[0].popup->count()-1);
-    show_popup(entries[0].popup, entries[0].button);
+    kmenu->setActiveItem(kmenu->count()-1);
+    show_popup(kmenu, kde_button);
   }
-
-//    // generate a Motion event for the qt popup:
-//    QCursor::setPos(entries[0].popup->pos() + 
-//  		  QPoint(entries[0].popup->width()-5,
-//  			 entries[0].popup->height()-5));
-//    QCursor::setPos(entries[0].popup->pos() + 
-//  		  QPoint(entries[0].popup->width()-6,
-//  			 entries[0].popup->height()-5));
-//    XSync(qt_xdisplay(), 0);
-//    qApp->processEvents();
-//    QCursor::setPos(entries[0].popup->pos() +
-//  		  QPoint(entries[0].popup->width(),0));
-//    QKeyEvent ev(Event_KeyPress, Key_Down, 9, NoButton);
-//    qApp->sendEvent(entries[0].popup , &ev);
 }
 
 
@@ -854,18 +839,20 @@ void kPanel::miniButtons(int i){
   switch (i)
     {
     case 1:
+      if (!kmenu)
+	break;
       if (taskbar_position == bottom){
-	entries[0].popup->move(-1000,-1000);
-	entries[0].popup->show();
-	entries[0].popup->move(QPoint(miniPanelFrame->x()+miniSystem->x(), 
-				      miniPanelFrame->y()-
-				      entries[0].popup->height()));
+	kmenu->move(-1000,-1000);
+	kmenu->show();
+	kmenu->move(QPoint(miniPanelFrame->x()+miniSystem->x(), 
+			   miniPanelFrame->y()-
+			   kmenu->height()));
       }
       else
-	entries[0].popup->move(QPoint(miniPanelFrame->x()+miniSystem->x(),
-				      miniSystem->y()+
-				      miniPanelFrame->height()));
-      entries[0].popup->exec();
+	kmenu->move(QPoint(miniPanelFrame->x()+miniSystem->x(),
+			   miniSystem->y()+
+			   miniPanelFrame->height()));
+      kmenu->exec();
       break;
       
     case 2:

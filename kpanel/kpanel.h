@@ -394,6 +394,8 @@ private:
   // development
 
   myPushButton* kde_button;
+  QPopupMenu* kmenu;
+
   QPopupMenu* windows;
   QPopupMenu* windowlist;
   void generateWindowlist(QPopupMenu*);

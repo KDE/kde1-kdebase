@@ -361,11 +361,10 @@ void kPanel::kwmCommandReceived(QString com){
   if (com.length()== 17 && com.left(9) == "kpanel:go"){
     QPoint pos(com.mid( 9, 4).toInt(), com.mid(13, 4).toInt());
     int i;
-    for (i=0; i<nbuttons && entries[i].button!=kde_button; i++);
-    if (entries[i].popup){
-      entries[i].popup->popup(pos);
+    if (kmenu){
+      kmenu->popup(pos);
       // dirty hack to work around a possible qt bug (Matthias, qt-1.33)
-      XGrabPointer( qt_xdisplay(), entries[i].popup->winId(), TRUE,
+      XGrabPointer( qt_xdisplay(), kmenu->winId(), TRUE,
 		    ButtonPressMask | ButtonReleaseMask |
 		    PointerMotionMask | EnterWindowMask | LeaveWindowMask,
 		    GrabModeAsync, GrabModeAsync,
