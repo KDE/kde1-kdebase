@@ -279,7 +279,7 @@ PFileMenu::newLinkItem(const QFileInfo* fi, bool useCurrentPath)
 
   QString pixmap_name = kconfig.readEntry("MiniIcon", DEFAULT_FOLDER_ICON);
   QString comment = kconfig.readEntry("Comment");
-  QString name = kconfig.readEntry("Name", fi->fileName());
+  QString name = fi->fileName().left( fi->fileName().length() - 7 );
 
 #ifdef DISKNAV_DEBUG
   printf("this->path = [%s]\n", this->path.data());
