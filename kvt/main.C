@@ -674,67 +674,9 @@ void kVt::ResizeToVtWindow(){
 }
 
 
-void kVt::resizeEvent( QResizeEvent * ev)
+void kVt::resizeEvent( QResizeEvent * /*ev*/)
 {
-  if (menubar_visible && menubar->menuBarPos() == KMenuBar::Top){
-    menubar->setGeometry(0,0,width(), menubar->height());
-    frame->setGeometry(0, menubar->height(), width(), height()-menubar->height());
-  }
-  else if (menubar_visible && menubar->menuBarPos() == KMenuBar::Bottom){
-    menubar->setGeometry(0,height()-menubar->height(),width(), menubar->height());
-    frame->setGeometry(0, 0, width(), height()-menubar->height());
-  }
-  else{ // menubar not visible or floating
-    menubar->resize(width(), menubar->height());
-    frame->setGeometry(0, 0, width(), height());
-  }
-
-  // a hack 
-  //    if (setting_to_vt_window){
-  //      if (frame->height()-4 != sizehints.height){
-  //        resize(width(), height() + sizehints.height - frame->height() + 4);
-  //        resize(width(), height() + sizehints.height - frame->height() + 4);
-  //        return;
-  //      }
-  //    }
-    
-	int frameWidth = frame->lineWidth();
-  
-   if (scrollbar_visible) {
-     switch (kvt_scrollbar){
-     case kvt_right:
-       rxvt->setGeometry(frame->x()+frameWidth, frame->y()+frameWidth,
-			 frame->width()-2*frameWidth - 16, frame->height()-2*frameWidth);
-       scrollbar->setGeometry(rxvt->x() + rxvt->width(),
-			      rxvt->y(),
-			      16,
-			      rxvt->height());
-       break;
-     case kvt_left:
-       rxvt->setGeometry(frame->x()+frameWidth + 16, frame->y()+frameWidth,
-			 frame->width()-2*frameWidth - 16, frame->height()-2*frameWidth);
-       scrollbar->setGeometry(frameWidth,
-			      rxvt->y(),
-			      16,
-			      rxvt->height());
-       break;
-     }
-   }
-   else {
-     rxvt->setGeometry(frame->x()+frameWidth, frame->y()+frameWidth,
-		       frame->width()-2*frameWidth, frame->height()-2*frameWidth);
-     scrollbar->setGeometry(rxvt->x() + rxvt->width(),
-			    rxvt->y(),
-			    16,
-			    rxvt->height());
-   }
-   
-   if (ev){
-     // redraw all
-     // XClearWindow(display,vt_win);
-     //    scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
-     //     screen_refresh();
-  }
+  doGeometry();
 }
 
 void kVt::options_menu_activated( int item){
@@ -819,7 +761,7 @@ void kVt::scrollbar_menu_activated( int item){
 	scrollbar_menu_activated(0);
 	break;
       }
-      resize(width(), height());
+      doGeometry();
       break;
       
   case 2: // right
@@ -828,7 +770,7 @@ void kVt::scrollbar_menu_activated( int item){
       scrollbar_menu_activated(0);
       break;
     }
-    resize(width(), height());
+    doGeometry();
     break;
   }
 }
@@ -921,7 +863,6 @@ void kVt::color_menu_activated( int item){
 
 
 void kVt::file_menu_activated(int item){
-  int i = 0;
   switch (item){
   case 0: 
      if (fork()==0){
@@ -1007,19 +948,66 @@ void kVt::menubarMoved(){
     if (frame->height() == height())
       resize(width(), height()+menubar->height());
     else
-      resize(width(), height());
+      doGeometry();
   }
   else if (new_pos == KMenuBar::Bottom){
     if (frame->height() == height())
       resize(width(), height()+menubar->height());
     else
-      resize(width(), height());
+      doGeometry();
   }
   else if (new_pos == KMenuBar::Floating){
     if (frame->height() != height())
       resize(width(), height()-menubar->height());
   }
 }
+
+void kVt::doGeometry(){
+  if (menubar_visible && menubar->menuBarPos() == KMenuBar::Top){
+    menubar->setGeometry(0,0,width(), menubar->height());
+    frame->setGeometry(0, menubar->height(), width(), height()-menubar->height());
+  }
+  else if (menubar_visible && menubar->menuBarPos() == KMenuBar::Bottom){
+    menubar->setGeometry(0,height()-menubar->height(),width(), menubar->height());
+    frame->setGeometry(0, 0, width(), height()-menubar->height());
+  }
+  else{ // menubar not visible or floating
+    menubar->resize(width(), menubar->height());
+    frame->setGeometry(0, 0, width(), height());
+  }
+
+  int frameWidth = frame->lineWidth();
+  
+  if (scrollbar_visible) {
+    switch (kvt_scrollbar){
+    case kvt_right:
+      rxvt->setGeometry(frame->x()+frameWidth, frame->y()+frameWidth,
+			frame->width()-2*frameWidth - 16, frame->height()-2*frameWidth);
+      scrollbar->setGeometry(rxvt->x() + rxvt->width(),
+			     rxvt->y(),
+			     16,
+			     rxvt->height());
+      break;
+    case kvt_left:
+      rxvt->setGeometry(frame->x()+frameWidth + 16, frame->y()+frameWidth,
+			frame->width()-2*frameWidth - 16, frame->height()-2*frameWidth);
+      scrollbar->setGeometry(frameWidth,
+			     rxvt->y(),
+			     16,
+			     rxvt->height());
+      break;
+    }
+  }
+  else {
+    rxvt->setGeometry(frame->x()+frameWidth, frame->y()+frameWidth,
+		      frame->width()-2*frameWidth, frame->height()-2*frameWidth);
+    scrollbar->setGeometry(rxvt->x() + rxvt->width(),
+			   rxvt->y(),
+			   16,
+			   rxvt->height());
+  }
+}
+
 
 void kVt::quit(){
   delete menubar;

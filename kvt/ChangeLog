@@ -5,6 +5,7 @@ since kvt-0.18.3
   - removed some DOS-newlines (^M), which cause compile errors on
     some compilers (Mario Weilguni <mweilguni@kde.org>)
   - fixed "New Terminal" (Matthias)
+  - fixed scrollbar repositioning (relied on some old qt side effect) (Matthias)
 
 since kvt-0.18.2
   - fixed SM again (Jens stuff was broken, probably I applied the patch

@@ -71,6 +71,8 @@ protected:
 	void styleChange( GUIStyle );
 
 private:
+
+  void doGeometry();
   KMenuBar *menubar;
   QFrame *frame;
   QPopupMenu *m_file;
