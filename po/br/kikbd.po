@@ -1,15 +1,13 @@
-# KTranslator Generated File
-# SOME DESCRIPTIVE TITLE.
+# Breton translation of KDE
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>, 1998
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd-1.1\n"
 "POT-Creation-Date: 1999-04-13 01:26+0200\n"
-"PO-Revision-Date: 1999-02-04 09:12+0100\n"
-"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"PO-Revision-Date: 1999-04-20 11:43+0200\n"
+"Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso8859-1\n"
@@ -61,7 +59,6 @@ msgstr ""
 "Arouezenn Alt dizoberiet."
 
 #: kikbd.cpp:406
-#, fuzzy
 msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -82,12 +79,10 @@ msgstr ""
 "Ha fellout a ra deoc'h e emloc'hfe pa ereit an tro kentañ ?"
 
 #: keymap.cpp:186
-#, fuzzy
 msgid "KeyMap: can't allocate memory"
 msgstr "KeyMap : n'hallañ ket derannañ memor"
 
 #: keymap.cpp:233
-#, fuzzy, c-format
 msgid ""
 "Can't find symbol \"%s\".\n"
 "Maybe your default X codes do not match.\n"
@@ -100,17 +95,14 @@ msgstr ""
 "ar goulev kefluniañ."
 
 #: keymap.cpp:238
-#, fuzzy, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
 msgstr "KeyMap : n'hallan ket kavout an arouezenn \"%s\"."
 
 #: keymap.cpp:246
-#, fuzzy, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
 msgstr "KeyMap : ne veizan ket ar voneg stokell \"%s\"."
 
 #: keymap.cpp:252
-#, fuzzy, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
 msgstr "KeyMap : boneg stokell \"%s\" a ya er-maez ar rummad."
 
@@ -312,7 +304,6 @@ msgid "&Add"
 msgstr "&Ouzhpennañ"
 
 #: widgets.cpp:127
-#, fuzzy
 msgid "Add new keyboard map"
 msgstr "Oc'h ouzhpennañ un tres stokellaoueg nevez"
 
@@ -325,7 +316,6 @@ msgid "U&p"
 msgstr "&Uheloc'h"
 
 #: widgets.cpp:136
-#, fuzzy
 msgid "Move up selected keyboard map"
 msgstr "Lemel an tres stokellaoueg diuzet"
 
@@ -334,7 +324,6 @@ msgid "D&own"
 msgstr "&Izeloc'h"
 
 #: widgets.cpp:140
-#, fuzzy
 msgid "Move down selected keyboard map"
 msgstr "Diuz an tres stokellaoueg dindan"
 
@@ -351,7 +340,6 @@ msgid "Use &hot list"
 msgstr "Implij &roll tomm"
 
 #: widgets.cpp:155
-#, fuzzy
 msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
@@ -363,7 +351,6 @@ msgid "Adding Keyboard"
 msgstr "Oc'h ouzhpennañ ur stokellaoueg"
 
 #: widgets.cpp:225
-#, fuzzy
 msgid "There are no keyboard maps left to add"
 msgstr "N'eus ket mui a tres stokellaoueg"
 
@@ -388,12 +375,10 @@ msgid "Switch and Alt Switch"
 msgstr "Gwintañ ha gwintañ divoutin"
 
 #: widgets.cpp:419
-#, fuzzy
 msgid "Key(s) for switching between keyboard maps"
 msgstr "Stokell(où) evit gwintañ etre tresoù stokellaoueg"
 
 #: widgets.cpp:425
-#, fuzzy
 msgid "Key for activating Alternate symbols in current keyboard map"
 msgstr "Stokell evit bevaat arouezennoù divoutin en tres stokellaoueg o ren"
 
@@ -402,7 +387,6 @@ msgid "&Beep"
 msgstr "&Trouzal"
 
 #: widgets.cpp:439
-#, fuzzy
 msgid "Beep when keyboard map is changed"
 msgstr "Trouzal bep ma vez kemmet tres ar stokellaoueg"
 
@@ -423,7 +407,6 @@ msgid "&Emulate Caps Lock"
 msgstr "&Kendarvanañ Krouilh Pennlizh"
 
 #: widgets.cpp:476
-#, fuzzy
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
@@ -435,7 +418,6 @@ msgid "&World Menu"
 msgstr "&Lañser bedel"
 
 #: widgets.cpp:483
-#, fuzzy
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
 msgstr ""
 "Diskouez al lañser e n'eus forzh pe brenestr dre waskañ ar stokelloù gwintañ"
@@ -459,21 +441,18 @@ msgid "Input"
 msgstr "Enmont"
 
 #: widgets.cpp:505
-#, fuzzy
 msgid "Standard behavior. Keyboard map effective for all windows"
 msgstr "Emzalc'h standard. Tres stokellaoueg bev evit an holl prenester"
 
 #: widgets.cpp:509
-#, fuzzy
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Emzalc'h standard. Tres stokellaoueg bev evit an holl prenester"
+msgstr "Emzalc'h astennet. Tres stokellaoueg enrollet distag evit pep prenestr"
 
 #: widgets.cpp:513
-#, fuzzy
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "Emzalc'h standard. Tres stokellaoueg bev evit an holl prenester"
+msgstr "Emzalc'h dibar. Tres stokellaoueg enrollet distag evit pep renkad prenestr"
 
 #: widgets.cpp:561
 msgid "Button Colors"
@@ -485,15 +464,15 @@ msgstr "Rakleur"
 
 #: widgets.cpp:572
 msgid "Text label foreground color"
-msgstr ""
+msgstr "Liv rakleur ar skridennad"
 
 #: widgets.cpp:576
 msgid "Background"
-msgstr ""
+msgstr "Drekleur"
 
 #: widgets.cpp:577
 msgid "Text label background color"
-msgstr ""
+msgstr "Liv drekleur ar skridennad"
 
 #: widgets.cpp:581
 msgid "With Caps Lock"
@@ -508,7 +487,6 @@ msgid "With Alternate"
 msgstr "Gant hini divoutin"
 
 #: widgets.cpp:589
-#, fuzzy
 msgid "Background when Alternate switch key is pressed"
 msgstr "Drekleur pa vez gwasket ar gwintañ divoutin"
 

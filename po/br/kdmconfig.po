@@ -1,19 +1,13 @@
-# KTranslator Generated File
-# SOME DESCRIPTIVE TITLE.
+# Breton translation of KDE
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>, 1998
 #
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig-1.1\n"
 "POT-Creation-Date: 1999-01-12 01:14+0100\n"
-"PO-Revision-Date: 1999-02-05 16:25+0100\n"
-"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"PO-Revision-Date: 1999-04-20 16:25+0200\n"
+"Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso8859-1\n"
@@ -33,7 +27,7 @@ msgstr "&Arveriaded"
 
 #: main.cpp:98
 msgid "&Sessions"
-msgstr "&Dalc'hoù"
+msgstr "Da&lc'hoù"
 
 #: main.cpp:103
 msgid ""
@@ -72,7 +66,7 @@ msgstr "Klikit pe laoskit ur skeudenn amañ"
 
 #: kdm-appear.cpp:110
 msgid "GUI Style:"
-msgstr "Giz EIG :"
+msgstr "Giz KAK :"
 
 #: kdm-appear.cpp:116
 msgid "Motif"

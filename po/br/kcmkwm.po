@@ -1,14 +1,13 @@
 # Breton translation of KDE
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# Jañ-Mai Drapier <jdrapier@club-internet.fr>, 1999
+# Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>, 1999
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm-1.1\n"
-"POT-Creation-Date: 1999-04-10 01:21+0200\n"
-"PO-Revision-Date: 1999-03-30 19:52+0200\n"
-"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
+"PO-Revision-Date: 1999-04-20 15:47+0200\n"
+"Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso8859-1\n"
@@ -38,8 +37,7 @@ msgstr "A&raokaet"
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr ""
-"arveriadur : kcmkwm [-init | "
-"{options,buttons,titlebar,borders,mouse,advanced}]\n"
+"arveriadur : kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -61,115 +59,115 @@ msgstr "Pegus"
 msgid "Menu"
 msgstr "Lañser"
 
-#: titlebar.cpp:178 titlebar.cpp:936
+#: titlebar.cpp:178 titlebar.cpp:934
 msgid "Left"
 msgstr "A-gleiz"
 
-#: titlebar.cpp:182 titlebar.cpp:946
+#: titlebar.cpp:182 titlebar.cpp:944
 msgid "Right"
 msgstr "A-zehoù"
 
-#: titlebar.cpp:473
+#: titlebar.cpp:471
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Leun eo tu kleiz ar varrenn-ditl... o tizoberiañ an nozelenn 'uhelañ'\n"
 
-#: titlebar.cpp:506
+#: titlebar.cpp:504
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Leun eo tu dehou ar varrenn-ditl... o tizoberiañ an nozelenn 'uhelañ'\n"
 
-#: titlebar.cpp:546
+#: titlebar.cpp:544
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Leun ro tu kleiz ar varrenn-ditl... o tizoberiañ an nozelenn 'izelaat'\n"
 
-#: titlebar.cpp:579
+#: titlebar.cpp:577
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Leun eo tu dehou ar varrenn-ditl... o tizoberiañ an nozelenn 'izelaat'\n"
 
-#: titlebar.cpp:932
+#: titlebar.cpp:930
 msgid "Title Alignment"
 msgstr "Reizhiadur an titl"
 
-#: titlebar.cpp:941
+#: titlebar.cpp:939
 msgid "Middle"
 msgstr "E-kreiz"
 
-#: titlebar.cpp:969
+#: titlebar.cpp:967
 msgid "Shaded Vertically"
 msgstr "Disheoliet a-serzh"
 
-#: titlebar.cpp:975
+#: titlebar.cpp:973
 msgid "Shaded Horizontally"
 msgstr "Disheoliet a-led"
 
-#: titlebar.cpp:984
+#: titlebar.cpp:982
 msgid "Plain"
 msgstr "Leun"
 
-#: titlebar.cpp:992 titlebar.cpp:1017
+#: titlebar.cpp:990 titlebar.cpp:1015
 msgid "Pixmap"
 msgstr "Piksmap"
 
-#: titlebar.cpp:1005
+#: titlebar.cpp:1003
 msgid "Active title has shaded frame"
 msgstr "An titl bev en deus ur framm disheoliet"
 
-#: titlebar.cpp:1046
+#: titlebar.cpp:1044
 msgid "Active pixmap:"
 msgstr "Piksmap bev :"
 
-#: titlebar.cpp:1051
+#: titlebar.cpp:1049
 msgid "Inactive pixmap:"
 msgstr "Piksmap marv :"
 
-#: titlebar.cpp:1057
+#: titlebar.cpp:1055
 msgid "No pixmap under text"
 msgstr "Piksmap ebet dindan an destenn"
 
-#: titlebar.cpp:1068
+#: titlebar.cpp:1066
 msgid "Mouse action"
 msgstr "Obererezh al logodenn"
 
-#: titlebar.cpp:1076
+#: titlebar.cpp:1074
 msgid "Left Button double click does:"
 msgstr "Daouglikañ al logodenn a ra :"
 
-#: titlebar.cpp:1086
+#: titlebar.cpp:1084
 msgid "(Un)Maximize"
 msgstr "(Diz)Uhelaat"
 
-#: titlebar.cpp:1087
+#: titlebar.cpp:1085
 msgid "(Un)Shade"
 msgstr "(Dis)Heoliañ"
 
-#: titlebar.cpp:1088
+#: titlebar.cpp:1086
 msgid "Iconify"
 msgstr "Arlunañ"
 
-#: titlebar.cpp:1089
+#: titlebar.cpp:1087
 msgid "(Un)Sticky"
 msgstr "(Dis)Pegañ"
 
-#: titlebar.cpp:1109
+#: titlebar.cpp:1107
 msgid "Title animation"
 msgstr "Buhezadur an titl"
 
-#: titlebar.cpp:1125
+#: titlebar.cpp:1123
 msgid "ms"
 msgstr "me"
 
-#: titlebar.cpp:1368
+#: titlebar.cpp:1366
 msgid "Window manager setup - ERROR"
 msgstr "Kefluniañ ar merour prenester - FAZI"
 
-#: titlebar.cpp:1369
+#: titlebar.cpp:1367
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
@@ -252,11 +250,11 @@ msgstr "Fokus hervez al logodenn"
 
 #: windows.cpp:189
 msgid "Classic focus follows mouse"
-msgstr "Fokus hervez al logodenn mod-klassel"
+msgstr "Fokus hervez al logodenn klasel"
 
 #: windows.cpp:191
 msgid "Classic sloppy focus"
-msgstr "Fokus sloppy klasel"
+msgstr "Fokus klasel laosk"
 
 #: windows.cpp:203
 msgid "Auto Raise"
@@ -279,8 +277,7 @@ msgid "Enable active desktop borders"
 msgstr "Laka bordoù ar gorretaol oberiant"
 
 #: desktop.cpp:81
-#, fuzzy
-msgid "Move pointer towards center after switch"
+msgid "Move pointer towards center after gwintañ"
 msgstr "Dilec'hiañ ar reti davet ar c'hreizh goude kemmañ"
 
 #: desktop.cpp:87
@@ -430,7 +427,7 @@ msgstr "CDE"
 
 #: advanced.cpp:69
 msgid "Grab the Right Mouse Button"
-msgstr "Tapour afell dehou al logodenn"
+msgstr "Tapout afell dehou al logodenn"
 
 #: advanced.cpp:78
 msgid "Filters"
