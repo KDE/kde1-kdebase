@@ -91,7 +91,7 @@ msgstr "Panel neu starten"
 
 #: props.C:160
 msgid "Disk Navigator"
-msgstr ""
+msgstr "Platten-Navigator"
 
 #: props.C:168
 msgid "Panel"
@@ -115,31 +115,31 @@ msgstr "Kann dies nicht als Button in das Panel legen!"
 
 #: pfilemenu.C:111
 msgid "KFM Information"
-msgstr ""
+msgstr "KFM-Information"
 
 #: pfilemenu.C:112
 msgid "Creating directory:\n"
-msgstr ""
+msgstr "Erzeuge Verzeichnis:\n"
 
 #: pfilemenu.C:340
 msgid "(empty folder)"
-msgstr ""
+msgstr "(leeres Verzeichnis)"
 
 #: pfilemenu.C:397
 msgid "(Too Many Files)"
-msgstr ""
+msgstr "(Zuviele Dateien)"
 
 #: pfilemenu.C:406
 msgid "(Access Denied)"
-msgstr ""
+msgstr "(Zugriff verweigert)"
 
 #: pfilemenu.C:409
 msgid "(Unreadable)"
-msgstr ""
+msgstr "(Nicht lesbar)"
 
 #: pfilemenu.C:416
 msgid "Open Folder"
-msgstr ""
+msgstr "Öffne Verzeichnis"
 
 #~ msgid "Move"
 #~ msgstr "Verschieben"

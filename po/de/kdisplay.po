@@ -289,7 +289,7 @@ msgstr "Nach &Paﬂwort fragen"
 
 #: scrnsave.cpp:273
 msgid "&Accept root password to unlock"
-msgstr ""
+msgstr "&Akzeptiere Root-Passwort zum Entsperren"
 
 #: scrnsave.cpp:279
 msgid "Show &password as stars"

@@ -61,24 +61,23 @@ msgstr "Dieses System ist z.Z. nicht unterstützt :-("
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
-#, fuzzy
 msgid "Not Available"
-msgstr "Nicht errechenbar"
+msgstr "Nicht Errechenbar"
 
 #: processor_linux.cpp:19
 msgid "File Error!"
-msgstr ""
+msgstr "Datei-Fehler!"
 
 #: processor_linux.cpp:20
 msgid "Cannot read /proc/cpuinfo"
-msgstr ""
+msgstr "Konnte /proc/cpuinfo nicht lesen"
 
 #: processor_fbsd.cpp:47
 #, c-format
 msgid "%s, unknown speed"
-msgstr ""
+msgstr "%s, unbekannte Geschwindigkeit"
 
 #: processor_fbsd.cpp:49
 #, c-format
 msgid "%s running at %s MHz"
-msgstr ""
+msgstr "%s läuft mit %s MHz"

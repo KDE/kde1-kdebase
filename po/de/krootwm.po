@@ -16,7 +16,7 @@ msgstr "FEHLER: Vorlage existiert nicht '%s'"
 
 #: krootwm.C:181
 msgid "Bookmarks"
-msgstr ""
+msgstr "Lesezeichen"
 
 #: krootwm.C:183
 msgid "Help on desktop"
@@ -56,7 +56,7 @@ msgstr "Abmelden"
 
 #: krootwm.C:219
 msgid "Edit Bookmarks"
-msgstr ""
+msgstr "Lesezeichen bearbeiten"
 
 #: krootwm.C:607
 msgid "Could not create folder"

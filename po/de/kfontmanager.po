@@ -90,72 +90,72 @@ msgstr ""
 
 #: kfontexplorer.cpp:126
 msgid "Select Font"
-msgstr ""
+msgstr "Auswahl der Schrift"
 
 #: kfontexplorer.cpp:130
 msgid "Requested Font"
-msgstr ""
+msgstr "Gwünschte Schrift"
 
 #: kfontexplorer.cpp:135
 msgid "Actual Font"
-msgstr ""
+msgstr "Benutze Schrift"
 
 #: kfontexplorer.cpp:139 kfontexplorer.cpp:143
 msgid "Family:"
-msgstr ""
+msgstr "Familie:"
 
 #: kfontexplorer.cpp:163 kfontexplorer.cpp:168
 msgid "Size:"
-msgstr ""
+msgstr "Größe:"
 
 #: kfontexplorer.cpp:177 kfontexplorer.cpp:182
 msgid "Weight:"
-msgstr ""
+msgstr "Stärke:"
 
 #: kfontexplorer.cpp:191 kfontexplorer.cpp:199
 msgid "Style:"
-msgstr ""
+msgstr "Stil:"
 
 #: kfontexplorer.cpp:234
 msgid "Charset"
-msgstr ""
+msgstr "Zeichensatz"
 
 #: kfontexplorer.cpp:246
 msgid "Size"
-msgstr ""
+msgstr "Größe"
 
 #: kfontexplorer.cpp:285
 msgid "Weight"
-msgstr ""
+msgstr "Stärke"
 
 #: kfontexplorer.cpp:286 kfontexplorer.cpp:394
 msgid "normal"
-msgstr ""
+msgstr "normal"
 
 #: kfontexplorer.cpp:287 kfontexplorer.cpp:396
 msgid "bold"
-msgstr ""
+msgstr "fett"
 
 #: kfontexplorer.cpp:296
 msgid "Style"
-msgstr ""
+msgstr "Schnitt"
 
 #: kfontexplorer.cpp:297 kfontexplorer.cpp:407 kfontexplorer.cpp:437
 msgid "roman"
-msgstr ""
+msgstr "gerade"
 
 #: kfontexplorer.cpp:298 kfontexplorer.cpp:409 kfontexplorer.cpp:435
 msgid "italic"
-msgstr ""
+msgstr "kursiv"
 
 #: kfontexplorer.cpp:326
 msgid "Dolor Ipse"
-msgstr ""
+msgstr "Dolor Ipse"
 
 #: kfontexplorer.cpp:430
 msgid "Bold"
-msgstr ""
+msgstr "Fett"
 
 #: kfontexplorer.cpp:432
 msgid "Normal"
-msgstr ""
+msgstr "Normal"

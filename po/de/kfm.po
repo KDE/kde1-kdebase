@@ -48,9 +48,8 @@ msgid "&Select"
 msgstr "&Auswählen"
 
 #: kfmgui.cpp:341
-#, fuzzy
 msgid "Select &all"
-msgstr "&Auswählen"
+msgstr "&Alle Auswählen"
 
 #: kfmgui.cpp:344
 msgid "Mime Types"
@@ -204,7 +203,6 @@ msgid "Up"
 msgstr "Oben"
 
 #: kfmgui.cpp:538
-#, fuzzy
 msgid "Home"
 msgstr "Heimatverzeichnis"
 
@@ -232,7 +230,7 @@ msgstr "Icon konnte nicht geladen werden\n"
 #: root.cpp:874 root.cpp:1135 root.cpp:1153 root.cpp:1159 root.cpp:1165
 #: root.cpp:1246 root.cpp:1757 root.cpp:1782
 msgid "KFM Error"
-msgstr ""
+msgstr "KFM Fehler"
 
 #: kfmexec.cpp:59 kfmgui.cpp:751 kfmman.cpp:1041
 msgid "Malformed URL\n"
@@ -281,9 +279,8 @@ msgid "Document: Done"
 msgstr "Dokument: Fertig"
 
 #: kfmview.cpp:350 root.cpp:875
-#, fuzzy
 msgid "ERROR: You may only drop URLs"
-msgstr "Fehler: Datei wurde auf sich selbst gelegt"
+msgstr "Fehler: Sie können nur URLs fallenlassen"
 
 #: kfmview.cpp:366
 msgid "ERROR: Drop over malformed URL"
@@ -549,18 +546,16 @@ msgid "Transparent Text for Root Icons."
 msgstr "Text für Desktop-Icons transparent unterlegen"
 
 #: kfmdlg.cpp:114
-#, fuzzy
 msgid "&Browser"
-msgstr "Durchsuchen"
+msgstr "&Browser"
 
 #: bookmark.cpp:296
 msgid "Could not write bookmark"
 msgstr "Konnte Lesezeichen nicht schreiben"
 
 #: kfmprops.cpp:234
-#, fuzzy
 msgid "Name"
-msgstr "Vollständiger Name"
+msgstr "Name"
 
 #: kfmprops.cpp:251
 msgid "Full Name"
@@ -649,7 +644,7 @@ msgstr "Benutzer"
 
 #: kfmprops.cpp:460 kfmprops.cpp:559
 msgid "Group"
-msgstr ""
+msgstr "Gruppe"
 
 #: kfmprops.cpp:465
 msgid "Others"
@@ -672,9 +667,8 @@ msgid "Ownership"
 msgstr "Eigentum"
 
 #: kfmprops.cpp:504
-#, fuzzy
 msgid "Owner"
-msgstr "Eigentum"
+msgstr "Besitzer"
 
 #: kfmprops.cpp:628
 msgid ""
@@ -1304,7 +1298,7 @@ msgstr "Nehme HTML an"
 
 #: open-with.cpp:132
 msgid "This group is empty!"
-msgstr ""
+msgstr "Diese Gruppe ist leer!"
 
 #: kfmprops.h:73
 msgid "&General"

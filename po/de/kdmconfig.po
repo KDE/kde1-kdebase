@@ -25,6 +25,7 @@ msgstr "&Sitzungen"
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
+"Benutzung: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 
 #: main.cpp:145
 msgid "KDM Configuration"
@@ -68,11 +69,11 @@ msgstr "Windows"
 
 #: kdm-appear.cpp:128
 msgid "Language"
-msgstr ""
+msgstr "Sprache"
 
 #: kdm-appear.cpp:131
 msgid "Language:"
-msgstr ""
+msgstr "Sprache:"
 
 #: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
@@ -220,9 +221,8 @@ msgid "Save image as default image?"
 msgstr "Speichere Bild als Standard?"
 
 #: kdm-sess.cpp:50
-#, fuzzy
 msgid "Allow to shutdown"
-msgstr "Herunterfahren ermöglichen:"
+msgstr "Herunterfahren ermöglichen"
 
 #: kdm-sess.cpp:55
 msgid "All"
@@ -262,7 +262,7 @@ msgstr "Verfügbare Typen"
 
 #: klangcombo.cpp:133
 msgid "without name!"
-msgstr ""
+msgstr "ohne Name!"
 
 #~ msgid "&Fonts"
 #~ msgstr "&Schriftarten"

@@ -56,17 +56,17 @@ msgstr "Beenden"
 
 #: kgreeter.cpp:443
 msgid "Logins not available right now."
-msgstr ""
+msgstr "Benutzernamen derzeicht nicht verfügbar."
 
 #: kgreeter.cpp:515 kgreeter.cpp:542
 msgid "Sorry -- your account has expired."
-msgstr ""
+msgstr "Sorry -- Ihr Zugang ist abgelaufen."
 
 #: kgreeter.cpp:520 kgreeter.cpp:547
 #, c-format
 msgid "Warning: your account expires on %s"
-msgstr ""
+msgstr "Warnung: Ihr Zugang läuft am %s aus"
 
 #: kgreeter.cpp:574
 msgid "Home directory not available"
-msgstr ""
+msgstr "Heimat-Verzeichnis nicht verfügbar"

@@ -128,7 +128,6 @@ msgid "Save &Options"
 msgstr "&Einstellungen sichern"
 
 #: main.C:678
-#, fuzzy
 msgid ""
 "\n"
 "\n"
@@ -143,6 +142,7 @@ msgstr ""
 "\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
 "\n"
 "Terminalemulation für das KDE Desktop Environment\n"
 "basierend auf Robert Nations rxvt-2.08"
