@@ -336,8 +336,6 @@ long KProtocolHTTP::Read(void *buffer, long len)
 	emit info( infoStr );
     }
     
-    /*printf("got nbytes: %d\n",nbytes);*/
-
     if ( ferror(fsocket))
     {
         Error( KIO_ERROR_CouldNotRead,"Reading from socket failed", errno);
