@@ -42,7 +42,7 @@ msgstr ""
 #: kfindtop.cpp:137
 #, fuzzy
 msgid "&Add to archive"
-msgstr "Aggregar al archivo"
+msgstr "Agregar al archivo"
 
 #: kftabdlg.cpp:114
 msgid "&All files"
@@ -161,7 +161,7 @@ msgstr "Agregar al Archivo:"
 
 #: kfindtop.cpp:226
 msgid "Add to archive"
-msgstr "Aggregar al archivo"
+msgstr "Agregar al archivo"
 
 #: kftabdlg.cpp:198
 msgid "All Files and Folders"
@@ -264,7 +264,7 @@ msgstr ""
 
 #: kfwin.cpp:141
 msgid "It wasn't possible to save results!"
-msgstr "No se pudo guardar los resultados!"
+msgstr "¡No se pudo guardar los resultados!"
 
 #: kfindtop.cpp:122
 #, fuzzy
@@ -363,7 +363,7 @@ msgstr "Guardando"
 
 #: kfdird.cpp:167 kfdird.cpp:192 kfdird.cpp:210
 msgid "Sorry"
-msgstr "Perdón"
+msgstr "Lo siento"
 
 #: kfwin.cpp:246
 msgid ""
@@ -384,19 +384,19 @@ msgstr "Detener Búsqueda"
 
 #: kftabdlg.cpp:384
 msgid "The date is not valid!!"
-msgstr "La fecha es inválida!!"
+msgstr "¡La fecha es inválida!"
 
 #: kftabdlg.cpp:407
 msgid "The day(s) value isn't valid!!"
-msgstr "El valor(es) del(os) días es inválido!!"
+msgstr "¡El valor(es) del(os) días es inválido!"
 
 #: kftabdlg.cpp:396
 msgid "The month(s) value isn't valid!!"
-msgstr "El valor del(os) mes(es) es inválido!!"
+msgstr "¡El valor del(os) mes(es) es inválido!"
 
 #: kftabdlg.cpp:424
 msgid "The value in size isn't valid number!!"
-msgstr "El valor en tamaño es inválido!!"
+msgstr "¡El valor en tamaño es inválido!"
 
 #: kfwin.cpp:239
 msgid ""

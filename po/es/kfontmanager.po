@@ -52,7 +52,7 @@ msgstr ""
 
 #: kfontmanager.cpp:212 kfontmanager.cpp:283 kfontmanager.cpp:288
 msgid "Sorry"
-msgstr "Perdón"
+msgstr "Lo siento"
 
 #: kfontmanager.cpp:212
 msgid ""

@@ -65,7 +65,7 @@ msgstr "Examinar..."
 #: backgnd.cpp:489
 #, fuzzy
 msgid "Default"
-msgstr "KDE Standard"
+msgstr "KDE por defecto"
 
 #: backgnd.cpp:821
 msgid "Desktop Title"
@@ -157,15 +157,15 @@ msgstr "Guardar paleta"
 
 #: colorscm.cpp:374 colorscm.cpp:382
 msgid "You have chosen a name used by a supplied color scheme"
-msgstr "Usted a elegido un nombre usado por una paleta existente"
+msgstr "A elegido un nombre usado por una paleta existente"
 
 #: colorscm.cpp:467
 msgid "KDE Default"
-msgstr "KDE Standard"
+msgstr "KDE por defecto"
 
 #: colorscm.cpp:693
 msgid "Display Setup"
-msgstr "Configuración del display"
+msgstr "Configuración de la pantalla"
 
 #: colorscm.cpp:694
 msgid ""
@@ -173,7 +173,7 @@ msgid ""
 "Do you want to install the default color schemes now ?"
 msgstr ""
 "No se encontraron paletas para el escritorio.\n"
-"Desea instalar las paletas standard ahora ?"
+"Desea instalar las paletas estandard ahora ?"
 
 #: kwmcom.cpp:78 kwmcom.cpp:105
 msgid "kwmcom: communication with kwm failed\n"
@@ -193,7 +193,7 @@ msgstr "Bloquear"
 
 #: scrnsave.cpp:107 scrnsave.cpp:163
 msgid "Screen Saver"
-msgstr "Blanqueador de Pantalla"
+msgstr "Bloqueo de Pantalla"
 
 #: scrnsave.cpp:184
 msgid "Setup..."
@@ -229,7 +229,7 @@ msgstr "General"
 
 #: general.cpp:84
 msgid "Widget style"
-msgstr "Estilo de widgets"
+msgstr "Estilo de objetos"
 
 #: general.cpp:89
 msgid "Motif"
@@ -257,7 +257,7 @@ msgstr "Pequeña"
 
 #: general.cpp:139
 msgid "Medium"
-msgstr "Mediano"
+msgstr "Mediana"
 
 #: general.cpp:143
 msgid "Large"
@@ -284,7 +284,7 @@ msgstr "Color"
 #: main.cpp:67
 #, fuzzy
 msgid "&Screensaver"
-msgstr "Blanqueador de Pantalla"
+msgstr "Bloqueo de Pantalla"
 
 #: main.cpp:70
 msgid "&Style"
@@ -293,7 +293,7 @@ msgstr ""
 #: main.cpp:105
 #, fuzzy
 msgid "Display settings"
-msgstr "Configuración del display"
+msgstr "Configuración de la pantalla"
 
 #~ msgid "KDE Display Configuration"
 #~ msgstr "Configuración del display del KDE"
@@ -306,10 +306,10 @@ msgstr "Configuración del display"
 #~ "\n"
 
 #~ msgid "  -init               apply current settings to the display\n"
-#~ msgstr "  -init               aplicar opciones actuales al display\n"
+#~ msgstr "  -init               aplicar opciones actuales a la pantalla\n"
 
 #~ msgid "  -setup              setup the display\n"
-#~ msgstr "  -setup              configurar el display\n"
+#~ msgstr "  -setup              configurar la pantalla\n"
 
 #, fuzzy
 #~ msgid "File"

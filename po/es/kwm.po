@@ -20,7 +20,7 @@ msgid ""
 "started\n"
 msgstr ""
 "kwm: parece que ya hay un administrador de ventanas funcionando. El kwm no "
-"arrancar\n"
+"arrancará\n"
 
 #: main.C:79
 msgid "kwm: failure during initialisation; aborting\n"
@@ -32,7 +32,7 @@ msgstr ""
 
 #: main.C:374
 msgid "Usage: "
-msgstr ""
+msgstr "Uso: "
 
 #: main.C:385
 #, fuzzy
@@ -51,15 +51,15 @@ msgstr "&Iconizar"
 #: main.C:388
 #, fuzzy
 msgid "&DeIconify"
-msgstr "&Iconizar"
+msgstr "&Deiconizar"
 
 #: main.C:389
 msgid "&Sticky"
-msgstr ""
+msgstr "Pegar"
 
 #: main.C:390
 msgid "&UnSticky"
-msgstr ""
+msgstr "Despegar"
 
 #: main.C:391
 #, fuzzy
@@ -82,7 +82,7 @@ msgstr "Al Escritorio"
 
 #: main.C:396
 msgid "&Onto current desktop"
-msgstr ""
+msgstr "Al escritorio actual"
 
 #: main.C:446
 msgid "One"
@@ -118,7 +118,7 @@ msgstr "Ocho"
 
 #: main.C:885
 msgid "*** No Tasks ***"
-msgstr ""
+msgstr "*** Sin tareas ***"
 
 #: minicli.C:115
 msgid "Command:"
@@ -131,33 +131,41 @@ msgstr "Salir"
 
 #: logout.C:45
 msgid "Session prepared for logout"
-msgstr ""
+msgstr "Sesión preparada para el logout"
 
 #: logout.C:51
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
+"Las siguientes apliaciones contierne datos que\n"
+"se perderán en la siguiente sesión."
 
 #: logout.C:62
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
+"Las siguientes apliaciones no pueden ser restauradas en la siguiente\n"
+"sesión, solo recomenzar. Asegurese que no contienen datos importantes\n"
+"que se puedan perder."
 
 #: logout.C:73
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
+"Las siguientes apliaciones no son X y no podrán ser restauradas\n"
+"en la siguiente sesión. Asegúrese de que no contienen datos importantes\n"
+"no salvados."
 
 #: taskmgr.C:35
 msgid "Switch to"
-msgstr ""
+msgstr "Pasar a"
 
 #: taskmgr.C:49
 msgid "Current session"
-msgstr ""
+msgstr "Sesión actual"
 
 #, fuzzy
 #~ msgid "Iconify"
@@ -195,7 +203,7 @@ msgstr ""
 #~ msgstr "&Ejecutar comando"
 
 #~ msgid "&Display properties"
-#~ msgstr "Propiedades del &Display"
+#~ msgstr "Propiedades de la Pantalla"
 
 #~ msgid "&Refresh desktop"
 #~ msgstr "&Refrescar escritorio"

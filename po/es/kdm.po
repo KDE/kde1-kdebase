@@ -29,7 +29,7 @@ msgstr "Entrada:"
 
 #: kdmshutdown.cpp:226
 msgid "Ok"
-msgstr "Continuar"
+msgstr "Aceptar"
 
 #: kgreeter.cpp:150
 msgid "Password:"

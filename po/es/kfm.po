@@ -113,7 +113,7 @@ msgstr "&Vista de diapositivas"
 
 #: kfmgui.cpp:360
 msgid "&HTML View"
-msgstr "Ver &HTLM"
+msgstr "Ver &HTML"
 
 #: kfmgui.cpp:363
 msgid "&Icon View"
@@ -142,7 +142,7 @@ msgstr "Releer uniones"
 
 #: kfmgui.cpp:380
 msgid "&View Frame Source"
-msgstr ""
+msgstr "&Ver fuente del Frame"
 
 #: kfmgui.cpp:382
 #, fuzzy
@@ -150,8 +150,9 @@ msgid "View Docu&ment Source"
 msgstr "Documento: listo"
 
 #: kfmgui.cpp:393
+#, fuzzy
 msgid "Show Cache"
-msgstr ""
+msgstr "Mostrar &Arbol"
 
 #: kfmgui.cpp:395
 #, fuzzy
@@ -169,20 +170,20 @@ msgstr ""
 #: kfmgui.cpp:408
 #, fuzzy
 msgid "Show &Menubar"
-msgstr "Mostrar &Arbol"
+msgstr "Mostrar barra de &menu"
 
 #: kfmgui.cpp:410
 msgid "Show &Statusbar"
-msgstr ""
+msgstr "Monstrar barra de estado"
 
 #: kfmgui.cpp:412
 #, fuzzy
 msgid "Show &Toolbar"
-msgstr "Mostrar &Arbol"
+msgstr "Mostrar barra de utilidades"
 
 #: kfmgui.cpp:414
 msgid "Show &Location bar"
-msgstr ""
+msgstr "Monstar barra de situación"
 
 #: kfmgui.cpp:417
 #, fuzzy
@@ -278,7 +279,7 @@ msgid ""
 "Could not load icon\n"
 "%s"
 msgstr ""
-"Imposible crear directorio\n"
+"Imposible leer icono\n"
 "%s"
 
 #: kbind.cpp:291 kbind.cpp:364 kbind.cpp:417 kbind.cpp:1466 kbind.cpp:1474
@@ -431,15 +432,15 @@ msgstr "bytes"
 
 #: kbind.cpp:289
 msgid "The mime type config file "
-msgstr ""
+msgstr "El archivo de configuiración del tipo mime"
 
 #: kbind.cpp:290
 msgid "does not conatain a MimeType=... entry"
-msgstr ""
+msgstr "no contiene una entrada MimeType=..."
 
 #: kbind.cpp:365
 msgid "No mime types installed!"
-msgstr ""
+msgstr "no hay tipos mime instalados"
 
 #: kbind.cpp:414 kbind.cpp:1126
 msgid "Could not find mime type\n"
@@ -448,7 +449,7 @@ msgstr "Imposible encontrar el tipo mime\n"
 #: kbind.cpp:686 kbind.cpp:695 kbind.cpp:1829 kbind.cpp:1830 kbind.cpp:1842
 #: kbind.cpp:1844
 msgid "Mount"
-msgstr ""
+msgstr "Montaje"
 
 #: kbind.cpp:700 kbind.cpp:1820
 #, fuzzy
@@ -477,16 +478,20 @@ msgid ""
 "This is a document!\n"
 "Not an application"
 msgstr ""
+"¡Esto es un documento!\n"
+"No una aplicación"
 
 #: kbind.cpp:1493 kbind.cpp:1510
 msgid "Can only start executables on local disks\n"
-msgstr ""
+msgstr "Solo puedo arrancar ejecutables en un disco local\n"
 
 #: kbind.cpp:1571 kbind.cpp:1645 kbind.cpp:1795
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
 msgstr ""
+"Solo puedo trabajar con archivos *.kdelnk\n"
+"en discos duros locales"
 
 #: kbind.cpp:1581 kbind.cpp:1655 kbind.cpp:1805
 #, fuzzy
@@ -495,11 +500,11 @@ msgstr "Imposible acceder a la papelera"
 
 #: kbind.cpp:1610
 msgid "The \"Link=....\" entry is empty"
-msgstr ""
+msgstr "La entrada \"Link=...\" esta vacia"
 
 #: kbind.cpp:1625
 msgid "The config file has no \"Type=...\" line"
-msgstr ""
+msgstr "El archivo de configuración no tiene una linea \"Type=...\" "
 
 #: kbind.cpp:1673
 msgid ""
@@ -508,6 +513,10 @@ msgid ""
 "entry. Edit the Properties\n"
 "to solve the probelm"
 msgstr ""
+"Este archivo no contiene una entrada\n"
+"Exec=....\n"
+"Edita las propiedades\n"
+"para resolver el problema"
 
 #: kbind.cpp:1761
 msgid "ERROR: No Terminal Setting"
@@ -558,7 +567,7 @@ msgstr "Abrir con:"
 
 #: main.cpp:203
 msgid "Cut"
-msgstr ""
+msgstr "Cortar"
 
 #: kfmman.cpp:1041 kfmtree.cpp:186 main.cpp:204
 msgid "Move"
@@ -566,7 +575,7 @@ msgstr "Mover"
 
 #: kfmman.cpp:984 kfmtree.cpp:264 main.cpp:205
 msgid "Properties"
-msgstr "Prpiedades"
+msgstr "Propiedades"
 
 #: kfmman.cpp:1045 kfmtree.cpp:190 main.cpp:206
 msgid "Link"
@@ -575,7 +584,7 @@ msgstr "Enlazar"
 #: main.cpp:207
 #, fuzzy
 msgid "Empty Trash Bin"
-msgstr "Es la papelera"
+msgstr "Vaciar la papelera"
 
 #: main.cpp:208
 #, fuzzy
@@ -719,7 +728,7 @@ msgstr ""
 #: kfmprops.cpp:625
 #, c-format
 msgid " ERROR: No user %s"
-msgstr "ERROR: Noexiste usuario %s"
+msgstr "ERROR: No existe usuario %s"
 
 #: kfmprops.cpp:630
 #, c-format
@@ -800,7 +809,7 @@ msgstr "Aplicar globalmente"
 
 #: kfmprops.cpp:1038 kfmprops.cpp:1111 kfmprops.cpp:1168
 msgid "(Default)"
-msgstr ""
+msgstr "(Por defecto)"
 
 #: kfmprops.cpp:1100
 msgid "Could not write to\n"
@@ -821,7 +830,7 @@ msgstr "Comentario"
 
 #: kfmprops.cpp:1277
 msgid "Name ( in your language )"
-msgstr ""
+msgstr "Nombre ( en tu idioma )"
 
 #: kfmprops.cpp:1500
 msgid "Pattern ( example: *.html;*.HTML; )"
@@ -968,7 +977,7 @@ msgstr "Imposible escribir en\n"
 #: kiojob.cpp:282 kiojob.cpp:304 kiojob.cpp:323
 #, fuzzy
 msgid "Could not make symlink to"
-msgstr "ERROR: Imposyble realizar enlace smbólico con %s"
+msgstr "ERROR: Imposible realizar enlace simbólico con %s"
 
 #: kiojob.cpp:357
 #, c-format
@@ -1129,11 +1138,11 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1102 kiojob.cpp:1117
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "File %s\n"
 "does not exist"
-msgstr ""
+msgstr " no existe\n"
 
 #: kiojob.cpp:1208
 #, c-format
@@ -1163,12 +1172,12 @@ msgstr ""
 
 #: kiojob.cpp:1350
 msgid "Making directory"
-msgstr ""
+msgstr "Creando directorio"
 
 #: kiojob.cpp:1432 kiojob.cpp:1486 kiojob.cpp:1528
 #, c-format
 msgid "File %i/%i"
-msgstr "Fichero %i %i"
+msgstr "Archivo %i %i"
 
 #: kiojob.cpp:1435 kiojob.cpp:1490
 #, c-format
@@ -1181,7 +1190,7 @@ msgid ""
 "Could not delete directory\n"
 "%s"
 msgstr ""
-"Imposible crear directorio\n"
+"Imposible borrar directorio\n"
 "%s"
 
 #: kiojob.cpp:1557
@@ -1201,11 +1210,11 @@ msgstr "Recuperando la lista de %s ..."
 
 #: kiojob.cpp:1815
 msgid "Segmentation fault in io subprocess"
-msgstr ""
+msgstr "Error de segmentación en el subproceso de entrada/salida"
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"
-msgstr "Error de instalación ed KFM"
+msgstr "Error de instalación de KFM"
 
 #: autostart.cpp:29
 msgid "The directory "
@@ -1213,7 +1222,7 @@ msgstr "El directorio"
 
 #: autostart.cpp:30
 msgid " does not exist\n"
-msgstr ""
+msgstr " no existe\n"
 
 #: kfmtree.cpp:422
 #, fuzzy
@@ -1287,7 +1296,7 @@ msgstr ""
 
 #: kfmexec/main.cpp:46
 msgid "is malformed"
-msgstr ""
+msgstr "esta corrompido"
 
 #: kfmexec/main.cpp:132
 #, c-format
@@ -1297,13 +1306,23 @@ msgid ""
 "has been modified.\n"
 "Do you want to save it?"
 msgstr ""
+"El archivo\n"
+"%s\n"
+"ha sido modificado.\n"
+"¿Desea guardar los cambios?"
 
 #: kfmexec/main.cpp:133
 msgid "KFM Question"
-msgstr ""
+msgstr "Pregunta KFM"
 
 #~ msgid "&How can I ..."
 #~ msgstr "&Cómo se..."
+
+#~ msgid "Mount default"
+#~ msgstr "Montaje pro defecto"
+
+#~ msgid "UID"
+#~ msgstr "UID"
 
 #, fuzzy
 #~ msgid "GID "
