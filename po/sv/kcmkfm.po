@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
 "POT-Creation-Date: 1998-12-20 05:05+0600\n"
-"PO-Revision-Date: 1998-12-19 17:05+01:00\n"
+"PO-Revision-Date: 1998-12-21 14:16+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -154,32 +154,31 @@ msgstr "Antag HTML"
 
 #: khttpoptdlg.cpp:84
 msgid "Disable Cookies"
-msgstr ""
+msgstr "Använd ej kakor"
 
 #: khttpoptdlg.cpp:91
-#, fuzzy
 msgid "Default accept policy"
-msgstr "Standardteckenkodning"
+msgstr "Standardpolicy"
 
 #: khttpoptdlg.cpp:100 khttpoptdlg.cpp:148
 msgid "Accept"
-msgstr ""
+msgstr "Ta emot"
 
 #: khttpoptdlg.cpp:105 khttpoptdlg.cpp:153
 msgid "Ask"
-msgstr ""
+msgstr "Fråga"
 
 #: khttpoptdlg.cpp:110 khttpoptdlg.cpp:158
 msgid "Reject"
-msgstr ""
+msgstr "Vägra ta emot"
 
 #: khttpoptdlg.cpp:123
 msgid "Domain specific settings:"
-msgstr ""
+msgstr "Domänspecifika inställningar:"
 
 #: khttpoptdlg.cpp:130
 msgid "Change domain accept policy"
-msgstr ""
+msgstr "Ändra domänpolicy"
 
 #: useragentdlg.cpp:45
 msgid "On server:"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
 "POT-Creation-Date: 1998-12-21 01:17+0100\n"
-"PO-Revision-Date: 1998-12-19 18:01+01:00\n"
+"PO-Revision-Date: 1998-12-21 15:22+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -463,7 +463,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Flaggan %s stöds inte på den här plattformen!"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -475,7 +474,7 @@ msgstr ""
 "\n"
 "Ditt system använder skuggade lösenord.\n"
 "Var god kontakta din systemadministratör.\n"
-"Säg åt honom att du behöver suid för skärmsläckarna!"
+"Säg åt honom att du behöver suid för kcheckpass!"
 
 #: main.cpp:427
 msgid "Shadow Passwords"

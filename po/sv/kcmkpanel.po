@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-12-20 03:02+0600\n"
-"PO-Revision-Date: 1998-12-19 17:11+01:00\n"
+"PO-Revision-Date: 1998-12-21 14:17+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -155,12 +155,10 @@ msgid "Others"
 msgstr "Övrigt"
 
 #: options.cpp:408
-#, fuzzy
 msgid "Personal Menu Entries &First"
-msgstr "&Lägg den personliga menyn först"
+msgstr "&Lägg personliga menyposter först"
 
 #: options.cpp:416
-#, fuzzy
 msgid "Menu F&olders First"
 msgstr "Lägg &kataloger först"
 
@@ -169,7 +167,6 @@ msgid "&Clock shows time in AM/PM format"
 msgstr "Klockan visar &tid i AM/PM-format"
 
 #: options.cpp:432
-#, fuzzy
 msgid "Clock shows time in &Internet beats"
 msgstr "Klockan visar tid i &internetslag"
 

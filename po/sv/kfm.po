@@ -1363,7 +1363,7 @@ msgstr "Du tog emot en kaka från datorn:"
 
 #: kcookiewin.cpp:89
 msgid "Do you want to accept or reject this cookie?"
-msgstr "Vill du godta eller vägra denna kaka?"
+msgstr "Vill du godta eller vägra ta emot denna kaka?"
 
 #: kcookiewin.cpp:120
 msgid "Apply to "
