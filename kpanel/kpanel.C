@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <kfm.h>
 
 
 DesktopEntry::DesktopEntry(){
@@ -781,26 +782,35 @@ void kPanel::button_pressed(){
     }
     else if (entries[i].button->last_button == RightButton){
       button_to_be_modified = entries[i].button;
+      
+      popup_item->setItemEnabled(0, TRUE);
+      popup_item->setItemEnabled(1, TRUE);
+      popup_item->setItemEnabled(3, TRUE);
+      
+      if (button_to_be_modified == kde_button){
+	popup_item->setItemEnabled(0, TRUE);
+	popup_item->setItemEnabled(1, FALSE);
+	popup_item->setItemEnabled(3, FALSE);
+      }
+      if (entries[i].popup == windowlist){
+	popup_item->setItemEnabled(0, TRUE);
+	popup_item->setItemEnabled(1, TRUE);
+	popup_item->setItemEnabled(3, FALSE);
+      }
+      
       switch (show_popup(popup_item, entries[i].button)){
       case 3:  
-	// {//properties
-	//     for (i=0; i<nbuttons && entries[i].button!=button_to_be_modified; i++);
-	//     if (i<nbuttons && button_to_be_modified){
-	//       if (entries[i].app_id >= 1000 && 
-	// 	  apps.at(entries[i].app_id-1000)){
-	// 	QString s = "kfmclient openProperties \"file:";
-	// 	s.append(apps.at(entries[i].app_id-1000)->path);
-	// 	if (apps.at(entries[i].app_id-1000)->is_directory)
-	// 	  s.append("/.directory");
-	// 	s.append("\" &");
-	// 	system(s);
-	//       }
-	//     }
-	//   }
+	if (entries[i].pmi){
+	  KFM kfm;
+	  QString a = entries[i].pmi->fullPathName().copy();
+	  a.prepend("file:");
+	  if (entries[i].pmi->getType() == submenu)
+	    a.append("/.directory");
+	  kfm.openProperties(a);
+	}
 	break;
       case 0: //move
 	{
-	  printf("moving\n");
 	  moving_button = button_to_be_modified;
 	  moving_button_offset = QPoint(moving_button->width()/2,
 					moving_button->height()/2);
@@ -810,7 +820,7 @@ void kPanel::button_pressed(){
 	  }
 	  moving_button->raise();
 	  moving_button->setCursor(sizeAllCursor);
-	  // the next line _IS_ necessary! (Matthias)
+	  // the next line _IS_ necessary! 
 	  XGrabPointer( qt_xdisplay(), moving_button->winId(), FALSE,
 			ButtonPressMask | ButtonReleaseMask |
 			PointerMotionMask | EnterWindowMask | LeaveWindowMask,

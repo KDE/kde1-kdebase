@@ -250,6 +250,37 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 	moving_button->setCursor(sizeAllCursor);
       }
     }
+    if (mev->button() == RightButton && ob->isWidgetType() 
+	&& !((QWidget*)ob)->isPopup()
+	&& QString("myPushButton")!=((QWidget*)ob)->className()){
+      QWidget* tmp = (QWidget*)ob;
+      moving_button_offset = tmp->mapToGlobal(mev->pos());
+	if (tmp->parentWidget() == desktopbar ||
+	    tmp->parentWidget() == control_group)
+	  tmp = control_group;
+	if (tmp == panel_button_standalone)
+	  tmp = panel_button_frame_standalone;
+	
+	moving_button_offset = tmp->mapFromGlobal(moving_button_offset);
+	// minipanel cannot be edited!
+	if (tmp->parentWidget() == miniPanel)
+	  tmp = NULL;
+	if (tmp){
+	  popup_item->setItemEnabled(0, TRUE);
+	  popup_item->setItemEnabled(1, FALSE);
+	  popup_item->setItemEnabled(3, FALSE);
+	  if (show_popup(popup_item, tmp) == 0){
+	    moving_button = tmp;
+	    moving_button->setCursor(sizeAllCursor);
+	    // the next line _IS_ necessary! 
+	    XGrabPointer( qt_xdisplay(), moving_button->winId(), FALSE,
+			  ButtonPressMask | ButtonReleaseMask |
+			  PointerMotionMask | EnterWindowMask | LeaveWindowMask,
+			  GrabModeAsync, GrabModeAsync,
+			  None, None, CurrentTime );
+	  }
+	}
+    }
   }
   break;
 
