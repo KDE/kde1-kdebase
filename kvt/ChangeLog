@@ -1,5 +1,14 @@
 
+  - Class of characters that form a word can be extenden by the user
+    (M G Berberich)
+
+  - Option -vt_geometry now work's again. (M G Berberich)
+
+  - Doubleclick selects wordwise, trippleclick selects linewise
+    (M G Berberich)
+
   - various sizes (M G Berberich) 
+
   - selection works with all keymasks now
  
   - drag'n'drop (Christian Esken)

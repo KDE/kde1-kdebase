@@ -22,6 +22,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <memory.h>
+#include <locale.h>
 #include "rxvt.h"
 #include "screen.h"
 #include "command.h"
@@ -80,6 +81,8 @@ int selanchor_col=0, selend_col=0;
 int selstartx = 0,selstarty = 0;
 int selection_screen = LOW;
 int selected = SELECTION_CLEAR;
+int select_mode = SELECTION_MODE_CHAR;	/* bmg */
+int wordsel_left, wordsel_right;	/* bmg */
 unsigned char *ch = NULL;
 int current_screen = LOW;
 
@@ -120,7 +123,7 @@ char *nicer_color_names[11] =
   "Blue3",
   "Magenta3",
   "Cyan3",
-  "White"
+  "white"
   "#d3d3d3" /* lightgrey for dialog backgrounds */ 
 };
 
@@ -136,7 +139,11 @@ int back_color = 1;
 
 extern Colormap	colormap;
 
+/* Array of flags; flagged characters are part of a word. bmg */
+char charclass[256];
 
+/* check if a char is in the charclass. bmg */
+#define ischarclass(a) (charclass[(a)])
 
 /***************************************************************************
  *  Perform any initialisation on the screen data structures.  
@@ -171,9 +178,33 @@ void scr_init(void)
   save_charset ='B';
   save_charset_num = 0;
 
+  set_charclass("");
+
   MyWinInfo.sline_top = 0;
   MyWinInfo.offset = 0;
   scr_reset();
+}
+
+/**************************************************************************
+ * set some additional characters that belog to a word. bmg 
+ *************************************************************************/
+void set_charclass(const char *s)
+{
+  int j;
+  const char *i = s;
+
+  for (j=0; j<256; j++) {
+    if (isalnum(j)) {
+      charclass[j] = 1;
+    } else {
+      charclass[j] = 0;
+    }
+  }
+
+  while(*i) {
+    charclass[*i] = 1;
+    ++i;
+  }
 }
 
 /**************************************************************************
@@ -373,8 +404,7 @@ void scr_power_on(void)
 
 
 /* Matthias: */ 
-void
-scr_cursor_visible (int mode)
+void scr_cursor_visible (int mode)
 {
    cScreen->cursor_visible = mode;
 }
@@ -796,6 +826,113 @@ int scroll(int row1,int row2,int count)
   return count;
 }
 
+/***************************************************************************
+ *
+ * Find a word for word-select-mode
+ * 
+ ***************************************************************************/
+
+static void scr_word_selection(int row, int col)	/* bmg */
+{
+  int i;
+  unsigned char *ptr;
+
+  ptr = cScreen->text+(row+MyWinInfo.saved_lines-MyWinInfo.offset)*
+    (MyWinInfo.cwidth+1);
+  
+  if (!ischarclass(*(ptr+col))) {
+    selanchor_col = selend_col = col; 
+  } else {
+    if (col>0) {
+      for (i=col-1;; --i) {
+	if (i<0 || !ischarclass(*(ptr+i))) {
+	  selanchor_col = i+1;
+	  break;
+	}
+      }
+    } else {
+      selanchor_col = col;
+    }
+    
+    if (col<MyWinInfo.cwidth) {
+      for (i=col+1;; ++i) {
+	if (i==MyWinInfo.cwidth || !ischarclass(*(ptr+i))) {
+	  selend_col = i-1;
+	  break;
+	}
+      }
+    } else {
+      selend_col = col;
+    }
+  }
+  wordsel_right = selend_col;
+  wordsel_left = selanchor_col;
+}
+
+/***************************************************************************
+ *
+ * Expand selection in word-select-mode
+ *
+ ***************************************************************************/
+
+static void scr_word_expand(int row, int col)	/* bmg */
+{
+  int i, dir;
+  unsigned char *ptr;
+
+  ptr = cScreen->text+(row+MyWinInfo.saved_lines-MyWinInfo.offset)*
+    (MyWinInfo.cwidth+1);
+
+  dir = (selanchor_row>row ? -1 : 
+	 (selanchor_row<row ? 1 :
+	  (wordsel_left>col ? -1 : 
+	   (wordsel_right<col ? 1 : 0))));
+  
+  if (!ischarclass(*(ptr+col))) {
+    switch(dir) {
+    case -1:
+      selend_col = col;
+      selanchor_col = wordsel_right;
+      return;
+    case 1:
+      selend_col = col;
+      selanchor_col = wordsel_left;
+      return;
+    }
+  }
+
+  switch (dir) {
+  case -1:
+    if (col>0) {
+      for (i=col-1;; --i) {
+	if (i<0 || !ischarclass(*(ptr+i))) {
+	  selend_col = i+1;
+	  break;
+	}
+      }
+    } else {
+      selend_col = col;
+    }
+    selanchor_col = wordsel_right;
+    break;
+  case 0:
+    selanchor_col = wordsel_left;
+    selend_col = wordsel_right;
+    break;
+  case 1:
+    if (col<MyWinInfo.cwidth) {
+      for (i=col+1;; ++i) {
+	if (i==MyWinInfo.cwidth || !ischarclass(*(ptr+i))) {
+	  selend_col = i-1;
+	  break;
+	}
+      }
+    } else {
+      selend_col = col;
+    }
+    selanchor_col = wordsel_left;
+  }
+}
 
 /*****************************************************************************
  *
@@ -1621,14 +1758,11 @@ void scr_extend_selection(int x,int y)
   if(selected == SELECTION_INIT)
     {
       scr_clear_selection();
-      selanchor_col = (selstartx - MARGIN)/MyWinInfo.fwidth;
-      selanchor_row = (selstarty - MARGIN)/MyWinInfo.fheight;
-      selend_col = (selstartx - MARGIN)/MyWinInfo.fwidth;
-      selend_row = (selstarty - MARGIN)/MyWinInfo.fheight;
+      selanchor_col = selend_col = (selstartx - MARGIN)/MyWinInfo.fwidth;
+      selanchor_row = selend_row = (selstarty - MARGIN)/MyWinInfo.fheight;
       selected = SELECTION_BEGIN;
     }
-/*  if(selected == SELECTION_CLEAR)
-    {
+/*  if(selected == SELECTION_CLEAR) {
       scr_start_selection(x,y);
       return;
     }*/
@@ -1648,6 +1782,16 @@ void scr_extend_selection(int x,int y)
   selend_col = (x - MARGIN)/MyWinInfo.fwidth;
   selend_row = (y - MARGIN)/MyWinInfo.fheight;
 
+  /* Handle `select a line'-mode and `select a word'-mode here. bmg */ 
+  switch(select_mode) {
+  case SELECTION_MODE_LINE:
+    selend_col = MyWinInfo.cwidth-1;
+    break;
+  case SELECTION_MODE_WORD:
+    scr_word_expand(selend_row, selend_col);
+    break;
+  }
+    
   if(selend_col >= MyWinInfo.cwidth)
     selend_col = MyWinInfo.cwidth -1;
   if(selend_row >= MyWinInfo.cheight)
@@ -1739,11 +1883,36 @@ void scr_extend_selection(int x,int y)
 /***************************************************************************
  *  start a selection using the specified unit.
  ***************************************************************************/
-void scr_start_selection(int x,int y)
+/* changed for multiclicks. bmg */
+
+void scr_start_selection(unsigned int clicks, int x,int y)
 {
-  selected = SELECTION_INIT;
-  selstartx = x;
-  selstarty = y;
+  switch (clicks) {
+  case 1:
+    selstartx = x;
+    selstarty = y;
+    selected = SELECTION_INIT;
+    select_mode = SELECTION_MODE_CHAR;
+    break;
+  case 2:
+    scr_word_selection((y - MARGIN)/MyWinInfo.fheight,
+		       (x - MARGIN)/MyWinInfo.fwidth);
+    scr_set_clr_sel(SEL_SET, selanchor_row, selanchor_col, 
+		    selend_row, selend_col);
+    selected = SELECTION_ONGOING;
+    select_mode = SELECTION_MODE_WORD;
+    break;
+  case 3:
+    selanchor_row = (y - MARGIN)/MyWinInfo.fheight;
+    selanchor_col = 0;
+    selend_row = selanchor_row;
+    selend_col = MyWinInfo.cwidth-1 ;
+    scr_set_clr_sel(SEL_SET, selanchor_row, selanchor_col, 
+		    selend_row, selend_col);
+    selected = SELECTION_ONGOING;
+    select_mode = SELECTION_MODE_LINE;
+    break;
+  }
 }
 
 

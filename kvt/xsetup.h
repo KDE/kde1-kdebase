@@ -24,13 +24,5 @@ void resize_window(int, int);
 void change_window_name(char *);
 void change_icon_name(char *);
 void error(char *,...);
+void set_geom_string(char *string);
 extern void NewFont(int);
-
-
-
-
-
-
-
-
-

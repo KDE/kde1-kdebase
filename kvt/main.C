@@ -12,10 +12,13 @@
 #include <qwindefs.h>
 #include <qsocknot.h>
 #include <qmsgbox.h>
+#include <qlayout.h>
+#include <qlined.h> 
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <signal.h>
+#include <locale.h>
 #include <X11/X.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
@@ -42,6 +45,7 @@ int run_command(unsigned char *,unsigned char **);
 #include "sbar.h"
 #include "screen.h"
 #include "xsetup.h"
+#include "command.h"
 
 extern struct sbar_info sbar;
 extern WindowInfo MyWinInfo;
@@ -70,6 +74,8 @@ extern Window		vt_win;
 
 
 kVt* kvt = NULL;
+CharClass *m_charclass = NULL;
+QString kvt_charclass;
 
 // the scrollbar hack
 static int length = 0;
@@ -184,6 +190,33 @@ bool MyApp::x11EventFilter( XEvent * ev){
   return FALSE;
 }
 
+CharClass::CharClass( QWidget *parent, const char *name )
+  : QDialog( parent, name, TRUE )
+{
+  QLabel *label;
+  label = new QLabel("Add characters to word class", this);
+  chars = new QLineEdit(this);
+  // chars->setGeometry( 10, 10, 210, 30 );
+  QPushButton *ok, *cancel;
+  ok = new QPushButton( "Ok", this );
+  // ok->setGeometry( 10, 50, 100, 20 );
+  connect( ok, SIGNAL(clicked()), SLOT(accept()) );
+  cancel = new QPushButton( "Cancel", this );
+  // cancel->setGeometry( 120, 50, 100, 20 );
+  connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
+
+  QBoxLayout *geom1, *geom2;
+  geom1 = new QBoxLayout(this, QBoxLayout::TopToBottom, 4);
+  geom1->addWidget(label);
+  geom1->addWidget(chars);
+  geom2 = new QBoxLayout(QBoxLayout::LeftToRight, 4);
+  geom1->addLayout(geom2);
+  geom2->addWidget(ok);
+  geom2->addStretch();
+  geom2->addWidget(cancel);
+  setGeometry(x(), y(), 300, 90);
+}
+
 kVt::kVt( QWidget *parent, const char *name )
   : QWidget( parent, name){
 
@@ -242,6 +275,11 @@ kVt::kVt( QWidget *parent, const char *name )
     if (entry)
       bg_string = qstrdup(entry);
 
+    entry = kvtconfig->readEntry("charclass");
+    if (entry) {
+      kvt_charclass = entry;
+      set_charclass(entry);
+    }
 
     m_file = new QPopupMenu;
     CHECK_PTR( m_file );
@@ -268,7 +306,7 @@ kVt::kVt( QWidget *parent, const char *name )
     connect(m_size, SIGNAL(activated(int)), SLOT(size_menu_activated(int)));
 
     m_dimen = new QPopupMenu;
-    CHECK_PTR( m_size );
+    CHECK_PTR( m_dimen );
     for (int i=0; kvt_dimens[i].text; i++) {
       m_dimen->insertItem(kvt_dimens[i].text);
     }
@@ -291,10 +329,11 @@ kVt::kVt( QWidget *parent, const char *name )
       m_options->insertItem( "Show Menubar" );
     m_options->insertItem( "Secure keyboard");
     m_options->insertSeparator();
-    m_options->insertItem( "Scrollbar" , m_scrollbar);
-    m_options->insertItem( "FontSize" , m_size);
+    m_options->insertItem( "Scrollbar", m_scrollbar);
+    m_options->insertItem( "FontSize", m_size);
     m_options->insertItem( "Color", m_color);
     m_options->insertItem( "Size", m_dimen);
+    m_options->insertItem( "Word class" );
     m_options->insertSeparator();
     m_options->insertItem( "Save Options");
 
@@ -372,7 +411,6 @@ void kVt::ResizeToDimen(int width, int height)
   sizehints.base_height;
   scr_reset();
   kvt->ResizeToVtWindow();
-  
 }
 
 void kVt::ResizeToVtWindow(){
@@ -486,8 +524,16 @@ void kVt::options_menu_activated( int item){
     }
     scr_secure(); // also calls XClearwindow and scr_refresh
     break;
-    
-  case 8:
+
+  case 7:
+    m_charclass->chars->setText(kvt_charclass);
+    if (m_charclass->exec()) {
+      kvt_charclass = m_charclass->chars->text();
+      set_charclass(kvt_charclass);
+    }
+    break;
+
+  case 9:
     // save options
     {
       if (menubar_visible)
@@ -511,10 +557,10 @@ void kVt::options_menu_activated( int item){
       kvtconfig->writeEntry("foreground", fg_string);
       kvtconfig->writeEntry("background", bg_string);
       
+      kvtconfig->writeEntry("charclass", kvt_charclass);
+
       kvtconfig->sync();
     }
-
-
   }
 }
 
@@ -616,12 +662,11 @@ void kVt::file_menu_activated(int item){
   }
 }
 
-
 void kVt::help_menu_activated(int item){
   QString ver = KVT_VERSION;
   switch (item){
   case 0:
-    QMessageBox::message( "About kvt", ver + "\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n\nTerminal emulation for the KDE Desktop Environment\nbased on Robert Nation's rxvt-2.08");
+    QMessageBox::message( "About kvt", ver + "\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n\nTerminal emulation for the KDE Desktop Environment\nbased on Robert Nation's rxvt-2.08");
     break;
   case 1:
     myapp->invokeHTMLHelp("kvt.html", ""); 
@@ -673,7 +718,9 @@ bool kVt::eventFilter( QObject *obj, QEvent * ev){
 #include "main.moc"
 
 
-int main(int argc, char **argv){
+int main(int argc, char **argv)
+{
+  setlocale(LC_CTYPE, "");
 
   // first make an argument copy for a new kvt
   o_argc = argc;
@@ -720,18 +767,26 @@ int main(int argc, char **argv){
   // this is for the original rxvt-code
   display = qt_xdisplay();
 
+  // a bisserl gehackt. bmg
+  
+  char buffer[60];
+  sprintf(buffer, "%dx%d", kvt_dimens[kvt_dimen].x, kvt_dimens[kvt_dimen].y);
+  set_geom_string(buffer);
+  kvt_set_dimension(buffer);
+
   rxvt_main(r_argc,r_argv);
 
   QSocketNotifier sn( comm_fd, QSocketNotifier::Read );
   QObject::connect( &sn, SIGNAL(activated(int)),
 		    kvt, SLOT(application_signal()) );
 
-  kvt->ResizeToDimen(kvt_dimens[kvt_dimen].x, kvt_dimens[kvt_dimen].y);
-  // kvt->resize(kvt_dimens[kvt_dimen].x*MyWinInfo.fwidth, 
-  //      kvt_dimens[kvt_dimen].y*MyWinInfo.fheight);
+  //  kvt->ResizeToDimen(kvt_dimens[kvt_dimen].x, kvt_dimens[kvt_dimen].y);
 
+  kvt->ResizeToVtWindow();
 
   kvt->show();
+
+  m_charclass = new CharClass(kvt, "Character Classes");
 
   return a.exec();
 }
@@ -776,7 +831,7 @@ void kVt::onDrop( KDNDDropZone* _zone )
   strlist = _zone->getURLList();
   url = new KURL( strlist.first() );
   str = url->path();
-  send_string(str,strlen(str));
+  send_string((unsigned char *)str, strlen(str));
   delete url;
   return;
 }

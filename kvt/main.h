@@ -78,9 +78,19 @@ private:
   Bool scrollbar_visible;
   KvtScrollbar kvt_scrollbar;
   KvtSize kvt_size;
-  int kvt_dimen;
   KDNDDropZone    *dropZone;
 };
+
+class CharClass : public QDialog {
+  Q_OBJECT
+public:
+  QLineEdit *chars;
+
+  CharClass(QWidget *parent, const char *name );
+};
+
+
+
 
 #endif // MAIN_H
 

@@ -103,6 +103,10 @@ int size_set = 0;      /* flag set once the window size has been set */
  */
 #define BUF_ONLY	1
 
+/* Multiclick time
+ */
+#define MULTICLICK_TIME 500
+
 /*  Global variables that are set up at the beginning and then not changed
  */
 extern Display		*display;
@@ -1047,6 +1051,8 @@ void handle_X_event(XEvent event)
   int root_x, root_y, x, y,tl,lk;
   unsigned int mods;
   XEvent dummy;
+  static Time buttonpress_time;
+  static unsigned int clicks;
 
   /* this was set in get_com_char originally. Matthias */ 
   refreshed = 0;
@@ -1146,28 +1152,37 @@ void handle_X_event(XEvent event)
 	      switch (event.xbutton.button)
 		{
 		case Button1 :
-		  scr_start_selection(event.xbutton.x,event.xbutton.y);
+		  /* recognize multiclick. bmg */
+                  if (event.xbutton.time-buttonpress_time < MULTICLICK_TIME) {
+		    clicks++;
+		  } else {
+		    clicks = 1;
+		  }
+		  buttonpress_time = event.xbutton.time;
+
+		  scr_start_selection(clicks, event.xbutton.x,event.xbutton.y);
 		  return;
-		  /* deactivated since Button3 is for the popupmenu now. Matthias */ 
-		/* case Button3 : */
-		/*   scr_extend_selection(event.xbutton.x,event.xbutton.y); */
+		  /* deactivated since Button3 is for popupmenu. Matthias */ 
+		  /* case Button3 : */
+		  /* scr_extend_selection(event.xbutton.x,event.xbutton.y); */
 		default:
 		  return;
 		}
 	    }
 	}
       return;
-    case ButtonRelease :
+    case ButtonRelease:
       if (event.xany.window == vt_win)
 	{
 	    {
 	      switch (event.xbutton.button)
 		{
-		case Button1 :
-		case Button3 :
+		case Button1:
+		  /* no longer needed bmg */
+		  /* case Button3: */
 		  scr_make_selection(event.xbutton.time);
 		  return;
-		case Button2 :
+		case Button2:
 		  scr_request_selection(event.xbutton.time,event.xbutton.x,
 					event.xbutton.y);
 		  return;
@@ -1175,7 +1190,7 @@ void handle_X_event(XEvent event)
 	    }
 	}
       return;
-    case MotionNotify :
+    case MotionNotify:
 
       if (event.xany.window == vt_win && 
 	  ((event.xbutton.state & Button1Mask) == Button1Mask)

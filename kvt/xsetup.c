@@ -127,7 +127,7 @@ int login_shell = 0;
 char *display_name = NULL;
 char *bg_string = "white";
 char *fg_string = "black";
- char *geom_string = "80x24";
+char *geom_string = "80x24";
 
 #ifdef PRINT_PIPE
 char *print_pipe = "lpr";
@@ -158,6 +158,12 @@ void extract_colors(char *, char *);
 void extract_resources(void);
 
 XErrorHandler RxvtErrorHandler(Display *, XErrorEvent *);
+
+
+void set_geom_string(char *string)
+{
+  geom_string = string;
+}
 
 /*  Open the display, initialise the rDB resources database and create the
  *  window.  If title is non null then it is used as the window and icon title.
@@ -483,7 +489,7 @@ static void extract_fonts_and_geometry(char *font_string, char *geom_string)
 {
   int x, y, width, height;
   int flags;
-  
+
   /*  First get the font since we need it to set the size.
    */
   if ((mainfont = XLoadQueryFont(display,font_string)) == NULL) 

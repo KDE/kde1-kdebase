@@ -113,9 +113,18 @@ typedef struct _screen_info
 #define SELECTION_ONGOING 3
 #define SELECTION_COMPLETE 4
 
+/* Multiselect. bmg */
+#define SELECTION_MODE_CHAR 0
+#define SELECTION_MODE_WORD 1
+#define SELECTION_MODE_LINE 2
+
+#define SELECT_WORD_START 0
+#define SELECT_WORD_EXPAND 1
+
 void scr_init(void);
 void scr_reset(void);
 void scr_power_on(void);
+void set_charclass(const char *s);
 void scr_cursor_visible (int); /* Matthias */ 
 void scr_backspace(void);
 void scr_change_screen(int);
@@ -144,7 +153,7 @@ void scr_request_selection(int,int,int);
 void scr_paste_primary(int,int,int);
 void scr_clear_selection(void);
 void scr_extend_selection(int,int);
-void scr_start_selection(int,int);
+void scr_start_selection(unsigned int, int, int); /* arguments changed. bmg */
 void scr_report_position(void);
 void scr_refresh(int,int,int,int);
 void scr_set_charset(int set,unsigned char a);
