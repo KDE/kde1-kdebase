@@ -421,21 +421,24 @@ void kPanel::kwmCommandReceived(QString com){
 bool kPanel::eventFilter(QObject *ob, QEvent *ev){
   // --sven: kdisknav button start --
   if (ob == kdisknav && ev->type() == Event_MouseButtonRelease) {
-    QPushButton* kdisknav_button;
+    bool doIt = false;
     
     if (miniPanelHidden) {
-      for (int i=0; i<nbuttons;i++)
+      for (int i=0 ; i<nbuttons && !doIt; i++)
 	// is this our button?
 	if (entries[i].popup == kdisknav &&
 	    QApplication::widgetAt(((QMouseEvent *) ev)->globalPos(), true)
-	    == kdisknav_button)
-	  kdisknav_button = entries[i].button;
+	    == entries[i].button)
+	  doIt = true;;
     }
-    else
-      kdisknav_button = miniDiskNav;
+    else if (QApplication::widgetAt(((QMouseEvent *) ev)->globalPos(), true)
+	    == miniDiskNav)
+      doIt = true;
       
-    kdisknav->setActiveItem(0); // set first active
-    return true;  // ignore release
+    if (doIt) {
+      kdisknav->setActiveItem(0); // set first active
+      return true;  // ignore release
+    }
   }
   // --sven: kdisknav button end --
   
