@@ -27,6 +27,7 @@
 
 #include "bg.h"
 #include "bg.moc"
+#include "config-kbgndwm.h"
 
 //----------------------------------------------------------------------------
 
@@ -105,7 +106,7 @@ void KBackground::readSettings( int num, bool one, int onedesk )
 
   if ( !first_time ) {
     config.setGroup( "Common" );
-    randomMode = config.readBoolEntry( "RandomMode", false );
+    randomMode = config.readBoolEntry( "RandomMode", DEFAULT_ENABLE_RANDOM_MODE );
 
     if ( randomMode ) {
       if ( !timerRandom ) {
@@ -113,10 +114,11 @@ void KBackground::readSettings( int num, bool one, int onedesk )
 	connect(timerRandom, SIGNAL(timeout()), SLOT(randomize()));
       }
       timerRandom->stop();
-      timerRandom->start( config.readNumEntry( "Timer", 600 ) * 1000 );
-      int count = config.readNumEntry( "Count", 1 );
-      bool inorder = config.readBoolEntry( "InOrder", false );
-      useDir = config.readBoolEntry( "UseDir", false );
+      timerRandom->start( config.readNumEntry( "Timer",
+                                              DEFAULT_RANDOM_TIMER ) * 1000 );
+      int count = config.readNumEntry( "Count", DEFAULT_RANDOM_COUNT );
+      bool inorder = config.readBoolEntry( "InOrder", DEFAULT_RANDOM_IN_ORDER);
+      useDir = config.readBoolEntry( "UseDir", DEFAULT_RANDOM_USE_DIR );
 
       if ( useDir ) {
 	QString tmpd = config.readEntry( "Directory", KApplication::kde_wallpaperdir());
@@ -126,19 +128,19 @@ void KBackground::readSettings( int num, bool one, int onedesk )
 
 	count = list->count();
 	if ( inorder ) {
-	  randomDesk = config.readNumEntry( "Item", 0 );
+	  randomDesk = config.readNumEntry( "Item", DEFAULT_DESKTOP );
 	  randomDesk++;
-	  if ( randomDesk >= count ) randomDesk = 0;
+	  if ( randomDesk >= count ) randomDesk = DEFAULT_DESKTOP;
 	} else if ( count > 0 )
 	  randomDesk = rand() % count;
 
 	config.writeEntry( "Item", randomDesk );
 	config.sync();
 
-	color1 = QColor(black);
-	gfMode=Flat;
-	orMode=Portrait;
-	wpMode = Tiled;
+	color1 = QColor(DEFAULT_COLOR_1);
+	gfMode = DEFAULT_COLOR_MODE;
+	orMode = DEFAULT_ORIENTATION_MODE;
+	wpMode = DEFAULT_WALLPAPER_MODE;
 	bUseWallpaper = true;
 
 	wallpaper = d.absPath() + "/" + list->at( randomDesk );
@@ -156,16 +158,16 @@ void KBackground::readSettings( int num, bool one, int onedesk )
 	return;
       }
       else if ( inorder ) {
-	randomDesk = config.readNumEntry( "Item", 0 );
+	randomDesk = config.readNumEntry( "Item", DEFAULT_DESKTOP );
 	randomDesk++;
-	if ( randomDesk >= count ) randomDesk = 0;
+	if ( randomDesk >= count ) randomDesk = DEFAULT_DESKTOP;
       }
       else if ( count > 0 )
 	randomDesk = rand() % count;
 
     }
     else
-      randomDesk = 0;
+      randomDesk = DEFAULT_DESKTOP;
 
     // this is mainly for kpager, so that we can at anytime find out how desktop
     //          really looks
@@ -181,21 +183,18 @@ void KBackground::readSettings( int num, bool one, int onedesk )
 
   QString str;
 
-  str = config.readEntry( "Color1", "#4682B4" );
+  str = config.readEntry( "Color1", DEFAULT_COLOR_1 );
   color1.setNamedColor( str );
 
-  str = config.readEntry( "Color2", "#4682B4" );
+  str = config.readEntry( "Color2", DEFAULT_COLOR_2 );
   color2.setNamedColor( str );
 
-  gfMode=Flat;
-  str = config.readEntry( "ColorMode" );
-  if ( !str.isEmpty() && str == "Gradient" )
-    {
+  str = config.readEntry( "ColorMode", "unset" );
+  if ( str == "Gradient" ) {
       gfMode = Gradient;
       hasPm = true;
-    }
-
-  if (str == "Pattern") {
+  }
+  else if (str == "Pattern") {
     gfMode = Pattern;
     QStrList strl;
     config.readListEntry("Pattern", strl);
@@ -207,38 +206,40 @@ void KBackground::readSettings( int num, bool one, int onedesk )
   }
 
   orMode=Portrait;
-  str = config.readEntry( "OrientationMode" );
-  if ( !str.isEmpty() && str == "Landscape" )
+  str = config.readEntry( "OrientationMode", "unset" );
+  if ( str == "Landscape" )
     orMode = Landscape;
+  else
+    orMode = DEFAULT_ORIENTATION_MODE;
 
-  wpMode = Tiled;
-  str = config.readEntry( "WallpaperMode" );
-  if ( !str.isEmpty() )
-    {
-      if ( str == "Mirrored" )
-	wpMode = Mirrored;
-      else if ( str == "CenterTiled" )
-	wpMode = CenterTiled;
-      else if ( str == "Centred" )
-	wpMode = Centred;
-      else if ( str == "CentredBrick" )
-	wpMode = CentredBrick;
-      else if ( str == "CentredWarp" )
-	wpMode = CentredWarp;
-      else if ( str == "CentredMaxpect" )
-	wpMode = CentredMaxpect;
-      else if ( str == "SymmetricalTiled" )
-	wpMode = SymmetricalTiled;
-      else if ( str == "SymmetricalMirrored" )
-	wpMode = SymmetricalMirrored;
-      else if ( str == "Scaled" )
-	wpMode = Scaled;
-    }
+  str = config.readEntry( "WallpaperMode", "unset" );
+  if ( str == "Mirrored" )
+    wpMode = Mirrored;
+  else if ( str == "CenterTiled" )
+    wpMode = CenterTiled;
+  else if ( str == "Centred" )
+    wpMode = Centred;
+  else if ( str == "CentredBrick" )
+    wpMode = CentredBrick;
+  else if ( str == "CentredWarp" )
+    wpMode = CentredWarp;
+  else if ( str == "CentredMaxpect" )
+    wpMode = CentredMaxpect;
+  else if ( str == "SymmetricalTiled" )
+    wpMode = SymmetricalTiled;
+  else if ( str == "SymmetricalMirrored" )
+    wpMode = SymmetricalMirrored;
+  else if ( str == "Scaled" )
+    wpMode = Scaled;
+  else
+    wpMode = DEFAULT_WALLPAPER_MODE;
 
   wallpaper.sprintf( i18n("No wallpaper") );
-  bUseWallpaper = config.readBoolEntry( "UseWallpaper", false );
+  bUseWallpaper = config.readBoolEntry( "UseWallpaper", DEFAULT_WALLPAPER_MODE );
   if ( bUseWallpaper )
-    wallpaper = config.readEntry( "Wallpaper", i18n("No wallpaper") );
+    wallpaper = config.readEntry( "Wallpaper", DEFAULT_WALLPAPER );
+  else
+    wallpaper = DEFAULT_WALLPAPER;
 
   name.detach();
   name.sprintf( "%s_%d_%d_%d#%02x%02x%02x#%02x%02x%02x#", wallpaper.data(),
