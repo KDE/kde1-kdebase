@@ -246,5 +246,3 @@ msgstr "Persönlich:"
 #: MenuNameDialogData.cpp:51
 msgid "Default:"
 msgstr "Standard:"
-
-
