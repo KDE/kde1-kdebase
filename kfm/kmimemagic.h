@@ -80,6 +80,13 @@ public:
 	 */
 	KMimeMagicResult * findBufferType( const char *, int );
 
+	/**
+	 * Same functionality as @ref findBufferType but with
+	 * additional capability of distinguishing between
+         * C-headers and C-Source.
+	 */
+	KMimeMagicResult * findBufferFileType( const char *, int , const char *);
+
 protected:
 
 	/**

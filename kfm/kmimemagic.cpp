@@ -2106,7 +2106,32 @@ KMimeMagic::findBufferType(const char * buffer, int nbytes)
         return magicResult;
 }
 
+static void
+refineResult(KMimeMagicResult *r, const char * _filename)
+{
+	QString tmp = r->getContent();
+	if (tmp.isEmpty())
+		return;
+	if ((strcmp(tmp, "text/x-c") == 0) ||
+	    (strcmp(tmp, "text/x-c++") == 0)   )
+	{
+		if ( QString(_filename).right(2) == ".h" )
+			tmp += "hdr";
+		else
+			tmp += "src";
+		r->setContent(tmp);
+	}
+}
 
+KMimeMagicResult *
+KMimeMagic::findBufferFileType( const char * buffer, int nbytes,
+				const char * fn)
+{
+	KMimeMagicResult * r = findBufferType( buffer, nbytes );
+	refineResult(r, fn);
+        return r;
+}
+ 
 /*
  * Find the content-type of the given file.
  */
@@ -2129,5 +2154,6 @@ KMimeMagic::findFileType(const char *fn)
         /* if we have any results, put them in the request structure */
         finishResult();
 	magicResult->setAccuracy(accuracy);
+	refineResult(magicResult, fn);
         return magicResult;
 }
