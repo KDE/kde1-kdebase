@@ -105,8 +105,7 @@ KStdConfig::KStdConfig( QWidget *parent, const char *name )
  	topLayout->addWidget( kc, 10 );
 	
 	topLayout->activate();
-	
-
+	lbSchemes->setCurrentItem( 0 );
 }
 
 KStdConfig::~KStdConfig (){
