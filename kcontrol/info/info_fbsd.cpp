@@ -1,7 +1,8 @@
-/* 	info_fbsd.cpp
-	
-	!!!!! this file will be included by info.cpp !!!!!
-*/
+/*
+ * $Id$
+ * info_fbsd.cpp is part of the KDE program kcminfo.  This displays
+ * various information about the system it's running on.
+ */
 
 
 #define INFO_CPU_AVAILABLE
@@ -42,8 +43,8 @@ bool GetInfo_CPU (KTabListBox *lBox)
   QString str;
 
   /* Stuff for sysctl */
-  char *buf,*mhz,*cpustring;
-  int mib[2],machspeed;
+  char *buf, *mhz, *cpustring;
+  int mib[2], machspeed;
   size_t len;
 
   cpustring=(char *)malloc(128);
