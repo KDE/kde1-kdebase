@@ -4,18 +4,9 @@ This is an alpha release of the KDE Help system.
 
 The viewer is really just an HTML viewer (based on the KDE HTML widget)
 with built-in filters for info and man (including links to other man pages :-).
-
-
-BUILDING:
-
-1. You will require:
-      Qt-1.2          (or greater)
-      kdelibs-0.9.02  (or greater)
-      khtml-0.5.5     (or greater)
-2. Make sure you have QTDIR and KDEDIR environment variables
-3. Check install paths in Makefile
-4. type make
-5. type make install
+ 
+Starting with version 0.7, rman is used to parse man pages.
+rman is Copyright (c) 1993-1996  T.A. Phelps  (phelps@cs.Berkeley.EDU)
 
 
 USAGE:
@@ -89,10 +80,8 @@ bookmark manager
 more options
 help controller (control help from your app)
 more accelerators
-remote file stuff via kfm
 extend search to include info
 do a descent info parser
-lots of other stuff - what do you want?
 
 
 Martin Jones

@@ -699,7 +699,7 @@ void cNodeLineList::AddXRef(ifstream &stream, char *buffer)
 	if ( wrapped && strlen( ptr ) > 5 )
 		AddText( "" );
 
-	EATSPACE( ptr );
+//	EATSPACE( ptr );
 	memmove( buffer, ptr, strlen( ptr ) + 1 );
 }
 

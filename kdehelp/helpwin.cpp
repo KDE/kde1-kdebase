@@ -618,7 +618,31 @@ int KHelpWindow::formatInfo( int bodyOnly )
 	return 0;
 }
 
+int KHelpWindow::formatMan( int bodyOnly )
+{
+	if ( !bodyOnly )
+	{
+		view->setGranularity( 600 );
+		view->begin(fullURL);
+		view->write( "<html><head><title>" );
+		view->write( man->GetTitle() );
+		view->write( "</title></head><body>" );
+	}
 
+	view->write( man->page() );
+
+	if ( !bodyOnly )
+	{
+		view->write("</body></html>");
+		view->end();
+	}
+
+	format = man;
+
+	return 0;
+}
+
+#if 0
 // convert from general man description to HTML
 int KHelpWindow::formatMan( int bodyOnly )
 {
@@ -770,7 +794,7 @@ int KHelpWindow::formatMan( int bodyOnly )
 
 	return 0;
 }
-
+#endif
 
 // open a HTML file
 int KHelpWindow::openHTML( const char *location )

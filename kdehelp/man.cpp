@@ -43,61 +43,32 @@
 static cManSection	*sections[MAN_MAXSECTIONS];
 static int			numSections = 0;
 
-// ============================================================================
-// cManTextList - list of text, xrefs etc. derived from man page
-
-// ----------------------------------------------------------------------------
-// constructor
-//
-cManTextList::cManTextList()
-{
-	head = tail = curr = NULL;
-}
-
-// ----------------------------------------------------------------------------
-// destructor
-//
-cManTextList::~cManTextList()
-{
-	Reset();
-}
-
-// ----------------------------------------------------------------------------
-// free list
-//
-void cManTextList::Reset()
-{
-	cManBase *tmp;
-	curr = head;
-
-	while (curr)
-	{
-		tmp = curr;
-		curr = curr->next;
-		delete tmp;
-	}
-
-	head = tail = curr = NULL;
-}
-
 // ----------------------------------------------------------------------------
 // creates a menu of available sections
 //
-int cManTextList::MakeDirectory()
+int MakeDirectory( QString &HTMLPage )
 {
 	char text[80];
 	char page[80];
 
-	AddText(klocale->translate("Online Manuals"), MAN_HEADING1);
-	AddCR();
-	AddCR();
+	HTMLPage = "<H1>";
+	HTMLPage += klocale->translate("Online Manuals");
+	HTMLPage += "</H1>";
+
+    HTMLPage += "<dl>";
 
 	for (int i = 0; i < numSections; i++)
 	{
 		sprintf(text, klocale->translate("Section %s"), sections[i]->GetName());
 		sprintf(page, "(%s)", sections[i]->GetName());
-		AddDir(text, page, sections[i]->GetDesc(), MAN_DIRBOOK);
+		HTMLPage += "<dt><A HREF=man:";
+		HTMLPage += page;
+		HTMLPage += ">";
+		HTMLPage += QString( text );
+		HTMLPage += "</A><dd>";
+        HTMLPage += sections[i]->GetDesc();
 	}
+    HTMLPage += "</dl>";
 
 	return 0;
 }
@@ -105,338 +76,36 @@ int cManTextList::MakeDirectory()
 // ----------------------------------------------------------------------------
 // creates a list of available pages in a section
 //
-int cManTextList::Read(cManSection &sect)
+int Read(cManSection &sect, QString &page )
 {
 	char buffer[256];
 	sect.MoveToHead();
 
 	sprintf(buffer, klocale->translate("Online manual - Section %s"), sect.GetName());
-	AddText(buffer, MAN_HEADING1);
-	AddCR();
-	AddCR();
+
+	page = "<H1>" + QString( buffer ) + "</H1>";
 
 	while (sect.Get())
 	{
-		sprintf(buffer, "%s(%s)", sect.Get()->name, sect.GetName());
-		AddDir(sect.Get()->name, buffer, NULL, MAN_DIRPAGE);
+		sprintf(buffer, "%s(%s)", sect.Get()->name(), sect.GetName());
+        page += "<cell width=200>&nbsp;";
+		page += "<A HREF=man:" + QString( buffer ) + ">";
+		page += sect.Get()->name();
+		page += "</A>";
+		page += "</cell>";
 		sect.Next();
 	}
 
 	return 0;
 }
 
-// ----------------------------------------------------------------------------
-// read and parse a man page
-//
-int cManTextList::Read(ifstream &stream)
-{
-	char buffer[1024];
-	char text[256], header[256];
-	char workText[256];
-	const char *ptr, *xRef, *chPos;
-	char mode, getXRefs = 1;
-	int i;
-
-	// Find the header - first line of text
-	while (!stream.eof())
-	{
-		stream.getline(buffer, 1023);
-		if (buffer[0] == '\0') continue;
-
-		ExtractText(buffer, text, strlen(buffer));
-		strcpy(header, text);
-		AddText(header, MAN_HEADING3);
-		AddCR();
-		break;
-	}
-
-	// read body of man page
-	while (!stream.eof())
-	{
-		stream.getline(buffer, 1023);
-
-		if (strchr(buffer, 27))	// escape sequence
-			continue;
-
-		ptr = buffer;
-		i = 0;
-
-		// extract text free of codes from line
-		ExtractText(buffer, text, strlen(buffer));
-		if (!strcmp(header, text))
-		{
-			RemoveFooter();
-			continue;
-		}
-
-		// do we have a xref in this line
-		xRef = FindXRef(text);
-		chPos = text;
-
-		// get the initial mode
-		if (buffer[1] != '\b') mode = MAN_TEXT;
-		else if (buffer[0] == '_') mode = MAN_UNDERLINE;
-		else mode = MAN_BOLD;
-
-		// parse a line
-		while (*ptr != '\0')
-		{
-			if ((getXRefs) && (chPos == xRef))
-			{
-				workText[i] = '\0';
-				AddText(workText, mode);
-				i = strchr(xRef, ')')-xRef+1;
-				strncpy(workText, xRef, i);
-				workText[i] = '\0';
-				AddXRef(workText, workText);
-				xRef = FindXRef(strchr(xRef, ')') + 1);
-				chPos += i;
-				ptr = strchr(ptr, ')');
-				while (*(ptr + 1) == '\b') ptr += 2;
-				ptr++;
-
-				if (*(ptr+1) != '\b') mode = MAN_TEXT;
-				else if (*ptr == '_') mode = MAN_UNDERLINE;
-				else mode = MAN_BOLD;
-
-				workText[i] = '\0';
-				i = 0;
-				if (*ptr == '\0') break;
-			}
-
-			if (*(ptr+1) != '\b')			// normal text
-			{
-				if (mode != MAN_TEXT)
-				{
-					workText[i] = '\0';
-					AddText(workText, mode);
-					mode = MAN_TEXT;
-					i = 0;
-				}
-
-				workText[i++] = *ptr++;
-				chPos++;
-			}
-			else if (*ptr == '_')			// underlined text
-			{
-				if (mode != MAN_UNDERLINE)
-				{
-					workText[i] = '\0';
-					AddText(workText, mode);
-					mode = MAN_UNDERLINE;
-					i = 0;
-				}
-
-				ptr += 2;
-				workText[i++] = *ptr++;
-				chPos++;
-			}
-			else							// bold text
-			{
-				if (mode != MAN_BOLD)
-				{
-					workText[i] = '\0';
-					AddText(workText, mode);
-					mode = MAN_BOLD;
-					i = 0;
-				}
-
-				ptr += 2;
-				workText[i++] = *ptr++;
-				chPos++;
-			}
-		}
-		workText[i] = '\0';
-		if (strlen(workText))
-			AddText(workText, mode);
-		AddCR();
-	}
-
-	return 0;
-}
-
-// ----------------------------------------------------------------------------
-//
-void cManTextList::ExtractText(char *in, char *out, int len)
-{
-	int i = 0;
-
-	while (i < len)
-	{
-		if (in[i+1] == '\b')
-		{
-			*out++ = in[i+2];
-			i += 3;
-		}
-		else
-			*out++ = in[i++];
-	}
-
-	*out = '\0';
-}
-
-// ----------------------------------------------------------------------------
-// add text/xref/dir/etc. to the list
-//
-void cManTextList::Add(cManBase *manBase)
-{
-	if (head)
-	{
-		manBase->prev = tail;
-		tail->next = manBase;
-		tail = manBase;
-	}
-	else
-	{
-		head = tail = manBase;
-	}
-}
-
-// ----------------------------------------------------------------------------
-// Remove the last line from the list.
-// used to remove footer
-//
-void cManTextList::RemoveFooter()
-{
-	cManBase *tmp;
-
-	if ( !head )
-		return;
-	
-	while ( tail != head && tail->prev)
-	{
-		tmp = tail;
-		tail = tail->prev;
-		tail->next = NULL;
-
-		if (tmp->type == MAN_TEXT && strlen(tmp->text) > 5)
-		{
-			delete tmp;
-			break;
-		}
-		delete tmp;
-	}
-
-	while ( tail != head && tail->prev )
-	{
-		tmp = tail;
-		tail = tail->prev;
-		tail->next = NULL;
-		delete tmp;
-
-		if (tail->type != MAN_CR)
-			break;
-	}
-}
-
-// ----------------------------------------------------------------------------
-// add a carriage return to the list
-//
-void cManTextList::AddCR()
-{
-	cManBase *manBase = new cManBase(MAN_CR);
-
-	Add(manBase);
-}
-
-// ----------------------------------------------------------------------------
-// add normal/bold/underline text to list
-//
-void cManTextList::AddText(const char *theText, char theMode)
-{
-	cManText *manText = new cManText(theMode);
-	manText->text = StrDup(theText);
-
-	Add(manText);
-}
-
-// ----------------------------------------------------------------------------
-// add a xref to the list
-//
-void cManTextList::AddXRef(const char *theText, const char *theRef)
-{
-	cManXRef *manXRef = new cManXRef;
-
-	manXRef->text = StrDup(theText);
-	manXRef->page = StrDup(theRef);
-
-	Add(manXRef);
-}
-
-// ----------------------------------------------------------------------------
-// add a directory entry - i.e. menu-like entry.
-//
-void cManTextList::AddDir(const char *theText, const char *theRef,
-	const char *theDesc, char theType)
-{
-	cManDir *manDir = new cManDir;
-
-	manDir->text = StrDup(theText);
-	manDir->page = StrDup(theRef);
-	if (theDesc)
-		manDir->desc = StrDup(theDesc);
-	manDir->dirType = theType;
-
-	Add(manDir);
-}
-
-// ----------------------------------------------------------------------------
-// find a possible cross reference in the text
-//
-const char *cManTextList::FindXRef(const char *theText)
-{
-	int i, len;
-	char buffer[80];
-	const char *ptr, *ptr1, *xrefPtr;
-
-	ptr = strchr(theText, '(');
-
-	while (ptr)
-	{
-		ptr1 = strchr(ptr, ')');
-		if (ptr1)
-		{
-			if ((ptr1-ptr-1 > MAXSECTIONLEN) || (ptr1-ptr <= 1))
-				return NULL;
-
-			for (i = 0; i < numSections; i++)
-			{
-				if (!strncmp(ptr+1, sections[i]->GetName(),
-						strlen(sections[i]->GetName())))
-				{
-					xrefPtr = ptr-1;
-
-					// this allows 1 space between name and '('
-					if (*xrefPtr == ' ') xrefPtr--;
-					if (*xrefPtr == ' ') return NULL;
-
-					len = 1;
-
-					while ((xrefPtr > theText) && (*(xrefPtr-1) != ' '))
-					{
-						xrefPtr--;
-						len++;
-					}
-
-					strncpy( buffer, xrefPtr, len );
-					buffer[len] = '\0';
-
-					if ( sections[i]->FindPage( buffer ) )
-						return xrefPtr;
-				}
-			}
-
-			ptr = strchr(ptr1, '(');
-		}
-		else
-			ptr = NULL;
-	}
-
-	return NULL;
-}
 
 // ============================================================================
 // section stuff - maintain a list of man pages available in a section
+
+char *cManSection::searchPath[MAN_MAXPATHS];
+int cManSection::numPaths = 0;
+int cManSection::sectCount = 0;
 
 // ----------------------------------------------------------------------------
 // constructor
@@ -445,10 +114,11 @@ cManSection::cManSection(const char *theName)
 {
 	char *envPath;
 	name = StrDup(theName);
-	numPaths = 0;
 	numPages = 0;
 	isRead = 0;
 	head = tail = NULL;
+
+    sectCount++;
 
 	KConfig *config = KApplication::getKApplication()->getConfig();
 	config->setGroup( "ManSections" );
@@ -484,29 +154,32 @@ cManSection::cManSection(const char *theName)
 
 	strcpy( desc, sdesc );
 
-	if ( (envPath = getenv(MAN_ENV)) )
-	{
-		char *paths = StrDup(envPath);
-		char *p = strtok(paths, ":");
+    if ( numPaths == 0 )
+    {
+        if ( (envPath = getenv(MAN_ENV)) )
+        {
+            char *paths = StrDup(envPath);
+            char *p = strtok(paths, ":");
 
-		while (p)
-		{
-			searchPath[numPaths++] = StrDup(p);
-			p = strtok(NULL, ":");
-		}
-	
-		delete [] paths;
-	}
-	else
-	{
+            while (p)
+            {
+                searchPath[numPaths++] = StrDup(p);
+                p = strtok(NULL, ":");
+            }
+        
+            delete [] paths;
+        }
+        else
+        {
 #ifndef __FreeBSD__
-		searchPath[numPaths++] = StrDup("/usr/man");
+            searchPath[numPaths++] = StrDup("/usr/man");
 #else
-		searchPath[numPaths++] = StrDup(_PATH_MAN);
-		searchPath[numPaths++] = StrDup("/usr/X11R6/man");
+            searchPath[numPaths++] = StrDup(_PATH_MAN);
+            searchPath[numPaths++] = StrDup("/usr/X11R6/man");
 #endif
-		searchPath[numPaths++] = StrDup("/usr/local/man");
-	}
+            searchPath[numPaths++] = StrDup("/usr/local/man");
+        }
+    }
 }
 
 // ----------------------------------------------------------------------------
@@ -519,14 +192,20 @@ cManSection::~cManSection()
 
 	delete [] name;
 
-	for (i = 0; i < numPaths; i++)
-		delete [] (searchPath[i]);
+    sectCount--;
+
+    if ( sectCount == 0 )
+    {
+        for (i = 0; i < numPaths; i++)
+            delete [] (searchPath[i]);
+        numPaths = 0;
+    }
 
 	curr = head;
 	while (curr)
 	{
 		tmp = curr;
-		curr = curr->next;
+		curr = curr->next();
 		delete tmp;
 	}
 }
@@ -582,7 +261,7 @@ void cManSection::ReadSection()
 // ----------------------------------------------------------------------------
 // read the contents of a directory and add to the list of pages
 //
-void cManSection::ReadDir(const char *dirName)
+void cManSection::ReadDir(const char *dirName )
 {
 	DIR *dir;
 	struct dirent *dirEntry;
@@ -593,27 +272,29 @@ void cManSection::ReadDir(const char *dirName)
 
 	dir = opendir(dirName);
 
-	while ( (dirEntry = readdir(dir)) )
-	{
-		if ( dirEntry->d_name[0] == '.' )
-			continue;
+    if ( dir )
+    {
+        while ( (dirEntry = readdir(dir)) )
+        {
+            if ( dirEntry->d_name[0] == '.' )
+                continue;
 
-		strcpy( buffer, dirEntry->d_name );
+            strcpy( buffer, dirEntry->d_name );
 
-		ptr = strrchr( buffer, '.' );
-		if ( !strcmp(ptr, ".gz") || !strcmp(ptr, ".Z") ) // skip compress extn
-		{
-			*ptr = '\0';
-			ptr = strrchr( buffer, '.' );
-		}
-		if (ptr)
-		{
-			*ptr = '\0';
-			AddPage( buffer );
-		}
-	}
-
-	closedir(dir);
+            ptr = strrchr( buffer, '.' );
+            if ( !strcmp(ptr, ".gz") || !strcmp(ptr, ".Z") ) // skip compress extn
+            {
+                *ptr = '\0';
+                ptr = strrchr( buffer, '.' );
+            }
+            if (ptr)
+            {
+                *ptr = '\0';
+                AddPage( buffer );
+            }
+        }
+        closedir(dir);
+    }
 }
 
 // ----------------------------------------------------------------------------
@@ -628,35 +309,35 @@ void cManSection::AddPage(const char *pageName)
 	// insert page in alphabetical order
 	if ( head )
 	{
-		result = strcmp(head->name, pageName);
+		result = strcmp(head->name(), pageName);
 		if ( result > 0 )
 		{
 			page = new cPage(pageName);
-			page->next = head;
+			page->setNext( head );
 			head = page;
 			return;
 		}
 		else if ( result == 0 )
 			return;
 
-		while ( curr->next )
+		while ( curr->next() )
 		{
-			int result = strcmp( curr->next->name, pageName );
+			int result = strcmp( curr->next()->name(), pageName );
 			if ( result < 0 )
-				curr = curr->next;
+				curr = curr->next();
 			else if ( result == 0)
 				return;
 			else
 			{
 				page = new cPage( pageName );
-				tmp = curr->next;
-				curr->next = page;
-				page->next = tmp;
+				tmp = curr->next();
+				curr->setNext( page );
+				page->setNext( tmp );
 				return;
 			}
 		}
 		page = new cPage( pageName );
-		curr->next = page;
+		curr->setNext( page );
 	}
 	else
 	{
@@ -664,31 +345,6 @@ void cManSection::AddPage(const char *pageName)
 		head = tail = page;
 	}
 }
-
-// ----------------------------------------------------------------------------
-// find a man page
-//
-cPage *cManSection::FindPage( const char *pageName )
-{
-	ReadSection();
-
-	cPage *page = head;
-
-	while ( page )
-	{
-		if ( !strcmp( page->name, pageName ) )
-		{
-			printf( "Found page: %s(%s)\n", pageName, name );
-			return page;
-		}
-		page = page->next;
-	}
-
-	printf( "Cannot find page: %s(%s)\n", pageName, name );
-
-	return NULL;
-}
-
 
 // ============================================================================
 // cMan - controlling class
@@ -744,21 +400,12 @@ cMan::cMan() : cHelpFormatBase()
 //
 cMan::~cMan()
 {
-	Reset();
 	instance--;
 	if (instance == 0)
 	{
 		for (int i = 0; i < numSections; i++)
 			delete sections[i];
 	}
-}
-
-// ----------------------------------------------------------------------------
-// reset everything
-//
-void cMan::Reset()
-{
-	manList.Reset();
 }
 
 // ----------------------------------------------------------------------------
@@ -783,9 +430,8 @@ int cMan::ReadLocation(const char *name)
 		{
 			if (!strcmp(tmpName+1, sections[i]->GetName()))
 			{
-				Reset();
 				sections[i]->ReadSection();
-				manList.Read(*(sections[i]));
+				Read(*(sections[i]), HTMLPage);
 				strcpy(posString, klocale->translate("Online Manual - Section"));
 				strcat(posString, sections[i]->GetName());
 				pos = MAN_POSSECTION;
@@ -795,8 +441,7 @@ int cMan::ReadLocation(const char *name)
 
 		if ( !strcmp(tmpName+1, MAN_DIRECTORY)) // get a list of sections
 		{
-			Reset();
-			manList.MakeDirectory();
+			MakeDirectory( HTMLPage );
 			strcpy(posString, klocale->translate("Online Manuals"));
 			pos = MAN_POSDIR;
 			return 0;
@@ -808,6 +453,7 @@ int cMan::ReadLocation(const char *name)
 		char stdFile[256];
 		char errFile[256];
 		char sysCmd[256];
+		char rmanCmd[256];
 		char *ptr;
 
 		sprintf(stdFile, "%s/khelpXXXXXX", _PATH_TMP);	// temp file
@@ -815,6 +461,9 @@ int cMan::ReadLocation(const char *name)
 
 		sprintf(errFile, "%s/khelpXXXXXX", _PATH_TMP);	// temp file
 		mktemp(errFile);
+
+		sprintf(rmanCmd, "%s/rman -f HTML",
+			(const char *)KApplication::kde_bindir());
 
 		// create the system cmd to read the man page
 		if ( (ptr = strchr(tmpName, '(')) )
@@ -831,12 +480,14 @@ int cMan::ReadLocation(const char *name)
 					break;
 				}
 			}
-			sprintf(sysCmd, "man %s %s < /dev/null > %s 2> %s", sections[pos]->GetName(),
-				tmpName, stdFile, errFile);
+			sprintf(sysCmd, "man %s %s < /dev/null 2> %s | %s > %s",
+				sections[pos]->GetName(),
+				tmpName, errFile, rmanCmd, stdFile );
 		}
 		else
 		{
-			sprintf(sysCmd, "man %s < /dev/null > %s 2> %s", tmpName, stdFile, errFile);
+			sprintf(sysCmd, "man %s < /dev/null 2> %s | %s > %s",
+				tmpName, errFile, rmanCmd, stdFile);
 		}
 
 		// call 'man' to read man page
@@ -875,8 +526,15 @@ int cMan::ReadLocation(const char *name)
 		}
 		stream.seekg( 0, ios::beg );
 
-		Reset();
-		manList.Read(stream);
+		char buffer[256];
+		HTMLPage = "";
+
+		while ( !stream.eof() )
+		{
+		    stream.getline( buffer, 256 );
+		    HTMLPage += buffer;
+		}
+
 		stream.close();
 		strcpy(posString, name);
 
