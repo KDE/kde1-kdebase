@@ -272,11 +272,11 @@ msgstr "Ignora"
 
 #: scrnsave.cpp:49
 msgid "Save Screen"
-msgstr ""
+msgstr "Salva Schermo"
 
 #: scrnsave.cpp:50
 msgid "Lock Screen"
-msgstr ""
+msgstr "Blocca Schermo"
 
 #: scrnsave.cpp:110 scrnsave.cpp:179
 msgid "Screen Saver"

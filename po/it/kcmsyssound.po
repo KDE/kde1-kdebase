@@ -72,11 +72,11 @@ msgstr "Avvio"
 
 #: syssound.cpp:158
 msgid "Window Shade Up"
-msgstr ""
+msgstr "Finestra Ridotta (solo titolo)"
 
 #: syssound.cpp:159
 msgid "Window Shade Down"
-msgstr ""
+msgstr "Finestra Intera"
 
 #: syssound.cpp:160
 msgid "Window Iconify"
@@ -88,7 +88,7 @@ msgstr "Finestra Deiconificata"
 
 #: syssound.cpp:162
 msgid "Window Maximize"
-msgstr "FInestra Ingrandita"
+msgstr "Finestra Ingrandita"
 
 #: syssound.cpp:163
 msgid "Window UnMaximize"
@@ -152,9 +152,7 @@ msgstr "&Suoni:"
 
 #: syssound.cpp:213
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr ""
-"File Wav aggiuntivi possono essere inseriti (Drag&Drop)  nella lista dei "
-"suoni"
+msgstr ""File Wav aggiuntivi possono essere inseriti (Drag&Drop)  nella lista."
 
 #: syssound.cpp:453
 msgid "Unsupported URL"
@@ -165,6 +163,8 @@ msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
+"Mi dispiace ma questo tipo di URL non ee ancora supportata dal Sistema Sonoro "
+"del KDE "
 
 #: syssound.cpp:465
 #, c-format
@@ -173,6 +173,9 @@ msgid ""
 "%s\n"
 "does not seemto be a WAV--file."
 msgstr ""
+"Mi dispiace ma \n"
+"%s\n"
+"non sembra essere un file Wave."
 
 #: syssound.cpp:468
 msgid "Improper File Extension"

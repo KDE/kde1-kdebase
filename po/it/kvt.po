@@ -205,55 +205,60 @@ msgstr "-display <nome>          specifica il nome del display (server)\n"
 
 #: main.C:1160
 msgid "-vt_bg <colour>           background color\n"
-msgstr ""
+msgstr "-vt_bg <colore>		 colore di sfondo\n"
 
 #: main.C:1161
 msgid "-vt_fg <colour>           foreground color\n"
-msgstr ""
+msgstr "-vt_fg <colore>		 colore primo piano\n"
 
 #: main.C:1162
 msgid "-vt_font <fontname>       normal font\n"
-msgstr ""
+msgstr "-vt_font <nome font>	 caratteri normali\n"
 
 #: main.C:1163
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
-msgstr ""
+msgstr "-vt_size <dimensione>	 tiny, small, normal, large, huge\n"
 
 #: main.C:1164
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr ""
+msgstr "-linux			 imposta kvt come console linux\n"
 
 #: main.C:1165
 msgid "-no_menubar               hide the menubar\n"
-msgstr ""
+msgstr "-no_menubar		 nasconde la barra menu\n"
 
 #: main.C:1166
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr ""
+msgstr "-no_scrollbar		 nasconde le barre di scorrimento\n"
 
 #: main.C:1167
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
+"-T <testo>		   testo nella barra titolo\n"
+"			   (Obsolet. Usa -caption al suo posto)"
 
 #: main.C:1169
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr ""
+msgstr "-tn <TERM>		 Tipo di terminal.Quello di default ee xterm.\n"
 
 #: main.C:1170
 msgid "-C                        Capture system console message\n"
-msgstr ""
+msgstr "-C			 Cattura i messagi di sistema della console\n"
 
 #: main.C:1171
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr ""
+msgstr "-n <testo>		 nome in icona o finestra icona"
 
 #: main.C:1172
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
+"-7                        esegue in modalitaa 7 bit\n"
+"-8                        esegue in modalitaa 8 bit\n"
+
 
 #: main.C:1174
 msgid ""

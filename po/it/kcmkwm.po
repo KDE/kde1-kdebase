@@ -126,9 +126,8 @@ msgstr ""
 "  sulla barra titolo provoca:"
 
 #: titlebar.cpp:988
-#, fuzzy
 msgid "(Un)Maximize"
-msgstr "Ingrandisci"
+msgstr "Ingrandisci/Riduci"
 
 #: titlebar.cpp:989
 msgid "Move"
@@ -137,7 +136,7 @@ msgstr "Muovi"
 #: titlebar.cpp:990
 #, fuzzy
 msgid "(Un)Shade"
-msgstr "Sfumata"
+msgstr "Ridotta/Intera"
 
 #: titlebar.cpp:991
 msgid "Iconify"
@@ -146,7 +145,7 @@ msgstr "Iconifica"
 #: titlebar.cpp:992
 #, fuzzy
 msgid "(Un)Sticky"
-msgstr "Appiccicato"
+msgstr "Appiccicata/Staccata"
 
 #: titlebar.cpp:993
 msgid "Resize"
@@ -199,7 +198,7 @@ msgstr "Casuale"
 #: windows.cpp:94
 #, fuzzy
 msgid "Manual"
-msgstr "Menu"
+msgstr "Manuale"
 
 #: windows.cpp:101
 msgid "Allowed Overlap:"
@@ -266,9 +265,12 @@ msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Zona Attiva del Bordo:\n"
+"	(pixel)"
 
 #: desktop.cpp:116
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
-msgstr ""
+msgstr "Zona Attiva della Finestra\n"
+"	(Pixel)"

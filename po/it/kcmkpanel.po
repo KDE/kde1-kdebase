@@ -40,7 +40,7 @@ msgstr "&In alto"
 
 #: panel.cpp:61
 msgid "&Left"
-msgstr ""
+msgstr "&Sinistra"
 
 #: panel.cpp:62
 msgid "&Bottom"
@@ -52,7 +52,7 @@ msgstr "Barra Task"
 
 #: panel.cpp:75
 msgid "&Hidden"
-msgstr ""
+msgstr "&Nascosto"
 
 #: panel.cpp:77
 msgid "T&op"
@@ -64,7 +64,7 @@ msgstr "In B&asso"
 
 #: panel.cpp:81
 msgid "Top/Le&ft"
-msgstr ""
+msgstr "Alto/&Sinistra"
 
 #: panel.cpp:96
 msgid "T&iny"
@@ -72,7 +72,7 @@ msgstr "P&iccola"
 
 #: panel.cpp:98
 msgid "&Normal"
-msgstr ""
+msgstr "&Normale"
 
 #: panel.cpp:100
 msgid "L&arge"
@@ -80,20 +80,19 @@ msgstr "&Grande"
 
 #: desktops.cpp:73
 msgid "&Visible"
-msgstr ""
+msgstr "&Visibili"
 
 #: desktops.cpp:82
 msgid "&Width"
-msgstr ""
+msgstr "&Larghezza"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
 msgstr "Menu di aiuto"
 
 #: options.cpp:39
-#, fuzzy
 msgid "Show &Menu Tooltips"
-msgstr "Menu di aiuto"
+msgstr "Mostra &Menu di aiuto"
 
 #: options.cpp:44
 msgid "De&lay:"
@@ -109,15 +108,15 @@ msgstr "Altri"
 
 #: options.cpp:69
 msgid "Personal &First"
-msgstr ""
+msgstr "P&rima Personale"
 
 #: options.cpp:71
 msgid "Auto &Hide Panel"
-msgstr ""
+msgstr "Scomparsa automatica Pannell "
 
 #: options.cpp:73
 msgid "Auto Hide &Taskbar"
-msgstr ""
+msgstr "Scomparsa Automatica &Taskbar"
 
 #: options.cpp:81
 msgid "Clock"

@@ -36,7 +36,7 @@ msgstr "&Proprietà"
 
 #: kfindtop.cpp:125
 msgid "Open Containing &Folder"
-msgstr ""
+msgstr "Apri la cartella che contiene il &file"
 
 #: kfindtop.cpp:128
 msgid "&Save Search"
@@ -327,7 +327,7 @@ msgstr "Impossibile riconoscere il tipo di archivio!"
 
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
-msgstr ""
+msgstr "Errore nella creazione del processo figlio!"
 
 #~ msgid "Kfind &help"
 #~ msgstr "&Guida  KFind"
