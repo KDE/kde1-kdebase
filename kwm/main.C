@@ -53,6 +53,7 @@ bool ignore_badwindow;
 
 int handler(Display *d, XErrorEvent *e){
     char msg[80], req[80], number[80];
+    bool ignore_badwindow = TRUE; //maybe temporary
 
     if (initting && 
 	(

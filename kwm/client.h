@@ -26,6 +26,7 @@
 
 enum {
   OP_MAXIMIZE = 5000,
+  OP_RESTORE,
   OP_ICONIFY,
   OP_MOVE,
   OP_RESIZE,
@@ -42,9 +43,12 @@ public:
   ~myPushButton () {}
   void drawButton( QPainter * );
   bool flat;
+  int last_button;
 protected:
     void enterEvent( QEvent * );
     void leaveEvent( QEvent * );
+    void mousePressEvent( QMouseEvent *e);
+    void mouseReleaseEvent( QMouseEvent *e);
 private:
     uint	autoDefButton	: 1;
     uint	defButton	: 1;
@@ -169,16 +173,17 @@ public:
   bool maximized;
   bool iconified;
   
+  void unIconify();
+  void ontoDesktop(int new_desktop);
+  void maximize(int mode = 0);
+  void unMaximize();
+
  public slots:
    void iconify();
-   void maximize();
-   void unMaximize();
    void maximizeToggled(bool);
    void closeClicked();
    void stickyToggled(bool);
    void menuPressed();
-   void unIconify();
-   void ontoDesktop(int new_desktop);
 
 signals:
   void clientClosed( int );

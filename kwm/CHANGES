@@ -12,6 +12,11 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 6:
+       - small fix to execute(...);
+       - maximizeButton has different semantics for LMB, MMB and RMB
+         (README updated)
+
   patchlevel 5
        - should work under qt-1.3 AND qt-1.2 now. Qt-1.2 support needs
          some dirty lowlevel X-Hacks and will probably be removed as

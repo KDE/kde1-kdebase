@@ -3,7 +3,7 @@
  Developed and maintained by Matthias Ettrich (ettrich@kde.org)
 
 
-Version 0.10 
+Version 0.10 patchlevel 6
 
 Please see the CHANGES file for detailed informations about the actual
 development and the history of kwm.
@@ -85,7 +85,8 @@ Answer: Ooops, does it? Let me see.... (Matthias trying to find somebody
     who has Windows 95 because he does not have any windows on all his
     computers... Damn... nobody has windows here. Well let's grab an old
     Linux distribution and install fvwm95-2.....) No, I cannot verify
-    that at all. kwm looks much prettier :-)
+    that at all. kwm looks much prettier and offers more core 
+    windowmangement functionality :-)
 
 
 FAQ 4: Is it possible to add the KDE extensions to other windowmanagers?
@@ -133,6 +134,18 @@ Answer: Yes it is. You simple have to go through kwm.h/kwm.C from
             Alt-(left mouse button): move
             Alt-(middle mouse button): raise
             Alt-(right mouse button): resize
+
+     titlebar buttons (configurable):
+            Menu: window operations
+            Sticky: toggle sticky
+            Iconify: iconfiy
+            Maximize: 
+                  Left mouse button: maximize
+                  Middle mouse button: maximize vertically
+                  Right mouse button: maximize horizontally
+              MaximizeOnlyVertically-option will switch the meaning
+              of the left and the middle mouse button.
+            Close: close (applications may ask if they have something to save)
 
 
 5) LOW LEVEL CONFIGURATION (kwmrc):

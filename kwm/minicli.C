@@ -24,7 +24,7 @@ extern bool do_not_draw;
 QList <char> *history = NULL;
 QListIterator <char> *it;
 
-static void catch_child(int /* nonsense */){
+static void catch_child(int){
   int status;
   wait(&status);
   signal(SIGCHLD, catch_child);
@@ -40,11 +40,11 @@ void execute(const char* cmd){
   }
   signal(SIGCHLD, catch_child);
   if (!(fork())){ // child
-    // this avoids hanging 
+    // this avoids hanging (Matthias)
     freopen("/dev/null", "r", stdin);
     freopen("/dev/null", "rw", stdout);
     freopen("/dev/null", "rw", stderr);
-    setpgrp();
+    setsid();
     execl(shell, shell, "-c", cmd, NULL);
     exit(1);
   }

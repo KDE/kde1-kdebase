@@ -221,6 +221,39 @@ void myPushButton::drawButton( QPainter *paint){
 }
 
 
+void myPushButton::mousePressEvent( QMouseEvent *e){
+  
+  if ( isDown())
+    return;
+
+  bool hit = hitButton( e->pos() );
+  if ( hit ){
+    last_button = e->button();
+    setDown( TRUE );
+    repaint( FALSE );
+    emit pressed();
+  }
+}
+
+void myPushButton::mouseReleaseEvent( QMouseEvent *e){
+  if ( !isDown() )
+    return;
+  bool hit = hitButton( e->pos() );
+  setDown( FALSE );
+  if ( hit ){
+    if ( isToggleButton() )
+      setOn( !isOn() );
+    repaint( FALSE );
+    if ( isToggleButton() )
+      emit toggled( isOn() );
+    emit released();
+    emit clicked(); 
+  }
+  else {
+    repaint( FALSE );
+    emit released();
+  }
+}
 
 
 
@@ -880,7 +913,7 @@ void Client::generateOperations(){
   myapp->operations->clear();
   if (isMaximized())
     myapp->operations->insertItem(KWM::getUnMaximizeString(), 
-				  OP_MAXIMIZE);
+				  OP_RESTORE);
   else
     myapp->operations->insertItem(KWM::getMaximizeString(), 
 				  OP_MAXIMIZE);
@@ -1189,7 +1222,7 @@ void Client::ontoDesktop(int new_desktop){
 }
 
 
-void Client::maximize(){
+void Client::maximize(int mode){
   if (isMaximized())
     return;
   maximized = TRUE;
@@ -1197,12 +1230,20 @@ void Client::maximize(){
   KWM::setGeometryRestore(window, geometry_restore);
   QRect maxRect = KWM::getWindowRegion(desktop);
 
-  if (options.MaximizeOnlyVertically){
-    geometry.moveTopLeft(QPoint(maxRect.y(), geometry.x()));
+  switch (mode) {
+  case 1:
+    geometry.moveTopLeft(QPoint(geometry.x(), maxRect.y()));
     geometry.setHeight(maxRect.height());
-  }
-  else
+    break;
+  case 2:
+    geometry.moveTopLeft(QPoint(maxRect.x(),geometry.y()));
+    geometry.setWidth(maxRect.width());
+    break;
+  default: //  
     geometry = maxRect;
+    break;
+  }
+
   adjustSize();
   if (state == NormalState)
     animate_size_change(geometry_restore, geometry,
@@ -1238,8 +1279,19 @@ void Client::unMaximize(){
 void Client::maximizeToggled(bool depressed){
   bool do_not_activate = depressed == isMaximized();
   
-  if ( depressed)
-    maximize();
+  if ( depressed){
+    switch (buttonMaximize->last_button){
+    case MidButton:
+      maximize(options.MaximizeOnlyVertically?0:1);
+      break;
+    case RightButton:
+      maximize(2);
+      break;
+    default: //Leftbutton 
+      maximize(options.MaximizeOnlyVertically?1:0);
+      break;
+    }
+  }
   else
     unMaximize();
   
@@ -1347,7 +1399,10 @@ void Client::  handleOperationsPopup(int i){
     releaseMouse();
     break;
   case OP_MAXIMIZE:
-    buttonMaximize->toggle();
+    maximize();
+    break;
+  case OP_RESTORE:
+    unMaximize();
     break;
   case OP_ICONIFY:
     iconify();
