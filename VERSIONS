@@ -1,12 +1,12 @@
 >= means, the version numbers grow a little bit to fast
 kwm: >= 0.8
 kpanel: >= 0.16
-kfm: 0.6.7
+kfm: >= 0.8.5
 kwmclient: 0.2
 kdisplay: >= 0.5
 kdehelp: >= 0.4
-kfind: 0.3.2
-kscreensaver: 0.3.3 (patched for QT-1.2)
-kvt: >= 0.14 
+kfind: 0.3.3
+kscreensaver: 0.3.3 
+kvt: >= 0.16
 klogout: 0.1
 kfontmanager: 0.2.2
