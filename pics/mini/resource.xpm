@@ -1,0 +1,26 @@
+/* XPM */
+/* Drawn  by Mark Donohoe for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*resource[]={
+"16 14 6 1",
+"a c #ffffff",
+"# c #808080",
+"b c #000000",
+"c c #0000ff",
+"d c #c0c0c0",
+". c None",
+"..############..",
+".#aaaaaaaaaaaab.",
+".#abbbbbbbbb#ab.",
+".#abcccccccc#ab.",
+".#abcacccccc#ab.",
+".#abcccccccc#ab.",
+".#abcccccccc#ab.",
+".#abcccccccc#ab.",
+".#abcccccccc#ab.",
+".#ab#########ab.",
+".#aaaaaaaaaaaab.",
+"..bbbbbbbbbbbb..",
+"....#aaaad#b....",
+"..bbbbbbbbbbbb.."};
+

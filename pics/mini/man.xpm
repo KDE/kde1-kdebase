@@ -1,0 +1,24 @@
+/* XPM */
+/* Drawn  by Mark Donohoe for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*man[]={
+"16 14 4 1",
+"b c #ffffff",
+"# c #000000",
+"a c #808080",
+". c None",
+"..##............",
+".#ab#....###....",
+".#abb#.##bb#....",
+".#abbb#abbb###..",
+".#abbb#bbbb#a#..",
+".#abbb#abbb#a#..",
+".#abbb#bbbb#a#..",
+".#abbb#abbb#a#..",
+".#abbb#bbbb#a#..",
+"..#abb#abb##a#..",
+"...#ab#b##bba#..",
+"....#a##aaaaa#..",
+"....##a#######..",
+".....##........."};
+
