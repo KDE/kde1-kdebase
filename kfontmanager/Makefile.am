@@ -24,7 +24,7 @@ install-local-data:
 	$(INSTALL_DATA) kfontmanager.kdelnk $(APPSDIR)/kfontmanager.kdelnk
 
 uninstall-local:
-	(cd docs && $(MAKE) install)
+	(cd docs && $(MAKE) uninstall)
 	rm -f $(APPSDIR)/kfontmanager.kdelnk
 
 ####### Meta objects

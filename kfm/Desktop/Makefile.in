@@ -1,7 +1,8 @@
 DESKTOPLNKS = "FTP URL.kdelnk" "Program.kdelnk" "WWW URL.kdelnk" "File Type.kdelnk" "URL.kdelnk"
 
+top_srcdir = @top_srcdir@
 DESTDIR = @prefix@/lib/kfm/Desktop/Templates
-INSTALL_DIR = @INSTALL@ -d -m 0755
+INSTALL_DIR = $(SHELL) $(top_srcdir)/mkinstalldirs
 INSTALL_DATA = @INSTALL@ -m 644
 
 all:

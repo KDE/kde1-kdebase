@@ -1,8 +1,9 @@
 INSTALL_DATA = @INSTALL@ -m 0644
-INSTALL_DIR = @INSTALL@ -d -m 0755
 PICS = `find . -type f \( -name "*.xpm" -o -name "*.jpg" -o -name "*.xbm" -o -name "*.ppm" -o -name "*.gif" \) -print`
 prefix = @prefix@
+top_srcdir = @top_srcdir@
 libdir = $(prefix)/lib
+INSTALL_DIR = $(SHELL) $(top_srcdir)/mkinstalldirs
 
 Makefile: Makefile.in
 	cd .. && CONFIG_FILES=pics/$@ CONFIG_HEADERS= $(SHELL) ./config.status

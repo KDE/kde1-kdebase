@@ -1,10 +1,14 @@
 FILES = `find . -type f \( -name "*.xpm" -o -name "*.jpg" -o -name "*.xbm" -o -name "*.ppm" -o -name "*.gif" \) -print`
 
+top_srcdir = @top_srcdir@
 DESTDIR = @prefix@/lib/pics
-INSTALL_DIR = @INSTALL@ -d -m 0755
+INSTALL_DIR = $(SHELL) $(top_srcdir)/mkinstalldirs
 INSTALL_DATA = @INSTALL@ -m 644
 
 all:
+
+Makefile: Makefile.in
+	cd $(top_srcdir) && CONFIG_FILES=kfm/pics/$@ CONFIG_HEADERS= $(SHELL) ./config.status
 
 install:
 	$(INSTALL_DIR) $(DESTDIR)

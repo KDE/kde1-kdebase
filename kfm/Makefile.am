@@ -75,6 +75,14 @@ install-data-local:
 	(cd Desktop && $(MAKE) install)
 	(cd mimetypes && $(MAKE) install)
 
+uninstall-local:
+	(cd doc && $(MAKE) uninstall)
+	(cd pics && $(MAKE) uninstall)
+	rm -f $(LIBDIR)/kfm/config/kfmrc
+	rm -f $(LIBDIR)/kfm/config/desktop
+	(cd Desktop && $(MAKE) uninstall)
+	(cd mimetypes && $(MAKE) uninstall)
+
 IPC:    clientIPC kioIPC
 
 clientIPC: ./ipcc/kfm.ipc
