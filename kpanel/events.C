@@ -505,6 +505,7 @@ void kPanel::kdisplayPaletteChanged(){
   int i;
   QButton* tmp_button;
   load_and_set_some_fonts();
+  doGeometry();
   layoutTaskbar();
   for (i=0; (tmp_button = desktopbar->find(i)); i++){
     set_button_text(tmp_button,

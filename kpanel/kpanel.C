@@ -87,7 +87,6 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--12-*");
       config->writeEntry("DesktopButtonRows",2);
       config->writeEntry("DateFont","*-times-medium-i-normal--12-*");
-      config->writeEntry("TaskbarFont","*-helvetica-medium-r-normal--10-*");
     }
 
     QString a = config->readEntry("Position");
@@ -1354,14 +1353,7 @@ void kPanel::load_and_set_some_fonts(){
       tmp_button->setFont(tmpfont);
     }
   }
-  if (config->hasKey("TaskbarFont")){
-    QFont tmpfont;
-    tmpfont.setRawMode(TRUE);
-    tmpfont.setFamily(config->readEntry("TaskbarFont"));
-    taskbar->setFont(tmpfont);
-    for (tmp_button = taskbar_buttons.first(); tmp_button;
-	 tmp_button = taskbar_buttons.next())
-      tmp_button->setFont(tmpfont);
-    taskbar_height = taskbar->fontMetrics().height()+10;
-  }
+
+  taskbar_height = taskbar->fontMetrics().height()+10;
+
 }

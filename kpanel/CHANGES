@@ -1,5 +1,9 @@
 In kpanel-0.18:
 
+    Patchlevel 1:
+       - taskbar uses the default font now. Changes during runtime
+         handling fixed.
+
     Patchlevel 0:
        - new icons 
        - visual changes to work well with the new icons

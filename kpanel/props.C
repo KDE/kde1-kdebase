@@ -429,7 +429,6 @@ void kPanel::slotPropsApply(){
       config->writeEntry("DesktopButtonRows",1);
 //       config->writeEntry("DateFont","*-helvetica-medium-r-normal--8-*");
       config->writeEntry("DateFont","*-times-medium-i-normal--12-*");
-      config->writeEntry("TaskbarFont","*-helvetica-medium-r-normal--10-*");
       break;
     case 1: // normal style
       config->writeEntry("Style", "normal");
@@ -440,7 +439,6 @@ void kPanel::slotPropsApply(){
       config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--12-*");
       config->writeEntry("DesktopButtonRows",2);
       config->writeEntry("DateFont","*-times-medium-i-normal--12-*");
-      config->writeEntry("TaskbarFont","*-helvetica-medium-r-normal--10-*");
       break;
     case 2: // large style
       config->writeEntry("Style", "large");
@@ -451,7 +449,6 @@ void kPanel::slotPropsApply(){
       config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--14-*");
       config->writeEntry("DesktopButtonRows",2);
       config->writeEntry("DateFont","*-times-bold-i-normal--12-*");
-      config->writeEntry("TaskbarFont","*-helvetica-medium-r-normal--10-*");
       break;
     }
   }
