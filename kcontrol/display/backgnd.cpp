@@ -15,7 +15,6 @@
 
 #include <stdlib.h>
 
-#include <qimage.h>
 #include <qgrpbox.h>
 #include <qlabel.h>
 #include <qpixmap.h>
@@ -181,7 +180,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 	
   groupLayout->addWidget( renameButton, 10 );
 
-  oneDesktopButton = new QRadioButton( i18n("One Des&ktop"), group );
+  oneDesktopButton = new QRadioButton( i18n("&Common Background"), group );
   oneDesktopButton->adjustSize();
   oneDesktopButton->setFixedHeight( oneDesktopButton->height() );
   oneDesktopButton->setMinimumWidth( oneDesktopButton->width() );
@@ -798,7 +797,7 @@ void KBackground::setMonitor()
 // Note that centred pixmaps are placed on a full screen image of background
 // color1, so if you want to save memory use a small tiled pixmap.
 //
-int KBackground::loadWallpaper( const char *name, bool useContext )
+bool KBackground::loadWallpaper( const char *name, bool useContext )
 {
   static int context = 0;
   QString filename;
@@ -831,7 +830,7 @@ int KBackground::loadWallpaper( const char *name, bool useContext )
       if ( ( tmp.width() > w || tmp.height() > h ||
 	   currentItem.wpMode == CentredMaxpect ) &&
 	   currentItem.wpMode != Scaled ) {
-	// shrink if image is bigger than desktop or CentredMaxpect
+	// shrink if image is bigger than desktop or mode is CentredMaxpect
 	float sc;
 	float S = (float)h / (float)w ;
 	float I = (float)tmp.height() / (float)tmp.width() ;
@@ -1109,7 +1108,7 @@ void KBackground::slotWallpaper( const char *filename )
 	  if ( rnddlg && interactive )
 	    rnddlg->copyCurrent();
 	}
-      else if ( loadWallpaper( filename ) == true )
+      else if ( loadWallpaper( filename ) )
 	{
 	  currentItem.wallpaper = filename;
 	  currentItem.bUseWallpaper = true;
@@ -1125,7 +1124,7 @@ void KBackground::slotWallpaper( const char *filename )
 void KBackground::slotWallpaperMode( int m )
 {
   currentItem.wpMode = m + 1;
-  if ( loadWallpaper( currentItem.wallpaper.data() ) == true )
+  if ( loadWallpaper( currentItem.wallpaper.data() ))
     {
       setMonitor();
       changed = true;
@@ -1263,7 +1262,7 @@ bool KBackground::setNew( QString pic, int item )
       currentItem.wallpaper = pic;
       currentItem.bUseWallpaper = false;
     }
-  else if ( loadWallpaper( pic.data() ) == true )
+  else if ( loadWallpaper( pic.data() ) )
     {
       currentItem.wallpaper = pic;
       currentItem.bUseWallpaper = true;
@@ -1598,7 +1597,38 @@ KRandomDlg::KRandomDlg(int _desktop, KBackground *_kb, char *name)
 
   QVBoxLayout *toplevelHL = new QVBoxLayout(this, 10, 5);
 	
+  dirCheckBox = new QCheckBox( i18n( "Pick files from &directory" ), this );
+  dirCheckBox->setChecked( useDir );
+  connect( dirCheckBox, SIGNAL( clicked() ), SLOT( changeDir() ) );
+  toplevelHL->addWidget( dirCheckBox, 1 );
+
   QBoxLayout *pushLayout = new QHBoxLayout( 5 );
+  toplevelHL->addLayout( pushLayout );
+
+  dirLined = new QLineEdit( this );
+  dirLined->setMinimumSize( dirLined->sizeHint() );
+  dirLined->setText( picDir );
+  dirLined->setEnabled( useDir );
+  pushLayout->addWidget( dirLined, 5 );
+
+  dirPushButton = new QPushButton( i18n( "&Browse ..." ), this );
+  dirPushButton->adjustSize();
+  dirPushButton->setFixedHeight( dirPushButton->height() );
+  dirPushButton->setMinimumWidth( dirPushButton->width() );
+  dirPushButton->setEnabled( useDir );
+  connect( dirPushButton, SIGNAL( clicked() ), SLOT( slotBrowse() ) );
+  pushLayout->addWidget( dirPushButton, 0 );
+
+  QFrame* tmpQFrame;
+  tmpQFrame = new QFrame( this );
+  tmpQFrame->setFrameStyle( QFrame::HLine | QFrame::Sunken );
+  tmpQFrame->setMinimumHeight( tmpQFrame->sizeHint().height() );
+
+  toplevelHL->addSpacing( 5 );
+  toplevelHL->addWidget( tmpQFrame );
+  toplevelHL->addSpacing( 5 );
+
+  pushLayout = new QHBoxLayout( 5 );
   toplevelHL->addLayout( pushLayout );
 
   timerLabel = new QLabel( this );
@@ -1622,7 +1652,6 @@ KRandomDlg::KRandomDlg(int _desktop, KBackground *_kb, char *name)
   pushLayout->addWidget( orderButton, 5 );
   pushLayout->addStretch( 5 );
 
-  QFrame* tmpQFrame;
   tmpQFrame = new QFrame( this );
   tmpQFrame->setFrameStyle( QFrame::HLine | QFrame::Sunken );
   tmpQFrame->setMinimumHeight( tmpQFrame->sizeHint().height() );
@@ -1641,7 +1670,7 @@ KRandomDlg::KRandomDlg(int _desktop, KBackground *_kb, char *name)
     
   if ( count > 0 ){
     for ( int i = 0; i < count; i++ )
-      listBox->insertItem( ItemList.at(i)->wallpaper.data() );
+      listBox->insertItem( ItemList.at(i)->wallpaper );
     item = 0;
     listBox->setCurrentItem( item );
   }
@@ -1688,6 +1717,8 @@ KRandomDlg::KRandomDlg(int _desktop, KBackground *_kb, char *name)
   bbox->layout();
   toplevelHL->addWidget( bbox );
   toplevelHL->activate();
+
+  setMinimumHeight( 400 );
 }
 
 
@@ -1696,8 +1727,28 @@ void KRandomDlg::selected( int index )
   item = index;
   kb->random = item;
   kb->currentItem = *ItemList.at( item );
-  kb->loadWallpaper( ItemList.at( item )->wallpaper.data() );
+  kb->loadWallpaper( ItemList.at( item )->wallpaper );
   kb->showSettings();
+}
+
+
+void KRandomDlg::changeDir()
+{
+  useDir = (! useDir);
+
+  dirLined->setEnabled( useDir );
+  dirPushButton->setEnabled( useDir );
+}
+
+
+void KRandomDlg::slotBrowse()
+{
+  QString tmp =  KFileDialog::getDirectory(QDir::currentDirPath(), this, "dirdlg");
+
+  if ( tmp.isEmpty() )
+    return;
+
+  dirLined->setText( tmp );
 }
 
 
@@ -1755,7 +1806,7 @@ void KRandomDlg::slotDelete()
     item = listBox->currentItem();
     kb->random = item;
     kb->currentItem = *ItemList.at( item );
-    kb->loadWallpaper( ItemList.at( item )->wallpaper.data() );
+    kb->loadWallpaper( ItemList.at( item )->wallpaper );
     kb->showSettings();
     
     connect(listBox, SIGNAL(highlighted(int)), SLOT(selected(int)));
@@ -1784,6 +1835,8 @@ void KRandomDlg::readSettings()
   count = picturesConfig.readNumEntry( "Count", 1 );
   delay = picturesConfig.readNumEntry( "Timer", 600 );
   inorder = picturesConfig.readBoolEntry( "InOrder", false );
+  useDir = picturesConfig.readBoolEntry( "UseDir", false );
+  picDir = picturesConfig.readEntry( "Directory", KApplication::kde_wallpaperdir() );
   
   KItem *newitem = new KItem( kb->currentItem );
   ItemList.append( newitem );
@@ -1801,9 +1854,9 @@ void KRandomDlg::readSettings()
 
 void KRandomDlg::done( int r ) 
 {
-  hide();
-  
   if ( r == Rejected ) {
+    hide();
+  
     listBox->setCurrentItem( 0 );
     setResult(Rejected);
 
@@ -1814,6 +1867,15 @@ void KRandomDlg::done( int r )
     return;
   }
 
+  QDir d( dirLined->text() );
+  if ( !d.exists() ) {
+    QMessageBox::warning(this, i18n("Directory error"),
+			 i18n("Selected directory doesn't exists") );
+    return;
+  }
+
+  hide();
+  
   kb->interactive = false;
   for ( int i = 0; i < (int)listBox->count(); i++ ) {
     kb->random = i;
@@ -1835,6 +1897,8 @@ void KRandomDlg::done( int r )
   picturesConfig.writeEntry( "Count", listBox->count() );
   picturesConfig.writeEntry( "Timer", timerLined->value() );
   picturesConfig.writeEntry( "InOrder", orderButton->isChecked() );
+  picturesConfig.writeEntry( "UseDir", dirCheckBox->isChecked() );
+  picturesConfig.writeEntry( "Directory", dirLined->text() );
 
   setResult(Accepted);
 

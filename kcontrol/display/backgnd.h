@@ -179,6 +179,7 @@ class KRandomDlg : public QDialog
 
 public:
   KRandomDlg(int _desktop, KBackground *_kb, char *name = 0 );
+  ~KRandomDlg() {}
 
   friend KBackground;
 
@@ -192,6 +193,9 @@ protected slots:
   void slotDelete();
   void slotAdd();
   void picDropped(KDNDDropZone *zone);
+  void changeDir();
+  void slotBrowse ();
+
   virtual void done ( int r );
 
 private:
@@ -201,11 +205,18 @@ private:
   QList<QString> list;
   QRadioButton *orderButton;
 
+  QCheckBox *dirCheckBox;
+  QLineEdit *dirLined;
+  QPushButton *dirPushButton;
+
   KIntegerLine *timerLined;
   KDNDDropZone *picdrop;
 
   KBackground *kb;
   QList<KItem> ItemList;
+
+  bool useDir;
+  QString picDir;
 
   int count;
   int delay;
@@ -264,7 +275,7 @@ protected:
   void showSettings();
   void writeSettings( int deskNum );
   void setMonitor();
-  int  loadWallpaper( const char *filename, bool useContext = TRUE );
+  bool  loadWallpaper( const char *filename, bool useContext = TRUE );
   void retainResources();
   void setDefaults();
 
