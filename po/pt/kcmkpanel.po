@@ -15,12 +15,11 @@ msgstr "&Ambiente de Trabalho"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr ""
+msgstr "&Navegador"
 
 #: main.cpp:79
-#, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
-msgstr "utilização: kcmkpanel [-init | {panel,options,desktops}]\n"
+msgstr "utilização: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
 #: main.cpp:112
 msgid "KPanel Configuration"
@@ -44,7 +43,7 @@ msgstr "&Rodapé"
 
 #: panel.cpp:63
 msgid "&Right"
-msgstr ""
+msgstr "Di&reita"
 
 #: panel.cpp:75
 msgid "Taskbar"
@@ -68,7 +67,7 @@ msgstr "Topo/E&squerda"
 
 #: panel.cpp:95
 msgid "Style"
-msgstr ""
+msgstr "Estilo"
 
 #: panel.cpp:97
 msgid "T&iny"
@@ -136,8 +135,8 @@ msgstr "&12h AM/PM"
 
 #: disknav.cpp:43
 msgid "Edit &Global..."
-msgstr ""
+msgstr "Editar &Global..."
 
 #: disknav.cpp:46
 msgid "Edit &Local..."
-msgstr ""
+msgstr "Editar &Local..."
