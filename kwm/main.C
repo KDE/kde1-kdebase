@@ -665,7 +665,7 @@ void MyApp::readConfiguration(){
 
   if (config->hasKey("AutoRaise")){
     options.AutoRaise = config->readNumEntry("AutoRaise");
-    if (options.AutoRaise < 0)
+    if (options.AutoRaise < -1)
       options.AutoRaise = 0;
   }
   else{
@@ -680,7 +680,7 @@ void MyApp::readConfiguration(){
   else if( key == "off")
     options.ShapeMode = false;
   else{
-    config->writeEntry("ShapeMode", "on");
+    config->writeEntry("ShapeMode", "off");
     options.ControlTab = true;
   }
 

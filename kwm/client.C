@@ -1281,8 +1281,9 @@ void Client::setactive(bool on){
     paintState();
   if (is_active){
     if ( options.FocusPolicy == FOCUS_FOLLOW_MOUSE
-	 && options.AutoRaise > 0){
-      QTimer::singleShot(options.AutoRaise, this, SLOT(autoRaise()));
+	 && options.AutoRaise != 0){
+      if (options.AutoRaise > 0)
+	QTimer::singleShot(options.AutoRaise, this, SLOT(autoRaise()));
       autoraised_stopped = FALSE;
     }
     else {
@@ -1837,15 +1838,13 @@ void Client::autoRaise(){
 		      None , CurrentTime) == GrabSuccess){ 
        XUngrabPointer(qt_xdisplay(), CurrentTime);
        XSync(qt_xdisplay(), FALSE);
-//        // for FocusFollowMouse: discard all enter/leave events
-//        XEvent ev;
-//        while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
        manager->raiseClient( this );
      }
      else {
        if ( options.FocusPolicy == FOCUS_FOLLOW_MOUSE
-	    && options.AutoRaise > 0){
-	 QTimer::singleShot(options.AutoRaise, this, SLOT(autoRaise()));
+	    && options.AutoRaise != 0){
+	 if (options.AutoRaise > 0)
+	   QTimer::singleShot(options.AutoRaise, this, SLOT(autoRaise()));
 	 autoraised_stopped = FALSE;
        }
      }
@@ -1857,7 +1856,7 @@ void Client::stopAutoraise(){
       && isActive()
       && !do_not_draw
       && options.FocusPolicy == FOCUS_FOLLOW_MOUSE
-      && options.AutoRaise > 0){
+      && options.AutoRaise != 0){
     manager->raiseClient( this );
     doButtonGrab();
   }

@@ -38,6 +38,12 @@ In 0.10:
        possible on the current desktop.
      - small bugfix for FreeBSD (Marc van Kempen)
      - menuButton (if defined) on the top
+     - Extended semantics for AutoRaise in FocusFollowMouse mode:
+                 AutoRaise=-1 
+       This will not start an auto timer, but you can raise the most recent
+       activated window with a simple click inside the window (= Raise
+       on first click)
+       
 
   patchlevel 26:
      - fixed double click problem with java/motif on some X-Servers

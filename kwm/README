@@ -161,7 +161,7 @@ Answer: Yes it is. You simple have to go through kwm.h/kwm.C from
     [General]
     WindowMoveType=Opaque, Transparent
     FocusPolicy=ClickToFocus, FocusFollowMouse
-    AutoRaise=0 (milliseconds)
+    AutoRaise=0 (milliseconds), -1 (no timer but raise on first click)
     MaximizeOnlyVertically=off, on
     TitlebarLook=shaded, plain, pixmap
     TitlebarPixmapActive=<pixmap>
