@@ -19,6 +19,7 @@
 #include <qstrlist.h>
 #include <qregexp.h>
 #include <qmsgbox.h>
+#include <qclipbrd.h>
 #include <qtooltip.h>
 
 #include <kconfig.h>
@@ -506,7 +507,20 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
 void KfmView::slotCopy()
 {
     clipboard->clear();
+    // Are there URLs selected (-> directly into the clipboard) ?
     view->getSelected( (*clipboard) );
+    // Is there selected text ?
+    QString txt;
+    view->getSelectedText ( txt );
+
+    if (clipboard->isEmpty()) // first test, since selecting URLs selects text
+    { // no URLs, get selected text
+        if (!txt.isEmpty())
+            clipboard->append(txt);
+    }
+    // Problem if one selects some text AND a link in a html page :
+    // there is text AND a URL selected. What do we put in the clipboard ?
+    // Currently we put the URL...
 }
 
 void KfmView::slotTrash()
@@ -751,6 +765,7 @@ void KfmView::slotPopupCopy()
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
 	clipboard->append( s );
+    QApplication::clipboard()->setText(popupFiles.first()); // system clipboard
 
     // DEBUG
     /* for( s = clipboard->first(); s != 0L; s = clipboard->next() )
