@@ -43,6 +43,7 @@ binary-arch:	checkroot build
 	cp debian/README.kde debian/tmp/usr/doc/kde
 	install -d debian/tmp/etc/init.d
 	cp debian/kdm.init.d debian/tmp/etc/init.d/kdm
+	install -d debian/tmp/usr/X11R6/bin
 	cp debian/kde debian/tmp/usr/X11R6/bin
 	install -d debian/tmp/usr/sbin
 	cp debian/switchdm debian/tmp/usr/sbin
