@@ -1,2 +1,8 @@
 Makefile
 Makefile.in
+kdehelp.gmo
+kdisplay.gmo
+kfind.gmo
+kfontmanager.gmo
+kvt.gmo
+kwm.gmo
