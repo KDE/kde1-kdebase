@@ -22,14 +22,19 @@ int SortedKProtocolDirEntry::compareItems( GCI i1, GCI i2)
 	if (de1->isdir != de2->isdir)
 	    return ((de1->isdir) ? -1 : 1);
     }
+    QString s1 = de1->name.copy();
+    QString s2 = de2->name.copy();
+    // Removing trailing '/' for directories
+    if (de1->isdir)  s1.truncate( s1.length() -1 );
+    if (de2->isdir)  s2.truncate( s2.length() -1 );
     switch (sortMode & 0x7f)
     {
 	case DIRSORT_BYNAME:
-	    return strcmp( de1->name.data(), de2->name.data() );
+	    return strcmp( s1.data(), s2.data() );
 	case DIRSORT_BYSIZE:
 	    return de1->size - de2->size;
 	default:
-	    return strcmp( de1->name.data(), de2->name.data() );
+	    return strcmp( s1.data(), s2.data() );
     }
 }
 
