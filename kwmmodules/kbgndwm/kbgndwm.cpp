@@ -13,13 +13,7 @@
 
 #include "kbgndwm.h"
 
-#include <X11/Xatom.h>
-
 #include "kbgndwm.moc"
-
-//----------------------------------------------------------------------------
-
-Atom kwm_command;
 
 //----------------------------------------------------------------------------
 
@@ -41,8 +35,6 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
 
     current = KWM::currentDesktop() - 1;
     applyDesktop( current );
-    
-    kwm_command = XInternAtom( qt_xdisplay(), "KWM_COMMAND", False );
 }
 
 void KBGndManager::desktopChange( int d )
