@@ -4,6 +4,8 @@
  * Copyright (C) 1997 Martin Jones
  *               1998 Matej Koss
  *
+ * $Id$
+ *
  */
 
 #ifndef __BACKGROUND_H__
@@ -49,6 +51,7 @@ public slots:
 protected:
   QPixmap *loadWallpaper();
   virtual void timerEvent( QTimerEvent * );
+  void setPixmapProperty( QPixmap * );
 
 protected:
   enum { Tiled = 1,

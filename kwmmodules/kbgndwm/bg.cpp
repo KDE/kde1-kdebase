@@ -4,12 +4,16 @@
  * Copyright (C) 1997 Martin Jones
  *               1998 Matej Koss
  *
+ * $Id$
+ *
  *
  */
 
 //----------------------------------------------------------------------------
 
 #include <stdlib.h>
+
+#include <X11/Xatom.h>
 
 #include <qimage.h>
 #include <qfile.h>
@@ -322,6 +326,7 @@ void KBackground::apply()
     {
       debug( "Desktop background found in cache" );
       qApp->desktop()->setBackgroundPixmap( *bgPixmap );
+      setPixmapProperty( bgPixmap );
       bgPixmap = 0;
       applied = true;
       return;
@@ -371,8 +376,9 @@ void KBackground::apply()
 	if (! wpPixmap ) {
 
 	  qApp->desktop()->setBackgroundPixmap(pmDesktop);
+          setPixmapProperty( &pmDesktop );
 	  *bgPixmap = pmDesktop;
-		
+
 	} else {
 	  bgPixmap->resize(w, h);
 		
@@ -430,6 +436,7 @@ void KBackground::apply()
 
 	if (! wpPixmap ) {
 	  qApp->desktop()->setBackgroundPixmap(tile);
+          setPixmapProperty( &pmDesktop );
 	  *bgPixmap = tile;
 	  applied = true;
 	} else {
@@ -717,10 +724,28 @@ void KBackground::timerEvent( QTimerEvent * )
     return;
 
   qApp->desktop()->setBackgroundPixmap( *bgPixmap );
+  setPixmapProperty( &pmDesktop );
   delete bgPixmap;
   bgPixmap = 0;
   applied = true;
 }
+
+void KBackground::setPixmapProperty( QPixmap *qP )
+{
+    Display *Xdisplay = kapp->getDisplay();
+    Window Xroot = kapp->desktop()->handle();
+    Pixmap p = qP->handle();
+    Atom prop_root = XInternAtom(Xdisplay, "_XROOTPMAP_ID", False);
+    Atom prop_esetroot = XInternAtom(Xdisplay, "ESETROOT_PMAP_ID", False);
+
+    if(prop_root == None || prop_esetroot == None) return;
+
+    XChangeProperty(Xdisplay, Xroot, prop_root, XA_PIXMAP, 32, PropModeReplace,
+                    (unsigned char *) &p, 1);
+    XChangeProperty(Xdisplay, Xroot, prop_esetroot, XA_PIXMAP, 32,
+                    PropModeReplace, (unsigned char *) &p, 1);
+}
+
 
 //----------------------------------------------------------------------------
 
