@@ -6,7 +6,7 @@
 (sleep 1 && exec kfm) &
 (sleep 2 && exec kcontrol -init) &
 
-(sleep 1 && exec kbgndwm) &
 (sleep 1 && exec krootwm) &
 (sleep 1 && exec kpanel) &
+(sleep 3 && exec kbgndwm) &
 sleep 2 ; exec kwm
