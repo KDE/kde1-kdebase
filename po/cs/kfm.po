@@ -326,7 +326,7 @@ msgstr ""
 
 #: kfmgui.cpp:1196
 msgid "Document: Done"
-msgstr "Dokument: Hotov"
+msgstr "Dokumentt: Hotov"
 
 #: kfmview.cpp:227
 msgid "ERROR: Drop over malformed URL"
@@ -464,15 +464,15 @@ msgstr "Chyba: ®ádné nastavení terminálu"
 
 #: kbind.cpp:1767
 msgid "Unmount"
-msgstr "Odpojit"
+msgstr ""
 
 #: kbind.cpp:1774 kbind.cpp:1786
 msgid "Mount"
-msgstr "Pøipojit"
+msgstr ""
 
 #: kbind.cpp:1785
 msgid "Mount default"
-msgstr "Pøipojit implicitní"
+msgstr ""
 
 #: kbind.cpp:1824
 msgid "Unknown binding"

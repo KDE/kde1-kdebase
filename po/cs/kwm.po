@@ -1,3 +1,18 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kwm\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
+"Language-Team: czech <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: iso-8859-2\n"
+
 #: main.C:64
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
@@ -19,58 +34,48 @@ msgid "Usage: "
 msgstr "Pou¾ití:"
 
 #: main.C:387
-#, fuzzy
 msgid "&Maximize"
-msgstr "Maximalizovat"
+msgstr "&Maximalizovat"
 
 #: main.C:388
-#, fuzzy
 msgid "&Restore"
-msgstr "Obnovit"
+msgstr "&Obnovit"
 
 #: main.C:389
-#, fuzzy
 msgid "&Iconify"
-msgstr "Ikonifikovat"
+msgstr "&Ikonifikovat"
 
 #: main.C:390
-#, fuzzy
 msgid "&DeIconify"
-msgstr "Odikonifikovat"
+msgstr "O&dikonifikovat"
 
 #: main.C:391
-#, fuzzy
 msgid "&Sticky"
-msgstr "Pøilepit"
+msgstr "&Pøilepit"
 
 #: main.C:392
-#, fuzzy
 msgid "&UnSticky"
-msgstr "Odlepit"
+msgstr "Od&lepit"
 
 #: main.C:393
-#, fuzzy
 msgid "Mo&ve"
-msgstr "Pøesunout"
+msgstr "Pøesu&nout"
 
 #: main.C:394
-#, fuzzy
 msgid "Resi&ze"
-msgstr "Zmìnit velikost"
+msgstr "Zmìnit &velikost"
 
 #: main.C:395
 msgid "&Close"
-msgstr ""
+msgstr "&Zavøít"
 
 #: main.C:396
-#, fuzzy
 msgid "&To desktop"
-msgstr "Na pracovní plochu"
+msgstr "&Na pracovní plochu"
 
 #: main.C:398
-#, fuzzy
 msgid "&Onto current desktop"
-msgstr "Na souèasnou pracovní plochu"
+msgstr "Na &souèasnou pracovní plochu"
 
 #: main.C:446
 msgid "One"
@@ -151,18 +156,3 @@ msgstr "Pøepni do"
 #: task.C:49
 msgid "Current session"
 msgstr "Souèasné sezení"
-
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#~ msgid ""
-#~ msgstr ""
-#~ "Project-Id-Version: PACKAGE VERSION\n"
-#~ "POT-Creation-Date: 1997-10-09 22:06-0500\n"
-#~ "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-#~ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-#~ "Language-Team: LANGUAGE <LL@li.org>\n"
-#~ "MIME-Version: 1.0\n"
-#~ "Content-Type: text/plain; charset=CHARSET\n"
-#~ "Content-Transfer-Encoding: ENCODING\n"
