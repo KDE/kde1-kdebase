@@ -440,9 +440,9 @@ KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
 
     layout->addWidget(others_group);
 
+    loadSettings();
     layout->activate();
 
-    loadSettings();
 }
 
 void KOptionsConfig::tooltips_clicked(bool click)
@@ -524,7 +524,7 @@ void KOptionsConfig::loadSettings() {
   }
   hide_taskbar_clicked(hide_taskbar->isChecked());
 
-  val = config->readNumEntry("HideShowAnimate",50);
+  val = config->readNumEntry("HideShowAnimation", 50);
   show_hide->setChecked( val >= 0 );
   if (val >= 0 ) show_hide_slider->setValue(val);
   show_hide_clicked(val >= 0);
