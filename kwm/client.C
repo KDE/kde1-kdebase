@@ -593,7 +593,7 @@ void Client::mouseDoubleClickEvent( QMouseEvent* ev){
   if (ev->pos().x() >= title_rect.x() && ev->pos().x() <= title_rect.x()+title_rect.width() &&
       ev->pos().y() >= title_rect.y() && ev->pos().y() <= title_rect.y()+title_rect.height()){
     if (!isMaximized())
-      maximize();
+      maximize( options.MaximizeOnlyVertically?1:0 );
     else
       unMaximize();
   }
