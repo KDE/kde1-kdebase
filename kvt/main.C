@@ -1317,10 +1317,7 @@ int main(int argc, char **argv)
   // first make an argument copy for a new kvt
   QStrList orgarg;
   for (i=0; i<argc; i++) {
-    if (QString("-caption")==argv[i])
-      orgarg.append("-T");
-    else
-      orgarg.append(argv[i]);
+    orgarg.append(argv[i]);
   }
 
   // cut off the command arguments for the terminal command
@@ -1373,6 +1370,7 @@ int main(int argc, char **argv)
     sessionconfig->setGroup("kvt");
     orgarg.clear();
     sessionconfig->readListEntry("kvtarguments", orgarg);
+    arguments = orgarg;
     // everything has changed. Generate new args for this kvt
     argc = orgarg.count();
     argv = new char* [argc+1];

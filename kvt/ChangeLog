@@ -1,3 +1,8 @@
+Carsten Pfeiffer - 10/1/99
+  - fixed commandline options not restored properly restored on 
+    sessionmanagement
+  - removed one commandline substition (-caption -> -T), that was done twice
+
 Alex Zepeda - 1/1/99
   - removed all C++ style comments in command.c
   - properly #ifdef'd the inline #define.
