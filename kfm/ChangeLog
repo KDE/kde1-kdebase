@@ -1,3 +1,9 @@
+1999-01-15  David Faure  <faure@kde.org>
+
+	* kfmgui.cpp: Patch 15 from Michael Reiher :
+	Passes the current path to kfind so that it sets
+	it as default search path
+
 1999-01-14  David Faure  <faure@kde.org>
 
 	* kfmgui.*: Store bHtmlMode, useful to know which mode we're in.

@@ -23,6 +23,7 @@
 #include <kmsgbox.h>
 #include <kstdaccel.h>
 #include <kcursor.h>
+#include <kprocess.h>
 
 #include "kfmpaths.h"
 #include "kfmgui.h"
@@ -1185,8 +1186,17 @@ void KfmGui::slotBookmarkSelected( int _id )
 
 void KfmGui::slotToolFind( )
 {
-    QString cmd = "kfind &";
-    system( cmd.data() );
+  KShellProcess proc;
+  proc << "kfind";
+  
+  QString strURL( getURL() );
+  KURL::decodeURL( strURL );
+  KURL url( strURL );
+
+  if( url.isLocalFile() )
+    proc << url.directory();
+
+  proc.start(KShellProcess::DontCare);
 }
 
 void KfmGui::slotNewWindow( )
