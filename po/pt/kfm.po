@@ -176,7 +176,7 @@ msgstr "&Cache"
 
 #: kfmgui.cpp:502
 msgid "Up"
-msgstr ""
+msgstr "Cima"
 
 #: kfmgui.cpp:550
 msgid "Stop"
@@ -742,7 +742,7 @@ msgstr "Aplicar global"
 
 #: kfmprops.cpp:1012 kfmprops.cpp:1084 kfmprops.cpp:1141
 msgid "(Default)"
-msgstr "(Por defeito)"
+msgstr "(Por omissão)"
 
 #: kfmprops.cpp:1073
 msgid "Could not write to\n"

@@ -98,7 +98,7 @@ msgstr "Oito"
 
 #: main.C:566
 msgid "Unnamed Desktop"
-msgstr ""
+msgstr "Sem Nome"
 
 #: main.C:875
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"

@@ -218,7 +218,7 @@ msgstr "Nenhum utilizador seleccionado"
 
 #: kdm-users.cpp:151 kdm-users.cpp:220
 msgid "Save image as default image?"
-msgstr "Gravar imagem como imagem por defeito?"
+msgstr "Gravar imagem como imagem por omissão?"
 
 #: kdm-sess.cpp:51
 msgid "Allow to shutdown:"

@@ -59,7 +59,7 @@ msgstr "&Escolher..."
 
 #: backgnd.cpp:536
 msgid "Default"
-msgstr "Por defeito"
+msgstr "Por omissão"
 
 #: backgnd.cpp:863
 msgid "Desktop names"
@@ -382,11 +382,8 @@ msgstr "&Itálico"
 
 #: fontchooser.cpp:262
 msgid "default"
-msgstr "por defeito"
+msgstr "por omissão"
 
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "qualquer"
-
-#~ msgid "Window title font"
-#~ msgstr "Fonte do título das janelas"

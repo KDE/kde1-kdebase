@@ -144,35 +144,31 @@ msgstr "Blobs"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
-msgstr ""
+msgstr "Bouboule"
 
 #: bouboule.cpp:1005
-#, fuzzy
 msgid "Setup KBouboule"
-msgstr "Configurar Chama"
+msgstr "Configurar Bouboule"
 
 #: bouboule.cpp:1032
-#, fuzzy
 msgid "Number of points:"
-msgstr "Numero de morcegos:"
+msgstr "Numero de pontos:"
 
 #: bouboule.cpp:1046
-#, fuzzy
 msgid "Point size:"
-msgstr "Num de Pontos:"
+msgstr "Tamanho dos pontos:"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr ""
+msgstr "Frequencia de mudança de cor:"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
-msgstr ""
+msgstr "Modo 3D"
 
 #: bouboule.cpp:1223
-#, fuzzy
 msgid "About Bouboule"
-msgstr "Acerca do Blob"
+msgstr "Acerca do Bouboule"
 
 #: bouboule.cpp:1224
 msgid ""
@@ -182,6 +178,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
+"Bouboule v0.1 -- esferas a contorcerem-se e a mudarem de tamanho\n"
+"\n"
+"Copyright (c) 1996 por Jeremie PETIT\n"
+"\n"
+"Portado para kscreensave por Cedric Tefft"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -432,7 +433,7 @@ msgstr ""
 "                    ordem: topo-esquerdo, topo-direito, fundo-esquerdo, "
 "fundo-direito\n"
 "  -delay num        Quantidade de tempo parado antes de começar a\n"
-"                     protecção do écran  (por defeito 10min)\n"
+"                     protecção do écran  (por omissão 10min)\n"
 "  -desc             Imprime a descrição para o stdout\n"
 "  -install          Instalar a protecção de écran\n"
 "  -lock             Requerer a password para parar a protecção de écran\n"
@@ -583,21 +584,19 @@ msgstr "Falhou"
 
 #: science.cpp:60
 msgid "Science"
-msgstr ""
+msgstr "Ciência"
 
 #: science.cpp:386
-#, fuzzy
 msgid "Setup Science"
-msgstr "Configurar Linhas"
+msgstr "Configurar Ciência"
 
 #: science.cpp:413
 msgid "Intensity:"
-msgstr ""
+msgstr "Intensidade:"
 
 #: science.cpp:544
-#, fuzzy
 msgid "About Science"
-msgstr "Acerca do Lines"
+msgstr "Acerca do Ciência"
 
 #: science.cpp:545
 msgid ""
@@ -606,6 +605,10 @@ msgid ""
 "written by Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"
 msgstr ""
+"Ciência Versão 0.2beta\n"
+"\n"
+"Escrito por Rene Beutler 1998\n"
+"rbeutler@g26.ethz.ch"
 
 #: slip.cpp:293
 msgid "Slip"

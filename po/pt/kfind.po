@@ -42,9 +42,8 @@ msgid "&Select All"
 msgstr "&Seleccionar Todos"
 
 #: kfindtop.cpp:154
-#, fuzzy
 msgid "Unse&lect All"
-msgstr "&Seleccionar Todos"
+msgstr "Dese&leccionar Todos"
 
 #: kfindtop.cpp:156
 msgid "&Invert Selection"
@@ -172,27 +171,27 @@ msgstr "Todos os Ficheiros e Pastas"
 
 #: kftabdlg.cpp:233
 msgid "Files"
-msgstr ""
+msgstr "Ficheiros"
 
 #: kftabdlg.cpp:234
 msgid "Folders"
-msgstr ""
+msgstr "Pastas"
 
 #: kftabdlg.cpp:235
 msgid "Symbolic links"
-msgstr ""
+msgstr "Links simbólicos"
 
 #: kftabdlg.cpp:236
 msgid "Special files (sockets, device files...)"
-msgstr ""
+msgstr "Ficheiros especiais (sockets, dispositivos...)"
 
 #: kftabdlg.cpp:237
 msgid "Executable files"
-msgstr ""
+msgstr "Ficheiros executaveis"
 
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
-msgstr ""
+msgstr "Ficheiros executaveis SUID"
 
 #: kftabdlg.cpp:247
 msgid "At Least"

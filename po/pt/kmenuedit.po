@@ -244,4 +244,4 @@ msgstr "Pessoal:"
 
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
-msgstr "Por defeito:"
+msgstr "Por omissão:"
