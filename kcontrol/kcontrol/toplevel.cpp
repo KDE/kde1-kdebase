@@ -79,7 +79,7 @@ void TopLevel::setupMenuBar()
                         this, SLOT(swallowChanged()));
 
     QPopupMenu *helpMenu = kapp->getHelpMenu(true, klocale->translate("KDE Control Center - "
-					"Version 0.3\n\n"
+					"Version 1.0\n\n"
 					"Written by Matthias Hölzer\n"
 					"(hoelzer@physik.uni-wuerzburg.de)\n\n"
 					"Thanks to:\n"
