@@ -261,7 +261,7 @@ AC_OUTPUT(Makefile \
 	kcontrol/sample/Makefile \
 	kcontrol/syssound/Makefile \
 	kcontrol/themes/Makefile \
-	kcontrol/themes/doc/Makefile \	
+	kcontrol/themes/doc/Makefile \
 	kdehelp/Makefile \
 	kdehelp/index/Makefile \
 	kdehelp/search/Makefile \
