@@ -1,4 +1,4 @@
-SUBDIRS = bell info input keys kfm kpanel kwm locale samba syssound
+SUBDIRS = bell info input keys kcmkfm kpanel kwm locale samba syssound
 
 data_DATA = index.html index-1.html index-2.html logotp3.gif
 
