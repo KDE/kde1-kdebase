@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart-1.1\n"
-"POT-Creation-Date: 1999-01-23 01:15+0100\n"
+"POT-Creation-Date: 1999-04-15 01:23+0200\n"
 "PO-Revision-Date: 1999-04-15 07:03+0300\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=iso8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kstart.C:116
+#: kstart.C:118
 #, c-format
 msgid ""
 "\n"
@@ -77,7 +77,7 @@ msgstr ""
 " \n"
 " "
 
-#: kstart.C:158
+#: kstart.C:160
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"

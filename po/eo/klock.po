@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock 1.0pre2\n"
-"POT-Creation-Date: 1999-03-31 01:21+0200\n"
+"POT-Creation-Date: 1999-04-18 01:18+0200\n"
 "PO-Revision-Date: 1998-12-02 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -457,12 +457,12 @@ msgstr ""
 "\n"
 "Adaptita al kscreensave de Emanuel Pirker."
 
-#: main.cpp:417
+#: main.cpp:436
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "Opcio %s ne estas subtenata sur tiu æi sistemo!"
 
-#: main.cpp:459
+#: main.cpp:491
 #, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
@@ -477,11 +477,11 @@ msgstr ""
 "Bonvolu kontakti vian sistemadministranton,\n"
 "diru al li, ke vi bezonas \"suid\" por la ekrananima¼oj!"
 
-#: main.cpp:464
+#: main.cpp:496
 msgid "Shadow Passwords"
 msgstr "Ombro-pasvortoj"
 
-#: main.cpp:514
+#: main.cpp:546
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -489,7 +489,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: main.cpp:632
+#: main.cpp:664
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -498,7 +498,7 @@ msgstr ""
 "uzo: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
-#: main.cpp:635
+#: main.cpp:667
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"

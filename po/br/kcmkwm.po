@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm-1.1\n"
-"POT-Creation-Date: 1998-12-19 01:20+0100\n"
+"POT-Creation-Date: 1999-04-10 01:21+0200\n"
 "PO-Revision-Date: 1999-03-30 19:52+0200\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -38,7 +38,8 @@ msgstr "A&raokaet"
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr ""
-"arveriadur : kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
+"arveriadur : kcmkwm [-init | "
+"{options,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -60,115 +61,115 @@ msgstr "Pegus"
 msgid "Menu"
 msgstr "Lañser"
 
-#: titlebar.cpp:178 titlebar.cpp:934
+#: titlebar.cpp:178 titlebar.cpp:936
 msgid "Left"
 msgstr "A-gleiz"
 
-#: titlebar.cpp:182 titlebar.cpp:944
+#: titlebar.cpp:182 titlebar.cpp:946
 msgid "Right"
 msgstr "A-zehoù"
 
-#: titlebar.cpp:471
+#: titlebar.cpp:473
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Leun eo tu kleiz ar varrenn-ditl... o tizoberiañ an nozelenn 'uhelañ'\n"
 
-#: titlebar.cpp:504
+#: titlebar.cpp:506
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Leun eo tu dehou ar varrenn-ditl... o tizoberiañ an nozelenn 'uhelañ'\n"
 
-#: titlebar.cpp:544
+#: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Leun ro tu kleiz ar varrenn-ditl... o tizoberiañ an nozelenn 'izelaat'\n"
 
-#: titlebar.cpp:577
+#: titlebar.cpp:579
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Leun eo tu dehou ar varrenn-ditl... o tizoberiañ an nozelenn 'izelaat'\n"
 
-#: titlebar.cpp:930
+#: titlebar.cpp:932
 msgid "Title Alignment"
 msgstr "Reizhiadur an titl"
 
-#: titlebar.cpp:939
+#: titlebar.cpp:941
 msgid "Middle"
 msgstr "E-kreiz"
 
-#: titlebar.cpp:967
+#: titlebar.cpp:969
 msgid "Shaded Vertically"
 msgstr "Disheoliet a-serzh"
 
-#: titlebar.cpp:973
+#: titlebar.cpp:975
 msgid "Shaded Horizontally"
 msgstr "Disheoliet a-led"
 
-#: titlebar.cpp:982
+#: titlebar.cpp:984
 msgid "Plain"
 msgstr "Leun"
 
-#: titlebar.cpp:990 titlebar.cpp:1015
+#: titlebar.cpp:992 titlebar.cpp:1017
 msgid "Pixmap"
 msgstr "Piksmap"
 
-#: titlebar.cpp:1003
+#: titlebar.cpp:1005
 msgid "Active title has shaded frame"
 msgstr "An titl bev en deus ur framm disheoliet"
 
-#: titlebar.cpp:1044
+#: titlebar.cpp:1046
 msgid "Active pixmap:"
 msgstr "Piksmap bev :"
 
-#: titlebar.cpp:1049
+#: titlebar.cpp:1051
 msgid "Inactive pixmap:"
 msgstr "Piksmap marv :"
 
-#: titlebar.cpp:1055
+#: titlebar.cpp:1057
 msgid "No pixmap under text"
 msgstr "Piksmap ebet dindan an destenn"
 
-#: titlebar.cpp:1066
+#: titlebar.cpp:1068
 msgid "Mouse action"
 msgstr "Obererezh al logodenn"
 
-#: titlebar.cpp:1074
+#: titlebar.cpp:1076
 msgid "Left Button double click does:"
 msgstr "Daouglikañ al logodenn a ra :"
 
-#: titlebar.cpp:1084
+#: titlebar.cpp:1086
 msgid "(Un)Maximize"
 msgstr "(Diz)Uhelaat"
 
-#: titlebar.cpp:1085
+#: titlebar.cpp:1087
 msgid "(Un)Shade"
 msgstr "(Dis)Heoliañ"
 
-#: titlebar.cpp:1086
+#: titlebar.cpp:1088
 msgid "Iconify"
 msgstr "Arlunañ"
 
-#: titlebar.cpp:1087
+#: titlebar.cpp:1089
 msgid "(Un)Sticky"
 msgstr "(Dis)Pegañ"
 
-#: titlebar.cpp:1107
+#: titlebar.cpp:1109
 msgid "Title animation"
 msgstr "Buhezadur an titl"
 
-#: titlebar.cpp:1123
+#: titlebar.cpp:1125
 msgid "ms"
 msgstr "me"
 
-#: titlebar.cpp:1366
+#: titlebar.cpp:1368
 msgid "Window manager setup - ERROR"
 msgstr "Kefluniañ ar merour prenester - FAZI"
 
-#: titlebar.cpp:1367
+#: titlebar.cpp:1369
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
@@ -278,7 +279,8 @@ msgid "Enable active desktop borders"
 msgstr "Laka bordoù ar gorretaol oberiant"
 
 #: desktop.cpp:81
-msgid "Move pointer towards center after gwintañ"
+#, fuzzy
+msgid "Move pointer towards center after switch"
 msgstr "Dilec'hiañ ar reti davet ar c'hreizh goude kemmañ"
 
 #: desktop.cpp:87

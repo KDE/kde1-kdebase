@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1999-03-31 01:21+0200\n"
+"POT-Creation-Date: 1999-04-18 01:18+0200\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Andrea Rizzi \n"
 
@@ -453,12 +453,12 @@ msgstr ""
 "\n"
 "Porting su KDE di Emanuel Pirker."
 
-#: main.cpp:417
+#: main.cpp:436
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "L'opzione %s non è supportata su questa piattaforma!"
 
-#: main.cpp:459
+#: main.cpp:491
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -472,11 +472,11 @@ msgstr ""
 "Contattate l'amministratore di sistema,\n"
 "e ditegli che necessitate del suid per kcheckpass!"
 
-#: main.cpp:464
+#: main.cpp:496
 msgid "Shadow Passwords"
 msgstr "Shadow passwords"
 
-#: main.cpp:514
+#: main.cpp:546
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -488,7 +488,7 @@ msgstr ""
 "si prega di usare invece klock .\n"
 "\n"
 
-#: main.cpp:632
+#: main.cpp:664
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -497,7 +497,7 @@ msgstr ""
 "Uso: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-alloe-root] [-nice num]\n"
 
-#: main.cpp:635
+#: main.cpp:667
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"

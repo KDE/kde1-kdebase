@@ -241,8 +241,8 @@ msgid ""
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
 msgstr ""
 "\n"
-"Hvis du oppdager feil i programmet eller har ønsker, vennligst send dem "
-"inn som beskrevet på http://bugs.kde.org"
+"Hvis du oppdager feil i programmet eller har ønsker, vennligst send dem inn "
+"som beskrevet på http://bugs.kde.org"
 
 #: kfmgui.cpp:450
 msgid "&Go"
