@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.6\n"
 "POT-Creation-Date: 1999-01-15 01:15+0100\n"
-"PO-Revision-Date: 1998-12-23 14:01 CET\n"
+"PO-Revision-Date: 1999-01-16 10:16+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -121,7 +121,7 @@ msgstr "Podtrhávat odkazy"
 
 #: options.cpp:246
 msgid "Always use my colors"
-msgstr ""
+msgstr "V¾dy pou¾ívat mé barvy"
 
 #: options.cpp:334
 msgid "KDE Help Options"

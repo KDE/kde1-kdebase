@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1998-12-23 13:59 CET\n"
+"PO-Revision-Date: 1999-01-18 08:17+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -447,9 +447,8 @@ msgid "The mime type config file "
 msgstr "Konfiguraèní soubor mime typu "
 
 #: kbind.cpp:304
-#, fuzzy
 msgid "does not contain a MimeType=... entry"
-msgstr "neobsahuje polo¾ku MimeType..."
+msgstr "neobsahuje polo¾ku MimeType=...údaj"
 
 #: kbind.cpp:392
 msgid "No mime types installed!"
@@ -1001,12 +1000,12 @@ msgid " ERROR: Could not write to %s"
 msgstr "CHYBA: Nemohu zapsat do %s"
 
 #: kiojob.cpp:565 kiojob.cpp:851
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not make symbolic link\n"
 "%s"
 msgstr ""
-"Není mo¾né vytvoøit symbolický odkaz na\n"
+"Není mo¾né vytvoøit symbolický odkaz\n"
 "%s"
 
 #: kiojob.cpp:583 kiojob.cpp:872 kiojob.cpp:1308
@@ -1029,11 +1028,13 @@ msgid ""
 "Special file will not be copied\n"
 "%s"
 msgstr ""
+"Speciální soubor nebude zkopírován\n"
+"%s"
 
 #: kiojob.cpp:652
 #, c-format
 msgid "%d special files will not be copied."
-msgstr ""
+msgstr "%d speciálních souborù nebude zkopírováno."
 
 #: kiojob.cpp:903
 #, c-format
@@ -1063,11 +1064,13 @@ msgid ""
 "Special file will not be moved\n"
 "%s"
 msgstr ""
+"Speciální soubor nebude pøesunut\n"
+"%s"
 
 #: kiojob.cpp:1025
 #, c-format
 msgid "%d special files will not be moved."
-msgstr ""
+msgstr "%d speciálních souborù nebude pøesunuto."
 
 #: kiojob.cpp:1289 kiojob.cpp:1356
 #, c-format
@@ -1487,21 +1490,3 @@ msgid ""
 msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
-
-#, fuzzy
-#~ msgid "Move here"
-#~ msgstr "Pøesunout"
-
-#, fuzzy
-#~ msgid "Link here"
-#~ msgstr "Link"
-
-#~ msgid "Working Directory"
-#~ msgstr "Pracovní adreáø"
-
-#~ msgid ""
-#~ "Please change the password in\n"
-#~ "~/.kde/share/apps/kfm/magic"
-#~ msgstr ""
-#~ "Prosím zmìòte heslo v souboru\n"
-#~ "~/.kde/share/apps/kfm/magic"

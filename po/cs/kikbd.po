@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kibd\n"
 "POT-Creation-Date: 1999-01-14 01:18+0100\n"
-"PO-Revision-Date: 1998-11-05 07:50+01:00\n"
+"PO-Revision-Date: 1999-01-16 10:11+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <flidr@kky.zcu.cz>\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,6 @@ msgstr ""
 "Alt symboly zablokovány"
 
 #: kikbd.cpp:392
-#, fuzzy
 msgid ""
 "Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -148,9 +147,8 @@ msgid "Both Shift's (Shift+Shift)"
 msgstr "Oba pøepínaèe (Shift+Shift)"
 
 #: kikbdconf.cpp:115
-#, fuzzy
 msgid "Right Meta"
-msgstr "Pravý Alt"
+msgstr "Pravá Meta"
 
 #: kikbdconf.cpp:116
 msgid "Left  Alt"
@@ -161,9 +159,8 @@ msgid "Left  Control"
 msgstr "Levý Control"
 
 #: kikbdconf.cpp:118
-#, fuzzy
 msgid "Left  Meta"
-msgstr "Levý Alt"
+msgstr "Levá Meta"
 
 #: kikbdconf.cpp:121
 msgid "Top Left"
@@ -199,22 +196,20 @@ msgid "Your configuration is empty. Install system default."
 msgstr "Va¹e konfigurace je prázdná. Nainstalujte standardní natavení."
 
 #: kikbdconf.cpp:222
-#, fuzzy
 msgid ""
 "Configuration file you have has older format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 "Konfiguraèní soubor má sta¹í formát ne¾ je oèekáváno.\n"
-"Nìkterá nastavení nejsou správná."
+"Nìkterá nastavení nemusí být správná."
 
 #: kikbdconf.cpp:230
-#, fuzzy
 msgid ""
 "Configuration file you have has newer format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 "Konfiguraèní soubor má novìj¹í formát ne¾ je oèekáváno.\n"
-"Nìkterá nastavení nejsou správná."
+"Nìkterá nastavení nemusí být správná."
 
 #: kikbdconf.cpp:357
 msgid "unknown"

@@ -176,7 +176,7 @@ msgstr "Veli&kost:"
 
 #: kftabdlg.cpp:217
 msgid "KB"
-msgstr ""
+msgstr "kB"
 
 #: kftabdlg.cpp:236
 msgid "All Files and Folders"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1998-12-26 19:46 CET\n"
+"PO-Revision-Date: 1999-01-18 08:20+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -62,21 +62,20 @@ msgid "Bookmarks"
 msgstr "Zálo¾ky"
 
 #: krootwm.C:280
-#, fuzzy
 msgid "Arrange Window Maker icons"
-msgstr "Uspoøádat ikony"
+msgstr "Uspoøádat ikony Window Makera"
 
 #: krootwm.C:281
 msgid "Show all"
-msgstr ""
+msgstr "Zobrazit v¹echny"
 
 #: krootwm.C:282
 msgid "Hide other"
-msgstr ""
+msgstr "Skrýt ostatní"
 
 #: krootwm.C:284
 msgid "Show info panel"
-msgstr ""
+msgstr "Zobrazit informaèní panel"
 
 #: krootwm.C:285
 msgid "Show legal panel"
@@ -84,16 +83,15 @@ msgstr ""
 
 #: krootwm.C:286
 msgid "Restart"
-msgstr ""
+msgstr "Spustit znova"
 
 #: krootwm.C:288
 msgid "Exit"
-msgstr ""
+msgstr "Ukonèit"
 
 #: krootwm.C:289
-#, fuzzy
 msgid "Window Maker"
-msgstr "Okna"
+msgstr "Window Maker"
 
 #: krootwm.C:306
 msgid "Desk"

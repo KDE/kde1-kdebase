@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
 "POT-Creation-Date: 1999-01-15 01:15+0100\n"
-"PO-Revision-Date: 1998-12-13 19:45 CET\n"
+"PO-Revision-Date: 1999-01-16 10:21+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -424,7 +424,7 @@ msgstr "Malá"
 
 #: general.cpp:221
 msgid "Style"
-msgstr ""
+msgstr "Styl"
 
 #: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
@@ -435,9 +435,8 @@ msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr "&Menu na vrchu pracovní plochy ve stylu MacOSu"
 
 #: general.cpp:259
-#, fuzzy
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "&Aplikovat styl na aplikace mimo KDE"
+msgstr "&Aplikovat písma a barvy na aplikace nepatøící do KDE"
 
 #: general.cpp:530
 msgid "General font"
@@ -487,13 +486,12 @@ msgstr "&Barvy"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr ""
+msgstr "Styl"
 
 #: main.cpp:83
-#, fuzzy
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
-msgstr "Pou¾ití: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr "Pou¾ití: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
@@ -542,12 +540,3 @@ msgstr "Implicitní"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "libovolné"
-
-#~ msgid "Fonts etc."
-#~ msgstr "&Znakové sady atd."
-
-#~ msgid "Desktop fonts"
-#~ msgstr "Znakové sady pracovní plochy"
-
-#~ msgid "&Fonts etc."
-#~ msgstr "&Znakové sady atd."

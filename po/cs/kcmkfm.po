@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
 "POT-Creation-Date: 1999-01-11 01:13+0100\n"
-"PO-Revision-Date: 1998-12-23 14:17 CET\n"
+"PO-Revision-Date: 1999-01-16 10:16+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -110,7 +110,7 @@ msgstr "Podtrhávat odkazy"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
-msgstr ""
+msgstr "V¾dy pou¾ívat mé barvy"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"

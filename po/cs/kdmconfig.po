@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig\n"
 "POT-Creation-Date: 1999-01-12 01:14+0100\n"
-"PO-Revision-Date: 1998-10-24 17:05 CEST\n"
+"PO-Revision-Date: 1999-01-16 10:15+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -163,19 +163,16 @@ msgid "Standard"
 msgstr "Standardní"
 
 #: kdm-font.cpp:157
-#, fuzzy
 msgid "Greeting font"
-msgstr "Uvítání"
+msgstr "Písmo pro uvítání"
 
 #: kdm-font.cpp:161
-#, fuzzy
 msgid "Fail font"
-msgstr "Selhání"
+msgstr "Písmo pro selhání"
 
 #: kdm-font.cpp:165
-#, fuzzy
 msgid "Standard font"
-msgstr "Standardní"
+msgstr "Standardní písmo"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
