@@ -127,7 +127,6 @@ KFontChooser::KFontChooser( QWidget *parent, const char *name )
 
 	cmbCharset = new QComboBox( false, this );
 	
-	fillCharsetCombo();
 	cmbCharset->adjustSize();
 	cmbCharset->setInsertionPolicy( QComboBox::NoInsertion );
 	connect( cmbCharset, SIGNAL( activated( const char * ) ),
@@ -153,6 +152,7 @@ KFontChooser::KFontChooser( QWidget *parent, const char *name )
 	stackLayout->addWidget( cmbCharset );
 
 	topLayout->activate();
+	fillCharsetCombo();
 }
 
 void KFontChooser::setFont( QFont start_fnt, bool fixed )
@@ -182,6 +182,7 @@ void KFontChooser::setFont( QFont start_fnt, bool fixed )
 		cbItalic->setChecked( true );
 	else
 		cbItalic->setChecked( false );
+	fillCharsetCombo();
 }
 
 void KFontChooser::getFontList( QStrList &list, const char *pattern )
@@ -285,6 +286,7 @@ void KFontChooser::slotCharset(const char *name)
      defaultCharset=FALSE;
   }   
 
+  emit fontChanged( fnt );
   changed=TRUE;
 }
 
@@ -293,7 +295,7 @@ void KFontChooser::slotSelectFont( const char *fname )
 //	if( lbFonts->currentItem() == 0 )
 	fnt.setFamily( fname );
 		
-	//fillCharsetCombo();	
+	fillCharsetCombo();	
 	//slotPreviewFont(0);
 	emit fontChanged( fnt );
 	changed=TRUE;
