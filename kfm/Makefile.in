@@ -43,10 +43,7 @@ TARGET	=	kfm
 
 ####### Build rules
 
-all: kwarn kfmlib kfmclient slave $(TARGET)
-
-kfmlib:
-	( cd libkfm ; $(MAKE) all )
+all: kwarn kfmclient slave $(TARGET)
 
 Makefile: Makefile.in
 	cd .. && CONFIG_FILES=kfm/$@ CONFIG_HEADERS= $(SHELL) ./config.status 
@@ -77,7 +74,6 @@ cleanroot:
 
 clean: cleanroot
 
-	(cd libkfm; $(MAKE) clean)
 	(cd client; $(MAKE) clean)
 	(cd kioslave; $(MAKE) clean)
 	(cd kfmwarn && $(MAKE) clean)
@@ -90,11 +86,6 @@ install: all
 	$(INSTALL) ./kfmwarn/kfmwarn $(BINDIR)
 	$(INSTALL) ./client/kfmclient $(BINDIR)
 	$(INSTALL_DATA) ./unpack $(BINDIR)
-	$(INSTALL_DATA) ./libkfm/libkfm.a $(LIBDIR)
-	$(INSTALL_DIR) $(KDEINC)
-	$(INSTALL_DATA) ./libkfm/kfm.h $(KDEINC)
-	$(INSTALL_DATA) ./libkfm/kfmclient_ipc.h $(KDEINC)
-	$(INSTALL_DATA) ./libkfm/ipc.h $(KDEINC)
 	(cd doc && $(MAKE) install)
 	(cd pics && $(MAKE) install)
 	$(INSTALL_DIR) $(LIBDIR)/kfm/config
@@ -106,7 +97,7 @@ install: all
 IPC:    clientIPC kioIPC
 
 clientIPC: ./ipcc/kfm.ipc
-	cd ipcc ; ./ipcc.pl kfm.ipc kfmserver_ipc kfmclient_ipc ; cp kfmserver_ipc* ../ ; cp kfmclient_ipc* ../client ; cp kfmclient_ipc* ../libkfm ; cd ..
+	cd ipcc ; ./ipcc.pl kfm.ipc kfmserver_ipc kfmclient_ipc ; cp kfmserver_ipc* ../ ; cp kfmclient_ipc* ../client ; cd ..
 
 kioIPC: ./ipcc/kio.ipc
 	cd ipcc ; ./ipcc.pl kio.ipc kioserver_ipc kioslave_ipc ; cp kioserver_ipc* ../ ; cp kioslave_ipc* ../kioslave ; cd ..
