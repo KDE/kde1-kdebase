@@ -12,7 +12,3 @@ Name=Console
 Name[no]=Konsoll
 Name[de]=Konsole
 Name[ca]=Consola
-SwallowTitle=Console all
-SwallowTitle[no]=Konsoll alt
-SwallowTitle[de]=Konsole alles
-SwallowTitle[ca]=Tota la consola

@@ -42,24 +42,7 @@ Comment[sv]=HДr kan du stДlla in hur panelen ska se ut
 Comment[ru]=Вы можете сконфигурировать, как будет выглядеть панель
 Comment[fi]=Voit asettaa paneelin ulkonДkЖД
 Comment[ca]=AquМ podeu configurar quin aspecte ha de tenir el panell
-SwallowTitle=Panel Options
-SwallowTitle[cs]=NastavenМ panelu
-SwallowTitle[de]=Panel-Optionen
-SwallowTitle[pt]=OpГУes do Painel
-SwallowTitle[pt_BR]=OpГУes do Painel
-SwallowTitle[es]=Opciones del panel
-SwallowTitle[eo]=Panelo-opcioj
-SwallowTitle[fr]=Options du panneau
-SwallowTitle[no]=Panelinnstillinger
-SwallowTitle[pl]=Opcje panelu
-SwallowTitle[zh_CN.GB2312]=цФ╟ЕиХжц
-SwallowTitle[ro]=OpЧiunile Panoului
-SwallowTitle[sv]=PanelinstДllningar
-SwallowTitle[ru]=Опции панели
-SwallowTitle[fi]=Paneelin asetukset
-SwallowTitle[ca]=Opcions del panell
-Icon=panel_settings.xpm
-Exec=kcmkpanel
+Exec=kcmkpanel 
 
 
 

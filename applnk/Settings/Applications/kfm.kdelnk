@@ -20,15 +20,6 @@ Comment[fi]=Voit asettaa tiedostonhallinnan ulkonäköä
 Comment[sk]=Mô¾ete tu nastavi» vzhµad mana¾éru súborov
 Comment[cs]=Zde mù¾ete nastavit vzhled a chování správce souborù
 Comment[ca]=Aquí podeu configurar l'aspecte i efecte dels gestors de fitxers
-SwallowTitle=File Manager Options
-SwallowTitle[es]=Opciones del Gestor de Archivos
-SwallowTitle[no]=Filbehandlervalg
-SwallowTitle[cs]=Nastavení správce souborù
-SwallowTitle[pt_BR]=Opções do Gerenciador de Arquivos
-SwallowTitle[ru]=ïĞÃÉÉ íÅÎÅÄÖÅÒÁ æÁÊÌÏ×
-SwallowTitle[fi]=Tiedostonhallinnan asetukset
-SwallowTitle[sk]=Nastavenie mana¾éra súborov
-SwallowTitle[ca]=Opcions Gestor de fitxers
 Icon=kfm.xpm
 Exec=kcmkfm
 
