@@ -6,7 +6,7 @@
 
 <title>KDE Control Center - KDE Theme Manager
 <author>The KDE team, Stefan Taverner; documentation by Duncan H.
-<date>v0.1 2 August 1999
+<date>v0.2 6 August 1999
 
 <!-- Begin the document -->
 
@@ -15,13 +15,19 @@
 This KDE Theme Manager screen allows you to select the desktop <bf>Theme</bf>
 package you wish to install. 
 
- <bf>Themes</bf> customize some
-or all of:  the 
-appearance of  the various screen elements 
-(window borders, buttons, title bar, panel, etc.), 
-the color scheme and background wall papers,
-sounds associated with various events. and standard icons. 
+Installation of a <bf>Theme</bf> package customizes the appearance
+of your desktop by modifying
+some or all of the following: 
 
+<itemize>
+
+<item> Colors and Wallpapers, 
+panel appearance,
+sounds associated with events,
+standard icons,
+window appearance (borders, titlebar, buttons), etc.
+
+</itemize>
 
 
 The column on the left lists the available  <bf>Theme</bf> packages.
@@ -35,16 +41,25 @@ The packages can either be gzipped tarballs or unpacked directories.
 
 Click on a listed Theme to select it; its name will be
 highlighted and (if available)  a picture  showing its  components
-will be displayed in the top right-hand box.   Information
-about the Theme will be displayed in the lower right-hand box. 
+will be displayed in the central  box.   Information
+about the Theme will be displayed in the lower  box. 
 
 To activate the highlighted theme package, click on <bf>Apply</bf>.
 The contents of the package will be extracted to  your Theme manager
 Work directory <tt>~/.kde/share/apps/kthememgr/Work</tt>, and the various
 components will be copied to the KDE configuration directories which
-control the desktop.    (Go to the next <bf>Contents</bf> screen to
-select which  components of the Themes package to activate)
+control the desktop.    (Go to the  <bf>Contents</bf> screen to
+select which  components of the Theme package to activate)
 
+
+
+
+Clicking on <bf>OK</bf> will also apply the selected  Theme package, and
+then close the Theme Manager.
+
+
+Clicking on  <bf>Default</bf> will restore the default theme-less
+KDE desktop.
 
 
 <itemize>
@@ -53,39 +68,37 @@ select which  components of the Themes package to activate)
 <tt>~/.kde/share/apps/kwm/pics/</tt>
 and panel elements go in
 <tt>~/.kde/share/apps/kpanel/pics/</tt>.
-To completely remove a Theme, you may need to delete the contents
+If you are unable to 
+completely remove a Theme to restore the
+default desktop, you may need to delete the contents
 of these directories.
 
 </itemize>
 
 
-Clicking on <bf>OK</bf> will also apply the selected  Theme package, and
-then close the Theme Manager.
-
-If you click on the <bf>Extract</bf> button,
-the contents of the highlighted Theme package will be extracted into
-the  Work directory <em>without</em>  being
-applied to the desktop.   This is useful if you are building a modified
-Theme package.  If the Theme package is global, 
-a local copy will also be added to your  personal
-Themes directory.
-
-
-The  list of available Themes can be modified as follows:
+Themes can be imported, exported, created, or deleted
+using the buttons
+at the right:
 <itemize>
-<item> Click on <bf>New</bf> to create a new entry in the list.
-This cretes an  empty subdirectory for the new Theme in the
-local Work directory.
+
+<item> Click on ``<bf>Add</bf>'' to import a new theme package to your
+local Themes directory.  You will be prompted for the name and
+location
+of the package.
+
+<item> Click on ``<bf>Save as</bf>'' to export the highlighted theme
+package.  You will be propted for the location at  which to save it.
+
+
+<item> Click on ``<bf>Create</bf>'' to create a new entry in the list.
+This creates a new Theme package in the local Work directory.  
+It will initially be a copy of the currently-highlighted Theme package; 
+you can then modify it as desired.
+
 
  
-<item> Click on <bf>Remove</bf> to delete a local Theme.
-(This button is inactive when the highlighted Theme is a global
-Theme.) 
-
-<item> Click on <bf>Import</bf> to import a Theme package into your
-local Themes directory.
-
-<item> Click on <bf>Export</bf> to export the highlighted Theme package.
+<item> Click on ``<bf>Remove</bf>'' to delete a local Theme.
+(This button is inactive when a global Theme is highlighted.)
 
 </itemize>
 
