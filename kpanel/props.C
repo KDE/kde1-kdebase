@@ -88,6 +88,7 @@ void kPanel::writeOutConfiguration(){
 
 
 void kPanel::parseMenus(){
+    ready_for_event_loop = true;
     KConfig *config = KApplication::getKApplication()->getConfig();
 
     config->setGroup("KDE Desktop Entries");
@@ -154,6 +155,8 @@ void kPanel::parseMenus(){
     pmenu->createMenu(new myPopupMenu, this);
     entries[0].popup = pmenu->getQPopupMenu();
 
+    ready_for_event_loop = false;
+    entries[0].button->setCursor(arrowCursor);
 }
 
 

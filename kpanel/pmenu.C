@@ -51,6 +51,8 @@ extern "C" {
 static int global_id = 1;
 
 
+bool ready_for_event_loop = false;
+
 QString personal;
 QString kde_apps;
 
@@ -173,6 +175,9 @@ PMenuItem::~PMenuItem()
 
 short PMenuItem::parse( QFileInfo *fi, PMenu *menu)
 {
+  if (ready_for_event_loop)
+    KApplication::getKApplication()->processEvents();
+
   real_name = fi->fileName().copy();
   int pos = fi->fileName().find(".kdelnk");
   if( pos >= 0 )

@@ -53,6 +53,8 @@ void restart_the_panel();
 extern char* applications_path;
 extern char* personal_applications_path;
 extern char* personal_applications_path_name;
+extern bool ready_for_event_loop;
+
 
 enum {
   OP_MAXIMIZE = 5000,
@@ -168,7 +170,6 @@ public:
   void doGeometry ();
 
   void showSystem();
-
 
  public slots:
  

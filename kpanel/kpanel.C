@@ -242,15 +242,16 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 	label_date->hide();
       }
     }
-
-    set_label_date();
+    label_date->setText("KDE 88");
     label_date->adjustSize();
 
     dock_area = new QFrame(this);
     dock_area->setFrameStyle(QFrame::Panel| QFrame::Sunken);
     dock_area->hide();
     
+    // Note: nbuttons _must_ be 0 here!
     entries[nbuttons++].button = (myPushButton*) new myPushButton( this, klocale->translate("Go!"));
+    entries[nbuttons-1].button->setCursor(waitCursor);
     entries[nbuttons-1].button->installEventFilter( this );
     QToolTip::add(entries[nbuttons-1].button, klocale->translate("Where do you want to go tomorrow?"));
 
@@ -813,6 +814,7 @@ void kPanel::restore_editbutton( bool takeit ) {
 void kPanel::button_clicked(){
   int i;
   for (i=0; i<nbuttons && entries[i].button != myPushButton::most_recent_pressed;i++);
+
   if (i<nbuttons){
     if (entries[i].button->last_button == LeftButton && 
 	entries[i].pmi && entries[i].pmi->getType() == unix_com){
