@@ -87,3 +87,4 @@
 /* Define, if you have setupterm in -l(n)curses */
 #undef HAVE_SETUPTERM
 
+#undef WITH_SYMBOL_UNDERSCORE
