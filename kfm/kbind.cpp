@@ -1264,6 +1264,37 @@ bool KMimeBind::runBinding( const char *_url )
     return TRUE;
 }
 
+void KMimeBind::runCmd( const char *_exec, QStrList &_args )
+{
+    char **argv = new char*[ _args.count() + 3 ];
+    char* s;
+
+    argv[0] = (char*)_exec;
+    
+    int i = 1;
+    for ( s = _args.first(); s != 0L; s = _args.next() )
+	argv[ i++ ] = (char*)s;
+    argv[ i ] = 0L;
+
+    int pid;
+    if ( ( pid = fork() ) == 0 )
+    {    
+	execvp( argv[0], argv );
+	QString txt = klocale->translate("Could not execute program\n");
+	txt += argv[0];
+
+	// Run this program if something went wrong
+	char* a[ 3 ];
+	a[ 0 ] = "kfmwarn";
+	a[ 1 ] = txt.data();
+	a[ 2 ] = 0L;
+	execvp( "kfmwarn", a );
+
+	exit( 1 );
+    }
+    delete [] argv;
+}
+
 void KMimeBind::runCmd( const char *_cmd )
 {
     debugT("CMD='%s'\n",_cmd );
@@ -1558,6 +1589,8 @@ bool ExecutableMimeType::runAsApplication( const char *_url, QStrList *_argument
 
 bool KDELnkMimeType::run( const char *_url )
 {
+    debugT("A\n");
+  
     KURL u( _url );
     KFMConfig *config = 0L;
     // Is it a "[KDE Desktop Entry]" file and do we want to open it ?
@@ -1577,7 +1610,7 @@ bool KDELnkMimeType::run( const char *_url )
     if ( config == 0L )
     {
 	QString tmp;
-	sprintf( "%s\n\r%s", klocale->translate( "Could not access" ), _url );
+	tmp.sprintf( "%s\n\r%s", klocale->translate( "Could not access" ), _url );
 	QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
@@ -1666,7 +1699,7 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
     if ( exec.isEmpty() )
     {
 	QMessageBox::message( klocale->translate( "KFM Error" ),
-		     klocale->translate( "This files does not contain an\n\rExec=....\n\rentry. Edit the Properties\n\rto solve the probelm" ) );
+		     klocale->translate( "This file does not contain an\n\rExec=....\n\rentry. Edit the Properties\n\rto solve the probelm" ) );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
 	return TRUE;
