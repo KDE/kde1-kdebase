@@ -54,8 +54,11 @@ KFMExec::KFMExec( int argc, char **argv )
 
 		connect( kfm, SIGNAL( finished() ), this, SLOT( slotFinished() ) );
 	      
-		QString tmp;
-		tmp.sprintf( "%s/.kde/share/apps/kfm/tmp/%s.%i.%i", getenv( "HOME" ), u.filename(), getpid(), kfmCounter++ );
+		QString tmp = KApplication::localkdedir().copy();
+		tmp += "/share/apps/kfm/tmp/";
+		QString tmp2;
+		tmp2.sprintf("%s.%i.%i", u.filename(), getpid(), kfmCounter++ );
+		tmp += tmp2;
 		kfm->copy( argv[ i - 1 ], tmp );
 		if ( !files.isEmpty() )
 		    files += " ";
