@@ -208,4 +208,7 @@
 
 03/05/98 Bernd
   - variable root grid sizes
-  
+  - fixed up the config/dekstop file. This file was not updated to 
+    deal with the new grid root scheme -- no wonder that we got
+    complains about the icons not being visible on first start up.
+    

@@ -6,7 +6,6 @@
 #include <errno.h>
 #include <math.h>
 
-#include <iostream.h>
 
 #include <qdir.h>
 #include <qtooltip.h>
