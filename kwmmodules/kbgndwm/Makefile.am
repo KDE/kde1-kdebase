@@ -23,3 +23,5 @@ install-data-local:
 
 uninstall-local:
 
+messages:
+	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kbgndwm_SOURCES) && mv messages.po ../../po/kbgndwm.pot
