@@ -285,11 +285,11 @@ msgstr "Biraj datoteke:"
 
 #: kfmgui.cpp:1011
 msgid "Find Complete"
-msgstr ""
+msgstr "Pronaði u cijelosti"
 
 #: kfmgui.cpp:1012
 msgid "Continue search from the top of the page?"
-msgstr ""
+msgstr "Nastavi pretragu s vrha stranice?"
 
 #: kfmgui.cpp:1030
 msgid "&Edit Bookmarks..."
@@ -562,6 +562,10 @@ msgid ""
 "\n"
 "Would you like to install the new ones?"
 msgstr ""
+"Nova inaèica KDEa je instalirana.\n"
+"Moguæe je da su predlo¹ci promijenjeni.\n"
+"\n"
+"®elite li da instaliram nove predlo¹ke?"
 
 #: main.cpp:267
 msgid "Cd"
@@ -1015,6 +1019,8 @@ msgid ""
 "Special file will not be copied\n"
 "%s"
 msgstr ""
+"Posebna datoteka neæe biti kopirana\n"
+"%s"
 
 #: kiojob.cpp:663
 #, c-format
@@ -1029,7 +1035,7 @@ msgstr ""
 
 #: kiojob.cpp:673
 msgid "Recurse copying from/to distant locations"
-msgstr ""
+msgstr "Rekurzivno kopiraj iz/u udaljenu lokaciju"
 
 #: kiojob.cpp:924
 #, c-format
@@ -1063,7 +1069,7 @@ msgstr ""
 #: kiojob.cpp:1046
 #, c-format
 msgid "%d special files will not be moved."
-msgstr ""
+msgstr "%d posebne datoteke neæe biti premje¹tene"
 
 #: kiojob.cpp:1310 kiojob.cpp:1381
 #, c-format
@@ -1371,11 +1377,11 @@ msgstr ""
 
 #: kcookiewin.cpp:76
 msgid "You received a cookie from host:"
-msgstr ""
+msgstr "Primili ste kolaèiæ od raèunala:"
 
 #: kcookiewin.cpp:89
 msgid "Do you want to accept or reject this cookie?"
-msgstr ""
+msgstr "®elite li prihvatiti ili odbiti ovaj kolaèiæ?"
 
 #: kcookiewin.cpp:120
 msgid "Apply to "

@@ -58,7 +58,7 @@ msgstr "KDM Logo:"
 
 #: kdm-appear.cpp:105 kdm-users.cpp:135
 msgid "Click or drop an image here"
-msgstr "Klick oder laß hier ein Bild fallen"
+msgstr "Klicken oder ein Bild fallen lassen"
 
 #: kdm-appear.cpp:110
 msgid "GUI Style:"
@@ -155,7 +155,7 @@ msgstr "Begrüßung"
 
 #: kdm-font.cpp:58
 msgid "Fail"
-msgstr "Fehlschlag"
+msgstr "Fehler"
 
 #: kdm-font.cpp:59
 msgid "Standard"
@@ -183,7 +183,7 @@ msgstr "Farbe"
 
 #: kdm-bgnd.cpp:101
 msgid "Solid Color"
-msgstr "Feste Farbe"
+msgstr "Durchgehende Farbe"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"

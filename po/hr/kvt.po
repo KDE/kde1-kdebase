@@ -132,11 +132,11 @@ msgstr "Pismo..."
 
 #: main.C:674
 msgid "Enable &hotkeys"
-msgstr ""
+msgstr "Omoguæi &ubrzivaèke tipke"
 
 #: main.C:677
 msgid "Save &Options"
-msgstr "&Spremi Opcije"
+msgstr "&Spremi postavke"
 
 #: main.C:686
 msgid ""
