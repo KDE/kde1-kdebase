@@ -1,8 +1,0 @@
-This directory is new to KDE1.0.
-
-It was necessary to add the kcheckpass to the KDE1.0 tree
-due to some reported possible security exploits.
-
-If this breaks compilation or running of KDE for you,
-please contact Christian Esken <esken@kde.org> as soon as possible.
-
