@@ -33,7 +33,7 @@ static QString currentUser(void)
   QString fullname(current->pw_gecos);
   if (fullname.find(',') != -1)
     /* Remove everything from and including first comma */
-    fullname.resize(fullname.find(','));
+    fullname.resize(fullname.find(',')+1);
 
   QString username(current->pw_name);
 
