@@ -3,7 +3,7 @@
 Name=File manager ( Super User Mode )
 Name[ca]=Gestor de fitxers ( Mode super usuari )
 Name[cs]=Správce souborù ( Super u¾ivatelský mod )
-Name[da]=Filstyring (Superbruger tilstand)
+Name[da]=Filmanager (Superbruger modus )
 Name[de]=KFM Dateimanager (Super User Modus)
 Name[eo]=Dosieradministrilo (kiel administranto)
 Name[es]=Administrador de archivos (modo root)
@@ -29,7 +29,7 @@ DocPath=kfm/index.html
 Comment=The KDE file manager
 Comment[ca]=El gestor de fitxers KDE
 Comment[cs]=KDE Správce souborù
-Comment[da]=KDE's filstyring
+Comment[da]=KDE's filmanager
 Comment[de]=Der KDE-Dateimanager
 Comment[eo]=Lanæas la dosieradministrilon Kfm kun radiko-rajtoj
 Comment[es]=El administrador de archivos de KDE
