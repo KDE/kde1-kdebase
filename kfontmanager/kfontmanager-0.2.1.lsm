@@ -1,0 +1,15 @@
+Begin3
+Title:          kfontmanager
+Version:        0.2.1
+Entered-date:   05/01/97
+Description:    A Font Manager for the KDE project
+Keywords:       KDE, Qt, gui, X11, fonts, font manager
+Author:         <wuebben@math.cornell.edu> Bernd Johannes Wuebben
+Maintained-by:  <wuebben@math.cornell.edu> Bernd Johannes Wuebben
+Primary-site:   ftp://fiwi02.wiwi.uni-tuebingen.de/pub/kde/apps/utils
+Home-Page:      http://math.cornell.edu/~wuebben/kfontmanager/kfontmanager.html
+Alternate-site: ftp://math.cornell.edu/pub/wuebben/kfontmanager
+Original-site:  ftp://fiwi02.wiwi.uni-tuebingen.de/pub/kde/apps/utils
+Platform:       Unix with Qt 1.2 and kde libs
+Copying-policy: GPL 
+End

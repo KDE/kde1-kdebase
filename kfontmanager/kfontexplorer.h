@@ -1,0 +1,147 @@
+/*
+    $Id$
+
+    Requires the Qt widget libraries, available at no cost at 
+    http://www.troll.no
+       
+    Copyright (C) 1996 Bernd Johannes Wuebben   
+                       wuebben@math.cornell.edu
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  
+    $Log$
+    Revision 1.2  1997/05/22 13:30:52  kulow
+    Coolo: updated kedit to 0.5
+    updated kfontmanager to 0.2.2
+
+    Revision 1.1  1997/05/21 04:47:09  wuebben
+    Initial revision
+
+    Revision 1.1  1997/04/26 20:33:39  wuebben
+    Initial revision
+
+    Revision 1.3  1997/04/20 14:59:45  wuebben
+    fixed a minor bug which caused the last font in the font list to not
+    be displayed
+
+    Revision 1.1  1997/04/20 00:18:15  wuebben
+    Initial revision
+
+    Revision 1.2  1997/03/02 22:40:59  wuebben
+    *** empty log message ***
+
+    Revision 1.1  1997/01/04 17:36:44  wuebben
+    Initial revision
+
+
+*/
+
+
+#ifndef _K_FONT_EXPLORER_H_
+#define _K_FONT_EXPLORER_H_
+
+#include <qmsgbox.h>
+#include <qpixmap.h>
+#include <qapp.h>
+#include <qframe.h> 
+#include <qbttngrp.h>
+#include <qchkbox.h>
+#include <qcombo.h>
+#include <qframe.h>
+#include <qgrpbox.h>
+#include <qlabel.h>
+#include <qlined.h>
+#include <qlistbox.h>
+#include <qpushbt.h>
+#include <qradiobt.h>
+#include <qscrbar.h>
+#include <qtooltip.h>
+
+#include <qstring.h>
+#include <qfont.h>
+
+
+class KFontExplorer : public QDialog {
+      // be fixed in Qt.1.3. 
+    KFontExplorer( QWidget *parent = NULL, const char *name = NULL,
+			bool modal = FALSE );
+public:
+    KFontExplorer( QWidget *parent = 0L, const char *name = 0L,
+			bool modal = FALSE, const QStrList* fontlist = 0L );
+
+    void setFont( const QFont &font );
+    QFont font()	{  return selFont; }
+
+    /*
+     * This is probably the function you are looking for.
+     * Just call this to pop up a dialog to get the selected font.
+     * returns result().
+     */
+
+    static int getFont( QFont &theFont );
+
+signals:
+	/*
+	 * connect to this to monitor the font as it as selected if you are
+	 * not running modal.
+	 */
+	void fontSelected( const QFont &font );
+
+private slots:
+
+      void 	family_chosen_slot(const char* );
+      void      size_chosen_slot(const char* );
+      void      fill_family_combo();
+      void      style_chosen_slot(const char*);
+      void      display_example(const QFont &font);
+    
+
+    bool loadKDEInstalledFonts();
+    void fill_family_combo();
+    void setCombos();
+    // pointer to an optinally supplied list of fonts to 
+    // inserted into the fontdialog font-family combo-box
+    QStrList     *fontlist; 
+
+    QLabel	 *family_label;
+    QLabel       *weight_label;
+    QLabel       *style_label;
+    QLabel	 *charset_label;
+
+    QLabel	 *actual_family_label;
+    QLabel       *actual_style_label;
+    QLabel	 *actual_charset_label;
+
+
+    QLabel	 *actual_family_label_data;
+
+    QLabel       *actual_weight_label_data;
+    QLabel       *actual_style_label_data;
+    QLabel	 *actual_charset_label_data;
+    QComboBox    *family_combo;
+    
+    QComboBox    *weight_combo;
+    QComboBox    *style_combo;
+    QComboBox	 *charset_combo;    
+    QPushButton	 *ok_button;
+    QPushButton	 *cancel_button;
+
+    QLabel       *example_label;
+    QFont         selFont;
+
+};
+
+#endif
+

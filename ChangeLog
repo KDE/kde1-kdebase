@@ -42,9 +42,13 @@
 	updated kview to 0.10
 	updated kfm to 0.6.3
  	patched kscreensaver for FreeBSD (thanks Marc)
-0.8.1: updated kdisplay to 0.5.3 
+0.9: updated kdisplay to 0.5.3 
 	added klogout
 	patches from Matthias
 	updated kfm to 0.6.4
 	updated kghostview to 0.4
 	added QTINC and QTLIB
+	patched kfm to support ktoolbar
+	updated kdehelp to 0.11
+	updated kedit to kedit+
+	added kfontmanager 0.2.1

@@ -1,0 +1,82 @@
+# $Id$
+
+prefix  = @prefix@
+BINDIR  = $(prefix)/bin
+LIBDIR  = $(prefix)/lib
+DOCSDIR = $(prefix)/doc/HTML/kfontmanager
+APPSDIR = $(prefix)/apps/System
+
+install = @install@
+INSTALL = $(install) -m 0755
+INSTALL_DATA = $(install) -m 0644
+INSTALL_DIR = $(install) -d -m 0755   
+
+###################################################################
+
+CXXFLAGS=	@CXXFLAGS@ -DHAVE_CONFIG_H -I..
+LDFLAGS	=	@LDFLAGS@ @all_libraries@ -lkdecore -lqt -lm -lX11 -lXext
+INCDIR	=	@all_includes@
+CXX	=	@CXX@
+MOC	=	@MOC@
+
+
+####### Files
+HEADER = 	kfontmanager.h kfontlist.h kfontexplorer.h
+SOURCES	=	main.cpp kfontmanager.cpp kfontlist.cpp kfontexplorer.cpp
+OBJECTS	=	main.o  kfontmanager.o kfontlist.o kfontexplorer.o
+SRCMETA	=	kfontmanager.moc kfontlist.moc kfontexplorer.moc
+TARGET	=	kfontmanager
+
+####### Implicit rules
+
+.SUFFIXES: .cpp
+
+.cpp.o:
+	$(CXX)  -c $(CXXFLAGS) $(DEFS) $(INCDIR) $<
+
+####### Build rules
+
+all: $(TARGET)
+
+$(TARGET): $(SOURCES) $(SRCMETA) $(OBJECTS) $(HEADER)
+	$(CXX) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
+
+depend:
+	@makedepend -I$(INCDIR) $(SOURCES) 2> /dev/null
+clean:
+	-rm -f *.o *.bak *~ *% #*
+	-rm -f $(SRCMETA) $(TARGET)
+
+install:
+	[ -d $(BINDIR) ] || $(INSTALL_DIR) $(BINDIR)
+	$(INSTALL) $(TARGET) $(BINDIR)
+	[ -d $(DOCSDIR) ] || $(INSTALL_DIR) $(DOCSDIR)
+	$(INSTALL_DATA) ./docs/kfontmanager.html $(DOCSDIR)
+	$(INSTALL_DATA) ./docs/kfontmanager.gif $(DOCSDIR)
+	[ -d $(APPSDIR) ] || $(INSTALL_DIR) $(APPSDIR)
+	$(INSTALL_DATA) kfontmanager.kdelnk $(APPSDIR)/kfontmanager.kdelnk
+
+uninstall:
+	rm -f $(BINDIR)/$(TARGET)
+	rm -f $(DOCSDIR)/kfontmanager.gif
+	rm -f $(DOCSDIR)/kfontmanager.html
+	rm -f $(APPSDIR)/kfontmanager.kdelnk
+
+####### Explicit dependencies
+
+
+####### Meta objects
+
+kfontmanager.moc: kfontmanager.h
+	$(MOC) kfontmanager.h -o kfontmanager.moc
+
+kfontexplorer.moc: kfontexplorer.h
+	$(MOC) kfontexplorer.h -o kfontexplorer.moc
+
+kfontlist.moc: kfontlist.h
+	$(MOC) kfontlist.h -o kfontlist.moc
+
+
+
+
+
