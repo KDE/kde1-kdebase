@@ -304,7 +304,9 @@ PFileMenu::newLinkItem(const QFileInfo* fi, bool useCurrentPath)
   QString url = kconfig.readEntry("URL");
 
   if (url.left(5) == "file:")
-    url = url.mid(5, 0xffff);   // remove "file:"
+    //correction by Pietro Iglio for memory hog
+    //    url = url.mid(5, 0xffff);   // remove "file:"
+    url = url.right(url.length() - 5);   // remove "file:"
 
   if (url.left(1) != "/")
     return newFileItem(fi, useCurrentPath);   // <<---------
