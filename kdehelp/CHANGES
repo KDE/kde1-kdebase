@@ -1,6 +1,12 @@
 KDE Help System CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+Version 0.5.2
+-------------
+
+Fix jumping to anchors within the current document.
+Use KIconLoader.
+
 Version 0.5.1
 -------------
 

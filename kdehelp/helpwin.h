@@ -35,7 +35,7 @@
 #define QUIT			102
 #define COPY			200
 
-#define KDEHELP_VERSION		"0.5.1"
+#define KDEHELP_VERSION		"0.5.2"
 
 #define STATUSBAR_HEIGHT	20
 #define SCROLLBAR_WIDTH		16

@@ -2,10 +2,10 @@
 #include "helpwin.h"
 
 #include <qaccel.h>
-
 #include <qmsgbox.h>
 
 #include <kapp.h>
+#include <kiconloader.h>
 
 #include <stdlib.h>
 
@@ -195,63 +195,54 @@ void KHelpMain::createToolbar()
 	KToolBar *tb = new KToolBar( this );
 
 
-	pmpath = kapp->findFile( "share/toolbar/back.xpm" );
-	pixmap.load( pmpath );
+	pixmap = kapp->getIconLoader()->loadIcon( "back.xpm" );
 	tb->insertButton(pixmap, 0, SIGNAL( clicked() ),
 		    helpwin, SLOT( slotBack() ),
 		    FALSE, klocale->translate("Previous Document"));
 
-	pmpath = kapp->findFile( "share/toolbar/forward.xpm" );
-	pixmap.load( pmpath );
+	pixmap = kapp->getIconLoader()->loadIcon( "forward.xpm" );
 	tb->insertButton(pixmap, 1, SIGNAL( clicked() ),
 		    helpwin, SLOT( slotForward() ),
 		    FALSE, klocale->translate("Next Document"));
 
 	tb->insertSeparator();
 
-	pmpath = kapp->findFile( "share/toolbar/prev.xpm" );
-	pixmap.load( pmpath );
+	pixmap = kapp->getIconLoader()->loadIcon( "prev.xpm" );
 	tb->insertButton(pixmap, 2, SIGNAL( clicked() ),
 		    helpwin, SLOT( slotPrev() ),
 		    FALSE, klocale->translate("Previous Node"));
 
-	pmpath = kapp->findFile( "share/toolbar/next.xpm" );
-	pixmap.load( pmpath );
+	pixmap = kapp->getIconLoader()->loadIcon( "next.xpm" );
 	tb->insertButton(pixmap, 3, SIGNAL( clicked() ),
 		    helpwin, SLOT( slotNext() ),
 		    FALSE, klocale->translate("Next Node"));
 
-	pmpath = kapp->findFile( "share/toolbar/up.xpm" );
-	pixmap.load( pmpath );
+	pixmap = kapp->getIconLoader()->loadIcon( "up.xpm" );
 	tb->insertButton(pixmap, 4, SIGNAL( clicked() ),
 		    helpwin, SLOT( slotUp() ),
 		    FALSE,klocale->translate( "Up one Node"));
 
-	pmpath = kapp->findFile( "share/toolbar/top.xpm" );
-	pixmap.load( pmpath );
+	pixmap = kapp->getIconLoader()->loadIcon( "top.xpm" );
 	tb->insertButton(pixmap, 5, SIGNAL( clicked() ),
 		    helpwin, SLOT( slotTop() ),
 		    FALSE, klocale->translate("Top Node"));
 
 	tb->insertSeparator();
 
-	pmpath = kapp->findFile( "share/toolbar/contents.xpm" );
-	pixmap.load( pmpath );
+	pixmap = kapp->getIconLoader()->loadIcon( "contents.xpm" );
 	tb->insertButton(pixmap, 6, SIGNAL( clicked() ),
 		    helpwin, SLOT( slotDir() ),
 		    FALSE, klocale->translate("Help Contents"));
 
-	pmpath = kapp->findFile( "share/stop.xpm" );
-	pixmap.load( pmpath );
+	pixmap = kapp->getIconLoader()->loadIcon( "reload.xpm" );
 	tb->insertButton(pixmap, 7, SIGNAL( clicked() ),
+		helpwin, SLOT( slotReload() ),
+		TRUE, klocale->translate( "Reload current document" ) );
+
+	pixmap = kapp->getIconLoader()->loadIcon( "stop.xpm" );
+	tb->insertButton(pixmap, 8, SIGNAL( clicked() ),
 		    helpwin, SLOT( slotStopProcessing() ),
 		    FALSE, klocale->translate("Stop"));
-
-	pmpath = kapp->findFile( "share/toolbar/reload.xpm" );
-	pixmap.load( pmpath );
-	tb->insertButton(pixmap, 8, SIGNAL( clicked() ),
-		helpwin, SLOT( slotReload() ),
-		TRUE, "Reload current document");
 
 	tb->setBarPos( KToolBar::Top );
 	toolbar = tb;
@@ -347,7 +338,7 @@ void KHelpMain::enableMenuItems()
     toolbar->setItemEnabled( 6, TRUE );
     
     val = helpwin->canCurrentlyDo(KHelpWindow::Stop); // busy
-    toolbar->setItemEnabled( 7, val );
+    toolbar->setItemEnabled( 8, val );
 }
 
 

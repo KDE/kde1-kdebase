@@ -59,7 +59,7 @@ KOpenURLDialog::KOpenURLDialog( QWidget *parent, const char *name )
 	label->setGeometry( 20, 20, 60, 20 );
 	
 	lineEdit = new QLineEdit( this );
-	lineEdit->setGeometry( 30+label->width(), 20, 140, 20 );
+	lineEdit->setGeometry( 30+label->width(), 20, 200, 20 );
 	lineEdit->setFocus();
 
 	QPushButton *openButton = new QPushButton( klocale->translate("Open"), this );
@@ -68,7 +68,7 @@ KOpenURLDialog::KOpenURLDialog( QWidget *parent, const char *name )
 	connect( openButton, SIGNAL(clicked()), SLOT(openPressed()) );
 
 	QPushButton *cancelButton = new QPushButton( klocale->translate("Cancel"), this );
-	cancelButton->setGeometry( 230-50, 60, 50, 30 );
+	cancelButton->setGeometry( 290-50, 60, 50, 30 );
 	connect( cancelButton, SIGNAL(clicked()), SLOT(reject()) );
 }
 
@@ -297,34 +297,43 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 		fullURL = "file:" + fullURL;
 
 	// extract reference
-	int refPos = fullURL.findRev( '#' );
 	int prevPos = currentURL.findRev( '#' );
-	prevPos = prevPos > 0 ? prevPos : 0;
-	if ( refPos >= 0 )
-	{
-		ref = fullURL.right( fullURL.length() - refPos - 1 );
-		fullURL.truncate( refPos );
+	prevPos = prevPos >= 0 ? prevPos : currentURL.length();
 
-		if ( ( refPos == 0 || fullURL == currentURL.left( prevPos ) ) &&
-			!ref.isEmpty() )
+	int refPos = fullURL.findRev( '#' );
+	if ( refPos < 0 )
+	{
+	    ref.resize( 0 );
+	    refPos = fullURL.length();
+	}
+	else
+	    ref = fullURL.right( fullURL.length() - refPos - 1 );
+	fullURL.truncate( refPos );
+
+	if ( fullURL == currentURL.left( prevPos ) )
+	{
+		if ( !ref.isEmpty() )
 		{
-			if ( !view->gotoAnchor( ref ) )
-				return 1;
-			if ( prevPos > 0 )
-				currentURL.truncate( prevPos + 1 );
-			currentURL += ref;
-			if ( withHistory )
-			{
-				if ( history.Current() )
-					history.Current()->setOffset( viewPos );
-				history.Add( new KPageInfo( currentURL, 0 ) );
-				view->urlHistory->addURL( currentURL );
-			}
-			emit enableMenuItems();
-            emit setURL( currentURL );
-			locationBar->setLocation( currentURL );
-			return 0;
+		    if ( !view->gotoAnchor( ref ) )
+			    return 1;
+		    currentURL.truncate( prevPos );
+		    currentURL += "#";
+		    currentURL += ref;
 		}
+		else
+		    currentURL.truncate( prevPos );
+
+		if ( withHistory )
+		{
+			if ( history.Current() )
+				history.Current()->setOffset( viewPos );
+			history.Add( new KPageInfo( currentURL, 0 ) );
+			view->urlHistory->addURL( currentURL );
+		}
+		emit enableMenuItems();
+		emit setURL( currentURL );
+		locationBar->setLocation( currentURL );
+		return 0;
 	}
 
 	// if this is a relative location, then use path of current URL
@@ -413,9 +422,7 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 		if ( withHistory )
 		{
 			if ( history.Current() )
-			{
 				history.Current()->setOffset( viewPos );
-			}
 			history.Add( new KPageInfo( currentURL, 0 ) );
 			view->urlHistory->addURL( currentURL );
 		}
@@ -1098,6 +1105,7 @@ void KHelpWindow::slotSearch()
 
 void KHelpWindow::slotReload()
 {
+    currentURL = "";
     openURL( QUOTE + getPrefix() + format->GetLocation() + QUOTE, false );
 }
 
@@ -1128,7 +1136,14 @@ void KHelpWindow::slotBack()
 	if ( p )
 	{
 		if ( !openURL( p->getUrl(), false ) )
-			scrollTo = p->getOffset();
+		{
+		    scrollTo = p->getOffset();
+		    if ( !busy )
+		    {
+			view->slotScrollVert( scrollTo );
+			vert->setValue( scrollTo );
+		    }
+		}
 	}
 }
 
@@ -1143,7 +1158,14 @@ void KHelpWindow::slotForward()
 	if ( p )
 	{
 		if ( !openURL( p->getUrl(), false ) )
-			scrollTo = p->getOffset();
+		{
+		    scrollTo = p->getOffset();
+		    if ( !busy )
+		    {
+			view->slotScrollVert( scrollTo );
+			vert->setValue( scrollTo );
+		    }
+		}
 	}
 }
 
@@ -1489,7 +1511,7 @@ void KHelpWindow::slotPopupOpenNew()
 }
 
 
-void KHelpWindow::slotViewResized( const QSize &s )
+void KHelpWindow::slotViewResized( const QSize & )
 {
 	QApplication::setOverrideCursor( waitCursor );
 
@@ -1500,16 +1522,6 @@ void KHelpWindow::slotViewResized( const QSize &s )
 		vert->setRange( 0, view->docHeight() - view->height() );
 	else
 		vert->setRange( 0, 0 );
-
-	// we need to parse again if the width of the widget changes
-	if ( !currentURL.isEmpty() && s.width() != viewWidth )
-	{
-		scrollTo = view->yOffset();
-		view->parse();
-		busy = true;
-		emit enableMenuItems();
-		viewWidth = s.width();
-	}
 
 	QApplication::restoreOverrideCursor();
 }
@@ -1624,11 +1636,7 @@ void KHelpWindow::slotDocumentDone()
 		view->slotScrollVert( scrollTo );
 		vert->setValue( scrollTo );
 	}
-	else if ( ref.isEmpty() )
-	{
-		vert->setValue( 0 );
-	}
-	else
+	else if ( !ref.isEmpty() )
 	{
 		if ( !view->gotoAnchor( ref ) )
 			vert->setValue( 0 );
