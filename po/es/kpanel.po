@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1999-01-05 01:13+0100\n"
-"PO-Revision-Date: 1998-12-28 9:30+0100\n"
+"PO-Revision-Date: 1999-01-06 17:59+0100\n"
 "Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 "MIME-Version: 1.0\n"
@@ -148,15 +148,15 @@ msgstr "Imposible poner este botón en el panel."
 
 #: pfilemenu.C:423
 msgid "(empty folder)"
-msgstr "(folder vacío)"
+msgstr "(carpeta vacía)"
 
 #: pfilemenu.C:478
 msgid "Open Folder"
-msgstr "Abrir folder"
+msgstr "Abrir Carpeta"
 
 #: pfilemenu.C:481
 msgid "Open this folder (+Shift: Launch a terminal here)"
-msgstr ""
+msgstr "Abrir esta carpeta (+Shift: Ejecuta un terminal aquí)"
 
 #: pfilemenu.C:489
 msgid "(Too Many Files)"
