@@ -72,7 +72,7 @@ KMenuEdit::KMenuEdit( const char *name )
   //menubar->insertItem( klocale->translate("Edit"), edit_menu);
   menubar->insertItem( klocale->translate("&Options"), options);
   menubar->insertSeparator();
-  QString about = "KMenuedit 0.3.0\n(C) ";
+  QString about = "KMenuedit 0.3.1\n(C) ";
   about += (QString) klocale->translate("by") +
     " Christoph Neerfeld\nChristoph.Neerfeld@home.ivm.de";
   menubar->insertItem( klocale->translate("&Help"), 
@@ -248,7 +248,8 @@ void KMenuEdit::loadMenus()
   QString dir_name;
   KConfig *config = KApplication::getKApplication()->getConfig();
   config->setGroup("KDE Desktop Entries");
-  dir_name = config->readEntry("PersonalPath");
+  QString temp = KApplication::localkdedir() +"/share/applnk";
+  dir_name = config->readEntry("PersonalPath", temp.data());
   dir_name = dir_name.stripWhiteSpace();
   QDir dir(dir_name);
   if( pers_menu_data )
@@ -265,7 +266,8 @@ void KMenuEdit::loadMenus()
       pers_menu_name = kconfig.readEntry("Name");
     }
   // default menu
-  dir_name = config->readEntry("Path");
+  temp = KApplication::kde_appsdir();
+  dir_name = config->readEntry("Path", temp.data());
   dir_name = dir_name.stripWhiteSpace();
   dir = dir_name;
   if( glob_menu_data )

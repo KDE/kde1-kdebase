@@ -48,6 +48,7 @@ int main( int argc, char **argv )
   QString temp1, temp2;
   KConfig *config = a.getConfig();
   config->setGroup("KDE Desktop Entries");
+  /*
   if( !config->hasKey("Path") || !config->hasKey("PersonalPath") )
     {
       if( config->hasKey("Path") )
@@ -58,8 +59,6 @@ int main( int argc, char **argv )
 	temp2 = config->readEntry("PersonalPath");
       else
 	{
-	  //temp2 = QDir::homeDirPath();
-	  //temp2 += "/.kde/share/applnk";
           temp2 = KApplication::localkdedir() + "/share/applnk";
 	}
        DesktopPathDialog *desktop_dialog = new DesktopPathDialog( temp1, temp2 );
@@ -69,8 +68,10 @@ int main( int argc, char **argv )
        temp2 = desktop_dialog->getPPath();
        config->writeEntry("PersonalPath", temp2);
     }
+  */
   // check for existance of PersonalPath
-  temp2 = config->readEntry("PersonalPath");
+  temp1 = KApplication::localkdedir() +"/share/applnk";
+  temp2 = config->readEntry("PersonalPath", temp1.data());
   QFileInfo fi(temp2);
   bool error = FALSE;
   if( !(fi.exists() && fi.isDir()) )

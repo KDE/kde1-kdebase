@@ -546,10 +546,10 @@ void PMenuItem::writeConfig( QDir dir )
   config.close();
   KConfig kconfig(file);
   kconfig.setGroup("KDE Desktop Entry");
-  kconfig.writeEntry("Comment", comment );
+  kconfig.writeEntry("Comment", comment, TRUE, FALSE, TRUE );
   kconfig.writeEntry("Icon", big_pixmap_name );
   kconfig.writeEntry("MiniIcon", pixmap_name );
-  kconfig.writeEntry("Name", text_name );
+  kconfig.writeEntry("Name", text_name, TRUE, FALSE, TRUE );
   switch( (int) entry_type ) {
   case (int) swallow_com:
     kconfig.writeEntry("SwallowExec", swallow_exec );
