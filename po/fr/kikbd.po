@@ -531,7 +531,7 @@ msgstr "Lancement automatique"
 
 #: widgets.cpp:663
 msgid "&Docked"
-msgstr "Placer &dans le tableau de bord"
+msgstr "Placer sur le &tableau de bord"
 
 #: widgets.cpp:664
 msgid "Dock into special area in the panel"
