@@ -1,0 +1,299 @@
+#: backgnd.cpp:142 colorscm.cpp:295
+msgid "Background"
+msgstr "Fondo"
+
+#: backgnd.cpp:167
+msgid "Color"
+msgstr "Color"
+
+#: backgnd.cpp:187
+msgid "Flat"
+msgstr "Plano"
+
+#: backgnd.cpp:191
+msgid "Gradient"
+msgstr "Gradiente"
+
+#: backgnd.cpp:204
+msgid "Portrait"
+msgstr "Vertical"
+
+#: backgnd.cpp:208
+msgid "Landscape"
+msgstr "Horizontal"
+
+#: backgnd.cpp:226
+msgid "Wallpaper"
+msgstr "Tapiz"
+
+#: backgnd.cpp:259
+msgid "Tiled"
+msgstr "Mosaico"
+
+#: backgnd.cpp:263
+msgid "Centred"
+msgstr "Centrado"
+
+#: backgnd.cpp:267
+msgid "Scaled"
+msgstr "Escalado"
+
+#: backgnd.cpp:274
+msgid "Browse..."
+msgstr "Examinar..."
+
+#: colorscm.cpp:141 colorscm.cpp:142
+msgid "Inactive window"
+msgstr "Ventana inactiva"
+
+#: colorscm.cpp:157 colorscm.cpp:158
+msgid "Active window"
+msgstr "Ventana activa"
+
+#: colorscm.cpp:194 colorscm.cpp:195 colorscm.cpp:300
+msgid "Window text"
+msgstr "Texto en la ventana"
+
+#: colorscm.cpp:211
+msgid "Disabled"
+msgstr "Desactivado"
+
+#: colorscm.cpp:218 colorscm.cpp:219
+msgid "Selected"
+msgstr "Seleccionado"
+
+#: colorscm.cpp:254 colorscm.cpp:264
+msgid "Color Scheme"
+msgstr "Paleta"
+
+#: colorscm.cpp:278
+msgid "Remove"
+msgstr "Eliminar"
+
+#: colorscm.cpp:286
+msgid "Widget color"
+msgstr "Color del Widget"
+
+#: colorscm.cpp:291
+msgid "Inactive title bar"
+msgstr "Barra de título inactiva"
+
+#: colorscm.cpp:292
+msgid "Inactive title text"
+msgstr "Texto de título inactivo"
+
+#: colorscm.cpp:293
+msgid "Active title bar"
+msgstr "Barra de título activa"
+
+#: colorscm.cpp:294
+msgid "Active title text"
+msgstr "Texto de título activo"
+
+#: colorscm.cpp:296
+msgid "Text"
+msgstr "Texto"
+
+#: colorscm.cpp:297
+msgid "Select background"
+msgstr "Elegir fondo"
+
+#: colorscm.cpp:298
+msgid "Select text"
+msgstr "Elegir texto"
+
+#: colorscm.cpp:299
+msgid "Window background"
+msgstr "Fondo de ventana"
+
+#: colorscm.cpp:311
+msgid "Contrast"
+msgstr "Contraste"
+
+#: colorscm.cpp:324 scrnsave.cpp:220
+msgid "Low"
+msgstr "Bajo"
+
+#: colorscm.cpp:328 scrnsave.cpp:217
+msgid "High"
+msgstr "Alto"
+
+#: colorscm.cpp:343
+msgid "Save scheme"
+msgstr "Guardar paleta"
+
+#: colorscm.cpp:374 colorscm.cpp:382
+msgid "You have chosen a name used by a supplied color scheme"
+msgstr "Usted a elegido un nombre usado por una paleta existente"
+
+#: colorscm.cpp:465
+msgid "KDE Default"
+msgstr "KDE Standard"
+
+#: colorscm.cpp:689
+msgid "Display Setup"
+msgstr "Configuración del display"
+
+#: colorscm.cpp:690
+msgid ""
+"No desktop color schemes were found.\n"
+"Do you want to install the default color schemes now ?"
+msgstr ""
+"No se encontraron paletas para el escritorio.\n"
+"Desea instalar las paletas standard ahora ?"
+
+#: general.cpp:57
+msgid "General"
+msgstr "General"
+
+#: general.cpp:61
+msgid "Widget style"
+msgstr "Estilo de widgets"
+
+#: general.cpp:66
+msgid "Motif"
+msgstr "Motif"
+
+#: general.cpp:67
+msgid "Windows 95"
+msgstr "Windows 95"
+
+#: general.cpp:76
+msgid "Fonts"
+msgstr "Fuentes"
+
+#: general.cpp:81
+msgid "General font"
+msgstr "Fuente general"
+
+#: general.cpp:106
+msgid "Sample"
+msgstr "Muestra"
+
+#: general.cpp:112
+msgid "Small"
+msgstr "Pequeña"
+
+#: general.cpp:116
+msgid "Medium"
+msgstr "Mediano"
+
+#: general.cpp:120
+msgid "Large"
+msgstr "Grande"
+
+#: general.cpp:132
+msgid "Bold"
+msgstr "Negrita"
+
+#: general.cpp:137
+msgid "Italic"
+msgstr "Cursiva"
+
+#: input.cpp:42
+msgid "Input"
+msgstr "Entrada"
+
+#: input.cpp:54
+msgid "Keyboard"
+msgstr "Teclado"
+
+#: input.cpp:57
+msgid "Auto Repeat"
+msgstr "Auto Repetición"
+
+#: input.cpp:62
+msgid "Repeat Delay"
+msgstr "Demora en la Repetición"
+
+#: input.cpp:70
+msgid "Repeat Rate"
+msgstr "Velocidad de Repetición"
+
+#: input.cpp:78
+msgid "Mouse"
+msgstr "Mouse"
+
+#: input.cpp:81
+msgid "Acceleration"
+msgstr "Aceleración"
+
+#: input.cpp:89
+msgid "Threshold"
+msgstr "Umbral"
+
+#: kwmcom.cpp:82 kwmcom.cpp:109
+msgid "kwmcom: communication with kwm failed\n"
+msgstr "kwmcom: falló la comunicación con el kwm\n"
+
+#: main.cpp:53
+msgid "KDE Display Configuration"
+msgstr "Configuración del display del KDE"
+
+#: main.cpp:129
+#, c-format
+msgid ""
+"Usage: %s -init|-setup\n"
+"\n"
+msgstr ""
+"Uso: %s -init|-setup\n"
+"\n"
+
+#: main.cpp:130
+msgid "  -init               apply current settings to the display\n"
+msgstr "  -init               aplicar opciones actuales al display\n"
+
+#: main.cpp:131
+msgid "  -setup              setup the display\n"
+msgstr "  -setup              configurar el display\n"
+
+#: savescm.cpp:28
+msgid "Name"
+msgstr "Nombre"
+
+#: savescm.cpp:43
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: scrnsave.cpp:47
+msgid "Ignore"
+msgstr "Ignorar"
+
+#: scrnsave.cpp:49
+msgid "Lock"
+msgstr "Bloquear"
+
+#: scrnsave.cpp:105 scrnsave.cpp:159
+msgid "Screen Saver"
+msgstr "Blanqueador de Pantalla"
+
+#: scrnsave.cpp:180
+msgid "Setup..."
+msgstr "Configuración..."
+
+#: scrnsave.cpp:184
+msgid "Test"
+msgstr "Probar"
+
+#: scrnsave.cpp:192
+msgid "Settings"
+msgstr "Opciones"
+
+#: scrnsave.cpp:195
+msgid "Wait:"
+msgstr "Espera:"
+
+#: scrnsave.cpp:206
+msgid "min"
+msgstr "Minutos"
+
+#: scrnsave.cpp:209
+msgid "Requires Password"
+msgstr "Pedir Contraseña"
+
+#: scrnsave.cpp:214
+msgid "Priority:"
+msgstr "Prioridad"
+
+#~ msgid "Save"
+#~ msgstr "Guardar"

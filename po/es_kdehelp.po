@@ -29,7 +29,7 @@ msgstr "Cancelar"
 
 #: helpwin.cpp:88
 msgid " Location:"
-msgstr "Direccion:"
+msgstr "Dirección:"
 
 #: helpwin.cpp:372
 msgid "KDE Help"
@@ -61,7 +61,7 @@ msgstr "KFM no se pudo iniciar o encontrar"
 
 #: helpwin.cpp:1290
 msgid "Back"
-msgstr "Atras"
+msgstr "Atrás"
 
 #: helpwin.cpp:1292
 msgid "Forward"
@@ -86,7 +86,7 @@ msgstr "Error en el archivo info"
 #: info.cpp:1223
 #, c-format
 msgid "Node not found: %s"
-msgstr "No se encontro el nodo"
+msgstr "No se encontró el nodo"
 
 #: info.cpp:1368
 #, c-format
@@ -127,7 +127,7 @@ msgstr "&Copiar"
 
 #: mainwidget.cpp:140
 msgid "&Back"
-msgstr "Atras"
+msgstr "Atrás"
 
 #: mainwidget.cpp:141
 msgid "&Forward"
@@ -163,7 +163,7 @@ msgstr "Mostrar Barra de Herramientas"
 
 #: mainwidget.cpp:164
 msgid "Show &Location"
-msgstr "Mostrar Direccion"
+msgstr "Mostrar Dirección"
 
 #: mainwidget.cpp:165
 msgid "Show Status&bar"
@@ -223,7 +223,7 @@ msgstr "Nodo Siguiente"
 
 #: mainwidget.cpp:226
 msgid "Up one Node"
-msgstr "Subir Uno Nodo"
+msgstr "Subir Un Nodo"
 
 #: mainwidget.cpp:232
 msgid "Top Node"
@@ -248,7 +248,7 @@ msgid ""
 "Version "
 msgstr ""
 "Sistema de Ayuda del KDE\n"
-"Version"
+"Versión"
 
 #: mainwidget.cpp:525
 msgid "About KDE Help"
@@ -265,12 +265,12 @@ msgstr "Manuales En Linea"
 #: man.cpp:87
 #, c-format
 msgid "Section %s"
-msgstr "Seccion %s"
+msgstr "Sección %s"
 
 #: man.cpp:103
 #, c-format
 msgid "Online manual - Section %s"
-msgstr "Manuales En Linea - Seccion %s"
+msgstr "Manuales En Linea - Sección %s"
 
 #: man.cpp:452
 msgid "User Commands"
@@ -298,11 +298,11 @@ msgstr "Juegos"
 
 #: man.cpp:464
 msgid "Miscellaneous"
-msgstr "Miscelaneos"
+msgstr "Misceláneos"
 
 #: man.cpp:466
 msgid "System Administration"
-msgstr "Administracion del Sistema"
+msgstr "Administración del Sistema"
 
 #: man.cpp:468
 msgid "New"
@@ -314,19 +314,19 @@ msgstr "Leyendo Directorio: "
 
 #: man.cpp:832
 msgid "\"man\" system call failed"
-msgstr "\"man\" Fallo la llamada al systema"
+msgstr "\"man\" Falló la llamada al systema"
 
 #: man.cpp:850
 msgid "Opening temporary file failed"
-msgstr "Fallo la apertura del archivo temporario"
+msgstr "Falló la apertura del archivo temporario"
 
 #: options.cpp:35
 msgid "Font Size"
-msgstr "Tamano de la Fuente"
+msgstr "Tamaño de la Fuente"
 
 #: options.cpp:39
 msgid "Small"
-msgstr "Pequeno"
+msgstr "Pequeño"
 
 #: options.cpp:43
 msgid "Medium"
