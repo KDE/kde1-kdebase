@@ -526,6 +526,12 @@ protected:
     void showSource ( const char * url );
 
     /**
+     * Filters the URL entered by the user and
+     * sends it to the viewer for retrieval.  (Dawit A.)
+     */
+    void openFilteredURL ( const char * url );
+
+    /**
      * Closes the window and deletes it.
      */
     virtual void closeEvent( QCloseEvent *e );

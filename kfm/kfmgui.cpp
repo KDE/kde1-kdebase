@@ -725,9 +725,14 @@ void KfmGui::slotSaveCacheOff()
 
 void KfmGui::slotURLEntered()
 {
+   openFilteredURL( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );
+}
+
+void KfmGui::openFilteredURL ( const char * _url )
+{
     if ( view->getActiveView() )
     {
-        QString url = toolbarURL->getLinedText( TOOLBAR_URL_ID );
+        QString url = _url;
         // strip any leading and trailing spaces.
         url = url.stripWhiteSpace();
         // Exit if the user did not enter a URL
@@ -746,6 +751,13 @@ void KfmGui::slotURLEntered()
                if ( !dir ) return; // unknown user
               (index == -1) ? url.replace (0, length,  dir->pw_dir) : url.replace (0, index, dir->pw_dir);
             }
+        }
+        // An Easter egg ? Let's have some fun first !!
+	    else if ( url.lower() == "about:kde" )
+        {
+    		url = getenv( "KDEURL" );
+		    if ( url.isEmpty() )
+			    url = "http://www.kde.org";
         }
         // No protocol, but begins with www? (sven)
     	else if ( url.find( "www.", 0, false ) == 0 )
@@ -773,7 +785,8 @@ void KfmGui::slotURLEntered()
             QFileInfo f ( QDir::currentDirPath().append( "/" ).append( url ).data() );
             if ( f.exists() )
                 url = f.filePath();
-            else if ( url.left(1) != ":" )
+            else if ( url[ url.length()-1 ] != ':' && url[0] != '/' &&
+                      url.find ('.') > 0 && url.find(' ') == -1 )
                 url = url.prepend ("http://");
         }
     	KURL u( url.data() );
@@ -785,6 +798,7 @@ void KfmGui::slotURLEntered()
             return;
         }
         view->openURL( u.url().data() );
+        view->getActiveView()->setFocus();
         //  update tree view Sep 5 rjakob
         if ( u.protocol() == "file" )
             if (bTreeView && pkfm->isTreeViewFollowMode())
@@ -1365,59 +1379,13 @@ void KfmGui::slotOpenLocation( )
 {
     QString url = "";
     if ( view->getActiveView()->getURL() )
-	url = view->getActiveView()->getURL();
+       url = view->getActiveView()->getURL();
     
-    DlgLineEntry l( i18n("Open Location:"), url.data(), 
-		    this, true );
+    DlgLineEntry l( i18n("Open Location:"), url.data(), this, true );
     int x = l.exec();
     if ( x )
     {
-	QString url = l.getText();
-	url = url.stripWhiteSpace();
-	// Exit if the user did not enter an URL
-	if ( url.data()[0] == 0 )
-	    return;
-	// Root directory?
-	if ( url.data()[0] == '/' )
-	{
-	    url = "file:";
-	    url += l.getText();
-	}
-	// Home directory?
-	else if ( url.data()[0] == '~' )
-	{
-	    url = "file:";
-	    url += QDir::homeDirPath().data();
-	    url += l.getText() + 1;
-	}
-
-	// Some kludge to add protocol specifier on
-	// well known Locations
-	if ( url.left(4) == "www." ) {
-	    url = "http://";
-	    url += l.getText();
-	}
-	if ( url.left(4) == "ftp." ) {
-	    url = "ftp://";
-	    url += l.getText();
-	}
-	/**
-	 * Something for fun :-)
-	 */
-	if ( url == "about:kde" ) {
-    		url = getenv( "KDEURL" );
-		if ( url.isEmpty() )
-			url = "http://www.kde.org";
-	}
-	
-	KURL u( url.data() );
-	if ( u.isMalformed() )
-	{
-            warning(QString(klocale->translate("ERROR: Malformed URL"))+" : %s",u.path());
-	    return;
-	}
-	
-	view->openURL( url.data() );
+        openFilteredURL ( l.getText() );
     }
 }
 
