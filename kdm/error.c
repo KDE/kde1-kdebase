@@ -37,6 +37,7 @@ from the X Consortium.
  *
  * Log display manager errors to a file as
  * we generally do not have a terminal to talk to
+ * or use syslog if it exists
  */
 
 # include "dm.h"
@@ -46,6 +47,10 @@ from the X Consortium.
 #else
 /* this type needs to be big enough to contain int or pointer */
 typedef long Fmtarg_t;
+#endif
+
+#ifdef HAVE_SYSLOG_H
+#include <syslog.h>
 #endif
 
 /*VARARGS1*/
@@ -59,18 +64,30 @@ LogInfo(
     Fmtarg_t arg1, arg2, arg3, arg4, arg5, arg6;
 #endif
 {
+#ifndef USE_SYSLOG
     fprintf (stderr, "xdm info (pid %d): ", (int)getpid());
+#endif
 #if NeedVarargsPrototypes
     {
 	va_list args;
 	va_start(args, fmt);
+#  ifdef USE_SYSLOG
+	vsyslog (LOG_INFO, fmt, args);
+#  else
 	vfprintf (stderr, fmt, args);
+#  endif
 	va_end(args);
     }
 #else
+#  ifdef USE_SYSLOG
+    fsyslog (LOG_INFO, fmt, arg1, arg2, arg3, arg4, arg5, arg6);
+#  else
     fprintf (stderr, fmt, arg1, arg2, arg3, arg4, arg5, arg6);
+#  endif
 #endif
+#ifdef USE_SYSLOG
     fflush (stderr);
+#endif
 }
 
 /*VARARGS1*/
@@ -84,18 +101,32 @@ LogError (
     Fmtarg_t arg1, arg2, arg3, arg4, arg5, arg6;
 #endif
 {
+#ifndef USE_SYSLOG
     fprintf (stderr, "xdm error (pid %d): ", (int)getpid());
+#endif
 #if NeedVarargsPrototypes
     {
 	va_list args;
 	va_start(args, fmt);
-	vfprintf (stderr, fmt, args);
+#  ifdef USE_SYSLOG
+	vsyslog (LOG_ERR, fmt, args);
+#  else
+	vprintf (stderr, fmt, args);
+#  endif
 	va_end(args);
     }
 #else
+#  ifdef USE_SYSLOG
+    syslog (LOG_ERR, fmt, arg1, arg2, arg3, arg4, arg5, arg6);
+#  else
     fprintf (stderr, fmt, arg1, arg2, arg3, arg4, arg5, arg6);
+#  endif
 #endif
+#ifdef USE_SYSLOG
+    return 0;
+#else
     return fflush (stderr);
+#endif
 }
 
 /*VARARGS1*/
@@ -109,18 +140,30 @@ LogPanic (
     Fmtarg_t arg1, arg2, arg3, arg4, arg5, arg6;
 #endif
 {
+#ifndef USE_SYSLOG
     fprintf (stderr, "xdm panic (pid %d): ", (int)getpid());
+#endif
 #if NeedVarargsPrototypes
     {
 	va_list args;
 	va_start(args, fmt);
+#  ifdef USE_SYSLOG
+	vsyslog (LOG_EMERG, fmt, args);
+#else
 	vfprintf (stderr, fmt, args);
+#endif
 	va_end(args);
     }
 #else
+#  ifdef USE_SYSLOG
+    fsyslog (LOG_EMERG, fmt, arg1, arg2, arg3, arg4, arg5, arg6);
+#  else
     fprintf (fmt, arg1, arg2, arg3, arg4, arg5, arg6);
+#  endif
 #endif
+#ifdef USE_SYSLOG
     fflush (stderr);
+#endif
     exit (1);
 }
 
@@ -135,29 +178,50 @@ LogOutOfMem (
     Fmtarg_t arg1, arg2, arg3, arg4, arg5, arg6;
 #endif
 {
-    fprintf (stderr, "xdm: out of memory in routine ");
+#ifdef USE_SYSLOG
+    char fmt1[256];
+    snprintf(fmt1, 256, "out of memory: %s", fmt);
+#else
+    fprintf (stderr, "kdm: out of memory in routine ");
+#endif
 #if NeedVarargsPrototypes
     {
 	va_list args;
 	va_start(args, fmt);
+#  ifdef USE_SYSLOG
+	vsyslog (LOG_ALERT, fmt1, args);
+#  else
 	vfprintf (stderr, fmt, args);
+#  endif
 	va_end(args);
     }
 #else
+#  ifdef USE_SYSLOG
+    syslog(LOG_ALERT, fmt1, arg1, arg2, arg3, arg4, arg5, arg6);
+#  else
     fprintf (stderr, fmt, arg1, arg2, arg3, arg4, arg5, arg6);
+#  endif
 #endif
+#ifdef USE_SYSLOG
+    return 0;
+#else
     return fflush (stderr);
+#endif
 }
 
 int
 Panic (mesg)
 char	*mesg;
 {
+#ifdef USE_SYSLOG
+    syslog(LOG_EMERG, mesg);
+#else
     int	i;
 
     i = creat ("/dev/console", 0666);
     write (i, "panic: ", 7);
     write (i, mesg, strlen (mesg));
+#endif
     exit (1);
 }
 
@@ -178,12 +242,22 @@ Debug (
 #if NeedVarargsPrototypes
 	va_list args;
 	va_start(args, fmt);
+#  ifdef USE_SYSLOG
+	vsyslog (LOG_DEBUG, fmt, args);
+#  else
 	vprintf (fmt, args);
+#  endif
 	va_end(args);
 #else
+#  ifdef USE_SYSLOG
+	syslog (LOG_DEBUG, fmt, arg1, arg2, arg3, arg4, arg5, arg6);
+#  else
 	printf (fmt, arg1, arg2, arg3, arg4, arg5, arg6);
+#  endif
 #endif
+#ifndef USE_SYSLOG
 	fflush (stdout);
+#endif
     }
     return 0;
 }
@@ -191,6 +265,9 @@ Debug (
 void
 InitErrorLog ()
 {
+#ifdef USE_SYSLOG
+	openlog("kdm", LOG_PID, LOG_DAEMON);
+#else
 	int	i;
 	if (errorLogFile[0]) {
 		i = creat (errorLogFile, 0666);
@@ -202,4 +279,5 @@ InitErrorLog ()
 		} else
 			LogError ("Cannot open errorLogFile %s\n", errorLogFile);
 	}
+#endif
 }
