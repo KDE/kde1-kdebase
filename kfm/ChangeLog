@@ -1,5 +1,9 @@
 Thu Mar 26 02:40:24 1998  Torben Weis  <weis@localhost>
 
+	* kioslave: Fixed bug that appeard while copying very
+	  large files ( >40MB ). Now the progress indicator
+	  works as expected.
+	
 	* kbind.cpp (runBinding): Fixes for %m and %i and %c
 
 	* Added support for middle mouse button. It opens

@@ -454,7 +454,8 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
 		    return;
 		}
 
-		long c = 0, last = 0, l = 1;
+		long c = 0, l = 1;
+		float last = 0.0;
 		long size = src_prot->Size();
 		char buffer[4096];
 
@@ -472,10 +473,10 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
 			    return;
 			}
 			c += l;
-			if ( size != 0 && ( c * 100 / size ) != last )
+			if ( size != 0 && ( (float)c / (float)size * 100.0 ) != last )
 			{
-			    last = ( c * 100 / size );
-			    ipc->progress( last );
+			    last = ( (float)c / (float)size * 100.0 );
+			    ipc->progress( (int)last );
 			}
 		}
 		src_prot->Close();
