@@ -281,7 +281,7 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
   XEvent ev;
 
   if (c && c->window == e->window) { // client already exists for this window
-      
+
       // compress configure requests
       while (XCheckTypedWindowEvent (qt_xdisplay(), c->window,
 				     ConfigureRequest, &ev) ) {
@@ -336,14 +336,14 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
     wc.width = dx;
     wc.height = dy;
     wc.border_width = 0;
-    
+
     bool stacking = e->value_mask & CWStackMode;
     int stack_mode = e->detail;
-    
+
     e->value_mask |= ~CWStackMode;
     e->value_mask |= ~CWSibling;
-    
-    
+
+
     e->value_mask |= CWBorderWidth;
 
     // e->parent can have a wrong (obsolete) meaning here!
@@ -2661,7 +2661,7 @@ void Manager::sendConfig(Client* c, bool emit_changed){
   ce.border_width = c->border;
   ce.above = None;
   ce.override_redirect = 0;
-  
+
   XSendEvent(qt_xdisplay(), c->window, False, StructureNotifyMask, (XEvent*)&ce);
 //   {
 //       XWindowChanges wc;
@@ -3572,7 +3572,7 @@ void Manager::setProxyData(QStrList* proxy_hints_arg,
 void Manager::killWindowAtPosition(int x, int y){
   Client* c;
   for (c = clients_sorted.last(); c; c = clients_sorted.prev()){
-    if (c->geometry.contains(QPoint(x, y))){
+    if (c->geometry.contains(QPoint(x, y)) && c->isOnDesktop( currentDesktop() ) && !c->isIconified() ){
       XKillClient(qt_xdisplay(), c->window);
       return;
     }
