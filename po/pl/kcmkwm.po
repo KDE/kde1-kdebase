@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: kcmkwm \n"
+"Project-Id-Version: kuser \n"
 "POT-Creation-Date: 1998-03-19 22:18+0100\n"
-"PO-Revision-Date: 1998-01-24 20:08+0100\n"
-"Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
+"PO-Revision-Date: 1998-03-25 20:47+0100\n"
+"Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
 #: main.cpp:59
@@ -20,12 +20,11 @@ msgstr "Pasek &tytu³owy"
 
 #: main.cpp:68
 msgid "&Desktop"
-msgstr ""
+msgstr "&Desktop"
 
 #: main.cpp:74
-#, fuzzy
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
-msgstr "u¿ycie: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+msgstr "u¿ycie: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:105
 msgid "Window manager style"
@@ -41,7 +40,7 @@ msgstr "Maksymalizuj"
 
 #: titlebar.cpp:125
 msgid "Sticky"
-msgstr "Przyklej"
+msgstr "Sticky"
 
 #: titlebar.cpp:133
 msgid "Menu"
@@ -109,48 +108,47 @@ msgstr "&Dezaktywuj pixmapê"
 
 #: titlebar.cpp:982
 msgid "Mouse action"
-msgstr ""
+msgstr "Dzia³anie myszy"
 
 #: titlebar.cpp:984
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
+"Podwójne klikniêcie muszy\n"
+"    na pasek tytu³owy:"
 
 #: titlebar.cpp:988
-#, fuzzy
 msgid "(Un)Maximize"
-msgstr "Maksymalizuj"
+msgstr "(Od)Maksymalizuj"
 
 #: titlebar.cpp:989
 msgid "Move"
-msgstr ""
+msgstr "Przesuñ"
 
 #: titlebar.cpp:990
-#, fuzzy
 msgid "(Un)Shade"
-msgstr "Cieniowany"
+msgstr "(Od)Zwiñ"
 
 #: titlebar.cpp:991
 msgid "Iconify"
-msgstr ""
+msgstr "Minimalizuj"
 
 #: titlebar.cpp:992
-#, fuzzy
 msgid "(Un)Sticky"
-msgstr "Przyklej"
+msgstr "(Od)Przypnij"
 
 #: titlebar.cpp:993
 msgid "Resize"
-msgstr ""
+msgstr "Rozmiar"
 
 #: titlebar.cpp:994
 msgid "Restore"
-msgstr ""
+msgstr "Przywróæ"
 
 #: titlebar.cpp:995
 msgid "Operations Menu"
-msgstr ""
+msgstr "Czynno¶ci menu"
 
 #: windows.cpp:74
 msgid "Window movement"
@@ -174,28 +172,27 @@ msgstr "Sposób umiejscawiania"
 
 #: windows.cpp:86
 msgid "Smart"
-msgstr ""
+msgstr "Inteligentne"
 
 #: windows.cpp:88
 msgid "Cascade"
-msgstr ""
+msgstr "Kaskadowe"
 
 #: windows.cpp:90
 msgid "Interactive"
-msgstr ""
+msgstr "Interaktywne"
 
 #: windows.cpp:92
 msgid "Random"
-msgstr ""
+msgstr "Przypadkowe"
 
 #: windows.cpp:94
-#, fuzzy
 msgid "Manual"
-msgstr "Menu"
+msgstr "Rêczne"
 
 #: windows.cpp:101
 msgid "Allowed Overlap:"
-msgstr ""
+msgstr "Dozwolone przekroczenie"
 
 #: windows.cpp:108
 msgid "Maximize Style"
@@ -235,42 +232,47 @@ msgstr "milisekundy"
 
 #: desktop.cpp:79
 msgid "Active desktop borders"
-msgstr ""
+msgstr "Aktywne brzegi desktopu"
 
 #: desktop.cpp:81
 msgid "Enable active desktop borders"
-msgstr ""
+msgstr "W³±cz aktywne brzegi desktopu"
 
 #: desktop.cpp:83
 msgid "Move pointer towards center after switch"
-msgstr ""
+msgstr "Umie¶æ kursor na ¶rodku po prze³±czeniu"
 
 #: desktop.cpp:89
 msgid "Dekstop switch delay:"
-msgstr ""
+msgstr "Opó¿nienie prze³±czania:"
 
 #: desktop.cpp:102
 msgid "Magic Borders"
-msgstr ""
+msgstr "Magiczne brzegi"
 
 #: desktop.cpp:104
 msgid "Edge Resistance:"
-msgstr ""
+msgstr "Tolerancja krawêdzi:"
 
 #: desktop.cpp:118
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Strefa prze³±czenia brzegu:\n"
+"       (w pikselach)"
 
 #: desktop.cpp:132
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Strefa prze³±czenia okna:\n"
+"       (w pikselach)"
 
-#~ msgid "Random placement"
-#~ msgstr "Przypadkowe umiejscawianie"
+msgid "Random placement"
+msgstr "Przypadkowe umiejscawianie"
 
-#~ msgid "Smart placement"
-#~ msgstr "Inteligentne umiejscawianie"
+msgid "Smart placement"
+msgstr "Inteligentne umiejscawianie"
+

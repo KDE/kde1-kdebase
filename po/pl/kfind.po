@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfind \n"
 "POT-Creation-Date: 1998-02-25 16:11+0100\n"
-"PO-Revision-Date: 1998-01-29 18:42+0100\n"
-"Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
+"PO-Revision-Date: 1998-03-25 21:30+0100\n"
+"Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
 #: kfdird.cpp:46
@@ -32,7 +32,7 @@ msgstr ""
 "<coolo@kde.org>\n"
 "\n"
 "Polskie t³umaczenie\n"
-"(C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>"
+"Piotr Roszatycki <dexter@fnet.pl>"
 
 #: kfindtop.cpp:136
 msgid "&Open"
