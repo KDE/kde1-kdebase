@@ -2,10 +2,19 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Thorarinn R. Einarsson <thori@mindspring.com>, 1998.
 #
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kdisplay\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"PO-Revision-Date: 1998-12-07 11:01-0500\n"
+"Last-Translator: Thorarinn R. Einarsson <thori@mindspring.com>\n"
+"Language-Team: is <kde-isl@mmedia.is>\n"
+"MIME-Version: 1.0\n"
 
 #: backgnd.cpp:59
 msgid "Enter new desktop name"
-msgstr "Nafn skjáborðs"
+msgstr "Sláðu inn nýtt skjáborðsnafn"
 
 #: backgnd.cpp:115 backgnd.cpp:150
 msgid "Desktop"
@@ -45,7 +54,7 @@ msgstr "&Miðjað"
 
 #: backgnd.cpp:291
 msgid "&Scaled"
-msgstr "&Skalað"
+msgstr "Í &hlutfalli"
 
 #: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
 msgid "No wallpaper"
@@ -137,27 +146,27 @@ msgstr "Gluggalitur"
 
 #: colorscm.cpp:184
 msgid "Inactive title bar"
-msgstr "Höfuðslá - óvirk"
+msgstr "Óvirk höfuðslá"
 
 #: colorscm.cpp:185
 msgid "Inactive title text"
-msgstr "Titiltexti - óvirkur"
+msgstr "Óvirkur titiltexti"
 
 #: colorscm.cpp:186
 msgid "Inactive title blend"
-msgstr "Blanda - óvirk"
+msgstr "Óvirkur titill"
 
 #: colorscm.cpp:187
 msgid "Active title bar"
-msgstr "Höfuðslá - virk"
+msgstr "Virk höfuðslá"
 
 #: colorscm.cpp:188
 msgid "Active title text"
-msgstr "Titiltexti - virkur"
+msgstr "Virkur titiltexti"
 
 #: colorscm.cpp:189
 msgid "Active title blend"
-msgstr "Blanda - virk"
+msgstr "Virkur titill"
 
 #: colorscm.cpp:190
 msgid "Background"
@@ -206,7 +215,7 @@ msgid ""
 "system where the color scheme is stored."
 msgstr ""
 "Það er ekki hægt að fjarlægja þetta litaval.\n"
-"Kannski hefur þú ekki rit-aðgang að kerfis-\n"
+"Kannski hefur þú ekki ritaðgang að kerfis-\n"
 "skránni þar sem litavalið er geymt."
 
 #: colorscm.cpp:378
@@ -236,7 +245,7 @@ msgid ""
 "be copied into this scheme to begin with."
 msgstr ""
 "V&eldu nafn fyrir þetta litaval og því\n"
-"verður bætt við þinn litavalslista.\n"
+"verður bætt við litavalslistann þinn.\n"
 "\n"
 "Litirnir sem notaðir eru í þessari forsýn\n"
 "verða afritaðir inn í þetta litaval."
@@ -247,7 +256,7 @@ msgstr "Hundsa"
 
 #: scrnsave.cpp:49
 msgid "Save Screen"
-msgstr "Spara skjáinn"
+msgstr "Hvíla skjáinn"
 
 #: scrnsave.cpp:50
 msgid "Lock Screen"
@@ -291,7 +300,7 @@ msgstr "&Leyfa lykilorði kerfisstjóra að opna"
 
 #: scrnsave.cpp:279
 msgid "Show &password as stars"
-msgstr "Sýna lykilorð sem s&t&jörnur"
+msgstr "Sýna lykilorð sem s&tjörnur"
 
 #: scrnsave.cpp:287
 msgid "Priority"
@@ -409,4 +418,4 @@ msgstr "sjálfgefið"
 
 #: fontchooser.cpp:265
 msgid "any"
-msgstr "???"
+msgstr "eitthvert"
