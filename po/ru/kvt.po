@@ -159,6 +159,8 @@ msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
+"Новые цветовые установки будут отображены,\n"
+"когда клавиатура будет разблокирована."
 
 #: main.C:760
 msgid "About kvt"

@@ -381,6 +381,13 @@ msgid ""
 "KDEHelp comes with ABSOLUTELY NO WARRANY to the extent permitted by "
 "applicable law."
 msgstr ""
+"\n"
+"\n"
+"Copyright (c) 1997 Мартин Джонс <mjones@kde.org>\n"
+"\n"
+"Эта программа распространяется по GNU General Public License (GPL).\n"
+"KDEHelp не имеет АБСОЛЮТНО НИКАКОЙ ГАРАНТИИ для любых случаев и любых\n"
+"законодательствcomes."
 
 #
 #: mainwidget.cpp:200
@@ -449,7 +456,7 @@ msgstr "Содержание помощи"
 
 #: mainwidget.cpp:260
 msgid "Reload current document"
-msgstr ""
+msgstr "Перегрузить документ"
 
 #
 #: mainwidget.cpp:265

@@ -1,18 +1,18 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# kwm.
+# Copyright (C) 1997 Free Software Foundation, Inc.
+# Denis Pershin <dyp@inetlab.com>, 1997.
 #
-#, fuzzy
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: 0.10\n"
 "POT-Creation-Date: 1997-12-15 20:12+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 1997-12-27 03:05+06:00\n"
+"Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
+"Language-Team: ru <ru@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
 #: main.C:65
 msgid ""
@@ -26,48 +26,48 @@ msgstr "kwm: ошибка инициализации; прерывание\n"
 
 #: main.C:367
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr ""
+msgstr "Copyright (C) 1997 Маттиас Эттрих (ettrich@kde.org)\n"
 
 #: main.C:374
 msgid "Usage: "
-msgstr ""
+msgstr "Использование:"
 
 #: main.C:385
-#, fuzzy
+#
 msgid "&Maximize"
-msgstr "(Де) Максимизировать"
+msgstr "Максимизировать"
 
 #: main.C:386
-#, fuzzy
+#
 msgid "&Restore"
-msgstr "Изменить размер"
+msgstr "Восстановить"
 
 #: main.C:387
 msgid "&Iconify"
 msgstr "Минимизировать"
 
 #: main.C:388
-#, fuzzy
+#
 msgid "&DeIconify"
-msgstr "Минимизировать"
+msgstr "Максимизировать"
 
 #: main.C:389
-#, fuzzy
+#
 msgid "&Sticky"
-msgstr "(Де) Прищемить"
+msgstr "Прищемить"
 
 #: main.C:390
-#, fuzzy
+#
 msgid "&UnSticky"
-msgstr "(Де) Прищемить"
+msgstr "Отщемить"
 
 #: main.C:391
-#, fuzzy
+#
 msgid "Mo&ve"
 msgstr "Переместить"
 
 #: main.C:392
-#, fuzzy
+#
 msgid "Resi&ze"
 msgstr "Изменить размер"
 
@@ -76,13 +76,13 @@ msgid "&Close"
 msgstr "Закрыть"
 
 #: main.C:394
-#, fuzzy
+#
 msgid "&To desktop"
 msgstr "На рабочий стол"
 
 #: main.C:396
 msgid "&Onto current desktop"
-msgstr ""
+msgstr "На текуший рабочий стол"
 
 #: main.C:446
 msgid "One"
@@ -118,48 +118,54 @@ msgstr "Восемь"
 
 #: main.C:885
 msgid "*** No Tasks ***"
-msgstr ""
+msgstr "*** Задач нет ***"
 
 #: minicli.C:115
 msgid "Command:"
 msgstr "Команда:"
 
 #: logout.C:35 taskmgr.C:36
-#, fuzzy
+#
 msgid "Logout"
 msgstr "Выйти"
 
 #: logout.C:45
 msgid "Session prepared for logout"
-msgstr ""
+msgstr "Сессии подготовленные к выходу"
 
 #: logout.C:51
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
+"Эти приложения содержат незаписанные данные, которые\n"
+"Будут потеряны в следующей сессии."
 
 #: logout.C:62
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
+"Эти приложения не могут быть восстановлены в следующей сессии.\n"
+"Только перезапущены. Убедитесь, что они не содержат важных данных"
 
 #: logout.C:73
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
+"Эти приложения не X11 и поэтому не могут быть восстановлены в следуюющей\n"
+"сессии. Убедитесь, что они не содержат важных данных"
 
 #: taskmgr.C:35
 msgid "Switch to"
-msgstr ""
+msgstr "Переключиться"
 
 #: taskmgr.C:49
 msgid "Current session"
-msgstr ""
+msgstr "Текущая сессия"
 
-#, fuzzy
+#
 #~ msgid "Iconify"
 #~ msgstr "Минимизировать"
 

@@ -15,11 +15,11 @@ msgstr ""
 
 #: backgnd.cpp:204 backgnd.cpp:239
 msgid "Desktop"
-msgstr ""
+msgstr "Рабочий стол"
 
 #: backgnd.cpp:249
 msgid "Rename..."
-msgstr ""
+msgstr "Переименовать..."
 
 #: backgnd.cpp:255
 msgid "Color"
@@ -62,13 +62,13 @@ msgid "Browse..."
 msgstr "Просмотреть..."
 
 #: backgnd.cpp:489
-#, fuzzy
+#
 msgid "Default"
-msgstr "KDE по умолчанию"
+msgstr "По умолчанию"
 
 #: backgnd.cpp:821
 msgid "Desktop Title"
-msgstr ""
+msgstr "Заголовок стола"
 
 #: colorscm.cpp:142 colorscm.cpp:143
 msgid "Inactive window"
@@ -268,29 +268,29 @@ msgstr "Наклонный"
 
 #: general.cpp:170
 msgid "Charset:"
-msgstr ""
+msgstr "Кодировка:"
 
 #: main.cpp:61
-#, fuzzy
+#
 msgid "&Background"
 msgstr "Фон"
 
 #: main.cpp:64
-#, fuzzy
+#
 msgid "&Colors"
 msgstr "Цвет"
 
 #: main.cpp:67
-#, fuzzy
+#
 msgid "&Screensaver"
 msgstr "Хранитель экрана"
 
 #: main.cpp:70
 msgid "&Style"
-msgstr ""
+msgstr "Стиль"
 
 #: main.cpp:105
-#, fuzzy
+#
 msgid "Display settings"
 msgstr "Настройка дисплея"
 
