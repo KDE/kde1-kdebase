@@ -109,25 +109,29 @@ Installer::~Installer()
 //-----------------------------------------------------------------------------
 void Installer::readThemesList(void)
 {
-  QDir d(Theme::themesDir(), 0, QDir::Name, QDir::Files);
+  QDir d(Theme::themesDir(), 0, QDir::Name, QDir::Files|QDir::Dirs);
   QStrList* entryList;
   QString name;
 
-  d.setNameFilter("*.themerc");
+  //d.setNameFilter("*.themerc");
   mThemesList->clear();
 
   // Read local themes
   entryList = (QStrList*)d.entryList();
   if (entryList) for(name=entryList->first(); name; name=entryList->next())
-    mThemesList->insertItem(name.left(name.length()-8));
+  {
+    if (name[0]=='.') continue;
+    mThemesList->insertItem(name);
+  }
 
   // Read global themes
   d.setPath(Theme::globalThemesDir());
   entryList = (QStrList*)d.entryList();
   if (entryList) for(name=entryList->first(); name; name=entryList->next())
   {
+    if (name[0]=='.') continue;
     // Dirty hack: the trailing space marks global themes ;-)
-    mThemesList->insertItem(name.left(name.length()-8) + " ");
+    mThemesList->insertItem(name + " ");
   }
 }
 
@@ -195,9 +199,7 @@ void Installer::slotSetTheme(int id)
       name = Theme::globalThemesDir() + name.stripWhiteSpace();
     else name = Theme::themesDir() + name;
 
-    theme->setName(name);
-    theme->load();
-    enabled = true;
+    enabled = theme->load(name);
   }
 
   mBtnExport->setEnabled(enabled);
@@ -238,18 +240,6 @@ void Installer::slotImport()
     return;
   }
 
-  // Extract config file and preview image
-  chdir(Theme::themesDir());
-  cmd.sprintf("gzip -c -d \"%s\" | tar xf - \"%s.preview.jpg\" \"%s.themerc\"",
-	      (const char*)fname, (const char*)theme, (const char*)theme);
-  rc = system(cmd);
-  if (rc)
-  {
-    warning(i18n("Failed to extract themerc file\n"
-		 "and/or preview image from theme %s"),
-	    (const char*)fname);
-    return;
-  }
   mThemesList->inSort(theme);
 }
 
@@ -265,7 +255,10 @@ void Installer::slotExport()
   cur = mThemesList->currentItem();
   if (cur < 0) return;
 
-  themeFile = QString(mThemesList->text(cur)) + ".tar.gz";
+  themeFile = mThemesList->text(cur);
+  themeFile.detach();
+  if (themeFile.find('.') < 0) themeFile += ".tar.gz";
+
   KFileDialog dlg(path, "*.tar.gz", 0, 0, true, false);
   dlg.setCaption(i18n("Export Theme"));
   dlg.setSelection(themeFile);
@@ -273,16 +266,7 @@ void Installer::slotExport()
   path = dlg.dirPath();
   fpath = dlg.selectedFile();
 
-  theme->save();
-
-  themeFile = Theme::themesDir() + themeFile;
-  cmd.sprintf("cp %s/%s \"%s\"", (const char*)themeFile, (const char*)fpath);
-  rc = system(cmd);
-  if (rc)
-  {
-    warning(i18n("Failed to copy theme %s\nto %s"),
-	    (const char*)themeFile, (const char*)fpath);
-  }
+  theme->save(fpath);
 }
 
 

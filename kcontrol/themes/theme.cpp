@@ -22,8 +22,9 @@
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
+#include <qdir.h>
 #include <qfile.h>
-#include "theme.h"
+#include <qfileinfo.h>
 #include <kapp.h>
 #include <qdir.h>
 #include <string.h>
@@ -32,6 +33,9 @@
 #include <kwm.h>
 #include <qwindowdefs.h>
 #include <sys/stat.h>
+#include <assert.h>
+
+#include "theme.h"
 
 #include <X11/Xlib.h>
 #include <X11/X.h>
@@ -42,13 +46,11 @@
 
 
 //-----------------------------------------------------------------------------
-Theme::Theme(const char* aName): ThemeInherited(aName) 
+Theme::Theme(): ThemeInherited(0) 
 {
   int len;
 
   initMetaObject();
-  mName = aName;
-  mName.detach();
 
   setLocale();
 
@@ -146,39 +148,93 @@ void Theme::loadMappings()
 
 
 //-----------------------------------------------------------------------------
-void Theme::load(const QString aPath)
+void Theme::cleanupWorkDir(void)
 {
   QString cmd;
-  QFile file;
   int rc;
 
-  debug("Theme::load()");
-
-  if (aPath) setName(aPath);
-  file.setName(fileName() + ".themerc");
-
-  clear();
-
   // cleanup work directory
-  cmd.sprintf("rm %s*", (const char*)workDir());
+  cmd.sprintf("rm -rf %s*", (const char*)workDir());
   rc = system(cmd);
   if (rc) warning(i18n("Error during cleanup of work directory: rc=%d\n%s"),
 		  rc, (const char*)cmd);
+}
 
-  // unpack theme package
-  cmd.sprintf("cd \"%s\"; gzip -c -d \"%s.tar.gz\" | tar xf -", 
-	      (const char*)workDir(), (const char*)fileName());
-  debug(cmd);
-  rc = system(cmd);
-  if (rc)
+
+//-----------------------------------------------------------------------------
+bool Theme::load(const QString aPath)
+{
+  QString cmd;
+  QFile file;
+  QFileInfo finfo(aPath);
+  int rc, num, i;
+
+  assert(!aPath.isEmpty());
+  debug("Theme::load()");
+
+  clear();
+  cleanupWorkDir();
+  setName(aPath);
+
+  if (finfo.isDir())
   {
-    warning(i18n("Failed to unpack %s with\n%s"), 
-	    (const char*)(fileName()+".tar.gz"),
-	    (const char*)cmd);
-    return;
+    // The theme given is a directory. Copy files over into work dir.
+    cmd.sprintf("cd \"%s\"; cp -r * \"%s\"", (const char*)aPath,
+		(const char*)workDir());
+    debug(cmd);
+    rc = system(cmd);
+    if (rc)
+    {
+      warning(i18n("Failed to copy theme contents\nfrom %s\ninto %s"),
+	      (const char*)aPath, (const char*)workDir());
+      return false;
+    }
+  }
+  else
+  {
+    // The theme given is a tar package. Unpack theme package.
+    cmd.sprintf("cd \"%s\"; gzip -c -d \"%s\" | tar xf -", 
+		(const char*)workDir(), (const char*)aPath);
+    debug(cmd);
+    rc = system(cmd);
+    if (rc)
+    {
+      warning(i18n("Failed to unpack %s with\n%s"), 
+	      (const char*)aPath,
+	      (const char*)cmd);
+      return false;
+    }
   }
 
+  // Let's see if the theme is stored in a subdirectory.
+  QDir dir(workDir(), 0, QDir::Name, QDir::Files|QDir::Dirs);
+  for (i=0, mThemePath=0, num=0; dir[i]!=0; i++)
+  {
+    if (dir[i][0]=='.') continue;
+    finfo.setFile(workDir() + dir[i]);
+    if (!finfo.isDir()) break;
+    mThemePath = dir[i];
+    num++;
+  }
+  if (num==1) mThemePath = workDir() + mThemePath + '/';
+  else mThemePath = workDir();
+
+  // Search for the themerc file
+  dir.setNameFilter("*.themerc");
+  dir.setPath(mThemePath);
+  mThemercFile = dir[0];
+  if (mThemercFile.isEmpty())
+  {
+    warning(i18n("Theme contains no .themerc file"));
+    return false;
+  }
+
+  // Search for the preview image
+  dir.setNameFilter("*.preview.*");
+  mPreviewFile = dir[0];
+
   // read theme config file
+  file.setName(mThemePath + mThemercFile);
   file.open(IO_ReadOnly);
   parseOneConfigFile(file, NULL);
   file.close();
@@ -186,19 +242,32 @@ void Theme::load(const QString aPath)
   readConfig();
 
   emit changed();
+  return true;
 }
 
 
 //-----------------------------------------------------------------------------
-void Theme::save(const QString aPath)
+bool Theme::save(const QString aPath)
 {
+  QString cmd;
   QFile file;
-  if (aPath.isEmpty()) file.setName(fileName() + ".themerc");
-  else file.setName(aPath);
+  int rc;
 
   emit apply();
   writeConfig();
+  file.setName(mThemePath + mThemercFile);
+  file.open(IO_WriteOnly);
   writeConfigFile(file);
+  file.close();
+
+  cmd.sprintf("cd \"%s\";tar cf - *|gzip -c >\"%s\"",
+	      (const char*)workDir(), (const char*)aPath);
+  debug(cmd);
+  rc = system(cmd);
+  if (rc) debug(i18n("Failed to save theme to\n%s\nwith command\n%s"),
+		(const char*)aPath, (const char*)cmd);
+
+  return (rc==0);
 }
 
 
@@ -228,7 +297,7 @@ bool Theme::installFile(const QString& aSrc, const QString& aDest)
     dest = kapp->localkdedir() + aDest;
   else dest = QString(kapp->localkdedir()) + '/' + aDest;
 
-  cmd.sprintf("cp \"%s/%s\" \"%s\"", (const char*)workDir(),
+  cmd.sprintf("cp \"%s/%s\" \"%s\"", (const char*)mThemePath,
 	      (const char*)aSrc, (const char*)dest);
   rc = system(cmd);
   if (rc) warning(i18n("Installing file %s: cp returned %d"),
@@ -571,12 +640,16 @@ void Theme::readConfig(void)
   windowBackgroundColor = readColorEntry(this, "windowBackground", &col);
   contrast = readNumEntry("Contrast", 7);
 
-  fname = fileName() + ".preview.jpg";
-  if (!mPreview.load(fname))
+  if (!mPreviewFile.isEmpty())
   {
-    warning(i18n("Failed to load preview image %s"), (const char*)fname);
-    mPreview.resize(0,0);
+    fname = mThemePath + mPreviewFile;
+    if (!mPreview.load(fname))
+    {
+      warning(i18n("Failed to load preview image %s"), (const char*)fname);
+      mPreview.resize(0,0);
+    }
   }
+  else mPreview.resize(0,0);
 }
 
 

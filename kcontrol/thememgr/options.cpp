@@ -24,6 +24,7 @@ Options::Options (QWidget * aParent, const char *aName, bool aInit)
   : OptionsInherited(aParent, aName)
 {
   QLabel* lbl;
+  QPushButton* btn;
 
   mGui = !aInit;
   if (!mGui)
@@ -33,12 +34,12 @@ Options::Options (QWidget * aParent, const char *aName, bool aInit)
   connect(theme, SIGNAL(changed()), SLOT(slotThemeChanged()));
   connect(theme, SIGNAL(apply()), SLOT(slotThemeApply()));
 
-  mGrid = new QGridLayout(this, 10, 4, 10, 6);
+  mGrid = new QGridLayout(this, 10, 5, 10, 6);
   mGridRow = 0;
 
   lbl = new QLabel(i18n("Install the following parts:"), this);
   lbl->setMinimumSize(lbl->sizeHint());
-  mGrid->addMultiCellWidget(lbl, 0, 0, 0, 3);
+  mGrid->addMultiCellWidget(lbl, 0, 0, 0, 4);
   mGrid->setRowStretch(0, 3);
   mGridRow++;
 
@@ -56,6 +57,11 @@ Options::Options (QWidget * aParent, const char *aName, bool aInit)
   mCbxSounds = newLine("Sounds", i18n("Sounds"), &mStatSounds);
   mCbxIcons = newLine("Icons", i18n("Icons"), &mStatIcons);
   mCbxIcons->setEnabled(false);
+
+  btn = new QPushButton(i18n("Invert"), this);
+  btn->setFixedSize(btn->sizeHint());
+  connect(btn, SIGNAL(pressed()), SLOT(slotInvert()));
+  mGrid->addWidget(btn, mGridRow++, 0);
 
   mGrid->setRowStretch(mGridRow, 1000);
   mGrid->setColStretch(0, 2);
@@ -86,18 +92,18 @@ QCheckBox* Options::newLine(const char* aGroupName, const char* aText,
   cbx->setMinimumSize(cbx->sizeHint());
   cbx->setMaximumSize(32767, cbx->sizeHint().height()+5);
   connect(cbx, SIGNAL(clicked()), this, SLOT(slotCbxClicked()));
-  mGrid->addWidget(cbx, mGridRow, 0);
+  mGrid->addMultiCellWidget(cbx, mGridRow, mGridRow, 0, 1);
 
   lbl = new QLabel(i18n("unknown"), this);
   lbl->setMinimumSize(lbl->sizeHint());
   lbl->setMaximumSize(32767, lbl->sizeHint().height()+5);
-  mGrid->addWidget(lbl, mGridRow, 1);
+  mGrid->addWidget(lbl, mGridRow, 2);
   *aStatusPtr = lbl;
 
   btnDetails = new QPushButton("...", this, aGroupName);
   btnDetails->setFixedSize(btnDetails->sizeHint() - QSize(6,2));
   connect(btnDetails, SIGNAL(clicked()), this, SLOT(slotDetails()));
-  mGrid->addWidget(btnDetails, mGridRow, 2);
+  mGrid->addWidget(btnDetails, mGridRow, 3);
   btnDetails->hide();
 
   mGridRow++;
@@ -122,6 +128,19 @@ void Options::applySettings()
   theme->instPanel = mCbxPanel->isChecked();
   theme->instIcons = mCbxIcons->isChecked();
   theme->instSounds = mCbxSounds->isChecked();
+}
+
+
+//-----------------------------------------------------------------------------
+void Options::slotInvert()
+{
+  mCbxColors->setChecked(!mCbxColors->isChecked());
+  mCbxWindowBorder->setChecked(!mCbxWindowBorder->isChecked());
+  mCbxWindowTitlebar->setChecked(!mCbxWindowTitlebar->isChecked());
+  mCbxWallpapers->setChecked(!mCbxWallpapers->isChecked());
+  mCbxPanel->setChecked(!mCbxPanel->isChecked());
+  mCbxIcons->setChecked(!mCbxIcons->isChecked());
+  mCbxSounds->setChecked(!mCbxSounds->isChecked());
 }
 
 

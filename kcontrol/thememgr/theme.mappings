@@ -31,8 +31,10 @@
 # a fixed file name. Then the corresponding file of the theme will be renamed
 # upon copy. E.g. Kwm expects it's close button to have the name close.xpm,
 # so the value would be ":close.xpm"
+#
 # The exclamation mark indicates that no file shall be installed. Used for
-# color settings and thelike. Only values in the config file are changed.
+# color settings, switches (on/off/yes/no), etc. Only values in the config
+# file are changed.
 #
 #
 # -------------------
@@ -151,21 +153,23 @@ WindowUnSticky=
 ConfigFile=kwmrc
 ConfigGroup=General
 ConfigAppDir=apps/kwm/pics
-ConfigActivateCmd=kwmcom configure
+ConfigActivateCmd=kwmcom restart
 CloseButton=:close.xpm
 MaximizeButton=:maximize.xpm
+MaximizeDownButton=:maximizedown.xpm
 MenuButton=:menu.xpm
 MinimizeButton=:iconify.xpm
 StickyButton=:sticky.xpm
 TitlebarPixmapActive=:activetitlebar.xpm
 TitlebarPixmapInactive=:inactivetitlebar.xpm
+PixmapUnderTitleText=!
 #
 #-----------------------------------------------------------------------------
 [Window Border]
 ConfigGroup=General
 ConfigAppDir=apps/kwm/pics
 ConfigFile=kwmrc
-ConfigActivateCmd=kwmcom configure
+ConfigActivateCmd=kwmcom restart
 ConfigInstallCmd=winShapeMode
 #
 ShapePixmapBottom=:wm_bottom.xpm

@@ -32,6 +32,7 @@ protected slots:
   virtual void slotThemeApply();
   virtual void slotCbxClicked();
   virtual void slotDetails();
+  virtual void slotInvert();
 
 protected:
   /** Creates a new options line */

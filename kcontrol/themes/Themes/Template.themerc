@@ -82,11 +82,13 @@ shapePixmapBottomRight=
 [Window Titlebar]
 CloseButton=
 MaximizeButton=
+MaximizeDownButton=
 MenuButton=
 MinimizeButton=
 StickyButton=
 TitlebarPixmapActive=
 TitlebarPixmapInactive=
+PixmapUnderTitleText=
 #
 #-----------------------------------------------------------------------------
 [Sounds]

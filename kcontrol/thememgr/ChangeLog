@@ -1,0 +1,22 @@
+1998-12-16  Stefan Taferner  <taferner@kde.org> (V0.4)
+
+	* Added support for themes that are stored in a directory.
+	Just place the directory into the theme directory
+	~/.kde/share/apps/kthememgr/Themes
+
+	* The following files are now obsolete and can be removed:
+	~/.kde/share/apps/kthememgr/Themes/*.preview.jpg
+	~/.kde/share/apps/kthememgr/Themes/*.themerc
+	$(KDEDIR)/share/apps/kthememgr/Themes/*.preview.jpg
+	$(KDEDIR)/share/apps/kthememgr/Themes/*.themerc
+
+	* Preview images can now be of any image type that Kde supports 
+	(at least jpg, gif, xpm), as long as they contain a ".preview." 
+	in their name.
+	
+	* Added support for subdirectories in themes. 
+	Always use a subdirectory now when creating theme packages.
+
+	* New button Contents->Invert that inverts selection of
+	theme parts.
+

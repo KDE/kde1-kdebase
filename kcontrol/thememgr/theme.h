@@ -37,8 +37,23 @@ class Theme: public KSimpleConfig
   Q_OBJECT
 public:
   /** Construct a theme object */
-  Theme(const char* name=0);
+  Theme();
   virtual ~Theme();
+
+  /** Load theme and prepare it for installation or modification. Returns
+   true on success. */
+  virtual bool load(const QString path);
+
+  /** Apply current theme to the users Kde configuration. This updates several
+      config files and executes the initialization programs. */
+  virtual void install(void);
+
+  /** Write theme file. If no path is given the theme is stored in the default
+      kde location with the given theme name. Returns true on success. */
+  virtual bool save(const QString path=0);
+
+  /** Read current Kde configuration from several config files. */
+  virtual void readCurrent(void);
 
   /** Get/set theme name. */
   const QString name(void) const { return mName; }
@@ -49,21 +64,6 @@ public:
 
   /** Get preview pixmap. */
   const QPixmap& preview(void) const { return mPreview; }
-
-  /** Write theme file. If no path is given the theme is stored in the default
-   kde location with the given theme name. */
-  virtual void save(const QString path=0);
-
-  /** Read theme config file. If no path is given the theme is read from the default
-   kde location with the given theme name. */
-  virtual void load(const QString path=0);
-
-  /** Apply current theme to the users Kde configuration. This updates several
-   config files and executes the initialization programs. */
-  virtual void install(void);
-
-  /** Read current Kde configuration from several config files. */
-  virtual void readCurrent(void);
 
   /** Description */
   const QString description(void) const { return mDescription; }
@@ -91,6 +91,11 @@ public:
   /** Clear config contents */
   virtual void clear(void);
 
+  /** Test if group with given name exists. If notEmpty is true the
+      method also tests if the group is not empty. */
+  virtual bool hasGroup(const QString& name, bool notEmpty=false);
+
+
   /** Working directory. */
   static const QString workDir(void);
 
@@ -103,10 +108,6 @@ public:
   /** Create directory hierarchy, relative to given base directory
       or ~/.kde if none given. Returns true on success. */
   static bool mkdirhier(const char* dirHier, const char* baseDir=NULL);
-
-  /** Test if group with given name exists. If notEmpty is true the
-      method also tests if the group is not empty. */
-  virtual bool hasGroup(const QString& name, bool notEmpty=false);
 
 signals:
   /** This signal is emitted after import() or load() */
@@ -161,8 +162,16 @@ protected:
   virtual void installCmd(KSimpleConfig* cfg, const QString& cmd,
 			  int installedFiles);
 
+  /** Delete all files in work directory. */
+  virtual void cleanupWorkDir(void);
+
 protected:
-  QString mName, mDescription, mFileName;
+  QString mName;           // Name of the theme
+  QString mFileName;       // Name+path
+  QString mThemePath;      // Path to dir where theme files are stored
+  QString mDescription;
+  QString mThemercFile;    // Name of the .themerc file
+  QString mPreviewFile;    // Name of the preview image
   QPixmap mPreview;
   QString mConfigDir;
   KSimpleConfig* mMappings;
