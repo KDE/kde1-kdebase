@@ -1597,7 +1597,6 @@ HighlightDialog::HighlightDialog(HlManager *hlManager,
 
   QPushButton *button;
   QGroupBox *group;
-  QComboBox *hlCombo;
   QLabel *label;
   QRect r, gr;
   int z;
@@ -1695,6 +1694,9 @@ void HighlightDialog::hlChanged(int z) {
   }
 
   itemChanged(0);
+
+  if (hlCombo->currentItem() != z)
+    hlCombo->setCurrentItem(z);
 }
 
 void HighlightDialog::itemChanged(int z) {

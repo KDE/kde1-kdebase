@@ -2149,6 +2149,7 @@ void KWrite::hlDlg() {
   hlDataList.setAutoDelete(true);
   hlManager->getHlDataList(hlDataList);
   dlg = new HighlightDialog(hlManager,&hlDataList,this);
+  dlg->hlChanged(kWriteDoc->getHighlight());
   if (dlg->exec() == QDialog::Accepted) {
     hlManager->setHlDataList(hlDataList);
   }

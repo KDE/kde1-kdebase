@@ -445,14 +445,15 @@ class HighlightDialog : public QDialog {
   public:
     HighlightDialog(HlManager *, HlDataList *, QWidget *parent);
 
-  protected slots:
+  public slots:
     void hlChanged(int);
+  protected slots:
     void itemChanged(int);
     void changed();
   protected:
     void writeback();
     virtual void done(int r);
-    QComboBox *itemCombo;
+    QComboBox *itemCombo, *hlCombo;
     QLineEdit *wildcards;
     QLineEdit *mimetypes;
     QCheckBox *styleDefault;
