@@ -55,6 +55,7 @@ public:
   void shapeNotify(XShapeEvent *e);
   void motionNotify(XMotionEvent* e);
   void enterNotify(XCrossingEvent *e);
+  void leaveNotify(XCrossingEvent *e);
     
   void randomPlacement(Client* c);
   //CT 18jan98
@@ -85,6 +86,10 @@ public:
   void getWindowTrans(Client *c);
 
   void switchDesktop(int);
+
+  enum DesktopDirection {Up, Down, Left, Right};
+  void moveDesktopInDirection(DesktopDirection d, Client* c = 0);
+
   int currentDesktop(){
     return current_desktop;
   }
@@ -139,9 +144,15 @@ public:
 
   void raiseSoundEvent(const QString &);
 
+
 signals:
   void reConfigure();
   void showLogout();
+
+
+private slots:
+  void electricBorder();
+
 
 private:
   QList <Client> clients; // creation order
@@ -254,6 +265,14 @@ private:
   bool enable_focus_follow_mouse_activation;
   Client* delayed_focus_follow_mouse_client;
 
+  // electric borders
+  Window current_border;
+  Window left_border;
+  Window top_border;
+  Window right_border;
+  Window bottom_border;
+
+  void raiseElectricBorders();
 };
 
 // CC: new KDE Greyer widget

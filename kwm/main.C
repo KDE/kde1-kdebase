@@ -673,6 +673,16 @@ void MyApp::readConfiguration(){
     config->writeEntry("AutoRaise", options.AutoRaise);
   }
 
+  if (config->hasKey("ElectricBorder")){
+    options.ElectricBorder = config->readNumEntry("ElectricBorder");
+    if (options.ElectricBorder < -1)
+      options.ElectricBorder = 500;
+  }
+  else{
+    options.ElectricBorder = 500;
+    config->writeEntry("ElectricBorder", options.ElectricBorder);
+  }
+
 
   key = config->readEntry("ShapeMode");
   if( key == "on")
@@ -1337,6 +1347,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
       manager->enterNotify(&ev->xcrossing);
     break;
   case LeaveNotify:
+    manager->leaveNotify(&ev->xcrossing);
     break;
   case ReparentNotify:
     return TRUE; //do not confuse Qt with these events...

@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <X11/cursorfont.h>
 
 #include <kwm.h>
 
@@ -149,6 +150,62 @@ Manager::Manager(): QObject(){
 
   delayed_focus_follow_mouse_client = NULL;
   enable_focus_follow_mouse_activation = false;
+
+  // electric borders
+  {
+    current_border = None;
+
+    QRect r = QApplication::desktop()->rect();
+    
+    XSetWindowAttributes attributes;
+    unsigned long valuemask;
+    attributes.event_mask =  (EnterWindowMask | LeaveWindowMask |
+			      VisibilityChangeMask);
+    valuemask=  (CWEventMask | CWCursor );
+    attributes.cursor = XCreateFontCursor(qt_xdisplay(), 
+					  XC_sb_up_arrow);
+    top_border = XCreateWindow (qt_xdisplay(), qt_xrootwin(),
+				0,0,
+				r.width(),2,
+				0,
+				CopyFromParent, InputOnly,
+				CopyFromParent,
+				valuemask, &attributes);             
+    XMapWindow(qt_xdisplay(), top_border);
+
+    attributes.cursor = XCreateFontCursor(qt_xdisplay(), 
+					  XC_sb_down_arrow);
+    bottom_border = XCreateWindow (qt_xdisplay(), qt_xrootwin(),
+				   0,r.height()-2,
+				   r.width(),2,
+				   0,
+				   CopyFromParent, InputOnly,
+				   CopyFromParent,
+				   valuemask, &attributes);             
+    XMapWindow(qt_xdisplay(), bottom_border);
+
+    attributes.cursor = XCreateFontCursor(qt_xdisplay(), 
+					  XC_sb_left_arrow);
+    left_border = XCreateWindow (qt_xdisplay(), qt_xrootwin(),
+				 0,0,
+				 2,r.height(),
+				 0,
+				 CopyFromParent, InputOnly,
+				 CopyFromParent,
+				 valuemask, &attributes);             
+    XMapWindow(qt_xdisplay(), left_border);
+
+    attributes.cursor = XCreateFontCursor(qt_xdisplay(), 
+					  XC_sb_right_arrow);
+    right_border = XCreateWindow (qt_xdisplay(), qt_xrootwin(),
+				  r.width()-2,0,
+				  2,r.height(),
+				  0,
+				  CopyFromParent, InputOnly,
+				  CopyFromParent,
+				  valuemask, &attributes);             
+    XMapWindow(qt_xdisplay(), right_border);
+  }
 }
 
 
@@ -429,7 +486,7 @@ void Manager::clientMessage(XEvent*  ev){
 	d += number_of_desktops;
       switchDesktop(d);
     }
-    else if (com == "desktop+2") {
+    else if (com == "desktop-2") {
       int d = current_desktop - 2;
       if (d < 1)
 	d += number_of_desktops;
@@ -440,6 +497,9 @@ void Manager::clientMessage(XEvent*  ev){
 	switchDesktop(current_desktop + 1);
       else
 	switchDesktop(current_desktop - 1);
+    }
+    else if (com == "moduleRaised") {
+      raiseElectricBorders();
     }
     else {
       // forward unknown command to the modules
@@ -741,6 +801,98 @@ void Manager::enterNotify(XCrossingEvent *e){
       }
     }
   }
+
+  // electric borders
+  if (e->window == top_border ||
+      e->window == left_border ||
+      e->window == bottom_border ||
+      e->window == right_border){
+    if (options.ElectricBorder > -1){
+      QTimer::singleShot(options.ElectricBorder, 
+			 this, SLOT(electricBorder()));
+      current_border = e->window;
+    }
+  }
+}
+void Manager::leaveNotify(XCrossingEvent *e){
+  // electric borders
+  if (e->window == top_border ||
+      e->window == left_border ||
+      e->window == bottom_border ||
+      e->window == right_border){
+    current_border = None;
+  }
+}
+
+void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
+  int nd;
+  switch (d){
+  case Up:
+    if (current_desktop % 2 == 1)
+      nd = current_desktop + 1;
+    else
+      nd = current_desktop - 1;
+    if (c)
+      c->desktop = nd;
+    switchDesktop(nd);
+    QCursor::setPos(QCursor::pos().x(), 
+		    QApplication::desktop()->height()-3);
+    break;
+  case Down:
+    if (current_desktop % 2 == 1)
+      nd = current_desktop + 1;
+    else
+      nd = current_desktop - 1;
+    if (c)
+      c->desktop = nd;
+    switchDesktop(nd);
+    QCursor::setPos(QCursor::pos().x(), 
+		    3);
+    break;
+  case Left:
+    nd = current_desktop - 2;
+    if (nd < 1)
+	nd += number_of_desktops;
+    if (c)
+      c->desktop = nd;
+    switchDesktop(nd);
+    QCursor::setPos(QApplication::desktop()->width()-3,
+		    QCursor::pos().y());
+    break;
+  case Right:
+    nd = current_desktop - 2;
+    if (nd < 1)
+      nd += number_of_desktops;
+    if (c)
+      c->desktop = nd;
+    switchDesktop(nd);
+    QCursor::setPos(3,
+		    QCursor::pos().y());
+    break;
+  }
+}
+
+void Manager::electricBorder(){
+  if (current_border == top_border){
+    moveDesktopInDirection(Up);
+  }
+  else if (current_border == bottom_border){
+    moveDesktopInDirection(Down);
+  }
+  else if (current_border == left_border){
+    moveDesktopInDirection(Left);
+  }
+  else if (current_border == right_border){
+    moveDesktopInDirection(Right);
+  }
+}
+
+void Manager::raiseElectricBorders(){
+  // electric borders
+  XRaiseWindow(qt_xdisplay(), top_border);
+  XRaiseWindow(qt_xdisplay(), left_border);
+  XRaiseWindow(qt_xdisplay(), bottom_border);
+  XRaiseWindow(qt_xdisplay(), right_border);
 }
 
 
@@ -1443,6 +1595,8 @@ void Manager::raiseClient(Client* c){
   XRaiseWindow(qt_xdisplay(), new_stack[0]);
   XRestackWindows(qt_xdisplay(), new_stack, i);
   delete [] new_stack;
+  
+  raiseElectricBorders();
 }
 
 void Manager::lowerClient(Client* c){
@@ -2583,6 +2737,7 @@ void Manager::addModule(Window w){
 			  False, mask, &ev);
     }
   }
+  raiseElectricBorders();
 }
 void Manager::removeModule(Window w){
   Window *mw;
@@ -2644,8 +2799,6 @@ void Manager::removeDockWindow(Window w){
     }
   }
 }
-
-
 
 //// CC: Implementation of the KDE Greyer Widget
 

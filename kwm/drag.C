@@ -15,6 +15,7 @@
 #include <X11/Xutil.h>
 #include <X11/keysym.h>
 #include <qcursor.h>
+#include <sys/time.h>  
 
 #include "manager.h"
 #include <kwm.h>
@@ -186,6 +187,48 @@ void drawbound(Client* c){
 }
 
 
+bool electricBorder(Client* c, bool grab_server, int &x, int &y){
+  if (options.ElectricBorder < 0)
+    return false;
+  struct timeval value;
+  int n = options.ElectricBorder * 1000;
+  if (n > 0){
+    value.tv_usec = n % 1000000;
+    value.tv_sec = n / 1000000;
+    (void) select(1, 0, 0, 0, &value);       
+  }
+  QPoint pos = QCursor::pos();
+  if (pos.x() <= 2 || pos.y() <2 ||
+      pos.x() >= QApplication::desktop()->width()-2 ||
+      pos.y() >= QApplication::desktop()->height()-2){
+    if (grab_server){
+      drawbound(c);
+      XFlush(qt_xdisplay());
+      XUngrabServer(qt_xdisplay());
+    }
+    if (pos.y()<=2)
+      manager->moveDesktopInDirection(Manager::Up, c);
+    else if (pos.y() >= QApplication::desktop()->height()-2)
+      manager->moveDesktopInDirection(Manager::Down, c);
+    else if (pos.x()<=2)
+      manager->moveDesktopInDirection(Manager::Left, c);
+    else if (pos.x() >= QApplication::desktop()->width()-2)
+      manager->moveDesktopInDirection(Manager::Right, c);
+
+    myapp->processEvents(); 
+    
+    if (grab_server){
+      XGrabServer(qt_xdisplay());
+    }
+    pos = QCursor::pos();
+    x = pos.x();
+    y = pos.y();
+    return true;
+  }
+  
+  return false;
+}
+
 
 
 bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
@@ -194,7 +237,9 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
     XEvent ev;
     int cx, cy, rx, ry;
     QRect other;
-    
+
+    bool do_not_clear_rectangle = false;
+
     cx = rx = c->geometry.x() + c->old_cursor_pos.x();
     cy = ry = c->geometry.y() + c->old_cursor_pos.y();
     bool return_pressed = false;
@@ -239,6 +284,14 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
       else if (ev.type == MotionNotify){
 	rx = ev.xmotion.x_root;
 	ry = ev.xmotion.y_root;
+	// electric borders
+	if (rx <= 2 || ry <2 ||
+	    rx >= QApplication::desktop()->width()-2 ||
+	    ry >= QApplication::desktop()->height()-2)
+	  if (recalc == dragcalc)
+	    do_not_clear_rectangle =
+	      electricBorder(c, options.WindowMoveType == TRANSPARENT,
+			     rx, ry);
       }
       if (rx == cx && ry == cy)
 	continue;
@@ -250,8 +303,10 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
       if ( other == c->geometry)
 	continue;
       c->geometry = other;
-      if (options.WindowMoveType == TRANSPARENT || recalc != dragcalc)
+      if ((options.WindowMoveType == TRANSPARENT || recalc != dragcalc)
+	  && !do_not_clear_rectangle)
 	drawbound(c);
+      do_not_clear_rectangle = false;
       recalc(c, rx, ry);
       if (options.WindowMoveType == TRANSPARENT || recalc != dragcalc)
 	drawbound(c);

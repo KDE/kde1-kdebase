@@ -11,6 +11,14 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 28:
+     - electric borders: Just move the cursor to the border of
+       the screen, wait a short time and kwm will magically change the
+       current virtual desktop. The interval can be specified in 
+       milliseconds with the ElectricBorder property in the kwmrc. 
+       ElectricBorder=-1 dissables the feature.
+
+         
   patchlevel 27:
      - support for shaded windows a la openstep.
      - new option:

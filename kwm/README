@@ -229,7 +229,7 @@ the win* commands refer to the current (= active) window.  "desktop%2"
 toggles between an odd desktop and the next higher even number. That
 means between 1 and 2 or between 3 and 4.  This is useful to emulate
 "Up" and "Down" in a virtual n*2 matrix, which is used by the kde pager.
-"desktop+2" means "Right" then, "desktop-1" means "Left", respectively.
+"desktop+2" means "Right" then, "desktop-2" means "Left", respectively.
 
 There is also an option
 
