@@ -2,21 +2,21 @@
   toplevel.cpp - the main view of the KDE control center
 
   written 1997 by Matthias Hoelzer
-  
+
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation; either version 2 of the License, or
   (at your option) any later version.
-  
+
   This program is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU General Public License for more details.
-  
+
   You should have received a copy of the GNU General Public License
   along with this program; if not, write to the Free Software
   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-   
+
   */
 
 
@@ -37,11 +37,11 @@ TopLevel::TopLevel (ConfigList *cl)
 
   setupMenuBar();
   setupStatusBar();
-  
+
   panner = new KPanner(this, "panner", KPanner::U_ABSOLUTE | KPanner::O_VERTICAL, 200);
   panner->resize(400,100);
   panner->setAbsSeparator(200);
-  
+
   treelist = new KTreeList(panner->child0());
   configList->fillTreeList(treelist);
 
@@ -50,12 +50,12 @@ TopLevel::TopLevel (ConfigList *cl)
   connect(treelist, SIGNAL(selected(int)), this, SLOT(item_selected(int)));
   connect(treelist, SIGNAL(singleSelected(int)), this, SLOT(item_singleSelected(int)));
   connect(panner, SIGNAL(positionChanged()), this, SLOT(pannerChanged()));
-  
+
   setView(panner);
-  
+
   setMinimumSize(450,200);
-  
-  resize(680,530);
+
+  resize(680,550);
   show();
   resizeEvent(NULL);
 
@@ -70,8 +70,8 @@ void TopLevel::setupMenuBar()
 {
     file = new QPopupMenu();
     options = new QPopupMenu();
-      
-    file->insertItem(klocale->translate("E&xit"), 
+
+    file->insertItem(klocale->translate("E&xit"),
 		     KApplication::getKApplication(), SLOT(quit()));
 
     options->setCheckable(TRUE);
@@ -93,7 +93,7 @@ void TopLevel::setupMenuBar()
 
     setMenu(menubar);
 }
- 
+
 
 void TopLevel::setupStatusBar()
 {
@@ -101,15 +101,15 @@ void TopLevel::setupStatusBar()
   statusbar->insertItem("", ID_GENERAL);
   statusbar->setInsertOrder(KStatusBar::LeftToRight);
   setStatusBar(statusbar);
-}  
+}
 
 
 void TopLevel::pannerChanged()
 {
   treelist->resize(panner->child0()->width(), panner->child0()->height());
-  
+
   if (mwidget)
-    mwidget->resize(width()-panner->getAbsSeparator(), height()); 
+    mwidget->resize(width()-panner->getAbsSeparator(), height());
 
   if (KModuleListEntry::visibleWidget)
     KModuleListEntry::visibleWidget->resize(panner->child1()->width(), panner->child1()->height());
@@ -119,11 +119,11 @@ void TopLevel::pannerChanged()
 void TopLevel::resizeEvent(QResizeEvent *)
 {
   updateRects();
-  
+
   treelist->resize(panner->child0()->width(), panner->child0()->height());
-  
+
   if (mwidget)
-    mwidget->resize(width()-panner->getAbsSeparator(), height()); 
+    mwidget->resize(width()-panner->getAbsSeparator(), height());
 
   if (KModuleListEntry::visibleWidget)
     KModuleListEntry::visibleWidget->resize(panner->child1()->width(), panner->child1()->height());
@@ -133,7 +133,7 @@ void TopLevel::resizeEvent(QResizeEvent *)
 void TopLevel::item_selected(int item)
 {
   KModuleListEntry *listEntry = getListEntry(item);
-  
+
   if (listEntry)
     if (listEntry->isDirectory())
       treelist->expandOrCollapseItem(item);
@@ -146,10 +146,10 @@ void TopLevel::item_singleSelected(int item)
 {
   KModuleListEntry *listEntry = getListEntry(item);
   QString          hint;
-  
+
   if (listEntry)
     hint = listEntry->getComment();
-  
+
   statusbar->changeItem(hint.data(), ID_GENERAL);
 
   if (listEntry && !listEntry->isDirectory())
@@ -162,11 +162,11 @@ KModuleListEntry *TopLevel::getListEntry(int item)
   ConfigTreeItem *list_item;
 
   list_item = (ConfigTreeItem *) treelist->itemAt(item);
-  
+
   if (list_item == NULL)
     return NULL;
   else
-    return list_item->moduleListEntry; 
+    return list_item->moduleListEntry;
 }
 
 

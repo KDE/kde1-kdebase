@@ -231,7 +231,7 @@ bool KModuleListEntry::execute(QWidget *parent)
   else
     if (swallowWidget)
       {
-	if (visibleWidget && visibleWidget != swallowWidget)
+	if (visibleWidget && visibleWidget != swallowWidget) 
 	  visibleWidget->hide();
 
 	swallowWidget->resize(swallowParent->width(), swallowParent->height());
