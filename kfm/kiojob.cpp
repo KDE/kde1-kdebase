@@ -528,7 +528,8 @@ void KIOJob::copy()
 
     int skipped = 0;
     QString skippedFile;
-    bool bDirNotLocal = false;
+    enum { RECURSE_ERROR_REMOTE, RECURSE_ERROR_SUBPROTOCOL, RECURSE_OK } 
+       recurse = RECURSE_OK;
     
     // Recursive directory    
     QListIterator<char> it( cmSrcURLList );
@@ -643,7 +644,12 @@ void KIOJob::copy()
 	} else // src or/and dest isn't local.
         {
             if ( KIOServer::isDir( p ) == 1 ) // is source a directory ?
-                bDirNotLocal = true;
+            {
+                if ( su.hasSubProtocol() )
+                    recurse = RECURSE_ERROR_SUBPROTOCOL;
+                else
+                    recurse = RECURSE_ERROR_REMOTE;
+            }
         }
 	++it2;
     }
@@ -657,7 +663,12 @@ void KIOJob::copy()
 	    ksprintf(&tmp, i18n( "%d special files will not be copied."), skipped);
 	QMessageBox::warning( 0, i18n( "KFM Warning" ), tmp.data() );
     }
-    if (bDirNotLocal)
+    if (recurse == RECURSE_ERROR_SUBPROTOCOL)
+    {
+        emit fatalError (KIO_ERROR_NotImplemented, i18n("Recurse copying from file with sub-protocol\n(for instance, tar files)"), 0);
+        return;
+    }
+    if (recurse == RECURSE_ERROR_REMOTE)
     {
         emit fatalError (KIO_ERROR_NotImplemented, i18n("Recurse copying from/to distant locations"), 0);
         return;
@@ -1338,13 +1349,16 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
 	break;
       }
       case KIO_ERROR_TarError:
-	ksprintf(&msg, i18n("Tar reproted an error\n%s"), url.data());
+	ksprintf(&msg, i18n("Tar reported an error\n%s"), url.data());
 	break;
       case KIO_ERROR_GzipError:
-	ksprintf(&msg, i18n("Gzip reproted an error for\n%s"), url.data());
+	ksprintf(&msg, i18n("Gzip reported an error for\n%s"), url.data());
 	break;
       case KIO_ERROR_FileExists:
 	r = new KRenameWin( 0L, lastSource.data(), lastDest.data(), false );
+	break;
+      case KIO_ERROR_NotPossible:
+	ksprintf(&msg, i18n("Operation technically impossible"));
 	break;
       case KIO_ERROR_FileDoesNotExist:
 	ksprintf(&msg,i18n("File %s\ndoes not exist"), url.data());
