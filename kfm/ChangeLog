@@ -3,6 +3,9 @@
 	* kioserver.cpp, kioslave/main.cpp : added "Volume Management" support for
 	Solaris 2.x, patch from Torsten Kasch <tk@Genetik.Uni-Bielefeld.DE>.
 	It's all ifdef'ed with #ifdef HAVE_VOLMGT.
+	> With these patches you can place a Device.kdelnk on your desktop
+	> with device entries like /dev/diskette0, /dev/diskette1,
+	> /dev/dsk/c0t6d0s2 (for SCSI CD-ROM drives at controller 0, SCSI-ID 6)...
 
 1999-03-27  David Faure  <faure@kde.org>
 
