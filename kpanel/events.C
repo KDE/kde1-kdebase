@@ -62,7 +62,9 @@ void myFrame::hideTimerDone(){
     return;
   bool do_hide = true;
   // check for popups
-  if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False,
+  if (!QApplication::activePopupWidget() && 
+      !QApplication::widgetAt(QCursor::pos()) &&
+      XGrabPointer(qt_xdisplay(), qt_xrootwin(), False,
 		   ButtonPressMask | ButtonReleaseMask |
 		   PointerMotionMask |
 		   EnterWindowMask | LeaveWindowMask,
@@ -73,7 +75,8 @@ void myFrame::hideTimerDone(){
   }
   else
     do_hide = false;
-  if (!do_hide || geometry().contains(QCursor::pos()))
+  do_hide = do_hide && !in_animation;
+  if (!do_hide)
     hideTimer->start(hide_delay, true);
   else {
     autoHidden = true;
@@ -767,7 +770,9 @@ void kPanel::hideTimerDone(){
 
 
   // check for popups
-  if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False,
+  if (!QApplication::activePopupWidget() && 
+      !QApplication::widgetAt(QCursor::pos()) &&
+      XGrabPointer(qt_xdisplay(), qt_xrootwin(), False,
 		   ButtonPressMask | ButtonReleaseMask |
 		   PointerMotionMask |
 		   EnterWindowMask | LeaveWindowMask,
