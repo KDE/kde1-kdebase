@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
 "POT-Creation-Date: 1999-04-02 01:15+0200\n"
-"PO-Revision-Date: 1999-03-31 20:34+0800\n"
+"PO-Revision-Date: 1999-04-05 15:00+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 "Translator: Wang Jian <larkw@263.net>\n"
@@ -51,7 +51,6 @@ msgid ""
 msgstr "不能把模式开关设到 %s , 键盘 %s.禁止Alt"
 
 #: kikbd.cpp:406
-#, fuzzy
 msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -72,12 +71,11 @@ msgstr ""
 "你想在下次登录时自动起动吗?"
 
 #: keymap.cpp:186
-#, fuzzy
 msgid "KeyMap: can't allocate memory"
 msgstr "KeyMap: 无法申请内存"
 
 #: keymap.cpp:233
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Can't find symbol \"%s\".\n"
 "Maybe your default X codes do not match.\n"
@@ -90,17 +88,17 @@ msgstr ""
 "部分里预设X代码."
 
 #: keymap.cpp:238
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
 msgstr "KeyMap: 无法找到符号 \"%s\"."
 
 #: keymap.cpp:246
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
-msgstr "KeyMap: 不能理解键码 \"%s\"."
+msgstr "KeyMap: 不能读取键码 \"%s\"."
 
 #: keymap.cpp:252
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
 msgstr "KeyMap: 键码 \"%s\" 越界"
 
@@ -302,9 +300,8 @@ msgid "&Add"
 msgstr "添加(&A)"
 
 #: widgets.cpp:127
-#, fuzzy
 msgid "Add new keyboard map"
-msgstr "正在添加新的键盘映射"
+msgstr "添加新的键盘映射"
 
 #: widgets.cpp:131
 msgid "Remove selected keyboard map"
@@ -315,18 +312,16 @@ msgid "U&p"
 msgstr "上(&P)"
 
 #: widgets.cpp:136
-#, fuzzy
 msgid "Move up selected keyboard map"
-msgstr "去掉选中的键盘映射"
+msgstr "上移选中的键盘映射"
 
 #: widgets.cpp:140
 msgid "D&own"
 msgstr "下(&O)"
 
 #: widgets.cpp:140
-#, fuzzy
 msgid "Move down selected keyboard map"
-msgstr "向下调整选中的键盘映射"
+msgstr "下移选中的键盘映射"
 
 #: widgets.cpp:144
 msgid "&Info"
@@ -341,20 +336,18 @@ msgid "Use &hot list"
 msgstr "使用常用列表(&H)"
 
 #: widgets.cpp:155
-#, fuzzy
 msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
-msgstr "只使用默认的和上次使用的键盘映射来切换键盘"
+msgstr "当使用切换键序列时只使用默认的和上次使用的键盘映射"
 
 #: widgets.cpp:224
 msgid "Adding Keyboard"
 msgstr "正在添加键盘"
 
 #: widgets.cpp:225
-#, fuzzy
 msgid "There are no keyboard maps left to add"
-msgstr "没有别的键盘映射了"
+msgstr "没有可添加的键盘映射了"
 
 #: widgets.cpp:258
 msgid "Keyboard map information"
@@ -377,12 +370,10 @@ msgid "Switch and Alt Switch"
 msgstr "开关和Alt开关"
 
 #: widgets.cpp:419
-#, fuzzy
 msgid "Key(s) for switching between keyboard maps"
 msgstr "切换键盘映射所使用的快捷键"
 
 #: widgets.cpp:425
-#, fuzzy
 msgid "Key for activating Alternate symbols in current keyboard map"
 msgstr "在当前键盘映射中用来激活替代符号的键"
 
@@ -391,7 +382,6 @@ msgid "&Beep"
 msgstr "响铃(&B)"
 
 #: widgets.cpp:439
-#, fuzzy
 msgid "Beep when keyboard map is changed"
 msgstr "在键盘映射改变时响铃"
 
@@ -412,20 +402,18 @@ msgid "&Emulate Caps Lock"
 msgstr "模拟大写锁定(&E)"
 
 #: widgets.cpp:476
-#, fuzzy
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
-msgstr "模拟X服务器大写锁定.某些语言需要"
+msgstr "模拟X服务器大写锁定.某些语言需要此选项才能正确工作"
 
 #: widgets.cpp:482
 msgid "&World Menu"
 msgstr "世界菜单(&W)"
 
 #: widgets.cpp:483
-#, fuzzy
-msgid "Show menu in any window by holding sown the selected Switch key(s)"
-msgstr "在任何窗口中按下切换键显示菜单"
+msgid "Show menu in any window by holding down the selected Switch key(s)"
+msgstr "在任何窗口中按下选中的切换键后显示菜单"
 
 #: widgets.cpp:491
 msgid "&Save Classes"
@@ -444,21 +432,18 @@ msgid "Input"
 msgstr "输入"
 
 #: widgets.cpp:505
-#, fuzzy
 msgid "Standard behavior. Keyboard map effective for all windows"
 msgstr "标准行为.键盘映射在所有窗口中起作用"
 
 #: widgets.cpp:509
-#, fuzzy
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "标准行为.键盘映射在所有窗口中起作用"
+msgstr "扩展行为.为每个独立的窗口保存键盘映射状态"
 
 #: widgets.cpp:513
-#, fuzzy
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "标准行为.键盘映射在所有窗口中起作用"
+msgstr "特殊行为.为每个独立的窗口类保存键盘映射的状态"
 
 #: widgets.cpp:561
 msgid "Button Colors"
@@ -470,15 +455,15 @@ msgstr "前景"
 
 #: widgets.cpp:572
 msgid "Text label foreground color"
-msgstr ""
+msgstr "文本标签前景色"
 
 #: widgets.cpp:576
 msgid "Background"
-msgstr ""
+msgstr "背景"
 
 #: widgets.cpp:577
 msgid "Text label background color"
-msgstr ""
+msgstr "文本标签背景色"
 
 #: widgets.cpp:581
 msgid "With Caps Lock"
@@ -486,16 +471,15 @@ msgstr "带大写锁定"
 
 #: widgets.cpp:582
 msgid "Background when Emulated Caps Lock active"
-msgstr "在模拟的大写锁定起作用时在后台"
+msgstr "在模拟的大写锁定起作用时的背景"
 
 #: widgets.cpp:588
 msgid "With Alternate"
 msgstr "带Alt"
 
 #: widgets.cpp:589
-#, fuzzy
 msgid "Background when Alternate switch key is pressed"
-msgstr "在Alt开关按下时在后台"
+msgstr "在Alt开关按下时的背景"
 
 #: widgets.cpp:598
 msgid "Button Font"
