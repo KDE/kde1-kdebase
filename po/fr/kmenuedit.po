@@ -1,0 +1,256 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kmenuedit\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"PO-Revision-Date: 1998-01-20 22:22 CET\n"
+"Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
+"Language-Team: Français\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; \n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kmenuedit.cpp:68
+msgid "Change Menuname"
+msgstr "Changer le nom du menu"
+
+#: kmenuedit.cpp:69
+msgid "Reload Filetypes"
+msgstr "Recharger les types de fichiers"
+
+#: kmenuedit.cpp:75 kmenuedit.cpp:211
+msgid ""
+"KMenuedit 0.2.3\n"
+"(C) by Christoph Neerfeld\n"
+"Christoph.Neerfeld@bonn.netsurf.de"
+msgstr ""
+"KMenuEdit 0.2.3\n"
+"(c) par Christoph Neerfeld\n"
+"Christoph.Neerfeld@bonn.netsurf.de"
+
+#: kmenuedit.cpp:164
+msgid "Changes not saved !"
+msgstr "Changements non enregistrés !"
+
+#: kmenuedit.cpp:165
+msgid "Do you want to save your changes"
+msgstr "Voulez-vous enregistrer vos changements"
+
+#: confmenu.cpp:313 confmenu.cpp:878 kmenuedit.cpp:230
+msgid "EMPTY"
+msgstr "VIDE"
+
+#: kmenuedit.cpp:306
+msgid "Reload Menus"
+msgstr "Recharger les menus"
+
+#: kmenuedit.cpp:307
+msgid ""
+"Reloading the menus will discard all changes.\n"
+"Are you sure you want to reload ?"
+msgstr ""
+"Recharger les menus va abandonner tous vos changements.\n"
+"Etes-vous sûrs de vouloir recharger ?"
+
+#: button.cpp:209 main.cpp:80 main.cpp:93
+msgid "KMenuedit"
+msgstr "KMenuEdit"
+
+#: main.cpp:81
+msgid ""
+"The directory for your personal menu does not exist.\n"
+" Do you want to create it now ?"
+msgstr ""
+"Le répertoire pour votre menu personnel n'existe pas.\n"
+"Voulez-vous le créer maintenant ?"
+
+#: main.cpp:94
+msgid ""
+"Unable to create directory for personal menu.\n"
+" Select Ok to exit KMenuedit."
+msgstr ""
+"Impossible de créer le répertoire pour votre menu personnel.\n"
+"Cliquez sur OK pour sortir de KMenuEdit."
+
+#: confmenu.cpp:90 entrydialog.cpp:52
+msgid "Separator"
+msgstr "Séparateur"
+
+#: confmenu.cpp:102 confmenu.cpp:309
+msgid "Open/ Close"
+msgstr "Ouvre / Ferme"
+
+#: confmenu.cpp:110
+msgid "! PROTECTED Button !"
+msgstr "Bouton protégé !"
+
+#: confmenu.cpp:171 confmenu.cpp:292
+msgid "Warning !"
+msgstr "Attention !"
+
+#: confmenu.cpp:172
+msgid "If you delete this button you will lose all of its submenus"
+msgstr "Si vous détruisez ce bouton, vous allez perdre tous ses sous-menus"
+
+#: confmenu.cpp:273
+msgid "Wrong filename"
+msgstr "Mauvais nom de fichier"
+
+#: confmenu.cpp:274
+msgid ""
+"A kdelnk-file with this name does already exist. \n"
+"Please choose another filename."
+msgstr ""
+"Un fichier .kdelnk avec ce nom existe déjà.\n"
+"Choisissez un autre nom de fichier."
+
+#: confmenu.cpp:293
+msgid "Changing the type of this button will delete all of its submenus"
+msgstr "Changer le type de ce bouton va détruire tous ses sous-menus"
+
+#: confmenu.cpp:314 confmenu.cpp:879
+msgid "no command"
+msgstr "pas de commande"
+
+#: button.cpp:210
+msgid ""
+"Sorry ! You have to save your changes\n"
+"before you can drop this item on another window."
+msgstr ""
+"Désolé ! Vous devez enregistrer vos changements\n"
+"avant de pouvoir déposer cet objet sur une autre fenêtre."
+
+#: DesktopPathDialogData.cpp:37
+msgid "Path for KDE Desktop Entries is not set."
+msgstr "Le chemin pour les entrées du bureau KDE n'est pas positionné<."
+
+#: DesktopPathDialogData.cpp:49
+msgid "I suggest the following entries:"
+msgstr "Je suggère les valeurs suivantes :"
+
+#: DesktopPathDialogData.cpp:55
+msgid "Path:"
+msgstr "Chemin :"
+
+#: DesktopPathDialogData.cpp:68
+msgid "PersonalPath:"
+msgstr "Chemin pour le menu personnel :"
+
+#: entrydialog.cpp:53
+msgid "Submenu"
+msgstr "Sous-menu"
+
+#: entrydialog.cpp:54 entrydialog.cpp:167 entrydialog.cpp:509
+msgid "Application"
+msgstr "Application"
+
+#: entrydialog.cpp:55
+msgid "Fvwm Command"
+msgstr "Commande FVWM"
+
+#: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:515
+msgid "Link"
+msgstr "Lien"
+
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:518
+msgid "Device"
+msgstr "Périphérique"
+
+#: entrydialog.cpp:63
+msgid "Type:"
+msgstr "Type :"
+
+#: entrydialog.cpp:69
+msgid "File Name:"
+msgstr "Nom de fichier :"
+
+#: entrydialog.cpp:82
+msgid "Name:"
+msgstr "Nom :"
+
+#: entrydialog.cpp:95
+msgid "Mini Icon:"
+msgstr "Mini icône :"
+
+#: entrydialog.cpp:127
+msgid "Icon:"
+msgstr "Icône :"
+
+#: entrydialog.cpp:133
+msgid "Comment:"
+msgstr "Commentaire :"
+
+#: entrydialog.cpp:165 entrydialog.cpp:508
+msgid "Execute"
+msgstr "Exécuter"
+
+#: entrydialog.cpp:169 entrydialog.cpp:512
+msgid "Fvwm"
+msgstr "FVWM"
+
+#: entrydialog.cpp:186
+msgid "Execute:"
+msgstr "Exécuter :"
+
+#: entrydialog.cpp:192
+msgid "Working Directory:"
+msgstr "Répertoire de travail :"
+
+#: entrydialog.cpp:205
+msgid "Run in terminal"
+msgstr "Fonctionne dans un terminal"
+
+#: entrydialog.cpp:211
+msgid "Terminal Options:"
+msgstr "Options du terminal :"
+
+#: entrydialog.cpp:292
+msgid "Binary Pattern:"
+msgstr "Echantillon binaire :"
+
+#: entrydialog.cpp:300
+msgid "Fvwm Command:"
+msgstr "Commande FVWM :"
+
+#: entrydialog.cpp:315
+msgid "URL:"
+msgstr "URL :"
+
+#: entrydialog.cpp:364
+msgid "Read Only"
+msgstr "Lecture seule"
+
+#: entrydialog.cpp:370
+msgid "Device:"
+msgstr "Périphérique :"
+
+#: entrydialog.cpp:376
+msgid "Mount Point:"
+msgstr "Point de montage :"
+
+#: entrydialog.cpp:382
+msgid "FS Type:"
+msgstr "Type de système de fichiers :"
+
+#: entrydialog.cpp:388
+msgid "Unmount Icon:"
+msgstr "Icône démonté"
+
+#: MenuNameDialog.cpp:21
+msgid "Change Menunames"
+msgstr "Changer le nom des menus"
+
+#: MenuNameDialogData.cpp:33
+msgid "Change the name of the menus as displayed in kpanel"
+msgstr "Changer le nom des menus affichés dans le panneau"
+
+#: MenuNameDialogData.cpp:42
+msgid "Personal:"
+msgstr "Personnel :"
+
+#: MenuNameDialogData.cpp:51
+msgid "Default:"
+msgstr "Défaut :"
