@@ -72,10 +72,14 @@ KDisplayApplication::KDisplayApplication(int &argc, char **argv, char *name, cha
 
 void KDisplayApplication::init()
 {
-  KColorScheme colors(0, KDisplayModule::Init);
-  KBackground backtround(0, KDisplayModule::Init);
-  KScreenSaver screensaver(0, KDisplayModule::Init);
-  KGeneral general(0, KDisplayModule::Init);  
+  KColorScheme *colors = new KColorScheme(0, KDisplayModule::Init);
+  delete colors;
+  KBackground *background =  new KBackground(0, KDisplayModule::Init);
+  delete background;
+  KScreenSaver *screensaver = new KScreenSaver(0, KDisplayModule::Init);
+  delete screensaver;
+  KGeneral *general = new KGeneral(0, KDisplayModule::Init);  
+  delete general;
 }
 
 

@@ -125,7 +125,8 @@ KDMConfigApplication::KDMConfigApplication(int &argc, char **argv, char *name, c
 /*
 void KDMConfigApplication::init()
 {
-  KDMConfigWidget kdmconfig(0, 0, TRUE);
+  KDMConfigWidget *kdmconfig = new KDMConfigWidget(0, 0, TRUE);
+  delete kdmconfig;
 }
 */
 
@@ -156,5 +157,8 @@ int main(int argc, char **argv)
   if (app.runGUI())
     return app.exec();
   else
-    return 0;
+    {
+//      app.init();
+      return 0;
+    }
 }

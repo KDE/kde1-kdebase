@@ -56,7 +56,8 @@ KBellApplication::KBellApplication(int &argc, char **argv, char *name, char *tit
 
 void KBellApplication::init()
 {
-  KBellConfig bell(0, 0, TRUE);
+  KBellConfig *bellconfig = new KBellConfig(0, 0, TRUE);
+  delete bellconfig;
 }
 
 
