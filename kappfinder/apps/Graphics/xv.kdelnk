@@ -14,6 +14,7 @@ Comment[fi]=XV kuvien näyttäjä
 Comment[sv]=XV Bildvisare
 Comment[pt]=Visualizador de Imagens XV
 Comment[it]=Visualizzatore Immagini XV
+Comment[cs]=Prohlí¾eè obrázkù
 Exec=xv
 Icon=xv.xpm
 TerminalOptions=

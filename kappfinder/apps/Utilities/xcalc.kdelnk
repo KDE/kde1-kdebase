@@ -14,6 +14,7 @@ Comment[fi]=X Laskin
 Comment[sv]=X Kalkylator
 Comment[pt]=Calculadora X
 Comment[it]=Calcolatrice
+Comment[cs]=Calkulátor pro XWindow
 Exec=xcalc
 Icon=xcalc.xpm
 TerminalOptions=

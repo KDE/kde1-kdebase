@@ -6,6 +6,7 @@ Name=xbiff
 Comment=Mail nofication
 Comment[pt]=Notificação de mail
 Comment[it]=Controllo Posta
+Comment[cs]=Upozoròuje na novou po¹tu
 Exec=kmail
 Icon=mail.xpm
 TerminalOptions=
