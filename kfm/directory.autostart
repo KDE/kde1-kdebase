@@ -1,5 +1,6 @@
 [KDE Desktop Entry]
 Name=Autostart
+Name[it]=Avvio 
 Name[de]=Autostart
 Name[pl]=Autostart
 Name[fi]=Käynnistä
@@ -7,3 +8,4 @@ Name[fr]=Démarrage
 Comment[pl]=Programy uruchamiane przy starcie KDE
 Comment[fi]=Aloitettaessa käynnistettävät ohjelmat
 Comment[fr]=Programmes qui seront lancés à chaque démarrage
+Comment[it]=I programmi contenuti in questa cartella vengono eseguiti all'avvio del KDE
