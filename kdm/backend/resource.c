@@ -69,6 +69,9 @@ int	choiceTimeout;	/* chooser choice timeout */
  * the following constants are supposed to be set in the makefile from
  * parameters set util/imake.includes/site.def (or *.macros in that directory
  * if it is server-specific).  DO NOT CHANGE THESE DEFINITIONS!
+ *
+ * On the other hand we don't use imake anymore so we have to define the
+ * variables here.
  */
 #ifndef __EMX__
 #define Quote(s) #s
@@ -77,19 +80,40 @@ int	choiceTimeout;	/* chooser choice timeout */
 #define DEF_SERVER_LINE ":0 local " QUOTE(XBINDIR) "/X :0"
 #endif
 #ifndef XRDB_PROGRAM
+/* use krdb instead? */
 #define XRDB_PROGRAM QUOTE(XBINDIR) "/xrdb"
 #endif
+#ifndef DEF_SETUP
+/* Should be run this as default? */
+#define DEF_SETUP XDMDIR"/Xsetup"
+#endif
 #ifndef DEF_SESSION
-#define DEF_SESSION QUOTE(XBINDIR) "/xterm -ls"
+#define DEF_SESSION XDMDIR"/Xsession" /* QUOTE(XBINDIR) "xterm -ls" */
 #endif
 #ifndef DEF_USER_PATH
-#define DEF_USER_PATH "/bin:/usr/bin:" QUOTE(XBINDIR) ":/usr/local/bin:/usr/ucb"
+#  ifdef __FreeBSD__
+#    define DEF_USER_PATH "/bin:/usr/bin:" QUOTE(XBINDIR) ":/usr/local/bin"
+#  elif __linux__
+#    define DEF_USER_PATH "/bin:/usr/bin:" QUOTE(XBINDIR) ":/usr/local/bin"
+#  else
+#    define DEF_USER_PATH "/bin:/usr/bin:" QUOTE(XBINDIR) ":/usr/local/bin:/usr/ucb"
+#  endif
 #endif
 #ifndef DEF_SYSTEM_PATH
-#define DEF_SYSTEM_PATH "/sbin:/usr/sbin:/bin:/usr/bin:" QUOTE(XBINDIR) ":/usr/local/bin:/etc:/usr/ucb"
+#  ifdef __FreeBSD__
+#    define DEF_SYSTEM_PATH "/sbin:/usr/sbin:/bin:/usr/bin:" QUOTE(XBINDIR) ":/usr/local/bin"
+#  elif __linux__
+#    define DEF_SYSTEM_PATH "/sbin:/usr/sbin:/bin:/usr/bin:" QUOTE(XBINDIR) ":/usr/local/bin"
+#  else
+#    define DEF_SYSTEM_PATH "/sbin:/usr/sbin:/bin:/usr/bin:" QUOTE(XBINDIR) ":/usr/local/bin:/etc:/usr/ucb"
+#  endif
 #endif
 #ifndef DEF_SYSTEM_SHELL
-#define DEF_SYSTEM_SHELL "/bin/sh"
+#  ifdef _PATH_BSHELL
+#    define DEF_SYSTEM_SHELL _PATH_BSHELL
+#  else
+#    define DEF_SYSTEM_SHELL "/bin/sh"
+#  endif
 #endif
 #ifndef DEF_FAILSAFE_CLIENT
 #define DEF_FAILSAFE_CLIENT QUOTE(XBINDIR) "/xterm"
@@ -108,6 +132,8 @@ int	choiceTimeout;	/* chooser choice timeout */
 #endif
 #endif
 #ifndef DEF_AUTH_DIR
+/* This may be read only
+ */
 #define DEF_AUTH_DIR XDMDIR
 #endif
 #ifndef DEF_USER_AUTH_DIR
@@ -120,10 +146,19 @@ int	choiceTimeout;	/* chooser choice timeout */
 #define DEF_ACCESS_FILE	""
 #endif
 #ifndef DEF_RANDOM_FILE
-#define DEF_RANDOM_FILE "/dev/mem"
+#define DEF_RANDOM_FILE _PATH_MEM
 #endif
 #ifndef DEF_GREETER_LIB
 #define DEF_GREETER_LIB ""
+#endif
+#ifndef DEF_PID_FILE
+#  ifdef __FreeBSD__
+#    define DEF_PID_FILE _PATH_VARRUN"kdm.pid"
+#  else
+/* this may be readonly
+ */
+#    define DEF_PID_FILE XDMDIR "/kdm-pid"
+#  endif
 #endif
 #else
 /* unfortunately I have to declare all of them, because there is a limit
@@ -202,7 +237,7 @@ struct dmResources {
 {"daemonMode",	"DaemonMode",	DM_BOOL,	(char **) &daemonMode,
 				"true"},
 {"pidFile",	"PidFile",	DM_STRING,	&pidFile,
-				""},
+				DEF_PID_FILE},
 {"lockPidFile",	"LockPidFile",	DM_BOOL,	(char **) &lockPidFile,
 				"true"},
 {"authDir",	"authDir",	DM_STRING,	&authDir,
@@ -286,7 +321,7 @@ struct displayResource sessionResources[] = {
 {"xrdb",	"Xrdb",		DM_STRING,	boffset(xrdb),
 				XRDB_PROGRAM},
 {"setup",	"Setup",	DM_STRING,	boffset(setup),
-				""},
+				DEF_SETUP},
 {"startup",	"Startup",	DM_STRING,	boffset(startup),
 				""},
 {"reset",	"Reset",	DM_STRING,	boffset(reset),
