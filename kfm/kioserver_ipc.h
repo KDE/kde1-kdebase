@@ -4,13 +4,17 @@
 
 #ifndef KIOSlaveIPC_h
 #define KIOSlaveIPC_h
-#include <qobject.h>
-#include <ksock.h>
+
 #include <ctype.h>
-#include "kfmipc.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+
+#include <qobject.h>
+#include <ksock.h>
+
+#include "kfmipc.h"
+
 
 class KIOSlaveIPC : public QObject
 {
