@@ -336,8 +336,8 @@ int KiKbdAddDialog::exec(const QStrList& toAdd)
   maps->setCurrentItem(prefIndex);
   QListBox *box = maps->listBox();
   if(box) {
-    maps->listBox()->setCurrentItem(prefIndex);
-    maps->listBox()->centerCurrentItem();
+    box->setCurrentItem(prefIndex);
+    box->centerCurrentItem();
   }
   setInfo(prefIndex);
   

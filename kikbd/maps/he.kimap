@@ -1,11 +1,13 @@
 # KDE Config File
 [International Keyboard]
-Authors=Lars Knoll <knoll@mpi-hd.mpg.de>
-Comment=Hebrew Keyboard
-Long Comment=Hebrew Keyboard Setting
+Authors=Lars Knoll <knoll@mpi-hd.mpg.de>,
+
 Language=Hebrew
+Language[ru]=Еврейский
+
 Label=He
 Locale=he
+
 [KeyboardMap]
 CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m,semicolon,apostrophe,comma,dot,slash,`
 keysym0=q,slash,q,q,Q,
