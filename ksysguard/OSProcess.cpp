@@ -51,6 +51,7 @@
 #include <ctype.h>
 #include <dirent.h>
 #include <pwd.h>
+#include <errno.h>
 
 #include <kapp.h>
 
@@ -119,16 +120,7 @@ OSProcess::read(const void* info)
 	if((fd = fopen(buf, "r")) == 0)
 	{
 		error = true;
-		/*
-		 * If we cannot read /proc/xxx/status we need to check whether the
-		 * process is still alive. If so, this is realy an error. Otherwise
-		 * the process probably has died during the calling of this function.
-		 */
-		if (kill(pid, 0) == 0)
-			errMessage.sprintf(i18n("Cannot open %s!\n"), buf.data());
-		else
-			errMessage.sprintf(i18n("The Process has been terminated!\n"));
-
+		errMessage.sprintf(i18n("Cannot open %s!\n"), buf.data());
 		return (false);
 	}
 
@@ -316,7 +308,7 @@ OSProcess::read(const char* info)
 bool
 OSProcess::exists(void) const
 {
-	return (kill(pid, 0) == 0);
+	return ((kill(pid, 0) == 0) || (errno == EPERM));
 }
 
 bool

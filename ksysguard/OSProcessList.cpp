@@ -81,6 +81,7 @@ OSProcessList::OSProcessList()
 	closedir(dir);
 }
 
+#include <unistd.h>
 
 bool
 OSProcessList::update(void)
@@ -114,20 +115,9 @@ OSProcessList::update(void)
 			if (!ps || !ps->ok())
 			{
 				/*
-				 * Maybe the process disappeard while we were reading it's 
-				 * information. If it's still there this is really an error.
+				 * Probably the process has just died or /proc/xxx/... hasn't
+				 * been established yet.
 				 */
-				if (ps->exists())
-				{
-					error = true;
-					if (ps)
-						errMessage = ps->getErrMessage();
-					else
-						errMessage = i18n("Cannot read status of processes\n"
-										  "from /proc/... directories!\n");
-					delete ps;
-					return (false);
-				}
 				delete ps;
 			}
 			else

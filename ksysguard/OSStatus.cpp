@@ -149,6 +149,7 @@ OSStatus::getCpuLoad(int& user, int& sys, int& nice, int& idle)
 	 *
 	 * SMP systems will have cpu1 to cpuN lines right after the cpu info. The
 	 * format is identical to cpu and reports the information for each cpu.
+	 * Linux kernels <= 2.0 do not provide this information!
 	 *
 	 * The /proc/stat file looks like this:
 	 *
