@@ -155,9 +155,10 @@ msgstr ""
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
 "(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
+"(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
 "\n"
 "Emulacija terminala za KDE\n"
-"raðena po rxvt-2.08 Roberta Nationa."
+"bazirana na rxvt-2.08 Roberta Nationa."
 
 #: main.C:897 main.C:1036
 msgid "&Show"
@@ -300,7 +301,7 @@ msgstr ""
 
 #: main.C:1501
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr "-sl <broj>\t\t  spremi <broj> zadnjih linija u meðumemoriju\n"
+msgstr "-sl <broj>\t\t  spremi broj zadnji linija u meðumemoriju\n"
 
 #: main.C:1502
 msgid ""
