@@ -15,6 +15,7 @@ In 0.10:
   patchlevel 17:
        - fixed a serious bug (crashing clients when dragging in 
          opaque mode)
+       - tiny fix for gravity handling
 
   patchlevel 16:
        - fix for "move" via keyboard (pointer warp)

@@ -336,7 +336,7 @@ bool resizedrag(Client *c, int mode){
     case 8:
       return sweepdrag(c,NULL,resizecalc_b);
     }
-
+    return false;
 }
 
 

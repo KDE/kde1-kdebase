@@ -1454,8 +1454,8 @@ void Manager::gravitate(Client* c, bool invert){
   if (c->size.flags & PWinGravity)
     gravity = c->size.win_gravity;
   
-  //  delta = c->border-BORDER;
-  delta = BORDER;
+  delta = BORDER - 1;
+
   switch (gravity) {
   case NorthWestGravity:
     dx = 0;
