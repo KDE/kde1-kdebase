@@ -83,7 +83,7 @@ msgid ""
 msgstr ""
 "Symbol \"%s\" nicht gefunden.\n"
 "Vielleicht passen Ihre Standard X Codes nicht.\n"
-"Sie können die X Xodes unter \"Erweitert\"\n"
+"Sie können die X codes unter \"Erweitert\"\n"
 "im Konfigurationsprogramm voreinstellen."
 
 #: keymap.cpp:233
