@@ -365,7 +365,7 @@ msgstr ""
 "Skontaktuj siê ze swoim administratorem."
 
 #: main.cpp:427
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
@@ -374,7 +374,6 @@ msgstr ""
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
 #: main.cpp:430
-#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -407,6 +406,7 @@ msgstr ""
 "  -nice num         Uruchamia z okre¶lon± warno¶ci± nice\n"
 "\n"
 "  -preview wid      Uruchamia w okre¶lonym XWindow\n"
+"  -inroot           Uruchamia w oknie g³ównym\n"
 "  -setup            Ustawienia wygaszacza ekranu\n"
 "  -test             Uruchamia wygaszacz ekranu natychmiast\n"
 
@@ -609,7 +609,7 @@ msgstr ""
 "Wersja dla kscreensave od Emanuel Pirker."
 
 # Polish translation of KDE klock
-# Version 0.1.1
+# Version 0.1.2
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #~ msgid "(none)"
 #~ msgstr "(brak)"

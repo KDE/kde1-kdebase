@@ -291,7 +291,7 @@ msgid "Display settings"
 msgstr "Ustawienia wy¶wietlania"
 
 # Polish translation of KDE kdisplay
-# Version 0.2.0
+# Version 0.3.0
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #~ msgid "(none)"
 #~ msgstr "(brak)"

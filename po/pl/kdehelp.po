@@ -292,15 +292,12 @@ msgid "&Save Options"
 msgstr "&Zapisz opcje"
 
 #: mainwidget.cpp:183
-#, fuzzy
 msgid "KDE Help System\n"
-msgstr ""
-"KDE System Pomocy\n"
-"Wersja "
+msgstr "KDE System Pomocy\n"
 
 #: mainwidget.cpp:184
 msgid "Version "
-msgstr ""
+msgstr "Wersja"
 
 #: mainwidget.cpp:186
 msgid ""
@@ -402,7 +399,7 @@ msgid "&Add Bookmark"
 msgstr "&Dodaj zak³adkê"
 
 # Polish translation of KDE kdehelp
-# Version 0.2.1
+# Version 0.3.0
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #~ msgid "Open"
 #~ msgstr "&Otwórz"
@@ -410,20 +407,5 @@ msgstr "&Dodaj zak³adkê"
 #~ msgid "Cancel"
 #~ msgstr "A&nuluj"
 
-#~ msgid " Location:"
-#~ msgstr " Lokacja:"
-
-#~ msgid "KDE Help"
-#~ msgstr "KDE Pomoc"
-
-#~ msgid "Waiting for kmail to be finished..."
-#~ msgstr "Poczekaj, a¿ kmail bêdzie ukoñczony..."
-
 #~ msgid "Ok"
 #~ msgstr "O&k"
-
-#~ msgid "&Using KDE Help"
-#~ msgstr "&U¿ycie KDE Pomoc"
-
-#~ msgid "&About"
-#~ msgstr "&Informacje"

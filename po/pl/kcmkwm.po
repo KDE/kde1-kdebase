@@ -14,8 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-# Polish translation of KDE kcmsample
-# Version 0.1.0
+# Polish translation of KDE kcmkwm
+# Version 0.1.1
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #: main.cpp:55
 msgid "&Windows"

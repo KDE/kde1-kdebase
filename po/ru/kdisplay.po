@@ -61,8 +61,8 @@ msgstr "Изменять размер"
 msgid "Browse..."
 msgstr "Просмотреть..."
 
-#: backgnd.cpp:489
 #
+#: backgnd.cpp:489
 msgid "Default"
 msgstr "По умолчанию"
 
@@ -270,18 +270,18 @@ msgstr "Наклонный"
 msgid "Charset:"
 msgstr "Кодировка:"
 
-#: main.cpp:61
 #
+#: main.cpp:61
 msgid "&Background"
 msgstr "Фон"
 
-#: main.cpp:64
 #
+#: main.cpp:64
 msgid "&Colors"
 msgstr "Цвет"
 
-#: main.cpp:67
 #
+#: main.cpp:67
 msgid "&Screensaver"
 msgstr "Хранитель экрана"
 
@@ -289,8 +289,8 @@ msgstr "Хранитель экрана"
 msgid "&Style"
 msgstr "Стиль"
 
-#: main.cpp:105
 #
+#: main.cpp:105
 msgid "Display settings"
 msgstr "Настройка дисплея"
 

@@ -21,8 +21,8 @@ msgstr " Расширенный "
 msgid " Date Modified "
 msgstr " Дата изменения "
 
-#: kftabdlg.cpp:94
 #
+#: kftabdlg.cpp:94
 msgid " Name& Location "
 msgstr " Имя Расположение "
 
@@ -38,8 +38,8 @@ msgstr ""
 msgid "About &Qt"
 msgstr ""
 
-#: kfindtop.cpp:137
 #
+#: kfindtop.cpp:137
 msgid "&Add to archive"
 msgstr "Добавить в архив"
 
@@ -55,18 +55,18 @@ msgstr "Просмотр ..."
 msgid "&Containing Text:"
 msgstr "Содержит текст:"
 
-#: kfindtop.cpp:162
 #
+#: kfindtop.cpp:162
 msgid "&Copy"
 msgstr "Копировать"
 
-#: kfindtop.cpp:160
 #
+#: kfindtop.cpp:160
 msgid "&Cut"
 msgstr "Вырезать"
 
-#: kfindtop.cpp:140
 #
+#: kfindtop.cpp:140
 msgid "&Delete"
 msgstr "Удалить"
 
@@ -82,8 +82,8 @@ msgstr "Файл"
 msgid "&Help"
 msgstr "Помощь"
 
-#: kfindtop.cpp:167
 #
+#: kfindtop.cpp:167
 msgid "&Invert Selection"
 msgstr "Инвертировать выделение"
 
@@ -95,8 +95,8 @@ msgstr "Искать в:"
 msgid "&Named:"
 msgstr "Имя:"
 
-#: kfindtop.cpp:135
 #
+#: kfindtop.cpp:135
 msgid "&Open"
 msgstr "Открыть"
 
@@ -104,28 +104,28 @@ msgstr "Открыть"
 msgid "&Options"
 msgstr "Опции"
 
-#: kfindtop.cpp:178
 #
+#: kfindtop.cpp:178
 msgid "&Preferences ..."
 msgstr "Установки..."
 
-#: kfindtop.cpp:142
 #
+#: kfindtop.cpp:142
 msgid "&Properties"
 msgstr "Свойства"
 
-#: kfindtop.cpp:151
 #
+#: kfindtop.cpp:151
 msgid "&Quit"
 msgstr "Выйти"
 
-#: kfindtop.cpp:148
 #
+#: kfindtop.cpp:148
 msgid "&Save Search"
 msgstr "Сохранить поиск"
 
-#: kfindtop.cpp:165
 #
+#: kfindtop.cpp:165
 msgid "&Select All"
 msgstr "Выделить все"
 
@@ -133,8 +133,8 @@ msgstr "Выделить все"
 msgid "&Size is:"
 msgstr "Размер:"
 
-#: kfindtop.cpp:157
 #
+#: kfindtop.cpp:157
 msgid "&Undo"
 msgstr "Откат"
 
@@ -236,8 +236,8 @@ msgstr "Формат файла:"
 msgid "Find all files created or &modified:"
 msgstr "Найти все файлы, созданные или измененные:"
 
-#: kfindtop.cpp:252
 #
+#: kfindtop.cpp:252
 msgid "Help"
 msgstr "Помощь"
 
@@ -265,8 +265,8 @@ msgstr ""
 msgid "It wasn't possible to save results!"
 msgstr "Невозможно сохранить результат!"
 
-#: kfindtop.cpp:122
 #
+#: kfindtop.cpp:122
 msgid ""
 "KFind %s\n"
 "Frontend to find utility\n"
@@ -285,8 +285,8 @@ msgstr ""
 msgid "KFind Results File"
 msgstr "Файл результатов KFind"
 
-#: kfindtop.cpp:182
 #
+#: kfindtop.cpp:182
 msgid "Kfind &help"
 msgstr "Помощь Kfind"
 
@@ -308,8 +308,8 @@ msgstr "Типа:"
 msgid "Open"
 msgstr "Открыть"
 
-#: kfindtop.cpp:145
 #
+#: kfindtop.cpp:145
 msgid "Open Containing &Folder"
 msgstr "Открыть папку, в которой содержится файл"
 

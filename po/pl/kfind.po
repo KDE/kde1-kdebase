@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=\n"
 "Date: 1997-10-01 16:40:07+0200\n"
 "From: root <flidr@CyberGate.zcu.cz>\n"
+"Content-Type: text/plain; charset=\n"
 "Xgettext-Options: -s -C -ktranslate\n"
 "Files: kfarch.cpp kfdird.cpp kfind.cpp kfindtop.cpp kfoptions.cpp kfsave.cpp "
 "kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp "
 "mkfindtop.cpp mkfoptions.cpp mkftabdlg.cpp mkfwin.cpp\n"
 
 # Polish translation of KDE kfind
-# Version 0.2.0
+# Version 0.2.1
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #: kftabdlg.cpp:214
 msgid " Advanced "

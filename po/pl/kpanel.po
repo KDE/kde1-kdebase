@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: ENCODING\n"
 
 # Polish translation of KDE kpanel
-# Version 0.3.0
+# Version 0.4.0
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #: kpanel.C:206
 msgid "Move"
@@ -35,7 +35,7 @@ msgstr "Id¼!"
 
 #: kpanel.C:240 tools.C:787
 msgid "Where do you want to go tomorrow?"
-msgstr ""
+msgstr "Where do you want to go tommorow?"
 
 #: kpanel.C:313
 msgid "No info available"
