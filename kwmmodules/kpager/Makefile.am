@@ -1,29 +1,16 @@
 
 INCLUDES = $(all_includes)
 
-LDFLAGS	= $(all_libraries) $(KDE_RPATH)
-LDADD = $(LIB_KFILE) $(LIB_KIMGIO) 
+kpager_LDFLAGS	= $(all_libraries) $(KDE_RPATH)
+kpager_LDADD    = $(LIB_KFILE) $(LIB_KIMGIO) 
 
 kpager_SOURCES = windowdrag.cpp ktrianglebutton.cpp desktop.cpp kpagerclient.cpp kpager.cpp main.cpp
 
-noinst_HEADERS = *.h
+kpager_METASOURCES = USE_AUTOMOC 
 
-SRCMETA = ktrianglebutton.moc kpagerclient.moc kpager.moc desktop.moc
-
-DISTCLEANFILES = $(SRCMETA) ./.deps/* ./.deps/.P
+DISTCLEANFILES = $(kpager_METASOURCES) ./.deps/* ./.deps/.P
 
 bin_PROGRAMS = kpager
-
-%.moc: %.h
-	$(MOC) $< -o $@
-
-kpager.cpp:kpager.moc
-
-kpagerclient.cpp:kpagerclient.moc
-
-desktop.cpp:desktop.moc
-
-ktrianglebutton.cpp:ktrianglebutton.moc
 
 applnk_DATA = kpager.kdelnk
 applnkdir = $(kde_appsdir)/System

@@ -21,12 +21,12 @@
  *   or to Antonio Larrosa, Rio Arnoya, 10 5B, 29006 Malaga, Spain
  *
  */
-#include "kpagerclient.moc"
 
 #include <stdio.h>
 #include <qstring.h>
 #include <qpainter.h>
 #include <unistd.h>
+#include "kpagerclient.h"
 
 //#define KPAGERCLIENTDEBUG
 

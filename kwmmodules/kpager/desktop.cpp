@@ -22,9 +22,9 @@
  *
  */
 #include <qdir.h>
-#include "desktop.moc"
 #include <qpainter.h>
 #include <stdio.h>
+#include "desktop.h"
 
 //#define DESKTOPDEBUG
 //#define DESKTOPDEBUG2

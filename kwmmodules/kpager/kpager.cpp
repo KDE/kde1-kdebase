@@ -21,7 +21,6 @@
  *   or to Antonio Larrosa, Rio Arnoya, 10 5B, 29006 Malaga, Spain
  *
  */
-#include "kpager.moc"
 
 #include <stdio.h>
 #include <qstring.h>
@@ -31,6 +30,7 @@
 #include <kaccel.h>
 #include <kpopmenu.h>
 #include "version.h"
+#include "kpager.h"
 
 //#define KPAGERDEBUG
 
