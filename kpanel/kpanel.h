@@ -203,12 +203,16 @@ public:
   void call_help();
   void call_klock();
 
-  void hidePanel ();
-  void showPanel ();
+  void hidePanelLeft ();
+	void hidePanelRight();
+  void showPanelFromLeft ();
+	void showPanelFromRight();
+
   void miniButtons (int); // sven
   void desktop_change(int);
 
   void standalonePanelButtonClicked();
+  void standalonePanelButton2Clicked();
 
   void configurePanel();
   void editMenus();
@@ -270,7 +274,10 @@ private:
   QPushButton *lock_button;
   QPushButton *panel_button;
   QPushButton *panel_button_standalone;
+  QPushButton *panel_button2;
+  QPushButton *panel_button_standalone2;
   QFrame *panel_button_frame_standalone;
+  QFrame *panel_button_frame_standalone2;
   QPushButton *mock_button;
 
   QButtonGroup *taskbar;

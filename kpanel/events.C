@@ -337,9 +337,9 @@ void kPanel::kwmDesktopChange(int nd){
   }
 
   if (panelHidden[currentDesktop])
-    hidePanel();
+    hidePanelLeft();
   else
-    showPanel();
+    showPanelFromLeft();
 
 }
 
@@ -361,9 +361,9 @@ void kPanel::kwmCommandReceived(QString com){
   }
 
   if (com == "kpanel:hide")
-    hidePanel ();
+    hidePanelLeft ();
   if (com == "kpanel:show")
-    showPanel ();
+    showPanelFromLeft ();
   if (com == "kpanel:system")
     showSystem ();
 
@@ -741,7 +741,12 @@ void kPanel::hideTimerDone(){
 
 void kPanel::standalonePanelButtonClicked(){
   enterEvent(0);
-  showPanel();
+  showPanelFromLeft();
+}
+
+void kPanel::standalonePanelButton2Clicked(){
+  enterEvent(0);
+  showPanelFromRight();
 }
 
 void kPanel::mousePressEvent( QMouseEvent*  ev  ){

@@ -393,7 +393,16 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     panel_button->installEventFilter( this );
 
     connect( panel_button, SIGNAL(clicked()),
-	     SLOT(hidePanel()) );
+	     SLOT(hidePanelLeft()) );
+
+	panel_button2 = new QPushButton("panel2", this );
+	panel_button2->setFocusPolicy( NoFocus );
+	panel_button2->setMouseTracking( true );
+	QToolTip::add( panel_button2, klocale->translate( "Hide the panel" ) );
+	panel_button2->installEventFilter( this );
+
+	connect( panel_button2, SIGNAL( clicked() ),
+			 SLOT( hidePanelRight() ) );
 
     panel_button_frame_standalone  = new QFrame(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool );
     panel_button_frame_standalone->setMouseTracking(true);
@@ -406,6 +415,18 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
     connect( panel_button_standalone, SIGNAL(clicked()),
 	     SLOT(standalonePanelButtonClicked()) );
+
+    panel_button_frame_standalone2  = new QFrame(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool );
+    panel_button_frame_standalone2->setMouseTracking(true);
+    panel_button_frame_standalone2->installEventFilter( this );
+    panel_button_standalone2  = new QPushButton("panel", panel_button_frame_standalone2);
+    QToolTip::add(panel_button_standalone2, klocale->translate("Show the panel"));
+    panel_button_standalone2->setFocusPolicy(NoFocus);
+    panel_button_standalone2->setMouseTracking(true);
+    panel_button_standalone2->installEventFilter( this );
+
+    connect( panel_button_standalone2, SIGNAL(clicked()),
+	     SLOT(standalonePanelButton2Clicked()) );
 
     if (orientation == horizontal){
 
@@ -511,7 +532,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 				   5 * box_width,
 // 				   w/2 - (2 * box_width + 1 + desktopbar->width())/2,
 				   margin,
-				   2*box_width + 1 + desktopbar->width(),
+				   2*box_width + 1 + desktopbar->width() - 12,
 				   box_height);
 
 	
@@ -523,6 +544,10 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 				12,
 				box_height+2*margin);
 
+	  panel_button2->setGeometry( w - margin-12, 0, 12,
+								  box_height+2*margin );
+
+
       kde_button->setGeometry(panel_button->x()+panel_button->width()
 			      + box_width,
 			      margin?margin:1,
@@ -532,7 +557,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       bound_bottom_right = control_group->x() + control_group->width();
 
       if (label_date_visible)
-	label_date->setGeometry(w - margin - label_date->width() - 5,
+	label_date->setGeometry(w - margin - label_date->width() - 5 - panel_button2->width(),
 				3,
 				label_date->width(),
 				box_height+2*margin-6);
@@ -597,6 +622,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 				box_width + 2*margin,
 				12);
 
+	  panel_button2->setGeometry( 0, h-12, box_width + 2*margin, 12 );
+
       kde_button->setGeometry(margin?margin:1,
  			      panel_button->y()+panel_button->height()
 			      + box_height,
@@ -609,7 +636,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
       if (label_date_visible)
 	label_date->setGeometry(3,
-				h - margin - 2*label_date->height() -5,
+				h - margin - 2*label_date->height() -5 - panel_button2->height(),
 				box_width+2*margin-6,
 				2*label_date->height());
 
@@ -711,6 +738,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       m.rotate((orientation == horizontal)?0:90);
       panel_button->setPixmap(pm.xForm(m));
       panel_button_standalone->setPixmap(pm2.xForm(m));
+	  panel_button2->setPixmap(pm2.xForm(m));
+	  panel_button_standalone2->setPixmap(pm.xForm(m));
     }
 
     if (margin == 0){
@@ -727,6 +756,11 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 					       panel_button->height());
     panel_button_standalone->setGeometry(0,0,panel_button->width(), panel_button->height());
 
+	panel_button_frame_standalone2->setGeometry(width() - panel_button2->width(),
+												y() + panel_button2->y(),
+												panel_button2->width(),
+												panel_button2->height() );
+	panel_button_standalone2->setGeometry(0, 0, panel_button2->width(), panel_button2->height());
 
     taskbar_frame->hide();
 
@@ -1163,7 +1197,7 @@ void kPanel::show(){
 
 extern bool in_animation;
 
-void kPanel::hidePanel(){
+void kPanel::hidePanelLeft(){
   Bool old = panelHidden[currentDesktop];
 
   panelHidden[currentDesktop] = True;
@@ -1203,12 +1237,12 @@ void kPanel::hidePanel(){
 	    qApp->processEvents();
 	}
     } else {
-      for (int i = 0; i<geom.width(); i+=PANEL_SPEED(i,geom.width())){
-	    move(geom.x()-i, geom.y());
-	    qApp->syncX();
-	    qApp->processEvents();
+		for (int i = 0; i<geom.width(); i+=PANEL_SPEED(i,geom.width())){
+			move(geom.x()-i, geom.y());
+			qApp->syncX();
+			qApp->processEvents();
+		}
 	}
-    }
     QFrame::hide();
     move(geom.x(), geom.y());
     in_animation = false;
@@ -1224,7 +1258,7 @@ void kPanel::hidePanel(){
    }
   
   if (!panelHidden[currentDesktop]){
-     showPanel();
+     showPanelFromLeft();
      return;
   }
   
@@ -1240,7 +1274,84 @@ void kPanel::hidePanel(){
   }
 }
 
-void kPanel::showPanel(){
+void kPanel::hidePanelRight(){
+  Bool old = panelHidden[currentDesktop];
+
+  panelHidden[currentDesktop] = True;
+  
+  if (in_animation)
+      return;
+
+  if (!panelCurrentlyHidden){
+    QPoint p = pos();
+    if (autoHidden){
+      if (orientation == horizontal){
+	if (position == top_left)
+	  p.setY(y()+height()-4);
+	else
+	  p.setY(y()-height()+4);
+      }
+      else {
+	if (position == top_left)
+	  p.setX(x()+width()-4);
+	else
+	  p.setX(x()-width()+4);
+      }
+    }
+    panel_button_frame_standalone2->setGeometry(width() - panel_button2->width(),
+					       p.y() + panel_button2->y(),
+					       panel_button2->width(),
+					       panel_button2->height());
+    panelCurrentlyHidden = True;
+
+    QRect geom = geometry();
+    in_animation = true;
+
+    if (orientation == vertical) {
+      for (int i = 0; i<geom.height(); i+=PANEL_SPEED(i,geom.height())){
+	    move(geom.x(), geom.y()+i);
+	    qApp->syncX();
+	    qApp->processEvents();
+	}
+    } else {
+      for (int i = 0; i<geom.width(); i+=PANEL_SPEED(i,geom.width())){
+	    move(geom.x()+i, geom.y());
+	    qApp->syncX();
+	    qApp->processEvents();
+	}
+    }
+    QFrame::hide();
+    move(geom.x(), geom.y());
+    in_animation = false;
+
+
+    showMiniPanel();
+    panel_button_frame_standalone2->show();
+    panel_button_frame_standalone2->raise();
+
+
+    doGeometry();
+    layoutTaskbar (); //geometry changed
+   }
+  
+  if (!panelHidden[currentDesktop]){
+     showPanelFromRight();
+     return;
+  }
+  
+  if (old != panelHidden[currentDesktop]){
+    KConfig *config = KApplication::getKApplication()->getConfig();
+    config->setGroup("kpanel");
+    QString a;
+    int i;
+    for (i=1;i<=8;i++)
+      a.append(panelHidden[i]?"1":"0");
+    config->writeEntry("PanelHidden", a);
+    config->sync();
+  }
+}
+
+void kPanel::showPanelFromLeft(){
   Bool old = panelHidden[currentDesktop];
 
   panelHidden[currentDesktop] = False;
@@ -1280,7 +1391,7 @@ void kPanel::showPanel(){
   layoutTaskbar();
 
   if (panelHidden[currentDesktop]){
-     hidePanel();
+     hidePanelLeft();
      return;
   }
 
@@ -1296,6 +1407,64 @@ void kPanel::showPanel(){
   }
   KWM::sendKWMCommand("moduleRaised");
 }
+
+void kPanel::showPanelFromRight(){
+  Bool old = panelHidden[currentDesktop];
+
+  panelHidden[currentDesktop] = False;
+  if (in_animation)
+      return;
+
+  panel_button_frame_standalone2->hide();
+
+
+  if (panelCurrentlyHidden){
+    panelCurrentlyHidden = False;
+    raise();
+
+    QRect geom = geometry();
+    in_animation = true;
+    move(-10000, -10000);
+    QFrame::show();
+    if (orientation == vertical) {
+      for (int i = geom.height(); i>0;i-=PANEL_SPEED(i,geom.height())){
+	    move(geom.x(), geom.y()+i);
+	    qApp->syncX();
+	    qApp->processEvents();
+	}
+    } else {
+      for (int i = geom.width(); i>0;i-=PANEL_SPEED(i,geom.width())){
+	    move(geom.x()+i, geom.y());
+	    qApp->syncX();
+	    qApp->processEvents();
+	}
+    }
+    move(geom.x(), geom.y());
+    in_animation = false;
+
+  }
+  hideMiniPanel();
+  doGeometry();
+  layoutTaskbar();
+
+  if (panelHidden[currentDesktop]){
+     hidePanelRight();
+     return;
+  }
+
+  if (old != panelHidden[currentDesktop]){
+    KConfig *config = KApplication::getKApplication()->getConfig();
+    config->setGroup("kpanel");
+    QString a;
+    int i;
+    for (i=1;i<=8;i++)
+      a.append(panelHidden[i]?"1":"0");
+    config->writeEntry("PanelHidden", a);
+    config->sync();
+  }
+  KWM::sendKWMCommand("moduleRaised");
+}
+
 
 
 void kPanel::doGeometry (bool do_not_change_taskbar) {
