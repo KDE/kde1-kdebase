@@ -21,7 +21,7 @@ Information about PAM may be found on its homepage
 *
 * IMPORTANT: compiling KDE with PAM support on RedHat 5.0 Linux
 * (libc6=glibc2) systems, using the supplied gcc-2.7.2.3 compiler, 
-* is  *NOT RECOMENDED*.
+* is  *NOT RECOMMENDED*.
 *
 * Instead use the egcs-1.0.2 (or higher) compiler on RedHat 5.x.  
 *
@@ -29,7 +29,7 @@ Information about PAM may be found on its homepage
 * *NOT* work with the pam_pwdb.so modules used by xdm in RedHat 5.0.
 * (symptom: X display crashes, /var/log/xdm-error.log reports
 * "... Unknown session exit code 2816 ....").   
-* Howvever, this compiler works fine for compiling KDE  without PAM support.
+* However, this compiler works fine for compiling KDE  without PAM support.
 *
 * This problem in *NOT PRESENT* in Red Hat 4.x systems (libc5): 
 * On these systems you may safely compile KDE with PAM support
@@ -88,7 +88,7 @@ so KDE uses a PAM service called "kde", and make a symlink
 ln -s ./xdm /etc/pam.d/kde,  (assuming xdm is PAM-configured).
 
 You can later customize your system  by creating your 
-own /etc/pam.d/kde.   A sample (for RedHat LInux 5.x) is
+own /etc/pam.d/kde.   A sample (for RedHat Linux 5.x) is
 provided as kdebase/kde.pamd
 
 PAM writes entries to the system log identified by the PAM service
