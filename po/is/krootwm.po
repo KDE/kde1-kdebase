@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1999-01-30 01:12+0100\n"
-"PO-Revision-Date: 1998-10-26 23:41+0200\n"
+"PO-Revision-Date: 1998-02-13 10:40+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
 
@@ -102,7 +102,7 @@ msgstr "Sýsla með bókamerki"
 
 #: krootwm.C:395 krootwm.C:833
 msgid "Folder"
-msgstr "Möppu"
+msgstr "Mappa"
 
 #: krootwm.C:399
 #, c-format

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1999-02-09 01:13+0100\n"
-"PO-Revision-Date: 1998-12-31-21:12+0200\n"
+"PO-Revision-Date: 1999-02-13-10:30+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is <kde-isl@mmedia.is>\n"
 
@@ -1165,8 +1165,10 @@ msgid ""
 "%s\n"
 "Perhaps wrong password"
 msgstr ""
-"Ekki tókst að stimpla inn á\n"
+"Innstimplun á tölvuna\n"
 "%s\n"
+"mistókst.\n"
+"\n"
 "Hugsanlega var gefið upp rangt lykilorð"
 
 #: kiojob.cpp:1383

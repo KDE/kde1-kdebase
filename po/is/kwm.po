@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1998-10-21 20:41+0200\n"
+"PO-Revision-Date: 1999-02-13 10:41+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
 
@@ -22,7 +22,7 @@ msgstr "kwm: villa í frumstillingu. Hætt við!\n"
 
 #: main.C:527
 msgid "Preparing session ... "
-msgstr "Undirbý setu..."
+msgstr "Geng frá setu..."
 
 #: main.C:551
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"

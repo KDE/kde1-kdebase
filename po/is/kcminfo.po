@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1998-12-12 15:11+0100\n"
-"PO-Revision-Date: 1998-10-19 22:00+0200\n"
+"PO-Revision-Date: 1999-02-13 10:42+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
 
@@ -83,7 +83,7 @@ msgstr "Ekki tókst að opna fstab skrána!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
-msgstr "Tæki"
+msgstr "Reklar"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
@@ -155,7 +155,7 @@ msgstr "&Hljóð"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr "&Tæki"
+msgstr "R&eklar"
 
 #: main.cpp:103
 msgid "S&CSI"

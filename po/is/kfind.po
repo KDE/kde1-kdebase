@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1998-10-05 01:30+0200\n"
+"PO-Revision-Date: 1999-02-13 10:45+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
 
@@ -58,7 +58,7 @@ msgstr "&Víxla vali"
 
 #: kfindtop.cpp:174
 msgid "&Preferences ..."
-msgstr "&Stillingar ..."
+msgstr "&Stillingar..."
 
 #: kfindtop.cpp:179
 #, c-format
@@ -111,7 +111,7 @@ msgstr "&Leita í:"
 
 #: kftabdlg.cpp:78
 msgid "&Browse ..."
-msgstr "&Flakka ..."
+msgstr "&Flakka..."
 
 #: kftabdlg.cpp:84
 msgid "Include &subfolders"
@@ -259,15 +259,15 @@ msgstr "Vista"
 
 #: kfoptions.cpp:130
 msgid "Create Archive:"
-msgstr "Búa til:"
+msgstr "Búa til"
 
 #: kfoptions.cpp:132
 msgid "Add to Archive:"
-msgstr "Bæta við:"
+msgstr "Viðbót"
 
 #: kfoptions.cpp:136
 msgid "Patterns:"
-msgstr "Mynstur:"
+msgstr "Síur"
 
 #: kfoptions.cpp:139
 msgid "Add New"

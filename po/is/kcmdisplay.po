@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1999-02-06 01:16+0100\n"
-"PO-Revision-Date: 1998-11-11 11:11+0100\n"
+"PO-Revision-Date: 1999-02-11 10:40+0100\n"
 "Language-Team: is\n"
 " (yes, really)Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 
@@ -518,7 +518,7 @@ msgstr "Stíll"
 # general.cpp:229
 #: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
-msgstr "Teikna græjur eins og &indows 95"
+msgstr "Teikna græjur eins og &Windows 95"
 
 # general.cpp:245
 #: general.cpp:245

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1999-01-12 01:14+0100\n"
-"PO-Revision-Date: 1998-11-08 14:17+0100\n"
+"PO-Revision-Date: 1999-02-13 10:40+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: isn\n"
 
@@ -38,7 +38,7 @@ msgstr "Stillingar KDM"
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
-msgstr "Þú hefur ekki les/skrif heimildiað KDM stilliskránni."
+msgstr "Þú hefur ekki les/skrif heimild að KDM stilliskránni."
 
 #: main.cpp:154
 msgid "Missing privileges"
