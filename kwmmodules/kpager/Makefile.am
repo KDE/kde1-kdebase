@@ -2,7 +2,7 @@
 INCLUDES = $(all_includes)
 
 LDFLAGS	= $(all_libraries) $(KDE_RPATH)
-LDADD = -lkdeui -lkdecore -lkfile -lkfm -lqt -lXext -lX11 $(LIBJPEG)
+LDADD = -lkdeui -lkdecore -lkfile -lkfm -lqt -lXext -lX11 $(LIBJPEG) $(LIBSOCKET)
 
 kpager_SOURCES = jpeg.cpp windowdrag.cpp ktrianglebutton.cpp desktop.cpp kpagerclient.cpp kpager.cpp main.cpp
 

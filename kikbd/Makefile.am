@@ -77,3 +77,11 @@ kikbd.moc.h: kikbd.h
 	$(MOC) -o $@ $<
 kikbdconf.moc.h: kikbdconf.h
 	$(MOC) -o $@ $<
+kconfobjs.cpp:kconfobjs.moc.h
+kconfobjs.cpp:kconfobjsw.moc.h
+keymap.cpp:keymap.moc.h
+kikbd.cpp:kikbd.moc.h
+kikbdconf.cpp:kikbdconf.moc.h
+kobjconf.cpp:kobjconf.moc.h
+widgets.cpp:widgets.moc.h   
+

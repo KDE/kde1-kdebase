@@ -30,6 +30,9 @@
 #include<stdio.h>
 #include<assert.h>
 
+#include<config.h>
+#include<sys/types.h>
+
 #include"qimage.h"
 #include"qdstream.h"
 #include"qcolor.h"
