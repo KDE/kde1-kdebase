@@ -114,11 +114,13 @@ void Properties::slotApply()
 
     // make sure the desktop icon get's unselected
     emit  propertiesCancel();
+    delete this;
 }
 
 void Properties::slotCancel(){
    
   emit  propertiesCancel();
+  delete this;
 }
 
 void Properties::insertPages()

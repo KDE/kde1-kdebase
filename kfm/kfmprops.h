@@ -1,5 +1,5 @@
 /*
-  This file holfd the definitions for all classes used to
+  This file holds the definitions for all classes used to
   display a properties dialog.
   */
 
@@ -130,6 +130,8 @@ protected:
 /**
   This one is visible to the one who created the dialog.
   It brings up a QTabDialog.
+  This class must be created with (void)new Properties(...)
+  It will take care of deleting itself.
   */
 class Properties : public QObject
 {
@@ -151,8 +153,8 @@ public:
     
 public slots:
     /// Called when the user presses 'Ok'.
-    void slotApply();
-    void slotCancel();
+    void slotApply();      // Deletes the Properties instance
+    void slotCancel();     // Deletes the Properties instance
 
 signals:
     /// Notify about changes in properties and rnameings.
@@ -161,7 +163,7 @@ signals:
      it would consider the renamed icon a new icon and would move it to the upper left
      corner or something like that.
      In most cases you wont need this signal because KIOManager is informed about changes.
-     This causes KFileWindow for example to reload its contents if neccessary.
+     This causes KFileWindow for example to reload its contents if necessary.
      If the name did not change, _name is 0L.
      */
     void propertiesChanged( const char *_url, const char *_new_name );
