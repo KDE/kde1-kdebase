@@ -1,40 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Date: 1998-09-30 07:19:56+0000\n"
-"From: antonio <antonio@jupiter.arrakis.es>\n"
-"Content-Type: text/plain; charset=\n"
-"Xgettext-Options: -C -ki18n -x /opt/kde/include/kde.pot\n"
-"Files: jpeg.cpp windowdrag.cpp ktrianglebutton.cpp desktop.cpp kpagerclient.cpp kpager.cpp main.cpp\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-11-27 18:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
 
-#: kpager.cpp:77 kpager.cpp:156
+#: kpager.cpp:72
+msgid "Toggle Global Desktop"
+msgstr ""
+
+#: kpager.cpp:74
+msgid "Toggle Menubar"
+msgstr ""
+
+#: kpager.cpp:84 kpager.cpp:188 kpager.cpp:323
 msgid "Hide &Global Desktop"
 msgstr ""
 
-#: kpager.cpp:79 kpager.cpp:149
+#: kpager.cpp:86 kpager.cpp:182 kpager.cpp:325
 msgid "Show &Global Desktop"
 msgstr ""
 
-#: kpager.cpp:81
+#: kpager.cpp:91 kpager.cpp:331
 msgid "Hide &Menubar"
 msgstr ""
 
-#: kpager.cpp:85
+#: kpager.cpp:95 kpager.cpp:337
+msgid "&2 Rows"
+msgstr ""
+
+#: kpager.cpp:101 kpager.cpp:344
 msgid "Plain"
 msgstr ""
 
-#: kpager.cpp:88
+#: kpager.cpp:104 kpager.cpp:346
 msgid "Icon"
 msgstr ""
 
-#: kpager.cpp:91
+#: kpager.cpp:107 kpager.cpp:348
 msgid "Pixmap"
 msgstr ""
 
-#: kpager.cpp:95
+#: kpager.cpp:111 kpager.cpp:354
 msgid "Draw Mode"
 msgstr ""
 
-#: kpager.cpp:99
+#: kpager.cpp:115
+#, c-format
 msgid ""
 "%s\n"
 "\n"
@@ -47,4 +68,28 @@ msgid ""
 "KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n"
 "This is free software, and you are welcome to redistribute it\n"
 "under certain conditions\n"
+msgstr ""
+
+#: kpager.cpp:333
+msgid "Show &Menubar"
+msgstr ""
+
+#: kpager.cpp:388
+msgid "&Maximize"
+msgstr ""
+
+#: kpager.cpp:389
+msgid "&Iconify"
+msgstr ""
+
+#: kpager.cpp:391
+msgid "&UnSticky"
+msgstr ""
+
+#: kpager.cpp:393
+msgid "&Sticky"
+msgstr ""
+
+#: kpager.cpp:395
+msgid "&To Desktop"
 msgstr ""
