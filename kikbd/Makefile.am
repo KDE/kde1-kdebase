@@ -17,7 +17,7 @@ kikbd_conf = $(kde_datadir)/kikbd
 # set the include path for X, qt and KDE
 INCLUDES= $(all_includes)
 # claim, which subdirectories you want to install
-SUBDIRS = kcmikbd doc
+SUBDIRS = kcmikbd doc maps
 
 ####### This part is very kless specific
 # you can add here more. This one gets installed 
@@ -54,8 +54,6 @@ messages:
 # if you have more of them, create a subdirectory with an extra Makefile 
 install-data-local: 
 	$(mkinstalldirs) $(kikbd_conf)
-	$(INSTALL_DATA) maps/*.kimap $(kikbd_conf)
-	$(INSTALL_DATA) maps/mkmap $(kikbd_conf)
 	$(INSTALL_DATA) kikbd.kdelnk $(kde_appsdir)/System/kikbd.kdelnk
 	$(INSTALL_DATA) mini-kikbd.xpm $(kde_minidir)/kikbd.xpm
 	$(INSTALL_DATA) kikbd.xpm $(kde_icondir)/kikbd.xpm
