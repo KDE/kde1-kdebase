@@ -1,5 +1,6 @@
 /* $XConsortium: genauth.c,v 1.18.1.1 94/11/21 19:57:04 kaleb Exp $ */
 /* $XFree86: xc/programs/xdm/genauth.c,v 3.2 1995/01/28 16:16:53 dawes Exp $ */
+/* $Id$ */
 /*
 
 Copyright (c) 1988  X Consortium

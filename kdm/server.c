@@ -1,5 +1,6 @@
 /* $XConsortium: server.c,v 1.19 94/04/17 20:03:44 hersh Exp $ */
 /* $XFree86: xc/programs/xdm/server.c,v 3.1 1994/06/28 12:32:39 dawes Exp $ */
+/* $Id$ */
 /*
 
 Copyright (c) 1988  X Consortium

@@ -1,3 +1,5 @@
+$Id$
+
 This is version v0.5 of the KDE Display Manager (kdm). 
 
 Kdm is intended as a "drop-in" replacement of xdm. It reads the xdm

@@ -1,5 +1,6 @@
 /* $XConsortium: verify.c,v 1.32 94/04/17 20:03:55 gildea Exp $ */
 /* $XFree86: xc/programs/xdm/greeter/verify.c,v 3.0 1994/06/26 13:12:06 dawes Exp $ */
+/* $Id$ */
 /*
 
 Copyright (c) 1988  X Consortium

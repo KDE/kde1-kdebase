@@ -1,4 +1,5 @@
 ! $XConsortium: xdm-conf.cpp,v 1.2 93/09/28 14:30:32 gildea Exp $
+! $Id$
 !DisplayManager.errorLogFile:	XDMDIR/xdm-errors
 !DisplayManager.pidFile:	XDMDIR/xdm-pid
 !DisplayManager.keyFile:	XDMDIR/xdm-keys

@@ -1,5 +1,6 @@
 /* $XConsortium: xdmcp.c,v 1.15 94/09/19 20:16:38 converse Exp $ */
 /* $XFree86: xc/programs/xdm/xdmcp.c,v 3.2 1995/01/12 05:57:08 dawes Exp $ */
+/* $Id$ */
 /*
 
 Copyright (c) 1988  X Consortium

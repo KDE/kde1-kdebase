@@ -1,4 +1,5 @@
 /* $XConsortium: rpcauth.c,v 1.4 94/04/17 20:03:44 hersh Exp $ */
+/* $Id$ */
 /*
 
 Copyright (c) 1988  X Consortium

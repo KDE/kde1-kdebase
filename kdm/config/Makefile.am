@@ -1,3 +1,4 @@
+# $Id$
 
 confdir	= $(kde_confdir)
 

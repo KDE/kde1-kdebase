@@ -1,4 +1,5 @@
 /* $XConsortium: reset.c,v 1.11 94/04/17 20:03:42 keith Exp $ */
+/* $Id$ */
 /*
 
 Copyright (c) 1988  X Consortium

@@ -1,5 +1,6 @@
 /* $XConsortium: dm.c,v 1.70 94/04/17 20:03:36 gildea Exp $ */
 /* $XFree86: xc/programs/xdm/dm.c,v 3.1 1994/10/20 06:15:09 dawes Exp $ */
+/* $Id$ */
 /*
 
 Copyright (c) 1988  X Consortium

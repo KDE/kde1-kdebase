@@ -1,4 +1,5 @@
 /* $XConsortium: greet.h,v 1.3 94/04/17 20:03:39 gildea Exp $ */
+/* $Id$ */
 /*
 
 Copyright (c) 1994  X Consortium

@@ -1,5 +1,6 @@
 /* $XConsortium: socket.c,v 1.34 94/04/17 20:03:47 gildea Exp $ */
 /* $XFree86: xc/programs/xdm/socket.c,v 3.1 1994/08/31 04:50:53 dawes Exp $ */
+/* $Id$ */
 /*
 
 Copyright (c) 1988  X Consortium
