@@ -225,8 +225,8 @@ main( int argc, char ** argv )
 		sysList = new QFileInfoList( *dSys.entryInfoList() );
 	}
 	
-	adPath.sprintf( getenv( "HOME" ) );
-	adPath += "/.kde/share/apps/kdisplay/app-defaults";
+	adPath.sprintf( KApplication::localkdedir().data() );
+	adPath += "/share/apps/kdisplay/app-defaults";
 	QDir dUser;
 	dUser.setPath( adPath );
 	

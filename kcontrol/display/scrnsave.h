@@ -73,6 +73,7 @@ protected slots:
 	void slotTest();
 	void slotTimeoutChanged( const char *);
 	void slotLock( bool );
+	void slotStars( bool );
 	void slotPriorityChanged( int val );
 	void slotSetupDone(KProcess*);
 	void slotHelp();
@@ -87,6 +88,7 @@ protected:
 	void setDefaults();
 
 protected:
+	KConfig *kssConfig;
 	KProcess *ssSetup, *ssPreview;
 	KSSMonitor* monitor;
 	QPushButton *setupBt;
@@ -94,7 +96,7 @@ protected:
 	QListBox *ssList;
 	QLineEdit *waitEdit;
 	QSlider *prioritySlider;
-	QCheckBox *cb;
+	QCheckBox *cb, *cbStars;
 	QLabel *monitorLabel;
 	const QStrList *saverList;
 	QStrList saverNames;
@@ -102,6 +104,7 @@ protected:
 	QString saverFile;
 	int lock;
 	int priority;
+	bool showStars;
 	char cornerAction[5];
 
 	int xtimeout, xinterval;

@@ -301,8 +301,7 @@ void KColorScheme::slotSave( )
 
 void KColorScheme::slotRemove()
 {
-	QString kcsPath = getenv( "HOME" );
-	kcsPath += "/.kde/share/apps/kdisplay/color-schemes";
+	QString kcsPath = KApplication::localkdedir() + "/share/apps/kdisplay/color-schemes";
 	
 	QDir d( kcsPath );
 	if (!d.exists()) // what can we do?
@@ -390,8 +389,7 @@ void KColorScheme::slotAdd()
 	sList->setFocus();
 	sList->setCurrentItem( sList->count()-1 );
 	
-	QString kcsPath( getenv( "HOME" ) );
-	kcsPath += "/.kde/share/apps/kdisplay/";
+	QString kcsPath = KApplication::localkdedir() + "/share/apps/kdisplay/";
 	
 	QDir d( kcsPath.data() );
 	if ( !d.exists() )
@@ -641,8 +639,8 @@ void KColorScheme::readSchemeNames( )
 		}
 	}
 	
-	kcsPath.sprintf( getenv( "HOME" ) );
-	kcsPath += "/.kde/share/apps/kdisplay/color-schemes";
+	kcsPath.sprintf( KApplication::localkdedir().data() );
+	kcsPath += "/share/apps/kdisplay/color-schemes";
 	
 	d.setPath( kcsPath );
 	if( d.exists() ) {

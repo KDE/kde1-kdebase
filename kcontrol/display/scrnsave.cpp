@@ -102,6 +102,9 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	: KDisplayModule( parent, mode, desktop )
 {
 	KIconLoader iconLoader;
+	kssConfig = new KConfig( kapp->kde_configdir() + "/kssrc", 
+		                 kapp->localconfigdir() + "/kssrc" );
+	kssConfig->setGroup( "kss" );
 
 	readSettings();
 	
@@ -265,8 +268,14 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	cb->setMinimumSize( cb->sizeHint() );
 	cb->setChecked( lock );
 	connect( cb, SIGNAL( toggled( bool ) ), SLOT( slotLock( bool ) ) );
-	
 	groupLayout->addWidget( cb );
+	
+	cbStars = new QCheckBox(  i18n("Show &password as stars"), group );
+	cbStars->setMinimumSize( cbStars->sizeHint() );
+	cbStars->setChecked( showStars );
+	connect( cbStars, SIGNAL( toggled( bool ) ), SLOT( slotStars( bool ) ) );
+	groupLayout->addWidget( cbStars );
+
 	groupLayout->activate();
 
 	group = new QGroupBox(  i18n("Priority"), this );
@@ -319,6 +328,7 @@ KScreenSaver::~KScreenSaver()
 {
     delete ssPreview; // CC: This also terminates the preview process..
     delete ssSetup;
+    delete kssConfig;
 }
 
 void KScreenSaver::readSettings( int )
@@ -380,14 +390,19 @@ void KScreenSaver::readSettings( int )
 		strcpy( cornerAction, "iiii" );
 	
 	cornerAction[4] = '\0';
+
+	showStars = kssConfig->readBoolEntry( "PasswordAsStars", true );
 }
 
 void KScreenSaver::setDefaults()
 {
 	slotScreenSaver( 0 );
+	ssList->setCurrentItem( 0 );
+	ssList->centerCurrentItem();
 	slotTimeoutChanged( "1" );
 	slotPriorityChanged( 0 );
 	slotLock( false );
+	slotStars( true );
 	slotCornerAction( 0, 'i' );
 	slotCornerAction( 1, 'i' );
 	slotCornerAction( 2, 'i' );
@@ -421,6 +436,9 @@ void KScreenSaver::writeSettings()
 	config->writeEntry( "Priority", str );
 
 	config->writeEntry( "CornerAction", cornerAction );
+
+	kssConfig->writeEntry( "PasswordAsStars", showStars );
+	kssConfig->sync();
 
 	changed = FALSE;
 }
@@ -628,6 +646,12 @@ void KScreenSaver::slotLock( bool l )
 	changed = TRUE;
 }
 
+void KScreenSaver::slotStars( bool s )
+{
+	showStars = s;
+	changed = TRUE;
+}
+
 void KScreenSaver::slotPriorityChanged( int val )
 {
 	if ( val != priority )
@@ -681,6 +705,7 @@ void KScreenSaver::loadSettings()
   waitEdit->setText( str );
 
   cb->setChecked( lock );
+  cbStars->setChecked( showStars );
 
   prioritySlider->setValue( priority );
 }
