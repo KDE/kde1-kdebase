@@ -1,0 +1,289 @@
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Logi Ragnarsson <logir@hi.is>, 1998
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"PO-Revision-Date: 1998-11-08 14:17+0100\n"
+"Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
+"Language-Team: isn"
+
+#: main.cpp:87
+msgid "&Appearance"
+msgstr "Útlit"
+
+#: main.cpp:95
+msgid "&Background"
+msgstr "&Bakgrunnur"
+
+#: main.cpp:98
+msgid "&Users"
+msgstr "&Notendur"
+
+#: main.cpp:101
+msgid "&Sessions"
+msgstr "&Setur"
+
+#: main.cpp:106
+msgid ""
+"usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+msgstr ""
+"notkun: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+
+#: main.cpp:145
+msgid "KDM Configuration"
+msgstr "Stillingar KDM"
+
+#: main.cpp:155
+msgid ""
+"Sorry, but you don't have read/write\n"
+"permission to the KDM setup file."
+msgstr ""
+"Þú hefur ekki les/skrif heimildi"
+"að KDM stilliskránni."
+
+#: main.cpp:157
+msgid "Missing privileges"
+msgstr "Vantar réttindi"
+
+#: kdm-appear.cpp:70
+msgid "Greeting string:"
+msgstr "Kveðjustrengur:"
+
+#: kdm-appear.cpp:78
+msgid "KDM logo:"
+msgstr "Merki KDM:"
+
+#: kdm-appear.cpp:105 kdm-users.cpp:135
+msgid "Click or drop an image here"
+msgstr "Smelltu hér eða slepptu mynd"
+
+#: kdm-appear.cpp:110
+msgid "GUI Style:"
+msgstr "Viðmótsstíll:"
+
+#: kdm-appear.cpp:116
+msgid "Motif"
+msgstr "Motif"
+
+#: kdm-appear.cpp:117
+msgid "Windows"
+msgstr "Windows"
+
+#: kdm-appear.cpp:128
+msgid "Language"
+msgstr "Tungumál"
+
+#: kdm-appear.cpp:131
+msgid "Language:"
+msgstr "Tungumál:"
+
+#: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
+msgid ""
+"There was an error loading the image:\n"
+">"
+msgstr ""
+"Villa kom upp við lestur myndarinnar:\n"
+">"
+
+
+#: kdm-appear.cpp:169 kdm-appear.cpp:188 kdm-users.cpp:196
+msgid "<"
+msgstr "<"
+
+#: kdm-appear.cpp:170 kdm-appear.cpp:189 kdm-appear.cpp:254 kdm-users.cpp:197
+#: kdm-users.cpp:279
+msgid "ERROR"
+msgstr "VILLA"
+
+#: kdm-appear.cpp:186 kdm-users.cpp:194
+msgid ""
+"There was an error saving the image:\n"
+">"
+msgstr ""
+
+#: kdm-appear.cpp:219 kdm-users.cpp:227
+msgid "Sorry, but \n"
+msgstr "Mér þykir það leitt, en\n"
+
+#: kdm-appear.cpp:221 kdm-users.cpp:229
+msgid ""
+"\n"
+"does not seem to be an image file"
+msgstr ""
+"\n"
+"virðist ekki vera myndaskrá"
+
+#: kdm-appear.cpp:222 kdm-users.cpp:230
+msgid ""
+"\n"
+"Please use files with these extensions\n"
+msgstr ""
+"\n"
+"Notaðu skrár með þessar endingar\n"
+
+#: kdm-appear.cpp:224 kdm-users.cpp:232
+msgid "Improper File Extension"
+msgstr "Óviðeigandi skráarnafnsending"
+
+#: kdm-appear.cpp:253 kdm-users.cpp:278
+msgid ""
+"<\n"
+"It will not be saved..."
+msgstr ""
+"<\n"
+"Það verður ekki vistað..."
+
+#: kdm-font.cpp:48
+msgid "Select fonts"
+msgstr "Veldu letur"
+
+#: kdm-font.cpp:50
+msgid "Change font..."
+msgstr "Breyta letri..."
+
+#: kdm-font.cpp:55
+msgid "Greeting"
+msgstr "Kveðja"
+
+#: kdm-font.cpp:56
+msgid "Fail"
+msgstr "Mistök"
+
+#: kdm-font.cpp:57
+msgid "Standard"
+msgstr "Venjulegt"
+
+#: kdm-font.cpp:59
+msgid "Example:"
+msgstr "Dæmi"
+
+msgid "Preview"
+msgstr "Forsýn"
+
+#: kdm-bgnd.cpp:66
+msgid "Color"
+msgstr "Litir"
+
+#: kdm-bgnd.cpp:74
+msgid "Wallpaper"
+msgstr "Veggfóður"
+
+#: kdm-bgnd.cpp:108
+msgid "Tile"
+msgstr "Flísaleggja"
+
+#: kdm-bgnd.cpp:112
+msgid "Center"
+msgstr "Í miðju"
+
+#: kdm-bgnd.cpp:116
+msgid "Scale"
+msgstr "Teygja"
+
+msgid "TopLeft"
+msgstr "Eftst til vinstri"
+
+msgid "TopRight"
+msgstr "Efsti til hægri"
+
+msgid "BottomLeft"
+msgstr "Neðst til vinstri"
+
+msgid "BottomRight"
+msgstr "Neðst til hægri"
+
+msgid "Fancy"
+msgstr "Fínerí"
+
+#: kdm-users.cpp:48
+msgid "All users"
+msgstr "Allir notendur"
+
+#: kdm-users.cpp:50
+msgid "Selected users"
+msgstr "Útvaldir notendur"
+
+#: kdm-users.cpp:52
+msgid "No-show users"
+msgstr "Ósýnilegir notendur"
+
+#: kdm-users.cpp:79
+msgid ""
+"Show only\n"
+"selected users"
+msgstr ""
+"Sýna aðeins\n"
+"útvalda notendur"
+
+#: kdm-users.cpp:86
+msgid ""
+"Show all users\n"
+" but no-show users"
+msgstr ""
+"Sýna alla nema\n"
+"ósýnilega notendur"
+
+#: kdm-users.cpp:97
+msgid "Show users"
+msgstr "Sýna notendur"
+
+#: kdm-users.cpp:103
+msgid "Sort users"
+msgstr "Raða notendum"
+
+#: kdm-users.cpp:182 kdm-users.cpp:251
+msgid "No user selected"
+msgstr "Enginn notandi valinn"
+
+#: kdm-users.cpp:183 kdm-users.cpp:252
+msgid "Save image as default image?"
+msgstr "Vista mynd sem sjálfgefna?"
+
+#: kdm-sess.cpp:50
+msgid "Allow to shutdown"
+msgstr "Leyfa að keyra niður"
+
+#: kdm-sess.cpp:55
+msgid "All"
+msgstr "Öllum"
+
+#: kdm-sess.cpp:56
+msgid "Root Only"
+msgstr "Bara rót"
+
+#: kdm-sess.cpp:57
+msgid "Console Only"
+msgstr "Bara frá meiginskjá"
+
+#: kdm-sess.cpp:61
+msgid "Commands"
+msgstr "Skipanir"
+
+#: kdm-sess.cpp:62
+msgid "Shutdown"
+msgstr "Keyrt niður"
+
+#: kdm-sess.cpp:67
+msgid "Restart"
+msgstr "Endurræst"
+
+#: kdm-sess.cpp:73
+msgid "Session types"
+msgstr "Tegundir seta"
+
+#: kdm-sess.cpp:75
+msgid "New type"
+msgstr "Ný tegund"
+
+#: kdm-sess.cpp:83
+msgid "Available types"
+msgstr "Tiltækar gerðir"
+
+#: klangcombo.cpp:133
+msgid "without name!"
+msgstr "nafnlaus!"
+
+msgid "None"
+msgstr "Engum"
