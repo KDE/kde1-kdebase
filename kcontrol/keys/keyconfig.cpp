@@ -80,13 +80,13 @@ KKeyConfig::KKeyConfig( QWidget *parent, const char *name )
 	 }      
 
 
-	debug("inserted keys");
+	//debug("inserted keys");
 	
 	keys->setConfigGlobal( true );
 	keys->setConfigGroup( KeySet );
 	keys->readSettings();
 	
-	debug("read settings");
+	//debug("read settings");
 	
 	QBoxLayout *topLayout = new QVBoxLayout( this, 10 );
 	
@@ -165,19 +165,19 @@ KKeyConfig::KKeyConfig( QWidget *parent, const char *name )
 	
 	dict = keys->keyDict();
 	
-	debug("got key dict");
+	//debug("got key dict");
 	
         kc =  new KKeyChooser( &dict, this, check_against_std_keys );
 	connect( kc, SIGNAL( keyChange() ), this, SLOT( slotChanged() ) );
 
         	
 	
-        if ( KeyType == "global" ) debug("Make key chooser global" );
-        if ( KeyType == "standard" ) debug("Make key chooser standard" );
+        //if ( KeyType == "global" ) debug("Make key chooser global" );
+        //if ( KeyType == "standard" ) debug("Make key chooser standard" );
 	
 	readScheme();
 
-	debug("read scheme done");
+	//debug("read scheme done");
 
 	
 	topLayout->addWidget( kc, 10 );
@@ -187,7 +187,7 @@ KKeyConfig::KKeyConfig( QWidget *parent, const char *name )
 }
 
 KKeyConfig::~KKeyConfig (){
-  debug("KKeyConfig destructor");
+  //debug("KKeyConfig destructor");
   delete keys;
 }
 
@@ -286,7 +286,7 @@ void KKeyConfig::readScheme( int index )
 	  if ( globalDict->find( kc->aIt->currentKey() ) ) {
 	    kc->aIt->current()->aConfigKeyCode = *globalDict->find( kc->aIt->currentKey() );
 	    kc->aIt->current()->aCurrentKeyCode = kc->aIt->current()->aConfigKeyCode;
-	    debug("Change: %s", kc->aIt->currentKey() );
+	    //debug("Change: %s", kc->aIt->currentKey() );
 	  }
 	  ++ ( *kc->aIt );
 	}
@@ -496,12 +496,12 @@ void KKeyConfig::loadSettings()
 
 void KKeyConfig::applySettings()
 {
-	debug("apply settings");
-	debug("No. of items in dict %d", dict.count() );
+	//debug("apply settings");
+	//debug("No. of items in dict %d", dict.count() );
 	keys->setKeyDict( dict );
-	debug("set key dict");
+	//debug("set key dict");
 	keys->writeSettings();
-	debug("done");
+	//debug("done");
 }
 void KKeyConfig::defaultSettings()
 {

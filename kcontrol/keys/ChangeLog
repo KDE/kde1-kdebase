@@ -1,4 +1,10 @@
-1988-12-19 Duncan Haldane <f.d.m.haldane@cwix.com>
+1999-02-28 Duncan Haldane <duncan@kde.org>
+	Commented out annoying debug messages in
+	keyconfig.cpp
+	
+
+
+1998-12-19 Duncan Haldane <f.d.m.haldane@cwix.com>
 	* Converted global.cpp, global.h to keyconfig.cpp,
 	keyconfig.h, that can now be used to configure both
 	the standard keys  and the global keys 
