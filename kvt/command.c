@@ -929,8 +929,18 @@ static unsigned char  get_com_char(int flags)
     }
   /* Nothing to read, either return now or continue and wait */
 
-  if (flags & BUF_ONLY) 
-      return ((unsigned char) GCC_NULL); 
+  if (flags & BUF_ONLY) {
+    refresh_nl_count = 0;
+    refresh_nl_limit = 1; 
+    if(!refreshed)
+      refresh();
+    refreshed = 1;
+    /* scrollbar movements are done in refresh now (Matthias) */
+    /*	  sbar_show(MyWinInfo.cheight+MyWinInfo.sline_top-1,MyWinInfo.offset,
+	  MyWinInfo.offset + MyWinInfo.cheight -1); */
+    XFlush(display);
+    return ((unsigned char) GCC_NULL); 
+  }
 
 /*   for (;;)  */
 /*     { */
@@ -944,7 +954,7 @@ static unsigned char  get_com_char(int flags)
        /* Nothing to do! */ 
        FD_ZERO(&in_fdset); 
        FD_SET(comm_fd,&in_fdset); 
-/*        FD_SET(x_fd,&in_fdset);  */
+
 
        /* select handling slightly changed. Yet the "main" select (with blocking)
 	  is inside the Qt event loop. Important. Matthias */
@@ -956,13 +966,22 @@ static unsigned char  get_com_char(int flags)
 /*         else   */
 /* 	  retval = select(fd_width,&in_fdset,NULL,NULL,NULL);  */
 
+
+/*        if (!refreshed){ */
+/* 	 value.it_value.tv_usec = 1000;   */
+/* 	 value.it_value.tv_sec = 0;   */
+/*        } */
+/*        else { */
+/* 	 value.it_value.tv_usec = 0;   */
+/* 	 value.it_value.tv_sec = 0;   */
+/*        } */
        if (!refreshed){
-	 value.it_value.tv_usec = 1000;  
-	 value.it_value.tv_sec = 0;  
+	 value.it_value.tv_usec = 0;  
+	 value.it_value.tv_sec = 1;  
        }
        else {
 	 value.it_value.tv_usec = 0;  
-	 value.it_value.tv_sec = 0;  
+	 value.it_value.tv_sec = 1;  
        }
        retval = select(fd_width,&in_fdset,NULL,NULL,&value.it_value); 
 
@@ -1312,7 +1331,7 @@ void get_token()
 	      break;
 	    }
 	}
-      c = get_com_char(0);
+      c = get_com_char(1);
    }while(c != (unsigned char) GCC_NULL);
 }
 

@@ -92,7 +92,7 @@ extern int comm_fd;
 void check_text(char *a);
 int refresh_type = SLOW;
 
-char *color_names[10] = 
+char *color_names[11] = 
 {
   "",                  /* default foreground */
   "",                  /* default background */
@@ -103,12 +103,13 @@ char *color_names[10] =
   "blue",
   "magenta",
   "cyan",
-  "white"
+  "white",
+  "#d3d3d3"
 };
 
 /* nicer colors inspired from rxvt-2.18 (Matthias) */
 
-char *nicer_color_names[10] = 
+char *nicer_color_names[11] = 
 {
   "",                  /* default foreground */
   "",                  /* default background */
@@ -120,13 +121,14 @@ char *nicer_color_names[10] =
   "Magenta3",
   "Cyan3",
   "White"
+  "#d3d3d3" /* lightgrey for dialog backgrounds */ 
 };
 
 
 static paste_internal_selection = 0; /* Matthias */ 
 
-char colors_loaded[10] = {1,1,0,0,0,0,0,0,0,0};
-unsigned long pixel_colors[10];
+char colors_loaded[11] = {1,1,0,0,0,0,0,0,0,0,0};
+unsigned long pixel_colors[11];
 int fore_color = 0;
 int back_color = 1;
 /* set default rstyle colors */
@@ -2301,6 +2303,7 @@ scr_fore_color(int color)
 scr_back_color(int color)
 {
   XColor new_color;
+  char* s;
 
 #ifdef DEBUG
   check_text("set_back_color");  
@@ -2311,6 +2314,9 @@ scr_back_color(int color)
   if((color <-2)||(color > 7))
     return;
 
+  if (color == 7)
+    color = 8;/* lightgrey instead of white */ 
+  
   if(colors_loaded[color+2]==1)
     {
       back_color = color+2;

@@ -1,4 +1,7 @@
-  
+  - background white leads to lightgrey for applications.
+    This allows dialog-programms to look nice (e.g. LISA)
+  - bugfixes in the event loop. First version that seems to work properly :) 
+ 
   - black-on-black fixed: now black-on-white if a 
     color allocation fails
   - multiline selection fixed again
