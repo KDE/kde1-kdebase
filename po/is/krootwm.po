@@ -1,0 +1,74 @@
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Logi Ragnarsson <logir@imf.au.dk>.
+#
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"PO-Revision-Date: 1998-10-26 23:41+0200\n"
+"Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
+"Language-Team: is\n"
+
+#: krootwm.C:120 krootwm.C:587
+msgid "Folder"
+msgstr "Mappa"
+
+#: krootwm.C:150
+#, c-format
+msgid "ERROR: Template does not exist '%s'"
+msgstr "VILLA: Sniðip '%s' er ekki til"
+
+#: krootwm.C:181
+msgid "Bookmarks"
+msgstr "Bókamerki"
+
+#: krootwm.C:183
+msgid "Help on desktop"
+msgstr "Hjálp um skjáborð"
+
+#: krootwm.C:184
+msgid "Execute command"
+msgstr "Framkvæma skipun"
+
+#: krootwm.C:185
+msgid "Display properties"
+msgstr "Sýna eiginleika"
+
+#: krootwm.C:186
+msgid "Refresh desktop"
+msgstr "Endurteikna skjáborð"
+
+#: krootwm.C:188
+msgid "Unclutter windows"
+msgstr "Koma glugum fyrir"
+
+#: krootwm.C:189
+msgid "Cascade windows"
+msgstr "Glugga á ská"
+
+#: krootwm.C:190
+msgid "Arrange icons"
+msgstr ""
+
+#: krootwm.C:192
+msgid "Lock screen"
+msgstr "Læsa skjá"
+
+#: krootwm.C:193
+msgid "Logout"
+msgstr "Stimpla út"
+
+#: krootwm.C:219
+msgid "Edit Bookmarks"
+msgstr "Sýsla með bókamerki"
+
+#: krootwm.C:607
+msgid "Could not create folder"
+msgstr "Ekki tókst að búa til möppu"
+
+#: krootwm.C:666
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Höfundarretur 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: krootwm.C:670
+msgid "Usage:"
+msgstr "Notkun:"
