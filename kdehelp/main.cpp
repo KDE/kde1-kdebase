@@ -19,6 +19,7 @@
 #include "error.h"
 #include "khelp.h"
 #include "mainwidget.h"
+#include <kfm.h>
 
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
@@ -101,32 +102,6 @@ void errorHandler( int type, char *msg )
 		remove( pidFile );
 		exit(1);
 	}
-}
-
-static QString displayName()
-{
-  // note: We can not rely on DISPLAY. If KDE is started by
-  // KDM, DISPLAY will be something like ":0", but this is
-  // not unique if we start KDE several times in a network
-
-  QString d = QString(getenv("DISPLAY"));
-
-  int i = d.find( ':' );
-  if ( i != -1 )
-    d[i] = '_';
-  if (i==0)
-    {
-      // we are running local, so add the hostname
-      char name[25];
-
-      if (gethostname(name, 25) == 0)
-	d = name + d;
-    }
-
-  if ( d.find( '.' ) == -1 )
-    d += ".0";
-
-  return d;
 }
 
 //-----------------------------------------------------------------------------
