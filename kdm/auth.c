@@ -977,7 +977,7 @@ static void
 DefineSelf (fd, file, auth)
     int fd;
 {
-    register int n;
+    /*register int n;*/
     int	len;
     caddr_t	addr;
     int		family;
@@ -1004,7 +1004,7 @@ DefineSelf (fd, file, auth)
 	saddr.sa.sa_family = hp->h_addrtype;
 	inetaddr = (struct sockaddr_in *) (&(saddr.sa));
 	memmove( (char *) &(inetaddr->sin_addr), (char *) hp->h_addr, (int) hp->h_length);
-	family = ConvertAddr ( &(saddr.sa), &len, &addr);
+	family = ConvertAddr( &(saddr.sa), &len, &addr);
 	if ( family >= 0) {
 	    writeAddr (FamilyInternet, sizeof (inetaddr->sin_addr),
 			(char *) (&inetaddr->sin_addr), file, auth);

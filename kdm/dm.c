@@ -679,7 +679,7 @@ struct display	*d;
     }
 }
 
-void TerminateProcess (pid, signal)
+void TerminateProcess( pid_t pid, int signal)
 {
     kill (pid, signal);
 #ifdef SIGCONT

@@ -233,17 +233,13 @@ void CleanUpChild ()
 #else
 	setpgrp (0, getpid ());
 */
-        setpgid( 0, getpid());
-/*     
-#ifdef MINIX / * actually POSIX * /
+        setpgid( 0, getpid());     
 	{
 		sigset_t ss; 
 		sigemptyset(&ss);
 		sigprocmask(SIG_SETMASK, &ss, NULL);
 	}
-#else
-*/
-	sigsetmask (0);
+/*	sigsetmask (0);*/
 /*
 #endif
 #endif*/

@@ -45,8 +45,15 @@ from the X Consortium.
 #include <errno.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <signal.h>
+#include <pwd.h>
+#include <grp.h>
+#include <sys/types.h>
 #ifdef AIXV3
 # include <usersec.h>
+#endif
+#ifdef HAVE_CRYPT_H
+# include <crypt.h>
 #endif
 #ifdef HAVE_RPC_RPC_H
 # include <rpc/rpc.h>
@@ -60,6 +67,11 @@ from the X Consortium.
 #ifdef USE_PAM
 # include <security/pam_appl.h>
 #endif
+#ifdef USESHADOW
+/*extern	struct spwd	*getspnam();
+extern	void	endspent();*/
+# include <shadow.h>
+#endif
 
 #ifndef GREET_USER_STATIC
 #include <dlfcn.h>
@@ -68,13 +80,40 @@ from the X Consortium.
 #endif
 #endif
 
+extern	int	PingServer();
+extern	int	SessionPingFailed();
+extern	int	Debug();
+extern	int	RegisterCloseOnFork();
+extern	void	SecureDisplay();
+extern	void	UnsecureDisplay();
+extern	int	ClearCloseOnFork();
+extern	int	SetupDisplay();
+extern	int	LogError();
+extern	void	SessionExit();
+extern	void	DeleteXloginResources();
+extern	int	source();
+extern	char	**defaultEnv();
+extern	char	**setEnv();
+extern	char	**parseArgs();
+extern	int	printEnv();
+extern	char	**systemEnv();
+extern	int	LogOutOfMem();
+/*extern	void	setgrent();
+extern	struct group	*getgrent();
+extern	void	endgrent();
+*/
+/*
+extern	struct passwd	*getpwnam();
+extern	char	*crypt();
+*/
+
+
 #ifdef CSRG_BASED
 #include <sys/param.h>
 #endif
 /* XmuPrintDefaultErrorMessage is taken from DefErrMsg.c from X11R6 */
 /* /stefh */
 #include <stdio.h>
-#include <grp.h>
 #define NEED_EVENTS
 #include <X11/Xlibint.h>
 #include <X11/Xproto.h>
@@ -192,34 +231,6 @@ int XmuPrintDefaultErrorMessage (dpy, event, fp)
      if (event->error_code == BadImplementation) return 0;
      return 1;
 }
-
-extern	int	PingServer();
-extern	int	SessionPingFailed();
-extern	int	Debug();
-extern	int	RegisterCloseOnFork();
-extern	void	SecureDisplay();
-extern	void	UnsecureDisplay();
-extern	int	ClearCloseOnFork();
-extern	int	SetupDisplay();
-extern	int	LogError();
-extern	void	SessionExit();
-extern	void	DeleteXloginResources();
-extern	int	source();
-extern	char	**defaultEnv();
-extern	char	**setEnv();
-extern	char	**parseArgs();
-extern	int	printEnv();
-extern	char	**systemEnv();
-extern	int	LogOutOfMem();
-extern	void	setgrent();
-extern	struct group	*getgrent();
-extern	void	endgrent();
-#ifdef USESHADOW
-extern	struct spwd	*getspnam();
-extern	void	endspent();
-#endif
-extern	struct passwd	*getpwnam();
-extern	char	*crypt();
 
 static	struct dlfuncs	dlfuncs = {
 	PingServer,
