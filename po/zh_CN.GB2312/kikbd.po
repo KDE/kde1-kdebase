@@ -412,7 +412,8 @@ msgid "&World Menu"
 msgstr "世界菜单(&W)"
 
 #: widgets.cpp:483
-msgid "Show menu in any window by holding down the selected Switch key(s)"
+#, fuzzy
+msgid "Show menu in any window by holding sown the selected Switch key(s)"
 msgstr "在任何窗口中按下选中的切换键后显示菜单"
 
 #: widgets.cpp:491
