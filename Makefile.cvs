@@ -3,7 +3,7 @@ all:
 	@echo "I will delete it before making the distribution"
 	@echo ""
 	cat acinclude.m4.in kdminclude.m4 libtool.m4.in > acinclude.m4
-	aclocal 
+	aclocal
 	autoheader
 	automake
 	perl automoc
@@ -11,16 +11,15 @@ all:
 	touch stamp-h.in
 
 dist:
-	@cat acinclude.m4.in kdminclude.m4 libtool.m4.in > acinclude.m4 ;\
+	@cat acinclude.m4.in kdminclude.m4 libtool.m4.in > acinclude.m4; \
 	aclocal; \
 	autoheader; \
 	automake --foreign --include-deps; \
-	perl automoc ;\
+	perl automoc; \
 	autoconf; \
 	LIST=`find ./po -name "*.po"`; \
 	for i in $$LIST; do \
 	 file2=`echo $$i | sed -e "s#\.po#\.gmo#"`; \
-	 msgfmt -o $$file2 $$i || touch $$file2 ; \
-	done ;\
+	 msgfmt -o $$file2 $$i || touch $$file2; \
+	done; \
 	touch stamp-h.in
-
