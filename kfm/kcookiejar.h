@@ -1,0 +1,211 @@
+/*
+    This file is part of the KDE File Manager
+
+    Copyright (C) 1998 Waldo Bastian (bastian@kde.org)
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License 
+    as published by the Free Software Foundation; either version 2 
+    of the License, or (at your option) any later version.
+
+    This software is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this library; see the file COPYING. If not, write to
+    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+    Boston, MA 02111-1307, USA.
+*/
+//----------------------------------------------------------------------------
+//
+// KDE File Manager -- HTTP Cookies
+// $Id$
+
+#ifndef KCOOKIEJAR_H
+#define KCOOKIEJAR_H
+
+#include <qstring.h>
+#include <qstrlist.h>
+#include <qdict.h>
+#include <time.h>
+
+class KCookie;
+typedef KCookie *KCookiePtr;
+
+class KCookieList;
+
+enum KCookieAdvice { 
+    KCookieDunno=0, 
+    KCookieAccept, 
+    KCookieReject, 
+    KCookieAsk 
+};
+
+class KCookieJar
+{
+public:
+    /**
+     * Constructs a new cookie jar
+     *
+     * One jar should be enough for all cookies.
+     */
+    KCookieJar();
+
+    /**
+     * Destructs the cookie jar
+     *
+     * Poor little cookies, they will all be eaten by the cookie monster!
+     */
+    ~KCookieJar();
+
+    /**
+     * Looks for cookies in the cookie jar which are appropriate for _url.
+     * Returned is a string containing all appropriate cookies in a format 
+     * which can be added to a HTTP-header without any additional processing.
+     */                
+    QString findCookies(const char *_url);
+
+    /**
+     * This function parses cookie_headers and returns a linked list of
+     * valid KCookie objects for all cookies found in cookie_headers.
+     * If no cookies could be found 0 is returned.
+     *
+     * cookie_headers should be a concatenation of all lines of a HTTP-header
+     * which start with "Set-Cookie". The lines should be separated by '\n's.
+     */
+    KCookiePtr makeCookies(const char *_url, const char *cookie_headers);
+
+    /**
+     * This function hands a KCookie object over to the cookie jar.
+     * 
+     * On return cookiePtr is set to 0.
+     */
+    void addCookie(KCookiePtr &cookiePtr);
+
+    /**
+     * This function advices whether a single KCookie object should 
+     * be added to the cookie jar.
+     *
+     * Possible return values are:
+     *     - KCookieAccept, the cookie should be added
+     *     - KCookieReject, the cookie should not be added
+     *     - KCookieAsk, the user should decide what to do 
+     */
+    KCookieAdvice cookieAdvice(KCookiePtr cookiePtr);
+
+    /**
+     * This function sets the advice for all cookies originating from 
+     * _domain.    
+     *
+     * _advice can have the following values:
+     *     - KCookieDunno, no specific advice for _domain
+     *     - KCookieAccept, accept all cookies for _domain
+     *     - KCookieReject, reject all cookies for _domain 
+     *     - KCookieAsk, the user decides what to do with cookies for _domain
+     */
+    void setDomainAdvice(const char *_domain, KCookieAdvice _advice);
+
+    /**
+     * This function sets the global advice for cookies 
+     *
+     * _advice can have the following values:
+     *     - KCookieAccept, accept cookies
+     *     - KCookieReject, reject cookies 
+     *     - KCookieAsk, the user decides what to do with cookies
+     *
+     * The global advice is used if the domain has no advice set.
+     */
+    void setGlobalAdvice(KCookieAdvice _advice);
+
+    /**
+     * Get a list of all domains known to the cookie jar.
+     * A domain is known to the cookie jar if:
+     *     - It has a cookie originating from the domain
+     *     - It has a specific advice set for the domain
+     */
+    const QStrList *getDomainList();    
+    
+    /**
+     * Get a list of all cookies in the cookie jar originating from _domain.
+     */
+    const KCookieList *getCookieList(const char *_domain);
+
+    /**
+     * Remove & delete a cookie from the jar.
+     *
+     * cookiePtr should be one of the entries in a KCookieList.
+     * Update your KCookieList by calling getCookieList after 
+     * calling this function.
+     */
+    void eatCookie(KCookiePtr cookiePtr);
+protected:  
+    /**
+     * Parses _url and returns the FQDN (_fqdn) 
+     * as well as the domain name without the hostname (_domain).
+     */
+    bool extractDomain(const char *_url,
+                       QString &_fqdn,
+                       QString &_domain,
+                       QString &_path);
+
+	QDict<KCookieList> cookieDomains;
+
+    QStrList domainList;
+
+    KCookieAdvice globalAdvice;
+};
+
+class KCookieList : public QList<KCookie>
+{
+public:
+    KCookieList() : QList(), advice( KCookieDunno ) 
+    { setAutoDelete(true); }
+
+    virtual int compareItems( KCookie * item1, KCookie * item2);
+
+    KCookieAdvice getAdvice(void) { return advice; }
+    void setAdvice(KCookieAdvice _advice) { advice = _advice; }
+
+private:
+    KCookieAdvice advice;
+};
+
+
+class KCookie 
+{
+    friend KCookieJar;
+    friend KCookieList;
+
+protected:
+    QString host;
+    QString domain;
+    QString path;
+    QString name;
+    QString value;
+    time_t  expireDate;
+    int     protocolVersion;
+
+    KCookiePtr nextCookie;
+
+    QString getCookieStr(void);
+public:
+    KCookie(const char *_host="", const char *_domain="", const char *_path="",
+            const char *_name="", const char *_value="", time_t _expireDate=0,
+            int _protocolVersion=0);
+            
+    const char * getDomain(void) { return domain.data(); } 
+    const char * getHost(void) { return host.data(); }
+    const char * getPath(void) { return path.data(); }
+    const char * getName(void) { return name.data(); }
+    const char * getValue(void) { return value.data(); }
+    time_t  getExpireDate(void) { return expireDate; }
+    int     getProtocolVersion(void) { return protocolVersion; }
+    
+    bool    isExpired(time_t currentDate);
+
+    KCookiePtr next() { return nextCookie; }
+};
+
+#endif
