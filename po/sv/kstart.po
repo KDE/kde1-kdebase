@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
-"POT-Creation-Date: 1999-01-23 01:15+0100\n"
+"POT-Creation-Date: 1999-04-15 01:23+0200\n"
 "PO-Revision-Date: 1998-12-19 18:44+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
-#: kstart.C:116
+#: kstart.C:118
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -75,7 +75,7 @@ msgstr ""
 " \n"
 " "
 
-#: kstart.C:158
+#: kstart.C:160
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"

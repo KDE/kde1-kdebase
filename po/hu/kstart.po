@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.1\n"
-"POT-Creation-Date: 1999-01-23 01:15+0100\n"
+"POT-Creation-Date: 1999-04-15 01:23+0200\n"
 "PO-Revision-Date: Tue Mar 9 1999 12:38:43+0100\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 "X-Generator: KTranslator v 0.4.0\n"
 
-#: kstart.C:116
+#: kstart.C:118
 #, c-format
 msgid ""
 "\n"
@@ -81,7 +81,7 @@ msgstr ""
 "\n"
 " "
 
-#: kstart.C:158
+#: kstart.C:160
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"

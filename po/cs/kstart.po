@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kstartondesk\n"
-"POT-Creation-Date: 1999-01-23 01:15+0100\n"
+"POT-Creation-Date: 1999-04-15 01:23+0200\n"
 "PO-Revision-Date: 1999-02-23 10:10+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kstart.C:116
+#: kstart.C:118
 #, c-format
 msgid ""
 "\n"
@@ -79,7 +79,7 @@ msgstr ""
 "\n"
 " "
 
-#: kstart.C:158
+#: kstart.C:160
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"

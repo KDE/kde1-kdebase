@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
-"POT-Creation-Date: 1999-01-23 01:15+0100\n"
+"POT-Creation-Date: 1999-04-15 01:23+0200\n"
 "PO-Revision-Date: 1999-03-31 22:10+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 "Translator: Wang Jian <larkw@263.net>\n"
 
-#: kstart.C:116
+#: kstart.C:118
 #, c-format
 msgid ""
 "\n"
@@ -42,7 +42,7 @@ msgid ""
 " "
 msgstr ""
 
-#: kstart.C:158
+#: kstart.C:160
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
