@@ -4,6 +4,7 @@ Name=Lyx
 Name[cs]=LyX
 Name[ru]=LyX
 Comment=LaTeX Word Processor
+Comment[ca]=Processador de textos LaTex
 Comment[cs]=Textový procesor pro LaTeX
 Comment[da]=LaTeX tekstbehandling
 Comment[de]=LaTeX-Textverarbeitung

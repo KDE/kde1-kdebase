@@ -11,6 +11,7 @@ MiniIcon=log.xpm
 Protocols=
 MimeType=
 Comment=System Monitor
+Comment[ca]=Monitor del sistema
 Comment[cs]=Monitor systému
 Comment[da]=Systemovervågningsprogram
 Comment[de]=Systemmonitor

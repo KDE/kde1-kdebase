@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=X Clipboard
+Name[ca]=Tauler X
 Name[da]=X Klippebord
 Name[fi]=X-leikepöytä
 Name[is]=X klemmuspjald
@@ -15,6 +16,7 @@ MiniIcon=mini-zoom.xpm
 Protocols=
 MimeType=
 Comment=X Clipboard viewer
+Comment[ca]=Visualitzador del tauler X
 Comment[cs]=Prohlí¾eè clipboardu
 Comment[da]=X Klippebordsfremviser
 Comment[de]=X Zwischenablage

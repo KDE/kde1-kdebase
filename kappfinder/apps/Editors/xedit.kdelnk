@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=X Editor
+Name[ca]=Editor X
 Name[da]=X editor
 Name[es]=Editor X
 Name[fi]=X Editori
@@ -13,6 +14,7 @@ Name[pt_BR]=Editor X
 Name[ro]=Editor de X
 Name[ru]=Редактор X
 Comment=X Editor
+Comment[ca]=Editor X
 Comment[cs]=Editor pro Xwindows
 Comment[da]= X editor
 Comment[es]=Editor para X

@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=DlgEdit
+Name[ca]=Editor de diàlegs
 Name[da]=Dlgedit
 Name[is]=Gluggaritill
 Name[no]=Dialogredigerer
@@ -10,6 +11,7 @@ MiniIcon=
 Protocols=
 MimeType=
 Comment=Qt Dialog Editor
+Comment[ca]=Editor de diàlegs Qt
 Comment[cs]=Editor dialogù pro Qt
 Comment[da]=Qt dialog editor
 Comment[es]=Editor de diálogos de Qt

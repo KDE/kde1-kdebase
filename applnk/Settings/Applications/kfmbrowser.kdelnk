@@ -3,6 +3,7 @@
 Type=Application
 DocPath=kcontrol/kcmkfm/kfm-1.html
 Name=Web browser
+Name[ca]=Fullejador web
 Name[cs]=Prohlí¾eè pro Web
 Name[da]=Websøger
 Name[de]=Webbrowser
@@ -18,6 +19,7 @@ Name[ru]=ğÒÏÓÍÏÔÒİÉË
 Name[sk]=Prehliadaè stránok
 Name[sv]=Webläsaren
 Comment=You can configure here the web browser
+Comment[ca]=Aquí podeu configurar el fullejador web
 Comment[cs]=Zde je mo¾né nastavit prohlí¾eè pro web
 Comment[da]=Her kan man indstille websøgeren
 Comment[de]=Hier können Sie den Webbrowser einstellen

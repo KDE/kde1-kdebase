@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=Appfinder
+Name[ca]=Buscaprogrames
 Name[cs]=Hledaè aplikací
 Name[da]=Find anvendelser
 Name[de]=Anwendungssuche
@@ -26,6 +27,7 @@ Name[zh_CN.GB2312]=Ó¦ÓÃ³ÌÐòËÑÑ°
 Protocols=
 MimeType=
 Comment=Application finder
+Comment[ca]=Buscador de programes d'aplicació
 Comment[cs]=Hledá aplikace a pøidá je do panelu
 Comment[da]=Søg efter anvendelser
 Comment[de]=Suche nach nicht-KDE Anwendungen

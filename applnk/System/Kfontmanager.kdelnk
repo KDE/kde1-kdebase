@@ -1,6 +1,7 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=Fontmanager
+Name[ca]=Gestor de fonts
 Name[cs]=Správce znakových sad
 Name[da]=Skriftindstillinger
 Name[de]=Schriftenmanager
@@ -26,6 +27,7 @@ MiniIcon=kfontmanager.xpm
 Exec=kfontmanager -caption "%c" %i %m
 DocPath=kfontmanager/index.html
 Comment=KDE's Fontmanager.
+Comment[ca]=Gestor de fonts KDE.
 Comment[cs]=Umo¾òuje výbìr znakových sad pou¾ívaných KDE
 Comment[da]=KDE's Skriftmanager.
 Comment[de]=Sucht die Schriften für KDE zusammen

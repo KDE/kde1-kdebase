@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Default
+Name[ca]=Predeterminat
 Name[cs]=Implicitní
 Name[da]=Standard
 Name[de]=Standard

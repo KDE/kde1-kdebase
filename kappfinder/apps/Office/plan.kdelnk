@@ -15,6 +15,7 @@ DocPath=
 Type=Application
 Terminal=0
 Comment=Calendar Manager
+Comment[ca]=Gestor de calendari
 Comment[cs]=Plánovácí kalendáø
 Comment[da]=Kalender
 Comment[de]=Kalendar

@@ -3,6 +3,7 @@
 Type=Application
 DocPath=kcontrol/kcmkfm/kfm-8.html
 Name=Desktop Icons
+Name[ca]=Icones de l'escriptori
 Name[cs]=Ikona pracovnМ plochy
 Name[da]=Arbejdsindstillinger
 Name[es]=Iconos del Escritorio
@@ -17,6 +18,7 @@ Name[ru]=Пиктограммы рабочего стола
 Name[sk]=Ikonky plochy
 Name[sv]=Skrivbordsikoner
 Comment=You can customize here the desktop icons
+Comment[ca]=AquМ podeu configurar les icones de l'escriptori
 Comment[cs]=Zde je mo╬nИ upravit ikony pracovnМ plochy
 Comment[da]=Her kan man indstille srbejdspladsikonerne
 Comment[de]=Hier kЖnnen Sie Ihre Desktop Icons einstellen

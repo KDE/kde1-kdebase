@@ -4,6 +4,7 @@
 Authors=Alexander Budnik <budnik@linserv.jinr.ru>,Denis V. Dmitrienko <denis@null.net>,
 
 Comment=Has latin characters as alternate symbols.
+Comment[ca]=Te caràcters llatins com símbols alternatius.
 Comment[cs]=Obsahuje znaky latinky jako alternativní symboly.
 Comment[da]=Har latinske tegn som alternative symboler
 Comment[de]=Lateinische Zeichen als Alternativ-Belegung.

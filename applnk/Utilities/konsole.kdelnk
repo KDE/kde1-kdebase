@@ -20,6 +20,7 @@ Comment[sk]=Emulátor terminálu (experimentálny)
 Comment[sv]=Terminalemulering (experimentell)
 Terminal=0
 Name=Konsole
+Name[ca]=Consola
 Name[da]=Konsol
 Name[is]=Skjáhermir
 Name[no]=Konsoll

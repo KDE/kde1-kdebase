@@ -5,7 +5,7 @@ MiniIcon=keyboard.xpm
 Exec=kcmkeys standard
 Type=Application
 Comment=Configuration of standard keys
-Comment[ca]=Configuració de les tecles estàndar
+Comment[ca]=Configuració de les tecles estàndard
 Comment[cs]=Nastavení standardních klávesovıch zkratek
 Comment[da]=Indstilling af standard taster
 Comment[de]=Konfiguration der Standard-Tastenbelegungen
@@ -21,7 +21,7 @@ Comment[ru]=îÁÓÔÒÏÊËÁ ÓÔÁÎÄÁÒÔÎÙÈ ËÌÁ×ÉÛ
 Comment[sk]=Konfigurácia ¹tandardnıch kláves
 Comment[sv]=Anpassning av standardtangenter
 Name=Standard Keys
-Name[ca]=Tecles estàndar
+Name[ca]=Tecles estàndard
 Name[cs]=Standarní klávesové zkratky
 Name[da]=Standard taster
 Name[de]=name[de]=Standard-Tastenbelegungen

@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=X Console
+Name[ca]=Consola X
 Name[cs]= X Console
 Name[da]=X konsol
 Name[fi]=X-konsoli
@@ -16,6 +17,7 @@ MiniIcon=mini-sh.xpm
 Protocols=
 MimeType=
 Comment=X Console viewer
+Comment[ca]=Visualitzador de la consola X
 Comment[cs]=Konsole pro Xwindow
 Comment[da]=X konsol fremviser
 Comment[de]=X Konsole

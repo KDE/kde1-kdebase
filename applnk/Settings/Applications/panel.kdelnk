@@ -3,7 +3,7 @@
 Type=Application
 DocPath=kcontrol/kcmkpanel/kpanel-1.html
 Name=Panel
-Name[ca]=Panell
+Name[ca]=Plafó
 Name[eo]=Panelo
 Name[fi]=Paneeli
 Name[fr]=Panneau
@@ -17,7 +17,7 @@ Name[ru]=ðÁÎÅÌØ
 Name[sv]=Panelen
 Name[zh_CN.GB2312]=Ãæ°å
 Comment=You can configure here, how the panel should look like
-Comment[ca]=Aquí podeu configurar quin aspecte ha de tenir el panell
+Comment[ca]=Aquí podeu configurar quin aspecte ha de tenir el plafó
 Comment[cs]=Zde mù¾ete nastavit vzhled a chování panelu KDE
 Comment[da]=Her kan man indstille hvordan panelet skal se ud
 Comment[de]=Sie können hier einstellen, wie das Panel aussehen soll
