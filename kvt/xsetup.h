@@ -14,6 +14,9 @@
 
 /* @(#)xsetup.h	1.1 14/7/92 (UKC) */
 
+#ifndef XSETUP_H
+#define XSETUP_H
+
 #define BIGGER 1
 #define SMALLER 2
 #define NUM_FONTS 6
@@ -26,3 +29,5 @@ void change_icon_name(char *);
 void error(char *,...);
 void set_geom_string(char *string);
 extern void NewFont(int);
+
+#endif /* XSETUP_H */

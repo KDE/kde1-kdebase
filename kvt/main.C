@@ -39,7 +39,7 @@ extern "C" {
 extern void *safemalloc(int, const char *identifier);
 extern void get_token();
 extern void handle_X_event(XEvent event);
-extern void refresh();
+extern void screen_refresh();
 extern void extract_colors( char *fg_string, char *bg_string);
 
 void rxvt_main(int argc,char **argv);
@@ -52,7 +52,6 @@ int run_command(unsigned char *,unsigned char **);
 #include "xsetup.h"
 #include "command.h"
 
-extern char *terminal;
 extern struct sbar_info sbar;
 extern WindowInfo MyWinInfo;
 extern XSizeHints sizehints;
@@ -116,8 +115,6 @@ static const char* color_mode_name[] = {
   "Linux",
   0
 };
-
-static char* terminal_name = "xterm";
 
 int o_argc;
 char ** o_argv;
@@ -187,7 +184,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
     if (ev->xany.window == kvt->winId())
       {
 	handle_X_event(*ev);
-	refresh();
+	screen_refresh();
       }
     return FALSE;
   }
@@ -200,7 +197,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
 
     if (ev->xany.type != MotionNotify || motion_allowed){
       handle_X_event(*ev);
-      refresh();
+      screen_refresh();
     }
     if (ev->xany.type == ButtonPress
 	&& ev->xbutton.button == Button1)
@@ -570,7 +567,7 @@ void kVt::resizeEvent( QResizeEvent * ev)
     // redraw all
      // XClearWindow(display,vt_win);
   //    scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
-     //     refresh();
+     //     screen_refresh();
   }
 }
 
@@ -804,7 +801,7 @@ bool kVt::eventFilter( QObject *obj, QEvent * ev){
 
 void kVt::scrolling( int value){
   MyWinInfo.offset =  length - value - (high - low);
-  refresh();
+  screen_refresh();
 }
 
 void kVt::onDrop( KDNDDropZone* _zone )
@@ -911,14 +908,8 @@ int main(int argc, char **argv)
     window_name = icon_name = s; 
   }
 
-  // set the terminal-environment TERM
-  terminal = (char *)safemalloc(strlen(terminal_name)+6, "terminal");
-  sprintf(terminal, "TERM=%s", terminal_name);
- 
   init_display(argc, argv);
 
-  putenv(terminal);
-  
   init_command(NULL ,(unsigned char **)com_argv);
 
   QSocketNotifier sn( comm_fd, QSocketNotifier::Read );

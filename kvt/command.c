@@ -930,7 +930,7 @@ static unsigned char  get_com_char(int flags)
 	refresh_nl_limit++;
       refresh_nl_count = 0;
       refreshed = 1;
-      refresh();
+      screen_refresh();
     }
 
   /* If we have characters already read in. return one */
@@ -945,9 +945,9 @@ static unsigned char  get_com_char(int flags)
     refresh_nl_count = 0;
     refresh_nl_limit = 1; 
     if(!refreshed)
-      refresh();
+      screen_refresh();
     refreshed = 1;
-    /* scrollbar movements are done in refresh now (Matthias) */
+    /* scrollbar movements are done in screen_refresh now (Matthias) */
     /*	  sbar_show(MyWinInfo.cheight+MyWinInfo.sline_top-1,MyWinInfo.offset,
 	  MyWinInfo.offset + MyWinInfo.cheight -1); */
     XFlush(display);
@@ -1027,9 +1027,9 @@ static unsigned char  get_com_char(int flags)
 	  refresh_nl_count = 0;
 	  refresh_nl_limit = 1; 
 	  if(!refreshed)
-	    refresh();
+	    screen_refresh();
 	  refreshed = 1;
-/* scrollbar movements are done in refresh now (Matthias) */
+/* scrollbar movements are done in screen_refresh now (Matthias) */
 /*	  sbar_show(MyWinInfo.cheight+MyWinInfo.sline_top-1,MyWinInfo.offset,
 		    MyWinInfo.offset + MyWinInfo.cheight -1); */
 	  XFlush(display);

@@ -161,7 +161,7 @@ char charclass[256];
  *  Called just once
  *  at startup.  saved_lines is the number of saved lines.
  ***************************************************************************/
-void scr_init(void)
+void screen_init(void)
 {
   int i;
 #ifdef DEBUG
@@ -179,7 +179,7 @@ void scr_init(void)
       screens[i].wrap_next = 0;
       screens[i].wrap = 1;
       screens[i].decom = 0;
-      screens[i].cursor_visible = 1;
+      screens[i].cursor_is_visible = 1;
     }
   fore_color = 0;
   back_color = 1;
@@ -456,14 +456,14 @@ void scr_power_on(void)
   save_charset = 'B';
   save_charset_num = 0;
   scr_reset();
-  refresh();
+  screen_refresh();
 }
 
 
 /* Matthias: */ 
 void scr_cursor_visible (int mode)
 {
-   cScreen->cursor_visible = mode;
+   cScreen->cursor_is_visible = mode;
 }
 
 
@@ -687,7 +687,7 @@ void scr_add_lines(unsigned char *c,int nl_count,int n)
       if((cScreen->tmargin == 0)&&
 	 (cScreen->bmargin == MyWinInfo.cheight - 1))
 	{
-	  scroll(cScreen->tmargin,cScreen->bmargin,nl);
+	  screen_scroll(cScreen->tmargin,cScreen->bmargin,nl);
 	  cScreen->row -= nl;
 	  if(cScreen->row < -MyWinInfo.saved_lines)
 	    cScreen->row = -MyWinInfo.saved_lines;
@@ -726,7 +726,7 @@ void scr_add_lines(unsigned char *c,int nl_count,int n)
 
 	  cScreen->wrap_next = 0;
 	  if (cScreen->row == cScreen->bmargin)
-	    scroll(cScreen->tmargin,cScreen->bmargin,1);
+	    screen_scroll(cScreen->tmargin,cScreen->bmargin,1);
 	  else if (cScreen->row < MyWinInfo.cheight - 1)
 	    cScreen->row++;
 	  x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) +
@@ -759,7 +759,7 @@ void scr_add_lines(unsigned char *c,int nl_count,int n)
  	      cScreen->text[x] = '\n';  
 	      
 	      if (cScreen->row == cScreen->bmargin)
-		scroll(cScreen->tmargin,cScreen->bmargin,1);
+		screen_scroll(cScreen->tmargin,cScreen->bmargin,1);
 	      else if (cScreen->row < MyWinInfo.cheight - 1)
 		cScreen->row++;      
 	      cScreen->col = 0;
@@ -793,7 +793,7 @@ void scr_add_lines(unsigned char *c,int nl_count,int n)
  *  scrolling is up for a +ve count and down for a -ve count.
  *
  *************************************************************************/
-int scroll(int row1,int row2,int count)
+int screen_scroll(int row1,int row2,int count)
 {
   int i;
   unsigned char *dest1,*source1;
@@ -1120,10 +1120,10 @@ void scr_index(int direction)
 
   if ((cScreen->row == cScreen->bmargin)&&(direction == 1))
     {
-      scroll(cScreen->tmargin,cScreen->bmargin,1);
+      screen_scroll(cScreen->tmargin,cScreen->bmargin,1);
     }
   else if ((cScreen->row == cScreen->tmargin)&&(direction = -1))
-    scroll(cScreen->tmargin,cScreen->bmargin,-1);
+    screen_scroll(cScreen->tmargin,cScreen->bmargin,-1);
   else
     cScreen->row += direction;
   cScreen->wrap_next = 0;
@@ -1333,7 +1333,7 @@ void scr_insert_delete_lines(int count, int insdel)
   }
 
   MyWinInfo.offset = 0;
-  scroll(cScreen->row,cScreen->bmargin,insdel*count);
+  screen_scroll(cScreen->row,cScreen->bmargin,insdel*count);
   cScreen->wrap_next = 0;
 }
 
@@ -1506,7 +1506,7 @@ void scr_move_up_down(int direction)
 
   /* do some refreshing here (Matthias) */ 
 /*  scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);*/
-  refresh();
+  screen_refresh();
 }
 
 
@@ -2045,9 +2045,9 @@ void scr_refresh(int x,int y,int width,int height)
  * The arrays displayed_text and displayed_rend contain what I 
  * believe is currently shown on the screen. The arrays in cScreen contain
  * what should be displayed. This routine can decide how to refresh the
- * screen. Calls in command.c decide when to refresh.
+ * screen. Calls in command.c decide when to screen_refresh.
  **************************************************************************/
-void refresh()
+void screen_refresh()
 {
   extern int font_num;
   char force_next,fn;
@@ -2061,8 +2061,8 @@ void refresh()
   static int d_xcursor = 0;
   int outline = False;
 #ifdef DEBUG
-  check_text("refresh");  
-  fprintf(stderr,"refresh\n");
+  check_text("screen_refresh");  
+  fprintf(stderr,"screen_refresh\n");
 #endif
 
 
@@ -2162,7 +2162,7 @@ void refresh()
 
   xcursor = (cScreen->row + MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1) 
     + cScreen->col;
-  if (cScreen->cursor_visible) /* Matthias */  
+  if (cScreen->cursor_is_visible) /* Matthias */  
     cScreen->rendition[xcursor] |= RS_CURSOR;
   d_xcursor = (cScreen->row + MyWinInfo.offset);
   if(d_xcursor >= MyWinInfo.cheight)
@@ -2383,7 +2383,7 @@ void refresh()
 	    }
 	}
     }
-  if (cScreen->cursor_visible)  /* Matthias */
+  if (cScreen->cursor_is_visible)  /* Matthias */
     cScreen->rendition[xcursor] &= ~RS_CURSOR;
 }
 

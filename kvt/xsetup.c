@@ -19,6 +19,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <curses.h>
+#include <term.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/cursorfont.h>
@@ -80,6 +82,16 @@ extern void kvt_set_size_increment(int, int);
 				LeaveWindowMask |\
 				ButtonPressMask \
 			)
+
+static char *terminal_name[] = {
+    "kvt-color",
+    "xterm-color",
+    "xterm",
+    "vt102",
+    "vt100",
+    "dump",
+    0
+};
 
 /*  External global variables that are initialised at startup.
  */
@@ -159,7 +171,7 @@ char iconic = 0;
 int map_alert = 0 ;
 #endif
 
-static void create_window(int,char **);
+static void create_xwindow(int,char **);
 static void extract_fonts_and_geometry(char *,char *);
 void extract_colors(char *, char *);
 void extract_resources(void);
@@ -180,8 +192,10 @@ void set_geom_string(char *string)
 void init_display(int argc,char **argv)
 {
   XGCValues gcv;
-  int i,len;
+  int i, len;
   char *display_string;
+  char *terminal = NULL;
+  char *pb;
 
   display_name = getenv("DISPLAY");
 
@@ -217,9 +231,9 @@ void init_display(int argc,char **argv)
  	window_name = argv[++i]; 
       else if((strcmp(argv[i],"-tn")==0)&&(i+1<argc)) {
 	++i; 
-	safefree(terminal, "terminal", "init_display");
 	terminal = safemalloc(strlen(argv[i])+6, "terminal");
 	sprintf(terminal, "TERM=%s", argv[i]);
+	putenv(terminal);
       }
       else if((strcmp(argv[i],"-n")==0)&&(i+1<argc)) 
  	icon_name = argv[++i]; 
@@ -311,6 +325,20 @@ void init_display(int argc,char **argv)
 	}
     }
 
+  /* if no terminal has been set by -tn option, find the best.*/
+  if (!terminal) {
+    pb = safemalloc(1024, "tgetent");
+    for(i=0; terminal_name[i]; i++) {
+      if (tgetent(pb, terminal_name[i])!=ERR) {
+        terminal = safemalloc(strlen(terminal_name[i])+6, "terminal");
+	sprintf(terminal, "TERM=%s", terminal_name[i]);
+	putenv(terminal);
+        break;
+      }
+    }
+    safefree(pb, "tgetent", "ready");
+  }
+
   /* to make sure that the GCs are not changed */ 
   gc = 0;
   rvgc = 0;
@@ -319,7 +347,7 @@ void init_display(int argc,char **argv)
   extract_fonts_and_geometry(reg_fonts[font_num], geom_string);
   extract_colors(fg_string, bg_string);
 
-  create_window(argc,argv);
+  create_xwindow(argc,argv);
   
   /*  Create the graphics contexts.
    */
@@ -342,7 +370,7 @@ void init_display(int argc,char **argv)
 
   /*  initialise the screen data structures.
    */
-  scr_init();
+  screen_init();
   sbar_init();
 
   XSetErrorHandler((XErrorHandler)RxvtErrorHandler);
@@ -503,7 +531,7 @@ static void extract_fonts_and_geometry(char *font_string, char *geom_string)
 /*  Open and map the window.
  */
 XClassHint class;
-static void create_window(int argc,char **argv)
+static void create_xwindow(int argc,char **argv)
 {
   XWMHints wmhints;
   

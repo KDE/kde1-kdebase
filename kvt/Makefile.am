@@ -3,7 +3,7 @@
 ##
 
 INCLUDES= @all_includes@ 
-LDADD	= @all_libraries@ -lkdecore -lkdeui -lqt -lXext -lX11 
+LDADD	= @all_libraries@ -lkdecore -lkdeui -lqt -lXext -lX11 -lcurses
 MOC	= @MOC@
 
 PICSDIR = $(libdir)/pics

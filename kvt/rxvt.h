@@ -5,6 +5,9 @@
  *  unaltered copy of this message (including the copyright).
  */
 
+#ifndef RXVT_H
+#define RXVT_H
+
 #define MARGIN 2	/* gap between the text and the window edges */
 
 /*  Some wired in defaults so we can run without any external resources.
@@ -15,3 +18,5 @@
  */
 #define LOW	0
 #define HIGH	1
+
+#endif /* RXVT_H */

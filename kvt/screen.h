@@ -61,7 +61,7 @@ typedef struct _screen_info
   int insert;
   /* character set number (0,1) */
   int charset;
-  int cursor_visible;		/* cursor visible? (Matthias)*/
+  int cursor_is_visible;		/* cursor visible? (Matthias)*/
 } ScreenInfo;
 
 #define NSCREENS 2
@@ -133,7 +133,7 @@ typedef struct _screen_info
 #define COLOR_TYPE_ANSI 0
 #define COLOR_TYPE_Linux 1
 
-void scr_init(void);
+void screen_init(void);
 void scr_reset(void);
 void scr_power_on(void);
 void set_charclass(const char *s);
@@ -173,11 +173,11 @@ void scr_report_position(void);
 void scr_refresh(int,int,int,int);
 void scr_set_charset(int set,unsigned char a);
 void scr_choose_charset(int set);
-void refresh(void);
+void screen_refresh(void);
 inline void check_selection(int row, int col);
 void scr_secure(void);
 void set_font_style(void);
-int  scroll(int row1,int row2,int count);
+int  screen_scroll(int row1,int row2,int count);
 void scr_set_tab(int value);
 void scr_E(void);
 void scr_rev_vid(int mode);
