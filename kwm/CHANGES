@@ -9,8 +9,19 @@ and some code went in from David Hogan's 9wm, a smart and small
 windowmanager written in plain C. There are of course also strong
 influences from my experiences with the former kwm.
 
+
+In 0.13:
+--------
+        - nothing so far, equals 0.12 pl 4 :-)
+
 In 0.12:
 --------
+patchlevel 4:
+        - introduced some support for multi-screen displays
+        - fixed some drag problems 
+        - fixed more drag problems with opaque movement
+        - hopefully fixed occasional freezes on certain X-Servers.
+
 patchlevel 3:
         - honours KWM_WIN_ICON_GEOMETRY for iconify/deiconify animation
         - shaped window decorations faster and less flickering

@@ -28,19 +28,19 @@ public:
   void saveSession();
   // restore the session from the kwm configuration file
   void restoreSession();
-  
+
   // clean up everything and exit
   void cleanup();
-  
+
   // a popup menu which contains all possible window operations. For
   // performance and memory saving issues all clients use this object.
   QPopupMenu* operations;
   // a popup menu which contains all virtual desktops. For performance
   // and memory saving issues all clients use this object.
   QPopupMenu* desktopMenu;
-  
+
  public slots:
- 
+
  // put the focus on the window with the specified label.  Will switch
  // to the appropriate desktop and eventually deiconiy the window
  void changeToClient(QString label);
@@ -51,7 +51,7 @@ public:
  // session manager.
   void changeToTaskClient(QString label);
 
-  
+
   // process the logout: save session and exit.
   void doLogout();
 
@@ -64,12 +64,12 @@ public:
   // possible mouse bindings
   enum {
     MouseRaise, MouseLower, MouseOperationsMenu, MouseToggleRaiseAndLower,
-    MouseActivateAndRaise, MouseActivateAndLower, MouseActivate, 
-    MouseActivateRaiseAndPassClick, MouseActivateAndPassClick, 
+    MouseActivateAndRaise, MouseActivateAndLower, MouseActivate,
+    MouseActivateRaiseAndPassClick, MouseActivateAndPassClick,
     MouseMove, MouseResize, MouseNothing
   };
 
-  
+
   // returns a mouse binding for a given string
   int mouseBinding(const char*);
 
@@ -77,6 +77,8 @@ public:
   // keyevent does not need to be further processed
   bool  executeMouseBinding(Client* c, int command);
 
+  void myProcessEvents();
+    
   public slots:
 
   void slotTaskManager();
@@ -109,7 +111,7 @@ public:
 protected:
   bool eventFilter( QObject *, QEvent * );
   void  timerEvent( QTimerEvent * );
-  
+
  private slots:
   // react on the operations QPopupMenu
   void handleOperation(int itemId);
@@ -117,8 +119,8 @@ protected:
   void handleDesktopPopup(int itemId);
   // react on key events for the current client
   void doOperation(int itemId);
-  
-private:   
+
+private:
   void readConfiguration();
   void writeConfiguration();
 
@@ -128,7 +130,11 @@ private:
   bool handleKeyPress(XKeyEvent);
   // handle key release events of kwm´s global key grabs
   void handleKeyRelease(XKeyEvent);
-  
+    
+  bool process_events_mode;
+  XEvent events[10];
+  int events_count ;
+
 };
 
 
@@ -137,7 +143,7 @@ bool focus_grabbed();
 void showMinicli();
 void showTask();
 // Like manager->activateClient but also raises the window and sends a
-// sound event. 
+// sound event.
 void switchActivateClient(Client*, bool do_not_raise = false);
 
 #endif /* MAIN_H */

@@ -231,8 +231,7 @@ bool electricBorder(Client* c, bool grab_server, int &x, int &y){
     }
     manager->moveDesktopInDirection(d, c);
     manager->timeStamp();
-    while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
-    myapp->processEvents();
+    myapp->myProcessEvents();
     if (grab_server){
       XGrabServer(qt_xdisplay());
     }
@@ -311,7 +310,7 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
 	continue;
       }
       else if (ev.type == MotionNotify){
-                while ( XCheckTypedEvent(qt_xdisplay(),MotionNotify, &ev) );// compress motion events
+                while (XCheckMaskEvent(qt_xdisplay(), PointerMotionMask, &ev));
 	rx = ev.xmotion.x_root;
 	ry = ev.xmotion.y_root;
 	// electric borders
@@ -342,9 +341,8 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
       else {
 	manager->sendConfig(c);
 	XSync(qt_xdisplay(), False);
-	while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
 	Window w = c->window;
-	myapp->processEvents();
+	myapp->myProcessEvents();
 	c = manager->getClient(w);
 	if (!c)
 	  return true;

@@ -1941,13 +1941,11 @@ void Manager::manage(Window w, bool mapped){
      && (c->trans == None)) {
     // ensure that the window is completely visible
     XSync(qt_xdisplay(), False);
-    XEvent ev;
-    while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
     Window w = c->window;
     c = manager->getClient(w);
     if (!c)
       return;
-    myapp->processEvents();
+    myapp->myProcessEvents();
     if (!c->isActive()) // may happen due to the crappy classic focus policies
       activateClient(c);
     c->handleOperation(OP_MOVE);

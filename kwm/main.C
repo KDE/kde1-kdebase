@@ -493,7 +493,8 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
 
   DEBUG_EVENTS("RootWindow", qt_xrootwin());
 
-  manager = 0; // this is important -- Bernd
+  manager = 0; 
+  process_events_mode = false;
 
   int i;
   bool restore_session = true;
@@ -1622,6 +1623,29 @@ bool MyApp::eventFilter( QObject *obj, QEvent * ev){
 
 
 bool MyApp::x11EventFilter( XEvent * ev){
+    
+    if (process_events_mode) {
+	switch (ev->type) {
+	case EnterNotify:
+	case LeaveNotify:
+	    //ignore these
+	    return TRUE;
+	    break;
+	case ButtonPress:
+	case ButtonRelease:
+	case KeyPress:
+	case KeyRelease:
+	    // process these later
+	    if (events_count == 9) {
+		events_count--;
+	    }
+	    events[events_count++] = *ev;
+	    return TRUE;
+	    break ;
+	}
+    }
+    
+    
   if (keys->x11EventFilter(ev))
       return true;
 
@@ -1693,7 +1717,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
 	  XAllowEvents(qt_xdisplay(), SyncPointer, ev->xbutton.time);
 	else
 	  XAllowEvents(qt_xdisplay(), ReplayPointer, ev->xbutton.time);
-	XUngrabKeyboard(qt_xdisplay(), CurrentTime);
+	XUngrabPointer(qt_xdisplay(), CurrentTime);
       }
       else {
 	  c = manager->getClientFromSizegrip(ev->xbutton.window);
@@ -1779,7 +1803,8 @@ bool MyApp::x11EventFilter( XEvent * ev){
   case ConfigureNotify:
     DEBUG_EVENTS("ConfigureNotify", ev->xconfigure.window)
     // this is because Qt cannot handle (usually does not need to)
-    // SubstructureNotify events.
+
+	// SubstructureNotify events.
     if (ev->xconfigure.window != ev->xconfigure.event){
       return true;
     }
@@ -1796,11 +1821,14 @@ bool MyApp::x11EventFilter( XEvent * ev){
     break;
   case FocusOut:
       {
-// 	  // experimental code for multi screen displays. Breaks desktop swtiches.
-//  	  Client *c = manager->getClient(ev->xfocus.window);
-//  	  if (ev->xfocus.mode == NotifyNormal && c && c == manager->current()){
-//  	      c->setactive(False);
-//  	  }
+ 	  // handle multi screen displays. The other window manager
+ 	  // might take the focus away. 
+  	  Client *c = manager->getClient(ev->xfocus.window);
+  	  if (ev->xfocus.mode == NotifyNormal && 
+	      ev->xfocus.detail != NotifyPointer &&
+	      c && c == manager->current()){
+	      c->setactive(False);
+  	  }
       }
 
     break;
@@ -1815,6 +1843,17 @@ bool MyApp::x11EventFilter( XEvent * ev){
   return false;
 }
 
+
+void MyApp::myProcessEvents() {
+    events_count = 0;
+    process_events_mode = true;
+    processEvents();
+    process_events_mode = false;
+    int i;
+    for (i = 0; i < events_count; i++) {
+	XPutBackEvent(qt_xdisplay(), &events[i]);
+    }
+}
 
 void MyApp::handleOperation(int itemId){
   if (Client::operation_client)

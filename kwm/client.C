@@ -198,7 +198,6 @@ bool  animate_size_change(Client* c, QRect before, QRect after, bool decorated, 
   // performance of the machine or the X-Server.
 
   float lf,rf,tf,bf,step;
-  XEvent ev;
 
   if (!options.ResizeAnimation)
     return false;
@@ -245,9 +244,8 @@ bool  animate_size_change(Client* c, QRect before, QRect after, bool decorated, 
 	c->adjustSize();
 	manager->sendConfig(c);
 	XSync(qt_xdisplay(), False);
-	while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
 	Window w = c->window;
-	myapp->processEvents();
+	myapp->myProcessEvents();
 	c = manager->getClient(w);
 	if (!c)
 	  return true;
@@ -288,9 +286,8 @@ bool  animate_size_change(Client* c, QRect before, QRect after, bool decorated, 
     c->adjustSize();
     manager->sendConfig(c);
     XSync(qt_xdisplay(), False);
-    while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
     Window w = c->window;
-    myapp->processEvents();
+    myapp->myProcessEvents();
     c = manager->getClient(w);
     if (!c)
       return true;
