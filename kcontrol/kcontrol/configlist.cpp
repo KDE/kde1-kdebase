@@ -119,6 +119,10 @@ void KModuleListEntry::parseKdelnkFile(const QString &fn)
   name =     config.readEntry("Name", klocale->translate("Unknown module: ")+fn);
   init =     config.readEntry("Init");
   swallowTitle = config.readEntry("SwallowTitle");
+  if (swallowTitle.isEmpty()){
+    swallowTitle = "skcm: "; // (s)wallow (k) (c)ontrol (m)odule
+    swallowTitle += name.data();
+    }
 }
 
 
