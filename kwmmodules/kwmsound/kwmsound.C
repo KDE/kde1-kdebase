@@ -22,6 +22,9 @@
    Boston, MA 02111-1307, USA.
 
    $Log$
+   Revision 1.3  1998/03/08 08:05:44  wuebben
+   Bernd: support for all sound events
+
 
 */  
 
@@ -276,6 +279,10 @@ void KWmSound::doPlaying(int index){
 
   if (info->priority >= last_priority)
     audio->stop();
+
+  // Check for unassigned sound. Do not try to play them
+  if (fname->length() == 0)
+    return;
 
   audio->play((char*)fname->data());
 
