@@ -1651,6 +1651,11 @@ void Manager::manage(Window w, bool mapped){
   QRegExp r;
   if (!mapped) {
     QString t = getprop(w, XA_WM_NAME);
+    if (t.isEmpty()) {
+	// XA_WM_NAME is not sufficient. If not defined try the icon name
+	t = getprop(c->window, XA_WM_ICON_NAME);
+    }
+ 
     if (t.isEmpty()){
 	// XA_WM_NAME is not sufficient. If not defined try the instance or class
 	if (XGetClassHint(qt_xdisplay(), w, &klass) != 0) { 
