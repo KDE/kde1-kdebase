@@ -950,9 +950,9 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
 
   case Right:
 
-    nd = current_desktop - 2;
-    if (nd < 1)
-      nd += number_of_desktops;
+    nd = current_desktop + 2;
+    if (nd > number_of_desktops)
+      nd -= number_of_desktops;
     if (c){
       c->desktop = nd;
       KWM::moveToDesktop(c->window, c->desktop);

@@ -17,6 +17,7 @@ patchlevel 33:
         - bugfix for winMove and winResize (internal pointer grabbing)
         - bugfix for interactive (manual) placement: now the whole
           window is painted :)
+        - bugfix for electric borders (Diego Zamboni) 
 
 patchlevel 32:
 	- fixed bugs:   interactive placement persistence
