@@ -69,7 +69,7 @@ struct kwmOptions {
   //CT 18jan98
   PLACEMENT_POLICY Placement;
   //CT 07mar98
-  uint interactive_trigger;
+  int interactive_trigger;
 
   const char* rstart;
   int titlebar_doubleclick_command;

@@ -436,6 +436,9 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
 
   options.titlebarPixmapActive = new QPixmap;
   options.titlebarPixmapInactive = new QPixmap;
+
+  //CT 07mar98 prepare the placement stuff
+  options.interactive_trigger = -1;
   
   readConfiguration();
 

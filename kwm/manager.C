@@ -1091,7 +1091,7 @@ void Manager::smartPlacement(Client* c) {
   }
 
   //CT 07mar98 verify whether to place interactively or not
-  if(options.Placement == INTERACTIVE_PLACEMENT) {
+  if(options.interactive_trigger >= 0) {
     if(options.interactive_trigger < 
        (over_min*100/(maxRect.height() * maxRect.width())))
       options.Placement = MANUAL_PLACEMENT;
@@ -1338,7 +1338,7 @@ void Manager::manage(Window w, bool mapped){
   else {
     if((options.Placement == SMART_PLACEMENT)  ||
        (options.Placement == MANUAL_PLACEMENT) ||
-       (options.Placement == INTERACTIVE_PLACEMENT))
+       (options.interactive_trigger >= 0))
       smartPlacement(c);
     else if(options.Placement == CASCADE_PLACEMENT)
       cascadePlacement(c);
