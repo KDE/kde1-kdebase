@@ -23,7 +23,7 @@ echo "Done!";
 
 cleanup () {
   # unroll changes in kdm preinst
-  for file in /usr/X11R6/lib/X11/xdm/xdm-config; do
+  for file in /usr/X11R6/lib/X11/kdm/kdm-config; do
     if [ -e $file.kdm-old ]; then
       rm $file
       mv $file.kdm-old $file

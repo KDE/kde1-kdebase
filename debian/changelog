@@ -1,3 +1,14 @@
+kdebase (4:1.1.1-19990620-1) unstable; urgency=low
+
+  * Adding another Pre-Depends I missed
+  * Adding a Suggests for libpam-modules (since slink users probably
+    won't use pam, but potato users do and this is required)
+  * Changing how kde is added to the /etc/X11/windows-manages file
+    Using the wm manager program within Debian.  
+  * Adding in more checks to clean out old configurations
+
+ -- Ivan E. Moore II <rkrusty@debian.org>  Sun, 20 Jun 1999 19:30:27 -0400
+
 kdebase (4:1.1.1-19990612-3) unstable; urgency=low
 
   * Adding in a Pre-Depends for xbase-clients that I had missed

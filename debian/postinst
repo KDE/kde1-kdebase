@@ -3,10 +3,8 @@
 set -e
 
 echo -n "Verifying that KDE is in the window-managers list: ";
-window_manager_entry='/usr/bin/kde'
-if ! grep -q "^$window_manager_entry$" /etc/X11/window-managers 
-then
-	echo $window_manager_entry >> /etc/X11/window-managers 
+if [ -x /usr/sbin/register-window-manager ]; then
+  /usr/sbin/register-window-manager --add /usr/bin/kde
 fi
 echo "Done!";
 
