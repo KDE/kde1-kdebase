@@ -57,7 +57,9 @@ do
   filename=`grep "^Exec=" $file | sed "s/Exec= *//" | sed "s/ .*//"`
 
   # test if this executable is installed (in path!)
-  executable=`which $filename`
+  # executable=`which $filename`
+  temp=`type $filename`
+  executable=`echo $temp | sed 's/.* //'`
   if test -x "$executable" ; then
 
     echo "Looking for $filename: found in $executable"

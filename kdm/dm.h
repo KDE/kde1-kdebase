@@ -77,11 +77,10 @@ from the X Consortium.
 #include <limits.h>
 #include <sys/wait.h>
 
-/* If XDMCP symbol defined, compile to run XDMCP protocol */
+/* If HAVE_X11_XDMCP_H symbol defined, compile to run XDMCP protocol */
 
+#if defined(HAVE_X11_XDMCP_H)
 #define XDMCP
-
-#ifdef XDMCP
 #include <X11/Xdmcp.h>
 #endif
 

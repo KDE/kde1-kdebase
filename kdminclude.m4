@@ -107,5 +107,8 @@ AC_CHECK_LIB(util, main, [LIBUTIL="-lutil"]) dnl for FreeBSD
 AC_SUBST(LIBUTIL)
 AC_CHECK_LIB(s, main, [LIB_LIBS="-ls"]) dnl for AIX
 AC_SUBST(LIB_LIBS)
+AC_CHECK_LIB(Xdmcp, main, [LIBXDMCP="-lXdmcp"], , $X_LDFLAGS -lX11) dnl for Unixware
+AC_SUBST(LIBXDMCP)
+AC_CHECK_HEADERS(X11/Xdmcp.h)
 ])
 
