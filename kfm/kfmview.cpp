@@ -306,8 +306,10 @@ void KfmView::slotUpdateView( bool _reload )
 	for ( v = childViewList.first(); v != 0L; v = childViewList.next() )
 	    v->slotUpdateView( _reload );
     }
-    else
-	manager->openURL( manager->getURL(), _reload );
+    else {
+        if (!manager->getURL().isEmpty())
+            manager->openURL( manager->getURL().data(), _reload );
+    }
 }
 
 void KfmView::slotMountNotify()
