@@ -11,6 +11,7 @@ Protocols=
 MimeType=
 Comment=X FTP Client
 Comment[cs]=FTP klient pro XWindow
+Comment[da]=X FTP klient
 Comment[de]=X FTP Klient
 Comment[es]=Cliente FTP para X
 Comment[fi]=X-FTP asiakasohjelma

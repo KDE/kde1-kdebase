@@ -8,6 +8,7 @@ DocPath=kcontrol/kcminfo/info-9.html
 Comment=SCSI information
 Comment[ca]=Informació de SCSI
 Comment[cs]=Informace o SCSI
+Comment[da]=SCSI-information
 Comment[de]=Informationen zu SCSI-Geräten
 Comment[es]=Información del SCSI
 Comment[fi]=SCSI-tietoja

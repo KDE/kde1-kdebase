@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Name=International Keyboard
 Name[cs]=Mezinárodní klávesnice
+Name[da]=Internationalt tastatur
 Name[de]=Internationale Tastatur
 Name[es]=Teclado Internacional
 Name[fi]=Kansainvälinen näppäimistö
@@ -18,6 +19,7 @@ Name[sk]=Medzinárodná klávesnica
 Name[sv]=Internationellt tangentbord
 Comment=International Keyboard
 Comment[cs]=Mezinárodní klávesnice
+Comment[da]=Internationalt tastatur
 Comment[de]=Internationale Tastatur
 Comment[es]=Teclado Internacional
 Comment[fi]=Kansainvälinen näppäimistö

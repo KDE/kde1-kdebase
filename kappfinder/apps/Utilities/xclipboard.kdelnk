@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=X Clipboard
+Name[da]=X Klippebord
 Name[fi]=X-leikepöytä
 Name[is]=X klemmuspjald
 Name[it]=Appunti di X
@@ -15,6 +16,7 @@ Protocols=
 MimeType=
 Comment=X Clipboard viewer
 Comment[cs]=Prohlí¾eè clipboardu
+Comment[da]=X Klippebordsfremviser
 Comment[de]=X Zwischenablage
 Comment[es]=Visor del portapapeles para X
 Comment[fi]=X-leikepöydän näyttäjä

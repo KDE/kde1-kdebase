@@ -5,6 +5,7 @@ Authors=Jacek Konieczny <jajcus@zeus.polsl.gliwice.pl>,
 
 Comment=New "programmer's" keyboard
 Comment[cs]=Nová "programátorská" klávesnice
+Comment[da]=Nyt programmørtastatur
 Comment[de]=Programme debuggen
 Comment[es]=Nuevo teclado 'de programador'
 Comment[fi]=Uusi "ohjelmoijan" näppäimistö
@@ -22,6 +23,7 @@ Comment[sv]=Nytt programmeingstangentbord
 
 Language=Polish
 Language[cs]=Polský
+Language[da]=Polsk
 Language[de]=Polnische
 Language[es]=Polaco
 Language[fi]=Puola

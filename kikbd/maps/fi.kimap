@@ -7,10 +7,12 @@
 Authors=Karl Backström <backstrom@kde.org>,
 
 Comment=Normal layout
+Comment[da]=Normal udlægning
 Comment[pt_BR]=Disposição normal
 Comment[ru]=îÏÒÍÁÌØÎÁÑ ÒÁÓËÌÁÄËÁ
 
 Language=Finnish
+Language[da]=Finsk
 Language[pt_BR]=Finlandês
 Language[ru]=æÉÎÓËÉÊ
 Language[sv]=Finskt

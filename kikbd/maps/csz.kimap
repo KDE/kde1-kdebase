@@ -3,6 +3,7 @@
 [International Keyboard]
 Comment=Typewriter Keyboard (QWERTZ)
 Comment[cs]=Klávesnice psacího stroje (QWERTZ)
+Comment[da]=Skrivemaskine tastatur (QWERTZ)
 Comment[de]=Internationale Tastatur
 Comment[es]=Teclado QWERTZ
 Comment[fi]=Kirjoituskonenäppäimistö (QWERTY)
@@ -17,6 +18,7 @@ Comment[sv]=Maskinskrivningstangentbord (QWERTZ)
 
 Language=Czech
 Language[cs]=Èeský
+Language[da]=Tjekkisk
 Language[es]=Checo
 Language[fi]=Tsekki
 Language[fr]=Tchèque

@@ -3,6 +3,7 @@
 BinaryPattern=
 Name=Desktop Pager
 Name[cs]=Mapa pracovní plochy
+Name[da]=Arbejdspladsskifter
 Name[es]=Mapa del escritorio
 Name[fi]=Työpöydänvaihtaja
 Name[fr]=Gestionnaire de bureaux virtuels
@@ -20,6 +21,7 @@ Protocols=
 MimeType=
 Comment=Manage your windows
 Comment[cs]=Spravuje va¹e okna
+Comment[da]=Styr dine vinduer
 Comment[es]=Administra tus ventanas
 Comment[fi]=Hallitse ikkunoitasi
 Comment[is]=Yfirlit yfir öll skjáborð

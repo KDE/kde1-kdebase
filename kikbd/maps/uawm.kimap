@@ -5,6 +5,7 @@ Authors=Denis V. Dmitrienko <denis@null.net>,
 
 Comment=Microsoft layout. Has English characters as alternate symbols.
 Comment[cs]=Rozvr¾ení podle Microsoftu. Obsahuje anglické znaky jako alternativní symboly.
+Comment[da]=Microsoft udlægning. Har engelske tegn som alternativesymboler.
 Comment[de]=Microsoft-Layout. Englische Zeichen als Alternativ-Belegung.
 Comment[es]=Disposición de Microsoft. Tiene caracteres ingleses como símbolos alternativos.
 Comment[fi]=Microsoft järjestys. Sisältää englantilaiset kirjaimet vaihtoehtoisina symboleina.
@@ -18,6 +19,7 @@ Comment[sv]=Microsofts layout. Har engelska bokstäver som alternativa symboler.
 
 Language=Ukrainian
 Language[cs]=Ukrajinský
+Language[da]=Ukrainsk
 Language[de]=Ukrainische
 Language[es]=Ucraniano
 Language[fi]=Ukraina

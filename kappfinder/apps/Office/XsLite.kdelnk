@@ -15,6 +15,7 @@ Type=Application
 Terminal=0
 Comment=Spread Sheet
 Comment[cs]=Tabulkový procesor
+Comment[da]=Regneark
 Comment[de]=Tabellenkalkulation
 Comment[es]=Hoja de cálculo
 Comment[fi]=Taulukkolaskentaohjelma

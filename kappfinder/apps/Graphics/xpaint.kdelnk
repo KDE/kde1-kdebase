@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=X Paint
+Name[da]=X-maler
 Name[es]=Xpaint
 Name[is]=Teikniforrit X
 Name[it]=Disegno X
@@ -14,6 +15,7 @@ Protocols=
 MimeType=
 Comment=Xpaint painting application
 Comment[cs]=Aplikace pro kreslení bitmapových obrázkù
+Comment[da]=Xpaint maleprogram
 Comment[de]=Xpaint Malprogramm
 Comment[es]=Aplicación de diseño escalar (mapa de bits)
 Comment[fi]=Xpaint piirto-ohjelma

@@ -7,6 +7,7 @@ MiniIcon=kvt.xpm
 DocPath=kvt/index.html
 Comment=Terminal Emulation (kvt)
 Comment[cs]=Emulátor terminálu (kvt)
+Comment[da]=Terminalemulering (kvt)
 Comment[eo]=Terminalimita¼o (kvt)
 Comment[es]=Emulador de terminal (kvt)
 Comment[fi]=Terminaaliemulaattori (kvt)

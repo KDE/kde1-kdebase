@@ -3,6 +3,7 @@
 Exec=ddd
 Type=Application
 Comment=Data Display Debugger
+Comment[da]=Dataskærm afluser
 Comment[de]=DD Debugger
 Comment[fi]=DDD -debuggeri
 Comment[fr]=Débogueur afficheur de données

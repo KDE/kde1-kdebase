@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=X osview
+Name[da]=X systemovervåger
 Name[is]=X Kerfisástand
 Name[no]=X-systemovervåker
 Name[ru]=XOsView
@@ -11,6 +12,7 @@ Protocols=
 MimeType=
 Comment=System Monitor
 Comment[cs]=Monitor systému
+Comment[da]=Systemovervågningsprogram
 Comment[de]=Systemmonitor
 Comment[es]=Monitor de sistema
 Comment[fi]=Systeemimonitori

@@ -8,6 +8,7 @@ DocPath=kcontrol/kcminfo/info-5.html
 Comment=PCI information
 Comment[ca]=Informació de PCI
 Comment[cs]=Informace o PCI
+Comment[da]=PCI-information
 Comment[de]=Informationen zu PCI
 Comment[es]=Información del PCI
 Comment[fi]=PCI-tietoja

@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Name=International Keyboard Layout
 Name[cs]=Rozvr¾ení mezinárodní klávesnice
+Name[da]=International tastaturudlægning
 Name[de]=Kikbd
 Name[es]=Disposición de Teclado Internacional
 Name[fi]=Kansainvälinen näppäimistö
@@ -17,6 +18,7 @@ Name[sk]=Kikbd
 Name[sv]=Layout för internationellt tangentbord
 Comment=International Keyboard
 Comment[cs]=Mezinárodní klávesnice
+Comment[da]=Internationalt tastatur
 Comment[de]=Internationale Tastatur
 Comment[es]=Teclado Internacional
 Comment[fi]=Kansainvälinen näppäimistö

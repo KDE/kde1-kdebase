@@ -7,6 +7,7 @@ Protocols=
 MimeType=
 Comment=The lyx text processor
 Comment[cs]=Textový procesor LyX
+Comment[da]=Lyx tekstbehandleren
 Comment[de]=Das LyX Textprogramm
 Comment[es]=Procesador de textos LyX
 Comment[fi]=Lyx tekstinkäsittelyohjelma

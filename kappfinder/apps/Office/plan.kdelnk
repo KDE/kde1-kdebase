@@ -16,6 +16,7 @@ Type=Application
 Terminal=0
 Comment=Calendar Manager
 Comment[cs]=Plánovácí kalendáø
+Comment[da]=Kalender
 Comment[de]=Kalendar
 Comment[es]=Calendario
 Comment[fi]=Kalenteriohjelma

@@ -8,6 +8,7 @@ DocPath=kcontrol/kcminfo/info-11.html
 Comment=X-Server information
 Comment[ca]=Informació del servidor X
 Comment[cs]=Informace o X-Serveru
+Comment[da]=Information om X-serveren
 Comment[de]=Informationen zum X-Server
 Comment[es]=Información del Servidor-X
 Comment[fi]=X-palvelimen tiedot

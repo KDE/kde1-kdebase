@@ -5,6 +5,7 @@ Authors=Jan ONDREJ (SAL) <ondrejj@intrak.tuke.sk>
 
 Comment=Typewriter Keyboard (QWERTY)
 Comment[cs]=Klávesnice psacího stroje (QWERTY)
+Comment[da]=Skrivemaskine tastatur (QWERTY)
 Comment[de]=Internationale Tastatur
 Comment[es]=Teclado QWERTY
 Comment[fi]=Kirjoituskonenäppäimistö (QWERTY)
@@ -21,6 +22,7 @@ Comment[sv]=Maskinskrivningstangentbord (QWERTY)
 
 Language=Slovak
 Language[cs]=Slovenský
+Language[da]=Slovakisk
 Language[es]=Eslovaco
 Language[fi]=Slovakki
 Language[fr]=Slovaque

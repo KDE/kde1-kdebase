@@ -5,6 +5,7 @@ Authors=Jacek Konieczny <jajcus@zeus.polsl.gliwice.pl>,
 
 Comment=Polish 'programmers' Keyboard
 Comment[cs]= Polská 'programátorská' klávesnice
+Comment[da]=Poslk programmørtastatur
 Comment[es]=Teclado Polaco 'de programador'
 Comment[fi]=Puolalainen ohjelmoijan näppäimistö
 Comment[is]=Pólskt forritaralyklaborð
@@ -19,6 +20,7 @@ Comment[sv]=Polskt programmeringstangentbord
 
 Language=Polish
 Language[cs]=Polský
+Language[da]=Polsk
 Language[de]=Polnische
 Language[es]=Polaco
 Language[fi]=Puola

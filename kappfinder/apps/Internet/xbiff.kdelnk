@@ -8,6 +8,7 @@ Name=X Biff
 Name[ru]=XBiff
 Comment=Mail notification
 Comment[cs]=Upozoròuje na novou po¹tu
+Comment[da]=Giver besked om e-post
 Comment[de]=Benachrichtung bei neuer Email
 Comment[es]=Notificador de correo
 Comment[fi]=Postin saapumisesta ilmoittaja

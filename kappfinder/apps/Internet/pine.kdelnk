@@ -7,6 +7,7 @@ Type=Application
 Name=Pine
 Comment=PINE is not ELM
 Comment[cs]=Po¹tovní program Pine
+Comment[da]=PINE er ikke ELM
 Comment[de]=PINE Mailprogramm
 Comment[es]=Cliente de correo (PINE no es ELM)
 Comment[fi]=PINE -postiohjelma

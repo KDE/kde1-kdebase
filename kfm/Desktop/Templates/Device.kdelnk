@@ -9,6 +9,7 @@ FSType=Default
 Type=FSDevice
 Name=File System Device
 Name[cs]=Zaøízení souborového systému
+Name[da]=Filsystemsenhed
 Name[de]=Dateisystem
 Name[es]=Dispositivo de sistema de ficheros
 Name[fi]=Tiedostosysteemi

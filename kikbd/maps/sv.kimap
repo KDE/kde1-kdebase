@@ -7,10 +7,12 @@
 Authors=Karl BackstrЖm <backstrom@kde.org>,
 
 Comment=Normal layout
+Comment[da]=Normal udlФgning
 Comment[pt_BR]=DisposiГЦo normal
 Comment[ru]=Нормальная раскладка
 
 Language=Swedish
+Language[da]=Svensk
 Language[pt_BR]=Sueco
 Language[ru]=Шведский
 Language[sv]=Svenskt

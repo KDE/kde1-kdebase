@@ -2,7 +2,7 @@
 [KDE Desktop Entry]
 Name=Fontmanager
 Name[cs]=Správce znakových sad
-Name[da]=Font indstillinger
+Name[da]=Skriftindstillinger
 Name[de]=Schriftenmanager
 Name[eo]=Tiparadministrilo
 Name[es]=Gestor de Fuentes
@@ -27,6 +27,7 @@ Exec=kfontmanager -caption "%c" %i %m
 DocPath=kfontmanager/index.html
 Comment=KDE's Fontmanager.
 Comment[cs]=Umo¾òuje výbìr znakových sad pou¾ívaných KDE
+Comment[da]=KDE's Skriftmanager.
 Comment[de]=Sucht die Schriften für KDE zusammen
 Comment[eo]=Administrilo por la KDE-tiparoj
 Comment[es]=Gestiona las fuentes de KDE.

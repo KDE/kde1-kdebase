@@ -6,7 +6,7 @@ Authors=Jan ONDREJ (SAL) <ondrejj@intrak.tuke.sk>
 Comment=Programmers Keyboard
 Comment[ca]=Arranjament del teclat
 Comment[cs]=Nastavení klávesnice
-Comment[da]=Indstil tastaturet
+Comment[da]=Programmørtastatur
 Comment[de]=Internationale Tastatur
 Comment[eo]=Klavarokonfigura¼o
 Comment[es]=Teclado de Programadores
@@ -27,6 +27,7 @@ Comment[zh_CN.GB2312]=¼üÅÌÉèÖÃ
 
 Language=Slovak
 Language[cs]=Slovenskı
+Language[da]=Slovakisk
 Language[es]=Eslovaco
 Language[fi]=Slovakki
 Language[fr]=Slovaque

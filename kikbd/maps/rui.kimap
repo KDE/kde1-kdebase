@@ -8,6 +8,7 @@ Authors=Serge Vakulenko <vak@kiae.su>,Alexander V. Lukyanov,Trak <trak@cyberdude
 
 Comment=Has latin characters as alternate symbols.
 Comment[cs]=Obsahuje znaky latinky jako alternativní symboly.
+Comment[da]=Har latinske tegn som alternative symboler
 Comment[de]=Lateinische Zeichen als Alternativ-Belegung.
 Comment[es]=Tiene caracteres latinos como símbolos alternativos.
 Comment[fi]=Latinalaiset kirjaimet vaihtoehtoisina symboleina.
@@ -21,6 +22,7 @@ Comment[sv]=Har latinska bokstäver som alternativa symboler.
 
 Language=Russian
 Language[cs]=Ruský
+Language[da]=Russisk
 Language[de]=Russische
 Language[es]=Ruso
 Language[fi]=Venäjä

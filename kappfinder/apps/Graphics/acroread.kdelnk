@@ -1,6 +1,7 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=Acrobat Reader
+Name[da]=Acrobat læser
 Name[fi]=Acrobat -lukija
 Name[is]=Acrobat lesarinn
 Name[it]=Lettore Acrobat
@@ -14,6 +15,7 @@ Type=Application
 DocPath=
 Comment=PDF document viewer
 Comment[cs]=Prohlí¾eè PDF dokumentù
+Comment[da]=PDF dokumentfremviser
 Comment[es]=Visor de documentos PDF
 Comment[fi]=PDF-dokumenttien näyttäjä
 Comment[fr]=Un visualiseur de documents PDF

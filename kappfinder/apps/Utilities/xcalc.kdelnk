@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=X Calc
+Name[da]=X regnemaskine
 Name[fi]=X-laskin
 Name[is]=X reiknivél
 Name[it]=Calcolatrice X
@@ -15,6 +16,7 @@ Protocols=
 MimeType=
 Comment=X Calculator
 Comment[cs]=Calkulátor pro XWindow
+Comment[da]= X Calc regnemaskine
 Comment[de]=X Taschenrechner
 Comment[es]=Calculadora para X
 Comment[fi]=X-Laskin
