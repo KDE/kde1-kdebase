@@ -20,9 +20,9 @@ void KMemoryWidget::update()
   
      totalMem->setText(format(psd.psd_rm*page_size));
       freeMem->setText(format(psd.psd_free*page_size));
-    bufferMem->setText("Not Available");
-      swapMem->setText("Not Available");
-  freeSwapMem->setText("Not Available");
-    sharedMem->setText("Not Available");
+    bufferMem->setText(klocale->translate("Not Available"));
+      swapMem->setText(klocale->translate("Not Available"));
+  freeSwapMem->setText(klocale->translate("Not Available"));
+    sharedMem->setText(klocale->translate("Not Available"));
 
 }

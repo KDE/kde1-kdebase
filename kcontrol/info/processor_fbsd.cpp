@@ -44,9 +44,9 @@ KProcessorWidget::KProcessorWidget(QWidget *parent, const char *name)
 		   ((machspeed+4999)/10000)%100);
   if (strcmp(mhz,"0.0")==0)
  	/* We dunno how fast it's running */
- 	snprintf(cpustring,128,"%s, unknown speed",buf);
+ 	snprintf(cpustring,128,klocale->translate("%s, unknown speed"),buf);
   else
-	snprintf(cpustring,128,"%s running at %s MHz",buf,mhz);
+	snprintf(cpustring,128,klocale->translate("%s running at %s MHz"),buf,mhz);
 
   /* Put everything in the listbox */
   lBox->insertItem(cpustring);

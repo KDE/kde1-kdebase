@@ -93,12 +93,12 @@ QString format(unsigned long value)
 void KMemoryWidget::update()
 {
   // Numerical values
-  totalMem->setText(klocale->translate("not available"));
-  freeMem->setText(klocale->translate("not available"));
-  sharedMem->setText(klocale->translate("not available"));
-  bufferMem->setText(klocale->translate("not available"));
-  swapMem->setText(klocale->translate("not available"));
-  freeSwapMem->setText(klocale->translate("not available"));
+  totalMem->setText(klocale->translate("Not available"));
+  freeMem->setText(klocale->translate("Not available"));
+  sharedMem->setText(klocale->translate("Not available"));
+  bufferMem->setText(klocale->translate("Not available"));
+  swapMem->setText(klocale->translate("Not available"));
+  freeSwapMem->setText(klocale->translate("Not available"));
 }
 
 #endif

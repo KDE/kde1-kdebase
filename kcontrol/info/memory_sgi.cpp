@@ -27,7 +27,7 @@ void KMemoryWidget::update()
 
   FILE *kmem = fopen("/dev/kmem", "r");
   if( kmem == 0 ) {
-    sharedMem->setText("Not Available");
+    sharedMem->setText(klocale->translate("Not Available"));
     return;
   }
 

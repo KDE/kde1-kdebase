@@ -4,7 +4,7 @@
 
 void KMemoryWidget::update()
 {
-  int mib[2],memory,len;char blah[10];
+  int mib[2],memory;size_t len;char blah[10];
   /* Stuff for swap display */
   int used, total, free;
   FILE *pipe;
@@ -19,9 +19,9 @@ void KMemoryWidget::update()
   totalMem->setText(format(memory));
   /*	To: questions@freebsd.org
 		Anyone have any ideas on how to calculate this */
-  freeMem->setText("Unknown");
-  sharedMem->setText(("Unknown"));
-  bufferMem->setText(("Unknown"));
+  freeMem->setText(klocale->translate("Not available"));
+  sharedMem->setText(klocale->translate("Not available"));
+  bufferMem->setText(klocale->translate("Not available"));
   /*	Q&D hack for swap display. Borrowed from xsysinfo-1.4  */
   if ((pipe = popen("/usr/sbin/pstat -ks", "r")) == NULL) {
      used = total = 1;
