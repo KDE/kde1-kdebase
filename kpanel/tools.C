@@ -614,7 +614,7 @@ void kPanel::set_label_date(){
   else
     strftime(timeline,256,"%I:%M%p",loctime);
 
-  strftime(dateline,256,"\n%b %d",loctime);
+  strftime(dateline,256,i18n("\n%b %d"),loctime);
 
   QToolTip::add(label_date, QString(dayline)+QString(timeline)+QString(dateline));
 
