@@ -746,7 +746,7 @@ void MyApp::readConfiguration(){
   else if( key == "Opaque")
     options.WindowMoveType = OPAQUE;
   else{
-    config->writeEntry("WindowMoveType","Transparent");
+    config->writeEntry("WindowMoveType","Opaque");
     options.WindowMoveType = TRANSPARENT;
   }
 
@@ -756,7 +756,7 @@ void MyApp::readConfiguration(){
   else if( key == "Opaque")
     options.WindowResizeType = OPAQUE;
   else{
-    config->writeEntry("WindowResizeType","Transparent");
+    config->writeEntry("WindowResizeType","Opaque");
     options.WindowResizeType = TRANSPARENT;
   }
 
