@@ -345,10 +345,30 @@ void KRootWm::generateWindowlist(QPopupMenu* p){
   int nd = KWM::numberOfDesktops();
   int cd = KWM::currentDesktop();
   Window active_window = KWM::activeWindow();
-  for (d=1; d<=nd; d++){
-    p->insertItem(QString("&")+KWM::getDesktopName(d), 1000+d);
-    if (!active_window && d == cd)
-      p->setItemChecked(1000+d, TRUE);
+  if (nd > 1){
+    for (d=1; d<=nd; d++){
+      p->insertItem(QString("&")+KWM::getDesktopName(d), 1000+d);
+      if (!active_window && d == cd)
+	p->setItemChecked(1000+d, TRUE);
+      for (i=0; i<nw;i++){
+	if (
+	    (KWM::desktop(callbacklist[i]) == d
+	     && !KWM::isSticky(callbacklist[i])
+	     )
+	    || 
+	    (d == cd && KWM::isSticky(callbacklist[i]))
+	    ){
+	  p->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
+			QString("   ")+KWM::titleWithState(callbacklist[i]),i);
+	  if (callbacklist[i] == active_window)
+	    p->setItemChecked(i, TRUE);
+	}
+      }
+      if (d < nd)
+	p->insertSeparator();
+    }
+  }
+  else {
     for (i=0; i<nw;i++){
       if (
 	  (KWM::desktop(callbacklist[i]) == d
@@ -357,13 +377,12 @@ void KRootWm::generateWindowlist(QPopupMenu* p){
 	  || 
 	  (d == cd && KWM::isSticky(callbacklist[i]))
 	  ){
-	p->insertItem(QString("   ")+KWM::titleWithState(callbacklist[i]),i);
+	p->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
+		      KWM::titleWithState(callbacklist[i]),i);
 	if (callbacklist[i] == active_window)
 	  p->setItemChecked(i, TRUE);
       }
     }
-    if (d < nd)
-      p->insertSeparator();
   }
 }
 
