@@ -288,7 +288,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
 "\n"
-"Dette programmet er lisensiert under  GNU General Public License (GPL).\n"
+"Dette programmet er lisensiert under GNU General Public License (GPL).\n"
 "KDEHelp kommer med ABSOLUTT INGEN GARANTIER i det omfang tillatt ved "
 "gjeldende lov."
 

@@ -60,7 +60,7 @@ msgstr "&Bla igjennom..."
 
 #: backgnd.cpp:366
 msgid "Arrangement:"
-msgstr ""
+msgstr "Rekkefølge:"
 
 #: backgnd.cpp:373
 msgid "Tiled"
@@ -115,9 +115,8 @@ msgid "&Dock into the panel"
 msgstr "&Dokk inn i panel"
 
 #: backgnd.cpp:441
-#, fuzzy
 msgid "Cache size (kB):"
-msgstr "Mellomlagerstørrelse:"
+msgstr "Mellomlagerstørrelse (kB):"
 
 #: backgnd.cpp:1338
 msgid "Desktop names"

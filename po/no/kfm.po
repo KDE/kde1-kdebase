@@ -747,18 +747,16 @@ msgid "Vertical Root Grid Spacing:"
 msgstr "Avstand mellom vertikale bunngitter:"
 
 #: htmlopts.cpp:593
-#, fuzzy
 msgid "&Allow per-URL settings"
-msgstr "Godta pr-URL-innstillinger"
+msgstr "&Godta pr-URL-innstillinger"
 
 #: htmlopts.cpp:602
 msgid "Tree &view follows navigation"
-msgstr ""
+msgstr "Tre&visning følger navigasjon"
 
 #: htmlopts.cpp:610
-#, fuzzy
 msgid "&Transparent Text for Root Icons."
-msgstr "Gjennomsiktig tekst for bunnikoner"
+msgstr "&Gjennomsiktig tekst for bunnikoner"
 
 #: htmlopts.cpp:623
 msgid "Icon foreground color:"
