@@ -2,6 +2,7 @@
  	keys->insertItem(i18n("Open"),"Open" , "CTRL+O");
  	keys->insertItem(i18n("New"), "New", "CTRL+N");
  	keys->insertItem(i18n("Close"), "Close", "CTRL+W");
+        keys->insertItem(i18n("Save"), "Save", "CTRL+S");
  	keys->insertItem(i18n("Print"),"Print" , "CTRL+P");
  	keys->insertItem(i18n("Help"), "Help", "F1");
  	keys->insertItem(i18n("Next"), "Next", "Next");
