@@ -131,11 +131,14 @@ int main(char argc, char **argv)
 	  cerr << "Stopping Media ... 1";
 #endif
 
-	  if(SoftStop)
-	    true;//ADev->sync();  // TODO: Sync nonblocking ... or flush *somehow* :-(
+// OK, this i the right way! Never sync or reset while the device is open.
+// Flushing is now solved by emitting "Zero Data". This is the way to go
+// for maudio2 anyhow.
+/*	  if(SoftStop)
+	    ADev->sync();
 	  else
-	    true;
-	  //ADev->reset();
+	    ADev->reset();
+ */
 
 	  /* Reposition stream at start */
 	  ASample->seek(0,0);
