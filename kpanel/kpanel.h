@@ -71,7 +71,7 @@ class myPushButton: public QPushButton
 {
   Q_OBJECT
 public:
-  myPushButton ( QWidget *parent=0, const char* name=0 );
+  myPushButton ( QWidget *parent=0, const char* name=0);
   ~myPushButton ();
   bool flat;
   int last_button;
@@ -206,7 +206,7 @@ protected:
 signals:
     
 private:
-
+  QPixmap mBackTexture;
   KWMModuleApplication* kwmmapp;
   Window* callbacklist;
 

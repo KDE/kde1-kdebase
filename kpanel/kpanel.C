@@ -110,7 +110,16 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       orientation = horizontal;
       position = bottom_right;
     }
-
+	
+	// Read in our background pixmap (if any )
+	if ( config->hasKey("BackgroundTexture") )
+	{
+	  mBackTexture = kapp->getIconLoader()
+	    ->loadIcon(config->readEntry( "BackgroundTexture" ) );
+	  if (!mBackTexture.isNull())
+	    setBackgroundPixmap( mBackTexture );
+	}
+	
     if (config->hasKey("BoxWidth"))
       box_width = config->readNumEntry("BoxWidth");
     if (config->hasKey("BoxHeight"))
@@ -216,12 +225,16 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     control_group->setMouseTracking( TRUE );;
     control_group->setBackgroundColor(backgroundColor());
     control_group->installEventFilter( this );
+    if ( !mBackTexture.isNull() )
+      control_group->setBackgroundPixmap( mBackTexture );
 
     desktopbar = new QButtonGroup(control_group);
     CHECK_PTR( desktopbar );
     desktopbar->setFrameStyle(QFrame::NoFrame);
     desktopbar->setExclusive(TRUE);
     desktopbar->setBackgroundColor(backgroundColor());
+    if ( !mBackTexture.isNull() )
+      desktopbar->setBackgroundPixmap( mBackTexture );
     desktopbar->installEventFilter( this );
     edit_button = NULL;
 
@@ -972,7 +985,10 @@ void kPanel::taskbarPressed(int item){
 
 void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
    QPixmap pm;
-   entries[nbuttons++].button = new myPushButton( this ); 
+   entries[nbuttons++].button = new myPushButton( this); 
+   if (!mBackTexture.isNull())
+     entries[nbuttons-1].button->setBackgroundPixmap( mBackTexture );
+
    entries[nbuttons-1].button->installEventFilter( this );
    entries[nbuttons-1].popup = NULL;
    entries[nbuttons-1].pmi = pmi;

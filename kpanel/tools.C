@@ -70,8 +70,9 @@ void myPushButton::enterEvent( QEvent * ){
   flat = False;
   if (check_rect_for_leave)
     XUnmapSubwindows(qt_xdisplay(), winId());
-  if (!never_flat)
+  if (!never_flat){
     repaint();
+  }
 }
 
 void myPushButton::leaveEvent( QEvent * ){
@@ -91,14 +92,16 @@ void myPushButton::paint(QPainter *painter){
   draw_down = (isDown() || (isOn()) && (never_flat || !flat));
   if (flat_means_down && !never_flat && flat)
     draw_down = TRUE;
+	
   drawButtonLabel(painter);
+  
   if (draw_down ) {
     if ( style() == WindowsStyle )
       qDrawWinButton( painter, 0, 0, width(), 
 		      height(), colorGroup(), TRUE );
-    else
-      qDrawShadePanel( painter, 0, 0, width(), 
-		       height(), colorGroup(), TRUE, 2, 0L );
+    else        
+	  qDrawShadePanel( painter, 0, 0, width(), 
+	  	       height(), colorGroup(), TRUE, 2, 0L );
   }
   else if (!flat || never_flat) {
     if ( style() == WindowsStyle )
@@ -415,36 +418,53 @@ QPixmap kPanel::create_arrow_pixmap(QPixmap pm){
 
   QPixmap pm2 = QPixmap(box_width, box_height);
   QBitmap bm = QBitmap(box_width, box_height);
-  bm.fill(color0);
-  pm2.setMask(bm);
+  bool haveTexture = !mBackTexture.isNull();
+  
+  if ( !haveTexture )
+  	{
+  	bm.fill(color0);
+  	pm2.setMask(bm);
+	}
 
   QPainter p;
   QPainter p2;
-  pm2.fill( backgroundColor() );
   
+  if ( !haveTexture )
+  	pm2.fill( backgroundColor() );
+	  	
   p.begin( &pm2 );
-  p2.begin( pm2.mask());
+  
+  if ( haveTexture )
+  	p.drawPixmap( 0, 0, mBackTexture, 0, 0, box_width, box_height );
+  else
+  	p2.begin( pm2.mask());
+	
   if (!pm.isNull()){
     p.drawPixmap( (pm2.width()-pm.width())/2, 
 		  (pm2.height()-pm.height())/2, 
 		  pm, 0, 0, pm.width(), pm.height());
-    if (pm.mask())
-      p2.drawPixmap( (pm2.width()-pm.mask()->width())/2, 
+ 	if ( !haveTexture )
+		{
+    	if (pm.mask())
+      		p2.drawPixmap( (pm2.width()-pm.mask()->width())/2, 
 		     (pm2.height()-pm.mask()->height())/2, 
 		     *(pm.mask()), 0, 0, pm.mask()->width(), pm.mask()->height());
+	  	}
   }
   
   if (orientation == horizontal){
     if (position == top_left){
       qDrawArrow( &p, DownArrow, WindowsStyle, FALSE,
 		  box_width-6, box_height-5, 0, 0, colgrp);
-      qDrawArrow( &p2, DownArrow, WindowsStyle, FALSE,
+	  if ( !haveTexture )
+      	qDrawArrow( &p2, DownArrow, WindowsStyle, FALSE,
  		  box_width-6, box_height-5, 0, 0, colgrp2);
     }
     else{
       qDrawArrow( &p, UpArrow, WindowsStyle, FALSE,
 		  box_width-6, 4, 0, 0, colgrp);
-      qDrawArrow( &p2, UpArrow, WindowsStyle, FALSE,
+      if ( !haveTexture )
+	  	qDrawArrow( &p2, UpArrow, WindowsStyle, FALSE,
 		  box_width-6, 4, 0, 0, colgrp2);
     }
   }
@@ -452,18 +472,21 @@ QPixmap kPanel::create_arrow_pixmap(QPixmap pm){
     if (position == top_left){
       qDrawArrow( &p, RightArrow, WindowsStyle, FALSE,
 		  box_width-5, box_height-6, 0, 0, colgrp);
-      qDrawArrow( &p2, RightArrow, WindowsStyle, FALSE,
+	  if ( !haveTexture )
+      	qDrawArrow( &p2, RightArrow, WindowsStyle, FALSE,
  		  box_width-5, box_height-6, 0, 0, colgrp2);
     }
     else{
       qDrawArrow( &p, LeftArrow, WindowsStyle, FALSE,
 		  5, box_height-6, 0, 0, colgrp);
-      qDrawArrow( &p2, LeftArrow, WindowsStyle, FALSE,
+      if ( !haveTexture )
+	  	qDrawArrow( &p2, LeftArrow, WindowsStyle, FALSE,
 		  5, box_height-6, 0, 0, colgrp2);
     }
   }
   p.end();
-  p2.end();
+  if ( !haveTexture )
+	  p2.end();
   return pm2;
 }
 
@@ -538,6 +561,8 @@ void kPanel::set_label_date(){
   }
   
   label_date->setText(s);
+  if ( !mBackTexture.isNull() )
+    label_date->setBackgroundPixmap( mBackTexture );
 }
 
 void kPanel::add_windowlist(){
