@@ -24,6 +24,8 @@ icondir = $(kde_icondir)
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) $(srcdir)/mini-kvt.xpm $(kde_minidir)/kvt.xpm
+	$(mkinstalldirs) $(kde_minidir)/../large
+	$(INSTALL_DATA) $(srcdir)/large-kvt.xpm $(kde_minidir)/../large/kvt.xpm
 
 uninstall-local:
 	rm -f $(kde_minidir)/kvt.xpm
