@@ -1,14 +1,13 @@
 /* XPM */
 /* Drawn  by Mark Donohoe for the K Desktop Environment */
 /* See http://www.kde.org */
-static char*exec[]={
-"16 16 7 1",
+static char*script[]={
+"16 16 6 1",
 "# c #000000",
-"d c #008080",
-"a c #c0ffff",
-"c c #00c0c0",
+"d c #a0a0a4",
+"a c #ffffff",
 "b c #585858",
-"e c #00c0c0",
+"c c #c0c0c0",
 ". c None",
 "................",
 ".....######.....",
@@ -17,7 +16,7 @@ static char*exec[]={
 ".#cccaaccaacaa#.",
 ".###accaacca###.",
 "#ccccca##aaccaa#",
-"#dd#ecc##cca#cc#",
+"#dd#ccc##cca#cc#",
 "#d#dccccccacc#c#",
 "##adcccccccccd##",
 ".#ad#c#cc#d#cd#.",

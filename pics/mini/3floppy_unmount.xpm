@@ -2,15 +2,13 @@
 /* Drawn  by Mark Donohoe for the K Desktop Environment */
 /* See http://www.kde.org */
 static char*floppy_unmount[]={
-"16 16 11 1",
+"16 16 9 1",
 "# c #000000",
 "g c #808080",
-"h c #c00000",
 "e c #000080",
 "f c #ffffff",
 "c c #c0c0c0",
 "a c #0000ff",
-"i c #ff0000",
 "b c #0000c0",
 "d c #c0c0c0",
 ". c None",
@@ -26,8 +24,8 @@ static char*floppy_unmount[]={
 ".##egfff#be#....",
 "...##eg#be#.....",
 ".....##ee#......",
-".......##..#####",
-"...........#hhi#",
-"...........#iii#",
-"...........#####"};
+".......##.......",
+"................",
+"................",
+"................"};
 

@@ -1,7 +1,7 @@
 /* XPM */
 /* Drawn  by Mark Donohoe for the K Desktop Environment */
 /* See http://www.kde.org */
-static char*lockedfolder[]={
+static char*folder_locked[]={
 "18 18 12 1",
 "# c #000000",
 "j c #808080",

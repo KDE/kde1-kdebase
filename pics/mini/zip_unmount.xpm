@@ -2,13 +2,12 @@
 /* Drawn  by Mark Donohoe for the K Desktop Environment */
 /* See http://www.kde.org */
 static char*zip_unmount[]={
-"16 16 9 1",
+"16 16 8 1",
 "# c #000000",
 "c c #ffffff",
 "b c #c0c0c0",
 "a c #585858",
 "d c #ff0000",
-"g c #c00000",
 "f c #008080",
 "e c #ffc0c0",
 ". c None",
@@ -24,8 +23,8 @@ static char*zip_unmount[]={
 "##aacccec#a#....",
 "..##aaec#a#.....",
 "....##a#a#......",
-"......###..#####",
-"...........#ggd#",
-"...........#ddd#",
-"...........#####"};
+"......###.......",
+"................",
+"................",
+"................"};
 

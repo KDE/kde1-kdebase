@@ -2,10 +2,9 @@
 /* Drawn  by Mark Donohoe for the K Desktop Environment */
 /* See http://www.kde.org */
 static char*cdrom_unmount[]={
-"16 16 19 1",
+"16 16 17 1",
 "# c #000000",
 "h c #008080",
-"p c #800000",
 "d c #808080",
 "e c #c0c0c0",
 "b c #004000",
@@ -15,7 +14,6 @@ static char*cdrom_unmount[]={
 "n c #004000",
 "l c #303030",
 "c c #00c0c0",
-"q c #c00000",
 "f c #ffc0c0",
 "m c #c0c0c0",
 "g c #004040",
@@ -34,8 +32,8 @@ static char*cdrom_unmount[]={
 "..#kdeeeedlg#...",
 "...#mbdddng#....",
 "....#higog#.....",
-".....#hhg#.#####",
-"......###..#ppq#",
-"...........#qqq#",
-"...........#####"};
+".....#hhg#......",
+"......###.......",
+"................",
+"................"};
 
