@@ -53,9 +53,3 @@ msgstr "Start!"
 #: kgreeter.cpp:214
 msgid "Shutdown..."
 msgstr "Ukonèení..."
-
-#~ msgid "Cancel"
-#~ msgstr "Zru¹it"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"

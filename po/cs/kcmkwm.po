@@ -28,7 +28,7 @@ msgstr "&Titulek"
 
 #: main.cpp:91
 msgid "Window manager style"
-msgstr ""
+msgstr "Vlastnosti správce oken"
 
 #: titlebar.cpp:113
 msgid "Minimize"
@@ -88,7 +88,7 @@ msgstr "Animace titulku"
 
 #: titlebar.cpp:934
 msgid "ms"
-msgstr ""
+msgstr "ms"
 
 #: titlebar.cpp:955
 msgid "&Active pixmap"
@@ -149,9 +149,3 @@ msgstr ""
 #: windows.cpp:91
 msgid "miliseconds"
 msgstr "milisekund"
-
-#~ msgid "Off"
-#~ msgstr "Vypnout"
-
-#~ msgid "On"
-#~ msgstr "Zapnout"

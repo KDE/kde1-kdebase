@@ -20,7 +20,7 @@ msgstr "&Zvonek"
 
 #: main.cpp:75
 msgid "Bell settings"
-msgstr ""
+msgstr "Nastavení zvonku"
 
 #: bell.cpp:85
 msgid "Volume"
@@ -36,21 +36,12 @@ msgstr "Trvání"
 
 #: bell.cpp:89
 msgid "Hz"
-msgstr ""
+msgstr "Hz"
 
 #: bell.cpp:90
 msgid "ms"
-msgstr ""
+msgstr "ms"
 
 #: bell.cpp:92
 msgid "Test"
-msgstr ""
-
-#~ msgid "Apply"
-#~ msgstr "Pou¾ít"
-
-#~ msgid "Cancel"
-#~ msgstr "Zru¹it"
-
-#~ msgid "Help"
-#~ msgstr "Nápovìda"
+msgstr "Test"

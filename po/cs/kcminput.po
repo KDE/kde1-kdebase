@@ -24,7 +24,7 @@ msgstr "&Klávesnice"
 
 #: main.cpp:85
 msgid "Input Devices Properties"
-msgstr ""
+msgstr "Vlastnosti vstupních zaøízení"
 
 #: mouse.cpp:76
 msgid "Acceleration"
@@ -53,21 +53,3 @@ msgstr "Opakování klávesy"
 #: keyboard.cpp:76
 msgid "Key click volume"
 msgstr "Hlasitost stisku klávesy"
-
-#~ msgid "On"
-#~ msgstr "Zapnuto"
-
-#~ msgid "Off"
-#~ msgstr "Vypnuto"
-
-#~ msgid "%"
-#~ msgstr "%"
-
-#~ msgid "Apply"
-#~ msgstr "Pou¾ít"
-
-#~ msgid "Cancel"
-#~ msgstr "Zru¹it"
-
-#~ msgid "Help"
-#~ msgstr "Nápovìda"

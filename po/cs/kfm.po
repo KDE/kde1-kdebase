@@ -32,21 +32,18 @@ msgid "&New Window"
 msgstr "Nové &okno"
 
 #: kfmgui.cpp:308
-#, fuzzy
 msgid "&Run..."
-msgstr "&Vykonat pøíkaz"
+msgstr "&Vykonat pøíkaz ..."
 
 #: kfmgui.cpp:310
 msgid "Open &Terminal"
 msgstr "Otevøít &terminál"
 
 #: kfmgui.cpp:313
-#, fuzzy
 msgid "&Open Location..."
-msgstr "Otevøít &URL"
+msgstr "Otevøít &URL ..."
 
 #: kfmgui.cpp:321
-#, fuzzy
 msgid "&Quit..."
 msgstr "&Ukonèit"
 
@@ -125,22 +122,20 @@ msgid "View Docu&ment Source"
 msgstr "Zobraz zdroj doku&mentu"
 
 #: kfmgui.cpp:395
-#, fuzzy
 msgid "Show Cache"
-msgstr "Ukázat &strom"
+msgstr "Ukázat cache"
 
 #: kfmgui.cpp:397
-#, fuzzy
 msgid "Clear Cache"
-msgstr "Vyprázdnit"
+msgstr "Vyprázdnit cache"
 
 #: kfmgui.cpp:400
 msgid "Always look in cache"
-msgstr ""
+msgstr "V¾dy pou¾ívat cache"
 
 #: kfmgui.cpp:402
 msgid "Never look in cache"
-msgstr ""
+msgstr "Nikdy nepou¾ívat cache"
 
 # kfmgui.cpp:???
 #: kfmgui.cpp:410
@@ -165,12 +160,11 @@ msgstr "Zobrazovat UR&L"
 # kfmgui.cpp:???
 #: kfmgui.cpp:419
 msgid "Sa&ve Settings"
-msgstr "&Ulo¾ nastavení"
+msgstr "&Ulo¾it nastavení"
 
 #: kfmgui.cpp:421
-#, fuzzy
 msgid "Configure Browser..."
-msgstr "Konfiguruj prohlí¾eè"
+msgstr "Konfigurovat prohlí¾eè ..."
 
 #: kfmgui.cpp:447
 msgid "&Find"
@@ -193,9 +187,8 @@ msgid "&Tool"
 msgstr "Nás&troj"
 
 #: kfmgui.cpp:478
-#, fuzzy
 msgid "&Cache"
-msgstr "Zru¹it"
+msgstr ""
 
 #: kfmgui.cpp:515
 msgid "Home"
@@ -206,11 +199,8 @@ msgid "Stop"
 msgstr "Stop"
 
 #: kfmgui.cpp:572
-#, fuzzy
 msgid "Could not load icon\n"
-msgstr ""
-"Není mo¾né nahrát ikonu\n"
-"%s"
+msgstr "Není mo¾né nahrát ikonu\n"
 
 #: kbind.cpp:306 kbind.cpp:379 kbind.cpp:432 kbind.cpp:1504 kbind.cpp:1512
 #: kbind.cpp:1530 kbind.cpp:1547 kbind.cpp:1608 kbind.cpp:1620 kbind.cpp:1647
@@ -235,9 +225,8 @@ msgid "KFM Error"
 msgstr "Chyba KFM"
 
 #: kfmexec.cpp:58 kfmgui.cpp:698 kfmman.cpp:870
-#, fuzzy
 msgid "Malformed URL\n"
-msgstr "Chybný formát URL"
+msgstr "Chybný formát URL\n"
 
 #: kfmgui.cpp:867
 msgid "Select files:"
@@ -270,6 +259,9 @@ msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
 msgstr ""
+"Opravdu chcete ukonèit aplikaci?\n"
+"Bubou ztraceny dùle¾ité vlastnosti \n"
+"pracovní plochy."
 
 #: kfmgui.cpp:1210
 msgid "About KFM"
@@ -298,9 +290,8 @@ msgid "ERROR: Drop over malformed URL"
 msgstr "Chyba: Upu¹tìní nad chybnì daným URL"
 
 #: kfmview.cpp:279
-#, fuzzy
 msgid "ERROR: You dropped some URL over itself"
-msgstr "Upustil jste soubor nad sebou samým"
+msgstr "CHYBA: Upustil jste nìkteré URL nad sebou samým"
 
 #: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:351 kfmview.cpp:312
 #: kfmview.cpp:495 krenamewin.cpp:18 root.cpp:1024
@@ -318,13 +309,12 @@ msgstr ""
 "Neexistuje zpùsob jak je obnovit!"
 
 #: kfmtree.cpp:320 kfmview.cpp:343 kfmview.cpp:466 root.cpp:989
-#, fuzzy
 msgid "ERROR: You dropped a URL over itself"
-msgstr "Upustil jste soubor nad sebou samým"
+msgstr "CHYBA: Upustil jste URL nad sebou samým"
 
 #: kfmtree.cpp:326 kfmview.cpp:349 kfmview.cpp:472 root.cpp:995
 msgid "ERROR: You dropped a directory over one of its children"
-msgstr ""
+msgstr "CHYBA: Upustil jste adresáø nad nìkterým z jeho podadresáøù"
 
 #: kfmexec.cpp:235 kfmman.cpp:733 kfmview.cpp:365
 msgid "Open With:"
@@ -348,13 +338,15 @@ msgstr "Chyba: Nemohu jít do nìkolika adresáøù"
 
 #: kfmview.cpp:615
 msgid "KFM Security Alert"
-msgstr ""
+msgstr "Bezpeènostní výstraha KFM"
 
 #: kfmview.cpp:616
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
 msgstr ""
+"Tato stránka není dùvìryhodná, ale obsahuje\n"
+"odkaz na lokální souborový systém."
 
 #: kfmview.cpp:702
 msgid "Symbolic Link"
@@ -485,21 +477,19 @@ msgstr "Instaluji ¹ablony"
 
 #: main.cpp:197
 msgid "Cd"
-msgstr ""
+msgstr "Cd"
 
 #: main.cpp:198
-#, fuzzy
 msgid "New View"
-msgstr "&Textový pohled"
+msgstr "Nový pohled"
 
 #: kfmtree.cpp:223 main.cpp:201
 msgid "Move to Trash"
 msgstr "Pøesunout do ko¹e"
 
 #: main.cpp:203
-#, fuzzy
 msgid "Open with"
-msgstr "Otevøi pomocí:"
+msgstr "Otevøi pomocí"
 
 #: kfmman.cpp:1056 kfmtree.cpp:155 main.cpp:205
 msgid "Move"
@@ -514,12 +504,10 @@ msgid "Link"
 msgstr "Link"
 
 #: main.cpp:208
-#, fuzzy
 msgid "Empty Trash Bin"
-msgstr "Ko¹"
+msgstr "Vyprázdnit Ko¹"
 
 #: main.cpp:209
-#, fuzzy
 msgid "Add to Bookmarks"
 msgstr "Pøidej k zálo¾kám"
 
@@ -806,9 +794,8 @@ msgstr ""
 "~/.kde/share/apps/kfm/magic"
 
 #: kfmserver.cpp:78
-#, fuzzy
 msgid "Do you really want to rearrange your icons ?"
-msgstr "Opravdu chcete skonèit?"
+msgstr "Opravdu chcete pøeuspoøádat va¹e ikony?"
 
 #: kfmserver.cpp:234
 #, fuzzy, c-format
@@ -816,7 +803,9 @@ msgid ""
 "The URL\n"
 "%s\n"
 "is malformed"
-msgstr "ma chybný formát\n"
+msgstr ""
+"URL %s\n"
+"ma chybný formát"
 
 #: kfmserver.cpp:285
 msgid ""
@@ -868,14 +857,12 @@ msgid "The file does not contain a URL"
 msgstr "Soubor neobsahuje URL"
 
 #: kfmman.cpp:320
-#, fuzzy
 msgid "Contacting host "
-msgstr "Kontaktuji hostitele %s"
+msgstr "Kontaktuji hostitele "
 
 #: kfmman.cpp:324
-#, fuzzy
 msgid "Working ..."
-msgstr "Pøipojování %s ..."
+msgstr "Pracuji ..."
 
 #: kfmman.cpp:934 kfmtree.cpp:230
 msgid "Add To Bookmarks"
@@ -886,13 +873,11 @@ msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr "INTERNÍ CHYBA: Je nutné specifikovat pøinejmen¹ím zaøízení k pøipojení"
 
 #: kiojob.cpp:216 kiojob.cpp:224 kiojob.cpp:998 kiojob.cpp:1138
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Malformed URL\n"
 "%s"
-msgstr ""
-"Chybný formát URL\n"
-"%s"
+msgstr "Chybný formát URL\n"
 
 #: kiojob.cpp:233
 msgid "Can only make links on local file system"
@@ -922,9 +907,7 @@ msgstr "CHYBA: Nemohu zapsat do %s"
 msgid ""
 "Could not make directory\n"
 "%s"
-msgstr ""
-"není mo¾né vytvoøit adresáø\n"
-"%s"
+msgstr "Není mo¾né vytvoøit adresáø\n"
 
 #: kiojob.cpp:464 kiojob.cpp:827
 #, c-format
@@ -936,9 +919,7 @@ msgstr "CHYBA: Není mo¾né vstoupit do adresáøe '%s'"
 msgid ""
 "Could not access directory\n"
 "%s"
-msgstr ""
-"Není mo¾né vstoupit do adresáøe\n"
-"%s"
+msgstr "Není mo¾né pøesunout adresáø\n"
 
 #: kiojob.cpp:688
 #, fuzzy, c-format
@@ -948,10 +929,8 @@ msgid ""
 "to %s\n"
 "Perhaps access denied"
 msgstr ""
-"Není mo¾né pøesunout adresáø\n"
-"%s\n"
-"do '%s'\n"
-"Mo¾ná nemáte pøístup"
+"Není mo¾né zmìnit pøístupová práva\n"
+"Mo¾ná nemáte pøístup."
 
 #: kiojob.cpp:1002 kiojob.cpp:1010 kiojob.cpp:1019 kiojob.cpp:1027
 #: kiojob.cpp:1035 kiojob.cpp:1043 kiojob.cpp:1051 kiojob.cpp:1059
@@ -963,15 +942,14 @@ msgid "Continue"
 msgstr "Pokraèuj"
 
 #: kiojob.cpp:1006 kiojob.cpp:1146
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Could not read\n"
 "%s\n"
 "File does not exist or access denied"
 msgstr ""
-"Není mo¾né èíst\n"
-"%s\n"
-"Soubor neexistuje nebo není pøístupný"
+"Není mo¾né zmìnit pøístupová práva\n"
+"Mo¾ná nemáte pøístup."
 
 #: kiojob.cpp:1014
 #, fuzzy, c-format
@@ -984,13 +962,11 @@ msgstr ""
 "Mo¾ná nemáte pøístup."
 
 #: kiojob.cpp:1023 kiojob.cpp:1154
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Could not create Socket for\n"
 "%s"
-msgstr ""
-"nemohu vytvoøit Socket pro\n"
-"%s"
+msgstr "Nemohu zapsat do\n"
 
 #: kiojob.cpp:1031 kiojob.cpp:1162
 #, c-format
@@ -998,17 +974,13 @@ msgid ""
 "Unknwon host in\n"
 "%s"
 msgstr ""
-"Neznámý hostitel v\n"
-"%s"
 
 #: kiojob.cpp:1039 kiojob.cpp:1170
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Could not connect to\n"
 "%s"
-msgstr ""
-"Nemohu navázat spojení s\n"
-"%s"
+msgstr "Nemohu zapsat do\n"
 
 #: kiojob.cpp:1047 kiojob.cpp:1178
 #, fuzzy, c-format
@@ -1016,30 +988,24 @@ msgid ""
 "The requested action\n"
 "%s\n"
 "is not implemented yet."
-msgstr ""
-"po¾adovaná èinnost\n"
-"'%s'\n"
-"je¹tì není implementována"
+msgstr "Tato vlastnost je¹tì není implementována!"
 
 #: kiojob.cpp:1063
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Could not list directory contents\n"
 "%s"
-msgstr ""
-"Není mo¾né vypsat obsah adresáøe\n"
-"%s"
+msgstr "Není mo¾né pøesunout adresáø\n"
 
 #: kiojob.cpp:1071
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Could not delete\n"
 "%s\n"
 "URL does not exist or permission denied"
 msgstr ""
-"Není mo¾né smazat\n"
-"%s\n"
-"URL neexistuje nebo není pøístupné"
+"Není mo¾né ulo¾it vlastnosti\n"
+"Mo¾ná nemáte pøístup."
 
 #: kiojob.cpp:1081 kiojob.cpp:1188
 #, c-format
@@ -1048,9 +1014,6 @@ msgid ""
 "%s\n"
 "Perhaps wrong password"
 msgstr ""
-"Není mo¾né se pøihlásit do\n"
-"%s\n"
-"Mo¾ná zadáno chybné heslo"
 
 #: kiojob.cpp:1097 kiojob.cpp:1204
 #, c-format
@@ -1058,17 +1021,13 @@ msgid ""
 "Tar reproted an error\n"
 "%s"
 msgstr ""
-"Tar hlasil chybu\n"
-"%s"
 
 #: kiojob.cpp:1105
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Gzip reproted an error for\n"
 "%s"
 msgstr ""
-"Gzip hlasil chybu\n"
-"%s"
 
 #: kiojob.cpp:1115 kiojob.cpp:1130
 #, fuzzy, c-format
@@ -1083,8 +1042,6 @@ msgid ""
 "Gzip reproted an error\n"
 "%s"
 msgstr ""
-"Gzip hlasil chybu\n"
-"%s"
 
 #: kiojob.cpp:1220
 #, c-format
@@ -1094,10 +1051,6 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"Není mo¾né pøipojení\n"
-"Chybový záznam ulo¾en do:\n"
-"\n"
-"%s"
 
 #: kiojob.cpp:1226
 #, c-format
@@ -1107,10 +1060,6 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"Není mo¾né odpojení\n"
-"Chybový záznam ulo¾en do:\n"
-"\n"
-"%s"
 
 #: kiojob.cpp:1364
 msgid "Making directory"
@@ -1124,31 +1073,31 @@ msgstr "Soubor %i/%i"
 #: kiojob.cpp:1449 kiojob.cpp:1504
 #, fuzzy, c-format
 msgid "to %s"
-msgstr "do %s"
+msgstr ""
+"\n"
+"do "
 
 #: kiojob.cpp:1480
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Could not delete directory\n"
 "%s"
-msgstr ""
-"Není mo¾né smazat adresáø\n"
-"%s"
+msgstr "Není mo¾né vytvoøit adresáø\n"
 
 #: kiojob.cpp:1570
-#, c-format
+#, fuzzy, c-format
 msgid "Mounting %s ..."
-msgstr "Pøipojování %s ..."
+msgstr "Pracuji ..."
 
 #: kiojob.cpp:1572
 #, c-format
 msgid "Unmounting %s ..."
-msgstr "Odpojování %s ..."
+msgstr ""
 
 #: kiojob.cpp:1600
-#, fuzzy, c-format
+#, c-format
 msgid "Retrieving listing of %s"
-msgstr "Obnovování výpisu %s ..."
+msgstr ""
 
 #: kiojob.cpp:1824
 msgid "Segmentation fault in io subprocess"
@@ -1229,58 +1178,52 @@ msgstr "Známé vazby:"
 #: kproxydlg.cpp:10
 #, fuzzy
 msgid "Only HTTP-Proxy is implemented yet!"
-msgstr ""
-"po¾adovaná èinnost\n"
-"'%s'\n"
-"je¹tì není implementována"
+msgstr "Tato vlastnost je¹tì není implementována!"
 
 #: kkfmoptdlg.cpp:39
 msgid "KFM Browser Settings"
-msgstr ""
+msgstr "Nastavení KFM prohlí¾eèe"
 
 #: kfmprops.h:73
 msgid "&General"
-msgstr ""
+msgstr "&V¹eobecné"
 
 #: kfmprops.h:108
-#, fuzzy
 msgid "&Permissions"
-msgstr "Pøístupová práva"
+msgstr "&Pøístupová práva"
 
 #: kfmprops.h:198
-#, fuzzy
 msgid "E&xecute"
-msgstr "Vykonej"
+msgstr "Vy&konat pøíkaz"
 
 #: kfmprops.h:249
-#, fuzzy
 msgid "U&RL"
-msgstr "URL"
+msgstr "U&RL"
 
 #: kfmprops.h:273
 msgid "&Dir"
-msgstr ""
+msgstr "&Adresáø"
 
 #: kfmprops.h:316
-#, fuzzy
 msgid "&Application"
-msgstr "Aplikace"
+msgstr "&Aplikace"
 
 #: kfmprops.h:358
-#, fuzzy
 msgid "&Binding"
-msgstr "&Hledej"
+msgstr "Vaz&ba"
 
 #: kfmprops.h:388
 msgid "De&vice"
-msgstr ""
+msgstr "&Zaøízení"
 
 #: kfmexec/main.cpp:46
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "The URL %s\n"
 "is malformed"
-msgstr "ma chybný formát\n"
+msgstr ""
+"URL %s\n"
+"ma chybný formát"
 
 #: kfmexec/main.cpp:132
 #, c-format
@@ -1290,121 +1233,35 @@ msgid ""
 "has been modified.\n"
 "Do you want to save it?"
 msgstr ""
+"Soubor\n"
+"%s\n"
+"byl modifikován.\n"
+"Pøejete si ho ulo¾it?"
 
 #: kfmexec/main.cpp:133
 msgid "KFM Question"
-msgstr ""
+msgstr "Otázka KFM"
 
 #: kfmexec/main.cpp:199
 msgid ""
 "Syntax Error:\n"
 "kfmexec command [URLs ....]\n"
 msgstr ""
+"Syntaktická chyba:\n"
+"kfmexec command [URLs ....]\n"
 
 #~ msgid "The URL"
 #~ msgstr "URL"
 
-#, fuzzy
 #~ msgid "is malformed\n"
 #~ msgstr "ma chybný formát\n"
 
-#, fuzzy
 #~ msgid "Could not move directory\n"
-#~ msgstr ""
-#~ "není mo¾né vytvoøit adresáø\n"
-#~ "%s"
+#~ msgstr "Není mo¾né pøesunout adresáø\n"
 
-#, fuzzy
 #~ msgid ""
 #~ "\n"
 #~ "Perhaps access denied"
 #~ msgstr ""
-#~ "Není mo¾né zapsat\n"
-#~ "%s\n"
-#~ "Mo¾ná není pøístupný"
-
-#~ msgid "&Delete"
-#~ msgstr "&Smazat"
-
-#~ msgid "&New"
-#~ msgstr "&Nový"
-
-#~ msgid "&View"
-#~ msgstr "&Pohled"
-
-#~ msgid "Clear"
-#~ msgstr "Vyprázdnit"
-
-#~ msgid "Delete"
-#~ msgstr "Smazat"
-
-#~ msgid "Add"
-#~ msgstr "Pøidat"
-
-#~ msgid "&Print..."
-#~ msgstr "Tisk&nout..."
-
-#~ msgid "&Close"
-#~ msgstr "U&zavøít"
-
-#~ msgid "&Copy"
-#~ msgstr "&Kopírovat"
-
-#~ msgid "&Paste"
-#~ msgstr "&Vlo¾it"
-
-#~ msgid "Back"
-#~ msgstr "Zpìt"
-
-#~ msgid "Forward"
-#~ msgstr "Dal¹í"
-
-#~ msgid "Reload"
-#~ msgstr "Obnov"
-
-#~ msgid "Copy"
-#~ msgstr "Kopírovat"
-
-#~ msgid "Paste"
-#~ msgstr "Vlo¾it"
-
-#~ msgid "&Help"
-#~ msgstr "&Nápovìda"
-
-#~ msgid "&File"
-#~ msgstr "&Soubor"
-
-#~ msgid "&Edit"
-#~ msgstr "Úp&ravy"
-
-# kfmgui.cpp:???
-#~ msgid "&Options"
-#~ msgstr "&Mo¾nosti"
-
-#~ msgid "&Help..."
-#~ msgstr "&Nápovìda"
-
-#~ msgid "Help"
-#~ msgstr "Nápovìda"
-
-#~ msgid "No"
-#~ msgstr "Ne"
-
-#~ msgid "Yes"
-#~ msgstr "Ano"
-
-#~ msgid "Apply"
-#~ msgstr "Pou¾ít"
-
-#~ msgid "Error"
-#~ msgstr "Chyba"
-
-#~ msgid "Close"
-#~ msgstr "Zavøít"
-
-#~ msgid ""
-#~ "You dropped some file over itself\n"
-#~ "or one of its sub-directories"
-#~ msgstr ""
-#~ "Upustil jste nìkteré soubory nad sebou \n"
-#~ "samými nebo nad jejich podadresáøi"
+#~ "\n"
+#~ "Pravdìpodobnì není pøístupný"

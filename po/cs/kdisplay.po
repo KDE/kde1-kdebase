@@ -275,51 +275,5 @@ msgid "&Style"
 msgstr "&Styl"
 
 #: main.cpp:105
-#, fuzzy
 msgid "Display settings"
-msgstr "Nastavení obrazovky"
-
-#~ msgid "Italic"
-#~ msgstr "Polo¾ené"
-
-#~ msgid "Remove"
-#~ msgstr "Odstranit"
-
-#~ msgid "Charset:"
-#~ msgstr "Kódování:"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Cancel"
-#~ msgstr "Zru¹it"
-
-#~ msgid "Help"
-#~ msgstr "Nápovìda"
-
-#~ msgid "File"
-#~ msgstr "Soubor"
-
-#~ msgid "Edit"
-#~ msgstr "Upravit"
-
-#~ msgid "Save"
-#~ msgstr "Ulo¾it"
-
-#~ msgid "Error"
-#~ msgstr "Chyba"
-
-#~ msgid "Yes"
-#~ msgstr "Ano"
-
-#~ msgid "No"
-#~ msgstr "Ne"
-
-#~ msgid "Bold"
-#~ msgstr "Tuèné"
-
-#~ msgid "OK"
-#~ msgstr "Ok"
-
-#~ msgid "Apply"
-#~ msgstr "Pou¾ít"
+msgstr "Vlastnosti obrazovky"

@@ -62,15 +62,3 @@ msgstr ""
 #: krootwm.C:463
 msgid "Usage:"
 msgstr "Pou¾ití:"
-
-#~ msgid "Clear"
-#~ msgstr "Vyprázdnit"
-
-#~ msgid "New"
-#~ msgstr "Nový"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Cancel"
-#~ msgstr "Zru¹it"

@@ -61,7 +61,7 @@ msgstr "Otevøít o&dpovídající adresáø"
 
 #: kfindtop.cpp:149
 msgid "&Save Search"
-msgstr "&Ulo¾it výsledky"
+msgstr "U&lo¾it výsledky"
 
 #: kfindtop.cpp:158
 msgid "&Undo"
@@ -286,11 +286,11 @@ msgstr "Nebylo mo¾né ulo¾it výsledky!"
 
 #: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
 msgid "KFind Results File"
-msgstr ""
+msgstr "Soubor s výstupy KFindu"
 
 #: kfwin.cpp:179
 msgid "Information"
-msgstr ""
+msgstr "Informace"
 
 #: kfwin.cpp:180
 msgid "Results were saved to file\n"
@@ -356,48 +356,3 @@ msgstr "Nemohu urèit typ archivu!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Chyba pøi vytváøení procesu!"
-
-#~ msgid "Delete"
-#~ msgstr "Smazat"
-
-#~ msgid "Remove"
-#~ msgstr "Odstraò"
-
-#~ msgid "Sorry"
-#~ msgstr "Sorry"
-
-#~ msgid "&Quit"
-#~ msgstr "U&konèit"
-
-#~ msgid "&Copy"
-#~ msgstr "&Kopírovat"
-
-#~ msgid "&Edit"
-#~ msgstr "Úp&ravy"
-
-#~ msgid "&File"
-#~ msgstr "&Soubor"
-
-#~ msgid "&Help"
-#~ msgstr "Nápo&vìda"
-
-#~ msgid "&Options"
-#~ msgstr "&Mo¾nosti"
-
-#~ msgid "Cancel"
-#~ msgstr "Zru¹it"
-
-#~ msgid "Error"
-#~ msgstr "CHYBA"
-
-#~ msgid "Help"
-#~ msgstr "Nápovìda"
-
-#~ msgid "OK"
-#~ msgstr "OK"
-
-#~ msgid "Open"
-#~ msgstr "Otevøít"
-
-#~ msgid "Quit"
-#~ msgstr "Ukonèit"

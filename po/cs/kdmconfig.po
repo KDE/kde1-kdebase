@@ -171,7 +171,7 @@ msgstr "Pøíkazy"
 
 #: kdm-sess.cpp:67
 msgid "Shutdown"
-msgstr ""
+msgstr "Shutdown"
 
 #: kdm-sess.cpp:75
 msgid "Restart"
@@ -284,3 +284,7 @@ msgstr "&U¾ivatelé"
 #:
 msgid "&Sessions"
 msgstr "&Sezení"
+
+#:
+msgid "KDM Configuration"
+msgstr "Konfigurace KDM"

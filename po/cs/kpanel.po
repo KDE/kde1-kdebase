@@ -157,21 +157,3 @@ msgstr "Pracovní plochy"
 #: props.C:380
 msgid "KPanel Configuration"
 msgstr "Konfigurace KPanelu"
-
-#~ msgid "Remove"
-#~ msgstr "Odstraò"
-
-#~ msgid "Cancel"
-#~ msgstr "Zru¹it"
-
-#~ msgid "Top"
-#~ msgstr "Nahoøe"
-
-#~ msgid "Left"
-#~ msgstr "Vlevo"
-
-#~ msgid "Bottom"
-#~ msgstr "Dole"
-
-#~ msgid "Style:"
-#~ msgstr "Styl:"

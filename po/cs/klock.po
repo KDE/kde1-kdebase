@@ -19,9 +19,8 @@ msgid "Banner"
 msgstr "Bì¾ící text"
 
 #: banner.cpp:78
-#, fuzzy
 msgid "Setup kbanner"
-msgstr "Nastavení prázdné obrazovky"
+msgstr "Nastavení kbanneru"
 
 #: banner.cpp:116 blankscrn.cpp:65
 msgid "Color:"
@@ -224,9 +223,8 @@ msgid "Setup KHop"
 msgstr "Nastavení KHopu"
 
 #: hop.cpp:322
-#, fuzzy
 msgid "Samecolor Pixels:"
-msgstr "Body stejné barevý:"
+msgstr "Body stejné barvy:"
 
 #: hop.cpp:332 lissie.cpp:346
 msgid "Cycles:"
@@ -359,16 +357,15 @@ msgstr ""
 "Prosím kontaktujte svého systémového správce."
 
 #: main.cpp:427
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 msgstr ""
-"Pou¾ití: %s -install|-setup|-test|-desc|-preview wid\n"
+"Pou¾ití: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "         [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
 #: main.cpp:430
-#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -391,8 +388,7 @@ msgstr ""
 "                      x = i  ¾ádná akce (ignoruj)\n"
 "                      x = s  ¹etøi obrazovku\n"
 "                      x = l  uzamkni obrazovku\n"
-"                     poøadí: horní-levý, horní-pravý, dolní-levý, "
-"dolní-pravý\n"
+"                     poøadí: horní-levý, horní-pravý, dolní-levý, dolní-pravý\n"
 "  -delay num        Doba neèinnosti pøed spu¹tìním ¹etøièe obrazovky\n"
 "                    (implicitnì 10min)\n"
 "  -desc             Vypi¹ popis ¹etøièe obrazovky na stdout\n"
@@ -401,6 +397,7 @@ msgstr ""
 "  -nice num         Proveï se specifikovanou hodnotou nice\n"
 "\n"
 "  -preview wid      Proveï ve specifikovaném X oknì\n"
+"  -inroot           Proveï v koøenovém oknì\n"
 "  -setup            Nastav ¹etøiè obrazovky\n"
 "  -test             Vyvolat okam¾itì ¹etøiè obrazovky\n"
 
@@ -601,9 +598,3 @@ msgstr ""
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
 "Pøevedeno pro kscreensaver Emanuelem Pirkerem"
-
-#~ msgid "Italic"
-#~ msgstr "Polo¾ené"
-
-#~ msgid "Font"
-#~ msgstr "Znaková sada"

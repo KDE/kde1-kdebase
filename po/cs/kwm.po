@@ -108,7 +108,7 @@ msgstr "Osmá"
 
 #: main.C:742
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr ""
+msgstr "Nìkteré pixmapy nejsou korektní: ShapeMode vypnut\n"
 
 #: main.C:973
 msgid "*** No Tasks ***"
@@ -157,6 +157,3 @@ msgstr "Pøepni do"
 #: taskmgr.C:119
 msgid "Current session"
 msgstr "Souèasné sezení"
-
-#~ msgid "&Close"
-#~ msgstr "&Zavøít"

@@ -24,7 +24,7 @@ msgstr "&Procesor"
 
 #: main.cpp:66
 msgid "System Information"
-msgstr ""
+msgstr "Informace o systému"
 
 #: memory.cpp:10
 msgid "Total memory"
@@ -63,12 +63,3 @@ msgstr "není pøístupná"
 #: processor.cpp:29
 msgid "This system is not yet supported :-("
 msgstr "Tento systém není je¹tì podporován :-("
-
-#~ msgid "File Error!"
-#~ msgstr "Chyba souoru!"
-
-#~ msgid "Cannot read /proc/cpuinfo"
-#~ msgstr "Není mo¾né èíst /proc/cpuinfo"
-
-#~ msgid "Help"
-#~ msgstr "Nápovìda"

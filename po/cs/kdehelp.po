@@ -272,7 +272,7 @@ msgstr ""
 
 #: mainwidget.cpp:184
 msgid "Version "
-msgstr ""
+msgstr "Verze "
 
 #: mainwidget.cpp:186
 msgid ""
@@ -284,6 +284,14 @@ msgid ""
 "KDEHelp comes with ABSOLUTELY NO WARRANY to the extent permitted by "
 "applicable law."
 msgstr ""
+"\n"
+"\n"
+"\n"
+"Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
+"\n"
+"Tento program je licencován podle GNU Gemeral Public Licence (GPL).\n"
+"KDEHelp je poskytován BEZ JAKÉKOLIV ZÁRUKY s výjimkou, ¾e je toto \n"
+"vylouèeno místními zákony."
 
 #: mainwidget.cpp:202
 msgid "&Goto"
@@ -348,57 +356,3 @@ msgstr "O KDE nápovìdì"
 #: mainwidget.cpp:618
 msgid "&Add Bookmark"
 msgstr "&Pøidej zálo¾ku"
-
-#~ msgid "New"
-#~ msgstr "Nové"
-
-#~ msgid "Back"
-#~ msgstr "Zpìt"
-
-#~ msgid "Forward"
-#~ msgstr "Dal¹í"
-
-#~ msgid "&Print..."
-#~ msgstr "&Tiskni..."
-
-#~ msgid "&Close"
-#~ msgstr "&Zavøít"
-
-#~ msgid "&Quit"
-#~ msgstr "&Ukonèit"
-
-#~ msgid "&Copy"
-#~ msgstr "&Kopírovat"
-
-#~ msgid "&File"
-#~ msgstr "&Soubor"
-
-#~ msgid "&Edit"
-#~ msgstr "Úp&ravy"
-
-#~ msgid "&Options"
-#~ msgstr "&Mo¾nosti"
-
-#~ msgid "&Help"
-#~ msgstr "Nápo&vìda"
-
-#~ msgid "Cancel"
-#~ msgstr "Zru¹it"
-
-#~ msgid " Location:"
-#~ msgstr "Adresa:"
-
-#~ msgid "KDE Help"
-#~ msgstr "KDE Nápovìda"
-
-#~ msgid "Waiting for kmail to be finished..."
-#~ msgstr "Èekám na dokonèení programu kmail ..."
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "&Using KDE Help"
-#~ msgstr "&Pou¾ívání KDE nápovìdy"
-
-#~ msgid "&About"
-#~ msgstr "&Informace"
