@@ -364,7 +364,7 @@ RootIconTextBackground=Background!
 # A colon separates the name of the icon from the name of the mini
 # icon.
 [Icons]
-ConfigActivateCmd=kfmclient configure
+ConfigActivateCmd=restart kfm
 Trash=kfm_trash.xpm
 TrashFull=kfm_fulltrash.xpm
 PanelGo=apps/kpanel/pics/go.xpm:apps/kpanel/pics/mini/go.xpm

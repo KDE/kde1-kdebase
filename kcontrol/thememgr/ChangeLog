@@ -1,5 +1,9 @@
 1999-01-12  Stefan Taferner  <taferner@kde.org> (V0.7.1)
 
+	* Changed activation command for icons to
+	restart of kfm (kfm does not support reloading of
+	icons yet).
+
 	* Added skeleton of documentation.
 
 	* Added missing config keys in Template.themerc in
