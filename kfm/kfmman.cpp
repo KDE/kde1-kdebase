@@ -1029,6 +1029,9 @@ void KFMManager::slotPopupActivated( int _id )
 
 void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _current_dir )
 {
+    // please note that this code is strongly related to
+    // root.cpp: void KRootWidget::openPopupMenu( ... )
+
     // Check wether all URLs are correct
     char *s;
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
@@ -1141,16 +1144,18 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
 	// Take only bindings, matching all files.
 	else
 	{
+	    bindings2.clear(); 
+	    pixlist2.clear();
 	    KMimeType::getBindings( bindings2, pixlist2, s, isdir );
 	    char *b;
 	    QPixmap *p = pixlist.first();
+	    bindings3.clear();
+	    pixlist3.clear();
 	    // Look thru all bindings we have so far
 	    for ( b = bindings.first(); b != 0L; b = bindings.next() )
 	    {
 		// Does the binding match this file, too
-		// and don't we already have this binding?
-		if ( ( bindings2.find( b ) != -1 ) &&	
-		     ( bindings3.find( b ) == -1  ) )
+		if ( bindings2.find( b ) != -1  )
 		{
 		    // Keep these entries
 		    bindings3.append( b );
@@ -1161,6 +1166,8 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
 	    pixlist = pixlist3;
 	    bindings = bindings3;
 	}
+	if ( bindings.isEmpty() )
+	    break;
     }
     
     // Add all bindings to the menu

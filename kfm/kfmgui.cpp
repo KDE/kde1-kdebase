@@ -937,8 +937,7 @@ void KfmGui::slotSelect()
 
 void KfmGui::slotSelectAll()
 {
-	QRegExp re( "*", true, true );
-	view->getActiveView()->select( re, true );
+	view->getActiveView()->select( 0L, true );
 }
 
 void KfmGui::slotFind()

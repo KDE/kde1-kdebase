@@ -1536,23 +1536,27 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     iconBox->setIcon( iconStr );
     
     // Get list of all applications
-    int index = -1;
-    int i = 0;
+    QStrList applist;
+    QString currApp;
+    appBox->insertItem( klocale->translate("<none>") );
     QListIterator<KMimeBind> it = KMimeBind::bindingIterator();
     for ( ; it.current() != 0L; ++it )
     {
-	if ( appStr.data() != 0L )
-	    if ( strcmp( it.current()->getProgram(), appStr.data() ) == 0 )
-		index = i;
+	currApp = it.current()->getProgram();
 
-	appBox->insertItem( it.current()->getProgram() );
-	i++;
+	// list every app only once
+	if ( applist.find( currApp ) == -1 ) { 
+	    appBox->insertItem( currApp );
+	    applist.append( currApp );
+	}
     }
-    appBox->insertItem( "" );
     
     // Set the default app
-    if ( index == -1 )
-	index = i;
+    int index = applist.find( appStr );
+    if ( index != -1 )
+ 	index++;
+    else
+	index = 0;
     appBox->setCurrentItem( index );
     
     connect( iconBox, SIGNAL( activated( int ) ), this, SLOT( slotIconChanged( int ) ) );
@@ -1626,8 +1630,12 @@ void BindingPropsPage::applyChanges()
     config.writeEntry( "MimeType", mimeEdit->text() );
     config.writeEntry( "Icon", iconBox->icon() );
 
-    if ( appBox->currentItem() != -1 )
-	config.writeEntry( "DefaultApp", appBox->text( appBox->currentItem() ) );
+    // item 0 in appBox is reserved for <none>
+    if ( appBox->currentItem() == 0 )
+	appStr = "";
+    else
+	appStr = appBox->text( appBox->currentItem() );
+    config.writeEntry( "DefaultApp", appStr );
 
     config.sync();
 
