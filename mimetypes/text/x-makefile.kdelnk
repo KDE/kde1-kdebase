@@ -4,6 +4,7 @@ MimeType=text/x-makefile
 Comment=Makefile
 Comment[br]=Restr oberiañ (Makefile)
 Comment[da]=Makefil
+Comment[is]=Make-skrá
 Comment[ro]=Fiºier Makefile
 DefaultApp=kwrite
 Icon=unknown.xpm

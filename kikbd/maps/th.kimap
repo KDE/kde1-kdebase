@@ -4,6 +4,7 @@ Authors=Wachara Chinsettawong <yaiyai@infonews.co.th> <wachara@yahoo.com>,
 
 Comment=This is a Thai language keymap.  Last update March 14, 1999.  
 Language=Thai
+Language[is]=Tælenskt
 Label=Th
 Locale=th
 
