@@ -13,7 +13,6 @@
 
 #include <qimage.h>
 #include <qfile.h>
-#include <qtstream.h>
 #include <qpainter.h>
 #include <qstring.h>
 #include <qpmcache.h>
@@ -153,12 +152,7 @@ void KBackground::readSettings( const char *group )
     cFile = getenv( "HOME" );
     cFile += "/.kde/config/kdisplayrc";
 
-    QFile file( cFile );
-    file.open( IO_ReadOnly );
-
-    QTextStream stream( &file );
-
-    KConfig config( &stream );
+    KConfig config( cFile );
 
     config.setGroup( group );
 

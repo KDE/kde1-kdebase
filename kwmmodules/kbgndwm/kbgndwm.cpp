@@ -45,30 +45,6 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
     kwm_command = XInternAtom( qt_xdisplay(), "KWM_COMMAND", False );
 }
 
-void KBGndManager::client_message( XClientMessageEvent *ev )
-{
-    if ( ev->message_type == kwm_command )
-    {
-	QString com = ev->data.b;
-	if ( com == "kbgwm_reconfigure" )
-	{
-	    debug( "Got background reload event" );
-
-	    QString oldName = desktops[current].getName();
-
-	    QString group;
-	    for ( int i = 0; i < MAX_DESKTOPS; i++ )
-	    {
-		group.sprintf( "Desktop%d", i+1 );
-		desktops[i].readSettings( group );
-	    }
-
-	    if ( desktops[current].getName() != oldName )
-		applyDesktop( current );
-	}
-    }
-}
-
 void KBGndManager::desktopChange( int d )
 {
     d = KWM::currentDesktop() - 1;
@@ -89,6 +65,27 @@ void KBGndManager::desktopChange( int d )
 
     current = d;
 }
+
+void KBGndManager::commandReceived( QString com )
+{
+  if ( com == "kbgwm_reconfigure" )
+    {
+      debug( "Got background reload event" );
+      
+      QString oldName = desktops[current].getName();
+      
+      QString group;
+      for ( int i = 0; i < MAX_DESKTOPS; i++ )
+	{
+	  group.sprintf( "Desktop%d", i+1 );
+	  desktops[i].readSettings( group );
+	}
+      
+      if ( desktops[current].getName() != oldName )
+	applyDesktop( current );
+    }
+}
+
 
 void KBGndManager::applyDesktop( int d )
 {

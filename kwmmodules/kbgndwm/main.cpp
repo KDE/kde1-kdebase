@@ -26,36 +26,9 @@
 #endif
  
 
-KBGndManager *kbgnd;
-
-//----------------------------------------------------------------------------
-
-class MyApp : public KWMModuleApplication
-{
-public:
-    MyApp( int argc, char **argv ) : KWMModuleApplication( argc, argv ) {}
-    virtual bool x11EventFilter( XEvent * );
-};
-
-bool MyApp::x11EventFilter( XEvent * ev )
-{
-    KWMModuleApplication::x11EventFilter( ev );
-//    if ( KWMModuleApplication::x11EventFilter( ev ) )
-//	return true;
-
-    if ( ev->type == ClientMessage )
-    {
-	kbgnd->client_message( &ev->xclient );
-    }
-
-    return false;
-}
-
-//----------------------------------------------------------------------------
-
 int main( int argc, char *argv[] )
 {
-    MyApp a (argc, argv);
+    KWMModuleApplication a (argc, argv);
 
     if ( argc > 1 )
     {
@@ -81,9 +54,10 @@ int main( int argc, char *argv[] )
     QImageIO::defineIOHandler("JFIF","^\377\330\377\340", 0, read_jpeg_jfif, NULL);
 #endif
 
-    kbgnd = new KBGndManager( &a );
+    KBGndManager kbgnd( &a );
 
-    kbgnd->connect(&a, SIGNAL(desktopChange(int)), SLOT(desktopChange(int)));
+    kbgnd.connect(&a, SIGNAL(desktopChange(int)), SLOT(desktopChange(int)));
+    kbgnd.connect(&a, SIGNAL(commandReceived(int)), SLOT(commandReceived(int)));
 
     a.connectToKWM();
 

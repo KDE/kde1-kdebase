@@ -33,9 +33,6 @@ class KBGndManager: public QObject
     Q_OBJECT
 public:
     KBGndManager( KWMModuleApplication * );
-
-    void client_message( XClientMessageEvent *ev );
-
 protected:
     void applyDesktop( int d );
     void cacheDesktop();
@@ -43,6 +40,7 @@ protected:
 
 public slots:
     void desktopChange( int );
+    void commandReceived( QString );
 
 private:
     KWMModuleApplication* kwmmapp;
