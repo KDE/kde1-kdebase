@@ -37,19 +37,17 @@ button.cpp:button.moc
 button.moc: button.h
 	$(MOC) button.h -o button.moc
 
-IconPathDialog.cpp:IconPathDialog.moc
+IconPathDialog.cpp:IconPathDialog.moc IconPathDialogData.moc
 IconPathDialog.moc: IconPathDialog.h
 	$(MOC) IconPathDialog.h -o IconPathDialog.moc
 
-IconPathDialogData.cpp:IconPathDialogData.moc
 IconPathDialogData.moc: IconPathDialogData.h
 	$(MOC) IconPathDialogData.h -o IconPathDialogData.moc
 
-DesktopPathDialog.cpp:DesktopPathDialog.moc
+DesktopPathDialog.cpp: DesktopPathDialog.moc DesktopPathDialogData.moc
 DesktopPathDialog.moc: DesktopPathDialog.h
 	$(MOC) DesktopPathDialog.h -o DesktopPathDialog.moc
 
-DesktopPathDialogData.cpp:DesktopPathDialogData.moc
 DesktopPathDialogData.moc: DesktopPathDialogData.h
 	$(MOC) DesktopPathDialogData.h -o DesktopPathDialogData.moc
 
