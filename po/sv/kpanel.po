@@ -1,0 +1,147 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-10-09 21:47-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kpanel.C:172
+msgid "Move"
+msgstr "Flytta"
+
+#: kpanel.C:173
+msgid "Remove"
+msgstr "Ta bort"
+
+#: kpanel.C:175
+msgid "Properties"
+msgstr "Egenskaper"
+
+#: kpanel.C:205 kpanel.C:207 tools.C:678
+msgid "System"
+msgstr "System"
+
+#: kpanel.C:270
+msgid "No info available"
+msgstr "Ingen information tillgänglig"
+
+#: kpanel.C:306 kpanel.C:664 kpanel.C:665
+msgid "Logout"
+msgstr "Logga ut"
+
+#: kpanel.C:315 kpanel.C:663
+msgid "Lock screen"
+msgstr "Lås skärmen"
+
+#: kpanel.C:326
+msgid "Hide the panel"
+msgstr "Göm panelen"
+
+#: kpanel.C:342
+msgid "Show the panel"
+msgstr "Visa panelen"
+
+#: kpanel.C:647
+msgid "Add application"
+msgstr "Lägg till applikation"
+
+#: kpanel.C:649
+msgid "Add an application or a submenu onto the panel"
+msgstr "Lägg till applikation eller undermeny till panelen"
+
+#: kpanel.C:650
+msgid "Add windowlist"
+msgstr "Lägg till fönsterlista"
+
+#: kpanel.C:652
+msgid "Add a windowlist menu onto the panel"
+msgstr "Lägg till fönsterlista till panelen"
+
+#: kpanel.C:653
+msgid "Configure"
+msgstr "Konfigurera"
+
+#: kpanel.C:655
+msgid "Configure panel"
+msgstr "Konfigurera panel"
+
+#: kpanel.C:656
+msgid "Restart"
+msgstr "Starta om"
+
+#: kpanel.C:658
+msgid "Restart panel"
+msgstr "Starta om panel"
+
+#: kpanel.C:659 props.C:297
+msgid "Panel"
+msgstr "Panel"
+
+#: kpanel.C:661
+msgid "Lock Screen"
+msgstr "Lås skärmen"
+
+#: kpanel.C:1012 tools.C:503
+msgid "No comment available"
+msgstr "Ingen kommentar tillgänglig"
+
+#: kpanel.C:1021 tools.C:690
+msgid "Windowlist"
+msgstr "Fönsterlista"
+
+#: props.C:239
+msgid "Location"
+msgstr "Placering"
+
+#: props.C:254
+msgid "Taskbar"
+msgstr "Programlista"
+
+#: props.C:255
+msgid "Hidden"
+msgstr "Gömd"
+
+#: props.C:267
+msgid "Top/Left"
+msgstr "Topp/Vänster"
+
+#: props.C:278
+msgid "Tiny Style"
+msgstr "Minimal profil"
+
+#: props.C:279
+msgid "Small Style"
+msgstr "Liten profil"
+
+#: props.C:280
+msgid "Large Style"
+msgstr "Stor profil"
+
+#: props.C:292
+msgid "Menu Tooltips"
+msgstr "Meny Verktygstips"
+
+#: props.C:348
+msgid "Synlig"
+msgstr ""
+
+#: props.C:355
+msgid "Bredd"
+msgstr ""
+
+#: props.C:360
+msgid "Arbetsytor"
+msgstr ""
+
+#: props.C:366
+msgid "KPanel Konfiguration"
+msgstr ""
