@@ -236,6 +236,7 @@ private:
 	static QColor linkColor;
 	static QColor vLinkColor;
 	static bool   underlineLinks;
+	static bool   forceDefaults;
 
 	QString fullURL;
 	QString currentURL;

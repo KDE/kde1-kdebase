@@ -113,6 +113,7 @@ QColor KHelpWindow::textColor;
 QColor KHelpWindow::linkColor;
 QColor KHelpWindow::vLinkColor;
 bool KHelpWindow::underlineLinks;
+bool KHelpWindow::forceDefaults;
 
 KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	: QWidget( parent, name ), history(50), format(&html)
@@ -146,6 +147,7 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	view->setFixedFont( fixedFont );
 	view->setURLCursor( KCursor::handCursor() );
 	view->setUnderlineLinks( underlineLinks );
+	view->setForceDefault( forceDefaults );
 	view->setFocusPolicy( QWidget::StrongFocus );
 	view->setFocus();
 	view->installEventFilter( this );
@@ -237,6 +239,7 @@ void KHelpWindow::readOptions()
 	linkColor = config->readColorEntry( "LinkColor", &blue );
 	vLinkColor = config->readColorEntry( "VLinkColor", &darkMagenta );
 	underlineLinks = config->readBoolEntry( "UnderlineLinks", TRUE );
+	forceDefaults = config->readBoolEntry( "ForceDefaultColors", TRUE );
 }
 
 
