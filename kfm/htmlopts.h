@@ -34,6 +34,7 @@ struct rootoptions{
   int     iconstyle;
   bool    changed;
   bool    urlprops;
+  bool    bTreeFollow; // david
 
   //CT
   QColor icon_fg;
@@ -136,16 +137,17 @@ private:
 	void	readOptions();
 
 private:
-	QCheckBox *cursorbox,*iconstylebox, *urlpropsbox;
+	QCheckBox *cursorbox,*iconstylebox, *urlpropsbox, *treefollowbox;
 	KNumericSpinBox *hspin;
 	KNumericSpinBox *vspin;
 	int    gridwidth;
-    int    gridheight;
-    bool   transparent;
+        int    gridheight;
+        bool   transparent;
 	bool   changeCursor;
 	bool   changed;
 	struct rootoptions rootopts;
         bool urlprops; //sven
+        bool bTreeFollow; //david
 	//CT 12Nov1998
 	QColor icon_fg, icon_bg;
 	KColorButton *fgColorBtn, *bgColorBtn;

@@ -7,12 +7,6 @@
 KKFMOptDlg::KKFMOptDlg(QWidget *parent, const char *name, WFlags f)
   : QDialog(parent, name, true, f)
 {
-  //CT  resize(480, 400);
-  // i do not want to be resized!
-  //CT why not?
-  //CT  setMaximumSize(480, 400);
-  //CT  setMinimumSize(480, 400);
-  
   //CT 12Nov1998 layout management
   QGridLayout *lay = new QGridLayout(this, 4,6,5);
   lay->addRowSpacing(0,10);
@@ -33,11 +27,9 @@ KKFMOptDlg::KKFMOptDlg(QWidget *parent, const char *name, WFlags f)
   lay->setColStretch(3,0);
   lay->setColStretch(4,0);
   lay->setColStretch(5,0);
-  //CT
 
   // KTabCtl
   tabDlg = new KTabCtl(this);
-  //CT  tabDlg->setGeometry(10, 10, 380, 340);
   
   prxDlg = new KProxyDlg(tabDlg);
   tabDlg->addTab(prxDlg, klocale->translate("&Proxy"));
@@ -81,36 +73,27 @@ KKFMOptDlg::KKFMOptDlg(QWidget *parent, const char *name, WFlags f)
 
   // help button
   help = new QPushButton(klocale->translate("Help"), this);
-  //CT  help->setGeometry(11, 360, 72, 27);
-  //CT 12Nov1998 layout management
   help->adjustSize();
   help->setMinimumSize(help->size());
   lay->addWidget(help,3,1);
-  //CT
   connect(help, SIGNAL(clicked()), SLOT(helpShow()));
 
   // ok button
   ok = new QPushButton(klocale->translate("OK"), this);
-  //CT  ok->setGeometry(230, 360, 72, 27);
-  //CT 12Nov1998 layout management
   ok->adjustSize();
   ok->setMinimumSize(ok->size());
   lay->addWidget(ok,3,3);
-  //CT
   ok->setDefault(TRUE);
   connect(ok, SIGNAL(clicked()), SLOT(accept()));
   
   // cancel button
   cancel = new QPushButton(klocale->translate("Cancel"), this);
-  //CT  cancel->setGeometry(318, 360, 72, 27);
-  //CT 12Nov1998 layout management
   cancel->adjustSize();
   cancel->setMinimumSize(cancel->size());
 
   lay->addWidget(cancel,3,4);
 
   lay->activate();
-  //CT
   connect(cancel, SIGNAL(clicked()), SLOT(reject()));
 
   // my name is

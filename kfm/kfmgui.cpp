@@ -97,7 +97,6 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     kfmgui_height = KFMGUI_HEIGHT;
 
     bTreeView = false;
-    bTreeViewFollowMode = false;
     viewMode = ICON_VIEW;
     showDot = false;
     visualSchnauzer = false;
@@ -632,7 +631,7 @@ void KfmGui::updateView()
 {
     view->slotUpdateView();
     //  update tree view   Sep 5 rjakob
-    if (bTreeViewInitialized && bTreeViewFollowMode)
+    if (bTreeViewInitialized && pkfm->isTreeViewFollowMode())
         treeView->slotshowDirectory(toolbarURL->getLinedText(TOOLBAR_URL_ID));
 }
 
@@ -736,7 +735,7 @@ void KfmGui::slotURLEntered()
 	view->openURL( url.data() );             
         //  update tree view Sep 5 rjakob
         if (url.left(5)=="file:")
-    	    if (bTreeViewInitialized && bTreeViewFollowMode)
+    	    if (bTreeViewInitialized && pkfm->isTreeViewFollowMode())
 		treeView->slotshowDirectory(url.data()+5);
     }
     // view->openURL( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );
@@ -748,7 +747,7 @@ void KfmGui::setToolbarURL( const char *_url )
     //  update tree view Sep 5 rjakob
     QString url(_url);
     if (url.left(5)=="file:")
-      if (bTreeViewInitialized && bTreeViewFollowMode)
+      if (bTreeViewInitialized && pkfm->isTreeViewFollowMode())
          treeView->slotshowDirectory(url.data()+5);
 
 }
@@ -760,7 +759,7 @@ void KfmGui::slotNewURL( const char *_url )
     //  update tree view Sep 5 rjakob
     QString url(_url);
     if (url.left(5)=="file:")
-      if (bTreeViewInitialized && bTreeViewFollowMode)
+      if (bTreeViewInitialized && pkfm->isTreeViewFollowMode())
          treeView->slotshowDirectory(url.data()+5);
 
     if ( historyList.find( _url ) == -1 )
@@ -1153,8 +1152,11 @@ void KfmGui::slotBookmarkSelected( int _id )
 	
       view->openURL( bm->url() );
     }
-    else
-      warning("Internal: Could not find bookmark id\n");
+    // else
+    //  warning("Internal: Could not find bookmark id\n");
+    // Commented out, because this happens anytime one hits 'Edit bookmarks'
+    // or 'Add bookmarks'. This is normal (menu is connected, and menu item
+    // as well). David.
 }
 
 void KfmGui::slotToolFind( )
@@ -1256,7 +1258,7 @@ void KfmGui::slotShowTreeView()
             treeView->fill();  
         }
         //  update tree view   Sep 5 rjakob
-        if (bTreeViewFollowMode)
+        if (pkfm->isTreeViewFollowMode())
             treeView->slotshowDirectory(toolbarURL->getLinedText(TOOLBAR_URL_ID));
 	panner->setSeparator( 30 );
     }
@@ -1573,6 +1575,7 @@ void KfmGui::slotConfigureBrowser()
 	    config->writeEntry( "GridWidth", rootopts.gridwidth);
             config->writeEntry( "GridHeight", rootopts.gridheight);
             config->writeEntry( "EnablePerURLProps", rootopts.urlprops);
+            config->writeEntry( "TreeFollowsView", rootopts.bTreeFollow);
 	    config->setGroup( "KFM Root Icons" );			
 	    config->writeEntry( "Style", rootopts.iconstyle);
 	    //CT 12Nov1998
@@ -1638,6 +1641,7 @@ void KfmGui::slotConfigureBrowser()
 	      KRootWidget::getKRootWidget()->setRootIconStyle( rootopts.iconstyle );
               KRootWidget::getKRootWidget()->setRootIconColors( rootopts.icon_fg, rootopts.icon_bg);
               pkfm->setURLProps( rootopts.urlprops ); //sven
+              pkfm->setTreeViewFollowMode( rootopts.bTreeFollow );
               KfmGui *w;
               for ( w = windowList->first(); w != 0L; w = windowList->next() ) {
                   w->moptions->setItemEnabled(w->moptions->idAt( 6 ), rootopts.urlprops);
@@ -1714,10 +1718,15 @@ void KfmGui::slotForward( )
 
 void KfmGui::slotGoHistory( int id )
 {  
-    QStrList * hlist = Kfm::history();
-    // The items are in reverse order, from count()-1 to count()-11
-    // so we have to do count()-1-id
-    view->openURL(hlist->at(hlist->count()-1-id));
+    if (id>=0) {
+      QStrList * hlist = Kfm::history();
+      // The items are in reverse order, from count()-1 to count()-11
+      // so we have to do count()-1-id
+      int listId = hlist->count()-1-id;
+      if (listId>=0) {
+        view->openURL(hlist->at(listId));
+      }
+    }
 }
 
 //-------------------------------------------------------------------------
@@ -1867,12 +1876,6 @@ void KfmGui::readProperties( KConfig* config )
 
       kfmgui_width = config->readNumEntry("kfmgui_width",  kfmgui_width);
       kfmgui_height = config->readNumEntry("kfmgui_height",kfmgui_height);
-
-      entry = config->readEntry("kfm_tree_follow","unset");
-      if (entry == "Off")
-        bTreeViewFollowMode = false;
-      else if (entry == "On")
-        bTreeViewFollowMode = true;
 
       entry = config->readEntry("TreeView", "unset");
       if (entry == "Off")

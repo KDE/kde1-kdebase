@@ -65,10 +65,8 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 	//CT
 
 	bg->setExclusive( TRUE );
-	//CT	bg->setGeometry( 15, 15, 300, 50 );
 
 	rb = new QRadioButton( klocale->translate("Small"), bg );
-	//CT	rb->setGeometry( 10, 20, 80, 20 );
 	//CT 12Nov1998 layout management
 	rb->adjustSize();
 	rb->setMinimumSize(rb->size());
@@ -77,7 +75,6 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 	rb->setChecked( fSize == 3 );
 
 	rb = new QRadioButton( klocale->translate("Medium"), bg );
-	//CT	rb->setGeometry( 100, 20, 80, 20 );
 	//CT 12Nov1998 layout management
 	rb->adjustSize();
 	rb->setMinimumSize(rb->size());
@@ -86,7 +83,6 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 	rb->setChecked( fSize == 4 );
 
 	rb = new QRadioButton( klocale->translate("Large"), bg );
-	//CT	rb->setGeometry( 200, 20, 80, 20 );
 	//CT 12Nov1998 layout management
 	rb->adjustSize();
 	rb->setMinimumSize(rb->size());
@@ -101,7 +97,6 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 	//CT
 
 	label = new QLabel( klocale->translate("Standard Font"), this );
-	//CT	label->setGeometry( 15, 90, 100, 20 );
 	//CT 12Nov1998 layout management
 	label->adjustSize();
 	label->setMinimumSize(label->size());
@@ -109,7 +104,6 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 	//CT
 
 	QComboBox *cb = new QComboBox( false, this );
-	//CT	cb->setGeometry( 120, 90, 180, 25 );
 	getFontList( standardFonts, "-*-*-*-*-*-*-*-*-*-*-p-*-*-*" );
 	cb->insertStrList( &standardFonts );
 	QStrListIterator sit( standardFonts );
@@ -130,7 +124,6 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 		SLOT( slotStandardFont( const char * ) ) );
 
 	label = new QLabel( klocale->translate( "Fixed Font"), this );
-	//CT	label->setGeometry( 15, 130, 100, 20 );
 	//CT 12Nov1998 layout management
 	label->adjustSize();
 	label->setMinimumSize(label->size());
@@ -138,7 +131,6 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 	//CT
 
 	cb = new QComboBox( false, this );
-	//CT	cb->setGeometry( 120, 130, 180, 25 );
 	getFontList( fixedFonts, "-*-*-*-*-*-*-*-*-*-*-m-*-*-*" );
 	cb->insertStrList( &fixedFonts );
 	QStrListIterator fit( fixedFonts );
@@ -359,7 +351,6 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 	//CT
 
 	label = new QLabel( klocale->translate("Background Color:"), this );
-	//CT	label->setGeometry( 35, 20, 165, 25 );
 	//CT 12Nov1998 layout management
 	label->adjustSize();
 	label->setMinimumSize(label->size());
@@ -367,7 +358,6 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 	//CT
 
 	colorBtn = new KColorButton( bgColor, this );
-	//CT	colorBtn->setGeometry( 200, 20, 80, 30 );
 	//CT 12Nov1998 layout management
 	colorBtn->adjustSize();
 	colorBtn->setMinimumSize(colorBtn->size());
@@ -378,7 +368,6 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 		SLOT( slotBgColorChanged( const QColor & ) ) );
 
 	label = new QLabel( klocale->translate("Normal Text Color:"), this );
-	//CT	label->setGeometry( 35, 60, 165, 25 );
 	//CT 12Nov1998 layout management
 	label->adjustSize();
 	label->setMinimumSize(label->size());
@@ -386,7 +375,6 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 	//CT
 
 	colorBtn = new KColorButton( textColor, this );
-	//CT	colorBtn->setGeometry( 200, 60, 80, 30 );
 	//CT 12Nov1998 layout management
 	colorBtn->adjustSize();
 	colorBtn->setMinimumSize(colorBtn->size());
@@ -397,7 +385,6 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 		SLOT( slotTextColorChanged( const QColor & ) ) );
 
 	label = new QLabel( klocale->translate("URL Link Color:"), this );
-	//CT	label->setGeometry( 35, 100, 165, 25 );
 	//CT 12Nov1998 layout management
 	label->adjustSize();
 	label->setMinimumSize(label->size());
@@ -405,7 +392,6 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 	//CT
 
 	colorBtn = new KColorButton( linkColor, this );
-	//CT	colorBtn->setGeometry( 200, 100, 80, 30 );
 	//CT 12Nov1998 layout management
 	colorBtn->adjustSize();
 	colorBtn->setMinimumSize(colorBtn->size());
@@ -416,7 +402,6 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 		SLOT( slotLinkColorChanged( const QColor & ) ) );
 
 	label = new QLabel( klocale->translate("Followed Link Color:"), this );
-	//CT	label->setGeometry( 35, 140, 165, 25 );
 	//CT 12Nov1998 layout management
 	label->adjustSize();
 	label->setMinimumSize(label->size());
@@ -424,7 +409,6 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 	//CT
 
 	colorBtn = new KColorButton( vLinkColor, this );
-	//CT	colorBtn->setGeometry( 200, 140, 80, 30 );
 	//CT 12Nov1998 layout management
 	colorBtn->adjustSize();
 	colorBtn->setMinimumSize(colorBtn->size());
@@ -437,7 +421,6 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 	cursorbox = new QCheckBox(klocale->translate("Change cursor over link."),
 				  this);
 
-	//CT	cursorbox->setGeometry(35,180,250,28);
 	//CT 12Nov1998 layout management
 	cursorbox->adjustSize();
 	cursorbox->setMinimumSize(cursorbox->size());
@@ -448,7 +431,6 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 	underlinebox = new QCheckBox(klocale->translate("Underline links"),
 				  this);
 
-	//CT	underlinebox->setGeometry(35,210,250,28);
 	//CT 12Nov1998 layout management
 	underlinebox->adjustSize();
 	underlinebox->setMinimumSize(underlinebox->size());
@@ -525,17 +507,18 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
   	readOptions();
 
         //CT 12Nov1998
-        //Sven: Inserted my checkbox in CT's layout
+        //Sven: Inserted my checkbox (urlpropsbox) in CT's layout
+        //David: Inserted my checkbox (treefollowbox) in CT's layout
         
 	QGridLayout *lay = new QGridLayout(this,10,5,10,5);
 	lay->addRowSpacing(0,15);
 	lay->addRowSpacing(1,30);
 	lay->addRowSpacing(2, 5);
 	lay->addRowSpacing(3,30);
-	lay->addRowSpacing(6,30);
-	lay->addRowSpacing(7, 5);
-	lay->addRowSpacing(8,30);
-	lay->addRowSpacing(9,10);
+	lay->addRowSpacing(7,30);
+	lay->addRowSpacing(8, 5);
+	lay->addRowSpacing(9,30);
+	lay->addRowSpacing(10,10);
 	lay->addColSpacing(0,10);
 	lay->addColSpacing(2,10);
 	lay->addColSpacing(3,80);
@@ -545,12 +528,13 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 	lay->setRowStretch(1,0);
 	lay->setRowStretch(2,1);
 	lay->setRowStretch(3,0);
-	lay->setRowStretch(4,1);
-	lay->setRowStretch(5,1);
-	lay->setRowStretch(6,0);
-	lay->setRowStretch(7,1);
-	lay->setRowStretch(8,0);
+	lay->setRowStretch(4,1); // per-url
+	lay->setRowStretch(5,1); // tree follows view
+	lay->setRowStretch(6,1); // transparent text
+	lay->setRowStretch(7,0);
+	lay->setRowStretch(8,1);
 	lay->setRowStretch(9,0);
+	lay->setRowStretch(10,0);
 
 	lay->setColStretch(0,0);
 	lay->setColStretch(1,0);
@@ -564,7 +548,6 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 	label = new QLabel( klocale->translate(
 			    "Horizontal Root Grid Spacing:"), this );
 
-	//CT	label->setGeometry( 35, 20, 180, 25 );
 	//CT 12Nov1998
 	label->adjustSize();
 	label->setMinimumSize(label->size());
@@ -572,7 +555,6 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 	//CT
 
 	hspin  = new KNumericSpinBox(this);
-	//CT	hspin ->setGeometry(225, 20, 40, 25 );
 	//CT 12Nov1998
 	hspin->adjustSize();
 	hspin->setMinimumSize(hspin->size());
@@ -588,7 +570,6 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 	label = new QLabel( klocale->translate(
 			    "Vertical Root Grid Spacing:"), this );
 
-	//CT	label->setGeometry( 35, 60, 180, 25 );
 	//CT 12Nov1998
 	label->adjustSize();
 	label->setMinimumSize(label->size());
@@ -596,7 +577,6 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 	//CT
 
 	vspin  = new KNumericSpinBox(this);
-	//CT	vspin ->setGeometry(225, 60, 40, 25 );
 	//CT 12Nov1998
 	vspin->adjustSize();
 	vspin->setMinimumSize(vspin->size());
@@ -610,7 +590,7 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 	vspin->setValue(gridheight - DEFAULT_GRID_MIN);
 
         //----------------- sven---------
-        urlpropsbox = new QCheckBox(klocale->translate("Allow per-URL settings"),
+        urlpropsbox = new QCheckBox(klocale->translate("&Allow per-URL settings"),
                                     this);
         urlpropsbox->adjustSize();
         urlpropsbox->setMinimumSize(urlpropsbox->size());
@@ -618,13 +598,21 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 	urlpropsbox->setChecked(urlprops);
         //-------------------------------
 
-	iconstylebox = new QCheckBox(klocale->translate("Transparent Text for Root Icons."),
+        //----------------- david ---------
+        treefollowbox = new QCheckBox(klocale->translate("Tree &view follows navigation"),
+                                    this);
+        treefollowbox->adjustSize();
+        treefollowbox->setMinimumSize(treefollowbox->size());
+        lay->addMultiCellWidget(treefollowbox,5,5,1,3);
+	treefollowbox->setChecked(bTreeFollow);
+        //-------------------------------
+
+	iconstylebox = new QCheckBox(klocale->translate("&Transparent Text for Root Icons."),
 				  this);
-	//CT	iconstylebox->setGeometry(35, 100, 280, 25);
 	//CT 12Nov1998
 	iconstylebox->adjustSize();
 	iconstylebox->setMinimumSize(iconstylebox->size());
-	lay->addMultiCellWidget(iconstylebox,5,5,1,3);
+	lay->addMultiCellWidget(iconstylebox,6,6,1,3);
 	//CT
 	iconstylebox->setChecked(transparent);
 
@@ -635,24 +623,24 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 	label = new QLabel(klocale->translate("Icon foreground color:"),this);
 	label->adjustSize();
 	label->setMinimumSize(label->size());
-	lay->addWidget(label,6,1);
+	lay->addWidget(label,7,1);
 
 	fgColorBtn = new KColorButton(icon_fg,this);
 	fgColorBtn->adjustSize();
 	fgColorBtn->setMinimumSize(fgColorBtn->size());
-	lay->addWidget(fgColorBtn,6,3);
+	lay->addWidget(fgColorBtn,7,3);
 	connect( fgColorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotIconFgColorChanged( const QColor & ) ) );
 
 	bgLabel = new QLabel(klocale->translate("Icon background color:"),this);
 	bgLabel->adjustSize();
 	bgLabel->setMinimumSize(bgLabel->size());
-	lay->addWidget(bgLabel,8,1);
+	lay->addWidget(bgLabel,9,1);
 
 	bgColorBtn = new KColorButton(icon_bg,this);
 	bgColorBtn->adjustSize();
 	bgColorBtn->setMinimumSize(bgColorBtn->size());
-	lay->addWidget(bgColorBtn,8,3);
+	lay->addWidget(bgColorBtn,9,3);
 	connect( bgColorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotIconBgColorChanged( const QColor & ) ) );
 
@@ -669,6 +657,7 @@ void KMiscOptions::readOptions()
 	gridwidth = config->readNumEntry( "GridWidth", DEFAULT_GRID_WIDTH );
 	gridheight = config->readNumEntry( "GridHeight", DEFAULT_GRID_HEIGHT );
         urlprops = config->readBoolEntry( "EnablePerURLProps", 0);
+        bTreeFollow = config->readBoolEntry( "TreeFollowsView", false);
         config->setGroup( "KFM Root Icons" );	
 	transparent = (bool)config->readNumEntry("Style", DEFAULT_ROOT_ICONS_STYLE);
 	//CT 12Nov1998
@@ -688,27 +677,19 @@ void KMiscOptions::getMiscOpts(struct rootoptions& rootopts)
   {
     changed = true;
   }
-  if(transparent != iconstylebox->isChecked())
+  if ( (transparent != iconstylebox->isChecked()) || 
+       (urlprops != urlpropsbox->isChecked()) ||
+       (bTreeFollow != treefollowbox->isChecked()) )
   {
-    changed = true;
-  }
-  if(urlprops != urlpropsbox->isChecked())
-  {
-    changed = true;
+      changed = true;
   }
 
   rootopts.gridwidth = hspin->getValue()+DEFAULT_GRID_MIN;
   rootopts.gridheight = vspin->getValue()+DEFAULT_GRID_MIN;
 
-  if (iconstylebox->isChecked())
-    rootopts.iconstyle = 1;
-  else
-    rootopts.iconstyle = 0;
-
-  if (urlpropsbox->isChecked())
-    rootopts.urlprops = 1;
-  else
-    rootopts.urlprops = 0;
+  rootopts.iconstyle = iconstylebox->isChecked();
+  rootopts.urlprops = urlpropsbox->isChecked();
+  rootopts.bTreeFollow = treefollowbox->isChecked();
 
   rootopts.changed = changed;
 

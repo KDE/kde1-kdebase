@@ -29,8 +29,14 @@ public:
     /**
      * Sets and returns is per URL setting enabled - sven
      */
-  static bool isURLPropesEnabled () {return allowURLProps;}
-  static void setURLProps (bool flag) {allowURLProps = flag;}
+  static bool isURLPropesEnabled () {return bAllowURLProps;}
+  static void setURLProps (bool flag) {bAllowURLProps = flag;}
+  
+    /**
+     * Sets and returns does tree-view follows navigation in normal view - david
+     */
+  static bool isTreeViewFollowMode() {return bTreeViewFollowMode;}
+  static void setTreeViewFollowMode(bool flag) { bTreeViewFollowMode = flag;}
 
 public slots:
   void slotSave();
@@ -45,7 +51,8 @@ protected:
   static Kfm *pKfm;
   static QStrList *pHistory;
   static bool s_bGoingDown;
-  static bool allowURLProps; // global option
+  static bool bAllowURLProps; // global option
+  static bool bTreeViewFollowMode; // global option
 };
 
 #endif

@@ -26,7 +26,8 @@
 Kfm* Kfm::pKfm = 0L;
 QStrList* Kfm::pHistory = 0L;
 bool Kfm::s_bGoingDown = false;
-bool Kfm::allowURLProps = false;
+bool Kfm::bAllowURLProps = false;
+bool Kfm::bTreeViewFollowMode = false;
 
 void sig_segv_handler( int signum );
 
@@ -58,10 +59,12 @@ Kfm::Kfm()
 	connect( kapp, SIGNAL( saveYourself() ), this, SLOT( slotSave() ) );
 	connect( kapp, SIGNAL( shutDown() ), this, SLOT( slotShutDown() ) );
 
+        // Global configuration
 	KConfig *config = kapp->getConfig();
 	config->setGroup("KFM Misc Defaults");
-        // sven - moved here by david
-        allowURLProps = config->readBoolEntry( "EnablePerURLProps", false );
+        bAllowURLProps = config->readBoolEntry( "EnablePerURLProps", false );
+        bTreeViewFollowMode = config->readBoolEntry( "TreeFollowsView", false);
+
 	config->setGroup( "SM" );
 	bool flag = config->hasKey( "URLs" );
 	
