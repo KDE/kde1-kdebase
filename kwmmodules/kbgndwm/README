@@ -1,0 +1,28 @@
+KBGNDWM
+-------
+
+Desktop background manager.
+
+kbgndwm is responsible for setting the current desktop selected using kwm.
+It requires kwm2 to function correctly.  To install kbgndwm add:
+
+kbgwndwm &
+
+to your .xinitrc before kwm.
+
+
+The only configuration option in kbgndwmrc is
+
+[General]
+CacheSize=512
+
+
+Where CacheSize is the maximum memory to be used for caching backgrounds.
+A larger cache size means that the backgrounds switch faster.  Fastest
+background switching is achieved when all backgrounds fit in the cache.
+It is therefore advised that flat, gradient, or small tiled images are
+used rather than a large, scaled or centred image.
+
+Martin Jones
+mjones@kde.org
+
