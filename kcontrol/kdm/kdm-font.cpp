@@ -154,15 +154,15 @@ void KDMFontWidget::slotSetFont(int id)
   {
     case 0:
       tmpfont = greetfont;
-      fontlabel->setText("Greeting font");
+      fontlabel->setText(i18n("Greeting font"));
       break;
     case 1:
       tmpfont = failfont;
-      fontlabel->setText("Fail font");
+      fontlabel->setText(i18n("Fail font"));
       break;
     case 2:
       tmpfont = stdfont;
-      fontlabel->setText("Standard font");
+      fontlabel->setText(i18n("Standard font"));
       break;
   }
   fontlabel->setFont(tmpfont);
