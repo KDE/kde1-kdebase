@@ -565,7 +565,8 @@ KProtocolDirEntry *KProtocolFTP::ReadDir()
 					    de.group	= p_group;
 					    de.size	= atoi(p_size);
 					    de.isdir	= p_access[0]=='d';
-					    de.name	= p_name;
+					    QString tmp(p_name);
+					    de.name	= tmp.stripWhiteSpace();
 					    if(de.isdir) de.name += "/";
 					    de.date.sprintf("%s %s %s",p_date_1, p_date_2, p_date_3);
 					    return(&de);
