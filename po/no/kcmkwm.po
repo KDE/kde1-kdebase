@@ -250,11 +250,11 @@ msgstr "Fokus følger mus"
 
 #: windows.cpp:189
 msgid "Classic focus follows mouse"
-msgstr "Fokus følger mus"
+msgstr "Klassisk fokus følger mus"
 
 #: windows.cpp:191
 msgid "Classic sloppy focus"
-msgstr "Klikk for fokus"
+msgstr "Klassisk klikk for fokus"
 
 #: windows.cpp:203
 msgid "Auto Raise"
