@@ -5,7 +5,7 @@
 
 # initialize the configuration first.
 
-exec kcontrol -init kcmdisplay
+exec kcontrol -init
 
 # Start the common desktop tools in the background.
 # The sleeps reduce disk usage during startup.
