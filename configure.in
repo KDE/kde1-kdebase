@@ -321,7 +321,6 @@ AC_OUTPUT(Makefile \
 	pics/mini/Makefile \
 	pics/wallpapers/Makefile \
 	po/Makefile \
-	po/br/Makefile \
 	po/ca/Makefile \
 	po/cs/Makefile \
 	po/da/Makefile \
