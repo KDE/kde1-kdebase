@@ -28,6 +28,7 @@
 #include "screen.h"
 #include "sbar.h"
 #include "debug.h"
+#include "kvt_version.h"
 
 #ifdef GREEK_KBD	
 #include "grkelot.h"
@@ -283,7 +284,8 @@ void init_display(int argc,char **argv)
 	}
       else 
 	{
-	  fprintf(stderr,"kvt Version 0.13\n\n");
+	  fprintf(stderr, KVT_VERSION);
+	  fprintf(stderr, "\n\n");
 	  fprintf(stderr,"Copyright(C) 1996, 1997 Matthias Ettrich\n");
 	  fprintf(stderr,"Terminal emulation for the KDE Desktop Environment\n");
 	  fprintf(stderr, "based on Robert Nation's rxvt-2.08\n\n");

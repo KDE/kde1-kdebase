@@ -1,3 +1,8 @@
+  - small bugfix for backspace
+  - greater bugfix for eventhandling (fix of the deep-bug fix)
+  - usage of KApplication::invokeHTMLHelp(...)
+  - kvt_version.h
+
 since kvt-0.13:
   - fixed all the bugs introduced by the multiline selection
     patch

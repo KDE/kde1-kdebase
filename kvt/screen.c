@@ -394,7 +394,8 @@ void scr_backspace(void)
     }
   else if (cScreen->wrap_next ){
     /* Matthias */ 
-    cScreen->text[(cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1)];
+    int x = (cScreen->row+MyWinInfo.saved_lines)*(MyWinInfo.cwidth+1);
+    cScreen->text[x + cScreen->col] = '\0';
     cScreen->wrap_next = 0;
   }
   else
@@ -1307,6 +1308,12 @@ void scr_move_up_down(int direction)
     MyWinInfo.offset = MyWinInfo.sline_top;
   if (MyWinInfo.offset < 0)
     MyWinInfo.offset = 0;  
+
+  /* do some refreshing here (Matthias) */ 
+  scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
+  refresh();
+  sbar_show(MyWinInfo.cheight+MyWinInfo.sline_top-1,MyWinInfo.offset,
+	    MyWinInfo.offset + MyWinInfo.cheight -1);
 }
 
 

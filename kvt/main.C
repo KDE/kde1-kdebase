@@ -24,6 +24,8 @@
 #include <Kconfig.h>
 #include <kapp.h>
 
+#include "kvt_version.h"
+
 
 #include "main.h"
 
@@ -114,6 +116,7 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):
   KApplication(argc, argv, rAppName){
 }
 
+static MyApp* myapp = NULL;
 
 bool MyApp::x11EventFilter( XEvent * ev){
 //   printf("Qt: got one event %d for window %d\n", ev->type, ev->xany.window);
@@ -130,9 +133,6 @@ bool MyApp::x11EventFilter( XEvent * ev){
     if (ev->xany.window == kvt->winId())
       {
 	handle_X_event(*ev);
-	// call get_token to do a screenrefresh if there are no more
-	// character in the application and X-pipe. Matthias
-	get_token();
 	refresh();
       }
     return FALSE;
@@ -145,13 +145,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
        ev->xany.window == vt_win){
     if (ev->xany.type != MotionNotify || motion_allowed){
       handle_X_event(*ev);
-      // call get_token to do a screenrefresh if there are no more
-      // character in the application and X-pipe. Matthias
-      if (ev->xany.type != Expose )
-	get_token();
-      else{
-	refresh();
-      }
+      refresh();
     }
     if (ev->xany.type == ButtonPress
 	&& ev->xbutton.button == Button1)
@@ -561,31 +555,14 @@ void kVt::file_menu_activated(int item){
 }
 
 
-void _invokeHtmlHelp(const char* filename){
-  if ( fork	() == 0 )	
-    {		
-      QString path = "";
-      char* kdedir = getenv("KDEDIR");
-      if (kdedir)
-	path.append(kdedir);
-      else
-	path.append("/usr/local/kde");
-      path.append("/doc/HTML/");
-      path.append(filename);
-      execlp( "kdehelp", "kdehelp", path.data(), 0 );
-      exit( 1 );
-    }
-}
-
-
-
 void kVt::help_menu_activated(int item){
+  QString ver = KVT_VERSION;
   switch (item){
   case 0:
-    QMessageBox::message( "About kvt", "kvt-0.13\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n\nTerminal emulation for the KDE Desktop Environment\nbased on Robert Nation's rxvt-2.08");
+    QMessageBox::message( "About kvt", ver + "\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n\nTerminal emulation for the KDE Desktop Environment\nbased on Robert Nation's rxvt-2.08");
     break;
   case 1:
-    _invokeHtmlHelp("kvt.html");
+    myapp->invokeHTMLHelp("kvt.html", ""); 
     break;
   }
 }
@@ -623,7 +600,6 @@ bool kVt::eventFilter( QObject *obj, QEvent * ev){
       {
 	// well... aehh... but this works ;-)
 	handle_X_event(stored_xevent_for_keys);
-// 	get_token();
       }
     }
   }
@@ -635,7 +611,7 @@ bool kVt::eventFilter( QObject *obj, QEvent * ev){
 #include "main.moc"
 
 
-void main(int argc, char **argv){
+int main(int argc, char **argv){
 
   // first make an argument copy for a new kvt
   o_argc = argc;
@@ -656,6 +632,8 @@ void main(int argc, char **argv){
   }
 
   MyApp a( argc, argv, "kvt" );
+
+  myapp = &a;
 
   // build an argument table for the rxvt
   int r_argc = 0;
@@ -688,8 +666,8 @@ void main(int argc, char **argv){
 
   kvt->ResizeToVtWindow();
   kvt->show();
-  a.exec();
 
+  return a.exec();
 }
 
 void sbar_init(void){
