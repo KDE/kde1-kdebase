@@ -10,6 +10,7 @@ Name[no]=Bretangsk
 Name[pt_BR]=Bretão
 Name[ru]=âÒÅÔÏÎÓËÉÊ
 Name[sk]=Bretónsky
+Name[sv]=Bretagniska
 
 [ca]
 Name=Catalan
@@ -21,6 +22,7 @@ Name[no]=Katalansk
 Name[pt_BR]=Catalão
 Name[ru]=ëÁÔÁÌÁÎÓËÉÊ
 Name[sk]=Katalánsky
+Name[sv]=Katalanska
 
 [ro]
 Name=Romanian
@@ -32,6 +34,7 @@ Name[no]=Rumensk
 Name[pt_BR]=Romano
 Name[ru]=òÕÍÙÎÓËÉÊ
 Name[sk]=Rumunskı
+Name[sv]=Rumänska
 
 [C]
 Name=Default language
@@ -43,6 +46,7 @@ Name[no]=Standardspråk
 Name[pt_BR]=Idioma padrão
 Name[ru]=ñÚÙË ĞÏ ÕÍÏÌŞÁÎÉÀ
 Name[sk]=©tandardnı jazyk
+Name[sv]=Standardspråk
 
 [de]
 Name=German
@@ -54,6 +58,7 @@ Name[no]=Tysk
 Name[pt_BR]=Alemão
 Name[ru]=îÅÍÅÃËÉÊ
 Name[sk]=Nemeckı
+Name[sv]=Tyska
 
 [en_UK]
 Name=English - UK
@@ -65,6 +70,7 @@ Name[no]=Engelsk - UK
 Name[pt_BR]=Inglês - Reino Unido
 Name[ru]=âÒÉÔÁÎÓËÉÊ áÎÇÌÉÊÓËÉÊ
 Name[sk]=Anglickı - UK
+Name[sv]=Engelska
 
 
 [en]
@@ -77,6 +83,7 @@ Name[no]=Engelsk - US
 Name[pt_BR]=Inglês - EUA
 Name[ru]=áÍÅÒÉËÁÎÓËÉÊ ÁÎÇÌÉÊÓËÉÊ
 Name[sk]=Anglickı - US
+Name[sv]=Amerikansk engelska
 
 [fr]
 Name=French
@@ -88,6 +95,7 @@ Name[no]=Fransk
 Name[pt_BR]=Francês
 Name[ru]=æÒÁÎÃÕÚÓËÉÊ
 Name[sk]=Francúzsky
+Name[sv]=Franska
 
 [cs]
 Name=Czech
@@ -99,6 +107,7 @@ Name[no]=Tjekkisk
 Name[pt_BR]=Tcheco
 Name[ru]=şÅÛÓËÉÊ
 Name[sk]=Èeskı
+Name[sv]=Tjeckiska
 
 [is]
 Name=Icelandic
@@ -110,6 +119,7 @@ Name[no]=Islandsk
 Name[pt_BR]=Islândico
 Name[ru]=éÓÌÁÎÄÓËÉÊ
 Name[sk]=Islandskı
+Name[sv]=Isländska
 
 [sv]
 Name=Swedish
@@ -121,6 +131,7 @@ Name[no]=Svensk
 Name[pt_BR]=Sueco
 Name[ru]=û×ÅÄÓËÉÊ
 Name[sk]=©védsky
+Name[sv]=Svenska
 
 [es]
 Name=Spanish
@@ -132,6 +143,7 @@ Name[no]=Spansk
 Name[pt_BR]=Espanhol
 Name[ru]=éÓĞÁÎÓËÉÊ
 Name[sk]=©panielsky
+Name[sv]=Spanska
 
 [ru]
 Name=Russian
@@ -143,6 +155,7 @@ Name[no]=Russisk
 Name[pt_BR]=Russo
 Name[ru]=òÕÓÓËÉÊ
 Name[sk]=age=Ruskı
+Name[sv]=Ryska
 
 [nl]
 Name=Dutch
@@ -154,6 +167,7 @@ Name[no]=Nederlandsk
 Name[pt_BR]=Holandês
 Name[ru]=çÏÌÌÁÎÄÓËÉÊ
 Name[sk]=Holandskı
+Name[sv]=Holländska
 
 [hu]
 Name=Hungarian
@@ -165,6 +179,7 @@ Name[no]=Ungarsk
 Name[pt_BR]=Húngaro
 Name[ru]=÷ÅÎÇÅÒÓËÉÊ
 Name[sk]=Maïarskı
+Name[sv]=Ungerska
 
 [da]
 Name=Danish
@@ -175,6 +190,7 @@ Name[it]=Danese
 Name[no]=Dansk
 Name[ru]=äÁÔÓËÉÊ
 Name[sk]=Dánsky
+Name[sv]=Danska
 
 [fi]
 Name=Finnish
@@ -186,6 +202,7 @@ Name[no]=Finsk
 Name[pt_BR]=Finlandês
 Name[ru]=æÉÎÓËÉÊ
 Name[sk]=Fínsky
+Name[sv]=Finska
 
 [it]
 Name=Italian
@@ -197,6 +214,7 @@ Name[no]=Italiensk
 Name[pt_BR]=Italiano
 Name[ru]=éÔÁÌØÑÎÓËÉÊ
 Name[sk]=Taliansky
+Name[sv]=Italienska
 
 [pt]
 Name=Portuguese
@@ -208,6 +226,7 @@ Name[no]=Portugisisk
 Name[pt_BR]=Português
 Name[ru]=ğÏÒÔÕÇÁÌØÓËÉÊ
 Name[sk]=Portugalskı
+Name[sv]=Portugisiska
 
 [pl]
 Name=Polish
@@ -219,6 +238,7 @@ Name[no]=Polsk
 Name[pt_BR]=Polonês
 Name[ru]=ğÏÌØÓËÉÊ
 Name[sk]=Poµskı
+Name[sv]=Polska
 
 [no]
 Name=Norwegian
@@ -230,6 +250,7 @@ Name[no]=Norsk
 Name[pt_BR]=Norueguês
 Name[ru]=îÏÒ×ÅÖÓËÉÊ
 Name[sk]=Nórsky
+Name[sv]=Norska
 
 [el]
 Name=Greek
@@ -241,6 +262,7 @@ Name[no]=Gresk
 Name[pt_BR]=Grego
 Name[ru]=çÒÅŞÅÓËÉÊ
 Name[sk]=Grécky
+Name[sv]=Grekiska
 
 [hr]
 Name=Croatian
@@ -252,6 +274,7 @@ Name[no]=Kroatisk
 Name[pt_BR]=Croata
 Name[ru]=èÏÒ×ÁÔÓËÉÊ
 Name[sk]=Chorvátsky
+Name[sv]=Kroatiska
 
 [sk]
 Name=Slovak
@@ -263,6 +286,7 @@ Name[no]=Slovakisk
 Name[pt_BR]=Eslovaco
 Name[ru]=óÌÏ×ÁÃËÉÊ
 Name[sk]=Slovenskı
+Name[sv]=Slovakiska
 
 [zh_TW.Big5]
 Name=Chinese
@@ -274,6 +298,7 @@ Name[no]=Kinesisk
 Name[pt_BR]=Chinês
 Name[ru]=ëÉÔÁÊÓËÉÊ
 Name[sk]=Èínsky
+Name[sv]=Kinesiska
 
 [zh_CN.GB2312]
 Name=Simplified Chinese
@@ -285,6 +310,7 @@ Name[no]=Forenklet kinesisk
 Name[pt_BR]=Chinês Simplificado
 Name[ru]=õĞÒÏİÅÎÎÙÊ ËÉÔÁÊÓËÉÊ
 Name[sk]=Zjednodu¹ená èín¹tina
+Name[sv]=Förenklad kinesiska
 
 [pt_BR]
 Name=Brazil portuguese
@@ -296,6 +322,7 @@ Name[no]=Brasiliansk portugisisk
 Name[pt_BR]=Português do Brasil
 Name[ru]=âÒÁÚÉÌØÓËÉÊ ĞÏÒÔÕÇÁÌØÓËÉÊ
 Name[sk]=Brazílska portugalèina
+Name[sv]=Brasiliansk portugisiska
 
 [eo]
 Name=Esperanto
@@ -311,6 +338,7 @@ Name[no]=Makedonsk
 Name[pt_BR]=Macedoniano
 Name[ru]=íÁËÅÄÏÎÓËÉÊ
 Name[sk]=Macedónsky
+Name[sv]=Makedoniska
 
 [ko]
 Name=Korean
@@ -322,6 +350,7 @@ Name[no]=Koreansk
 Name[pt_BR]=Coreano
 Name[ru]=ëÏÒÅÊÓËÉÊ
 Name[sk]=Kórejskı
+Name[sv]=Koreanska
 
 [tr]
 Name=Turkish
@@ -333,6 +362,7 @@ Name[no]=Tyrkisk
 Name[pt_BR]=Turco
 Name[ru]=ôÕÒËÓËÉÊ
 Name[sk]=Tureckı
+Name[sv]=Turkiska
 
 [he]
 Name=Hebrew
@@ -344,3 +374,4 @@ Name[no]=Hebraisk
 Name[pt_BR]=Hebreu
 Name[ru]=é×ÒÉÔ
 Name[sk]=Hebrejskı
+Name[sv]=Hebreiska
