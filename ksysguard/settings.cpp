@@ -80,16 +80,16 @@ AppSettings::AppSettings(QWidget *parent, const char *name)
 {
     setMinimumSize(250,170);
     setMaximumSize(250,170);
-    setCaption(ktr("Ktop Preferences"));
-    startuppage = new QButtonGroup(ktr("Start up page"), this, "_startuppage");
-    rb_pList = new QRadioButton(ktr("Processes List"),startuppage, "_pList");
-    rb_pTree = new QRadioButton(ktr("Processes Tree"),startuppage, "_pTree");
-    rb_Perf  = new QRadioButton(ktr("Performance"),startuppage, "_Perf");
+    setCaption(i18n("Ktop Preferences"));
+    startuppage = new QButtonGroup(i18n("Start up page"), this, "_startuppage");
+    rb_pList = new QRadioButton(i18n("Processes List"),startuppage, "_pList");
+    rb_pTree = new QRadioButton(i18n("Processes Tree"),startuppage, "_pTree");
+    rb_Perf  = new QRadioButton(i18n("Performance"),startuppage, "_Perf");
     startuppage->resize(300, 200);
 
-    ok = new QPushButton(ktr("Ok"), this, "_ok");
+    ok = new QPushButton(i18n("Ok"), this, "_ok");
     ok->setDefault(TRUE);
-    cancel = new QPushButton(ktr("Cancel"), this, "_cancel");
+    cancel = new QPushButton(i18n("Cancel"), this, "_cancel");
     ok->resize(80, 25);
     cancel->resize(80, 25);
     connect(ok, SIGNAL(clicked()), this, SLOT(doValidate()));

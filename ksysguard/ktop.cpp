@@ -91,32 +91,32 @@ TopLevel::TopLevel( QWidget *parent, const char *name, int sfolder )
 {
     QString t;
     
-    setCaption(klocale->translate("KDE Taskmanager"));
+    setCaption(i18n("KDE Taskmanager"));
     setMinimumSize(515,468);
 
     taskman = new TaskMan(this, "", sfolder);
     connect(taskman,SIGNAL(applyButtonPressed()),this,SLOT(quitSlot()));
 
     file = new QPopupMenu();
-    file->insertItem(ktr("Quit"), MENU_ID_QUIT, -1);
+    file->insertItem(i18n("&Quit"), MENU_ID_QUIT, -1);
     connect(file, SIGNAL(activated(int)), this, SLOT(menuHandler(int)));
 
     help = new QPopupMenu();
-    help->insertItem(ktr("Help"), MENU_ID_HELP, -1);
-    help->insertItem(ktr("About..."), MENU_ID_ABOUT, -1);
+    help->insertItem(i18n("&Contents"), MENU_ID_HELP, -1);
+    help->insertItem(i18n("&About ktop..."), MENU_ID_ABOUT, -1);
     connect(help, SIGNAL(activated(int)), this, SLOT(menuHandler(int)));
 
     settings = new QPopupMenu();
-    settings->insertItem(klocale->translate("StartUp Preferences...")
+    settings->insertItem(i18n("StartUp Preferences...")
 			                        ,MENU_ID_PROCSETTINGS, -1);
     connect(settings, SIGNAL(activated(int)), this, SLOT(menuHandler(int)));
 
     menubar = new QMenuBar(this, "menubar");
     menubar->setLineWidth(1);
-    menubar->insertItem(ktr("&File"), file, 2, -1);
-    menubar->insertItem(ktr("&Options"), settings, 3, -1);
+    menubar->insertItem(i18n("&File"), file, 2, -1);
+    menubar->insertItem(i18n("&Options"), settings, 3, -1);
     menubar->insertSeparator(-1);
-    menubar->insertItem(ktr("&Help"), help, 2, -1);
+    menubar->insertItem(i18n("&Help"), help, 2, -1);
 
     t = config->readEntry(QString("G_Toplevel"));
     if( ! t.isNull() ) {
@@ -186,7 +186,7 @@ void TopLevel::menuHandler(int id)
 
     case MENU_ID_ABOUT:
         QMessageBox::information(this,
-			       klocale->translate("About Taskmanager"), 
+			       i18n("About Taskmanager"), 
 			      "KDE Taskmanager Version "KTOP_VERSION"\n\n"\
 			      "Copyright:\n"\
 			      "1996 A. Sanda <alex@darkstar.ping.at>\n"\
