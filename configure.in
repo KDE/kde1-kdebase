@@ -208,6 +208,7 @@ AC_OUTPUT(Makefile \
 	doc/kfm/Makefile \
 	doc/kfind/Makefile \
 	doc/kdehelp/Makefile \
+	doc/kdisplay/Makefile \
 	doc/kfontmanager/Makefile \
 	doc/kdm/Makefile \
 	doc/kwm/Makefile \
