@@ -64,5 +64,5 @@ keysym32=n,n,N,braceright
 keysym33=comma,comma,question,semicolon
 keysym34=period,period,colon
 keysym35=slash,minus,underscore,asterisk
-keycode36=94,iacute,Iacute,less
+keysym36=less,iacute,Iacute,less
 
