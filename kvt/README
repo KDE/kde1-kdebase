@@ -24,3 +24,9 @@ Greets,
 
  Matthias 
  (ettrich@informatik.uni-tuebingen.de)
+
+---------------------------------------------------------------------------
+Irix 6.3. SGI O2 R1000
+    To compile kvt on a SGI O2 R10000 running Irix 6.3 with gcc I had to
+    edit the Makefile: changing -DBSD to -DSVR4 and deleting /usr/include
+    from include-path does the trick
