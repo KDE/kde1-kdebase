@@ -1,12 +1,12 @@
-# New ports collection makefile for:   kdeutils
-# Version required:    Beta4
-# Date created:        28 October 1997
-# Whom:                Stefan Eßer <se@freebsd.org>
+# New ports collection makefile for:   kdebase
+# Version required:    1.0
+# Date created:        18 June 1998
+# Whom:                Alex Zepeda <garbanzo@hooked.net
 #
 # $Id$
 #
-PKGNAME=	kdeutils-`date "+%y%m%d"`
-CATEGORIES=	misc kde
+PKGNAME=	kdebase-`date "+%y%m%d"`
+CATEGORIES=	x11 kde
 
 MAINTAINER=	garbanzo@hooked.net
 
