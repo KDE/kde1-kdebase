@@ -222,7 +222,7 @@ msgstr "Nederst til høyre"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr "Grill"
+msgstr "Stilige"
 
 #: kdm-users.cpp:48
 msgid "All users"
