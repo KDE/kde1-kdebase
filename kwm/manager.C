@@ -878,7 +878,7 @@ void Manager::propertyNotify(XPropertyEvent *e){
     }
 
     c->stays_on_top = d & KWM::staysOnTop;
-    
+
     bool is_menubar = (d & KWM::standaloneMenuBar) != 0;
     has_standalone_menubars |= is_menubar;
     c->is_menubar = is_menubar;
@@ -2081,9 +2081,8 @@ void Manager::manage(Window w, bool mapped){
     raiseSoundEvent("Window New");
 
 
-  if (!dohide && c->getDecoration() != KWM::noDecoration
-      && !CLASSIC_FOCUS) {
-    activateClient(c);
+  if (!dohide && c->wantsFocus() && !CLASSIC_FOCUS) {
+      activateClient(c);
   }
   else
     c->setactive(false);
@@ -2296,7 +2295,7 @@ void Manager::raiseClient(Client* c){
     }
   } while (!tmp2.isEmpty());
 
-  
+
   // stays on top windows
   if (!c->isStaysOnTop() && !c->mainClient()->isStaysOnTop()) {
       for (c = clients_sorted.first(); c ; c = clients_sorted.next()){
@@ -2304,7 +2303,7 @@ void Manager::raiseClient(Client* c){
 	      tmp.append( c );
       }
   }
-  
+
   // finally do the raising
 
   for (c=tmp.first();c;c=tmp.next()){
