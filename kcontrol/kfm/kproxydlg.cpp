@@ -64,7 +64,7 @@ KProxyOptions::KProxyOptions(QWidget *parent, const char *name)
 
   connect( cb_useProxy, SIGNAL( clicked() ), SLOT( changeProxy() ) );
   
-  lb_http_url = new QLabel("HTTP Proxy:", this);
+  lb_http_url = new QLabel( i18n("HTTP Proxy:"), this);
   lb_http_url->setAlignment(AlignVCenter);
   //CT 12Nov1998 layout management
   lb_http_url->adjustSize();
@@ -79,7 +79,7 @@ KProxyOptions::KProxyOptions(QWidget *parent, const char *name)
   lay->addWidget(le_http_url,ROW_HTTP,2);
   //CT
 
-  lb_http_port = new QLabel("Port:", this);
+  lb_http_port = new QLabel( i18n("Port:"), this);
   lb_http_port->setAlignment(AlignVCenter);
   //CT 12Nov1998 layout management
   lb_http_port->adjustSize();
@@ -95,7 +95,7 @@ KProxyOptions::KProxyOptions(QWidget *parent, const char *name)
   lay->addWidget(le_http_port,ROW_HTTP,5);
   //CT
 
-  lb_ftp_url = new QLabel("FTP Proxy:", this);
+  lb_ftp_url = new QLabel( i18n("FTP Proxy:"), this);
   lb_ftp_url->setAlignment(AlignVCenter);
   //CT 12Nov1998 layout management
   lb_ftp_url->adjustSize();
@@ -110,7 +110,7 @@ KProxyOptions::KProxyOptions(QWidget *parent, const char *name)
   lay->addWidget(le_ftp_url,ROW_FTP,2);
   //CT
 
-  lb_ftp_port = new QLabel("Port:", this);
+  lb_ftp_port = new QLabel( i18n("Port:"), this);
   lb_ftp_port->setAlignment(AlignVCenter);
   //CT 12Nov1998 layout management
   lb_ftp_port->adjustSize();
