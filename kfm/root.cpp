@@ -1224,6 +1224,9 @@ void KRootWidget::slotPopupEmptyTrash()
  *
  *********************************************************************/
 
+QPixmap *KRootIcon::link_pixmap = 0;
+QPixmap *KRootIcon::ro_pixmap = 0;
+
 KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
     KDNDWidget( 0L, 0L, WStyle_Customize | WStyle_Tool | WStyle_NoBorder )
 {
@@ -1256,6 +1259,15 @@ KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
     KWM::setDecoration(winId(), 1024);
     
     connect( kapp, SIGNAL( kdisplayFontChanged() ), this, SLOT( slotFontChanged() ) );
+
+    if ( !link_pixmap || !ro_pixmap )
+    {
+	KIconLoader il;
+	link_pixmap = new QPixmap;
+	*link_pixmap = il.loadApplicationIcon( "link.xpm" );
+	ro_pixmap = new QPixmap;
+	*ro_pixmap = il.loadApplicationIcon( "readonly.xpm" );
+    }
 }
 
 void KRootIcon::initToolTip()
@@ -1356,16 +1368,20 @@ void KRootIcon::init()
       p2.setFont( myfont );
     
     if ( root->iconStyle() == 1 && !bSelected )
-    {
 	p2.drawText( textXOffset, textYOffset, file );
-    }
     else
       p2.fillRect( textXOffset-1, textYOffset-ascent-1, width+2, ascent+descent+2, color1 );     
 
     if ( pixmap->mask() == 0L )
 	p2.fillRect( pixmapXOffset, pixmapYOffset, pixmap->width(), pixmap->height(), color1 );
     else
-	bitBlt( &mask, pixmapXOffset, pixmapYOffset, pixmap->mask() );
+	p2.drawPixmap( pixmapXOffset, pixmapYOffset, *pixmap->mask() );
+
+    if ( bIsLink && link_pixmap->mask() != 0 )
+    {
+	p2.setRasterOp( OrROP );
+	p2.drawPixmap( pixmapXOffset, pixmapYOffset, *link_pixmap->mask() );
+    }
     
     p2.end();
 
@@ -1418,6 +1434,9 @@ void KRootIcon::resizeEvent( QResizeEvent * )
 void KRootIcon::paintEvent( QPaintEvent * ) 
 {
     bitBlt( this, pixmapXOffset, pixmapYOffset, pixmap );
+
+    if ( bIsLink )
+	bitBlt( this, pixmapXOffset, pixmapYOffset, link_pixmap );
   
     QPainter p;
     p.begin( this );

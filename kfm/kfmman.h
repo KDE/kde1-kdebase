@@ -242,6 +242,10 @@ protected:
     QString vlink_color;
 	// A HACK
 	QString HTMLBuffer;
+
+    // link and readonly overlay images
+    static QString *link_overlay;
+    static QString *ro_overlay;
 };
 
 #endif

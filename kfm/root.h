@@ -157,6 +157,9 @@ protected:
      * a link. If yes, then we have to draw the label with an italic font.
      */
     bool bIsLink;
+
+    static QPixmap *link_pixmap;
+    static QPixmap *ro_pixmap;
 };
 
 class KRootWidget : public QWidget

@@ -29,6 +29,12 @@
 #include "kfmexec.h"
 #include "utils.h"
 
+// enable this to show a readonly indicator over the icon.
+//#define OVERLAY_READONLY
+
+QString *KFMManager::link_overlay = 0;
+QString *KFMManager::ro_overlay = 0;
+
 KFMManager::KFMManager( KfmView *_v )
 {
     url  = "";
@@ -51,6 +57,21 @@ KFMManager::KFMManager( KfmView *_v )
     connect( job, SIGNAL( mimeType( const char* ) ), this, SLOT( slotMimeType( const char* ) ) );
     connect( job, SIGNAL( info( const char* ) ), this, SLOT( slotInfo( const char* ) ) );
     connect( job, SIGNAL( redirection( const char* ) ), this, SLOT( slotRedirection( const char* ) ) );
+
+    if ( !link_overlay )
+    {
+	link_overlay = new QString;
+	*link_overlay = kapp->kde_icondir().copy();
+	*link_overlay += "/link.xpm";
+	HTMLImage::cacheImage( link_overlay->data() );
+    }
+    if ( !ro_overlay )
+    {
+	ro_overlay = new QString;
+	*ro_overlay = kapp->kde_icondir().copy();
+	*ro_overlay += "/readonly.xpm";
+	HTMLImage::cacheImage( ro_overlay->data() );
+    }
 }
 
 KFMManager::~KFMManager()
@@ -522,6 +543,27 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
     encodedURL.detach();            // encodedURL, URL,  encoded for <a href ..> (Hen)
     encodedURL += s->getName();
 
+    bool readonly = false;
+
+#ifdef OVERLAY_READONLY
+    KURL u( filename );
+
+    if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
+    {
+	if ( access( u.path(), W_OK ) < 0 )
+	    readonly = true;
+    }
+    else
+    {
+	QString user = u.user();
+	if ( user.data() == 0L || user.data()[0] == 0 )
+	    user = "anonymous";
+	
+	if ( !s->mayWrite( user ) )
+	    readonly = true;
+    }
+#endif
+
     if ( view->getGUI()->getViewMode() == KfmGui::ICON_VIEW )
     { 
 	// Delete ".kdelnk" extension ( only in Icon View )
@@ -541,6 +583,16 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	{
 	    view->write( "\"><cell><center><img border=0 src=\"file:" );
 	    view->write( KMimeType::getPixmapFileStatic( filename ) );
+	    if ( readonly )
+	    {
+		view->write( "\" oversrc=\"" );
+		view->write( ro_overlay->data() );
+	    }
+	    else if ( s->getAccess() && s->getAccess()[0] == 'l' )
+	    {
+		view->write( "\" oversrc=\"" );
+		view->write( link_overlay->data() );
+	    }
 	    view->write( "\"><br>" );
 	}
 	
