@@ -1,147 +1,182 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-10-09 21:47-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
 #: kpanel.C:172
-msgid "Personal menu"
-msgstr "Menú personal"
-
-#: kpanel.C:180
-msgid "Add application"
-msgstr "Añadir aplicación"
-
-#: kpanel.C:182
-msgid "Add special"
-msgstr "Añadir especial"
-
-#: kpanel.C:183
-msgid "Configure"
-msgstr "Configurar"
-
-#: kpanel.C:185
-msgid "Configure panel"
-msgstr "Configurar panel"
-
-#: kpanel.C:186
-msgid "Restart"
-msgstr "Reiniciar"
-
-#: kpanel.C:188
-msgid "Restart panel"
-msgstr "Reiniciar panel"
-
-#: kpanel.C:189 props.C:327
-msgid "Panel"
-msgstr "Panel"
-
-#: kpanel.C:191
-msgid "Lock Screen"
-msgstr "Bloquear pantalla"
-
-#: kpanel.C:193
-msgid "Lock panel"
-msgstr "Bloquear panel"
-
-#: kpanel.C:194 kpanel.C:195
-msgid "Logout"
-msgstr "Terminar"
-
-#: kpanel.C:203
 msgid "Move"
 msgstr "Mover"
 
-#: kpanel.C:204
+#: kpanel.C:173
 msgid "Remove"
 msgstr "Eliminar"
 
-#: kpanel.C:206
+#: kpanel.C:175
 msgid "Properties"
 msgstr "Propiedades"
 
-#: kpanel.C:241
+#: kpanel.C:205 kpanel.C:207 tools.C:678
 msgid "System"
 msgstr "Sistema"
 
-#: kpanel.C:350
+#: kpanel.C:270
 msgid "No info available"
 msgstr "No hay información"
 
-#: kpanel.C:437 kpanel.C:453
-msgid "Destroy"
-msgstr "Destruir"
+#: kpanel.C:306 kpanel.C:664 kpanel.C:665
+msgid "Logout"
+msgstr "Terminar"
 
-#: kpanel.C:440 kpanel.C:450
-msgid "(Un) Sticky"
-msgstr "Fijar/Liberar"
+#: kpanel.C:315 kpanel.C:663
+#, fuzzy
+msgid "Lock screen"
+msgstr "Bloquear pantalla"
 
-#: kpanel.C:441 kpanel.C:449
-msgid "(Un) Iconify"
-msgstr "Minimizar/Restaurar"
+#: kpanel.C:326
+msgid "Hide the panel"
+msgstr ""
 
-#: kpanel.C:442 kpanel.C:448
-msgid "(Un) Maximize"
-msgstr "Maximizar/Restaurar"
+#: kpanel.C:342
+msgid "Show the panel"
+msgstr ""
 
-#: kpanel.C:443 kpanel.C:447
-msgid "On this desktop"
-msgstr "En este escritorio"
+#: kpanel.C:647
+msgid "Add application"
+msgstr "Añadir aplicación"
 
-#: props.C:264
-msgid "Location"
-msgstr "Localización"
+#: kpanel.C:649
+msgid "Add an application or a submenu onto the panel"
+msgstr ""
 
-#: props.C:284
-msgid "Taskbar"
-msgstr "Barra de tareas"
+#: kpanel.C:650
+msgid "Add windowlist"
+msgstr ""
 
-#: props.C:285
-msgid "Hidden"
-msgstr "Oculto"
+#: kpanel.C:652
+msgid "Add a windowlist menu onto the panel"
+msgstr ""
 
-#: props.C:297
-msgid "Top/Left"
-msgstr "Arriba/Izquierda"
+#: kpanel.C:653
+msgid "Configure"
+msgstr "Configurar"
 
-#: props.C:308
-msgid "Tiny Style"
-msgstr "Aspecto diminuto"
+#: kpanel.C:655
+msgid "Configure panel"
+msgstr "Configurar panel"
 
-#: props.C:309
-msgid "Small Style"
-msgstr "Aspecto pequeño"
+#: kpanel.C:656
+msgid "Restart"
+msgstr "Reiniciar"
 
-#: props.C:310
-msgid "Large Style"
-msgstr "Aspecto grande"
+#: kpanel.C:658
+msgid "Restart panel"
+msgstr "Reiniciar panel"
 
-#: props.C:322
-msgid "Menu Tooltips"
-msgstr "Ayuda de menú"
+#: kpanel.C:659 props.C:297
+msgid "Panel"
+msgstr "Panel"
 
-#: props.C:398
-msgid "Visible"
-msgstr "Visible"
+#: kpanel.C:661
+msgid "Lock Screen"
+msgstr "Bloquear pantalla"
 
-#: props.C:405
-msgid "Width"
-msgstr "Ancho"
-
-#: props.C:410
-msgid "Desktops"
-msgstr "Escritorios"
-
-#: props.C:416
-msgid "KPanel Configuration"
-msgstr "Configuración de KPanel"
-
-#: tools.C:489
+#: kpanel.C:1012 tools.C:503
 msgid "No comment available"
 msgstr "No hay comentarios"
 
-#: pmenu.C:252
-msgid "Sorry"
-msgstr "Disculpe"
-
-#: pmenu.C:253
-msgid ""
-"Could not communicate with nor\n"
-"start a new instance of KFM"
+#: kpanel.C:1021 tools.C:690
+msgid "Windowlist"
 msgstr ""
-"No se puede comunicar ni tampoco\n"
-"iniciar una nueva sesión KFM"
+
+#: props.C:239
+msgid "Location"
+msgstr "Localización"
+
+#: props.C:254
+msgid "Taskbar"
+msgstr "Barra de tareas"
+
+#: props.C:255
+msgid "Hidden"
+msgstr "Oculto"
+
+#: props.C:267
+msgid "Top/Left"
+msgstr "Arriba/Izquierda"
+
+#: props.C:278
+msgid "Tiny Style"
+msgstr "Aspecto diminuto"
+
+#: props.C:279
+msgid "Small Style"
+msgstr "Aspecto pequeño"
+
+#: props.C:280
+msgid "Large Style"
+msgstr "Aspecto grande"
+
+#: props.C:292
+msgid "Menu Tooltips"
+msgstr "Ayuda de menú"
+
+#: props.C:348
+msgid "Visible"
+msgstr "Visible"
+
+#: props.C:355
+msgid "Width"
+msgstr "Ancho"
+
+#: props.C:360
+msgid "Desktops"
+msgstr "Escritorios"
+
+#: props.C:366
+msgid "KPanel Configuration"
+msgstr "Configuración de KPanel"
+
+#~ msgid "Personal menu"
+#~ msgstr "Menú personal"
+
+#~ msgid "Add special"
+#~ msgstr "Añadir especial"
+
+#~ msgid "Lock panel"
+#~ msgstr "Bloquear panel"
+
+#~ msgid "Destroy"
+#~ msgstr "Destruir"
+
+#~ msgid "(Un) Sticky"
+#~ msgstr "Fijar/Liberar"
+
+#~ msgid "(Un) Iconify"
+#~ msgstr "Minimizar/Restaurar"
+
+#~ msgid "(Un) Maximize"
+#~ msgstr "Maximizar/Restaurar"
+
+#~ msgid "On this desktop"
+#~ msgstr "En este escritorio"
+
+#~ msgid "Sorry"
+#~ msgstr "Disculpe"
+
+#~ msgid ""
+#~ "Could not communicate with nor\n"
+#~ "start a new instance of KFM"
+#~ msgstr ""
+#~ "No se puede comunicar ni tampoco\n"
+#~ "iniciar una nueva sesión KFM"

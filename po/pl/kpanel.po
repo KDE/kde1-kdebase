@@ -1,151 +1,185 @@
-# Polish translation of KDE kpanel
-# Version 0.1.1
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-10-09 21:47-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
 
 #: kpanel.C:172
-msgid "Personal menu"
-msgstr "Osobiste menu"
-
-#: kpanel.C:180
-msgid "Add application"
-msgstr "Dodaj aplikacjê"
-
-#: kpanel.C:182
-msgid "Add special"
-msgstr "Dodaj specjalne"
-
-#: kpanel.C:183
-msgid "Configure"
-msgstr "Konfiguruj"
-
-#: kpanel.C:185
-msgid "Configure panel"
-msgstr "Konfiguruj panel"
-
-#: kpanel.C:186
-msgid "Restart"
-msgstr "Od¶wie¿"
-
-#: kpanel.C:188
-msgid "Restart panel"
-msgstr "Od¶wie¿ panel"
-
-#: kpanel.C:189 props.C:327
-msgid "Panel"
-msgstr "Panel"
-
-#: kpanel.C:191
-msgid "Lock Screen"
-msgstr "Zablokuj ekran"
-
-#: kpanel.C:193
-msgid "Lock panel"
-msgstr "Zablokuj panel"
-
-#: kpanel.C:194 kpanel.C:195
-msgid "Logout"
-msgstr "Wyloguj siê"
-
-#: kpanel.C:203
 msgid "Move"
 msgstr "Przesuñ"
 
-#: kpanel.C:204
+#: kpanel.C:173
 msgid "Remove"
 msgstr "Usuñ"
 
-#: kpanel.C:206
+#: kpanel.C:175
 msgid "Properties"
 msgstr "W³a¶ciwo¶ci"
 
-#: kpanel.C:241
+#: kpanel.C:205 kpanel.C:207 tools.C:678
 msgid "System"
 msgstr "System"
 
-#: kpanel.C:350
+#: kpanel.C:270
 msgid "No info available"
 msgstr "Informacje niedostêpne"
 
-#: kpanel.C:437 kpanel.C:453
-msgid "Destroy"
-msgstr "Zniszcz"
+#: kpanel.C:306 kpanel.C:664 kpanel.C:665
+msgid "Logout"
+msgstr "Wyloguj siê"
 
-#: kpanel.C:440 kpanel.C:450
-msgid "(Un) Sticky"
-msgstr "(Od) Przyklej"
+#: kpanel.C:315 kpanel.C:663
+#, fuzzy
+msgid "Lock screen"
+msgstr "Zablokuj ekran"
 
-#: kpanel.C:441 kpanel.C:449
-msgid "(Un) Iconify"
-msgstr "(Od) Minimalizuj"
+#: kpanel.C:326
+msgid "Hide the panel"
+msgstr ""
 
-#: kpanel.C:442 kpanel.C:448
-msgid "(Un) Maximize"
-msgstr "(Od) Maksymalizuj"
+#: kpanel.C:342
+msgid "Show the panel"
+msgstr ""
 
-#: kpanel.C:443 kpanel.C:447
-msgid "On this desktop"
-msgstr "Na tym desktopie"
+#: kpanel.C:647
+msgid "Add application"
+msgstr "Dodaj aplikacjê"
 
-#: props.C:264
-msgid "Location"
-msgstr "Lokacja"
+#: kpanel.C:649
+msgid "Add an application or a submenu onto the panel"
+msgstr ""
 
-#: props.C:284
-msgid "Taskbar"
-msgstr "Pasek zadañ"
+#: kpanel.C:650
+msgid "Add windowlist"
+msgstr ""
 
-#: props.C:285
-msgid "Hidden"
-msgstr "Ukryte"
+#: kpanel.C:652
+msgid "Add a windowlist menu onto the panel"
+msgstr ""
 
-#: props.C:297
-msgid "Top/Left"
-msgstr "Góra/Lewo"
+#: kpanel.C:653
+msgid "Configure"
+msgstr "Konfiguruj"
 
-#: props.C:308
-msgid "Tiny Style"
-msgstr "Ma³y"
+#: kpanel.C:655
+msgid "Configure panel"
+msgstr "Konfiguruj panel"
 
-#: props.C:309
-msgid "Small Style"
-msgstr "¦redni"
+#: kpanel.C:656
+msgid "Restart"
+msgstr "Od¶wie¿"
 
-#: props.C:310
-msgid "Large Style"
-msgstr "Du¿y"
+#: kpanel.C:658
+msgid "Restart panel"
+msgstr "Od¶wie¿ panel"
 
-#: props.C:322
-msgid "Menu Tooltips"
-msgstr "Podpowiedzi menu"
+#: kpanel.C:659 props.C:297
+msgid "Panel"
+msgstr "Panel"
 
-#: props.C:398
-msgid "Visible"
-msgstr "Widoczne"
+#: kpanel.C:661
+msgid "Lock Screen"
+msgstr "Zablokuj ekran"
 
-#: props.C:405
-msgid "Width"
-msgstr "Wysoko¶æ"
-
-#: props.C:410
-msgid "Desktops"
-msgstr "Desktopy"
-
-#: props.C:416
-msgid "KPanel Configuration"
-msgstr "Konfiguracja KPanel"
-
-#: tools.C:489
+#: kpanel.C:1012 tools.C:503
 msgid "No comment available"
 msgstr "Brak komentarza"
 
-#: pmenu.C:252
-msgid "Sorry"
-msgstr "Przykro mi"
-
-#: pmenu.C:253
-msgid ""
-"Could not communicate with nor\n"
-"start a new instance of KFM"
+#: kpanel.C:1021 tools.C:690
+msgid "Windowlist"
 msgstr ""
-"Nie mogê skomunikowaæ siê lub\n"
-"uruchomiæ nowej sesji KFM"
+
+#: props.C:239
+msgid "Location"
+msgstr "Lokacja"
+
+#: props.C:254
+msgid "Taskbar"
+msgstr "Pasek zadañ"
+
+#: props.C:255
+msgid "Hidden"
+msgstr "Ukryte"
+
+#: props.C:267
+msgid "Top/Left"
+msgstr "Góra/Lewo"
+
+#: props.C:278
+msgid "Tiny Style"
+msgstr "Ma³y"
+
+#: props.C:279
+msgid "Small Style"
+msgstr "¦redni"
+
+#: props.C:280
+msgid "Large Style"
+msgstr "Du¿y"
+
+#: props.C:292
+msgid "Menu Tooltips"
+msgstr "Podpowiedzi menu"
+
+#: props.C:348
+msgid "Visible"
+msgstr "Widoczne"
+
+#: props.C:355
+msgid "Width"
+msgstr "Wysoko¶æ"
+
+#: props.C:360
+msgid "Desktops"
+msgstr "Desktopy"
+
+#: props.C:366
+msgid "KPanel Configuration"
+msgstr "Konfiguracja KPanel"
+
+# Polish translation of KDE kpanel
+# Version 0.1.1
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+#~ msgid "Personal menu"
+#~ msgstr "Osobiste menu"
+
+#~ msgid "Add special"
+#~ msgstr "Dodaj specjalne"
+
+#~ msgid "Lock panel"
+#~ msgstr "Zablokuj panel"
+
+#~ msgid "Destroy"
+#~ msgstr "Zniszcz"
+
+#~ msgid "(Un) Sticky"
+#~ msgstr "(Od) Przyklej"
+
+#~ msgid "(Un) Iconify"
+#~ msgstr "(Od) Minimalizuj"
+
+#~ msgid "(Un) Maximize"
+#~ msgstr "(Od) Maksymalizuj"
+
+#~ msgid "On this desktop"
+#~ msgstr "Na tym desktopie"
+
+#~ msgid "Sorry"
+#~ msgstr "Przykro mi"
+
+#~ msgid ""
+#~ "Could not communicate with nor\n"
+#~ "start a new instance of KFM"
+#~ msgstr ""
+#~ "Nie mogê skomunikowaæ siê lub\n"
+#~ "uruchomiæ nowej sesji KFM"

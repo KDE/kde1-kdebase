@@ -2,11 +2,10 @@
 # Copyright (C) 1997 Free Software Foundation, Inc.
 # Nagy Balazs <julian7@kva.hu>, 1997.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.2\n"
-"POT-Creation-Date: 1997-08-21 23:23-0500\n"
+"POT-Creation-Date: 1997-10-09 21:47-0500\n"
 "PO-Revision-Date: 1997-09-21 19:39+MET\n"
 "Last-Translator: Nagy Balazs <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -15,126 +14,158 @@ msgstr ""
 "Content-Transfer-Encoding: iso-8859-2\n"
 
 #: kpanel.C:172
-msgid "Personal menu"
-msgstr "Személyes menü"
-
-#: kpanel.C:180
-msgid "Add application"
-msgstr "Program hozzáadása"
-
-#: kpanel.C:182
-msgid "Add special"
-msgstr "Speciális elem hozzáadása"
-
-#: kpanel.C:183
-msgid "Configure"
-msgstr "Konfigurálás"
-
-#: kpanel.C:185
-msgid "Configure panel"
-msgstr "Panel konfigurálása"
-
-#: kpanel.C:186
-msgid "Restart"
-msgstr "Újraindítás"
-
-#: kpanel.C:188
-msgid "Panel"
-msgstr ""
-
-#: kpanel.C:190
-msgid "Lock Screen"
-msgstr "Képernyõzár"
-
-#: kpanel.C:192
-msgid "Logout"
-msgstr "Kilép"
-
-#: kpanel.C:201
 msgid "Move"
 msgstr "Áthelyez"
 
-#: kpanel.C:202
+#: kpanel.C:173
 msgid "Remove"
 msgstr "Töröl"
 
-#: kpanel.C:204
+#: kpanel.C:175
 msgid "Properties"
 msgstr "Tulajdonságok"
 
-#: kpanel.C:239
+#: kpanel.C:205 kpanel.C:207 tools.C:678
 msgid "System"
 msgstr "Rendszer"
 
-#: kpanel.C:316
-msgid "Desktop"
-msgstr "Asztal"
-
-#: kpanel.C:348
+#: kpanel.C:270
 msgid "No info available"
 msgstr "Nincs róla info"
 
-#: kpanel.C:435 kpanel.C:451
-msgid "Destroy"
-msgstr "Megszüntet"
+#: kpanel.C:306 kpanel.C:664 kpanel.C:665
+msgid "Logout"
+msgstr "Kilép"
 
-#: kpanel.C:438 kpanel.C:448
-msgid "(Un) Sticky"
-msgstr "Ragadás be/ki"
+#: kpanel.C:315 kpanel.C:663
+#, fuzzy
+msgid "Lock screen"
+msgstr "Képernyõzár"
 
-#: kpanel.C:439 kpanel.C:447
-msgid "(Un) Iconify"
-msgstr "Ikonizálás be/ki"
+#: kpanel.C:326
+msgid "Hide the panel"
+msgstr ""
 
-#: kpanel.C:440 kpanel.C:446
-msgid "(Un) Maximize"
-msgstr "Teljes képernyõ be/ki"
+#: kpanel.C:342
+msgid "Show the panel"
+msgstr ""
 
-#: kpanel.C:441 kpanel.C:445
-msgid "On this desktop"
-msgstr "Ezen az asztalon"
+#: kpanel.C:647
+msgid "Add application"
+msgstr "Program hozzáadása"
 
-#: props.C:263
+#: kpanel.C:649
+msgid "Add an application or a submenu onto the panel"
+msgstr ""
+
+#: kpanel.C:650
+msgid "Add windowlist"
+msgstr ""
+
+#: kpanel.C:652
+msgid "Add a windowlist menu onto the panel"
+msgstr ""
+
+#: kpanel.C:653
+msgid "Configure"
+msgstr "Konfigurálás"
+
+#: kpanel.C:655
+msgid "Configure panel"
+msgstr "Panel konfigurálása"
+
+#: kpanel.C:656
+msgid "Restart"
+msgstr "Újraindítás"
+
+#: kpanel.C:658
+#, fuzzy
+msgid "Restart panel"
+msgstr "Újraindítás"
+
+#: kpanel.C:659 props.C:297
+msgid "Panel"
+msgstr ""
+
+#: kpanel.C:661
+msgid "Lock Screen"
+msgstr "Képernyõzár"
+
+#: kpanel.C:1012 tools.C:503
+#, fuzzy
+msgid "No comment available"
+msgstr "Nincs róla info"
+
+#: kpanel.C:1021 tools.C:690
+msgid "Windowlist"
+msgstr ""
+
+#: props.C:239
 msgid "Location"
 msgstr "Hely"
 
-#: props.C:283
+#: props.C:254
 msgid "Taskbar"
 msgstr "Táskabár"
 
-#: props.C:284
+#: props.C:255
 msgid "Hidden"
 msgstr "Rejtett"
 
-#: props.C:296
+#: props.C:267
 msgid "Top/Left"
 msgstr "Balra fent"
 
-#: props.C:307
+#: props.C:278
 msgid "Tiny Style"
 msgstr "Apró stílus"
 
-#: props.C:308
+#: props.C:279
 msgid "Small Style"
 msgstr "Kicsi stílus"
 
-#: props.C:309
+#: props.C:280
 msgid "Large Style"
 msgstr "Nagy stílus"
 
-#: props.C:321
+#: props.C:292
 msgid "Menu Tooltips"
 msgstr "Menü tippek"
 
-#: props.C:397
+#: props.C:348
 msgid "Visible"
 msgstr "Látható"
 
-#: props.C:404
+#: props.C:355
 msgid "Width"
 msgstr "Szélesség"
 
-#: props.C:415
+#: props.C:360
+#, fuzzy
+msgid "Desktops"
+msgstr "Asztal"
+
+#: props.C:366
 msgid "KPanel Configuration"
 msgstr "KPanel beállítások"
 
+#~ msgid "Personal menu"
+#~ msgstr "Személyes menü"
+
+#~ msgid "Add special"
+#~ msgstr "Speciális elem hozzáadása"
+
+#~ msgid "Destroy"
+#~ msgstr "Megszüntet"
+
+#~ msgid "(Un) Sticky"
+#~ msgstr "Ragadás be/ki"
+
+#~ msgid "(Un) Iconify"
+#~ msgstr "Ikonizálás be/ki"
+
+#~ msgid "(Un) Maximize"
+#~ msgstr "Teljes képernyõ be/ki"
+
+#~ msgid "On this desktop"
+#~ msgstr "Ezen az asztalon"
