@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm-1.1\n"
-"POT-Creation-Date: 1999-04-05 01:20+0200\n"
+"POT-Creation-Date: 1999-04-08 01:20+0200\n"
 "PO-Revision-Date: 1999-02-01 10:17+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -34,47 +34,47 @@ msgstr "Lazhañ hag adloc'hañ"
 msgid "Restart X Server"
 msgstr "Adloc'hañ ar servijer X"
 
-#: kgreeter.cpp:232
+#: kgreeter.cpp:234
 msgid "Login:"
 msgstr "Arveriad :"
 
-#: kgreeter.cpp:244
+#: kgreeter.cpp:246
 msgid "Password:"
 msgstr "Tremenger"
 
-#: kgreeter.cpp:269
+#: kgreeter.cpp:271
 msgid "Login failed!"
 msgstr "Ereañ sac'het"
 
-#: kgreeter.cpp:275
+#: kgreeter.cpp:277
 msgid "Session Type:"
 msgstr "Doare an dalc'h :"
 
-#: kgreeter.cpp:322
+#: kgreeter.cpp:324
 msgid "Go!"
 msgstr "Kit !"
 
-#: kgreeter.cpp:338
+#: kgreeter.cpp:340
 msgid "Shutdown..."
 msgstr "Lazhañ..."
 
-#: kgreeter.cpp:580
+#: kgreeter.cpp:585
 msgid "Logins not available right now."
 msgstr "Ereañ dihegerz evit ar mare."
 
-#: kgreeter.cpp:621
+#: kgreeter.cpp:626
 msgid "login_getcapstr() failed."
 msgstr "login_getcapstr() sac'het"
 
-#: kgreeter.cpp:675 kgreeter.cpp:702
+#: kgreeter.cpp:680 kgreeter.cpp:707
 msgid "Sorry -- your account has expired."
 msgstr "Ho tigarez -- echu eo gant ho kont"
 
-#: kgreeter.cpp:680 kgreeter.cpp:707
+#: kgreeter.cpp:685 kgreeter.cpp:712
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Diwallit : echuiñ a ray ho kont d'ar %s"
 
-#: kgreeter.cpp:734
+#: kgreeter.cpp:739
 msgid "Home directory not available"
 msgstr "Renkell Er Gêr zo dihegerz"

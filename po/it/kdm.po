@@ -5,7 +5,7 @@
 # v 0.1 -- 15/10/97
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-04-05 01:20+0200\n"
+"POT-Creation-Date: 1999-04-08 01:20+0200\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-09-09 17:23:06+0200\n"
 "From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
@@ -33,48 +33,48 @@ msgstr "Riavvia il Computer"
 msgid "Restart X Server"
 msgstr "Riavvia Server X"
 
-#: kgreeter.cpp:232
+#: kgreeter.cpp:234
 msgid "Login:"
 msgstr "Nome utente (login):"
 
-#: kgreeter.cpp:244
+#: kgreeter.cpp:246
 msgid "Password:"
 msgstr "Password:"
 
-#: kgreeter.cpp:269
+#: kgreeter.cpp:271
 msgid "Login failed!"
 msgstr "Login Fallito!"
 
-#: kgreeter.cpp:275
+#: kgreeter.cpp:277
 msgid "Session Type:"
 msgstr "Tipo di sessione"
 
-#: kgreeter.cpp:322
+#: kgreeter.cpp:324
 msgid "Go!"
 msgstr "Vai!"
 
-#: kgreeter.cpp:338
+#: kgreeter.cpp:340
 msgid "Shutdown..."
 msgstr "Arresta sistema..."
 
-#: kgreeter.cpp:580
+#: kgreeter.cpp:585
 msgid "Logins not available right now."
 msgstr "Login non disponibili al momento."
 
-#: kgreeter.cpp:621
+#: kgreeter.cpp:626
 msgid "login_getcapstr() failed."
 msgstr "login_getcapstr() fallito."
 
-#: kgreeter.cpp:675 kgreeter.cpp:702
+#: kgreeter.cpp:680 kgreeter.cpp:707
 msgid "Sorry -- your account has expired."
 msgstr "Spiacente -- il tuo account è scaduto."
 
-#: kgreeter.cpp:680 kgreeter.cpp:707
+#: kgreeter.cpp:685 kgreeter.cpp:712
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Attenzione: il tuo account scadrà il %s"
 
-#: kgreeter.cpp:734
+#: kgreeter.cpp:739
 msgid "Home directory not available"
 msgstr "Directory home non disponibile"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm \n"
-"POT-Creation-Date: 1999-04-05 01:20+0200\n"
+"POT-Creation-Date: 1999-04-08 01:20+0200\n"
 "PO-Revision-Date: 1998-12-28 23:30+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -26,47 +26,47 @@ msgstr "Ponowne uruchomienie systemu"
 msgid "Restart X Server"
 msgstr "Zrestartuj X Server"
 
-#: kgreeter.cpp:232
+#: kgreeter.cpp:234
 msgid "Login:"
 msgstr "Login:"
 
-#: kgreeter.cpp:244
+#: kgreeter.cpp:246
 msgid "Password:"
 msgstr "Has³o:"
 
-#: kgreeter.cpp:269
+#: kgreeter.cpp:271
 msgid "Login failed!"
 msgstr "Brak dostêpu!"
 
-#: kgreeter.cpp:275
+#: kgreeter.cpp:277
 msgid "Session Type:"
 msgstr "Argumenty sesji:"
 
-#: kgreeter.cpp:322
+#: kgreeter.cpp:324
 msgid "Go!"
 msgstr "Id¼!"
 
-#: kgreeter.cpp:338
+#: kgreeter.cpp:340
 msgid "Shutdown..."
 msgstr "Zamkniêcie..."
 
-#: kgreeter.cpp:580
+#: kgreeter.cpp:585
 msgid "Logins not available right now."
 msgstr "Nie mo¿na siê teraz zalogowaæ."
 
-#: kgreeter.cpp:621
+#: kgreeter.cpp:626
 msgid "login_getcapstr() failed."
 msgstr "login_getcapstr() nie uda³ siê."
 
-#: kgreeter.cpp:675 kgreeter.cpp:702
+#: kgreeter.cpp:680 kgreeter.cpp:707
 msgid "Sorry -- your account has expired."
 msgstr "Niestety, konto siê zdezaktualizowa³o."
 
-#: kgreeter.cpp:680 kgreeter.cpp:707
+#: kgreeter.cpp:685 kgreeter.cpp:712
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Ostrze¿enie: konto siê dezaktualizuje %s"
 
-#: kgreeter.cpp:734
+#: kgreeter.cpp:739
 msgid "Home directory not available"
 msgstr "Katalog domowy jest niedostêpny"

@@ -414,7 +414,8 @@ msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
 msgstr ""
-"Emuler XServer-CapsLock. Behøves i visse sprog for at tastaturet virker rigtigt"
+"Emuler XServer-CapsLock. Behøves i visse sprog for at tastaturet virker "
+"rigtigt"
 
 #: widgets.cpp:482
 msgid "&World Menu"
@@ -447,13 +448,16 @@ msgstr "Standard opførsel. Tastaturkort er aktivt for alle vinduer"
 #: widgets.cpp:509
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Udvidet opførsel. Tastaturkortets tilstand gemmes uafhængigt for hvert vinduer"
+msgstr ""
+"Udvidet opførsel. Tastaturkortets tilstand gemmes uafhængigt for hvert "
+"vinduer"
 
 #: widgets.cpp:513
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
 msgstr ""
-"Særlig opførsel. Tastaturkortets tilstand gemmes uafhængigt for hver vinduesklasse"
+"Særlig opførsel. Tastaturkortets tilstand gemmes uafhængigt for hver "
+"vinduesklasse"
 
 #: widgets.cpp:561
 msgid "Button Colors"
