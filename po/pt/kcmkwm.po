@@ -162,13 +162,12 @@ msgid "Window resize"
 msgstr "Mudança de tamanho das janelas"
 
 #: windows.cpp:90
-#, fuzzy
 msgid "Animation:"
-msgstr "Animação do título"
+msgstr "Animação:"
 
 #: windows.cpp:92
 msgid "Fast"
-msgstr ""
+msgstr "Rápida"
 
 #: windows.cpp:98
 msgid "Placement policy"
@@ -277,18 +276,3 @@ msgid ""
 msgstr ""
 "Zona de Snap da Janela:\n"
 "       (pixels)"
-
-#~ msgid "With animation"
-#~ msgstr "Com animação"
-
-#~ msgid "Move"
-#~ msgstr "Mover"
-
-#~ msgid "Restore"
-#~ msgstr "Restaurar"
-
-#~ msgid "Shaded"
-#~ msgstr "Sombreada"
-
-#~ msgid "Resize Animation"
-#~ msgstr "Animação de Tamanho"

@@ -342,12 +342,3 @@ msgstr "Não foi possível reconhecer o tipo de arquivo!"
 #: kfwin.cpp:496
 msgid "Error while creating child process!"
 msgstr "Erro ao criar o processo filho!"
-
-#~ msgid "&Cut"
-#~ msgstr "&Cortar"
-
-#~ msgid "Properties"
-#~ msgstr "Propriedades"
-
-#~ msgid "Files"
-#~ msgstr "Ficheiros"

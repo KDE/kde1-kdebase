@@ -332,9 +332,8 @@ msgid "Panel clock font"
 msgstr "Fonte do relógio do painel"
 
 #: general.cpp:298
-#, fuzzy
 msgid "Sample text"
-msgstr "Texto seleccionado"
+msgstr "Texto exemplo"
 
 #: general.cpp:306
 msgid ""
@@ -342,6 +341,9 @@ msgid ""
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
+"A RAPOSA CASTANHA SALTOU POR CIMA DO CÃO\n"
+"a raposa castanha saltou por cima do cão\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 
 #: main.cpp:62
 msgid "&Fonts etc."
@@ -382,7 +384,7 @@ msgstr "Texto seleccionado"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
-msgstr ""
+msgstr "&Fonte"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
@@ -394,11 +396,11 @@ msgstr "&Itálico"
 
 #: fontchooser.cpp:125
 msgid "&Size"
-msgstr ""
+msgstr "&Tamanho"
 
 #: fontchooser.cpp:147
 msgid "&Character set"
-msgstr ""
+msgstr "&Caracteres"
 
 #: fontchooser.cpp:262
 msgid "default"
@@ -407,9 +409,3 @@ msgstr "por omissão"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "qualquer"
-
-#~ msgid "&Remove"
-#~ msgstr "&Remover"
-
-#~ msgid "Default"
-#~ msgstr "Por omissão"

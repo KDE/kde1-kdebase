@@ -292,38 +292,8 @@ msgstr ""
 
 #: mainwidget.cpp:584
 msgid "About KDE Help"
-msgstr "Acerca do KDE Help"
+msgstr "Acerca da Ajuda do KDE"
 
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Adicionar Favorito"
-
-#~ msgid "Font Size"
-#~ msgstr "Tamanho da Fonte"
-
-#~ msgid "Small"
-#~ msgstr "Pequeno"
-
-#~ msgid "Medium"
-#~ msgstr "Médio"
-
-#~ msgid "Large"
-#~ msgstr "Grande"
-
-#~ msgid "Fonts"
-#~ msgstr "Fontes"
-
-#~ msgid "Miscellaneous"
-#~ msgstr "Variados"
-
-#~ msgid "&Reload"
-#~ msgstr "&Recarregar"
-
-#~ msgid "&Previous"
-#~ msgstr "&Anterior"
-
-#~ msgid "&Next"
-#~ msgstr "&Seguinte"
-
-#~ msgid "Stop"
-#~ msgstr "Parar"
