@@ -246,7 +246,7 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 void KColorScheme::loadSettings()
 {
     KConfigGroupSaver saver(kapp->getConfig(), "X11");
-    useRM = kapp->getConfig()->readBoolEntry( "useResourceManager", true );
+    useRM = kapp->getConfig()->readBoolEntry( "useResourceManager", false );
 }
 
 void KColorScheme::resizeEvent( QResizeEvent * )

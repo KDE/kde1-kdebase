@@ -489,7 +489,7 @@ void KGeneral::readSettings( int )
 
 		
 	KConfigGroupSaver saver(kapp->getConfig(), "X11");
-	useRM = kapp->getConfig()->readBoolEntry( "useResourceManager", true );
+	useRM = kapp->getConfig()->readBoolEntry( "useResourceManager", false );
 }
 
 void KGeneral::setDefaults()
@@ -772,7 +772,7 @@ KFonts::~KFonts()
 
 void KFonts::readSettings( int )
 {		
-    useRM = kapp->getConfig()->readBoolEntry( "useResourceManager", true );
+    useRM = kapp->getConfig()->readBoolEntry( "useResourceManager", false );
 }
 
 void KFonts::setDefaults()
