@@ -120,7 +120,7 @@ InitXdmcpWrapper ()
 
 #endif
 
-GenerateAuthData (auth, len)
+void GenerateAuthData (auth, len)
 char	*auth;
 int	len;
 {

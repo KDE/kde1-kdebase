@@ -48,7 +48,7 @@ ignoreErrors (dpy, event)
 Display	*dpy;
 XErrorEvent	*event;
 {
-	Debug ("ignoring error\n");
+	return Debug ("ignoring error\n");
 }
 
 /*
@@ -95,7 +95,7 @@ static int getSimpleProperty(Display* dpy, Window w, Atom a, long *result){
 }
 
 static
-killWindows (dpy, window)
+void killWindows (dpy, window)
 Display	*dpy;
 Window	window;
 {
@@ -139,7 +139,7 @@ abortReset (n)
  * this display connection better not have any windows...
  */
  
-pseudoReset (dpy)
+void pseudoReset (dpy)
 Display	*dpy;
 {
 	Window	root;

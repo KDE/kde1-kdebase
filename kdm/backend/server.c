@@ -37,12 +37,17 @@ from the X Consortium.
  * server.c - manage the X server
  */
 
+#ifdef HAVE_CONFIG_H
+#include "../config.h"
+#endif
+
 # include	"dm.h"
 # include	<X11/Xlib.h>
 # include	<X11/Xos.h>
 # include	<stdio.h>
 # include	<signal.h>
 # include	<errno.h>
+# include	<sys/socket.h>
 
 #ifdef MINIX
 #include <sys/ioctl.h>
@@ -73,7 +78,9 @@ CatchUsr1 (n)
     ++receivedUsr1;
 }
 
-StartServerOnce (d)
+extern void CleanUpChild();
+
+int StartServerOnce (d)
 struct display	*d;
 {
     char	**f;
@@ -125,7 +132,7 @@ struct display	*d;
     return TRUE;
 }
 
-StartServer (d)
+int StartServer (d)
 struct display *d;
 {
     int	i;
@@ -169,7 +176,7 @@ serverPauseUsr1 (n)
 }
 
 static
-serverPause (t, serverPid)
+int serverPause (t, serverPid)
 unsigned    t;
 int	    serverPid;
 {
@@ -255,12 +262,12 @@ abortOpen (n)
 #endif
 
 static
-GetRemoteAddress (d, fd)
+void GetRemoteAddress (d, fd)
     struct display  *d;
     int		    fd;
 {
     char    buf[512];
-    int	    len = sizeof (buf);
+    ksize_t    len = sizeof (buf);
 #ifdef STREAMSCONN
     struct netbuf	netb;
 #endif
@@ -320,6 +327,8 @@ openErrorHandler (dpy)
     exit (OPENFAILED_DISPLAY);
 }
 
+extern int RegisterCloseOnFork( int fd );
+
 int
 WaitForServer (d)
     struct display  *d;
@@ -376,7 +385,9 @@ WaitForServer (d)
     return 0;
 }
 
-ResetServer (d)
+extern void pseudoReset( Display *dpy );
+
+void ResetServer (d)
     struct display  *d;
 {
     if (dpy && d->displayType.origin != FromXDMCP)
@@ -397,6 +408,7 @@ PingLostIOErr (dpy)
     Display *dpy;
 {
     PingLost();
+    return 0;
 }
 
 /* ARGSUSED */
@@ -407,7 +419,7 @@ PingLostSig (n)
     PingLost();
 }
 
-PingServer (d, alternateDpy)
+int PingServer (d, alternateDpy)
     struct display  *d;
     Display	    *alternateDpy;
 {
@@ -417,7 +429,7 @@ PingServer (d, alternateDpy)
 
     if (!alternateDpy)
 	alternateDpy = dpy;
-    oldError = XSetIOErrorHandler (PingLostIOErr);
+    oldError = XSetIOErrorHandler ((void *)PingLostIOErr);
     oldAlarm = alarm (0);
     oldSig = Signal (SIGALRM, PingLostSig);
     (void) alarm (d->pingTimeout * 60);

@@ -104,7 +104,21 @@ static int TitleLen;
 static SIGVAL ChildNotify ();
 #endif
 
-main (argc, argv)
+extern void InitResources( int argc, char **argv );
+void SetConfigFileTime();
+extern void LoadDMResources();
+extern void BecomeOrphan();
+extern void BecomeDaemon();
+int StorePid();
+extern void InitErrorLog();
+extern void CreateWellKnownSockets();
+void SetAccessFileTime();
+extern int ScanAccessDatabase();
+extern int AnyWellKnownSockets();
+extern int AnyDisplaysLeft();
+extern void WaitForSomething();
+
+int main (argc, argv)
 int	argc;
 char	**argv;
 {
@@ -219,6 +233,10 @@ RescanNotify (n)
 #endif
 }
 
+extern void ParseDisplay( char *source, DisplayType acceptableTypes[],
+                          int numAcceptable);
+
+
 static void
 ScanServers ()
 {
@@ -268,6 +286,10 @@ struct display	*d;
     d->state = MissingEntry;
 }
 
+extern void LogInfo();
+extern void ForEachDisplay();
+extern void ReinitResources();
+
 static void
 RescanServers ()
 {
@@ -285,7 +307,7 @@ RescanServers ()
     StartDisplays ();
 }
 
-SetConfigFileTime ()
+void SetConfigFileTime ()
 {
     struct stat	statb;
 
@@ -293,7 +315,7 @@ SetConfigFileTime ()
 	ConfigModTime = statb.st_mtime;
 }
 
-SetAccessFileTime ()
+void SetAccessFileTime ()
 {
     struct stat	statb;
 
@@ -302,7 +324,7 @@ SetAccessFileTime ()
 }
 
 static
-RescanIfMod ()
+void RescanIfMod ()
 {
     struct stat	statb;
 
@@ -346,6 +368,8 @@ RescanIfMod ()
  * catch a SIGTERM, kill all displays and exit
  */
 
+extern void DestroyWellKnownSockets();
+
 /* ARGSUSED */
 static SIGVAL
 StopAll (n)
@@ -380,7 +404,11 @@ ChildNotify (n)
 }
 #endif
 
-WaitForChild ()
+extern void SendFailed( struct display *d, char *reason );
+extern void RemoveDisplay( struct display *old );
+void TerminateProcess( pid_t pid, int signal );
+
+int WaitForChild ()
 {
     int		pid;
     struct display	*d;
@@ -538,6 +566,7 @@ WaitForChild ()
 	}
     }
     StartDisplays ();
+    return 0;
 }
 
 static void
@@ -565,6 +594,17 @@ StartDisplays ()
 {
     ForEachDisplay (CheckDisplayStatus);
 }
+
+extern void LoadServerResources( struct display *d );
+extern int StartServer( struct display *d );
+extern int SaveServerAuthorizations( struct display *d, Xauth ** auths,
+                                     int count);
+extern void CleanUpChild();
+extern void LoadSessionResources( struct display *d );
+extern void SetAuthorization( struct display *d );
+extern int WaitForServer( struct display *d );
+extern void RunChooser( struct display *d );
+extern void ManageSession( struct display *d );
 
 void
 StartDisplay (d)
@@ -639,7 +679,7 @@ struct display	*d;
     }
 }
 
-TerminateProcess (pid, signal)
+void TerminateProcess (pid, signal)
 {
     kill (pid, signal);
 #ifdef SIGCONT
@@ -688,15 +728,16 @@ RestartDisplay (d, forceReserver)
 static FD_TYPE	CloseMask;
 static int	max;
 
-RegisterCloseOnFork (fd)
+int RegisterCloseOnFork (fd)
 int	fd;
 {
     FD_SET (fd, &CloseMask);
     if (fd > max)
 	max = fd;
+    return 0;
 }
 
-ClearCloseOnFork (fd)
+void ClearCloseOnFork (fd)
 int	fd;
 {
     FD_CLR (fd, &CloseMask);
@@ -708,7 +749,7 @@ int	fd;
     }
 }
 
-CloseOnFork ()
+void CloseOnFork ()
 {
     int	fd;
 
@@ -730,7 +771,7 @@ CloseOnFork ()
 static int  pidFd;
 static FILE *pidFilePtr;
 
-StorePid ()
+int StorePid ()
 {
     int		oldpid;
 
@@ -791,7 +832,7 @@ StorePid ()
     return 0;
 }
 
-UnlockPidFile ()
+void UnlockPidFile ()
 {
     if (lockPidFile)
 #ifdef F_SETLK
@@ -814,10 +855,10 @@ UnlockPidFile ()
 }
 
 #if NeedVarargsPrototypes
-SetTitle (char *name, ...)
+void SetTitle (char *name, ...)
 #else
 /*VARARGS*/
-SetTitle (name, va_alist)
+void SetTitle (name, va_alist)
 char *name;
 va_dcl
 #endif

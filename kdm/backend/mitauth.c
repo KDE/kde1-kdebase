@@ -46,7 +46,7 @@ from the X Consortium.
 static char	auth_name[256];
 static int	auth_name_len;
 
-MitInitAuth (name_len, name)
+void MitInitAuth (name_len, name)
     unsigned short  name_len;
     char	    *name;
 {
@@ -55,6 +55,8 @@ MitInitAuth (name_len, name)
     auth_name_len = name_len;
     memmove( auth_name, name, name_len);
 }
+
+extern void GenerateAuthData( char *auth, int len );
 
 Xauth *
 MitGetAuth (namelen, name)

@@ -76,7 +76,7 @@ int listen_completed;
 #endif
 
 static
-FormatBytes (data, length, buf, buflen)
+int FormatBytes (data, length, buf, buflen)
     unsigned char *data;
     int	    length;
     char    *buf;
@@ -97,7 +97,7 @@ FormatBytes (data, length, buf, buflen)
 }
 
 static
-FormatARRAY8 (a, buf, buflen)
+int FormatARRAY8 (a, buf, buflen)
     ARRAY8Ptr	a;
     char	*buf;
     int		buflen;
@@ -132,7 +132,7 @@ typedef struct _IndirectUsers {
 
 static IndirectUsersPtr	indirectUsers;
 
-RememberIndirectClient (clientAddress, connectionType)
+int RememberIndirectClient (clientAddress, connectionType)
     ARRAY8Ptr	clientAddress;
     CARD16	connectionType;
 {
@@ -154,7 +154,7 @@ RememberIndirectClient (clientAddress, connectionType)
     return 1;
 }
 
-ForgetIndirectClient (clientAddress, connectionType)
+void ForgetIndirectClient (clientAddress, connectionType)
     ARRAY8Ptr	clientAddress;
     CARD16	connectionType;
 {
@@ -178,7 +178,7 @@ ForgetIndirectClient (clientAddress, connectionType)
     }
 }
 
-IsIndirectClient (clientAddress, connectionType)
+int IsIndirectClient (clientAddress, connectionType)
     ARRAY8Ptr	clientAddress;
     CARD16	connectionType;
 {
@@ -192,9 +192,11 @@ IsIndirectClient (clientAddress, connectionType)
 }
 
 extern char *NetaddrPort();
+extern int GetChooserAddr( char *addr, int *lenp);
+extern int NetaddrFamily( XdmcpNetaddr netaddrp );
 
 static
-FormatChooserArgument (buf, len)
+int FormatChooserArgument (buf, len)
     char    *buf;
     int	    len;
 {
@@ -362,7 +364,7 @@ RemoveIndirectChoice (clientAddress, connectionType)
 
 /*ARGSUSED*/
 static
-AddChooserHost (connectionType, addr, closure)
+void AddChooserHost (connectionType, addr, closure)
     CARD16	connectionType;
     ARRAY8Ptr	addr;
     char	*closure;
@@ -382,7 +384,7 @@ AddChooserHost (connectionType, addr, closure)
     }
 }
 
-ProcessChooserSocket (fd)
+void ProcessChooserSocket (fd)
     int fd;
 {
     int client_fd;
@@ -571,7 +573,17 @@ ProcessChooserSocket (fd)
 #endif
 }
 
-RunChooser (d)
+extern void SetTitle();
+extern void LoadXloginResources( struct display* );
+/*
+extern void ForEachChooserHost( ARRAY8Ptr clientAddress,
+                                CARD16 connextionType,
+                                int (*function)(),
+                                char *closure);
+*/
+extern void ForEachChooserHost();
+
+void RunChooser (d)
     struct display  *d;
 {
     char    **args, **parseArgs(), **systemEnv();

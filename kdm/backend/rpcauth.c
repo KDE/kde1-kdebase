@@ -52,7 +52,7 @@ from the X Consortium.
 # include   "dm.h"
 
 /*ARGSUSED*/
-SecureRPCInitAuth (name_len, name)
+void SecureRPCInitAuth (name_len, name)
     unsigned short  name_len;
     char	    *name;
 {

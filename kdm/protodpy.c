@@ -64,6 +64,9 @@ PrintProtoDisplay (pdpy)
 }
 #endif
 
+extern int addressEqual( XdmcpNetaddr a1, int len1,
+                         XdmcpNetaddr a2, int len2 );
+
 struct protoDisplay *
 FindProtoDisplay (address, addrlen, displayNumber)
     XdmcpNetaddr    address;
@@ -84,8 +87,10 @@ FindProtoDisplay (address, addrlen, displayNumber)
     return (struct protoDisplay *) 0;
 }
 
+void DisposeProtoDisplay( struct protoDisplay *pdpy );
+
 static
-TimeoutProtoDisplays (now)
+void TimeoutProtoDisplays (now)
     Time_t    now;
 {
     struct protoDisplay	*pdpy, *next;
@@ -142,7 +147,7 @@ NewProtoDisplay (address, addrlen, displayNumber,
     return pdpy;
 }
 
-DisposeProtoDisplay (pdpy)
+void DisposeProtoDisplay (pdpy)
     struct protoDisplay	*pdpy;
 {
     struct protoDisplay	*p, *prev;

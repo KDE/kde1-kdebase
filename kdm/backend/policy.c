@@ -83,7 +83,7 @@ ChooseAuthentication (authenticationNames)
     return &noAuthentication;
 }
 
-CheckAuthentication (pdpy, displayID, name, data)
+int CheckAuthentication (pdpy, displayID, name, data)
     struct protoDisplay	*pdpy;
     ARRAY8Ptr		displayID, name, data;
 {
@@ -93,6 +93,8 @@ CheckAuthentication (pdpy, displayID, name, data)
 #endif
     return TRUE;
 }
+
+extern int ValidAuthorization( unsigned short name_length, char *name );
 
 int
 SelectAuthorizationTypeIndex (authenticationName, authorizationNames)
@@ -118,6 +120,10 @@ SelectAuthorizationTypeIndex (authenticationName, authorizationNames)
 	    return i;
     return -1;
 }
+
+extern int AcceptableDisplayAddress( ARRAY8Ptr clientAddress,
+                                     CARD16 connectionType,
+                                     xdmOpCode type );
 
 /*ARGSUSED*/
 int

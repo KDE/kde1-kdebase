@@ -95,7 +95,7 @@ LogError (
 #else
     fprintf (stderr, fmt, arg1, arg2, arg3, arg4, arg5, arg6);
 #endif
-    fflush (stderr);
+    return fflush (stderr);
 }
 
 /*VARARGS1*/
@@ -146,7 +146,7 @@ LogOutOfMem (
 #else
     fprintf (stderr, fmt, arg1, arg2, arg3, arg4, arg5, arg6);
 #endif
-    fflush (stderr);
+    return fflush (stderr);
 }
 
 int
@@ -185,6 +185,7 @@ Debug (
 #endif
 	fflush (stdout);
     }
+    return 0;
 }
 
 void

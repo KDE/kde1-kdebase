@@ -61,7 +61,7 @@ from the X Consortium.
 
 #include <signal.h>
 
-printEnv (e)
+void printEnv (e)
 char	**e;
 {
 	while (*e)
@@ -145,7 +145,7 @@ setEnv (e, name, value)
 	return new;
 }
 
-freeEnv (env)
+void freeEnv (env)
     char    **env;
 {
     char    **e;
@@ -208,7 +208,7 @@ char	*string;
 	return argv;
 }
 
-freeArgs (argv)
+void freeArgs (argv)
     char    **argv;
 {
     char    **a;
@@ -221,7 +221,9 @@ freeArgs (argv)
     free ((char *) argv);
 }
 
-CleanUpChild ()
+extern void CloseOnFork();
+
+void CleanUpChild ()
 {
 /*
 #if defined(SYSV) || defined(SVR4)

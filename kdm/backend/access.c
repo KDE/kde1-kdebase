@@ -395,7 +395,7 @@ ReadDisplayEntry (file)
 }
 
 static
-ReadAccessDatabase (file)
+void ReadAccessDatabase (file)
     FILE    *file;
 {
     DisplayEntry    *d, **prev;
@@ -409,7 +409,7 @@ ReadAccessDatabase (file)
     *prev = NULL;
 }
 
-ScanAccessDatabase ()
+int ScanAccessDatabase ()
 {
     FILE	*datafile;
 
@@ -553,7 +553,7 @@ indirectAlias (alias, clientAddress, connectionType, function, closure, depth,
 
 ARRAY8Ptr IndirectChoice ();
 
-ForEachMatchingIndirectHost (clientAddress, connectionType, function, closure)
+int ForEachMatchingIndirectHost (clientAddress, connectionType, function, closure)
     ARRAY8Ptr	clientAddress;
     CARD16	connectionType;
     int		(*function)();
@@ -610,7 +610,7 @@ ForEachMatchingIndirectHost (clientAddress, connectionType, function, closure)
     return haveLocalhost;
 }
 
-UseChooser (clientAddress, connectionType)
+int UseChooser (clientAddress, connectionType)
     ARRAY8Ptr	clientAddress;
     CARD16	connectionType;
 {
@@ -649,7 +649,7 @@ UseChooser (clientAddress, connectionType)
     return 0;
 }
 
-ForEachChooserHost (clientAddress, connectionType, function, closure)
+void ForEachChooserHost (clientAddress, connectionType, function, closure)
     ARRAY8Ptr	clientAddress;
     CARD16	connectionType;
     int		(*function)();
@@ -704,7 +704,7 @@ ForEachChooserHost (clientAddress, connectionType, function, closure)
  * given display client is acceptable if it occurs without a host list.
  */
 
-AcceptableDisplayAddress (clientAddress, connectionType, type)
+int AcceptableDisplayAddress (clientAddress, connectionType, type)
     ARRAY8Ptr	clientAddress;
     CARD16	connectionType;
     xdmOpCode	type;

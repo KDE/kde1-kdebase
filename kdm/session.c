@@ -74,6 +74,7 @@ from the X Consortium.
 /* XmuPrintDefaultErrorMessage is taken from DefErrMsg.c from X11R6 */
 /* /stefh */
 #include <stdio.h>
+#include <grp.h>
 #define NEED_EVENTS
 #include <X11/Xlibint.h>
 #include <X11/Xproto.h>
@@ -196,13 +197,13 @@ extern	int	PingServer();
 extern	int	SessionPingFailed();
 extern	int	Debug();
 extern	int	RegisterCloseOnFork();
-extern	int	SecureDisplay();
-extern	int	UnsecureDisplay();
+extern	void	SecureDisplay();
+extern	void	UnsecureDisplay();
 extern	int	ClearCloseOnFork();
 extern	int	SetupDisplay();
 extern	int	LogError();
-extern	int	SessionExit();
-extern	int	DeleteXloginResources();
+extern	void	SessionExit();
+extern	void	DeleteXloginResources();
 extern	int	source();
 extern	char	**defaultEnv();
 extern	char	**setEnv();
@@ -225,13 +226,13 @@ static	struct dlfuncs	dlfuncs = {
 	SessionPingFailed,
 	Debug,
 	RegisterCloseOnFork,
-	SecureDisplay,
-	UnsecureDisplay,
+	(void*) SecureDisplay,
+	(void*) UnsecureDisplay,
 	ClearCloseOnFork,
 	SetupDisplay,
 	LogError,
-	SessionExit,
-	DeleteXloginResources,
+	(void*) SessionExit,
+	(void*) DeleteXloginResources,
 	source,
 	defaultEnv,
 	setEnv,
@@ -344,6 +345,7 @@ SessionPingFailed (d)
 	source (verify.systemEnviron, d->reset);
     }
     SessionExit (d, RESERVER_DISPLAY, TRUE);
+    return 0;
 }
 
 /*
@@ -376,6 +378,8 @@ ErrorHandler(dpy, event)
     exit(UNMANAGE_DISPLAY);
     /*NOTREACHED*/
 }
+
+extern void SetTitle();
 
 void
 ManageSession (d)
@@ -475,6 +479,10 @@ struct display	*d;
     SessionExit (d, OBEYSESS_DISPLAY, TRUE);
 }
 
+int runAndWait( char **args, char **environ );
+extern void freeArgs( char **argv );
+extern void freeEnv( char **env );
+
 void
 LoadXloginResources (d)
 struct display	*d;
@@ -505,10 +513,11 @@ struct display	*d;
     	(void) source (env, d->setup);
     	freeEnv (env);
     }
+   return 0;
 }
 
 /*ARGSUSED*/
-DeleteXloginResources (d, dpy)
+void DeleteXloginResources (d, dpy)
 struct display	*d;
 Display		*dpy;
 {
@@ -532,7 +541,9 @@ syncTimeout (n)
     Longjmp (syncJump, 1);
 }
 
-SecureDisplay (d, dpy)
+extern void pseudoReset( Display *dpy );
+
+void SecureDisplay (d, dpy)
 struct display	*d;
 Display		*dpy;
 {
@@ -567,7 +578,7 @@ Display		*dpy;
     Debug ("done secure %s\n", d->name);
 }
 
-UnsecureDisplay (d, dpy)
+void UnsecureDisplay (d, dpy)
 struct display	*d;
 Display		*dpy;
 {
@@ -579,7 +590,9 @@ Display		*dpy;
     }
 }
 
-SessionExit (d, status, removeAuth)
+extern void ResetServer( struct display *d );
+
+void SessionExit (d, status, removeAuth)
     struct display  *d;
 {
     /* make sure the server gets reset after the session is over */
@@ -632,6 +645,8 @@ SessionExit (d, status, removeAuth)
     Debug ("Display %s exiting with status %d\n", d->name, status);
     exit (status);
 }
+
+extern void CleanUpChild();
 
 static Bool
 StartClient (verify, d, pidp, name, passwd)

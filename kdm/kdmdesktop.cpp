@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:55:38 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Sun May 25 04:34:40 1997
-// Update Count     : 2
+// Last Modified On : Mon Nov  3 04:33:21 1997
+// Update Count     : 3
 // Status           : Unknown, Use with caution!
 // 
 
@@ -101,17 +101,7 @@ do_picture_background( DesktopConfig* dc)
 		       &image, 0, 0, imWidth, imHeight);
      } else { //picture smaller than app.  
 	  if(( dc->bgpictile)&&( !dc->bgpiccenter)) {
-	       int filled_x=0;
-	       int filled_y=0;
-	       while(filled_y<appHeight) {
-		    while(filled_x<appWidth) {
-			 bitBlt( &tmp, filled_x , filled_y, 
-				 &image, 0,0, imWidth, imHeight);
-			 filled_x+=imWidth;
-		    }
-		    filled_x=0;
-		    filled_y+=imHeight;
-	       }
+	       tmp = image;
 	  }
 	  if(( !dc->bgpictile)&&( dc->bgpiccenter)) {
 	       tmp.fill( dc->bgcolor);

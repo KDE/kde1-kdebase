@@ -73,8 +73,9 @@ extern int errno;
 #endif
 
 extern void exit ();
+extern int LogError();
 
-BecomeOrphan ()
+void BecomeOrphan ()
 {
     Pid_t child_id;
     int stat;
@@ -126,7 +127,7 @@ BecomeOrphan ()
     }
 }
 
-BecomeDaemon ()
+void BecomeDaemon ()
 {
     register int i;
 
@@ -176,11 +177,10 @@ BecomeDaemon ()
 #endif / * MINIX * /
 #endif / * !__EMX__ * /
 */
-/* HP/UX fix */ 
+    /* HP/UX fix: */
 #ifndef TIOCNOTTY
-# define TIOCNOTTY _IO('t', 113)
+# define TIOCNOTTY  _IO('t', 113)           /* void tty association */
 #endif
-    /* This works for Linux /stefh */
     if ((i = open ("/dev/tty", O_RDWR)) >= 0) {	/* did open succeed? */
 	 (void) ioctl (i, TIOCNOTTY, (char *) 0);    /* detach, BSD style */
 	 (void) close (i);

@@ -15,8 +15,10 @@ SessionTypes=kde;fvwm;failsafe
 [KDMDESKTOP]
 FancyBackGround=0
 BackgroundColor=darkCyan
-#BackgroundPicture=KDEDIR/lib/pics/wallpapers/WATER01.JPG
-#BackgroundPicture=KDEDIR/lib/pics/wallpapers/STUCCO_R.JPG
-#BackgroundPicture=KDEDIR/lib/pics/wallpapers/kdm_bg.jpg
-#BackgroundPictureTile=1
+#BackgroundPicture=KDEDIR/share/wallpapers/water01.jpg
+#BackgroundPicture=KDEDIR/share/wallpapers/ocean01.jpg
+#BackgroundPicture=KDEDIR/share/wallpapers/paper01.jpg
+# you can manually install this logo from kdebase/kdm/pics/kdm_bg.jpg:
+#BackgroundPicture=KDEDIR/share/wallpapers/kdm_bg.jpg
+BackgroundPictureTile=1
 #BackgroundPictureCenter=0

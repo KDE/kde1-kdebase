@@ -97,7 +97,7 @@ int	WellKnownSocketsMax;
 
 #define pS(s)	((s) ? ((char *) (s)) : "empty string")
 
-DestroyWellKnownSockets ()
+void DestroyWellKnownSockets ()
 {
     if (xdmcpFd != -1)
     {
@@ -111,7 +111,7 @@ DestroyWellKnownSockets ()
     }
 }
 
-AnyWellKnownSockets ()
+int AnyWellKnownSockets ()
 {
     return xdmcpFd != -1 || chooserFd != -1;
 }
@@ -161,6 +161,7 @@ sendForward (connectionType, address, closure)
 
 extern char *NetaddrAddress();
 extern char *NetaddrPort();
+extern int ConvertAddr( XdmcpNetaddr saddr, int *len, char **addr );
 
 static void
 ClientAddress (from, addr, port, type)
@@ -176,13 +177,26 @@ ClientAddress (from, addr, port, type)
     memmove( port->data, data, length);
     port->length = length;
 
-    family = ConvertAddr(from, &length, &data);
+    family = ConvertAddr((XdmcpNetaddr)from, &length, &data);
     XdmcpAllocARRAY8 (addr, length);
     memmove( addr->data, data, length);
     addr->length = length;
 
     *type = family;
 }
+
+extern int RememberIndirectClient( ARRAY8Ptr clientAddress,
+                                   CARD16 connectionType );
+extern void ForgetIndirectClient( ARRAY8Ptr clientAddress,
+                                  CARD16 connectionType );
+extern void send_willing( struct sockaddr *from,
+                          int len,
+                          ARRAY8Ptr authenticationName,
+                          ARRAY8Ptr status );
+extern void send_unwilling( struct sockaddr *from,
+                            int len,
+                            ARRAY8Ptr authenticationName,
+                            ARRAY8Ptr status );
 
 static void
 all_query_respond (from, fromlen, authenticationNames, type)
@@ -198,7 +212,7 @@ all_query_respond (from, fromlen, authenticationNames, type)
     int		family;
     int		length;
 
-    family = ConvertAddr(from, &length, &(addr.data));
+    family = ConvertAddr((XdmcpNetaddr)from, &length, (char**)&(addr.data));
     addr.length = length;	/* convert int to short */
     Debug ("all_query_respond: conntype=%d, addr=%lx, len=%d\n",
 	   family, *(addr.data), addr.length);
@@ -219,6 +233,8 @@ all_query_respond (from, fromlen, authenticationNames, type)
 	    send_unwilling (from, fromlen, authenticationName, &status);
     XdmcpDisposeARRAY8 (&status);
 }
+
+extern int ForEachMatchingIndirectHost();
 
 static void
 indirect_respond (from, fromlen, length)
@@ -274,6 +290,13 @@ indirect_respond (from, fromlen, length)
     }
     XdmcpDisposeARRAYofARRAY8 (&queryAuthenticationNames);
 }
+
+void broadcast_respond( struct sockaddr *from, int fromlen, int length );
+void query_respond( struct sockaddr *from, int fromlen, int length );
+void forward_respond( struct sockaddr *from, int fromlen, int length ); 
+void request_respond( struct sockaddr *from, int fromlen, int length );
+void manage( struct sockaddr *from, int fromlen, int length );
+void send_alive( struct sockaddr *from, int fromlen, int length );
 
 static void
 ProcessRequestSocket ()
@@ -333,30 +356,33 @@ ProcessRequestSocket ()
     switch (header.opcode)
     {
     case BROADCAST_QUERY:
-	broadcast_respond (&addr, addrlen, header.length);
+	broadcast_respond ((struct sockaddr*)&addr, addrlen, header.length);
 	break;
     case QUERY:
-	query_respond (&addr, addrlen, header.length);
+	query_respond ((struct sockaddr*)&addr, addrlen, header.length);
 	break;
     case INDIRECT_QUERY:
-	indirect_respond (&addr, addrlen, header.length);
+	indirect_respond ((struct sockaddr*)&addr, addrlen, header.length);
 	break;
     case FORWARD_QUERY:
-	forward_respond (&addr, addrlen, header.length);
+	forward_respond ((struct sockaddr*)&addr, addrlen, header.length);
 	break;
     case REQUEST:
-	request_respond (&addr, addrlen, header.length);
+	request_respond ((struct sockaddr*)&addr, addrlen, header.length);
 	break;
     case MANAGE:
-	manage (&addr, addrlen, header.length);
+	manage ((struct sockaddr*)&addr, addrlen, header.length);
 	break;
     case KEEPALIVE:
-	send_alive (&addr, addrlen, header.length);
+	send_alive ((struct sockaddr*)&addr, addrlen, header.length);
 	break;
     }
 }
 
-WaitForSomething ()
+extern void ProcessChooserSocket( int fd );
+extern int WaitForChild();
+
+void WaitForSomething ()
 {
     FD_TYPE	reads;
     int	nready;
@@ -374,11 +400,11 @@ WaitForSomething ()
 		ChildReady= 1;
 	}
 #else
-# if !defined(hpux)	
-	nready = select (WellKnownSocketsMax + 1, &reads, 0, 0, 0);
-# else
+# if defined(hpux)
 	nready = select (WellKnownSocketsMax + 1, (int*)reads.fds_bits, 0, 0, 0);
-# endif /* hpux */
+# else
+	nready = select (WellKnownSocketsMax + 1, &reads, 0, 0, 0);
+# endif
 #endif
 	Debug ("select returns %d.  Rescan: %d  ChildReady: %d\n",
 		nready, Rescan, ChildReady);
@@ -402,6 +428,8 @@ WaitForSomething ()
  */
 
 static ARRAY8	Hostname;
+
+extern int XdmcpReallocARRAY8();
 
 void
 registerHostname (name, namelen)
@@ -437,7 +465,7 @@ direct_query_respond (from, fromlen, length, type)
     XdmcpDisposeARRAYofARRAY8 (&queryAuthenticationNames);
 }
 
-query_respond (from, fromlen, length)
+void query_respond (from, fromlen, length)
     struct sockaddr *from;
     int		    fromlen;
     int		    length;
@@ -446,7 +474,7 @@ query_respond (from, fromlen, length)
     direct_query_respond (from, fromlen, length, QUERY);
 }
 
-broadcast_respond (from, fromlen, length)
+void broadcast_respond (from, fromlen, length)
     struct sockaddr *from;
     int		    fromlen;
     int		    length;
@@ -536,7 +564,7 @@ NetworkAddressToName(connectionType, connectionAddress, displayNumber)
 }
 
 /*ARGSUSED*/
-forward_respond (from, fromlen, length)
+void forward_respond (from, fromlen, length)
     struct sockaddr	*from;
     int			fromlen;
     int			length;
@@ -645,7 +673,7 @@ badAddress:
     XdmcpDisposeARRAYofARRAY8 (&authenticationNames);
 }
 
-send_willing (from, fromlen, authenticationName, status)
+void send_willing (from, fromlen, authenticationName, status)
     struct sockaddr *from;
     int		    fromlen;
     ARRAY8Ptr	    authenticationName;
@@ -670,7 +698,7 @@ send_willing (from, fromlen, authenticationName, status)
     XdmcpFlush (xdmcpFd, &buffer, from, fromlen);
 }
 
-send_unwilling (from, fromlen, authenticationName, status)
+void send_unwilling (from, fromlen, authenticationName, status)
     struct sockaddr *from;
     int		    fromlen;
     ARRAY8Ptr	    authenticationName;
@@ -711,7 +739,28 @@ static ARRAY8 noValidAddr = { (CARD16) 16, (CARD8Ptr) "No valid address" };
 static ARRAY8 noValidAuth = { (CARD16) 22, (CARD8Ptr) "No valid authorization" };
 static ARRAY8 noAuthentic = { (CARD16) 29, (CARD8Ptr) "XDM has no authentication key" };
 
-request_respond (from, fromlen, length)
+extern int SelectAuthorizationTypeIndex( ARRAY8Ptr authenticationName,
+                                         ARRAYofARRAY8Ptr authorizationNames );
+extern int CheckAuthentication( struct protoDisplay *pdpy,
+                                ARRAY8Ptr displayID,
+                                ARRAY8Ptr name,
+                                ARRAY8Ptr date );
+extern void SetProtoDisplayAuthorization( struct protoDisplay *pdpy,
+                                          unsigned short authorizationNameLen,
+                                          char *authorizationName );
+void send_accept( struct sockaddr *to, int tolen,
+                  CARD32 sessionID,
+                  ARRAY8Ptr authenticationName,
+                  ARRAY8Ptr authenticationData,
+                  ARRAY8Ptr authorizationName,
+                  ARRAY8Ptr authorizationData );
+void send_decline( struct sockaddr *to, int tolen,
+                   ARRAY8Ptr authenticationName,
+                   ARRAY8Ptr authenticationData,
+                   ARRAY8Ptr status );
+extern void DisposeProtoDisplay( struct protoDisplay *pdpy );
+
+void request_respond (from, fromlen, length)
     struct sockaddr *from;
     int		    fromlen;
     int		    length;
@@ -860,7 +909,7 @@ abort:
     XdmcpDisposeARRAY8 (&manufacturerDisplayID);
 }
 
-send_accept (to, tolen, sessionID,
+void send_accept (to, tolen, sessionID,
 	     authenticationName, authenticationData,
 	     authorizationName, authorizationData)
     struct sockaddr *to;
@@ -888,7 +937,7 @@ send_accept (to, tolen, sessionID,
     XdmcpFlush (xdmcpFd, &buffer, to, tolen);
 }
    
-send_decline (to, tolen, authenticationName, authenticationData, status)
+void send_decline (to, tolen, authenticationName, authenticationData, status)
     struct sockaddr *to;
     int		    tolen;
     ARRAY8Ptr	    authenticationName, authenticationData;
@@ -910,7 +959,13 @@ send_decline (to, tolen, authenticationName, authenticationData, status)
     XdmcpFlush (xdmcpFd, &buffer, to, tolen);
 }
 
-manage (from, fromlen, length)
+void send_refuse( struct sockaddr *from, int fromlen, CARD32 sessionID );
+void send_failed( struct sockaddr *from, int fromlen,
+                  char *name, CARD32 sessionID, char *reason );
+extern int IsIndirectClient( ARRAY8Ptr clientAddress, CARD16 connectionType );
+extern int UseChooser( ARRAY8Ptr clientAddress, CARD16 connectionType );
+
+void manage (from, fromlen, length)
     struct sockaddr *from;
     int		    fromlen;
     int		    length;
@@ -1056,15 +1111,15 @@ abort:
     XdmcpDisposeARRAY8 (&displayClass);
 }
 
-SendFailed (d, reason)
+void SendFailed (d, reason)
     struct display  *d;
     char	    *reason;
 {
     Debug ("Display start failed, sending Failed\n");
-    send_failed (d->from, d->fromlen, d->name, d->sessionID, reason);
+    send_failed ((struct sockaddr*)d->from, d->fromlen, d->name, d->sessionID, reason);
 }
 
-send_failed (from, fromlen, name, sessionID, reason)
+void send_failed (from, fromlen, name, sessionID, reason)
     struct sockaddr *from;
     int		    fromlen;
     char	    *name;
@@ -1089,7 +1144,7 @@ send_failed (from, fromlen, name, sessionID, reason)
     XdmcpFlush (xdmcpFd, &buffer, from, fromlen);
 }
 
-send_refuse (from, fromlen, sessionID)
+void send_refuse (from, fromlen, sessionID)
     struct sockaddr *from;
     int		    fromlen;
     CARD32	    sessionID;
@@ -1105,7 +1160,7 @@ send_refuse (from, fromlen, sessionID)
     XdmcpFlush (xdmcpFd, &buffer, from, fromlen);
 }
 
-send_alive (from, fromlen, length)
+void send_alive (from, fromlen, length)
     struct sockaddr *from;
     int		    fromlen;
     int		    length;

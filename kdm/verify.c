@@ -206,7 +206,9 @@ static struct pam_conv PAM_conversation = {
 pam_handle_t *pamh;
 #endif
 
-Verify (d, greet, verify)
+extern void printEnv( char **e );
+
+int Verify (d, greet, verify)
 struct display		*d;
 struct greet_info	*greet;
 struct verify_info	*verify;

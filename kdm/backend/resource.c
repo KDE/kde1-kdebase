@@ -313,7 +313,9 @@ struct displayResource sessionResources[] = {
 
 XrmDatabase	DmResourceDB;
 
-GetResource (name, class, valueType, valuep, default_value)
+extern void freeArgs( char **argv );
+
+void GetResource (name, class, valueType, valuep, default_value)
     char    *name, *class;
     int	    valueType;
     char    **valuep;
@@ -416,7 +418,9 @@ XrmOptionDescRec optionTable [] = {
 static int	originalArgc;
 static char	**originalArgv;
 
-InitResources (argc, argv)
+void ReinitResources();
+
+void InitResources (argc, argv)
 int	argc;
 char	**argv;
 {
@@ -426,7 +430,9 @@ char	**argv;
 	ReinitResources ();
 }
 
-ReinitResources ()
+extern void LogPanic();
+
+void ReinitResources ()
 {
     int	argc;
     char	**a;
@@ -470,7 +476,7 @@ ReinitResources ()
     free (argv);
 }
 
-LoadDMResources ()
+void LoadDMResources ()
 {
 	int	i;
 	char	name[1024], class[1024];
@@ -485,7 +491,7 @@ LoadDMResources ()
 }
 
 static
-CleanUpName (src, dst, len)
+void CleanUpName (src, dst, len)
 char	*src, *dst;
 int	len;
 {
@@ -506,7 +512,7 @@ int	len;
     *dst = '\0';
 }
 
-LoadDisplayResources (d, resources, numResources)
+void LoadDisplayResources (d, resources, numResources)
     struct display	    *d;
     struct displayResource  *resources;
     int			    numResources;
@@ -528,13 +534,13 @@ LoadDisplayResources (d, resources, numResources)
     }
 }
 
-LoadServerResources (d)
+void LoadServerResources (d)
     struct display  *d;
 {
     LoadDisplayResources (d, serverResources, NUM_SERVER_RESOURCES);
 }
 
-LoadSessionResources (d)
+void LoadSessionResources (d)
     struct display  *d;
 {
     LoadDisplayResources (d, sessionResources, NUM_SESSION_RESOURCES);

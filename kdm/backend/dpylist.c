@@ -40,12 +40,12 @@ from the X Consortium.
 
 static struct display	*displays;
 
-AnyDisplaysLeft ()
+int AnyDisplaysLeft ()
 {
 	return displays != (struct display *) 0;
 }
 
-ForEachDisplay (f)
+void ForEachDisplay (f)
 	void	(*f)();
 {
 	struct display	*d, *next;
@@ -106,6 +106,9 @@ FindDisplayBySessionID (sessionID)
     return 0;
 }
 
+extern int addressEqual( XdmcpNetaddr a1, int len1,
+                         XdmcpNetaddr a2, int len2 );
+
 struct display *
 FindDisplayByAddress (addr, addrlen, displayNumber)
     XdmcpNetaddr addr;
@@ -128,7 +131,7 @@ FindDisplayByAddress (addr, addrlen, displayNumber)
 
 #define IfFree(x)  if (x) free ((char *) x)
     
-RemoveDisplay (old)
+void RemoveDisplay (old)
 struct display	*old;
 {
     struct display	*d, *p;

@@ -76,7 +76,9 @@ extern int	chooserFd;
 extern FD_TYPE	WellKnownSocketsMask;
 extern int	WellKnownSocketsMax;
 
-CreateWellKnownSockets ()
+extern int RegisterCloseOnFork( int fd );
+
+void CreateWellKnownSockets ()
 {
 #ifndef MINIX
     struct sockaddr_in	sock_addr;
@@ -207,7 +209,7 @@ CreateWellKnownSockets ()
 }
 
 #ifndef MINIX
-GetChooserAddr (addr, lenp)
+int GetChooserAddr (addr, lenp)
     char	*addr;
     int		*lenp;
 {
@@ -222,7 +224,7 @@ GetChooserAddr (addr, lenp)
     return 0;
 }
 #else /* MINIX */
-GetChooserAddr (addr, lenp)
+int GetChooserAddr (addr, lenp)
     char	*addr;
     int		*lenp;
 {

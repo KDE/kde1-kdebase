@@ -190,7 +190,7 @@ findProtocol (name_length, name)
     return (struct AuthProtocol *) 0;
 }
 
-ValidAuthorization (name_length, name)
+int ValidAuthorization (name_length, name)
     unsigned short  name_length;
     char	    *name;
 {
@@ -240,7 +240,7 @@ char		*name;
 
 #ifdef XDMCP
 
-SetProtoDisplayAuthorization (pdpy,
+void SetProtoDisplayAuthorization (pdpy,
     authorizationNameLen, authorizationName)
     struct protoDisplay	*pdpy;
     unsigned short	authorizationNameLen;
@@ -305,7 +305,7 @@ CleanUpFileName (src, dst, len)
 }
 
 static
-MakeServerAuthFile (d)
+int MakeServerAuthFile (d)
     struct display  *d;
 {
     int len;
@@ -338,7 +338,7 @@ MakeServerAuthFile (d)
     return TRUE;
 }
 
-SaveServerAuthorizations (d, auths, count)
+int SaveServerAuthorizations (d, auths, count)
     struct display  *d;
     Xauth	    **auths;
     int		    count;
@@ -439,6 +439,8 @@ SetLocalAuthorization (d)
     }
 }
 
+extern void XSetAuthorization();
+
 /*
  * Set the authorization to use for xdm's initial connection
  * to the X server.  Cannot use user-based authorizations
@@ -447,7 +449,7 @@ SetLocalAuthorization (d)
  * Well, actually we could use SUN-DES-1 because we tell the server
  * to allow root in.  This is bogus and should be fixed.
  */
-SetAuthorization (d)
+void SetAuthorization (d)
     struct display  *d;
 {
     register Xauth **auth = d->authorizations;
@@ -467,7 +469,7 @@ SetAuthorization (d)
 }
 
 static
-openFiles (name, new_name, oldp, newp)
+int openFiles (name, new_name, oldp, newp)
 char	*name, *new_name;
 FILE	**oldp, **newp;
 {
@@ -489,7 +491,7 @@ FILE	**oldp, **newp;
 }
 
 static
-binaryEqual (a, b, len)
+int binaryEqual (a, b, len)
 char	*a, *b;
 unsigned short	len;
 {
@@ -545,13 +547,13 @@ struct addrList {
 static struct addrList	*addrs;
 
 static
-initAddrs ()
+void initAddrs ()
 {
 	addrs = 0;
 }
 
 static
-doneAddrs ()
+void doneAddrs ()
 {
 	struct addrList	*a, *n;
 	for (a = addrs; a; a = n) {
@@ -616,7 +618,7 @@ saveEntry (auth)
 }
 
 static
-checkEntry (auth)
+int checkEntry (auth)
     Xauth	*auth;
 {
 	struct addrList	*a;
@@ -639,7 +641,7 @@ checkEntry (auth)
 static int  doWrite;
 
 static
-writeAuth (file, auth)
+int writeAuth (file, auth)
     FILE	*file;
     Xauth	*auth;
 {
@@ -649,10 +651,11 @@ writeAuth (file, auth)
 #endif
 	if (doWrite)
 	    XauWriteAuth (file, auth);
+	return 0;
 }
 
 static
-writeAddr (family, addr_length, addr, file, auth)
+void writeAddr (family, addr_length, addr, file, auth)
     int		family;
     int		addr_length;
     char	*addr;
@@ -668,7 +671,7 @@ writeAddr (family, addr_length, addr, file, auth)
 }
 
 static
-DefineLocal (file, auth)
+void DefineLocal (file, auth)
     FILE	*file;
     Xauth	*auth;
 {
@@ -888,6 +891,9 @@ DefineSelf (fd, file, auth)
 #define ifr_size(p) (sizeof (struct ifreq))
 #endif
 
+
+extern int ConvertAddr( XdmcpNetaddr saddr, int *len, char **addr);
+
 /* Define this host for access control.  Find all the hosts the OS knows about 
  * for this fd and add them to the selfhosts list.
  */
@@ -933,7 +939,7 @@ DefineSelf (fd, file, auth)
 	} else
 #endif
 	{
-	    if (ConvertAddr (&ifr->ifr_addr, &len, &addr) < 0)
+	    if (ConvertAddr ((XdmcpNetaddr)&ifr->ifr_addr, &len, &addr) < 0)
 		continue;
 	    if (len == 0)
  	    {
@@ -1012,7 +1018,7 @@ DefineSelf (fd, file, auth)
 
 
 static
-setAuthNumber (auth, name)
+void setAuthNumber (auth, name)
     Xauth   *auth;
     char    *name;
 {
@@ -1042,7 +1048,7 @@ setAuthNumber (auth, name)
 }
 
 static
-writeLocalAuth (file, auth, name)
+void writeLocalAuth (file, auth, name)
     FILE	*file;
     Xauth	*auth;
     char	*name;
