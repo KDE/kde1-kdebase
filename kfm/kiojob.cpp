@@ -1532,7 +1532,7 @@ void KIOJob::start( int _pid )
 	if ( dlg != 0L )
 	{
 	    layout = new QVBoxLayout( dlg, 10, 0 );
-	    layout->addStrut( 200 );	// makes dlg at least that wide
+	    layout->addStrut( 360 );	// makes dlg at least that wide
 	    if ( line1 != 0L )
 	    {
 		line1->setFixedHeight( 20 );
