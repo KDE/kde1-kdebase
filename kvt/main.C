@@ -344,11 +344,11 @@ kVt::kVt( QWidget *parent, const char *name )
     entry = kvtconfig->readEntry("colormode");
     if (entry) {
       if (entry == color_mode_name[COLOR_TYPE_ANSI])
-	set_color_mode(COLOR_TYPE_ANSI);
+	init_color_mode(COLOR_TYPE_ANSI);
       if (entry == color_mode_name[COLOR_TYPE_Linux])
-	set_color_mode(COLOR_TYPE_Linux);      
+	init_color_mode(COLOR_TYPE_Linux);      
     } else {
-      set_color_mode(COLOR_TYPE_ANSI);
+      init_color_mode(COLOR_TYPE_ANSI);
     }
 
     m_file = new QPopupMenu;

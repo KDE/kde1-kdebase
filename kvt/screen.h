@@ -137,6 +137,7 @@ void screen_init(void);
 void scrn_reset(void);
 void scr_power_on(void);
 void set_charclass(const char *s);
+void init_color_mode(int mode);
 void set_color_mode(int mode);
 int get_color_mode(void);
 void scr_cursor_visible (int); /* Matthias */ 

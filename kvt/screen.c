@@ -136,8 +136,10 @@ char *linux_color_names[18] =
   "#ffffff"
 };
 
-int color_type = COLOR_TYPE_Linux;
-char **color_names = linux_color_names;
+#define STD_BOLD_COLOR (5)
+
+int color_type = COLOR_TYPE_ANSI;
+char **color_names = std_color_names;
 char colors_loaded[18] = {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 unsigned long pixel_colors[18];
 int fore_color = 0;
@@ -219,6 +221,26 @@ void set_charclass(const char *s)
 }
 
 /**************************************************************************
+ * initialize_color_mode. bmg
+ *************************************************************************/
+void init_color_mode(int mode)
+{
+  switch (mode) {
+  case COLOR_TYPE_ANSI:
+    color_type = COLOR_TYPE_ANSI;
+    color_names = std_color_names;
+    break;
+  case COLOR_TYPE_Linux:
+    color_type = COLOR_TYPE_Linux;
+    color_names = linux_color_names;
+    alloc_color(STD_BOLD_COLOR);
+    break;
+  default:
+    error("invalid colormode %d.", mode);
+  }
+}
+
+/**************************************************************************
  * setup color_type. bmg
  *************************************************************************/
 void set_color_mode(int mode)
@@ -239,6 +261,7 @@ void set_color_mode(int mode)
       for (i=10; i<18; i++) {
 	if (colors_loaded[i]) {
 	  XFreeColors(display, colormap, &pixel_colors[i], 1, 0);
+	  colors_loaded[i] = 0;
 	}
       }
     }
@@ -252,10 +275,11 @@ void set_color_mode(int mode)
 	  XFreeColors(display, colormap, &pixel_colors[i], 1, 0);
 	  alloc_color(i);
 	  alloc_color(i+8);
+	  colors_loaded[i+8] = 1;
 	}
       }
-      if (colors_loaded[0] && !colors_loaded[13]) {
-	alloc_color(13); /* foreground bold */
+      if (colors_loaded[0] && !colors_loaded[STD_BOLD_COLOR]) {
+	alloc_color(STD_BOLD_COLOR); /* foreground bold */
       }
     }   
     break;
@@ -2308,7 +2332,7 @@ void screen_refresh()
 		  if (fore >= 2) {
 		    newgcv.foreground = pixel_colors[fore+8];
 		  } else {
-		    newgcv.foreground = pixel_colors[13];
+		    newgcv.foreground = pixel_colors[STD_BOLD_COLOR];
 		  }
 		} else {
 		  newgcv.foreground = pixel_colors[fore];
@@ -2322,52 +2346,47 @@ void screen_refresh()
 	      
   	      XDrawImageString(display,vt_win,thisGC,x1,y1,ch,n);  
 
-	      if(rval != 0 && color_type == COLOR_TYPE_ANSI)
-		{
-		  if (rval & RS_BOLD )
-		    {
-		      XDrawString(display,vt_win,thisGC,x1+1,y1,ch,n);
-		    }	      
+	      if(rval != 0) {
+		if (rval & RS_BOLD && color_type == COLOR_TYPE_ANSI) {
+		  XDrawString(display,vt_win,thisGC,x1+1,y1,ch,n);
+		}	      
 		  
-		  /* On the smallest font, underline overwrites the next row */
-		  if ((rval & RS_ULINE)&&(mainfont->descent > 1))
-		    XDrawLine(display,vt_win,thisGC,x1,y1+1,
-			      x1+n*MyWinInfo.fwidth-1,y1+1);
+		/* On the smallest font, underline overwrites the next row */
+		if ((rval & RS_ULINE)&&(mainfont->descent > 1))
+		  XDrawLine(display,vt_win,thisGC,x1,y1+1,
+			    x1+n*MyWinInfo.fwidth-1,y1+1);
 		  
-		  /* support for ACS_BOARD and ACS_BLOCK (Matthias) */ 
-		  if(rval & RS_GRFONT)
-		    {
-		      for(x=0;x<n;x++){
-			if (displayed_text[xrow2 + k + x] == '0'){
- 			  XSetFillStyle(display, thisGC, FillSolid); 
-			  XFillRectangle(display, vt_win, thisGC, 
-					 x1 + x*MyWinInfo.fwidth,
-					 y1 - mainfont->ascent,
-					 MyWinInfo.fwidth,
-					 MyWinInfo.fheight);
-			}
-			else if (displayed_text[xrow2 + k + x] == 'h'){
-			  if (!stipple_data_pixmap){
-			    stipple_data_pixmap = XCreateBitmapFromData(
-									display, vt_win, 
-									stipple_data_bits,
-									stipple_data_width, 
-									stipple_data_height);
-			  }
-			  XSetStipple(display, thisGC, stipple_data_pixmap);
-			  XSetFillStyle(display, thisGC, FillStippled);
-			  XFillRectangle(display, vt_win, thisGC, 
-					 x1 + x*MyWinInfo.fwidth,
-					 y1 - mainfont->ascent,
-					 MyWinInfo.fwidth,
-					 MyWinInfo.fheight); 
- 			  XSetFillStyle(display, thisGC, FillSolid); 
-			}
-		      }
+		/* support for ACS_BOARD and ACS_BLOCK (Matthias) */ 
+		if(rval & RS_GRFONT) {
+		  for(x=0;x<n;x++){
+		    if (displayed_text[xrow2 + k + x] == '0'){
+		      XSetFillStyle(display, thisGC, FillSolid); 
+		      XFillRectangle(display, vt_win, thisGC, 
+				     x1 + x*MyWinInfo.fwidth,
+				     y1 - mainfont->ascent,
+				     MyWinInfo.fwidth,
+				     MyWinInfo.fheight);
 		    }
-
-
+		    else if (displayed_text[xrow2 + k + x] == 'h'){
+		      if (!stipple_data_pixmap){
+			stipple_data_pixmap = XCreateBitmapFromData(
+								    display, vt_win, 
+								    stipple_data_bits,
+								    stipple_data_width, 
+								    stipple_data_height);
+		      }
+		      XSetStipple(display, thisGC, stipple_data_pixmap);
+		      XSetFillStyle(display, thisGC, FillStippled);
+		      XFillRectangle(display, vt_win, thisGC, 
+				     x1 + x*MyWinInfo.fwidth,
+				     y1 - mainfont->ascent,
+				     MyWinInfo.fwidth,
+				     MyWinInfo.fheight); 
+		      XSetFillStyle(display, thisGC, FillSolid); 
+		    }
+		  }
 		}
+	      }
 #ifdef COLOR
 	      if(newgcm != 0)
 		{
@@ -2516,24 +2535,18 @@ scr_fore_color(int color)
   if((color <-2)||(color > 7))
     return;
   
-  if(colors_loaded[color+2]==1) {
+  if(colors_loaded[color+2]) {
     fore_color = color+2;
     rstyle = (rstyle &(0xffff00ff) ) | (fore_color <<8);
-    return;
-  } else {
-    if (alloc_color(color+2)) {
-      fore_color = color+2;
-      rstyle = (rstyle &(0xffff00ff) ) | (fore_color <<8);
-    }
-    if (color_type == COLOR_TYPE_Linux) {
-      if (color >= 0) {
-	alloc_color(color+10);
-      } else if (color == -2) {
-	alloc_color(13);  /* foreground bold */
-      }
-    }
-  }  
-}
+  } else if (alloc_color(color+2)) {
+    fore_color = color+2;
+    rstyle = (rstyle &(0xffff00ff) ) | (fore_color <<8);
+  }
+  if (color_type == COLOR_TYPE_Linux && color >= 0 && 
+      !colors_loaded[color+10]) {
+    alloc_color(color+10);
+  }
+}  
 
 /***************************************************************************
  * Set the text background color
@@ -2555,21 +2568,15 @@ scr_back_color(int color)
   else if (color == -1)
     color = -2;
   
-  if(colors_loaded[color+2]==1) {
-      back_color = color+2;
-      rstyle = (rstyle &(0xff00ffff) ) | (back_color <<16);
-      return;
-  } else {
-    if (alloc_color(color+2)) {
-      back_color = color+2;
-      rstyle = (rstyle &(0xff00ffff) ) | (back_color <<16);
-    }
-    if (color_type == COLOR_TYPE_Linux) {
-      if (color >= 0) {
-	alloc_color(color+10);
-      } else if (color == -2) {
-	alloc_color(13);  /* foreground bold */
-      }
-    }
+  if(colors_loaded[color+2]) {
+    back_color = color+2;
+    rstyle = (rstyle &(0xff00ffff) ) | (back_color <<16);
+  } else if (alloc_color(color+2)) {
+    back_color = color+2;
+    rstyle = (rstyle &(0xff00ffff) ) | (back_color <<16);
+  }
+  if (color_type == COLOR_TYPE_Linux && color >=0 && 
+      !colors_loaded[color+10]) {
+    alloc_color(color+10);
   }
 }

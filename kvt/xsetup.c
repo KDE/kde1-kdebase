@@ -211,6 +211,11 @@ void init_display(int argc,char **argv)
 	kvt_set_menubar(0);
       else if(strcmp(argv[i],"-no_scrollbar")==0)
 	kvt_set_scrollbar(0);
+      else if(strcmp(argv[i], "-linux")==0) {
+	fg_string = "#b2b2b2";
+	bg_string = "#000000";
+	init_color_mode(COLOR_TYPE_Linux);
+      }
       else if(strcmp(argv[i],"-C")==0)
 	console = 1;
       else if((strcmp(argv[i],"-T")==0)&&(i+1<argc)) 
