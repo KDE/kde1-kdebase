@@ -98,14 +98,14 @@ public:
      *
      * @see #appList
      */
-    static void appendApplication( const char *_appname ) { appList.append( _appname ); }
+    static void appendApplication( const char *_appname ) { appList->append( _appname ); }
     
     /**
      * @return the name of the first registered application.
      *
      * @see #appendApplication
      */
-    static const char* getFirstApplication() { return appList.first(); }
+    static const char* getFirstApplication() { return appList->first(); }
     /**
      * Use this function only after a call to @ref #getFirstApplication.
      *
@@ -113,7 +113,7 @@ public:
      *
      * @see #appendApplication
      */
-    static const char* getNextApplication() { return appList.next(); }
+    static const char* getNextApplication() { return appList->next(); }
     /**
      * Clear the list of registered applications.
      * This function is used if the user changes some of the application/MimeType
@@ -121,7 +121,7 @@ public:
      *
      * @see #appendApplication
      */
-    static void clearApplicationList() { appList.clear(); }
+    static void clearApplicationList() { appList->clear(); }
 
     /**
      * This function tries to find out about the mime type of the URL.
@@ -163,7 +163,16 @@ public:
      * Scan the $KDEDIR/apps directory for application bindings
      */
     static void initApplications( const char *_path );
-    
+
+	/*
+	 * hack to get static classes up and running even with C++-Compilers/
+	 * Systems where a constructor of a class element declared static
+     * would never get called (Aix, Alpha,...). In the next versions these
+     * elements should disappear.
+	 */
+	static void InitStatic() {
+		appList = new QStrList;
+	}    
 protected:
     /**
      * The programs name.
@@ -179,7 +188,7 @@ protected:
      *
      * @see #appendApplication
      */
-    static QStrList appList;
+    static QStrList *appList;
 
     /**
      * @see #IsAllowedAsDefault

@@ -219,7 +219,7 @@ void KIOSlave::mount( bool _ro, const char *_fstype, const char* _dev, const cha
     int t = (int)time( 0L );
     
     // Look in /etc/fstab ?
-    if ( _fstype == 0L || _point == 0L )
+    if ( _fstype == 0L || _point == 0L || _fstype[0] == 0 || _point[0] == 0 )
 	sprintf( buffer, "mount %s 2>/tmp/mnt%i",_dev, t );
     else if ( _ro )
 	sprintf( buffer, "mount -rt %s %s %s 2>/tmp/mnt%i",_fstype, _dev, _point, t );

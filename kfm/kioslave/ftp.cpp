@@ -543,6 +543,18 @@ int KProtocolFTP::Connect(KURL *url)
     return(SUCCESS);
 }
 
+// Patch from Alessandro Mirone <alex@greco2.polytechnique.fr>
+// Little helper function
+const char* strnextchr( const char * p , char c )
+{
+    while( *p != c && *p != 0L )
+    {
+	p++;
+    }
+    return p;
+}         
+// end patch
+
 int KProtocolFTP::Open(KURL *url, int mode)
 {
     if(Connect(url) == FAIL) return(FAIL);
@@ -555,10 +567,19 @@ int KProtocolFTP::Open(KURL *url, int mode)
     	// Read the size from the response string
     	if ( strlen( rspbuf ) > 4 )
     	{
-	    char *p = strchr( rspbuf, '(' );
+	    // char *p = strchr( rspbuf, '(' );
+	    // Patch from Alessandro Mirone <alex@greco2.polytechnique.fr>
+	    const char *p=rspbuf;
+	    const char *oldp=0L;
+	    while (*(p= strnextchr( p , '(' ))=='(')
+	    {
+		oldp=p;
+		p++;
+	    }
+	    p = oldp;      
+	    // end patch
 	    if ( p != 0L ) size = atol( p + 1 );
     	}
-	
 	
 	bytesleft = size;
 	return(SUCCESS);

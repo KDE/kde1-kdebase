@@ -27,7 +27,7 @@ KFMDirTree::KFMDirTree( QWidget *_parent, KfmGui *_gui ) : KFinder( _parent )
 
 void KFMDirTree::fill()
 {
-    DIR *dp = 0L;
+    /* DIR *dp = 0L;
     struct dirent *ep;
     struct stat buff;
 
@@ -37,26 +37,43 @@ void KFMDirTree::fill()
     {
 	warning( "Could not enter directory /" );
 	return;
-    }
+    } */
+
+    /*
+    QStrList sort_list;
+    QString home( getenv( "HOME" ) );
     
     while ( ( ep = readdir( dp ) ) != 0L )
     {
-	QString name( "/" );
-	name += ep->d_name;
+	QString name( ep->d_name );
 
-	if ( name != "/." && name != "/.." )
+	if ( name != "." && name != ".." )
 	{
-	    lstat( name, &buff );
+	    stat( name, &buff );
 	    
 	    if ( S_ISDIR( buff.st_mode ) )
-	    {
-		KFMDirTreeItem *item = new KFMDirTreeItem( this, name, FALSE );
-		node.append( item );
-	    }
+		sort_list.append( ep->d_name );
 	}
     }
     closedir( dp );
+
+    const char *s;
+    for ( s = sort_list.first(); s != 0L; sort_list.next() )
+    KFMDirTreeItem *item = new KFMDirTreeItem( this, name, FALSE );
+    node.append( item );
+    */
+
+    QString home( getenv( "HOME" ) );
+    if ( home.right(1) != "/" )
+	home += "/";
     
+    KFMDirTreeItem *item = new KFMDirTreeItem( this, "/", FALSE );
+    node.append( item );
+    item = new KFMDirTreeItem( this, home, FALSE );
+    node.append( item );
+    item = new KFMDirTreeItem( this, KFMPaths::DesktopPath().data(), FALSE );
+    node.append( item );
+
     changeTree( &node );
 }
 
@@ -229,7 +246,7 @@ void KFMDirTree::openPopupMenu( const char *_url, const QPoint &_point )
 	if ( KIOServer::supports( _url, KIO_Read ) )
 	    id = popupMenu->insertItem( klocale->translate("Copy"), 
 					this, SLOT( slotPopupCopy() ) );
-	if ( KIOServer::supports( _url, KIO_Write ) && KfmView::clipboard.count() != 0 )
+	if ( KIOServer::supports( _url, KIO_Write ) && KfmView::clipboard->count() != 0 )
 	    id = popupMenu->insertItem( klocale->translate("Paste"), 
 					this, SLOT( slotPopupPaste() ) );
 	if ( KIOServer::supports( _url, KIO_Move ) )
@@ -304,14 +321,14 @@ void KFMDirTree::slotPopupEmptyTrashBin()
 
 void KFMDirTree::slotPopupCopy()
 {
-    KfmView::clipboard.clear();
-    KfmView::clipboard.append( popupDir );
+    KfmView::clipboard->clear();
+    KfmView::clipboard->append( popupDir );
 }
 
 void KFMDirTree::slotPopupPaste()
 {
     KIOJob * job = new KIOJob;
-    job->copy( KfmView::clipboard, popupDir );
+    job->copy( (*KfmView::clipboard), popupDir );
 }
 
 void KFMDirTree::slotPopupTrash()
@@ -363,7 +380,21 @@ KFMDirTreeItem::KFMDirTreeItem( KFMDirTree *_finder, const char *_url, bool _isf
 	tmp.truncate( tmp.length() - 1 );
     KURL u( tmp );
     
-    name = u.filename();
+    QString home( getenv( "HOME" ) );
+    if ( home.right(1) == "/" )
+	home.truncate( home.length() -1 );
+    QString desk( KFMPaths::DesktopPath().data() );
+    if ( desk.right(1) == "/" )
+	desk.truncate( home.length() -1 );
+    
+    if ( home == u.path() )
+	name = klocale->translate( "My Home" );
+    else if ( desk == u.path() )
+	name = klocale->translate( "Desktop" );    
+    else if ( strcmp( u.path(), "/" ) == 0 )
+	name = klocale->translate( "Root" );
+    else
+	name = u.filename();
 
     // Find the correct icon
     QString pixmapFile( folderType->getPixmapFile( url, TRUE ) );
@@ -454,24 +485,32 @@ void KFMDirTreeItem::setOpen( bool _open )
 	return;
     }
     
+    QStrList sort_list;
+
     while ( ( ep = readdir( dp ) ) != 0L )
     {
 	QString name(ep->d_name);
 	if ( name != "." && name != ".." )
 	{
-	    KURL u2( u, name );
-	    
-	    lstat( u2.path(), &buff );
-
-	    if ( S_ISDIR( buff.st_mode ) )
-	    {
-		KFMDirTreeItem *item = new KFMDirTreeItem( dirTree, u2.path(), FALSE );
-		finderNode->append( item );
-	    }
+	    sort_list.inSort( ep->d_name );
 	}
     }
     
     closedir( dp );    
+
+    const char *s;
+    for ( s = sort_list.first(); s != 0L; s = sort_list.next() )
+    {
+	KURL u2( u, s );
+	    
+	stat( u2.path(), &buff );
+
+	if ( S_ISDIR( buff.st_mode ) )
+	{
+	    KFMDirTreeItem *item = new KFMDirTreeItem( dirTree, u2.path(), FALSE );
+	    finderNode->append( item );
+	}
+    }
     
     bFilled = TRUE;    
 }

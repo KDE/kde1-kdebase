@@ -28,9 +28,6 @@
 #include "kfmexec.h"
 #include "utils.h"
 
-// A HACK
-QString HTMLBuffer;
-
 KFMManager::KFMManager( KfmView *_v )
 {
     url  = "";
@@ -896,7 +893,7 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
 	if ( KIOServer::supports( _urls, KIO_Read ) )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_COPY ), 
 					view, SLOT( slotPopupCopy() ) );
-	if ( KIOServer::supports( _urls, KIO_Write ) && KfmView::clipboard.count() != 0 )
+	if ( KIOServer::supports( _urls, KIO_Write ) && KfmView::clipboard->count() != 0 )
 	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_PASTE ), 
 					view, SLOT( slotPopupPaste() ) );
 	if ( KIOServer::supports( _urls, KIO_Move ) )

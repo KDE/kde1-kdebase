@@ -109,6 +109,16 @@ public:
      */
     bool isAutoDelete() { return bAutoDelete; }
     
+	/*
+	 * hack to get static classes up and running even with C++-Compilers/
+	 * Systems where a constructor of a class element declared static
+     * would never get called (Aix, Alpha,...). In the next versions these
+     * elements should disappear.
+	 */
+	static void InitStatic() {
+    	passwordDict = new QDict<QString>;
+    	jobList = new QList<KIOJob>;
+	}
 public slots:
     void slaveIsReady();
     void slaveProgress( int _percent );
@@ -326,7 +336,7 @@ protected:
     bool bDisplay;
 
     /// List of all running jobs.
-    static QList<KIOJob> jobList;
+    static QList<KIOJob> *jobList;
 
     /// This flag is set to TRUE if existing files should be overwritten by copy/move jobs
     bool overwriteExistingFiles;
@@ -347,7 +357,7 @@ protected:
      *
      * @see #completeURL
      */
-    static QDict<QString> passwordDict;
+    static QDict<QString> *passwordDict;
 
     /**
      * @see #setAutoDelete

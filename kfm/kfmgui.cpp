@@ -59,11 +59,9 @@ char* kfm_getrev()
     return rev;
 }
 
-KBookmarkManager KfmGui::bookmarkManager;
-
-QList<KfmGui> KfmGui::windowList;
-
-QList<QPixmap> KfmGui::animatedLogo;
+KBookmarkManager *KfmGui::bookmarkManager;
+QList<KfmGui> *KfmGui::windowList;
+QList<QPixmap> *KfmGui::animatedLogo;
 
 KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     : KTopLevelWidget( name )
@@ -169,8 +167,8 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
 
     initGUI();
 
-    windowList.setAutoDelete( false );
-    windowList.append( this );
+    windowList->setAutoDelete( false );
+    windowList->append( this );
 
     if ( _url )
 	view->openURL( _url );
@@ -179,7 +177,7 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
 KfmGui* KfmGui::findWindow( const char *_url )
 {
     KfmGui *w;
-    for ( w = windowList.first(); w != 0L; w = windowList.next() )
+    for ( w = windowList->first(); w != 0L; w = windowList->next() )
 	if ( strcmp( _url, w->getURL() ) == 0 )
 	    return w;
     
@@ -434,13 +432,13 @@ void KfmGui::initMenu()
 
     bookmarkMenu = new QPopupMenu;
     CHECK_PTR( bookmarkMenu );
-    connect( &bookmarkManager, SIGNAL( changed() ), 
+    connect( bookmarkManager, SIGNAL( changed() ), 
 	     this, SLOT( slotBookmarksChanged() ) );
     QString p = getenv( "HOME" );
     QString bmFile = p + "/.kde/share/apps/kfm/bookmarks.html";
     bookmarkMenu->insertItem( klocale->translate("&Add Bookmark"), 
 			      this, SLOT(slotAddBookmark()) );
-    bookmarkManager.read( bmFile );
+    bookmarkManager->read( bmFile );
     
     QPopupMenu *help = new QPopupMenu;
     CHECK_PTR( help );
@@ -541,9 +539,9 @@ void KfmGui::initToolBar()
 	toolbarButtons->alignItemRight( 8, true );
     
     // Load animated logo
-    if ( animatedLogo.count() == 0 )
+    if ( animatedLogo->count() == 0 )
     {
-	animatedLogo.setAutoDelete( true );
+	animatedLogo->setAutoDelete( true );
 	for ( int i = 1; i <= 9; i++ )
 	{
 	    QString n;
@@ -556,7 +554,7 @@ void KfmGui::initToolBar()
 		e.sprintf( klocale->translate( "Could not load icon\n%s" ), n.data() );
 		QMessageBox::warning( this, klocale->translate( "KFM Error" ), e.data() );
 	    }
-	    animatedLogo.append( p );
+	    animatedLogo->append( p );
 	}
     }
 	    
@@ -648,7 +646,7 @@ void KfmGui::slotRescanBindings()
 	KRootWidget::getKRootWidget()->update();
 
     KfmGui *win;
-    for ( win = windowList.first(); win != 0L; win = windowList.next() )
+    for ( win = windowList->first(); win != 0L; win = windowList->next() )
 	win->updateView();
 }
 
@@ -807,7 +805,7 @@ void KfmGui::slotBookmarksChanged()
 			      this, SLOT(slotAddBookmark()) );
     bookmarkMenu->insertSeparator();
     int idStart = BOOKMARK_ID_BASE;
-    fillBookmarkMenu( bookmarkManager.getRoot(), bookmarkMenu, idStart );
+    fillBookmarkMenu( bookmarkManager->getRoot(), bookmarkMenu, idStart );
 }
 
 void KfmGui::fillBookmarkMenu( KBookmark *parent, QPopupMenu *menu, int &id )
@@ -909,8 +907,8 @@ void KfmGui::addBookmark( const char *_title, const char *_url )
 {
     QString p = getenv( "HOME" );
     QString bmFile = p + "/.kde/share/apps/kfm/bookmarks.html";
-    bookmarkManager.add( _title, _url );
-    bookmarkManager.write( bmFile );
+    bookmarkManager->add( _title, _url );
+    bookmarkManager->write( bmFile );
 }
 
 void KfmGui::slotAddBookmark()
@@ -924,7 +922,7 @@ void KfmGui::slotBookmarkSelected( int id )
     
     // debugT( "Bookmark selected : %i\n",id );
     
-    KBookmark *bm = bookmarkManager.getBookmark( id );
+    KBookmark *bm = bookmarkManager->getBookmark( id );
     
     if ( bm )
     {
@@ -1194,9 +1192,9 @@ const char* KfmGui::getURL()
 void KfmGui::slotAnimatedLogoTimeout()
 {
     animatedLogoCounter++;
-    if ( animatedLogoCounter == animatedLogo.count() )
+    if ( animatedLogoCounter == animatedLogo->count() )
 	animatedLogoCounter = 0;
-    toolbarButtons->setButtonPixmap( 8, *( animatedLogo.at( animatedLogoCounter ) ) );
+    toolbarButtons->setButtonPixmap( 8, *( animatedLogo->at( animatedLogoCounter ) ) );
 }
 
 void KfmGui::slotAddWaitingWidget( KHTMLView *_w )
@@ -1218,7 +1216,7 @@ void KfmGui::slotRemoveWaitingWidget( KHTMLView *_w )
     if ( waitingWidgetList.count() == 0 )
     {
 	animatedLogoTimer->stop();
-	toolbarButtons->setButtonPixmap( 8, *( animatedLogo.at( 0 ) ) );
+	toolbarButtons->setButtonPixmap( 8, *( animatedLogo->at( 0 ) ) );
 	toolbarButtons->setItemEnabled( 7, false );
 	slotSetStatusBar( klocale->translate("Document: Done") );
     }
@@ -1403,10 +1401,10 @@ KfmGui::~KfmGui()
     
     delete view;
     delete completion;
-    windowList.remove( this );
+    windowList->remove( this );
 
     // Last window and in window-only-mode ?
-    if ( windowList.count() == 0 && !rooticons )
+    if ( windowList->count() == 0 && !rooticons )
     {
 	// remove pid file
 	QString file = QDir::homeDirPath();

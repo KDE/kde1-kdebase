@@ -493,7 +493,7 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
     owner->setMinimumSize( owner->sizeHint().width(), fontHeight );
     gl->addWidget (owner, 0, 1);
     owner->setText( strOwner );
-    owner->setEnabled ( IamRoot || IsMyFile );
+    owner->setEnabled ( IamRoot ); // we can just change the user if we're root
 
     /*** Set Group ***/
     /* get possible groups .. */
@@ -642,9 +642,39 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     execEdit = new QLineEdit( this, "LineEdit_1" );
     pathEdit = new QLineEdit( this, "LineEdit_2" );
     iconBox = new KIconLoaderButton( pkfm->iconLoader(), this );
+<<<<<<< kfmprops.cpp
+    normalCheck = new QRadioButton( this, "RadioButton_1" );
+    swallowTitleEdit = new QLineEdit( this, "LineEdit_5" );
+    swallowCheck = new QRadioButton( this, "RadioButton_2");
+    terminalCheck = new QRadioButton( this, "RadioButton_3" );
+    terminalEdit = new QLineEdit( this, "LineEdit_4" );
+    bg = new QButtonGroup();
+=======
+>>>>>>> 1.28
     execBrowse = new QPushButton( this, "Button_1" );
     
     QGroupBox* tmpQGroupBox;
+<<<<<<< kfmprops.cpp
+    tmpQGroupBox = new QGroupBox( this, "GroupBox_1" );
+    tmpQGroupBox->setGeometry( 10, 141, 320, 178 );
+    tmpQGroupBox->setFrameStyle( 49 );
+    tmpQGroupBox->setAlignment( 1 );
+ 
+    tmpQGroupBox = new QGroupBox( this, "GroupBox_2" );
+    tmpQGroupBox->setGeometry( 10, 177, 320, 71 );
+    tmpQGroupBox->setFrameStyle( 49 );
+    tmpQGroupBox->setAlignment( 1 );
+
+    execEdit->raise();
+    execEdit->setGeometry( 10, 30, 210, 30 );
+    execEdit->setText( "" );
+    execEdit->setMaxLength( 256 );
+
+    QLabel* tmpQLabel;
+    tmpQLabel = new QLabel( this, "Label_1" );
+    tmpQLabel->setGeometry( 10, 0, 100, 30 );
+    tmpQLabel->setText( klocale->translate("Execute") );
+=======
     QLabel* tmpQLabel;
 
     layout = new QBoxLayout(this, QBoxLayout::TopToBottom, SEPARATION);
@@ -663,21 +693,66 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     execEdit->setText( "" );
     execEdit->setMaxLength( 256 );
     layoutH1->addWidget(execEdit, 10);
+>>>>>>> 1.28
 
+<<<<<<< kfmprops.cpp
+    execBrowse->raise();
+    execBrowse->setGeometry( 230, 30, 100, 30 );
+    execBrowse->setText( klocale->translate("Browse") );
+=======
     execBrowse->raise();
     execBrowse->setText( klocale->translate("Browse") );
     execBrowse->setFixedSize(2*fontMetrics().width(klocale->translate("Browse")), fontHeight);
     layoutH1->addWidget(execBrowse, 0);
+>>>>>>> 1.28
 
     tmpQLabel = new QLabel( this, "Label_3" );
+<<<<<<< kfmprops.cpp
+    tmpQLabel->setGeometry( 10, 60, 120, 30 );
+=======
+>>>>>>> 1.28
     tmpQLabel->setText( klocale->translate("Working Directory") );
+<<<<<<< kfmprops.cpp
+    
+    iconBox->raise();
+    iconBox->setGeometry( 280, 80, 50, 50 );
+=======
     tmpQLabel->setFixedSize(tmpQLabel->sizeHint());
     layout->addWidget(tmpQLabel, 0, AlignLeft);
+>>>>>>> 1.28
 
     pathEdit->raise();
+<<<<<<< kfmprops.cpp
+    pathEdit->setGeometry( 10, 90, 210, 30 );
+=======
     pathEdit->setMinimumSize(200, fontHeight);
     pathEdit->setMaximumSize(QLayout::unlimited, fontHeight);
+>>>>>>> 1.28
     pathEdit->setMaxLength( 256 );
+<<<<<<< kfmprops.cpp
+    
+    bg->insert(normalCheck);
+    bg->insert(swallowCheck);
+    bg->insert(terminalCheck);
+    bg->setExclusive(TRUE);
+
+    normalCheck->raise();
+    normalCheck->setGeometry( 20, 145, 150, 30 );
+    normalCheck->setText( klocale->translate( "Run normally" ) );
+
+    swallowCheck->raise();
+    swallowCheck->setGeometry( 20, 180, 280, 30 );
+    swallowCheck->setText( klocale->translate("Run in Panel (drag onto Panel to execute)") );
+
+    tmpQLabel = new QLabel( this, "Label_7" );
+    tmpQLabel->setGeometry( 20, 210, 110, 30 );
+    tmpQLabel->setText( klocale->translate("Title of Application") );
+
+    swallowTitleEdit->raise();
+    swallowTitleEdit->setGeometry( 140, 210, 180, 30 );
+    swallowTitleEdit->setText( "" );
+    QToolTip::add( swallowTitleEdit, klocale->translate( "enter the exact title, as normally shown in the window titlebar" ) );
+=======
     layout->addWidget(pathEdit, 10, AlignLeft);
 
     tmpQLabel = new QLabel( this, "Label_4" );
@@ -700,8 +775,13 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
 
     layoutV1 = new QBoxLayout(tmpQGroupBox, 
 			      QBoxLayout::TopToBottom, SEPARATION);
+>>>>>>> 1.28
 
     terminalCheck->raise();
+<<<<<<< kfmprops.cpp
+    terminalCheck->setGeometry( 20, 250, 150, 30 );
+=======
+>>>>>>> 1.28
     terminalCheck->setText( klocale->translate("Run in terminal") );
     terminalCheck->setFixedSize(terminalCheck->sizeHint());
     layoutV1->addWidget(terminalCheck, 0, AlignLeft);
@@ -712,15 +792,28 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     layoutV1->addWidget(tmpQLabel, 0, AlignLeft);
 
     terminalEdit->raise();
+<<<<<<< kfmprops.cpp
+    terminalEdit->setGeometry( 140, 280, 180, 30 );
+=======
     terminalEdit->setMinimumSize(180, fontHeight);
     terminalEdit->setMaximumSize(QLayout::unlimited, fontHeight);
+>>>>>>> 1.28
     terminalEdit->setText( "" );
     layoutV1->addWidget(terminalEdit, 0, AlignLeft);
     layoutV1->activate();
 
+<<<<<<< kfmprops.cpp
+    tmpQLabel = new QLabel( this, "Label_5" );
+    tmpQLabel->setGeometry( 20, 280, 110, 30 );
+    tmpQLabel->setText( klocale->translate("Terminal Options") );
+=======
+>>>>>>> 1.28
 
+<<<<<<< kfmprops.cpp
+=======
     layout->addStretch(10);
     layout->activate();
+>>>>>>> 1.28
 
     QFile f( _props->getKURL()->path() );
     if ( !f.open( IO_ReadOnly ) )
@@ -732,6 +825,8 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     execStr = config.readEntry( "Exec" );
     pathStr = config.readEntry( "Path" );
     iconStr = config.readEntry( "Icon" );
+    swallowExecStr = config.readEntry( "SwallowExec" );
+    swallowTitleStr = config.readEntry( "SwallowTitle");
     termStr = config.readEntry( "Terminal" );
     termOptionsStr = config.readEntry( "TerminalOptions" );
 
@@ -739,17 +834,65 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
 	pathEdit->setText( pathStr.data() );
     if ( !execStr.isNull() )
 	execEdit->setText( execStr.data() );
-    if ( !termStr.isNull() )
-	terminalEdit->setText( termOptionsStr.data() );
-    if ( !termStr.isNull() )
-	terminalCheck->setChecked( termStr == "1" );
+    if ( !swallowTitleStr.isNull() )
+        swallowTitleEdit->setText( swallowTitleStr.data() );
+    if ( !termOptionsStr.isNull() )
+        terminalEdit->setText( termOptionsStr.data() );
+
+    if ( ( swallowExecStr == execStr ) && ( termStr == "1" ) )
+    {
+        QMessageBox::warning( 0, klocale->translate("KFM Error"),
+              klocale->translate("You can run this program either\nin the Panel or in a Terminal, \nbut not both!"));
+	normalCheck->setChecked( true );
+        termStr = "0";
+	disableAllEdit();
+    }
+    else
+    {
+       if ( swallowExecStr == execStr )
+          swallowCheck->setChecked( true );
+       if ( !termStr.isNull() )
+          terminalCheck->setChecked( termStr == "1" );
+       if ( ( swallowExecStr == "" || swallowExecStr.isNull() ) && ( termStr == "0" ) )
+           normalCheck->setChecked( true );
+       enableCheckedEdit();
+    }
     if ( iconStr.isNull() )
 	iconStr = KMimeType::getDefaultPixmap();
     
     iconBox->setIcon( iconStr ); 
-    
+
     connect( execBrowse, SIGNAL( pressed() ), this, SLOT( slotBrowseExec() ) );
+    connect( normalCheck, SIGNAL( clicked() ), this, SLOT( disableAllEdit() ) );
+    connect( swallowCheck, SIGNAL( clicked() ), this,  SLOT( enableCheckedEdit() ) );
+    connect( terminalCheck, SIGNAL( clicked() ), this,  SLOT( enableCheckedEdit() ) );
+
 }
+
+
+void ExecPropsPage::enableCheckedEdit()
+{
+    if ( normalCheck->isChecked() )
+       disableAllEdit();
+    if ( swallowCheck->isChecked() )
+    {
+       swallowTitleEdit->setEnabled( TRUE );
+       terminalEdit->setEnabled( FALSE );
+    }
+    if ( terminalCheck->isChecked() )
+    {
+       swallowTitleEdit->setEnabled( FALSE );
+       terminalEdit->setEnabled( TRUE );
+    }
+}
+
+
+void ExecPropsPage::disableAllEdit()
+{
+    terminalEdit->setEnabled(FALSE);
+    swallowTitleEdit->setEnabled(FALSE);
+}
+
 
 bool ExecPropsPage::supports( KURL *_kurl )
 {
@@ -809,12 +952,22 @@ void ExecPropsPage::applyChanges()
     config.writeEntry( "Path", pathEdit->text() );
     config.writeEntry( "Icon", iconBox->icon() );
 
-    if ( terminalCheck->isChecked() )
-	config.writeEntry( "Terminal", "1" );
+    if ( swallowCheck->isChecked() )
+    {
+        config.writeEntry( "SwallowExec", execEdit->text() );
+        config.writeEntry( "SwallowTitle", swallowTitleEdit->text() );
+    }
     else
-	config.writeEntry( "Terminal", "0" );
+        config.writeEntry( "SwallowExec", "" );
+    if ( terminalCheck->isChecked() )
+    {
+        config.writeEntry( "Terminal", "1" );
+        config.writeEntry( "TerminalOptions", terminalEdit->text() );
+        config.writeEntry( "SwallowExec", "" );
+    }
+    else
+        config.writeEntry( "Terminal", "0" );
 
-    config.writeEntry( "TerminalOptions", terminalEdit->text() );
     config.sync();
 }
 
@@ -1606,6 +1759,8 @@ void BindingPropsPage::applyChanges()
 
 DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
 {
+    bool IamRoot = (geteuid() == 0);
+
     QLabel* tmpQLabel;
     tmpQLabel = new QLabel( this, "Label_1" );
     tmpQLabel->setGeometry( 10, 10, 140, 30 );
@@ -1622,10 +1777,14 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
     mountpoint = new QLineEdit( this, "LineEdit_2" );
     mountpoint->setGeometry( 10, 110, 180, 30 );
     mountpoint->setText( "" );
+    if ( !IamRoot )
+	mountpoint->setEnabled( false );
     
     readonly = new QCheckBox( this, "CheckBox_1" );
     readonly->setGeometry( 220, 40, 130, 30 );
     readonly->setText(  klocale->translate("Readonly") );
+    if ( !IamRoot )
+	readonly->setEnabled( false );
     
     tmpQLabel = new QLabel( this, "Label_4" );
     tmpQLabel->setGeometry( 10, 150, 300, 30 );
@@ -1634,7 +1793,9 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
     fstype = new QLineEdit( this, "LineEdit_3" );
     fstype->setGeometry( 10, 180, 280, 30 );
     fstype->setText( "" );
-    
+    if ( !IamRoot )
+	fstype->setEnabled( false );
+
     tmpQLabel = new QLabel( this, "Label_5" );
     tmpQLabel->setGeometry( 10, 220, 150, 30 );
     tmpQLabel->setText(  klocale->translate("Mounted Icon") );

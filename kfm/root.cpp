@@ -4,6 +4,7 @@
 #include <stddef.h>
 #include <dirent.h>
 #include <errno.h>
+#include <math.h>
 
 #include <qdir.h>
 #include <qtooltip.h>
@@ -59,6 +60,8 @@ KRootWidget::KRootWidget( QWidget *parent, const char *name ) : QWidget( parent,
     pKRootWidget = this;
     
     desktopDir = "file:" + KFMPaths::DesktopPath();
+    if ( desktopDir.right(1) != "/" )
+	desktopDir += "/";
     
     connect( KIOServer::getKIOServer(), SIGNAL( notify( const char *) ),
     	     this, SLOT( slotFilesChanged( const char *) ) );
@@ -255,17 +258,55 @@ void KRootWidget::openURL( const char *_url )
 
 void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
 {
+    if ( _urls.first() == 0L )
+	return;
+    
+    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
+    
+    // Calculate offset in grid units
+    int x = ( p.x() - dndStartPos.x() ) / GRID_WIDTH;
+    int y = ( p.y() - dndStartPos.y() ) / GRID_HEIGHT;
+    // Do we have to round up/down ?
+    int hx = p.x() - dndStartPos.x();
+    if ( hx < 0 ) hx *= -1;
+    int hy = p.y() - dndStartPos.y();
+    if ( hy < 0 ) hy *= -1;
+    if ( hx % GRID_WIDTH > GRID_WIDTH/2 )
+    {
+	if ( p.x() - dndStartPos.x() < 0 )
+	    x--;
+	else
+	    x++;
+    }
+    if ( hy % GRID_HEIGHT > GRID_HEIGHT/2 )
+    {
+	if ( p.y() - dndStartPos.y() < 0 )
+	    y--;
+	else
+	    y++;
+    }
+    
     char *s;
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
     {
-	KRootIcon *icon = findIcon( s );
+	KRootIcon* icon = findIcon( s );
 	if ( icon != 0L )
 	{
-	    icon->move( icon->x() + p.x() - icon->getDndStartPos().x(),
-			icon->y() + p.y() - icon->getDndStartPos().y() );
+	    int ix = icon->gridX() + x;
+	    int iy = icon->gridY() + y;
+	    if ( isPlaceUsed( ix, iy ) )
+	    {
+		QPoint p = findFreePlace( ix, iy );
+		ix = p.x();
+		iy = p.y();
+	    }
+	    icon->setGridX( ix );
+	    icon->setGridY( iy );
+	    icon->move( area.x() + GRID_WIDTH * ix + ( GRID_WIDTH - icon->QWidget::width() ) / 2,
+			area.y() + GRID_HEIGHT * iy + ( GRID_HEIGHT - icon->QWidget::height() ) );
 	}
     }
-
+    
     saveLayout();
 }
 
@@ -322,52 +363,9 @@ void KRootWidget::saveLayout()
     FILE *f = fopen( file.data(), "w" );
     if ( f != 0 )
     {
-	
 	for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
-	    fprintf( f, "%s;%i;%i;%i;\n",icon->getURL(),icon->getType(),icon->saveX(),icon->saveY() );
+	    fprintf( f, "%s;%i;%i\n",icon->getURL(),icon->gridX(),icon->gridY() );
 	
-	fclose( f );
-    }
-}
-
-void KRootWidget::loadLayout()
-{
-    layoutList.clear();
-    
-    QString file = QDir::homeDirPath().data();
-    file += "/.kde/share/apps/kfm/desktop";
- 
-    FILE *f = fopen( file.data(), "r" );
-    if ( f != 0 )
-    {
-	char buffer[1024];
-	while ( !feof( f ) )
-	{
-	    buffer[ 0 ] = 0;
-	    fgets( buffer, 1024, f );
-	    if ( buffer[ 0 ] != 0 )
-	    {
-		const char *p = buffer;
-		char *p2 = strchr( p, ';' );
-		*p2++ = 0;
-		QString u = p;
-		p = p2;
-		p2 = strchr( p, ';' );
-		*p2++ = 0;
-		QString t = p;
-		p = p2;
-		p2 = strchr( p, ';' );
-		*p2++ = 0;
-		QString x = p;
-		p = p2;
-		p2 = strchr( p, ';' );
-		*p2++ = 0;
-		QString y = p;
-		KRootLayout *l = new KRootLayout( u.data(), atoi( t.data() ), atoi( x.data() ), atoi( y.data() ) );
-		layoutList.append( l );
-	    }
-	}
-
 	fclose( f );
     }
 }
@@ -385,87 +383,169 @@ KRootIcon* KRootWidget::findIcon( const char *_url )
     return 0L;
 }
 
-QPoint KRootWidget::findLayout( const char *_url )
+KRootLayout* KRootWidget::findLayout( const char *_url )
 {
-    KRootLayout *icon;
+    KRootLayout *lay;
     
-    for ( icon = layoutList.first(); icon != 0L; icon = layoutList.next() )
+    for ( lay = layoutList.first(); lay != 0L; lay = layoutList.next() )
     {
-	if ( strcmp( icon->getURL(), _url ) == 0 )
-	    return QPoint( icon->getX(), icon->getY() );
-    }
-
-    return QPoint( 0, 0 );
-}
-
-QPoint KRootWidget::findFreePlace( int _width, int _height )
-{
-  // Matthias
-  // use the window area to layout the icons
-    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
-    KRootIcon *icon;
-
-    for ( int x = area.x(); x <= area.width() - ROOT_GRID_WIDTH; x += ROOT_GRID_WIDTH )
-    {
-	for ( int y = area.y(); y <= area.height() - ROOT_GRID_HEIGHT; y += ROOT_GRID_HEIGHT )
-	{	
-	    bool isOK = true;
-	    
-	    for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
-	    {
-		QRect r1( x, y, _width, _height );
-		QRect r2( icon->x(), icon->y(), icon->QWidget::width(),icon->QWidget::height() );
-		if ( r1.intersects( r2 ) == false )
-		{
-		    QRect r3( x + ( ROOT_GRID_WIDTH - _width ) / 2, y, _width, _height );
-		    if ( r2.intersects( r3 ) == true )
-			isOK = false;
-		}
-		else
-		    isOK = false;
-	    }
-	    if ( isOK )
-		return QPoint( x + ( ROOT_GRID_WIDTH - _width ) / 2, y );
-	}
+	if ( strcmp( lay->getURL(), _url ) == 0 )
+	    return lay;
     }
     
-    return QPoint( 0, 0 );
+    return 0L;
 }
 
-void KRootWidget::sortIcons()
+QPoint KRootWidget::findFreePlace()
 {
-  // Matthias
-  // use the window area to layout the icons
+    // Matthias
+    // use the window area to layout the icons
     QRect area = KWM::getWindowRegion(KWM::currentDesktop());
-    KRootIcon *icon;
 
-    for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
-	if ( ( icon->x() - ( ROOT_GRID_WIDTH - icon->QWidget::width() ) / 2 )  % ROOT_GRID_WIDTH != 0 ||
-	     icon->y() % ROOT_GRID_HEIGHT != 0 || 
-	     !area.contains(icon->geometry()))
-	  icon->move( -200, -200 );
-	
-    QListIterator<KRootIcon> it( icon_list );    
-    for ( ; it.current(); ++it )
-	if ( it.current()->y() == -200 )
+    int gx = area.width() / GRID_WIDTH;
+    int gy = area.height() / GRID_HEIGHT;
+    
+    bool ok = false;
+    int x = 0, y = 0;
+    while ( !ok && x < gx )
+    {
+	y = 0;
+	while ( !ok && y < gy )
 	{
-	    QPoint p = findFreePlace( it.current()->QWidget::width(), it.current()->QWidget::height() );
-	    it.current()->move( p );
+	    bool found = false;
+	    QListIterator<KRootIcon> it( icon_list );
+	    for ( ; it.current(); ++it )
+		if ( it.current()->gridX() == x && it.current()->gridY() == y )
+		    found = true;
+	    // No icon on this place ?
+	    if ( !found )
+		return QPoint( x, y );
+	    y++;
 	}
+	x++;
+    }
     
+    return QPoint( 0, 0 );
+}
+
+QPoint KRootWidget::findFreePlace( int x, int y )
+{
+    // Matthias
+    // use the window area to layout the icons
+    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
+
+    int gx = area.width() / GRID_WIDTH;
+    int gy = area.height() / GRID_HEIGHT;
+    
+    int offset;
+    for ( offset = 1; offset < gx; offset++ )
+    {
+	int j;
+	if ( x - offset >= 0 && x - offset < gx )
+	    for ( j = y - offset; j <= y + offset; j++ )
+		if ( !isPlaceUsed( x - offset, j ) && j > 0 && j < gy )
+		    return QPoint( x - offset, j );
+	if ( x + offset >= 0 && x + offset < gx )
+	    for ( j = y - offset; j <= y + offset; j++ )
+		if ( !isPlaceUsed( x + offset, j ) && j > 0 && j < gy )
+		    return QPoint( x + offset, j );
+	if ( y - offset >= 0 && y - offset < gy )
+	    for ( j = x - offset + 1; j <= x + offset - 1; j++ )
+		if ( !isPlaceUsed( j, y - offset ) && j > 0 && j < gx )
+		    return QPoint( j, y - offset );
+	if ( y + offset >= 0 && y + offset < gy )
+	    for ( j = x - offset + 1; j <= x + offset - 1; j++ )
+		if ( !isPlaceUsed( j, y + offset ) && j > 0 && j < gx )
+		    return QPoint( j, y + offset );
+    }
+    
+    return QPoint( 0, 0 );
+}
+
+bool KRootWidget::isPlaceUsed( int x, int y )
+{
+    QListIterator<KRootIcon> it( icon_list );
+    for ( ; it.current(); ++it )
+	if ( it.current()->gridX() == x && it.current()->gridY() == y )
+	    return true;
+
+    return false;
+}
+
+void KRootWidget::arrangeIcons()
+{
+    // Matthias
+    // use the free window area  ( no panel ) to layout the icons
+    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
+
+    int max_icons = icon_list.count();
+    int my = area.height() / GRID_HEIGHT;
+    int gx = max_icons / my;
+    int gy = max_icons % my;
+    
+    /**
+     * Find first not used position from left to right and top
+     * to bottom and move the right/bottom most icon to this
+     * position.
+     */
+
+    int x, y;
+    for ( x = 0; x <= gx; x++ )
+    {
+	int gy2 = my;
+	if ( x == gx ) // last line
+	    gy2 = gy;
+	for ( y = 0; y < gy2; y++ )
+	{
+	    bool found = false;
+	    QListIterator<KRootIcon> it2( icon_list );
+	    for ( ; it2.current(); ++it2 )
+		if ( it2.current()->gridX() == x && it2.current()->gridY() == y )
+		    found = true;
+	    
+	    // No icon on this place ?
+	    if ( !found )
+	    {
+		// Find right and bottom most icon
+		int maxx = x, maxy = y;
+		KRootIcon *icon = 0;
+		QListIterator<KRootIcon> it3( icon_list );
+		for ( ; it3.current(); ++it3 )
+		{
+		    if ( it3.current()->gridX() > maxx )
+		    {
+			icon = it3.current();
+			maxx = it3.current()->gridX();
+			maxy = it3.current()->gridY();
+		    }
+		    else if ( it3.current()->gridX() == maxx && it3.current()->gridY() > maxy )
+		    {
+			icon = it3.current();
+			maxy = it3.current()->gridY();
+		    }
+		}
+		// Move the right and bottom most icon
+		if ( icon )
+		{
+		    icon->setGridX( x );
+		    icon->setGridY( y );
+		    icon->move( area.x() + GRID_WIDTH * x + ( GRID_WIDTH - icon->QWidget::width() ) / 2,
+				area.y() + GRID_HEIGHT * y + ( GRID_HEIGHT - icon->QWidget::height() ) );
+		}
+	    }
+	}
+    }
+
     saveLayout();
 }
 
-/*
- * TODO: Wenn ein Icon auf dem Schirm aber nicht im Dateisystem ist
- * muss es geloescht werden
- */
 void KRootWidget::update()
 {
     if ( noUpdate )
 	return;
-    
-    loadLayout();
+
+    // Area where we can place icons
+    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
     
     KURL u ( KFMPaths::DesktopPath() ); // KURL::KURL adds a file:
 
@@ -485,7 +565,11 @@ void KRootWidget::update()
 	warning(klocale->translate("ERROR: Could not read desktop directory '%s'"), desktopDir.data());
 	exit(1);
     }
-    
+
+    /**
+     * Create every icon that is not on the screen but on the file system
+     */
+
     QList<KRootIcon> found_icons;
     found_icons.setAutoDelete( false );
 
@@ -496,7 +580,6 @@ void KRootWidget::update()
 	if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 	{   
 	    KRootIcon *icon;
-	    // bool ok = false;
 
 	    QString file = desktopDir;
 	    file.detach();
@@ -504,20 +587,34 @@ void KRootWidget::update()
 
 	    icon = findIcon( file.data() );
 	    	    
-	    // This icon is missing on the screen.
+	    // This icon is missing on the screen, so we have to create it.
 	    if ( icon == 0L )
 	    {
 		KRootIcon *icon = 0L;
-		// KMimeType *typ = KMimeType::getMagicMimeType( file.data() );
-		QPoint p = findLayout( file );
-		if ( p.x() == 0 && p.y() == 0 )
+		icon = new KRootIcon( file, -200, -200 );
+		// Do we have some information about where to locate the new icon ?
+		KRootLayout *lay = findLayout( file );
+		if ( lay )
 		{
-		    icon = new KRootIcon( file, -200, -200 );
-		    p = findFreePlace( icon->QWidget::width(), icon->QWidget::height() );
-		    icon->move( p );
+		    int x = lay->getX();
+		    int y = lay->getY();
+		    // is the location already used ?
+		    if ( isPlaceUsed( x, y ) )
+		    {
+			// Find a free place next to this location
+			QPoint p = findFreePlace( x, y );
+			x = p.x();
+			y = p.y();
+		    }
+		    
+		    icon->setGridX( x );
+		    icon->setGridY( y );
+		    icon->move( area.x() + GRID_WIDTH * x + ( GRID_WIDTH - icon->QWidget::width() ) / 2,
+				area.y() + GRID_HEIGHT * y + ( GRID_HEIGHT - icon->QWidget::height() ) );
+		    // This information is no longer needed
+		    layoutList.remove( lay );
 		}
-		else
-		    icon = new KRootIcon( file, p.x(), p.y() );
+		
 		icon_list.append( icon );
 		found_icons.append( icon );
 	    }	    
@@ -529,14 +626,84 @@ void KRootWidget::update()
 	}
     }
     (void) closedir( dp );
-    
+
+    /**
+     * Place icons as described in the config file
+     */
+
+    // Find correct places for the icons
+    QString file = QDir::homeDirPath().data();
+    file += "/.kde/share/apps/kfm/desktop";
+ 
+    FILE *f = fopen( file.data(), "r" );
+    if ( f != 0 )
+    {
+	// Loop over every entry
+	char buffer[1024];
+	while ( !feof( f ) )
+	{
+	    buffer[ 0 ] = 0;
+	    fgets( buffer, 1024, f );
+	    if ( buffer[ 0 ] != 0 )
+	    {
+		const char *p = buffer;
+		char *p2 = strchr( p, ';' );
+		*p2++ = 0;
+		QString u = p;
+		p = p2;
+		p2 = strchr( p, ';' );
+		*p2++ = 0;
+		int x = atoi( p );
+		p = p2;
+		int y = atoi( p );
+
+		// Do we have such an icon
+		KRootIcon* icon = findIcon( u );
+		if ( icon )
+		{
+		    icon->setGridX( x );
+		    icon->setGridY( y );
+		    icon->move( area.x() + GRID_WIDTH * x + ( GRID_WIDTH - icon->QWidget::width() ) / 2,
+				area.y() + GRID_HEIGHT * y + ( GRID_HEIGHT - icon->QWidget::height() ) );
+		}
+	    }
+	}
+	fclose( f );
+    }
+
+    /**
+     * Delete all icons on the screen that appear not in the file system.
+     */
+
+    QList<KRootIcon> remove_list;
     KRootIcon *icon;
-    // Delete all icons on the screen that appear not in the file system.
+    for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
+	if ( found_icons.findRef( icon ) == -1 )
+	    remove_list.append( icon );
+
+    for ( icon = remove_list.first(); icon != 0L; icon = remove_list.next() )
+	icon_list.remove( icon );
+
+    /**
+     * Correct the position of all icons which are not on the visible part of the screen.
+     */
+    
+    // Find every icon that is not on the screen.
     for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
     {
-	if ( found_icons.findRef( icon ) == -1 )
-	    icon_list.remove( icon );
+	// Is the icon misplaced ?
+	if ( icon->gridX() == -1 || icon->gridY() == -1 || icon->gridX() * GRID_WIDTH + icon->QWidget::width() > area.width() ||
+	     icon->gridY() * GRID_HEIGHT + icon->QWidget::height() > area.height() )
+	{
+	    QPoint p = findFreePlace();
+	    icon->setGridX( p.x() );
+	    icon->setGridY( p.y() );
+	    icon->move( area.x() + GRID_WIDTH * p.x() + ( GRID_WIDTH - icon->QWidget::width() ) / 2,
+			area.y() + GRID_HEIGHT * p.y() + ( GRID_HEIGHT - icon->QWidget::height() ) );
+	}
     }
+
+    saveLayout();
 }
 
 void KRootWidget::slotDropEvent( KDNDDropZone *_zone )
@@ -552,6 +719,7 @@ void KRootWidget::slotDropEvent( KDNDDropZone *_zone )
     KURL u( s );
     if ( !u.isMalformed() )
     {
+	// Did we just move root icons ?
 	if ( strcmp( u.directoryURL(), desktopDir.data() ) == 0 )
 	{
 	    QPoint p( _zone->getMouseX(), _zone->getMouseY() );
@@ -594,124 +762,72 @@ void KRootWidget::slotDropEvent( KDNDDropZone *_zone )
     popupMenu->popup( QPoint( dropFileX, dropFileY ) );
 }
 
-void KRootWidget::dropUpdateIcons( int _x, int _y )
-{
-    KURL u ( desktopDir.data() );
-    if ( u.isMalformed() )
-    {
-	warning(klocale->translate("Internal Error: desktopDir is malformed"));
-	exit(2);
-    }
-    
-    DIR *dp;
-    struct dirent *ep;
-    
-    dp = opendir( u.path() );
-    if ( dp == NULL )
-    {
-        warning(klocale->translate("ERROR: Could not read desktop directory"));
-	noUpdate = false;
-	return;
-    }
-    
-    QList<KRootIcon> found_icons;
-    found_icons.setAutoDelete( false );
-
-    // go thru all files in ~/Desktop. Search for new files. We assume that they
-    // are a result of the drop. This may be wrong, but it is the best method yet.
-    while ( ( ep = readdir( dp ) ) != 0L )
-    {
-	// We are not interested in '.' and '..'
-	if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
-	{   
-	    KRootIcon *icon;
-	    // bool ok = false;
-
-	    QString file = desktopDir;
-	    file.detach();
-	    file += ep->d_name;
-
-	    icon = findIcon( file.data() );
-	    	    
-	    // This icon is missing on the screen.
-	    if ( icon == 0L )
-	    {
-		KMimeType *typ = KMimeType::getMagicMimeType( file.data() );
-		// KMimeType *typ = KMimeType::findType( file.data() );
-		QPixmap *pix = typ->getPixmap( file.data() );
-		KRootIcon *icon = new KRootIcon( file, _x - pix->width() / 2, _y - pix->height() / 2 );
-		icon_list.append( icon );
-		found_icons.append( icon );
-	    }	    
-	}
-    }
-    (void) closedir( dp );
-
-    saveLayout();
-}
-
-//--------------------------------------------
-// KIORootJob
-//--------------------------------------------
-
-KIORootJob::KIORootJob( KRootWidget *_root, int _x, int _y ) : KIOJob()
-{
-    rootWidget = _root;
-    dropFileX = _x;
-    dropFileY = _y;
-}
-
-void KIORootJob::slotDropNotify( int , const char *_url )
-{
-    QString u = _url;
-    u.detach();
-    if ( u.right( 1 ) != "/" )
-	u += "/";
-    
-    if ( rootWidget->desktopDir != _url )
-	KIOServer::sendNotify( _url );
-    else
-	rootWidget->dropUpdateIcons( dropFileX, dropFileY );
-}
-
-//--------------------------------------------
-
 void KRootWidget::slotDropCopy()
 {
-    // Create a job
-    KIORootJob * job = new KIORootJob( this, dropFileX, dropFileY );
-    
-    // While copying, signals are emitted that cause the desktop to be
-    // updated. We want to avoid this, so tell the job, not to emit such
-    // signals to everybody. Instead the function, connected to the 'notify' signal of the
-    // job will do check wether the notify will cause the KRootWidget to update or
-    // not. if not, the notify will be made public, if yet a procedure will update
-    // the icons.
-    job->noGlobalNotify();
-    connect( job, SIGNAL( notify( int, const char* ) ), job, SLOT( slotDropNotify( int, const char* ) ) );    
+    // Calculate grid position for files
+    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
+    int x = ( dropFileX - area.x() ) / GRID_WIDTH;
+    int y = ( dropFileY - area.y() ) / GRID_HEIGHT;
 
+    // Create a job
+    KIOJob * job = new KIOJob();
+
+    // Create layout hints. This way we know later, where to place the icons
+    // for the files we want to copy now.
+    char *s;
+    for ( s = dropZone->getURLList().first(); s != 0L; s = dropZone->getURLList().next() )
+    {
+	QString tmp( desktopDir.data() );
+	tmp += KIOServer::getDestNameForCopy( s );
+	layoutList.append( new KRootLayout( tmp, x, y ) );
+    }
+    
     job->copy( dropZone->getURLList(), desktopDir.data() );    
 }
 
 void KRootWidget::slotDropMove()
 {
-    // Create a job
-    KIORootJob * job = new KIORootJob( this, dropFileX, dropFileY );
-    
-    job->noGlobalNotify();
-    connect( job, SIGNAL( notify( int, const char* ) ), job, SLOT( slotDropNotify( int, const char* ) ) );    
+    // Calculate grid position for files
+    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
+    int x = ( dropFileX - area.x() ) / GRID_WIDTH;
+    int y = ( dropFileY - area.y() ) / GRID_HEIGHT;
 
+    // Create a job
+    KIOJob * job = new KIOJob();
+
+    // Create layout hints. This way we know later, where to place the icons
+    // for the files we want to copy now.
+    char *s;
+    for ( s = dropZone->getURLList().first(); s != 0L; s = dropZone->getURLList().next() )
+    {
+	QString tmp( desktopDir.data() );
+	tmp += KIOServer::getDestNameForCopy( s );
+	layoutList.append( new KRootLayout( tmp, x, y ) );
+    }
+    
     job->move( dropZone->getURLList(), desktopDir.data() );
 }
 
 void KRootWidget::slotDropLink()
 {
-    // Create a job
-    KIORootJob * job = new KIORootJob( this, dropFileX, dropFileY );
-    
-    job->noGlobalNotify();
-    connect( job, SIGNAL( notify( int, const char* ) ), job, SLOT( slotDropNotify( int, const char* ) ) );    
+    // Calculate grid position for files
+    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
+    int x = ( dropFileX - area.x() ) / GRID_WIDTH;
+    int y = ( dropFileY - area.y() ) / GRID_HEIGHT;
 
+    // Create a job
+    KIOJob * job = new KIOJob();
+
+    // Create layout hints. This way we know later, where to place the icons
+    // for the files we want to copy now.
+    char *s;
+    for ( s = dropZone->getURLList().first(); s != 0L; s = dropZone->getURLList().next() )
+    {
+	QString tmp( desktopDir.data() );
+	tmp += KIOServer::getDestNameForLink( s );
+	layoutList.append( new KRootLayout( tmp, x, y ) );
+    }
+    
     job->link( dropZone->getURLList(), desktopDir.data() );
 }
 
@@ -745,20 +861,12 @@ void KRootWidget::slotFilesChanged( const char *_url )
 	// Find the icon representing the trash bin
 	for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
 	{
-	  /* Stephan: I don't know, why Torben did this in this way:
-	    QString t = icon->getURL();
-	    if ( t.right(1) != "/" )
-		t += "/";
-	    if ( t.right( 7 ) == "/Trash/" )
+	    path = icon->getURL();
+	    if ( path.right(1) != "/" )
+		path += "/";
+	    QString path2 = QString("file:") + KFMPaths::TrashPath();
+	    if ( path2 == path )
 		icon->updatePixmap();
-		*/
-	  // Stephan: my replacement
-	  path = icon->getURL();
-	  if ( path.right(1) != "/" )
-	    path += "/";
-	  QString path2 = QString("file:") + KFMPaths::TrashPath();
-	  if ( path2 == path )
-	    icon->updatePixmap();
 	}
     }
 }
@@ -831,10 +939,10 @@ void KRootWidget::slotPropertiesChanged( const char *_url, const char *_new_name
 
 void KRootWidget::slotPopupCopy()
 {
-    KfmView::clipboard.clear();
+    KfmView::clipboard->clear();
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
-	KfmView::clipboard.append( s );
+	KfmView::clipboard->append( s );
 }
 
 void KRootWidget::slotPopupTrash()
@@ -842,6 +950,7 @@ void KRootWidget::slotPopupTrash()
     KIOJob * job = new KIOJob;
     
     QString dest = "file:" + KFMPaths::TrashPath();
+    job->setOverWriteExistingFiles( true );
     job->move( popupFiles, dest );
 }
 
@@ -908,6 +1017,9 @@ void KRootWidget::slotPopupEmptyTrash()
 KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
     KDNDWidget( 0L, 0L, WStyle_Customize | WStyle_Tool | WStyle_NoBorder )
 {
+    grid_x = -1;
+    grid_y = -1;
+    
     bSelected = FALSE;
   
     popupMenu = new QPopupMenu();
@@ -934,16 +1046,18 @@ KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
     // Matthias
     // keep root icons lowered
     KWM::setDecoration(winId(), 1024);
+    
+    connect( kapp, SIGNAL( kdisplayFontChanged() ), this, SLOT( slotFontChanged() ) );
 }
 
 void KRootIcon::initToolTip()
 {
     // Does not work due to a Qt bug.
-    /*    KFileType *typ = KFileType::findType( url.data() );
+    KMimeType *typ = KMimeType::findType( url.data() );
     QString com = typ->getComment( url.data() );
     com.detach();
     if ( !com.isNull() )
-	QToolTip::add( this, com.data() ); */
+	QToolTip::add( this, com.data() );
 }
 
 void KRootIcon::init()
@@ -1077,7 +1191,7 @@ void KRootIcon::mousePressEvent( QMouseEvent *_mouse )
 	pressed = true;
 	press_x = _mouse->pos().x();
 	press_y = _mouse->pos().y();    
-	dndStartPos = mapToGlobal( QPoint( press_x, press_y ) );
+	root->dndStartPos = mapToGlobal( QPoint( press_x, press_y ) );
     }
     else if ( _mouse->button() == RightButton )
     {
@@ -1292,6 +1406,11 @@ void KRootIcon::slotDropLink()
 {
     KIOJob * job = new KIOJob;
     job->link( dropZone->getURLList(), dropDestination.data() );
+}
+
+void KRootIcon::slotFontChanged()
+{
+    init();
 }
 
 KRootIcon::~KRootIcon()

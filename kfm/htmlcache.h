@@ -35,7 +35,6 @@ public:
      * Does the real job.
      */
     void copy();
-    
 public slots:
     /**
      * Is called if the job has finished its work.
@@ -88,7 +87,7 @@ public:
      */
     static void quit();
     
-    static QString& getCachePath() { return cachePath; }
+    static QString& getCachePath() { return (*cachePath); }
 
     /**
      * This function is called whenever a job has finished its work.
@@ -111,6 +110,18 @@ public:
      */
     void stop();
     
+	/*
+	 * hack to get static classes up and running even with C++-Compilers/
+	 * Systems where a constructor of a class element declared static
+     * would never get called (Aix, Alpha,...). In the next versions these
+     * elements should disappear.
+	 */
+	static void InitStatic() {
+    	cachePath = new QString;
+    	staticJobList = new QList<HTMLCacheJob>;
+    	urlDict = new QDict<QString>;
+    	instanceList = new QList<HTMLCache>;
+	}
 public slots:
     /**
      * Checks in an already loaded URL.
@@ -147,24 +158,24 @@ protected:
     /**
      * The directory in which to store cached data.
      */
-    static QString cachePath;
+    static QString *cachePath;
 
     /**
      * List of all running jobs
      */
-    static QList<HTMLCacheJob> staticJobList;
+    static QList<HTMLCacheJob> *staticJobList;
     
     /**
      * Dict. of all cached URLs.
      * urlDict[ "http://www.kde.org/index.html" ] returns a string containing
      * the file that holds the cached data.
      */
-    static QDict<QString> urlDict;
+    static QDict<QString> *urlDict;
 
     /**
      * List of all instances
      */
-    static QList<HTMLCache> instanceList;
+    static QList<HTMLCache> *instanceList;
 
     /**
      * List of all URLs this instance is waiting for.

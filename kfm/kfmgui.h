@@ -86,7 +86,7 @@ public:
     /**
      * @eturn the list of all open windows.
      */
-    static QList<KfmGui>& getWindowList() { return windowList; }
+    static QList<KfmGui>& getWindowList() { return (*windowList); }
     
     /**
      * Enables a button in the toolbar if _enable is TRUE.
@@ -124,6 +124,17 @@ public:
     static bool sumode;
     static bool rooticons;
     
+	/*
+	 * hack to get static classes up and running even with C++-Compilers/
+	 * Systems where a constructor of a class element declared static
+     * would never get called (Aix, Alpha,...). In the next versions these
+     * elements should disappear.
+	 */
+	static void InitStatic() {
+    	animatedLogo = new QList<QPixmap>;
+		windowList = new QList<KfmGui>;
+		bookmarkManager = new KBookmarkManager;
+	}
 public slots:
     /**
      * Menu "File->Close"
@@ -424,7 +435,7 @@ protected:
     /**
      * Manager for the bookmarks.
      */
-    static KBookmarkManager bookmarkManager;
+    static KBookmarkManager *bookmarkManager;
     /**
      * Menu containing the bookmarks.
      */
@@ -433,7 +444,7 @@ protected:
     /**
      * List of all open windows.
      */
-    static QList<KfmGui> windowList;
+    static QList<KfmGui> *windowList;
         
     /**
      * Contains the windows title.
@@ -531,7 +542,7 @@ protected:
      * 
      * @see #slotAddWaitingWidget
      */
-    static QList<QPixmap> animatedLogo;
+    static QList<QPixmap> *animatedLogo;
     /**
      * The image from 0...animatedLogo.count()-1 we are currently
      * displaying.

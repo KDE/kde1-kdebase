@@ -73,7 +73,7 @@ void KFMServer::slotSelectRootIcons( int _x, int _y, int _w, int _h, bool _add )
 void KFMServer::slotSortDesktop()
 {
     if ( root )
-	KRootWidget::getKRootWidget()->sortIcons();
+	KRootWidget::getKRootWidget()->arrangeIcons();
 }
 
 void KFMServer::slotRefreshDesktop()

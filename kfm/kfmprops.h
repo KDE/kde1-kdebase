@@ -10,6 +10,7 @@
 #include <unistd.h>
 
 #include <qtabdlg.h>
+#include <qbttngrp.h>
 #include <qradiobt.h>
 #include <qlabel.h>
 #include <qlayout.h>
@@ -22,6 +23,7 @@
 #include <qgrpbox.h>
 #include <qpushbt.h>
 #include <qlistbox.h>
+#include <qtooltip.h>
 
 #include <kurl.h>
 #include <kiconloaderdialog.h>
@@ -201,18 +203,28 @@ public:
 public slots:
     void slotBrowseExec();
     
+private slots:
+    void enableCheckedEdit();
+    void disableAllEdit();
+    
 protected:
     
     QLineEdit *execEdit;
     QLineEdit *pathEdit;
     KIconLoaderButton *iconBox;
-    QCheckBox *terminalCheck;
+    QRadioButton *normalCheck;
+    QRadioButton *swallowCheck;
+    QRadioButton *terminalCheck;
+    QLineEdit *swallowTitleEdit;
+    QButtonGroup *bg;
     QLineEdit *terminalEdit;
     QButton *execBrowse;
 
     QString execStr;
     QString pathStr;
     QString iconStr;
+    QString swallowExecStr;
+    QString swallowTitleStr;
     QString termStr;
     QString termOptionsStr;
 

@@ -9,6 +9,11 @@
 #include "utils.h"
 #include "config-kfm.h"
 
+// needed for InitStatic call:
+#include "htmlcache.h"
+#include "kfmview.h"
+#include "kiojob.h"
+
 #include <kapp.h>
 #include <unistd.h>
 #include <html.h>
@@ -63,8 +68,26 @@ void testDir( const char *_name )
     closedir( dp );
 }
 
+
+void InitStaticMembers()
+{
+	/*
+	 * hack to get static classes up and running even with C++-Compilers
+	 * Systems where a constructor of a class element declared static
+     * would never get called (Aix, Alpha,...). In the next versions these
+     * elements should disappear.
+	 */
+	KMimeBind::InitStatic();
+	HTMLCache::InitStatic();
+	KfmGui::InitStatic();
+	KfmView::InitStatic();
+	KIOJob::InitStatic();
+}
+
 int main( int argc, char ** argv )
-{    
+{
+	InitStaticMembers();
+
     testDir2( "/.kde" );
     testDir2( "/.kde/share" );    
     testDir2( "/.kde/share/config" );

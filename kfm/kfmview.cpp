@@ -35,7 +35,7 @@
 
 #include <klocale.h>
 
-QStrList KfmView::clipboard;
+QStrList *KfmView::clipboard;
 
 KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_parent_view )
     : KHTMLView( parent, name, 0, _parent_view )
@@ -303,8 +303,8 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
 
 void KfmView::slotCopy()
 {
-    clipboard.clear();
-    view->getSelected( clipboard );
+    clipboard->clear();
+    view->getSelected( (*clipboard) );
 }
 
 void KfmView::slotTrash()
@@ -338,7 +338,7 @@ void KfmView::slotDelete()
 void KfmView::slotPaste()
 {
     KIOJob * job = new KIOJob;
-    job->copy( clipboard, manager->getURL().data() );
+    job->copy( (*clipboard), manager->getURL().data() );
 }
 
 void KfmView::slotPopupMenu( QStrList &_urls, const QPoint &_point )
@@ -468,10 +468,10 @@ void KfmView::slotPopupEmptyTrashBin()
 
 void KfmView::slotPopupCopy()
 {
-    clipboard.clear();
+    clipboard->clear();
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
-	clipboard.append( s );
+	clipboard->append( s );
 }
 
 void KfmView::slotPopupPaste()
@@ -484,7 +484,7 @@ void KfmView::slotPopupPaste()
     }
     
     KIOJob * job = new KIOJob;
-    job->copy( clipboard, popupFiles.first() );
+    job->copy( (*clipboard), popupFiles.first() );
 }
 
 void KfmView::slotPopupTrash()

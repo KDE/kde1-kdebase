@@ -76,7 +76,7 @@ public:
      * Holds a list of all files copied or cut.
      * This variable is public, because it is used by @ref KRootWidget, too.
      */
-    static QStrList clipboard;
+    static QStrList *clipboard;
   
     /**
      * This function is hooked into the event processing of the @ref KHTMLWidget.
@@ -111,6 +111,14 @@ public:
 
     bool isHistoryStackLocked() { return stackLock; }
     
+	/*
+	 * hack to get static classes up and running even with C++-Compilers/
+	 * Systems where a constructor of a class element declared static
+     * would never get called (Aix, Alpha,...). In the next versions these
+     * elements should disappear.
+	 */
+	static void InitStatic() { clipboard = new QStrList; }
+
 signals:
 
     /**

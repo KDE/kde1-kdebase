@@ -92,6 +92,10 @@
 #
 0	belong		0x2e7261fd	application/x-realaudio
 
+# MPEG Layer 3 sound files
+# Modified the 11/20/97 at 15:59:04 by Christophe Prud'homme <christophe.prudhomme@asci.fr>
+0       belong          0xfffb          audio/x-mp3
+                                                                  
 #------------------------------------------------------------------------------
 # c-lang:  file(1) magic for C programs or various scripts
 #

@@ -5,6 +5,6 @@ echo "Allowing root user to use this display"
 xhost +local:root
 echo ""
 echo "Logging in as super user"
-su -c "kfm -sw >/dev/null"
+su - -c "kfm -sw >/dev/null"
 xhost -local:root
 

@@ -38,7 +38,7 @@ KMimeType *BDevType;
 
 char KMimeType::icon_path[ 1024 ];
 
-QStrList KMimeBind::appList;
+QStrList *KMimeBind::appList;
 
 /***************************************************************
  *
@@ -631,6 +631,7 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, int _isdir )
 	    if ( !dev.isNull() && !fstype.isNull() )
 	    {
 		QString mp = KIOServer::findDeviceMountPoint( dev.data() );
+		// The device is yet not mounted ...
 		if ( mp.isNull() )
 		{
 		    char buff[ 1024 ];
@@ -649,12 +650,20 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, int _isdir )
 			    p++;
 			}
 			
-			QString s( klocale->translate( "Mount" ) );
-			s.detach();
-			s += " ";
-			s += (const char*)start;
-			_list.append( s.data() );   
+			// This if clause is a hack for backward copatibility
+			if ( strcmp( start, "Default" ) != 0 )
+			{
+			    QString s( klocale->translate( "Mount" ) );
+			    s.detach();
+			    s += " ";
+			    s += (const char*)start;
+			    _list.append( s.data() );   
+			}
 		    }			
+
+		    // Add default mount binding
+		    QString s( klocale->translate( "Mount" ) );
+		    _list.append( s.data() );   
 		}
 		else
 		{
@@ -1804,12 +1813,14 @@ bool KDELnkMimeType::runBinding( const char *_url, const char *_binding )
     {
 	QString point = config->readEntry( "MountPoint" );
 	QString dev = config->readEntry( "Dev" );
-	if ( !point.isNull() && !dev.isNull() )
+	if ( !dev.isNull() )
 	{
 	    if ( strcmp( _binding, klocale->translate( "Unmount" ) ) == 0 )
 	    {
 		KIOJob * job = new KIOJob();
-		job->unmount( point.data() );
+		// job->unmount( point.data() );
+		// Patch ( unmount the device )
+		job->unmount( dev.data() );
 		delete config;
 		return TRUE;
 	    }
@@ -1831,7 +1842,17 @@ bool KDELnkMimeType::runBinding( const char *_url, const char *_binding )
 		     strcmp( _binding, klocale->translate( "Mount" ) ) == 0 )
 		    job->mount( false, 0L, dev, 0L );
 		else
+		{
+		    if ( point.isEmpty() )
+		    {
+			delete config;
+			QMessageBox::critical( 0L, klocale->translate( "KFM Error" ),
+					       klocale->translate( "No mount point in *.kdelnk file" ) );
+			return true;
+		    }
+			    
 		    job->mount( ro, _binding + 6, dev, point );
+		}
 		delete config;
 		return TRUE;
 	    }

@@ -116,6 +116,13 @@ public:
     KIODirectoryEntry* getDirectoryEntry( const char *_url );
     /// Return a pointer to the running KIOServer
     static KIOServer* getKIOServer() { return pKIOServer; }
+    /**
+     * @return the name that would be used if you want to copy
+     *         the file. Usually this is like @ref KURL::filename,
+     *         but for example "http://myhost/" would result in
+     *         'http:myhost" for example
+     */
+    static QString getDestNameForCopy( const char * _url );
     /// Get a new name for a link.
     /**
       If the user wants to make a link to an URL we need to make a valid file

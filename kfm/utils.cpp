@@ -11,7 +11,7 @@ void openWithOldApplication( const char *_cmd, QStrList& _urlList )
     {
 	KURL u( s );
 	if ( !u.isMalformed() )
-	    if ( strcmp( u.protocol(), "file" ) != 0 )
+	    if ( strcmp( u.protocol(), "file" ) != 0 || u.hasSubProtocol() )
 		prot = TRUE;
     }
     

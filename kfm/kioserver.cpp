@@ -207,6 +207,27 @@ void KIOServer::slotFlushDir( const char *_url )
  * Static Functions
  * -----------------------------------------------------------------*/
 
+QString KIOServer::getDestNameForCopy( const char *_url )
+{
+    KURL kurl( _url );
+
+    QString u( _url );
+    if ( u.right(2) == ":/" )
+    {
+	QString res( kurl.protocol() );
+	if ( kurl.host() != 0L && kurl.host()[0] != 0 )
+	{
+	    res += ":";
+	    res += kurl.host();
+	}
+	return res;
+    }
+    
+    if ( u.right(1) == "/" )
+	u.truncate( u.length() -1 );
+    return QString( kurl.filename() );
+}
+
 QString KIOServer::getDestNameForLink( const char *_url )
 {
     QString name;

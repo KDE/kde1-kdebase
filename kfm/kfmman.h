@@ -215,6 +215,9 @@ protected:
      * wether we want to do so.
      */
     bool bBufferPage;
+
+	// A HACK
+	QString HTMLBuffer;
 };
 
 #endif

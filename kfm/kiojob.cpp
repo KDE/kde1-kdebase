@@ -25,8 +25,8 @@
 
 #include <klocale.h>
 
-QList<KIOJob> KIOJob::jobList;
-QDict<QString> KIOJob::passwordDict;
+QList<KIOJob> *KIOJob::jobList;
+QDict<QString> *KIOJob::passwordDict;
 
 KIOJob::KIOJob( int _id )
 {
@@ -43,13 +43,13 @@ KIOJob::KIOJob( int _id )
     id = _id;
     overwriteExistingFiles = false;
     
-    jobList.setAutoDelete( false );
-    jobList.append( this );
+    jobList->setAutoDelete( false );
+    jobList->append( this );
 }
 
 KIOJob::~KIOJob()
 {
-    jobList.removeRef( this );
+    jobList->removeRef( this );
 }
 
 void KIOJob::setOverWriteExistingFiles( bool _o )
@@ -125,6 +125,7 @@ void KIOJob::mount( bool _ro, const char *_fstype, const char* _dev, const char 
     mntPoint = _point;
     mntPoint.detach();
 
+    // Find the mount point an notify us about the changes
     QString n = KIOServer::findDeviceMountPoint( _dev, "/etc/fstab" );
     if ( !n.isNull() )
     {
@@ -1064,7 +1065,7 @@ void KIOJob::fatalError( int _kioerror, const char* _url, int )
 		    QString tmp;
 		    tmp.sprintf( "%s@%s", u.user(), u.host() );
 		    // debugT("Removing '%s' from dict !!!!!!!!!!!!!!!! ########### !!!!!!\n",tmp.data() );
-		    passwordDict.remove( tmp.data() );
+		    passwordDict->remove( tmp.data() );
 		}
 	    }
 	    if ( bDisplay )
@@ -1155,7 +1156,7 @@ void KIOJob::fatalError( int _kioerror, const char* _url, int )
 		    QString tmp;
 		    tmp.sprintf( "%s@%s", u.user(), u.host() );
 		    // debugT("Removing '%s' from dict !!!!!!!!!!!!!!!! ########### !!!!!!\n",tmp.data() );
-		    passwordDict.remove( tmp.data() );
+		    passwordDict->remove( tmp.data() );
 		}
 	    }
 	    if ( bDisplay )
@@ -1707,7 +1708,7 @@ void KIOJob::done()
 void KIOJob::deleteAllJobs()
 {
     KIOJob *j;
-    for ( j = jobList.first(); j != 0L; j = jobList.next() )
+    for ( j = jobList->first(); j != 0L; j = jobList->next() )
 	j->cancel();
 }
 
@@ -1732,7 +1733,7 @@ QString KIOJob::completeURL( const char *_url )
 	QString tmp2;
 	tmp2.sprintf( "%s@%s", u.user(), u.host() );
 	
-	if ( passwordDict[ tmp2.data() ] == 0L )
+	if ( (*passwordDict)[ tmp2.data() ] == 0L )
 	{
 	    // debugT("A\n");
 	    
@@ -1747,11 +1748,11 @@ QString KIOJob::completeURL( const char *_url )
 	    delete dlg;
 	}
 	else
-	    passwd = passwordDict[ tmp2.data() ]->data();
+	    passwd = (*passwordDict)[ tmp2.data() ]->data();
 
 	// If the password is wrong, the error function will remove it from
 	// the dict again.
-	passwordDict.insert( tmp2.data(), new QString( passwd.data() ) );
+	passwordDict->insert( tmp2.data(), new QString( passwd.data() ) );
 	
 	QString tmp;
 	tmp.sprintf( "%s:%s", u.user(), passwd.data() );

@@ -7,3 +7,34 @@
  - Added Henners patch for properties dialog. Permissions are now a joy to change :-)
  - Removed seg faulting when clicking on URL links on the desktop
  - Applied patch to make kfm compile on ALPHAS smoothly
+
+30.11.97 Torben
+
+ - Applied patch from Alessandro Mirone <alex@greco2.polytechnique.fr>
+   It fixes problems with the size recognition of some ftp file.
+ - Complete rewrite of root icon placing. Fixed many bugs. Now every icon
+   is forced to fit into some grid.
+ - Changed mounting stuff. Usual users can only edit the device entry in
+   the properties dialog, the rest is ignored. Users may only issue
+   commands like "mount <device>", that is why they are not asked for
+   mount points etc. any more. If you are the root user, then everything
+   stays the same
+ - Added MP3 to magic file
+ - Added static patch from Stefan Westerfeld <stefan@space.twc.de> to
+   make things working on AIX
+ - Added '-' to kfmsu2 to make it a login shell
+ - In the properties dialog you can change the owner only if you are root.
+   Everything else does not work anyway.
+ - Applied patch from Henner Zeller <zeller@think.de> to allow editing of
+   'kpanel swallow' stuff in *.kdelnk files
+ - Added Stefan Westerfeld <stefan@space.twc.de> to the list of authors.
+ - Directory Tree does now offer home_directory, desktop_dir and root
+   in level 0
+ - Items in directory tree are sorted now
+ - If KFM calls other apps it uses for example 'file:/home/weis/file.gz#gzip:/'
+   instead of '/home/weis/file.gz#gzip:/', but it still says '/home/weis/file'
+   for local files without subprotocol
+ - If files from the desktop are moved to the trash bin, then existing files
+   in the trashcan are going to be overwritten wthout bothering the user first.
+ - Tooltips on root icons
+

@@ -17,51 +17,25 @@
 #include "kstrlist.h"
 #include "kiojob.h"
 
-#define ROOT_GRID_WIDTH 80
-#define ROOT_GRID_HEIGHT 80
+#define GRID_WIDTH 80
+#define GRID_HEIGHT 80
 
 class KRootWidget;
 
-/// IO job for root drops
 /**
-  This special job handles notify signals different. If a notify
-  signal affects the desktop, the KRootWidget is not informed the
-  usual way. Instead the function 'dropUpdateIcons' is called with
-  the coordinates of the drop.
-  */
-class KIORootJob : public KIOJob
-{
-    Q_OBJECT
-public:
-    /// Creates a new IO job
-    /**
-      '_x' and '_y' are the coordinates of the drop.
-      */
-    KIORootJob( KRootWidget * _root, int _x, int _y );
-    
-public slots:
-    /// Gets notify events
-    /**
-      All drop IO has turned global notifies off. This slot gets all notifies
-      and must decide what to do with them.
-      */
-    void slotDropNotify( int _id, const char *_url );
-
-protected:
-    int dropFileX;
-    int dropFileY;
-    KRootWidget *rootWidget;
-};
-
+ * This class is used to store the position of files, which are not on the
+ * file system yet. For example if a file is dropped on the desktop, you know
+ * the position, but the file itself is not present yet. Until this happens,
+ * we store the stuff here.
+ */
 class KRootLayout
 {
 protected:
     int x,y;
     QString url;
-    int dndType;
 
 public:
-    KRootLayout( const char *_url, int _t, int _x, int _y ) { url = _url; x = _x; y = _y; dndType = _t; }
+    KRootLayout( const char *_url, int _x, int _y ) { url = _url; x = _x; y = _y; }
 
     int getX() { return x; }
     int getY() { return y; }
@@ -84,7 +58,6 @@ public:
     virtual void initToolTip();
 
     const char* getURL() { return url.data(); }
-    int getType() { return dndType; }
 
     /**
      * Selects/Unselects the icon.
@@ -95,19 +68,16 @@ public:
      */
     bool isSelected() { return bSelected; }
   
-    /// Returns the X-Position for saving in the file ~./desktop
-    virtual int saveX() { return x() + pixmapXOffset; }
-    /// Returns the Y-Position for saving in the file ~./desktop
-    virtual int saveY() { return y(); }
-
-    /// Returns the coordinate on which the dragginh of this icon started
-    virtual QPoint& getDndStartPos() { return dndStartPos; }
-
     /// Call to rename an icon
     /**
       _new_name is not a complete URL. It is only the filename.
       */
     virtual void rename( const char *_new_name );
+
+    int gridX() { return grid_x; }
+    int gridY() { return grid_y; }
+    void setGridX( int _x ) { grid_x = _x; }
+    void setGridY( int _y ) { grid_y = _y; }
     
 public slots:
     /**
@@ -118,6 +88,8 @@ public slots:
     void slotDropCopy();
     void slotDropMove();
     void slotDropLink();
+
+    void slotFontChanged();
     
 protected:
     virtual void resizeEvent( QResizeEvent * );
@@ -154,11 +126,6 @@ protected:
 
     bool pressed;
     int press_x, press_y;
-
-    /**
-     * The start of a drag in global coordinates
-     */
-    QPoint dndStartPos;
     
     int width;
     int height;
@@ -177,10 +144,15 @@ protected:
 
     QString dropDestination;
     QPopupMenu *popupMenu;
+
+    int grid_x;
+    int grid_y;
 };
 
 class KRootWidget : public QWidget
 {
+    friend KRootIcon;
+    
     Q_OBJECT
 public:
     KRootWidget( QWidget *parent=0, const char *name=0 );
@@ -190,10 +162,10 @@ public:
     void openPopupMenu( QStrList &_urls, const QPoint &_point );
     bool isBindingHardcoded( const char *_txt );
     
-    /// Takes all icons corresponding to the given URLs and moves them.
-    /** 
-      This function used 'icon->dndStartX/Y()' and 'p' to determine the amount of
-      pixels the icons have to move.
+    /**
+     * Takes all icons corresponding to the given URLs and moves them.
+     * This function uses 'icon->dndStartX/Y()' and 'p' to determine the amount of
+     * pixels the icons have to move.
      */
     void moveIcons( QStrList & _urls, QPoint &p );
 
@@ -223,18 +195,8 @@ public:
      */
     static KRootWidget* getKRootWidget() { return pKRootWidget; }
 
-    /// Updates the icons after a drop
     /**
-      After a drop, we assume that every new file in the desktop directory
-      is a result of the drop. So we arrange all new icons around the position of the 
-      drop. The x|y coordinates passed to this function are the point of the drop.
-      The new icons will be placed there.
-      */
-    void dropUpdateIcons( int _x, int _y );
-
-    /// The URL of the desktop.
-    /**
-      This string always ends with "/".
+     * The URL of the desktop. This string always ends with "/".
      */
     QString desktopDir;
         
@@ -242,7 +204,7 @@ public:
      * Rearranges all icons on the desktop. The algorithm tries to fit all icons
      * in a certain grid. Starting in the upper left corner of the screen.
      */
-    void sortIcons();
+    void arrangeIcons();
     
     /**
      * color of the icon label text
@@ -322,28 +284,34 @@ protected:
      */
     KRootIcon* findIcon( const char *_url );
     /**
-     * Updates the 'layoutList' from the file ~/.desktop. This does
-     * not cause any icon to movee its place. Use update for doing that.
-     */
-    void loadLayout();
-    /**
      * Saves all layout information of the root widget in the file
-     * .desktop in the users home directory.
+     * ~/.kde/share/apps/kfm/desktop.
      */
     void saveLayout();
 
     /**
-     * Returns a position for displaying the icon with the given URL.
-     * If there is no entry for this URL ( the file may be new )
-     * a default position is returned.
+     * @return a pointer to the layout object for the given
+     *         URL if there is any. It is a good idea to remove
+     *         the layout of the list of layouts once its corresponding
+     *         file showed up in the file system.
      */
-    QPoint findLayout( const char * );
+    KRootLayout* findLayout( const char *_url );
 
     /**
-     * Returns a point where we can place a new icon with the size
-     * ( _width | _height ).
+     * @return true if the position in the grid is already used by some icon.
      */
-    QPoint findFreePlace( int _width, int _height );
+    bool isPlaceUsed( int _gridx, int _gridy );
+
+    /**
+     * @return the position next to (_gridx,_gridy) that is not yet used.
+     */
+    QPoint findFreePlace( int _gridx, int _gridy );
+    
+    /**
+     * @return a point where we can place a new icon. The coordinates
+     *         returned are positions in the root widgets grid.
+     */
+    QPoint findFreePlace();
     
     /**
      * Contains a list of all visible icons on the root window.
@@ -413,6 +381,11 @@ protected:
      * @see #popupMenu
      */
     QPoint popupMenuPosition;
+
+    /**
+     * The start of am icon-drag in global coordinates
+     */
+    QPoint dndStartPos;
 };
 
 #endif
