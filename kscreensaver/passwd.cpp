@@ -66,6 +66,15 @@ extern "C" {
 #include <crypt.h>
 #endif
 
+#ifdef HAVE_PATHS_H
+#include <paths.h>
+#endif
+
+#ifndef _PATH_TMP
+#define _PATH_TMP "/tmp/"
+#endif
+
+
 extern char *ProgramName;
 extern Bool allowroot;
 extern Bool inroot;
@@ -1056,7 +1065,7 @@ krb_check_password(struct passwd *pwd, char *pass)
 		(void) strncpy(realm, krb_get_default_realm(), sizeof (realm));
 
 	/* Construct a ticket file */
-	(void) sprintf(tkfile, "/tmp/xlock_tkt_%d", getpid());
+	(void) sprintf(tkfile, _PATH_TMP"xlock_tkt_%d", getpid());
 
 	/* Now, let's make the ticket file named above the _active_ tkt file */
 	krb_set_tkt_string(tkfile);
