@@ -4,7 +4,7 @@ GMOFILES = kdehelp.gmo kfind.gmo kpanel.gmo kvt.gmo
 
 POFILES = $(GMOFILES:.gmo=.po)
 
-LANG = no
+LANG = is
 
 localedir = $(kde_locale)
 
