@@ -5,7 +5,7 @@
 <!-- Title information -->
 
 <title>KDE Control Center - Input Settings
-<author>Matthias H&ouml;lzer, Pat Dowler
+<author>Pat Dowler, Matthias H&ouml;lzer
 <date>v1.0, 17. January 1998
 
 <!-- Table of contents -->
@@ -40,6 +40,7 @@ User's are able to set the following parameters for the bell:
 <itemize>
 <item>accelerated movement rate
 <item>threshold for accelerated movement
+<item>button mapping
 </itemize>
 
 <p>
@@ -52,5 +53,9 @@ precise pointer motion over small distances and rapid motion across
 the screen with a short but quick motion. Large acceleration
 values and small threshold values may make the pointer too jumpy
 to be useful, as it will always move very quickly.
+<p>
+
+The button mapping will, if switched to left-handed, swap the meaning of the
+mouse buttons. 
 
 </article>

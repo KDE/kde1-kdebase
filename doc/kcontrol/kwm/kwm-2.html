@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <HTML>
 <HEAD>
-<TITLE>KDE Control Center - KWM: Configuring window properties</TITLE>
+<TITLE>KDE Control Center - KWM: Configuring the titlebar appearance</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
 <META NAME="keywords" CONTENT="KDE,KControl,Window manager,KWM,Windows,Titlebar">
 <META NAME="description" CONTENT="KDE Control Center - KWM">
@@ -14,50 +14,35 @@
  
 <P ALIGN="RIGHT">
 
-Next<A HREF="kwm-1.html">Previous</A>
+<A HREF="kwm-3.html">Next</A>
+<A HREF="kwm-1.html">Previous</A>
 <A HREF="kwm.html#toc2">Table of Contents</A>
 </P>
-<H3><A NAME="s2">2. Configuring window properties</A></H3>
+<H3><A NAME="s2">2. Configuring the titlebar appearance</A></H3>
 
-<P>The window manager supports the following window-manipulation
-features:
+<P>
+<P>With this dialog, you can change the visual appearance of the titlebar.
+<P>There are three options for the titlebar coloring:
 <P>
 <UL>
-<LI>window moving: transparent or opaque</LI>
-<LI>window resizing: animated or instant</LI>
-<LI>window maximizing: expand to full screen or just expand vertically</LI>
-<LI>focus policy: click or follow mouse</LI>
-<LI>auto raise: window will be raised automatically</LI>
+<LI> Shaded, fills the bar with a color gradient</LI>
+<LI> Plain, fills the bar with a simple color</LI>
+<LI> Pixmap, allows you to select pixmaps which are tilled to fill the
+titlebar</LI>
 </UL>
 <P>
-<P>Transparent window movement mode supplies a wireframe of the window
-which the user can place, while opaque movement mode means the contents
-of the window remain visible while it is being moved.
+<P>The shading scheme that is used by kwm for the shaded titlebar
+option does not show up in the titlebar preview, so you have to
+select Apply to see it. Sorry :-)
 <P>
-<P>The resizing animation looks really cool. Try it.
-<P>
-<P>The window that is "in focus" receives keyboard input and has the
-active titlebar appearance (usually colored instead of gray). The
-focus can be switched to another window with the keyboard (Alt-TAB)
-or the mouse. If "click to focus" is selected, the user must click
-in the new window to give it the focus. If "focus follows mouse"
-is selected, the focus switches to a widnow as soon as the pointer
-enters it. This makes focus switching without raising a window easier,
-but at the expense that the position of the pointer is important even
-when the pointer isn't being used. Note that kwm uses what is called
-"sloppy focus" in the latter mode: a window stay in focus after the
-pointer leaves if the pointer has not entered another window and given
-it the focus (i.e. the deskop or root window and kpanel do not get
-the focus).
-<P>
-<P>Auto raise serves to bring a window to the front (top) when it gets the
-focus. This mode applies to "focus follows mouse" policy only. Auto raise
-can be disabled by setting the delay to zero (0).
-<P>
+<P>Enabling "title animation" tells kwm to cause long window titles (too
+long to fit in the colored area of the titlebar) to slide back and forth
+in order to be visible. 
 <P>
 <P ALIGN="RIGHT">
 
-Next<A HREF="kwm-1.html">Previous</A>
+<A HREF="kwm-3.html">Next</A>
+<A HREF="kwm-1.html">Previous</A>
 <A HREF="kwm.html#toc2">Table of Contents</A>
 </P>
 <CENTER>

@@ -5,7 +5,7 @@
 <!-- Title information -->
 
 <title>KDE Control Center - Sound
-<author>Matthias H&ouml;lzer, Pat Dowler
+<author>Pat Dowler, Matthias H&ouml;lzer
 <date>v1.0, 17. January 1998
 
 <!-- Begin the document -->
@@ -31,5 +31,8 @@ User's are able to set the following parameters for the bell:
 <item>duration (in milliseconds)
 </itemize>
 
+<p>
+You can use the <tt/test/ button to hear how the current settings will
+sound.
 
 </article>

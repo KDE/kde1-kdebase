@@ -13,18 +13,10 @@
 
 <!-- Begin the document -->
 
-<sect>Configuring the kwm titlebar
+<sect>Configuring the titlebar buttons
 
 <p>
-This dialog configures some settings of <em>kwm</em>, the KDE
-window manager. The currently available options are:
-
-<itemize>
-<item>place titlebar buttons on the left or right side of the titlebar
-<item>disable and hide titlebar buttons
-<item>select shaded vs. plain appearance
-<item>titlebar animation?
-</itemize>
+This dialog configures the placement of the buttons in the titlebars.
 
 <p>
 The placement of buttons on each side of the titlebar follows a simple
@@ -37,13 +29,27 @@ Since a maximum of three (3) buttons are allowed on each side of the
 titlebar, trying to place a fourth button on either side will cause the
 innermost one to be switched off.
 
+<sect>Configuring the titlebar appearance
+<p>
+
+With this dialog, you can change the visual appearance of the titlebar.
+<p>
+There are three options for the titlebar coloring:
+
+<itemize>
+<item> Shaded, fills the bar with a color gradient
+<item> Plain, fills the bar with a simple color
+<item> Pixmap, allows you to select pixmaps which are tilled to fill the
+titlebar
+</itemize>
+
 <p>
 The shading scheme that is used by kwm for the shaded titlebar
 option does not show up in the titlebar preview, so you have to
 select Apply to see it. Sorry :-)
 
 <p>
-Enabling "titlebar animation" tells kwm to cause long window titles (too
+Enabling "title animation" tells kwm to cause long window titles (too
 long to fit in the colored area of the titlebar) to slide back and forth
 in order to be visible. 
 
