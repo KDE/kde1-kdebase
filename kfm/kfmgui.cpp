@@ -1712,9 +1712,10 @@ void KfmGui::slotForward( )
 
 void KfmGui::slotGoHistory( int id )
 {  
-    printf("id = %d\n",id);
     QStrList * hlist = Kfm::history();
-    view->openURL(hlist->at(id));
+    // The items are in reverse order, from count()-1 to count()-11
+    // so we have to do count()-1-id
+    view->openURL(hlist->at(hlist->count()-1-id));
 }
 
 //-------------------------------------------------------------------------
