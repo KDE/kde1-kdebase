@@ -1,7 +1,7 @@
 ## Makefile.am for kdebase/kdehelp/search
 
 INCLUDES = $(all_includes)
-LDADD = $(all_libraries) -lkdecore -lqt -lXext -lX11 -lstdc++ $(LIBSOCKET) $(LIBCOMPAT) $(KDE_RPATH)
+LDADD = $(all_libraries) -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(LIBCOMPAT) $(KDE_RPATH)
 bindir = $(kde_cgidir)
 
 bin_PROGRAMS = helpsearch
