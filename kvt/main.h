@@ -108,6 +108,7 @@ public:
   QComboBox *colormode;
   QLineEdit *chars;
   QComboBox *backspace;
+  QComboBox *homeend;
 
   OptionDialog(QWidget *parent, const char *name );
 

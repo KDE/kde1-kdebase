@@ -176,10 +176,26 @@ KeySym GreekSwitchKeysym = XK_Mode_switch;
 int GreekMode = GREEK_ELOT928;
 #endif
 unsigned int BackspaceSendsControlH = 0;
+unsigned int HomeEndSend = 0;
 
 int refresh_nl_count=0;
 int refresh_nl_limit = 1;
 extern int refresh_type;
+
+/* home/end key codes */
+const char* homekey[] = {
+	"\e[H",		/* kvt/xterm/ansi */
+	"\e[7~",	/* xterm-color */
+	"\e[1~",	/* linux console */
+	"\eO\200"	/* original Xterm */
+};
+
+const char* endkey[] = {
+	"\e[F",		/* kvt/xterm/ansi */
+	"\e[8~",	/* xterm-color */
+	"\e[4~",	/* linux console */
+	"\eOe"		/* original Xterm */
+};
 
 /*  Terminal mode structures.
 */
@@ -801,14 +817,16 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount, unsigned char qt_c)
 #if XlibSpecificationRelease >= 6
     case XK_KP_Home :
 #endif
-      strcpy(kbuf,"\033[H");
+      /*strcpy(kbuf,"\033[H");*/
+      strcpy(kbuf, homekey[HomeEndSend]);
       count = 3;
       break;
     case XK_End :
 #if XlibSpecificationRelease >= 6
     case XK_KP_End :
 #endif
-      strcpy(kbuf,"\033[F");
+      /*strcpy(kbuf,"\033[F");*/
+      strcpy(kbuf, endkey[HomeEndSend]);
       count = 3;
       break;
     case XK_F1 :

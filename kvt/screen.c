@@ -1295,9 +1295,9 @@ void scr_erase_line(int mode)
 /* Matthias */
 void scr_erase_char(int n){
   unsigned char *starttext;
-  // int back_color, fore_color;
+  /* int back_color, fore_color; */
   RENDITION *startrend;
-  // int end,i;
+  /* int end,i; */
   if (n < 1)
     return;
   MyWinInfo.offset = 0;
@@ -1748,7 +1748,7 @@ void scr_clear_selection(void)
 static void scr_set_clr_sel(int op_flg,int start_row,int start_col,
 			    int end_row,int end_col)
 {
-  int j,tx,a,b,i; //,c,d;
+  int j,tx,a,b,i; /*,c,d;*/
   for(j=start_row; j <= end_row ;j++)
     {
       a=0;
@@ -1775,8 +1775,8 @@ static void scr_set_clr_sel(int op_flg,int start_row,int start_col,
  ****************************************************************************/
 void scr_extend_selection(int x,int y)
 {
-  // int clr_start_row, clr_start_col,clr_end_row,clr_end_col;
-  // int set_start_row, set_start_col,set_end_row,set_end_col;
+  /* int clr_start_row, clr_start_col,clr_end_row,clr_end_col; */
+  /* int set_start_row, set_start_col,set_end_row,set_end_col; */
   int old_selend_row, old_selend_col;
   int old_direction,direction;
   
@@ -2034,7 +2034,7 @@ void scr_refresh(int x,int y,int width,int height)
  **************************************************************************/
 void screen_refresh()
 {
-  // extern int font_num;
+  /* extern int font_num; */
   char force_next,fn;
   int j,k,x1,y1,x,n,k0,xrow,x2,xrow2,k1,l,trow,trow2,count,j0;
   int rval, fore, back;

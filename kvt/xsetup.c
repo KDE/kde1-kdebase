@@ -40,14 +40,15 @@
 #include <config.h>
 
 #ifdef HAVE_NCURSES_H
-// #include <ncurses.h>
+/* #include <ncurses.h> */
 #else
-// #include <curses.h>
+/* #include <curses.h> */
 #endif
 #ifdef HAVE_SETUPTERM
 #ifndef setupterm
-// this is a hack to avoid complaining about term.h include. Anybody wants
-// to hack configure, so it detects *where* term.h is and include it here?
+/* this is a hack to avoid complaining about term.h include. Anybody wants
+ * to hack configure, so it detects *where* term.h is and include it here?
+ */
 extern int setupterm(const char *,int,int *);
 #endif
 #endif
@@ -679,14 +680,14 @@ XErrorHandler RxvtErrorHandler(Display *dpy, XErrorEvent *event)
 void LoadNewFont(){
   int w,h;
   if (mainfontfid > 0) {
-	// pre-allocated by main.C - queried by XQueryFont
+	/* pre-allocated by main.C - queried by XQueryFont */
 	XFreeFontInfo(NULL, mainfont, 1);
   } else {
-	// it was allocated by XLoadQueryFont
+	/* it was allocated by XLoadQueryFont */
 	XFreeFont(display,mainfont);
   }
   if (reg_font_handles[font_num] > 0) {
-	// a font was pre-allocated
+	/* a font was pre-allocated */
 	mainfont = XQueryFont(display,reg_font_handles[font_num]);
 	mainfontfid = 1;
   } else {
