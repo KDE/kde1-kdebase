@@ -1469,26 +1469,22 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
         popupMenu->insertItem( klocale->translate("&New"), menuNew );
         popupMenu->insertSeparator();
 
-        /* Commented out the open with for directories. David. */
-	/* id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN_WITH), 
-				    view, SLOT( slotPopupOpenWith() ) );
-	   popupMenu->insertSeparator();  
-        */
+        if ( _current_dir ) {
+          id = popupMenu->insertItem(klocale->getAlias(ID_STRING_UP), view, SLOT( slotUp() ), 100 );
 
-	id = popupMenu->insertItem(klocale->getAlias(ID_STRING_UP), view, SLOT( slotUp() ), 100 );
-	// popupMenu->setAccel( ALT + Key_Left /* Up !!*/, 100 ); // done by khtmlw. DF.
-	if ( !view->hasUpHistory() )
-	  popupMenu->setItemEnabled( id, false );
-	id = popupMenu->insertItem(klocale->getAlias(ID_STRING_BACK), view, SLOT( slotBack() ), 101 );
-	// popupMenu->setAccel( ALT + Key_Left, 101 ); // done by khtmlw. DF.
-	if ( !view->hasBackHistory() )
-	  popupMenu->setItemEnabled( id, false );
-	id = popupMenu->insertItem(klocale->getAlias(ID_STRING_FORWARD), view, SLOT( slotForward() ), 102 );
-	// popupMenu->setAccel( ALT + Key_Right, 102 ); // done by khtmlw. DF.
-	if ( !view->hasForwardHistory() )
-	  popupMenu->setItemEnabled( id, false );
+          if ( !view->hasUpHistory() )
+            popupMenu->setItemEnabled( id, false );
+          id = popupMenu->insertItem(klocale->getAlias(ID_STRING_BACK), view, SLOT( slotBack() ), 101 );
+
+          if ( !view->hasBackHistory() )
+            popupMenu->setItemEnabled( id, false );
+          id = popupMenu->insertItem(klocale->getAlias(ID_STRING_FORWARD), view, SLOT( slotForward() ), 102 );
+
+          if ( !view->hasForwardHistory() )
+            popupMenu->setItemEnabled( id, false );
 	
-	popupMenu->insertSeparator();  
+          popupMenu->insertSeparator();  
+        }
 
         /* Commented out. Left click does it. Why have it on right click menu ?. David.
         if (!_current_dir) {
