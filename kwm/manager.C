@@ -1049,7 +1049,9 @@ void Manager::lowerClient(Client* c){
 
   // X Semantics are somewhat cryptic
   Window* new_stack = new Window[nwins+1];
+  Window* hide_stack = new Window[nwins+1];
   unsigned int n = 0;
+  unsigned int nh = 0;
   new_stack[n++] = c->winId();
 
   for (i = 0; i < nwins; i++) {
@@ -1058,16 +1060,17 @@ void Manager::lowerClient(Client* c){
 	QRect r = KWM::geometry(wins[i]);
 	if (c->geometry.contains(r) || c->geometry.intersects(r)){
 	  XUnmapWindow(qt_xdisplay(), wins[i]);
-	  new_stack[n++] = wins[i];
+	  hide_stack[nh++] = wins[i];
 	}
+	new_stack[n++] = wins[i];
       }
     }
   }
 
   XLowerWindow(qt_xdisplay(), new_stack[0]);
   XRestackWindows(qt_xdisplay(), new_stack, n);
-  for (i=1; i<n; i++)
-    XMapWindow(qt_xdisplay(), new_stack[i]);
+  for (i=0; i<nh; i++)
+    XMapWindow(qt_xdisplay(), hide_stack[i]);
 
   delete [] new_stack;
   XFree((void *) wins);   
