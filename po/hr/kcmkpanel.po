@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -25,7 +25,7 @@ msgstr "&Radne povr¹ine"
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
 msgstr "uporaba: kcmkpanel [-init | {ploèa,opcije,radne povr¹ine}]\n"
 
-#: main.cpp:127
+#: main.cpp:128
 msgid "KPanel Configuration"
 msgstr "KPanel Postava"
 

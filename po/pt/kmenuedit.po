@@ -1,13 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
-
-#: kmenuedit.cpp:62
-msgid "&Reload"
-msgstr "&Recarregar Menus"
 
 #: kmenuedit.cpp:68
 msgid "Change &Menuname"
@@ -245,3 +241,6 @@ msgstr "Pessoal:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Por omissão:"
+
+#~ msgid "&Reload"
+#~ msgstr "&Recarregar Menus"

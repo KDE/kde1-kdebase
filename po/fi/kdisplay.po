@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDISPLAY\n"
-"POT-Creation-Date: 1998-05-30 17:26+0200\n"
+"POT-Creation-Date: 1998-06-16 13:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -137,10 +137,6 @@ msgstr "KDE:n Oletus"
 msgid "&Add ..."
 msgstr "&Lisää ..."
 
-#: colorscm.cpp:153
-msgid "&Remove"
-msgstr "&Poista"
-
 #: colorscm.cpp:162
 msgid "&Save changes"
 msgstr "&Tallenna muutokset"
@@ -209,11 +205,11 @@ msgstr "&Matala"
 msgid "High"
 msgstr "Korkea"
 
-#: colorscm.cpp:318
+#: colorscm.cpp:317
 msgid "Error removing"
 msgstr "Virhe poistaessa"
 
-#: colorscm.cpp:319
+#: colorscm.cpp:318
 msgid ""
 "This color scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -223,11 +219,11 @@ msgstr ""
 "Sinulla ei todennäköisesti ole oikeuksia muuttaa\n"
 "väritiedostoa siellä minne se on talletettu."
 
-#: colorscm.cpp:376
+#: colorscm.cpp:375
 msgid "Naming error"
 msgstr "Nimeämisvirhe"
 
-#: colorscm.cpp:377
+#: colorscm.cpp:376
 msgid ""
 "Please choose a unique name for the new color\n"
 "scheme. The one you entered already appears\n"
@@ -267,47 +263,51 @@ msgstr "Näytönsäästäjä"
 msgid "Lock Screen"
 msgstr "Lukitse näyttö"
 
-#: scrnsave.cpp:110 scrnsave.cpp:179
+#: scrnsave.cpp:113 scrnsave.cpp:182
 msgid "Screen Saver"
 msgstr "Näytönsäästäjä"
 
-#: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:553 scrnsave.cpp:662
+#: scrnsave.cpp:189 scrnsave.cpp:360 scrnsave.cpp:571 scrnsave.cpp:686
 msgid "No screensaver"
 msgstr "Ei näytönsäästäjää"
 
-#: scrnsave.cpp:207
+#: scrnsave.cpp:210
 msgid "&Setup ..."
 msgstr "&Asetukset..."
 
-#: scrnsave.cpp:215
+#: scrnsave.cpp:218
 msgid "&Test"
 msgstr "&Kokeile"
 
-#: scrnsave.cpp:228
+#: scrnsave.cpp:231
 msgid "Settings"
 msgstr "Asetukset"
 
-#: scrnsave.cpp:248
+#: scrnsave.cpp:251
 msgid "&Wait for"
 msgstr "&Odota"
 
-#: scrnsave.cpp:258
+#: scrnsave.cpp:261
 msgid "min."
 msgstr "min."
 
-#: scrnsave.cpp:264
+#: scrnsave.cpp:267
 msgid "&Require password"
 msgstr "&Vaatii salasanan"
 
-#: scrnsave.cpp:272
+#: scrnsave.cpp:273
+msgid "Show &password as stars"
+msgstr ""
+
+#: scrnsave.cpp:281
 msgid "Priority"
 msgstr "Prioriteetti:"
 
-#: scrnsave.cpp:285
+#: scrnsave.cpp:294
 msgid "&High"
 msgstr "&Korkea"
 
-#: scrnsave.cpp:294
+#: scrnsave.cpp:303
 msgid "Low"
 msgstr "Matala"
 
@@ -390,6 +390,9 @@ msgstr "oletus"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "kaikki"
+
+#~ msgid "&Remove"
+#~ msgstr "&Poista"
 
 #~ msgid "Default"
 #~ msgstr "Oletus"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1998-04-16 00:51+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-04-20 22:02+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -71,22 +71,6 @@ msgstr "致命的錯誤: "
 msgid "Warning: "
 msgstr "警告: "
 
-#: options.cpp:36
-msgid "Font Size"
-msgstr "字型大小"
-
-#: options.cpp:40
-msgid "Small"
-msgstr "小型"
-
-#: options.cpp:44
-msgid "Medium"
-msgstr "中型"
-
-#: options.cpp:48
-msgid "Large"
-msgstr "大型"
-
 #: options.cpp:52
 msgid "Standard Font"
 msgstr "標準字型"
@@ -114,10 +98,6 @@ msgstr "拜訪過的連結顏色:"
 #: options.cpp:303
 msgid "KDE Help Options"
 msgstr "KDE求助 選項"
-
-#: options.cpp:311 options.cpp:312
-msgid "Fonts"
-msgstr "字型"
 
 #: options.cpp:316 options.cpp:317
 msgid "Colors"
@@ -161,10 +141,6 @@ msgstr "File Formats(檔案格式)"
 msgid "Games"
 msgstr "Games(遊戲)"
 
-#: man.cpp:467
-msgid "Miscellaneous"
-msgstr "Miscellaneous(其他)"
-
 #: man.cpp:469
 msgid "System Administration"
 msgstr "System Administration(系統管理)"
@@ -202,10 +178,6 @@ msgstr "開啟檔案[&O]..."
 msgid "Open UR&L..."
 msgstr "開啟 UR&L..."
 
-#: mainwidget.cpp:137
-msgid "&Reload"
-msgstr "重新載入[&R]"
-
 #: mainwidget.cpp:139
 msgid "&Search"
 msgstr "搜尋[&S]"
@@ -225,14 +197,6 @@ msgstr "頂端[&T]"
 #: mainwidget.cpp:157
 msgid "&Up"
 msgstr "上層[&U]"
-
-#: mainwidget.cpp:158
-msgid "&Previous"
-msgstr "前一頁[&P]"
-
-#: mainwidget.cpp:159
-msgid "&Next"
-msgstr "下一頁[&N]"
 
 #: mainwidget.cpp:171
 msgid "&General Preferences..."
@@ -313,10 +277,6 @@ msgstr "求助內容"
 msgid "Reload current document"
 msgstr "重新載入目前的文件"
 
-#: mainwidget.cpp:264
-msgid "Stop"
-msgstr "停止"
-
 #: mainwidget.cpp:288
 msgid "In the Constructor!"
 msgstr "正在建造中!"
@@ -336,3 +296,33 @@ msgstr "有關 KDE 求助"
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "加入書籤[&A]"
+
+#~ msgid "Font Size"
+#~ msgstr "字型大小"
+
+#~ msgid "Small"
+#~ msgstr "小型"
+
+#~ msgid "Medium"
+#~ msgstr "中型"
+
+#~ msgid "Large"
+#~ msgstr "大型"
+
+#~ msgid "Fonts"
+#~ msgstr "字型"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Miscellaneous(其他)"
+
+#~ msgid "&Reload"
+#~ msgstr "重新載入[&R]"
+
+#~ msgid "&Previous"
+#~ msgstr "前一頁[&P]"
+
+#~ msgid "&Next"
+#~ msgstr "下一頁[&N]"
+
+#~ msgid "Stop"
+#~ msgstr "停止"

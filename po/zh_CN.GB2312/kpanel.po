@@ -1,18 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-05-30 17:26+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
-
-#: kpanel.C:213
-msgid "Move"
-msgstr "移动"
-
-#: kpanel.C:216
-msgid "Properties"
-msgstr "特性"
 
 #: kpanel.C:253
 msgid "Go!"
@@ -109,3 +101,9 @@ msgstr "错误!"
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"
 msgstr "不能把这个对象当作按钮放到面板上!"
+
+#~ msgid "Move"
+#~ msgstr "移动"
+
+#~ msgid "Properties"
+#~ msgstr "特性"

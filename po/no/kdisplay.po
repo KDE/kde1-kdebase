@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-30 17:26+0200\n"
+"POT-Creation-Date: 1998-06-16 13:56+0200\n"
 "PO-Revision-Date: 1998-02-26 22:36+0100\n"
 "Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -137,10 +137,6 @@ msgstr "KDE standard"
 msgid "&Add ..."
 msgstr "&Legg til ..."
 
-#: colorscm.cpp:153
-msgid "&Remove"
-msgstr "&Fjern"
-
 #: colorscm.cpp:162
 msgid "&Save changes"
 msgstr "&Lagre endringer"
@@ -209,11 +205,11 @@ msgstr "&Lav"
 msgid "High"
 msgstr "Høy"
 
-#: colorscm.cpp:318
+#: colorscm.cpp:317
 msgid "Error removing"
 msgstr "Feil ved sletting"
 
-#: colorscm.cpp:319
+#: colorscm.cpp:318
 msgid ""
 "This color scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -223,11 +219,11 @@ msgstr ""
 "kanskje du ikke har tilgang til å endre filsystemet\n"
 "hvor fargevalget er lagret."
 
-#: colorscm.cpp:376
+#: colorscm.cpp:375
 msgid "Naming error"
 msgstr "Navnefeil"
 
-#: colorscm.cpp:377
+#: colorscm.cpp:376
 msgid ""
 "Please choose a unique name for the new color\n"
 "scheme. The one you entered already appears\n"
@@ -266,47 +262,51 @@ msgstr "Lagre skjerm"
 msgid "Lock Screen"
 msgstr "Lås skjerm"
 
-#: scrnsave.cpp:110 scrnsave.cpp:179
+#: scrnsave.cpp:113 scrnsave.cpp:182
 msgid "Screen Saver"
 msgstr "Skjermsparer"
 
-#: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:553 scrnsave.cpp:662
+#: scrnsave.cpp:189 scrnsave.cpp:360 scrnsave.cpp:571 scrnsave.cpp:686
 msgid "No screensaver"
 msgstr "Ingen skjermsparer"
 
-#: scrnsave.cpp:207
+#: scrnsave.cpp:210
 msgid "&Setup ..."
 msgstr "&Oppsett ..."
 
-#: scrnsave.cpp:215
+#: scrnsave.cpp:218
 msgid "&Test"
 msgstr "&Test"
 
-#: scrnsave.cpp:228
+#: scrnsave.cpp:231
 msgid "Settings"
 msgstr "Innstillinger"
 
-#: scrnsave.cpp:248
+#: scrnsave.cpp:251
 msgid "&Wait for"
 msgstr "&Vent på"
 
-#: scrnsave.cpp:258
+#: scrnsave.cpp:261
 msgid "min."
 msgstr "min."
 
-#: scrnsave.cpp:264
+#: scrnsave.cpp:267
 msgid "&Require password"
 msgstr "&Krever passord"
 
-#: scrnsave.cpp:272
+#: scrnsave.cpp:273
+msgid "Show &password as stars"
+msgstr ""
+
+#: scrnsave.cpp:281
 msgid "Priority"
 msgstr "Prioritet"
 
-#: scrnsave.cpp:285
+#: scrnsave.cpp:294
 msgid "&High"
 msgstr "&Høy"
 
-#: scrnsave.cpp:294
+#: scrnsave.cpp:303
 msgid "Low"
 msgstr "Lav"
 
@@ -389,3 +389,6 @@ msgstr "standard"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "hvilken som helst"
+
+#~ msgid "&Remove"
+#~ msgstr "&Fjern"

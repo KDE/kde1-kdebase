@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -124,10 +124,6 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr ""
 
-#: titlebar.cpp:994
-msgid "Move"
-msgstr ""
-
 #: titlebar.cpp:995
 msgid "(Un)Shade"
 msgstr ""
@@ -142,10 +138,6 @@ msgstr ""
 
 #: titlebar.cpp:998
 msgid "Resize"
-msgstr ""
-
-#: titlebar.cpp:999
-msgid "Restore"
 msgstr ""
 
 #: titlebar.cpp:1000

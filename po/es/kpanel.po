@@ -1,17 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-05-30 17:26+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-06-13 14:53+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
-
-#: kpanel.C:213
-msgid "Move"
-msgstr "Mover"
-
-#: kpanel.C:216
-msgid "Properties"
-msgstr "Propiedades"
 
 #: kpanel.C:253
 msgid "Go!"
@@ -108,3 +100,9 @@ msgstr "¡Ups!"
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"
 msgstr "Imposible poner este botón en el panel."
+
+#~ msgid "Move"
+#~ msgstr "Mover"
+
+#~ msgid "Properties"
+#~ msgstr "Propiedades"

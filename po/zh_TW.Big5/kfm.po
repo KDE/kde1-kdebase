@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-06-11 00:07+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-04-20 22:30+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -25,10 +25,6 @@ msgstr "資料夾"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "錯誤: 樣板不存在 '%s'"
-
-#: kfmgui.cpp:306
-msgid "&New Window"
-msgstr "新視窗[&N]"
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -193,39 +189,13 @@ msgstr "書籤[&B]"
 msgid "&Cache"
 msgstr "快取[&C]"
 
-#: kfmgui.cpp:516
+#: kfmgui.cpp:516 kfmman.cpp:1050
 msgid "Up"
 msgstr ""
-
-#: kfmgui.cpp:564
-msgid "Stop"
-msgstr "停止"
 
 #: kfmgui.cpp:588
 msgid "Could not load icon\n"
 msgstr "無法載入圖示\n"
-
-#: bookmark.cpp:259 kbind.cpp:304 kbind.cpp:376 kbind.cpp:428 kbind.cpp:1529
-#: kbind.cpp:1537 kbind.cpp:1555 kbind.cpp:1572 kbind.cpp:1630 kbind.cpp:1642
-#: kbind.cpp:1669 kbind.cpp:1684 kbind.cpp:1704 kbind.cpp:1716 kbind.cpp:1733
-#: kbind.cpp:1855 kbind.cpp:1867 kbind.cpp:1912 kbind.cpp:1954 kfmexec.cpp:60
-#: kfmexec.cpp:92 kfmexec/main.cpp:47 kfmgui.cpp:589 kfmgui.cpp:745
-#: kfmman.cpp:295 kfmman.cpp:1021 kfmman.cpp:1188 kfmman.cpp:1214
-#: kfmprops.cpp:366 kfmprops.cpp:617 kfmprops.cpp:643 kfmprops.cpp:823
-#: kfmprops.cpp:945 kfmprops.cpp:1072 kfmprops.cpp:1388 kfmprops.cpp:1600
-#: kfmprops.cpp:1776 kfmserver.cpp:39 kfmserver.cpp:157 kfmserver.cpp:237
-#: kfmserver.cpp:284 kfmserver.cpp:293 kfmserver.cpp:301 kfmtree.cpp:163
-#: kfmtree.cpp:286 kfmtree.cpp:317 kfmtree.cpp:323 kfmtree.cpp:329
-#: kfmview.cpp:351 kfmview.cpp:370 kfmview.cpp:376 kfmview.cpp:439
-#: kfmview.cpp:445 kfmview.cpp:451 kfmview.cpp:526 kfmview.cpp:552
-#: kfmview.cpp:570 kfmview.cpp:576 kfmview.cpp:582 kiojob.cpp:234
-#: kiojob.cpp:242 kiojob.cpp:249 kiojob.cpp:274 kiojob.cpp:293 kiojob.cpp:304
-#: kiojob.cpp:326 kiojob.cpp:345 kiojob.cpp:551 kiojob.cpp:791 kiojob.cpp:822
-#: kiojob.cpp:863 kiojob.cpp:1677 krenamewin.cpp:120 root.cpp:1098
-#: root.cpp:1116 root.cpp:1122 root.cpp:1128 root.cpp:1203 root.cpp:1710
-#: root.cpp:1735
-msgid "KFM Error"
-msgstr "KFM 發生錯誤"
 
 #: kfmexec.cpp:59 kfmgui.cpp:744 kfmman.cpp:1020
 msgid "Malformed URL\n"
@@ -248,7 +218,7 @@ msgid "New "
 msgstr "新 "
 
 #: kfmgui.cpp:1058 kfmgui.cpp:1220 kfmjob.cpp:33 kfmman.cpp:218
-#: kfmtree.cpp:318 kfmview.cpp:371 kfmview.cpp:440 kfmview.cpp:571
+#: kfmtree.cpp:318 kfmview.cpp:375 kfmview.cpp:444 kfmview.cpp:575
 #: kiojob.cpp:83 root.cpp:1117
 msgid "ERROR: Malformed URL"
 msgstr "錯誤: 不正確的 URL"
@@ -289,20 +259,20 @@ msgstr ""
 msgid "Document: Done"
 msgstr "文件: 完成"
 
-#: kfmview.cpp:352
+#: kfmview.cpp:356
 msgid "ERROR: Drop over malformed URL"
 msgstr "錯誤: 拖曳到不正確的 URL"
 
-#: kfmview.cpp:377
+#: kfmview.cpp:381
 msgid "ERROR: You dropped some URL over itself"
 msgstr "錯誤: 拖曳 URL 到自己本身"
 
-#: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:412
-#: kfmview.cpp:606 krenamewin.cpp:20 root.cpp:1158
+#: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:416
+#: kfmview.cpp:610 krenamewin.cpp:20 root.cpp:1158
 msgid "KFM Warning"
 msgstr "KFM 警告"
 
-#: kfmtree.cpp:357 kfmview.cpp:413 kfmview.cpp:607 root.cpp:1159
+#: kfmtree.cpp:357 kfmview.cpp:417 kfmview.cpp:611 root.cpp:1159
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -312,39 +282,39 @@ msgstr ""
 "\n"
 "刪除的檔案無法還原!"
 
-#: kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1123
+#: kfmtree.cpp:324 kfmview.cpp:450 kfmview.cpp:581 root.cpp:1123
 msgid "ERROR: You dropped a URL over itself"
 msgstr "錯誤: 拖曳一個 URL 到自己本身"
 
-#: kfmtree.cpp:330 kfmview.cpp:452 kfmview.cpp:583 root.cpp:1129
+#: kfmtree.cpp:330 kfmview.cpp:456 kfmview.cpp:587 root.cpp:1129
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "錯誤: 拖曳一個目錄到它其中一個子目錄上"
 
-#: kfmexec.cpp:254 kfmman.cpp:867 kfmview.cpp:468
+#: kfmexec.cpp:254 kfmman.cpp:867 kfmview.cpp:472
 msgid "Open With:"
 msgstr "以...開啟:"
 
-#: kfmview.cpp:485 root.cpp:1068
+#: kfmview.cpp:489 root.cpp:1068
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "錯誤: 無法開啟多個檔案的特質內容"
 
-#: kfmtree.cpp:287 kfmview.cpp:527 root.cpp:1204
+#: kfmtree.cpp:287 kfmview.cpp:531 root.cpp:1204
 msgid "Could not access Trash Bin"
 msgstr "無法讀取垃圾桶"
 
-#: kfmview.cpp:553 root.cpp:1099
+#: kfmview.cpp:557 root.cpp:1099
 msgid "Can not paste into multiple directories"
 msgstr "無法貼入多檔目錄中"
 
-#: kfmview.cpp:639
+#: kfmview.cpp:643
 msgid "ERROR: Can not change to multiple directories"
 msgstr "錯誤: 無法改變多個目錄"
 
-#: kfmview.cpp:755
+#: kfmview.cpp:759
 msgid "KFM Security Alert"
 msgstr "KFM 安全警報"
 
-#: kfmview.cpp:756
+#: kfmview.cpp:760
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -352,16 +322,16 @@ msgstr ""
 "這個 page 不被信任\n"
 "但它包涵一個鍊結到您的區域檔案系統."
 
-#: kfmview.cpp:842
+#: kfmview.cpp:846
 msgid "Symbolic Link"
 msgstr "符號鏈結"
 
-#: kfmview.cpp:844
+#: kfmview.cpp:848
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (鏈結)"
 
-#: kfmview.cpp:864
+#: kfmview.cpp:868
 msgid "bytes"
 msgstr "位元組"
 
@@ -381,12 +351,12 @@ msgstr "沒有安裝任何 mime 類型!"
 msgid "Could not find mime type\n"
 msgstr "找不到 mime 類型\n"
 
-#: kbind.cpp:697 kbind.cpp:707 kbind.cpp:1890 kbind.cpp:1891 kbind.cpp:1903
-#: kbind.cpp:1905
+#: kbind.cpp:697 kbind.cpp:707 kbind.cpp:1889 kbind.cpp:1890 kbind.cpp:1902
+#: kbind.cpp:1904
 msgid "Mount"
 msgstr "Mount"
 
-#: kbind.cpp:713 kbind.cpp:1881
+#: kbind.cpp:713 kbind.cpp:1880
 msgid "Unmount"
 msgstr "Unmount"
 
@@ -402,11 +372,11 @@ msgstr "在目錄 "
 msgid "Could not execute program\n"
 msgstr "無法執行程式\n"
 
-#: kbind.cpp:1528
+#: kbind.cpp:1527
 msgid "Could not find binding"
 msgstr "找不到關聯程式"
 
-#: kbind.cpp:1538
+#: kbind.cpp:1537
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -414,11 +384,11 @@ msgstr ""
 "這是一份文件!\n"
 "不是一個應用程式"
 
-#: kbind.cpp:1556 kbind.cpp:1573
+#: kbind.cpp:1555 kbind.cpp:1572
 msgid "Can only start executables on local disks\n"
 msgstr "只能執行區域磁碟的程式\n"
 
-#: kbind.cpp:1631 kbind.cpp:1705 kbind.cpp:1856
+#: kbind.cpp:1630 kbind.cpp:1704 kbind.cpp:1855
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -426,7 +396,7 @@ msgstr ""
 "只能作用於\n"
 "區域硬碟上的 *.kdelink"
 
-#: kbind.cpp:1641
+#: kbind.cpp:1640
 #, c-format
 msgid ""
 "Could not access\n"
@@ -435,19 +405,19 @@ msgstr ""
 "無法讀取\n"
 "%s"
 
-#: kbind.cpp:1670
+#: kbind.cpp:1669
 msgid "The \"Link=....\" entry is empty"
 msgstr "這個 \"Link=....\" 的內容是空的"
 
-#: kbind.cpp:1685
+#: kbind.cpp:1684
 msgid "The config file has no \"Type=...\" line"
 msgstr "設定檔並無 \"Type=...\" 這一行"
 
-#: kbind.cpp:1715 kbind.cpp:1866
+#: kbind.cpp:1714 kbind.cpp:1865
 msgid "Could not access"
 msgstr "無法讀取"
 
-#: kbind.cpp:1734
+#: kbind.cpp:1733
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -459,81 +429,57 @@ msgstr ""
 "紀錄內容. 請編輯特質內容\n"
 "以解決這個問題"
 
-#: kbind.cpp:1822
+#: kbind.cpp:1821
 msgid "ERROR: No Terminal Setting"
 msgstr "錯誤: 沒有終端機設定"
 
-#: kbind.cpp:1913
+#: kbind.cpp:1912
 msgid "No mount point in *.kdelnk file"
 msgstr "在 *.kdelnk 中沒有 mount point"
 
-#: kbind.cpp:1953
+#: kbind.cpp:1952
 msgid "Unknown binding"
 msgstr "未知的關聯"
 
-#: main.cpp:65 main.cpp:199
+#: main.cpp:80 main.cpp:203
 msgid "KFM Information"
 msgstr "KFM 資訊"
 
-#: main.cpp:66
+#: main.cpp:81
 msgid "Creating directory:\n"
 msgstr "建立目錄:\n"
 
-#: main.cpp:200
+#: main.cpp:204
 msgid "Installing Templates"
 msgstr "安裝樣板中"
 
-#: main.cpp:235
+#: main.cpp:239
 msgid "Cd"
 msgstr "切換目錄"
 
-#: main.cpp:236
+#: main.cpp:240
 msgid "New View"
 msgstr "新視窗"
 
-#: kfmtree.cpp:223 main.cpp:239
+#: kfmtree.cpp:223 main.cpp:243
 msgid "Move to Trash"
 msgstr "移至垃圾桶"
 
-#: main.cpp:241
+#: main.cpp:245
 msgid "Open with"
 msgstr "以...開啟"
 
-#: kfmman.cpp:1206 kfmtree.cpp:155 main.cpp:243
-msgid "Move"
-msgstr "搬移"
-
-#: kfmman.cpp:1149 kfmtree.cpp:233 main.cpp:244
-msgid "Properties"
-msgstr "特質內容"
-
-#: kfmman.cpp:1210 kfmtree.cpp:159 main.cpp:245
+#: kfmman.cpp:1226 kfmtree.cpp:159 main.cpp:249
 msgid "Link"
 msgstr "鏈結"
 
-#: main.cpp:246
+#: main.cpp:250
 msgid "Empty Trash Bin"
 msgstr "空垃圾桶"
 
-#: main.cpp:247
+#: main.cpp:251
 msgid "Add to Bookmarks"
 msgstr "加入書籤"
-
-#: htmlopts.cpp:35
-msgid "Font Size"
-msgstr "字型大小"
-
-#: htmlopts.cpp:39
-msgid "Small"
-msgstr "小型"
-
-#: htmlopts.cpp:43
-msgid "Medium"
-msgstr "中型"
-
-#: htmlopts.cpp:47
-msgid "Large"
-msgstr "大型"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
@@ -575,7 +521,7 @@ msgstr "垂直格線間隔:"
 msgid "Transparent Text for Root Icons."
 msgstr ""
 
-#: bookmark.cpp:259
+#: bookmark.cpp:264
 #, fuzzy
 msgid "Could not write bookmark"
 msgstr "無法寫入書籤\n"
@@ -887,11 +833,11 @@ msgstr "錯誤: 無法讀取桌面目錄 '%s'"
 msgid "ERROR: Can not accept drop"
 msgstr "錯誤: 拖曳無法接受"
 
-#: kfmman.cpp:1189 root.cpp:1711
+#: kfmman.cpp:1205 root.cpp:1711
 msgid "Dont know what to do."
 msgstr "不知道該如何做."
 
-#: kfmman.cpp:1215 kfmtree.cpp:164 root.cpp:1736
+#: kfmman.cpp:1231 kfmtree.cpp:164 root.cpp:1736
 msgid "Dont know what to do"
 msgstr "不知道該如何做"
 
@@ -907,7 +853,7 @@ msgstr " 連接 host 中"
 msgid "Working ..."
 msgstr "工作中 ..."
 
-#: kfmman.cpp:1084 kfmtree.cpp:230
+#: kfmman.cpp:1100 kfmtree.cpp:230
 msgid "Add To Bookmarks"
 msgstr "加入書籤"
 
@@ -986,15 +932,6 @@ msgstr ""
 "由 %s\n"
 "至 %s\n"
 "或許\是拒絕存取"
-
-#: kiojob.cpp:1208 kiojob.cpp:1216 kiojob.cpp:1225 kiojob.cpp:1233
-#: kiojob.cpp:1241 kiojob.cpp:1249 kiojob.cpp:1257 kiojob.cpp:1265
-#: kiojob.cpp:1281 kiojob.cpp:1299 kiojob.cpp:1307 kiojob.cpp:1314
-#: kiojob.cpp:1325 kiojob.cpp:1340 kiojob.cpp:1348 kiojob.cpp:1356
-#: kiojob.cpp:1364 kiojob.cpp:1372 kiojob.cpp:1380 kiojob.cpp:1388
-#: kiojob.cpp:1406 kiojob.cpp:1414 kiojob.cpp:1422
-msgid "Continue"
-msgstr "繼續"
 
 #: kiojob.cpp:1212 kiojob.cpp:1352
 #, c-format
@@ -1288,10 +1225,6 @@ msgstr "代理伺服器(&Proxy)"
 msgid "User &Agent"
 msgstr "使用者委託[&A]"
 
-#: kkfmoptdlg.cpp:24
-msgid "&Fonts"
-msgstr "字型[&F]"
-
 #: kkfmoptdlg.cpp:27
 msgid "&Colors"
 msgstr "顏色[&C]"
@@ -1370,3 +1303,36 @@ msgid ""
 msgstr ""
 "文法錯誤:\n"
 "kfmexec 命令 [URLs ....]\n"
+
+#~ msgid "&New Window"
+#~ msgstr "新視窗[&N]"
+
+#~ msgid "Stop"
+#~ msgstr "停止"
+
+#~ msgid "KFM Error"
+#~ msgstr "KFM 發生錯誤"
+
+#~ msgid "Move"
+#~ msgstr "搬移"
+
+#~ msgid "Properties"
+#~ msgstr "特質內容"
+
+#~ msgid "Font Size"
+#~ msgstr "字型大小"
+
+#~ msgid "Small"
+#~ msgstr "小型"
+
+#~ msgid "Medium"
+#~ msgstr "中型"
+
+#~ msgid "Large"
+#~ msgstr "大型"
+
+#~ msgid "Continue"
+#~ msgstr "繼續"
+
+#~ msgid "&Fonts"
+#~ msgstr "字型[&F]"

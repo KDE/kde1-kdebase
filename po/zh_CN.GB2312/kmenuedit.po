@@ -1,14 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
-
-#: kmenuedit.cpp:62
-msgid "&Reload"
-msgstr "重新载入[&R]"
 
 #
 #: kmenuedit.cpp:68
@@ -250,3 +246,6 @@ msgstr "个人:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "缺省:"
+
+#~ msgid "&Reload"
+#~ msgstr "重新载入[&R]"

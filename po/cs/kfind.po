@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind 0.3.5\n"
-"POT-Creation-Date: 1998-05-24 00:14+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-05-26 08:14 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -21,55 +21,51 @@ msgstr "Adresáøe:"
 msgid "Cannot open or read directory."
 msgstr "Nemohu otevøít nebo èíst adresáø."
 
-#: kfindtop.cpp:115
+#: kfindtop.cpp:118
 msgid "&Start search"
 msgstr "Spustit &hledání"
 
-#: kfindtop.cpp:117
+#: kfindtop.cpp:120
 msgid "S&top search"
 msgstr "Zas&tavit hledání"
 
-#: kfindtop.cpp:122
+#: kfindtop.cpp:125
 msgid "&Open"
 msgstr "&Otevøít"
 
-#: kfindtop.cpp:124
+#: kfindtop.cpp:127
 msgid "&Add to archive"
 msgstr "Pøidat do &archivu"
 
-#: kfindtop.cpp:129
+#: kfindtop.cpp:132
 msgid "&Properties"
 msgstr "&Vlastnosti"
 
-#: kfindtop.cpp:132
+#: kfindtop.cpp:135
 msgid "Open Containing &Folder"
 msgstr "Otevøít o&dpovídající adresáø"
 
-#: kfindtop.cpp:135
+#: kfindtop.cpp:138
 msgid "&Save Search"
 msgstr "U&lo¾it výsledky"
 
-#: kfindtop.cpp:147
-msgid "&Cut"
-msgstr "&Vyjmout"
-
-#: kfindtop.cpp:152
+#: kfindtop.cpp:155
 msgid "&Select All"
 msgstr "Vybr&at v¹e"
 
-#: kfindtop.cpp:154
+#: kfindtop.cpp:157
 msgid "Unse&lect All"
 msgstr "Nic &nevybrat"
 
-#: kfindtop.cpp:156
+#: kfindtop.cpp:159
 msgid "&Invert Selection"
 msgstr "&Invertovat výbìr"
 
-#: kfindtop.cpp:168
+#: kfindtop.cpp:171
 msgid "&Preferences ..."
 msgstr "&Preference..."
 
-#: kfindtop.cpp:173
+#: kfindtop.cpp:176
 #, c-format
 msgid ""
 "KFind %s\n"
@@ -86,31 +82,27 @@ msgstr ""
 "Zvlá¹tní podìkování Stephanu Kulowovi\n"
 "<coolo@kde.org>"
 
-#: kfindtop.cpp:193
+#: kfindtop.cpp:196
 msgid "Start Search"
 msgstr "Spustit hledání"
 
-#: kfindtop.cpp:198
+#: kfindtop.cpp:201
 msgid "New Search"
 msgstr "Nové hledání"
 
-#: kfindtop.cpp:203
+#: kfindtop.cpp:206
 msgid "Stop Search"
 msgstr "Zastavit hledání"
 
-#: kfindtop.cpp:216
+#: kfindtop.cpp:219
 msgid "Add to archive"
 msgstr "Pøidat do archivu"
 
-#: kfindtop.cpp:226
-msgid "Properties"
-msgstr "Vlastnosti"
-
-#: kfindtop.cpp:231
+#: kfindtop.cpp:234
 msgid "Open Containing Folder"
 msgstr "Otevøít odpovídající adresáø"
 
-#: kfindtop.cpp:236
+#: kfindtop.cpp:239
 msgid "Save Search Results"
 msgstr "Ulo¾it výsledky"
 
@@ -185,10 +177,6 @@ msgstr "Veli&kost:"
 #: kftabdlg.cpp:232
 msgid "All Files and Folders"
 msgstr "V¹echny soubory a adresáøe"
-
-#: kftabdlg.cpp:233
-msgid "Files"
-msgstr "Soubory"
 
 #: kftabdlg.cpp:234
 msgid "Folders"
@@ -363,3 +351,12 @@ msgstr "Nemohu urèit typ archivu!"
 #: kfwin.cpp:495
 msgid "Error while creating child process!"
 msgstr "Chyba pøi vytváøení procesu!"
+
+#~ msgid "&Cut"
+#~ msgstr "&Vyjmout"
+
+#~ msgid "Properties"
+#~ msgstr "Vlastnosti"
+
+#~ msgid "Files"
+#~ msgstr "Soubory"

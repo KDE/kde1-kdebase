@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-11 00:07+0200\n"
+"POT-Creation-Date: 1998-06-16 13:56+0200\n"
 "PO-Revision-Date: 1998-01-27 15:40+CET-1\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -127,16 +127,16 @@ msgstr "Otte"
 msgid "Unnamed Desktop"
 msgstr ""
 
-#: main.C:950
+#: main.C:962
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Nogle pixmaps er ubrugelige: ShapeMode ikke iværksat\n"
 
-#: main.C:1062
+#: main.C:1074
 #, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Nogle pixmaps er ubrugelige: ShapeMode ikke iværksat\n"
 
-#: main.C:1295
+#: main.C:1307
 msgid "*** No Tasks ***"
 msgstr ""
 

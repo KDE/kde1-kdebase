@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.6\n"
-"POT-Creation-Date: 1998-04-16 00:51+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-04-17 15:23 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -71,22 +71,6 @@ msgstr "Neostranitelná chyba: "
 msgid "Warning: "
 msgstr "Pozor: "
 
-#: options.cpp:36
-msgid "Font Size"
-msgstr "Velikost fontu"
-
-#: options.cpp:40
-msgid "Small"
-msgstr "Malý"
-
-#: options.cpp:44
-msgid "Medium"
-msgstr "Støední"
-
-#: options.cpp:48
-msgid "Large"
-msgstr "Velký"
-
 #: options.cpp:52
 msgid "Standard Font"
 msgstr "Standardní font"
@@ -114,10 +98,6 @@ msgstr "Barva pou¾itého odkazu:"
 #: options.cpp:303
 msgid "KDE Help Options"
 msgstr "Nastavení KDE nápovìdy"
-
-#: options.cpp:311 options.cpp:312
-msgid "Fonts"
-msgstr "Fonty"
 
 #: options.cpp:316 options.cpp:317
 msgid "Colors"
@@ -161,10 +141,6 @@ msgstr "Datové formáty"
 msgid "Games"
 msgstr "Hry"
 
-#: man.cpp:467
-msgid "Miscellaneous"
-msgstr "Rùzné"
-
 #: man.cpp:469
 msgid "System Administration"
 msgstr "Administrace systému"
@@ -202,10 +178,6 @@ msgstr "&Otevøít soubor..."
 msgid "Open UR&L..."
 msgstr "Otevøít UR&L..."
 
-#: mainwidget.cpp:137
-msgid "&Reload"
-msgstr "O&bnov"
-
 #: mainwidget.cpp:139
 msgid "&Search"
 msgstr "&Hledat"
@@ -225,14 +197,6 @@ msgstr "Hlavní s&tránka"
 #: mainwidget.cpp:157
 msgid "&Up"
 msgstr "Nahor&u"
-
-#: mainwidget.cpp:158
-msgid "&Previous"
-msgstr "&Pøede¹lý uzel"
-
-#: mainwidget.cpp:159
-msgid "&Next"
-msgstr "&Následující uzel"
 
 #: mainwidget.cpp:171
 msgid "&General Preferences..."
@@ -321,10 +285,6 @@ msgstr "Obsah nápovìdy"
 msgid "Reload current document"
 msgstr "Obnov souèasný dokument"
 
-#: mainwidget.cpp:264
-msgid "Stop"
-msgstr "Stop"
-
 #: mainwidget.cpp:288
 msgid "In the Constructor!"
 msgstr "V konstruktoru1"
@@ -344,3 +304,33 @@ msgstr "O KDE nápovìdì"
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Pøidej zálo¾ku"
+
+#~ msgid "Font Size"
+#~ msgstr "Velikost fontu"
+
+#~ msgid "Small"
+#~ msgstr "Malý"
+
+#~ msgid "Medium"
+#~ msgstr "Støední"
+
+#~ msgid "Large"
+#~ msgstr "Velký"
+
+#~ msgid "Fonts"
+#~ msgstr "Fonty"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Rùzné"
+
+#~ msgid "&Reload"
+#~ msgstr "O&bnov"
+
+#~ msgid "&Previous"
+#~ msgstr "&Pøede¹lý uzel"
+
+#~ msgid "&Next"
+#~ msgstr "&Následující uzel"
+
+#~ msgid "Stop"
+#~ msgstr "Stop"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:51+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -71,22 +71,6 @@ msgstr "Nepovratna gre¹ka: "
 msgid "Warning: "
 msgstr "Upozorenje: "
 
-#: options.cpp:36
-msgid "Font Size"
-msgstr "Velièina fonta"
-
-#: options.cpp:40
-msgid "Small"
-msgstr "Mali"
-
-#: options.cpp:44
-msgid "Medium"
-msgstr "Srednji"
-
-#: options.cpp:48
-msgid "Large"
-msgstr "Veliki"
-
 #: options.cpp:52
 msgid "Standard Font"
 msgstr "Standardni font"
@@ -114,10 +98,6 @@ msgstr "Boja posjeæenog linka:"
 #: options.cpp:303
 msgid "KDE Help Options"
 msgstr "KDE opcije pomoæi"
-
-#: options.cpp:311 options.cpp:312
-msgid "Fonts"
-msgstr "Fontovi"
 
 #: options.cpp:316 options.cpp:317
 msgid "Colors"
@@ -161,10 +141,6 @@ msgstr "Formati datoteka"
 msgid "Games"
 msgstr "Igre"
 
-#: man.cpp:467
-msgid "Miscellaneous"
-msgstr "Razno"
-
 #: man.cpp:469
 msgid "System Administration"
 msgstr "Administracija sustava"
@@ -202,10 +178,6 @@ msgstr "&Otvori datoteku..."
 msgid "Open UR&L..."
 msgstr "Otvori UR&L..."
 
-#: mainwidget.cpp:137
-msgid "&Reload"
-msgstr "&Uèitaj Ponovo"
-
 #: mainwidget.cpp:139
 msgid "&Search"
 msgstr "&Tra¾i"
@@ -225,14 +197,6 @@ msgstr "&Vrh"
 #: mainwidget.cpp:157
 msgid "&Up"
 msgstr "&Gore"
-
-#: mainwidget.cpp:158
-msgid "&Previous"
-msgstr "&Prethodni"
-
-#: mainwidget.cpp:159
-msgid "&Next"
-msgstr "Slj&edeæi"
 
 #: mainwidget.cpp:171
 msgid "&General Preferences..."
@@ -319,10 +283,6 @@ msgstr "Sadr¾aj pomoæi"
 msgid "Reload current document"
 msgstr "Ponovo uèitaj tekuæi dokument"
 
-#: mainwidget.cpp:264
-msgid "Stop"
-msgstr "Stani"
-
 #: mainwidget.cpp:288
 msgid "In the Constructor!"
 msgstr "U konstruktor!"
@@ -342,3 +302,33 @@ msgstr "O KDE pomoæi"
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Dodaj bookmark"
+
+#~ msgid "Font Size"
+#~ msgstr "Velièina fonta"
+
+#~ msgid "Small"
+#~ msgstr "Mali"
+
+#~ msgid "Medium"
+#~ msgstr "Srednji"
+
+#~ msgid "Large"
+#~ msgstr "Veliki"
+
+#~ msgid "Fonts"
+#~ msgstr "Fontovi"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Razno"
+
+#~ msgid "&Reload"
+#~ msgstr "&Uèitaj Ponovo"
+
+#~ msgid "&Previous"
+#~ msgstr "&Prethodni"
+
+#~ msgid "&Next"
+#~ msgstr "Slj&edeæi"
+
+#~ msgid "Stop"
+#~ msgstr "Stani"

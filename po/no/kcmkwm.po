@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-03-22 17:21:32+0100\n"
 "Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -129,10 +129,6 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "(Ikke)maksimer"
 
-#: titlebar.cpp:994
-msgid "Move"
-msgstr "Flytt"
-
 #: titlebar.cpp:995
 msgid "(Un)Shade"
 msgstr "(Ikke)skygge"
@@ -148,10 +144,6 @@ msgstr "(Un)Sticky"
 #: titlebar.cpp:998
 msgid "Resize"
 msgstr "Ny størrelse"
-
-#: titlebar.cpp:999
-msgid "Restore"
-msgstr "Gjenopprett"
 
 #: titlebar.cpp:1000
 msgid "Operations Menu"
@@ -284,3 +276,9 @@ msgid ""
 msgstr ""
 "Vindulåsområde:\n"
 "       (punkter)"
+
+#~ msgid "Move"
+#~ msgstr "Flytt"
+
+#~ msgid "Restore"
+#~ msgstr "Gjenopprett"

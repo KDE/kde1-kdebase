@@ -6,21 +6,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-05-30 17:26+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-03-16 01:59+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
-
-#: kpanel.C:213
-msgid "Move"
-msgstr "Переместить"
-
-#: kpanel.C:216
-msgid "Properties"
-msgstr "Свойства"
 
 #: kpanel.C:253
 msgid "Go!"
@@ -117,6 +109,12 @@ msgstr ""
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
+
+#~ msgid "Move"
+#~ msgstr "Переместить"
+
+#~ msgid "Properties"
+#~ msgstr "Свойства"
 
 #~ msgid "Location"
 #~ msgstr "Расположение"

@@ -1,21 +1,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-03 22:39+0100\n"
-"POT-Creation-Date: 1998-05-30 17:26+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi "
 "<Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
-
-#: kpanel.C:213
-msgid "Move"
-msgstr "Sposta"
-
-#: kpanel.C:216
-msgid "Properties"
-msgstr "Proprietà"
 
 #: kpanel.C:253
 msgid "Go!"
@@ -112,3 +104,9 @@ msgstr "Ops!"
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"
 msgstr "Impossibile mettere questo come pulsante sul pannello!"
+
+#~ msgid "Move"
+#~ msgstr "Sposta"
+
+#~ msgid "Properties"
+#~ msgstr "Proprietà"

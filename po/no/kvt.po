@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-11 18:35+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-02-27 10:21+0100\n"
 "Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -13,123 +13,127 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.C:293
+#: main.C:347
 msgid "choose type of color-mode"
 msgstr "Velg type fargemodus"
 
-#: main.C:299
+#: main.C:353
 msgid "Add characters to word class"
 msgstr "Legg til tegn til ordklassen"
 
-#: main.C:305
+#: main.C:359
 msgid "The backspace key will send a"
 msgstr "Slettetasten vil sende en"
 
-#: main.C:459
+#: main.C:365
+msgid "Cursor key set"
+msgstr ""
+
+#: main.C:532
 msgid "&New Terminal"
 msgstr "&Ny terminal"
 
-#: main.C:466 main.C:838
+#: main.C:539 main.C:915
 msgid "&Hide"
 msgstr "&Skjul"
 
-#: main.C:467
+#: main.C:540
 msgid "&Left"
 msgstr "&Venstre"
 
-#: main.C:468
+#: main.C:541
 msgid "&Right"
 msgstr "&Høyre"
 
-#: main.C:473
+#: main.C:546
 msgid "&Normal"
 msgstr "Normal"
 
-#: main.C:474
+#: main.C:547
 msgid "&Tiny"
 msgstr "&Bitteliten"
 
-#: main.C:475
+#: main.C:548
 msgid "&Small"
 msgstr "&Liten"
 
-#: main.C:476
+#: main.C:549
 msgid "&Medium"
 msgstr "&Medium"
 
-#: main.C:477
+#: main.C:550
 msgid "&Large"
 msgstr "Stor"
 
-#: main.C:478
+#: main.C:551
 msgid "&Huge"
 msgstr "&Veldig stor"
 
-#: main.C:490
+#: main.C:563
 msgid "&black/white"
 msgstr "&svart/hvit"
 
-#: main.C:491
+#: main.C:564
 msgid "&white/black"
 msgstr "&hvit/svart"
 
-#: main.C:492
+#: main.C:565
 msgid "&green/black"
 msgstr "&grønn/svart"
 
-#: main.C:493
+#: main.C:566
 msgid "black/light&yellow"
 msgstr "s&vart/lys gul"
 
-#: main.C:494
+#: main.C:567
 msgid "Linu&x Console"
 msgstr "Linu&x-konsoll"
 
-#: main.C:503
+#: main.C:576
 msgid "&Custom Colors"
 msgstr "&Egendefinerte farger"
 
-#: main.C:510 main.C:774
+#: main.C:583 main.C:849
 msgid "Hide &Menubar"
 msgstr "Skjul &menylinje"
 
-#: main.C:512 main.C:696 main.C:766
+#: main.C:585 main.C:771 main.C:841
 msgid "Show &Menubar"
 msgstr "Vis &menulinje"
 
-#: main.C:513 main.C:784
+#: main.C:586 main.C:859
 msgid "Secure &keyboard"
 msgstr "Sikre &tastatur"
 
-#: main.C:515
+#: main.C:588
 msgid "Scroll&bar"
 msgstr "&Rullefelt"
 
-#: main.C:516
+#: main.C:589
 msgid "&Font size"
 msgstr "&Skrifttypestørrelse"
 
-#: main.C:517
+#: main.C:590
 msgid "&Color"
 msgstr "&Farge"
 
-#: main.C:518
+#: main.C:591
 msgid "&Size"
 msgstr "S&tørrelse"
 
-#: main.C:519
+#: main.C:592
 msgid "Terminal..."
 msgstr "Terminal..."
 
-#: main.C:520
+#: main.C:593
 msgid "Font..."
 msgstr "Skrifttype..."
 
-#: main.C:522
+#: main.C:595
 msgid "Save &Options"
 msgstr "Lagre &valg"
 
-#: main.C:531
+#: main.C:604
 msgid ""
 "\n"
 "\n"
@@ -147,23 +151,23 @@ msgstr ""
 "Terminal emulering for KDE Desktop Environment\n"
 "basert på Robert Nation's rxvt-2.08"
 
-#: main.C:705 main.C:831
+#: main.C:780 main.C:908
 msgid "&Show"
 msgstr "&Vis"
 
-#: main.C:780
+#: main.C:855
 msgid "Unsecure &keyboard"
 msgstr "Usikret &tastatur"
 
-#: main.C:791
+#: main.C:866
 msgid "Terminal Options"
 msgstr "Terminalvalg"
 
-#: main.C:943
+#: main.C:1020
 msgid "Hint"
 msgstr "Hint"
 
-#: main.C:944
+#: main.C:1021
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -171,7 +175,7 @@ msgstr ""
 "Nye fargeinnstillinger vil bli vist\n"
 "når tastaturet er usikret."
 
-#: main.C:1237
+#: main.C:1322
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -185,58 +189,62 @@ msgstr ""
 "basert på Robert Nation's rxvt-2.08\n"
 "\n"
 
-#: main.C:1241
+#: main.C:1326
 msgid "Permitted arguments are:\n"
 msgstr "Lovlige argumenter er:\n"
 
-#: main.C:1242
+#: main.C:1327
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 "-e <kommando> <arg> ...   kjør kommando med ars - må være siste argument\n"
 
-#: main.C:1243
+#: main.C:1328
 msgid "-display <name>           specify the display (server)\n"
 msgstr "-display <navn>          oppgi skjerm(tjener)\n"
 
-#: main.C:1244
+#: main.C:1329
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr "-vt_geometry <spes>       vt-vinduets geometry ved start\n"
 
-#: main.C:1245
+#: main.C:1330
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr "-print-pipe <navn>        oppgi rør for vt100-skriver\n"
 
-#: main.C:1246
+#: main.C:1331
 msgid "-vt_bg <colour>           background color\n"
 msgstr "-vt_bg <farge>            bakgrunnsfarge\n"
 
-#: main.C:1247
+#: main.C:1332
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr "-vt_fg <farge>            forgrunnsfarge\n"
 
-#: main.C:1248
+#: main.C:1333
 msgid "-vt_font <fontname>       normal font\n"
 msgstr "-vt_font <skrifttype>     vanlig skrifttype\n"
 
-#: main.C:1249
+#: main.C:1334
+msgid "-no_font_hack             turn off Qt font bug workaround\n"
+msgstr ""
+
+#: main.C:1335
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr "-vt_size <størrelse>      tiny, small, normal, large, huge\n"
 
-#: main.C:1250
+#: main.C:1336
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr ""
 "-linux                    sett opp kvt til å etterligne linux-konsolet\n"
 
-#: main.C:1251
+#: main.C:1337
 msgid "-no_menubar               hide the menubar\n"
 msgstr "-no_menubar               skjul menylinje\n"
 
-#: main.C:1252
+#: main.C:1338
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr "-no_scrollbar             skjul rullefelt\n"
 
-#: main.C:1253
+#: main.C:1339
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
@@ -244,19 +252,19 @@ msgstr ""
 "-T <tekst>                tekst i tittellinjen til vinduet\n"
 "                          (Foreldret. Bruk -caption isteden)\n"
 
-#: main.C:1255
+#: main.C:1341
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr "-tn <TERM>                Terminaltype. Standard er xterm.\n"
 
-#: main.C:1256
+#: main.C:1342
 msgid "-C                        Capture system console message\n"
 msgstr "-C                        Vis systemkonsollmeldinger\n"
 
-#: main.C:1257
+#: main.C:1343
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr "-n <tekst>                navn på ikon eller ikon-vindu\n"
 
-#: main.C:1258
+#: main.C:1344
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
@@ -264,7 +272,7 @@ msgstr ""
 "-7                        kjør i 7-bitsmodus\n"
 "-8                        kjør i 8-bitsmodus\n"
 
-#: main.C:1260
+#: main.C:1346
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
@@ -274,7 +282,7 @@ msgstr ""
 "-ls-                      initsialiser kvts skall som et                     "
 "      ikke-logginnskall (standard)\n"
 
-#: main.C:1262
+#: main.C:1348
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
@@ -282,11 +290,11 @@ msgstr ""
 "-meta <arg>               behandle Meta med ESCAPE-prefiks, 8bits eller "
 "ignorer\n"
 
-#: main.C:1263
+#: main.C:1349
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr "-sl <nummer>              lagre nummer linjer i rullelinjeminnet\n"
 
-#: main.C:1264
+#: main.C:1350
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
@@ -298,7 +306,7 @@ msgstr ""
 "-pagedown <keysym>        bruk hurtigtast alt-tastsym for å rulle ned "
 "buffer\n"
 
-#: main.C:1268
+#: main.C:1354
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.10\n"
-"POT-Creation-Date: 1998-06-11 00:07+0200\n"
+"POT-Creation-Date: 1998-06-16 13:56+0200\n"
 "PO-Revision-Date: 1998-01-18 05:15+06:00\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: ru <ru@li.org>\n"
@@ -133,16 +133,16 @@ msgstr "Восемь"
 msgid "Unnamed Desktop"
 msgstr ""
 
-#: main.C:950
+#: main.C:962
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Некоторые пиктограммы некорректны: ShapeMode отключено\n"
 
-#: main.C:1062
+#: main.C:1074
 #, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Некоторые пиктограммы некорректны: ShapeMode отключено\n"
 
-#: main.C:1295
+#: main.C:1307
 msgid "*** No Tasks ***"
 msgstr "*** Задач нет ***"
 

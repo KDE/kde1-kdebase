@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-24 00:14+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-03-12 14:47+0100\n"
 "Last-Translator: Svein Olav Aasen <svein.aasen@caa.no / soaasen@online.no>\n"
 "Language-Team: no<LL@li.org>\n"
@@ -21,55 +21,51 @@ msgstr "Mapper:"
 msgid "Cannot open or read directory."
 msgstr "Kan ikke åpne eller lese mappe."
 
-#: kfindtop.cpp:115
+#: kfindtop.cpp:118
 msgid "&Start search"
 msgstr "&Start søk"
 
-#: kfindtop.cpp:117
+#: kfindtop.cpp:120
 msgid "S&top search"
 msgstr "S&topp søk"
 
-#: kfindtop.cpp:122
+#: kfindtop.cpp:125
 msgid "&Open"
 msgstr "&Åpne"
 
-#: kfindtop.cpp:124
+#: kfindtop.cpp:127
 msgid "&Add to archive"
 msgstr "&Legg til arkiv"
 
-#: kfindtop.cpp:129
+#: kfindtop.cpp:132
 msgid "&Properties"
 msgstr "&Egenskaper"
 
-#: kfindtop.cpp:132
+#: kfindtop.cpp:135
 msgid "Open Containing &Folder"
 msgstr "Åpne inneholdene mappe"
 
-#: kfindtop.cpp:135
+#: kfindtop.cpp:138
 msgid "&Save Search"
 msgstr "&Lagre søk"
 
-#: kfindtop.cpp:147
-msgid "&Cut"
-msgstr "&Klipp ut"
-
-#: kfindtop.cpp:152
+#: kfindtop.cpp:155
 msgid "&Select All"
 msgstr "&Velg alle"
 
-#: kfindtop.cpp:154
+#: kfindtop.cpp:157
 msgid "Unse&lect All"
 msgstr "Fjern alle va&lg"
 
-#: kfindtop.cpp:156
+#: kfindtop.cpp:159
 msgid "&Invert Selection"
 msgstr "&Invertere valg"
 
-#: kfindtop.cpp:168
+#: kfindtop.cpp:171
 msgid "&Preferences ..."
 msgstr "&Preferanser..."
 
-#: kfindtop.cpp:173
+#: kfindtop.cpp:176
 #, c-format
 msgid ""
 "KFind %s\n"
@@ -86,31 +82,27 @@ msgstr ""
 "Spesiell takk til Stephan Kulow\n"
 "<coolo@kde.org>"
 
-#: kfindtop.cpp:193
+#: kfindtop.cpp:196
 msgid "Start Search"
 msgstr "Start søk"
 
-#: kfindtop.cpp:198
+#: kfindtop.cpp:201
 msgid "New Search"
 msgstr "Nytt søk"
 
-#: kfindtop.cpp:203
+#: kfindtop.cpp:206
 msgid "Stop Search"
 msgstr "Stopp søk"
 
-#: kfindtop.cpp:216
+#: kfindtop.cpp:219
 msgid "Add to archive"
 msgstr "Legg til arkiv"
 
-#: kfindtop.cpp:226
-msgid "Properties"
-msgstr "Egenskaper"
-
-#: kfindtop.cpp:231
+#: kfindtop.cpp:234
 msgid "Open Containing Folder"
 msgstr "Åpne inneholdene mappe"
 
-#: kfindtop.cpp:236
+#: kfindtop.cpp:239
 msgid "Save Search Results"
 msgstr "Lagre søkeresulatater"
 
@@ -185,10 +177,6 @@ msgstr "&Størrelsen er:"
 #: kftabdlg.cpp:232
 msgid "All Files and Folders"
 msgstr "Alle filer og mapper"
-
-#: kftabdlg.cpp:233
-msgid "Files"
-msgstr "Filer"
 
 #: kftabdlg.cpp:234
 msgid "Folders"
@@ -363,3 +351,12 @@ msgstr "Kunne ikke gjenkjenne arkiv type!"
 #: kfwin.cpp:495
 msgid "Error while creating child process!"
 msgstr "Feil ved opprettelse av underordnet prosess!"
+
+#~ msgid "&Cut"
+#~ msgstr "&Klipp ut"
+
+#~ msgid "Properties"
+#~ msgstr "Egenskaper"
+
+#~ msgid "Files"
+#~ msgstr "Filer"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-06-16 12:05+0200\n"
+"POT-Creation-Date: 1998-06-16 13:53+0200\n"
 "PO-Revision-Date: 1998-06-08 23:45+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgstr "Color:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 science.cpp:1024 slip.cpp:378 space.cpp:587
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1026 slip.cpp:378 space.cpp:587
 #: swarm.cpp:341
 msgid "Speed:"
 msgstr "Velocitat:"
@@ -386,12 +386,12 @@ msgstr ""
 "\n"
 "Portat a kscreensave per Emanuel Pirker."
 
-#: main.cpp:280
+#: main.cpp:286
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "L'opció %s no té suport en aquesta plataforma!"
 
-#: main.cpp:307
+#: main.cpp:313
 msgid ""
 "Your system uses shadow passwords!\n"
 "Please contact your system administrator.\n"
@@ -403,11 +403,11 @@ msgstr ""
 "\n"
 "Digueu-li que us cal suid pels salvapantalles!"
 
-#: main.cpp:312
+#: main.cpp:318
 msgid "Shadow Passwords"
 msgstr "Paraules de pas ombra"
 
-#: main.cpp:470
+#: main.cpp:476
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -416,7 +416,7 @@ msgstr ""
 "Us: %s -install|-setup|-test|-desc|-preview mid|-inroot\n"
 "    [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:473
+#: main.cpp:479
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -578,11 +578,11 @@ msgstr ""
 "\n"
 "Portat a kscreensave per Martin Jones."
 
-#: saver.cpp:52 saver.cpp:112
+#: saver.cpp:56 saver.cpp:146
 msgid "Enter Password"
 msgstr "Paraula de pas"
 
-#: saver.cpp:82
+#: saver.cpp:114
 msgid "Failed"
 msgstr "Fallat"
 
@@ -591,52 +591,52 @@ msgid "Science"
 msgstr "Ciència"
 
 #: science.cpp:448
-msgid "preparing lens..."
+msgid "rendering lens..."
 msgstr ""
 
-#: science.cpp:768
+#: science.cpp:770
 msgid "grabbing screen..."
 msgstr ""
 
-#: science.cpp:930
+#: science.cpp:932
 msgid "Setup Science"
 msgstr "Valors Ciència"
 
-#: science.cpp:948
+#: science.cpp:950
 #, fuzzy
 msgid "Mode:"
 msgstr "Meitat:"
 
-#: science.cpp:963
+#: science.cpp:965
 msgid "Inverse"
 msgstr ""
 
-#: science.cpp:973
+#: science.cpp:975
 msgid "Gravity"
 msgstr ""
 
-#: science.cpp:982
+#: science.cpp:984
 msgid "Hide Background"
 msgstr ""
 
-#: science.cpp:1008
+#: science.cpp:1010
 msgid "Intensity:"
 msgstr "Intensitat:"
 
-#: science.cpp:1038
+#: science.cpp:1040
 msgid "Motion:"
 msgstr ""
 
-#: science.cpp:1259
+#: science.cpp:1261
 #, fuzzy
 msgid "Science Version"
 msgstr "Ciència"
 
-#: science.cpp:1260
+#: science.cpp:1262
 msgid "written by"
 msgstr ""
 
-#: science.cpp:1260
+#: science.cpp:1263
 msgid "About Science"
 msgstr "Quant a Ciència"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-05-21 00:18+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -130,10 +130,6 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "(Des)Maximitzar"
 
-#: titlebar.cpp:994
-msgid "Move"
-msgstr "Moure"
-
 #: titlebar.cpp:995
 msgid "(Un)Shade"
 msgstr "(Des)Arronsar"
@@ -149,10 +145,6 @@ msgstr "(Des)Apegalós"
 #: titlebar.cpp:998
 msgid "Resize"
 msgstr "Dimensionar"
-
-#: titlebar.cpp:999
-msgid "Restore"
-msgstr "Restaurar"
 
 #: titlebar.cpp:1000
 msgid "Operations Menu"
@@ -289,6 +281,12 @@ msgid ""
 msgstr ""
 "Zona de salt a les finestres:\n"
 "       (pixels)"
+
+#~ msgid "Move"
+#~ msgstr "Moure"
+
+#~ msgid "Restore"
+#~ msgstr "Restaurar"
 
 #~ msgid "Shaded"
 #~ msgstr "Ombrejada"

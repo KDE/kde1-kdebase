@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-06-13 15:16+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
@@ -125,10 +125,6 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "(Des)Maximizar"
 
-#: titlebar.cpp:994
-msgid "Move"
-msgstr "Mover"
-
 #: titlebar.cpp:995
 msgid "(Un)Shade"
 msgstr "Cerrar/Abrir persiana"
@@ -144,10 +140,6 @@ msgstr "(Des)Pegar"
 #: titlebar.cpp:998
 msgid "Resize"
 msgstr "Redimensionar"
-
-#: titlebar.cpp:999
-msgid "Restore"
-msgstr "Restaurar"
 
 #: titlebar.cpp:1000
 msgid "Operations Menu"
@@ -279,3 +271,9 @@ msgid ""
 msgstr ""
 "Zona de adhesión en ventanas:\n"
 "       (pixels)"
+
+#~ msgid "Move"
+#~ msgstr "Mover"
+
+#~ msgid "Restore"
+#~ msgstr "Restaurar"

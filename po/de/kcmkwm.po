@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-03-30 16:29+01\n"
 "Last-Translator: Oliver Hensel <oliver.hensel@gmx.de>\n"
 
@@ -125,10 +125,6 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "Maximieren an/aus"
 
-#: titlebar.cpp:994
-msgid "Move"
-msgstr "Bewegen"
-
 #: titlebar.cpp:995
 msgid "(Un)Shade"
 msgstr "Rolladen hoch/runter"
@@ -144,10 +140,6 @@ msgstr "Anheften an/aus"
 #: titlebar.cpp:998
 msgid "Resize"
 msgstr "Größe ändern"
-
-#: titlebar.cpp:999
-msgid "Restore"
-msgstr "Wiederherstellen"
 
 #: titlebar.cpp:1000
 msgid "Operations Menu"
@@ -280,6 +272,12 @@ msgid ""
 msgstr ""
 "Fenster-Einrastzone:\n"
 "       (Pixel)"
+
+#~ msgid "Move"
+#~ msgstr "Bewegen"
+
+#~ msgid "Restore"
+#~ msgstr "Wiederherstellen"
 
 #~ msgid "Shaded"
 #~ msgstr "Schattiert"

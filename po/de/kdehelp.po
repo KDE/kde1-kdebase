@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-04-16 00:51+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -63,22 +63,6 @@ msgstr "Nicht behebbarer Fehler: "
 msgid "Warning: "
 msgstr "Warnung: "
 
-#: options.cpp:36
-msgid "Font Size"
-msgstr "Schriftgröße"
-
-#: options.cpp:40
-msgid "Small"
-msgstr "Klein"
-
-#: options.cpp:44
-msgid "Medium"
-msgstr "Mittel"
-
-#: options.cpp:48
-msgid "Large"
-msgstr "Groß"
-
 #: options.cpp:52
 msgid "Standard Font"
 msgstr "Standardschrift"
@@ -108,10 +92,6 @@ msgstr "Farbe besuchter Links:"
 #: options.cpp:303
 msgid "KDE Help Options"
 msgstr "Einstellungen für KDE-Hilfe"
-
-#: options.cpp:311 options.cpp:312
-msgid "Fonts"
-msgstr "Zeichensatz"
 
 #: options.cpp:316 options.cpp:317
 msgid "Colors"
@@ -156,10 +136,6 @@ msgstr "Dateiformate"
 msgid "Games"
 msgstr "Spiele"
 
-#: man.cpp:467
-msgid "Miscellaneous"
-msgstr "Diverses"
-
 #: man.cpp:469
 msgid "System Administration"
 msgstr "Verwaltung"
@@ -200,10 +176,6 @@ msgstr "&Datei öffnen ..."
 msgid "Open UR&L..."
 msgstr "UR&L öffnen..."
 
-#: mainwidget.cpp:137
-msgid "&Reload"
-msgstr "&Neu laden"
-
 #: mainwidget.cpp:139
 msgid "&Search"
 msgstr "&Suchen"
@@ -223,14 +195,6 @@ msgstr "&Startseite"
 #: mainwidget.cpp:157
 msgid "&Up"
 msgstr "&Hoch"
-
-#: mainwidget.cpp:158
-msgid "&Previous"
-msgstr "&Letztes"
-
-#: mainwidget.cpp:159
-msgid "&Next"
-msgstr "&Nächstes"
 
 #: mainwidget.cpp:171
 msgid "&General Preferences..."
@@ -324,10 +288,6 @@ msgstr "Inhalt der Hilfe "
 msgid "Reload current document"
 msgstr "Lade aktuelles Dokument neu"
 
-#: mainwidget.cpp:264
-msgid "Stop"
-msgstr "Halt"
-
 #: mainwidget.cpp:288
 msgid "In the Constructor!"
 msgstr "Im Konstruktor!"
@@ -348,3 +308,33 @@ msgstr "Information über KDE-Hilfe"
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Lesezeichen hinzufügen"
+
+#~ msgid "Font Size"
+#~ msgstr "Schriftgröße"
+
+#~ msgid "Small"
+#~ msgstr "Klein"
+
+#~ msgid "Medium"
+#~ msgstr "Mittel"
+
+#~ msgid "Large"
+#~ msgstr "Groß"
+
+#~ msgid "Fonts"
+#~ msgstr "Zeichensatz"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Diverses"
+
+#~ msgid "&Reload"
+#~ msgstr "&Neu laden"
+
+#~ msgid "&Previous"
+#~ msgstr "&Letztes"
+
+#~ msgid "&Next"
+#~ msgstr "&Nächstes"
+
+#~ msgid "Stop"
+#~ msgstr "Halt"

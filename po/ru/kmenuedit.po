@@ -6,17 +6,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-03-16 02:08+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
-
-#: kmenuedit.cpp:62
-msgid "&Reload"
-msgstr "Пергрузить"
 
 #: kmenuedit.cpp:68
 msgid "Change &Menuname"
@@ -254,6 +250,9 @@ msgstr "Личные:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "По умолчанию:"
+
+#~ msgid "&Reload"
+#~ msgstr "Пергрузить"
 
 #~ msgid "Type:"
 #~ msgstr "Тип:"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1998-04-16 00:51+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-01-26 14:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -63,22 +63,6 @@ msgstr "Erro Fatal:"
 msgid "Warning: "
 msgstr "Aviso: "
 
-#: options.cpp:36
-msgid "Font Size"
-msgstr "Tamanho da Fonte"
-
-#: options.cpp:40
-msgid "Small"
-msgstr "Pequeno"
-
-#: options.cpp:44
-msgid "Medium"
-msgstr "Médio"
-
-#: options.cpp:48
-msgid "Large"
-msgstr "Grande"
-
 #: options.cpp:52
 msgid "Standard Font"
 msgstr "Fonte Standard"
@@ -106,10 +90,6 @@ msgstr "Cor do Link Seguido:"
 #: options.cpp:303
 msgid "KDE Help Options"
 msgstr "Opções do KDE Help"
-
-#: options.cpp:311 options.cpp:312
-msgid "Fonts"
-msgstr "Fontes"
 
 #: options.cpp:316 options.cpp:317
 msgid "Colors"
@@ -153,10 +133,6 @@ msgstr "Formatos de Ficheiro"
 msgid "Games"
 msgstr "Jogos"
 
-#: man.cpp:467
-msgid "Miscellaneous"
-msgstr "Variados"
-
 #: man.cpp:469
 msgid "System Administration"
 msgstr "Administração do Sistema"
@@ -194,10 +170,6 @@ msgstr "Abrir Ficheir&o..."
 msgid "Open UR&L..."
 msgstr "Abrir UR&L..."
 
-#: mainwidget.cpp:137
-msgid "&Reload"
-msgstr "&Recarregar"
-
 #: mainwidget.cpp:139
 msgid "&Search"
 msgstr "&Procurar"
@@ -217,14 +189,6 @@ msgstr "&Topo"
 #: mainwidget.cpp:157
 msgid "&Up"
 msgstr "&Cima"
-
-#: mainwidget.cpp:158
-msgid "&Previous"
-msgstr "&Anterior"
-
-#: mainwidget.cpp:159
-msgid "&Next"
-msgstr "&Seguinte"
 
 #: mainwidget.cpp:171
 msgid "&General Preferences..."
@@ -314,10 +278,6 @@ msgstr "Conteúdo da Ajuda"
 msgid "Reload current document"
 msgstr "Recarregar documento actual"
 
-#: mainwidget.cpp:264
-msgid "Stop"
-msgstr "Parar"
-
 #: mainwidget.cpp:288
 msgid "In the Constructor!"
 msgstr "No Construtor!"
@@ -337,3 +297,33 @@ msgstr "Acerca do KDE Help"
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Adicionar Favorito"
+
+#~ msgid "Font Size"
+#~ msgstr "Tamanho da Fonte"
+
+#~ msgid "Small"
+#~ msgstr "Pequeno"
+
+#~ msgid "Medium"
+#~ msgstr "Médio"
+
+#~ msgid "Large"
+#~ msgstr "Grande"
+
+#~ msgid "Fonts"
+#~ msgstr "Fontes"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Variados"
+
+#~ msgid "&Reload"
+#~ msgstr "&Recarregar"
+
+#~ msgid "&Previous"
+#~ msgstr "&Anterior"
+
+#~ msgid "&Next"
+#~ msgstr "&Seguinte"
+
+#~ msgid "Stop"
+#~ msgstr "Parar"

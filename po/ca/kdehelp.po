@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1998-04-16 00:51+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-05-21 00:03+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -71,22 +71,6 @@ msgstr "Error fatal: "
 msgid "Warning: "
 msgstr "Avís: "
 
-#: options.cpp:36
-msgid "Font Size"
-msgstr "Mida de font"
-
-#: options.cpp:40
-msgid "Small"
-msgstr "Xicoteta"
-
-#: options.cpp:44
-msgid "Medium"
-msgstr "Mitjana"
-
-#: options.cpp:48
-msgid "Large"
-msgstr "Gran"
-
 #: options.cpp:52
 msgid "Standard Font"
 msgstr "Font estàndard"
@@ -114,10 +98,6 @@ msgstr "Color d'enllaç conegut:"
 #: options.cpp:303
 msgid "KDE Help Options"
 msgstr "Opcions d'ajut KDE"
-
-#: options.cpp:311 options.cpp:312
-msgid "Fonts"
-msgstr "Fonts"
 
 #: options.cpp:316 options.cpp:317
 msgid "Colors"
@@ -161,10 +141,6 @@ msgstr "Formats de fitxer"
 msgid "Games"
 msgstr "Jocs"
 
-#: man.cpp:467
-msgid "Miscellaneous"
-msgstr "Miscel·lani"
-
 #: man.cpp:469
 msgid "System Administration"
 msgstr "Administració del sistema"
@@ -202,10 +178,6 @@ msgstr "&Obrir fitxer..."
 msgid "Open UR&L..."
 msgstr "Obrir &URL..."
 
-#: mainwidget.cpp:137
-msgid "&Reload"
-msgstr "&Refrescar"
-
 #: mainwidget.cpp:139
 msgid "&Search"
 msgstr "&Buscar"
@@ -225,14 +197,6 @@ msgstr "&Dalt"
 #: mainwidget.cpp:157
 msgid "&Up"
 msgstr "&Amunt"
-
-#: mainwidget.cpp:158
-msgid "&Previous"
-msgstr "&Previ"
-
-#: mainwidget.cpp:159
-msgid "&Next"
-msgstr "&Següent"
 
 #: mainwidget.cpp:171
 msgid "&General Preferences..."
@@ -320,10 +284,6 @@ msgstr "Contingut de l'ajut"
 msgid "Reload current document"
 msgstr "Refrescar el document actual"
 
-#: mainwidget.cpp:264
-msgid "Stop"
-msgstr "Aturar"
-
 #: mainwidget.cpp:288
 msgid "In the Constructor!"
 msgstr "En el constructor!"
@@ -343,3 +303,33 @@ msgstr "Quant a l'ajut KDE"
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Afegir punt"
+
+#~ msgid "Font Size"
+#~ msgstr "Mida de font"
+
+#~ msgid "Small"
+#~ msgstr "Xicoteta"
+
+#~ msgid "Medium"
+#~ msgstr "Mitjana"
+
+#~ msgid "Large"
+#~ msgstr "Gran"
+
+#~ msgid "Fonts"
+#~ msgstr "Fonts"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Miscel·lani"
+
+#~ msgid "&Reload"
+#~ msgstr "&Refrescar"
+
+#~ msgid "&Previous"
+#~ msgstr "&Previ"
+
+#~ msgid "&Next"
+#~ msgstr "&Següent"
+
+#~ msgid "Stop"
+#~ msgstr "Aturar"

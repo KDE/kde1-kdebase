@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind \n"
-"POT-Creation-Date: 1998-05-24 00:14+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-03-25 21:30+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -14,58 +14,54 @@ msgstr "Katalogi:"
 msgid "Cannot open or read directory."
 msgstr "Nie mo¿na otworzyæ lub odczytaæ katalogu."
 
-#: kfindtop.cpp:115
+#: kfindtop.cpp:118
 #, fuzzy
 msgid "&Start search"
 msgstr "Zacznij szukanie"
 
-#: kfindtop.cpp:117
+#: kfindtop.cpp:120
 #, fuzzy
 msgid "S&top search"
 msgstr "Zatrzymaj szukanie"
 
-#: kfindtop.cpp:122
+#: kfindtop.cpp:125
 msgid "&Open"
 msgstr "&Otwórz"
 
-#: kfindtop.cpp:124
+#: kfindtop.cpp:127
 msgid "&Add to archive"
 msgstr "&Dodaj do archiwum"
 
-#: kfindtop.cpp:129
+#: kfindtop.cpp:132
 msgid "&Properties"
 msgstr "&W³a¶ciwo¶ci..."
 
-#: kfindtop.cpp:132
+#: kfindtop.cpp:135
 msgid "Open Containing &Folder"
 msgstr "Otwórz zawarto¶æ &katalogu"
 
-#: kfindtop.cpp:135
+#: kfindtop.cpp:138
 msgid "&Save Search"
 msgstr "&Zachowaj wyniki"
 
-#: kfindtop.cpp:147
-msgid "&Cut"
-msgstr "&Wytnij"
-
-#: kfindtop.cpp:152
+#: kfindtop.cpp:155
 msgid "&Select All"
 msgstr "&Zaznacz wszyskie"
 
-#: kfindtop.cpp:154
+#: kfindtop.cpp:157
 #, fuzzy
 msgid "Unse&lect All"
 msgstr "&Zaznacz wszyskie"
 
-#: kfindtop.cpp:156
+#: kfindtop.cpp:159
 msgid "&Invert Selection"
 msgstr "&Odwróæ zaznaczenie"
 
-#: kfindtop.cpp:168
+#: kfindtop.cpp:171
 msgid "&Preferences ..."
 msgstr "&Ustawienia..."
 
-#: kfindtop.cpp:173
+#: kfindtop.cpp:176
 #, c-format
 msgid ""
 "KFind %s\n"
@@ -85,31 +81,27 @@ msgstr ""
 "Polskie t³umaczenie\n"
 "Piotr Roszatycki <dexter@fnet.pl>"
 
-#: kfindtop.cpp:193
+#: kfindtop.cpp:196
 msgid "Start Search"
 msgstr "Zacznij szukanie"
 
-#: kfindtop.cpp:198
+#: kfindtop.cpp:201
 msgid "New Search"
 msgstr "Nowe szukanie"
 
-#: kfindtop.cpp:203
+#: kfindtop.cpp:206
 msgid "Stop Search"
 msgstr "Zatrzymaj szukanie"
 
-#: kfindtop.cpp:216
+#: kfindtop.cpp:219
 msgid "Add to archive"
 msgstr "Dodaj do archiwum:"
 
-#: kfindtop.cpp:226
-msgid "Properties"
-msgstr "W³a¶ciwo¶ci"
-
-#: kfindtop.cpp:231
+#: kfindtop.cpp:234
 msgid "Open Containing Folder"
 msgstr "Otwórz zawarto¶æ katalogu"
 
-#: kfindtop.cpp:236
+#: kfindtop.cpp:239
 msgid "Save Search Results"
 msgstr "Zachowaj rezultaty szukania"
 
@@ -184,10 +176,6 @@ msgstr "&Rozmiar:"
 #: kftabdlg.cpp:232
 msgid "All Files and Folders"
 msgstr "Wszystkie pliki i katalogi"
-
-#: kftabdlg.cpp:233
-msgid "Files"
-msgstr ""
 
 #: kftabdlg.cpp:234
 msgid "Folders"
@@ -362,6 +350,12 @@ msgstr "Nie mo¿na rozpoznaæ typu arhiwum!"
 #: kfwin.cpp:495
 msgid "Error while creating child process!"
 msgstr "B³±d podczas tworzenia procesu potomnego!"
+
+#~ msgid "&Cut"
+#~ msgstr "&Wytnij"
+
+#~ msgid "Properties"
+#~ msgstr "W³a¶ciwo¶ci"
 
 #~ msgid "Kfind &help"
 #~ msgstr "Pomo&c"

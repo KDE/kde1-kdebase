@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-01-18 05:04+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -131,10 +131,6 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "(Мин)Максимизировать"
 
-#: titlebar.cpp:994
-msgid "Move"
-msgstr "Перемещать"
-
 #
 #: titlebar.cpp:995
 msgid "(Un)Shade"
@@ -152,10 +148,6 @@ msgstr "Приколоть"
 #: titlebar.cpp:998
 msgid "Resize"
 msgstr "Изменить размер"
-
-#: titlebar.cpp:999
-msgid "Restore"
-msgstr "Восстановить"
 
 #: titlebar.cpp:1000
 msgid "Operations Menu"
@@ -289,6 +281,12 @@ msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+
+#~ msgid "Move"
+#~ msgstr "Перемещать"
+
+#~ msgid "Restore"
+#~ msgstr "Восстановить"
 
 #~ msgid "Shaded"
 #~ msgstr "Градиент"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-03 22:39+0100\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi "
 "<Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -21,7 +21,7 @@ msgstr "&Desktop"
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
 msgstr "utilizzo: kcmkpanel [-init | {panel,options,desktops}]\n"
 
-#: main.cpp:127
+#: main.cpp:128
 msgid "KPanel Configuration"
 msgstr "Configurazione KPanel"
 

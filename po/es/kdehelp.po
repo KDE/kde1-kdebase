@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-04-16 00:51+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-06-13 15:20+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
@@ -63,22 +63,6 @@ msgstr "Error fatal: "
 msgid "Warning: "
 msgstr "Advertencia: "
 
-#: options.cpp:36
-msgid "Font Size"
-msgstr "Tamaño de la fuente"
-
-#: options.cpp:40
-msgid "Small"
-msgstr "Pequeño"
-
-#: options.cpp:44
-msgid "Medium"
-msgstr "Medio"
-
-#: options.cpp:48
-msgid "Large"
-msgstr "Grande"
-
 #: options.cpp:52
 msgid "Standard Font"
 msgstr "Fuente normal"
@@ -106,10 +90,6 @@ msgstr "Color del enlace ya accedido:"
 #: options.cpp:303
 msgid "KDE Help Options"
 msgstr "Opciones de ayuda KDE"
-
-#: options.cpp:311 options.cpp:312
-msgid "Fonts"
-msgstr "Fuentes"
 
 #: options.cpp:316 options.cpp:317
 msgid "Colors"
@@ -153,10 +133,6 @@ msgstr "Formatos de archivos"
 msgid "Games"
 msgstr "Juegos"
 
-#: man.cpp:467
-msgid "Miscellaneous"
-msgstr "Misceláneos"
-
 #: man.cpp:469
 msgid "System Administration"
 msgstr "Administración del sistema"
@@ -194,10 +170,6 @@ msgstr "Abrir &archivo"
 msgid "Open UR&L..."
 msgstr "Abrir &URL"
 
-#: mainwidget.cpp:137
-msgid "&Reload"
-msgstr "Ac&tualizar"
-
 #: mainwidget.cpp:139
 msgid "&Search"
 msgstr "&Buscar"
@@ -217,14 +189,6 @@ msgstr "&Principio"
 #: mainwidget.cpp:157
 msgid "&Up"
 msgstr "A&rriba"
-
-#: mainwidget.cpp:158
-msgid "&Previous"
-msgstr "A&nterior"
-
-#: mainwidget.cpp:159
-msgid "&Next"
-msgstr "&Siguiente"
 
 #: mainwidget.cpp:171
 msgid "&General Preferences..."
@@ -313,10 +277,6 @@ msgstr "Contenido de ayuda"
 msgid "Reload current document"
 msgstr "Refrescar documento actual"
 
-#: mainwidget.cpp:264
-msgid "Stop"
-msgstr "Alto"
-
 #: mainwidget.cpp:288
 msgid "In the Constructor!"
 msgstr "¡En el constructor!"
@@ -337,3 +297,33 @@ msgstr "Acerca de la ayuda KDE"
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Agregar marcador"
+
+#~ msgid "Font Size"
+#~ msgstr "Tamaño de la fuente"
+
+#~ msgid "Small"
+#~ msgstr "Pequeño"
+
+#~ msgid "Medium"
+#~ msgstr "Medio"
+
+#~ msgid "Large"
+#~ msgstr "Grande"
+
+#~ msgid "Fonts"
+#~ msgstr "Fuentes"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Misceláneos"
+
+#~ msgid "&Reload"
+#~ msgstr "Ac&tualizar"
+
+#~ msgid "&Previous"
+#~ msgstr "A&nterior"
+
+#~ msgid "&Next"
+#~ msgstr "&Siguiente"
+
+#~ msgid "Stop"
+#~ msgstr "Alto"

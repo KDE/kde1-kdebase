@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-05-24 00:14+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-05-17 20:00-0500-\n"
 "Last-Translator: Vlatko Cingoski <vlatko@eml.hiroshima-u.ac.jp>\n"
 "Language-Team: Macedonian\n"
@@ -21,58 +21,54 @@ msgstr "Direktoriumi"
 msgid "Cannot open or read directory."
 msgstr "Ne mozzam da go otvoram ili prochitam direktoriumot"
 
-#: kfindtop.cpp:115
+#: kfindtop.cpp:118
 #, fuzzy
 msgid "&Start search"
 msgstr "Pochni so Prebaruvanje"
 
-#: kfindtop.cpp:117
+#: kfindtop.cpp:120
 #, fuzzy
 msgid "S&top search"
 msgstr "Zapri go Prebaruvanjeto"
 
-#: kfindtop.cpp:122
+#: kfindtop.cpp:125
 msgid "&Open"
 msgstr "&Otvori"
 
-#: kfindtop.cpp:124
+#: kfindtop.cpp:127
 msgid "&Add to archive"
 msgstr "&Vnesi vo arhiva"
 
-#: kfindtop.cpp:129
+#: kfindtop.cpp:132
 msgid "&Properties"
 msgstr "O&sobini"
 
-#: kfindtop.cpp:132
+#: kfindtop.cpp:135
 msgid "Open Containing &Folder"
 msgstr "Otvori go Sodrzzinskiot &Direktorium"
 
-#: kfindtop.cpp:135
+#: kfindtop.cpp:138
 msgid "&Save Search"
 msgstr "&Zapamti go prebaruvanjeto"
 
-#: kfindtop.cpp:147
-msgid "&Cut"
-msgstr "&Presechi"
-
-#: kfindtop.cpp:152
+#: kfindtop.cpp:155
 msgid "&Select All"
 msgstr "&Izberi Se"
 
-#: kfindtop.cpp:154
+#: kfindtop.cpp:157
 #, fuzzy
 msgid "Unse&lect All"
 msgstr "&Izberi Se"
 
-#: kfindtop.cpp:156
+#: kfindtop.cpp:159
 msgid "&Invert Selection"
 msgstr "Pro&meni ja Selekcijata"
 
-#: kfindtop.cpp:168
+#: kfindtop.cpp:171
 msgid "&Preferences ..."
 msgstr "Moi &Baranja ..."
 
-#: kfindtop.cpp:173
+#: kfindtop.cpp:176
 #, c-format
 msgid ""
 "KFind %s\n"
@@ -83,31 +79,27 @@ msgid ""
 "<coolo@kde.org>"
 msgstr ""
 
-#: kfindtop.cpp:193
+#: kfindtop.cpp:196
 msgid "Start Search"
 msgstr "Pochni so Prebaruvanje"
 
-#: kfindtop.cpp:198
+#: kfindtop.cpp:201
 msgid "New Search"
 msgstr "Novo Prebaruvanje"
 
-#: kfindtop.cpp:203
+#: kfindtop.cpp:206
 msgid "Stop Search"
 msgstr "Zapri go Prebaruvanjeto"
 
-#: kfindtop.cpp:216
+#: kfindtop.cpp:219
 msgid "Add to archive"
 msgstr "Vnesi vo Arhiva"
 
-#: kfindtop.cpp:226
-msgid "Properties"
-msgstr "Osobini"
-
-#: kfindtop.cpp:231
+#: kfindtop.cpp:234
 msgid "Open Containing Folder"
 msgstr "Otvori go Sodrzzinskiot Direktorium"
 
-#: kfindtop.cpp:236
+#: kfindtop.cpp:239
 msgid "Save Search Results"
 msgstr "Zapamti gi rezultatite od Prebaruvanjeto"
 
@@ -182,10 +174,6 @@ msgstr "&Golemina:"
 #: kftabdlg.cpp:232
 msgid "All Files and Folders"
 msgstr "Site Documenti i Direktoriumi"
-
-#: kftabdlg.cpp:233
-msgid "Files"
-msgstr ""
 
 #: kftabdlg.cpp:234
 msgid "Folders"
@@ -360,6 +348,12 @@ msgstr "Ne mozzam da go prepoznaam tipot na arhivata!"
 #: kfwin.cpp:495
 msgid "Error while creating child process!"
 msgstr "Greshka pri sozdavanjeto na noviot proces!"
+
+#~ msgid "&Cut"
+#~ msgstr "&Presechi"
+
+#~ msgid "Properties"
+#~ msgstr "Osobini"
 
 #~ msgid "Kfind &help"
 #~ msgstr "Kfind Pomos&h"

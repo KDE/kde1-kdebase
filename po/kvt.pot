@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-11 18:35+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,123 +14,127 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.C:293
+#: main.C:347
 msgid "choose type of color-mode"
 msgstr ""
 
-#: main.C:299
+#: main.C:353
 msgid "Add characters to word class"
 msgstr ""
 
-#: main.C:305
+#: main.C:359
 msgid "The backspace key will send a"
 msgstr ""
 
-#: main.C:459
+#: main.C:365
+msgid "Cursor key set"
+msgstr ""
+
+#: main.C:532
 msgid "&New Terminal"
 msgstr ""
 
-#: main.C:466 main.C:838
+#: main.C:539 main.C:915
 msgid "&Hide"
 msgstr ""
 
-#: main.C:467
+#: main.C:540
 msgid "&Left"
 msgstr ""
 
-#: main.C:468
+#: main.C:541
 msgid "&Right"
 msgstr ""
 
-#: main.C:473
+#: main.C:546
 msgid "&Normal"
 msgstr ""
 
-#: main.C:474
+#: main.C:547
 msgid "&Tiny"
 msgstr ""
 
-#: main.C:475
+#: main.C:548
 msgid "&Small"
 msgstr ""
 
-#: main.C:476
+#: main.C:549
 msgid "&Medium"
 msgstr ""
 
-#: main.C:477
+#: main.C:550
 msgid "&Large"
 msgstr ""
 
-#: main.C:478
+#: main.C:551
 msgid "&Huge"
 msgstr ""
 
-#: main.C:490
+#: main.C:563
 msgid "&black/white"
 msgstr ""
 
-#: main.C:491
+#: main.C:564
 msgid "&white/black"
 msgstr ""
 
-#: main.C:492
+#: main.C:565
 msgid "&green/black"
 msgstr ""
 
-#: main.C:493
+#: main.C:566
 msgid "black/light&yellow"
 msgstr ""
 
-#: main.C:494
+#: main.C:567
 msgid "Linu&x Console"
 msgstr ""
 
-#: main.C:503
+#: main.C:576
 msgid "&Custom Colors"
 msgstr ""
 
-#: main.C:510 main.C:774
+#: main.C:583 main.C:849
 msgid "Hide &Menubar"
 msgstr ""
 
-#: main.C:512 main.C:696 main.C:766
+#: main.C:585 main.C:771 main.C:841
 msgid "Show &Menubar"
 msgstr ""
 
-#: main.C:513 main.C:784
+#: main.C:586 main.C:859
 msgid "Secure &keyboard"
 msgstr ""
 
-#: main.C:515
+#: main.C:588
 msgid "Scroll&bar"
 msgstr ""
 
-#: main.C:516
+#: main.C:589
 msgid "&Font size"
 msgstr ""
 
-#: main.C:517
+#: main.C:590
 msgid "&Color"
 msgstr ""
 
-#: main.C:518
+#: main.C:591
 msgid "&Size"
 msgstr ""
 
-#: main.C:519
+#: main.C:592
 msgid "Terminal..."
 msgstr ""
 
-#: main.C:520
+#: main.C:593
 msgid "Font..."
 msgstr ""
 
-#: main.C:522
+#: main.C:595
 msgid "Save &Options"
 msgstr ""
 
-#: main.C:531
+#: main.C:604
 msgid ""
 "\n"
 "\n"
@@ -141,29 +145,29 @@ msgid ""
 "based on Robert Nation's rxvt-2.08"
 msgstr ""
 
-#: main.C:705 main.C:831
+#: main.C:780 main.C:908
 msgid "&Show"
 msgstr ""
 
-#: main.C:780
+#: main.C:855
 msgid "Unsecure &keyboard"
 msgstr ""
 
-#: main.C:791
+#: main.C:866
 msgid "Terminal Options"
 msgstr ""
 
-#: main.C:943
+#: main.C:1020
 msgid "Hint"
 msgstr ""
 
-#: main.C:944
+#: main.C:1021
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
 
-#: main.C:1237
+#: main.C:1322
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -172,97 +176,101 @@ msgid ""
 "\n"
 msgstr ""
 
-#: main.C:1241
+#: main.C:1326
 msgid "Permitted arguments are:\n"
 msgstr ""
 
-#: main.C:1242
+#: main.C:1327
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 
-#: main.C:1243
+#: main.C:1328
 msgid "-display <name>           specify the display (server)\n"
 msgstr ""
 
-#: main.C:1244
+#: main.C:1329
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr ""
 
-#: main.C:1245
+#: main.C:1330
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr ""
 
-#: main.C:1246
+#: main.C:1331
 msgid "-vt_bg <colour>           background color\n"
 msgstr ""
 
-#: main.C:1247
+#: main.C:1332
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr ""
 
-#: main.C:1248
+#: main.C:1333
 msgid "-vt_font <fontname>       normal font\n"
 msgstr ""
 
-#: main.C:1249
+#: main.C:1334
+msgid "-no_font_hack             turn off Qt font bug workaround\n"
+msgstr ""
+
+#: main.C:1335
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr ""
 
-#: main.C:1250
+#: main.C:1336
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr ""
 
-#: main.C:1251
+#: main.C:1337
 msgid "-no_menubar               hide the menubar\n"
 msgstr ""
 
-#: main.C:1252
+#: main.C:1338
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr ""
 
-#: main.C:1253
+#: main.C:1339
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
 
-#: main.C:1255
+#: main.C:1341
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr ""
 
-#: main.C:1256
+#: main.C:1342
 msgid "-C                        Capture system console message\n"
 msgstr ""
 
-#: main.C:1257
+#: main.C:1343
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr ""
 
-#: main.C:1258
+#: main.C:1344
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
 
-#: main.C:1260
+#: main.C:1346
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
 
-#: main.C:1262
+#: main.C:1348
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
 
-#: main.C:1263
+#: main.C:1349
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr ""
 
-#: main.C:1264
+#: main.C:1350
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
@@ -270,7 +278,7 @@ msgid ""
 "buffer\n"
 msgstr ""
 
-#: main.C:1268
+#: main.C:1354
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

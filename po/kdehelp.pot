@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:51+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,22 +72,6 @@ msgstr ""
 msgid "Warning: "
 msgstr ""
 
-#: options.cpp:36
-msgid "Font Size"
-msgstr ""
-
-#: options.cpp:40
-msgid "Small"
-msgstr ""
-
-#: options.cpp:44
-msgid "Medium"
-msgstr ""
-
-#: options.cpp:48
-msgid "Large"
-msgstr ""
-
 #: options.cpp:52
 msgid "Standard Font"
 msgstr ""
@@ -114,10 +98,6 @@ msgstr ""
 
 #: options.cpp:303
 msgid "KDE Help Options"
-msgstr ""
-
-#: options.cpp:311 options.cpp:312
-msgid "Fonts"
 msgstr ""
 
 #: options.cpp:316 options.cpp:317
@@ -162,10 +142,6 @@ msgstr ""
 msgid "Games"
 msgstr ""
 
-#: man.cpp:467
-msgid "Miscellaneous"
-msgstr ""
-
 #: man.cpp:469
 msgid "System Administration"
 msgstr ""
@@ -203,10 +179,6 @@ msgstr ""
 msgid "Open UR&L..."
 msgstr ""
 
-#: mainwidget.cpp:137
-msgid "&Reload"
-msgstr ""
-
 #: mainwidget.cpp:139
 msgid "&Search"
 msgstr ""
@@ -225,14 +197,6 @@ msgstr ""
 
 #: mainwidget.cpp:157
 msgid "&Up"
-msgstr ""
-
-#: mainwidget.cpp:158
-msgid "&Previous"
-msgstr ""
-
-#: mainwidget.cpp:159
-msgid "&Next"
 msgstr ""
 
 #: mainwidget.cpp:171
@@ -312,10 +276,6 @@ msgstr ""
 
 #: mainwidget.cpp:259
 msgid "Reload current document"
-msgstr ""
-
-#: mainwidget.cpp:264
-msgid "Stop"
 msgstr ""
 
 #: mainwidget.cpp:288

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-06-16 12:05+0200\n"
+"POT-Creation-Date: 1998-06-16 13:53+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -20,7 +20,7 @@ msgstr "颜色:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 science.cpp:1024 slip.cpp:378 space.cpp:587
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1026 slip.cpp:378 space.cpp:587
 #: swarm.cpp:341
 msgid "Speed:"
 msgstr "速度"
@@ -385,12 +385,12 @@ msgstr ""
 "\n"
 "由 Emanuel Pirker 移植到 kscreensave."
 
-#: main.cpp:280
+#: main.cpp:286
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr ""
 
-#: main.cpp:307
+#: main.cpp:313
 msgid ""
 "Your system uses shadow passwords!\n"
 "Please contact your system administrator.\n"
@@ -402,11 +402,11 @@ msgstr ""
 "\n"
 "告诉他, 您需要将这屏幕保护程序 suid!"
 
-#: main.cpp:312
+#: main.cpp:318
 msgid "Shadow Passwords"
 msgstr "Shadow Passwords"
 
-#: main.cpp:470
+#: main.cpp:476
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -415,7 +415,7 @@ msgstr ""
 "用法: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:473
+#: main.cpp:479
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -577,11 +577,11 @@ msgstr ""
 "\n"
 "由 Martin Jones 移植到 kscreensave."
 
-#: saver.cpp:52 saver.cpp:112
+#: saver.cpp:56 saver.cpp:146
 msgid "Enter Password"
 msgstr "输入密码"
 
-#: saver.cpp:82
+#: saver.cpp:114
 msgid "Failed"
 msgstr "失败"
 
@@ -590,54 +590,54 @@ msgid "Science"
 msgstr "Science"
 
 #: science.cpp:448
-msgid "preparing lens..."
+msgid "rendering lens..."
 msgstr ""
 
-#: science.cpp:768
+#: science.cpp:770
 msgid "grabbing screen..."
 msgstr ""
 
 #
-#: science.cpp:930
+#: science.cpp:932
 msgid "Setup Science"
 msgstr "设置 Science"
 
-#: science.cpp:948
+#: science.cpp:950
 #, fuzzy
 msgid "Mode:"
 msgstr "中间:"
 
-#: science.cpp:963
+#: science.cpp:965
 msgid "Inverse"
 msgstr ""
 
-#: science.cpp:973
+#: science.cpp:975
 msgid "Gravity"
 msgstr ""
 
-#: science.cpp:982
+#: science.cpp:984
 msgid "Hide Background"
 msgstr ""
 
-#: science.cpp:1008
+#: science.cpp:1010
 msgid "Intensity:"
 msgstr "张力:"
 
-#: science.cpp:1038
+#: science.cpp:1040
 msgid "Motion:"
 msgstr ""
 
-#: science.cpp:1259
+#: science.cpp:1261
 #, fuzzy
 msgid "Science Version"
 msgstr "Science"
 
-#: science.cpp:1260
+#: science.cpp:1262
 msgid "written by"
 msgstr ""
 
 #
-#: science.cpp:1260
+#: science.cpp:1263
 msgid "About Science"
 msgstr "关于 Science"
 

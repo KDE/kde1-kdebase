@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -133,10 +133,6 @@ msgstr "Διπλό αριστερό κλικ στην γραμμή τίτλου προκαλεί: "
 msgid "(Un)Maximize"
 msgstr "(Απο)Μεγιστοποίηση"
 
-#: titlebar.cpp:994
-msgid "Move"
-msgstr "Μετακίνηση"
-
 #: titlebar.cpp:995
 msgid "(Un)Shade"
 msgstr "(Απο)Σκίαση"
@@ -152,10 +148,6 @@ msgstr "(Απο)Σταθεροποίηση"
 #: titlebar.cpp:998
 msgid "Resize"
 msgstr "Αλλαγή Μεγέθους"
-
-#: titlebar.cpp:999
-msgid "Restore"
-msgstr "Επαναφορά"
 
 #: titlebar.cpp:1000
 msgid "Operations Menu"
@@ -289,6 +281,12 @@ msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+
+#~ msgid "Move"
+#~ msgstr "Μετακίνηση"
+
+#~ msgid "Restore"
+#~ msgstr "Επαναφορά"
 
 #~ msgid "Shaded"
 #~ msgstr "Σκιασμένο"

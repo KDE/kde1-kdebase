@@ -3,14 +3,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-01-05 20:56+0200\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
-
-#: kmenuedit.cpp:62
-#, fuzzy
-msgid "&Reload"
-msgstr "Επαναφόρτωση καταλόγων"
 
 #: kmenuedit.cpp:68
 #, fuzzy
@@ -253,6 +248,10 @@ msgstr "Προσωπικά:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Προκαθορισμένα:"
+
+#, fuzzy
+#~ msgid "&Reload"
+#~ msgstr "Επαναφόρτωση καταλόγων"
 
 #~ msgid "Type:"
 #~ msgstr "Τύπος:"

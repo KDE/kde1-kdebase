@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -125,10 +125,6 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "Maximalizácia/Spä»"
 
-#: titlebar.cpp:994
-msgid "Move"
-msgstr "Presun"
-
 #: titlebar.cpp:995
 msgid "(Un)Shade"
 msgstr "Iba pás titulku (zap./vyp.)"
@@ -144,10 +140,6 @@ msgstr "Prilepenie/Odlepenie"
 #: titlebar.cpp:998
 msgid "Resize"
 msgstr "Zmena veµkosti"
-
-#: titlebar.cpp:999
-msgid "Restore"
-msgstr "Obnovenie"
 
 #: titlebar.cpp:1000
 msgid "Operations Menu"
@@ -280,6 +272,12 @@ msgid ""
 msgstr ""
 "Úchytná zóna\n"
 "okna (v bodoch):"
+
+#~ msgid "Move"
+#~ msgstr "Presun"
+
+#~ msgid "Restore"
+#~ msgstr "Obnovenie"
 
 #~ msgid "Shaded"
 #~ msgstr "Tieòovaný"

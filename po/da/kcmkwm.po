@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-01-25 13:23\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -137,10 +137,6 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "(U)Maksimer"
 
-#: titlebar.cpp:994
-msgid "Move"
-msgstr "Flyt"
-
 #: titlebar.cpp:995
 #, fuzzy
 msgid "(Un)Shade"
@@ -158,10 +154,6 @@ msgstr "Fastsæt/Frigiv"
 #: titlebar.cpp:998
 msgid "Resize"
 msgstr "Skift størrelse"
-
-#: titlebar.cpp:999
-msgid "Restore"
-msgstr "Gendan"
 
 #: titlebar.cpp:1000
 msgid "Operations Menu"
@@ -294,6 +286,12 @@ msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+
+#~ msgid "Move"
+#~ msgstr "Flyt"
+
+#~ msgid "Restore"
+#~ msgstr "Gendan"
 
 #~ msgid "Shaded"
 #~ msgstr "Gradueret"

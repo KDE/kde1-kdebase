@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-06-09 00:10+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr "&Escriptoris"
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
 msgstr "us: kcmkpanel [-init | {panel,options,desktops}]\n"
 
-#: main.cpp:127
+#: main.cpp:128
 msgid "KPanel Configuration"
 msgstr "Configuració KPanel"
 

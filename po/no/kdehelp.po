@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:51+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date:1998-03-16 HO:MI+ZONE\n"
 "Last-Translator: Svein Olav Aasen <svein.aasen@caa.no / soaasen@online.no>\n"
 "Language-Team: no<LL@li.org>\n"
@@ -71,22 +71,6 @@ msgstr "Fatal feil: "
 msgid "Warning: "
 msgstr "Advarsel: "
 
-#: options.cpp:36
-msgid "Font Size"
-msgstr "Skriftstørrelse"
-
-#: options.cpp:40
-msgid "Small"
-msgstr "Liten"
-
-#: options.cpp:44
-msgid "Medium"
-msgstr "Medium"
-
-#: options.cpp:48
-msgid "Large"
-msgstr "Stor"
-
 #: options.cpp:52
 msgid "Standard Font"
 msgstr "Standard skrift"
@@ -114,10 +98,6 @@ msgstr "Farge på fulgte lenker:"
 #: options.cpp:303
 msgid "KDE Help Options"
 msgstr "KDE Hjelp-valg"
-
-#: options.cpp:311 options.cpp:312
-msgid "Fonts"
-msgstr "Skrifttyper"
 
 #: options.cpp:316 options.cpp:317
 msgid "Colors"
@@ -161,10 +141,6 @@ msgstr "Filformater"
 msgid "Games"
 msgstr "Spill"
 
-#: man.cpp:467
-msgid "Miscellaneous"
-msgstr "Forskjellig"
-
 #: man.cpp:469
 msgid "System Administration"
 msgstr "Systemadministrasjon"
@@ -202,10 +178,6 @@ msgstr "&Åpne fil..."
 msgid "Open UR&L..."
 msgstr "Åpne UR&L..."
 
-#: mainwidget.cpp:137
-msgid "&Reload"
-msgstr "Last &inn på nytt"
-
 #: mainwidget.cpp:139
 msgid "&Search"
 msgstr "&Søk"
@@ -225,14 +197,6 @@ msgstr "&Topp"
 #: mainwidget.cpp:157
 msgid "&Up"
 msgstr "&Opp"
-
-#: mainwidget.cpp:158
-msgid "&Previous"
-msgstr "&Forrige"
-
-#: mainwidget.cpp:159
-msgid "&Next"
-msgstr "&Neste"
 
 #: mainwidget.cpp:171
 msgid "&General Preferences..."
@@ -320,10 +284,6 @@ msgstr "Hjelpeinnhold"
 msgid "Reload current document"
 msgstr "Last inn på nytt gjeldende dokument"
 
-#: mainwidget.cpp:264
-msgid "Stop"
-msgstr "Stopp"
-
 #: mainwidget.cpp:288
 msgid "In the Constructor!"
 msgstr "I konstruktøren!"
@@ -343,3 +303,33 @@ msgstr "Om KDE hjelp"
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Legg til bokmerke"
+
+#~ msgid "Font Size"
+#~ msgstr "Skriftstørrelse"
+
+#~ msgid "Small"
+#~ msgstr "Liten"
+
+#~ msgid "Medium"
+#~ msgstr "Medium"
+
+#~ msgid "Large"
+#~ msgstr "Stor"
+
+#~ msgid "Fonts"
+#~ msgstr "Skrifttyper"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Forskjellig"
+
+#~ msgid "&Reload"
+#~ msgstr "Last &inn på nytt"
+
+#~ msgid "&Previous"
+#~ msgstr "&Forrige"
+
+#~ msgid "&Next"
+#~ msgstr "&Neste"
+
+#~ msgid "Stop"
+#~ msgstr "Stopp"

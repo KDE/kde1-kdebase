@@ -6,21 +6,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-30 17:26+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-01-27 HO:MI+ZONE\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
-
-#: kpanel.C:213
-msgid "Move"
-msgstr "Flyt"
-
-#: kpanel.C:216
-msgid "Properties"
-msgstr "Indstillinger"
 
 #: kpanel.C:253
 msgid "Go!"
@@ -117,6 +109,12 @@ msgstr ""
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
+
+#~ msgid "Move"
+#~ msgstr "Flyt"
+
+#~ msgid "Properties"
+#~ msgstr "Indstillinger"
 
 #~ msgid "Location"
 #~ msgstr "Placering"

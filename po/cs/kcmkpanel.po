@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-03-12 12:00 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -25,7 +25,7 @@ msgstr "P&racovní plochy"
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
 msgstr "Pou¾ití: kcmkpanel [-init | {panel,options,desktops}]\n"
 
-#: main.cpp:127
+#: main.cpp:128
 msgid "KPanel Configuration"
 msgstr "Konfigurace KPanelu"
 

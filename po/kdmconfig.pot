@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,10 +16,6 @@ msgstr ""
 
 #: main.cpp:87
 msgid "&Appearance"
-msgstr ""
-
-#: main.cpp:91
-msgid "&Fonts"
 msgstr ""
 
 #: main.cpp:95
@@ -51,10 +47,6 @@ msgstr ""
 
 #: main.cpp:157
 msgid "Missing privileges"
-msgstr ""
-
-#: kdm-appear.cpp:67
-msgid "Appearance"
 msgstr ""
 
 #: kdm-appear.cpp:70
@@ -218,10 +210,6 @@ msgstr ""
 
 #: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
-msgstr ""
-
-#: kdm-sess.cpp:54
-msgid "None"
 msgstr ""
 
 #: kdm-sess.cpp:55

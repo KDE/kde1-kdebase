@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-04-20 21:19+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -136,10 +136,6 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "(解除)最大化"
 
-#: titlebar.cpp:994
-msgid "Move"
-msgstr "移動"
-
 #: titlebar.cpp:995
 #, fuzzy
 msgid "(Un)Shade"
@@ -157,10 +153,6 @@ msgstr "(解除)黏附"
 #: titlebar.cpp:998
 msgid "Resize"
 msgstr "改變視窗大小"
-
-#: titlebar.cpp:999
-msgid "Restore"
-msgstr "還原"
 
 #: titlebar.cpp:1000
 msgid "Operations Menu"
@@ -298,6 +290,12 @@ msgid ""
 msgstr ""
 "視窗切換區域:\n"
 "      (點數)"
+
+#~ msgid "Move"
+#~ msgstr "移動"
+
+#~ msgid "Restore"
+#~ msgstr "還原"
 
 #~ msgid "Shaded"
 #~ msgstr "漸層"

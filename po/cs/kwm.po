@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm 0.10.23\n"
-"POT-Creation-Date: 1998-06-11 00:07+0200\n"
+"POT-Creation-Date: 1998-06-16 13:56+0200\n"
 "PO-Revision-Date: 1998-06-12 08:23 MET DST\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -137,15 +137,15 @@ msgstr "Osmá"
 msgid "Unnamed Desktop"
 msgstr "Nepojmenovaná pracovní plocha"
 
-#: main.C:950
+#: main.C:962
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Nìkteré pixmapy nejsou korektní: ShapeMode vypnut\n"
 
-#: main.C:1062
+#: main.C:1074
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Nìkteré pixmapy nejsou korektní: GimmickMode vypnut\n"
 
-#: main.C:1295
+#: main.C:1307
 msgid "*** No Tasks ***"
 msgstr "*** ®ádné úlohy ***"
 

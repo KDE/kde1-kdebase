@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-05-30 17:26+0200\n"
+"POT-Creation-Date: 1998-06-16 13:56+0200\n"
 "PO-Revision-Date: 1998-06-13 15:29+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
@@ -129,10 +129,6 @@ msgstr "Estándar de KDE"
 msgid "&Add ..."
 msgstr "&Añadir"
 
-#: colorscm.cpp:153
-msgid "&Remove"
-msgstr "Elimina&r"
-
 #: colorscm.cpp:162
 msgid "&Save changes"
 msgstr "Salvar cambios"
@@ -201,11 +197,11 @@ msgstr "Bajo"
 msgid "High"
 msgstr "Alto"
 
-#: colorscm.cpp:318
+#: colorscm.cpp:317
 msgid "Error removing"
 msgstr "Error al quitar"
 
-#: colorscm.cpp:319
+#: colorscm.cpp:318
 msgid ""
 "This color scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -215,11 +211,11 @@ msgstr ""
 "Tal vez no tiene los derechos para alterar el archivo\n"
 "del sistema donde los esquemas de colores estan guardados."
 
-#: colorscm.cpp:376
+#: colorscm.cpp:375
 msgid "Naming error"
 msgstr "Error de nombramiento"
 
-#: colorscm.cpp:377
+#: colorscm.cpp:376
 msgid ""
 "Please choose a unique name for the new color\n"
 "scheme. The one you entered already appears\n"
@@ -259,47 +255,51 @@ msgstr "Salvar pantalla"
 msgid "Lock Screen"
 msgstr "Bloquear pantalla"
 
-#: scrnsave.cpp:110 scrnsave.cpp:179
+#: scrnsave.cpp:113 scrnsave.cpp:182
 msgid "Screen Saver"
 msgstr "Salvapantalla"
 
-#: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:553 scrnsave.cpp:662
+#: scrnsave.cpp:189 scrnsave.cpp:360 scrnsave.cpp:571 scrnsave.cpp:686
 msgid "No screensaver"
 msgstr "Sin salvapantalla"
 
-#: scrnsave.cpp:207
+#: scrnsave.cpp:210
 msgid "&Setup ..."
 msgstr "Configuración..."
 
-#: scrnsave.cpp:215
+#: scrnsave.cpp:218
 msgid "&Test"
 msgstr "Probar"
 
-#: scrnsave.cpp:228
+#: scrnsave.cpp:231
 msgid "Settings"
 msgstr "Opciones"
 
-#: scrnsave.cpp:248
+#: scrnsave.cpp:251
 msgid "&Wait for"
 msgstr "Esperar"
 
-#: scrnsave.cpp:258
+#: scrnsave.cpp:261
 msgid "min."
 msgstr "minutos"
 
-#: scrnsave.cpp:264
+#: scrnsave.cpp:267
 msgid "&Require password"
 msgstr "Pedir contraseña"
 
-#: scrnsave.cpp:272
+#: scrnsave.cpp:273
+msgid "Show &password as stars"
+msgstr ""
+
+#: scrnsave.cpp:281
 msgid "Priority"
 msgstr "Prioridad"
 
-#: scrnsave.cpp:285
+#: scrnsave.cpp:294
 msgid "&High"
 msgstr "Alta"
 
-#: scrnsave.cpp:294
+#: scrnsave.cpp:303
 msgid "Low"
 msgstr "Baja"
 
@@ -383,3 +383,6 @@ msgstr "KDE por defecto"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "cualquiera"
+
+#~ msgid "&Remove"
+#~ msgstr "Elimina&r"

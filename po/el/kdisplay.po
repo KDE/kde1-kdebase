@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-30 17:26+0200\n"
+"POT-Creation-Date: 1998-06-16 13:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -151,11 +151,6 @@ msgstr "Συνιθισμένο KDE"
 msgid "&Add ..."
 msgstr ""
 
-#: colorscm.cpp:153
-#, fuzzy
-msgid "&Remove"
-msgstr "Αφαίρεσε"
-
 #: colorscm.cpp:162
 msgid "&Save changes"
 msgstr ""
@@ -227,22 +222,22 @@ msgstr "Χαμηλή"
 msgid "High"
 msgstr "Υψηλή"
 
-#: colorscm.cpp:318
+#: colorscm.cpp:317
 msgid "Error removing"
 msgstr ""
 
-#: colorscm.cpp:319
+#: colorscm.cpp:318
 msgid ""
 "This color scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
 "system where the color scheme is stored."
 msgstr ""
 
-#: colorscm.cpp:376
+#: colorscm.cpp:375
 msgid "Naming error"
 msgstr ""
 
-#: colorscm.cpp:377
+#: colorscm.cpp:376
 msgid ""
 "Please choose a unique name for the new color\n"
 "scheme. The one you entered already appears\n"
@@ -275,54 +270,58 @@ msgstr ""
 msgid "Lock Screen"
 msgstr ""
 
-#: scrnsave.cpp:110 scrnsave.cpp:179
+#: scrnsave.cpp:113 scrnsave.cpp:182
 msgid "Screen Saver"
 msgstr "Προφύλαξη Οθόνης"
 
-#: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:553 scrnsave.cpp:662
+#: scrnsave.cpp:189 scrnsave.cpp:360 scrnsave.cpp:571 scrnsave.cpp:686
 #, fuzzy
 msgid "No screensaver"
 msgstr "Προφύλαξη Οθόνης"
 
-#: scrnsave.cpp:207
+#: scrnsave.cpp:210
 #, fuzzy
 msgid "&Setup ..."
 msgstr "Ρύσμισε..."
 
-#: scrnsave.cpp:215
+#: scrnsave.cpp:218
 #, fuzzy
 msgid "&Test"
 msgstr "Δοκιμή"
 
-#: scrnsave.cpp:228
+#: scrnsave.cpp:231
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: scrnsave.cpp:248
+#: scrnsave.cpp:251
 msgid "&Wait for"
 msgstr ""
 
-#: scrnsave.cpp:258
+#: scrnsave.cpp:261
 #, fuzzy
 msgid "min."
 msgstr "λεπτά"
 
-#: scrnsave.cpp:264
+#: scrnsave.cpp:267
 #, fuzzy
 msgid "&Require password"
 msgstr "Απαίτηση Κωδικού"
 
-#: scrnsave.cpp:272
+#: scrnsave.cpp:273
+msgid "Show &password as stars"
+msgstr ""
+
+#: scrnsave.cpp:281
 #, fuzzy
 msgid "Priority"
 msgstr "Προτερεότητα:"
 
-#: scrnsave.cpp:285
+#: scrnsave.cpp:294
 #, fuzzy
 msgid "&High"
 msgstr "Υψηλή"
 
-#: scrnsave.cpp:294
+#: scrnsave.cpp:303
 msgid "Low"
 msgstr "Χαμηλή"
 
@@ -415,6 +414,10 @@ msgstr "Συνιθισμένο KDE"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr ""
+
+#, fuzzy
+#~ msgid "&Remove"
+#~ msgstr "Αφαίρεσε"
 
 #, fuzzy
 #~ msgid "Default"

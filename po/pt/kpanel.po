@@ -1,17 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-05-30 17:26+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
-
-#: kpanel.C:213
-msgid "Move"
-msgstr "Mover"
-
-#: kpanel.C:216
-msgid "Properties"
-msgstr "Propriedades"
 
 #: kpanel.C:253
 msgid "Go!"
@@ -108,3 +100,9 @@ msgstr "Oops!"
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"
 msgstr "Não é possivel adicionar isto ao painel como botão!"
+
+#~ msgid "Move"
+#~ msgstr "Mover"
+
+#~ msgid "Properties"
+#~ msgstr "Propriedades"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -125,10 +125,6 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "(Des)Maximizar"
 
-#: titlebar.cpp:994
-msgid "Move"
-msgstr "Mover"
-
 #: titlebar.cpp:995
 msgid "(Un)Shade"
 msgstr "(Des)Sombrear"
@@ -144,10 +140,6 @@ msgstr "(Des)Pregar"
 #: titlebar.cpp:998
 msgid "Resize"
 msgstr "Mudar Tamanho"
-
-#: titlebar.cpp:999
-msgid "Restore"
-msgstr "Restaurar"
 
 #: titlebar.cpp:1000
 msgid "Operations Menu"
@@ -280,6 +272,12 @@ msgid ""
 msgstr ""
 "Zona de Snap da Janela:\n"
 "       (pixels)"
+
+#~ msgid "Move"
+#~ msgstr "Mover"
+
+#~ msgid "Restore"
+#~ msgstr "Restaurar"
 
 #~ msgid "Shaded"
 #~ msgstr "Sombreada"

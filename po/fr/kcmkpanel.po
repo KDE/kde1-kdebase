@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-02-25 21:36 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -25,7 +25,7 @@ msgstr "&Bureaux"
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
 msgstr "utilisation : kcmkpanel [-init | {panel,options,desktops}]\n"
 
-#: main.cpp:127
+#: main.cpp:128
 msgid "KPanel Configuration"
 msgstr "Configuration du panneau"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-06-11 00:07+0200\n"
+"POT-Creation-Date: 1998-06-16 13:56+0200\n"
 "PO-Revision-Date: 1998-04-30 11:38+0100\n"
 "Last-Translator: Bla¾ Zupanèiè <Blaz.Zupancic@guest.arnes.si>\n"
 "Language-Team: Slovenian\n"
@@ -126,16 +126,16 @@ msgstr "Osem"
 msgid "Unnamed Desktop"
 msgstr ""
 
-#: main.C:950
+#: main.C:962
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Nekatere slike niso veljavne: ShapeMode je onesposobljen\n"
 
-#: main.C:1062
+#: main.C:1074
 #, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Nekatere slike niso veljavne: ShapeMode je onesposobljen\n"
 
-#: main.C:1295
+#: main.C:1307
 msgid "*** No Tasks ***"
 msgstr " Brezdelje "
 

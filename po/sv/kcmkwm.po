@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-01-20 15:35 +0100\n"
 "Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
 "Language-Team: Swedish <LL@li.org>\n"
@@ -129,10 +129,6 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "Maximera"
 
-#: titlebar.cpp:994
-msgid "Move"
-msgstr ""
-
 #: titlebar.cpp:995
 #, fuzzy
 msgid "(Un)Shade"
@@ -149,10 +145,6 @@ msgstr "Klistrig"
 
 #: titlebar.cpp:998
 msgid "Resize"
-msgstr ""
-
-#: titlebar.cpp:999
-msgid "Restore"
 msgstr ""
 
 #: titlebar.cpp:1000

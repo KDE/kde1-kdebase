@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-05-30 13:16+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -118,10 +118,6 @@ msgstr ""
 msgid "(Un)Maximize"
 msgstr "最大化/恢复"
 
-#: titlebar.cpp:994
-msgid "Move"
-msgstr "移动"
-
 #
 #: titlebar.cpp:995
 msgid "(Un)Shade"
@@ -139,10 +135,6 @@ msgstr "粘附/恢复"
 #: titlebar.cpp:998
 msgid "Resize"
 msgstr "改变大小"
-
-#: titlebar.cpp:999
-msgid "Restore"
-msgstr "恢复"
 
 #: titlebar.cpp:1000
 msgid "Operations Menu"
@@ -279,6 +271,12 @@ msgid ""
 msgstr ""
 "Window Snap Zone:\n"
 "       (像素)"
+
+#~ msgid "Move"
+#~ msgstr "移动"
+
+#~ msgid "Restore"
+#~ msgstr "恢复"
 
 #~ msgid "Shaded"
 #~ msgstr "渐变色"

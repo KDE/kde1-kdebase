@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-05-21 10:39+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "First-Translator: Santiago Fernández and\n"
@@ -19,7 +19,7 @@ msgstr "&Escritorios"
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
 msgstr "modo de uso: kcmpanel [-init | {panel,options,desktops}]\n"
 
-#: main.cpp:127
+#: main.cpp:128
 msgid "KPanel Configuration"
 msgstr "Configuración de KPanel"
 

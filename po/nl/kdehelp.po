@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:51+0200\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,22 +72,6 @@ msgstr "Niet herstelbare fout: "
 msgid "Warning: "
 msgstr "Waarschuwing: "
 
-#: options.cpp:36
-msgid "Font Size"
-msgstr "Lettertype grootte"
-
-#: options.cpp:40
-msgid "Small"
-msgstr "Klein"
-
-#: options.cpp:44
-msgid "Medium"
-msgstr "Middel"
-
-#: options.cpp:48
-msgid "Large"
-msgstr "Groot"
-
 #: options.cpp:52
 msgid "Standard Font"
 msgstr "Normaal lettertype"
@@ -115,10 +99,6 @@ msgstr "Kleur voor bezochte adressen:"
 #: options.cpp:303
 msgid "KDE Help Options"
 msgstr "Instellingen voor KDE Help"
-
-#: options.cpp:311 options.cpp:312
-msgid "Fonts"
-msgstr "Lettertypen"
 
 #: options.cpp:316 options.cpp:317
 msgid "Colors"
@@ -162,10 +142,6 @@ msgstr "Bestandsformaten"
 msgid "Games"
 msgstr "Spelletjes"
 
-#: man.cpp:467
-msgid "Miscellaneous"
-msgstr "Diversen"
-
 #: man.cpp:469
 msgid "System Administration"
 msgstr "Systeembeheer"
@@ -203,10 +179,6 @@ msgstr "&Open bestand..."
 msgid "Open UR&L..."
 msgstr "Open UR&L..."
 
-#: mainwidget.cpp:137
-msgid "&Reload"
-msgstr ""
-
 #: mainwidget.cpp:139
 msgid "&Search"
 msgstr "&Zoeken"
@@ -226,14 +198,6 @@ msgstr "&Top"
 #: mainwidget.cpp:157
 msgid "&Up"
 msgstr "&Omhoog"
-
-#: mainwidget.cpp:158
-msgid "&Previous"
-msgstr "Vo&rige"
-
-#: mainwidget.cpp:159
-msgid "&Next"
-msgstr "&Volgende"
 
 #: mainwidget.cpp:171
 msgid "&General Preferences..."
@@ -317,10 +281,6 @@ msgstr "Help inhoud"
 msgid "Reload current document"
 msgstr ""
 
-#: mainwidget.cpp:264
-msgid "Stop"
-msgstr "Stop"
-
 #: mainwidget.cpp:288
 msgid "In the Constructor!"
 msgstr "In de constructor!"
@@ -340,6 +300,33 @@ msgstr "Informatie over KDE Help"
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Bladwijzer toevoegen"
+
+#~ msgid "Font Size"
+#~ msgstr "Lettertype grootte"
+
+#~ msgid "Small"
+#~ msgstr "Klein"
+
+#~ msgid "Medium"
+#~ msgstr "Middel"
+
+#~ msgid "Large"
+#~ msgstr "Groot"
+
+#~ msgid "Fonts"
+#~ msgstr "Lettertypen"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Diversen"
+
+#~ msgid "&Previous"
+#~ msgstr "Vo&rige"
+
+#~ msgid "&Next"
+#~ msgstr "&Volgende"
+
+#~ msgid "Stop"
+#~ msgstr "Stop"
 
 # Dutch translation of the kdehelp messages.
 # Copyright (C) 1997 Jeroen van der Most <jvdmost@wi.leidenuniv.nl>
