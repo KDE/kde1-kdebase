@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1999-01-12 01:14+0100\n"
-"PO-Revision-Date: 1999-02-13 10:40+0100\n"
-"Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
+"PO-Revision-Date: 1999-03-25 01:20+0000\n"
+"Last-Translator: Bjarni R. Einarsson <bre@netverjar.is>\n"
 "Language-Team: isn\n"
 
 #: main.cpp:84
@@ -58,7 +58,7 @@ msgstr "Smelltu hér eða slepptu mynd"
 
 #: kdm-appear.cpp:110
 msgid "GUI Style:"
-msgstr "Viðmótsstíll:"
+msgstr "Stíll viðmóts:"
 
 #: kdm-appear.cpp:116
 msgid "Motif"
@@ -183,7 +183,7 @@ msgstr "Heilir litir"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr "Lágrétt blöndun"
+msgstr "Lárétt blöndun"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
@@ -195,27 +195,27 @@ msgstr "Veggfóður"
 
 #: kdm-bgnd.cpp:171 kdm-sess.cpp:56
 msgid "None"
-msgstr "Engum"
+msgstr "Ekkert"
 
 #: kdm-bgnd.cpp:176
 msgid "Tile"
-msgstr "Flísaleggja"
+msgstr "Flísalagt"
 
 #: kdm-bgnd.cpp:181
 msgid "Center"
-msgstr "Í miðju"
+msgstr "Miðjað"
 
 #: kdm-bgnd.cpp:186
 msgid "Scale"
-msgstr "Teygja"
+msgstr "Teygt"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr "Eftst til vinstri"
+msgstr "Efst til vinstri"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr "Efsti til hægri"
+msgstr "Efst til hægri"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
@@ -275,7 +275,7 @@ msgstr "Vista mynd sem sjálfgefna?"
 
 #: kdm-sess.cpp:52
 msgid "Allow to shutdown"
-msgstr "Leyfa að slökkva"
+msgstr "Boðið upp á að slökkva"
 
 #: kdm-sess.cpp:57
 msgid "All"
@@ -287,7 +287,7 @@ msgstr "Bara rót"
 
 #: kdm-sess.cpp:59
 msgid "Console Only"
-msgstr "Bara frá meginskjá"
+msgstr "Bara af meginskjá"
 
 #: kdm-sess.cpp:63
 msgid "Commands"
@@ -311,7 +311,7 @@ msgstr "Ný tegund"
 
 #: kdm-sess.cpp:89
 msgid "Available types"
-msgstr "Tiltækar gerðir"
+msgstr "Tiltækar tegundir"
 
 #: klangcombo.cpp:133
 msgid "without name!"

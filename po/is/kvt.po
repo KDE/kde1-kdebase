@@ -133,7 +133,6 @@ msgid "Save &Options"
 msgstr "&Vista valkosti"
 
 #: main.C:688
-#, fuzzy
 msgid ""
 "\n"
 "\n"
@@ -150,8 +149,9 @@ msgstr ""
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
 "(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
+"(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
 "\n"
-"Skjáhermir fyrir KDE skjáumhverfið unnið úr rxvt-2.08\n"
+"Skjáhermir fyrir KDE skjáumhverfið unninn úr rxvt-2.08\n"
 "eftir Robert Nation."
 
 #: main.C:897 main.C:1036

@@ -219,6 +219,8 @@ msgid ""
 "\n"
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
 msgstr ""
+"\n"
+"Sjá http://bugs.kde.org varðandi ábendingar um villur og hugmyndir að framförum"
 
 #: kfmgui.cpp:445
 msgid "&Go"
@@ -973,7 +975,6 @@ msgstr ""
 "Ekki tókst að skrifa yfir\n"
 "%s"
 
-# FIXME
 #: kiojob.cpp:307 kiojob.cpp:332 kiojob.cpp:351
 #, c-format
 msgid ""
@@ -988,7 +989,6 @@ msgstr ""
 msgid " ERROR: Could not write to %s"
 msgstr "VILLA: Ekki tókst að skrifa í %s"
 
-# FIXME
 #: kiojob.cpp:568 kiojob.cpp:891
 #, c-format
 msgid ""
@@ -1038,14 +1038,13 @@ msgstr ""
 msgid "Recurse copying from/to distant locations"
 msgstr "Afrita endurkvæmt til/frá fjarlægum stöðum"
 
-# FIXME
 #: kiojob.cpp:904
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not remove symbolic link\n"
 "%s"
 msgstr ""
-"Ekki tókst að búa til tákntengi\n"
+"Ekki tókst að eyða tákntengi\n"
 "%s"
 
 #: kiojob.cpp:952
@@ -1209,7 +1208,7 @@ msgstr ""
 "er ekki til"
 
 #: kiojob.cpp:1398
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not write\n"
 "%s\n"
@@ -1217,7 +1216,7 @@ msgid ""
 msgstr ""
 "Ekki tókst að skrifa í\n"
 "%s\n"
-"Hugsanlega hefur þú ekki heimild til þess."
+"Hugsanlega er ekki pláss á diskinum."
 
 #: kiojob.cpp:1449
 #, c-format
@@ -1431,7 +1430,7 @@ msgstr "&allar kökur"
 
 #: kcookiewin.cpp:161
 msgid "&Accept"
-msgstr "Þ&yggja"
+msgstr "Þ&iggja"
 
 #: kcookiewin.cpp:166
 msgid "&Reject"
