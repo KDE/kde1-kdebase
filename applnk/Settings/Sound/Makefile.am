@@ -1,4 +1,4 @@
-data_DATA = .directory bell.kdelnk
+data_DATA = .directory bell.kdelnk syssound.kdelnk
 
 datadir = $(kde_appsdir)/Settings/Sound
 

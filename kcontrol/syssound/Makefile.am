@@ -1,6 +1,6 @@
 
 # just set the variable
-APPSDIR = $(kde_appsdir)/Settings/Sound
+#APPSDIR = $(kde_appsdir)/Settings/Sound
 # set the include path for X, qt and KDE
 INCLUDES= $(all_includes)
 
@@ -34,8 +34,6 @@ messages:
 # don't install a list of file. Just one file per install.
 # if you have more of them, create a subdirectory with an extra Makefile 
 install-data-local: 
-	$(mkinstalldirs) $(APPSDIR)
-	$(INSTALL_DATA) syssound.kdelnk $(APPSDIR)
 	$(mkinstalldirs) $(kde_icondir)
 	$(INSTALL_DATA) syssound.xpm $(kde_icondir)
 	$(mkinstalldirs) $(kde_minidir)
@@ -43,7 +41,6 @@ install-data-local:
 
 # remove ALL you have installed in install-data-local or install-exec-local
 uninstall-local:
-	-rm -f $(APPSDIR)/syssound.kdelnk
 	-rm -f $(kde_icondir)/syssound.xpm
 	-rm -f $(kde_minidir)/syssound.xpm
 

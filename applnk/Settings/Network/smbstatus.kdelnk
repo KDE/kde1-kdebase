@@ -3,6 +3,7 @@
 Exec=kcmsamba status
 Icon=smbstatus.xpm
 Type=Application
+DocPath=kcontrol/kcmsamba/smbstatus-1.html
 Comment=Samba status monitor
 Comment[de]=Samba Status-Monitor
 Comment[no]=Monitor for Samba-status
