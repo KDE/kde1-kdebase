@@ -774,7 +774,7 @@ msgstr "A propos de Science"
 
 #: slidescreen.cpp:419
 msgid "SlideScreen"
-msgstr ""
+msgstr "SlideScreen"
 
 #: slidescreen.cpp:465
 msgid "Setup KSlideScreen"

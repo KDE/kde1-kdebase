@@ -77,7 +77,7 @@ msgstr "Applications globales"
 
 #: kfmgui.cpp:287
 msgid "Show Hi&dden Files"
-msgstr "&Montrer les fichiers cachés"
+msgstr "A&fficher les fichiers cachés"
 
 #: kfmgui.cpp:289
 msgid "Show Tr&ee"
@@ -85,7 +85,7 @@ msgstr "&Arborescence"
 
 #: kfmgui.cpp:291
 msgid "Sho&w Thumbnails"
-msgstr "Montrer les petites &images"
+msgstr "Afficher les petites &images"
 
 #: kfmgui.cpp:293
 msgid "&HTML View"

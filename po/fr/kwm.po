@@ -83,7 +83,7 @@ msgstr "Premier"
 
 #: main.C:623
 msgid "Two"
-msgstr "Second"
+msgstr "Deuxième"
 
 #: main.C:626
 msgid "Three"
@@ -115,11 +115,11 @@ msgstr "Bureau sans nom"
 
 #: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Quelques pixmaps ne sont pas valides: ShapeMode désactivé\n"
+msgstr "Quelques pixmaps ne sont pas valides : ShapeMode désactivé\n"
 
 #: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Quelques pixmaps ne sont pas valides: GimmickMode désactivé\n"
+msgstr "Quelques pixmaps ne sont pas valides : GimmickMode désactivé\n"
 
 #: main.C:1524
 msgid "*** No Tasks ***"
@@ -131,7 +131,7 @@ msgstr "Commande : "
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr "Ooops !"
+msgstr "Houlà !"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
@@ -175,26 +175,4 @@ msgstr "Aller vers"
 msgid "Current session"
 msgstr "Session courante"
 
-#~ msgid ""
-#~ "You want to switch to another window. Unfortunately you have selected \n"
-#~ "one of the classic focus policies which do not allow this.  These policies "
-#~ "are \n"
-#~ "included not because they make sense, but for compatibility reasons. Well, \n"
-#~ "even old hand unix users should feel comfortable with the K Desktop "
-#~ "Environment ;-)\n"
-#~ "\n"
-#~ "Anyway, if you prefer modern windowmanagement, please choose one of the \n"
-#~ "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
-#~ msgstr ""
-#~ "Vous désirez changer de fenêtre, soit. Malheureusement, vous avez "
-#~ "sélectionné\n"
-#~ "un de ces systèmes de focus classiques qui ne permettent pas cette "
-#~ "manoeuvre.\n"
-#~ "Ces systèmes sont inclus non pas parcequ'ils sont utiles, mais seulement "
-#~ "pour\n"
-#~ "des raisons de compatibilité. Par contre, même les utilisateurs UNIX ayant\n"
-#~ "de la bouteille devraient trouver le K Desktop Environment pratique ;-)\n"
-#~ "\n"
-#~ "Quoi qu'il en soit, si vous préférez le multifenêtrage moderne, veuillez\n"
-#~ "choisir un des systèmes de focus recommandés, comme ClickToFocus ou "
-#~ "FocusFollowMouse."
+

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
 "POT-Creation-Date: 1999-02-09 01:13+0100\n"
-"PO-Revision-Date: 1998-01-11 01:00 CET\n"
+"PO-Revision-Date: 1999-03-04 01:00 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
@@ -41,7 +41,7 @@ msgstr "Déconnexion"
 
 #: kpanel.C:463 props.C:206
 msgid "Lock screen"
-msgstr "Verrouillage de l'écran"
+msgstr "Verrouiller l'écran"
 
 #: kpanel.C:472 kpanel.C:481
 msgid "Hide the panel"
@@ -49,7 +49,7 @@ msgstr "Cacher le panneau"
 
 #: kpanel.C:491 kpanel.C:503
 msgid "Show the panel"
-msgstr "Montrer le panneau"
+msgstr "Afficher le panneau"
 
 #: kpanel.C:1067
 msgid "Iconify other &windows"
@@ -170,7 +170,7 @@ msgstr "(trop de fichiers)"
 
 #: pfilemenu.C:500
 msgid "(Access Denied)"
-msgstr "Accès refusé"
+msgstr "(Accès refusé)"
 
 #: pfilemenu.C:503
 msgid "(Unreadable)"
@@ -208,59 +208,4 @@ msgstr "Options..."
 msgid "Customize Disk Navigator"
 msgstr "Personnaliser Disk Navigator"
 
-#~ msgid "&Remove"
-#~ msgstr "&Supprimer"
 
-#~ msgid "Location"
-#~ msgstr "Emplacement"
-
-#~ msgid "Taskbar"
-#~ msgstr "Barre de tâches"
-
-#~ msgid "Hidden"
-#~ msgstr "Caché"
-
-#~ msgid "Top/Left"
-#~ msgstr "Haut/Gauche"
-
-#~ msgid "Tiny Style"
-#~ msgstr "Style petit"
-
-#~ msgid "Normal Style"
-#~ msgstr "Style normal"
-
-#~ msgid "Large Style"
-#~ msgstr "Style grand"
-
-#~ msgid "Menu Tooltips"
-#~ msgstr "InfoBulles sur les menus"
-
-#~ msgid "Others"
-#~ msgstr "Autres"
-
-#~ msgid "Auto Hide Panel"
-#~ msgstr "Panneau auto-cachable"
-
-#~ msgid "Auto Hide Taskbar"
-#~ msgstr "Barre de tâches auto-cachable"
-
-#~ msgid "Clock"
-#~ msgstr "Horloge"
-
-#~ msgid "24h"
-#~ msgstr "24h"
-
-#~ msgid "12h AM/PM"
-#~ msgstr "12h AM/PM"
-
-#~ msgid "Visible"
-#~ msgstr "Visible"
-
-#~ msgid "Width"
-#~ msgstr "Largeur"
-
-#~ msgid "Desktops"
-#~ msgstr "Bureaux"
-
-#~ msgid "KPanel Configuration"
-#~ msgstr "Configuration du panneau"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmsamba\n"
 "POT-Creation-Date: 1998-11-17 15:21+0100\n"
-"PO-Revision-Date: 1999-02-03 09:00 CET\n"
+"PO-Revision-Date: 1999-03-03 09:00 CET\n"
 "Last-Translator: Francois-Xavier Duranceau "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
@@ -32,7 +32,7 @@ msgstr "Erreur de lancement de smbstatus !"
 
 #: ksmbstatus.cpp:116
 msgid "Error ! smbstatus not found or non working !"
-msgstr "Erreur ! smbstatus n'a pas été trouvé ou n'est pas en fonctionnement !"
+msgstr "smbstatus n'a pas été trouvé ou ne fonctionne pas !"
 
 #: ksmbstatus.cpp:158
 msgid "Service"

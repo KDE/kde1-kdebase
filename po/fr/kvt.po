@@ -67,7 +67,7 @@ msgstr "&Grand"
 
 #: main.C:630
 msgid "&Huge"
-msgstr "Géan&t"
+msgstr "&Enorme"
 
 #: main.C:642
 msgid "&black/white"
@@ -189,10 +189,9 @@ msgid ""
 "based on Robert Nation's rxvt-2.08\n"
 "\n"
 msgstr ""
-"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
-"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
-"\n"
-"Emulation de terminal pour le KDE Desktop Environment\n"
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Emulation de terminal pour l'Environnement de Bureau KDE\n"
 "basé sur rxvt-2.08 de Robert Nation\n"
 "\n"
 

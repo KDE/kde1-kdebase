@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig\n"
 "POT-Creation-Date: 1999-01-12 01:14+0100\n"
-"PO-Revision-Date: 1998-12-09 23:50 CET\n"
+"PO-Revision-Date: 1999-03-04 23:50 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
@@ -56,7 +56,7 @@ msgstr "Privilèges manquants"
 
 #: kdm-appear.cpp:70
 msgid "Greeting string:"
-msgstr "Texte de bienvenue :"
+msgstr "Texte d'accueil :"
 
 #: kdm-appear.cpp:78
 msgid "KDM logo:"
@@ -68,7 +68,7 @@ msgstr "Cliquez ou déposez une image ici"
 
 #: kdm-appear.cpp:110
 msgid "GUI Style:"
-msgstr "Style d'interface graphique :"
+msgstr "Style :"
 
 #: kdm-appear.cpp:116
 msgid "Motif"
@@ -256,16 +256,16 @@ msgid ""
 "Show only\n"
 "selected users"
 msgstr ""
-"Afficher seulement\n"
-"les utilisateurs sélectionnés"
+"Afficher seulement les\n"
+"utilisateurs sélectionnés"
 
 #: kdm-users.cpp:86
 msgid ""
 "Show all users\n"
 " but no-show users"
 msgstr ""
-"Lister tous les utilisateurs\n"
-"sauf ceux à ne pas afficher"
+"Afficher seulement les\n"
+"utilisateurs non exclus"
 
 #: kdm-users.cpp:97
 msgid "Show users"

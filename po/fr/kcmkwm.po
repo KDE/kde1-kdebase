@@ -191,11 +191,11 @@ msgstr "Maximisation verticale par défaut"
 
 #: windows.cpp:87
 msgid "Display content in moving windows"
-msgstr "Affichage du contenu de la fenêtre lors du déplacement"
+msgstr "Afficher le contenu de la fenêtre lors du déplacement"
 
 #: windows.cpp:92
 msgid "Display content in resizing windows"
-msgstr "Affichage du contenu de la fenêtre lors du redimensionnement"
+msgstr "Afficher le contenu de la fenêtre lors du redimensionnement"
 
 #: windows.cpp:98
 msgid "Resize animation:"

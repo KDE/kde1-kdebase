@@ -6,13 +6,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1999-01-28 01:15+0100\n"
-"PO-Revision-Date: 1998-12-08 22:30 CET\n"
-"Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
+"PO-Revision-Date: 1999-03-04 22:30 CET\n"
+"Last-Translator: Francois-Xavier DURANCEAU <Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; \n"
 "Content-Transfer-Encoding: 8bit\n"
-"Translator: Francois-Xavier DURANCEAU <Francois-Xavier.Duranceau@loria.fr>\n"
 
 #: main.cpp:64
 msgid "&Panel"
@@ -100,11 +99,11 @@ msgstr "&Largeur"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
-msgstr "Info-bulles sur les menus"
+msgstr "Info-bulles des menus"
 
 #: options.cpp:62
 msgid "Show &Menu Tooltips"
-msgstr "Afficher les &info-bulles sur les menus"
+msgstr "Afficher les &info-bulles des menus"
 
 #: options.cpp:84
 msgid "De&lay:"
@@ -136,7 +135,7 @@ msgstr "Vitesse :"
 
 #: options.cpp:191 options.cpp:293 options.cpp:356
 msgid "Slow"
-msgstr "Lent"
+msgstr "Lente"
 
 #: options.cpp:198 options.cpp:300 options.cpp:363
 msgid "Fast"
@@ -220,11 +219,10 @@ msgstr "Afficher la section Récents"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr "Afficher l'entrée Options"
+msgstr "Afficher le menu Options"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Programme de Terminal :"
 
-#~ msgid "Speed"
-#~ msgstr "Vitesse"
+

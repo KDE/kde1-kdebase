@@ -32,7 +32,7 @@ msgstr "Volume"
 
 #: bell.cpp:67
 msgid "Pitch"
-msgstr "Ton"
+msgstr "Tonalité"
 
 #: bell.cpp:69
 msgid "Hz"

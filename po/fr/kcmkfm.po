@@ -117,11 +117,11 @@ msgstr "Toujours utiliser mes couleurs"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr "Permettre la sauvegarde des paramètres pour chaque URL"
+msgstr "&Permettre la sauvegarde des paramètres pour chaque URL"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr "La vue arborescente suit la navigation"
+msgstr "La &vue arborescente suit la navigation"
 
 #: miscopts.cpp:43
 msgid "Terminal"

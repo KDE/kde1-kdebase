@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkeys\n"
 "POT-Creation-Date: 1999-01-08 01:16+0100\n"
-"PO-Revision-Date: 1999-01-29 21:00+0200\n"
+"PO-Revision-Date: 1999-03-04 21:00+0200\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français <fr@li.org>\n"
@@ -40,7 +40,7 @@ msgstr "Standard KDE"
 
 #: keyconfig.cpp:115
 msgid "&Key scheme"
-msgstr "Modèle de &raccourcis"
+msgstr "Modèles de &raccourcis"
 
 #: keyconfig.cpp:126
 msgid "&Add ..."
@@ -154,7 +154,7 @@ msgstr "Basculer vers le bureau 2"
 
 #: ../../kwm/kwmbindings.cpp:17
 msgid "Switch to desktop 3"
-msgstr "Bacsuler vers le bureau 3"
+msgstr "Basculer vers le bureau 3"
 
 #: ../../kwm/kwmbindings.cpp:18
 msgid "Switch to desktop 4"
@@ -162,7 +162,7 @@ msgstr "Basculer vers le bureau 4"
 
 #: ../../kwm/kwmbindings.cpp:19
 msgid "Switch to desktop 5"
-msgstr "Baculer vers le bureau 5"
+msgstr "Basculer vers le bureau 5"
 
 #: ../../kwm/kwmbindings.cpp:20
 msgid "Switch to desktop 6"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1999-01-29 23:30 CET\n"
+"PO-Revision-Date: 1999-03-05 23:30 CET\n"
 "Last-Translator: Francois-Xavier Duranceau "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
@@ -125,7 +125,7 @@ msgstr "Inclure les &sous-dossiers"
 
 #: kftabdlg.cpp:118
 msgid " Name& Location "
-msgstr " Nom & Emplacement "
+msgstr " Nom et Emplacement "
 
 #: kftabdlg.cpp:130
 msgid "and"
