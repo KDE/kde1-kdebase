@@ -19,11 +19,11 @@ msgstr "Comutar Barra de menu"
 
 #: kpager.cpp:77
 msgid "Move Right"
-msgstr ""
+msgstr "Mover à Direita"
 
 #: kpager.cpp:79
 msgid "Move Left"
-msgstr ""
+msgstr "Mover à Esquerda"
 
 #: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
@@ -43,17 +43,15 @@ msgstr "&2 Linhas"
 
 #: kpager.cpp:104
 msgid "&One Click change Desktop"
-msgstr ""
+msgstr "&Um clique muda o Ambiente"
 
 #: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
-#, fuzzy
 msgid "Hide Desktop &Names"
-msgstr "Esconder Ambiente &Global"
+msgstr "Esconder &Nomes do Ambiente"
 
 #: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
-#, fuzzy
 msgid "Show Desktop &Names"
-msgstr "Mostrar &Ambiente Global"
+msgstr "Mostrar Nomes do &Ambiente"
 
 #: kpager.cpp:115 kpager.cpp:402
 msgid "Plain"
@@ -104,7 +102,7 @@ msgstr "Mostrar &Barra de menu"
 
 #: kpager.cpp:389
 msgid "One Click change Desktop"
-msgstr ""
+msgstr "Um clique muda o Ambiente"
 
 #: kpager.cpp:446
 msgid "&Maximize"

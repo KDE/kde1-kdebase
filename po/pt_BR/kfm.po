@@ -243,9 +243,8 @@ msgid "KFM Error"
 msgstr "Erro no KFM"
 
 #: kfmgui.cpp:526
-#, fuzzy
 msgid "Location:"
-msgstr "Abrir URL:"
+msgstr "Localização:"
 
 #: kfmexec.cpp:59 kfmgui.cpp:682 kfmman.cpp:1374
 msgid "Malformed URL\n"
@@ -569,6 +568,10 @@ msgid ""
 "\n"
 "Would you like to install the new ones?"
 msgstr ""
+"Uma nova versão do KDE foi instalada.\n"
+"Os arquivos-modelo podem ter mudado.\n"
+"\n"
+"Você gostaria de instalar as versões novas ?"
 
 #: main.cpp:263
 msgid "Cd"
