@@ -454,7 +454,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Opção %s não é suportada neste plataforma!"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -465,8 +464,8 @@ msgstr ""
 "Aviso: Você não poderá travar a tela !\n"
 "\n"
 "Seu sistema usa senhas 'shadow'.\n"
-"Contacte o administrador do sistema e diga-lhe\n"
-"que você precisa suid root para o kcheckpass !"
+"Contacte o administrador do sistema.\n"
+"Diga-lhe que você precisa suid root para o kcheckpass !"
 
 #: main.cpp:427
 msgid "Shadow Passwords"
